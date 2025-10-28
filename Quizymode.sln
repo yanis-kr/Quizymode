@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.36414.22 d17.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Quizymode.Api", "Quizymode.Api\Quizymode.Api.csproj", "{7981AB11-11A0-B862-D377-F0467651DFB2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Quizymode.AppHost", "Quizymode.Api.AppHost\Quizymode.AppHost.csproj", "{1F4CA4D0-6998-4E71-AE39-36FBC2F9CB36}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Quizymode.ServiceDefaults", "Quizymode.Api.ServiceDefaults\Quizymode.ServiceDefaults.csproj", "{89D46C13-10F3-B7F5-4DDE-6BF455188492}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7981AB11-11A0-B862-D377-F0467651DFB2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7981AB11-11A0-B862-D377-F0467651DFB2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7981AB11-11A0-B862-D377-F0467651DFB2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7981AB11-11A0-B862-D377-F0467651DFB2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1F4CA4D0-6998-4E71-AE39-36FBC2F9CB36}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1F4CA4D0-6998-4E71-AE39-36FBC2F9CB36}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1F4CA4D0-6998-4E71-AE39-36FBC2F9CB36}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1F4CA4D0-6998-4E71-AE39-36FBC2F9CB36}.Release|Any CPU.Build.0 = Release|Any CPU
+		{89D46C13-10F3-B7F5-4DDE-6BF455188492}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{89D46C13-10F3-B7F5-4DDE-6BF455188492}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{89D46C13-10F3-B7F5-4DDE-6BF455188492}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{89D46C13-10F3-B7F5-4DDE-6BF455188492}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {2D0B9981-9F11-43F0-8126-D2BBB38C6340}
+	EndGlobalSection
+EndGlobal
