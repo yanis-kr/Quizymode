@@ -6,6 +6,7 @@ builder.AddServiceDefaults();
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
 builder.Services.AddOpenApi();
 
+
 var app = builder.Build();
 
 app.MapDefaultEndpoints();
@@ -14,6 +15,10 @@ app.MapDefaultEndpoints();
 if (app.Environment.IsDevelopment())
 {
     app.MapOpenApi();
+	app.UseSwaggerUI(c =>
+	{
+		c.SwaggerEndpoint("/openapi/v1.json", "My API V1");
+	});
 }
 
 app.UseHttpsRedirection();
