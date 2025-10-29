@@ -1,50 +1,22 @@
+using Quizymode.Api.StartupExtensions;
+using Serilog;
+
+StartupLogger();
 var builder = WebApplication.CreateBuilder(args);
 
-builder.AddServiceDefaults();
-
-// Add services to the container.
-// Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
-builder.Services.AddOpenApi();
-
-
+builder.Host.UseSerilog();
+builder.ConfigureServices();
 var app = builder.Build();
-
-app.MapDefaultEndpoints();
-
-// Configure the HTTP request pipeline.
-if (app.Environment.IsDevelopment())
-{
-    app.MapOpenApi();
-	app.UseSwaggerUI(c =>
-	{
-		c.SwaggerEndpoint("/openapi/v1.json", "My API V1");
-	});
-}
-
-app.UseHttpsRedirection();
-
-var summaries = new[]
-{
-    "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
-};
-
-app.MapGet("/weatherforecast", () =>
-{
-    var forecast =  Enumerable.Range(1, 5).Select(index =>
-        new WeatherForecast
-        (
-            DateOnly.FromDateTime(DateTime.Now.AddDays(index)),
-            Random.Shared.Next(-20, 55),
-            summaries[Random.Shared.Next(summaries.Length)]
-        ))
-        .ToArray();
-    return forecast;
-})
-.WithName("GetWeatherForecast");
+app.ConfigurePipeline();
 
 app.Run();
 
-record WeatherForecast(DateOnly Date, int TemperatureC, string? Summary)
+void StartupLogger()
 {
-    public int TemperatureF => 32 + (int)(TemperatureC / 0.5556);
+    Log.Logger = new LoggerConfiguration()
+        .MinimumLevel.Debug()
+        .WriteTo.Console()
+        .CreateLogger();
+
+    Log.Information("Starting QuizyMode Web API");
 }
