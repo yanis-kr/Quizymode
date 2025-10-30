@@ -24,4 +24,10 @@
     <ProjectReference Include="..\Quizymode.Api.ServiceDefaults\Quizymode.ServiceDefaults.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Update="Data\Seed\*.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
 </Project>

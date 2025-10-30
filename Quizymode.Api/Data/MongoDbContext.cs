@@ -10,7 +10,16 @@ public class MongoDbContext
     public MongoDbContext(IConfiguration configuration)
     {
         var connectionString = configuration.GetConnectionString("MongoDB") ?? "mongodb://localhost:27017";
-        var client = new MongoClient(connectionString);
+
+        var mongoUrl = new MongoUrl(connectionString);
+        var settings = MongoClientSettings.FromUrl(mongoUrl);
+
+        // Fail fast if MongoDB is unreachable instead of hanging for a long time
+        settings.ServerSelectionTimeout = TimeSpan.FromSeconds(5);
+        settings.ConnectTimeout = TimeSpan.FromSeconds(5);
+        settings.SocketTimeout = TimeSpan.FromSeconds(5);
+
+        var client = new MongoClient(settings);
         _database = client.GetDatabase("quizymode");
     }
 

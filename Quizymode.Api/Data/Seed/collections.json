@@ -1,0 +1,24 @@
+[
+  {
+    "name": "General Knowledge",
+    "description": "Starter set of quiz items covering various topics",
+    "categoryId": "general",
+    "subcategoryId": "misc",
+    "visibility": "global"
+  },
+  {
+    "name": "French Numbers",
+    "description": "Learn French numbers and counting",
+    "categoryId": "french",
+    "subcategoryId": "numbers",
+    "visibility": "global"
+  },
+  {
+    "name": "Spanish Greetings",
+    "description": "Common Spanish greetings and phrases",
+    "categoryId": "spanish",
+    "subcategoryId": "greetings",
+    "visibility": "global"
+  }
+]
+
