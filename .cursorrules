@@ -1,4 +1,4 @@
-# ASP.NET Core 8 Project Rules
+# ASP.NET Core 9 Project Rules
 
 - Use C# 12 language features where appropriate
 - Follow SOLID principles in class and interface design
@@ -6,8 +6,7 @@
 - Use primary constructors for dependency injection in services, use cases, etc.
 - Use async/await for I/O-bound operations
 - Prefer record types for immutable data structures
-- Prefer controller endpoints over minimal APIs
-  - Utilize minimal APIs for simple endpoints (when explicitly stated or when it makes sense)
+- Prefer minimal APIs endpoints over controller
 - Implement proper exception handling and logging
 - Use strongly-typed configuration with IOptions pattern
 - Implement proper authentication and authorization
@@ -22,10 +21,19 @@
 - Implement proper CORS policies
 - Use secure communication with HTTPS
 - Implement proper model validation
-- Use Swagger/OpenAPI for API documentation
+- Use Swagger/OpenAPI for API documentation based on .NET9+ conventions
 - Implement proper logging with structured logging
 - Use background services for long-running tasks
 - Favor explicit typing (this is very important). Only use var when evident.
 - Make types internal and sealed by default unless otherwise specified
 - Prefer Guid for identifiers unless otherwise specified
 - Use `is null` checks instead of `== null`. The same goes for `is not null` and `!= null`.
+- Use Vertical Slices Architecture composition:
+  - All featureX code goes under Features/FeatureX (include endpoints, handlers, DTOs, mappings, validations)
+  - Shared code goes under /Shared, including shared domain objects and business logic.
+  - Use Rich Domain Entities, Value objects and events.
+- Use CORS without MediatR
+- For mappings do not use Automapper, use explicit mappings (e.g. between DTO and domain objects)
+- For validations use Fluent Validations
+- Keep common services under Services folder
+- Keep Program.cs small and move all services and pipeline setup under StartupExtensions folder

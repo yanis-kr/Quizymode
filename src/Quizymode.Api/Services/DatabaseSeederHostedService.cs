@@ -1,25 +1,25 @@
 using System.Text.Json;
-using MongoDB.Driver;
+using Microsoft.EntityFrameworkCore;
 using Quizymode.Api.Data;
 using Quizymode.Api.Shared.Models;
 
 namespace Quizymode.Api.Services;
 
-public class DatabaseSeederHostedService : IHostedService
+public sealed class DatabaseSeederHostedService : IHostedService
 {
     private readonly ILogger<DatabaseSeederHostedService> _logger;
-    private readonly MongoDbContext _db;
+    private readonly IServiceProvider _serviceProvider;
     private readonly ISimHashService _simHashService;
     private readonly IWebHostEnvironment _environment;
 
     public DatabaseSeederHostedService(
         ILogger<DatabaseSeederHostedService> logger,
-        MongoDbContext db,
+        IServiceProvider serviceProvider,
         ISimHashService simHashService,
         IWebHostEnvironment environment)
     {
         _logger = logger;
-        _db = db;
+        _serviceProvider = serviceProvider;
         _simHashService = simHashService;
         _environment = environment;
     }
@@ -28,27 +28,36 @@ public class DatabaseSeederHostedService : IHostedService
     {
         try
         {
+            using IServiceScope scope = _serviceProvider.CreateScope();
+            ApplicationDbContext db = scope.ServiceProvider.GetRequiredService<ApplicationDbContext>();
+
+            // Apply migrations
+            await db.Database.MigrateAsync(cancellationToken);
+
             // Seed Collections if empty
-            var collectionsCount = await _db.Collections.CountDocumentsAsync(FilterDefinition<CollectionModel>.Empty, cancellationToken: cancellationToken);
-            if (collectionsCount == 0)
+            bool hasCollections = await db.Collections.AnyAsync(cancellationToken);
+            if (!hasCollections)
             {
                 _logger.LogInformation("Seeding initial data from JSON files...");
 
-                var seedPath = Path.Combine(_environment.ContentRootPath, "Data", "Seed");
+                string seedPath = Path.Combine(_environment.ContentRootPath, "Data", "Seed");
                 
                 // Load collections
-                var collectionsFile = Path.Combine(seedPath, "collections.json");
+                string collectionsFile = Path.Combine(seedPath, "collections.json");
                 if (File.Exists(collectionsFile))
                 {
-                    var collectionsJson = await File.ReadAllTextAsync(collectionsFile, cancellationToken);
-                    var collectionData = JsonSerializer.Deserialize<List<CollectionSeedData>>(collectionsJson, new JsonSerializerOptions { PropertyNameCaseInsensitive = true });
+                    string collectionsJson = await File.ReadAllTextAsync(collectionsFile, cancellationToken);
+                    List<CollectionSeedData>? collectionData = JsonSerializer.Deserialize<List<CollectionSeedData>>(
+                        collectionsJson, 
+                        new JsonSerializerOptions { PropertyNameCaseInsensitive = true });
 
-                    if (collectionData != null)
+                    if (collectionData is not null)
                     {
-                        foreach (var colData in collectionData)
+                        foreach (CollectionSeedData colData in collectionData)
                         {
-                            var collection = new CollectionModel
+                            Collection collection = new Collection
                             {
+                                Id = Guid.NewGuid(),
                                 Name = colData.Name,
                                 Description = colData.Description,
                                 CategoryId = colData.CategoryId,
@@ -59,28 +68,33 @@ public class DatabaseSeederHostedService : IHostedService
                                 ItemCount = 0
                             };
 
-                            await _db.Collections.InsertOneAsync(collection, cancellationToken: cancellationToken);
-                            _logger.LogInformation("Inserted collection: {Name} ({CategoryId}/{SubcategoryId})", collection.Name, collection.CategoryId, collection.SubcategoryId);
+                            db.Collections.Add(collection);
+                            await db.SaveChangesAsync(cancellationToken);
+                            _logger.LogInformation("Inserted collection: {Name} ({CategoryId}/{SubcategoryId})", 
+                                collection.Name, collection.CategoryId, collection.SubcategoryId);
 
                             // Load items for this collection
-                            var itemsFile = Path.Combine(seedPath, $"items-{colData.CategoryId}-{colData.SubcategoryId}.json");
+                            string itemsFile = Path.Combine(seedPath, $"items-{colData.CategoryId}-{colData.SubcategoryId}.json");
                             if (File.Exists(itemsFile))
                             {
-                                var itemsJson = await File.ReadAllTextAsync(itemsFile, cancellationToken);
-                                var itemsData = JsonSerializer.Deserialize<ItemsSeedData>(itemsJson, new JsonSerializerOptions { PropertyNameCaseInsensitive = true });
+                                string itemsJson = await File.ReadAllTextAsync(itemsFile, cancellationToken);
+                                ItemsSeedData? itemsData = JsonSerializer.Deserialize<ItemsSeedData>(
+                                    itemsJson, 
+                                    new JsonSerializerOptions { PropertyNameCaseInsensitive = true });
 
-                                if (itemsData?.Items != null && itemsData.Items.Any())
+                                if (itemsData?.Items is not null && itemsData.Items.Any())
                                 {
-                                    var itemsToInsert = new List<ItemModel>();
-                                    foreach (var itemData in itemsData.Items)
+                                    List<Item> itemsToInsert = new();
+                                    foreach (ItemSeedData itemData in itemsData.Items)
                                     {
                                         // Compute SimHash for duplicate detection
-                                        var questionText = $"{itemData.Question} {itemData.CorrectAnswer} {string.Join(" ", itemData.IncorrectAnswers)}";
-                                        var fuzzySignature = _simHashService.ComputeSimHash(questionText);
-                                        var fuzzyBucket = _simHashService.GetFuzzyBucket(fuzzySignature);
+                                        string questionText = $"{itemData.Question} {itemData.CorrectAnswer} {string.Join(" ", itemData.IncorrectAnswers)}";
+                                        string fuzzySignature = _simHashService.ComputeSimHash(questionText);
+                                        int fuzzyBucket = _simHashService.GetFuzzyBucket(fuzzySignature);
 
-                                        var item = new ItemModel
+                                        Item item = new Item
                                         {
+                                            Id = Guid.NewGuid(),
                                             CategoryId = itemsData.CategoryId,
                                             SubcategoryId = itemsData.SubcategoryId,
                                             Visibility = itemsData.Visibility,
@@ -99,12 +113,14 @@ public class DatabaseSeederHostedService : IHostedService
 
                                     if (itemsToInsert.Any())
                                     {
-                                        await _db.Items.InsertManyAsync(itemsToInsert, cancellationToken: cancellationToken);
-                                        _logger.LogInformation("Inserted {Count} items for collection {Name}", itemsToInsert.Count, collection.Name);
+                                        db.Items.AddRange(itemsToInsert);
+                                        await db.SaveChangesAsync(cancellationToken);
+                                        _logger.LogInformation("Inserted {Count} items for collection {Name}", 
+                                            itemsToInsert.Count, collection.Name);
 
                                         // Update item count
-                                        var update = Builders<CollectionModel>.Update.Set(c => c.ItemCount, itemsToInsert.Count);
-                                        await _db.Collections.UpdateOneAsync(c => c.Id == collection.Id, update, cancellationToken: cancellationToken);
+                                        collection.ItemCount = itemsToInsert.Count;
+                                        await db.SaveChangesAsync(cancellationToken);
                                     }
                                 }
                             }
@@ -120,12 +136,12 @@ public class DatabaseSeederHostedService : IHostedService
             }
             else
             {
-                _logger.LogInformation("Skipping seeding; collections already present (count: {Count}).", collectionsCount);
+                _logger.LogInformation("Skipping seeding; collections already present.");
             }
         }
         catch (Exception ex)
         {
-            _logger.LogWarning(ex, "Database seeding failed or MongoDB not available yet.");
+            _logger.LogWarning(ex, "Database seeding failed or PostgreSQL not available yet.");
         }
     }
 
@@ -133,7 +149,7 @@ public class DatabaseSeederHostedService : IHostedService
 }
 
 // Seed data models for JSON deserialization
-internal class CollectionSeedData
+internal sealed class CollectionSeedData
 {
     public string Name { get; set; } = string.Empty;
     public string Description { get; set; } = string.Empty;
@@ -142,7 +158,7 @@ internal class CollectionSeedData
     public string Visibility { get; set; } = "global";
 }
 
-internal class ItemsSeedData
+internal sealed class ItemsSeedData
 {
     public string CategoryId { get; set; } = string.Empty;
     public string SubcategoryId { get; set; } = string.Empty;
@@ -150,12 +166,10 @@ internal class ItemsSeedData
     public List<ItemSeedData> Items { get; set; } = new();
 }
 
-internal class ItemSeedData
+internal sealed class ItemSeedData
 {
     public string Question { get; set; } = string.Empty;
     public string CorrectAnswer { get; set; } = string.Empty;
     public List<string> IncorrectAnswers { get; set; } = new();
     public string Explanation { get; set; } = string.Empty;
 }
-
-

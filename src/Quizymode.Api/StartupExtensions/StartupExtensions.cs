@@ -13,11 +13,11 @@ internal static partial class StartupExtensions
         builder.AddSwaggerServices();
         builder.AddHealthCheckServices();
         builder.AddCorsServices();
-        builder.AddMongoDbServices();
+        builder.AddPostgreSqlServices();
         builder.AddCustomServices();
-        builder.AddCollectionsFeature();
-        builder.AddItemsFeature();
-        builder.AddImportFeature();
+        
+        // Auto-discover and register all features
+        builder.AddFeatureRegistrations();
 
         return builder;
     }
@@ -40,9 +40,9 @@ internal static partial class StartupExtensions
         app.UseCors("AllowAll");
         app.MapDefaultEndpoints();
         app.MapHealthChecks("/health");
-        app.MapCollectionsEndpoints();
-        app.MapItemsEndpoints();
-        app.MapImportEndpoints();
+        
+        // Auto-discover and map all feature endpoints
+        app.MapFeatureEndpoints();
 
         return app;
     }
