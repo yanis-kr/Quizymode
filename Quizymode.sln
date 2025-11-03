@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.14.36414.22 d17.14
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Quizymode.Api", "Quizymode.Api\Quizymode.Api.csproj", "{7981AB11-11A0-B862-D377-F0467651DFB2}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Quizymode.Api", "src\Quizymode.Api\Quizymode.Api.csproj", "{7981AB11-11A0-B862-D377-F0467651DFB2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Quizymode.AppHost", "Quizymode.Api.AppHost\Quizymode.AppHost.csproj", "{1F4CA4D0-6998-4E71-AE39-36FBC2F9CB36}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Quizymode.AppHost", "src\Quizymode.Api.AppHost\Quizymode.AppHost.csproj", "{1F4CA4D0-6998-4E71-AE39-36FBC2F9CB36}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Quizymode.ServiceDefaults", "Quizymode.Api.ServiceDefaults\Quizymode.ServiceDefaults.csproj", "{89D46C13-10F3-B7F5-4DDE-6BF455188492}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Quizymode.ServiceDefaults", "src\Quizymode.Api.ServiceDefaults\Quizymode.ServiceDefaults.csproj", "{89D46C13-10F3-B7F5-4DDE-6BF455188492}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
