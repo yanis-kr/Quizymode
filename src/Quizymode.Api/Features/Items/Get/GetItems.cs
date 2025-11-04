@@ -64,61 +64,11 @@ public static class GetItems
             }
 
             var request = new QueryRequest(categoryId, subcategoryId, page, pageSize);
-            Result<Response> result = await HandleAsync(request, db, cancellationToken);
+            Result<Response> result = await GetItemsHandler.HandleAsync(request, db, cancellationToken);
 
             return result.Match(
                 value => Results.Ok(value),
                 error => CustomResults.Problem(result));
-        }
-
-        internal static async Task<Result<Response>> HandleAsync(
-            QueryRequest request,
-            ApplicationDbContext db,
-            CancellationToken cancellationToken)
-        {
-            try
-            {
-                IQueryable<Item> query = db.Items.AsQueryable();
-
-                if (!string.IsNullOrEmpty(request.CategoryId))
-                {
-                    query = query.Where(i => i.CategoryId == request.CategoryId);
-                }
-
-                if (!string.IsNullOrEmpty(request.SubcategoryId))
-                {
-                    query = query.Where(i => i.SubcategoryId == request.SubcategoryId);
-                }
-
-                int totalCount = await query.CountAsync(cancellationToken);
-                List<Item> items = await query
-                    .Skip((request.Page - 1) * request.PageSize)
-                    .Take(request.PageSize)
-                    .ToListAsync(cancellationToken);
-
-                Response response = new Response(
-                    items.Select(i => new ItemResponse(
-                        i.Id.ToString(),
-                        i.CategoryId,
-                        i.SubcategoryId,
-                        i.Visibility,
-                        i.Question,
-                        i.CorrectAnswer,
-                        i.IncorrectAnswers,
-                        i.Explanation,
-                        i.CreatedAt)).ToList(),
-                    (int)totalCount,
-                    request.Page,
-                    request.PageSize,
-                    (int)Math.Ceiling((double)totalCount / request.PageSize));
-
-                return Result.Success(response);
-            }
-            catch (Exception ex)
-            {
-                return Result.Failure<Response>(
-                    Error.Problem("Items.GetFailed", $"Failed to get items: {ex.Message}"));
-            }
         }
     }
 

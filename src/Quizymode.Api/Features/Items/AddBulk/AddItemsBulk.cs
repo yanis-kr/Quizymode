@@ -1,4 +1,5 @@
 using FluentValidation;
+using Microsoft.EntityFrameworkCore;
 using Quizymode.Api.Data;
 using Quizymode.Api.Features;
 using Quizymode.Api.Infrastructure;
@@ -6,29 +7,34 @@ using Quizymode.Api.Services;
 using Quizymode.Api.Shared.Kernel;
 using Quizymode.Api.Shared.Models;
 
-namespace Quizymode.Api.Features.Items.Add;
+namespace Quizymode.Api.Features.Items.AddBulk;
 
-public static class AddItem
+public static class AddItemsBulk
 {
-    public sealed record Request(
-        string CategoryId,
-        string SubcategoryId,
-        string Visibility,
+    public sealed record ItemRequest(
         string Question,
         string CorrectAnswer,
         List<string> IncorrectAnswers,
         string Explanation);
 
-    public sealed record Response(
-        string Id,
+    public sealed record Request(
         string CategoryId,
         string SubcategoryId,
         string Visibility,
+        List<ItemRequest> Items);
+
+    public sealed record Response(
+        int TotalRequested,
+        int CreatedCount,
+        int DuplicateCount,
+        int FailedCount,
+        List<string> DuplicateQuestions,
+        List<ItemError> Errors);
+
+    public sealed record ItemError(
+        int Index,
         string Question,
-        string CorrectAnswer,
-        List<string> IncorrectAnswers,
-        string Explanation,
-        DateTime CreatedAt);
+        string ErrorMessage);
 
     public sealed class Validator : AbstractValidator<Request>
     {
@@ -46,6 +52,23 @@ public static class AddItem
                 .Must(v => v == "global" || v == "private")
                 .WithMessage("Visibility must be either 'global' or 'private'");
 
+            RuleFor(x => x.Items)
+                .NotNull()
+                .WithMessage("Items is required")
+                .Must(items => items.Count > 0)
+                .WithMessage("At least one item is required")
+                .Must(items => items.Count <= 100)
+                .WithMessage("Cannot create more than 100 items at once");
+
+            RuleForEach(x => x.Items)
+                .SetValidator(new ItemRequestValidator());
+        }
+    }
+
+    public sealed class ItemRequestValidator : AbstractValidator<ItemRequest>
+    {
+        public ItemRequestValidator()
+        {
             RuleFor(x => x.Question)
                 .NotEmpty()
                 .WithMessage("Question is required")
@@ -77,11 +100,11 @@ public static class AddItem
     {
         public void MapEndpoint(IEndpointRouteBuilder app)
         {
-            app.MapPost("items", Handler)
+            app.MapPost("items/bulk", Handler)
                 .WithTags("Items")
-                .WithSummary("Create a new quiz item")
+                .WithSummary("Create multiple items in bulk")
                 .WithOpenApi()
-                .Produces<Response>(StatusCodes.Status201Created)
+                .Produces<Response>(StatusCodes.Status200OK)
                 .Produces(StatusCodes.Status400BadRequest);
         }
 
@@ -98,10 +121,10 @@ public static class AddItem
                 return Results.BadRequest(validationResult.Errors);
             }
 
-            Result<Response> result = await AddItemHandler.HandleAsync(request, db, simHashService, cancellationToken);
+            Result<Response> result = await AddItemsBulkHandler.HandleAsync(request, db, simHashService, cancellationToken);
 
             return result.Match(
-                value => Results.Created($"/api/items/{value.Id}", value),
+                value => Results.Ok(value),
                 error => CustomResults.Problem(result));
         }
     }

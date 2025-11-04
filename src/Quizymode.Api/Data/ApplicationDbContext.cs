@@ -11,7 +11,6 @@ public sealed class ApplicationDbContext : DbContext
     }
 
     public DbSet<Item> Items => Set<Item>();
-    public DbSet<Collection> Collections => Set<Collection>();
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {

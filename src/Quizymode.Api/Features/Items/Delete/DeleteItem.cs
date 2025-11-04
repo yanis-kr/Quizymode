@@ -28,47 +28,13 @@ public static class DeleteItem
             ApplicationDbContext db,
             CancellationToken cancellationToken)
         {
-            Result result = await HandleAsync(id, db, cancellationToken);
+            Result result = await DeleteItemHandler.HandleAsync(id, db, cancellationToken);
 
             return result.Match(
                 () => Results.NoContent(),
                 error => result.Error.Type == ErrorType.NotFound
                     ? Results.NotFound()
                     : CustomResults.Problem(result));
-        }
-
-        internal static async Task<Result> HandleAsync(
-            string id,
-            ApplicationDbContext db,
-            CancellationToken cancellationToken)
-        {
-            try
-            {
-                if (!Guid.TryParse(id, out Guid itemGuid))
-                {
-                    return Result.Failure(
-                        Error.Validation("Item.InvalidId", "Invalid item ID format"));
-                }
-
-                Item? item = await db.Items
-                    .FirstOrDefaultAsync(i => i.Id == itemGuid, cancellationToken);
-
-                if (item is null)
-                {
-                    return Result.Failure(
-                        Error.NotFound("Item.NotFound", $"Item with id {id} not found"));
-                }
-
-                db.Items.Remove(item);
-                await db.SaveChangesAsync(cancellationToken);
-
-                return Result.Success();
-            }
-            catch (Exception ex)
-            {
-                return Result.Failure(
-                    Error.Problem("Item.DeleteFailed", $"Failed to delete item: {ex.Message}"));
-            }
         }
     }
 
