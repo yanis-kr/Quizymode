@@ -2,6 +2,10 @@
 
 A quiz application built with ASP.NET Core 9, Entity Framework Core, and PostgreSQL.
 
+## Attribution
+
+This project uses code and patterns from [Milan Jovanović's Clean Architecture template](https://www.milanjovanovic.tech/pragmatic-clean-architecture). See [ATTRIBUTION.md](ATTRIBUTION.md) for details.
+
 ## Documentation
 
 - **[Entity Framework Core Guide](docs/ENTITY_FRAMEWORK_GUIDE.md)** - Complete guide to EF Core, migrations, and the database seeder
