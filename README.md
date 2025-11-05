@@ -61,6 +61,7 @@ Quizymode is a RESTful API for managing quiz items. It provides endpoints for cr
 ### API Endpoints
 
 - `GET /items` - Get paginated list of quiz items
+- `GET /items/random` - Get random quiz items (optional category, subcategory, count)
 - `POST /items` - Create a new quiz item
 - `POST /items/bulk` - Create multiple items at once
 - `DELETE /items/{id}` - Delete a quiz item

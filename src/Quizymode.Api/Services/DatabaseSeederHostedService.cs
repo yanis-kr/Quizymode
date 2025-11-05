@@ -26,13 +26,50 @@ public sealed class DatabaseSeederHostedService : IHostedService
 
     public async Task StartAsync(CancellationToken cancellationToken)
     {
+        // Retry logic: Wait for database to be available and retry migration
+        const int maxRetries = 5;
+        const int delayMs = 2000;
+        bool migrationSucceeded = false;
+        
+        for (int attempt = 1; attempt <= maxRetries; attempt++)
+        {
+            try
+            {
+                using IServiceScope scope = _serviceProvider.CreateScope();
+                ApplicationDbContext db = scope.ServiceProvider.GetRequiredService<ApplicationDbContext>();
+
+                _logger.LogInformation("Attempting to apply database migrations (attempt {Attempt}/{MaxRetries})...", attempt, maxRetries);
+                
+                // Apply migrations
+                await db.Database.MigrateAsync(cancellationToken);
+                
+                _logger.LogInformation("Database migrations applied successfully.");
+                migrationSucceeded = true;
+                break; // Success, exit retry loop
+            }
+            catch (Exception ex) when (attempt < maxRetries)
+            {
+                _logger.LogWarning(ex, "Migration attempt {Attempt} failed. Retrying in {Delay}ms... Error: {Error}", attempt, delayMs, ex.Message);
+                await Task.Delay(delayMs, cancellationToken);
+                continue;
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "All migration attempts failed. Last error: {Error}", ex.Message);
+                throw; // Re-throw on final attempt
+            }
+        }
+        
+        if (!migrationSucceeded)
+        {
+            _logger.LogError("Failed to apply database migrations after {MaxRetries} attempts.", maxRetries);
+            return; // Exit early if migrations failed
+        }
+        
         try
         {
             using IServiceScope scope = _serviceProvider.CreateScope();
             ApplicationDbContext db = scope.ServiceProvider.GetRequiredService<ApplicationDbContext>();
-
-            // Apply migrations
-            await db.Database.MigrateAsync(cancellationToken);
 
             // Seed items if empty
             bool hasItems = await db.Items.AnyAsync(cancellationToken);
@@ -101,7 +138,14 @@ public sealed class DatabaseSeederHostedService : IHostedService
         }
         catch (Exception ex)
         {
-            _logger.LogWarning(ex, "Database seeding failed or PostgreSQL not available yet.");
+            _logger.LogError(ex, "Database seeding failed. Error: {ErrorMessage}", ex.Message);
+            _logger.LogError("Stack trace: {StackTrace}", ex.StackTrace);
+            
+            // Re-throw in development to make issues visible
+            if (System.Diagnostics.Debugger.IsAttached)
+            {
+                throw;
+            }
         }
     }
 

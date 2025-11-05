@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
@@ -22,8 +22,8 @@ namespace Quizymode.Api.Data.Migrations
                     Question = table.Column<string>(type: "character varying(1000)", maxLength: 1000, nullable: false),
                     CorrectAnswer = table.Column<string>(type: "character varying(500)", maxLength: 500, nullable: false),
                     IncorrectAnswers = table.Column<string>(type: "jsonb", nullable: false),
-                    Explanation = table.Column<string>(type: "character varying(2000)", maxLength: 2000, nullable: true),
-                    FuzzySignature = table.Column<string>(type: "character varying(64)", maxLength: 64, nullable: true),
+                    Explanation = table.Column<string>(type: "character varying(2000)", maxLength: 2000, nullable: false),
+                    FuzzySignature = table.Column<string>(type: "character varying(64)", maxLength: 64, nullable: false),
                     FuzzyBucket = table.Column<int>(type: "integer", nullable: false),
                     CreatedBy = table.Column<string>(type: "character varying(100)", maxLength: 100, nullable: false),
                     CreatedAt = table.Column<DateTime>(type: "timestamp with time zone", nullable: false)
@@ -31,9 +31,7 @@ namespace Quizymode.Api.Data.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_items", x => x.Id);
-                    table.CheckConstraint(
-                        name: "CK_Items_IncorrectAnswers_Length",
-                        sql: "jsonb_array_length(\"IncorrectAnswers\"::jsonb) >= 0 AND jsonb_array_length(\"IncorrectAnswers\"::jsonb) <= 4");
+                    table.CheckConstraint("CK_Items_IncorrectAnswers_Length", "jsonb_array_length(\"IncorrectAnswers\"::jsonb) >= 0 AND jsonb_array_length(\"IncorrectAnswers\"::jsonb) <= 4");
                 });
 
             migrationBuilder.CreateIndex(
@@ -42,14 +40,14 @@ namespace Quizymode.Api.Data.Migrations
                 columns: new[] { "CategoryId", "SubcategoryId" });
 
             migrationBuilder.CreateIndex(
-                name: "IX_items_FuzzyBucket",
-                table: "items",
-                column: "FuzzyBucket");
-
-            migrationBuilder.CreateIndex(
                 name: "IX_items_CreatedAt",
                 table: "items",
                 column: "CreatedAt");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_items_FuzzyBucket",
+                table: "items",
+                column: "FuzzyBucket");
         }
 
         /// <inheritdoc />
@@ -60,4 +58,3 @@ namespace Quizymode.Api.Data.Migrations
         }
     }
 }
-
