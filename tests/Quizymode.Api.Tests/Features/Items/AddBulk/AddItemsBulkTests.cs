@@ -1,0 +1,189 @@
+using FluentAssertions;
+using FluentValidation;
+using Microsoft.EntityFrameworkCore;
+using Quizymode.Api.Data;
+using Quizymode.Api.Features.Items.AddBulk;
+using Quizymode.Api.Services;
+using Quizymode.Api.Shared.Kernel;
+using Quizymode.Api.Shared.Models;
+using Xunit;
+using AddItemsBulkHandler = Quizymode.Api.Features.Items.AddBulk.AddItemsBulkHandler;
+
+namespace Quizymode.Api.Tests.Features.Items.AddBulk;
+
+public sealed class AddItemsBulkTests : IDisposable
+{
+    private readonly ApplicationDbContext _dbContext;
+    private readonly ISimHashService _simHashService;
+
+    public AddItemsBulkTests()
+    {
+        DbContextOptions<ApplicationDbContext> options = new DbContextOptionsBuilder<ApplicationDbContext>()
+            .UseInMemoryDatabase(databaseName: Guid.NewGuid().ToString())
+            .Options;
+
+        _dbContext = new ApplicationDbContext(options);
+        _simHashService = new SimHashService();
+    }
+
+    [Fact]
+    public async Task HandleAsync_ValidRequest_CreatesAllItems()
+    {
+        // Arrange
+        AddItemsBulk.Request request = new(
+            CategoryId: "geography",
+            SubcategoryId: "europe",
+            Visibility: "global",
+            Items: new List<AddItemsBulk.ItemRequest>
+            {
+                new("What is the capital of France?", "Paris", new List<string> { "Lyon", "Marseille" }, "Paris is the capital"),
+                new("What is the capital of Germany?", "Berlin", new List<string> { "Munich", "Hamburg" }, "Berlin is the capital")
+            });
+
+        // Act
+        Result<AddItemsBulk.Response> result = await AddItemsBulkHandler.HandleAsync(
+            request,
+            _dbContext,
+            _simHashService,
+            CancellationToken.None);
+
+        // Assert
+        result.IsSuccess.Should().BeTrue();
+        result.Value.Should().NotBeNull();
+        result.Value.CreatedCount.Should().Be(2);
+        result.Value.TotalRequested.Should().Be(2);
+        result.Value.DuplicateCount.Should().Be(0);
+        result.Value.FailedCount.Should().Be(0);
+
+        int itemCount = await _dbContext.Items.CountAsync();
+        itemCount.Should().Be(2);
+    }
+
+    [Fact]
+    public async Task HandleAsync_WithDuplicates_ReturnsPartialSuccess()
+    {
+        // Arrange - Add existing item
+        Item existingItem = new Item
+        {
+            Id = Guid.NewGuid(),
+            CategoryId = "geography",
+            SubcategoryId = "europe",
+            Visibility = "global",
+            Question = "What is the capital of France?",
+            CorrectAnswer = "Paris",
+            IncorrectAnswers = new List<string> { "Lyon", "Marseille" },
+            Explanation = "Existing",
+            FuzzySignature = _simHashService.ComputeSimHash("What is the capital of France? Paris Lyon Marseille"),
+            FuzzyBucket = _simHashService.GetFuzzyBucket(_simHashService.ComputeSimHash("What is the capital of France? Paris Lyon Marseille")),
+            CreatedBy = "test",
+            CreatedAt = DateTime.UtcNow
+        };
+
+        _dbContext.Items.Add(existingItem);
+        await _dbContext.SaveChangesAsync();
+
+        AddItemsBulk.Request request = new(
+            CategoryId: "geography",
+            SubcategoryId: "europe",
+            Visibility: "global",
+            Items: new List<AddItemsBulk.ItemRequest>
+            {
+                new("What is the capital of France?", "Paris", new List<string> { "Lyon", "Marseille" }, "Duplicate"),
+                new("What is the capital of Germany?", "Berlin", new List<string> { "Munich" }, "New item")
+            });
+
+        // Act
+        Result<AddItemsBulk.Response> result = await AddItemsBulkHandler.HandleAsync(
+            request,
+            _dbContext,
+            _simHashService,
+            CancellationToken.None);
+
+        // Assert
+        result.IsSuccess.Should().BeTrue();
+        result.Value.CreatedCount.Should().Be(1);
+        result.Value.DuplicateCount.Should().Be(1);
+        result.Value.DuplicateQuestions.Should().Contain("What is the capital of France?");
+    }
+
+    [Fact]
+    public void Validator_EmptyItemsList_ReturnsError()
+    {
+        // Arrange
+        AddItemsBulk.Request request = new(
+            CategoryId: "geography",
+            SubcategoryId: "europe",
+            Visibility: "global",
+            Items: new List<AddItemsBulk.ItemRequest>());
+
+        AddItemsBulk.Validator validator = new();
+
+        // Act
+        FluentValidation.Results.ValidationResult result = validator.Validate(request);
+
+        // Assert
+        result.IsValid.Should().BeFalse();
+        result.Errors.Should().Contain(e => e.PropertyName == "Items");
+    }
+
+    [Fact]
+    public void Validator_TooManyItems_ReturnsError()
+    {
+        // Arrange
+        List<AddItemsBulk.ItemRequest> items = Enumerable.Range(1, 101)
+            .Select(i => new AddItemsBulk.ItemRequest(
+                $"Question {i}",
+                $"Answer {i}",
+                new List<string> { "Wrong1" },
+                ""))
+            .ToList();
+
+        AddItemsBulk.Request request = new(
+            CategoryId: "geography",
+            SubcategoryId: "europe",
+            Visibility: "global",
+            Items: items);
+
+        AddItemsBulk.Validator validator = new();
+
+        // Act
+        FluentValidation.Results.ValidationResult result = validator.Validate(request);
+
+        // Assert
+        result.IsValid.Should().BeFalse();
+        result.Errors.Should().Contain(e => e.PropertyName == "Items" && e.ErrorMessage.Contains("100"));
+    }
+
+    [Fact]
+    public async Task HandleAsync_TransactionRollback_OnFailure()
+    {
+        // Arrange
+        AddItemsBulk.Request request = new(
+            CategoryId: "geography",
+            SubcategoryId: "europe",
+            Visibility: "global",
+            Items: new List<AddItemsBulk.ItemRequest>
+            {
+                new("What is the capital of France?", "Paris", new List<string> { "Lyon" }, "Valid"),
+            });
+
+        // Simulate database error by disposing context
+        _dbContext.Dispose();
+
+        // Act
+        Result<AddItemsBulk.Response> result = await AddItemsBulkHandler.HandleAsync(
+            request,
+            _dbContext,
+            _simHashService,
+            CancellationToken.None);
+
+        // Assert
+        result.IsFailure.Should().BeTrue();
+    }
+
+    public void Dispose()
+    {
+        _dbContext?.Dispose();
+    }
+}
+

@@ -1,0 +1,79 @@
+using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Metadata.Builders;
+using Quizymode.Api.Shared.Models;
+
+namespace Quizymode.Api.Data.Configurations;
+
+internal sealed class ItemConfiguration : IEntityTypeConfiguration<Item>
+{
+    public void Configure(EntityTypeBuilder<Item> builder)
+    {
+        builder.ToTable("items");
+
+        builder.HasKey(x => x.Id);
+
+        builder.Property(x => x.Id)
+            .HasDefaultValueSql("gen_random_uuid()");
+
+        builder.Property(x => x.CategoryId)
+            .IsRequired()
+            .HasMaxLength(100);
+
+        builder.Property(x => x.SubcategoryId)
+            .IsRequired()
+            .HasMaxLength(100);
+
+        builder.Property(x => x.Visibility)
+            .IsRequired()
+            .HasMaxLength(20)
+            .HasDefaultValue("global");
+
+        builder.Property(x => x.Question)
+            .IsRequired()
+            .HasMaxLength(1000);
+
+        builder.Property(x => x.CorrectAnswer)
+            .IsRequired()
+            .HasMaxLength(500);
+
+        // Map List<string> to JSONB column
+        // EF Core with Npgsql requires explicit conversion for JSONB
+        builder.Property(x => x.IncorrectAnswers)
+            .HasColumnType("jsonb")
+            .HasConversion(
+                v => System.Text.Json.JsonSerializer.Serialize(v, (System.Text.Json.JsonSerializerOptions?)null!),
+                v => System.Text.Json.JsonSerializer.Deserialize<List<string>>(v, (System.Text.Json.JsonSerializerOptions?)null!) ?? new List<string>(),
+                new Microsoft.EntityFrameworkCore.ChangeTracking.ValueComparer<List<string>>(
+                    (c1, c2) => c1 != null && c2 != null && c1.SequenceEqual(c2),
+                    c => c.Aggregate(0, (a, v) => HashCode.Combine(a, v.GetHashCode())),
+                    c => c.ToList()))
+            .IsRequired();
+
+        builder.Property(x => x.Explanation)
+            .HasMaxLength(2000);
+
+        builder.Property(x => x.FuzzySignature)
+            .HasMaxLength(64);
+
+        builder.Property(x => x.FuzzyBucket)
+            .IsRequired();
+
+        builder.Property(x => x.CreatedBy)
+            .IsRequired()
+            .HasMaxLength(100);
+
+        builder.Property(x => x.CreatedAt)
+            .IsRequired();
+
+        // Add check constraint for incorrect answers array length (0-4 items)
+        builder.ToTable(t => t.HasCheckConstraint(
+            "CK_Items_IncorrectAnswers_Length",
+            "jsonb_array_length(\"IncorrectAnswers\"::jsonb) >= 0 AND jsonb_array_length(\"IncorrectAnswers\"::jsonb) <= 4"));
+
+        // Indexes for common queries
+        builder.HasIndex(x => new { x.CategoryId, x.SubcategoryId });
+        builder.HasIndex(x => x.FuzzyBucket);
+        builder.HasIndex(x => x.CreatedAt);
+    }
+}
+

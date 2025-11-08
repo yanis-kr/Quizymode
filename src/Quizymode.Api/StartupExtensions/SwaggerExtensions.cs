@@ -14,7 +14,7 @@ internal static partial class StartupExtensions
             //{
             //    Title = "QuizyMode API",
             //    Version = "v1",
-            //    Description = "An API for quiz collections and items"
+            //    Description = "An API for managing quiz items"
             //});
 
             //// JWT security example (optional)

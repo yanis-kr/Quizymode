@@ -13,7 +13,7 @@ internal static partial class StartupExtensions
         builder.AddSwaggerServices();
         builder.AddHealthCheckServices();
         builder.AddCorsServices();
-        builder.AddMongoDbServices();
+        builder.AddPostgreSqlServices();
         builder.AddCustomServices();
         
         // Auto-discover and register all features
