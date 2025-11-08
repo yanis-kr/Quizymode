@@ -13,6 +13,7 @@ FROM mcr.microsoft.com/dotnet/sdk:9.0 AS build
 ARG BUILD_CONFIGURATION=Release
 WORKDIR /src
 COPY ["src/Quizymode.Api/Quizymode.Api.csproj", "Quizymode.Api/"]
+COPY ["src/Quizymode.Api.ServiceDefaults/Quizymode.ServiceDefaults.csproj", "Quizymode.Api.ServiceDefaults/"]
 RUN dotnet restore "./Quizymode.Api/Quizymode.Api.csproj"
 COPY . .
 WORKDIR "/src/Quizymode.Api"
