@@ -12,11 +12,12 @@ EXPOSE 8081
 FROM mcr.microsoft.com/dotnet/sdk:9.0 AS build
 ARG BUILD_CONFIGURATION=Release
 WORKDIR /src
-COPY ["Quizymode.Api/Quizymode.Api.csproj", "Quizymode.Api/"]
+COPY ["src/Quizymode.Api/Quizymode.Api.csproj", "Quizymode.Api/"]
+COPY ["src/Quizymode.Api.ServiceDefaults/Quizymode.ServiceDefaults.csproj", "Quizymode.Api.ServiceDefaults/"]
 RUN dotnet restore "./Quizymode.Api/Quizymode.Api.csproj"
-COPY . .
+COPY src/Quizymode.Api/. ./Quizymode.Api/
+COPY src/Quizymode.Api.ServiceDefaults/. ./Quizymode.Api.ServiceDefaults/
 WORKDIR "/src/Quizymode.Api"
-RUN dotnet build "./Quizymode.Api.csproj" -c $BUILD_CONFIGURATION -o /app/build
 
 # This stage is used to publish the service project to be copied to the final stage
 FROM build AS publish
