@@ -52,7 +52,7 @@ jobs:
         if: github.event_name != 'push' || github.ref != 'refs/heads/main'
         uses: docker/build-push-action@v6
         with:
-          context: ./src/Quizymode.Api
+          context: .
           file: ./src/Quizymode.Api/Dockerfile
           push: false
           tags: ${{ steps.meta.outputs.image }}:ci-${{ github.run_number }}
@@ -61,7 +61,7 @@ jobs:
         if: github.event_name == 'push' && github.ref == 'refs/heads/main'
         uses: docker/build-push-action@v6
         with:
-          context: ./src/Quizymode.Api
+          context: .
           file: ./src/Quizymode.Api/Dockerfile
           push: true
           tags: |
