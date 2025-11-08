@@ -17,7 +17,6 @@ COPY ["src/Quizymode.Api.ServiceDefaults/Quizymode.ServiceDefaults.csproj", "Qui
 RUN dotnet restore "./Quizymode.Api/Quizymode.Api.csproj"
 COPY . .
 WORKDIR "/src/Quizymode.Api"
-RUN dotnet build "./Quizymode.Api.csproj" -c $BUILD_CONFIGURATION -o /app/build
 
 # This stage is used to publish the service project to be copied to the final stage
 FROM build AS publish
