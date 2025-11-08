@@ -12,7 +12,7 @@ EXPOSE 8081
 FROM mcr.microsoft.com/dotnet/sdk:9.0 AS build
 ARG BUILD_CONFIGURATION=Release
 WORKDIR /src
-COPY ["Quizymode.Api/Quizymode.Api.csproj", "Quizymode.Api/"]
+COPY ["src/Quizymode.Api/Quizymode.Api.csproj", "Quizymode.Api/"]
 RUN dotnet restore "./Quizymode.Api/Quizymode.Api.csproj"
 COPY . .
 WORKDIR "/src/Quizymode.Api"
