@@ -1,5 +1,4 @@
 using FluentValidation;
-using MongoDB.Driver;
 using Quizymode.Api.Data;
 using Quizymode.Api.Features;
 using Quizymode.Api.Infrastructure;
@@ -89,7 +88,7 @@ public static class AddItem
         private static async Task<IResult> Handler(
             Request request,
             IValidator<Request> validator,
-            MongoDbContext db,
+            ApplicationDbContext db,
             ISimHashService simHashService,
             CancellationToken cancellationToken)
         {
@@ -99,60 +98,11 @@ public static class AddItem
                 return Results.BadRequest(validationResult.Errors);
             }
 
-            Result<Response> result = await HandleAsync(request, db, simHashService, cancellationToken);
+            Result<Response> result = await AddItemHandler.HandleAsync(request, db, simHashService, cancellationToken);
 
             return result.Match(
                 value => Results.Created($"/api/items/{value.Id}", value),
                 error => CustomResults.Problem(result));
-        }
-
-        internal static async Task<Result<Response>> HandleAsync(
-            Request request,
-            MongoDbContext db,
-            ISimHashService simHashService,
-            CancellationToken cancellationToken)
-        {
-            try
-            {
-                var questionText = $"{request.Question} {request.CorrectAnswer} {string.Join(" ", request.IncorrectAnswers)}";
-                var fuzzySignature = simHashService.ComputeSimHash(questionText);
-                var fuzzyBucket = simHashService.GetFuzzyBucket(fuzzySignature);
-
-                var item = new ItemModel
-                {
-                    CategoryId = request.CategoryId,
-                    SubcategoryId = request.SubcategoryId,
-                    Visibility = request.Visibility,
-                    Question = request.Question,
-                    CorrectAnswer = request.CorrectAnswer,
-                    IncorrectAnswers = request.IncorrectAnswers,
-                    Explanation = request.Explanation,
-                    FuzzySignature = fuzzySignature,
-                    FuzzyBucket = fuzzyBucket,
-                    CreatedBy = "dev_user", // TODO: Get from auth context
-                    CreatedAt = DateTime.UtcNow
-                };
-
-                await db.Items.InsertOneAsync(item, cancellationToken: cancellationToken);
-
-                var response = new Response(
-                    item.Id,
-                    item.CategoryId,
-                    item.SubcategoryId,
-                    item.Visibility,
-                    item.Question,
-                    item.CorrectAnswer,
-                    item.IncorrectAnswers,
-                    item.Explanation,
-                    item.CreatedAt);
-
-                return Result.Success(response);
-            }
-            catch (Exception ex)
-            {
-                return Result.Failure<Response>(
-                    Error.Problem("Item.CreateFailed", $"Failed to create item: {ex.Message}"));
-            }
         }
     }
 

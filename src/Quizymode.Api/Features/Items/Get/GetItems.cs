@@ -1,4 +1,4 @@
-using MongoDB.Driver;
+using Microsoft.EntityFrameworkCore;
 using Quizymode.Api.Data;
 using Quizymode.Api.Features;
 using Quizymode.Api.Infrastructure;
@@ -50,7 +50,7 @@ public static class GetItems
             string? subcategoryId,
             int page = 1,
             int pageSize = 10,
-            MongoDbContext db = null!,
+            ApplicationDbContext db = null!,
             CancellationToken cancellationToken = default)
         {
             if (page < 1)
@@ -64,62 +64,11 @@ public static class GetItems
             }
 
             var request = new QueryRequest(categoryId, subcategoryId, page, pageSize);
-            Result<Response> result = await HandleAsync(request, db, cancellationToken);
+            Result<Response> result = await GetItemsHandler.HandleAsync(request, db, cancellationToken);
 
             return result.Match(
                 value => Results.Ok(value),
                 error => CustomResults.Problem(result));
-        }
-
-        internal static async Task<Result<Response>> HandleAsync(
-            QueryRequest request,
-            MongoDbContext db,
-            CancellationToken cancellationToken)
-        {
-            try
-            {
-                var filter = Builders<ItemModel>.Filter.Empty;
-
-                if (!string.IsNullOrEmpty(request.CategoryId))
-                {
-                    filter &= Builders<ItemModel>.Filter.Eq(i => i.CategoryId, request.CategoryId);
-                }
-
-                if (!string.IsNullOrEmpty(request.SubcategoryId))
-                {
-                    filter &= Builders<ItemModel>.Filter.Eq(i => i.SubcategoryId, request.SubcategoryId);
-                }
-
-                var totalCount = await db.Items.CountDocumentsAsync(filter, cancellationToken: cancellationToken);
-                var items = await db.Items
-                    .Find(filter)
-                    .Skip((request.Page - 1) * request.PageSize)
-                    .Limit(request.PageSize)
-                    .ToListAsync(cancellationToken);
-
-                var response = new Response(
-                    items.Select(i => new ItemResponse(
-                        i.Id,
-                        i.CategoryId,
-                        i.SubcategoryId,
-                        i.Visibility,
-                        i.Question,
-                        i.CorrectAnswer,
-                        i.IncorrectAnswers,
-                        i.Explanation,
-                        i.CreatedAt)).ToList(),
-                    (int)totalCount,
-                    request.Page,
-                    request.PageSize,
-                    (int)Math.Ceiling((double)totalCount / request.PageSize));
-
-                return Result.Success(response);
-            }
-            catch (Exception ex)
-            {
-                return Result.Failure<Response>(
-                    Error.Problem("Items.GetFailed", $"Failed to get items: {ex.Message}"));
-            }
         }
     }
 
