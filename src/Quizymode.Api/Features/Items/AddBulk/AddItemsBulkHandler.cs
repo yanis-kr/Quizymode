@@ -66,7 +66,7 @@ internal static class AddItemsBulkHandler
                         Id = Guid.NewGuid(),
                         CategoryId = request.CategoryId,
                         SubcategoryId = request.SubcategoryId,
-                        Visibility = request.Visibility,
+                        IsPrivate = request.IsPrivate,
                         Question = itemRequest.Question,
                         CorrectAnswer = itemRequest.CorrectAnswer,
                         IncorrectAnswers = itemRequest.IncorrectAnswers,

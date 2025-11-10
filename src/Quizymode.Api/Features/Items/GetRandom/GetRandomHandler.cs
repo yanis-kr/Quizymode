@@ -82,7 +82,7 @@ internal static class GetRandomHandler
                     i.Id.ToString(),
                     i.CategoryId,
                     i.SubcategoryId,
-                    i.Visibility,
+                    i.IsPrivate,
                     i.Question,
                     i.CorrectAnswer,
                     i.IncorrectAnswers,

@@ -8,7 +8,7 @@ public sealed class Item
 
     public string SubcategoryId { get; set; } = string.Empty;
 
-    public string Visibility { get; set; } = "global"; // "global" | "private"
+    public bool IsPrivate { get; set; }
 
     public string Question { get; set; } = string.Empty;
 

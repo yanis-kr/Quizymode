@@ -20,7 +20,7 @@ public static class AddItemsBulk
     public sealed record Request(
         string CategoryId,
         string SubcategoryId,
-        string Visibility,
+        bool IsPrivate,
         List<ItemRequest> Items);
 
     public sealed record Response(
@@ -47,10 +47,6 @@ public static class AddItemsBulk
             RuleFor(x => x.SubcategoryId)
                 .NotEmpty()
                 .WithMessage("SubcategoryId is required");
-
-            RuleFor(x => x.Visibility)
-                .Must(v => v == "global" || v == "private")
-                .WithMessage("Visibility must be either 'global' or 'private'");
 
             RuleFor(x => x.Items)
                 .NotNull()

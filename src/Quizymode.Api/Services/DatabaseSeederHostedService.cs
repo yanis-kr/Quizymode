@@ -1,28 +1,24 @@
 using System.Text.Json;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Options;
 using Quizymode.Api.Data;
 using Quizymode.Api.Shared.Models;
+using Quizymode.Api.Shared.Options;
 
 namespace Quizymode.Api.Services;
 
-public sealed class DatabaseSeederHostedService : IHostedService
+internal sealed class DatabaseSeederHostedService(
+    ILogger<DatabaseSeederHostedService> logger,
+    IServiceProvider serviceProvider,
+    ISimHashService simHashService,
+    IWebHostEnvironment environment,
+    IOptions<SeedOptions> seedOptions) : IHostedService
 {
-    private readonly ILogger<DatabaseSeederHostedService> _logger;
-    private readonly IServiceProvider _serviceProvider;
-    private readonly ISimHashService _simHashService;
-    private readonly IWebHostEnvironment _environment;
-
-    public DatabaseSeederHostedService(
-        ILogger<DatabaseSeederHostedService> logger,
-        IServiceProvider serviceProvider,
-        ISimHashService simHashService,
-        IWebHostEnvironment environment)
-    {
-        _logger = logger;
-        _serviceProvider = serviceProvider;
-        _simHashService = simHashService;
-        _environment = environment;
-    }
+    private readonly ILogger<DatabaseSeederHostedService> _logger = logger;
+    private readonly IServiceProvider _serviceProvider = serviceProvider;
+    private readonly ISimHashService _simHashService = simHashService;
+    private readonly IWebHostEnvironment _environment = environment;
+    private readonly SeedOptions _seedOptions = seedOptions.Value;
 
     public async Task StartAsync(CancellationToken cancellationToken)
     {
@@ -77,11 +73,27 @@ public sealed class DatabaseSeederHostedService : IHostedService
             {
                 _logger.LogInformation("Seeding initial data from JSON files...");
 
-                string seedPath = Path.Combine(_environment.ContentRootPath, "Data", "Seed");
-                
+                if (string.IsNullOrWhiteSpace(_seedOptions.Path))
+                {
+                    _logger.LogWarning("Seed path is not configured. Skipping database seeding.");
+                    return;
+                }
+
+                string configuredSeedPath = _seedOptions.Path;
+                if (!Path.IsPathRooted(configuredSeedPath))
+                {
+                    configuredSeedPath = Path.GetFullPath(Path.Combine(_environment.ContentRootPath, configuredSeedPath));
+                }
+
+                if (!Directory.Exists(configuredSeedPath))
+                {
+                    _logger.LogWarning("Seed path {SeedPath} does not exist. Skipping database seeding.", configuredSeedPath);
+                    return;
+                }
+
                 // Load items from JSON files
                 // Files are named like: items-{categoryId}-{subcategoryId}.json
-                string[] itemFiles = Directory.GetFiles(seedPath, "items-*.json");
+                string[] itemFiles = Directory.GetFiles(configuredSeedPath, "items-*.json");
 
                 foreach (string itemsFile in itemFiles)
                 {
@@ -105,7 +117,7 @@ public sealed class DatabaseSeederHostedService : IHostedService
                                 Id = Guid.NewGuid(),
                                 CategoryId = itemsData.CategoryId,
                                 SubcategoryId = itemsData.SubcategoryId,
-                                Visibility = itemsData.Visibility,
+                                IsPrivate = itemsData.IsPrivate,
                                 Question = itemData.Question,
                                 CorrectAnswer = itemData.CorrectAnswer,
                                 IncorrectAnswers = itemData.IncorrectAnswers,
@@ -157,7 +169,7 @@ internal sealed class ItemsSeedData
 {
     public string CategoryId { get; set; } = string.Empty;
     public string SubcategoryId { get; set; } = string.Empty;
-    public string Visibility { get; set; } = "global";
+    public bool IsPrivate { get; set; }
     public List<ItemSeedData> Items { get; set; } = new();
 }
 

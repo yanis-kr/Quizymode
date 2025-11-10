@@ -1,12 +1,11 @@
 using Serilog;
-using Serilog.Events;
 using Serilog.Sinks.SystemConsole.Themes;
 
 namespace Quizymode.Api.StartupExtensions;
 
 internal static partial class StartupExtensions
 {
-    public static WebApplicationBuilder AddLoggingServices(this WebApplicationBuilder builder)
+    internal static WebApplicationBuilder AddLoggingServices(this WebApplicationBuilder builder)
     {
         builder.Host.UseSerilog((context, configuration) =>
         {
@@ -19,5 +18,18 @@ internal static partial class StartupExtensions
         });
 
         return builder;
+    }
+
+    /// <summary>
+    /// Use this method at the very start of the application to log startup information.
+    /// </summary>
+    internal static void StartupLogger()
+    {
+        Log.Logger = new LoggerConfiguration()
+            .MinimumLevel.Debug()
+            .WriteTo.Console()
+            .CreateLogger();
+
+        Log.Information("Starting QuizyMode Web API");
     }
 }

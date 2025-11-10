@@ -33,7 +33,7 @@ public sealed class AddItemTests : IDisposable
         AddItem.Request request = new(
             CategoryId: "geography",
             SubcategoryId: "europe",
-            Visibility: "global",
+            IsPrivate: false,
             Question: "What is the capital of France?",
             CorrectAnswer: "Paris",
             IncorrectAnswers: new List<string> { "Lyon", "Marseille", "Nice" },
@@ -69,7 +69,7 @@ public sealed class AddItemTests : IDisposable
             Id = Guid.NewGuid(),
             CategoryId = "geography",
             SubcategoryId = "europe",
-            Visibility = "global",
+            IsPrivate = false,
             Question = "What is the capital of France?",
             CorrectAnswer = "Paris",
             IncorrectAnswers = new List<string> { "Lyon", "Marseille" },
@@ -86,7 +86,7 @@ public sealed class AddItemTests : IDisposable
         AddItem.Request request = new(
             CategoryId: "geography",
             SubcategoryId: "europe",
-            Visibility: "global",
+            IsPrivate: false,
             Question: "What is the capital of France?",
             CorrectAnswer: "Paris",
             IncorrectAnswers: new List<string> { "Lyon", "Marseille", "Nice" },
@@ -113,7 +113,7 @@ public sealed class AddItemTests : IDisposable
         AddItem.Request request = new(
             CategoryId: "",
             SubcategoryId: "europe",
-            Visibility: "global",
+            IsPrivate: false,
             Question: "What is the capital of France?",
             CorrectAnswer: "Paris",
             IncorrectAnswers: new List<string> { "Lyon" },
@@ -130,36 +130,13 @@ public sealed class AddItemTests : IDisposable
     }
 
     [Fact]
-    public void Validator_InvalidVisibility_ReturnsError()
-    {
-        // Arrange
-        AddItem.Request request = new(
-            CategoryId: "geography",
-            SubcategoryId: "europe",
-            Visibility: "invalid",
-            Question: "What is the capital of France?",
-            CorrectAnswer: "Paris",
-            IncorrectAnswers: new List<string> { "Lyon" },
-            Explanation: "");
-
-        AddItem.Validator validator = new();
-
-        // Act
-        FluentValidation.Results.ValidationResult result = validator.Validate(request);
-
-        // Assert
-        result.IsValid.Should().BeFalse();
-        result.Errors.Should().Contain(e => e.PropertyName == "Visibility");
-    }
-
-    [Fact]
     public void Validator_TooManyIncorrectAnswers_ReturnsError()
     {
         // Arrange
         AddItem.Request request = new(
             CategoryId: "geography",
             SubcategoryId: "europe",
-            Visibility: "global",
+            IsPrivate: false,
             Question: "What is the capital of France?",
             CorrectAnswer: "Paris",
             IncorrectAnswers: new List<string> { "Lyon", "Marseille", "Nice", "Toulouse", "Bordeaux" }, // 5 items
