@@ -19,7 +19,7 @@ public static class GetRandom
         string Id,
         string CategoryId,
         string SubcategoryId,
-        string Visibility,
+        bool IsPrivate,
         string Question,
         string CorrectAnswer,
         List<string> IncorrectAnswers,

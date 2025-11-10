@@ -13,7 +13,7 @@ public static class AddItem
     public sealed record Request(
         string CategoryId,
         string SubcategoryId,
-        string Visibility,
+        bool IsPrivate,
         string Question,
         string CorrectAnswer,
         List<string> IncorrectAnswers,
@@ -23,7 +23,7 @@ public static class AddItem
         string Id,
         string CategoryId,
         string SubcategoryId,
-        string Visibility,
+        bool IsPrivate,
         string Question,
         string CorrectAnswer,
         List<string> IncorrectAnswers,
@@ -41,10 +41,6 @@ public static class AddItem
             RuleFor(x => x.SubcategoryId)
                 .NotEmpty()
                 .WithMessage("SubcategoryId is required");
-
-            RuleFor(x => x.Visibility)
-                .Must(v => v == "global" || v == "private")
-                .WithMessage("Visibility must be either 'global' or 'private'");
 
             RuleFor(x => x.Question)
                 .NotEmpty()

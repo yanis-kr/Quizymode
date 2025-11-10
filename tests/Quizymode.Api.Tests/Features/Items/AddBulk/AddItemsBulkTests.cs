@@ -33,7 +33,7 @@ public sealed class AddItemsBulkTests : IDisposable
         AddItemsBulk.Request request = new(
             CategoryId: "geography",
             SubcategoryId: "europe",
-            Visibility: "global",
+            IsPrivate: false,
             Items: new List<AddItemsBulk.ItemRequest>
             {
                 new("What is the capital of France?", "Paris", new List<string> { "Lyon", "Marseille" }, "Paris is the capital"),
@@ -68,7 +68,7 @@ public sealed class AddItemsBulkTests : IDisposable
             Id = Guid.NewGuid(),
             CategoryId = "geography",
             SubcategoryId = "europe",
-            Visibility = "global",
+            IsPrivate = false,
             Question = "What is the capital of France?",
             CorrectAnswer = "Paris",
             IncorrectAnswers = new List<string> { "Lyon", "Marseille" },
@@ -85,7 +85,7 @@ public sealed class AddItemsBulkTests : IDisposable
         AddItemsBulk.Request request = new(
             CategoryId: "geography",
             SubcategoryId: "europe",
-            Visibility: "global",
+            IsPrivate: false,
             Items: new List<AddItemsBulk.ItemRequest>
             {
                 new("What is the capital of France?", "Paris", new List<string> { "Lyon", "Marseille" }, "Duplicate"),
@@ -113,7 +113,7 @@ public sealed class AddItemsBulkTests : IDisposable
         AddItemsBulk.Request request = new(
             CategoryId: "geography",
             SubcategoryId: "europe",
-            Visibility: "global",
+            IsPrivate: false,
             Items: new List<AddItemsBulk.ItemRequest>());
 
         AddItemsBulk.Validator validator = new();
@@ -141,7 +141,7 @@ public sealed class AddItemsBulkTests : IDisposable
         AddItemsBulk.Request request = new(
             CategoryId: "geography",
             SubcategoryId: "europe",
-            Visibility: "global",
+            IsPrivate: false,
             Items: items);
 
         AddItemsBulk.Validator validator = new();
@@ -161,7 +161,7 @@ public sealed class AddItemsBulkTests : IDisposable
         AddItemsBulk.Request request = new(
             CategoryId: "geography",
             SubcategoryId: "europe",
-            Visibility: "global",
+            IsPrivate: false,
             Items: new List<AddItemsBulk.ItemRequest>
             {
                 new("What is the capital of France?", "Paris", new List<string> { "Lyon" }, "Valid"),

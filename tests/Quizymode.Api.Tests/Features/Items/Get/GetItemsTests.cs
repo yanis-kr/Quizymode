@@ -28,8 +28,8 @@ public sealed class GetItemsTests : IDisposable
         // Arrange
         _dbContext.Items.AddRange(new[]
         {
-            new Item { Id = Guid.NewGuid(), CategoryId = "geography", SubcategoryId = "europe", Visibility = "global", Question = "Q1", CorrectAnswer = "A1", IncorrectAnswers = new List<string>(), Explanation = "", FuzzySignature = "ABC", FuzzyBucket = 1, CreatedBy = "test", CreatedAt = DateTime.UtcNow },
-            new Item { Id = Guid.NewGuid(), CategoryId = "geography", SubcategoryId = "europe", Visibility = "global", Question = "Q2", CorrectAnswer = "A2", IncorrectAnswers = new List<string>(), Explanation = "", FuzzySignature = "DEF", FuzzyBucket = 2, CreatedBy = "test", CreatedAt = DateTime.UtcNow }
+            new Item { Id = Guid.NewGuid(), CategoryId = "geography", SubcategoryId = "europe", IsPrivate = false, Question = "Q1", CorrectAnswer = "A1", IncorrectAnswers = new List<string>(), Explanation = "", FuzzySignature = "ABC", FuzzyBucket = 1, CreatedBy = "test", CreatedAt = DateTime.UtcNow },
+            new Item { Id = Guid.NewGuid(), CategoryId = "geography", SubcategoryId = "europe", IsPrivate = false, Question = "Q2", CorrectAnswer = "A2", IncorrectAnswers = new List<string>(), Explanation = "", FuzzySignature = "DEF", FuzzyBucket = 2, CreatedBy = "test", CreatedAt = DateTime.UtcNow }
         });
         await _dbContext.SaveChangesAsync();
 
@@ -50,8 +50,8 @@ public sealed class GetItemsTests : IDisposable
         // Arrange
         _dbContext.Items.AddRange(new[]
         {
-            new Item { Id = Guid.NewGuid(), CategoryId = "geography", SubcategoryId = "europe", Visibility = "global", Question = "Q1", CorrectAnswer = "A1", IncorrectAnswers = new List<string>(), Explanation = "", FuzzySignature = "ABC", FuzzyBucket = 1, CreatedBy = "test", CreatedAt = DateTime.UtcNow },
-            new Item { Id = Guid.NewGuid(), CategoryId = "history", SubcategoryId = "europe", Visibility = "global", Question = "Q2", CorrectAnswer = "A2", IncorrectAnswers = new List<string>(), Explanation = "", FuzzySignature = "DEF", FuzzyBucket = 2, CreatedBy = "test", CreatedAt = DateTime.UtcNow }
+            new Item { Id = Guid.NewGuid(), CategoryId = "geography", SubcategoryId = "europe", IsPrivate = false, Question = "Q1", CorrectAnswer = "A1", IncorrectAnswers = new List<string>(), Explanation = "", FuzzySignature = "ABC", FuzzyBucket = 1, CreatedBy = "test", CreatedAt = DateTime.UtcNow },
+            new Item { Id = Guid.NewGuid(), CategoryId = "history", SubcategoryId = "europe", IsPrivate = false, Question = "Q2", CorrectAnswer = "A2", IncorrectAnswers = new List<string>(), Explanation = "", FuzzySignature = "DEF", FuzzyBucket = 2, CreatedBy = "test", CreatedAt = DateTime.UtcNow }
         });
         await _dbContext.SaveChangesAsync();
 
@@ -76,7 +76,7 @@ public sealed class GetItemsTests : IDisposable
                 Id = Guid.NewGuid(),
                 CategoryId = "geography",
                 SubcategoryId = "europe",
-                Visibility = "global",
+                IsPrivate = false,
                 Question = $"Q{i}",
                 CorrectAnswer = $"A{i}",
                 IncorrectAnswers = new List<string>(),

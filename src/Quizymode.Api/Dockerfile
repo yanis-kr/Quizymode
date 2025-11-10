@@ -28,4 +28,5 @@ RUN dotnet publish "./Quizymode.Api.csproj" -c $BUILD_CONFIGURATION -o /app/publ
 FROM base AS final
 WORKDIR /app
 COPY --from=publish /app/publish .
+ENV APP_SEED__PATH=data/seed
 ENTRYPOINT ["dotnet", "Quizymode.Api.dll"]

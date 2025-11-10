@@ -26,7 +26,7 @@ public static class GetItems
         string Id,
         string CategoryId,
         string SubcategoryId,
-        string Visibility,
+        bool IsPrivate,
         string Question,
         string CorrectAnswer,
         List<string> IncorrectAnswers,

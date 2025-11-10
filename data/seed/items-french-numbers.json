@@ -1,7 +1,7 @@
 {
   "categoryId": "french",
   "subcategoryId": "numbers",
-  "visibility": "global",
+  "isPrivate": false,
   "items": [
     {
       "question": "What is the French word for 'one'?",

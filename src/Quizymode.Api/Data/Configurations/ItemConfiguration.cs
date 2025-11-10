@@ -23,10 +23,9 @@ internal sealed class ItemConfiguration : IEntityTypeConfiguration<Item>
             .IsRequired()
             .HasMaxLength(100);
 
-        builder.Property(x => x.Visibility)
+        builder.Property(x => x.IsPrivate)
             .IsRequired()
-            .HasMaxLength(20)
-            .HasDefaultValue("global");
+            .HasDefaultValue(false);
 
         builder.Property(x => x.Question)
             .IsRequired()
