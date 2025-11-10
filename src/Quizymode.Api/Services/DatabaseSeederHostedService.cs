@@ -79,21 +79,18 @@ internal sealed class DatabaseSeederHostedService(
                     return;
                 }
 
-                string configuredSeedPath = _seedOptions.Path;
-                if (!Path.IsPathRooted(configuredSeedPath))
+                string? resolvedSeedPath = ResolveSeedPath(_seedOptions.Path);
+                if (resolvedSeedPath is null)
                 {
-                    configuredSeedPath = Path.GetFullPath(Path.Combine(_environment.ContentRootPath, configuredSeedPath));
-                }
-
-                if (!Directory.Exists(configuredSeedPath))
-                {
-                    _logger.LogWarning("Seed path {SeedPath} does not exist. Skipping database seeding.", configuredSeedPath);
+                    _logger.LogWarning("Seed path {SeedPath} does not exist. Skipping database seeding.", _seedOptions.Path);
                     return;
                 }
+                
+                _logger.LogInformation("Using seed path {SeedPath}", resolvedSeedPath);
 
                 // Load items from JSON files
                 // Files are named like: items-{categoryId}-{subcategoryId}.json
-                string[] itemFiles = Directory.GetFiles(configuredSeedPath, "items-*.json");
+                string[] itemFiles = Directory.GetFiles(resolvedSeedPath, "items-*.json");
 
                 foreach (string itemsFile in itemFiles)
                 {
@@ -162,6 +159,39 @@ internal sealed class DatabaseSeederHostedService(
     }
 
     public Task StopAsync(CancellationToken cancellationToken) => Task.CompletedTask;
+
+    private string? ResolveSeedPath(string configuredSeedPath)
+    {
+        if (string.IsNullOrWhiteSpace(configuredSeedPath))
+        {
+            return null;
+        }
+
+        if (Path.IsPathRooted(configuredSeedPath))
+        {
+            return Directory.Exists(configuredSeedPath) ? configuredSeedPath : null;
+        }
+
+        string candidatePath = Path.GetFullPath(Path.Combine(_environment.ContentRootPath, configuredSeedPath));
+        if (Directory.Exists(candidatePath))
+        {
+            return candidatePath;
+        }
+
+        DirectoryInfo? current = Directory.GetParent(_environment.ContentRootPath);
+        while (current is not null)
+        {
+            candidatePath = Path.GetFullPath(Path.Combine(current.FullName, configuredSeedPath));
+            if (Directory.Exists(candidatePath))
+            {
+                return candidatePath;
+            }
+
+            current = current.Parent;
+        }
+
+        return null;
+    }
 }
 
 // Seed data models for JSON deserialization
