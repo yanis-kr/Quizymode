@@ -1,5 +1,3 @@
-using Quizymode.Api.StartupExtensions;
-
 namespace Quizymode.Api.StartupExtensions;
 
 internal static partial class StartupExtensions
@@ -11,6 +9,7 @@ internal static partial class StartupExtensions
         builder.AddServiceDefaults();
         builder.AddLoggingServices();
         builder.AddSwaggerServices();
+        builder.AddAuthenticationServices();
         builder.AddHealthCheckServices();
         builder.AddCorsServices();
         builder.AddPostgreSqlServices();
@@ -37,6 +36,8 @@ internal static partial class StartupExtensions
         }
 
         app.UseHttpsRedirection();
+        app.UseAuthentication();
+        app.UseAuthorization();
         app.UseCors("AllowAll");
         app.MapDefaultEndpoints();
         app.MapHealthChecks("/health");

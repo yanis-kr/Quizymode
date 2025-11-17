@@ -112,8 +112,8 @@ internal sealed class DatabaseSeederHostedService(
                             Item item = new Item
                             {
                                 Id = Guid.NewGuid(),
-                                CategoryId = itemsData.CategoryId,
-                                SubcategoryId = itemsData.SubcategoryId,
+                                Category = itemsData.Category,
+                                Subcategory = itemsData.Subcategory,
                                 IsPrivate = itemsData.IsPrivate,
                                 Question = itemData.Question,
                                 CorrectAnswer = itemData.CorrectAnswer,
@@ -132,8 +132,8 @@ internal sealed class DatabaseSeederHostedService(
                         {
                             db.Items.AddRange(itemsToInsert);
                             await db.SaveChangesAsync(cancellationToken);
-                            _logger.LogInformation("Inserted {Count} items for {CategoryId}/{SubcategoryId}", 
-                                itemsToInsert.Count, itemsData.CategoryId, itemsData.SubcategoryId);
+                            _logger.LogInformation("Inserted {Count} items for {Category}/{Subcategory}", 
+                                itemsToInsert.Count, itemsData.Category, itemsData.Subcategory);
                         }
                     }
                 }
@@ -197,8 +197,8 @@ internal sealed class DatabaseSeederHostedService(
 // Seed data models for JSON deserialization
 internal sealed class ItemsSeedData
 {
-    public string CategoryId { get; set; } = string.Empty;
-    public string SubcategoryId { get; set; } = string.Empty;
+    public string Category { get; set; } = string.Empty;
+    public string Subcategory { get; set; } = string.Empty;
     public bool IsPrivate { get; set; }
     public List<ItemSeedData> Items { get; set; } = new();
 }

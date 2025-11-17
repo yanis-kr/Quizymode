@@ -12,6 +12,14 @@ public sealed class ApplicationDbContext : DbContext
 
     public DbSet<Item> Items => Set<Item>();
 
+    public DbSet<Request> Requests => Set<Request>();
+
+    public DbSet<Review> Reviews => Set<Review>();
+
+    public DbSet<Collection> Collections => Set<Collection>();
+
+    public DbSet<CollectionItem> CollectionItems => Set<CollectionItem>();
+
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         modelBuilder.ApplyConfigurationsFromAssembly(typeof(ApplicationDbContext).Assembly);

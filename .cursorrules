@@ -29,7 +29,7 @@
 - Prefer Guid for identifiers unless otherwise specified
 - Use `is null` checks instead of `== null`. The same goes for `is not null` and `!= null`.
 - Use Vertical Slices Architecture composition:
-  - All featureX code goes under Features/FeatureX (include endpoints, handlers, DTOs, mappings, validations)
+  - All featureX (aka Use Case) code goes under Features/FeatureX (include endpoints, handlers, DTOs, mappings, validations)
   - Shared code goes under /Shared, including shared domain objects and business logic.
   - Use Rich Domain Entities, Value objects and events.
 - Use CORS without MediatR
@@ -37,3 +37,4 @@
 - For validations use Fluent Validations
 - Keep common services under Services folder
 - Keep Program.cs small and move all services and pipeline setup under StartupExtensions folder
+- Dependency Injections required just by featureX should be declared under /Features/FeatureX; these registration classes can be inherited from IFeatureRegistration with method AddToServiceCollection(IServiceCollection services, IConfiguration configuration); on startup scoop the assembly to run all instances of this interface to register feature specific services.

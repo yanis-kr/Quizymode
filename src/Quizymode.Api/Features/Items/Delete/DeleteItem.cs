@@ -15,6 +15,7 @@ public static class DeleteItem
             app.MapDelete("items/{id}", Handler)
                 .WithTags("Items")
                 .WithSummary("Delete a quiz item")
+                .RequireAuthorization()
                 .WithOpenApi()
                 .Produces(StatusCodes.Status204NoContent)
                 .Produces(StatusCodes.Status404NotFound);

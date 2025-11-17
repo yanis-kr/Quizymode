@@ -4,9 +4,9 @@ public sealed class Item
 {
     public Guid Id { get; set; }
 
-    public string CategoryId { get; set; } = string.Empty;
+    public string Category { get; set; } = string.Empty;
 
-    public string SubcategoryId { get; set; } = string.Empty;
+    public string Subcategory { get; set; } = string.Empty;
 
     public bool IsPrivate { get; set; }
 

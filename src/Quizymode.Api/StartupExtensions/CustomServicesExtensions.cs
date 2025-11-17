@@ -17,6 +17,8 @@ internal static partial class StartupExtensions
         builder.Services.Configure<SeedOptions>(builder.Configuration.GetSection(SeedOptions.SectionName));
         // SimHashService is stateless, so it can be a singleton
         builder.Services.AddSingleton<ISimHashService, SimHashService>();
+        builder.Services.AddHttpContextAccessor();
+        builder.Services.AddScoped<IUserContext, UserContext>();
         return builder;
     }
 }
