@@ -40,7 +40,7 @@ internal static partial class StartupExtensions
         // Cloudflare terminates HTTPS at the edge and forwards traffic to the Lightsail
         // container over HTTP. If the application forces HTTPS redirection here, it will
         // redirect every HTTP request back to the HTTPS Cloudflare URL, which Cloudflare
-        // again forwards as HTTP — creating an infinite redirect loop (ERR_TOO_MANY_REDIRECTS).
+        // again forwards as HTTP ï¿½ creating an infinite redirect loop (ERR_TOO_MANY_REDIRECTS).
         //
         // In this deployment model, Cloudflare manages TLS, and the app should accept
         // HTTP from the reverse proxy without local HTTPS enforcement. If HTTPS is needed
@@ -53,7 +53,6 @@ internal static partial class StartupExtensions
         app.UseAuthorization();
         app.UseCors("AllowAll");
         app.MapDefaultEndpoints();
-        app.MapHealthChecks("/health");
         
         // Auto-discover and map all feature endpoints
         app.MapFeatureEndpoints();
