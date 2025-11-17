@@ -32,10 +32,14 @@ internal static partial class StartupExtensions
             .CreateLogger();
 
         Assembly assembly = Assembly.GetExecutingAssembly();
-        string version = assembly.GetCustomAttribute<AssemblyInformationalVersionAttribute>()?.InformationalVersion
-                        ?? assembly.GetName().Version?.ToString()
-                        ?? "Unknown";
+        string? fullVersion = assembly.GetCustomAttribute<AssemblyInformationalVersionAttribute>()?.InformationalVersion
+                             ?? assembly.GetName().Version?.ToString();
+        
+        // Extract version number only (remove commit hash after '+')
+        string version = fullVersion is not null && fullVersion.Contains('+')
+            ? fullVersion.Substring(0, fullVersion.IndexOf('+'))
+            : fullVersion ?? "Unknown";
 
-        Log.Information("Starting QuizyMode Web API v{Version}", version);
+        Log.Information("*** Starting QuizyMode Web API v{Version}", version);
     }
 }
