@@ -1,3 +1,5 @@
+using Microsoft.AspNetCore.HttpOverrides;
+
 namespace Quizymode.Api.StartupExtensions;
 
 internal static partial class StartupExtensions
@@ -12,6 +14,12 @@ internal static partial class StartupExtensions
         builder.AddAuthenticationServices();
         builder.AddHealthCheckServices();
         builder.AddCorsServices();
+        builder.Services.Configure<ForwardedHeadersOptions>(options =>
+        {
+            options.ForwardedHeaders = ForwardedHeaders.XForwardedFor | ForwardedHeaders.XForwardedProto;
+            options.KnownNetworks.Clear();
+            options.KnownProxies.Clear();
+        });
         builder.AddPostgreSqlServices();
         builder.AddCustomServices();
         
@@ -49,6 +57,7 @@ internal static partial class StartupExtensions
 
         //app.UseHttpsRedirection();
 
+        app.UseForwardedHeaders();
         app.UseAuthentication();
         app.UseAuthorization();
         app.UseCors("AllowAll");
