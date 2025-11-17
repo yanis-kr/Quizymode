@@ -12,14 +12,14 @@ namespace Quizymode.Api.Features.Items.AddBulk;
 public static class AddItemsBulk
 {
     public sealed record ItemRequest(
+        string Subcategory,
         string Question,
         string CorrectAnswer,
         List<string> IncorrectAnswers,
         string Explanation);
 
     public sealed record Request(
-        string CategoryId,
-        string SubcategoryId,
+        string Category,
         bool IsPrivate,
         List<ItemRequest> Items);
 
@@ -40,13 +40,9 @@ public static class AddItemsBulk
     {
         public Validator()
         {
-            RuleFor(x => x.CategoryId)
+            RuleFor(x => x.Category)
                 .NotEmpty()
-                .WithMessage("CategoryId is required");
-
-            RuleFor(x => x.SubcategoryId)
-                .NotEmpty()
-                .WithMessage("SubcategoryId is required");
+                .WithMessage("Category is required");
 
             RuleFor(x => x.Items)
                 .NotNull()
@@ -65,6 +61,10 @@ public static class AddItemsBulk
     {
         public ItemRequestValidator()
         {
+            RuleFor(x => x.Subcategory)
+                .NotEmpty()
+                .WithMessage("Subcategory is required");
+
             RuleFor(x => x.Question)
                 .NotEmpty()
                 .WithMessage("Question is required")
@@ -96,9 +96,11 @@ public static class AddItemsBulk
     {
         public void MapEndpoint(IEndpointRouteBuilder app)
         {
-            app.MapPost("items/bulk", Handler)
+            app.MapPost("bulk-items", Handler)
                 .WithTags("Items")
                 .WithSummary("Create multiple items in bulk")
+                .WithDescription("Creates many items in a single request. The root category applies to all items; each item specifies its own subcategory.")
+                .RequireAuthorization("Admin")
                 .WithOpenApi()
                 .Produces<Response>(StatusCodes.Status200OK)
                 .Produces(StatusCodes.Status400BadRequest);

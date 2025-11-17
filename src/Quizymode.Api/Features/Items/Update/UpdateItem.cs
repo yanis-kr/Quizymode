@@ -1,4 +1,5 @@
 using FluentValidation;
+using Microsoft.EntityFrameworkCore;
 using Quizymode.Api.Data;
 using Quizymode.Api.Features;
 using Quizymode.Api.Infrastructure;
@@ -6,18 +7,18 @@ using Quizymode.Api.Services;
 using Quizymode.Api.Shared.Kernel;
 using Quizymode.Api.Shared.Models;
 
-namespace Quizymode.Api.Features.Items.Add;
+namespace Quizymode.Api.Features.Items.Update;
 
-public static class AddItem
+public static class UpdateItem
 {
     public sealed record Request(
         string Category,
         string Subcategory,
-        bool IsPrivate,
         string Question,
         string CorrectAnswer,
         List<string> IncorrectAnswers,
-        string Explanation);
+        string Explanation,
+        bool IsPrivate);
 
     public sealed record Response(
         string Id,
@@ -73,21 +74,21 @@ public static class AddItem
     {
         public void MapEndpoint(IEndpointRouteBuilder app)
         {
-            app.MapPost("items", Handler)
+            app.MapPut("items/{id}", Handler)
                 .WithTags("Items")
-                .WithSummary("Create a new quiz item")
-                .RequireAuthorization()
+                .WithSummary("Update an existing quiz item")
                 .WithOpenApi()
-                .Produces<Response>(StatusCodes.Status201Created)
-                .Produces(StatusCodes.Status400BadRequest);
+                .Produces<Response>(StatusCodes.Status200OK)
+                .Produces(StatusCodes.Status400BadRequest)
+                .Produces(StatusCodes.Status404NotFound);
         }
 
         private static async Task<IResult> Handler(
+            string id,
             Request request,
             IValidator<Request> validator,
             ApplicationDbContext db,
             ISimHashService simHashService,
-            IUserContext userContext,
             CancellationToken cancellationToken)
         {
             var validationResult = await validator.ValidateAsync(request, cancellationToken);
@@ -96,11 +97,73 @@ public static class AddItem
                 return Results.BadRequest(validationResult.Errors);
             }
 
-            Result<Response> result = await AddItemHandler.HandleAsync(request, db, simHashService, userContext, cancellationToken);
+            Result<Response> result = await HandleAsync(id, request, db, simHashService, cancellationToken);
 
             return result.Match(
-                value => Results.Created($"/api/items/{value.Id}", value),
-                error => CustomResults.Problem(result));
+                value => Results.Ok(value),
+                failure => failure.Error.Type == ErrorType.NotFound
+                    ? Results.NotFound()
+                    : CustomResults.Problem(result));
+        }
+    }
+
+    public static async Task<Result<Response>> HandleAsync(
+        string id,
+        Request request,
+        ApplicationDbContext db,
+        ISimHashService simHashService,
+        CancellationToken cancellationToken)
+    {
+        try
+        {
+            if (!Guid.TryParse(id, out Guid itemId))
+            {
+                return Result.Failure<Response>(
+                    Error.Validation("Item.InvalidId", "Invalid item ID format"));
+            }
+
+            Item? item = await db.Items
+                .FirstOrDefaultAsync(i => i.Id == itemId, cancellationToken);
+
+            if (item is null)
+            {
+                return Result.Failure<Response>(
+                    Error.NotFound("Item.NotFound", $"Item with id {id} not found"));
+            }
+
+            string questionText = $"{request.Question} {request.CorrectAnswer} {string.Join(" ", request.IncorrectAnswers)}";
+            string fuzzySignature = simHashService.ComputeSimHash(questionText);
+            int fuzzyBucket = simHashService.GetFuzzyBucket(fuzzySignature);
+
+            item.Category = request.Category;
+            item.Subcategory = request.Subcategory;
+            item.Question = request.Question;
+            item.CorrectAnswer = request.CorrectAnswer;
+            item.IncorrectAnswers = request.IncorrectAnswers;
+            item.Explanation = request.Explanation;
+            item.IsPrivate = request.IsPrivate;
+            item.FuzzySignature = fuzzySignature;
+            item.FuzzyBucket = fuzzyBucket;
+
+            await db.SaveChangesAsync(cancellationToken);
+
+            Response response = new(
+                item.Id.ToString(),
+                item.Category,
+                item.Subcategory,
+                item.IsPrivate,
+                item.Question,
+                item.CorrectAnswer,
+                item.IncorrectAnswers,
+                item.Explanation,
+                item.CreatedAt);
+
+            return Result.Success(response);
+        }
+        catch (Exception ex)
+        {
+            return Result.Failure<Response>(
+                Error.Problem("Item.UpdateFailed", $"Failed to update item: {ex.Message}"));
         }
     }
 
@@ -112,4 +175,5 @@ public static class AddItem
         }
     }
 }
+
 

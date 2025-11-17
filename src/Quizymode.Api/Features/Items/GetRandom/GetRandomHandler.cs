@@ -1,5 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using Quizymode.Api.Data;
+using Quizymode.Api.Services;
 using Quizymode.Api.Shared.Kernel;
 using Quizymode.Api.Shared.Models;
 
@@ -10,6 +11,7 @@ internal static class GetRandomHandler
     public static async Task<Result<GetRandom.Response>> HandleAsync(
         GetRandom.QueryRequest request,
         ApplicationDbContext db,
+        IUserContext userContext,
         CancellationToken cancellationToken)
     {
         try
@@ -17,14 +19,19 @@ internal static class GetRandomHandler
             // Build a query to count available items for validation
             IQueryable<Item> countQuery = db.Items.AsQueryable();
 
-            if (!string.IsNullOrEmpty(request.CategoryId))
+            if (!userContext.IsAuthenticated)
             {
-                countQuery = countQuery.Where(i => i.CategoryId == request.CategoryId);
+                countQuery = countQuery.Where(i => !i.IsPrivate);
             }
 
-            if (!string.IsNullOrEmpty(request.SubcategoryId))
+            if (!string.IsNullOrEmpty(request.Category))
             {
-                countQuery = countQuery.Where(i => i.SubcategoryId == request.SubcategoryId);
+                countQuery = countQuery.Where(i => i.Category == request.Category);
+            }
+
+            if (!string.IsNullOrEmpty(request.Subcategory))
+            {
+                countQuery = countQuery.Where(i => i.Subcategory == request.Subcategory);
             }
 
             // Get count to validate and limit the request
@@ -42,28 +49,28 @@ internal static class GetRandomHandler
             // Use PostgreSQL's random() function for efficient random selection
             IQueryable<Item> randomQuery;
             
-            if (!string.IsNullOrEmpty(request.CategoryId) && !string.IsNullOrEmpty(request.SubcategoryId))
+            if (!string.IsNullOrEmpty(request.Category) && !string.IsNullOrEmpty(request.Subcategory))
             {
                 randomQuery = db.Items.FromSqlInterpolated(
                     $@"SELECT * FROM ""items"" 
-                       WHERE ""CategoryId"" = {request.CategoryId} 
-                         AND ""SubcategoryId"" = {request.SubcategoryId} 
+                       WHERE ""Category"" = {request.Category} 
+                         AND ""Subcategory"" = {request.Subcategory} 
                        ORDER BY random() 
                        LIMIT {takeCount}");
             }
-            else if (!string.IsNullOrEmpty(request.CategoryId))
+            else if (!string.IsNullOrEmpty(request.Category))
             {
                 randomQuery = db.Items.FromSqlInterpolated(
                     $@"SELECT * FROM ""items"" 
-                       WHERE ""CategoryId"" = {request.CategoryId} 
+                       WHERE ""Category"" = {request.Category} 
                        ORDER BY random() 
                        LIMIT {takeCount}");
             }
-            else if (!string.IsNullOrEmpty(request.SubcategoryId))
+            else if (!string.IsNullOrEmpty(request.Subcategory))
             {
                 randomQuery = db.Items.FromSqlInterpolated(
                     $@"SELECT * FROM ""items"" 
-                       WHERE ""SubcategoryId"" = {request.SubcategoryId} 
+                       WHERE ""Subcategory"" = {request.Subcategory} 
                        ORDER BY random() 
                        LIMIT {takeCount}");
             }
@@ -80,8 +87,8 @@ internal static class GetRandomHandler
             GetRandom.Response response = new GetRandom.Response(
                 items.Select(i => new GetRandom.ItemResponse(
                     i.Id.ToString(),
-                    i.CategoryId,
-                    i.SubcategoryId,
+                    i.Category,
+                    i.Subcategory,
                     i.IsPrivate,
                     i.Question,
                     i.CorrectAnswer,

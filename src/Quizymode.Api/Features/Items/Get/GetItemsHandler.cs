@@ -1,5 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using Quizymode.Api.Data;
+using Quizymode.Api.Services;
 using Quizymode.Api.Shared.Kernel;
 using Quizymode.Api.Shared.Models;
 
@@ -10,20 +11,27 @@ internal static class GetItemsHandler
     public static async Task<Result<GetItems.Response>> HandleAsync(
         GetItems.QueryRequest request,
         ApplicationDbContext db,
+        IUserContext userContext,
         CancellationToken cancellationToken)
     {
         try
         {
             IQueryable<Item> query = db.Items.AsQueryable();
 
-            if (!string.IsNullOrEmpty(request.CategoryId))
+            // Anonymous users only see global items. Authenticated users see global + their private items.
+            if (!userContext.IsAuthenticated)
             {
-                query = query.Where(i => i.CategoryId == request.CategoryId);
+                query = query.Where(i => !i.IsPrivate);
             }
 
-            if (!string.IsNullOrEmpty(request.SubcategoryId))
+            if (!string.IsNullOrEmpty(request.Category))
             {
-                query = query.Where(i => i.SubcategoryId == request.SubcategoryId);
+                query = query.Where(i => i.Category == request.Category);
+            }
+
+            if (!string.IsNullOrEmpty(request.Subcategory))
+            {
+                query = query.Where(i => i.Subcategory == request.Subcategory);
             }
 
             int totalCount = await query.CountAsync(cancellationToken);
@@ -35,8 +43,8 @@ internal static class GetItemsHandler
             GetItems.Response response = new GetItems.Response(
                 items.Select(i => new GetItems.ItemResponse(
                     i.Id.ToString(),
-                    i.CategoryId,
-                    i.SubcategoryId,
+                    i.Category,
+                    i.Subcategory,
                     i.IsPrivate,
                     i.Question,
                     i.CorrectAnswer,

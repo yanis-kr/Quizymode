@@ -56,7 +56,37 @@ Quizymode is a RESTful API for managing quiz items. It provides endpoints for cr
 
 4. **Database Setup**:
    - Migrations are applied automatically on startup
-   - Initial data is seeded from JSON files in `src/Quizymode.Api/Data/Seed/`
+   - Initial data is seeded from JSON files in `data/seed/`
+
+5. **Authentication for Local Development**
+
+   The API uses **JWT Bearer tokens from AWS Cognito**. Swagger is configured with a `Bearer` security scheme and most write or user-specific endpoints require authentication.
+
+   1. Configure Cognito settings in `appsettings.Development.json` or user-secrets:
+
+      ```json
+      "Authentication": {
+        "Cognito": {
+          "Authority": "https://cognito-idp.us-east-1.amazonaws.com/us-east-1_LiJbvT212",
+          "Audience": "<your_cognito_app_client_id>"
+        }
+      }
+      ```
+
+   2. Use the Cognito **Hosted UI** (or Amplify) for your user pool/client to sign in locally and obtain an ID or access token. After signing in, capture the JWT (for example from the callback URL fragment or browser dev tools).
+
+   3. In Swagger UI (development only):
+      - Navigate to the API (for example `https://localhost:7279`).
+      - Open the Swagger UI and click the **Authorize** button.
+      - In the `Bearer` scheme, paste: `Bearer {your_jwt_here}` and confirm.
+
+   4. Alternatively, call the API via `curl` or a REST client:
+
+      ```bash
+      curl -H "Authorization: Bearer {your_jwt_here}" https://localhost:7279/items
+      ```
+
+   Endpoints such as `POST /items`, `PUT /items/{id}`, `DELETE /items/{id}`, `POST /requests`, `POST/PUT/DELETE /reviews`, `POST/PUT/DELETE /collections`, `POST /items/bulk` (`/bulk-items`), and `PUT /items/{id}/visibility` require a valid JWT (admin policy for bulk/visibility).
 
 ### API Endpoints
 

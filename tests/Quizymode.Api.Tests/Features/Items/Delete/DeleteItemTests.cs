@@ -29,8 +29,8 @@ public sealed class DeleteItemTests : IDisposable
         Item item = new Item
         {
             Id = Guid.NewGuid(),
-            CategoryId = "geography",
-            SubcategoryId = "europe",
+            Category = "geography",
+            Subcategory = "europe",
             IsPrivate = false,
             Question = "What is the capital of France?",
             CorrectAnswer = "Paris",
