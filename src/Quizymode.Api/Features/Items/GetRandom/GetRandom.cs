@@ -1,4 +1,5 @@
 using Quizymode.Api.Data;
+using Quizymode.Api.Features;
 using Quizymode.Api.Infrastructure;
 using Quizymode.Api.Services;
 using Quizymode.Api.Shared.Kernel;
@@ -30,11 +31,9 @@ public static class GetRandom
     {
         public void MapEndpoint(IEndpointRouteBuilder app)
         {
-            // Single endpoint matching implementation plan: GET /random-items
-            app.MapGet("random-items", Handler)
+            app.MapGet("items/random", Handler)
                 .WithTags("Items")
                 .WithSummary("Get random quiz items")
-                .WithDescription("Alias for /items/random to support implementation plan routing.")
                 .WithOpenApi()
                 .Produces<Response>(StatusCodes.Status200OK)
                 .Produces(StatusCodes.Status400BadRequest);
