@@ -1,7 +1,9 @@
 using FluentAssertions;
 using Microsoft.EntityFrameworkCore;
+using Moq;
 using Quizymode.Api.Data;
 using Quizymode.Api.Features.Items.Get;
+using Quizymode.Api.Services;
 using Quizymode.Api.Shared.Kernel;
 using Quizymode.Api.Shared.Models;
 using Xunit;
@@ -12,6 +14,7 @@ namespace Quizymode.Api.Tests.Features.Items.Get;
 public sealed class GetItemsTests : IDisposable
 {
     private readonly ApplicationDbContext _dbContext;
+    private readonly Mock<IUserContext> _userContextMock;
 
     public GetItemsTests()
     {
@@ -20,6 +23,8 @@ public sealed class GetItemsTests : IDisposable
             .Options;
 
         _dbContext = new ApplicationDbContext(options);
+        _userContextMock = new Mock<IUserContext>();
+        _userContextMock.Setup(x => x.IsAuthenticated).Returns(true);
     }
 
     [Fact]
@@ -28,15 +33,15 @@ public sealed class GetItemsTests : IDisposable
         // Arrange
         _dbContext.Items.AddRange(new[]
         {
-            new Item { Id = Guid.NewGuid(), CategoryId = "geography", SubcategoryId = "europe", IsPrivate = false, Question = "Q1", CorrectAnswer = "A1", IncorrectAnswers = new List<string>(), Explanation = "", FuzzySignature = "ABC", FuzzyBucket = 1, CreatedBy = "test", CreatedAt = DateTime.UtcNow },
-            new Item { Id = Guid.NewGuid(), CategoryId = "geography", SubcategoryId = "europe", IsPrivate = false, Question = "Q2", CorrectAnswer = "A2", IncorrectAnswers = new List<string>(), Explanation = "", FuzzySignature = "DEF", FuzzyBucket = 2, CreatedBy = "test", CreatedAt = DateTime.UtcNow }
+            new Item { Id = Guid.NewGuid(), Category = "geography", Subcategory = "europe", IsPrivate = false, Question = "Q1", CorrectAnswer = "A1", IncorrectAnswers = new List<string>(), Explanation = "", FuzzySignature = "ABC", FuzzyBucket = 1, CreatedBy = "test", CreatedAt = DateTime.UtcNow },
+            new Item { Id = Guid.NewGuid(), Category = "geography", Subcategory = "europe", IsPrivate = false, Question = "Q2", CorrectAnswer = "A2", IncorrectAnswers = new List<string>(), Explanation = "", FuzzySignature = "DEF", FuzzyBucket = 2, CreatedBy = "test", CreatedAt = DateTime.UtcNow }
         });
         await _dbContext.SaveChangesAsync();
 
-        GetItems.QueryRequest request = new(CategoryId: null, SubcategoryId: null, Page: 1, PageSize: 10);
+        GetItems.QueryRequest request = new(Category: null, Subcategory: null, Page: 1, PageSize: 10);
 
         // Act
-        Result<GetItems.Response> result = await GetItemsHandler.HandleAsync(request, _dbContext, CancellationToken.None);
+        Result<GetItems.Response> result = await GetItemsHandler.HandleAsync(request, _dbContext, _userContextMock.Object, CancellationToken.None);
 
         // Assert
         result.IsSuccess.Should().BeTrue();
@@ -45,20 +50,20 @@ public sealed class GetItemsTests : IDisposable
     }
 
     [Fact]
-    public async Task HandleAsync_FiltersByCategoryId()
+    public async Task HandleAsync_FiltersByCategory()
     {
         // Arrange
         _dbContext.Items.AddRange(new[]
         {
-            new Item { Id = Guid.NewGuid(), CategoryId = "geography", SubcategoryId = "europe", IsPrivate = false, Question = "Q1", CorrectAnswer = "A1", IncorrectAnswers = new List<string>(), Explanation = "", FuzzySignature = "ABC", FuzzyBucket = 1, CreatedBy = "test", CreatedAt = DateTime.UtcNow },
-            new Item { Id = Guid.NewGuid(), CategoryId = "history", SubcategoryId = "europe", IsPrivate = false, Question = "Q2", CorrectAnswer = "A2", IncorrectAnswers = new List<string>(), Explanation = "", FuzzySignature = "DEF", FuzzyBucket = 2, CreatedBy = "test", CreatedAt = DateTime.UtcNow }
+            new Item { Id = Guid.NewGuid(), Category = "geography", Subcategory = "europe", IsPrivate = false, Question = "Q1", CorrectAnswer = "A1", IncorrectAnswers = new List<string>(), Explanation = "", FuzzySignature = "ABC", FuzzyBucket = 1, CreatedBy = "test", CreatedAt = DateTime.UtcNow },
+            new Item { Id = Guid.NewGuid(), Category = "history", Subcategory = "europe", IsPrivate = false, Question = "Q2", CorrectAnswer = "A2", IncorrectAnswers = new List<string>(), Explanation = "", FuzzySignature = "DEF", FuzzyBucket = 2, CreatedBy = "test", CreatedAt = DateTime.UtcNow }
         });
         await _dbContext.SaveChangesAsync();
 
-        GetItems.QueryRequest request = new(CategoryId: "geography", SubcategoryId: null, Page: 1, PageSize: 10);
+        GetItems.QueryRequest request = new(Category: "geography", Subcategory: null, Page: 1, PageSize: 10);
 
         // Act
-        Result<GetItems.Response> result = await GetItemsHandler.HandleAsync(request, _dbContext, CancellationToken.None);
+        Result<GetItems.Response> result = await GetItemsHandler.HandleAsync(request, _dbContext, _userContextMock.Object, CancellationToken.None);
 
         // Assert
         result.IsSuccess.Should().BeTrue();
@@ -74,8 +79,8 @@ public sealed class GetItemsTests : IDisposable
             .Select(i => new Item
             {
                 Id = Guid.NewGuid(),
-                CategoryId = "geography",
-                SubcategoryId = "europe",
+                Category = "geography",
+                Subcategory = "europe",
                 IsPrivate = false,
                 Question = $"Q{i}",
                 CorrectAnswer = $"A{i}",
@@ -88,10 +93,10 @@ public sealed class GetItemsTests : IDisposable
             }));
         await _dbContext.SaveChangesAsync();
 
-        GetItems.QueryRequest request = new(CategoryId: null, SubcategoryId: null, Page: 1, PageSize: 10);
+        GetItems.QueryRequest request = new(Category: null, Subcategory: null, Page: 1, PageSize: 10);
 
         // Act
-        Result<GetItems.Response> result = await GetItemsHandler.HandleAsync(request, _dbContext, CancellationToken.None);
+        Result<GetItems.Response> result = await GetItemsHandler.HandleAsync(request, _dbContext, _userContextMock.Object, CancellationToken.None);
 
         // Assert
         result.IsSuccess.Should().BeTrue();
@@ -105,4 +110,3 @@ public sealed class GetItemsTests : IDisposable
         _dbContext.Dispose();
     }
 }
-

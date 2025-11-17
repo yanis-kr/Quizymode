@@ -1,17 +1,15 @@
-using Microsoft.EntityFrameworkCore;
 using Quizymode.Api.Data;
-using Quizymode.Api.Features;
 using Quizymode.Api.Infrastructure;
+using Quizymode.Api.Services;
 using Quizymode.Api.Shared.Kernel;
-using Quizymode.Api.Shared.Models;
 
 namespace Quizymode.Api.Features.Items.Get;
 
 public static class GetItems
 {
     public sealed record QueryRequest(
-        string? CategoryId,
-        string? SubcategoryId,
+        string? Category,
+        string? Subcategory,
         int Page = 1,
         int PageSize = 10);
 
@@ -24,8 +22,8 @@ public static class GetItems
 
     public sealed record ItemResponse(
         string Id,
-        string CategoryId,
-        string SubcategoryId,
+        string Category,
+        string Subcategory,
         bool IsPrivate,
         string Question,
         string CorrectAnswer,
@@ -46,11 +44,12 @@ public static class GetItems
         }
 
         private static async Task<IResult> Handler(
-            string? categoryId,
-            string? subcategoryId,
+            string? category,
+            string? subcategory,
             int page = 1,
             int pageSize = 10,
             ApplicationDbContext db = null!,
+            IUserContext userContext = null!,
             CancellationToken cancellationToken = default)
         {
             if (page < 1)
@@ -63,8 +62,8 @@ public static class GetItems
                 return Results.BadRequest("PageSize must be between 1 and 100");
             }
 
-            var request = new QueryRequest(categoryId, subcategoryId, page, pageSize);
-            Result<Response> result = await GetItemsHandler.HandleAsync(request, db, cancellationToken);
+            var request = new QueryRequest(category, subcategory, page, pageSize);
+            Result<Response> result = await GetItemsHandler.HandleAsync(request, db, userContext, cancellationToken);
 
             return result.Match(
                 value => Results.Ok(value),

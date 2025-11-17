@@ -11,6 +11,7 @@ internal static class AddItemHandler
         AddItem.Request request,
         ApplicationDbContext db,
         ISimHashService simHashService,
+        IUserContext userContext,
         CancellationToken cancellationToken)
     {
         try
@@ -22,8 +23,8 @@ internal static class AddItemHandler
             Item item = new Item
             {
                 Id = Guid.NewGuid(),
-                CategoryId = request.CategoryId,
-                SubcategoryId = request.SubcategoryId,
+                Category = request.Category,
+                Subcategory = request.Subcategory,
                 IsPrivate = request.IsPrivate,
                 Question = request.Question,
                 CorrectAnswer = request.CorrectAnswer,
@@ -31,7 +32,7 @@ internal static class AddItemHandler
                 Explanation = request.Explanation,
                 FuzzySignature = fuzzySignature,
                 FuzzyBucket = fuzzyBucket,
-                CreatedBy = "dev_user", // TODO: Get from auth context
+                CreatedBy = userContext.UserId ?? "dev_user",
                 CreatedAt = DateTime.UtcNow
             };
 
@@ -40,8 +41,8 @@ internal static class AddItemHandler
 
             AddItem.Response response = new AddItem.Response(
                 item.Id.ToString(),
-                item.CategoryId,
-                item.SubcategoryId,
+                item.Category,
+                item.Subcategory,
                 item.IsPrivate,
                 item.Question,
                 item.CorrectAnswer,

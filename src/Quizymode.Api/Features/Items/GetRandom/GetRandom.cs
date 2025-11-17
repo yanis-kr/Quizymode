@@ -1,6 +1,7 @@
 using Quizymode.Api.Data;
 using Quizymode.Api.Features;
 using Quizymode.Api.Infrastructure;
+using Quizymode.Api.Services;
 using Quizymode.Api.Shared.Kernel;
 
 namespace Quizymode.Api.Features.Items.GetRandom;
@@ -8,8 +9,8 @@ namespace Quizymode.Api.Features.Items.GetRandom;
 public static class GetRandom
 {
     public sealed record QueryRequest(
-        string? CategoryId,
-        string? SubcategoryId,
+        string? Category,
+        string? Subcategory,
         int Count = 10);
 
     public sealed record Response(
@@ -17,8 +18,8 @@ public static class GetRandom
 
     public sealed record ItemResponse(
         string Id,
-        string CategoryId,
-        string SubcategoryId,
+        string Category,
+        string Subcategory,
         bool IsPrivate,
         string Question,
         string CorrectAnswer,
@@ -33,17 +34,17 @@ public static class GetRandom
             app.MapGet("items/random", Handler)
                 .WithTags("Items")
                 .WithSummary("Get random quiz items")
-                .WithDescription("Returns a random selection of quiz items. Optionally filter by category and/or subcategory.")
                 .WithOpenApi()
                 .Produces<Response>(StatusCodes.Status200OK)
                 .Produces(StatusCodes.Status400BadRequest);
         }
 
         private static async Task<IResult> Handler(
-            string? categoryId,
-            string? subcategoryId,
+            string? category,
+            string? subcategory,
             int count = 10,
             ApplicationDbContext db = null!,
+            IUserContext userContext = null!,
             CancellationToken cancellationToken = default)
         {
             if (count < 1 || count > 100)
@@ -51,8 +52,8 @@ public static class GetRandom
                 return Results.BadRequest("Count must be between 1 and 100");
             }
 
-            var request = new QueryRequest(categoryId, subcategoryId, count);
-            Result<Response> result = await GetRandomHandler.HandleAsync(request, db, cancellationToken);
+            var request = new QueryRequest(category, subcategory, count);
+            Result<Response> result = await GetRandomHandler.HandleAsync(request, db, userContext, cancellationToken);
 
             return result.Match(
                 value => Results.Ok(value),

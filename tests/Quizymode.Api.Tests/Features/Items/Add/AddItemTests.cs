@@ -1,6 +1,7 @@
 using FluentAssertions;
 using FluentValidation;
 using Microsoft.EntityFrameworkCore;
+using Moq;
 using Quizymode.Api.Data;
 using Quizymode.Api.Features.Items.Add;
 using Quizymode.Api.Services;
@@ -15,6 +16,7 @@ public sealed class AddItemTests : IDisposable
 {
     private readonly ApplicationDbContext _dbContext;
     private readonly ISimHashService _simHashService;
+    private readonly Mock<IUserContext> _userContextMock;
 
     public AddItemTests()
     {
@@ -24,6 +26,9 @@ public sealed class AddItemTests : IDisposable
 
         _dbContext = new ApplicationDbContext(options);
         _simHashService = new SimHashService();
+        _userContextMock = new Mock<IUserContext>();
+        _userContextMock.Setup(x => x.UserId).Returns("test-user");
+        _userContextMock.Setup(x => x.IsAuthenticated).Returns(true);
     }
 
     [Fact]
@@ -31,8 +36,8 @@ public sealed class AddItemTests : IDisposable
     {
         // Arrange
         AddItem.Request request = new(
-            CategoryId: "geography",
-            SubcategoryId: "europe",
+            Category: "geography",
+            Subcategory: "europe",
             IsPrivate: false,
             Question: "What is the capital of France?",
             CorrectAnswer: "Paris",
@@ -44,6 +49,7 @@ public sealed class AddItemTests : IDisposable
             request,
             _dbContext,
             _simHashService,
+            _userContextMock.Object,
             CancellationToken.None);
 
         // Assert
@@ -67,8 +73,8 @@ public sealed class AddItemTests : IDisposable
         Item existingItem = new Item
         {
             Id = Guid.NewGuid(),
-            CategoryId = "geography",
-            SubcategoryId = "europe",
+            Category = "geography",
+            Subcategory = "europe",
             IsPrivate = false,
             Question = "What is the capital of France?",
             CorrectAnswer = "Paris",
@@ -84,8 +90,8 @@ public sealed class AddItemTests : IDisposable
         await _dbContext.SaveChangesAsync();
 
         AddItem.Request request = new(
-            CategoryId: "geography",
-            SubcategoryId: "europe",
+            Category: "geography",
+            Subcategory: "europe",
             IsPrivate: false,
             Question: "What is the capital of France?",
             CorrectAnswer: "Paris",
@@ -97,6 +103,7 @@ public sealed class AddItemTests : IDisposable
             request,
             _dbContext,
             _simHashService,
+            _userContextMock.Object,
             CancellationToken.None);
 
         // Assert - AddItem allows duplicates, so it should succeed
@@ -107,12 +114,12 @@ public sealed class AddItemTests : IDisposable
     }
 
     [Fact]
-    public void Validator_EmptyCategoryId_ReturnsError()
+    public void Validator_EmptyCategory_ReturnsError()
     {
         // Arrange
         AddItem.Request request = new(
-            CategoryId: "",
-            SubcategoryId: "europe",
+            Category: "",
+            Subcategory: "europe",
             IsPrivate: false,
             Question: "What is the capital of France?",
             CorrectAnswer: "Paris",
@@ -126,7 +133,7 @@ public sealed class AddItemTests : IDisposable
 
         // Assert
         result.IsValid.Should().BeFalse();
-        result.Errors.Should().Contain(e => e.PropertyName == "CategoryId");
+        result.Errors.Should().Contain(e => e.PropertyName == "Category");
     }
 
     [Fact]
@@ -134,8 +141,8 @@ public sealed class AddItemTests : IDisposable
     {
         // Arrange
         AddItem.Request request = new(
-            CategoryId: "geography",
-            SubcategoryId: "europe",
+            Category: "geography",
+            Subcategory: "europe",
             IsPrivate: false,
             Question: "What is the capital of France?",
             CorrectAnswer: "Paris",
@@ -157,4 +164,3 @@ public sealed class AddItemTests : IDisposable
         _dbContext.Dispose();
     }
 }
-

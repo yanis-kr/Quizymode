@@ -1,5 +1,4 @@
 using FluentAssertions;
-using FluentValidation;
 using Microsoft.EntityFrameworkCore;
 using Quizymode.Api.Data;
 using Quizymode.Api.Features.Items.AddBulk;
@@ -30,14 +29,11 @@ public sealed class AddItemsBulkTests : IDisposable
     public async Task HandleAsync_ValidRequest_CreatesAllItems()
     {
         // Arrange
-        AddItemsBulk.Request request = new(
-            CategoryId: "geography",
-            SubcategoryId: "europe",
-            IsPrivate: false,
+        AddItemsBulk.Request request = new(Category: "geography", IsPrivate: false,
             Items: new List<AddItemsBulk.ItemRequest>
             {
-                new("What is the capital of France?", "Paris", new List<string> { "Lyon", "Marseille" }, "Paris is the capital"),
-                new("What is the capital of Germany?", "Berlin", new List<string> { "Munich", "Hamburg" }, "Berlin is the capital")
+                new("europe", "What is the capital of France?", "Paris", new List<string> { "Lyon", "Marseille" }, "Paris is the capital"),
+                new("europe", "What is the capital of Germany?", "Berlin", new List<string> { "Munich", "Hamburg" }, "Berlin is the capital")
             });
 
         // Act
@@ -66,8 +62,8 @@ public sealed class AddItemsBulkTests : IDisposable
         Item existingItem = new Item
         {
             Id = Guid.NewGuid(),
-            CategoryId = "geography",
-            SubcategoryId = "europe",
+            Category = "geography",
+            Subcategory = "europe",
             IsPrivate = false,
             Question = "What is the capital of France?",
             CorrectAnswer = "Paris",
@@ -82,14 +78,11 @@ public sealed class AddItemsBulkTests : IDisposable
         _dbContext.Items.Add(existingItem);
         await _dbContext.SaveChangesAsync();
 
-        AddItemsBulk.Request request = new(
-            CategoryId: "geography",
-            SubcategoryId: "europe",
-            IsPrivate: false,
+        AddItemsBulk.Request request = new(Category: "geography", IsPrivate: false,
             Items: new List<AddItemsBulk.ItemRequest>
             {
-                new("What is the capital of France?", "Paris", new List<string> { "Lyon", "Marseille" }, "Duplicate"),
-                new("What is the capital of Germany?", "Berlin", new List<string> { "Munich" }, "New item")
+                new("europe", "What is the capital of France?", "Paris", new List<string> { "Lyon", "Marseille" }, "Duplicate"),
+                new("europe", "What is the capital of Germany?", "Berlin", new List<string> { "Munich" }, "New item")
             });
 
         // Act
@@ -110,10 +103,7 @@ public sealed class AddItemsBulkTests : IDisposable
     public void Validator_EmptyItemsList_ReturnsError()
     {
         // Arrange
-        AddItemsBulk.Request request = new(
-            CategoryId: "geography",
-            SubcategoryId: "europe",
-            IsPrivate: false,
+        AddItemsBulk.Request request = new(Category: "geography", IsPrivate: false,
             Items: new List<AddItemsBulk.ItemRequest>());
 
         AddItemsBulk.Validator validator = new();
@@ -131,17 +121,10 @@ public sealed class AddItemsBulkTests : IDisposable
     {
         // Arrange
         List<AddItemsBulk.ItemRequest> items = Enumerable.Range(1, 101)
-            .Select(i => new AddItemsBulk.ItemRequest(
-                $"Question {i}",
-                $"Answer {i}",
-                new List<string> { "Wrong1" },
-                ""))
+            .Select(i => new AddItemsBulk.ItemRequest("europe", $"Question {i}", $"Answer {i}", new List<string> { "Wrong1" }, $"Explanation {i}"))
             .ToList();
 
-        AddItemsBulk.Request request = new(
-            CategoryId: "geography",
-            SubcategoryId: "europe",
-            IsPrivate: false,
+        AddItemsBulk.Request request = new(Category: "geography", IsPrivate: false,
             Items: items);
 
         AddItemsBulk.Validator validator = new();
@@ -158,13 +141,10 @@ public sealed class AddItemsBulkTests : IDisposable
     public async Task HandleAsync_TransactionRollback_OnFailure()
     {
         // Arrange
-        AddItemsBulk.Request request = new(
-            CategoryId: "geography",
-            SubcategoryId: "europe",
-            IsPrivate: false,
+        AddItemsBulk.Request request = new(Category: "geography", IsPrivate: false,
             Items: new List<AddItemsBulk.ItemRequest>
             {
-                new("What is the capital of France?", "Paris", new List<string> { "Lyon" }, "Valid"),
+                new("europe", "What is the capital of France?", "Paris", new List<string> { "Lyon" }, "Valid"),
             });
 
         // Simulate database error by disposing context

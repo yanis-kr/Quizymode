@@ -48,8 +48,8 @@ internal static class AddItemsBulkHandler
                     // Check for duplicates
                     bool isDuplicate = await db.Items
                         .AnyAsync(item => 
-                            item.CategoryId == request.CategoryId &&
-                            item.SubcategoryId == request.SubcategoryId &&
+                            item.Category == request.Category &&
+                            item.Subcategory == itemRequest.Subcategory &&
                             item.FuzzyBucket == fuzzyBucket &&
                             (item.Question.Equals(itemRequest.Question, StringComparison.OrdinalIgnoreCase) ||
                              item.FuzzySignature == fuzzySignature),
@@ -64,8 +64,8 @@ internal static class AddItemsBulkHandler
                     Item item = new Item
                     {
                         Id = Guid.NewGuid(),
-                        CategoryId = request.CategoryId,
-                        SubcategoryId = request.SubcategoryId,
+                        Category = request.Category,
+                        Subcategory = itemRequest.Subcategory,
                         IsPrivate = request.IsPrivate,
                         Question = itemRequest.Question,
                         CorrectAnswer = itemRequest.CorrectAnswer,
