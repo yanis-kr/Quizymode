@@ -1,5 +1,3 @@
-using Quizymode.Api.StartupExtensions;
-
 namespace Quizymode.Api.StartupExtensions;
 
 internal static partial class StartupExtensions

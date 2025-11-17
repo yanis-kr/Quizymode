@@ -1,4 +1,3 @@
-using Microsoft.AspNetCore.OpenApi;
 using Microsoft.OpenApi.Models;
 
 namespace Quizymode.Api.StartupExtensions;

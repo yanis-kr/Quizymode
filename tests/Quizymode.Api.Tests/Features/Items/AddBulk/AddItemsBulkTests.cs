@@ -1,5 +1,4 @@
 using FluentAssertions;
-using FluentValidation;
 using Microsoft.EntityFrameworkCore;
 using Quizymode.Api.Data;
 using Quizymode.Api.Features.Items.AddBulk;

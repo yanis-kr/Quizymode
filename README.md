@@ -55,6 +55,7 @@ Quizymode is a RESTful API for managing quiz items. It provides endpoints for cr
    - pgAdmin: Access via Aspire Dashboard
 
 4. **Database Setup**:
+
    - Migrations are applied automatically on startup
    - Initial data is seeded from JSON files in `data/seed/`
 
@@ -76,6 +77,7 @@ Quizymode is a RESTful API for managing quiz items. It provides endpoints for cr
    2. Use the Cognito **Hosted UI** (or Amplify) for your user pool/client to sign in locally and obtain an ID or access token. After signing in, capture the JWT (for example from the callback URL fragment or browser dev tools).
 
    3. In Swagger UI (development only):
+
       - Navigate to the API (for example `https://localhost:7279`).
       - Open the Swagger UI and click the **Authorize** button.
       - In the `Bearer` scheme, paste: `Bearer {your_jwt_here}` and confirm.
@@ -86,7 +88,7 @@ Quizymode is a RESTful API for managing quiz items. It provides endpoints for cr
       curl -H "Authorization: Bearer {your_jwt_here}" https://localhost:7279/items
       ```
 
-   Endpoints such as `POST /items`, `PUT /items/{id}`, `DELETE /items/{id}`, `POST /requests`, `POST/PUT/DELETE /reviews`, `POST/PUT/DELETE /collections`, `POST /items/bulk` (`/bulk-items`), and `PUT /items/{id}/visibility` require a valid JWT (admin policy for bulk/visibility).
+   Endpoints such as `POST /items`, `PUT /items/{id}`, `DELETE /items/{id}`, `POST /requests`, `POST/PUT/DELETE /reviews`, `POST/PUT/DELETE /collections`, `POST /items/bulk`, and `PUT /items/{id}/visibility` require a valid JWT (admin policy for bulk/visibility).
 
 ### API Endpoints
 

@@ -1,9 +1,7 @@
 using FluentValidation;
 using Quizymode.Api.Data;
-using Quizymode.Api.Features;
 using Quizymode.Api.Infrastructure;
 using Quizymode.Api.Shared.Kernel;
-using Quizymode.Api.Shared.Models;
 using RequestEntity = Quizymode.Api.Shared.Models.Request;
 
 namespace Quizymode.Api.Features.Requests;
