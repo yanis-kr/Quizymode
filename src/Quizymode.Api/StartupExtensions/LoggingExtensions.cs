@@ -1,3 +1,4 @@
+using System.Reflection;
 using Serilog;
 using Serilog.Sinks.SystemConsole.Themes;
 
@@ -30,6 +31,11 @@ internal static partial class StartupExtensions
             .WriteTo.Console()
             .CreateLogger();
 
-        Log.Information("Starting QuizyMode Web API");
+        Assembly assembly = Assembly.GetExecutingAssembly();
+        string version = assembly.GetCustomAttribute<AssemblyInformationalVersionAttribute>()?.InformationalVersion
+                        ?? assembly.GetName().Version?.ToString()
+                        ?? "Unknown";
+
+        Log.Information("Starting QuizyMode Web API v{Version}", version);
     }
 }
