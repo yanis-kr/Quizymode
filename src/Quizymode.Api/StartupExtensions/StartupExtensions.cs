@@ -35,7 +35,20 @@ internal static partial class StartupExtensions
             });
         }
 
-        app.UseHttpsRedirection();
+        // NOTE: UseHttpsRedirection is intentionally disabled when running behind Cloudflare.
+        // 
+        // Cloudflare terminates HTTPS at the edge and forwards traffic to the Lightsail
+        // container over HTTP. If the application forces HTTPS redirection here, it will
+        // redirect every HTTP request back to the HTTPS Cloudflare URL, which Cloudflare
+        // again forwards as HTTP — creating an infinite redirect loop (ERR_TOO_MANY_REDIRECTS).
+        //
+        // In this deployment model, Cloudflare manages TLS, and the app should accept
+        // HTTP from the reverse proxy without local HTTPS enforcement. If HTTPS is needed
+        // locally (development), conditionally enable UseHttpsRedirection only when the
+        // app is NOT running behind a proxy.
+
+        //app.UseHttpsRedirection();
+
         app.UseAuthentication();
         app.UseAuthorization();
         app.UseCors("AllowAll");
