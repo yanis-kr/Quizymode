@@ -57,8 +57,10 @@ internal sealed class UserContext(IHttpContextAccessor httpContextAccessor) : IU
             }
 
             // Cognito can emit groups in "cognito:groups" claim
+            // Check for any group starting with "admin" (case-insensitive)
             IEnumerable<Claim> groupClaims = user.FindAll("cognito:groups");
-            return groupClaims.Any(c => string.Equals(c.Value, "admins", StringComparison.OrdinalIgnoreCase));
+            return groupClaims.Any(c => 
+                c.Value.StartsWith("admin", StringComparison.OrdinalIgnoreCase));
         }
     }
 }
