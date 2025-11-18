@@ -23,6 +23,11 @@ internal static class GetItemsHandler
             {
                 query = query.Where(i => !i.IsPrivate);
             }
+            else if (!string.IsNullOrEmpty(userContext.UserId))
+            {
+                // Include global items OR user's private items
+                query = query.Where(i => !i.IsPrivate || (i.IsPrivate && i.CreatedBy == userContext.UserId));
+            }
 
             if (!string.IsNullOrEmpty(request.Category))
             {

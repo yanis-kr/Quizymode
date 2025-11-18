@@ -48,18 +48,37 @@ Quizymode is a RESTful API for managing quiz items. It provides endpoints for cr
    dotnet run
    ```
 
-3. **Access the Services**:
+   This will start:
 
-   - API: `https://localhost:7279` (or port shown in console)
-   - Aspire Dashboard: Opens automatically (typically `https://localhost:17086`)
-   - pgAdmin: Access via Aspire Dashboard
+   - **API**: `https://localhost:8080` (port 6000 is blocked by Chrome)
+   - **Aspire Dashboard**: Opens automatically at `https://localhost:5000`
+   - **pgAdmin**: Access via Aspire Dashboard
 
-4. **Database Setup**:
+3. **Start the Web UI** (in a separate terminal):
+
+   ```bash
+   cd src/Quizymode.Web
+   npm install  # First time only
+   npm run dev
+   ```
+
+   **Note:** Requires Node.js 20.19+ or 22.12+. Upgrade Node.js if you see version warnings.
+
+   The Web UI will be available at `http://localhost:7000` (React/Vite dev server - **HTTP only, not HTTPS**)
+
+4. **Access the Services**:
+
+   - **Web UI**: `http://localhost:7000` (run separately via `npm run dev`)
+   - **API**: `https://localhost:8080`
+   - **Aspire Dashboard**: Opens automatically at `https://localhost:5000`
+   - **pgAdmin**: Access via Aspire Dashboard
+
+5. **Database Setup**:
 
    - Migrations are applied automatically on startup
    - Initial data is seeded from JSON files in `data/seed/`
 
-5. **Authentication for Local Development**
+6. **Authentication for Local Development**
 
    The API uses **JWT Bearer tokens from AWS Cognito**. Swagger is configured with a `Bearer` security scheme and most write or user-specific endpoints require authentication.
 
@@ -78,14 +97,14 @@ Quizymode is a RESTful API for managing quiz items. It provides endpoints for cr
 
    3. In Swagger UI (development only):
 
-      - Navigate to the API (for example `https://localhost:7279`).
+      - Navigate to the API (for example `https://localhost:8080`).
       - Open the Swagger UI and click the **Authorize** button.
       - In the `Bearer` scheme, paste: `Bearer {your_jwt_here}` and confirm.
 
    4. Alternatively, call the API via `curl` or a REST client:
 
       ```bash
-      curl -H "Authorization: Bearer {your_jwt_here}" https://localhost:7279/items
+      curl -H "Authorization: Bearer {your_jwt_here}" https://localhost:8080/items
       ```
 
    Endpoints such as `POST /items`, `PUT /items/{id}`, `DELETE /items/{id}`, `POST /requests`, `POST/PUT/DELETE /reviews`, `POST/PUT/DELETE /collections`, `POST /items/bulk`, and `PUT /items/{id}/visibility` require a valid JWT (admin policy for bulk/visibility).

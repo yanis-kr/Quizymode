@@ -1,0 +1,123 @@
+// API Response Types
+
+export interface CategoryResponse {
+  category: string;
+  count: number;
+}
+
+export interface CategoriesResponse {
+  categories: CategoryResponse[];
+}
+
+export interface ItemResponse {
+  id: string;
+  category: string;
+  subcategory: string;
+  isPrivate: boolean;
+  question: string;
+  correctAnswer: string;
+  incorrectAnswers: string[];
+  explanation: string;
+  createdAt: string;
+}
+
+export interface ItemsResponse {
+  items: ItemResponse[];
+  totalCount: number;
+  page: number;
+  pageSize: number;
+  totalPages: number;
+}
+
+export interface RandomItemsResponse {
+  items: ItemResponse[];
+}
+
+export interface CollectionResponse {
+  id: string;
+  name: string;
+  createdBy: string;
+  createdAt: string;
+}
+
+export interface CollectionsResponse {
+  collections: CollectionResponse[];
+}
+
+export interface ReviewResponse {
+  id: string;
+  itemId: string;
+  reaction: string;
+  comment: string;
+  createdBy: string;
+  createdAt: string;
+  updatedAt?: string;
+}
+
+export interface ReviewsResponse {
+  reviews: ReviewResponse[];
+}
+
+export interface RequestResponse {
+  id: string;
+  categoryId: string;
+  description: string;
+  createdBy: string;
+  createdAt: string;
+  status: string;
+}
+
+// Request Types
+
+export interface CreateItemRequest {
+  category: string;
+  subcategory: string;
+  isPrivate: boolean;
+  question: string;
+  correctAnswer: string;
+  incorrectAnswers: string[];
+  explanation: string;
+}
+
+export interface UpdateItemRequest {
+  category?: string;
+  subcategory?: string;
+  isPrivate?: boolean;
+  question?: string;
+  correctAnswer?: string;
+  incorrectAnswers?: string[];
+  explanation?: string;
+}
+
+export interface CreateCollectionRequest {
+  name: string;
+}
+
+export interface UpdateCollectionRequest {
+  name: string;
+}
+
+export interface AddItemToCollectionRequest {
+  itemId: string;
+}
+
+export interface CreateReviewRequest {
+  itemId: string;
+  reaction: 'like' | 'dislike' | 'neutral';
+  comment: string;
+}
+
+export interface UpdateReviewRequest {
+  reaction?: 'like' | 'dislike' | 'neutral';
+  comment?: string;
+}
+
+export interface CreateRequestRequest {
+  categoryId: string;
+  description: string;
+}
+
+export interface BulkCreateItemsRequest {
+  items: CreateItemRequest[];
+}
+

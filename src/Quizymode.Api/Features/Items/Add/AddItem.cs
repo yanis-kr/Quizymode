@@ -15,7 +15,8 @@ public static class AddItem
         string Question,
         string CorrectAnswer,
         List<string> IncorrectAnswers,
-        string Explanation);
+        string Explanation,
+        bool ReadyForReview = false);
 
     public sealed record Response(
         string Id,
