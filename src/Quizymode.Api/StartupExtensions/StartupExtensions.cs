@@ -11,16 +11,13 @@ internal static partial class StartupExtensions
         builder.AddServiceDefaults();
         builder.AddLoggingServices();
         builder.AddSwaggerServices();
-        builder.AddAuthenticationServices();
         builder.AddHealthCheckServices();
         builder.AddCorsServices();
-        builder.Services.Configure<ForwardedHeadersOptions>(options =>
-        {
-            options.ForwardedHeaders = ForwardedHeaders.XForwardedFor | ForwardedHeaders.XForwardedProto;
-            options.KnownNetworks.Clear();
-            options.KnownProxies.Clear();
-        });
         builder.AddPostgreSqlServices();
+
+        // Add authentication before custom services so middleware and IUserContext work
+        builder.AddAuthenticationServices();
+
         builder.AddCustomServices();
         
         // Auto-discover and register all features
@@ -31,6 +28,12 @@ internal static partial class StartupExtensions
 
     public static WebApplication ConfigurePipeline(this WebApplication app)
     {
+        // CRITICAL: UseForwardedHeaders must be called FIRST, before any other middleware
+        // that might inspect the request scheme. This ensures that Cloudflare's forwarded
+        // headers (X-Forwarded-Proto, X-Forwarded-For) are processed and the request
+        // scheme is correctly identified as HTTPS even though Cloudflare forwards it as HTTP.
+        app.UseForwardedHeaders();
+
         if (app.Environment.IsDevelopment())
         {
             app.UseDeveloperExceptionPage();
@@ -43,25 +46,18 @@ internal static partial class StartupExtensions
             });
         }
 
-        // NOTE: UseHttpsRedirection is intentionally disabled when running behind Cloudflare.
-        // 
-        // Cloudflare terminates HTTPS at the edge and forwards traffic to the Lightsail
-        // container over HTTP. If the application forces HTTPS redirection here, it will
-        // redirect every HTTP request back to the HTTPS Cloudflare URL, which Cloudflare
-        // again forwards as HTTP � creating an infinite redirect loop (ERR_TOO_MANY_REDIRECTS).
-        //
-        // In this deployment model, Cloudflare manages TLS, and the app should accept
-        // HTTP from the reverse proxy without local HTTPS enforcement. If HTTPS is needed
-        // locally (development), conditionally enable UseHttpsRedirection only when the
-        // app is NOT running behind a proxy.
+        app.UseHttpsRedirection();
+        app.UseCors("AllowAll");
 
-        //app.UseHttpsRedirection();
-
-        app.UseForwardedHeaders();
+        // Authentication & Authorization
         app.UseAuthentication();
         app.UseAuthorization();
-        app.UseCors("AllowAll");
+
+        // Upsert user record on authenticated requests
+        app.UseMiddleware<Services.UserUpsertMiddleware>();
+
         app.MapDefaultEndpoints();
+        app.MapHealthChecks("/health");
         
         // Auto-discover and map all feature endpoints
         app.MapFeatureEndpoints();

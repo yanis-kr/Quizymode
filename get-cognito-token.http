@@ -1,0 +1,131 @@
+### Get Cognito Bearer Token
+### This file can be used with REST Client extension in VS Code or imported into Postman
+
+### Step 1: Get Authorization Code (Manual - Open in Browser)
+### Copy this URL and open it in your browser to sign in:
+### 
+### Cognito Hosted UI Login URL:
+### https://us-east-1lijbvt212.auth.us-east-1.amazoncognito.com/login?client_id=63b38es9dto8m59337jguiqli3&response_type=code&scope=email+openid+phone&redirect_uri=https%3A%2F%2Fd84l1y8p4kdic.cloudfront.net
+###
+### Note: The domain format is: {user-pool-id-lowercase}.auth.{region}.amazoncognito.com
+### Where user pool ID "us-east-1_LiJbvT212" becomes "us-east-1lijbvt212" (lowercase, no underscores)
+
+### After signing in, you'll be redirected to your redirect_uri with a code parameter
+### Copy the 'code' value from the URL query string
+
+@authorizationCode = YOUR_AUTHORIZATION_CODE_HERE
+@clientId = 63b38es9dto8m59337jguiqli3
+@redirectUri = https://d84l1y8p4kdic.cloudfront.net
+@cognitoDomain = https://us-east-1lijbvt212.auth.us-east-1.amazoncognito.com
+@tokenEndpoint = {{cognitoDomain}}/oauth2/token
+
+### Step 2: Exchange Authorization Code for Tokens
+### IMPORTANT: Use the Cognito domain endpoint, NOT the cognito-idp endpoint
+### Also, redirect_uri must match exactly what was used in the authorization request
+POST {{tokenEndpoint}}
+Content-Type: application/x-www-form-urlencoded
+
+grant_type=authorization_code&client_id={{clientId}}&code={{authorizationCode}}&redirect_uri={{redirectUri}}
+
+### Response will contain:
+### - id_token: ✅ USE THIS as Bearer token in Authorization header for API calls
+### - access_token: For calling AWS services (NOT for your API)
+### - refresh_token: Use to get new tokens when they expire
+### - expires_in: Token expiration time in seconds (usually 3600 = 1 hour)
+
+### Step 3: Use the ID Token in API Calls
+### IMPORTANT: Use the 'id_token' (NOT access_token) as the Bearer token
+### The id_token contains user claims (email, groups, etc.) that your API validates
+@idToken = YOUR_ID_TOKEN_HERE
+@apiBaseUrl = https://container-service-1.g3tzw2psg9dm4.us-east-1.cs.amazonlightsail.com/
+### Example: Get Collections (requires authentication)
+GET {{apiBaseUrl}}/collections
+Authorization: Bearer {{idToken}}
+Content-Type: application/json
+
+### Example: Get All Collections (requires Admin group)
+GET {{apiBaseUrl}}/collections/all
+Authorization: Bearer {{idToken}}
+Content-Type: application/json
+
+### Example: Get Items (requires authentication)
+GET {{apiBaseUrl}}/items
+Authorization: Bearer {{idToken}}
+Content-Type: application/json
+
+### Example: Create Item (requires authentication)
+POST {{apiBaseUrl}}/items
+Authorization: Bearer {{idToken}}
+Content-Type: application/json
+
+{
+  "question": "What is the capital of France?",
+  "answer": "Paris",
+  "category": "Geography"
+}
+
+### Example: Bulk Add Items (requires Admin group)
+POST {{apiBaseUrl}}/items/bulk
+Authorization: Bearer {{idToken}}
+Content-Type: application/json
+
+[
+  {
+    "question": "Question 1",
+    "answer": "Answer 1",
+    "category": "Category1"
+  },
+  {
+    "question": "Question 2",
+    "answer": "Answer 2",
+    "category": "Category2"
+  }
+]
+
+### Refresh Token (when ID token expires)
+@refreshToken = YOUR_REFRESH_TOKEN_HERE
+
+POST {{tokenEndpoint}}
+Content-Type: application/x-www-form-urlencoded
+
+grant_type=refresh_token&client_id={{clientId}}&refresh_token={{refreshToken}}
+
+### Note: Since this is a public client (no client secret), we don't send client authentication
+### The redirect_uri in the token exchange must match exactly what was used in the authorization request
+
+### ============================================
+### ALTERNATIVE METHOD: Using AWS CLI (No Hosted UI Required)
+### ============================================
+### If Cognito Hosted UI is not configured, you can use AWS CLI:
+###
+### Step 1: Authenticate and get tokens directly:
+### aws cognito-idp initiate-auth \
+###   --auth-flow USER_PASSWORD_AUTH \
+###   --client-id 63b38es9dto8m59337jguiqli3 \
+###   --auth-parameters USERNAME=your-username,PASSWORD=your-password \
+###   --region us-east-1
+###
+### Note: This requires USER_PASSWORD_AUTH flow to be enabled in Cognito App Client settings
+###
+### Step 2: The response will contain:
+###   - IdToken: Use this as Bearer token
+###   - AccessToken: For AWS services
+###   - RefreshToken: To get new tokens
+###
+### Step 3: Use the IdToken in API calls:
+### GET {{apiBaseUrl}}/items
+### Authorization: Bearer {IdToken from Step 1}
+###
+### ============================================
+### TROUBLESHOOTING: If Hosted UI domain doesn't exist
+### ============================================
+### 1. Go to AWS Console -> Cognito -> User Pools -> us-east-1_LiJbvT212
+### 2. Click "App integration" tab
+### 3. Scroll to "Domain" section
+### 4. If no domain is configured:
+###    a. Click "Create Cognito domain" or "Create custom domain"
+###    b. Choose a domain prefix (e.g., "quizymode")
+###    c. Save the domain
+### 5. After creating the domain, use it in the OAuth2 URL above
+### 6. Also ensure "Hosted UI" is enabled in App client settings
+
