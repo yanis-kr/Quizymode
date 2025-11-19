@@ -1,6 +1,7 @@
 using FluentAssertions;
 using FluentValidation;
 using Microsoft.EntityFrameworkCore;
+using Moq;
 using Quizymode.Api.Data;
 using Quizymode.Api.Features.Items.AddBulk;
 using Quizymode.Api.Services;
@@ -15,6 +16,7 @@ public sealed class AddItemsBulkTests : IDisposable
 {
     private readonly ApplicationDbContext _dbContext;
     private readonly ISimHashService _simHashService;
+    private readonly Mock<IUserContext> _userContextMock;
 
     public AddItemsBulkTests()
     {
@@ -24,6 +26,9 @@ public sealed class AddItemsBulkTests : IDisposable
 
         _dbContext = new ApplicationDbContext(options);
         _simHashService = new SimHashService();
+        _userContextMock = new Mock<IUserContext>();
+        _userContextMock.Setup(x => x.UserId).Returns("test-user");
+        _userContextMock.Setup(x => x.IsAuthenticated).Returns(true);
     }
 
     [Fact]
@@ -44,6 +49,7 @@ public sealed class AddItemsBulkTests : IDisposable
             request,
             _dbContext,
             _simHashService,
+            _userContextMock.Object,
             CancellationToken.None);
 
         // Assert
@@ -95,6 +101,7 @@ public sealed class AddItemsBulkTests : IDisposable
             request,
             _dbContext,
             _simHashService,
+            _userContextMock.Object,
             CancellationToken.None);
 
         // Assert
@@ -171,6 +178,7 @@ public sealed class AddItemsBulkTests : IDisposable
             request,
             _dbContext,
             _simHashService,
+            _userContextMock.Object,
             CancellationToken.None);
 
         // Assert
@@ -217,6 +225,7 @@ public sealed class AddItemsBulkTests : IDisposable
             request,
             _dbContext,
             _simHashService,
+            _userContextMock.Object,
             CancellationToken.None);
 
         // Assert
@@ -265,6 +274,7 @@ public sealed class AddItemsBulkTests : IDisposable
             request,
             _dbContext,
             _simHashService,
+            _userContextMock.Object,
             CancellationToken.None);
 
         // Assert
@@ -314,6 +324,7 @@ public sealed class AddItemsBulkTests : IDisposable
             request,
             _dbContext,
             _simHashService,
+            _userContextMock.Object,
             CancellationToken.None);
 
         // Assert
@@ -364,6 +375,7 @@ public sealed class AddItemsBulkTests : IDisposable
             request,
             _dbContext,
             _simHashService,
+            _userContextMock.Object,
             CancellationToken.None);
 
         // Assert
@@ -410,6 +422,7 @@ public sealed class AddItemsBulkTests : IDisposable
             request,
             _dbContext,
             _simHashService,
+            _userContextMock.Object,
             CancellationToken.None);
 
         // Assert
@@ -457,6 +470,7 @@ public sealed class AddItemsBulkTests : IDisposable
             request,
             _dbContext,
             _simHashService,
+            _userContextMock.Object,
             CancellationToken.None);
 
         // Assert
@@ -509,6 +523,7 @@ public sealed class AddItemsBulkTests : IDisposable
             request,
             _dbContext,
             _simHashService,
+            _userContextMock.Object,
             CancellationToken.None);
 
         // Assert
@@ -584,6 +599,7 @@ public sealed class AddItemsBulkTests : IDisposable
             request,
             _dbContext,
             _simHashService,
+            _userContextMock.Object,
             CancellationToken.None);
 
         // Assert
