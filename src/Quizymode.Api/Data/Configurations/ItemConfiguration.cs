@@ -64,6 +64,10 @@ internal sealed class ItemConfiguration : IEntityTypeConfiguration<Item>
         builder.Property(x => x.CreatedAt)
             .IsRequired();
 
+        builder.Property(x => x.ReadyForReview)
+            .IsRequired()
+            .HasDefaultValue(false);
+
         // Add check constraint for incorrect answers array length (0-4 items)
         builder.ToTable(t => t.HasCheckConstraint(
             "CK_Items_IncorrectAnswers_Length",

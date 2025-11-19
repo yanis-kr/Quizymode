@@ -17,7 +17,8 @@ public static class UpdateItem
         string CorrectAnswer,
         List<string> IncorrectAnswers,
         string Explanation,
-        bool IsPrivate);
+        bool IsPrivate,
+        bool? ReadyForReview = null);
 
     public sealed record Response(
         string Id,
@@ -141,6 +142,10 @@ public static class UpdateItem
             item.IncorrectAnswers = request.IncorrectAnswers;
             item.Explanation = request.Explanation;
             item.IsPrivate = request.IsPrivate;
+            if (request.ReadyForReview.HasValue)
+            {
+                item.ReadyForReview = request.ReadyForReview.Value;
+            }
             item.FuzzySignature = fuzzySignature;
             item.FuzzyBucket = fuzzyBucket;
 

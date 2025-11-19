@@ -14,7 +14,16 @@ internal static partial class StartupExtensions
             ?? throw new InvalidOperationException("PostgreSQL connection string not found");
 
         builder.Services.AddDbContext<ApplicationDbContext>(options =>
-            options.UseNpgsql(connectionString));
+        {
+            options.UseNpgsql(connectionString);
+            
+            // Enable sensitive data logging in Development to see actual parameter values
+            if (builder.Environment.IsDevelopment())
+            {
+                options.EnableSensitiveDataLogging();
+                options.EnableDetailedErrors();
+            }
+        });
 
         // Register DatabaseSeederHostedService for seeding
         builder.Services.AddHostedService<Services.DatabaseSeederHostedService>();

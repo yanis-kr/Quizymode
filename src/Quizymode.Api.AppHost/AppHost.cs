@@ -27,6 +27,9 @@ var postgres = builder
 var postgresDb = postgres.AddDatabase("quizymode");
 
 // Add the API project
+// Ports are configured in launchSettings.json (HTTPS: 8080, HTTP: 8081)
+// Aspire will automatically use these ports from the project's launchSettings.json
+// Note: Port 6000 is blocked by Chrome, so we use 8080 instead
 var api = builder.AddProject("quizymode-api", "../Quizymode.Api/Quizymode.Api.csproj")
     .WithReference(postgresDb)
     .WaitFor(postgresDb)
@@ -41,5 +44,9 @@ var api = builder.AddProject("quizymode-api", "../Quizymode.Api/Quizymode.Api.cs
         ?? throw new InvalidOperationException("Authentication:Cognito:ClientId must be configured in AppHost appsettings.json or user secrets"))
     .WithEnvironment("APP_Authentication__Cognito__Audience", 
         GetAudienceValue(builder.Configuration));
+
+// Web UI is run separately via `npm run dev` in the Quizymode.Web directory
+// This provides better developer experience with direct access to Vite output and easier debugging
+// See README.md for instructions on running the Web UI
 
 builder.Build().Run();

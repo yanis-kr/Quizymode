@@ -365,3 +365,8 @@ FodyWeavers.xsd
 docs/
 refCA/
 pubtest/
+
+# Environment variables
+.env
+.env.local
+.env.*.local
