@@ -9,7 +9,7 @@ using Quizymode.Api.Data;
 
 #nullable disable
 
-namespace Quizymode.Api.Migrations
+namespace Quizymode.Api.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
     [Migration("20251116142444_InitialCreate")]
