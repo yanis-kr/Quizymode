@@ -26,5 +26,7 @@ public sealed class Item
     public string CreatedBy { get; set; } = string.Empty;
 
     public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
+
+    public bool ReadyForReview { get; set; }
 }
 

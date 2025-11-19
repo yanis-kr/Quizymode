@@ -119,6 +119,11 @@ namespace Quizymode.Api.Migrations
                         .HasMaxLength(1000)
                         .HasColumnType("character varying(1000)");
 
+                    b.Property<bool>("ReadyForReview")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("boolean")
+                        .HasDefaultValue(false);
+
                     b.Property<string>("Subcategory")
                         .IsRequired()
                         .HasMaxLength(100)

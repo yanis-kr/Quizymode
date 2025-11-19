@@ -33,7 +33,8 @@ internal static class AddItemHandler
                 FuzzySignature = fuzzySignature,
                 FuzzyBucket = fuzzyBucket,
                 CreatedBy = userContext.UserId ?? "dev_user",
-                CreatedAt = DateTime.UtcNow
+                CreatedAt = DateTime.UtcNow,
+                ReadyForReview = request.ReadyForReview
             };
 
             db.Items.Add(item);

@@ -1,0 +1,99 @@
+using Microsoft.EntityFrameworkCore;
+using Quizymode.Api.Data;
+using Quizymode.Api.Infrastructure;
+using Quizymode.Api.Services;
+using Quizymode.Api.Shared.Kernel;
+using Quizymode.Api.Shared.Models;
+
+namespace Quizymode.Api.Features.Items.ReviewBoard;
+
+public static class ApproveItem
+{
+    public sealed record Response(
+        string Id,
+        string Category,
+        string Subcategory,
+        bool IsPrivate,
+        string Question,
+        string CorrectAnswer,
+        List<string> IncorrectAnswers,
+        string Explanation,
+        DateTime CreatedAt);
+
+    public sealed class Endpoint : IEndpoint
+    {
+        public void MapEndpoint(IEndpointRouteBuilder app)
+        {
+            app.MapPut("items/{id:guid}/approve", Handler)
+                .WithTags("Items")
+                .WithSummary("Approve an item for review (Admin only)")
+                .RequireAuthorization("Admin")
+                .WithOpenApi()
+                .Produces<Response>(StatusCodes.Status200OK)
+                .Produces(StatusCodes.Status404NotFound);
+        }
+
+        private static async Task<IResult> Handler(
+            Guid id,
+            ApplicationDbContext db,
+            CancellationToken cancellationToken)
+        {
+            Result<Response> result = await HandleAsync(id, db, cancellationToken);
+
+            return result.Match(
+                value => Results.Ok(value),
+                error => error.Error.Type == ErrorType.NotFound
+                    ? Results.NotFound()
+                    : CustomResults.Problem(result));
+        }
+    }
+
+    public static async Task<Result<Response>> HandleAsync(
+        Guid id,
+        ApplicationDbContext db,
+        CancellationToken cancellationToken)
+    {
+        try
+        {
+            Item? item = await db.Items.FindAsync([id], cancellationToken);
+
+            if (item is null)
+            {
+                return Result.Failure<Response>(Error.NotFound("Item.NotFound", "Item not found"));
+            }
+
+            // Approve: make it global and remove from review board
+            item.IsPrivate = false;
+            item.ReadyForReview = false;
+
+            await db.SaveChangesAsync(cancellationToken);
+
+            Response response = new Response(
+                item.Id.ToString(),
+                item.Category,
+                item.Subcategory,
+                item.IsPrivate,
+                item.Question,
+                item.CorrectAnswer,
+                item.IncorrectAnswers,
+                item.Explanation,
+                item.CreatedAt);
+
+            return Result.Success(response);
+        }
+        catch (Exception ex)
+        {
+            return Result.Failure<Response>(
+                Error.Problem("Items.ApproveFailed", $"Failed to approve item: {ex.Message}"));
+        }
+    }
+
+    public sealed class FeatureRegistration : IFeatureRegistration
+    {
+        public void AddToServiceCollection(IServiceCollection services, IConfiguration configuration)
+        {
+            // No specific services needed
+        }
+    }
+}
+

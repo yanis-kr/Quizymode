@@ -13,6 +13,7 @@ internal static class AddItemsBulkHandler
         AddItemsBulk.Request request,
         ApplicationDbContext db,
         ISimHashService simHashService,
+        IUserContext userContext,
         CancellationToken cancellationToken)
     {
         try
@@ -73,7 +74,7 @@ internal static class AddItemsBulkHandler
                         Explanation = itemRequest.Explanation,
                         FuzzySignature = fuzzySignature,
                         FuzzyBucket = fuzzyBucket,
-                        CreatedBy = "dev_user", // TODO: Get from auth context
+                        CreatedBy = userContext.UserId ?? throw new InvalidOperationException("User ID is required for bulk item creation"),
                         CreatedAt = DateTime.UtcNow
                     };
 

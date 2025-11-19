@@ -17,11 +17,18 @@ internal static class GetRandomHandler
         try
         {
             // Build a query to count available items for validation
+            // Anonymous users: only global items (IsPrivate = false)
+            // Authenticated users: global items + their own private items
             IQueryable<Item> countQuery = db.Items.AsQueryable();
 
             if (!userContext.IsAuthenticated)
             {
                 countQuery = countQuery.Where(i => !i.IsPrivate);
+            }
+            else if (!string.IsNullOrEmpty(userContext.UserId))
+            {
+                // Include global items OR user's private items
+                countQuery = countQuery.Where(i => !i.IsPrivate || (i.IsPrivate && i.CreatedBy == userContext.UserId));
             }
 
             if (!string.IsNullOrEmpty(request.Category))
@@ -45,44 +52,40 @@ internal static class GetRandomHandler
             // Limit the count to available items
             int takeCount = Math.Min(request.Count, totalCount);
             
-            // Build query using FromSqlInterpolated for safe parameterization
+            // Build query using LINQ for better control over private items filtering
             // Use PostgreSQL's random() function for efficient random selection
-            IQueryable<Item> randomQuery;
-            
+            IQueryable<Item> baseQuery = db.Items.AsQueryable();
+
+            // Apply visibility filter
+            if (!userContext.IsAuthenticated)
+            {
+                baseQuery = baseQuery.Where(i => !i.IsPrivate);
+            }
+            else if (!string.IsNullOrEmpty(userContext.UserId))
+            {
+                // Include global items OR user's private items
+                baseQuery = baseQuery.Where(i => !i.IsPrivate || (i.IsPrivate && i.CreatedBy == userContext.UserId));
+            }
+
+            // Apply category/subcategory filters
             if (!string.IsNullOrEmpty(request.Category) && !string.IsNullOrEmpty(request.Subcategory))
             {
-                randomQuery = db.Items.FromSqlInterpolated(
-                    $@"SELECT * FROM ""items"" 
-                       WHERE ""Category"" = {request.Category} 
-                         AND ""Subcategory"" = {request.Subcategory} 
-                       ORDER BY random() 
-                       LIMIT {takeCount}");
+                baseQuery = baseQuery.Where(i => i.Category == request.Category && i.Subcategory == request.Subcategory);
             }
             else if (!string.IsNullOrEmpty(request.Category))
             {
-                randomQuery = db.Items.FromSqlInterpolated(
-                    $@"SELECT * FROM ""items"" 
-                       WHERE ""Category"" = {request.Category} 
-                       ORDER BY random() 
-                       LIMIT {takeCount}");
+                baseQuery = baseQuery.Where(i => i.Category == request.Category);
             }
             else if (!string.IsNullOrEmpty(request.Subcategory))
             {
-                randomQuery = db.Items.FromSqlInterpolated(
-                    $@"SELECT * FROM ""items"" 
-                       WHERE ""Subcategory"" = {request.Subcategory} 
-                       ORDER BY random() 
-                       LIMIT {takeCount}");
+                baseQuery = baseQuery.Where(i => i.Subcategory == request.Subcategory);
             }
-            else
-            {
-                randomQuery = db.Items.FromSqlInterpolated(
-                    $@"SELECT * FROM ""items"" 
-                       ORDER BY random() 
-                       LIMIT {takeCount}");
-            }
-            
-            List<Item> items = await randomQuery.ToListAsync(cancellationToken);
+
+            // Get random items using EF Core
+            List<Item> items = await baseQuery
+                .OrderBy(_ => Guid.NewGuid()) // Random ordering
+                .Take(takeCount)
+                .ToListAsync(cancellationToken);
 
             GetRandom.Response response = new GetRandom.Response(
                 items.Select(i => new GetRandom.ItemResponse(

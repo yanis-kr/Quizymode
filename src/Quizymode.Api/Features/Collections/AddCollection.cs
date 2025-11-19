@@ -1,6 +1,8 @@
 using FluentValidation;
+using Microsoft.Extensions.Logging;
 using Quizymode.Api.Data;
 using Quizymode.Api.Infrastructure;
+using Quizymode.Api.Services;
 using Quizymode.Api.Shared.Kernel;
 using Quizymode.Api.Shared.Models;
 
@@ -44,15 +46,24 @@ public static class AddCollection
             Request request,
             IValidator<Request> validator,
             ApplicationDbContext db,
+            IUserContext userContext,
+            ILogger<Endpoint> logger,
             CancellationToken cancellationToken)
         {
+            if (!userContext.IsAuthenticated || string.IsNullOrEmpty(userContext.UserId))
+            {
+                logger.LogWarning("Unauthorized attempt to create collection. IsAuthenticated: {IsAuthenticated}, UserId: {UserId}",
+                    userContext.IsAuthenticated, userContext.UserId ?? "null");
+                return Results.Unauthorized();
+            }
+
             var validationResult = await validator.ValidateAsync(request, cancellationToken);
             if (!validationResult.IsValid)
             {
                 return Results.BadRequest(validationResult.Errors);
             }
 
-            Result<Response> result = await HandleAsync(request, db, cancellationToken);
+            Result<Response> result = await HandleAsync(request, db, userContext, logger, cancellationToken);
 
             return result.Match(
                 value => Results.Created($"/api/collections/{value.Id}", value),
@@ -63,15 +74,27 @@ public static class AddCollection
     public static async Task<Result<Response>> HandleAsync(
         Request request,
         ApplicationDbContext db,
+        IUserContext userContext,
+        ILogger<Endpoint> logger,
         CancellationToken cancellationToken)
     {
         try
         {
+            if (string.IsNullOrEmpty(userContext.UserId))
+            {
+                logger.LogError("UserContext.UserId is null or empty when creating collection");
+                return Result.Failure<Response>(
+                    Error.Validation("Collections.UserIdMissing", "User ID is missing"));
+            }
+
+            string userId = userContext.UserId;
+            logger.LogInformation("Creating collection '{Name}' for user '{UserId}'", request.Name, userId);
+
             Collection entity = new()
             {
                 Id = Guid.NewGuid(),
                 Name = request.Name,
-                CreatedBy = "dev_user",
+                CreatedBy = userId,
                 CreatedAt = DateTime.UtcNow
             };
 

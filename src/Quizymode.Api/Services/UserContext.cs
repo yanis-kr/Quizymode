@@ -1,4 +1,5 @@
 using System.Security.Claims;
+using Microsoft.Extensions.Logging;
 
 namespace Quizymode.Api.Services;
 
@@ -11,9 +12,10 @@ public interface IUserContext
     bool IsAdmin { get; }
 }
 
-internal sealed class UserContext(IHttpContextAccessor httpContextAccessor) : IUserContext
+internal sealed class UserContext(IHttpContextAccessor httpContextAccessor, ILogger<UserContext> logger) : IUserContext
 {
     private readonly IHttpContextAccessor _httpContextAccessor = httpContextAccessor;
+    private readonly ILogger<UserContext> _logger = logger;
 
     public bool IsAuthenticated
     {
@@ -28,21 +30,32 @@ internal sealed class UserContext(IHttpContextAccessor httpContextAccessor) : IU
     {
         get
         {
-            ClaimsPrincipal? user = _httpContextAccessor.HttpContext?.User;
-            if (user is null)
+            HttpContext? httpContext = _httpContextAccessor.HttpContext;
+            if (httpContext is null)
             {
+                _logger.LogDebug("UserContext.UserId: HttpContext is null");
                 return null;
             }
 
-            // Preferred: Cognito subject (sub)
-            string? sub = user.FindFirstValue("sub");
-            if (!string.IsNullOrWhiteSpace(sub))
+            // UserUpsertMiddleware stores UserId (GUID) in HttpContext.Items
+            if (httpContext.Items.TryGetValue("UserId", out object? userIdObj) && userIdObj is string userId)
             {
-                return sub;
+                _logger.LogDebug("UserContext.UserId: Found UserId from HttpContext.Items: {UserId}", userId);
+                return userId;
             }
 
-            // Fallback to NameIdentifier if present
-            return user.FindFirstValue(ClaimTypes.NameIdentifier);
+            // Fallback: if UserUpsertMiddleware hasn't run yet, log a warning
+            ClaimsPrincipal? user = httpContext.User;
+            if (user?.Identity?.IsAuthenticated ?? false)
+            {
+                _logger.LogWarning("UserContext.UserId: User is authenticated but UserId not found in HttpContext.Items. UserUpsertMiddleware may not have run yet.");
+            }
+            else
+            {
+                _logger.LogDebug("UserContext.UserId: User is not authenticated");
+            }
+
+            return null;
         }
     }
 
