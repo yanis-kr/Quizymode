@@ -7,6 +7,7 @@ import QuizModePage from './features/items/pages/QuizModePage';
 import LoginPage from './features/auth/pages/LoginPage';
 import SignUpPage from './features/auth/pages/SignUpPage';
 import MyItemsPage from './features/items/pages/MyItemsPage';
+import CreateItemPage from './features/items/pages/CreateItemPage';
 import CollectionsPage from './features/collections/pages/CollectionsPage';
 import CollectionDetailPage from './features/collections/pages/CollectionDetailPage';
 import AdminDashboardPage from './features/admin/pages/AdminDashboardPage';
@@ -24,6 +25,7 @@ function App() {
         <Route path="/login" element={<LoginPage />} />
         <Route path="/signup" element={<SignUpPage />} />
         <Route path="/my-items" element={<MyItemsPage />} />
+        <Route path="/items/create" element={<CreateItemPage />} />
         <Route path="/collections" element={<CollectionsPage />} />
         <Route path="/collections/:id" element={<CollectionDetailPage />} />
         <Route path="/admin" element={<AdminDashboardPage />} />

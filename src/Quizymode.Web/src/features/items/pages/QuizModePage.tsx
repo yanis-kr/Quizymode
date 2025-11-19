@@ -5,6 +5,8 @@ import { itemsApi } from '@/api/items';
 import { useAuth } from '@/contexts/AuthContext';
 import LoadingSpinner from '@/components/LoadingSpinner';
 import ErrorMessage from '@/components/ErrorMessage';
+import ReactionsComments from '@/components/ReactionsComments';
+import CollectionControls from '@/components/CollectionControls';
 
 const QuizModePage = () => {
   const { category } = useParams();
@@ -153,6 +155,12 @@ const QuizModePage = () => {
                 Category: {currentItem.category}
                 {currentItem.subcategory && ` • ${currentItem.subcategory}`}
               </div>
+
+              {/* Reactions and Comments */}
+              {showAnswer && <ReactionsComments itemId={currentItem.id} />}
+
+              {/* Collection Controls */}
+              {showAnswer && <CollectionControls itemId={currentItem.id} />}
             </div>
           )}
 

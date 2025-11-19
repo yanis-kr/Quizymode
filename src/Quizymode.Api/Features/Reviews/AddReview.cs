@@ -2,6 +2,7 @@ using FluentValidation;
 using Microsoft.EntityFrameworkCore;
 using Quizymode.Api.Data;
 using Quizymode.Api.Infrastructure;
+using Quizymode.Api.Services;
 using Quizymode.Api.Shared.Kernel;
 using Quizymode.Api.Shared.Models;
 
@@ -58,15 +59,21 @@ public static class AddReview
             Request request,
             IValidator<Request> validator,
             ApplicationDbContext db,
+            IUserContext userContext,
             CancellationToken cancellationToken)
         {
+            if (!userContext.IsAuthenticated || string.IsNullOrEmpty(userContext.UserId))
+            {
+                return Results.Unauthorized();
+            }
+
             var validationResult = await validator.ValidateAsync(request, cancellationToken);
             if (!validationResult.IsValid)
             {
                 return Results.BadRequest(validationResult.Errors);
             }
 
-            Result<Response> result = await HandleAsync(request, db, cancellationToken);
+            Result<Response> result = await HandleAsync(request, db, userContext, cancellationToken);
 
             return result.Match(
                 value => Results.Created($"/api/reviews/{value.Id}", value),
@@ -77,10 +84,17 @@ public static class AddReview
     public static async Task<Result<Response>> HandleAsync(
         Request request,
         ApplicationDbContext db,
+        IUserContext userContext,
         CancellationToken cancellationToken)
     {
         try
         {
+            if (string.IsNullOrEmpty(userContext.UserId))
+            {
+                return Result.Failure<Response>(
+                    Error.Validation("Review.UserIdMissing", "User ID is missing"));
+            }
+
             bool itemExists = await db.Items.AnyAsync(i => i.Id == request.ItemId, cancellationToken);
             if (!itemExists)
             {
@@ -94,7 +108,7 @@ public static class AddReview
                 ItemId = request.ItemId,
                 Reaction = request.Reaction,
                 Comment = request.Comment,
-                CreatedBy = "dev_user",
+                CreatedBy = userContext.UserId, // Use UserId (GUID) from Users table
                 CreatedAt = DateTime.UtcNow
             };
 

@@ -5,6 +5,8 @@ import { itemsApi } from '@/api/items';
 import { useAuth } from '@/contexts/AuthContext';
 import LoadingSpinner from '@/components/LoadingSpinner';
 import ErrorMessage from '@/components/ErrorMessage';
+import ReactionsComments from '@/components/ReactionsComments';
+import CollectionControls from '@/components/CollectionControls';
 import { Link } from 'react-router-dom';
 
 const ExploreModePage = () => {
@@ -77,6 +79,12 @@ const ExploreModePage = () => {
                 Category: {currentItem.category}
                 {currentItem.subcategory && ` • ${currentItem.subcategory}`}
               </div>
+
+              {/* Reactions and Comments */}
+              <ReactionsComments itemId={currentItem.id} />
+
+              {/* Collection Controls */}
+              <CollectionControls itemId={currentItem.id} />
             </div>
           )}
 

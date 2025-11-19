@@ -1,36 +1,53 @@
-import { apiClient } from './client';
+import { apiClient } from "./client";
 import type {
   CollectionsResponse,
   CollectionResponse,
-  ItemsResponse,
+  ItemResponse,
   CreateCollectionRequest,
   UpdateCollectionRequest,
   AddItemToCollectionRequest,
-} from '@/types/api';
+} from "@/types/api";
 
 export const collectionsApi = {
   getAll: async (): Promise<CollectionsResponse> => {
-    const response = await apiClient.get<CollectionsResponse>('/collections');
+    const response = await apiClient.get<CollectionsResponse>("/collections");
     return response.data;
   },
 
   getById: async (id: string): Promise<CollectionResponse> => {
-    const response = await apiClient.get<CollectionResponse>(`/collections/${id}`);
+    const response = await apiClient.get<CollectionResponse>(
+      `/collections/${id}`
+    );
     return response.data;
   },
 
-  getItems: async (collectionId: string): Promise<{ items: ItemResponse[] }> => {
-    const response = await apiClient.get<{ items: ItemResponse[] }>(`/collections/${collectionId}/items`);
+  getItems: async (
+    collectionId: string
+  ): Promise<{ items: ItemResponse[] }> => {
+    const response = await apiClient.get<{ items: ItemResponse[] }>(
+      `/collections/${collectionId}/items`
+    );
     return response.data;
   },
 
-  create: async (data: CreateCollectionRequest): Promise<CollectionResponse> => {
-    const response = await apiClient.post<CollectionResponse>('/collections', data);
+  create: async (
+    data: CreateCollectionRequest
+  ): Promise<CollectionResponse> => {
+    const response = await apiClient.post<CollectionResponse>(
+      "/collections",
+      data
+    );
     return response.data;
   },
 
-  update: async (id: string, data: UpdateCollectionRequest): Promise<CollectionResponse> => {
-    const response = await apiClient.put<CollectionResponse>(`/collections/${id}`, data);
+  update: async (
+    id: string,
+    data: UpdateCollectionRequest
+  ): Promise<CollectionResponse> => {
+    const response = await apiClient.put<CollectionResponse>(
+      `/collections/${id}`,
+      data
+    );
     return response.data;
   },
 
@@ -38,8 +55,10 @@ export const collectionsApi = {
     await apiClient.delete(`/collections/${id}`);
   },
 
-  addItem: async (collectionId: string, data: AddItemToCollectionRequest): Promise<void> => {
+  addItem: async (
+    collectionId: string,
+    data: AddItemToCollectionRequest
+  ): Promise<void> => {
     await apiClient.post(`/collections/${collectionId}/items`, data);
   },
 };
-

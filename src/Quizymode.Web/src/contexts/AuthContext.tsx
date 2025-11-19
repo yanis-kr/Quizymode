@@ -5,6 +5,8 @@ interface AuthContextType {
   isAuthenticated: boolean;
   isLoading: boolean;
   userId: string | null;
+  username: string | null;
+  email: string | null;
   isAdmin: boolean;
   login: (username: string, password: string) => Promise<void>;
   signup: (username: string, password: string, email: string) => Promise<void>;
@@ -31,6 +33,8 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
   const [userId, setUserId] = useState<string | null>(null);
+  const [username, setUsername] = useState<string | null>(null);
+  const [email, setEmail] = useState<string | null>(null);
   const [isAdmin, setIsAdmin] = useState(false);
 
   const refreshAuth = async () => {
@@ -42,6 +46,8 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
         
         setIsAuthenticated(true);
         setUserId(payload.sub || null);
+        setUsername(payload['cognito:username'] || payload.username || null);
+        setEmail(payload.email || null);
         
         // Check for admin group in token
         const groups = payload['cognito:groups'] || [];
@@ -50,11 +56,19 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
         // Store tokens
         localStorage.setItem('accessToken', token.toString());
         if (session.tokens.idToken) {
-          localStorage.setItem('idToken', session.tokens.idToken.toString());
+          const idToken = session.tokens.idToken;
+          const idPayload = JSON.parse(atob(idToken.toString().split('.')[1]));
+          // Get email from idToken if not in accessToken
+          if (!payload.email && idPayload.email) {
+            setEmail(idPayload.email);
+          }
+          localStorage.setItem('idToken', idToken.toString());
         }
       } else {
         setIsAuthenticated(false);
         setUserId(null);
+        setUsername(null);
+        setEmail(null);
         setIsAdmin(false);
         localStorage.removeItem('accessToken');
         localStorage.removeItem('idToken');
@@ -63,6 +77,8 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
       console.error('Auth refresh error:', error);
       setIsAuthenticated(false);
       setUserId(null);
+      setUsername(null);
+      setEmail(null);
       setIsAdmin(false);
       localStorage.removeItem('accessToken');
       localStorage.removeItem('idToken');
@@ -122,6 +138,8 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
       await signOut();
       setIsAuthenticated(false);
       setUserId(null);
+      setUsername(null);
+      setEmail(null);
       setIsAdmin(false);
       localStorage.removeItem('accessToken');
       localStorage.removeItem('idToken');
@@ -137,6 +155,8 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
         isAuthenticated,
         isLoading,
         userId,
+        username,
+        email,
         isAdmin,
         login,
         signup,

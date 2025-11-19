@@ -1,6 +1,7 @@
 using FluentValidation;
 using Quizymode.Api.Data;
 using Quizymode.Api.Infrastructure;
+using Quizymode.Api.Services;
 using Quizymode.Api.Shared.Kernel;
 using RequestEntity = Quizymode.Api.Shared.Models.Request;
 
@@ -52,15 +53,21 @@ public static class AddRequest
             RequestDto request,
             IValidator<RequestDto> validator,
             ApplicationDbContext db,
+            IUserContext userContext,
             CancellationToken cancellationToken)
         {
+            if (!userContext.IsAuthenticated || string.IsNullOrEmpty(userContext.UserId))
+            {
+                return Results.Unauthorized();
+            }
+
             var validationResult = await validator.ValidateAsync(request, cancellationToken);
             if (!validationResult.IsValid)
             {
                 return Results.BadRequest(validationResult.Errors);
             }
 
-            Result<Response> result = await HandleAsync(request, db, cancellationToken);
+            Result<Response> result = await HandleAsync(request, db, userContext, cancellationToken);
 
             return result.Match(
                 value => Results.Created($"/api/requests/{value.Id}", value),
@@ -71,16 +78,23 @@ public static class AddRequest
     public static async Task<Result<Response>> HandleAsync(
         RequestDto request,
         ApplicationDbContext db,
+        IUserContext userContext,
         CancellationToken cancellationToken)
     {
         try
         {
+            if (string.IsNullOrEmpty(userContext.UserId))
+            {
+                return Result.Failure<Response>(
+                    Error.Validation("Request.UserIdMissing", "User ID is missing"));
+            }
+
             RequestEntity entity = new()
             {
                 Id = Guid.NewGuid(),
                 CategoryId = request.Category,
                 Description = request.Description,
-                CreatedBy = "dev_user", // TODO: replace with authenticated user identifier
+                CreatedBy = userContext.UserId, // Use UserId (GUID) from Users table
                 CreatedAt = DateTime.UtcNow,
                 Status = "Pending"
             };

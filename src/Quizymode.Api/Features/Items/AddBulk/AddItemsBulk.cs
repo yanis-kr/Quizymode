@@ -111,15 +111,21 @@ public static class AddItemsBulk
             IValidator<Request> validator,
             ApplicationDbContext db,
             ISimHashService simHashService,
+            IUserContext userContext,
             CancellationToken cancellationToken)
         {
+            if (!userContext.IsAuthenticated || string.IsNullOrEmpty(userContext.UserId))
+            {
+                return Results.Unauthorized();
+            }
+
             var validationResult = await validator.ValidateAsync(request, cancellationToken);
             if (!validationResult.IsValid)
             {
                 return Results.BadRequest(validationResult.Errors);
             }
 
-            Result<Response> result = await AddItemsBulkHandler.HandleAsync(request, db, simHashService, cancellationToken);
+            Result<Response> result = await AddItemsBulkHandler.HandleAsync(request, db, simHashService, userContext, cancellationToken);
 
             return result.Match(
                 value => Results.Ok(value),

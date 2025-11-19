@@ -2,7 +2,6 @@ import { Amplify } from "aws-amplify";
 
 const userPoolId = import.meta.env.VITE_COGNITO_USER_POOL_ID;
 const clientId = import.meta.env.VITE_COGNITO_CLIENT_ID;
-const region = import.meta.env.VITE_COGNITO_REGION || "us-east-1";
 
 if (!userPoolId || !clientId) {
   const errorMsg =
@@ -21,7 +20,6 @@ export const configureAmplify = () => {
       Cognito: {
         userPoolId: userPoolId!,
         userPoolClientId: clientId!,
-        region: region,
       },
     },
   });
