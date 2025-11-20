@@ -8,7 +8,7 @@ using Quizymode.Api.Data;
 
 #nullable disable
 
-namespace Quizymode.Api.Migrations
+namespace Quizymode.Api.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
     partial class ApplicationDbContextModelSnapshot : ModelSnapshot

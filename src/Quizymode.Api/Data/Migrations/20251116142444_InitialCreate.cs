@@ -2,7 +2,7 @@
 
 #nullable disable
 
-namespace Quizymode.Api.Migrations
+namespace Quizymode.Api.Data.Migrations
 {
     /// <inheritdoc />
     public partial class InitialCreate : Migration

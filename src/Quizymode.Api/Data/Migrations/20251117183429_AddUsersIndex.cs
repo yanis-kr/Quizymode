@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
-namespace Quizymode.Api.Migrations
+namespace Quizymode.Api.Data.Migrations
 {
     /// <inheritdoc />
     public partial class AddUsersIndex : Migration
