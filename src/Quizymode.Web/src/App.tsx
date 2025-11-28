@@ -12,6 +12,8 @@ import CollectionsPage from './features/collections/pages/CollectionsPage';
 import CollectionDetailPage from './features/collections/pages/CollectionDetailPage';
 import AdminDashboardPage from './features/admin/pages/AdminDashboardPage';
 import ReviewBoardPage from './features/admin/pages/ReviewBoardPage';
+import BulkCreatePage from './features/admin/pages/BulkCreatePage';
+import EditItemPage from './features/items/pages/EditItemPage';
 
 function App() {
   return (
@@ -26,9 +28,11 @@ function App() {
         <Route path="/signup" element={<SignUpPage />} />
         <Route path="/my-items" element={<MyItemsPage />} />
         <Route path="/items/create" element={<CreateItemPage />} />
+        <Route path="/items/:id/edit" element={<EditItemPage />} />
         <Route path="/collections" element={<CollectionsPage />} />
         <Route path="/collections/:id" element={<CollectionDetailPage />} />
         <Route path="/admin" element={<AdminDashboardPage />} />
+        <Route path="/admin/bulk-create" element={<BulkCreatePage />} />
         <Route path="/admin/review-board" element={<ReviewBoardPage />} />
       </Routes>
     </Layout>
