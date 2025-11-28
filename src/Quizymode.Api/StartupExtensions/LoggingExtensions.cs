@@ -30,7 +30,7 @@ internal static partial class StartupExtensions
                     if (logEvent.Properties.TryGetValue("RequestPath", out var requestPath))
                     {
                         string? path = requestPath.ToString().Trim('"');
-                        if (path == "/health" || path == "/alive")
+                        if (path == "/health")
                         {
                             return true;
                         }
@@ -38,8 +38,7 @@ internal static partial class StartupExtensions
                     
                     // Exclude logs that mention health check endpoints in the message
                     string message = logEvent.RenderMessage();
-                    return message.Contains("/health", StringComparison.OrdinalIgnoreCase) 
-                        || message.Contains("/alive", StringComparison.OrdinalIgnoreCase);
+                    return message.Contains("/health", StringComparison.OrdinalIgnoreCase);
                 })
                 .Enrich.FromLogContext()
                 .Enrich.WithProperty("Application", "QuizyMode")
