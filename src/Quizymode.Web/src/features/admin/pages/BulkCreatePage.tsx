@@ -8,6 +8,7 @@ import ErrorMessage from "@/components/ErrorMessage";
 import { categoriesApi } from "@/api/categories";
 import { useQuery } from "@tanstack/react-query";
 import { apiClient } from "@/api/client";
+import { ChevronDownIcon, ChevronUpIcon } from "@heroicons/react/24/outline";
 
 interface BulkCreateRequest {
   isPrivate: boolean;
@@ -28,6 +29,7 @@ const BulkCreatePage = () => {
   const [category, setCategory] = useState("");
   const [isPrivate, setIsPrivate] = useState(false);
   const [validationError, setValidationError] = useState<string>("");
+  const [isPromptExampleOpen, setIsPromptExampleOpen] = useState(false);
 
   const { data: categoriesData } = useQuery({
     queryKey: ["categories"],
@@ -114,17 +116,18 @@ const BulkCreatePage = () => {
         }
       }
 
-      // Validate that all items have category or fallback category is provided
+      // Validate that all items have category or category override is provided
       const itemsWithoutCategory = parsedItems.filter((item: any) => !item.category);
       if (itemsWithoutCategory.length > 0 && !category.trim()) {
-        setValidationError(`Items ${itemsWithoutCategory.map((_: any, i: number) => parsedItems.indexOf(itemsWithoutCategory[i]) + 1).join(', ')} are missing category field and no default category is provided`);
+        setValidationError(`Items ${itemsWithoutCategory.map((_: any, i: number) => parsedItems.indexOf(itemsWithoutCategory[i]) + 1).join(', ')} are missing category field and no category override is provided`);
         return;
       }
 
       const request: BulkCreateRequest = {
         isPrivate,
         items: parsedItems.map((item: any) => ({
-          category: (item.category || category).trim(),
+          // Category override replaces category in JSON if provided
+          category: (category.trim() || item.category || "").trim(),
           subcategory: item.subcategory.trim(),
           question: item.question.trim(),
           correctAnswer: item.correctAnswer.trim(),
@@ -150,20 +153,65 @@ const BulkCreatePage = () => {
       <div className="max-w-4xl mx-auto">
         <h1 className="text-3xl font-bold text-gray-900 mb-6">Bulk Create Items</h1>
 
-        <div className="bg-blue-50 border border-blue-200 rounded-lg p-4 mb-6">
-          <h3 className="text-sm font-medium text-blue-900 mb-2">JSON Format:</h3>
-          <pre className="text-xs text-blue-800 overflow-x-auto">
-{`[
-  {
-    "category": "Category Name",
-    "subcategory": "Subcategory Name",
-    "question": "Question text?",
-    "correctAnswer": "Correct answer",
-    "incorrectAnswers": ["Wrong answer 1", "Wrong answer 2"],
-    "explanation": "Optional explanation"
-  }
-]`}
-          </pre>
+        <div className="mb-6 space-y-4">
+          <p className="text-gray-700">
+            You can add a batch of flashcard items here by pasting a JSON array in the format shown in the sample prompt below.
+            You can write it yourself or ask an AI (e.g. ChatGPT or Claude) to generate it for you using the sample prompt.
+          </p>
+          <p className="text-gray-700">
+            Regular users can add only Private items (visible only to this user).
+            Admins can add items visible to everyone.
+          </p>
+        </div>
+
+        <div className="bg-white border border-gray-300 rounded-lg mb-6">
+          <button
+            type="button"
+            onClick={() => setIsPromptExampleOpen(!isPromptExampleOpen)}
+            className="w-full flex items-center justify-between px-4 py-3 text-left hover:bg-gray-50 transition-colors"
+          >
+            <span className="text-sm font-medium text-gray-900">
+              🔽 AI Prompt Example (copyable text)
+            </span>
+            {isPromptExampleOpen ? (
+              <ChevronUpIcon className="h-5 w-5 text-gray-500" />
+            ) : (
+              <ChevronDownIcon className="h-5 w-5 text-gray-500" />
+            )}
+          </button>
+          {isPromptExampleOpen && (
+            <div className="px-4 pb-4 border-t border-gray-200">
+              <pre className="text-xs text-gray-800 whitespace-pre-wrap font-mono mt-4">
+{`You are creating study flashcards for an app called Quizymode.
+
+Create up to 100 quiz items about <replace-me: Topic or Category Name>, specifically about <replace-me: Subcategory Names>.
+
+Each item must be a JSON object with this exact shape:
+
+{
+  "category": "Category Name (e.g. Spanish, US History, or ACT)",
+  "subcategory": "Subcategory Name (e.g. Greetings or ACT Math)",
+  "question": "Question text?",
+  "correctAnswer": "Correct answer",
+  "incorrectAnswers": ["Wrong answer 1", "Wrong answer 2", "Wrong answer 3"],
+  "explanation": "Short explanation of why the correct answer is right (optional but recommended)"
+}
+
+Requirements:
+- Return a single JSON array of items: [ { ... }, { ... }, ... ].
+- Do NOT include any explanations, prose, comments, Markdown, or code fences. Output raw JSON only.
+- Every item must have:
+  - "category" (max 50 characters)
+  - "subcategory" (max 50 characters)
+  - a non-empty "question" (max 1,000 characters)
+  - a non-empty "correctAnswer" (max 200 characters)
+  - 1–5 "incorrectAnswers" (each max 200 characters)
+- All strings must be plain text (no HTML, no LaTeX).
+
+Now generate the JSON array only.`}
+              </pre>
+            </div>
+          )}
         </div>
 
         {validationError && (
@@ -196,16 +244,9 @@ const BulkCreatePage = () => {
         )}
 
         <form onSubmit={handleSubmit} className="bg-white shadow rounded-lg p-6 space-y-6">
-          <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-4">
-            <p className="text-sm text-yellow-800">
-              <strong>Note:</strong> Each item in the JSON must include a "category" field. 
-              The category dropdown below is only used as a fallback if items don't specify a category.
-            </p>
-          </div>
-
           <div>
             <label className="block text-sm font-medium text-gray-700 mb-2">
-              Default Category (fallback if not in JSON)
+              Category Override (optional)
             </label>
             <select
               value={category}
@@ -219,18 +260,10 @@ const BulkCreatePage = () => {
                 </option>
               ))}
             </select>
-          </div>
-
-          <div>
-            <label className="flex items-center">
-              <input
-                type="checkbox"
-                checked={isPrivate}
-                onChange={(e) => setIsPrivate(e.target.checked)}
-                className="mr-2"
-              />
-              <span className="text-sm font-medium text-gray-700">Private Items</span>
-            </label>
+            <p className="mt-1 text-sm text-gray-500">
+              If you select a category here, it will override the "category" field inside every JSON item you upload.
+              Leave empty to keep category values from your JSON.
+            </p>
           </div>
 
           <div>
@@ -245,6 +278,25 @@ const BulkCreatePage = () => {
               className="w-full px-3 py-2 border border-gray-300 rounded-md text-sm font-mono"
               placeholder='[\n  {\n    "category": "Category",\n    "subcategory": "Subcategory",\n    "question": "Question?",\n    "correctAnswer": "Answer",\n    "incorrectAnswers": ["Wrong 1", "Wrong 2"],\n    "explanation": "Explanation"\n  }\n]'
             />
+            <p className="mt-1 text-sm text-gray-500">
+              Paste your JSON array here (up to 100 items).
+              If you selected a Category Override above, it will replace the "category" field in every item.
+            </p>
+          </div>
+
+          <div>
+            <label className="flex items-center">
+              <input
+                type="checkbox"
+                checked={isPrivate}
+                onChange={(e) => setIsPrivate(e.target.checked)}
+                className="mr-2"
+              />
+              <span className="text-sm font-medium text-gray-700">Private Items</span>
+            </label>
+            <p className="mt-1 ml-6 text-sm text-gray-500">
+              Private items are visible only to your account.
+            </p>
           </div>
 
           <div className="flex justify-end space-x-4">
