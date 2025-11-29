@@ -57,7 +57,7 @@ internal static partial class StartupExtensions
         app.UseMiddleware<Services.UserUpsertMiddleware>();
 
         app.MapDefaultEndpoints();
-        app.MapHealthChecks("/health");
+        //app.MapHealthChecks("/health");
         
         // Auto-discover and map all feature endpoints
         app.MapFeatureEndpoints();
