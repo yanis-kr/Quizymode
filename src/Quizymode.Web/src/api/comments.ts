@@ -5,6 +5,7 @@ export interface CommentResponse {
   itemId: string;
   text: string;
   createdBy: string;
+  createdByName?: string | null;
   createdAt: string;
   updatedAt?: string | null;
 }

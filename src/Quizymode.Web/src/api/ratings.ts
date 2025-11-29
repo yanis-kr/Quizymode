@@ -26,14 +26,11 @@ export const ratingsApi = {
     return response.data.stats;
   },
 
-  getCurrentUserRating: async (itemId: string): Promise<RatingResponse | null> => {
-    // Note: There's no direct endpoint for this, we'll need to get all ratings and filter
-    // For now, we'll handle this in the component by checking the response
-    const response = await apiClient.get<{ stats: RatingStatsResponse }>("/ratings", {
+  getUserRating: async (itemId: string): Promise<RatingResponse | null> => {
+    const response = await apiClient.get<RatingResponse | null>("/ratings/me", {
       params: { itemId },
     });
-    // This endpoint doesn't return user's rating, so we'll need to handle it differently
-    return null;
+    return response.data;
   },
 
   createOrUpdate: async (data: CreateRatingRequest): Promise<RatingResponse> => {

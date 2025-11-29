@@ -1,21 +1,27 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useSearchParams } from "react-router-dom";
 import { ratingsApi } from "@/api/ratings";
 import { commentsApi } from "@/api/comments";
 import { useAuth } from "@/contexts/AuthContext";
-import {
-  StarIcon,
-} from "@heroicons/react/24/outline";
-import {
-  StarIcon as StarIconSolid,
-} from "@heroicons/react/24/solid";
+import { StarIcon } from "@heroicons/react/24/outline";
+import { StarIcon as StarIconSolid } from "@heroicons/react/24/solid";
 
 interface ItemRatingsCommentsProps {
   itemId: string;
+  navigationContext?: {
+    mode: "explore" | "quiz";
+    category?: string;
+    collectionId?: string;
+    currentIndex: number;
+    itemIds: string[];
+  };
 }
 
-const ItemRatingsComments = ({ itemId }: ItemRatingsCommentsProps) => {
+const ItemRatingsComments = ({
+  itemId,
+  navigationContext,
+}: ItemRatingsCommentsProps) => {
   const { isAuthenticated, userId } = useAuth();
   const navigate = useNavigate();
   const queryClient = useQueryClient();
@@ -27,11 +33,32 @@ const ItemRatingsComments = ({ itemId }: ItemRatingsCommentsProps) => {
     enabled: true,
   });
 
+  const { data: userRatingData } = useQuery({
+    queryKey: ["userRating", itemId],
+    queryFn: () => ratingsApi.getUserRating(itemId),
+    enabled: isAuthenticated,
+  });
+
   const { data: commentsData } = useQuery({
     queryKey: ["comments", itemId],
     queryFn: () => commentsApi.getByItemId(itemId),
     enabled: true,
   });
+
+  // Reset rating state when itemId changes
+  useEffect(() => {
+    setUserRating(null);
+  }, [itemId]);
+
+  // Initialize user rating from API response
+  useEffect(() => {
+    if (userRatingData) {
+      setUserRating(userRatingData.stars);
+    } else if (userRatingData === null) {
+      // Explicitly null means no rating exists
+      setUserRating(null);
+    }
+  }, [userRatingData]);
 
   const ratingMutation = useMutation({
     mutationFn: (stars: number | null) =>
@@ -39,12 +66,9 @@ const ItemRatingsComments = ({ itemId }: ItemRatingsCommentsProps) => {
     onSuccess: (response) => {
       setUserRating(response.stars);
       queryClient.invalidateQueries({ queryKey: ["ratingStats", itemId] });
+      queryClient.invalidateQueries({ queryKey: ["userRating", itemId] });
     },
   });
-
-  // Initialize user rating from mutation response if available
-  // Note: We don't have an endpoint to get user's rating, so we track it locally
-  // after user interaction. On initial load, stars will be hollow.
 
   const handleStarClick = (stars: number) => {
     if (!isAuthenticated) return;
@@ -93,7 +117,29 @@ const ItemRatingsComments = ({ itemId }: ItemRatingsCommentsProps) => {
 
       {/* Comments Link */}
       <button
-        onClick={() => navigate(`/items/${itemId}/comments`)}
+        onClick={() => {
+          const params = new URLSearchParams();
+          if (navigationContext) {
+            params.set("mode", navigationContext.mode);
+            if (navigationContext.category) {
+              params.set("category", navigationContext.category);
+            }
+            if (navigationContext.collectionId) {
+              params.set("collectionId", navigationContext.collectionId);
+            }
+            params.set(
+              "currentIndex",
+              navigationContext.currentIndex.toString()
+            );
+            params.set("itemIds", navigationContext.itemIds.join(","));
+
+            // Navigation context and items are already stored in sessionStorage by ExploreModePage/QuizModePage
+          }
+          const queryString = params.toString();
+          navigate(
+            `/items/${itemId}/comments${queryString ? `?${queryString}` : ""}`
+          );
+        }}
         className="text-sm text-indigo-600 hover:text-indigo-700 font-medium"
       >
         Comments ({commentsCount})
@@ -103,4 +149,3 @@ const ItemRatingsComments = ({ itemId }: ItemRatingsCommentsProps) => {
 };
 
 export default ItemRatingsComments;
-

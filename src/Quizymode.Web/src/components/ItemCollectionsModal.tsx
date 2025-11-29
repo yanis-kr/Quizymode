@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
 import { collectionsApi } from "@/api/collections";
 import { useAuth } from "@/contexts/AuthContext";
@@ -15,7 +15,6 @@ const ItemCollectionsModal = ({ isOpen, onClose, itemId }: ItemCollectionsModalP
   const { isAuthenticated } = useAuth();
   const queryClient = useQueryClient();
   const [newCollectionName, setNewCollectionName] = useState("");
-  const [showNewCollectionInput, setShowNewCollectionInput] = useState(false);
 
   const { data: collectionsData, isLoading } = useQuery({
     queryKey: ["collections"],
@@ -45,12 +44,22 @@ const ItemCollectionsModal = ({ isOpen, onClose, itemId }: ItemCollectionsModalP
     enabled: isAuthenticated && !!collectionsData && isOpen,
   });
 
+  const removeFromCollectionMutation = useMutation({
+    mutationFn: (collectionId: string) =>
+      collectionsApi.removeItem(collectionId, itemId),
+    onSuccess: () => {
+      queryClient.invalidateQueries({ queryKey: ["itemCollections", itemId] });
+      queryClient.invalidateQueries({ queryKey: ["collections"] });
+    },
+  });
+
   const createCollectionMutation = useMutation({
     mutationFn: (name: string) => collectionsApi.create({ name }),
-    onSuccess: () => {
+    onSuccess: (newCollection) => {
       queryClient.invalidateQueries({ queryKey: ["collections"] });
+      // Automatically add item to the newly created collection
+      addToCollectionMutation.mutate(newCollection.id);
       setNewCollectionName("");
-      setShowNewCollectionInput(false);
     },
   });
 
@@ -63,13 +72,23 @@ const ItemCollectionsModal = ({ isOpen, onClose, itemId }: ItemCollectionsModalP
     },
   });
 
-  const handleCreateAndAdd = () => {
+  const handleCreateCollection = () => {
     if (newCollectionName.trim()) {
-      createCollectionMutation.mutate(newCollectionName.trim(), {
-        onSuccess: (newCollection) => {
-          addToCollectionMutation.mutate(newCollection.id);
-        },
-      });
+      createCollectionMutation.mutate(newCollectionName.trim());
+    }
+  };
+
+  const handleKeyPress = (e: React.KeyboardEvent<HTMLInputElement>) => {
+    if (e.key === "Enter") {
+      handleCreateCollection();
+    }
+  };
+
+  const handleToggleCollection = (collectionId: string, isChecked: boolean) => {
+    if (isChecked) {
+      addToCollectionMutation.mutate(collectionId);
+    } else {
+      removeFromCollectionMutation.mutate(collectionId);
     }
   };
 
@@ -77,9 +96,7 @@ const ItemCollectionsModal = ({ isOpen, onClose, itemId }: ItemCollectionsModalP
 
   const allCollections = collectionsData?.collections || [];
   const itemCollections = itemCollectionsData?.collections || [];
-  const availableCollections = allCollections.filter(
-    (c) => !itemCollections.some((ic) => ic.id === c.id)
-  );
+  const itemCollectionIds = new Set(itemCollections.map((ic) => ic.id));
 
   return (
     <div
@@ -104,17 +121,28 @@ const ItemCollectionsModal = ({ isOpen, onClose, itemId }: ItemCollectionsModalP
           <div className="text-center py-4">Loading collections...</div>
         ) : (
           <div className="space-y-4">
-            {/* Existing Collections */}
+            {/* Create New Collection Textbox */}
+            <div>
+              <input
+                type="text"
+                value={newCollectionName}
+                onChange={(e) => setNewCollectionName(e.target.value)}
+                onKeyPress={handleKeyPress}
+                placeholder="Enter collection name and press Enter"
+                className="w-full px-3 py-2 border border-gray-300 rounded-md text-sm"
+                disabled={createCollectionMutation.isPending}
+              />
+            </div>
+
+            {/* All Collections with Checkboxes */}
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-2">
-                Add to Collection
+                Collections
               </label>
-              {availableCollections.length > 0 ? (
-                <div className="space-y-2 max-h-48 overflow-y-auto">
-                  {availableCollections.map((collection) => {
-                    const isInCollection = itemCollections.some(
-                      (ic) => ic.id === collection.id
-                    );
+              {allCollections.length > 0 ? (
+                <div className="space-y-2 max-h-64 overflow-y-auto">
+                  {allCollections.map((collection) => {
+                    const isInCollection = itemCollectionIds.has(collection.id);
                     return (
                       <label
                         key={collection.id}
@@ -123,11 +151,13 @@ const ItemCollectionsModal = ({ isOpen, onClose, itemId }: ItemCollectionsModalP
                         <input
                           type="checkbox"
                           checked={isInCollection}
-                          onChange={(e) => {
-                            if (e.target.checked) {
-                              addToCollectionMutation.mutate(collection.id);
-                            }
-                          }}
+                          onChange={(e) =>
+                            handleToggleCollection(collection.id, e.target.checked)
+                          }
+                          disabled={
+                            addToCollectionMutation.isPending ||
+                            removeFromCollectionMutation.isPending
+                          }
                           className="mr-2"
                         />
                         <span className="text-sm text-gray-700">{collection.name}</span>
@@ -139,69 +169,6 @@ const ItemCollectionsModal = ({ isOpen, onClose, itemId }: ItemCollectionsModalP
                 <p className="text-sm text-gray-500">No collections available</p>
               )}
             </div>
-
-            {/* Create New Collection */}
-            <div className="border-t pt-4">
-              {showNewCollectionInput ? (
-                <div className="space-y-2">
-                  <input
-                    type="text"
-                    value={newCollectionName}
-                    onChange={(e) => setNewCollectionName(e.target.value)}
-                    placeholder="Enter collection name"
-                    className="w-full px-3 py-2 border border-gray-300 rounded-md text-sm"
-                    autoFocus
-                  />
-                  <div className="flex justify-end space-x-2">
-                    <button
-                      onClick={() => {
-                        setShowNewCollectionInput(false);
-                        setNewCollectionName("");
-                      }}
-                      className="px-3 py-1 text-sm text-gray-700 hover:text-gray-900"
-                    >
-                      Cancel
-                    </button>
-                    <button
-                      onClick={handleCreateAndAdd}
-                      disabled={
-                        !newCollectionName.trim() ||
-                        createCollectionMutation.isPending
-                      }
-                      className="px-3 py-1 text-sm bg-indigo-600 text-white rounded-md hover:bg-indigo-700 disabled:opacity-50"
-                    >
-                      {createCollectionMutation.isPending ? "Creating..." : "Create & Add"}
-                    </button>
-                  </div>
-                </div>
-              ) : (
-                <button
-                  onClick={() => setShowNewCollectionInput(true)}
-                  className="w-full px-3 py-2 text-sm text-indigo-600 bg-indigo-50 rounded-md hover:bg-indigo-100"
-                >
-                  + Create New Collection
-                </button>
-              )}
-            </div>
-
-            {/* Current Collections */}
-            {itemCollections.length > 0 && (
-              <div className="border-t pt-4">
-                <label className="block text-sm font-medium text-gray-700 mb-2">
-                  In Collections:
-                </label>
-                <div className="space-y-1">
-                  {itemCollections.map((collection) => (
-                    <div
-                      key={collection.id}
-                      className="text-sm text-gray-600 bg-gray-50 p-2 rounded-md"
-                    >
-                      {collection.name}
-                    </div>
-                  ))}
-                </div>
-              </div>
-            )}
           </div>
         )}
       </div>

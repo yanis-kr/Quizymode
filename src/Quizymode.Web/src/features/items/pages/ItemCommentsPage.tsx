@@ -1,5 +1,10 @@
 import { useState } from "react";
-import { useParams, useNavigate, Link } from "react-router-dom";
+import {
+  useParams,
+  useNavigate,
+  useSearchParams,
+  Link,
+} from "react-router-dom";
 import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
 import { commentsApi } from "@/api/comments";
 import { useAuth } from "@/contexts/AuthContext";
@@ -10,11 +15,78 @@ import ErrorMessage from "@/components/ErrorMessage";
 const ItemCommentsPage = () => {
   const { id: itemId } = useParams<{ id: string }>();
   const navigate = useNavigate();
+  const [searchParams] = useSearchParams();
   const { isAuthenticated, userId } = useAuth();
   const queryClient = useQueryClient();
   const [editingCommentId, setEditingCommentId] = useState<string | null>(null);
   const [editText, setEditText] = useState("");
   const [newCommentText, setNewCommentText] = useState("");
+
+  // Read navigation context from URL params
+  const mode = searchParams.get("mode") as "explore" | "quiz" | null;
+  const category = searchParams.get("category");
+  const collectionId = searchParams.get("collectionId");
+  const currentIndexParam = searchParams.get("currentIndex");
+  const itemIdsParam = searchParams.get("itemIds");
+
+  const currentIndex = currentIndexParam
+    ? parseInt(currentIndexParam, 10)
+    : null;
+  const itemIds = itemIdsParam ? itemIdsParam.split(",") : [];
+  const hasNavigation = mode && currentIndex !== null && itemIds.length > 0;
+
+  const handleNavigateBack = () => {
+    if (hasNavigation && mode && currentIndex !== null && itemId) {
+      // Navigate back to the item in the list context
+      // If we have category/collection, navigate with itemId (will load full list)
+      // If no category/collection, navigate to list view but preserve itemIds in sessionStorage
+      if (collectionId) {
+        navigate(`/${mode}/collection/${collectionId}/item/${itemId}`);
+      } else if (category) {
+        navigate(`/${mode}/${encodeURIComponent(category)}/item/${itemId}`);
+      } else {
+        // No category/collection - navigate to list view
+        // The sessionStorage already has the itemIds, so ExploreModePage will restore them
+        navigate(`/${mode}`);
+      }
+    } else {
+      navigate(`/explore/item/${itemId}`);
+    }
+  };
+
+  const handleNavigateToItem = (targetItemId: string) => {
+    if (hasNavigation && mode) {
+      const targetIndex = itemIds.indexOf(targetItemId);
+      if (targetIndex !== -1) {
+        if (collectionId) {
+          navigate(`/${mode}/collection/${collectionId}/item/${targetItemId}`);
+        } else if (category) {
+          navigate(
+            `/${mode}/${encodeURIComponent(category)}/item/${targetItemId}`
+          );
+        } else {
+          navigate(`/${mode}/item/${targetItemId}`);
+        }
+      }
+    } else {
+      navigate(`/explore/item/${targetItemId}`);
+    }
+  };
+
+  const getPreviousItemId = (): string | null => {
+    if (!hasNavigation || currentIndex === null) return null;
+    const prevIndex = currentIndex - 1;
+    return prevIndex >= 0 ? itemIds[prevIndex] : null;
+  };
+
+  const getNextItemId = (): string | null => {
+    if (!hasNavigation || currentIndex === null) return null;
+    const nextIndex = currentIndex + 1;
+    return nextIndex < itemIds.length ? itemIds[nextIndex] : null;
+  };
+
+  const previousItemId = getPreviousItemId();
+  const nextItemId = getNextItemId();
 
   const { data, isLoading, error, refetch } = useQuery({
     queryKey: ["comments", itemId],
@@ -23,8 +95,7 @@ const ItemCommentsPage = () => {
   });
 
   const createMutation = useMutation({
-    mutationFn: (text: string) =>
-      commentsApi.create({ itemId: itemId!, text }),
+    mutationFn: (text: string) => commentsApi.create({ itemId: itemId!, text }),
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ["comments", itemId] });
       setNewCommentText("");
@@ -65,20 +136,46 @@ const ItemCommentsPage = () => {
   };
 
   if (isLoading) return <LoadingSpinner />;
-  if (error) return <ErrorMessage message="Failed to load comments" onRetry={() => refetch()} />;
+  if (error)
+    return (
+      <ErrorMessage
+        message="Failed to load comments"
+        onRetry={() => refetch()}
+      />
+    );
 
   const comments = data?.comments || [];
 
   return (
     <div className="px-4 py-6 sm:px-0">
       <div className="max-w-4xl mx-auto">
-        <div className="mb-6">
-          <Link
-            to={`/explore/item/${itemId}`}
+        <div className="mb-6 flex justify-between items-center">
+          <button
+            onClick={handleNavigateBack}
             className="text-indigo-600 hover:text-indigo-700 text-sm font-medium"
           >
             ← Back to item
-          </Link>
+          </button>
+          {hasNavigation && (
+            <div className="flex space-x-2">
+              <button
+                onClick={() =>
+                  previousItemId && handleNavigateToItem(previousItemId)
+                }
+                disabled={!previousItemId}
+                className="px-4 py-2 bg-gray-200 text-gray-700 rounded-md hover:bg-gray-300 disabled:opacity-50 disabled:cursor-not-allowed text-sm"
+              >
+                Previous
+              </button>
+              <button
+                onClick={() => nextItemId && handleNavigateToItem(nextItemId)}
+                disabled={!nextItemId}
+                className="px-4 py-2 bg-indigo-600 text-white rounded-md hover:bg-indigo-700 disabled:opacity-50 disabled:cursor-not-allowed text-sm"
+              >
+                Next
+              </button>
+            </div>
+          )}
         </div>
 
         <h1 className="text-3xl font-bold text-gray-900 mb-6">Comments</h1>
@@ -141,7 +238,9 @@ const ItemCommentsPage = () => {
                         </button>
                         <button
                           onClick={handleSaveEdit}
-                          disabled={!editText.trim() || updateMutation.isPending}
+                          disabled={
+                            !editText.trim() || updateMutation.isPending
+                          }
                           className="px-3 py-1 text-sm bg-indigo-600 text-white rounded-md hover:bg-indigo-700 disabled:opacity-50"
                         >
                           {updateMutation.isPending ? "Saving..." : "Save"}
@@ -153,7 +252,7 @@ const ItemCommentsPage = () => {
                       <div className="flex justify-between items-start mb-2">
                         <div>
                           <span className="text-sm font-medium text-gray-900">
-                            {comment.createdBy}
+                            {comment.createdByName || comment.createdBy}
                           </span>
                           <span className="text-xs text-gray-500 ml-2">
                             {new Date(comment.createdAt).toLocaleDateString()}
@@ -199,7 +298,9 @@ const ItemCommentsPage = () => {
             })
           ) : (
             <div className="text-center py-12 bg-white shadow rounded-lg">
-              <p className="text-gray-500">No comments yet. Be the first to comment!</p>
+              <p className="text-gray-500">
+                No comments yet. Be the first to comment!
+              </p>
             </div>
           )}
         </div>
@@ -209,4 +310,3 @@ const ItemCommentsPage = () => {
 };
 
 export default ItemCommentsPage;
-

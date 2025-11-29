@@ -1,14 +1,14 @@
-import { useState, useEffect } from 'react';
-import { useParams, useNavigate } from 'react-router-dom';
-import { useQuery } from '@tanstack/react-query';
-import { itemsApi } from '@/api/items';
-import { collectionsApi } from '@/api/collections';
-import { useAuth } from '@/contexts/AuthContext';
-import LoadingSpinner from '@/components/LoadingSpinner';
-import ErrorMessage from '@/components/ErrorMessage';
-import ItemRatingsComments from '@/components/ItemRatingsComments';
-import CollectionControls from '@/components/CollectionControls';
-import { Link } from 'react-router-dom';
+import { useState, useEffect } from "react";
+import { useParams, useNavigate } from "react-router-dom";
+import { useQuery } from "@tanstack/react-query";
+import { itemsApi } from "@/api/items";
+import { collectionsApi } from "@/api/collections";
+import { useAuth } from "@/contexts/AuthContext";
+import LoadingSpinner from "@/components/LoadingSpinner";
+import ErrorMessage from "@/components/ErrorMessage";
+import ItemRatingsComments from "@/components/ItemRatingsComments";
+import CollectionControls from "@/components/CollectionControls";
+import { Link } from "react-router-dom";
 
 const ExploreModePage = () => {
   const { category, collectionId, itemId } = useParams();
@@ -17,36 +17,78 @@ const ExploreModePage = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [count] = useState(10);
 
+  // Check sessionStorage for stored items (when navigating back from comments)
+  // Must be declared before useQuery that references it
+  const [storedItems, setStoredItems] = useState<any[] | null>(null);
+
   const { data: singleItemData, isLoading: singleItemLoading } = useQuery({
-    queryKey: ['item', itemId],
+    queryKey: ["item", itemId],
     queryFn: () => itemsApi.getById(itemId!),
     enabled: !!itemId,
   });
 
   const { data: collectionData, isLoading: collectionLoading } = useQuery({
-    queryKey: ['collectionItems', collectionId],
+    queryKey: ["collectionItems", collectionId],
     queryFn: () => collectionsApi.getItems(collectionId!),
-    enabled: !!collectionId && !itemId,
+    enabled: !!collectionId, // Load even when itemId is present to get full list
   });
 
   const { data, isLoading, error, refetch } = useQuery({
-    queryKey: ['randomItems', category, count],
+    queryKey: ["randomItems", category, count],
     queryFn: () => itemsApi.getRandom(category, undefined, count),
-    enabled: !collectionId && !itemId,
+    enabled: !collectionId && !storedItems, // Don't load if we have stored items
   });
+  useEffect(() => {
+    if (!collectionId && !category) {
+      // Restore when we're in explore mode without category/collection (with or without itemId)
+      const stored = sessionStorage.getItem("navigationContext_explore");
+      if (stored) {
+        try {
+          const context = JSON.parse(stored);
+          if (context.items && context.mode === "explore") {
+            setStoredItems(context.items);
+            if (itemId) {
+              // Find the index of the current itemId in stored items
+              const index = context.items.findIndex(
+                (item: any) => item.id === itemId
+              );
+              if (index !== -1) {
+                setCurrentIndex(index);
+              }
+            } else {
+              setCurrentIndex(context.currentIndex || 0);
+            }
+            // Clear sessionStorage after using it
+            sessionStorage.removeItem("navigationContext_explore");
+          }
+        } catch (e) {
+          // Invalid stored data, ignore
+        }
+      }
+    } else {
+      // Clear stored items if we have category/collection (they're not needed)
+      setStoredItems(null);
+    }
+  }, [collectionId, category, itemId]);
 
-  const items = itemId
-    ? singleItemData
-      ? [singleItemData]
-      : []
-    : collectionId
-    ? collectionData?.items || []
-    : data?.items || [];
-  const isLoadingItems = itemId
-    ? singleItemLoading
-    : collectionId
+  // Use full list if available (when category/collection is present), otherwise use single item or stored items
+  const items = collectionId
+    ? collectionData?.items || (singleItemData ? [singleItemData] : [])
+    : storedItems || data?.items || (singleItemData ? [singleItemData] : []);
+
+  const isLoadingItems = collectionId
     ? collectionLoading
-    : isLoading;
+    : isLoading || (itemId ? singleItemLoading : false);
+
+  // Calculate current index based on itemId if present
+  useEffect(() => {
+    if (itemId && items.length > 0) {
+      const index = items.findIndex((item) => item.id === itemId);
+      if (index !== -1) {
+        setCurrentIndex(index);
+      }
+    }
+  }, [itemId, items]);
 
   const currentItem = items[currentIndex];
 
@@ -56,14 +98,51 @@ const ExploreModePage = () => {
     }
   }, [items.length, currentIndex]);
 
+  // Store items in sessionStorage when we have them (for restoration after comments)
+  useEffect(() => {
+    if (items.length > 0 && !collectionId && !category) {
+      // Only store for random items (no category/collection) to restore after comments
+      sessionStorage.setItem(
+        "navigationContext_explore",
+        JSON.stringify({
+          mode: "explore",
+          category: category,
+          collectionId: collectionId,
+          currentIndex: currentIndex,
+          itemIds: items.map((item) => item.id),
+          items: items, // Store full items data
+        })
+      );
+    }
+  }, [items, currentIndex, category, collectionId]);
+
+  // Prepare navigation context for ItemRatingsComments
+  // Include context even when itemId is present (e.g., when navigating back from comments)
+  const navigationContext =
+    items.length > 0
+      ? {
+          mode: "explore" as const,
+          category: category,
+          collectionId: collectionId,
+          currentIndex: currentIndex,
+          itemIds: items.map((item) => item.id),
+        }
+      : undefined;
+
   if (isLoadingItems) return <LoadingSpinner />;
-  if (error && !collectionId) return <ErrorMessage message="Failed to load items" onRetry={() => refetch()} />;
+  if (error && !collectionId)
+    return (
+      <ErrorMessage message="Failed to load items" onRetry={() => refetch()} />
+    );
   if (items.length === 0) {
     return (
       <div className="px-4 py-6 sm:px-0">
         <div className="text-center py-12">
           <p className="text-gray-500 mb-4">No items found.</p>
-          <Link to="/categories" className="text-indigo-600 hover:text-indigo-700">
+          <Link
+            to="/categories"
+            className="text-indigo-600 hover:text-indigo-700"
+          >
             Go back to categories
           </Link>
         </div>
@@ -85,18 +164,26 @@ const ExploreModePage = () => {
           {currentItem && (
             <div className="space-y-4">
               <div>
-                <h3 className="text-lg font-medium text-gray-900 mb-2">Question</h3>
+                <h3 className="text-lg font-medium text-gray-900 mb-2">
+                  Question
+                </h3>
                 <p className="text-gray-700">{currentItem.question}</p>
               </div>
 
               <div>
-                <h3 className="text-lg font-medium text-gray-900 mb-2">Answer</h3>
-                <p className="text-gray-700 font-semibold">{currentItem.correctAnswer}</p>
+                <h3 className="text-lg font-medium text-gray-900 mb-2">
+                  Answer
+                </h3>
+                <p className="text-gray-700 font-semibold">
+                  {currentItem.correctAnswer}
+                </p>
               </div>
 
               {currentItem.explanation && (
                 <div>
-                  <h3 className="text-lg font-medium text-gray-900 mb-2">Explanation</h3>
+                  <h3 className="text-lg font-medium text-gray-900 mb-2">
+                    Explanation
+                  </h3>
                   <p className="text-gray-700">{currentItem.explanation}</p>
                 </div>
               )}
@@ -107,7 +194,10 @@ const ExploreModePage = () => {
               </div>
 
               {/* Ratings and Comments */}
-              <ItemRatingsComments itemId={currentItem.id} />
+              <ItemRatingsComments
+                itemId={currentItem.id}
+                navigationContext={navigationContext}
+              />
 
               {/* Collection Controls */}
               <CollectionControls itemId={currentItem.id} />
@@ -123,7 +213,9 @@ const ExploreModePage = () => {
               Previous
             </button>
             <button
-              onClick={() => setCurrentIndex((prev) => Math.min(items.length - 1, prev + 1))}
+              onClick={() =>
+                setCurrentIndex((prev) => Math.min(items.length - 1, prev + 1))
+              }
               disabled={currentIndex === items.length - 1}
               className="px-4 py-2 bg-indigo-600 text-white rounded-md hover:bg-indigo-700 disabled:opacity-50 disabled:cursor-not-allowed"
             >
@@ -137,11 +229,11 @@ const ExploreModePage = () => {
             <p className="text-sm text-yellow-800">
               <Link to="/signup" className="font-medium underline">
                 Sign up
-              </Link>{' '}
-              or{' '}
+              </Link>{" "}
+              or{" "}
               <Link to="/login" className="font-medium underline">
                 sign in
-              </Link>{' '}
+              </Link>{" "}
               to create your own items and collections!
             </p>
           </div>
@@ -149,7 +241,11 @@ const ExploreModePage = () => {
 
         <div className="text-center">
           <Link
-            to={category ? `/items?category=${encodeURIComponent(category)}` : '/categories'}
+            to={
+              category
+                ? `/items?category=${encodeURIComponent(category)}`
+                : "/categories"
+            }
             className="text-indigo-600 hover:text-indigo-700"
           >
             ← Back to items
@@ -161,4 +257,3 @@ const ExploreModePage = () => {
 };
 
 export default ExploreModePage;
-
