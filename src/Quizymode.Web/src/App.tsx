@@ -24,11 +24,16 @@ function App() {
         <Route path="/" element={<HomePage />} />
         <Route path="/categories" element={<HomePage />} />
         <Route path="/items" element={<ItemsPage />} />
-        <Route path="/explore/:category?" element={<ExploreModePage />} />
-        <Route path="/explore/collection/:collectionId" element={<ExploreModePage />} />
         <Route path="/explore/item/:itemId" element={<ExploreModePage />} />
-        <Route path="/quiz/:category?" element={<QuizModePage />} />
+        <Route path="/explore/:category/item/:itemId" element={<ExploreModePage />} />
+        <Route path="/explore/collection/:collectionId/item/:itemId" element={<ExploreModePage />} />
+        <Route path="/explore/collection/:collectionId" element={<ExploreModePage />} />
+        <Route path="/explore/:category?" element={<ExploreModePage />} />
+        <Route path="/quiz/item/:itemId" element={<QuizModePage />} />
+        <Route path="/quiz/:category/item/:itemId" element={<QuizModePage />} />
+        <Route path="/quiz/collection/:collectionId/item/:itemId" element={<QuizModePage />} />
         <Route path="/quiz/collection/:collectionId" element={<QuizModePage />} />
+        <Route path="/quiz/:category?" element={<QuizModePage />} />
         <Route path="/login" element={<LoginPage />} />
         <Route path="/signup" element={<SignUpPage />} />
         <Route path="/my-items" element={<MyItemsPage />} />

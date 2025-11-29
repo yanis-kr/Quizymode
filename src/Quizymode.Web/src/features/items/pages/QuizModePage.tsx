@@ -21,7 +21,34 @@ const QuizModePage = () => {
 
   // Check sessionStorage for stored items (when navigating back from comments)
   // Must be declared before useQuery that references it
-  const [storedItems, setStoredItems] = useState<any[] | null>(null);
+  // Initialize synchronously from sessionStorage to avoid race conditions
+  const getStoredItems = (): any[] | null => {
+    if (!collectionId) {
+      // Restore for both random items and category-based items
+      const stored = sessionStorage.getItem("navigationContext_quiz");
+      if (stored) {
+        try {
+          const context = JSON.parse(stored);
+          if (context.items && context.mode === "quiz") {
+            // Only restore if category matches (or both are undefined/null)
+            const categoryMatches =
+              (!context.category && !category) || context.category === category;
+            if (categoryMatches) {
+              return context.items;
+            }
+          }
+        } catch (e) {
+          // Invalid stored data, ignore
+        }
+      }
+    }
+    return null;
+  };
+
+  const [storedItems, setStoredItems] = useState<any[] | null>(
+    getStoredItems()
+  );
+  const [hasRestoredItems, setHasRestoredItems] = useState(false);
 
   const { data: singleItemData, isLoading: singleItemLoading } = useQuery({
     queryKey: ["item", itemId],
@@ -40,38 +67,41 @@ const QuizModePage = () => {
     queryFn: () => itemsApi.getRandom(category, undefined, count),
     enabled: !collectionId && !storedItems, // Don't load if we have stored items
   });
+
+  // Restore items and index from sessionStorage on mount
   useEffect(() => {
-    if (!collectionId && !category) {
-      // Restore when we're in quiz mode without category/collection (with or without itemId)
+    if (!hasRestoredItems && storedItems) {
       const stored = sessionStorage.getItem("navigationContext_quiz");
       if (stored) {
         try {
           const context = JSON.parse(stored);
           if (context.items && context.mode === "quiz") {
-            setStoredItems(context.items);
-            if (itemId) {
-              // Find the index of the current itemId in stored items
-              const index = context.items.findIndex(
-                (item: any) => item.id === itemId
-              );
-              if (index !== -1) {
-                setCurrentIndex(index);
+            // Only restore if category matches (or both are undefined/null)
+            const categoryMatches =
+              (!context.category && !category) || context.category === category;
+            if (categoryMatches) {
+              if (itemId) {
+                // Find the index of the current itemId in stored items
+                const index = context.items.findIndex(
+                  (item: any) => item.id === itemId
+                );
+                if (index !== -1) {
+                  setCurrentIndex(index);
+                }
+              } else {
+                setCurrentIndex(context.currentIndex || 0);
               }
-            } else {
-              setCurrentIndex(context.currentIndex || 0);
+              // Clear sessionStorage after using it
+              sessionStorage.removeItem("navigationContext_quiz");
+              setHasRestoredItems(true);
             }
-            // Clear sessionStorage after using it
-            sessionStorage.removeItem("navigationContext_quiz");
           }
         } catch (e) {
           // Invalid stored data, ignore
         }
       }
-    } else {
-      // Clear stored items if we have category/collection (they're not needed)
-      setStoredItems(null);
     }
-  }, [collectionId, category, itemId]);
+  }, [storedItems, itemId, hasRestoredItems, category]);
 
   // Use full list if available (when category/collection is present), otherwise use single item or stored items
   const items = collectionId
@@ -104,8 +134,9 @@ const QuizModePage = () => {
 
   // Store items in sessionStorage when we have them (for restoration after comments)
   useEffect(() => {
-    if (items.length > 0 && !collectionId && !category) {
-      // Only store for random items (no category/collection) to restore after comments
+    if (items.length > 0 && !collectionId) {
+      // Store items for both random items and category-based items to restore after comments
+      // Don't store for collections as they're stable and can be reloaded
       sessionStorage.setItem(
         "navigationContext_quiz",
         JSON.stringify({

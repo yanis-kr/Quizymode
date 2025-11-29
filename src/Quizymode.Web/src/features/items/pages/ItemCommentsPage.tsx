@@ -45,9 +45,9 @@ const ItemCommentsPage = () => {
       } else if (category) {
         navigate(`/${mode}/${encodeURIComponent(category)}/item/${itemId}`);
       } else {
-        // No category/collection - navigate to list view
-        // The sessionStorage already has the itemIds, so ExploreModePage will restore them
-        navigate(`/${mode}`);
+        // No category/collection - navigate to item view with itemId
+        // This ensures the item is shown and items are restored from sessionStorage
+        navigate(`/${mode}/item/${itemId}`);
       }
     } else {
       navigate(`/explore/item/${itemId}`);
