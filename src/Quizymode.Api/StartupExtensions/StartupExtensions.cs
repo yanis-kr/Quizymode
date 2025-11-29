@@ -15,6 +15,28 @@ internal static partial class StartupExtensions
         builder.AddCorsServices();
         builder.AddPostgreSqlServices();
 
+        // Configure forwarded headers for proxy scenarios (Cloudflare in production, Aspire in development)
+        builder.Services.Configure<ForwardedHeadersOptions>(options =>
+        {
+            options.ForwardedHeaders = Microsoft.AspNetCore.HttpOverrides.ForwardedHeaders.XForwardedFor 
+                | Microsoft.AspNetCore.HttpOverrides.ForwardedHeaders.XForwardedProto 
+                | Microsoft.AspNetCore.HttpOverrides.ForwardedHeaders.XForwardedHost;
+            
+            if (builder.Environment.IsDevelopment())
+            {
+                // In development, trust localhost and loopback addresses for Aspire proxy
+                options.KnownNetworks.Clear();
+                options.KnownProxies.Clear();
+                options.KnownProxies.Add(System.Net.IPAddress.Loopback);
+                options.KnownProxies.Add(System.Net.IPAddress.IPv6Loopback);
+            }
+            else
+            {
+                // In production, only trust Cloudflare's IP ranges
+                // Cloudflare IPs should be configured via KnownNetworks
+            }
+        });
+
         // Add authentication before custom services so middleware and IUserContext work
         builder.AddAuthenticationServices();
 
@@ -37,10 +59,8 @@ internal static partial class StartupExtensions
         if (app.Environment.IsDevelopment())
         {
             app.UseDeveloperExceptionPage();
-            //app.UseSwagger();
             app.UseSwaggerUI(c =>
             {
-                app.MapOpenApi();
                 c.SwaggerEndpoint("/openapi/v1.json", "QuizyMode API v1");
                 //c.RoutePrefix = "swagger";
             });
@@ -55,6 +75,9 @@ internal static partial class StartupExtensions
 
         // Upsert user record on authenticated requests
         app.UseMiddleware<Services.UserUpsertMiddleware>();
+
+        // Map OpenAPI endpoint before other endpoints
+        app.MapOpenApi();
 
         app.MapDefaultEndpoints();
         //app.MapHealthChecks("/health");

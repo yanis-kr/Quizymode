@@ -4,34 +4,30 @@ using Quizymode.Api.Infrastructure;
 using Quizymode.Api.Shared.Kernel;
 using Quizymode.Api.Shared.Models;
 
-namespace Quizymode.Api.Features.Reviews;
+namespace Quizymode.Api.Features.Ratings;
 
 /// <summary>
-/// Retrieves reviews, optionally filtered by item id.
+/// Retrieves ratings statistics, optionally filtered by item id.
 /// </summary>
-public static class GetReviews
+public static class GetRatings
 {
     public sealed record QueryRequest(Guid? ItemId);
 
-    public sealed record ReviewResponse(
-        string Id,
-        Guid ItemId,
-        string Reaction,
-        string Comment,
-        string CreatedBy,
-        DateTime CreatedAt,
-        DateTime? UpdatedAt);
+    public sealed record RatingStatsResponse(
+        int Count,
+        double? AverageStars,
+        Guid? ItemId);
 
-    public sealed record Response(List<ReviewResponse> Reviews);
+    public sealed record Response(RatingStatsResponse Stats);
 
     public sealed class Endpoint : IEndpoint
     {
         public void MapEndpoint(IEndpointRouteBuilder app)
         {
-            app.MapGet("reviews", Handler)
-                .WithTags("Reviews")
-                .WithSummary("Get reviews")
-                .WithDescription("Returns reviews. Optionally filter by itemId using ?itemId={guid}.")
+            app.MapGet("ratings", Handler)
+                .WithTags("Ratings")
+                .WithSummary("Get ratings statistics")
+                .WithDescription("Returns ratings count and average. Optionally filter by itemId using ?itemId={guid}.")
                 .WithOpenApi()
                 .Produces<Response>(StatusCodes.Status200OK);
         }
@@ -58,36 +54,39 @@ public static class GetReviews
     {
         try
         {
-            IQueryable<Review> query = db.Reviews.AsQueryable();
+            IQueryable<Rating> query = db.Ratings.AsQueryable();
 
             if (request.ItemId.HasValue && request.ItemId.Value != Guid.Empty)
             {
                 query = query.Where(r => r.ItemId == request.ItemId.Value);
             }
 
-            List<Review> reviews = await query
-                .OrderByDescending(r => r.CreatedAt)
-                .ToListAsync(cancellationToken);
+            // Only count ratings that have stars (not null)
+            IQueryable<Rating> ratingsWithStars = query.Where(r => r.Stars.HasValue);
 
-            List<ReviewResponse> responseItems = reviews
-                .Select(r => new ReviewResponse(
-                    r.Id.ToString(),
-                    r.ItemId,
-                    r.Reaction,
-                    r.Comment,
-                    r.CreatedBy,
-                    r.CreatedAt,
-                    r.UpdatedAt))
-                .ToList();
+            int count = await ratingsWithStars.CountAsync(cancellationToken);
+            
+            double? averageStars = null;
+            if (count > 0)
+            {
+                double average = await ratingsWithStars
+                    .AverageAsync(r => r.Stars!.Value, cancellationToken);
+                averageStars = Math.Round(average, 2);
+            }
 
-            Response response = new(responseItems);
+            RatingStatsResponse stats = new(
+                count,
+                averageStars,
+                request.ItemId);
+
+            Response response = new(stats);
 
             return Result.Success(response);
         }
         catch (Exception ex)
         {
             return Result.Failure<Response>(
-                Error.Problem("Reviews.GetFailed", $"Failed to get reviews: {ex.Message}"));
+                Error.Problem("Ratings.GetFailed", $"Failed to get ratings: {ex.Message}"));
         }
     }
 
@@ -99,5 +98,4 @@ public static class GetReviews
         }
     }
 }
-
 

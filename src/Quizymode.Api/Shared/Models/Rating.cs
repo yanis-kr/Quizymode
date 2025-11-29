@@ -1,14 +1,12 @@
 namespace Quizymode.Api.Shared.Models;
 
-public sealed class Review
+public sealed class Rating
 {
     public Guid Id { get; set; }
 
     public Guid ItemId { get; set; }
 
-    public string Reaction { get; set; } = string.Empty;
-
-    public string Comment { get; set; } = string.Empty;
+    public int? Stars { get; set; } // null or 1-5
 
     public string CreatedBy { get; set; } = string.Empty;
 
@@ -16,5 +14,4 @@ public sealed class Review
 
     public DateTime? UpdatedAt { get; set; }
 }
-
 

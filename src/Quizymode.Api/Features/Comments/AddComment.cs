@@ -6,20 +6,19 @@ using Quizymode.Api.Services;
 using Quizymode.Api.Shared.Kernel;
 using Quizymode.Api.Shared.Models;
 
-namespace Quizymode.Api.Features.Reviews;
+namespace Quizymode.Api.Features.Comments;
 
-public static class AddReview
+public static class AddComment
 {
     public sealed record Request(
         Guid ItemId,
-        string Reaction,
-        string Comment);
+        string Text);
 
     public sealed record Response(
         string Id,
         Guid ItemId,
-        string Reaction,
-        string Comment,
+        string Text,
+        string CreatedBy,
         DateTime CreatedAt);
 
     public sealed class Validator : AbstractValidator<Request>
@@ -30,13 +29,9 @@ public static class AddReview
                 .NotEqual(Guid.Empty)
                 .WithMessage("ItemId is required");
 
-            RuleFor(x => x.Reaction)
+            RuleFor(x => x.Text)
                 .NotEmpty()
-                .WithMessage("Reaction is required")
-                .MaximumLength(50)
-                .WithMessage("Reaction must not exceed 50 characters");
-
-            RuleFor(x => x.Comment)
+                .WithMessage("Comment text is required")
                 .MaximumLength(2000)
                 .WithMessage("Comment must not exceed 2000 characters");
         }
@@ -46,9 +41,9 @@ public static class AddReview
     {
         public void MapEndpoint(IEndpointRouteBuilder app)
         {
-            app.MapPost("reviews", Handler)
-                .WithTags("Reviews")
-                .WithSummary("Create a review for an item")
+            app.MapPost("comments", Handler)
+                .WithTags("Comments")
+                .WithSummary("Create a comment for an item")
                 .RequireAuthorization()
                 .WithOpenApi()
                 .Produces<Response>(StatusCodes.Status201Created)
@@ -76,7 +71,7 @@ public static class AddReview
             Result<Response> result = await HandleAsync(request, db, userContext, cancellationToken);
 
             return result.Match(
-                value => Results.Created($"/api/reviews/{value.Id}", value),
+                value => Results.Created($"/api/comments/{value.Id}", value),
                 error => CustomResults.Problem(result));
         }
     }
@@ -92,34 +87,33 @@ public static class AddReview
             if (string.IsNullOrEmpty(userContext.UserId))
             {
                 return Result.Failure<Response>(
-                    Error.Validation("Review.UserIdMissing", "User ID is missing"));
+                    Error.Validation("Comment.UserIdMissing", "User ID is missing"));
             }
 
             bool itemExists = await db.Items.AnyAsync(i => i.Id == request.ItemId, cancellationToken);
             if (!itemExists)
             {
                 return Result.Failure<Response>(
-                    Error.NotFound("Review.ItemNotFound", $"Item with id {request.ItemId} not found"));
+                    Error.NotFound("Comment.ItemNotFound", $"Item with id {request.ItemId} not found"));
             }
 
-            Review entity = new()
+            Comment entity = new()
             {
                 Id = Guid.NewGuid(),
                 ItemId = request.ItemId,
-                Reaction = request.Reaction,
-                Comment = request.Comment,
-                CreatedBy = userContext.UserId, // Use UserId (GUID) from Users table
+                Text = request.Text,
+                CreatedBy = userContext.UserId,
                 CreatedAt = DateTime.UtcNow
             };
 
-            db.Reviews.Add(entity);
+            db.Comments.Add(entity);
             await db.SaveChangesAsync(cancellationToken);
 
             Response response = new(
                 entity.Id.ToString(),
                 entity.ItemId,
-                entity.Reaction,
-                entity.Comment,
+                entity.Text,
+                entity.CreatedBy,
                 entity.CreatedAt);
 
             return Result.Success(response);
@@ -127,7 +121,7 @@ public static class AddReview
         catch (Exception ex)
         {
             return Result.Failure<Response>(
-                Error.Problem("Reviews.CreateFailed", $"Failed to create review: {ex.Message}"));
+                Error.Problem("Comments.CreateFailed", $"Failed to create comment: {ex.Message}"));
         }
     }
 
@@ -139,5 +133,4 @@ public static class AddReview
         }
     }
 }
-
 

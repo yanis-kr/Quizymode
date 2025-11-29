@@ -26,10 +26,13 @@ const AdminDashboardPage = () => {
           <h3 className="text-lg font-medium text-gray-900 mb-2">Review Board</h3>
           <p className="text-sm text-gray-500">Review items pending approval</p>
         </Link>
-        <div className="bg-white shadow rounded-lg p-6">
+        <Link
+          to="/items"
+          className="bg-white shadow rounded-lg p-6 hover:shadow-lg transition-shadow cursor-pointer"
+        >
           <h3 className="text-lg font-medium text-gray-900 mb-2">Manage Items</h3>
           <p className="text-sm text-gray-500">View and manage all items</p>
-        </div>
+        </Link>
       </div>
     </div>
   );

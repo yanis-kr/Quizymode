@@ -36,12 +36,11 @@ public sealed class AddItemsBulkTests : IDisposable
     {
         // Arrange
         AddItemsBulk.Request request = new(
-            Category: "geography",
             IsPrivate: false,
             Items: new List<AddItemsBulk.ItemRequest>
             {
-                new("europe", "What is the capital of France?", "Paris", new List<string> { "Lyon", "Marseille" }, "Paris is the capital"),
-                new("europe", "What is the capital of Germany?", "Berlin", new List<string> { "Munich", "Hamburg" }, "Berlin is the capital")
+                new("geography", "europe", "What is the capital of France?", "Paris", new List<string> { "Lyon", "Marseille" }, "Paris is the capital"),
+                new("geography", "europe", "What is the capital of Germany?", "Berlin", new List<string> { "Munich", "Hamburg" }, "Berlin is the capital")
             });
 
         // Act
@@ -88,12 +87,11 @@ public sealed class AddItemsBulkTests : IDisposable
         await _dbContext.SaveChangesAsync();
 
         AddItemsBulk.Request request = new(
-            Category: "geography",
             IsPrivate: false,
             Items: new List<AddItemsBulk.ItemRequest>
             {
-                new("europe", "What is the capital of France?", "Paris", new List<string> { "Lyon", "Marseille" }, "Duplicate"),
-                new("europe", "What is the capital of Germany?", "Berlin", new List<string> { "Munich" }, "New item")
+                new("geography", "europe", "What is the capital of France?", "Paris", new List<string> { "Lyon", "Marseille" }, "Duplicate"),
+                new("geography", "europe", "What is the capital of Germany?", "Berlin", new List<string> { "Munich" }, "New item")
             });
 
         // Act
@@ -116,7 +114,6 @@ public sealed class AddItemsBulkTests : IDisposable
     {
         // Arrange
         AddItemsBulk.Request request = new(
-            Category: "geography",
             IsPrivate: false,
             Items: new List<AddItemsBulk.ItemRequest>());
 
@@ -136,6 +133,7 @@ public sealed class AddItemsBulkTests : IDisposable
         // Arrange
         List<AddItemsBulk.ItemRequest> items = Enumerable.Range(1, 101)
             .Select(i => new AddItemsBulk.ItemRequest(
+                "geography",
                 "europe",
                 $"Question {i}",
                 $"Answer {i}",
@@ -144,7 +142,6 @@ public sealed class AddItemsBulkTests : IDisposable
             .ToList();
 
         AddItemsBulk.Request request = new(
-            Category: "geography",
             IsPrivate: false,
             Items: items);
 
@@ -163,11 +160,10 @@ public sealed class AddItemsBulkTests : IDisposable
     {
         // Arrange
         AddItemsBulk.Request request = new(
-            Category: "geography",
             IsPrivate: false,
             Items: new List<AddItemsBulk.ItemRequest>
             {
-                new("europe", "What is the capital of France?", "Paris", new List<string> { "Lyon" }, "Valid"),
+                new("geography", "europe", "What is the capital of France?", "Paris", new List<string> { "Lyon" }, "Valid"),
             });
 
         // Simulate database error by disposing context
@@ -210,14 +206,13 @@ public sealed class AddItemsBulkTests : IDisposable
         await _dbContext.SaveChangesAsync();
 
         AddItemsBulk.Request request = new(
-            Category: "geography",
             IsPrivate: false,
             Items: new List<AddItemsBulk.ItemRequest>
             {
                 // Exact duplicate - should be rejected
-                new("europe", "What is the capital of France?", "Paris", new List<string> { "Lyon", "Marseille" }, "Duplicate"),
+                new("geography", "europe", "What is the capital of France?", "Paris", new List<string> { "Lyon", "Marseille" }, "Duplicate"),
                 // Different question - should be accepted
-                new("europe", "What is the capital of Spain?", "Madrid", new List<string> { "Barcelona", "Valencia" }, "New item")
+                new("geography", "europe", "What is the capital of Spain?", "Madrid", new List<string> { "Barcelona", "Valencia" }, "New item")
             });
 
         // Act
@@ -261,12 +256,11 @@ public sealed class AddItemsBulkTests : IDisposable
         await _dbContext.SaveChangesAsync();
 
         AddItemsBulk.Request request = new(
-            Category: "geography",
             IsPrivate: false,
             Items: new List<AddItemsBulk.ItemRequest>
             {
                 // Same question but different case - should be rejected (case-insensitive match)
-                new("europe", "What is the capital of France?", "Paris", new List<string> { "Lyon", "Marseille" }, "Duplicate")
+                new("geography", "europe", "What is the capital of France?", "Paris", new List<string> { "Lyon", "Marseille" }, "Duplicate")
             });
 
         // Act
@@ -309,14 +303,13 @@ public sealed class AddItemsBulkTests : IDisposable
         await _dbContext.SaveChangesAsync();
 
         AddItemsBulk.Request request = new(
-            Category: "geography",
             IsPrivate: false,
             Items: new List<AddItemsBulk.ItemRequest>
             {
                 // Different question entirely - should be accepted
-                new("europe", "Which city is the capital of France?", "Paris", new List<string> { "Lyon", "Marseille" }, "Different question"),
+                new("geography", "europe", "Which city is the capital of France?", "Paris", new List<string> { "Lyon", "Marseille" }, "Different question"),
                 // Same question but different answers - should be REJECTED (question match takes precedence)
-                new("europe", "What is the capital of France?", "Paris", new List<string> { "Toulouse", "Nice" }, "Different incorrect answers")
+                new("geography", "europe", "What is the capital of France?", "Paris", new List<string> { "Toulouse", "Nice" }, "Different incorrect answers")
             });
 
         // Act
@@ -362,12 +355,11 @@ public sealed class AddItemsBulkTests : IDisposable
         await _dbContext.SaveChangesAsync();
 
         AddItemsBulk.Request request = new(
-            Category: "geography",
             IsPrivate: false,
             Items: new List<AddItemsBulk.ItemRequest>
             {
                 // Same fuzzy signature (same question + answers) - should be rejected
-                new("europe", "What is the capital of France?", "Paris", new List<string> { "Lyon", "Marseille" }, "Duplicate")
+                new("geography", "europe", "What is the capital of France?", "Paris", new List<string> { "Lyon", "Marseille" }, "Duplicate")
             });
 
         // Act
@@ -409,12 +401,11 @@ public sealed class AddItemsBulkTests : IDisposable
         await _dbContext.SaveChangesAsync();
 
         AddItemsBulk.Request request = new(
-            Category: "geography", // Different category
             IsPrivate: false,
             Items: new List<AddItemsBulk.ItemRequest>
             {
                 // Same question/answers but different category - should be accepted
-                new("europe", "What is the capital of France?", "Paris", new List<string> { "Lyon", "Marseille" }, "Different category")
+                new("geography", "europe", "What is the capital of France?", "Paris", new List<string> { "Lyon", "Marseille" }, "Different category")
             });
 
         // Act
@@ -456,13 +447,12 @@ public sealed class AddItemsBulkTests : IDisposable
         await _dbContext.SaveChangesAsync();
 
         AddItemsBulk.Request request = new(
-            Category: "geography",
             IsPrivate: false,
             Items: new List<AddItemsBulk.ItemRequest>
             {
                 // Same category, same question/answers, but different subcategory - should still be rejected
                 // (duplicate check is per category+subcategory combination)
-                new("asia", "What is the capital of France?", "Paris", new List<string> { "Lyon", "Marseille" }, "Different subcategory")
+                new("geography", "asia", "What is the capital of France?", "Paris", new List<string> { "Lyon", "Marseille" }, "Different subcategory")
             });
 
         // Act
@@ -507,7 +497,6 @@ public sealed class AddItemsBulkTests : IDisposable
         await _dbContext.SaveChangesAsync();
 
         AddItemsBulk.Request request = new(
-            Category: "geography",
             IsPrivate: false,
             Items: new List<AddItemsBulk.ItemRequest>
             {
@@ -515,7 +504,7 @@ public sealed class AddItemsBulkTests : IDisposable
                 // But the exact question match check happens first, so this might pass
                 // Actually, the question text comparison is case-insensitive but exact otherwise
                 // So whitespace differences in question would pass the question check but might match fuzzy signature
-                new("europe", "What  is  the  capital  of  France?", "Paris", new List<string> { "Lyon", "Marseille" }, "Extra spaces")
+                new("geography", "europe", "What  is  the  capital  of  France?", "Paris", new List<string> { "Lyon", "Marseille" }, "Extra spaces")
             });
 
         // Act
@@ -580,18 +569,17 @@ public sealed class AddItemsBulkTests : IDisposable
         await _dbContext.SaveChangesAsync();
 
         AddItemsBulk.Request request = new(
-            Category: "geography",
             IsPrivate: false,
             Items: new List<AddItemsBulk.ItemRequest>
             {
                 // Duplicate 1 - should be rejected
-                new("europe", "What is the capital of France?", "Paris", new List<string> { "Lyon", "Marseille" }, "Duplicate 1"),
+                new("geography", "europe", "What is the capital of France?", "Paris", new List<string> { "Lyon", "Marseille" }, "Duplicate 1"),
                 // New item - should be accepted
-                new("europe", "What is the capital of Italy?", "Rome", new List<string> { "Milan", "Naples" }, "New item"),
+                new("geography", "europe", "What is the capital of Italy?", "Rome", new List<string> { "Milan", "Naples" }, "New item"),
                 // Duplicate 2 - should be rejected
-                new("europe", "What is the capital of Germany?", "Berlin", new List<string> { "Munich", "Hamburg" }, "Duplicate 2"),
+                new("geography", "europe", "What is the capital of Germany?", "Berlin", new List<string> { "Munich", "Hamburg" }, "Duplicate 2"),
                 // Another new item - should be accepted
-                new("europe", "What is the capital of Spain?", "Madrid", new List<string> { "Barcelona", "Valencia" }, "New item 2")
+                new("geography", "europe", "What is the capital of Spain?", "Madrid", new List<string> { "Barcelona", "Valencia" }, "New item 2")
             });
 
         // Act

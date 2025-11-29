@@ -55,7 +55,9 @@ internal static partial class StartupExtensions
                     ValidateAudience = true,
                     ValidAudience = audience,
                     ValidateIssuer = true,
-                    ValidIssuer = authority,
+                    // ValidIssuer is not set explicitly - the middleware will automatically
+                    // discover and validate the issuer from the OpenID Connect metadata
+                    // endpoint when options.Authority is set above
                     ValidateLifetime = true,
                     ValidateIssuerSigningKey = true,
                     // Cognito uses RS256 for token signing

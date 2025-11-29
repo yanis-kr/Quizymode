@@ -27,9 +27,9 @@ var postgres = builder
 var postgresDb = postgres.AddDatabase("quizymode");
 
 // Add the API project
-// Ports are configured in launchSettings.json (HTTPS: 8080, HTTP: 8081)
-// Aspire will automatically use these ports from the project's launchSettings.json
-// Note: Port 6000 is blocked by Chrome, so we use 8080 instead
+// Let the API bind directly to ports from launchSettings.json
+// Aspire will auto-detect these endpoints and make them accessible
+// Note: Port 6000 is blocked by Chrome, and 8080 is used by Docker/WSL, so we use 8082 for HTTPS
 var api = builder.AddProject("quizymode-api", "../Quizymode.Api/Quizymode.Api.csproj")
     .WithReference(postgresDb)
     .WaitFor(postgresDb)
