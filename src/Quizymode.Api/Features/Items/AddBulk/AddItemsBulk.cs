@@ -100,7 +100,7 @@ public static class AddItemsBulk
                 .WithTags("Items")
                 .WithSummary("Create multiple items in bulk")
                 .WithDescription("Creates many items in a single request. Each item specifies its own category and subcategory; isPrivate applies to all items.")
-                .RequireAuthorization("Admin")
+                .RequireAuthorization()
                 .WithOpenApi()
                 .Produces<Response>(StatusCodes.Status200OK)
                 .Produces(StatusCodes.Status400BadRequest);

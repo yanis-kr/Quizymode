@@ -21,12 +21,12 @@ interface BulkCreateRequest {
   }>;
 }
 
-const BulkCreatePage = () => {
+const BulkCreateItemsPage = () => {
   const { isAuthenticated, isAdmin } = useAuth();
   const navigate = useNavigate();
   const [jsonInput, setJsonInput] = useState("");
   const [category, setCategory] = useState("");
-  const [isPrivate, setIsPrivate] = useState(false);
+  const [isPrivate, setIsPrivate] = useState(!isAdmin); // Default to true for non-admin
   const [validationError, setValidationError] = useState<string>("");
 
   const { data: categoriesData } = useQuery({
@@ -49,7 +49,6 @@ const BulkCreatePage = () => {
         })),
       };
       
-      // Use apiClient directly since API expects different structure than adminApi
       const response = await apiClient.post<{
         totalRequested: number;
         createdCount: number;
@@ -63,7 +62,7 @@ const BulkCreatePage = () => {
     onSuccess: (response) => {
       const message = `Successfully created ${response.createdCount} items. ${response.duplicateCount} duplicates skipped. ${response.failedCount} failed.`;
       alert(message);
-      navigate("/admin");
+      navigate("/my-items");
     },
     onError: (error: any) => {
       console.error("Failed to bulk create items:", error);
@@ -141,8 +140,8 @@ const BulkCreatePage = () => {
     }
   };
 
-  if (!isAuthenticated || !isAdmin) {
-    return <Navigate to="/" replace />;
+  if (!isAuthenticated) {
+    return <Navigate to="/login" replace />;
   }
 
   return (
@@ -228,8 +227,11 @@ const BulkCreatePage = () => {
                 checked={isPrivate}
                 onChange={(e) => setIsPrivate(e.target.checked)}
                 className="mr-2"
+                disabled={!isAdmin}
               />
-              <span className="text-sm font-medium text-gray-700">Private Items</span>
+              <span className="text-sm font-medium text-gray-700">
+                Private Items {!isAdmin && "(default for non-admin users)"}
+              </span>
             </label>
           </div>
 
@@ -250,7 +252,7 @@ const BulkCreatePage = () => {
           <div className="flex justify-end space-x-4">
             <button
               type="button"
-              onClick={() => navigate("/admin")}
+              onClick={() => navigate("/my-items")}
               className="px-4 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-md hover:bg-gray-50"
             >
               Cancel
@@ -269,5 +271,5 @@ const BulkCreatePage = () => {
   );
 };
 
-export default BulkCreatePage;
+export default BulkCreateItemsPage;
 

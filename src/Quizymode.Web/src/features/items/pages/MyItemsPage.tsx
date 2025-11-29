@@ -6,6 +6,13 @@ import LoadingSpinner from "@/components/LoadingSpinner";
 import ErrorMessage from "@/components/ErrorMessage";
 import { useState, useEffect } from "react";
 import { categoriesApi } from "@/api/categories";
+import {
+  EyeIcon,
+  FolderIcon,
+  PencilIcon,
+  TrashIcon,
+} from "@heroicons/react/24/outline";
+import ItemCollectionsModal from "@/components/ItemCollectionsModal";
 
 const MyItemsPage = () => {
   const { isAuthenticated, isAdmin } = useAuth();
@@ -16,6 +23,7 @@ const MyItemsPage = () => {
   const [selectedCategory, setSelectedCategory] = useState<string>("");
   const [selectedSubcategory, setSelectedSubcategory] = useState<string>("");
   const [searchText, setSearchText] = useState<string>("");
+  const [selectedItemForCollections, setSelectedItemForCollections] = useState<string | null>(null);
   const pageSize = 10;
 
   const { data: categoriesData } = useQuery({
@@ -84,12 +92,20 @@ const MyItemsPage = () => {
     <div className="px-4 py-6 sm:px-0">
       <div className="mb-6 flex justify-between items-center">
         <h1 className="text-3xl font-bold text-gray-900">My Items</h1>
-        <button
-          onClick={() => navigate("/items/create")}
-          className="px-4 py-2 bg-indigo-600 text-white rounded-md hover:bg-indigo-700"
-        >
-          Create Item
-        </button>
+        <div className="flex space-x-2">
+          <button
+            onClick={() => navigate("/my-items/bulk-create")}
+            className="px-4 py-2 bg-green-600 text-white rounded-md hover:bg-green-700"
+          >
+            Create Bulk
+          </button>
+          <button
+            onClick={() => navigate("/items/create")}
+            className="px-4 py-2 bg-indigo-600 text-white rounded-md hover:bg-indigo-700"
+          >
+            Create Item
+          </button>
+        </div>
       </div>
 
       {/* Filters */}
@@ -206,22 +222,36 @@ const MyItemsPage = () => {
                       <strong>Answer:</strong> {item.correctAnswer}
                     </p>
                   </div>
-                  <div className="flex space-x-2 ml-4">
+                  <div className="flex space-x-1 ml-4">
+                    <button
+                      onClick={() => navigate(`/explore/item/${item.id}`)}
+                      className="p-2 text-indigo-600 hover:bg-indigo-50 rounded-md"
+                      title="View item"
+                    >
+                      <EyeIcon className="h-5 w-5" />
+                    </button>
+                    <button
+                      onClick={() => setSelectedItemForCollections(item.id)}
+                      className="p-2 text-blue-600 hover:bg-blue-50 rounded-md"
+                      title="Manage collections"
+                    >
+                      <FolderIcon className="h-5 w-5" />
+                    </button>
                     <button
                       onClick={() => navigate(`/items/${item.id}/edit`)}
                       disabled={!canEditDelete(item)}
-                      className={`px-4 py-2 text-sm rounded-md ${
+                      className={`p-2 rounded-md ${
                         canEditDelete(item)
-                          ? "bg-indigo-600 text-white hover:bg-indigo-700"
-                          : "bg-gray-300 text-gray-500 cursor-not-allowed"
+                          ? "text-indigo-600 hover:bg-indigo-50"
+                          : "text-gray-400 cursor-not-allowed"
                       }`}
                       title={
                         !canEditDelete(item)
                           ? "Only admins can edit global items"
-                          : "Edit item"
+                          : "Update item"
                       }
                     >
-                      Update
+                      <PencilIcon className="h-5 w-5" />
                     </button>
                     <button
                       onClick={() => {
@@ -230,10 +260,10 @@ const MyItemsPage = () => {
                         }
                       }}
                       disabled={!canEditDelete(item) || deleteMutation.isPending}
-                      className={`px-4 py-2 text-sm rounded-md ${
+                      className={`p-2 rounded-md ${
                         canEditDelete(item)
-                          ? "bg-red-600 text-white hover:bg-red-700"
-                          : "bg-gray-300 text-gray-500 cursor-not-allowed"
+                          ? "text-red-600 hover:bg-red-50"
+                          : "text-gray-400 cursor-not-allowed"
                       }`}
                       title={
                         !canEditDelete(item)
@@ -241,7 +271,7 @@ const MyItemsPage = () => {
                           : "Delete item"
                       }
                     >
-                      Delete
+                      <TrashIcon className="h-5 w-5" />
                     </button>
                   </div>
                 </div>
@@ -277,6 +307,14 @@ const MyItemsPage = () => {
         <div className="text-center py-12">
           <p className="text-gray-500">No items found matching your filters.</p>
         </div>
+      )}
+
+      {selectedItemForCollections && (
+        <ItemCollectionsModal
+          isOpen={!!selectedItemForCollections}
+          onClose={() => setSelectedItemForCollections(null)}
+          itemId={selectedItemForCollections}
+        />
       )}
     </div>
   );

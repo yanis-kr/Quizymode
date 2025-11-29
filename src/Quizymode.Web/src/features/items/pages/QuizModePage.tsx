@@ -2,14 +2,15 @@ import { useState, useEffect } from 'react';
 import { useParams, useNavigate, Link } from 'react-router-dom';
 import { useQuery } from '@tanstack/react-query';
 import { itemsApi } from '@/api/items';
+import { collectionsApi } from '@/api/collections';
 import { useAuth } from '@/contexts/AuthContext';
 import LoadingSpinner from '@/components/LoadingSpinner';
 import ErrorMessage from '@/components/ErrorMessage';
-import ReactionsComments from '@/components/ReactionsComments';
+import ItemRatingsComments from '@/components/ItemRatingsComments';
 import CollectionControls from '@/components/CollectionControls';
 
 const QuizModePage = () => {
-  const { category } = useParams();
+  const { category, collectionId, itemId } = useParams();
   const navigate = useNavigate();
   const { isAuthenticated } = useAuth();
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -18,12 +19,37 @@ const QuizModePage = () => {
   const [stats, setStats] = useState({ total: 0, correct: 0 });
   const [count] = useState(10);
 
+  const { data: singleItemData, isLoading: singleItemLoading } = useQuery({
+    queryKey: ['item', itemId],
+    queryFn: () => itemsApi.getById(itemId!),
+    enabled: !!itemId,
+  });
+
+  const { data: collectionData, isLoading: collectionLoading } = useQuery({
+    queryKey: ['collectionItems', collectionId],
+    queryFn: () => collectionsApi.getItems(collectionId!),
+    enabled: !!collectionId && !itemId,
+  });
+
   const { data, isLoading, error, refetch } = useQuery({
     queryKey: ['randomItems', category, count],
     queryFn: () => itemsApi.getRandom(category, undefined, count),
+    enabled: !collectionId && !itemId,
   });
 
-  const items = data?.items || [];
+  const items = itemId
+    ? singleItemData
+      ? [singleItemData]
+      : []
+    : collectionId
+    ? collectionData?.items || []
+    : data?.items || [];
+  const isLoadingItems = itemId
+    ? singleItemLoading
+    : collectionId
+    ? collectionLoading
+    : isLoading;
+
   const currentItem = items[currentIndex];
 
   useEffect(() => {
@@ -69,8 +95,8 @@ const QuizModePage = () => {
     }
   };
 
-  if (isLoading) return <LoadingSpinner />;
-  if (error) return <ErrorMessage message="Failed to load items" onRetry={() => refetch()} />;
+  if (isLoadingItems) return <LoadingSpinner />;
+  if (error && !collectionId && !itemId) return <ErrorMessage message="Failed to load items" onRetry={() => refetch()} />;
   if (items.length === 0) {
     return (
       <div className="px-4 py-6 sm:px-0">
@@ -156,8 +182,8 @@ const QuizModePage = () => {
                 {currentItem.subcategory && ` • ${currentItem.subcategory}`}
               </div>
 
-              {/* Reactions and Comments */}
-              {showAnswer && <ReactionsComments itemId={currentItem.id} />}
+              {/* Ratings and Comments */}
+              {showAnswer && <ItemRatingsComments itemId={currentItem.id} />}
 
               {/* Collection Controls */}
               {showAnswer && <CollectionControls itemId={currentItem.id} />}

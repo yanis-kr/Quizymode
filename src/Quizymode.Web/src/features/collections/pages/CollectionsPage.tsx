@@ -3,6 +3,7 @@ import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query';
 import { collectionsApi } from '@/api/collections';
 import { useAuth } from '@/contexts/AuthContext';
 import { Navigate, Link } from 'react-router-dom';
+import { EyeIcon, AcademicCapIcon } from '@heroicons/react/24/outline';
 import LoadingSpinner from '@/components/LoadingSpinner';
 import ErrorMessage from '@/components/ErrorMessage';
 
@@ -136,16 +137,43 @@ const CollectionsPage = () => {
       {data?.collections && data.collections.length > 0 ? (
         <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {data.collections.map((collection) => (
-            <Link
+            <div
               key={collection.id}
-              to={`/collections/${collection.id}`}
               className="bg-white overflow-hidden shadow rounded-lg hover:shadow-lg transition-shadow p-6"
             >
-              <h3 className="text-lg font-medium text-gray-900">{collection.name}</h3>
-              <p className="mt-2 text-sm text-gray-500">
-                Created {new Date(collection.createdAt).toLocaleDateString()}
-              </p>
-            </Link>
+              <div className="flex justify-between items-start mb-4">
+                <Link
+                  to={`/collections/${collection.id}`}
+                  className="flex-1"
+                >
+                  <h3 className="text-lg font-medium text-gray-900">{collection.name}</h3>
+                  <p className="mt-2 text-sm text-gray-500">
+                    {collection.itemCount} {collection.itemCount === 1 ? 'item' : 'items'}
+                  </p>
+                  <p className="mt-1 text-sm text-gray-500">
+                    Created {new Date(collection.createdAt).toLocaleDateString()}
+                  </p>
+                </Link>
+              </div>
+              <div className="flex space-x-2 mt-4">
+                <Link
+                  to={`/explore/collection/${collection.id}`}
+                  className="flex items-center px-3 py-2 text-sm font-medium text-indigo-600 bg-indigo-50 rounded-md hover:bg-indigo-100"
+                  onClick={(e) => e.stopPropagation()}
+                >
+                  <EyeIcon className="h-4 w-4 mr-1" />
+                  Explore
+                </Link>
+                <Link
+                  to={`/quiz/collection/${collection.id}`}
+                  className="flex items-center px-3 py-2 text-sm font-medium text-green-600 bg-green-50 rounded-md hover:bg-green-100"
+                  onClick={(e) => e.stopPropagation()}
+                >
+                  <AcademicCapIcon className="h-4 w-4 mr-1" />
+                  Quiz
+                </Link>
+              </div>
+            </div>
           ))}
         </div>
       ) : (
