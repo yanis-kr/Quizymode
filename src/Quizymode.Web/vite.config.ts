@@ -17,7 +17,7 @@ export default defineConfig({
     host: "localhost", // Only listen on localhost (set to true to allow network access)
     proxy: {
       "/api": {
-        target: "https://localhost:8080",
+        target: "https://localhost:8082",
         changeOrigin: true,
         secure: false,
         rewrite: (path) => path.replace(/^\/api/, ""),
