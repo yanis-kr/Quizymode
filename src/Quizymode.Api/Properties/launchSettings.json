@@ -17,7 +17,7 @@
         "APP_SEED__PATH": "data/seed"
       },
       "dotnetRunMessages": true,
-      "applicationUrl": "https://localhost:8080;http://localhost:8081",
+      "applicationUrl": "https://localhost:8082;http://localhost:8081",
       "launchUrl": "swagger"
     },
     "Container (Dockerfile)": {

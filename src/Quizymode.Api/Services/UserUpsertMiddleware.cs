@@ -59,12 +59,13 @@ internal sealed class UserUpsertMiddleware
                 
                 if (existing is null)
                 {
+                    // For new users, set Name from claims if available, otherwise use subject as fallback
                     var userEntity = new User
                     {
                         Id = Guid.NewGuid(),
                         Subject = subject,
                         Email = email,
-                        Name = subject, // Store Subject as Name (Cognito User Name)
+                        Name = name, // Use name from claims (or subject as fallback)
                         CreatedAt = DateTime.UtcNow,
                         LastLogin = DateTime.UtcNow
                     };
@@ -76,8 +77,15 @@ internal sealed class UserUpsertMiddleware
                 }
                 else
                 {
+                    // For existing users:
+                    // - Always update Email from claims (can change in Cognito)
+                    // - Only update Name from claims if user hasn't set a custom name yet (Name is null or equals Subject)
+                    // - Always update LastLogin
                     existing.Email = email;
-                    existing.Name = subject; // Ensure Name = Subject (Cognito User Name)
+                    if (string.IsNullOrWhiteSpace(existing.Name) || existing.Name == existing.Subject)
+                    {
+                        existing.Name = name; // Update Name from claims only if user hasn't customized it
+                    }
                     existing.LastLogin = DateTime.UtcNow;
                     await db.SaveChangesAsync();
                     userId = existing.Id;

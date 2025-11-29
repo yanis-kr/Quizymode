@@ -12,6 +12,7 @@ namespace Quizymode.Api.Features.Items.AddBulk;
 public static class AddItemsBulk
 {
     public sealed record ItemRequest(
+        string Category,
         string Subcategory,
         string Question,
         string CorrectAnswer,
@@ -19,7 +20,6 @@ public static class AddItemsBulk
         string Explanation);
 
     public sealed record Request(
-        string Category,
         bool IsPrivate,
         List<ItemRequest> Items);
 
@@ -40,10 +40,6 @@ public static class AddItemsBulk
     {
         public Validator()
         {
-            RuleFor(x => x.Category)
-                .NotEmpty()
-                .WithMessage("Category is required");
-
             RuleFor(x => x.Items)
                 .NotNull()
                 .WithMessage("Items is required")
@@ -61,6 +57,10 @@ public static class AddItemsBulk
     {
         public ItemRequestValidator()
         {
+            RuleFor(x => x.Category)
+                .NotEmpty()
+                .WithMessage("Category is required");
+
             RuleFor(x => x.Subcategory)
                 .NotEmpty()
                 .WithMessage("Subcategory is required");
@@ -99,7 +99,7 @@ public static class AddItemsBulk
             app.MapPost("items/bulk", Handler)
                 .WithTags("Items")
                 .WithSummary("Create multiple items in bulk")
-                .WithDescription("Creates many items in a single request. The root category applies to all items; each item specifies its own subcategory.")
+                .WithDescription("Creates many items in a single request. Each item specifies its own category and subcategory; isPrivate applies to all items.")
                 .RequireAuthorization("Admin")
                 .WithOpenApi()
                 .Produces<Response>(StatusCodes.Status200OK)
