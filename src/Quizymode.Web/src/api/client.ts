@@ -33,12 +33,29 @@ apiClient.interceptors.response.use(
   (response) => response,
   async (error) => {
     if (error.response?.status === 401) {
-      // Token expired or invalid - clear storage BEFORE redirecting
-      // This ensures auth state is cleared before LoginPage loads
+      // Token expired or invalid - clear storage
       localStorage.removeItem("accessToken");
       localStorage.removeItem("idToken");
-      // Add query parameter to indicate unauthorized access
-      window.location.href = "/login?unauthorized=true";
+
+      // Only redirect if NOT on a public route
+      // Public routes don't require authentication and should handle 401 gracefully
+      const publicRoutes = [
+        "/",
+        "/categories",
+        "/login",
+        "/signup",
+        "/explore",
+        "/quiz",
+      ];
+      const currentPath = window.location.pathname;
+      const isPublicRoute = publicRoutes.some(
+        (route) => currentPath === route || currentPath.startsWith(route + "/")
+      );
+
+      if (!isPublicRoute) {
+        // Add query parameter to indicate unauthorized access
+        window.location.href = "/login?unauthorized=true";
+      }
       return Promise.reject(error);
     }
     return Promise.reject(error);
