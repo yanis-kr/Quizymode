@@ -17,6 +17,7 @@ public static class UpdateComment
         Guid ItemId,
         string Text,
         string CreatedBy,
+        string? CreatedByName,
         DateTime CreatedAt,
         DateTime? UpdatedAt);
 
@@ -116,11 +117,21 @@ public static class UpdateComment
 
             await db.SaveChangesAsync(cancellationToken);
 
+            // Fetch user name for response
+            string? userName = null;
+            if (Guid.TryParse(comment.CreatedBy, out Guid userId))
+            {
+                User? user = await db.Users
+                    .FirstOrDefaultAsync(u => u.Id == userId, cancellationToken);
+                userName = user?.Name;
+            }
+
             Response response = new(
                 comment.Id.ToString(),
                 comment.ItemId,
                 comment.Text,
                 comment.CreatedBy,
+                userName,
                 comment.CreatedAt,
                 comment.UpdatedAt);
 

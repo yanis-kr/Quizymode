@@ -6,33 +6,39 @@ using Quizymode.Api.Shared.Kernel;
 
 namespace Quizymode.Api.Features.Categories;
 
-public static class GetCategories
+public static class GetSubcategories
 {
-    public sealed record QueryRequest(string? Search);
+    public sealed record QueryRequest(string Category);
 
-    public sealed record CategoryResponse(string Category, int Count);
+    public sealed record SubcategoryResponse(string Subcategory, int Count);
 
-    public sealed record Response(List<CategoryResponse> Categories);
+    public sealed record Response(List<SubcategoryResponse> Subcategories, int TotalCount);
 
     public sealed class Endpoint : IEndpoint
     {
         public void MapEndpoint(IEndpointRouteBuilder app)
         {
-            app.MapGet("categories", Handler)
+            app.MapGet("categories/{category}/subcategories", Handler)
                 .WithTags("Categories")
-                .WithSummary("Get unique categories")
-                .WithDescription("Returns unique category identifiers sorted alphabetically with optional search filter.")
+                .WithSummary("Get subcategories for a category")
+                .WithDescription("Returns unique subcategories for a given category with item counts.")
                 .WithOpenApi()
-                .Produces<Response>(StatusCodes.Status200OK);
+                .Produces<Response>(StatusCodes.Status200OK)
+                .Produces(StatusCodes.Status400BadRequest);
         }
 
         private static async Task<IResult> Handler(
-            string? search,
+            string category,
             ApplicationDbContext db,
             IUserContext userContext,
             CancellationToken cancellationToken)
         {
-            QueryRequest request = new(search);
+            if (string.IsNullOrWhiteSpace(category))
+            {
+                return Results.BadRequest("Category is required");
+            }
+
+            QueryRequest request = new(category);
 
             Result<Response> result = await HandleAsync(request, db, userContext, cancellationToken);
 
@@ -70,34 +76,34 @@ public static class GetCategories
                 query = query.Where(i => !i.IsPrivate && i.Category != string.Empty);
             }
 
-            if (!string.IsNullOrWhiteSpace(request.Search))
-            {
-                string searchTerm = request.Search.Trim();
-                query = query.Where(i => EF.Functions.ILike(i.Category, $"%{searchTerm}%"));
-            }
+            // Filter by category
+            query = query.Where(i => i.Category == request.Category);
+
+            // Get total count for the category
+            int totalCount = await query.CountAsync(cancellationToken);
 
             // Perform grouping and counting in the database, then map to DTO in memory.
-            List<(string Category, int Count)> grouped = await query
-                .GroupBy(i => i.Category)
-                .Select(g => new { Category = g.Key, Count = g.Count() })
-                .OrderBy(x => x.Category)
+            List<(string Subcategory, int Count)> grouped = await query
+                .GroupBy(i => i.Subcategory)
+                .Select(g => new { Subcategory = g.Key, Count = g.Count() })
+                .OrderBy(x => x.Subcategory)
                 .ToListAsync(cancellationToken)
                 .ContinueWith(t => t.Result
-                    .Select(x => (x.Category, x.Count))
+                    .Select(x => (x.Subcategory, x.Count))
                     .ToList(), cancellationToken);
 
-            List<CategoryResponse> categories = grouped
-                .Select(x => new CategoryResponse(x.Category, x.Count))
+            List<SubcategoryResponse> subcategories = grouped
+                .Select(x => new SubcategoryResponse(x.Subcategory, x.Count))
                 .ToList();
 
-            Response response = new(categories);
+            Response response = new(subcategories, totalCount);
 
             return Result.Success(response);
         }
         catch (Exception ex)
         {
             return Result.Failure<Response>(
-                Error.Problem("Categories.GetFailed", $"Failed to get categories: {ex.Message}"));
+                Error.Problem("Subcategories.GetFailed", $"Failed to get subcategories: {ex.Message}"));
         }
     }
 
@@ -109,5 +115,4 @@ public static class GetCategories
         }
     }
 }
-
 

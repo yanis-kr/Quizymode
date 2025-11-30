@@ -13,6 +13,8 @@ import CollectionDetailPage from './features/collections/pages/CollectionDetailP
 import AdminDashboardPage from './features/admin/pages/AdminDashboardPage';
 import ReviewBoardPage from './features/admin/pages/ReviewBoardPage';
 import BulkCreatePage from './features/admin/pages/BulkCreatePage';
+import BulkCreateItemsPage from './features/items/pages/BulkCreateItemsPage';
+import ItemCommentsPage from './features/items/pages/ItemCommentsPage';
 import EditItemPage from './features/items/pages/EditItemPage';
 
 function App() {
@@ -22,13 +24,23 @@ function App() {
         <Route path="/" element={<HomePage />} />
         <Route path="/categories" element={<HomePage />} />
         <Route path="/items" element={<ItemsPage />} />
+        <Route path="/explore/item/:itemId" element={<ExploreModePage />} />
+        <Route path="/explore/:category/item/:itemId" element={<ExploreModePage />} />
+        <Route path="/explore/collection/:collectionId/item/:itemId" element={<ExploreModePage />} />
+        <Route path="/explore/collection/:collectionId" element={<ExploreModePage />} />
         <Route path="/explore/:category?" element={<ExploreModePage />} />
+        <Route path="/quiz/item/:itemId" element={<QuizModePage />} />
+        <Route path="/quiz/:category/item/:itemId" element={<QuizModePage />} />
+        <Route path="/quiz/collection/:collectionId/item/:itemId" element={<QuizModePage />} />
+        <Route path="/quiz/collection/:collectionId" element={<QuizModePage />} />
         <Route path="/quiz/:category?" element={<QuizModePage />} />
         <Route path="/login" element={<LoginPage />} />
         <Route path="/signup" element={<SignUpPage />} />
         <Route path="/my-items" element={<MyItemsPage />} />
+        <Route path="/my-items/bulk-create" element={<BulkCreateItemsPage />} />
         <Route path="/items/create" element={<CreateItemPage />} />
         <Route path="/items/:id/edit" element={<EditItemPage />} />
+        <Route path="/items/:id/comments" element={<ItemCommentsPage />} />
         <Route path="/collections" element={<CollectionsPage />} />
         <Route path="/collections/:id" element={<CollectionDetailPage />} />
         <Route path="/admin" element={<AdminDashboardPage />} />

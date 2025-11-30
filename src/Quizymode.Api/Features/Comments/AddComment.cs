@@ -19,6 +19,7 @@ public static class AddComment
         Guid ItemId,
         string Text,
         string CreatedBy,
+        string? CreatedByName,
         DateTime CreatedAt);
 
     public sealed class Validator : AbstractValidator<Request>
@@ -109,11 +110,21 @@ public static class AddComment
             db.Comments.Add(entity);
             await db.SaveChangesAsync(cancellationToken);
 
+            // Fetch user name for response
+            string? userName = null;
+            if (Guid.TryParse(userContext.UserId, out Guid userId))
+            {
+                User? user = await db.Users
+                    .FirstOrDefaultAsync(u => u.Id == userId, cancellationToken);
+                userName = user?.Name;
+            }
+
             Response response = new(
                 entity.Id.ToString(),
                 entity.ItemId,
                 entity.Text,
                 entity.CreatedBy,
+                userName,
                 entity.CreatedAt);
 
             return Result.Success(response);

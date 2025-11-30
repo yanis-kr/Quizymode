@@ -59,11 +59,15 @@ public static class AddItemsBulk
         {
             RuleFor(x => x.Category)
                 .NotEmpty()
-                .WithMessage("Category is required");
+                .WithMessage("Category is required")
+                .MaximumLength(100)
+                .WithMessage("Category must not exceed 100 characters");
 
             RuleFor(x => x.Subcategory)
                 .NotEmpty()
-                .WithMessage("Subcategory is required");
+                .WithMessage("Subcategory is required")
+                .MaximumLength(100)
+                .WithMessage("Subcategory must not exceed 100 characters");
 
             RuleFor(x => x.Question)
                 .NotEmpty()
@@ -100,7 +104,7 @@ public static class AddItemsBulk
                 .WithTags("Items")
                 .WithSummary("Create multiple items in bulk")
                 .WithDescription("Creates many items in a single request. Each item specifies its own category and subcategory; isPrivate applies to all items.")
-                .RequireAuthorization("Admin")
+                .RequireAuthorization()
                 .WithOpenApi()
                 .Produces<Response>(StatusCodes.Status200OK)
                 .Produces(StatusCodes.Status400BadRequest);

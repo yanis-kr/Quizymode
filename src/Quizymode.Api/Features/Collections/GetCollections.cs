@@ -11,7 +11,7 @@ public static class GetCollections
 {
     public sealed record Response(List<CollectionResponse> Collections);
 
-    public sealed record CollectionResponse(string Id, string Name, DateTime CreatedAt);
+    public sealed record CollectionResponse(string Id, string Name, DateTime CreatedAt, int ItemCount);
 
     public sealed class Endpoint : IEndpoint
     {
@@ -56,7 +56,11 @@ public static class GetCollections
             var collections = await db.Collections
                 .Where(c => c.CreatedBy == subject)
                 .OrderByDescending(c => c.CreatedAt)
-                .Select(c => new CollectionResponse(c.Id.ToString(), c.Name, c.CreatedAt))
+                .Select(c => new CollectionResponse(
+                    c.Id.ToString(),
+                    c.Name,
+                    c.CreatedAt,
+                    db.CollectionItems.Count(ci => ci.CollectionId == c.Id)))
                 .ToListAsync(cancellationToken);
 
             return Result.Success(new Response(collections));

@@ -61,4 +61,11 @@ export const collectionsApi = {
   ): Promise<void> => {
     await apiClient.post(`/collections/${collectionId}/items`, data);
   },
+
+  removeItem: async (
+    collectionId: string,
+    itemId: string
+  ): Promise<void> => {
+    await apiClient.delete(`/collections/${collectionId}/items/${itemId}`);
+  },
 };

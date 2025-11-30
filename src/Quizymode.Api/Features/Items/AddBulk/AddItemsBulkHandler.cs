@@ -33,6 +33,8 @@ internal static class AddItemsBulkHandler
                 }
             }
 
+            string userId = userContext.UserId ?? throw new InvalidOperationException("User ID is required for bulk item creation");
+
             List<Item> itemsToInsert = new();
             List<string> duplicateQuestions = new();
             List<AddItemsBulk.ItemError> errors = new();
@@ -46,13 +48,16 @@ internal static class AddItemsBulkHandler
                     string fuzzySignature = simHashService.ComputeSimHash(questionText);
                     int fuzzyBucket = simHashService.GetFuzzyBucket(fuzzySignature);
 
-                    // Check for duplicates
+                    // Check for duplicates - only for the same user
+                    // Different users can add the same items
+                    string questionLower = itemRequest.Question.ToLower();
                     bool isDuplicate = await db.Items
                         .AnyAsync(item => 
+                            item.CreatedBy == userId &&
                             item.Category == itemRequest.Category &&
                             item.Subcategory == itemRequest.Subcategory &&
                             item.FuzzyBucket == fuzzyBucket &&
-                            (item.Question.Equals(itemRequest.Question, StringComparison.OrdinalIgnoreCase) ||
+                            (item.Question.ToLower() == questionLower ||
                              item.FuzzySignature == fuzzySignature),
                             cancellationToken);
 
@@ -74,7 +79,7 @@ internal static class AddItemsBulkHandler
                         Explanation = itemRequest.Explanation,
                         FuzzySignature = fuzzySignature,
                         FuzzyBucket = fuzzyBucket,
-                        CreatedBy = userContext.UserId ?? throw new InvalidOperationException("User ID is required for bulk item creation"),
+                        CreatedBy = userId,
                         CreatedAt = DateTime.UtcNow
                     };
 

@@ -79,7 +79,7 @@ public sealed class AddItemsBulkTests : IDisposable
             Explanation = "Existing",
             FuzzySignature = _simHashService.ComputeSimHash("What is the capital of France? Paris Lyon Marseille"),
             FuzzyBucket = _simHashService.GetFuzzyBucket(_simHashService.ComputeSimHash("What is the capital of France? Paris Lyon Marseille")),
-            CreatedBy = "test",
+            CreatedBy = "test-user",
             CreatedAt = DateTime.UtcNow
         };
 
@@ -198,7 +198,7 @@ public sealed class AddItemsBulkTests : IDisposable
             Explanation = "Existing",
             FuzzySignature = _simHashService.ComputeSimHash(questionText),
             FuzzyBucket = _simHashService.GetFuzzyBucket(_simHashService.ComputeSimHash(questionText)),
-            CreatedBy = "test",
+            CreatedBy = "test-user",
             CreatedAt = DateTime.UtcNow
         };
 
@@ -248,7 +248,7 @@ public sealed class AddItemsBulkTests : IDisposable
             Explanation = "Existing",
             FuzzySignature = _simHashService.ComputeSimHash(questionText),
             FuzzyBucket = _simHashService.GetFuzzyBucket(_simHashService.ComputeSimHash(questionText)),
-            CreatedBy = "test",
+            CreatedBy = "test-user",
             CreatedAt = DateTime.UtcNow
         };
 
@@ -295,7 +295,7 @@ public sealed class AddItemsBulkTests : IDisposable
             Explanation = "Existing",
             FuzzySignature = _simHashService.ComputeSimHash(questionText),
             FuzzyBucket = _simHashService.GetFuzzyBucket(_simHashService.ComputeSimHash(questionText)),
-            CreatedBy = "test",
+            CreatedBy = "test-user",
             CreatedAt = DateTime.UtcNow
         };
 
@@ -347,7 +347,7 @@ public sealed class AddItemsBulkTests : IDisposable
             Explanation = "Existing",
             FuzzySignature = fuzzySignature,
             FuzzyBucket = fuzzyBucket,
-            CreatedBy = "test",
+            CreatedBy = "test-user",
             CreatedAt = DateTime.UtcNow
         };
 
@@ -393,7 +393,7 @@ public sealed class AddItemsBulkTests : IDisposable
             Explanation = "Existing",
             FuzzySignature = _simHashService.ComputeSimHash(questionText),
             FuzzyBucket = _simHashService.GetFuzzyBucket(_simHashService.ComputeSimHash(questionText)),
-            CreatedBy = "test",
+            CreatedBy = "test-user",
             CreatedAt = DateTime.UtcNow
         };
 
@@ -439,7 +439,7 @@ public sealed class AddItemsBulkTests : IDisposable
             Explanation = "Existing",
             FuzzySignature = _simHashService.ComputeSimHash(questionText),
             FuzzyBucket = _simHashService.GetFuzzyBucket(_simHashService.ComputeSimHash(questionText)),
-            CreatedBy = "test",
+            CreatedBy = "test-user",
             CreatedAt = DateTime.UtcNow
         };
 
@@ -489,7 +489,7 @@ public sealed class AddItemsBulkTests : IDisposable
             Explanation = "Existing",
             FuzzySignature = _simHashService.ComputeSimHash(questionText),
             FuzzyBucket = _simHashService.GetFuzzyBucket(_simHashService.ComputeSimHash(questionText)),
-            CreatedBy = "test",
+            CreatedBy = "test-user",
             CreatedAt = DateTime.UtcNow
         };
 
@@ -544,7 +544,7 @@ public sealed class AddItemsBulkTests : IDisposable
             Explanation = "Existing 1",
             FuzzySignature = _simHashService.ComputeSimHash(questionText1),
             FuzzyBucket = _simHashService.GetFuzzyBucket(_simHashService.ComputeSimHash(questionText1)),
-            CreatedBy = "test",
+            CreatedBy = "test-user",
             CreatedAt = DateTime.UtcNow
         };
 
@@ -560,7 +560,7 @@ public sealed class AddItemsBulkTests : IDisposable
             Explanation = "Existing 2",
             FuzzySignature = _simHashService.ComputeSimHash(questionText2),
             FuzzyBucket = _simHashService.GetFuzzyBucket(_simHashService.ComputeSimHash(questionText2)),
-            CreatedBy = "test",
+            CreatedBy = "test-user",
             CreatedAt = DateTime.UtcNow
         };
 
@@ -600,6 +600,52 @@ public sealed class AddItemsBulkTests : IDisposable
         result.Value.DuplicateQuestions.Should().Contain("What is the capital of Germany?");
         result.Value.DuplicateQuestions.Should().NotContain("What is the capital of Italy?");
         result.Value.DuplicateQuestions.Should().NotContain("What is the capital of Spain?");
+    }
+
+    [Fact]
+    public async Task HandleAsync_DifferentUser_AllowsSameItems()
+    {
+        // Arrange - Add existing item created by a different user
+        string questionText = "What is the capital of France? Paris Lyon Marseille";
+        Item existingItem = new Item
+        {
+            Id = Guid.NewGuid(),
+            Category = "geography",
+            Subcategory = "europe",
+            IsPrivate = false,
+            Question = "What is the capital of France?",
+            CorrectAnswer = "Paris",
+            IncorrectAnswers = new List<string> { "Lyon", "Marseille" },
+            Explanation = "Existing",
+            FuzzySignature = _simHashService.ComputeSimHash(questionText),
+            FuzzyBucket = _simHashService.GetFuzzyBucket(_simHashService.ComputeSimHash(questionText)),
+            CreatedBy = "different-user", // Different user
+            CreatedAt = DateTime.UtcNow
+        };
+
+        _dbContext.Items.Add(existingItem);
+        await _dbContext.SaveChangesAsync();
+
+        AddItemsBulk.Request request = new(
+            IsPrivate: false,
+            Items: new List<AddItemsBulk.ItemRequest>
+            {
+                // Same item but created by different user - should be accepted
+                new("geography", "europe", "What is the capital of France?", "Paris", new List<string> { "Lyon", "Marseille" }, "Same item, different user")
+            });
+
+        // Act
+        Result<AddItemsBulk.Response> result = await AddItemsBulkHandler.HandleAsync(
+            request,
+            _dbContext,
+            _simHashService,
+            _userContextMock.Object, // This user is "test-user"
+            CancellationToken.None);
+
+        // Assert
+        result.IsSuccess.Should().BeTrue();
+        result.Value.CreatedCount.Should().Be(1); // Should be accepted because different user
+        result.Value.DuplicateCount.Should().Be(0); // Not a duplicate for this user
     }
 
     public void Dispose()

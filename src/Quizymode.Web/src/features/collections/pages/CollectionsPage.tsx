@@ -1,19 +1,24 @@
-import { useState } from 'react';
-import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query';
-import { collectionsApi } from '@/api/collections';
-import { useAuth } from '@/contexts/AuthContext';
-import { Navigate, Link } from 'react-router-dom';
-import LoadingSpinner from '@/components/LoadingSpinner';
-import ErrorMessage from '@/components/ErrorMessage';
+import { useState } from "react";
+import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
+import { collectionsApi } from "@/api/collections";
+import { useAuth } from "@/contexts/AuthContext";
+import { Navigate, Link } from "react-router-dom";
+import {
+  EyeIcon,
+  AcademicCapIcon,
+  TrashIcon,
+} from "@heroicons/react/24/outline";
+import LoadingSpinner from "@/components/LoadingSpinner";
+import ErrorMessage from "@/components/ErrorMessage";
 
 const CollectionsPage = () => {
   const { isAuthenticated, isLoading: authLoading } = useAuth();
   const queryClient = useQueryClient();
   const [showCreateModal, setShowCreateModal] = useState(false);
-  const [collectionName, setCollectionName] = useState('');
+  const [collectionName, setCollectionName] = useState("");
 
   const { data, isLoading, error, refetch } = useQuery({
-    queryKey: ['collections'],
+    queryKey: ["collections"],
     queryFn: () => collectionsApi.getAll(),
     enabled: isAuthenticated && !authLoading,
     retry: false, // Don't retry if auth fails
@@ -22,14 +27,37 @@ const CollectionsPage = () => {
   const createMutation = useMutation({
     mutationFn: (name: string) => collectionsApi.create({ name }),
     onSuccess: () => {
-      queryClient.invalidateQueries({ queryKey: ['collections'] });
+      queryClient.invalidateQueries({ queryKey: ["collections"] });
       setShowCreateModal(false);
-      setCollectionName('');
+      setCollectionName("");
     },
     onError: (error: unknown) => {
-      console.error('Failed to create collection:', error);
+      console.error("Failed to create collection:", error);
     },
   });
+
+  const deleteMutation = useMutation({
+    mutationFn: (id: string) => collectionsApi.delete(id),
+    onSuccess: () => {
+      queryClient.invalidateQueries({ queryKey: ["collections"] });
+    },
+    onError: (error: unknown) => {
+      console.error("Failed to delete collection:", error);
+    },
+  });
+
+  const handleDeleteCollection = (
+    collectionId: string,
+    collectionName: string
+  ) => {
+    if (
+      window.confirm(
+        `Are you sure you want to delete "${collectionName}"? This action cannot be undone.`
+      )
+    ) {
+      deleteMutation.mutate(collectionId);
+    }
+  };
 
   const handleCreateCollection = (e: React.FormEvent) => {
     e.preventDefault();
@@ -49,7 +77,13 @@ const CollectionsPage = () => {
   }
 
   if (isLoading) return <LoadingSpinner />;
-  if (error) return <ErrorMessage message="Failed to load collections" onRetry={() => refetch()} />;
+  if (error)
+    return (
+      <ErrorMessage
+        message="Failed to load collections"
+        onRetry={() => refetch()}
+      />
+    );
 
   return (
     <div className="px-4 py-6 sm:px-0">
@@ -70,7 +104,7 @@ const CollectionsPage = () => {
           onClick={() => {
             if (!createMutation.isPending) {
               setShowCreateModal(false);
-              setCollectionName('');
+              setCollectionName("");
             }
           }}
         >
@@ -107,7 +141,7 @@ const CollectionsPage = () => {
                     type="button"
                     onClick={() => {
                       setShowCreateModal(false);
-                      setCollectionName('');
+                      setCollectionName("");
                     }}
                     className="px-4 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-md hover:bg-gray-50"
                     disabled={createMutation.isPending}
@@ -116,10 +150,12 @@ const CollectionsPage = () => {
                   </button>
                   <button
                     type="submit"
-                    disabled={createMutation.isPending || !collectionName.trim()}
+                    disabled={
+                      createMutation.isPending || !collectionName.trim()
+                    }
                     className="px-4 py-2 text-sm font-medium text-white bg-indigo-600 rounded-md hover:bg-indigo-700 disabled:opacity-50 disabled:cursor-not-allowed"
                   >
-                    {createMutation.isPending ? 'Creating...' : 'Create'}
+                    {createMutation.isPending ? "Creating..." : "Create"}
                   </button>
                 </div>
               </form>
@@ -136,21 +172,63 @@ const CollectionsPage = () => {
       {data?.collections && data.collections.length > 0 ? (
         <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {data.collections.map((collection) => (
-            <Link
+            <div
               key={collection.id}
-              to={`/collections/${collection.id}`}
               className="bg-white overflow-hidden shadow rounded-lg hover:shadow-lg transition-shadow p-6"
             >
-              <h3 className="text-lg font-medium text-gray-900">{collection.name}</h3>
-              <p className="mt-2 text-sm text-gray-500">
-                Created {new Date(collection.createdAt).toLocaleDateString()}
-              </p>
-            </Link>
+              <div className="flex justify-between items-start mb-4">
+                <Link to={`/collections/${collection.id}`} className="flex-1">
+                  <h3 className="text-lg font-medium text-gray-900">
+                    {collection.name}
+                  </h3>
+                  <p className="mt-2 text-sm text-gray-500">
+                    {collection.itemCount}{" "}
+                    {collection.itemCount === 1 ? "item" : "items"}
+                  </p>
+                  <p className="mt-1 text-sm text-gray-500">
+                    Created{" "}
+                    {new Date(collection.createdAt).toLocaleDateString()}
+                  </p>
+                </Link>
+                <button
+                  onClick={(e) => {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    handleDeleteCollection(collection.id, collection.name);
+                  }}
+                  disabled={deleteMutation.isPending}
+                  className="ml-2 p-2 text-red-600 hover:text-red-700 hover:bg-red-50 rounded-md disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+                  title="Delete collection"
+                >
+                  <TrashIcon className="h-5 w-5" />
+                </button>
+              </div>
+              <div className="flex space-x-2 mt-4">
+                <Link
+                  to={`/explore/collection/${collection.id}`}
+                  className="flex items-center px-3 py-2 text-sm font-medium text-indigo-600 bg-indigo-50 rounded-md hover:bg-indigo-100"
+                  onClick={(e) => e.stopPropagation()}
+                >
+                  <EyeIcon className="h-4 w-4 mr-1" />
+                  Explore
+                </Link>
+                <Link
+                  to={`/quiz/collection/${collection.id}`}
+                  className="flex items-center px-3 py-2 text-sm font-medium text-green-600 bg-green-50 rounded-md hover:bg-green-100"
+                  onClick={(e) => e.stopPropagation()}
+                >
+                  <AcademicCapIcon className="h-4 w-4 mr-1" />
+                  Quiz
+                </Link>
+              </div>
+            </div>
           ))}
         </div>
       ) : (
         <div className="text-center py-12">
-          <p className="text-gray-500">No collections found. Create your first collection!</p>
+          <p className="text-gray-500">
+            No collections found. Create your first collection!
+          </p>
         </div>
       )}
     </div>
@@ -158,4 +236,3 @@ const CollectionsPage = () => {
 };
 
 export default CollectionsPage;
-
