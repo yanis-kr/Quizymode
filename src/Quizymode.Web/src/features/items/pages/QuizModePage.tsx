@@ -7,7 +7,12 @@ import { useAuth } from "@/contexts/AuthContext";
 import LoadingSpinner from "@/components/LoadingSpinner";
 import ErrorMessage from "@/components/ErrorMessage";
 import ItemRatingsComments from "@/components/ItemRatingsComments";
-import CollectionControls from "@/components/CollectionControls";
+import ItemCollectionsModal from "@/components/ItemCollectionsModal";
+import {
+  FolderIcon,
+  ChevronLeftIcon,
+  ChevronRightIcon,
+} from "@heroicons/react/24/outline";
 
 const QuizModePage = () => {
   const { category, collectionId, itemId } = useParams();
@@ -17,15 +22,18 @@ const QuizModePage = () => {
   const [selectedAnswer, setSelectedAnswer] = useState<string | null>(null);
   const [showAnswer, setShowAnswer] = useState(false);
   const [stats, setStats] = useState({ total: 0, correct: 0 });
-  const [count] = useState(10);
+  const [count] = useState(100); // Increased default to fetch more items
+  const [selectedItemForCollections, setSelectedItemForCollections] = useState<
+    string | null
+  >(null);
 
-  // Check sessionStorage for stored items (when navigating back from comments)
+  // Check sessionStorage for stored items (when navigating with itemId from ItemsPage or comments)
   // Must be declared before useQuery that references it
   // Initialize synchronously from sessionStorage to avoid race conditions
-  // Only restore if we have an itemId (meaning we're navigating back), not for fresh quiz starts
+  // Restore if we have an itemId (meaning we're navigating to a specific item)
   const getStoredItems = (): any[] | null => {
     if (!collectionId && itemId) {
-      // Only restore when navigating back from comments (itemId present)
+      // Restore when navigating to a specific item (from ItemsPage or comments)
       const stored = sessionStorage.getItem("navigationContext_quiz");
       if (stored) {
         try {
@@ -70,9 +78,9 @@ const QuizModePage = () => {
   });
 
   // Restore items, index, and quiz state from sessionStorage on mount
-  // Only restore when navigating back (itemId present), not for fresh quiz starts
+  // Restore when navigating to a specific item (itemId present)
   useEffect(() => {
-    if (!hasRestoredItems && !collectionId && itemId) {
+    if (!hasRestoredItems && !collectionId && itemId && storedItems) {
       const stored = sessionStorage.getItem("navigationContext_quiz");
       if (stored) {
         try {
@@ -89,8 +97,8 @@ const QuizModePage = () => {
               // Set storedItems state with the full items list
               setStoredItems(context.items);
 
+              // Find the index of the current itemId in stored items, or use stored currentIndex
               if (itemId) {
-                // Find the index of the current itemId in stored items
                 const index = context.items.findIndex(
                   (item: any) => item.id === itemId
                 );
@@ -102,6 +110,9 @@ const QuizModePage = () => {
                     setSelectedAnswer(itemState.selectedAnswer || null);
                     setShowAnswer(itemState.showAnswer || false);
                   }
+                } else if (context.currentIndex !== undefined) {
+                  // If itemId not found but we have a stored index, use it
+                  setCurrentIndex(context.currentIndex);
                 }
               } else {
                 setCurrentIndex(context.currentIndex || 0);
@@ -319,8 +330,82 @@ const QuizModePage = () => {
         <div className="bg-white shadow rounded-lg p-6 mb-4">
           <div className="flex justify-between items-center mb-4">
             <h2 className="text-2xl font-bold text-gray-900">Quiz Mode</h2>
-            <div className="text-sm text-gray-500">
-              {currentIndex + 1} of {items.length}
+            <div className="flex items-center space-x-4">
+              <div className="flex items-center space-x-2">
+                <button
+                  onClick={() => {
+                    if (currentIndex > 0) {
+                      const newIndex = currentIndex - 1;
+                      setCurrentIndex(newIndex);
+                      setSelectedAnswer(null);
+                      setShowAnswer(false);
+                      // Update URL based on context
+                      if (items[newIndex]) {
+                        if (collectionId) {
+                          navigate(
+                            `/quiz/collection/${collectionId}/item/${items[newIndex].id}`,
+                            { replace: true }
+                          );
+                        } else if (category) {
+                          navigate(
+                            `/quiz/${encodeURIComponent(category)}/item/${
+                              items[newIndex].id
+                            }`,
+                            { replace: true }
+                          );
+                        } else {
+                          navigate(`/quiz/item/${items[newIndex].id}`, {
+                            replace: true,
+                          });
+                        }
+                      }
+                    }
+                  }}
+                  disabled={currentIndex === 0}
+                  className="p-1 text-gray-600 hover:text-gray-900 disabled:text-gray-300 disabled:cursor-not-allowed"
+                  title="Previous item"
+                >
+                  <ChevronLeftIcon className="h-5 w-5" />
+                </button>
+                <span className="text-sm text-gray-500 min-w-[80px] text-center">
+                  {currentIndex + 1} of {items.length}
+                </span>
+                <button
+                  onClick={() => {
+                    if (currentIndex < items.length - 1) {
+                      const newIndex = currentIndex + 1;
+                      setCurrentIndex(newIndex);
+                      setSelectedAnswer(null);
+                      setShowAnswer(false);
+                      // Update URL based on context
+                      if (items[newIndex]) {
+                        if (collectionId) {
+                          navigate(
+                            `/quiz/collection/${collectionId}/item/${items[newIndex].id}`,
+                            { replace: true }
+                          );
+                        } else if (category) {
+                          navigate(
+                            `/quiz/${encodeURIComponent(category)}/item/${
+                              items[newIndex].id
+                            }`,
+                            { replace: true }
+                          );
+                        } else {
+                          navigate(`/quiz/item/${items[newIndex].id}`, {
+                            replace: true,
+                          });
+                        }
+                      }
+                    }
+                  }}
+                  disabled={currentIndex >= items.length - 1}
+                  className="p-1 text-gray-600 hover:text-gray-900 disabled:text-gray-300 disabled:cursor-not-allowed"
+                  title="Next item"
+                >
+                  <ChevronRightIcon className="h-5 w-5" />
+                </button>
+              </div>
             </div>
           </div>
 
@@ -400,7 +485,19 @@ const QuizModePage = () => {
               )}
 
               {/* Collection Controls */}
-              {showAnswer && <CollectionControls itemId={currentItem.id} />}
+              {showAnswer && (
+                <div className="mt-4">
+                  <button
+                    onClick={() =>
+                      setSelectedItemForCollections(currentItem.id)
+                    }
+                    className="p-2 text-blue-600 hover:bg-blue-50 rounded-md"
+                    title="Manage collections"
+                  >
+                    <FolderIcon className="h-5 w-5" />
+                  </button>
+                </div>
+              )}
             </div>
           )}
 
@@ -456,6 +553,14 @@ const QuizModePage = () => {
           </Link>
         </div>
       </div>
+
+      {selectedItemForCollections && (
+        <ItemCollectionsModal
+          isOpen={!!selectedItemForCollections}
+          onClose={() => setSelectedItemForCollections(null)}
+          itemId={selectedItemForCollections}
+        />
+      )}
     </div>
   );
 };

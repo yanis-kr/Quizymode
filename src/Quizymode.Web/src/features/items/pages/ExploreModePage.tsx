@@ -7,22 +7,31 @@ import { useAuth } from "@/contexts/AuthContext";
 import LoadingSpinner from "@/components/LoadingSpinner";
 import ErrorMessage from "@/components/ErrorMessage";
 import ItemRatingsComments from "@/components/ItemRatingsComments";
-import CollectionControls from "@/components/CollectionControls";
+import ItemCollectionsModal from "@/components/ItemCollectionsModal";
 import { Link } from "react-router-dom";
+import {
+  FolderIcon,
+  ChevronLeftIcon,
+  ChevronRightIcon,
+} from "@heroicons/react/24/outline";
 
 const ExploreModePage = () => {
   const { category, collectionId, itemId } = useParams();
   const navigate = useNavigate();
   const { isAuthenticated } = useAuth();
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [count] = useState(10);
+  const [count] = useState(100); // Increased default to fetch more items
+  const [selectedItemForCollections, setSelectedItemForCollections] = useState<
+    string | null
+  >(null);
 
-  // Check sessionStorage for stored items (when navigating back from comments)
+  // Check sessionStorage for stored items (when navigating with itemId from ItemsPage or comments)
   // Must be declared before useQuery that references it
   // Initialize synchronously from sessionStorage to avoid race conditions
+  // Restore if we have an itemId (meaning we're navigating to a specific item)
   const getStoredItems = (): any[] | null => {
-    if (!collectionId) {
-      // Restore for both random items and category-based items
+    if (!collectionId && itemId) {
+      // Restore when navigating to a specific item (from ItemsPage or comments)
       const stored = sessionStorage.getItem("navigationContext_explore");
       if (stored) {
         try {
@@ -67,32 +76,33 @@ const ExploreModePage = () => {
   });
 
   // Restore items and index from sessionStorage on mount
+  // Restore when navigating to a specific item (itemId present)
   useEffect(() => {
-    if (!hasRestoredItems && !collectionId) {
+    if (!hasRestoredItems && !collectionId && itemId && storedItems) {
       const stored = sessionStorage.getItem("navigationContext_explore");
       if (stored) {
         try {
           const context = JSON.parse(stored);
-          if (context.items && context.mode === "explore" && context.items.length > 0) {
+          if (
+            context.items &&
+            context.mode === "explore" &&
+            context.items.length > 0
+          ) {
             // Only restore if category matches (or both are undefined/null)
             const categoryMatches =
               (!context.category && !category) || context.category === category;
             if (categoryMatches) {
               // Set storedItems state with the full items list
               setStoredItems(context.items);
-              
-              if (itemId) {
-                // Find the index of the current itemId in stored items
-                const index = context.items.findIndex(
-                  (item: any) => item.id === itemId
-                );
-                if (index !== -1) {
-                  setCurrentIndex(index);
-                }
-              } else {
-                setCurrentIndex(context.currentIndex || 0);
+
+              // Find the index of the current itemId in stored items
+              const index = context.items.findIndex(
+                (item: any) => item.id === itemId
+              );
+              if (index !== -1) {
+                setCurrentIndex(index);
               }
-              
+
               // Clear sessionStorage after restoring state
               sessionStorage.removeItem("navigationContext_explore");
               setHasRestoredItems(true);
@@ -105,11 +115,36 @@ const ExploreModePage = () => {
     }
   }, [itemId, hasRestoredItems, category, collectionId]);
 
+  // Clear sessionStorage when starting a fresh explore (no itemId, no collectionId)
+  // This ensures we always fetch fresh items instead of restoring old ones
+  useEffect(() => {
+    if (!itemId && !collectionId && !hasRestoredItems) {
+      // Clear old sessionStorage for this category when starting fresh
+      const stored = sessionStorage.getItem("navigationContext_explore");
+      if (stored) {
+        try {
+          const context = JSON.parse(stored);
+          // Only clear if category matches (to avoid clearing other categories' data)
+          const categoryMatches =
+            (!context.category && !category) || context.category === category;
+          if (categoryMatches && context.mode === "explore") {
+            sessionStorage.removeItem("navigationContext_explore");
+          }
+        } catch (e) {
+          // Invalid stored data, ignore
+        }
+      }
+    }
+  }, [itemId, collectionId, category, hasRestoredItems]);
+
   // Use full list if available (when category/collection is present), otherwise use stored items or fetched items
   // Never use singleItemData when storedItems exists (restoring from sessionStorage)
   const items = collectionId
-    ? collectionData?.items || (singleItemData && !storedItems ? [singleItemData] : [])
-    : storedItems || data?.items || (singleItemData && !storedItems ? [singleItemData] : []);
+    ? collectionData?.items ||
+      (singleItemData && !storedItems ? [singleItemData] : [])
+    : storedItems ||
+      data?.items ||
+      (singleItemData && !storedItems ? [singleItemData] : []);
 
   const isLoadingItems = collectionId
     ? collectionLoading
@@ -192,8 +227,78 @@ const ExploreModePage = () => {
         <div className="bg-white shadow rounded-lg p-6 mb-4">
           <div className="flex justify-between items-center mb-4">
             <h2 className="text-2xl font-bold text-gray-900">Explore Mode</h2>
-            <div className="text-sm text-gray-500">
-              {currentIndex + 1} of {items.length}
+            <div className="flex items-center space-x-4">
+              <div className="flex items-center space-x-2">
+                <button
+                  onClick={() => {
+                    if (currentIndex > 0) {
+                      const newIndex = currentIndex - 1;
+                      setCurrentIndex(newIndex);
+                      // Update URL based on context
+                      if (items[newIndex]) {
+                        if (collectionId) {
+                          navigate(
+                            `/explore/collection/${collectionId}/item/${items[newIndex].id}`,
+                            { replace: true }
+                          );
+                        } else if (category) {
+                          navigate(
+                            `/explore/${encodeURIComponent(category)}/item/${
+                              items[newIndex].id
+                            }`,
+                            { replace: true }
+                          );
+                        } else {
+                          navigate(`/explore/item/${items[newIndex].id}`, {
+                            replace: true,
+                          });
+                        }
+                      }
+                    }
+                  }}
+                  disabled={currentIndex === 0}
+                  className="p-1 text-gray-600 hover:text-gray-900 disabled:text-gray-300 disabled:cursor-not-allowed"
+                  title="Previous item"
+                >
+                  <ChevronLeftIcon className="h-5 w-5" />
+                </button>
+                <span className="text-sm text-gray-500 min-w-[80px] text-center">
+                  {currentIndex + 1} of {items.length}
+                </span>
+                <button
+                  onClick={() => {
+                    if (currentIndex < items.length - 1) {
+                      const newIndex = currentIndex + 1;
+                      setCurrentIndex(newIndex);
+                      // Update URL based on context
+                      if (items[newIndex]) {
+                        if (collectionId) {
+                          navigate(
+                            `/explore/collection/${collectionId}/item/${items[newIndex].id}`,
+                            { replace: true }
+                          );
+                        } else if (category) {
+                          navigate(
+                            `/explore/${encodeURIComponent(category)}/item/${
+                              items[newIndex].id
+                            }`,
+                            { replace: true }
+                          );
+                        } else {
+                          navigate(`/explore/item/${items[newIndex].id}`, {
+                            replace: true,
+                          });
+                        }
+                      }
+                    }
+                  }}
+                  disabled={currentIndex >= items.length - 1}
+                  className="p-1 text-gray-600 hover:text-gray-900 disabled:text-gray-300 disabled:cursor-not-allowed"
+                  title="Next item"
+                >
+                  <ChevronRightIcon className="h-5 w-5" />
+                </button>
+              </div>
             </div>
           </div>
 
@@ -236,7 +341,15 @@ const ExploreModePage = () => {
               />
 
               {/* Collection Controls */}
-              <CollectionControls itemId={currentItem.id} />
+              <div className="mt-4">
+                <button
+                  onClick={() => setSelectedItemForCollections(currentItem.id)}
+                  className="p-2 text-blue-600 hover:bg-blue-50 rounded-md"
+                  title="Manage collections"
+                >
+                  <FolderIcon className="h-5 w-5" />
+                </button>
+              </div>
             </div>
           )}
 
@@ -288,6 +401,14 @@ const ExploreModePage = () => {
           </Link>
         </div>
       </div>
+
+      {selectedItemForCollections && (
+        <ItemCollectionsModal
+          isOpen={!!selectedItemForCollections}
+          onClose={() => setSelectedItemForCollections(null)}
+          itemId={selectedItemForCollections}
+        />
+      )}
     </div>
   );
 };
