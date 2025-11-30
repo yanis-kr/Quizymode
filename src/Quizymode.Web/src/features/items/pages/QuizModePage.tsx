@@ -22,9 +22,10 @@ const QuizModePage = () => {
   // Check sessionStorage for stored items (when navigating back from comments)
   // Must be declared before useQuery that references it
   // Initialize synchronously from sessionStorage to avoid race conditions
+  // Only restore if we have an itemId (meaning we're navigating back), not for fresh quiz starts
   const getStoredItems = (): any[] | null => {
-    if (!collectionId) {
-      // Restore for both random items and category-based items
+    if (!collectionId && itemId) {
+      // Only restore when navigating back from comments (itemId present)
       const stored = sessionStorage.getItem("navigationContext_quiz");
       if (stored) {
         try {
@@ -69,20 +70,25 @@ const QuizModePage = () => {
   });
 
   // Restore items, index, and quiz state from sessionStorage on mount
+  // Only restore when navigating back (itemId present), not for fresh quiz starts
   useEffect(() => {
-    if (!hasRestoredItems && !collectionId) {
+    if (!hasRestoredItems && !collectionId && itemId) {
       const stored = sessionStorage.getItem("navigationContext_quiz");
       if (stored) {
         try {
           const context = JSON.parse(stored);
-          if (context.items && context.mode === "quiz" && context.items.length > 0) {
+          if (
+            context.items &&
+            context.mode === "quiz" &&
+            context.items.length > 0
+          ) {
             // Only restore if category matches (or both are undefined/null)
             const categoryMatches =
               (!context.category && !category) || context.category === category;
             if (categoryMatches) {
               // Set storedItems state with the full items list
               setStoredItems(context.items);
-              
+
               if (itemId) {
                 // Find the index of the current itemId in stored items
                 const index = context.items.findIndex(
@@ -100,18 +106,22 @@ const QuizModePage = () => {
               } else {
                 setCurrentIndex(context.currentIndex || 0);
                 // Restore quiz state for current index if available
-                if (context.quizState && context.quizState[context.currentIndex || 0]) {
-                  const itemState = context.quizState[context.currentIndex || 0];
+                if (
+                  context.quizState &&
+                  context.quizState[context.currentIndex || 0]
+                ) {
+                  const itemState =
+                    context.quizState[context.currentIndex || 0];
                   setSelectedAnswer(itemState.selectedAnswer || null);
                   setShowAnswer(itemState.showAnswer || false);
                 }
               }
-              
+
               // Restore stats if available
               if (context.stats) {
                 setStats(context.stats);
               }
-              
+
               // Don't clear sessionStorage - keep it so quiz state persists for future navigation
               // The storage useEffect will update it as state changes
               setHasRestoredItems(true);
@@ -124,11 +134,36 @@ const QuizModePage = () => {
     }
   }, [itemId, hasRestoredItems, category, collectionId]);
 
+  // Clear sessionStorage when starting a fresh quiz (no itemId, no collectionId)
+  // This ensures we always fetch fresh items instead of restoring old ones
+  useEffect(() => {
+    if (!itemId && !collectionId && !hasRestoredItems) {
+      // Clear old sessionStorage for this category when starting fresh
+      const stored = sessionStorage.getItem("navigationContext_quiz");
+      if (stored) {
+        try {
+          const context = JSON.parse(stored);
+          // Only clear if category matches (to avoid clearing other categories' data)
+          const categoryMatches =
+            (!context.category && !category) || context.category === category;
+          if (categoryMatches && context.mode === "quiz") {
+            sessionStorage.removeItem("navigationContext_quiz");
+          }
+        } catch (e) {
+          // Invalid stored data, ignore
+        }
+      }
+    }
+  }, [itemId, collectionId, category, hasRestoredItems]);
+
   // Use full list if available (when category/collection is present), otherwise use stored items or fetched items
   // Never use singleItemData when storedItems exists (restoring from sessionStorage)
   const items = collectionId
-    ? collectionData?.items || (singleItemData && !storedItems ? [singleItemData] : [])
-    : storedItems || data?.items || (singleItemData && !storedItems ? [singleItemData] : []);
+    ? collectionData?.items ||
+      (singleItemData && !storedItems ? [singleItemData] : [])
+    : storedItems ||
+      data?.items ||
+      (singleItemData && !storedItems ? [singleItemData] : []);
 
   const isLoadingItems = collectionId
     ? collectionLoading
@@ -158,7 +193,10 @@ const QuizModePage = () => {
   useEffect(() => {
     if (items.length > 0 && !collectionId) {
       // Load existing quiz state from sessionStorage to preserve state for all items
-      let existingQuizState: Record<number, { selectedAnswer: string | null; showAnswer: boolean }> = {};
+      let existingQuizState: Record<
+        number,
+        { selectedAnswer: string | null; showAnswer: boolean }
+      > = {};
       try {
         const stored = sessionStorage.getItem("navigationContext_quiz");
         if (stored) {
@@ -173,13 +211,13 @@ const QuizModePage = () => {
       } catch (e) {
         // Ignore errors
       }
-      
+
       // Update current item's state
       existingQuizState[currentIndex] = {
         selectedAnswer: selectedAnswer,
         showAnswer: showAnswer,
       };
-      
+
       // Store items for both random items and category-based items to restore after comments
       // Don't store for collections as they're stable and can be reloaded
       sessionStorage.setItem(
@@ -196,8 +234,15 @@ const QuizModePage = () => {
         })
       );
     }
-  }, [items, currentIndex, category, collectionId, selectedAnswer, showAnswer, stats]);
-  
+  }, [
+    items,
+    currentIndex,
+    category,
+    collectionId,
+    selectedAnswer,
+    showAnswer,
+    stats,
+  ]);
 
   // Prepare navigation context for ItemRatingsComments
   // Include context even when itemId is present (e.g., when navigating back from comments)
