@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { useParams, useNavigate, Link } from "react-router-dom";
+import { useParams, useNavigate, Link, useSearchParams } from "react-router-dom";
 import { useQuery } from "@tanstack/react-query";
 import { itemsApi } from "@/api/items";
 import { collectionsApi } from "@/api/collections";
@@ -16,6 +16,8 @@ import {
 
 const QuizModePage = () => {
   const { category, collectionId, itemId } = useParams();
+  const [searchParams] = useSearchParams();
+  const subcategory = searchParams.get("subcategory") || undefined;
   const navigate = useNavigate();
   const { isAuthenticated } = useAuth();
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -39,10 +41,12 @@ const QuizModePage = () => {
         try {
           const context = JSON.parse(stored);
           if (context.items && context.mode === "quiz") {
-            // Only restore if category matches (or both are undefined/null)
+            // Only restore if category and subcategory match (or both are undefined/null)
             const categoryMatches =
               (!context.category && !category) || context.category === category;
-            if (categoryMatches) {
+            const subcategoryMatches =
+              (!context.subcategory && !subcategory) || context.subcategory === subcategory;
+            if (categoryMatches && subcategoryMatches) {
               return context.items;
             }
           }
@@ -72,8 +76,8 @@ const QuizModePage = () => {
   });
 
   const { data, isLoading, error, refetch } = useQuery({
-    queryKey: ["randomItems", category, count],
-    queryFn: () => itemsApi.getRandom(category, undefined, count),
+    queryKey: ["randomItems", category, subcategory, count],
+    queryFn: () => itemsApi.getRandom(category, subcategory, count),
     enabled: !collectionId && !storedItems, // Don't load if we have stored items
   });
 
@@ -90,10 +94,12 @@ const QuizModePage = () => {
             context.mode === "quiz" &&
             context.items.length > 0
           ) {
-            // Only restore if category matches (or both are undefined/null)
+            // Only restore if category and subcategory match (or both are undefined/null)
             const categoryMatches =
               (!context.category && !category) || context.category === category;
-            if (categoryMatches) {
+            const subcategoryMatches =
+              (!context.subcategory && !subcategory) || context.subcategory === subcategory;
+            if (categoryMatches && subcategoryMatches) {
               // Set storedItems state with the full items list
               setStoredItems(context.items);
 
@@ -143,7 +149,7 @@ const QuizModePage = () => {
         }
       }
     }
-  }, [itemId, hasRestoredItems, category, collectionId]);
+  }, [itemId, hasRestoredItems, category, subcategory, collectionId]);
 
   // Clear sessionStorage when starting a fresh quiz (no itemId, no collectionId)
   // This ensures we always fetch fresh items instead of restoring old ones
@@ -154,10 +160,12 @@ const QuizModePage = () => {
       if (stored) {
         try {
           const context = JSON.parse(stored);
-          // Only clear if category matches (to avoid clearing other categories' data)
+          // Only clear if category and subcategory match (to avoid clearing other categories' data)
           const categoryMatches =
             (!context.category && !category) || context.category === category;
-          if (categoryMatches && context.mode === "quiz") {
+          const subcategoryMatches =
+            (!context.subcategory && !subcategory) || context.subcategory === subcategory;
+          if (categoryMatches && subcategoryMatches && context.mode === "quiz") {
             sessionStorage.removeItem("navigationContext_quiz");
           }
         } catch (e) {
@@ -165,7 +173,7 @@ const QuizModePage = () => {
         }
       }
     }
-  }, [itemId, collectionId, category, hasRestoredItems]);
+  }, [itemId, collectionId, category, subcategory, hasRestoredItems]);
 
   // Use full list if available (when category/collection is present), otherwise use stored items or fetched items
   // Never use singleItemData when storedItems exists (restoring from sessionStorage)
@@ -212,10 +220,12 @@ const QuizModePage = () => {
         const stored = sessionStorage.getItem("navigationContext_quiz");
         if (stored) {
           const context = JSON.parse(stored);
-          // Only load existing state if category matches (to avoid mixing states from different sessions)
+          // Only load existing state if category and subcategory match (to avoid mixing states from different sessions)
           const categoryMatches =
             (!context.category && !category) || context.category === category;
-          if (categoryMatches && context.quizState) {
+          const subcategoryMatches =
+            (!context.subcategory && !subcategory) || context.subcategory === subcategory;
+          if (categoryMatches && subcategoryMatches && context.quizState) {
             existingQuizState = context.quizState;
           }
         }
@@ -236,6 +246,7 @@ const QuizModePage = () => {
         JSON.stringify({
           mode: "quiz",
           category: category,
+          subcategory: subcategory,
           collectionId: collectionId,
           currentIndex: currentIndex,
           itemIds: items.map((item) => item.id),
@@ -249,6 +260,7 @@ const QuizModePage = () => {
     items,
     currentIndex,
     category,
+    subcategory,
     collectionId,
     selectedAnswer,
     showAnswer,
@@ -259,14 +271,15 @@ const QuizModePage = () => {
   // Include context even when itemId is present (e.g., when navigating back from comments)
   const navigationContext =
     items.length > 0
-      ? {
-          mode: "quiz" as const,
-          category: category,
-          collectionId: collectionId,
-          currentIndex: currentIndex,
-          itemIds: items.map((item) => item.id),
-        }
-      : undefined;
+        ? {
+            mode: "quiz" as const,
+            category: category,
+            subcategory: subcategory,
+            collectionId: collectionId,
+            currentIndex: currentIndex,
+            itemIds: items.map((item) => item.id),
+          }
+        : undefined;
 
   const getShuffledOptions = () => {
     if (!currentItem) return [];
@@ -347,12 +360,13 @@ const QuizModePage = () => {
                             { replace: true }
                           );
                         } else if (category) {
-                          navigate(
-                            `/quiz/${encodeURIComponent(category)}/item/${
-                              items[newIndex].id
-                            }`,
-                            { replace: true }
-                          );
+                          const params = new URLSearchParams();
+                          if (subcategory) params.set("subcategory", subcategory);
+                          const queryString = params.toString();
+                          const url = queryString
+                            ? `/quiz/${encodeURIComponent(category)}/item/${items[newIndex].id}?${queryString}`
+                            : `/quiz/${encodeURIComponent(category)}/item/${items[newIndex].id}`;
+                          navigate(url, { replace: true });
                         } else {
                           navigate(`/quiz/item/${items[newIndex].id}`, {
                             replace: true,
@@ -385,12 +399,13 @@ const QuizModePage = () => {
                             { replace: true }
                           );
                         } else if (category) {
-                          navigate(
-                            `/quiz/${encodeURIComponent(category)}/item/${
-                              items[newIndex].id
-                            }`,
-                            { replace: true }
-                          );
+                          const params = new URLSearchParams();
+                          if (subcategory) params.set("subcategory", subcategory);
+                          const queryString = params.toString();
+                          const url = queryString
+                            ? `/quiz/${encodeURIComponent(category)}/item/${items[newIndex].id}?${queryString}`
+                            : `/quiz/${encodeURIComponent(category)}/item/${items[newIndex].id}`;
+                          navigate(url, { replace: true });
                         } else {
                           navigate(`/quiz/item/${items[newIndex].id}`, {
                             replace: true,

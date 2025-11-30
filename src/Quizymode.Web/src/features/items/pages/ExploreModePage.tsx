@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { useParams, useNavigate } from "react-router-dom";
+import { useParams, useNavigate, useSearchParams } from "react-router-dom";
 import { useQuery } from "@tanstack/react-query";
 import { itemsApi } from "@/api/items";
 import { collectionsApi } from "@/api/collections";
@@ -17,6 +17,8 @@ import {
 
 const ExploreModePage = () => {
   const { category, collectionId, itemId } = useParams();
+  const [searchParams] = useSearchParams();
+  const subcategory = searchParams.get("subcategory") || undefined;
   const navigate = useNavigate();
   const { isAuthenticated } = useAuth();
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -37,10 +39,12 @@ const ExploreModePage = () => {
         try {
           const context = JSON.parse(stored);
           if (context.items && context.mode === "explore") {
-            // Only restore if category matches (or both are undefined/null)
+            // Only restore if category and subcategory match (or both are undefined/null)
             const categoryMatches =
               (!context.category && !category) || context.category === category;
-            if (categoryMatches) {
+            const subcategoryMatches =
+              (!context.subcategory && !subcategory) || context.subcategory === subcategory;
+            if (categoryMatches && subcategoryMatches) {
               return context.items;
             }
           }
@@ -70,8 +74,8 @@ const ExploreModePage = () => {
   });
 
   const { data, isLoading, error, refetch } = useQuery({
-    queryKey: ["randomItems", category, count],
-    queryFn: () => itemsApi.getRandom(category, undefined, count),
+    queryKey: ["randomItems", category, subcategory, count],
+    queryFn: () => itemsApi.getRandom(category, subcategory, count),
     enabled: !collectionId && !storedItems, // Don't load if we have stored items
   });
 
@@ -88,10 +92,12 @@ const ExploreModePage = () => {
             context.mode === "explore" &&
             context.items.length > 0
           ) {
-            // Only restore if category matches (or both are undefined/null)
+            // Only restore if category and subcategory match (or both are undefined/null)
             const categoryMatches =
               (!context.category && !category) || context.category === category;
-            if (categoryMatches) {
+            const subcategoryMatches =
+              (!context.subcategory && !subcategory) || context.subcategory === subcategory;
+            if (categoryMatches && subcategoryMatches) {
               // Set storedItems state with the full items list
               setStoredItems(context.items);
 
@@ -113,7 +119,7 @@ const ExploreModePage = () => {
         }
       }
     }
-  }, [itemId, hasRestoredItems, category, collectionId]);
+  }, [itemId, hasRestoredItems, category, subcategory, collectionId]);
 
   // Clear sessionStorage when starting a fresh explore (no itemId, no collectionId)
   // This ensures we always fetch fresh items instead of restoring old ones
@@ -124,10 +130,12 @@ const ExploreModePage = () => {
       if (stored) {
         try {
           const context = JSON.parse(stored);
-          // Only clear if category matches (to avoid clearing other categories' data)
+          // Only clear if category and subcategory match (to avoid clearing other categories' data)
           const categoryMatches =
             (!context.category && !category) || context.category === category;
-          if (categoryMatches && context.mode === "explore") {
+          const subcategoryMatches =
+            (!context.subcategory && !subcategory) || context.subcategory === subcategory;
+          if (categoryMatches && subcategoryMatches && context.mode === "explore") {
             sessionStorage.removeItem("navigationContext_explore");
           }
         } catch (e) {
@@ -135,7 +143,7 @@ const ExploreModePage = () => {
         }
       }
     }
-  }, [itemId, collectionId, category, hasRestoredItems]);
+  }, [itemId, collectionId, category, subcategory, hasRestoredItems]);
 
   // Use full list if available (when category/collection is present), otherwise use stored items or fetched items
   // Never use singleItemData when storedItems exists (restoring from sessionStorage)
@@ -178,6 +186,7 @@ const ExploreModePage = () => {
         JSON.stringify({
           mode: "explore",
           category: category,
+          subcategory: subcategory,
           collectionId: collectionId,
           currentIndex: currentIndex,
           itemIds: items.map((item) => item.id),
@@ -185,20 +194,21 @@ const ExploreModePage = () => {
         })
       );
     }
-  }, [items, currentIndex, category, collectionId]);
+  }, [items, currentIndex, category, subcategory, collectionId]);
 
   // Prepare navigation context for ItemRatingsComments
   // Include context even when itemId is present (e.g., when navigating back from comments)
   const navigationContext =
     items.length > 0
-      ? {
-          mode: "explore" as const,
-          category: category,
-          collectionId: collectionId,
-          currentIndex: currentIndex,
-          itemIds: items.map((item) => item.id),
-        }
-      : undefined;
+        ? {
+            mode: "explore" as const,
+            category: category,
+            subcategory: subcategory,
+            collectionId: collectionId,
+            currentIndex: currentIndex,
+            itemIds: items.map((item) => item.id),
+          }
+        : undefined;
 
   if (isLoadingItems) return <LoadingSpinner />;
   if (error && !collectionId)
@@ -242,12 +252,13 @@ const ExploreModePage = () => {
                             { replace: true }
                           );
                         } else if (category) {
-                          navigate(
-                            `/explore/${encodeURIComponent(category)}/item/${
-                              items[newIndex].id
-                            }`,
-                            { replace: true }
-                          );
+                          const params = new URLSearchParams();
+                          if (subcategory) params.set("subcategory", subcategory);
+                          const queryString = params.toString();
+                          const url = queryString
+                            ? `/explore/${encodeURIComponent(category)}/item/${items[newIndex].id}?${queryString}`
+                            : `/explore/${encodeURIComponent(category)}/item/${items[newIndex].id}`;
+                          navigate(url, { replace: true });
                         } else {
                           navigate(`/explore/item/${items[newIndex].id}`, {
                             replace: true,
@@ -278,12 +289,13 @@ const ExploreModePage = () => {
                             { replace: true }
                           );
                         } else if (category) {
-                          navigate(
-                            `/explore/${encodeURIComponent(category)}/item/${
-                              items[newIndex].id
-                            }`,
-                            { replace: true }
-                          );
+                          const params = new URLSearchParams();
+                          if (subcategory) params.set("subcategory", subcategory);
+                          const queryString = params.toString();
+                          const url = queryString
+                            ? `/explore/${encodeURIComponent(category)}/item/${items[newIndex].id}?${queryString}`
+                            : `/explore/${encodeURIComponent(category)}/item/${items[newIndex].id}`;
+                          navigate(url, { replace: true });
                         } else {
                           navigate(`/explore/item/${items[newIndex].id}`, {
                             replace: true,

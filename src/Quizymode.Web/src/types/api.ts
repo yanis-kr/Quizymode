@@ -9,6 +9,16 @@ export interface CategoriesResponse {
   categories: CategoryResponse[];
 }
 
+export interface SubcategoryResponse {
+  subcategory: string;
+  count: number;
+}
+
+export interface SubcategoriesResponse {
+  subcategories: SubcategoryResponse[];
+  totalCount: number;
+}
+
 export interface ItemResponse {
   id: string;
   category: string;
