@@ -9,6 +9,16 @@ export interface CategoriesResponse {
   categories: CategoryResponse[];
 }
 
+export interface SubcategoryResponse {
+  subcategory: string;
+  count: number;
+}
+
+export interface SubcategoriesResponse {
+  subcategories: SubcategoryResponse[];
+  totalCount: number;
+}
+
 export interface ItemResponse {
   id: string;
   category: string;
@@ -38,6 +48,7 @@ export interface CollectionResponse {
   name: string;
   createdBy: string;
   createdAt: string;
+  itemCount: number;
 }
 
 export interface CollectionsResponse {
@@ -119,5 +130,18 @@ export interface CreateRequestRequest {
 
 export interface BulkCreateItemsRequest {
   items: CreateItemRequest[];
+}
+
+export interface UserResponse {
+  id: string;
+  name: string | null;
+  email: string | null;
+  isAdmin: boolean;
+  createdAt: string;
+  lastLogin: string;
+}
+
+export interface UpdateUserNameRequest {
+  name: string;
 }
 

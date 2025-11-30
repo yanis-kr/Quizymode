@@ -7,6 +7,8 @@ import ErrorMessage from '@/components/ErrorMessage';
 
 const CategoriesPage = () => {
   const [search, setSearch] = useState('');
+  const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
+  const [selectedSubcategory, setSelectedSubcategory] = useState<string>('all');
   const navigate = useNavigate();
 
   const { data, isLoading, error, refetch } = useQuery({
@@ -14,12 +16,112 @@ const CategoriesPage = () => {
     queryFn: () => categoriesApi.getAll(search || undefined),
   });
 
+  const { data: subcategoriesData, isLoading: subcategoriesLoading } = useQuery({
+    queryKey: ['subcategories', selectedCategory],
+    queryFn: () => categoriesApi.getSubcategories(selectedCategory!),
+    enabled: !!selectedCategory,
+  });
+
   const handleCategorySelect = (category: string) => {
-    navigate(`/items?category=${encodeURIComponent(category)}`);
+    setSelectedCategory(category);
+    setSelectedSubcategory('all');
+  };
+
+  const handleExplore = () => {
+    if (!selectedCategory) return;
+    const path = '/explore';
+    const url = selectedSubcategory === 'all'
+      ? `${path}/${encodeURIComponent(selectedCategory)}`
+      : `${path}/${encodeURIComponent(selectedCategory)}?subcategory=${encodeURIComponent(selectedSubcategory)}`;
+    navigate(url);
+  };
+
+  const handleQuiz = () => {
+    if (!selectedCategory) return;
+    const path = '/quiz';
+    const url = selectedSubcategory === 'all'
+      ? `${path}/${encodeURIComponent(selectedCategory)}`
+      : `${path}/${encodeURIComponent(selectedCategory)}?subcategory=${encodeURIComponent(selectedSubcategory)}`;
+    navigate(url);
+  };
+
+  const handleBack = () => {
+    setSelectedCategory(null);
+    setSelectedSubcategory('all');
   };
 
   if (isLoading) return <LoadingSpinner />;
   if (error) return <ErrorMessage message="Failed to load categories" onRetry={() => refetch()} />;
+
+  if (selectedCategory) {
+    return (
+      <div className="px-4 py-6 sm:px-0">
+        <div className="max-w-2xl mx-auto">
+          <button
+            onClick={handleBack}
+            className="mb-4 text-sm text-indigo-600 hover:text-indigo-800"
+          >
+            ← Back to Categories
+          </button>
+          
+          <h1 className="text-3xl font-bold text-gray-900 mb-6">
+            Category: {selectedCategory}
+          </h1>
+
+          {subcategoriesLoading ? (
+            <LoadingSpinner />
+          ) : (
+            <>
+              <div className="mb-6">
+                <label className="block text-sm font-medium text-gray-700 mb-2">
+                  Select Subcategory
+                </label>
+                <select
+                  value={selectedSubcategory}
+                  onChange={(e) => setSelectedSubcategory(e.target.value)}
+                  className="block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm px-4 py-2 border"
+                >
+                  <option value="all">
+                    All ({subcategoriesData?.totalCount || 0} items)
+                  </option>
+                  {subcategoriesData?.subcategories.map((subcategory) => (
+                    <option key={subcategory.subcategory} value={subcategory.subcategory}>
+                      {subcategory.subcategory} ({subcategory.count} items)
+                    </option>
+                  ))}
+                </select>
+              </div>
+
+              <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+                <button
+                  onClick={handleExplore}
+                  className="bg-white overflow-hidden shadow rounded-lg hover:shadow-lg transition-shadow p-6 text-left"
+                >
+                  <h3 className="text-lg font-medium text-gray-900 mb-2">
+                    Explore Mode
+                  </h3>
+                  <p className="text-sm text-gray-500">
+                    View questions with answers and explanations
+                  </p>
+                </button>
+                <button
+                  onClick={handleQuiz}
+                  className="bg-white overflow-hidden shadow rounded-lg hover:shadow-lg transition-shadow p-6 text-left"
+                >
+                  <h3 className="text-lg font-medium text-gray-900 mb-2">
+                    Quiz Mode
+                  </h3>
+                  <p className="text-sm text-gray-500">
+                    Test yourself with multiple choice questions
+                  </p>
+                </button>
+              </div>
+            </>
+          )}
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="px-4 py-6 sm:px-0">

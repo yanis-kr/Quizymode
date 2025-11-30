@@ -10,6 +10,7 @@ public static class GetItems
     public sealed record QueryRequest(
         string? Category,
         string? Subcategory,
+        bool? IsPrivate,
         int Page = 1,
         int PageSize = 10);
 
@@ -46,6 +47,7 @@ public static class GetItems
         private static async Task<IResult> Handler(
             string? category,
             string? subcategory,
+            bool? isPrivate,
             int page = 1,
             int pageSize = 10,
             ApplicationDbContext db = null!,
@@ -62,7 +64,7 @@ public static class GetItems
                 return Results.BadRequest("PageSize must be between 1 and 100");
             }
 
-            var request = new QueryRequest(category, subcategory, page, pageSize);
+            var request = new QueryRequest(category, subcategory, isPrivate, page, pageSize);
             Result<Response> result = await GetItemsHandler.HandleAsync(request, db, userContext, cancellationToken);
 
             return result.Match(
