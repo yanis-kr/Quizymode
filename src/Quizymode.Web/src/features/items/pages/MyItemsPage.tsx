@@ -11,8 +11,51 @@ import {
   FolderIcon,
   PencilIcon,
   TrashIcon,
+  AcademicCapIcon,
 } from "@heroicons/react/24/outline";
 import ItemCollectionsModal from "@/components/ItemCollectionsModal";
+
+const SubcategoryDropdown = ({
+  category,
+  value,
+  onChange,
+}: {
+  category: string;
+  value: string;
+  onChange: (value: string) => void;
+}) => {
+  const { data, isLoading } = useQuery({
+    queryKey: ["subcategories", category],
+    queryFn: () => categoriesApi.getSubcategories(category),
+    enabled: !!category,
+  });
+
+  if (isLoading) {
+    return (
+      <select
+        disabled
+        className="w-full px-3 py-2 border border-gray-300 rounded-md text-sm"
+      >
+        <option>Loading...</option>
+      </select>
+    );
+  }
+
+  return (
+    <select
+      value={value}
+      onChange={(e) => onChange(e.target.value)}
+      className="w-full px-3 py-2 border border-gray-300 rounded-md text-sm"
+    >
+      <option value="">All Subcategories</option>
+      {data?.subcategories.map((subcat) => (
+        <option key={subcat.subcategory} value={subcat.subcategory}>
+          {subcat.subcategory} ({subcat.count} items)
+        </option>
+      ))}
+    </select>
+  );
+};
 
 const MyItemsPage = () => {
   const { isAuthenticated, isAdmin } = useAuth();
@@ -194,14 +237,11 @@ const MyItemsPage = () => {
             <label className="block text-sm font-medium text-gray-700 mb-2">
               Subcategory
             </label>
-            <select
+            <SubcategoryDropdown
+              category={selectedCategory}
               value={selectedSubcategory}
-              onChange={(e) => setSelectedSubcategory(e.target.value)}
-              className="w-full px-3 py-2 border border-gray-300 rounded-md text-sm"
-            >
-              <option value="">All Subcategories</option>
-              {/* Note: You may need to fetch subcategories separately or from items */}
-            </select>
+              onChange={setSelectedSubcategory}
+            />
           </div>
         )}
 
@@ -249,6 +289,13 @@ const MyItemsPage = () => {
                       title="View item"
                     >
                       <EyeIcon className="h-5 w-5" />
+                    </button>
+                    <button
+                      onClick={() => navigate(`/quiz/item/${item.id}`)}
+                      className="p-2 text-purple-600 hover:bg-purple-50 rounded-md"
+                      title="Quiz mode"
+                    >
+                      <AcademicCapIcon className="h-5 w-5" />
                     </button>
                     <button
                       onClick={() => setSelectedItemForCollections(item.id)}

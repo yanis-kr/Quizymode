@@ -1,5 +1,10 @@
 import { useState, useEffect } from "react";
-import { useParams, useNavigate, Link, useSearchParams } from "react-router-dom";
+import {
+  useParams,
+  useNavigate,
+  Link,
+  useSearchParams,
+} from "react-router-dom";
 import { useQuery } from "@tanstack/react-query";
 import { itemsApi } from "@/api/items";
 import { collectionsApi } from "@/api/collections";
@@ -45,7 +50,8 @@ const QuizModePage = () => {
             const categoryMatches =
               (!context.category && !category) || context.category === category;
             const subcategoryMatches =
-              (!context.subcategory && !subcategory) || context.subcategory === subcategory;
+              (!context.subcategory && !subcategory) ||
+              context.subcategory === subcategory;
             if (categoryMatches && subcategoryMatches) {
               return context.items;
             }
@@ -98,7 +104,8 @@ const QuizModePage = () => {
             const categoryMatches =
               (!context.category && !category) || context.category === category;
             const subcategoryMatches =
-              (!context.subcategory && !subcategory) || context.subcategory === subcategory;
+              (!context.subcategory && !subcategory) ||
+              context.subcategory === subcategory;
             if (categoryMatches && subcategoryMatches) {
               // Set storedItems state with the full items list
               setStoredItems(context.items);
@@ -164,8 +171,13 @@ const QuizModePage = () => {
           const categoryMatches =
             (!context.category && !category) || context.category === category;
           const subcategoryMatches =
-            (!context.subcategory && !subcategory) || context.subcategory === subcategory;
-          if (categoryMatches && subcategoryMatches && context.mode === "quiz") {
+            (!context.subcategory && !subcategory) ||
+            context.subcategory === subcategory;
+          if (
+            categoryMatches &&
+            subcategoryMatches &&
+            context.mode === "quiz"
+          ) {
             sessionStorage.removeItem("navigationContext_quiz");
           }
         } catch (e) {
@@ -224,7 +236,8 @@ const QuizModePage = () => {
           const categoryMatches =
             (!context.category && !category) || context.category === category;
           const subcategoryMatches =
-            (!context.subcategory && !subcategory) || context.subcategory === subcategory;
+            (!context.subcategory && !subcategory) ||
+            context.subcategory === subcategory;
           if (categoryMatches && subcategoryMatches && context.quizState) {
             existingQuizState = context.quizState;
           }
@@ -271,15 +284,15 @@ const QuizModePage = () => {
   // Include context even when itemId is present (e.g., when navigating back from comments)
   const navigationContext =
     items.length > 0
-        ? {
-            mode: "quiz" as const,
-            category: category,
-            subcategory: subcategory,
-            collectionId: collectionId,
-            currentIndex: currentIndex,
-            itemIds: items.map((item) => item.id),
-          }
-        : undefined;
+      ? {
+          mode: "quiz" as const,
+          category: category,
+          subcategory: subcategory,
+          collectionId: collectionId,
+          currentIndex: currentIndex,
+          itemIds: items.map((item) => item.id),
+        }
+      : undefined;
 
   const getShuffledOptions = () => {
     if (!currentItem) return [];
@@ -361,11 +374,16 @@ const QuizModePage = () => {
                           );
                         } else if (category) {
                           const params = new URLSearchParams();
-                          if (subcategory) params.set("subcategory", subcategory);
+                          if (subcategory)
+                            params.set("subcategory", subcategory);
                           const queryString = params.toString();
                           const url = queryString
-                            ? `/quiz/${encodeURIComponent(category)}/item/${items[newIndex].id}?${queryString}`
-                            : `/quiz/${encodeURIComponent(category)}/item/${items[newIndex].id}`;
+                            ? `/quiz/${encodeURIComponent(category)}/item/${
+                                items[newIndex].id
+                              }?${queryString}`
+                            : `/quiz/${encodeURIComponent(category)}/item/${
+                                items[newIndex].id
+                              }`;
                           navigate(url, { replace: true });
                         } else {
                           navigate(`/quiz/item/${items[newIndex].id}`, {
@@ -400,11 +418,16 @@ const QuizModePage = () => {
                           );
                         } else if (category) {
                           const params = new URLSearchParams();
-                          if (subcategory) params.set("subcategory", subcategory);
+                          if (subcategory)
+                            params.set("subcategory", subcategory);
                           const queryString = params.toString();
                           const url = queryString
-                            ? `/quiz/${encodeURIComponent(category)}/item/${items[newIndex].id}?${queryString}`
-                            : `/quiz/${encodeURIComponent(category)}/item/${items[newIndex].id}`;
+                            ? `/quiz/${encodeURIComponent(category)}/item/${
+                                items[newIndex].id
+                              }?${queryString}`
+                            : `/quiz/${encodeURIComponent(category)}/item/${
+                                items[newIndex].id
+                              }`;
                           navigate(url, { replace: true });
                         } else {
                           navigate(`/quiz/item/${items[newIndex].id}`, {
@@ -427,6 +450,11 @@ const QuizModePage = () => {
           <div className="mb-4 p-4 bg-gray-50 rounded-lg">
             <div className="text-sm text-gray-600">
               Score: {stats.correct} / {stats.total} correct
+              {stats.total > 0 && (
+                <span className="ml-2">
+                  ({Math.round((stats.correct / stats.total) * 100)}%)
+                </span>
+              )}
             </div>
           </div>
 
