@@ -59,11 +59,15 @@ public static class AddItemsBulk
         {
             RuleFor(x => x.Category)
                 .NotEmpty()
-                .WithMessage("Category is required");
+                .WithMessage("Category is required")
+                .MaximumLength(100)
+                .WithMessage("Category must not exceed 100 characters");
 
             RuleFor(x => x.Subcategory)
                 .NotEmpty()
-                .WithMessage("Subcategory is required");
+                .WithMessage("Subcategory is required")
+                .MaximumLength(100)
+                .WithMessage("Subcategory must not exceed 100 characters");
 
             RuleFor(x => x.Question)
                 .NotEmpty()

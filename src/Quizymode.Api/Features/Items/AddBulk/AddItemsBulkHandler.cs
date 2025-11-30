@@ -47,12 +47,14 @@ internal static class AddItemsBulkHandler
                     int fuzzyBucket = simHashService.GetFuzzyBucket(fuzzySignature);
 
                     // Check for duplicates
+                    // Use ToLower() for case-insensitive comparison that EF Core can translate to SQL
+                    string questionLower = itemRequest.Question.ToLower();
                     bool isDuplicate = await db.Items
                         .AnyAsync(item => 
                             item.Category == itemRequest.Category &&
                             item.Subcategory == itemRequest.Subcategory &&
                             item.FuzzyBucket == fuzzyBucket &&
-                            (item.Question.Equals(itemRequest.Question, StringComparison.OrdinalIgnoreCase) ||
+                            (item.Question.ToLower() == questionLower ||
                              item.FuzzySignature == fuzzySignature),
                             cancellationToken);
 

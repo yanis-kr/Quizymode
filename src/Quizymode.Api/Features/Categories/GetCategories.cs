@@ -1,6 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using Quizymode.Api.Data;
 using Quizymode.Api.Infrastructure;
+using Quizymode.Api.Services;
 using Quizymode.Api.Shared.Kernel;
 
 namespace Quizymode.Api.Features.Categories;
@@ -28,11 +29,12 @@ public static class GetCategories
         private static async Task<IResult> Handler(
             string? search,
             ApplicationDbContext db,
+            IUserContext userContext,
             CancellationToken cancellationToken)
         {
             QueryRequest request = new(search);
 
-            Result<Response> result = await HandleAsync(request, db, cancellationToken);
+            Result<Response> result = await HandleAsync(request, db, userContext, cancellationToken);
 
             return result.Match(
                 value => Results.Ok(value),
@@ -43,12 +45,30 @@ public static class GetCategories
     public static async Task<Result<Response>> HandleAsync(
         QueryRequest request,
         ApplicationDbContext db,
+        IUserContext userContext,
         CancellationToken cancellationToken)
     {
         try
         {
-            IQueryable<Quizymode.Api.Shared.Models.Item> query = db.Items
-                .Where(i => !i.IsPrivate && i.Category != string.Empty);
+            IQueryable<Quizymode.Api.Shared.Models.Item> query = db.Items.AsQueryable();
+
+            // Apply visibility filter: anonymous users see only global items,
+            // authenticated users see global + their private items
+            if (!userContext.IsAuthenticated)
+            {
+                query = query.Where(i => !i.IsPrivate && i.Category != string.Empty);
+            }
+            else if (!string.IsNullOrEmpty(userContext.UserId))
+            {
+                // Include global items OR user's private items
+                query = query.Where(i => 
+                    i.Category != string.Empty && 
+                    (!i.IsPrivate || (i.IsPrivate && i.CreatedBy == userContext.UserId)));
+            }
+            else
+            {
+                query = query.Where(i => !i.IsPrivate && i.Category != string.Empty);
+            }
 
             if (!string.IsNullOrWhiteSpace(request.Search))
             {

@@ -8,7 +8,11 @@ import ErrorMessage from "@/components/ErrorMessage";
 import { categoriesApi } from "@/api/categories";
 import { useQuery } from "@tanstack/react-query";
 import { apiClient } from "@/api/client";
-import { ChevronDownIcon, ChevronUpIcon } from "@heroicons/react/24/outline";
+import {
+  ChevronDownIcon,
+  ChevronUpIcon,
+  XMarkIcon,
+} from "@heroicons/react/24/outline";
 
 interface BulkCreateRequest {
   isPrivate: boolean;
@@ -30,6 +34,11 @@ const BulkCreateItemsPage = () => {
   const [isPrivate, setIsPrivate] = useState(!isAdmin); // Default to true for non-admin
   const [validationError, setValidationError] = useState<string>("");
   const [isPromptExampleOpen, setIsPromptExampleOpen] = useState(false);
+  const [resultModal, setResultModal] = useState<{
+    isOpen: boolean;
+    message: string;
+    details: string;
+  }>({ isOpen: false, message: "", details: "" });
 
   const { data: categoriesData } = useQuery({
     queryKey: ["categories"],
@@ -50,21 +59,58 @@ const BulkCreateItemsPage = () => {
           explanation: item.explanation || "",
         })),
       };
-      
+
       const response = await apiClient.post<{
         totalRequested: number;
         createdCount: number;
         duplicateCount: number;
         failedCount: number;
         duplicateQuestions: string[];
-        errors: Array<{ index: number; question: string; errorMessage: string }>;
-      }>('/items/bulk', apiRequest);
+        errors: Array<{
+          index: number;
+          question: string;
+          errorMessage: string;
+        }>;
+      }>("/items/bulk", apiRequest);
       return response.data;
     },
     onSuccess: (response) => {
-      const message = `Successfully created ${response.createdCount} items. ${response.duplicateCount} duplicates skipped. ${response.failedCount} failed.`;
-      alert(message);
-      navigate("/my-items");
+      let message = `Successfully created ${response.createdCount} items.`;
+      let details = "";
+
+      if (response.duplicateCount > 0) {
+        message += ` ${response.duplicateCount} duplicates skipped.`;
+      }
+      if (response.failedCount > 0) {
+        message += ` ${response.failedCount} failed.`;
+        if (response.errors && response.errors.length > 0) {
+          const errorDetails = response.errors
+            .map((err) => `Item ${err.index + 1}: ${err.errorMessage}`)
+            .join("\n");
+          details += `Errors:\n${errorDetails}\n\n`;
+        }
+        if (
+          response.duplicateQuestions &&
+          response.duplicateQuestions.length > 0
+        ) {
+          details += `Duplicate questions:\n${response.duplicateQuestions.join(
+            "\n"
+          )}`;
+        }
+      }
+
+      setResultModal({
+        isOpen: true,
+        message,
+        details,
+      });
+
+      if (response.createdCount > 0 && response.failedCount === 0) {
+        // Only auto-navigate if all items succeeded
+        setTimeout(() => {
+          navigate("/my-items");
+        }, 2000);
+      }
     },
     onError: (error: any) => {
       console.error("Failed to bulk create items:", error);
@@ -82,7 +128,7 @@ const BulkCreateItemsPage = () => {
 
     try {
       const parsedItems = JSON.parse(jsonInput);
-      
+
       if (!Array.isArray(parsedItems)) {
         setValidationError("JSON must be an array of items");
         return;
@@ -101,24 +147,48 @@ const BulkCreateItemsPage = () => {
       // Validate each item structure
       for (let i = 0; i < parsedItems.length; i++) {
         const item = parsedItems[i];
-        if (!item.category || !item.subcategory || !item.question || !item.correctAnswer) {
-          setValidationError(`Item ${i + 1} is missing required fields (category, subcategory, question, or correctAnswer)`);
+        if (
+          !item.category ||
+          !item.subcategory ||
+          !item.question ||
+          !item.correctAnswer
+        ) {
+          setValidationError(
+            `Item ${
+              i + 1
+            } is missing required fields (category, subcategory, question, or correctAnswer)`
+          );
           return;
         }
         if (!Array.isArray(item.incorrectAnswers)) {
-          setValidationError(`Item ${i + 1}: incorrectAnswers must be an array`);
+          setValidationError(
+            `Item ${i + 1}: incorrectAnswers must be an array`
+          );
           return;
         }
         if (item.incorrectAnswers.length > 4) {
-          setValidationError(`Item ${i + 1}: cannot have more than 4 incorrect answers`);
+          setValidationError(
+            `Item ${i + 1}: cannot have more than 4 incorrect answers`
+          );
           return;
         }
       }
 
       // Validate that all items have category or category override is provided
-      const itemsWithoutCategory = parsedItems.filter((item: any) => !item.category);
+      const itemsWithoutCategory = parsedItems.filter(
+        (item: any) => !item.category
+      );
       if (itemsWithoutCategory.length > 0 && !category.trim()) {
-        setValidationError(`Items ${itemsWithoutCategory.map((_: any, i: number) => parsedItems.indexOf(itemsWithoutCategory[i]) + 1).join(', ')} are missing category field and no category override is provided`);
+        setValidationError(
+          `Items ${itemsWithoutCategory
+            .map(
+              (_: any, i: number) =>
+                parsedItems.indexOf(itemsWithoutCategory[i]) + 1
+            )
+            .join(
+              ", "
+            )} are missing category field and no category override is provided`
+        );
         return;
       }
 
@@ -131,7 +201,9 @@ const BulkCreateItemsPage = () => {
           question: item.question.trim(),
           correctAnswer: item.correctAnswer.trim(),
           incorrectAnswers: Array.isArray(item.incorrectAnswers)
-            ? item.incorrectAnswers.map((ans: any) => String(ans).trim()).filter((ans: string) => ans.length > 0)
+            ? item.incorrectAnswers
+                .map((ans: any) => String(ans).trim())
+                .filter((ans: string) => ans.length > 0)
             : [],
           explanation: item.explanation ? String(item.explanation).trim() : "",
         })),
@@ -139,7 +211,11 @@ const BulkCreateItemsPage = () => {
 
       bulkCreateMutation.mutate(request);
     } catch (error) {
-      setValidationError(`Invalid JSON: ${error instanceof Error ? error.message : "Unknown error"}`);
+      setValidationError(
+        `Invalid JSON: ${
+          error instanceof Error ? error.message : "Unknown error"
+        }`
+      );
     }
   };
 
@@ -150,16 +226,20 @@ const BulkCreateItemsPage = () => {
   return (
     <div className="px-4 py-6 sm:px-0">
       <div className="max-w-4xl mx-auto">
-        <h1 className="text-3xl font-bold text-gray-900 mb-6">Bulk Create Items</h1>
+        <h1 className="text-3xl font-bold text-gray-900 mb-6">
+          Bulk Create Items
+        </h1>
 
         <div className="mb-6 space-y-4">
           <p className="text-gray-700">
-            You can add a batch of flashcard items here by pasting a JSON array in the format shown in the sample prompt below.
-            You can write it yourself or ask an AI (e.g. ChatGPT or Claude) to generate it for you using the sample prompt.
+            You can add a batch of flashcard items here by pasting a JSON array
+            in the format shown in the sample prompt below. You can write it
+            yourself or ask an AI (e.g. ChatGPT or Claude) to generate it for
+            you using the sample prompt.
           </p>
           <p className="text-gray-700">
-            Regular users can add only Private items (visible only to this user).
-            Admins can add items visible to everyone.
+            Regular users can add only Private items (visible only to this
+            user). Admins can add items visible to everyone.
           </p>
         </div>
 
@@ -181,7 +261,7 @@ const BulkCreateItemsPage = () => {
           {isPromptExampleOpen && (
             <div className="px-4 pb-4 border-t border-gray-200">
               <pre className="text-xs text-gray-800 whitespace-pre-wrap font-mono mt-4">
-{`You are creating study flashcards for an app called Quizymode.
+                {`You are creating study flashcards for an app called Quizymode.
 
 Create up to 100 quiz items about <replace-me: Topic or Category Name>, specifically about <replace-me: Subcategory Names>.
 
@@ -215,7 +295,10 @@ Now generate the JSON array only.`}
 
         {validationError && (
           <div className="mb-4">
-            <ErrorMessage message={validationError} onRetry={() => setValidationError("")} />
+            <ErrorMessage
+              message={validationError}
+              onRetry={() => setValidationError("")}
+            />
           </div>
         )}
 
@@ -223,12 +306,21 @@ Now generate the JSON array only.`}
           <div className="mb-4">
             <ErrorMessage
               message={
-                bulkCreateMutation.error && (bulkCreateMutation.error as any).response?.data
-                  ? Array.isArray((bulkCreateMutation.error as any).response.data)
+                bulkCreateMutation.error &&
+                (bulkCreateMutation.error as any).response?.data
+                  ? Array.isArray(
+                      (bulkCreateMutation.error as any).response.data
+                    )
                     ? (bulkCreateMutation.error as any).response.data
-                        .map((err: any) => err.errorMessage || err.message || JSON.stringify(err))
+                        .map(
+                          (err: any) =>
+                            err.errorMessage ||
+                            err.message ||
+                            JSON.stringify(err)
+                        )
                         .join(", ")
-                    : typeof (bulkCreateMutation.error as any).response.data === "string"
+                    : typeof (bulkCreateMutation.error as any).response.data ===
+                      "string"
                     ? (bulkCreateMutation.error as any).response.data
                     : (bulkCreateMutation.error as any).response.data.title ||
                       (bulkCreateMutation.error as any).response.data.detail ||
@@ -242,7 +334,10 @@ Now generate the JSON array only.`}
           </div>
         )}
 
-        <form onSubmit={handleSubmit} className="bg-white shadow rounded-lg p-6 space-y-6">
+        <form
+          onSubmit={handleSubmit}
+          className="bg-white shadow rounded-lg p-6 space-y-6"
+        >
           <div>
             <label className="block text-sm font-medium text-gray-700 mb-2">
               Category Override (optional)
@@ -260,8 +355,9 @@ Now generate the JSON array only.`}
               ))}
             </select>
             <p className="mt-1 text-sm text-gray-500">
-              If you select a category here, it will override the "category" field inside every JSON item you upload.
-              Leave empty to keep category values from your JSON.
+              If you select a category here, it will override the "category"
+              field inside every JSON item you upload. Leave empty to keep
+              category values from your JSON.
             </p>
           </div>
 
@@ -278,8 +374,9 @@ Now generate the JSON array only.`}
               placeholder='[\n  {\n    "category": "Category",\n    "subcategory": "Subcategory",\n    "question": "Question?",\n    "correctAnswer": "Answer",\n    "incorrectAnswers": ["Wrong 1", "Wrong 2"],\n    "explanation": "Explanation"\n  }\n]'
             />
             <p className="mt-1 text-sm text-gray-500">
-              Paste your JSON array here (up to 100 items).
-              If you selected a Category Override above, it will replace the "category" field in every item.
+              Paste your JSON array here (up to 100 items). If you selected a
+              Category Override above, it will replace the "category" field in
+              every item.
             </p>
           </div>
 
@@ -319,9 +416,77 @@ Now generate the JSON array only.`}
           </div>
         </form>
       </div>
+
+      {/* Result Modal */}
+      {resultModal.isOpen && (
+        <div
+          className="fixed inset-0 bg-gray-600 bg-opacity-50 overflow-y-auto h-full w-full z-50"
+          onClick={() =>
+            setResultModal({ isOpen: false, message: "", details: "" })
+          }
+        >
+          <div
+            className="relative top-20 mx-auto p-5 border w-full max-w-2xl shadow-lg rounded-md bg-white"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <div className="flex justify-between items-center mb-4">
+              <h3 className="text-lg font-medium text-gray-900">
+                Bulk Create Results
+              </h3>
+              <button
+                onClick={() =>
+                  setResultModal({ isOpen: false, message: "", details: "" })
+                }
+                className="text-gray-400 hover:text-gray-500"
+              >
+                <XMarkIcon className="h-6 w-6" />
+              </button>
+            </div>
+
+            <div className="space-y-4">
+              <div>
+                <p className="text-sm font-medium text-gray-700 mb-2">
+                  {resultModal.message}
+                </p>
+              </div>
+
+              {resultModal.details && (
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-2">
+                    Details (selectable):
+                  </label>
+                  <textarea
+                    readOnly
+                    value={resultModal.details}
+                    className="w-full px-3 py-2 border border-gray-300 rounded-md text-xs font-mono bg-gray-50 text-gray-800 resize-none"
+                    rows={15}
+                    onClick={(e) => e.currentTarget.select()}
+                  />
+                </div>
+              )}
+
+              <div className="flex justify-end">
+                <button
+                  onClick={() => {
+                    setResultModal({ isOpen: false, message: "", details: "" });
+                    if (
+                      resultModal.message.includes("Successfully created") &&
+                      !resultModal.details
+                    ) {
+                      navigate("/my-items");
+                    }
+                  }}
+                  className="px-4 py-2 text-sm font-medium text-white bg-indigo-600 rounded-md hover:bg-indigo-700"
+                >
+                  Close
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 };
 
 export default BulkCreateItemsPage;
-

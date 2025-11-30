@@ -18,15 +18,39 @@ internal static class GetItemsHandler
         {
             IQueryable<Item> query = db.Items.AsQueryable();
 
-            // Anonymous users only see global items. Authenticated users see global + their private items.
-            if (!userContext.IsAuthenticated)
+            // Apply visibility filter based on authentication and IsPrivate filter
+            if (request.IsPrivate.HasValue)
             {
-                query = query.Where(i => !i.IsPrivate);
+                // Explicit filter requested
+                if (request.IsPrivate.Value)
+                {
+                    // User wants only private items - must be authenticated and can only see their own
+                    if (!userContext.IsAuthenticated || string.IsNullOrEmpty(userContext.UserId))
+                    {
+                        return Result.Failure<GetItems.Response>(
+                            Error.Problem("Items.Unauthorized", "Must be authenticated to view private items"));
+                    }
+                    query = query.Where(i => i.IsPrivate && i.CreatedBy == userContext.UserId);
+                }
+                else
+                {
+                    // User wants only global (non-private) items
+                    query = query.Where(i => !i.IsPrivate);
+                }
             }
-            else if (!string.IsNullOrEmpty(userContext.UserId))
+            else
             {
-                // Include global items OR user's private items
-                query = query.Where(i => !i.IsPrivate || (i.IsPrivate && i.CreatedBy == userContext.UserId));
+                // No explicit filter - show based on user context
+                // Anonymous users only see global items. Authenticated users see global + their private items.
+                if (!userContext.IsAuthenticated)
+                {
+                    query = query.Where(i => !i.IsPrivate);
+                }
+                else if (!string.IsNullOrEmpty(userContext.UserId))
+                {
+                    // Include global items OR user's private items
+                    query = query.Where(i => !i.IsPrivate || (i.IsPrivate && i.CreatedBy == userContext.UserId));
+                }
             }
 
             if (!string.IsNullOrEmpty(request.Category))

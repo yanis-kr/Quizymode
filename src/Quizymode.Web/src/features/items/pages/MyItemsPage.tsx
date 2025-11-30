@@ -19,11 +19,15 @@ const MyItemsPage = () => {
   const queryClient = useQueryClient();
   const navigate = useNavigate();
   const [page, setPage] = useState(1);
-  const [filterType, setFilterType] = useState<"all" | "global" | "private">("all");
+  const [filterType, setFilterType] = useState<"all" | "global" | "private">(
+    "all"
+  );
   const [selectedCategory, setSelectedCategory] = useState<string>("");
   const [selectedSubcategory, setSelectedSubcategory] = useState<string>("");
   const [searchText, setSearchText] = useState<string>("");
-  const [selectedItemForCollections, setSelectedItemForCollections] = useState<string | null>(null);
+  const [selectedItemForCollections, setSelectedItemForCollections] = useState<
+    string | null
+  >(null);
   const pageSize = 10;
 
   const { data: categoriesData } = useQuery({
@@ -31,33 +35,42 @@ const MyItemsPage = () => {
     queryFn: () => categoriesApi.getAll(),
   });
 
+  // Determine isPrivate filter value based on filterType
+  const isPrivateFilter =
+    filterType === "all" ? undefined : filterType === "private";
+
   const { data, isLoading, error, refetch } = useQuery({
-    queryKey: ["myItems", page, selectedCategory, selectedSubcategory],
+    queryKey: [
+      "myItems",
+      page,
+      selectedCategory,
+      selectedSubcategory,
+      filterType,
+    ],
     queryFn: () =>
       itemsApi.getAll(
         selectedCategory || undefined,
         selectedSubcategory || undefined,
+        isPrivateFilter,
         page,
         pageSize
       ),
     enabled: isAuthenticated,
   });
 
-  // Client-side filtering for type and search (API doesn't support these yet)
-  const filteredItems = (data?.items || []).filter((item) => {
-    if (filterType === "global" && item.isPrivate) return false;
-    if (filterType === "private" && !item.isPrivate) return false;
-    if (searchText) {
-      const searchLower = searchText.toLowerCase();
-      return (
-        item.question.toLowerCase().includes(searchLower) ||
-        item.correctAnswer.toLowerCase().includes(searchLower) ||
-        item.explanation?.toLowerCase().includes(searchLower) ||
-        false
-      );
-    }
-    return true;
-  });
+  // Client-side filtering for search only (isPrivate filtering is now server-side)
+  // When searchText is empty, use items directly; otherwise filter by search
+  const displayItems = searchText
+    ? (data?.items || []).filter((item) => {
+        const searchLower = searchText.toLowerCase();
+        return (
+          item.question.toLowerCase().includes(searchLower) ||
+          item.correctAnswer.toLowerCase().includes(searchLower) ||
+          item.explanation?.toLowerCase().includes(searchLower) ||
+          false
+        );
+      })
+    : data?.items || [];
 
   const deleteMutation = useMutation({
     mutationFn: (id: string) => itemsApi.delete(id),
@@ -67,7 +80,8 @@ const MyItemsPage = () => {
   });
 
   const updateMutation = useMutation({
-    mutationFn: ({ id, data }: { id: string; data: any }) => itemsApi.update(id, data),
+    mutationFn: ({ id, data }: { id: string; data: any }) =>
+      itemsApi.update(id, data),
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ["myItems"] });
     },
@@ -82,7 +96,10 @@ const MyItemsPage = () => {
   }
 
   if (isLoading) return <LoadingSpinner />;
-  if (error) return <ErrorMessage message="Failed to load items" onRetry={() => refetch()} />;
+  if (error)
+    return (
+      <ErrorMessage message="Failed to load items" onRetry={() => refetch()} />
+    );
 
   const items = data?.items || [];
   const totalPages = data?.totalPages || 1;
@@ -204,16 +221,19 @@ const MyItemsPage = () => {
       </div>
 
       {/* Items List */}
-      {filteredItems.length > 0 ? (
+      {displayItems.length > 0 ? (
         <>
           <div className="space-y-4 mb-6">
-            {filteredItems.map((item) => (
+            {displayItems.map((item) => (
               <div key={item.id} className="bg-white shadow rounded-lg p-6">
                 <div className="flex justify-between items-start">
                   <div className="flex-1">
-                    <h3 className="text-lg font-medium text-gray-900">{item.question}</h3>
+                    <h3 className="text-lg font-medium text-gray-900">
+                      {item.question}
+                    </h3>
                     <p className="mt-2 text-sm text-gray-500">
-                      {item.category} {item.subcategory && `• ${item.subcategory}`}
+                      {item.category}{" "}
+                      {item.subcategory && `• ${item.subcategory}`}
                     </p>
                     <p className="mt-1 text-sm text-gray-500">
                       {item.isPrivate ? "Private" : "Global"}
@@ -255,11 +275,17 @@ const MyItemsPage = () => {
                     </button>
                     <button
                       onClick={() => {
-                        if (window.confirm("Are you sure you want to delete this item?")) {
+                        if (
+                          window.confirm(
+                            "Are you sure you want to delete this item?"
+                          )
+                        ) {
                           deleteMutation.mutate(item.id);
                         }
                       }}
-                      disabled={!canEditDelete(item) || deleteMutation.isPending}
+                      disabled={
+                        !canEditDelete(item) || deleteMutation.isPending
+                      }
                       className={`p-2 rounded-md ${
                         canEditDelete(item)
                           ? "text-red-600 hover:bg-red-50"
