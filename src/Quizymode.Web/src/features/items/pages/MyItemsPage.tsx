@@ -122,14 +122,6 @@ const MyItemsPage = () => {
     },
   });
 
-  const updateMutation = useMutation({
-    mutationFn: ({ id, data }: { id: string; data: any }) =>
-      itemsApi.update(id, data),
-    onSuccess: () => {
-      queryClient.invalidateQueries({ queryKey: ["myItems"] });
-    },
-  });
-
   useEffect(() => {
     setPage(1); // Reset to first page when filters change
   }, [filterType, selectedCategory, selectedSubcategory, searchText]);
@@ -144,8 +136,6 @@ const MyItemsPage = () => {
       <ErrorMessage message="Failed to load items" onRetry={() => refetch()} />
     );
 
-  const items = data?.items || [];
-  const totalPages = data?.totalPages || 1;
   const canEditDelete = (item: any) => item.isPrivate || isAdmin;
 
   return (

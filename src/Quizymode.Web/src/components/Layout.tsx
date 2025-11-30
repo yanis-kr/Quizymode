@@ -19,6 +19,9 @@ const Layout = ({ children }: LayoutProps) => {
     queryKey: ["currentUser"],
     queryFn: () => usersApi.getCurrent(),
     enabled: isAuthenticated,
+    retry: false, // Don't retry on 401 errors
+    // Silently handle 401 errors - they're expected if token is expired
+    // The interceptor will handle redirects for protected routes
   });
 
   const handleLogout = async () => {

@@ -2,7 +2,6 @@ import { useState } from "react";
 import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
 import { reviewsApi } from "@/api/reviews";
 import { useAuth } from "@/contexts/AuthContext";
-import type { ReviewResponse } from "@/types/api";
 
 interface ReactionsCommentsProps {
   itemId: string;
@@ -15,7 +14,7 @@ const ReactionsComments = ({ itemId }: ReactionsCommentsProps) => {
   const [editingComment, setEditingComment] = useState(false);
   const [commentText, setCommentText] = useState("");
 
-  const { data: reviewsData, isLoading } = useQuery({
+  const { data: reviewsData } = useQuery({
     queryKey: ["reviews", itemId],
     queryFn: () => reviewsApi.getByItemId(itemId),
     enabled: true, // Always load to show reactions/comments
@@ -36,7 +35,10 @@ const ReactionsComments = ({ itemId }: ReactionsCommentsProps) => {
       }
       return reviewsApi.create({
         itemId,
-        reaction: (data.reaction || "neutral") as "like" | "dislike" | "neutral",
+        reaction: (data.reaction || "neutral") as
+          | "like"
+          | "dislike"
+          | "neutral",
         comment: data.comment || "",
       });
     },
@@ -58,7 +60,8 @@ const ReactionsComments = ({ itemId }: ReactionsCommentsProps) => {
 
   const handleReaction = (reaction: "like" | "dislike") => {
     if (!isAuthenticated) return;
-    const newReaction = currentUserReview?.reaction === reaction ? "neutral" : reaction;
+    const newReaction =
+      currentUserReview?.reaction === reaction ? "neutral" : reaction;
     createReviewMutation.mutate({ reaction: newReaction });
   };
 
@@ -181,7 +184,8 @@ const ReactionsComments = ({ itemId }: ReactionsCommentsProps) => {
           onClick={() => setShowComments(!showComments)}
           className="text-sm text-indigo-600 hover:text-indigo-700"
         >
-          {showComments ? "Hide" : "View"} All Comments ({reviews.filter((r) => r.comment).length})
+          {showComments ? "Hide" : "View"} All Comments (
+          {reviews.filter((r) => r.comment).length})
         </button>
 
         {showComments && (
@@ -212,4 +216,3 @@ const ReactionsComments = ({ itemId }: ReactionsCommentsProps) => {
 };
 
 export default ReactionsComments;
-

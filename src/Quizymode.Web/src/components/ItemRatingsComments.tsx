@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
-import { useNavigate, useSearchParams } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { ratingsApi } from "@/api/ratings";
 import { commentsApi } from "@/api/comments";
 import { useAuth } from "@/contexts/AuthContext";
@@ -22,12 +22,12 @@ const ItemRatingsComments = ({
   itemId,
   navigationContext,
 }: ItemRatingsCommentsProps) => {
-  const { isAuthenticated, userId } = useAuth();
+  const { isAuthenticated } = useAuth();
   const navigate = useNavigate();
   const queryClient = useQueryClient();
   const [userRating, setUserRating] = useState<number | null>(null);
 
-  const { data: ratingStats, isLoading: ratingLoading } = useQuery({
+  const { data: ratingStats } = useQuery({
     queryKey: ["ratingStats", itemId],
     queryFn: () => ratingsApi.getStats(itemId),
     enabled: true,

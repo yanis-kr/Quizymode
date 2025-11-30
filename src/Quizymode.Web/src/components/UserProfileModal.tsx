@@ -54,7 +54,6 @@ const UserProfileModal = ({ isOpen, onClose }: UserProfileModalProps) => {
 
   if (!user) return null;
 
-  const displayName = user.name || user.email || "User";
   const role = user.isAdmin ? "Admin" : "User";
 
   return (
@@ -175,4 +174,3 @@ const UserProfileModal = ({ isOpen, onClose }: UserProfileModalProps) => {
 };
 
 export default UserProfileModal;
-
