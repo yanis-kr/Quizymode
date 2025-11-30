@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
 import { collectionsApi } from "@/api/collections";
 import { useAuth } from "@/contexts/AuthContext";
@@ -11,7 +11,11 @@ interface ItemCollectionsModalProps {
   itemId: string;
 }
 
-const ItemCollectionsModal = ({ isOpen, onClose, itemId }: ItemCollectionsModalProps) => {
+const ItemCollectionsModal = ({
+  isOpen,
+  onClose,
+  itemId,
+}: ItemCollectionsModalProps) => {
   const { isAuthenticated } = useAuth();
   const queryClient = useQueryClient();
   const [newCollectionName, setNewCollectionName] = useState("");
@@ -27,7 +31,7 @@ const ItemCollectionsModal = ({ isOpen, onClose, itemId }: ItemCollectionsModalP
     queryFn: async () => {
       const allCollections = collectionsData?.collections || [];
       const itemCollections: CollectionResponse[] = [];
-      
+
       for (const collection of allCollections) {
         try {
           const itemsData = await collectionsApi.getItems(collection.id);
@@ -38,7 +42,7 @@ const ItemCollectionsModal = ({ isOpen, onClose, itemId }: ItemCollectionsModalP
           // Collection might not exist or user doesn't have access
         }
       }
-      
+
       return { collections: itemCollections };
     },
     enabled: isAuthenticated && !!collectionsData && isOpen,
@@ -108,7 +112,9 @@ const ItemCollectionsModal = ({ isOpen, onClose, itemId }: ItemCollectionsModalP
         onClick={(e) => e.stopPropagation()}
       >
         <div className="flex justify-between items-center mb-4">
-          <h3 className="text-lg font-medium text-gray-900">Manage Collections</h3>
+          <h3 className="text-lg font-medium text-gray-900">
+            Manage Collections
+          </h3>
           <button
             onClick={onClose}
             className="text-gray-400 hover:text-gray-500"
@@ -152,7 +158,10 @@ const ItemCollectionsModal = ({ isOpen, onClose, itemId }: ItemCollectionsModalP
                           type="checkbox"
                           checked={isInCollection}
                           onChange={(e) =>
-                            handleToggleCollection(collection.id, e.target.checked)
+                            handleToggleCollection(
+                              collection.id,
+                              e.target.checked
+                            )
                           }
                           disabled={
                             addToCollectionMutation.isPending ||
@@ -160,13 +169,17 @@ const ItemCollectionsModal = ({ isOpen, onClose, itemId }: ItemCollectionsModalP
                           }
                           className="mr-2"
                         />
-                        <span className="text-sm text-gray-700">{collection.name}</span>
+                        <span className="text-sm text-gray-700">
+                          {collection.name}
+                        </span>
                       </label>
                     );
                   })}
                 </div>
               ) : (
-                <p className="text-sm text-gray-500">No collections available</p>
+                <p className="text-sm text-gray-500">
+                  No collections available
+                </p>
               )}
             </div>
           </div>
@@ -177,4 +190,3 @@ const ItemCollectionsModal = ({ isOpen, onClose, itemId }: ItemCollectionsModalP
 };
 
 export default ItemCollectionsModal;
-

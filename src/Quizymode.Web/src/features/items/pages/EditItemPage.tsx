@@ -10,7 +10,7 @@ import { categoriesApi } from "@/api/categories";
 
 const EditItemPage = () => {
   const { id } = useParams<{ id: string }>();
-  const { isAuthenticated, isAdmin } = useAuth();
+  const { isAuthenticated } = useAuth();
   const navigate = useNavigate();
   const queryClient = useQueryClient();
   const [formData, setFormData] = useState({
@@ -28,7 +28,11 @@ const EditItemPage = () => {
     queryFn: () => categoriesApi.getAll(),
   });
 
-  const { data: itemData, isLoading: isLoadingItem, error: itemError } = useQuery({
+  const {
+    data: itemData,
+    isLoading: isLoadingItem,
+    error: itemError,
+  } = useQuery({
     queryKey: ["item", id],
     queryFn: () => itemsApi.getById(id!),
     enabled: !!id && isAuthenticated,
@@ -45,9 +49,10 @@ const EditItemPage = () => {
         isPrivate: itemData.isPrivate || false,
         question: itemData.question || "",
         correctAnswer: itemData.correctAnswer || "",
-        incorrectAnswers: itemData.incorrectAnswers && itemData.incorrectAnswers.length > 0
-          ? [...itemData.incorrectAnswers, "", "", ""].slice(0, 3)
-          : ["", "", ""],
+        incorrectAnswers:
+          itemData.incorrectAnswers && itemData.incorrectAnswers.length > 0
+            ? [...itemData.incorrectAnswers, "", "", ""].slice(0, 3)
+            : ["", "", ""],
         explanation: itemData.explanation || "",
       });
     }
@@ -80,7 +85,9 @@ const EditItemPage = () => {
     }
 
     // Validate that at least one incorrect answer is provided
-    const filteredIncorrectAnswers = formData.incorrectAnswers.filter((ans) => ans.trim() !== "");
+    const filteredIncorrectAnswers = formData.incorrectAnswers.filter(
+      (ans) => ans.trim() !== ""
+    );
     if (filteredIncorrectAnswers.length === 0) {
       setValidationError("Please provide at least one incorrect answer");
       return;
@@ -95,7 +102,7 @@ const EditItemPage = () => {
       incorrectAnswers: filteredIncorrectAnswers,
       explanation: formData.explanation.trim(),
     };
-    
+
     updateMutation.mutate(data);
   };
 
@@ -131,7 +138,10 @@ const EditItemPage = () => {
 
         {validationError && (
           <div className="mb-4">
-            <ErrorMessage message={validationError} onRetry={() => setValidationError("")} />
+            <ErrorMessage
+              message={validationError}
+              onRetry={() => setValidationError("")}
+            />
           </div>
         )}
 
@@ -139,12 +149,19 @@ const EditItemPage = () => {
           <div className="mb-4">
             <ErrorMessage
               message={
-                updateMutation.error && (updateMutation.error as any).response?.data
+                updateMutation.error &&
+                (updateMutation.error as any).response?.data
                   ? Array.isArray((updateMutation.error as any).response.data)
                     ? (updateMutation.error as any).response.data
-                        .map((err: any) => err.errorMessage || err.message || JSON.stringify(err))
+                        .map(
+                          (err: any) =>
+                            err.errorMessage ||
+                            err.message ||
+                            JSON.stringify(err)
+                        )
                         .join(", ")
-                    : typeof (updateMutation.error as any).response.data === "string"
+                    : typeof (updateMutation.error as any).response.data ===
+                      "string"
                     ? (updateMutation.error as any).response.data
                     : (updateMutation.error as any).response.data.title ||
                       (updateMutation.error as any).response.data.detail ||
@@ -158,14 +175,19 @@ const EditItemPage = () => {
           </div>
         )}
 
-        <form onSubmit={handleSubmit} className="bg-white shadow rounded-lg p-6 space-y-6">
+        <form
+          onSubmit={handleSubmit}
+          className="bg-white shadow rounded-lg p-6 space-y-6"
+        >
           <div>
             <label className="block text-sm font-medium text-gray-700 mb-2">
               Category *
             </label>
             <select
               value={formData.category}
-              onChange={(e) => setFormData({ ...formData, category: e.target.value })}
+              onChange={(e) =>
+                setFormData({ ...formData, category: e.target.value })
+              }
               required
               className="w-full px-3 py-2 border border-gray-300 rounded-md text-sm"
             >
@@ -185,7 +207,9 @@ const EditItemPage = () => {
             <input
               type="text"
               value={formData.subcategory}
-              onChange={(e) => setFormData({ ...formData, subcategory: e.target.value })}
+              onChange={(e) =>
+                setFormData({ ...formData, subcategory: e.target.value })
+              }
               required
               className="w-full px-3 py-2 border border-gray-300 rounded-md text-sm"
             />
@@ -196,10 +220,14 @@ const EditItemPage = () => {
               <input
                 type="checkbox"
                 checked={formData.isPrivate}
-                onChange={(e) => setFormData({ ...formData, isPrivate: e.target.checked })}
+                onChange={(e) =>
+                  setFormData({ ...formData, isPrivate: e.target.checked })
+                }
                 className="mr-2"
               />
-              <span className="text-sm font-medium text-gray-700">Private Item</span>
+              <span className="text-sm font-medium text-gray-700">
+                Private Item
+              </span>
             </label>
           </div>
 
@@ -209,7 +237,9 @@ const EditItemPage = () => {
             </label>
             <textarea
               value={formData.question}
-              onChange={(e) => setFormData({ ...formData, question: e.target.value })}
+              onChange={(e) =>
+                setFormData({ ...formData, question: e.target.value })
+              }
               required
               rows={3}
               className="w-full px-3 py-2 border border-gray-300 rounded-md text-sm"
@@ -223,7 +253,9 @@ const EditItemPage = () => {
             <input
               type="text"
               value={formData.correctAnswer}
-              onChange={(e) => setFormData({ ...formData, correctAnswer: e.target.value })}
+              onChange={(e) =>
+                setFormData({ ...formData, correctAnswer: e.target.value })
+              }
               required
               className="w-full px-3 py-2 border border-gray-300 rounded-md text-sm"
             />
@@ -238,7 +270,9 @@ const EditItemPage = () => {
                 key={index}
                 type="text"
                 value={answer}
-                onChange={(e) => handleIncorrectAnswerChange(index, e.target.value)}
+                onChange={(e) =>
+                  handleIncorrectAnswerChange(index, e.target.value)
+                }
                 placeholder={`Incorrect answer ${index + 1}`}
                 className="w-full px-3 py-2 border border-gray-300 rounded-md text-sm mb-2"
               />
@@ -251,7 +285,9 @@ const EditItemPage = () => {
             </label>
             <textarea
               value={formData.explanation}
-              onChange={(e) => setFormData({ ...formData, explanation: e.target.value })}
+              onChange={(e) =>
+                setFormData({ ...formData, explanation: e.target.value })
+              }
               rows={3}
               className="w-full px-3 py-2 border border-gray-300 rounded-md text-sm"
             />
@@ -280,4 +316,3 @@ const EditItemPage = () => {
 };
 
 export default EditItemPage;
-
