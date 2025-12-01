@@ -56,5 +56,32 @@ public static class CustomResults
                 _ => StatusCodes.Status500InternalServerError
             };
     }
+
+    public static IResult BadRequest(string detail, string? title = null)
+    {
+        return Results.Problem(
+            title: title ?? "Bad Request",
+            detail: detail,
+            type: "https://tools.ietf.org/html/rfc7231#section-6.5.1",
+            statusCode: StatusCodes.Status400BadRequest);
+    }
+
+    public static IResult Unauthorized(string? detail = null)
+    {
+        return Results.Problem(
+            title: "Unauthorized",
+            detail: detail ?? "Authentication required",
+            type: "https://tools.ietf.org/html/rfc7235#section-3.1",
+            statusCode: StatusCodes.Status401Unauthorized);
+    }
+
+    public static IResult NotFound(string? detail = null, string? title = null)
+    {
+        return Results.Problem(
+            title: title ?? "Not Found",
+            detail: detail ?? "The requested resource was not found",
+            type: "https://tools.ietf.org/html/rfc7231#section-6.5.4",
+            statusCode: StatusCodes.Status404NotFound);
+    }
 }
 

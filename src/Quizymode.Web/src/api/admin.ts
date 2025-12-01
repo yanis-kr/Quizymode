@@ -21,14 +21,14 @@ interface ReviewBoardResponse {
 export const adminApi = {
   getReviewBoardItems: async (): Promise<ReviewBoardResponse> => {
     const response = await apiClient.get<ReviewBoardResponse>(
-      "/items/review-board"
+      "/admin/items/review-board"
     );
     return response.data;
   },
 
   approveItem: async (id: string): Promise<ReviewBoardItemResponse> => {
     const response = await apiClient.put<ReviewBoardItemResponse>(
-      `/items/${id}/approve`
+      `/admin/items/${id}/approval`
     );
     return response.data;
   },

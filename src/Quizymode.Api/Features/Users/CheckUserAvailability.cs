@@ -14,7 +14,7 @@ public static class CheckUserAvailability
     {
         public void MapEndpoint(IEndpointRouteBuilder app)
         {
-            app.MapGet("users/check-availability", Handler)
+            app.MapGet("users/availability", Handler)
                 .WithTags("Users")
                 .WithSummary("Check if username and/or email are available")
                 .WithDescription("Checks if the provided username and/or email are already registered. Returns availability status for each.")
@@ -31,7 +31,7 @@ public static class CheckUserAvailability
         {
             if (string.IsNullOrWhiteSpace(username) && string.IsNullOrWhiteSpace(email))
             {
-                return Results.BadRequest(new { error = "At least one of username or email must be provided" });
+                return CustomResults.BadRequest("At least one of username or email must be provided");
             }
 
             bool isUsernameAvailable = true;

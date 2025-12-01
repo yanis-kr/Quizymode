@@ -35,7 +35,7 @@ public static class GetSubcategories
         {
             if (string.IsNullOrWhiteSpace(category))
             {
-                return Results.BadRequest("Category is required");
+                return CustomResults.BadRequest("Category is required");
             }
 
             QueryRequest request = new(category);
