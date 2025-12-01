@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import { useAuth } from '@/contexts/AuthContext';
+import { usersApi } from '@/api/users';
 
 const SignUpPage = () => {
   const navigate = useNavigate();
@@ -18,6 +19,12 @@ const SignUpPage = () => {
     e.preventDefault();
     setError('');
 
+    // Validate that username is not the same as email
+    if (username.trim().toLowerCase() === email.trim().toLowerCase()) {
+      setError('Username cannot be the same as email');
+      return;
+    }
+
     if (password !== confirmPassword) {
       setError('Passwords do not match');
       return;
@@ -31,6 +38,26 @@ const SignUpPage = () => {
     setIsLoading(true);
 
     try {
+      // Check if username or email already exists
+      const availability = await usersApi.checkAvailability({
+        username: username.trim(),
+        email: email.trim(),
+      });
+
+      const errors: string[] = [];
+      if (!availability.isUsernameAvailable && availability.usernameError) {
+        errors.push(availability.usernameError);
+      }
+      if (!availability.isEmailAvailable && availability.emailError) {
+        errors.push(availability.emailError);
+      }
+
+      if (errors.length > 0) {
+        setError(errors.join('. '));
+        setIsLoading(false);
+        return;
+      }
+
       await signup(username, password, email);
       setNeedsConfirmation(true);
     } catch (err: unknown) {

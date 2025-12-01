@@ -56,15 +56,42 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
         const token = session.tokens.accessToken;
         const payload = JSON.parse(atob(token.toString().split(".")[1]));
 
+        // Validate token expiration before setting authenticated state
+        const exp = payload.exp;
+        const now = Math.floor(Date.now() / 1000);
+        if (exp && exp < now) {
+          // Token expired - clear auth state
+          console.warn("Token expired, clearing auth state");
+          setIsAuthenticated(false);
+          setUserId(null);
+          setUsername(null);
+          setEmail(null);
+          setIsAdmin(false);
+          localStorage.removeItem("accessToken");
+          localStorage.removeItem("idToken");
+          return;
+        }
+
         setIsAuthenticated(true);
         setUserId(payload.sub || null);
         setUsername(payload["cognito:username"] || payload.username || null);
         setEmail(payload.email || null);
 
-        // Check for admin group in token
-        const groups = payload["cognito:groups"] || [];
-        setIsAdmin(
-          groups.some((g: string) => g.toLowerCase().startsWith("admin"))
+        // Helper function to extract groups from a token payload
+        const extractGroups = (tokenPayload: any): string[] => {
+          const groupsClaim = tokenPayload["cognito:groups"];
+          if (Array.isArray(groupsClaim)) {
+            return groupsClaim;
+          } else if (typeof groupsClaim === "string") {
+            return [groupsClaim];
+          }
+          return [];
+        };
+
+        // Check for admin group in access token
+        let groups = extractGroups(payload);
+        let isUserAdmin = groups.some((g: string) =>
+          g.toLowerCase().startsWith("admin")
         );
 
         // Store tokens
@@ -72,12 +99,39 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
         if (session.tokens.idToken) {
           const idToken = session.tokens.idToken;
           const idPayload = JSON.parse(atob(idToken.toString().split(".")[1]));
+
+          // Also validate ID token expiration
+          const idExp = idPayload.exp;
+          if (idExp && idExp < now) {
+            // ID token expired - clear auth state
+            console.warn("ID token expired, clearing auth state");
+            setIsAuthenticated(false);
+            setUserId(null);
+            setUsername(null);
+            setEmail(null);
+            setIsAdmin(false);
+            localStorage.removeItem("accessToken");
+            localStorage.removeItem("idToken");
+            return;
+          }
+
           // Get email from idToken if not in accessToken
           if (!payload.email && idPayload.email) {
             setEmail(idPayload.email);
           }
+
+          // Check for admin group in ID token if not found in access token
+          if (!isUserAdmin) {
+            const idGroups = extractGroups(idPayload);
+            isUserAdmin = idGroups.some((g: string) =>
+              g.toLowerCase().startsWith("admin")
+            );
+          }
+
           localStorage.setItem("idToken", idToken.toString());
         }
+
+        setIsAdmin(isUserAdmin);
       } else {
         setIsAuthenticated(false);
         setUserId(null);

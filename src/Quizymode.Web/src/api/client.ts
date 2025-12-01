@@ -37,8 +37,8 @@ apiClient.interceptors.response.use(
       localStorage.removeItem("accessToken");
       localStorage.removeItem("idToken");
 
-      // Only redirect if NOT on a public route
-      // Public routes don't require authentication and should handle 401 gracefully
+      // Check both current pathname and failed endpoint URL
+      // Don't redirect if we're on a public route OR if the failed endpoint is public
       const publicRoutes = [
         "/",
         "/categories",
@@ -47,12 +47,25 @@ apiClient.interceptors.response.use(
         "/explore",
         "/quiz",
       ];
+
+      // Public endpoints that don't require authentication
+      const publicEndpoints = ["/categories", "/categories/"];
+
       const currentPath = window.location.pathname;
+      const failedUrl = error.config?.url || "";
+
+      // Check if current route is public
       const isPublicRoute = publicRoutes.some(
         (route) => currentPath === route || currentPath.startsWith(route + "/")
       );
 
-      if (!isPublicRoute) {
+      // Check if failed endpoint is public (e.g., /categories or /categories/*/subcategories)
+      const isPublicEndpoint =
+        publicEndpoints.some((endpoint) => failedUrl.includes(endpoint)) ||
+        /^\/categories\/[^\/]+\/subcategories/.test(failedUrl);
+
+      // Only redirect if NOT on a public route AND failed endpoint is not public
+      if (!isPublicRoute && !isPublicEndpoint) {
         // Add query parameter to indicate unauthorized access
         window.location.href = "/login?unauthorized=true";
       }

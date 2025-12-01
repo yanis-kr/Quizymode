@@ -105,6 +105,16 @@ public static class UpdateUserName
                     Error.NotFound("User.NotFound", "User not found. Please ensure you are authenticated."));
             }
 
+            // Check if the new name is already taken by another user
+            bool nameExists = await db.Users
+                .AnyAsync(u => u.Id != userId && u.Name != null && u.Name.ToLower() == request.Name.Trim().ToLower(), cancellationToken);
+
+            if (nameExists)
+            {
+                return Result.Failure<Response>(
+                    Error.Validation("User.NameAlreadyTaken", "Username is already registered"));
+            }
+
             // Update user's name
             user.Name = request.Name;
 
