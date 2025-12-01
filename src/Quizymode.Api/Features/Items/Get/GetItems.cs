@@ -56,12 +56,12 @@ public static class GetItems
         {
             if (page < 1)
             {
-                return Results.BadRequest("Page must be greater than 0");
+                return CustomResults.BadRequest("Page must be greater than 0");
             }
 
             if (pageSize < 1 || pageSize > 100)
             {
-                return Results.BadRequest("PageSize must be between 1 and 100");
+                return CustomResults.BadRequest("PageSize must be between 1 and 100");
             }
 
             var request = new QueryRequest(category, subcategory, isPrivate, page, pageSize);

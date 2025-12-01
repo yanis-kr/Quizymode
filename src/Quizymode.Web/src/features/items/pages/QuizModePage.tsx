@@ -528,7 +528,7 @@ const QuizModePage = () => {
               )}
 
               {/* Collection Controls */}
-              {showAnswer && (
+              {showAnswer && isAuthenticated && (
                 <div className="mt-4">
                   <button
                     onClick={() =>

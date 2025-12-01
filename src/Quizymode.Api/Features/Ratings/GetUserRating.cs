@@ -44,12 +44,12 @@ public static class GetUserRating
         {
             if (!userContext.IsAuthenticated || string.IsNullOrEmpty(userContext.UserId))
             {
-                return Results.Unauthorized();
+                return CustomResults.Unauthorized();
             }
 
             if (!itemId.HasValue || itemId.Value == Guid.Empty)
             {
-                return Results.BadRequest(new { error = "ItemId query parameter is required" });
+                return CustomResults.BadRequest("ItemId query parameter is required");
             }
 
             QueryRequest request = new(itemId.Value);

@@ -39,7 +39,7 @@ public static class GetCurrentUser
         {
             if (!userContext.IsAuthenticated || string.IsNullOrEmpty(userContext.UserId))
             {
-                return Results.Unauthorized();
+                return CustomResults.Unauthorized();
             }
 
             Result<Response> result = await HandleAsync(db, userContext, cancellationToken);
@@ -48,7 +48,7 @@ public static class GetCurrentUser
                 value => Results.Ok(value),
                 failure => failure.Error.Type switch
                 {
-                    ErrorType.NotFound => Results.NotFound(),
+                    ErrorType.NotFound => CustomResults.NotFound(failure.Error.Description, failure.Error.Code),
                     _ => CustomResults.Problem(result)
                 });
         }

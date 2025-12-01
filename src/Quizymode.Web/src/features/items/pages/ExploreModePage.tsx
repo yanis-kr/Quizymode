@@ -353,15 +353,17 @@ const ExploreModePage = () => {
               />
 
               {/* Collection Controls */}
-              <div className="mt-4">
-                <button
-                  onClick={() => setSelectedItemForCollections(currentItem.id)}
-                  className="p-2 text-blue-600 hover:bg-blue-50 rounded-md"
-                  title="Manage collections"
-                >
-                  <FolderIcon className="h-5 w-5" />
-                </button>
-              </div>
+              {isAuthenticated && (
+                <div className="mt-4">
+                  <button
+                    onClick={() => setSelectedItemForCollections(currentItem.id)}
+                    className="p-2 text-blue-600 hover:bg-blue-50 rounded-md"
+                    title="Manage collections"
+                  >
+                    <FolderIcon className="h-5 w-5" />
+                  </button>
+                </div>
+              )}
             </div>
           )}
 

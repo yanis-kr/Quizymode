@@ -32,5 +32,15 @@ internal sealed class UserConfiguration : IEntityTypeConfiguration<User>
             .IsRequired();
 
         builder.HasIndex(u => u.Subject).IsUnique();
+        
+        // Unique index on Email (allows multiple nulls, but non-null emails must be unique)
+        builder.HasIndex(u => u.Email)
+            .IsUnique()
+            .HasFilter("\"Email\" IS NOT NULL");
+        
+        // Unique index on Name (allows multiple nulls, but non-null names must be unique)
+        builder.HasIndex(u => u.Name)
+            .IsUnique()
+            .HasFilter("\"Name\" IS NOT NULL");
     }
 }

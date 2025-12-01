@@ -24,8 +24,8 @@ public static class ApproveItem
     {
         public void MapEndpoint(IEndpointRouteBuilder app)
         {
-            app.MapPut("items/{id:guid}/approve", Handler)
-                .WithTags("Items")
+            app.MapPut("admin/items/{id:guid}/approval", Handler)
+                .WithTags("Admin")
                 .WithSummary("Approve an item for review (Admin only)")
                 .RequireAuthorization("Admin")
                 .WithOpenApi()
@@ -43,7 +43,7 @@ public static class ApproveItem
             return result.Match(
                 value => Results.Ok(value),
                 error => error.Error.Type == ErrorType.NotFound
-                    ? Results.NotFound()
+                    ? CustomResults.NotFound(error.Error.Description, error.Error.Code)
                     : CustomResults.Problem(result));
         }
     }

@@ -49,7 +49,7 @@ public static class GetRandom
         {
             if (count < 1 || count > 100)
             {
-                return Results.BadRequest("Count must be between 1 and 100");
+                return CustomResults.BadRequest("Count must be between 1 and 100");
             }
 
             var request = new QueryRequest(category, subcategory, count);

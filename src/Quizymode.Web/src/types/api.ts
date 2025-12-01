@@ -145,3 +145,15 @@ export interface UpdateUserNameRequest {
   name: string;
 }
 
+export interface CheckUserAvailabilityRequest {
+  username?: string;
+  email?: string;
+}
+
+export interface CheckUserAvailabilityResponse {
+  isUsernameAvailable: boolean;
+  isEmailAvailable: boolean;
+  usernameError?: string | null;
+  emailError?: string | null;
+}
+

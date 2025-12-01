@@ -16,8 +16,8 @@ public static class GetAllCollections
     {
         public void MapEndpoint(IEndpointRouteBuilder app)
         {
-            app.MapGet("collections/all", Handler)
-                .WithTags("Collections")
+            app.MapGet("admin/collections", Handler)
+                .WithTags("Admin")
                 .WithSummary("Get all collections from all users (Admin only)")
                 .WithDescription("Admin endpoint to view names and IDs of all collections across all users.")
                 .RequireAuthorization("Admin")

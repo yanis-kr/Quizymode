@@ -19,8 +19,8 @@ public static class GetUserById
     {
         public void MapEndpoint(IEndpointRouteBuilder app)
         {
-            app.MapGet("users/{id}", Handler)
-                .WithTags("Users")
+            app.MapGet("admin/users/{id}", Handler)
+                .WithTags("Admin")
                 .WithSummary("Get a user by their ID")
                 .WithDescription("Admin only endpoint to get user details by ID")
                 .RequireAuthorization("Admin")
@@ -42,7 +42,7 @@ public static class GetUserById
             return result.Match(
                 value => Results.Ok(value),
                 failure => failure.Error.Type == ErrorType.NotFound
-                    ? Results.NotFound()
+                    ? CustomResults.NotFound(failure.Error.Description, failure.Error.Code)
                     : CustomResults.Problem(result));
         }
     }
