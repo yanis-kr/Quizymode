@@ -177,12 +177,15 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
 
   const signup = async (username: string, password: string, email: string) => {
     try {
+      // Cognito requires username to be email format if configured that way
+      // So we use email as the Cognito username and store the display username in the 'name' attribute
       await signUp({
-        username,
+        username: email, // Use email as Cognito username (required by Cognito configuration)
         password,
         options: {
           userAttributes: {
             email,
+            name: username, // Store the display username in the 'name' attribute
           },
         },
       });

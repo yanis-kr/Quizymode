@@ -1,37 +1,37 @@
-import { useState } from 'react';
-import { useNavigate, Link } from 'react-router-dom';
-import { useAuth } from '@/contexts/AuthContext';
-import { usersApi } from '@/api/users';
+import { useState } from "react";
+import { useNavigate, Link } from "react-router-dom";
+import { useAuth } from "@/contexts/AuthContext";
+import { usersApi } from "@/api/users";
 
 const SignUpPage = () => {
   const navigate = useNavigate();
   const { signup, confirmSignup } = useAuth();
-  const [username, setUsername] = useState('');
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const [confirmPassword, setConfirmPassword] = useState('');
-  const [confirmationCode, setConfirmationCode] = useState('');
-  const [error, setError] = useState('');
+  const [username, setUsername] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState("");
+  const [confirmationCode, setConfirmationCode] = useState("");
+  const [error, setError] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const [needsConfirmation, setNeedsConfirmation] = useState(false);
 
   const handleSignUp = async (e: React.FormEvent) => {
     e.preventDefault();
-    setError('');
+    setError("");
 
     // Validate that username is not the same as email
     if (username.trim().toLowerCase() === email.trim().toLowerCase()) {
-      setError('Username cannot be the same as email');
+      setError("Username cannot be the same as email");
       return;
     }
 
     if (password !== confirmPassword) {
-      setError('Passwords do not match');
+      setError("Passwords do not match");
       return;
     }
 
     if (password.length < 8) {
-      setError('Password must be at least 8 characters');
+      setError("Password must be at least 8 characters");
       return;
     }
 
@@ -53,7 +53,7 @@ const SignUpPage = () => {
       }
 
       if (errors.length > 0) {
-        setError(errors.join('. '));
+        setError(errors.join(". "));
         setIsLoading(false);
         return;
       }
@@ -61,7 +61,9 @@ const SignUpPage = () => {
       await signup(username, password, email);
       setNeedsConfirmation(true);
     } catch (err: unknown) {
-      setError(err instanceof Error ? err.message : 'Sign up failed. Please try again.');
+      setError(
+        err instanceof Error ? err.message : "Sign up failed. Please try again."
+      );
     } finally {
       setIsLoading(false);
     }
@@ -69,14 +71,19 @@ const SignUpPage = () => {
 
   const handleConfirm = async (e: React.FormEvent) => {
     e.preventDefault();
-    setError('');
+    setError("");
     setIsLoading(true);
 
     try {
-      await confirmSignup(username, confirmationCode);
-      navigate('/login');
+      // Use email for confirmation since Cognito username is now the email
+      await confirmSignup(email, confirmationCode);
+      navigate("/login");
     } catch (err: unknown) {
-      setError(err instanceof Error ? err.message : 'Confirmation failed. Please try again.');
+      setError(
+        err instanceof Error
+          ? err.message
+          : "Confirmation failed. Please try again."
+      );
     } finally {
       setIsLoading(false);
     }
@@ -122,7 +129,7 @@ const SignUpPage = () => {
                 disabled={isLoading}
                 className="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 disabled:opacity-50"
               >
-                {isLoading ? 'Confirming...' : 'Confirm'}
+                {isLoading ? "Confirming..." : "Confirm"}
               </button>
             </div>
           </form>
@@ -214,13 +221,16 @@ const SignUpPage = () => {
               disabled={isLoading}
               className="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 disabled:opacity-50"
             >
-              {isLoading ? 'Signing up...' : 'Sign up'}
+              {isLoading ? "Signing up..." : "Sign up"}
             </button>
           </div>
 
           <div className="text-center text-sm">
             <span className="text-gray-600">Already have an account? </span>
-            <Link to="/login" className="font-medium text-indigo-600 hover:text-indigo-500">
+            <Link
+              to="/login"
+              className="font-medium text-indigo-600 hover:text-indigo-500"
+            >
               Sign in
             </Link>
           </div>
@@ -231,4 +241,3 @@ const SignUpPage = () => {
 };
 
 export default SignUpPage;
-
