@@ -161,6 +161,7 @@ const SignUpPage = () => {
                 id="username"
                 name="username"
                 type="text"
+                autoComplete="nickname"
                 required
                 value={username}
                 onChange={(e) => setUsername(e.target.value)}
@@ -176,6 +177,7 @@ const SignUpPage = () => {
                 id="email"
                 name="email"
                 type="email"
+                autoComplete="username"
                 required
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
@@ -191,6 +193,7 @@ const SignUpPage = () => {
                 id="password"
                 name="password"
                 type="password"
+                autoComplete="new-password"
                 required
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
@@ -206,6 +209,7 @@ const SignUpPage = () => {
                 id="confirmPassword"
                 name="confirmPassword"
                 type="password"
+                autoComplete="new-password"
                 required
                 value={confirmPassword}
                 onChange={(e) => setConfirmPassword(e.target.value)}
