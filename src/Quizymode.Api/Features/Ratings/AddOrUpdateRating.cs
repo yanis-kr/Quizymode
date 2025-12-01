@@ -47,7 +47,6 @@ public static class AddOrUpdateRating
                 .RequireAuthorization()
                 .WithOpenApi()
                 .Produces<Response>(StatusCodes.Status200OK)
-                .Produces<Response>(StatusCodes.Status201Created)
                 .Produces(StatusCodes.Status400BadRequest);
         }
 
@@ -60,21 +59,20 @@ public static class AddOrUpdateRating
         {
             if (!userContext.IsAuthenticated || string.IsNullOrEmpty(userContext.UserId))
             {
-                return Results.Unauthorized();
+                return CustomResults.Unauthorized();
             }
 
             var validationResult = await validator.ValidateAsync(request, cancellationToken);
             if (!validationResult.IsValid)
             {
-                return Results.BadRequest(validationResult.Errors);
+                string errors = string.Join("; ", validationResult.Errors.Select(e => e.ErrorMessage));
+                return CustomResults.BadRequest(errors, "Validation failed");
             }
 
             Result<Response> result = await HandleAsync(request, db, userContext, cancellationToken);
 
             return result.Match(
-                value => value.UpdatedAt.HasValue 
-                    ? Results.Ok(value) 
-                    : Results.Created($"/api/ratings/{value.Id}", value),
+                value => Results.Ok(value),
                 error => CustomResults.Problem(result));
         }
     }

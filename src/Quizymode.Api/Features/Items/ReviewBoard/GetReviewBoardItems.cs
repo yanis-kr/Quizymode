@@ -26,8 +26,8 @@ public static class GetReviewBoardItems
     {
         public void MapEndpoint(IEndpointRouteBuilder app)
         {
-            app.MapGet("items/review-board", Handler)
-                .WithTags("Items")
+            app.MapGet("admin/items/review-board", Handler)
+                .WithTags("Admin")
                 .WithSummary("Get items ready for review (Admin only)")
                 .RequireAuthorization("Admin")
                 .WithOpenApi()
