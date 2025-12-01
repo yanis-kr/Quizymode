@@ -31,11 +31,15 @@ internal static partial class StartupExtensions
         string? configuredAudience = configuration["Authentication:Cognito:Audience"];
         string audience = string.IsNullOrWhiteSpace(configuredAudience) ? clientId : configuredAudience;
 
-        // DEBUG: Log configuration values (remove sensitive data in production)
-        System.Diagnostics.Debug.WriteLine($"[AUTH CONFIG] Authority: {authority}");
-        System.Diagnostics.Debug.WriteLine($"[AUTH CONFIG] ClientId: {clientId}");
-        System.Diagnostics.Debug.WriteLine($"[AUTH CONFIG] Configured Audience: '{configuredAudience ?? "null"}'");
-        System.Diagnostics.Debug.WriteLine($"[AUTH CONFIG] Final Audience: {audience}");
+        // Issuer can be configured separately, but defaults to authority
+        // For AWS Cognito, the issuer in tokens is typically the user pool issuer URL
+        // which may differ from the authority (domain) URL
+        string? configuredIssuer = configuration["Authentication:Cognito:Issuer"];
+        string issuer = string.IsNullOrWhiteSpace(configuredIssuer) ? authority : configuredIssuer;
+
+        // Log configuration values (using Serilog directly since logging is already configured)
+        Serilog.Log.Logger.Information("Authentication configuration - Authority: {Authority}, Issuer: {Issuer}, ClientId: {ClientId}, Audience: {Audience}", 
+            authority, issuer, clientId, audience);
 
         builder.Services
             .AddAuthentication(options =>
@@ -50,14 +54,14 @@ internal static partial class StartupExtensions
                 // Configure token validation parameters
                 // The middleware will automatically discover the metadata endpoint
                 // from the authority URL (/.well-known/openid-configuration)
+                // However, we explicitly set ValidIssuer to ensure it works in all environments
+                // For AWS Cognito, the issuer in tokens may differ from the authority URL
                 options.TokenValidationParameters = new TokenValidationParameters
                 {
                     ValidateAudience = true,
                     ValidAudience = audience,
                     ValidateIssuer = true,
-                    // ValidIssuer is not set explicitly - the middleware will automatically
-                    // discover and validate the issuer from the OpenID Connect metadata
-                    // endpoint when options.Authority is set above
+                    ValidIssuer = issuer, // Explicitly set issuer (defaults to authority if not configured)
                     ValidateLifetime = true,
                     ValidateIssuerSigningKey = true,
                     // Cognito uses RS256 for token signing
