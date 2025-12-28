@@ -12,6 +12,7 @@ import {
   signUp,
   confirmSignUp,
 } from "aws-amplify/auth";
+import { setTokens, clearTokens } from "@/utils/tokenStorage";
 
 interface AuthContextType {
   isAuthenticated: boolean;
@@ -49,6 +50,16 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
   const [email, setEmail] = useState<string | null>(null);
   const [isAdmin, setIsAdmin] = useState(false);
 
+  // Helper function to clear all auth state
+  const clearAuthState = () => {
+    setIsAuthenticated(false);
+    setUserId(null);
+    setUsername(null);
+    setEmail(null);
+    setIsAdmin(false);
+    clearTokens();
+  };
+
   const refreshAuth = async () => {
     try {
       const session = await fetchAuthSession();
@@ -62,13 +73,7 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
         if (exp && exp < now) {
           // Token expired - clear auth state
           console.warn("Token expired, clearing auth state");
-          setIsAuthenticated(false);
-          setUserId(null);
-          setUsername(null);
-          setEmail(null);
-          setIsAdmin(false);
-          localStorage.removeItem("accessToken");
-          localStorage.removeItem("idToken");
+          clearAuthState();
           return;
         }
 
@@ -95,23 +100,21 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
         );
 
         // Store tokens
-        localStorage.setItem("accessToken", token.toString());
+        const idToken = session.tokens.idToken?.toString() || null;
+        setTokens(token.toString(), idToken);
+
         if (session.tokens.idToken) {
-          const idToken = session.tokens.idToken;
-          const idPayload = JSON.parse(atob(idToken.toString().split(".")[1]));
+          const idTokenValue = session.tokens.idToken;
+          const idPayload = JSON.parse(
+            atob(idTokenValue.toString().split(".")[1])
+          );
 
           // Also validate ID token expiration
           const idExp = idPayload.exp;
           if (idExp && idExp < now) {
             // ID token expired - clear auth state
             console.warn("ID token expired, clearing auth state");
-            setIsAuthenticated(false);
-            setUserId(null);
-            setUsername(null);
-            setEmail(null);
-            setIsAdmin(false);
-            localStorage.removeItem("accessToken");
-            localStorage.removeItem("idToken");
+            clearAuthState();
             return;
           }
 
@@ -127,29 +130,15 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
               g.toLowerCase().startsWith("admin")
             );
           }
-
-          localStorage.setItem("idToken", idToken.toString());
         }
 
         setIsAdmin(isUserAdmin);
       } else {
-        setIsAuthenticated(false);
-        setUserId(null);
-        setUsername(null);
-        setEmail(null);
-        setIsAdmin(false);
-        localStorage.removeItem("accessToken");
-        localStorage.removeItem("idToken");
+        clearAuthState();
       }
     } catch (error) {
       console.error("Auth refresh error:", error);
-      setIsAuthenticated(false);
-      setUserId(null);
-      setUsername(null);
-      setEmail(null);
-      setIsAdmin(false);
-      localStorage.removeItem("accessToken");
-      localStorage.removeItem("idToken");
+      clearAuthState();
     } finally {
       setIsLoading(false);
     }
@@ -207,13 +196,7 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
   const logout = async () => {
     try {
       await signOut();
-      setIsAuthenticated(false);
-      setUserId(null);
-      setUsername(null);
-      setEmail(null);
-      setIsAdmin(false);
-      localStorage.removeItem("accessToken");
-      localStorage.removeItem("idToken");
+      clearAuthState();
     } catch (error) {
       console.error("Logout error:", error);
       throw error;
