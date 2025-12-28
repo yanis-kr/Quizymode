@@ -114,12 +114,12 @@ export interface AddItemToCollectionRequest {
 
 export interface CreateReviewRequest {
   itemId: string;
-  reaction: 'like' | 'dislike' | 'neutral';
+  reaction: "like" | "dislike" | "neutral";
   comment: string;
 }
 
 export interface UpdateReviewRequest {
-  reaction?: 'like' | 'dislike' | 'neutral';
+  reaction?: "like" | "dislike" | "neutral";
   comment?: string;
 }
 
@@ -156,4 +156,3 @@ export interface CheckUserAvailabilityResponse {
   usernameError?: string | null;
   emailError?: string | null;
 }
-

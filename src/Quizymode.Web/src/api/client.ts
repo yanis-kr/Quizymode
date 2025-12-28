@@ -1,5 +1,6 @@
 import axios from "axios";
 import type { AxiosInstance, InternalAxiosRequestConfig } from "axios";
+import { getToken, clearTokens } from "@/utils/tokenStorage";
 
 const API_URL = import.meta.env.VITE_API_URL || "https://localhost:8080";
 
@@ -16,8 +17,7 @@ export const apiClient: AxiosInstance = axios.create({
 apiClient.interceptors.request.use(
   (config: InternalAxiosRequestConfig) => {
     // Use ID token for API calls (access token is for AWS services)
-    const token =
-      localStorage.getItem("idToken") || localStorage.getItem("accessToken");
+    const token = getToken();
     if (token && config.headers) {
       config.headers.Authorization = `Bearer ${token}`;
     }
@@ -34,8 +34,7 @@ apiClient.interceptors.response.use(
   async (error) => {
     if (error.response?.status === 401) {
       // Token expired or invalid - clear storage
-      localStorage.removeItem("accessToken");
-      localStorage.removeItem("idToken");
+      clearTokens();
 
       // Check both current pathname and failed endpoint URL
       // Don't redirect if we're on a public route OR if the failed endpoint is public

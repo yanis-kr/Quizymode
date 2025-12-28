@@ -26,26 +26,10 @@ const ItemCollectionsModal = ({
     enabled: isAuthenticated && isOpen,
   });
 
-  const { data: itemCollectionsData } = useQuery({
+  const { data: itemCollectionsData, isLoading: isLoadingItemCollections } = useQuery({
     queryKey: ["itemCollections", itemId],
-    queryFn: async () => {
-      const allCollections = collectionsData?.collections || [];
-      const itemCollections: CollectionResponse[] = [];
-
-      for (const collection of allCollections) {
-        try {
-          const itemsData = await collectionsApi.getItems(collection.id);
-          if (itemsData.items.some((item) => item.id === itemId)) {
-            itemCollections.push(collection);
-          }
-        } catch {
-          // Collection might not exist or user doesn't have access
-        }
-      }
-
-      return { collections: itemCollections };
-    },
-    enabled: isAuthenticated && !!collectionsData && isOpen,
+    queryFn: () => collectionsApi.getCollectionsForItem(itemId),
+    enabled: isAuthenticated && isOpen,
   });
 
   const removeFromCollectionMutation = useMutation({
@@ -123,7 +107,7 @@ const ItemCollectionsModal = ({
           </button>
         </div>
 
-        {isLoading ? (
+        {isLoading || isLoadingItemCollections ? (
           <div className="text-center py-4">Loading collections...</div>
         ) : (
           <div className="space-y-4">

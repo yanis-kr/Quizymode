@@ -68,4 +68,13 @@ export const collectionsApi = {
   ): Promise<void> => {
     await apiClient.delete(`/collections/${collectionId}/items/${itemId}`);
   },
+
+  getCollectionsForItem: async (
+    itemId: string
+  ): Promise<CollectionsResponse> => {
+    const response = await apiClient.get<CollectionsResponse>(
+      `/items/${itemId}/collections`
+    );
+    return response.data;
+  },
 };

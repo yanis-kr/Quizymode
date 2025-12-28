@@ -247,6 +247,15 @@ const HomePage = () => {
           </div>
         </div>
       </div>
+
+      {/* Build Timestamp Footer */}
+      {typeof __BUILD_TIME__ !== "undefined" && (
+        <div className="text-center py-4">
+          <p className="text-xs text-gray-500">
+            Built {new Date(__BUILD_TIME__).toLocaleString()}
+          </p>
+        </div>
+      )}
     </div>
   );
 };
