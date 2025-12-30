@@ -6,6 +6,8 @@ A quiz application API built with ASP.NET Core 9, Entity Framework Core, and Pos
 
 Quizymode is a RESTful API for managing quiz items. It provides endpoints for creating, retrieving, updating, and deleting quiz items with support for categories, subcategories, and duplicate detection using SimHash algorithms.
 
+Visit [https://www.quizymode.com/](https://www.quizymode.com/) to use the application.
+
 ### Key Features
 
 - **Quiz Item Management**: Create, read, update, and delete quiz items
