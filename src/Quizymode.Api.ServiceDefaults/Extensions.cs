@@ -2,6 +2,7 @@ using System;
 using System.Linq;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Diagnostics.HealthChecks;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Diagnostics.HealthChecks;
 using Microsoft.Extensions.Logging;
@@ -81,9 +82,24 @@ public static class Extensions
 
     private static TBuilder AddOpenTelemetryExporters<TBuilder>(this TBuilder builder) where TBuilder : IHostApplicationBuilder
     {
-        // Check for OTLP endpoint via environment variable (for Aspire) or configuration
-        var otlpEndpoint = builder.Configuration["OTEL_EXPORTER_OTLP_ENDPOINT"] 
-            ?? builder.Configuration["GrafanaCloud:OtlpEndpoint"];
+        // Check if Grafana Cloud is explicitly configured
+        var grafanaCloudEnabled = builder.Configuration.GetValue<bool>("GrafanaCloud:Enabled", false);
+        var grafanaCloudOtlpEndpoint = builder.Configuration["GrafanaCloud:OtlpEndpoint"];
+        
+        // If Grafana Cloud is enabled, use it (even if Aspire is running)
+        // Otherwise, check for OTLP endpoint via environment variable (for Aspire)
+        string? otlpEndpoint = null;
+        
+        if (grafanaCloudEnabled && !string.IsNullOrWhiteSpace(grafanaCloudOtlpEndpoint))
+        {
+            // Grafana Cloud is explicitly configured - use it
+            otlpEndpoint = grafanaCloudOtlpEndpoint;
+        }
+        else
+        {
+            // Fall back to Aspire's OTLP endpoint if available
+            otlpEndpoint = builder.Configuration["OTEL_EXPORTER_OTLP_ENDPOINT"];
+        }
 
         if (!string.IsNullOrWhiteSpace(otlpEndpoint))
         {
@@ -97,7 +113,9 @@ public static class Extensions
             // Use environment variable headers if provided, otherwise construct from Grafana Cloud config
             var otlpHeaders = builder.Configuration["OTEL_EXPORTER_OTLP_HEADERS"];
             
-            if (string.IsNullOrWhiteSpace(otlpHeaders) && 
+            // Only construct Grafana Cloud auth headers if Grafana Cloud is enabled
+            if (grafanaCloudEnabled && 
+                string.IsNullOrWhiteSpace(otlpHeaders) && 
                 !string.IsNullOrWhiteSpace(otlpInstanceId) && 
                 !string.IsNullOrWhiteSpace(otlpApiKey))
             {
