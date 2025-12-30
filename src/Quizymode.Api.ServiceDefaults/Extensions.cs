@@ -7,6 +7,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Diagnostics.HealthChecks;
 using Microsoft.Extensions.Logging;
 using OpenTelemetry;
+using OpenTelemetry.Instrumentation.EntityFrameworkCore;
 using OpenTelemetry.Metrics;
 using OpenTelemetry.Trace;
 
@@ -54,7 +55,7 @@ public static class Extensions
             logging.IncludeScopes = true;
         });
 
-        builder.Services.AddOpenTelemetry()
+        var openTelemetryBuilder = builder.Services.AddOpenTelemetry()
             .WithMetrics(metrics =>
             {
                 metrics.AddAspNetCoreInstrumentation()
@@ -72,15 +73,25 @@ public static class Extensions
                     )
                     // Uncomment the following line to enable gRPC instrumentation (requires the OpenTelemetry.Instrumentation.GrpcNetClient package)
                     //.AddGrpcClientInstrumentation()
-                    .AddHttpClientInstrumentation();
+                    .AddHttpClientInstrumentation()
+                    .AddEntityFrameworkCoreInstrumentation(options =>
+                    {
+                        // Instrument EF Core database operations
+                        options.SetDbStatementForText = true;
+                        options.EnrichWithIDbCommand = (activity, command) =>
+                        {
+                            activity.SetTag("db.system", "postgresql");
+                        };
+                    });
             });
 
-        builder.AddOpenTelemetryExporters();
+        // Configure exporters (OTLP for Grafana Cloud or Aspire)
+        builder.AddOpenTelemetryExporters(openTelemetryBuilder);
 
         return builder;
     }
 
-    private static TBuilder AddOpenTelemetryExporters<TBuilder>(this TBuilder builder) where TBuilder : IHostApplicationBuilder
+    private static TBuilder AddOpenTelemetryExporters<TBuilder>(this TBuilder builder, OpenTelemetry.OpenTelemetryBuilder openTelemetryBuilder) where TBuilder : IHostApplicationBuilder
     {
         // Check if Grafana Cloud is explicitly configured
         var grafanaCloudEnabled = builder.Configuration.GetValue<bool>("GrafanaCloud:Enabled", false);
@@ -133,8 +144,8 @@ public static class Extensions
                 Environment.SetEnvironmentVariable("OTEL_EXPORTER_OTLP_HEADERS", otlpHeaders);
             }
             
-            // UseOtlpExporter() reads from OTEL_EXPORTER_OTLP_ENDPOINT and OTEL_EXPORTER_OTLP_HEADERS environment variables
-            builder.Services.AddOpenTelemetry().UseOtlpExporter();
+            // Chain UseOtlpExporter to the existing OpenTelemetry builder
+            openTelemetryBuilder.UseOtlpExporter();
         }
 
         // Uncomment the following lines to enable the Azure Monitor exporter (requires the Azure.Monitor.OpenTelemetry.AspNetCore package)
