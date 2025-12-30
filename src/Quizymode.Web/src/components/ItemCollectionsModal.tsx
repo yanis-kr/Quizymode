@@ -3,7 +3,6 @@ import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
 import { collectionsApi } from "@/api/collections";
 import { useAuth } from "@/contexts/AuthContext";
 import { XMarkIcon } from "@heroicons/react/24/outline";
-import type { CollectionResponse } from "@/types/api";
 
 interface ItemCollectionsModalProps {
   isOpen: boolean;

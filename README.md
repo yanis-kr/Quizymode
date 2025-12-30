@@ -160,6 +160,56 @@ dotnet ef database update
 dotnet test
 ```
 
+## Deployment
+
+### Deploying Web Application to S3
+
+The web application can be deployed to AWS S3 using the provided PowerShell script.
+
+**Prerequisites:**
+
+- AWS CLI installed and configured
+- AWS credentials configured (via `aws configure` or environment variables)
+- Node.js installed (for building the web project)
+
+**Deploy to S3:**
+
+```powershell
+.\scripts\deploy-to-s3.ps1
+```
+
+**Options:**
+
+- `-SkipBuild` - Skip building the web project (use existing build output)
+- `-SkipCloudFrontInvalidation` - Skip CloudFront cache invalidation
+
+**Examples:**
+
+```powershell
+# Full deployment (build + deploy + invalidate cache)
+.\scripts\deploy-to-s3.ps1
+
+# Deploy without rebuilding
+.\scripts\deploy-to-s3.ps1 -SkipBuild
+
+# Deploy without invalidating CloudFront cache
+.\scripts\deploy-to-s3.ps1 -SkipCloudFrontInvalidation
+```
+
+The script will:
+
+1. Verify AWS CLI installation and credentials
+2. Build the web project (unless `-SkipBuild` is specified)
+3. Sync files to S3 bucket `quizymode-web`
+4. Set appropriate cache headers (immutable for assets, no-cache for HTML)
+5. Invalidate CloudFront cache (unless `-SkipCloudFrontInvalidation` is specified)
+
+**S3 Bucket Configuration:**
+
+- Bucket: `quizymode-web`
+- CloudFront Distribution: `EH1DS9REH8KR5`
+- The bucket policy restricts access to CloudFront only
+
 ## Documentation
 
 For detailed documentation, see the `docs/` folder (development documentation only, not included in distribution).
