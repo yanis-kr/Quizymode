@@ -36,7 +36,11 @@ internal sealed class DatabaseSeederHostedService(
 
                 _logger.LogInformation("Attempting to apply database migrations (attempt {Attempt}/{MaxRetries})...", attempt, maxRetries);
                 
-                // Apply migrations
+                // Check if we can connect to the database
+                bool canConnect = await db.Database.CanConnectAsync(cancellationToken);
+                _logger.LogInformation("Database connection check: {CanConnect}", canConnect);
+                
+                // Apply migrations (MigrateAsync should create the database and __EFMigrationsHistory table if needed)
                 await db.Database.MigrateAsync(cancellationToken);
                 
                 _logger.LogInformation("Database migrations applied successfully.");

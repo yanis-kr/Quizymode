@@ -44,8 +44,27 @@ internal static partial class StartupExtensions
                         }
                     }
                     
-                    // Exclude logs that mention health check endpoints in the message
+                    // Get message once for reuse
                     string message = logEvent.RenderMessage();
+                    
+                    // Exclude EF Core migration history errors - these are expected when the table doesn't exist yet
+                    // EventId 20102 is Microsoft.EntityFrameworkCore.Database.Command.CommandError
+                    if (logEvent.Properties.TryGetValue("EventId", out var eventId))
+                    {
+                        string? eventIdStr = eventId.ToString();
+                        if (eventIdStr.Contains("20102", StringComparison.OrdinalIgnoreCase))
+                        {
+                            // Filter out errors about __EFMigrationsHistory table not existing
+                            // This is expected behavior when migrations run on a fresh database
+                            if (message.Contains("__EFMigrationsHistory", StringComparison.OrdinalIgnoreCase) ||
+                                message.Contains("relation \"__EFMigrationsHistory\" does not exist", StringComparison.OrdinalIgnoreCase))
+                            {
+                                return true;
+                            }
+                        }
+                    }
+                    
+                    // Exclude logs that mention health check endpoints in the message
                     return message.Contains("/health", StringComparison.OrdinalIgnoreCase);
                 })
                 .Enrich.FromLogContext()
