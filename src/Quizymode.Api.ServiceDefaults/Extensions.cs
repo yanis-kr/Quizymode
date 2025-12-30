@@ -1,3 +1,5 @@
+using System;
+using System.Linq;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Diagnostics.HealthChecks;
 using Microsoft.Extensions.DependencyInjection;
@@ -79,10 +81,38 @@ public static class Extensions
 
     private static TBuilder AddOpenTelemetryExporters<TBuilder>(this TBuilder builder) where TBuilder : IHostApplicationBuilder
     {
-        var useOtlpExporter = !string.IsNullOrWhiteSpace(builder.Configuration["OTEL_EXPORTER_OTLP_ENDPOINT"]);
+        // Check for OTLP endpoint via environment variable (for Aspire) or configuration
+        var otlpEndpoint = builder.Configuration["OTEL_EXPORTER_OTLP_ENDPOINT"] 
+            ?? builder.Configuration["GrafanaCloud:OtlpEndpoint"];
 
-        if (useOtlpExporter)
+        if (!string.IsNullOrWhiteSpace(otlpEndpoint))
         {
+            // Configure OTLP exporter with optional Grafana Cloud authentication
+            var grafanaInstanceId = builder.Configuration["GrafanaCloud:InstanceId"];
+            var grafanaApiKey = builder.Configuration["GrafanaCloud:ApiKey"];
+            
+            // Use environment variable headers if provided, otherwise construct from Grafana Cloud config
+            var otlpHeaders = builder.Configuration["OTEL_EXPORTER_OTLP_HEADERS"];
+            
+            if (string.IsNullOrWhiteSpace(otlpHeaders) && 
+                !string.IsNullOrWhiteSpace(grafanaInstanceId) && 
+                !string.IsNullOrWhiteSpace(grafanaApiKey))
+            {
+                // Construct Basic auth header for Grafana Cloud: base64(instanceId:apiKey)
+                var credentials = System.Text.Encoding.UTF8.GetBytes($"{grafanaInstanceId}:{grafanaApiKey}");
+                var base64Credentials = Convert.ToBase64String(credentials);
+                otlpHeaders = $"Authorization=Basic {base64Credentials}";
+            }
+
+            // Set environment variables for OTLP exporter (it reads from these automatically)
+            Environment.SetEnvironmentVariable("OTEL_EXPORTER_OTLP_ENDPOINT", otlpEndpoint);
+            
+            if (!string.IsNullOrWhiteSpace(otlpHeaders))
+            {
+                Environment.SetEnvironmentVariable("OTEL_EXPORTER_OTLP_HEADERS", otlpHeaders);
+            }
+            
+            // UseOtlpExporter() reads from OTEL_EXPORTER_OTLP_ENDPOINT and OTEL_EXPORTER_OTLP_HEADERS environment variables
             builder.Services.AddOpenTelemetry().UseOtlpExporter();
         }
 
