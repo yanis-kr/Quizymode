@@ -1,5 +1,6 @@
 using FluentAssertions;
 using Microsoft.EntityFrameworkCore;
+using Moq;
 using Quizymode.Api.Data;
 using Quizymode.Api.Features.Items.Update;
 using Quizymode.Api.Services;
@@ -13,6 +14,8 @@ public sealed class UpdateItemTests : IDisposable
 {
     private readonly ApplicationDbContext _dbContext;
     private readonly ISimHashService _simHashService;
+    private readonly Mock<IUserContext> _userContextMock;
+    private readonly Mock<IAuditService> _auditServiceMock;
 
     public UpdateItemTests()
     {
@@ -22,6 +25,10 @@ public sealed class UpdateItemTests : IDisposable
 
         _dbContext = new ApplicationDbContext(options);
         _simHashService = new SimHashService();
+        _userContextMock = new Mock<IUserContext>();
+        _userContextMock.Setup(x => x.UserId).Returns(Guid.NewGuid().ToString());
+        _userContextMock.Setup(x => x.IsAuthenticated).Returns(true);
+        _auditServiceMock = new Mock<IAuditService>();
     }
 
     [Fact]
@@ -62,6 +69,8 @@ public sealed class UpdateItemTests : IDisposable
             request,
             _dbContext,
             _simHashService,
+            _userContextMock.Object,
+            _auditServiceMock.Object,
             CancellationToken.None);
 
         // Assert
@@ -75,6 +84,16 @@ public sealed class UpdateItemTests : IDisposable
         updatedItem.Should().NotBeNull();
         updatedItem!.Explanation.Should().Be("New explanation");
         updatedItem.IncorrectAnswers.Should().HaveCount(2);
+
+        // Verify audit logging was called
+        _auditServiceMock.Verify(
+            x => x.LogAsync(
+                AuditAction.ItemUpdated,
+                It.IsAny<Guid?>(),
+                It.Is<Guid?>(eid => eid == itemId),
+                It.IsAny<Dictionary<string, string>?>(),
+                It.IsAny<CancellationToken>()),
+            Times.Once);
     }
 
     [Fact]
@@ -117,6 +136,8 @@ public sealed class UpdateItemTests : IDisposable
             request,
             _dbContext,
             _simHashService,
+            _userContextMock.Object,
+            _auditServiceMock.Object,
             CancellationToken.None);
 
         // Assert
@@ -167,6 +188,8 @@ public sealed class UpdateItemTests : IDisposable
             request,
             _dbContext,
             _simHashService,
+            _userContextMock.Object,
+            _auditServiceMock.Object,
             CancellationToken.None);
 
         // Assert
@@ -197,6 +220,8 @@ public sealed class UpdateItemTests : IDisposable
             request,
             _dbContext,
             _simHashService,
+            _userContextMock.Object,
+            _auditServiceMock.Object,
             CancellationToken.None);
 
         // Assert
@@ -226,6 +251,8 @@ public sealed class UpdateItemTests : IDisposable
             request,
             _dbContext,
             _simHashService,
+            _userContextMock.Object,
+            _auditServiceMock.Object,
             CancellationToken.None);
 
         // Assert

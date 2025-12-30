@@ -19,6 +19,7 @@ internal static partial class StartupExtensions
         builder.Services.AddSingleton<ISimHashService, SimHashService>();
         builder.Services.AddHttpContextAccessor();
         builder.Services.AddScoped<IUserContext, UserContext>();
+        builder.Services.AddScoped<IAuditService, AuditService>();
         return builder;
     }
 }

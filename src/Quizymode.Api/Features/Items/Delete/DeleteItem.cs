@@ -1,5 +1,6 @@
 using Quizymode.Api.Data;
 using Quizymode.Api.Infrastructure;
+using Quizymode.Api.Services;
 using Quizymode.Api.Shared.Kernel;
 
 namespace Quizymode.Api.Features.Items.Delete;
@@ -24,9 +25,11 @@ public static class DeleteItem
         private static async Task<IResult> Handler(
             string id,
             ApplicationDbContext db,
+            IUserContext userContext,
+            IAuditService auditService,
             CancellationToken cancellationToken)
         {
-            Result result = await DeleteItemHandler.HandleAsync(id, db, cancellationToken);
+            Result result = await DeleteItemHandler.HandleAsync(id, db, userContext, auditService, cancellationToken);
 
             return result.Match(
                 () => Results.NoContent(),

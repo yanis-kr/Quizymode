@@ -87,6 +87,7 @@ public static class AddItem
             ApplicationDbContext db,
             ISimHashService simHashService,
             IUserContext userContext,
+            IAuditService auditService,
             CancellationToken cancellationToken)
         {
             var validationResult = await validator.ValidateAsync(request, cancellationToken);
@@ -95,7 +96,7 @@ public static class AddItem
                 return Results.BadRequest(validationResult.Errors);
             }
 
-            Result<Response> result = await AddItemHandler.HandleAsync(request, db, simHashService, userContext, cancellationToken);
+            Result<Response> result = await AddItemHandler.HandleAsync(request, db, simHashService, userContext, auditService, cancellationToken);
 
             return result.Match(
                 value => Results.Created($"/api/items/{value.Id}", value),

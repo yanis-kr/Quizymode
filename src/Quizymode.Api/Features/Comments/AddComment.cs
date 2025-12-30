@@ -56,6 +56,7 @@ public static class AddComment
             IValidator<Request> validator,
             ApplicationDbContext db,
             IUserContext userContext,
+            IAuditService auditService,
             CancellationToken cancellationToken)
         {
             if (!userContext.IsAuthenticated || string.IsNullOrEmpty(userContext.UserId))
@@ -69,7 +70,7 @@ public static class AddComment
                 return Results.BadRequest(validationResult.Errors);
             }
 
-            Result<Response> result = await HandleAsync(request, db, userContext, cancellationToken);
+            Result<Response> result = await HandleAsync(request, db, userContext, auditService, cancellationToken);
 
             return result.Match(
                 value => Results.Created($"/api/comments/{value.Id}", value),
@@ -81,6 +82,7 @@ public static class AddComment
         Request request,
         ApplicationDbContext db,
         IUserContext userContext,
+        IAuditService auditService,
         CancellationToken cancellationToken)
     {
         try
@@ -110,12 +112,22 @@ public static class AddComment
             db.Comments.Add(entity);
             await db.SaveChangesAsync(cancellationToken);
 
-            // Fetch user name for response
-            string? userName = null;
+            // Log audit entry
             if (Guid.TryParse(userContext.UserId, out Guid userId))
             {
+                await auditService.LogAsync(
+                    AuditAction.CommentCreated,
+                    userId: userId,
+                    entityId: entity.Id,
+                    cancellationToken: cancellationToken);
+            }
+
+            // Fetch user name for response
+            string? userName = null;
+            if (Guid.TryParse(userContext.UserId, out Guid userIdForName))
+            {
                 User? user = await db.Users
-                    .FirstOrDefaultAsync(u => u.Id == userId, cancellationToken);
+                    .FirstOrDefaultAsync(u => u.Id == userIdForName, cancellationToken);
                 userName = user?.Name;
             }
 
