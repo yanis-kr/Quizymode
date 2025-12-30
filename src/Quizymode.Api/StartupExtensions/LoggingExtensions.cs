@@ -88,28 +88,18 @@ internal static partial class StartupExtensions
                 grafanaOptions = new GrafanaCloudOptions
                 {
                     Enabled = context.Configuration.GetValue<bool>($"{GrafanaCloudOptions.SectionName}:Enabled"),
+                    OtlpEndpoint = context.Configuration[$"{GrafanaCloudOptions.SectionName}:OtlpEndpoint"] ?? string.Empty,
                     LokiEndpoint = context.Configuration[$"{GrafanaCloudOptions.SectionName}:LokiEndpoint"] ?? string.Empty,
-                    LokiInstanceId = context.Configuration[$"{GrafanaCloudOptions.SectionName}:LokiInstanceId"] 
-                        ?? context.Configuration[$"{GrafanaCloudOptions.SectionName}:InstanceId"] ?? string.Empty,
-                    LokiApiKey = context.Configuration[$"{GrafanaCloudOptions.SectionName}:LokiApiKey"] 
-                        ?? context.Configuration[$"{GrafanaCloudOptions.SectionName}:ApiKey"] ?? string.Empty,
-                    InstanceId = context.Configuration[$"{GrafanaCloudOptions.SectionName}:InstanceId"] ?? string.Empty,
+                    OtlpInstanceId = context.Configuration[$"{GrafanaCloudOptions.SectionName}:OtlpInstanceId"] ?? string.Empty,
+                    LokiInstanceId = context.Configuration[$"{GrafanaCloudOptions.SectionName}:LokiInstanceId"] ?? string.Empty,
                     ApiKey = context.Configuration[$"{GrafanaCloudOptions.SectionName}:ApiKey"] ?? string.Empty
                 };
             }
 
-            // Use Loki-specific instance ID/API key, with fallback to legacy InstanceId/ApiKey
-            string lokiInstanceId = !string.IsNullOrWhiteSpace(grafanaOptions.LokiInstanceId) 
-                ? grafanaOptions.LokiInstanceId 
-                : grafanaOptions.InstanceId;
-            string lokiApiKey = !string.IsNullOrWhiteSpace(grafanaOptions.LokiApiKey) 
-                ? grafanaOptions.LokiApiKey 
-                : grafanaOptions.ApiKey;
-
             if (grafanaOptions.Enabled && 
                 !string.IsNullOrWhiteSpace(grafanaOptions.LokiEndpoint) &&
-                !string.IsNullOrWhiteSpace(lokiInstanceId) &&
-                !string.IsNullOrWhiteSpace(lokiApiKey))
+                !string.IsNullOrWhiteSpace(grafanaOptions.LokiInstanceId) &&
+                !string.IsNullOrWhiteSpace(grafanaOptions.ApiKey))
             {
                 configuration.WriteTo.GrafanaLoki(
                     grafanaOptions.LokiEndpoint,
@@ -120,8 +110,8 @@ internal static partial class StartupExtensions
                     },
                     credentials: new LokiCredentials
                     {
-                        Login = lokiInstanceId,
-                        Password = lokiApiKey
+                        Login = grafanaOptions.LokiInstanceId,
+                        Password = grafanaOptions.ApiKey
                     });
             }
         });
