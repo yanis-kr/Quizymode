@@ -36,7 +36,11 @@ internal sealed class DatabaseSeederHostedService(
 
                 _logger.LogInformation("Attempting to apply database migrations (attempt {Attempt}/{MaxRetries})...", attempt, maxRetries);
                 
-                // Apply migrations
+                // Check if we can connect to the database
+                bool canConnect = await db.Database.CanConnectAsync(cancellationToken);
+                _logger.LogInformation("Database connection check: {CanConnect}", canConnect);
+                
+                // Apply migrations (MigrateAsync should create the database and __EFMigrationsHistory table if needed)
                 await db.Database.MigrateAsync(cancellationToken);
                 
                 _logger.LogInformation("Database migrations applied successfully.");
@@ -45,13 +49,15 @@ internal sealed class DatabaseSeederHostedService(
             }
             catch (Exception ex) when (attempt < maxRetries)
             {
-                _logger.LogWarning(ex, "Migration attempt {Attempt} failed. Retrying in {Delay}ms... Error: {Error}", attempt, delayMs, ex.Message);
+                string fullError = GetFullExceptionMessage(ex);
+                _logger.LogWarning(ex, "Migration attempt {Attempt} failed. Retrying in {Delay}ms... Error: {Error}", attempt, delayMs, fullError);
                 await Task.Delay(delayMs, cancellationToken);
                 continue;
             }
             catch (Exception ex)
             {
-                _logger.LogError(ex, "All migration attempts failed. Last error: {Error}", ex.Message);
+                string fullError = GetFullExceptionMessage(ex);
+                _logger.LogError(ex, "All migration attempts failed. Last error: {Error}", fullError);
                 throw; // Re-throw on final attempt
             }
         }
@@ -159,6 +165,16 @@ internal sealed class DatabaseSeederHostedService(
     }
 
     public Task StopAsync(CancellationToken cancellationToken) => Task.CompletedTask;
+
+    private static string GetFullExceptionMessage(Exception ex)
+    {
+        if (ex.InnerException is null)
+        {
+            return ex.Message;
+        }
+
+        return $"{ex.Message} -> {GetFullExceptionMessage(ex.InnerException)}";
+    }
 
     private string? ResolveSeedPath(string configuredSeedPath)
     {
