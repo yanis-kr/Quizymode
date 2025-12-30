@@ -370,3 +370,4 @@ pubtest/
 .env
 .env.local
 .env.*.local
+src/Quizymode.Api/appsettings.Development.json
