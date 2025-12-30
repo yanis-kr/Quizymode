@@ -70,20 +70,28 @@ internal static partial class StartupExtensions
                 {
                     Enabled = context.Configuration.GetValue<bool>($"{GrafanaCloudOptions.SectionName}:Enabled"),
                     LokiEndpoint = context.Configuration[$"{GrafanaCloudOptions.SectionName}:LokiEndpoint"] ?? string.Empty,
+                    LokiInstanceId = context.Configuration[$"{GrafanaCloudOptions.SectionName}:LokiInstanceId"] 
+                        ?? context.Configuration[$"{GrafanaCloudOptions.SectionName}:InstanceId"] ?? string.Empty,
+                    LokiApiKey = context.Configuration[$"{GrafanaCloudOptions.SectionName}:LokiApiKey"] 
+                        ?? context.Configuration[$"{GrafanaCloudOptions.SectionName}:ApiKey"] ?? string.Empty,
                     InstanceId = context.Configuration[$"{GrafanaCloudOptions.SectionName}:InstanceId"] ?? string.Empty,
                     ApiKey = context.Configuration[$"{GrafanaCloudOptions.SectionName}:ApiKey"] ?? string.Empty
                 };
             }
 
+            // Use Loki-specific instance ID/API key, with fallback to legacy InstanceId/ApiKey
+            string lokiInstanceId = !string.IsNullOrWhiteSpace(grafanaOptions.LokiInstanceId) 
+                ? grafanaOptions.LokiInstanceId 
+                : grafanaOptions.InstanceId;
+            string lokiApiKey = !string.IsNullOrWhiteSpace(grafanaOptions.LokiApiKey) 
+                ? grafanaOptions.LokiApiKey 
+                : grafanaOptions.ApiKey;
+
             if (grafanaOptions.Enabled && 
                 !string.IsNullOrWhiteSpace(grafanaOptions.LokiEndpoint) &&
-                !string.IsNullOrWhiteSpace(grafanaOptions.InstanceId) &&
-                !string.IsNullOrWhiteSpace(grafanaOptions.ApiKey))
+                !string.IsNullOrWhiteSpace(lokiInstanceId) &&
+                !string.IsNullOrWhiteSpace(lokiApiKey))
             {
-                // Construct Basic auth header for Grafana Cloud: base64(instanceId:apiKey)
-                byte[] credentials = Encoding.UTF8.GetBytes($"{grafanaOptions.InstanceId}:{grafanaOptions.ApiKey}");
-                string base64Credentials = Convert.ToBase64String(credentials);
-
                 configuration.WriteTo.GrafanaLoki(
                     grafanaOptions.LokiEndpoint,
                     labels: new[]
@@ -93,8 +101,8 @@ internal static partial class StartupExtensions
                     },
                     credentials: new LokiCredentials
                     {
-                        Login = grafanaOptions.InstanceId,
-                        Password = grafanaOptions.ApiKey
+                        Login = lokiInstanceId,
+                        Password = lokiApiKey
                     });
             }
         });

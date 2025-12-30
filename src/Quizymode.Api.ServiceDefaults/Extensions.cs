@@ -88,18 +88,21 @@ public static class Extensions
         if (!string.IsNullOrWhiteSpace(otlpEndpoint))
         {
             // Configure OTLP exporter with optional Grafana Cloud authentication
-            var grafanaInstanceId = builder.Configuration["GrafanaCloud:InstanceId"];
-            var grafanaApiKey = builder.Configuration["GrafanaCloud:ApiKey"];
+            // Support separate OTLP instance ID/API key, with fallback to legacy InstanceId/ApiKey
+            var otlpInstanceId = builder.Configuration["GrafanaCloud:OtlpInstanceId"] 
+                ?? builder.Configuration["GrafanaCloud:InstanceId"] ?? string.Empty;
+            var otlpApiKey = builder.Configuration["GrafanaCloud:OtlpApiKey"] 
+                ?? builder.Configuration["GrafanaCloud:ApiKey"] ?? string.Empty;
             
             // Use environment variable headers if provided, otherwise construct from Grafana Cloud config
             var otlpHeaders = builder.Configuration["OTEL_EXPORTER_OTLP_HEADERS"];
             
             if (string.IsNullOrWhiteSpace(otlpHeaders) && 
-                !string.IsNullOrWhiteSpace(grafanaInstanceId) && 
-                !string.IsNullOrWhiteSpace(grafanaApiKey))
+                !string.IsNullOrWhiteSpace(otlpInstanceId) && 
+                !string.IsNullOrWhiteSpace(otlpApiKey))
             {
                 // Construct Basic auth header for Grafana Cloud: base64(instanceId:apiKey)
-                var credentials = System.Text.Encoding.UTF8.GetBytes($"{grafanaInstanceId}:{grafanaApiKey}");
+                var credentials = System.Text.Encoding.UTF8.GetBytes($"{otlpInstanceId}:{otlpApiKey}");
                 var base64Credentials = Convert.ToBase64String(credentials);
                 otlpHeaders = $"Authorization=Basic {base64Credentials}";
             }
