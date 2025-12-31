@@ -19,6 +19,12 @@ export interface SubcategoriesResponse {
   totalCount: number;
 }
 
+export interface KeywordResponse {
+  id: string;
+  name: string;
+  isPrivate: boolean;
+}
+
 export interface ItemResponse {
   id: string;
   category: string;
@@ -29,6 +35,7 @@ export interface ItemResponse {
   incorrectAnswers: string[];
   explanation: string;
   createdAt: string;
+  keywords: KeywordResponse[];
 }
 
 export interface ItemsResponse {
@@ -80,6 +87,11 @@ export interface RequestResponse {
 
 // Request Types
 
+export interface KeywordRequest {
+  name: string;
+  isPrivate: boolean;
+}
+
 export interface CreateItemRequest {
   category: string;
   subcategory: string;
@@ -88,6 +100,7 @@ export interface CreateItemRequest {
   correctAnswer: string;
   incorrectAnswers: string[];
   explanation: string;
+  keywords?: KeywordRequest[];
 }
 
 export interface UpdateItemRequest {
@@ -98,6 +111,7 @@ export interface UpdateItemRequest {
   correctAnswer?: string;
   incorrectAnswers?: string[];
   explanation?: string;
+  keywords?: KeywordRequest[];
 }
 
 export interface CreateCollectionRequest {

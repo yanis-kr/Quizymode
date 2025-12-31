@@ -8,6 +8,10 @@ namespace Quizymode.Api.Features.Items.Add;
 
 public static class AddItem
 {
+    public sealed record KeywordRequest(
+        string Name,
+        bool IsPrivate);
+
     public sealed record Request(
         string Category,
         string Subcategory,
@@ -16,6 +20,7 @@ public static class AddItem
         string CorrectAnswer,
         List<string> IncorrectAnswers,
         string Explanation,
+        List<KeywordRequest>? Keywords = null,
         bool ReadyForReview = false);
 
     public sealed record Response(
@@ -65,6 +70,24 @@ public static class AddItem
             RuleFor(x => x.Explanation)
                 .MaximumLength(2000)
                 .WithMessage("Explanation must not exceed 2000 characters");
+
+            RuleFor(x => x.Keywords)
+                .Must(keywords => keywords is null || keywords.Count <= 50)
+                .WithMessage("Cannot assign more than 50 keywords to an item")
+                .ForEach(rule => rule
+                    .SetValidator(new KeywordRequestValidator()));
+        }
+    }
+
+    public sealed class KeywordRequestValidator : AbstractValidator<KeywordRequest>
+    {
+        public KeywordRequestValidator()
+        {
+            RuleFor(x => x.Name)
+                .NotEmpty()
+                .WithMessage("Keyword name is required")
+                .MaximumLength(10)
+                .WithMessage("Keyword name must not exceed 10 characters");
         }
     }
 

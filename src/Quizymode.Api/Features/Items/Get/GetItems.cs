@@ -11,6 +11,7 @@ public static class GetItems
         string? Category,
         string? Subcategory,
         bool? IsPrivate,
+        List<string>? Keywords,
         int Page = 1,
         int PageSize = 10);
 
@@ -30,7 +31,13 @@ public static class GetItems
         string CorrectAnswer,
         List<string> IncorrectAnswers,
         string Explanation,
-        DateTime CreatedAt);
+        DateTime CreatedAt,
+        List<KeywordResponse> Keywords);
+
+    public sealed record KeywordResponse(
+        string Id,
+        string Name,
+        bool IsPrivate);
 
     public sealed class Endpoint : IEndpoint
     {
@@ -48,6 +55,7 @@ public static class GetItems
             string? category,
             string? subcategory,
             bool? isPrivate,
+            string? keywords,
             int page = 1,
             int pageSize = 10,
             ApplicationDbContext db = null!,
@@ -64,7 +72,15 @@ public static class GetItems
                 return CustomResults.BadRequest("PageSize must be between 1 and 100");
             }
 
-            var request = new QueryRequest(category, subcategory, isPrivate, page, pageSize);
+            List<string>? keywordList = null;
+            if (!string.IsNullOrEmpty(keywords))
+            {
+                keywordList = keywords.Split(',', StringSplitOptions.RemoveEmptyEntries | StringSplitOptions.TrimEntries)
+                    .Where(k => !string.IsNullOrWhiteSpace(k))
+                    .ToList();
+            }
+
+            var request = new QueryRequest(category, subcategory, isPrivate, keywordList, page, pageSize);
             Result<Response> result = await GetItemsHandler.HandleAsync(request, db, userContext, cancellationToken);
 
             return result.Match(

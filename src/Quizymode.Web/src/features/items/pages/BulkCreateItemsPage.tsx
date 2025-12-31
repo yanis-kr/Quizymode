@@ -22,6 +22,7 @@ interface BulkCreateRequest {
     correctAnswer: string;
     incorrectAnswers: string[];
     explanation: string;
+    keywords?: Array<{ name: string; isPrivate: boolean }>;
   }>;
 }
 
@@ -56,6 +57,7 @@ const BulkCreateItemsPage = () => {
           correctAnswer: item.correctAnswer,
           incorrectAnswers: item.incorrectAnswers,
           explanation: item.explanation || "",
+          keywords: item.keywords || undefined,
         })),
       };
 

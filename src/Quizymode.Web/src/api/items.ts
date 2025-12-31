@@ -13,6 +13,7 @@ export const itemsApi = {
     category?: string,
     subcategory?: string,
     isPrivate?: boolean,
+    keywords?: string[],
     page: number = 1,
     pageSize: number = 10
   ): Promise<ItemsResponse> => {
@@ -23,6 +24,7 @@ export const itemsApi = {
     if (category) params.category = category;
     if (subcategory) params.subcategory = subcategory;
     if (isPrivate !== undefined) params.isPrivate = isPrivate;
+    if (keywords && keywords.length > 0) params.keywords = keywords.join(",");
     const response = await apiClient.get<ItemsResponse>("/items", { params });
     return response.data;
   },

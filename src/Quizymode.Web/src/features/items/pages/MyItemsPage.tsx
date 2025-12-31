@@ -68,6 +68,7 @@ const MyItemsPage = () => {
   const [selectedCategory, setSelectedCategory] = useState<string>("");
   const [selectedSubcategory, setSelectedSubcategory] = useState<string>("");
   const [searchText, setSearchText] = useState<string>("");
+  const [selectedKeywords, setSelectedKeywords] = useState<string[]>([]);
   const [selectedItemForCollections, setSelectedItemForCollections] = useState<
     string | null
   >(null);
@@ -89,12 +90,14 @@ const MyItemsPage = () => {
       selectedCategory,
       selectedSubcategory,
       filterType,
+      selectedKeywords,
     ],
     queryFn: () =>
       itemsApi.getAll(
         selectedCategory || undefined,
         selectedSubcategory || undefined,
         isPrivateFilter,
+        selectedKeywords.length > 0 ? selectedKeywords : undefined,
         page,
         pageSize
       ),
@@ -124,7 +127,17 @@ const MyItemsPage = () => {
 
   useEffect(() => {
     setPage(1); // Reset to first page when filters change
-  }, [filterType, selectedCategory, selectedSubcategory, searchText]);
+  }, [filterType, selectedCategory, selectedSubcategory, searchText, selectedKeywords]);
+
+  const handleKeywordClick = (keywordName: string) => {
+    if (!selectedKeywords.includes(keywordName)) {
+      setSelectedKeywords([...selectedKeywords, keywordName]);
+    }
+  };
+
+  const removeKeyword = (keywordName: string) => {
+    setSelectedKeywords(selectedKeywords.filter((k) => k !== keywordName));
+  };
 
   if (!isAuthenticated) {
     return <Navigate to="/login" replace />;
@@ -248,6 +261,32 @@ const MyItemsPage = () => {
             className="w-full px-3 py-2 border border-gray-300 rounded-md text-sm"
           />
         </div>
+
+        {/* Selected Keywords Filter */}
+        {selectedKeywords.length > 0 && (
+          <div>
+            <label className="block text-sm font-medium text-gray-700 mb-2">
+              Filtered by Keywords
+            </label>
+            <div className="flex flex-wrap gap-2">
+              {selectedKeywords.map((keyword) => (
+                <span
+                  key={keyword}
+                  className="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-indigo-100 text-indigo-800"
+                >
+                  {keyword}
+                  <button
+                    onClick={() => removeKeyword(keyword)}
+                    className="ml-2 inline-flex items-center justify-center w-4 h-4 rounded-full hover:bg-indigo-200"
+                    aria-label={`Remove ${keyword} filter`}
+                  >
+                    ×
+                  </button>
+                </span>
+              ))}
+            </div>
+          </div>
+        )}
       </div>
 
       {/* Items List */}
@@ -271,6 +310,34 @@ const MyItemsPage = () => {
                     <p className="mt-2 text-sm text-gray-700">
                       <strong>Answer:</strong> {item.correctAnswer}
                     </p>
+                    {/* Keywords */}
+                    {item.keywords && item.keywords.length > 0 && (
+                      <div className="mt-3 flex flex-wrap gap-2">
+                        {item.keywords.map((keyword) => (
+                          <button
+                            key={keyword.id}
+                            onClick={() => handleKeywordClick(keyword.name)}
+                            className={`inline-flex items-center px-2 py-1 rounded text-xs font-medium transition-colors ${
+                              selectedKeywords.includes(keyword.name)
+                                ? "bg-indigo-600 text-white"
+                                : keyword.isPrivate
+                                ? "bg-purple-100 text-purple-800 hover:bg-purple-200"
+                                : "bg-blue-100 text-blue-800 hover:bg-blue-200"
+                            }`}
+                            title={
+                              keyword.isPrivate
+                                ? "Private keyword (click to filter)"
+                                : "Global keyword (click to filter)"
+                            }
+                          >
+                            {keyword.name}
+                            {keyword.isPrivate && (
+                              <span className="ml-1 text-[10px]">🔒</span>
+                            )}
+                          </button>
+                        ))}
+                      </div>
+                    )}
                   </div>
                   <div className="flex space-x-1 ml-4">
                     <button

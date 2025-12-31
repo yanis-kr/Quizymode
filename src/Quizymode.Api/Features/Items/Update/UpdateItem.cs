@@ -10,6 +10,10 @@ namespace Quizymode.Api.Features.Items.Update;
 
 public static class UpdateItem
 {
+    public sealed record KeywordRequest(
+        string Name,
+        bool IsPrivate);
+
     public sealed record Request(
         string Category,
         string Subcategory,
@@ -18,6 +22,7 @@ public static class UpdateItem
         List<string> IncorrectAnswers,
         string Explanation,
         bool IsPrivate,
+        List<KeywordRequest>? Keywords = null,
         bool? ReadyForReview = null);
 
     public sealed record Response(
@@ -67,6 +72,24 @@ public static class UpdateItem
             RuleFor(x => x.Explanation)
                 .MaximumLength(2000)
                 .WithMessage("Explanation must not exceed 2000 characters");
+
+            RuleFor(x => x.Keywords)
+                .Must(keywords => keywords is null || keywords.Count <= 50)
+                .WithMessage("Cannot assign more than 50 keywords to an item")
+                .ForEach(rule => rule
+                    .SetValidator(new KeywordRequestValidator()));
+        }
+    }
+
+    public sealed class KeywordRequestValidator : AbstractValidator<KeywordRequest>
+    {
+        public KeywordRequestValidator()
+        {
+            RuleFor(x => x.Name)
+                .NotEmpty()
+                .WithMessage("Keyword name is required")
+                .MaximumLength(10)
+                .WithMessage("Keyword name must not exceed 10 characters");
         }
     }
 
@@ -153,14 +176,91 @@ public static class UpdateItem
             item.FuzzySignature = fuzzySignature;
             item.FuzzyBucket = fuzzyBucket;
 
+            // Get userId once for use throughout
+            string userId = userContext.UserId ?? "dev_user";
+
+            // Handle keywords update
+            if (request.Keywords is not null)
+            {
+                // Remove all existing keywords for this item
+                List<ItemKeyword> existingItemKeywords = await db.ItemKeywords
+                    .Where(ik => ik.ItemId == itemId)
+                    .ToListAsync(cancellationToken);
+                db.ItemKeywords.RemoveRange(existingItemKeywords);
+                await db.SaveChangesAsync(cancellationToken);
+
+                // Add new keywords
+                if (request.Keywords.Count > 0)
+                {
+                    List<ItemKeyword> itemKeywords = new();
+
+                    foreach (KeywordRequest keywordRequest in request.Keywords)
+                    {
+                        string normalizedName = keywordRequest.Name.Trim().ToLowerInvariant();
+                        if (string.IsNullOrEmpty(normalizedName))
+                        {
+                            continue;
+                        }
+
+                        Keyword? keyword = null;
+                        if (keywordRequest.IsPrivate)
+                        {
+                            keyword = await db.Keywords
+                                .FirstOrDefaultAsync(k => 
+                                    k.Name == normalizedName && 
+                                    k.IsPrivate == true &&
+                                    k.CreatedBy == userId,
+                                    cancellationToken);
+                        }
+                        else
+                        {
+                            keyword = await db.Keywords
+                                .FirstOrDefaultAsync(k => 
+                                    k.Name == normalizedName && 
+                                    k.IsPrivate == false,
+                                    cancellationToken);
+                        }
+
+                        if (keyword is null)
+                        {
+                            keyword = new Keyword
+                            {
+                                Id = Guid.NewGuid(),
+                                Name = normalizedName,
+                                IsPrivate = keywordRequest.IsPrivate,
+                                CreatedBy = userId,
+                                CreatedAt = DateTime.UtcNow
+                            };
+                            db.Keywords.Add(keyword);
+                            await db.SaveChangesAsync(cancellationToken);
+                        }
+
+                        ItemKeyword itemKeyword = new ItemKeyword
+                        {
+                            Id = Guid.NewGuid(),
+                            ItemId = itemId,
+                            KeywordId = keyword.Id,
+                            AddedAt = DateTime.UtcNow
+                        };
+                        itemKeywords.Add(itemKeyword);
+                    }
+
+                    if (itemKeywords.Count > 0)
+                    {
+                        db.ItemKeywords.AddRange(itemKeywords);
+                        await db.SaveChangesAsync(cancellationToken);
+                    }
+                }
+            }
+
             await db.SaveChangesAsync(cancellationToken);
 
             // Log audit entry
-            if (!string.IsNullOrEmpty(userContext.UserId) && Guid.TryParse(userContext.UserId, out Guid userId))
+            if (!string.IsNullOrEmpty(userId) && Guid.TryParse(userId, out Guid userIdGuid))
             {
                 await auditService.LogAsync(
                     AuditAction.ItemUpdated,
-                    userId: userId,
+                    userId: userIdGuid,
                     entityId: itemId,
                     cancellationToken: cancellationToken);
             }

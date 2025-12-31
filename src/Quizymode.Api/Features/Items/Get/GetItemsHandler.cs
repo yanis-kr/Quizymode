@@ -63,23 +63,95 @@ internal static class GetItemsHandler
                 query = query.Where(i => i.Subcategory == request.Subcategory);
             }
 
+            // Filter by keywords if provided
+            if (request.Keywords is not null && request.Keywords.Count > 0)
+            {
+                // Get keywords that are visible to the user
+                IQueryable<Keyword> keywordQuery = db.Keywords.AsQueryable();
+                
+                if (!userContext.IsAuthenticated || string.IsNullOrEmpty(userContext.UserId))
+                {
+                    // Anonymous users can only see global keywords
+                    keywordQuery = keywordQuery.Where(k => !k.IsPrivate);
+                }
+                else
+                {
+                    // Authenticated users can see global keywords OR their own private keywords
+                    keywordQuery = keywordQuery.Where(k => !k.IsPrivate || (k.IsPrivate && k.CreatedBy == userContext.UserId));
+                }
+
+                List<Guid> visibleKeywordIds = await keywordQuery
+                    .Where(k => request.Keywords.Contains(k.Name))
+                    .Select(k => k.Id)
+                    .ToListAsync(cancellationToken);
+
+                if (visibleKeywordIds.Count > 0)
+                {
+                    // Filter items that have at least one of the requested keywords
+                    query = query.Where(i => i.ItemKeywords.Any(ik => visibleKeywordIds.Contains(ik.KeywordId)));
+                }
+                else
+                {
+                    // No visible keywords found, return empty result
+                    query = query.Where(i => false);
+                }
+            }
+
             int totalCount = await query.CountAsync(cancellationToken);
             List<Item> items = await query
+                .Include(i => i.ItemKeywords)
+                    .ThenInclude(ik => ik.Keyword)
                 .Skip((request.Page - 1) * request.PageSize)
                 .Take(request.PageSize)
                 .ToListAsync(cancellationToken);
 
+            // Filter keywords based on visibility for each item
+            List<GetItems.ItemResponse> itemResponses = new();
+            foreach (Item item in items)
+            {
+                List<GetItems.KeywordResponse> visibleKeywords = new();
+                
+                foreach (ItemKeyword itemKeyword in item.ItemKeywords)
+                {
+                    Keyword keyword = itemKeyword.Keyword;
+                    
+                    // Check if keyword is visible to current user
+                    bool isVisible = false;
+                    if (!keyword.IsPrivate)
+                    {
+                        // Global keyword - visible to everyone
+                        isVisible = true;
+                    }
+                    else if (userContext.IsAuthenticated && !string.IsNullOrEmpty(userContext.UserId))
+                    {
+                        // Private keyword - only visible to creator
+                        isVisible = keyword.CreatedBy == userContext.UserId;
+                    }
+
+                    if (isVisible)
+                    {
+                        visibleKeywords.Add(new GetItems.KeywordResponse(
+                            keyword.Id.ToString(),
+                            keyword.Name,
+                            keyword.IsPrivate));
+                    }
+                }
+
+                itemResponses.Add(new GetItems.ItemResponse(
+                    item.Id.ToString(),
+                    item.Category,
+                    item.Subcategory,
+                    item.IsPrivate,
+                    item.Question,
+                    item.CorrectAnswer,
+                    item.IncorrectAnswers,
+                    item.Explanation,
+                    item.CreatedAt,
+                    visibleKeywords));
+            }
+
             GetItems.Response response = new GetItems.Response(
-                items.Select(i => new GetItems.ItemResponse(
-                    i.Id.ToString(),
-                    i.Category,
-                    i.Subcategory,
-                    i.IsPrivate,
-                    i.Question,
-                    i.CorrectAnswer,
-                    i.IncorrectAnswers,
-                    i.Explanation,
-                    i.CreatedAt)).ToList(),
+                itemResponses,
                 totalCount,
                 request.Page,
                 request.PageSize,

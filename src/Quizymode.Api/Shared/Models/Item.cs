@@ -28,5 +28,8 @@ public sealed class Item
     public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
 
     public bool ReadyForReview { get; set; }
+
+    // Navigation property for keywords (not mapped directly, accessed via ItemKeywords)
+    public List<ItemKeyword> ItemKeywords { get; set; } = new();
 }
 

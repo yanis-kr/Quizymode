@@ -1,3 +1,4 @@
+using Microsoft.EntityFrameworkCore;
 using Quizymode.Api.Data;
 using Quizymode.Api.Services;
 using Quizymode.Api.Shared.Kernel;
@@ -41,12 +42,84 @@ internal static class AddItemHandler
             db.Items.Add(item);
             await db.SaveChangesAsync(cancellationToken);
 
+            // Get userId once for use throughout
+            string userId = userContext.UserId ?? "dev_user";
+
+            // Handle keywords if provided
+            if (request.Keywords is not null && request.Keywords.Count > 0)
+            {
+                List<ItemKeyword> itemKeywords = new();
+
+                foreach (AddItem.KeywordRequest keywordRequest in request.Keywords)
+                {
+                    // Normalize keyword name (trim and to lowercase for consistency)
+                    string normalizedName = keywordRequest.Name.Trim().ToLowerInvariant();
+                    if (string.IsNullOrEmpty(normalizedName))
+                    {
+                        continue;
+                    }
+
+                    // Find or create keyword
+                    Keyword? keyword = null;
+                    if (keywordRequest.IsPrivate)
+                    {
+                        // Private keyword: must match name, IsPrivate=true, and CreatedBy
+                        keyword = await db.Keywords
+                            .FirstOrDefaultAsync(k => 
+                                k.Name == normalizedName && 
+                                k.IsPrivate == true &&
+                                k.CreatedBy == userId,
+                                cancellationToken);
+                    }
+                    else
+                    {
+                        // Global keyword: must match name and IsPrivate=false (CreatedBy doesn't matter)
+                        keyword = await db.Keywords
+                            .FirstOrDefaultAsync(k => 
+                                k.Name == normalizedName && 
+                                k.IsPrivate == false,
+                                cancellationToken);
+                    }
+
+                    if (keyword is null)
+                    {
+                        // Create new keyword
+                        keyword = new Keyword
+                        {
+                            Id = Guid.NewGuid(),
+                            Name = normalizedName,
+                            IsPrivate = keywordRequest.IsPrivate,
+                            CreatedBy = userId,
+                            CreatedAt = DateTime.UtcNow
+                        };
+                        db.Keywords.Add(keyword);
+                        await db.SaveChangesAsync(cancellationToken);
+                    }
+
+                    // Create ItemKeyword relationship
+                    ItemKeyword itemKeyword = new ItemKeyword
+                    {
+                        Id = Guid.NewGuid(),
+                        ItemId = item.Id,
+                        KeywordId = keyword.Id,
+                        AddedAt = DateTime.UtcNow
+                    };
+                    itemKeywords.Add(itemKeyword);
+                }
+
+                if (itemKeywords.Count > 0)
+                {
+                    db.ItemKeywords.AddRange(itemKeywords);
+                    await db.SaveChangesAsync(cancellationToken);
+                }
+            }
+
             // Log audit entry
-            if (!string.IsNullOrEmpty(userContext.UserId) && Guid.TryParse(userContext.UserId, out Guid userId))
+            if (!string.IsNullOrEmpty(userId) && Guid.TryParse(userId, out Guid userIdGuid))
             {
                 await auditService.LogAsync(
                     AuditAction.ItemCreated,
-                    userId: userId,
+                    userId: userIdGuid,
                     entityId: item.Id,
                     cancellationToken: cancellationToken);
             }

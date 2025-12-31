@@ -36,6 +36,7 @@ internal static class AddItemsBulkHandler
             string userId = userContext.UserId ?? throw new InvalidOperationException("User ID is required for bulk item creation");
 
             List<Item> itemsToInsert = new();
+            Dictionary<int, Item> itemIndexMap = new(); // Map original index to created item
             List<string> duplicateQuestions = new();
             List<AddItemsBulk.ItemError> errors = new();
 
@@ -84,6 +85,7 @@ internal static class AddItemsBulkHandler
                     };
 
                     itemsToInsert.Add(item);
+                    itemIndexMap[i] = item;
                 }
                 catch (Exception ex)
                 {
@@ -95,6 +97,92 @@ internal static class AddItemsBulkHandler
             {
                 db.Items.AddRange(itemsToInsert);
                 await db.SaveChangesAsync(cancellationToken);
+
+                // Handle keywords for all items
+                List<ItemKeyword> itemKeywordsToInsert = new();
+                Dictionary<string, Keyword> keywordCache = new(); // Cache to avoid duplicate lookups
+
+                foreach (KeyValuePair<int, Item> kvp in itemIndexMap)
+                {
+                    int originalIndex = kvp.Key;
+                    Item item = kvp.Value;
+                    AddItemsBulk.ItemRequest itemRequest = request.Items[originalIndex];
+                    
+                    if (itemRequest.Keywords is null || itemRequest.Keywords.Count == 0)
+                    {
+                        continue;
+                    }
+
+                    foreach (AddItemsBulk.KeywordRequest keywordRequest in itemRequest.Keywords)
+                    {
+                        // Normalize keyword name
+                        string normalizedName = keywordRequest.Name.Trim().ToLowerInvariant();
+                        if (string.IsNullOrEmpty(normalizedName))
+                        {
+                            continue;
+                        }
+
+                        // Create cache key
+                        string cacheKey = keywordRequest.IsPrivate 
+                            ? $"{normalizedName}:private:{userId}"
+                            : $"{normalizedName}:global";
+
+                        // Check cache first
+                        if (!keywordCache.TryGetValue(cacheKey, out Keyword? keyword))
+                        {
+                            // Find or create keyword
+                            if (keywordRequest.IsPrivate)
+                            {
+                                keyword = await db.Keywords
+                                    .FirstOrDefaultAsync(k => 
+                                        k.Name == normalizedName && 
+                                        k.IsPrivate == true &&
+                                        k.CreatedBy == userId,
+                                        cancellationToken);
+                            }
+                            else
+                            {
+                                keyword = await db.Keywords
+                                    .FirstOrDefaultAsync(k => 
+                                        k.Name == normalizedName && 
+                                        k.IsPrivate == false,
+                                        cancellationToken);
+                            }
+
+                            if (keyword is null)
+                            {
+                                keyword = new Keyword
+                                {
+                                    Id = Guid.NewGuid(),
+                                    Name = normalizedName,
+                                    IsPrivate = keywordRequest.IsPrivate,
+                                    CreatedBy = userId,
+                                    CreatedAt = DateTime.UtcNow
+                                };
+                                db.Keywords.Add(keyword);
+                                await db.SaveChangesAsync(cancellationToken);
+                            }
+
+                            keywordCache[cacheKey] = keyword;
+                        }
+
+                        // Create ItemKeyword relationship
+                        ItemKeyword itemKeyword = new ItemKeyword
+                        {
+                            Id = Guid.NewGuid(),
+                            ItemId = item.Id,
+                            KeywordId = keyword.Id,
+                            AddedAt = DateTime.UtcNow
+                        };
+                        itemKeywordsToInsert.Add(itemKeyword);
+                    }
+                }
+
+                if (itemKeywordsToInsert.Count > 0)
+                {
+                    db.ItemKeywords.AddRange(itemKeywordsToInsert);
+                    await db.SaveChangesAsync(cancellationToken);
+                }
             }
 
             if (transaction is not null)

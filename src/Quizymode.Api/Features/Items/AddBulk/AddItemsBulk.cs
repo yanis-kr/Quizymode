@@ -11,13 +11,18 @@ namespace Quizymode.Api.Features.Items.AddBulk;
 
 public static class AddItemsBulk
 {
+    public sealed record KeywordRequest(
+        string Name,
+        bool IsPrivate);
+
     public sealed record ItemRequest(
         string Category,
         string Subcategory,
         string Question,
         string CorrectAnswer,
         List<string> IncorrectAnswers,
-        string Explanation);
+        string Explanation,
+        List<KeywordRequest>? Keywords = null);
 
     public sealed record Request(
         bool IsPrivate,
@@ -93,6 +98,24 @@ public static class AddItemsBulk
             RuleFor(x => x.Explanation)
                 .MaximumLength(2000)
                 .WithMessage("Explanation must not exceed 2000 characters");
+
+            RuleFor(x => x.Keywords)
+                .Must(keywords => keywords is null || keywords.Count <= 50)
+                .WithMessage("Cannot assign more than 50 keywords to an item")
+                .ForEach(rule => rule
+                    .SetValidator(new KeywordRequestValidator()));
+        }
+    }
+
+    public sealed class KeywordRequestValidator : AbstractValidator<KeywordRequest>
+    {
+        public KeywordRequestValidator()
+        {
+            RuleFor(x => x.Name)
+                .NotEmpty()
+                .WithMessage("Keyword name is required")
+                .MaximumLength(10)
+                .WithMessage("Keyword name must not exceed 10 characters");
         }
     }
 

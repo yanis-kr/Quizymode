@@ -38,7 +38,7 @@ public sealed class GetItemsTests : IDisposable
         });
         await _dbContext.SaveChangesAsync();
 
-        GetItems.QueryRequest request = new(Category: null, Subcategory: null, IsPrivate: null, Page: 1, PageSize: 10);
+        GetItems.QueryRequest request = new(Category: null, Subcategory: null, IsPrivate: null, Keywords: null, Page: 1, PageSize: 10);
 
         // Act
         Result<GetItems.Response> result = await GetItemsHandler.HandleAsync(request, _dbContext, _userContextMock.Object, CancellationToken.None);
@@ -60,7 +60,7 @@ public sealed class GetItemsTests : IDisposable
         });
         await _dbContext.SaveChangesAsync();
 
-        GetItems.QueryRequest request = new(Category: "geography", Subcategory: null, IsPrivate: null, Page: 1, PageSize: 10);
+        GetItems.QueryRequest request = new(Category: "geography", Subcategory: null, IsPrivate: null, Keywords: null, Page: 1, PageSize: 10);
 
         // Act
         Result<GetItems.Response> result = await GetItemsHandler.HandleAsync(request, _dbContext, _userContextMock.Object, CancellationToken.None);
@@ -93,7 +93,7 @@ public sealed class GetItemsTests : IDisposable
             }));
         await _dbContext.SaveChangesAsync();
 
-        GetItems.QueryRequest request = new(Category: null, Subcategory: null, IsPrivate: null, Page: 1, PageSize: 10);
+        GetItems.QueryRequest request = new(Category: null, Subcategory: null, IsPrivate: null, Keywords: null, Page: 1, PageSize: 10);
 
         // Act
         Result<GetItems.Response> result = await GetItemsHandler.HandleAsync(request, _dbContext, _userContextMock.Object, CancellationToken.None);
