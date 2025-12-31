@@ -11,6 +11,7 @@ import {
   ChevronDownIcon,
   ChevronUpIcon,
   XMarkIcon,
+  ClipboardDocumentIcon,
 } from "@heroicons/react/24/outline";
 
 interface BulkCreateRequest {
@@ -34,6 +35,8 @@ const BulkCreateItemsPage = () => {
   const [isPrivate, setIsPrivate] = useState(!isAdmin); // Default to true for non-admin
   const [validationError, setValidationError] = useState<string>("");
   const [isPromptExampleOpen, setIsPromptExampleOpen] = useState(false);
+  const [isJsonSampleOpen, setIsJsonSampleOpen] = useState(false);
+  const [copySuccess, setCopySuccess] = useState(false);
   const [resultModal, setResultModal] = useState<{
     isOpen: boolean;
     message: string;
@@ -207,6 +210,7 @@ const BulkCreateItemsPage = () => {
                 .filter((ans: string) => ans.length > 0)
             : [],
           explanation: item.explanation ? String(item.explanation).trim() : "",
+          keywords: item.keywords || undefined,
         })),
       };
 
@@ -274,7 +278,13 @@ Each item must be a JSON object with this exact shape:
   "question": "Question text?",
   "correctAnswer": "Correct answer",
   "incorrectAnswers": ["Wrong answer 1", "Wrong answer 2", "Wrong answer 3"],
-  "explanation": "Short explanation of why the correct answer is right (optional but recommended)"
+  "explanation": "Short explanation of why the correct answer is right (optional but recommended)",
+  "keywords": [
+    {
+      "name": "keyword-name",
+      "isPrivate": false
+    }
+  ]
 }
 
 Requirements:
@@ -286,9 +296,84 @@ Requirements:
   - a non-empty "question" (max 1,000 characters)
   - a non-empty "correctAnswer" (max 200 characters)
   - 1–5 "incorrectAnswers" (each max 200 characters)
+  - "keywords" (optional array of keyword objects, each with "name" max 10 characters and "isPrivate" boolean)
 - All strings must be plain text (no HTML, no LaTeX).
 
 Now generate the JSON array only.`}
+              </pre>
+            </div>
+          )}
+        </div>
+
+        {/* JSON Sample Section */}
+        <div className="bg-white border border-gray-300 rounded-lg mb-6">
+          <button
+            type="button"
+            onClick={() => setIsJsonSampleOpen(!isJsonSampleOpen)}
+            className="w-full flex items-center justify-between px-4 py-3 text-left hover:bg-gray-50 transition-colors"
+          >
+            <span className="text-sm font-medium text-gray-900">
+              📋 JSON Sample (with keywords)
+            </span>
+            {isJsonSampleOpen ? (
+              <ChevronUpIcon className="h-5 w-5 text-gray-500" />
+            ) : (
+              <ChevronDownIcon className="h-5 w-5 text-gray-500" />
+            )}
+          </button>
+          {isJsonSampleOpen && (
+            <div className="px-4 pb-4 border-t border-gray-200">
+              <div className="mt-4 flex justify-end mb-2">
+                <button
+                  type="button"
+                  onClick={async () => {
+                    const sampleJson = `[
+  {
+    "category": "Spanish",
+    "subcategory": "Greetings",
+    "question": "How do you say 'Hello' in Spanish?",
+    "correctAnswer": "Hola",
+    "incorrectAnswers": ["Adiós", "Gracias", "Por favor"],
+    "explanation": "Hola is the standard Spanish greeting for 'Hello'.",
+    "keywords": [
+      {
+        "name": "greeting",
+        "isPrivate": false
+      }
+    ]
+  }
+]`;
+                    try {
+                      await navigator.clipboard.writeText(sampleJson);
+                      setCopySuccess(true);
+                      setTimeout(() => setCopySuccess(false), 2000);
+                    } catch (err) {
+                      console.error("Failed to copy:", err);
+                    }
+                  }}
+                  className="flex items-center space-x-2 px-3 py-1.5 text-sm font-medium text-indigo-600 bg-indigo-50 rounded-md hover:bg-indigo-100 transition-colors"
+                >
+                  <ClipboardDocumentIcon className="h-4 w-4" />
+                  <span>{copySuccess ? "Copied!" : "Copy Sample"}</span>
+                </button>
+              </div>
+              <pre className="text-xs text-gray-800 whitespace-pre-wrap font-mono bg-gray-50 p-4 rounded border border-gray-200">
+{`[
+  {
+    "category": "Spanish",
+    "subcategory": "Greetings",
+    "question": "How do you say 'Hello' in Spanish?",
+    "correctAnswer": "Hola",
+    "incorrectAnswers": ["Adiós", "Gracias", "Por favor"],
+    "explanation": "Hola is the standard Spanish greeting for 'Hello'.",
+    "keywords": [
+      {
+        "name": "greeting",
+        "isPrivate": false
+      }
+    ]
+  }
+]`}
               </pre>
             </div>
           )}

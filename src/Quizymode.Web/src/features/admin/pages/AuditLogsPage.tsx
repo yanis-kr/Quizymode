@@ -23,6 +23,7 @@ type AuditAction = typeof AUDIT_ACTIONS[number];
 const AuditLogsPage = () => {
   const { isAuthenticated, isAdmin } = useAuth();
   const [selectedActions, setSelectedActions] = useState<AuditAction[]>([]);
+  const [filterMode, setFilterMode] = useState<"all" | "none" | "specific">("all");
   const [page, setPage] = useState(1);
   const pageSize = 50;
 
@@ -51,12 +52,20 @@ const AuditLogsPage = () => {
   const { data, isLoading, error, refetch } = useQuery({
     queryKey: ['auditLogs', selectedActions, page],
     queryFn: () => adminApi.getAuditLogs(
-      selectedActions.length > 0 ? selectedActions : undefined,
+      filterMode === "specific" && selectedActions.length > 0 ? selectedActions : undefined,
       page,
       pageSize
     ),
     enabled: isAuthenticated && isAdmin,
   });
+
+  const handleFilterModeChange = (mode: "all" | "none" | "specific") => {
+    setFilterMode(mode);
+    if (mode === "all" || mode === "none") {
+      setSelectedActions([]);
+    }
+    setPage(1);
+  };
 
   const handleActionToggle = (action: AuditAction) => {
     setSelectedActions(prev =>
@@ -68,6 +77,7 @@ const AuditLogsPage = () => {
   };
 
   const clearFilters = () => {
+    setFilterMode("all");
     setSelectedActions([]);
     setPage(1);
   };
@@ -93,35 +103,55 @@ const AuditLogsPage = () => {
         <div className="space-y-4">
           <div>
             <label className="block text-sm font-medium text-gray-700 mb-2">
-              Event Types (Select multiple)
+              Event Types
             </label>
-            <div className="grid grid-cols-2 sm:grid-cols-4 gap-2">
-              {AUDIT_ACTIONS.map((action) => (
-                <label
-                  key={action}
-                  className="flex items-center space-x-2 cursor-pointer p-2 rounded hover:bg-gray-50"
-                >
-                  <input
-                    type="checkbox"
-                    checked={selectedActions.includes(action)}
-                    onChange={() => handleActionToggle(action)}
-                    className="rounded border-gray-300 text-indigo-600 focus:ring-indigo-500"
-                  />
-                  <span className="text-sm text-gray-700">{action}</span>
-                </label>
-              ))}
-            </div>
+            <select
+              value={filterMode}
+              onChange={(e) => handleFilterModeChange(e.target.value as "all" | "none" | "specific")}
+              className="w-full sm:w-64 px-3 py-2 border border-gray-300 rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500"
+            >
+              <option value="all">All Event Types</option>
+              <option value="none">No Events (empty)</option>
+              <option value="specific">Specific Types...</option>
+            </select>
           </div>
-          {selectedActions.length > 0 && (
+          {filterMode === "specific" && (
+            <div>
+              <label className="block text-sm font-medium text-gray-700 mb-2">
+                Select Event Types (Select multiple)
+              </label>
+              <div className="grid grid-cols-2 sm:grid-cols-4 gap-2">
+                {AUDIT_ACTIONS.map((action) => (
+                  <label
+                    key={action}
+                    className="flex items-center space-x-2 cursor-pointer p-2 rounded hover:bg-gray-50"
+                  >
+                    <input
+                      type="checkbox"
+                      checked={selectedActions.includes(action)}
+                      onChange={() => handleActionToggle(action)}
+                      className="rounded border-gray-300 text-indigo-600 focus:ring-indigo-500"
+                    />
+                    <span className="text-sm text-gray-700">{action}</span>
+                  </label>
+                ))}
+              </div>
+              {selectedActions.length > 0 && (
+                <div className="mt-2 flex items-center space-x-2">
+                  <span className="text-sm text-gray-600">
+                    {selectedActions.length} type{selectedActions.length !== 1 ? 's' : ''} selected
+                  </span>
+                </div>
+              )}
+            </div>
+          )}
+          {(filterMode !== "all" || selectedActions.length > 0) && (
             <div className="flex items-center space-x-2">
-              <span className="text-sm text-gray-600">
-                {selectedActions.length} filter{selectedActions.length !== 1 ? 's' : ''} active
-              </span>
               <button
                 onClick={clearFilters}
                 className="text-sm text-indigo-600 hover:text-indigo-800 underline"
               >
-                Clear all
+                Clear all filters
               </button>
             </div>
           )}
