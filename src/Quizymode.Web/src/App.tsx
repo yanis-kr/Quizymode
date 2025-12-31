@@ -14,6 +14,8 @@ import CollectionDetailPage from "./features/collections/pages/CollectionDetailP
 import AdminDashboardPage from "./features/admin/pages/AdminDashboardPage";
 import ReviewBoardPage from "./features/admin/pages/ReviewBoardPage";
 import BulkCreatePage from "./features/admin/pages/BulkCreatePage";
+import DatabaseSizePage from "./features/admin/pages/DatabaseSizePage";
+import AuditLogsPage from "./features/admin/pages/AuditLogsPage";
 import BulkCreateItemsPage from "./features/items/pages/BulkCreateItemsPage";
 import ItemCommentsPage from "./features/items/pages/ItemCommentsPage";
 import EditItemPage from "./features/items/pages/EditItemPage";
@@ -62,6 +64,8 @@ function App() {
         <Route path="/admin" element={<AdminDashboardPage />} />
         <Route path="/admin/bulk-create" element={<BulkCreatePage />} />
         <Route path="/admin/review-board" element={<ReviewBoardPage />} />
+        <Route path="/admin/database-size" element={<DatabaseSizePage />} />
+        <Route path="/admin/audit-logs" element={<AuditLogsPage />} />
       </Routes>
     </Layout>
   );

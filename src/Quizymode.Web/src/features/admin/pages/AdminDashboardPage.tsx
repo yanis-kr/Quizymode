@@ -26,6 +26,20 @@ const AdminDashboardPage = () => {
           <h3 className="text-lg font-medium text-gray-900 mb-2">Review Board</h3>
           <p className="text-sm text-gray-500">Review items pending approval</p>
         </Link>
+        <Link
+          to="/admin/database-size"
+          className="bg-white shadow rounded-lg p-6 hover:shadow-lg transition-shadow cursor-pointer"
+        >
+          <h3 className="text-lg font-medium text-gray-900 mb-2">Database Size</h3>
+          <p className="text-sm text-gray-500">Monitor database size and usage</p>
+        </Link>
+        <Link
+          to="/admin/audit-logs"
+          className="bg-white shadow rounded-lg p-6 hover:shadow-lg transition-shadow cursor-pointer"
+        >
+          <h3 className="text-lg font-medium text-gray-900 mb-2">Audit Logs</h3>
+          <p className="text-sm text-gray-500">View system audit logs with filters</p>
+        </Link>
       </div>
     </div>
   );
