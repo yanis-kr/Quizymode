@@ -210,6 +210,41 @@ The script will:
 - CloudFront Distribution: `EH1DS9REH8KR5`
 - The bucket policy restricts access to CloudFront only
 
+### Configuring Grafana Cloud Observability
+
+The application supports sending OpenTelemetry traces, metrics, and logs to Grafana Cloud.
+
+**Prerequisites:**
+
+- Grafana Cloud account (free tier available)
+- Grafana Cloud instance ID and API keys
+
+**Configuration:**
+
+See [GRAFANA_CLOUD_SETUP.md](GRAFANA_CLOUD_SETUP.md) for detailed instructions on:
+
+- Setting up Grafana Cloud credentials
+- Configuring the application for development and production
+- Deploying to AWS Lightsail with Grafana Cloud integration
+- Verifying telemetry data in Grafana Cloud
+
+**Quick Start:**
+
+1. Get your Grafana Cloud credentials (Instance ID and API keys)
+2. Configure via environment variables or `appsettings.json`:
+   ```json
+   {
+     "GrafanaCloud": {
+       "Enabled": true,
+       "OtlpEndpoint": "https://otlp-gateway-prod-us-central-0.grafana.net/otlp",
+       "LokiEndpoint": "https://logs-prod-us-central-0.grafana.net/loki/api/v1/push",
+       "InstanceId": "YOUR_INSTANCE_ID",
+       "ApiKey": "YOUR_API_KEY"
+     }
+   }
+   ```
+3. Restart the application and verify data in Grafana Cloud
+
 ## Documentation
 
 For detailed documentation, see the `docs/` folder (development documentation only, not included in distribution).

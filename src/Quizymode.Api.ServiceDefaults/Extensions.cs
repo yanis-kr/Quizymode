@@ -1,9 +1,13 @@
+using System;
+using System.Linq;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Diagnostics.HealthChecks;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Diagnostics.HealthChecks;
 using Microsoft.Extensions.Logging;
 using OpenTelemetry;
+using OpenTelemetry.Instrumentation.EntityFrameworkCore;
 using OpenTelemetry.Metrics;
 using OpenTelemetry.Trace;
 
@@ -51,7 +55,7 @@ public static class Extensions
             logging.IncludeScopes = true;
         });
 
-        builder.Services.AddOpenTelemetry()
+        var openTelemetryBuilder = builder.Services.AddOpenTelemetry()
             .WithMetrics(metrics =>
             {
                 metrics.AddAspNetCoreInstrumentation()
@@ -69,21 +73,79 @@ public static class Extensions
                     )
                     // Uncomment the following line to enable gRPC instrumentation (requires the OpenTelemetry.Instrumentation.GrpcNetClient package)
                     //.AddGrpcClientInstrumentation()
-                    .AddHttpClientInstrumentation();
+                    .AddHttpClientInstrumentation()
+                    .AddEntityFrameworkCoreInstrumentation(options =>
+                    {
+                        // Instrument EF Core database operations
+                        options.SetDbStatementForText = true;
+                        options.EnrichWithIDbCommand = (activity, command) =>
+                        {
+                            activity.SetTag("db.system", "postgresql");
+                        };
+                    });
             });
 
-        builder.AddOpenTelemetryExporters();
+        // Configure exporters (OTLP for Grafana Cloud or Aspire)
+        builder.AddOpenTelemetryExporters(openTelemetryBuilder);
 
         return builder;
     }
 
-    private static TBuilder AddOpenTelemetryExporters<TBuilder>(this TBuilder builder) where TBuilder : IHostApplicationBuilder
+    private static TBuilder AddOpenTelemetryExporters<TBuilder>(this TBuilder builder, OpenTelemetry.OpenTelemetryBuilder openTelemetryBuilder) where TBuilder : IHostApplicationBuilder
     {
-        var useOtlpExporter = !string.IsNullOrWhiteSpace(builder.Configuration["OTEL_EXPORTER_OTLP_ENDPOINT"]);
-
-        if (useOtlpExporter)
+        // Check if Grafana Cloud is explicitly configured
+        var grafanaCloudEnabled = builder.Configuration.GetValue<bool>("GrafanaCloud:Enabled", false);
+        var grafanaCloudOtlpEndpoint = builder.Configuration["GrafanaCloud:OtlpEndpoint"];
+        
+        // If Grafana Cloud is enabled, use it (even if Aspire is running)
+        // Otherwise, check for OTLP endpoint via environment variable (for Aspire)
+        string? otlpEndpoint = null;
+        
+        if (grafanaCloudEnabled && !string.IsNullOrWhiteSpace(grafanaCloudOtlpEndpoint))
         {
-            builder.Services.AddOpenTelemetry().UseOtlpExporter();
+            // Grafana Cloud is explicitly configured - use it
+            otlpEndpoint = grafanaCloudOtlpEndpoint;
+        }
+        else
+        {
+            // Fall back to Aspire's OTLP endpoint if available
+            otlpEndpoint = builder.Configuration["OTEL_EXPORTER_OTLP_ENDPOINT"];
+        }
+
+        if (!string.IsNullOrWhiteSpace(otlpEndpoint))
+        {
+            // Configure OTLP exporter with optional Grafana Cloud authentication
+            // Support separate OTLP instance ID/API key, with fallback to legacy InstanceId/ApiKey
+            var otlpInstanceId = builder.Configuration["GrafanaCloud:OtlpInstanceId"] 
+                ?? builder.Configuration["GrafanaCloud:InstanceId"] ?? string.Empty;
+            var otlpApiKey = builder.Configuration["GrafanaCloud:OtlpApiKey"] 
+                ?? builder.Configuration["GrafanaCloud:ApiKey"] ?? string.Empty;
+            
+            // Use environment variable headers if provided, otherwise construct from Grafana Cloud config
+            var otlpHeaders = builder.Configuration["OTEL_EXPORTER_OTLP_HEADERS"];
+            
+            // Only construct Grafana Cloud auth headers if Grafana Cloud is enabled
+            if (grafanaCloudEnabled && 
+                string.IsNullOrWhiteSpace(otlpHeaders) && 
+                !string.IsNullOrWhiteSpace(otlpInstanceId) && 
+                !string.IsNullOrWhiteSpace(otlpApiKey))
+            {
+                // Construct Basic auth header for Grafana Cloud: base64(instanceId:apiKey)
+                var credentials = System.Text.Encoding.UTF8.GetBytes($"{otlpInstanceId}:{otlpApiKey}");
+                var base64Credentials = Convert.ToBase64String(credentials);
+                otlpHeaders = $"Authorization=Basic {base64Credentials}";
+            }
+
+            // Set environment variables for OTLP exporter (it reads from these automatically)
+            Environment.SetEnvironmentVariable("OTEL_EXPORTER_OTLP_ENDPOINT", otlpEndpoint);
+            
+            if (!string.IsNullOrWhiteSpace(otlpHeaders))
+            {
+                Environment.SetEnvironmentVariable("OTEL_EXPORTER_OTLP_HEADERS", otlpHeaders);
+            }
+            
+            // Chain UseOtlpExporter to the existing OpenTelemetry builder
+            openTelemetryBuilder.UseOtlpExporter();
         }
 
         // Uncomment the following lines to enable the Azure Monitor exporter (requires the Azure.Monitor.OpenTelemetry.AspNetCore package)

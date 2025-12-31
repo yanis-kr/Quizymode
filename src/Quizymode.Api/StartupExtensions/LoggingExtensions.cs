@@ -1,7 +1,11 @@
 using System.Reflection;
+using System.Text;
+using Microsoft.Extensions.Options;
+using Quizymode.Api.Shared.Options;
 using Serilog;
 using Serilog.Filters;
 using Serilog.Settings.Configuration;
+using Serilog.Sinks.Grafana.Loki;
 using Serilog.Sinks.SystemConsole.Themes;
 
 namespace Quizymode.Api.StartupExtensions;
@@ -10,7 +14,11 @@ internal static partial class StartupExtensions
 {
     internal static WebApplicationBuilder AddLoggingServices(this WebApplicationBuilder builder)
     {
-        builder.Host.UseSerilog((context, configuration) =>
+        // Configure Grafana Cloud options
+        builder.Services.Configure<GrafanaCloudOptions>(
+            builder.Configuration.GetSection(GrafanaCloudOptions.SectionName));
+
+        builder.Host.UseSerilog((context, services, configuration) =>
         {
             configuration
                 .ReadFrom.Configuration(context.Configuration)
@@ -36,14 +44,86 @@ internal static partial class StartupExtensions
                         }
                     }
                     
-                    // Exclude logs that mention health check endpoints in the message
+                    // Get message once for reuse
                     string message = logEvent.RenderMessage();
+                    
+                    // Exclude EF Core migration history errors - these are expected when the table doesn't exist yet
+                    // EventId 20102 is Microsoft.EntityFrameworkCore.Database.Command.CommandError
+                    if (logEvent.Properties.TryGetValue("EventId", out var eventId))
+                    {
+                        string? eventIdStr = eventId.ToString();
+                        if (eventIdStr.Contains("20102", StringComparison.OrdinalIgnoreCase))
+                        {
+                            // Filter out errors about __EFMigrationsHistory table not existing
+                            // This is expected behavior when migrations run on a fresh database
+                            if (message.Contains("__EFMigrationsHistory", StringComparison.OrdinalIgnoreCase) ||
+                                message.Contains("relation \"__EFMigrationsHistory\" does not exist", StringComparison.OrdinalIgnoreCase))
+                            {
+                                return true;
+                            }
+                        }
+                    }
+                    
+                    // Exclude logs that mention health check endpoints in the message
                     return message.Contains("/health", StringComparison.OrdinalIgnoreCase);
                 })
                 .Enrich.FromLogContext()
                 .Enrich.WithProperty("Application", "QuizyMode")
                 .WriteTo.Console(theme: AnsiConsoleTheme.Code,
                                  outputTemplate: "[{Timestamp:HH:mm:ss} {Level:u3}] {Message:lj}{NewLine}{Exception}");
+
+            // Add Grafana Loki sink if configured
+            GrafanaCloudOptions? grafanaOptions = null;
+            try
+            {
+                grafanaOptions = services.GetService<IOptions<GrafanaCloudOptions>>()?.Value;
+            }
+            catch
+            {
+                // Options not configured yet, will check via configuration directly
+            }
+
+            if (grafanaOptions is null)
+            {
+                grafanaOptions = new GrafanaCloudOptions
+                {
+                    Enabled = context.Configuration.GetValue<bool>($"{GrafanaCloudOptions.SectionName}:Enabled"),
+                    LokiEndpoint = context.Configuration[$"{GrafanaCloudOptions.SectionName}:LokiEndpoint"] ?? string.Empty,
+                    LokiInstanceId = context.Configuration[$"{GrafanaCloudOptions.SectionName}:LokiInstanceId"] 
+                        ?? context.Configuration[$"{GrafanaCloudOptions.SectionName}:InstanceId"] ?? string.Empty,
+                    LokiApiKey = context.Configuration[$"{GrafanaCloudOptions.SectionName}:LokiApiKey"] 
+                        ?? context.Configuration[$"{GrafanaCloudOptions.SectionName}:ApiKey"] ?? string.Empty,
+                    InstanceId = context.Configuration[$"{GrafanaCloudOptions.SectionName}:InstanceId"] ?? string.Empty,
+                    ApiKey = context.Configuration[$"{GrafanaCloudOptions.SectionName}:ApiKey"] ?? string.Empty
+                };
+            }
+
+            // Use Loki-specific instance ID/API key, with fallback to legacy InstanceId/ApiKey
+            string lokiInstanceId = !string.IsNullOrWhiteSpace(grafanaOptions.LokiInstanceId) 
+                ? grafanaOptions.LokiInstanceId 
+                : grafanaOptions.InstanceId;
+            string lokiApiKey = !string.IsNullOrWhiteSpace(grafanaOptions.LokiApiKey) 
+                ? grafanaOptions.LokiApiKey 
+                : grafanaOptions.ApiKey;
+
+            if (grafanaOptions.Enabled && 
+                !string.IsNullOrWhiteSpace(grafanaOptions.LokiEndpoint) &&
+                !string.IsNullOrWhiteSpace(lokiInstanceId) &&
+                !string.IsNullOrWhiteSpace(lokiApiKey))
+            {
+                configuration.WriteTo.GrafanaLoki(
+                    grafanaOptions.LokiEndpoint,
+                    labels: new[]
+                    {
+                        new LokiLabel { Key = "application", Value = "QuizyMode" },
+                        new LokiLabel { Key = "environment", Value = context.HostingEnvironment.EnvironmentName }
+                    },
+                    credentials: new LokiCredentials
+                    {
+                        Login = lokiInstanceId,
+                        Password = lokiApiKey
+                    });
+            }
         });
 
         return builder;
