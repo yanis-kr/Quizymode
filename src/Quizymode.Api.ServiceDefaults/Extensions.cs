@@ -61,10 +61,14 @@ public static class Extensions
             var apiKey = builder.Configuration["GrafanaCloud:ApiKey"] ?? string.Empty;
             
             // Set environment variables for Grafana SDK to pick up
+            // See https://grafana.com/docs/opentelemetry/instrument/grafana-dotnet/ for required environment variables
             if (!string.IsNullOrWhiteSpace(grafanaCloudOtlpEndpoint))
             {
                 Environment.SetEnvironmentVariable("OTEL_EXPORTER_OTLP_ENDPOINT", grafanaCloudOtlpEndpoint);
             }
+            
+            // Set OTLP protocol to http/protobuf as required by Grafana Cloud
+            Environment.SetEnvironmentVariable("OTEL_EXPORTER_OTLP_PROTOCOL", "http/protobuf");
             
             // Construct Basic auth header if credentials are provided
             if (!string.IsNullOrWhiteSpace(otlpInstanceId) && !string.IsNullOrWhiteSpace(apiKey))
