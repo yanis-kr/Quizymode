@@ -53,6 +53,7 @@ internal sealed class UserUpsertMiddleware
 
                 // Resolve db and upsert
                 var db = context.RequestServices.GetRequiredService<ApplicationDbContext>();
+                var auditService = context.RequestServices.GetRequiredService<IAuditService>();
 
                 var existing = await db.Users.FirstOrDefaultAsync(u => u.Subject == subject);
                 Guid userId;
@@ -74,6 +75,12 @@ internal sealed class UserUpsertMiddleware
                     await db.SaveChangesAsync();
                     userId = userEntity.Id;
                     _logger.LogInformation("Created new user record for subject: {Subject} with UserId: {UserId}", subject, userId);
+                    
+                    // Log user creation audit
+                    await auditService.LogAsync(
+                        AuditAction.UserCreated,
+                        userId: userId,
+                        cancellationToken: context.RequestAborted);
                 }
                 else
                 {
@@ -90,6 +97,12 @@ internal sealed class UserUpsertMiddleware
                     await db.SaveChangesAsync();
                     userId = existing.Id;
                     _logger.LogDebug("Updated user record for subject: {Subject} with UserId: {UserId}", subject, userId);
+                    
+                    // Log login success audit
+                    await auditService.LogAsync(
+                        AuditAction.LoginSuccess,
+                        userId: userId,
+                        cancellationToken: context.RequestAborted);
                 }
                 
                 // Store UserId in HttpContext.Items for UserContext to use
