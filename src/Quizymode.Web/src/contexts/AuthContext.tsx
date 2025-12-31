@@ -62,7 +62,8 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
 
   const refreshAuth = async () => {
     try {
-      const session = await fetchAuthSession();
+      // Use forceRefresh to ensure we get fresh tokens if refresh token is available
+      const session = await fetchAuthSession({ forceRefresh: false });
       if (session.tokens?.accessToken) {
         const token = session.tokens.accessToken;
         const payload = JSON.parse(atob(token.toString().split(".")[1]));
@@ -71,10 +72,78 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
         const exp = payload.exp;
         const now = Math.floor(Date.now() / 1000);
         if (exp && exp < now) {
-          // Token expired - clear auth state
-          console.warn("Token expired, clearing auth state");
-          clearAuthState();
-          return;
+          // Token expired - try to refresh if possible
+          try {
+            const refreshedSession = await fetchAuthSession({ forceRefresh: true });
+            if (refreshedSession.tokens?.accessToken) {
+              // Use refreshed tokens
+              const refreshedToken = refreshedSession.tokens.accessToken;
+              const refreshedPayload = JSON.parse(atob(refreshedToken.toString().split(".")[1]));
+              const refreshedExp = refreshedPayload.exp;
+              
+              if (refreshedExp && refreshedExp < now) {
+                // Still expired after refresh - clear auth state
+                console.warn("Token still expired after refresh, clearing auth state");
+                clearAuthState();
+                return;
+              }
+              
+              // Use refreshed token
+              const refreshedIdToken = refreshedSession.tokens.idToken?.toString() || null;
+              setTokens(refreshedToken.toString(), refreshedIdToken);
+              
+              setIsAuthenticated(true);
+              setUserId(refreshedPayload.sub || null);
+              setUsername(refreshedPayload["cognito:username"] || refreshedPayload.username || null);
+              setEmail(refreshedPayload.email || null);
+              
+              // Extract groups and check admin status
+              const extractGroups = (tokenPayload: any): string[] => {
+                const groupsClaim = tokenPayload["cognito:groups"];
+                if (Array.isArray(groupsClaim)) {
+                  return groupsClaim;
+                } else if (typeof groupsClaim === "string") {
+                  return [groupsClaim];
+                }
+                return [];
+              };
+              
+              let groups = extractGroups(refreshedPayload);
+              let isUserAdmin = groups.some((g: string) =>
+                g.toLowerCase().startsWith("admin")
+              );
+              
+              if (refreshedSession.tokens.idToken) {
+                const idTokenValue = refreshedSession.tokens.idToken;
+                const idPayload = JSON.parse(
+                  atob(idTokenValue.toString().split(".")[1])
+                );
+                
+                if (!refreshedPayload.email && idPayload.email) {
+                  setEmail(idPayload.email);
+                }
+                
+                if (!isUserAdmin) {
+                  const idGroups = extractGroups(idPayload);
+                  isUserAdmin = idGroups.some((g: string) =>
+                    g.toLowerCase().startsWith("admin")
+                  );
+                }
+              }
+              
+              setIsAdmin(isUserAdmin);
+              return;
+            } else {
+              // No tokens after refresh - clear auth state
+              clearAuthState();
+              return;
+            }
+          } catch (refreshError) {
+            // Refresh failed - clear auth state
+            console.warn("Token refresh failed:", refreshError);
+            clearAuthState();
+            return;
+          }
         }
 
         setIsAuthenticated(true);
@@ -112,23 +181,61 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
           // Also validate ID token expiration
           const idExp = idPayload.exp;
           if (idExp && idExp < now) {
-            // ID token expired - clear auth state
-            console.warn("ID token expired, clearing auth state");
-            clearAuthState();
-            return;
-          }
+            // ID token expired - try to refresh
+            try {
+              const refreshedSession = await fetchAuthSession({ forceRefresh: true });
+              if (refreshedSession.tokens?.idToken) {
+                const refreshedIdToken = refreshedSession.tokens.idToken.toString();
+                const refreshedIdPayload = JSON.parse(
+                  atob(refreshedIdToken.split(".")[1])
+                );
+                const refreshedIdExp = refreshedIdPayload.exp;
+                
+                if (refreshedIdExp && refreshedIdExp < now) {
+                  // Still expired - clear auth state
+                  console.warn("ID token still expired after refresh, clearing auth state");
+                  clearAuthState();
+                  return;
+                }
+                
+                // Use refreshed ID token
+                const refreshedAccessToken = refreshedSession.tokens.accessToken?.toString() || token.toString();
+                setTokens(refreshedAccessToken, refreshedIdToken);
+                
+                if (!payload.email && refreshedIdPayload.email) {
+                  setEmail(refreshedIdPayload.email);
+                }
+                
+                if (!isUserAdmin) {
+                  const idGroups = extractGroups(refreshedIdPayload);
+                  isUserAdmin = idGroups.some((g: string) =>
+                    g.toLowerCase().startsWith("admin")
+                  );
+                }
+              } else {
+                // No ID token after refresh - clear auth state
+                clearAuthState();
+                return;
+              }
+            } catch (refreshError) {
+              // Refresh failed - clear auth state
+              console.warn("ID token refresh failed:", refreshError);
+              clearAuthState();
+              return;
+            }
+          } else {
+            // Get email from idToken if not in accessToken
+            if (!payload.email && idPayload.email) {
+              setEmail(idPayload.email);
+            }
 
-          // Get email from idToken if not in accessToken
-          if (!payload.email && idPayload.email) {
-            setEmail(idPayload.email);
-          }
-
-          // Check for admin group in ID token if not found in access token
-          if (!isUserAdmin) {
-            const idGroups = extractGroups(idPayload);
-            isUserAdmin = idGroups.some((g: string) =>
-              g.toLowerCase().startsWith("admin")
-            );
+            // Check for admin group in ID token if not found in access token
+            if (!isUserAdmin) {
+              const idGroups = extractGroups(idPayload);
+              isUserAdmin = idGroups.some((g: string) =>
+                g.toLowerCase().startsWith("admin")
+              );
+            }
           }
         }
 
