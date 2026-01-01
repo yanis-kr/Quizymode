@@ -37,6 +37,26 @@ internal static class AddItemHandler
             // Normalize category and subcategory to ensure case-insensitive consistency
             string normalizedCategory = CategoryHelper.Normalize(request.Category);
             string normalizedSubcategory = CategoryHelper.Normalize(request.Subcategory);
+            
+            // Check for duplicates - only for the same user
+            // Different users can add the same items
+            string userId = userContext.UserId ?? "dev_user";
+            bool isDuplicate = await db.Items
+                .Where(item => 
+                    item.CreatedBy == userId &&
+                    item.FuzzyBucket == fuzzyBucket)
+                .ToListAsync(cancellationToken)
+                .ContinueWith(t => t.Result.Any(item =>
+                    string.Equals(item.Category, normalizedCategory, StringComparison.OrdinalIgnoreCase) &&
+                    string.Equals(item.Subcategory, normalizedSubcategory, StringComparison.OrdinalIgnoreCase) &&
+                    (string.Equals(item.Question, request.Question, StringComparison.OrdinalIgnoreCase) ||
+                     item.FuzzySignature == fuzzySignature)), cancellationToken);
+            
+            if (isDuplicate)
+            {
+                return Result.Failure<AddItem.Response>(
+                    Error.Validation("Item.Duplicate", $"An item with the same question already exists in category '{normalizedCategory}' / subcategory '{normalizedSubcategory}'. Questions are compared case-insensitively."));
+            }
 
             Item item = new Item
             {
@@ -57,9 +77,6 @@ internal static class AddItemHandler
 
             db.Items.Add(item);
             await db.SaveChangesAsync(cancellationToken);
-
-            // Get userId once for use throughout
-            string userId = userContext.UserId ?? "dev_user";
 
             // Handle keywords if provided
             if (effectiveKeywords is not null && effectiveKeywords.Count > 0)

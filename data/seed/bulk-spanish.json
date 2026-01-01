@@ -4,249 +4,465 @@
     "subcategory": "Greetings",
     "question": "How do you say Hello in Spanish?",
     "correctAnswer": "Hola",
-    "incorrectAnswers": ["Adiós", "Gracias", "Por favor"],
-    "explanation": "Hola means Hello."
+    "incorrectAnswers": [
+      "Adiós",
+      "Gracias",
+      "Por favor"
+    ],
+    "explanation": "Hola means Hello.",
+    "keywords": [
+      "greetings"
+    ]
   },
   {
     "category": "Spanish",
     "subcategory": "Greetings",
     "question": "How do you say Good morning in Spanish?",
     "correctAnswer": "Buenos días",
-    "incorrectAnswers": ["Buenas noches", "Buenas tardes", "Buenas mañanas"],
-    "explanation": "Buenos días means Good morning."
+    "incorrectAnswers": [
+      "Buenas noches",
+      "Buenas tardes",
+      "Buenas mañanas"
+    ],
+    "explanation": "Buenos días means Good morning.",
+    "keywords": [
+      "greetings"
+    ]
   },
   {
     "category": "Spanish",
     "subcategory": "Greetings",
     "question": "How do you say Good night in Spanish?",
     "correctAnswer": "Buenas noches",
-    "incorrectAnswers": ["Buenas tardes", "Adiós", "Hasta mañana"],
-    "explanation": "Buenas noches means Good night."
+    "incorrectAnswers": [
+      "Buenas tardes",
+      "Adiós",
+      "Hasta mañana"
+    ],
+    "explanation": "Buenas noches means Good night.",
+    "keywords": [
+      "greetings"
+    ]
   },
   {
     "category": "Spanish",
     "subcategory": "Greetings",
     "question": "How do you say Good afternoon in Spanish?",
     "correctAnswer": "Buenas tardes",
-    "incorrectAnswers": ["Buenas noches", "Buenos días", "Adiós"],
-    "explanation": "Buenas tardes means Good afternoon."
+    "incorrectAnswers": [
+      "Buenas noches",
+      "Buenos días",
+      "Adiós"
+    ],
+    "explanation": "Buenas tardes means Good afternoon.",
+    "keywords": [
+      "greetings"
+    ]
   },
   {
     "category": "Spanish",
     "subcategory": "Greetings",
     "question": "How do you say Goodbye in Spanish?",
     "correctAnswer": "Adiós",
-    "incorrectAnswers": ["Hola", "Gracias", "De nada"],
-    "explanation": "Adiós means Goodbye."
+    "incorrectAnswers": [
+      "Hola",
+      "Gracias",
+      "De nada"
+    ],
+    "explanation": "Adiós means Goodbye.",
+    "keywords": [
+      "greetings"
+    ]
   },
   {
     "category": "Spanish",
     "subcategory": "Greetings",
     "question": "How do you say See you later in Spanish?",
     "correctAnswer": "Hasta luego",
-    "incorrectAnswers": ["Hasta pronto", "Hasta mañana", "Adiós"],
-    "explanation": "Hasta luego means See you later."
+    "incorrectAnswers": [
+      "Hasta pronto",
+      "Hasta mañana",
+      "Adiós"
+    ],
+    "explanation": "Hasta luego means See you later.",
+    "keywords": [
+      "greetings"
+    ]
   },
   {
     "category": "Spanish",
     "subcategory": "Greetings",
     "question": "How do you say See you tomorrow in Spanish?",
     "correctAnswer": "Hasta mañana",
-    "incorrectAnswers": ["Hasta luego", "Buenas noches", "Nos vemos"],
-    "explanation": "Hasta mañana means See you tomorrow."
+    "incorrectAnswers": [
+      "Hasta luego",
+      "Buenas noches",
+      "Nos vemos"
+    ],
+    "explanation": "Hasta mañana means See you tomorrow.",
+    "keywords": [
+      "greetings"
+    ]
   },
   {
     "category": "Spanish",
     "subcategory": "Greetings",
     "question": "How do you say Please in Spanish?",
     "correctAnswer": "Por favor",
-    "incorrectAnswers": ["Gracias", "Perdón", "Hola"],
-    "explanation": "Por favor means Please."
+    "incorrectAnswers": [
+      "Gracias",
+      "Perdón",
+      "Hola"
+    ],
+    "explanation": "Por favor means Please.",
+    "keywords": [
+      "greetings"
+    ]
   },
   {
     "category": "Spanish",
     "subcategory": "Greetings",
     "question": "How do you say Thank you in Spanish?",
     "correctAnswer": "Gracias",
-    "incorrectAnswers": ["De nada", "Hola", "Por favor"],
-    "explanation": "Gracias means Thank you."
+    "incorrectAnswers": [
+      "De nada",
+      "Hola",
+      "Por favor"
+    ],
+    "explanation": "Gracias means Thank you.",
+    "keywords": [
+      "greetings"
+    ]
   },
   {
     "category": "Spanish",
     "subcategory": "Greetings",
     "question": "How do you say You're welcome in Spanish?",
     "correctAnswer": "De nada",
-    "incorrectAnswers": ["Gracias", "Por favor", "Adiós"],
-    "explanation": "De nada means You're welcome."
+    "incorrectAnswers": [
+      "Gracias",
+      "Por favor",
+      "Adiós"
+    ],
+    "explanation": "De nada means You're welcome.",
+    "keywords": [
+      "greetings"
+    ]
   },
   {
     "category": "Spanish",
     "subcategory": "Greetings",
     "question": "How do you say Excuse me in Spanish?",
     "correctAnswer": "Perdón",
-    "incorrectAnswers": ["Gracias", "Hola", "Adiós"],
-    "explanation": "Perdón means Excuse me."
+    "incorrectAnswers": [
+      "Gracias",
+      "Hola",
+      "Adiós"
+    ],
+    "explanation": "Perdón means Excuse me.",
+    "keywords": [
+      "greetings"
+    ]
   },
   {
     "category": "Spanish",
     "subcategory": "Greetings",
     "question": "How do you say How are you? in Spanish?",
     "correctAnswer": "¿Cómo estás?",
-    "incorrectAnswers": ["¿Dónde estás?", "¿Qué hora es?", "¿Quién eres?"],
-    "explanation": "¿Cómo estás? means How are you?"
+    "incorrectAnswers": [
+      "¿Dónde estás?",
+      "¿Qué hora es?",
+      "¿Quién eres?"
+    ],
+    "explanation": "¿Cómo estás? means How are you?",
+    "keywords": [
+      "greetings"
+    ]
   },
   {
     "category": "Spanish",
     "subcategory": "Greetings",
     "question": "How do you say What’s your name? in Spanish?",
     "correctAnswer": "¿Cómo te llamas?",
-    "incorrectAnswers": ["¿Cómo estás?", "¿Dónde vives?", "¿Quién eres?"],
-    "explanation": "¿Cómo te llamas? means What’s your name?"
+    "incorrectAnswers": [
+      "¿Cómo estás?",
+      "¿Dónde vives?",
+      "¿Quién eres?"
+    ],
+    "explanation": "¿Cómo te llamas? means What’s your name?",
+    "keywords": [
+      "greetings"
+    ]
   },
   {
     "category": "Spanish",
     "subcategory": "Greetings",
     "question": "How do you say Nice to meet you in Spanish?",
     "correctAnswer": "Mucho gusto",
-    "incorrectAnswers": ["De nada", "Por favor", "Hola"],
-    "explanation": "Mucho gusto means Nice to meet you."
+    "incorrectAnswers": [
+      "De nada",
+      "Por favor",
+      "Hola"
+    ],
+    "explanation": "Mucho gusto means Nice to meet you.",
+    "keywords": [
+      "greetings"
+    ]
   },
   {
     "category": "Spanish",
     "subcategory": "Greetings",
     "question": "How do you say Welcome in Spanish?",
     "correctAnswer": "Bienvenido",
-    "incorrectAnswers": ["Hola", "Gracias", "Adiós"],
-    "explanation": "Bienvenido means Welcome."
+    "incorrectAnswers": [
+      "Hola",
+      "Gracias",
+      "Adiós"
+    ],
+    "explanation": "Bienvenido means Welcome.",
+    "keywords": [
+      "greetings"
+    ]
   },
   {
     "category": "Spanish",
     "subcategory": "Greetings",
     "question": "How do you say Long time no see in Spanish?",
     "correctAnswer": "Cuánto tiempo",
-    "incorrectAnswers": ["Hasta luego", "Hasta mañana", "Adiós"],
-    "explanation": "Cuánto tiempo is used like Long time no see."
+    "incorrectAnswers": [
+      "Hasta luego",
+      "Hasta mañana",
+      "Adiós"
+    ],
+    "explanation": "Cuánto tiempo is used like Long time no see.",
+    "keywords": [
+      "greetings"
+    ]
   },
   {
     "category": "Spanish",
     "subcategory": "Greetings",
     "question": "How do you say Take care in Spanish?",
     "correctAnswer": "Cuídate",
-    "incorrectAnswers": ["Hola", "Adiós", "Mucho gusto"],
-    "explanation": "Cuídate means Take care."
+    "incorrectAnswers": [
+      "Hola",
+      "Adiós",
+      "Mucho gusto"
+    ],
+    "explanation": "Cuídate means Take care.",
+    "keywords": [
+      "greetings"
+    ]
   },
-
   {
     "category": "Spanish",
     "subcategory": "Travel",
     "question": "How do you say Airport in Spanish?",
     "correctAnswer": "Aeropuerto",
-    "incorrectAnswers": ["Calle", "Estación", "Avión"],
-    "explanation": "Aeropuerto means Airport."
+    "incorrectAnswers": [
+      "Calle",
+      "Estación",
+      "Avión"
+    ],
+    "explanation": "Aeropuerto means Airport.",
+    "keywords": [
+      "travel"
+    ]
   },
   {
     "category": "Spanish",
     "subcategory": "Travel",
     "question": "How do you say Train in Spanish?",
     "correctAnswer": "Tren",
-    "incorrectAnswers": ["Metro", "Taxi", "Avión"],
-    "explanation": "Tren means Train."
+    "incorrectAnswers": [
+      "Metro",
+      "Taxi",
+      "Avión"
+    ],
+    "explanation": "Tren means Train.",
+    "keywords": [
+      "travel"
+    ]
   },
   {
     "category": "Spanish",
     "subcategory": "Travel",
     "question": "How do you say Bus in Spanish?",
     "correctAnswer": "Autobús",
-    "incorrectAnswers": ["Carro", "Taxi", "Bicicleta"],
-    "explanation": "Autobús means Bus."
+    "incorrectAnswers": [
+      "Carro",
+      "Taxi",
+      "Bicicleta"
+    ],
+    "explanation": "Autobús means Bus.",
+    "keywords": [
+      "travel"
+    ]
   },
   {
     "category": "Spanish",
     "subcategory": "Travel",
     "question": "How do you say Ticket in Spanish?",
     "correctAnswer": "Boleto",
-    "incorrectAnswers": ["Viaje", "Pase", "Ruta"],
-    "explanation": "Boleto means Ticket."
+    "incorrectAnswers": [
+      "Viaje",
+      "Pase",
+      "Ruta"
+    ],
+    "explanation": "Boleto means Ticket.",
+    "keywords": [
+      "travel"
+    ]
   },
   {
     "category": "Spanish",
     "subcategory": "Travel",
     "question": "How do you say Luggage in Spanish?",
     "correctAnswer": "Equipaje",
-    "incorrectAnswers": ["Bolsa", "Ropa", "Regalo"],
-    "explanation": "Equipaje means Luggage."
+    "incorrectAnswers": [
+      "Bolsa",
+      "Ropa",
+      "Regalo"
+    ],
+    "explanation": "Equipaje means Luggage.",
+    "keywords": [
+      "travel"
+    ]
   },
   {
     "category": "Spanish",
     "subcategory": "Travel",
     "question": "How do you say Hotel in Spanish?",
     "correctAnswer": "Hotel",
-    "incorrectAnswers": ["Casa", "Apartamento", "Hostal"],
-    "explanation": "Hotel means Hotel."
+    "incorrectAnswers": [
+      "Casa",
+      "Apartamento",
+      "Hostal"
+    ],
+    "explanation": "Hotel means Hotel.",
+    "keywords": [
+      "travel"
+    ]
   },
   {
     "category": "Spanish",
     "subcategory": "Travel",
     "question": "How do you say Beach in Spanish?",
     "correctAnswer": "Playa",
-    "incorrectAnswers": ["Río", "Montaña", "Bosque"],
-    "explanation": "Playa means Beach."
+    "incorrectAnswers": [
+      "Río",
+      "Montaña",
+      "Bosque"
+    ],
+    "explanation": "Playa means Beach.",
+    "keywords": [
+      "travel"
+    ]
   },
   {
     "category": "Spanish",
     "subcategory": "Travel",
     "question": "How do you say Map in Spanish?",
     "correctAnswer": "Mapa",
-    "incorrectAnswers": ["Camino", "Guía", "Lugar"],
-    "explanation": "Mapa means Map."
+    "incorrectAnswers": [
+      "Camino",
+      "Guía",
+      "Lugar"
+    ],
+    "explanation": "Mapa means Map.",
+    "keywords": [
+      "travel"
+    ]
   },
   {
     "category": "Spanish",
     "subcategory": "Travel",
     "question": "How do you say Passport in Spanish?",
     "correctAnswer": "Pasaporte",
-    "incorrectAnswers": ["Documento", "Visa", "Identificación"],
-    "explanation": "Pasaporte means Passport."
+    "incorrectAnswers": [
+      "Documento",
+      "Visa",
+      "Identificación"
+    ],
+    "explanation": "Pasaporte means Passport.",
+    "keywords": [
+      "travel"
+    ]
   },
   {
     "category": "Spanish",
     "subcategory": "Travel",
     "question": "How do you say Taxi in Spanish?",
     "correctAnswer": "Taxi",
-    "incorrectAnswers": ["Tren", "Autobús", "Coche"],
-    "explanation": "Taxi means Taxi."
+    "incorrectAnswers": [
+      "Tren",
+      "Autobús",
+      "Coche"
+    ],
+    "explanation": "Taxi means Taxi.",
+    "keywords": [
+      "travel"
+    ]
   },
   {
     "category": "Spanish",
     "subcategory": "Travel",
     "question": "How do you say Left in Spanish?",
     "correctAnswer": "Izquierda",
-    "incorrectAnswers": ["Derecha", "Arriba", "Abajo"],
-    "explanation": "Izquierda means Left."
+    "incorrectAnswers": [
+      "Derecha",
+      "Arriba",
+      "Abajo"
+    ],
+    "explanation": "Izquierda means Left.",
+    "keywords": [
+      "travel"
+    ]
   },
   {
     "category": "Spanish",
     "subcategory": "Travel",
     "question": "How do you say Right in Spanish?",
     "correctAnswer": "Derecha",
-    "incorrectAnswers": ["Izquierda", "Adentro", "Afuera"],
-    "explanation": "Derecha means Right."
+    "incorrectAnswers": [
+      "Izquierda",
+      "Adentro",
+      "Afuera"
+    ],
+    "explanation": "Derecha means Right.",
+    "keywords": [
+      "travel"
+    ]
   },
   {
     "category": "Spanish",
     "subcategory": "Travel",
     "question": "How do you say Street in Spanish?",
     "correctAnswer": "Calle",
-    "incorrectAnswers": ["Puente", "Pueblo", "Carretera"],
-    "explanation": "Calle means Street."
+    "incorrectAnswers": [
+      "Puente",
+      "Pueblo",
+      "Carretera"
+    ],
+    "explanation": "Calle means Street.",
+    "keywords": [
+      "travel"
+    ]
   },
   {
     "category": "Spanish",
     "subcategory": "Travel",
     "question": "How do you say City in Spanish?",
     "correctAnswer": "Ciudad",
-    "incorrectAnswers": ["País", "Barrio", "Pueblo"],
-    "explanation": "Ciudad means City."
+    "incorrectAnswers": [
+      "País",
+      "Barrio",
+      "Pueblo"
+    ],
+    "explanation": "Ciudad means City.",
+    "keywords": [
+      "travel"
+    ]
   },
   {
     "category": "Spanish",
@@ -258,555 +474,1029 @@
       "¿Dónde está la calle?",
       "¿Dónde está mi hotel?"
     ],
-    "explanation": "¿Dónde está el baño? means Where is the bathroom?"
+    "explanation": "¿Dónde está el baño? means Where is the bathroom?",
+    "keywords": [
+      "travel"
+    ]
   },
   {
     "category": "Spanish",
     "subcategory": "Travel",
     "question": "How do you say I need help in Spanish?",
     "correctAnswer": "Necesito ayuda",
-    "incorrectAnswers": ["Necesito comida", "Necesito hotel", "Necesito taxi"],
-    "explanation": "Necesito ayuda means I need help."
+    "incorrectAnswers": [
+      "Necesito comida",
+      "Necesito hotel",
+      "Necesito taxi"
+    ],
+    "explanation": "Necesito ayuda means I need help.",
+    "keywords": [
+      "travel"
+    ]
   },
   {
     "category": "Spanish",
     "subcategory": "Travel",
     "question": "How do you say I'm lost in Spanish?",
     "correctAnswer": "Estoy perdido",
-    "incorrectAnswers": ["Estoy cansado", "Estoy aquí", "Estoy listo"],
-    "explanation": "Estoy perdido means I'm lost."
+    "incorrectAnswers": [
+      "Estoy cansado",
+      "Estoy aquí",
+      "Estoy listo"
+    ],
+    "explanation": "Estoy perdido means I'm lost.",
+    "keywords": [
+      "travel"
+    ]
   },
-
   {
     "category": "Spanish",
     "subcategory": "Food",
     "question": "How do you say Bread in Spanish?",
     "correctAnswer": "Pan",
-    "incorrectAnswers": ["Agua", "Sal", "Leche"],
-    "explanation": "Pan means Bread."
+    "incorrectAnswers": [
+      "Agua",
+      "Sal",
+      "Leche"
+    ],
+    "explanation": "Pan means Bread.",
+    "keywords": [
+      "food"
+    ]
   },
   {
     "category": "Spanish",
     "subcategory": "Food",
     "question": "How do you say Water in Spanish?",
     "correctAnswer": "Agua",
-    "incorrectAnswers": ["Pan", "Jugo", "Vino"],
-    "explanation": "Agua means Water."
+    "incorrectAnswers": [
+      "Pan",
+      "Jugo",
+      "Vino"
+    ],
+    "explanation": "Agua means Water.",
+    "keywords": [
+      "food"
+    ]
   },
   {
     "category": "Spanish",
     "subcategory": "Food",
     "question": "How do you say Milk in Spanish?",
     "correctAnswer": "Leche",
-    "incorrectAnswers": ["Agua", "Pan", "Carne"],
-    "explanation": "Leche means Milk."
+    "incorrectAnswers": [
+      "Agua",
+      "Pan",
+      "Carne"
+    ],
+    "explanation": "Leche means Milk.",
+    "keywords": [
+      "food"
+    ]
   },
   {
     "category": "Spanish",
     "subcategory": "Food",
     "question": "How do you say Chicken in Spanish?",
     "correctAnswer": "Pollo",
-    "incorrectAnswers": ["Carne", "Pavo", "Pescado"],
-    "explanation": "Pollo means Chicken."
+    "incorrectAnswers": [
+      "Carne",
+      "Pavo",
+      "Pescado"
+    ],
+    "explanation": "Pollo means Chicken.",
+    "keywords": [
+      "food"
+    ]
   },
   {
     "category": "Spanish",
     "subcategory": "Food",
     "question": "How do you say Fish in Spanish?",
     "correctAnswer": "Pescado",
-    "incorrectAnswers": ["Pollo", "Carne", "Pan"],
-    "explanation": "Pescado means Fish."
+    "incorrectAnswers": [
+      "Pollo",
+      "Carne",
+      "Pan"
+    ],
+    "explanation": "Pescado means Fish.",
+    "keywords": [
+      "food"
+    ]
   },
   {
     "category": "Spanish",
     "subcategory": "Food",
     "question": "How do you say Meat in Spanish?",
     "correctAnswer": "Carne",
-    "incorrectAnswers": ["Pan", "Pescado", "Pollo"],
-    "explanation": "Carne means Meat."
+    "incorrectAnswers": [
+      "Pan",
+      "Pescado",
+      "Pollo"
+    ],
+    "explanation": "Carne means Meat.",
+    "keywords": [
+      "food"
+    ]
   },
   {
     "category": "Spanish",
     "subcategory": "Food",
     "question": "How do you say Rice in Spanish?",
     "correctAnswer": "Arroz",
-    "incorrectAnswers": ["Pan", "Pasta", "Queso"],
-    "explanation": "Arroz means Rice."
+    "incorrectAnswers": [
+      "Pan",
+      "Pasta",
+      "Queso"
+    ],
+    "explanation": "Arroz means Rice.",
+    "keywords": [
+      "food"
+    ]
   },
   {
     "category": "Spanish",
     "subcategory": "Food",
     "question": "How do you say Cheese in Spanish?",
     "correctAnswer": "Queso",
-    "incorrectAnswers": ["Pasta", "Carne", "Huevo"],
-    "explanation": "Queso means Cheese."
+    "incorrectAnswers": [
+      "Pasta",
+      "Carne",
+      "Huevo"
+    ],
+    "explanation": "Queso means Cheese.",
+    "keywords": [
+      "food"
+    ]
   },
   {
     "category": "Spanish",
     "subcategory": "Food",
     "question": "How do you say Egg in Spanish?",
     "correctAnswer": "Huevo",
-    "incorrectAnswers": ["Queso", "Pan", "Agua"],
-    "explanation": "Huevo means Egg."
+    "incorrectAnswers": [
+      "Queso",
+      "Pan",
+      "Agua"
+    ],
+    "explanation": "Huevo means Egg.",
+    "keywords": [
+      "food"
+    ]
   },
   {
     "category": "Spanish",
     "subcategory": "Food",
     "question": "How do you say Fruit in Spanish?",
     "correctAnswer": "Fruta",
-    "incorrectAnswers": ["Verdura", "Carne", "Pan"],
-    "explanation": "Fruta means Fruit."
+    "incorrectAnswers": [
+      "Verdura",
+      "Carne",
+      "Pan"
+    ],
+    "explanation": "Fruta means Fruit.",
+    "keywords": [
+      "food"
+    ]
   },
   {
     "category": "Spanish",
     "subcategory": "Food",
     "question": "How do you say Apple in Spanish?",
     "correctAnswer": "Manzana",
-    "incorrectAnswers": ["Naranja", "Uva", "Pera"],
-    "explanation": "Manzana means Apple."
+    "incorrectAnswers": [
+      "Naranja",
+      "Uva",
+      "Pera"
+    ],
+    "explanation": "Manzana means Apple.",
+    "keywords": [
+      "food"
+    ]
   },
   {
     "category": "Spanish",
     "subcategory": "Food",
     "question": "How do you say Orange in Spanish?",
     "correctAnswer": "Naranja",
-    "incorrectAnswers": ["Manzana", "Limón", "Pera"],
-    "explanation": "Naranja means Orange."
+    "incorrectAnswers": [
+      "Manzana",
+      "Limón",
+      "Pera"
+    ],
+    "explanation": "Naranja means Orange.",
+    "keywords": [
+      "food"
+    ]
   },
   {
     "category": "Spanish",
     "subcategory": "Food",
     "question": "How do you say Ice cream in Spanish?",
     "correctAnswer": "Helado",
-    "incorrectAnswers": ["Frío", "Nieve", "Dulce"],
-    "explanation": "Helado means Ice cream."
+    "incorrectAnswers": [
+      "Frío",
+      "Nieve",
+      "Dulce"
+    ],
+    "explanation": "Helado means Ice cream.",
+    "keywords": [
+      "food"
+    ]
   },
   {
     "category": "Spanish",
     "subcategory": "Food",
     "question": "How do you say Sugar in Spanish?",
     "correctAnswer": "Azúcar",
-    "incorrectAnswers": ["Sal", "Miel", "Leche"],
-    "explanation": "Azúcar means Sugar."
+    "incorrectAnswers": [
+      "Sal",
+      "Miel",
+      "Leche"
+    ],
+    "explanation": "Azúcar means Sugar.",
+    "keywords": [
+      "food"
+    ]
   },
   {
     "category": "Spanish",
     "subcategory": "Food",
     "question": "How do you say Salt in Spanish?",
     "correctAnswer": "Sal",
-    "incorrectAnswers": ["Azúcar", "Agua", "Leche"],
-    "explanation": "Sal means Salt."
+    "incorrectAnswers": [
+      "Azúcar",
+      "Agua",
+      "Leche"
+    ],
+    "explanation": "Sal means Salt.",
+    "keywords": [
+      "food"
+    ]
   },
   {
     "category": "Spanish",
     "subcategory": "Food",
     "question": "How do you say Breakfast in Spanish?",
     "correctAnswer": "Desayuno",
-    "incorrectAnswers": ["Almuerzo", "Cena", "Comida"],
-    "explanation": "Desayuno means Breakfast."
+    "incorrectAnswers": [
+      "Almuerzo",
+      "Cena",
+      "Comida"
+    ],
+    "explanation": "Desayuno means Breakfast.",
+    "keywords": [
+      "food"
+    ]
   },
   {
     "category": "Spanish",
     "subcategory": "Food",
     "question": "How do you say Lunch in Spanish?",
     "correctAnswer": "Almuerzo",
-    "incorrectAnswers": ["Desayuno", "Cena", "Comida"],
-    "explanation": "Almuerzo means Lunch."
+    "incorrectAnswers": [
+      "Desayuno",
+      "Cena",
+      "Comida"
+    ],
+    "explanation": "Almuerzo means Lunch.",
+    "keywords": [
+      "food"
+    ]
   },
-
   {
     "category": "Spanish",
     "subcategory": "Verbs",
     "question": "How do you say To eat in Spanish?",
     "correctAnswer": "Comer",
-    "incorrectAnswers": ["Beber", "Dormir", "Hablar"],
-    "explanation": "Comer means To eat."
+    "incorrectAnswers": [
+      "Beber",
+      "Dormir",
+      "Hablar"
+    ],
+    "explanation": "Comer means To eat.",
+    "keywords": [
+      "verbs"
+    ]
   },
   {
     "category": "Spanish",
     "subcategory": "Verbs",
     "question": "How do you say To drink in Spanish?",
     "correctAnswer": "Beber",
-    "incorrectAnswers": ["Comer", "Caminar", "Leer"],
-    "explanation": "Beber means To drink."
+    "incorrectAnswers": [
+      "Comer",
+      "Caminar",
+      "Leer"
+    ],
+    "explanation": "Beber means To drink.",
+    "keywords": [
+      "verbs"
+    ]
   },
   {
     "category": "Spanish",
     "subcategory": "Verbs",
     "question": "How do you say To go in Spanish?",
     "correctAnswer": "Ir",
-    "incorrectAnswers": ["Venir", "Tener", "Ser"],
-    "explanation": "Ir means To go."
+    "incorrectAnswers": [
+      "Venir",
+      "Tener",
+      "Ser"
+    ],
+    "explanation": "Ir means To go.",
+    "keywords": [
+      "verbs"
+    ]
   },
   {
     "category": "Spanish",
     "subcategory": "Verbs",
     "question": "How do you say To be (permanent) in Spanish?",
     "correctAnswer": "Ser",
-    "incorrectAnswers": ["Estar", "Ir", "Hacer"],
-    "explanation": "Ser is the permanent form of To be."
+    "incorrectAnswers": [
+      "Estar",
+      "Ir",
+      "Hacer"
+    ],
+    "explanation": "Ser is the permanent form of To be.",
+    "keywords": [
+      "verbs"
+    ]
   },
   {
     "category": "Spanish",
     "subcategory": "Verbs",
     "question": "How do you say To be (temporary) in Spanish?",
     "correctAnswer": "Estar",
-    "incorrectAnswers": ["Ser", "Ir", "Venir"],
-    "explanation": "Estar is the temporary form of To be."
+    "incorrectAnswers": [
+      "Ser",
+      "Ir",
+      "Venir"
+    ],
+    "explanation": "Estar is the temporary form of To be.",
+    "keywords": [
+      "verbs"
+    ]
   },
   {
     "category": "Spanish",
     "subcategory": "Verbs",
     "question": "How do you say To have in Spanish?",
     "correctAnswer": "Tener",
-    "incorrectAnswers": ["Hacer", "Ir", "Ser"],
-    "explanation": "Tener means To have."
+    "incorrectAnswers": [
+      "Hacer",
+      "Ir",
+      "Ser"
+    ],
+    "explanation": "Tener means To have.",
+    "keywords": [
+      "verbs"
+    ]
   },
   {
     "category": "Spanish",
     "subcategory": "Verbs",
     "question": "How do you say To do / To make in Spanish?",
     "correctAnswer": "Hacer",
-    "incorrectAnswers": ["Decir", "Tener", "Ser"],
-    "explanation": "Hacer means To do or To make."
+    "incorrectAnswers": [
+      "Decir",
+      "Tener",
+      "Ser"
+    ],
+    "explanation": "Hacer means To do or To make.",
+    "keywords": [
+      "verbs"
+    ]
   },
   {
     "category": "Spanish",
     "subcategory": "Verbs",
     "question": "How do you say To speak in Spanish?",
     "correctAnswer": "Hablar",
-    "incorrectAnswers": ["Leer", "Escribir", "Comer"],
-    "explanation": "Hablar means To speak."
+    "incorrectAnswers": [
+      "Leer",
+      "Escribir",
+      "Comer"
+    ],
+    "explanation": "Hablar means To speak.",
+    "keywords": [
+      "verbs"
+    ]
   },
   {
     "category": "Spanish",
     "subcategory": "Verbs",
     "question": "How do you say To read in Spanish?",
     "correctAnswer": "Leer",
-    "incorrectAnswers": ["Escribir", "Correr", "Ir"],
-    "explanation": "Leer means To read."
+    "incorrectAnswers": [
+      "Escribir",
+      "Correr",
+      "Ir"
+    ],
+    "explanation": "Leer means To read.",
+    "keywords": [
+      "verbs"
+    ]
   },
   {
     "category": "Spanish",
     "subcategory": "Verbs",
     "question": "How do you say To write in Spanish?",
     "correctAnswer": "Escribir",
-    "incorrectAnswers": ["Leer", "Hablar", "Dormir"],
-    "explanation": "Escribir means To write."
+    "incorrectAnswers": [
+      "Leer",
+      "Hablar",
+      "Dormir"
+    ],
+    "explanation": "Escribir means To write.",
+    "keywords": [
+      "verbs"
+    ]
   },
   {
     "category": "Spanish",
     "subcategory": "Verbs",
     "question": "How do you say To sleep in Spanish?",
     "correctAnswer": "Dormir",
-    "incorrectAnswers": ["Correr", "Jugar", "Leer"],
-    "explanation": "Dormir means To sleep."
+    "incorrectAnswers": [
+      "Correr",
+      "Jugar",
+      "Leer"
+    ],
+    "explanation": "Dormir means To sleep.",
+    "keywords": [
+      "verbs"
+    ]
   },
   {
     "category": "Spanish",
     "subcategory": "Verbs",
     "question": "How do you say To run in Spanish?",
     "correctAnswer": "Correr",
-    "incorrectAnswers": ["Caminar", "Saltar", "Leer"],
-    "explanation": "Correr means To run."
+    "incorrectAnswers": [
+      "Caminar",
+      "Saltar",
+      "Leer"
+    ],
+    "explanation": "Correr means To run.",
+    "keywords": [
+      "verbs"
+    ]
   },
   {
     "category": "Spanish",
     "subcategory": "Verbs",
     "question": "How do you say To walk in Spanish?",
     "correctAnswer": "Caminar",
-    "incorrectAnswers": ["Correr", "Beber", "Comer"],
-    "explanation": "Caminar means To walk."
+    "incorrectAnswers": [
+      "Correr",
+      "Beber",
+      "Comer"
+    ],
+    "explanation": "Caminar means To walk.",
+    "keywords": [
+      "verbs"
+    ]
   },
   {
     "category": "Spanish",
     "subcategory": "Verbs",
     "question": "How do you say To understand in Spanish?",
     "correctAnswer": "Entender",
-    "incorrectAnswers": ["Aprender", "Comer", "Correr"],
-    "explanation": "Entender means To understand."
+    "incorrectAnswers": [
+      "Aprender",
+      "Comer",
+      "Correr"
+    ],
+    "explanation": "Entender means To understand.",
+    "keywords": [
+      "verbs"
+    ]
   },
   {
     "category": "Spanish",
     "subcategory": "Verbs",
     "question": "How do you say To learn in Spanish?",
     "correctAnswer": "Aprender",
-    "incorrectAnswers": ["Entender", "Correr", "Dormir"],
-    "explanation": "Aprender means To learn."
+    "incorrectAnswers": [
+      "Entender",
+      "Correr",
+      "Dormir"
+    ],
+    "explanation": "Aprender means To learn.",
+    "keywords": [
+      "verbs"
+    ]
   },
   {
     "category": "Spanish",
     "subcategory": "Verbs",
     "question": "How do you say To want in Spanish?",
     "correctAnswer": "Querer",
-    "incorrectAnswers": ["Tener", "Ser", "Ir"],
-    "explanation": "Querer means To want."
+    "incorrectAnswers": [
+      "Tener",
+      "Ser",
+      "Ir"
+    ],
+    "explanation": "Querer means To want.",
+    "keywords": [
+      "verbs"
+    ]
   },
   {
     "category": "Spanish",
     "subcategory": "Verbs",
     "question": "How do you say To live in Spanish?",
     "correctAnswer": "Vivir",
-    "incorrectAnswers": ["Ser", "Tener", "Ir"],
-    "explanation": "Vivir means To live."
+    "incorrectAnswers": [
+      "Ser",
+      "Tener",
+      "Ir"
+    ],
+    "explanation": "Vivir means To live.",
+    "keywords": [
+      "verbs"
+    ]
   },
-
   {
     "category": "Spanish",
     "subcategory": "Basic Vocabulary",
     "question": "How do you say House in Spanish?",
     "correctAnswer": "Casa",
-    "incorrectAnswers": ["Carro", "Calle", "Ciudad"],
-    "explanation": "Casa means House."
+    "incorrectAnswers": [
+      "Carro",
+      "Calle",
+      "Ciudad"
+    ],
+    "explanation": "Casa means House.",
+    "keywords": [
+      "spanish"
+    ]
   },
   {
     "category": "Spanish",
     "subcategory": "Basic Vocabulary",
     "question": "How do you say Car in Spanish?",
     "correctAnswer": "Coche",
-    "incorrectAnswers": ["Casa", "Puerta", "Mesa"],
-    "explanation": "Coche means Car."
+    "incorrectAnswers": [
+      "Casa",
+      "Puerta",
+      "Mesa"
+    ],
+    "explanation": "Coche means Car.",
+    "keywords": [
+      "spanish"
+    ]
   },
   {
     "category": "Spanish",
     "subcategory": "Basic Vocabulary",
     "question": "How do you say Door in Spanish?",
     "correctAnswer": "Puerta",
-    "incorrectAnswers": ["Mesa", "Silla", "Ventana"],
-    "explanation": "Puerta means Door."
+    "incorrectAnswers": [
+      "Mesa",
+      "Silla",
+      "Ventana"
+    ],
+    "explanation": "Puerta means Door.",
+    "keywords": [
+      "spanish"
+    ]
   },
   {
     "category": "Spanish",
     "subcategory": "Basic Vocabulary",
     "question": "How do you say Window in Spanish?",
     "correctAnswer": "Ventana",
-    "incorrectAnswers": ["Puerta", "Mesa", "Cama"],
-    "explanation": "Ventana means Window."
+    "incorrectAnswers": [
+      "Puerta",
+      "Mesa",
+      "Cama"
+    ],
+    "explanation": "Ventana means Window.",
+    "keywords": [
+      "spanish"
+    ]
   },
   {
     "category": "Spanish",
     "subcategory": "Basic Vocabulary",
     "question": "How do you say Table in Spanish?",
     "correctAnswer": "Mesa",
-    "incorrectAnswers": ["Silla", "Puerta", "Ventana"],
-    "explanation": "Mesa means Table."
+    "incorrectAnswers": [
+      "Silla",
+      "Puerta",
+      "Ventana"
+    ],
+    "explanation": "Mesa means Table.",
+    "keywords": [
+      "spanish"
+    ]
   },
   {
     "category": "Spanish",
     "subcategory": "Basic Vocabulary",
     "question": "How do you say Chair in Spanish?",
     "correctAnswer": "Silla",
-    "incorrectAnswers": ["Mesa", "Cama", "Puerta"],
-    "explanation": "Silla means Chair."
+    "incorrectAnswers": [
+      "Mesa",
+      "Cama",
+      "Puerta"
+    ],
+    "explanation": "Silla means Chair.",
+    "keywords": [
+      "spanish"
+    ]
   },
   {
     "category": "Spanish",
     "subcategory": "Basic Vocabulary",
     "question": "How do you say Bed in Spanish?",
     "correctAnswer": "Cama",
-    "incorrectAnswers": ["Mesa", "Silla", "Puerta"],
-    "explanation": "Cama means Bed."
+    "incorrectAnswers": [
+      "Mesa",
+      "Silla",
+      "Puerta"
+    ],
+    "explanation": "Cama means Bed.",
+    "keywords": [
+      "spanish"
+    ]
   },
   {
     "category": "Spanish",
     "subcategory": "Basic Vocabulary",
     "question": "How do you say Book in Spanish?",
     "correctAnswer": "Libro",
-    "incorrectAnswers": ["Mesa", "Silla", "Casa"],
-    "explanation": "Libro means Book."
+    "incorrectAnswers": [
+      "Mesa",
+      "Silla",
+      "Casa"
+    ],
+    "explanation": "Libro means Book.",
+    "keywords": [
+      "spanish"
+    ]
   },
   {
     "category": "Spanish",
     "subcategory": "Basic Vocabulary",
     "question": "How do you say Pen in Spanish?",
     "correctAnswer": "Pluma",
-    "incorrectAnswers": ["Lápiz", "Libro", "Mesa"],
-    "incorrectAnswers": ["Lápiz", "Bolsa", "Casa"],
-    "explanation": "Pluma means Pen."
+    "incorrectAnswers": [
+      "Lápiz",
+      "Bolsa",
+      "Casa"
+    ],
+    "explanation": "Pluma means Pen.",
+    "keywords": [
+      "spanish"
+    ]
   },
   {
     "category": "Spanish",
     "subcategory": "Basic Vocabulary",
     "question": "How do you say Pencil in Spanish?",
     "correctAnswer": "Lápiz",
-    "incorrectAnswers": ["Pluma", "Libro", "Casa"],
-    "explanation": "Lápiz means Pencil."
+    "incorrectAnswers": [
+      "Pluma",
+      "Libro",
+      "Casa"
+    ],
+    "explanation": "Lápiz means Pencil.",
+    "keywords": [
+      "spanish"
+    ]
   },
   {
     "category": "Spanish",
     "subcategory": "Basic Vocabulary",
     "question": "How do you say Phone in Spanish?",
     "correctAnswer": "Teléfono",
-    "incorrectAnswers": ["Cámara", "Mesa", "Puerta"],
-    "explanation": "Teléfono means Phone."
+    "incorrectAnswers": [
+      "Cámara",
+      "Mesa",
+      "Puerta"
+    ],
+    "explanation": "Teléfono means Phone.",
+    "keywords": [
+      "spanish"
+    ]
   },
   {
     "category": "Spanish",
     "subcategory": "Basic Vocabulary",
     "question": "How do you say Friend in Spanish?",
     "correctAnswer": "Amigo",
-    "incorrectAnswers": ["Hermano", "Padre", "Madre"],
-    "explanation": "Amigo means Friend."
+    "incorrectAnswers": [
+      "Hermano",
+      "Padre",
+      "Madre"
+    ],
+    "explanation": "Amigo means Friend.",
+    "keywords": [
+      "spanish"
+    ]
   },
   {
     "category": "Spanish",
     "subcategory": "Basic Vocabulary",
     "question": "How do you say Family in Spanish?",
     "correctAnswer": "Familia",
-    "incorrectAnswers": ["Hogar", "Amigos", "Padres"],
-    "explanation": "Familia means Family."
+    "incorrectAnswers": [
+      "Hogar",
+      "Amigos",
+      "Padres"
+    ],
+    "explanation": "Familia means Family.",
+    "keywords": [
+      "spanish"
+    ]
   },
   {
     "category": "Spanish",
     "subcategory": "Basic Vocabulary",
     "question": "How do you say School in Spanish?",
     "correctAnswer": "Escuela",
-    "incorrectAnswers": ["Libro", "Mesa", "Clase"],
-    "explanation": "Escuela means School."
+    "incorrectAnswers": [
+      "Libro",
+      "Mesa",
+      "Clase"
+    ],
+    "explanation": "Escuela means School.",
+    "keywords": [
+      "spanish"
+    ]
   },
   {
     "category": "Spanish",
     "subcategory": "Basic Vocabulary",
     "question": "How do you say Teacher in Spanish?",
     "correctAnswer": "Maestro",
-    "incorrectAnswers": ["Estudiante", "Amigo", "Jefe"],
-    "explanation": "Maestro means Teacher."
+    "incorrectAnswers": [
+      "Estudiante",
+      "Amigo",
+      "Jefe"
+    ],
+    "explanation": "Maestro means Teacher.",
+    "keywords": [
+      "spanish"
+    ]
   },
   {
     "category": "Spanish",
     "subcategory": "Basic Vocabulary",
     "question": "How do you say Student in Spanish?",
     "correctAnswer": "Estudiante",
-    "incorrectAnswers": ["Maestro", "Amigo", "Hermano"],
-    "explanation": "Estudiante means Student."
+    "incorrectAnswers": [
+      "Maestro",
+      "Amigo",
+      "Hermano"
+    ],
+    "explanation": "Estudiante means Student.",
+    "keywords": [
+      "spanish"
+    ]
   },
-
   {
     "category": "Spanish",
     "subcategory": "Numbers",
     "question": "How do you say One in Spanish?",
     "correctAnswer": "Uno",
-    "incorrectAnswers": ["Dos", "Tres", "Cuatro"],
-    "explanation": "Uno means One."
+    "incorrectAnswers": [
+      "Dos",
+      "Tres",
+      "Cuatro"
+    ],
+    "explanation": "Uno means One.",
+    "keywords": [
+      "numbers"
+    ]
   },
   {
     "category": "Spanish",
     "subcategory": "Numbers",
     "question": "How do you say Two in Spanish?",
     "correctAnswer": "Dos",
-    "incorrectAnswers": ["Uno", "Tres", "Cinco"],
-    "explanation": "Dos means Two."
+    "incorrectAnswers": [
+      "Uno",
+      "Tres",
+      "Cinco"
+    ],
+    "explanation": "Dos means Two.",
+    "keywords": [
+      "numbers"
+    ]
   },
   {
     "category": "Spanish",
     "subcategory": "Numbers",
     "question": "How do you say Three in Spanish?",
     "correctAnswer": "Tres",
-    "incorrectAnswers": ["Uno", "Dos", "Cuatro"],
-    "explanation": "Tres means Three."
+    "incorrectAnswers": [
+      "Uno",
+      "Dos",
+      "Cuatro"
+    ],
+    "explanation": "Tres means Three.",
+    "keywords": [
+      "numbers"
+    ]
   },
   {
     "category": "Spanish",
     "subcategory": "Numbers",
     "question": "How do you say Four in Spanish?",
     "correctAnswer": "Cuatro",
-    "incorrectAnswers": ["Cinco", "Tres", "Dos"],
-    "explanation": "Cuatro means Four."
+    "incorrectAnswers": [
+      "Cinco",
+      "Tres",
+      "Dos"
+    ],
+    "explanation": "Cuatro means Four.",
+    "keywords": [
+      "numbers"
+    ]
   },
   {
     "category": "Spanish",
     "subcategory": "Numbers",
     "question": "How do you say Five in Spanish?",
     "correctAnswer": "Cinco",
-    "incorrectAnswers": ["Cuatro", "Seis", "Dos"],
-    "explanation": "Cinco means Five."
+    "incorrectAnswers": [
+      "Cuatro",
+      "Seis",
+      "Dos"
+    ],
+    "explanation": "Cinco means Five.",
+    "keywords": [
+      "numbers"
+    ]
   },
   {
     "category": "Spanish",
     "subcategory": "Numbers",
     "question": "How do you say Six in Spanish?",
     "correctAnswer": "Seis",
-    "incorrectAnswers": ["Siete", "Cinco", "Cuatro"],
-    "explanation": "Seis means Six."
+    "incorrectAnswers": [
+      "Siete",
+      "Cinco",
+      "Cuatro"
+    ],
+    "explanation": "Seis means Six.",
+    "keywords": [
+      "numbers"
+    ]
   },
   {
     "category": "Spanish",
     "subcategory": "Numbers",
     "question": "How do you say Seven in Spanish?",
     "correctAnswer": "Siete",
-    "incorrectAnswers": ["Ocho", "Seis", "Cinco"],
-    "explanation": "Siete means Seven."
+    "incorrectAnswers": [
+      "Ocho",
+      "Seis",
+      "Cinco"
+    ],
+    "explanation": "Siete means Seven.",
+    "keywords": [
+      "numbers"
+    ]
   },
   {
     "category": "Spanish",
     "subcategory": "Numbers",
     "question": "How do you say Eight in Spanish?",
     "correctAnswer": "Ocho",
-    "incorrectAnswers": ["Siete", "Nueve", "Diez"],
-    "explanation": "Ocho means Eight."
+    "incorrectAnswers": [
+      "Siete",
+      "Nueve",
+      "Diez"
+    ],
+    "explanation": "Ocho means Eight.",
+    "keywords": [
+      "numbers"
+    ]
   },
   {
     "category": "Spanish",
     "subcategory": "Numbers",
     "question": "How do you say Nine in Spanish?",
     "correctAnswer": "Nueve",
-    "incorrectAnswers": ["Ocho", "Diez", "Once"],
-    "explanation": "Nueve means Nine."
+    "incorrectAnswers": [
+      "Ocho",
+      "Diez",
+      "Once"
+    ],
+    "explanation": "Nueve means Nine.",
+    "keywords": [
+      "numbers"
+    ]
   },
   {
     "category": "Spanish",
     "subcategory": "Numbers",
     "question": "How do you say Ten in Spanish?",
     "correctAnswer": "Diez",
-    "incorrectAnswers": ["Ocho", "Nueve", "Once"],
-    "explanation": "Diez means Ten."
+    "incorrectAnswers": [
+      "Ocho",
+      "Nueve",
+      "Once"
+    ],
+    "explanation": "Diez means Ten.",
+    "keywords": [
+      "numbers"
+    ]
   },
   {
     "category": "Spanish",
     "subcategory": "Numbers",
     "question": "How do you say Twenty in Spanish?",
     "correctAnswer": "Veinte",
-    "incorrectAnswers": ["Treinta", "Doce", "Ciento"],
-    "explanation": "Veinte means Twenty."
+    "incorrectAnswers": [
+      "Treinta",
+      "Doce",
+      "Ciento"
+    ],
+    "explanation": "Veinte means Twenty.",
+    "keywords": [
+      "numbers"
+    ]
   },
   {
     "category": "Spanish",
     "subcategory": "Numbers",
     "question": "How do you say Thirty in Spanish?",
     "correctAnswer": "Treinta",
-    "incorrectAnswers": ["Cuarenta", "Veinte", "Cincuenta"],
-    "explanation": "Treinta means Thirty."
+    "incorrectAnswers": [
+      "Cuarenta",
+      "Veinte",
+      "Cincuenta"
+    ],
+    "explanation": "Treinta means Thirty.",
+    "keywords": [
+      "numbers"
+    ]
   },
   {
     "category": "Spanish",
     "subcategory": "Numbers",
     "question": "How do you say Forty in Spanish?",
     "correctAnswer": "Cuarenta",
-    "incorrectAnswers": ["Treinta", "Veinte", "Cincuenta"],
-    "explanation": "Cuarenta means Forty."
+    "incorrectAnswers": [
+      "Treinta",
+      "Veinte",
+      "Cincuenta"
+    ],
+    "explanation": "Cuarenta means Forty.",
+    "keywords": [
+      "numbers"
+    ]
   },
   {
     "category": "Spanish",
     "subcategory": "Numbers",
     "question": "How do you say Fifty in Spanish?",
     "correctAnswer": "Cincuenta",
-    "incorrectAnswers": ["Cuarenta", "Setenta", "Treinta"],
-    "explanation": "Cincuenta means Fifty."
+    "incorrectAnswers": [
+      "Cuarenta",
+      "Setenta",
+      "Treinta"
+    ],
+    "explanation": "Cincuenta means Fifty.",
+    "keywords": [
+      "numbers"
+    ]
   },
   {
     "category": "Spanish",
     "subcategory": "Numbers",
     "question": "How do you say One hundred in Spanish?",
     "correctAnswer": "Cien",
-    "incorrectAnswers": ["Cincuenta", "Ciento uno", "Mil"],
-    "explanation": "Cien means One hundred."
+    "incorrectAnswers": [
+      "Cincuenta",
+      "Ciento uno",
+      "Mil"
+    ],
+    "explanation": "Cien means One hundred.",
+    "keywords": [
+      "numbers"
+    ]
   },
   {
     "category": "Spanish",
     "subcategory": "Numbers",
     "question": "How do you say One thousand in Spanish?",
     "correctAnswer": "Mil",
-    "incorrectAnswers": ["Cien", "Ciento", "Millón"],
-    "explanation": "Mil means One thousand."
+    "incorrectAnswers": [
+      "Cien",
+      "Ciento",
+      "Millón"
+    ],
+    "explanation": "Mil means One thousand.",
+    "keywords": [
+      "numbers"
+    ]
   }
 ]

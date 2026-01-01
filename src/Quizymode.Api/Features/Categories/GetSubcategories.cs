@@ -91,7 +91,7 @@ public static class GetSubcategories
             // Group by normalized subcategory name (case-insensitive)
             List<(string Subcategory, int Count)> grouped = allItems
                 .GroupBy(i => CategoryHelper.Normalize(i.Subcategory), StringComparer.OrdinalIgnoreCase)
-                .Select(g => (g.Key, g.Count()))
+                .Select(g => (Subcategory: g.Key, Count: g.Count()))
                 .OrderBy(x => x.Subcategory)
                 .ToList();
 
