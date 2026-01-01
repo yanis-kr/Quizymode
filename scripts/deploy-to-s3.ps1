@@ -97,17 +97,44 @@ try {
     # --delete removes files in S3 that don't exist locally
     # --exact-timestamps ensures files are compared by timestamp
     # --cache-control sets cache headers for static assets
-    Write-Host "Syncing files to S3..." -ForegroundColor Yellow
+    # Exclude files that need specific content-type headers
+    Write-Host "Syncing general assets to S3..." -ForegroundColor Yellow
     
     aws s3 sync $BuildOutputPath "s3://$S3Bucket/" `
         --delete `
         --exact-timestamps `
         --cache-control "public, max-age=31536000, immutable" `
         --exclude "*.html" `
-        --exclude "*.json"
+        --exclude "*.json" `
+        --exclude "*.css" `
+        --exclude "*.js"
     
     if ($LASTEXITCODE -ne 0) {
         throw "S3 sync failed"
+    }
+    
+    # Upload CSS files with proper content-type (critical for Safari iOS)
+    Write-Host "Uploading CSS files..." -ForegroundColor Yellow
+    aws s3 sync $BuildOutputPath "s3://$S3Bucket/" `
+        --exclude "*" `
+        --include "*.css" `
+        --cache-control "public, max-age=31536000, immutable" `
+        --content-type "text/css"
+    
+    if ($LASTEXITCODE -ne 0) {
+        throw "CSS upload failed"
+    }
+    
+    # Upload JavaScript files with proper content-type
+    Write-Host "Uploading JavaScript files..." -ForegroundColor Yellow
+    aws s3 sync $BuildOutputPath "s3://$S3Bucket/" `
+        --exclude "*" `
+        --include "*.js" `
+        --cache-control "public, max-age=31536000, immutable" `
+        --content-type "application/javascript"
+    
+    if ($LASTEXITCODE -ne 0) {
+        throw "JavaScript upload failed"
     }
     
     # Upload HTML files with no-cache headers
