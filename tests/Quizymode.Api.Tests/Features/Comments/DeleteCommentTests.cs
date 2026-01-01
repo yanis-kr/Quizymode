@@ -14,6 +14,7 @@ public sealed class DeleteCommentTests : IDisposable
 {
     private readonly ApplicationDbContext _dbContext;
     private readonly Mock<IUserContext> _userContextMock;
+    private readonly Mock<IAuditService> _auditServiceMock;
 
     public DeleteCommentTests()
     {
@@ -23,14 +24,18 @@ public sealed class DeleteCommentTests : IDisposable
 
         _dbContext = new ApplicationDbContext(options);
         _userContextMock = new Mock<IUserContext>();
-        _userContextMock.Setup(x => x.UserId).Returns("test-user-id");
+        _userContextMock.Setup(x => x.UserId).Returns(Guid.NewGuid().ToString());
         _userContextMock.Setup(x => x.IsAuthenticated).Returns(true);
+        _auditServiceMock = new Mock<IAuditService>();
     }
 
     [Fact]
     public async Task HandleAsync_ExistingComment_DeletesComment()
     {
         // Arrange
+        string userId = Guid.NewGuid().ToString();
+        _userContextMock.Setup(x => x.UserId).Returns(userId);
+
         Item item = new Item
         {
             Id = Guid.NewGuid(),
@@ -55,25 +60,38 @@ public sealed class DeleteCommentTests : IDisposable
             Id = Guid.NewGuid(),
             ItemId = item.Id,
             Text = "Comment to delete",
-            CreatedBy = "test-user-id",
+            CreatedBy = userId,
             CreatedAt = DateTime.UtcNow
         };
 
         _dbContext.Comments.Add(comment);
         await _dbContext.SaveChangesAsync();
 
+        Guid commentId = comment.Id;
+
         // Act
         Result result = await DeleteComment.HandleAsync(
-            comment.Id.ToString(),
+            commentId.ToString(),
             _dbContext,
             _userContextMock.Object,
+            _auditServiceMock.Object,
             CancellationToken.None);
 
         // Assert
         result.IsSuccess.Should().BeTrue();
 
-        Comment? deletedComment = await _dbContext.Comments.FindAsync(comment.Id);
+        Comment? deletedComment = await _dbContext.Comments.FindAsync(commentId);
         deletedComment.Should().BeNull();
+
+        // Verify audit logging was called
+        _auditServiceMock.Verify(
+            x => x.LogAsync(
+                AuditAction.CommentDeleted,
+                It.IsAny<Guid?>(),
+                It.Is<Guid?>(eid => eid == commentId),
+                It.IsAny<Dictionary<string, string>?>(),
+                It.IsAny<CancellationToken>()),
+            Times.Once);
     }
 
     [Fact]
@@ -87,6 +105,7 @@ public sealed class DeleteCommentTests : IDisposable
             nonExistentId,
             _dbContext,
             _userContextMock.Object,
+            _auditServiceMock.Object,
             CancellationToken.None);
 
         // Assert
@@ -106,6 +125,7 @@ public sealed class DeleteCommentTests : IDisposable
             invalidId,
             _dbContext,
             _userContextMock.Object,
+            _auditServiceMock.Object,
             CancellationToken.None);
 
         // Assert
@@ -154,6 +174,7 @@ public sealed class DeleteCommentTests : IDisposable
             comment.Id.ToString(),
             _dbContext,
             _userContextMock.Object,
+            _auditServiceMock.Object,
             CancellationToken.None);
 
         // Assert
@@ -163,6 +184,16 @@ public sealed class DeleteCommentTests : IDisposable
         // Comment should still exist
         Comment? existingComment = await _dbContext.Comments.FindAsync(comment.Id);
         existingComment.Should().NotBeNull();
+
+        // Verify audit logging was NOT called for failed deletion
+        _auditServiceMock.Verify(
+            x => x.LogAsync(
+                It.IsAny<AuditAction>(),
+                It.IsAny<Guid?>(),
+                It.IsAny<Guid?>(),
+                It.IsAny<Dictionary<string, string>?>(),
+                It.IsAny<CancellationToken>()),
+            Times.Never);
     }
 
     public void Dispose()

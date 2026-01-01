@@ -89,6 +89,8 @@ public static class UpdateItem
             IValidator<Request> validator,
             ApplicationDbContext db,
             ISimHashService simHashService,
+            IUserContext userContext,
+            IAuditService auditService,
             CancellationToken cancellationToken)
         {
             var validationResult = await validator.ValidateAsync(request, cancellationToken);
@@ -97,7 +99,7 @@ public static class UpdateItem
                 return Results.BadRequest(validationResult.Errors);
             }
 
-            Result<Response> result = await HandleAsync(id, request, db, simHashService, cancellationToken);
+            Result<Response> result = await HandleAsync(id, request, db, simHashService, userContext, auditService, cancellationToken);
 
             return result.Match(
                 value => Results.Ok(value),
@@ -112,6 +114,8 @@ public static class UpdateItem
         Request request,
         ApplicationDbContext db,
         ISimHashService simHashService,
+        IUserContext userContext,
+        IAuditService auditService,
         CancellationToken cancellationToken)
     {
         try
@@ -150,6 +154,16 @@ public static class UpdateItem
             item.FuzzyBucket = fuzzyBucket;
 
             await db.SaveChangesAsync(cancellationToken);
+
+            // Log audit entry
+            if (!string.IsNullOrEmpty(userContext.UserId) && Guid.TryParse(userContext.UserId, out Guid userId))
+            {
+                await auditService.LogAsync(
+                    AuditAction.ItemUpdated,
+                    userId: userId,
+                    entityId: itemId,
+                    cancellationToken: cancellationToken);
+            }
 
             Response response = new(
                 item.Id.ToString(),

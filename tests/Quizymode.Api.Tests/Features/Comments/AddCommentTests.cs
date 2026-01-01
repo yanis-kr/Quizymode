@@ -15,6 +15,7 @@ public sealed class AddCommentTests : IDisposable
 {
     private readonly ApplicationDbContext _dbContext;
     private readonly Mock<IUserContext> _userContextMock;
+    private readonly Mock<IAuditService> _auditServiceMock;
 
     public AddCommentTests()
     {
@@ -24,14 +25,18 @@ public sealed class AddCommentTests : IDisposable
 
         _dbContext = new ApplicationDbContext(options);
         _userContextMock = new Mock<IUserContext>();
-        _userContextMock.Setup(x => x.UserId).Returns("test-user-id");
+        _userContextMock.Setup(x => x.UserId).Returns(Guid.NewGuid().ToString());
         _userContextMock.Setup(x => x.IsAuthenticated).Returns(true);
+        _auditServiceMock = new Mock<IAuditService>();
     }
 
     [Fact]
     public async Task HandleAsync_ValidRequest_CreatesComment()
     {
         // Arrange
+        string userId = Guid.NewGuid().ToString();
+        _userContextMock.Setup(x => x.UserId).Returns(userId);
+
         Item item = new Item
         {
             Id = Guid.NewGuid(),
@@ -58,6 +63,7 @@ public sealed class AddCommentTests : IDisposable
             request,
             _dbContext,
             _userContextMock.Object,
+            _auditServiceMock.Object,
             CancellationToken.None);
 
         // Assert
@@ -65,12 +71,22 @@ public sealed class AddCommentTests : IDisposable
         result.Value.Should().NotBeNull();
         result.Value.ItemId.Should().Be(item.Id);
         result.Value.Text.Should().Be("Great question!");
-        result.Value.CreatedBy.Should().Be("test-user-id");
+        result.Value.CreatedBy.Should().Be(userId);
 
         Comment? comment = await _dbContext.Comments.FirstOrDefaultAsync(c => c.ItemId == item.Id);
         comment.Should().NotBeNull();
         comment!.Text.Should().Be("Great question!");
-        comment.CreatedBy.Should().Be("test-user-id");
+        comment.CreatedBy.Should().Be(userId);
+
+        // Verify audit logging was called
+        _auditServiceMock.Verify(
+            x => x.LogAsync(
+                AuditAction.CommentCreated,
+                It.IsAny<Guid?>(),
+                It.Is<Guid?>(eid => eid == comment.Id),
+                It.IsAny<Dictionary<string, string>?>(),
+                It.IsAny<CancellationToken>()),
+            Times.Once);
     }
 
     [Fact]
@@ -84,6 +100,7 @@ public sealed class AddCommentTests : IDisposable
             request,
             _dbContext,
             _userContextMock.Object,
+            _auditServiceMock.Object,
             CancellationToken.None);
 
         // Assert
@@ -126,6 +143,7 @@ public sealed class AddCommentTests : IDisposable
             request,
             _dbContext,
             userContextWithoutUserId.Object,
+            _auditServiceMock.Object,
             CancellationToken.None);
 
         // Assert

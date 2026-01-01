@@ -1,7 +1,9 @@
 using FluentAssertions;
 using Microsoft.EntityFrameworkCore;
+using Moq;
 using Quizymode.Api.Data;
 using Quizymode.Api.Features.Items.Delete;
+using Quizymode.Api.Services;
 using Quizymode.Api.Shared.Kernel;
 using Quizymode.Api.Shared.Models;
 using Xunit;
@@ -12,6 +14,8 @@ namespace Quizymode.Api.Tests.Features.Items.Delete;
 public sealed class DeleteItemTests : IDisposable
 {
     private readonly ApplicationDbContext _dbContext;
+    private readonly Mock<IUserContext> _userContextMock;
+    private readonly Mock<IAuditService> _auditServiceMock;
 
     public DeleteItemTests()
     {
@@ -20,6 +24,10 @@ public sealed class DeleteItemTests : IDisposable
             .Options;
 
         _dbContext = new ApplicationDbContext(options);
+        _userContextMock = new Mock<IUserContext>();
+        _userContextMock.Setup(x => x.UserId).Returns(Guid.NewGuid().ToString());
+        _userContextMock.Setup(x => x.IsAuthenticated).Returns(true);
+        _auditServiceMock = new Mock<IAuditService>();
     }
 
     [Fact]
@@ -45,14 +53,31 @@ public sealed class DeleteItemTests : IDisposable
         _dbContext.Items.Add(item);
         await _dbContext.SaveChangesAsync();
 
+        Guid itemId = item.Id;
+
         // Act
-        Result result = await DeleteItemHandler.HandleAsync(item.Id.ToString(), _dbContext, CancellationToken.None);
+        Result result = await DeleteItemHandler.HandleAsync(
+            itemId.ToString(),
+            _dbContext,
+            _userContextMock.Object,
+            _auditServiceMock.Object,
+            CancellationToken.None);
 
         // Assert
         result.IsSuccess.Should().BeTrue();
         
-        Item? deletedItem = await _dbContext.Items.FindAsync(item.Id);
+        Item? deletedItem = await _dbContext.Items.FindAsync(itemId);
         deletedItem.Should().BeNull();
+
+        // Verify audit logging was called
+        _auditServiceMock.Verify(
+            x => x.LogAsync(
+                AuditAction.ItemDeleted,
+                It.IsAny<Guid?>(),
+                It.Is<Guid?>(eid => eid == itemId),
+                It.IsAny<Dictionary<string, string>?>(),
+                It.IsAny<CancellationToken>()),
+            Times.Once);
     }
 
     [Fact]
@@ -62,7 +87,12 @@ public sealed class DeleteItemTests : IDisposable
         string nonExistentId = Guid.NewGuid().ToString();
 
         // Act
-        Result result = await DeleteItemHandler.HandleAsync(nonExistentId, _dbContext, CancellationToken.None);
+        Result result = await DeleteItemHandler.HandleAsync(
+            nonExistentId,
+            _dbContext,
+            _userContextMock.Object,
+            _auditServiceMock.Object,
+            CancellationToken.None);
 
         // Assert
         result.IsFailure.Should().BeTrue();
@@ -76,7 +106,12 @@ public sealed class DeleteItemTests : IDisposable
         string invalidId = "not-a-guid";
 
         // Act
-        Result result = await DeleteItemHandler.HandleAsync(invalidId, _dbContext, CancellationToken.None);
+        Result result = await DeleteItemHandler.HandleAsync(
+            invalidId,
+            _dbContext,
+            _userContextMock.Object,
+            _auditServiceMock.Object,
+            CancellationToken.None);
 
         // Assert
         result.IsFailure.Should().BeTrue();

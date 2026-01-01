@@ -28,6 +28,7 @@ public static class DeleteComment
             string id,
             ApplicationDbContext db,
             IUserContext userContext,
+            IAuditService auditService,
             CancellationToken cancellationToken)
         {
             if (!userContext.IsAuthenticated || string.IsNullOrEmpty(userContext.UserId))
@@ -35,7 +36,7 @@ public static class DeleteComment
                 return Results.Unauthorized();
             }
 
-            Result result = await HandleAsync(id, db, userContext, cancellationToken);
+            Result result = await HandleAsync(id, db, userContext, auditService, cancellationToken);
 
             return result.Match(
                 () => Results.NoContent(),
@@ -53,6 +54,7 @@ public static class DeleteComment
         string id,
         ApplicationDbContext db,
         IUserContext userContext,
+        IAuditService auditService,
         CancellationToken cancellationToken)
     {
         try
@@ -81,6 +83,16 @@ public static class DeleteComment
 
             db.Comments.Remove(comment);
             await db.SaveChangesAsync(cancellationToken);
+
+            // Log audit entry
+            if (Guid.TryParse(userContext.UserId, out Guid userId))
+            {
+                await auditService.LogAsync(
+                    AuditAction.CommentDeleted,
+                    userId: userId,
+                    entityId: commentId,
+                    cancellationToken: cancellationToken);
+            }
 
             return Result.Success();
         }

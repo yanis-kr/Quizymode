@@ -12,6 +12,7 @@ internal static class AddItemHandler
         ApplicationDbContext db,
         ISimHashService simHashService,
         IUserContext userContext,
+        IAuditService auditService,
         CancellationToken cancellationToken)
     {
         try
@@ -39,6 +40,16 @@ internal static class AddItemHandler
 
             db.Items.Add(item);
             await db.SaveChangesAsync(cancellationToken);
+
+            // Log audit entry
+            if (!string.IsNullOrEmpty(userContext.UserId) && Guid.TryParse(userContext.UserId, out Guid userId))
+            {
+                await auditService.LogAsync(
+                    AuditAction.ItemCreated,
+                    userId: userId,
+                    entityId: item.Id,
+                    cancellationToken: cancellationToken);
+            }
 
             AddItem.Response response = new AddItem.Response(
                 item.Id.ToString(),

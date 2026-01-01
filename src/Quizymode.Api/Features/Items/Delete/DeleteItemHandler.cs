@@ -1,5 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using Quizymode.Api.Data;
+using Quizymode.Api.Services;
 using Quizymode.Api.Shared.Kernel;
 using Quizymode.Api.Shared.Models;
 
@@ -10,6 +11,8 @@ internal static class DeleteItemHandler
     public static async Task<Result> HandleAsync(
         string id,
         ApplicationDbContext db,
+        IUserContext userContext,
+        IAuditService auditService,
         CancellationToken cancellationToken)
     {
         try
@@ -31,6 +34,16 @@ internal static class DeleteItemHandler
 
             db.Items.Remove(item);
             await db.SaveChangesAsync(cancellationToken);
+
+            // Log audit entry
+            if (!string.IsNullOrEmpty(userContext.UserId) && Guid.TryParse(userContext.UserId, out Guid userId))
+            {
+                await auditService.LogAsync(
+                    AuditAction.ItemDeleted,
+                    userId: userId,
+                    entityId: itemGuid,
+                    cancellationToken: cancellationToken);
+            }
 
             return Result.Success();
         }
