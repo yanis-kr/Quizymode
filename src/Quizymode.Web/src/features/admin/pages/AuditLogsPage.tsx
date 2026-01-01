@@ -22,8 +22,9 @@ type AuditAction = typeof AUDIT_ACTIONS[number];
 
 const AuditLogsPage = () => {
   const { isAuthenticated, isAdmin } = useAuth();
-  const [selectedActions, setSelectedActions] = useState<AuditAction[]>([]);
-  const [filterMode, setFilterMode] = useState<"all" | "none" | "specific">("all");
+  // By default, all event types are selected
+  const [selectedActions, setSelectedActions] = useState<AuditAction[]>([...AUDIT_ACTIONS]);
+  const [filterMode, setFilterMode] = useState<"all" | "none" | "specific">("specific");
   const [page, setPage] = useState(1);
   const pageSize = 50;
 
@@ -52,7 +53,7 @@ const AuditLogsPage = () => {
   const { data, isLoading, error, refetch } = useQuery({
     queryKey: ['auditLogs', selectedActions, page],
     queryFn: () => adminApi.getAuditLogs(
-      filterMode === "specific" && selectedActions.length > 0 ? selectedActions : undefined,
+      filterMode === "none" ? [] : (selectedActions.length > 0 ? selectedActions : undefined),
       page,
       pageSize
     ),
@@ -60,25 +61,40 @@ const AuditLogsPage = () => {
   });
 
   const handleFilterModeChange = (mode: "all" | "none" | "specific") => {
-    setFilterMode(mode);
-    if (mode === "all" || mode === "none") {
+    if (mode === "all") {
+      // Select all event types when "All" is chosen
+      setSelectedActions([...AUDIT_ACTIONS]);
+      setFilterMode("specific"); // Switch to specific mode so checkboxes are visible
+    } else if (mode === "none") {
+      // Deselect all when "None" is chosen
       setSelectedActions([]);
+      setFilterMode("none");
+    } else {
+      // "specific" mode - keep current selection
+      setFilterMode("specific");
     }
     setPage(1);
   };
 
   const handleActionToggle = (action: AuditAction) => {
-    setSelectedActions(prev =>
-      prev.includes(action)
+    setSelectedActions(prev => {
+      const newSelection = prev.includes(action)
         ? prev.filter(a => a !== action)
-        : [...prev, action]
-    );
+        : [...prev, action];
+      // Update filter mode based on selection
+      if (newSelection.length === 0) {
+        setFilterMode("none");
+      } else {
+        setFilterMode("specific");
+      }
+      return newSelection;
+    });
     setPage(1); // Reset to first page when filter changes
   };
 
   const clearFilters = () => {
-    setFilterMode("all");
-    setSelectedActions([]);
+    setSelectedActions([...AUDIT_ACTIONS]); // Reset to all selected
+    setFilterMode("specific"); // Keep in specific mode so checkboxes remain visible
     setPage(1);
   };
 
@@ -106,17 +122,20 @@ const AuditLogsPage = () => {
               Event Types
             </label>
             <select
-              value={filterMode}
+              value={
+                selectedActions.length === AUDIT_ACTIONS.length ? "all" :
+                selectedActions.length === 0 ? "none" :
+                "specific"
+              }
               onChange={(e) => handleFilterModeChange(e.target.value as "all" | "none" | "specific")}
               className="w-full sm:w-64 px-3 py-2 border border-gray-300 rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500"
             >
               <option value="all">All Event Types</option>
-              <option value="none">No Events (empty)</option>
+              <option value="none">None</option>
               <option value="specific">Specific Types...</option>
             </select>
           </div>
-          {filterMode === "specific" && (
-            <div>
+          <div>
               <label className="block text-sm font-medium text-gray-700 mb-2">
                 Select Event Types (Select multiple)
               </label>
@@ -136,22 +155,19 @@ const AuditLogsPage = () => {
                   </label>
                 ))}
               </div>
-              {selectedActions.length > 0 && (
-                <div className="mt-2 flex items-center space-x-2">
-                  <span className="text-sm text-gray-600">
-                    {selectedActions.length} type{selectedActions.length !== 1 ? 's' : ''} selected
-                  </span>
-                </div>
-              )}
+              <div className="mt-2 flex items-center space-x-2">
+                <span className="text-sm text-gray-600">
+                  {selectedActions.length} of {AUDIT_ACTIONS.length} type{selectedActions.length !== 1 ? 's' : ''} selected
+                </span>
+              </div>
             </div>
-          )}
-          {(filterMode !== "all" || selectedActions.length > 0) && (
+          {selectedActions.length !== AUDIT_ACTIONS.length && (
             <div className="flex items-center space-x-2">
               <button
                 onClick={clearFilters}
                 className="text-sm text-indigo-600 hover:text-indigo-800 underline"
               >
-                Clear all filters
+                Reset to all filters
               </button>
             </div>
           )}

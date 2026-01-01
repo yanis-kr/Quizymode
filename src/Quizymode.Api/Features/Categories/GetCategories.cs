@@ -2,6 +2,7 @@ using Microsoft.EntityFrameworkCore;
 using Quizymode.Api.Data;
 using Quizymode.Api.Infrastructure;
 using Quizymode.Api.Services;
+using Quizymode.Api.Shared.Helpers;
 using Quizymode.Api.Shared.Kernel;
 
 namespace Quizymode.Api.Features.Categories;
@@ -77,17 +78,14 @@ public static class GetCategories
             }
 
             // Perform grouping and counting in the database, then map to DTO in memory.
-            List<(string Category, int Count)> grouped = await query
-                .GroupBy(i => i.Category)
-                .Select(g => new { Category = g.Key, Count = g.Count() })
-                .OrderBy(x => x.Category)
-                .ToListAsync(cancellationToken)
-                .ContinueWith(t => t.Result
-                    .Select(x => (x.Category, x.Count))
-                    .ToList(), cancellationToken);
-
-            List<CategoryResponse> categories = grouped
-                .Select(x => new CategoryResponse(x.Category, x.Count))
+            // Fetch all items and group by normalized category name in memory for case-insensitive grouping
+            List<Item> allItems = await query.ToListAsync(cancellationToken);
+            
+            // Group by normalized category name (case-insensitive)
+            List<CategoryResponse> categories = allItems
+                .GroupBy(i => CategoryHelper.Normalize(i.Category), StringComparer.OrdinalIgnoreCase)
+                .Select(g => new CategoryResponse(g.Key, g.Count()))
+                .OrderBy(c => c.Category)
                 .ToList();
 
             Response response = new(categories);

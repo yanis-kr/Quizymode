@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import { useMutation } from "@tanstack/react-query";
 import { useAuth } from "@/contexts/AuthContext";
 import { Navigate } from "react-router-dom";
@@ -23,13 +23,15 @@ interface BulkCreateRequest {
     correctAnswer: string;
     incorrectAnswers: string[];
     explanation: string;
-    keywords?: Array<{ name: string; isPrivate: boolean }>;
+    keywords?: Array<{ name: string }>; // isPrivate will be set automatically to match item's isPrivate
   }>;
 }
 
 const BulkCreateItemsPage = () => {
   const { isAuthenticated, isAdmin } = useAuth();
   const navigate = useNavigate();
+  const location = useLocation();
+  const isAdminRoute = location.pathname === "/admin/bulk-create";
   const [jsonInput, setJsonInput] = useState("");
   const [category, setCategory] = useState("");
   const [isPrivate, setIsPrivate] = useState(!isAdmin); // Default to true for non-admin
@@ -51,6 +53,7 @@ const BulkCreateItemsPage = () => {
   const bulkCreateMutation = useMutation({
     mutationFn: async (data: BulkCreateRequest) => {
       // API expects IsPrivate and Items array where each item has Category
+      // Keywords inherit the item's isPrivate value
       const apiRequest = {
         isPrivate: data.isPrivate,
         items: data.items.map((item) => ({
@@ -60,7 +63,10 @@ const BulkCreateItemsPage = () => {
           correctAnswer: item.correctAnswer,
           incorrectAnswers: item.incorrectAnswers,
           explanation: item.explanation || "",
-          keywords: item.keywords || undefined,
+          keywords: item.keywords?.map(k => ({
+            name: k.name,
+            isPrivate: data.isPrivate // Keywords inherit the item's isPrivate value
+          })) || undefined,
         })),
       };
 
@@ -112,7 +118,7 @@ const BulkCreateItemsPage = () => {
       if (response.createdCount > 0 && response.failedCount === 0) {
         // Only auto-navigate if all items succeeded
         setTimeout(() => {
-          navigate("/my-items");
+          navigate(isAdminRoute ? "/admin" : "/my-items");
         }, 2000);
       }
     },
@@ -198,20 +204,42 @@ const BulkCreateItemsPage = () => {
 
       const request: BulkCreateRequest = {
         isPrivate,
-        items: parsedItems.map((item: any) => ({
-          // Category override replaces category in JSON if provided
-          category: (category.trim() || item.category || "").trim(),
-          subcategory: item.subcategory.trim(),
-          question: item.question.trim(),
-          correctAnswer: item.correctAnswer.trim(),
-          incorrectAnswers: Array.isArray(item.incorrectAnswers)
-            ? item.incorrectAnswers
-                .map((ans: any) => String(ans).trim())
-                .filter((ans: string) => ans.length > 0)
-            : [],
-          explanation: item.explanation ? String(item.explanation).trim() : "",
-          keywords: item.keywords || undefined,
-        })),
+        items: parsedItems.map((item: any) => {
+          // Process keywords - handle both string arrays and object arrays
+          let processedKeywords: Array<{ name: string }> | undefined = undefined;
+          if (item.keywords) {
+            if (Array.isArray(item.keywords)) {
+              processedKeywords = item.keywords
+                .map((k: any) => {
+                  if (typeof k === 'string') {
+                    return { name: k.trim() };
+                  } else if (k && typeof k === 'object' && k.name) {
+                    return { name: String(k.name).trim() };
+                  }
+                  return null;
+                })
+                .filter((k: any): k is { name: string } => k !== null && k.name.length > 0);
+              if (processedKeywords.length === 0) {
+                processedKeywords = undefined;
+              }
+            }
+          }
+
+          return {
+            // Category override replaces category in JSON if provided
+            category: (category.trim() || item.category || "").trim(),
+            subcategory: item.subcategory.trim(),
+            question: item.question.trim(),
+            correctAnswer: item.correctAnswer.trim(),
+            incorrectAnswers: Array.isArray(item.incorrectAnswers)
+              ? item.incorrectAnswers
+                  .map((ans: any) => String(ans).trim())
+                  .filter((ans: string) => ans.length > 0)
+              : [],
+            explanation: item.explanation ? String(item.explanation).trim() : "",
+            keywords: processedKeywords,
+          };
+        }),
       };
 
       bulkCreateMutation.mutate(request);
@@ -281,8 +309,7 @@ Each item must be a JSON object with this exact shape:
   "explanation": "Short explanation of why the correct answer is right (optional but recommended)",
   "keywords": [
     {
-      "name": "keyword-name",
-      "isPrivate": false
+      "name": "keyword-name"
     }
   ]
 }
@@ -296,7 +323,7 @@ Requirements:
   - a non-empty "question" (max 1,000 characters)
   - a non-empty "correctAnswer" (max 200 characters)
   - 1–5 "incorrectAnswers" (each max 200 characters)
-  - "keywords" (optional array of keyword objects, each with "name" max 10 characters and "isPrivate" boolean)
+  - "keywords" (optional array of keyword objects, each with "name" max 10 characters - keywords will inherit the item's privacy setting)
 - All strings must be plain text (no HTML, no LaTeX).
 
 Now generate the JSON array only.`}
@@ -337,8 +364,7 @@ Now generate the JSON array only.`}
     "explanation": "Hola is the standard Spanish greeting for 'Hello'.",
     "keywords": [
       {
-        "name": "greeting",
-        "isPrivate": false
+        "name": "greeting"
       }
     ]
   }
@@ -368,8 +394,7 @@ Now generate the JSON array only.`}
     "explanation": "Hola is the standard Spanish greeting for 'Hello'.",
     "keywords": [
       {
-        "name": "greeting",
-        "isPrivate": false
+        "name": "greeting"
       }
     ]
   }
@@ -487,7 +512,7 @@ Now generate the JSON array only.`}
           <div className="flex justify-end space-x-4">
             <button
               type="button"
-              onClick={() => navigate("/my-items")}
+              onClick={() => navigate(isAdminRoute ? "/admin" : "/my-items")}
               className="px-4 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-md hover:bg-gray-50"
             >
               Cancel
@@ -559,7 +584,7 @@ Now generate the JSON array only.`}
                       resultModal.message.includes("Successfully created") &&
                       !resultModal.details
                     ) {
-                      navigate("/my-items");
+                      navigate(isAdminRoute ? "/admin" : "/my-items");
                     }
                   }}
                   className="px-4 py-2 text-sm font-medium text-white bg-indigo-600 rounded-md hover:bg-indigo-700"

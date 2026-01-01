@@ -2,6 +2,7 @@ using Microsoft.EntityFrameworkCore;
 using Quizymode.Api.Data;
 using Quizymode.Api.Infrastructure;
 using Quizymode.Api.Services;
+using Quizymode.Api.Shared.Helpers;
 using Quizymode.Api.Shared.Kernel;
 
 namespace Quizymode.Api.Features.Categories;
@@ -76,21 +77,23 @@ public static class GetSubcategories
                 query = query.Where(i => !i.IsPrivate && i.Category != string.Empty);
             }
 
-            // Filter by category
-            query = query.Where(i => i.Category == request.Category);
+            // Filter by category (case-insensitive)
+            string normalizedCategory = CategoryHelper.Normalize(request.Category);
+            query = query.Where(i => EF.Functions.ILike(i.Category, normalizedCategory));
 
             // Get total count for the category
             int totalCount = await query.CountAsync(cancellationToken);
 
             // Perform grouping and counting in the database, then map to DTO in memory.
-            List<(string Subcategory, int Count)> grouped = await query
-                .GroupBy(i => i.Subcategory)
-                .Select(g => new { Subcategory = g.Key, Count = g.Count() })
+            // Fetch all items and group by normalized subcategory name in memory for case-insensitive grouping
+            List<Quizymode.Api.Shared.Models.Item> allItems = await query.ToListAsync(cancellationToken);
+            
+            // Group by normalized subcategory name (case-insensitive)
+            List<(string Subcategory, int Count)> grouped = allItems
+                .GroupBy(i => CategoryHelper.Normalize(i.Subcategory), StringComparer.OrdinalIgnoreCase)
+                .Select(g => (g.Key, g.Count()))
                 .OrderBy(x => x.Subcategory)
-                .ToListAsync(cancellationToken)
-                .ContinueWith(t => t.Result
-                    .Select(x => (x.Subcategory, x.Count))
-                    .ToList(), cancellationToken);
+                .ToList();
 
             List<SubcategoryResponse> subcategories = grouped
                 .Select(x => new SubcategoryResponse(x.Subcategory, x.Count))

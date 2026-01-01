@@ -1,6 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using Quizymode.Api.Data;
 using Quizymode.Api.Services;
+using Quizymode.Api.Shared.Helpers;
 using Quizymode.Api.Shared.Kernel;
 using Quizymode.Api.Shared.Models;
 
@@ -18,16 +19,31 @@ internal static class AddItemHandler
     {
         try
         {
+            // Regular users can only create private items
+            bool effectiveIsPrivate = userContext.IsAdmin ? request.IsPrivate : true;
+            
+            // Regular users can only create private keywords
+            List<AddItem.KeywordRequest>? effectiveKeywords = request.Keywords;
+            if (effectiveKeywords is not null && !userContext.IsAdmin)
+            {
+                // Force all keywords to be private for regular users
+                effectiveKeywords = effectiveKeywords.Select(k => new AddItem.KeywordRequest(k.Name, true)).ToList();
+            }
+            
             string questionText = $"{request.Question} {request.CorrectAnswer} {string.Join(" ", request.IncorrectAnswers)}";
             string fuzzySignature = simHashService.ComputeSimHash(questionText);
             int fuzzyBucket = simHashService.GetFuzzyBucket(fuzzySignature);
 
+            // Normalize category and subcategory to ensure case-insensitive consistency
+            string normalizedCategory = CategoryHelper.Normalize(request.Category);
+            string normalizedSubcategory = CategoryHelper.Normalize(request.Subcategory);
+
             Item item = new Item
             {
                 Id = Guid.NewGuid(),
-                Category = request.Category,
-                Subcategory = request.Subcategory,
-                IsPrivate = request.IsPrivate,
+                Category = normalizedCategory,
+                Subcategory = normalizedSubcategory,
+                IsPrivate = effectiveIsPrivate,
                 Question = request.Question,
                 CorrectAnswer = request.CorrectAnswer,
                 IncorrectAnswers = request.IncorrectAnswers,
@@ -46,11 +62,11 @@ internal static class AddItemHandler
             string userId = userContext.UserId ?? "dev_user";
 
             // Handle keywords if provided
-            if (request.Keywords is not null && request.Keywords.Count > 0)
+            if (effectiveKeywords is not null && effectiveKeywords.Count > 0)
             {
                 List<ItemKeyword> itemKeywords = new();
 
-                foreach (AddItem.KeywordRequest keywordRequest in request.Keywords)
+                foreach (AddItem.KeywordRequest keywordRequest in effectiveKeywords)
                 {
                     // Normalize keyword name (trim and to lowercase for consistency)
                     string normalizedName = keywordRequest.Name.Trim().ToLowerInvariant();

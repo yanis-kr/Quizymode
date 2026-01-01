@@ -2,6 +2,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Storage;
 using Quizymode.Api.Data;
 using Quizymode.Api.Services;
+using Quizymode.Api.Shared.Helpers;
 using Quizymode.Api.Shared.Kernel;
 using Quizymode.Api.Shared.Models;
 
@@ -34,6 +35,9 @@ internal static class AddItemsBulkHandler
             }
 
             string userId = userContext.UserId ?? throw new InvalidOperationException("User ID is required for bulk item creation");
+            
+            // Regular users can only create private items
+            bool effectiveIsPrivate = userContext.IsAdmin ? request.IsPrivate : true;
 
             List<Item> itemsToInsert = new();
             Dictionary<int, Item> itemIndexMap = new(); // Map original index to created item
@@ -51,16 +55,38 @@ internal static class AddItemsBulkHandler
 
                     // Check for duplicates - only for the same user
                     // Different users can add the same items
+                    // Category and Subcategory comparison is case-insensitive
+                    // Use ToLower() which EF Core translates to SQL LOWER() function
                     string questionLower = itemRequest.Question.ToLower();
-                    bool isDuplicate = await db.Items
-                        .AnyAsync(item => 
-                            item.CreatedBy == userId &&
-                            item.Category == itemRequest.Category &&
-                            item.Subcategory == itemRequest.Subcategory &&
-                            item.FuzzyBucket == fuzzyBucket &&
-                            (item.Question.ToLower() == questionLower ||
-                             item.FuzzySignature == fuzzySignature),
-                            cancellationToken);
+                    string categoryLower = itemRequest.Category.ToLower();
+                    string subcategoryLower = itemRequest.Subcategory.ToLower();
+                    
+                    // Check for duplicates using case-insensitive comparison
+                    // Fetch items in the same bucket and compare in memory to avoid EF Core translation issues
+                    bool isDuplicate;
+                    try
+                    {
+                        List<Item> candidateItems = await db.Items
+                            .Where(item => 
+                                item.CreatedBy == userId &&
+                                item.FuzzyBucket == fuzzyBucket)
+                            .ToListAsync(cancellationToken);
+                        
+                        isDuplicate = candidateItems.Any(item =>
+                            string.Equals(item.Category, itemRequest.Category, StringComparison.OrdinalIgnoreCase) &&
+                            string.Equals(item.Subcategory, itemRequest.Subcategory, StringComparison.OrdinalIgnoreCase) &&
+                            (string.Equals(item.Question, itemRequest.Question, StringComparison.OrdinalIgnoreCase) ||
+                             item.FuzzySignature == fuzzySignature));
+                    }
+                    catch (Exception)
+                    {
+                        // If duplicate check fails, provide user-friendly error
+                        errors.Add(new AddItemsBulk.ItemError(
+                            i, 
+                            itemRequest.Question, 
+                            $"Unable to check for duplicates. This item may already exist with different casing (Category: {itemRequest.Category}, Subcategory: {itemRequest.Subcategory}). Please check your existing items."));
+                        continue;
+                    }
 
                     if (isDuplicate)
                     {
@@ -68,12 +94,25 @@ internal static class AddItemsBulkHandler
                         continue;
                     }
 
+                    // Regular users can only create private items
+                    // Also ensure keywords are private for regular users
+                    List<AddItemsBulk.KeywordRequest>? effectiveKeywords = itemRequest.Keywords;
+                    if (effectiveKeywords is not null && !userContext.IsAdmin)
+                    {
+                        // Force all keywords to be private for regular users
+                        effectiveKeywords = effectiveKeywords.Select(k => new AddItemsBulk.KeywordRequest(k.Name, effectiveIsPrivate)).ToList();
+                    }
+
+                    // Normalize category and subcategory to ensure case-insensitive consistency
+                    string normalizedCategory = CategoryHelper.Normalize(itemRequest.Category);
+                    string normalizedSubcategory = CategoryHelper.Normalize(itemRequest.Subcategory);
+
                     Item item = new Item
                     {
                         Id = Guid.NewGuid(),
-                        Category = itemRequest.Category,
-                        Subcategory = itemRequest.Subcategory,
-                        IsPrivate = request.IsPrivate,
+                        Category = normalizedCategory,
+                        Subcategory = normalizedSubcategory,
+                        IsPrivate = effectiveIsPrivate,
                         Question = itemRequest.Question,
                         CorrectAnswer = itemRequest.CorrectAnswer,
                         IncorrectAnswers = itemRequest.IncorrectAnswers,
@@ -108,12 +147,20 @@ internal static class AddItemsBulkHandler
                     Item item = kvp.Value;
                     AddItemsBulk.ItemRequest itemRequest = request.Items[originalIndex];
                     
-                    if (itemRequest.Keywords is null || itemRequest.Keywords.Count == 0)
+                    // Use effective keywords (already adjusted for regular users)
+                    List<AddItemsBulk.KeywordRequest>? keywordsToProcess = itemRequest.Keywords;
+                    if (keywordsToProcess is null || keywordsToProcess.Count == 0)
                     {
                         continue;
                     }
+                    
+                    // For regular users, ensure all keywords are private
+                    if (!userContext.IsAdmin)
+                    {
+                        keywordsToProcess = keywordsToProcess.Select(k => new AddItemsBulk.KeywordRequest(k.Name, true)).ToList();
+                    }
 
-                    foreach (AddItemsBulk.KeywordRequest keywordRequest in itemRequest.Keywords)
+                    foreach (AddItemsBulk.KeywordRequest keywordRequest in keywordsToProcess)
                     {
                         // Normalize keyword name
                         string normalizedName = keywordRequest.Name.Trim().ToLowerInvariant();

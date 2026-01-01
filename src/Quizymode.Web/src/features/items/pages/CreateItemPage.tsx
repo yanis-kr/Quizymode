@@ -10,13 +10,13 @@ import { useQuery } from "@tanstack/react-query";
 import type { KeywordRequest } from "@/types/api";
 
 const CreateItemPage = () => {
-  const { isAuthenticated } = useAuth();
+  const { isAuthenticated, isAdmin } = useAuth();
   const navigate = useNavigate();
   const queryClient = useQueryClient();
   const [formData, setFormData] = useState({
     category: "",
     subcategory: "",
-    isPrivate: false,
+    isPrivate: true, // Default to true for regular users
     question: "",
     correctAnswer: "",
     incorrectAnswers: ["", "", ""],
@@ -24,7 +24,7 @@ const CreateItemPage = () => {
     keywords: [] as KeywordRequest[],
   });
   const [newKeywordName, setNewKeywordName] = useState("");
-  const [newKeywordIsPrivate, setNewKeywordIsPrivate] = useState(false);
+  const [newKeywordIsPrivate, setNewKeywordIsPrivate] = useState(true); // Default to true for regular users
 
   const { data: categoriesData } = useQuery({
     queryKey: ["categories"],
@@ -205,12 +205,16 @@ const CreateItemPage = () => {
                 onChange={(e) =>
                   setFormData({ ...formData, isPrivate: e.target.checked })
                 }
+                disabled={!isAdmin}
                 className="mr-2"
               />
               <span className="text-sm font-medium text-gray-700">
-                Private Item
+                Private Item {!isAdmin && "(default for regular users)"}
               </span>
             </label>
+            <p className="mt-1 ml-6 text-sm text-gray-500">
+              Private items are visible only to your account. {!isAdmin && "Only admins can create global items."}
+            </p>
           </div>
 
           <div>
@@ -302,9 +306,10 @@ const CreateItemPage = () => {
                   type="checkbox"
                   checked={newKeywordIsPrivate}
                   onChange={(e) => setNewKeywordIsPrivate(e.target.checked)}
+                  disabled={!isAdmin}
                   className="mr-2"
                 />
-                Private
+                Private {!isAdmin && "(default)"}
               </label>
               <button
                 type="button"

@@ -11,13 +11,13 @@ import type { KeywordRequest } from "@/types/api";
 
 const EditItemPage = () => {
   const { id } = useParams<{ id: string }>();
-  const { isAuthenticated } = useAuth();
+  const { isAuthenticated, isAdmin } = useAuth();
   const navigate = useNavigate();
   const queryClient = useQueryClient();
   const [formData, setFormData] = useState({
     category: "",
     subcategory: "",
-    isPrivate: false,
+    isPrivate: true, // Default to true for regular users
     question: "",
     correctAnswer: "",
     incorrectAnswers: ["", "", ""],
@@ -25,7 +25,7 @@ const EditItemPage = () => {
     keywords: [] as KeywordRequest[],
   });
   const [newKeywordName, setNewKeywordName] = useState("");
-  const [newKeywordIsPrivate, setNewKeywordIsPrivate] = useState(false);
+  const [newKeywordIsPrivate, setNewKeywordIsPrivate] = useState(true); // Default to true for regular users
 
   const { data: categoriesData } = useQuery({
     queryKey: ["categories"],
@@ -127,7 +127,7 @@ const EditItemPage = () => {
       keywords: [...formData.keywords, { name: trimmedName, isPrivate: newKeywordIsPrivate }],
     });
     setNewKeywordName("");
-    setNewKeywordIsPrivate(false);
+    setNewKeywordIsPrivate(true); // Reset to default (true for regular users)
   };
 
   const removeKeyword = (index: number) => {
@@ -254,12 +254,16 @@ const EditItemPage = () => {
                 onChange={(e) =>
                   setFormData({ ...formData, isPrivate: e.target.checked })
                 }
+                disabled={!isAdmin}
                 className="mr-2"
               />
               <span className="text-sm font-medium text-gray-700">
-                Private Item
+                Private Item {!isAdmin && "(regular users can only create private items)"}
               </span>
             </label>
+            <p className="mt-1 ml-6 text-sm text-gray-500">
+              Private items are visible only to your account. {!isAdmin && "Only admins can create global items."}
+            </p>
           </div>
 
           <div>
@@ -351,9 +355,10 @@ const EditItemPage = () => {
                   type="checkbox"
                   checked={newKeywordIsPrivate}
                   onChange={(e) => setNewKeywordIsPrivate(e.target.checked)}
+                  disabled={!isAdmin}
                   className="mr-2"
                 />
-                Private
+                Private {!isAdmin && "(default)"}
               </label>
               <button
                 type="button"

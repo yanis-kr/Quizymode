@@ -3,6 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using Quizymode.Api.Data;
 using Quizymode.Api.Infrastructure;
 using Quizymode.Api.Services;
+using Quizymode.Api.Shared.Helpers;
 using Quizymode.Api.Shared.Kernel;
 using Quizymode.Api.Shared.Models;
 
@@ -162,13 +163,21 @@ public static class UpdateItem
             string fuzzySignature = simHashService.ComputeSimHash(questionText);
             int fuzzyBucket = simHashService.GetFuzzyBucket(fuzzySignature);
 
-            item.Category = request.Category;
-            item.Subcategory = request.Subcategory;
+            // Regular users can only create/update private items
+            // They cannot change items to global (IsPrivate = false)
+            bool effectiveIsPrivate = userContext.IsAdmin ? request.IsPrivate : true;
+            
+            // Normalize category and subcategory to ensure case-insensitive consistency
+            string normalizedCategory = CategoryHelper.Normalize(request.Category);
+            string normalizedSubcategory = CategoryHelper.Normalize(request.Subcategory);
+            
+            item.Category = normalizedCategory;
+            item.Subcategory = normalizedSubcategory;
             item.Question = request.Question;
             item.CorrectAnswer = request.CorrectAnswer;
             item.IncorrectAnswers = request.IncorrectAnswers;
             item.Explanation = request.Explanation;
-            item.IsPrivate = request.IsPrivate;
+            item.IsPrivate = effectiveIsPrivate;
             if (request.ReadyForReview.HasValue)
             {
                 item.ReadyForReview = request.ReadyForReview.Value;
@@ -189,12 +198,20 @@ public static class UpdateItem
                 db.ItemKeywords.RemoveRange(existingItemKeywords);
                 await db.SaveChangesAsync(cancellationToken);
 
+                // Regular users can only create private keywords
+                List<KeywordRequest> effectiveKeywords = request.Keywords;
+                if (!userContext.IsAdmin)
+                {
+                    // Force all keywords to be private for regular users
+                    effectiveKeywords = request.Keywords.Select(k => new KeywordRequest(k.Name, true)).ToList();
+                }
+                
                 // Add new keywords
-                if (request.Keywords.Count > 0)
+                if (effectiveKeywords.Count > 0)
                 {
                     List<ItemKeyword> itemKeywords = new();
 
-                    foreach (KeywordRequest keywordRequest in request.Keywords)
+                    foreach (KeywordRequest keywordRequest in effectiveKeywords)
                     {
                         string normalizedName = keywordRequest.Name.Trim().ToLowerInvariant();
                         if (string.IsNullOrEmpty(normalizedName))
