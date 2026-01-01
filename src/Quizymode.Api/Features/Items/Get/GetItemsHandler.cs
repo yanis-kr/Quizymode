@@ -101,13 +101,102 @@ internal static class GetItemsHandler
                 }
             }
 
-            int totalCount = await query.CountAsync(cancellationToken);
-            List<Item> items = await query
-                .Include(i => i.ItemKeywords)
-                    .ThenInclude(ik => ik.Keyword)
-                .Skip((request.Page - 1) * request.PageSize)
-                .Take(request.PageSize)
-                .ToListAsync(cancellationToken);
+            int totalCount;
+            List<Item> items;
+            
+            try
+            {
+                totalCount = await query.CountAsync(cancellationToken);
+                items = await query
+                    .Include(i => i.ItemKeywords)
+                        .ThenInclude(ik => ik.Keyword)
+                    .Skip((request.Page - 1) * request.PageSize)
+                    .Take(request.PageSize)
+                    .ToListAsync(cancellationToken);
+            }
+            catch (Exception ex) when ((ex is NotSupportedException || ex is InvalidOperationException) && (!string.IsNullOrEmpty(request.Category) || !string.IsNullOrEmpty(request.Subcategory)))
+            {
+                // ILike not supported (e.g., InMemory database) - fetch all and filter in memory
+                IQueryable<Item> baseQuery = db.Items.AsQueryable();
+                
+                // Reapply visibility filters
+                if (request.IsPrivate.HasValue)
+                {
+                    if (request.IsPrivate.Value)
+                    {
+                        if (!userContext.IsAuthenticated || string.IsNullOrEmpty(userContext.UserId))
+                        {
+                            return Result.Failure<GetItems.Response>(
+                                Error.Problem("Items.Unauthorized", "Must be authenticated to view private items"));
+                        }
+                        baseQuery = baseQuery.Where(i => i.IsPrivate && i.CreatedBy == userContext.UserId);
+                    }
+                    else
+                    {
+                        baseQuery = baseQuery.Where(i => !i.IsPrivate);
+                    }
+                }
+                else
+                {
+                    if (!userContext.IsAuthenticated)
+                    {
+                        baseQuery = baseQuery.Where(i => !i.IsPrivate);
+                    }
+                    else if (!string.IsNullOrEmpty(userContext.UserId))
+                    {
+                        baseQuery = baseQuery.Where(i => !i.IsPrivate || (i.IsPrivate && i.CreatedBy == userContext.UserId));
+                    }
+                }
+                
+                // Fetch all items with keywords
+                List<Item> allItems = await baseQuery
+                    .Include(i => i.ItemKeywords)
+                        .ThenInclude(ik => ik.Keyword)
+                    .ToListAsync(cancellationToken);
+                
+                // Apply category/subcategory filters in memory
+                if (!string.IsNullOrEmpty(request.Category))
+                {
+                    string category = request.Category.Trim();
+                    allItems = allItems.Where(i => string.Equals(i.Category, category, StringComparison.OrdinalIgnoreCase)).ToList();
+                }
+                
+                if (!string.IsNullOrEmpty(request.Subcategory))
+                {
+                    string subcategory = request.Subcategory.Trim();
+                    allItems = allItems.Where(i => string.Equals(i.Subcategory, subcategory, StringComparison.OrdinalIgnoreCase)).ToList();
+                }
+                
+                // Apply keyword filter
+                if (request.Keywords is not null && request.Keywords.Count > 0)
+                {
+                    List<string> visibleKeywordNames = await db.Keywords
+                        .Where(k => request.Keywords.Contains(k.Name) && 
+                                   (!k.IsPrivate || (k.IsPrivate && !string.IsNullOrEmpty(userContext.UserId) && k.CreatedBy == userContext.UserId)))
+                        .Select(k => k.Name)
+                        .ToListAsync(cancellationToken);
+                    
+                    if (visibleKeywordNames.Count > 0)
+                    {
+                        HashSet<Guid> visibleKeywordIds = await db.Keywords
+                            .Where(k => visibleKeywordNames.Contains(k.Name))
+                            .Select(k => k.Id)
+                            .ToHashSetAsync(cancellationToken);
+                        
+                        allItems = allItems.Where(i => i.ItemKeywords.Any(ik => visibleKeywordIds.Contains(ik.KeywordId))).ToList();
+                    }
+                    else
+                    {
+                        allItems = new List<Item>();
+                    }
+                }
+                
+                totalCount = allItems.Count;
+                items = allItems
+                    .Skip((request.Page - 1) * request.PageSize)
+                    .Take(request.PageSize)
+                    .ToList();
+            }
 
             // Filter keywords based on visibility for each item
             List<GetItems.ItemResponse> itemResponses = new();

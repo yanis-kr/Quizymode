@@ -67,6 +67,8 @@ public sealed class AddItemsBulkTests : IDisposable
     public async Task HandleAsync_WithDuplicates_ReturnsPartialSuccess()
     {
         // Arrange - Add existing item
+        // Fuzzy signature is computed only from question (lowercase)
+        string questionText = "What is the capital of France?".Trim().ToLowerInvariant();
         Item existingItem = new Item
         {
             Id = Guid.NewGuid(),
@@ -77,8 +79,8 @@ public sealed class AddItemsBulkTests : IDisposable
             CorrectAnswer = "Paris",
             IncorrectAnswers = new List<string> { "Lyon", "Marseille" },
             Explanation = "Existing",
-            FuzzySignature = _simHashService.ComputeSimHash("What is the capital of France? Paris Lyon Marseille"),
-            FuzzyBucket = _simHashService.GetFuzzyBucket(_simHashService.ComputeSimHash("What is the capital of France? Paris Lyon Marseille")),
+            FuzzySignature = _simHashService.ComputeSimHash(questionText),
+            FuzzyBucket = _simHashService.GetFuzzyBucket(_simHashService.ComputeSimHash(questionText)),
             CreatedBy = "test-user",
             CreatedAt = DateTime.UtcNow
         };
@@ -185,7 +187,8 @@ public sealed class AddItemsBulkTests : IDisposable
     public async Task HandleAsync_ExactDuplicateQuestion_RejectsDuplicate()
     {
         // Arrange - Add existing item with exact question match
-        string questionText = "What is the capital of France? Paris Lyon Marseille";
+        // Fuzzy signature is computed only from question (lowercase)
+        string questionText = "What is the capital of France?".Trim().ToLowerInvariant();
         Item existingItem = new Item
         {
             Id = Guid.NewGuid(),
@@ -235,7 +238,8 @@ public sealed class AddItemsBulkTests : IDisposable
     public async Task HandleAsync_CaseInsensitiveDuplicate_RejectsDuplicate()
     {
         // Arrange - Add existing item with lowercase question
-        string questionText = "what is the capital of france? paris lyon marseille";
+        // Fuzzy signature is computed only from question (lowercase)
+        string questionText = "what is the capital of france?".Trim().ToLowerInvariant();
         Item existingItem = new Item
         {
             Id = Guid.NewGuid(),
@@ -282,7 +286,8 @@ public sealed class AddItemsBulkTests : IDisposable
     public async Task HandleAsync_SimilarContentDifferentQuestion_AcceptsAsDifferent()
     {
         // Arrange - Add existing item
-        string questionText = "What is the capital of France? Paris Lyon Marseille";
+        // Fuzzy signature is computed only from question (lowercase)
+        string questionText = "What is the capital of France?".Trim().ToLowerInvariant();
         Item existingItem = new Item
         {
             Id = Guid.NewGuid(),
@@ -331,7 +336,8 @@ public sealed class AddItemsBulkTests : IDisposable
     public async Task HandleAsync_SameFuzzySignature_RejectsDuplicate()
     {
         // Arrange - Add existing item
-        string questionText = "What is the capital of France? Paris Lyon Marseille";
+        // Fuzzy signature is computed only from question (lowercase)
+        string questionText = "What is the capital of France?".Trim().ToLowerInvariant();
         string fuzzySignature = _simHashService.ComputeSimHash(questionText);
         int fuzzyBucket = _simHashService.GetFuzzyBucket(fuzzySignature);
 
@@ -380,7 +386,8 @@ public sealed class AddItemsBulkTests : IDisposable
     public async Task HandleAsync_DifferentCategory_AcceptsAsDifferent()
     {
         // Arrange - Add existing item in different category
-        string questionText = "What is the capital of France? Paris Lyon Marseille";
+        // Fuzzy signature is computed only from question (lowercase)
+        string questionText = "What is the capital of France?".Trim().ToLowerInvariant();
         Item existingItem = new Item
         {
             Id = Guid.NewGuid(),
@@ -426,7 +433,8 @@ public sealed class AddItemsBulkTests : IDisposable
     public async Task HandleAsync_DifferentSubcategory_AcceptsAsDifferent()
     {
         // Arrange - Add existing item
-        string questionText = "What is the capital of France? Paris Lyon Marseille";
+        // Fuzzy signature is computed only from question (lowercase)
+        string questionText = "What is the capital of France?".Trim().ToLowerInvariant();
         Item existingItem = new Item
         {
             Id = Guid.NewGuid(),
@@ -476,7 +484,8 @@ public sealed class AddItemsBulkTests : IDisposable
     public async Task HandleAsync_MinorWhitespaceDifferences_RejectsDuplicate()
     {
         // Arrange - Add existing item
-        string questionText = "What is the capital of France? Paris Lyon Marseille";
+        // Fuzzy signature is computed only from question (lowercase)
+        string questionText = "What is the capital of France?".Trim().ToLowerInvariant();
         Item existingItem = new Item
         {
             Id = Guid.NewGuid(),
@@ -529,8 +538,9 @@ public sealed class AddItemsBulkTests : IDisposable
     public async Task HandleAsync_MixedAcceptedAndRejected_ReturnsCorrectCounts()
     {
         // Arrange - Add existing items
-        string questionText1 = "What is the capital of France? Paris Lyon Marseille";
-        string questionText2 = "What is the capital of Germany? Berlin Munich Hamburg";
+        // Fuzzy signature is computed only from question (lowercase)
+        string questionText1 = "What is the capital of France?".Trim().ToLowerInvariant();
+        string questionText2 = "What is the capital of Germany?".Trim().ToLowerInvariant();
 
         Item existingItem1 = new Item
         {
@@ -606,7 +616,8 @@ public sealed class AddItemsBulkTests : IDisposable
     public async Task HandleAsync_DifferentUser_AllowsSameItems()
     {
         // Arrange - Add existing item created by a different user
-        string questionText = "What is the capital of France? Paris Lyon Marseille";
+        // Fuzzy signature is computed only from question (lowercase)
+        string questionText = "What is the capital of France?".Trim().ToLowerInvariant();
         Item existingItem = new Item
         {
             Id = Guid.NewGuid(),

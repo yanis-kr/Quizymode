@@ -81,12 +81,44 @@ public static class GetSubcategories
             string category = request.Category.Trim();
             query = query.Where(i => EF.Functions.ILike(i.Category, category));
 
-            // Get total count for the category
-            int totalCount = await query.CountAsync(cancellationToken);
-
-            // Perform grouping and counting in the database, then map to DTO in memory.
-            // Fetch all items and group by normalized subcategory name in memory for case-insensitive grouping
-            List<Quizymode.Api.Shared.Models.Item> allItems = await query.ToListAsync(cancellationToken);
+            // Get total count and items - handle ILike gracefully for databases that don't support it
+            int totalCount;
+            List<Quizymode.Api.Shared.Models.Item> allItems;
+            
+            try
+            {
+                totalCount = await query.CountAsync(cancellationToken);
+                allItems = await query.ToListAsync(cancellationToken);
+            }
+            catch (Exception ex) when (ex is NotSupportedException || ex is InvalidOperationException)
+            {
+                // ILike not supported (e.g., InMemory database) - fetch all and filter in memory
+                IQueryable<Quizymode.Api.Shared.Models.Item> baseQuery = db.Items.AsQueryable();
+                
+                // Reapply visibility filter
+                if (!userContext.IsAuthenticated)
+                {
+                    baseQuery = baseQuery.Where(i => !i.IsPrivate && i.Category != string.Empty);
+                }
+                else if (!string.IsNullOrEmpty(userContext.UserId))
+                {
+                    baseQuery = baseQuery.Where(i => 
+                        i.Category != string.Empty && 
+                        (!i.IsPrivate || (i.IsPrivate && i.CreatedBy == userContext.UserId)));
+                }
+                else
+                {
+                    baseQuery = baseQuery.Where(i => !i.IsPrivate && i.Category != string.Empty);
+                }
+                
+                // Fetch all items
+                allItems = await baseQuery.ToListAsync(cancellationToken);
+                
+                // Apply category filter in memory
+                allItems = allItems.Where(i => string.Equals(i.Category, category, StringComparison.OrdinalIgnoreCase)).ToList();
+                
+                totalCount = allItems.Count;
+            }
             
             // Group by normalized subcategory name (case-insensitive)
             List<(string Subcategory, int Count)> grouped = allItems
