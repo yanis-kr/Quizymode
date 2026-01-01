@@ -33,12 +33,16 @@ internal static class GetRandomHandler
 
             if (!string.IsNullOrEmpty(request.Category))
             {
-                countQuery = countQuery.Where(i => i.Category == request.Category);
+                // Case-insensitive category filter
+                string category = request.Category.Trim();
+                countQuery = countQuery.Where(i => EF.Functions.ILike(i.Category, category));
             }
 
             if (!string.IsNullOrEmpty(request.Subcategory))
             {
-                countQuery = countQuery.Where(i => i.Subcategory == request.Subcategory);
+                // Case-insensitive subcategory filter
+                string subcategory = request.Subcategory.Trim();
+                countQuery = countQuery.Where(i => EF.Functions.ILike(i.Subcategory, subcategory));
             }
 
             // Get count to validate and limit the request
@@ -67,18 +71,23 @@ internal static class GetRandomHandler
                 baseQuery = baseQuery.Where(i => !i.IsPrivate || (i.IsPrivate && i.CreatedBy == userContext.UserId));
             }
 
-            // Apply category/subcategory filters
-            if (!string.IsNullOrEmpty(request.Category) && !string.IsNullOrEmpty(request.Subcategory))
+            // Apply category/subcategory filters (case-insensitive)
+            string category = !string.IsNullOrEmpty(request.Category) ? request.Category.Trim() : string.Empty;
+            string subcategory = !string.IsNullOrEmpty(request.Subcategory) ? request.Subcategory.Trim() : string.Empty;
+            
+            if (!string.IsNullOrEmpty(category) && !string.IsNullOrEmpty(subcategory))
             {
-                baseQuery = baseQuery.Where(i => i.Category == request.Category && i.Subcategory == request.Subcategory);
+                baseQuery = baseQuery.Where(i => 
+                    EF.Functions.ILike(i.Category, category) && 
+                    EF.Functions.ILike(i.Subcategory, subcategory));
             }
-            else if (!string.IsNullOrEmpty(request.Category))
+            else if (!string.IsNullOrEmpty(category))
             {
-                baseQuery = baseQuery.Where(i => i.Category == request.Category);
+                baseQuery = baseQuery.Where(i => EF.Functions.ILike(i.Category, category));
             }
-            else if (!string.IsNullOrEmpty(request.Subcategory))
+            else if (!string.IsNullOrEmpty(subcategory))
             {
-                baseQuery = baseQuery.Where(i => i.Subcategory == request.Subcategory);
+                baseQuery = baseQuery.Where(i => EF.Functions.ILike(i.Subcategory, subcategory));
             }
 
             // Get random items using EF Core

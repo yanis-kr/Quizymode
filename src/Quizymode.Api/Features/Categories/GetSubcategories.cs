@@ -77,9 +77,9 @@ public static class GetSubcategories
                 query = query.Where(i => !i.IsPrivate && i.Category != string.Empty);
             }
 
-            // Filter by category (case-insensitive)
-            string normalizedCategory = CategoryHelper.Normalize(request.Category);
-            query = query.Where(i => EF.Functions.ILike(i.Category, normalizedCategory));
+            // Filter by category (case-insensitive) - use original case from request
+            string category = request.Category.Trim();
+            query = query.Where(i => EF.Functions.ILike(i.Category, category));
 
             // Get total count for the category
             int totalCount = await query.CountAsync(cancellationToken);

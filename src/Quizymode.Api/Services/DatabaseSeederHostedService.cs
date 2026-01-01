@@ -2,8 +2,8 @@ using System.Text.Json;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Options;
 using Quizymode.Api.Data;
-using Quizymode.Api.Shared.Helpers;
-using Quizymode.Api.Shared.Models;
+using Quizymode.Api.Features.Items.AddBulk;
+using Quizymode.Api.Shared.Kernel;
 using Quizymode.Api.Shared.Options;
 
 namespace Quizymode.Api.Services;
@@ -95,149 +95,99 @@ internal sealed class DatabaseSeederHostedService(
                 
                 _logger.LogInformation("Using seed path {SeedPath}", resolvedSeedPath);
 
-                // Load items from JSON files
-                // Files are named like: items-{categoryId}-{subcategoryId}.json
+                // Create a seeder user context (admin privileges)
+                SeederUserContext seederUserContext = new SeederUserContext();
+
+                // Load all JSON files (both bulk-*.json and items-*.json)
+                string[] bulkFiles = Directory.GetFiles(resolvedSeedPath, "bulk-*.json");
                 string[] itemFiles = Directory.GetFiles(resolvedSeedPath, "items-*.json");
+                string[] allFiles = bulkFiles.Concat(itemFiles).ToArray();
 
-                foreach (string itemsFile in itemFiles)
+                int totalItemsProcessed = 0;
+                int totalItemsCreated = 0;
+
+                foreach (string jsonFile in allFiles)
                 {
-                    string itemsJson = await File.ReadAllTextAsync(itemsFile, cancellationToken);
-                    ItemsSeedData? itemsData = JsonSerializer.Deserialize<ItemsSeedData>(
-                        itemsJson, 
-                        new JsonSerializerOptions { PropertyNameCaseInsensitive = true });
-
-                    if (itemsData?.Items is not null && itemsData.Items.Any())
+                    try
                     {
-                        List<Item> itemsToInsert = new();
-                        Dictionary<int, Item> itemIndexMap = new(); // Map index to item for keyword association
-                        int itemIndex = 0;
+                        string fileJson = await File.ReadAllTextAsync(jsonFile, cancellationToken);
                         
-                        // Normalize category and subcategory to capitalized format (once per file)
-                        string normalizedCategory = CategoryHelper.Normalize(itemsData.Category);
-                        string normalizedSubcategory = CategoryHelper.Normalize(itemsData.Subcategory);
-                        
-                        foreach (ItemSeedData itemData in itemsData.Items)
+                        // Deserialize as array of items (bulk format)
+                        List<BulkItemSeedData>? items = JsonSerializer.Deserialize<List<BulkItemSeedData>>(
+                            fileJson,
+                            new JsonSerializerOptions { PropertyNameCaseInsensitive = true });
+
+                        if (items is null || items.Count == 0)
                         {
-                            // Compute SimHash for duplicate detection
-                            string questionText = $"{itemData.Question} {itemData.CorrectAnswer} {string.Join(" ", itemData.IncorrectAnswers)}";
-                            string fuzzySignature = _simHashService.ComputeSimHash(questionText);
-                            int fuzzyBucket = _simHashService.GetFuzzyBucket(fuzzySignature);
-
-                            Item item = new Item
-                            {
-                                Id = Guid.NewGuid(),
-                                Category = normalizedCategory,
-                                Subcategory = normalizedSubcategory,
-                                IsPrivate = itemsData.IsPrivate,
-                                Question = itemData.Question,
-                                CorrectAnswer = itemData.CorrectAnswer,
-                                IncorrectAnswers = itemData.IncorrectAnswers,
-                                Explanation = itemData.Explanation,
-                                FuzzySignature = fuzzySignature,
-                                FuzzyBucket = fuzzyBucket,
-                                CreatedBy = "seeder",
-                                CreatedAt = DateTime.UtcNow
-                            };
-
-                            itemsToInsert.Add(item);
-                            itemIndexMap[itemIndex++] = item;
+                            _logger.LogWarning("No items found in {FileName}", Path.GetFileName(jsonFile));
+                            continue;
                         }
 
-                        if (itemsToInsert.Any())
+                        // Convert to AddItemsBulk.Request format
+                        List<AddItemsBulk.ItemRequest> itemRequests = items.Select(item => new AddItemsBulk.ItemRequest(
+                            Category: item.Category,
+                            Subcategory: item.Subcategory,
+                            Question: item.Question,
+                            CorrectAnswer: item.CorrectAnswer,
+                            IncorrectAnswers: item.IncorrectAnswers,
+                            Explanation: item.Explanation ?? string.Empty,
+                            Keywords: item.Keywords?.Select(k => new AddItemsBulk.KeywordRequest(k, false)).ToList()
+                        )).ToList();
+
+                        AddItemsBulk.Request bulkRequest = new AddItemsBulk.Request(
+                            IsPrivate: false, // Seed items are global
+                            Items: itemRequests
+                        );
+
+                        // Use bulk add handler
+                        Result<AddItemsBulk.Response> result = await AddItemsBulkHandler.HandleAsync(
+                            bulkRequest,
+                            db,
+                            _simHashService,
+                            seederUserContext,
+                            cancellationToken);
+
+                        if (result.IsSuccess && result.Value is not null)
                         {
-                            db.Items.AddRange(itemsToInsert);
-                            await db.SaveChangesAsync(cancellationToken);
-                            _logger.LogInformation("Inserted {Count} items for {Category}/{Subcategory}", 
-                                itemsToInsert.Count, itemsData.Category, itemsData.Subcategory);
+                            totalItemsProcessed += result.Value.TotalRequested;
+                            totalItemsCreated += result.Value.CreatedCount;
                             
-                            // Handle keywords for seeded items
-                            List<ItemKeyword> itemKeywordsToInsert = new();
-                            Dictionary<string, Keyword> keywordCache = new();
-                            string seederUserId = "seeder";
+                            _logger.LogInformation(
+                                "Processed {FileName}: {Created} created, {Duplicates} duplicates, {Failed} failed",
+                                Path.GetFileName(jsonFile),
+                                result.Value.CreatedCount,
+                                result.Value.DuplicateCount,
+                                result.Value.FailedCount);
                             
-                            itemIndex = 0;
-                            foreach (ItemSeedData itemData in itemsData.Items)
+                            if (result.Value.Errors.Count > 0)
                             {
-                                Item item = itemIndexMap[itemIndex++];
-                                
-                                // Assign single most appropriate keyword based on content
-                                // Extract keywords from question content to determine topic
-                                string questionText = $"{itemData.Question} {itemData.CorrectAnswer} {string.Join(" ", itemData.IncorrectAnswers)}";
-                                HashSet<string> extractedKeywords = ExtractKeywordsFromText(questionText);
-                                
-                                // Map to single most appropriate topic keyword
-                                string? topicKeyword = GetMostAppropriateKeyword(extractedKeywords, questionText, normalizedCategory, normalizedSubcategory);
-                                
-                                // Use explicit keyword from seed data if provided, otherwise use topic keyword
-                                string? keywordToAdd = null;
-                                if (itemData.Keywords is not null && itemData.Keywords.Count > 0)
+                                foreach (AddItemsBulk.ItemError error in result.Value.Errors)
                                 {
-                                    // Use first explicit keyword if provided
-                                    string explicitKeyword = itemData.Keywords[0].Trim().ToLowerInvariant();
-                                    if (!string.IsNullOrEmpty(explicitKeyword) && explicitKeyword.Length <= 10)
-                                    {
-                                        keywordToAdd = explicitKeyword;
-                                    }
-                                }
-                                
-                                if (string.IsNullOrEmpty(keywordToAdd) && !string.IsNullOrEmpty(topicKeyword))
-                                {
-                                    keywordToAdd = topicKeyword;
-                                }
-                                
-                                // Only add keyword if we have one
-                                if (!string.IsNullOrEmpty(keywordToAdd))
-                                {
-                                    string cacheKey = $"{keywordToAdd}:global";
-                                    
-                                    if (!keywordCache.TryGetValue(cacheKey, out Keyword? keyword))
-                                    {
-                                        // Find or create global keyword
-                                        keyword = await db.Keywords
-                                            .FirstOrDefaultAsync(k => 
-                                                k.Name == keywordToAdd && 
-                                                k.IsPrivate == false,
-                                                cancellationToken);
-                                        
-                                        if (keyword is null)
-                                        {
-                                            keyword = new Keyword
-                                            {
-                                                Id = Guid.NewGuid(),
-                                                Name = keywordToAdd,
-                                                IsPrivate = false, // Seed keywords are global
-                                                CreatedBy = seederUserId,
-                                                CreatedAt = DateTime.UtcNow
-                                            };
-                                            db.Keywords.Add(keyword);
-                                            await db.SaveChangesAsync(cancellationToken);
-                                        }
-                                        
-                                        keywordCache[cacheKey] = keyword;
-                                    }
-                                    
-                                    // Create ItemKeyword relationship
-                                    ItemKeyword itemKeyword = new ItemKeyword
-                                    {
-                                        Id = Guid.NewGuid(),
-                                        ItemId = item.Id,
-                                        KeywordId = keyword.Id,
-                                        AddedAt = DateTime.UtcNow
-                                    };
-                                    itemKeywordsToInsert.Add(itemKeyword);
+                                    _logger.LogWarning("Error in {FileName} item {Index}: {Error}",
+                                        Path.GetFileName(jsonFile),
+                                        error.Index,
+                                        error.ErrorMessage);
                                 }
                             }
-                            
-                            if (itemKeywordsToInsert.Count > 0)
-                            {
-                                db.ItemKeywords.AddRange(itemKeywordsToInsert);
-                                await db.SaveChangesAsync(cancellationToken);
-                                _logger.LogInformation("Added {Count} keyword associations for {Category}/{Subcategory}", 
-                                    itemKeywordsToInsert.Count, itemsData.Category, itemsData.Subcategory);
-                            }
+                        }
+                        else
+                        {
+                            _logger.LogError("Failed to process {FileName}: {Error}",
+                                Path.GetFileName(jsonFile),
+                                result.Error?.Description ?? "Unknown error");
                         }
                     }
+                    catch (Exception ex)
+                    {
+                        _logger.LogError(ex, "Error processing {FileName}: {Error}",
+                            Path.GetFileName(jsonFile),
+                            ex.Message);
+                    }
                 }
+
+                _logger.LogInformation("Seeding completed: {TotalProcessed} items processed, {TotalCreated} items created",
+                    totalItemsProcessed,
+                    totalItemsCreated);
 
                 _logger.LogInformation("Database seeding completed successfully.");
             }
@@ -303,282 +253,24 @@ internal sealed class DatabaseSeederHostedService(
 
         return null;
     }
-    
-    /// <summary>
-    /// Extracts meaningful keywords from text (capitalized words, place names, etc.)
-    /// </summary>
-    private static HashSet<string> ExtractKeywordsFromText(string text)
-    {
-        HashSet<string> keywords = new();
-        
-        // Common words to skip
-        HashSet<string> skipWords = new(StringComparer.OrdinalIgnoreCase)
-        {
-            "the", "a", "an", "and", "or", "but", "in", "on", "at", "to", "for", "of", "with", "by",
-            "is", "are", "was", "were", "be", "been", "being", "have", "has", "had", "do", "does", "did",
-            "what", "which", "where", "when", "who", "why", "how", "can", "could", "should", "would",
-            "this", "that", "these", "those", "it", "its", "they", "them", "their", "there", "here"
-        };
-        
-        // Extract capitalized words and common place/entity names
-        string[] words = text.Split(new[] { ' ', '.', ',', '!', '?', ':', ';', '\'', '"', '(', ')', '[', ']', '{', '}' }, 
-            StringSplitOptions.RemoveEmptyEntries);
-        
-        foreach (string word in words)
-        {
-            string cleaned = word.Trim().ToLowerInvariant();
-            
-            // Skip if too short, too long, or in skip list
-            if (cleaned.Length < 3 || cleaned.Length > 10 || skipWords.Contains(cleaned))
-            {
-                continue;
-            }
-            
-            // Add if it's a capitalized word (likely a proper noun) or a meaningful term
-            if (char.IsUpper(word[0]) || IsMeaningfulKeyword(cleaned))
-            {
-                keywords.Add(cleaned);
-            }
-        }
-        
-        return keywords;
-    }
-    
-    /// <summary>
-    /// Checks if a word is a meaningful keyword (not a common word)
-    /// </summary>
-    private static bool IsMeaningfulKeyword(string word)
-    {
-        // Add domain-specific meaningful terms
-        HashSet<string> meaningfulTerms = new(StringComparer.OrdinalIgnoreCase)
-        {
-            "ocean", "oceans", "planet", "planets", "capital", "capitals", "city", "cities",
-            "country", "countries", "continent", "continents", "language", "languages",
-            "number", "numbers", "greeting", "greetings", "word", "words"
-        };
-        
-        return meaningfulTerms.Contains(word);
-    }
-    
-    /// <summary>
-    /// Gets the single most appropriate keyword for an item based on content.
-    /// Returns the most relevant topic keyword (e.g., "geography", "science", "greetings").
-    /// </summary>
-    private static string? GetMostAppropriateKeyword(
-        HashSet<string> extractedKeywords, 
-        string fullText, 
-        string category, 
-        string subcategory)
-    {
-        string textLower = fullText.ToLowerInvariant();
-        string categoryLower = category.ToLowerInvariant();
-        string subcategoryLower = subcategory.ToLowerInvariant();
-        
-        // Geography-related keywords
-        HashSet<string> geographyTerms = new(StringComparer.OrdinalIgnoreCase)
-        {
-            "paris", "france", "ocean", "oceans", "atlantic", "pacific", "indian", "arctic",
-            "capital", "capitals", "city", "cities", "country", "countries", "continent", "continents",
-            "europe", "asia", "africa", "america", "spain", "germany", "italy", "london", "madrid"
-        };
-        
-        // Science/Astronomy-related keywords
-        HashSet<string> scienceTerms = new(StringComparer.OrdinalIgnoreCase)
-        {
-            "mars", "planet", "planets", "venus", "jupiter", "saturn", "earth", "moon", "sun",
-            "solar", "system", "astronomy", "space", "galaxy", "star", "stars"
-        };
-        
-        // Language-related keywords
-        HashSet<string> languageTerms = new(StringComparer.OrdinalIgnoreCase)
-        {
-            "spanish", "french", "english", "german", "italian", "greeting", "greetings",
-            "hello", "hola", "bonjour", "goodbye", "adios", "au revoir", "word", "words",
-            "number", "numbers", "uno", "dos", "tres", "un", "deux", "trois"
-        };
-        
-        // Check for geography content
-        bool hasGeography = extractedKeywords.Any(k => geographyTerms.Contains(k)) ||
-                           textLower.Contains("capital") || textLower.Contains("ocean") ||
-                           textLower.Contains("country") || textLower.Contains("city");
-        
-        // Check for science content
-        bool hasScience = extractedKeywords.Any(k => scienceTerms.Contains(k)) ||
-                         textLower.Contains("planet") || textLower.Contains("mars") ||
-                         textLower.Contains("solar");
-        
-        // Check for language content
-        bool hasLanguage = extractedKeywords.Any(k => languageTerms.Contains(k)) ||
-                          textLower.Contains("greeting") || textLower.Contains("say") ||
-                          textLower.Contains("word") || textLower.Contains("number");
-        
-        // Priority: Geography > Science > Language
-        if (hasGeography)
-        {
-            return "geography";
-        }
-        
-        if (hasScience)
-        {
-            return "science";
-        }
-        
-        if (hasLanguage)
-        {
-            // Determine specific language keyword
-            if (textLower.Contains("spanish") || textLower.Contains("hola") || textLower.Contains("adios") ||
-                textLower.Contains("uno") || textLower.Contains("dos") || textLower.Contains("tres"))
-            {
-                return "greetings"; // For Spanish greetings/numbers
-            }
-            
-            if (textLower.Contains("french") || textLower.Contains("bonjour") || textLower.Contains("au revoir") ||
-                textLower.Contains("un") || textLower.Contains("deux") || textLower.Contains("trois"))
-            {
-                return "greetings"; // For French greetings/numbers
-            }
-            
-            if (textLower.Contains("greeting") || textLower.Contains("hello") || textLower.Contains("goodbye"))
-            {
-                return "greetings";
-            }
-            
-            if (textLower.Contains("number") || textLower.Contains("numbers"))
-            {
-                return "numbers";
-            }
-            
-            return "greetings"; // Default for language content
-        }
-        
-        // If category/subcategory are meaningful, use them
-        if (categoryLower != "general" && categoryLower != "misc" && categoryLower != "miscellaneous" &&
-            categoryLower.Length <= 10)
-        {
-            return categoryLower;
-        }
-        
-        if (subcategoryLower != "misc" && subcategoryLower != "general" && subcategoryLower != "miscellaneous" &&
-            subcategoryLower.Length <= 10)
-        {
-            return subcategoryLower;
-        }
-        
-        return null; // No appropriate keyword found
-    }
-    
-    /// <summary>
-    /// Maps extracted keywords to meaningful topic keywords (e.g., Geography, Science, etc.)
-    /// DEPRECATED: Use GetMostAppropriateKeyword instead for single keyword assignment.
-    /// </summary>
-    [Obsolete("Use GetMostAppropriateKeyword instead for single keyword assignment")]
-    private static HashSet<string> MapToTopicKeywords(HashSet<string> extractedKeywords, string fullText)
-    {
-        HashSet<string> topicKeywords = new();
-        string textLower = fullText.ToLowerInvariant();
-        
-        // Geography-related keywords
-        HashSet<string> geographyTerms = new(StringComparer.OrdinalIgnoreCase)
-        {
-            "paris", "france", "ocean", "oceans", "atlantic", "pacific", "indian", "arctic",
-            "capital", "capitals", "city", "cities", "country", "countries", "continent", "continents",
-            "europe", "asia", "africa", "america", "spain", "germany", "italy", "london", "madrid"
-        };
-        
-        // Science/Astronomy-related keywords
-        HashSet<string> scienceTerms = new(StringComparer.OrdinalIgnoreCase)
-        {
-            "mars", "planet", "planets", "venus", "jupiter", "saturn", "earth", "moon", "sun",
-            "solar", "system", "astronomy", "space", "galaxy", "star", "stars"
-        };
-        
-        // Language-related keywords
-        HashSet<string> languageTerms = new(StringComparer.OrdinalIgnoreCase)
-        {
-            "spanish", "french", "english", "german", "italian", "greeting", "greetings",
-            "hello", "hola", "bonjour", "goodbye", "adios", "au revoir", "word", "words",
-            "number", "numbers", "uno", "dos", "tres", "un", "deux", "trois"
-        };
-        
-        // Check if any extracted keywords match these categories
-        bool hasGeography = extractedKeywords.Any(k => geographyTerms.Contains(k)) ||
-                           textLower.Contains("capital") || textLower.Contains("ocean") ||
-                           textLower.Contains("country") || textLower.Contains("city");
-        
-        bool hasScience = extractedKeywords.Any(k => scienceTerms.Contains(k)) ||
-                         textLower.Contains("planet") || textLower.Contains("mars") ||
-                         textLower.Contains("solar");
-        
-        bool hasLanguage = extractedKeywords.Any(k => languageTerms.Contains(k)) ||
-                          textLower.Contains("greeting") || textLower.Contains("say") ||
-                          textLower.Contains("word") || textLower.Contains("number");
-        
-        // Add topic keywords
-        if (hasGeography)
-        {
-            topicKeywords.Add("geography");
-        }
-        
-        if (hasScience)
-        {
-            topicKeywords.Add("science");
-        }
-        
-        if (hasLanguage)
-        {
-            // Determine specific language
-            if (textLower.Contains("spanish") || textLower.Contains("hola") || textLower.Contains("adios"))
-            {
-                topicKeywords.Add("spanish");
-                topicKeywords.Add("greetings");
-            }
-            else if (textLower.Contains("french") || textLower.Contains("bonjour") || textLower.Contains("au revoir"))
-            {
-                topicKeywords.Add("french");
-                topicKeywords.Add("greetings");
-            }
-            else if (textLower.Contains("number") || textLower.Contains("uno") || textLower.Contains("un"))
-            {
-                if (textLower.Contains("uno") || textLower.Contains("dos") || textLower.Contains("tres"))
-                {
-                    topicKeywords.Add("spanish");
-                }
-                else if (textLower.Contains("un") || textLower.Contains("deux") || textLower.Contains("trois"))
-                {
-                    topicKeywords.Add("french");
-                }
-                topicKeywords.Add("numbers");
-            }
-        }
-        
-        // Also add specific place/entity names that are meaningful
-        foreach (string keyword in extractedKeywords)
-        {
-            if (keyword.Length <= 10 && 
-                (geographyTerms.Contains(keyword) || scienceTerms.Contains(keyword) || languageTerms.Contains(keyword)))
-            {
-                topicKeywords.Add(keyword);
-            }
-        }
-        
-        return topicKeywords;
-    }
 }
 
-// Seed data models for JSON deserialization
-internal sealed class ItemsSeedData
+// Seed data model for JSON deserialization (bulk format)
+internal sealed class BulkItemSeedData
 {
     public string Category { get; set; } = string.Empty;
     public string Subcategory { get; set; } = string.Empty;
-    public bool IsPrivate { get; set; }
-    public List<ItemSeedData> Items { get; set; } = new();
-}
-
-internal sealed class ItemSeedData
-{
     public string Question { get; set; } = string.Empty;
     public string CorrectAnswer { get; set; } = string.Empty;
     public List<string> IncorrectAnswers { get; set; } = new();
-    public string Explanation { get; set; } = string.Empty;
-    public List<string>? Keywords { get; set; } // Optional keywords for seeding
+    public string? Explanation { get; set; }
+    public List<string>? Keywords { get; set; }
+}
+
+// Seeder user context for bulk add operations
+internal sealed class SeederUserContext : IUserContext
+{
+    public bool IsAuthenticated => true;
+    public string? UserId => "seeder";
+    public bool IsAdmin => true;
 }

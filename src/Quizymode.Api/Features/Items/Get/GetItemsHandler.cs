@@ -1,7 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using Quizymode.Api.Data;
 using Quizymode.Api.Services;
-using Quizymode.Api.Shared.Helpers;
 using Quizymode.Api.Shared.Kernel;
 using Quizymode.Api.Shared.Models;
 
@@ -56,16 +55,16 @@ internal static class GetItemsHandler
 
             if (!string.IsNullOrEmpty(request.Category))
             {
-                // Case-insensitive category filter
-                string normalizedCategory = CategoryHelper.Normalize(request.Category);
-                query = query.Where(i => EF.Functions.ILike(i.Category, normalizedCategory));
+                // Case-insensitive category filter - use original case from request
+                string category = request.Category.Trim();
+                query = query.Where(i => EF.Functions.ILike(i.Category, category));
             }
 
             if (!string.IsNullOrEmpty(request.Subcategory))
             {
-                // Case-insensitive subcategory filter
-                string normalizedSubcategory = CategoryHelper.Normalize(request.Subcategory);
-                query = query.Where(i => EF.Functions.ILike(i.Subcategory, normalizedSubcategory));
+                // Case-insensitive subcategory filter - use original case from request
+                string subcategory = request.Subcategory.Trim();
+                query = query.Where(i => EF.Functions.ILike(i.Subcategory, subcategory));
             }
 
             // Filter by keywords if provided

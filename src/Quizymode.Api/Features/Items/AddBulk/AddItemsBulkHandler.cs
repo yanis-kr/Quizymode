@@ -49,13 +49,14 @@ internal static class AddItemsBulkHandler
                 AddItemsBulk.ItemRequest itemRequest = request.Items[i];
                 try
                 {
-                    string questionText = $"{itemRequest.Question} {itemRequest.CorrectAnswer} {string.Join(" ", itemRequest.IncorrectAnswers)}";
+                    // Compute fuzzy signature only from the question (normalized to lowercase)
+                    string questionText = itemRequest.Question.Trim().ToLowerInvariant();
                     string fuzzySignature = simHashService.ComputeSimHash(questionText);
                     int fuzzyBucket = simHashService.GetFuzzyBucket(fuzzySignature);
 
-                    // Normalize category and subcategory for consistent comparison
-                    string normalizedCategory = CategoryHelper.Normalize(itemRequest.Category);
-                    string normalizedSubcategory = CategoryHelper.Normalize(itemRequest.Subcategory);
+                    // Preserve original case but trim whitespace
+                    string category = itemRequest.Category.Trim();
+                    string subcategory = itemRequest.Subcategory.Trim();
                     
                     // Check for duplicates - only for the same user
                     // Different users can add the same items
@@ -70,10 +71,11 @@ internal static class AddItemsBulkHandler
                                 item.FuzzyBucket == fuzzyBucket)
                             .ToListAsync(cancellationToken);
                         
-                        // Compare using normalized category/subcategory and case-insensitive question
+                        // Compare using case-insensitive category/subcategory and question
+                        // Fuzzy signature comparison is already case-insensitive (it's a hex string)
                         isDuplicate = candidateItems.Any(item =>
-                            string.Equals(item.Category, normalizedCategory, StringComparison.OrdinalIgnoreCase) &&
-                            string.Equals(item.Subcategory, normalizedSubcategory, StringComparison.OrdinalIgnoreCase) &&
+                            string.Equals(item.Category, category, StringComparison.OrdinalIgnoreCase) &&
+                            string.Equals(item.Subcategory, subcategory, StringComparison.OrdinalIgnoreCase) &&
                             (string.Equals(item.Question, itemRequest.Question, StringComparison.OrdinalIgnoreCase) ||
                              item.FuzzySignature == fuzzySignature));
                     }
@@ -105,8 +107,8 @@ internal static class AddItemsBulkHandler
                     Item item = new Item
                     {
                         Id = Guid.NewGuid(),
-                        Category = normalizedCategory,
-                        Subcategory = normalizedSubcategory,
+                        Category = category,
+                        Subcategory = subcategory,
                         IsPrivate = effectiveIsPrivate,
                         Question = itemRequest.Question,
                         CorrectAnswer = itemRequest.CorrectAnswer,

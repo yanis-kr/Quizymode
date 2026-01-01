@@ -1,7 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using Quizymode.Api.Data;
 using Quizymode.Api.Services;
-using Quizymode.Api.Shared.Helpers;
 using Quizymode.Api.Shared.Kernel;
 using Quizymode.Api.Shared.Models;
 
@@ -30,39 +29,44 @@ internal static class AddItemHandler
                 effectiveKeywords = effectiveKeywords.Select(k => new AddItem.KeywordRequest(k.Name, true)).ToList();
             }
             
-            string questionText = $"{request.Question} {request.CorrectAnswer} {string.Join(" ", request.IncorrectAnswers)}";
+            // Compute fuzzy signature only from the question (normalized to lowercase)
+            string questionText = request.Question.Trim().ToLowerInvariant();
             string fuzzySignature = simHashService.ComputeSimHash(questionText);
             int fuzzyBucket = simHashService.GetFuzzyBucket(fuzzySignature);
 
-            // Normalize category and subcategory to ensure case-insensitive consistency
-            string normalizedCategory = CategoryHelper.Normalize(request.Category);
-            string normalizedSubcategory = CategoryHelper.Normalize(request.Subcategory);
+            // Preserve original case but trim whitespace
+            string category = request.Category.Trim();
+            string subcategory = request.Subcategory.Trim();
             
             // Check for duplicates - only for the same user
             // Different users can add the same items
+            // All comparisons are case-insensitive
             string userId = userContext.UserId ?? "dev_user";
-            bool isDuplicate = await db.Items
+            List<Item> candidateItems = await db.Items
                 .Where(item => 
                     item.CreatedBy == userId &&
                     item.FuzzyBucket == fuzzyBucket)
-                .ToListAsync(cancellationToken)
-                .ContinueWith(t => t.Result.Any(item =>
-                    string.Equals(item.Category, normalizedCategory, StringComparison.OrdinalIgnoreCase) &&
-                    string.Equals(item.Subcategory, normalizedSubcategory, StringComparison.OrdinalIgnoreCase) &&
-                    (string.Equals(item.Question, request.Question, StringComparison.OrdinalIgnoreCase) ||
-                     item.FuzzySignature == fuzzySignature)), cancellationToken);
+                .ToListAsync(cancellationToken);
+            
+            // Compare using case-insensitive category/subcategory and question
+            // Fuzzy signature comparison is already case-insensitive (it's a hex string)
+            bool isDuplicate = candidateItems.Any(item =>
+                string.Equals(item.Category, category, StringComparison.OrdinalIgnoreCase) &&
+                string.Equals(item.Subcategory, subcategory, StringComparison.OrdinalIgnoreCase) &&
+                (string.Equals(item.Question, request.Question, StringComparison.OrdinalIgnoreCase) ||
+                 item.FuzzySignature == fuzzySignature));
             
             if (isDuplicate)
             {
                 return Result.Failure<AddItem.Response>(
-                    Error.Validation("Item.Duplicate", $"An item with the same question already exists in category '{normalizedCategory}' / subcategory '{normalizedSubcategory}'. Questions are compared case-insensitively."));
+                    Error.Validation("Item.Duplicate", $"An item with the same question already exists in category '{category}' / subcategory '{subcategory}'. Questions are compared case-insensitively."));
             }
 
             Item item = new Item
             {
                 Id = Guid.NewGuid(),
-                Category = normalizedCategory,
-                Subcategory = normalizedSubcategory,
+                Category = category,
+                Subcategory = subcategory,
                 IsPrivate = effectiveIsPrivate,
                 Question = request.Question,
                 CorrectAnswer = request.CorrectAnswer,
