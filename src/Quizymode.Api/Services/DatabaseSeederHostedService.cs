@@ -139,12 +139,16 @@ internal sealed class DatabaseSeederHostedService(
                             Items: itemRequests
                         );
 
+                        // Get CategoryResolver from scope
+                        ICategoryResolver categoryResolver = scope.ServiceProvider.GetRequiredService<ICategoryResolver>();
+
                         // Use bulk add handler
                         Result<AddItemsBulk.Response> result = await AddItemsBulkHandler.HandleAsync(
                             bulkRequest,
                             db,
                             _simHashService,
                             seederUserContext,
+                            categoryResolver,
                             cancellationToken);
 
                         if (result.IsSuccess && result.Value is not null)

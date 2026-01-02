@@ -12,8 +12,8 @@ using Quizymode.Api.Data;
 namespace Quizymode.Api.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20251230195234_AddAuditTable")]
-    partial class AddAuditTable
+    [Migration("20260101235149_InitialCreate")]
+    partial class InitialCreate
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -64,6 +64,68 @@ namespace Quizymode.Api.Data.Migrations
                     b.HasIndex("UserId");
 
                     b.ToTable("Audits", (string)null);
+                });
+
+            modelBuilder.Entity("Quizymode.Api.Shared.Models.Category", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uuid")
+                        .HasDefaultValueSql("gen_random_uuid()");
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<string>("CreatedBy")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("character varying(100)");
+
+                    b.Property<int>("Depth")
+                        .HasColumnType("integer");
+
+                    b.Property<bool>("IsPrivate")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("boolean")
+                        .HasDefaultValue(false);
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("character varying(100)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("Depth", "IsPrivate");
+
+                    b.HasIndex("Name", "Depth", "IsPrivate", "CreatedBy");
+
+                    b.ToTable("Categories", (string)null);
+                });
+
+            modelBuilder.Entity("Quizymode.Api.Shared.Models.CategoryItem", b =>
+                {
+                    b.Property<Guid>("CategoryId")
+                        .HasColumnType("uuid");
+
+                    b.Property<Guid>("ItemId")
+                        .HasColumnType("uuid");
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<string>("CreatedBy")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("character varying(100)");
+
+                    b.HasKey("CategoryId", "ItemId");
+
+                    b.HasIndex("CategoryId");
+
+                    b.HasIndex("ItemId", "CategoryId");
+
+                    b.ToTable("CategoryItems", (string)null);
                 });
 
             modelBuilder.Entity("Quizymode.Api.Shared.Models.Collection", b =>
@@ -153,11 +215,6 @@ namespace Quizymode.Api.Data.Migrations
                         .HasColumnType("uuid")
                         .HasDefaultValueSql("gen_random_uuid()");
 
-                    b.Property<string>("Category")
-                        .IsRequired()
-                        .HasMaxLength(100)
-                        .HasColumnType("character varying(100)");
-
                     b.Property<string>("CorrectAnswer")
                         .IsRequired()
                         .HasMaxLength(500)
@@ -203,23 +260,81 @@ namespace Quizymode.Api.Data.Migrations
                         .HasColumnType("boolean")
                         .HasDefaultValue(false);
 
-                    b.Property<string>("Subcategory")
-                        .IsRequired()
-                        .HasMaxLength(100)
-                        .HasColumnType("character varying(100)");
-
                     b.HasKey("Id");
 
                     b.HasIndex("CreatedAt");
 
                     b.HasIndex("FuzzyBucket");
 
-                    b.HasIndex("Category", "Subcategory");
-
                     b.ToTable("items", null, t =>
                         {
                             t.HasCheckConstraint("CK_Items_IncorrectAnswers_Length", "jsonb_array_length(\"IncorrectAnswers\"::jsonb) >= 0 AND jsonb_array_length(\"IncorrectAnswers\"::jsonb) <= 4");
                         });
+                });
+
+            modelBuilder.Entity("Quizymode.Api.Shared.Models.ItemKeyword", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uuid")
+                        .HasDefaultValueSql("gen_random_uuid()");
+
+                    b.Property<DateTime>("AddedAt")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<Guid>("ItemId")
+                        .HasColumnType("uuid");
+
+                    b.Property<Guid>("KeywordId")
+                        .HasColumnType("uuid");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ItemId");
+
+                    b.HasIndex("KeywordId");
+
+                    b.HasIndex("ItemId", "KeywordId")
+                        .IsUnique();
+
+                    b.ToTable("item_keywords", (string)null);
+                });
+
+            modelBuilder.Entity("Quizymode.Api.Shared.Models.Keyword", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uuid")
+                        .HasDefaultValueSql("gen_random_uuid()");
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<string>("CreatedBy")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("character varying(100)");
+
+                    b.Property<bool>("IsPrivate")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("boolean")
+                        .HasDefaultValue(false);
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasMaxLength(10)
+                        .HasColumnType("character varying(10)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("CreatedBy");
+
+                    b.HasIndex("IsPrivate");
+
+                    b.HasIndex("Name", "CreatedBy", "IsPrivate")
+                        .IsUnique();
+
+                    b.ToTable("keywords", (string)null);
                 });
 
             modelBuilder.Entity("Quizymode.Api.Shared.Models.Rating", b =>
@@ -328,6 +443,54 @@ namespace Quizymode.Api.Data.Migrations
                         .IsUnique();
 
                     b.ToTable("Users", (string)null);
+                });
+
+            modelBuilder.Entity("Quizymode.Api.Shared.Models.CategoryItem", b =>
+                {
+                    b.HasOne("Quizymode.Api.Shared.Models.Category", "Category")
+                        .WithMany("CategoryItems")
+                        .HasForeignKey("CategoryId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Quizymode.Api.Shared.Models.Item", "Item")
+                        .WithMany("CategoryItems")
+                        .HasForeignKey("ItemId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Category");
+
+                    b.Navigation("Item");
+                });
+
+            modelBuilder.Entity("Quizymode.Api.Shared.Models.ItemKeyword", b =>
+                {
+                    b.HasOne("Quizymode.Api.Shared.Models.Item", null)
+                        .WithMany("ItemKeywords")
+                        .HasForeignKey("ItemId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Quizymode.Api.Shared.Models.Keyword", "Keyword")
+                        .WithMany()
+                        .HasForeignKey("KeywordId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.Navigation("Keyword");
+                });
+
+            modelBuilder.Entity("Quizymode.Api.Shared.Models.Category", b =>
+                {
+                    b.Navigation("CategoryItems");
+                });
+
+            modelBuilder.Entity("Quizymode.Api.Shared.Models.Item", b =>
+                {
+                    b.Navigation("CategoryItems");
+
+                    b.Navigation("ItemKeywords");
                 });
 #pragma warning restore 612, 618
         }

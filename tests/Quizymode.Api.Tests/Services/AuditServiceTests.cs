@@ -7,25 +7,20 @@ using Moq;
 using Quizymode.Api.Data;
 using Quizymode.Api.Services;
 using Quizymode.Api.Shared.Models;
+using Quizymode.Api.Tests.TestFixtures;
 using Xunit;
 
 namespace Quizymode.Api.Tests.Services;
 
-public sealed class AuditServiceTests : IDisposable
+public sealed class AuditServiceTests : DatabaseTestFixture
 {
-    private readonly ApplicationDbContext _dbContext;
     private readonly Mock<IHttpContextAccessor> _httpContextAccessorMock;
     private readonly AuditService _auditService;
 
     public AuditServiceTests()
     {
-        DbContextOptions<ApplicationDbContext> options = new DbContextOptionsBuilder<ApplicationDbContext>()
-            .UseInMemoryDatabase(databaseName: Guid.NewGuid().ToString())
-            .Options;
-
-        _dbContext = new ApplicationDbContext(options);
         _httpContextAccessorMock = new Mock<IHttpContextAccessor>();
-        _auditService = new AuditService(_dbContext, _httpContextAccessorMock.Object, NullLogger<AuditService>.Instance);
+        _auditService = new AuditService(DbContext, _httpContextAccessorMock.Object, NullLogger<AuditService>.Instance);
     }
 
     [Fact]
@@ -44,7 +39,7 @@ public sealed class AuditServiceTests : IDisposable
             cancellationToken: CancellationToken.None);
 
         // Assert
-        Audit? audit = await _dbContext.Audits.FirstOrDefaultAsync();
+        Audit? audit = await DbContext.Audits.FirstOrDefaultAsync();
         audit.Should().NotBeNull();
         audit!.UserId.Should().Be(userId);
         audit.Action.Should().Be(AuditAction.ItemCreated);
@@ -65,7 +60,7 @@ public sealed class AuditServiceTests : IDisposable
             cancellationToken: CancellationToken.None);
 
         // Assert
-        Audit? audit = await _dbContext.Audits.FirstOrDefaultAsync();
+        Audit? audit = await DbContext.Audits.FirstOrDefaultAsync();
         audit.Should().NotBeNull();
         audit!.UserId.Should().BeNull();
         audit.Action.Should().Be(AuditAction.LoginFailed);
@@ -93,7 +88,7 @@ public sealed class AuditServiceTests : IDisposable
             cancellationToken: CancellationToken.None);
 
         // Assert
-        Audit? audit = await _dbContext.Audits.FirstOrDefaultAsync();
+        Audit? audit = await DbContext.Audits.FirstOrDefaultAsync();
         audit.Should().NotBeNull();
         audit!.Metadata.Should().HaveCount(2);
         audit.Metadata["key1"].Should().Be("value1");
@@ -114,7 +109,7 @@ public sealed class AuditServiceTests : IDisposable
             cancellationToken: CancellationToken.None);
 
         // Assert
-        Audit? audit = await _dbContext.Audits.FirstOrDefaultAsync();
+        Audit? audit = await DbContext.Audits.FirstOrDefaultAsync();
         audit.Should().NotBeNull();
         audit!.IpAddress.Should().Be("203.0.113.1"); // Should use X-Forwarded-For (first IP)
     }
@@ -133,7 +128,7 @@ public sealed class AuditServiceTests : IDisposable
             cancellationToken: CancellationToken.None);
 
         // Assert
-        Audit? audit = await _dbContext.Audits.FirstOrDefaultAsync();
+        Audit? audit = await DbContext.Audits.FirstOrDefaultAsync();
         audit.Should().NotBeNull();
         audit!.IpAddress.Should().Be("198.51.100.1");
     }
@@ -152,7 +147,7 @@ public sealed class AuditServiceTests : IDisposable
             cancellationToken: CancellationToken.None);
 
         // Assert
-        Audit? audit = await _dbContext.Audits.FirstOrDefaultAsync();
+        Audit? audit = await DbContext.Audits.FirstOrDefaultAsync();
         audit.Should().NotBeNull();
         audit!.IpAddress.Should().Be("203.0.113.1"); // Should use first IP from comma-separated list
     }
@@ -171,7 +166,7 @@ public sealed class AuditServiceTests : IDisposable
             cancellationToken: CancellationToken.None);
 
         // Assert
-        Audit? audit = await _dbContext.Audits.FirstOrDefaultAsync();
+        Audit? audit = await DbContext.Audits.FirstOrDefaultAsync();
         audit.Should().NotBeNull();
         audit!.IpAddress.Should().Be("unknown");
     }
@@ -193,7 +188,7 @@ public sealed class AuditServiceTests : IDisposable
         await _auditService.LogAsync(AuditAction.ItemUpdated, userId: userId);
         await _auditService.LogAsync(AuditAction.ItemDeleted, userId: userId);
 
-        List<Audit> audits = await _dbContext.Audits.ToListAsync();
+        List<Audit> audits = await DbContext.Audits.ToListAsync();
         audits.Should().HaveCount(8);
         audits.Select(a => a.Action).Should().Contain(AuditAction.UserCreated);
         audits.Select(a => a.Action).Should().Contain(AuditAction.LoginSuccess);
@@ -208,13 +203,23 @@ public sealed class AuditServiceTests : IDisposable
     [Fact]
     public async Task LogAsync_DatabaseError_DoesNotThrow()
     {
-        // Arrange
-        _dbContext.Dispose(); // Dispose to cause database error
+        // Arrange - Create a separate disposed context to test error handling
+        DbContextOptions<ApplicationDbContext> options = new DbContextOptionsBuilder<ApplicationDbContext>()
+            .UseSqlite("Data Source=:memory:")
+            .Options;
+        ApplicationDbContext disposedContext = new ApplicationDbContext(options);
+        disposedContext.Dispose(); // Dispose to cause database error
+        
+        AuditService auditServiceWithDisposedContext = new AuditService(
+            disposedContext, 
+            _httpContextAccessorMock.Object, 
+            NullLogger<AuditService>.Instance);
+        
         Guid userId = Guid.NewGuid();
         SetupHttpContext("127.0.0.1");
 
         // Act
-        Func<Task> act = async () => await _auditService.LogAsync(
+        Func<Task> act = async () => await auditServiceWithDisposedContext.LogAsync(
             AuditAction.ItemCreated,
             userId: userId,
             cancellationToken: CancellationToken.None);
@@ -263,9 +268,5 @@ public sealed class AuditServiceTests : IDisposable
         _httpContextAccessorMock.Setup(x => x.HttpContext).Returns(httpContextMock.Object);
     }
 
-    public void Dispose()
-    {
-        _dbContext.Dispose();
-    }
 }
 

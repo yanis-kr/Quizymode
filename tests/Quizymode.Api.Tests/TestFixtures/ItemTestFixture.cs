@@ -1,65 +1,72 @@
-using FluentAssertions;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Logging;
+using Microsoft.Extensions.Logging.Abstractions;
+using Moq;
 using Quizymode.Api.Data;
-using Quizymode.Api.Features.Items.ReviewBoard;
+using Quizymode.Api.Services;
 using Quizymode.Api.Shared.Kernel;
 using Quizymode.Api.Shared.Models;
-using Quizymode.Api.Tests.TestFixtures;
-using Xunit;
 
-namespace Quizymode.Api.Tests.Features.Items.ReviewBoard;
+namespace Quizymode.Api.Tests.TestFixtures;
 
-public sealed class ApproveItemTests : DatabaseTestFixture
+/// <summary>
+/// Base fixture for item-related tests.
+/// Provides common services and helper methods for creating test data.
+/// </summary>
+public abstract class ItemTestFixture : DatabaseTestFixture
 {
+    protected ISimHashService SimHashService { get; }
+    protected ICategoryResolver CategoryResolver { get; }
 
-    [Fact]
-    public async Task HandleAsync_ValidItem_ApprovesAndMakesPublic()
+    protected ItemTestFixture()
     {
-        // Arrange
-        Guid itemId = Guid.NewGuid();
-        Item item = await CreateItemWithCategoriesAsync(
-            itemId, "geography", "europe", "What is the capital of France?", "Paris",
-            new List<string> { "Lyon", "Marseille" }, "Test", true, "test");
-        item.ReadyForReview = true;
-        await DbContext.SaveChangesAsync();
-
-        // Act
-        Result<ApproveItem.Response> result = await ApproveItem.HandleAsync(
-            itemId,
-            DbContext,
-            CancellationToken.None);
-
-        // Assert
-        result.IsSuccess.Should().BeTrue();
-        result.Value.Should().NotBeNull();
-        result.Value.Id.Should().Be(itemId.ToString());
-        result.Value.IsPrivate.Should().BeFalse();
-
-        Item? updatedItem = await DbContext.Items.FindAsync([itemId]);
-        updatedItem.Should().NotBeNull();
-        updatedItem!.IsPrivate.Should().BeFalse();
-        updatedItem.ReadyForReview.Should().BeFalse();
+        SimHashService = new SimHashService();
+        
+        ILogger<CategoryResolver> logger = NullLogger<CategoryResolver>.Instance;
+        CategoryResolver = new CategoryResolver(DbContext, logger);
     }
 
-    [Fact]
-    public async Task HandleAsync_NonExistentItem_ReturnsNotFound()
+    /// <summary>
+    /// Creates a mock user context with default admin settings.
+    /// </summary>
+    protected Mock<IUserContext> CreateUserContextMock(string? userId = null)
     {
-        // Arrange
-        Guid nonExistentId = Guid.NewGuid();
-
-        // Act
-        Result<ApproveItem.Response> result = await ApproveItem.HandleAsync(
-            nonExistentId,
-            DbContext,
-            CancellationToken.None);
-
-        // Assert
-        result.IsFailure.Should().BeTrue();
-        result.Error.Type.Should().Be(ErrorType.NotFound);
-        result.Error.Code.Should().Be("Item.NotFound");
+        Mock<IUserContext> mock = new();
+        mock.Setup(x => x.UserId).Returns(userId ?? "test-user");
+        mock.Setup(x => x.IsAuthenticated).Returns(true);
+        mock.Setup(x => x.IsAdmin).Returns(true);
+        return mock;
     }
 
-    private async Task<Item> CreateItemWithCategoriesAsync(
+    /// <summary>
+    /// Creates an item with categories in the database.
+    /// </summary>
+    protected async Task<Item> CreateItemWithCategoriesAsync(
+        string categoryName,
+        string subcategoryName,
+        string question,
+        string correctAnswer,
+        List<string> incorrectAnswers,
+        string explanation,
+        bool isPrivate,
+        string createdBy)
+    {
+        return await CreateItemWithCategoriesAsync(
+            Guid.NewGuid(),
+            categoryName,
+            subcategoryName,
+            question,
+            correctAnswer,
+            incorrectAnswers,
+            explanation,
+            isPrivate,
+            createdBy);
+    }
+
+    /// <summary>
+    /// Creates an item with categories in the database with a specific ID.
+    /// </summary>
+    protected async Task<Item> CreateItemWithCategoriesAsync(
         Guid itemId,
         string categoryName,
         string subcategoryName,
@@ -108,6 +115,7 @@ public sealed class ApproveItemTests : DatabaseTestFixture
         }
 
         // Create item
+        string questionText = question.Trim().ToLowerInvariant();
         Item item = new Item
         {
             Id = itemId,
@@ -116,8 +124,8 @@ public sealed class ApproveItemTests : DatabaseTestFixture
             CorrectAnswer = correctAnswer,
             IncorrectAnswers = incorrectAnswers,
             Explanation = explanation,
-            FuzzySignature = "ABC",
-            FuzzyBucket = 1,
+            FuzzySignature = SimHashService.ComputeSimHash(questionText),
+            FuzzyBucket = SimHashService.GetFuzzyBucket(SimHashService.ComputeSimHash(questionText)),
             CreatedBy = createdBy,
             CreatedAt = DateTime.UtcNow
         };
@@ -134,11 +142,6 @@ public sealed class ApproveItemTests : DatabaseTestFixture
         await DbContext.SaveChangesAsync();
 
         return item;
-    }
-
-    public void Dispose()
-    {
-        DbContext?.Dispose();
     }
 }
 

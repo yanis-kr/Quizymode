@@ -61,6 +61,8 @@ public static class GetItemById
             }
 
             Item? item = await db.Items
+                .Include(i => i.CategoryItems)
+                .ThenInclude(ci => ci.Category)
                 .FirstOrDefaultAsync(i => i.Id == itemId, cancellationToken);
 
             if (item is null)
@@ -69,10 +71,21 @@ public static class GetItemById
                     Error.NotFound("Item.NotFound", $"Item with id {id} not found"));
             }
 
+            // Get category and subcategory names from CategoryItems
+            string categoryName = item.CategoryItems
+                .Where(ci => ci.Category.Depth == 1)
+                .Select(ci => ci.Category.Name)
+                .FirstOrDefault() ?? string.Empty;
+            
+            string subcategoryName = item.CategoryItems
+                .Where(ci => ci.Category.Depth == 2)
+                .Select(ci => ci.Category.Name)
+                .FirstOrDefault() ?? string.Empty;
+
             Response response = new(
                 item.Id.ToString(),
-                item.Category,
-                item.Subcategory,
+                categoryName,
+                subcategoryName,
                 item.IsPrivate,
                 item.Question,
                 item.CorrectAnswer,

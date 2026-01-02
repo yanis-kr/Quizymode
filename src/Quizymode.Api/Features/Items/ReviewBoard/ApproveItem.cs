@@ -55,7 +55,10 @@ public static class ApproveItem
     {
         try
         {
-            Item? item = await db.Items.FindAsync([id], cancellationToken);
+            Item? item = await db.Items
+                .Include(i => i.CategoryItems)
+                .ThenInclude(ci => ci.Category)
+                .FirstOrDefaultAsync(i => i.Id == id, cancellationToken);
 
             if (item is null)
             {
@@ -68,10 +71,21 @@ public static class ApproveItem
 
             await db.SaveChangesAsync(cancellationToken);
 
+            // Get category and subcategory names from CategoryItems
+            string categoryName = item.CategoryItems
+                .Where(ci => ci.Category.Depth == 1)
+                .Select(ci => ci.Category.Name)
+                .FirstOrDefault() ?? string.Empty;
+            
+            string subcategoryName = item.CategoryItems
+                .Where(ci => ci.Category.Depth == 2)
+                .Select(ci => ci.Category.Name)
+                .FirstOrDefault() ?? string.Empty;
+
             Response response = new Response(
                 item.Id.ToString(),
-                item.Category,
-                item.Subcategory,
+                categoryName,
+                subcategoryName,
                 item.IsPrivate,
                 item.Question,
                 item.CorrectAnswer,

@@ -54,21 +54,37 @@ public static class GetReviewBoardItems
         {
             var items = await db.Items
                 .Where(i => i.ReadyForReview)
+                .Include(i => i.CategoryItems)
+                .ThenInclude(ci => ci.Category)
                 .OrderByDescending(i => i.CreatedAt)
-                .Select(i => new ItemResponse(
+                .ToListAsync(cancellationToken);
+
+            var itemResponses = items.Select(i =>
+            {
+                string categoryName = i.CategoryItems
+                    .Where(ci => ci.Category.Depth == 1)
+                    .Select(ci => ci.Category.Name)
+                    .FirstOrDefault() ?? string.Empty;
+
+                string subcategoryName = i.CategoryItems
+                    .Where(ci => ci.Category.Depth == 2)
+                    .Select(ci => ci.Category.Name)
+                    .FirstOrDefault() ?? string.Empty;
+
+                return new ItemResponse(
                     i.Id.ToString(),
-                    i.Category,
-                    i.Subcategory,
+                    categoryName,
+                    subcategoryName,
                     i.IsPrivate,
                     i.Question,
                     i.CorrectAnswer,
                     i.IncorrectAnswers,
                     i.Explanation,
                     i.CreatedBy,
-                    i.CreatedAt))
-                .ToListAsync(cancellationToken);
+                    i.CreatedAt);
+            }).ToList();
 
-            return Result.Success(new Response(items));
+            return Result.Success(new Response(itemResponses));
         }
         catch (Exception ex)
         {

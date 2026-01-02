@@ -6,23 +6,18 @@ using Quizymode.Api.Features.Comments;
 using Quizymode.Api.Services;
 using Quizymode.Api.Shared.Kernel;
 using Quizymode.Api.Shared.Models;
+using Quizymode.Api.Tests.TestFixtures;
 using Xunit;
 
 namespace Quizymode.Api.Tests.Features.Comments;
 
-public sealed class DeleteCommentTests : IDisposable
+public sealed class DeleteCommentTests : DatabaseTestFixture
 {
-    private readonly ApplicationDbContext _dbContext;
     private readonly Mock<IUserContext> _userContextMock;
     private readonly Mock<IAuditService> _auditServiceMock;
 
     public DeleteCommentTests()
     {
-        DbContextOptions<ApplicationDbContext> options = new DbContextOptionsBuilder<ApplicationDbContext>()
-            .UseInMemoryDatabase(databaseName: Guid.NewGuid().ToString())
-            .Options;
-
-        _dbContext = new ApplicationDbContext(options);
         _userContextMock = new Mock<IUserContext>();
         _userContextMock.Setup(x => x.UserId).Returns(Guid.NewGuid().ToString());
         _userContextMock.Setup(x => x.IsAuthenticated).Returns(true);
@@ -36,24 +31,9 @@ public sealed class DeleteCommentTests : IDisposable
         string userId = Guid.NewGuid().ToString();
         _userContextMock.Setup(x => x.UserId).Returns(userId);
 
-        Item item = new Item
-        {
-            Id = Guid.NewGuid(),
-            Category = "geography",
-            Subcategory = "europe",
-            IsPrivate = false,
-            Question = "What is the capital of France?",
-            CorrectAnswer = "Paris",
-            IncorrectAnswers = new List<string> { "Lyon" },
-            Explanation = "",
-            FuzzySignature = "ABC",
-            FuzzyBucket = 1,
-            CreatedBy = "test",
-            CreatedAt = DateTime.UtcNow
-        };
-
-        _dbContext.Items.Add(item);
-        await _dbContext.SaveChangesAsync();
+        Item item = await CreateItemWithCategoriesAsync(
+            Guid.NewGuid(), "geography", "europe", "What is the capital of France?", "Paris",
+            new List<string> { "Lyon" }, "", false, "test");
 
         Comment comment = new Comment
         {
@@ -64,15 +44,15 @@ public sealed class DeleteCommentTests : IDisposable
             CreatedAt = DateTime.UtcNow
         };
 
-        _dbContext.Comments.Add(comment);
-        await _dbContext.SaveChangesAsync();
+        DbContext.Comments.Add(comment);
+        await DbContext.SaveChangesAsync();
 
         Guid commentId = comment.Id;
 
         // Act
         Result result = await DeleteComment.HandleAsync(
             commentId.ToString(),
-            _dbContext,
+            DbContext,
             _userContextMock.Object,
             _auditServiceMock.Object,
             CancellationToken.None);
@@ -80,7 +60,7 @@ public sealed class DeleteCommentTests : IDisposable
         // Assert
         result.IsSuccess.Should().BeTrue();
 
-        Comment? deletedComment = await _dbContext.Comments.FindAsync(commentId);
+        Comment? deletedComment = await DbContext.Comments.FindAsync(commentId);
         deletedComment.Should().BeNull();
 
         // Verify audit logging was called
@@ -103,7 +83,7 @@ public sealed class DeleteCommentTests : IDisposable
         // Act
         Result result = await DeleteComment.HandleAsync(
             nonExistentId,
-            _dbContext,
+            DbContext,
             _userContextMock.Object,
             _auditServiceMock.Object,
             CancellationToken.None);
@@ -123,7 +103,7 @@ public sealed class DeleteCommentTests : IDisposable
         // Act
         Result result = await DeleteComment.HandleAsync(
             invalidId,
-            _dbContext,
+            DbContext,
             _userContextMock.Object,
             _auditServiceMock.Object,
             CancellationToken.None);
@@ -138,24 +118,9 @@ public sealed class DeleteCommentTests : IDisposable
     public async Task HandleAsync_NotOwner_ReturnsForbidden()
     {
         // Arrange
-        Item item = new Item
-        {
-            Id = Guid.NewGuid(),
-            Category = "geography",
-            Subcategory = "europe",
-            IsPrivate = false,
-            Question = "What is the capital of France?",
-            CorrectAnswer = "Paris",
-            IncorrectAnswers = new List<string> { "Lyon" },
-            Explanation = "",
-            FuzzySignature = "ABC",
-            FuzzyBucket = 1,
-            CreatedBy = "test",
-            CreatedAt = DateTime.UtcNow
-        };
-
-        _dbContext.Items.Add(item);
-        await _dbContext.SaveChangesAsync();
+        Item item = await CreateItemWithCategoriesAsync(
+            Guid.NewGuid(), "geography", "europe", "What is the capital of France?", "Paris",
+            new List<string> { "Lyon" }, "", false, "test");
 
         Comment comment = new Comment
         {
@@ -166,13 +131,13 @@ public sealed class DeleteCommentTests : IDisposable
             CreatedAt = DateTime.UtcNow
         };
 
-        _dbContext.Comments.Add(comment);
-        await _dbContext.SaveChangesAsync();
+        DbContext.Comments.Add(comment);
+        await DbContext.SaveChangesAsync();
 
         // Act
         Result result = await DeleteComment.HandleAsync(
             comment.Id.ToString(),
-            _dbContext,
+            DbContext,
             _userContextMock.Object,
             _auditServiceMock.Object,
             CancellationToken.None);
@@ -182,7 +147,7 @@ public sealed class DeleteCommentTests : IDisposable
         result.Error.Code.Should().Be("Comment.NotOwner");
 
         // Comment should still exist
-        Comment? existingComment = await _dbContext.Comments.FindAsync(comment.Id);
+        Comment? existingComment = await DbContext.Comments.FindAsync(comment.Id);
         existingComment.Should().NotBeNull();
 
         // Verify audit logging was NOT called for failed deletion
@@ -196,9 +161,86 @@ public sealed class DeleteCommentTests : IDisposable
             Times.Never);
     }
 
+    private async Task<Item> CreateItemWithCategoriesAsync(
+        Guid itemId,
+        string categoryName,
+        string subcategoryName,
+        string question,
+        string correctAnswer,
+        List<string> incorrectAnswers,
+        string explanation,
+        bool isPrivate,
+        string createdBy)
+    {
+        // Create or get categories
+        Category? category = await DbContext.Categories
+            .FirstOrDefaultAsync(c => c.Depth == 1 && c.Name == categoryName && c.IsPrivate == isPrivate && c.CreatedBy == createdBy);
+        
+        if (category is null)
+        {
+            category = new Category
+            {
+                Id = Guid.NewGuid(),
+                Name = categoryName,
+                Depth = 1,
+                IsPrivate = isPrivate,
+                CreatedBy = createdBy,
+                CreatedAt = DateTime.UtcNow
+            };
+            DbContext.Categories.Add(category);
+            await DbContext.SaveChangesAsync();
+        }
+
+        Category? subcategory = await DbContext.Categories
+            .FirstOrDefaultAsync(c => c.Depth == 2 && c.Name == subcategoryName && c.IsPrivate == isPrivate && c.CreatedBy == createdBy);
+        
+        if (subcategory is null)
+        {
+            subcategory = new Category
+            {
+                Id = Guid.NewGuid(),
+                Name = subcategoryName,
+                Depth = 2,
+                IsPrivate = isPrivate,
+                CreatedBy = createdBy,
+                CreatedAt = DateTime.UtcNow
+            };
+            DbContext.Categories.Add(subcategory);
+            await DbContext.SaveChangesAsync();
+        }
+
+        // Create item
+        Item item = new Item
+        {
+            Id = itemId,
+            IsPrivate = isPrivate,
+            Question = question,
+            CorrectAnswer = correctAnswer,
+            IncorrectAnswers = incorrectAnswers,
+            Explanation = explanation,
+            FuzzySignature = "ABC",
+            FuzzyBucket = 1,
+            CreatedBy = createdBy,
+            CreatedAt = DateTime.UtcNow
+        };
+
+        DbContext.Items.Add(item);
+        await DbContext.SaveChangesAsync();
+
+        // Add CategoryItems
+        DateTime now = DateTime.UtcNow;
+        DbContext.CategoryItems.AddRange(
+            new CategoryItem { CategoryId = category.Id, ItemId = item.Id, CreatedBy = createdBy, CreatedAt = now },
+            new CategoryItem { CategoryId = subcategory.Id, ItemId = item.Id, CreatedBy = createdBy, CreatedAt = now }
+        );
+        await DbContext.SaveChangesAsync();
+
+        return item;
+    }
+
     public void Dispose()
     {
-        _dbContext.Dispose();
+        DbContext.Dispose();
     }
 }
 

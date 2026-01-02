@@ -1,9 +1,12 @@
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Caching.Memory;
+using Microsoft.Extensions.Options;
 using Quizymode.Api.Data;
 using Quizymode.Api.Infrastructure;
 using Quizymode.Api.Services;
-using Quizymode.Api.Shared.Helpers;
 using Quizymode.Api.Shared.Kernel;
+using Quizymode.Api.Shared.Models;
+using Quizymode.Api.Shared.Options;
 
 namespace Quizymode.Api.Features.Categories;
 
@@ -21,8 +24,8 @@ public static class GetSubcategories
         {
             app.MapGet("categories/{category}/subcategories", Handler)
                 .WithTags("Categories")
-                .WithSummary("Get subcategories for a category")
-                .WithDescription("Returns unique subcategories for a given category with item counts.")
+                .WithSummary("Get co-occurring subcategories for a category")
+                .WithDescription("Returns co-occurring depth=2 labels for items that have the specified depth=1 category label. Results are cached.")
                 .WithOpenApi()
                 .Produces<Response>(StatusCodes.Status200OK)
                 .Produces(StatusCodes.Status400BadRequest);
@@ -32,6 +35,8 @@ public static class GetSubcategories
             string category,
             ApplicationDbContext db,
             IUserContext userContext,
+            IMemoryCache cache,
+            IOptions<CategoryOptions> categoryOptions,
             CancellationToken cancellationToken)
         {
             if (string.IsNullOrWhiteSpace(category))
@@ -41,7 +46,7 @@ public static class GetSubcategories
 
             QueryRequest request = new(category);
 
-            Result<Response> result = await HandleAsync(request, db, userContext, cancellationToken);
+            Result<Response> result = await HandleAsync(request, db, userContext, cache, categoryOptions, cancellationToken);
 
             return result.Match(
                 value => Results.Ok(value),
@@ -53,85 +58,92 @@ public static class GetSubcategories
         QueryRequest request,
         ApplicationDbContext db,
         IUserContext userContext,
+        IMemoryCache cache,
+        IOptions<CategoryOptions> categoryOptions,
         CancellationToken cancellationToken)
     {
         try
         {
-            IQueryable<Quizymode.Api.Shared.Models.Item> query = db.Items.AsQueryable();
+            string categoryName = request.Category.Trim();
 
-            // Apply visibility filter: anonymous users see only global items,
-            // authenticated users see global + their private items
-            if (!userContext.IsAuthenticated)
+            // Build cache key including user context and category name
+            string userId = userContext.UserId ?? "anonymous";
+            string cacheKey = $"subcategories:depth2:{userId}:{categoryName}";
+            int cacheTtlMinutes = categoryOptions.Value.SubcategoriesCacheTtlMinutes;
+
+            // Try cache first
+            if (cache.TryGetValue(cacheKey, out Response? cachedResponse) && cachedResponse is not null)
             {
-                query = query.Where(i => !i.IsPrivate && i.Category != string.Empty);
+                return Result.Success(cachedResponse);
             }
-            else if (!string.IsNullOrEmpty(userContext.UserId))
+
+            // Find the category (depth=1) - case-insensitive, visible to user
+            Category? category = null;
+            if (!userContext.IsAuthenticated || string.IsNullOrEmpty(userContext.UserId))
             {
-                // Include global items OR user's private items
-                query = query.Where(i => 
-                    i.Category != string.Empty && 
-                    (!i.IsPrivate || (i.IsPrivate && i.CreatedBy == userContext.UserId)));
+                category = await db.Categories
+                    .FirstOrDefaultAsync(
+                        c => c.Depth == 1 &&
+                             !c.IsPrivate &&
+                             EF.Functions.ILike(c.Name, categoryName),
+                        cancellationToken);
             }
             else
             {
-                query = query.Where(i => !i.IsPrivate && i.Category != string.Empty);
+                category = await db.Categories
+                    .FirstOrDefaultAsync(
+                        c => c.Depth == 1 &&
+                             (EF.Functions.ILike(c.Name, categoryName)) &&
+                             (!c.IsPrivate || (c.IsPrivate && c.CreatedBy == userContext.UserId)),
+                        cancellationToken);
             }
 
-            // Filter by category (case-insensitive) - use original case from request
-            string category = request.Category.Trim();
-            query = query.Where(i => EF.Functions.ILike(i.Category, category));
-
-            // Get total count and items - handle ILike gracefully for databases that don't support it
-            int totalCount;
-            List<Quizymode.Api.Shared.Models.Item> allItems;
-            
-            try
+            if (category is null)
             {
-                totalCount = await query.CountAsync(cancellationToken);
-                allItems = await query.ToListAsync(cancellationToken);
+                return Result.Failure<Response>(
+                    Error.NotFound("Category.NotFound", $"Category '{categoryName}' not found"));
             }
-            catch (Exception ex) when (ex is NotSupportedException || ex is InvalidOperationException)
-            {
-                // ILike not supported (e.g., InMemory database) - fetch all and filter in memory
-                IQueryable<Quizymode.Api.Shared.Models.Item> baseQuery = db.Items.AsQueryable();
-                
-                // Reapply visibility filter
-                if (!userContext.IsAuthenticated)
-                {
-                    baseQuery = baseQuery.Where(i => !i.IsPrivate && i.Category != string.Empty);
-                }
-                else if (!string.IsNullOrEmpty(userContext.UserId))
-                {
-                    baseQuery = baseQuery.Where(i => 
-                        i.Category != string.Empty && 
-                        (!i.IsPrivate || (i.IsPrivate && i.CreatedBy == userContext.UserId)));
-                }
-                else
-                {
-                    baseQuery = baseQuery.Where(i => !i.IsPrivate && i.Category != string.Empty);
-                }
-                
-                // Fetch all items
-                allItems = await baseQuery.ToListAsync(cancellationToken);
-                
-                // Apply category filter in memory
-                allItems = allItems.Where(i => string.Equals(i.Category, category, StringComparison.OrdinalIgnoreCase)).ToList();
-                
-                totalCount = allItems.Count;
-            }
-            
-            // Group by normalized subcategory name (case-insensitive)
-            List<(string Subcategory, int Count)> grouped = allItems
-                .GroupBy(i => CategoryHelper.Normalize(i.Subcategory), StringComparer.OrdinalIgnoreCase)
-                .Select(g => (Subcategory: g.Key, Count: g.Count()))
-                .OrderBy(x => x.Subcategory)
-                .ToList();
 
-            List<SubcategoryResponse> subcategories = grouped
-                .Select(x => new SubcategoryResponse(x.Subcategory, x.Count))
-                .ToList();
+            // Get items that have this category (depth=1) and are visible to user
+            IQueryable<Item> itemsWithCategory = db.Items
+                .Where(i => i.CategoryItems.Any(ci => ci.CategoryId == category.Id));
+
+            // Apply visibility filter
+            if (!userContext.IsAuthenticated || string.IsNullOrEmpty(userContext.UserId))
+            {
+                itemsWithCategory = itemsWithCategory.Where(i => !i.IsPrivate);
+            }
+            else
+            {
+                itemsWithCategory = itemsWithCategory.Where(i => !i.IsPrivate || (i.IsPrivate && i.CreatedBy == userContext.UserId));
+            }
+
+            // Get distinct item IDs
+            List<Guid> itemIds = await itemsWithCategory.Select(i => i.Id).Distinct().ToListAsync(cancellationToken);
+            int totalCount = itemIds.Count;
+
+            // Get co-occurring subcategories (depth=2) for these items
+            // Group by subcategory and compute counts
+            List<SubcategoryResponse> subcategories = await db.CategoryItems
+                .Where(ci => 
+                    itemIds.Contains(ci.ItemId) &&
+                    ci.Category.Depth == 2)
+                .GroupBy(ci => ci.Category)
+                .Select(g => new SubcategoryResponse(
+                    g.Key.Name,
+                    g.Select(ci => ci.ItemId).Distinct().Count()))
+                .OrderByDescending(s => s.Count)
+                .ThenBy(s => s.Subcategory)
+                .ToListAsync(cancellationToken);
 
             Response response = new(subcategories, totalCount);
+
+            // Cache the result
+            MemoryCacheEntryOptions cacheOptions = new MemoryCacheEntryOptions
+            {
+                AbsoluteExpirationRelativeToNow = TimeSpan.FromMinutes(cacheTtlMinutes)
+            };
+            cache.Set(cacheKey, response, cacheOptions);
 
             return Result.Success(response);
         }
@@ -150,4 +162,3 @@ public static class GetSubcategories
         }
     }
 }
-

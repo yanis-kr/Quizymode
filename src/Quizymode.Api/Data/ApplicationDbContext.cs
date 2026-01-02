@@ -30,6 +30,10 @@ public sealed class ApplicationDbContext : DbContext
 
     public DbSet<ItemKeyword> ItemKeywords => Set<ItemKeyword>();
 
+    public DbSet<Category> Categories => Set<Category>();
+
+    public DbSet<CategoryItem> CategoryItems => Set<CategoryItem>();
+
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         modelBuilder.ApplyConfigurationsFromAssembly(typeof(ApplicationDbContext).Assembly);

@@ -15,14 +15,6 @@ internal sealed class ItemConfiguration : IEntityTypeConfiguration<Item>
         builder.Property(x => x.Id)
             .HasDefaultValueSql("gen_random_uuid()");
 
-        builder.Property(x => x.Category)
-            .IsRequired()
-            .HasMaxLength(100);
-
-        builder.Property(x => x.Subcategory)
-            .IsRequired()
-            .HasMaxLength(100);
-
         builder.Property(x => x.IsPrivate)
             .IsRequired()
             .HasDefaultValue(false);
@@ -74,7 +66,6 @@ internal sealed class ItemConfiguration : IEntityTypeConfiguration<Item>
             "jsonb_array_length(\"IncorrectAnswers\"::jsonb) >= 0 AND jsonb_array_length(\"IncorrectAnswers\"::jsonb) <= 4"));
 
         // Indexes for common queries
-        builder.HasIndex(x => new { x.Category, x.Subcategory });
         builder.HasIndex(x => x.FuzzyBucket);
         builder.HasIndex(x => x.CreatedAt);
     }

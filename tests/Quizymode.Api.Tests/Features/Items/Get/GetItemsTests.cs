@@ -6,42 +6,109 @@ using Quizymode.Api.Features.Items.Get;
 using Quizymode.Api.Services;
 using Quizymode.Api.Shared.Kernel;
 using Quizymode.Api.Shared.Models;
+using Quizymode.Api.Tests.TestFixtures;
 using Xunit;
 using GetItemsHandler = Quizymode.Api.Features.Items.Get.GetItemsHandler;
 
 namespace Quizymode.Api.Tests.Features.Items.Get;
 
-public sealed class GetItemsTests : IDisposable
+public sealed class GetItemsTests : DatabaseTestFixture
 {
-    private readonly ApplicationDbContext _dbContext;
     private readonly Mock<IUserContext> _userContextMock;
 
     public GetItemsTests()
     {
-        DbContextOptions<ApplicationDbContext> options = new DbContextOptionsBuilder<ApplicationDbContext>()
-            .UseInMemoryDatabase(databaseName: Guid.NewGuid().ToString())
-            .Options;
-
-        _dbContext = new ApplicationDbContext(options);
         _userContextMock = new Mock<IUserContext>();
         _userContextMock.Setup(x => x.IsAuthenticated).Returns(true);
+        _userContextMock.Setup(x => x.UserId).Returns("test");
+        _userContextMock.Setup(x => x.IsAdmin).Returns(true);
+    }
+
+    private async Task<Item> CreateItemWithCategoriesAsync(
+        string categoryName,
+        string subcategoryName,
+        string question,
+        string correctAnswer,
+        bool isPrivate,
+        string createdBy)
+    {
+        // Create or get categories
+        Category? category = await DbContext.Categories
+            .FirstOrDefaultAsync(c => c.Depth == 1 && c.Name == categoryName && c.IsPrivate == isPrivate && c.CreatedBy == createdBy);
+        
+        if (category is null)
+        {
+            category = new Category
+            {
+                Id = Guid.NewGuid(),
+                Name = categoryName,
+                Depth = 1,
+                IsPrivate = isPrivate,
+                CreatedBy = createdBy,
+                CreatedAt = DateTime.UtcNow
+            };
+            DbContext.Categories.Add(category);
+            await DbContext.SaveChangesAsync();
+        }
+
+        Category? subcategory = await DbContext.Categories
+            .FirstOrDefaultAsync(c => c.Depth == 2 && c.Name == subcategoryName && c.IsPrivate == isPrivate && c.CreatedBy == createdBy);
+        
+        if (subcategory is null)
+        {
+            subcategory = new Category
+            {
+                Id = Guid.NewGuid(),
+                Name = subcategoryName,
+                Depth = 2,
+                IsPrivate = isPrivate,
+                CreatedBy = createdBy,
+                CreatedAt = DateTime.UtcNow
+            };
+            DbContext.Categories.Add(subcategory);
+            await DbContext.SaveChangesAsync();
+        }
+
+        // Create item
+        Item item = new Item
+        {
+            Id = Guid.NewGuid(),
+            IsPrivate = isPrivate,
+            Question = question,
+            CorrectAnswer = correctAnswer,
+            IncorrectAnswers = new List<string>(),
+            Explanation = "",
+            FuzzySignature = $"HASH{question}",
+            FuzzyBucket = question.GetHashCode() % 256,
+            CreatedBy = createdBy,
+            CreatedAt = DateTime.UtcNow
+        };
+
+        DbContext.Items.Add(item);
+        await DbContext.SaveChangesAsync();
+
+        // Add CategoryItems
+        DateTime now = DateTime.UtcNow;
+        DbContext.CategoryItems.AddRange(
+            new CategoryItem { CategoryId = category.Id, ItemId = item.Id, CreatedBy = createdBy, CreatedAt = now },
+            new CategoryItem { CategoryId = subcategory.Id, ItemId = item.Id, CreatedBy = createdBy, CreatedAt = now }
+        );
+        await DbContext.SaveChangesAsync();
+
+        return item;
     }
 
     [Fact]
     public async Task HandleAsync_ReturnsAllItems()
     {
         // Arrange
-        _dbContext.Items.AddRange(new[]
-        {
-            new Item { Id = Guid.NewGuid(), Category = "geography", Subcategory = "europe", IsPrivate = false, Question = "Q1", CorrectAnswer = "A1", IncorrectAnswers = new List<string>(), Explanation = "", FuzzySignature = "ABC", FuzzyBucket = 1, CreatedBy = "test", CreatedAt = DateTime.UtcNow },
-            new Item { Id = Guid.NewGuid(), Category = "geography", Subcategory = "europe", IsPrivate = false, Question = "Q2", CorrectAnswer = "A2", IncorrectAnswers = new List<string>(), Explanation = "", FuzzySignature = "DEF", FuzzyBucket = 2, CreatedBy = "test", CreatedAt = DateTime.UtcNow }
-        });
-        await _dbContext.SaveChangesAsync();
+        await CreateItemWithCategoriesAsync("geography", "europe", "Q1", "A1", isPrivate: false, createdBy: "test");
+        await CreateItemWithCategoriesAsync("geography", "europe", "Q2", "A2", isPrivate: false, createdBy: "test");
 
         GetItems.QueryRequest request = new(Category: null, Subcategory: null, IsPrivate: null, Keywords: null, Page: 1, PageSize: 10);
 
         // Act
-        Result<GetItems.Response> result = await GetItemsHandler.HandleAsync(request, _dbContext, _userContextMock.Object, CancellationToken.None);
+        Result<GetItems.Response> result = await GetItemsHandler.HandleAsync(request, DbContext, _userContextMock.Object, CancellationToken.None);
 
         // Assert
         result.IsSuccess.Should().BeTrue();
@@ -53,17 +120,13 @@ public sealed class GetItemsTests : IDisposable
     public async Task HandleAsync_FiltersByCategory()
     {
         // Arrange
-        _dbContext.Items.AddRange(new[]
-        {
-            new Item { Id = Guid.NewGuid(), Category = "geography", Subcategory = "europe", IsPrivate = false, Question = "Q1", CorrectAnswer = "A1", IncorrectAnswers = new List<string>(), Explanation = "", FuzzySignature = "ABC", FuzzyBucket = 1, CreatedBy = "test", CreatedAt = DateTime.UtcNow },
-            new Item { Id = Guid.NewGuid(), Category = "history", Subcategory = "europe", IsPrivate = false, Question = "Q2", CorrectAnswer = "A2", IncorrectAnswers = new List<string>(), Explanation = "", FuzzySignature = "DEF", FuzzyBucket = 2, CreatedBy = "test", CreatedAt = DateTime.UtcNow }
-        });
-        await _dbContext.SaveChangesAsync();
+        await CreateItemWithCategoriesAsync("geography", "europe", "Q1", "A1", isPrivate: false, createdBy: "test");
+        await CreateItemWithCategoriesAsync("history", "europe", "Q2", "A2", isPrivate: false, createdBy: "test");
 
         GetItems.QueryRequest request = new(Category: "geography", Subcategory: null, IsPrivate: null, Keywords: null, Page: 1, PageSize: 10);
 
         // Act
-        Result<GetItems.Response> result = await GetItemsHandler.HandleAsync(request, _dbContext, _userContextMock.Object, CancellationToken.None);
+        Result<GetItems.Response> result = await GetItemsHandler.HandleAsync(request, DbContext, _userContextMock.Object, CancellationToken.None);
 
         // Assert
         result.IsSuccess.Should().BeTrue();
@@ -75,28 +138,15 @@ public sealed class GetItemsTests : IDisposable
     public async Task HandleAsync_PaginatesResults()
     {
         // Arrange
-        _dbContext.Items.AddRange(Enumerable.Range(1, 15)
-            .Select(i => new Item
-            {
-                Id = Guid.NewGuid(),
-                Category = "geography",
-                Subcategory = "europe",
-                IsPrivate = false,
-                Question = $"Q{i}",
-                CorrectAnswer = $"A{i}",
-                IncorrectAnswers = new List<string>(),
-                Explanation = "",
-                FuzzySignature = $"HASH{i}",
-                FuzzyBucket = i,
-                CreatedBy = "test",
-                CreatedAt = DateTime.UtcNow
-            }));
-        await _dbContext.SaveChangesAsync();
+        for (int i = 1; i <= 15; i++)
+        {
+            await CreateItemWithCategoriesAsync("geography", "europe", $"Q{i}", $"A{i}", isPrivate: false, createdBy: "test");
+        }
 
         GetItems.QueryRequest request = new(Category: null, Subcategory: null, IsPrivate: null, Keywords: null, Page: 1, PageSize: 10);
 
         // Act
-        Result<GetItems.Response> result = await GetItemsHandler.HandleAsync(request, _dbContext, _userContextMock.Object, CancellationToken.None);
+        Result<GetItems.Response> result = await GetItemsHandler.HandleAsync(request, DbContext, _userContextMock.Object, CancellationToken.None);
 
         // Assert
         result.IsSuccess.Should().BeTrue();
@@ -105,8 +155,4 @@ public sealed class GetItemsTests : IDisposable
         result.Value.TotalPages.Should().Be(2);
     }
 
-    public void Dispose()
-    {
-        _dbContext.Dispose();
-    }
 }

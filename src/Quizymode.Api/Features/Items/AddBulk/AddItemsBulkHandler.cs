@@ -15,6 +15,7 @@ internal static class AddItemsBulkHandler
         ApplicationDbContext db,
         ISimHashService simHashService,
         IUserContext userContext,
+        ICategoryResolver categoryResolver,
         CancellationToken cancellationToken)
     {
         try
@@ -41,6 +42,7 @@ internal static class AddItemsBulkHandler
 
             List<Item> itemsToInsert = new();
             Dictionary<int, Item> itemIndexMap = new(); // Map original index to created item
+            Dictionary<int, (Category Category, Category Subcategory)> categoryMap = new(); // Map item index to resolved categories
             List<string> duplicateQuestions = new();
             List<AddItemsBulk.ItemError> errors = new();
 
@@ -54,38 +56,93 @@ internal static class AddItemsBulkHandler
                     string fuzzySignature = simHashService.ComputeSimHash(questionText);
                     int fuzzyBucket = simHashService.GetFuzzyBucket(fuzzySignature);
 
-                    // Preserve original case but trim whitespace
-                    string category = itemRequest.Category.Trim();
-                    string subcategory = itemRequest.Subcategory.Trim();
+                    // Resolve categories via CategoryResolver
+                    Result<Category> categoryResult = await categoryResolver.ResolveOrCreateAsync(
+                        itemRequest.Category,
+                        depth: 1,
+                        isPrivate: effectiveIsPrivate,
+                        currentUserId: userId,
+                        isAdmin: userContext.IsAdmin,
+                        cancellationToken);
+
+                    if (categoryResult.IsFailure)
+                    {
+                        errors.Add(new AddItemsBulk.ItemError(i, itemRequest.Question, categoryResult.Error!.Description));
+                        continue;
+                    }
+
+                    Category category = categoryResult.Value!;
+
+                    Result<Category> subcategoryResult = await categoryResolver.ResolveOrCreateAsync(
+                        itemRequest.Subcategory,
+                        depth: 2,
+                        isPrivate: effectiveIsPrivate,
+                        currentUserId: userId,
+                        isAdmin: userContext.IsAdmin,
+                        cancellationToken);
+
+                    if (subcategoryResult.IsFailure)
+                    {
+                        errors.Add(new AddItemsBulk.ItemError(i, itemRequest.Question, subcategoryResult.Error!.Description));
+                        continue;
+                    }
+
+                    Category subcategory = subcategoryResult.Value!;
                     
                     // Check for duplicates - only for the same user
                     // Different users can add the same items
-                    // All comparisons are case-insensitive
-                    // Fetch items in the same bucket and compare in memory to avoid EF Core translation issues
-                    bool isDuplicate;
+                    // Check using CategoryItems relationships
+                    // Exclude items that are already in the current batch (itemsToInsert)
+                    bool isDuplicate = false;
                     try
                     {
+                        List<Guid> existingItemIds = itemsToInsert.Select(it => it.Id).ToList();
+                        
+                        // Get items with matching fuzzy bucket (potential duplicates)
                         List<Item> candidateItems = await db.Items
                             .Where(item => 
                                 item.CreatedBy == userId &&
-                                item.FuzzyBucket == fuzzyBucket)
+                                item.FuzzyBucket == fuzzyBucket &&
+                                !existingItemIds.Contains(item.Id))
                             .ToListAsync(cancellationToken);
                         
-                        // Compare using case-insensitive category/subcategory and question
-                        // Fuzzy signature comparison is already case-insensitive (it's a hex string)
-                        isDuplicate = candidateItems.Any(item =>
-                            string.Equals(item.Category, category, StringComparison.OrdinalIgnoreCase) &&
-                            string.Equals(item.Subcategory, subcategory, StringComparison.OrdinalIgnoreCase) &&
-                            (string.Equals(item.Question, itemRequest.Question, StringComparison.OrdinalIgnoreCase) ||
-                             item.FuzzySignature == fuzzySignature));
+                        if (candidateItems.Count > 0)
+                        {
+                            // Get CategoryItems for candidate items
+                            List<Guid> candidateItemIds = candidateItems.Select(ci => ci.Id).ToList();
+                            List<CategoryItem> candidateCategoryItems = await db.CategoryItems
+                                .Where(ci => candidateItemIds.Contains(ci.ItemId))
+                                .ToListAsync(cancellationToken);
+                            
+                            // Group CategoryItems by ItemId
+                            Dictionary<Guid, List<Guid>> itemCategoryMap = candidateCategoryItems
+                                .GroupBy(ci => ci.ItemId)
+                                .ToDictionary(g => g.Key, g => g.Select(ci => ci.CategoryId).ToList());
+                            
+                            // Check if any candidate item has the same category/subcategory and question/fuzzy signature
+                            isDuplicate = candidateItems.Any(item =>
+                            {
+                                if (!itemCategoryMap.TryGetValue(item.Id, out List<Guid>? itemCategoryIds))
+                                {
+                                    return false;
+                                }
+                                
+                                bool hasCategory = itemCategoryIds.Contains(category.Id);
+                                bool hasSubcategory = itemCategoryIds.Contains(subcategory.Id);
+                                bool questionMatches = string.Equals(item.Question, itemRequest.Question, StringComparison.OrdinalIgnoreCase);
+                                bool fuzzyMatches = item.FuzzySignature == fuzzySignature;
+                                
+                                return hasCategory && hasSubcategory && (questionMatches || fuzzyMatches);
+                            });
+                        }
                     }
-                    catch (Exception)
+                    catch (Exception ex)
                     {
                         // If duplicate check fails, provide user-friendly error
                         errors.Add(new AddItemsBulk.ItemError(
                             i, 
                             itemRequest.Question, 
-                            $"Unable to check for duplicates. This item may already exist with different casing (Category: {itemRequest.Category}, Subcategory: {itemRequest.Subcategory}). Please check your existing items."));
+                            $"Unable to check for duplicates: {ex.Message}"));
                         continue;
                     }
 
@@ -107,8 +164,6 @@ internal static class AddItemsBulkHandler
                     Item item = new Item
                     {
                         Id = Guid.NewGuid(),
-                        Category = category,
-                        Subcategory = subcategory,
                         IsPrivate = effectiveIsPrivate,
                         Question = itemRequest.Question,
                         CorrectAnswer = itemRequest.CorrectAnswer,
@@ -122,6 +177,7 @@ internal static class AddItemsBulkHandler
 
                     itemsToInsert.Add(item);
                     itemIndexMap[i] = item;
+                    categoryMap[i] = (category, subcategory);
                 }
                 catch (Exception ex)
                 {
@@ -133,6 +189,38 @@ internal static class AddItemsBulkHandler
             {
                 db.Items.AddRange(itemsToInsert);
                 await db.SaveChangesAsync(cancellationToken);
+
+                // Create CategoryItem relationships
+                DateTime now = DateTime.UtcNow;
+                List<CategoryItem> categoryItemsToInsert = new();
+                foreach (KeyValuePair<int, Item> kvp in itemIndexMap)
+                {
+                    int originalIndex = kvp.Key;
+                    Item item = kvp.Value;
+                    (Category category, Category subcategory) = categoryMap[originalIndex];
+
+                    categoryItemsToInsert.Add(new CategoryItem
+                    {
+                        CategoryId = category.Id,
+                        ItemId = item.Id,
+                        CreatedBy = userId,
+                        CreatedAt = now
+                    });
+
+                    categoryItemsToInsert.Add(new CategoryItem
+                    {
+                        CategoryId = subcategory.Id,
+                        ItemId = item.Id,
+                        CreatedBy = userId,
+                        CreatedAt = now
+                    });
+                }
+
+                if (categoryItemsToInsert.Count > 0)
+                {
+                    db.CategoryItems.AddRange(categoryItemsToInsert);
+                    await db.SaveChangesAsync(cancellationToken);
+                }
 
                 // Handle keywords for all items
                 List<ItemKeyword> itemKeywordsToInsert = new();

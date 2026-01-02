@@ -6,24 +6,94 @@ using Quizymode.Api.Features.Items.GetRandom;
 using Quizymode.Api.Services;
 using Quizymode.Api.Shared.Kernel;
 using Quizymode.Api.Shared.Models;
+using Quizymode.Api.Tests.TestFixtures;
 using Xunit;
 using GetRandom = Quizymode.Api.Features.Items.GetRandom.GetRandom;
 
 namespace Quizymode.Api.Tests.Features.Items.GetRandom;
 
-public sealed class GetRandomTests : IDisposable
+public sealed class GetRandomTests : DatabaseTestFixture
 {
-    private readonly ApplicationDbContext _dbContext;
     private readonly Mock<IUserContext> _userContextMock;
 
     public GetRandomTests()
     {
-        DbContextOptions<ApplicationDbContext> options = new DbContextOptionsBuilder<ApplicationDbContext>()
-            .UseInMemoryDatabase(databaseName: Guid.NewGuid().ToString())
-            .Options;
-
-        _dbContext = new ApplicationDbContext(options);
         _userContextMock = new Mock<IUserContext>();
+    }
+
+    private async Task<Item> CreateItemWithCategoriesAsync(
+        string categoryName,
+        string subcategoryName,
+        string question,
+        string correctAnswer,
+        List<string> incorrectAnswers,
+        bool isPrivate,
+        string createdBy)
+    {
+        // Create or get categories
+        Category? category = await DbContext.Categories
+            .FirstOrDefaultAsync(c => c.Depth == 1 && c.Name == categoryName && c.IsPrivate == isPrivate && c.CreatedBy == createdBy);
+        
+        if (category is null)
+        {
+            category = new Category
+            {
+                Id = Guid.NewGuid(),
+                Name = categoryName,
+                Depth = 1,
+                IsPrivate = isPrivate,
+                CreatedBy = createdBy,
+                CreatedAt = DateTime.UtcNow
+            };
+            DbContext.Categories.Add(category);
+            await DbContext.SaveChangesAsync();
+        }
+
+        Category? subcategory = await DbContext.Categories
+            .FirstOrDefaultAsync(c => c.Depth == 2 && c.Name == subcategoryName && c.IsPrivate == isPrivate && c.CreatedBy == createdBy);
+        
+        if (subcategory is null)
+        {
+            subcategory = new Category
+            {
+                Id = Guid.NewGuid(),
+                Name = subcategoryName,
+                Depth = 2,
+                IsPrivate = isPrivate,
+                CreatedBy = createdBy,
+                CreatedAt = DateTime.UtcNow
+            };
+            DbContext.Categories.Add(subcategory);
+            await DbContext.SaveChangesAsync();
+        }
+
+        // Create item
+        Item item = new Item
+        {
+            Id = Guid.NewGuid(),
+            IsPrivate = isPrivate,
+            Question = question,
+            CorrectAnswer = correctAnswer,
+            IncorrectAnswers = incorrectAnswers,
+            Explanation = "Test",
+            FuzzySignature = $"HASH{question}",
+            FuzzyBucket = question.GetHashCode() % 256,
+            CreatedBy = createdBy,
+            CreatedAt = DateTime.UtcNow
+        };
+
+        DbContext.Items.Add(item);
+        await DbContext.SaveChangesAsync();
+
+        // Add CategoryItems
+        DateTime now = DateTime.UtcNow;
+        DbContext.CategoryItems.AddRange(
+            new CategoryItem { CategoryId = category.Id, ItemId = item.Id, CreatedBy = createdBy, CreatedAt = now },
+            new CategoryItem { CategoryId = subcategory.Id, ItemId = item.Id, CreatedBy = createdBy, CreatedAt = now }
+        );
+        await DbContext.SaveChangesAsync();
+
+        return item;
     }
 
     [Fact]
@@ -36,7 +106,7 @@ public sealed class GetRandomTests : IDisposable
         // Act
         Result<Quizymode.Api.Features.Items.GetRandom.GetRandom.Response> result = await GetRandomHandler.HandleAsync(
             request,
-            _dbContext,
+            DbContext,
             _userContextMock.Object,
             CancellationToken.None);
 
@@ -51,44 +121,20 @@ public sealed class GetRandomTests : IDisposable
         // Arrange
         _userContextMock.Setup(x => x.IsAuthenticated).Returns(false);
 
-        Item publicItem = new Item
-        {
-            Id = Guid.NewGuid(),
-            Category = "geography",
-            Subcategory = "europe",
-            IsPrivate = false,
-            Question = "What is the capital of France?",
-            CorrectAnswer = "Paris",
-            IncorrectAnswers = new List<string> { "Lyon" },
-            Explanation = "Test",
-            CreatedBy = "test",
-            CreatedAt = DateTime.UtcNow
-        };
+        Item publicItem = await CreateItemWithCategoriesAsync(
+            "geography", "europe", "What is the capital of France?", "Paris", 
+            new List<string> { "Lyon" }, isPrivate: false, createdBy: "test");
 
-        Item privateItem = new Item
-        {
-            Id = Guid.NewGuid(),
-            Category = "geography",
-            Subcategory = "europe",
-            IsPrivate = true,
-            Question = "What is the capital of Spain?",
-            CorrectAnswer = "Madrid",
-            IncorrectAnswers = new List<string> { "Barcelona" },
-            Explanation = "Test",
-            CreatedBy = "test",
-            CreatedAt = DateTime.UtcNow
-        };
-
-        _dbContext.Items.Add(publicItem);
-        _dbContext.Items.Add(privateItem);
-        await _dbContext.SaveChangesAsync();
+        Item privateItem = await CreateItemWithCategoriesAsync(
+            "geography", "europe", "What is the capital of Spain?", "Madrid", 
+            new List<string> { "Barcelona" }, isPrivate: true, createdBy: "test");
 
         Quizymode.Api.Features.Items.GetRandom.GetRandom.QueryRequest request = new(null, null, 10);
 
         // Act
         Result<Quizymode.Api.Features.Items.GetRandom.GetRandom.Response> result = await GetRandomHandler.HandleAsync(
             request,
-            _dbContext,
+            DbContext,
             _userContextMock.Object,
             CancellationToken.None);
 
@@ -107,59 +153,24 @@ public sealed class GetRandomTests : IDisposable
         _userContextMock.Setup(x => x.IsAuthenticated).Returns(true);
         _userContextMock.Setup(x => x.UserId).Returns(userId);
 
-        Item publicItem = new Item
-        {
-            Id = Guid.NewGuid(),
-            Category = "geography",
-            Subcategory = "europe",
-            IsPrivate = false,
-            Question = "What is the capital of France?",
-            CorrectAnswer = "Paris",
-            IncorrectAnswers = new List<string> { "Lyon" },
-            Explanation = "Test",
-            CreatedBy = "other",
-            CreatedAt = DateTime.UtcNow
-        };
+        Item publicItem = await CreateItemWithCategoriesAsync(
+            "geography", "europe", "What is the capital of France?", "Paris", 
+            new List<string> { "Lyon" }, isPrivate: false, createdBy: "other");
 
-        Item ownPrivateItem = new Item
-        {
-            Id = Guid.NewGuid(),
-            Category = "geography",
-            Subcategory = "europe",
-            IsPrivate = true,
-            Question = "What is the capital of Spain?",
-            CorrectAnswer = "Madrid",
-            IncorrectAnswers = new List<string> { "Barcelona" },
-            Explanation = "Test",
-            CreatedBy = userId,
-            CreatedAt = DateTime.UtcNow
-        };
+        Item ownPrivateItem = await CreateItemWithCategoriesAsync(
+            "geography", "europe", "What is the capital of Spain?", "Madrid", 
+            new List<string> { "Barcelona" }, isPrivate: true, createdBy: userId);
 
-        Item otherPrivateItem = new Item
-        {
-            Id = Guid.NewGuid(),
-            Category = "geography",
-            Subcategory = "europe",
-            IsPrivate = true,
-            Question = "What is the capital of Italy?",
-            CorrectAnswer = "Rome",
-            IncorrectAnswers = new List<string> { "Milan" },
-            Explanation = "Test",
-            CreatedBy = "other",
-            CreatedAt = DateTime.UtcNow
-        };
-
-        _dbContext.Items.Add(publicItem);
-        _dbContext.Items.Add(ownPrivateItem);
-        _dbContext.Items.Add(otherPrivateItem);
-        await _dbContext.SaveChangesAsync();
+        Item otherPrivateItem = await CreateItemWithCategoriesAsync(
+            "geography", "europe", "What is the capital of Italy?", "Rome", 
+            new List<string> { "Milan" }, isPrivate: true, createdBy: "other");
 
         Quizymode.Api.Features.Items.GetRandom.GetRandom.QueryRequest request = new(null, null, 10);
 
         // Act
         Result<Quizymode.Api.Features.Items.GetRandom.GetRandom.Response> result = await GetRandomHandler.HandleAsync(
             request,
-            _dbContext,
+            DbContext,
             _userContextMock.Object,
             CancellationToken.None);
 
@@ -177,44 +188,20 @@ public sealed class GetRandomTests : IDisposable
         // Arrange
         _userContextMock.Setup(x => x.IsAuthenticated).Returns(false);
 
-        Item geographyItem = new Item
-        {
-            Id = Guid.NewGuid(),
-            Category = "geography",
-            Subcategory = "europe",
-            IsPrivate = false,
-            Question = "What is the capital of France?",
-            CorrectAnswer = "Paris",
-            IncorrectAnswers = new List<string> { "Lyon" },
-            Explanation = "Test",
-            CreatedBy = "test",
-            CreatedAt = DateTime.UtcNow
-        };
+        Item geographyItem = await CreateItemWithCategoriesAsync(
+            "geography", "europe", "What is the capital of France?", "Paris", 
+            new List<string> { "Lyon" }, isPrivate: false, createdBy: "test");
 
-        Item historyItem = new Item
-        {
-            Id = Guid.NewGuid(),
-            Category = "history",
-            Subcategory = "europe",
-            IsPrivate = false,
-            Question = "When did WW2 end?",
-            CorrectAnswer = "1945",
-            IncorrectAnswers = new List<string> { "1944" },
-            Explanation = "Test",
-            CreatedBy = "test",
-            CreatedAt = DateTime.UtcNow
-        };
-
-        _dbContext.Items.Add(geographyItem);
-        _dbContext.Items.Add(historyItem);
-        await _dbContext.SaveChangesAsync();
+        Item historyItem = await CreateItemWithCategoriesAsync(
+            "history", "europe", "When did WW2 end?", "1945", 
+            new List<string> { "1944" }, isPrivate: false, createdBy: "test");
 
         Quizymode.Api.Features.Items.GetRandom.GetRandom.QueryRequest request = new("geography", null, 10);
 
         // Act
         Result<Quizymode.Api.Features.Items.GetRandom.GetRandom.Response> result = await GetRandomHandler.HandleAsync(
             request,
-            _dbContext,
+            DbContext,
             _userContextMock.Object,
             CancellationToken.None);
 
@@ -230,44 +217,20 @@ public sealed class GetRandomTests : IDisposable
         // Arrange
         _userContextMock.Setup(x => x.IsAuthenticated).Returns(false);
 
-        Item europeItem = new Item
-        {
-            Id = Guid.NewGuid(),
-            Category = "geography",
-            Subcategory = "europe",
-            IsPrivate = false,
-            Question = "What is the capital of France?",
-            CorrectAnswer = "Paris",
-            IncorrectAnswers = new List<string> { "Lyon" },
-            Explanation = "Test",
-            CreatedBy = "test",
-            CreatedAt = DateTime.UtcNow
-        };
+        Item europeItem = await CreateItemWithCategoriesAsync(
+            "geography", "europe", "What is the capital of France?", "Paris", 
+            new List<string> { "Lyon" }, isPrivate: false, createdBy: "test");
 
-        Item asiaItem = new Item
-        {
-            Id = Guid.NewGuid(),
-            Category = "geography",
-            Subcategory = "asia",
-            IsPrivate = false,
-            Question = "What is the capital of Japan?",
-            CorrectAnswer = "Tokyo",
-            IncorrectAnswers = new List<string> { "Osaka" },
-            Explanation = "Test",
-            CreatedBy = "test",
-            CreatedAt = DateTime.UtcNow
-        };
-
-        _dbContext.Items.Add(europeItem);
-        _dbContext.Items.Add(asiaItem);
-        await _dbContext.SaveChangesAsync();
+        Item asiaItem = await CreateItemWithCategoriesAsync(
+            "geography", "asia", "What is the capital of Japan?", "Tokyo", 
+            new List<string> { "Osaka" }, isPrivate: false, createdBy: "test");
 
         Quizymode.Api.Features.Items.GetRandom.GetRandom.QueryRequest request = new("geography", "europe", 10);
 
         // Act
         Result<Quizymode.Api.Features.Items.GetRandom.GetRandom.Response> result = await GetRandomHandler.HandleAsync(
             request,
-            _dbContext,
+            DbContext,
             _userContextMock.Object,
             CancellationToken.None);
 
@@ -285,30 +248,17 @@ public sealed class GetRandomTests : IDisposable
 
         for (int i = 0; i < 20; i++)
         {
-            Item item = new Item
-            {
-                Id = Guid.NewGuid(),
-                Category = "geography",
-                Subcategory = "europe",
-                IsPrivate = false,
-                Question = $"Question {i}?",
-                CorrectAnswer = $"Answer {i}",
-                IncorrectAnswers = new List<string> { "Wrong" },
-                Explanation = "Test",
-                CreatedBy = "test",
-                CreatedAt = DateTime.UtcNow
-            };
-            _dbContext.Items.Add(item);
+            await CreateItemWithCategoriesAsync(
+                "geography", "europe", $"Question {i}?", $"Answer {i}", 
+                new List<string> { "Wrong" }, isPrivate: false, createdBy: "test");
         }
-
-        await _dbContext.SaveChangesAsync();
 
         Quizymode.Api.Features.Items.GetRandom.GetRandom.QueryRequest request = new(null, null, 5);
 
         // Act
         Result<Quizymode.Api.Features.Items.GetRandom.GetRandom.Response> result = await GetRandomHandler.HandleAsync(
             request,
-            _dbContext,
+            DbContext,
             _userContextMock.Object,
             CancellationToken.None);
 
@@ -317,9 +267,5 @@ public sealed class GetRandomTests : IDisposable
         result.Value.Items.Should().HaveCount(5);
     }
 
-    public void Dispose()
-    {
-        _dbContext?.Dispose();
-    }
 }
 

@@ -15,11 +15,14 @@ internal static partial class StartupExtensions
     public static WebApplicationBuilder AddCustomServices(this WebApplicationBuilder builder)
     {
         builder.Services.Configure<SeedOptions>(builder.Configuration.GetSection(SeedOptions.SectionName));
+        builder.Services.Configure<CategoryOptions>(builder.Configuration.GetSection(CategoryOptions.SectionName));
         // SimHashService is stateless, so it can be a singleton
         builder.Services.AddSingleton<ISimHashService, SimHashService>();
         builder.Services.AddHttpContextAccessor();
         builder.Services.AddScoped<IUserContext, UserContext>();
         builder.Services.AddScoped<IAuditService, AuditService>();
+        builder.Services.AddScoped<ICategoryResolver, CategoryResolver>();
+        builder.Services.AddMemoryCache();
         return builder;
     }
 }

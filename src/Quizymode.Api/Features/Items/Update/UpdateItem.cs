@@ -3,7 +3,6 @@ using Microsoft.EntityFrameworkCore;
 using Quizymode.Api.Data;
 using Quizymode.Api.Infrastructure;
 using Quizymode.Api.Services;
-using Quizymode.Api.Shared.Helpers;
 using Quizymode.Api.Shared.Kernel;
 using Quizymode.Api.Shared.Models;
 
@@ -115,6 +114,7 @@ public static class UpdateItem
             ISimHashService simHashService,
             IUserContext userContext,
             IAuditService auditService,
+            ICategoryResolver categoryResolver,
             CancellationToken cancellationToken)
         {
             var validationResult = await validator.ValidateAsync(request, cancellationToken);
@@ -123,7 +123,7 @@ public static class UpdateItem
                 return Results.BadRequest(validationResult.Errors);
             }
 
-            Result<Response> result = await HandleAsync(id, request, db, simHashService, userContext, auditService, cancellationToken);
+            Result<Response> result = await HandleAsync(id, request, db, simHashService, userContext, auditService, categoryResolver, cancellationToken);
 
             return result.Match(
                 value => Results.Ok(value),
@@ -140,6 +140,7 @@ public static class UpdateItem
         ISimHashService simHashService,
         IUserContext userContext,
         IAuditService auditService,
+        ICategoryResolver categoryResolver,
         CancellationToken cancellationToken)
     {
         try
@@ -151,6 +152,7 @@ public static class UpdateItem
             }
 
             Item? item = await db.Items
+                .Include(i => i.CategoryItems)
                 .FirstOrDefaultAsync(i => i.Id == itemId, cancellationToken);
 
             if (item is null)
@@ -167,12 +169,65 @@ public static class UpdateItem
             // They cannot change items to global (IsPrivate = false)
             bool effectiveIsPrivate = userContext.IsAdmin ? request.IsPrivate : true;
             
-            // Normalize category and subcategory to ensure case-insensitive consistency
-            string normalizedCategory = CategoryHelper.Normalize(request.Category);
-            string normalizedSubcategory = CategoryHelper.Normalize(request.Subcategory);
+            string userId = userContext.UserId ?? throw new InvalidOperationException("User ID is required for item update");
             
-            item.Category = normalizedCategory;
-            item.Subcategory = normalizedSubcategory;
+            // Resolve categories via CategoryResolver
+            Result<Category> categoryResult = await categoryResolver.ResolveOrCreateAsync(
+                request.Category,
+                depth: 1,
+                isPrivate: effectiveIsPrivate,
+                currentUserId: userId,
+                isAdmin: userContext.IsAdmin,
+                cancellationToken);
+
+            if (categoryResult.IsFailure)
+            {
+                return Result.Failure<Response>(categoryResult.Error!);
+            }
+
+            Category category = categoryResult.Value!;
+
+            Result<Category> subcategoryResult = await categoryResolver.ResolveOrCreateAsync(
+                request.Subcategory,
+                depth: 2,
+                isPrivate: effectiveIsPrivate,
+                currentUserId: userId,
+                isAdmin: userContext.IsAdmin,
+                cancellationToken);
+
+            if (subcategoryResult.IsFailure)
+            {
+                return Result.Failure<Response>(subcategoryResult.Error!);
+            }
+
+            Category subcategory = subcategoryResult.Value!;
+            
+            // Replace CategoryItems relationships
+            List<CategoryItem> existingCategoryItems = await db.CategoryItems
+                .Where(ci => ci.ItemId == itemId)
+                .ToListAsync(cancellationToken);
+            db.CategoryItems.RemoveRange(existingCategoryItems);
+            await db.SaveChangesAsync(cancellationToken);
+
+            DateTime now = DateTime.UtcNow;
+            List<CategoryItem> newCategoryItems = new()
+            {
+                new CategoryItem
+                {
+                    CategoryId = category.Id,
+                    ItemId = itemId,
+                    CreatedBy = userId,
+                    CreatedAt = now
+                },
+                new CategoryItem
+                {
+                    CategoryId = subcategory.Id,
+                    ItemId = itemId,
+                    CreatedBy = userId,
+                    CreatedAt = now
+                }
+            };
+            db.CategoryItems.AddRange(newCategoryItems);
             item.Question = request.Question;
             item.CorrectAnswer = request.CorrectAnswer;
             item.IncorrectAnswers = request.IncorrectAnswers;
@@ -184,9 +239,6 @@ public static class UpdateItem
             }
             item.FuzzySignature = fuzzySignature;
             item.FuzzyBucket = fuzzyBucket;
-
-            // Get userId once for use throughout
-            string userId = userContext.UserId ?? "dev_user";
 
             // Handle keywords update
             if (request.Keywords is not null)
@@ -284,8 +336,8 @@ public static class UpdateItem
 
             Response response = new(
                 item.Id.ToString(),
-                item.Category,
-                item.Subcategory,
+                category.Name,
+                subcategory.Name,
                 item.IsPrivate,
                 item.Question,
                 item.CorrectAnswer,

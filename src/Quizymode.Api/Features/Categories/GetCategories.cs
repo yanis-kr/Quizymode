@@ -1,10 +1,12 @@
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Caching.Memory;
+using Microsoft.Extensions.Options;
 using Quizymode.Api.Data;
 using Quizymode.Api.Infrastructure;
 using Quizymode.Api.Services;
-using Quizymode.Api.Shared.Helpers;
 using Quizymode.Api.Shared.Kernel;
 using Quizymode.Api.Shared.Models;
+using Quizymode.Api.Shared.Options;
 
 namespace Quizymode.Api.Features.Categories;
 
@@ -12,7 +14,7 @@ public static class GetCategories
 {
     public sealed record QueryRequest(string? Search);
 
-    public sealed record CategoryResponse(string Category, int Count);
+    public sealed record CategoryResponse(string Category, int Count, Guid Id, bool IsPrivate);
 
     public sealed record Response(List<CategoryResponse> Categories);
 
@@ -23,7 +25,7 @@ public static class GetCategories
             app.MapGet("categories", Handler)
                 .WithTags("Categories")
                 .WithSummary("Get unique categories")
-                .WithDescription("Returns unique category identifiers sorted alphabetically with optional search filter.")
+                .WithDescription("Returns unique category identifiers (Depth=1) with item counts, sorted by count descending. Results are cached.")
                 .WithOpenApi()
                 .Produces<Response>(StatusCodes.Status200OK);
         }
@@ -32,11 +34,13 @@ public static class GetCategories
             string? search,
             ApplicationDbContext db,
             IUserContext userContext,
+            IMemoryCache cache,
+            IOptions<CategoryOptions> categoryOptions,
             CancellationToken cancellationToken)
         {
             QueryRequest request = new(search);
 
-            Result<Response> result = await HandleAsync(request, db, userContext, cancellationToken);
+            Result<Response> result = await HandleAsync(request, db, userContext, cache, categoryOptions, cancellationToken);
 
             return result.Match(
                 value => Results.Ok(value),
@@ -48,48 +52,72 @@ public static class GetCategories
         QueryRequest request,
         ApplicationDbContext db,
         IUserContext userContext,
+        IMemoryCache cache,
+        IOptions<CategoryOptions> categoryOptions,
         CancellationToken cancellationToken)
     {
         try
         {
-            IQueryable<Quizymode.Api.Shared.Models.Item> query = db.Items.AsQueryable();
+            // Build cache key including user context for visibility
+            string userId = userContext.UserId ?? "anonymous";
+            string cacheKey = $"categories:depth1:{userId}:{request.Search ?? "all"}";
+            int cacheTtlMinutes = categoryOptions.Value.CategoriesCacheTtlMinutes;
 
-            // Apply visibility filter: anonymous users see only global items,
-            // authenticated users see global + their private items
-            if (!userContext.IsAuthenticated)
+            // Try cache first
+            if (cache.TryGetValue(cacheKey, out Response? cachedResponse) && cachedResponse is not null)
             {
-                query = query.Where(i => !i.IsPrivate && i.Category != string.Empty);
+                return Result.Success(cachedResponse);
             }
-            else if (!string.IsNullOrEmpty(userContext.UserId))
+
+            // Query Categories table joined with CategoryItems to compute counts
+            IQueryable<Category> categoriesQuery = db.Categories
+                .Where(c => c.Depth == 1);
+
+            // Apply visibility filter: show global + user's private categories
+            if (!userContext.IsAuthenticated || string.IsNullOrEmpty(userContext.UserId))
             {
-                // Include global items OR user's private items
-                query = query.Where(i => 
-                    i.Category != string.Empty && 
-                    (!i.IsPrivate || (i.IsPrivate && i.CreatedBy == userContext.UserId)));
+                categoriesQuery = categoriesQuery.Where(c => !c.IsPrivate);
             }
             else
             {
-                query = query.Where(i => !i.IsPrivate && i.Category != string.Empty);
+                categoriesQuery = categoriesQuery.Where(c => !c.IsPrivate || (c.IsPrivate && c.CreatedBy == userContext.UserId));
             }
 
+            // Apply search filter if provided
             if (!string.IsNullOrWhiteSpace(request.Search))
             {
-                string searchTerm = request.Search.Trim();
-                query = query.Where(i => EF.Functions.ILike(i.Category, $"%{searchTerm}%"));
+                string searchTerm = request.Search.Trim().ToLower();
+                categoriesQuery = categoriesQuery.Where(c => c.Name.ToLower().Contains(searchTerm));
             }
 
-            // Perform grouping and counting in the database, then map to DTO in memory.
-            // Fetch all items and group by normalized category name in memory for case-insensitive grouping
-            List<Item> allItems = await query.ToListAsync(cancellationToken);
-            
-            // Group by normalized category name (case-insensitive)
-            List<CategoryResponse> categories = allItems
-                .GroupBy(i => CategoryHelper.Normalize(i.Category), StringComparer.OrdinalIgnoreCase)
-                .Select(g => new CategoryResponse(g.Key, g.Count()))
-                .OrderBy(c => c.Category)
-                .ToList();
+            // Get categories with item counts via join
+            // Order by count expression before projecting to CategoryResponse
+            string currentUserId = userContext.UserId ?? "";
+            List<CategoryResponse> categoryResponses = await categoriesQuery
+                .Select(c => new
+                {
+                    Category = c,
+                    Count = c.CategoryItems.Count(ci => 
+                        // Only count items visible to user
+                        (!ci.Item.IsPrivate || (ci.Item.IsPrivate && ci.Item.CreatedBy == currentUserId)))
+                })
+                .OrderByDescending(x => x.Count)
+                .ThenBy(x => x.Category.Name)
+                .Select(x => new CategoryResponse(
+                    x.Category.Name,
+                    x.Count,
+                    x.Category.Id,
+                    x.Category.IsPrivate))
+                .ToListAsync(cancellationToken);
 
-            Response response = new(categories);
+            Response response = new(categoryResponses);
+
+            // Cache the result
+            MemoryCacheEntryOptions cacheOptions = new MemoryCacheEntryOptions
+            {
+                AbsoluteExpirationRelativeToNow = TimeSpan.FromMinutes(cacheTtlMinutes)
+            };
+            cache.Set(cacheKey, response, cacheOptions);
 
             return Result.Success(response);
         }
@@ -108,5 +136,3 @@ public static class GetCategories
         }
     }
 }
-
-

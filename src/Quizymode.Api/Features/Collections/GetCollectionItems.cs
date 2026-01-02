@@ -82,21 +82,37 @@ public static class GetCollectionItems
                 return Result.Failure<Response>(Error.Validation("Collection.AccessDenied", "Access denied"));
             }
 
-            // Get items linked to collection
-            var joins = await db.CollectionItems
+            // Get items linked to collection with categories
+            var items = await db.CollectionItems
                 .Where(ci => ci.CollectionId == collectionId)
                 .Join(db.Items, ci => ci.ItemId, i => i.Id, (ci, i) => i)
-                .Select(i => new ItemResponse(
+                .Include(i => i.CategoryItems)
+                .ThenInclude(ci => ci.Category)
+                .ToListAsync(cancellationToken);
+
+            var joins = items.Select(i =>
+            {
+                string categoryName = i.CategoryItems
+                    .Where(ci => ci.Category.Depth == 1)
+                    .Select(ci => ci.Category.Name)
+                    .FirstOrDefault() ?? string.Empty;
+
+                string subcategoryName = i.CategoryItems
+                    .Where(ci => ci.Category.Depth == 2)
+                    .Select(ci => ci.Category.Name)
+                    .FirstOrDefault() ?? string.Empty;
+
+                return new ItemResponse(
                     i.Id.ToString(),
-                    i.Category,
-                    i.Subcategory,
+                    categoryName,
+                    subcategoryName,
                     i.IsPrivate,
                     i.Question,
                     i.CorrectAnswer,
                     i.IncorrectAnswers,
                     i.Explanation,
-                    i.CreatedAt))
-                .ToListAsync(cancellationToken);
+                    i.CreatedAt);
+            }).ToList();
 
             return Result.Success(new Response(joins));
         }

@@ -14,6 +14,7 @@ internal static class AddItemHandler
         ISimHashService simHashService,
         IUserContext userContext,
         IAuditService auditService,
+        ICategoryResolver categoryResolver,
         CancellationToken cancellationToken)
     {
         try
@@ -34,39 +35,66 @@ internal static class AddItemHandler
             string fuzzySignature = simHashService.ComputeSimHash(questionText);
             int fuzzyBucket = simHashService.GetFuzzyBucket(fuzzySignature);
 
-            // Preserve original case but trim whitespace
-            string category = request.Category.Trim();
-            string subcategory = request.Subcategory.Trim();
+            string userId = userContext.UserId ?? throw new InvalidOperationException("User ID is required for item creation");
+            
+            // Resolve categories via CategoryResolver
+            Result<Category> categoryResult = await categoryResolver.ResolveOrCreateAsync(
+                request.Category,
+                depth: 1,
+                isPrivate: effectiveIsPrivate,
+                currentUserId: userId,
+                isAdmin: userContext.IsAdmin,
+                cancellationToken);
+
+            if (categoryResult.IsFailure)
+            {
+                return Result.Failure<AddItem.Response>(categoryResult.Error!);
+            }
+
+            Category category = categoryResult.Value!;
+
+            Result<Category> subcategoryResult = await categoryResolver.ResolveOrCreateAsync(
+                request.Subcategory,
+                depth: 2,
+                isPrivate: effectiveIsPrivate,
+                currentUserId: userId,
+                isAdmin: userContext.IsAdmin,
+                cancellationToken);
+
+            if (subcategoryResult.IsFailure)
+            {
+                return Result.Failure<AddItem.Response>(subcategoryResult.Error!);
+            }
+
+            Category subcategory = subcategoryResult.Value!;
             
             // Check for duplicates - only for the same user
             // Different users can add the same items
-            // All comparisons are case-insensitive
-            string userId = userContext.UserId ?? "dev_user";
+            // Check using CategoryItems relationships
             List<Item> candidateItems = await db.Items
+                .Include(i => i.CategoryItems)
+                .ThenInclude(ci => ci.Category)
                 .Where(item => 
                     item.CreatedBy == userId &&
                     item.FuzzyBucket == fuzzyBucket)
                 .ToListAsync(cancellationToken);
             
-            // Compare using case-insensitive category/subcategory and question
-            // Fuzzy signature comparison is already case-insensitive (it's a hex string)
+            // Compare using category/subcategory IDs and question
             bool isDuplicate = candidateItems.Any(item =>
-                string.Equals(item.Category, category, StringComparison.OrdinalIgnoreCase) &&
-                string.Equals(item.Subcategory, subcategory, StringComparison.OrdinalIgnoreCase) &&
+                item.CategoryItems.Any(ci => ci.CategoryId == category.Id && ci.Category.Depth == 1) &&
+                item.CategoryItems.Any(ci => ci.CategoryId == subcategory.Id && ci.Category.Depth == 2) &&
                 (string.Equals(item.Question, request.Question, StringComparison.OrdinalIgnoreCase) ||
                  item.FuzzySignature == fuzzySignature));
             
             if (isDuplicate)
             {
                 return Result.Failure<AddItem.Response>(
-                    Error.Validation("Item.Duplicate", $"An item with the same question already exists in category '{category}' / subcategory '{subcategory}'. Questions are compared case-insensitively."));
+                    Error.Validation("Item.Duplicate", $"An item with the same question already exists in category '{category.Name}' / subcategory '{subcategory.Name}'. Questions are compared case-insensitively."));
             }
 
             Item item = new Item
             {
                 Id = Guid.NewGuid(),
-                Category = category,
-                Subcategory = subcategory,
                 IsPrivate = effectiveIsPrivate,
                 Question = request.Question,
                 CorrectAnswer = request.CorrectAnswer,
@@ -74,12 +102,35 @@ internal static class AddItemHandler
                 Explanation = request.Explanation,
                 FuzzySignature = fuzzySignature,
                 FuzzyBucket = fuzzyBucket,
-                CreatedBy = userContext.UserId ?? "dev_user",
+                CreatedBy = userId,
                 CreatedAt = DateTime.UtcNow,
                 ReadyForReview = request.ReadyForReview
             };
 
             db.Items.Add(item);
+            await db.SaveChangesAsync(cancellationToken);
+
+            // Create CategoryItem relationships
+            DateTime now = DateTime.UtcNow;
+            List<CategoryItem> categoryItems = new()
+            {
+                new CategoryItem
+                {
+                    CategoryId = category.Id,
+                    ItemId = item.Id,
+                    CreatedBy = userId,
+                    CreatedAt = now
+                },
+                new CategoryItem
+                {
+                    CategoryId = subcategory.Id,
+                    ItemId = item.Id,
+                    CreatedBy = userId,
+                    CreatedAt = now
+                }
+            };
+
+            db.CategoryItems.AddRange(categoryItems);
             await db.SaveChangesAsync(cancellationToken);
 
             // Handle keywords if provided
@@ -163,8 +214,8 @@ internal static class AddItemHandler
 
             AddItem.Response response = new AddItem.Response(
                 item.Id.ToString(),
-                item.Category,
-                item.Subcategory,
+                category.Name,
+                subcategory.Name,
                 item.IsPrivate,
                 item.Question,
                 item.CorrectAnswer,
