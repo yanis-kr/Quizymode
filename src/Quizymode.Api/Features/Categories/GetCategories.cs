@@ -1,12 +1,9 @@
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Caching.Memory;
-using Microsoft.Extensions.Options;
 using Quizymode.Api.Data;
 using Quizymode.Api.Infrastructure;
 using Quizymode.Api.Services;
 using Quizymode.Api.Shared.Kernel;
 using Quizymode.Api.Shared.Models;
-using Quizymode.Api.Shared.Options;
 
 namespace Quizymode.Api.Features.Categories;
 
@@ -14,7 +11,7 @@ public static class GetCategories
 {
     public sealed record QueryRequest(string? Search);
 
-    public sealed record CategoryResponse(string Category, int Count, Guid Id, bool IsPrivate);
+    public sealed record CategoryResponse(string Category, int Count, Guid Id, bool IsPrivate, double? AverageStars);
 
     public sealed record Response(List<CategoryResponse> Categories);
 
@@ -25,7 +22,7 @@ public static class GetCategories
             app.MapGet("categories", Handler)
                 .WithTags("Categories")
                 .WithSummary("Get unique categories")
-                .WithDescription("Returns unique category identifiers (Depth=1) with item counts, sorted by count descending. Results are cached.")
+                .WithDescription("Returns unique category identifiers (Depth=1) with item counts and average stars, sorted by highest average rating first, then by name.")
                 .WithOpenApi()
                 .Produces<Response>(StatusCodes.Status200OK);
         }
@@ -34,13 +31,11 @@ public static class GetCategories
             string? search,
             ApplicationDbContext db,
             IUserContext userContext,
-            IMemoryCache cache,
-            IOptions<CategoryOptions> categoryOptions,
             CancellationToken cancellationToken)
         {
             QueryRequest request = new(search);
 
-            Result<Response> result = await HandleAsync(request, db, userContext, cache, categoryOptions, cancellationToken);
+            Result<Response> result = await HandleAsync(request, db, userContext, cancellationToken);
 
             return result.Match(
                 value => Results.Ok(value),
@@ -52,24 +47,13 @@ public static class GetCategories
         QueryRequest request,
         ApplicationDbContext db,
         IUserContext userContext,
-        IMemoryCache cache,
-        IOptions<CategoryOptions> categoryOptions,
         CancellationToken cancellationToken)
     {
         try
         {
-            // Build cache key including user context for visibility
-            string userId = userContext.UserId ?? "anonymous";
-            string cacheKey = $"categories:depth1:{userId}:{request.Search ?? "all"}";
-            int cacheTtlMinutes = categoryOptions.Value.CategoriesCacheTtlMinutes;
+            string currentUserId = userContext.UserId ?? "";
 
-            // Try cache first
-            if (cache.TryGetValue(cacheKey, out Response? cachedResponse) && cachedResponse is not null)
-            {
-                return Result.Success(cachedResponse);
-            }
-
-            // Query Categories table joined with CategoryItems to compute counts
+            // Query Categories table with counts and average ratings
             IQueryable<Category> categoriesQuery = db.Categories
                 .Where(c => c.Depth == 1);
 
@@ -90,34 +74,36 @@ public static class GetCategories
                 categoriesQuery = categoriesQuery.Where(c => c.Name.ToLower().Contains(searchTerm));
             }
 
-            // Get categories with item counts via join
-            // Order by count expression before projecting to CategoryResponse
-            string currentUserId = userContext.UserId ?? "";
+            // Simplified query: calculate counts and average stars in one query
             List<CategoryResponse> categoryResponses = await categoriesQuery
                 .Select(c => new
                 {
-                    Category = c,
+                    CategoryName = c.Name,
+                    CategoryId = c.Id,
+                    IsPrivate = c.IsPrivate,
                     Count = c.CategoryItems.Count(ci => 
-                        // Only count items visible to user
-                        (!ci.Item.IsPrivate || (ci.Item.IsPrivate && ci.Item.CreatedBy == currentUserId)))
+                        !ci.Item.IsPrivate || (ci.Item.IsPrivate && ci.Item.CreatedBy == currentUserId)),
+                    AverageStars = db.CategoryItems
+                        .Where(ci => ci.CategoryId == c.Id &&
+                                     (!ci.Item.IsPrivate || (ci.Item.IsPrivate && ci.Item.CreatedBy == currentUserId)))
+                        .Join(db.Ratings.Where(r => r.Stars.HasValue),
+                            ci => ci.ItemId,
+                            r => r.ItemId,
+                            (ci, r) => (double?)r.Stars!.Value)
+                        .DefaultIfEmpty()
+                        .Average()
                 })
-                .OrderByDescending(x => x.Count)
-                .ThenBy(x => x.Category.Name)
+                .OrderByDescending(x => x.AverageStars ?? -1)
+                .ThenBy(x => x.CategoryName)
                 .Select(x => new CategoryResponse(
-                    x.Category.Name,
+                    x.CategoryName,
                     x.Count,
-                    x.Category.Id,
-                    x.Category.IsPrivate))
+                    x.CategoryId,
+                    x.IsPrivate,
+                    x.AverageStars.HasValue ? Math.Round(x.AverageStars.Value, 2) : null))
                 .ToListAsync(cancellationToken);
 
             Response response = new(categoryResponses);
-
-            // Cache the result
-            MemoryCacheEntryOptions cacheOptions = new MemoryCacheEntryOptions
-            {
-                AbsoluteExpirationRelativeToNow = TimeSpan.FromMinutes(cacheTtlMinutes)
-            };
-            cache.Set(cacheKey, response, cacheOptions);
 
             return Result.Success(response);
         }

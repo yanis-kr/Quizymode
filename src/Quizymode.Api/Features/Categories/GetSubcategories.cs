@@ -123,15 +123,29 @@ public static class GetSubcategories
             int totalCount = itemIds.Count;
 
             // Get co-occurring subcategories (depth=2) for these items
-            // Group by subcategory and compute counts
+            // Join CategoryItems with Categories to filter by depth and visibility, then get names
+            IQueryable<Category> subcategoryCategoriesQuery = db.Categories.Where(c => c.Depth == 2);
+            
+            // Apply visibility filter for subcategory categories
+            if (!userContext.IsAuthenticated || string.IsNullOrEmpty(userContext.UserId))
+            {
+                subcategoryCategoriesQuery = subcategoryCategoriesQuery.Where(c => !c.IsPrivate);
+            }
+            else
+            {
+                subcategoryCategoriesQuery = subcategoryCategoriesQuery.Where(c => !c.IsPrivate || (c.IsPrivate && c.CreatedBy == userContext.UserId));
+            }
+            
             List<SubcategoryResponse> subcategories = await db.CategoryItems
-                .Where(ci => 
-                    itemIds.Contains(ci.ItemId) &&
-                    ci.Category.Depth == 2)
-                .GroupBy(ci => ci.Category)
+                .Where(ci => itemIds.Contains(ci.ItemId))
+                .Join(subcategoryCategoriesQuery,
+                    ci => ci.CategoryId,
+                    c => c.Id,
+                    (ci, c) => new { ci.ItemId, SubcategoryName = c.Name })
+                .GroupBy(x => x.SubcategoryName)
                 .Select(g => new SubcategoryResponse(
-                    g.Key.Name,
-                    g.Select(ci => ci.ItemId).Distinct().Count()))
+                    g.Key,
+                    g.Select(x => x.ItemId).Distinct().Count()))
                 .OrderByDescending(s => s.Count)
                 .ThenBy(s => s.Subcategory)
                 .ToListAsync(cancellationToken);

@@ -3,6 +3,9 @@
 export interface CategoryResponse {
   category: string;
   count: number;
+  id: string;
+  isPrivate: boolean;
+  averageStars: number | null;
 }
 
 export interface CategoriesResponse {
