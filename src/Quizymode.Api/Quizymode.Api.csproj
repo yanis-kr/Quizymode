@@ -49,8 +49,4 @@
     <None Remove="..\..\data\seed\spanish-greetings.json" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Data\Migrations\" />
-  </ItemGroup>
-
 </Project>
