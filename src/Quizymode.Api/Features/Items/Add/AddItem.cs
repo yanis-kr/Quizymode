@@ -80,8 +80,8 @@ public static class AddItem
             RuleFor(x => x.Name)
                 .NotEmpty()
                 .WithMessage("Keyword name is required")
-                .MaximumLength(10)
-                .WithMessage("Keyword name must not exceed 10 characters");
+                .MaximumLength(30)
+                .WithMessage("Keyword name must not exceed 30 characters");
         }
     }
 

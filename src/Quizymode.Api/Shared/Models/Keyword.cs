@@ -4,7 +4,7 @@ public sealed class Keyword
 {
     public Guid Id { get; set; }
 
-    public string Name { get; set; } = string.Empty; // Max 10 characters
+    public string Name { get; set; } = string.Empty; // Max 30 characters
 
     public bool IsPrivate { get; set; } // Global (false) or Private (true)
 
