@@ -1,11 +1,8 @@
 using FluentValidation;
-using Microsoft.EntityFrameworkCore;
 using Quizymode.Api.Data;
-using Quizymode.Api.Features;
 using Quizymode.Api.Infrastructure;
 using Quizymode.Api.Services;
 using Quizymode.Api.Shared.Kernel;
-using Quizymode.Api.Shared.Models;
 
 namespace Quizymode.Api.Features.Items.AddBulk;
 
@@ -17,7 +14,6 @@ public static class AddItemsBulk
 
     public sealed record ItemRequest(
         string Category,
-        string Subcategory,
         string Question,
         string CorrectAnswer,
         List<string> IncorrectAnswers,
@@ -67,12 +63,6 @@ public static class AddItemsBulk
                 .WithMessage("Category is required")
                 .MaximumLength(100)
                 .WithMessage("Category must not exceed 100 characters");
-
-            RuleFor(x => x.Subcategory)
-                .NotEmpty()
-                .WithMessage("Subcategory is required")
-                .MaximumLength(100)
-                .WithMessage("Subcategory must not exceed 100 characters");
 
             RuleFor(x => x.Question)
                 .NotEmpty()
@@ -126,7 +116,7 @@ public static class AddItemsBulk
             app.MapPost("items/bulk", Handler)
                 .WithTags("Items")
                 .WithSummary("Create multiple items in bulk")
-                .WithDescription("Creates many items in a single request. Each item specifies its own category and subcategory; isPrivate applies to all items.")
+                .WithDescription("Creates many items in a single request. Each item specifies its own category; isPrivate applies to all items.")
                 .RequireAuthorization()
                 .WithOpenApi()
                 .Produces<Response>(StatusCodes.Status200OK)

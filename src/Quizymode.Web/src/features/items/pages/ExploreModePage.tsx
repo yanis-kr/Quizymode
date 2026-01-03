@@ -17,8 +17,6 @@ import {
 
 const ExploreModePage = () => {
   const { category, collectionId, itemId } = useParams();
-  const [searchParams] = useSearchParams();
-  const subcategory = searchParams.get("subcategory") || undefined;
   const navigate = useNavigate();
   const { isAuthenticated } = useAuth();
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -39,12 +37,10 @@ const ExploreModePage = () => {
         try {
           const context = JSON.parse(stored);
           if (context.items && context.mode === "explore") {
-            // Only restore if category and subcategory match (or both are undefined/null)
+            // Only restore if category matches (or both are undefined/null)
             const categoryMatches =
               (!context.category && !category) || context.category === category;
-            const subcategoryMatches =
-              (!context.subcategory && !subcategory) || context.subcategory === subcategory;
-            if (categoryMatches && subcategoryMatches) {
+            if (categoryMatches) {
               return context.items;
             }
           }
@@ -74,8 +70,8 @@ const ExploreModePage = () => {
   });
 
   const { data, isLoading, error, refetch } = useQuery({
-    queryKey: ["randomItems", category, subcategory, count],
-    queryFn: () => itemsApi.getRandom(category, subcategory, count),
+    queryKey: ["randomItems", category, count],
+    queryFn: () => itemsApi.getRandom(category, count),
     enabled: !collectionId && !storedItems, // Don't load if we have stored items
   });
 
@@ -92,12 +88,10 @@ const ExploreModePage = () => {
             context.mode === "explore" &&
             context.items.length > 0
           ) {
-            // Only restore if category and subcategory match (or both are undefined/null)
+            // Only restore if category matches (or both are undefined/null)
             const categoryMatches =
               (!context.category && !category) || context.category === category;
-            const subcategoryMatches =
-              (!context.subcategory && !subcategory) || context.subcategory === subcategory;
-            if (categoryMatches && subcategoryMatches) {
+            if (categoryMatches) {
               // Set storedItems state with the full items list
               setStoredItems(context.items);
 
@@ -119,7 +113,7 @@ const ExploreModePage = () => {
         }
       }
     }
-  }, [itemId, hasRestoredItems, category, subcategory, collectionId]);
+  }, [itemId, hasRestoredItems, category, collectionId]);
 
   // Clear sessionStorage when starting a fresh explore (no itemId, no collectionId)
   // This ensures we always fetch fresh items instead of restoring old ones
@@ -130,12 +124,10 @@ const ExploreModePage = () => {
       if (stored) {
         try {
           const context = JSON.parse(stored);
-          // Only clear if category and subcategory match (to avoid clearing other categories' data)
+          // Only clear if category matches (to avoid clearing other categories' data)
           const categoryMatches =
             (!context.category && !category) || context.category === category;
-          const subcategoryMatches =
-            (!context.subcategory && !subcategory) || context.subcategory === subcategory;
-          if (categoryMatches && subcategoryMatches && context.mode === "explore") {
+          if (categoryMatches && context.mode === "explore") {
             sessionStorage.removeItem("navigationContext_explore");
           }
         } catch (e) {
@@ -143,7 +135,7 @@ const ExploreModePage = () => {
         }
       }
     }
-  }, [itemId, collectionId, category, subcategory, hasRestoredItems]);
+  }, [itemId, collectionId, category, hasRestoredItems]);
 
   // Use full list if available (when category/collection is present), otherwise use stored items or fetched items
   // Never use singleItemData when storedItems exists (restoring from sessionStorage)
@@ -186,7 +178,6 @@ const ExploreModePage = () => {
         JSON.stringify({
           mode: "explore",
           category: category,
-          subcategory: subcategory,
           collectionId: collectionId,
           currentIndex: currentIndex,
           itemIds: items.map((item) => item.id),
@@ -194,7 +185,7 @@ const ExploreModePage = () => {
         })
       );
     }
-  }, [items, currentIndex, category, subcategory, collectionId]);
+  }, [items, currentIndex, category, collectionId]);
 
   // Prepare navigation context for ItemRatingsComments
   // Include context even when itemId is present (e.g., when navigating back from comments)
@@ -203,7 +194,6 @@ const ExploreModePage = () => {
         ? {
             mode: "explore" as const,
             category: category,
-            subcategory: subcategory,
             collectionId: collectionId,
             currentIndex: currentIndex,
             itemIds: items.map((item) => item.id),
@@ -252,13 +242,7 @@ const ExploreModePage = () => {
                             { replace: true }
                           );
                         } else if (category) {
-                          const params = new URLSearchParams();
-                          if (subcategory) params.set("subcategory", subcategory);
-                          const queryString = params.toString();
-                          const url = queryString
-                            ? `/explore/${encodeURIComponent(category)}/item/${items[newIndex].id}?${queryString}`
-                            : `/explore/${encodeURIComponent(category)}/item/${items[newIndex].id}`;
-                          navigate(url, { replace: true });
+                          navigate(`/explore/${encodeURIComponent(category)}/item/${items[newIndex].id}`, { replace: true });
                         } else {
                           navigate(`/explore/item/${items[newIndex].id}`, {
                             replace: true,
@@ -289,13 +273,7 @@ const ExploreModePage = () => {
                             { replace: true }
                           );
                         } else if (category) {
-                          const params = new URLSearchParams();
-                          if (subcategory) params.set("subcategory", subcategory);
-                          const queryString = params.toString();
-                          const url = queryString
-                            ? `/explore/${encodeURIComponent(category)}/item/${items[newIndex].id}?${queryString}`
-                            : `/explore/${encodeURIComponent(category)}/item/${items[newIndex].id}`;
-                          navigate(url, { replace: true });
+                          navigate(`/explore/${encodeURIComponent(category)}/item/${items[newIndex].id}`, { replace: true });
                         } else {
                           navigate(`/explore/item/${items[newIndex].id}`, {
                             replace: true,
@@ -343,7 +321,6 @@ const ExploreModePage = () => {
 
               <div className="text-sm text-gray-500">
                 Category: {currentItem.category}
-                {currentItem.subcategory && ` • ${currentItem.subcategory}`}
               </div>
 
               {/* Ratings and Comments */}

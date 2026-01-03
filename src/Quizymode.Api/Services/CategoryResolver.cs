@@ -9,7 +9,6 @@ public interface ICategoryResolver
 {
     Task<Result<Category>> ResolveOrCreateAsync(
         string name,
-        int depth,
         bool isPrivate,
         string currentUserId,
         bool isAdmin,
@@ -25,7 +24,6 @@ internal sealed class CategoryResolver(
 
     public async Task<Result<Category>> ResolveOrCreateAsync(
         string name,
-        int depth,
         bool isPrivate,
         string currentUserId,
         bool isAdmin,
@@ -54,8 +52,7 @@ internal sealed class CategoryResolver(
                 // Use ToLower() for database-agnostic case-insensitive comparison
                 Category? existingGlobal = await _db.Categories
                     .FirstOrDefaultAsync(
-                        c => c.Depth == depth &&
-                             !c.IsPrivate &&
+                        c => !c.IsPrivate &&
                              c.Name.ToLower() == trimmedName.ToLower(),
                         cancellationToken);
 
@@ -69,7 +66,6 @@ internal sealed class CategoryResolver(
                 {
                     Id = Guid.NewGuid(),
                     Name = trimmedName, // Preserve original case
-                    Depth = depth,
                     IsPrivate = false,
                     CreatedBy = currentUserId,
                     CreatedAt = DateTime.UtcNow
@@ -78,7 +74,7 @@ internal sealed class CategoryResolver(
                 _db.Categories.Add(newCategory);
                 await _db.SaveChangesAsync(cancellationToken);
 
-                _logger.LogInformation("Created global category: {Name} (Depth: {Depth})", trimmedName, depth);
+                _logger.LogInformation("Created global category: {Name}", trimmedName);
                 return Result.Success(newCategory);
             }
 
@@ -87,8 +83,7 @@ internal sealed class CategoryResolver(
             // Use ToLower() for database-agnostic case-insensitive comparison
             Category? existingPrivate = await _db.Categories
                 .FirstOrDefaultAsync(
-                    c => c.Depth == depth &&
-                         c.IsPrivate &&
+                    c => c.IsPrivate &&
                          c.CreatedBy == currentUserId &&
                          c.Name.ToLower() == trimmedName.ToLower(),
                     cancellationToken);
@@ -103,7 +98,6 @@ internal sealed class CategoryResolver(
             {
                 Id = Guid.NewGuid(),
                 Name = trimmedName, // Preserve original case
-                Depth = depth,
                 IsPrivate = true,
                 CreatedBy = currentUserId,
                 CreatedAt = DateTime.UtcNow
@@ -112,7 +106,7 @@ internal sealed class CategoryResolver(
             _db.Categories.Add(newPrivateCategory);
             await _db.SaveChangesAsync(cancellationToken);
 
-            _logger.LogInformation("Created private category: {Name} (Depth: {Depth}) for user {UserId}", trimmedName, depth, currentUserId);
+            _logger.LogInformation("Created private category: {Name} for user {UserId}", trimmedName, currentUserId);
             return Result.Success(newPrivateCategory);
         }
         catch (Exception ex)

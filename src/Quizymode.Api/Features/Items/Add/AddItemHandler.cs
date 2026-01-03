@@ -37,10 +37,9 @@ internal static class AddItemHandler
 
             string userId = userContext.UserId ?? throw new InvalidOperationException("User ID is required for item creation");
             
-            // Resolve categories via CategoryResolver
+            // Resolve category via CategoryResolver
             Result<Category> categoryResult = await categoryResolver.ResolveOrCreateAsync(
                 request.Category,
-                depth: 1,
                 isPrivate: effectiveIsPrivate,
                 currentUserId: userId,
                 isAdmin: userContext.IsAdmin,
@@ -52,44 +51,26 @@ internal static class AddItemHandler
             }
 
             Category category = categoryResult.Value!;
-
-            Result<Category> subcategoryResult = await categoryResolver.ResolveOrCreateAsync(
-                request.Subcategory,
-                depth: 2,
-                isPrivate: effectiveIsPrivate,
-                currentUserId: userId,
-                isAdmin: userContext.IsAdmin,
-                cancellationToken);
-
-            if (subcategoryResult.IsFailure)
-            {
-                return Result.Failure<AddItem.Response>(subcategoryResult.Error!);
-            }
-
-            Category subcategory = subcategoryResult.Value!;
             
             // Check for duplicates - only for the same user
             // Different users can add the same items
-            // Check using CategoryItems relationships
+            // Check using CategoryId
             List<Item> candidateItems = await db.Items
-                .Include(i => i.CategoryItems)
-                .ThenInclude(ci => ci.Category)
                 .Where(item => 
                     item.CreatedBy == userId &&
-                    item.FuzzyBucket == fuzzyBucket)
+                    item.FuzzyBucket == fuzzyBucket &&
+                    item.CategoryId == category.Id)
                 .ToListAsync(cancellationToken);
             
-            // Compare using category/subcategory IDs and question
+            // Compare using category ID and question
             bool isDuplicate = candidateItems.Any(item =>
-                item.CategoryItems.Any(ci => ci.CategoryId == category.Id && ci.Category.Depth == 1) &&
-                item.CategoryItems.Any(ci => ci.CategoryId == subcategory.Id && ci.Category.Depth == 2) &&
                 (string.Equals(item.Question, request.Question, StringComparison.OrdinalIgnoreCase) ||
                  item.FuzzySignature == fuzzySignature));
             
             if (isDuplicate)
             {
                 return Result.Failure<AddItem.Response>(
-                    Error.Validation("Item.Duplicate", $"An item with the same question already exists in category '{category.Name}' / subcategory '{subcategory.Name}'. Questions are compared case-insensitively."));
+                    Error.Validation("Item.Duplicate", $"An item with the same question already exists in category '{category.Name}'. Questions are compared case-insensitively."));
             }
 
             Item item = new Item
@@ -104,33 +85,11 @@ internal static class AddItemHandler
                 FuzzyBucket = fuzzyBucket,
                 CreatedBy = userId,
                 CreatedAt = DateTime.UtcNow,
-                ReadyForReview = request.ReadyForReview
+                ReadyForReview = request.ReadyForReview,
+                CategoryId = category.Id
             };
 
             db.Items.Add(item);
-            await db.SaveChangesAsync(cancellationToken);
-
-            // Create CategoryItem relationships
-            DateTime now = DateTime.UtcNow;
-            List<CategoryItem> categoryItems = new()
-            {
-                new CategoryItem
-                {
-                    CategoryId = category.Id,
-                    ItemId = item.Id,
-                    CreatedBy = userId,
-                    CreatedAt = now
-                },
-                new CategoryItem
-                {
-                    CategoryId = subcategory.Id,
-                    ItemId = item.Id,
-                    CreatedBy = userId,
-                    CreatedAt = now
-                }
-            };
-
-            db.CategoryItems.AddRange(categoryItems);
             await db.SaveChangesAsync(cancellationToken);
 
             // Handle keywords if provided
@@ -215,7 +174,6 @@ internal static class AddItemHandler
             AddItem.Response response = new AddItem.Response(
                 item.Id.ToString(),
                 category.Name,
-                subcategory.Name,
                 item.IsPrivate,
                 item.Question,
                 item.CorrectAnswer,

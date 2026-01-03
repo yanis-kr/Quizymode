@@ -15,7 +15,6 @@ const CreateItemPage = () => {
   const queryClient = useQueryClient();
   const [formData, setFormData] = useState({
     category: "",
-    subcategory: "",
     isPrivate: true, // Default to true for regular users
     question: "",
     correctAnswer: "",
@@ -53,12 +52,6 @@ const CreateItemPage = () => {
     e.preventDefault();
     setValidationError("");
 
-    // Validate that subcategory is provided (API requires it)
-    if (!formData.subcategory.trim()) {
-      setValidationError("Subcategory is required");
-      return;
-    }
-
     // Validate that at least one incorrect answer is provided
     const filteredIncorrectAnswers = formData.incorrectAnswers.filter(
       (ans) => ans.trim() !== ""
@@ -70,7 +63,6 @@ const CreateItemPage = () => {
 
     const data = {
       ...formData,
-      subcategory: formData.subcategory.trim(),
       incorrectAnswers: filteredIncorrectAnswers,
       keywords: formData.keywords.length > 0 ? formData.keywords : undefined,
     };
@@ -180,21 +172,6 @@ const CreateItemPage = () => {
                 </option>
               ))}
             </select>
-          </div>
-
-          <div>
-            <label className="block text-sm font-medium text-gray-700 mb-2">
-              Subcategory *
-            </label>
-            <input
-              type="text"
-              value={formData.subcategory}
-              onChange={(e) =>
-                setFormData({ ...formData, subcategory: e.target.value })
-              }
-              required
-              className="w-full px-3 py-2 border border-gray-300 rounded-md text-sm"
-            />
           </div>
 
           <div>

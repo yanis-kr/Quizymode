@@ -126,7 +126,6 @@ internal sealed class DatabaseSeederHostedService(
                         // Convert to AddItemsBulk.Request format
                         List<AddItemsBulk.ItemRequest> itemRequests = items.Select(item => new AddItemsBulk.ItemRequest(
                             Category: item.Category,
-                            Subcategory: item.Subcategory,
                             Question: item.Question,
                             CorrectAnswer: item.CorrectAnswer,
                             IncorrectAnswers: item.IncorrectAnswers,
@@ -263,7 +262,6 @@ internal sealed class DatabaseSeederHostedService(
 internal sealed class BulkItemSeedData
 {
     public string Category { get; set; } = string.Empty;
-    public string Subcategory { get; set; } = string.Empty;
     public string Question { get; set; } = string.Empty;
     public string CorrectAnswer { get; set; } = string.Empty;
     public List<string> IncorrectAnswers { get; set; } = new();

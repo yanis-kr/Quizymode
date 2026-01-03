@@ -19,9 +19,7 @@ internal static class GetRandomHandler
             // Build a query to count available items for validation
             // Anonymous users: only global items (IsPrivate = false)
             // Authenticated users: global items + their own private items
-            IQueryable<Item> countQuery = db.Items
-                .Include(i => i.CategoryItems)
-                .AsQueryable();
+            IQueryable<Item> countQuery = db.Items.AsQueryable();
 
             if (!userContext.IsAuthenticated)
             {
@@ -33,87 +31,46 @@ internal static class GetRandomHandler
                 countQuery = countQuery.Where(i => !i.IsPrivate || (i.IsPrivate && i.CreatedBy == userContext.UserId));
             }
 
-            // Prepare category and subcategory for filtering via CategoryItems
+            // Prepare category for filtering via CategoryId
             string categoryName = !string.IsNullOrEmpty(request.Category) ? request.Category.Trim() : string.Empty;
-            string subcategoryName = !string.IsNullOrEmpty(request.Subcategory) ? request.Subcategory.Trim() : string.Empty;
 
             if (!string.IsNullOrEmpty(categoryName))
             {
-                // Filter by category using CategoryItems
-                // Resolve category name to CategoryId(s) - try global first, then private
-                List<Guid> categoryIds = new();
+                // Filter by category using CategoryId
+                // Resolve category name to CategoryId - try global first, then private
+                Guid? categoryId = null;
                 
                 // Use database-agnostic case-insensitive comparison
                 string categoryNameLower = categoryName.ToLower();
                 Category? globalCategory = await db.Categories
                     .FirstOrDefaultAsync(
-                        c => c.Depth == 1 && !c.IsPrivate && c.Name.ToLower() == categoryNameLower,
+                        c => !c.IsPrivate && c.Name.ToLower() == categoryNameLower,
                         cancellationToken);
                 
                 if (globalCategory is not null)
                 {
-                    categoryIds.Add(globalCategory.Id);
+                    categoryId = globalCategory.Id;
                 }
                 else if (userContext.IsAuthenticated && !string.IsNullOrEmpty(userContext.UserId))
                 {
                     Category? privateCategory = await db.Categories
                         .FirstOrDefaultAsync(
-                            c => c.Depth == 1 && c.IsPrivate && c.CreatedBy == userContext.UserId && c.Name.ToLower() == categoryNameLower,
+                            c => c.IsPrivate && c.CreatedBy == userContext.UserId && c.Name.ToLower() == categoryNameLower,
                             cancellationToken);
                     
                     if (privateCategory is not null)
                     {
-                        categoryIds.Add(privateCategory.Id);
+                        categoryId = privateCategory.Id;
                     }
                 }
                 
-                if (categoryIds.Count > 0)
+                if (categoryId.HasValue)
                 {
-                    countQuery = countQuery.Where(i => i.CategoryItems.Any(ci => categoryIds.Contains(ci.CategoryId)));
+                    countQuery = countQuery.Where(i => i.CategoryId == categoryId.Value);
                 }
                 else
                 {
                     // Category not found, return empty
-                    return Result.Success(new GetRandom.Response(new List<GetRandom.ItemResponse>()));
-                }
-            }
-
-            if (!string.IsNullOrEmpty(subcategoryName))
-            {
-                // Filter by subcategory using CategoryItems
-                List<Guid> subcategoryIds = new();
-                
-                // Use database-agnostic case-insensitive comparison
-                string subcategoryNameLower = subcategoryName.ToLower();
-                Category? globalSubcategory = await db.Categories
-                    .FirstOrDefaultAsync(
-                        c => c.Depth == 2 && !c.IsPrivate && c.Name.ToLower() == subcategoryNameLower,
-                        cancellationToken);
-                
-                if (globalSubcategory is not null)
-                {
-                    subcategoryIds.Add(globalSubcategory.Id);
-                }
-                else if (userContext.IsAuthenticated && !string.IsNullOrEmpty(userContext.UserId))
-                {
-                    Category? privateSubcategory = await db.Categories
-                        .FirstOrDefaultAsync(
-                            c => c.Depth == 2 && c.IsPrivate && c.CreatedBy == userContext.UserId && c.Name.ToLower() == subcategoryNameLower,
-                            cancellationToken);
-                    
-                    if (privateSubcategory is not null)
-                    {
-                        subcategoryIds.Add(privateSubcategory.Id);
-                    }
-                }
-                
-                if (subcategoryIds.Count > 0)
-                {
-                    countQuery = countQuery.Where(i => i.CategoryItems.Any(ci => subcategoryIds.Contains(ci.CategoryId)));
-                }
-                else
-                {
-                    // Subcategory not found, return empty
                     return Result.Success(new GetRandom.Response(new List<GetRandom.ItemResponse>()));
                 }
             }
@@ -149,29 +106,29 @@ internal static class GetRandomHandler
                     baseQuery = baseQuery.Where(i => !i.IsPrivate || (i.IsPrivate && i.CreatedBy == userContext.UserId));
                 }
 
-                // Apply category/subcategory filters via CategoryItems
+                // Apply category filter via CategoryId
                 if (!string.IsNullOrEmpty(categoryName))
                 {
-                    List<Guid> categoryIds = new();
+                    Guid? categoryId = null;
                     try
                     {
                         Category? globalCategory = await db.Categories
                             .FirstOrDefaultAsync(
-                                c => c.Depth == 1 && !c.IsPrivate && c.Name.ToLower() == categoryName.ToLower(),
+                                c => !c.IsPrivate && c.Name.ToLower() == categoryName.ToLower(),
                                 cancellationToken);
                         if (globalCategory is not null)
                         {
-                            categoryIds.Add(globalCategory.Id);
+                            categoryId = globalCategory.Id;
                         }
                         else if (userContext.IsAuthenticated && !string.IsNullOrEmpty(userContext.UserId))
                         {
                             Category? privateCategory = await db.Categories
                                 .FirstOrDefaultAsync(
-                                    c => c.Depth == 1 && c.IsPrivate && c.CreatedBy == userContext.UserId && c.Name.ToLower() == categoryName.ToLower(),
+                                    c => c.IsPrivate && c.CreatedBy == userContext.UserId && c.Name.ToLower() == categoryName.ToLower(),
                                     cancellationToken);
                             if (privateCategory is not null)
                             {
-                                categoryIds.Add(privateCategory.Id);
+                                categoryId = privateCategory.Id;
                             }
                         }
                     }
@@ -179,7 +136,7 @@ internal static class GetRandomHandler
                     {
                         // ILike not supported (e.g., InMemory database) - fetch and filter in memory
                         List<Category> allCategories = await db.Categories
-                            .Where(c => c.Depth == 1 && !c.IsPrivate)
+                            .Where(c => !c.IsPrivate)
                             .ToListAsync(cancellationToken);
                         
                         Category? globalCategory = allCategories
@@ -187,12 +144,12 @@ internal static class GetRandomHandler
                         
                         if (globalCategory is not null)
                         {
-                            categoryIds.Add(globalCategory.Id);
+                            categoryId = globalCategory.Id;
                         }
                         else if (userContext.IsAuthenticated && !string.IsNullOrEmpty(userContext.UserId))
                         {
                             List<Category> privateCategories = await db.Categories
-                                .Where(c => c.Depth == 1 && c.IsPrivate && c.CreatedBy == userContext.UserId)
+                                .Where(c => c.IsPrivate && c.CreatedBy == userContext.UserId)
                                 .ToListAsync(cancellationToken);
                             
                             Category? privateCategory = privateCategories
@@ -200,47 +157,13 @@ internal static class GetRandomHandler
                             
                             if (privateCategory is not null)
                             {
-                                categoryIds.Add(privateCategory.Id);
+                                categoryId = privateCategory.Id;
                             }
                         }
                     }
-                    if (categoryIds.Count > 0)
+                    if (categoryId.HasValue)
                     {
-                        baseQuery = baseQuery.Where(i => i.CategoryItems.Any(ci => categoryIds.Contains(ci.CategoryId)));
-                    }
-                    else
-                    {
-                        return Result.Success(new GetRandom.Response(new List<GetRandom.ItemResponse>()));
-                    }
-                }
-
-                if (!string.IsNullOrEmpty(subcategoryName))
-                {
-                    List<Guid> subcategoryIds = new();
-                    // Use database-agnostic case-insensitive comparison
-                    string subcategoryNameLower = subcategoryName.ToLower();
-                    Category? globalSubcategory = await db.Categories
-                        .FirstOrDefaultAsync(
-                            c => c.Depth == 2 && !c.IsPrivate && c.Name.ToLower() == subcategoryNameLower,
-                            cancellationToken);
-                    if (globalSubcategory is not null)
-                    {
-                        subcategoryIds.Add(globalSubcategory.Id);
-                    }
-                    else if (userContext.IsAuthenticated && !string.IsNullOrEmpty(userContext.UserId))
-                    {
-                        Category? privateSubcategory = await db.Categories
-                            .FirstOrDefaultAsync(
-                                c => c.Depth == 2 && c.IsPrivate && c.CreatedBy == userContext.UserId && c.Name.ToLower() == subcategoryNameLower,
-                                cancellationToken);
-                        if (privateSubcategory is not null)
-                        {
-                            subcategoryIds.Add(privateSubcategory.Id);
-                        }
-                    }
-                    if (subcategoryIds.Count > 0)
-                    {
-                        baseQuery = baseQuery.Where(i => i.CategoryItems.Any(ci => subcategoryIds.Contains(ci.CategoryId)));
+                        baseQuery = baseQuery.Where(i => i.CategoryId == categoryId.Value);
                     }
                     else
                     {
@@ -250,8 +173,7 @@ internal static class GetRandomHandler
 
                 // Get random items - fetch all first, then randomize in memory for SQLite compatibility
                 List<Item> allItems = await baseQuery
-                    .Include(i => i.CategoryItems)
-                    .ThenInclude(ci => ci.Category)
+                    .Include(i => i.Category)
                     .ToListAsync(cancellationToken);
                 
                 // Randomize in memory (SQLite doesn't support Guid.NewGuid() in OrderBy)
@@ -261,7 +183,7 @@ internal static class GetRandomHandler
                     .Take(takeCount)
                     .ToList();
             }
-            catch (Exception ex) when ((ex is NotSupportedException || ex is InvalidOperationException) && (!string.IsNullOrEmpty(categoryName) || !string.IsNullOrEmpty(subcategoryName)))
+            catch (Exception ex) when ((ex is NotSupportedException || ex is InvalidOperationException) && !string.IsNullOrEmpty(categoryName))
             {
                 // ILike not supported (e.g., InMemory database) - fetch all and filter in memory
                 IQueryable<Item> baseQuery = db.Items.AsQueryable();
@@ -276,39 +198,26 @@ internal static class GetRandomHandler
                     baseQuery = baseQuery.Where(i => !i.IsPrivate || (i.IsPrivate && i.CreatedBy == userContext.UserId));
                 }
                 
-                // Fetch all items
-                List<Item> allItems = await baseQuery.ToListAsync(cancellationToken);
-                
-                // Fetch items with CategoryItems for filtering
-                allItems = await baseQuery
-                    .Include(i => i.CategoryItems)
-                    .ThenInclude(ci => ci.Category)
+                // Fetch all items with category
+                List<Item> allItems = await baseQuery
+                    .Include(i => i.Category)
                     .ToListAsync(cancellationToken);
                 
-                // Apply category/subcategory filters in memory using CategoryItems
-                if (!string.IsNullOrEmpty(categoryName) && !string.IsNullOrEmpty(subcategoryName))
+                // Apply category filter in memory
+                if (!string.IsNullOrEmpty(categoryName))
                 {
                     allItems = allItems.Where(i => 
-                        i.CategoryItems.Any(ci => ci.Category.Depth == 1 && string.Equals(ci.Category.Name, categoryName, StringComparison.OrdinalIgnoreCase)) &&
-                        i.CategoryItems.Any(ci => ci.Category.Depth == 2 && string.Equals(ci.Category.Name, subcategoryName, StringComparison.OrdinalIgnoreCase))).ToList();
-                }
-                else if (!string.IsNullOrEmpty(categoryName))
-                {
-                    allItems = allItems.Where(i => 
-                        i.CategoryItems.Any(ci => ci.Category.Depth == 1 && string.Equals(ci.Category.Name, categoryName, StringComparison.OrdinalIgnoreCase))).ToList();
-                }
-                else if (!string.IsNullOrEmpty(subcategoryName))
-                {
-                    allItems = allItems.Where(i => 
-                        i.CategoryItems.Any(ci => ci.Category.Depth == 2 && string.Equals(ci.Category.Name, subcategoryName, StringComparison.OrdinalIgnoreCase))).ToList();
+                        i.Category is not null &&
+                        string.Equals(i.Category.Name, categoryName, StringComparison.OrdinalIgnoreCase)).ToList();
                 }
                 
                 totalCount = allItems.Count;
                 takeCount = Math.Min(request.Count, totalCount);
                 
                 // Get random items
+                Random random = new Random();
                 items = allItems
-                    .OrderBy(_ => Guid.NewGuid())
+                    .OrderBy(_ => random.Next())
                     .Take(takeCount)
                     .ToList();
             }
@@ -316,20 +225,11 @@ internal static class GetRandomHandler
             GetRandom.Response response = new GetRandom.Response(
                 items.Select(i => 
                 {
-                    string categoryName = i.CategoryItems
-                        .Where(ci => ci.Category.Depth == 1)
-                        .Select(ci => ci.Category.Name)
-                        .FirstOrDefault() ?? string.Empty;
-                    
-                    string subcategoryName = i.CategoryItems
-                        .Where(ci => ci.Category.Depth == 2)
-                        .Select(ci => ci.Category.Name)
-                        .FirstOrDefault() ?? string.Empty;
+                    string categoryName = i.Category?.Name ?? string.Empty;
                     
                     return new GetRandom.ItemResponse(
                         i.Id.ToString(),
                         categoryName,
-                        subcategoryName,
                         i.IsPrivate,
                         i.Question,
                         i.CorrectAnswer,

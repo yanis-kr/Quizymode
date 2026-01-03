@@ -18,7 +18,6 @@ interface BulkCreateRequest {
   isPrivate: boolean;
   items: Array<{
     category: string;
-    subcategory: string;
     question: string;
     correctAnswer: string;
     incorrectAnswers: string[];
@@ -58,15 +57,15 @@ const BulkCreateItemsPage = () => {
         isPrivate: data.isPrivate,
         items: data.items.map((item) => ({
           category: item.category,
-          subcategory: item.subcategory,
           question: item.question,
           correctAnswer: item.correctAnswer,
           incorrectAnswers: item.incorrectAnswers,
           explanation: item.explanation || "",
-          keywords: item.keywords?.map(k => ({
-            name: k.name,
-            isPrivate: data.isPrivate // Keywords inherit the item's isPrivate value
-          })) || undefined,
+          keywords:
+            item.keywords?.map((k) => ({
+              name: k.name,
+              isPrivate: data.isPrivate, // Keywords inherit the item's isPrivate value
+            })) || undefined,
         })),
       };
 
@@ -157,16 +156,11 @@ const BulkCreateItemsPage = () => {
       // Validate each item structure
       for (let i = 0; i < parsedItems.length; i++) {
         const item = parsedItems[i];
-        if (
-          !item.category ||
-          !item.subcategory ||
-          !item.question ||
-          !item.correctAnswer
-        ) {
+        if (!item.category || !item.question || !item.correctAnswer) {
           setValidationError(
             `Item ${
               i + 1
-            } is missing required fields (category, subcategory, question, or correctAnswer)`
+            } is missing required fields (category, question, or correctAnswer)`
           );
           return;
         }
@@ -206,19 +200,23 @@ const BulkCreateItemsPage = () => {
         isPrivate,
         items: parsedItems.map((item: any) => {
           // Process keywords - handle both string arrays and object arrays
-          let processedKeywords: Array<{ name: string }> | undefined = undefined;
+          let processedKeywords: Array<{ name: string }> | undefined =
+            undefined;
           if (item.keywords) {
             if (Array.isArray(item.keywords)) {
               processedKeywords = item.keywords
                 .map((k: any) => {
-                  if (typeof k === 'string') {
+                  if (typeof k === "string") {
                     return { name: k.trim() };
-                  } else if (k && typeof k === 'object' && k.name) {
+                  } else if (k && typeof k === "object" && k.name) {
                     return { name: String(k.name).trim() };
                   }
                   return null;
                 })
-                .filter((k: any): k is { name: string } => k !== null && k.name.length > 0);
+                .filter(
+                  (k: any): k is { name: string } =>
+                    k !== null && k.name.length > 0
+                );
               if (processedKeywords.length === 0) {
                 processedKeywords = undefined;
               }
@@ -228,7 +226,6 @@ const BulkCreateItemsPage = () => {
           return {
             // Category override replaces category in JSON if provided
             category: (category.trim() || item.category || "").trim(),
-            subcategory: item.subcategory.trim(),
             question: item.question.trim(),
             correctAnswer: item.correctAnswer.trim(),
             incorrectAnswers: Array.isArray(item.incorrectAnswers)
@@ -236,7 +233,9 @@ const BulkCreateItemsPage = () => {
                   .map((ans: any) => String(ans).trim())
                   .filter((ans: string) => ans.length > 0)
               : [],
-            explanation: item.explanation ? String(item.explanation).trim() : "",
+            explanation: item.explanation
+              ? String(item.explanation).trim()
+              : "",
             keywords: processedKeywords,
           };
         }),
@@ -296,13 +295,12 @@ const BulkCreateItemsPage = () => {
               <pre className="text-xs text-gray-800 whitespace-pre-wrap font-mono mt-4">
                 {`You are creating study flashcards for an app called Quizymode.
 
-Create up to 100 quiz items about <replace-me: Topic or Category Name>, specifically about <replace-me: Subcategory Names>.
+Create up to 100 quiz items about <replace-me: Topic or Category Name>.
 
 Each item must be a JSON object with this exact shape:
 
 {
   "category": "Category Name (e.g. Spanish, US History, or ACT)",
-  "subcategory": "Subcategory Name (e.g. Greetings or ACT Math)",
   "question": "Question text?",
   "correctAnswer": "Correct answer",
   "incorrectAnswers": ["Wrong answer 1", "Wrong answer 2", "Wrong answer 3"],
@@ -319,7 +317,6 @@ Requirements:
 - Do NOT include any explanations, prose, comments, Markdown, or code fences. Output raw JSON only.
 - Every item must have:
   - "category" (max 50 characters)
-  - "subcategory" (max 50 characters)
   - a non-empty "question" (max 1,000 characters)
   - a non-empty "correctAnswer" (max 200 characters)
   - 1–5 "incorrectAnswers" (each max 200 characters)
@@ -357,7 +354,6 @@ Now generate the JSON array only.`}
                     const sampleJson = `[
   {
     "category": "Spanish",
-    "subcategory": "Greetings",
     "question": "How do you say 'Hello' in Spanish?",
     "correctAnswer": "Hola",
     "incorrectAnswers": ["Adiós", "Gracias", "Por favor"],
@@ -384,10 +380,9 @@ Now generate the JSON array only.`}
                 </button>
               </div>
               <pre className="text-xs text-gray-800 whitespace-pre-wrap font-mono bg-gray-50 p-4 rounded border border-gray-200">
-{`[
+                {`[
   {
     "category": "Spanish",
-    "subcategory": "Greetings",
     "question": "How do you say 'Hello' in Spanish?",
     "correctAnswer": "Hola",
     "incorrectAnswers": ["Adiós", "Gracias", "Por favor"],
@@ -482,7 +477,7 @@ Now generate the JSON array only.`}
               required
               rows={15}
               className="w-full px-3 py-2 border border-gray-300 rounded-md text-sm font-mono"
-              placeholder='[\n  {\n    "category": "Category",\n    "subcategory": "Subcategory",\n    "question": "Question?",\n    "correctAnswer": "Answer",\n    "incorrectAnswers": ["Wrong 1", "Wrong 2"],\n    "explanation": "Explanation"\n  }\n]'
+              placeholder='[\n  {\n    "category": "Category",\n    "question": "Question?",\n    "correctAnswer": "Answer",\n    "incorrectAnswers": ["Wrong 1", "Wrong 2"],\n    "explanation": "Explanation"\n  }\n]'
             />
             <p className="mt-1 text-sm text-gray-500">
               Paste your JSON array here (up to 100 items). If you selected a

@@ -8,53 +8,30 @@ namespace Quizymode.Api.Features.Items.UpdateCategories;
 
 public static class UpdateItemCategories
 {
-    public sealed record CategoryAssignment(
-        int Depth,
+    public sealed record Request(
         Guid? CategoryId,
-        string? Name,
+        string? CategoryName,
         bool IsPrivate);
-
-    public sealed record Request(List<CategoryAssignment> Assignments);
 
     public sealed record CategoryResponse(
         Guid Id,
         string Name,
-        int Depth,
         bool IsPrivate);
 
-    public sealed record Response(List<CategoryResponse> Categories);
+    public sealed record Response(CategoryResponse Category);
 
     public sealed class Validator : AbstractValidator<Request>
     {
         public Validator()
         {
-            RuleFor(x => x.Assignments)
-                .NotNull()
-                .WithMessage("Assignments is required")
-                .Must(assignments => assignments.Count > 0)
-                .WithMessage("At least one assignment is required");
-
-            RuleForEach(x => x.Assignments)
-                .SetValidator(new CategoryAssignmentValidator());
-        }
-    }
-
-    public sealed class CategoryAssignmentValidator : AbstractValidator<CategoryAssignment>
-    {
-        public CategoryAssignmentValidator()
-        {
-            RuleFor(x => x.Depth)
-                .GreaterThan(0)
-                .WithMessage("Depth must be greater than 0");
-
             RuleFor(x => x)
-                .Must(a => a.CategoryId.HasValue || !string.IsNullOrWhiteSpace(a.Name))
-                .WithMessage("Either CategoryId or Name must be provided");
+                .Must(r => r.CategoryId.HasValue || !string.IsNullOrWhiteSpace(r.CategoryName))
+                .WithMessage("Either CategoryId or CategoryName must be provided");
 
-            RuleFor(x => x.Name)
+            RuleFor(x => x.CategoryName)
                 .MaximumLength(100)
-                .When(x => !string.IsNullOrWhiteSpace(x.Name))
-                .WithMessage("Name must not exceed 100 characters");
+                .When(x => !string.IsNullOrWhiteSpace(x.CategoryName))
+                .WithMessage("CategoryName must not exceed 100 characters");
         }
     }
 
@@ -62,10 +39,10 @@ public static class UpdateItemCategories
     {
         public void MapEndpoint(IEndpointRouteBuilder app)
         {
-            app.MapPut("items/{id}/categories", Handler)
+            app.MapPut("items/{id}/category", Handler)
                 .WithTags("Items")
-                .WithSummary("Update categories for an item")
-                .WithDescription("Replaces all category assignments for an item. Each assignment must specify either CategoryId or Name.")
+                .WithSummary("Update category for an item")
+                .WithDescription("Sets the category for an item. Must specify either CategoryId or CategoryName.")
                 .RequireAuthorization()
                 .WithOpenApi()
                 .Produces<Response>(StatusCodes.Status200OK)

@@ -11,7 +11,6 @@ import type {
 export const itemsApi = {
   getAll: async (
     category?: string,
-    subcategory?: string,
     isPrivate?: boolean,
     keywords?: string[],
     page: number = 1,
@@ -22,7 +21,6 @@ export const itemsApi = {
       pageSize,
     };
     if (category) params.category = category;
-    if (subcategory) params.subcategory = subcategory;
     if (isPrivate !== undefined) params.isPrivate = isPrivate;
     if (keywords && keywords.length > 0) params.keywords = keywords.join(",");
     const response = await apiClient.get<ItemsResponse>("/items", { params });
@@ -36,12 +34,10 @@ export const itemsApi = {
 
   getRandom: async (
     category?: string,
-    subcategory?: string,
     count: number = 10
   ): Promise<RandomItemsResponse> => {
     const params: Record<string, string | number> = { count };
     if (category) params.category = category;
-    if (subcategory) params.subcategory = subcategory;
     const response = await apiClient.get<RandomItemsResponse>("/items/random", {
       params,
     });

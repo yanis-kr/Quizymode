@@ -16,7 +16,6 @@ public static class UpdateItem
 
     public sealed record Request(
         string Category,
-        string Subcategory,
         string Question,
         string CorrectAnswer,
         List<string> IncorrectAnswers,
@@ -28,7 +27,6 @@ public static class UpdateItem
     public sealed record Response(
         string Id,
         string Category,
-        string Subcategory,
         bool IsPrivate,
         string Question,
         string CorrectAnswer,
@@ -43,10 +41,6 @@ public static class UpdateItem
             RuleFor(x => x.Category)
                 .NotEmpty()
                 .WithMessage("Category is required");
-
-            RuleFor(x => x.Subcategory)
-                .NotEmpty()
-                .WithMessage("Subcategory is required");
 
             RuleFor(x => x.Question)
                 .NotEmpty()
@@ -152,7 +146,6 @@ public static class UpdateItem
             }
 
             Item? item = await db.Items
-                .Include(i => i.CategoryItems)
                 .FirstOrDefaultAsync(i => i.Id == itemId, cancellationToken);
 
             if (item is null)
@@ -171,10 +164,9 @@ public static class UpdateItem
             
             string userId = userContext.UserId ?? throw new InvalidOperationException("User ID is required for item update");
             
-            // Resolve categories via CategoryResolver
+            // Resolve category via CategoryResolver
             Result<Category> categoryResult = await categoryResolver.ResolveOrCreateAsync(
                 request.Category,
-                depth: 1,
                 isPrivate: effectiveIsPrivate,
                 currentUserId: userId,
                 isAdmin: userContext.IsAdmin,
@@ -186,53 +178,14 @@ public static class UpdateItem
             }
 
             Category category = categoryResult.Value!;
-
-            Result<Category> subcategoryResult = await categoryResolver.ResolveOrCreateAsync(
-                request.Subcategory,
-                depth: 2,
-                isPrivate: effectiveIsPrivate,
-                currentUserId: userId,
-                isAdmin: userContext.IsAdmin,
-                cancellationToken);
-
-            if (subcategoryResult.IsFailure)
-            {
-                return Result.Failure<Response>(subcategoryResult.Error!);
-            }
-
-            Category subcategory = subcategoryResult.Value!;
             
-            // Replace CategoryItems relationships
-            List<CategoryItem> existingCategoryItems = await db.CategoryItems
-                .Where(ci => ci.ItemId == itemId)
-                .ToListAsync(cancellationToken);
-            db.CategoryItems.RemoveRange(existingCategoryItems);
-            await db.SaveChangesAsync(cancellationToken);
-
-            DateTime now = DateTime.UtcNow;
-            List<CategoryItem> newCategoryItems = new()
-            {
-                new CategoryItem
-                {
-                    CategoryId = category.Id,
-                    ItemId = itemId,
-                    CreatedBy = userId,
-                    CreatedAt = now
-                },
-                new CategoryItem
-                {
-                    CategoryId = subcategory.Id,
-                    ItemId = itemId,
-                    CreatedBy = userId,
-                    CreatedAt = now
-                }
-            };
-            db.CategoryItems.AddRange(newCategoryItems);
+            // Update item properties
             item.Question = request.Question;
             item.CorrectAnswer = request.CorrectAnswer;
             item.IncorrectAnswers = request.IncorrectAnswers;
             item.Explanation = request.Explanation;
             item.IsPrivate = effectiveIsPrivate;
+            item.CategoryId = category.Id;
             if (request.ReadyForReview.HasValue)
             {
                 item.ReadyForReview = request.ReadyForReview.Value;
@@ -337,7 +290,6 @@ public static class UpdateItem
             Response response = new(
                 item.Id.ToString(),
                 category.Name,
-                subcategory.Name,
                 item.IsPrivate,
                 item.Question,
                 item.CorrectAnswer,

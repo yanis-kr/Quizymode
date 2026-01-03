@@ -78,7 +78,7 @@ const CollectionDetailPage = () => {
                   {item.question}
                 </h3>
                 <p className="mt-2 text-sm text-gray-500">
-                  {item.category} {item.subcategory && `• ${item.subcategory}`}
+                  {item.category}
                 </p>
               </div>
               <button

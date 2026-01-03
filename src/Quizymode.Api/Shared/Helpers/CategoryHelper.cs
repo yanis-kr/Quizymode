@@ -1,15 +1,15 @@
 namespace Quizymode.Api.Shared.Helpers;
 
 /// <summary>
-/// Helper class for normalizing category and subcategory names to ensure case-insensitive consistency.
+/// Helper class for normalizing category names to ensure case-insensitive consistency.
 /// </summary>
 internal static class CategoryHelper
 {
     /// <summary>
-    /// Normalizes a category or subcategory name to a standardized format:
+    /// Normalizes a category name to a standardized format:
     /// First letter capitalized, rest lowercase (e.g., "spanish" -> "Spanish", "SPANISH" -> "Spanish").
     /// </summary>
-    /// <param name="name">The category or subcategory name to normalize.</param>
+    /// <param name="name">The category name to normalize.</param>
     /// <returns>The normalized name with first letter capitalized and rest lowercase.</returns>
     public static string Normalize(string name)
     {

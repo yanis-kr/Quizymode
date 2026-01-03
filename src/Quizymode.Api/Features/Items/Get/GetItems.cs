@@ -9,7 +9,6 @@ public static class GetItems
 {
     public sealed record QueryRequest(
         string? Category,
-        string? Subcategory,
         bool? IsPrivate,
         List<string>? Keywords,
         int Page = 1,
@@ -25,7 +24,6 @@ public static class GetItems
     public sealed record ItemResponse(
         string Id,
         string Category,
-        string Subcategory,
         bool IsPrivate,
         string Question,
         string CorrectAnswer,
@@ -53,7 +51,6 @@ public static class GetItems
 
         private static async Task<IResult> Handler(
             string? category,
-            string? subcategory,
             bool? isPrivate,
             string? keywords,
             int page = 1,
@@ -80,7 +77,7 @@ public static class GetItems
                     .ToList();
             }
 
-            var request = new QueryRequest(category, subcategory, isPrivate, keywordList, page, pageSize);
+            var request = new QueryRequest(category, isPrivate, keywordList, page, pageSize);
             Result<Response> result = await GetItemsHandler.HandleAsync(request, db, userContext, cancellationToken);
 
             return result.Match(

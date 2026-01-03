@@ -1,7 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using Quizymode.Api.Data;
 using Quizymode.Api.Infrastructure;
-using Quizymode.Api.Services;
 using Quizymode.Api.Shared.Kernel;
 
 namespace Quizymode.Api.Features.Items.ReviewBoard;
@@ -13,7 +12,6 @@ public static class GetReviewBoardItems
     public sealed record ItemResponse(
         string Id,
         string Category,
-        string Subcategory,
         bool IsPrivate,
         string Question,
         string CorrectAnswer,
@@ -54,27 +52,17 @@ public static class GetReviewBoardItems
         {
             var items = await db.Items
                 .Where(i => i.ReadyForReview)
-                .Include(i => i.CategoryItems)
-                .ThenInclude(ci => ci.Category)
+                .Include(i => i.Category)
                 .OrderByDescending(i => i.CreatedAt)
                 .ToListAsync(cancellationToken);
 
             var itemResponses = items.Select(i =>
             {
-                string categoryName = i.CategoryItems
-                    .Where(ci => ci.Category.Depth == 1)
-                    .Select(ci => ci.Category.Name)
-                    .FirstOrDefault() ?? string.Empty;
-
-                string subcategoryName = i.CategoryItems
-                    .Where(ci => ci.Category.Depth == 2)
-                    .Select(ci => ci.Category.Name)
-                    .FirstOrDefault() ?? string.Empty;
+                string categoryName = i.Category?.Name ?? string.Empty;
 
                 return new ItemResponse(
                     i.Id.ToString(),
                     categoryName,
-                    subcategoryName,
                     i.IsPrivate,
                     i.Question,
                     i.CorrectAnswer,

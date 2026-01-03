@@ -14,7 +14,6 @@ public static class AddItem
 
     public sealed record Request(
         string Category,
-        string Subcategory,
         bool IsPrivate,
         string Question,
         string CorrectAnswer,
@@ -26,7 +25,6 @@ public static class AddItem
     public sealed record Response(
         string Id,
         string Category,
-        string Subcategory,
         bool IsPrivate,
         string Question,
         string CorrectAnswer,
@@ -41,10 +39,6 @@ public static class AddItem
             RuleFor(x => x.Category)
                 .NotEmpty()
                 .WithMessage("Category is required");
-
-            RuleFor(x => x.Subcategory)
-                .NotEmpty()
-                .WithMessage("Subcategory is required");
 
             RuleFor(x => x.Question)
                 .NotEmpty()

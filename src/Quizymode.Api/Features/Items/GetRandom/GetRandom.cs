@@ -1,5 +1,4 @@
 using Quizymode.Api.Data;
-using Quizymode.Api.Features;
 using Quizymode.Api.Infrastructure;
 using Quizymode.Api.Services;
 using Quizymode.Api.Shared.Kernel;
@@ -10,7 +9,6 @@ public static class GetRandom
 {
     public sealed record QueryRequest(
         string? Category,
-        string? Subcategory,
         int Count = 10);
 
     public sealed record Response(
@@ -19,7 +17,6 @@ public static class GetRandom
     public sealed record ItemResponse(
         string Id,
         string Category,
-        string Subcategory,
         bool IsPrivate,
         string Question,
         string CorrectAnswer,
@@ -41,7 +38,6 @@ public static class GetRandom
 
         private static async Task<IResult> Handler(
             string? category,
-            string? subcategory,
             int count = 10,
             ApplicationDbContext db = null!,
             IUserContext userContext = null!,
@@ -52,7 +48,7 @@ public static class GetRandom
                 return CustomResults.BadRequest("Count must be between 1 and 100");
             }
 
-            var request = new QueryRequest(category, subcategory, count);
+            var request = new QueryRequest(category, count);
             Result<Response> result = await GetRandomHandler.HandleAsync(request, db, userContext, cancellationToken);
 
             return result.Match(

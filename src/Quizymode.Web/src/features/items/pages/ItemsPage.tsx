@@ -10,63 +10,22 @@ const ItemsPage = () => {
   const [searchParams, setSearchParams] = useSearchParams();
   const navigate = useNavigate();
   const category = searchParams.get("category") || undefined;
-  const subcategoryParam = searchParams.get("subcategory") || undefined;
-  const [selectedSubcategory, setSelectedSubcategory] = useState<string>(
-    subcategoryParam || "all"
-  );
   const [mode, setMode] = useState<"explore" | "quiz" | null>(null);
   const [count, setCount] = useState(10);
   const [page, setPage] = useState(1);
   const pageSize = 10;
 
-  // Sync selectedSubcategory with URL param
-  useEffect(() => {
-    if (subcategoryParam) {
-      setSelectedSubcategory(subcategoryParam);
-    } else {
-      setSelectedSubcategory("all");
-    }
-  }, [subcategoryParam]);
-
-  const subcategory =
-    selectedSubcategory === "all" ? undefined : selectedSubcategory;
-
-  const { data: subcategoriesData, isLoading: subcategoriesLoading } = useQuery(
-    {
-      queryKey: ["subcategories", category],
-      queryFn: () => categoriesApi.getSubcategories(category!),
-      enabled: !!category,
-    }
-  );
-
   const { data, isLoading, error, refetch } = useQuery({
-    queryKey: ["randomItems", category, subcategory, count],
-    queryFn: () => itemsApi.getRandom(category, subcategory, count),
+    queryKey: ["randomItems", category, count],
+    queryFn: () => itemsApi.getRandom(category, count),
     enabled: mode !== null,
   });
-
-  const handleSubcategoryChange = (value: string) => {
-    setSelectedSubcategory(value);
-    const newParams = new URLSearchParams(searchParams);
-    if (value === "all") {
-      newParams.delete("subcategory");
-    } else {
-      newParams.set("subcategory", value);
-    }
-    setSearchParams(newParams, { replace: true });
-  };
 
   const handleStart = () => {
     if (!mode) return;
     const path = mode === "explore" ? "/explore" : "/quiz";
     if (category) {
-      const params = new URLSearchParams();
-      if (subcategory) params.set("subcategory", subcategory);
-      const queryString = params.toString();
-      const url = queryString
-        ? `${path}/${encodeURIComponent(category)}?${queryString}`
-        : `${path}/${encodeURIComponent(category)}`;
-      navigate(url);
+      navigate(`${path}/${encodeURIComponent(category)}`);
     } else {
       navigate(path);
     }
@@ -86,67 +45,30 @@ const ItemsPage = () => {
       JSON.stringify({
         mode: mode,
         category: category,
-        subcategory: subcategory,
         items: data.items,
         currentIndex: data.items.findIndex((item) => item.id === itemId),
       })
     );
 
     if (category) {
-      const params = new URLSearchParams();
-      if (subcategory) params.set("subcategory", subcategory);
-      const queryString = params.toString();
-      const url = queryString
-        ? `${path}/${encodeURIComponent(
-            category
-          )}/item/${itemId}?${queryString}`
-        : `${path}/${encodeURIComponent(category)}/item/${itemId}`;
-      navigate(url);
+      navigate(`${path}/${encodeURIComponent(category)}/item/${itemId}`);
     } else {
       navigate(`${path}/item/${itemId}`);
     }
   };
 
-  // Reset to page 1 when mode, category, or subcategory changes
+  // Reset to page 1 when mode or category changes
   useEffect(() => {
     setPage(1);
-  }, [mode, category, subcategory]);
+  }, [mode, category]);
 
   if (mode === null) {
     return (
       <div className="px-4 py-6 sm:px-0">
         <div className="max-w-2xl mx-auto">
           <h1 className="text-3xl font-bold text-gray-900 mb-6">
-            {category
-              ? `Category: ${category}${subcategory ? ` • ${subcategory}` : ""}`
-              : "Get Random Items"}
+            {category ? `Category: ${category}` : "Get Random Items"}
           </h1>
-
-          {category && (
-            <div className="mb-6">
-              <label className="block text-sm font-medium text-gray-700 mb-2">
-                Select Subcategory
-              </label>
-              {subcategoriesLoading ? (
-                <LoadingSpinner />
-              ) : (
-                <select
-                  value={selectedSubcategory}
-                  onChange={(e) => handleSubcategoryChange(e.target.value)}
-                  className="block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm px-4 py-2 border"
-                >
-                  <option value="all">
-                    All ({subcategoriesData?.totalCount || 0} items)
-                  </option>
-                  {subcategoriesData?.subcategories.map((subcat) => (
-                    <option key={subcat.subcategory} value={subcat.subcategory}>
-                      {subcat.subcategory} ({subcat.count} items)
-                    </option>
-                  ))}
-                </select>
-              )}
-            </div>
-          )}
 
           <div className="mb-6">
             <label className="block text-sm font-medium text-gray-700 mb-2">
@@ -220,10 +142,7 @@ const ItemsPage = () => {
                       ? `${item.question.substring(0, 100)}...`
                       : item.question}
                   </p>
-                  <p className="mt-2 text-sm text-gray-500">
-                    {item.category}{" "}
-                    {item.subcategory && `• ${item.subcategory}`}
-                  </p>
+                  <p className="mt-2 text-sm text-gray-500">{item.category}</p>
                 </div>
               ))}
 

@@ -1,8 +1,6 @@
 using FluentAssertions;
-using FluentValidation;
 using Microsoft.EntityFrameworkCore;
 using Moq;
-using Quizymode.Api.Data;
 using Quizymode.Api.Features.Items.AddBulk;
 using Quizymode.Api.Services;
 using Quizymode.Api.Shared.Kernel;
@@ -30,8 +28,8 @@ public sealed class AddItemsBulkTests : ItemTestFixture
             IsPrivate: false,
             Items: new List<AddItemsBulk.ItemRequest>
             {
-                new("geography", "europe", "What is the capital of France?", "Paris", new List<string> { "Lyon", "Marseille" }, "Paris is the capital"),
-                new("geography", "europe", "What is the capital of Germany?", "Berlin", new List<string> { "Munich", "Hamburg" }, "Berlin is the capital")
+                new("geography", "What is the capital of France?", "Paris", new List<string> { "Lyon", "Marseille" }, "Paris is the capital"),
+                new("geography", "What is the capital of Germany?", "Berlin", new List<string> { "Munich", "Hamburg" }, "Berlin is the capital")
             });
 
         // Act
@@ -59,9 +57,8 @@ public sealed class AddItemsBulkTests : ItemTestFixture
     public async Task HandleAsync_WithDuplicates_ReturnsPartialSuccess()
     {
         // Arrange - Add existing item with categories
-        Item existingItem = await CreateItemWithCategoriesAsync(
+        Item existingItem = await CreateItemWithCategoryAsync(
             "geography",
-            "europe",
             "What is the capital of France?",
             "Paris",
             new List<string> { "Lyon", "Marseille" },
@@ -73,8 +70,8 @@ public sealed class AddItemsBulkTests : ItemTestFixture
             IsPrivate: false,
             Items: new List<AddItemsBulk.ItemRequest>
             {
-                new("geography", "europe", "What is the capital of France?", "Paris", new List<string> { "Lyon", "Marseille" }, "Duplicate"),
-                new("geography", "europe", "What is the capital of Germany?", "Berlin", new List<string> { "Munich" }, "New item")
+                new("geography", "What is the capital of France?", "Paris", new List<string> { "Lyon", "Marseille" }, "Duplicate"),
+                new("geography", "What is the capital of Germany?", "Berlin", new List<string> { "Munich" }, "New item")
             });
 
         // Act
@@ -118,7 +115,6 @@ public sealed class AddItemsBulkTests : ItemTestFixture
         List<AddItemsBulk.ItemRequest> items = Enumerable.Range(1, 101)
             .Select(i => new AddItemsBulk.ItemRequest(
                 "geography",
-                "europe",
                 $"Question {i}",
                 $"Answer {i}",
                 new List<string> { "Wrong1" },
@@ -143,9 +139,8 @@ public sealed class AddItemsBulkTests : ItemTestFixture
     public async Task HandleAsync_MixedAcceptedAndRejected_ReturnsCorrectCounts()
     {
         // Arrange - Add existing items
-        Item existingItem1 = await CreateItemWithCategoriesAsync(
+        Item existingItem1 = await CreateItemWithCategoryAsync(
             "geography",
-            "europe",
             "What is the capital of France?",
             "Paris",
             new List<string> { "Lyon", "Marseille" },
@@ -153,9 +148,8 @@ public sealed class AddItemsBulkTests : ItemTestFixture
             isPrivate: false,
             createdBy: "test-user");
 
-        Item existingItem2 = await CreateItemWithCategoriesAsync(
+        Item existingItem2 = await CreateItemWithCategoryAsync(
             "geography",
-            "europe",
             "What is the capital of Germany?",
             "Berlin",
             new List<string> { "Munich", "Hamburg" },
@@ -168,13 +162,13 @@ public sealed class AddItemsBulkTests : ItemTestFixture
             Items: new List<AddItemsBulk.ItemRequest>
             {
                 // Duplicate 1 - should be rejected
-                new("geography", "europe", "What is the capital of France?", "Paris", new List<string> { "Lyon", "Marseille" }, "Duplicate 1"),
+                new("geography", "What is the capital of France?", "Paris", new List<string> { "Lyon", "Marseille" }, "Duplicate 1"),
                 // New item - should be accepted
-                new("geography", "europe", "What is the capital of Italy?", "Rome", new List<string> { "Milan", "Naples" }, "New item"),
+                new("geography", "What is the capital of Italy?", "Rome", new List<string> { "Milan", "Naples" }, "New item"),
                 // Duplicate 2 - should be rejected
-                new("geography", "europe", "What is the capital of Germany?", "Berlin", new List<string> { "Munich", "Hamburg" }, "Duplicate 2"),
+                new("geography", "What is the capital of Germany?", "Berlin", new List<string> { "Munich", "Hamburg" }, "Duplicate 2"),
                 // Another new item - should be accepted
-                new("geography", "europe", "What is the capital of Spain?", "Madrid", new List<string> { "Barcelona", "Valencia" }, "New item 2")
+                new("geography", "What is the capital of Spain?", "Madrid", new List<string> { "Barcelona", "Valencia" }, "New item 2")
             });
 
         // Act

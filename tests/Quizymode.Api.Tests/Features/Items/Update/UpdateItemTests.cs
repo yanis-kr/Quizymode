@@ -1,7 +1,5 @@
 using FluentAssertions;
-using Microsoft.EntityFrameworkCore;
 using Moq;
-using Quizymode.Api.Data;
 using Quizymode.Api.Features.Items.Update;
 using Quizymode.Api.Services;
 using Quizymode.Api.Shared.Kernel;
@@ -30,13 +28,12 @@ public sealed class UpdateItemTests : ItemTestFixture
         // Arrange
         Guid itemId = Guid.NewGuid();
         string userId = _userContextMock.Object.UserId ?? throw new InvalidOperationException("User ID is required");
-        Item item = await CreateItemWithCategoriesAsync(
-            itemId, "geography", "europe", "What is the capital of France?", "Paris",
+        Item item = await CreateItemWithCategoryAsync(
+            itemId, "geography", "What is the capital of France?", "Paris",
             new List<string> { "Lyon" }, "Old explanation", false, userId);
 
         UpdateItem.Request request = new(
             Category: "geography",
-            Subcategory: "europe",
             Question: "What is the capital of France?",
             CorrectAnswer: "Paris",
             IncorrectAnswers: new List<string> { "Lyon", "Marseille" },
@@ -84,8 +81,8 @@ public sealed class UpdateItemTests : ItemTestFixture
         // Arrange
         Guid itemId = Guid.NewGuid();
         string userId = _userContextMock.Object.UserId ?? throw new InvalidOperationException("User ID is required");
-        Item item = await CreateItemWithCategoriesAsync(
-            itemId, "geography", "europe", "What is the capital of France?", "Paris",
+        Item item = await CreateItemWithCategoryAsync(
+            itemId, "geography", "What is the capital of France?", "Paris",
             new List<string> { "Lyon" }, "Test", false, userId);
         
         // Override fuzzy signature for this test
@@ -95,7 +92,6 @@ public sealed class UpdateItemTests : ItemTestFixture
 
         UpdateItem.Request request = new(
             Category: "geography",
-            Subcategory: "europe",
             Question: "What is the capital of France?",
             CorrectAnswer: "Paris",
             IncorrectAnswers: new List<string> { "Lyon", "Marseille" },
@@ -129,15 +125,14 @@ public sealed class UpdateItemTests : ItemTestFixture
         // Arrange
         Guid itemId = Guid.NewGuid();
         string userId = _userContextMock.Object.UserId ?? throw new InvalidOperationException("User ID is required");
-        Item item = await CreateItemWithCategoriesAsync(
-            itemId, "geography", "europe", "What is the capital of France?", "Paris",
+        Item item = await CreateItemWithCategoryAsync(
+            itemId, "geography", "What is the capital of France?", "Paris",
             new List<string> { "Lyon" }, "Test", false, userId);
         item.ReadyForReview = false;
         await DbContext.SaveChangesAsync();
 
         UpdateItem.Request request = new(
             Category: "geography",
-            Subcategory: "europe",
             Question: "What is the capital of France?",
             CorrectAnswer: "Paris",
             IncorrectAnswers: new List<string> { "Lyon" },
@@ -170,7 +165,6 @@ public sealed class UpdateItemTests : ItemTestFixture
         // Arrange
         UpdateItem.Request request = new(
             Category: "geography",
-            Subcategory: "europe",
             Question: "Test?",
             CorrectAnswer: "Answer",
             IncorrectAnswers: new List<string>(),
@@ -202,7 +196,6 @@ public sealed class UpdateItemTests : ItemTestFixture
         Guid nonExistentId = Guid.NewGuid();
         UpdateItem.Request request = new(
             Category: "geography",
-            Subcategory: "europe",
             Question: "Test?",
             CorrectAnswer: "Answer",
             IncorrectAnswers: new List<string>(),

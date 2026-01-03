@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore.Migrations;
+﻿using System;
+using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
@@ -33,7 +34,6 @@ namespace Quizymode.Api.Migrations
                 {
                     Id = table.Column<Guid>(type: "uuid", nullable: false, defaultValueSql: "gen_random_uuid()"),
                     Name = table.Column<string>(type: "character varying(100)", maxLength: 100, nullable: false),
-                    Depth = table.Column<int>(type: "integer", nullable: false),
                     IsPrivate = table.Column<bool>(type: "boolean", nullable: false, defaultValue: false),
                     CreatedBy = table.Column<string>(type: "character varying(100)", maxLength: 100, nullable: false),
                     CreatedAt = table.Column<DateTime>(type: "timestamp with time zone", nullable: false)
@@ -86,28 +86,6 @@ namespace Quizymode.Api.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Comments", x => x.Id);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "items",
-                columns: table => new
-                {
-                    Id = table.Column<Guid>(type: "uuid", nullable: false, defaultValueSql: "gen_random_uuid()"),
-                    IsPrivate = table.Column<bool>(type: "boolean", nullable: false, defaultValue: false),
-                    Question = table.Column<string>(type: "character varying(1000)", maxLength: 1000, nullable: false),
-                    CorrectAnswer = table.Column<string>(type: "character varying(500)", maxLength: 500, nullable: false),
-                    IncorrectAnswers = table.Column<string>(type: "jsonb", nullable: false),
-                    Explanation = table.Column<string>(type: "character varying(2000)", maxLength: 2000, nullable: false),
-                    FuzzySignature = table.Column<string>(type: "character varying(64)", maxLength: 64, nullable: false),
-                    FuzzyBucket = table.Column<int>(type: "integer", nullable: false),
-                    CreatedBy = table.Column<string>(type: "character varying(100)", maxLength: 100, nullable: false),
-                    CreatedAt = table.Column<DateTime>(type: "timestamp with time zone", nullable: false),
-                    ReadyForReview = table.Column<bool>(type: "boolean", nullable: false, defaultValue: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_items", x => x.Id);
-                    table.CheckConstraint("CK_Items_IncorrectAnswers_Length", "jsonb_array_length(\"IncorrectAnswers\"::jsonb) >= 0 AND jsonb_array_length(\"IncorrectAnswers\"::jsonb) <= 4");
                 });
 
             migrationBuilder.CreateTable(
@@ -175,29 +153,32 @@ namespace Quizymode.Api.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "CategoryItems",
+                name: "items",
                 columns: table => new
                 {
-                    CategoryId = table.Column<Guid>(type: "uuid", nullable: false),
-                    ItemId = table.Column<Guid>(type: "uuid", nullable: false),
+                    Id = table.Column<Guid>(type: "uuid", nullable: false, defaultValueSql: "gen_random_uuid()"),
+                    IsPrivate = table.Column<bool>(type: "boolean", nullable: false, defaultValue: false),
+                    Question = table.Column<string>(type: "character varying(1000)", maxLength: 1000, nullable: false),
+                    CorrectAnswer = table.Column<string>(type: "character varying(500)", maxLength: 500, nullable: false),
+                    IncorrectAnswers = table.Column<string>(type: "jsonb", nullable: false),
+                    Explanation = table.Column<string>(type: "character varying(2000)", maxLength: 2000, nullable: false),
+                    FuzzySignature = table.Column<string>(type: "character varying(64)", maxLength: 64, nullable: false),
+                    FuzzyBucket = table.Column<int>(type: "integer", nullable: false),
                     CreatedBy = table.Column<string>(type: "character varying(100)", maxLength: 100, nullable: false),
-                    CreatedAt = table.Column<DateTime>(type: "timestamp with time zone", nullable: false)
+                    CreatedAt = table.Column<DateTime>(type: "timestamp with time zone", nullable: false),
+                    ReadyForReview = table.Column<bool>(type: "boolean", nullable: false, defaultValue: false),
+                    CategoryId = table.Column<Guid>(type: "uuid", nullable: true)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_CategoryItems", x => new { x.CategoryId, x.ItemId });
+                    table.PrimaryKey("PK_items", x => x.Id);
+                    table.CheckConstraint("CK_Items_IncorrectAnswers_Length", "jsonb_array_length(\"IncorrectAnswers\"::jsonb) >= 0 AND jsonb_array_length(\"IncorrectAnswers\"::jsonb) <= 4");
                     table.ForeignKey(
-                        name: "FK_CategoryItems_Categories_CategoryId",
+                        name: "FK_items_Categories_CategoryId",
                         column: x => x.CategoryId,
                         principalTable: "Categories",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_CategoryItems_items_ItemId",
-                        column: x => x.ItemId,
-                        principalTable: "items",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        onDelete: ReferentialAction.SetNull);
                 });
 
             migrationBuilder.CreateTable(
@@ -247,24 +228,10 @@ namespace Quizymode.Api.Migrations
                 column: "UserId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Categories_Depth_IsPrivate",
+                name: "IX_Categories_Name",
                 table: "Categories",
-                columns: new[] { "Depth", "IsPrivate" });
-
-            migrationBuilder.CreateIndex(
-                name: "IX_Categories_Name_Depth_IsPrivate_CreatedBy",
-                table: "Categories",
-                columns: new[] { "Name", "Depth", "IsPrivate", "CreatedBy" });
-
-            migrationBuilder.CreateIndex(
-                name: "IX_CategoryItems_CategoryId",
-                table: "CategoryItems",
-                column: "CategoryId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_CategoryItems_ItemId_CategoryId",
-                table: "CategoryItems",
-                columns: new[] { "ItemId", "CategoryId" });
+                column: "Name",
+                unique: true);
 
             migrationBuilder.CreateIndex(
                 name: "IX_Comments_CreatedAt",
@@ -291,6 +258,11 @@ namespace Quizymode.Api.Migrations
                 name: "IX_item_keywords_KeywordId",
                 table: "item_keywords",
                 column: "KeywordId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_items_CategoryId",
+                table: "items",
+                column: "CategoryId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_items_CreatedAt",
@@ -356,9 +328,6 @@ namespace Quizymode.Api.Migrations
                 name: "Audits");
 
             migrationBuilder.DropTable(
-                name: "CategoryItems");
-
-            migrationBuilder.DropTable(
                 name: "CollectionItems");
 
             migrationBuilder.DropTable(
@@ -380,13 +349,13 @@ namespace Quizymode.Api.Migrations
                 name: "Users");
 
             migrationBuilder.DropTable(
-                name: "Categories");
-
-            migrationBuilder.DropTable(
                 name: "items");
 
             migrationBuilder.DropTable(
                 name: "keywords");
+
+            migrationBuilder.DropTable(
+                name: "Categories");
         }
     }
 }

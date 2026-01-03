@@ -1,5 +1,3 @@
-using Microsoft.AspNetCore.HttpOverrides;
-
 namespace Quizymode.Api.StartupExtensions;
 
 internal static partial class StartupExtensions

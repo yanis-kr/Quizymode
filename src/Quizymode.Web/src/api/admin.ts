@@ -4,7 +4,6 @@ import type { BulkCreateItemsRequest } from "@/types/api";
 interface ReviewBoardItemResponse {
   id: string;
   category: string;
-  subcategory: string;
   isPrivate: boolean;
   question: string;
   correctAnswer: string;

@@ -5,6 +5,5 @@ public sealed record class CategoryOptions
     public const string SectionName = "Category";
 
     public int CategoriesCacheTtlMinutes { get; init; } = 5;
-    public int SubcategoriesCacheTtlMinutes { get; init; } = 5;
 }
 

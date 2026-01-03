@@ -4,7 +4,7 @@ A quiz application API built with ASP.NET Core 9, Entity Framework Core, and Pos
 
 ## Overview
 
-Quizymode is a RESTful API for managing quiz items. It provides endpoints for creating, retrieving, updating, and deleting quiz items with support for categories, subcategories, and duplicate detection using SimHash algorithms.
+Quizymode is a RESTful API for managing quiz items. It provides endpoints for creating, retrieving, updating, and deleting quiz items with support for categories, and duplicate detection using SimHash algorithms.
 
 Visit [https://www.quizymode.com/](https://www.quizymode.com/) to use the application.
 
@@ -114,7 +114,7 @@ Visit [https://www.quizymode.com/](https://www.quizymode.com/) to use the applic
 ### API Endpoints
 
 - `GET /items` - Get paginated list of quiz items
-- `GET /items/random` - Get random quiz items (optional category, subcategory, count)
+- `GET /items/random` - Get random quiz items (optional category, count)
 - `POST /items` - Create a new quiz item
 - `POST /items/bulk` - Create multiple items at once
 - `DELETE /items/{id}` - Delete a quiz item

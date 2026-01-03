@@ -16,7 +16,6 @@ const EditItemPage = () => {
   const queryClient = useQueryClient();
   const [formData, setFormData] = useState({
     category: "",
-    subcategory: "",
     isPrivate: true, // Default to true for regular users
     question: "",
     correctAnswer: "",
@@ -49,7 +48,6 @@ const EditItemPage = () => {
     if (itemData) {
       setFormData({
         category: itemData.category || "",
-        subcategory: itemData.subcategory || "",
         isPrivate: itemData.isPrivate || false,
         question: itemData.question || "",
         correctAnswer: itemData.correctAnswer || "",
@@ -85,12 +83,6 @@ const EditItemPage = () => {
     e.preventDefault();
     setValidationError("");
 
-    // Validate that subcategory is provided (API requires it)
-    if (!formData.subcategory.trim()) {
-      setValidationError("Subcategory is required");
-      return;
-    }
-
     // Validate that at least one incorrect answer is provided
     const filteredIncorrectAnswers = formData.incorrectAnswers.filter(
       (ans) => ans.trim() !== ""
@@ -102,7 +94,6 @@ const EditItemPage = () => {
 
     const data = {
       category: formData.category.trim(),
-      subcategory: formData.subcategory.trim(),
       isPrivate: formData.isPrivate,
       question: formData.question.trim(),
       correctAnswer: formData.correctAnswer.trim(),
@@ -229,21 +220,6 @@ const EditItemPage = () => {
                 </option>
               ))}
             </select>
-          </div>
-
-          <div>
-            <label className="block text-sm font-medium text-gray-700 mb-2">
-              Subcategory *
-            </label>
-            <input
-              type="text"
-              value={formData.subcategory}
-              onChange={(e) =>
-                setFormData({ ...formData, subcategory: e.target.value })
-              }
-              required
-              className="w-full px-3 py-2 border border-gray-300 rounded-md text-sm"
-            />
           </div>
 
           <div>

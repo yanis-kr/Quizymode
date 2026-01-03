@@ -18,48 +18,6 @@ import {
 } from "@heroicons/react/24/outline";
 import ItemCollectionsModal from "@/components/ItemCollectionsModal";
 
-const SubcategoryDropdown = ({
-  category,
-  value,
-  onChange,
-}: {
-  category: string;
-  value: string;
-  onChange: (value: string) => void;
-}) => {
-  const { data, isLoading } = useQuery({
-    queryKey: ["subcategories", category],
-    queryFn: () => categoriesApi.getSubcategories(category),
-    enabled: !!category,
-  });
-
-  if (isLoading) {
-    return (
-      <select
-        disabled
-        className="w-full px-3 py-2 border border-gray-300 rounded-md text-sm"
-      >
-        <option>Loading...</option>
-      </select>
-    );
-  }
-
-  return (
-    <select
-      value={value}
-      onChange={(e) => onChange(e.target.value)}
-      className="w-full px-3 py-2 border border-gray-300 rounded-md text-sm"
-    >
-      <option value="">All Subcategories</option>
-      {data?.subcategories.map((subcat) => (
-        <option key={subcat.subcategory} value={subcat.subcategory}>
-          {subcat.subcategory} ({subcat.count} items)
-        </option>
-      ))}
-    </select>
-  );
-};
-
 const MyItemsPage = () => {
   const { isAuthenticated, isAdmin } = useAuth();
   const queryClient = useQueryClient();
@@ -69,7 +27,6 @@ const MyItemsPage = () => {
     "all"
   );
   const [selectedCategory, setSelectedCategory] = useState<string>("");
-  const [selectedSubcategory, setSelectedSubcategory] = useState<string>("");
   const [searchText, setSearchText] = useState<string>("");
   const [selectedKeywords, setSelectedKeywords] = useState<string[]>([]);
   const [selectedItemForCollections, setSelectedItemForCollections] = useState<
@@ -89,18 +46,10 @@ const MyItemsPage = () => {
     filterType === "all" ? undefined : filterType === "private";
 
   const { data, isLoading, error, refetch } = useQuery({
-    queryKey: [
-      "myItems",
-      page,
-      selectedCategory,
-      selectedSubcategory,
-      filterType,
-      selectedKeywords,
-    ],
+    queryKey: ["myItems", page, selectedCategory, filterType, selectedKeywords],
     queryFn: () =>
       itemsApi.getAll(
         selectedCategory || undefined,
-        selectedSubcategory || undefined,
         isPrivateFilter,
         selectedKeywords.length > 0 ? selectedKeywords : undefined,
         page,
@@ -109,7 +58,7 @@ const MyItemsPage = () => {
     enabled: isAuthenticated,
   });
 
-  // Client-side filtering for search - includes category, subcategory, keywords, and item content
+  // Client-side filtering for search - includes category, keywords, and item content
   const displayItems = searchText
     ? (data?.items || []).filter((item) => {
         const searchLower = searchText.toLowerCase();
@@ -118,8 +67,9 @@ const MyItemsPage = () => {
           item.correctAnswer.toLowerCase().includes(searchLower) ||
           item.explanation?.toLowerCase().includes(searchLower) ||
           item.category.toLowerCase().includes(searchLower) ||
-          item.subcategory.toLowerCase().includes(searchLower) ||
-          item.keywords?.some(k => k.name.toLowerCase().includes(searchLower)) ||
+          item.keywords?.some((k) =>
+            k.name.toLowerCase().includes(searchLower)
+          ) ||
           false
         );
       })
@@ -129,39 +79,31 @@ const MyItemsPage = () => {
   const availableKeywords = Array.from(
     new Set(
       (data?.items || [])
-        .flatMap(item => item.keywords || [])
-        .map(k => k.name)
+        .flatMap((item) => item.keywords || [])
+        .map((k) => k.name)
     )
   ).sort();
 
-  const hasActiveFilters = 
+  const hasActiveFilters =
     filterType !== "all" ||
     selectedCategory !== "" ||
-    selectedSubcategory !== "" ||
     selectedKeywords.length > 0 ||
     searchText !== "";
 
-  const addFilter = (filterType: "category" | "subcategory" | "keywords" | "search") => {
-    setActiveFilters(prev => new Set(prev).add(filterType));
+  const addFilter = (filterType: "category" | "keywords" | "search") => {
+    setActiveFilters((prev) => new Set(prev).add(filterType));
     setShowFilters(true);
   };
 
-  const removeFilter = (filterType: "category" | "subcategory" | "keywords" | "search") => {
-    setActiveFilters(prev => {
+  const removeFilter = (filterType: "category" | "keywords" | "search") => {
+    setActiveFilters((prev) => {
       const newSet = new Set(prev);
       newSet.delete(filterType);
-      // If removing category, also remove subcategory filter
-      if (filterType === "category") {
-        newSet.delete("subcategory");
-      }
       return newSet;
     });
-    
+
     if (filterType === "category") {
       setSelectedCategory("");
-      setSelectedSubcategory("");
-    } else if (filterType === "subcategory") {
-      setSelectedSubcategory("");
     } else if (filterType === "keywords") {
       setSelectedKeywords([]);
     } else if (filterType === "search") {
@@ -172,7 +114,6 @@ const MyItemsPage = () => {
   const clearAllFilters = () => {
     setFilterType("all");
     setSelectedCategory("");
-    setSelectedSubcategory("");
     setSelectedKeywords([]);
     setSearchText("");
     setActiveFilters(new Set());
@@ -188,7 +129,7 @@ const MyItemsPage = () => {
 
   useEffect(() => {
     setPage(1); // Reset to first page when filters change
-  }, [filterType, selectedCategory, selectedSubcategory, searchText, selectedKeywords]);
+  }, [filterType, selectedCategory, searchText, selectedKeywords]);
 
   // Auto-show filters if any are active
   useEffect(() => {
@@ -208,7 +149,7 @@ const MyItemsPage = () => {
     setSelectedKeywords(newKeywords);
     // If no keywords left, remove keywords filter
     if (newKeywords.length === 0) {
-      setActiveFilters(prev => {
+      setActiveFilters((prev) => {
         const newSet = new Set(prev);
         newSet.delete("keywords");
         return newSet;
@@ -323,7 +264,9 @@ const MyItemsPage = () => {
           <div className="px-4 py-4 space-y-4">
             {/* Add Filters Section */}
             <div className="flex flex-wrap gap-2">
-              <span className="text-sm font-medium text-gray-700">Add Filter:</span>
+              <span className="text-sm font-medium text-gray-700">
+                Add Filter:
+              </span>
               {!activeFilters.has("category") && (
                 <button
                   onClick={() => addFilter("category")}
@@ -331,15 +274,6 @@ const MyItemsPage = () => {
                 >
                   <PlusIcon className="h-4 w-4 mr-1" />
                   Category
-                </button>
-              )}
-              {!activeFilters.has("subcategory") && selectedCategory && (
-                <button
-                  onClick={() => addFilter("subcategory")}
-                  className="inline-flex items-center px-3 py-1.5 text-sm font-medium text-indigo-600 bg-indigo-50 rounded-md hover:bg-indigo-100"
-                >
-                  <PlusIcon className="h-4 w-4 mr-1" />
-                  Subcategory
                 </button>
               )}
               {!activeFilters.has("keywords") && (
@@ -381,10 +315,6 @@ const MyItemsPage = () => {
                   value={selectedCategory}
                   onChange={(e) => {
                     setSelectedCategory(e.target.value);
-                    setSelectedSubcategory(""); // Reset subcategory when category changes
-                    if (e.target.value && !activeFilters.has("subcategory")) {
-                      addFilter("subcategory");
-                    }
                   }}
                   className="w-full px-3 py-2 border border-gray-300 rounded-md text-sm bg-white"
                 >
@@ -395,29 +325,6 @@ const MyItemsPage = () => {
                     </option>
                   ))}
                 </select>
-              </div>
-            )}
-
-            {/* Subcategory Filter */}
-            {activeFilters.has("subcategory") && selectedCategory && (
-              <div className="border border-gray-200 rounded-md p-3 bg-gray-50">
-                <div className="flex items-center justify-between mb-2">
-                  <label className="block text-sm font-medium text-gray-700">
-                    Subcategory
-                  </label>
-                  <button
-                    onClick={() => removeFilter("subcategory")}
-                    className="text-gray-400 hover:text-gray-600"
-                    aria-label="Remove subcategory filter"
-                  >
-                    <XMarkIcon className="h-4 w-4" />
-                  </button>
-                </div>
-                <SubcategoryDropdown
-                  category={selectedCategory}
-                  value={selectedSubcategory}
-                  onChange={setSelectedSubcategory}
-                />
               </div>
             )}
 
@@ -439,15 +346,21 @@ const MyItemsPage = () => {
                 <select
                   value=""
                   onChange={(e) => {
-                    if (e.target.value && !selectedKeywords.includes(e.target.value)) {
-                      setSelectedKeywords([...selectedKeywords, e.target.value]);
+                    if (
+                      e.target.value &&
+                      !selectedKeywords.includes(e.target.value)
+                    ) {
+                      setSelectedKeywords([
+                        ...selectedKeywords,
+                        e.target.value,
+                      ]);
                     }
                   }}
                   className="w-full px-3 py-2 border border-gray-300 rounded-md text-sm bg-white mb-2"
                 >
                   <option value="">Select a keyword...</option>
                   {availableKeywords
-                    .filter(k => !selectedKeywords.includes(k))
+                    .filter((k) => !selectedKeywords.includes(k))
                     .map((keyword) => (
                       <option key={keyword} value={keyword}>
                         {keyword}
@@ -499,7 +412,7 @@ const MyItemsPage = () => {
                   className="w-full px-3 py-2 border border-gray-300 rounded-md text-sm bg-white"
                 />
                 <p className="mt-1 text-xs text-gray-500">
-                  Searches across item content, category, subcategory, and keywords
+                  Searches across item content, category, and keywords
                 </p>
               </div>
             )}
@@ -519,8 +432,7 @@ const MyItemsPage = () => {
                       {item.question}
                     </h3>
                     <p className="mt-2 text-sm text-gray-500">
-                      {item.category}{" "}
-                      {item.subcategory && `• ${item.subcategory}`}
+                      {item.category}
                     </p>
                     <p className="mt-1 text-sm text-gray-500">
                       {item.isPrivate ? "Private" : "Global"}

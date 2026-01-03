@@ -1,8 +1,5 @@
-using System.Linq;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
-using Microsoft.EntityFrameworkCore.Metadata;
-using Quizymode.Api.Data;
 
 namespace Quizymode.Api.Tests.TestFixtures;
 

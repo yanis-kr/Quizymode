@@ -1,6 +1,5 @@
 using FluentAssertions;
 using Microsoft.EntityFrameworkCore;
-using Quizymode.Api.Data;
 using Quizymode.Api.Features.Comments;
 using Quizymode.Api.Shared.Kernel;
 using Quizymode.Api.Shared.Models;
@@ -34,12 +33,12 @@ public sealed class GetCommentsTests : DatabaseTestFixture
     public async Task HandleAsync_WithItemId_ReturnsFilteredComments()
     {
         // Arrange
-        Item item1 = await CreateItemWithCategoriesAsync(
-            Guid.NewGuid(), "geography", "europe", "Question 1", "Answer 1",
+        Item item1 = await CreateItemWithCategoryAsync(
+            Guid.NewGuid(), "geography", "Question 1", "Answer 1",
             new List<string> { "Wrong" }, "", false, "test");
 
-        Item item2 = await CreateItemWithCategoriesAsync(
-            Guid.NewGuid(), "history", "ancient", "Question 2", "Answer 2",
+        Item item2 = await CreateItemWithCategoryAsync(
+            Guid.NewGuid(), "history", "Question 2", "Answer 2",
             new List<string> { "Wrong" }, "", false, "test");
 
         DbContext.Comments.AddRange(
@@ -69,12 +68,12 @@ public sealed class GetCommentsTests : DatabaseTestFixture
     public async Task HandleAsync_NoItemId_ReturnsAllComments()
     {
         // Arrange
-        Item item1 = await CreateItemWithCategoriesAsync(
-            Guid.NewGuid(), "geography", "europe", "Question 1", "Answer 1",
+        Item item1 = await CreateItemWithCategoryAsync(
+            Guid.NewGuid(), "geography", "Question 1", "Answer 1",
             new List<string> { "Wrong" }, "", false, "test");
 
-        Item item2 = await CreateItemWithCategoriesAsync(
-            Guid.NewGuid(), "history", "ancient", "Question 2", "Answer 2",
+        Item item2 = await CreateItemWithCategoryAsync(
+            Guid.NewGuid(), "history", "Question 2", "Answer 2",
             new List<string> { "Wrong" }, "", false, "test");
 
         DbContext.Comments.AddRange(
@@ -98,10 +97,9 @@ public sealed class GetCommentsTests : DatabaseTestFixture
         result.Value.Comments.Should().BeInDescendingOrder(c => c.CreatedAt);
     }
 
-    private async Task<Item> CreateItemWithCategoriesAsync(
+    private async Task<Item> CreateItemWithCategoryAsync(
         Guid itemId,
         string categoryName,
-        string subcategoryName,
         string question,
         string correctAnswer,
         List<string> incorrectAnswers,
@@ -109,9 +107,10 @@ public sealed class GetCommentsTests : DatabaseTestFixture
         bool isPrivate,
         string createdBy)
     {
-        // Create or get categories
+        // Create or get category
+        // Note: Category names are unique (unique constraint on Name), so we check by name only
         Category? category = await DbContext.Categories
-            .FirstOrDefaultAsync(c => c.Depth == 1 && c.Name == categoryName && c.IsPrivate == isPrivate && c.CreatedBy == createdBy);
+            .FirstOrDefaultAsync(c => c.Name == categoryName);
         
         if (category is null)
         {
@@ -119,30 +118,11 @@ public sealed class GetCommentsTests : DatabaseTestFixture
             {
                 Id = Guid.NewGuid(),
                 Name = categoryName,
-                Depth = 1,
                 IsPrivate = isPrivate,
                 CreatedBy = createdBy,
                 CreatedAt = DateTime.UtcNow
             };
             DbContext.Categories.Add(category);
-            await DbContext.SaveChangesAsync();
-        }
-
-        Category? subcategory = await DbContext.Categories
-            .FirstOrDefaultAsync(c => c.Depth == 2 && c.Name == subcategoryName && c.IsPrivate == isPrivate && c.CreatedBy == createdBy);
-        
-        if (subcategory is null)
-        {
-            subcategory = new Category
-            {
-                Id = Guid.NewGuid(),
-                Name = subcategoryName,
-                Depth = 2,
-                IsPrivate = isPrivate,
-                CreatedBy = createdBy,
-                CreatedAt = DateTime.UtcNow
-            };
-            DbContext.Categories.Add(subcategory);
             await DbContext.SaveChangesAsync();
         }
 
@@ -158,18 +138,11 @@ public sealed class GetCommentsTests : DatabaseTestFixture
             FuzzySignature = question == "Question 1" ? "ABC" : "DEF",
             FuzzyBucket = question == "Question 1" ? 1 : 2,
             CreatedBy = createdBy,
-            CreatedAt = DateTime.UtcNow
+            CreatedAt = DateTime.UtcNow,
+            CategoryId = category.Id
         };
 
         DbContext.Items.Add(item);
-        await DbContext.SaveChangesAsync();
-
-        // Add CategoryItems
-        DateTime now = DateTime.UtcNow;
-        DbContext.CategoryItems.AddRange(
-            new CategoryItem { CategoryId = category.Id, ItemId = item.Id, CreatedBy = createdBy, CreatedAt = now },
-            new CategoryItem { CategoryId = subcategory.Id, ItemId = item.Id, CreatedBy = createdBy, CreatedAt = now }
-        );
         await DbContext.SaveChangesAsync();
 
         return item;

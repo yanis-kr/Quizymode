@@ -12,15 +12,6 @@ export interface CategoriesResponse {
   categories: CategoryResponse[];
 }
 
-export interface SubcategoryResponse {
-  subcategory: string;
-  count: number;
-}
-
-export interface SubcategoriesResponse {
-  subcategories: SubcategoryResponse[];
-  totalCount: number;
-}
 
 export interface KeywordResponse {
   id: string;
@@ -31,7 +22,6 @@ export interface KeywordResponse {
 export interface ItemResponse {
   id: string;
   category: string;
-  subcategory: string;
   isPrivate: boolean;
   question: string;
   correctAnswer: string;
@@ -97,7 +87,6 @@ export interface KeywordRequest {
 
 export interface CreateItemRequest {
   category: string;
-  subcategory: string;
   isPrivate: boolean;
   question: string;
   correctAnswer: string;
@@ -108,7 +97,6 @@ export interface CreateItemRequest {
 
 export interface UpdateItemRequest {
   category?: string;
-  subcategory?: string;
   isPrivate?: boolean;
   question?: string;
   correctAnswer?: string;

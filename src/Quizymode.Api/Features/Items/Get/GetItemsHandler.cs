@@ -53,37 +53,37 @@ internal static class GetItemsHandler
                 }
             }
 
-            // Filter by category/subcategory using CategoryItems
+            // Filter by category using CategoryId
             if (!string.IsNullOrEmpty(request.Category))
             {
                 string categoryName = request.Category.Trim();
                 
-                // Resolve category name to CategoryId(s) - try global first, then private
-                List<Guid> categoryIds = new();
+                // Resolve category name to CategoryId - try global first, then private
+                Guid? categoryId = null;
                 
                 try
                 {
                     // Try global category first (case-insensitive)
                     Category? globalCategory = await db.Categories
                         .FirstOrDefaultAsync(
-                            c => c.Depth == 1 && !c.IsPrivate && c.Name.ToLower() == categoryName.ToLower(),
+                            c => !c.IsPrivate && c.Name.ToLower() == categoryName.ToLower(),
                             cancellationToken);
                     
                     if (globalCategory is not null)
                     {
-                        categoryIds.Add(globalCategory.Id);
+                        categoryId = globalCategory.Id;
                     }
                     else if (userContext.IsAuthenticated && !string.IsNullOrEmpty(userContext.UserId))
                     {
                         // Try user's private category
                         Category? privateCategory = await db.Categories
                             .FirstOrDefaultAsync(
-                                c => c.Depth == 1 && c.IsPrivate && c.CreatedBy == userContext.UserId && c.Name.ToLower() == categoryName.ToLower(),
+                                c => c.IsPrivate && c.CreatedBy == userContext.UserId && c.Name.ToLower() == categoryName.ToLower(),
                                 cancellationToken);
                         
                         if (privateCategory is not null)
                         {
-                            categoryIds.Add(privateCategory.Id);
+                            categoryId = privateCategory.Id;
                         }
                     }
                 }
@@ -91,7 +91,7 @@ internal static class GetItemsHandler
                 {
                     // ILike not supported (e.g., InMemory database) - fetch and filter in memory
                     List<Category> allCategories = await db.Categories
-                        .Where(c => c.Depth == 1 && !c.IsPrivate)
+                        .Where(c => !c.IsPrivate)
                         .ToListAsync(cancellationToken);
                     
                     Category? globalCategory = allCategories
@@ -99,12 +99,12 @@ internal static class GetItemsHandler
                     
                     if (globalCategory is not null)
                     {
-                        categoryIds.Add(globalCategory.Id);
+                        categoryId = globalCategory.Id;
                     }
                     else if (userContext.IsAuthenticated && !string.IsNullOrEmpty(userContext.UserId))
                     {
                         List<Category> privateCategories = await db.Categories
-                            .Where(c => c.Depth == 1 && c.IsPrivate && c.CreatedBy == userContext.UserId)
+                            .Where(c => c.IsPrivate && c.CreatedBy == userContext.UserId)
                             .ToListAsync(cancellationToken);
                         
                         Category? privateCategory = privateCategories
@@ -112,92 +112,18 @@ internal static class GetItemsHandler
                         
                         if (privateCategory is not null)
                         {
-                            categoryIds.Add(privateCategory.Id);
+                            categoryId = privateCategory.Id;
                         }
                     }
                 }
                 
-                if (categoryIds.Count > 0)
+                if (categoryId.HasValue)
                 {
-                    query = query.Where(i => i.CategoryItems.Any(ci => categoryIds.Contains(ci.CategoryId)));
+                    query = query.Where(i => i.CategoryId == categoryId.Value);
                 }
                 else
                 {
                     // Category not found, return empty result
-                    query = query.Where(i => false);
-                }
-            }
-
-            if (!string.IsNullOrEmpty(request.Subcategory))
-            {
-                string subcategoryName = request.Subcategory.Trim();
-                
-                // Resolve subcategory name to CategoryId(s) - try global first, then private
-                List<Guid> subcategoryIds = new();
-                
-                try
-                {
-                    // Try global subcategory first (case-insensitive)
-                    Category? globalSubcategory = await db.Categories
-                        .FirstOrDefaultAsync(
-                            c => c.Depth == 2 && !c.IsPrivate && c.Name.ToLower() == subcategoryName.ToLower(),
-                            cancellationToken);
-                    
-                    if (globalSubcategory is not null)
-                    {
-                        subcategoryIds.Add(globalSubcategory.Id);
-                    }
-                    else if (userContext.IsAuthenticated && !string.IsNullOrEmpty(userContext.UserId))
-                    {
-                        // Try user's private subcategory
-                        Category? privateSubcategory = await db.Categories
-                            .FirstOrDefaultAsync(
-                                c => c.Depth == 2 && c.IsPrivate && c.CreatedBy == userContext.UserId && c.Name.ToLower() == subcategoryName.ToLower(),
-                                cancellationToken);
-                        
-                        if (privateSubcategory is not null)
-                        {
-                            subcategoryIds.Add(privateSubcategory.Id);
-                        }
-                    }
-                }
-                catch (NotSupportedException)
-                {
-                    // ILike not supported (e.g., InMemory database) - fetch and filter in memory
-                    List<Category> allSubcategories = await db.Categories
-                        .Where(c => c.Depth == 2 && !c.IsPrivate)
-                        .ToListAsync(cancellationToken);
-                    
-                    Category? globalSubcategory = allSubcategories
-                        .FirstOrDefault(c => string.Equals(c.Name, subcategoryName, StringComparison.OrdinalIgnoreCase));
-                    
-                    if (globalSubcategory is not null)
-                    {
-                        subcategoryIds.Add(globalSubcategory.Id);
-                    }
-                    else if (userContext.IsAuthenticated && !string.IsNullOrEmpty(userContext.UserId))
-                    {
-                        List<Category> privateSubcategories = await db.Categories
-                            .Where(c => c.Depth == 2 && c.IsPrivate && c.CreatedBy == userContext.UserId)
-                            .ToListAsync(cancellationToken);
-                        
-                        Category? privateSubcategory = privateSubcategories
-                            .FirstOrDefault(c => string.Equals(c.Name, subcategoryName, StringComparison.OrdinalIgnoreCase));
-                        
-                        if (privateSubcategory is not null)
-                        {
-                            subcategoryIds.Add(privateSubcategory.Id);
-                        }
-                    }
-                }
-                
-                if (subcategoryIds.Count > 0)
-                {
-                    query = query.Where(i => i.CategoryItems.Any(ci => subcategoryIds.Contains(ci.CategoryId)));
-                }
-                else
-                {
-                    // Subcategory not found, return empty result
                     query = query.Where(i => false);
                 }
             }
@@ -245,13 +171,12 @@ internal static class GetItemsHandler
                 items = await query
                     .Include(i => i.ItemKeywords)
                         .ThenInclude(ik => ik.Keyword)
-                    .Include(i => i.CategoryItems)
-                        .ThenInclude(ci => ci.Category)
+                    .Include(i => i.Category)
                     .Skip((request.Page - 1) * request.PageSize)
                     .Take(request.PageSize)
                     .ToListAsync(cancellationToken);
             }
-            catch (Exception ex) when ((ex is NotSupportedException || ex is InvalidOperationException) && (!string.IsNullOrEmpty(request.Category) || !string.IsNullOrEmpty(request.Subcategory)))
+            catch (Exception ex) when ((ex is NotSupportedException || ex is InvalidOperationException) && !string.IsNullOrEmpty(request.Category))
             {
                 // ILike not supported (e.g., InMemory database) - fetch all and filter in memory
                 IQueryable<Item> baseQuery = db.Items.AsQueryable();
@@ -285,31 +210,20 @@ internal static class GetItemsHandler
                     }
                 }
                 
-                // Fetch all items with keywords and categories
+                // Fetch all items with keywords and category
                 List<Item> allItems = await baseQuery
                     .Include(i => i.ItemKeywords)
                         .ThenInclude(ik => ik.Keyword)
-                    .Include(i => i.CategoryItems)
-                        .ThenInclude(ci => ci.Category)
+                    .Include(i => i.Category)
                     .ToListAsync(cancellationToken);
                 
-                // Apply category/subcategory filters in memory using CategoryItems
+                // Apply category filter in memory
                 if (!string.IsNullOrEmpty(request.Category))
                 {
                     string categoryName = request.Category.Trim();
                     allItems = allItems.Where(i => 
-                        i.CategoryItems.Any(ci => 
-                            ci.Category.Depth == 1 && 
-                            string.Equals(ci.Category.Name, categoryName, StringComparison.OrdinalIgnoreCase))).ToList();
-                }
-                
-                if (!string.IsNullOrEmpty(request.Subcategory))
-                {
-                    string subcategoryName = request.Subcategory.Trim();
-                    allItems = allItems.Where(i => 
-                        i.CategoryItems.Any(ci => 
-                            ci.Category.Depth == 2 && 
-                            string.Equals(ci.Category.Name, subcategoryName, StringComparison.OrdinalIgnoreCase))).ToList();
+                        i.Category is not null &&
+                        string.Equals(i.Category.Name, categoryName, StringComparison.OrdinalIgnoreCase)).ToList();
                 }
                 
                 // Apply keyword filter
@@ -375,21 +289,12 @@ internal static class GetItemsHandler
                     }
                 }
 
-                // Get category and subcategory names from CategoryItems
-                string categoryName = item.CategoryItems
-                    .Where(ci => ci.Category.Depth == 1)
-                    .Select(ci => ci.Category.Name)
-                    .FirstOrDefault() ?? string.Empty;
-                
-                string subcategoryName = item.CategoryItems
-                    .Where(ci => ci.Category.Depth == 2)
-                    .Select(ci => ci.Category.Name)
-                    .FirstOrDefault() ?? string.Empty;
+                // Get category name from Category navigation
+                string categoryName = item.Category?.Name ?? string.Empty;
 
                 itemResponses.Add(new GetItems.ItemResponse(
                     item.Id.ToString(),
                     categoryName,
-                    subcategoryName,
                     item.IsPrivate,
                     item.Question,
                     item.CorrectAnswer,

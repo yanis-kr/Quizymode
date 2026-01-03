@@ -28,7 +28,8 @@ public sealed class Item
     // Navigation property for keywords (not mapped directly, accessed via ItemKeywords)
     public List<ItemKeyword> ItemKeywords { get; set; } = new();
 
-    // Navigation property for categories (not mapped directly, accessed via CategoryItems)
-    public List<CategoryItem> CategoryItems { get; set; } = new();
+    // Navigation property for category
+    public Guid? CategoryId { get; set; }
+    public Category? Category { get; set; }
 }
 

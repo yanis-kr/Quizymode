@@ -19,9 +19,6 @@ internal sealed class CategoryConfiguration : IEntityTypeConfiguration<Category>
             .IsRequired()
             .HasMaxLength(100);
 
-        builder.Property(x => x.Depth)
-            .IsRequired();
-
         builder.Property(x => x.IsPrivate)
             .IsRequired()
             .HasDefaultValue(false);
@@ -33,9 +30,9 @@ internal sealed class CategoryConfiguration : IEntityTypeConfiguration<Category>
         builder.Property(x => x.CreatedAt)
             .IsRequired();
 
-        // Indexes for efficient lookups
-        builder.HasIndex(x => new { x.Name, x.Depth, x.IsPrivate, x.CreatedBy });
-        builder.HasIndex(x => new { x.Depth, x.IsPrivate });
+        // Unique index on Name to ensure category names are unique
+        builder.HasIndex(x => x.Name)
+            .IsUnique();
     }
 }
 

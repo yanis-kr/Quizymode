@@ -60,6 +60,15 @@ internal sealed class ItemConfiguration : IEntityTypeConfiguration<Item>
             .IsRequired()
             .HasDefaultValue(false);
 
+        builder.Property(x => x.CategoryId)
+            .IsRequired(false);
+
+        // Foreign key relationship to Category
+        builder.HasOne(x => x.Category)
+            .WithMany(c => c.Items)
+            .HasForeignKey(x => x.CategoryId)
+            .OnDelete(DeleteBehavior.SetNull);
+
         // Add check constraint for incorrect answers array length (0-4 items)
         builder.ToTable(t => t.HasCheckConstraint(
             "CK_Items_IncorrectAnswers_Length",
@@ -68,6 +77,7 @@ internal sealed class ItemConfiguration : IEntityTypeConfiguration<Item>
         // Indexes for common queries
         builder.HasIndex(x => x.FuzzyBucket);
         builder.HasIndex(x => x.CreatedAt);
+        builder.HasIndex(x => x.CategoryId);
     }
 }
 

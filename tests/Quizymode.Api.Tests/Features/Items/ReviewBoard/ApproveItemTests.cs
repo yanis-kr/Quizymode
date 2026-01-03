@@ -1,6 +1,5 @@
 using FluentAssertions;
 using Microsoft.EntityFrameworkCore;
-using Quizymode.Api.Data;
 using Quizymode.Api.Features.Items.ReviewBoard;
 using Quizymode.Api.Shared.Kernel;
 using Quizymode.Api.Shared.Models;
@@ -17,8 +16,8 @@ public sealed class ApproveItemTests : DatabaseTestFixture
     {
         // Arrange
         Guid itemId = Guid.NewGuid();
-        Item item = await CreateItemWithCategoriesAsync(
-            itemId, "geography", "europe", "What is the capital of France?", "Paris",
+        Item item = await CreateItemWithCategoryAsync(
+            itemId, "geography", "What is the capital of France?", "Paris",
             new List<string> { "Lyon", "Marseille" }, "Test", true, "test");
         item.ReadyForReview = true;
         await DbContext.SaveChangesAsync();
@@ -59,10 +58,9 @@ public sealed class ApproveItemTests : DatabaseTestFixture
         result.Error.Code.Should().Be("Item.NotFound");
     }
 
-    private async Task<Item> CreateItemWithCategoriesAsync(
+    private async Task<Item> CreateItemWithCategoryAsync(
         Guid itemId,
         string categoryName,
-        string subcategoryName,
         string question,
         string correctAnswer,
         List<string> incorrectAnswers,
@@ -70,9 +68,10 @@ public sealed class ApproveItemTests : DatabaseTestFixture
         bool isPrivate,
         string createdBy)
     {
-        // Create or get categories
+        // Create or get category
+        // Note: Category names are unique (unique constraint on Name), so we check by name only
         Category? category = await DbContext.Categories
-            .FirstOrDefaultAsync(c => c.Depth == 1 && c.Name == categoryName && c.IsPrivate == isPrivate && c.CreatedBy == createdBy);
+            .FirstOrDefaultAsync(c => c.Name == categoryName);
         
         if (category is null)
         {
@@ -80,30 +79,11 @@ public sealed class ApproveItemTests : DatabaseTestFixture
             {
                 Id = Guid.NewGuid(),
                 Name = categoryName,
-                Depth = 1,
                 IsPrivate = isPrivate,
                 CreatedBy = createdBy,
                 CreatedAt = DateTime.UtcNow
             };
             DbContext.Categories.Add(category);
-            await DbContext.SaveChangesAsync();
-        }
-
-        Category? subcategory = await DbContext.Categories
-            .FirstOrDefaultAsync(c => c.Depth == 2 && c.Name == subcategoryName && c.IsPrivate == isPrivate && c.CreatedBy == createdBy);
-        
-        if (subcategory is null)
-        {
-            subcategory = new Category
-            {
-                Id = Guid.NewGuid(),
-                Name = subcategoryName,
-                Depth = 2,
-                IsPrivate = isPrivate,
-                CreatedBy = createdBy,
-                CreatedAt = DateTime.UtcNow
-            };
-            DbContext.Categories.Add(subcategory);
             await DbContext.SaveChangesAsync();
         }
 
@@ -119,18 +99,11 @@ public sealed class ApproveItemTests : DatabaseTestFixture
             FuzzySignature = "ABC",
             FuzzyBucket = 1,
             CreatedBy = createdBy,
-            CreatedAt = DateTime.UtcNow
+            CreatedAt = DateTime.UtcNow,
+            CategoryId = category.Id
         };
 
         DbContext.Items.Add(item);
-        await DbContext.SaveChangesAsync();
-
-        // Add CategoryItems
-        DateTime now = DateTime.UtcNow;
-        DbContext.CategoryItems.AddRange(
-            new CategoryItem { CategoryId = category.Id, ItemId = item.Id, CreatedBy = createdBy, CreatedAt = now },
-            new CategoryItem { CategoryId = subcategory.Id, ItemId = item.Id, CreatedBy = createdBy, CreatedAt = now }
-        );
         await DbContext.SaveChangesAsync();
 
         return item;

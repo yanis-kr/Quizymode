@@ -2,7 +2,6 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Storage;
 using Quizymode.Api.Data;
 using Quizymode.Api.Services;
-using Quizymode.Api.Shared.Helpers;
 using Quizymode.Api.Shared.Kernel;
 using Quizymode.Api.Shared.Models;
 
@@ -42,7 +41,7 @@ internal static class AddItemsBulkHandler
 
             List<Item> itemsToInsert = new();
             Dictionary<int, Item> itemIndexMap = new(); // Map original index to created item
-            Dictionary<int, (Category Category, Category Subcategory)> categoryMap = new(); // Map item index to resolved categories
+            Dictionary<int, Category> categoryMap = new(); // Map item index to resolved category
             List<string> duplicateQuestions = new();
             List<AddItemsBulk.ItemError> errors = new();
 
@@ -56,10 +55,9 @@ internal static class AddItemsBulkHandler
                     string fuzzySignature = simHashService.ComputeSimHash(questionText);
                     int fuzzyBucket = simHashService.GetFuzzyBucket(fuzzySignature);
 
-                    // Resolve categories via CategoryResolver
+                    // Resolve category via CategoryResolver
                     Result<Category> categoryResult = await categoryResolver.ResolveOrCreateAsync(
                         itemRequest.Category,
-                        depth: 1,
                         isPrivate: effectiveIsPrivate,
                         currentUserId: userId,
                         isAdmin: userContext.IsAdmin,
@@ -72,67 +70,34 @@ internal static class AddItemsBulkHandler
                     }
 
                     Category category = categoryResult.Value!;
-
-                    Result<Category> subcategoryResult = await categoryResolver.ResolveOrCreateAsync(
-                        itemRequest.Subcategory,
-                        depth: 2,
-                        isPrivate: effectiveIsPrivate,
-                        currentUserId: userId,
-                        isAdmin: userContext.IsAdmin,
-                        cancellationToken);
-
-                    if (subcategoryResult.IsFailure)
-                    {
-                        errors.Add(new AddItemsBulk.ItemError(i, itemRequest.Question, subcategoryResult.Error!.Description));
-                        continue;
-                    }
-
-                    Category subcategory = subcategoryResult.Value!;
                     
                     // Check for duplicates - only for the same user
                     // Different users can add the same items
-                    // Check using CategoryItems relationships
+                    // Check using CategoryId
                     // Exclude items that are already in the current batch (itemsToInsert)
                     bool isDuplicate = false;
                     try
                     {
                         List<Guid> existingItemIds = itemsToInsert.Select(it => it.Id).ToList();
                         
-                        // Get items with matching fuzzy bucket (potential duplicates)
+                        // Get items with matching fuzzy bucket and category (potential duplicates)
                         List<Item> candidateItems = await db.Items
                             .Where(item => 
                                 item.CreatedBy == userId &&
                                 item.FuzzyBucket == fuzzyBucket &&
+                                item.CategoryId == category.Id &&
                                 !existingItemIds.Contains(item.Id))
                             .ToListAsync(cancellationToken);
                         
                         if (candidateItems.Count > 0)
                         {
-                            // Get CategoryItems for candidate items
-                            List<Guid> candidateItemIds = candidateItems.Select(ci => ci.Id).ToList();
-                            List<CategoryItem> candidateCategoryItems = await db.CategoryItems
-                                .Where(ci => candidateItemIds.Contains(ci.ItemId))
-                                .ToListAsync(cancellationToken);
-                            
-                            // Group CategoryItems by ItemId
-                            Dictionary<Guid, List<Guid>> itemCategoryMap = candidateCategoryItems
-                                .GroupBy(ci => ci.ItemId)
-                                .ToDictionary(g => g.Key, g => g.Select(ci => ci.CategoryId).ToList());
-                            
-                            // Check if any candidate item has the same category/subcategory and question/fuzzy signature
+                            // Check if any candidate item has the same question/fuzzy signature
                             isDuplicate = candidateItems.Any(item =>
                             {
-                                if (!itemCategoryMap.TryGetValue(item.Id, out List<Guid>? itemCategoryIds))
-                                {
-                                    return false;
-                                }
-                                
-                                bool hasCategory = itemCategoryIds.Contains(category.Id);
-                                bool hasSubcategory = itemCategoryIds.Contains(subcategory.Id);
                                 bool questionMatches = string.Equals(item.Question, itemRequest.Question, StringComparison.OrdinalIgnoreCase);
                                 bool fuzzyMatches = item.FuzzySignature == fuzzySignature;
                                 
-                                return hasCategory && hasSubcategory && (questionMatches || fuzzyMatches);
+                                return questionMatches || fuzzyMatches;
                             });
                         }
                     }
@@ -172,12 +137,13 @@ internal static class AddItemsBulkHandler
                         FuzzySignature = fuzzySignature,
                         FuzzyBucket = fuzzyBucket,
                         CreatedBy = userId,
-                        CreatedAt = DateTime.UtcNow
+                        CreatedAt = DateTime.UtcNow,
+                        CategoryId = category.Id
                     };
 
                     itemsToInsert.Add(item);
                     itemIndexMap[i] = item;
-                    categoryMap[i] = (category, subcategory);
+                    categoryMap[i] = category;
                 }
                 catch (Exception ex)
                 {
@@ -189,38 +155,6 @@ internal static class AddItemsBulkHandler
             {
                 db.Items.AddRange(itemsToInsert);
                 await db.SaveChangesAsync(cancellationToken);
-
-                // Create CategoryItem relationships
-                DateTime now = DateTime.UtcNow;
-                List<CategoryItem> categoryItemsToInsert = new();
-                foreach (KeyValuePair<int, Item> kvp in itemIndexMap)
-                {
-                    int originalIndex = kvp.Key;
-                    Item item = kvp.Value;
-                    (Category category, Category subcategory) = categoryMap[originalIndex];
-
-                    categoryItemsToInsert.Add(new CategoryItem
-                    {
-                        CategoryId = category.Id,
-                        ItemId = item.Id,
-                        CreatedBy = userId,
-                        CreatedAt = now
-                    });
-
-                    categoryItemsToInsert.Add(new CategoryItem
-                    {
-                        CategoryId = subcategory.Id,
-                        ItemId = item.Id,
-                        CreatedBy = userId,
-                        CreatedAt = now
-                    });
-                }
-
-                if (categoryItemsToInsert.Count > 0)
-                {
-                    db.CategoryItems.AddRange(categoryItemsToInsert);
-                    await db.SaveChangesAsync(cancellationToken);
-                }
 
                 // Handle keywords for all items
                 List<ItemKeyword> itemKeywordsToInsert = new();

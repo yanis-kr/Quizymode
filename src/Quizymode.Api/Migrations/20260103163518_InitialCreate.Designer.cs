@@ -12,7 +12,7 @@ using Quizymode.Api.Data;
 namespace Quizymode.Api.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20260103135349_InitialCreate")]
+    [Migration("20260103163518_InitialCreate")]
     partial class InitialCreate
     {
         /// <inheritdoc />
@@ -81,9 +81,6 @@ namespace Quizymode.Api.Migrations
                         .HasMaxLength(100)
                         .HasColumnType("character varying(100)");
 
-                    b.Property<int>("Depth")
-                        .HasColumnType("integer");
-
                     b.Property<bool>("IsPrivate")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("boolean")
@@ -96,36 +93,10 @@ namespace Quizymode.Api.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("Depth", "IsPrivate");
-
-                    b.HasIndex("Name", "Depth", "IsPrivate", "CreatedBy");
+                    b.HasIndex("Name")
+                        .IsUnique();
 
                     b.ToTable("Categories", (string)null);
-                });
-
-            modelBuilder.Entity("Quizymode.Api.Shared.Models.CategoryItem", b =>
-                {
-                    b.Property<Guid>("CategoryId")
-                        .HasColumnType("uuid");
-
-                    b.Property<Guid>("ItemId")
-                        .HasColumnType("uuid");
-
-                    b.Property<DateTime>("CreatedAt")
-                        .HasColumnType("timestamp with time zone");
-
-                    b.Property<string>("CreatedBy")
-                        .IsRequired()
-                        .HasMaxLength(100)
-                        .HasColumnType("character varying(100)");
-
-                    b.HasKey("CategoryId", "ItemId");
-
-                    b.HasIndex("CategoryId");
-
-                    b.HasIndex("ItemId", "CategoryId");
-
-                    b.ToTable("CategoryItems", (string)null);
                 });
 
             modelBuilder.Entity("Quizymode.Api.Shared.Models.Collection", b =>
@@ -215,6 +186,9 @@ namespace Quizymode.Api.Migrations
                         .HasColumnType("uuid")
                         .HasDefaultValueSql("gen_random_uuid()");
 
+                    b.Property<Guid?>("CategoryId")
+                        .HasColumnType("uuid");
+
                     b.Property<string>("CorrectAnswer")
                         .IsRequired()
                         .HasMaxLength(500)
@@ -261,6 +235,8 @@ namespace Quizymode.Api.Migrations
                         .HasDefaultValue(false);
 
                     b.HasKey("Id");
+
+                    b.HasIndex("CategoryId");
 
                     b.HasIndex("CreatedAt");
 
@@ -445,23 +421,14 @@ namespace Quizymode.Api.Migrations
                     b.ToTable("Users", (string)null);
                 });
 
-            modelBuilder.Entity("Quizymode.Api.Shared.Models.CategoryItem", b =>
+            modelBuilder.Entity("Quizymode.Api.Shared.Models.Item", b =>
                 {
                     b.HasOne("Quizymode.Api.Shared.Models.Category", "Category")
-                        .WithMany("CategoryItems")
+                        .WithMany("Items")
                         .HasForeignKey("CategoryId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("Quizymode.Api.Shared.Models.Item", "Item")
-                        .WithMany("CategoryItems")
-                        .HasForeignKey("ItemId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .OnDelete(DeleteBehavior.SetNull);
 
                     b.Navigation("Category");
-
-                    b.Navigation("Item");
                 });
 
             modelBuilder.Entity("Quizymode.Api.Shared.Models.ItemKeyword", b =>
@@ -483,13 +450,11 @@ namespace Quizymode.Api.Migrations
 
             modelBuilder.Entity("Quizymode.Api.Shared.Models.Category", b =>
                 {
-                    b.Navigation("CategoryItems");
+                    b.Navigation("Items");
                 });
 
             modelBuilder.Entity("Quizymode.Api.Shared.Models.Item", b =>
                 {
-                    b.Navigation("CategoryItems");
-
                     b.Navigation("ItemKeywords");
                 });
 #pragma warning restore 612, 618

@@ -36,95 +36,64 @@ internal static class UpdateItemCategoriesHandler
                     Error.NotFound("Item.NotFound", $"Item with id {id} not found"));
             }
 
-            // Resolve all categories
-            List<Category> resolvedCategories = new();
-            foreach (UpdateItemCategories.CategoryAssignment assignment in request.Assignments)
+            // Resolve category
+            Category? category = null;
+
+            if (request.CategoryId.HasValue)
             {
-                Category? category = null;
-
-                if (assignment.CategoryId.HasValue)
-                {
-                    // Validate ownership if categoryId provided
-                    category = await db.Categories
-                        .FirstOrDefaultAsync(
-                            c => c.Id == assignment.CategoryId.Value,
-                            cancellationToken);
-
-                    if (category is null)
-                    {
-                        return Result.Failure<UpdateItemCategories.Response>(
-                            Error.NotFound("Category.NotFound", $"Category with id {assignment.CategoryId.Value} not found"));
-                    }
-
-                    // Validate ownership: must be global or private-owned-by-current-user
-                    if (category.IsPrivate && category.CreatedBy != userId)
-                    {
-                        return Result.Failure<UpdateItemCategories.Response>(
-                            Error.Validation("Category.AccessDenied", $"Category {assignment.CategoryId.Value} is private and does not belong to current user"));
-                    }
-
-                    // Validate depth matches
-                    if (category.Depth != assignment.Depth)
-                    {
-                        return Result.Failure<UpdateItemCategories.Response>(
-                            Error.Validation("Category.DepthMismatch", $"Category {assignment.CategoryId.Value} has depth {category.Depth}, but assignment specifies depth {assignment.Depth}"));
-                    }
-                }
-                else if (!string.IsNullOrWhiteSpace(assignment.Name))
-                {
-                    // Resolve by name via CategoryResolver
-                    Result<Category> resolveResult = await categoryResolver.ResolveOrCreateAsync(
-                        assignment.Name,
-                        assignment.Depth,
-                        assignment.IsPrivate,
-                        userId,
-                        userContext.IsAdmin,
+                // Validate ownership if categoryId provided
+                category = await db.Categories
+                    .FirstOrDefaultAsync(
+                        c => c.Id == request.CategoryId.Value,
                         cancellationToken);
 
-                    if (resolveResult.IsFailure)
-                    {
-                        return Result.Failure<UpdateItemCategories.Response>(resolveResult.Error!);
-                    }
-
-                    category = resolveResult.Value!;
-                }
-                else
+                if (category is null)
                 {
                     return Result.Failure<UpdateItemCategories.Response>(
-                        Error.Validation("CategoryAssignment.Invalid", "Each assignment must specify either CategoryId or Name"));
+                        Error.NotFound("Category.NotFound", $"Category with id {request.CategoryId.Value} not found"));
                 }
 
-                resolvedCategories.Add(category);
+                // Validate ownership: must be global or private-owned-by-current-user
+                if (category.IsPrivate && category.CreatedBy != userId)
+                {
+                    return Result.Failure<UpdateItemCategories.Response>(
+                        Error.Validation("Category.AccessDenied", $"Category {request.CategoryId.Value} is private and does not belong to current user"));
+                }
+            }
+            else if (!string.IsNullOrWhiteSpace(request.CategoryName))
+            {
+                // Resolve by name via CategoryResolver
+                Result<Category> resolveResult = await categoryResolver.ResolveOrCreateAsync(
+                    request.CategoryName,
+                    request.IsPrivate,
+                    userId,
+                    userContext.IsAdmin,
+                    cancellationToken);
+
+                if (resolveResult.IsFailure)
+                {
+                    return Result.Failure<UpdateItemCategories.Response>(resolveResult.Error!);
+                }
+
+                category = resolveResult.Value!;
+            }
+            else
+            {
+                return Result.Failure<UpdateItemCategories.Response>(
+                    Error.Validation("CategoryAssignment.Invalid", "Must specify either CategoryId or CategoryName"));
             }
 
-            // Replace semantics: delete all existing CategoryItems for this item
-            List<CategoryItem> existingCategoryItems = await db.CategoryItems
-                .Where(ci => ci.ItemId == itemId)
-                .ToListAsync(cancellationToken);
-            db.CategoryItems.RemoveRange(existingCategoryItems);
-            await db.SaveChangesAsync(cancellationToken);
-
-            // Create new CategoryItem relationships
-            DateTime now = DateTime.UtcNow;
-            List<CategoryItem> newCategoryItems = resolvedCategories.Select(category => new CategoryItem
-            {
-                CategoryId = category.Id,
-                ItemId = itemId,
-                CreatedBy = userId,
-                CreatedAt = now
-            }).ToList();
-
-            db.CategoryItems.AddRange(newCategoryItems);
+            // Update item's category
+            item.CategoryId = category.Id;
             await db.SaveChangesAsync(cancellationToken);
 
             // Build response
-            List<UpdateItemCategories.CategoryResponse> categoryResponses = resolvedCategories.Select(c => new UpdateItemCategories.CategoryResponse(
-                c.Id,
-                c.Name,
-                c.Depth,
-                c.IsPrivate)).ToList();
+            UpdateItemCategories.CategoryResponse categoryResponse = new(
+                category.Id,
+                category.Name,
+                category.IsPrivate);
 
-            UpdateItemCategories.Response response = new(categoryResponses);
+            UpdateItemCategories.Response response = new(categoryResponse);
 
             return Result.Success(response);
         }
