@@ -1,3 +1,4 @@
+using Dapper;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Caching.Memory;
 using Microsoft.Extensions.Options;
@@ -5,7 +6,6 @@ using Quizymode.Api.Data;
 using Quizymode.Api.Infrastructure;
 using Quizymode.Api.Services;
 using Quizymode.Api.Shared.Kernel;
-using Quizymode.Api.Shared.Models;
 using Quizymode.Api.Shared.Options;
 
 namespace Quizymode.Api.Features.Categories;
@@ -14,7 +14,22 @@ public static class GetCategories
 {
     public sealed record QueryRequest(string? Search);
 
-    public sealed record CategoryResponse(string Category, int Count, Guid Id, bool IsPrivate, double? AverageStars);
+    public sealed record CategoryResponse(
+        Guid Id,
+        string Category,
+        int Count,
+        bool IsPrivate,
+        double? AverageStars);
+
+    // Intermediate class for Dapper mapping
+    private sealed class CategoryRow
+    {
+        public Guid Id { get; set; }
+        public string Category { get; set; } = string.Empty;
+        public int Count { get; set; }
+        public bool IsPrivate { get; set; }
+        public double? AverageStars { get; set; }
+    }
 
     public sealed record Response(List<CategoryResponse> Categories);
 
@@ -59,7 +74,6 @@ public static class GetCategories
         try
         {
             // Build cache key including user context for visibility
-            // Version 2 includes averageStars in response
             string userId = userContext.UserId ?? "anonymous";
             string cacheKey = $"categories:v2:{userId}:{request.Search ?? "all"}";
             int cacheTtlMinutes = categoryOptions.Value.CategoriesCacheTtlMinutes;
@@ -70,96 +84,70 @@ public static class GetCategories
                 return Result.Success(cachedResponse);
             }
 
-            // Query Categories table
-            IQueryable<Category> categoriesQuery = db.Categories.AsQueryable();
-
-            // Apply visibility filter: show global + user's private categories
-            if (!userContext.IsAuthenticated || string.IsNullOrEmpty(userContext.UserId))
+            // Get database connection
+            System.Data.Common.DbConnection connection = db.Database.GetDbConnection();
+            if (connection.State != System.Data.ConnectionState.Open)
             {
-                categoriesQuery = categoriesQuery.Where(c => !c.IsPrivate);
-            }
-            else
-            {
-                categoriesQuery = categoriesQuery.Where(c => !c.IsPrivate || (c.IsPrivate && c.CreatedBy == userContext.UserId));
+                await db.Database.OpenConnectionAsync(cancellationToken);
             }
 
-            // Apply search filter if provided
-            if (!string.IsNullOrWhiteSpace(request.Search))
-            {
-                string searchTerm = request.Search.Trim().ToLower();
-                categoriesQuery = categoriesQuery.Where(c => c.Name.ToLower().Contains(searchTerm));
-            }
-
-            // Get categories with item counts and average stars via join
-            // Calculate average stars using a more EF Core-friendly approach
+            // Build simplified SQL query
             string currentUserId = userContext.UserId ?? "";
+            bool isAuthenticated = userContext.IsAuthenticated && !string.IsNullOrEmpty(currentUserId);
+            string? searchPattern = string.IsNullOrWhiteSpace(request.Search) 
+                ? null 
+                : $"%{request.Search.Trim()}%";
             
-            // First get categories with counts (no sorting yet - we'll sort after calculating averages)
-            List<(Guid CategoryId, string CategoryName, int Count, bool IsPrivate)> categoriesData = await categoriesQuery
-                .Select(c => new
-                {
-                    c.Id,
-                    c.Name,
-                    Count = c.Items.Count(i => 
-                        // Only count items visible to user
-                        (!i.IsPrivate || (i.IsPrivate && i.CreatedBy == currentUserId))),
-                    c.IsPrivate
-                })
-                .Select(x => new ValueTuple<Guid, string, int, bool>(x.Id, x.Name, x.Count, x.IsPrivate))
-                .ToListAsync(cancellationToken);
+            string sql = @"
+                SELECT
+                    c.""Id"",
+                    c.""Name"" AS ""Category"",
+                    COUNT(DISTINCT i.""Id"")::int AS ""Count"",
+                    c.""IsPrivate"",
+                    CASE 
+                        WHEN AVG(r.""Stars"") IS NOT NULL THEN ROUND(AVG(r.""Stars"")::numeric, 2)::double precision
+                        ELSE NULL
+                    END AS ""AverageStars""
+                FROM ""items"" i
+                INNER JOIN ""Categories"" c
+                    ON c.""Id"" = i.""CategoryId""
+                LEFT JOIN ""Ratings"" r
+                    ON r.""ItemId"" = i.""Id""
+                    AND r.""Stars"" IS NOT NULL
+                WHERE i.""CategoryId"" IS NOT NULL
+                    AND (
+                        (@IsAuthenticated = false AND c.""IsPrivate"" = false AND i.""IsPrivate"" = false)
+                        OR (@IsAuthenticated = true AND (
+                            (c.""IsPrivate"" = false OR (c.""IsPrivate"" = true AND c.""CreatedBy"" = @CurrentUserId))
+                            AND (i.""IsPrivate"" = false OR (i.""IsPrivate"" = true AND i.""CreatedBy"" = @CurrentUserId))
+                        ))
+                    )
+                    AND (@SearchPattern IS NULL OR LOWER(c.""Name"") LIKE LOWER(@SearchPattern))
+                GROUP BY c.""Id"", c.""Name"", c.""IsPrivate""
+                ORDER BY
+                    COALESCE(AVG(r.""Stars""), -1) DESC,
+                    c.""Name"" ASC";
 
-            // Get all visible item IDs grouped by category
-            List<Guid> categoryIds = categoriesData.Select(c => c.CategoryId).ToList();
-            Dictionary<Guid, List<Guid>> categoryItemIds = await db.Items
-                .Where(i => i.CategoryId.HasValue && 
-                             categoryIds.Contains(i.CategoryId.Value) &&
-                             (!i.IsPrivate || (i.IsPrivate && i.CreatedBy == currentUserId)))
-                .GroupBy(i => i.CategoryId!.Value)
-                .Select(g => new { CategoryId = g.Key, ItemIds = g.Select(i => i.Id).ToList() })
-                .ToDictionaryAsync(x => x.CategoryId, x => x.ItemIds, cancellationToken);
-
-            // Get all ratings grouped by category
-            List<Guid> allItemIds = categoryItemIds.Values.SelectMany(x => x).Distinct().ToList();
-            Dictionary<Guid, List<int>> categoryRatings = new();
-            
-            if (allItemIds.Count > 0)
+            var parameters = new
             {
-                // Get all ratings for items in these categories, grouped by category
-                List<(Guid CategoryId, int Stars)> ratingsByCategory = await db.Items
-                    .Where(i => allItemIds.Contains(i.Id) && i.CategoryId.HasValue)
-                    .Join(db.Ratings.Where(r => r.Stars.HasValue),
-                        i => i.Id,
-                        r => r.ItemId,
-                        (i, r) => new ValueTuple<Guid, int>(i.CategoryId!.Value, r.Stars!.Value))
-                    .ToListAsync(cancellationToken);
-                
-                categoryRatings = ratingsByCategory
-                    .GroupBy(x => x.CategoryId)
-                    .ToDictionary(g => g.Key, g => g.Select(x => x.Stars).ToList());
-            }
+                IsAuthenticated = isAuthenticated,
+                CurrentUserId = currentUserId,
+                SearchPattern = searchPattern
+            };
 
-            // Calculate category averages
-            List<CategoryResponse> categoryResponses = categoriesData.Select(cat => 
-            {
-                double? averageStars = null;
-                
-                if (categoryRatings.TryGetValue(cat.CategoryId, out List<int>? ratings) && ratings.Count > 0)
-                {
-                    averageStars = Math.Round(ratings.Average(), 2);
-                }
-                
-                return new CategoryResponse(
-                    cat.CategoryName,
-                    cat.Count,
-                    cat.CategoryId,
-                    cat.IsPrivate,
-                    averageStars);
-            })
-            // Sort by highest average rating first, then by name
-            // Categories with null ratings go last
-            .OrderByDescending(c => c.AverageStars ?? -1)
-            .ThenBy(c => c.Category)
-            .ToList();
+            // Use an intermediate class for Dapper mapping, then convert to record
+            List<CategoryResponse> categoryResponses = (await connection.QueryAsync<CategoryRow>(
+                new CommandDefinition(
+                    sql,
+                    parameters,
+                    cancellationToken: cancellationToken)))
+                .Select(row => new CategoryResponse(
+                    row.Id,
+                    row.Category,
+                    row.Count,
+                    row.IsPrivate,
+                    row.AverageStars))
+                .ToList();
 
             Response response = new(categoryResponses);
 

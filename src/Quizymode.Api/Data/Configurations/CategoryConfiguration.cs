@@ -33,6 +33,10 @@ internal sealed class CategoryConfiguration : IEntityTypeConfiguration<Category>
         // Unique index on Name to ensure category names are unique
         builder.HasIndex(x => x.Name)
             .IsUnique();
+
+        // Indexes for visibility filtering
+        builder.HasIndex(x => x.IsPrivate);
+        builder.HasIndex(x => new { x.IsPrivate, x.CreatedBy });
     }
 }
 

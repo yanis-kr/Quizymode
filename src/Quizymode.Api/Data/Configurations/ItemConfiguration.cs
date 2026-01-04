@@ -78,6 +78,10 @@ internal sealed class ItemConfiguration : IEntityTypeConfiguration<Item>
         builder.HasIndex(x => x.FuzzyBucket);
         builder.HasIndex(x => x.CreatedAt);
         builder.HasIndex(x => x.CategoryId);
+        
+        // Composite indexes for category queries with visibility filtering
+        builder.HasIndex(x => new { x.CategoryId, x.IsPrivate });
+        builder.HasIndex(x => new { x.IsPrivate, x.CreatedBy });
     }
 }
 
