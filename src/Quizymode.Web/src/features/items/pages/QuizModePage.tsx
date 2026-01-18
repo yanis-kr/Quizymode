@@ -487,7 +487,7 @@ const QuizModePage = () => {
 
               {/* Collection Controls */}
               {showAnswer && isAuthenticated && (
-                <div className="mt-4">
+                <div className="mt-4 flex items-center gap-2 flex-wrap">
                   <button
                     onClick={() =>
                       setSelectedItemForCollections(currentItem.id)
@@ -497,6 +497,20 @@ const QuizModePage = () => {
                   >
                     <FolderIcon className="h-5 w-5" />
                   </button>
+                  {currentItem.collections && currentItem.collections.length > 0 && (
+                    <div className="flex items-center gap-2 flex-wrap">
+                      {currentItem.collections.map((collection) => (
+                        <button
+                          key={collection.id}
+                          onClick={() => navigate(`/collections?selected=${collection.id}`)}
+                          className="inline-flex items-center px-2 py-1 rounded text-xs font-medium bg-emerald-100 text-emerald-800 hover:bg-emerald-200 transition-colors"
+                          title={`Collection: ${collection.name}`}
+                        >
+                          {collection.name}
+                        </button>
+                      ))}
+                    </div>
+                  )}
                 </div>
               )}
             </div>

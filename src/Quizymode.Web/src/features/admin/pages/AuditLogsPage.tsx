@@ -24,7 +24,7 @@ const AuditLogsPage = () => {
   const { isAuthenticated, isAdmin } = useAuth();
   // By default, all event types are selected
   const [selectedActions, setSelectedActions] = useState<AuditAction[]>([...AUDIT_ACTIONS]);
-  const [filterMode, setFilterMode] = useState<"all" | "none" | "specific">("specific");
+  const [filterMode, setFilterMode] = useState<"all" | "none" | "specific">("all");
   const [page, setPage] = useState(1);
   const pageSize = 50;
 
@@ -51,9 +51,9 @@ const AuditLogsPage = () => {
   };
 
   const { data, isLoading, error, refetch } = useQuery({
-    queryKey: ['auditLogs', selectedActions, page],
+    queryKey: ['auditLogs', filterMode, selectedActions, page],
     queryFn: () => adminApi.getAuditLogs(
-      filterMode === "none" ? [] : (selectedActions.length > 0 ? selectedActions : undefined),
+      filterMode === "none" ? [] : (filterMode === "all" ? undefined : (selectedActions.length > 0 ? selectedActions : undefined)),
       page,
       pageSize
     ),

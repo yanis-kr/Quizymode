@@ -1,8 +1,8 @@
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
 import { collectionsApi } from "@/api/collections";
 import { useAuth } from "@/contexts/AuthContext";
-import { Navigate, Link } from "react-router-dom";
+import { Navigate, Link, useSearchParams } from "react-router-dom";
 import {
   EyeIcon,
   AcademicCapIcon,
@@ -16,6 +16,9 @@ const CollectionsPage = () => {
   const queryClient = useQueryClient();
   const [showCreateModal, setShowCreateModal] = useState(false);
   const [collectionName, setCollectionName] = useState("");
+  const [searchParams] = useSearchParams();
+  const selectedCollectionId = searchParams.get("selected");
+  const selectedCollectionRef = useRef<HTMLDivElement>(null);
 
   const { data, isLoading, error, refetch } = useQuery({
     queryKey: ["collections"],
@@ -23,6 +26,18 @@ const CollectionsPage = () => {
     enabled: isAuthenticated && !authLoading,
     retry: false, // Don't retry if auth fails
   });
+
+  // Scroll to selected collection when data is loaded
+  useEffect(() => {
+    if (selectedCollectionId && data?.collections && selectedCollectionRef.current) {
+      setTimeout(() => {
+        selectedCollectionRef.current?.scrollIntoView({
+          behavior: "smooth",
+          block: "center",
+        });
+      }, 100);
+    }
+  }, [selectedCollectionId, data?.collections]);
 
   const createMutation = useMutation({
     mutationFn: (name: string) => collectionsApi.create({ name }),
@@ -174,7 +189,12 @@ const CollectionsPage = () => {
           {data.collections.map((collection) => (
             <div
               key={collection.id}
-              className="bg-white overflow-hidden shadow rounded-lg hover:shadow-lg transition-shadow p-6"
+              ref={selectedCollectionId === collection.id ? selectedCollectionRef : null}
+              className={`bg-white overflow-hidden shadow rounded-lg hover:shadow-lg transition-shadow p-6 ${
+                selectedCollectionId === collection.id
+                  ? "ring-2 ring-indigo-500 ring-offset-2"
+                  : ""
+              }`}
             >
               <div className="flex justify-between items-start mb-4">
                 <Link to={`/collections/${collection.id}`} className="flex-1">

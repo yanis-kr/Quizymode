@@ -1,6 +1,7 @@
 import { StarIcon as StarIconSolid } from "@heroicons/react/24/solid";
 import { ratingsApi } from "@/api/ratings";
 import { useQuery } from "@tanstack/react-query";
+import { useNavigate } from "react-router-dom";
 import type { ItemResponse, KeywordResponse, ItemCollectionResponse } from "@/types/api";
 
 interface ItemListCardProps {
@@ -119,13 +120,7 @@ const KeywordsAndCollectionsSection = ({
       {hasCollections && (
         <>
           {collections!.map((collection: ItemCollectionResponse) => (
-            <span
-              key={collection.id}
-              className="inline-flex items-center px-2 py-1 rounded text-xs font-medium bg-emerald-100 text-emerald-800"
-              title={`Collection: ${collection.name}`}
-            >
-              {collection.name}
-            </span>
+            <CollectionChip key={collection.id} collection={collection} />
           ))}
         </>
       )}
@@ -133,6 +128,24 @@ const KeywordsAndCollectionsSection = ({
   );
 };
 
+
+const CollectionChip = ({
+  collection,
+}: {
+  collection: ItemCollectionResponse;
+}) => {
+  const navigate = useNavigate();
+
+  return (
+    <button
+      onClick={() => navigate(`/collections?selected=${collection.id}`)}
+      className="inline-flex items-center px-2 py-1 rounded text-xs font-medium bg-emerald-100 text-emerald-800 hover:bg-emerald-200 transition-colors"
+      title={`Collection: ${collection.name} (click to view)`}
+    >
+      {collection.name}
+    </button>
+  );
+};
 
 const KeywordChip = ({
   keyword,
