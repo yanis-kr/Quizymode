@@ -1,8 +1,8 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
 import { collectionsApi } from "@/api/collections";
 import { useAuth } from "@/contexts/AuthContext";
-import { XMarkIcon } from "@heroicons/react/24/outline";
+import { XMarkIcon, PlusIcon } from "@heroicons/react/24/outline";
 
 interface ItemCollectionsModalProps {
   isOpen: boolean;
@@ -33,10 +33,11 @@ const ItemCollectionsModal = ({
     enabled: isAuthenticated && isOpen,
   });
 
-  const { data: itemCollectionsData, isLoading: isLoadingItemCollections } = useQuery({
+  const { data: itemCollectionsData, isLoading: isLoadingItemCollections, refetch: refetchItemCollections } = useQuery({
     queryKey: ["itemCollections", singleItemId],
     queryFn: () => collectionsApi.getCollectionsForItem(singleItemId!),
     enabled: isAuthenticated && isOpen && !isBulkMode && !!singleItemId,
+    refetchOnMount: 'always',
   });
 
   const removeFromCollectionMutation = useMutation({
@@ -52,9 +53,22 @@ const ItemCollectionsModal = ({
         await collectionsApi.removeItem(collectionId, singleItemId);
       }
     },
-    onSuccess: () => {
-      if (singleItemId) {
-        queryClient.invalidateQueries({ queryKey: ["itemCollections", singleItemId] });
+    onSuccess: async () => {
+      if (isBulkMode) {
+        // Refetch item collections queries for all items in bulk mode
+        await Promise.all(
+          multipleItemIds.map((itemId) =>
+            queryClient.refetchQueries({ queryKey: ["itemCollections", itemId] })
+          )
+        );
+        // Update bulk selected collections state
+        setBulkSelectedCollections((prev) => {
+          const newSet = new Set(prev);
+          // Note: In bulk mode, we don't track removals, so we keep the state as is
+          return newSet;
+        });
+      } else if (singleItemId) {
+        await queryClient.refetchQueries({ queryKey: ["itemCollections", singleItemId] });
       }
       queryClient.invalidateQueries({ queryKey: ["collections"] });
     },
@@ -63,7 +77,7 @@ const ItemCollectionsModal = ({
   const createCollectionMutation = useMutation({
     mutationFn: (name: string) => collectionsApi.create({ name }),
     onSuccess: async (newCollection) => {
-      queryClient.invalidateQueries({ queryKey: ["collections"] });
+      await queryClient.refetchQueries({ queryKey: ["collections"] });
       // Automatically add item(s) to the newly created collection
       if (isBulkMode) {
         await Promise.all(
@@ -71,8 +85,18 @@ const ItemCollectionsModal = ({
             collectionsApi.addItem(newCollection.id, { itemId: id })
           )
         );
+        // Update bulk selected collections state
+        setBulkSelectedCollections((prev) => new Set(prev).add(newCollection.id));
+        // Refetch item collections queries for all items in bulk mode
+        await Promise.all(
+          multipleItemIds.map((itemId) =>
+            queryClient.refetchQueries({ queryKey: ["itemCollections", itemId] })
+          )
+        );
       } else if (singleItemId) {
         await collectionsApi.addItem(newCollection.id, { itemId: singleItemId });
+        // Refetch item collections query to update checkbox state
+        await queryClient.refetchQueries({ queryKey: ["itemCollections", singleItemId] });
       }
       setNewCollectionName("");
     },
@@ -91,13 +115,19 @@ const ItemCollectionsModal = ({
         await collectionsApi.addItem(collectionId, { itemId: singleItemId });
       }
     },
-    onSuccess: (_, collectionId) => {
+    onSuccess: async (_, collectionId) => {
       // Update bulk selected collections state on success
       if (isBulkMode) {
         setBulkSelectedCollections((prev) => new Set(prev).add(collectionId));
+        // Refetch item collections queries for all items in bulk mode
+        await Promise.all(
+          multipleItemIds.map((itemId) =>
+            queryClient.refetchQueries({ queryKey: ["itemCollections", itemId] })
+          )
+        );
       }
       if (singleItemId) {
-        queryClient.invalidateQueries({ queryKey: ["itemCollections", singleItemId] });
+        await queryClient.refetchQueries({ queryKey: ["itemCollections", singleItemId] });
       }
       queryClient.invalidateQueries({ queryKey: ["collections"] });
     },
@@ -117,18 +147,34 @@ const ItemCollectionsModal = ({
 
   const handleToggleCollection = (collectionId: string, isChecked: boolean) => {
     if (isChecked) {
-      // Optimistically update state for immediate UI feedback
+      // Add to collection
       if (isBulkMode) {
+        // Optimistically update state for immediate UI feedback
         setBulkSelectedCollections((prev) => new Set(prev).add(collectionId));
       }
       addToCollectionMutation.mutate(collectionId);
     } else {
-      // In bulk mode, only allow adding (not removing)
-      if (!isBulkMode) {
+      // Remove from collection
+      if (isBulkMode) {
+        // In bulk mode, we don't allow removing (only adding)
+        // But if somehow we get here, we should handle it
+        setBulkSelectedCollections((prev) => {
+          const newSet = new Set(prev);
+          newSet.delete(collectionId);
+          return newSet;
+        });
+      } else {
         removeFromCollectionMutation.mutate(collectionId);
       }
     }
   };
+
+  // Refetch item collections when modal opens in single-item mode
+  useEffect(() => {
+    if (isOpen && !isBulkMode && singleItemId && refetchItemCollections) {
+      refetchItemCollections();
+    }
+  }, [isOpen, isBulkMode, singleItemId, refetchItemCollections]);
 
   if (!isOpen) return null;
 
@@ -164,16 +210,24 @@ const ItemCollectionsModal = ({
         ) : (
           <div className="space-y-4">
             {/* Create New Collection Textbox */}
-            <div>
+            <div className="flex gap-2">
               <input
                 type="text"
                 value={newCollectionName}
                 onChange={(e) => setNewCollectionName(e.target.value)}
                 onKeyPress={handleKeyPress}
-                placeholder="Enter collection name and press Enter"
-                className="w-full px-3 py-2 border border-gray-300 rounded-md text-sm"
+                placeholder="Enter collection name"
+                className="flex-1 px-3 py-2 border border-gray-300 rounded-md text-sm"
                 disabled={createCollectionMutation.isPending}
               />
+              <button
+                onClick={handleCreateCollection}
+                disabled={!newCollectionName.trim() || createCollectionMutation.isPending}
+                className="px-4 py-2 bg-indigo-600 text-white rounded-md hover:bg-indigo-700 disabled:opacity-50 disabled:cursor-not-allowed flex items-center gap-1"
+                title="Add new collection"
+              >
+                <PlusIcon className="h-5 w-5" />
+              </button>
             </div>
 
             {/* All Collections with Checkboxes */}

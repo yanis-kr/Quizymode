@@ -3,7 +3,6 @@ import {
   useParams,
   useNavigate,
   Link,
-  useSearchParams,
 } from "react-router-dom";
 import { useQuery } from "@tanstack/react-query";
 import { itemsApi } from "@/api/items";

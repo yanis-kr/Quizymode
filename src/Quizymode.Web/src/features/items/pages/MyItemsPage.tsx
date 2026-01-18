@@ -17,7 +17,7 @@ import {
   PlusIcon,
 } from "@heroicons/react/24/outline";
 import ItemCollectionsModal from "@/components/ItemCollectionsModal";
-import { collectionsApi } from "@/api/collections";
+import ItemListCard from "@/components/ItemListCard";
 
 const MyItemsPage = () => {
   const { isAuthenticated, isAdmin } = useAuth();
@@ -581,62 +581,15 @@ const MyItemsPage = () => {
         <>
           <div className="space-y-4 mb-6">
             {displayItems.map((item) => (
-              <div key={item.id} className="bg-white shadow rounded-lg p-6">
-                <div className="flex justify-between items-start">
-                  <div className="flex items-start space-x-3 flex-1">
-                    <input
-                      type="checkbox"
-                      checked={selectedItemIds.has(item.id)}
-                      onChange={() => handleItemToggle(item.id)}
-                      className="mt-1 h-4 w-4 text-indigo-600 border-gray-300 rounded focus:ring-indigo-500"
-                    />
-                    <div className="flex-1">
-                      <h3 className="text-lg font-medium text-gray-900">
-                        {item.question}
-                      </h3>
-                      <p className="mt-2 text-sm text-gray-500">
-                        {item.category}
-                      </p>
-                      <p className="mt-1 text-sm text-gray-500">
-                        {item.isPrivate ? "Private" : "Global"}
-                      </p>
-                      <p className="mt-2 text-sm text-gray-700">
-                        <strong>Answer:</strong> {item.correctAnswer}
-                      </p>
-                      {/* Keywords */}
-                      {item.keywords && item.keywords.length > 0 && (
-                        <div className="mt-3 flex flex-wrap gap-2">
-                        {item.keywords.map((keyword) => (
-                          <button
-                            key={keyword.id}
-                            onClick={() => handleKeywordClick(keyword.name)}
-                            className={`inline-flex items-center px-2 py-1 rounded text-xs font-medium transition-colors ${
-                              selectedKeywords.includes(keyword.name)
-                                ? "bg-indigo-600 text-white"
-                                : keyword.isPrivate
-                                ? "bg-purple-100 text-purple-800 hover:bg-purple-200"
-                                : "bg-blue-100 text-blue-800 hover:bg-blue-200"
-                            }`}
-                            title={
-                              keyword.isPrivate
-                                ? "Private keyword (click to filter)"
-                                : "Global keyword (click to filter)"
-                            }
-                          >
-                            {keyword.name}
-                            {keyword.isPrivate && (
-                              <span className="ml-1 text-[10px]">🔒</span>
-                            )}
-                          </button>
-                          ))}
-                        </div>
-                      )}
-
-                      {/* Collections */}
-                      <ItemCollectionsDisplay itemId={item.id} />
-                    </div>
-                  </div>
-                  <div className="flex space-x-1 ml-4">
+              <ItemListCard
+                key={item.id}
+                item={item}
+                isSelected={selectedItemIds.has(item.id)}
+                onToggleSelect={() => handleItemToggle(item.id)}
+                onKeywordClick={handleKeywordClick}
+                selectedKeywords={selectedKeywords}
+                actions={
+                  <>
                     <button
                       onClick={() => navigate(`/explore/item/${item.id}`)}
                       className="p-2 text-indigo-600 hover:bg-indigo-50 rounded-md"
@@ -700,9 +653,9 @@ const MyItemsPage = () => {
                     >
                       <TrashIcon className="h-5 w-5" />
                     </button>
-                  </div>
-                </div>
-              </div>
+                  </>
+                }
+              />
             ))}
           </div>
 
@@ -748,6 +701,10 @@ const MyItemsPage = () => {
         <ItemCollectionsModal
           isOpen={selectedItemsForBulkCollections.length > 0}
           onClose={() => {
+            // Refetch item collections for all items that were in bulk operation
+            selectedItemsForBulkCollections.forEach((itemId) => {
+              queryClient.refetchQueries({ queryKey: ["itemCollections", itemId] });
+            });
             setSelectedItemsForBulkCollections([]);
             setSelectedItemIds(new Set());
           }}
@@ -759,31 +716,4 @@ const MyItemsPage = () => {
 };
 
 // Component to display collections for an item
-const ItemCollectionsDisplay = ({ itemId }: { itemId: string }) => {
-  const { data: collectionsData } = useQuery({
-    queryKey: ["itemCollections", itemId],
-    queryFn: () => collectionsApi.getCollectionsForItem(itemId),
-  });
-
-  const collections = collectionsData?.collections || [];
-
-  if (collections.length === 0) {
-    return null;
-  }
-
-  return (
-    <div className="mt-3 flex flex-wrap gap-2">
-      {collections.map((collection) => (
-        <span
-          key={collection.id}
-          className="inline-flex items-center px-2 py-1 rounded text-xs font-medium bg-green-100 text-green-800"
-          title={`Collection: ${collection.name}`}
-        >
-          {collection.name}
-        </span>
-      ))}
-    </div>
-  );
-};
-
 export default MyItemsPage;

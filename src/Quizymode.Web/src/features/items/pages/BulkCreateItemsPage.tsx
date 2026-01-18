@@ -217,7 +217,7 @@ const BulkCreateItemsPage = () => {
                   (k: any): k is { name: string } =>
                     k !== null && k.name.length > 0
                 );
-              if (processedKeywords.length === 0) {
+              if (processedKeywords && processedKeywords.length === 0) {
                 processedKeywords = undefined;
               }
             }

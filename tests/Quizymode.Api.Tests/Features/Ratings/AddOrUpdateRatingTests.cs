@@ -1,5 +1,6 @@
 using FluentAssertions;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Caching.Memory;
 using Moq;
 using Quizymode.Api.Features.Ratings;
 using Quizymode.Api.Services;
@@ -13,12 +14,14 @@ namespace Quizymode.Api.Tests.Features.Ratings;
 public sealed class AddOrUpdateRatingTests : DatabaseTestFixture
 {
     private readonly Mock<IUserContext> _userContextMock;
+    private readonly IMemoryCache _memoryCache;
 
     public AddOrUpdateRatingTests()
     {
         _userContextMock = new Mock<IUserContext>();
         _userContextMock.Setup(x => x.UserId).Returns("test-user-id");
         _userContextMock.Setup(x => x.IsAuthenticated).Returns(true);
+        _memoryCache = new MemoryCache(new MemoryCacheOptions());
     }
 
     [Fact]
@@ -36,6 +39,7 @@ public sealed class AddOrUpdateRatingTests : DatabaseTestFixture
             request,
             DbContext,
             _userContextMock.Object,
+            _memoryCache,
             CancellationToken.None);
 
         // Assert
@@ -66,6 +70,7 @@ public sealed class AddOrUpdateRatingTests : DatabaseTestFixture
             request,
             DbContext,
             _userContextMock.Object,
+            _memoryCache,
             CancellationToken.None);
 
         // Assert
@@ -104,6 +109,7 @@ public sealed class AddOrUpdateRatingTests : DatabaseTestFixture
             request,
             DbContext,
             _userContextMock.Object,
+            _memoryCache,
             CancellationToken.None);
 
         // Assert
@@ -129,6 +135,7 @@ public sealed class AddOrUpdateRatingTests : DatabaseTestFixture
             request,
             DbContext,
             _userContextMock.Object,
+            _memoryCache,
             CancellationToken.None);
 
         // Assert
@@ -156,6 +163,7 @@ public sealed class AddOrUpdateRatingTests : DatabaseTestFixture
             request,
             DbContext,
             userContextWithoutUserId.Object,
+            _memoryCache,
             CancellationToken.None);
 
         // Assert
