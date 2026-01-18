@@ -4,6 +4,7 @@ using Microsoft.Extensions.Options;
 using Quizymode.Api.Data;
 using Quizymode.Api.Features.Items.AddBulk;
 using Quizymode.Api.Shared.Kernel;
+using Quizymode.Api.Shared.Models;
 using Quizymode.Api.Shared.Options;
 
 namespace Quizymode.Api.Services;
@@ -192,6 +193,9 @@ internal sealed class DatabaseSeederHostedService(
                     totalItemsProcessed,
                     totalItemsCreated);
 
+                // Add rating 5 for items with Category=Science
+                await SeedScienceRatingsAsync(db, cancellationToken);
+
                 _logger.LogInformation("Database seeding completed successfully.");
             }
             else
@@ -255,6 +259,44 @@ internal sealed class DatabaseSeederHostedService(
         }
 
         return null;
+    }
+
+    private async Task SeedScienceRatingsAsync(ApplicationDbContext db, CancellationToken cancellationToken)
+    {
+        // Find the Science category
+        Category? scienceCategory = await db.Categories
+            .FirstOrDefaultAsync(c => c.Name == "Science", cancellationToken);
+
+        if (scienceCategory is null)
+        {
+            _logger.LogInformation("Science category not found. Skipping rating seeding.");
+            return; // No Science category found, skip rating seeding
+        }
+
+        // Get all items with Science category
+        List<Item> scienceItems = await db.Items
+            .Where(i => i.CategoryId == scienceCategory.Id)
+            .ToListAsync(cancellationToken);
+
+        if (scienceItems.Count == 0)
+        {
+            _logger.LogInformation("No Science items found. Skipping rating seeding.");
+            return; // No Science items found
+        }
+
+        // Add rating 5 for each Science item
+        List<Rating> ratings = scienceItems.Select(item => new Rating
+        {
+            ItemId = item.Id,
+            Stars = 5,
+            CreatedBy = "seeder",
+            CreatedAt = DateTime.UtcNow
+        }).ToList();
+
+        await db.Ratings.AddRangeAsync(ratings, cancellationToken);
+        await db.SaveChangesAsync(cancellationToken);
+        
+        _logger.LogInformation("Added {Count} ratings (5 stars) for Science category items.", ratings.Count);
     }
 }
 

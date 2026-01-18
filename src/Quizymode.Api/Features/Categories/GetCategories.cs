@@ -1,12 +1,9 @@
 using Dapper;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Caching.Memory;
-using Microsoft.Extensions.Options;
 using Quizymode.Api.Data;
 using Quizymode.Api.Infrastructure;
 using Quizymode.Api.Services;
 using Quizymode.Api.Shared.Kernel;
-using Quizymode.Api.Shared.Options;
 
 namespace Quizymode.Api.Features.Categories;
 
@@ -40,7 +37,7 @@ public static class GetCategories
             app.MapGet("categories", Handler)
                 .WithTags("Categories")
                 .WithSummary("Get unique categories")
-                .WithDescription("Returns unique categories with item counts and average stars, sorted by highest average rating first, then by name. Results are cached.")
+                .WithDescription("Returns unique categories with item counts and average stars, sorted by highest average rating first, then by name.")
                 .WithOpenApi()
                 .Produces<Response>(StatusCodes.Status200OK);
         }
@@ -49,13 +46,11 @@ public static class GetCategories
             string? search,
             ApplicationDbContext db,
             IUserContext userContext,
-            IMemoryCache cache,
-            IOptions<CategoryOptions> categoryOptions,
             CancellationToken cancellationToken)
         {
             QueryRequest request = new(search);
 
-            Result<Response> result = await HandleAsync(request, db, userContext, cache, categoryOptions, cancellationToken);
+            Result<Response> result = await HandleAsync(request, db, userContext, cancellationToken);
 
             return result.Match(
                 value => Results.Ok(value),
@@ -67,23 +62,10 @@ public static class GetCategories
         QueryRequest request,
         ApplicationDbContext db,
         IUserContext userContext,
-        IMemoryCache cache,
-        IOptions<CategoryOptions> categoryOptions,
         CancellationToken cancellationToken)
     {
         try
         {
-            // Build cache key including user context for visibility
-            string userId = userContext.UserId ?? "anonymous";
-            string cacheKey = $"categories:v2:{userId}:{request.Search ?? "all"}";
-            int cacheTtlMinutes = categoryOptions.Value.CategoriesCacheTtlMinutes;
-
-            // Try cache first
-            if (cache.TryGetValue(cacheKey, out Response? cachedResponse) && cachedResponse is not null)
-            {
-                return Result.Success(cachedResponse);
-            }
-
             // Get database connection
             System.Data.Common.DbConnection connection = db.Database.GetDbConnection();
             if (connection.State != System.Data.ConnectionState.Open)
@@ -108,7 +90,7 @@ public static class GetCategories
                         WHEN AVG(r.""Stars"") IS NOT NULL THEN ROUND(AVG(r.""Stars"")::numeric, 2)::double precision
                         ELSE NULL
                     END AS ""AverageStars""
-                FROM ""items"" i
+                FROM ""Items"" i
                 INNER JOIN ""Categories"" c
                     ON c.""Id"" = i.""CategoryId""
                 LEFT JOIN ""Ratings"" r
@@ -150,13 +132,6 @@ public static class GetCategories
                 .ToList();
 
             Response response = new(categoryResponses);
-
-            // Cache the result
-            MemoryCacheEntryOptions cacheOptions = new MemoryCacheEntryOptions
-            {
-                AbsoluteExpirationRelativeToNow = TimeSpan.FromMinutes(cacheTtlMinutes)
-            };
-            cache.Set(cacheKey, response, cacheOptions);
 
             return Result.Success(response);
         }

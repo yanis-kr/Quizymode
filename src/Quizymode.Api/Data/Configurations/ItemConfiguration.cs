@@ -8,7 +8,7 @@ internal sealed class ItemConfiguration : IEntityTypeConfiguration<Item>
 {
     public void Configure(EntityTypeBuilder<Item> builder)
     {
-        builder.ToTable("items");
+        builder.ToTable("Items");
 
         builder.HasKey(x => x.Id);
 
