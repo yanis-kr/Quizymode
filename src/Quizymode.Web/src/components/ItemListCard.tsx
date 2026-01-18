@@ -2,7 +2,8 @@ import { useQuery } from "@tanstack/react-query";
 import { StarIcon as StarIconSolid } from "@heroicons/react/24/solid";
 import { collectionsApi } from "@/api/collections";
 import { ratingsApi } from "@/api/ratings";
-import type { ItemResponse, KeywordResponse } from "@/types/api";
+import { useAuth } from "@/contexts/AuthContext";
+import type { ItemResponse, KeywordResponse, CollectionResponse } from "@/types/api";
 
 interface ItemListCardProps {
   item: ItemResponse;
@@ -48,20 +49,12 @@ const ItemListCard = ({
               <strong>Answer:</strong> {item.correctAnswer}
             </p>
 
-            {item.keywords && item.keywords.length > 0 && (
-              <div className="mt-3 flex flex-wrap gap-2">
-                {item.keywords.map((keyword) => (
-                  <KeywordChip
-                    key={keyword.id}
-                    keyword={keyword}
-                    onClick={onKeywordClick}
-                    isSelected={selectedKeywords?.includes(keyword.name) ?? false}
-                  />
-                ))}
-              </div>
-            )}
-
-            <ItemCollectionsChips itemId={item.id} />
+            <KeywordsAndCollectionsSection
+              keywords={item.keywords}
+              itemId={item.id}
+              onKeywordClick={onKeywordClick}
+              selectedKeywords={selectedKeywords}
+            />
           </div>
         </div>
         {actions && <div className="flex space-x-1 ml-4">{actions}</div>}
@@ -93,33 +86,87 @@ const ItemAverageStars = ({ itemId }: { itemId: string }) => {
   );
 };
 
-const ItemCollectionsChips = ({ itemId }: { itemId: string }) => {
-  const { data: collectionsData } = useQuery({
+const KeywordsAndCollectionsSection = ({
+  keywords,
+  itemId,
+  onKeywordClick,
+  selectedKeywords,
+}: {
+  keywords?: KeywordResponse[];
+  itemId: string;
+  onKeywordClick?: (keywordName: string) => void;
+  selectedKeywords?: string[];
+}) => {
+  const { isAuthenticated } = useAuth();
+  
+  const { data: collectionsData, isLoading, error } = useQuery({
     queryKey: ["itemCollections", itemId],
-    queryFn: () => collectionsApi.getCollectionsForItem(itemId),
+    queryFn: async () => {
+      try {
+        return await collectionsApi.getCollectionsForItem(itemId);
+      } catch (err: any) {
+        // Handle 404 as "no collections" rather than an error
+        if (err?.response?.status === 404) {
+          return { collections: [] };
+        }
+        // Re-throw other errors
+        throw err;
+      }
+    },
+    enabled: isAuthenticated && !!itemId,
     refetchOnMount: "always",
+    retry: false,
   });
 
-  const collections = collectionsData?.collections || [];
+  // Handle the response - check both camelCase and PascalCase just in case
+  const collections = collectionsData?.collections || (collectionsData as any)?.Collections || [];
+  const hasKeywords = keywords && keywords.length > 0;
+  const hasCollections = collections.length > 0;
 
-  if (collections.length === 0) {
+  // Only show error for non-404 errors (server errors, network issues, etc.)
+  const showError = error && (error as any)?.response?.status !== 404;
+
+  // Always show the container if there are keywords, even if collections are loading
+  if (!hasKeywords && !hasCollections && !isLoading && !showError) {
     return null;
   }
 
   return (
-    <div className="mt-3 flex flex-wrap gap-2">
-      {collections.map((collection) => (
-        <span
-          key={collection.id}
-          className="inline-flex items-center px-2 py-1 rounded text-xs font-medium bg-emerald-100 text-emerald-800"
-          title={`Collection: ${collection.name}`}
-        >
-          {collection.name}
+    <div className="mt-3 flex flex-wrap gap-2 items-center">
+      {hasKeywords && (
+        <>
+          {keywords.map((keyword) => (
+            <KeywordChip
+              key={keyword.id}
+              keyword={keyword}
+              onClick={onKeywordClick}
+              isSelected={selectedKeywords?.includes(keyword.name) ?? false}
+            />
+          ))}
+        </>
+      )}
+      {hasCollections && (
+        <>
+          {collections.map((collection: CollectionResponse) => (
+            <span
+              key={collection.id}
+              className="inline-flex items-center px-2 py-1 rounded text-xs font-medium bg-emerald-100 text-emerald-800"
+              title={`Collection: ${collection.name}`}
+            >
+              {collection.name}
+            </span>
+          ))}
+        </>
+      )}
+      {showError && (
+        <span className="text-xs text-red-500" title={`Failed to load collections: ${(error as any)?.message || "Unknown error"}`}>
+          (Error loading collections)
         </span>
-      ))}
+      )}
     </div>
   );
 };
+
 
 const KeywordChip = ({
   keyword,

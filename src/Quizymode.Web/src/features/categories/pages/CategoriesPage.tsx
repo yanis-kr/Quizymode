@@ -1,12 +1,13 @@
-import { useState, useEffect } from "react";
-import { useQuery, useQueryClient } from "@tanstack/react-query";
+import { useState } from "react";
+import { useQuery } from "@tanstack/react-query";
 import { useNavigate } from "react-router-dom";
 import { categoriesApi } from "@/api/categories";
 import { itemsApi } from "@/api/items";
 import LoadingSpinner from "@/components/LoadingSpinner";
 import ErrorMessage from "@/components/ErrorMessage";
-import ItemListCard from "@/components/ItemListCard";
-import ItemCollectionsModal from "@/components/ItemCollectionsModal";
+import ItemListSection from "@/components/ItemListSection";
+import BulkItemCollectionsModal from "@/components/BulkItemCollectionsModal";
+import useItemSelection from "@/hooks/useItemSelection";
 import {
   AcademicCapIcon,
   ListBulletIcon,
@@ -21,14 +22,10 @@ const CategoriesPage = () => {
     "actions"
   );
   const [itemsPage, setItemsPage] = useState(1);
-  const [selectedItemIds, setSelectedItemIds] = useState<Set<string>>(
-    new Set()
-  );
   const [selectedItemsForBulkCollections, setSelectedItemsForBulkCollections] =
     useState<string[]>([]);
   const pageSize = 10;
   const navigate = useNavigate();
-  const queryClient = useQueryClient();
 
   const { data, isLoading, error, refetch } = useQuery({
     queryKey: ["categories", search],
@@ -39,14 +36,12 @@ const CategoriesPage = () => {
     setSelectedCategory(category);
     setCategoryView("actions");
     setItemsPage(1);
-    setSelectedItemIds(new Set());
   };
 
   const handleCategoryItems = (category: string) => {
     setSelectedCategory(category);
     setCategoryView("items");
     setItemsPage(1);
-    setSelectedItemIds(new Set());
   };
 
   const handleExplore = () => {
@@ -62,7 +57,6 @@ const CategoriesPage = () => {
   const handleBack = () => {
     setSelectedCategory(null);
     setCategoryView("actions");
-    setSelectedItemIds(new Set());
   };
 
   const {
@@ -83,36 +77,22 @@ const CategoriesPage = () => {
     enabled: !!selectedCategory && categoryView === "items",
   });
 
-  useEffect(() => {
-    setSelectedItemIds(new Set());
-  }, [itemsPage, selectedCategory, categoryView]);
-
-  const handleItemToggle = (itemId: string) => {
-    setSelectedItemIds((prev) => {
-      const newSet = new Set(prev);
-      if (newSet.has(itemId)) {
-        newSet.delete(itemId);
-      } else {
-        newSet.add(itemId);
-      }
-      return newSet;
-    });
-  };
-
-  const handleSelectAll = () => {
-    const pageItemIds = new Set(
-      (itemsData?.items || []).map((item) => item.id)
-    );
-    setSelectedItemIds(pageItemIds);
-  };
-
-  const handleDeselectAll = () => {
-    setSelectedItemIds(new Set());
-  };
+  const currentPageItemIds = (itemsData?.items || []).map((item) => item.id);
+  const {
+    selectedItemIds,
+    selectedIds,
+    toggleItem,
+    selectAll,
+    deselectAll,
+  } = useItemSelection(currentPageItemIds, [
+    itemsPage,
+    selectedCategory,
+    categoryView,
+  ]);
 
   const handleAddSelectedToCollection = () => {
-    if (selectedItemIds.size > 0) {
-      setSelectedItemsForBulkCollections(Array.from(selectedItemIds));
+    if (selectedIds.length > 0) {
+      setSelectedItemsForBulkCollections(selectedIds);
     }
   };
 
@@ -150,86 +130,21 @@ const CategoriesPage = () => {
           </h1>
 
           {itemsData?.items && itemsData.items.length > 0 ? (
-            <>
-              <div className="mb-4 bg-white rounded-lg shadow p-4">
-                <div className="flex flex-wrap items-center justify-between gap-4">
-                  <div className="flex items-center space-x-4 text-sm text-gray-700">
-                    <span>
-                      <strong>{selectedItemIds.size}</strong> selected
-                    </span>
-                    <span>
-                      <strong>{itemsData.items.length}</strong> on screen
-                    </span>
-                    <span>
-                      <strong>{itemsData.totalCount}</strong> total
-                    </span>
-                  </div>
-
-                  {itemsData.totalPages > 1 && (
-                    <div className="flex items-center space-x-2">
-                      <button
-                        onClick={() => setItemsPage((p) => Math.max(1, p - 1))}
-                        disabled={itemsPage === 1}
-                        className="px-3 py-1.5 text-sm bg-gray-200 text-gray-700 rounded-md hover:bg-gray-300 disabled:opacity-50 disabled:cursor-not-allowed"
-                        title="Previous page"
-                      >
-                        ‹
-                      </button>
-                      <span className="text-sm text-gray-700">
-                        Page {itemsPage} of {itemsData.totalPages}
-                      </span>
-                      <button
-                        onClick={() =>
-                          setItemsPage((p) =>
-                            Math.min(itemsData.totalPages, p + 1)
-                          )
-                        }
-                        disabled={itemsPage === itemsData.totalPages}
-                        className="px-3 py-1.5 text-sm bg-gray-200 text-gray-700 rounded-md hover:bg-gray-300 disabled:opacity-50 disabled:cursor-not-allowed"
-                        title="Next page"
-                      >
-                        ›
-                      </button>
-                    </div>
-                  )}
-
-                  <div className="flex flex-wrap items-center gap-2">
-                    <button
-                      onClick={handleSelectAll}
-                      className="px-3 py-1.5 text-sm font-medium text-indigo-600 bg-indigo-50 rounded-md hover:bg-indigo-100"
-                      disabled={itemsData.items.length === 0}
-                    >
-                      Select All
-                    </button>
-                    <button
-                      onClick={handleDeselectAll}
-                      className="px-3 py-1.5 text-sm font-medium text-gray-600 bg-gray-100 rounded-md hover:bg-gray-200"
-                      disabled={selectedItemIds.size === 0}
-                    >
-                      Deselect All
-                    </button>
-                    <button
-                      onClick={handleAddSelectedToCollection}
-                      className="px-3 py-1.5 text-sm font-medium text-white bg-blue-600 rounded-md hover:bg-blue-700"
-                      disabled={selectedItemIds.size === 0}
-                    >
-                      Add Selected to Collection
-                    </button>
-                  </div>
-                </div>
-              </div>
-
-              <div className="space-y-4 mb-6">
-                {itemsData.items.map((item) => (
-                  <ItemListCard
-                    key={item.id}
-                    item={item}
-                    isSelected={selectedItemIds.has(item.id)}
-                    onToggleSelect={() => handleItemToggle(item.id)}
-                  />
-                ))}
-              </div>
-            </>
+            <ItemListSection
+              items={itemsData.items}
+              totalCount={itemsData.totalCount}
+              page={itemsPage}
+              totalPages={itemsData.totalPages}
+              selectedItemIds={selectedItemIds}
+              onPrevPage={() => setItemsPage((p) => Math.max(1, p - 1))}
+              onNextPage={() =>
+                setItemsPage((p) => Math.min(itemsData.totalPages, p + 1))
+              }
+              onSelectAll={selectAll}
+              onDeselectAll={deselectAll}
+              onAddSelectedToCollection={handleAddSelectedToCollection}
+              onToggleSelect={toggleItem}
+            />
           ) : (
             <div className="text-center py-12">
               <p className="text-gray-500">No items found in this category.</p>
@@ -237,21 +152,13 @@ const CategoriesPage = () => {
           )}
         </div>
 
-        {selectedItemsForBulkCollections.length > 0 && (
-          <ItemCollectionsModal
-            isOpen={selectedItemsForBulkCollections.length > 0}
-            onClose={() => {
-              selectedItemsForBulkCollections.forEach((itemId) => {
-                queryClient.refetchQueries({
-                  queryKey: ["itemCollections", itemId],
-                });
-              });
-              setSelectedItemsForBulkCollections([]);
-              setSelectedItemIds(new Set());
-            }}
-            itemIds={selectedItemsForBulkCollections}
-          />
-        )}
+        <BulkItemCollectionsModal
+          itemIds={selectedItemsForBulkCollections}
+          onCloseComplete={() => {
+            setSelectedItemsForBulkCollections([]);
+            deselectAll();
+          }}
+        />
       </div>
     );
   }

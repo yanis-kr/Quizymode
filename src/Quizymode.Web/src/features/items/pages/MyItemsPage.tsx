@@ -6,6 +6,7 @@ import LoadingSpinner from "@/components/LoadingSpinner";
 import ErrorMessage from "@/components/ErrorMessage";
 import { useState, useEffect } from "react";
 import { categoriesApi } from "@/api/categories";
+import ItemCollectionsModal from "@/components/ItemCollectionsModal";
 import {
   EyeIcon,
   FolderIcon,
@@ -16,8 +17,9 @@ import {
   XMarkIcon,
   PlusIcon,
 } from "@heroicons/react/24/outline";
-import ItemCollectionsModal from "@/components/ItemCollectionsModal";
-import ItemListCard from "@/components/ItemListCard";
+import ItemListSection from "@/components/ItemListSection";
+import BulkItemCollectionsModal from "@/components/BulkItemCollectionsModal";
+import useItemSelection from "@/hooks/useItemSelection";
 
 const MyItemsPage = () => {
   const { isAuthenticated, isAdmin } = useAuth();
@@ -34,7 +36,6 @@ const MyItemsPage = () => {
     string | null
   >(null);
   const [selectedItemsForBulkCollections, setSelectedItemsForBulkCollections] = useState<string[]>([]);
-  const [selectedItemIds, setSelectedItemIds] = useState<Set<string>>(new Set());
   const [showFilters, setShowFilters] = useState(false);
   const [activeFilters, setActiveFilters] = useState<Set<string>>(new Set());
   const pageSize = 10;
@@ -93,32 +94,24 @@ const MyItemsPage = () => {
     selectedKeywords.length > 0 ||
     searchText !== "";
 
-  // Selection management
-  const handleItemToggle = (itemId: string) => {
-    setSelectedItemIds((prev) => {
-      const newSet = new Set(prev);
-      if (newSet.has(itemId)) {
-        newSet.delete(itemId);
-      } else {
-        newSet.add(itemId);
-      }
-      return newSet;
-    });
-  };
-
-  const handleSelectAll = () => {
-    // Select all items currently displayed on this page
-    const pageItemIds = new Set(displayItems.map((item) => item.id));
-    setSelectedItemIds(pageItemIds);
-  };
-
-  const handleDeselectAll = () => {
-    setSelectedItemIds(new Set());
-  };
+  const currentPageItemIds = displayItems.map((item) => item.id);
+  const {
+    selectedItemIds,
+    selectedIds,
+    toggleItem,
+    selectAll,
+    deselectAll,
+  } = useItemSelection(currentPageItemIds, [
+    page,
+    filterType,
+    selectedCategory,
+    searchText,
+    selectedKeywords,
+  ]);
 
   const handleAddSelectedToCollection = () => {
-    if (selectedItemIds.size > 0) {
-      setSelectedItemsForBulkCollections(Array.from(selectedItemIds));
+    if (selectedIds.length > 0) {
+      setSelectedItemsForBulkCollections(selectedIds);
     }
   };
 
@@ -176,13 +169,7 @@ const MyItemsPage = () => {
 
   useEffect(() => {
     setPage(1); // Reset to first page when filters change
-    setSelectedItemIds(new Set()); // Clear selections when filters change
   }, [filterType, selectedCategory, searchText, selectedKeywords]);
-
-  // Clear selections when page changes
-  useEffect(() => {
-    setSelectedItemIds(new Set());
-  }, [page]);
 
   // Track itemType in activeFilters
   useEffect(() => {
@@ -507,182 +494,90 @@ const MyItemsPage = () => {
       </div>
 
       {/* Selection Controls and Counts */}
-      {displayItems.length > 0 && (
-        <div className="mb-4 bg-white rounded-lg shadow p-4">
-          <div className="flex flex-wrap items-center justify-between gap-4">
-            {/* Counts Display */}
-            <div className="flex items-center space-x-4 text-sm text-gray-700">
-              <span>
-                <strong>{selectedItemIds.size}</strong> selected
-              </span>
-              <span>
-                <strong>{displayItems.length}</strong> on screen
-              </span>
-              <span>
-                <strong>{data?.totalCount || 0}</strong> total
-              </span>
-            </div>
-
-            {/* Pagination */}
-            {data && data.totalPages > 1 && (
-              <div className="flex items-center space-x-2">
-                <button
-                  onClick={() => setPage((p) => Math.max(1, p - 1))}
-                  disabled={page === 1}
-                  className="px-3 py-1.5 text-sm bg-gray-200 text-gray-700 rounded-md hover:bg-gray-300 disabled:opacity-50 disabled:cursor-not-allowed"
-                  title="Previous page"
-                >
-                  ‹
-                </button>
-                <span className="text-sm text-gray-700">
-                  Page {page} of {data.totalPages}
-                </span>
-                <button
-                  onClick={() => setPage((p) => Math.min(data.totalPages, p + 1))}
-                  disabled={page === data.totalPages}
-                  className="px-3 py-1.5 text-sm bg-gray-200 text-gray-700 rounded-md hover:bg-gray-300 disabled:opacity-50 disabled:cursor-not-allowed"
-                  title="Next page"
-                >
-                  ›
-                </button>
-              </div>
-            )}
-
-            {/* Group Controls */}
-            <div className="flex flex-wrap items-center gap-2">
-              <button
-                onClick={handleSelectAll}
-                className="px-3 py-1.5 text-sm font-medium text-indigo-600 bg-indigo-50 rounded-md hover:bg-indigo-100"
-                disabled={displayItems.length === 0}
-              >
-                Select All
-              </button>
-              <button
-                onClick={handleDeselectAll}
-                className="px-3 py-1.5 text-sm font-medium text-gray-600 bg-gray-100 rounded-md hover:bg-gray-200"
-                disabled={selectedItemIds.size === 0}
-              >
-                Deselect All
-              </button>
-              <button
-                onClick={handleAddSelectedToCollection}
-                className="px-3 py-1.5 text-sm font-medium text-white bg-blue-600 rounded-md hover:bg-blue-700"
-                disabled={selectedItemIds.size === 0}
-              >
-                Add Selected to Collection
-              </button>
-            </div>
-          </div>
-        </div>
-      )}
-
       {/* Items List */}
       {displayItems.length > 0 ? (
-        <>
-          <div className="space-y-4 mb-6">
-            {displayItems.map((item) => (
-              <ItemListCard
-                key={item.id}
-                item={item}
-                isSelected={selectedItemIds.has(item.id)}
-                onToggleSelect={() => handleItemToggle(item.id)}
-                onKeywordClick={handleKeywordClick}
-                selectedKeywords={selectedKeywords}
-                actions={
-                  <>
-                    <button
-                      onClick={() => navigate(`/explore/item/${item.id}`)}
-                      className="p-2 text-indigo-600 hover:bg-indigo-50 rounded-md"
-                      title="View item"
-                    >
-                      <EyeIcon className="h-5 w-5" />
-                    </button>
-                    <button
-                      onClick={() => navigate(`/quiz/item/${item.id}`)}
-                      className="p-2 text-purple-600 hover:bg-purple-50 rounded-md"
-                      title="Quiz mode"
-                    >
-                      <AcademicCapIcon className="h-5 w-5" />
-                    </button>
-                    <button
-                      onClick={() => setSelectedItemForCollections(item.id)}
-                      className="p-2 text-blue-600 hover:bg-blue-50 rounded-md"
-                      title="Manage collections"
-                    >
-                      <FolderIcon className="h-5 w-5" />
-                    </button>
-                    <button
-                      onClick={() => navigate(`/items/${item.id}/edit`)}
-                      disabled={!canEditDelete(item)}
-                      className={`p-2 rounded-md ${
-                        canEditDelete(item)
-                          ? "text-indigo-600 hover:bg-indigo-50"
-                          : "text-gray-400 cursor-not-allowed"
-                      }`}
-                      title={
-                        !canEditDelete(item)
-                          ? "Only admins can edit global items"
-                          : "Update item"
-                      }
-                    >
-                      <PencilIcon className="h-5 w-5" />
-                    </button>
-                    <button
-                      onClick={() => {
-                        if (
-                          window.confirm(
-                            "Are you sure you want to delete this item?"
-                          )
-                        ) {
-                          deleteMutation.mutate(item.id);
-                        }
-                      }}
-                      disabled={
-                        !canEditDelete(item) || deleteMutation.isPending
-                      }
-                      className={`p-2 rounded-md ${
-                        canEditDelete(item)
-                          ? "text-red-600 hover:bg-red-50"
-                          : "text-gray-400 cursor-not-allowed"
-                      }`}
-                      title={
-                        !canEditDelete(item)
-                          ? "Only admins can delete global items"
-                          : "Delete item"
-                      }
-                    >
-                      <TrashIcon className="h-5 w-5" />
-                    </button>
-                  </>
+        <ItemListSection
+          items={displayItems}
+          totalCount={data?.totalCount || 0}
+          page={page}
+          totalPages={data?.totalPages || 1}
+          selectedItemIds={selectedItemIds}
+          onPrevPage={() => setPage((p) => Math.max(1, p - 1))}
+          onNextPage={() =>
+            setPage((p) => Math.min(data?.totalPages || 1, p + 1))
+          }
+          onSelectAll={selectAll}
+          onDeselectAll={deselectAll}
+          onAddSelectedToCollection={handleAddSelectedToCollection}
+          onToggleSelect={toggleItem}
+          onKeywordClick={handleKeywordClick}
+          selectedKeywords={selectedKeywords}
+          renderActions={(item) => (
+            <>
+              <button
+                onClick={() => navigate(`/explore/item/${item.id}`)}
+                className="p-2 text-indigo-600 hover:bg-indigo-50 rounded-md"
+                title="View item"
+              >
+                <EyeIcon className="h-5 w-5" />
+              </button>
+              <button
+                onClick={() => navigate(`/quiz/item/${item.id}`)}
+                className="p-2 text-purple-600 hover:bg-purple-50 rounded-md"
+                title="Quiz mode"
+              >
+                <AcademicCapIcon className="h-5 w-5" />
+              </button>
+              <button
+                onClick={() => setSelectedItemForCollections(item.id)}
+                className="p-2 text-blue-600 hover:bg-blue-50 rounded-md"
+                title="Manage collections"
+              >
+                <FolderIcon className="h-5 w-5" />
+              </button>
+              <button
+                onClick={() => navigate(`/items/${item.id}/edit`)}
+                disabled={!canEditDelete(item)}
+                className={`p-2 rounded-md ${
+                  canEditDelete(item)
+                    ? "text-indigo-600 hover:bg-indigo-50"
+                    : "text-gray-400 cursor-not-allowed"
+                }`}
+                title={
+                  !canEditDelete(item)
+                    ? "Only admins can edit global items"
+                    : "Update item"
                 }
-              />
-            ))}
-          </div>
-
-          {/* Pagination */}
-          {/* Note: Pagination works on server-side filtered results, not client-side filtered */}
-          {data && data.totalPages > 1 && (
-            <div className="flex justify-center items-center space-x-2">
-              <button
-                onClick={() => setPage((p) => Math.max(1, p - 1))}
-                disabled={page === 1}
-                className="px-4 py-2 text-sm bg-gray-200 text-gray-700 rounded-md hover:bg-gray-300 disabled:opacity-50 disabled:cursor-not-allowed"
               >
-                Previous
+                <PencilIcon className="h-5 w-5" />
               </button>
-              <span className="text-sm text-gray-700">
-                Page {page} of {data.totalPages}
-              </span>
               <button
-                onClick={() => setPage((p) => Math.min(data.totalPages, p + 1))}
-                disabled={page === data.totalPages}
-                className="px-4 py-2 text-sm bg-gray-200 text-gray-700 rounded-md hover:bg-gray-300 disabled:opacity-50 disabled:cursor-not-allowed"
+                onClick={() => {
+                  if (
+                    window.confirm(
+                      "Are you sure you want to delete this item?"
+                    )
+                  ) {
+                    deleteMutation.mutate(item.id);
+                  }
+                }}
+                disabled={!canEditDelete(item) || deleteMutation.isPending}
+                className={`p-2 rounded-md ${
+                  canEditDelete(item)
+                    ? "text-red-600 hover:bg-red-50"
+                    : "text-gray-400 cursor-not-allowed"
+                }`}
+                title={
+                  !canEditDelete(item)
+                    ? "Only admins can delete global items"
+                    : "Delete item"
+                }
               >
-                Next
+                <TrashIcon className="h-5 w-5" />
               </button>
-            </div>
+            </>
           )}
-        </>
+        />
       ) : (
         <div className="text-center py-12">
           <p className="text-gray-500">No items found matching your filters.</p>
@@ -697,20 +592,13 @@ const MyItemsPage = () => {
         />
       )}
 
-      {selectedItemsForBulkCollections.length > 0 && (
-        <ItemCollectionsModal
-          isOpen={selectedItemsForBulkCollections.length > 0}
-          onClose={() => {
-            // Refetch item collections for all items that were in bulk operation
-            selectedItemsForBulkCollections.forEach((itemId) => {
-              queryClient.refetchQueries({ queryKey: ["itemCollections", itemId] });
-            });
-            setSelectedItemsForBulkCollections([]);
-            setSelectedItemIds(new Set());
-          }}
-          itemIds={selectedItemsForBulkCollections}
-        />
-      )}
+      <BulkItemCollectionsModal
+        itemIds={selectedItemsForBulkCollections}
+        onCloseComplete={() => {
+          setSelectedItemsForBulkCollections([]);
+          deselectAll();
+        }}
+      />
     </div>
   );
 };
