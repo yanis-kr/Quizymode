@@ -32,6 +32,8 @@ const MyItemsPage = () => {
   const [selectedItemForCollections, setSelectedItemForCollections] = useState<
     string | null
   >(null);
+  const [selectedItemsForBulkCollections, setSelectedItemsForBulkCollections] = useState<string[]>([]);
+  const [selectedItemIds, setSelectedItemIds] = useState<Set<string>>(new Set());
   const [showFilters, setShowFilters] = useState(false);
   const [activeFilters, setActiveFilters] = useState<Set<string>>(new Set());
   const pageSize = 10;
@@ -90,26 +92,43 @@ const MyItemsPage = () => {
     selectedKeywords.length > 0 ||
     searchText !== "";
 
-  const addFilter = (filterType: "category" | "keywords" | "search") => {
-    setActiveFilters((prev) => new Set(prev).add(filterType));
-    setShowFilters(true);
-  };
-
-  const removeFilter = (filterType: "category" | "keywords" | "search") => {
-    setActiveFilters((prev) => {
+  // Selection management
+  const handleItemToggle = (itemId: string) => {
+    setSelectedItemIds((prev) => {
       const newSet = new Set(prev);
-      newSet.delete(filterType);
+      if (newSet.has(itemId)) {
+        newSet.delete(itemId);
+      } else {
+        newSet.add(itemId);
+      }
       return newSet;
     });
+  };
 
-    if (filterType === "category") {
-      setSelectedCategory("");
-    } else if (filterType === "keywords") {
-      setSelectedKeywords([]);
-    } else if (filterType === "search") {
-      setSearchText("");
+  const handleSelectAll = () => {
+    // Select all items across all pages (total items)
+    if (data?.items) {
+      const allItemIds = new Set(data.items.map((item) => item.id));
+      setSelectedItemIds(allItemIds);
     }
   };
+
+  const handleSelectAllOnPage = () => {
+    // Select all items currently displayed on this page
+    const pageItemIds = new Set(displayItems.map((item) => item.id));
+    setSelectedItemIds(pageItemIds);
+  };
+
+  const handleDeselectAll = () => {
+    setSelectedItemIds(new Set());
+  };
+
+  const handleAddSelectedToCollection = () => {
+    if (selectedItemIds.size > 0) {
+      setSelectedItemsForBulkCollections(Array.from(selectedItemIds));
+    }
+  };
+
 
   const clearAllFilters = () => {
     setFilterType("all");
@@ -118,6 +137,41 @@ const MyItemsPage = () => {
     setSearchText("");
     setActiveFilters(new Set());
     setShowFilters(false);
+  };
+
+  const addFilter = (filterTypeName: "category" | "keywords" | "search" | "itemType") => {
+    if (filterTypeName === "itemType") {
+      // Item Type is always visible, but we can mark it as active in filters
+      setActiveFilters((prev) => new Set(prev).add("itemType"));
+    } else {
+      setActiveFilters((prev) => new Set(prev).add(filterTypeName));
+      setShowFilters(true);
+    }
+  };
+
+  const removeFilter = (filterTypeName: "category" | "keywords" | "search" | "itemType") => {
+    if (filterTypeName === "itemType") {
+      setFilterType("all");
+      setActiveFilters((prev) => {
+        const newSet = new Set(prev);
+        newSet.delete("itemType");
+        return newSet;
+      });
+    } else {
+      setActiveFilters((prev) => {
+        const newSet = new Set(prev);
+        newSet.delete(filterTypeName);
+        return newSet;
+      });
+
+      if (filterTypeName === "category") {
+        setSelectedCategory("");
+      } else if (filterTypeName === "keywords") {
+        setSelectedKeywords([]);
+      } else if (filterTypeName === "search") {
+        setSearchText("");
+      }
+    }
   };
 
   const deleteMutation = useMutation({
@@ -130,6 +184,19 @@ const MyItemsPage = () => {
   useEffect(() => {
     setPage(1); // Reset to first page when filters change
   }, [filterType, selectedCategory, searchText, selectedKeywords]);
+
+  // Track itemType in activeFilters
+  useEffect(() => {
+    if (filterType !== "all") {
+      setActiveFilters((prev) => new Set(prev).add("itemType"));
+    } else {
+      setActiveFilters((prev) => {
+        const newSet = new Set(prev);
+        newSet.delete("itemType");
+        return newSet;
+      });
+    }
+  }, [filterType]);
 
   // Auto-show filters if any are active
   useEffect(() => {
@@ -220,45 +287,6 @@ const MyItemsPage = () => {
           </div>
         </div>
 
-        {/* Filter Type - Always Visible */}
-        <div className="px-4 py-3 border-b border-gray-200">
-          <label className="block text-sm font-medium text-gray-700 mb-2">
-            Item Type
-          </label>
-          <div className="flex space-x-4">
-            <button
-              onClick={() => setFilterType("all")}
-              className={`px-4 py-2 rounded-md text-sm font-medium ${
-                filterType === "all"
-                  ? "bg-indigo-600 text-white"
-                  : "bg-gray-100 text-gray-700 hover:bg-gray-200"
-              }`}
-            >
-              All
-            </button>
-            <button
-              onClick={() => setFilterType("global")}
-              className={`px-4 py-2 rounded-md text-sm font-medium ${
-                filterType === "global"
-                  ? "bg-indigo-600 text-white"
-                  : "bg-gray-100 text-gray-700 hover:bg-gray-200"
-              }`}
-            >
-              Global
-            </button>
-            <button
-              onClick={() => setFilterType("private")}
-              className={`px-4 py-2 rounded-md text-sm font-medium ${
-                filterType === "private"
-                  ? "bg-indigo-600 text-white"
-                  : "bg-gray-100 text-gray-700 hover:bg-gray-200"
-              }`}
-            >
-              Private
-            </button>
-          </div>
-        </div>
-
         {/* Expandable Filters */}
         {showFilters && (
           <div className="px-4 py-4 space-y-4">
@@ -267,6 +295,15 @@ const MyItemsPage = () => {
               <span className="text-sm font-medium text-gray-700">
                 Add Filter:
               </span>
+              {!activeFilters.has("itemType") && (
+                <button
+                  onClick={() => addFilter("itemType")}
+                  className="inline-flex items-center px-3 py-1.5 text-sm font-medium text-indigo-600 bg-indigo-50 rounded-md hover:bg-indigo-100"
+                >
+                  <PlusIcon className="h-4 w-4 mr-1" />
+                  Item Type
+                </button>
+              )}
               {!activeFilters.has("category") && (
                 <button
                   onClick={() => addFilter("category")}
@@ -295,6 +332,56 @@ const MyItemsPage = () => {
                 </button>
               )}
             </div>
+
+            {/* Item Type Filter */}
+            {activeFilters.has("itemType") && (
+              <div className="border border-gray-200 rounded-md p-3 bg-gray-50">
+                <div className="flex items-center justify-between mb-2">
+                  <label className="block text-sm font-medium text-gray-700">
+                    Item Type
+                  </label>
+                  <button
+                    onClick={() => removeFilter("itemType")}
+                    className="text-gray-400 hover:text-gray-600"
+                    aria-label="Remove item type filter"
+                  >
+                    <XMarkIcon className="h-4 w-4" />
+                  </button>
+                </div>
+                <div className="flex space-x-4">
+                  <button
+                    onClick={() => setFilterType("all")}
+                    className={`px-4 py-2 rounded-md text-sm font-medium ${
+                      filterType === "all"
+                        ? "bg-indigo-600 text-white"
+                        : "bg-white text-gray-700 hover:bg-gray-100 border border-gray-300"
+                    }`}
+                  >
+                    All
+                  </button>
+                  <button
+                    onClick={() => setFilterType("global")}
+                    className={`px-4 py-2 rounded-md text-sm font-medium ${
+                      filterType === "global"
+                        ? "bg-indigo-600 text-white"
+                        : "bg-white text-gray-700 hover:bg-gray-100 border border-gray-300"
+                    }`}
+                  >
+                    Global
+                  </button>
+                  <button
+                    onClick={() => setFilterType("private")}
+                    className={`px-4 py-2 rounded-md text-sm font-medium ${
+                      filterType === "private"
+                        ? "bg-indigo-600 text-white"
+                        : "bg-white text-gray-700 hover:bg-gray-100 border border-gray-300"
+                    }`}
+                  >
+                    Private
+                  </button>
+                </div>
+              </div>
+            )}
 
             {/* Category Filter */}
             {activeFilters.has("category") && (
@@ -420,6 +507,58 @@ const MyItemsPage = () => {
         )}
       </div>
 
+      {/* Selection Controls and Counts */}
+      {displayItems.length > 0 && (
+        <div className="mb-4 bg-white rounded-lg shadow p-4">
+          <div className="flex flex-wrap items-center justify-between gap-4">
+            {/* Counts Display */}
+            <div className="flex items-center space-x-4 text-sm text-gray-700">
+              <span>
+                <strong>{selectedItemIds.size}</strong> selected
+              </span>
+              <span>
+                <strong>{displayItems.length}</strong> on screen
+              </span>
+              <span>
+                <strong>{data?.totalCount || 0}</strong> total
+              </span>
+            </div>
+
+            {/* Group Controls */}
+            <div className="flex flex-wrap items-center gap-2">
+              <button
+                onClick={handleSelectAll}
+                className="px-3 py-1.5 text-sm font-medium text-indigo-600 bg-indigo-50 rounded-md hover:bg-indigo-100"
+                disabled={data?.items.length === 0}
+              >
+                Select All
+              </button>
+              <button
+                onClick={handleSelectAllOnPage}
+                className="px-3 py-1.5 text-sm font-medium text-indigo-600 bg-indigo-50 rounded-md hover:bg-indigo-100"
+                disabled={displayItems.length === 0}
+              >
+                Select All on Page
+              </button>
+              <button
+                onClick={handleDeselectAll}
+                className="px-3 py-1.5 text-sm font-medium text-gray-600 bg-gray-100 rounded-md hover:bg-gray-200"
+                disabled={selectedItemIds.size === 0}
+              >
+                Deselect All
+              </button>
+              <button
+                onClick={handleAddSelectedToCollection}
+                className="px-3 py-1.5 text-sm font-medium text-white bg-blue-600 rounded-md hover:bg-blue-700"
+                disabled={selectedItemIds.size === 0}
+              >
+                Add Selected to Collection
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
+
       {/* Items List */}
       {displayItems.length > 0 ? (
         <>
@@ -427,22 +566,29 @@ const MyItemsPage = () => {
             {displayItems.map((item) => (
               <div key={item.id} className="bg-white shadow rounded-lg p-6">
                 <div className="flex justify-between items-start">
-                  <div className="flex-1">
-                    <h3 className="text-lg font-medium text-gray-900">
-                      {item.question}
-                    </h3>
-                    <p className="mt-2 text-sm text-gray-500">
-                      {item.category}
-                    </p>
-                    <p className="mt-1 text-sm text-gray-500">
-                      {item.isPrivate ? "Private" : "Global"}
-                    </p>
-                    <p className="mt-2 text-sm text-gray-700">
-                      <strong>Answer:</strong> {item.correctAnswer}
-                    </p>
-                    {/* Keywords */}
-                    {item.keywords && item.keywords.length > 0 && (
-                      <div className="mt-3 flex flex-wrap gap-2">
+                  <div className="flex items-start space-x-3 flex-1">
+                    <input
+                      type="checkbox"
+                      checked={selectedItemIds.has(item.id)}
+                      onChange={() => handleItemToggle(item.id)}
+                      className="mt-1 h-4 w-4 text-indigo-600 border-gray-300 rounded focus:ring-indigo-500"
+                    />
+                    <div className="flex-1">
+                      <h3 className="text-lg font-medium text-gray-900">
+                        {item.question}
+                      </h3>
+                      <p className="mt-2 text-sm text-gray-500">
+                        {item.category}
+                      </p>
+                      <p className="mt-1 text-sm text-gray-500">
+                        {item.isPrivate ? "Private" : "Global"}
+                      </p>
+                      <p className="mt-2 text-sm text-gray-700">
+                        <strong>Answer:</strong> {item.correctAnswer}
+                      </p>
+                      {/* Keywords */}
+                      {item.keywords && item.keywords.length > 0 && (
+                        <div className="mt-3 flex flex-wrap gap-2">
                         {item.keywords.map((keyword) => (
                           <button
                             key={keyword.id}
@@ -465,9 +611,10 @@ const MyItemsPage = () => {
                               <span className="ml-1 text-[10px]">🔒</span>
                             )}
                           </button>
-                        ))}
-                      </div>
-                    )}
+                          ))}
+                        </div>
+                      )}
+                    </div>
                   </div>
                   <div className="flex space-x-1 ml-4">
                     <button
@@ -574,6 +721,17 @@ const MyItemsPage = () => {
           isOpen={!!selectedItemForCollections}
           onClose={() => setSelectedItemForCollections(null)}
           itemId={selectedItemForCollections}
+        />
+      )}
+
+      {selectedItemsForBulkCollections.length > 0 && (
+        <ItemCollectionsModal
+          isOpen={selectedItemsForBulkCollections.length > 0}
+          onClose={() => {
+            setSelectedItemsForBulkCollections([]);
+            setSelectedItemIds(new Set());
+          }}
+          itemIds={selectedItemsForBulkCollections}
         />
       )}
     </div>

@@ -7,17 +7,25 @@ import { XMarkIcon } from "@heroicons/react/24/outline";
 interface ItemCollectionsModalProps {
   isOpen: boolean;
   onClose: () => void;
-  itemId: string;
+  itemId?: string;
+  itemIds?: string[];
 }
 
 const ItemCollectionsModal = ({
   isOpen,
   onClose,
   itemId,
+  itemIds,
 }: ItemCollectionsModalProps) => {
   const { isAuthenticated } = useAuth();
   const queryClient = useQueryClient();
   const [newCollectionName, setNewCollectionName] = useState("");
+  const [bulkSelectedCollections, setBulkSelectedCollections] = useState<Set<string>>(new Set());
+
+  // Support both single item and multiple items
+  const singleItemId = itemId;
+  const multipleItemIds = itemIds || [];
+  const isBulkMode = multipleItemIds.length > 0;
 
   const { data: collectionsData, isLoading } = useQuery({
     queryKey: ["collections"],
@@ -26,35 +34,69 @@ const ItemCollectionsModal = ({
   });
 
   const { data: itemCollectionsData, isLoading: isLoadingItemCollections } = useQuery({
-    queryKey: ["itemCollections", itemId],
-    queryFn: () => collectionsApi.getCollectionsForItem(itemId),
-    enabled: isAuthenticated && isOpen,
+    queryKey: ["itemCollections", singleItemId],
+    queryFn: () => collectionsApi.getCollectionsForItem(singleItemId!),
+    enabled: isAuthenticated && isOpen && !isBulkMode && !!singleItemId,
   });
 
   const removeFromCollectionMutation = useMutation({
-    mutationFn: (collectionId: string) =>
-      collectionsApi.removeItem(collectionId, itemId),
+    mutationFn: async (collectionId: string) => {
+      if (isBulkMode) {
+        // Remove all items from the collection
+        await Promise.all(
+          multipleItemIds.map((id) =>
+            collectionsApi.removeItem(collectionId, id)
+          )
+        );
+      } else if (singleItemId) {
+        await collectionsApi.removeItem(collectionId, singleItemId);
+      }
+    },
     onSuccess: () => {
-      queryClient.invalidateQueries({ queryKey: ["itemCollections", itemId] });
+      if (singleItemId) {
+        queryClient.invalidateQueries({ queryKey: ["itemCollections", singleItemId] });
+      }
       queryClient.invalidateQueries({ queryKey: ["collections"] });
     },
   });
 
   const createCollectionMutation = useMutation({
     mutationFn: (name: string) => collectionsApi.create({ name }),
-    onSuccess: (newCollection) => {
+    onSuccess: async (newCollection) => {
       queryClient.invalidateQueries({ queryKey: ["collections"] });
-      // Automatically add item to the newly created collection
-      addToCollectionMutation.mutate(newCollection.id);
+      // Automatically add item(s) to the newly created collection
+      if (isBulkMode) {
+        await Promise.all(
+          multipleItemIds.map((id) =>
+            collectionsApi.addItem(newCollection.id, { itemId: id })
+          )
+        );
+      } else if (singleItemId) {
+        await collectionsApi.addItem(newCollection.id, { itemId: singleItemId });
+      }
       setNewCollectionName("");
     },
   });
 
   const addToCollectionMutation = useMutation({
-    mutationFn: (collectionId: string) =>
-      collectionsApi.addItem(collectionId, { itemId }),
+    mutationFn: async (collectionId: string) => {
+      if (isBulkMode) {
+        // Add all items to the collection
+        await Promise.all(
+          multipleItemIds.map((id) =>
+            collectionsApi.addItem(collectionId, { itemId: id })
+          )
+        );
+        // Track selected collection in bulk mode
+        setBulkSelectedCollections((prev) => new Set(prev).add(collectionId));
+      } else if (singleItemId) {
+        await collectionsApi.addItem(collectionId, { itemId: singleItemId });
+      }
+    },
     onSuccess: () => {
-      queryClient.invalidateQueries({ queryKey: ["itemCollections", itemId] });
+      if (singleItemId) {
+        queryClient.invalidateQueries({ queryKey: ["itemCollections", singleItemId] });
+      }
       queryClient.invalidateQueries({ queryKey: ["collections"] });
     },
   });
@@ -75,7 +117,10 @@ const ItemCollectionsModal = ({
     if (isChecked) {
       addToCollectionMutation.mutate(collectionId);
     } else {
-      removeFromCollectionMutation.mutate(collectionId);
+      // In bulk mode, only allow adding (not removing)
+      if (!isBulkMode) {
+        removeFromCollectionMutation.mutate(collectionId);
+      }
     }
   };
 
@@ -96,7 +141,9 @@ const ItemCollectionsModal = ({
       >
         <div className="flex justify-between items-center mb-4">
           <h3 className="text-lg font-medium text-gray-900">
-            Manage Collections
+            {isBulkMode
+              ? `Add ${multipleItemIds.length} Item${multipleItemIds.length > 1 ? "s" : ""} to Collections`
+              : "Manage Collections"}
           </h3>
           <button
             onClick={onClose}
@@ -106,7 +153,7 @@ const ItemCollectionsModal = ({
           </button>
         </div>
 
-        {isLoading || isLoadingItemCollections ? (
+        {isLoading || (isLoadingItemCollections && !isBulkMode) ? (
           <div className="text-center py-4">Loading collections...</div>
         ) : (
           <div className="space-y-4">
@@ -131,7 +178,10 @@ const ItemCollectionsModal = ({
               {allCollections.length > 0 ? (
                 <div className="space-y-2 max-h-64 overflow-y-auto">
                   {allCollections.map((collection) => {
-                    const isInCollection = itemCollectionIds.has(collection.id);
+                    // In bulk mode, use local state; otherwise use query data
+                    const isInCollection = isBulkMode
+                      ? bulkSelectedCollections.has(collection.id)
+                      : itemCollectionIds.has(collection.id);
                     return (
                       <label
                         key={collection.id}
