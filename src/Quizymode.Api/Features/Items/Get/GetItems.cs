@@ -74,9 +74,9 @@ public static class GetItems
                 return CustomResults.BadRequest("Page must be greater than 0");
             }
 
-            if (pageSize < 1 || pageSize > 100)
+            if (pageSize < 1 || pageSize > 1000)
             {
-                return CustomResults.BadRequest("PageSize must be between 1 and 100");
+                return CustomResults.BadRequest("PageSize must be between 1 and 1000");
             }
 
             List<string>? keywordList = null;

@@ -97,9 +97,15 @@ internal sealed class CategoryResolver(
             if (existingPrivateCategory is not null)
             {
                 // Category with this name already exists
-                // If it's a global category, we can't use it for a private item
+                // If it's a global category, admins can use it even for private items
                 if (!existingPrivateCategory.IsPrivate)
                 {
+                    if (isAdmin)
+                    {
+                        // Admin can use global category even when creating private items
+                        return Result.Success(existingPrivateCategory);
+                    }
+                    
                     return Result.Failure<Category>(
                         Error.Conflict("Category.NameExists", 
                             $"A global category named '{trimmedName}' already exists. Private categories cannot share names with global categories."));

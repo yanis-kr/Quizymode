@@ -15,6 +15,7 @@ internal static class AddItemsBulkHandler
         ISimHashService simHashService,
         IUserContext userContext,
         ICategoryResolver categoryResolver,
+        IAuditService auditService,
         CancellationToken cancellationToken)
     {
         try
@@ -248,6 +249,19 @@ internal static class AddItemsBulkHandler
                 {
                     db.ItemKeywords.AddRange(itemKeywordsToInsert);
                     await db.SaveChangesAsync(cancellationToken);
+                }
+
+                // Log audit entries for all created items
+                if (!string.IsNullOrEmpty(userId) && Guid.TryParse(userId, out Guid userIdGuid))
+                {
+                    foreach (Item item in itemsToInsert)
+                    {
+                        await auditService.LogAsync(
+                            AuditAction.ItemCreated,
+                            userId: userIdGuid,
+                            entityId: item.Id,
+                            cancellationToken: cancellationToken);
+                    }
                 }
             }
 

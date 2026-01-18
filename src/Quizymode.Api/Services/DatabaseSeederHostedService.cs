@@ -139,8 +139,9 @@ internal sealed class DatabaseSeederHostedService(
                             Items: itemRequests
                         );
 
-                        // Get CategoryResolver from scope
+                        // Get CategoryResolver and AuditService from scope
                         ICategoryResolver categoryResolver = scope.ServiceProvider.GetRequiredService<ICategoryResolver>();
+                        IAuditService auditService = scope.ServiceProvider.GetRequiredService<IAuditService>();
 
                         // Use bulk add handler
                         Result<AddItemsBulk.Response> result = await AddItemsBulkHandler.HandleAsync(
@@ -149,6 +150,7 @@ internal sealed class DatabaseSeederHostedService(
                             _simHashService,
                             seederUserContext,
                             categoryResolver,
+                            auditService,
                             cancellationToken);
 
                         if (result.IsSuccess && result.Value is not null)

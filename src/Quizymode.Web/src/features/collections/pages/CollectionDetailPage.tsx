@@ -1,13 +1,16 @@
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
 import { collectionsApi } from "@/api/collections";
 import LoadingSpinner from "@/components/LoadingSpinner";
 import ErrorMessage from "@/components/ErrorMessage";
-import { MinusIcon } from "@heroicons/react/24/outline";
+import ItemListSection from "@/components/ItemListSection";
+import useItemSelection from "@/hooks/useItemSelection";
+import { MinusIcon, ArrowLeftIcon, EyeIcon, AcademicCapIcon } from "@heroicons/react/24/outline";
 
 const CollectionDetailPage = () => {
   const { id } = useParams<{ id: string }>();
   const queryClient = useQueryClient();
+  const navigate = useNavigate();
 
   const {
     data: collectionData,
@@ -39,6 +42,15 @@ const CollectionDetailPage = () => {
     },
   });
 
+  const items = itemsData?.items || [];
+  const currentPageItemIds = items.map((item) => item.id);
+  const {
+    selectedItemIds,
+    selectAll,
+    deselectAll,
+    toggleItem,
+  } = useItemSelection(currentPageItemIds);
+
   const handleRemoveItem = (itemId: string) => {
     if (
       window.confirm(
@@ -63,35 +75,59 @@ const CollectionDetailPage = () => {
 
   return (
     <div className="px-4 py-6 sm:px-0">
-      <h1 className="text-3xl font-bold text-gray-900 mb-6">
-        {collectionData?.name || "Collection Items"}
-      </h1>
-      {itemsData?.items && itemsData.items.length > 0 ? (
-        <div className="space-y-4">
-          {itemsData.items.map((item) => (
-            <div
-              key={item.id}
-              className="bg-white shadow rounded-lg p-6 flex justify-between items-start"
-            >
-              <div className="flex-1">
-                <h3 className="text-lg font-medium text-gray-900">
-                  {item.question}
-                </h3>
-                <p className="mt-2 text-sm text-gray-500">
-                  {item.category}
-                </p>
-              </div>
+      <div className="mb-6 flex items-center space-x-4">
+        <button
+          onClick={() => navigate("/collections")}
+          className="flex items-center px-3 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-md hover:bg-gray-50"
+        >
+          <ArrowLeftIcon className="h-4 w-4 mr-2" />
+          Go Back
+        </button>
+        <h1 className="text-3xl font-bold text-gray-900">
+          {collectionData?.name || "Collection Items"}
+        </h1>
+      </div>
+
+      {items.length > 0 ? (
+        <ItemListSection
+          items={items}
+          totalCount={items.length}
+          page={1}
+          totalPages={1}
+          selectedItemIds={selectedItemIds}
+          onPrevPage={() => {}}
+          onNextPage={() => {}}
+          onSelectAll={selectAll}
+          onDeselectAll={deselectAll}
+          onAddSelectedToCollection={() => {}}
+          onToggleSelect={toggleItem}
+          renderActions={(item) => (
+            <>
+              <button
+                onClick={() => navigate(`/explore/item/${item.id}`)}
+                className="p-2 text-indigo-600 hover:bg-indigo-50 rounded-md"
+                title="View item"
+              >
+                <EyeIcon className="h-5 w-5" />
+              </button>
+              <button
+                onClick={() => navigate(`/quiz/item/${item.id}`)}
+                className="p-2 text-purple-600 hover:bg-purple-50 rounded-md"
+                title="Quiz mode"
+              >
+                <AcademicCapIcon className="h-5 w-5" />
+              </button>
               <button
                 onClick={() => handleRemoveItem(item.id)}
                 disabled={removeItemMutation.isPending}
-                className="ml-4 p-2 text-red-600 hover:text-red-700 hover:bg-red-50 rounded-md disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+                className="p-2 text-red-600 hover:text-red-700 hover:bg-red-50 rounded-md disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
                 title="Remove from collection"
               >
                 <MinusIcon className="h-5 w-5" />
               </button>
-            </div>
-          ))}
-        </div>
+            </>
+          )}
+        />
       ) : (
         <div className="text-center py-12">
           <p className="text-gray-500">No items in this collection.</p>

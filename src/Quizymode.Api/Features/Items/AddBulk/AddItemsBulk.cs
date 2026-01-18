@@ -130,6 +130,7 @@ public static class AddItemsBulk
             ISimHashService simHashService,
             IUserContext userContext,
             ICategoryResolver categoryResolver,
+            IAuditService auditService,
             CancellationToken cancellationToken)
         {
             if (!userContext.IsAuthenticated || string.IsNullOrEmpty(userContext.UserId))
@@ -143,7 +144,7 @@ public static class AddItemsBulk
                 return Results.BadRequest(validationResult.Errors);
             }
 
-            Result<Response> result = await AddItemsBulkHandler.HandleAsync(request, db, simHashService, userContext, categoryResolver, cancellationToken);
+            Result<Response> result = await AddItemsBulkHandler.HandleAsync(request, db, simHashService, userContext, categoryResolver, auditService, cancellationToken);
 
             return result.Match(
                 value => Results.Ok(value),

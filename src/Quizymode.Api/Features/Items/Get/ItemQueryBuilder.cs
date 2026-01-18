@@ -230,6 +230,12 @@ internal sealed class ItemQueryBuilder
         }
 
         string? subject = _userContext.UserId;
+        if (string.IsNullOrEmpty(subject))
+        {
+            return Result.Failure<IQueryable<Item>>(
+                Error.Validation("Items.Unauthorized", "Must be authenticated to view collection items"));
+        }
+
         if (collection.CreatedBy != subject && !_userContext.IsAdmin)
         {
             return Result.Failure<IQueryable<Item>>(
@@ -241,6 +247,15 @@ internal sealed class ItemQueryBuilder
             .Select(ci => ci.ItemId)
             .ToListAsync(_cancellationToken);
 
+        if (itemIdsInCollection.Count == 0)
+        {
+            // No items in collection, return empty result
+            query = query.Where(i => false);
+            return Result.Success(query);
+        }
+
+        // Filter to items in the collection
+        // Note: Visibility filter is already applied before this, so only visible items will be included
         query = query.Where(i => itemIdsInCollection.Contains(i.Id));
 
         return Result.Success(query);
