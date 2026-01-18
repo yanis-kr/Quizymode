@@ -1,5 +1,6 @@
 using FluentValidation;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Caching.Memory;
 using Quizymode.Api.Data;
 using Quizymode.Api.Infrastructure;
 using Quizymode.Api.Services;
@@ -55,6 +56,7 @@ public static class AddOrUpdateRating
             IValidator<Request> validator,
             ApplicationDbContext db,
             IUserContext userContext,
+            IMemoryCache cache,
             CancellationToken cancellationToken)
         {
             if (!userContext.IsAuthenticated || string.IsNullOrEmpty(userContext.UserId))
@@ -69,7 +71,7 @@ public static class AddOrUpdateRating
                 return CustomResults.BadRequest(errors, "Validation failed");
             }
 
-            Result<Response> result = await HandleAsync(request, db, userContext, cancellationToken);
+            Result<Response> result = await HandleAsync(request, db, userContext, cache, cancellationToken);
 
             return result.Match(
                 value => Results.Ok(value),
@@ -81,6 +83,7 @@ public static class AddOrUpdateRating
         Request request,
         ApplicationDbContext db,
         IUserContext userContext,
+        IMemoryCache cache,
         CancellationToken cancellationToken)
     {
         try
@@ -112,6 +115,9 @@ public static class AddOrUpdateRating
 
                 await db.SaveChangesAsync(cancellationToken);
 
+                // Invalidate categories cache for all users (ratings affect category averages)
+                InvalidateCategoriesCache(cache);
+
                 Response response = new(
                     existingRating.Id.ToString(),
                     existingRating.ItemId,
@@ -136,6 +142,9 @@ public static class AddOrUpdateRating
                 db.Ratings.Add(entity);
                 await db.SaveChangesAsync(cancellationToken);
 
+                // Invalidate categories cache for all users (ratings affect category averages)
+                InvalidateCategoriesCache(cache);
+
                 Response response = new(
                     entity.Id.ToString(),
                     entity.ItemId,
@@ -151,6 +160,24 @@ public static class AddOrUpdateRating
             return Result.Failure<Response>(
                 Error.Problem("Ratings.CreateOrUpdateFailed", $"Failed to create or update rating: {ex.Message}"));
         }
+    }
+
+    private static void InvalidateCategoriesCache(IMemoryCache cache)
+    {
+        // Invalidate all category caches by incrementing the cache version
+        // Since MemoryCache doesn't support pattern-based removal, we use a version number
+        // in the cache key and increment it to effectively invalidate all category caches
+        string cacheVersionKey = "categories:cache:version";
+        int currentVersion = cache.GetOrCreate(cacheVersionKey, entry =>
+        {
+            entry.AbsoluteExpirationRelativeToNow = TimeSpan.FromHours(24);
+            return 0;
+        });
+        
+        cache.Set(cacheVersionKey, currentVersion + 1, new MemoryCacheEntryOptions
+        {
+            AbsoluteExpirationRelativeToNow = TimeSpan.FromHours(24)
+        });
     }
 
     public sealed class FeatureRegistration : IFeatureRegistration
