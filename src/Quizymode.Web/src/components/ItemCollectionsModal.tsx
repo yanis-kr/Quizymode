@@ -82,14 +82,12 @@ const ItemCollectionsModal = ({
       await queryClient.refetchQueries({ queryKey: ["collections"] });
       // Automatically add item(s) to the newly created collection
       if (isBulkMode) {
-        await Promise.all(
-          multipleItemIds.map((id) =>
-            collectionsApi.addItem(newCollection.id, { itemId: id })
-          )
-        );
+        await collectionsApi.bulkAddItems(newCollection.id, { itemIds: multipleItemIds });
         // Update bulk selected collections state
         setBulkSelectedCollections((prev) => new Set(prev).add(newCollection.id));
-        // Refetch item queries for all items in bulk mode (to get updated collections)
+        // Invalidate items queries to refresh the UI immediately
+        queryClient.invalidateQueries({ queryKey: ["myItems"] });
+        queryClient.invalidateQueries({ queryKey: ["categoryItems"] });
         await Promise.all(
           multipleItemIds.map((itemId) =>
             queryClient.refetchQueries({ queryKey: ["item", itemId] })
@@ -107,12 +105,8 @@ const ItemCollectionsModal = ({
   const addToCollectionMutation = useMutation({
     mutationFn: async (collectionId: string) => {
       if (isBulkMode) {
-        // Add all items to the collection
-        await Promise.all(
-          multipleItemIds.map((id) =>
-            collectionsApi.addItem(collectionId, { itemId: id })
-          )
-        );
+        // Add all items to the collection using bulk endpoint
+        await collectionsApi.bulkAddItems(collectionId, { itemIds: multipleItemIds });
       } else if (singleItemId) {
         await collectionsApi.addItem(collectionId, { itemId: singleItemId });
       }
@@ -121,7 +115,9 @@ const ItemCollectionsModal = ({
       // Update bulk selected collections state on success
       if (isBulkMode) {
         setBulkSelectedCollections((prev) => new Set(prev).add(collectionId));
-        // Refetch item queries for all items in bulk mode (to get updated collections)
+        // Invalidate items queries to refresh the UI immediately
+        queryClient.invalidateQueries({ queryKey: ["myItems"] });
+        queryClient.invalidateQueries({ queryKey: ["categoryItems"] });
         await Promise.all(
           multipleItemIds.map((itemId) =>
             queryClient.refetchQueries({ queryKey: ["item", itemId] })

@@ -119,6 +119,7 @@ public static class GetItemById
 
             // Load collections for this item using authenticated user's ID
             // Collections are filtered by authenticated userId - no collections for anonymous users
+            // Admins can see all collections
             List<CollectionResponse> collections = new();
             if (userContext.IsAuthenticated && !string.IsNullOrEmpty(userContext.UserId))
             {
@@ -126,7 +127,7 @@ public static class GetItemById
                     .Where(ci => ci.ItemId == itemId)
                     .Join(db.Collections, ci => ci.CollectionId, c => c.Id, (ci, c) => c)
                     .Where(c => c.CreatedBy == userContext.UserId || userContext.IsAdmin)
-                    .OrderByDescending(c => c.CreatedAt)
+                    .OrderBy(c => c.Name)
                     .ToListAsync(cancellationToken);
 
                 collections = itemCollections.Select(c => new CollectionResponse(

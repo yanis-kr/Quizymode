@@ -124,6 +124,16 @@ export interface AddItemToCollectionRequest {
   itemId: string;
 }
 
+export interface BulkAddItemsToCollectionRequest {
+  itemIds: string[];
+}
+
+export interface BulkAddItemsToCollectionResponse {
+  addedCount: number;
+  skippedCount: number;
+  addedItemIds: string[];
+}
+
 export interface CreateReviewRequest {
   itemId: string;
   reaction: "like" | "dislike" | "neutral";

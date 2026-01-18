@@ -33,6 +33,7 @@ internal sealed class ItemCollectionLoader
 
         // Only return collections if user is authenticated
         // Collections are filtered by authenticated userId - no collections for anonymous users
+        // Admins can see all collections
         if (!_userContext.IsAuthenticated || string.IsNullOrEmpty(_userContext.UserId))
         {
             return itemCollectionsMap;
@@ -46,6 +47,7 @@ internal sealed class ItemCollectionLoader
             .Where(ci => itemIds.Contains(ci.ItemId))
             .Join(_db.Collections, ci => ci.CollectionId, c => c.Id, (ci, c) => new { ItemId = ci.ItemId, Collection = c })
             .Where(x => x.Collection.CreatedBy == collectionUserId || _userContext.IsAdmin)
+            .OrderBy(x => x.Collection.Name)
             .ToListAsync(_cancellationToken);
 
         foreach (var ci in collectionItems)

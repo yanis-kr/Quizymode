@@ -7,6 +7,8 @@ import type {
   CreateCollectionRequest,
   UpdateCollectionRequest,
   AddItemToCollectionRequest,
+  BulkAddItemsToCollectionRequest,
+  BulkAddItemsToCollectionResponse,
 } from "@/types/api";
 
 export const collectionsApi = {
@@ -60,6 +62,17 @@ export const collectionsApi = {
     data: AddItemToCollectionRequest
   ): Promise<void> => {
     await apiClient.post(`/collections/${collectionId}/items`, data);
+  },
+
+  bulkAddItems: async (
+    collectionId: string,
+    data: BulkAddItemsToCollectionRequest
+  ): Promise<BulkAddItemsToCollectionResponse> => {
+    const response = await apiClient.post<BulkAddItemsToCollectionResponse>(
+      `/collections/${collectionId}/items/bulk`,
+      data
+    );
+    return response.data;
   },
 
   removeItem: async (
