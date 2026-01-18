@@ -87,13 +87,15 @@ const ItemCollectionsModal = ({
             collectionsApi.addItem(collectionId, { itemId: id })
           )
         );
-        // Track selected collection in bulk mode
-        setBulkSelectedCollections((prev) => new Set(prev).add(collectionId));
       } else if (singleItemId) {
         await collectionsApi.addItem(collectionId, { itemId: singleItemId });
       }
     },
-    onSuccess: () => {
+    onSuccess: (_, collectionId) => {
+      // Update bulk selected collections state on success
+      if (isBulkMode) {
+        setBulkSelectedCollections((prev) => new Set(prev).add(collectionId));
+      }
       if (singleItemId) {
         queryClient.invalidateQueries({ queryKey: ["itemCollections", singleItemId] });
       }
@@ -115,6 +117,10 @@ const ItemCollectionsModal = ({
 
   const handleToggleCollection = (collectionId: string, isChecked: boolean) => {
     if (isChecked) {
+      // Optimistically update state for immediate UI feedback
+      if (isBulkMode) {
+        setBulkSelectedCollections((prev) => new Set(prev).add(collectionId));
+      }
       addToCollectionMutation.mutate(collectionId);
     } else {
       // In bulk mode, only allow adding (not removing)

@@ -48,20 +48,28 @@ internal sealed class CategoryResolver(
                         Error.Validation("Category.AdminOnly", "Only administrators can create or use global categories"));
                 }
 
-                // Try to find existing global category (case-insensitive)
-                // Use ToLower() for database-agnostic case-insensitive comparison
-                Category? existingGlobal = await _db.Categories
+                // Check if ANY category with this name already exists (case-insensitive)
+                // Since category names are globally unique, we can't create a global category if one already exists
+                Category? existingCategory = await _db.Categories
                     .FirstOrDefaultAsync(
-                        c => !c.IsPrivate &&
-                             c.Name.ToLower() == trimmedName.ToLower(),
+                        c => c.Name.ToLower() == trimmedName.ToLower(),
                         cancellationToken);
 
-                if (existingGlobal is not null)
+                if (existingCategory is not null)
                 {
-                    return Result.Success(existingGlobal);
+                    // Category with this name already exists
+                    if (existingCategory.IsPrivate)
+                    {
+                        return Result.Failure<Category>(
+                            Error.Conflict("Category.NameExists", 
+                                $"A private category named '{trimmedName}' already exists. Global categories cannot share names with private categories."));
+                    }
+
+                    // Global category exists, return it
+                    return Result.Success(existingCategory);
                 }
 
-                // Create new global category
+                // No category with this name exists, create new global category
                 Category newCategory = new Category
                 {
                     Id = Guid.NewGuid(),
@@ -79,21 +87,37 @@ internal sealed class CategoryResolver(
             }
 
             // Private category requested
-            // Try to find existing private category for this user (case-insensitive)
-            // Use ToLower() for database-agnostic case-insensitive comparison
-            Category? existingPrivate = await _db.Categories
+            // First check if ANY category with this name already exists (case-insensitive)
+            // Since category names are globally unique, we can't create a private category if a global one exists
+            Category? existingCategory = await _db.Categories
                 .FirstOrDefaultAsync(
-                    c => c.IsPrivate &&
-                         c.CreatedBy == currentUserId &&
-                         c.Name.ToLower() == trimmedName.ToLower(),
+                    c => c.Name.ToLower() == trimmedName.ToLower(),
                     cancellationToken);
 
-            if (existingPrivate is not null)
+            if (existingCategory is not null)
             {
-                return Result.Success(existingPrivate);
+                // Category with this name already exists
+                // If it's a global category, we can't use it for a private item
+                if (!existingCategory.IsPrivate)
+                {
+                    return Result.Failure<Category>(
+                        Error.Conflict("Category.NameExists", 
+                            $"A global category named '{trimmedName}' already exists. Private categories cannot share names with global categories."));
+                }
+
+                // If it's a private category, check if it belongs to this user
+                if (existingCategory.CreatedBy != currentUserId)
+                {
+                    return Result.Failure<Category>(
+                        Error.Conflict("Category.NameExists", 
+                            $"A private category named '{trimmedName}' already exists for another user. Category names must be unique."));
+                }
+
+                // Private category exists and belongs to this user
+                return Result.Success(existingCategory);
             }
 
-            // Create new private category for user
+            // No category with this name exists, create new private category for user
             Category newPrivateCategory = new Category
             {
                 Id = Guid.NewGuid(),

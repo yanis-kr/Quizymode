@@ -17,6 +17,7 @@ import {
   PlusIcon,
 } from "@heroicons/react/24/outline";
 import ItemCollectionsModal from "@/components/ItemCollectionsModal";
+import { collectionsApi } from "@/api/collections";
 
 const MyItemsPage = () => {
   const { isAuthenticated, isAdmin } = useAuth();
@@ -106,14 +107,6 @@ const MyItemsPage = () => {
   };
 
   const handleSelectAll = () => {
-    // Select all items across all pages (total items)
-    if (data?.items) {
-      const allItemIds = new Set(data.items.map((item) => item.id));
-      setSelectedItemIds(allItemIds);
-    }
-  };
-
-  const handleSelectAllOnPage = () => {
     // Select all items currently displayed on this page
     const pageItemIds = new Set(displayItems.map((item) => item.id));
     setSelectedItemIds(pageItemIds);
@@ -183,7 +176,13 @@ const MyItemsPage = () => {
 
   useEffect(() => {
     setPage(1); // Reset to first page when filters change
+    setSelectedItemIds(new Set()); // Clear selections when filters change
   }, [filterType, selectedCategory, searchText, selectedKeywords]);
+
+  // Clear selections when page changes
+  useEffect(() => {
+    setSelectedItemIds(new Set());
+  }, [page]);
 
   // Track itemType in activeFilters
   useEffect(() => {
@@ -524,21 +523,39 @@ const MyItemsPage = () => {
               </span>
             </div>
 
+            {/* Pagination */}
+            {data && data.totalPages > 1 && (
+              <div className="flex items-center space-x-2">
+                <button
+                  onClick={() => setPage((p) => Math.max(1, p - 1))}
+                  disabled={page === 1}
+                  className="px-3 py-1.5 text-sm bg-gray-200 text-gray-700 rounded-md hover:bg-gray-300 disabled:opacity-50 disabled:cursor-not-allowed"
+                  title="Previous page"
+                >
+                  ‹
+                </button>
+                <span className="text-sm text-gray-700">
+                  Page {page} of {data.totalPages}
+                </span>
+                <button
+                  onClick={() => setPage((p) => Math.min(data.totalPages, p + 1))}
+                  disabled={page === data.totalPages}
+                  className="px-3 py-1.5 text-sm bg-gray-200 text-gray-700 rounded-md hover:bg-gray-300 disabled:opacity-50 disabled:cursor-not-allowed"
+                  title="Next page"
+                >
+                  ›
+                </button>
+              </div>
+            )}
+
             {/* Group Controls */}
             <div className="flex flex-wrap items-center gap-2">
               <button
                 onClick={handleSelectAll}
                 className="px-3 py-1.5 text-sm font-medium text-indigo-600 bg-indigo-50 rounded-md hover:bg-indigo-100"
-                disabled={data?.items.length === 0}
-              >
-                Select All
-              </button>
-              <button
-                onClick={handleSelectAllOnPage}
-                className="px-3 py-1.5 text-sm font-medium text-indigo-600 bg-indigo-50 rounded-md hover:bg-indigo-100"
                 disabled={displayItems.length === 0}
               >
-                Select All on Page
+                Select All
               </button>
               <button
                 onClick={handleDeselectAll}
@@ -614,6 +631,9 @@ const MyItemsPage = () => {
                           ))}
                         </div>
                       )}
+
+                      {/* Collections */}
+                      <ItemCollectionsDisplay itemId={item.id} />
                     </div>
                   </div>
                   <div className="flex space-x-1 ml-4">
@@ -734,6 +754,34 @@ const MyItemsPage = () => {
           itemIds={selectedItemsForBulkCollections}
         />
       )}
+    </div>
+  );
+};
+
+// Component to display collections for an item
+const ItemCollectionsDisplay = ({ itemId }: { itemId: string }) => {
+  const { data: collectionsData } = useQuery({
+    queryKey: ["itemCollections", itemId],
+    queryFn: () => collectionsApi.getCollectionsForItem(itemId),
+  });
+
+  const collections = collectionsData?.collections || [];
+
+  if (collections.length === 0) {
+    return null;
+  }
+
+  return (
+    <div className="mt-3 flex flex-wrap gap-2">
+      {collections.map((collection) => (
+        <span
+          key={collection.id}
+          className="inline-flex items-center px-2 py-1 rounded text-xs font-medium bg-green-100 text-green-800"
+          title={`Collection: ${collection.name}`}
+        >
+          {collection.name}
+        </span>
+      ))}
     </div>
   );
 };
