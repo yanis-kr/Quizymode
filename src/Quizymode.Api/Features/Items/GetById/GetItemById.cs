@@ -1,6 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using Quizymode.Api.Data;
 using Quizymode.Api.Infrastructure;
+using Quizymode.Api.Services;
 using Quizymode.Api.Shared.Kernel;
 using Quizymode.Api.Shared.Models;
 
@@ -16,6 +17,18 @@ public static class GetItemById
         string CorrectAnswer,
         List<string> IncorrectAnswers,
         string Explanation,
+        DateTime CreatedAt,
+        List<KeywordResponse> Keywords,
+        List<CollectionResponse> Collections);
+
+    public sealed record KeywordResponse(
+        string Id,
+        string Name,
+        bool IsPrivate);
+
+    public sealed record CollectionResponse(
+        string Id,
+        string Name,
         DateTime CreatedAt);
 
     public sealed class Endpoint : IEndpoint
@@ -34,9 +47,10 @@ public static class GetItemById
         private static async Task<IResult> Handler(
             string id,
             ApplicationDbContext db,
-            CancellationToken cancellationToken)
+            IUserContext userContext = null!,
+            CancellationToken cancellationToken = default)
         {
-            Result<Response> result = await HandleAsync(id, db, cancellationToken);
+            Result<Response> result = await HandleAsync(id, db, userContext, cancellationToken);
 
             return result.Match(
                 value => Results.Ok(value),
@@ -49,6 +63,7 @@ public static class GetItemById
     public static async Task<Result<Response>> HandleAsync(
         string id,
         ApplicationDbContext db,
+        IUserContext userContext,
         CancellationToken cancellationToken)
     {
         try
@@ -61,6 +76,8 @@ public static class GetItemById
 
             Item? item = await db.Items
                 .Include(i => i.Category)
+                .Include(i => i.ItemKeywords)
+                    .ThenInclude(ik => ik.Keyword)
                 .FirstOrDefaultAsync(i => i.Id == itemId, cancellationToken);
 
             if (item is null)
@@ -72,6 +89,52 @@ public static class GetItemById
             // Get category name from Category navigation
             string? categoryName = item.Category?.Name;
 
+            // Filter keywords based on visibility
+            List<KeywordResponse> visibleKeywords = new();
+            foreach (ItemKeyword itemKeyword in item.ItemKeywords)
+            {
+                Keyword keyword = itemKeyword.Keyword;
+                
+                // Check if keyword is visible to current user
+                bool isVisible = false;
+                if (!keyword.IsPrivate)
+                {
+                    // Global keyword - visible to everyone
+                    isVisible = true;
+                }
+                else if (userContext.IsAuthenticated && !string.IsNullOrEmpty(userContext.UserId))
+                {
+                    // Private keyword - only visible to creator
+                    isVisible = keyword.CreatedBy == userContext.UserId;
+                }
+
+                if (isVisible)
+                {
+                    visibleKeywords.Add(new KeywordResponse(
+                        keyword.Id.ToString(),
+                        keyword.Name,
+                        keyword.IsPrivate));
+                }
+            }
+
+            // Load collections for this item using authenticated user's ID
+            // Collections are filtered by authenticated userId - no collections for anonymous users
+            List<CollectionResponse> collections = new();
+            if (userContext.IsAuthenticated && !string.IsNullOrEmpty(userContext.UserId))
+            {
+                List<Collection> itemCollections = await db.CollectionItems
+                    .Where(ci => ci.ItemId == itemId)
+                    .Join(db.Collections, ci => ci.CollectionId, c => c.Id, (ci, c) => c)
+                    .Where(c => c.CreatedBy == userContext.UserId || userContext.IsAdmin)
+                    .OrderByDescending(c => c.CreatedAt)
+                    .ToListAsync(cancellationToken);
+
+                collections = itemCollections.Select(c => new CollectionResponse(
+                    c.Id.ToString(),
+                    c.Name,
+                    c.CreatedAt)).ToList();
+            }
+
             Response response = new(
                 item.Id.ToString(),
                 categoryName,
@@ -80,7 +143,9 @@ public static class GetItemById
                 item.CorrectAnswer,
                 item.IncorrectAnswers,
                 item.Explanation,
-                item.CreatedAt);
+                item.CreatedAt,
+                visibleKeywords,
+                collections);
 
             return Result.Success(response);
         }

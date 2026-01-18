@@ -1,6 +1,8 @@
 using FluentAssertions;
 using Microsoft.EntityFrameworkCore;
+using Moq;
 using Quizymode.Api.Features.Items.GetById;
+using Quizymode.Api.Services;
 using Quizymode.Api.Shared.Kernel;
 using Quizymode.Api.Shared.Models;
 using Quizymode.Api.Tests.TestFixtures;
@@ -10,6 +12,15 @@ namespace Quizymode.Api.Tests.Features.Items.GetById;
 
 public sealed class GetItemByIdTests : DatabaseTestFixture
 {
+    private readonly Mock<IUserContext> _userContextMock;
+
+    public GetItemByIdTests()
+    {
+        _userContextMock = new Mock<IUserContext>();
+        _userContextMock.Setup(x => x.IsAuthenticated).Returns(true);
+        _userContextMock.Setup(x => x.UserId).Returns("test");
+        _userContextMock.Setup(x => x.IsAdmin).Returns(false);
+    }
 
     [Fact]
     public async Task HandleAsync_ValidId_ReturnsItem()
@@ -24,6 +35,7 @@ public sealed class GetItemByIdTests : DatabaseTestFixture
         Result<GetItemById.Response> result = await GetItemById.HandleAsync(
             itemId.ToString(),
             DbContext,
+            _userContextMock.Object,
             CancellationToken.None);
 
         // Assert
@@ -41,6 +53,7 @@ public sealed class GetItemByIdTests : DatabaseTestFixture
         Result<GetItemById.Response> result = await GetItemById.HandleAsync(
             "invalid-guid",
             DbContext,
+            _userContextMock.Object,
             CancellationToken.None);
 
         // Assert
@@ -59,6 +72,7 @@ public sealed class GetItemByIdTests : DatabaseTestFixture
         Result<GetItemById.Response> result = await GetItemById.HandleAsync(
             nonExistentId.ToString(),
             DbContext,
+            _userContextMock.Object,
             CancellationToken.None);
 
         // Assert

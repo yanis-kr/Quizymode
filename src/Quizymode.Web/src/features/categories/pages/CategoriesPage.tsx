@@ -71,6 +71,8 @@ const CategoriesPage = () => {
         selectedCategory || undefined,
         undefined,
         undefined,
+        undefined, // collectionId
+        undefined, // isRandom
         itemsPage,
         pageSize
       ),

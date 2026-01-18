@@ -1,4 +1,5 @@
 import { apiClient } from "./client";
+import { itemsApi } from "./items";
 import type {
   CollectionsResponse,
   CollectionResponse,
@@ -24,10 +25,9 @@ export const collectionsApi = {
   getItems: async (
     collectionId: string
   ): Promise<{ items: ItemResponse[] }> => {
-    const response = await apiClient.get<{ items: ItemResponse[] }>(
-      `/collections/${collectionId}/items`
-    );
-    return response.data;
+    // Use GET /items?collectionId=X instead of GET /collections/{id}/items
+    const response = await itemsApi.getAll(undefined, undefined, undefined, collectionId, undefined, 1, 1000);
+    return { items: response.items };
   },
 
   create: async (

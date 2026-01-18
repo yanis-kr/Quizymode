@@ -19,6 +19,12 @@ export interface KeywordResponse {
   isPrivate: boolean;
 }
 
+export interface ItemCollectionResponse {
+  id: string;
+  name: string;
+  createdAt: string;
+}
+
 export interface ItemResponse {
   id: string;
   category: string;
@@ -29,6 +35,7 @@ export interface ItemResponse {
   explanation: string;
   createdAt: string;
   keywords: KeywordResponse[];
+  collections: ItemCollectionResponse[];
 }
 
 export interface ItemsResponse {

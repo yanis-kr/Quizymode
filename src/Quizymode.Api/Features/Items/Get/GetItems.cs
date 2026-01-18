@@ -11,6 +11,8 @@ public static class GetItems
         string? Category,
         bool? IsPrivate,
         List<string>? Keywords,
+        Guid? CollectionId,
+        bool? IsRandom,
         int Page = 1,
         int PageSize = 10);
 
@@ -30,12 +32,18 @@ public static class GetItems
         List<string> IncorrectAnswers,
         string Explanation,
         DateTime CreatedAt,
-        List<KeywordResponse> Keywords);
+        List<KeywordResponse> Keywords,
+        List<CollectionResponse> Collections);
 
     public sealed record KeywordResponse(
         string Id,
         string Name,
         bool IsPrivate);
+
+    public sealed record CollectionResponse(
+        string Id,
+        string Name,
+        DateTime CreatedAt);
 
     public sealed class Endpoint : IEndpoint
     {
@@ -53,6 +61,8 @@ public static class GetItems
             string? category,
             bool? isPrivate,
             string? keywords,
+            Guid? collectionId,
+            bool? isRandom,
             int page = 1,
             int pageSize = 10,
             ApplicationDbContext db = null!,
@@ -77,7 +87,7 @@ public static class GetItems
                     .ToList();
             }
 
-            var request = new QueryRequest(category, isPrivate, keywordList, page, pageSize);
+            var request = new QueryRequest(category, isPrivate, keywordList, collectionId, isRandom, page, pageSize);
             Result<Response> result = await GetItemsHandler.HandleAsync(request, db, userContext, cancellationToken);
 
             return result.Match(

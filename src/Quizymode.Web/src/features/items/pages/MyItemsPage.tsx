@@ -56,6 +56,8 @@ const MyItemsPage = () => {
         selectedCategory || undefined,
         isPrivateFilter,
         selectedKeywords.length > 0 ? selectedKeywords : undefined,
+        undefined, // collectionId
+        undefined, // isRandom
         page,
         pageSize
       ),

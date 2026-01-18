@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
 import { collectionsApi } from "@/api/collections";
+import { itemsApi } from "@/api/items";
 import { useAuth } from "@/contexts/AuthContext";
 import { XMarkIcon, PlusIcon } from "@heroicons/react/24/outline";
 
@@ -33,9 +34,10 @@ const ItemCollectionsModal = ({
     enabled: isAuthenticated && isOpen,
   });
 
-  const { data: itemCollectionsData, isLoading: isLoadingItemCollections, refetch: refetchItemCollections } = useQuery({
-    queryKey: ["itemCollections", singleItemId],
-    queryFn: () => collectionsApi.getCollectionsForItem(singleItemId!),
+  // Use GET /items/{id} instead of GET /items/{id}/collections to get collections
+  const { data: itemData, isLoading: isLoadingItemCollections, refetch: refetchItemCollections } = useQuery({
+    queryKey: ["item", singleItemId],
+    queryFn: () => itemsApi.getById(singleItemId!),
     enabled: isAuthenticated && isOpen && !isBulkMode && !!singleItemId,
     refetchOnMount: 'always',
   });
@@ -55,10 +57,10 @@ const ItemCollectionsModal = ({
     },
     onSuccess: async () => {
       if (isBulkMode) {
-        // Refetch item collections queries for all items in bulk mode
+        // Refetch item queries for all items in bulk mode (to get updated collections)
         await Promise.all(
           multipleItemIds.map((itemId) =>
-            queryClient.refetchQueries({ queryKey: ["itemCollections", itemId] })
+            queryClient.refetchQueries({ queryKey: ["item", itemId] })
           )
         );
         // Update bulk selected collections state
@@ -68,7 +70,7 @@ const ItemCollectionsModal = ({
           return newSet;
         });
       } else if (singleItemId) {
-        await queryClient.refetchQueries({ queryKey: ["itemCollections", singleItemId] });
+        await queryClient.refetchQueries({ queryKey: ["item", singleItemId] });
       }
       queryClient.invalidateQueries({ queryKey: ["collections"] });
     },
@@ -87,16 +89,16 @@ const ItemCollectionsModal = ({
         );
         // Update bulk selected collections state
         setBulkSelectedCollections((prev) => new Set(prev).add(newCollection.id));
-        // Refetch item collections queries for all items in bulk mode
+        // Refetch item queries for all items in bulk mode (to get updated collections)
         await Promise.all(
           multipleItemIds.map((itemId) =>
-            queryClient.refetchQueries({ queryKey: ["itemCollections", itemId] })
+            queryClient.refetchQueries({ queryKey: ["item", itemId] })
           )
         );
       } else if (singleItemId) {
         await collectionsApi.addItem(newCollection.id, { itemId: singleItemId });
-        // Refetch item collections query to update checkbox state
-        await queryClient.refetchQueries({ queryKey: ["itemCollections", singleItemId] });
+        // Refetch item query to update checkbox state
+        await queryClient.refetchQueries({ queryKey: ["item", singleItemId] });
       }
       setNewCollectionName("");
     },
@@ -119,15 +121,15 @@ const ItemCollectionsModal = ({
       // Update bulk selected collections state on success
       if (isBulkMode) {
         setBulkSelectedCollections((prev) => new Set(prev).add(collectionId));
-        // Refetch item collections queries for all items in bulk mode
+        // Refetch item queries for all items in bulk mode (to get updated collections)
         await Promise.all(
           multipleItemIds.map((itemId) =>
-            queryClient.refetchQueries({ queryKey: ["itemCollections", itemId] })
+            queryClient.refetchQueries({ queryKey: ["item", itemId] })
           )
         );
       }
       if (singleItemId) {
-        await queryClient.refetchQueries({ queryKey: ["itemCollections", singleItemId] });
+        await queryClient.refetchQueries({ queryKey: ["item", singleItemId] });
       }
       queryClient.invalidateQueries({ queryKey: ["collections"] });
     },
@@ -179,7 +181,7 @@ const ItemCollectionsModal = ({
   if (!isOpen) return null;
 
   const allCollections = collectionsData?.collections || [];
-  const itemCollections = itemCollectionsData?.collections || [];
+  const itemCollections = itemData?.collections || [];
   const itemCollectionIds = new Set(itemCollections.map((ic) => ic.id));
 
   return (

@@ -1,9 +1,7 @@
-import { useQuery } from "@tanstack/react-query";
 import { StarIcon as StarIconSolid } from "@heroicons/react/24/solid";
-import { collectionsApi } from "@/api/collections";
 import { ratingsApi } from "@/api/ratings";
-import { useAuth } from "@/contexts/AuthContext";
-import type { ItemResponse, KeywordResponse, CollectionResponse } from "@/types/api";
+import { useQuery } from "@tanstack/react-query";
+import type { ItemResponse, KeywordResponse, ItemCollectionResponse } from "@/types/api";
 
 interface ItemListCardProps {
   item: ItemResponse;
@@ -51,7 +49,7 @@ const ItemListCard = ({
 
             <KeywordsAndCollectionsSection
               keywords={item.keywords}
-              itemId={item.id}
+              collections={item.collections}
               onKeywordClick={onKeywordClick}
               selectedKeywords={selectedKeywords}
             />
@@ -88,46 +86,19 @@ const ItemAverageStars = ({ itemId }: { itemId: string }) => {
 
 const KeywordsAndCollectionsSection = ({
   keywords,
-  itemId,
+  collections,
   onKeywordClick,
   selectedKeywords,
 }: {
   keywords?: KeywordResponse[];
-  itemId: string;
+  collections?: ItemCollectionResponse[];
   onKeywordClick?: (keywordName: string) => void;
   selectedKeywords?: string[];
 }) => {
-  const { isAuthenticated } = useAuth();
-  
-  const { data: collectionsData, isLoading, error } = useQuery({
-    queryKey: ["itemCollections", itemId],
-    queryFn: async () => {
-      try {
-        return await collectionsApi.getCollectionsForItem(itemId);
-      } catch (err: any) {
-        // Handle 404 as "no collections" rather than an error
-        if (err?.response?.status === 404) {
-          return { collections: [] };
-        }
-        // Re-throw other errors
-        throw err;
-      }
-    },
-    enabled: isAuthenticated && !!itemId,
-    refetchOnMount: "always",
-    retry: false,
-  });
-
-  // Handle the response - check both camelCase and PascalCase just in case
-  const collections = collectionsData?.collections || (collectionsData as any)?.Collections || [];
   const hasKeywords = keywords && keywords.length > 0;
-  const hasCollections = collections.length > 0;
+  const hasCollections = collections && collections.length > 0;
 
-  // Only show error for non-404 errors (server errors, network issues, etc.)
-  const showError = error && (error as any)?.response?.status !== 404;
-
-  // Always show the container if there are keywords, even if collections are loading
-  if (!hasKeywords && !hasCollections && !isLoading && !showError) {
+  if (!hasKeywords && !hasCollections) {
     return null;
   }
 
@@ -147,7 +118,7 @@ const KeywordsAndCollectionsSection = ({
       )}
       {hasCollections && (
         <>
-          {collections.map((collection: CollectionResponse) => (
+          {collections!.map((collection: ItemCollectionResponse) => (
             <span
               key={collection.id}
               className="inline-flex items-center px-2 py-1 rounded text-xs font-medium bg-emerald-100 text-emerald-800"
@@ -157,11 +128,6 @@ const KeywordsAndCollectionsSection = ({
             </span>
           ))}
         </>
-      )}
-      {showError && (
-        <span className="text-xs text-red-500" title={`Failed to load collections: ${(error as any)?.message || "Unknown error"}`}>
-          (Error loading collections)
-        </span>
       )}
     </div>
   );
