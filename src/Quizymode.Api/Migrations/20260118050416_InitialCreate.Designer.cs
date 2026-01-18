@@ -12,8 +12,8 @@ using Quizymode.Api.Data;
 namespace Quizymode.Api.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20260103182913_AddCategoryIndexes")]
-    partial class AddCategoryIndexes
+    [Migration("20260118050416_InitialCreate")]
+    partial class InitialCreate
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -250,7 +250,7 @@ namespace Quizymode.Api.Migrations
 
                     b.HasIndex("IsPrivate", "CreatedBy");
 
-                    b.ToTable("items", null, t =>
+                    b.ToTable("Items", null, t =>
                         {
                             t.HasCheckConstraint("CK_Items_IncorrectAnswers_Length", "jsonb_array_length(\"IncorrectAnswers\"::jsonb) >= 0 AND jsonb_array_length(\"IncorrectAnswers\"::jsonb) <= 4");
                         });
@@ -281,7 +281,7 @@ namespace Quizymode.Api.Migrations
                     b.HasIndex("ItemId", "KeywordId")
                         .IsUnique();
 
-                    b.ToTable("item_keywords", (string)null);
+                    b.ToTable("ItemKeywords", (string)null);
                 });
 
             modelBuilder.Entity("Quizymode.Api.Shared.Models.Keyword", b =>
@@ -318,7 +318,7 @@ namespace Quizymode.Api.Migrations
                     b.HasIndex("Name", "CreatedBy", "IsPrivate")
                         .IsUnique();
 
-                    b.ToTable("keywords", (string)null);
+                    b.ToTable("Keywords", (string)null);
                 });
 
             modelBuilder.Entity("Quizymode.Api.Shared.Models.Rating", b =>

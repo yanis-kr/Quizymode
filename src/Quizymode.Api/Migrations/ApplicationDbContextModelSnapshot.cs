@@ -278,7 +278,7 @@ namespace Quizymode.Api.Migrations
                     b.HasIndex("ItemId", "KeywordId")
                         .IsUnique();
 
-                    b.ToTable("item_keywords", (string)null);
+                    b.ToTable("ItemKeywords", (string)null);
                 });
 
             modelBuilder.Entity("Quizymode.Api.Shared.Models.Keyword", b =>

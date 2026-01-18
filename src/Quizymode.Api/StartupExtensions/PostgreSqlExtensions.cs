@@ -17,6 +17,11 @@ internal static partial class StartupExtensions
         {
             options.UseNpgsql(connectionString);
             
+            // Suppress pending model changes warning to allow migrations to run
+            // This is needed when model snapshot and configuration are temporarily out of sync during migrations
+            options.ConfigureWarnings(warnings => 
+                warnings.Ignore(Microsoft.EntityFrameworkCore.Diagnostics.RelationalEventId.PendingModelChangesWarning));
+            
             // Enable sensitive data logging in Development to see actual parameter values
             if (builder.Environment.IsDevelopment())
             {

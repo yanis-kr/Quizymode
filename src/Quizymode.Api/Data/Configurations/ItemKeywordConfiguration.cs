@@ -8,7 +8,7 @@ internal sealed class ItemKeywordConfiguration : IEntityTypeConfiguration<ItemKe
 {
     public void Configure(EntityTypeBuilder<ItemKeyword> builder)
     {
-        builder.ToTable("item_keywords");
+        builder.ToTable("ItemKeywords");
 
         builder.HasKey(x => x.Id);
 

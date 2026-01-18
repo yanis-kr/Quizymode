@@ -89,18 +89,18 @@ namespace Quizymode.Api.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "keywords",
+                name: "Keywords",
                 columns: table => new
                 {
                     Id = table.Column<Guid>(type: "uuid", nullable: false, defaultValueSql: "gen_random_uuid()"),
-                    Name = table.Column<string>(type: "character varying(10)", maxLength: 10, nullable: false),
+                    Name = table.Column<string>(type: "character varying(30)", maxLength: 30, nullable: false),
                     IsPrivate = table.Column<bool>(type: "boolean", nullable: false, defaultValue: false),
                     CreatedBy = table.Column<string>(type: "character varying(100)", maxLength: 100, nullable: false),
                     CreatedAt = table.Column<DateTime>(type: "timestamp with time zone", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_keywords", x => x.Id);
+                    table.PrimaryKey("PK_Keywords", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -153,7 +153,7 @@ namespace Quizymode.Api.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "items",
+                name: "Items",
                 columns: table => new
                 {
                     Id = table.Column<Guid>(type: "uuid", nullable: false, defaultValueSql: "gen_random_uuid()"),
@@ -171,10 +171,10 @@ namespace Quizymode.Api.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_items", x => x.Id);
+                    table.PrimaryKey("PK_Items", x => x.Id);
                     table.CheckConstraint("CK_Items_IncorrectAnswers_Length", "jsonb_array_length(\"IncorrectAnswers\"::jsonb) >= 0 AND jsonb_array_length(\"IncorrectAnswers\"::jsonb) <= 4");
                     table.ForeignKey(
-                        name: "FK_items_Categories_CategoryId",
+                        name: "FK_Items_Categories_CategoryId",
                         column: x => x.CategoryId,
                         principalTable: "Categories",
                         principalColumn: "Id",
@@ -182,7 +182,7 @@ namespace Quizymode.Api.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "item_keywords",
+                name: "ItemKeywords",
                 columns: table => new
                 {
                     Id = table.Column<Guid>(type: "uuid", nullable: false, defaultValueSql: "gen_random_uuid()"),
@@ -192,17 +192,17 @@ namespace Quizymode.Api.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_item_keywords", x => x.Id);
+                    table.PrimaryKey("PK_ItemKeywords", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_item_keywords_items_ItemId",
+                        name: "FK_ItemKeywords_Items_ItemId",
                         column: x => x.ItemId,
-                        principalTable: "items",
+                        principalTable: "Items",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_item_keywords_keywords_KeywordId",
+                        name: "FK_ItemKeywords_Keywords_KeywordId",
                         column: x => x.KeywordId,
-                        principalTable: "keywords",
+                        principalTable: "Keywords",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Restrict);
                 });
@@ -228,6 +228,16 @@ namespace Quizymode.Api.Migrations
                 column: "UserId");
 
             migrationBuilder.CreateIndex(
+                name: "IX_Categories_IsPrivate",
+                table: "Categories",
+                column: "IsPrivate");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Categories_IsPrivate_CreatedBy",
+                table: "Categories",
+                columns: new[] { "IsPrivate", "CreatedBy" });
+
+            migrationBuilder.CreateIndex(
                 name: "IX_Categories_Name",
                 table: "Categories",
                 column: "Name",
@@ -244,49 +254,59 @@ namespace Quizymode.Api.Migrations
                 column: "ItemId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_item_keywords_ItemId",
-                table: "item_keywords",
+                name: "IX_ItemKeywords_ItemId",
+                table: "ItemKeywords",
                 column: "ItemId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_item_keywords_ItemId_KeywordId",
-                table: "item_keywords",
+                name: "IX_ItemKeywords_ItemId_KeywordId",
+                table: "ItemKeywords",
                 columns: new[] { "ItemId", "KeywordId" },
                 unique: true);
 
             migrationBuilder.CreateIndex(
-                name: "IX_item_keywords_KeywordId",
-                table: "item_keywords",
+                name: "IX_ItemKeywords_KeywordId",
+                table: "ItemKeywords",
                 column: "KeywordId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_items_CategoryId",
-                table: "items",
+                name: "IX_Items_CategoryId",
+                table: "Items",
                 column: "CategoryId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_items_CreatedAt",
-                table: "items",
+                name: "IX_Items_CategoryId_IsPrivate",
+                table: "Items",
+                columns: new[] { "CategoryId", "IsPrivate" });
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Items_CreatedAt",
+                table: "Items",
                 column: "CreatedAt");
 
             migrationBuilder.CreateIndex(
-                name: "IX_items_FuzzyBucket",
-                table: "items",
+                name: "IX_Items_FuzzyBucket",
+                table: "Items",
                 column: "FuzzyBucket");
 
             migrationBuilder.CreateIndex(
-                name: "IX_keywords_CreatedBy",
-                table: "keywords",
+                name: "IX_Items_IsPrivate_CreatedBy",
+                table: "Items",
+                columns: new[] { "IsPrivate", "CreatedBy" });
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Keywords_CreatedBy",
+                table: "Keywords",
                 column: "CreatedBy");
 
             migrationBuilder.CreateIndex(
-                name: "IX_keywords_IsPrivate",
-                table: "keywords",
+                name: "IX_Keywords_IsPrivate",
+                table: "Keywords",
                 column: "IsPrivate");
 
             migrationBuilder.CreateIndex(
-                name: "IX_keywords_Name_CreatedBy_IsPrivate",
-                table: "keywords",
+                name: "IX_Keywords_Name_CreatedBy_IsPrivate",
+                table: "Keywords",
                 columns: new[] { "Name", "CreatedBy", "IsPrivate" },
                 unique: true);
 
@@ -299,6 +319,11 @@ namespace Quizymode.Api.Migrations
                 name: "IX_Ratings_ItemId_CreatedBy",
                 table: "Ratings",
                 columns: new[] { "ItemId", "CreatedBy" });
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Ratings_ItemId_Stars",
+                table: "Ratings",
+                columns: new[] { "ItemId", "Stars" });
 
             migrationBuilder.CreateIndex(
                 name: "IX_Users_Email",
@@ -337,7 +362,7 @@ namespace Quizymode.Api.Migrations
                 name: "Comments");
 
             migrationBuilder.DropTable(
-                name: "item_keywords");
+                name: "ItemKeywords");
 
             migrationBuilder.DropTable(
                 name: "Ratings");
@@ -349,10 +374,10 @@ namespace Quizymode.Api.Migrations
                 name: "Users");
 
             migrationBuilder.DropTable(
-                name: "items");
+                name: "Items");
 
             migrationBuilder.DropTable(
-                name: "keywords");
+                name: "Keywords");
 
             migrationBuilder.DropTable(
                 name: "Categories");

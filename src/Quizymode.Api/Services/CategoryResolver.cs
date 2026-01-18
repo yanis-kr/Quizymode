@@ -89,16 +89,16 @@ internal sealed class CategoryResolver(
             // Private category requested
             // First check if ANY category with this name already exists (case-insensitive)
             // Since category names are globally unique, we can't create a private category if a global one exists
-            Category? existingCategory = await _db.Categories
+            Category? existingPrivateCategory = await _db.Categories
                 .FirstOrDefaultAsync(
                     c => c.Name.ToLower() == trimmedName.ToLower(),
                     cancellationToken);
 
-            if (existingCategory is not null)
+            if (existingPrivateCategory is not null)
             {
                 // Category with this name already exists
                 // If it's a global category, we can't use it for a private item
-                if (!existingCategory.IsPrivate)
+                if (!existingPrivateCategory.IsPrivate)
                 {
                     return Result.Failure<Category>(
                         Error.Conflict("Category.NameExists", 
@@ -106,7 +106,7 @@ internal sealed class CategoryResolver(
                 }
 
                 // If it's a private category, check if it belongs to this user
-                if (existingCategory.CreatedBy != currentUserId)
+                if (existingPrivateCategory.CreatedBy != currentUserId)
                 {
                     return Result.Failure<Category>(
                         Error.Conflict("Category.NameExists", 
@@ -114,7 +114,7 @@ internal sealed class CategoryResolver(
                 }
 
                 // Private category exists and belongs to this user
-                return Result.Success(existingCategory);
+                return Result.Success(existingPrivateCategory);
             }
 
             // No category with this name exists, create new private category for user
