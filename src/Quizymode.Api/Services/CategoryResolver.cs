@@ -97,18 +97,12 @@ internal sealed class CategoryResolver(
             if (existingPrivateCategory is not null)
             {
                 // Category with this name already exists
-                // If it's a global category, admins can use it even for private items
+                // If it's a global category, allow using it for private items (both admin and non-admin)
+                // This allows users to create private items that reference global categories
                 if (!existingPrivateCategory.IsPrivate)
                 {
-                    if (isAdmin)
-                    {
-                        // Admin can use global category even when creating private items
-                        return Result.Success(existingPrivateCategory);
-                    }
-                    
-                    return Result.Failure<Category>(
-                        Error.Conflict("Category.NameExists", 
-                            $"A global category named '{trimmedName}' already exists. Private categories cannot share names with global categories."));
+                    // Allow using global category for private items - the item is private but can use a global category
+                    return Result.Success(existingPrivateCategory);
                 }
 
                 // If it's a private category, check if it belongs to this user

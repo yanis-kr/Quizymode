@@ -6,6 +6,11 @@ using Quizymode.Api.Shared.Models;
 
 namespace Quizymode.Api.Features.Items.Get;
 
+/// <summary>
+/// Builder class responsible for constructing EF Core queries for items based on filter criteria.
+/// Applies filters in a specific order: visibility, category, keywords, collection.
+/// Each filter method returns a Result to allow for proper error handling and early termination.
+/// </summary>
 internal sealed class ItemQueryBuilder
 {
     private readonly ApplicationDbContext _db;
@@ -22,6 +27,12 @@ internal sealed class ItemQueryBuilder
         _cancellationToken = cancellationToken;
     }
 
+    /// <summary>
+    /// Main method that builds the complete query by applying all requested filters in sequence.
+    /// Filters are applied in dependency order: visibility first (fundamental security),
+    /// then category, keywords, and finally collection (which depends on visibility).
+    /// Returns Result pattern to handle validation errors gracefully.
+    /// </summary>
     public async Task<Result<IQueryable<Item>>> BuildQueryAsync(GetItems.QueryRequest request)
     {
         IQueryable<Item> query = _db.Items.AsQueryable();
@@ -57,6 +68,16 @@ internal sealed class ItemQueryBuilder
         return Result.Success(query);
     }
 
+    /// <summary>
+    /// Applies visibility filtering to the query based on IsPrivate parameter and user authentication status.
+    /// Visibility rules:
+    /// - If IsPrivate=true: user must be authenticated and only sees their own private items
+    /// - If IsPrivate=false: only global (non-private) items are returned
+    /// - If IsPrivate=null (all items):
+    ///   - Anonymous users: only global items
+    ///   - Authenticated users: global items + their own private items
+    /// This ensures users can only see items they have permission to view.
+    /// </summary>
     private Result<IQueryable<Item>> ApplyVisibilityFilter(IQueryable<Item> query, GetItems.QueryRequest request)
     {
         if (request.IsPrivate.HasValue)
@@ -90,6 +111,11 @@ internal sealed class ItemQueryBuilder
         return Result.Success(query);
     }
 
+    /// <summary>
+    /// Applies category filtering to the query. Resolves category name to category ID,
+    /// supporting both global and private categories (if user is authenticated).
+    /// If category is not found, returns empty result set rather than erroring.
+    /// </summary>
     private async Task<Result<IQueryable<Item>>> ApplyCategoryFilterAsync(
         IQueryable<Item> query,
         GetItems.QueryRequest request)
@@ -114,6 +140,13 @@ internal sealed class ItemQueryBuilder
         return Result.Success(query);
     }
 
+    /// <summary>
+    /// Resolves a category name to its ID, checking both global and user's private categories.
+    /// First checks global categories, then if user is authenticated, checks their private categories.
+    /// Uses case-insensitive comparison. Handles NotSupportedException for databases that don't support
+    /// ToLower() in queries by loading categories into memory and comparing there.
+    /// Returns null if category is not found.
+    /// </summary>
     private async Task<Guid?> ResolveCategoryIdAsync(string categoryName)
     {
         try
@@ -174,6 +207,12 @@ internal sealed class ItemQueryBuilder
         return null;
     }
 
+    /// <summary>
+    /// Applies keyword filtering to the query. First resolves keyword names to IDs,
+    /// respecting visibility (anonymous users see only global keywords, authenticated users
+    /// see global + their own private keywords). Then filters items that have any of the
+    /// specified keywords. Returns empty result if none of the requested keywords are found.
+    /// </summary>
     private async Task<Result<IQueryable<Item>>> ApplyKeywordFilterAsync(
         IQueryable<Item> query,
         GetItems.QueryRequest request)
@@ -211,6 +250,13 @@ internal sealed class ItemQueryBuilder
         return Result.Success(query);
     }
 
+    /// <summary>
+    /// Applies collection filtering to the query. Requires authentication and verifies
+    /// that the user owns the collection (or is admin) before filtering items.
+    /// Returns validation error if collection doesn't exist or user doesn't have access.
+    /// Loads all item IDs in the collection first, then filters the main query to those IDs.
+    /// This approach ensures visibility rules (already applied) are respected.
+    /// </summary>
     private async Task<Result<IQueryable<Item>>> ApplyCollectionFilterAsync(
         IQueryable<Item> query,
         GetItems.QueryRequest request)

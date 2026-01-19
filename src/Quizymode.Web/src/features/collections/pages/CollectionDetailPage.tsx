@@ -1,6 +1,7 @@
 import { useParams, useNavigate } from "react-router-dom";
 import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
 import { collectionsApi } from "@/api/collections";
+import { useAuth } from "@/contexts/AuthContext";
 import LoadingSpinner from "@/components/LoadingSpinner";
 import ErrorMessage from "@/components/ErrorMessage";
 import ItemListSection from "@/components/ItemListSection";
@@ -9,6 +10,7 @@ import { MinusIcon, ArrowLeftIcon, EyeIcon, AcademicCapIcon } from "@heroicons/r
 
 const CollectionDetailPage = () => {
   const { id } = useParams<{ id: string }>();
+  const { isAuthenticated } = useAuth();
   const queryClient = useQueryClient();
   const navigate = useNavigate();
 
@@ -101,6 +103,7 @@ const CollectionDetailPage = () => {
           onDeselectAll={deselectAll}
           onAddSelectedToCollection={() => {}}
           onToggleSelect={toggleItem}
+          isAuthenticated={isAuthenticated}
           renderActions={(item) => (
             <>
               <button

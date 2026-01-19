@@ -18,6 +18,7 @@ interface ItemListSectionProps {
   renderActions?: (item: ItemResponse) => ReactNode;
   onKeywordClick?: (keywordName: string) => void;
   selectedKeywords?: string[];
+  isAuthenticated?: boolean;
 }
 
 const ItemListSection = ({
@@ -35,6 +36,7 @@ const ItemListSection = ({
   renderActions,
   onKeywordClick,
   selectedKeywords,
+  isAuthenticated = true,
 }: ItemListSectionProps) => {
   if (items.length === 0) {
     return null;
@@ -58,6 +60,7 @@ const ItemListSection = ({
         isSelectAllDisabled={items.length === 0}
         isDeselectAllDisabled={selectedItemIds.size === 0}
         isAddToCollectionDisabled={selectedItemIds.size === 0}
+        isAuthenticated={isAuthenticated}
       />
 
       <div className="space-y-4 mb-6">

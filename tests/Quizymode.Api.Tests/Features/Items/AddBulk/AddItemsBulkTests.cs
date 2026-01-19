@@ -14,10 +14,12 @@ namespace Quizymode.Api.Tests.Features.Items.AddBulk;
 public sealed class AddItemsBulkTests : ItemTestFixture
 {
     private readonly Mock<IUserContext> _userContextMock;
+    private readonly Mock<IAuditService> _auditServiceMock;
 
     public AddItemsBulkTests()
     {
         _userContextMock = CreateUserContextMock("test-user");
+        _auditServiceMock = new Mock<IAuditService>();
     }
 
     [Fact]
@@ -39,6 +41,7 @@ public sealed class AddItemsBulkTests : ItemTestFixture
             SimHashService,
             _userContextMock.Object,
             CategoryResolver,
+            _auditServiceMock.Object,
             CancellationToken.None);
 
         // Assert
@@ -81,6 +84,7 @@ public sealed class AddItemsBulkTests : ItemTestFixture
             SimHashService,
             _userContextMock.Object,
             CategoryResolver,
+            _auditServiceMock.Object,
             CancellationToken.None);
 
         // Assert
@@ -178,6 +182,7 @@ public sealed class AddItemsBulkTests : ItemTestFixture
             SimHashService,
             _userContextMock.Object,
             CategoryResolver,
+            _auditServiceMock.Object,
             CancellationToken.None);
 
         // Assert

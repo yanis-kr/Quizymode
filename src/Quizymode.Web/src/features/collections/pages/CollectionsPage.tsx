@@ -103,8 +103,13 @@ const CollectionsPage = () => {
 
   return (
     <div className="px-4 py-6 sm:px-0">
-      <div className="mb-6 flex justify-between items-center">
-        <h1 className="text-3xl font-bold text-gray-900">My Collections</h1>
+      <div className="mb-6">
+        <h1 className="text-3xl font-bold text-gray-900 mb-2">My Collections</h1>
+        <p className="text-gray-600 text-sm">
+          Organize quiz items into custom collections. Group related items together for easier study and practice.
+        </p>
+      </div>
+      <div className="mb-6 flex justify-end items-center">
         <button
           onClick={() => setShowCreateModal(true)}
           className="px-4 py-2 bg-indigo-600 text-white rounded-md hover:bg-indigo-700"

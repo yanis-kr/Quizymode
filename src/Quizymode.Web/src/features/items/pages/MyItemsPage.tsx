@@ -20,6 +20,7 @@ import {
 import ItemListSection from "@/components/ItemListSection";
 import BulkItemCollectionsModal from "@/components/BulkItemCollectionsModal";
 import useItemSelection from "@/hooks/useItemSelection";
+import { usePageSize } from "@/hooks/usePageSize";
 
 const MyItemsPage = () => {
   const { isAuthenticated, isAdmin } = useAuth();
@@ -38,7 +39,7 @@ const MyItemsPage = () => {
   const [selectedItemsForBulkCollections, setSelectedItemsForBulkCollections] = useState<string[]>([]);
   const [showFilters, setShowFilters] = useState(false);
   const [activeFilters, setActiveFilters] = useState<Set<string>>(new Set());
-  const pageSize = 10;
+  const { pageSize } = usePageSize();
 
   const { data: categoriesData } = useQuery({
     queryKey: ["categories"],
@@ -226,8 +227,13 @@ const MyItemsPage = () => {
 
   return (
     <div className="px-4 py-6 sm:px-0">
-      <div className="mb-6 flex justify-between items-center">
-        <h1 className="text-3xl font-bold text-gray-900">My Items</h1>
+      <div className="mb-6">
+        <h1 className="text-3xl font-bold text-gray-900 mb-2">My Items</h1>
+        <p className="text-gray-600 text-sm">
+          Manage your personal quiz items. Create, edit, and organize items by category, keywords, and collections.
+        </p>
+      </div>
+      <div className="mb-6 flex justify-end items-center">
         <div className="flex space-x-2">
           <button
             onClick={() => navigate("/my-items/bulk-create")}
@@ -514,6 +520,7 @@ const MyItemsPage = () => {
           onToggleSelect={toggleItem}
           onKeywordClick={handleKeywordClick}
           selectedKeywords={selectedKeywords}
+          isAuthenticated={isAuthenticated}
           renderActions={(item) => (
             <>
               <button

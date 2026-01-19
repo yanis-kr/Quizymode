@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
 import { usersApi } from "@/api/users";
 import { useAuth } from "@/contexts/AuthContext";
+import { usePageSize } from "@/hooks/usePageSize";
 import type { UserResponse } from "@/types/api";
 import { XMarkIcon } from "@heroicons/react/24/outline";
 
@@ -13,8 +14,11 @@ interface UserProfileModalProps {
 const UserProfileModal = ({ isOpen, onClose }: UserProfileModalProps) => {
   const [isEditing, setIsEditing] = useState(false);
   const [name, setName] = useState("");
+  const [isEditingPageSize, setIsEditingPageSize] = useState(false);
+  const [pageSizeInput, setPageSizeInput] = useState("10");
   const queryClient = useQueryClient();
   const { isAuthenticated } = useAuth();
+  const { pageSize, updatePageSize, isUpdating } = usePageSize();
 
   // Try to get cached data first - check this outside the query
   const cachedUser = queryClient.getQueryData<UserResponse>(["currentUser"]);
@@ -84,6 +88,13 @@ const UserProfileModal = ({ isOpen, onClose }: UserProfileModalProps) => {
     }
   }, [displayUser, isEditing]);
 
+  // Initialize page size input when page size changes
+  useEffect(() => {
+    if (!isEditingPageSize) {
+      setPageSizeInput(pageSize.toString());
+    }
+  }, [pageSize, isEditingPageSize]);
+
   const updateNameMutation = useMutation({
     mutationFn: (newName: string) => usersApi.updateName({ name: newName }),
     onSuccess: () => {
@@ -103,6 +114,19 @@ const UserProfileModal = ({ isOpen, onClose }: UserProfileModalProps) => {
     if (displayUser) {
       setName(displayUser.name || "");
     }
+  };
+
+  const handleSavePageSize = () => {
+    const newPageSize = parseInt(pageSizeInput, 10);
+    if (!isNaN(newPageSize) && newPageSize >= 1 && newPageSize <= 1000) {
+      updatePageSize(newPageSize);
+      setIsEditingPageSize(false);
+    }
+  };
+
+  const handleCancelPageSize = () => {
+    setIsEditingPageSize(false);
+    setPageSizeInput(pageSize.toString());
   };
 
   if (!isOpen) return null;
@@ -217,6 +241,56 @@ const UserProfileModal = ({ isOpen, onClose }: UserProfileModalProps) => {
               <div className="px-3 py-2 bg-gray-50 rounded-md text-sm text-gray-900">
                 {new Date(displayUser.lastLogin).toLocaleDateString()}
               </div>
+            </div>
+
+            <div>
+              <label className="block text-sm font-medium text-gray-700 mb-1">
+                Default Page Size
+              </label>
+              <p className="text-xs text-gray-500 mb-1">
+                Number of items displayed per page (1-1000)
+              </p>
+              {isEditingPageSize ? (
+                <div className="space-y-2">
+                  <input
+                    type="number"
+                    min="1"
+                    max="1000"
+                    value={pageSizeInput}
+                    onChange={(e) => setPageSizeInput(e.target.value)}
+                    className="w-full px-3 py-2 border border-gray-300 rounded-md text-sm"
+                    autoFocus
+                  />
+                  <div className="flex justify-end space-x-2">
+                    <button
+                      onClick={handleCancelPageSize}
+                      disabled={isUpdating}
+                      className="px-3 py-1 text-xs font-medium text-gray-700 bg-white border border-gray-300 rounded-md hover:bg-gray-50"
+                    >
+                      Cancel
+                    </button>
+                    <button
+                      onClick={handleSavePageSize}
+                      disabled={isUpdating || !pageSizeInput || parseInt(pageSizeInput, 10) < 1 || parseInt(pageSizeInput, 10) > 1000}
+                      className="px-3 py-1 text-xs font-medium text-white bg-indigo-600 rounded-md hover:bg-indigo-700 disabled:opacity-50"
+                    >
+                      {isUpdating ? "Saving..." : "Save"}
+                    </button>
+                  </div>
+                </div>
+              ) : (
+                <div className="flex items-center justify-between">
+                  <div className="px-3 py-2 bg-gray-50 rounded-md text-sm text-gray-900">
+                    {pageSize} items per page
+                  </div>
+                  <button
+                    onClick={() => setIsEditingPageSize(true)}
+                    className="ml-2 px-3 py-1 text-xs font-medium text-indigo-600 bg-white border border-indigo-600 rounded-md hover:bg-indigo-50"
+                  >
+                    Change
+                  </button>
+                </div>
+              )}
             </div>
 
             {isEditing ? (

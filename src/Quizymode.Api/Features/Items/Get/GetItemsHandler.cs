@@ -6,8 +6,21 @@ using Quizymode.Api.Shared.Models;
 
 namespace Quizymode.Api.Features.Items.Get;
 
+/// <summary>
+/// Business logic handler for retrieving items. Orchestrates query building, execution, and response mapping.
+/// Uses specialized classes (ItemQueryBuilder, ItemQueryExecutor, ItemCollectionLoader, ItemResponseMapper)
+/// to maintain separation of concerns and improve testability.
+/// </summary>
 internal static class GetItemsHandler
 {
+    /// <summary>
+    /// Main handler method that coordinates the entire item retrieval process:
+    /// 1. Builds the filtered EF Core query using ItemQueryBuilder
+    /// 2. Executes the query and gets paginated results using ItemQueryExecutor
+    /// 3. Loads collection information for the returned items using ItemCollectionLoader
+    /// 4. Maps domain entities to response DTOs using ItemResponseMapper
+    /// 5. Calculates total pages based on total count and page size
+    /// </summary>
     public static async Task<Result<GetItems.Response>> HandleAsync(
         GetItems.QueryRequest request,
         ApplicationDbContext db,

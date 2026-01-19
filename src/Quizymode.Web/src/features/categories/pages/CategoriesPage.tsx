@@ -1,6 +1,6 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useQuery } from "@tanstack/react-query";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useSearchParams, useParams } from "react-router-dom";
 import { categoriesApi } from "@/api/categories";
 import { itemsApi } from "@/api/items";
 import LoadingSpinner from "@/components/LoadingSpinner";
@@ -8,6 +8,8 @@ import ErrorMessage from "@/components/ErrorMessage";
 import ItemListSection from "@/components/ItemListSection";
 import BulkItemCollectionsModal from "@/components/BulkItemCollectionsModal";
 import useItemSelection from "@/hooks/useItemSelection";
+import { useAuth } from "@/contexts/AuthContext";
+import { usePageSize } from "@/hooks/usePageSize";
 import {
   AcademicCapIcon,
   ListBulletIcon,
@@ -16,16 +18,39 @@ import {
 } from "@heroicons/react/24/outline";
 
 const CategoriesPage = () => {
+  const { isAuthenticated } = useAuth();
+  const { category: categoryParam } = useParams<{ category?: string }>();
+  const [searchParams] = useSearchParams();
   const [search, setSearch] = useState("");
-  const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
-  const [categoryView, setCategoryView] = useState<"actions" | "items">(
-    "actions"
+  
+  // Get category from URL params (route param takes precedence over query param)
+  const categoryFromUrl = categoryParam || searchParams.get("category");
+  const pageFromUrl = parseInt(searchParams.get("page") || "1", 10);
+  const pageSizeFromUrl = parseInt(searchParams.get("pagesize") || "10", 10);
+  
+  const [selectedCategory, setSelectedCategory] = useState<string | null>(
+    categoryFromUrl ? decodeURIComponent(categoryFromUrl) : null
   );
-  const [itemsPage, setItemsPage] = useState(1);
+  const [categoryView, setCategoryView] = useState<"actions" | "items">(
+    categoryFromUrl ? "items" : "actions"
+  );
+  const [itemsPage, setItemsPage] = useState(pageFromUrl);
   const [selectedItemsForBulkCollections, setSelectedItemsForBulkCollections] =
     useState<string[]>([]);
-  const pageSize = 10;
+  const { pageSize: userPageSize } = usePageSize();
+  // Use page size from URL if present, otherwise use user setting, otherwise default to 10
+  const pageSize = pageSizeFromUrl !== 10 ? pageSizeFromUrl : userPageSize;
   const navigate = useNavigate();
+
+  // Update state when URL params change
+  useEffect(() => {
+    if (categoryFromUrl) {
+      const decodedCategory = decodeURIComponent(categoryFromUrl);
+      setSelectedCategory(decodedCategory);
+      setCategoryView("items");
+      setItemsPage(pageFromUrl);
+    }
+  }, [categoryFromUrl, pageFromUrl]);
 
   const { data, isLoading, error, refetch } = useQuery({
     queryKey: ["categories", search],
@@ -42,6 +67,8 @@ const CategoriesPage = () => {
     setSelectedCategory(category);
     setCategoryView("items");
     setItemsPage(1);
+    // Navigate to /categories/{category}?page=1&pagesize={pageSize}
+    navigate(`/categories/${encodeURIComponent(category)}?page=1&pagesize=${pageSize}`);
   };
 
   const handleExplore = () => {
@@ -57,6 +84,15 @@ const CategoriesPage = () => {
   const handleBack = () => {
     setSelectedCategory(null);
     setCategoryView("actions");
+    navigate("/categories");
+  };
+
+  // Update URL when page changes
+  const handlePageChange = (newPage: number) => {
+    setItemsPage(newPage);
+    if (selectedCategory) {
+      navigate(`/categories/${encodeURIComponent(selectedCategory)}?page=${newPage}&pagesize=${pageSize}`);
+    }
   };
 
   const {
@@ -138,14 +174,15 @@ const CategoriesPage = () => {
               page={itemsPage}
               totalPages={itemsData.totalPages}
               selectedItemIds={selectedItemIds}
-              onPrevPage={() => setItemsPage((p) => Math.max(1, p - 1))}
+              onPrevPage={() => handlePageChange(Math.max(1, itemsPage - 1))}
               onNextPage={() =>
-                setItemsPage((p) => Math.min(itemsData.totalPages, p + 1))
+                handlePageChange(Math.min(itemsData.totalPages, itemsPage + 1))
               }
               onSelectAll={selectAll}
               onDeselectAll={deselectAll}
               onAddSelectedToCollection={handleAddSelectedToCollection}
               onToggleSelect={toggleItem}
+              isAuthenticated={isAuthenticated}
             />
           ) : (
             <div className="text-center py-12">
@@ -269,6 +306,7 @@ const CategoriesPage = () => {
                 <button
                   onClick={(event) => {
                     event.stopPropagation();
+                    // Navigate to explore mode for anonymous users
                     navigate(
                       `/explore/${encodeURIComponent(category.category)}`
                     );
@@ -295,7 +333,8 @@ const CategoriesPage = () => {
                 <button
                   onClick={(event) => {
                     event.stopPropagation();
-                    handleCategoryItems(category.category);
+                    // Navigate to item list mode with category in URL
+                    navigate(`/categories/${encodeURIComponent(category.category)}?page=1&pagesize=10`);
                   }}
                   className="p-2 text-emerald-600 hover:bg-emerald-50 rounded-md"
                   title="List items"

@@ -5,8 +5,22 @@ using Quizymode.Api.Shared.Kernel;
 
 namespace Quizymode.Api.Features.Items.Get;
 
+/// <summary>
+/// Feature for retrieving quiz items with support for filtering, pagination, and collection-based queries.
+/// Implements comprehensive querying capabilities allowing clients to filter by category, visibility, keywords, and collections.
+/// </summary>
 public static class GetItems
 {
+    /// <summary>
+    /// Request DTO containing all query parameters for filtering and paginating items.
+    /// Category: Filter by category name (case-insensitive match).
+    /// IsPrivate: Filter by visibility - null = all visible, true = only private items, false = only global items.
+    /// Keywords: Filter by keyword names (comma-separated string parsed into list).
+    /// CollectionId: Filter items belonging to a specific collection (requires authentication and ownership).
+    /// IsRandom: If true, returns random selection; if false or null, returns paginated ordered results.
+    /// Page: 1-based page number for pagination.
+    /// PageSize: Number of items per page (must be between 1 and 1000).
+    /// </summary>
     public sealed record QueryRequest(
         string? Category,
         bool? IsPrivate,
@@ -45,6 +59,10 @@ public static class GetItems
         string Name,
         DateTime CreatedAt);
 
+    /// <summary>
+    /// API endpoint for querying items with filtering and pagination support.
+    /// Exposes GET /api/items endpoint with query parameters for all filter options.
+    /// </summary>
     public sealed class Endpoint : IEndpoint
     {
         public void MapEndpoint(IEndpointRouteBuilder app)
@@ -57,6 +75,10 @@ public static class GetItems
                 .Produces(StatusCodes.Status400BadRequest);
         }
 
+        /// <summary>
+        /// HTTP handler for the items endpoint. Validates pagination parameters before processing.
+        /// Parses comma-separated keywords string into a list. Delegates business logic to GetItemsHandler.
+        /// </summary>
         private static async Task<IResult> Handler(
             string? category,
             bool? isPrivate,

@@ -14,6 +14,7 @@ interface ItemListControlsProps {
   isSelectAllDisabled: boolean;
   isDeselectAllDisabled: boolean;
   isAddToCollectionDisabled: boolean;
+  isAuthenticated?: boolean;
 }
 
 const ItemListControls = ({
@@ -32,6 +33,7 @@ const ItemListControls = ({
   isSelectAllDisabled,
   isDeselectAllDisabled,
   isAddToCollectionDisabled,
+  isAuthenticated = true,
 }: ItemListControlsProps) => {
   return (
     <div className="mb-4 bg-white rounded-lg shadow p-4">
@@ -89,8 +91,9 @@ const ItemListControls = ({
           </button>
           <button
             onClick={onAddSelectedToCollection}
-            className="px-3 py-1.5 text-sm font-medium text-white bg-blue-600 rounded-md hover:bg-blue-700"
-            disabled={isAddToCollectionDisabled}
+            className="px-3 py-1.5 text-sm font-medium text-white bg-blue-600 rounded-md hover:bg-blue-700 disabled:opacity-50 disabled:cursor-not-allowed"
+            disabled={isAddToCollectionDisabled || !isAuthenticated}
+            title={!isAuthenticated ? "You must be logged in to add items to collections" : undefined}
           >
             Add Selected to Collection
           </button>
