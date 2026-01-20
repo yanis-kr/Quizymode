@@ -4,7 +4,6 @@ import { useMutation } from "@tanstack/react-query";
 import { useAuth } from "@/contexts/AuthContext";
 import { Navigate } from "react-router-dom";
 import ErrorMessage from "@/components/ErrorMessage";
-import { useQuery } from "@tanstack/react-query";
 import { apiClient } from "@/api/client";
 import {
   ChevronDownIcon,

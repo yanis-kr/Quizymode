@@ -3,6 +3,7 @@ import { useParams, useNavigate, useSearchParams } from "react-router-dom";
 import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
 import { commentsApi } from "@/api/comments";
 import { useAuth } from "@/contexts/AuthContext";
+import { categoryNameToSlug } from "@/utils/categorySlug";
 import { PencilIcon, TrashIcon } from "@heroicons/react/24/outline";
 import LoadingSpinner from "@/components/LoadingSpinner";
 import ErrorMessage from "@/components/ErrorMessage";
@@ -38,7 +39,7 @@ const ItemCommentsPage = () => {
       if (collectionId) {
         navigate(`/${mode}/collection/${collectionId}/item/${itemId}`);
       } else if (category) {
-        navigate(`/${mode}/${encodeURIComponent(category)}/item/${itemId}`);
+        navigate(`/${mode}/${categoryNameToSlug(category)}/item/${itemId}`);
       } else {
         // No category/collection - navigate to item view with itemId
         // This ensures the item is shown and items are restored from sessionStorage
@@ -57,7 +58,7 @@ const ItemCommentsPage = () => {
           navigate(`/${mode}/collection/${collectionId}/item/${targetItemId}`);
         } else if (category) {
           navigate(
-            `/${mode}/${encodeURIComponent(category)}/item/${targetItemId}`
+            `/${mode}/${categoryNameToSlug(category)}/item/${targetItemId}`
           );
         } else {
           navigate(`/${mode}/item/${targetItemId}`);

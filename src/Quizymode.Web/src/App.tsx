@@ -19,6 +19,9 @@ import AuditLogsPage from "./features/admin/pages/AuditLogsPage";
 import BulkCreateItemsPage from "./features/items/pages/BulkCreateItemsPage";
 import ItemCommentsPage from "./features/items/pages/ItemCommentsPage";
 import EditItemPage from "./features/items/pages/EditItemPage";
+import AboutPage from "./features/about/pages/AboutPage";
+import RoadmapPage from "./features/roadmap/pages/RoadmapPage";
+import FeedbackPage from "./features/feedback/pages/FeedbackPage";
 
 function App() {
   return (
@@ -67,6 +70,9 @@ function App() {
         <Route path="/admin/review-board" element={<ReviewBoardPage />} />
         <Route path="/admin/database-size" element={<DatabaseSizePage />} />
         <Route path="/admin/audit-logs" element={<AuditLogsPage />} />
+        <Route path="/about" element={<AboutPage />} />
+        <Route path="/roadmap" element={<RoadmapPage />} />
+        <Route path="/feedback" element={<FeedbackPage />} />
       </Routes>
     </Layout>
   );
