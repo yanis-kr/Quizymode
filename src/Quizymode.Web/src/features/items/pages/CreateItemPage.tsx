@@ -190,7 +190,7 @@ const CreateItemPage = () => {
               </span>
             </label>
             <p className="mt-1 ml-6 text-sm text-gray-500">
-              Private items are visible only to your account. {!isAdmin && "Only admins can create global items."}
+              Private items are visible only to your account. {!isAdmin && "Only admins can create public items."}
             </p>
           </div>
 

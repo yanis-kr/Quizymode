@@ -4,6 +4,7 @@ using Quizymode.Api.Data;
 using Quizymode.Api.Infrastructure;
 using Quizymode.Api.Services;
 using Quizymode.Api.Shared.Kernel;
+using Microsoft.Extensions.Logging;
 
 namespace Quizymode.Api.Features.Categories;
 
@@ -46,11 +47,12 @@ public static class GetCategories
             string? search,
             ApplicationDbContext db,
             IUserContext userContext,
+            ILogger<Endpoint> logger,
             CancellationToken cancellationToken)
         {
             QueryRequest request = new(search);
 
-            Result<Response> result = await HandleAsync(request, db, userContext, cancellationToken);
+            Result<Response> result = await HandleAsync(request, db, userContext, logger, cancellationToken);
 
             return result.Match(
                 value => Results.Ok(value),
@@ -62,6 +64,7 @@ public static class GetCategories
         QueryRequest request,
         ApplicationDbContext db,
         IUserContext userContext,
+        ILogger<Endpoint> logger,
         CancellationToken cancellationToken)
     {
         try
@@ -74,11 +77,18 @@ public static class GetCategories
             }
 
             // Build simplified SQL query
-            string currentUserId = userContext.UserId ?? "";
+            string? currentUserId = userContext.UserId;
             bool isAuthenticated = userContext.IsAuthenticated && !string.IsNullOrEmpty(currentUserId);
             string? searchPattern = string.IsNullOrWhiteSpace(request.Search) 
                 ? null 
                 : $"%{request.Search.Trim()}%";
+            
+            // Ensure CurrentUserId is never null for Dapper parameter binding
+            // Use empty string for unauthenticated users (query logic handles this via @IsAuthenticated flag)
+            string safeCurrentUserId = currentUserId ?? string.Empty;
+            
+            // Use integer for IsAuthenticated (0/1) for better PostgreSQL/Dapper compatibility
+            int isAuthenticatedInt = isAuthenticated ? 1 : 0;
             
             string sql = @"
                 SELECT
@@ -98,8 +108,8 @@ public static class GetCategories
                     AND r.""Stars"" IS NOT NULL
                 WHERE i.""CategoryId"" IS NOT NULL
                     AND (
-                        (@IsAuthenticated = false AND c.""IsPrivate"" = false AND i.""IsPrivate"" = false)
-                        OR (@IsAuthenticated = true AND (
+                        (@IsAuthenticated = 0 AND c.""IsPrivate"" = false AND i.""IsPrivate"" = false)
+                        OR (@IsAuthenticated = 1 AND (
                             (c.""IsPrivate"" = false OR (c.""IsPrivate"" = true AND c.""CreatedBy"" = @CurrentUserId))
                             AND (i.""IsPrivate"" = false OR (i.""IsPrivate"" = true AND i.""CreatedBy"" = @CurrentUserId))
                         ))
@@ -110,12 +120,11 @@ public static class GetCategories
                     COALESCE(AVG(r.""Stars""), -1) DESC,
                     c.""Name"" ASC";
 
-            var parameters = new
-            {
-                IsAuthenticated = isAuthenticated,
-                CurrentUserId = currentUserId,
-                SearchPattern = searchPattern
-            };
+            // Use DynamicParameters for better NULL handling with Dapper/Npgsql
+            DynamicParameters parameters = new DynamicParameters();
+            parameters.Add("IsAuthenticated", isAuthenticatedInt);
+            parameters.Add("CurrentUserId", safeCurrentUserId);
+            parameters.Add("SearchPattern", searchPattern, System.Data.DbType.String);
 
             // Use an intermediate class for Dapper mapping, then convert to record
             List<CategoryResponse> categoryResponses = (await connection.QueryAsync<CategoryRow>(
@@ -137,6 +146,8 @@ public static class GetCategories
         }
         catch (Exception ex)
         {
+            logger.LogError(ex, "Failed to get categories. UserId: {UserId}, IsAuthenticated: {IsAuthenticated}", 
+                userContext.UserId, userContext.IsAuthenticated);
             return Result.Failure<Response>(
                 Error.Problem("Categories.GetFailed", $"Failed to get categories: {ex.Message}"));
         }

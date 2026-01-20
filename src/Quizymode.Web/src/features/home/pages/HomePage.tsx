@@ -152,7 +152,7 @@ const HomePage = () => {
                 <AcademicCapIcon className="h-5 w-5 text-purple-600 mr-2 mt-0.5 flex-shrink-0" />
                 <span className="text-gray-700">
                   <strong>Private Items</strong> - Keep your personal quiz items
-                  private or share them globally
+                  private or share them publicly
                 </span>
               </li>
             </ul>

@@ -129,6 +129,25 @@ const UserProfileModal = ({ isOpen, onClose }: UserProfileModalProps) => {
     setPageSizeInput(pageSize.toString());
   };
 
+  // Handle ESC key to cancel editing
+  useEffect(() => {
+    const handleEscape = (e: KeyboardEvent) => {
+      if (e.key === "Escape") {
+        if (isEditing) {
+          handleCancel();
+        }
+        if (isEditingPageSize) {
+          handleCancelPageSize();
+        }
+      }
+    };
+
+    if (isOpen) {
+      window.addEventListener("keydown", handleEscape);
+      return () => window.removeEventListener("keydown", handleEscape);
+    }
+  }, [isOpen, isEditing, isEditingPageSize, displayUser]);
+
   if (!isOpen) return null;
 
   if (!isAuthenticated) {
@@ -138,7 +157,7 @@ const UserProfileModal = ({ isOpen, onClose }: UserProfileModalProps) => {
         onClick={onClose}
       >
         <div
-          className="relative top-20 mx-auto p-5 border w-96 shadow-lg rounded-md bg-white"
+          className="relative top-20 mx-auto p-5 border w-full max-w-lg shadow-lg rounded-md bg-white"
           onClick={(e) => e.stopPropagation()}
         >
           <div className="flex justify-between items-center mb-4">
@@ -174,7 +193,7 @@ const UserProfileModal = ({ isOpen, onClose }: UserProfileModalProps) => {
         onClick={onClose}
       >
         <div
-          className="relative top-20 mx-auto p-5 border w-96 shadow-lg rounded-md bg-white"
+          className="relative top-20 mx-auto p-5 border w-full max-w-lg shadow-lg rounded-md bg-white"
           onClick={(e) => e.stopPropagation()}
         >
           <div className="flex justify-between items-center mb-4">
@@ -193,16 +212,50 @@ const UserProfileModal = ({ isOpen, onClose }: UserProfileModalProps) => {
                 Name
               </label>
               {isEditing ? (
-                <input
-                  type="text"
-                  value={name}
-                  onChange={(e) => setName(e.target.value)}
-                  className="w-full px-3 py-2 border border-gray-300 rounded-md text-sm"
-                  autoFocus
-                />
+                <div className="space-y-2">
+                  <input
+                    type="text"
+                    value={name}
+                    onChange={(e) => setName(e.target.value)}
+                    className="w-full px-3 py-2 border border-gray-300 rounded-md text-sm font-mono min-w-[400px]"
+                    autoFocus
+                    onKeyDown={(e) => {
+                      if (e.key === "Escape") {
+                        handleCancel();
+                      }
+                    }}
+                  />
+                  <div className="flex justify-end space-x-2">
+                    <button
+                      onClick={handleCancel}
+                      disabled={updateNameMutation.isPending}
+                      className="px-3 py-1 text-xs font-medium text-gray-700 bg-white border border-gray-300 rounded-md hover:bg-gray-50"
+                    >
+                      Cancel
+                    </button>
+                    <button
+                      onClick={handleSave}
+                      disabled={updateNameMutation.isPending || !name.trim()}
+                      className="px-3 py-1 text-xs font-medium text-white bg-indigo-600 rounded-md hover:bg-indigo-700 disabled:opacity-50"
+                    >
+                      {updateNameMutation.isPending ? "Saving..." : "Save"}
+                    </button>
+                  </div>
+                </div>
               ) : (
-                <div className="px-3 py-2 bg-gray-50 rounded-md text-sm text-gray-900">
-                  {displayUser.name || "Not set"}
+                <div className="flex items-center justify-between">
+                  <div className="px-3 py-2 bg-gray-50 rounded-md text-sm text-gray-900 font-mono min-w-[400px]">
+                    {displayUser.name || "Not set"}
+                  </div>
+                  <button
+                    onClick={() => {
+                      setName(displayUser.name || "");
+                      setIsEditing(true);
+                    }}
+                    className="ml-2 px-3 py-1 text-xs font-medium text-indigo-600 bg-white border border-indigo-600 rounded-md hover:bg-indigo-50"
+                  >
+                    Change
+                  </button>
                 </div>
               )}
             </div>
@@ -260,6 +313,13 @@ const UserProfileModal = ({ isOpen, onClose }: UserProfileModalProps) => {
                     onChange={(e) => setPageSizeInput(e.target.value)}
                     className="w-full px-3 py-2 border border-gray-300 rounded-md text-sm"
                     autoFocus
+                    onKeyDown={(e) => {
+                      if (e.key === "Enter") {
+                        handleSavePageSize();
+                      } else if (e.key === "Escape") {
+                        handleCancelPageSize();
+                      }
+                    }}
                   />
                   <div className="flex justify-end space-x-2">
                     <button
@@ -293,36 +353,6 @@ const UserProfileModal = ({ isOpen, onClose }: UserProfileModalProps) => {
               )}
             </div>
 
-            {isEditing ? (
-              <div className="flex justify-end space-x-2 pt-4">
-                <button
-                  onClick={handleCancel}
-                  disabled={updateNameMutation.isPending}
-                  className="px-4 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-md hover:bg-gray-50"
-                >
-                  Cancel
-                </button>
-                <button
-                  onClick={handleSave}
-                  disabled={updateNameMutation.isPending || !name.trim()}
-                  className="px-4 py-2 text-sm font-medium text-white bg-indigo-600 rounded-md hover:bg-indigo-700 disabled:opacity-50"
-                >
-                  {updateNameMutation.isPending ? "Saving..." : "Save"}
-                </button>
-              </div>
-            ) : (
-              <div className="flex justify-end pt-4">
-                <button
-                  onClick={() => {
-                    setName(displayUser.name || "");
-                    setIsEditing(true);
-                  }}
-                  className="px-4 py-2 text-sm font-medium text-indigo-600 bg-white border border-indigo-600 rounded-md hover:bg-indigo-50"
-                >
-                  Update Name
-                </button>
-              </div>
-            )}
 
             {updateNameMutation.isError && (
               <div className="mt-2 text-sm text-red-600">
@@ -343,7 +373,7 @@ const UserProfileModal = ({ isOpen, onClose }: UserProfileModalProps) => {
         onClick={onClose}
       >
         <div
-          className="relative top-20 mx-auto p-5 border w-96 shadow-lg rounded-md bg-white"
+          className="relative top-20 mx-auto p-5 border w-full max-w-lg shadow-lg rounded-md bg-white"
           onClick={(e) => e.stopPropagation()}
         >
           <div className="flex justify-between items-center mb-4">
@@ -376,7 +406,7 @@ const UserProfileModal = ({ isOpen, onClose }: UserProfileModalProps) => {
   if (!displayUser && (isLoading || status === "pending")) {
     return (
       <div className="fixed inset-0 bg-gray-600 bg-opacity-50 overflow-y-auto h-full w-full z-50">
-        <div className="relative top-20 mx-auto p-5 border w-96 shadow-lg rounded-md bg-white">
+        <div className="relative top-20 mx-auto p-5 border w-full max-w-lg shadow-lg rounded-md bg-white">
           <div className="text-center">Loading...</div>
         </div>
       </div>
@@ -390,7 +420,7 @@ const UserProfileModal = ({ isOpen, onClose }: UserProfileModalProps) => {
       onClick={onClose}
     >
       <div
-        className="relative top-20 mx-auto p-5 border w-96 shadow-lg rounded-md bg-white"
+        className="relative top-20 mx-auto p-5 border w-full max-w-lg shadow-lg rounded-md bg-white"
         onClick={(e) => e.stopPropagation()}
       >
         <div className="flex justify-between items-center mb-4">

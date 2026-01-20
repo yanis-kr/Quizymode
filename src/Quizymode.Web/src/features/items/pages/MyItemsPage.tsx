@@ -27,7 +27,7 @@ const MyItemsPage = () => {
   const queryClient = useQueryClient();
   const navigate = useNavigate();
   const [page, setPage] = useState(1);
-  const [filterType, setFilterType] = useState<"all" | "global" | "private">(
+  const [filterType, setFilterType] = useState<"all" | "public" | "private">(
     "all"
   );
   const [selectedCategory, setSelectedCategory] = useState<string>("");
@@ -48,7 +48,7 @@ const MyItemsPage = () => {
 
   // Determine isPrivate filter value based on filterType
   const isPrivateFilter =
-    filterType === "all" ? undefined : filterType === "private";
+    filterType === "all" ? undefined : filterType === "public" ? false : true;
 
   const { data, isLoading, error, refetch } = useQuery({
     queryKey: ["myItems", page, selectedCategory, filterType, selectedKeywords],
@@ -354,14 +354,14 @@ const MyItemsPage = () => {
                     All
                   </button>
                   <button
-                    onClick={() => setFilterType("global")}
+                    onClick={() => setFilterType("public")}
                     className={`px-4 py-2 rounded-md text-sm font-medium ${
-                      filterType === "global"
+                      filterType === "public"
                         ? "bg-indigo-600 text-white"
                         : "bg-white text-gray-700 hover:bg-gray-100 border border-gray-300"
                     }`}
                   >
-                    Global
+                    Public
                   </button>
                   <button
                     onClick={() => setFilterType("private")}
@@ -554,7 +554,7 @@ const MyItemsPage = () => {
                 }`}
                 title={
                   !canEditDelete(item)
-                    ? "Only admins can edit global items"
+                    ? "Only admins can edit public items"
                     : "Update item"
                 }
               >
@@ -578,7 +578,7 @@ const MyItemsPage = () => {
                 }`}
                 title={
                   !canEditDelete(item)
-                    ? "Only admins can delete global items"
+                    ? "Only admins can delete public items"
                     : "Delete item"
                 }
               >

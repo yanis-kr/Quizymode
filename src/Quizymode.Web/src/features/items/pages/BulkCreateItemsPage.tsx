@@ -4,7 +4,6 @@ import { useMutation } from "@tanstack/react-query";
 import { useAuth } from "@/contexts/AuthContext";
 import { Navigate } from "react-router-dom";
 import ErrorMessage from "@/components/ErrorMessage";
-import { categoriesApi } from "@/api/categories";
 import { useQuery } from "@tanstack/react-query";
 import { apiClient } from "@/api/client";
 import {
@@ -32,7 +31,6 @@ const BulkCreateItemsPage = () => {
   const location = useLocation();
   const isAdminRoute = location.pathname === "/admin/bulk-create";
   const [jsonInput, setJsonInput] = useState("");
-  const [category, setCategory] = useState("");
   const [isPrivate, setIsPrivate] = useState(!isAdmin); // Default to true for non-admin
   const [validationError, setValidationError] = useState<string>("");
   const [isPromptExampleOpen, setIsPromptExampleOpen] = useState(false);
@@ -43,11 +41,6 @@ const BulkCreateItemsPage = () => {
     message: string;
     details: string;
   }>({ isOpen: false, message: "", details: "" });
-
-  const { data: categoriesData } = useQuery({
-    queryKey: ["categories"],
-    queryFn: () => categoriesApi.getAll(),
-  });
 
   const bulkCreateMutation = useMutation({
     mutationFn: async (data: BulkCreateRequest) => {
@@ -178,20 +171,18 @@ const BulkCreateItemsPage = () => {
         }
       }
 
-      // Validate that all items have category or category override is provided
+      // Validate that all items have category
       const itemsWithoutCategory = parsedItems.filter(
         (item: any) => !item.category
       );
-      if (itemsWithoutCategory.length > 0 && !category.trim()) {
+      if (itemsWithoutCategory.length > 0) {
         setValidationError(
           `Items ${itemsWithoutCategory
             .map(
               (_: any, i: number) =>
                 parsedItems.indexOf(itemsWithoutCategory[i]) + 1
             )
-            .join(
-              ", "
-            )} are missing category field and no category override is provided`
+            .join(", ")} are missing category field`
         );
         return;
       }
@@ -224,8 +215,7 @@ const BulkCreateItemsPage = () => {
           }
 
           return {
-            // Category override replaces category in JSON if provided
-            category: (category.trim() || item.category || "").trim(),
+            category: (item.category || "").trim(),
             question: item.question.trim(),
             correctAnswer: item.correctAnswer.trim(),
             incorrectAnswers: Array.isArray(item.incorrectAnswers)
@@ -292,10 +282,59 @@ const BulkCreateItemsPage = () => {
           </button>
           {isPromptExampleOpen && (
             <div className="px-4 pb-4 border-t border-gray-200">
-              <pre className="text-xs text-gray-800 whitespace-pre-wrap font-mono mt-4">
+              <div className="mt-4 flex justify-end mb-2">
+                <button
+                  type="button"
+                  onClick={async () => {
+                    const promptText = `You are creating study flashcards for an app called Quizymode.
+
+Create up to 100 quiz items about <replace-me: Topic or Category Name>. Attach Study Guide (optional).
+
+Each item must be a JSON object with this exact shape:
+
+{
+  "category": "Category Name (e.g. Spanish, US History, or ACT)",
+  "question": "Question text?",
+  "correctAnswer": "Correct answer",
+  "incorrectAnswers": ["Wrong answer 1", "Wrong answer 2", "Wrong answer 3"],
+  "explanation": "Short explanation of why the correct answer is right (optional but recommended)",
+  "keywords": [
+    {
+      "name": "keyword-name"
+    }
+  ]
+}
+
+Requirements:
+- Return a single JSON array of items: [ { ... }, { ... }, ... ].
+- Do NOT include any explanations, prose, comments, Markdown, or code fences. Output raw JSON only.
+- Every item must have:
+  - "category" (max 50 characters)
+  - a non-empty "question" (max 1,000 characters)
+  - a non-empty "correctAnswer" (max 200 characters)
+  - 1–5 "incorrectAnswers" (each max 200 characters)
+  - "keywords" (optional array of keyword objects, each with "name" max 10 characters - keywords will inherit the item's privacy setting)
+- All strings must be plain text (no HTML, no LaTeX).
+
+Now generate the JSON array only.`;
+                    try {
+                      await navigator.clipboard.writeText(promptText);
+                      setCopySuccess(true);
+                      setTimeout(() => setCopySuccess(false), 2000);
+                    } catch (err) {
+                      console.error("Failed to copy:", err);
+                    }
+                  }}
+                  className="flex items-center space-x-2 px-3 py-1.5 text-sm font-medium text-indigo-600 bg-indigo-50 rounded-md hover:bg-indigo-100 transition-colors"
+                >
+                  <ClipboardDocumentIcon className="h-4 w-4" />
+                  <span>{copySuccess ? "Copied!" : "Copy Prompt"}</span>
+                </button>
+              </div>
+              <pre className="text-xs text-gray-800 whitespace-pre-wrap font-mono bg-gray-50 p-4 rounded border border-gray-200">
                 {`You are creating study flashcards for an app called Quizymode.
 
-Create up to 100 quiz items about <replace-me: Topic or Category Name>.
+Create up to 100 quiz items about <replace-me: Topic or Category Name>. Attach Study Guide (optional).
 
 Each item must be a JSON object with this exact shape:
 
@@ -446,29 +485,6 @@ Now generate the JSON array only.`}
         >
           <div>
             <label className="block text-sm font-medium text-gray-700 mb-2">
-              Category Override (optional)
-            </label>
-            <select
-              value={category}
-              onChange={(e) => setCategory(e.target.value)}
-              className="w-full px-3 py-2 border border-gray-300 rounded-md text-sm"
-            >
-              <option value="">Select a category (optional)</option>
-              {categoriesData?.categories.map((cat) => (
-                <option key={cat.category} value={cat.category}>
-                  {cat.category}
-                </option>
-              ))}
-            </select>
-            <p className="mt-1 text-sm text-gray-500">
-              If you select a category here, it will override the "category"
-              field inside every JSON item you upload. Leave empty to keep
-              category values from your JSON.
-            </p>
-          </div>
-
-          <div>
-            <label className="block text-sm font-medium text-gray-700 mb-2">
               Items JSON *
             </label>
             <textarea
@@ -480,9 +496,7 @@ Now generate the JSON array only.`}
               placeholder='[\n  {\n    "category": "Category",\n    "question": "Question?",\n    "correctAnswer": "Answer",\n    "incorrectAnswers": ["Wrong 1", "Wrong 2"],\n    "explanation": "Explanation"\n  }\n]'
             />
             <p className="mt-1 text-sm text-gray-500">
-              Paste your JSON array here (up to 100 items). If you selected a
-              Category Override above, it will replace the "category" field in
-              every item.
+              Paste your JSON array here (up to 100 items). Each item must include a "category" field.
             </p>
           </div>
 

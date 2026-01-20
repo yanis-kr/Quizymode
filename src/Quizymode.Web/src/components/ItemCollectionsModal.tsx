@@ -57,6 +57,9 @@ const ItemCollectionsModal = ({
     },
     onSuccess: async () => {
       if (isBulkMode) {
+        // Invalidate items list queries to refresh the UI with updated collection data
+        queryClient.invalidateQueries({ queryKey: ["myItems"] });
+        queryClient.invalidateQueries({ queryKey: ["categoryItems"] });
         // Refetch item queries for all items in bulk mode (to get updated collections)
         await Promise.all(
           multipleItemIds.map((itemId) =>
@@ -70,6 +73,9 @@ const ItemCollectionsModal = ({
           return newSet;
         });
       } else if (singleItemId) {
+        // Invalidate items list queries to refresh the UI with updated collection data
+        queryClient.invalidateQueries({ queryKey: ["myItems"] });
+        queryClient.invalidateQueries({ queryKey: ["categoryItems"] });
         await queryClient.refetchQueries({ queryKey: ["item", singleItemId] });
       }
       queryClient.invalidateQueries({ queryKey: ["collections"] });
@@ -95,6 +101,9 @@ const ItemCollectionsModal = ({
         );
       } else if (singleItemId) {
         await collectionsApi.addItem(newCollection.id, { itemId: singleItemId });
+        // Invalidate items list queries to refresh the UI with updated collection data
+        queryClient.invalidateQueries({ queryKey: ["myItems"] });
+        queryClient.invalidateQueries({ queryKey: ["categoryItems"] });
         // Refetch item query to update checkbox state
         await queryClient.refetchQueries({ queryKey: ["item", singleItemId] });
       }
@@ -125,6 +134,9 @@ const ItemCollectionsModal = ({
         );
       }
       if (singleItemId) {
+        // Invalidate items list queries to refresh the UI with updated collection data
+        queryClient.invalidateQueries({ queryKey: ["myItems"] });
+        queryClient.invalidateQueries({ queryKey: ["categoryItems"] });
         await queryClient.refetchQueries({ queryKey: ["item", singleItemId] });
       }
       queryClient.invalidateQueries({ queryKey: ["collections"] });
@@ -173,6 +185,20 @@ const ItemCollectionsModal = ({
       refetchItemCollections();
     }
   }, [isOpen, isBulkMode, singleItemId, refetchItemCollections]);
+
+  // Handle ESC key to close modal
+  useEffect(() => {
+    const handleEscape = (e: KeyboardEvent) => {
+      if (e.key === "Escape" && isOpen) {
+        onClose();
+      }
+    };
+
+    if (isOpen) {
+      window.addEventListener("keydown", handleEscape);
+      return () => window.removeEventListener("keydown", handleEscape);
+    }
+  }, [isOpen, onClose]);
 
   if (!isOpen) return null;
 

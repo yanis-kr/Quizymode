@@ -41,7 +41,7 @@ const ItemListCard = ({
             </h3>
             <p className="mt-2 text-sm text-gray-500">{item.category}</p>
             <p className="mt-1 text-sm text-gray-500">
-              {item.isPrivate ? "Private" : "Global"}
+              {item.isPrivate ? "Private" : "Public"}
             </p>
             <ItemAverageStars itemId={item.id} />
             <p className="mt-2 text-sm text-gray-700">
@@ -173,7 +173,7 @@ const KeywordChip = ({
         title={
           keyword.isPrivate
             ? "Private keyword (click to filter)"
-            : "Global keyword (click to filter)"
+            : "Public keyword (click to filter)"
         }
       >
         {keyword.name}
@@ -189,7 +189,7 @@ const KeywordChip = ({
           ? "bg-purple-100 text-purple-800"
           : "bg-blue-100 text-blue-800"
       }`}
-      title={keyword.isPrivate ? "Private keyword" : "Global keyword"}
+      title={keyword.isPrivate ? "Private keyword" : "Public keyword"}
     >
       {keyword.name}
       {keyword.isPrivate && <span className="ml-1 text-[10px]">🔒</span>}

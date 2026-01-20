@@ -163,9 +163,27 @@ const CategoriesPage = () => {
             ← Back to Categories
           </button>
 
-          <h1 className="text-3xl font-bold text-gray-900 mb-6">
-            Items in: {selectedCategory}
-          </h1>
+          <div className="flex items-center gap-3 mb-6">
+            <h1 className="text-3xl font-bold text-gray-900">
+              Items in: {selectedCategory}
+            </h1>
+            {(() => {
+              const categoryData = data?.categories.find(
+                (c) => c.category === selectedCategory
+              );
+              return categoryData ? (
+                <span
+                  className={`px-3 py-1 text-sm font-medium rounded ${
+                    categoryData.isPrivate
+                      ? "bg-purple-100 text-purple-800"
+                      : "bg-green-100 text-green-800"
+                  }`}
+                >
+                  {categoryData.isPrivate ? "Private" : "Public"}
+                </span>
+              ) : null;
+            })()}
+          </div>
 
           {itemsData?.items && itemsData.items.length > 0 ? (
             <ItemListSection
@@ -213,9 +231,27 @@ const CategoriesPage = () => {
             ← Back to Categories
           </button>
 
-          <h1 className="text-3xl font-bold text-gray-900 mb-6">
-            Category: {selectedCategory}
-          </h1>
+          <div className="flex items-center gap-3 mb-6">
+            <h1 className="text-3xl font-bold text-gray-900">
+              Category: {selectedCategory}
+            </h1>
+            {(() => {
+              const categoryData = data?.categories.find(
+                (c) => c.category === selectedCategory
+              );
+              return categoryData ? (
+                <span
+                  className={`px-3 py-1 text-sm font-medium rounded ${
+                    categoryData.isPrivate
+                      ? "bg-purple-100 text-purple-800"
+                      : "bg-green-100 text-green-800"
+                  }`}
+                >
+                  {categoryData.isPrivate ? "Private" : "Public"}
+                </span>
+              ) : null;
+            })()}
+          </div>
 
           <div className="grid grid-cols-1 gap-4 sm:grid-cols-3">
             <button
@@ -295,9 +331,20 @@ const CategoriesPage = () => {
           >
             <div className="flex items-start justify-between">
               <div className="flex-1">
-                <h3 className="text-lg font-medium text-gray-900">
-                  {category.category}
-                </h3>
+                <div className="flex items-center gap-2">
+                  <h3 className="text-lg font-medium text-gray-900">
+                    {category.category}
+                  </h3>
+                  <span
+                    className={`px-2 py-1 text-xs font-medium rounded ${
+                      category.isPrivate
+                        ? "bg-purple-100 text-purple-800"
+                        : "bg-green-100 text-green-800"
+                    }`}
+                  >
+                    {category.isPrivate ? "Private" : "Public"}
+                  </span>
+                </div>
                 <p className="mt-2 text-sm text-gray-500">
                   {category.count} items
                 </p>

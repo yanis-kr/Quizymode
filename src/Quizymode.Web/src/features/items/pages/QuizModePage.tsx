@@ -556,16 +556,12 @@ const QuizModePage = () => {
         )}
 
         <div className="text-center">
-          <Link
-            to={
-              category
-                ? `/items?category=${encodeURIComponent(category)}`
-                : "/categories"
-            }
+          <button
+            onClick={() => navigate("/categories")}
             className="text-indigo-600 hover:text-indigo-700"
           >
-            ← Back to items
-          </Link>
+            ← Back
+          </button>
         </div>
       </div>
 
