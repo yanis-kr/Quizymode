@@ -1,31 +1,59 @@
 # Quizymode
 
-A quiz application API built with ASP.NET Core 9, Entity Framework Core, and PostgreSQL, following Vertical Slice Architecture principles and inspired by [Milan Jovanović's Clean Architecture template](https://www.milanjovanovic.tech/pragmatic-clean-architecture).
+A full-stack quiz application built with ASP.NET Core 9 API and React frontend, following Vertical Slice Architecture principles and inspired by [Milan Jovanović's Clean Architecture template](https://www.milanjovanovic.tech/pragmatic-clean-architecture).
 
 ## Overview
 
-Quizymode is a RESTful API for managing quiz items. It provides endpoints for creating, retrieving, updating, and deleting quiz items with support for categories, and duplicate detection using SimHash algorithms.
+Quizymode is a comprehensive quiz application that allows users to create, manage, and study quiz items. The application consists of a RESTful API backend and a modern React web interface. It supports public and private items, categories, collections, ratings, comments, and advanced features like duplicate detection using SimHash algorithms.
 
 Visit [https://www.quizymode.com/](https://www.quizymode.com/) to use the application.
 
 ### Key Features
 
+**Core Functionality:**
 - **Quiz Item Management**: Create, read, update, and delete quiz items
-- **Bulk Operations**: Import multiple items at once
+- **Bulk Operations**: Import multiple items at once via JSON or AI-generated prompts
 - **Duplicate Detection**: SimHash-based fuzzy matching to prevent duplicate questions
+- **Categories**: Organize items by category with public/private visibility controls
+- **Keywords**: Tag items with keywords for better organization and filtering
+- **Collections**: Group items into custom collections for focused study sessions
+- **Ratings & Comments**: Rate and comment on quiz items
+- **User Settings**: Configurable page size and user preferences
+- **Explore Mode**: Browse through quiz items in a study-friendly format
+- **Quiz Mode**: Test your knowledge with interactive quizzes
+
+**Technical Features:**
 - **PostgreSQL**: Robust relational database with JSONB support for flexible data storage
 - **ASP.NET Core 9**: Modern, high-performance web API framework
+- **React 19 + TypeScript**: Modern frontend with Vite, React Query, and Tailwind CSS
+- **AWS Cognito**: User authentication and authorization
 - **.NET Aspire**: Containerized development environment with PostgreSQL and pgAdmin
+- **Admin Features**: Review board, audit logs, database monitoring
 
 ## Tech Stack
 
+**Backend:**
 - **.NET 9.0** - Latest .NET runtime
 - **ASP.NET Core 9** - Web API framework
 - **Entity Framework Core 9** - ORM with PostgreSQL support
+- **Dapper** - High-performance data access for complex queries
 - **PostgreSQL** - Relational database with JSONB support
 - **.NET Aspire** - Cloud-ready application orchestration
 - **FluentValidation** - Input validation
-- **Serilog** - Structured logging
+- **Serilog** - Structured logging with Grafana Loki integration
+- **AWS Cognito** - User authentication
+
+**Frontend:**
+- **React 19** - UI framework
+- **TypeScript** - Type-safe JavaScript
+- **Vite** - Fast build tool and dev server
+- **React Router DOM** - Client-side routing
+- **TanStack React Query** - Server state management
+- **Tailwind CSS 4** - Utility-first CSS framework
+- **Axios** - HTTP client
+- **AWS Amplify** - Authentication integration
+- **Zod** - Schema validation
+- **React Hook Form** - Form handling
 
 ## Getting Started
 
@@ -109,15 +137,58 @@ Visit [https://www.quizymode.com/](https://www.quizymode.com/) to use the applic
       curl -H "Authorization: Bearer {your_jwt_here}" https://localhost:8080/items
       ```
 
-   Endpoints such as `POST /items`, `PUT /items/{id}`, `DELETE /items/{id}`, `POST /requests`, `POST/PUT/DELETE /reviews`, `POST/PUT/DELETE /collections`, `POST /items/bulk`, and `PUT /items/{id}/visibility` require a valid JWT (admin policy for bulk/visibility).
+   Most write operations and user-specific endpoints require authentication:
+   - Creating/updating/deleting items (admin required for public items)
+   - Managing collections
+   - Adding ratings and comments
+   - Updating user settings
+   - Admin endpoints (review board, audit logs, etc.)
 
 ### API Endpoints
 
-- `GET /items` - Get paginated list of quiz items
+**Items:**
+- `GET /items` - Get paginated list of quiz items (with filtering by category, keywords, collections, visibility)
+- `GET /items/{id}` - Get a specific quiz item
 - `GET /items/random` - Get random quiz items (optional category, count)
 - `POST /items` - Create a new quiz item
 - `POST /items/bulk` - Create multiple items at once
+- `PUT /items/{id}` - Update a quiz item
 - `DELETE /items/{id}` - Delete a quiz item
+- `PUT /items/{id}/visibility` - Set item visibility (admin only)
+
+**Categories:**
+- `GET /categories` - Get all categories with item counts and average ratings
+
+**Collections:**
+- `GET /collections` - Get user's collections
+- `GET /collections/{id}` - Get a specific collection
+- `POST /collections` - Create a new collection
+- `PUT /collections/{id}` - Update a collection
+- `DELETE /collections/{id}` - Delete a collection
+- `POST /collections/{id}/items` - Add item to collection
+- `DELETE /collections/{id}/items/{itemId}` - Remove item from collection
+
+**Ratings:**
+- `GET /ratings` - Get ratings for items
+- `POST /ratings` - Add or update a rating
+
+**Comments:**
+- `GET /comments` - Get comments for items
+- `POST /comments` - Add a comment
+- `PUT /comments/{id}` - Update a comment
+- `DELETE /comments/{id}` - Delete a comment
+
+**Users:**
+- `GET /users/me` - Get current user information
+- `PUT /users/me` - Update user name
+- `GET /users/settings` - Get user settings
+- `PUT /users/settings` - Update user setting
+
+**Admin:**
+- `GET /admin/review-board` - Get items pending review
+- `POST /admin/items/{id}/approve` - Approve an item
+- `GET /admin/audit-logs` - Get audit logs
+- `GET /admin/database-size` - Get database size information
 
 ## Project Structure
 
@@ -125,16 +196,42 @@ Visit [https://www.quizymode.com/](https://www.quizymode.com/) to use the applic
 src/
 ├── Quizymode.Api/              # Main API application
 │   ├── Features/                # Vertical Slice Architecture features
-│   │   └── Items/              # Quiz items feature
+│   │   ├── Items/              # Quiz items (CRUD, bulk, visibility)
+│   │   ├── Categories/         # Category management
+│   │   ├── Collections/        # Collection management
+│   │   ├── Ratings/            # Item ratings
+│   │   ├── Comments/           # Item comments
+│   │   ├── Users/              # User management
+│   │   ├── UserSettings/       # User preferences
+│   │   └── Admin/              # Admin features (review board, audit logs)
 │   ├── Shared/                  # Shared code
 │   │   ├── Kernel/             # Domain primitives (Result, Error, Entity)
 │   │   └── Models/             # Domain models
 │   ├── Data/                   # Data access layer
 │   │   ├── Configurations/     # EF Core entity configurations
 │   │   └── Migrations/         # Database migrations
-│   └── Services/               # Application services
+│   ├── Services/               # Application services
+│   │   ├── CategoryResolver/   # Category resolution and creation
+│   │   ├── SimHashService/     # Duplicate detection
+│   │   ├── UserContext/        # Authentication context
+│   │   └── AuditService/       # Audit logging
+│   └── StartupExtensions/      # Service registration and configuration
 ├── Quizymode.Api.AppHost/      # Aspire orchestration project
-└── Quizymode.Api.ServiceDefaults/  # Shared Aspire service defaults
+├── Quizymode.Api.ServiceDefaults/  # Shared Aspire service defaults
+└── Quizymode.Web/              # React frontend application
+    ├── src/
+    │   ├── features/           # Feature-based organization
+    │   │   ├── items/          # Item pages (list, create, edit, explore, quiz)
+    │   │   ├── categories/     # Category pages
+    │   │   ├── collections/    # Collection pages
+    │   │   ├── auth/           # Authentication pages
+    │   │   └── admin/          # Admin pages
+    │   ├── components/         # Reusable UI components
+    │   ├── api/                # API client
+    │   ├── contexts/           # React contexts (Auth)
+    │   └── hooks/              # Custom React hooks
+tests/
+└── Quizymode.Api.Tests/        # Unit and integration tests
 ```
 
 ## Development

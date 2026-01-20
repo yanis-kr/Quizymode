@@ -230,7 +230,7 @@ const MyItemsPage = () => {
       <div className="mb-6">
         <h1 className="text-3xl font-bold text-gray-900 mb-2">My Items</h1>
         <p className="text-gray-600 text-sm">
-          Manage your personal quiz items. Create, edit, and organize items by category, keywords, and collections.
+          Review and manage quiz items. Browse public and private items, create and edit your own items, and organize items into collections by adding them to your private collections.
         </p>
       </div>
       <div className="mb-6 flex justify-end items-center">

@@ -65,9 +65,12 @@ const ItemsPage = () => {
     return (
       <div className="px-4 py-6 sm:px-0">
         <div className="max-w-2xl mx-auto">
-          <h1 className="text-3xl font-bold text-gray-900 mb-6">
+          <h1 className="text-3xl font-bold text-gray-900 mb-2">
             {category ? `Category: ${category}` : "Get Random Items"}
           </h1>
+          <p className="text-gray-600 text-sm mb-6">
+            Select a mode to interact with quiz items. Choose Explore Mode to view questions with answers and explanations, or Quiz Mode to test your knowledge with multiple-choice questions.
+          </p>
 
           <div className="mb-6">
             <label className="block text-sm font-medium text-gray-700 mb-2">
@@ -121,9 +124,14 @@ const ItemsPage = () => {
   return (
     <div className="px-4 py-6 sm:px-0">
       <div className="max-w-4xl mx-auto">
-        <h1 className="text-3xl font-bold text-gray-900 mb-6">
+        <h1 className="text-3xl font-bold text-gray-900 mb-2">
           {mode === "explore" ? "Explore Mode" : "Quiz Mode"}
         </h1>
+        <p className="text-gray-600 text-sm mb-6">
+          {mode === "explore" 
+            ? "Review the selected items below. Click on any item to view it in detail with answers and explanations."
+            : "Test your knowledge with the selected items. Click on any item to start the quiz and track your score."}
+        </p>
 
         {data?.items && data.items.length > 0 ? (
           <div className="space-y-4">

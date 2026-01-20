@@ -37,7 +37,10 @@ const ReviewBoardPage = () => {
 
   return (
     <div className="px-4 py-6 sm:px-0">
-      <h1 className="text-3xl font-bold text-gray-900 mb-6">Review Board</h1>
+      <h1 className="text-3xl font-bold text-gray-900 mb-2">Review Board</h1>
+      <p className="text-gray-600 text-sm mb-6">
+        Review and approve items that are pending review. Items marked as "Ready for Review" will appear here for admin approval before being made available to users.
+      </p>
       {data?.items && data.items.length > 0 ? (
         <div className="space-y-4">
           {data.items.map((item) => (

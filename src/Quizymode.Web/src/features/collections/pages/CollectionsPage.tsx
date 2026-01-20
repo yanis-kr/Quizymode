@@ -6,6 +6,8 @@ import { Navigate, Link, useSearchParams } from "react-router-dom";
 import {
   TrashIcon,
   ListBulletIcon,
+  EyeIcon,
+  AcademicCapIcon,
 } from "@heroicons/react/24/outline";
 import LoadingSpinner from "@/components/LoadingSpinner";
 import ErrorMessage from "@/components/ErrorMessage";
@@ -235,6 +237,22 @@ const CollectionsPage = () => {
                 >
                   <ListBulletIcon className="h-4 w-4 mr-1" />
                   List Items
+                </Link>
+                <Link
+                  to={`/explore/collection/${collection.id}`}
+                  className="flex items-center px-3 py-2 text-sm font-medium text-indigo-600 bg-indigo-50 rounded-md hover:bg-indigo-100"
+                  onClick={(e) => e.stopPropagation()}
+                >
+                  <EyeIcon className="h-4 w-4 mr-1" />
+                  Explore
+                </Link>
+                <Link
+                  to={`/quiz/collection/${collection.id}`}
+                  className="flex items-center px-3 py-2 text-sm font-medium text-green-600 bg-green-50 rounded-md hover:bg-green-100"
+                  onClick={(e) => e.stopPropagation()}
+                >
+                  <AcademicCapIcon className="h-4 w-4 mr-1" />
+                  Quiz
                 </Link>
               </div>
             </div>

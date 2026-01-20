@@ -89,6 +89,9 @@ const CollectionDetailPage = () => {
           {collectionData?.name || "Collection Items"}
         </h1>
       </div>
+      <p className="text-gray-600 text-sm mb-6">
+        View and manage items in this collection. Explore items to study them, take quizzes to test your knowledge, or remove items from the collection.
+      </p>
 
       {items.length > 0 ? (
         <ItemListSection

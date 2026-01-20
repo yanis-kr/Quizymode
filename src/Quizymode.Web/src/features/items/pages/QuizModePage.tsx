@@ -16,6 +16,7 @@ import {
   FolderIcon,
   ChevronLeftIcon,
   ChevronRightIcon,
+  ArrowLeftIcon,
 } from "@heroicons/react/24/outline";
 
 const QuizModePage = () => {
@@ -73,6 +74,12 @@ const QuizModePage = () => {
     queryKey: ["collectionItems", collectionId],
     queryFn: () => collectionsApi.getItems(collectionId!),
     enabled: !!collectionId, // Load even when itemId is present to get full list
+  });
+
+  const { data: collectionInfo } = useQuery({
+    queryKey: ["collection", collectionId],
+    queryFn: () => collectionsApi.getById(collectionId!),
+    enabled: !!collectionId && isAuthenticated,
   });
 
   const { data, isLoading, error, refetch } = useQuery({
@@ -334,9 +341,44 @@ const QuizModePage = () => {
   return (
     <div className="px-4 py-6 sm:px-0">
       <div className="max-w-4xl mx-auto">
+        {collectionId && (
+          <div className="mb-6 flex items-center space-x-4">
+            <button
+              onClick={() => navigate("/collections")}
+              className="flex items-center px-3 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-md hover:bg-gray-50"
+            >
+              <ArrowLeftIcon className="h-4 w-4 mr-2" />
+              Go Back
+            </button>
+            {collectionInfo && (
+              <h1 className="text-3xl font-bold text-gray-900">
+                {collectionInfo.name}
+              </h1>
+            )}
+          </div>
+        )}
+        {category && !collectionId && (
+          <div className="mb-6 flex items-center space-x-4">
+            <button
+              onClick={() => navigate("/categories")}
+              className="flex items-center px-3 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-md hover:bg-gray-50"
+            >
+              <ArrowLeftIcon className="h-4 w-4 mr-2" />
+              Go Back
+            </button>
+            <h1 className="text-3xl font-bold text-gray-900">
+              {category}
+            </h1>
+          </div>
+        )}
         <div className="bg-white shadow rounded-lg p-6 mb-4">
-          <div className="flex justify-between items-center mb-4">
+          <div className="flex justify-between items-center mb-2">
             <h2 className="text-2xl font-bold text-gray-900">Quiz Mode</h2>
+          </div>
+          <p className="text-gray-600 text-sm mb-4">
+            Test your knowledge with interactive quizzes. Select an answer to see if you're correct, then view the explanation. Track your score as you progress through items.
+          </p>
+          <div className="flex justify-between items-center mb-4">
             <div className="flex items-center space-x-4">
               <div className="flex items-center space-x-2">
                 <button
@@ -499,7 +541,7 @@ const QuizModePage = () => {
                   </button>
                   {currentItem.collections && currentItem.collections.length > 0 && (
                     <div className="flex items-center gap-2 flex-wrap">
-                      {currentItem.collections.map((collection) => (
+                      {currentItem.collections.map((collection: { id: string; name: string }) => (
                         <button
                           key={collection.id}
                           onClick={() => navigate(`/collections?selected=${collection.id}`)}
@@ -557,10 +599,16 @@ const QuizModePage = () => {
 
         <div className="text-center">
           <button
-            onClick={() => navigate("/categories")}
+            onClick={() => {
+              if (collectionId) {
+                navigate(`/collections/${collectionId}`);
+              } else {
+                navigate("/categories");
+              }
+            }}
             className="text-indigo-600 hover:text-indigo-700"
           >
-            ← Back
+            ← Go back
           </button>
         </div>
       </div>

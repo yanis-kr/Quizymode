@@ -156,7 +156,10 @@ const EditItemPage = () => {
   return (
     <div className="px-4 py-6 sm:px-0">
       <div className="max-w-2xl mx-auto">
-        <h1 className="text-3xl font-bold text-gray-900 mb-6">Edit Item</h1>
+        <h1 className="text-3xl font-bold text-gray-900 mb-2">Edit Item</h1>
+        <p className="text-gray-600 text-sm mb-6">
+          Update the quiz item details. Regular users can edit their own private items; admins can edit any item including public ones.
+        </p>
 
         {validationError && (
           <div className="mb-4">

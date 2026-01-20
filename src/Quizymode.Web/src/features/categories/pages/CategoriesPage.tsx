@@ -163,10 +163,15 @@ const CategoriesPage = () => {
             ← Back to Categories
           </button>
 
-          <div className="flex items-center gap-3 mb-6">
+          <div className="flex items-center gap-3 mb-2">
             <h1 className="text-3xl font-bold text-gray-900">
               Items in: {selectedCategory}
             </h1>
+          </div>
+          <p className="text-gray-600 text-sm mb-6">
+            Browse all items in this category. Use the filters to find specific items, or select items to add them to collections.
+          </p>
+          <div className="flex items-center gap-3 mb-6">
             {(() => {
               const categoryData = data?.categories.find(
                 (c) => c.category === selectedCategory
@@ -231,10 +236,15 @@ const CategoriesPage = () => {
             ← Back to Categories
           </button>
 
-          <div className="flex items-center gap-3 mb-6">
+          <div className="flex items-center gap-3 mb-2">
             <h1 className="text-3xl font-bold text-gray-900">
               Category: {selectedCategory}
             </h1>
+          </div>
+          <p className="text-gray-600 text-sm mb-6">
+            Choose an action for this category: explore items to view questions and answers, take a quiz to test your knowledge, or browse the item list.
+          </p>
+          <div className="flex items-center gap-3 mb-6">
             {(() => {
               const categoryData = data?.categories.find(
                 (c) => c.category === selectedCategory

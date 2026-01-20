@@ -106,9 +106,12 @@ const CreateItemPage = () => {
   return (
     <div className="px-4 py-6 sm:px-0">
       <div className="max-w-2xl mx-auto">
-        <h1 className="text-3xl font-bold text-gray-900 mb-6">
+        <h1 className="text-3xl font-bold text-gray-900 mb-2">
           Create New Item
         </h1>
+        <p className="text-gray-600 text-sm mb-6">
+          Create a new quiz item with a question, correct answer, incorrect answer options, and optional explanation. Regular users can create private items; admins can create public items visible to everyone.
+        </p>
 
         {validationError && (
           <div className="mb-4">
