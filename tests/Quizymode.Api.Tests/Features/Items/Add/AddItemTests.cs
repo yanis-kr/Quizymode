@@ -1,35 +1,25 @@
 using FluentAssertions;
-using FluentValidation;
 using Microsoft.EntityFrameworkCore;
 using Moq;
-using Quizymode.Api.Data;
 using Quizymode.Api.Features.Items.Add;
 using Quizymode.Api.Services;
 using Quizymode.Api.Shared.Kernel;
 using Quizymode.Api.Shared.Models;
+using Quizymode.Api.Tests.TestFixtures;
 using Xunit;
-using AddItemHandler = Quizymode.Api.Features.Items.Add.AddItemHandler;
 
 namespace Quizymode.Api.Tests.Features.Items.Add;
 
-public sealed class AddItemTests : IDisposable
+public sealed class AddItemTests : ItemTestFixture
 {
-    private readonly ApplicationDbContext _dbContext;
-    private readonly ISimHashService _simHashService;
     private readonly Mock<IUserContext> _userContextMock;
     private readonly Mock<IAuditService> _auditServiceMock;
 
     public AddItemTests()
     {
-        DbContextOptions<ApplicationDbContext> options = new DbContextOptionsBuilder<ApplicationDbContext>()
-            .UseInMemoryDatabase(databaseName: Guid.NewGuid().ToString())
-            .Options;
-
-        _dbContext = new ApplicationDbContext(options);
-        _simHashService = new SimHashService();
-        _userContextMock = new Mock<IUserContext>();
-        _userContextMock.Setup(x => x.UserId).Returns(Guid.NewGuid().ToString());
-        _userContextMock.Setup(x => x.IsAuthenticated).Returns(true);
+        // Use a Guid string for userId so audit logging works
+        string userId = Guid.NewGuid().ToString();
+        _userContextMock = CreateUserContextMock(userId);
         _auditServiceMock = new Mock<IAuditService>();
     }
 
@@ -39,7 +29,6 @@ public sealed class AddItemTests : IDisposable
         // Arrange
         AddItem.Request request = new(
             Category: "geography",
-            Subcategory: "europe",
             IsPrivate: false,
             Question: "What is the capital of France?",
             CorrectAnswer: "Paris",
@@ -49,10 +38,11 @@ public sealed class AddItemTests : IDisposable
         // Act
         Result<AddItem.Response> result = await AddItemHandler.HandleAsync(
             request,
-            _dbContext,
-            _simHashService,
+            DbContext,
+            SimHashService,
             _userContextMock.Object,
             _auditServiceMock.Object,
+            CategoryResolver,
             CancellationToken.None);
 
         // Assert
@@ -61,18 +51,20 @@ public sealed class AddItemTests : IDisposable
         result.Value.Question.Should().Be(request.Question);
         result.Value.CorrectAnswer.Should().Be(request.CorrectAnswer);
 
-        Item? item = await _dbContext.Items.FirstOrDefaultAsync(i => i.Question == request.Question);
+        Item? item = await DbContext.Items.FirstOrDefaultAsync(i => i.Question == request.Question);
         item.Should().NotBeNull();
         item!.Question.Should().Be(request.Question);
 
         // Verify audit logging was called
+        string expectedUserId = _userContextMock.Object.UserId ?? throw new InvalidOperationException("User ID is required");
+        Guid expectedUserIdGuid = Guid.Parse(expectedUserId);
         _auditServiceMock.Verify(
             x => x.LogAsync(
                 AuditAction.ItemCreated,
-                It.IsAny<Guid?>(),
-                It.Is<Guid?>(eid => eid.HasValue && eid.Value == item.Id),
-                It.IsAny<Dictionary<string, string>?>(),
-                It.IsAny<CancellationToken>()),
+                It.Is<Guid?>(uid => uid.HasValue && uid.Value == expectedUserIdGuid),  // userId
+                It.Is<Guid?>(eid => eid.HasValue && eid.Value == item.Id),  // entityId
+                It.IsAny<Dictionary<string, string>?>(),  // metadata (optional, not passed)
+                It.IsAny<CancellationToken>()),  // cancellationToken
             Times.Once);
     }
 
@@ -82,29 +74,13 @@ public sealed class AddItemTests : IDisposable
         // Note: AddItem doesn't check for duplicates - it's a feature that allows duplicates
         // If duplicate checking is needed, it should be done at the business logic level
         
-        // Arrange
-        Item existingItem = new Item
-        {
-            Id = Guid.NewGuid(),
-            Category = "geography",
-            Subcategory = "europe",
-            IsPrivate = false,
-            Question = "What is the capital of France?",
-            CorrectAnswer = "Paris",
-            IncorrectAnswers = new List<string> { "Lyon", "Marseille" },
-            Explanation = "Existing item",
-            FuzzySignature = _simHashService.ComputeSimHash("What is the capital of France? Paris Lyon Marseille"),
-            FuzzyBucket = _simHashService.GetFuzzyBucket(_simHashService.ComputeSimHash("What is the capital of France? Paris Lyon Marseille")),
-            CreatedBy = "test",
-            CreatedAt = DateTime.UtcNow
-        };
-
-        _dbContext.Items.Add(existingItem);
-        await _dbContext.SaveChangesAsync();
+        // Arrange - Create item with categories using helper
+        Item existingItem = await CreateItemWithCategoryAsync(
+            "geography", "What is the capital of France?", "Paris",
+            new List<string> { "Lyon", "Marseille" }, "Existing item", false, "test");
 
         AddItem.Request request = new(
             Category: "geography",
-            Subcategory: "europe",
             IsPrivate: false,
             Question: "What is the capital of France?",
             CorrectAnswer: "Paris",
@@ -114,16 +90,17 @@ public sealed class AddItemTests : IDisposable
         // Act
         Result<AddItem.Response> result = await AddItemHandler.HandleAsync(
             request,
-            _dbContext,
-            _simHashService,
+            DbContext,
+            SimHashService,
             _userContextMock.Object,
             _auditServiceMock.Object,
+            CategoryResolver,
             CancellationToken.None);
 
         // Assert - AddItem allows duplicates, so it should succeed
         result.IsSuccess.Should().BeTrue();
         
-        int itemCount = await _dbContext.Items.CountAsync();
+        int itemCount = await DbContext.Items.CountAsync();
         itemCount.Should().Be(2); // Original + new duplicate
     }
 
@@ -133,7 +110,6 @@ public sealed class AddItemTests : IDisposable
         // Arrange
         AddItem.Request request = new(
             Category: "",
-            Subcategory: "europe",
             IsPrivate: false,
             Question: "What is the capital of France?",
             CorrectAnswer: "Paris",
@@ -156,7 +132,6 @@ public sealed class AddItemTests : IDisposable
         // Arrange
         AddItem.Request request = new(
             Category: "geography",
-            Subcategory: "europe",
             IsPrivate: false,
             Question: "What is the capital of France?",
             CorrectAnswer: "Paris",
@@ -173,8 +148,5 @@ public sealed class AddItemTests : IDisposable
         result.Errors.Should().Contain(e => e.PropertyName == "IncorrectAnswers");
     }
 
-    public void Dispose()
-    {
-        _dbContext.Dispose();
-    }
+
 }

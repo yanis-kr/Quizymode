@@ -1,23 +1,24 @@
 using FluentValidation;
-using Microsoft.EntityFrameworkCore;
 using Quizymode.Api.Data;
-using Quizymode.Api.Features;
 using Quizymode.Api.Infrastructure;
 using Quizymode.Api.Services;
 using Quizymode.Api.Shared.Kernel;
-using Quizymode.Api.Shared.Models;
 
 namespace Quizymode.Api.Features.Items.AddBulk;
 
 public static class AddItemsBulk
 {
+    public sealed record KeywordRequest(
+        string Name,
+        bool IsPrivate);
+
     public sealed record ItemRequest(
         string Category,
-        string Subcategory,
         string Question,
         string CorrectAnswer,
         List<string> IncorrectAnswers,
-        string Explanation);
+        string Explanation,
+        List<KeywordRequest>? Keywords = null);
 
     public sealed record Request(
         bool IsPrivate,
@@ -63,12 +64,6 @@ public static class AddItemsBulk
                 .MaximumLength(100)
                 .WithMessage("Category must not exceed 100 characters");
 
-            RuleFor(x => x.Subcategory)
-                .NotEmpty()
-                .WithMessage("Subcategory is required")
-                .MaximumLength(100)
-                .WithMessage("Subcategory must not exceed 100 characters");
-
             RuleFor(x => x.Question)
                 .NotEmpty()
                 .WithMessage("Question is required")
@@ -93,6 +88,24 @@ public static class AddItemsBulk
             RuleFor(x => x.Explanation)
                 .MaximumLength(2000)
                 .WithMessage("Explanation must not exceed 2000 characters");
+
+            RuleFor(x => x.Keywords)
+                .Must(keywords => keywords is null || keywords.Count <= 50)
+                .WithMessage("Cannot assign more than 50 keywords to an item")
+                .ForEach(rule => rule
+                    .SetValidator(new KeywordRequestValidator()));
+        }
+    }
+
+    public sealed class KeywordRequestValidator : AbstractValidator<KeywordRequest>
+    {
+        public KeywordRequestValidator()
+        {
+            RuleFor(x => x.Name)
+                .NotEmpty()
+                .WithMessage("Keyword name is required")
+                .MaximumLength(30)
+                .WithMessage("Keyword name must not exceed 30 characters");
         }
     }
 
@@ -103,7 +116,7 @@ public static class AddItemsBulk
             app.MapPost("items/bulk", Handler)
                 .WithTags("Items")
                 .WithSummary("Create multiple items in bulk")
-                .WithDescription("Creates many items in a single request. Each item specifies its own category and subcategory; isPrivate applies to all items.")
+                .WithDescription("Creates many items in a single request. Each item specifies its own category; isPrivate applies to all items.")
                 .RequireAuthorization()
                 .WithOpenApi()
                 .Produces<Response>(StatusCodes.Status200OK)
@@ -116,6 +129,8 @@ public static class AddItemsBulk
             ApplicationDbContext db,
             ISimHashService simHashService,
             IUserContext userContext,
+            ICategoryResolver categoryResolver,
+            IAuditService auditService,
             CancellationToken cancellationToken)
         {
             if (!userContext.IsAuthenticated || string.IsNullOrEmpty(userContext.UserId))
@@ -129,7 +144,7 @@ public static class AddItemsBulk
                 return Results.BadRequest(validationResult.Errors);
             }
 
-            Result<Response> result = await AddItemsBulkHandler.HandleAsync(request, db, simHashService, userContext, cancellationToken);
+            Result<Response> result = await AddItemsBulkHandler.HandleAsync(request, db, simHashService, userContext, categoryResolver, auditService, cancellationToken);
 
             return result.Match(
                 value => Results.Ok(value),

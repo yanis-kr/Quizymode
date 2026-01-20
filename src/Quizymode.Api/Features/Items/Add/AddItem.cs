@@ -8,20 +8,23 @@ namespace Quizymode.Api.Features.Items.Add;
 
 public static class AddItem
 {
+    public sealed record KeywordRequest(
+        string Name,
+        bool IsPrivate);
+
     public sealed record Request(
         string Category,
-        string Subcategory,
         bool IsPrivate,
         string Question,
         string CorrectAnswer,
         List<string> IncorrectAnswers,
         string Explanation,
+        List<KeywordRequest>? Keywords = null,
         bool ReadyForReview = false);
 
     public sealed record Response(
         string Id,
         string Category,
-        string Subcategory,
         bool IsPrivate,
         string Question,
         string CorrectAnswer,
@@ -36,10 +39,6 @@ public static class AddItem
             RuleFor(x => x.Category)
                 .NotEmpty()
                 .WithMessage("Category is required");
-
-            RuleFor(x => x.Subcategory)
-                .NotEmpty()
-                .WithMessage("Subcategory is required");
 
             RuleFor(x => x.Question)
                 .NotEmpty()
@@ -65,6 +64,24 @@ public static class AddItem
             RuleFor(x => x.Explanation)
                 .MaximumLength(2000)
                 .WithMessage("Explanation must not exceed 2000 characters");
+
+            RuleFor(x => x.Keywords)
+                .Must(keywords => keywords is null || keywords.Count <= 50)
+                .WithMessage("Cannot assign more than 50 keywords to an item")
+                .ForEach(rule => rule
+                    .SetValidator(new KeywordRequestValidator()));
+        }
+    }
+
+    public sealed class KeywordRequestValidator : AbstractValidator<KeywordRequest>
+    {
+        public KeywordRequestValidator()
+        {
+            RuleFor(x => x.Name)
+                .NotEmpty()
+                .WithMessage("Keyword name is required")
+                .MaximumLength(30)
+                .WithMessage("Keyword name must not exceed 30 characters");
         }
     }
 
@@ -88,6 +105,7 @@ public static class AddItem
             ISimHashService simHashService,
             IUserContext userContext,
             IAuditService auditService,
+            ICategoryResolver categoryResolver,
             CancellationToken cancellationToken)
         {
             var validationResult = await validator.ValidateAsync(request, cancellationToken);
@@ -96,7 +114,7 @@ public static class AddItem
                 return Results.BadRequest(validationResult.Errors);
             }
 
-            Result<Response> result = await AddItemHandler.HandleAsync(request, db, simHashService, userContext, auditService, cancellationToken);
+            Result<Response> result = await AddItemHandler.HandleAsync(request, db, simHashService, userContext, auditService, categoryResolver, cancellationToken);
 
             return result.Match(
                 value => Results.Created($"/api/items/{value.Id}", value),

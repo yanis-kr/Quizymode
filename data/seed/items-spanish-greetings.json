@@ -1,26 +1,44 @@
-{
-  "category": "spanish",
-  "subcategory": "greetings",
-  "isPrivate": false,
-  "items": [
-    {
-      "question": "How do you say 'hello' in Spanish?",
-      "correctAnswer": "Hola",
-      "incorrectAnswers": ["Adiós", "Gracias", "Por favor"],
-      "explanation": "Hola is the Spanish word for hello."
-    },
-    {
-      "question": "What is 'goodbye' in Spanish?",
-      "correctAnswer": "Adiós",
-      "incorrectAnswers": ["Hola", "Buenos días", "Hasta luego"],
-      "explanation": "Adiós is the Spanish word for goodbye."
-    },
-    {
-      "question": "How do you say 'good morning' in Spanish?",
-      "correctAnswer": "Buenos días",
-      "incorrectAnswers": ["Buenas tardes", "Buenas noches", "Hola"],
-      "explanation": "Buenos días is used to greet someone in the morning."
-    }
-  ]
-}
-
+[
+  {
+    "category": "Spanish",
+    "question": "How do you say 'hello' in Spanish?",
+    "correctAnswer": "Hola",
+    "incorrectAnswers": [
+      "Adiós",
+      "Gracias",
+      "Por favor"
+    ],
+    "explanation": "Hola is the Spanish word for hello.",
+    "keywords": [
+      "greetings"
+    ]
+  },
+  {
+    "category": "Spanish",
+    "question": "What is 'goodbye' in Spanish?",
+    "correctAnswer": "Adiós",
+    "incorrectAnswers": [
+      "Hola",
+      "Buenos días",
+      "Hasta luego"
+    ],
+    "explanation": "Adiós is the Spanish word for goodbye.",
+    "keywords": [
+      "greetings"
+    ]
+  },
+  {
+    "category": "Spanish",
+    "question": "How do you say 'good morning' in Spanish?",
+    "correctAnswer": "Buenos días",
+    "incorrectAnswers": [
+      "Buenas tardes",
+      "Buenas noches",
+      "Hola"
+    ],
+    "explanation": "Buenos días is used to greet someone in the morning.",
+    "keywords": [
+      "greetings"
+    ]
+  }
+]

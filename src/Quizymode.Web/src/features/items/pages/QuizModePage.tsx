@@ -3,7 +3,6 @@ import {
   useParams,
   useNavigate,
   Link,
-  useSearchParams,
 } from "react-router-dom";
 import { useQuery } from "@tanstack/react-query";
 import { itemsApi } from "@/api/items";
@@ -17,12 +16,11 @@ import {
   FolderIcon,
   ChevronLeftIcon,
   ChevronRightIcon,
+  ArrowLeftIcon,
 } from "@heroicons/react/24/outline";
 
 const QuizModePage = () => {
   const { category, collectionId, itemId } = useParams();
-  const [searchParams] = useSearchParams();
-  const subcategory = searchParams.get("subcategory") || undefined;
   const navigate = useNavigate();
   const { isAuthenticated } = useAuth();
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -46,13 +44,10 @@ const QuizModePage = () => {
         try {
           const context = JSON.parse(stored);
           if (context.items && context.mode === "quiz") {
-            // Only restore if category and subcategory match (or both are undefined/null)
+            // Only restore if category matches (or both are undefined/null)
             const categoryMatches =
               (!context.category && !category) || context.category === category;
-            const subcategoryMatches =
-              (!context.subcategory && !subcategory) ||
-              context.subcategory === subcategory;
-            if (categoryMatches && subcategoryMatches) {
+            if (categoryMatches) {
               return context.items;
             }
           }
@@ -81,9 +76,15 @@ const QuizModePage = () => {
     enabled: !!collectionId, // Load even when itemId is present to get full list
   });
 
+  const { data: collectionInfo } = useQuery({
+    queryKey: ["collection", collectionId],
+    queryFn: () => collectionsApi.getById(collectionId!),
+    enabled: !!collectionId && isAuthenticated,
+  });
+
   const { data, isLoading, error, refetch } = useQuery({
-    queryKey: ["randomItems", category, subcategory, count],
-    queryFn: () => itemsApi.getRandom(category, subcategory, count),
+    queryKey: ["randomItems", category, count],
+    queryFn: () => itemsApi.getRandom(category, count),
     enabled: !collectionId && !storedItems, // Don't load if we have stored items
   });
 
@@ -100,13 +101,10 @@ const QuizModePage = () => {
             context.mode === "quiz" &&
             context.items.length > 0
           ) {
-            // Only restore if category and subcategory match (or both are undefined/null)
+            // Only restore if category matches (or both are undefined/null)
             const categoryMatches =
               (!context.category && !category) || context.category === category;
-            const subcategoryMatches =
-              (!context.subcategory && !subcategory) ||
-              context.subcategory === subcategory;
-            if (categoryMatches && subcategoryMatches) {
+            if (categoryMatches) {
               // Set storedItems state with the full items list
               setStoredItems(context.items);
 
@@ -156,7 +154,7 @@ const QuizModePage = () => {
         }
       }
     }
-  }, [itemId, hasRestoredItems, category, subcategory, collectionId]);
+  }, [itemId, hasRestoredItems, category, collectionId]);
 
   // Clear sessionStorage when starting a fresh quiz (no itemId, no collectionId)
   // This ensures we always fetch fresh items instead of restoring old ones
@@ -167,15 +165,11 @@ const QuizModePage = () => {
       if (stored) {
         try {
           const context = JSON.parse(stored);
-          // Only clear if category and subcategory match (to avoid clearing other categories' data)
+          // Only clear if category matches (to avoid clearing other categories' data)
           const categoryMatches =
             (!context.category && !category) || context.category === category;
-          const subcategoryMatches =
-            (!context.subcategory && !subcategory) ||
-            context.subcategory === subcategory;
           if (
             categoryMatches &&
-            subcategoryMatches &&
             context.mode === "quiz"
           ) {
             sessionStorage.removeItem("navigationContext_quiz");
@@ -185,7 +179,7 @@ const QuizModePage = () => {
         }
       }
     }
-  }, [itemId, collectionId, category, subcategory, hasRestoredItems]);
+  }, [itemId, collectionId, category, hasRestoredItems]);
 
   // Use full list if available (when category/collection is present), otherwise use stored items or fetched items
   // Never use singleItemData when storedItems exists (restoring from sessionStorage)
@@ -232,13 +226,10 @@ const QuizModePage = () => {
         const stored = sessionStorage.getItem("navigationContext_quiz");
         if (stored) {
           const context = JSON.parse(stored);
-          // Only load existing state if category and subcategory match (to avoid mixing states from different sessions)
+          // Only load existing state if category matches (to avoid mixing states from different sessions)
           const categoryMatches =
             (!context.category && !category) || context.category === category;
-          const subcategoryMatches =
-            (!context.subcategory && !subcategory) ||
-            context.subcategory === subcategory;
-          if (categoryMatches && subcategoryMatches && context.quizState) {
+          if (categoryMatches && context.quizState) {
             existingQuizState = context.quizState;
           }
         }
@@ -259,7 +250,6 @@ const QuizModePage = () => {
         JSON.stringify({
           mode: "quiz",
           category: category,
-          subcategory: subcategory,
           collectionId: collectionId,
           currentIndex: currentIndex,
           itemIds: items.map((item) => item.id),
@@ -273,7 +263,6 @@ const QuizModePage = () => {
     items,
     currentIndex,
     category,
-    subcategory,
     collectionId,
     selectedAnswer,
     showAnswer,
@@ -287,7 +276,6 @@ const QuizModePage = () => {
       ? {
           mode: "quiz" as const,
           category: category,
-          subcategory: subcategory,
           collectionId: collectionId,
           currentIndex: currentIndex,
           itemIds: items.map((item) => item.id),
@@ -353,9 +341,44 @@ const QuizModePage = () => {
   return (
     <div className="px-4 py-6 sm:px-0">
       <div className="max-w-4xl mx-auto">
+        {collectionId && (
+          <div className="mb-6 flex items-center space-x-4">
+            <button
+              onClick={() => navigate("/collections")}
+              className="flex items-center px-3 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-md hover:bg-gray-50"
+            >
+              <ArrowLeftIcon className="h-4 w-4 mr-2" />
+              Go Back
+            </button>
+            {collectionInfo && (
+              <h1 className="text-3xl font-bold text-gray-900">
+                {collectionInfo.name}
+              </h1>
+            )}
+          </div>
+        )}
+        {category && !collectionId && (
+          <div className="mb-6 flex items-center space-x-4">
+            <button
+              onClick={() => navigate("/categories")}
+              className="flex items-center px-3 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-md hover:bg-gray-50"
+            >
+              <ArrowLeftIcon className="h-4 w-4 mr-2" />
+              Go Back
+            </button>
+            <h1 className="text-3xl font-bold text-gray-900">
+              {category}
+            </h1>
+          </div>
+        )}
         <div className="bg-white shadow rounded-lg p-6 mb-4">
-          <div className="flex justify-between items-center mb-4">
+          <div className="flex justify-between items-center mb-2">
             <h2 className="text-2xl font-bold text-gray-900">Quiz Mode</h2>
+          </div>
+          <p className="text-gray-600 text-sm mb-4">
+            Test your knowledge with interactive quizzes. Select an answer to see if you're correct, then view the explanation. Track your score as you progress through items.
+          </p>
+          <div className="flex justify-between items-center mb-4">
             <div className="flex items-center space-x-4">
               <div className="flex items-center space-x-2">
                 <button
@@ -373,18 +396,7 @@ const QuizModePage = () => {
                             { replace: true }
                           );
                         } else if (category) {
-                          const params = new URLSearchParams();
-                          if (subcategory)
-                            params.set("subcategory", subcategory);
-                          const queryString = params.toString();
-                          const url = queryString
-                            ? `/quiz/${encodeURIComponent(category)}/item/${
-                                items[newIndex].id
-                              }?${queryString}`
-                            : `/quiz/${encodeURIComponent(category)}/item/${
-                                items[newIndex].id
-                              }`;
-                          navigate(url, { replace: true });
+                          navigate(`/quiz/${encodeURIComponent(category)}/item/${items[newIndex].id}`, { replace: true });
                         } else {
                           navigate(`/quiz/item/${items[newIndex].id}`, {
                             replace: true,
@@ -417,18 +429,7 @@ const QuizModePage = () => {
                             { replace: true }
                           );
                         } else if (category) {
-                          const params = new URLSearchParams();
-                          if (subcategory)
-                            params.set("subcategory", subcategory);
-                          const queryString = params.toString();
-                          const url = queryString
-                            ? `/quiz/${encodeURIComponent(category)}/item/${
-                                items[newIndex].id
-                              }?${queryString}`
-                            : `/quiz/${encodeURIComponent(category)}/item/${
-                                items[newIndex].id
-                              }`;
-                          navigate(url, { replace: true });
+                          navigate(`/quiz/${encodeURIComponent(category)}/item/${items[newIndex].id}`, { replace: true });
                         } else {
                           navigate(`/quiz/item/${items[newIndex].id}`, {
                             replace: true,
@@ -516,7 +517,6 @@ const QuizModePage = () => {
 
               <div className="text-sm text-gray-500">
                 Category: {currentItem.category}
-                {currentItem.subcategory && ` • ${currentItem.subcategory}`}
               </div>
 
               {/* Ratings and Comments */}
@@ -529,7 +529,7 @@ const QuizModePage = () => {
 
               {/* Collection Controls */}
               {showAnswer && isAuthenticated && (
-                <div className="mt-4">
+                <div className="mt-4 flex items-center gap-2 flex-wrap">
                   <button
                     onClick={() =>
                       setSelectedItemForCollections(currentItem.id)
@@ -539,6 +539,20 @@ const QuizModePage = () => {
                   >
                     <FolderIcon className="h-5 w-5" />
                   </button>
+                  {currentItem.collections && currentItem.collections.length > 0 && (
+                    <div className="flex items-center gap-2 flex-wrap">
+                      {currentItem.collections.map((collection: { id: string; name: string }) => (
+                        <button
+                          key={collection.id}
+                          onClick={() => navigate(`/collections?selected=${collection.id}`)}
+                          className="inline-flex items-center px-2 py-1 rounded text-xs font-medium bg-emerald-100 text-emerald-800 hover:bg-emerald-200 transition-colors"
+                          title={`Collection: ${collection.name}`}
+                        >
+                          {collection.name}
+                        </button>
+                      ))}
+                    </div>
+                  )}
                 </div>
               )}
             </div>
@@ -584,16 +598,18 @@ const QuizModePage = () => {
         )}
 
         <div className="text-center">
-          <Link
-            to={
-              category
-                ? `/items?category=${encodeURIComponent(category)}`
-                : "/categories"
-            }
+          <button
+            onClick={() => {
+              if (collectionId) {
+                navigate(`/collections/${collectionId}`);
+              } else {
+                navigate("/categories");
+              }
+            }}
             className="text-indigo-600 hover:text-indigo-700"
           >
-            ← Back to items
-          </Link>
+            ← Go back
+          </button>
         </div>
       </div>
 

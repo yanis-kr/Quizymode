@@ -6,8 +6,21 @@ using Quizymode.Api.Shared.Models;
 
 namespace Quizymode.Api.Features.Items.Get;
 
+/// <summary>
+/// Business logic handler for retrieving items. Orchestrates query building, execution, and response mapping.
+/// Uses specialized classes (ItemQueryBuilder, ItemQueryExecutor, ItemCollectionLoader, ItemResponseMapper)
+/// to maintain separation of concerns and improve testability.
+/// </summary>
 internal static class GetItemsHandler
 {
+    /// <summary>
+    /// Main handler method that coordinates the entire item retrieval process:
+    /// 1. Builds the filtered EF Core query using ItemQueryBuilder
+    /// 2. Executes the query and gets paginated results using ItemQueryExecutor
+    /// 3. Loads collection information for the returned items using ItemCollectionLoader
+    /// 4. Maps domain entities to response DTOs using ItemResponseMapper
+    /// 5. Calculates total pages based on total count and page size
+    /// </summary>
     public static async Task<Result<GetItems.Response>> HandleAsync(
         GetItems.QueryRequest request,
         ApplicationDbContext db,
@@ -16,70 +29,34 @@ internal static class GetItemsHandler
     {
         try
         {
-            IQueryable<Item> query = db.Items.AsQueryable();
+            ItemQueryBuilder queryBuilder = new(db, userContext, cancellationToken);
+            Result<IQueryable<Item>> queryResult = await queryBuilder.BuildQueryAsync(request);
 
-            // Apply visibility filter based on authentication and IsPrivate filter
-            if (request.IsPrivate.HasValue)
+            if (queryResult.IsFailure)
             {
-                // Explicit filter requested
-                if (request.IsPrivate.Value)
-                {
-                    // User wants only private items - must be authenticated and can only see their own
-                    if (!userContext.IsAuthenticated || string.IsNullOrEmpty(userContext.UserId))
-                    {
-                        return Result.Failure<GetItems.Response>(
-                            Error.Problem("Items.Unauthorized", "Must be authenticated to view private items"));
-                    }
-                    query = query.Where(i => i.IsPrivate && i.CreatedBy == userContext.UserId);
-                }
-                else
-                {
-                    // User wants only global (non-private) items
-                    query = query.Where(i => !i.IsPrivate);
-                }
-            }
-            else
-            {
-                // No explicit filter - show based on user context
-                // Anonymous users only see global items. Authenticated users see global + their private items.
-                if (!userContext.IsAuthenticated)
-                {
-                    query = query.Where(i => !i.IsPrivate);
-                }
-                else if (!string.IsNullOrEmpty(userContext.UserId))
-                {
-                    // Include global items OR user's private items
-                    query = query.Where(i => !i.IsPrivate || (i.IsPrivate && i.CreatedBy == userContext.UserId));
-                }
+                return Result.Failure<GetItems.Response>(queryResult.Error!);
             }
 
-            if (!string.IsNullOrEmpty(request.Category))
-            {
-                query = query.Where(i => i.Category == request.Category);
-            }
+            IQueryable<Item> query = queryResult.Value;
 
-            if (!string.IsNullOrEmpty(request.Subcategory))
-            {
-                query = query.Where(i => i.Subcategory == request.Subcategory);
-            }
+            ItemQueryExecutor queryExecutor = new(db, cancellationToken);
+            (int totalCount, List<Item> items) = await queryExecutor.ExecuteQueryAsync(query, request);
 
-            int totalCount = await query.CountAsync(cancellationToken);
-            List<Item> items = await query
-                .Skip((request.Page - 1) * request.PageSize)
-                .Take(request.PageSize)
-                .ToListAsync(cancellationToken);
+            List<Guid> itemIds = items.Select(i => i.Id).ToList();
+
+            ItemCollectionLoader collectionLoader = new(db, userContext, cancellationToken);
+            Dictionary<Guid, List<GetItems.CollectionResponse>> itemCollectionsMap = 
+                await collectionLoader.LoadCollectionsAsync(itemIds);
+
+            ItemResponseMapper responseMapper = new(userContext);
+            List<GetItems.ItemResponse> itemResponses = items
+                .Select(item => responseMapper.MapToResponse(
+                    item,
+                    itemCollectionsMap.GetValueOrDefault(item.Id, new List<GetItems.CollectionResponse>())))
+                .ToList();
 
             GetItems.Response response = new GetItems.Response(
-                items.Select(i => new GetItems.ItemResponse(
-                    i.Id.ToString(),
-                    i.Category,
-                    i.Subcategory,
-                    i.IsPrivate,
-                    i.Question,
-                    i.CorrectAnswer,
-                    i.IncorrectAnswers,
-                    i.Explanation,
-                    i.CreatedAt)).ToList(),
+                itemResponses,
                 totalCount,
                 request.Page,
                 request.PageSize,
@@ -94,4 +71,3 @@ internal static class GetItemsHandler
         }
     }
 }
-

@@ -1,29 +1,22 @@
 using FluentAssertions;
-using FluentValidation;
 using Microsoft.EntityFrameworkCore;
 using Moq;
-using Quizymode.Api.Data;
 using Quizymode.Api.Features.Comments;
 using Quizymode.Api.Services;
 using Quizymode.Api.Shared.Kernel;
 using Quizymode.Api.Shared.Models;
+using Quizymode.Api.Tests.TestFixtures;
 using Xunit;
 
 namespace Quizymode.Api.Tests.Features.Comments;
 
-public sealed class AddCommentTests : IDisposable
+public sealed class AddCommentTests : DatabaseTestFixture
 {
-    private readonly ApplicationDbContext _dbContext;
     private readonly Mock<IUserContext> _userContextMock;
     private readonly Mock<IAuditService> _auditServiceMock;
 
     public AddCommentTests()
     {
-        DbContextOptions<ApplicationDbContext> options = new DbContextOptionsBuilder<ApplicationDbContext>()
-            .UseInMemoryDatabase(databaseName: Guid.NewGuid().ToString())
-            .Options;
-
-        _dbContext = new ApplicationDbContext(options);
         _userContextMock = new Mock<IUserContext>();
         _userContextMock.Setup(x => x.UserId).Returns(Guid.NewGuid().ToString());
         _userContextMock.Setup(x => x.IsAuthenticated).Returns(true);
@@ -37,31 +30,16 @@ public sealed class AddCommentTests : IDisposable
         string userId = Guid.NewGuid().ToString();
         _userContextMock.Setup(x => x.UserId).Returns(userId);
 
-        Item item = new Item
-        {
-            Id = Guid.NewGuid(),
-            Category = "geography",
-            Subcategory = "europe",
-            IsPrivate = false,
-            Question = "What is the capital of France?",
-            CorrectAnswer = "Paris",
-            IncorrectAnswers = new List<string> { "Lyon" },
-            Explanation = "",
-            FuzzySignature = "ABC",
-            FuzzyBucket = 1,
-            CreatedBy = "test",
-            CreatedAt = DateTime.UtcNow
-        };
-
-        _dbContext.Items.Add(item);
-        await _dbContext.SaveChangesAsync();
+        Item item = await CreateItemWithCategoryAsync(
+            Guid.NewGuid(), "geography", "What is the capital of France?", "Paris",
+            new List<string> { "Lyon" }, "", false, "test");
 
         AddComment.Request request = new(item.Id, Text: "Great question!");
 
         // Act
         Result<AddComment.Response> result = await AddComment.HandleAsync(
             request,
-            _dbContext,
+            DbContext,
             _userContextMock.Object,
             _auditServiceMock.Object,
             CancellationToken.None);
@@ -73,7 +51,7 @@ public sealed class AddCommentTests : IDisposable
         result.Value.Text.Should().Be("Great question!");
         result.Value.CreatedBy.Should().Be(userId);
 
-        Comment? comment = await _dbContext.Comments.FirstOrDefaultAsync(c => c.ItemId == item.Id);
+        Comment? comment = await DbContext.Comments.FirstOrDefaultAsync(c => c.ItemId == item.Id);
         comment.Should().NotBeNull();
         comment!.Text.Should().Be("Great question!");
         comment.CreatedBy.Should().Be(userId);
@@ -98,7 +76,7 @@ public sealed class AddCommentTests : IDisposable
         // Act
         Result<AddComment.Response> result = await AddComment.HandleAsync(
             request,
-            _dbContext,
+            DbContext,
             _userContextMock.Object,
             _auditServiceMock.Object,
             CancellationToken.None);
@@ -113,24 +91,9 @@ public sealed class AddCommentTests : IDisposable
     public async Task HandleAsync_MissingUserId_ReturnsValidationError()
     {
         // Arrange
-        Item item = new Item
-        {
-            Id = Guid.NewGuid(),
-            Category = "geography",
-            Subcategory = "europe",
-            IsPrivate = false,
-            Question = "What is the capital of France?",
-            CorrectAnswer = "Paris",
-            IncorrectAnswers = new List<string> { "Lyon" },
-            Explanation = "",
-            FuzzySignature = "ABC",
-            FuzzyBucket = 1,
-            CreatedBy = "test",
-            CreatedAt = DateTime.UtcNow
-        };
-
-        _dbContext.Items.Add(item);
-        await _dbContext.SaveChangesAsync();
+        Item item = await CreateItemWithCategoryAsync(
+            Guid.NewGuid(), "geography", "What is the capital of France?", "Paris",
+            new List<string> { "Lyon" }, "", false, "test");
 
         Mock<IUserContext> userContextWithoutUserId = new Mock<IUserContext>();
         userContextWithoutUserId.Setup(x => x.UserId).Returns((string?)null);
@@ -141,7 +104,7 @@ public sealed class AddCommentTests : IDisposable
         // Act
         Result<AddComment.Response> result = await AddComment.HandleAsync(
             request,
-            _dbContext,
+            DbContext,
             userContextWithoutUserId.Object,
             _auditServiceMock.Object,
             CancellationToken.None);
@@ -216,9 +179,60 @@ public sealed class AddCommentTests : IDisposable
         result.IsValid.Should().BeTrue();
     }
 
+    private async Task<Item> CreateItemWithCategoryAsync(
+        Guid itemId,
+        string categoryName,
+        string question,
+        string correctAnswer,
+        List<string> incorrectAnswers,
+        string explanation,
+        bool isPrivate,
+        string createdBy)
+    {
+        // Create or get category
+        // Note: Category names are unique (unique constraint on Name), so we check by name only
+        Category? category = await DbContext.Categories
+            .FirstOrDefaultAsync(c => c.Name == categoryName);
+        
+        if (category is null)
+        {
+            category = new Category
+            {
+                Id = Guid.NewGuid(),
+                Name = categoryName,
+                IsPrivate = isPrivate,
+                CreatedBy = createdBy,
+                CreatedAt = DateTime.UtcNow
+            };
+            DbContext.Categories.Add(category);
+            await DbContext.SaveChangesAsync();
+        }
+
+        // Create item
+        Item item = new Item
+        {
+            Id = itemId,
+            IsPrivate = isPrivate,
+            Question = question,
+            CorrectAnswer = correctAnswer,
+            IncorrectAnswers = incorrectAnswers,
+            Explanation = explanation,
+            FuzzySignature = "ABC",
+            FuzzyBucket = 1,
+            CreatedBy = createdBy,
+            CreatedAt = DateTime.UtcNow,
+            CategoryId = category.Id
+        };
+
+        DbContext.Items.Add(item);
+        await DbContext.SaveChangesAsync();
+
+        return item;
+    }
+
     public void Dispose()
     {
-        _dbContext.Dispose();
+        DbContext.Dispose();
     }
 }
 

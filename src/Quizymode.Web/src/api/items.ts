@@ -11,8 +11,10 @@ import type {
 export const itemsApi = {
   getAll: async (
     category?: string,
-    subcategory?: string,
     isPrivate?: boolean,
+    keywords?: string[],
+    collectionId?: string,
+    isRandom?: boolean,
     page: number = 1,
     pageSize: number = 10
   ): Promise<ItemsResponse> => {
@@ -21,8 +23,10 @@ export const itemsApi = {
       pageSize,
     };
     if (category) params.category = category;
-    if (subcategory) params.subcategory = subcategory;
     if (isPrivate !== undefined) params.isPrivate = isPrivate;
+    if (keywords && keywords.length > 0) params.keywords = keywords.join(",");
+    if (collectionId) params.collectionId = collectionId;
+    if (isRandom !== undefined) params.isRandom = isRandom;
     const response = await apiClient.get<ItemsResponse>("/items", { params });
     return response.data;
   },
@@ -34,16 +38,19 @@ export const itemsApi = {
 
   getRandom: async (
     category?: string,
-    subcategory?: string,
     count: number = 10
   ): Promise<RandomItemsResponse> => {
-    const params: Record<string, string | number> = { count };
+    // Use GET /items with isRandom=true instead of /items/random
+    const params: Record<string, string | number | boolean> = {
+      isRandom: true,
+      pageSize: count,
+    };
     if (category) params.category = category;
-    if (subcategory) params.subcategory = subcategory;
-    const response = await apiClient.get<RandomItemsResponse>("/items/random", {
+    const response = await apiClient.get<ItemsResponse>("/items", {
       params,
     });
-    return response.data;
+    // Convert ItemsResponse to RandomItemsResponse format
+    return { items: response.data.items };
   },
 
   create: async (data: CreateItemRequest): Promise<ItemResponse> => {

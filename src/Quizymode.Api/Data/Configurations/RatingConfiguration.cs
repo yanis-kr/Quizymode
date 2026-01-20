@@ -34,6 +34,7 @@ internal sealed class RatingConfiguration : IEntityTypeConfiguration<Rating>
         // Indexes for common queries
         builder.HasIndex(x => x.ItemId);
         builder.HasIndex(x => new { x.ItemId, x.CreatedBy }); // For finding user's rating for an item
+        builder.HasIndex(x => new { x.ItemId, x.Stars }); // For filtering ratings by item and stars
 
         // Check constraint for stars (1-5 or null)
         builder.ToTable(t => t.HasCheckConstraint(

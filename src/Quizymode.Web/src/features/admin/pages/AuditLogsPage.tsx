@@ -22,7 +22,9 @@ type AuditAction = typeof AUDIT_ACTIONS[number];
 
 const AuditLogsPage = () => {
   const { isAuthenticated, isAdmin } = useAuth();
-  const [selectedActions, setSelectedActions] = useState<AuditAction[]>([]);
+  // By default, all event types are selected
+  const [selectedActions, setSelectedActions] = useState<AuditAction[]>([...AUDIT_ACTIONS]);
+  const [filterMode, setFilterMode] = useState<"all" | "none" | "specific">("all");
   const [page, setPage] = useState(1);
   const pageSize = 50;
 
@@ -49,26 +51,50 @@ const AuditLogsPage = () => {
   };
 
   const { data, isLoading, error, refetch } = useQuery({
-    queryKey: ['auditLogs', selectedActions, page],
+    queryKey: ['auditLogs', filterMode, selectedActions, page],
     queryFn: () => adminApi.getAuditLogs(
-      selectedActions.length > 0 ? selectedActions : undefined,
+      filterMode === "none" ? [] : (filterMode === "all" ? undefined : (selectedActions.length > 0 ? selectedActions : undefined)),
       page,
       pageSize
     ),
     enabled: isAuthenticated && isAdmin,
   });
 
+  const handleFilterModeChange = (mode: "all" | "none" | "specific") => {
+    if (mode === "all") {
+      // Select all event types when "All" is chosen
+      setSelectedActions([...AUDIT_ACTIONS]);
+      setFilterMode("specific"); // Switch to specific mode so checkboxes are visible
+    } else if (mode === "none") {
+      // Deselect all when "None" is chosen
+      setSelectedActions([]);
+      setFilterMode("none");
+    } else {
+      // "specific" mode - keep current selection
+      setFilterMode("specific");
+    }
+    setPage(1);
+  };
+
   const handleActionToggle = (action: AuditAction) => {
-    setSelectedActions(prev =>
-      prev.includes(action)
+    setSelectedActions(prev => {
+      const newSelection = prev.includes(action)
         ? prev.filter(a => a !== action)
-        : [...prev, action]
-    );
+        : [...prev, action];
+      // Update filter mode based on selection
+      if (newSelection.length === 0) {
+        setFilterMode("none");
+      } else {
+        setFilterMode("specific");
+      }
+      return newSelection;
+    });
     setPage(1); // Reset to first page when filter changes
   };
 
   const clearFilters = () => {
-    setSelectedActions([]);
+    setSelectedActions([...AUDIT_ACTIONS]); // Reset to all selected
+    setFilterMode("specific"); // Keep in specific mode so checkboxes remain visible
     setPage(1);
   };
 
@@ -85,7 +111,10 @@ const AuditLogsPage = () => {
 
   return (
     <div className="px-4 py-6 sm:px-0">
-      <h1 className="text-3xl font-bold text-gray-900 mb-6">Audit Logs</h1>
+      <h1 className="text-3xl font-bold text-gray-900 mb-2">Audit Logs</h1>
+      <p className="text-gray-600 text-sm mb-6">
+        View system audit logs with detailed information about user actions, item operations, and system events. Filter by event type and browse paginated results.
+      </p>
 
       {/* Filters */}
       <div className="bg-white shadow rounded-lg p-6 mb-6">
@@ -93,35 +122,55 @@ const AuditLogsPage = () => {
         <div className="space-y-4">
           <div>
             <label className="block text-sm font-medium text-gray-700 mb-2">
-              Event Types (Select multiple)
+              Event Types
             </label>
-            <div className="grid grid-cols-2 sm:grid-cols-4 gap-2">
-              {AUDIT_ACTIONS.map((action) => (
-                <label
-                  key={action}
-                  className="flex items-center space-x-2 cursor-pointer p-2 rounded hover:bg-gray-50"
-                >
-                  <input
-                    type="checkbox"
-                    checked={selectedActions.includes(action)}
-                    onChange={() => handleActionToggle(action)}
-                    className="rounded border-gray-300 text-indigo-600 focus:ring-indigo-500"
-                  />
-                  <span className="text-sm text-gray-700">{action}</span>
-                </label>
-              ))}
-            </div>
+            <select
+              value={
+                selectedActions.length === AUDIT_ACTIONS.length ? "all" :
+                selectedActions.length === 0 ? "none" :
+                "specific"
+              }
+              onChange={(e) => handleFilterModeChange(e.target.value as "all" | "none" | "specific")}
+              className="w-full sm:w-64 px-3 py-2 border border-gray-300 rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500"
+            >
+              <option value="all">All Event Types</option>
+              <option value="none">None</option>
+              <option value="specific">Specific Types...</option>
+            </select>
           </div>
-          {selectedActions.length > 0 && (
+          <div>
+              <label className="block text-sm font-medium text-gray-700 mb-2">
+                Select Event Types (Select multiple)
+              </label>
+              <div className="grid grid-cols-2 sm:grid-cols-4 gap-2">
+                {AUDIT_ACTIONS.map((action) => (
+                  <label
+                    key={action}
+                    className="flex items-center space-x-2 cursor-pointer p-2 rounded hover:bg-gray-50"
+                  >
+                    <input
+                      type="checkbox"
+                      checked={selectedActions.includes(action)}
+                      onChange={() => handleActionToggle(action)}
+                      className="rounded border-gray-300 text-indigo-600 focus:ring-indigo-500"
+                    />
+                    <span className="text-sm text-gray-700">{action}</span>
+                  </label>
+                ))}
+              </div>
+              <div className="mt-2 flex items-center space-x-2">
+                <span className="text-sm text-gray-600">
+                  {selectedActions.length} of {AUDIT_ACTIONS.length} type{selectedActions.length !== 1 ? 's' : ''} selected
+                </span>
+              </div>
+            </div>
+          {selectedActions.length !== AUDIT_ACTIONS.length && (
             <div className="flex items-center space-x-2">
-              <span className="text-sm text-gray-600">
-                {selectedActions.length} filter{selectedActions.length !== 1 ? 's' : ''} active
-              </span>
               <button
                 onClick={clearFilters}
                 className="text-sm text-indigo-600 hover:text-indigo-800 underline"
               >
-                Clear all
+                Reset to all filters
               </button>
             </div>
           )}

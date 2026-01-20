@@ -1,33 +1,24 @@
 using FluentAssertions;
-using Microsoft.EntityFrameworkCore;
 using Moq;
-using Quizymode.Api.Data;
 using Quizymode.Api.Features.Items.Update;
 using Quizymode.Api.Services;
 using Quizymode.Api.Shared.Kernel;
 using Quizymode.Api.Shared.Models;
+using Quizymode.Api.Tests.TestFixtures;
 using Xunit;
 
 namespace Quizymode.Api.Tests.Features.Items.Update;
 
-public sealed class UpdateItemTests : IDisposable
+public sealed class UpdateItemTests : ItemTestFixture
 {
-    private readonly ApplicationDbContext _dbContext;
-    private readonly ISimHashService _simHashService;
     private readonly Mock<IUserContext> _userContextMock;
     private readonly Mock<IAuditService> _auditServiceMock;
 
     public UpdateItemTests()
     {
-        DbContextOptions<ApplicationDbContext> options = new DbContextOptionsBuilder<ApplicationDbContext>()
-            .UseInMemoryDatabase(databaseName: Guid.NewGuid().ToString())
-            .Options;
-
-        _dbContext = new ApplicationDbContext(options);
-        _simHashService = new SimHashService();
-        _userContextMock = new Mock<IUserContext>();
-        _userContextMock.Setup(x => x.UserId).Returns(Guid.NewGuid().ToString());
-        _userContextMock.Setup(x => x.IsAuthenticated).Returns(true);
+        // Use a Guid string for userId so audit logging works
+        string userId = Guid.NewGuid().ToString();
+        _userContextMock = CreateUserContextMock(userId);
         _auditServiceMock = new Mock<IAuditService>();
     }
 
@@ -36,26 +27,13 @@ public sealed class UpdateItemTests : IDisposable
     {
         // Arrange
         Guid itemId = Guid.NewGuid();
-        Item item = new Item
-        {
-            Id = itemId,
-            Category = "geography",
-            Subcategory = "europe",
-            IsPrivate = false,
-            Question = "What is the capital of France?",
-            CorrectAnswer = "Paris",
-            IncorrectAnswers = new List<string> { "Lyon" },
-            Explanation = "Old explanation",
-            CreatedBy = "test",
-            CreatedAt = DateTime.UtcNow
-        };
-
-        _dbContext.Items.Add(item);
-        await _dbContext.SaveChangesAsync();
+        string userId = _userContextMock.Object.UserId ?? throw new InvalidOperationException("User ID is required");
+        Item item = await CreateItemWithCategoryAsync(
+            itemId, "geography", "What is the capital of France?", "Paris",
+            new List<string> { "Lyon" }, "Old explanation", false, userId);
 
         UpdateItem.Request request = new(
             Category: "geography",
-            Subcategory: "europe",
             Question: "What is the capital of France?",
             CorrectAnswer: "Paris",
             IncorrectAnswers: new List<string> { "Lyon", "Marseille" },
@@ -67,10 +45,11 @@ public sealed class UpdateItemTests : IDisposable
         Result<UpdateItem.Response> result = await UpdateItem.HandleAsync(
             itemId.ToString(),
             request,
-            _dbContext,
-            _simHashService,
+            DbContext,
+            SimHashService,
             _userContextMock.Object,
             _auditServiceMock.Object,
+            CategoryResolver,
             CancellationToken.None);
 
         // Assert
@@ -80,7 +59,7 @@ public sealed class UpdateItemTests : IDisposable
         result.Value.IncorrectAnswers.Should().Contain("Lyon");
         result.Value.IncorrectAnswers.Should().Contain("Marseille");
 
-        Item? updatedItem = await _dbContext.Items.FindAsync([itemId]);
+        Item? updatedItem = await DbContext.Items.FindAsync([itemId]);
         updatedItem.Should().NotBeNull();
         updatedItem!.Explanation.Should().Be("New explanation");
         updatedItem.IncorrectAnswers.Should().HaveCount(2);
@@ -101,28 +80,18 @@ public sealed class UpdateItemTests : IDisposable
     {
         // Arrange
         Guid itemId = Guid.NewGuid();
-        Item item = new Item
-        {
-            Id = itemId,
-            Category = "geography",
-            Subcategory = "europe",
-            IsPrivate = false,
-            Question = "What is the capital of France?",
-            CorrectAnswer = "Paris",
-            IncorrectAnswers = new List<string> { "Lyon" },
-            Explanation = "Test",
-            FuzzySignature = "OLD_SIGNATURE",
-            FuzzyBucket = 0,
-            CreatedBy = "test",
-            CreatedAt = DateTime.UtcNow
-        };
-
-        _dbContext.Items.Add(item);
-        await _dbContext.SaveChangesAsync();
+        string userId = _userContextMock.Object.UserId ?? throw new InvalidOperationException("User ID is required");
+        Item item = await CreateItemWithCategoryAsync(
+            itemId, "geography", "What is the capital of France?", "Paris",
+            new List<string> { "Lyon" }, "Test", false, userId);
+        
+        // Override fuzzy signature for this test
+        item.FuzzySignature = "OLD_SIGNATURE";
+        item.FuzzyBucket = 0;
+        await DbContext.SaveChangesAsync();
 
         UpdateItem.Request request = new(
             Category: "geography",
-            Subcategory: "europe",
             Question: "What is the capital of France?",
             CorrectAnswer: "Paris",
             IncorrectAnswers: new List<string> { "Lyon", "Marseille" },
@@ -134,16 +103,17 @@ public sealed class UpdateItemTests : IDisposable
         Result<UpdateItem.Response> result = await UpdateItem.HandleAsync(
             itemId.ToString(),
             request,
-            _dbContext,
-            _simHashService,
+            DbContext,
+            SimHashService,
             _userContextMock.Object,
             _auditServiceMock.Object,
+            CategoryResolver,
             CancellationToken.None);
 
         // Assert
         result.IsSuccess.Should().BeTrue();
 
-        Item? updatedItem = await _dbContext.Items.FindAsync([itemId]);
+        Item? updatedItem = await DbContext.Items.FindAsync([itemId]);
         updatedItem.Should().NotBeNull();
         updatedItem!.FuzzySignature.Should().NotBe("OLD_SIGNATURE");
         updatedItem.FuzzySignature.Should().NotBeNullOrEmpty();
@@ -154,27 +124,15 @@ public sealed class UpdateItemTests : IDisposable
     {
         // Arrange
         Guid itemId = Guid.NewGuid();
-        Item item = new Item
-        {
-            Id = itemId,
-            Category = "geography",
-            Subcategory = "europe",
-            IsPrivate = false,
-            ReadyForReview = false,
-            Question = "What is the capital of France?",
-            CorrectAnswer = "Paris",
-            IncorrectAnswers = new List<string> { "Lyon" },
-            Explanation = "Test",
-            CreatedBy = "test",
-            CreatedAt = DateTime.UtcNow
-        };
-
-        _dbContext.Items.Add(item);
-        await _dbContext.SaveChangesAsync();
+        string userId = _userContextMock.Object.UserId ?? throw new InvalidOperationException("User ID is required");
+        Item item = await CreateItemWithCategoryAsync(
+            itemId, "geography", "What is the capital of France?", "Paris",
+            new List<string> { "Lyon" }, "Test", false, userId);
+        item.ReadyForReview = false;
+        await DbContext.SaveChangesAsync();
 
         UpdateItem.Request request = new(
             Category: "geography",
-            Subcategory: "europe",
             Question: "What is the capital of France?",
             CorrectAnswer: "Paris",
             IncorrectAnswers: new List<string> { "Lyon" },
@@ -186,16 +144,17 @@ public sealed class UpdateItemTests : IDisposable
         Result<UpdateItem.Response> result = await UpdateItem.HandleAsync(
             itemId.ToString(),
             request,
-            _dbContext,
-            _simHashService,
+            DbContext,
+            SimHashService,
             _userContextMock.Object,
             _auditServiceMock.Object,
+            CategoryResolver,
             CancellationToken.None);
 
         // Assert
         result.IsSuccess.Should().BeTrue();
 
-        Item? updatedItem = await _dbContext.Items.FindAsync([itemId]);
+        Item? updatedItem = await DbContext.Items.FindAsync([itemId]);
         updatedItem.Should().NotBeNull();
         updatedItem!.ReadyForReview.Should().BeTrue();
     }
@@ -206,7 +165,6 @@ public sealed class UpdateItemTests : IDisposable
         // Arrange
         UpdateItem.Request request = new(
             Category: "geography",
-            Subcategory: "europe",
             Question: "Test?",
             CorrectAnswer: "Answer",
             IncorrectAnswers: new List<string>(),
@@ -218,10 +176,11 @@ public sealed class UpdateItemTests : IDisposable
         Result<UpdateItem.Response> result = await UpdateItem.HandleAsync(
             "invalid-guid",
             request,
-            _dbContext,
-            _simHashService,
+            DbContext,
+            SimHashService,
             _userContextMock.Object,
             _auditServiceMock.Object,
+            CategoryResolver,
             CancellationToken.None);
 
         // Assert
@@ -237,7 +196,6 @@ public sealed class UpdateItemTests : IDisposable
         Guid nonExistentId = Guid.NewGuid();
         UpdateItem.Request request = new(
             Category: "geography",
-            Subcategory: "europe",
             Question: "Test?",
             CorrectAnswer: "Answer",
             IncorrectAnswers: new List<string>(),
@@ -249,10 +207,11 @@ public sealed class UpdateItemTests : IDisposable
         Result<UpdateItem.Response> result = await UpdateItem.HandleAsync(
             nonExistentId.ToString(),
             request,
-            _dbContext,
-            _simHashService,
+            DbContext,
+            SimHashService,
             _userContextMock.Object,
             _auditServiceMock.Object,
+            CategoryResolver,
             CancellationToken.None);
 
         // Assert
@@ -261,9 +220,5 @@ public sealed class UpdateItemTests : IDisposable
         result.Error.Code.Should().Be("Item.NotFound");
     }
 
-    public void Dispose()
-    {
-        _dbContext?.Dispose();
-    }
 }
 
