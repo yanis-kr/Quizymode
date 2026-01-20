@@ -173,7 +173,10 @@ const ItemCommentsPage = () => {
           )}
         </div>
 
-        <h1 className="text-3xl font-bold text-gray-900 mb-6">Comments</h1>
+        <h1 className="text-3xl font-bold text-gray-900 mb-2">Comments</h1>
+        <p className="text-gray-600 text-sm mb-6">
+          View and manage comments for this quiz item. Add your own comments, edit or delete your comments, and navigate to related items mentioned in comments.
+        </p>
 
         {/* Add Comment Form */}
         {isAuthenticated && (

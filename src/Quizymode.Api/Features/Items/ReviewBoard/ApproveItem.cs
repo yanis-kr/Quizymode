@@ -1,7 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using Quizymode.Api.Data;
 using Quizymode.Api.Infrastructure;
-using Quizymode.Api.Services;
 using Quizymode.Api.Shared.Kernel;
 using Quizymode.Api.Shared.Models;
 
@@ -12,7 +11,6 @@ public static class ApproveItem
     public sealed record Response(
         string Id,
         string Category,
-        string Subcategory,
         bool IsPrivate,
         string Question,
         string CorrectAnswer,
@@ -55,7 +53,9 @@ public static class ApproveItem
     {
         try
         {
-            Item? item = await db.Items.FindAsync([id], cancellationToken);
+            Item? item = await db.Items
+                .Include(i => i.Category)
+                .FirstOrDefaultAsync(i => i.Id == id, cancellationToken);
 
             if (item is null)
             {
@@ -68,10 +68,12 @@ public static class ApproveItem
 
             await db.SaveChangesAsync(cancellationToken);
 
+            // Get category name from Category navigation
+            string categoryName = item.Category?.Name ?? string.Empty;
+
             Response response = new Response(
                 item.Id.ToString(),
-                item.Category,
-                item.Subcategory,
+                categoryName,
                 item.IsPrivate,
                 item.Question,
                 item.CorrectAnswer,

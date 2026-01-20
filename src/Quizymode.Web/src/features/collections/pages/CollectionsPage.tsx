@@ -1,12 +1,13 @@
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
 import { collectionsApi } from "@/api/collections";
 import { useAuth } from "@/contexts/AuthContext";
-import { Navigate, Link } from "react-router-dom";
+import { Navigate, Link, useSearchParams } from "react-router-dom";
 import {
+  TrashIcon,
+  ListBulletIcon,
   EyeIcon,
   AcademicCapIcon,
-  TrashIcon,
 } from "@heroicons/react/24/outline";
 import LoadingSpinner from "@/components/LoadingSpinner";
 import ErrorMessage from "@/components/ErrorMessage";
@@ -16,6 +17,9 @@ const CollectionsPage = () => {
   const queryClient = useQueryClient();
   const [showCreateModal, setShowCreateModal] = useState(false);
   const [collectionName, setCollectionName] = useState("");
+  const [searchParams] = useSearchParams();
+  const selectedCollectionId = searchParams.get("selected");
+  const selectedCollectionRef = useRef<HTMLDivElement>(null);
 
   const { data, isLoading, error, refetch } = useQuery({
     queryKey: ["collections"],
@@ -23,6 +27,18 @@ const CollectionsPage = () => {
     enabled: isAuthenticated && !authLoading,
     retry: false, // Don't retry if auth fails
   });
+
+  // Scroll to selected collection when data is loaded
+  useEffect(() => {
+    if (selectedCollectionId && data?.collections && selectedCollectionRef.current) {
+      setTimeout(() => {
+        selectedCollectionRef.current?.scrollIntoView({
+          behavior: "smooth",
+          block: "center",
+        });
+      }, 100);
+    }
+  }, [selectedCollectionId, data?.collections]);
 
   const createMutation = useMutation({
     mutationFn: (name: string) => collectionsApi.create({ name }),
@@ -87,8 +103,13 @@ const CollectionsPage = () => {
 
   return (
     <div className="px-4 py-6 sm:px-0">
-      <div className="mb-6 flex justify-between items-center">
-        <h1 className="text-3xl font-bold text-gray-900">My Collections</h1>
+      <div className="mb-6">
+        <h1 className="text-3xl font-bold text-gray-900 mb-2">My Collections</h1>
+        <p className="text-gray-600 text-sm">
+          Organize quiz items into custom collections. Group related items together for easier study and practice.
+        </p>
+      </div>
+      <div className="mb-6 flex justify-end items-center">
         <button
           onClick={() => setShowCreateModal(true)}
           className="px-4 py-2 bg-indigo-600 text-white rounded-md hover:bg-indigo-700"
@@ -174,7 +195,12 @@ const CollectionsPage = () => {
           {data.collections.map((collection) => (
             <div
               key={collection.id}
-              className="bg-white overflow-hidden shadow rounded-lg hover:shadow-lg transition-shadow p-6"
+              ref={selectedCollectionId === collection.id ? selectedCollectionRef : null}
+              className={`bg-white overflow-hidden shadow rounded-lg hover:shadow-lg transition-shadow p-6 ${
+                selectedCollectionId === collection.id
+                  ? "ring-2 ring-indigo-500 ring-offset-2"
+                  : ""
+              }`}
             >
               <div className="flex justify-between items-start mb-4">
                 <Link to={`/collections/${collection.id}`} className="flex-1">
@@ -204,6 +230,14 @@ const CollectionsPage = () => {
                 </button>
               </div>
               <div className="flex space-x-2 mt-4">
+                <Link
+                  to={`/collections/${collection.id}`}
+                  className="flex items-center px-3 py-2 text-sm font-medium text-blue-600 bg-blue-50 rounded-md hover:bg-blue-100"
+                  onClick={(e) => e.stopPropagation()}
+                >
+                  <ListBulletIcon className="h-4 w-4 mr-1" />
+                  List Items
+                </Link>
                 <Link
                   to={`/explore/collection/${collection.id}`}
                   className="flex items-center px-3 py-2 text-sm font-medium text-indigo-600 bg-indigo-50 rounded-md hover:bg-indigo-100"

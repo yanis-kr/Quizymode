@@ -10,7 +10,10 @@ const AdminDashboardPage = () => {
 
   return (
     <div className="px-4 py-6 sm:px-0">
-      <h1 className="text-3xl font-bold text-gray-900 mb-6">Admin Dashboard</h1>
+      <h1 className="text-3xl font-bold text-gray-900 mb-2">Admin Dashboard</h1>
+      <p className="text-gray-600 text-sm mb-6">
+        Administrative tools for managing the application. Access bulk item creation, review board, database monitoring, and audit logs.
+      </p>
       <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
         <Link
           to="/admin/bulk-create"

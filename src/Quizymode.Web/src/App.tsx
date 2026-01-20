@@ -25,6 +25,7 @@ function App() {
     <Layout>
       <Routes>
         <Route path="/" element={<HomePage />} />
+        <Route path="/categories/:category" element={<CategoriesPage />} />
         <Route path="/categories" element={<CategoriesPage />} />
         <Route path="/items" element={<ItemsPage />} />
         <Route path="/explore/item/:itemId" element={<ExploreModePage />} />

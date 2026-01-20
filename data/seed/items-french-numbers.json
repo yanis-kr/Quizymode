@@ -1,26 +1,44 @@
-{
-  "category": "french",
-  "subcategory": "numbers",
-  "isPrivate": false,
-  "items": [
-    {
-      "question": "What is the French word for 'one'?",
-      "correctAnswer": "un",
-      "incorrectAnswers": ["une", "deux", "trois"],
-      "explanation": "Un is the masculine form of 'one' in French."
-    },
-    {
-      "question": "How do you say 'five' in French?",
-      "correctAnswer": "cinq",
-      "incorrectAnswers": ["quatre", "six", "sept"],
-      "explanation": "Cinq is the French word for the number five."
-    },
-    {
-      "question": "What is 'ten' in French?",
-      "correctAnswer": "dix",
-      "incorrectAnswers": ["neuf", "onze", "douze"],
-      "explanation": "Dix is the French word for ten."
-    }
-  ]
-}
-
+[
+  {
+    "category": "French",
+    "question": "What is the French word for 'one'?",
+    "correctAnswer": "un",
+    "incorrectAnswers": [
+      "une",
+      "deux",
+      "trois"
+    ],
+    "explanation": "Un is the masculine form of 'one' in French.",
+    "keywords": [
+      "numbers"
+    ]
+  },
+  {
+    "category": "French",
+    "question": "How do you say 'five' in French?",
+    "correctAnswer": "cinq",
+    "incorrectAnswers": [
+      "quatre",
+      "six",
+      "sept"
+    ],
+    "explanation": "Cinq is the French word for the number five.",
+    "keywords": [
+      "numbers"
+    ]
+  },
+  {
+    "category": "French",
+    "question": "What is 'ten' in French?",
+    "correctAnswer": "dix",
+    "incorrectAnswers": [
+      "neuf",
+      "onze",
+      "douze"
+    ],
+    "explanation": "Dix is the French word for ten.",
+    "keywords": [
+      "numbers"
+    ]
+  }
+]

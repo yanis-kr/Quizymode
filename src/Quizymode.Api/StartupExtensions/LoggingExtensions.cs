@@ -1,10 +1,7 @@
 using System.Reflection;
-using System.Text;
 using Microsoft.Extensions.Options;
 using Quizymode.Api.Shared.Options;
 using Serilog;
-using Serilog.Filters;
-using Serilog.Settings.Configuration;
 using Serilog.Sinks.Grafana.Loki;
 using Serilog.Sinks.SystemConsole.Themes;
 

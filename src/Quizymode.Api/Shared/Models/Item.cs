@@ -4,10 +4,6 @@ public sealed class Item
 {
     public Guid Id { get; set; }
 
-    public string Category { get; set; } = string.Empty;
-
-    public string Subcategory { get; set; } = string.Empty;
-
     public bool IsPrivate { get; set; }
 
     public string Question { get; set; } = string.Empty;
@@ -28,5 +24,12 @@ public sealed class Item
     public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
 
     public bool ReadyForReview { get; set; }
+
+    // Navigation property for keywords (not mapped directly, accessed via ItemKeywords)
+    public List<ItemKeyword> ItemKeywords { get; set; } = new();
+
+    // Navigation property for category
+    public Guid? CategoryId { get; set; }
+    public Category? Category { get; set; }
 }
 

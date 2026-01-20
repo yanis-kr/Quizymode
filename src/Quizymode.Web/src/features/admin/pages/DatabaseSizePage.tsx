@@ -46,7 +46,10 @@ const DatabaseSizePage = () => {
 
   return (
     <div className="px-4 py-6 sm:px-0">
-      <h1 className="text-3xl font-bold text-gray-900 mb-6">Database Size</h1>
+      <h1 className="text-3xl font-bold text-gray-900 mb-2">Database Size</h1>
+      <p className="text-gray-600 text-sm mb-6">
+        Monitor database size and usage statistics. View total database size, table sizes, and usage percentages. Data refreshes automatically every minute.
+      </p>
       
       <div className="bg-white shadow rounded-lg p-6">
         <div className="space-y-6">

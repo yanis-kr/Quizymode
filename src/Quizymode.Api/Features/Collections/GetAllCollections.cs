@@ -2,7 +2,6 @@ using Microsoft.EntityFrameworkCore;
 using Quizymode.Api.Data;
 using Quizymode.Api.Infrastructure;
 using Quizymode.Api.Shared.Kernel;
-using Quizymode.Api.Shared.Models;
 
 namespace Quizymode.Api.Features.Collections;
 

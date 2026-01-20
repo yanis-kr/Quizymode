@@ -32,6 +32,8 @@
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
+    <PackageReference Include="Dapper" Version="2.1.35" />
+    <PackageReference Include="Npgsql.OpenTelemetry" Version="9.0.2" />
   </ItemGroup>
 
   <ItemGroup>
@@ -47,6 +49,10 @@
   <ItemGroup>
     <None Remove="..\..\data\seed\french-numbers.json" />
     <None Remove="..\..\data\seed\spanish-greetings.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Data\Migrations\" />
   </ItemGroup>
 
 </Project>

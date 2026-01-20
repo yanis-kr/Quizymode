@@ -1,61 +1,64 @@
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import { useMutation } from "@tanstack/react-query";
 import { useAuth } from "@/contexts/AuthContext";
 import { Navigate } from "react-router-dom";
 import ErrorMessage from "@/components/ErrorMessage";
-import { categoriesApi } from "@/api/categories";
 import { useQuery } from "@tanstack/react-query";
 import { apiClient } from "@/api/client";
 import {
   ChevronDownIcon,
   ChevronUpIcon,
   XMarkIcon,
+  ClipboardDocumentIcon,
 } from "@heroicons/react/24/outline";
 
 interface BulkCreateRequest {
   isPrivate: boolean;
   items: Array<{
     category: string;
-    subcategory: string;
     question: string;
     correctAnswer: string;
     incorrectAnswers: string[];
     explanation: string;
+    keywords?: Array<{ name: string }>; // isPrivate will be set automatically to match item's isPrivate
   }>;
 }
 
 const BulkCreateItemsPage = () => {
   const { isAuthenticated, isAdmin } = useAuth();
   const navigate = useNavigate();
+  const location = useLocation();
+  const isAdminRoute = location.pathname === "/admin/bulk-create";
   const [jsonInput, setJsonInput] = useState("");
-  const [category, setCategory] = useState("");
   const [isPrivate, setIsPrivate] = useState(!isAdmin); // Default to true for non-admin
   const [validationError, setValidationError] = useState<string>("");
   const [isPromptExampleOpen, setIsPromptExampleOpen] = useState(false);
+  const [isJsonSampleOpen, setIsJsonSampleOpen] = useState(false);
+  const [copySuccess, setCopySuccess] = useState(false);
   const [resultModal, setResultModal] = useState<{
     isOpen: boolean;
     message: string;
     details: string;
   }>({ isOpen: false, message: "", details: "" });
 
-  const { data: categoriesData } = useQuery({
-    queryKey: ["categories"],
-    queryFn: () => categoriesApi.getAll(),
-  });
-
   const bulkCreateMutation = useMutation({
     mutationFn: async (data: BulkCreateRequest) => {
       // API expects IsPrivate and Items array where each item has Category
+      // Keywords inherit the item's isPrivate value
       const apiRequest = {
         isPrivate: data.isPrivate,
         items: data.items.map((item) => ({
           category: item.category,
-          subcategory: item.subcategory,
           question: item.question,
           correctAnswer: item.correctAnswer,
           incorrectAnswers: item.incorrectAnswers,
           explanation: item.explanation || "",
+          keywords:
+            item.keywords?.map((k) => ({
+              name: k.name,
+              isPrivate: data.isPrivate, // Keywords inherit the item's isPrivate value
+            })) || undefined,
         })),
       };
 
@@ -107,7 +110,7 @@ const BulkCreateItemsPage = () => {
       if (response.createdCount > 0 && response.failedCount === 0) {
         // Only auto-navigate if all items succeeded
         setTimeout(() => {
-          navigate("/my-items");
+          navigate(isAdminRoute ? "/admin" : "/my-items");
         }, 2000);
       }
     },
@@ -146,16 +149,11 @@ const BulkCreateItemsPage = () => {
       // Validate each item structure
       for (let i = 0; i < parsedItems.length; i++) {
         const item = parsedItems[i];
-        if (
-          !item.category ||
-          !item.subcategory ||
-          !item.question ||
-          !item.correctAnswer
-        ) {
+        if (!item.category || !item.question || !item.correctAnswer) {
           setValidationError(
             `Item ${
               i + 1
-            } is missing required fields (category, subcategory, question, or correctAnswer)`
+            } is missing required fields (category, question, or correctAnswer)`
           );
           return;
         }
@@ -173,39 +171,64 @@ const BulkCreateItemsPage = () => {
         }
       }
 
-      // Validate that all items have category or category override is provided
+      // Validate that all items have category
       const itemsWithoutCategory = parsedItems.filter(
         (item: any) => !item.category
       );
-      if (itemsWithoutCategory.length > 0 && !category.trim()) {
+      if (itemsWithoutCategory.length > 0) {
         setValidationError(
           `Items ${itemsWithoutCategory
             .map(
               (_: any, i: number) =>
                 parsedItems.indexOf(itemsWithoutCategory[i]) + 1
             )
-            .join(
-              ", "
-            )} are missing category field and no category override is provided`
+            .join(", ")} are missing category field`
         );
         return;
       }
 
       const request: BulkCreateRequest = {
         isPrivate,
-        items: parsedItems.map((item: any) => ({
-          // Category override replaces category in JSON if provided
-          category: (category.trim() || item.category || "").trim(),
-          subcategory: item.subcategory.trim(),
-          question: item.question.trim(),
-          correctAnswer: item.correctAnswer.trim(),
-          incorrectAnswers: Array.isArray(item.incorrectAnswers)
-            ? item.incorrectAnswers
-                .map((ans: any) => String(ans).trim())
-                .filter((ans: string) => ans.length > 0)
-            : [],
-          explanation: item.explanation ? String(item.explanation).trim() : "",
-        })),
+        items: parsedItems.map((item: any) => {
+          // Process keywords - handle both string arrays and object arrays
+          let processedKeywords: Array<{ name: string }> | undefined =
+            undefined;
+          if (item.keywords) {
+            if (Array.isArray(item.keywords)) {
+              processedKeywords = item.keywords
+                .map((k: any) => {
+                  if (typeof k === "string") {
+                    return { name: k.trim() };
+                  } else if (k && typeof k === "object" && k.name) {
+                    return { name: String(k.name).trim() };
+                  }
+                  return null;
+                })
+                .filter(
+                  (k: any): k is { name: string } =>
+                    k !== null && k.name.length > 0
+                );
+              if (processedKeywords && processedKeywords.length === 0) {
+                processedKeywords = undefined;
+              }
+            }
+          }
+
+          return {
+            category: (item.category || "").trim(),
+            question: item.question.trim(),
+            correctAnswer: item.correctAnswer.trim(),
+            incorrectAnswers: Array.isArray(item.incorrectAnswers)
+              ? item.incorrectAnswers
+                  .map((ans: any) => String(ans).trim())
+                  .filter((ans: string) => ans.length > 0)
+              : [],
+            explanation: item.explanation
+              ? String(item.explanation).trim()
+              : "",
+            keywords: processedKeywords,
+          };
+        }),
       };
 
       bulkCreateMutation.mutate(request);
@@ -259,20 +282,27 @@ const BulkCreateItemsPage = () => {
           </button>
           {isPromptExampleOpen && (
             <div className="px-4 pb-4 border-t border-gray-200">
-              <pre className="text-xs text-gray-800 whitespace-pre-wrap font-mono mt-4">
-                {`You are creating study flashcards for an app called Quizymode.
+              <div className="mt-4 flex justify-end mb-2">
+                <button
+                  type="button"
+                  onClick={async () => {
+                    const promptText = `You are creating study flashcards for an app called Quizymode.
 
-Create up to 100 quiz items about <replace-me: Topic or Category Name>, specifically about <replace-me: Subcategory Names>.
+Create up to 100 quiz items about <replace-me: Topic or Category Name>. Attach Study Guide (optional).
 
 Each item must be a JSON object with this exact shape:
 
 {
   "category": "Category Name (e.g. Spanish, US History, or ACT)",
-  "subcategory": "Subcategory Name (e.g. Greetings or ACT Math)",
   "question": "Question text?",
   "correctAnswer": "Correct answer",
   "incorrectAnswers": ["Wrong answer 1", "Wrong answer 2", "Wrong answer 3"],
-  "explanation": "Short explanation of why the correct answer is right (optional but recommended)"
+  "explanation": "Short explanation of why the correct answer is right (optional but recommended)",
+  "keywords": [
+    {
+      "name": "keyword-name"
+    }
+  ]
 }
 
 Requirements:
@@ -280,13 +310,129 @@ Requirements:
 - Do NOT include any explanations, prose, comments, Markdown, or code fences. Output raw JSON only.
 - Every item must have:
   - "category" (max 50 characters)
-  - "subcategory" (max 50 characters)
   - a non-empty "question" (max 1,000 characters)
   - a non-empty "correctAnswer" (max 200 characters)
   - 1–5 "incorrectAnswers" (each max 200 characters)
+  - "keywords" (optional array of keyword objects, each with "name" max 10 characters - keywords will inherit the item's privacy setting)
+- All strings must be plain text (no HTML, no LaTeX).
+
+Now generate the JSON array only.`;
+                    try {
+                      await navigator.clipboard.writeText(promptText);
+                      setCopySuccess(true);
+                      setTimeout(() => setCopySuccess(false), 2000);
+                    } catch (err) {
+                      console.error("Failed to copy:", err);
+                    }
+                  }}
+                  className="flex items-center space-x-2 px-3 py-1.5 text-sm font-medium text-indigo-600 bg-indigo-50 rounded-md hover:bg-indigo-100 transition-colors"
+                >
+                  <ClipboardDocumentIcon className="h-4 w-4" />
+                  <span>{copySuccess ? "Copied!" : "Copy Prompt"}</span>
+                </button>
+              </div>
+              <pre className="text-xs text-gray-800 whitespace-pre-wrap font-mono bg-gray-50 p-4 rounded border border-gray-200">
+                {`You are creating study flashcards for an app called Quizymode.
+
+Create up to 100 quiz items about <replace-me: Topic or Category Name>. Attach Study Guide (optional).
+
+Each item must be a JSON object with this exact shape:
+
+{
+  "category": "Category Name (e.g. Spanish, US History, or ACT)",
+  "question": "Question text?",
+  "correctAnswer": "Correct answer",
+  "incorrectAnswers": ["Wrong answer 1", "Wrong answer 2", "Wrong answer 3"],
+  "explanation": "Short explanation of why the correct answer is right (optional but recommended)",
+  "keywords": [
+    {
+      "name": "keyword-name"
+    }
+  ]
+}
+
+Requirements:
+- Return a single JSON array of items: [ { ... }, { ... }, ... ].
+- Do NOT include any explanations, prose, comments, Markdown, or code fences. Output raw JSON only.
+- Every item must have:
+  - "category" (max 50 characters)
+  - a non-empty "question" (max 1,000 characters)
+  - a non-empty "correctAnswer" (max 200 characters)
+  - 1–5 "incorrectAnswers" (each max 200 characters)
+  - "keywords" (optional array of keyword objects, each with "name" max 10 characters - keywords will inherit the item's privacy setting)
 - All strings must be plain text (no HTML, no LaTeX).
 
 Now generate the JSON array only.`}
+              </pre>
+            </div>
+          )}
+        </div>
+
+        {/* JSON Sample Section */}
+        <div className="bg-white border border-gray-300 rounded-lg mb-6">
+          <button
+            type="button"
+            onClick={() => setIsJsonSampleOpen(!isJsonSampleOpen)}
+            className="w-full flex items-center justify-between px-4 py-3 text-left hover:bg-gray-50 transition-colors"
+          >
+            <span className="text-sm font-medium text-gray-900">
+              📋 JSON Sample (with keywords)
+            </span>
+            {isJsonSampleOpen ? (
+              <ChevronUpIcon className="h-5 w-5 text-gray-500" />
+            ) : (
+              <ChevronDownIcon className="h-5 w-5 text-gray-500" />
+            )}
+          </button>
+          {isJsonSampleOpen && (
+            <div className="px-4 pb-4 border-t border-gray-200">
+              <div className="mt-4 flex justify-end mb-2">
+                <button
+                  type="button"
+                  onClick={async () => {
+                    const sampleJson = `[
+  {
+    "category": "Spanish",
+    "question": "How do you say 'Hello' in Spanish?",
+    "correctAnswer": "Hola",
+    "incorrectAnswers": ["Adiós", "Gracias", "Por favor"],
+    "explanation": "Hola is the standard Spanish greeting for 'Hello'.",
+    "keywords": [
+      {
+        "name": "greeting"
+      }
+    ]
+  }
+]`;
+                    try {
+                      await navigator.clipboard.writeText(sampleJson);
+                      setCopySuccess(true);
+                      setTimeout(() => setCopySuccess(false), 2000);
+                    } catch (err) {
+                      console.error("Failed to copy:", err);
+                    }
+                  }}
+                  className="flex items-center space-x-2 px-3 py-1.5 text-sm font-medium text-indigo-600 bg-indigo-50 rounded-md hover:bg-indigo-100 transition-colors"
+                >
+                  <ClipboardDocumentIcon className="h-4 w-4" />
+                  <span>{copySuccess ? "Copied!" : "Copy Sample"}</span>
+                </button>
+              </div>
+              <pre className="text-xs text-gray-800 whitespace-pre-wrap font-mono bg-gray-50 p-4 rounded border border-gray-200">
+                {`[
+  {
+    "category": "Spanish",
+    "question": "How do you say 'Hello' in Spanish?",
+    "correctAnswer": "Hola",
+    "incorrectAnswers": ["Adiós", "Gracias", "Por favor"],
+    "explanation": "Hola is the standard Spanish greeting for 'Hello'.",
+    "keywords": [
+      {
+        "name": "greeting"
+      }
+    ]
+  }
+]`}
               </pre>
             </div>
           )}
@@ -339,29 +485,6 @@ Now generate the JSON array only.`}
         >
           <div>
             <label className="block text-sm font-medium text-gray-700 mb-2">
-              Category Override (optional)
-            </label>
-            <select
-              value={category}
-              onChange={(e) => setCategory(e.target.value)}
-              className="w-full px-3 py-2 border border-gray-300 rounded-md text-sm"
-            >
-              <option value="">Select a category (optional)</option>
-              {categoriesData?.categories.map((cat) => (
-                <option key={cat.category} value={cat.category}>
-                  {cat.category}
-                </option>
-              ))}
-            </select>
-            <p className="mt-1 text-sm text-gray-500">
-              If you select a category here, it will override the "category"
-              field inside every JSON item you upload. Leave empty to keep
-              category values from your JSON.
-            </p>
-          </div>
-
-          <div>
-            <label className="block text-sm font-medium text-gray-700 mb-2">
               Items JSON *
             </label>
             <textarea
@@ -370,12 +493,10 @@ Now generate the JSON array only.`}
               required
               rows={15}
               className="w-full px-3 py-2 border border-gray-300 rounded-md text-sm font-mono"
-              placeholder='[\n  {\n    "category": "Category",\n    "subcategory": "Subcategory",\n    "question": "Question?",\n    "correctAnswer": "Answer",\n    "incorrectAnswers": ["Wrong 1", "Wrong 2"],\n    "explanation": "Explanation"\n  }\n]'
+              placeholder='[\n  {\n    "category": "Category",\n    "question": "Question?",\n    "correctAnswer": "Answer",\n    "incorrectAnswers": ["Wrong 1", "Wrong 2"],\n    "explanation": "Explanation"\n  }\n]'
             />
             <p className="mt-1 text-sm text-gray-500">
-              Paste your JSON array here (up to 100 items). If you selected a
-              Category Override above, it will replace the "category" field in
-              every item.
+              Paste your JSON array here (up to 100 items). Each item must include a "category" field.
             </p>
           </div>
 
@@ -400,7 +521,7 @@ Now generate the JSON array only.`}
           <div className="flex justify-end space-x-4">
             <button
               type="button"
-              onClick={() => navigate("/my-items")}
+              onClick={() => navigate(isAdminRoute ? "/admin" : "/my-items")}
               className="px-4 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-md hover:bg-gray-50"
             >
               Cancel
@@ -472,7 +593,7 @@ Now generate the JSON array only.`}
                       resultModal.message.includes("Successfully created") &&
                       !resultModal.details
                     ) {
-                      navigate("/my-items");
+                      navigate(isAdminRoute ? "/admin" : "/my-items");
                     }
                   }}
                   className="px-4 py-2 text-sm font-medium text-white bg-indigo-600 rounded-md hover:bg-indigo-700"

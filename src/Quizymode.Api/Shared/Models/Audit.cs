@@ -1,5 +1,3 @@
-using System.Text.Json;
-
 namespace Quizymode.Api.Shared.Models;
 
 public sealed class Audit

@@ -8,20 +8,12 @@ internal sealed class ItemConfiguration : IEntityTypeConfiguration<Item>
 {
     public void Configure(EntityTypeBuilder<Item> builder)
     {
-        builder.ToTable("items");
+        builder.ToTable("Items");
 
         builder.HasKey(x => x.Id);
 
         builder.Property(x => x.Id)
             .HasDefaultValueSql("gen_random_uuid()");
-
-        builder.Property(x => x.Category)
-            .IsRequired()
-            .HasMaxLength(100);
-
-        builder.Property(x => x.Subcategory)
-            .IsRequired()
-            .HasMaxLength(100);
 
         builder.Property(x => x.IsPrivate)
             .IsRequired()
@@ -68,15 +60,28 @@ internal sealed class ItemConfiguration : IEntityTypeConfiguration<Item>
             .IsRequired()
             .HasDefaultValue(false);
 
+        builder.Property(x => x.CategoryId)
+            .IsRequired(false);
+
+        // Foreign key relationship to Category
+        builder.HasOne(x => x.Category)
+            .WithMany(c => c.Items)
+            .HasForeignKey(x => x.CategoryId)
+            .OnDelete(DeleteBehavior.SetNull);
+
         // Add check constraint for incorrect answers array length (0-4 items)
         builder.ToTable(t => t.HasCheckConstraint(
             "CK_Items_IncorrectAnswers_Length",
             "jsonb_array_length(\"IncorrectAnswers\"::jsonb) >= 0 AND jsonb_array_length(\"IncorrectAnswers\"::jsonb) <= 4"));
 
         // Indexes for common queries
-        builder.HasIndex(x => new { x.Category, x.Subcategory });
         builder.HasIndex(x => x.FuzzyBucket);
         builder.HasIndex(x => x.CreatedAt);
+        builder.HasIndex(x => x.CategoryId);
+        
+        // Composite indexes for category queries with visibility filtering
+        builder.HasIndex(x => new { x.CategoryId, x.IsPrivate });
+        builder.HasIndex(x => new { x.IsPrivate, x.CreatedBy });
     }
 }
 

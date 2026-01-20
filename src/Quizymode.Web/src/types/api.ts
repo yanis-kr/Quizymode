@@ -3,32 +3,39 @@
 export interface CategoryResponse {
   category: string;
   count: number;
+  id: string;
+  isPrivate: boolean;
+  averageStars: number | null;
 }
 
 export interface CategoriesResponse {
   categories: CategoryResponse[];
 }
 
-export interface SubcategoryResponse {
-  subcategory: string;
-  count: number;
+
+export interface KeywordResponse {
+  id: string;
+  name: string;
+  isPrivate: boolean;
 }
 
-export interface SubcategoriesResponse {
-  subcategories: SubcategoryResponse[];
-  totalCount: number;
+export interface ItemCollectionResponse {
+  id: string;
+  name: string;
+  createdAt: string;
 }
 
 export interface ItemResponse {
   id: string;
   category: string;
-  subcategory: string;
   isPrivate: boolean;
   question: string;
   correctAnswer: string;
   incorrectAnswers: string[];
   explanation: string;
   createdAt: string;
+  keywords: KeywordResponse[];
+  collections: ItemCollectionResponse[];
 }
 
 export interface ItemsResponse {
@@ -80,24 +87,29 @@ export interface RequestResponse {
 
 // Request Types
 
+export interface KeywordRequest {
+  name: string;
+  isPrivate: boolean;
+}
+
 export interface CreateItemRequest {
   category: string;
-  subcategory: string;
   isPrivate: boolean;
   question: string;
   correctAnswer: string;
   incorrectAnswers: string[];
   explanation: string;
+  keywords?: KeywordRequest[];
 }
 
 export interface UpdateItemRequest {
   category?: string;
-  subcategory?: string;
   isPrivate?: boolean;
   question?: string;
   correctAnswer?: string;
   incorrectAnswers?: string[];
   explanation?: string;
+  keywords?: KeywordRequest[];
 }
 
 export interface CreateCollectionRequest {
@@ -110,6 +122,16 @@ export interface UpdateCollectionRequest {
 
 export interface AddItemToCollectionRequest {
   itemId: string;
+}
+
+export interface BulkAddItemsToCollectionRequest {
+  itemIds: string[];
+}
+
+export interface BulkAddItemsToCollectionResponse {
+  addedCount: number;
+  skippedCount: number;
+  addedItemIds: string[];
 }
 
 export interface CreateReviewRequest {

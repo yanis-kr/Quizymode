@@ -6,72 +6,40 @@ import LoadingSpinner from "@/components/LoadingSpinner";
 import ErrorMessage from "@/components/ErrorMessage";
 import { useState, useEffect } from "react";
 import { categoriesApi } from "@/api/categories";
+import ItemCollectionsModal from "@/components/ItemCollectionsModal";
 import {
   EyeIcon,
   FolderIcon,
   PencilIcon,
   TrashIcon,
   AcademicCapIcon,
+  FunnelIcon,
+  XMarkIcon,
+  PlusIcon,
 } from "@heroicons/react/24/outline";
-import ItemCollectionsModal from "@/components/ItemCollectionsModal";
-
-const SubcategoryDropdown = ({
-  category,
-  value,
-  onChange,
-}: {
-  category: string;
-  value: string;
-  onChange: (value: string) => void;
-}) => {
-  const { data, isLoading } = useQuery({
-    queryKey: ["subcategories", category],
-    queryFn: () => categoriesApi.getSubcategories(category),
-    enabled: !!category,
-  });
-
-  if (isLoading) {
-    return (
-      <select
-        disabled
-        className="w-full px-3 py-2 border border-gray-300 rounded-md text-sm"
-      >
-        <option>Loading...</option>
-      </select>
-    );
-  }
-
-  return (
-    <select
-      value={value}
-      onChange={(e) => onChange(e.target.value)}
-      className="w-full px-3 py-2 border border-gray-300 rounded-md text-sm"
-    >
-      <option value="">All Subcategories</option>
-      {data?.subcategories.map((subcat) => (
-        <option key={subcat.subcategory} value={subcat.subcategory}>
-          {subcat.subcategory} ({subcat.count} items)
-        </option>
-      ))}
-    </select>
-  );
-};
+import ItemListSection from "@/components/ItemListSection";
+import BulkItemCollectionsModal from "@/components/BulkItemCollectionsModal";
+import useItemSelection from "@/hooks/useItemSelection";
+import { usePageSize } from "@/hooks/usePageSize";
 
 const MyItemsPage = () => {
   const { isAuthenticated, isAdmin } = useAuth();
   const queryClient = useQueryClient();
   const navigate = useNavigate();
   const [page, setPage] = useState(1);
-  const [filterType, setFilterType] = useState<"all" | "global" | "private">(
+  const [filterType, setFilterType] = useState<"all" | "public" | "private">(
     "all"
   );
   const [selectedCategory, setSelectedCategory] = useState<string>("");
-  const [selectedSubcategory, setSelectedSubcategory] = useState<string>("");
   const [searchText, setSearchText] = useState<string>("");
+  const [selectedKeywords, setSelectedKeywords] = useState<string[]>([]);
   const [selectedItemForCollections, setSelectedItemForCollections] = useState<
     string | null
   >(null);
-  const pageSize = 10;
+  const [selectedItemsForBulkCollections, setSelectedItemsForBulkCollections] = useState<string[]>([]);
+  const [showFilters, setShowFilters] = useState(false);
+  const [activeFilters, setActiveFilters] = useState<Set<string>>(new Set());
+  const { pageSize } = usePageSize();
 
   const { data: categoriesData } = useQuery({
     queryKey: ["categories"],
@@ -80,29 +48,24 @@ const MyItemsPage = () => {
 
   // Determine isPrivate filter value based on filterType
   const isPrivateFilter =
-    filterType === "all" ? undefined : filterType === "private";
+    filterType === "all" ? undefined : filterType === "public" ? false : true;
 
   const { data, isLoading, error, refetch } = useQuery({
-    queryKey: [
-      "myItems",
-      page,
-      selectedCategory,
-      selectedSubcategory,
-      filterType,
-    ],
+    queryKey: ["myItems", page, selectedCategory, filterType, selectedKeywords],
     queryFn: () =>
       itemsApi.getAll(
         selectedCategory || undefined,
-        selectedSubcategory || undefined,
         isPrivateFilter,
+        selectedKeywords.length > 0 ? selectedKeywords : undefined,
+        undefined, // collectionId
+        undefined, // isRandom
         page,
         pageSize
       ),
     enabled: isAuthenticated,
   });
 
-  // Client-side filtering for search only (isPrivate filtering is now server-side)
-  // When searchText is empty, use items directly; otherwise filter by search
+  // Client-side filtering for search - includes category, keywords, and item content
   const displayItems = searchText
     ? (data?.items || []).filter((item) => {
         const searchLower = searchText.toLowerCase();
@@ -110,10 +73,95 @@ const MyItemsPage = () => {
           item.question.toLowerCase().includes(searchLower) ||
           item.correctAnswer.toLowerCase().includes(searchLower) ||
           item.explanation?.toLowerCase().includes(searchLower) ||
+          item.category.toLowerCase().includes(searchLower) ||
+          item.keywords?.some((k) =>
+            k.name.toLowerCase().includes(searchLower)
+          ) ||
           false
         );
       })
     : data?.items || [];
+
+  // Extract all unique keywords from items for keyword filter dropdown
+  const availableKeywords = Array.from(
+    new Set(
+      (data?.items || [])
+        .flatMap((item) => item.keywords || [])
+        .map((k) => k.name)
+    )
+  ).sort();
+
+  const hasActiveFilters =
+    filterType !== "all" ||
+    selectedCategory !== "" ||
+    selectedKeywords.length > 0 ||
+    searchText !== "";
+
+  const currentPageItemIds = displayItems.map((item) => item.id);
+  const {
+    selectedItemIds,
+    selectedIds,
+    toggleItem,
+    selectAll,
+    deselectAll,
+  } = useItemSelection(currentPageItemIds, [
+    page,
+    filterType,
+    selectedCategory,
+    searchText,
+    selectedKeywords,
+  ]);
+
+  const handleAddSelectedToCollection = () => {
+    if (selectedIds.length > 0) {
+      setSelectedItemsForBulkCollections(selectedIds);
+    }
+  };
+
+
+  const clearAllFilters = () => {
+    setFilterType("all");
+    setSelectedCategory("");
+    setSelectedKeywords([]);
+    setSearchText("");
+    setActiveFilters(new Set());
+    setShowFilters(false);
+  };
+
+  const addFilter = (filterTypeName: "category" | "keywords" | "search" | "itemType") => {
+    if (filterTypeName === "itemType") {
+      // Item Type is always visible, but we can mark it as active in filters
+      setActiveFilters((prev) => new Set(prev).add("itemType"));
+    } else {
+      setActiveFilters((prev) => new Set(prev).add(filterTypeName));
+      setShowFilters(true);
+    }
+  };
+
+  const removeFilter = (filterTypeName: "category" | "keywords" | "search" | "itemType") => {
+    if (filterTypeName === "itemType") {
+      setFilterType("all");
+      setActiveFilters((prev) => {
+        const newSet = new Set(prev);
+        newSet.delete("itemType");
+        return newSet;
+      });
+    } else {
+      setActiveFilters((prev) => {
+        const newSet = new Set(prev);
+        newSet.delete(filterTypeName);
+        return newSet;
+      });
+
+      if (filterTypeName === "category") {
+        setSelectedCategory("");
+      } else if (filterTypeName === "keywords") {
+        setSelectedKeywords([]);
+      } else if (filterTypeName === "search") {
+        setSearchText("");
+      }
+    }
+  };
 
   const deleteMutation = useMutation({
     mutationFn: (id: string) => itemsApi.delete(id),
@@ -124,7 +172,46 @@ const MyItemsPage = () => {
 
   useEffect(() => {
     setPage(1); // Reset to first page when filters change
-  }, [filterType, selectedCategory, selectedSubcategory, searchText]);
+  }, [filterType, selectedCategory, searchText, selectedKeywords]);
+
+  // Track itemType in activeFilters
+  useEffect(() => {
+    if (filterType !== "all") {
+      setActiveFilters((prev) => new Set(prev).add("itemType"));
+    } else {
+      setActiveFilters((prev) => {
+        const newSet = new Set(prev);
+        newSet.delete("itemType");
+        return newSet;
+      });
+    }
+  }, [filterType]);
+
+  // Auto-show filters if any are active
+  useEffect(() => {
+    if (hasActiveFilters && !showFilters) {
+      setShowFilters(true);
+    }
+  }, [hasActiveFilters, showFilters]);
+
+  const handleKeywordClick = (keywordName: string) => {
+    if (!selectedKeywords.includes(keywordName)) {
+      setSelectedKeywords([...selectedKeywords, keywordName]);
+    }
+  };
+
+  const removeKeyword = (keywordName: string) => {
+    const newKeywords = selectedKeywords.filter((k) => k !== keywordName);
+    setSelectedKeywords(newKeywords);
+    // If no keywords left, remove keywords filter
+    if (newKeywords.length === 0) {
+      setActiveFilters((prev) => {
+        const newSet = new Set(prev);
+        newSet.delete("keywords");
+        return newSet;
+      });
+    }
+  };
 
   if (!isAuthenticated) {
     return <Navigate to="/login" replace />;
@@ -140,8 +227,13 @@ const MyItemsPage = () => {
 
   return (
     <div className="px-4 py-6 sm:px-0">
-      <div className="mb-6 flex justify-between items-center">
-        <h1 className="text-3xl font-bold text-gray-900">My Items</h1>
+      <div className="mb-6">
+        <h1 className="text-3xl font-bold text-gray-900 mb-2">My Items</h1>
+        <p className="text-gray-600 text-sm">
+          Review and manage quiz items. Browse public and private items, create and edit your own items, and organize items into collections by adding them to your private collections.
+        </p>
+      </div>
+      <div className="mb-6 flex justify-end items-center">
         <div className="flex space-x-2">
           <button
             onClick={() => navigate("/my-items/bulk-create")}
@@ -158,214 +250,343 @@ const MyItemsPage = () => {
         </div>
       </div>
 
-      {/* Filters */}
-      <div className="mb-6 space-y-4 bg-white p-4 rounded-lg shadow">
-        {/* Filter Type */}
-        <div>
-          <label className="block text-sm font-medium text-gray-700 mb-2">
-            Filter by Type
-          </label>
-          <div className="flex space-x-4">
+      {/* Filters Section */}
+      <div className="mb-6 bg-white rounded-lg shadow">
+        {/* Filter Header */}
+        <div className="px-4 py-3 border-b border-gray-200 flex items-center justify-between">
+          <div className="flex items-center space-x-2">
+            <FunnelIcon className="h-5 w-5 text-gray-500" />
+            <h2 className="text-lg font-medium text-gray-900">Filters</h2>
+            {hasActiveFilters && (
+              <span className="px-2 py-1 text-xs font-medium bg-indigo-100 text-indigo-800 rounded-full">
+                Active
+              </span>
+            )}
+          </div>
+          <div className="flex items-center space-x-2">
+            {hasActiveFilters && (
+              <button
+                onClick={clearAllFilters}
+                className="text-sm text-gray-600 hover:text-gray-900 underline"
+              >
+                Clear All
+              </button>
+            )}
             <button
-              onClick={() => setFilterType("all")}
-              className={`px-4 py-2 rounded-md text-sm font-medium ${
-                filterType === "all"
-                  ? "bg-indigo-600 text-white"
-                  : "bg-gray-100 text-gray-700 hover:bg-gray-200"
-              }`}
+              onClick={() => setShowFilters(!showFilters)}
+              className="text-sm text-indigo-600 hover:text-indigo-800 font-medium"
             >
-              All
-            </button>
-            <button
-              onClick={() => setFilterType("global")}
-              className={`px-4 py-2 rounded-md text-sm font-medium ${
-                filterType === "global"
-                  ? "bg-indigo-600 text-white"
-                  : "bg-gray-100 text-gray-700 hover:bg-gray-200"
-              }`}
-            >
-              Global
-            </button>
-            <button
-              onClick={() => setFilterType("private")}
-              className={`px-4 py-2 rounded-md text-sm font-medium ${
-                filterType === "private"
-                  ? "bg-indigo-600 text-white"
-                  : "bg-gray-100 text-gray-700 hover:bg-gray-200"
-              }`}
-            >
-              Private
+              {showFilters ? "Hide Filters" : "Show Filters"}
             </button>
           </div>
         </div>
 
-        {/* Category Filter */}
-        <div>
-          <label className="block text-sm font-medium text-gray-700 mb-2">
-            Category
-          </label>
-          <select
-            value={selectedCategory}
-            onChange={(e) => {
-              setSelectedCategory(e.target.value);
-              setSelectedSubcategory(""); // Reset subcategory when category changes
-            }}
-            className="w-full px-3 py-2 border border-gray-300 rounded-md text-sm"
-          >
-            <option value="">All Categories</option>
-            {categoriesData?.categories.map((cat) => (
-              <option key={cat.category} value={cat.category}>
-                {cat.category}
-              </option>
-            ))}
-          </select>
-        </div>
+        {/* Expandable Filters */}
+        {showFilters && (
+          <div className="px-4 py-4 space-y-4">
+            {/* Add Filters Section */}
+            <div className="flex flex-wrap gap-2">
+              <span className="text-sm font-medium text-gray-700">
+                Add Filter:
+              </span>
+              {!activeFilters.has("itemType") && (
+                <button
+                  onClick={() => addFilter("itemType")}
+                  className="inline-flex items-center px-3 py-1.5 text-sm font-medium text-indigo-600 bg-indigo-50 rounded-md hover:bg-indigo-100"
+                >
+                  <PlusIcon className="h-4 w-4 mr-1" />
+                  Item Type
+                </button>
+              )}
+              {!activeFilters.has("category") && (
+                <button
+                  onClick={() => addFilter("category")}
+                  className="inline-flex items-center px-3 py-1.5 text-sm font-medium text-indigo-600 bg-indigo-50 rounded-md hover:bg-indigo-100"
+                >
+                  <PlusIcon className="h-4 w-4 mr-1" />
+                  Category
+                </button>
+              )}
+              {!activeFilters.has("keywords") && (
+                <button
+                  onClick={() => addFilter("keywords")}
+                  className="inline-flex items-center px-3 py-1.5 text-sm font-medium text-indigo-600 bg-indigo-50 rounded-md hover:bg-indigo-100"
+                >
+                  <PlusIcon className="h-4 w-4 mr-1" />
+                  Keywords
+                </button>
+              )}
+              {!activeFilters.has("search") && (
+                <button
+                  onClick={() => addFilter("search")}
+                  className="inline-flex items-center px-3 py-1.5 text-sm font-medium text-indigo-600 bg-indigo-50 rounded-md hover:bg-indigo-100"
+                >
+                  <PlusIcon className="h-4 w-4 mr-1" />
+                  Text Search
+                </button>
+              )}
+            </div>
 
-        {/* Subcategory Filter */}
-        {selectedCategory && (
-          <div>
-            <label className="block text-sm font-medium text-gray-700 mb-2">
-              Subcategory
-            </label>
-            <SubcategoryDropdown
-              category={selectedCategory}
-              value={selectedSubcategory}
-              onChange={setSelectedSubcategory}
-            />
-          </div>
-        )}
-
-        {/* Search */}
-        <div>
-          <label className="block text-sm font-medium text-gray-700 mb-2">
-            Search
-          </label>
-          <input
-            type="text"
-            value={searchText}
-            onChange={(e) => setSearchText(e.target.value)}
-            placeholder="Search questions, answers, explanations..."
-            className="w-full px-3 py-2 border border-gray-300 rounded-md text-sm"
-          />
-        </div>
-      </div>
-
-      {/* Items List */}
-      {displayItems.length > 0 ? (
-        <>
-          <div className="space-y-4 mb-6">
-            {displayItems.map((item) => (
-              <div key={item.id} className="bg-white shadow rounded-lg p-6">
-                <div className="flex justify-between items-start">
-                  <div className="flex-1">
-                    <h3 className="text-lg font-medium text-gray-900">
-                      {item.question}
-                    </h3>
-                    <p className="mt-2 text-sm text-gray-500">
-                      {item.category}{" "}
-                      {item.subcategory && `• ${item.subcategory}`}
-                    </p>
-                    <p className="mt-1 text-sm text-gray-500">
-                      {item.isPrivate ? "Private" : "Global"}
-                    </p>
-                    <p className="mt-2 text-sm text-gray-700">
-                      <strong>Answer:</strong> {item.correctAnswer}
-                    </p>
-                  </div>
-                  <div className="flex space-x-1 ml-4">
-                    <button
-                      onClick={() => navigate(`/explore/item/${item.id}`)}
-                      className="p-2 text-indigo-600 hover:bg-indigo-50 rounded-md"
-                      title="View item"
-                    >
-                      <EyeIcon className="h-5 w-5" />
-                    </button>
-                    <button
-                      onClick={() => navigate(`/quiz/item/${item.id}`)}
-                      className="p-2 text-purple-600 hover:bg-purple-50 rounded-md"
-                      title="Quiz mode"
-                    >
-                      <AcademicCapIcon className="h-5 w-5" />
-                    </button>
-                    <button
-                      onClick={() => setSelectedItemForCollections(item.id)}
-                      className="p-2 text-blue-600 hover:bg-blue-50 rounded-md"
-                      title="Manage collections"
-                    >
-                      <FolderIcon className="h-5 w-5" />
-                    </button>
-                    <button
-                      onClick={() => navigate(`/items/${item.id}/edit`)}
-                      disabled={!canEditDelete(item)}
-                      className={`p-2 rounded-md ${
-                        canEditDelete(item)
-                          ? "text-indigo-600 hover:bg-indigo-50"
-                          : "text-gray-400 cursor-not-allowed"
-                      }`}
-                      title={
-                        !canEditDelete(item)
-                          ? "Only admins can edit global items"
-                          : "Update item"
-                      }
-                    >
-                      <PencilIcon className="h-5 w-5" />
-                    </button>
-                    <button
-                      onClick={() => {
-                        if (
-                          window.confirm(
-                            "Are you sure you want to delete this item?"
-                          )
-                        ) {
-                          deleteMutation.mutate(item.id);
-                        }
-                      }}
-                      disabled={
-                        !canEditDelete(item) || deleteMutation.isPending
-                      }
-                      className={`p-2 rounded-md ${
-                        canEditDelete(item)
-                          ? "text-red-600 hover:bg-red-50"
-                          : "text-gray-400 cursor-not-allowed"
-                      }`}
-                      title={
-                        !canEditDelete(item)
-                          ? "Only admins can delete global items"
-                          : "Delete item"
-                      }
-                    >
-                      <TrashIcon className="h-5 w-5" />
-                    </button>
-                  </div>
+            {/* Item Type Filter */}
+            {activeFilters.has("itemType") && (
+              <div className="border border-gray-200 rounded-md p-3 bg-gray-50">
+                <div className="flex items-center justify-between mb-2">
+                  <label className="block text-sm font-medium text-gray-700">
+                    Item Type
+                  </label>
+                  <button
+                    onClick={() => removeFilter("itemType")}
+                    className="text-gray-400 hover:text-gray-600"
+                    aria-label="Remove item type filter"
+                  >
+                    <XMarkIcon className="h-4 w-4" />
+                  </button>
+                </div>
+                <div className="flex space-x-4">
+                  <button
+                    onClick={() => setFilterType("all")}
+                    className={`px-4 py-2 rounded-md text-sm font-medium ${
+                      filterType === "all"
+                        ? "bg-indigo-600 text-white"
+                        : "bg-white text-gray-700 hover:bg-gray-100 border border-gray-300"
+                    }`}
+                  >
+                    All
+                  </button>
+                  <button
+                    onClick={() => setFilterType("public")}
+                    className={`px-4 py-2 rounded-md text-sm font-medium ${
+                      filterType === "public"
+                        ? "bg-indigo-600 text-white"
+                        : "bg-white text-gray-700 hover:bg-gray-100 border border-gray-300"
+                    }`}
+                  >
+                    Public
+                  </button>
+                  <button
+                    onClick={() => setFilterType("private")}
+                    className={`px-4 py-2 rounded-md text-sm font-medium ${
+                      filterType === "private"
+                        ? "bg-indigo-600 text-white"
+                        : "bg-white text-gray-700 hover:bg-gray-100 border border-gray-300"
+                    }`}
+                  >
+                    Private
+                  </button>
                 </div>
               </div>
-            ))}
-          </div>
+            )}
 
-          {/* Pagination */}
-          {/* Note: Pagination works on server-side filtered results, not client-side filtered */}
-          {data && data.totalPages > 1 && (
-            <div className="flex justify-center items-center space-x-2">
+            {/* Category Filter */}
+            {activeFilters.has("category") && (
+              <div className="border border-gray-200 rounded-md p-3 bg-gray-50">
+                <div className="flex items-center justify-between mb-2">
+                  <label className="block text-sm font-medium text-gray-700">
+                    Category
+                  </label>
+                  <button
+                    onClick={() => removeFilter("category")}
+                    className="text-gray-400 hover:text-gray-600"
+                    aria-label="Remove category filter"
+                  >
+                    <XMarkIcon className="h-4 w-4" />
+                  </button>
+                </div>
+                <select
+                  value={selectedCategory}
+                  onChange={(e) => {
+                    setSelectedCategory(e.target.value);
+                  }}
+                  className="w-full px-3 py-2 border border-gray-300 rounded-md text-sm bg-white"
+                >
+                  <option value="">All Categories</option>
+                  {categoriesData?.categories.map((cat) => (
+                    <option key={cat.category} value={cat.category}>
+                      {cat.category}
+                    </option>
+                  ))}
+                </select>
+              </div>
+            )}
+
+            {/* Keywords Filter */}
+            {activeFilters.has("keywords") && (
+              <div className="border border-gray-200 rounded-md p-3 bg-gray-50">
+                <div className="flex items-center justify-between mb-2">
+                  <label className="block text-sm font-medium text-gray-700">
+                    Keywords
+                  </label>
+                  <button
+                    onClick={() => removeFilter("keywords")}
+                    className="text-gray-400 hover:text-gray-600"
+                    aria-label="Remove keywords filter"
+                  >
+                    <XMarkIcon className="h-4 w-4" />
+                  </button>
+                </div>
+                <select
+                  value=""
+                  onChange={(e) => {
+                    if (
+                      e.target.value &&
+                      !selectedKeywords.includes(e.target.value)
+                    ) {
+                      setSelectedKeywords([
+                        ...selectedKeywords,
+                        e.target.value,
+                      ]);
+                    }
+                  }}
+                  className="w-full px-3 py-2 border border-gray-300 rounded-md text-sm bg-white mb-2"
+                >
+                  <option value="">Select a keyword...</option>
+                  {availableKeywords
+                    .filter((k) => !selectedKeywords.includes(k))
+                    .map((keyword) => (
+                      <option key={keyword} value={keyword}>
+                        {keyword}
+                      </option>
+                    ))}
+                </select>
+                {selectedKeywords.length > 0 && (
+                  <div className="flex flex-wrap gap-2 mt-2">
+                    {selectedKeywords.map((keyword) => (
+                      <span
+                        key={keyword}
+                        className="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-indigo-100 text-indigo-800"
+                      >
+                        {keyword}
+                        <button
+                          onClick={() => removeKeyword(keyword)}
+                          className="ml-2 inline-flex items-center justify-center w-4 h-4 rounded-full hover:bg-indigo-200"
+                          aria-label={`Remove ${keyword} filter`}
+                        >
+                          ×
+                        </button>
+                      </span>
+                    ))}
+                  </div>
+                )}
+              </div>
+            )}
+
+            {/* Text Search Filter */}
+            {activeFilters.has("search") && (
+              <div className="border border-gray-200 rounded-md p-3 bg-gray-50">
+                <div className="flex items-center justify-between mb-2">
+                  <label className="block text-sm font-medium text-gray-700">
+                    Text Search
+                  </label>
+                  <button
+                    onClick={() => removeFilter("search")}
+                    className="text-gray-400 hover:text-gray-600"
+                    aria-label="Remove search filter"
+                  >
+                    <XMarkIcon className="h-4 w-4" />
+                  </button>
+                </div>
+                <input
+                  type="text"
+                  value={searchText}
+                  onChange={(e) => setSearchText(e.target.value)}
+                  placeholder="Search in questions, answers, explanations, categories, subcategories, keywords..."
+                  className="w-full px-3 py-2 border border-gray-300 rounded-md text-sm bg-white"
+                />
+                <p className="mt-1 text-xs text-gray-500">
+                  Searches across item content, category, and keywords
+                </p>
+              </div>
+            )}
+          </div>
+        )}
+      </div>
+
+      {/* Selection Controls and Counts */}
+      {/* Items List */}
+      {displayItems.length > 0 ? (
+        <ItemListSection
+          items={displayItems}
+          totalCount={data?.totalCount || 0}
+          page={page}
+          totalPages={data?.totalPages || 1}
+          selectedItemIds={selectedItemIds}
+          onPrevPage={() => setPage((p) => Math.max(1, p - 1))}
+          onNextPage={() =>
+            setPage((p) => Math.min(data?.totalPages || 1, p + 1))
+          }
+          onSelectAll={selectAll}
+          onDeselectAll={deselectAll}
+          onAddSelectedToCollection={handleAddSelectedToCollection}
+          onToggleSelect={toggleItem}
+          onKeywordClick={handleKeywordClick}
+          selectedKeywords={selectedKeywords}
+          isAuthenticated={isAuthenticated}
+          renderActions={(item) => (
+            <>
               <button
-                onClick={() => setPage((p) => Math.max(1, p - 1))}
-                disabled={page === 1}
-                className="px-4 py-2 text-sm bg-gray-200 text-gray-700 rounded-md hover:bg-gray-300 disabled:opacity-50 disabled:cursor-not-allowed"
+                onClick={() => navigate(`/explore/item/${item.id}`)}
+                className="p-2 text-indigo-600 hover:bg-indigo-50 rounded-md"
+                title="View item"
               >
-                Previous
+                <EyeIcon className="h-5 w-5" />
               </button>
-              <span className="text-sm text-gray-700">
-                Page {page} of {data.totalPages}
-              </span>
               <button
-                onClick={() => setPage((p) => Math.min(data.totalPages, p + 1))}
-                disabled={page === data.totalPages}
-                className="px-4 py-2 text-sm bg-gray-200 text-gray-700 rounded-md hover:bg-gray-300 disabled:opacity-50 disabled:cursor-not-allowed"
+                onClick={() => navigate(`/quiz/item/${item.id}`)}
+                className="p-2 text-purple-600 hover:bg-purple-50 rounded-md"
+                title="Quiz mode"
               >
-                Next
+                <AcademicCapIcon className="h-5 w-5" />
               </button>
-            </div>
+              <button
+                onClick={() => setSelectedItemForCollections(item.id)}
+                className="p-2 text-blue-600 hover:bg-blue-50 rounded-md"
+                title="Manage collections"
+              >
+                <FolderIcon className="h-5 w-5" />
+              </button>
+              <button
+                onClick={() => navigate(`/items/${item.id}/edit`)}
+                disabled={!canEditDelete(item)}
+                className={`p-2 rounded-md ${
+                  canEditDelete(item)
+                    ? "text-indigo-600 hover:bg-indigo-50"
+                    : "text-gray-400 cursor-not-allowed"
+                }`}
+                title={
+                  !canEditDelete(item)
+                    ? "Only admins can edit public items"
+                    : "Update item"
+                }
+              >
+                <PencilIcon className="h-5 w-5" />
+              </button>
+              <button
+                onClick={() => {
+                  if (
+                    window.confirm(
+                      "Are you sure you want to delete this item?"
+                    )
+                  ) {
+                    deleteMutation.mutate(item.id);
+                  }
+                }}
+                disabled={!canEditDelete(item) || deleteMutation.isPending}
+                className={`p-2 rounded-md ${
+                  canEditDelete(item)
+                    ? "text-red-600 hover:bg-red-50"
+                    : "text-gray-400 cursor-not-allowed"
+                }`}
+                title={
+                  !canEditDelete(item)
+                    ? "Only admins can delete public items"
+                    : "Delete item"
+                }
+              >
+                <TrashIcon className="h-5 w-5" />
+              </button>
+            </>
           )}
-        </>
+        />
       ) : (
         <div className="text-center py-12">
           <p className="text-gray-500">No items found matching your filters.</p>
@@ -379,8 +600,17 @@ const MyItemsPage = () => {
           itemId={selectedItemForCollections}
         />
       )}
+
+      <BulkItemCollectionsModal
+        itemIds={selectedItemsForBulkCollections}
+        onCloseComplete={() => {
+          setSelectedItemsForBulkCollections([]);
+          deselectAll();
+        }}
+      />
     </div>
   );
 };
 
+// Component to display collections for an item
 export default MyItemsPage;

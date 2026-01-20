@@ -15,11 +15,18 @@ public static class CollectionItems
 {
     public sealed record AddRequest(Guid ItemId);
 
+    public sealed record BulkAddRequest(List<Guid> ItemIds);
+
     public sealed record CollectionItemResponse(
         string Id,
         Guid CollectionId,
         Guid ItemId,
         DateTime AddedAt);
+
+    public sealed record BulkAddResponse(
+        int AddedCount,
+        int SkippedCount,
+        List<string> AddedItemIds);
 
     public sealed class AddRequestValidator : AbstractValidator<AddRequest>
     {
@@ -28,6 +35,20 @@ public static class CollectionItems
             RuleFor(x => x.ItemId)
                 .NotEqual(Guid.Empty)
                 .WithMessage("ItemId is required.");
+        }
+    }
+
+    public sealed class BulkAddRequestValidator : AbstractValidator<BulkAddRequest>
+    {
+        public BulkAddRequestValidator()
+        {
+            RuleFor(x => x.ItemIds)
+                .NotNull()
+                .WithMessage("ItemIds is required.")
+                .NotEmpty()
+                .WithMessage("At least one ItemId is required.")
+                .Must(ids => ids.All(id => id != Guid.Empty))
+                .WithMessage("All ItemIds must be valid GUIDs.");
         }
     }
 
@@ -42,6 +63,16 @@ public static class CollectionItems
                 .RequireAuthorization()
                 .WithOpenApi()
                 .Produces<CollectionItemResponse>(StatusCodes.Status201Created)
+                .Produces(StatusCodes.Status400BadRequest)
+                .Produces(StatusCodes.Status404NotFound);
+
+            app.MapPost("collections/{collectionId:guid}/items/bulk", BulkAddHandler)
+                .WithTags("Collections")
+                .WithSummary("Add multiple items to a collection")
+                .WithDescription("Adds multiple quiz items to a collection. Body: { \"itemIds\": [\"<guid1>\", \"<guid2>\", ...] }.")
+                .RequireAuthorization()
+                .WithOpenApi()
+                .Produces<BulkAddResponse>(StatusCodes.Status200OK)
                 .Produces(StatusCodes.Status400BadRequest)
                 .Produces(StatusCodes.Status404NotFound);
 
@@ -71,6 +102,27 @@ public static class CollectionItems
 
             return result.Match(
                 value => Results.Created($"/api/collections/{value.CollectionId}/items/{value.ItemId}", value),
+                failure => failure.Error.Type == ErrorType.NotFound
+                    ? Results.NotFound()
+                    : CustomResults.Problem(result));
+        }
+
+        private static async Task<IResult> BulkAddHandler(
+            Guid collectionId,
+            BulkAddRequest request,
+            ApplicationDbContext db,
+            IUserContext userContext,
+            CancellationToken cancellationToken)
+        {
+            Result<BulkAddResponse> result = await HandleBulkAddAsync(
+                collectionId,
+                request,
+                db,
+                userContext,
+                cancellationToken);
+
+            return result.Match(
+                value => Results.Ok(value),
                 failure => failure.Error.Type == ErrorType.NotFound
                     ? Results.NotFound()
                     : CustomResults.Problem(result));
@@ -162,6 +214,82 @@ public static class CollectionItems
         }
     }
 
+    public static async Task<Result<BulkAddResponse>> HandleBulkAddAsync(
+        Guid collectionId,
+        BulkAddRequest request,
+        ApplicationDbContext db,
+        IUserContext userContext,
+        CancellationToken cancellationToken)
+    {
+        try
+        {
+            if (!userContext.IsAuthenticated)
+            {
+                return Result.Failure<BulkAddResponse>(
+                    Error.Validation("CollectionItems.Unauthorized", "User must be authenticated."));
+            }
+
+            Collection? collection = await db.Collections
+                .FirstOrDefaultAsync(c => c.Id == collectionId, cancellationToken);
+
+            if (collection is null)
+            {
+                return Result.Failure<BulkAddResponse>(
+                    Error.NotFound("Collection.NotFound", $"Collection with id {collectionId} not found"));
+            }
+
+            // Get existing collection items to skip duplicates
+            HashSet<Guid> existingItemIds = await db.CollectionItems
+                .Where(ci => ci.CollectionId == collectionId && request.ItemIds.Contains(ci.ItemId))
+                .Select(ci => ci.ItemId)
+                .ToHashSetAsync(cancellationToken);
+
+            // Filter out items that don't exist
+            List<Guid> validItemIds = await db.Items
+                .Where(i => request.ItemIds.Contains(i.Id))
+                .Select(i => i.Id)
+                .ToListAsync(cancellationToken);
+
+            // Get items to add (exist, not already in collection)
+            List<Guid> itemIdsToAdd = validItemIds
+                .Where(id => !existingItemIds.Contains(id))
+                .ToList();
+
+            if (itemIdsToAdd.Count == 0)
+            {
+                // All items are already in the collection or don't exist
+                return Result.Success(new BulkAddResponse(
+                    0,
+                    request.ItemIds.Count,
+                    new List<string>()));
+            }
+
+            // Create collection items
+            List<CollectionItem> entitiesToAdd = itemIdsToAdd.Select(itemId => new CollectionItem
+            {
+                Id = Guid.NewGuid(),
+                CollectionId = collectionId,
+                ItemId = itemId,
+                AddedAt = DateTime.UtcNow
+            }).ToList();
+
+            db.CollectionItems.AddRange(entitiesToAdd);
+            await db.SaveChangesAsync(cancellationToken);
+
+            BulkAddResponse response = new(
+                itemIdsToAdd.Count,
+                request.ItemIds.Count - itemIdsToAdd.Count,
+                itemIdsToAdd.Select(id => id.ToString()).ToList());
+
+            return Result.Success(response);
+        }
+        catch (Exception ex)
+        {
+            return Result.Failure<BulkAddResponse>(
+                Error.Problem("CollectionItems.BulkAddFailed", $"Failed to add items to collection: {ex.Message}"));
+        }
+    }
+
     public static async Task<Result> HandleRemoveAsync(
         Guid collectionId,
         Guid itemId,
@@ -205,6 +333,7 @@ public static class CollectionItems
         public void AddToServiceCollection(IServiceCollection services, IConfiguration configuration)
         {
             services.AddScoped<IValidator<AddRequest>, AddRequestValidator>();
+            services.AddScoped<IValidator<BulkAddRequest>, BulkAddRequestValidator>();
         }
     }
 }

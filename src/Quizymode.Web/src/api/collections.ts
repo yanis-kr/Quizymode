@@ -1,4 +1,5 @@
 import { apiClient } from "./client";
+import { itemsApi } from "./items";
 import type {
   CollectionsResponse,
   CollectionResponse,
@@ -6,6 +7,8 @@ import type {
   CreateCollectionRequest,
   UpdateCollectionRequest,
   AddItemToCollectionRequest,
+  BulkAddItemsToCollectionRequest,
+  BulkAddItemsToCollectionResponse,
 } from "@/types/api";
 
 export const collectionsApi = {
@@ -24,10 +27,9 @@ export const collectionsApi = {
   getItems: async (
     collectionId: string
   ): Promise<{ items: ItemResponse[] }> => {
-    const response = await apiClient.get<{ items: ItemResponse[] }>(
-      `/collections/${collectionId}/items`
-    );
-    return response.data;
+    // Use GET /items?collectionId=X instead of GET /collections/{id}/items
+    const response = await itemsApi.getAll(undefined, undefined, undefined, collectionId, undefined, 1, 1000);
+    return { items: response.items };
   },
 
   create: async (
@@ -60,6 +62,17 @@ export const collectionsApi = {
     data: AddItemToCollectionRequest
   ): Promise<void> => {
     await apiClient.post(`/collections/${collectionId}/items`, data);
+  },
+
+  bulkAddItems: async (
+    collectionId: string,
+    data: BulkAddItemsToCollectionRequest
+  ): Promise<BulkAddItemsToCollectionResponse> => {
+    const response = await apiClient.post<BulkAddItemsToCollectionResponse>(
+      `/collections/${collectionId}/items/bulk`,
+      data
+    );
+    return response.data;
   },
 
   removeItem: async (

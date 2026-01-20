@@ -2,6 +2,8 @@ using System.Text.Json;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Options;
 using Quizymode.Api.Data;
+using Quizymode.Api.Features.Items.AddBulk;
+using Quizymode.Api.Shared.Kernel;
 using Quizymode.Api.Shared.Models;
 using Quizymode.Api.Shared.Options;
 
@@ -41,7 +43,7 @@ internal sealed class DatabaseSeederHostedService(
                 _logger.LogInformation("Database connection check: {CanConnect}", canConnect);
                 
                 // Apply migrations (MigrateAsync should create the database and __EFMigrationsHistory table if needed)
-                await db.Database.MigrateAsync(cancellationToken);
+                 await db.Database.MigrateAsync(cancellationToken);
                 
                 _logger.LogInformation("Database migrations applied successfully.");
                 migrationSucceeded = true;
@@ -94,55 +96,107 @@ internal sealed class DatabaseSeederHostedService(
                 
                 _logger.LogInformation("Using seed path {SeedPath}", resolvedSeedPath);
 
-                // Load items from JSON files
-                // Files are named like: items-{categoryId}-{subcategoryId}.json
+                // Create a seeder user context (admin privileges)
+                SeederUserContext seederUserContext = new SeederUserContext();
+
+                // Load all JSON files (both bulk-*.json and items-*.json)
+                string[] bulkFiles = Directory.GetFiles(resolvedSeedPath, "bulk-*.json");
                 string[] itemFiles = Directory.GetFiles(resolvedSeedPath, "items-*.json");
+                string[] allFiles = bulkFiles.Concat(itemFiles).ToArray();
 
-                foreach (string itemsFile in itemFiles)
+                int totalItemsProcessed = 0;
+                int totalItemsCreated = 0;
+
+                foreach (string jsonFile in allFiles)
                 {
-                    string itemsJson = await File.ReadAllTextAsync(itemsFile, cancellationToken);
-                    ItemsSeedData? itemsData = JsonSerializer.Deserialize<ItemsSeedData>(
-                        itemsJson, 
-                        new JsonSerializerOptions { PropertyNameCaseInsensitive = true });
-
-                    if (itemsData?.Items is not null && itemsData.Items.Any())
+                    try
                     {
-                        List<Item> itemsToInsert = new();
-                        foreach (ItemSeedData itemData in itemsData.Items)
+                        string fileJson = await File.ReadAllTextAsync(jsonFile, cancellationToken);
+                        
+                        // Deserialize as array of items (bulk format)
+                        List<BulkItemSeedData>? items = JsonSerializer.Deserialize<List<BulkItemSeedData>>(
+                            fileJson,
+                            new JsonSerializerOptions { PropertyNameCaseInsensitive = true });
+
+                        if (items is null || items.Count == 0)
                         {
-                            // Compute SimHash for duplicate detection
-                            string questionText = $"{itemData.Question} {itemData.CorrectAnswer} {string.Join(" ", itemData.IncorrectAnswers)}";
-                            string fuzzySignature = _simHashService.ComputeSimHash(questionText);
-                            int fuzzyBucket = _simHashService.GetFuzzyBucket(fuzzySignature);
-
-                            Item item = new Item
-                            {
-                                Id = Guid.NewGuid(),
-                                Category = itemsData.Category,
-                                Subcategory = itemsData.Subcategory,
-                                IsPrivate = itemsData.IsPrivate,
-                                Question = itemData.Question,
-                                CorrectAnswer = itemData.CorrectAnswer,
-                                IncorrectAnswers = itemData.IncorrectAnswers,
-                                Explanation = itemData.Explanation,
-                                FuzzySignature = fuzzySignature,
-                                FuzzyBucket = fuzzyBucket,
-                                CreatedBy = "seeder",
-                                CreatedAt = DateTime.UtcNow
-                            };
-
-                            itemsToInsert.Add(item);
+                            _logger.LogWarning("No items found in {FileName}", Path.GetFileName(jsonFile));
+                            continue;
                         }
 
-                        if (itemsToInsert.Any())
+                        // Convert to AddItemsBulk.Request format
+                        List<AddItemsBulk.ItemRequest> itemRequests = items.Select(item => new AddItemsBulk.ItemRequest(
+                            Category: item.Category,
+                            Question: item.Question,
+                            CorrectAnswer: item.CorrectAnswer,
+                            IncorrectAnswers: item.IncorrectAnswers,
+                            Explanation: item.Explanation ?? string.Empty,
+                            Keywords: item.Keywords?.Select(k => new AddItemsBulk.KeywordRequest(k, false)).ToList()
+                        )).ToList();
+
+                        AddItemsBulk.Request bulkRequest = new AddItemsBulk.Request(
+                            IsPrivate: false, // Seed items are global
+                            Items: itemRequests
+                        );
+
+                        // Get CategoryResolver and AuditService from scope
+                        ICategoryResolver categoryResolver = scope.ServiceProvider.GetRequiredService<ICategoryResolver>();
+                        IAuditService auditService = scope.ServiceProvider.GetRequiredService<IAuditService>();
+
+                        // Use bulk add handler
+                        Result<AddItemsBulk.Response> result = await AddItemsBulkHandler.HandleAsync(
+                            bulkRequest,
+                            db,
+                            _simHashService,
+                            seederUserContext,
+                            categoryResolver,
+                            auditService,
+                            cancellationToken);
+
+                        if (result.IsSuccess && result.Value is not null)
                         {
-                            db.Items.AddRange(itemsToInsert);
-                            await db.SaveChangesAsync(cancellationToken);
-                            _logger.LogInformation("Inserted {Count} items for {Category}/{Subcategory}", 
-                                itemsToInsert.Count, itemsData.Category, itemsData.Subcategory);
+                            totalItemsProcessed += result.Value.TotalRequested;
+                            totalItemsCreated += result.Value.CreatedCount;
+                            
+                            _logger.LogInformation(
+                                "Processed {FileName}: {Created} created, {Duplicates} duplicates, {Failed} failed",
+                                Path.GetFileName(jsonFile),
+                                result.Value.CreatedCount,
+                                result.Value.DuplicateCount,
+                                result.Value.FailedCount);
+                            
+                            if (result.Value.Errors.Count > 0)
+                            {
+                                foreach (AddItemsBulk.ItemError error in result.Value.Errors)
+                                {
+                                    _logger.LogWarning("Error in {FileName} item {Index}: {Error}",
+                                        Path.GetFileName(jsonFile),
+                                        error.Index,
+                                        error.ErrorMessage);
+                                }
+                            }
+                        }
+                        else
+                        {
+                            _logger.LogError("Failed to process {FileName}: {Error}",
+                                Path.GetFileName(jsonFile),
+                                result.Error?.Description ?? "Unknown error");
                         }
                     }
+                    catch (Exception ex)
+                    {
+                        _logger.LogError(ex, "Error processing {FileName}: {Error}",
+                            Path.GetFileName(jsonFile),
+                            ex.Message);
+                    }
                 }
+
+                _logger.LogInformation("Seeding completed: {TotalProcessed} items processed, {TotalCreated} items created",
+                    totalItemsProcessed,
+                    totalItemsCreated);
+
+                // Add rating 5 for items with Category=Science
+                await SeedScienceRatingsAsync(db, cancellationToken);
 
                 _logger.LogInformation("Database seeding completed successfully.");
             }
@@ -208,21 +262,61 @@ internal sealed class DatabaseSeederHostedService(
 
         return null;
     }
+
+    private async Task SeedScienceRatingsAsync(ApplicationDbContext db, CancellationToken cancellationToken)
+    {
+        // Find the Science category
+        Category? scienceCategory = await db.Categories
+            .FirstOrDefaultAsync(c => c.Name == "Science", cancellationToken);
+
+        if (scienceCategory is null)
+        {
+            _logger.LogInformation("Science category not found. Skipping rating seeding.");
+            return; // No Science category found, skip rating seeding
+        }
+
+        // Get all items with Science category
+        List<Item> scienceItems = await db.Items
+            .Where(i => i.CategoryId == scienceCategory.Id)
+            .ToListAsync(cancellationToken);
+
+        if (scienceItems.Count == 0)
+        {
+            _logger.LogInformation("No Science items found. Skipping rating seeding.");
+            return; // No Science items found
+        }
+
+        // Add rating 5 for each Science item
+        List<Rating> ratings = scienceItems.Select(item => new Rating
+        {
+            ItemId = item.Id,
+            Stars = 5,
+            CreatedBy = "seeder",
+            CreatedAt = DateTime.UtcNow
+        }).ToList();
+
+        await db.Ratings.AddRangeAsync(ratings, cancellationToken);
+        await db.SaveChangesAsync(cancellationToken);
+        
+        _logger.LogInformation("Added {Count} ratings (5 stars) for Science category items.", ratings.Count);
+    }
 }
 
-// Seed data models for JSON deserialization
-internal sealed class ItemsSeedData
+// Seed data model for JSON deserialization (bulk format)
+internal sealed class BulkItemSeedData
 {
     public string Category { get; set; } = string.Empty;
-    public string Subcategory { get; set; } = string.Empty;
-    public bool IsPrivate { get; set; }
-    public List<ItemSeedData> Items { get; set; } = new();
-}
-
-internal sealed class ItemSeedData
-{
     public string Question { get; set; } = string.Empty;
     public string CorrectAnswer { get; set; } = string.Empty;
     public List<string> IncorrectAnswers { get; set; } = new();
-    public string Explanation { get; set; } = string.Empty;
+    public string? Explanation { get; set; }
+    public List<string>? Keywords { get; set; }
+}
+
+// Seeder user context for bulk add operations
+internal sealed class SeederUserContext : IUserContext
+{
+    public bool IsAuthenticated => true;
+    public string? UserId => "seeder";
+    public bool IsAdmin => true;
 }

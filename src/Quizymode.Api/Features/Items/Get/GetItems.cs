@@ -5,12 +5,28 @@ using Quizymode.Api.Shared.Kernel;
 
 namespace Quizymode.Api.Features.Items.Get;
 
+/// <summary>
+/// Feature for retrieving quiz items with support for filtering, pagination, and collection-based queries.
+/// Implements comprehensive querying capabilities allowing clients to filter by category, visibility, keywords, and collections.
+/// </summary>
 public static class GetItems
 {
+    /// <summary>
+    /// Request DTO containing all query parameters for filtering and paginating items.
+    /// Category: Filter by category name (case-insensitive match).
+    /// IsPrivate: Filter by visibility - null = all visible, true = only private items, false = only global items.
+    /// Keywords: Filter by keyword names (comma-separated string parsed into list).
+    /// CollectionId: Filter items belonging to a specific collection (requires authentication and ownership).
+    /// IsRandom: If true, returns random selection; if false or null, returns paginated ordered results.
+    /// Page: 1-based page number for pagination.
+    /// PageSize: Number of items per page (must be between 1 and 1000).
+    /// </summary>
     public sealed record QueryRequest(
         string? Category,
-        string? Subcategory,
         bool? IsPrivate,
+        List<string>? Keywords,
+        Guid? CollectionId,
+        bool? IsRandom,
         int Page = 1,
         int PageSize = 10);
 
@@ -24,14 +40,29 @@ public static class GetItems
     public sealed record ItemResponse(
         string Id,
         string Category,
-        string Subcategory,
         bool IsPrivate,
         string Question,
         string CorrectAnswer,
         List<string> IncorrectAnswers,
         string Explanation,
+        DateTime CreatedAt,
+        List<KeywordResponse> Keywords,
+        List<CollectionResponse> Collections);
+
+    public sealed record KeywordResponse(
+        string Id,
+        string Name,
+        bool IsPrivate);
+
+    public sealed record CollectionResponse(
+        string Id,
+        string Name,
         DateTime CreatedAt);
 
+    /// <summary>
+    /// API endpoint for querying items with filtering and pagination support.
+    /// Exposes GET /api/items endpoint with query parameters for all filter options.
+    /// </summary>
     public sealed class Endpoint : IEndpoint
     {
         public void MapEndpoint(IEndpointRouteBuilder app)
@@ -44,10 +75,16 @@ public static class GetItems
                 .Produces(StatusCodes.Status400BadRequest);
         }
 
+        /// <summary>
+        /// HTTP handler for the items endpoint. Validates pagination parameters before processing.
+        /// Parses comma-separated keywords string into a list. Delegates business logic to GetItemsHandler.
+        /// </summary>
         private static async Task<IResult> Handler(
             string? category,
-            string? subcategory,
             bool? isPrivate,
+            string? keywords,
+            Guid? collectionId,
+            bool? isRandom,
             int page = 1,
             int pageSize = 10,
             ApplicationDbContext db = null!,
@@ -59,12 +96,20 @@ public static class GetItems
                 return CustomResults.BadRequest("Page must be greater than 0");
             }
 
-            if (pageSize < 1 || pageSize > 100)
+            if (pageSize < 1 || pageSize > 1000)
             {
-                return CustomResults.BadRequest("PageSize must be between 1 and 100");
+                return CustomResults.BadRequest("PageSize must be between 1 and 1000");
             }
 
-            var request = new QueryRequest(category, subcategory, isPrivate, page, pageSize);
+            List<string>? keywordList = null;
+            if (!string.IsNullOrEmpty(keywords))
+            {
+                keywordList = keywords.Split(',', StringSplitOptions.RemoveEmptyEntries | StringSplitOptions.TrimEntries)
+                    .Where(k => !string.IsNullOrWhiteSpace(k))
+                    .ToList();
+            }
+
+            var request = new QueryRequest(category, isPrivate, keywordList, collectionId, isRandom, page, pageSize);
             Result<Response> result = await GetItemsHandler.HandleAsync(request, db, userContext, cancellationToken);
 
             return result.Match(

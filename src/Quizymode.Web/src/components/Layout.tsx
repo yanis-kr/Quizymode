@@ -73,7 +73,7 @@ const Layout = ({ children }: LayoutProps) => {
                       to="/collections"
                       className="inline-flex items-center px-1 pt-1 text-sm font-medium text-gray-900 hover:text-indigo-600"
                     >
-                      Collections
+                      My Collections
                     </Link>
                     {userIsAdmin && (
                       <Link
@@ -174,7 +174,7 @@ const Layout = ({ children }: LayoutProps) => {
                     className="block px-3 py-2 text-base font-medium text-gray-900 hover:text-indigo-600 hover:bg-gray-50"
                     onClick={closeMobileMenu}
                   >
-                    Collections
+                    My Collections
                   </Link>
                   {userIsAdmin && (
                     <Link

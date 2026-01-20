@@ -1,26 +1,47 @@
-{
-  "category": "general",
-  "subcategory": "misc",
-  "isPrivate": false,
-  "items": [
-    {
-      "question": "What is the capital of France?",
-      "correctAnswer": "Paris",
-      "incorrectAnswers": ["Lyon", "Marseille", "Nice"],
-      "explanation": "Paris is the capital and most populous city of France."
-    },
-    {
-      "question": "Which planet is known as the Red Planet?",
-      "correctAnswer": "Mars",
-      "incorrectAnswers": ["Venus", "Jupiter", "Saturn"],
-      "explanation": "Mars is known as the Red Planet due to iron oxide on its surface."
-    },
-    {
-      "question": "What is the largest ocean on Earth?",
-      "correctAnswer": "Pacific Ocean",
-      "incorrectAnswers": ["Atlantic Ocean", "Indian Ocean", "Arctic Ocean"],
-      "explanation": "The Pacific Ocean is the largest and deepest ocean on Earth."
-    }
-  ]
-}
-
+[
+  {
+    "category": "Geography",
+    "question": "What is the capital of France?",
+    "correctAnswer": "Paris",
+    "incorrectAnswers": [
+      "Lyon",
+      "Marseille",
+      "Nice"
+    ],
+    "explanation": "Paris is the capital and most populous city of France.",
+    "keywords": [
+      "geography",
+      "world capitals"
+    ]
+  },
+  {
+    "category": "Science",
+    "question": "Which planet is known as the Red Planet?",
+    "correctAnswer": "Mars",
+    "incorrectAnswers": [
+      "Venus",
+      "Jupiter",
+      "Saturn"
+    ],
+    "explanation": "Mars is known as the Red Planet due to iron oxide on its surface.",
+    "keywords": [
+      "science",
+      "astronomy"
+    ]
+  },
+  {
+    "category": "Geography",
+    "question": "What is the largest ocean on Earth?",
+    "correctAnswer": "Pacific Ocean",
+    "incorrectAnswers": [
+      "Atlantic Ocean",
+      "Indian Ocean",
+      "Arctic Ocean"
+    ],
+    "explanation": "The Pacific Ocean is the largest and deepest ocean on Earth.",
+    "keywords": [
+      "geography",
+      "oceans"
+    ]
+  }
+]

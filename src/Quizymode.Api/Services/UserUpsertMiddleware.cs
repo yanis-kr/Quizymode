@@ -87,22 +87,42 @@ internal sealed class UserUpsertMiddleware
                     // For existing users:
                     // - Always update Email from claims (can change in Cognito)
                     // - Only update Name from claims if user hasn't set a custom name yet (Name is null or equals Subject)
-                    // - Always update LastLogin
+                    // - Always update LastLogin to track user activity
+                    // - Only log LoginSuccess if it's been more than 5 minutes since last login (to avoid logging on token refresh)
                     existing.Email = email;
                     if (string.IsNullOrWhiteSpace(existing.Name) || existing.Name == existing.Subject)
                     {
                         existing.Name = name; // Update Name from claims only if user hasn't customized it
                     }
-                    existing.LastLogin = DateTime.UtcNow;
+                    
+                    // Check if this is a new login session (more than 1 minute since last login)
+                    // or just a token refresh (within 1 minute)
+                    // Reduced from 5 minutes to 1 minute to catch actual logins while still filtering token refreshes
+                    DateTime now = DateTime.UtcNow;
+                    TimeSpan timeSinceLastLogin = now - existing.LastLogin;
+                    bool isNewLogin = timeSinceLastLogin.TotalMinutes > 1;
+                    
+                    // Always update LastLogin to track user activity
+                    existing.LastLogin = now;
                     await db.SaveChangesAsync();
                     userId = existing.Id;
-                    _logger.LogDebug("Updated user record for subject: {Subject} with UserId: {UserId}", subject, userId);
                     
-                    // Log login success audit
-                    await auditService.LogAsync(
-                        AuditAction.LoginSuccess,
-                        userId: userId,
-                        cancellationToken: context.RequestAborted);
+                    if (isNewLogin)
+                    {
+                        _logger.LogDebug("Updated user record for subject: {Subject} with UserId: {UserId} (new login after {Minutes:F1} minutes)", 
+                            subject, userId, timeSinceLastLogin.TotalMinutes);
+                        
+                        // Log login success audit only for actual logins, not token refreshes
+                        await auditService.LogAsync(
+                            AuditAction.LoginSuccess,
+                            userId: userId,
+                            cancellationToken: context.RequestAborted);
+                    }
+                    else
+                    {
+                        _logger.LogDebug("User {Subject} (UserId: {UserId}) authenticated but LastLogin was {Minutes:F1} minutes ago - skipping login audit (likely token refresh)", 
+                            subject, userId, timeSinceLastLogin.TotalMinutes);
+                    }
                 }
                 
                 // Store UserId in HttpContext.Items for UserContext to use
