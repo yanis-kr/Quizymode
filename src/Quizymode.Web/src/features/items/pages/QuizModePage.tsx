@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useMemo } from "react";
 import {
   useParams,
   useNavigate,
@@ -7,11 +7,16 @@ import {
 import { useQuery } from "@tanstack/react-query";
 import { itemsApi } from "@/api/items";
 import { collectionsApi } from "@/api/collections";
+import { categoriesApi } from "@/api/categories";
 import { useAuth } from "@/contexts/AuthContext";
 import LoadingSpinner from "@/components/LoadingSpinner";
 import ErrorMessage from "@/components/ErrorMessage";
 import ItemRatingsComments from "@/components/ItemRatingsComments";
 import ItemCollectionsModal from "@/components/ItemCollectionsModal";
+import {
+  categoryNameToSlug,
+  findCategoryNameFromSlug,
+} from "@/utils/categorySlug";
 import {
   FolderIcon,
   ChevronLeftIcon,
@@ -20,7 +25,7 @@ import {
 } from "@heroicons/react/24/outline";
 
 const QuizModePage = () => {
-  const { category, collectionId, itemId } = useParams();
+  const { category: categorySlug, collectionId, itemId } = useParams();
   const navigate = useNavigate();
   const { isAuthenticated } = useAuth();
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -31,6 +36,25 @@ const QuizModePage = () => {
   const [selectedItemForCollections, setSelectedItemForCollections] = useState<
     string | null
   >(null);
+
+  // Fetch categories to convert slug to actual category name
+  const { data: categoriesData } = useQuery({
+    queryKey: ["categories"],
+    queryFn: () => categoriesApi.getAll(),
+    enabled: !!categorySlug && !collectionId,
+  });
+
+  // Convert category slug to actual category name
+  const category = useMemo(() => {
+    if (!categorySlug) return undefined;
+    if (!categoriesData?.categories) return categorySlug; // Fallback to slug if categories not loaded
+    const categoryNames = categoriesData.categories.map((c) => c.category);
+    const actualCategoryName = findCategoryNameFromSlug(
+      categorySlug,
+      categoryNames,
+    );
+    return actualCategoryName || categorySlug; // Fallback to slug if not found
+  }, [categorySlug, categoriesData?.categories]);
 
   // Check sessionStorage for stored items (when navigating with itemId from ItemsPage or comments)
   // Must be declared before useQuery that references it
@@ -396,7 +420,7 @@ const QuizModePage = () => {
                             { replace: true }
                           );
                         } else if (category) {
-                          navigate(`/quiz/${encodeURIComponent(category)}/item/${items[newIndex].id}`, { replace: true });
+                          navigate(`/quiz/${categoryNameToSlug(category)}/item/${items[newIndex].id}`, { replace: true });
                         } else {
                           navigate(`/quiz/item/${items[newIndex].id}`, {
                             replace: true,
@@ -429,7 +453,7 @@ const QuizModePage = () => {
                             { replace: true }
                           );
                         } else if (category) {
-                          navigate(`/quiz/${encodeURIComponent(category)}/item/${items[newIndex].id}`, { replace: true });
+                          navigate(`/quiz/${categoryNameToSlug(category)}/item/${items[newIndex].id}`, { replace: true });
                         } else {
                           navigate(`/quiz/item/${items[newIndex].id}`, {
                             replace: true,
@@ -515,8 +539,11 @@ const QuizModePage = () => {
                 </div>
               )}
 
-              <div className="text-sm text-gray-500">
-                Category: {currentItem.category}
+              <div className="text-sm text-gray-500 space-y-1">
+                <div>Category: {currentItem.category}</div>
+                {currentItem.source && (
+                  <div>Source: {currentItem.source}</div>
+                )}
               </div>
 
               {/* Ratings and Comments */}

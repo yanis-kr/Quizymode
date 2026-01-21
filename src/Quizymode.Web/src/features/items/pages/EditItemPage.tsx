@@ -22,6 +22,7 @@ const EditItemPage = () => {
     incorrectAnswers: ["", "", ""],
     explanation: "",
     keywords: [] as KeywordRequest[],
+    source: "",
   });
   const [newKeywordName, setNewKeywordName] = useState("");
   const [newKeywordIsPrivate, setNewKeywordIsPrivate] = useState(true); // Default to true for regular users
@@ -59,6 +60,7 @@ const EditItemPage = () => {
         keywords: itemData.keywords
           ? itemData.keywords.map((k) => ({ name: k.name, isPrivate: k.isPrivate }))
           : [],
+        source: itemData.source || "",
       });
     }
   }, [itemData]);
@@ -100,6 +102,7 @@ const EditItemPage = () => {
       incorrectAnswers: filteredIncorrectAnswers,
       explanation: formData.explanation.trim(),
       keywords: formData.keywords.length > 0 ? formData.keywords : undefined,
+      source: formData.source.trim() || undefined,
     };
 
     updateMutation.mutate(data);
@@ -305,6 +308,25 @@ const EditItemPage = () => {
               rows={3}
               className="w-full px-3 py-2 border border-gray-300 rounded-md text-sm"
             />
+          </div>
+
+          <div>
+            <label className="block text-sm font-medium text-gray-700 mb-2">
+              Source (optional)
+            </label>
+            <input
+              type="text"
+              value={formData.source}
+              onChange={(e) =>
+                setFormData({ ...formData, source: e.target.value })
+              }
+              maxLength={50}
+              placeholder="e.g., ChatGPT, Claude, Manual, Textbook Name"
+              className="w-full px-3 py-2 border border-gray-300 rounded-md text-sm"
+            />
+            <p className="mt-1 text-sm text-gray-500">
+              Optional source attribution (max 50 characters).
+            </p>
           </div>
 
           <div>

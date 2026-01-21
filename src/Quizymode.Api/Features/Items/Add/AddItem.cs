@@ -20,7 +20,8 @@ public static class AddItem
         List<string> IncorrectAnswers,
         string Explanation,
         List<KeywordRequest>? Keywords = null,
-        bool ReadyForReview = false);
+        bool ReadyForReview = false,
+        string? Source = null);
 
     public sealed record Response(
         string Id,
@@ -30,7 +31,8 @@ public static class AddItem
         string CorrectAnswer,
         List<string> IncorrectAnswers,
         string Explanation,
-        DateTime CreatedAt);
+        DateTime CreatedAt,
+        string? Source);
 
     public sealed class Validator : AbstractValidator<Request>
     {
@@ -70,6 +72,10 @@ public static class AddItem
                 .WithMessage("Cannot assign more than 50 keywords to an item")
                 .ForEach(rule => rule
                     .SetValidator(new KeywordRequestValidator()));
+
+            RuleFor(x => x.Source)
+                .MaximumLength(50)
+                .WithMessage("Source must not exceed 50 characters");
         }
     }
 

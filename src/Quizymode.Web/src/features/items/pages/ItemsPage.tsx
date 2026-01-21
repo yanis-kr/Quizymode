@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { useSearchParams, useNavigate } from "react-router-dom";
 import { useQuery } from "@tanstack/react-query";
 import { itemsApi } from "@/api/items";
+import { categoryNameToSlug } from "@/utils/categorySlug";
 import LoadingSpinner from "@/components/LoadingSpinner";
 import ErrorMessage from "@/components/ErrorMessage";
 
@@ -24,7 +25,7 @@ const ItemsPage = () => {
     if (!mode) return;
     const path = mode === "explore" ? "/explore" : "/quiz";
     if (category) {
-      navigate(`${path}/${encodeURIComponent(category)}`);
+      navigate(`${path}/${categoryNameToSlug(category)}`);
     } else {
       navigate(path);
     }
@@ -50,7 +51,7 @@ const ItemsPage = () => {
     );
 
     if (category) {
-      navigate(`${path}/${encodeURIComponent(category)}/item/${itemId}`);
+      navigate(`${path}/${categoryNameToSlug(category)}/item/${itemId}`);
     } else {
       navigate(`${path}/item/${itemId}`);
     }

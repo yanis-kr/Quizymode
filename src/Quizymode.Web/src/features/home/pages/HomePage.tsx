@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { useAuth } from "@/contexts/AuthContext";
+import { SEO } from "@/components/SEO";
 import {
   AcademicCapIcon,
   BookOpenIcon,
@@ -14,7 +15,24 @@ const HomePage = () => {
   const { isAuthenticated } = useAuth();
 
   return (
-    <div className="min-h-screen">
+    <>
+      <SEO
+        canonical="https://www.quizymode.com"
+        structuredData={{
+          "@context": "https://schema.org",
+          "@type": "WebSite",
+          "name": "Quizymode",
+          "url": "https://www.quizymode.com",
+          "description":
+            "Smart learning platform with flashcards and interactive quizzes",
+          "potentialAction": {
+            "@type": "SearchAction",
+            "target": "https://www.quizymode.com/items?search={search_term_string}",
+            "query-input": "required name=search_term_string",
+          },
+        }}
+      />
+      <div className="min-h-screen">
       {/* Hero Section */}
       <div className="bg-gradient-to-br from-indigo-600 to-purple-600 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
@@ -245,6 +263,30 @@ const HomePage = () => {
             </a>
           </div>
         </div>
+
+        {/* Footer Links */}
+        <div className="mt-12 pt-8 border-t border-gray-200">
+          <div className="flex flex-wrap justify-center gap-6 text-sm">
+            <Link
+              to="/about"
+              className="text-gray-600 hover:text-indigo-600 transition-colors"
+            >
+              About
+            </Link>
+            <Link
+              to="/roadmap"
+              className="text-gray-600 hover:text-indigo-600 transition-colors"
+            >
+              Roadmap
+            </Link>
+            <Link
+              to="/feedback"
+              className="text-gray-600 hover:text-indigo-600 transition-colors"
+            >
+              Feedback
+            </Link>
+          </div>
+        </div>
       </div>
 
       {/* Build Timestamp Footer */}
@@ -255,7 +297,8 @@ const HomePage = () => {
           </p>
         </div>
       )}
-    </div>
+      </div>
+    </>
   );
 };
 

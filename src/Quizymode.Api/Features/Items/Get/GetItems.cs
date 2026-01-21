@@ -47,7 +47,8 @@ public static class GetItems
         string Explanation,
         DateTime CreatedAt,
         List<KeywordResponse> Keywords,
-        List<CollectionResponse> Collections);
+        List<CollectionResponse> Collections,
+        string? Source);
 
     public sealed record KeywordResponse(
         string Id,

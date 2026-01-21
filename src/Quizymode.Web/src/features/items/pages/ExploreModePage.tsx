@@ -1,14 +1,19 @@
-import { useState, useEffect } from "react";
-import { useParams, useNavigate } from "react-router-dom";
+import { useState, useEffect, useMemo } from "react";
+import { useParams, useNavigate, useSearchParams } from "react-router-dom";
 import { useQuery } from "@tanstack/react-query";
 import { itemsApi } from "@/api/items";
 import { collectionsApi } from "@/api/collections";
+import { categoriesApi } from "@/api/categories";
 import { useAuth } from "@/contexts/AuthContext";
 import LoadingSpinner from "@/components/LoadingSpinner";
 import ErrorMessage from "@/components/ErrorMessage";
 import ItemRatingsComments from "@/components/ItemRatingsComments";
 import ItemCollectionsModal from "@/components/ItemCollectionsModal";
 import { Link } from "react-router-dom";
+import {
+  categoryNameToSlug,
+  findCategoryNameFromSlug,
+} from "@/utils/categorySlug";
 import {
   FolderIcon,
   ChevronLeftIcon,
@@ -17,14 +22,39 @@ import {
 } from "@heroicons/react/24/outline";
 
 const ExploreModePage = () => {
-  const { category, collectionId, itemId } = useParams();
+  const { category: categorySlug, collectionId, itemId } = useParams();
+  const [searchParams] = useSearchParams();
   const navigate = useNavigate();
   const { isAuthenticated } = useAuth();
+  const returnUrl = searchParams.get("return");
   const [currentIndex, setCurrentIndex] = useState(0);
   const [count] = useState(100); // Increased default to fetch more items
   const [selectedItemForCollections, setSelectedItemForCollections] = useState<
     string | null
   >(null);
+
+  // Fetch categories to convert slug to actual category name
+  const { data: categoriesData } = useQuery({
+    queryKey: ["categories"],
+    queryFn: () => categoriesApi.getAll(),
+    enabled: !!categorySlug && !collectionId,
+  });
+
+  // Convert category slug to actual category name
+  // Returns undefined while categories are loading to prevent API calls with invalid slug
+  const category = useMemo(() => {
+    if (!categorySlug) return undefined;
+    if (!categoriesData?.categories) return undefined; // Wait for categories to load
+    const categoryNames = categoriesData.categories.map((c) => c.category);
+    const actualCategoryName = findCategoryNameFromSlug(
+      categorySlug,
+      categoryNames,
+    );
+    return actualCategoryName || categorySlug; // Fallback to slug if not found in list
+  }, [categorySlug, categoriesData?.categories]);
+
+  // Track whether we're still resolving the category name from slug
+  const isCategoryResolving = !!categorySlug && !categoriesData?.categories;
 
   // Check sessionStorage for stored items (when navigating with itemId from ItemsPage or comments)
   // Must be declared before useQuery that references it
@@ -61,7 +91,7 @@ const ExploreModePage = () => {
   const { data: singleItemData, isLoading: singleItemLoading } = useQuery({
     queryKey: ["item", itemId],
     queryFn: () => itemsApi.getById(itemId!),
-    enabled: !!itemId && !storedItems, // Disable when restoring from sessionStorage
+    enabled: !!itemId, // Always fetch when itemId is present to get latest data including collections
   });
 
   const { data: collectionData, isLoading: collectionLoading } = useQuery({
@@ -79,7 +109,7 @@ const ExploreModePage = () => {
   const { data, isLoading, error, refetch } = useQuery({
     queryKey: ["randomItems", category, count],
     queryFn: () => itemsApi.getRandom(category, count),
-    enabled: !collectionId && !storedItems, // Don't load if we have stored items
+    enabled: !collectionId && !storedItems && !isCategoryResolving, // Don't load if we have stored items or category is still resolving
   });
 
   // Restore items and index from sessionStorage on mount
@@ -145,17 +175,16 @@ const ExploreModePage = () => {
   }, [itemId, collectionId, category, hasRestoredItems]);
 
   // Use full list if available (when category/collection is present), otherwise use stored items or fetched items
-  // Never use singleItemData when storedItems exists (restoring from sessionStorage)
   const items = collectionId
     ? collectionData?.items ||
-      (singleItemData && !storedItems ? [singleItemData] : [])
+      (singleItemData ? [singleItemData] : [])
     : storedItems ||
       data?.items ||
-      (singleItemData && !storedItems ? [singleItemData] : []);
+      (singleItemData ? [singleItemData] : []);
 
   const isLoadingItems = collectionId
     ? collectionLoading
-    : isLoading || (itemId ? singleItemLoading : false);
+    : isCategoryResolving || isLoading || (itemId ? singleItemLoading : false);
 
   // Calculate current index based on itemId if present
   useEffect(() => {
@@ -167,7 +196,10 @@ const ExploreModePage = () => {
     }
   }, [itemId, items]);
 
-  const currentItem = items[currentIndex];
+  // Use singleItemData for currentItem if available and itemId matches, to ensure we have latest data including collections
+  const currentItem = (itemId && singleItemData && singleItemData.id === itemId) 
+    ? singleItemData 
+    : items[currentIndex];
 
   useEffect(() => {
     if (items.length > 0 && currentIndex >= items.length) {
@@ -250,7 +282,7 @@ const ExploreModePage = () => {
         {category && !collectionId && (
           <div className="mb-6 flex items-center space-x-4">
             <button
-              onClick={() => navigate("/categories")}
+              onClick={() => navigate(returnUrl || "/categories")}
               className="flex items-center px-3 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-md hover:bg-gray-50"
             >
               <ArrowLeftIcon className="h-4 w-4 mr-2" />
@@ -259,6 +291,19 @@ const ExploreModePage = () => {
             <h1 className="text-3xl font-bold text-gray-900">
               {category}
             </h1>
+          </div>
+        )}
+        {!category && !collectionId && (
+          <div className="mb-6 flex items-center space-x-4">
+            {returnUrl && (
+              <button
+                onClick={() => navigate(returnUrl)}
+                className="flex items-center px-3 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-md hover:bg-gray-50"
+              >
+                <ArrowLeftIcon className="h-4 w-4 mr-2" />
+                Go Back
+              </button>
+            )}
           </div>
         )}
         <div className="bg-white shadow rounded-lg p-6 mb-4">
@@ -278,15 +323,16 @@ const ExploreModePage = () => {
                       setCurrentIndex(newIndex);
                       // Update URL based on context
                       if (items[newIndex]) {
+                        const returnParam = returnUrl ? `?return=${encodeURIComponent(returnUrl)}` : "";
                         if (collectionId) {
                           navigate(
-                            `/explore/collection/${collectionId}/item/${items[newIndex].id}`,
+                            `/explore/collection/${collectionId}/item/${items[newIndex].id}${returnParam}`,
                             { replace: true }
                           );
                         } else if (category) {
-                          navigate(`/explore/${encodeURIComponent(category)}/item/${items[newIndex].id}`, { replace: true });
+                          navigate(`/explore/${categoryNameToSlug(category)}/item/${items[newIndex].id}${returnParam}`, { replace: true });
                         } else {
-                          navigate(`/explore/item/${items[newIndex].id}`, {
+                          navigate(`/explore/item/${items[newIndex].id}${returnParam}`, {
                             replace: true,
                           });
                         }
@@ -309,15 +355,16 @@ const ExploreModePage = () => {
                       setCurrentIndex(newIndex);
                       // Update URL based on context
                       if (items[newIndex]) {
+                        const returnParam = returnUrl ? `?return=${encodeURIComponent(returnUrl)}` : "";
                         if (collectionId) {
                           navigate(
-                            `/explore/collection/${collectionId}/item/${items[newIndex].id}`,
+                            `/explore/collection/${collectionId}/item/${items[newIndex].id}${returnParam}`,
                             { replace: true }
                           );
                         } else if (category) {
-                          navigate(`/explore/${encodeURIComponent(category)}/item/${items[newIndex].id}`, { replace: true });
+                          navigate(`/explore/${categoryNameToSlug(category)}/item/${items[newIndex].id}${returnParam}`, { replace: true });
                         } else {
-                          navigate(`/explore/item/${items[newIndex].id}`, {
+                          navigate(`/explore/item/${items[newIndex].id}${returnParam}`, {
                             replace: true,
                           });
                         }
@@ -361,8 +408,11 @@ const ExploreModePage = () => {
                 </div>
               )}
 
-              <div className="text-sm text-gray-500">
-                Category: {currentItem.category}
+              <div className="text-sm text-gray-500 space-y-1">
+                <div>Category: {currentItem.category}</div>
+                {currentItem.source && (
+                  <div>Source: {currentItem.source}</div>
+                )}
               </div>
 
               {/* Ratings and Comments */}
@@ -372,15 +422,17 @@ const ExploreModePage = () => {
               />
 
               {/* Collection Controls */}
-              {isAuthenticated && (
+              {(isAuthenticated || (currentItem.collections && currentItem.collections.length > 0)) && (
                 <div className="mt-4 flex items-center gap-2 flex-wrap">
-                  <button
-                    onClick={() => setSelectedItemForCollections(currentItem.id)}
-                    className="p-2 text-blue-600 hover:bg-blue-50 rounded-md"
-                    title="Manage collections"
-                  >
-                    <FolderIcon className="h-5 w-5" />
-                  </button>
+                  {isAuthenticated && (
+                    <button
+                      onClick={() => setSelectedItemForCollections(currentItem.id)}
+                      className="p-2 text-blue-600 hover:bg-blue-50 rounded-md"
+                      title="Manage collections"
+                    >
+                      <FolderIcon className="h-5 w-5" />
+                    </button>
+                  )}
                   {currentItem.collections && currentItem.collections.length > 0 && (
                     <div className="flex items-center gap-2 flex-wrap">
                       {currentItem.collections.map((collection: { id: string; name: string }) => (
@@ -440,6 +492,8 @@ const ExploreModePage = () => {
             onClick={() => {
               if (collectionId) {
                 navigate(`/collections/${collectionId}`);
+              } else if (returnUrl) {
+                navigate(returnUrl);
               } else {
                 navigate("/categories");
               }

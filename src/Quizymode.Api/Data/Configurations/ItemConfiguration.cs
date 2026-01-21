@@ -60,6 +60,9 @@ internal sealed class ItemConfiguration : IEntityTypeConfiguration<Item>
             .IsRequired()
             .HasDefaultValue(false);
 
+        builder.Property(x => x.Source)
+            .HasMaxLength(50);
+
         builder.Property(x => x.CategoryId)
             .IsRequired(false);
 

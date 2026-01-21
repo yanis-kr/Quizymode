@@ -102,7 +102,7 @@ public sealed class AddItemsBulkTests : ItemTestFixture
             IsPrivate: false,
             Items: new List<AddItemsBulk.ItemRequest>());
 
-        AddItemsBulk.Validator validator = new();
+        AddItemsBulk.Validator validator = new(_userContextMock.Object);
 
         // Act
         FluentValidation.Results.ValidationResult result = validator.Validate(request);
@@ -129,7 +129,13 @@ public sealed class AddItemsBulkTests : ItemTestFixture
             IsPrivate: false,
             Items: items);
 
-        AddItemsBulk.Validator validator = new();
+        // Use non-admin user context to test the 100-item limit for regular users
+        Mock<IUserContext> nonAdminUserContextMock = new();
+        nonAdminUserContextMock.Setup(x => x.UserId).Returns("test-user");
+        nonAdminUserContextMock.Setup(x => x.IsAuthenticated).Returns(true);
+        nonAdminUserContextMock.Setup(x => x.IsAdmin).Returns(false);
+
+        AddItemsBulk.Validator validator = new(nonAdminUserContextMock.Object);
 
         // Act
         FluentValidation.Results.ValidationResult result = validator.Validate(request);

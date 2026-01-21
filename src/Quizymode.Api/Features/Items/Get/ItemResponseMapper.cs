@@ -29,7 +29,8 @@ internal sealed class ItemResponseMapper
             item.Explanation,
             item.CreatedAt,
             visibleKeywords,
-            collections);
+            collections,
+            item.Source);
     }
 
     private List<GetItems.KeywordResponse> FilterVisibleKeywords(Item item)

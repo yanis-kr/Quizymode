@@ -86,7 +86,8 @@ internal static class AddItemHandler
                 CreatedBy = userId,
                 CreatedAt = DateTime.UtcNow,
                 ReadyForReview = request.ReadyForReview,
-                CategoryId = category.Id
+                CategoryId = category.Id,
+                Source = string.IsNullOrWhiteSpace(request.Source) ? null : request.Source.Trim()
             };
 
             db.Items.Add(item);
@@ -179,7 +180,8 @@ internal static class AddItemHandler
                 item.CorrectAnswer,
                 item.IncorrectAnswers,
                 item.Explanation,
-                item.CreatedAt);
+                item.CreatedAt,
+                item.Source);
 
             return Result.Success(response);
         }
