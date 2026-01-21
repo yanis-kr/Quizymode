@@ -404,8 +404,11 @@ const ExploreModePage = () => {
                 </div>
               )}
 
-              <div className="text-sm text-gray-500">
-                Category: {currentItem.category}
+              <div className="text-sm text-gray-500 space-y-1">
+                <div>Category: {currentItem.category}</div>
+                {currentItem.source && (
+                  <div>Source: {currentItem.source}</div>
+                )}
               </div>
 
               {/* Ratings and Comments */}

@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useNavigate, useLocation } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { useMutation } from "@tanstack/react-query";
 import { useAuth } from "@/contexts/AuthContext";
 import { Navigate } from "react-router-dom";
@@ -21,16 +21,16 @@ interface BulkCreateRequest {
     incorrectAnswers: string[];
     explanation: string;
     keywords?: Array<{ name: string }>; // isPrivate will be set automatically to match item's isPrivate
+    source?: string;
   }>;
 }
 
 const BulkCreateItemsPage = () => {
   const { isAuthenticated, isAdmin } = useAuth();
   const navigate = useNavigate();
-  const location = useLocation();
-  const isAdminRoute = location.pathname === "/admin/bulk-create";
   const [jsonInput, setJsonInput] = useState("");
   const [isPrivate, setIsPrivate] = useState(!isAdmin); // Default to true for non-admin
+  const [source, setSource] = useState("");
   const [validationError, setValidationError] = useState<string>("");
   const [isPromptExampleOpen, setIsPromptExampleOpen] = useState(false);
   const [isJsonSampleOpen, setIsJsonSampleOpen] = useState(false);
@@ -58,6 +58,7 @@ const BulkCreateItemsPage = () => {
               name: k.name,
               isPrivate: data.isPrivate, // Keywords inherit the item's isPrivate value
             })) || undefined,
+          source: item.source || undefined,
         })),
       };
 
@@ -109,7 +110,7 @@ const BulkCreateItemsPage = () => {
       if (response.createdCount > 0 && response.failedCount === 0) {
         // Only auto-navigate if all items succeeded
         setTimeout(() => {
-          navigate(isAdminRoute ? "/admin" : "/my-items");
+          navigate("/my-items");
         }, 2000);
       }
     },
@@ -140,8 +141,9 @@ const BulkCreateItemsPage = () => {
         return;
       }
 
-      if (parsedItems.length > 100) {
-        setValidationError("Cannot create more than 100 items at once");
+      const maxItems = isAdmin ? 1000 : 100;
+      if (parsedItems.length > maxItems) {
+        setValidationError(`Cannot create more than ${maxItems} items at once`);
         return;
       }
 
@@ -226,6 +228,7 @@ const BulkCreateItemsPage = () => {
               ? String(item.explanation).trim()
               : "",
             keywords: processedKeywords,
+            source: source.trim() || undefined, // Apply source from form to all items
           };
         }),
       };
@@ -285,9 +288,10 @@ const BulkCreateItemsPage = () => {
                 <button
                   type="button"
                   onClick={async () => {
+                    const maxItemsText = isAdmin ? "1,000" : "100";
                     const promptText = `You are creating study flashcards for an app called Quizymode.
 
-Create up to 100 quiz items about <replace-me: Topic or Category Name>. Attach Study Guide (optional).
+Create up to ${maxItemsText} quiz items about <replace-me: Topic or Category Name>. Attach Study Guide (optional).
 
 Each item must be a JSON object with this exact shape:
 
@@ -297,11 +301,7 @@ Each item must be a JSON object with this exact shape:
   "correctAnswer": "Correct answer",
   "incorrectAnswers": ["Wrong answer 1", "Wrong answer 2", "Wrong answer 3"],
   "explanation": "Short explanation of why the correct answer is right (optional but recommended)",
-  "keywords": [
-    {
-      "name": "keyword-name"
-    }
-  ]
+  "source": "ChatGPT"
 }
 
 Requirements:
@@ -312,7 +312,7 @@ Requirements:
   - a non-empty "question" (max 1,000 characters)
   - a non-empty "correctAnswer" (max 200 characters)
   - 1–5 "incorrectAnswers" (each max 200 characters)
-  - "keywords" (optional array of keyword objects, each with "name" max 10 characters - keywords will inherit the item's privacy setting)
+  - "source" (optional, max 50 characters - e.g., "ChatGPT", "Claude", "Manual")
 - All strings must be plain text (no HTML, no LaTeX).
 
 Now generate the JSON array only.`;
@@ -333,7 +333,7 @@ Now generate the JSON array only.`;
               <pre className="text-xs text-gray-800 whitespace-pre-wrap font-mono bg-gray-50 p-4 rounded border border-gray-200">
                 {`You are creating study flashcards for an app called Quizymode.
 
-Create up to 100 quiz items about <replace-me: Topic or Category Name>. Attach Study Guide (optional).
+Create up to ${isAdmin ? "1,000" : "100"} quiz items about <replace-me: Topic or Category Name>. Attach Study Guide (optional).
 
 Each item must be a JSON object with this exact shape:
 
@@ -343,11 +343,7 @@ Each item must be a JSON object with this exact shape:
   "correctAnswer": "Correct answer",
   "incorrectAnswers": ["Wrong answer 1", "Wrong answer 2", "Wrong answer 3"],
   "explanation": "Short explanation of why the correct answer is right (optional but recommended)",
-  "keywords": [
-    {
-      "name": "keyword-name"
-    }
-  ]
+  "source": "ChatGPT"
 }
 
 Requirements:
@@ -358,7 +354,7 @@ Requirements:
   - a non-empty "question" (max 1,000 characters)
   - a non-empty "correctAnswer" (max 200 characters)
   - 1–5 "incorrectAnswers" (each max 200 characters)
-  - "keywords" (optional array of keyword objects, each with "name" max 10 characters - keywords will inherit the item's privacy setting)
+  - "source" (optional, max 50 characters - e.g., "ChatGPT", "Claude", "Manual")
 - All strings must be plain text (no HTML, no LaTeX).
 
 Now generate the JSON array only.`}
@@ -375,7 +371,7 @@ Now generate the JSON array only.`}
             className="w-full flex items-center justify-between px-4 py-3 text-left hover:bg-gray-50 transition-colors"
           >
             <span className="text-sm font-medium text-gray-900">
-              📋 JSON Sample (with keywords)
+              📋 JSON Sample
             </span>
             {isJsonSampleOpen ? (
               <ChevronUpIcon className="h-5 w-5 text-gray-500" />
@@ -396,11 +392,7 @@ Now generate the JSON array only.`}
     "correctAnswer": "Hola",
     "incorrectAnswers": ["Adiós", "Gracias", "Por favor"],
     "explanation": "Hola is the standard Spanish greeting for 'Hello'.",
-    "keywords": [
-      {
-        "name": "greeting"
-      }
-    ]
+    "source": "ChatGPT"
   }
 ]`;
                     try {
@@ -425,11 +417,7 @@ Now generate the JSON array only.`}
     "correctAnswer": "Hola",
     "incorrectAnswers": ["Adiós", "Gracias", "Por favor"],
     "explanation": "Hola is the standard Spanish greeting for 'Hello'.",
-    "keywords": [
-      {
-        "name": "greeting"
-      }
-    ]
+    "source": "ChatGPT"
   }
 ]`}
               </pre>
@@ -495,7 +483,24 @@ Now generate the JSON array only.`}
               placeholder='[\n  {\n    "category": "Category",\n    "question": "Question?",\n    "correctAnswer": "Answer",\n    "incorrectAnswers": ["Wrong 1", "Wrong 2"],\n    "explanation": "Explanation"\n  }\n]'
             />
             <p className="mt-1 text-sm text-gray-500">
-              Paste your JSON array here (up to 100 items). Each item must include a "category" field.
+              Paste your JSON array here (up to {isAdmin ? "1,000" : "100"} items). Each item must include a "category" field.
+            </p>
+          </div>
+
+          <div>
+            <label className="block text-sm font-medium text-gray-700 mb-2">
+              Source (optional)
+            </label>
+            <input
+              type="text"
+              value={source}
+              onChange={(e) => setSource(e.target.value)}
+              maxLength={50}
+              className="w-full px-3 py-2 border border-gray-300 rounded-md text-sm"
+              placeholder="e.g., ChatGPT, Claude, Manual, Textbook Name"
+            />
+            <p className="mt-1 text-sm text-gray-500">
+              Optional source attribution for all items (max 50 characters).
             </p>
           </div>
 
@@ -520,7 +525,7 @@ Now generate the JSON array only.`}
           <div className="flex justify-end space-x-4">
             <button
               type="button"
-              onClick={() => navigate(isAdminRoute ? "/admin" : "/my-items")}
+              onClick={() => navigate("/my-items")}
               className="px-4 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-md hover:bg-gray-50"
             >
               Cancel
@@ -592,7 +597,7 @@ Now generate the JSON array only.`}
                       resultModal.message.includes("Successfully created") &&
                       !resultModal.details
                     ) {
-                      navigate(isAdminRoute ? "/admin" : "/my-items");
+                      navigate("/my-items");
                     }
                   }}
                   className="px-4 py-2 text-sm font-medium text-white bg-indigo-600 rounded-md hover:bg-indigo-700"

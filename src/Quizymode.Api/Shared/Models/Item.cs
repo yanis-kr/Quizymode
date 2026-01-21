@@ -25,6 +25,8 @@ public sealed class Item
 
     public bool ReadyForReview { get; set; }
 
+    public string? Source { get; set; }
+
     // Navigation property for keywords (not mapped directly, accessed via ItemKeywords)
     public List<ItemKeyword> ItemKeywords { get; set; } = new();
 

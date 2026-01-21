@@ -36,6 +36,7 @@ export interface ItemResponse {
   createdAt: string;
   keywords: KeywordResponse[];
   collections: ItemCollectionResponse[];
+  source?: string | null;
 }
 
 export interface ItemsResponse {
@@ -100,6 +101,7 @@ export interface CreateItemRequest {
   incorrectAnswers: string[];
   explanation: string;
   keywords?: KeywordRequest[];
+  source?: string;
 }
 
 export interface UpdateItemRequest {
@@ -110,6 +112,7 @@ export interface UpdateItemRequest {
   incorrectAnswers?: string[];
   explanation?: string;
   keywords?: KeywordRequest[];
+  source?: string;
 }
 
 export interface CreateCollectionRequest {

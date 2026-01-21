@@ -22,7 +22,8 @@ public static class UpdateItem
         string Explanation,
         bool IsPrivate,
         List<KeywordRequest>? Keywords = null,
-        bool? ReadyForReview = null);
+        bool? ReadyForReview = null,
+        string? Source = null);
 
     public sealed record Response(
         string Id,
@@ -32,7 +33,8 @@ public static class UpdateItem
         string CorrectAnswer,
         List<string> IncorrectAnswers,
         string Explanation,
-        DateTime CreatedAt);
+        DateTime CreatedAt,
+        string? Source);
 
     public sealed class Validator : AbstractValidator<Request>
     {
@@ -72,6 +74,10 @@ public static class UpdateItem
                 .WithMessage("Cannot assign more than 50 keywords to an item")
                 .ForEach(rule => rule
                     .SetValidator(new KeywordRequestValidator()));
+
+            RuleFor(x => x.Source)
+                .MaximumLength(50)
+                .WithMessage("Source must not exceed 50 characters");
         }
     }
 
@@ -192,6 +198,7 @@ public static class UpdateItem
             }
             item.FuzzySignature = fuzzySignature;
             item.FuzzyBucket = fuzzyBucket;
+            item.Source = string.IsNullOrWhiteSpace(request.Source) ? null : request.Source.Trim();
 
             // Handle keywords update
             if (request.Keywords is not null)
@@ -295,7 +302,8 @@ public static class UpdateItem
                 item.CorrectAnswer,
                 item.IncorrectAnswers,
                 item.Explanation,
-                item.CreatedAt);
+                item.CreatedAt,
+                item.Source);
 
             return Result.Success(response);
         }
