@@ -1,35 +1,17 @@
-import { useState, useEffect } from "react";
-import { useNavigate, Link, useSearchParams } from "react-router-dom";
+import { useState } from "react";
+import { useNavigate, Link } from "react-router-dom";
 import { useAuth } from "@/contexts/AuthContext";
 
 const LoginPage = () => {
   const navigate = useNavigate();
-  const [searchParams] = useSearchParams();
-  const { login, isAuthenticated, isLoading: authLoading, logout } = useAuth();
+  const { login, isAuthenticated, isLoading: authLoading } = useAuth();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
   const [isLoading, setIsLoading] = useState(false);
 
-  // Handle unauthorized redirects (401 errors)
-  useEffect(() => {
-    const isUnauthorized = searchParams.get("unauthorized") === "true";
-    if (isUnauthorized && !authLoading) {
-      // Clear auth state if coming from a 401 error
-      logout().catch(() => {
-        // Ignore errors during logout
-      });
-      // Remove the query parameter from URL
-      navigate("/login", { replace: true });
-    }
-  }, [searchParams, authLoading, logout, navigate]);
-
-  // If already authenticated (and not from unauthorized redirect), redirect to home
-  if (
-    !authLoading &&
-    isAuthenticated &&
-    searchParams.get("unauthorized") !== "true"
-  ) {
+  // If already authenticated, redirect to home
+  if (!authLoading && isAuthenticated) {
     navigate("/", { replace: true });
     return null;
   }

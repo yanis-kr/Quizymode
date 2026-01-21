@@ -2,8 +2,6 @@ import { useState, useEffect, useCallback } from "react";
 import type {
   MyItemsFilters,
   FilterType,
-  ItemTypeFilter,
-  RatingFilterValue,
 } from "../types/filters";
 
 const initialFilters: MyItemsFilters = {

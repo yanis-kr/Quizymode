@@ -1,9 +1,9 @@
 import { FilterPanel } from "./FilterSection";
-import type { ItemTypeFilter } from "../../types/filters";
+import type { ItemTypeFilter as ItemTypeFilterValue } from "../../types/filters";
 
 interface ItemTypeFilterProps {
-  value: ItemTypeFilter;
-  onChange: (value: ItemTypeFilter) => void;
+  value: ItemTypeFilterValue;
+  onChange: (value: ItemTypeFilterValue) => void;
   onRemove: () => void;
 }
 

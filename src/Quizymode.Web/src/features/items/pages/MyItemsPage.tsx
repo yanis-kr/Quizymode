@@ -225,11 +225,12 @@ const MyItemsPage = () => {
   ]);
 
   // Reset page if it exceeds available pages (e.g., after filtering)
+  // Only reset when data is loaded and page is actually invalid
   useEffect(() => {
-    if (page > filteredTotalPages && filteredTotalPages > 0) {
+    if (!isLoading && data && page > filteredTotalPages && filteredTotalPages > 0) {
       setPage(1);
     }
-  }, [page, filteredTotalPages]);
+  }, [page, filteredTotalPages, isLoading, data]);
 
   // Determine available filters to add
   const allFilterTypes: FilterType[] = [
