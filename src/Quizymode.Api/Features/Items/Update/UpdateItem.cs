@@ -198,7 +198,10 @@ public static class UpdateItem
             }
             item.FuzzySignature = fuzzySignature;
             item.FuzzyBucket = fuzzyBucket;
-            item.Source = string.IsNullOrWhiteSpace(request.Source) ? null : request.Source.Trim();
+            if (request.Source is not null)
+            {
+                item.Source = string.IsNullOrWhiteSpace(request.Source) ? null : request.Source.Trim();
+            }
 
             // Handle keywords update
             if (request.Keywords is not null)

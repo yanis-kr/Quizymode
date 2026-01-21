@@ -41,16 +41,20 @@ const ExploreModePage = () => {
   });
 
   // Convert category slug to actual category name
+  // Returns undefined while categories are loading to prevent API calls with invalid slug
   const category = useMemo(() => {
     if (!categorySlug) return undefined;
-    if (!categoriesData?.categories) return categorySlug; // Fallback to slug if categories not loaded
+    if (!categoriesData?.categories) return undefined; // Wait for categories to load
     const categoryNames = categoriesData.categories.map((c) => c.category);
     const actualCategoryName = findCategoryNameFromSlug(
       categorySlug,
       categoryNames,
     );
-    return actualCategoryName || categorySlug; // Fallback to slug if not found
+    return actualCategoryName || categorySlug; // Fallback to slug if not found in list
   }, [categorySlug, categoriesData?.categories]);
+
+  // Track whether we're still resolving the category name from slug
+  const isCategoryResolving = !!categorySlug && !categoriesData?.categories;
 
   // Check sessionStorage for stored items (when navigating with itemId from ItemsPage or comments)
   // Must be declared before useQuery that references it
@@ -105,7 +109,7 @@ const ExploreModePage = () => {
   const { data, isLoading, error, refetch } = useQuery({
     queryKey: ["randomItems", category, count],
     queryFn: () => itemsApi.getRandom(category, count),
-    enabled: !collectionId && !storedItems, // Don't load if we have stored items
+    enabled: !collectionId && !storedItems && !isCategoryResolving, // Don't load if we have stored items or category is still resolving
   });
 
   // Restore items and index from sessionStorage on mount
@@ -180,7 +184,7 @@ const ExploreModePage = () => {
 
   const isLoadingItems = collectionId
     ? collectionLoading
-    : isLoading || (itemId ? singleItemLoading : false);
+    : isCategoryResolving || isLoading || (itemId ? singleItemLoading : false);
 
   // Calculate current index based on itemId if present
   useEffect(() => {
