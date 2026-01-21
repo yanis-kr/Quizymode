@@ -139,7 +139,8 @@ internal static class AddItemsBulkHandler
                         FuzzyBucket = fuzzyBucket,
                         CreatedBy = userId,
                         CreatedAt = DateTime.UtcNow,
-                        CategoryId = category.Id
+                        CategoryId = category.Id,
+                        Source = string.IsNullOrWhiteSpace(itemRequest.Source) ? null : itemRequest.Source.Trim()
                     };
 
                     itemsToInsert.Add(item);

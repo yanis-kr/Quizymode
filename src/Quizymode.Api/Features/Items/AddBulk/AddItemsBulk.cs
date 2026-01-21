@@ -18,7 +18,8 @@ public static class AddItemsBulk
         string CorrectAnswer,
         List<string> IncorrectAnswers,
         string Explanation,
-        List<KeywordRequest>? Keywords = null);
+        List<KeywordRequest>? Keywords = null,
+        string? Source = null);
 
     public sealed record Request(
         bool IsPrivate,
@@ -39,15 +40,21 @@ public static class AddItemsBulk
 
     public sealed class Validator : AbstractValidator<Request>
     {
-        public Validator()
+        private readonly IUserContext _userContext;
+
+        public Validator(IUserContext userContext)
         {
+            _userContext = userContext;
+
+            int maxItems = _userContext.IsAdmin ? 1000 : 100;
+
             RuleFor(x => x.Items)
                 .NotNull()
                 .WithMessage("Items is required")
                 .Must(items => items.Count > 0)
                 .WithMessage("At least one item is required")
-                .Must(items => items.Count <= 100)
-                .WithMessage("Cannot create more than 100 items at once");
+                .Must(items => items.Count <= maxItems)
+                .WithMessage($"Cannot create more than {maxItems} items at once");
 
             RuleForEach(x => x.Items)
                 .SetValidator(new ItemRequestValidator());
@@ -88,6 +95,10 @@ public static class AddItemsBulk
             RuleFor(x => x.Explanation)
                 .MaximumLength(2000)
                 .WithMessage("Explanation must not exceed 2000 characters");
+
+            RuleFor(x => x.Source)
+                .MaximumLength(50)
+                .WithMessage("Source must not exceed 50 characters");
 
             RuleFor(x => x.Keywords)
                 .Must(keywords => keywords is null || keywords.Count <= 50)

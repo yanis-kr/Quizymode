@@ -65,7 +65,10 @@ const ItemRatingsComments = ({
       ratingsApi.createOrUpdate({ itemId, stars }),
     onSuccess: (response) => {
       setUserRating(response.stars);
+      // Invalidate individual item rating stats
       queryClient.invalidateQueries({ queryKey: ["ratingStats", itemId] });
+      // Invalidate all bulk rating stats queries (used for filtering in My Items)
+      queryClient.invalidateQueries({ queryKey: ["ratingStats", "bulk"] });
       queryClient.invalidateQueries({ queryKey: ["userRating", itemId] });
     },
   });

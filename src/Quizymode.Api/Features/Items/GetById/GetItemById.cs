@@ -19,7 +19,8 @@ public static class GetItemById
         string Explanation,
         DateTime CreatedAt,
         List<KeywordResponse> Keywords,
-        List<CollectionResponse> Collections);
+        List<CollectionResponse> Collections,
+        string? Source);
 
     public sealed record KeywordResponse(
         string Id,
@@ -146,7 +147,8 @@ public static class GetItemById
                 item.Explanation,
                 item.CreatedAt,
                 visibleKeywords,
-                collections);
+                collections,
+                item.Source);
 
             return Result.Success(response);
         }
