@@ -108,10 +108,5 @@ public sealed class ApproveItemTests : DatabaseTestFixture
 
         return item;
     }
-
-    public void Dispose()
-    {
-        DbContext?.Dispose();
-    }
 }
 
