@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 17
-VisualStudioVersion = 17.14.36414.22
+# Visual Studio Version 18
+VisualStudioVersion = 18.2.11415.280 d18.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Quizymode.Api", "src\Quizymode.Api\Quizymode.Api.csproj", "{7981AB11-11A0-B862-D377-F0467651DFB2}"
 EndProject
@@ -18,6 +18,8 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SolutionItems", "SolutionItems", "{B6AE9E1F-ECFA-46B1-9B3E-1F2492E01401}"
 	ProjectSection(SolutionItems) = preProject
 		COGNITO_SETUP.md = COGNITO_SETUP.md
+		Directory.Build.props = Directory.Build.props
+		Directory.Packages.props = Directory.Packages.props
 		get-cognito-token.http = get-cognito-token.http
 		README.md = README.md
 	EndProjectSection
