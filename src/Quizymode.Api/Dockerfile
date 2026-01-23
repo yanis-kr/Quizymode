@@ -13,6 +13,7 @@ EXPOSE 8081
 FROM mcr.microsoft.com/dotnet/sdk:10.0 AS build
 ARG BUILD_CONFIGURATION=Release
 WORKDIR /src
+COPY ["Directory.Build.props", "Directory.Packages.props", "global.json", "./"]
 COPY ["src/Quizymode.Api/Quizymode.Api.csproj", "Quizymode.Api/"]
 COPY ["src/Quizymode.Api.ServiceDefaults/Quizymode.ServiceDefaults.csproj", "Quizymode.Api.ServiceDefaults/"]
 RUN dotnet restore "./Quizymode.Api/Quizymode.Api.csproj"
