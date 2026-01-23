@@ -44,7 +44,6 @@ public static class UpdateItemCategories
                 .WithSummary("Update category for an item")
                 .WithDescription("Sets the category for an item. Must specify either CategoryId or CategoryName.")
                 .RequireAuthorization()
-                .WithOpenApi()
                 .Produces<Response>(StatusCodes.Status200OK)
                 .Produces(StatusCodes.Status400BadRequest)
                 .Produces(StatusCodes.Status404NotFound);

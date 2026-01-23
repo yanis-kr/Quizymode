@@ -17,7 +17,6 @@ public static class Logout
                 .WithSummary("Log user logout event")
                 .WithDescription("Logs a logout audit event for the current user. This should be called before the client signs out.")
                 .RequireAuthorization()
-                .WithOpenApi()
                 .Produces(StatusCodes.Status200OK)
                 .Produces(StatusCodes.Status401Unauthorized);
         }

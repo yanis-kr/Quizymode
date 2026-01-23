@@ -38,7 +38,6 @@ public static class GetAuditLogs
                 .WithSummary("Get audit logs with filters (Admin only)")
                 .WithDescription("Returns paginated audit logs with optional filtering by action types. Includes user email for logged-in users.")
                 .RequireAuthorization("Admin")
-                .WithOpenApi()
                 .Produces<Response>(StatusCodes.Status200OK);
         }
 

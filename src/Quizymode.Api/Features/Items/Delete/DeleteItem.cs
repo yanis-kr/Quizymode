@@ -17,7 +17,6 @@ public static class DeleteItem
                 .WithTags("Items")
                 .WithSummary("Delete a quiz item")
                 .RequireAuthorization()
-                .WithOpenApi()
                 .Produces(StatusCodes.Status204NoContent)
                 .Produces(StatusCodes.Status404NotFound);
         }

@@ -17,7 +17,6 @@ public static class DeleteComment
                 .WithTags("Comments")
                 .WithSummary("Delete a comment")
                 .RequireAuthorization()
-                .WithOpenApi()
                 .Produces(StatusCodes.Status204NoContent)
                 .Produces(StatusCodes.Status403Forbidden)
                 .Produces(StatusCodes.Status404NotFound)

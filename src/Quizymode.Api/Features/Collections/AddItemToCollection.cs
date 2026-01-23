@@ -61,7 +61,6 @@ public static class CollectionItems
                 .WithSummary("Add an item to a collection")
                 .WithDescription("Adds a quiz item to a collection. Body: { \"itemId\": \"<guid>\" }.")
                 .RequireAuthorization()
-                .WithOpenApi()
                 .Produces<CollectionItemResponse>(StatusCodes.Status201Created)
                 .Produces(StatusCodes.Status400BadRequest)
                 .Produces(StatusCodes.Status404NotFound);
@@ -71,7 +70,6 @@ public static class CollectionItems
                 .WithSummary("Add multiple items to a collection")
                 .WithDescription("Adds multiple quiz items to a collection. Body: { \"itemIds\": [\"<guid1>\", \"<guid2>\", ...] }.")
                 .RequireAuthorization()
-                .WithOpenApi()
                 .Produces<BulkAddResponse>(StatusCodes.Status200OK)
                 .Produces(StatusCodes.Status400BadRequest)
                 .Produces(StatusCodes.Status404NotFound);
@@ -81,7 +79,6 @@ public static class CollectionItems
                 .WithSummary("Remove an item from a collection")
                 .WithDescription("Removes a quiz item from a collection.")
                 .RequireAuthorization()
-                .WithOpenApi()
                 .Produces(StatusCodes.Status204NoContent)
                 .Produces(StatusCodes.Status404NotFound);
         }

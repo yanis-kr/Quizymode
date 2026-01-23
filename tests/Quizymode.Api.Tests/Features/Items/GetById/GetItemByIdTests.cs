@@ -131,10 +131,5 @@ public sealed class GetItemByIdTests : DatabaseTestFixture
 
         return item;
     }
-
-    public void Dispose()
-    {
-        DbContext?.Dispose();
-    }
 }
 

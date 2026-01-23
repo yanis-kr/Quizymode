@@ -39,7 +39,6 @@ public static class UpdateUserName
                 .WithTags("Users")
                 .WithSummary("Update the name for the currently authenticated user")
                 .RequireAuthorization()
-                .WithOpenApi()
                 .Produces<Response>(StatusCodes.Status200OK)
                 .Produces(StatusCodes.Status400BadRequest)
                 .Produces(StatusCodes.Status401Unauthorized)

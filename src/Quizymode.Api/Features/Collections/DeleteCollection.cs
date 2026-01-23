@@ -16,7 +16,6 @@ public static class DeleteCollection
                 .WithTags("Collections")
                 .WithSummary("Delete a collection")
                 .RequireAuthorization()
-                .WithOpenApi()
                 .Produces(StatusCodes.Status204NoContent)
                 .Produces(StatusCodes.Status404NotFound)
                 .Produces(StatusCodes.Status400BadRequest);

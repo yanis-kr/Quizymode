@@ -238,10 +238,5 @@ public sealed class UpdateCommentTests : DatabaseTestFixture
 
         return item;
     }
-
-    public void Dispose()
-    {
-        DbContext.Dispose();
-    }
 }
 

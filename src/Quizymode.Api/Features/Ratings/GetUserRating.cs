@@ -30,7 +30,6 @@ public static class GetUserRating
                 .WithSummary("Get current user's rating for an item")
                 .WithDescription("Returns the current user's rating for the specified item. Returns null if no rating exists. Requires ?itemId={guid} query parameter.")
                 .RequireAuthorization()
-                .WithOpenApi()
                 .Produces<RatingResponse>(StatusCodes.Status200OK)
                 .Produces(StatusCodes.Status401Unauthorized)
                 .Produces(StatusCodes.Status400BadRequest);

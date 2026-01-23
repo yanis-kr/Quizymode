@@ -31,7 +31,6 @@ public static class GetUserSettings
                 .WithSummary("Get all settings for the current user")
                 .WithDescription("Retrieves all user-specific settings. Returns an empty dictionary if no settings exist. Requires authentication.")
                 .RequireAuthorization()
-                .WithOpenApi()
                 .Produces<Response>(StatusCodes.Status200OK)
                 .Produces(StatusCodes.Status401Unauthorized);
         }

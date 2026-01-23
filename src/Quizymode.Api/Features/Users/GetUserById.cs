@@ -24,7 +24,6 @@ public static class GetUserById
                 .WithSummary("Get a user by their ID")
                 .WithDescription("Admin only endpoint to get user details by ID")
                 .RequireAuthorization("Admin")
-                .WithOpenApi()
                 .Produces<Response>(StatusCodes.Status200OK)
                 .Produces(StatusCodes.Status400BadRequest)
                 .Produces(StatusCodes.Status401Unauthorized)

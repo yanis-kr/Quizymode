@@ -16,7 +16,6 @@ public static class LogLoginFailed
                 .WithTags("Auth")
                 .WithSummary("Log login failure event")
                 .WithDescription("Logs a LoginFailed audit event. Can be called by anonymous users. Email is optional for privacy.")
-                .WithOpenApi()
                 .Produces(StatusCodes.Status200OK);
         }
 

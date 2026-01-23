@@ -46,7 +46,6 @@ public static class AddComment
                 .WithTags("Comments")
                 .WithSummary("Create a comment for an item")
                 .RequireAuthorization()
-                .WithOpenApi()
                 .Produces<Response>(StatusCodes.Status201Created)
                 .Produces(StatusCodes.Status400BadRequest);
         }

@@ -300,10 +300,5 @@ public sealed class AddOrUpdateRatingTests : DatabaseTestFixture
 
         return item;
     }
-
-    public void Dispose()
-    {
-        DbContext.Dispose();
-    }
 }
 

@@ -36,7 +36,6 @@ public static class AddCollection
                 .WithTags("Collections")
                 .WithSummary("Create a named private collection")
                 .RequireAuthorization()
-                .WithOpenApi()
                 .Produces<Response>(StatusCodes.Status201Created)
                 .Produces(StatusCodes.Status400BadRequest);
         }

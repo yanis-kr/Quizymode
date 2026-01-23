@@ -20,7 +20,6 @@ public static class GetAllCollections
                 .WithSummary("Get all collections from all users (Admin only)")
                 .WithDescription("Admin endpoint to view names and IDs of all collections across all users.")
                 .RequireAuthorization("Admin")
-                .WithOpenApi()
                 .Produces<Response>(StatusCodes.Status200OK);
         }
 

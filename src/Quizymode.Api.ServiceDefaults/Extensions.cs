@@ -106,7 +106,6 @@ public static class Extensions
                     .AddEntityFrameworkCoreInstrumentation(options =>
                     {
                         // Instrument EF Core database operations
-                        options.SetDbStatementForText = true;
                         options.EnrichWithIDbCommand = (activity, command) =>
                         {
                             activity.SetTag("db.system", "postgresql");
