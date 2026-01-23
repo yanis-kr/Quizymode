@@ -25,7 +25,6 @@ internal static partial class StartupExtensions
             if (builder.Environment.IsDevelopment())
             {
                 // In development, trust localhost and loopback addresses for Aspire proxy
-                options.KnownNetworks.Clear();
                 options.KnownProxies.Clear();
                 options.KnownProxies.Add(System.Net.IPAddress.Loopback);
                 options.KnownProxies.Add(System.Net.IPAddress.IPv6Loopback);
