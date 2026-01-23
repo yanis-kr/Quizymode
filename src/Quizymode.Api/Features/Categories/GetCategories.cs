@@ -39,7 +39,6 @@ public static class GetCategories
                 .WithTags("Categories")
                 .WithSummary("Get unique categories")
                 .WithDescription("Returns unique categories with item counts and average stars, sorted by highest average rating first, then by name.")
-                .WithOpenApi()
                 .Produces<Response>(StatusCodes.Status200OK);
         }
 

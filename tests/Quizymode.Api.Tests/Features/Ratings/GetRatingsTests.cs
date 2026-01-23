@@ -176,10 +176,5 @@ public sealed class GetRatingsTests : DatabaseTestFixture
 
         return item;
     }
-
-    public void Dispose()
-    {
-        DbContext.Dispose();
-    }
 }
 

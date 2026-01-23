@@ -24,7 +24,6 @@ public static class GetCollectionById
                 .WithTags("Collections")
                 .WithSummary("Get a collection by ID")
                 .RequireAuthorization()
-                .WithOpenApi()
                 .Produces<Response>(StatusCodes.Status200OK)
                 .Produces(StatusCodes.Status403Forbidden)
                 .Produces(StatusCodes.Status404NotFound);

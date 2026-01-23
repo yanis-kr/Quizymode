@@ -146,9 +146,4 @@ public sealed class DeleteItemTests : DatabaseTestFixture
 
         return item;
     }
-
-    public void Dispose()
-    {
-        DbContext.Dispose();
-    }
 }

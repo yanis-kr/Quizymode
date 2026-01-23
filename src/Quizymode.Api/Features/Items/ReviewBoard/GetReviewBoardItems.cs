@@ -28,7 +28,6 @@ public static class GetReviewBoardItems
                 .WithTags("Admin")
                 .WithSummary("Get items ready for review (Admin only)")
                 .RequireAuthorization("Admin")
-                .WithOpenApi()
                 .Produces<Response>(StatusCodes.Status200OK);
         }
 

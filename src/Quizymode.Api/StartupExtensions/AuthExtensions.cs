@@ -69,7 +69,7 @@ internal static partial class StartupExtensions
                 };
 
                 // DEBUG: Add event handlers to see what's happening during token validation
-                options.Events = new Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerEvents
+                options.Events = new JwtBearerEvents
                 {
                     OnAuthenticationFailed = context =>
                     {

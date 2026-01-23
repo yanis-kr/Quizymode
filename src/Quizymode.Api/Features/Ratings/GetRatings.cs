@@ -28,7 +28,6 @@ public static class GetRatings
                 .WithTags("Ratings")
                 .WithSummary("Get ratings statistics")
                 .WithDescription("Returns ratings count and average. Optionally filter by itemId using ?itemId={guid}.")
-                .WithOpenApi()
                 .Produces<Response>(StatusCodes.Status200OK);
         }
 

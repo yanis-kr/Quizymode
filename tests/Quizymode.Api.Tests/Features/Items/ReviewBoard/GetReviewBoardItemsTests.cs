@@ -149,10 +149,5 @@ public sealed class GetReviewBoardItemsTests : DatabaseTestFixture
 
         return item;
     }
-
-    public void Dispose()
-    {
-        DbContext?.Dispose();
-    }
 }
 

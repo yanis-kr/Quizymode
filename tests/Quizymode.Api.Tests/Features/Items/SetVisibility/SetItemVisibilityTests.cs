@@ -154,10 +154,5 @@ public sealed class SetItemVisibilityTests : DatabaseTestFixture
 
         return item;
     }
-
-    public void Dispose()
-    {
-        DbContext?.Dispose();
-    }
 }
 

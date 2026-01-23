@@ -32,7 +32,6 @@ public static class GetComments
                 .WithTags("Comments")
                 .WithSummary("Get comments")
                 .WithDescription("Returns comments. Optionally filter by itemId using ?itemId={guid}.")
-                .WithOpenApi()
                 .Produces<Response>(StatusCodes.Status200OK);
         }
 

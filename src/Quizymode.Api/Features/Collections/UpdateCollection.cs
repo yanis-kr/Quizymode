@@ -37,7 +37,6 @@ public static class UpdateCollection
                 .WithTags("Collections")
                 .WithSummary("Update an existing collection")
                 .RequireAuthorization()
-                .WithOpenApi()
                 .Produces<Response>(StatusCodes.Status200OK)
                 .Produces(StatusCodes.Status400BadRequest)
                 .Produces(StatusCodes.Status404NotFound);

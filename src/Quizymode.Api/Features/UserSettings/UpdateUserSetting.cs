@@ -63,7 +63,6 @@ public static class UpdateUserSetting
                 .WithSummary("Update or create a user setting")
                 .WithDescription("Updates an existing setting or creates a new one if it doesn't exist. Requires authentication.")
                 .RequireAuthorization()
-                .WithOpenApi()
                 .Produces<Response>(StatusCodes.Status200OK)
                 .Produces(StatusCodes.Status400BadRequest)
                 .Produces(StatusCodes.Status401Unauthorized);
