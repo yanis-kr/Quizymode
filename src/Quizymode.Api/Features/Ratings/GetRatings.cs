@@ -11,7 +11,7 @@ namespace Quizymode.Api.Features.Ratings;
 /// </summary>
 public static class GetRatings
 {
-    public sealed record QueryRequest(Guid? ItemId);
+    public sealed record QueryRequest(Guid ItemId);
 
     public sealed record RatingStatsResponse(
         int Count,
@@ -24,15 +24,15 @@ public static class GetRatings
     {
         public void MapEndpoint(IEndpointRouteBuilder app)
         {
-            app.MapGet("ratings", Handler)
+            app.MapGet("ratings/{itemId}", Handler)
                 .WithTags("Ratings")
                 .WithSummary("Get ratings statistics")
-                .WithDescription("Returns ratings count and average. Optionally filter by itemId using ?itemId={guid}.")
+                .WithDescription("Returns ratings count and average for the specified item.")
                 .Produces<Response>(StatusCodes.Status200OK);
         }
 
         private static async Task<IResult> Handler(
-            Guid? itemId,
+            Guid itemId,
             ApplicationDbContext db,
             CancellationToken cancellationToken)
         {
@@ -53,12 +53,8 @@ public static class GetRatings
     {
         try
         {
-            IQueryable<Rating> query = db.Ratings.AsQueryable();
-
-            if (request.ItemId.HasValue && request.ItemId.Value != Guid.Empty)
-            {
-                query = query.Where(r => r.ItemId == request.ItemId.Value);
-            }
+            IQueryable<Rating> query = db.Ratings
+                .Where(r => r.ItemId == request.ItemId);
 
             // Only count ratings that have stars (not null)
             IQueryable<Rating> ratingsWithStars = query.Where(r => r.Stars.HasValue);

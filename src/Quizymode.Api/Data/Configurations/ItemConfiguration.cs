@@ -41,7 +41,7 @@ internal sealed class ItemConfiguration : IEntityTypeConfiguration<Item>
             .IsRequired();
 
         builder.Property(x => x.Explanation)
-            .HasMaxLength(2000);
+            .HasMaxLength(4000);
 
         builder.Property(x => x.FuzzySignature)
             .HasMaxLength(64);
@@ -61,7 +61,7 @@ internal sealed class ItemConfiguration : IEntityTypeConfiguration<Item>
             .HasDefaultValue(false);
 
         builder.Property(x => x.Source)
-            .HasMaxLength(50);
+            .HasMaxLength(200);
 
         builder.Property(x => x.CategoryId)
             .IsRequired(false);

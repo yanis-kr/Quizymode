@@ -15,7 +15,11 @@ public sealed class GetRatingsTests : DatabaseTestFixture
     public async Task HandleAsync_NoRatings_ReturnsZeroCountAndNullAverage()
     {
         // Arrange
-        GetRatings.QueryRequest request = new(null);
+        Item item = await CreateItemWithCategoryAsync(
+            Guid.NewGuid(), "geography", "What is the capital of France?", "Paris",
+            new List<string> { "Lyon" }, "", false, "test");
+
+        GetRatings.QueryRequest request = new(item.Id);
 
         // Act
         Result<GetRatings.Response> result = await GetRatings.HandleAsync(
@@ -91,40 +95,6 @@ public sealed class GetRatingsTests : DatabaseTestFixture
         result.Value.Stats.AverageStars.Should().BeNull();
     }
 
-    [Fact]
-    public async Task HandleAsync_NoItemId_ReturnsAllRatings()
-    {
-        // Arrange
-        Item item1 = await CreateItemWithCategoryAsync(
-            Guid.NewGuid(), "geography", "Question 1", "Answer 1",
-            new List<string> { "Wrong" }, "", false, "test");
-
-        Item item2 = await CreateItemWithCategoryAsync(
-            Guid.NewGuid(), "history", "Question 2", "Answer 2",
-            new List<string> { "Wrong" }, "", false, "test");
-
-        DbContext.Ratings.AddRange(
-            new Rating { Id = Guid.NewGuid(), ItemId = item1.Id, Stars = 5, CreatedBy = "user1", CreatedAt = DateTime.UtcNow },
-            new Rating { Id = Guid.NewGuid(), ItemId = item1.Id, Stars = 4, CreatedBy = "user2", CreatedAt = DateTime.UtcNow },
-            new Rating { Id = Guid.NewGuid(), ItemId = item2.Id, Stars = 3, CreatedBy = "user3", CreatedAt = DateTime.UtcNow }
-        );
-
-        await DbContext.SaveChangesAsync();
-
-        GetRatings.QueryRequest request = new(null);
-
-        // Act
-        Result<GetRatings.Response> result = await GetRatings.HandleAsync(
-            request,
-            DbContext,
-            CancellationToken.None);
-
-        // Assert
-        result.IsSuccess.Should().BeTrue();
-        result.Value.Stats.Count.Should().Be(3); // All ratings across all items
-        result.Value.Stats.AverageStars.Should().Be(4.0); // (5 + 4 + 3) / 3 = 4.0
-        result.Value.Stats.ItemId.Should().BeNull();
-    }
 
     private async Task<Item> CreateItemWithCategoryAsync(
         Guid itemId,

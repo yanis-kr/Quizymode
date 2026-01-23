@@ -32,10 +32,11 @@ public sealed class AddOrUpdateRatingTests : DatabaseTestFixture
             Guid.NewGuid(), "geography", "What is the capital of France?", "Paris",
             new List<string> { "Lyon" }, "", false, "test");
 
-        AddOrUpdateRating.Request request = new(item.Id, Stars: 5);
+        AddOrUpdateRating.Request request = new(Stars: 5);
 
         // Act
         Result<AddOrUpdateRating.Response> result = await AddOrUpdateRating.HandleAsync(
+            item.Id,
             request,
             DbContext,
             _userContextMock.Object,
@@ -63,10 +64,11 @@ public sealed class AddOrUpdateRatingTests : DatabaseTestFixture
             Guid.NewGuid(), "geography", "What is the capital of France?", "Paris",
             new List<string> { "Lyon" }, "", false, "test");
 
-        AddOrUpdateRating.Request request = new(item.Id, Stars: null);
+        AddOrUpdateRating.Request request = new(Stars: null);
 
         // Act
         Result<AddOrUpdateRating.Response> result = await AddOrUpdateRating.HandleAsync(
+            item.Id,
             request,
             DbContext,
             _userContextMock.Object,
@@ -102,10 +104,11 @@ public sealed class AddOrUpdateRatingTests : DatabaseTestFixture
         DbContext.Ratings.Add(existingRating);
         await DbContext.SaveChangesAsync();
 
-        AddOrUpdateRating.Request request = new(item.Id, Stars: 5);
+        AddOrUpdateRating.Request request = new(Stars: 5);
 
         // Act
         Result<AddOrUpdateRating.Response> result = await AddOrUpdateRating.HandleAsync(
+            item.Id,
             request,
             DbContext,
             _userContextMock.Object,
@@ -128,10 +131,11 @@ public sealed class AddOrUpdateRatingTests : DatabaseTestFixture
     public async Task HandleAsync_NonExistentItem_ReturnsNotFound()
     {
         // Arrange
-        AddOrUpdateRating.Request request = new(Guid.NewGuid(), Stars: 5);
+        AddOrUpdateRating.Request request = new(Stars: 5);
 
         // Act
         Result<AddOrUpdateRating.Response> result = await AddOrUpdateRating.HandleAsync(
+            Guid.NewGuid(),
             request,
             DbContext,
             _userContextMock.Object,
@@ -156,10 +160,11 @@ public sealed class AddOrUpdateRatingTests : DatabaseTestFixture
         userContextWithoutUserId.Setup(x => x.UserId).Returns((string?)null);
         userContextWithoutUserId.Setup(x => x.IsAuthenticated).Returns(true);
 
-        AddOrUpdateRating.Request request = new(item.Id, Stars: 5);
+        AddOrUpdateRating.Request request = new(Stars: 5);
 
         // Act
         Result<AddOrUpdateRating.Response> result = await AddOrUpdateRating.HandleAsync(
+            item.Id,
             request,
             DbContext,
             userContextWithoutUserId.Object,
@@ -176,7 +181,7 @@ public sealed class AddOrUpdateRatingTests : DatabaseTestFixture
     public void Validator_InvalidStars_ReturnsError()
     {
         // Arrange
-        AddOrUpdateRating.Request request = new(Guid.NewGuid(), Stars: 6); // Invalid: > 5
+        AddOrUpdateRating.Request request = new(Stars: 6); // Invalid: > 5
 
         AddOrUpdateRating.Validator validator = new();
 
@@ -192,7 +197,7 @@ public sealed class AddOrUpdateRatingTests : DatabaseTestFixture
     public void Validator_ZeroStars_ReturnsError()
     {
         // Arrange
-        AddOrUpdateRating.Request request = new(Guid.NewGuid(), Stars: 0); // Invalid: < 1
+        AddOrUpdateRating.Request request = new(Stars: 0); // Invalid: < 1
 
         AddOrUpdateRating.Validator validator = new();
 
@@ -208,7 +213,7 @@ public sealed class AddOrUpdateRatingTests : DatabaseTestFixture
     public void Validator_NullStars_IsValid()
     {
         // Arrange
-        AddOrUpdateRating.Request request = new(Guid.NewGuid(), Stars: null);
+        AddOrUpdateRating.Request request = new(Stars: null);
 
         AddOrUpdateRating.Validator validator = new();
 
@@ -223,7 +228,7 @@ public sealed class AddOrUpdateRatingTests : DatabaseTestFixture
     public void Validator_ValidStars_IsValid()
     {
         // Arrange
-        AddOrUpdateRating.Request request = new(Guid.NewGuid(), Stars: 3);
+        AddOrUpdateRating.Request request = new(Stars: 3);
 
         AddOrUpdateRating.Validator validator = new();
 
@@ -232,22 +237,6 @@ public sealed class AddOrUpdateRatingTests : DatabaseTestFixture
 
         // Assert
         result.IsValid.Should().BeTrue();
-    }
-
-    [Fact]
-    public void Validator_EmptyItemId_ReturnsError()
-    {
-        // Arrange
-        AddOrUpdateRating.Request request = new(Guid.Empty, Stars: 5);
-
-        AddOrUpdateRating.Validator validator = new();
-
-        // Act
-        FluentValidation.Results.ValidationResult result = validator.Validate(request);
-
-        // Assert
-        result.IsValid.Should().BeFalse();
-        result.Errors.Should().Contain(e => e.PropertyName == "ItemId");
     }
 
     private async Task<Item> CreateItemWithCategoryAsync(

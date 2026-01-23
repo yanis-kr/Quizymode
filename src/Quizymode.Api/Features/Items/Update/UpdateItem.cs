@@ -66,8 +66,8 @@ public static class UpdateItem
                     .WithMessage("Each incorrect answer must not exceed 500 characters"));
 
             RuleFor(x => x.Explanation)
-                .MaximumLength(2000)
-                .WithMessage("Explanation must not exceed 2000 characters");
+                .MaximumLength(4000)
+                .WithMessage("Explanation must not exceed 4000 characters");
 
             RuleFor(x => x.Keywords)
                 .Must(keywords => keywords is null || keywords.Count <= 50)
@@ -76,8 +76,8 @@ public static class UpdateItem
                     .SetValidator(new KeywordRequestValidator()));
 
             RuleFor(x => x.Source)
-                .MaximumLength(50)
-                .WithMessage("Source must not exceed 50 characters");
+                .MaximumLength(200)
+                .WithMessage("Source must not exceed 200 characters");
         }
     }
 

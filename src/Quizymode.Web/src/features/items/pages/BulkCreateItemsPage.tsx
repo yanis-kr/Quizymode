@@ -312,7 +312,7 @@ Requirements:
   - a non-empty "question" (max 1,000 characters)
   - a non-empty "correctAnswer" (max 200 characters)
   - 1–5 "incorrectAnswers" (each max 200 characters)
-  - "source" (optional, max 50 characters - e.g., "ChatGPT", "Claude", "Manual")
+  - "source" (optional, max 200 characters - e.g., "ChatGPT", "Claude", "Manual")
 - All strings must be plain text (no HTML, no LaTeX).
 
 Now generate the JSON array only.`;
@@ -354,7 +354,7 @@ Requirements:
   - a non-empty "question" (max 1,000 characters)
   - a non-empty "correctAnswer" (max 200 characters)
   - 1–5 "incorrectAnswers" (each max 200 characters)
-  - "source" (optional, max 50 characters - e.g., "ChatGPT", "Claude", "Manual")
+  - "source" (optional, max 200 characters - e.g., "ChatGPT", "Claude", "Manual")
 - All strings must be plain text (no HTML, no LaTeX).
 
 Now generate the JSON array only.`}
@@ -495,12 +495,12 @@ Now generate the JSON array only.`}
               type="text"
               value={source}
               onChange={(e) => setSource(e.target.value)}
-              maxLength={50}
+              maxLength={200}
               className="w-full px-3 py-2 border border-gray-300 rounded-md text-sm"
               placeholder="e.g., ChatGPT, Claude, Manual, Textbook Name"
             />
             <p className="mt-1 text-sm text-gray-500">
-              Optional source attribution for all items (max 50 characters).
+              Optional source attribution for all items (max 200 characters).
             </p>
           </div>
 
