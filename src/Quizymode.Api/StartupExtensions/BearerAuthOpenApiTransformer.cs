@@ -7,6 +7,12 @@ internal sealed class BearerAuthOpenApiTransformer : IOpenApiDocumentTransformer
 {
     public Task TransformAsync(OpenApiDocument document, OpenApiDocumentTransformerContext context, CancellationToken cancellationToken)
     {
+        // Configure OpenAPI Info metadata
+        document.Info ??= new OpenApiInfo();
+        document.Info.Title = "Quizymode API";
+        document.Info.Version = "v1";
+        document.Info.Description = "Quizymode API with JWT Bearer authentication support";
+
         document.Components ??= new OpenApiComponents();
         document.Components.SecuritySchemes ??= new Dictionary<string, IOpenApiSecurityScheme>();
 
