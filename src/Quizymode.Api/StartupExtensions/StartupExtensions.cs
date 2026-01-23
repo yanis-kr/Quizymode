@@ -57,6 +57,9 @@ internal static partial class StartupExtensions
 
         if (app.Environment.IsDevelopment())
         {
+            // Enable detailed exception pages in development for better debugging experience
+            app.UseDeveloperExceptionPage();
+            
             app.MapOpenApi("/openapi/v1.json");
             app.UseSwaggerUI(c =>
             {
