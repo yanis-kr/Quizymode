@@ -25,7 +25,6 @@ public static class GetDatabaseSize
                 .WithSummary("Get current database size (Admin only)")
                 .WithDescription("Returns the current PostgreSQL database size and usage percentage relative to the 500MB free tier limit")
                 .RequireAuthorization("Admin")
-                .WithOpenApi()
                 .Produces<Response>(StatusCodes.Status200OK);
         }
 

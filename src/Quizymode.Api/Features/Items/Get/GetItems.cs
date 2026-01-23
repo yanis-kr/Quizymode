@@ -71,7 +71,6 @@ public static class GetItems
             app.MapGet("items", Handler)
                 .WithTags("Items")
                 .WithSummary("Get quiz items with filtering and pagination")
-                .WithOpenApi()
                 .Produces<Response>(StatusCodes.Status200OK)
                 .Produces(StatusCodes.Status400BadRequest);
         }

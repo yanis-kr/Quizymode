@@ -99,7 +99,6 @@ public static class AddItem
                 .WithTags("Items")
                 .WithSummary("Create a new quiz item")
                 .RequireAuthorization()
-                .WithOpenApi()
                 .Produces<Response>(StatusCodes.Status201Created)
                 .Produces(StatusCodes.Status400BadRequest);
         }

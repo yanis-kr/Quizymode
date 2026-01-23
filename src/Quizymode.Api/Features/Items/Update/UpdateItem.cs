@@ -100,7 +100,6 @@ public static class UpdateItem
             app.MapPut("items/{id}", Handler)
                 .WithTags("Items")
                 .WithSummary("Update an existing quiz item")
-                .WithOpenApi()
                 .Produces<Response>(StatusCodes.Status200OK)
                 .Produces(StatusCodes.Status400BadRequest)
                 .Produces(StatusCodes.Status404NotFound);

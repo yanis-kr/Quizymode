@@ -39,7 +39,6 @@ public static class GetItemById
             app.MapGet("items/{id}", Handler)
                 .WithTags("Items")
                 .WithSummary("Get a single quiz item by id")
-                .WithOpenApi()
                 .Produces<Response>(StatusCodes.Status200OK)
                 .Produces(StatusCodes.Status404NotFound)
                 .Produces(StatusCodes.Status400BadRequest);

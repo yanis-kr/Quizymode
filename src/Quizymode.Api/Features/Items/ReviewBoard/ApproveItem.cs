@@ -26,7 +26,6 @@ public static class ApproveItem
                 .WithTags("Admin")
                 .WithSummary("Approve an item for review (Admin only)")
                 .RequireAuthorization("Admin")
-                .WithOpenApi()
                 .Produces<Response>(StatusCodes.Status200OK)
                 .Produces(StatusCodes.Status404NotFound);
         }

@@ -41,7 +41,6 @@ public static class UpdateComment
                 .WithTags("Comments")
                 .WithSummary("Update an existing comment")
                 .RequireAuthorization()
-                .WithOpenApi()
                 .Produces<Response>(StatusCodes.Status200OK)
                 .Produces(StatusCodes.Status400BadRequest)
                 .Produces(StatusCodes.Status403Forbidden)

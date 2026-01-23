@@ -46,7 +46,6 @@ public static class AddOrUpdateRating
                 .WithSummary("Create or update a rating for an item")
                 .WithDescription("Creates a new rating or updates existing rating for the current user. Stars can be null or 1-5.")
                 .RequireAuthorization()
-                .WithOpenApi()
                 .Produces<Response>(StatusCodes.Status200OK)
                 .Produces(StatusCodes.Status400BadRequest);
         }

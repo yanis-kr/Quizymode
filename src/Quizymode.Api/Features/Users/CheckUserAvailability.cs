@@ -18,7 +18,6 @@ public static class CheckUserAvailability
                 .WithTags("Users")
                 .WithSummary("Check if username and/or email are available")
                 .WithDescription("Checks if the provided username and/or email are already registered. Returns availability status for each.")
-                .WithOpenApi()
                 .Produces<Response>(StatusCodes.Status200OK)
                 .Produces(StatusCodes.Status400BadRequest);
         }

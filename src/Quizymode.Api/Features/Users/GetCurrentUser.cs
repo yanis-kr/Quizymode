@@ -26,7 +26,6 @@ public static class GetCurrentUser
                 .WithSummary("Get the currently authenticated user")
                 .WithDescription("Returns the current user's profile information including name, email, role, and timestamps")
                 .RequireAuthorization()
-                .WithOpenApi()
                 .Produces<Response>(StatusCodes.Status200OK)
                 .Produces(StatusCodes.Status401Unauthorized)
                 .Produces(StatusCodes.Status404NotFound);

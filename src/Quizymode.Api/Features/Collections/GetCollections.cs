@@ -20,7 +20,6 @@ public static class GetCollections
                 .WithTags("Collections")
                 .WithSummary("Get collections for current user")
                 .RequireAuthorization()
-                .WithOpenApi()
                 .Produces<Response>(StatusCodes.Status200OK);
         }
 

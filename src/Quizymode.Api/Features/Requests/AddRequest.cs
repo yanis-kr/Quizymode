@@ -44,7 +44,6 @@ public static class AddRequest
                 .WithTags("Requests")
                 .WithSummary("Submit a category request")
                 .RequireAuthorization()
-                .WithOpenApi()
                 .Produces<Response>(StatusCodes.Status201Created)
                 .Produces(StatusCodes.Status400BadRequest);
         }

@@ -1,3 +1,5 @@
+using Microsoft.AspNetCore.OpenApi;
+
 namespace Quizymode.Api.StartupExtensions;
 
 internal static partial class StartupExtensions
@@ -8,7 +10,7 @@ internal static partial class StartupExtensions
 
         builder.AddServiceDefaults();
         builder.AddLoggingServices();
-        builder.AddSwaggerServices();
+        builder.AddOpenApiServices();
         builder.AddHealthCheckServices();
         builder.AddCorsServices();
         builder.AddPostgreSqlServices();
@@ -56,11 +58,13 @@ internal static partial class StartupExtensions
 
         if (app.Environment.IsDevelopment())
         {
-            app.UseDeveloperExceptionPage();
+            app.MapOpenApi("/openapi/v1.json");
             app.UseSwaggerUI(c =>
             {
-                c.SwaggerEndpoint("/openapi/v1.json", "QuizyMode API v1");
-                //c.RoutePrefix = "swagger";
+                c.SwaggerEndpoint("/openapi/v1.json", "Quizymode API v1");
+                c.RoutePrefix = "swagger";
+                c.DisplayRequestDuration();
+                c.EnableTryItOutByDefault();
             });
         }
 
@@ -73,9 +77,6 @@ internal static partial class StartupExtensions
 
         // Upsert user record on authenticated requests
         app.UseMiddleware<Services.UserUpsertMiddleware>();
-
-        // Map OpenAPI endpoint before other endpoints
-        app.MapOpenApi();
 
         app.MapDefaultEndpoints();
         //app.MapHealthChecks("/health");

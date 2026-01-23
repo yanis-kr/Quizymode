@@ -23,7 +23,6 @@ public static class SetItemVisibility
                 .WithSummary("Set item visibility (global vs private)")
                 .WithDescription("Admin endpoint to promote or demote items between global and private.")
                 .RequireAuthorization("Admin")
-                .WithOpenApi()
                 .Produces<Response>(StatusCodes.Status200OK)
                 .Produces(StatusCodes.Status400BadRequest)
                 .Produces(StatusCodes.Status404NotFound);
