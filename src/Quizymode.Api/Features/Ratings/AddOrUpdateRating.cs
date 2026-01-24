@@ -12,7 +12,6 @@ namespace Quizymode.Api.Features.Ratings;
 public static class AddOrUpdateRating
 {
     public sealed record Request(
-        Guid ItemId,
         int? Stars); // null or 1-5
 
     public sealed record Response(
@@ -26,10 +25,6 @@ public static class AddOrUpdateRating
     {
         public Validator()
         {
-            RuleFor(x => x.ItemId)
-                .NotEqual(Guid.Empty)
-                .WithMessage("ItemId is required");
-
             RuleFor(x => x.Stars)
                 .InclusiveBetween(1, 5)
                 .When(x => x.Stars.HasValue)
@@ -41,7 +36,7 @@ public static class AddOrUpdateRating
     {
         public void MapEndpoint(IEndpointRouteBuilder app)
         {
-            app.MapPost("ratings", Handler)
+            app.MapPost("ratings/{itemId}", Handler)
                 .WithTags("Ratings")
                 .WithSummary("Create or update a rating for an item")
                 .WithDescription("Creates a new rating or updates existing rating for the current user. Stars can be null or 1-5.")
@@ -51,6 +46,7 @@ public static class AddOrUpdateRating
         }
 
         private static async Task<IResult> Handler(
+            Guid itemId,
             Request request,
             IValidator<Request> validator,
             ApplicationDbContext db,
@@ -63,6 +59,11 @@ public static class AddOrUpdateRating
                 return CustomResults.Unauthorized();
             }
 
+            if (itemId == Guid.Empty)
+            {
+                return CustomResults.BadRequest("ItemId is required");
+            }
+
             var validationResult = await validator.ValidateAsync(request, cancellationToken);
             if (!validationResult.IsValid)
             {
@@ -70,7 +71,7 @@ public static class AddOrUpdateRating
                 return CustomResults.BadRequest(errors, "Validation failed");
             }
 
-            Result<Response> result = await HandleAsync(request, db, userContext, cache, cancellationToken);
+            Result<Response> result = await HandleAsync(itemId, request, db, userContext, cache, cancellationToken);
 
             return result.Match(
                 value => Results.Ok(value),
@@ -79,6 +80,7 @@ public static class AddOrUpdateRating
     }
 
     public static async Task<Result<Response>> HandleAsync(
+        Guid itemId,
         Request request,
         ApplicationDbContext db,
         IUserContext userContext,
@@ -93,17 +95,17 @@ public static class AddOrUpdateRating
                     Error.Validation("Rating.UserIdMissing", "User ID is missing"));
             }
 
-            bool itemExists = await db.Items.AnyAsync(i => i.Id == request.ItemId, cancellationToken);
+            bool itemExists = await db.Items.AnyAsync(i => i.Id == itemId, cancellationToken);
             if (!itemExists)
             {
                 return Result.Failure<Response>(
-                    Error.NotFound("Rating.ItemNotFound", $"Item with id {request.ItemId} not found"));
+                    Error.NotFound("Rating.ItemNotFound", $"Item with id {itemId} not found"));
             }
 
             // Check if user already has a rating for this item
             Rating? existingRating = await db.Ratings
                 .FirstOrDefaultAsync(
-                    r => r.ItemId == request.ItemId && r.CreatedBy == userContext.UserId,
+                    r => r.ItemId == itemId && r.CreatedBy == userContext.UserId,
                     cancellationToken);
 
             if (existingRating is not null)
@@ -132,7 +134,7 @@ public static class AddOrUpdateRating
                 Rating entity = new()
                 {
                     Id = Guid.NewGuid(),
-                    ItemId = request.ItemId,
+                    ItemId = itemId,
                     Stars = request.Stars,
                     CreatedBy = userContext.UserId,
                     CreatedAt = DateTime.UtcNow

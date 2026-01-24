@@ -320,12 +320,12 @@ const EditItemPage = () => {
               onChange={(e) =>
                 setFormData({ ...formData, source: e.target.value })
               }
-              maxLength={50}
+              maxLength={200}
               placeholder="e.g., ChatGPT, Claude, Manual, Textbook Name"
               className="w-full px-3 py-2 border border-gray-300 rounded-md text-sm"
             />
             <p className="mt-1 text-sm text-gray-500">
-              Optional source attribution (max 50 characters).
+              Optional source attribution (max 200 characters).
             </p>
           </div>
 

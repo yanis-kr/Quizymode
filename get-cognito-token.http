@@ -43,11 +43,6 @@ GET {{apiBaseUrl}}/collections
 Authorization: Bearer {{idToken}}
 Content-Type: application/json
 
-### Example: Get All Collections (requires Admin group)
-GET {{apiBaseUrl}}/collections/all
-Authorization: Bearer {{idToken}}
-Content-Type: application/json
-
 ### Example: Get Items (requires authentication)
 GET {{apiBaseUrl}}/items
 Authorization: Bearer {{idToken}}

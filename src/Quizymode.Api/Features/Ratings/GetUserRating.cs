@@ -25,10 +25,10 @@ public static class GetUserRating
     {
         public void MapEndpoint(IEndpointRouteBuilder app)
         {
-            app.MapGet("ratings/me", Handler)
+            app.MapGet("ratings/{itemId}/me", Handler)
                 .WithTags("Ratings")
                 .WithSummary("Get current user's rating for an item")
-                .WithDescription("Returns the current user's rating for the specified item. Returns null if no rating exists. Requires ?itemId={guid} query parameter.")
+                .WithDescription("Returns the current user's rating for the specified item. Returns null if no rating exists.")
                 .RequireAuthorization()
                 .Produces<RatingResponse>(StatusCodes.Status200OK)
                 .Produces(StatusCodes.Status401Unauthorized)
@@ -36,7 +36,7 @@ public static class GetUserRating
         }
 
         private static async Task<IResult> Handler(
-            Guid? itemId,
+            Guid itemId,
             ApplicationDbContext db,
             IUserContext userContext,
             CancellationToken cancellationToken)
@@ -46,12 +46,12 @@ public static class GetUserRating
                 return CustomResults.Unauthorized();
             }
 
-            if (!itemId.HasValue || itemId.Value == Guid.Empty)
+            if (itemId == Guid.Empty)
             {
-                return CustomResults.BadRequest("ItemId query parameter is required");
+                return CustomResults.BadRequest("ItemId is required");
             }
 
-            QueryRequest request = new(itemId.Value);
+            QueryRequest request = new(itemId);
 
             Result<RatingResponse?> result = await HandleAsync(request, db, userContext, cancellationToken);
 
