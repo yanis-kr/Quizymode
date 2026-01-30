@@ -14,6 +14,7 @@ import {
   categoryNameToSlug,
   findCategoryNameFromSlug,
 } from "@/utils/categorySlug";
+import { ExploreQuizBreadcrumb } from "@/components/ExploreQuizBreadcrumb";
 import {
   FolderIcon,
   ChevronLeftIcon,
@@ -284,30 +285,27 @@ const ExploreModePage = () => {
           </div>
         )}
         {category && !collectionId && (
-          <div className="mb-6 flex items-center space-x-4">
-            <button
-              onClick={() => navigate(returnUrl || "/categories")}
-              className="flex items-center px-3 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-md hover:bg-gray-50"
-            >
-              <ArrowLeftIcon className="h-4 w-4 mr-2" />
-              Go Back
-            </button>
-            <h1 className="text-3xl font-bold text-gray-900">
-              {category}
-            </h1>
+          <div className="mb-6">
+            <ExploreQuizBreadcrumb
+              mode="explore"
+              categorySlug={categoryNameToSlug(category)}
+              categoryDisplayName={category}
+              keywords={keywords || []}
+              onNavigate={(path) => navigate(path)}
+            />
           </div>
         )}
-        {!category && !collectionId && (
-          <div className="mb-6 flex items-center space-x-4">
-            {returnUrl && (
+        {!category && !collectionId && returnUrl && (
+          <div className="mb-6">
+            <nav className="flex items-center gap-1 text-sm text-gray-600">
               <button
                 onClick={() => navigate(returnUrl)}
-                className="flex items-center px-3 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-md hover:bg-gray-50"
+                className="text-indigo-600 hover:text-indigo-800"
+                type="button"
               >
-                <ArrowLeftIcon className="h-4 w-4 mr-2" />
-                Go Back
+                ← Back
               </button>
-            )}
+            </nav>
           </div>
         )}
         <div className="bg-white shadow rounded-lg p-6 mb-4">
@@ -492,20 +490,35 @@ const ExploreModePage = () => {
         )}
 
         <div className="text-center">
-          <button
-            onClick={() => {
-              if (collectionId) {
-                navigate(`/collections/${collectionId}`);
-              } else if (returnUrl) {
-                navigate(returnUrl);
-              } else {
-                navigate("/categories");
-              }
-            }}
-            className="text-indigo-600 hover:text-indigo-700"
-          >
-            ← Go back
-          </button>
+          {collectionId ? (
+            <button
+              onClick={() => navigate(`/collections/${collectionId}`)}
+              className="text-indigo-600 hover:text-indigo-700"
+              type="button"
+            >
+              ← Back to collection
+            </button>
+          ) : category ? (
+            <ExploreQuizBreadcrumb
+              mode="explore"
+              categorySlug={categoryNameToSlug(category)}
+              categoryDisplayName={category}
+              keywords={keywords || []}
+              onNavigate={(path) => navigate(path)}
+            />
+          ) : returnUrl ? (
+            <button
+              onClick={() => navigate(returnUrl)}
+              className="text-indigo-600 hover:text-indigo-700"
+              type="button"
+            >
+              ← Back
+            </button>
+          ) : (
+            <Link to="/categories" className="text-indigo-600 hover:text-indigo-700">
+              ← Categories
+            </Link>
+          )}
         </div>
       </div>
 

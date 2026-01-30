@@ -1,5 +1,5 @@
-import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useState, useEffect } from "react";
+import { useNavigate, useSearchParams } from "react-router-dom";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { itemsApi } from "@/api/items";
 import { useAuth } from "@/contexts/AuthContext";
@@ -12,7 +12,10 @@ import type { KeywordRequest } from "@/types/api";
 const CreateItemPage = () => {
   const { isAuthenticated, isAdmin } = useAuth();
   const navigate = useNavigate();
+  const [searchParams] = useSearchParams();
   const queryClient = useQueryClient();
+  const categoryFromUrl = searchParams.get("category") || "";
+  const keywordsFromUrl = searchParams.get("keywords")?.split(",").filter(Boolean) || [];
   const [formData, setFormData] = useState({
     category: "",
     isPrivate: true, // Default to true for regular users
@@ -32,6 +35,18 @@ const CreateItemPage = () => {
   });
 
   const [validationError, setValidationError] = useState<string>("");
+
+  useEffect(() => {
+    if (categoryFromUrl) {
+      setFormData((prev) => ({ ...prev, category: categoryFromUrl }));
+    }
+    if (keywordsFromUrl.length > 0) {
+      setFormData((prev) => ({
+        ...prev,
+        keywords: keywordsFromUrl.map((name) => ({ name, isPrivate: true })),
+      }));
+    }
+  }, [categoryFromUrl, keywordsFromUrl]);
 
   const createMutation = useMutation({
     mutationFn: (data: any) => itemsApi.create(data),

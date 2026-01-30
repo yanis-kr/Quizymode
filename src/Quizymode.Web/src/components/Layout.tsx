@@ -70,6 +70,12 @@ const Layout = ({ children }: LayoutProps) => {
                       My Items
                     </Link>
                     <Link
+                      to="/items/add"
+                      className="inline-flex items-center px-1 pt-1 text-sm font-medium text-gray-900 hover:text-indigo-600"
+                    >
+                      Add Items
+                    </Link>
+                    <Link
                       to="/collections"
                       className="inline-flex items-center px-1 pt-1 text-sm font-medium text-gray-900 hover:text-indigo-600"
                     >
@@ -168,6 +174,13 @@ const Layout = ({ children }: LayoutProps) => {
                     onClick={closeMobileMenu}
                   >
                     My Items
+                  </Link>
+                  <Link
+                    to="/items/add"
+                    className="block px-3 py-2 text-base font-medium text-gray-900 hover:text-indigo-600 hover:bg-gray-50"
+                    onClick={closeMobileMenu}
+                  >
+                    Add Items
                   </Link>
                   <Link
                     to="/collections"
