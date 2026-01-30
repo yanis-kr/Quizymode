@@ -38,7 +38,7 @@ internal static class NavigationPathValidator
 
         // Normalize keywords
         List<string> normalizedKeywords = keywords
-            .Select(k => k.Trim().ToLowerInvariant())
+            .Select(k => k.Trim().ToLower())
             .Where(k => !string.IsNullOrEmpty(k))
             .ToList();
 
@@ -133,10 +133,11 @@ internal static class NavigationPathValidator
         IUserContext userContext,
         CancellationToken cancellationToken)
     {
+        string keywordLower = keywordName.ToLower();
         IQueryable<CategoryKeyword> query = db.CategoryKeywords
             .Where(ck => ck.CategoryId == categoryId
                 && ck.NavigationRank == 1
-                && ck.Keyword.Name.ToLowerInvariant() == keywordName.ToLowerInvariant());
+                && ck.Keyword.Name.ToLower() == keywordLower);
 
         // Apply visibility filter for keywords
         if (!userContext.IsAuthenticated || string.IsNullOrEmpty(userContext.UserId))
@@ -163,12 +164,14 @@ internal static class NavigationPathValidator
         IUserContext userContext,
         CancellationToken cancellationToken)
     {
+        string rank1Lower = rank1Name.ToLower();
+        string rank2Lower = rank2Name.ToLower();
         IQueryable<CategoryKeyword> query = db.CategoryKeywords
             .Where(ck => ck.CategoryId == categoryId
                 && ck.NavigationRank == 2
                 && ck.ParentName != null
-                && ck.ParentName.ToLowerInvariant() == rank1Name.ToLowerInvariant()
-                && ck.Keyword.Name.ToLowerInvariant() == rank2Name.ToLowerInvariant());
+                && ck.ParentName.ToLower() == rank1Lower
+                && ck.Keyword.Name.ToLower() == rank2Lower);
 
         // Apply visibility filter for keywords
         if (!userContext.IsAuthenticated || string.IsNullOrEmpty(userContext.UserId))

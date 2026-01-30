@@ -80,18 +80,14 @@ internal sealed class UserUpsertMiddleware
                 
                 try
                 {
-                    // Use a transaction with serializable isolation level to prevent race conditions
-                    // This ensures only one request can check and update LastLogin at a time
-                    // Database-level locking handles synchronization across all instances
+                    // Use ReadCommitted with FOR UPDATE - row lock prevents concurrent updates.
+                    // Serializable was causing 40001 when multiple requests (e.g. page load) ran in parallel.
                     await using var transaction = await db.Database.BeginTransactionAsync(
-                        System.Data.IsolationLevel.Serializable, 
+                        System.Data.IsolationLevel.ReadCommitted, 
                         context.RequestAborted);
                     try
                     {
-                        // Lock the row for update to prevent concurrent modifications
-                        // This ensures only one request can check and update LastLogin at a time
-                        // FOR UPDATE will block other requests until this transaction commits
-                        // This works across all API instances, not just this one
+                        // Lock the row for update - other requests block until this commits
                         var lockedUser = await db.Users
                             .FromSqlInterpolated($"SELECT * FROM \"Users\" WHERE \"Subject\" = {subject} FOR UPDATE")
                             .AsTracking()

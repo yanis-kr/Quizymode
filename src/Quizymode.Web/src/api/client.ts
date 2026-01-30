@@ -103,7 +103,7 @@ const isOnPublicRoute = (): boolean => {
 
 // Helper to check if an endpoint is public
 const isPublicEndpoint = (url: string): boolean => {
-  const publicEndpoints = ["/categories", "/categories/"];
+  const publicEndpoints = ["/categories", "/categories/", "/keywords", "/items"];
   return (
     publicEndpoints.some((endpoint) => url.includes(endpoint)) ||
     /^\/categories\/[^\/]+\/subcategories/.test(url)

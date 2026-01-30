@@ -27,6 +27,10 @@ const ExploreModePage = () => {
   const navigate = useNavigate();
   const { isAuthenticated } = useAuth();
   const returnUrl = searchParams.get("return");
+  const keywordsParam = searchParams.get("keywords");
+  const keywords = keywordsParam
+    ? keywordsParam.split(",").map((k) => k.trim()).filter(Boolean)
+    : undefined;
   const [currentIndex, setCurrentIndex] = useState(0);
   const [count] = useState(100); // Increased default to fetch more items
   const [selectedItemForCollections, setSelectedItemForCollections] = useState<
@@ -107,8 +111,8 @@ const ExploreModePage = () => {
   });
 
   const { data, isLoading, error, refetch } = useQuery({
-    queryKey: ["randomItems", category, count],
-    queryFn: () => itemsApi.getRandom(category, count),
+    queryKey: ["randomItems", category, count, keywords],
+    queryFn: () => itemsApi.getRandom(category, count, keywords),
     enabled: !collectionId && !storedItems && !isCategoryResolving, // Don't load if we have stored items or category is still resolving
   });
 

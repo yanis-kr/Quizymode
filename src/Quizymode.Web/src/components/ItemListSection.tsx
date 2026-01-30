@@ -16,9 +16,11 @@ interface ItemListSectionProps {
   onAddSelectedToCollection: () => void;
   onToggleSelect: (itemId: string) => void;
   renderActions?: (item: ItemResponse) => ReactNode;
-  onKeywordClick?: (keywordName: string) => void;
+  onKeywordClick?: (keywordName: string, item?: import("@/types/api").ItemResponse) => void;
   selectedKeywords?: string[];
   isAuthenticated?: boolean;
+  showRatingsAndComments?: boolean;
+  returnUrl?: string;
 }
 
 const ItemListSection = ({
@@ -37,6 +39,8 @@ const ItemListSection = ({
   onKeywordClick,
   selectedKeywords,
   isAuthenticated = true,
+  showRatingsAndComments,
+  returnUrl,
 }: ItemListSectionProps) => {
   if (items.length === 0) {
     return null;
@@ -70,9 +74,11 @@ const ItemListSection = ({
             item={item}
             isSelected={selectedItemIds.has(item.id)}
             onToggleSelect={() => onToggleSelect(item.id)}
-            onKeywordClick={onKeywordClick}
+            onKeywordClick={onKeywordClick ? (kw) => onKeywordClick(kw, item) : undefined}
             selectedKeywords={selectedKeywords}
             actions={renderActions ? renderActions(item) : undefined}
+            showRatingsAndComments={showRatingsAndComments}
+            returnUrl={returnUrl}
           />
         ))}
       </div>

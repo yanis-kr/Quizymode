@@ -2,6 +2,7 @@ import { useState, useEffect, useMemo } from "react";
 import {
   useParams,
   useNavigate,
+  useSearchParams,
   Link,
 } from "react-router-dom";
 import { useQuery } from "@tanstack/react-query";
@@ -26,7 +27,12 @@ import {
 
 const QuizModePage = () => {
   const { category: categorySlug, collectionId, itemId } = useParams();
+  const [searchParams] = useSearchParams();
   const navigate = useNavigate();
+  const keywordsParam = searchParams.get("keywords");
+  const keywords = keywordsParam
+    ? keywordsParam.split(",").map((k) => k.trim()).filter(Boolean)
+    : undefined;
   const { isAuthenticated } = useAuth();
   const [currentIndex, setCurrentIndex] = useState(0);
   const [selectedAnswer, setSelectedAnswer] = useState<string | null>(null);
@@ -107,8 +113,8 @@ const QuizModePage = () => {
   });
 
   const { data, isLoading, error, refetch } = useQuery({
-    queryKey: ["randomItems", category, count],
-    queryFn: () => itemsApi.getRandom(category, count),
+    queryKey: ["randomItems", category, count, keywords],
+    queryFn: () => itemsApi.getRandom(category, count, keywords),
     enabled: !collectionId && !storedItems, // Don't load if we have stored items
   });
 

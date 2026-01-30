@@ -107,6 +107,12 @@ const CollectionDetailPage = () => {
           onAddSelectedToCollection={() => {}}
           onToggleSelect={toggleItem}
           isAuthenticated={isAuthenticated}
+          onKeywordClick={(keywordName, item) => {
+            const params = new URLSearchParams();
+            if (item?.category) params.set("category", item.category);
+            params.set("keywords", keywordName);
+            navigate(`/my-items?${params.toString()}`);
+          }}
           renderActions={(item) => (
             <>
               <button

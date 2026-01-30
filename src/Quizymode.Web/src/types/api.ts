@@ -12,6 +12,17 @@ export interface CategoriesResponse {
   categories: CategoryResponse[];
 }
 
+/** Navigation keyword (rank-1/rank-2) with aggregates from GET /keywords */
+export interface NavKeywordResponse {
+  name: string;
+  itemCount: number;
+  averageRating: number | null;
+  navigationRank: number;
+}
+
+export interface KeywordsResponse {
+  keywords: NavKeywordResponse[];
+}
 
 export interface KeywordResponse {
   id: string;
