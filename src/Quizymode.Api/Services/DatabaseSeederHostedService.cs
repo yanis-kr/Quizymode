@@ -311,7 +311,8 @@ internal sealed class DatabaseSeederHostedService(
         List<string> categoryNames = new()
         {
             "general", "history", "science", "geography", "entertainment",
-            "culture", "language", "puzzles", "sports", "tests", "certs"
+            "culture", "language", "puzzles", "sports", "tests", "certs",
+            "outdoors", "nature"
         };
 
         // Seed categories (if missing)
@@ -351,7 +352,7 @@ internal sealed class DatabaseSeederHostedService(
         // Seed rank-1 keywords per category
         Dictionary<string, List<string>> rank1Keywords = new()
         {
-            { "general", new List<string> { "trivia", "fun-facts", "daily", "mixed", "random" } },
+            { "general", new List<string> { "world-records", "trivia", "fun-facts", "daily", "mixed", "random" } },
             { "history", new List<string> { "us-history", "world-history", "ancient", "modern", "biography" } },
             { "science", new List<string> { "biology", "astronomy", "physics", "chemistry", "earth-science" } },
             { "geography", new List<string> { "countries", "capitals", "us-states", "flags", "maps" } },
@@ -361,7 +362,9 @@ internal sealed class DatabaseSeederHostedService(
             { "puzzles", new List<string> { "riddles", "logic", "brain-teasers", "math-puzzles", "patterns" } },
             { "sports", new List<string> { "soccer", "basketball", "tennis", "olympics", "athletes" } },
             { "tests", new List<string> { "act", "sat", "gmat", "gre", "nclex" } },
-            { "certs", new List<string> { "aws", "azure", "gcp", "comptia", "kubernetes" } }
+            { "certs", new List<string> { "aws", "azure", "gcp", "comptia", "kubernetes" } },
+            { "outdoors", new List<string> { "survival", "camping", "navigation" } },
+            { "nature", new List<string> { "animals", "plants", "ecosystems", "phenomena" } }
         };
 
         foreach ((string categoryName, List<string> keywords) in rank1Keywords)
@@ -385,6 +388,7 @@ internal sealed class DatabaseSeederHostedService(
         // Seed rank-2 keywords
         Dictionary<(string Category, string Parent), List<string>> rank2Keywords = new()
         {
+            { ("general", "world-records"), new List<string> { "humans", "animals", "weird" } },
             { ("certs", "aws"), new List<string> { "saa-c02", "saa-c03", "dva-c02", "soa-c02" } },
             { ("tests", "act"), new List<string> { "math", "reading", "english", "science" } },
             { ("tests", "sat"), new List<string> { "math", "reading", "writing" } },

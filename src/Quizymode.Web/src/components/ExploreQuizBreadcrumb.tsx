@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { ChevronRightIcon } from "@heroicons/react/24/outline";
+import { buildCategoryPath } from "@/utils/categorySlug";
 
 interface ExploreQuizBreadcrumbProps {
   mode: "explore" | "quiz";
@@ -9,22 +10,21 @@ interface ExploreQuizBreadcrumbProps {
   onNavigate: (path: string) => void;
 }
 
+/** Breadcrumb links go to the categories boxes view (sets view), not back into explore/quiz. */
 export function ExploreQuizBreadcrumb({
-  mode,
+  mode: _mode,
   categorySlug,
   categoryDisplayName,
   keywords,
   onNavigate,
 }: ExploreQuizBreadcrumbProps) {
-  const basePath = `/${mode}`;
   const segments: { label: string; path: string }[] = [
-    { label: categoryDisplayName, path: `${basePath}/${categorySlug}` },
+    { label: categoryDisplayName, path: buildCategoryPath(categorySlug, []) },
   ];
   keywords.forEach((kw, i) => {
-    const kws = keywords.slice(0, i + 1);
     segments.push({
       label: kw,
-      path: `${basePath}/${categorySlug}?keywords=${kws.join(",")}`,
+      path: buildCategoryPath(categorySlug, keywords.slice(0, i + 1)),
     });
   });
 

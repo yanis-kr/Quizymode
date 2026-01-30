@@ -95,18 +95,21 @@ const CategoriesPage = () => {
     enabled: !!categoryName && view === "sets",
   });
 
-  const isLeaf =
-    !!categoryName &&
-    keywordsFromUrl.length >= 2 &&
-    keywordsData?.keywords?.length === 0;
+  const tagFromUrl = searchParams.get("tag") || undefined;
+  const keywordsForItems = useMemo(
+    () => (tagFromUrl ? [...keywordsFromUrl, tagFromUrl] : keywordsFromUrl),
+    [keywordsFromUrl, tagFromUrl]
+  );
+
+  const isLeaf = !!categoryName && keywordsFromUrl.length >= 2;
 
   const { data: itemsData, isLoading: isLoadingItems, error: itemsError, refetch: refetchItems } = useQuery({
-    queryKey: ["categoryItems", categoryName, keywordsFromUrl, itemsPage, pageSize],
+    queryKey: ["categoryItems", categoryName, keywordsForItems, itemsPage, pageSize],
     queryFn: () =>
       itemsApi.getAll(
         categoryName || undefined,
         undefined,
-        keywordsFromUrl.length > 0 ? keywordsFromUrl : undefined,
+        keywordsForItems.length > 0 ? keywordsForItems : undefined,
         undefined,
         undefined,
         itemsPage,
@@ -215,11 +218,13 @@ const CategoriesPage = () => {
     navigate(`${path}?${p.toString()}`);
   };
 
-  const navigateToItems = (path: string, resetPage = true) => {
+  const navigateToItems = (path: string, resetPage = true, tag?: string) => {
     const p = new URLSearchParams(searchParams);
     p.set("view", "items");
     if (resetPage) p.set("page", "1");
     p.set("pagesize", pageSize.toString());
+    if (tag) p.set("tag", tag);
+    else p.delete("tag");
     navigate(`${path}?${p.toString()}`);
   };
 
@@ -296,7 +301,7 @@ const CategoriesPage = () => {
   };
 
   const listItemsReturnUrl = categoryName
-    ? `${buildCategoryPath(categoryNameToSlug(categoryName), keywordsFromUrl)}?view=items&page=${itemsPage}&pagesize=${pageSize}`
+    ? `${buildCategoryPath(categoryNameToSlug(categoryName), keywordsFromUrl)}?view=items&page=${itemsPage}&pagesize=${pageSize}${tagFromUrl ? `&tag=${encodeURIComponent(tagFromUrl)}` : ""}`
     : undefined;
 
   if (isLoading) return <LoadingSpinner />;
@@ -336,16 +341,15 @@ const CategoriesPage = () => {
           canonical={`https://www.quizymode.com${buildCategoryPath(categoryNameToSlug(categoryName), keywordsFromUrl)}`}
         />
         <div className="px-4 py-6 sm:px-0">
-          <div className="max-w-4xl mx-auto">
-            <div className="flex flex-wrap items-center justify-between gap-3 mt-2">
-              <Breadcrumb
-                categoryName={categoryName}
-                keywords={keywordsFromUrl}
-                onNavigate={navigateToSets}
-              />
-              <div className="flex items-center gap-2 flex-shrink-0">
-                <div className="flex items-center gap-2">
-                  <label className="text-sm text-gray-600">Per page:</label>
+          <div className="flex flex-wrap items-center justify-between gap-3 mt-2">
+            <Breadcrumb
+              categoryName={categoryName}
+              keywords={keywordsFromUrl}
+              onNavigate={navigateToSets}
+            />
+            <div className="flex items-center gap-2 flex-shrink-0 flex-nowrap">
+              <div className="flex items-center gap-2">
+                <label className="text-sm text-gray-600">Per page:</label>
                   <select
                     value={pageSize}
                     onChange={(e) =>
@@ -390,8 +394,8 @@ const CategoriesPage = () => {
               Items
             </h1>
             <p className="text-gray-600 text-sm mb-6">
-              {keywordsFromUrl.length > 0
-                ? `Items in ${categoryName} / ${keywordsFromUrl.join(" / ")}`
+              {keywordsForItems.length > 0
+                ? `Items in ${categoryName} / ${keywordsForItems.join(" / ")}`
                 : `All items in ${categoryName}`}
             </p>
 
@@ -415,11 +419,11 @@ const CategoriesPage = () => {
                 returnUrl={listItemsReturnUrl}
                 onKeywordClick={(keywordName) => {
                   const pathKwLower = new Set(
-                    keywordsFromUrl.map((k) => k.toLowerCase())
+                    keywordsForItems.map((k) => k.toLowerCase())
                   );
                   const newKeywords = pathKwLower.has(keywordName.toLowerCase())
-                    ? keywordsFromUrl
-                    : [...keywordsFromUrl, keywordName];
+                    ? keywordsForItems
+                    : [...keywordsForItems, keywordName];
                   const params = new URLSearchParams();
                   params.set("category", categoryName);
                   if (newKeywords.length > 0) {
@@ -427,7 +431,7 @@ const CategoriesPage = () => {
                   }
                   navigate(`/my-items?${params.toString()}`);
                 }}
-                selectedKeywords={keywordsFromUrl}
+                selectedKeywords={keywordsForItems}
                 renderActions={(item) => (
                   <button
                     onClick={() => {
@@ -447,7 +451,6 @@ const CategoriesPage = () => {
                 <p className="text-gray-500">No items found.</p>
               </div>
             )}
-          </div>
           <BulkItemCollectionsModal
             itemIds={selectedItemsForBulkCollections}
             onCloseComplete={() => {
@@ -461,8 +464,7 @@ const CategoriesPage = () => {
   }
 
   if (categoryName && view === "sets") {
-    const isLeafView = isLeaf;
-    if (isLoadingKeywords && !isLeafView) return <LoadingSpinner />;
+    if (isLoadingKeywords) return <LoadingSpinner />;
 
     return (
       <>
@@ -472,15 +474,14 @@ const CategoriesPage = () => {
           canonical={`https://www.quizymode.com${buildCategoryPath(categoryNameToSlug(categoryName), keywordsFromUrl)}`}
         />
         <div className="px-4 py-6 sm:px-0">
-          <div className="max-w-4xl mx-auto">
-            <div className="flex flex-wrap items-center justify-between gap-3 mt-2">
-              <Breadcrumb
-                categoryName={categoryName}
-                keywords={keywordsFromUrl}
-                onNavigate={navigateToSets}
-              />
-              <div className="flex items-center gap-2 flex-shrink-0">
-                <SortControl sortBy={sortBy} onSortChange={handleSortChange} />
+          <div className="flex flex-wrap items-center justify-between gap-3 mt-2">
+            <Breadcrumb
+              categoryName={categoryName}
+              keywords={keywordsFromUrl}
+              onNavigate={navigateToSets}
+            />
+            <div className="flex items-center gap-2 flex-shrink-0 flex-nowrap">
+              <SortControl sortBy={sortBy} onSortChange={handleSortChange} />
                 {keywordsFromUrl.length >= 2 && isAuthenticated && (
                   <button
                     onClick={() => {
@@ -521,46 +522,15 @@ const CategoriesPage = () => {
                     )
                   }
                 />
-              </div>
             </div>
-            <h1 className="text-3xl font-bold text-gray-900 mt-4 mb-6">
-              {keywordsFromUrl.length === 0
-                ? categoryName
-                : keywordsFromUrl.join(" / ")}
-            </h1>
+          </div>
+          <h1 className="text-3xl font-bold text-gray-900 mt-4 mb-6">
+            {keywordsFromUrl.length === 0
+              ? categoryName
+              : keywordsFromUrl.join(" / ")}
+          </h1>
 
-            {isLeafView ? (
-              <div className="mb-6">
-                <p className="text-gray-600 mb-4">
-                  You&apos;ve reached the end of the sets hierarchy. Browse items, explore, or quiz.
-                </p>
-                <div className="flex flex-wrap gap-2">
-                  <ActionButtons
-                    onListSets={undefined}
-                    onListItems={() =>
-                      navigateToItems(
-                        buildCategoryPath(
-                          categoryNameToSlug(categoryName),
-                          keywordsFromUrl
-                        )
-                      )
-                    }
-                    onExplore={() =>
-                      navigateToExplore(
-                        categoryNameToSlug(categoryName),
-                        keywordsFromUrl
-                      )
-                    }
-                    onQuiz={() =>
-                      navigateToQuiz(
-                        categoryNameToSlug(categoryName),
-                        keywordsFromUrl
-                      )
-                    }
-                  />
-                </div>
-              </div>
-            ) : (
+          {sortedKeywords.length > 0 ? (
               <>
                 <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
                   {sortedKeywords.map((kw) => (
@@ -569,26 +539,52 @@ const CategoriesPage = () => {
                       name={kw.name}
                       itemCount={kw.itemCount}
                       averageRating={kw.averageRating}
-                      onClick={() => handleKeywordClick(kw.name)}
-                      onListSets={(e) => {
-                        e.stopPropagation();
-                        handleKeywordClick(kw.name);
-                      }}
+                      onClick={() =>
+                        isLeaf
+                          ? navigateToItems(
+                              buildCategoryPath(
+                                categoryNameToSlug(categoryName),
+                                keywordsFromUrl
+                              ),
+                              true,
+                              kw.name
+                            )
+                          : handleKeywordClick(kw.name)
+                      }
+                      onListSets={
+                        isLeaf
+                          ? undefined
+                          : (e) => {
+                              e.stopPropagation();
+                              handleKeywordClick(kw.name);
+                            }
+                      }
                       onListItems={(e) => {
                         e.stopPropagation();
-                        const pathKwLower = new Set(
-                          keywordsFromUrl.map((k) => k.toLowerCase())
-                        );
-                        const newKw =
-                          pathKwLower.has(kw.name.toLowerCase())
-                            ? keywordsFromUrl
-                            : [...keywordsFromUrl, kw.name];
-                        navigateToItems(
-                          buildCategoryPath(
-                            categoryNameToSlug(categoryName),
-                            dedupeKeywords(newKw)
-                          )
-                        );
+                        if (isLeaf) {
+                          navigateToItems(
+                            buildCategoryPath(
+                              categoryNameToSlug(categoryName),
+                              keywordsFromUrl
+                            ),
+                            true,
+                            kw.name
+                          );
+                        } else {
+                          const pathKwLower = new Set(
+                            keywordsFromUrl.map((k) => k.toLowerCase())
+                          );
+                          const newKw =
+                            pathKwLower.has(kw.name.toLowerCase())
+                              ? keywordsFromUrl
+                              : [...keywordsFromUrl, kw.name];
+                          navigateToItems(
+                            buildCategoryPath(
+                              categoryNameToSlug(categoryName),
+                              dedupeKeywords(newKw)
+                            )
+                          );
+                        }
                       }}
                       onExplore={(e) => {
                         e.stopPropagation();
@@ -621,37 +617,66 @@ const CategoriesPage = () => {
                     />
                   ))}
                 </div>
-                {sortedKeywords.length === 0 && (
-                  <div className="text-center py-12">
-                    <p className="text-gray-500 mb-4">No sets in this level.</p>
-                    <ActionButtons
-                      onListSets={undefined}
-                      onListItems={() =>
-                        navigateToItems(
-                          buildCategoryPath(
-                            categoryNameToSlug(categoryName),
-                            keywordsFromUrl
-                          )
-                        )
-                      }
-                      onExplore={() =>
-                        navigateToExplore(
-                          categoryNameToSlug(categoryName),
-                          keywordsFromUrl
-                        )
-                      }
-                      onQuiz={() =>
-                        navigateToQuiz(
-                          categoryNameToSlug(categoryName),
-                          keywordsFromUrl
-                        )
-                      }
-                    />
-                  </div>
-                )}
               </>
+            ) : isLeaf ? (
+              <div className="mb-6">
+                <p className="text-gray-600 mb-4">
+                  You&apos;ve reached the end of the sets hierarchy. Browse items, explore, or quiz.
+                </p>
+                <div className="flex flex-wrap gap-2">
+                  <ActionButtons
+                    onListSets={undefined}
+                    onListItems={() =>
+                      navigateToItems(
+                        buildCategoryPath(
+                          categoryNameToSlug(categoryName),
+                          keywordsFromUrl
+                        )
+                      )
+                    }
+                    onExplore={() =>
+                      navigateToExplore(
+                        categoryNameToSlug(categoryName),
+                        keywordsFromUrl
+                      )
+                    }
+                    onQuiz={() =>
+                      navigateToQuiz(
+                        categoryNameToSlug(categoryName),
+                        keywordsFromUrl
+                      )
+                    }
+                  />
+                </div>
+              </div>
+            ) : (
+              <div className="text-center py-12">
+                <p className="text-gray-500 mb-4">No sets in this level.</p>
+                <ActionButtons
+                  onListSets={undefined}
+                  onListItems={() =>
+                    navigateToItems(
+                      buildCategoryPath(
+                        categoryNameToSlug(categoryName),
+                        keywordsFromUrl
+                      )
+                    )
+                  }
+                  onExplore={() =>
+                    navigateToExplore(
+                      categoryNameToSlug(categoryName),
+                      keywordsFromUrl
+                    )
+                  }
+                  onQuiz={() =>
+                    navigateToQuiz(
+                      categoryNameToSlug(categoryName),
+                      keywordsFromUrl
+                    )
+                  }
+                />
+              </div>
             )}
-          </div>
         </div>
       </>
     );

@@ -89,30 +89,30 @@ public static class GetCategories
             // Use integer for IsAuthenticated (0/1) for better PostgreSQL/Dapper compatibility
             int isAuthenticatedInt = isAuthenticated ? 1 : 0;
             
+            // Start from Categories so all categories appear (including those with 0 items)
             string sql = @"
                 SELECT
                     c.""Id"",
                     c.""Name"" AS ""Category"",
                     COUNT(DISTINCT i.""Id"")::int AS ""Count"",
                     c.""IsPrivate"",
-                    CASE 
-                        WHEN AVG(r.""Stars"") IS NOT NULL THEN ROUND(AVG(r.""Stars"")::numeric, 2)::double precision
+                    CASE
+                        WHEN COUNT(DISTINCT i.""Id"") > 0 THEN
+                            ROUND(AVG(r.""Stars""::numeric), 2)::double precision
                         ELSE NULL
                     END AS ""AverageStars""
-                FROM ""Items"" i
-                INNER JOIN ""Categories"" c
-                    ON c.""Id"" = i.""CategoryId""
-                LEFT JOIN ""Ratings"" r
-                    ON r.""ItemId"" = i.""Id""
-                    AND r.""Stars"" IS NOT NULL
-                WHERE i.""CategoryId"" IS NOT NULL
+                FROM ""Categories"" c
+                LEFT JOIN ""Items"" i
+                    ON i.""CategoryId"" = c.""Id""
                     AND (
-                        (@IsAuthenticated = 0 AND c.""IsPrivate"" = false AND i.""IsPrivate"" = false)
-                        OR (@IsAuthenticated = 1 AND (
-                            (c.""IsPrivate"" = false OR (c.""IsPrivate"" = true AND c.""CreatedBy"" = @CurrentUserId))
-                            AND (i.""IsPrivate"" = false OR (i.""IsPrivate"" = true AND i.""CreatedBy"" = @CurrentUserId))
-                        ))
+                        (@IsAuthenticated = 0 AND i.""IsPrivate"" = false)
+                        OR (@IsAuthenticated = 1 AND (i.""IsPrivate"" = false OR (i.""IsPrivate"" = true AND i.""CreatedBy"" = @CurrentUserId)))
                     )
+                LEFT JOIN ""Ratings"" r ON r.""ItemId"" = i.""Id"" AND r.""Stars"" IS NOT NULL
+                WHERE (
+                    (@IsAuthenticated = 0 AND c.""IsPrivate"" = false)
+                    OR (@IsAuthenticated = 1 AND (c.""IsPrivate"" = false OR (c.""IsPrivate"" = true AND c.""CreatedBy"" = @CurrentUserId)))
+                )
                     AND (@SearchPattern IS NULL OR LOWER(c.""Name"") LIKE LOWER(@SearchPattern))
                 GROUP BY c.""Id"", c.""Name"", c.""IsPrivate""
                 ORDER BY

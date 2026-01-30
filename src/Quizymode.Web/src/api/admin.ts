@@ -75,7 +75,7 @@ export const adminApi = {
     return response.data;
   },
 
-  getAuditLogs: async (
+    getAuditLogs: async (
     actionTypes?: string[],
     page: number = 1,
     pageSize: number = 50
@@ -93,4 +93,70 @@ export const adminApi = {
     );
     return response.data;
   },
+
+  getCategoryKeywords: async (
+    category?: string | null,
+    rank?: number | null
+  ): Promise<CategoryKeywordsAdminResponse> => {
+    const params: Record<string, string | number> = {};
+    if (category) params.category = category;
+    if (rank != null) params.rank = rank;
+    const response = await apiClient.get<CategoryKeywordsAdminResponse>(
+      "/admin/keywords",
+      { params }
+    );
+    return response.data;
+  },
+
+  updateCategoryKeyword: async (
+    id: string,
+    data: UpdateCategoryKeywordRequest
+  ): Promise<CategoryKeywordAdminResponse> => {
+    const response = await apiClient.put<CategoryKeywordAdminResponse>(
+      `/admin/category-keywords/${id}`,
+      data
+    );
+    return response.data;
+  },
+
+  updateCategory: async (
+    id: string,
+    data: UpdateCategoryRequest
+  ): Promise<UpdateCategoryResponse> => {
+    const response = await apiClient.put<UpdateCategoryResponse>(
+      `/admin/categories/${id}`,
+      data
+    );
+    return response.data;
+  },
 };
+
+export interface UpdateCategoryRequest {
+  name: string;
+}
+
+export interface UpdateCategoryResponse {
+  id: string;
+  name: string;
+}
+
+export interface CategoryKeywordAdminResponse {
+  id: string;
+  categoryId: string;
+  categoryName: string;
+  keywordId: string;
+  keywordName: string;
+  navigationRank: number | null;
+  parentName: string | null;
+  sortRank: number;
+}
+
+export interface CategoryKeywordsAdminResponse {
+  keywords: CategoryKeywordAdminResponse[];
+}
+
+export interface UpdateCategoryKeywordRequest {
+  parentName?: string | null;
+  navigationRank?: number | null;
+  sortRank?: number | null;
+}

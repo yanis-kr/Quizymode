@@ -15,6 +15,8 @@ import AdminDashboardPage from "./features/admin/pages/AdminDashboardPage";
 import ReviewBoardPage from "./features/admin/pages/ReviewBoardPage";
 import DatabaseSizePage from "./features/admin/pages/DatabaseSizePage";
 import AuditLogsPage from "./features/admin/pages/AuditLogsPage";
+import AdminKeywordsPage from "./features/admin/pages/AdminKeywordsPage";
+import AdminCategoriesPage from "./features/admin/pages/AdminCategoriesPage";
 import BulkCreateItemsPage from "./features/items/pages/BulkCreateItemsPage";
 import AddItemsPage from "./features/items/pages/AddItemsPage";
 import ItemCommentsPage from "./features/items/pages/ItemCommentsPage";
@@ -75,6 +77,8 @@ function App() {
         <Route path="/admin/review-board" element={<ReviewBoardPage />} />
         <Route path="/admin/database-size" element={<DatabaseSizePage />} />
         <Route path="/admin/audit-logs" element={<AuditLogsPage />} />
+        <Route path="/admin/keywords" element={<AdminKeywordsPage />} />
+        <Route path="/admin/categories" element={<AdminCategoriesPage />} />
         <Route path="/about" element={<AboutPage />} />
         <Route path="/roadmap" element={<RoadmapPage />} />
         <Route path="/feedback" element={<FeedbackPage />} />
