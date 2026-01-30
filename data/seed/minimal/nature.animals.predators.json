@@ -1,0 +1,41 @@
+[
+  {
+    "category": "science",
+    "question": "What adaptation helps predators hunt effectively at night?",
+    "correctAnswer": "Enhanced night vision and hearing",
+    "incorrectAnswers": [
+      "Loud vocalizations",
+      "Bright coloration",
+      "Slow movement"
+    ],
+    "explanation": "Nocturnal predators have evolved superior night vision and acute hearing to locate prey in darkness.",
+    "keywords": ["nature", "animals", "predators", "adaptations", "nocturnal"],
+    "source": "initial seed"
+  },
+  {
+    "category": "science",
+    "question": "What hunting strategy do many pack predators use?",
+    "correctAnswer": "Coordinated group hunting with roles",
+    "incorrectAnswers": [
+      "Solo hunting only",
+      "Random individual attacks",
+      "Waiting for prey to come to them"
+    ],
+    "explanation": "Pack predators like wolves coordinate hunts with different roles (chasers, ambushers) to increase success.",
+    "keywords": ["nature", "animals", "predators", "hunting", "social"],
+    "source": "initial seed"
+  },
+  {
+    "category": "science",
+    "question": "What is an apex predator?",
+    "correctAnswer": "A predator at the top of the food chain with no natural predators",
+    "incorrectAnswers": [
+      "A predator that only eats plants",
+      "A predator that hunts alone",
+      "A predator that is endangered"
+    ],
+    "explanation": "Apex predators occupy the highest trophic level and have no natural predators themselves.",
+    "keywords": ["nature", "animals", "predators", "ecology", "food-chain"],
+    "source": "initial seed"
+  }
+]

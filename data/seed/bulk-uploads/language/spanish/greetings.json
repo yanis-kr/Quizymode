@@ -1,6 +1,6 @@
 [
   {
-    "category": "Spanish",
+    "category": "language",
     "question": "How do you say 'hello' in Spanish?",
     "correctAnswer": "Hola",
     "incorrectAnswers": [
@@ -9,12 +9,11 @@
       "Por favor"
     ],
     "explanation": "Hola is the Spanish word for hello.",
-    "keywords": [
-      "greetings"
-    ]
+    "keywords": ["spanish", "greetings", "vocabulary", "core-100"],
+    "source": "bulk-upload"
   },
   {
-    "category": "Spanish",
+    "category": "language",
     "question": "What is 'goodbye' in Spanish?",
     "correctAnswer": "Adiós",
     "incorrectAnswers": [
@@ -23,12 +22,11 @@
       "Hasta luego"
     ],
     "explanation": "Adiós is the Spanish word for goodbye.",
-    "keywords": [
-      "greetings"
-    ]
+    "keywords": ["spanish", "greetings", "vocabulary", "core-100"],
+    "source": "bulk-upload"
   },
   {
-    "category": "Spanish",
+    "category": "language",
     "question": "How do you say 'good morning' in Spanish?",
     "correctAnswer": "Buenos días",
     "incorrectAnswers": [
@@ -37,8 +35,7 @@
       "Hola"
     ],
     "explanation": "Buenos días is used to greet someone in the morning.",
-    "keywords": [
-      "greetings"
-    ]
+    "keywords": ["spanish", "greetings", "vocabulary", "core-100"],
+    "source": "bulk-upload"
   }
 ]

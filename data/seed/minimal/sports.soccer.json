@@ -1,0 +1,41 @@
+[
+  {
+    "category": "sports",
+    "question": "How many players are on a soccer team on the field at one time?",
+    "correctAnswer": "11",
+    "incorrectAnswers": [
+      "10",
+      "12",
+      "9"
+    ],
+    "explanation": "A soccer team has 11 players on the field at one time, including the goalkeeper.",
+    "keywords": ["soccer", "football", "players"],
+    "source": "initial seed"
+  },
+  {
+    "category": "sports",
+    "question": "What is the maximum number of substitutions allowed in a standard soccer match?",
+    "correctAnswer": "5",
+    "incorrectAnswers": [
+      "3",
+      "7",
+      "Unlimited"
+    ],
+    "explanation": "In most professional soccer matches, teams are allowed up to 5 substitutions per game.",
+    "keywords": ["soccer", "football", "rules", "substitutions"],
+    "source": "initial seed"
+  },
+  {
+    "category": "sports",
+    "question": "How long is a standard soccer match (excluding extra time)?",
+    "correctAnswer": "90 minutes",
+    "incorrectAnswers": [
+      "80 minutes",
+      "100 minutes",
+      "120 minutes"
+    ],
+    "explanation": "A standard soccer match consists of two 45-minute halves, totaling 90 minutes of play.",
+    "keywords": ["soccer", "football", "rules", "duration"],
+    "source": "initial seed"
+  }
+]

@@ -31,5 +31,5 @@ FROM base AS final
 WORKDIR /app
 COPY --from=publish /app/publish .
 COPY data ./data
-ENV APP_SEED__PATH=data/seed
+ENV APP_SEED__PATH=data/seed/minimal
 ENTRYPOINT ["dotnet", "Quizymode.Api.dll"]

@@ -1,0 +1,41 @@
+[
+  {
+    "category": "general",
+    "question": "What is the most important priority when lost in a forest?",
+    "correctAnswer": "Finding or creating shelter",
+    "incorrectAnswers": [
+      "Finding food immediately",
+      "Walking in circles",
+      "Panicking"
+    ],
+    "explanation": "Shelter protects from weather and hypothermia, which are immediate threats in forest survival situations.",
+    "keywords": ["outdoors", "survival", "forest", "shelter", "priorities"],
+    "source": "initial seed"
+  },
+  {
+    "category": "general",
+    "question": "How can you determine direction using a watch in the Northern Hemisphere?",
+    "correctAnswer": "Point the hour hand at the sun, bisect the angle between hour hand and 12",
+    "incorrectAnswers": [
+      "Point minute hand at sun",
+      "Use the watch's compass",
+      "Point hour hand away from sun"
+    ],
+    "explanation": "In the Northern Hemisphere, pointing the hour hand at the sun and bisecting the angle to 12 gives approximate south.",
+    "keywords": ["outdoors", "survival", "forest", "navigation", "compass"],
+    "source": "initial seed"
+  },
+  {
+    "category": "general",
+    "question": "What is the rule of threes in survival situations?",
+    "correctAnswer": "3 minutes without air, 3 hours without shelter, 3 days without water, 3 weeks without food",
+    "incorrectAnswers": [
+      "3 hours without air, 3 days without shelter, 3 weeks without water",
+      "3 days without air, 3 weeks without shelter, 3 months without water",
+      "All needs are equally important"
+    ],
+    "explanation": "The rule of threes prioritizes survival needs: air, shelter, water, then food.",
+    "keywords": ["outdoors", "survival", "forest", "priorities", "rules"],
+    "source": "initial seed"
+  }
+]

@@ -1,0 +1,41 @@
+[
+  {
+    "category": "tests",
+    "question": "What is the value of 7 + 8 × 2?",
+    "correctAnswer": "23",
+    "incorrectAnswers": [
+      "30",
+      "17",
+      "14"
+    ],
+    "explanation": "Multiply first: 8×2=16, then add 7.",
+    "keywords": ["act", "math", "order-of-operations", "arithmetic"],
+    "source": "initial seed"
+  },
+  {
+    "category": "tests",
+    "question": "What is 45 percent of 200?",
+    "correctAnswer": "90",
+    "incorrectAnswers": [
+      "45",
+      "80",
+      "100"
+    ],
+    "explanation": "0.45×200=90.",
+    "keywords": ["act", "math", "percentages", "arithmetic"],
+    "source": "initial seed"
+  },
+  {
+    "category": "tests",
+    "question": "If x + 5 = 12, what is x?",
+    "correctAnswer": "7",
+    "incorrectAnswers": [
+      "17",
+      "2.4",
+      "60"
+    ],
+    "explanation": "Subtract 5 from both sides: x = 12 - 5 = 7.",
+    "keywords": ["act", "math", "algebra", "equations"],
+    "source": "initial seed"
+  }
+]

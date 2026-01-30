@@ -1,0 +1,41 @@
+[
+  {
+    "category": "language",
+    "question": "What does the French expression 'C'est la vie' mean?",
+    "correctAnswer": "That's life",
+    "incorrectAnswers": [
+      "That's wonderful",
+      "That's terrible",
+      "That's impossible"
+    ],
+    "explanation": "C'est la vie is used to express acceptance of life's circumstances, both good and bad.",
+    "keywords": ["french", "expressions", "idioms", "philosophy"],
+    "source": "initial seed"
+  },
+  {
+    "category": "language",
+    "question": "What does 'Bon appétit' mean in French?",
+    "correctAnswer": "Enjoy your meal",
+    "incorrectAnswers": [
+      "Good morning",
+      "Goodbye",
+      "Thank you"
+    ],
+    "explanation": "Bon appétit is said before a meal to wish someone a good appetite.",
+    "keywords": ["french", "expressions", "food", "courtesy"],
+    "source": "initial seed"
+  },
+  {
+    "category": "language",
+    "question": "What does the French expression 'Ça marche' mean?",
+    "correctAnswer": "That works / OK",
+    "incorrectAnswers": [
+      "That's broken",
+      "That's expensive",
+      "That's difficult"
+    ],
+    "explanation": "Ça marche is a casual way to say something is acceptable or will work.",
+    "keywords": ["french", "expressions", "agreement", "casual"],
+    "source": "initial seed"
+  }
+]
