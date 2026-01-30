@@ -2,6 +2,7 @@ using FluentValidation;
 using Microsoft.EntityFrameworkCore;
 using Quizymode.Api.Data;
 using Quizymode.Api.Infrastructure;
+using Quizymode.Api.Services;
 using Quizymode.Api.Shared.Kernel;
 using Quizymode.Api.Shared.Models;
 
@@ -39,6 +40,7 @@ public static class UpdateCollection
                 .RequireAuthorization()
                 .Produces<Response>(StatusCodes.Status200OK)
                 .Produces(StatusCodes.Status400BadRequest)
+                .Produces(StatusCodes.Status403Forbidden)
                 .Produces(StatusCodes.Status404NotFound);
         }
 
@@ -47,20 +49,28 @@ public static class UpdateCollection
             Request request,
             IValidator<Request> validator,
             ApplicationDbContext db,
+            IUserContext userContext,
             CancellationToken cancellationToken)
         {
+            if (!userContext.IsAuthenticated || string.IsNullOrEmpty(userContext.UserId))
+            {
+                return Results.Unauthorized();
+            }
+
             var validationResult = await validator.ValidateAsync(request, cancellationToken);
             if (!validationResult.IsValid)
             {
                 return Results.BadRequest(validationResult.Errors);
             }
 
-            Result<Response> result = await HandleAsync(id, request, db, cancellationToken);
+            Result<Response> result = await HandleAsync(id, request, db, userContext, cancellationToken);
 
             return result.Match(
                 value => Results.Ok(value),
                 failure => failure.Error.Type == ErrorType.NotFound
                     ? Results.NotFound()
+                    : failure.Error.Code == "Collection.AccessDenied"
+                        ? Results.StatusCode(StatusCodes.Status403Forbidden)
                     : CustomResults.Problem(result));
         }
     }
@@ -69,6 +79,7 @@ public static class UpdateCollection
         string id,
         Request request,
         ApplicationDbContext db,
+        IUserContext userContext,
         CancellationToken cancellationToken)
     {
         try
@@ -86,6 +97,18 @@ public static class UpdateCollection
             {
                 return Result.Failure<Response>(
                     Error.NotFound("Collection.NotFound", $"Collection with id {id} not found"));
+            }
+
+            if (string.IsNullOrEmpty(userContext.UserId))
+            {
+                return Result.Failure<Response>(
+                    Error.Validation("Collection.UserIdMissing", "User ID is missing"));
+            }
+
+            if (!string.Equals(collection.CreatedBy, userContext.UserId, StringComparison.Ordinal))
+            {
+                return Result.Failure<Response>(
+                    Error.Validation("Collection.AccessDenied", "Access denied"));
             }
 
             collection.Name = request.Name;

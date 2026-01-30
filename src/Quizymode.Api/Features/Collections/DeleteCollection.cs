@@ -1,6 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using Quizymode.Api.Data;
 using Quizymode.Api.Infrastructure;
+using Quizymode.Api.Services;
 using Quizymode.Api.Shared.Kernel;
 using Quizymode.Api.Shared.Models;
 
@@ -18,20 +19,29 @@ public static class DeleteCollection
                 .RequireAuthorization()
                 .Produces(StatusCodes.Status204NoContent)
                 .Produces(StatusCodes.Status404NotFound)
+                .Produces(StatusCodes.Status403Forbidden)
                 .Produces(StatusCodes.Status400BadRequest);
         }
 
         private static async Task<IResult> Handler(
             string id,
             ApplicationDbContext db,
+            IUserContext userContext,
             CancellationToken cancellationToken)
         {
-            Result result = await HandleAsync(id, db, cancellationToken);
+            if (!userContext.IsAuthenticated || string.IsNullOrEmpty(userContext.UserId))
+            {
+                return Results.Unauthorized();
+            }
+
+            Result result = await HandleAsync(id, db, userContext, cancellationToken);
 
             return result.Match(
                 () => Results.NoContent(),
                 failure => failure.Error.Type == ErrorType.NotFound
                     ? Results.NotFound()
+                    : failure.Error.Code == "Collection.AccessDenied"
+                        ? Results.StatusCode(StatusCodes.Status403Forbidden)
                     : CustomResults.Problem(result));
         }
     }
@@ -39,6 +49,7 @@ public static class DeleteCollection
     public static async Task<Result> HandleAsync(
         string id,
         ApplicationDbContext db,
+        IUserContext userContext,
         CancellationToken cancellationToken)
     {
         try
@@ -56,6 +67,18 @@ public static class DeleteCollection
             {
                 return Result.Failure(
                     Error.NotFound("Collection.NotFound", $"Collection with id {id} not found"));
+            }
+
+            if (string.IsNullOrEmpty(userContext.UserId))
+            {
+                return Result.Failure(
+                    Error.Validation("Collection.UserIdMissing", "User ID is missing"));
+            }
+
+            if (!string.Equals(collection.CreatedBy, userContext.UserId, StringComparison.Ordinal))
+            {
+                return Result.Failure(
+                    Error.Validation("Collection.AccessDenied", "Access denied"));
             }
 
             // Remove related collection items first

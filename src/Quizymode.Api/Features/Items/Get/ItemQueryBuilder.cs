@@ -80,6 +80,20 @@ internal sealed class ItemQueryBuilder
     /// </summary>
     private Result<IQueryable<Item>> ApplyVisibilityFilter(IQueryable<Item> query, GetItems.QueryRequest request)
     {
+        if (request.CollectionId.HasValue)
+        {
+            // Collection share mode: allow private items via collection link.
+            // Apply IsPrivate filter if explicitly requested, otherwise include all.
+            if (request.IsPrivate.HasValue)
+            {
+                query = request.IsPrivate.Value
+                    ? query.Where(i => i.IsPrivate)
+                    : query.Where(i => !i.IsPrivate);
+            }
+
+            return Result.Success(query);
+        }
+
         if (request.IsPrivate.HasValue)
         {
             if (request.IsPrivate.Value)
@@ -251,10 +265,10 @@ internal sealed class ItemQueryBuilder
     }
 
     /// <summary>
-    /// Applies collection filtering to the query. Requires authentication and verifies
-    /// that the user owns the collection (or is admin) before filtering items.
-    /// Returns validation error if collection doesn't exist or user doesn't have access.
-    /// Loads all item IDs in the collection first, then filters the main query to those IDs.
+    /// Applies collection filtering to the query. Collection access is link-based,
+    /// so items can be retrieved without authentication. Returns not found if the
+    /// collection doesn't exist. Loads all item IDs in the collection first, then
+    /// filters the main query to those IDs.
     /// This approach ensures visibility rules (already applied) are respected.
     /// </summary>
     private async Task<Result<IQueryable<Item>>> ApplyCollectionFilterAsync(
@@ -273,19 +287,6 @@ internal sealed class ItemQueryBuilder
         {
             return Result.Failure<IQueryable<Item>>(
                 Error.NotFound("Collection.NotFound", "Collection not found"));
-        }
-
-        string? subject = _userContext.UserId;
-        if (string.IsNullOrEmpty(subject))
-        {
-            return Result.Failure<IQueryable<Item>>(
-                Error.Validation("Items.Unauthorized", "Must be authenticated to view collection items"));
-        }
-
-        if (collection.CreatedBy != subject && !_userContext.IsAdmin)
-        {
-            return Result.Failure<IQueryable<Item>>(
-                Error.Validation("Collection.AccessDenied", "Access denied"));
         }
 
         List<Guid> itemIdsInCollection = await _db.CollectionItems

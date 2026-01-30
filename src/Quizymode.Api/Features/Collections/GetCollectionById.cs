@@ -14,7 +14,8 @@ public static class GetCollectionById
         string Name,
         string CreatedBy,
         DateTime CreatedAt,
-        int ItemCount);
+        int ItemCount,
+        bool IsOwner);
 
     public sealed class Endpoint : IEndpoint
     {
@@ -23,9 +24,7 @@ public static class GetCollectionById
             app.MapGet("collections/{id:guid}", Handler)
                 .WithTags("Collections")
                 .WithSummary("Get a collection by ID")
-                .RequireAuthorization()
                 .Produces<Response>(StatusCodes.Status200OK)
-                .Produces(StatusCodes.Status403Forbidden)
                 .Produces(StatusCodes.Status404NotFound);
         }
 
@@ -35,20 +34,13 @@ public static class GetCollectionById
             IUserContext userContext,
             CancellationToken cancellationToken)
         {
-            if (!userContext.IsAuthenticated)
-            {
-                return Results.Unauthorized();
-            }
-
             Result<Response> result = await HandleAsync(id, db, userContext, cancellationToken);
 
             return result.Match(
                 value => Results.Ok(value),
                 failure => failure.Error.Type == ErrorType.NotFound
                     ? Results.NotFound()
-                    : failure.Error.Type == ErrorType.Validation
-                        ? Results.StatusCode(StatusCodes.Status403Forbidden)
-                        : CustomResults.Problem(result));
+                    : CustomResults.Problem(result));
         }
     }
 
@@ -69,23 +61,20 @@ public static class GetCollectionById
                     Error.NotFound("Collection.NotFound", "Collection not found"));
             }
 
-            // Authorization: allow if user is owner or admin
-            var subject = userContext.UserId;
-            if (collection.CreatedBy != subject && !userContext.IsAdmin)
-            {
-                return Result.Failure<Response>(
-                    Error.Validation("Collection.AccessDenied", "Access denied"));
-            }
-
             int itemCount = await db.CollectionItems
                 .CountAsync(ci => ci.CollectionId == id, cancellationToken);
+
+            bool isOwner = userContext.IsAuthenticated &&
+                           !string.IsNullOrEmpty(userContext.UserId) &&
+                           string.Equals(collection.CreatedBy, userContext.UserId, StringComparison.Ordinal);
 
             Response response = new(
                 collection.Id.ToString(),
                 collection.Name,
                 collection.CreatedBy,
                 collection.CreatedAt,
-                itemCount);
+                itemCount,
+                isOwner);
 
             return Result.Success(response);
         }
