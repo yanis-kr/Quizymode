@@ -63,6 +63,7 @@ public static class CollectionItems
                 .RequireAuthorization()
                 .Produces<CollectionItemResponse>(StatusCodes.Status201Created)
                 .Produces(StatusCodes.Status400BadRequest)
+                .Produces(StatusCodes.Status403Forbidden)
                 .Produces(StatusCodes.Status404NotFound);
 
             app.MapPost("collections/{collectionId:guid}/items/bulk", BulkAddHandler)
@@ -72,6 +73,7 @@ public static class CollectionItems
                 .RequireAuthorization()
                 .Produces<BulkAddResponse>(StatusCodes.Status200OK)
                 .Produces(StatusCodes.Status400BadRequest)
+                .Produces(StatusCodes.Status403Forbidden)
                 .Produces(StatusCodes.Status404NotFound);
 
             app.MapDelete("collections/{collectionId:guid}/items/{itemId:guid}", RemoveHandler)
@@ -80,6 +82,7 @@ public static class CollectionItems
                 .WithDescription("Removes a quiz item from a collection.")
                 .RequireAuthorization()
                 .Produces(StatusCodes.Status204NoContent)
+                .Produces(StatusCodes.Status403Forbidden)
                 .Produces(StatusCodes.Status404NotFound);
         }
 
@@ -101,6 +104,8 @@ public static class CollectionItems
                 value => Results.Created($"/api/collections/{value.CollectionId}/items/{value.ItemId}", value),
                 failure => failure.Error.Type == ErrorType.NotFound
                     ? Results.NotFound()
+                    : failure.Error.Code == "CollectionItems.AccessDenied"
+                        ? Results.StatusCode(StatusCodes.Status403Forbidden)
                     : CustomResults.Problem(result));
         }
 
@@ -122,6 +127,8 @@ public static class CollectionItems
                 value => Results.Ok(value),
                 failure => failure.Error.Type == ErrorType.NotFound
                     ? Results.NotFound()
+                    : failure.Error.Code == "CollectionItems.AccessDenied"
+                        ? Results.StatusCode(StatusCodes.Status403Forbidden)
                     : CustomResults.Problem(result));
         }
 
@@ -138,6 +145,8 @@ public static class CollectionItems
                 () => Results.NoContent(),
                 failure => failure.Error.Type == ErrorType.NotFound
                     ? Results.NotFound()
+                    : failure.Error.Code == "CollectionItems.AccessDenied"
+                        ? Results.StatusCode(StatusCodes.Status403Forbidden)
                     : CustomResults.Problem(result));
         }
     }
@@ -164,6 +173,18 @@ public static class CollectionItems
             {
                 return Result.Failure<CollectionItemResponse>(
                     Error.NotFound("Collection.NotFound", $"Collection with id {collectionId} not found"));
+            }
+
+            if (string.IsNullOrEmpty(userContext.UserId))
+            {
+                return Result.Failure<CollectionItemResponse>(
+                    Error.Validation("CollectionItems.UserIdMissing", "User ID is missing"));
+            }
+
+            if (!string.Equals(collection.CreatedBy, userContext.UserId, StringComparison.Ordinal))
+            {
+                return Result.Failure<CollectionItemResponse>(
+                    Error.Validation("CollectionItems.AccessDenied", "Access denied"));
             }
 
             Item? item = await db.Items
@@ -235,6 +256,18 @@ public static class CollectionItems
                     Error.NotFound("Collection.NotFound", $"Collection with id {collectionId} not found"));
             }
 
+            if (string.IsNullOrEmpty(userContext.UserId))
+            {
+                return Result.Failure<BulkAddResponse>(
+                    Error.Validation("CollectionItems.UserIdMissing", "User ID is missing"));
+            }
+
+            if (!string.Equals(collection.CreatedBy, userContext.UserId, StringComparison.Ordinal))
+            {
+                return Result.Failure<BulkAddResponse>(
+                    Error.Validation("CollectionItems.AccessDenied", "Access denied"));
+            }
+
             // Get existing collection items to skip duplicates
             HashSet<Guid> existingItemIds = await db.CollectionItems
                 .Where(ci => ci.CollectionId == collectionId && request.ItemIds.Contains(ci.ItemId))
@@ -300,6 +333,27 @@ public static class CollectionItems
             {
                 return Result.Failure(
                     Error.Validation("CollectionItems.Unauthorized", "User must be authenticated."));
+            }
+
+            Collection? collection = await db.Collections
+                .FirstOrDefaultAsync(c => c.Id == collectionId, cancellationToken);
+
+            if (collection is null)
+            {
+                return Result.Failure(
+                    Error.NotFound("Collection.NotFound", $"Collection with id {collectionId} not found"));
+            }
+
+            if (string.IsNullOrEmpty(userContext.UserId))
+            {
+                return Result.Failure(
+                    Error.Validation("CollectionItems.UserIdMissing", "User ID is missing"));
+            }
+
+            if (!string.Equals(collection.CreatedBy, userContext.UserId, StringComparison.Ordinal))
+            {
+                return Result.Failure(
+                    Error.Validation("CollectionItems.AccessDenied", "Access denied"));
             }
 
             CollectionItem? entity = await db.CollectionItems

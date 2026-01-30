@@ -45,6 +45,7 @@ const CollectionDetailPage = () => {
   });
 
   const items = itemsData?.items || [];
+  const isOwner = collectionData?.isOwner === true;
   const currentPageItemIds = items.map((item) => item.id);
   const {
     selectedItemIds,
@@ -123,14 +124,16 @@ const CollectionDetailPage = () => {
               >
                 <AcademicCapIcon className="h-5 w-5" />
               </button>
-              <button
-                onClick={() => handleRemoveItem(item.id)}
-                disabled={removeItemMutation.isPending}
-                className="p-2 text-red-600 hover:text-red-700 hover:bg-red-50 rounded-md disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
-                title="Remove from collection"
-              >
-                <MinusIcon className="h-5 w-5" />
-              </button>
+              {isOwner && (
+                <button
+                  onClick={() => handleRemoveItem(item.id)}
+                  disabled={removeItemMutation.isPending}
+                  className="p-2 text-red-600 hover:text-red-700 hover:bg-red-50 rounded-md disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+                  title="Remove from collection"
+                >
+                  <MinusIcon className="h-5 w-5" />
+                </button>
+              )}
             </>
           )}
         />

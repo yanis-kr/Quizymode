@@ -103,7 +103,7 @@ const ExploreModePage = () => {
   const { data: collectionInfo } = useQuery({
     queryKey: ["collection", collectionId],
     queryFn: () => collectionsApi.getById(collectionId!),
-    enabled: !!collectionId && isAuthenticated,
+    enabled: !!collectionId,
   });
 
   const { data, isLoading, error, refetch } = useQuery({

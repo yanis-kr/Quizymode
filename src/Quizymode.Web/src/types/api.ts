@@ -57,6 +57,7 @@ export interface CollectionResponse {
   createdBy: string;
   createdAt: string;
   itemCount: number;
+  isOwner?: boolean;
 }
 
 export interface CollectionsResponse {
