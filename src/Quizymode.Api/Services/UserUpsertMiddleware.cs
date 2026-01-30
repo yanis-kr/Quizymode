@@ -98,30 +98,89 @@ internal sealed class UserUpsertMiddleware
                     
                     if (lockedUser is null)
                     {
-                        // For new users, set Name from claims if available, otherwise use subject as fallback
-                        var userEntity = new User
+                        // No user with this Subject - may be first login or Subject changed (e.g. Cognito user re-created).
+                        // If a user with this Email already exists, link this login to them (update Subject) to avoid IX_Users_Email violation.
+                        User? existingByEmail = null;
+                        if (!string.IsNullOrWhiteSpace(email))
                         {
-                            Id = Guid.NewGuid(),
-                            Subject = subject,
-                            Email = email,
-                            Name = name, // Use name from claims (or subject as fallback)
-                            CreatedAt = DateTime.UtcNow,
-                            LastLogin = DateTime.UtcNow
-                        };
+                            existingByEmail = await db.Users
+                                .Where(u => u.Email != null && u.Email.Trim().ToLower() == email.Trim().ToLower())
+                                .AsTracking()
+                                .FirstOrDefaultAsync(context.RequestAborted);
+                            if (existingByEmail is not null)
+                            {
+                                // Lock the row so we can update it (SELECT FOR UPDATE by primary key)
+                                await db.Users
+                                    .FromSqlInterpolated($"SELECT * FROM \"Users\" WHERE \"Id\" = {existingByEmail.Id} FOR UPDATE")
+                                    .AsTracking()
+                                    .FirstOrDefaultAsync(context.RequestAborted);
+                                existingByEmail = await db.Users.FindAsync(new object[] { existingByEmail.Id }, context.RequestAborted);
+                            }
+                        }
 
-                        db.Users.Add(userEntity);
-                        await db.SaveChangesAsync(context.RequestAborted);
-                        userId = userEntity.Id;
-                        _logger.LogInformation("Created new user record for subject: {Subject} with UserId: {UserId}", subject, userId);
-                        
-                        // Commit the transaction before logging audit
-                        await transaction.CommitAsync(context.RequestAborted);
-                        
-                        // Log user creation audit
-                        await auditService.LogAsync(
-                            AuditAction.UserCreated,
-                            userId: userId,
-                            cancellationToken: context.RequestAborted);
+                        if (existingByEmail is not null)
+                        {
+                            // Link this identity (Subject) to the existing user - update Subject and LastLogin
+                            existingByEmail.Subject = subject;
+                            existingByEmail.Email = email;
+                            if (string.IsNullOrWhiteSpace(existingByEmail.Name) || existingByEmail.Name == existingByEmail.Subject)
+                                existingByEmail.Name = name;
+                            existingByEmail.LastLogin = DateTime.UtcNow;
+                            await db.SaveChangesAsync(context.RequestAborted);
+                            userId = existingByEmail.Id;
+                            _logger.LogInformation("Linked existing user (UserId: {UserId}, Email: {Email}) to new Subject: {Subject}", userId, email, subject);
+                            await transaction.CommitAsync(context.RequestAborted);
+                        }
+                        else
+                        {
+                            // Truly new user
+                            var userEntity = new User
+                            {
+                                Id = Guid.NewGuid(),
+                                Subject = subject,
+                                Email = email,
+                                Name = name,
+                                CreatedAt = DateTime.UtcNow,
+                                LastLogin = DateTime.UtcNow
+                            };
+
+                            db.Users.Add(userEntity);
+                            try
+                            {
+                                await db.SaveChangesAsync(context.RequestAborted);
+                            }
+                            catch (DbUpdateException ex) when (ex.InnerException is Npgsql.PostgresException pg && pg.SqlState == "23505" && pg.ConstraintName == "IX_Users_Email")
+                            {
+                                // Race: another request inserted same email - load and use that user, update Subject
+                                await transaction.RollbackAsync(context.RequestAborted);
+                                await transaction.DisposeAsync();
+                                await using var retryTransaction = await db.Database.BeginTransactionAsync(System.Data.IsolationLevel.ReadCommitted, context.RequestAborted);
+                                var byEmail = await db.Users
+                                    .Where(u => u.Email != null && u.Email.Trim().ToLower() == email!.Trim().ToLower())
+                                    .AsTracking()
+                                    .FirstOrDefaultAsync(context.RequestAborted);
+                                if (byEmail is not null)
+                                {
+                                    byEmail.Subject = subject;
+                                    byEmail.LastLogin = DateTime.UtcNow;
+                                    await db.SaveChangesAsync(context.RequestAborted);
+                                    await retryTransaction.CommitAsync(context.RequestAborted);
+                                    userId = byEmail.Id;
+                                    _logger.LogInformation("Duplicate key on insert - linked existing user (UserId: {UserId}) to Subject: {Subject}", userId, subject);
+                                }
+                                else
+                                    throw;
+                                goto afterUpsert;
+                            }
+                            userId = userEntity.Id;
+                            _logger.LogInformation("Created new user record for subject: {Subject} with UserId: {UserId}", subject, userId);
+                            await transaction.CommitAsync(context.RequestAborted);
+                            await auditService.LogAsync(
+                                AuditAction.UserCreated,
+                                userId: userId,
+                                cancellationToken: context.RequestAborted);
+                        }
+                    afterUpsert:;
                     }
                     else
                     {

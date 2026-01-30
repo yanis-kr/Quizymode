@@ -23,39 +23,29 @@ public static class GetCollectionById
             app.MapGet("collections/{id:guid}", Handler)
                 .WithTags("Collections")
                 .WithSummary("Get a collection by ID")
-                .RequireAuthorization()
+                .WithDescription("Anyone with the link (including anonymous) can view a collection by ID. Shareable URL.")
                 .Produces<Response>(StatusCodes.Status200OK)
-                .Produces(StatusCodes.Status403Forbidden)
                 .Produces(StatusCodes.Status404NotFound);
         }
 
         private static async Task<IResult> Handler(
             Guid id,
             ApplicationDbContext db,
-            IUserContext userContext,
             CancellationToken cancellationToken)
         {
-            if (!userContext.IsAuthenticated)
-            {
-                return Results.Unauthorized();
-            }
-
-            Result<Response> result = await HandleAsync(id, db, userContext, cancellationToken);
+            Result<Response> result = await HandleAsync(id, db, cancellationToken);
 
             return result.Match(
                 value => Results.Ok(value),
                 failure => failure.Error.Type == ErrorType.NotFound
                     ? Results.NotFound()
-                    : failure.Error.Type == ErrorType.Validation
-                        ? Results.StatusCode(StatusCodes.Status403Forbidden)
-                        : CustomResults.Problem(result));
+                    : CustomResults.Problem(result));
         }
     }
 
     public static async Task<Result<Response>> HandleAsync(
         Guid id,
         ApplicationDbContext db,
-        IUserContext userContext,
         CancellationToken cancellationToken)
     {
         try
@@ -69,14 +59,7 @@ public static class GetCollectionById
                     Error.NotFound("Collection.NotFound", "Collection not found"));
             }
 
-            // Authorization: allow if user is owner or admin
-            var subject = userContext.UserId;
-            if (collection.CreatedBy != subject && !userContext.IsAdmin)
-            {
-                return Result.Failure<Response>(
-                    Error.Validation("Collection.AccessDenied", "Access denied"));
-            }
-
+            // Shareable link: anyone with the ID can view (read-only)
             int itemCount = await db.CollectionItems
                 .CountAsync(ci => ci.CollectionId == id, cancellationToken);
 

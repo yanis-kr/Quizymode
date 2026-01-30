@@ -1,3 +1,4 @@
+import * as React from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
 import { collectionsApi } from "@/api/collections";
@@ -6,13 +7,15 @@ import LoadingSpinner from "@/components/LoadingSpinner";
 import ErrorMessage from "@/components/ErrorMessage";
 import ItemListSection from "@/components/ItemListSection";
 import useItemSelection from "@/hooks/useItemSelection";
-import { MinusIcon, ArrowLeftIcon, EyeIcon, AcademicCapIcon } from "@heroicons/react/24/outline";
+import { MinusIcon, ArrowLeftIcon, EyeIcon, AcademicCapIcon, PencilIcon, TrashIcon } from "@heroicons/react/24/outline";
 
 const CollectionDetailPage = () => {
   const { id } = useParams<{ id: string }>();
-  const { isAuthenticated } = useAuth();
+  const { isAuthenticated, userId } = useAuth();
   const queryClient = useQueryClient();
   const navigate = useNavigate();
+  const [editingName, setEditingName] = React.useState(false);
+  const [nameValue, setNameValue] = React.useState("");
 
   const {
     data: collectionData,
@@ -37,12 +40,34 @@ const CollectionDetailPage = () => {
   const removeItemMutation = useMutation({
     mutationFn: (itemId: string) => collectionsApi.removeItem(id!, itemId),
     onSuccess: () => {
-      // Invalidate queries to refresh the list and collection data
       queryClient.invalidateQueries({ queryKey: ["collectionItems", id] });
       queryClient.invalidateQueries({ queryKey: ["collection", id] });
       queryClient.invalidateQueries({ queryKey: ["collections"] });
     },
   });
+
+  const renameMutation = useMutation({
+    mutationFn: (name: string) => collectionsApi.update(id!, { name }),
+    onSuccess: (data) => {
+      queryClient.invalidateQueries({ queryKey: ["collection", id] });
+      queryClient.invalidateQueries({ queryKey: ["collections"] });
+      setEditingName(false);
+      setNameValue(data.name);
+    },
+  });
+
+  const deleteMutation = useMutation({
+    mutationFn: () => collectionsApi.delete(id!),
+    onSuccess: () => {
+      navigate("/collections");
+    },
+  });
+
+  const isOwner = isAuthenticated && userId && collectionData?.createdBy === userId;
+
+  React.useEffect(() => {
+    if (collectionData?.name != null) setNameValue(collectionData.name);
+  }, [collectionData?.name]);
 
   const items = itemsData?.items || [];
   const currentPageItemIds = items.map((item) => item.id);
@@ -116,27 +141,29 @@ const CollectionDetailPage = () => {
           renderActions={(item) => (
             <>
               <button
-                onClick={() => navigate(`/explore/item/${item.id}`)}
+                onClick={() => navigate(`/explore/collection/${id}/item/${item.id}`)}
                 className="p-2 text-indigo-600 hover:bg-indigo-50 rounded-md"
                 title="View item"
               >
                 <EyeIcon className="h-5 w-5" />
               </button>
               <button
-                onClick={() => navigate(`/quiz/item/${item.id}`)}
+                onClick={() => navigate(`/quiz/collection/${id}/item/${item.id}`)}
                 className="p-2 text-purple-600 hover:bg-purple-50 rounded-md"
                 title="Quiz mode"
               >
                 <AcademicCapIcon className="h-5 w-5" />
               </button>
-              <button
-                onClick={() => handleRemoveItem(item.id)}
-                disabled={removeItemMutation.isPending}
-                className="p-2 text-red-600 hover:text-red-700 hover:bg-red-50 rounded-md disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
-                title="Remove from collection"
-              >
-                <MinusIcon className="h-5 w-5" />
-              </button>
+              {isOwner && (
+                <button
+                  onClick={() => handleRemoveItem(item.id)}
+                  disabled={removeItemMutation.isPending}
+                  className="p-2 text-red-600 hover:text-red-700 hover:bg-red-50 rounded-md disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+                  title="Remove from collection"
+                >
+                  <MinusIcon className="h-5 w-5" />
+                </button>
+              )}
             </>
           )}
         />

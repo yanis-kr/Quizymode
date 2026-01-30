@@ -31,7 +31,8 @@ public static class AddItemsBulk
         int DuplicateCount,
         int FailedCount,
         List<string> DuplicateQuestions,
-        List<ItemError> Errors);
+        List<ItemError> Errors,
+        List<Guid>? CreatedItemIds = null);
 
     public sealed record ItemError(
         int Index,

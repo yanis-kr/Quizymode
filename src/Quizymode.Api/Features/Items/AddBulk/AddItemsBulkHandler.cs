@@ -273,13 +273,15 @@ internal static class AddItemsBulkHandler
                 await transaction.CommitAsync(cancellationToken);
             }
 
+            List<Guid> createdIds = itemsToInsert.Select(i => i.Id).ToList();
             AddItemsBulk.Response response = new AddItemsBulk.Response(
                 request.Items.Count,
                 itemsToInsert.Count,
                 duplicateQuestions.Count,
                 errors.Count,
                 duplicateQuestions,
-                errors);
+                errors,
+                createdIds);
 
             return Result.Success(response);
         }
