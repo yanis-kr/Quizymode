@@ -35,8 +35,9 @@ internal sealed class ItemQueryBuilder
     /// </summary>
     public async Task<Result<IQueryable<Item>>> BuildQueryAsync(GetItems.QueryRequest request)
     {
-        // Validate navigation path if category and keywords are provided
-        if (!string.IsNullOrEmpty(request.Category) && request.Keywords is not null && request.Keywords.Count > 0)
+        // Validate navigation path only when 1-2 keywords (nav hierarchy). 3+ keywords are item-level.
+        if (!string.IsNullOrEmpty(request.Category) && request.Keywords is not null
+            && request.Keywords.Count > 0 && request.Keywords.Count <= 2)
         {
             Result pathValidationResult = await Quizymode.Api.Features.Keywords.NavigationPathValidator.ValidatePathAsync(
                 request.Category,

@@ -16,6 +16,7 @@ import ReviewBoardPage from "./features/admin/pages/ReviewBoardPage";
 import DatabaseSizePage from "./features/admin/pages/DatabaseSizePage";
 import AuditLogsPage from "./features/admin/pages/AuditLogsPage";
 import BulkCreateItemsPage from "./features/items/pages/BulkCreateItemsPage";
+import AddItemsPage from "./features/items/pages/AddItemsPage";
 import ItemCommentsPage from "./features/items/pages/ItemCommentsPage";
 import EditItemPage from "./features/items/pages/EditItemPage";
 import AboutPage from "./features/about/pages/AboutPage";
@@ -64,6 +65,7 @@ function App() {
         <Route path="/signup" element={<SignUpPage />} />
         <Route path="/my-items" element={<MyItemsPage />} />
         <Route path="/my-items/bulk-create" element={<BulkCreateItemsPage />} />
+        <Route path="/items/add" element={<AddItemsPage />} />
         <Route path="/items/create" element={<CreateItemPage />} />
         <Route path="/items/:id/edit" element={<EditItemPage />} />
         <Route path="/items/:id/comments" element={<ItemCommentsPage />} />

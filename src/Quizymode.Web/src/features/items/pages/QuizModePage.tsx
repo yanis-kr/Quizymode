@@ -18,6 +18,7 @@ import {
   categoryNameToSlug,
   findCategoryNameFromSlug,
 } from "@/utils/categorySlug";
+import { ExploreQuizBreadcrumb } from "@/components/ExploreQuizBreadcrumb";
 import {
   FolderIcon,
   ChevronLeftIcon,
@@ -388,17 +389,14 @@ const QuizModePage = () => {
           </div>
         )}
         {category && !collectionId && (
-          <div className="mb-6 flex items-center space-x-4">
-            <button
-              onClick={() => navigate("/categories")}
-              className="flex items-center px-3 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-md hover:bg-gray-50"
-            >
-              <ArrowLeftIcon className="h-4 w-4 mr-2" />
-              Go Back
-            </button>
-            <h1 className="text-3xl font-bold text-gray-900">
-              {category}
-            </h1>
+          <div className="mb-6">
+            <ExploreQuizBreadcrumb
+              mode="quiz"
+              categorySlug={categoryNameToSlug(category)}
+              categoryDisplayName={category}
+              keywords={keywords || []}
+              onNavigate={(path) => navigate(path)}
+            />
           </div>
         )}
         <div className="bg-white shadow rounded-lg p-6 mb-4">
@@ -631,18 +629,27 @@ const QuizModePage = () => {
         )}
 
         <div className="text-center">
-          <button
-            onClick={() => {
-              if (collectionId) {
-                navigate(`/collections/${collectionId}`);
-              } else {
-                navigate("/categories");
-              }
-            }}
-            className="text-indigo-600 hover:text-indigo-700"
-          >
-            ← Go back
-          </button>
+          {collectionId ? (
+            <button
+              onClick={() => navigate(`/collections/${collectionId}`)}
+              className="text-indigo-600 hover:text-indigo-700"
+              type="button"
+            >
+              ← Back to collection
+            </button>
+          ) : category ? (
+            <ExploreQuizBreadcrumb
+              mode="quiz"
+              categorySlug={categoryNameToSlug(category)}
+              categoryDisplayName={category}
+              keywords={keywords || []}
+              onNavigate={(path) => navigate(path)}
+            />
+          ) : (
+            <Link to="/categories" className="text-indigo-600 hover:text-indigo-700">
+              ← Categories
+            </Link>
+          )}
         </div>
       </div>
 

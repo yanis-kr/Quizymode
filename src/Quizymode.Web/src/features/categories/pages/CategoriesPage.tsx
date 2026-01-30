@@ -27,6 +27,7 @@ import {
   ChevronRightIcon,
   EyeIcon,
   Squares2X2Icon,
+  PlusIcon,
   ChevronRightIcon as BreadcrumbChevron,
 } from "@heroicons/react/24/outline";
 import { StarIcon as StarIconSolid } from "@heroicons/react/24/solid";
@@ -480,6 +481,23 @@ const CategoriesPage = () => {
               />
               <div className="flex items-center gap-2 flex-shrink-0">
                 <SortControl sortBy={sortBy} onSortChange={handleSortChange} />
+                {keywordsFromUrl.length >= 2 && isAuthenticated && (
+                  <button
+                    onClick={() => {
+                      const params = new URLSearchParams();
+                      params.set("category", categoryName);
+                      if (keywordsFromUrl.length > 0) {
+                        params.set("keywords", keywordsFromUrl.join(","));
+                      }
+                      navigate(`/items/add?${params.toString()}`);
+                    }}
+                    className="inline-flex items-center gap-1 px-3 py-1.5 text-sm font-medium text-white bg-green-600 rounded-md hover:bg-green-700"
+                    title="Add items"
+                  >
+                    <PlusIcon className="h-4 w-4" />
+                    Add
+                  </button>
+                )}
                 <ActionButtons
                   onListSets={undefined}
                   onListItems={() =>
@@ -552,6 +570,10 @@ const CategoriesPage = () => {
                       itemCount={kw.itemCount}
                       averageRating={kw.averageRating}
                       onClick={() => handleKeywordClick(kw.name)}
+                      onListSets={(e) => {
+                        e.stopPropagation();
+                        handleKeywordClick(kw.name);
+                      }}
                       onListItems={(e) => {
                         e.stopPropagation();
                         const pathKwLower = new Set(
@@ -691,6 +713,10 @@ const CategoriesPage = () => {
                   `/categories/${categoryNameToSlug(cat.category)}`
                 )
               }
+              onListSets={(e) => {
+                e.stopPropagation();
+                navigateToSets(`/categories/${categoryNameToSlug(cat.category)}`);
+              }}
               onListItems={(e) => {
                 e.stopPropagation();
                 navigateToItems(`/categories/${categoryNameToSlug(cat.category)}`);
@@ -848,6 +874,7 @@ function CategoryOrKeywordBox({
   averageRating,
   isPrivate,
   onClick,
+  onListSets,
   onListItems,
   onExplore,
   onQuiz,
@@ -857,10 +884,12 @@ function CategoryOrKeywordBox({
   averageRating: number | null;
   isPrivate?: boolean;
   onClick: () => void;
+  onListSets?: (e: React.MouseEvent) => void;
   onListItems: (e: React.MouseEvent) => void;
   onExplore: (e: React.MouseEvent) => void;
   onQuiz: (e: React.MouseEvent) => void;
 }) {
+  const linkClass = "inline-flex items-center gap-1 text-xs font-medium hover:underline";
   return (
     <div
       role="button"
@@ -887,73 +916,42 @@ function CategoryOrKeywordBox({
           </div>
           <p className="mt-2 text-sm text-gray-500">{itemCount} items</p>
         </div>
-        <div className="flex items-center gap-2 ml-4 flex-shrink-0">
-          {averageRating != null && (
-            <div className="flex items-center gap-1 text-sm text-gray-600">
-              <StarIconSolid className="h-5 w-5 text-yellow-400" />
-              <span className="font-medium">{averageRating.toFixed(1)}</span>
-            </div>
-          )}
-          <div className="flex items-center gap-1" onClick={(e) => e.stopPropagation()}>
-            <button
-              onClick={onListItems}
-              className="p-2 text-emerald-600 hover:bg-emerald-50 rounded-md"
-              title="List items"
-              aria-label={`List items in ${name}`}
-              type="button"
-            >
-              <ListBulletIcon className="h-5 w-5" />
-            </button>
-            <button
-              onClick={onExplore}
-              className="p-2 text-indigo-600 hover:bg-indigo-50 rounded-md"
-              title="Explore"
-              aria-label={`Explore ${name}`}
-              type="button"
-            >
-              <MagnifyingGlassIcon className="h-5 w-5" />
-            </button>
-            <button
-              onClick={onQuiz}
-              className="p-2 text-purple-600 hover:bg-purple-50 rounded-md"
-              title="Quiz"
-              aria-label={`Quiz ${name}`}
-              type="button"
-            >
-              <AcademicCapIcon className="h-5 w-5" />
-            </button>
+        {averageRating != null && (
+          <div className="flex items-center gap-1 text-sm text-gray-600 flex-shrink-0">
+            <StarIconSolid className="h-5 w-5 text-yellow-400" />
+            <span className="font-medium">{averageRating.toFixed(1)}</span>
           </div>
-        </div>
+        )}
       </div>
-      <div className="mt-3 pt-3 border-t border-gray-100 flex flex-wrap gap-2 items-center">
-        <span
-          className="text-xs text-gray-500"
-          title="Click box for sets"
-        >
-          <Squares2X2Icon className="h-4 w-4 inline" aria-hidden />
-        </span>
-        <span className="text-gray-300">|</span>
-        <button
-          onClick={onListItems}
-          className="text-xs text-emerald-600 hover:underline"
-          type="button"
-        >
-          List items
+      <div
+        className="mt-3 pt-3 border-t border-gray-100 flex flex-wrap gap-2 items-center"
+        onClick={(e) => e.stopPropagation()}
+      >
+        {onListSets ? (
+          <>
+            <button
+              onClick={onListSets}
+              className={`${linkClass} text-indigo-600`}
+              type="button"
+            >
+              <Squares2X2Icon className="h-4 w-4" />
+              Sets
+            </button>
+            <span className="text-gray-300">|</span>
+          </>
+        ) : null}
+        <button onClick={onListItems} className={`${linkClass} text-emerald-600`} type="button">
+          <ListBulletIcon className="h-4 w-4" />
+          List
         </button>
         <span className="text-gray-300">|</span>
-        <button
-          onClick={onExplore}
-          className="text-xs text-indigo-600 hover:underline"
-          type="button"
-        >
+        <button onClick={onExplore} className={`${linkClass} text-indigo-600`} type="button">
+          <MagnifyingGlassIcon className="h-4 w-4" />
           Explore
         </button>
         <span className="text-gray-300">|</span>
-        <button
-          onClick={onQuiz}
-          className="text-xs text-purple-600 hover:underline"
-          type="button"
-        >
+        <button onClick={onQuiz} className={`${linkClass} text-purple-600`} type="button">
+          <AcademicCapIcon className="h-4 w-4" />
           Quiz
         </button>
       </div>
