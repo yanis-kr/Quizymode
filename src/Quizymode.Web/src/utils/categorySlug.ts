@@ -68,3 +68,27 @@ export function findCategoryNameFromSlug(
 
   return null;
 }
+
+/** Builds URL path for category + optional keywords. Uses slugs for category, encoded names for keywords. */
+export function buildCategoryPath(
+  categorySlug: string,
+  keywords?: string[]
+): string {
+  if (!keywords || keywords.length === 0) {
+    return `/categories/${categorySlug}`;
+  }
+  const kwSegment = keywords
+    .map((k) => encodeURIComponent(k))
+    .join("/");
+  return `/categories/${categorySlug}/${kwSegment}`;
+}
+
+/** Parses keyword from URL segment (decode and handle 'other'). */
+export function parseKeywordSegment(segment: string): string {
+  try {
+    const decoded = decodeURIComponent(segment);
+    return decoded;
+  } catch {
+    return segment;
+  }
+}

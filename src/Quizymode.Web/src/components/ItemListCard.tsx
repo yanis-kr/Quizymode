@@ -3,14 +3,18 @@ import { ratingsApi } from "@/api/ratings";
 import { useQuery } from "@tanstack/react-query";
 import { useNavigate } from "react-router-dom";
 import type { ItemResponse, KeywordResponse, ItemCollectionResponse } from "@/types/api";
+import ItemRatingsComments from "./ItemRatingsComments";
 
 interface ItemListCardProps {
   item: ItemResponse;
   isSelected?: boolean;
   onToggleSelect?: () => void;
-  onKeywordClick?: (keywordName: string) => void;
+  onKeywordClick?: (keywordName: string, item?: ItemResponse) => void;
   selectedKeywords?: string[];
   actions?: React.ReactNode;
+  /** When true, shows full ratings (set stars) and comments link */
+  showRatingsAndComments?: boolean;
+  returnUrl?: string;
 }
 
 const ItemListCard = ({
@@ -20,6 +24,8 @@ const ItemListCard = ({
   onKeywordClick,
   selectedKeywords,
   actions,
+  showRatingsAndComments,
+  returnUrl,
 }: ItemListCardProps) => {
   const hasSelection = typeof onToggleSelect === "function";
 
@@ -51,9 +57,15 @@ const ItemListCard = ({
             <KeywordsAndCollectionsSection
               keywords={item.keywords}
               collections={item.collections}
-              onKeywordClick={onKeywordClick}
+              onKeywordClick={onKeywordClick ? (kw) => onKeywordClick(kw, item) : undefined}
               selectedKeywords={selectedKeywords}
             />
+            {showRatingsAndComments && (
+              <ItemRatingsComments
+                itemId={item.id}
+                returnUrl={returnUrl}
+              />
+            )}
           </div>
         </div>
         {actions && <div className="flex space-x-1 ml-4">{actions}</div>}

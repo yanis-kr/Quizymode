@@ -27,6 +27,11 @@ function App() {
     <Layout>
       <Routes>
         <Route path="/" element={<HomePage />} />
+        <Route
+          path="/categories/:category/:kw1/:kw2"
+          element={<CategoriesPage />}
+        />
+        <Route path="/categories/:category/:kw1" element={<CategoriesPage />} />
         <Route path="/categories/:category" element={<CategoriesPage />} />
         <Route path="/categories" element={<CategoriesPage />} />
         <Route path="/items" element={<ItemsPage />} />

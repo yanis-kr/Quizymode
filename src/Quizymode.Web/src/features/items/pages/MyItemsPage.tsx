@@ -290,13 +290,27 @@ const MyItemsPage = () => {
     deleteMutation.mutate(itemId);
   };
 
-  const handleKeywordClick = (keywordName: string) => {
-    if (!filters.selectedKeywords.includes(keywordName)) {
-      updateFilter("selectedKeywords", [
-        ...filters.selectedKeywords,
-        keywordName,
-      ]);
+  const handleKeywordClick = (keywordName: string, item?: { category: string }) => {
+    const newKeywords = filters.selectedKeywords.includes(keywordName)
+      ? filters.selectedKeywords
+      : [...filters.selectedKeywords, keywordName];
+    const newCategory = item?.category && !filters.selectedCategory
+      ? item.category
+      : filters.selectedCategory;
+    updateFilter("selectedKeywords", newKeywords);
+    if (newCategory && newCategory !== filters.selectedCategory) {
+      updateFilter("selectedCategory", newCategory);
+      if (!activeFilters.has("category")) addFilter("category");
     }
+    if (newKeywords.length > 0 && !activeFilters.has("keywords")) addFilter("keywords");
+    setPage(1);
+    const params = new URLSearchParams();
+    if (filters.filterType !== "all") params.set("filterType", filters.filterType);
+    if (newCategory) params.set("category", newCategory);
+    if (newKeywords.length > 0) params.set("keywords", newKeywords.join(","));
+    if (filters.searchText) params.set("search", filters.searchText);
+    if (filters.ratingFilter !== "all") params.set("rating", filters.ratingFilter);
+    navigate(`/my-items?${params.toString()}`, { replace: true });
   };
 
   return (

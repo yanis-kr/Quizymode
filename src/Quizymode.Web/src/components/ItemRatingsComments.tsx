@@ -16,11 +16,14 @@ interface ItemRatingsCommentsProps {
     currentIndex: number;
     itemIds: string[];
   };
+  /** When navigating from list view, pass the URL to return to */
+  returnUrl?: string;
 }
 
 const ItemRatingsComments = ({
   itemId,
   navigationContext,
+  returnUrl,
 }: ItemRatingsCommentsProps) => {
   const { isAuthenticated } = useAuth();
   const navigate = useNavigate();
@@ -70,6 +73,8 @@ const ItemRatingsComments = ({
       // Invalidate all bulk rating stats queries (used for filtering in My Items)
       queryClient.invalidateQueries({ queryKey: ["ratingStats", "bulk"] });
       queryClient.invalidateQueries({ queryKey: ["userRating", itemId] });
+      // Invalidate categories (ratings affect category average display)
+      queryClient.invalidateQueries({ queryKey: ["categories"] });
     },
   });
 
@@ -122,7 +127,9 @@ const ItemRatingsComments = ({
       <button
         onClick={() => {
           const params = new URLSearchParams();
-          if (navigationContext) {
+          if (returnUrl) {
+            params.set("return", returnUrl);
+          } else if (navigationContext) {
             params.set("mode", navigationContext.mode);
             if (navigationContext.category) {
               params.set("category", navigationContext.category);
@@ -135,8 +142,6 @@ const ItemRatingsComments = ({
               navigationContext.currentIndex.toString()
             );
             params.set("itemIds", navigationContext.itemIds.join(","));
-
-            // Navigation context and items are already stored in sessionStorage by ExploreModePage/QuizModePage
           }
           const queryString = params.toString();
           navigate(

@@ -38,18 +38,18 @@ export const itemsApi = {
 
   getRandom: async (
     category?: string,
-    count: number = 10
+    count: number = 10,
+    keywords?: string[]
   ): Promise<RandomItemsResponse> => {
-    // Use GET /items with isRandom=true instead of /items/random
     const params: Record<string, string | number | boolean> = {
       isRandom: true,
       pageSize: count,
     };
     if (category) params.category = category;
+    if (keywords && keywords.length > 0) params.keywords = keywords.join(",");
     const response = await apiClient.get<ItemsResponse>("/items", {
       params,
     });
-    // Convert ItemsResponse to RandomItemsResponse format
     return { items: response.data.items };
   },
 

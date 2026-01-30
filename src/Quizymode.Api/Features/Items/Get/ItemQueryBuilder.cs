@@ -254,7 +254,7 @@ internal sealed class ItemQueryBuilder
 
         // Check for "other" keyword
         List<string> normalizedKeywords = request.Keywords
-            .Select(k => k.Trim().ToLowerInvariant())
+            .Select(k => k.Trim().ToLower())
             .ToList();
 
         bool hasOtherKeyword = normalizedKeywords.Contains("other");
@@ -294,11 +294,11 @@ internal sealed class ItemQueryBuilder
         }
 
         List<string> normalizedKeywords = request.Keywords!
-            .Select(k => k.Trim().ToLowerInvariant())
+            .Select(k => k.Trim().ToLower())
             .ToList();
 
         List<Guid> visibleKeywordIds = await keywordQuery
-            .Where(k => normalizedKeywords.Contains(k.Name.ToLowerInvariant()))
+            .Where(k => normalizedKeywords.Contains(k.Name.ToLower()))
             .Select(k => k.Id)
             .ToListAsync(_cancellationToken);
 
@@ -337,11 +337,11 @@ internal sealed class ItemQueryBuilder
         }
 
         List<string> normalizedKeywords = request.Keywords!
-            .Select(k => k.Trim().ToLowerInvariant())
+            .Select(k => k.Trim().ToLower())
             .ToList();
 
         List<Guid> visibleKeywordIds = await keywordQuery
-            .Where(k => normalizedKeywords.Contains(k.Name.ToLowerInvariant()))
+            .Where(k => normalizedKeywords.Contains(k.Name.ToLower()))
             .Select(k => k.Id)
             .ToListAsync(_cancellationToken);
 

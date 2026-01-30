@@ -128,6 +128,10 @@ public static class GetKeywords
             if (!targetRank.HasValue)
             {
                 // No more navigation layers (e.g., rank-2 already selected)
+                logger.LogInformation(
+                    "Keywords retrieved. Category: {Category}, SelectedKeywords: {SelectedKeywords}, KeywordCount: 0, TotalItemCount: 0 (no more navigation layers)",
+                    request.Category,
+                    request.SelectedKeywords != null ? string.Join(",", request.SelectedKeywords) : "(none)");
                 return Result.Success(new Response(new List<KeywordResponse>()));
             }
 
@@ -161,6 +165,14 @@ public static class GetKeywords
 
             // Keywords are already ordered by SortRank from SQL query
             Response response = new(keywords);
+            int totalItemCount = keywords.Sum(k => k.ItemCount);
+
+            logger.LogInformation(
+                "Keywords retrieved. Category: {Category}, SelectedKeywords: {SelectedKeywords}, KeywordCount: {KeywordCount}, TotalItemCount: {TotalItemCount}",
+                request.Category,
+                request.SelectedKeywords != null ? string.Join(",", request.SelectedKeywords) : "(none)",
+                keywords.Count,
+                totalItemCount);
 
             return Result.Success(response);
         }
@@ -190,22 +202,40 @@ public static class GetKeywords
 
         // Check if any selected keyword is a rank-1 navigation keyword
         List<string> normalizedKeywords = selectedKeywords
-            .Select(k => k.Trim().ToLowerInvariant())
+            .Select(k => k.Trim().ToLower())
             .ToList();
 
         bool hasRank1Keyword = await db.CategoryKeywords
             .Where(ck => ck.CategoryId == categoryId
                 && ck.NavigationRank == 1
-                && normalizedKeywords.Contains(ck.Keyword.Name.ToLowerInvariant()))
+                && normalizedKeywords.Contains(ck.Keyword.Name.ToLower()))
             .AnyAsync(cancellationToken);
 
-        if (hasRank1Keyword)
+        if (!hasRank1Keyword)
         {
-            return 2; // Show rank-2 keywords under the selected rank-1 parent
+            // Rank-2 or non-navigation keywords selected - no more navigation layers
+            return null;
         }
 
-        // Rank-2 or non-navigation keywords selected - no more navigation layers
-        return null;
+        // If we have 2+ keywords, we may already have rank-2 selected - no more layers
+        if (normalizedKeywords.Count >= 2)
+        {
+            string rank1Name = normalizedKeywords[0];
+            string potentialRank2 = normalizedKeywords[1];
+            bool hasRank2UnderRank1 = await db.CategoryKeywords
+                .Where(ck => ck.CategoryId == categoryId
+                    && ck.NavigationRank == 2
+                    && ck.ParentName != null
+                    && ck.ParentName.ToLower() == rank1Name
+                    && ck.Keyword.Name.ToLower() == potentialRank2)
+                .AnyAsync(cancellationToken);
+            if (hasRank2UnderRank1)
+            {
+                return null; // Rank-2 already selected, no more navigation layers
+            }
+        }
+
+        return 2; // Show rank-2 keywords under the selected rank-1 parent
     }
 
     /// <summary>
@@ -235,14 +265,17 @@ public static class GetKeywords
         if (targetRank == 2 && selectedKeywords is not null && selectedKeywords.Count > 0)
         {
             // Find the rank-1 keyword from selected keywords
+            List<string> normalizedSelected = selectedKeywords
+                .Select(k => k.Trim().ToLower())
+                .ToList();
             string? rank1Keyword = await db.CategoryKeywords
                 .Where(ck => ck.CategoryId == categoryId
                     && ck.NavigationRank == 1
-                    && selectedKeywords.Select(k => k.Trim().ToLowerInvariant()).Contains(ck.Keyword.Name.ToLowerInvariant()))
+                    && normalizedSelected.Contains(ck.Keyword.Name.ToLower()))
                 .Select(ck => ck.Keyword.Name)
                 .FirstOrDefaultAsync(cancellationToken);
 
-            parentName = rank1Keyword?.ToLowerInvariant();
+            parentName = rank1Keyword?.ToLower();
         }
 
         string sql = @"
