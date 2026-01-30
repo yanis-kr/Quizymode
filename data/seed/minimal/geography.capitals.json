@@ -1,0 +1,28 @@
+[
+  {
+    "category": "geography",
+    "question": "What is the capital of France?",
+    "correctAnswer": "Paris",
+    "incorrectAnswers": [
+      "Lyon",
+      "Marseille",
+      "Nice"
+    ],
+    "explanation": "Paris is the capital and most populous city of France.",
+    "keywords": ["capitals", "france", "paris"],
+    "source": "initial seed"
+  },
+  {
+    "category": "geography",
+    "question": "What is the capital of Japan?",
+    "correctAnswer": "Tokyo",
+    "incorrectAnswers": [
+      "Osaka",
+      "Kyoto",
+      "Yokohama"
+    ],
+    "explanation": "Tokyo is the capital and largest city of Japan.",
+    "keywords": ["capitals", "japan", "asia"],
+    "source": "initial seed"
+  }
+]

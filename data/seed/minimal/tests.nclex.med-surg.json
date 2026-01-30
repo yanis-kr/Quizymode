@@ -1,0 +1,28 @@
+[
+  {
+    "category": "tests",
+    "question": "What is the normal range for adult blood pressure?",
+    "correctAnswer": "120/80 mmHg",
+    "incorrectAnswers": [
+      "140/90 mmHg",
+      "100/60 mmHg",
+      "160/100 mmHg"
+    ],
+    "explanation": "Normal adult blood pressure is typically around 120/80 mmHg.",
+    "keywords": ["nclex", "med-surg", "blood-pressure", "vitals"],
+    "source": "initial seed"
+  },
+  {
+    "category": "tests",
+    "question": "Which medication is commonly used to treat hypertension?",
+    "correctAnswer": "Lisinopril",
+    "incorrectAnswers": [
+      "Insulin",
+      "Warfarin",
+      "Metformin"
+    ],
+    "explanation": "Lisinopril is an ACE inhibitor commonly prescribed for hypertension.",
+    "keywords": ["nclex", "med-surg", "hypertension", "pharmacology", "lisinopril"],
+    "source": "initial seed"
+  }
+]

@@ -1,0 +1,41 @@
+[
+  {
+    "category": "language",
+    "question": "What does the expression 'break the ice' mean?",
+    "correctAnswer": "To start a conversation",
+    "incorrectAnswers": [
+      "To end a conversation",
+      "To argue with someone",
+      "To ignore someone"
+    ],
+    "explanation": "Break the ice means to initiate conversation or make people feel more comfortable.",
+    "keywords": ["english", "expressions", "idioms", "conversation"],
+    "source": "initial seed"
+  },
+  {
+    "category": "language",
+    "question": "What does 'hit the nail on the head' mean?",
+    "correctAnswer": "To be exactly right",
+    "incorrectAnswers": [
+      "To make a mistake",
+      "To be confused",
+      "To give up"
+    ],
+    "explanation": "This expression means to be precisely correct about something.",
+    "keywords": ["english", "expressions", "idioms", "accuracy"],
+    "source": "initial seed"
+  },
+  {
+    "category": "language",
+    "question": "What does 'once in a blue moon' mean?",
+    "correctAnswer": "Very rarely",
+    "incorrectAnswers": [
+      "Very frequently",
+      "Every day",
+      "Never"
+    ],
+    "explanation": "This expression means something happens very infrequently.",
+    "keywords": ["english", "expressions", "idioms", "frequency"],
+    "source": "initial seed"
+  }
+]

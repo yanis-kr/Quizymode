@@ -1,0 +1,41 @@
+[
+  {
+    "category": "science",
+    "question": "What causes aurora displays (Northern/Southern Lights)?",
+    "correctAnswer": "Charged particles from the sun interacting with Earth's magnetic field",
+    "incorrectAnswers": [
+      "Reflected sunlight",
+      "Atmospheric pollution",
+      "Volcanic activity"
+    ],
+    "explanation": "Solar wind particles are guided by Earth's magnetic field to polar regions, where they excite atmospheric gases to create auroras.",
+    "keywords": ["nature", "phenomena", "aurora", "solar-wind", "magnetic-field"],
+    "source": "initial seed"
+  },
+  {
+    "category": "science",
+    "question": "Where are auroras most commonly visible?",
+    "correctAnswer": "Near the polar regions (Arctic and Antarctic)",
+    "incorrectAnswers": [
+      "Near the equator",
+      "In tropical regions",
+      "Only in the Northern Hemisphere"
+    ],
+    "explanation": "Auroras occur near magnetic poles where Earth's magnetic field lines converge, allowing solar particles to enter the atmosphere.",
+    "keywords": ["nature", "phenomena", "aurora", "polar-regions", "geography"],
+    "source": "initial seed"
+  },
+  {
+    "category": "science",
+    "question": "What determines the colors seen in aurora displays?",
+    "correctAnswer": "The type of gas molecules and altitude where particles collide",
+    "incorrectAnswers": [
+      "The time of day",
+      "The season",
+      "The temperature"
+    ],
+    "explanation": "Different gases (oxygen, nitrogen) at different altitudes emit specific colors when excited by solar particles.",
+    "keywords": ["nature", "phenomena", "aurora", "colors", "atmosphere"],
+    "source": "initial seed"
+  }
+]

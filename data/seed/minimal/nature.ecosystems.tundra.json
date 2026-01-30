@@ -1,0 +1,41 @@
+[
+  {
+    "category": "science",
+    "question": "What is the main characteristic of tundra ecosystems?",
+    "correctAnswer": "Permafrost and extremely cold temperatures",
+    "incorrectAnswers": [
+      "High rainfall and warm temperatures",
+      "Dense forests",
+      "Desert-like conditions"
+    ],
+    "explanation": "Tundra is characterized by permanently frozen subsoil (permafrost) and harsh, cold climates with short growing seasons.",
+    "keywords": ["nature", "ecosystems", "tundra", "permafrost", "climate"],
+    "source": "initial seed"
+  },
+  {
+    "category": "science",
+    "question": "What type of vegetation dominates tundra ecosystems?",
+    "correctAnswer": "Low-growing plants like mosses, lichens, and small shrubs",
+    "incorrectAnswers": [
+      "Tall trees",
+      "Grasslands",
+      "Dense forests"
+    ],
+    "explanation": "Harsh conditions limit tundra to low-growing, cold-adapted vegetation that can survive permafrost.",
+    "keywords": ["nature", "ecosystems", "tundra", "vegetation", "adaptations"],
+    "source": "initial seed"
+  },
+  {
+    "category": "science",
+    "question": "Why is the tundra ecosystem particularly vulnerable to climate change?",
+    "correctAnswer": "Melting permafrost releases stored carbon and changes habitat structure",
+    "incorrectAnswers": [
+      "It's not vulnerable",
+      "It adapts quickly to change",
+      "It has no stored carbon"
+    ],
+    "explanation": "Permafrost stores vast amounts of carbon; its melting releases greenhouse gases and fundamentally alters the ecosystem.",
+    "keywords": ["nature", "ecosystems", "tundra", "climate-change", "permafrost"],
+    "source": "initial seed"
+  }
+]

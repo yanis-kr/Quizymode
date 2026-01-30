@@ -35,6 +35,22 @@ internal sealed class ItemQueryBuilder
     /// </summary>
     public async Task<Result<IQueryable<Item>>> BuildQueryAsync(GetItems.QueryRequest request)
     {
+        // Validate navigation path if category and keywords are provided
+        if (!string.IsNullOrEmpty(request.Category) && request.Keywords is not null && request.Keywords.Count > 0)
+        {
+            Result pathValidationResult = await Quizymode.Api.Features.Keywords.NavigationPathValidator.ValidatePathAsync(
+                request.Category,
+                request.Keywords,
+                _db,
+                _userContext,
+                _cancellationToken);
+
+            if (pathValidationResult.IsFailure)
+            {
+                return Result.Failure<IQueryable<Item>>(pathValidationResult.Error!);
+            }
+        }
+
         IQueryable<Item> query = _db.Items.AsQueryable();
 
         Result<IQueryable<Item>> visibilityResult = ApplyVisibilityFilter(query, request);
@@ -208,10 +224,10 @@ internal sealed class ItemQueryBuilder
     }
 
     /// <summary>
-    /// Applies keyword filtering to the query. First resolves keyword names to IDs,
-    /// respecting visibility (anonymous users see only global keywords, authenticated users
-    /// see global + their own private keywords). Then filters items that have any of the
-    /// specified keywords. Returns empty result if none of the requested keywords are found.
+    /// Applies keyword filtering to the query using AND semantics (items must have ALL selected keywords).
+    /// Handles the special "other" keyword which returns items with no rank-1 navigation keyword assigned.
+    /// First resolves keyword names to IDs, respecting visibility (anonymous users see only global keywords,
+    /// authenticated users see global + their own private keywords).
     /// </summary>
     private async Task<Result<IQueryable<Item>>> ApplyKeywordFilterAsync(
         IQueryable<Item> query,
@@ -222,6 +238,50 @@ internal sealed class ItemQueryBuilder
             return Result.Success(query);
         }
 
+        // Check if category is specified (required for "other" keyword and navigation context)
+        if (string.IsNullOrEmpty(request.Category))
+        {
+            // Without category, fall back to simple keyword matching (AND semantics)
+            return await ApplySimpleKeywordFilterAsync(query, request);
+        }
+
+        Guid? categoryId = await ResolveCategoryIdAsync(request.Category.Trim());
+        if (!categoryId.HasValue)
+        {
+            // Category not found, return empty result
+            return Result.Success(query.Where(i => false));
+        }
+
+        // Check for "other" keyword
+        List<string> normalizedKeywords = request.Keywords
+            .Select(k => k.Trim().ToLowerInvariant())
+            .ToList();
+
+        bool hasOtherKeyword = normalizedKeywords.Contains("other");
+
+        if (hasOtherKeyword && normalizedKeywords.Count > 1)
+        {
+            // "other" cannot be combined with other keywords
+            return Result.Success(query.Where(i => false));
+        }
+
+        if (hasOtherKeyword)
+        {
+            // Special handling for "other": items with no rank-1 navigation keyword
+            return await ApplyOtherKeywordFilterAsync(query, categoryId.Value);
+        }
+
+        // Regular keyword filtering with AND semantics
+        return await ApplyAndKeywordFilterAsync(query, request, categoryId.Value);
+    }
+
+    /// <summary>
+    /// Applies simple keyword filtering with AND semantics when no category is specified.
+    /// </summary>
+    private async Task<Result<IQueryable<Item>>> ApplySimpleKeywordFilterAsync(
+        IQueryable<Item> query,
+        GetItems.QueryRequest request)
+    {
         IQueryable<Keyword> keywordQuery = _db.Keywords.AsQueryable();
 
         if (!_userContext.IsAuthenticated || string.IsNullOrEmpty(_userContext.UserId))
@@ -233,19 +293,92 @@ internal sealed class ItemQueryBuilder
             keywordQuery = keywordQuery.Where(k => !k.IsPrivate || (k.IsPrivate && k.CreatedBy == _userContext.UserId));
         }
 
+        List<string> normalizedKeywords = request.Keywords!
+            .Select(k => k.Trim().ToLowerInvariant())
+            .ToList();
+
         List<Guid> visibleKeywordIds = await keywordQuery
-            .Where(k => request.Keywords.Contains(k.Name))
+            .Where(k => normalizedKeywords.Contains(k.Name.ToLowerInvariant()))
             .Select(k => k.Id)
             .ToListAsync(_cancellationToken);
 
-        if (visibleKeywordIds.Count > 0)
+        if (visibleKeywordIds.Count != normalizedKeywords.Count)
         {
-            query = query.Where(i => i.ItemKeywords.Any(ik => visibleKeywordIds.Contains(ik.KeywordId)));
+            // Not all keywords found, return empty result
+            return Result.Success(query.Where(i => false));
+        }
+
+        // AND semantics: item must have ALL keywords
+        foreach (Guid keywordId in visibleKeywordIds)
+        {
+            query = query.Where(i => i.ItemKeywords.Any(ik => ik.KeywordId == keywordId));
+        }
+
+        return Result.Success(query);
+    }
+
+    /// <summary>
+    /// Applies keyword filtering with AND semantics, respecting category context.
+    /// </summary>
+    private async Task<Result<IQueryable<Item>>> ApplyAndKeywordFilterAsync(
+        IQueryable<Item> query,
+        GetItems.QueryRequest request,
+        Guid categoryId)
+    {
+        IQueryable<Keyword> keywordQuery = _db.Keywords.AsQueryable();
+
+        if (!_userContext.IsAuthenticated || string.IsNullOrEmpty(_userContext.UserId))
+        {
+            keywordQuery = keywordQuery.Where(k => !k.IsPrivate);
         }
         else
         {
-            query = query.Where(i => false);
+            keywordQuery = keywordQuery.Where(k => !k.IsPrivate || (k.IsPrivate && k.CreatedBy == _userContext.UserId));
         }
+
+        List<string> normalizedKeywords = request.Keywords!
+            .Select(k => k.Trim().ToLowerInvariant())
+            .ToList();
+
+        List<Guid> visibleKeywordIds = await keywordQuery
+            .Where(k => normalizedKeywords.Contains(k.Name.ToLowerInvariant()))
+            .Select(k => k.Id)
+            .ToListAsync(_cancellationToken);
+
+        if (visibleKeywordIds.Count != normalizedKeywords.Count)
+        {
+            // Not all keywords found, return empty result
+            return Result.Success(query.Where(i => false));
+        }
+
+        // AND semantics: item must have ALL keywords
+        foreach (Guid keywordId in visibleKeywordIds)
+        {
+            query = query.Where(i => i.ItemKeywords.Any(ik => ik.KeywordId == keywordId));
+        }
+
+        return Result.Success(query);
+    }
+
+    /// <summary>
+    /// Applies the special "other" keyword filter: items with no rank-1 navigation keyword assigned.
+    /// </summary>
+    private async Task<Result<IQueryable<Item>>> ApplyOtherKeywordFilterAsync(
+        IQueryable<Item> query,
+        Guid categoryId)
+    {
+        // Get all rank-1 keywords for this category
+        List<Guid> rank1KeywordIds = await _db.CategoryKeywords
+            .Where(ck => ck.CategoryId == categoryId && ck.NavigationRank == 1)
+            .Select(ck => ck.KeywordId)
+            .ToListAsync(_cancellationToken);
+
+        // Items that have no rank-1 keyword assigned
+        if (rank1KeywordIds.Count > 0)
+        {
+            query = query.Where(i => !i.ItemKeywords.Any(ik => rank1KeywordIds.Contains(ik.KeywordId)));
+        }
+        // If no rank-1 keywords exist, all items in category match "other"
 
         return Result.Success(query);
     }

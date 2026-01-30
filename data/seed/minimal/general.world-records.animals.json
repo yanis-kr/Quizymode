@@ -1,0 +1,41 @@
+[
+  {
+    "category": "general",
+    "question": "What is the fastest land animal in the world?",
+    "correctAnswer": "Cheetah",
+    "incorrectAnswers": [
+      "Lion",
+      "Antelope",
+      "Horse"
+    ],
+    "explanation": "The cheetah can reach speeds of up to 70 mph, making it the fastest land animal.",
+    "keywords": ["world-records", "animals", "speed", "predators"],
+    "source": "initial seed"
+  },
+  {
+    "category": "general",
+    "question": "Which animal holds the record for the longest migration?",
+    "correctAnswer": "Arctic tern",
+    "incorrectAnswers": [
+      "Monarch butterfly",
+      "Gray whale",
+      "Caribou"
+    ],
+    "explanation": "The Arctic tern migrates from the Arctic to Antarctica and back, covering over 44,000 miles annually.",
+    "keywords": ["world-records", "animals", "migration", "birds"],
+    "source": "initial seed"
+  },
+  {
+    "category": "general",
+    "question": "What is the largest animal that has ever lived on Earth?",
+    "correctAnswer": "Blue whale",
+    "incorrectAnswers": [
+      "African elephant",
+      "Giraffe",
+      "Tyrannosaurus rex"
+    ],
+    "explanation": "The blue whale is the largest animal ever known to have existed, reaching lengths of over 100 feet.",
+    "keywords": ["world-records", "animals", "size", "marine"],
+    "source": "initial seed"
+  }
+]

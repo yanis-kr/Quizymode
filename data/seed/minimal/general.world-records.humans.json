@@ -1,0 +1,41 @@
+[
+  {
+    "category": "general",
+    "question": "What is the world record for the longest distance run in 24 hours?",
+    "correctAnswer": "Over 300 kilometers",
+    "incorrectAnswers": [
+      "Over 200 kilometers",
+      "Over 250 kilometers",
+      "Over 280 kilometers"
+    ],
+    "explanation": "Ultra-marathon runners have achieved distances exceeding 300 kilometers in a 24-hour period.",
+    "keywords": ["world-records", "humans", "running", "endurance"],
+    "source": "initial seed"
+  },
+  {
+    "category": "general",
+    "question": "What is the record for the most pull-ups completed in one minute?",
+    "correctAnswer": "Over 50 pull-ups",
+    "incorrectAnswers": [
+      "Over 30 pull-ups",
+      "Over 40 pull-ups",
+      "Over 45 pull-ups"
+    ],
+    "explanation": "Elite athletes have completed over 50 pull-ups in a single minute.",
+    "keywords": ["world-records", "humans", "strength", "fitness"],
+    "source": "initial seed"
+  },
+  {
+    "category": "general",
+    "question": "What is the world record for the longest time without sleep?",
+    "correctAnswer": "Over 11 days",
+    "incorrectAnswers": [
+      "Over 5 days",
+      "Over 7 days",
+      "Over 9 days"
+    ],
+    "explanation": "The documented record for staying awake exceeds 11 days, though this is extremely dangerous.",
+    "keywords": ["world-records", "humans", "sleep", "endurance"],
+    "source": "initial seed"
+  }
+]

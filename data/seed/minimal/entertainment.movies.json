@@ -1,0 +1,41 @@
+[
+  {
+    "category": "entertainment",
+    "question": "Who directed the movie 'Inception'?",
+    "correctAnswer": "Christopher Nolan",
+    "incorrectAnswers": [
+      "Steven Spielberg",
+      "Martin Scorsese",
+      "Quentin Tarantino"
+    ],
+    "explanation": "Christopher Nolan directed Inception, released in 2010.",
+    "keywords": ["movies", "inception", "nolan", "directors"],
+    "source": "initial seed"
+  },
+  {
+    "category": "entertainment",
+    "question": "Which movie won the Academy Award for Best Picture in 2020?",
+    "correctAnswer": "Parasite",
+    "incorrectAnswers": [
+      "1917",
+      "Joker",
+      "Once Upon a Time in Hollywood"
+    ],
+    "explanation": "Parasite, directed by Bong Joon-ho, became the first non-English language film to win Best Picture.",
+    "keywords": ["movies", "oscars", "parasite", "awards"],
+    "source": "initial seed"
+  },
+  {
+    "category": "entertainment",
+    "question": "What is the highest-grossing film of all time (as of 2024)?",
+    "correctAnswer": "Avatar",
+    "incorrectAnswers": [
+      "Avengers: Endgame",
+      "Titanic",
+      "Star Wars: The Force Awakens"
+    ],
+    "explanation": "Avatar, directed by James Cameron, holds the record for highest-grossing film worldwide.",
+    "keywords": ["movies", "box-office", "avatar", "cameron", "directors"],
+    "source": "initial seed"
+  }
+]

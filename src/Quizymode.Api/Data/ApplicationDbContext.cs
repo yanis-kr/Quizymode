@@ -32,6 +32,8 @@ public sealed class ApplicationDbContext : DbContext
 
     public DbSet<Category> Categories => Set<Category>();
 
+    public DbSet<CategoryKeyword> CategoryKeywords => Set<CategoryKeyword>();
+
     public DbSet<UserSetting> UserSettings => Set<UserSetting>();
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)

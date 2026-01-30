@@ -75,6 +75,9 @@ internal sealed class DatabaseSeederHostedService(
             using IServiceScope scope = _serviceProvider.CreateScope();
             ApplicationDbContext db = scope.ServiceProvider.GetRequiredService<ApplicationDbContext>();
 
+            // Seed categories and navigation keywords (always run, idempotent)
+            await SeedCategoriesAndNavigationAsync(db, cancellationToken);
+
             // Seed items if empty
             bool hasItems = await db.Items.AnyAsync(cancellationToken);
             if (!hasItems)
@@ -99,10 +102,8 @@ internal sealed class DatabaseSeederHostedService(
                 // Create a seeder user context (admin privileges)
                 SeederUserContext seederUserContext = new SeederUserContext();
 
-                // Load all JSON files (both bulk-*.json and items-*.json)
-                string[] bulkFiles = Directory.GetFiles(resolvedSeedPath, "bulk-*.json");
-                string[] itemFiles = Directory.GetFiles(resolvedSeedPath, "items-*.json");
-                string[] allFiles = bulkFiles.Concat(itemFiles).ToArray();
+                // Load all JSON files from the minimal directory only
+                string[] allFiles = Directory.GetFiles(resolvedSeedPath, "*.json");
 
                 int totalItemsProcessed = 0;
                 int totalItemsCreated = 0;
@@ -131,7 +132,8 @@ internal sealed class DatabaseSeederHostedService(
                             CorrectAnswer: item.CorrectAnswer,
                             IncorrectAnswers: item.IncorrectAnswers,
                             Explanation: item.Explanation ?? string.Empty,
-                            Keywords: item.Keywords?.Select(k => new AddItemsBulk.KeywordRequest(k, false)).ToList()
+                            Keywords: item.Keywords?.Select(k => new AddItemsBulk.KeywordRequest(k, false)).ToList(),
+                            Source: item.Source
                         )).ToList();
 
                         AddItemsBulk.Request bulkRequest = new AddItemsBulk.Request(
@@ -300,6 +302,215 @@ internal sealed class DatabaseSeederHostedService(
         
         _logger.LogInformation("Added {Count} ratings (5 stars) for Science category items.", ratings.Count);
     }
+
+    private async Task SeedCategoriesAndNavigationAsync(ApplicationDbContext db, CancellationToken cancellationToken)
+    {
+        _logger.LogInformation("Seeding categories and navigation keywords...");
+
+        // Fixed categories
+        List<string> categoryNames = new()
+        {
+            "general", "history", "science", "geography", "entertainment",
+            "culture", "language", "puzzles", "sports", "tests", "certs"
+        };
+
+        // Seed categories (if missing)
+        Dictionary<string, Category> categories = new();
+        foreach (string categoryName in categoryNames)
+        {
+            Category? existingCategory = await db.Categories
+                .FirstOrDefaultAsync(c => c.Name.ToLower() == categoryName.ToLower(), cancellationToken);
+
+            if (existingCategory is null)
+            {
+                Category newCategory = new Category
+                {
+                    Id = Guid.NewGuid(),
+                    Name = categoryName,
+                    IsPrivate = false,
+                    CreatedBy = "seeder",
+                    CreatedAt = DateTime.UtcNow
+                };
+                db.Categories.Add(newCategory);
+                await db.SaveChangesAsync(cancellationToken);
+                categories[categoryName] = newCategory;
+                _logger.LogInformation("Created category: {CategoryName}", categoryName);
+            }
+            else
+            {
+                categories[categoryName] = existingCategory;
+            }
+        }
+
+        // Seed "other" keyword for each category (if missing)
+        foreach ((string categoryName, Category category) in categories)
+        {
+            await SeedOtherKeywordAsync(db, category, cancellationToken);
+        }
+
+        // Seed rank-1 keywords per category
+        Dictionary<string, List<string>> rank1Keywords = new()
+        {
+            { "general", new List<string> { "trivia", "fun-facts", "daily", "mixed", "random" } },
+            { "history", new List<string> { "us-history", "world-history", "ancient", "modern", "biography" } },
+            { "science", new List<string> { "biology", "astronomy", "physics", "chemistry", "earth-science" } },
+            { "geography", new List<string> { "countries", "capitals", "us-states", "flags", "maps" } },
+            { "entertainment", new List<string> { "movies", "tv", "music", "quotes", "pop-culture" } },
+            { "culture", new List<string> { "food", "holidays", "traditions", "customs", "slang" } },
+            { "language", new List<string> { "spanish", "french", "english", "vocabulary", "idioms" } },
+            { "puzzles", new List<string> { "riddles", "logic", "brain-teasers", "math-puzzles", "patterns" } },
+            { "sports", new List<string> { "soccer", "basketball", "tennis", "olympics", "athletes" } },
+            { "tests", new List<string> { "act", "sat", "gmat", "gre", "nclex" } },
+            { "certs", new List<string> { "aws", "azure", "gcp", "comptia", "kubernetes" } }
+        };
+
+        foreach ((string categoryName, List<string> keywords) in rank1Keywords)
+        {
+            if (categories.TryGetValue(categoryName, out Category? category))
+            {
+                for (int i = 0; i < keywords.Count; i++)
+                {
+                    await SeedNavigationKeywordAsync(
+                        db,
+                        category,
+                        keywords[i],
+                        navigationRank: 1,
+                        parentName: null,
+                        sortRank: i + 1, // Start at 1 (0 is reserved for "other")
+                        cancellationToken);
+                }
+            }
+        }
+
+        // Seed rank-2 keywords
+        Dictionary<(string Category, string Parent), List<string>> rank2Keywords = new()
+        {
+            { ("certs", "aws"), new List<string> { "saa-c02", "saa-c03", "dva-c02", "soa-c02" } },
+            { ("tests", "act"), new List<string> { "math", "reading", "english", "science" } },
+            { ("tests", "sat"), new List<string> { "math", "reading", "writing" } },
+            { ("tests", "nclex"), new List<string> { "med-surg", "pediatrics", "pharm", "dosage-calc" } }
+        };
+
+        foreach (((string categoryName, string parentName), List<string> keywords) in rank2Keywords)
+        {
+            if (categories.TryGetValue(categoryName, out Category? category))
+            {
+                for (int i = 0; i < keywords.Count; i++)
+                {
+                    await SeedNavigationKeywordAsync(
+                        db,
+                        category,
+                        keywords[i],
+                        navigationRank: 2,
+                        parentName: parentName,
+                        sortRank: i,
+                        cancellationToken);
+                }
+            }
+        }
+
+        _logger.LogInformation("Categories and navigation keywords seeding completed.");
+    }
+
+    private async Task SeedOtherKeywordAsync(
+        ApplicationDbContext db,
+        Category category,
+        CancellationToken cancellationToken)
+    {
+        // Find or create "other" keyword (global) first
+        Keyword? otherKeyword = await db.Keywords
+            .FirstOrDefaultAsync(k => k.Name.ToLower() == "other" && !k.IsPrivate, cancellationToken);
+
+        if (otherKeyword is null)
+        {
+            otherKeyword = new Keyword
+            {
+                Id = Guid.NewGuid(),
+                Name = "other",
+                IsPrivate = false,
+                CreatedBy = "seeder",
+                CreatedAt = DateTime.UtcNow
+            };
+            db.Keywords.Add(otherKeyword);
+            await db.SaveChangesAsync(cancellationToken);
+        }
+
+        // Check if CategoryKeyword already exists for this category and keyword combination
+        // This checks the unique constraint: CategoryId + KeywordId
+        bool otherExists = await db.CategoryKeywords
+            .AnyAsync(ck => ck.CategoryId == category.Id && ck.KeywordId == otherKeyword.Id, cancellationToken);
+
+        if (otherExists)
+        {
+            return; // Already exists
+        }
+
+        // Create CategoryKeyword entry for "other"
+        CategoryKeyword categoryKeyword = new CategoryKeyword
+        {
+            Id = Guid.NewGuid(),
+            CategoryId = category.Id,
+            KeywordId = otherKeyword.Id,
+            NavigationRank = 1,
+            ParentName = null,
+            SortRank = 0,
+            CreatedAt = DateTime.UtcNow
+        };
+        db.CategoryKeywords.Add(categoryKeyword);
+        await db.SaveChangesAsync(cancellationToken);
+    }
+
+    private async Task SeedNavigationKeywordAsync(
+        ApplicationDbContext db,
+        Category category,
+        string keywordName,
+        int navigationRank,
+        string? parentName,
+        int sortRank,
+        CancellationToken cancellationToken)
+    {
+        // Find or create keyword (global) first
+        Keyword? keyword = await db.Keywords
+            .FirstOrDefaultAsync(k => k.Name.ToLower() == keywordName.ToLower() && !k.IsPrivate, cancellationToken);
+
+        if (keyword is null)
+        {
+            keyword = new Keyword
+            {
+                Id = Guid.NewGuid(),
+                Name = keywordName.ToLowerInvariant(), // Store normalized
+                IsPrivate = false,
+                CreatedBy = "seeder",
+                CreatedAt = DateTime.UtcNow
+            };
+            db.Keywords.Add(keyword);
+            await db.SaveChangesAsync(cancellationToken);
+        }
+
+        // Check if CategoryKeyword already exists for this category and keyword combination
+        // This checks the unique constraint: CategoryId + KeywordId
+        bool exists = await db.CategoryKeywords
+            .AnyAsync(ck => ck.CategoryId == category.Id && ck.KeywordId == keyword.Id, cancellationToken);
+
+        if (exists)
+        {
+            return; // Already exists
+        }
+
+        // Create CategoryKeyword entry
+        CategoryKeyword categoryKeyword = new CategoryKeyword
+        {
+            Id = Guid.NewGuid(),
+            CategoryId = category.Id,
+            KeywordId = keyword.Id,
+            NavigationRank = navigationRank,
+            ParentName = parentName?.ToLowerInvariant(), // Store normalized
+            SortRank = sortRank,
+            CreatedAt = DateTime.UtcNow
+        };
+        db.CategoryKeywords.Add(categoryKeyword);
+        await db.SaveChangesAsync(cancellationToken);
+    }
 }
 
 // Seed data model for JSON deserialization (bulk format)
@@ -311,6 +522,7 @@ internal sealed class BulkItemSeedData
     public List<string> IncorrectAnswers { get; set; } = new();
     public string? Explanation { get; set; }
     public List<string>? Keywords { get; set; }
+    public string? Source { get; set; }
 }
 
 // Seeder user context for bulk add operations

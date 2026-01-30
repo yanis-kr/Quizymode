@@ -1,0 +1,28 @@
+[
+  {
+    "category": "tests",
+    "question": "What is the main purpose of the passage?",
+    "correctAnswer": "To explain the historical context",
+    "incorrectAnswers": [
+      "To persuade the reader",
+      "To entertain with anecdotes",
+      "To compare different theories"
+    ],
+    "explanation": "The passage primarily provides historical background information.",
+    "keywords": ["act", "reading", "comprehension", "purpose"],
+    "source": "initial seed"
+  },
+  {
+    "category": "tests",
+    "question": "According to the passage, what was the author's primary concern?",
+    "correctAnswer": "Economic stability",
+    "incorrectAnswers": [
+      "Social justice",
+      "Environmental protection",
+      "Cultural preservation"
+    ],
+    "explanation": "The author focuses on economic factors throughout the passage.",
+    "keywords": ["act", "reading", "comprehension", "economics"],
+    "source": "initial seed"
+  }
+]

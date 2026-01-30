@@ -1,0 +1,41 @@
+[
+  {
+    "category": "culture",
+    "question": "What is the main ingredient in traditional Japanese miso soup?",
+    "correctAnswer": "Fermented soybeans",
+    "incorrectAnswers": [
+      "Seaweed",
+      "Rice",
+      "Fish"
+    ],
+    "explanation": "Miso soup is made from fermented soybeans, though it often includes other ingredients like seaweed and tofu.",
+    "keywords": ["food", "japanese", "miso", "soup"],
+    "source": "initial seed"
+  },
+  {
+    "category": "culture",
+    "question": "What is the traditional Italian dish made with pasta, eggs, and pancetta?",
+    "correctAnswer": "Carbonara",
+    "incorrectAnswers": [
+      "Alfredo",
+      "Bolognese",
+      "Pesto"
+    ],
+    "explanation": "Carbonara is a classic Roman pasta dish made with eggs, cheese, pancetta, and black pepper.",
+    "keywords": ["food", "italian", "pasta", "traditional"],
+    "source": "initial seed"
+  },
+  {
+    "category": "culture",
+    "question": "Which spice is known as the 'king of spices' and is native to India?",
+    "correctAnswer": "Black pepper",
+    "incorrectAnswers": [
+      "Cinnamon",
+      "Turmeric",
+      "Cardamom"
+    ],
+    "explanation": "Black pepper has been called the 'king of spices' and was historically one of the most valuable trade commodities.",
+    "keywords": ["food", "spices", "indian", "pepper"],
+    "source": "initial seed"
+  }
+]

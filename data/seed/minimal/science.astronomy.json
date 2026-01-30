@@ -1,0 +1,28 @@
+[
+  {
+    "category": "science",
+    "question": "Which planet is known as the Red Planet?",
+    "correctAnswer": "Mars",
+    "incorrectAnswers": [
+      "Venus",
+      "Jupiter",
+      "Saturn"
+    ],
+    "explanation": "Mars is known as the Red Planet due to iron oxide on its surface.",
+    "keywords": ["astronomy", "mars", "planets"],
+    "source": "initial seed"
+  },
+  {
+    "category": "science",
+    "question": "What is the largest planet in our solar system?",
+    "correctAnswer": "Jupiter",
+    "incorrectAnswers": [
+      "Saturn",
+      "Neptune",
+      "Earth"
+    ],
+    "explanation": "Jupiter is the largest planet in our solar system.",
+    "keywords": ["astronomy", "planets", "size"],
+    "source": "initial seed"
+  }
+]

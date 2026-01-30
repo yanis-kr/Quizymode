@@ -1,0 +1,28 @@
+[
+  {
+    "category": "tests",
+    "question": "If 3x + 7 = 22, what is the value of x?",
+    "correctAnswer": "5",
+    "incorrectAnswers": [
+      "15",
+      "29",
+      "4.33"
+    ],
+    "explanation": "Subtract 7 from both sides: 3x = 15, then divide by 3: x = 5.",
+    "keywords": ["sat", "math", "algebra", "equations"],
+    "source": "initial seed"
+  },
+  {
+    "category": "tests",
+    "question": "What is the area of a circle with radius 4?",
+    "correctAnswer": "16π",
+    "incorrectAnswers": [
+      "8π",
+      "32π",
+      "4π"
+    ],
+    "explanation": "Area = πr² = π(4)² = 16π.",
+    "keywords": ["sat", "math", "geometry", "circle", "area"],
+    "source": "initial seed"
+  }
+]

@@ -1,0 +1,41 @@
+[
+  {
+    "category": "general",
+    "question": "What is the most critical resource to secure first on a tropical island?",
+    "correctAnswer": "Fresh water",
+    "incorrectAnswers": [
+      "Food",
+      "Fire",
+      "Building materials"
+    ],
+    "explanation": "While tropical islands have food sources, fresh water is the most critical immediate need for survival.",
+    "keywords": ["outdoors", "survival", "tropical-island", "water", "priorities"],
+    "source": "initial seed"
+  },
+  {
+    "category": "general",
+    "question": "How can you make seawater drinkable in a survival situation?",
+    "correctAnswer": "Distillation using solar still or boiling and condensing",
+    "incorrectAnswers": [
+      "Filtering through sand",
+      "Adding salt to it",
+      "Boiling alone removes salt"
+    ],
+    "explanation": "Distillation separates water from salt by evaporating and condensing the water vapor.",
+    "keywords": ["outdoors", "survival", "tropical-island", "water", "desalination"],
+    "source": "initial seed"
+  },
+  {
+    "category": "general",
+    "question": "What should you avoid when signaling for rescue on a tropical island?",
+    "correctAnswer": "Using all your resources at once",
+    "incorrectAnswers": [
+      "Creating visible signals",
+      "Using mirrors for reflection",
+      "Building signal fires"
+    ],
+    "explanation": "Conserve resources and create sustainable signals rather than exhausting all materials immediately.",
+    "keywords": ["outdoors", "survival", "tropical-island", "signaling", "rescue"],
+    "source": "initial seed"
+  }
+]

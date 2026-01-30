@@ -1,6 +1,6 @@
 [
   {
-    "category": "ACT Math",
+    "category": "tests",
     "question": "What is the value of 7 + 8 × 2?",
     "correctAnswer": "23",
     "incorrectAnswers": [
@@ -10,12 +10,12 @@
     ],
     "explanation": "Multiply first: 8×2=16, then add 7.",
     "keywords": [
-      "pre-algebra",
+      "act",
       "math"
-    ]
+    ],`n    "source": "bulk-upload"
   },
   {
-    "category": "ACT Math",
+    "category": "tests",
     "question": "What is 45 percent of 200?",
     "correctAnswer": "90",
     "incorrectAnswers": [
@@ -25,12 +25,12 @@
     ],
     "explanation": "0.45×200=90.",
     "keywords": [
-      "pre-algebra",
+      "act",
       "math"
-    ]
+    ],`n    "source": "bulk-upload"
   },
   {
-    "category": "ACT Math",
+    "category": "tests",
     "question": "Which number is a prime number: 21, 29, 33, 35?",
     "correctAnswer": "29",
     "incorrectAnswers": [
@@ -40,12 +40,12 @@
     ],
     "explanation": "29 has no divisors besides 1 and itself.",
     "keywords": [
-      "pre-algebra",
+      "act",
       "math"
-    ]
+    ],`n    "source": "bulk-upload"
   },
   {
-    "category": "ACT Math",
+    "category": "tests",
     "question": "What is the greatest common factor of 18 and 24?",
     "correctAnswer": "6",
     "incorrectAnswers": [
@@ -55,12 +55,12 @@
     ],
     "explanation": "Factors common to both: 6 is greatest.",
     "keywords": [
-      "pre-algebra",
+      "act",
       "math"
-    ]
+    ],`n    "source": "bulk-upload"
   },
   {
-    "category": "ACT Math",
+    "category": "tests",
     "question": "What is 3/4 of 40?",
     "correctAnswer": "30",
     "incorrectAnswers": [
@@ -70,12 +70,12 @@
     ],
     "explanation": "0.75×40=30.",
     "keywords": [
-      "pre-algebra",
+      "act",
       "math"
-    ]
+    ],`n    "source": "bulk-upload"
   },
   {
-    "category": "ACT Math",
+    "category": "tests",
     "question": "Which is equivalent to 0.6?",
     "correctAnswer": "3/5",
     "incorrectAnswers": [
@@ -85,12 +85,12 @@
     ],
     "explanation": "0.6=6/10=3/5.",
     "keywords": [
-      "pre-algebra",
+      "act",
       "math"
-    ]
+    ],`n    "source": "bulk-upload"
   },
   {
-    "category": "ACT Math",
+    "category": "tests",
     "question": "What is 2.5 + 3.75?",
     "correctAnswer": "6.25",
     "incorrectAnswers": [
@@ -100,12 +100,12 @@
     ],
     "explanation": "Add decimals normally.",
     "keywords": [
-      "pre-algebra",
+      "act",
       "math"
-    ]
+    ],`n    "source": "bulk-upload"
   },
   {
-    "category": "ACT Math",
+    "category": "tests",
     "question": "What is the area of a rectangle with length 8 and width 5?",
     "correctAnswer": "40",
     "incorrectAnswers": [
@@ -115,12 +115,12 @@
     ],
     "explanation": "Area=8×5.",
     "keywords": [
-      "pre-algebra",
+      "act",
       "math"
-    ]
+    ],`n    "source": "bulk-upload"
   },
   {
-    "category": "ACT Math",
+    "category": "tests",
     "question": "Simplify 4/16.",
     "correctAnswer": "1/4",
     "incorrectAnswers": [
@@ -130,12 +130,12 @@
     ],
     "explanation": "Divide numerator and denominator by 4.",
     "keywords": [
-      "pre-algebra",
+      "act",
       "math"
-    ]
+    ],`n    "source": "bulk-upload"
   },
   {
-    "category": "ACT Math",
+    "category": "tests",
     "question": "What is 15 percent written as a decimal?",
     "correctAnswer": "0.15",
     "incorrectAnswers": [
@@ -145,12 +145,12 @@
     ],
     "explanation": "15%=15/100=0.15.",
     "keywords": [
-      "pre-algebra",
+      "act",
       "math"
-    ]
+    ],`n    "source": "bulk-upload"
   },
   {
-    "category": "ACT Math",
+    "category": "tests",
     "question": "Solve for x: x + 7 = 19.",
     "correctAnswer": "12",
     "incorrectAnswers": [
@@ -160,12 +160,12 @@
     ],
     "explanation": "Subtract 7 from both sides.",
     "keywords": [
-      "algebra",
+      "act",
       "math"
-    ]
+    ],`n    "source": "bulk-upload"
   },
   {
-    "category": "ACT Math",
+    "category": "tests",
     "question": "Solve for x: 5x = 45.",
     "correctAnswer": "9",
     "incorrectAnswers": [
@@ -175,12 +175,12 @@
     ],
     "explanation": "Divide by 5.",
     "keywords": [
-      "algebra",
+      "act",
       "math"
-    ]
+    ],`n    "source": "bulk-upload"
   },
   {
-    "category": "ACT Math",
+    "category": "tests",
     "question": "What is the slope of the line y = 3x − 4?",
     "correctAnswer": "3",
     "incorrectAnswers": [
@@ -190,12 +190,12 @@
     ],
     "explanation": "Slope is coefficient of x.",
     "keywords": [
-      "algebra",
+      "act",
       "math"
-    ]
+    ],`n    "source": "bulk-upload"
   },
   {
-    "category": "ACT Math",
+    "category": "tests",
     "question": "Simplify: 2(x + 5).",
     "correctAnswer": "2x + 10",
     "incorrectAnswers": [
@@ -205,12 +205,12 @@
     ],
     "explanation": "Distribute the 2.",
     "keywords": [
-      "algebra",
+      "act",
       "math"
-    ]
+    ],`n    "source": "bulk-upload"
   },
   {
-    "category": "ACT Math",
+    "category": "tests",
     "question": "Solve: 3x − 2 = 10.",
     "correctAnswer": "4",
     "incorrectAnswers": [
@@ -220,12 +220,12 @@
     ],
     "explanation": "Add 2 then divide by 3.",
     "keywords": [
-      "algebra",
+      "act",
       "math"
-    ]
+    ],`n    "source": "bulk-upload"
   },
   {
-    "category": "ACT Math",
+    "category": "tests",
     "question": "Combine like terms: 4x + 7x − 3.",
     "correctAnswer": "11x − 3",
     "incorrectAnswers": [
@@ -235,12 +235,12 @@
     ],
     "explanation": "4x+7x=11x.",
     "keywords": [
-      "algebra",
+      "act",
       "math"
-    ]
+    ],`n    "source": "bulk-upload"
   },
   {
-    "category": "ACT Math",
+    "category": "tests",
     "question": "Which is the y-intercept in y = −2x + 5?",
     "correctAnswer": "5",
     "incorrectAnswers": [
@@ -250,12 +250,12 @@
     ],
     "explanation": "The constant term is the y-intercept.",
     "keywords": [
-      "algebra",
+      "act",
       "math"
-    ]
+    ],`n    "source": "bulk-upload"
   },
   {
-    "category": "ACT Math",
+    "category": "tests",
     "question": "Solve for x: x/3 = 7.",
     "correctAnswer": "21",
     "incorrectAnswers": [
@@ -265,12 +265,12 @@
     ],
     "explanation": "Multiply both sides by 3.",
     "keywords": [
-      "algebra",
+      "act",
       "math"
-    ]
+    ],`n    "source": "bulk-upload"
   },
   {
-    "category": "ACT Math",
+    "category": "tests",
     "question": "Factor: x^2 − 9.",
     "correctAnswer": "(x − 3)(x + 3)",
     "incorrectAnswers": [
@@ -280,12 +280,12 @@
     ],
     "explanation": "Difference of squares.",
     "keywords": [
-      "algebra",
+      "act",
       "math"
-    ]
+    ],`n    "source": "bulk-upload"
   },
   {
-    "category": "ACT Math",
+    "category": "tests",
     "question": "Solve: 2x + 4 = 2.",
     "correctAnswer": "−1",
     "incorrectAnswers": [
@@ -295,12 +295,12 @@
     ],
     "explanation": "Subtract 4, divide by 2.",
     "keywords": [
-      "algebra",
+      "act",
       "math"
-    ]
+    ],`n    "source": "bulk-upload"
   },
   {
-    "category": "ACT Math",
+    "category": "tests",
     "question": "Solve: x^2 = 49.",
     "correctAnswer": "7 or −7",
     "incorrectAnswers": [
@@ -310,12 +310,12 @@
     ],
     "explanation": "Square root of 49 gives ±7.",
     "keywords": [
-      "algebra 2",
+      "act",
       "math"
-    ]
+    ],`n    "source": "bulk-upload"
   },
   {
-    "category": "ACT Math",
+    "category": "tests",
     "question": "Simplify: (x^3)(x^2).",
     "correctAnswer": "x^5",
     "incorrectAnswers": [
@@ -325,12 +325,12 @@
     ],
     "explanation": "Add exponents when multiplying same base.",
     "keywords": [
-      "algebra 2",
+      "act",
       "math"
-    ]
+    ],`n    "source": "bulk-upload"
   },
   {
-    "category": "ACT Math",
+    "category": "tests",
     "question": "Solve: 4^x = 16.",
     "correctAnswer": "2",
     "incorrectAnswers": [
@@ -340,12 +340,12 @@
     ],
     "explanation": "16=4^2.",
     "keywords": [
-      "algebra 2",
+      "act",
       "math"
-    ]
+    ],`n    "source": "bulk-upload"
   },
   {
-    "category": "ACT Math",
+    "category": "tests",
     "question": "Simplify: sqrt(81).",
     "correctAnswer": "9",
     "incorrectAnswers": [
@@ -355,12 +355,12 @@
     ],
     "explanation": "Square root of 81 is 9.",
     "keywords": [
-      "algebra 2",
+      "act",
       "math"
-    ]
+    ],`n    "source": "bulk-upload"
   },
   {
-    "category": "ACT Math",
+    "category": "tests",
     "question": "Solve: 3x^2 = 75.",
     "correctAnswer": "5 or −5",
     "incorrectAnswers": [
@@ -370,12 +370,12 @@
     ],
     "explanation": "Divide then take square roots.",
     "keywords": [
-      "algebra 2",
+      "act",
       "math"
-    ]
+    ],`n    "source": "bulk-upload"
   },
   {
-    "category": "ACT Math",
+    "category": "tests",
     "question": "Factor: x^2 + 5x + 6.",
     "correctAnswer": "(x + 2)(x + 3)",
     "incorrectAnswers": [
@@ -385,12 +385,12 @@
     ],
     "explanation": "Numbers that multiply to 6 and sum to 5.",
     "keywords": [
-      "algebra 2",
+      "act",
       "math"
-    ]
+    ],`n    "source": "bulk-upload"
   },
   {
-    "category": "ACT Math",
+    "category": "tests",
     "question": "What is the vertex of y = (x − 2)^2 + 3?",
     "correctAnswer": "(2, 3)",
     "incorrectAnswers": [
@@ -400,12 +400,12 @@
     ],
     "explanation": "Vertex form reveals it directly.",
     "keywords": [
-      "algebra 2",
+      "act",
       "math"
-    ]
+    ],`n    "source": "bulk-upload"
   },
   {
-    "category": "ACT Math",
+    "category": "tests",
     "question": "Solve for x: log(x) = 2.",
     "correctAnswer": "100",
     "incorrectAnswers": [
@@ -415,12 +415,12 @@
     ],
     "explanation": "log base 10: x=10^2=100.",
     "keywords": [
-      "algebra 2",
+      "act",
       "math"
-    ]
+    ],`n    "source": "bulk-upload"
   },
   {
-    "category": "ACT Math",
+    "category": "tests",
     "question": "Simplify: (2x^2)^2.",
     "correctAnswer": "4x^4",
     "incorrectAnswers": [
@@ -430,12 +430,12 @@
     ],
     "explanation": "Square both coefficient and variable.",
     "keywords": [
-      "algebra 2",
+      "act",
       "math"
-    ]
+    ],`n    "source": "bulk-upload"
   },
   {
-    "category": "ACT Math",
+    "category": "tests",
     "question": "Solve: x^2 − 4x + 4 = 0.",
     "correctAnswer": "2",
     "incorrectAnswers": [
@@ -445,12 +445,12 @@
     ],
     "explanation": "Perfect square trinomial.",
     "keywords": [
-      "algebra 2",
+      "act",
       "math"
-    ]
+    ],`n    "source": "bulk-upload"
   },
   {
-    "category": "ACT Math",
+    "category": "tests",
     "question": "If f(x)=2x+1, what is f(3)?",
     "correctAnswer": "7",
     "incorrectAnswers": [
@@ -460,12 +460,12 @@
     ],
     "explanation": "2×3+1=7.",
     "keywords": [
-      "functions",
+      "act",
       "math"
-    ]
+    ],`n    "source": "bulk-upload"
   },
   {
-    "category": "ACT Math",
+    "category": "tests",
     "question": "If g(x)=x^2−4, what is g(5)?",
     "correctAnswer": "21",
     "incorrectAnswers": [
@@ -475,12 +475,12 @@
     ],
     "explanation": "25−4=21.",
     "keywords": [
-      "functions",
+      "act",
       "math"
-    ]
+    ],`n    "source": "bulk-upload"
   },
   {
-    "category": "ACT Math",
+    "category": "tests",
     "question": "For f(x)=3x−2, what value of x gives f(x)=10?",
     "correctAnswer": "4",
     "incorrectAnswers": [
@@ -490,12 +490,12 @@
     ],
     "explanation": "Solve 3x−2=10.",
     "keywords": [
-      "functions",
+      "act",
       "math"
-    ]
+    ],`n    "source": "bulk-upload"
   },
   {
-    "category": "ACT Math",
+    "category": "tests",
     "question": "Which is the domain of f(x)=1/x?",
     "correctAnswer": "All real numbers except 0",
     "incorrectAnswers": [
@@ -505,12 +505,12 @@
     ],
     "explanation": "Division by zero is undefined.",
     "keywords": [
-      "functions",
+      "act",
       "math"
-    ]
+    ],`n    "source": "bulk-upload"
   },
   {
-    "category": "ACT Math",
+    "category": "tests",
     "question": "If f(2)=6 and f(x)=3x, is this correct?",
     "correctAnswer": "Yes",
     "incorrectAnswers": [
@@ -520,12 +520,12 @@
     ],
     "explanation": "3×2=6.",
     "keywords": [
-      "functions",
+      "act",
       "math"
-    ]
+    ],`n    "source": "bulk-upload"
   },
   {
-    "category": "ACT Math",
+    "category": "tests",
     "question": "If h(x)=x+7, what is h(−3)?",
     "correctAnswer": "4",
     "incorrectAnswers": [
@@ -535,12 +535,12 @@
     ],
     "explanation": "−3+7=4.",
     "keywords": [
-      "functions",
+      "act",
       "math"
-    ]
+    ],`n    "source": "bulk-upload"
   },
   {
-    "category": "ACT Math",
+    "category": "tests",
     "question": "Which is a linear function?",
     "correctAnswer": "f(x)=4x−1",
     "incorrectAnswers": [
@@ -550,12 +550,12 @@
     ],
     "explanation": "Linear functions are of form mx+b.",
     "keywords": [
-      "functions",
+      "act",
       "math"
-    ]
+    ],`n    "source": "bulk-upload"
   },
   {
-    "category": "ACT Math",
+    "category": "tests",
     "question": "If f(x)=x^2, what is f(−4)?",
     "correctAnswer": "16",
     "incorrectAnswers": [
@@ -565,12 +565,12 @@
     ],
     "explanation": "Square removes sign.",
     "keywords": [
-      "functions",
+      "act",
       "math"
-    ]
+    ],`n    "source": "bulk-upload"
   },
   {
-    "category": "ACT Math",
+    "category": "tests",
     "question": "Which represents an increasing function?",
     "correctAnswer": "f(x)=2x+3",
     "incorrectAnswers": [
@@ -580,12 +580,12 @@
     ],
     "explanation": "Positive slope increases.",
     "keywords": [
-      "functions",
+      "act",
       "math"
-    ]
+    ],`n    "source": "bulk-upload"
   },
   {
-    "category": "ACT Math",
+    "category": "tests",
     "question": "If f(x)=10−x, what is f(10)?",
     "correctAnswer": "0",
     "incorrectAnswers": [
@@ -595,12 +595,12 @@
     ],
     "explanation": "10−10=0.",
     "keywords": [
-      "functions",
+      "act",
       "math"
-    ]
+    ],`n    "source": "bulk-upload"
   },
   {
-    "category": "ACT Math",
+    "category": "tests",
     "question": "What is the sum of interior angles in a triangle?",
     "correctAnswer": "180",
     "incorrectAnswers": [
@@ -610,12 +610,12 @@
     ],
     "explanation": "All triangles total 180.",
     "keywords": [
-      "geometry",
+      "act",
       "math"
-    ]
+    ],`n    "source": "bulk-upload"
   },
   {
-    "category": "ACT Math",
+    "category": "tests",
     "question": "A circle has radius 7. What is its diameter?",
     "correctAnswer": "14",
     "incorrectAnswers": [
@@ -625,12 +625,12 @@
     ],
     "explanation": "Diameter=2r.",
     "keywords": [
-      "geometry",
+      "act",
       "math"
-    ]
+    ],`n    "source": "bulk-upload"
   },
   {
-    "category": "ACT Math",
+    "category": "tests",
     "question": "What is the area of a triangle with base 10 and height 4?",
     "correctAnswer": "20",
     "incorrectAnswers": [
@@ -640,12 +640,12 @@
     ],
     "explanation": "Area=1/2×base×height.",
     "keywords": [
-      "geometry",
+      "act",
       "math"
-    ]
+    ],`n    "source": "bulk-upload"
   },
   {
-    "category": "ACT Math",
+    "category": "tests",
     "question": "What is the perimeter of a square with side 6?",
     "correctAnswer": "24",
     "incorrectAnswers": [
@@ -655,12 +655,12 @@
     ],
     "explanation": "4×side.",
     "keywords": [
-      "geometry",
+      "act",
       "math"
-    ]
+    ],`n    "source": "bulk-upload"
   },
   {
-    "category": "ACT Math",
+    "category": "tests",
     "question": "What is the area of a circle with radius 3?",
     "correctAnswer": "9pi",
     "incorrectAnswers": [
@@ -670,12 +670,12 @@
     ],
     "explanation": "Area=pi r^2.",
     "keywords": [
-      "geometry",
+      "act",
       "math"
-    ]
+    ],`n    "source": "bulk-upload"
   },
   {
-    "category": "ACT Math",
+    "category": "tests",
     "question": "A right triangle has legs 3 and 4. What is the hypotenuse?",
     "correctAnswer": "5",
     "incorrectAnswers": [
@@ -685,12 +685,12 @@
     ],
     "explanation": "3^2+4^2=25.",
     "keywords": [
-      "geometry",
+      "act",
       "math"
-    ]
+    ],`n    "source": "bulk-upload"
   },
   {
-    "category": "ACT Math",
+    "category": "tests",
     "question": "What is the volume of a cube with side 3?",
     "correctAnswer": "27",
     "incorrectAnswers": [
@@ -700,12 +700,12 @@
     ],
     "explanation": "Side^3.",
     "keywords": [
-      "geometry",
+      "act",
       "math"
-    ]
+    ],`n    "source": "bulk-upload"
   },
   {
-    "category": "ACT Math",
+    "category": "tests",
     "question": "A parallelogram has base 5 and height 8. Area?",
     "correctAnswer": "40",
     "incorrectAnswers": [
@@ -715,12 +715,12 @@
     ],
     "explanation": "Area=base×height.",
     "keywords": [
-      "geometry",
+      "act",
       "math"
-    ]
+    ],`n    "source": "bulk-upload"
   },
   {
-    "category": "ACT Math",
+    "category": "tests",
     "question": "How many degrees in a straight angle?",
     "correctAnswer": "180",
     "incorrectAnswers": [
@@ -730,12 +730,12 @@
     ],
     "explanation": "Straight angles measure 180.",
     "keywords": [
-      "geometry",
+      "act",
       "math"
-    ]
+    ],`n    "source": "bulk-upload"
   },
   {
-    "category": "ACT Math",
+    "category": "tests",
     "question": "What is the surface area of a cube with side 2?",
     "correctAnswer": "24",
     "incorrectAnswers": [
@@ -745,12 +745,12 @@
     ],
     "explanation": "6×side^2.",
     "keywords": [
-      "geometry",
+      "act",
       "math"
-    ]
+    ],`n    "source": "bulk-upload"
   },
   {
-    "category": "ACT Math",
+    "category": "tests",
     "question": "What is sin(90 degrees)?",
     "correctAnswer": "1",
     "incorrectAnswers": [
@@ -760,12 +760,12 @@
     ],
     "explanation": "Sin 90 is 1.",
     "keywords": [
-      "trigonometry",
+      "act",
       "math"
-    ]
+    ],`n    "source": "bulk-upload"
   },
   {
-    "category": "ACT Math",
+    "category": "tests",
     "question": "What is cos(0 degrees)?",
     "correctAnswer": "1",
     "incorrectAnswers": [
@@ -775,12 +775,12 @@
     ],
     "explanation": "Cos 0 is 1.",
     "keywords": [
-      "trigonometry",
+      "act",
       "math"
-    ]
+    ],`n    "source": "bulk-upload"
   },
   {
-    "category": "ACT Math",
+    "category": "tests",
     "question": "What is tan(45 degrees)?",
     "correctAnswer": "1",
     "incorrectAnswers": [
@@ -790,12 +790,12 @@
     ],
     "explanation": "45 deg triangle has equal legs.",
     "keywords": [
-      "trigonometry",
+      "act",
       "math"
-    ]
+    ],`n    "source": "bulk-upload"
   },
   {
-    "category": "ACT Math",
+    "category": "tests",
     "question": "If sin(x)=opposite/hypotenuse, what is cos(x)?",
     "correctAnswer": "adjacent/hypotenuse",
     "incorrectAnswers": [
@@ -805,12 +805,12 @@
     ],
     "explanation": "Definition of cosine.",
     "keywords": [
-      "trigonometry",
+      "act",
       "math"
-    ]
+    ],`n    "source": "bulk-upload"
   },
   {
-    "category": "ACT Math",
+    "category": "tests",
     "question": "In a right triangle, what is the hypotenuse?",
     "correctAnswer": "The side opposite the right angle",
     "incorrectAnswers": [
@@ -820,12 +820,12 @@
     ],
     "explanation": "Definition of hypotenuse.",
     "keywords": [
-      "trigonometry",
+      "act",
       "math"
-    ]
+    ],`n    "source": "bulk-upload"
   },
   {
-    "category": "ACT Math",
+    "category": "tests",
     "question": "What is sin(0 degrees)?",
     "correctAnswer": "0",
     "incorrectAnswers": [
@@ -835,12 +835,12 @@
     ],
     "explanation": "Sin 0 is 0.",
     "keywords": [
-      "trigonometry",
+      "act",
       "math"
-    ]
+    ],`n    "source": "bulk-upload"
   },
   {
-    "category": "ACT Math",
+    "category": "tests",
     "question": "What is cos(90 degrees)?",
     "correctAnswer": "0",
     "incorrectAnswers": [
@@ -850,12 +850,12 @@
     ],
     "explanation": "Cos 90 is 0.",
     "keywords": [
-      "trigonometry",
+      "act",
       "math"
-    ]
+    ],`n    "source": "bulk-upload"
   },
   {
-    "category": "ACT Math",
+    "category": "tests",
     "question": "What is tan(0 degrees)?",
     "correctAnswer": "0",
     "incorrectAnswers": [
@@ -865,12 +865,12 @@
     ],
     "explanation": "Opposite is 0.",
     "keywords": [
-      "trigonometry",
+      "act",
       "math"
-    ]
+    ],`n    "source": "bulk-upload"
   },
   {
-    "category": "ACT Math",
+    "category": "tests",
     "question": "If a right triangle has legs 5 and 12, what is the hypotenuse?",
     "correctAnswer": "13",
     "incorrectAnswers": [
@@ -880,12 +880,12 @@
     ],
     "explanation": "5^2+12^2=169.",
     "keywords": [
-      "trigonometry",
+      "act",
       "math"
-    ]
+    ],`n    "source": "bulk-upload"
   },
   {
-    "category": "ACT Math",
+    "category": "tests",
     "question": "What is tan(90 degrees)?",
     "correctAnswer": "undefined",
     "incorrectAnswers": [
@@ -895,12 +895,12 @@
     ],
     "explanation": "Opposite/adjacent with adjacent 0.",
     "keywords": [
-      "trigonometry",
+      "act",
       "math"
-    ]
+    ],`n    "source": "bulk-upload"
   },
   {
-    "category": "ACT Math",
+    "category": "tests",
     "question": "A coin is flipped. What is the probability of heads?",
     "correctAnswer": "1/2",
     "incorrectAnswers": [
@@ -910,12 +910,12 @@
     ],
     "explanation": "Two equally likely outcomes.",
     "keywords": [
-      "probability",
+      "act",
       "math"
-    ]
+    ],`n    "source": "bulk-upload"
   },
   {
-    "category": "ACT Math",
+    "category": "tests",
     "question": "A die is rolled. Probability of rolling a 6?",
     "correctAnswer": "1/6",
     "incorrectAnswers": [
@@ -925,12 +925,12 @@
     ],
     "explanation": "One favorable out of six.",
     "keywords": [
-      "probability",
+      "act",
       "math"
-    ]
+    ],`n    "source": "bulk-upload"
   },
   {
-    "category": "ACT Math",
+    "category": "tests",
     "question": "What is the probability of drawing a red card from a standard deck?",
     "correctAnswer": "1/2",
     "incorrectAnswers": [
@@ -940,12 +940,12 @@
     ],
     "explanation": "26 of 52 cards are red.",
     "keywords": [
-      "probability",
+      "act",
       "math"
-    ]
+    ],`n    "source": "bulk-upload"
   },
   {
-    "category": "ACT Math",
+    "category": "tests",
     "question": "If two coins are flipped, probability of two heads?",
     "correctAnswer": "1/4",
     "incorrectAnswers": [
@@ -955,12 +955,12 @@
     ],
     "explanation": "HH, HT, TH, TT.",
     "keywords": [
-      "probability",
+      "act",
       "math"
-    ]
+    ],`n    "source": "bulk-upload"
   },
   {
-    "category": "ACT Math",
+    "category": "tests",
     "question": "There are 3 blue and 1 red ball. Probability of red?",
     "correctAnswer": "1/4",
     "incorrectAnswers": [
@@ -970,12 +970,12 @@
     ],
     "explanation": "1 of 4 balls.",
     "keywords": [
-      "probability",
+      "act",
       "math"
-    ]
+    ],`n    "source": "bulk-upload"
   },
   {
-    "category": "ACT Math",
+    "category": "tests",
     "question": "What is the probability of rolling an even number on a die?",
     "correctAnswer": "1/2",
     "incorrectAnswers": [
@@ -985,12 +985,12 @@
     ],
     "explanation": "3 even numbers out of 6.",
     "keywords": [
-      "probability",
+      "act",
       "math"
-    ]
+    ],`n    "source": "bulk-upload"
   },
   {
-    "category": "ACT Math",
+    "category": "tests",
     "question": "A bag has 5 marbles: 2 red, 3 green. Probability of red?",
     "correctAnswer": "2/5",
     "incorrectAnswers": [
@@ -1000,12 +1000,12 @@
     ],
     "explanation": "2 of 5.",
     "keywords": [
-      "probability",
+      "act",
       "math"
-    ]
+    ],`n    "source": "bulk-upload"
   },
   {
-    "category": "ACT Math",
+    "category": "tests",
     "question": "What is the probability of drawing a king from a deck?",
     "correctAnswer": "1/13",
     "incorrectAnswers": [
@@ -1015,12 +1015,12 @@
     ],
     "explanation": "4 kings out of 52 cards.",
     "keywords": [
-      "probability",
+      "act",
       "math"
-    ]
+    ],`n    "source": "bulk-upload"
   },
   {
-    "category": "ACT Math",
+    "category": "tests",
     "question": "If a number is chosen from 1 to 10, probability it's even?",
     "correctAnswer": "1/2",
     "incorrectAnswers": [
@@ -1030,12 +1030,12 @@
     ],
     "explanation": "5 even numbers.",
     "keywords": [
-      "probability",
+      "act",
       "math"
-    ]
+    ],`n    "source": "bulk-upload"
   },
   {
-    "category": "ACT Math",
+    "category": "tests",
     "question": "Probability of heads on a fair coin three times in a row?",
     "correctAnswer": "1/8",
     "incorrectAnswers": [
@@ -1045,12 +1045,12 @@
     ],
     "explanation": "(1/2)^3.",
     "keywords": [
-      "probability",
+      "act",
       "math"
-    ]
+    ],`n    "source": "bulk-upload"
   },
   {
-    "category": "ACT Math",
+    "category": "tests",
     "question": "A shirt originally costs 40 and is discounted 25 percent. What is the sale price?",
     "correctAnswer": "30",
     "incorrectAnswers": [
@@ -1060,12 +1060,12 @@
     ],
     "explanation": "0.75×40=30.",
     "keywords": [
-      "word problems",
+      "act",
       "math"
-    ]
+    ],`n    "source": "bulk-upload"
   },
   {
-    "category": "ACT Math",
+    "category": "tests",
     "question": "A car travels 180 miles in 3 hours. What is its speed?",
     "correctAnswer": "60",
     "incorrectAnswers": [
@@ -1075,12 +1075,12 @@
     ],
     "explanation": "Distance/time.",
     "keywords": [
-      "word problems",
+      "act",
       "math"
-    ]
+    ],`n    "source": "bulk-upload"
   },
   {
-    "category": "ACT Math",
+    "category": "tests",
     "question": "A tank holds 50 gallons. It currently has 20. How many more needed to fill it?",
     "correctAnswer": "30",
     "incorrectAnswers": [
@@ -1090,12 +1090,12 @@
     ],
     "explanation": "50−20=30.",
     "keywords": [
-      "word problems",
+      "act",
       "math"
-    ]
+    ],`n    "source": "bulk-upload"
   },
   {
-    "category": "ACT Math",
+    "category": "tests",
     "question": "If a worker earns 12 per hour and works 8 hours, how much is earned?",
     "correctAnswer": "96",
     "incorrectAnswers": [
@@ -1105,12 +1105,12 @@
     ],
     "explanation": "12×8.",
     "keywords": [
-      "word problems",
+      "act",
       "math"
-    ]
+    ],`n    "source": "bulk-upload"
   },
   {
-    "category": "ACT Math",
+    "category": "tests",
     "question": "A train travels 300 miles in 5 hours. Average speed?",
     "correctAnswer": "60",
     "incorrectAnswers": [
@@ -1120,12 +1120,12 @@
     ],
     "explanation": "300/5.",
     "keywords": [
-      "word problems",
+      "act",
       "math"
-    ]
+    ],`n    "source": "bulk-upload"
   },
   {
-    "category": "ACT Math",
+    "category": "tests",
     "question": "If 3 notebooks cost 9, how much do 7 notebooks cost?",
     "correctAnswer": "21",
     "incorrectAnswers": [
@@ -1135,12 +1135,12 @@
     ],
     "explanation": "3 dollars each.",
     "keywords": [
-      "word problems",
+      "act",
       "math"
-    ]
+    ],`n    "source": "bulk-upload"
   },
   {
-    "category": "ACT Math",
+    "category": "tests",
     "question": "A recipe needs 2 cups of sugar for 12 cookies. How much for 6 cookies?",
     "correctAnswer": "1 cup",
     "incorrectAnswers": [
@@ -1150,12 +1150,12 @@
     ],
     "explanation": "Half the cookies, half the sugar.",
     "keywords": [
-      "word problems",
+      "act",
       "math"
-    ]
+    ],`n    "source": "bulk-upload"
   },
   {
-    "category": "ACT Math",
+    "category": "tests",
     "question": "A car uses 4 gallons for 120 miles. How many miles per gallon?",
     "correctAnswer": "30",
     "incorrectAnswers": [
@@ -1165,12 +1165,12 @@
     ],
     "explanation": "120/4.",
     "keywords": [
-      "word problems",
+      "act",
       "math"
-    ]
+    ],`n    "source": "bulk-upload"
   },
   {
-    "category": "ACT Math",
+    "category": "tests",
     "question": "A store sells pencils at 3 for 1. How many for 5?",
     "correctAnswer": "15",
     "incorrectAnswers": [
@@ -1180,12 +1180,12 @@
     ],
     "explanation": "Multiply each side.",
     "keywords": [
-      "word problems",
+      "act",
       "math"
-    ]
+    ],`n    "source": "bulk-upload"
   },
   {
-    "category": "ACT Math",
+    "category": "tests",
     "question": "A plane flies 450 miles in 1.5 hours. Average speed?",
     "correctAnswer": "300",
     "incorrectAnswers": [
@@ -1195,8 +1195,8 @@
     ],
     "explanation": "450/1.5=300.",
     "keywords": [
-      "word problems",
+      "act",
       "math"
-    ]
+    ],`n    "source": "bulk-upload"
   }
 ]

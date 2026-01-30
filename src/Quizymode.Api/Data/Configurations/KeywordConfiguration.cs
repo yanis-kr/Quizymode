@@ -33,6 +33,8 @@ internal sealed class KeywordConfiguration : IEntityTypeConfiguration<Keyword>
         // Unique index on Name + CreatedBy + IsPrivate to prevent duplicates
         // For global keywords (IsPrivate=false), Name must be unique globally
         // For private keywords (IsPrivate=true), Name must be unique per user
+        // Note: Keywords are now category-scoped via CategoryKeyword, but this constraint
+        // still ensures no duplicate keyword entities per user/visibility scope
         builder.HasIndex(x => new { x.Name, x.CreatedBy, x.IsPrivate })
             .IsUnique();
 

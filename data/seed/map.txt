@@ -1,0 +1,131 @@
+╔══════════════════════════════════════════════════════════════════════════════╗
+║                    QUIZYMODE SEED DATA NAVIGATION MAP                        ║
+╚══════════════════════════════════════════════════════════════════════════════╝
+
+This map shows the available navigation structure for quiz items in the application.
+
+┌─────────────────────────────────────────────────────────────────────────────┐
+│ CATEGORIES (Top Level)                                                        │
+└─────────────────────────────────────────────────────────────────────────────┘
+
+  📁 general          - General trivia and fun facts
+  📁 history          - Historical questions
+  📁 science          - Science topics
+  📁 geography        - Geography and locations
+  📁 entertainment    - Movies, TV, music, pop culture
+  📁 culture          - Food, holidays, traditions
+  📁 language         - Language learning
+  📁 puzzles          - Riddles, logic puzzles, brain teasers
+  📁 sports           - Sports trivia
+  📁 tests            - Test preparation (ACT, SAT, NCLEX, etc.)
+  📁 certs            - Professional certifications (AWS, Azure, etc.)
+
+┌─────────────────────────────────────────────────────────────────────────────┐
+│ NAVIGATION STRUCTURE (Category → Rank 1 → Rank 2)                           │
+└─────────────────────────────────────────────────────────────────────────────┘
+
+📂 certs
+  └─ 📂 aws (Rank 1)
+      ├─ 📂 saa-c02 (Rank 2)
+      ├─ 📂 saa-c03 (Rank 2)
+      ├─ 📂 dva-c02 (Rank 2)
+      └─ 📂 soa-c02 (Rank 2)
+
+📂 tests
+  └─ 📂 act (Rank 1)
+      ├─ 📂 math (Rank 2)
+      ├─ 📂 reading (Rank 2)
+      ├─ 📂 english (Rank 2)
+      └─ 📂 science (Rank 2)
+  
+  └─ 📂 sat (Rank 1)
+      ├─ 📂 math (Rank 2)
+      ├─ 📂 reading (Rank 2)
+      └─ 📂 writing (Rank 2)
+  
+  └─ 📂 nclex (Rank 1)
+      ├─ 📂 med-surg (Rank 2)
+      ├─ 📂 pediatrics (Rank 2)
+      ├─ 📂 pharm (Rank 2)
+      └─ 📂 dosage-calc (Rank 2)
+
+┌─────────────────────────────────────────────────────────────────────────────┐
+│ RANK 1 KEYWORDS (First Level Navigation)                                     │
+└─────────────────────────────────────────────────────────────────────────────┘
+
+  general      → trivia, fun-facts, daily, mixed, random
+  history      → us-history, world-history, ancient, modern, biography
+  science      → biology, astronomy, physics, chemistry, earth-science
+  geography    → countries, capitals, us-states, flags, maps
+  entertainment → movies, tv, music, quotes, pop-culture
+  culture      → food, holidays, traditions, customs, slang
+  language     → spanish, french, english, vocabulary, idioms
+  puzzles      → riddles, logic, brain-teasers, math-puzzles, patterns
+  sports       → soccer, basketball, tennis, olympics, athletes
+  tests        → act, sat, gmat, gre, nclex
+  certs        → aws, azure, gcp, comptia, kubernetes
+
+┌─────────────────────────────────────────────────────────────────────────────┐
+│ SEED DATA LOCATIONS                                                          │
+└─────────────────────────────────────────────────────────────────────────────┘
+
+  📂 minimal/              - Initial seed data (3+ items per file)
+      ├─ certs.aws.saa-c02.json
+      ├─ culture.food.json
+      ├─ entertainment.movies.json
+      ├─ general.trivia.json
+      ├─ geography.capitals.json
+      ├─ history.us-history.json
+      ├─ language.french.json
+      ├─ language.spanish.json
+      ├─ puzzles.riddles.json
+      ├─ science.astronomy.json
+      ├─ sports.soccer.json
+      ├─ tests.act.math.json
+      ├─ tests.act.reading.json
+      ├─ tests.nclex.med-surg.json
+      ├─ tests.sat.math.json
+      └─ tests.sat.reading.json
+
+  📂 bulk-uploads/         - Additional bulk data organized by navigation path
+      ├─ 📂 certs/
+      │   └─ 📂 aws/
+      │       └─ 📂 saa-c02/
+      │           └─ items.json
+      │
+      ├─ 📂 tests/
+      │   ├─ 📂 act/
+      │   │   └─ 📂 math/
+      │   │       └─ items.json
+      │   └─ 📂 sat/
+      │       └─ 📂 reading/
+      │           └─ items.json
+      │
+      ├─ 📂 language/
+      │   ├─ 📂 french/
+      │   │   └─ numbers.json
+      │   └─ 📂 spanish/
+      │       └─ greetings.json
+      │
+      ├─ 📂 geography/
+      │   └─ 📂 capitals/
+      │       └─ items.json
+      │
+      └─ 📂 general/
+          └─ 📂 trivia/
+              └─ items.json
+
+┌─────────────────────────────────────────────────────────────────────────────┐
+│ NOTES                                                                        │
+└─────────────────────────────────────────────────────────────────────────────┘
+
+  • Navigation Rank 1: First-level keywords under categories
+  • Navigation Rank 2: Second-level keywords (children of Rank 1)
+  • All items can have additional keywords for search/tagging
+  • Minimal seed files are used for initial database population
+  • Bulk-uploads follow the navigation directory structure
+  • Each category has an "other" keyword for uncategorized items
+
+╔══════════════════════════════════════════════════════════════════════════════╗
+║                          END OF NAVIGATION MAP                               ║
+╚══════════════════════════════════════════════════════════════════════════════╝

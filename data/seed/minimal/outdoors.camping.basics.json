@@ -1,0 +1,41 @@
+[
+  {
+    "category": "general",
+    "question": "What is the recommended distance to set up camp from water sources?",
+    "correctAnswer": "At least 200 feet",
+    "incorrectAnswers": [
+      "Right next to water",
+      "At least 50 feet",
+      "At least 100 feet"
+    ],
+    "explanation": "Camping 200+ feet from water protects water sources from contamination and reduces wildlife encounters.",
+    "keywords": ["outdoors", "camping", "basics", "water", "safety"],
+    "source": "initial seed"
+  },
+  {
+    "category": "general",
+    "question": "What is the Leave No Trace principle for campfires?",
+    "correctAnswer": "Use established fire rings or fire pans, or avoid fires when possible",
+    "incorrectAnswers": [
+      "Build fires anywhere convenient",
+      "Always build new fire pits",
+      "Leave fires burning when leaving"
+    ],
+    "explanation": "Leave No Trace means minimizing impact by using existing fire sites or avoiding fires to preserve nature.",
+    "keywords": ["outdoors", "camping", "basics", "fire", "ethics"],
+    "source": "initial seed"
+  },
+  {
+    "category": "general",
+    "question": "How should you store food while camping to prevent wildlife encounters?",
+    "correctAnswer": "In bear-resistant containers or hung from trees",
+    "incorrectAnswers": [
+      "In your tent",
+      "On the ground near camp",
+      "In your backpack outside tent"
+    ],
+    "explanation": "Proper food storage prevents attracting wildlife and protects both campers and animals.",
+    "keywords": ["outdoors", "camping", "basics", "food-storage", "wildlife"],
+    "source": "initial seed"
+  }
+]

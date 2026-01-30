@@ -1,0 +1,41 @@
+[
+  {
+    "category": "language",
+    "question": "What does the Spanish expression '¡Qué tal!' mean?",
+    "correctAnswer": "What's up / How's it going",
+    "incorrectAnswers": [
+      "Goodbye",
+      "Thank you",
+      "Please"
+    ],
+    "explanation": "¡Qué tal! is a casual greeting asking how things are going.",
+    "keywords": ["spanish", "expressions", "greetings", "casual"],
+    "source": "initial seed"
+  },
+  {
+    "category": "language",
+    "question": "What does 'No hay problema' mean in Spanish?",
+    "correctAnswer": "No problem",
+    "incorrectAnswers": [
+      "Big problem",
+      "I don't know",
+      "Maybe"
+    ],
+    "explanation": "No hay problema is used to say something is not a problem or issue.",
+    "keywords": ["spanish", "expressions", "reassurance", "casual"],
+    "source": "initial seed"
+  },
+  {
+    "category": "language",
+    "question": "What does the Spanish expression '¡Buena suerte!' mean?",
+    "correctAnswer": "Good luck",
+    "incorrectAnswers": [
+      "Good morning",
+      "Good night",
+      "Goodbye"
+    ],
+    "explanation": "¡Buena suerte! is used to wish someone good luck.",
+    "keywords": ["spanish", "expressions", "wishes", "encouragement"],
+    "source": "initial seed"
+  }
+]

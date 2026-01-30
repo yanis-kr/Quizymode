@@ -1,0 +1,41 @@
+[
+  {
+    "category": "general",
+    "question": "What is the world record for the longest time spent holding one's breath underwater?",
+    "correctAnswer": "Over 24 minutes",
+    "incorrectAnswers": [
+      "Over 10 minutes",
+      "Over 15 minutes",
+      "Over 20 minutes"
+    ],
+    "explanation": "The world record for static apnea (holding breath underwater) exceeds 24 minutes, achieved through extensive training and techniques.",
+    "keywords": ["world-records", "humans", "breath-holding"],
+    "source": "initial seed"
+  },
+  {
+    "category": "general",
+    "question": "Which country holds the record for the tallest building in the world?",
+    "correctAnswer": "United Arab Emirates",
+    "incorrectAnswers": [
+      "China",
+      "United States",
+      "Saudi Arabia"
+    ],
+    "explanation": "The Burj Khalifa in Dubai, UAE, is the tallest building in the world.",
+    "keywords": ["world-records", "buildings", "architecture"],
+    "source": "initial seed"
+  },
+  {
+    "category": "general",
+    "question": "What is the fastest land speed record achieved by a vehicle?",
+    "correctAnswer": "Over 760 mph",
+    "incorrectAnswers": [
+      "Over 500 mph",
+      "Over 600 mph",
+      "Over 700 mph"
+    ],
+    "explanation": "The ThrustSSC achieved a land speed record of over 760 mph, breaking the sound barrier on land.",
+    "keywords": ["world-records", "vehicles", "speed"],
+    "source": "initial seed"
+  }
+]

@@ -1,0 +1,28 @@
+[
+  {
+    "category": "geography",
+    "question": "What is the capital of France?",
+    "correctAnswer": "Paris",
+    "incorrectAnswers": [
+      "Lyon",
+      "Marseille",
+      "Nice"
+    ],
+    "explanation": "Paris is the capital and most populous city of France.",
+    "keywords": ["geography", "capitals", "france", "paris"],
+    "source": "bulk-upload"
+  },
+  {
+    "category": "geography",
+    "question": "What is the largest ocean on Earth?",
+    "correctAnswer": "Pacific Ocean",
+    "incorrectAnswers": [
+      "Atlantic Ocean",
+      "Indian Ocean",
+      "Arctic Ocean"
+    ],
+    "explanation": "The Pacific Ocean is the largest and deepest ocean on Earth.",
+    "keywords": ["geography", "oceans", "pacific"],
+    "source": "bulk-upload"
+  }
+]

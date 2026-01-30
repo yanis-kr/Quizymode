@@ -1,0 +1,41 @@
+[
+  {
+    "category": "general",
+    "question": "What does a topographic map contour line represent?",
+    "correctAnswer": "Points of equal elevation",
+    "incorrectAnswers": [
+      "Points of equal distance",
+      "Points of equal temperature",
+      "Points of equal vegetation"
+    ],
+    "explanation": "Contour lines connect points at the same elevation, showing terrain shape and steepness.",
+    "keywords": ["outdoors", "navigation", "maps", "topography"],
+    "source": "initial seed"
+  },
+  {
+    "category": "general",
+    "question": "How do you find north using the Big Dipper constellation?",
+    "correctAnswer": "Follow the pointer stars to Polaris (North Star)",
+    "incorrectAnswers": [
+      "Follow the handle to the horizon",
+      "Point at the brightest star",
+      "Use the middle star of the dipper"
+    ],
+    "explanation": "The two stars forming the outer edge of the Big Dipper's bowl point to Polaris, which indicates north.",
+    "keywords": ["outdoors", "navigation", "stars", "astronomy"],
+    "source": "initial seed"
+  },
+  {
+    "category": "general",
+    "question": "What does 'declination' refer to on a compass?",
+    "correctAnswer": "The difference between magnetic north and true north",
+    "incorrectAnswers": [
+      "The angle of elevation",
+      "The compass's accuracy",
+      "The direction of travel"
+    ],
+    "explanation": "Declination is the angular difference between magnetic north (compass) and true north (geographic), which varies by location.",
+    "keywords": ["outdoors", "navigation", "compass", "magnetic"],
+    "source": "initial seed"
+  }
+]

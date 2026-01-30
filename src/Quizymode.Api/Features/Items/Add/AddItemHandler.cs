@@ -131,7 +131,8 @@ internal static class AddItemHandler
 
                     if (keyword is null)
                     {
-                        // Create new keyword
+                        // Create new keyword as non-navigation (no CategoryKeyword entry).
+                        // Admin can later promote keywords into navigation by setting NavigationRank and ParentName.
                         keyword = new Keyword
                         {
                             Id = Guid.NewGuid(),

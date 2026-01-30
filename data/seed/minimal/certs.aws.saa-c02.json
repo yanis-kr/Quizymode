@@ -1,0 +1,41 @@
+[
+  {
+    "category": "certs",
+    "question": "What is the primary purpose of Amazon S3?",
+    "correctAnswer": "Object storage",
+    "incorrectAnswers": [
+      "Relational database",
+      "Message queue",
+      "Compute service"
+    ],
+    "explanation": "Amazon S3 is designed for object storage at scale.",
+    "keywords": ["aws", "saa-c02", "s3"],
+    "source": "initial seed"
+  },
+  {
+    "category": "certs",
+    "question": "Which AWS service provides serverless compute?",
+    "correctAnswer": "AWS Lambda",
+    "incorrectAnswers": [
+      "EC2",
+      "ECS",
+      "Elastic Beanstalk"
+    ],
+    "explanation": "AWS Lambda provides serverless compute functionality.",
+    "keywords": ["aws", "saa-c02", "lambda"],
+    "source": "initial seed"
+  },
+  {
+    "category": "certs",
+    "question": "What is the default storage class for Amazon S3?",
+    "correctAnswer": "Standard",
+    "incorrectAnswers": [
+      "Standard-IA",
+      "Glacier",
+      "Intelligent-Tiering"
+    ],
+    "explanation": "Standard is the default storage class for S3, designed for frequently accessed data.",
+    "keywords": ["aws", "saa-c02", "s3", "storage"],
+    "source": "initial seed"
+  }
+]
