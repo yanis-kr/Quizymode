@@ -19,6 +19,7 @@ import AdminKeywordsPage from "./features/admin/pages/AdminKeywordsPage";
 import AdminCategoriesPage from "./features/admin/pages/AdminCategoriesPage";
 import BulkCreateItemsPage from "./features/items/pages/BulkCreateItemsPage";
 import AddItemsPage from "./features/items/pages/AddItemsPage";
+import UploadToCollectionPage from "./features/items/pages/UploadToCollectionPage";
 import ItemCommentsPage from "./features/items/pages/ItemCommentsPage";
 import EditItemPage from "./features/items/pages/EditItemPage";
 import AboutPage from "./features/about/pages/AboutPage";
@@ -68,6 +69,7 @@ function App() {
         <Route path="/my-items" element={<MyItemsPage />} />
         <Route path="/my-items/bulk-create" element={<BulkCreateItemsPage />} />
         <Route path="/items/add" element={<AddItemsPage />} />
+        <Route path="/items/upload" element={<UploadToCollectionPage />} />
         <Route path="/items/create" element={<CreateItemPage />} />
         <Route path="/items/:id/edit" element={<EditItemPage />} />
         <Route path="/items/:id/comments" element={<ItemCommentsPage />} />

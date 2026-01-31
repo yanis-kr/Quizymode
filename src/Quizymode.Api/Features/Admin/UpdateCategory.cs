@@ -1,6 +1,7 @@
 using FluentValidation;
 using Microsoft.EntityFrameworkCore;
 using Quizymode.Api.Data;
+using Quizymode.Api.Features;
 using Quizymode.Api.Infrastructure;
 using Quizymode.Api.Shared.Kernel;
 using Quizymode.Api.Shared.Models;
@@ -58,6 +59,14 @@ public static class UpdateCategory
                 failure => failure.Error.Type == ErrorType.NotFound
                     ? Results.NotFound()
                     : CustomResults.Problem(result));
+        }
+    }
+
+    public sealed class FeatureRegistration : IFeatureRegistration
+    {
+        public void AddToServiceCollection(IServiceCollection services, IConfiguration configuration)
+        {
+            services.AddScoped<IValidator<Request>, Validator>();
         }
     }
 

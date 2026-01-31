@@ -8,6 +8,12 @@ import type {
   BulkCreateItemsRequest,
 } from "@/types/api";
 
+export interface UploadToCollectionResponse {
+  collectionId: string;
+  name: string;
+  itemCount: number;
+}
+
 export const itemsApi = {
   getAll: async (
     category?: string,
@@ -75,6 +81,17 @@ export const itemsApi = {
   ): Promise<{ created: number; skipped: number }> => {
     const response = await apiClient.post<{ created: number; skipped: number }>(
       "/items/bulk",
+      data
+    );
+    return response.data;
+  },
+
+  /** Upload JSON items into a new collection (GUID name). Non-admin: private only. Returns collectionId to navigate. */
+  uploadToCollection: async (data: {
+    items: CreateItemRequest[];
+  }): Promise<UploadToCollectionResponse> => {
+    const response = await apiClient.post<UploadToCollectionResponse>(
+      "/items/upload-to-collection",
       data
     );
     return response.data;

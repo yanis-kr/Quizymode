@@ -54,12 +54,18 @@ internal sealed class ItemQueryBuilder
 
         IQueryable<Item> query = _db.Items.AsQueryable();
 
-        Result<IQueryable<Item>> visibilityResult = ApplyVisibilityFilter(query, request);
-        if (visibilityResult.IsFailure)
+        // When loading by collectionId, allow anyone (shareable link) and bypass visibility so all items in collection are visible
+        bool skipVisibilityForCollection = request.CollectionId.HasValue;
+
+        if (!skipVisibilityForCollection)
         {
-            return visibilityResult;
+            Result<IQueryable<Item>> visibilityResult = ApplyVisibilityFilter(query, request);
+            if (visibilityResult.IsFailure)
+            {
+                return visibilityResult;
+            }
+            query = visibilityResult.Value;
         }
-        query = visibilityResult.Value;
 
         Result<IQueryable<Item>> categoryResult = await ApplyCategoryFilterAsync(query, request);
         if (categoryResult.IsFailure)
@@ -409,19 +415,7 @@ internal sealed class ItemQueryBuilder
                 Error.NotFound("Collection.NotFound", "Collection not found"));
         }
 
-        string? subject = _userContext.UserId;
-        if (string.IsNullOrEmpty(subject))
-        {
-            return Result.Failure<IQueryable<Item>>(
-                Error.Validation("Items.Unauthorized", "Must be authenticated to view collection items"));
-        }
-
-        if (collection.CreatedBy != subject && !_userContext.IsAdmin)
-        {
-            return Result.Failure<IQueryable<Item>>(
-                Error.Validation("Collection.AccessDenied", "Access denied"));
-        }
-
+        // Shareable link: anyone (including anon) with collection ID can view items in the collection
         List<Guid> itemIdsInCollection = await _db.CollectionItems
             .Where(ci => ci.CollectionId == request.CollectionId.Value)
             .Select(ci => ci.ItemId)
