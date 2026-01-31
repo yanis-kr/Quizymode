@@ -441,7 +441,13 @@ internal sealed class DatabaseSeederHostedService(
             { ("certs", "aws"), new List<string> { "saa-c02", "saa-c03", "dva-c02", "soa-c02" } },
             { ("tests", "act"), new List<string> { "math", "reading", "english", "science" } },
             { ("tests", "sat"), new List<string> { "math", "reading", "writing" } },
-            { ("tests", "nclex"), new List<string> { "med-surg", "pediatrics", "pharm", "dosage-calc" } }
+            { ("tests", "nclex"), new List<string> { "med-surg", "pediatrics", "pharm", "dosage-calc" } },
+            { ("outdoors", "survival"), new List<string> { "forest", "tropical-island" } },
+            { ("outdoors", "camping"), new List<string> { "basics" } },
+            { ("nature", "animals"), new List<string> { "predators" } },
+            { ("nature", "plants"), new List<string> { "poisonous" } },
+            { ("nature", "ecosystems"), new List<string> { "tundra" } },
+            { ("nature", "phenomena"), new List<string> { "aurora" } }
         };
 
         foreach (((string categoryName, string parentName), List<string> keywords) in rank2Keywords)

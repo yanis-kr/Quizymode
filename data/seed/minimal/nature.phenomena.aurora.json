@@ -1,6 +1,6 @@
 [
   {
-    "category": "science",
+    "category": "nature",
     "question": "What causes aurora displays (Northern/Southern Lights)?",
     "correctAnswer": "Charged particles from the sun interacting with Earth's magnetic field",
     "incorrectAnswers": [
@@ -13,7 +13,7 @@
     "source": "initial seed"
   },
   {
-    "category": "science",
+    "category": "nature",
     "question": "Where are auroras most commonly visible?",
     "correctAnswer": "Near the polar regions (Arctic and Antarctic)",
     "incorrectAnswers": [
@@ -26,7 +26,7 @@
     "source": "initial seed"
   },
   {
-    "category": "science",
+    "category": "nature",
     "question": "What determines the colors seen in aurora displays?",
     "correctAnswer": "The type of gas molecules and altitude where particles collide",
     "incorrectAnswers": [
