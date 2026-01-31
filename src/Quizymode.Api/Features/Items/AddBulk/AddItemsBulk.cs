@@ -23,7 +23,8 @@ public static class AddItemsBulk
 
     public sealed record Request(
         bool IsPrivate,
-        List<ItemRequest> Items);
+        List<ItemRequest> Items,
+        Guid? UploadId = null);
 
     public sealed record Response(
         int TotalRequested,

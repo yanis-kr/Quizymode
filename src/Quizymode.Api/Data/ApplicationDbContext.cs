@@ -36,6 +36,8 @@ public sealed class ApplicationDbContext : DbContext
 
     public DbSet<UserSetting> UserSettings => Set<UserSetting>();
 
+    public DbSet<Upload> Uploads => Set<Upload>();
+
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         modelBuilder.ApplyConfigurationsFromAssembly(typeof(ApplicationDbContext).Assembly);

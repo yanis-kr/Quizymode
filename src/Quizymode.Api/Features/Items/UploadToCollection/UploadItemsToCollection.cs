@@ -1,3 +1,5 @@
+using System.Security.Cryptography;
+using System.Text;
 using FluentValidation;
 using Microsoft.EntityFrameworkCore;
 using Quizymode.Api.Data;
@@ -13,7 +15,12 @@ namespace Quizymode.Api.Features.Items.UploadToCollection;
 
 public static class UploadItemsToCollection
 {
-    public sealed record Request(List<AddItemsBulk.ItemRequest> Items);
+    /// <summary>
+    /// InputText is the raw upload content (e.g. JSON string) used to compute a hash for duplicate detection.
+    /// </summary>
+    public sealed record Request(
+        List<AddItemsBulk.ItemRequest> Items,
+        string InputText);
 
     public sealed record Response(
         string CollectionId,
@@ -37,6 +44,9 @@ public static class UploadItemsToCollection
                 .WithMessage($"Cannot upload more than {maxItems} items at once");
             RuleForEach(x => x.Items)
                 .SetValidator(new AddItemsBulk.ItemRequestValidator());
+            RuleFor(x => x.InputText)
+                .NotNull()
+                .WithMessage("InputText is required for duplicate detection");
         }
     }
 
@@ -99,8 +109,39 @@ public static class UploadItemsToCollection
         IAuditService auditService,
         CancellationToken cancellationToken)
     {
+        if (string.IsNullOrEmpty(userContext.UserId) || !Guid.TryParse(userContext.UserId, out Guid userIdGuid))
+        {
+            return Result.Failure<Response>(
+                Error.Validation("Upload.InvalidUser", "User ID is required and must be a valid GUID."));
+        }
+
+        byte[] hashBytes = SHA256.HashData(Encoding.UTF8.GetBytes(request.InputText));
+        string hash = Convert.ToHexString(hashBytes).ToLowerInvariant();
+
+        bool duplicateExists = await db.Uploads
+            .AnyAsync(u => u.UserId == userIdGuid && u.Hash == hash, cancellationToken);
+        if (duplicateExists)
+        {
+            return Result.Failure<Response>(
+                Error.Conflict("Upload.Duplicate", "This content has already been uploaded. Duplicate uploads are not allowed."));
+        }
+
+        Upload upload = new()
+        {
+            Id = Guid.NewGuid(),
+            InputText = request.InputText,
+            UserId = userIdGuid,
+            CreatedAt = DateTime.UtcNow,
+            Hash = hash
+        };
+        db.Uploads.Add(upload);
+        await db.SaveChangesAsync(cancellationToken);
+
         bool isPrivate = !userContext.IsAdmin;
-        AddItemsBulk.Request bulkRequest = new(IsPrivate: isPrivate, Items: request.Items);
+        AddItemsBulk.Request bulkRequest = new(
+            IsPrivate: isPrivate,
+            Items: request.Items,
+            UploadId: upload.Id);
 
         Result<AddItemsBulk.Response> bulkResult = await AddItemsBulkHandler.HandleAsync(
             bulkRequest, db, simHashService, userContext, categoryResolver, auditService, cancellationToken);

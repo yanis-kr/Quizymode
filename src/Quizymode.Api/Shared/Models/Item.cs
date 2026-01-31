@@ -27,6 +27,11 @@ public sealed class Item
 
     public string? Source { get; set; }
 
+    /// <summary>
+    /// Optional link to the Upload record that created this item (e.g. bulk upload from JSON).
+    /// </summary>
+    public Guid? UploadId { get; set; }
+
     // Navigation property for keywords (not mapped directly, accessed via ItemKeywords)
     public List<ItemKeyword> ItemKeywords { get; set; } = new();
 

@@ -2,6 +2,7 @@
 
 export interface CategoryResponse {
   category: string;
+  description: string | null;
   count: number;
   id: string;
   isPrivate: boolean;
@@ -18,6 +19,7 @@ export interface NavKeywordResponse {
   itemCount: number;
   averageRating: number | null;
   navigationRank: number;
+  description?: string | null;
 }
 
 export interface KeywordsResponse {
@@ -113,6 +115,7 @@ export interface CreateItemRequest {
   explanation: string;
   keywords?: KeywordRequest[];
   source?: string;
+  uploadId?: string | null;
 }
 
 export interface UpdateItemRequest {

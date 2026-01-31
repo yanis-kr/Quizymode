@@ -182,7 +182,8 @@ internal static class AddItemHandler
                 item.IncorrectAnswers,
                 item.Explanation,
                 item.CreatedAt,
-                item.Source);
+                item.Source,
+                item.UploadId?.ToString());
 
             return Result.Success(response);
         }

@@ -21,7 +21,8 @@ public static class AddItem
         string Explanation,
         List<KeywordRequest>? Keywords = null,
         bool ReadyForReview = false,
-        string? Source = null);
+        string? Source = null,
+        Guid? UploadId = null);
 
     public sealed record Response(
         string Id,
@@ -32,7 +33,8 @@ public static class AddItem
         List<string> IncorrectAnswers,
         string Explanation,
         DateTime CreatedAt,
-        string? Source);
+        string? Source,
+        string? UploadId = null);
 
     public sealed class Validator : AbstractValidator<Request>
     {

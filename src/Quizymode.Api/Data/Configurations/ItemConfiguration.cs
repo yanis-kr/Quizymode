@@ -66,11 +66,16 @@ internal sealed class ItemConfiguration : IEntityTypeConfiguration<Item>
         builder.Property(x => x.CategoryId)
             .IsRequired(false);
 
+        builder.Property(x => x.UploadId)
+            .IsRequired(false);
+
         // Foreign key relationship to Category
         builder.HasOne(x => x.Category)
             .WithMany(c => c.Items)
             .HasForeignKey(x => x.CategoryId)
             .OnDelete(DeleteBehavior.SetNull);
+
+        builder.HasIndex(x => x.UploadId);
 
         // Add check constraint for incorrect answers array length (0-4 items)
         builder.ToTable(t => t.HasCheckConstraint(

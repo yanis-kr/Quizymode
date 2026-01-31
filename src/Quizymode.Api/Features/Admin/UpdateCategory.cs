@@ -10,11 +10,11 @@ namespace Quizymode.Api.Features.Admin;
 
 public static class UpdateCategory
 {
-    public sealed record Request(string Name);
+    public sealed record UpdateCategoryRequest(string Name, string? Description = null);
 
-    public sealed record Response(Guid Id, string Name);
+    public sealed record UpdateCategoryResponse(Guid Id, string Name, string? Description);
 
-    public sealed class Validator : AbstractValidator<Request>
+    public sealed class Validator : AbstractValidator<UpdateCategoryRequest>
     {
         public Validator()
         {
@@ -23,6 +23,9 @@ public static class UpdateCategory
                 .WithMessage("Name is required")
                 .MaximumLength(100)
                 .WithMessage("Name must not exceed 100 characters");
+            RuleFor(x => x.Description)
+                .MaximumLength(500)
+                .When(x => x.Description != null);
         }
     }
 
@@ -32,17 +35,17 @@ public static class UpdateCategory
         {
             app.MapPut("admin/categories/{id:guid}", Handler)
                 .WithTags("Admin")
-                .WithSummary("Rename category (Admin only)")
+                .WithSummary("Update category (Admin only)")
                 .RequireAuthorization("Admin")
-                .Produces<Response>(StatusCodes.Status200OK)
+                .Produces<UpdateCategoryResponse>(StatusCodes.Status200OK)
                 .Produces(StatusCodes.Status400BadRequest)
                 .Produces(StatusCodes.Status404NotFound);
         }
 
         private static async Task<IResult> Handler(
             Guid id,
-            Request request,
-            IValidator<Request> validator,
+            UpdateCategoryRequest request,
+            IValidator<UpdateCategoryRequest> validator,
             ApplicationDbContext db,
             CancellationToken cancellationToken)
         {
@@ -52,7 +55,7 @@ public static class UpdateCategory
                 return Results.BadRequest(validationResult.Errors);
             }
 
-            Result<Response> result = await HandleAsync(id, request, db, cancellationToken);
+            Result<UpdateCategoryResponse> result = await HandleAsync(id, request, db, cancellationToken);
 
             return result.Match(
                 value => Results.Ok(value),
@@ -66,13 +69,13 @@ public static class UpdateCategory
     {
         public void AddToServiceCollection(IServiceCollection services, IConfiguration configuration)
         {
-            services.AddScoped<IValidator<Request>, Validator>();
+            services.AddScoped<IValidator<UpdateCategoryRequest>, Validator>();
         }
     }
 
-    public static async Task<Result<Response>> HandleAsync(
+    public static async Task<Result<UpdateCategoryResponse>> HandleAsync(
         Guid id,
-        Request request,
+        UpdateCategoryRequest request,
         ApplicationDbContext db,
         CancellationToken cancellationToken)
     {
@@ -81,7 +84,7 @@ public static class UpdateCategory
 
         if (category is null)
         {
-            return Result.Failure<Response>(
+            return Result.Failure<UpdateCategoryResponse>(
                 Error.NotFound("Admin.CategoryNotFound", $"Category {id} not found"));
         }
 
@@ -91,13 +94,17 @@ public static class UpdateCategory
 
         if (nameExists)
         {
-            return Result.Failure<Response>(
+            return Result.Failure<UpdateCategoryResponse>(
                 Error.Conflict("Admin.CategoryNameExists", $"A category named '{newName}' already exists"));
         }
 
         category.Name = newName;
+        if (request.Description is not null)
+        {
+            category.Description = string.IsNullOrWhiteSpace(request.Description) ? null : request.Description.Trim();
+        }
         await db.SaveChangesAsync(cancellationToken);
 
-        return Result.Success(new Response(category.Id, category.Name));
+        return Result.Success(new UpdateCategoryResponse(category.Id, category.Name, category.Description));
     }
 }

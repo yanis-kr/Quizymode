@@ -537,6 +537,7 @@ const CategoriesPage = () => {
                     <CategoryOrKeywordBox
                       key={kw.name}
                       name={kw.name}
+                      description={kw.description ?? undefined}
                       itemCount={kw.itemCount}
                       averageRating={kw.averageRating}
                       onClick={() =>
@@ -730,6 +731,7 @@ const CategoriesPage = () => {
             <CategoryOrKeywordBox
               key={cat.category}
               name={cat.category}
+              description={cat.description ?? undefined}
               itemCount={cat.count}
               averageRating={cat.averageStars}
               isPrivate={cat.isPrivate}
@@ -895,6 +897,7 @@ function ActionButtons({
 
 function CategoryOrKeywordBox({
   name,
+  description,
   itemCount,
   averageRating,
   isPrivate,
@@ -905,6 +908,7 @@ function CategoryOrKeywordBox({
   onQuiz,
 }: {
   name: string;
+  description?: string | null;
   itemCount: number;
   averageRating: number | null;
   isPrivate?: boolean;
@@ -923,8 +927,8 @@ function CategoryOrKeywordBox({
       onKeyDown={(e) => e.key === "Enter" && onClick()}
       className="bg-white overflow-hidden shadow rounded-lg hover:shadow-lg transition-shadow p-6 text-left cursor-pointer"
     >
-      <div className="flex items-start justify-between">
-        <div className="flex-1">
+      <div className="flex items-start justify-between gap-3">
+        <div className="flex-1 min-w-0">
           <div className="flex items-center gap-2 flex-wrap">
             <h3 className="text-lg font-medium text-gray-900">{name}</h3>
             {isPrivate !== undefined && (
@@ -939,14 +943,19 @@ function CategoryOrKeywordBox({
               </span>
             )}
           </div>
-          <p className="mt-2 text-sm text-gray-500">{itemCount} items</p>
+          {description ? (
+            <p className="mt-1 text-sm text-gray-600 line-clamp-2">{description}</p>
+          ) : null}
         </div>
-        {averageRating != null && (
-          <div className="flex items-center gap-1 text-sm text-gray-600 flex-shrink-0">
-            <StarIconSolid className="h-5 w-5 text-yellow-400" />
-            <span className="font-medium">{averageRating.toFixed(1)}</span>
-          </div>
-        )}
+        <div className="flex flex-col items-end gap-0.5 flex-shrink-0 text-sm text-gray-500">
+          <span>{itemCount} items</span>
+          {averageRating != null && (
+            <div className="flex items-center gap-1 text-gray-600">
+              <StarIconSolid className="h-4 w-4 text-yellow-400" />
+              <span className="font-medium">{averageRating.toFixed(1)}</span>
+            </div>
+          )}
+        </div>
       </div>
       <div
         className="mt-3 pt-3 border-t border-gray-100 flex flex-wrap gap-2 items-center"

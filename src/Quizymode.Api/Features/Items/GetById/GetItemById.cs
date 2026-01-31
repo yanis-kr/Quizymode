@@ -20,7 +20,8 @@ public static class GetItemById
         DateTime CreatedAt,
         List<KeywordResponse> Keywords,
         List<CollectionResponse> Collections,
-        string? Source);
+        string? Source,
+        string? UploadId = null);
 
     public sealed record KeywordResponse(
         string Id,
@@ -147,7 +148,8 @@ public static class GetItemById
                 item.CreatedAt,
                 visibleKeywords,
                 collections,
-                item.Source);
+                item.Source,
+                item.UploadId?.ToString());
 
             return Result.Success(response);
         }

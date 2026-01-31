@@ -1,5 +1,5 @@
 import { useNavigate, useSearchParams } from "react-router-dom";
-import { PlusIcon, DocumentPlusIcon } from "@heroicons/react/24/outline";
+import { PlusIcon, DocumentPlusIcon, ArrowUpTrayIcon } from "@heroicons/react/24/outline";
 import { useAuth } from "@/contexts/AuthContext";
 import { Navigate } from "react-router-dom";
 
@@ -29,12 +29,19 @@ const AddItemsPage = () => {
     return `/my-items/bulk-create${params.toString() ? `?${params.toString()}` : ""}`;
   };
 
+  const buildUploadUrl = () => {
+    const params = new URLSearchParams();
+    if (category) params.set("category", category);
+    if (keywords.length > 0) params.set("keywords", keywords.join(","));
+    return `/items/upload${params.toString() ? `?${params.toString()}` : ""}`;
+  };
+
   return (
     <div className="px-4 py-6 sm:px-0">
       <div className="max-w-2xl mx-auto">
         <h1 className="text-3xl font-bold text-gray-900 mb-2">Add Items</h1>
         <p className="text-gray-600 text-sm mb-6">
-          Create a new quiz item or bulk add multiple items from a file.
+          Create a new quiz item, bulk add from JSON, or upload to a new collection.
         </p>
         {category && (
           <p className="text-sm text-gray-500 mb-6">
@@ -44,7 +51,7 @@ const AddItemsPage = () => {
             )}
           </p>
         )}
-        <div className="flex flex-col sm:flex-row gap-4">
+        <div className="flex flex-col sm:flex-row gap-4 flex-wrap">
           <button
             onClick={() => navigate(buildCreateUrl())}
             className="flex items-center gap-3 px-6 py-4 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition-colors text-left"
@@ -63,6 +70,16 @@ const AddItemsPage = () => {
             <div>
               <span className="font-medium block">Bulk Add</span>
               <span className="text-sm text-green-100">Add multiple items from JSON</span>
+            </div>
+          </button>
+          <button
+            onClick={() => navigate(buildUploadUrl())}
+            className="flex items-center gap-3 px-6 py-4 bg-amber-600 text-white rounded-lg hover:bg-amber-700 transition-colors text-left"
+          >
+            <ArrowUpTrayIcon className="h-8 w-8 flex-shrink-0" />
+            <div>
+              <span className="font-medium block">Upload to collection</span>
+              <span className="text-sm text-amber-100">Upload JSON into a new shareable collection</span>
             </div>
           </button>
         </div>

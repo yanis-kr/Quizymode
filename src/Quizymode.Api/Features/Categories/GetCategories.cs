@@ -15,6 +15,7 @@ public static class GetCategories
     public sealed record CategoryResponse(
         Guid Id,
         string Category,
+        string? Description,
         int Count,
         bool IsPrivate,
         double? AverageStars);
@@ -24,6 +25,7 @@ public static class GetCategories
     {
         public Guid Id { get; set; }
         public string Category { get; set; } = string.Empty;
+        public string? Description { get; set; }
         public int Count { get; set; }
         public bool IsPrivate { get; set; }
         public double? AverageStars { get; set; }
@@ -94,6 +96,7 @@ public static class GetCategories
                 SELECT
                     c.""Id"",
                     c.""Name"" AS ""Category"",
+                    c.""Description"",
                     COUNT(DISTINCT i.""Id"")::int AS ""Count"",
                     c.""IsPrivate"",
                     CASE
@@ -134,6 +137,7 @@ public static class GetCategories
                 .Select(row => new CategoryResponse(
                     row.Id,
                     row.Category,
+                    row.Description,
                     row.Count,
                     row.IsPrivate,
                     row.AverageStars))

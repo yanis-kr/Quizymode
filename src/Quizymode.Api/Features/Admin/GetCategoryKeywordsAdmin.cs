@@ -16,7 +16,8 @@ public static class GetCategoryKeywordsAdmin
         string KeywordName,
         int? NavigationRank,
         string? ParentName,
-        int SortRank);
+        int SortRank,
+        string? Description);
 
     public sealed record Response(List<CategoryKeywordAdminResponse> Keywords);
 
@@ -82,7 +83,8 @@ public static class GetCategoryKeywordsAdmin
                     ck.Keyword.Name,
                     ck.NavigationRank,
                     ck.ParentName,
-                    ck.SortRank))
+                    ck.SortRank,
+                    ck.Description))
                 .ToListAsync(cancellationToken);
 
             return Result.Success(new Response(list));

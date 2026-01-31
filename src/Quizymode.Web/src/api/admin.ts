@@ -133,11 +133,13 @@ export const adminApi = {
 
 export interface UpdateCategoryRequest {
   name: string;
+  description?: string | null;
 }
 
 export interface UpdateCategoryResponse {
   id: string;
   name: string;
+  description?: string | null;
 }
 
 export interface CategoryKeywordAdminResponse {
@@ -159,4 +161,5 @@ export interface UpdateCategoryKeywordRequest {
   parentName?: string | null;
   navigationRank?: number | null;
   sortRank?: number | null;
+  description?: string | null;
 }

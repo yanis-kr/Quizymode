@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.OpenApi;
 using Microsoft.EntityFrameworkCore;
 using Quizymode.Api.Data;
 using Quizymode.Api.Infrastructure;
@@ -8,7 +9,7 @@ namespace Quizymode.Api.Features.Items.ReviewBoard;
 
 public static class ApproveItem
 {
-    public sealed record Response(
+    public sealed record ApproveItemResponse(
         string Id,
         string Category,
         bool IsPrivate,
@@ -25,9 +26,15 @@ public static class ApproveItem
             app.MapPut("admin/items/{id:guid}/approval", Handler)
                 .WithTags("Admin")
                 .WithSummary("Approve an item for review (Admin only)")
+                .WithDescription("No request body. Approves the item (makes it public and removes from review board).")
                 .RequireAuthorization("Admin")
-                .Produces<Response>(StatusCodes.Status200OK)
-                .Produces(StatusCodes.Status404NotFound);
+                .Produces<ApproveItemResponse>(StatusCodes.Status200OK)
+                .Produces(StatusCodes.Status404NotFound)
+                .WithOpenApi(operation =>
+                {
+                    operation.RequestBody = null;
+                    return operation;
+                });
         }
 
         private static async Task<IResult> Handler(
@@ -35,7 +42,7 @@ public static class ApproveItem
             ApplicationDbContext db,
             CancellationToken cancellationToken)
         {
-            Result<Response> result = await HandleAsync(id, db, cancellationToken);
+            Result<ApproveItemResponse> result = await HandleAsync(id, db, cancellationToken);
 
             return result.Match(
                 value => Results.Ok(value),
@@ -45,7 +52,7 @@ public static class ApproveItem
         }
     }
 
-    public static async Task<Result<Response>> HandleAsync(
+    public static async Task<Result<ApproveItemResponse>> HandleAsync(
         Guid id,
         ApplicationDbContext db,
         CancellationToken cancellationToken)
@@ -58,7 +65,7 @@ public static class ApproveItem
 
             if (item is null)
             {
-                return Result.Failure<Response>(Error.NotFound("Item.NotFound", "Item not found"));
+                return Result.Failure<ApproveItemResponse>(Error.NotFound("Item.NotFound", "Item not found"));
             }
 
             // Approve: make it global and remove from review board
@@ -70,7 +77,7 @@ public static class ApproveItem
             // Get category name from Category navigation
             string categoryName = item.Category?.Name ?? string.Empty;
 
-            Response response = new Response(
+            ApproveItemResponse response = new ApproveItemResponse(
                 item.Id.ToString(),
                 categoryName,
                 item.IsPrivate,
@@ -84,7 +91,7 @@ public static class ApproveItem
         }
         catch (Exception ex)
         {
-            return Result.Failure<Response>(
+            return Result.Failure<ApproveItemResponse>(
                 Error.Problem("Items.ApproveFailed", $"Failed to approve item: {ex.Message}"));
         }
     }
