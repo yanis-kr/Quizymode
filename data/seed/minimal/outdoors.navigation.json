@@ -9,7 +9,7 @@
       "Points of equal vegetation"
     ],
     "explanation": "Contour lines connect points at the same elevation, showing terrain shape and steepness.",
-    "keywords": ["outdoors", "navigation", "maps", "topography"],
+    "keywords": ["navigation", "maps", "topography"],
     "source": "initial seed"
   },
   {
@@ -22,7 +22,7 @@
       "Use the middle star of the dipper"
     ],
     "explanation": "The two stars forming the outer edge of the Big Dipper's bowl point to Polaris, which indicates north.",
-    "keywords": ["outdoors", "navigation", "stars", "astronomy"],
+    "keywords": ["navigation", "stars", "astronomy"],
     "source": "initial seed"
   },
   {
@@ -35,7 +35,7 @@
       "The direction of travel"
     ],
     "explanation": "Declination is the angular difference between magnetic north (compass) and true north (geographic), which varies by location.",
-    "keywords": ["outdoors", "navigation", "compass", "magnetic"],
+    "keywords": ["navigation", "compass", "magnetic"],
     "source": "initial seed"
   }
 ]

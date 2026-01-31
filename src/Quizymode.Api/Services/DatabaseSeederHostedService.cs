@@ -128,16 +128,25 @@ internal sealed class DatabaseSeederHostedService(
                             continue;
                         }
 
-                        // Convert to AddItemsBulk.Request format
-                        List<AddItemsBulk.ItemRequest> itemRequests = items.Select(item => new AddItemsBulk.ItemRequest(
-                            Category: item.Category,
-                            Question: item.Question,
-                            CorrectAnswer: item.CorrectAnswer,
-                            IncorrectAnswers: item.IncorrectAnswers,
-                            Explanation: item.Explanation ?? string.Empty,
-                            Keywords: item.Keywords?.Select(k => new AddItemsBulk.KeywordRequest(k, false)).ToList(),
-                            Source: item.Source
-                        )).ToList();
+                        // Convert to AddItemsBulk.Request format from JSON; exclude keywords that match the category name
+                        List<AddItemsBulk.ItemRequest> itemRequests = items.Select(item =>
+                        {
+                            string category = item.Category.Trim();
+                            List<string>? keywords = item.Keywords?
+                                .Where(k => !string.Equals(k.Trim(), category, StringComparison.OrdinalIgnoreCase))
+                                .Select(k => k.Trim())
+                                .Where(k => !string.IsNullOrEmpty(k))
+                                .ToList();
+                            return new AddItemsBulk.ItemRequest(
+                                Category: category,
+                                Question: item.Question,
+                                CorrectAnswer: item.CorrectAnswer,
+                                IncorrectAnswers: item.IncorrectAnswers,
+                                Explanation: item.Explanation ?? string.Empty,
+                                Keywords: keywords?.Count > 0 ? keywords.Select(k => new AddItemsBulk.KeywordRequest(k, false)).ToList() : null,
+                                Source: item.Source
+                            );
+                        }).ToList();
 
                         AddItemsBulk.Request bulkRequest = new AddItemsBulk.Request(
                             IsPrivate: false, // Seed items are global
