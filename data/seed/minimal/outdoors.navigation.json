@@ -1,6 +1,6 @@
 [
   {
-    "category": "general",
+    "category": "outdoors",
     "question": "What does a topographic map contour line represent?",
     "correctAnswer": "Points of equal elevation",
     "incorrectAnswers": [
@@ -13,7 +13,7 @@
     "source": "initial seed"
   },
   {
-    "category": "general",
+    "category": "outdoors",
     "question": "How do you find north using the Big Dipper constellation?",
     "correctAnswer": "Follow the pointer stars to Polaris (North Star)",
     "incorrectAnswers": [
@@ -26,7 +26,7 @@
     "source": "initial seed"
   },
   {
-    "category": "general",
+    "category": "outdoors",
     "question": "What does 'declination' refer to on a compass?",
     "correctAnswer": "The difference between magnetic north and true north",
     "incorrectAnswers": [

@@ -30,7 +30,8 @@ internal sealed class ItemResponseMapper
             item.CreatedAt,
             visibleKeywords,
             collections,
-            item.Source);
+            item.Source,
+            item.UploadId?.ToString());
     }
 
     private List<GetItems.KeywordResponse> FilterVisibleKeywords(Item item)

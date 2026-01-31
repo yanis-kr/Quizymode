@@ -32,6 +32,9 @@ internal sealed class CategoryKeywordConfiguration : IEntityTypeConfiguration<Ca
             .IsRequired()
             .HasDefaultValue(0);
 
+        builder.Property(x => x.Description)
+            .HasMaxLength(500);
+
         builder.Property(x => x.CreatedAt)
             .IsRequired();
 

@@ -125,6 +125,9 @@ const AdminKeywordsPage = () => {
                   Keyword
                 </th>
                 <th className="px-4 py-2 text-left text-xs font-medium text-gray-500 uppercase">
+                  Description
+                </th>
+                <th className="px-4 py-2 text-left text-xs font-medium text-gray-500 uppercase">
                   Rank
                 </th>
                 <th className="px-4 py-2 text-left text-xs font-medium text-gray-500 uppercase">
@@ -150,6 +153,7 @@ const AdminKeywordsPage = () => {
                   <KeywordRow
                     key={kw.id}
                     keyword={kw}
+                    description={kw.description ?? ""}
                     rank1Options={rank1ByCategory
                       .filter(
                         (r) =>
@@ -175,11 +179,13 @@ const AdminKeywordsPage = () => {
 
 function KeywordRow({
   keyword,
+  description,
   rank1Options,
   onSave,
   isSaving,
 }: {
   keyword: CategoryKeywordAdminResponse;
+  description: string;
   rank1Options: string[];
   onSave: (body: UpdateCategoryKeywordRequest) => void;
   isSaving: boolean;
@@ -189,13 +195,15 @@ function KeywordRow({
     keyword.navigationRank ?? ""
   );
   const [sortRank, setSortRank] = React.useState<number | "">(keyword.sortRank);
+  const [descValue, setDescValue] = React.useState(description);
   const [dirty, setDirty] = React.useState(false);
 
   React.useEffect(() => {
     setParentName(keyword.parentName ?? "");
     setNavigationRank(keyword.navigationRank ?? "");
     setSortRank(keyword.sortRank);
-  }, [keyword.id, keyword.parentName, keyword.navigationRank, keyword.sortRank]);
+    setDescValue(description);
+  }, [keyword.id, keyword.parentName, keyword.navigationRank, keyword.sortRank, description]);
 
   const handleParentChange = (value: string) => {
     setParentName(value);
@@ -214,6 +222,11 @@ function KeywordRow({
     setDirty(true);
   };
 
+  const handleDescChange = (value: string) => {
+    setDescValue(value);
+    setDirty(true);
+  };
+
   const handleSave = () => {
     const body: UpdateCategoryKeywordRequest = {};
     if (keyword.parentName !== (parentName || null)) body.parentName = parentName || null;
@@ -221,6 +234,7 @@ function KeywordRow({
       body.navigationRank = navigationRank === "" ? null : navigationRank;
     if (keyword.sortRank !== (sortRank === "" ? keyword.sortRank : sortRank))
       body.sortRank = sortRank === "" ? undefined : sortRank;
+    if ((keyword.description ?? "") !== descValue.trim()) body.description = descValue.trim() || null;
     if (Object.keys(body).length === 0) return;
     onSave(body);
     setDirty(false);
@@ -231,6 +245,15 @@ function KeywordRow({
       <td className="px-4 py-2 text-sm text-gray-900">{keyword.categoryName}</td>
       <td className="px-4 py-2 text-sm font-medium text-gray-900">
         {keyword.keywordName}
+      </td>
+      <td className="px-4 py-2 max-w-[200px]">
+        <input
+          type="text"
+          value={descValue}
+          onChange={(e) => handleDescChange(e.target.value)}
+          placeholder="Optional description"
+          className="w-full rounded border-gray-300 text-sm"
+        />
       </td>
       <td className="px-4 py-2">
         <select

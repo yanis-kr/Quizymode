@@ -38,3 +38,4 @@
 - Keep common services under Services folder
 - Keep Program.cs small and move all services and pipeline setup under StartupExtensions folder
 - Dependency Injections required just by featureX should be declared under /Features/FeatureX; these registration classes can be inherited from IFeatureRegistration with method AddToServiceCollection(IServiceCollection services, IConfiguration configuration); on startup scoop the assembly to run all instances of this interface to register feature specific services.
+- For each change: include a 1-2 sentence short commit description in the change summary (suitable as a git commit message).

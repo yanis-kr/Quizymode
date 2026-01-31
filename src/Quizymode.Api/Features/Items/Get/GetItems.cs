@@ -48,7 +48,8 @@ public static class GetItems
         DateTime CreatedAt,
         List<KeywordResponse> Keywords,
         List<CollectionResponse> Collections,
-        string? Source);
+        string? Source,
+        string? UploadId = null);
 
     public sealed record KeywordResponse(
         string Id,

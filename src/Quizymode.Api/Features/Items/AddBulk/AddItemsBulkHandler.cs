@@ -140,7 +140,8 @@ internal static class AddItemsBulkHandler
                         CreatedBy = userId,
                         CreatedAt = DateTime.UtcNow,
                         CategoryId = category.Id,
-                        Source = string.IsNullOrWhiteSpace(itemRequest.Source) ? null : itemRequest.Source.Trim()
+                        Source = string.IsNullOrWhiteSpace(itemRequest.Source) ? null : itemRequest.Source.Trim(),
+                        UploadId = request.UploadId
                     };
 
                     itemsToInsert.Add(item);

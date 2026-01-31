@@ -86,9 +86,10 @@ export const itemsApi = {
     return response.data;
   },
 
-  /** Upload JSON items into a new collection (GUID name). Non-admin: private only. Returns collectionId to navigate. */
+  /** Upload JSON items into a new collection (GUID name). inputText is the raw JSON string for duplicate detection. Non-admin: private only. Returns collectionId to navigate. */
   uploadToCollection: async (data: {
     items: CreateItemRequest[];
+    inputText: string;
   }): Promise<UploadToCollectionResponse> => {
     const response = await apiClient.post<UploadToCollectionResponse>(
       "/items/upload-to-collection",

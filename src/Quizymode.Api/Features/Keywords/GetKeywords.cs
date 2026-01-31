@@ -33,7 +33,8 @@ public static class GetKeywords
         string Name,
         int ItemCount,
         double? AverageRating,
-        int NavigationRank);
+        int NavigationRank,
+        string? Description = null);
 
     public sealed record Response(List<KeywordResponse> Keywords);
 
@@ -45,6 +46,7 @@ public static class GetKeywords
         public double? AverageRating { get; set; }
         public int NavigationRank { get; set; }
         public int SortRank { get; set; }
+        public string? Description { get; set; }
     }
 
     public sealed class Endpoint : IEndpoint
@@ -314,7 +316,8 @@ public static class GetKeywords
                     ELSE NULL
                 END AS ""AverageRating"",
                 ck.""NavigationRank""::int AS ""NavigationRank"",
-                ck.""SortRank""::int AS ""SortRank""
+                ck.""SortRank""::int AS ""SortRank"",
+                ck.""Description""
             FROM ""CategoryKeywords"" ck
             INNER JOIN ""Keywords"" k ON k.""Id"" = ck.""KeywordId""
             LEFT JOIN ""ItemKeywords"" ik ON ik.""KeywordId"" = k.""Id""
@@ -328,7 +331,7 @@ public static class GetKeywords
                     OR (@IsAuthenticated = 1 AND (k.""IsPrivate"" = false OR (k.""IsPrivate"" = true AND k.""CreatedBy"" = @CurrentUserId)))
                 )
                 AND (@ParentName IS NULL OR LOWER(ck.""ParentName"") = @ParentName)
-            GROUP BY k.""Name"", ck.""NavigationRank"", ck.""SortRank""
+            GROUP BY k.""Name"", ck.""NavigationRank"", ck.""SortRank"", ck.""Description""
             ORDER BY ck.""SortRank"" ASC, k.""Name"" ASC";
 
         DynamicParameters parameters = new DynamicParameters();
@@ -347,7 +350,8 @@ public static class GetKeywords
                 row.Name,
                 row.ItemCount,
                 row.AverageRating,
-                row.NavigationRank))
+                row.NavigationRank,
+                row.Description))
             .ToList();
 
         return keywords;
@@ -447,7 +451,8 @@ public static class GetKeywords
             row.Name,
             row.ItemCount,
             row.AverageRating,
-            NavigationRank: 0)).ToList();
+            NavigationRank: 0,
+            Description: null)).ToList();
     }
 
     /// <summary>

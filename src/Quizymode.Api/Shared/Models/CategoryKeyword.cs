@@ -31,6 +31,11 @@ public sealed class CategoryKeyword
     /// </summary>
     public int SortRank { get; set; }
 
+    /// <summary>
+    /// Optional description for this keyword in this category (e.g. for rank-1 and rank-2 navigation).
+    /// </summary>
+    public string? Description { get; set; }
+
     public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
 
     // Navigation properties

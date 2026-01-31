@@ -76,12 +76,6 @@ const Layout = ({ children }: LayoutProps) => {
                       Add Items
                     </Link>
                     <Link
-                      to="/items/upload"
-                      className="inline-flex items-center px-1 pt-1 text-sm font-medium text-gray-900 hover:text-indigo-600"
-                    >
-                      Upload to collection
-                    </Link>
-                    <Link
                       to="/collections"
                       className="inline-flex items-center px-1 pt-1 text-sm font-medium text-gray-900 hover:text-indigo-600"
                     >

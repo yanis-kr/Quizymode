@@ -69,6 +69,9 @@ const AdminCategoriesPage = () => {
                   Category name
                 </th>
                 <th className="px-4 py-2 text-left text-xs font-medium text-gray-500 uppercase">
+                  Description
+                </th>
+                <th className="px-4 py-2 text-left text-xs font-medium text-gray-500 uppercase">
                   Items
                 </th>
                 <th className="px-4 py-2 text-right text-xs font-medium text-gray-500 uppercase">
@@ -84,6 +87,7 @@ const AdminCategoriesPage = () => {
                     key={cat.id}
                     id={cat.id}
                     name={cat.category}
+                    description={cat.description ?? ""}
                     itemCount={cat.count}
                     onSave={(body) =>
                       updateMutation.mutate({ id: cat.id, body })
@@ -107,6 +111,7 @@ const AdminCategoriesPage = () => {
 function CategoryRow({
   id,
   name,
+  description,
   itemCount,
   onSave,
   isSaving,
@@ -114,31 +119,39 @@ function CategoryRow({
 }: {
   id: string;
   name: string;
+  description: string;
   itemCount: number;
   onSave: (body: UpdateCategoryRequest) => void;
   isSaving: boolean;
   saveError: unknown;
 }) {
   const [editing, setEditing] = React.useState(false);
-  const [value, setValue] = React.useState(name);
+  const [nameValue, setNameValue] = React.useState(name);
+  const [descValue, setDescValue] = React.useState(description);
 
   React.useEffect(() => {
-    setValue(name);
-  }, [name]);
+    setNameValue(name);
+    setDescValue(description);
+  }, [name, description]);
 
   const handleSave = () => {
-    const trimmed = value.trim();
-    if (trimmed && trimmed !== name) {
-      onSave({ name: trimmed });
+    const trimmedName = nameValue.trim();
+    const trimmedDesc = descValue.trim() || undefined;
+    const nameChanged = trimmedName !== name;
+    const descChanged = (trimmedDesc ?? "") !== (description || "");
+    if (trimmedName && (nameChanged || descChanged)) {
+      onSave({ name: trimmedName, description: trimmedDesc ?? null });
       setEditing(false);
     } else {
-      setValue(name);
+      setNameValue(name);
+      setDescValue(description);
       setEditing(false);
     }
   };
 
   const handleCancel = () => {
-    setValue(name);
+    setNameValue(name);
+    setDescValue(description);
     setEditing(false);
   };
 
@@ -148,13 +161,26 @@ function CategoryRow({
         {editing ? (
           <input
             type="text"
-            value={value}
-            onChange={(e) => setValue(e.target.value)}
+            value={nameValue}
+            onChange={(e) => setNameValue(e.target.value)}
             className="rounded border-gray-300 text-sm w-full max-w-xs"
             autoFocus
           />
         ) : (
           <span className="text-sm font-medium text-gray-900">{name}</span>
+        )}
+      </td>
+      <td className="px-4 py-2 max-w-xs">
+        {editing ? (
+          <input
+            type="text"
+            value={descValue}
+            onChange={(e) => setDescValue(e.target.value)}
+            placeholder="Optional description"
+            className="rounded border-gray-300 text-sm w-full"
+          />
+        ) : (
+          <span className="text-sm text-gray-600">{description || "—"}</span>
         )}
       </td>
       <td className="px-4 py-2 text-sm text-gray-600">{itemCount}</td>
@@ -164,7 +190,7 @@ function CategoryRow({
             <button
               type="button"
               onClick={handleSave}
-              disabled={isSaving || !value.trim()}
+              disabled={isSaving || !nameValue.trim()}
               className="text-sm font-medium text-indigo-600 hover:text-indigo-800 disabled:opacity-50 mr-2"
             >
               {isSaving ? "Saving…" : "Save"}
@@ -184,7 +210,7 @@ function CategoryRow({
             onClick={() => setEditing(true)}
             className="text-sm font-medium text-indigo-600 hover:text-indigo-800"
           >
-            Rename
+            Edit
           </button>
         )}
         {saveError && (
