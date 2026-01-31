@@ -136,6 +136,10 @@ public static class GetKeywords
                     db,
                     userContext,
                     cancellationToken);
+                // Exclude item-level keywords that match the category name
+                itemKeywords = itemKeywords
+                    .Where(k => !string.Equals(k.Name, categoryName, StringComparison.OrdinalIgnoreCase))
+                    .ToList();
                 Response leafResponse = new(itemKeywords);
                 logger.LogInformation(
                     "Item keywords at leaf. Category: {Category}, SelectedKeywords: {SelectedKeywords}, KeywordCount: {KeywordCount}",
@@ -154,7 +158,12 @@ public static class GetKeywords
                 userContext,
                 cancellationToken);
 
-            // Add "other" keyword for rank-1 if applicable (SortRank=0, should appear first)
+            // Exclude keywords whose name matches the category (e.g. "outdoors" in outdoors category)
+            keywords = keywords
+                .Where(k => !string.Equals(k.Name, categoryName, StringComparison.OrdinalIgnoreCase))
+                .ToList();
+
+            // Add "other" keyword for rank-1 only when it has items (do not show "other" with 0 items)
             if (targetRank == 1)
             {
                 int otherItemCount = await GetOtherItemCountAsync(
