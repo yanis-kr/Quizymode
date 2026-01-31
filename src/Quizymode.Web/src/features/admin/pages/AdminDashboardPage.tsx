@@ -36,6 +36,20 @@ const AdminDashboardPage = () => {
           <h3 className="text-lg font-medium text-gray-900 mb-2">Audit Logs</h3>
           <p className="text-sm text-gray-500">View system audit logs with filters</p>
         </Link>
+        <Link
+          to="/admin/keywords"
+          className="bg-white shadow rounded-lg p-6 hover:shadow-lg transition-shadow cursor-pointer"
+        >
+          <h3 className="text-lg font-medium text-gray-900 mb-2">Manage Keywords</h3>
+          <p className="text-sm text-gray-500">Assign keywords to parents and set rank</p>
+        </Link>
+        <Link
+          to="/admin/categories"
+          className="bg-white shadow rounded-lg p-6 hover:shadow-lg transition-shadow cursor-pointer"
+        >
+          <h3 className="text-lg font-medium text-gray-900 mb-2">Manage Categories</h3>
+          <p className="text-sm text-gray-500">Rename categories</p>
+        </Link>
       </div>
     </div>
   );

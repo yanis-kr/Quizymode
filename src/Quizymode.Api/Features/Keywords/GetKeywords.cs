@@ -127,12 +127,20 @@ public static class GetKeywords
             
             if (!targetRank.HasValue)
             {
-                // No more navigation layers (e.g., rank-2 already selected)
+                // At leaf (e.g. rank-2 already selected): return item-level keywords for this path
+                List<KeywordResponse> itemKeywords = await GetItemKeywordsAtPathAsync(
+                    categoryId.Value,
+                    request.SelectedKeywords,
+                    db,
+                    userContext,
+                    cancellationToken);
+                Response leafResponse = new(itemKeywords);
                 logger.LogInformation(
-                    "Keywords retrieved. Category: {Category}, SelectedKeywords: {SelectedKeywords}, KeywordCount: 0, TotalItemCount: 0 (no more navigation layers)",
+                    "Item keywords at leaf. Category: {Category}, SelectedKeywords: {SelectedKeywords}, KeywordCount: {KeywordCount}",
                     request.Category,
-                    request.SelectedKeywords != null ? string.Join(",", request.SelectedKeywords) : "(none)");
-                return Result.Success(new Response(new List<KeywordResponse>()));
+                    request.SelectedKeywords != null ? string.Join(",", request.SelectedKeywords) : "(none)",
+                    itemKeywords.Count);
+                return Result.Success(leafResponse);
             }
 
             // Get navigation keywords for the target rank
@@ -310,7 +318,7 @@ public static class GetKeywords
             FROM ""CategoryKeywords"" ck
             INNER JOIN ""Keywords"" k ON k.""Id"" = ck.""KeywordId""
             LEFT JOIN ""ItemKeywords"" ik ON ik.""KeywordId"" = k.""Id""
-            LEFT JOIN ""Items"" i ON i.""Id"" = ik.""ItemId""
+            LEFT JOIN ""Items"" i ON i.""Id"" = ik.""ItemId"" AND i.""CategoryId"" = ck.""CategoryId""
             LEFT JOIN ""Categories"" c ON c.""Id"" = i.""CategoryId""
             LEFT JOIN ""Ratings"" r ON r.""ItemId"" = i.""Id"" AND r.""Stars"" IS NOT NULL
             WHERE ck.""CategoryId"" = @CategoryId
@@ -343,6 +351,103 @@ public static class GetKeywords
             .ToList();
 
         return keywords;
+    }
+
+    /// <summary>
+    /// Gets distinct item-level keywords that appear on items at the given path (category + selected keywords).
+    /// Used at leaf of sets hierarchy to show boxes for filtering items by tag.
+    /// </summary>
+    private static async Task<List<KeywordResponse>> GetItemKeywordsAtPathAsync(
+        Guid categoryId,
+        List<string>? selectedKeywords,
+        ApplicationDbContext db,
+        IUserContext userContext,
+        CancellationToken cancellationToken)
+    {
+        if (selectedKeywords is null || selectedKeywords.Count == 0)
+        {
+            return new List<KeywordResponse>();
+        }
+
+        List<string> normalizedPath = selectedKeywords
+            .Select(k => k.Trim().ToLower())
+            .ToList();
+
+        // Resolve path keyword IDs
+        List<Guid> pathKeywordIds = await db.Keywords
+            .Where(k => normalizedPath.Contains(k.Name.ToLower())
+                && (!k.IsPrivate || (userContext.IsAuthenticated && k.CreatedBy == userContext.UserId)))
+            .Select(k => k.Id)
+            .ToListAsync(cancellationToken);
+
+        if (pathKeywordIds.Count != normalizedPath.Count)
+        {
+            return new List<KeywordResponse>();
+        }
+
+        // Item IDs in category with visibility that have ALL path keywords
+        IQueryable<Item> itemsQuery = db.Items.Where(i => i.CategoryId == categoryId);
+        if (!userContext.IsAuthenticated || string.IsNullOrEmpty(userContext.UserId))
+            itemsQuery = itemsQuery.Where(i => !i.IsPrivate);
+        else
+            itemsQuery = itemsQuery.Where(i => !i.IsPrivate || (i.IsPrivate && i.CreatedBy == userContext.UserId));
+
+        foreach (Guid kid in pathKeywordIds)
+        {
+            Guid captured = kid;
+            itemsQuery = itemsQuery.Where(i => i.ItemKeywords.Any(ik => ik.KeywordId == captured));
+        }
+
+        List<Guid> matchingItemIds = await itemsQuery.Select(i => i.Id).ToListAsync(cancellationToken);
+        if (matchingItemIds.Count == 0)
+        {
+            return new List<KeywordResponse>();
+        }
+
+        // Distinct keywords on those items (excluding path keywords), with item count and avg rating
+        System.Data.Common.DbConnection connection = db.Database.GetDbConnection();
+        if (connection.State != System.Data.ConnectionState.Open)
+        {
+            await db.Database.OpenConnectionAsync(cancellationToken);
+        }
+
+        string sql = @"
+            SELECT
+                k.""Name"",
+                COUNT(DISTINCT ik.""ItemId"")::int AS ""ItemCount"",
+                CASE
+                    WHEN COUNT(DISTINCT i.""Id"") > 0 THEN
+                        ROUND(AVG(CASE WHEN r.""Stars"" IS NOT NULL THEN r.""Stars""::numeric END), 2)::double precision
+                    ELSE NULL
+                END AS ""AverageRating""
+            FROM ""ItemKeywords"" ik
+            INNER JOIN ""Keywords"" k ON k.""Id"" = ik.""KeywordId""
+            INNER JOIN ""Items"" i ON i.""Id"" = ik.""ItemId""
+            LEFT JOIN ""Ratings"" r ON r.""ItemId"" = i.""Id"" AND r.""Stars"" IS NOT NULL
+            WHERE ik.""ItemId"" = ANY(@ItemIds)
+                AND ik.""KeywordId"" != ALL(@PathKeywordIds)
+                AND ((@IsAuthenticated = 0 AND k.""IsPrivate"" = false)
+                     OR (@IsAuthenticated = 1 AND (k.""IsPrivate"" = false OR (k.""IsPrivate"" = true AND k.""CreatedBy"" = @CurrentUserId))))
+            GROUP BY k.""Name""
+            ORDER BY ""ItemCount"" DESC, k.""Name"" ASC";
+
+        string? currentUserId = userContext.UserId ?? string.Empty;
+        int isAuthenticatedInt = userContext.IsAuthenticated && !string.IsNullOrEmpty(userContext.UserId) ? 1 : 0;
+
+        var parameters = new DynamicParameters();
+        parameters.Add("ItemIds", matchingItemIds.ToArray());
+        parameters.Add("PathKeywordIds", pathKeywordIds.ToArray());
+        parameters.Add("IsAuthenticated", isAuthenticatedInt);
+        parameters.Add("CurrentUserId", currentUserId);
+
+        List<KeywordRow> rows = (await connection.QueryAsync<KeywordRow>(
+            new CommandDefinition(sql, parameters, cancellationToken: cancellationToken))).ToList();
+
+        return rows.Select(row => new KeywordResponse(
+            row.Name,
+            row.ItemCount,
+            row.AverageRating,
+            NavigationRank: 0)).ToList();
     }
 
     /// <summary>
