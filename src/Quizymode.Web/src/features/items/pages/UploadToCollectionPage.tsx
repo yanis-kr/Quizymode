@@ -86,15 +86,27 @@ const UploadToCollectionPage = () => {
   });
   const rank2Keywords = isLoadingRank2 ? [] : (rank2Data?.keywords ?? []);
 
+  // Only sync from URL when we're still on the same category (avoid repopulating after user switches category)
   React.useEffect(() => {
     if (categoryParam && !categoryName) setCategoryName(categoryParam);
   }, [categoryParam, categoryName]);
   React.useEffect(() => {
-    if (keywordsFromUrl[0] && !rank1Name) setRank1Name(keywordsFromUrl[0]);
-  }, [keywordsFromUrl, rank1Name]);
+    if (categoryParam && categoryName === categoryParam && keywordsFromUrl[0] && !rank1Name) {
+      setRank1Name(keywordsFromUrl[0]);
+    }
+  }, [categoryParam, categoryName, keywordsFromUrl, rank1Name]);
   React.useEffect(() => {
-    if (keywordsFromUrl[1] && !rank2Name) setRank2Name(keywordsFromUrl[1]);
-  }, [keywordsFromUrl, rank2Name]);
+    if (
+      categoryParam &&
+      categoryName === categoryParam &&
+      rank1Name === keywordsFromUrl[0] &&
+      keywordsFromUrl[1] &&
+      !rank2Name
+    ) {
+      setRank2Name(keywordsFromUrl[1]);
+    }
+  }, [categoryParam, categoryName, rank1Name, keywordsFromUrl, rank2Name]);
+  // Clear rank1/rank2 when they are invalid for the current category's options
   React.useEffect(() => {
     if (rank1Name && rank1Keywords.length > 0 && !rank1Keywords.some((k) => k.name === rank1Name)) {
       setRank1Name("");

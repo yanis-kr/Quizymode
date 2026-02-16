@@ -163,6 +163,11 @@ public static class GetKeywords
                 .Where(k => !string.Equals(k.Name, categoryName, StringComparison.OrdinalIgnoreCase))
                 .ToList();
 
+            // Do not show "other" when it has 0 items (it may come from SQL with count 0; we only add it when > 0)
+            keywords = keywords
+                .Where(k => !string.Equals(k.Name, "other", StringComparison.OrdinalIgnoreCase) || k.ItemCount > 0)
+                .ToList();
+
             // Add "other" keyword for rank-1 only when it has items (do not show "other" with 0 items)
             if (targetRank == 1)
             {
