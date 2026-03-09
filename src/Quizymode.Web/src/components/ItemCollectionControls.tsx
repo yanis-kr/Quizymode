@@ -41,6 +41,9 @@ export const ItemCollectionControls = ({
       queryClient.invalidateQueries({ queryKey: ["item", itemId] });
       queryClient.invalidateQueries({ queryKey: ["myItems"] });
       queryClient.invalidateQueries({ queryKey: ["categoryItems"] });
+      // Invalidate list queries so explore/collection view refetches and +/− state updates when currentItem comes from the list (e.g. first item with no itemId in URL)
+      queryClient.invalidateQueries({ queryKey: ["collectionItems"] });
+      queryClient.invalidateQueries({ queryKey: ["randomItems"] });
       onSuccess?.();
     },
   });
@@ -53,6 +56,8 @@ export const ItemCollectionControls = ({
       queryClient.invalidateQueries({ queryKey: ["item", itemId] });
       queryClient.invalidateQueries({ queryKey: ["myItems"] });
       queryClient.invalidateQueries({ queryKey: ["categoryItems"] });
+      queryClient.invalidateQueries({ queryKey: ["collectionItems"] });
+      queryClient.invalidateQueries({ queryKey: ["randomItems"] });
       onSuccess?.();
     },
   });
