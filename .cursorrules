@@ -43,3 +43,4 @@
   2. Restart API needed: y/n.
   3. Restart web app (npm run dev) needed: y/n.
   4. A suggested git commit message (under 68 characters).
+- After making code changes: run build, then run tests. If build fails, fix the issues and run build again. If tests fail, fix the issues and run tests again. Repeat until build and tests pass.
