@@ -117,7 +117,7 @@ public static class GetCategories
                     OR (@IsAuthenticated = 1 AND (c.""IsPrivate"" = false OR (c.""IsPrivate"" = true AND c.""CreatedBy"" = @CurrentUserId)))
                 )
                     AND (@SearchPattern IS NULL OR LOWER(c.""Name"") LIKE LOWER(@SearchPattern))
-                GROUP BY c.""Id"", c.""Name"", c.""IsPrivate""
+                GROUP BY c.""Id"", c.""Name"", c.""Description"", c.""IsPrivate""
                 ORDER BY
                     COALESCE(AVG(r.""Stars""), -1) DESC,
                     c.""Name"" ASC";

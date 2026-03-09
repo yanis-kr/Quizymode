@@ -4,7 +4,7 @@ import { getToken, clearTokens, isTokenExpired } from "@/utils/tokenStorage";
 import { fetchAuthSession } from "aws-amplify/auth";
 import { setTokens } from "@/utils/tokenStorage";
 
-const API_URL = import.meta.env.VITE_API_URL || "https://localhost:8080";
+const API_URL = import.meta.env.VITE_API_URL || "https://localhost:8082";
 
 export const apiClient: AxiosInstance = axios.create({
   baseURL: API_URL,
