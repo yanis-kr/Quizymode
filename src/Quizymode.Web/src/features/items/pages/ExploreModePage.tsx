@@ -9,6 +9,7 @@ import LoadingSpinner from "@/components/LoadingSpinner";
 import ErrorMessage from "@/components/ErrorMessage";
 import ItemRatingsComments from "@/components/ItemRatingsComments";
 import ItemCollectionsModal from "@/components/ItemCollectionsModal";
+import { ItemCollectionControls } from "@/components/ItemCollectionControls";
 import { Link } from "react-router-dom";
 import {
   categoryNameToSlug,
@@ -16,7 +17,6 @@ import {
 } from "@/utils/categorySlug";
 import { ExploreQuizBreadcrumb } from "@/components/ExploreQuizBreadcrumb";
 import {
-  FolderIcon,
   ChevronLeftIcon,
   ChevronRightIcon,
   ArrowLeftIcon,
@@ -423,18 +423,14 @@ const ExploreModePage = () => {
                 navigationContext={navigationContext}
               />
 
-              {/* Collection Controls */}
+              {/* Collection Controls: manage icon + active (3-char) + add/remove from active */}
               {(isAuthenticated || (currentItem.collections && currentItem.collections.length > 0)) && (
                 <div className="mt-4 flex items-center gap-2 flex-wrap">
-                  {isAuthenticated && (
-                    <button
-                      onClick={() => setSelectedItemForCollections(currentItem.id)}
-                      className="p-2 text-blue-600 hover:bg-blue-50 rounded-md"
-                      title="Manage collections"
-                    >
-                      <FolderIcon className="h-5 w-5" />
-                    </button>
-                  )}
+                  <ItemCollectionControls
+                    itemId={currentItem.id}
+                    itemCollectionIds={new Set((currentItem.collections ?? []).map((c: { id: string }) => c.id))}
+                    onOpenManageCollections={() => setSelectedItemForCollections(currentItem.id)}
+                  />
                   {currentItem.collections && currentItem.collections.length > 0 && (
                     <div className="flex items-center gap-2 flex-wrap">
                       {currentItem.collections.map((collection: { id: string; name: string }) => (
