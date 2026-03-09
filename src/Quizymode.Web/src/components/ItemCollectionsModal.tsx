@@ -3,6 +3,7 @@ import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
 import { collectionsApi } from "@/api/collections";
 import { itemsApi } from "@/api/items";
 import { useAuth } from "@/contexts/AuthContext";
+import { useActiveCollection } from "@/hooks/useActiveCollection";
 import { XMarkIcon, PlusIcon } from "@heroicons/react/24/outline";
 
 interface ItemCollectionsModalProps {
@@ -20,6 +21,7 @@ const ItemCollectionsModal = ({
 }: ItemCollectionsModalProps) => {
   const { isAuthenticated } = useAuth();
   const queryClient = useQueryClient();
+  const { activeCollectionId, setActiveCollectionId } = useActiveCollection();
   const [newCollectionName, setNewCollectionName] = useState("");
   const [bulkSelectedCollections, setBulkSelectedCollections] = useState<Set<string>>(new Set());
 
@@ -85,7 +87,13 @@ const ItemCollectionsModal = ({
   const createCollectionMutation = useMutation({
     mutationFn: (name: string) => collectionsApi.create({ name }),
     onSuccess: async (newCollection) => {
+      const previousCollections = queryClient.getQueryData<{ collections: { id: string }[] }>(["collections"]);
+      const wasFirstCollection = !previousCollections?.collections?.length;
       await queryClient.refetchQueries({ queryKey: ["collections"] });
+      // When user creates first collection, it becomes the active collection
+      if (wasFirstCollection) {
+        setActiveCollectionId(newCollection.id);
+      }
       // Automatically add item(s) to the newly created collection
       if (isBulkMode) {
         await collectionsApi.bulkAddItems(newCollection.id, { itemIds: multipleItemIds });
@@ -254,7 +262,7 @@ const ItemCollectionsModal = ({
               </button>
             </div>
 
-            {/* All Collections with Checkboxes */}
+            {/* All Collections with Checkboxes and Active */}
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-2">
                 Collections
@@ -266,30 +274,43 @@ const ItemCollectionsModal = ({
                     const isInCollection = isBulkMode
                       ? bulkSelectedCollections.has(collection.id)
                       : itemCollectionIds.has(collection.id);
+                    const isActive = activeCollectionId === collection.id;
                     return (
-                      <label
+                      <div
                         key={collection.id}
-                        className="flex items-center p-2 hover:bg-gray-50 rounded-md cursor-pointer"
+                        className="flex items-center gap-3 p-2 hover:bg-gray-50 rounded-md"
                       >
-                        <input
-                          type="checkbox"
-                          checked={isInCollection}
-                          onChange={(e) =>
-                            handleToggleCollection(
-                              collection.id,
-                              e.target.checked
-                            )
-                          }
-                          disabled={
-                            addToCollectionMutation.isPending ||
-                            removeFromCollectionMutation.isPending
-                          }
-                          className="mr-2"
-                        />
-                        <span className="text-sm text-gray-700">
-                          {collection.name}
-                        </span>
-                      </label>
+                        <label className="flex items-center gap-2 flex-1 cursor-pointer min-w-0">
+                          <input
+                            type="checkbox"
+                            checked={isInCollection}
+                            onChange={(e) =>
+                              handleToggleCollection(
+                                collection.id,
+                                e.target.checked
+                              )
+                            }
+                            disabled={
+                              addToCollectionMutation.isPending ||
+                              removeFromCollectionMutation.isPending
+                            }
+                            className="shrink-0"
+                          />
+                          <span className="text-sm text-gray-700 truncate">
+                            {collection.name}
+                          </span>
+                        </label>
+                        <label className="flex items-center gap-1 shrink-0 cursor-pointer" title="Active collection">
+                          <input
+                            type="radio"
+                            name="activeCollection"
+                            checked={isActive}
+                            onChange={() => setActiveCollectionId(collection.id)}
+                            className="shrink-0"
+                          />
+                          <span className="text-xs text-gray-500">Active</span>
+                        </label>
+                      </div>
                     );
                   })}
                 </div>

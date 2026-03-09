@@ -193,6 +193,9 @@ const CategoriesPage = () => {
     });
   }, [keywordsData?.keywords, keywordsFromUrl, sortBy]);
 
+  const effectiveLeaf =
+    isLeaf || (keywordsFromUrl.length >= 1 && sortedKeywords.length === 0);
+
   const handleSortChange = (newSort: SortOption) => {
     setSortBy(newSort);
     setCategoriesPage(1);
@@ -619,7 +622,7 @@ const CategoriesPage = () => {
                   ))}
                 </div>
               </>
-            ) : isLeaf ? (
+            ) : effectiveLeaf ? (
               <div className="mb-6">
                 <p className="text-gray-600 mb-4">
                   You&apos;ve reached the end of the sets hierarchy. Browse items, explore, or quiz.
