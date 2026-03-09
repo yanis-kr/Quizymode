@@ -30,16 +30,26 @@ const QuizModePage = () => {
   const { category: categorySlug, collectionId, itemId } = useParams();
   const [searchParams] = useSearchParams();
   const navigate = useNavigate();
+  const returnUrl = searchParams.get("return");
   const keywordsParam = searchParams.get("keywords");
   const keywords = keywordsParam
     ? keywordsParam.split(",").map((k) => k.trim()).filter(Boolean)
     : undefined;
+  /** Query string for quiz item URLs so keywords (and return) are preserved when using prev/next */
+  const quizItemSearch = useMemo(() => {
+    const params = new URLSearchParams();
+    if (returnUrl) params.set("return", returnUrl);
+    if (keywords?.length) params.set("keywords", keywords.join(","));
+    const s = params.toString();
+    return s ? `?${s}` : "";
+  }, [returnUrl, keywords]);
   const { isAuthenticated } = useAuth();
   const [currentIndex, setCurrentIndex] = useState(0);
   const [selectedAnswer, setSelectedAnswer] = useState<string | null>(null);
   const [showAnswer, setShowAnswer] = useState(false);
   const [stats, setStats] = useState({ total: 0, correct: 0 });
-  const [count] = useState(100); // Increased default to fetch more items
+  /** Quiz uses random N items (default 10); changing this refetches items */
+  const [quizSize, setQuizSize] = useState(10);
   const [selectedItemForCollections, setSelectedItemForCollections] = useState<
     string | null
   >(null);
@@ -114,9 +124,13 @@ const QuizModePage = () => {
   });
 
   const { data, isLoading, error, refetch } = useQuery({
-    queryKey: ["randomItems", category, count, keywords],
-    queryFn: () => itemsApi.getRandom(category, count, keywords),
-    enabled: !collectionId && !storedItems, // Don't load if we have stored items
+    queryKey: ["randomItems", category, quizSize, keywords],
+    queryFn: () => itemsApi.getRandom(category, quizSize, keywords),
+    // When URL has a category slug, wait for categories so we send resolved name; otherwise API can resolve by slug.
+    enabled:
+      !collectionId &&
+      !storedItems &&
+      (!categorySlug || !!categoriesData?.categories),
   });
 
   // Restore items, index, and quiz state from sessionStorage on mount
@@ -406,6 +420,25 @@ const QuizModePage = () => {
           <p className="text-gray-600 text-sm mb-4">
             Test your knowledge with interactive quizzes. Select an answer to see if you're correct, then view the explanation. Track your score as you progress through items.
           </p>
+          {!collectionId && (
+            <div className="flex items-center gap-4 mb-4 flex-wrap">
+              <label className="flex items-center gap-2 text-sm text-gray-700">
+                <span>Quiz size:</span>
+                <input
+                  type="number"
+                  min={1}
+                  max={1000}
+                  value={quizSize}
+                  onChange={(e) => {
+                    const n = parseInt(e.target.value, 10);
+                    if (!Number.isNaN(n)) setQuizSize(Math.min(1000, Math.max(1, n)));
+                  }}
+                  className="w-20 rounded-md border border-gray-300 px-2 py-1 text-sm"
+                />
+                <span className="text-gray-500">items (change refetches)</span>
+              </label>
+            </div>
+          )}
           <div className="flex justify-between items-center mb-4">
             <div className="flex items-center space-x-4">
               <div className="flex items-center space-x-2">
@@ -416,17 +449,16 @@ const QuizModePage = () => {
                       setCurrentIndex(newIndex);
                       setSelectedAnswer(null);
                       setShowAnswer(false);
-                      // Update URL based on context
                       if (items[newIndex]) {
                         if (collectionId) {
                           navigate(
-                            `/quiz/collection/${collectionId}/item/${items[newIndex].id}`,
+                            `/quiz/collection/${collectionId}/item/${items[newIndex].id}${quizItemSearch}`,
                             { replace: true }
                           );
                         } else if (category) {
-                          navigate(`/quiz/${categoryNameToSlug(category)}/item/${items[newIndex].id}`, { replace: true });
+                          navigate(`/quiz/${categoryNameToSlug(category)}/item/${items[newIndex].id}${quizItemSearch}`, { replace: true });
                         } else {
-                          navigate(`/quiz/item/${items[newIndex].id}`, {
+                          navigate(`/quiz/item/${items[newIndex].id}${quizItemSearch}`, {
                             replace: true,
                           });
                         }
@@ -449,17 +481,16 @@ const QuizModePage = () => {
                       setCurrentIndex(newIndex);
                       setSelectedAnswer(null);
                       setShowAnswer(false);
-                      // Update URL based on context
                       if (items[newIndex]) {
                         if (collectionId) {
                           navigate(
-                            `/quiz/collection/${collectionId}/item/${items[newIndex].id}`,
+                            `/quiz/collection/${collectionId}/item/${items[newIndex].id}${quizItemSearch}`,
                             { replace: true }
                           );
                         } else if (category) {
-                          navigate(`/quiz/${categoryNameToSlug(category)}/item/${items[newIndex].id}`, { replace: true });
+                          navigate(`/quiz/${categoryNameToSlug(category)}/item/${items[newIndex].id}${quizItemSearch}`, { replace: true });
                         } else {
-                          navigate(`/quiz/item/${items[newIndex].id}`, {
+                          navigate(`/quiz/item/${items[newIndex].id}${quizItemSearch}`, {
                             replace: true,
                           });
                         }
