@@ -1,6 +1,6 @@
 import { useState, useEffect, useMemo } from "react";
 import { useParams, useNavigate, useSearchParams } from "react-router-dom";
-import { useQuery } from "@tanstack/react-query";
+import { useQuery, useQueryClient } from "@tanstack/react-query";
 import { itemsApi } from "@/api/items";
 import { collectionsApi } from "@/api/collections";
 import { categoriesApi } from "@/api/categories";
@@ -27,6 +27,7 @@ const ExploreModePage = () => {
   const [searchParams] = useSearchParams();
   const navigate = useNavigate();
   const { isAuthenticated } = useAuth();
+  const queryClient = useQueryClient();
   const returnUrl = searchParams.get("return");
   const keywordsParam = searchParams.get("keywords");
   const keywords = keywordsParam
@@ -201,10 +202,12 @@ const ExploreModePage = () => {
     }
   }, [itemId, items]);
 
-  // Use singleItemData for currentItem if available and itemId matches, to ensure we have latest data including collections
-  const currentItem = (itemId && singleItemData && singleItemData.id === itemId) 
-    ? singleItemData 
-    : items[currentIndex];
+  // Use singleItemData when navigating by itemId; otherwise prefer cached item data so collection badges stay correct after modal edits (list is not invalidated in single-item mode)
+  const currentListItem = items[currentIndex];
+  const cachedItem = currentListItem ? queryClient.getQueryData<typeof singleItemData>(["item", currentListItem.id]) : undefined;
+  const currentItem = (itemId && singleItemData && singleItemData.id === itemId)
+    ? singleItemData
+    : (cachedItem?.id === currentListItem?.id ? cachedItem : currentListItem);
 
   useEffect(() => {
     if (items.length > 0 && currentIndex >= items.length) {

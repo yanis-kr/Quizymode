@@ -59,25 +59,21 @@ const ItemCollectionsModal = ({
     },
     onSuccess: async () => {
       if (isBulkMode) {
-        // Invalidate items list queries to refresh the UI with updated collection data
         queryClient.invalidateQueries({ queryKey: ["myItems"] });
         queryClient.invalidateQueries({ queryKey: ["categoryItems"] });
-        // Refetch item queries for all items in bulk mode (to get updated collections)
+        queryClient.invalidateQueries({ queryKey: ["collectionItems"] });
+        queryClient.invalidateQueries({ queryKey: ["randomItems"] });
         await Promise.all(
-          multipleItemIds.map((itemId) =>
-            queryClient.refetchQueries({ queryKey: ["item", itemId] })
+          multipleItemIds.map((id) =>
+            queryClient.refetchQueries({ queryKey: ["item", id] })
           )
         );
-        // Update bulk selected collections state
-        setBulkSelectedCollections((prev) => {
-          const newSet = new Set(prev);
-          // Note: In bulk mode, we don't track removals, so we keep the state as is
-          return newSet;
-        });
+        setBulkSelectedCollections((prev) => new Set(prev));
       } else if (singleItemId) {
-        // Invalidate items list queries to refresh the UI with updated collection data
         queryClient.invalidateQueries({ queryKey: ["myItems"] });
         queryClient.invalidateQueries({ queryKey: ["categoryItems"] });
+        // In single-item mode do NOT invalidate list queries here — parent list would refetch and reorder, making currentItem appear to "switch" to another item
+        queryClient.invalidateQueries({ queryKey: ["collections"] });
         await queryClient.refetchQueries({ queryKey: ["item", singleItemId] });
       }
       queryClient.invalidateQueries({ queryKey: ["collections"] });
@@ -94,25 +90,23 @@ const ItemCollectionsModal = ({
       if (wasFirstCollection) {
         setActiveCollectionId(newCollection.id);
       }
-      // Automatically add item(s) to the newly created collection
       if (isBulkMode) {
         await collectionsApi.bulkAddItems(newCollection.id, { itemIds: multipleItemIds });
-        // Update bulk selected collections state
         setBulkSelectedCollections((prev) => new Set(prev).add(newCollection.id));
-        // Invalidate items queries to refresh the UI immediately
         queryClient.invalidateQueries({ queryKey: ["myItems"] });
         queryClient.invalidateQueries({ queryKey: ["categoryItems"] });
+        queryClient.invalidateQueries({ queryKey: ["collectionItems"] });
+        queryClient.invalidateQueries({ queryKey: ["randomItems"] });
         await Promise.all(
-          multipleItemIds.map((itemId) =>
-            queryClient.refetchQueries({ queryKey: ["item", itemId] })
+          multipleItemIds.map((id) =>
+            queryClient.refetchQueries({ queryKey: ["item", id] })
           )
         );
       } else if (singleItemId) {
         await collectionsApi.addItem(newCollection.id, { itemId: singleItemId });
-        // Invalidate items list queries to refresh the UI with updated collection data
         queryClient.invalidateQueries({ queryKey: ["myItems"] });
         queryClient.invalidateQueries({ queryKey: ["categoryItems"] });
-        // Refetch item query to update checkbox state
+        // In single-item mode do NOT invalidate list queries here — avoids list reorder and wrong item appearing
         await queryClient.refetchQueries({ queryKey: ["item", singleItemId] });
       }
       setNewCollectionName("");
@@ -129,22 +123,22 @@ const ItemCollectionsModal = ({
       }
     },
     onSuccess: async (_, collectionId) => {
-      // Update bulk selected collections state on success
       if (isBulkMode) {
         setBulkSelectedCollections((prev) => new Set(prev).add(collectionId));
-        // Invalidate items queries to refresh the UI immediately
         queryClient.invalidateQueries({ queryKey: ["myItems"] });
         queryClient.invalidateQueries({ queryKey: ["categoryItems"] });
+        queryClient.invalidateQueries({ queryKey: ["collectionItems"] });
+        queryClient.invalidateQueries({ queryKey: ["randomItems"] });
         await Promise.all(
-          multipleItemIds.map((itemId) =>
-            queryClient.refetchQueries({ queryKey: ["item", itemId] })
+          multipleItemIds.map((id) =>
+            queryClient.refetchQueries({ queryKey: ["item", id] })
           )
         );
       }
       if (singleItemId) {
-        // Invalidate items list queries to refresh the UI with updated collection data
         queryClient.invalidateQueries({ queryKey: ["myItems"] });
         queryClient.invalidateQueries({ queryKey: ["categoryItems"] });
+        // In single-item mode do NOT invalidate list queries here — avoids list reorder and wrong item appearing
         await queryClient.refetchQueries({ queryKey: ["item", singleItemId] });
       }
       queryClient.invalidateQueries({ queryKey: ["collections"] });
