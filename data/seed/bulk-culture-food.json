@@ -1,0 +1,66 @@
+[
+  {
+    "category": "Culture",
+    "question": "What is a traditional Japanese tea ceremony called?",
+    "correctAnswer": "Chanoyu",
+    "incorrectAnswers": [
+      "Sake",
+      "Sushi",
+      "Origami"
+    ],
+    "explanation": "Chanoyu, or the Way of Tea, is the traditional Japanese tea ceremony.",
+    "keywords": [
+      "culture",
+      "japan",
+      "tradition"
+    ]
+  },
+  {
+    "category": "Culture",
+    "question": "Which country is the origin of the tango dance?",
+    "correctAnswer": "Argentina",
+    "incorrectAnswers": [
+      "Spain",
+      "Brazil",
+      "Mexico"
+    ],
+    "explanation": "The tango originated in the working-class port neighborhoods of Buenos Aires, Argentina.",
+    "keywords": [
+      "culture",
+      "dance",
+      "argentina"
+    ]
+  },
+  {
+    "category": "Food",
+    "question": "What is the main ingredient in hummus?",
+    "correctAnswer": "Chickpeas",
+    "incorrectAnswers": [
+      "Lentils",
+      "Black beans",
+      "Soybeans"
+    ],
+    "explanation": "Hummus is made primarily from cooked, mashed chickpeas blended with tahini, olive oil, lemon juice, and garlic.",
+    "keywords": [
+      "food",
+      "middle eastern",
+      "dip"
+    ]
+  },
+  {
+    "category": "Food",
+    "question": "Which country is tiramisu from?",
+    "correctAnswer": "Italy",
+    "incorrectAnswers": [
+      "France",
+      "Austria",
+      "Spain"
+    ],
+    "explanation": "Tiramisu is an Italian dessert made of coffee-soaked ladyfingers layered with mascarpone cream.",
+    "keywords": [
+      "food",
+      "dessert",
+      "italy"
+    ]
+  }
+]
