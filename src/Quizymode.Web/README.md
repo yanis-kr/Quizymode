@@ -58,7 +58,21 @@ npm run dev
 
 The app will be available at `http://localhost:7000`
 
-**Note:** Make sure the API is running (via Aspire AppHost) before starting the Web UI, as it needs to connect to `https://localhost:8080`.
+**Note:** Make sure the API is running (via Aspire AppHost) before starting the Web UI, as it needs to connect to `https://localhost:8082` (or the URL in `VITE_API_URL`).
+
+### Local HTTPS: fixing `ERR_CERT_DATE_INVALID`
+
+If the browser blocks the API with **Certificate date invalid** (expired or not yet valid), fix the .NET dev certificate:
+
+1. **Check system date/time** – Wrong date is a common cause; set it correctly.
+2. **Clean and re-trust the dev certificate** (run in a terminal):
+
+   ```bash
+   dotnet dev-certs https --clean
+   dotnet dev-certs https --trust
+   ```
+
+3. Restart the API (and browser if needed). The app uses `https://localhost:8082` by default.
 
 ## Building for Production
 

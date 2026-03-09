@@ -6,6 +6,7 @@ import { keywordsApi } from "@/api/keywords";
 import { itemsApi } from "@/api/items";
 import LoadingSpinner from "@/components/LoadingSpinner";
 import ErrorMessage from "@/components/ErrorMessage";
+import { getApiErrorMessage } from "@/utils/apiError";
 import ItemListSection from "@/components/ItemListSection";
 import BulkItemCollectionsModal from "@/components/BulkItemCollectionsModal";
 import useItemSelection from "@/hooks/useItemSelection";
@@ -308,10 +309,19 @@ const CategoriesPage = () => {
     : undefined;
 
   if (isLoading) return <LoadingSpinner />;
-  if (error)
+  if (error) {
+    const errorDetail = getApiErrorMessage(error);
+    if (typeof window !== "undefined") {
+      console.error("[Categories] Failed to load categories:", errorDetail, error);
+    }
     return (
-      <ErrorMessage message="Failed to load categories" onRetry={() => refetch()} />
+      <ErrorMessage
+        message="Failed to load categories"
+        errorDetail={errorDetail}
+        onRetry={() => refetch()}
+      />
     );
+  }
 
   if (categorySlugParam && !categoryName && categoriesData?.categories) {
     return (
@@ -331,10 +341,19 @@ const CategoriesPage = () => {
 
   if (categoryName && view === "items") {
     if (isLoadingItems) return <LoadingSpinner />;
-    if (itemsError)
+    if (itemsError) {
+      const itemsErrorDetail = getApiErrorMessage(itemsError);
+      if (typeof window !== "undefined") {
+        console.error("[Categories] Failed to load items:", itemsErrorDetail, itemsError);
+      }
       return (
-        <ErrorMessage message="Failed to load items" onRetry={() => refetchItems()} />
+        <ErrorMessage
+          message="Failed to load items"
+          errorDetail={itemsErrorDetail}
+          onRetry={() => refetchItems()}
+        />
       );
+    }
 
     return (
       <>

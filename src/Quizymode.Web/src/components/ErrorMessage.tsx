@@ -1,9 +1,11 @@
 interface ErrorMessageProps {
   message: string;
+  /** Optional detail (e.g. from API) to show for troubleshooting */
+  errorDetail?: string;
   onRetry?: () => void;
 }
 
-const ErrorMessage = ({ message, onRetry }: ErrorMessageProps) => {
+const ErrorMessage = ({ message, errorDetail, onRetry }: ErrorMessageProps) => {
   return (
     <div className="rounded-md bg-red-50 p-4">
       <div className="flex">
@@ -16,8 +18,13 @@ const ErrorMessage = ({ message, onRetry }: ErrorMessageProps) => {
             />
           </svg>
         </div>
-        <div className="ml-3">
+        <div className="ml-3 flex-1 min-w-0">
           <h3 className="text-sm font-medium text-red-800">{message}</h3>
+          {errorDetail && (
+            <p className="mt-1 text-xs text-red-700 font-mono break-words" title="Error detail for troubleshooting">
+              {errorDetail}
+            </p>
+          )}
           {onRetry && (
             <div className="mt-2">
               <button
