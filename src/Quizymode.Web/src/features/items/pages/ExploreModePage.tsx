@@ -1,6 +1,6 @@
 import { useState, useEffect, useMemo } from "react";
 import { useParams, useNavigate, useSearchParams } from "react-router-dom";
-import { useQuery, useQueryClient } from "@tanstack/react-query";
+import { useQuery } from "@tanstack/react-query";
 import { itemsApi } from "@/api/items";
 import { collectionsApi } from "@/api/collections";
 import { categoriesApi } from "@/api/categories";
@@ -27,14 +27,22 @@ const ExploreModePage = () => {
   const [searchParams] = useSearchParams();
   const navigate = useNavigate();
   const { isAuthenticated } = useAuth();
-  const queryClient = useQueryClient();
   const returnUrl = searchParams.get("return");
   const keywordsParam = searchParams.get("keywords");
   const keywords = keywordsParam
     ? keywordsParam.split(",").map((k) => k.trim()).filter(Boolean)
     : undefined;
+  /** Query string for explore item URLs so keywords (and return) are preserved when using prev/next */
+  const exploreItemSearch = useMemo(() => {
+    const params = new URLSearchParams();
+    if (returnUrl) params.set("return", returnUrl);
+    if (keywords?.length) params.set("keywords", keywords.join(","));
+    const s = params.toString();
+    return s ? `?${s}` : "";
+  }, [returnUrl, keywords]);
+  /** Explore loads all available items (backend max 1000) into memory */
+  const EXPLORE_MAX_ITEMS = 1000;
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [count] = useState(100); // Increased default to fetch more items
   const [selectedItemForCollections, setSelectedItemForCollections] = useState<
     string | null
   >(null);
@@ -113,8 +121,8 @@ const ExploreModePage = () => {
   });
 
   const { data, isLoading, error, refetch } = useQuery({
-    queryKey: ["randomItems", category, count, keywords],
-    queryFn: () => itemsApi.getRandom(category, count, keywords),
+    queryKey: ["randomItems", category, EXPLORE_MAX_ITEMS, keywords],
+    queryFn: () => itemsApi.getRandom(category, EXPLORE_MAX_ITEMS, keywords),
     enabled: !collectionId && !storedItems && !isCategoryResolving, // Don't load if we have stored items or category is still resolving
   });
 
@@ -202,12 +210,17 @@ const ExploreModePage = () => {
     }
   }, [itemId, items]);
 
-  // Use singleItemData when navigating by itemId; otherwise prefer cached item data so collection badges stay correct after modal edits (list is not invalidated in single-item mode)
+  // In list view (no itemId in URL), subscribe to current item so +/− invalidation triggers re-render and UI updates
   const currentListItem = items[currentIndex];
-  const cachedItem = currentListItem ? queryClient.getQueryData<typeof singleItemData>(["item", currentListItem.id]) : undefined;
+  const currentItemIdForQuery = currentListItem?.id;
+  const { data: currentItemData } = useQuery({
+    queryKey: ["item", currentItemIdForQuery],
+    queryFn: () => itemsApi.getById(currentItemIdForQuery!),
+    enabled: !!currentItemIdForQuery && !itemId && items.length > 0,
+  });
   const currentItem = (itemId && singleItemData && singleItemData.id === itemId)
     ? singleItemData
-    : (cachedItem?.id === currentListItem?.id ? cachedItem : currentListItem);
+    : (currentItemData?.id === currentListItem?.id ? currentItemData : currentListItem);
 
   useEffect(() => {
     if (items.length > 0 && currentIndex >= items.length) {
@@ -326,18 +339,16 @@ const ExploreModePage = () => {
                     if (currentIndex > 0) {
                       const newIndex = currentIndex - 1;
                       setCurrentIndex(newIndex);
-                      // Update URL based on context
                       if (items[newIndex]) {
-                        const returnParam = returnUrl ? `?return=${encodeURIComponent(returnUrl)}` : "";
                         if (collectionId) {
                           navigate(
-                            `/explore/collection/${collectionId}/item/${items[newIndex].id}${returnParam}`,
+                            `/explore/collection/${collectionId}/item/${items[newIndex].id}${exploreItemSearch}`,
                             { replace: true }
                           );
                         } else if (category) {
-                          navigate(`/explore/${categoryNameToSlug(category)}/item/${items[newIndex].id}${returnParam}`, { replace: true });
+                          navigate(`/explore/${categoryNameToSlug(category)}/item/${items[newIndex].id}${exploreItemSearch}`, { replace: true });
                         } else {
-                          navigate(`/explore/item/${items[newIndex].id}${returnParam}`, {
+                          navigate(`/explore/item/${items[newIndex].id}${exploreItemSearch}`, {
                             replace: true,
                           });
                         }
@@ -358,18 +369,16 @@ const ExploreModePage = () => {
                     if (currentIndex < items.length - 1) {
                       const newIndex = currentIndex + 1;
                       setCurrentIndex(newIndex);
-                      // Update URL based on context
                       if (items[newIndex]) {
-                        const returnParam = returnUrl ? `?return=${encodeURIComponent(returnUrl)}` : "";
                         if (collectionId) {
                           navigate(
-                            `/explore/collection/${collectionId}/item/${items[newIndex].id}${returnParam}`,
+                            `/explore/collection/${collectionId}/item/${items[newIndex].id}${exploreItemSearch}`,
                             { replace: true }
                           );
                         } else if (category) {
-                          navigate(`/explore/${categoryNameToSlug(category)}/item/${items[newIndex].id}${returnParam}`, { replace: true });
+                          navigate(`/explore/${categoryNameToSlug(category)}/item/${items[newIndex].id}${exploreItemSearch}`, { replace: true });
                         } else {
-                          navigate(`/explore/item/${items[newIndex].id}${returnParam}`, {
+                          navigate(`/explore/item/${items[newIndex].id}${exploreItemSearch}`, {
                             replace: true,
                           });
                         }

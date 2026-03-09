@@ -41,9 +41,8 @@ export const ItemCollectionControls = ({
       queryClient.invalidateQueries({ queryKey: ["item", itemId] });
       queryClient.invalidateQueries({ queryKey: ["myItems"] });
       queryClient.invalidateQueries({ queryKey: ["categoryItems"] });
-      // Invalidate list queries so explore/collection view refetches and +/− state updates when currentItem comes from the list (e.g. first item with no itemId in URL)
       queryClient.invalidateQueries({ queryKey: ["collectionItems"] });
-      queryClient.invalidateQueries({ queryKey: ["randomItems"] });
+      // Do NOT invalidate randomItems here — refetch would return a new random order and reorder the list (e.g. item #2 jumps to #14). Parent uses cached item data for +/− state.
       onSuccess?.();
     },
   });
@@ -57,7 +56,7 @@ export const ItemCollectionControls = ({
       queryClient.invalidateQueries({ queryKey: ["myItems"] });
       queryClient.invalidateQueries({ queryKey: ["categoryItems"] });
       queryClient.invalidateQueries({ queryKey: ["collectionItems"] });
-      queryClient.invalidateQueries({ queryKey: ["randomItems"] });
+      // Do NOT invalidate randomItems here — refetch would reorder the list; parent uses cached item data for +/− state.
       onSuccess?.();
     },
   });
