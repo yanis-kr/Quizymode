@@ -18,12 +18,15 @@ interface ItemRatingsCommentsProps {
   };
   /** When navigating from list view, pass the URL to return to */
   returnUrl?: string;
+  /** When in study flow (Explore/Quiz), open comments in drawer instead of navigating */
+  onOpenComments?: (itemId: string) => void;
 }
 
 const ItemRatingsComments = ({
   itemId,
   navigationContext,
   returnUrl,
+  onOpenComments,
 }: ItemRatingsCommentsProps) => {
   const { isAuthenticated } = useAuth();
   const navigate = useNavigate();
@@ -126,27 +129,31 @@ const ItemRatingsComments = ({
       {/* Comments Link */}
       <button
         onClick={() => {
-          const params = new URLSearchParams();
-          if (returnUrl) {
-            params.set("return", returnUrl);
-          } else if (navigationContext) {
-            params.set("mode", navigationContext.mode);
-            if (navigationContext.category) {
-              params.set("category", navigationContext.category);
+          if (onOpenComments) {
+            onOpenComments(itemId);
+          } else {
+            const params = new URLSearchParams();
+            if (returnUrl) {
+              params.set("return", returnUrl);
+            } else if (navigationContext) {
+              params.set("mode", navigationContext.mode);
+              if (navigationContext.category) {
+                params.set("category", navigationContext.category);
+              }
+              if (navigationContext.collectionId) {
+                params.set("collectionId", navigationContext.collectionId);
+              }
+              params.set(
+                "currentIndex",
+                navigationContext.currentIndex.toString()
+              );
+              params.set("itemIds", navigationContext.itemIds.join(","));
             }
-            if (navigationContext.collectionId) {
-              params.set("collectionId", navigationContext.collectionId);
-            }
-            params.set(
-              "currentIndex",
-              navigationContext.currentIndex.toString()
+            const queryString = params.toString();
+            navigate(
+              `/items/${itemId}/comments${queryString ? `?${queryString}` : ""}`
             );
-            params.set("itemIds", navigationContext.itemIds.join(","));
           }
-          const queryString = params.toString();
-          navigate(
-            `/items/${itemId}/comments${queryString ? `?${queryString}` : ""}`
-          );
         }}
         className="text-sm text-indigo-600 hover:text-indigo-700 font-medium"
       >

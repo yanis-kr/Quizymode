@@ -1,21 +1,19 @@
-import * as React from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
 import { collectionsApi } from "@/api/collections";
 import { useAuth } from "@/contexts/AuthContext";
 import LoadingSpinner from "@/components/LoadingSpinner";
 import ErrorMessage from "@/components/ErrorMessage";
-import ItemListSection from "@/components/ItemListSection";
+import { ItemListView } from "@/components/ItemListView";
+import { ModeSwitcher } from "@/components/ModeSwitcher";
 import useItemSelection from "@/hooks/useItemSelection";
-import { MinusIcon, ArrowLeftIcon, EyeIcon, AcademicCapIcon, PencilIcon, TrashIcon } from "@heroicons/react/24/outline";
+import { ArrowLeftIcon } from "@heroicons/react/24/outline";
 
 const CollectionDetailPage = () => {
   const { id } = useParams<{ id: string }>();
   const { isAuthenticated, userId } = useAuth();
   const queryClient = useQueryClient();
   const navigate = useNavigate();
-  const [editingName, setEditingName] = React.useState(false);
-  const [nameValue, setNameValue] = React.useState("");
 
   const {
     data: collectionData,
@@ -46,28 +44,7 @@ const CollectionDetailPage = () => {
     },
   });
 
-  const renameMutation = useMutation({
-    mutationFn: (name: string) => collectionsApi.update(id!, { name }),
-    onSuccess: (data) => {
-      queryClient.invalidateQueries({ queryKey: ["collection", id] });
-      queryClient.invalidateQueries({ queryKey: ["collections"] });
-      setEditingName(false);
-      setNameValue(data.name);
-    },
-  });
-
-  const deleteMutation = useMutation({
-    mutationFn: () => collectionsApi.delete(id!),
-    onSuccess: () => {
-      navigate("/collections");
-    },
-  });
-
   const isOwner = isAuthenticated && userId && collectionData?.createdBy === userId;
-
-  React.useEffect(() => {
-    if (collectionData?.name != null) setNameValue(collectionData.name);
-  }, [collectionData?.name]);
 
   const items = itemsData?.items || [];
   const currentPageItemIds = items.map((item) => item.id);
@@ -102,24 +79,36 @@ const CollectionDetailPage = () => {
 
   return (
     <div className="px-4 py-6 sm:px-0">
-      <div className="mb-6 flex items-center space-x-4">
-        <button
-          onClick={() => navigate("/collections")}
-          className="flex items-center px-3 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-md hover:bg-gray-50"
-        >
-          <ArrowLeftIcon className="h-4 w-4 mr-2" />
-          Go Back
-        </button>
-        <h1 className="text-3xl font-bold text-gray-900">
-          {collectionData?.name || "Collection Items"}
-        </h1>
+      <div className="mb-6 flex flex-wrap items-center justify-between gap-4">
+        <div className="flex items-center space-x-4">
+          <button
+            onClick={() => navigate("/collections")}
+            className="flex items-center px-3 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-md hover:bg-gray-50"
+          >
+            <ArrowLeftIcon className="h-4 w-4 mr-2" />
+            Go Back
+          </button>
+          <h1 className="text-3xl font-bold text-gray-900">
+            {collectionData?.name || "Collection Items"}
+          </h1>
+        </div>
+        {items.length > 0 && (
+          <ModeSwitcher
+            availableModes={["list", "explore", "quiz"]}
+            activeMode="list"
+            onChange={(mode) => {
+              if (mode === "explore") navigate(`/explore/collection/${id}`);
+              else if (mode === "quiz") navigate(`/quiz/collection/${id}`);
+            }}
+          />
+        )}
       </div>
       <p className="text-gray-600 text-sm mb-6">
         View and manage items in this collection. Explore items to study them, take quizzes to test your knowledge, or remove items from the collection.
       </p>
 
       {items.length > 0 ? (
-        <ItemListSection
+        <ItemListView
           items={items}
           totalCount={items.length}
           page={1}
@@ -131,41 +120,21 @@ const CollectionDetailPage = () => {
           onDeselectAll={deselectAll}
           onAddSelectedToCollection={() => {}}
           onToggleSelect={toggleItem}
+          config={{
+            selectable: true,
+            showExplore: true,
+            showQuiz: true,
+            showRemoveFromCollection: !!isOwner,
+          }}
           isAuthenticated={isAuthenticated}
+          collectionId={id}
+          onRemoveFromCollection={(_, itemId) => handleRemoveItem(itemId)}
           onKeywordClick={(keywordName, item) => {
             const params = new URLSearchParams();
             if (item?.category) params.set("category", item.category);
             params.set("keywords", keywordName);
             navigate(`/my-items?${params.toString()}`);
           }}
-          renderActions={(item) => (
-            <>
-              <button
-                onClick={() => navigate(`/explore/collection/${id}/item/${item.id}`)}
-                className="p-2 text-indigo-600 hover:bg-indigo-50 rounded-md"
-                title="View item"
-              >
-                <EyeIcon className="h-5 w-5" />
-              </button>
-              <button
-                onClick={() => navigate(`/quiz/collection/${id}/item/${item.id}`)}
-                className="p-2 text-purple-600 hover:bg-purple-50 rounded-md"
-                title="Quiz mode"
-              >
-                <AcademicCapIcon className="h-5 w-5" />
-              </button>
-              {isOwner && (
-                <button
-                  onClick={() => handleRemoveItem(item.id)}
-                  disabled={removeItemMutation.isPending}
-                  className="p-2 text-red-600 hover:text-red-700 hover:bg-red-50 rounded-md disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
-                  title="Remove from collection"
-                >
-                  <MinusIcon className="h-5 w-5" />
-                </button>
-              )}
-            </>
-          )}
         />
       ) : (
         <div className="text-center py-12">

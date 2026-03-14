@@ -4,7 +4,7 @@ import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { itemsApi } from "@/api/items";
 import { useAuth } from "@/contexts/AuthContext";
 import { Navigate } from "react-router-dom";
-import ErrorMessage from "@/components/ErrorMessage";
+import { ItemForm } from "@/components/items/ItemForm";
 import { categoriesApi } from "@/api/categories";
 import { useQuery } from "@tanstack/react-query";
 import type { KeywordRequest } from "@/types/api";
@@ -26,9 +26,6 @@ const CreateItemPage = () => {
     keywords: [] as KeywordRequest[],
     source: "",
   });
-  const [newKeywordName, setNewKeywordName] = useState("");
-  const [newKeywordIsPrivate, setNewKeywordIsPrivate] = useState(true); // Default to true for regular users
-
   const { data: categoriesData } = useQuery({
     queryKey: ["categories"],
     queryFn: () => categoriesApi.getAll(),
@@ -87,33 +84,14 @@ const CreateItemPage = () => {
     createMutation.mutate(data);
   };
 
-  const addKeyword = () => {
-    const trimmedName = newKeywordName.trim().toLowerCase();
-    if (trimmedName.length === 0 || trimmedName.length > 10) {
-      return;
-    }
-    if (formData.keywords.some((k) => k.name.toLowerCase() === trimmedName && k.isPrivate === newKeywordIsPrivate)) {
-      return; // Already exists
-    }
-    setFormData({
-      ...formData,
-      keywords: [...formData.keywords, { name: trimmedName, isPrivate: newKeywordIsPrivate }],
-    });
-    setNewKeywordName("");
-    setNewKeywordIsPrivate(false);
-  };
-
-  const removeKeyword = (index: number) => {
-    setFormData({
-      ...formData,
-      keywords: formData.keywords.filter((_, i) => i !== index),
-    });
-  };
-
-  const handleIncorrectAnswerChange = (index: number, value: string) => {
-    const newAnswers = [...formData.incorrectAnswers];
-    newAnswers[index] = value;
-    setFormData({ ...formData, incorrectAnswers: newAnswers });
+  const getSubmitError = () => {
+    const err = createMutation.error as any;
+    if (!err?.response?.data) return err?.message ?? "Failed to create item.";
+    const data = err.response.data;
+    if (Array.isArray(data))
+      return data.map((e: any) => e.errorMessage ?? e.message ?? JSON.stringify(e)).join(", ");
+    if (typeof data === "string") return data;
+    return data.title ?? data.detail ?? "Failed to create item.";
   };
 
   if (!isAuthenticated) {
@@ -130,251 +108,19 @@ const CreateItemPage = () => {
           Create a new quiz item with a question, correct answer, incorrect answer options, and optional explanation. Regular users can create private items; admins can create public items visible to everyone.
         </p>
 
-        {validationError && (
-          <div className="mb-4">
-            <ErrorMessage
-              message={validationError}
-              onRetry={() => setValidationError("")}
-            />
-          </div>
-        )}
-
-        {createMutation.isError && (
-          <div className="mb-4">
-            <ErrorMessage
-              message={
-                createMutation.error &&
-                (createMutation.error as any).response?.data
-                  ? Array.isArray((createMutation.error as any).response.data)
-                    ? (createMutation.error as any).response.data
-                        .map(
-                          (err: any) =>
-                            err.errorMessage ||
-                            err.message ||
-                            JSON.stringify(err)
-                        )
-                        .join(", ")
-                    : typeof (createMutation.error as any).response.data ===
-                      "string"
-                    ? (createMutation.error as any).response.data
-                    : (createMutation.error as any).response.data.title ||
-                      (createMutation.error as any).response.data.detail ||
-                      "Failed to create item"
-                  : createMutation.error instanceof Error
-                  ? createMutation.error.message
-                  : "Failed to create item. Please check the browser console for details."
-              }
-              onRetry={() => createMutation.reset()}
-            />
-          </div>
-        )}
-
-        <form
+        <ItemForm
+          mode="create"
+          values={formData}
+          onChange={setFormData}
           onSubmit={handleSubmit}
-          className="bg-white shadow rounded-lg p-6 space-y-6"
-        >
-          <div>
-            <label className="block text-sm font-medium text-gray-700 mb-2">
-              Category *
-            </label>
-            <select
-              value={formData.category}
-              onChange={(e) =>
-                setFormData({ ...formData, category: e.target.value })
-              }
-              required
-              className="w-full px-3 py-2 border border-gray-300 rounded-md text-sm"
-            >
-              <option value="">Select a category</option>
-              {categoriesData?.categories.map((cat) => (
-                <option key={cat.category} value={cat.category}>
-                  {cat.category}
-                </option>
-              ))}
-            </select>
-          </div>
-
-          <div>
-            <label className="flex items-center">
-              <input
-                type="checkbox"
-                checked={formData.isPrivate}
-                onChange={(e) =>
-                  setFormData({ ...formData, isPrivate: e.target.checked })
-                }
-                disabled={!isAdmin}
-                className="mr-2"
-              />
-              <span className="text-sm font-medium text-gray-700">
-                Private Item {!isAdmin && "(default for regular users)"}
-              </span>
-            </label>
-            <p className="mt-1 ml-6 text-sm text-gray-500">
-              Private items are visible only to your account. {!isAdmin && "Only admins can create public items."}
-            </p>
-          </div>
-
-          <div>
-            <label className="block text-sm font-medium text-gray-700 mb-2">
-              Question *
-            </label>
-            <textarea
-              value={formData.question}
-              onChange={(e) =>
-                setFormData({ ...formData, question: e.target.value })
-              }
-              required
-              rows={3}
-              className="w-full px-3 py-2 border border-gray-300 rounded-md text-sm"
-            />
-          </div>
-
-          <div>
-            <label className="block text-sm font-medium text-gray-700 mb-2">
-              Correct Answer *
-            </label>
-            <input
-              type="text"
-              value={formData.correctAnswer}
-              onChange={(e) =>
-                setFormData({ ...formData, correctAnswer: e.target.value })
-              }
-              required
-              className="w-full px-3 py-2 border border-gray-300 rounded-md text-sm"
-            />
-          </div>
-
-          <div>
-            <label className="block text-sm font-medium text-gray-700 mb-2">
-              Incorrect Answers (at least 1 required) *
-            </label>
-            {formData.incorrectAnswers.map((answer, index) => (
-              <input
-                key={index}
-                type="text"
-                value={answer}
-                onChange={(e) =>
-                  handleIncorrectAnswerChange(index, e.target.value)
-                }
-                placeholder={`Incorrect answer ${index + 1}`}
-                className="w-full px-3 py-2 border border-gray-300 rounded-md text-sm mb-2"
-              />
-            ))}
-          </div>
-
-          <div>
-            <label className="block text-sm font-medium text-gray-700 mb-2">
-              Explanation
-            </label>
-            <textarea
-              value={formData.explanation}
-              onChange={(e) =>
-                setFormData({ ...formData, explanation: e.target.value })
-              }
-              rows={3}
-              className="w-full px-3 py-2 border border-gray-300 rounded-md text-sm"
-            />
-          </div>
-
-          <div>
-            <label className="block text-sm font-medium text-gray-700 mb-2">
-              Source (optional)
-            </label>
-            <input
-              type="text"
-              value={formData.source}
-              onChange={(e) =>
-                setFormData({ ...formData, source: e.target.value })
-              }
-              maxLength={200}
-              placeholder="e.g., ChatGPT, Claude, Manual, Textbook Name"
-              className="w-full px-3 py-2 border border-gray-300 rounded-md text-sm"
-            />
-            <p className="mt-1 text-sm text-gray-500">
-              Optional source attribution (max 200 characters).
-            </p>
-          </div>
-
-          <div>
-            <label className="block text-sm font-medium text-gray-700 mb-2">
-              Keywords (optional, max 10 characters each)
-            </label>
-            <div className="flex gap-2 mb-2">
-              <input
-                type="text"
-                value={newKeywordName}
-                onChange={(e) => {
-                  const value = e.target.value.slice(0, 10);
-                  setNewKeywordName(value);
-                }}
-                placeholder="Keyword name (max 10 chars)"
-                maxLength={10}
-                className="flex-1 px-3 py-2 border border-gray-300 rounded-md text-sm"
-                onKeyPress={(e) => {
-                  if (e.key === "Enter") {
-                    e.preventDefault();
-                    addKeyword();
-                  }
-                }}
-              />
-              <label className="flex items-center px-3 py-2 border border-gray-300 rounded-md text-sm">
-                <input
-                  type="checkbox"
-                  checked={newKeywordIsPrivate}
-                  onChange={(e) => setNewKeywordIsPrivate(e.target.checked)}
-                  disabled={!isAdmin}
-                  className="mr-2"
-                />
-                Private {!isAdmin && "(default)"}
-              </label>
-              <button
-                type="button"
-                onClick={addKeyword}
-                className="px-4 py-2 text-sm font-medium text-white bg-indigo-600 rounded-md hover:bg-indigo-700"
-              >
-                Add
-              </button>
-            </div>
-            {formData.keywords.length > 0 && (
-              <div className="flex flex-wrap gap-2">
-                {formData.keywords.map((keyword, index) => (
-                  <span
-                    key={index}
-                    className="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-blue-100 text-blue-800"
-                  >
-                    {keyword.name}
-                    {keyword.isPrivate && <span className="ml-1 text-xs">🔒</span>}
-                    <button
-                      type="button"
-                      onClick={() => removeKeyword(index)}
-                      className="ml-2 inline-flex items-center justify-center w-4 h-4 rounded-full hover:bg-blue-200"
-                      aria-label={`Remove ${keyword.name}`}
-                    >
-                      ×
-                    </button>
-                  </span>
-                ))}
-              </div>
-            )}
-          </div>
-
-          <div className="flex justify-end space-x-4">
-            <button
-              type="button"
-              onClick={() => navigate("/my-items")}
-              className="px-4 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-md hover:bg-gray-50"
-            >
-              Cancel
-            </button>
-            <button
-              type="submit"
-              disabled={createMutation.isPending}
-              className="px-4 py-2 text-sm font-medium text-white bg-indigo-600 rounded-md hover:bg-indigo-700 disabled:opacity-50"
-            >
-              {createMutation.isPending ? "Creating..." : "Create Item"}
-            </button>
-          </div>
-        </form>
+          onCancel={() => navigate("/my-items")}
+          categories={categoriesData?.categories ?? []}
+          isAdmin={!!isAdmin}
+          isPending={createMutation.isPending}
+          validationError={validationError}
+          submitError={createMutation.isError ? getSubmitError() : undefined}
+          onDismissSubmitError={() => createMutation.reset()}
+        />
       </div>
     </div>
   );

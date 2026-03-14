@@ -9,6 +9,8 @@ import ErrorMessage from "@/components/ErrorMessage";
 import { getApiErrorMessage } from "@/utils/apiError";
 import ItemListSection from "@/components/ItemListSection";
 import BulkItemCollectionsModal from "@/components/BulkItemCollectionsModal";
+import { ModeSwitcher } from "@/components/ModeSwitcher";
+import { BucketGridView } from "@/components/BucketGridView";
 import useItemSelection from "@/hooks/useItemSelection";
 import { useAuth } from "@/contexts/AuthContext";
 import { usePageSize } from "@/hooks/usePageSize";
@@ -31,7 +33,6 @@ import {
   PlusIcon,
   ChevronRightIcon as BreadcrumbChevron,
 } from "@heroicons/react/24/outline";
-import { StarIcon as StarIconSolid } from "@heroicons/react/24/solid";
 
 type SortOption = "name" | "rating" | "count";
 
@@ -369,49 +370,48 @@ const CategoriesPage = () => {
               keywords={keywordsFromUrl}
               onNavigate={navigateToSets}
             />
-            <div className="flex items-center gap-2 flex-shrink-0 flex-nowrap">
-              <div className="flex items-center gap-2">
-                <label className="text-sm text-gray-600">Per page:</label>
-                  <select
-                    value={pageSize}
-                    onChange={(e) =>
-                      handlePageSizeChange(parseInt(e.target.value, 10))
-                    }
-                    className="rounded border-gray-300 text-sm"
-                  >
-                    {PAGE_SIZE_OPTIONS.map((n) => (
-                      <option key={n} value={n}>
-                        {n}
-                      </option>
-                    ))}
-                  </select>
-                </div>
-                <button
-                  onClick={() =>
+            <div className="flex flex-wrap items-center gap-3 flex-shrink-0">
+              <ModeSwitcher
+                availableModes={["sets", "list", "explore", "quiz"]}
+                activeMode="list"
+                onChange={(mode) => {
+                  if (mode === "sets")
+                    navigateToSets(
+                      buildCategoryPath(
+                        categoryNameToSlug(categoryName),
+                        keywordsFromUrl
+                      )
+                    );
+                  else if (mode === "explore")
                     navigateToExplore(
                       categoryNameToSlug(categoryName),
                       keywordsFromUrl
-                    )
-                  }
-                  className="inline-flex items-center gap-1 px-3 py-1.5 text-sm font-medium text-indigo-600 bg-indigo-50 rounded-md hover:bg-indigo-100"
-                >
-                  <MagnifyingGlassIcon className="h-4 w-4" />
-                  Explore
-                </button>
-                <button
-                  onClick={() =>
+                    );
+                  else if (mode === "quiz")
                     navigateToQuiz(
                       categoryNameToSlug(categoryName),
                       keywordsFromUrl
-                    )
+                    );
+                }}
+              />
+              <div className="flex items-center gap-2">
+                <label className="text-sm text-gray-600">Per page:</label>
+                <select
+                  value={pageSize}
+                  onChange={(e) =>
+                    handlePageSizeChange(parseInt(e.target.value, 10))
                   }
-                  className="inline-flex items-center gap-1 px-3 py-1.5 text-sm font-medium text-purple-600 bg-purple-50 rounded-md hover:bg-purple-100"
+                  className="rounded border-gray-300 text-sm"
                 >
-                  <AcademicCapIcon className="h-4 w-4" />
-                  Quiz
-                </button>
+                  {PAGE_SIZE_OPTIONS.map((n) => (
+                    <option key={n} value={n}>
+                      {n}
+                    </option>
+                  ))}
+                </select>
               </div>
             </div>
+          </div>
             <h1 className="text-3xl font-bold text-gray-900 mt-4 mb-6">
               Items
             </h1>
@@ -502,48 +502,52 @@ const CategoriesPage = () => {
               keywords={keywordsFromUrl}
               onNavigate={navigateToSets}
             />
-            <div className="flex items-center gap-2 flex-shrink-0 flex-nowrap">
-              <SortControl sortBy={sortBy} onSortChange={handleSortChange} />
-                {keywordsFromUrl.length >= 2 && isAuthenticated && (
-                  <button
-                    onClick={() => {
-                      const params = new URLSearchParams();
-                      params.set("category", categoryName);
-                      if (keywordsFromUrl.length > 0) {
-                        params.set("keywords", keywordsFromUrl.join(","));
-                      }
-                      navigate(`/items/add?${params.toString()}`);
-                    }}
-                    className="inline-flex items-center gap-1 px-3 py-1.5 text-sm font-medium text-white bg-green-600 rounded-md hover:bg-green-700"
-                    title="Add items"
-                  >
-                    <PlusIcon className="h-4 w-4" />
-                    Add
-                  </button>
-                )}
-                <ActionButtons
-                  onListSets={undefined}
-                  onListItems={() =>
+            <div className="flex flex-wrap items-center gap-3 flex-shrink-0">
+              <ModeSwitcher
+                availableModes={
+                  sortedKeywords.length > 0
+                    ? ["sets", "list", "explore", "quiz"]
+                    : ["list", "explore", "quiz"]
+                }
+                activeMode="sets"
+                onChange={(mode) => {
+                  if (mode === "list")
                     navigateToItems(
                       buildCategoryPath(
                         categoryNameToSlug(categoryName),
                         keywordsFromUrl
                       )
-                    )
-                  }
-                  onExplore={() =>
+                    );
+                  else if (mode === "explore")
                     navigateToExplore(
                       categoryNameToSlug(categoryName),
                       keywordsFromUrl
-                    )
-                  }
-                  onQuiz={() =>
+                    );
+                  else if (mode === "quiz")
                     navigateToQuiz(
                       categoryNameToSlug(categoryName),
                       keywordsFromUrl
-                    )
-                  }
-                />
+                    );
+                }}
+              />
+              <SortControl sortBy={sortBy} onSortChange={handleSortChange} />
+              {keywordsFromUrl.length >= 2 && isAuthenticated && (
+                <button
+                  onClick={() => {
+                    const params = new URLSearchParams();
+                    params.set("category", categoryName);
+                    if (keywordsFromUrl.length > 0) {
+                      params.set("keywords", keywordsFromUrl.join(","));
+                    }
+                    navigate(`/items/add?${params.toString()}`);
+                  }}
+                  className="inline-flex items-center gap-1 px-3 py-1.5 text-sm font-medium text-white bg-green-600 rounded-md hover:bg-green-700"
+                  title="Add items"
+                >
+                  <PlusIcon className="h-4 w-4" />
+                  Add
+                </button>
+              )}
             </div>
           </div>
           <h1 className="text-3xl font-bold text-gray-900 mt-4 mb-6">
@@ -553,94 +557,29 @@ const CategoriesPage = () => {
           </h1>
 
           {sortedKeywords.length > 0 ? (
-              <>
-                <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
-                  {sortedKeywords.map((kw) => (
-                    <CategoryOrKeywordBox
-                      key={kw.name}
-                      name={kw.name}
-                      description={kw.description ?? undefined}
-                      itemCount={kw.itemCount}
-                      averageRating={kw.averageRating}
-                      onClick={() =>
-                        isLeaf
-                          ? navigateToItems(
-                              buildCategoryPath(
-                                categoryNameToSlug(categoryName),
-                                keywordsFromUrl
-                              ),
-                              true,
-                              kw.name
-                            )
-                          : handleKeywordClick(kw.name)
-                      }
-                      onListSets={
-                        isLeaf
-                          ? undefined
-                          : (e) => {
-                              e.stopPropagation();
-                              handleKeywordClick(kw.name);
-                            }
-                      }
-                      onListItems={(e) => {
-                        e.stopPropagation();
-                        if (isLeaf) {
-                          navigateToItems(
-                            buildCategoryPath(
-                              categoryNameToSlug(categoryName),
-                              keywordsFromUrl
-                            ),
-                            true,
-                            kw.name
-                          );
-                        } else {
-                          const pathKwLower = new Set(
-                            keywordsFromUrl.map((k) => k.toLowerCase())
-                          );
-                          const newKw =
-                            pathKwLower.has(kw.name.toLowerCase())
-                              ? keywordsFromUrl
-                              : [...keywordsFromUrl, kw.name];
-                          navigateToItems(
-                            buildCategoryPath(
-                              categoryNameToSlug(categoryName),
-                              dedupeKeywords(newKw)
-                            )
-                          );
-                        }
-                      }}
-                      onExplore={(e) => {
-                        e.stopPropagation();
-                        const pathKwLower = new Set(
-                          keywordsFromUrl.map((k) => k.toLowerCase())
-                        );
-                        const newKw =
-                          pathKwLower.has(kw.name.toLowerCase())
-                            ? keywordsFromUrl
-                            : [...keywordsFromUrl, kw.name];
-                        navigateToExplore(
-                          categoryNameToSlug(categoryName),
-                          newKw
-                        );
-                      }}
-                      onQuiz={(e) => {
-                        e.stopPropagation();
-                        const pathKwLower = new Set(
-                          keywordsFromUrl.map((k) => k.toLowerCase())
-                        );
-                        const newKw =
-                          pathKwLower.has(kw.name.toLowerCase())
-                            ? keywordsFromUrl
-                            : [...keywordsFromUrl, kw.name];
-                        navigateToQuiz(
-                          categoryNameToSlug(categoryName),
-                          newKw
-                        );
-                      }}
-                    />
-                  ))}
-                </div>
-              </>
+              <BucketGridView
+                buckets={sortedKeywords.map((kw) => ({
+                  id: kw.name,
+                  label: kw.name,
+                  itemCount: kw.itemCount,
+                  description: kw.description ?? null,
+                  averageRating: kw.averageRating ?? null,
+                }))}
+                onOpenBucket={(bucket) => {
+                  if (isLeaf) {
+                    navigateToItems(
+                      buildCategoryPath(
+                        categoryNameToSlug(categoryName),
+                        keywordsFromUrl
+                      ),
+                      true,
+                      bucket.label
+                    );
+                  } else {
+                    handleKeywordClick(bucket.label);
+                  }
+                }}
+              />
             ) : effectiveLeaf ? (
               <div className="mb-6">
                 <p className="text-gray-600 mb-4">
@@ -748,39 +687,19 @@ const CategoriesPage = () => {
           )}
         </div>
 
-        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          {sortedAndPaginatedCategories.categories.map((cat) => (
-            <CategoryOrKeywordBox
-              key={cat.category}
-              name={cat.category}
-              description={cat.description ?? undefined}
-              itemCount={cat.count}
-              averageRating={cat.averageStars}
-              isPrivate={cat.isPrivate}
-              onClick={() =>
-                navigateToSets(
-                  `/categories/${categoryNameToSlug(cat.category)}`
-                )
-              }
-              onListSets={(e) => {
-                e.stopPropagation();
-                navigateToSets(`/categories/${categoryNameToSlug(cat.category)}`);
-              }}
-              onListItems={(e) => {
-                e.stopPropagation();
-                navigateToItems(`/categories/${categoryNameToSlug(cat.category)}`);
-              }}
-              onExplore={(e) => {
-                e.stopPropagation();
-                navigateToExplore(categoryNameToSlug(cat.category), []);
-              }}
-              onQuiz={(e) => {
-                e.stopPropagation();
-                navigateToQuiz(categoryNameToSlug(cat.category), []);
-              }}
-            />
-          ))}
-        </div>
+        <BucketGridView
+          buckets={sortedAndPaginatedCategories.categories.map((cat) => ({
+            id: cat.category,
+            label: cat.category,
+            itemCount: cat.count,
+            description: cat.description ?? null,
+            averageRating: cat.averageStars ?? null,
+            isPrivate: cat.isPrivate,
+          }))}
+          onOpenBucket={(bucket) =>
+            navigateToSets(`/categories/${categoryNameToSlug(bucket.label)}`)
+          }
+        />
 
         {sortedAndPaginatedCategories.categories.length === 0 && (
           <div className="text-center py-12">
@@ -914,104 +833,6 @@ function ActionButtons({
         Quiz mode
       </button>
     </>
-  );
-}
-
-function CategoryOrKeywordBox({
-  name,
-  description,
-  itemCount,
-  averageRating,
-  isPrivate,
-  onClick,
-  onListSets,
-  onListItems,
-  onExplore,
-  onQuiz,
-}: {
-  name: string;
-  description?: string | null;
-  itemCount: number;
-  averageRating: number | null;
-  isPrivate?: boolean;
-  onClick: () => void;
-  onListSets?: (e: React.MouseEvent) => void;
-  onListItems: (e: React.MouseEvent) => void;
-  onExplore: (e: React.MouseEvent) => void;
-  onQuiz: (e: React.MouseEvent) => void;
-}) {
-  const linkClass = "inline-flex items-center gap-1 text-xs font-medium hover:underline";
-  return (
-    <div
-      role="button"
-      tabIndex={0}
-      onClick={onClick}
-      onKeyDown={(e) => e.key === "Enter" && onClick()}
-      className="bg-white overflow-hidden shadow rounded-lg hover:shadow-lg transition-shadow p-6 text-left cursor-pointer"
-    >
-      <div className="flex items-start justify-between gap-3">
-        <div className="flex-1 min-w-0">
-          <div className="flex items-center gap-2 flex-wrap">
-            <h3 className="text-lg font-medium text-gray-900">{name}</h3>
-            {isPrivate !== undefined && (
-              <span
-                className={`px-2 py-1 text-xs font-medium rounded ${
-                  isPrivate
-                    ? "bg-purple-100 text-purple-800"
-                    : "bg-green-100 text-green-800"
-                }`}
-              >
-                {isPrivate ? "Private" : "Public"}
-              </span>
-            )}
-          </div>
-          {description ? (
-            <p className="mt-1 text-sm text-gray-600 line-clamp-2">{description}</p>
-          ) : null}
-        </div>
-        <div className="flex flex-col items-end gap-0.5 flex-shrink-0 text-sm text-gray-500">
-          <span>{itemCount} items</span>
-          {averageRating != null && (
-            <div className="flex items-center gap-1 text-gray-600">
-              <StarIconSolid className="h-4 w-4 text-yellow-400" />
-              <span className="font-medium">{averageRating.toFixed(1)}</span>
-            </div>
-          )}
-        </div>
-      </div>
-      <div
-        className="mt-3 pt-3 border-t border-gray-100 flex flex-wrap gap-2 items-center"
-        onClick={(e) => e.stopPropagation()}
-      >
-        {onListSets ? (
-          <>
-            <button
-              onClick={onListSets}
-              className={`${linkClass} text-indigo-600`}
-              type="button"
-            >
-              <Squares2X2Icon className="h-4 w-4" />
-              Sets
-            </button>
-            <span className="text-gray-300">|</span>
-          </>
-        ) : null}
-        <button onClick={onListItems} className={`${linkClass} text-emerald-600`} type="button">
-          <ListBulletIcon className="h-4 w-4" />
-          List
-        </button>
-        <span className="text-gray-300">|</span>
-        <button onClick={onExplore} className={`${linkClass} text-indigo-600`} type="button">
-          <MagnifyingGlassIcon className="h-4 w-4" />
-          Explore
-        </button>
-        <span className="text-gray-300">|</span>
-        <button onClick={onQuiz} className={`${linkClass} text-purple-600`} type="button">
-          <AcademicCapIcon className="h-4 w-4" />
-          Quiz
-        </button>
-      </div>
-    </div>
   );
 }
 

@@ -7,20 +7,16 @@ import { categoriesApi } from "@/api/categories";
 import { useAuth } from "@/contexts/AuthContext";
 import LoadingSpinner from "@/components/LoadingSpinner";
 import ErrorMessage from "@/components/ErrorMessage";
-import ItemRatingsComments from "@/components/ItemRatingsComments";
+import { CommentsDrawer } from "@/components/CommentsDrawer";
+import { StudyShell } from "@/components/study/StudyShell";
+import { ExploreRenderer } from "@/components/study/ExploreRenderer";
 import ItemCollectionsModal from "@/components/ItemCollectionsModal";
-import { ItemCollectionControls } from "@/components/ItemCollectionControls";
 import { Link } from "react-router-dom";
 import {
   categoryNameToSlug,
   findCategoryNameFromSlug,
 } from "@/utils/categorySlug";
 import { ExploreQuizBreadcrumb } from "@/components/ExploreQuizBreadcrumb";
-import {
-  ChevronLeftIcon,
-  ChevronRightIcon,
-  ArrowLeftIcon,
-} from "@heroicons/react/24/outline";
 
 const ExploreModePage = () => {
   const { category: categorySlug, collectionId, itemId } = useParams();
@@ -46,6 +42,9 @@ const ExploreModePage = () => {
   const [selectedItemForCollections, setSelectedItemForCollections] = useState<
     string | null
   >(null);
+  const [commentsDrawerItemId, setCommentsDrawerItemId] = useState<string | null>(
+    null
+  );
 
   // Fetch categories to convert slug to actual category name
   const { data: categoriesData } = useQuery({
@@ -281,224 +280,121 @@ const ExploreModePage = () => {
     );
   }
 
+  const handlePrev = () => {
+    if (currentIndex > 0) {
+      const newIndex = currentIndex - 1;
+      setCurrentIndex(newIndex);
+      if (items[newIndex]) {
+        if (collectionId) {
+          navigate(
+            `/explore/collection/${collectionId}/item/${items[newIndex].id}${exploreItemSearch}`,
+            { replace: true }
+          );
+        } else if (category) {
+          navigate(`/explore/${categoryNameToSlug(category)}/item/${items[newIndex].id}${exploreItemSearch}`, { replace: true });
+        } else {
+          navigate(`/explore/item/${items[newIndex].id}${exploreItemSearch}`, { replace: true });
+        }
+      }
+    }
+  };
+
+  const handleNext = () => {
+    if (currentIndex < items.length - 1) {
+      const newIndex = currentIndex + 1;
+      setCurrentIndex(newIndex);
+      if (items[newIndex]) {
+        if (collectionId) {
+          navigate(
+            `/explore/collection/${collectionId}/item/${items[newIndex].id}${exploreItemSearch}`,
+            { replace: true }
+          );
+        } else if (category) {
+          navigate(`/explore/${categoryNameToSlug(category)}/item/${items[newIndex].id}${exploreItemSearch}`, { replace: true });
+        } else {
+          navigate(`/explore/item/${items[newIndex].id}${exploreItemSearch}`, { replace: true });
+        }
+      }
+    }
+  };
+
   return (
     <div className="px-4 py-6 sm:px-0">
-      <div className="max-w-4xl mx-auto">
-        {collectionId && (
-          <div className="mb-6 flex items-center space-x-4">
-            <button
-              onClick={() => navigate("/collections")}
-              className="flex items-center px-3 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-md hover:bg-gray-50"
-            >
-              <ArrowLeftIcon className="h-4 w-4 mr-2" />
-              Go Back
-            </button>
-            {collectionInfo && (
-              <h1 className="text-3xl font-bold text-gray-900">
-                {collectionInfo.name}
-              </h1>
-            )}
-          </div>
-        )}
-        {category && !collectionId && (
-          <div className="mb-6">
-            <ExploreQuizBreadcrumb
-              mode="explore"
-              categorySlug={categoryNameToSlug(category)}
-              categoryDisplayName={category}
-              keywords={keywords || []}
-              onNavigate={(path) => navigate(path)}
-            />
-          </div>
-        )}
-        {!category && !collectionId && returnUrl && (
-          <div className="mb-6">
-            <nav className="flex items-center gap-1 text-sm text-gray-600">
-              <button
-                onClick={() => navigate(returnUrl)}
-                className="text-indigo-600 hover:text-indigo-800"
-                type="button"
-              >
-                ← Back
-              </button>
-            </nav>
-          </div>
-        )}
-        <div className="bg-white shadow rounded-lg p-6 mb-4">
-          <div className="flex justify-between items-center mb-2">
-            <h2 className="text-2xl font-bold text-gray-900">Explore Mode</h2>
-          </div>
-          <p className="text-gray-600 text-sm mb-4">
-            Study mode for reviewing quiz items. View questions, answers, and explanations. Navigate through items using the arrow buttons or click on related items in comments.
-          </p>
-          <div className="flex justify-between items-center mb-4">
-            <div className="flex items-center space-x-4">
-              <div className="flex items-center space-x-2">
+      <StudyShell
+        backContent={
+          <>
+            {collectionId && (
+              <div className="mb-6 flex items-center space-x-4">
                 <button
-                  onClick={() => {
-                    if (currentIndex > 0) {
-                      const newIndex = currentIndex - 1;
-                      setCurrentIndex(newIndex);
-                      if (items[newIndex]) {
-                        if (collectionId) {
-                          navigate(
-                            `/explore/collection/${collectionId}/item/${items[newIndex].id}${exploreItemSearch}`,
-                            { replace: true }
-                          );
-                        } else if (category) {
-                          navigate(`/explore/${categoryNameToSlug(category)}/item/${items[newIndex].id}${exploreItemSearch}`, { replace: true });
-                        } else {
-                          navigate(`/explore/item/${items[newIndex].id}${exploreItemSearch}`, {
-                            replace: true,
-                          });
-                        }
-                      }
-                    }
-                  }}
-                  disabled={currentIndex === 0}
-                  className="p-1 text-gray-600 hover:text-gray-900 disabled:text-gray-300 disabled:cursor-not-allowed"
-                  title="Previous item"
+                  onClick={() => navigate("/collections")}
+                  className="flex items-center px-3 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-md hover:bg-gray-50"
                 >
-                  <ChevronLeftIcon className="h-5 w-5" />
+                  ← Go Back
                 </button>
-                <span className="text-sm text-gray-500 min-w-[80px] text-center">
-                  {currentIndex + 1} of {items.length}
-                </span>
-                <button
-                  onClick={() => {
-                    if (currentIndex < items.length - 1) {
-                      const newIndex = currentIndex + 1;
-                      setCurrentIndex(newIndex);
-                      if (items[newIndex]) {
-                        if (collectionId) {
-                          navigate(
-                            `/explore/collection/${collectionId}/item/${items[newIndex].id}${exploreItemSearch}`,
-                            { replace: true }
-                          );
-                        } else if (category) {
-                          navigate(`/explore/${categoryNameToSlug(category)}/item/${items[newIndex].id}${exploreItemSearch}`, { replace: true });
-                        } else {
-                          navigate(`/explore/item/${items[newIndex].id}${exploreItemSearch}`, {
-                            replace: true,
-                          });
-                        }
-                      }
-                    }
-                  }}
-                  disabled={currentIndex >= items.length - 1}
-                  className="p-1 text-gray-600 hover:text-gray-900 disabled:text-gray-300 disabled:cursor-not-allowed"
-                  title="Next item"
-                >
-                  <ChevronRightIcon className="h-5 w-5" />
-                </button>
-              </div>
-            </div>
-          </div>
-
-          {currentItem && (
-            <div className="space-y-4">
-              <div>
-                <h3 className="text-lg font-medium text-gray-900 mb-2">
-                  Question
-                </h3>
-                <p className="text-gray-700">{currentItem.question}</p>
-              </div>
-
-              <div>
-                <h3 className="text-lg font-medium text-gray-900 mb-2">
-                  Answer
-                </h3>
-                <p className="text-gray-700 font-semibold">
-                  {currentItem.correctAnswer}
-                </p>
-              </div>
-
-              {currentItem.explanation && (
-                <div>
-                  <h3 className="text-lg font-medium text-gray-900 mb-2">
-                    Explanation
-                  </h3>
-                  <p className="text-gray-700">{currentItem.explanation}</p>
-                </div>
-              )}
-
-              <div className="text-sm text-gray-500 space-y-1">
-                <div>Category: {currentItem.category}</div>
-                {currentItem.source && (
-                  <div>Source: {currentItem.source}</div>
+                {collectionInfo && (
+                  <h1 className="text-3xl font-bold text-gray-900">
+                    {collectionInfo.name}
+                  </h1>
                 )}
               </div>
-
-              {/* Ratings and Comments */}
-              <ItemRatingsComments
-                itemId={currentItem.id}
-                navigationContext={navigationContext}
-              />
-
-              {/* Collection Controls: manage icon + active (3-char) + add/remove from active */}
-              {(isAuthenticated || (currentItem.collections && currentItem.collections.length > 0)) && (
-                <div className="mt-4 flex items-center gap-2 flex-wrap">
-                  <ItemCollectionControls
-                    itemId={currentItem.id}
-                    itemCollectionIds={new Set((currentItem.collections ?? []).map((c: { id: string }) => c.id))}
-                    onOpenManageCollections={() => setSelectedItemForCollections(currentItem.id)}
-                  />
-                  {currentItem.collections && currentItem.collections.length > 0 && (
-                    <div className="flex items-center gap-2 flex-wrap">
-                      {currentItem.collections.map((collection: { id: string; name: string }) => (
-                        <button
-                          key={collection.id}
-                          onClick={() => navigate(`/collections?selected=${collection.id}`)}
-                          className="inline-flex items-center px-2 py-1 rounded text-xs font-medium bg-emerald-100 text-emerald-800 hover:bg-emerald-200 transition-colors"
-                          title={`Collection: ${collection.name}`}
-                        >
-                          {collection.name}
-                        </button>
-                      ))}
-                    </div>
-                  )}
-                </div>
-              )}
+            )}
+            {category && !collectionId && (
+              <div className="mb-6">
+                <ExploreQuizBreadcrumb
+                  mode="explore"
+                  categorySlug={categoryNameToSlug(category)}
+                  categoryDisplayName={category}
+                  keywords={keywords || []}
+                  onNavigate={(path) => navigate(path)}
+                />
+              </div>
+            )}
+            {!category && !collectionId && returnUrl && (
+              <div className="mb-6">
+                <nav className="flex items-center gap-1 text-sm text-gray-600">
+                  <button
+                    onClick={() => navigate(returnUrl)}
+                    className="text-indigo-600 hover:text-indigo-800"
+                    type="button"
+                  >
+                    ← Back
+                  </button>
+                </nav>
+              </div>
+            )}
+          </>
+        }
+        title="Explore Mode"
+        description="Study mode for reviewing quiz items. View questions, answers, and explanations. Navigate through items using the arrow buttons or click on related items in comments."
+        currentIndex={currentIndex}
+        totalCount={items.length}
+        onPrev={handlePrev}
+        onNext={handleNext}
+        isPrevDisabled={currentIndex === 0}
+        isNextDisabled={currentIndex >= items.length - 1}
+        currentItem={currentItem ?? undefined}
+        navigationContext={navigationContext}
+        onOpenComments={(id) => setCommentsDrawerItemId(id)}
+        onOpenManageCollections={(id) => setSelectedItemForCollections(id)}
+        isAuthenticated={isAuthenticated}
+        signUpPrompt={
+          !isAuthenticated ? (
+            <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-4 mb-4">
+              <p className="text-sm text-yellow-800">
+                <Link to="/signup" className="font-medium underline">
+                  Sign up
+                </Link>{" "}
+                or{" "}
+                <Link to="/login" className="font-medium underline">
+                  sign in
+                </Link>{" "}
+                to create your own items and collections!
+              </p>
             </div>
-          )}
-
-          <div className="flex justify-between mt-6">
-            <button
-              onClick={() => setCurrentIndex((prev) => Math.max(0, prev - 1))}
-              disabled={currentIndex === 0}
-              className="px-4 py-2 bg-gray-200 text-gray-700 rounded-md hover:bg-gray-300 disabled:opacity-50 disabled:cursor-not-allowed"
-            >
-              Previous
-            </button>
-            <button
-              onClick={() =>
-                setCurrentIndex((prev) => Math.min(items.length - 1, prev + 1))
-              }
-              disabled={currentIndex === items.length - 1}
-              className="px-4 py-2 bg-indigo-600 text-white rounded-md hover:bg-indigo-700 disabled:opacity-50 disabled:cursor-not-allowed"
-            >
-              Next
-            </button>
-          </div>
-        </div>
-
-        {!isAuthenticated && (
-          <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-4 mb-4">
-            <p className="text-sm text-yellow-800">
-              <Link to="/signup" className="font-medium underline">
-                Sign up
-              </Link>{" "}
-              or{" "}
-              <Link to="/login" className="font-medium underline">
-                sign in
-              </Link>{" "}
-              to create your own items and collections!
-            </p>
-          </div>
-        )}
-
-        <div className="text-center">
-          {collectionId ? (
+          ) : undefined
+        }
+        footerContent={
+          collectionId ? (
             <button
               onClick={() => navigate(`/collections/${collectionId}`)}
               className="text-indigo-600 hover:text-indigo-700"
@@ -526,10 +422,41 @@ const ExploreModePage = () => {
             <Link to="/categories" className="text-indigo-600 hover:text-indigo-700">
               ← Categories
             </Link>
-          )}
-        </div>
-      </div>
+          )
+        }
+      >
+        {currentItem && <ExploreRenderer item={currentItem} />}
+      </StudyShell>
 
+      <CommentsDrawer
+        itemId={commentsDrawerItemId}
+        onClose={() => setCommentsDrawerItemId(null)}
+        onNavigateToItem={(targetId) => {
+          const idx = items.findIndex((i) => i.id === targetId);
+          if (idx !== -1) {
+            setCurrentIndex(idx);
+            setCommentsDrawerItemId(targetId);
+          }
+        }}
+        previousItemId={
+          commentsDrawerItemId
+            ? (() => {
+                const idx = items.findIndex((i) => i.id === commentsDrawerItemId);
+                return idx > 0 ? items[idx - 1]?.id ?? null : null;
+              })()
+            : null
+        }
+        nextItemId={
+          commentsDrawerItemId
+            ? (() => {
+                const idx = items.findIndex((i) => i.id === commentsDrawerItemId);
+                return idx >= 0 && idx < items.length - 1
+                  ? items[idx + 1]?.id ?? null
+                  : null;
+              })()
+            : null
+        }
+      />
       {selectedItemForCollections && (
         <ItemCollectionsModal
           isOpen={!!selectedItemForCollections}
