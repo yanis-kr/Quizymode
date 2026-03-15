@@ -9,7 +9,10 @@ const initialFilters: MyItemsFilters = {
   selectedCategory: "",
   searchText: "",
   selectedKeywords: [],
-  ratingFilter: "all",
+  ratingMin: null,
+  ratingMax: null,
+  ratingIncludeUnrated: false,
+  ratingOnlyUnrated: false,
 };
 
 export const useMyItemsFilters = () => {
@@ -22,7 +25,10 @@ export const useMyItemsFilters = () => {
     filters.selectedCategory !== "" ||
     filters.selectedKeywords.length > 0 ||
     filters.searchText !== "" ||
-    filters.ratingFilter !== "all";
+    filters.ratingMin !== null ||
+    filters.ratingMax !== null ||
+    filters.ratingIncludeUnrated ||
+    filters.ratingOnlyUnrated;
 
   const clearAllFilters = useCallback(() => {
     setFilters(initialFilters);
@@ -62,7 +68,7 @@ export const useMyItemsFilters = () => {
       } else if (filterTypeName === "search") {
         setFilters((prev) => ({ ...prev, searchText: "" }));
       } else if (filterTypeName === "rating") {
-        setFilters((prev) => ({ ...prev, ratingFilter: "all" }));
+        setFilters((prev) => ({ ...prev, ratingMin: null, ratingMax: null, ratingIncludeUnrated: false, ratingOnlyUnrated: false }));
       }
     }
   }, []);

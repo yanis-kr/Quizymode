@@ -47,6 +47,7 @@ export interface ItemResponse {
   incorrectAnswers: string[];
   explanation: string;
   createdAt: string;
+  createdBy?: string | null;
   keywords: KeywordResponse[];
   collections: ItemCollectionResponse[];
   source?: string | null;
@@ -70,10 +71,43 @@ export interface CollectionResponse {
   createdBy: string;
   createdAt: string;
   itemCount: number;
+  isPublic?: boolean;
 }
 
 export interface CollectionsResponse {
   collections: CollectionResponse[];
+}
+
+/** Discover (public) collections - item includes bookmark state */
+export interface CollectionDiscoverItem {
+  id: string;
+  name: string;
+  createdBy: string;
+  createdAt: string;
+  itemCount: number;
+  isBookmarked: boolean;
+}
+
+export interface DiscoverCollectionsResponse {
+  items: CollectionDiscoverItem[];
+  totalCount: number;
+}
+
+export interface BookmarkItem {
+  id: string;
+  name: string;
+  createdBy: string;
+  createdAt: string;
+  itemCount: number;
+}
+
+export interface SharedWithMeItem {
+  id: string;
+  name: string;
+  createdBy: string;
+  createdAt: string;
+  itemCount: number;
+  sharedAt: string;
 }
 
 export interface ReviewResponse {

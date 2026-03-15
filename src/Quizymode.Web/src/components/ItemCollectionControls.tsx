@@ -4,13 +4,18 @@ import { useAuth } from "@/contexts/AuthContext";
 import { useActiveCollection } from "@/hooks/useActiveCollection";
 import { collectionsApi } from "@/api/collections";
 
+export interface CollectionUpdatePayload {
+  added?: { id: string; name: string };
+  removedId?: string;
+}
+
 interface ItemCollectionControlsProps {
   itemId: string;
   /** Item's current collection ids (from item.collections) */
   itemCollectionIds: Set<string>;
   onOpenManageCollections: () => void;
-  /** Called after add/remove so parent can refetch item if needed */
-  onSuccess?: () => void;
+  /** Called after add/remove so parent can update UI (e.g. quiz cache). Receives new ids and what changed. */
+  onSuccess?: (updatedCollectionIds: Set<string>, payload: CollectionUpdatePayload) => void;
 }
 
 /**
@@ -39,11 +44,14 @@ export const ItemCollectionControls = ({
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ["collections"] });
       queryClient.invalidateQueries({ queryKey: ["item", itemId] });
-      queryClient.invalidateQueries({ queryKey: ["myItems"] });
       queryClient.invalidateQueries({ queryKey: ["categoryItems"] });
       queryClient.invalidateQueries({ queryKey: ["collectionItems"] });
-      // Do NOT invalidate randomItems here — refetch would return a new random order and reorder the list (e.g. item #2 jumps to #14). Parent uses cached item data for +/− state.
-      onSuccess?.();
+      const nextIds = new Set([...itemCollectionIds, activeCollectionId!]);
+      onSuccess?.(nextIds, {
+        added: activeCollection
+          ? { id: activeCollectionId!, name: activeCollection.name }
+          : { id: activeCollectionId!, name: "" },
+      });
     },
   });
 
@@ -53,37 +61,29 @@ export const ItemCollectionControls = ({
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ["collections"] });
       queryClient.invalidateQueries({ queryKey: ["item", itemId] });
-      queryClient.invalidateQueries({ queryKey: ["myItems"] });
       queryClient.invalidateQueries({ queryKey: ["categoryItems"] });
       queryClient.invalidateQueries({ queryKey: ["collectionItems"] });
-      // Do NOT invalidate randomItems here — refetch would reorder the list; parent uses cached item data for +/− state.
-      onSuccess?.();
+      const nextIds = new Set([...itemCollectionIds].filter((id) => id !== activeCollectionId));
+      onSuccess?.(nextIds, { removedId: activeCollectionId! });
     },
   });
 
   if (!isAuthenticated) return null;
 
-  const activeNameShort = activeCollection?.name
-    ? activeCollection.name.slice(0, 3)
-    : "";
-
   return (
     <div className="flex items-center gap-2 flex-wrap">
       <button
         onClick={onOpenManageCollections}
-        className="p-2 text-blue-600 hover:bg-blue-50 rounded-md"
+        className="inline-flex items-center gap-1.5 px-2 py-1.5 text-blue-600 hover:bg-blue-50 rounded-md"
         title="Manage collections"
       >
-        <FolderIcon className="h-5 w-5" />
+        <FolderIcon className="h-5 w-5 shrink-0" />
+        {activeCollection?.name && (
+          <span className="text-sm font-medium text-slate-700 max-w-[10rem] truncate" title={activeCollection.name}>
+            {activeCollection.name}
+          </span>
+        )}
       </button>
-      {activeNameShort && (
-        <span
-          className="inline-flex items-center px-2 py-0.5 rounded text-xs font-medium bg-slate-100 text-slate-700 min-w-[2.5rem] justify-center"
-          title={activeCollection?.name}
-        >
-          {activeNameShort}
-        </span>
-      )}
       <button
         onClick={() => addMutation.mutate()}
         disabled={!canAddToActive || addMutation.isPending}

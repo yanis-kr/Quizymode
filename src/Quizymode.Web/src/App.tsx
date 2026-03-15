@@ -7,8 +7,8 @@ import ExploreModePage from "./features/items/pages/ExploreModePage";
 import QuizModePage from "./features/items/pages/QuizModePage";
 import LoginPage from "./features/auth/pages/LoginPage";
 import SignUpPage from "./features/auth/pages/SignUpPage";
-import MyItemsPage from "./features/items/pages/MyItemsPage";
 import CreateItemPage from "./features/items/pages/CreateItemPage";
+import ItemDetailPage from "./features/items/pages/ItemDetailPage";
 import CollectionsPage from "./features/collections/pages/CollectionsPage";
 import CollectionDetailPage from "./features/collections/pages/CollectionDetailPage";
 import AdminDashboardPage from "./features/admin/pages/AdminDashboardPage";
@@ -66,13 +66,13 @@ function App() {
         <Route path="/quiz/:category?" element={<QuizModePage />} />
         <Route path="/login" element={<LoginPage />} />
         <Route path="/signup" element={<SignUpPage />} />
-        <Route path="/my-items" element={<MyItemsPage />} />
-        <Route path="/my-items/bulk-create" element={<BulkCreateItemsPage />} />
         <Route path="/items/add" element={<AddItemsPage />} />
+        <Route path="/items/bulk-create" element={<BulkCreateItemsPage />} />
         <Route path="/items/upload" element={<UploadToCollectionPage />} />
         <Route path="/items/create" element={<CreateItemPage />} />
         <Route path="/items/:id/edit" element={<EditItemPage />} />
         <Route path="/items/:id/comments" element={<ItemCommentsPage />} />
+        <Route path="/items/:id" element={<ItemDetailPage />} />
         <Route path="/collections" element={<CollectionsPage />} />
         <Route path="/collections/:id" element={<CollectionDetailPage />} />
         <Route path="/admin" element={<AdminDashboardPage />} />

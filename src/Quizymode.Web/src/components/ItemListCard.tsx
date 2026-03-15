@@ -7,8 +7,6 @@ import ItemRatingsComments from "./ItemRatingsComments";
 
 interface ItemListCardProps {
   item: ItemResponse;
-  isSelected?: boolean;
-  onToggleSelect?: () => void;
   onKeywordClick?: (keywordName: string, item?: ItemResponse) => void;
   selectedKeywords?: string[];
   actions?: React.ReactNode;
@@ -19,28 +17,16 @@ interface ItemListCardProps {
 
 const ItemListCard = ({
   item,
-  isSelected,
-  onToggleSelect,
   onKeywordClick,
   selectedKeywords,
   actions,
   showRatingsAndComments,
   returnUrl,
 }: ItemListCardProps) => {
-  const hasSelection = typeof onToggleSelect === "function";
-
   return (
     <div className="bg-white shadow rounded-lg p-6">
       <div className="flex justify-between items-start">
         <div className="flex items-start space-x-3 flex-1">
-          {hasSelection && (
-            <input
-              type="checkbox"
-              checked={isSelected}
-              onChange={onToggleSelect}
-              className="mt-1 h-4 w-4 text-indigo-600 border-gray-300 rounded focus:ring-indigo-500"
-            />
-          )}
           <div className="flex-1">
             <h3 className="text-lg font-medium text-gray-900">
               {item.question}

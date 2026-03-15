@@ -66,10 +66,10 @@ const EditItemPage = () => {
   const updateMutation = useMutation({
     mutationFn: (data: any) => itemsApi.update(id!, data),
     onSuccess: () => {
-      queryClient.invalidateQueries({ queryKey: ["myItems"] });
+      queryClient.invalidateQueries({ queryKey: ["categoryItems"] });
       queryClient.invalidateQueries({ queryKey: ["item", id] });
       queryClient.invalidateQueries({ queryKey: ["categories"] });
-      navigate("/my-items");
+      navigate("/categories");
     },
     onError: (error: any) => {
       console.error("Failed to update item:", error);
@@ -129,7 +129,7 @@ const EditItemPage = () => {
       <div className="px-4 py-6 sm:px-0">
         <ErrorMessage
           message="Failed to load item. It may not exist or you may not have permission to edit it."
-          onRetry={() => navigate("/my-items")}
+          onRetry={() => navigate("/categories")}
         />
       </div>
     );
@@ -148,7 +148,7 @@ const EditItemPage = () => {
           values={formData}
           onChange={setFormData}
           onSubmit={handleSubmit}
-          onCancel={() => navigate("/my-items")}
+          onCancel={() => navigate("/categories")}
           categories={categoriesData?.categories ?? []}
           isAdmin={!!isAdmin}
           isPending={updateMutation.isPending}

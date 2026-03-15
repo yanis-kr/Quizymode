@@ -14,7 +14,8 @@ public static class GetCollectionById
         string Name,
         string CreatedBy,
         DateTime CreatedAt,
-        int ItemCount);
+        int ItemCount,
+        bool IsPublic);
 
     public sealed class Endpoint : IEndpoint
     {
@@ -68,7 +69,8 @@ public static class GetCollectionById
                 collection.Name,
                 collection.CreatedBy,
                 collection.CreatedAt,
-                itemCount);
+                itemCount,
+                collection.IsPublic);
 
             return Result.Success(response);
         }

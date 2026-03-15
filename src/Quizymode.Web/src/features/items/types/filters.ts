@@ -2,14 +2,26 @@ export type ItemTypeFilter = "all" | "public" | "private";
 
 export type FilterType = "category" | "keywords" | "search" | "itemType" | "rating";
 
-export type RatingFilterValue = "all" | "none" | "1+" | "2+" | "3+" | "4+" | "5";
+/** Min/max star rating (1-5). null = no bound. includeUnrated = also show items with no rating. onlyUnrated = show only items with no rating. */
+export interface RatingRangeFilter {
+  min: number | null;
+  max: number | null;
+  includeUnrated?: boolean;
+  onlyUnrated?: boolean;
+}
 
 export interface MyItemsFilters {
   filterType: ItemTypeFilter;
   selectedCategory: string;
   searchText: string;
   selectedKeywords: string[];
-  ratingFilter: RatingFilterValue;
+  /** Rating range: items with average rating between min and max (inclusive). null = any. */
+  ratingMin: number | null;
+  ratingMax: number | null;
+  /** When true, also include items that have no rating (only applies when range is set). */
+  ratingIncludeUnrated: boolean;
+  /** When true, show only items that have no rating (overrides range). */
+  ratingOnlyUnrated: boolean;
 }
 
 export interface FilterState {

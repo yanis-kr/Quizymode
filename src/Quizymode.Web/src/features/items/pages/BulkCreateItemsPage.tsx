@@ -110,7 +110,7 @@ const BulkCreateItemsPage = () => {
       if (response.createdCount > 0 && response.failedCount === 0) {
         // Only auto-navigate if all items succeeded
         setTimeout(() => {
-          navigate("/my-items");
+          navigate("/categories");
         }, 2000);
       }
     },
@@ -525,7 +525,7 @@ Now generate the JSON array only.`}
           <div className="flex justify-end space-x-4">
             <button
               type="button"
-              onClick={() => navigate("/my-items")}
+              onClick={() => navigate("/categories")}
               className="px-4 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-md hover:bg-gray-50"
             >
               Cancel
@@ -597,7 +597,7 @@ Now generate the JSON array only.`}
                       resultModal.message.includes("Successfully created") &&
                       !resultModal.details
                     ) {
-                      navigate("/my-items");
+                      navigate("/categories");
                     }
                   }}
                   className="px-4 py-2 text-sm font-medium text-white bg-indigo-600 rounded-md hover:bg-indigo-700"

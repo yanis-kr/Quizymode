@@ -4,7 +4,7 @@
  */
 import type { ReactNode } from "react";
 import { Link } from "react-router-dom";
-import { ChevronLeftIcon, ChevronRightIcon } from "@heroicons/react/24/outline";
+import { ChevronLeftIcon, ChevronRightIcon, EyeIcon } from "@heroicons/react/24/outline";
 import type { ItemResponse } from "@/types/api";
 import ItemRatingsComments from "@/components/ItemRatingsComments";
 import { ItemCollectionControls } from "@/components/ItemCollectionControls";
@@ -34,6 +34,12 @@ export interface StudyShellProps {
   };
   onOpenComments: (itemId: string) => void;
   onOpenManageCollections: (itemId: string) => void;
+  /** Called after add/remove so parent can update item in cache (e.g. quiz mode). */
+  onCollectionChange?: (
+    itemId: string,
+    updatedCollectionIds: Set<string>,
+    payload: { added?: { id: string; name: string }; removedId?: string }
+  ) => void;
   isAuthenticated: boolean;
   /** When false (e.g. quiz before answer), hide ratings and collection controls. Default true. */
   showRatingsAndCollections?: boolean;
@@ -59,6 +65,7 @@ export function StudyShell({
   navigationContext,
   onOpenComments,
   onOpenManageCollections,
+  onCollectionChange,
   isAuthenticated,
   showRatingsAndCollections = true,
   footerContent,
@@ -71,6 +78,15 @@ export function StudyShell({
         <div className="bg-white shadow rounded-lg p-6 mb-4">
           <div className="flex justify-between items-center mb-2">
             <h2 className="text-2xl font-bold text-gray-900">{title}</h2>
+            {currentItem && (
+              <Link
+                to={`/items/${currentItem.id}`}
+                className="p-2 text-indigo-600 hover:bg-indigo-50 rounded-md"
+                title="View item details"
+              >
+                <EyeIcon className="h-5 w-5" />
+              </Link>
+            )}
           </div>
           {description && (
             <p className="text-gray-600 text-sm mb-4">{description}</p>
@@ -110,7 +126,7 @@ export function StudyShell({
               {children}
 
               {showRatingsAndCollections && (
-                <>
+                <div className="flex flex-wrap items-center justify-between gap-2">
                   <ItemRatingsComments
                     itemId={currentItem.id}
                     navigationContext={navigationContext}
@@ -118,13 +134,19 @@ export function StudyShell({
                   />
                   {(isAuthenticated ||
                     (currentItem.collections && currentItem.collections.length > 0)) && (
-                    <div className="mt-4 flex items-center gap-2 flex-wrap">
+                    <div className="flex items-center gap-2 flex-wrap">
                       <ItemCollectionControls
                         itemId={currentItem.id}
                         itemCollectionIds={new Set(
                           (currentItem.collections ?? []).map((c) => c.id)
                         )}
                         onOpenManageCollections={() => onOpenManageCollections(currentItem.id)}
+                        onSuccess={
+                          onCollectionChange
+                            ? (ids, payload) =>
+                                onCollectionChange(currentItem.id, ids, payload)
+                            : undefined
+                        }
                       />
                       {currentItem.collections &&
                         currentItem.collections.length > 0 && (
@@ -143,7 +165,7 @@ export function StudyShell({
                         )}
                     </div>
                   )}
-                </>
+                </div>
               )}
             </div>
           )}

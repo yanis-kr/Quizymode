@@ -54,10 +54,10 @@ const HomePage = () => {
                     <ArrowRightIcon className="h-5 w-5" />
                   </Link>
                   <Link
-                    to="/my-items"
+                    to="/items/add"
                     className="bg-indigo-700 text-white px-6 py-3 rounded-lg font-semibold hover:bg-indigo-800 transition-colors inline-flex items-center gap-2"
                   >
-                    My Items
+                    Add Items
                     <ArrowRightIcon className="h-5 w-5" />
                   </Link>
                 </>
@@ -177,10 +177,10 @@ const HomePage = () => {
             <div className="mt-6">
               {isAuthenticated ? (
                 <Link
-                  to="/my-items"
+                  to="/categories"
                   className="text-purple-600 font-semibold hover:text-purple-700 inline-flex items-center gap-1"
                 >
-                  Go to My Items
+                  Browse Categories
                   <ArrowRightIcon className="h-4 w-4" />
                 </Link>
               ) : (

@@ -48,9 +48,9 @@ const CreateItemPage = () => {
   const createMutation = useMutation({
     mutationFn: (data: any) => itemsApi.create(data),
     onSuccess: () => {
-      queryClient.invalidateQueries({ queryKey: ["myItems"] });
+      queryClient.invalidateQueries({ queryKey: ["categoryItems"] });
       queryClient.invalidateQueries({ queryKey: ["categories"] });
-      navigate("/my-items");
+      navigate("/categories");
     },
     onError: (error: any) => {
       console.error("Failed to create item:", error);
@@ -113,7 +113,7 @@ const CreateItemPage = () => {
           values={formData}
           onChange={setFormData}
           onSubmit={handleSubmit}
-          onCancel={() => navigate("/my-items")}
+          onCancel={() => navigate("/categories")}
           categories={categoriesData?.categories ?? []}
           isAdmin={!!isAdmin}
           isPending={createMutation.isPending}

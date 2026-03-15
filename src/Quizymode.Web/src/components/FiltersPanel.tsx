@@ -1,5 +1,5 @@
 /**
- * Shared filter panel for List mode. Use in My Items, category list, and collection list.
+ * Shared filter panel for List mode. Use in category list and collection list.
  * Config controls which filters are shown; parent owns state.
  */
 export interface FiltersPanelConfig {

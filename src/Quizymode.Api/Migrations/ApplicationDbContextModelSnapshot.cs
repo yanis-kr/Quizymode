@@ -170,9 +170,38 @@ namespace Quizymode.Api.Migrations
                     b.Property<DateTime?>("UpdatedAt")
                         .HasColumnType("timestamp with time zone");
 
+                    b.Property<bool>("IsPublic")
+                        .HasColumnType("boolean");
+
                     b.HasKey("Id");
 
                     b.ToTable("Collections");
+                });
+
+            modelBuilder.Entity("Quizymode.Api.Shared.Models.CollectionBookmark", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uuid");
+
+                    b.Property<Guid>("CollectionId")
+                        .HasColumnType("uuid");
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<string>("UserId")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("CollectionId");
+
+                    b.HasIndex("UserId", "CollectionId")
+                        .IsUnique();
+
+                    b.ToTable("CollectionBookmarks");
                 });
 
             modelBuilder.Entity("Quizymode.Api.Shared.Models.CollectionItem", b =>
@@ -193,6 +222,39 @@ namespace Quizymode.Api.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("CollectionItems");
+                });
+
+            modelBuilder.Entity("Quizymode.Api.Shared.Models.CollectionShare", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uuid");
+
+                    b.Property<Guid>("CollectionId")
+                        .HasColumnType("uuid");
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<string>("SharedBy")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("SharedWithEmail")
+                        .HasColumnType("text");
+
+                    b.Property<string>("SharedWithUserId")
+                        .HasColumnType("text");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("CollectionId");
+
+                    b.HasIndex("SharedWithEmail");
+
+                    b.HasIndex("SharedWithUserId");
+
+                    b.ToTable("CollectionShares");
                 });
 
             modelBuilder.Entity("Quizymode.Api.Shared.Models.Comment", b =>

@@ -241,22 +241,10 @@ public static class GetKeywords
             return null;
         }
 
-        // If we have 2+ keywords, we may already have rank-2 selected - no more layers
+        // If we have 2+ keywords, we're at leaf: either rank-2 selected or item-level filter (e.g. s3 under aws)
         if (normalizedKeywords.Count >= 2)
         {
-            string rank1Name = normalizedKeywords[0];
-            string potentialRank2 = normalizedKeywords[1];
-            bool hasRank2UnderRank1 = await db.CategoryKeywords
-                .Where(ck => ck.CategoryId == categoryId
-                    && ck.NavigationRank == 2
-                    && ck.ParentName != null
-                    && ck.ParentName.ToLower() == rank1Name
-                    && ck.Keyword.Name.ToLower() == potentialRank2)
-                .AnyAsync(cancellationToken);
-            if (hasRank2UnderRank1)
-            {
-                return null; // Rank-2 already selected, no more navigation layers
-            }
+            return null; // No more navigation layers; return item-level keywords for this path
         }
 
         return 2; // Show rank-2 keywords under the selected rank-1 parent

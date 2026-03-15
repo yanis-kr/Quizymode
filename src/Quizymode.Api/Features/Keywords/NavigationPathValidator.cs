@@ -63,31 +63,16 @@ internal static class NavigationPathValidator
         // Validate keyword hierarchy
         if (normalizedKeywords.Count == 1)
         {
-            // Single keyword - must be rank-1
-            string keywordName = normalizedKeywords[0];
-            bool isValidRank1 = await IsValidRank1KeywordAsync(
-                categoryId.Value,
-                keywordName,
-                db,
-                userContext,
-                cancellationToken);
-
-            if (!isValidRank1)
-            {
-                return Result.Failure(Error.Validation("Navigation.InvalidPath",
-                    $"Keyword '{keywordName}' is not a valid rank-1 navigation keyword for category '{categoryName}'"));
-            }
-
+            // Single keyword: allow rank-1 (nav) or any item-level keyword (filter, e.g. /categories/certs/s3)
+            // Items API will resolve the keyword and filter; unknown keywords yield empty results.
             return Result.Success();
         }
 
-        if (normalizedKeywords.Count == 2)
+        // Two or more keywords: first must be rank-1; second can be rank-2 (nav) or item-level filter; rest are filters
+        if (normalizedKeywords.Count >= 2)
         {
-            // Two keywords - first must be rank-1, second must be rank-2 under that parent
             string rank1Name = normalizedKeywords[0];
-            string rank2Name = normalizedKeywords[1];
 
-            // Validate rank-1
             bool isValidRank1 = await IsValidRank1KeywordAsync(
                 categoryId.Value,
                 rank1Name,
@@ -101,27 +86,26 @@ internal static class NavigationPathValidator
                     $"Keyword '{rank1Name}' is not a valid rank-1 navigation keyword for category '{categoryName}'"));
             }
 
-            // Validate rank-2 under rank-1 parent
-            bool isValidRank2 = await IsValidRank2KeywordAsync(
+            // If this category has no rank-2 keywords under this rank-1, the second keyword is always
+            // treated as an item-level filter (e.g. "expressions" under language/english). Allow it.
+            bool hasRank2UnderRank1 = await CategoryHasRank2UnderAsync(
                 categoryId.Value,
                 rank1Name,
-                rank2Name,
                 db,
                 userContext,
                 cancellationToken);
 
-            if (!isValidRank2)
+            if (!hasRank2UnderRank1)
             {
-                return Result.Failure(Error.Validation("Navigation.InvalidPath",
-                    $"Keyword '{rank2Name}' is not a valid rank-2 navigation keyword under '{rank1Name}' in category '{categoryName}'"));
+                return Result.Success();
             }
 
+            // Category has rank-2 nav keywords; second keyword can be either rank-2 (nav) or item-level filter.
+            // Allow both — do not require the second keyword to be a valid rank-2.
             return Result.Success();
         }
 
-        // More than 2 keywords - invalid (navigation only supports 2 levels)
-        return Result.Failure(Error.Validation("Navigation.InvalidPath",
-            "Navigation paths can have at most 2 keyword levels (rank-1 and rank-2)"));
+        return Result.Success();
     }
 
     /// <summary>
@@ -182,6 +166,37 @@ internal static class NavigationPathValidator
         else
         {
             query = query.Where(ck => !ck.Keyword.IsPrivate 
+                || (ck.Keyword.IsPrivate && ck.Keyword.CreatedBy == userContext.UserId));
+        }
+
+        return await query.AnyAsync(cancellationToken);
+    }
+
+    /// <summary>
+    /// Returns true if the category has any rank-2 navigation keywords under the given rank-1 parent.
+    /// Used to allow the second keyword as item-level filter when the category has no rank-2 (e.g. language/english).
+    /// </summary>
+    private static async Task<bool> CategoryHasRank2UnderAsync(
+        Guid categoryId,
+        string rank1Name,
+        ApplicationDbContext db,
+        IUserContext userContext,
+        CancellationToken cancellationToken)
+    {
+        string rank1Lower = rank1Name.ToLower();
+        IQueryable<CategoryKeyword> query = db.CategoryKeywords
+            .Where(ck => ck.CategoryId == categoryId
+                && ck.NavigationRank == 2
+                && ck.ParentName != null
+                && ck.ParentName.ToLower() == rank1Lower);
+
+        if (!userContext.IsAuthenticated || string.IsNullOrEmpty(userContext.UserId))
+        {
+            query = query.Where(ck => !ck.Keyword.IsPrivate);
+        }
+        else
+        {
+            query = query.Where(ck => !ck.Keyword.IsPrivate
                 || (ck.Keyword.IsPrivate && ck.Keyword.CreatedBy == userContext.UserId));
         }
 

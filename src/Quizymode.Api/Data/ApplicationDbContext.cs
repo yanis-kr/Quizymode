@@ -22,6 +22,10 @@ public sealed class ApplicationDbContext : DbContext
 
     public DbSet<CollectionItem> CollectionItems => Set<CollectionItem>();
 
+    public DbSet<CollectionBookmark> CollectionBookmarks => Set<CollectionBookmark>();
+
+    public DbSet<CollectionShare> CollectionShares => Set<CollectionShare>();
+
     public DbSet<User> Users => Set<User>();
 
     public DbSet<Audit> Audits => Set<Audit>();

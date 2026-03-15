@@ -73,7 +73,7 @@ const ItemRatingsComments = ({
       setUserRating(response.stars);
       // Invalidate individual item rating stats
       queryClient.invalidateQueries({ queryKey: ["ratingStats", itemId] });
-      // Invalidate all bulk rating stats queries (used for filtering in My Items)
+      // Invalidate all bulk rating stats queries (used for filtering in list view)
       queryClient.invalidateQueries({ queryKey: ["ratingStats", "bulk"] });
       queryClient.invalidateQueries({ queryKey: ["userRating", itemId] });
       // Invalidate categories (ratings affect category average display)

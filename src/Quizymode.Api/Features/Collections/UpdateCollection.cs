@@ -2,6 +2,7 @@ using FluentValidation;
 using Microsoft.EntityFrameworkCore;
 using Quizymode.Api.Data;
 using Quizymode.Api.Infrastructure;
+using Quizymode.Api.Services;
 using Quizymode.Api.Shared.Kernel;
 using Quizymode.Api.Shared.Models;
 
@@ -9,13 +10,14 @@ namespace Quizymode.Api.Features.Collections;
 
 public static class UpdateCollection
 {
-    public sealed record Request(string Name);
+    public sealed record Request(string Name, bool? IsPublic);
 
     public sealed record Response(
         string Id,
         string Name,
         DateTime CreatedAt,
-        DateTime? UpdatedAt);
+        DateTime? UpdatedAt,
+        bool IsPublic);
 
     public sealed class Validator : AbstractValidator<Request>
     {
@@ -47,6 +49,7 @@ public static class UpdateCollection
             Request request,
             IValidator<Request> validator,
             ApplicationDbContext db,
+            IUserContext userContext,
             CancellationToken cancellationToken)
         {
             var validationResult = await validator.ValidateAsync(request, cancellationToken);
@@ -55,7 +58,7 @@ public static class UpdateCollection
                 return Results.BadRequest(validationResult.Errors);
             }
 
-            Result<Response> result = await HandleAsync(id, request, db, cancellationToken);
+            Result<Response> result = await HandleAsync(id, request, db, userContext, cancellationToken);
 
             return result.Match(
                 value => Results.Ok(value),
@@ -69,6 +72,7 @@ public static class UpdateCollection
         string id,
         Request request,
         ApplicationDbContext db,
+        IUserContext userContext,
         CancellationToken cancellationToken)
     {
         try
@@ -88,7 +92,17 @@ public static class UpdateCollection
                     Error.NotFound("Collection.NotFound", $"Collection with id {id} not found"));
             }
 
+            if (string.IsNullOrEmpty(userContext.UserId) || collection.CreatedBy != userContext.UserId)
+            {
+                return Result.Failure<Response>(
+                    Error.Validation("Collection.Forbidden", "You can only update your own collections"));
+            }
+
             collection.Name = request.Name;
+            if (request.IsPublic.HasValue)
+            {
+                collection.IsPublic = request.IsPublic.Value;
+            }
             collection.UpdatedAt = DateTime.UtcNow;
 
             await db.SaveChangesAsync(cancellationToken);
@@ -97,7 +111,8 @@ public static class UpdateCollection
                 collection.Id.ToString(),
                 collection.Name,
                 collection.CreatedAt,
-                collection.UpdatedAt);
+                collection.UpdatedAt,
+                collection.IsPublic);
 
             return Result.Success(response);
         }

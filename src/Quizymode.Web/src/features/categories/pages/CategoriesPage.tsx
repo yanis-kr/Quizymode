@@ -1,5 +1,5 @@
-import { useState, useEffect, useMemo } from "react";
-import { useQuery } from "@tanstack/react-query";
+import { useState, useEffect, useMemo, useRef } from "react";
+import { useQuery, useQueryClient } from "@tanstack/react-query";
 import { useNavigate, useSearchParams, useParams, Link } from "react-router-dom";
 import { categoriesApi } from "@/api/categories";
 import { keywordsApi } from "@/api/keywords";
@@ -8,10 +8,10 @@ import LoadingSpinner from "@/components/LoadingSpinner";
 import ErrorMessage from "@/components/ErrorMessage";
 import { getApiErrorMessage } from "@/utils/apiError";
 import ItemListSection from "@/components/ItemListSection";
-import BulkItemCollectionsModal from "@/components/BulkItemCollectionsModal";
-import { ModeSwitcher } from "@/components/ModeSwitcher";
+import ItemCollectionsModal from "@/components/ItemCollectionsModal";
+import { ItemCollectionControls } from "@/components/ItemCollectionControls";
+import { ScopeSecondaryBar } from "@/components/ScopeSecondaryBar";
 import { BucketGridView } from "@/components/BucketGridView";
-import useItemSelection from "@/hooks/useItemSelection";
 import { useAuth } from "@/contexts/AuthContext";
 import { usePageSize } from "@/hooks/usePageSize";
 import { SEO } from "@/components/SEO";
@@ -19,8 +19,21 @@ import {
   categoryNameToSlug,
   findCategoryNameFromSlug,
   buildCategoryPath,
+  getCategoryBasePath,
   parseKeywordSegment,
+  isAllCategoriesSlug,
+  getAllCategoriesSlug,
 } from "@/utils/categorySlug";
+import { ScopeFilterCombobox } from "@/components/ScopeFilterCombobox";
+import { FilterSection } from "../../items/components/filters/FilterSection";
+import { AddFiltersSection } from "../../items/components/filters/AddFiltersSection";
+import { ItemTypeFilter } from "../../items/components/filters/ItemTypeFilter";
+import { SearchFilter } from "../../items/components/filters/SearchFilter";
+import { RatingFilter } from "../../items/components/filters/RatingFilter";
+import { filterItems } from "../../items/utils/itemFilters";
+import { useBulkRatings } from "../../items/hooks/useBulkRatings";
+import type { FilterType } from "../../items/types/filters";
+import type { ItemTypeFilter as ItemTypeFilterValue } from "../../items/types/filters";
 import {
   AcademicCapIcon,
   ListBulletIcon,
@@ -60,21 +73,188 @@ const CategoriesPage = () => {
 
   const [categoriesPage, setCategoriesPage] = useState(categoriesPageFromUrl);
   const [itemsPage, setItemsPage] = useState(pageFromUrl);
-  const [selectedItemsForBulkCollections, setSelectedItemsForBulkCollections] =
-    useState<string[]>([]);
+  const [manageCollectionsItemId, setManageCollectionsItemId] = useState<string | null>(null);
   const [sortBy, setSortBy] = useState<SortOption>(sortFromUrl);
   const { pageSize: userPageSize } = usePageSize();
   const pageSize =
     pageSizeFromUrl !== 10 ? pageSizeFromUrl : userPageSize;
   const view = viewFromUrl === "items" ? "items" : "sets";
   const navigate = useNavigate();
+  const queryClient = useQueryClient();
+  // Scope filter state (synced from URL, applied on Apply)
+  const filterTypeFromUrl = (searchParams.get("filterType") || "all") as ItemTypeFilterValue;
+  const scopeSearchFromUrl = searchParams.get("search") || "";
+  const scopeRatingMinFromUrl = searchParams.get("ratingMin");
+  const scopeRatingMaxFromUrl = searchParams.get("ratingMax");
+  const scopeRatingUnratedFromUrl = searchParams.get("ratingUnrated");
+  const scopeRatingOnlyUnratedFromUrl = searchParams.get("ratingOnlyUnrated");
+  const scopeRatingMinFromUrlNum = scopeRatingMinFromUrl ? parseInt(scopeRatingMinFromUrl, 10) : null;
+  const scopeRatingMaxFromUrlNum = scopeRatingMaxFromUrl ? parseInt(scopeRatingMaxFromUrl, 10) : null;
+  const scopeRatingIncludeUnratedFromUrl = scopeRatingUnratedFromUrl === "1" || scopeRatingUnratedFromUrl === "true";
+  const scopeRatingOnlyUnratedFromUrlBool = scopeRatingOnlyUnratedFromUrl === "1" || scopeRatingOnlyUnratedFromUrl === "true";
 
-  const keywordsFromUrl = useMemo(() => {
+  const [showFilters, setShowFilters] = useState(false);
+  const [filterCategorySlug, setFilterCategorySlug] = useState(
+    categorySlugParam ?? getAllCategoriesSlug()
+  );
+  const [filterKeywords, setFilterKeywords] = useState<string[]>([]);
+  const [scopeFilterType, setScopeFilterType] = useState<ItemTypeFilterValue>(filterTypeFromUrl);
+  const [scopeSearchText, setScopeSearchText] = useState(scopeSearchFromUrl);
+  const [scopeRatingMin, setScopeRatingMin] = useState<number | null>(scopeRatingMinFromUrlNum);
+  const [scopeRatingMax, setScopeRatingMax] = useState<number | null>(scopeRatingMaxFromUrlNum);
+  const [scopeRatingIncludeUnrated, setScopeRatingIncludeUnrated] = useState(scopeRatingIncludeUnratedFromUrl);
+  const [scopeRatingOnlyUnrated, setScopeRatingOnlyUnrated] = useState(scopeRatingOnlyUnratedFromUrlBool);
+  const [activeScopeFilters, setActiveScopeFilters] = useState<Set<FilterType>>(() => {
+    const s = new Set<FilterType>();
+    if (filterTypeFromUrl !== "all") s.add("itemType");
+    if (scopeSearchFromUrl) s.add("search");
+    if (scopeRatingMinFromUrlNum !== null || scopeRatingMaxFromUrlNum !== null || scopeRatingIncludeUnratedFromUrl || scopeRatingOnlyUnratedFromUrlBool) s.add("rating");
+    return s;
+  });
+
+  const pathKeyRef = useRef<string | null>(null);
+  const pathKey = `${categorySlugParam ?? ""}/${kw1Param ?? ""}/${kw2Param ?? ""}`;
+
+  // Sync scope from URL; filter panel shows path (nav) keywords
+  useEffect(() => {
+    setFilterCategorySlug(categorySlugParam ?? getAllCategoriesSlug());
+    if (isAllCategoriesSlug(categorySlugParam)) {
+      const q = searchParams.get("keywords");
+      setFilterKeywords(q ? q.split(",").map((k) => k.trim()).filter(Boolean) : []);
+    } else {
+      const fromPath: string[] = [];
+      if (kw1Param) fromPath.push(parseKeywordSegment(kw1Param));
+      if (kw2Param) fromPath.push(parseKeywordSegment(kw2Param));
+      setFilterKeywords(fromPath);
+    }
+
+    const pathChanged = pathKeyRef.current !== null && pathKeyRef.current !== pathKey;
+    pathKeyRef.current = pathKey;
+
+    if (pathChanged) {
+      setScopeFilterType("all");
+      setScopeSearchText("");
+      setScopeRatingMin(null);
+      setScopeRatingMax(null);
+      setScopeRatingIncludeUnrated(false);
+      setScopeRatingOnlyUnrated(false);
+      setActiveScopeFilters((prev) => {
+        const next = new Set(prev);
+        next.delete("itemType");
+        next.delete("search");
+        next.delete("rating");
+        return next;
+      });
+      const p = new URLSearchParams(searchParams);
+      p.delete("filterType");
+      p.delete("search");
+      p.delete("ratingMin");
+      p.delete("ratingMax");
+      p.delete("ratingUnrated");
+      p.delete("ratingOnlyUnrated");
+      setSearchParams(p, { replace: true });
+    } else {
+      setScopeFilterType(filterTypeFromUrl);
+      setScopeSearchText(scopeSearchFromUrl);
+      setScopeRatingMin(scopeRatingMinFromUrlNum);
+      setScopeRatingMax(scopeRatingMaxFromUrlNum);
+      setScopeRatingIncludeUnrated(scopeRatingIncludeUnratedFromUrl);
+      setScopeRatingOnlyUnrated(scopeRatingOnlyUnratedFromUrlBool);
+      setActiveScopeFilters((prev) => {
+        const next = new Set(prev);
+        if (filterTypeFromUrl !== "all") next.add("itemType"); else next.delete("itemType");
+        if (scopeSearchFromUrl) next.add("search"); else next.delete("search");
+        if (scopeRatingMinFromUrlNum !== null || scopeRatingMaxFromUrlNum !== null || scopeRatingIncludeUnratedFromUrl || scopeRatingOnlyUnratedFromUrlBool) next.add("rating"); else next.delete("rating");
+        return next;
+      });
+    }
+  }, [categorySlugParam, kw1Param, kw2Param, pathKey, filterTypeFromUrl, scopeSearchFromUrl, scopeRatingMinFromUrlNum, scopeRatingMaxFromUrlNum, scopeRatingIncludeUnratedFromUrl, scopeRatingOnlyUnratedFromUrlBool]); // eslint-disable-line react-hooks/exhaustive-deps -- searchParams intentionally not in deps
+
+  const hasActiveScopeFilters =
+    scopeFilterType !== "all" || scopeSearchText !== "" || scopeRatingMin !== null || scopeRatingMax !== null || scopeRatingIncludeUnrated || scopeRatingOnlyUnrated;
+
+  const handleApplyFilter = () => {
+    const path = buildCategoryPath(filterCategorySlug, filterKeywords);
+    const params = new URLSearchParams();
+    params.set("view", view);
+    params.set("page", "1");
+    params.set("pagesize", pageSize.toString());
+    if (sortBy) params.set("sort", sortBy);
+    if (scopeFilterType !== "all") params.set("filterType", scopeFilterType);
+    if (scopeSearchText) params.set("search", scopeSearchText);
+    if (scopeRatingMin !== null) params.set("ratingMin", scopeRatingMin.toString());
+    if (scopeRatingMax !== null) params.set("ratingMax", scopeRatingMax.toString());
+    if (scopeRatingIncludeUnrated) params.set("ratingUnrated", "1");
+    if (scopeRatingOnlyUnrated) params.set("ratingOnlyUnrated", "1");
+    if (filterKeywordsFromQuery.length > 0) params.set("keywords", filterKeywordsFromQuery.join(","));
+    else params.delete("keywords");
+    navigate(`${path}?${params.toString()}`);
+    setShowFilters(false);
+  };
+
+  const addScopeFilter = (type: FilterType) => {
+    setActiveScopeFilters((prev) => new Set(prev).add(type));
+    setShowFilters(true);
+  };
+
+  const removeScopeFilter = (type: FilterType) => {
+    setActiveScopeFilters((prev) => {
+      const next = new Set(prev);
+      next.delete(type);
+      return next;
+    });
+    if (type === "itemType") setScopeFilterType("all");
+    if (type === "search") setScopeSearchText("");
+    if (type === "rating") {
+      setScopeRatingMin(null);
+      setScopeRatingMax(null);
+      setScopeRatingIncludeUnrated(false);
+      setScopeRatingOnlyUnrated(false);
+    }
+  };
+
+  const handleFilterCategoryChange = (slug: string) => {
+    setFilterCategorySlug(slug);
+    setFilterKeywords([]);
+  };
+
+  const handleFilterPrimaryTopicChange = (kw1: string) => {
+    setFilterKeywords((prev) => (kw1 ? [kw1] : []));
+  };
+
+  const handleFilterSubtopicChange = (kw2: string) => {
+    setFilterKeywords((prev) => {
+      if (!kw2) return prev.slice(0, 1);
+      if (prev[0]) return [prev[0], kw2];
+      return prev;
+    });
+  };
+
+  // Path keywords = navigation scope (from URL path: certs/aws/c002)
+  const pathKeywordsFromUrl = useMemo(() => {
     const kws: string[] = [];
     if (kw1Param) kws.push(parseKeywordSegment(kw1Param));
     if (kw2Param) kws.push(parseKeywordSegment(kw2Param));
     return kws;
   }, [kw1Param, kw2Param]);
+
+  // Filter keywords = additional narrowing (from query ?keywords=s3,ec2); only items that have these too
+  const filterKeywordsFromQuery = useMemo(() => {
+    const q = searchParams.get("keywords");
+    if (!q) return [];
+    return q.split(",").map((k) => k.trim()).filter(Boolean);
+  }, [searchParams]);
+
+  // For "all" categories we have no path; keywords come from query only
+  const keywordsFromUrl = useMemo(() => {
+    if (isAllCategoriesSlug(categorySlugParam)) return filterKeywordsFromQuery;
+    return pathKeywordsFromUrl;
+  }, [categorySlugParam, pathKeywordsFromUrl, filterKeywordsFromQuery]);
+
+  const keywordsFromUrlOrQuery = useMemo(() => {
+    if (isAllCategoriesSlug(categorySlugParam)) return filterKeywordsFromQuery;
+    return pathKeywordsFromUrl;
+  }, [categorySlugParam, pathKeywordsFromUrl, filterKeywordsFromQuery]);
 
   const { data: categoriesData, isLoading, error, refetch } = useQuery({
     queryKey: ["categories", search],
@@ -83,46 +263,203 @@ const CategoriesPage = () => {
 
   const categoryName = useMemo(() => {
     if (!categorySlugParam || !categoriesData?.categories) return null;
+    if (isAllCategoriesSlug(categorySlugParam)) return null;
     const names = categoriesData.categories.map((c) => c.category);
     return findCategoryNameFromSlug(categorySlugParam, names);
   }, [categorySlugParam, categoriesData?.categories]);
 
+  const filterCategoryName = useMemo(() => {
+    if (!categoriesData?.categories || isAllCategoriesSlug(filterCategorySlug)) return null;
+    const names = categoriesData.categories.map((c) => c.category);
+    return findCategoryNameFromSlug(filterCategorySlug, names);
+  }, [filterCategorySlug, categoriesData?.categories]);
+
+  const { data: rank1Data } = useQuery({
+    queryKey: ["keywords", "rank1", filterCategoryName],
+    queryFn: () => keywordsApi.getNavigationKeywords(filterCategoryName!, undefined),
+    enabled: !!filterCategoryName && !!categoriesData?.categories,
+  });
+
+  const { data: rank2Data } = useQuery({
+    queryKey: ["keywords", "rank2", filterCategoryName, filterKeywords[0]],
+    queryFn: () =>
+      keywordsApi.getNavigationKeywords(filterCategoryName!, [filterKeywords[0]]),
+    enabled: !!filterCategoryName && !!filterKeywords[0]?.trim(),
+  });
+
+  const { data: rank1AllData } = useQuery({
+    queryKey: ["keywords", "rank1", "all", categoriesData?.categories?.length],
+    queryFn: async () => {
+      const categories = categoriesData!.categories!;
+      const results = await Promise.all(
+        categories.map((c) => keywordsApi.getNavigationKeywords(c.category, undefined))
+      );
+      const names = new Set<string>();
+      results.forEach((r) =>
+        r.keywords.forEach((k) => {
+          if (k.name.toLowerCase() !== "other") names.add(k.name);
+        })
+      );
+      return Array.from(names).sort();
+    },
+    enabled:
+      isAllCategoriesSlug(filterCategorySlug) &&
+      !!categoriesData?.categories?.length,
+  });
+
+  const { data: rank2AllData } = useQuery({
+    queryKey: [
+      "keywords",
+      "rank2",
+      "all",
+      filterKeywords[0],
+      categoriesData?.categories?.length,
+    ],
+    queryFn: async () => {
+      const categories = categoriesData!.categories!;
+      const kw1 = filterKeywords[0]!;
+      const results = await Promise.all(
+        categories.map((c) =>
+          keywordsApi.getNavigationKeywords(c.category, [kw1])
+        )
+      );
+      const names = new Set<string>();
+      results.forEach((r) =>
+        r.keywords.forEach((k) => {
+          if (k.name.toLowerCase() !== "other") names.add(k.name);
+        })
+      );
+      return Array.from(names).sort();
+    },
+    enabled:
+      isAllCategoriesSlug(filterCategorySlug) &&
+      !!filterKeywords[0]?.trim() &&
+      !!categoriesData?.categories?.length,
+  });
+
+  const rank1Options = useMemo(() => {
+    if (isAllCategoriesSlug(filterCategorySlug)) return rank1AllData ?? [];
+    return rank1Data?.keywords?.filter((k) => k.name.toLowerCase() !== "other").map((k) => k.name) ?? [];
+  }, [filterCategorySlug, rank1Data, rank1AllData]);
+
+  const rank2Options = useMemo(() => {
+    if (isAllCategoriesSlug(filterCategorySlug)) return rank2AllData ?? [];
+    return rank2Data?.keywords?.map((k) => k.name) ?? [];
+  }, [filterCategorySlug, rank2Data, rank2AllData]);
+
   const { data: keywordsData, isLoading: isLoadingKeywords } = useQuery({
-    queryKey: ["keywords", categoryName, keywordsFromUrl],
+    queryKey: ["keywords", categoryName, pathKeywordsFromUrl],
     queryFn: () =>
       keywordsApi.getNavigationKeywords(
         categoryName!,
-        keywordsFromUrl.length > 0 ? keywordsFromUrl : undefined
+        pathKeywordsFromUrl.length > 0 ? pathKeywordsFromUrl : undefined
       ),
     enabled: !!categoryName && view === "sets",
   });
 
   const tagFromUrl = searchParams.get("tag") || undefined;
-  const keywordsForItems = useMemo(
-    () => (tagFromUrl ? [...keywordsFromUrl, tagFromUrl] : keywordsFromUrl),
-    [keywordsFromUrl, tagFromUrl]
-  );
+  // Items API: path keywords (nav scope) + filter keywords (narrowing); dedupe so path + query = AND
+  const keywordsForItems = useMemo(() => {
+    const pathKw = pathKeywordsFromUrl;
+    const filterKw = filterKeywordsFromQuery;
+    if (isAllCategoriesSlug(categorySlugParam)) {
+      const withTag = tagFromUrl ? [...filterKw, tagFromUrl] : filterKw;
+      return withTag;
+    }
+    const seen = new Set<string>();
+    const combined = [...pathKw, ...filterKw].filter((k) => {
+      const lower = k.toLowerCase();
+      if (seen.has(lower)) return false;
+      seen.add(lower);
+      return true;
+    });
+    return tagFromUrl ? [...combined, tagFromUrl] : combined;
+  }, [
+    categorySlugParam,
+    pathKeywordsFromUrl,
+    filterKeywordsFromQuery,
+    tagFromUrl,
+  ]);
 
-  const isLeaf = !!categoryName && keywordsFromUrl.length >= 2;
+  const isLeaf = !!categoryName && pathKeywordsFromUrl.length >= 2;
+
+  const isItemsViewAllowed = view === "items" && (!!categoryName || isAllCategoriesSlug(categorySlugParam));
+  const scopeIsPrivate =
+    scopeFilterType === "all" ? undefined : scopeFilterType === "private";
+  const hasClientSideScopeFilters =
+    scopeSearchText !== "" || scopeRatingMin !== null || scopeRatingMax !== null || scopeRatingOnlyUnrated;
+  const scopeQueryPageSize = hasClientSideScopeFilters ? 1000 : pageSize;
+  const scopeQueryPage = hasClientSideScopeFilters ? 1 : itemsPage;
 
   const { data: itemsData, isLoading: isLoadingItems, error: itemsError, refetch: refetchItems } = useQuery({
-    queryKey: ["categoryItems", categoryName, keywordsForItems, itemsPage, pageSize],
+    queryKey: [
+      "categoryItems",
+      categoryName,
+      keywordsForItems,
+      scopeQueryPage,
+      scopeQueryPageSize,
+      scopeIsPrivate,
+    ],
     queryFn: () =>
       itemsApi.getAll(
         categoryName || undefined,
-        undefined,
+        scopeIsPrivate,
         keywordsForItems.length > 0 ? keywordsForItems : undefined,
         undefined,
         undefined,
-        itemsPage,
-        pageSize
+        scopeQueryPage,
+        scopeQueryPageSize
       ),
-    enabled: !!categoryName && view === "items",
+    enabled: isItemsViewAllowed,
   });
 
-  const currentPageItemIds = (itemsData?.items || []).map((item) => item.id);
-  const { selectedItemIds, selectedIds, toggleItem, selectAll, deselectAll } =
-    useItemSelection(currentPageItemIds, [itemsPage, categoryName, view]);
+  const itemIds = (itemsData?.items ?? []).map((i) => i.id);
+  const { ratingsMap, isSuccess: ratingsLoaded } = useBulkRatings(
+    hasClientSideScopeFilters ? itemIds : []
+  );
+
+  const scopeFilteredItems = useMemo(
+    () =>
+      hasClientSideScopeFilters && itemsData?.items
+        ? filterItems({
+            items: itemsData.items,
+            searchText: scopeSearchText,
+            ratingRange: { min: scopeRatingMin, max: scopeRatingMax, includeUnrated: scopeRatingIncludeUnrated, onlyUnrated: scopeRatingOnlyUnrated },
+            ratingsMap,
+            ratingsLoaded,
+          })
+        : itemsData?.items ?? [],
+    [
+      hasClientSideScopeFilters,
+      itemsData?.items,
+      scopeSearchText,
+      scopeRatingMin,
+      scopeRatingMax,
+      scopeRatingIncludeUnrated,
+      scopeRatingOnlyUnrated,
+      ratingsMap,
+      ratingsLoaded,
+    ]
+  );
+
+  const scopeDisplayItems = useMemo(() => {
+    if (!hasClientSideScopeFilters) return itemsData?.items ?? [];
+    const start = (itemsPage - 1) * pageSize;
+    return scopeFilteredItems.slice(start, start + pageSize);
+  }, [
+    hasClientSideScopeFilters,
+    itemsData?.items,
+    scopeFilteredItems,
+    itemsPage,
+    pageSize,
+  ]);
+
+  const scopeTotalCount = hasClientSideScopeFilters
+    ? scopeFilteredItems.length
+    : itemsData?.totalCount ?? 0;
+  const scopeTotalPages = hasClientSideScopeFilters
+    ? Math.ceil(scopeFilteredItems.length / pageSize) || 1
+    : itemsData?.totalPages ?? 1;
 
   useEffect(() => {
     if (!categorySlugParam && categoriesPage !== 1) {
@@ -173,7 +510,7 @@ const CategoriesPage = () => {
 
   const sortedKeywords = useMemo(() => {
     if (!keywordsData?.keywords) return [];
-    const pathKwLower = new Set(keywordsFromUrl.map((k) => k.toLowerCase()));
+    const pathKwLower = new Set(pathKeywordsFromUrl.map((k) => k.toLowerCase()));
     const filtered = keywordsData.keywords.filter(
       (kw) => !pathKwLower.has(kw.name.toLowerCase())
     );
@@ -193,7 +530,7 @@ const CategoriesPage = () => {
           return 0;
       }
     });
-  }, [keywordsData?.keywords, keywordsFromUrl, sortBy]);
+  }, [keywordsData?.keywords, pathKeywordsFromUrl, sortBy]);
 
   const effectiveLeaf =
     isLeaf || (keywordsFromUrl.length >= 1 && sortedKeywords.length === 0);
@@ -215,21 +552,57 @@ const CategoriesPage = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
+  const categoryBasePath = getCategoryBasePath(
+    categorySlugParam ?? getAllCategoriesSlug()
+  );
+  // Full path = category + nav keywords (path segments); "all" has no path keywords
+  const scopePathWithNav = useMemo(
+    () =>
+      buildCategoryPath(
+        categorySlugParam ?? getAllCategoriesSlug(),
+        isAllCategoriesSlug(categorySlugParam) ? [] : pathKeywordsFromUrl
+      ),
+    [categorySlugParam, pathKeywordsFromUrl]
+  );
+  const currentScopePath = scopePathWithNav;
+
+  const stripEphemeralFilterParams = (p: URLSearchParams) => {
+    p.delete("filterType");
+    p.delete("search");
+    p.delete("ratingMin");
+    p.delete("ratingMax");
+    p.delete("ratingUnrated");
+    p.delete("ratingOnlyUnrated");
+  };
+
   const navigateToSets = (path: string) => {
     const p = new URLSearchParams(searchParams);
+    if (path !== currentScopePath) stripEphemeralFilterParams(p);
     p.set("view", "sets");
     p.delete("page");
     p.delete("pagesize");
+    p.delete("keywords"); // sets view = nav only; filter keywords cleared
     navigate(`${path}?${p.toString()}`);
   };
 
-  const navigateToItems = (path: string, resetPage = true, tag?: string) => {
+  const navigateToItems = (
+    path: string,
+    resetPage = true,
+    tag?: string,
+    filterKeywords?: string[]
+  ) => {
     const p = new URLSearchParams(searchParams);
+    if (path !== currentScopePath) stripEphemeralFilterParams(p);
     p.set("view", "items");
     if (resetPage) p.set("page", "1");
     p.set("pagesize", pageSize.toString());
     if (tag) p.set("tag", tag);
     else p.delete("tag");
+    // filterKeywords = query param for narrowing (path has nav scope)
+    if (filterKeywords !== undefined) {
+      if (filterKeywords.length > 0) p.set("keywords", filterKeywords.join(","));
+      else p.delete("keywords");
+    }
     navigate(`${path}?${p.toString()}`);
   };
 
@@ -243,70 +616,111 @@ const CategoriesPage = () => {
     });
   };
 
-  const navigateToExplore = (pathCategorySlug: string, kws: string[]) => {
-    const base = `/explore/${pathCategorySlug}`;
+  const navigateToExplore = (
+    pathCategorySlug: string,
+    kws: string[],
+    filteredItems?: { id: string }[]
+  ) => {
     const deduped = dedupeKeywords(kws);
-    if (deduped.length > 0) {
-      navigate(`${base}?keywords=${deduped.join(",")}`);
+    const p = buildScopeFilterQuery();
+    if (deduped.length > 0) p.set("keywords", deduped.join(","));
+    const query = p.toString() ? `?${p.toString()}` : "";
+    if (filteredItems && filteredItems.length > 0) {
+      sessionStorage.setItem(
+        "navigationContext_explore",
+        JSON.stringify({
+          mode: "explore",
+          category: categoryName ?? undefined,
+          items: filteredItems,
+          currentIndex: 0,
+        })
+      );
+      navigate(`/explore/${pathCategorySlug}/item/${filteredItems[0].id}${query}`);
     } else {
-      navigate(base);
+      navigate(`/explore/${pathCategorySlug}${query}`);
     }
   };
 
-  const navigateToQuiz = (pathCategorySlug: string, kws: string[]) => {
-    const base = `/quiz/${pathCategorySlug}`;
+  const navigateToQuiz = (
+    pathCategorySlug: string,
+    kws: string[],
+    filteredItems?: { id: string }[]
+  ) => {
     const deduped = dedupeKeywords(kws);
-    if (deduped.length > 0) {
-      navigate(`${base}?keywords=${deduped.join(",")}`);
+    const p = buildScopeFilterQuery();
+    if (deduped.length > 0) p.set("keywords", deduped.join(","));
+    const query = p.toString() ? `?${p.toString()}` : "";
+    if (filteredItems && filteredItems.length > 0) {
+      const payload = {
+        mode: "quiz" as const,
+        category: categoryName ?? undefined,
+        items: filteredItems,
+        currentIndex: 0,
+      };
+      sessionStorage.setItem("navigationContext_quiz", JSON.stringify(payload));
+      sessionStorage.setItem("quiz_scope_items_from_categories", JSON.stringify(payload));
+      navigate(`/quiz/${pathCategorySlug}/item/${filteredItems[0].id}${query}`);
     } else {
-      navigate(base);
+      navigate(`/quiz/${pathCategorySlug}${query}`);
     }
   };
 
+  // Sets view: click = add keyword to path (navigate deeper)
   const handleKeywordClick = (keyword: string) => {
-    const newKeywords = [...keywordsFromUrl, keyword];
-    const path = buildCategoryPath(
-      categoryNameToSlug(categoryName!),
-      newKeywords
-    );
+    const newPathKeywords = [...pathKeywordsFromUrl, keyword];
+    const path = categoryName
+      ? buildCategoryPath(categoryNameToSlug(categoryName), newPathKeywords)
+      : "/categories";
     navigateToSets(path);
+  };
+
+  const buildItemsViewPath = () => scopePathWithNav;
+
+  /** Build query params for scope filters (item type, search, rating) for use in Explore/Quiz URLs */
+  const buildScopeFilterQuery = () => {
+    const p = new URLSearchParams();
+    if (scopeFilterType !== "all") p.set("filterType", scopeFilterType);
+    if (scopeSearchText) p.set("search", scopeSearchText);
+    if (scopeRatingMin !== null) p.set("ratingMin", scopeRatingMin.toString());
+    if (scopeRatingMax !== null) p.set("ratingMax", scopeRatingMax.toString());
+    if (scopeRatingIncludeUnrated) p.set("ratingUnrated", "1");
+    if (scopeRatingOnlyUnrated) p.set("ratingOnlyUnrated", "1");
+    return p;
+  };
+
+  const buildItemsViewSearchParams = (pageNum: number, pageSizeNum: number) => {
+    const p = new URLSearchParams(searchParams);
+    p.set("view", "items");
+    p.set("page", pageNum.toString());
+    p.set("pagesize", pageSizeNum.toString());
+    if (scopeFilterType !== "all") p.set("filterType", scopeFilterType);
+    if (scopeSearchText) p.set("search", scopeSearchText);
+    if (scopeRatingMin !== null) p.set("ratingMin", scopeRatingMin.toString());
+    if (scopeRatingMax !== null) p.set("ratingMax", scopeRatingMax.toString());
+    if (scopeRatingIncludeUnrated) p.set("ratingUnrated", "1");
+    if (scopeRatingOnlyUnrated) p.set("ratingOnlyUnrated", "1");
+    if (filterKeywordsFromQuery.length > 0) {
+      p.set("keywords", filterKeywordsFromQuery.join(","));
+    }
+    if (tagFromUrl) p.set("tag", tagFromUrl);
+    return p;
   };
 
   const handlePageChange = (newPage: number) => {
     setItemsPage(newPage);
-    if (categoryName) {
-      const path = buildCategoryPath(
-        categoryNameToSlug(categoryName),
-        keywordsFromUrl
-      );
-      const p = new URLSearchParams(searchParams);
-      p.set("view", "items");
-      p.set("page", newPage.toString());
-      p.set("pagesize", pageSize.toString());
-      navigate(`${path}?${p.toString()}`);
-    }
+    const path = buildItemsViewPath();
+    const p = buildItemsViewSearchParams(newPage, pageSize);
+    navigate(`${path}?${p.toString()}`);
   };
 
   const handlePageSizeChange = (newSize: number) => {
-    if (categoryName) {
-      const path = buildCategoryPath(
-        categoryNameToSlug(categoryName),
-        keywordsFromUrl
-      );
-      const p = new URLSearchParams(searchParams);
-      p.set("view", "items");
-      p.set("page", "1");
-      p.set("pagesize", newSize.toString());
-      navigate(`${path}?${p.toString()}`);
-    }
+    const path = buildItemsViewPath();
+    const p = buildItemsViewSearchParams(1, newSize);
+    navigate(`${path}?${p.toString()}`);
   };
 
-  const handleAddSelectedToCollection = () => {
-    if (selectedIds.length > 0) setSelectedItemsForBulkCollections(selectedIds);
-  };
-
-  const listItemsReturnUrl = categoryName
-    ? `${buildCategoryPath(categoryNameToSlug(categoryName), keywordsFromUrl)}?view=items&page=${itemsPage}&pagesize=${pageSize}${tagFromUrl ? `&tag=${encodeURIComponent(tagFromUrl)}` : ""}`
+  const listItemsReturnUrl = (categoryName || isAllCategoriesSlug(categorySlugParam))
+    ? `${buildItemsViewPath()}?${buildItemsViewSearchParams(itemsPage, pageSize).toString()}`
     : undefined;
 
   if (isLoading) return <LoadingSpinner />;
@@ -324,7 +738,7 @@ const CategoriesPage = () => {
     );
   }
 
-  if (categorySlugParam && !categoryName && categoriesData?.categories) {
+  if (categorySlugParam && !isAllCategoriesSlug(categorySlugParam) && !categoryName && categoriesData?.categories) {
     return (
       <div className="px-4 py-6">
         <div className="max-w-2xl mx-auto">
@@ -340,7 +754,7 @@ const CategoriesPage = () => {
     );
   }
 
-  if (categoryName && view === "items") {
+  if (view === "items" && (categoryName || isAllCategoriesSlug(categorySlugParam))) {
     if (isLoadingItems) return <LoadingSpinner />;
     if (itemsError) {
       const itemsErrorDetail = getApiErrorMessage(itemsError);
@@ -356,44 +770,140 @@ const CategoriesPage = () => {
       );
     }
 
+    const scopePath = scopePathWithNav;
+
     return (
       <>
         <SEO
-          title={`${categoryName} Category`}
-          description={`Browse items in the ${categoryName} category on Quizymode.`}
-          canonical={`https://www.quizymode.com${buildCategoryPath(categoryNameToSlug(categoryName), keywordsFromUrl)}`}
+          title={categoryName ? `${categoryName} Category` : "All categories"}
+          description={categoryName ? `Browse items in the ${categoryName} category on Quizymode.` : "Browse items across all categories on Quizymode."}
+          canonical={`https://www.quizymode.com${scopePath}`}
         />
         <div className="px-4 py-6 sm:px-0">
+          <ScopeSecondaryBar
+            scopeType="category"
+            activeMode="list"
+            availableModes={["sets", "list", "explore", "quiz"]}
+            onModeChange={(mode) => {
+              const path = scopePathWithNav;
+              const kw = keywordsForItems;
+              if (mode === "sets") navigateToSets(path);
+              else if (mode === "explore") navigateToExplore(categoryName ? categoryNameToSlug(categoryName)! : "all", kw, scopeFilteredItems);
+              else if (mode === "quiz") navigateToQuiz(categoryName ? categoryNameToSlug(categoryName)! : "all", kw, scopeFilteredItems);
+            }}
+          />
+          <FilterSection
+            showFilters={showFilters}
+            hasActiveFilters={
+              !isAllCategoriesSlug(categorySlugParam) ||
+              keywordsFromUrlOrQuery.length > 0 ||
+              hasActiveScopeFilters
+            }
+            onToggleFilters={() => setShowFilters(!showFilters)}
+            onClearAll={() => {
+              setFilterCategorySlug(categorySlugParam ?? getAllCategoriesSlug());
+              const q = searchParams.get("keywords");
+              const kws = q ? q.split(",").map((k) => k.trim()).filter(Boolean) : [];
+              setFilterKeywords(kws);
+              setScopeFilterType("all");
+              setScopeSearchText("");
+              setScopeRatingMin(null);
+              setScopeRatingMax(null);
+              setScopeRatingIncludeUnrated(false);
+              setScopeRatingOnlyUnrated(false);
+              setActiveScopeFilters(new Set());
+            }}
+          >
+            <div className="space-y-4">
+              <div className="flex flex-wrap items-end gap-4">
+                <div>
+                  <label className="block text-xs font-medium text-gray-500 mb-1">Category</label>
+                  <select
+                    value={filterCategorySlug}
+                    onChange={(e) => handleFilterCategoryChange(e.target.value)}
+                    className="rounded border border-gray-300 text-sm px-2 py-1.5 min-w-[10rem]"
+                  >
+                    <option value={getAllCategoriesSlug()}>All categories</option>
+                    {categoriesData?.categories?.map((c) => (
+                      <option key={c.category} value={categoryNameToSlug(c.category)}>
+                        {c.category}
+                      </option>
+                    ))}
+                  </select>
+                </div>
+                <ScopeFilterCombobox
+                  label="Primary topic (optional)"
+                  value={filterKeywords[0] ?? ""}
+                  options={rank1Options}
+                  onChange={handleFilterPrimaryTopicChange}
+                  placeholder="All topics"
+                  disabled={!filterCategorySlug}
+                />
+                <ScopeFilterCombobox
+                  label="Subtopic (optional)"
+                  value={filterKeywords[1] ?? ""}
+                  options={rank2Options}
+                  onChange={handleFilterSubtopicChange}
+                  placeholder="All subtopics"
+                  disabled={!filterKeywords[0]}
+                />
+                <button
+                  type="button"
+                  onClick={handleApplyFilter}
+                  className="px-3 py-1.5 text-sm font-medium text-white bg-indigo-600 rounded-md hover:bg-indigo-700"
+                >
+                  Apply
+                </button>
+              </div>
+              <AddFiltersSection
+                availableFilters={["itemType", "search", "rating"].filter(
+                  (f) => !activeScopeFilters.has(f as FilterType)
+                ) as FilterType[]}
+                onAddFilter={addScopeFilter}
+              />
+              {activeScopeFilters.has("itemType") && (
+                <ItemTypeFilter
+                  value={scopeFilterType}
+                  onChange={setScopeFilterType}
+                  onRemove={() => removeScopeFilter("itemType")}
+                />
+              )}
+              {activeScopeFilters.has("search") && (
+                <SearchFilter
+                  value={scopeSearchText}
+                  onChange={setScopeSearchText}
+                  onRemove={() => removeScopeFilter("search")}
+                />
+              )}
+              {activeScopeFilters.has("rating") && (
+                <RatingFilter
+                  value={{
+                    min: scopeRatingMin,
+                    max: scopeRatingMax,
+                    includeUnrated: scopeRatingIncludeUnrated,
+                    onlyUnrated: scopeRatingOnlyUnrated,
+                  }}
+                  onChange={(v) => {
+                    setScopeRatingMin(v.min);
+                    setScopeRatingMax(v.max);
+                    setScopeRatingIncludeUnrated(v.includeUnrated ?? false);
+                    setScopeRatingOnlyUnrated(v.onlyUnrated ?? false);
+                  }}
+                  onRemove={() => removeScopeFilter("rating")}
+                />
+              )}
+            </div>
+          </FilterSection>
           <div className="flex flex-wrap items-center justify-between gap-3 mt-2">
             <Breadcrumb
               categoryName={categoryName}
-              keywords={keywordsFromUrl}
-              onNavigate={navigateToSets}
+              pathKeywords={categoryName ? pathKeywordsFromUrl : filterKeywordsFromQuery}
+              onNavigate={(path) => {
+                if (path.includes("?")) navigate(path);
+                else navigateToSets(path);
+              }}
             />
             <div className="flex flex-wrap items-center gap-3 flex-shrink-0">
-              <ModeSwitcher
-                availableModes={["sets", "list", "explore", "quiz"]}
-                activeMode="list"
-                onChange={(mode) => {
-                  if (mode === "sets")
-                    navigateToSets(
-                      buildCategoryPath(
-                        categoryNameToSlug(categoryName),
-                        keywordsFromUrl
-                      )
-                    );
-                  else if (mode === "explore")
-                    navigateToExplore(
-                      categoryNameToSlug(categoryName),
-                      keywordsFromUrl
-                    );
-                  else if (mode === "quiz")
-                    navigateToQuiz(
-                      categoryNameToSlug(categoryName),
-                      keywordsFromUrl
-                    );
-                }}
-              />
               <div className="flex items-center gap-2">
                 <label className="text-sm text-gray-600">Per page:</label>
                 <select
@@ -416,70 +926,72 @@ const CategoriesPage = () => {
               Items
             </h1>
             <p className="text-gray-600 text-sm mb-6">
-              {keywordsForItems.length > 0
-                ? `Items in ${categoryName} / ${keywordsForItems.join(" / ")}`
-                : `All items in ${categoryName}`}
+              {categoryName
+                ? keywordsForItems.length > 0
+                  ? `Items in ${categoryName} / ${keywordsForItems.join(" / ")}`
+                  : `All items in ${categoryName}`
+                : keywordsForItems.length > 0
+                  ? `Items in ${keywordsForItems.join(" / ")} (all categories)`
+                  : "Items across all categories"}
             </p>
 
-            {itemsData?.items && itemsData.items.length > 0 ? (
-              <ItemListSection
-                items={itemsData.items}
-                totalCount={itemsData.totalCount}
-                page={itemsPage}
-                totalPages={itemsData.totalPages}
-                selectedItemIds={selectedItemIds}
-                onPrevPage={() => handlePageChange(Math.max(1, itemsPage - 1))}
-                onNextPage={() =>
-                  handlePageChange(Math.min(itemsData.totalPages, itemsPage + 1))
-                }
-                onSelectAll={selectAll}
-                onDeselectAll={deselectAll}
-                onAddSelectedToCollection={handleAddSelectedToCollection}
-                onToggleSelect={toggleItem}
-                isAuthenticated={isAuthenticated}
-                showRatingsAndComments
-                returnUrl={listItemsReturnUrl}
-                onKeywordClick={(keywordName) => {
-                  const pathKwLower = new Set(
-                    keywordsForItems.map((k) => k.toLowerCase())
-                  );
-                  const newKeywords = pathKwLower.has(keywordName.toLowerCase())
-                    ? keywordsForItems
-                    : [...keywordsForItems, keywordName];
-                  const params = new URLSearchParams();
-                  params.set("category", categoryName);
-                  if (newKeywords.length > 0) {
-                    params.set("keywords", dedupeKeywords(newKeywords).join(","));
-                  }
-                  navigate(`/my-items?${params.toString()}`);
-                }}
-                selectedKeywords={keywordsForItems}
-                renderActions={(item) => (
-                  <button
-                    onClick={() => {
-                      navigate(
-                        `/explore/item/${item.id}?return=${encodeURIComponent(listItemsReturnUrl || "/categories")}`
-                      );
-                    }}
-                    className="p-2 text-indigo-600 hover:bg-indigo-50 rounded-md"
-                    title="View item details"
-                  >
-                    <EyeIcon className="h-5 w-5" />
-                  </button>
-                )}
-              />
-            ) : (
+            {scopeDisplayItems.length === 0 ? (
               <div className="text-center py-12">
                 <p className="text-gray-500">No items found.</p>
               </div>
+            ) : (
+              <ItemListSection
+                items={scopeDisplayItems}
+                totalCount={scopeTotalCount}
+                page={itemsPage}
+                totalPages={scopeTotalPages}
+                onPrevPage={() => handlePageChange(Math.max(1, itemsPage - 1))}
+                onNextPage={() =>
+                  handlePageChange(Math.min(scopeTotalPages, itemsPage + 1))
+                }
+                showRatingsAndComments
+                returnUrl={listItemsReturnUrl}
+                onKeywordClick={(keywordName) => {
+                  // Narrow list: add clicked keyword to filter (query param); path stays same
+                  const newFilterKeywords = dedupeKeywords([
+                    ...filterKeywordsFromQuery,
+                    keywordName,
+                  ]);
+                  navigateToItems(
+                    scopePathWithNav,
+                    true,
+                    undefined,
+                    newFilterKeywords
+                  );
+                }}
+                selectedKeywords={keywordsForItems}
+                renderActions={(item) => (
+                  <>
+                    <Link
+                      to={`/items/${item.id}`}
+                      className="p-2 text-indigo-600 hover:bg-indigo-50 rounded-md inline-flex"
+                      title="View item details"
+                    >
+                      <EyeIcon className="h-5 w-5" />
+                    </Link>
+                    {isAuthenticated && (
+                      <ItemCollectionControls
+                        itemId={item.id}
+                        itemCollectionIds={new Set((item.collections ?? []).map((c) => c.id))}
+                        onOpenManageCollections={() => setManageCollectionsItemId(item.id)}
+                      />
+                    )}
+                  </>
+                )}
+              />
             )}
-          <BulkItemCollectionsModal
-            itemIds={selectedItemsForBulkCollections}
-            onCloseComplete={() => {
-              setSelectedItemsForBulkCollections([]);
-              deselectAll();
-            }}
-          />
+          {manageCollectionsItemId && (
+            <ItemCollectionsModal
+              isOpen={!!manageCollectionsItemId}
+              onClose={() => setManageCollectionsItemId(null)}
+              itemId={manageCollectionsItemId}
+            />
+          )}
         </div>
       </>
     );
@@ -493,43 +1005,134 @@ const CategoriesPage = () => {
         <SEO
           title={`${categoryName} - Sets`}
           description={`Browse sets in the ${categoryName} category on Quizymode.`}
-          canonical={`https://www.quizymode.com${buildCategoryPath(categoryNameToSlug(categoryName), keywordsFromUrl)}`}
+          canonical={`https://www.quizymode.com${scopePathWithNav}${filterKeywordsFromQuery.length > 0 ? `?keywords=${filterKeywordsFromQuery.map(encodeURIComponent).join(",")}` : ""}`}
         />
         <div className="px-4 py-6 sm:px-0">
+          <ScopeSecondaryBar
+            scopeType="category"
+            activeMode="sets"
+            availableModes={
+              sortedKeywords.length > 0
+                ? ["sets", "list", "explore", "quiz"]
+                : ["list", "explore", "quiz"]
+            }
+            onModeChange={(mode) => {
+              const path = scopePathWithNav;
+              const kw = keywordsForItems;
+              if (mode === "list") navigateToItems(path, true, undefined, filterKeywordsFromQuery);
+              else if (mode === "explore") navigateToExplore(categoryNameToSlug(categoryName)!, kw);
+              else if (mode === "quiz") navigateToQuiz(categoryNameToSlug(categoryName)!, kw);
+            }}
+          />
+          <FilterSection
+            showFilters={showFilters}
+            hasActiveFilters={
+              !isAllCategoriesSlug(categorySlugParam) ||
+              keywordsFromUrlOrQuery.length > 0 ||
+              hasActiveScopeFilters
+            }
+            onToggleFilters={() => setShowFilters(!showFilters)}
+            onClearAll={() => {
+              setFilterCategorySlug(categorySlugParam ?? getAllCategoriesSlug());
+              const q = searchParams.get("keywords");
+              const kws = q ? q.split(",").map((k) => k.trim()).filter(Boolean) : [];
+              setFilterKeywords(kws);
+              setScopeFilterType("all");
+              setScopeSearchText("");
+              setScopeRatingMin(null);
+              setScopeRatingMax(null);
+              setScopeRatingIncludeUnrated(false);
+              setScopeRatingOnlyUnrated(false);
+              setActiveScopeFilters(new Set());
+            }}
+          >
+            <div className="space-y-4">
+              <div className="flex flex-wrap items-end gap-4">
+                <div>
+                  <label className="block text-xs font-medium text-gray-500 mb-1">Category</label>
+                  <select
+                    value={filterCategorySlug}
+                    onChange={(e) => handleFilterCategoryChange(e.target.value)}
+                    className="rounded border border-gray-300 text-sm px-2 py-1.5 min-w-[10rem]"
+                  >
+                    <option value={getAllCategoriesSlug()}>All categories</option>
+                    {categoriesData?.categories?.map((c) => (
+                      <option key={c.category} value={categoryNameToSlug(c.category)}>
+                        {c.category}
+                      </option>
+                    ))}
+                  </select>
+                </div>
+                <ScopeFilterCombobox
+                  label="Primary topic (optional)"
+                  value={filterKeywords[0] ?? ""}
+                  options={rank1Options}
+                  onChange={handleFilterPrimaryTopicChange}
+                  placeholder="All topics"
+                  disabled={!filterCategorySlug}
+                />
+                <ScopeFilterCombobox
+                  label="Subtopic (optional)"
+                  value={filterKeywords[1] ?? ""}
+                  options={rank2Options}
+                  onChange={handleFilterSubtopicChange}
+                  placeholder="All subtopics"
+                  disabled={!filterKeywords[0]}
+                />
+                <button
+                  type="button"
+                  onClick={handleApplyFilter}
+                  className="px-3 py-1.5 text-sm font-medium text-white bg-indigo-600 rounded-md hover:bg-indigo-700"
+                >
+                  Apply
+                </button>
+              </div>
+              <AddFiltersSection
+                availableFilters={["itemType", "search", "rating"].filter(
+                  (f) => !activeScopeFilters.has(f as FilterType)
+                ) as FilterType[]}
+                onAddFilter={addScopeFilter}
+              />
+              {activeScopeFilters.has("itemType") && (
+                <ItemTypeFilter
+                  value={scopeFilterType}
+                  onChange={setScopeFilterType}
+                  onRemove={() => removeScopeFilter("itemType")}
+                />
+              )}
+              {activeScopeFilters.has("search") && (
+                <SearchFilter
+                  value={scopeSearchText}
+                  onChange={setScopeSearchText}
+                  onRemove={() => removeScopeFilter("search")}
+                />
+              )}
+              {activeScopeFilters.has("rating") && (
+                <RatingFilter
+                  value={{
+                    min: scopeRatingMin,
+                    max: scopeRatingMax,
+                    includeUnrated: scopeRatingIncludeUnrated,
+                    onlyUnrated: scopeRatingOnlyUnrated,
+                  }}
+                  onChange={(v) => {
+                    setScopeRatingMin(v.min);
+                    setScopeRatingMax(v.max);
+                    setScopeRatingIncludeUnrated(v.includeUnrated ?? false);
+                    setScopeRatingOnlyUnrated(v.onlyUnrated ?? false);
+                  }}
+                  onRemove={() => removeScopeFilter("rating")}
+                />
+              )}
+            </div>
+          </FilterSection>
           <div className="flex flex-wrap items-center justify-between gap-3 mt-2">
             <Breadcrumb
               categoryName={categoryName}
-              keywords={keywordsFromUrl}
+              pathKeywords={pathKeywordsFromUrl}
               onNavigate={navigateToSets}
             />
             <div className="flex flex-wrap items-center gap-3 flex-shrink-0">
-              <ModeSwitcher
-                availableModes={
-                  sortedKeywords.length > 0
-                    ? ["sets", "list", "explore", "quiz"]
-                    : ["list", "explore", "quiz"]
-                }
-                activeMode="sets"
-                onChange={(mode) => {
-                  if (mode === "list")
-                    navigateToItems(
-                      buildCategoryPath(
-                        categoryNameToSlug(categoryName),
-                        keywordsFromUrl
-                      )
-                    );
-                  else if (mode === "explore")
-                    navigateToExplore(
-                      categoryNameToSlug(categoryName),
-                      keywordsFromUrl
-                    );
-                  else if (mode === "quiz")
-                    navigateToQuiz(
-                      categoryNameToSlug(categoryName),
-                      keywordsFromUrl
-                    );
-                }}
-              />
               <SortControl sortBy={sortBy} onSortChange={handleSortChange} />
               {keywordsFromUrl.length >= 2 && isAuthenticated && (
                 <button
@@ -568,12 +1171,10 @@ const CategoriesPage = () => {
                 onOpenBucket={(bucket) => {
                   if (isLeaf) {
                     navigateToItems(
-                      buildCategoryPath(
-                        categoryNameToSlug(categoryName),
-                        keywordsFromUrl
-                      ),
+                      scopePathWithNav,
                       true,
-                      bucket.label
+                      bucket.label,
+                      filterKeywordsFromQuery
                     );
                   } else {
                     handleKeywordClick(bucket.label);
@@ -589,24 +1190,13 @@ const CategoriesPage = () => {
                   <ActionButtons
                     onListSets={undefined}
                     onListItems={() =>
-                      navigateToItems(
-                        buildCategoryPath(
-                          categoryNameToSlug(categoryName),
-                          keywordsFromUrl
-                        )
-                      )
+                      navigateToItems(scopePathWithNav, true, undefined, filterKeywordsFromQuery)
                     }
                     onExplore={() =>
-                      navigateToExplore(
-                        categoryNameToSlug(categoryName),
-                        keywordsFromUrl
-                      )
+                      navigateToExplore(categoryNameToSlug(categoryName)!, keywordsForItems)
                     }
                     onQuiz={() =>
-                      navigateToQuiz(
-                        categoryNameToSlug(categoryName),
-                        keywordsFromUrl
-                      )
+                      navigateToQuiz(categoryNameToSlug(categoryName)!, keywordsForItems)
                     }
                   />
                 </div>
@@ -617,24 +1207,13 @@ const CategoriesPage = () => {
                 <ActionButtons
                   onListSets={undefined}
                   onListItems={() =>
-                    navigateToItems(
-                      buildCategoryPath(
-                        categoryNameToSlug(categoryName),
-                        keywordsFromUrl
-                      )
-                    )
+                    navigateToItems(scopePathWithNav, true, undefined, filterKeywordsFromQuery)
                   }
                   onExplore={() =>
-                    navigateToExplore(
-                      categoryNameToSlug(categoryName),
-                      keywordsFromUrl
-                    )
+                    navigateToExplore(categoryNameToSlug(categoryName)!, keywordsForItems)
                   }
                   onQuiz={() =>
-                    navigateToQuiz(
-                      categoryNameToSlug(categoryName),
-                      keywordsFromUrl
-                    )
+                    navigateToQuiz(categoryNameToSlug(categoryName)!, keywordsForItems)
                   }
                 />
               </div>
@@ -721,24 +1300,32 @@ const CategoriesPage = () => {
 
 function Breadcrumb({
   categoryName,
-  keywords,
+  pathKeywords,
   onNavigate,
 }: {
-  categoryName: string;
-  keywords: string[];
+  categoryName: string | null;
+  pathKeywords: string[];
   onNavigate: (path: string) => void;
 }) {
-  const slugs = [categoryNameToSlug(categoryName)];
-  const pathSegments: { label: string; path: string }[] = [
-    { label: categoryName, path: buildCategoryPath(slugs[0]) },
-  ];
-  keywords.forEach((kw, i) => {
-    slugs.push(kw.toLowerCase().replace(/\s+/g, "-"));
-    pathSegments.push({
-      label: kw,
-      path: buildCategoryPath(slugs[0], keywords.slice(0, i + 1)),
+  const pathSegments: { label: string; path: string }[] = [];
+  if (categoryName) {
+    const slug = categoryNameToSlug(categoryName);
+    pathSegments.push({ label: categoryName, path: buildCategoryPath(slug, []) });
+    pathKeywords.forEach((kw, i) => {
+      pathSegments.push({
+        label: kw,
+        path: buildCategoryPath(slug, pathKeywords.slice(0, i + 1)),
+      });
     });
-  });
+  } else {
+    pathSegments.push({ label: "All categories", path: "/categories" });
+    pathKeywords.forEach((kw, i) => {
+      pathSegments.push({
+        label: kw,
+        path: `/categories?view=items&keywords=${pathKeywords.slice(0, i + 1).map(encodeURIComponent).join(",")}`,
+      });
+    });
+  }
 
   return (
     <nav className="flex items-center gap-1 text-sm text-gray-600">

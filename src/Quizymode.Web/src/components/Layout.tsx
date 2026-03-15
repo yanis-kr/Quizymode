@@ -1,21 +1,11 @@
 import type { ReactNode } from "react";
 import { useState } from "react";
-import { Link, useNavigate, useLocation } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useQuery } from "@tanstack/react-query";
 import { useAuth } from "@/contexts/AuthContext";
 import { usersApi } from "@/api/users";
 import UserProfileModal from "./UserProfileModal";
-import { ActiveCollectionBadge } from "./ActiveCollectionBadge";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
-
-function isStudyRoute(pathname: string): boolean {
-  return (
-    pathname.startsWith("/categories") ||
-    pathname.startsWith("/explore") ||
-    pathname.startsWith("/quiz") ||
-    pathname.startsWith("/collections")
-  );
-}
 
 interface LayoutProps {
   children: ReactNode;
@@ -24,10 +14,8 @@ interface LayoutProps {
 const Layout = ({ children }: LayoutProps) => {
   const { isAuthenticated, logout, username, email, isAdmin } = useAuth();
   const navigate = useNavigate();
-  const location = useLocation();
   const [showProfileModal, setShowProfileModal] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const showActiveCollection = isAuthenticated && isStudyRoute(location.pathname);
 
   // Fetch user data when authenticated to get full profile info
   const { data: user } = useQuery({
@@ -76,22 +64,16 @@ const Layout = ({ children }: LayoutProps) => {
                 {isAuthenticated && (
                   <>
                     <Link
-                      to="/my-items"
+                      to="/collections"
                       className="inline-flex items-center px-1 pt-1 text-sm font-medium text-gray-900 hover:text-indigo-600"
                     >
-                      My Items
+                      Collections
                     </Link>
                     <Link
                       to="/items/add"
                       className="inline-flex items-center px-1 pt-1 text-sm font-medium text-gray-900 hover:text-indigo-600"
                     >
                       Add Items
-                    </Link>
-                    <Link
-                      to="/collections"
-                      className="inline-flex items-center px-1 pt-1 text-sm font-medium text-gray-900 hover:text-indigo-600"
-                    >
-                      My Collections
                     </Link>
                     {userIsAdmin && (
                       <Link
@@ -123,9 +105,6 @@ const Layout = ({ children }: LayoutProps) => {
 
               {/* Desktop menu */}
               <div className="hidden sm:flex sm:items-center sm:gap-3">
-                {showActiveCollection && (
-                  <ActiveCollectionBadge />
-                )}
                 {isAuthenticated ? (
                   <div className="flex items-center space-x-4">
                     <button
@@ -184,11 +163,11 @@ const Layout = ({ children }: LayoutProps) => {
               {isAuthenticated && (
                 <>
                   <Link
-                    to="/my-items"
+                    to="/collections"
                     className="block px-3 py-2 text-base font-medium text-gray-900 hover:text-indigo-600 hover:bg-gray-50"
                     onClick={closeMobileMenu}
                   >
-                    My Items
+                    Collections
                   </Link>
                   <Link
                     to="/items/add"
@@ -196,13 +175,6 @@ const Layout = ({ children }: LayoutProps) => {
                     onClick={closeMobileMenu}
                   >
                     Add Items
-                  </Link>
-                  <Link
-                    to="/collections"
-                    className="block px-3 py-2 text-base font-medium text-gray-900 hover:text-indigo-600 hover:bg-gray-50"
-                    onClick={closeMobileMenu}
-                  >
-                    My Collections
                   </Link>
                   {userIsAdmin && (
                     <Link

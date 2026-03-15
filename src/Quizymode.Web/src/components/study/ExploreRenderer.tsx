@@ -28,11 +28,6 @@ export function ExploreRenderer({ item }: ExploreRendererProps) {
           <p className="text-gray-700">{item.explanation}</p>
         </div>
       )}
-
-      <div className="text-sm text-gray-500 space-y-1">
-        <div>Category: {item.category}</div>
-        {item.source && <div>Source: {item.source}</div>}
-      </div>
     </div>
   );
 }

@@ -35,10 +35,4 @@ describe("ExploreRenderer", () => {
     render(<ExploreRenderer item={itemNoExplanation} />);
     expect(screen.queryByText("Explanation")).not.toBeInTheDocument();
   });
-
-  it("renders category and source in metadata", () => {
-    render(<ExploreRenderer item={{ ...mockItem, source: "Textbook" }} />);
-    expect(screen.getByText(/Category: Math/)).toBeInTheDocument();
-    expect(screen.getByText(/Source: Textbook/)).toBeInTheDocument();
-  });
 });

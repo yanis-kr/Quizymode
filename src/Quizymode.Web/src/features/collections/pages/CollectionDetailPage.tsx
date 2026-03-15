@@ -1,19 +1,46 @@
-import { useParams, useNavigate } from "react-router-dom";
+import { useEffect, useState, useMemo } from "react";
+import { useParams, useNavigate, useSearchParams, Link } from "react-router-dom";
 import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
 import { collectionsApi } from "@/api/collections";
 import { useAuth } from "@/contexts/AuthContext";
 import LoadingSpinner from "@/components/LoadingSpinner";
 import ErrorMessage from "@/components/ErrorMessage";
-import { ItemListView } from "@/components/ItemListView";
-import { ModeSwitcher } from "@/components/ModeSwitcher";
-import useItemSelection from "@/hooks/useItemSelection";
-import { ArrowLeftIcon } from "@heroicons/react/24/outline";
+import ItemListSection from "@/components/ItemListSection";
+import ItemCollectionsModal from "@/components/ItemCollectionsModal";
+import { ItemCollectionControls } from "@/components/ItemCollectionControls";
+import { ScopeSecondaryBar } from "@/components/ScopeSecondaryBar";
+import { ArrowLeftIcon, EyeIcon, MinusIcon } from "@heroicons/react/24/outline";
+import { buildCategoryPath, categoryNameToSlug } from "@/utils/categorySlug";
+
+const PAGE_SIZE_OPTIONS = [10, 25, 50, 100];
 
 const CollectionDetailPage = () => {
   const { id } = useParams<{ id: string }>();
+  const [searchParams] = useSearchParams();
+  const view = searchParams.get("view") || "list";
+  const itemId = searchParams.get("item") || null;
   const { isAuthenticated, userId } = useAuth();
   const queryClient = useQueryClient();
   const navigate = useNavigate();
+  const [manageCollectionsItemId, setManageCollectionsItemId] = useState<string | null>(null);
+  const [itemsPage, setItemsPage] = useState(1);
+  const [pageSize, setPageSize] = useState(25);
+
+  // Unified URL: redirect to explore/quiz routes when view param is set (keeps existing explore/quiz pages)
+  useEffect(() => {
+    if (!id) return;
+    if (view === "explore") {
+      const path = itemId
+        ? `/explore/collection/${id}/item/${itemId}`
+        : `/explore/collection/${id}`;
+      navigate(path, { replace: true });
+    } else if (view === "quiz") {
+      const path = itemId
+        ? `/quiz/collection/${id}/item/${itemId}`
+        : `/quiz/collection/${id}`;
+      navigate(path, { replace: true });
+    }
+  }, [id, view, itemId, navigate]);
 
   const {
     data: collectionData,
@@ -44,16 +71,35 @@ const CollectionDetailPage = () => {
     },
   });
 
-  const isOwner = isAuthenticated && userId && collectionData?.createdBy === userId;
+  const updateCollectionMutation = useMutation({
+    mutationFn: (payload: { name: string; isPublic?: boolean }) =>
+      collectionsApi.update(id!, payload),
+    onSuccess: () => {
+      queryClient.invalidateQueries({ queryKey: ["collection", id] });
+      queryClient.invalidateQueries({ queryKey: ["collections"] });
+    },
+  });
 
-  const items = itemsData?.items || [];
-  const currentPageItemIds = items.map((item) => item.id);
-  const {
-    selectedItemIds,
-    selectAll,
-    deselectAll,
-    toggleItem,
-  } = useItemSelection(currentPageItemIds);
+  const isOwner = isAuthenticated && userId && collectionData?.createdBy === userId;
+  const allItems = itemsData?.items || [];
+
+  const totalCount = allItems.length;
+  const totalPages = Math.max(1, Math.ceil(totalCount / pageSize));
+  const paginatedItems = useMemo(() => {
+    const start = (itemsPage - 1) * pageSize;
+    return allItems.slice(start, start + pageSize);
+  }, [allItems, itemsPage, pageSize]);
+
+  useEffect(() => {
+    if (itemsPage > totalPages && totalPages >= 1) {
+      setItemsPage(totalPages);
+    }
+  }, [itemsPage, totalPages]);
+
+  const handlePageChange = (newPage: number) => {
+    setItemsPage(newPage);
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
 
   const handleRemoveItem = (itemId: string) => {
     if (
@@ -77,69 +123,151 @@ const CollectionDetailPage = () => {
       />
     );
 
+  // Redirecting to explore/quiz routes (unified URL entry)
+  if (view === "explore" || view === "quiz") return <LoadingSpinner />;
+
+  const collectionReturnUrl = id ? `/collections/${id}` : undefined;
+
   return (
     <div className="px-4 py-6 sm:px-0">
-      <div className="mb-6 flex flex-wrap items-center justify-between gap-4">
-        <div className="flex items-center space-x-4">
-          <button
-            onClick={() => navigate("/collections")}
-            className="flex items-center px-3 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-md hover:bg-gray-50"
-          >
-            <ArrowLeftIcon className="h-4 w-4 mr-2" />
-            Go Back
-          </button>
-          <h1 className="text-3xl font-bold text-gray-900">
-            {collectionData?.name || "Collection Items"}
-          </h1>
-        </div>
-        {items.length > 0 && (
-          <ModeSwitcher
-            availableModes={["list", "explore", "quiz"]}
-            activeMode="list"
-            onChange={(mode) => {
-              if (mode === "explore") navigate(`/explore/collection/${id}`);
-              else if (mode === "quiz") navigate(`/quiz/collection/${id}`);
-            }}
-          />
-        )}
-      </div>
-      <p className="text-gray-600 text-sm mb-6">
-        View and manage items in this collection. Explore items to study them, take quizzes to test your knowledge, or remove items from the collection.
-      </p>
-
-      {items.length > 0 ? (
-        <ItemListView
-          items={items}
-          totalCount={items.length}
-          page={1}
-          totalPages={1}
-          selectedItemIds={selectedItemIds}
-          onPrevPage={() => {}}
-          onNextPage={() => {}}
-          onSelectAll={selectAll}
-          onDeselectAll={deselectAll}
-          onAddSelectedToCollection={() => {}}
-          onToggleSelect={toggleItem}
-          config={{
-            selectable: true,
-            showExplore: true,
-            showQuiz: true,
-            showRemoveFromCollection: !!isOwner,
-          }}
-          isAuthenticated={isAuthenticated}
-          collectionId={id}
-          onRemoveFromCollection={(_, itemId) => handleRemoveItem(itemId)}
-          onKeywordClick={(keywordName, item) => {
-            const params = new URLSearchParams();
-            if (item?.category) params.set("category", item.category);
-            params.set("keywords", keywordName);
-            navigate(`/my-items?${params.toString()}`);
+      {allItems.length > 0 && (
+        <ScopeSecondaryBar
+          scopeType="collection"
+          activeMode="list"
+          availableModes={["list", "explore", "quiz"]}
+          onModeChange={(mode) => {
+            if (mode === "explore") navigate(`/collections/${id}?view=explore`);
+            else if (mode === "quiz") navigate(`/collections/${id}?view=quiz`);
           }}
         />
-      ) : (
+      )}
+      <div className="flex flex-wrap items-center justify-between gap-3 mt-2">
+        <button
+          onClick={() => navigate("/collections")}
+          className="flex items-center px-2.5 py-1.5 text-sm font-medium text-gray-700 bg-white border border-gray-200 rounded-md hover:bg-gray-50"
+        >
+          <ArrowLeftIcon className="h-4 w-4 mr-1.5" />
+          Collections
+        </button>
+        {allItems.length > 0 && (
+          <div className="flex items-center gap-2">
+            <label className="text-sm text-gray-600">Per page:</label>
+            <select
+              value={pageSize}
+              onChange={(e) => {
+                setPageSize(parseInt(e.target.value, 10));
+                setItemsPage(1);
+              }}
+              className="rounded border-gray-300 text-sm"
+            >
+              {PAGE_SIZE_OPTIONS.map((n) => (
+                <option key={n} value={n}>
+                  {n}
+                </option>
+              ))}
+            </select>
+          </div>
+        )}
+      </div>
+      {isOwner && (
+        <div className="mb-4 p-4 bg-gray-50 rounded-lg flex flex-wrap items-center justify-between gap-2">
+          <div className="flex items-center gap-2">
+            <span className="text-sm font-medium text-gray-700">List in Discover</span>
+            <span className="text-sm text-gray-500">(others can find this collection when searching)</span>
+          </div>
+          <button
+            type="button"
+            role="switch"
+            aria-checked={collectionData?.isPublic ?? false}
+            onClick={() => {
+              if (collectionData && !updateCollectionMutation.isPending) {
+                updateCollectionMutation.mutate({
+                  name: collectionData.name,
+                  isPublic: !collectionData.isPublic,
+                });
+              }
+            }}
+            disabled={updateCollectionMutation.isPending}
+            className={`relative inline-flex h-6 w-11 flex-shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 disabled:opacity-50 ${
+              collectionData?.isPublic ? "bg-indigo-600" : "bg-gray-200"
+            }`}
+          >
+            <span
+              className={`pointer-events-none inline-block h-5 w-5 transform rounded-full bg-white shadow ring-0 transition duration-200 ease-in-out ${
+                collectionData?.isPublic ? "translate-x-5" : "translate-x-1"
+              }`}
+            />
+          </button>
+        </div>
+      )}
+      <h1 className="text-3xl font-bold text-gray-900 mt-4 mb-6">
+        Items
+      </h1>
+      <p className="text-gray-600 text-sm mb-6">
+        {collectionData?.name
+          ? `Items in ${collectionData.name}. Explore to study, take a quiz to test, or remove items.`
+          : "Items in this collection. Explore to study, take a quiz to test, or remove items."}
+      </p>
+
+      {paginatedItems.length === 0 ? (
         <div className="text-center py-12">
           <p className="text-gray-500">No items in this collection.</p>
         </div>
+      ) : (
+        <ItemListSection
+            items={paginatedItems}
+            totalCount={totalCount}
+            page={itemsPage}
+            totalPages={totalPages}
+            onPrevPage={() => handlePageChange(Math.max(1, itemsPage - 1))}
+            onNextPage={() => handlePageChange(Math.min(totalPages, itemsPage + 1))}
+            showRatingsAndComments
+            returnUrl={collectionReturnUrl}
+            onKeywordClick={(keywordName, item) => {
+              if (!item?.category) return;
+              const path = buildCategoryPath(
+                categoryNameToSlug(item.category),
+                [keywordName]
+              );
+              navigate(`${path}?view=items&page=1`);
+            }}
+            renderActions={(item) => (
+              <>
+                <Link
+                  to={`/items/${item.id}`}
+                  className="p-2 text-indigo-600 hover:bg-indigo-50 rounded-md inline-flex"
+                  title="View item details"
+                >
+                  <EyeIcon className="h-5 w-5" />
+                </Link>
+                {isOwner && (
+                  <button
+                    type="button"
+                    onClick={() => handleRemoveItem(item.id)}
+                    className="p-2 text-amber-600 hover:bg-amber-50 rounded-md"
+                    title="Remove from collection"
+                  >
+                    <MinusIcon className="h-5 w-5" />
+                  </button>
+                )}
+                {isAuthenticated && (
+                  <ItemCollectionControls
+                    itemId={item.id}
+                    itemCollectionIds={new Set((item.collections ?? []).map((c) => c.id))}
+                    onOpenManageCollections={() => setManageCollectionsItemId(item.id)}
+                  />
+                )}
+              </>
+            )}
+          />
+      )}
+
+      {manageCollectionsItemId && (
+        <ItemCollectionsModal
+          isOpen={!!manageCollectionsItemId}
+          onClose={() => setManageCollectionsItemId(null)}
+          itemId={manageCollectionsItemId}
+        />
       )}
     </div>
   );

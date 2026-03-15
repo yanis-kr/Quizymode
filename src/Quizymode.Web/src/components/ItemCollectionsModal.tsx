@@ -59,7 +59,7 @@ const ItemCollectionsModal = ({
     },
     onSuccess: async () => {
       if (isBulkMode) {
-        queryClient.invalidateQueries({ queryKey: ["myItems"] });
+        queryClient.invalidateQueries({ queryKey: ["categoryItems"] });
         queryClient.invalidateQueries({ queryKey: ["categoryItems"] });
         queryClient.invalidateQueries({ queryKey: ["collectionItems"] });
         queryClient.invalidateQueries({ queryKey: ["randomItems"] });
@@ -70,7 +70,7 @@ const ItemCollectionsModal = ({
         );
         setBulkSelectedCollections((prev) => new Set(prev));
       } else if (singleItemId) {
-        queryClient.invalidateQueries({ queryKey: ["myItems"] });
+        queryClient.invalidateQueries({ queryKey: ["categoryItems"] });
         queryClient.invalidateQueries({ queryKey: ["categoryItems"] });
         // In single-item mode do NOT invalidate list queries here — parent list would refetch and reorder, making currentItem appear to "switch" to another item
         queryClient.invalidateQueries({ queryKey: ["collections"] });
@@ -93,7 +93,7 @@ const ItemCollectionsModal = ({
       if (isBulkMode) {
         await collectionsApi.bulkAddItems(newCollection.id, { itemIds: multipleItemIds });
         setBulkSelectedCollections((prev) => new Set(prev).add(newCollection.id));
-        queryClient.invalidateQueries({ queryKey: ["myItems"] });
+        queryClient.invalidateQueries({ queryKey: ["categoryItems"] });
         queryClient.invalidateQueries({ queryKey: ["categoryItems"] });
         queryClient.invalidateQueries({ queryKey: ["collectionItems"] });
         queryClient.invalidateQueries({ queryKey: ["randomItems"] });
@@ -104,7 +104,7 @@ const ItemCollectionsModal = ({
         );
       } else if (singleItemId) {
         await collectionsApi.addItem(newCollection.id, { itemId: singleItemId });
-        queryClient.invalidateQueries({ queryKey: ["myItems"] });
+        queryClient.invalidateQueries({ queryKey: ["categoryItems"] });
         queryClient.invalidateQueries({ queryKey: ["categoryItems"] });
         // In single-item mode do NOT invalidate list queries here — avoids list reorder and wrong item appearing
         await queryClient.refetchQueries({ queryKey: ["item", singleItemId] });
@@ -125,7 +125,7 @@ const ItemCollectionsModal = ({
     onSuccess: async (_, collectionId) => {
       if (isBulkMode) {
         setBulkSelectedCollections((prev) => new Set(prev).add(collectionId));
-        queryClient.invalidateQueries({ queryKey: ["myItems"] });
+        queryClient.invalidateQueries({ queryKey: ["categoryItems"] });
         queryClient.invalidateQueries({ queryKey: ["categoryItems"] });
         queryClient.invalidateQueries({ queryKey: ["collectionItems"] });
         queryClient.invalidateQueries({ queryKey: ["randomItems"] });
@@ -136,7 +136,7 @@ const ItemCollectionsModal = ({
         );
       }
       if (singleItemId) {
-        queryClient.invalidateQueries({ queryKey: ["myItems"] });
+        queryClient.invalidateQueries({ queryKey: ["categoryItems"] });
         queryClient.invalidateQueries({ queryKey: ["categoryItems"] });
         // In single-item mode do NOT invalidate list queries here — avoids list reorder and wrong item appearing
         await queryClient.refetchQueries({ queryKey: ["item", singleItemId] });

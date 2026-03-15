@@ -1,11 +1,11 @@
-import { useState, useEffect, useMemo } from "react";
+import { useState, useEffect, useMemo, useRef } from "react";
 import {
   useParams,
   useNavigate,
   useSearchParams,
   Link,
 } from "react-router-dom";
-import { useQuery } from "@tanstack/react-query";
+import { useQuery, useQueryClient } from "@tanstack/react-query";
 import { itemsApi } from "@/api/items";
 import { collectionsApi } from "@/api/collections";
 import { categoriesApi } from "@/api/categories";
@@ -19,26 +19,39 @@ import ItemCollectionsModal from "@/components/ItemCollectionsModal";
 import {
   categoryNameToSlug,
   findCategoryNameFromSlug,
+  buildCategoryPath,
 } from "@/utils/categorySlug";
 import { ExploreQuizBreadcrumb } from "@/components/ExploreQuizBreadcrumb";
+import { ScopeSecondaryBar } from "@/components/ScopeSecondaryBar";
 
 const QuizModePage = () => {
   const { category: categorySlug, collectionId, itemId } = useParams();
   const [searchParams] = useSearchParams();
   const navigate = useNavigate();
+  const queryClient = useQueryClient();
   const returnUrl = searchParams.get("return");
   const keywordsParam = searchParams.get("keywords");
   const keywords = keywordsParam
     ? keywordsParam.split(",").map((k) => k.trim()).filter(Boolean)
     : undefined;
-  /** Query string for quiz item URLs so keywords (and return) are preserved when using prev/next */
+  /** Query string for quiz item URLs; preserves keywords, return, and scope filter params across prev/next and mode switch */
   const quizItemSearch = useMemo(() => {
     const params = new URLSearchParams();
     if (returnUrl) params.set("return", returnUrl);
     if (keywords?.length) params.set("keywords", keywords.join(","));
+    const filterType = searchParams.get("filterType");
+    if (filterType) params.set("filterType", filterType);
+    const search = searchParams.get("search");
+    if (search) params.set("search", search);
+    const ratingMin = searchParams.get("ratingMin");
+    if (ratingMin) params.set("ratingMin", ratingMin);
+    const ratingMax = searchParams.get("ratingMax");
+    if (ratingMax) params.set("ratingMax", ratingMax);
+    if (searchParams.get("ratingUnrated") === "1") params.set("ratingUnrated", "1");
+    if (searchParams.get("ratingOnlyUnrated") === "1") params.set("ratingOnlyUnrated", "1");
     const s = params.toString();
     return s ? `?${s}` : "";
-  }, [returnUrl, keywords]);
+  }, [returnUrl, keywords, searchParams]);
   const { isAuthenticated } = useAuth();
   const [currentIndex, setCurrentIndex] = useState(0);
   const [selectedAnswer, setSelectedAnswer] = useState<string | null>(null);
@@ -52,6 +65,7 @@ const QuizModePage = () => {
   const [commentsDrawerItemId, setCommentsDrawerItemId] = useState<string | null>(
     null
   );
+  const hasSyncedInitialItemUrl = useRef(false);
 
   // Fetch categories to convert slug to actual category name
   const { data: categoriesData } = useQuery({
@@ -75,19 +89,40 @@ const QuizModePage = () => {
   // Check sessionStorage for stored items (when navigating with itemId from ItemsPage or comments)
   // Must be declared before useQuery that references it
   // Initialize synchronously from sessionStorage to avoid race conditions
-  // Restore if we have an itemId (meaning we're navigating to a specific item)
+  // Prefer dedicated key from Categories list (filtered scope) so we use it before any overwrite
   const getStoredItems = (): any[] | null => {
     if (!collectionId && itemId) {
-      // Restore when navigating to a specific item (from ItemsPage or comments)
+      const fromCategories = sessionStorage.getItem(
+        "quiz_scope_items_from_categories"
+      );
+      if (fromCategories) {
+        try {
+          const context = JSON.parse(fromCategories);
+          if (
+            context.items &&
+            Array.isArray(context.items) &&
+            context.items.some((item: { id?: string }) => item.id === itemId)
+          ) {
+            sessionStorage.removeItem("quiz_scope_items_from_categories");
+            return context.items;
+          }
+        } catch (e) {
+          sessionStorage.removeItem("quiz_scope_items_from_categories");
+        }
+      }
       const stored = sessionStorage.getItem("navigationContext_quiz");
       if (stored) {
         try {
           const context = JSON.parse(stored);
           if (context.items && context.mode === "quiz") {
-            // Only restore if category matches (or both are undefined/null)
+            const itemInStoredList = context.items.some(
+              (item: { id?: string }) => item.id === itemId
+            );
             const categoryMatches =
-              (!context.category && !category) || context.category === category;
-            if (categoryMatches) {
+              (!context.category && !category) ||
+              context.category === category ||
+              !category;
+            if (itemInStoredList || categoryMatches) {
               return context.items;
             }
           }
@@ -145,10 +180,14 @@ const QuizModePage = () => {
             context.mode === "quiz" &&
             context.items.length > 0
           ) {
-            // Only restore if category matches (or both are undefined/null)
+            const itemInStoredList = context.items.some(
+              (item: { id?: string }) => item.id === itemId
+            );
             const categoryMatches =
-              (!context.category && !category) || context.category === category;
-            if (categoryMatches) {
+              (!context.category && !category) ||
+              context.category === category ||
+              !category;
+            if (itemInStoredList || categoryMatches) {
               // Set storedItems state with the full items list
               setStoredItems(context.items);
 
@@ -247,6 +286,42 @@ const QuizModePage = () => {
       }
     }
   }, [itemId, items]);
+
+  // Sync URL to include first item id when landing on quiz without item in path (e.g. /quiz/certs?keywords=...)
+  useEffect(() => {
+    if (
+      !itemId &&
+      items.length > 0 &&
+      currentIndex === 0 &&
+      !hasSyncedInitialItemUrl.current
+    ) {
+      hasSyncedInitialItemUrl.current = true;
+      const firstId = items[0].id;
+      if (collectionId) {
+        navigate(
+          `/quiz/collection/${collectionId}/item/${firstId}${quizItemSearch}`,
+          { replace: true }
+        );
+      } else if (category) {
+        navigate(
+          `/quiz/${categoryNameToSlug(category)}/item/${firstId}${quizItemSearch}`,
+          { replace: true }
+        );
+      } else {
+        navigate(`/quiz/item/${firstId}${quizItemSearch}`, {
+          replace: true,
+        });
+      }
+    }
+  }, [
+    itemId,
+    items,
+    currentIndex,
+    collectionId,
+    category,
+    quizItemSearch,
+    navigate,
+  ]);
 
   const currentItem = items[currentIndex];
 
@@ -395,6 +470,60 @@ const QuizModePage = () => {
     }
   };
 
+  const handleCollectionChange = (
+    changedItemId: string,
+    _updatedCollectionIds: Set<string>,
+    payload: { added?: { id: string; name: string }; removedId?: string }
+  ) => {
+    const applyPayload = (collections: { id: string; name: string; createdAt?: string }[] = []) => {
+      if (payload.added) {
+        return [
+          ...collections.filter((c) => c.id !== payload.added!.id),
+          {
+            id: payload.added.id,
+            name: payload.added.name,
+            createdAt: new Date().toISOString(),
+          },
+        ];
+      }
+      if (payload.removedId) {
+        return collections.filter((c) => c.id !== payload.removedId);
+      }
+      return collections;
+    };
+
+    if (collectionId) {
+      queryClient.invalidateQueries({ queryKey: ["collectionItems", collectionId] });
+      return;
+    }
+    if (storedItems) {
+      setStoredItems((prev) =>
+        prev
+          ? prev.map((item) =>
+              item.id === changedItemId
+                ? { ...item, collections: applyPayload(item.collections ?? []) }
+                : item
+            )
+          : prev
+      );
+      return;
+    }
+    queryClient.setQueryData(
+      ["randomItems", category, quizSize, keywords],
+      (old: { items?: { id: string; collections?: { id: string; name: string; createdAt?: string }[] }[] } | undefined) => {
+        if (!old?.items) return old;
+        return {
+          ...old,
+          items: old.items.map((item) =>
+            item.id === changedItemId
+              ? { ...item, collections: applyPayload(item.collections ?? []) }
+              : item
+          ),
+        };
+      }
+    );
+  };
+
   if (isLoadingItems) return <LoadingSpinner />;
   if (error && !collectionId && !itemId)
     return (
@@ -418,6 +547,45 @@ const QuizModePage = () => {
 
   return (
     <div className="px-4 py-6 sm:px-0">
+      <ScopeSecondaryBar
+        scopeType={collectionId ? "collection" : "category"}
+        activeMode="quiz"
+        availableModes={["list", "explore", "quiz"]}
+        onModeChange={(mode) => {
+          const search = quizItemSearch;
+          if (mode === "list") {
+            if (collectionId) navigate(`/collections/${collectionId}`);
+            else if (category)
+              navigate(
+                `${buildCategoryPath(categoryNameToSlug(category), keywords || [])}?view=items`
+              );
+            else navigate("/categories");
+          } else if (mode === "explore") {
+            const targetItemId = currentItem?.id ?? items[0]?.id;
+            if (items.length > 0 && targetItemId) {
+              sessionStorage.setItem(
+                "navigationContext_explore",
+                JSON.stringify({
+                  mode: "explore",
+                  category: category,
+                  items: items,
+                  currentIndex: currentIndex,
+                })
+              );
+            }
+            if (collectionId)
+              navigate(
+                `/explore/collection/${collectionId}/item/${currentItem?.id ?? items[0]?.id}${search}`
+              );
+            else if (category)
+              navigate(
+                `/explore/${categoryNameToSlug(category)}/item/${currentItem?.id ?? items[0]?.id}${search}`
+              );
+            else if (items[0])
+              navigate(`/explore/item/${currentItem?.id ?? items[0].id}${search}`);
+          }
+        }}
+      />
       <StudyShell
         backContent={
           <>
@@ -482,6 +650,7 @@ const QuizModePage = () => {
         navigationContext={navigationContext}
         onOpenComments={(id) => setCommentsDrawerItemId(id)}
         onOpenManageCollections={(id) => setSelectedItemForCollections(id)}
+        onCollectionChange={handleCollectionChange}
         isAuthenticated={isAuthenticated}
         showRatingsAndCollections={showAnswer}
         footerContent={

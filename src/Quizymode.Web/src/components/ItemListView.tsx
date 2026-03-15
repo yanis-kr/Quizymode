@@ -1,11 +1,12 @@
 /**
  * Config-driven list view for items. Uses ItemListSection under the hood.
- * Use for category/keyword list, collection list, and optionally My Items.
+ * Use for category/keyword list and collection list.
  */
 import type { ReactNode } from "react";
 import { useNavigate } from "react-router-dom";
 import type { ItemResponse } from "@/types/api";
 import ItemListSection from "@/components/ItemListSection";
+import { ItemCollectionControls } from "@/components/ItemCollectionControls";
 import {
   EyeIcon,
   AcademicCapIcon,
@@ -15,8 +16,6 @@ import {
 } from "@heroicons/react/24/outline";
 
 export interface ItemListViewConfig {
-  /** Show checkboxes and batch "add to collection" */
-  selectable?: boolean;
   /** Show star rating and comments link on each card */
   showRatingsAndComments?: boolean;
   /** Show Explore / Quiz / Edit / Delete (or subset) per item */
@@ -26,6 +25,8 @@ export interface ItemListViewConfig {
   showDelete?: boolean;
   /** Show remove-from-collection (for collection detail) */
   showRemoveFromCollection?: boolean;
+  /** Show add/remove from active collection (+/-) on each card */
+  showActiveCollectionButtons?: boolean;
   /** Optional return URL for comments link */
   returnUrl?: string;
 }
@@ -35,13 +36,8 @@ export interface ItemListViewProps {
   totalCount: number;
   page: number;
   totalPages: number;
-  selectedItemIds: Set<string>;
   onPrevPage: () => void;
   onNextPage: () => void;
-  onSelectAll: () => void;
-  onDeselectAll: () => void;
-  onAddSelectedToCollection: () => void;
-  onToggleSelect: (itemId: string) => void;
   config: ItemListViewConfig;
   isAuthenticated?: boolean;
   onKeywordClick?: (keywordName: string, item?: ItemResponse) => void;
@@ -50,6 +46,8 @@ export interface ItemListViewProps {
   renderActions?: (item: ItemResponse) => ReactNode;
   /** When showRemoveFromCollection, called with collection id and item id */
   onRemoveFromCollection?: (collectionId: string, itemId: string) => void;
+  /** When showActiveCollectionButtons, called when user clicks manage collections (folder) */
+  onOpenManageCollections?: (itemId: string) => void;
   collectionId?: string;
 }
 
@@ -58,26 +56,30 @@ export function ItemListView({
   totalCount,
   page,
   totalPages,
-  selectedItemIds,
   onPrevPage,
   onNextPage,
-  onSelectAll,
-  onDeselectAll,
-  onAddSelectedToCollection,
-  onToggleSelect,
   config,
   isAuthenticated = true,
   onKeywordClick,
   selectedKeywords,
   renderActions: renderActionsOverride,
   onRemoveFromCollection,
+  onOpenManageCollections,
   collectionId,
 }: ItemListViewProps) {
   const navigate = useNavigate();
 
+  const hasDefaultActions =
+    config.showExplore ||
+    config.showQuiz ||
+    config.showEdit ||
+    config.showDelete ||
+    config.showRemoveFromCollection ||
+    config.showActiveCollectionButtons;
+
   const renderActions =
     renderActionsOverride ??
-    (config.showExplore || config.showQuiz || config.showEdit || config.showDelete || config.showRemoveFromCollection
+    (hasDefaultActions
       ? (item: ItemResponse) => (
           <>
             {config.showExplore && (
@@ -139,6 +141,13 @@ export function ItemListView({
                   <MinusIcon className="h-5 w-5" />
                 </button>
               )}
+            {config.showActiveCollectionButtons && isAuthenticated && onOpenManageCollections && (
+              <ItemCollectionControls
+                itemId={item.id}
+                itemCollectionIds={new Set((item.collections ?? []).map((c) => c.id))}
+                onOpenManageCollections={() => onOpenManageCollections(item.id)}
+              />
+            )}
           </>
         )
       : undefined);
@@ -149,17 +158,11 @@ export function ItemListView({
       totalCount={totalCount}
       page={page}
       totalPages={totalPages}
-      selectedItemIds={selectedItemIds}
       onPrevPage={onPrevPage}
       onNextPage={onNextPage}
-      onSelectAll={onSelectAll}
-      onDeselectAll={onDeselectAll}
-      onAddSelectedToCollection={onAddSelectedToCollection}
-      onToggleSelect={onToggleSelect}
       renderActions={renderActions}
       onKeywordClick={onKeywordClick}
       selectedKeywords={selectedKeywords}
-      isAuthenticated={isAuthenticated}
       showRatingsAndComments={config.showRatingsAndComments}
       returnUrl={config.returnUrl}
     />

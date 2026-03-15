@@ -1,3 +1,4 @@
+import { useEffect, useRef } from "react";
 import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
 import { usersApi } from "@/api/users";
 import { collectionsApi } from "@/api/collections";
@@ -8,12 +9,13 @@ const SETTING_KEY_ACTIVE_COLLECTION = "ActiveCollectionId";
 
 /**
  * Hook to get and set the user's active collection (persisted in user settings).
- * - When no collections exist, active is null.
- * - When collections exist, active is the last selected (from settings), or null if not set/invalid.
+ * Backend ensures at least one collection (MyCollection) exists. When collections exist
+ * and no valid active is set, we set active to the first collection (e.g. MyCollection).
  */
 export const useActiveCollection = () => {
   const { isAuthenticated } = useAuth();
   const queryClient = useQueryClient();
+  const hasSetDefaultActive = useRef(false);
 
   const { data: settingsData } = useQuery({
     queryKey: ["userSettings"],
@@ -35,7 +37,6 @@ export const useActiveCollection = () => {
   const collections = collectionsData?.collections ?? [];
   const collectionIds = new Set(collections.map((c) => c.id));
 
-  // Active is only valid if it exists in current collections
   const activeCollectionId =
     isAuthenticated &&
     rawActiveId &&
@@ -58,6 +59,20 @@ export const useActiveCollection = () => {
       queryClient.invalidateQueries({ queryKey: ["userSettings"] });
     },
   });
+
+  // When user has collections but no valid active, set active to first collection (e.g. MyCollection)
+  useEffect(() => {
+    if (
+      !isAuthenticated ||
+      collections.length === 0 ||
+      activeCollectionId != null ||
+      hasSetDefaultActive.current
+    ) {
+      return;
+    }
+    hasSetDefaultActive.current = true;
+    updateActiveMutation.mutate(collections[0].id);
+  }, [isAuthenticated, collections, activeCollectionId]);
 
   const setActiveCollectionId = (id: string | null) => {
     if (isAuthenticated) {

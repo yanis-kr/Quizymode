@@ -26,7 +26,7 @@ const AddItemsPage = () => {
     const params = new URLSearchParams();
     if (category) params.set("category", category);
     if (keywords.length > 0) params.set("keywords", keywords.join(","));
-    return `/my-items/bulk-create${params.toString() ? `?${params.toString()}` : ""}`;
+    return `/items/bulk-create${params.toString() ? `?${params.toString()}` : ""}`;
   };
 
   const buildUploadUrl = () => {

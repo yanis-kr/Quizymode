@@ -1,4 +1,4 @@
-import { useState, useEffect, useMemo } from "react";
+import { useState, useEffect, useMemo, useRef } from "react";
 import { useParams, useNavigate, useSearchParams } from "react-router-dom";
 import { useQuery } from "@tanstack/react-query";
 import { itemsApi } from "@/api/items";
@@ -15,8 +15,10 @@ import { Link } from "react-router-dom";
 import {
   categoryNameToSlug,
   findCategoryNameFromSlug,
+  buildCategoryPath,
 } from "@/utils/categorySlug";
 import { ExploreQuizBreadcrumb } from "@/components/ExploreQuizBreadcrumb";
+import { ScopeSecondaryBar } from "@/components/ScopeSecondaryBar";
 
 const ExploreModePage = () => {
   const { category: categorySlug, collectionId, itemId } = useParams();
@@ -28,14 +30,24 @@ const ExploreModePage = () => {
   const keywords = keywordsParam
     ? keywordsParam.split(",").map((k) => k.trim()).filter(Boolean)
     : undefined;
-  /** Query string for explore item URLs so keywords (and return) are preserved when using prev/next */
+  /** Query string for explore item URLs; preserves keywords, return, and scope filter params across prev/next and mode switch */
   const exploreItemSearch = useMemo(() => {
     const params = new URLSearchParams();
     if (returnUrl) params.set("return", returnUrl);
     if (keywords?.length) params.set("keywords", keywords.join(","));
+    const filterType = searchParams.get("filterType");
+    if (filterType) params.set("filterType", filterType);
+    const search = searchParams.get("search");
+    if (search) params.set("search", search);
+    const ratingMin = searchParams.get("ratingMin");
+    if (ratingMin) params.set("ratingMin", ratingMin);
+    const ratingMax = searchParams.get("ratingMax");
+    if (ratingMax) params.set("ratingMax", ratingMax);
+    if (searchParams.get("ratingUnrated") === "1") params.set("ratingUnrated", "1");
+    if (searchParams.get("ratingOnlyUnrated") === "1") params.set("ratingOnlyUnrated", "1");
     const s = params.toString();
     return s ? `?${s}` : "";
-  }, [returnUrl, keywords]);
+  }, [returnUrl, keywords, searchParams]);
   /** Explore loads all available items (backend max 1000) into memory */
   const EXPLORE_MAX_ITEMS = 1000;
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -45,6 +57,7 @@ const ExploreModePage = () => {
   const [commentsDrawerItemId, setCommentsDrawerItemId] = useState<string | null>(
     null
   );
+  const hasSyncedInitialItemUrl = useRef(false);
 
   // Fetch categories to convert slug to actual category name
   const { data: categoriesData } = useQuery({
@@ -81,10 +94,15 @@ const ExploreModePage = () => {
         try {
           const context = JSON.parse(stored);
           if (context.items && context.mode === "explore") {
-            // Only restore if category matches (or both are undefined/null)
+            // Restore if we navigated here with this list (itemId in stored items) or category matches
+            const itemInStoredList = context.items.some(
+              (item: { id?: string }) => item.id === itemId
+            );
             const categoryMatches =
-              (!context.category && !category) || context.category === category;
-            if (categoryMatches) {
+              (!context.category && !category) ||
+              context.category === category ||
+              !category;
+            if (itemInStoredList || categoryMatches) {
               return context.items;
             }
           }
@@ -133,15 +151,19 @@ const ExploreModePage = () => {
       if (stored) {
         try {
           const context = JSON.parse(stored);
-          if (
-            context.items &&
-            context.mode === "explore" &&
-            context.items.length > 0
-          ) {
-            // Only restore if category matches (or both are undefined/null)
-            const categoryMatches =
-              (!context.category && !category) || context.category === category;
-            if (categoryMatches) {
+            if (
+              context.items &&
+              context.mode === "explore" &&
+              context.items.length > 0
+            ) {
+              const itemInStoredList = context.items.some(
+                (item: { id?: string }) => item.id === itemId
+              );
+              const categoryMatches =
+                (!context.category && !category) ||
+                context.category === category ||
+                !category;
+              if (itemInStoredList || categoryMatches) {
               // Set storedItems state with the full items list
               setStoredItems(context.items);
 
@@ -208,6 +230,42 @@ const ExploreModePage = () => {
       }
     }
   }, [itemId, items]);
+
+  // Sync URL to include first item id when landing on explore without item in path (e.g. /explore/certs?keywords=...)
+  useEffect(() => {
+    if (
+      !itemId &&
+      items.length > 0 &&
+      currentIndex === 0 &&
+      !hasSyncedInitialItemUrl.current
+    ) {
+      hasSyncedInitialItemUrl.current = true;
+      const firstId = items[0].id;
+      if (collectionId) {
+        navigate(
+          `/explore/collection/${collectionId}/item/${firstId}${exploreItemSearch}`,
+          { replace: true }
+        );
+      } else if (category) {
+        navigate(
+          `/explore/${categoryNameToSlug(category)}/item/${firstId}${exploreItemSearch}`,
+          { replace: true }
+        );
+      } else {
+        navigate(`/explore/item/${firstId}${exploreItemSearch}`, {
+          replace: true,
+        });
+      }
+    }
+  }, [
+    itemId,
+    items,
+    currentIndex,
+    collectionId,
+    category,
+    exploreItemSearch,
+    navigate,
+  ]);
 
   // In list view (no itemId in URL), subscribe to current item so +/− invalidation triggers re-render and UI updates
   const currentListItem = items[currentIndex];
@@ -320,6 +378,44 @@ const ExploreModePage = () => {
 
   return (
     <div className="px-4 py-6 sm:px-0">
+      <ScopeSecondaryBar
+        scopeType={collectionId ? "collection" : "category"}
+        activeMode="explore"
+        availableModes={["list", "explore", "quiz"]}
+        onModeChange={(mode) => {
+          const search = exploreItemSearch;
+          if (mode === "list") {
+            if (collectionId) navigate(`/collections/${collectionId}`);
+            else if (category)
+              navigate(
+                `${buildCategoryPath(categoryNameToSlug(category), keywords || [])}?view=items`
+              );
+            else navigate("/categories");
+          } else if (mode === "quiz") {
+            const targetItemId = currentItem?.id ?? items[0]?.id;
+            if (items.length > 0 && targetItemId) {
+              const payload = {
+                mode: "quiz" as const,
+                category: category,
+                items: items,
+                currentIndex: currentIndex,
+              };
+              sessionStorage.setItem("navigationContext_quiz", JSON.stringify(payload));
+              sessionStorage.setItem("quiz_scope_items_from_categories", JSON.stringify(payload));
+            }
+            if (collectionId)
+              navigate(
+                `/quiz/collection/${collectionId}/item/${currentItem?.id ?? items[0]?.id}${search}`
+              );
+            else if (category)
+              navigate(
+                `/quiz/${categoryNameToSlug(category)}/item/${currentItem?.id ?? items[0]?.id}${search}`
+              );
+            else if (items[0])
+              navigate(`/quiz/item/${currentItem?.id ?? items[0].id}${search}`);
+          }
+        }}
+      />
       <StudyShell
         backContent={
           <>

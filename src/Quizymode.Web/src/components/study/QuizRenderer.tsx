@@ -73,11 +73,6 @@ export function QuizRenderer({
         </div>
       )}
 
-      <div className="text-sm text-gray-500 space-y-1">
-        <div>Category: {item.category}</div>
-        {item.source && <div>Source: {item.source}</div>}
-      </div>
-
       <div className="p-4 bg-gray-50 rounded-lg">
         <div className="text-sm text-gray-600">
           Score: {stats.correct} / {stats.total} correct

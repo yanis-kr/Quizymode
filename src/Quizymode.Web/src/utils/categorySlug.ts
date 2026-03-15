@@ -69,18 +69,36 @@ export function findCategoryNameFromSlug(
   return null;
 }
 
-/** Builds URL path for category + optional keywords. Uses slugs for category, encoded names for keywords. */
+const ALL_CATEGORIES_SLUG = "all";
+
+/** Slug used in URL for "All categories" scope. */
+export function getAllCategoriesSlug(): string {
+  return ALL_CATEGORIES_SLUG;
+}
+
+/** True when slug means "all categories" (no category filter). */
+export function isAllCategoriesSlug(slug: string | undefined): boolean {
+  return !slug || slug === "" || slug === ALL_CATEGORIES_SLUG;
+}
+
+/** Base path for category (no keyword segments). Use with ?keywords=... for filtering. */
+export function getCategoryBasePath(categorySlug: string): string {
+  return isAllCategoriesSlug(categorySlug) ? "/categories" : `/categories/${categorySlug}`;
+}
+
+/** Builds URL path for category + optional keywords. Uses slugs for category, encoded names for keywords. Empty slug = all categories → /categories. When "all", keywords are not put in path (use query params). */
 export function buildCategoryPath(
   categorySlug: string,
   keywords?: string[]
 ): string {
-  if (!keywords || keywords.length === 0) {
-    return `/categories/${categorySlug}`;
+  const base = getCategoryBasePath(categorySlug);
+  if (!keywords || keywords.length === 0 || isAllCategoriesSlug(categorySlug)) {
+    return base;
   }
   const kwSegment = keywords
     .map((k) => encodeURIComponent(k))
     .join("/");
-  return `/categories/${categorySlug}/${kwSegment}`;
+  return `${base}/${kwSegment}`;
 }
 
 /** Parses keyword from URL segment (decode and handle 'other'). */
