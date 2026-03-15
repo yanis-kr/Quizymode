@@ -3,6 +3,7 @@
 export interface CategoryResponse {
   category: string;
   description: string | null;
+  shortDescription: string | null;
   count: number;
   id: string;
   isPrivate: boolean;
@@ -20,6 +21,8 @@ export interface NavKeywordResponse {
   averageRating: number | null;
   navigationRank: number;
   description?: string | null;
+  /** When > 0, show a "Private" badge (e.g. yellow) on the keyword set. */
+  privateItemCount?: number;
 }
 
 export interface KeywordsResponse {
@@ -51,6 +54,8 @@ export interface ItemResponse {
   keywords: KeywordResponse[];
   collections: ItemCollectionResponse[];
   source?: string | null;
+  /** Navigation path for breadcrumbs, e.g. [rank1, rank2] or ["other"]. Use "other" in URLs; display as "Others". */
+  navigationBreadcrumb?: string[];
 }
 
 export interface ItemsResponse {

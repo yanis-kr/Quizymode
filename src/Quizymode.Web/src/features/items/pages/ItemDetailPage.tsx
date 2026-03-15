@@ -9,9 +9,11 @@ import {
   PencilSquareIcon,
   TrashIcon,
   ArrowLeftIcon,
+  ChevronRightIcon,
 } from "@heroicons/react/24/outline";
 import { Link } from "react-router-dom";
 import ItemRatingsComments from "@/components/ItemRatingsComments";
+import { buildCategoryPath, categoryNameToSlug } from "@/utils/categorySlug";
 
 const ItemDetailPage = () => {
   const { id } = useParams<{ id: string }>();
@@ -70,17 +72,47 @@ const ItemDetailPage = () => {
       })
     : null;
 
+  const navBreadcrumb = item.navigationBreadcrumb && item.navigationBreadcrumb.length > 0 && item.category;
+
   return (
     <div className="px-4 py-6 sm:px-0">
       <div className="max-w-3xl mx-auto">
         <div className="mb-4 flex items-center justify-between flex-wrap gap-2">
-          <Link
-            to="/categories"
-            className="inline-flex items-center text-sm font-medium text-gray-600 hover:text-indigo-600"
-          >
-            <ArrowLeftIcon className="h-4 w-4 mr-1" />
-            Back to Categories
-          </Link>
+          {navBreadcrumb ? (
+            <nav className="flex items-center gap-1 text-sm text-gray-600 flex-wrap">
+              <Link to="/categories" className="text-indigo-600 hover:text-indigo-800">
+                Categories
+              </Link>
+              <Link
+                to={buildCategoryPath(categoryNameToSlug(item.category), [])}
+                className="inline-flex items-center gap-1 text-indigo-600 hover:text-indigo-800"
+              >
+                <ChevronRightIcon className="h-4 w-4 text-gray-400 flex-shrink-0" />
+                {item.category}
+              </Link>
+              {item.navigationBreadcrumb!.map((kw, i) => (
+                <Link
+                  key={i}
+                  to={buildCategoryPath(
+                    categoryNameToSlug(item.category),
+                    item.navigationBreadcrumb!.slice(0, i + 1)
+                  )}
+                  className="inline-flex items-center gap-1 text-indigo-600 hover:text-indigo-800"
+                >
+                  <ChevronRightIcon className="h-4 w-4 text-gray-400 flex-shrink-0" />
+                  {kw.toLowerCase() === "other" ? "Others" : kw}
+                </Link>
+              ))}
+            </nav>
+          ) : (
+            <Link
+              to="/categories"
+              className="inline-flex items-center text-sm font-medium text-gray-600 hover:text-indigo-600"
+            >
+              <ArrowLeftIcon className="h-4 w-4 mr-1" />
+              Back to Categories
+            </Link>
+          )}
           {canEdit && (
             <div className="flex items-center gap-2">
               <Link

@@ -10,6 +10,11 @@ interface ExploreQuizBreadcrumbProps {
   onNavigate: (path: string) => void;
 }
 
+/** Display label for "other" keyword in breadcrumbs. */
+function breadcrumbLabel(kw: string): string {
+  return kw.toLowerCase() === "other" ? "Others" : kw;
+}
+
 /** Breadcrumb links go to the categories boxes view (sets view), not back into explore/quiz. */
 export function ExploreQuizBreadcrumb({
   mode: _mode,
@@ -23,7 +28,7 @@ export function ExploreQuizBreadcrumb({
   ];
   keywords.forEach((kw, i) => {
     segments.push({
-      label: kw,
+      label: breadcrumbLabel(kw),
       path: buildCategoryPath(categorySlug, keywords.slice(0, i + 1)),
     });
   });

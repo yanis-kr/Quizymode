@@ -34,7 +34,8 @@ public static class GetKeywords
         int ItemCount,
         double? AverageRating,
         int NavigationRank,
-        string? Description = null);
+        string? Description = null,
+        int PrivateItemCount = 0);
 
     public sealed record Response(List<KeywordResponse> Keywords);
 
@@ -47,6 +48,7 @@ public static class GetKeywords
         public int NavigationRank { get; set; }
         public int SortRank { get; set; }
         public string? Description { get; set; }
+        public int PrivateItemCount { get; set; }
     }
 
     public sealed class Endpoint : IEndpoint
@@ -183,7 +185,9 @@ public static class GetKeywords
                         Name: "other",
                         ItemCount: otherItemCount,
                         AverageRating: null, // Could calculate if needed
-                        NavigationRank: 1));
+                        NavigationRank: 1,
+                        Description: null,
+                        PrivateItemCount: 0));
                 }
             }
 
@@ -303,6 +307,11 @@ public static class GetKeywords
                     THEN i.""Id""
                     ELSE NULL
                 END)::int AS ""ItemCount"",
+                COUNT(DISTINCT CASE 
+                    WHEN i.""Id"" IS NOT NULL AND i.""IsPrivate"" = true AND i.""CreatedBy"" = @CurrentUserId 
+                    THEN i.""Id"" 
+                    ELSE NULL 
+                END)::int AS ""PrivateItemCount"",
                 CASE 
                     WHEN COUNT(DISTINCT i.""Id"") > 0 THEN
                         ROUND(AVG(CASE 
@@ -353,7 +362,8 @@ public static class GetKeywords
                 row.ItemCount,
                 row.AverageRating,
                 row.NavigationRank,
-                row.Description))
+                row.Description,
+                row.PrivateItemCount))
             .ToList();
 
         return keywords;

@@ -22,7 +22,8 @@ public static class GetItemById
         List<KeywordResponse> Keywords,
         List<CollectionResponse> Collections,
         string? Source,
-        string? UploadId = null);
+        string? UploadId = null,
+        List<string> NavigationBreadcrumb = null!); // Navigation path for breadcrumbs: e.g. [rank1, rank2] or ["other"] when item has no rank1/rank2 keyword. Use "other" in URLs; display as "Others".
 
     public sealed record KeywordResponse(
         string Id,
@@ -138,6 +139,9 @@ public static class GetItemById
                     c.CreatedAt)).ToList();
             }
 
+            // Build navigation breadcrumb: rank1, rank2 (or "other" when item has no nav keyword for that level)
+            List<string> navigationBreadcrumb = await GetNavigationBreadcrumbAsync(db, item, cancellationToken);
+
             Response response = new(
                 item.Id.ToString(),
                 categoryName,
@@ -151,7 +155,8 @@ public static class GetItemById
                 visibleKeywords,
                 collections,
                 item.Source,
-                item.UploadId?.ToString());
+                item.UploadId?.ToString(),
+                navigationBreadcrumb);
 
             return Result.Success(response);
         }
@@ -160,6 +165,46 @@ public static class GetItemById
             return Result.Failure<Response>(
                 Error.Problem("Item.GetFailed", $"Failed to get item: {ex.Message}"));
         }
+    }
+
+    /// <summary>
+    /// Returns navigation path for breadcrumbs: [rank1Name, rank2Name] using "other" when item has no nav keyword at that level.
+    /// </summary>
+    private static async Task<List<string>> GetNavigationBreadcrumbAsync(
+        ApplicationDbContext db,
+        Item item,
+        CancellationToken cancellationToken)
+    {
+        if (!item.CategoryId.HasValue || item.Category is null)
+            return new List<string>();
+
+        Guid categoryId = item.CategoryId.Value;
+        HashSet<Guid> itemKeywordIds = item.ItemKeywords.Select(ik => ik.KeywordId).ToHashSet();
+        if (itemKeywordIds.Count == 0)
+            return new List<string> { "other" };
+
+        // Find rank-1: any item keyword that is a nav rank-1 for this category
+        string? rank1Name = await db.CategoryKeywords
+            .Where(ck => ck.CategoryId == categoryId && ck.NavigationRank == 1 && itemKeywordIds.Contains(ck.KeywordId))
+            .Select(ck => ck.Keyword!.Name)
+            .FirstOrDefaultAsync(cancellationToken);
+
+        if (rank1Name == null)
+            return new List<string> { "other" };
+
+        // Find rank-2 under this rank-1: any item keyword that is nav rank-2 with this parent
+        string rank1Lower = rank1Name.ToLower();
+        string? rank2Name = await db.CategoryKeywords
+            .Where(ck => ck.CategoryId == categoryId
+                && ck.NavigationRank == 2
+                && ck.ParentName != null && ck.ParentName.ToLower() == rank1Lower
+                && itemKeywordIds.Contains(ck.KeywordId))
+            .Select(ck => ck.Keyword!.Name)
+            .FirstOrDefaultAsync(cancellationToken);
+
+        if (rank2Name != null)
+            return new List<string> { rank1Name, rank2Name };
+        return new List<string> { rank1Name };
     }
 
     public sealed class FeatureRegistration : IFeatureRegistration

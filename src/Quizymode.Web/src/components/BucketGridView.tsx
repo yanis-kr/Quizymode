@@ -10,7 +10,10 @@ export interface BucketItem {
   itemCount: number;
   description?: string | null;
   averageRating?: number | null;
+  /** Show "Private" (purple) badge when true (e.g. category/collection). */
   isPrivate?: boolean;
+  /** Show "Private" (yellow) badge when > 0 (e.g. keyword set has private items). */
+  privateItemCount?: number;
 }
 
 export interface BucketGridViewProps {
@@ -41,15 +44,14 @@ export function BucketGridView({
             <div className="flex-1 min-w-0">
               <div className="flex items-center gap-2 flex-wrap">
                 <h3 className="text-lg font-medium text-gray-900">{bucket.label}</h3>
-                {bucket.isPrivate !== undefined && (
-                  <span
-                    className={`px-2 py-1 text-xs font-medium rounded ${
-                      bucket.isPrivate
-                        ? "bg-purple-100 text-purple-800"
-                        : "bg-green-100 text-green-800"
-                    }`}
-                  >
-                    {bucket.isPrivate ? "Private" : "Public"}
+                {bucket.isPrivate === true && (
+                  <span className="px-2 py-1 text-xs font-medium rounded bg-purple-100 text-purple-800">
+                    Private
+                  </span>
+                )}
+                {bucket.privateItemCount != null && bucket.privateItemCount > 0 && (
+                  <span className="px-2 py-1 text-xs font-medium rounded bg-amber-100 text-amber-800">
+                    Private
                   </span>
                 )}
               </div>

@@ -325,6 +325,9 @@ internal sealed class DatabaseSeederHostedService(
             "ALTER TABLE \"Categories\" ADD COLUMN IF NOT EXISTS \"Description\" character varying(500) NULL",
             cancellationToken);
         await db.Database.ExecuteSqlRawAsync(
+            "ALTER TABLE \"Categories\" ADD COLUMN IF NOT EXISTS \"ShortDescription\" character varying(120) NULL",
+            cancellationToken);
+        await db.Database.ExecuteSqlRawAsync(
             "ALTER TABLE \"CategoryKeywords\" ADD COLUMN IF NOT EXISTS \"Description\" character varying(500) NULL",
             cancellationToken);
         await db.Database.ExecuteSqlRawAsync(
@@ -365,17 +368,29 @@ internal sealed class DatabaseSeederHostedService(
     {
         _logger.LogInformation("Seeding categories and navigation keywords...");
 
-        // Fixed categories
-        List<string> categoryNames = new()
+        // Fixed categories with one-liner description and 4-5 word short description
+        var categoryDefinitions = new Dictionary<string, (string Description, string ShortDescription)>
         {
-            "general", "history", "science", "geography", "entertainment",
-            "culture", "language", "puzzles", "sports", "tests", "certs",
-            "outdoors", "nature"
+            { "general", ("Mixed trivia, world records, fun facts, and daily quizzes.", "Trivia, records, fun facts") },
+            { "history", ("World and regional history, biographies, and historical events.", "World & regional history") },
+            { "science", ("Biology, astronomy, physics, chemistry, and earth science.", "Science subjects & concepts") },
+            { "geography", ("Countries, capitals, states, flags, and maps.", "Places, capitals, maps") },
+            { "entertainment", ("Movies, TV, music, quotes, and pop culture.", "Movies, TV, music") },
+            { "culture", ("Food, holidays, traditions, customs, and slang.", "Food, holidays, customs") },
+            { "language", ("Vocabulary, grammar, and idioms for language learning.", "Language learning & vocabulary") },
+            { "literature", ("Books, authors, literary terms, and reading comprehension.", "Books, authors, literary terms") },
+            { "arts", ("Visual arts, music theory, film, design, and creative disciplines.", "Visual arts, music, design") },
+            { "puzzles", ("Riddles, logic, brain teasers, and math puzzles.", "Riddles, logic, brain teasers") },
+            { "sports", ("Soccer, basketball, tennis, Olympics, and athletes.", "Sports & athletics") },
+            { "tests", ("Standardized and academic exams: ACT, SAT, GMAT, GRE, NCLEX.", "Academic & licensing exams") },
+            { "certs", ("Professional certifications: AWS, Azure, GCP, CompTIA, Kubernetes.", "Professional certifications") },
+            { "outdoors", ("Survival, camping, and navigation skills.", "Survival, camping, navigation") },
+            { "nature", ("Animals, plants, ecosystems, and natural phenomena.", "Animals, plants, ecosystems") }
         };
 
-        // Seed categories (if missing)
+        // Seed categories (if missing) and update descriptions for existing
         Dictionary<string, Category> categories = new();
-        foreach (string categoryName in categoryNames)
+        foreach ((string categoryName, (string description, string shortDescription)) in categoryDefinitions)
         {
             Category? existingCategory = await db.Categories
                 .FirstOrDefaultAsync(c => c.Name.ToLower() == categoryName.ToLower(), cancellationToken);
@@ -386,6 +401,8 @@ internal sealed class DatabaseSeederHostedService(
                 {
                     Id = Guid.NewGuid(),
                     Name = categoryName,
+                    Description = description,
+                    ShortDescription = shortDescription,
                     IsPrivate = false,
                     CreatedBy = "seeder",
                     CreatedAt = DateTime.UtcNow
@@ -397,6 +414,9 @@ internal sealed class DatabaseSeederHostedService(
             }
             else
             {
+                existingCategory.Description = description;
+                existingCategory.ShortDescription = shortDescription;
+                await db.SaveChangesAsync(cancellationToken);
                 categories[categoryName] = existingCategory;
             }
         }
@@ -417,6 +437,8 @@ internal sealed class DatabaseSeederHostedService(
             { "entertainment", new List<string> { "movies", "tv", "music", "quotes", "pop-culture" } },
             { "culture", new List<string> { "food", "holidays", "traditions", "customs", "slang" } },
             { "language", new List<string> { "spanish", "french", "english", "vocabulary", "idioms" } },
+            { "literature", new List<string> { "fiction", "nonfiction", "authors", "literary-terms", "poetry", "classics" } },
+            { "arts", new List<string> { "visual-arts", "music-theory", "film", "design", "photography" } },
             { "puzzles", new List<string> { "riddles", "logic", "brain-teasers", "math-puzzles", "patterns" } },
             { "sports", new List<string> { "soccer", "basketball", "tennis", "olympics", "athletes" } },
             { "tests", new List<string> { "act", "sat", "gmat", "gre", "nclex" } },

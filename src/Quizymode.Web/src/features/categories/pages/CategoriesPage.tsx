@@ -65,7 +65,7 @@ const CategoriesPage = () => {
   const viewFromUrl = searchParams.get("view") || "sets";
   const pageFromUrl = parseInt(searchParams.get("page") || "1", 10);
   const pageSizeFromUrl = parseInt(searchParams.get("pagesize") || "10", 10);
-  const sortFromUrl = (searchParams.get("sort") || "rating") as SortOption;
+  const sortFromUrl = (searchParams.get("sort") || "name") as SortOption;
   const categoriesPageFromUrl = parseInt(
     searchParams.get("categoriesPage") || "1",
     10
@@ -273,6 +273,11 @@ const CategoriesPage = () => {
     const names = categoriesData.categories.map((c) => c.category);
     return findCategoryNameFromSlug(filterCategorySlug, names);
   }, [filterCategorySlug, categoriesData?.categories]);
+
+  const currentCategoryMeta = useMemo(() => {
+    if (!categoryName || !categoriesData?.categories) return null;
+    return categoriesData.categories.find((c) => c.category === categoryName) ?? null;
+  }, [categoryName, categoriesData?.categories]);
 
   const { data: rank1Data } = useQuery({
     queryKey: ["keywords", "rank1", filterCategoryName],
@@ -776,7 +781,7 @@ const CategoriesPage = () => {
       <>
         <SEO
           title={categoryName ? `${categoryName} Category` : "All categories"}
-          description={categoryName ? `Browse items in the ${categoryName} category on Quizymode.` : "Browse items across all categories on Quizymode."}
+          description={categoryName ? (currentCategoryMeta?.description ?? `Browse items in the ${categoryName} category on Quizymode.`) : "Browse items across all categories on Quizymode."}
           canonical={`https://www.quizymode.com${scopePath}`}
         />
         <div className="px-4 py-6 sm:px-0">
@@ -1004,7 +1009,7 @@ const CategoriesPage = () => {
       <>
         <SEO
           title={`${categoryName} - Sets`}
-          description={`Browse sets in the ${categoryName} category on Quizymode.`}
+          description={currentCategoryMeta?.description ?? `Browse sets in the ${categoryName} category on Quizymode.`}
           canonical={`https://www.quizymode.com${scopePathWithNav}${filterKeywordsFromQuery.length > 0 ? `?keywords=${filterKeywordsFromQuery.map(encodeURIComponent).join(",")}` : ""}`}
         />
         <div className="px-4 py-6 sm:px-0">
@@ -1153,20 +1158,26 @@ const CategoriesPage = () => {
               )}
             </div>
           </div>
-          <h1 className="text-3xl font-bold text-gray-900 mt-4 mb-6">
+          <h1 className="text-3xl font-bold text-gray-900 mt-4 mb-2">
             {keywordsFromUrl.length === 0
               ? categoryName
               : keywordsFromUrl.join(" / ")}
           </h1>
+          {keywordsFromUrl.length === 0 && currentCategoryMeta?.description ? (
+            <p className="text-gray-600 text-sm mb-6">{currentCategoryMeta.description}</p>
+          ) : (
+            <div className="mb-6" />
+          )}
 
           {sortedKeywords.length > 0 ? (
               <BucketGridView
                 buckets={sortedKeywords.map((kw) => ({
                   id: kw.name,
-                  label: kw.name,
+                  label: kw.name.toLowerCase() === "other" ? "Others" : kw.name,
                   itemCount: kw.itemCount,
                   description: kw.description ?? null,
                   averageRating: kw.averageRating ?? null,
+                  privateItemCount: kw.privateItemCount ?? 0,
                 }))}
                 onOpenBucket={(bucket) => {
                   if (isLeaf) {
@@ -1177,7 +1188,7 @@ const CategoriesPage = () => {
                       filterKeywordsFromQuery
                     );
                   } else {
-                    handleKeywordClick(bucket.label);
+                    handleKeywordClick(bucket.id);
                   }
                 }}
               />
@@ -1271,9 +1282,8 @@ const CategoriesPage = () => {
             id: cat.category,
             label: cat.category,
             itemCount: cat.count,
-            description: cat.description ?? null,
+            description: cat.shortDescription ?? cat.description ?? null,
             averageRating: cat.averageStars ?? null,
-            isPrivate: cat.isPrivate,
           }))}
           onOpenBucket={(bucket) =>
             navigateToSets(`/categories/${categoryNameToSlug(bucket.label)}`)
@@ -1298,6 +1308,10 @@ const CategoriesPage = () => {
   );
 };
 
+function breadcrumbKeywordLabel(kw: string): string {
+  return kw.toLowerCase() === "other" ? "Others" : kw;
+}
+
 function Breadcrumb({
   categoryName,
   pathKeywords,
@@ -1313,7 +1327,7 @@ function Breadcrumb({
     pathSegments.push({ label: categoryName, path: buildCategoryPath(slug, []) });
     pathKeywords.forEach((kw, i) => {
       pathSegments.push({
-        label: kw,
+        label: breadcrumbKeywordLabel(kw),
         path: buildCategoryPath(slug, pathKeywords.slice(0, i + 1)),
       });
     });
@@ -1321,7 +1335,7 @@ function Breadcrumb({
     pathSegments.push({ label: "All categories", path: "/categories" });
     pathKeywords.forEach((kw, i) => {
       pathSegments.push({
-        label: kw,
+        label: breadcrumbKeywordLabel(kw),
         path: `/categories?view=items&keywords=${pathKeywords.slice(0, i + 1).map(encodeURIComponent).join(",")}`,
       });
     });

@@ -16,6 +16,7 @@ public static class GetCategories
         Guid Id,
         string Category,
         string? Description,
+        string? ShortDescription,
         int Count,
         bool IsPrivate,
         double? AverageStars);
@@ -26,6 +27,7 @@ public static class GetCategories
         public Guid Id { get; set; }
         public string Category { get; set; } = string.Empty;
         public string? Description { get; set; }
+        public string? ShortDescription { get; set; }
         public int Count { get; set; }
         public bool IsPrivate { get; set; }
         public double? AverageStars { get; set; }
@@ -97,6 +99,7 @@ public static class GetCategories
                     c.""Id"",
                     c.""Name"" AS ""Category"",
                     c.""Description"",
+                    c.""ShortDescription"",
                     COUNT(DISTINCT i.""Id"")::int AS ""Count"",
                     c.""IsPrivate"",
                     CASE
@@ -117,7 +120,7 @@ public static class GetCategories
                     OR (@IsAuthenticated = 1 AND (c.""IsPrivate"" = false OR (c.""IsPrivate"" = true AND c.""CreatedBy"" = @CurrentUserId)))
                 )
                     AND (@SearchPattern IS NULL OR LOWER(c.""Name"") LIKE LOWER(@SearchPattern))
-                GROUP BY c.""Id"", c.""Name"", c.""Description"", c.""IsPrivate""
+                GROUP BY c.""Id"", c.""Name"", c.""Description"", c.""ShortDescription"", c.""IsPrivate""
                 ORDER BY
                     COALESCE(AVG(r.""Stars""), -1) DESC,
                     c.""Name"" ASC";
@@ -138,6 +141,7 @@ public static class GetCategories
                     row.Id,
                     row.Category,
                     row.Description,
+                    row.ShortDescription,
                     row.Count,
                     row.IsPrivate,
                     row.AverageStars))
