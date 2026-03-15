@@ -6,6 +6,7 @@ import {
   adminApi,
   type CategoryKeywordAdminResponse,
   type UpdateCategoryKeywordRequest,
+  type CreateCategoryKeywordRequest,
 } from "@/api/admin";
 import { categoriesApi } from "@/api/categories";
 import LoadingSpinner from "@/components/LoadingSpinner";
@@ -51,6 +52,39 @@ const AdminKeywordsPage = () => {
     },
   });
 
+  const createMutation = useMutation({
+    mutationFn: (body: CreateCategoryKeywordRequest) =>
+      adminApi.createCategoryKeyword(body),
+    onSuccess: () => {
+      queryClient.invalidateQueries({ queryKey: ["admin", "category-keywords"] });
+      queryClient.invalidateQueries({
+        queryKey: ["admin", "keywords-available", addCategoryId],
+      });
+    },
+  });
+
+  const deleteMutation = useMutation({
+    mutationFn: (id: string) => adminApi.deleteCategoryKeyword(id),
+    onSuccess: () => {
+      queryClient.invalidateQueries({ queryKey: ["admin", "category-keywords"] });
+      queryClient.invalidateQueries({ queryKey: ["admin", "keywords-available"] });
+    },
+  });
+
+  const [addCategoryId, setAddCategoryId] = React.useState<string>("");
+  const [addKeywordId, setAddKeywordId] = React.useState<string>("");
+  const [addRank, setAddRank] = React.useState<1 | 2>(1);
+  const [addParentName, setAddParentName] = React.useState<string>("");
+  const [addSortRank, setAddSortRank] = React.useState<number>(0);
+  const [addDescription, setAddDescription] = React.useState<string>("");
+
+  const { data: availableKeywordsData } = useQuery({
+    queryKey: ["admin", "keywords-available", addCategoryId],
+    queryFn: () => adminApi.getAvailableKeywordsForCategory(addCategoryId),
+    enabled: !!isAuthenticated && !!isAdmin && !!addCategoryId,
+  });
+  const availableKeywords = availableKeywordsData?.keywords ?? [];
+
   if (!isAuthenticated || !isAdmin) {
     return <Navigate to="/" replace />;
   }
@@ -79,8 +113,11 @@ const AdminKeywordsPage = () => {
         </Link>
       </div>
       <h1 className="text-3xl font-bold text-gray-900 mb-2">Manage Keywords</h1>
-      <p className="text-gray-600 text-sm mb-6">
+      <p className="text-gray-600 text-sm mb-2">
         Assign keywords to a parent (rank-1) within each category. Rank 1 = top-level, Rank 2 = under a parent. &quot;Other&quot; is excluded from this list.
+      </p>
+      <p className="text-gray-500 text-sm mb-6">
+        <strong>Navigation keywords</strong> are used in URL paths (e.g. <code className="bg-gray-100 px-1 rounded">/categories/act-math/Algebra</code>). Only rank-1 and rank-2 keywords appear in navigation and URLs.
       </p>
 
       <div className="mb-4 flex flex-wrap items-center gap-4">
@@ -111,6 +148,140 @@ const AdminKeywordsPage = () => {
             <option value="2">2</option>
           </select>
         </label>
+      </div>
+
+      <div className="mb-6 rounded-lg border border-gray-200 bg-gray-50 p-4">
+        <h2 className="text-sm font-semibold text-gray-800 mb-3">Add keyword to navigation</h2>
+        <div className="flex flex-wrap items-end gap-3">
+          <label className="text-sm font-medium text-gray-700">
+            Category
+            <select
+              value={addCategoryId}
+              onChange={(e) => {
+                setAddCategoryId(e.target.value);
+                setAddKeywordId("");
+                setAddParentName("");
+              }}
+              className="ml-2 rounded border border-gray-300 text-sm"
+            >
+              <option value="">Select category</option>
+              {categories.map((c) => (
+                <option key={c.id} value={c.id}>
+                  {c.category}
+                </option>
+              ))}
+            </select>
+          </label>
+          <label className="text-sm font-medium text-gray-700">
+            Keyword
+            <select
+              value={addKeywordId}
+              onChange={(e) => setAddKeywordId(e.target.value)}
+              disabled={!addCategoryId || availableKeywords.length === 0}
+              className="ml-2 rounded border border-gray-300 text-sm min-w-[140px]"
+            >
+              <option value="">Select keyword</option>
+              {availableKeywords.map((k) => (
+                <option key={k.id} value={k.id}>
+                  {k.name}
+                </option>
+              ))}
+            </select>
+          </label>
+          <label className="text-sm font-medium text-gray-700">
+            Rank
+            <select
+              value={addRank}
+              onChange={(e) => {
+                const v = parseInt(e.target.value, 10) as 1 | 2;
+                setAddRank(v);
+                if (v === 1) setAddParentName("");
+              }}
+              className="ml-2 rounded border border-gray-300 text-sm"
+            >
+              <option value={1}>1</option>
+              <option value={2}>2</option>
+            </select>
+          </label>
+          {addRank === 2 && (
+            <label className="text-sm font-medium text-gray-700">
+              Parent (rank-1)
+              <select
+                value={addParentName}
+                onChange={(e) => setAddParentName(e.target.value)}
+                className="ml-2 rounded border border-gray-300 text-sm min-w-[120px]"
+              >
+                <option value="">Select parent</option>
+                {rank1ByCategory
+                  .filter(
+                    (r) =>
+                      categories.find((c) => c.id === addCategoryId)?.category ===
+                      r.categoryName
+                  )
+                  .map((r) => (
+                    <option key={r.keywordName} value={r.keywordName}>
+                      {r.keywordName}
+                    </option>
+                  ))}
+              </select>
+            </label>
+          )}
+          <label className="text-sm font-medium text-gray-700">
+            Sort
+            <input
+              type="number"
+              min={0}
+              value={addSortRank}
+              onChange={(e) => setAddSortRank(parseInt(e.target.value, 10) || 0)}
+              className="ml-2 w-16 rounded border border-gray-300 text-sm"
+            />
+          </label>
+          <label className="text-sm font-medium text-gray-700">
+            Description
+            <input
+              type="text"
+              value={addDescription}
+              onChange={(e) => setAddDescription(e.target.value)}
+              placeholder="Optional"
+              className="ml-2 rounded border border-gray-300 text-sm w-40"
+            />
+          </label>
+          <button
+            type="button"
+            onClick={() => {
+              if (!addCategoryId || !addKeywordId) return;
+              if (addRank === 2 && !addParentName) return;
+              createMutation.mutate({
+                categoryId: addCategoryId,
+                keywordId: addKeywordId,
+                navigationRank: addRank,
+                parentName: addRank === 2 ? addParentName : null,
+                sortRank: addSortRank,
+                description: addDescription.trim() || null,
+              });
+              setAddKeywordId("");
+              setAddParentName("");
+              setAddSortRank(0);
+              setAddDescription("");
+            }}
+            disabled={
+              !addCategoryId ||
+              !addKeywordId ||
+              (addRank === 2 && !addParentName) ||
+              createMutation.isPending
+            }
+            className="rounded bg-indigo-600 px-3 py-1.5 text-sm font-medium text-white hover:bg-indigo-700 disabled:opacity-50"
+          >
+            {createMutation.isPending ? "Adding…" : "Add"}
+          </button>
+        </div>
+        {createMutation.isError && (
+          <p className="mt-2 text-sm text-red-600">
+            {createMutation.error instanceof Error
+              ? createMutation.error.message
+              : "Failed to add keyword"}
+          </p>
+        )}
       </div>
 
       <div className="bg-white shadow rounded-lg overflow-hidden">
@@ -163,6 +334,8 @@ const AdminKeywordsPage = () => {
                       .map((r) => r.keywordName)}
                     onSave={(body) => updateMutation.mutate({ id: kw.id, body })}
                     isSaving={updateMutation.isPending}
+                    onDelete={() => deleteMutation.mutate(kw.id)}
+                    isDeleting={deleteMutation.isPending}
                   />
                 ))}
             </tbody>
@@ -183,12 +356,16 @@ function KeywordRow({
   rank1Options,
   onSave,
   isSaving,
+  onDelete,
+  isDeleting,
 }: {
   keyword: CategoryKeywordAdminResponse;
   description: string;
   rank1Options: string[];
   onSave: (body: UpdateCategoryKeywordRequest) => void;
   isSaving: boolean;
+  onDelete: () => void;
+  isDeleting: boolean;
 }) {
   const [parentName, setParentName] = React.useState<string>(keyword.parentName ?? "");
   const [navigationRank, setNavigationRank] = React.useState<number | "">(
@@ -290,7 +467,7 @@ function KeywordRow({
           className="w-16 rounded border-gray-300 text-sm"
         />
       </td>
-      <td className="px-4 py-2 text-right">
+      <td className="px-4 py-2 text-right space-x-2">
         {dirty && (
           <button
             type="button"
@@ -301,6 +478,23 @@ function KeywordRow({
             {isSaving ? "Saving…" : "Save"}
           </button>
         )}
+        <button
+          type="button"
+          onClick={() => {
+            if (
+              window.confirm(
+                `Remove "${keyword.keywordName}" from navigation in ${keyword.categoryName}? The keyword will still exist as a tag.`
+              )
+            ) {
+              onDelete();
+            }
+          }}
+          disabled={isDeleting}
+          className="text-sm font-medium text-red-600 hover:text-red-800 disabled:opacity-50"
+          title="Remove from navigation"
+        >
+          {isDeleting ? "…" : "Delete"}
+        </button>
       </td>
     </tr>
   );

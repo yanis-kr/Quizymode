@@ -119,6 +119,29 @@ export const adminApi = {
     return response.data;
   },
 
+  createCategoryKeyword: async (
+    data: CreateCategoryKeywordRequest
+  ): Promise<CategoryKeywordAdminResponse> => {
+    const response = await apiClient.post<CategoryKeywordAdminResponse>(
+      "/admin/category-keywords",
+      data
+    );
+    return response.data;
+  },
+
+  deleteCategoryKeyword: async (id: string): Promise<void> => {
+    await apiClient.delete(`/admin/category-keywords/${id}`);
+  },
+
+  getAvailableKeywordsForCategory: async (
+    categoryId: string
+  ): Promise<AvailableKeywordsResponse> => {
+    const response = await apiClient.get<AvailableKeywordsResponse>(
+      `/admin/categories/${categoryId}/keywords-available`
+    );
+    return response.data;
+  },
+
   updateCategory: async (
     id: string,
     data: UpdateCategoryRequest
@@ -129,17 +152,46 @@ export const adminApi = {
     );
     return response.data;
   },
+
+  createCategory: async (
+    data: CreateCategoryRequest
+  ): Promise<CreateCategoryResponse> => {
+    const response = await apiClient.post<CreateCategoryResponse>(
+      "/admin/categories",
+      data
+    );
+    return response.data;
+  },
+
+  deleteCategory: async (id: string): Promise<void> => {
+    await apiClient.delete(`/admin/categories/${id}`);
+  },
 };
+
+export interface CreateCategoryRequest {
+  name: string;
+  description?: string | null;
+  shortDescription?: string | null;
+}
+
+export interface CreateCategoryResponse {
+  id: string;
+  name: string;
+  description?: string | null;
+  shortDescription?: string | null;
+}
 
 export interface UpdateCategoryRequest {
   name: string;
   description?: string | null;
+  shortDescription?: string | null;
 }
 
 export interface UpdateCategoryResponse {
   id: string;
   name: string;
   description?: string | null;
+  shortDescription?: string | null;
 }
 
 export interface CategoryKeywordAdminResponse {
@@ -151,6 +203,25 @@ export interface CategoryKeywordAdminResponse {
   navigationRank: number | null;
   parentName: string | null;
   sortRank: number;
+  description?: string | null;
+}
+
+export interface CreateCategoryKeywordRequest {
+  categoryId: string;
+  keywordId: string;
+  navigationRank: number;
+  parentName?: string | null;
+  sortRank?: number;
+  description?: string | null;
+}
+
+export interface KeywordOption {
+  id: string;
+  name: string;
+}
+
+export interface AvailableKeywordsResponse {
+  keywords: KeywordOption[];
 }
 
 export interface CategoryKeywordsAdminResponse {

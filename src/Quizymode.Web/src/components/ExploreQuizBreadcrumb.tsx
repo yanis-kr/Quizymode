@@ -7,6 +7,8 @@ interface ExploreQuizBreadcrumbProps {
   categorySlug: string;
   categoryDisplayName: string;
   keywords: string[];
+  /** Optional descriptions for each keyword (same order as keywords). Shown as tooltip when present. */
+  keywordDescriptions?: (string | null)[];
   onNavigate: (path: string) => void;
 }
 
@@ -21,15 +23,17 @@ export function ExploreQuizBreadcrumb({
   categorySlug,
   categoryDisplayName,
   keywords,
+  keywordDescriptions,
   onNavigate,
 }: ExploreQuizBreadcrumbProps) {
-  const segments: { label: string; path: string }[] = [
+  const segments: { label: string; path: string; description?: string | null }[] = [
     { label: categoryDisplayName, path: buildCategoryPath(categorySlug, []) },
   ];
   keywords.forEach((kw, i) => {
     segments.push({
       label: breadcrumbLabel(kw),
       path: buildCategoryPath(categorySlug, keywords.slice(0, i + 1)),
+      description: keywordDescriptions?.[i] ?? undefined,
     });
   });
 
@@ -45,6 +49,7 @@ export function ExploreQuizBreadcrumb({
             onClick={() => onNavigate(seg.path)}
             className="text-indigo-600 hover:text-indigo-800"
             type="button"
+            title={seg.description ?? undefined}
           >
             {seg.label}
           </button>

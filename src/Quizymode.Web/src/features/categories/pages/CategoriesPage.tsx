@@ -268,6 +268,15 @@ const CategoriesPage = () => {
     return findCategoryNameFromSlug(categorySlugParam, names);
   }, [categorySlugParam, categoriesData?.categories]);
 
+  const { data: breadcrumbKeywordDescriptionsData } = useQuery({
+    queryKey: ["keyword-descriptions", categoryName, pathKeywordsFromUrl],
+    queryFn: () =>
+      keywordsApi.getKeywordDescriptions(categoryName!, pathKeywordsFromUrl),
+    enabled: !!categoryName && pathKeywordsFromUrl.length > 0,
+  });
+  const breadcrumbKeywordDescriptions =
+    breadcrumbKeywordDescriptionsData?.keywords?.map((k) => k.description) ?? undefined;
+
   const filterCategoryName = useMemo(() => {
     if (!categoriesData?.categories || isAllCategoriesSlug(filterCategorySlug)) return null;
     const names = categoriesData.categories.map((c) => c.category);
@@ -903,6 +912,7 @@ const CategoriesPage = () => {
             <Breadcrumb
               categoryName={categoryName}
               pathKeywords={categoryName ? pathKeywordsFromUrl : filterKeywordsFromQuery}
+              keywordDescriptions={categoryName ? breadcrumbKeywordDescriptions : undefined}
               onNavigate={(path) => {
                 if (path.includes("?")) navigate(path);
                 else navigateToSets(path);
@@ -1135,6 +1145,7 @@ const CategoriesPage = () => {
             <Breadcrumb
               categoryName={categoryName}
               pathKeywords={pathKeywordsFromUrl}
+              keywordDescriptions={breadcrumbKeywordDescriptions}
               onNavigate={navigateToSets}
             />
             <div className="flex flex-wrap items-center gap-3 flex-shrink-0">
@@ -1315,13 +1326,15 @@ function breadcrumbKeywordLabel(kw: string): string {
 function Breadcrumb({
   categoryName,
   pathKeywords,
+  keywordDescriptions,
   onNavigate,
 }: {
   categoryName: string | null;
   pathKeywords: string[];
+  keywordDescriptions?: (string | null)[];
   onNavigate: (path: string) => void;
 }) {
-  const pathSegments: { label: string; path: string }[] = [];
+  const pathSegments: { label: string; path: string; description?: string | null }[] = [];
   if (categoryName) {
     const slug = categoryNameToSlug(categoryName);
     pathSegments.push({ label: categoryName, path: buildCategoryPath(slug, []) });
@@ -1329,6 +1342,7 @@ function Breadcrumb({
       pathSegments.push({
         label: breadcrumbKeywordLabel(kw),
         path: buildCategoryPath(slug, pathKeywords.slice(0, i + 1)),
+        description: keywordDescriptions?.[i] ?? undefined,
       });
     });
   } else {
@@ -1355,6 +1369,7 @@ function Breadcrumb({
           <button
             onClick={() => onNavigate(seg.path)}
             className="text-indigo-600 hover:text-indigo-800"
+            title={seg.description ?? undefined}
           >
             {seg.label}
           </button>

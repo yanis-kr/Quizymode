@@ -10,9 +10,9 @@ namespace Quizymode.Api.Features.Admin;
 
 public static class UpdateCategory
 {
-    public sealed record UpdateCategoryRequest(string Name, string? Description = null);
+    public sealed record UpdateCategoryRequest(string Name, string? Description = null, string? ShortDescription = null);
 
-    public sealed record UpdateCategoryResponse(Guid Id, string Name, string? Description);
+    public sealed record UpdateCategoryResponse(Guid Id, string Name, string? Description, string? ShortDescription);
 
     public sealed class Validator : AbstractValidator<UpdateCategoryRequest>
     {
@@ -26,6 +26,9 @@ public static class UpdateCategory
             RuleFor(x => x.Description)
                 .MaximumLength(500)
                 .When(x => x.Description != null);
+            RuleFor(x => x.ShortDescription)
+                .MaximumLength(120)
+                .When(x => x.ShortDescription != null);
         }
     }
 
@@ -103,8 +106,12 @@ public static class UpdateCategory
         {
             category.Description = string.IsNullOrWhiteSpace(request.Description) ? null : request.Description.Trim();
         }
+        if (request.ShortDescription is not null)
+        {
+            category.ShortDescription = string.IsNullOrWhiteSpace(request.ShortDescription) ? null : request.ShortDescription.Trim();
+        }
         await db.SaveChangesAsync(cancellationToken);
 
-        return Result.Success(new UpdateCategoryResponse(category.Id, category.Name, category.Description));
+        return Result.Success(new UpdateCategoryResponse(category.Id, category.Name, category.Description, category.ShortDescription));
     }
 }

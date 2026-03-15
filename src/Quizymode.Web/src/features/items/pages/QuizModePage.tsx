@@ -9,6 +9,7 @@ import { useQuery, useQueryClient } from "@tanstack/react-query";
 import { itemsApi } from "@/api/items";
 import { collectionsApi } from "@/api/collections";
 import { categoriesApi } from "@/api/categories";
+import { keywordsApi } from "@/api/keywords";
 import { useAuth } from "@/contexts/AuthContext";
 import LoadingSpinner from "@/components/LoadingSpinner";
 import ErrorMessage from "@/components/ErrorMessage";
@@ -85,6 +86,16 @@ const QuizModePage = () => {
     );
     return actualCategoryName || categorySlug; // Fallback to slug if not found
   }, [categorySlug, categoriesData?.categories]);
+
+  // Fetch navigation keyword descriptions for breadcrumb tooltips
+  const { data: keywordDescriptionsData } = useQuery({
+    queryKey: ["keyword-descriptions", category, keywords],
+    queryFn: () =>
+      keywordsApi.getKeywordDescriptions(category!, keywords ?? []),
+    enabled: !!category && (keywords?.length ?? 0) > 0,
+  });
+  const keywordDescriptions =
+    keywordDescriptionsData?.keywords?.map((k) => k.description) ?? undefined;
 
   // Check sessionStorage for stored items (when navigating with itemId from ItemsPage or comments)
   // Must be declared before useQuery that references it
@@ -611,6 +622,7 @@ const QuizModePage = () => {
                   categorySlug={categoryNameToSlug(category)}
                   categoryDisplayName={category}
                   keywords={keywords || []}
+                  keywordDescriptions={keywordDescriptions}
                   onNavigate={(path) => navigate(path)}
                 />
               </div>
@@ -668,6 +680,7 @@ const QuizModePage = () => {
               categorySlug={categoryNameToSlug(category)}
               categoryDisplayName={category}
               keywords={keywords || []}
+              keywordDescriptions={keywordDescriptions}
               onNavigate={(path) => navigate(path)}
             />
           ) : (
