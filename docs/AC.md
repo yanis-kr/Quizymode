@@ -6,6 +6,49 @@ Criteria are grouped by **feature** (e.g. AC 1.10 Bookmarking collections). Each
 
 ---
 
+## Common API conventions
+
+Use these global contracts unless a specific AC explicitly defines a different behavior.
+
+- **Auth and status codes**
+  - **401 Unauthorized**: Request requires authentication and the caller is anonymous or token is missing/invalid (e.g. owner-only or user-specific endpoints).
+  - **403 Forbidden**: Caller is authenticated but does not have permission to perform the operation on a resource whose existence is not hidden (e.g. admin-only maintenance endpoints).
+  - **404 Not Found**: Resource does not exist **or** its existence must not be revealed to this caller (e.g. private collections/items for non-owners).
+  - **400 Bad Request**: Validation or contract errors (missing/invalid parameters, malformed body, business-rule violations that are not authorization).
+- **Pagination shape**
+  - Paged list endpoints return an object with at least: `items` (array), `totalCount` (number), `pageNumber` (number), `pageSize` (number), and may include `hasNext` / `hasPrevious`.
+- **Date/time format**
+  - All timestamps in APIs are ISO 8601 UTC strings (e.g. `2026-03-15T14:30:00Z`). Clients SHOULD treat them as UTC and convert to local time zones for display.
+- **ProblemDetails / error shape**
+  - Error responses use RFC 7807-style **ProblemDetails** with fields: `type`, `title`, `status`, `detail`, and optional `errors` (dictionary of field → messages) for validation errors. The HTTP status code matches `status`.
+- **Naming conventions**
+  - JSON fields use **camelCase** (e.g. `isPublic`, `createdBy`, `pageSize`). Database columns and C# properties may use **PascalCase**, but the wire format follows the JSON naming.
+- **Idempotent behavior**
+  - **GET**, **HEAD**, and **OPTIONS** are side-effect free.
+  - **DELETE** is idempotent: deleting an already-deleted or non-existent resource returns a success status (e.g. 204) without error.
+  - **POST/PUT/PATCH** for "toggle" or "upsert" operations (e.g. bookmarking, ratings, user settings) are idempotent per `(user, resource)` pair: repeating the same request leaves state unchanged and returns success.
+- **Null vs empty collections**
+  - Collection-valued fields and list endpoints return **empty arrays** (`[]`) when there are no items, not `null`. Scalars may be `null` when meaningfully "missing" (e.g. optional description).
+
+---
+
+## Global invariants
+
+These invariants apply everywhere unless explicitly overridden by a feature-specific AC.
+
+- **Active collection uniqueness**
+  - An authenticated user who has at least one collection has **exactly one active collection** at any time; APIs and UI that depend on an active collection must not allow a state with multiple active collections.
+- **Private collection discoverability**
+  - Collections with `IsPublic = false` are **never discoverable** via Discover or other search/browse endpoints; they can only be accessed directly by the owner via authorized endpoints.
+- **Category visibility**
+  - Categories are always public; there are no private categories. Category lists and navigation are visible to all users; item-level visibility rules still apply within categories.
+- **Visibility for anonymous users**
+  - Anonymous users **never** see private items or private keywords; all APIs and queries must enforce this rule.
+- **Owner access**
+  - The owner of a resource always has access to that resource (subject to technical deletion), regardless of `IsPublic` or other sharing flags, unless a specific AC calls out an exception.
+
+---
+
 ## Actors
 
 Acceptance criteria are written per **Actor**. Use these labels consistently:
@@ -77,10 +120,11 @@ Terms used in this document with a specific meaning:
 **UI**
 
 - **AC 1.2.4** [Owner] **Given** I am authenticated, **when** I use the app, **then** I have exactly one active collection at any time; the UI uses it for "add to collection" / "remove from collection" and for quick switching; if none is set, the frontend can set the first (or default) collection as active.
-- **AC 1.2.5** [Owner] **Given** I am **authenticated** and on any item view (list, explore, quiz, or study), **when** the page loads, **then** I see: (1) a control to **add** the item to my active collection (+), (2) a control to **remove** the item from my active collection (-), and (3) a control to **select or change** my active collection. The "select active collection" control (e.g. folder/manage-collections) offers **only collections I own** (same set as `GET /collections`). Add/remove apply to the current item and the currently selected active collection.
-- **AC 1.2.6** [Anonymous] **Given** I am not authenticated, **when** I am on any item view, **then** I do **not** see the add-to-collection (+), remove-from-collection (-), or select-active-collection controls.
-- **AC 1.2.7** [Owner] **Given** I am authenticated and have an active collection, **when** the item is **already in** my active collection, **then** the minus (-) icon is enabled and the plus (+) icon is disabled. **When** the item is **not** in my active collection, **then** the plus (+) icon is enabled and the minus (-) icon is disabled.
-- **AC 1.2.8** [Owner] **Given** I am on the Collections page (My collections tab), **when** I use the "Set active" control on a collection card, **then** that collection becomes my active collection (used for add/remove on items); the current active collection is indicated on the card (e.g. checkmark or filled icon).
+- **AC 1.2.5** [Owner] **Given** I am **authenticated** and on any item view (list, explore, quiz, or study), **when** the page loads, **then** I see controls to **add** the item to my active collection (+), **remove** the item from my active collection (-), and **select or change** my active collection.
+- **AC 1.2.6** [Owner] **Given** I am authenticated and use the "select active collection" control (e.g. folder/manage-collections), **when** the list of collections is shown, **then** I see **only collections I own** (same set as `GET /collections`), and selecting one sets it as my active collection.
+- **AC 1.2.7** [Anonymous] **Given** I am not authenticated, **when** I am on any item view, **then** I do **not** see the add-to-collection (+), remove-from-collection (-), or select-active-collection controls.
+- **AC 1.2.8** [Owner] **Given** I am authenticated and have an active collection, **when** the item is **already in** my active collection, **then** the minus (-) icon is enabled and the plus (+) icon is disabled. **When** the item is **not** in my active collection, **then** the plus (+) icon is enabled and the minus (-) icon is disabled.
+- **AC 1.2.9** [Owner] **Given** I am on the Collections page (My collections tab), **when** I use the "Set active" control on a collection card, **then** that collection becomes my active collection (used for add/remove on items); the current active collection is indicated on the card (e.g. checkmark or filled icon).
 
 ---
 
@@ -326,8 +370,10 @@ Categories are **public only** (there is no private category). Users navigate by
 
 **UI**
 
-- **AC 3.5.2** [Anyone] **Given** I am viewing items in category/keywords scope (List mode, e.g. `view=items` on the category path), **when** the list loads, **then** I see the same scope as in Sets (category + path keywords + query keywords); I can change page size, paginate, and use scope filters (e.g. item type, search, rating); authenticated users see add/remove from collection and active-collection controls per AC 1.2.5–1.2.7.
-- **AC 3.5.3** [Anyone] **Given** I am in List mode (category/keywords scope), **when** the list is shown, **then** the breadcrumb displays the path (e.g. Categories → category → keyword(s)) with the **item count** in parentheses after it (e.g. "Categories > language > french (5)"); the UI does **not** show a separate "Items" heading or "Items in ..." paragraph below the breadcrumb.
+- **AC 3.5.2** [Anyone] **Given** I am viewing items in category/keywords scope (List mode, e.g. `view=items` on the category path), **when** the list loads, **then** I see the same scope as in Sets (category + path keywords + query keywords).
+- **AC 3.5.3** [Anyone] **Given** I am in List mode (category/keywords scope), **when** I interact with the list, **then** I can change page size, paginate, and use scope filters (e.g. item type, search, rating).
+- **AC 3.5.4** [Authenticated] **Given** I am authenticated and viewing items in category/keywords scope (List mode), **when** the list loads, **then** I see add/remove-from-collection and active-collection controls per AC 1.2.5–1.2.8.
+- **AC 3.5.5** [Anyone] **Given** I am in List mode (category/keywords scope), **when** the list is shown, **then** the breadcrumb displays the path (e.g. Categories → category → keyword(s)) with the **item count** in parentheses after it (e.g. "Categories > language > french (5)"); the UI does **not** show a separate "Items" heading or "Items in ..." paragraph below the breadcrumb.
 
 ---
 
@@ -445,4 +491,5 @@ When you change application behavior (API contracts, authorization rules, or use
 - **API vs UI:** Keep **API** (HTTP, status codes, payloads, authorization) and **UI** (labels, screens, controls) in separate subsections under each feature so backend and frontend concerns stay separate.
 - **Actors:** Use the standard actors: **Owner**, **Authenticated (non-owner)**, **Admin (non-owner)**, **Anonymous**. State the actor in each AC as `[Actor]`. For Admin (non-owner), use "Same as Authenticated (non-owner) (AC X.Y.Z)" when behavior is the same.
 - **Format:** Use **AC section.subsection.id** with Given/When/Then; reference endpoints and status codes in API criteria, and copy/controls in UI criteria.
+- **Atomicity:** Aim for **one AC = one verifiable behavior**. Avoid mixing concerns (e.g. do not combine route behavior, API response shape, UI labels, navigation, and error handling in a single AC); instead, split into separate ACs that each test one thing.
 - See the Cursor rule "Update acceptance criteria when app behavior changes" for automation hints.

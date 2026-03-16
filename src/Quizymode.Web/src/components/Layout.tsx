@@ -1,6 +1,6 @@
 import type { ReactNode } from "react";
 import { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useQuery } from "@tanstack/react-query";
 import { useAuth } from "@/contexts/AuthContext";
 import { usersApi } from "@/api/users";
@@ -14,6 +14,7 @@ interface LayoutProps {
 const Layout = ({ children }: LayoutProps) => {
   const { isAuthenticated, logout, username, email, isAdmin } = useAuth();
   const navigate = useNavigate();
+  const location = useLocation();
   const [showProfileModal, setShowProfileModal] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
@@ -41,6 +42,22 @@ const Layout = ({ children }: LayoutProps) => {
     setMobileMenuOpen(false);
   };
 
+  const isPathActive = (basePath: string) => {
+    if (location.pathname === basePath) return true;
+    if (location.pathname.startsWith(`${basePath}/`)) return true;
+    return false;
+  };
+
+  const desktopNavLinkClass = (active: boolean) =>
+    `inline-flex items-center px-1 pt-1 text-sm font-medium ${
+      active ? "text-indigo-600" : "text-gray-900 hover:text-indigo-600"
+    }`;
+
+  const mobileNavLinkClass = (active: boolean) =>
+    `block px-3 py-2 text-base font-medium ${
+      active ? "text-indigo-600 bg-gray-50" : "text-gray-900 hover:text-indigo-600 hover:bg-gray-50"
+    }`;
+
   return (
     <div className="min-h-screen bg-gray-50">
       <nav className="bg-white shadow-sm">
@@ -57,7 +74,7 @@ const Layout = ({ children }: LayoutProps) => {
               <div className="hidden sm:ml-6 sm:flex sm:space-x-8">
                 <Link
                   to="/categories"
-                  className="inline-flex items-center px-1 pt-1 text-sm font-medium text-gray-900 hover:text-indigo-600"
+                  className={desktopNavLinkClass(isPathActive("/categories"))}
                 >
                   Categories
                 </Link>
@@ -65,20 +82,20 @@ const Layout = ({ children }: LayoutProps) => {
                   <>
                     <Link
                       to="/collections"
-                      className="inline-flex items-center px-1 pt-1 text-sm font-medium text-gray-900 hover:text-indigo-600"
+                      className={desktopNavLinkClass(isPathActive("/collections"))}
                     >
                       Collections
                     </Link>
                     <Link
                       to="/items/add"
-                      className="inline-flex items-center px-1 pt-1 text-sm font-medium text-gray-900 hover:text-indigo-600"
+                      className={desktopNavLinkClass(isPathActive("/items"))}
                     >
                       Add Items
                     </Link>
                     {userIsAdmin && (
                       <Link
                         to="/admin"
-                        className="inline-flex items-center px-1 pt-1 text-sm font-medium text-gray-900 hover:text-indigo-600"
+                        className={desktopNavLinkClass(isPathActive("/admin"))}
                       >
                         Admin
                       </Link>
@@ -155,7 +172,7 @@ const Layout = ({ children }: LayoutProps) => {
             <div className="pt-2 pb-3 space-y-1">
               <Link
                 to="/categories"
-                className="block px-3 py-2 text-base font-medium text-gray-900 hover:text-indigo-600 hover:bg-gray-50"
+                className={mobileNavLinkClass(isPathActive("/categories"))}
                 onClick={closeMobileMenu}
               >
                 Categories
@@ -164,14 +181,14 @@ const Layout = ({ children }: LayoutProps) => {
                 <>
                   <Link
                     to="/collections"
-                    className="block px-3 py-2 text-base font-medium text-gray-900 hover:text-indigo-600 hover:bg-gray-50"
+                    className={mobileNavLinkClass(isPathActive("/collections"))}
                     onClick={closeMobileMenu}
                   >
                     Collections
                   </Link>
                   <Link
                     to="/items/add"
-                    className="block px-3 py-2 text-base font-medium text-gray-900 hover:text-indigo-600 hover:bg-gray-50"
+                    className={mobileNavLinkClass(isPathActive("/items"))}
                     onClick={closeMobileMenu}
                   >
                     Add Items
@@ -179,7 +196,7 @@ const Layout = ({ children }: LayoutProps) => {
                   {userIsAdmin && (
                     <Link
                       to="/admin"
-                      className="block px-3 py-2 text-base font-medium text-gray-900 hover:text-indigo-600 hover:bg-gray-50"
+                      className={mobileNavLinkClass(isPathActive("/admin"))}
                       onClick={closeMobileMenu}
                     >
                       Admin

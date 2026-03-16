@@ -9,7 +9,7 @@ import ItemListSection from "@/components/ItemListSection";
 import ItemCollectionsModal from "@/components/ItemCollectionsModal";
 import { ItemCollectionControls } from "@/components/ItemCollectionControls";
 import { ScopeSecondaryBar } from "@/components/ScopeSecondaryBar";
-import { ArrowLeftIcon, EyeIcon, MinusIcon, StarIcon, BookmarkIcon } from "@heroicons/react/24/outline";
+import { EyeIcon, MinusIcon, StarIcon, BookmarkIcon, XMarkIcon } from "@heroicons/react/24/outline";
 import { StarIcon as StarIconSolid } from "@heroicons/react/24/solid";
 import { buildCategoryPath, categoryNameToSlug } from "@/utils/categorySlug";
 
@@ -26,6 +26,7 @@ const CollectionDetailPage = () => {
   const [manageCollectionsItemId, setManageCollectionsItemId] = useState<string | null>(null);
   const [itemsPage, setItemsPage] = useState(1);
   const [pageSize, setPageSize] = useState(25);
+  const [showDetails, setShowDetails] = useState(false);
 
   // Unified URL: redirect to explore/quiz routes when view param is set (keeps existing explore/quiz pages)
   useEffect(() => {
@@ -161,33 +162,91 @@ const CollectionDetailPage = () => {
           }}
         />
       )}
-      <div className="flex flex-wrap items-center justify-between gap-3 mt-2">
-        <button
-          onClick={() => navigate("/collections")}
-          className="flex items-center px-2.5 py-1.5 text-sm font-medium text-gray-700 bg-white border border-gray-200 rounded-md hover:bg-gray-50"
-        >
-          <ArrowLeftIcon className="h-4 w-4 mr-1.5" />
-          Collections
-        </button>
-        {allItems.length > 0 && (
-          <div className="flex items-center gap-2">
-            <label className="text-sm text-gray-600">Per page:</label>
-            <select
-              value={pageSize}
-              onChange={(e) => {
-                setPageSize(parseInt(e.target.value, 10));
-                setItemsPage(1);
-              }}
-              className="rounded border-gray-300 text-sm"
-            >
-              {PAGE_SIZE_OPTIONS.map((n) => (
-                <option key={n} value={n}>
-                  {n}
-                </option>
-              ))}
-            </select>
+      <div className="flex flex-wrap items-center justify-between gap-4 mt-4 mb-4">
+        <div className="min-w-0">
+          <div className="text-xs font-medium text-gray-500 uppercase tracking-wide">
+            Collection
           </div>
-        )}
+          <div className="flex flex-wrap items-baseline gap-2">
+            <div className="text-lg font-semibold text-gray-900 truncate max-w-xs sm:max-w-sm md:max-w-md">
+              {collectionData?.name ?? "Untitled collection"}
+            </div>
+            {collectionData?.description && collectionData.description.trim() !== "" && (
+              <div className="text-sm text-gray-500 truncate max-w-xs sm:max-w-sm md:max-w-lg">
+                {collectionData.description}
+              </div>
+            )}
+          </div>
+        </div>
+        <div className="flex flex-wrap items-center gap-4">
+          <div className="text-sm text-gray-600">
+            {collectionData?.itemCount ?? totalCount} items
+          </div>
+          {isAuthenticated && (
+            <div className="flex items-center gap-2">
+              <span className="text-sm font-medium text-gray-700">Rating</span>
+              <div className="flex items-center gap-1">
+                {[1, 2, 3, 4, 5].map((star) => (
+                  <button
+                    key={star}
+                    type="button"
+                    onClick={() => setRatingMutation.mutate(star)}
+                    disabled={setRatingMutation.isPending}
+                    className="p-0.5 rounded hover:bg-gray-200 disabled:opacity-50"
+                    title={`Rate ${star} star${star > 1 ? "s" : ""}`}
+                  >
+                    {ratingData?.myStars != null && star <= ratingData.myStars ? (
+                      <StarIconSolid className="h-5 w-5 text-amber-500" />
+                    ) : (
+                      <StarIcon className="h-5 w-5 text-gray-400" />
+                    )}
+                  </button>
+                ))}
+              </div>
+              {ratingData && (
+                <span className="text-xs text-gray-500">
+                  {ratingData.averageStars != null
+                    ? `${ratingData.averageStars} (${ratingData.count})`
+                    : "No ratings yet"}
+                </span>
+              )}
+            </div>
+          )}
+          {!isAuthenticated && ratingData && (
+            <div className="text-sm text-gray-600">
+              Rating:{" "}
+              {ratingData.averageStars != null
+                ? `${ratingData.averageStars} (${ratingData.count})`
+                : "No ratings yet"}
+            </div>
+          )}
+          {allItems.length > 0 && (
+            <div className="flex items-center gap-2">
+              <label className="text-sm text-gray-600">Per page:</label>
+              <select
+                value={pageSize}
+                onChange={(e) => {
+                  setPageSize(parseInt(e.target.value, 10));
+                  setItemsPage(1);
+                }}
+                className="rounded border-gray-300 text-sm"
+              >
+                {PAGE_SIZE_OPTIONS.map((n) => (
+                  <option key={n} value={n}>
+                    {n}
+                  </option>
+                ))}
+              </select>
+            </div>
+          )}
+          <button
+            type="button"
+            onClick={() => setShowDetails(true)}
+            className="inline-flex items-center px-3 py-1.5 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-md hover:bg-gray-50"
+          >
+            Details
+          </button>
+        </div>
       </div>
       {isOwner && (
         <div className="mb-4 p-4 bg-gray-50 rounded-lg flex flex-wrap items-center justify-between gap-2">
@@ -220,11 +279,6 @@ const CollectionDetailPage = () => {
           </button>
         </div>
       )}
-      {collectionData?.description != null && collectionData.description !== "" && (
-        <div className="mb-4 p-4 bg-gray-50 rounded-lg">
-          <p className="text-sm text-gray-700 whitespace-pre-wrap">{collectionData.description}</p>
-        </div>
-      )}
       {isOwner && (
         <div className="mb-4 p-4 bg-gray-50 rounded-lg">
           <label className="block text-sm font-medium text-gray-700 mb-1">Description (optional, helps others find it)</label>
@@ -242,37 +296,6 @@ const CollectionDetailPage = () => {
           />
         </div>
       )}
-      {/* Rating: any authenticated user can rate once */}
-      {isAuthenticated && (
-        <div className="mb-4 p-4 bg-gray-50 rounded-lg flex flex-wrap items-center gap-4">
-          <div className="flex items-center gap-2">
-            <span className="text-sm font-medium text-gray-700">Rating</span>
-            {ratingData && (
-              <span className="text-sm text-gray-600">
-                {ratingData.averageStars != null ? `${ratingData.averageStars} (${ratingData.count})` : "No ratings yet"}
-              </span>
-            )}
-          </div>
-          <div className="flex items-center gap-1">
-            {[1, 2, 3, 4, 5].map((star) => (
-              <button
-                key={star}
-                type="button"
-                onClick={() => setRatingMutation.mutate(star)}
-                disabled={setRatingMutation.isPending}
-                className="p-0.5 rounded hover:bg-gray-200 disabled:opacity-50"
-                title={`Rate ${star} star${star > 1 ? "s" : ""}`}
-              >
-                {ratingData?.myStars != null && star <= ratingData.myStars ? (
-                  <StarIconSolid className="h-6 w-6 text-amber-500" />
-                ) : (
-                  <StarIcon className="h-6 w-6 text-gray-400" />
-                )}
-              </button>
-            ))}
-          </div>
-        </div>
-      )}
       {isOwner && bookmarkedByData && bookmarkedByData.bookmarkedBy.length > 0 && (
         <div className="mb-4 p-4 bg-gray-50 rounded-lg">
           <div className="flex items-center gap-2 mb-2">
@@ -288,14 +311,55 @@ const CollectionDetailPage = () => {
           </ul>
         </div>
       )}
-      <h1 className="text-3xl font-bold text-gray-900 mt-4 mb-6">
-        Items
-      </h1>
-      <p className="text-gray-600 text-sm mb-6">
-        {collectionData?.name
-          ? `Items in ${collectionData.name}. Explore to study, take a quiz to test, or remove items.`
-          : "Items in this collection. Explore to study, take a quiz to test, or remove items."}
-      </p>
+      {showDetails && collectionData && (
+        <div
+          className="fixed inset-0 bg-gray-600 bg-opacity-50 overflow-y-auto h-full w-full z-40"
+          onClick={() => setShowDetails(false)}
+        >
+          <div
+            className="relative top-24 mx-auto p-5 border w-full max-w-md shadow-lg rounded-md bg-white"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <div className="flex justify-between items-center mb-4">
+              <h3 className="text-lg font-medium text-gray-900">Collection details</h3>
+              <button
+                onClick={() => setShowDetails(false)}
+                className="text-gray-400 hover:text-gray-500"
+              >
+                <XMarkIcon className="h-5 w-5" />
+              </button>
+            </div>
+            <dl className="space-y-2 text-sm text-gray-700">
+              <div className="flex justify-between gap-4">
+                <dt className="font-medium text-gray-600">Name</dt>
+                <dd className="text-right break-words">{collectionData.name}</dd>
+              </div>
+              <div className="flex justify-between gap-4">
+                <dt className="font-medium text-gray-600">Author</dt>
+                <dd className="text-right break-all">{collectionData.createdBy}</dd>
+              </div>
+              <div className="flex justify-between gap-4">
+                <dt className="font-medium text-gray-600">Created</dt>
+                <dd className="text-right">
+                  {new Date(collectionData.createdAt).toLocaleString()}
+                </dd>
+              </div>
+              <div className="flex justify-between gap-4">
+                <dt className="font-medium text-gray-600">Items</dt>
+                <dd className="text-right">{collectionData.itemCount}</dd>
+              </div>
+              {"isPublic" in collectionData && (
+                <div className="flex justify-between gap-4">
+                  <dt className="font-medium text-gray-600">Visibility</dt>
+                  <dd className="text-right">
+                    {collectionData.isPublic ? "Public" : "Private"}
+                  </dd>
+                </div>
+              )}
+            </dl>
+          </div>
+        </div>
+      )}
 
       {paginatedItems.length === 0 ? (
         <div className="text-center py-12">
