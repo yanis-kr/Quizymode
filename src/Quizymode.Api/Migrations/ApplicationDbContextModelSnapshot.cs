@@ -167,6 +167,9 @@ namespace Quizymode.Api.Migrations
                         .IsRequired()
                         .HasColumnType("text");
 
+                    b.Property<string>("Description")
+                        .HasColumnType("text");
+
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasColumnType("text");
@@ -259,6 +262,39 @@ namespace Quizymode.Api.Migrations
                     b.HasIndex("SharedWithUserId");
 
                     b.ToTable("CollectionShares");
+                });
+
+            modelBuilder.Entity("Quizymode.Api.Shared.Models.CollectionRating", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uuid");
+
+                    b.Property<Guid>("CollectionId")
+                        .HasColumnType("uuid");
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<string>("CreatedBy")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("character varying(100)");
+
+                    b.Property<int>("Stars")
+                        .HasColumnType("integer");
+
+                    b.Property<DateTime?>("UpdatedAt")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("CollectionId");
+
+                    b.HasIndex("CollectionId", "CreatedBy")
+                        .IsUnique();
+
+                    b.ToTable("CollectionRatings");
                 });
 
             modelBuilder.Entity("Quizymode.Api.Shared.Models.Comment", b =>

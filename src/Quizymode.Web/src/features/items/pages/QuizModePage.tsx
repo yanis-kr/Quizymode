@@ -165,7 +165,7 @@ const QuizModePage = () => {
   const { data: collectionInfo } = useQuery({
     queryKey: ["collection", collectionId],
     queryFn: () => collectionsApi.getById(collectionId!),
-    enabled: !!collectionId && isAuthenticated,
+    enabled: !!collectionId, // Allow anonymous: shareable link shows collection name and items
   });
 
   const { data, isLoading, error, refetch } = useQuery({
@@ -310,7 +310,7 @@ const QuizModePage = () => {
       const firstId = items[0].id;
       if (collectionId) {
         navigate(
-          `/quiz/collection/${collectionId}/item/${firstId}${quizItemSearch}`,
+          `/quiz/collections/${collectionId}/item/${firstId}${quizItemSearch}`,
           { replace: true }
         );
       } else if (category) {
@@ -448,7 +448,7 @@ const QuizModePage = () => {
       if (items[newIndex]) {
         if (collectionId) {
           navigate(
-            `/quiz/collection/${collectionId}/item/${items[newIndex].id}${quizItemSearch}`,
+            `/quiz/collections/${collectionId}/item/${items[newIndex].id}${quizItemSearch}`,
             { replace: true }
           );
         } else if (category) {
@@ -469,7 +469,7 @@ const QuizModePage = () => {
       if (items[newIndex]) {
         if (collectionId) {
           navigate(
-            `/quiz/collection/${collectionId}/item/${items[newIndex].id}${quizItemSearch}`,
+            `/quiz/collections/${collectionId}/item/${items[newIndex].id}${quizItemSearch}`,
             { replace: true }
           );
         } else if (category) {
@@ -586,7 +586,7 @@ const QuizModePage = () => {
             }
             if (collectionId)
               navigate(
-                `/explore/collection/${collectionId}/item/${currentItem?.id ?? items[0]?.id}${search}`
+                `/explore/collections/${collectionId}/item/${currentItem?.id ?? items[0]?.id}${search}`
               );
             else if (category)
               navigate(

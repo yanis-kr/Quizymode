@@ -10,11 +10,12 @@ namespace Quizymode.Api.Features.Collections;
 
 public static class UpdateCollection
 {
-    public sealed record Request(string Name, bool? IsPublic);
+    public sealed record Request(string? Name, string? Description, bool? IsPublic);
 
     public sealed record Response(
         string Id,
         string Name,
+        string? Description,
         DateTime CreatedAt,
         DateTime? UpdatedAt,
         bool IsPublic);
@@ -25,9 +26,16 @@ public static class UpdateCollection
         {
             RuleFor(x => x.Name)
                 .NotEmpty()
-                .WithMessage("Name is required")
+                .WithMessage("Name cannot be empty")
+                .When(x => x.Name != null);
+            RuleFor(x => x.Name)
                 .MaximumLength(200)
-                .WithMessage("Name must not exceed 200 characters");
+                .WithMessage("Name must not exceed 200 characters")
+                .When(x => x.Name != null);
+            RuleFor(x => x.Description)
+                .MaximumLength(2000)
+                .WithMessage("Description must not exceed 2000 characters")
+                .When(x => x.Description != null);
         }
     }
 
@@ -98,7 +106,10 @@ public static class UpdateCollection
                     Error.Validation("Collection.Forbidden", "You can only update your own collections"));
             }
 
-            collection.Name = request.Name;
+            if (request.Name != null)
+                collection.Name = request.Name;
+            if (request.Description != null)
+                collection.Description = string.IsNullOrWhiteSpace(request.Description) ? null : request.Description;
             if (request.IsPublic.HasValue)
             {
                 collection.IsPublic = request.IsPublic.Value;
@@ -110,6 +121,7 @@ public static class UpdateCollection
             Response response = new(
                 collection.Id.ToString(),
                 collection.Name,
+                collection.Description,
                 collection.CreatedAt,
                 collection.UpdatedAt,
                 collection.IsPublic);

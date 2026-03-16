@@ -126,7 +126,7 @@ const UploadToCollectionPage = () => {
     mutationFn: ({ items, inputText }: { items: CreateItemRequest[]; inputText: string }) =>
       itemsApi.uploadToCollection({ items, inputText }),
     onSuccess: (data: UploadToCollectionResponse) => {
-      navigate(`/explore/collection/${data.collectionId}`);
+      navigate(`/explore/collections/${data.collectionId}`);
     },
   });
 

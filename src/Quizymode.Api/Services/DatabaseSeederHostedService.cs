@@ -421,11 +421,92 @@ internal sealed class DatabaseSeederHostedService(
             }
         }
 
+        const string otherKeywordDescription = "Items not in a specific subcategory.";
+
         // Seed "other" keyword for each category (if missing)
         foreach ((string categoryName, Category category) in categories)
         {
-            await SeedOtherKeywordAsync(db, category, cancellationToken);
+            await SeedOtherKeywordAsync(db, category, cancellationToken, otherKeywordDescription);
         }
+
+        // Short descriptions for rank-1 navigation keywords (category, keyword) -> description
+        var rank1Descriptions = new Dictionary<(string Category, string Keyword), string>
+        {
+            { ("general", "world-records"), "Record-breaking facts and achievements" },
+            { ("general", "trivia"), "General knowledge and quiz questions" },
+            { ("general", "fun-facts"), "Unexpected and entertaining facts" },
+            { ("general", "daily"), "Daily and time-based quizzes" },
+            { ("general", "mixed"), "Mixed topics" },
+            { ("general", "random"), "Random selection across topics" },
+            { ("history", "us-history"), "United States history" },
+            { ("history", "world-history"), "Global history and events" },
+            { ("history", "ancient"), "Ancient civilizations and empires" },
+            { ("history", "modern"), "Modern history" },
+            { ("history", "biography"), "Notable figures and life stories" },
+            { ("science", "biology"), "Living organisms and life processes" },
+            { ("science", "astronomy"), "Space, stars, and planets" },
+            { ("science", "physics"), "Matter, energy, and forces" },
+            { ("science", "chemistry"), "Elements, compounds, and reactions" },
+            { ("science", "earth-science"), "Earth systems, geology, climate" },
+            { ("geography", "countries"), "Countries and sovereign states" },
+            { ("geography", "capitals"), "National and regional capitals" },
+            { ("geography", "us-states"), "U.S. states and territories" },
+            { ("geography", "flags"), "Flags and symbolism" },
+            { ("geography", "maps"), "Maps and spatial data" },
+            { ("entertainment", "movies"), "Films and cinema" },
+            { ("entertainment", "tv"), "Television shows and series" },
+            { ("entertainment", "music"), "Songs, artists, and genres" },
+            { ("entertainment", "quotes"), "Famous lines and quotes" },
+            { ("entertainment", "pop-culture"), "Trends, memes, and popular culture" },
+            { ("culture", "food"), "Cuisine and food culture" },
+            { ("culture", "holidays"), "Holidays and celebrations" },
+            { ("culture", "traditions"), "Customs and traditions" },
+            { ("culture", "customs"), "Social customs and etiquette" },
+            { ("culture", "slang"), "Slang and informal language" },
+            { ("language", "spanish"), "Spanish language" },
+            { ("language", "french"), "French language" },
+            { ("language", "english"), "English language" },
+            { ("language", "vocabulary"), "Words and definitions" },
+            { ("language", "idioms"), "Idioms and expressions" },
+            { ("literature", "fiction"), "Fiction and storytelling" },
+            { ("literature", "nonfiction"), "Nonfiction and factual works" },
+            { ("literature", "authors"), "Writers and their works" },
+            { ("literature", "literary-terms"), "Terms and techniques" },
+            { ("literature", "poetry"), "Poetry and verse" },
+            { ("literature", "classics"), "Classic literature" },
+            { ("arts", "visual-arts"), "Painting, sculpture, and visual art" },
+            { ("arts", "music-theory"), "Music theory and composition" },
+            { ("arts", "film"), "Film as art" },
+            { ("arts", "design"), "Design and visual design" },
+            { ("arts", "photography"), "Photography and images" },
+            { ("puzzles", "riddles"), "Riddles and word puzzles" },
+            { ("puzzles", "logic"), "Logic and reasoning" },
+            { ("puzzles", "brain-teasers"), "Brain teasers and puzzles" },
+            { ("puzzles", "math-puzzles"), "Math and number puzzles" },
+            { ("puzzles", "patterns"), "Patterns and sequences" },
+            { ("sports", "soccer"), "Soccer / football" },
+            { ("sports", "basketball"), "Basketball" },
+            { ("sports", "tennis"), "Tennis" },
+            { ("sports", "olympics"), "Olympic games and events" },
+            { ("sports", "athletes"), "Athletes and performance" },
+            { ("tests", "act"), "ACT exam" },
+            { ("tests", "sat"), "SAT exam" },
+            { ("tests", "gmat"), "GMAT" },
+            { ("tests", "gre"), "GRE" },
+            { ("tests", "nclex"), "NCLEX nursing exam" },
+            { ("certs", "aws"), "Amazon Web Services" },
+            { ("certs", "azure"), "Microsoft Azure" },
+            { ("certs", "gcp"), "Google Cloud Platform" },
+            { ("certs", "comptia"), "CompTIA certifications" },
+            { ("certs", "kubernetes"), "Kubernetes and containers" },
+            { ("outdoors", "survival"), "Survival skills and scenarios" },
+            { ("outdoors", "camping"), "Camping and outdoor basics" },
+            { ("outdoors", "navigation"), "Orienteering and navigation" },
+            { ("nature", "animals"), "Animals and wildlife" },
+            { ("nature", "plants"), "Plants and botany" },
+            { ("nature", "ecosystems"), "Ecosystems and biomes" },
+            { ("nature", "phenomena"), "Natural phenomena and events" }
+        };
 
         // Seed rank-1 keywords per category
         Dictionary<string, List<string>> rank1Keywords = new()
@@ -453,17 +534,50 @@ internal sealed class DatabaseSeederHostedService(
             {
                 for (int i = 0; i < keywords.Count; i++)
                 {
+                    string kw = keywords[i];
+                    rank1Descriptions.TryGetValue((categoryName, kw), out string? desc);
                     await SeedNavigationKeywordAsync(
                         db,
                         category,
-                        keywords[i],
+                        kw,
                         navigationRank: 1,
                         parentName: null,
                         sortRank: i + 1, // Start at 1 (0 is reserved for "other")
-                        cancellationToken);
+                        cancellationToken,
+                        desc);
                 }
             }
         }
+
+        // Short descriptions for rank-2 navigation keywords (category, parent, keyword) -> description
+        var rank2Descriptions = new Dictionary<(string Category, string Parent, string Keyword), string>
+        {
+            { ("general", "world-records", "humans"), "Human records and feats" },
+            { ("general", "world-records", "animals"), "Animal records" },
+            { ("general", "world-records", "weird"), "Unusual and odd records" },
+            { ("certs", "aws", "saa-c02"), "Solutions Architect Associate" },
+            { ("certs", "aws", "saa-c03"), "Solutions Architect Associate (newer)" },
+            { ("certs", "aws", "dva-c02"), "Developer Associate" },
+            { ("certs", "aws", "soa-c02"), "SysOps Administrator Associate" },
+            { ("tests", "act", "math"), "ACT Math" },
+            { ("tests", "act", "reading"), "ACT Reading" },
+            { ("tests", "act", "english"), "ACT English" },
+            { ("tests", "act", "science"), "ACT Science" },
+            { ("tests", "sat", "math"), "SAT Math" },
+            { ("tests", "sat", "reading"), "SAT Reading" },
+            { ("tests", "sat", "writing"), "SAT Writing" },
+            { ("tests", "nclex", "med-surg"), "Medical-surgical nursing" },
+            { ("tests", "nclex", "pediatrics"), "Pediatric nursing" },
+            { ("tests", "nclex", "pharm"), "Pharmacology" },
+            { ("tests", "nclex", "dosage-calc"), "Dosage calculations" },
+            { ("outdoors", "survival", "forest"), "Forest and woodland survival" },
+            { ("outdoors", "survival", "tropical-island"), "Tropical island survival" },
+            { ("outdoors", "camping", "basics"), "Camping fundamentals" },
+            { ("nature", "animals", "predators"), "Predators and hunting" },
+            { ("nature", "plants", "poisonous"), "Poisonous plants" },
+            { ("nature", "ecosystems", "tundra"), "Tundra ecosystems" },
+            { ("nature", "phenomena", "aurora"), "Aurora and northern lights" }
+        };
 
         // Seed rank-2 keywords
         Dictionary<(string Category, string Parent), List<string>> rank2Keywords = new()
@@ -487,14 +601,17 @@ internal sealed class DatabaseSeederHostedService(
             {
                 for (int i = 0; i < keywords.Count; i++)
                 {
+                    string kw = keywords[i];
+                    rank2Descriptions.TryGetValue((categoryName, parentName, kw), out string? desc);
                     await SeedNavigationKeywordAsync(
                         db,
                         category,
-                        keywords[i],
+                        kw,
                         navigationRank: 2,
                         parentName: parentName,
                         sortRank: i,
-                        cancellationToken);
+                        cancellationToken,
+                        desc);
                 }
             }
         }
@@ -505,7 +622,8 @@ internal sealed class DatabaseSeederHostedService(
     private async Task SeedOtherKeywordAsync(
         ApplicationDbContext db,
         Category category,
-        CancellationToken cancellationToken)
+        CancellationToken cancellationToken,
+        string? description = null)
     {
         // Find or create "other" keyword (global) first
         Keyword? otherKeyword = await db.Keywords
@@ -525,14 +643,17 @@ internal sealed class DatabaseSeederHostedService(
             await db.SaveChangesAsync(cancellationToken);
         }
 
-        // Check if CategoryKeyword already exists for this category and keyword combination
-        // This checks the unique constraint: CategoryId + KeywordId
-        bool otherExists = await db.CategoryKeywords
-            .AnyAsync(ck => ck.CategoryId == category.Id && ck.KeywordId == otherKeyword.Id, cancellationToken);
+        CategoryKeyword? existing = await db.CategoryKeywords
+            .FirstOrDefaultAsync(ck => ck.CategoryId == category.Id && ck.KeywordId == otherKeyword.Id, cancellationToken);
 
-        if (otherExists)
+        if (existing is not null)
         {
-            return; // Already exists
+            if (description is not null)
+            {
+                existing.Description = description;
+                await db.SaveChangesAsync(cancellationToken);
+            }
+            return;
         }
 
         // Create CategoryKeyword entry for "other"
@@ -544,6 +665,7 @@ internal sealed class DatabaseSeederHostedService(
             NavigationRank = 1,
             ParentName = null,
             SortRank = 0,
+            Description = description,
             CreatedAt = DateTime.UtcNow
         };
         db.CategoryKeywords.Add(categoryKeyword);
@@ -557,7 +679,8 @@ internal sealed class DatabaseSeederHostedService(
         int navigationRank,
         string? parentName,
         int sortRank,
-        CancellationToken cancellationToken)
+        CancellationToken cancellationToken,
+        string? description = null)
     {
         // Find or create keyword (global) first
         Keyword? keyword = await db.Keywords
@@ -577,14 +700,17 @@ internal sealed class DatabaseSeederHostedService(
             await db.SaveChangesAsync(cancellationToken);
         }
 
-        // Check if CategoryKeyword already exists for this category and keyword combination
-        // This checks the unique constraint: CategoryId + KeywordId
-        bool exists = await db.CategoryKeywords
-            .AnyAsync(ck => ck.CategoryId == category.Id && ck.KeywordId == keyword.Id, cancellationToken);
+        CategoryKeyword? existing = await db.CategoryKeywords
+            .FirstOrDefaultAsync(ck => ck.CategoryId == category.Id && ck.KeywordId == keyword.Id, cancellationToken);
 
-        if (exists)
+        if (existing is not null)
         {
-            return; // Already exists
+            if (description is not null)
+            {
+                existing.Description = description;
+                await db.SaveChangesAsync(cancellationToken);
+            }
+            return;
         }
 
         // Create CategoryKeyword entry
@@ -596,6 +722,7 @@ internal sealed class DatabaseSeederHostedService(
             NavigationRank = navigationRank,
             ParentName = parentName?.ToLowerInvariant(), // Store normalized
             SortRank = sortRank,
+            Description = description,
             CreatedAt = DateTime.UtcNow
         };
         db.CategoryKeywords.Add(categoryKeyword);

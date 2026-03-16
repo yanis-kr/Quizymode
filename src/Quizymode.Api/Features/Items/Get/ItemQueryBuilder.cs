@@ -1,5 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using Quizymode.Api.Data;
+using Quizymode.Api.Features.Collections;
 using Quizymode.Api.Services;
 using Quizymode.Api.Shared.Helpers;
 using Quizymode.Api.Shared.Kernel;
@@ -55,7 +56,7 @@ internal sealed class ItemQueryBuilder
 
         IQueryable<Item> query = _db.Items.AsQueryable();
 
-        // When loading by collectionId, allow anyone (shareable link) and bypass visibility so all items in collection are visible
+        // When loading by collectionId, allow only if collection is public or user is owner/shared; then bypass item visibility so all items in collection are visible
         bool skipVisibilityForCollection = request.CollectionId.HasValue;
 
         if (!skipVisibilityForCollection)
@@ -428,7 +429,12 @@ internal sealed class ItemQueryBuilder
                 Error.NotFound("Collection.NotFound", "Collection not found"));
         }
 
-        // Shareable link: anyone (including anon) with collection ID can view items in the collection
+        if (!await GetCollectionById.CanAccessCollectionAsync(_db, collection, _userContext, _cancellationToken))
+        {
+            return Result.Failure<IQueryable<Item>>(
+                Error.NotFound("Collection.NotFound", "Collection not found"));
+        }
+
         List<Guid> itemIdsInCollection = await _db.CollectionItems
             .Where(ci => ci.CollectionId == request.CollectionId.Value)
             .Select(ci => ci.ItemId)

@@ -170,6 +170,12 @@ public static class CollectionItems
                     Error.NotFound("Collection.NotFound", $"Collection with id {collectionId} not found"));
             }
 
+            if (collection.CreatedBy != userContext.UserId)
+            {
+                return Result.Failure<CollectionItemResponse>(
+                    Error.Validation("CollectionItems.Forbidden", "Only the collection owner can add or remove items."));
+            }
+
             Item? item = await db.Items
                 .FirstOrDefaultAsync(i => i.Id == request.ItemId, cancellationToken);
 
@@ -244,6 +250,12 @@ public static class CollectionItems
                     Error.NotFound("Collection.NotFound", $"Collection with id {collectionId} not found"));
             }
 
+            if (collection.CreatedBy != userContext.UserId)
+            {
+                return Result.Failure<BulkAddResponse>(
+                    Error.Validation("CollectionItems.Forbidden", "Only the collection owner can add or remove items."));
+            }
+
             // Get existing collection items to skip duplicates
             HashSet<Guid> existingItemIds = await db.CollectionItems
                 .Where(ci => ci.CollectionId == collectionId && request.ItemIds.Contains(ci.ItemId))
@@ -309,6 +321,21 @@ public static class CollectionItems
             {
                 return Result.Failure(
                     Error.Validation("CollectionItems.Unauthorized", "User must be authenticated."));
+            }
+
+            Collection? collection = await db.Collections
+                .FirstOrDefaultAsync(c => c.Id == collectionId, cancellationToken);
+
+            if (collection is null)
+            {
+                return Result.Failure(
+                    Error.NotFound("Collection.NotFound", $"Collection with id {collectionId} not found"));
+            }
+
+            if (collection.CreatedBy != userContext.UserId)
+            {
+                return Result.Failure(
+                    Error.Validation("CollectionItems.Forbidden", "Only the collection owner can add or remove items."));
             }
 
             CollectionItem? entity = await db.CollectionItems

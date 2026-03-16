@@ -26,6 +26,8 @@ public sealed class ApplicationDbContext : DbContext
 
     public DbSet<CollectionShare> CollectionShares => Set<CollectionShare>();
 
+    public DbSet<CollectionRating> CollectionRatings => Set<CollectionRating>();
+
     public DbSet<User> Users => Set<User>();
 
     public DbSet<Audit> Audits => Set<Audit>();

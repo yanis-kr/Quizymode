@@ -12,6 +12,7 @@ public static class GetCollectionById
     public sealed record Response(
         string Id,
         string Name,
+        string? Description,
         string CreatedBy,
         DateTime CreatedAt,
         int ItemCount,
@@ -24,7 +25,7 @@ public static class GetCollectionById
             app.MapGet("collections/{id:guid}", Handler)
                 .WithTags("Collections")
                 .WithSummary("Get a collection by ID")
-                .WithDescription("Anyone with the link (including anonymous) can view a collection by ID. Shareable URL.")
+                .WithDescription("View collection by ID. Allowed if collection is public or you are the owner. Otherwise 404.")
                 .Produces<Response>(StatusCodes.Status200OK)
                 .Produces(StatusCodes.Status404NotFound);
         }
@@ -32,9 +33,10 @@ public static class GetCollectionById
         private static async Task<IResult> Handler(
             Guid id,
             ApplicationDbContext db,
+            IUserContext userContext,
             CancellationToken cancellationToken)
         {
-            Result<Response> result = await HandleAsync(id, db, cancellationToken);
+            Result<Response> result = await HandleAsync(id, db, userContext, cancellationToken);
 
             return result.Match(
                 value => Results.Ok(value),
@@ -47,6 +49,7 @@ public static class GetCollectionById
     public static async Task<Result<Response>> HandleAsync(
         Guid id,
         ApplicationDbContext db,
+        IUserContext userContext,
         CancellationToken cancellationToken)
     {
         try
@@ -60,13 +63,19 @@ public static class GetCollectionById
                     Error.NotFound("Collection.NotFound", "Collection not found"));
             }
 
-            // Shareable link: anyone with the ID can view (read-only)
+            if (!await CanAccessCollectionAsync(db, collection, userContext, cancellationToken))
+            {
+                return Result.Failure<Response>(
+                    Error.NotFound("Collection.NotFound", "Collection not found"));
+            }
+
             int itemCount = await db.CollectionItems
                 .CountAsync(ci => ci.CollectionId == id, cancellationToken);
 
             Response response = new(
                 collection.Id.ToString(),
                 collection.Name,
+                collection.Description,
                 collection.CreatedBy,
                 collection.CreatedAt,
                 itemCount,
@@ -79,6 +88,24 @@ public static class GetCollectionById
             return Result.Failure<Response>(
                 Error.Problem("Collection.GetFailed", $"Failed to get collection: {ex.Message}"));
         }
+    }
+
+    /// <summary>
+    /// User can access if collection is public or they are the owner.
+    /// </summary>
+    internal static Task<bool> CanAccessCollectionAsync(
+        ApplicationDbContext db,
+        Collection collection,
+        IUserContext userContext,
+        CancellationToken cancellationToken)
+    {
+        if (collection.IsPublic)
+            return Task.FromResult(true);
+
+        if (!userContext.IsAuthenticated || string.IsNullOrEmpty(userContext.UserId))
+            return Task.FromResult(false);
+
+        return Task.FromResult(collection.CreatedBy == userContext.UserId);
     }
 
     public sealed class FeatureRegistration : IFeatureRegistration

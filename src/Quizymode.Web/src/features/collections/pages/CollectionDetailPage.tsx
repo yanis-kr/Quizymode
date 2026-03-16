@@ -9,7 +9,8 @@ import ItemListSection from "@/components/ItemListSection";
 import ItemCollectionsModal from "@/components/ItemCollectionsModal";
 import { ItemCollectionControls } from "@/components/ItemCollectionControls";
 import { ScopeSecondaryBar } from "@/components/ScopeSecondaryBar";
-import { ArrowLeftIcon, EyeIcon, MinusIcon } from "@heroicons/react/24/outline";
+import { ArrowLeftIcon, EyeIcon, MinusIcon, StarIcon, BookmarkIcon } from "@heroicons/react/24/outline";
+import { StarIcon as StarIconSolid } from "@heroicons/react/24/solid";
 import { buildCategoryPath, categoryNameToSlug } from "@/utils/categorySlug";
 
 const PAGE_SIZE_OPTIONS = [10, 25, 50, 100];
@@ -31,13 +32,13 @@ const CollectionDetailPage = () => {
     if (!id) return;
     if (view === "explore") {
       const path = itemId
-        ? `/explore/collection/${id}/item/${itemId}`
-        : `/explore/collection/${id}`;
+        ? `/explore/collections/${id}/item/${itemId}`
+        : `/explore/collections/${id}`;
       navigate(path, { replace: true });
     } else if (view === "quiz") {
       const path = itemId
-        ? `/quiz/collection/${id}/item/${itemId}`
-        : `/quiz/collection/${id}`;
+        ? `/quiz/collections/${id}/item/${itemId}`
+        : `/quiz/collections/${id}`;
       navigate(path, { replace: true });
     }
   }, [id, view, itemId, navigate]);
@@ -72,12 +73,31 @@ const CollectionDetailPage = () => {
   });
 
   const updateCollectionMutation = useMutation({
-    mutationFn: (payload: { name: string; isPublic?: boolean }) =>
+    mutationFn: (payload: { name?: string; description?: string | null; isPublic?: boolean }) =>
       collectionsApi.update(id!, payload),
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ["collection", id] });
       queryClient.invalidateQueries({ queryKey: ["collections"] });
     },
+  });
+
+  const { data: ratingData } = useQuery({
+    queryKey: ["collectionRating", id],
+    queryFn: () => collectionsApi.getRating(id!),
+    enabled: !!id,
+  });
+
+  const setRatingMutation = useMutation({
+    mutationFn: (stars: number) => collectionsApi.setRating(id!, stars),
+    onSuccess: () => {
+      queryClient.invalidateQueries({ queryKey: ["collectionRating", id] });
+    },
+  });
+
+  const { data: bookmarkedByData } = useQuery({
+    queryKey: ["collectionBookmarkedBy", id],
+    queryFn: () => collectionsApi.getBookmarkedBy(id!),
+    enabled: !!id && isOwner,
   });
 
   const isOwner = isAuthenticated && userId && collectionData?.createdBy === userId;
@@ -172,8 +192,8 @@ const CollectionDetailPage = () => {
       {isOwner && (
         <div className="mb-4 p-4 bg-gray-50 rounded-lg flex flex-wrap items-center justify-between gap-2">
           <div className="flex items-center gap-2">
-            <span className="text-sm font-medium text-gray-700">List in Discover</span>
-            <span className="text-sm text-gray-500">(others can find this collection when searching)</span>
+            <span className="text-sm font-medium text-gray-700">Shared with others</span>
+            <span className="text-sm text-gray-500">(anyone with the link can view and quiz; collection also appears in Discover search)</span>
           </div>
           <button
             type="button"
@@ -198,6 +218,74 @@ const CollectionDetailPage = () => {
               }`}
             />
           </button>
+        </div>
+      )}
+      {collectionData?.description != null && collectionData.description !== "" && (
+        <div className="mb-4 p-4 bg-gray-50 rounded-lg">
+          <p className="text-sm text-gray-700 whitespace-pre-wrap">{collectionData.description}</p>
+        </div>
+      )}
+      {isOwner && (
+        <div className="mb-4 p-4 bg-gray-50 rounded-lg">
+          <label className="block text-sm font-medium text-gray-700 mb-1">Description (optional, helps others find it)</label>
+          <textarea
+            key={collectionData?.description ?? "empty"}
+            defaultValue={collectionData?.description ?? ""}
+            onBlur={(e) => {
+              const v = e.target.value.trim();
+              if (collectionData && v !== (collectionData.description ?? "") && !updateCollectionMutation.isPending)
+                updateCollectionMutation.mutate({ description: v || null });
+            }}
+            placeholder="e.g. Biology chapter 5 practice set"
+            rows={2}
+            className="w-full px-3 py-2 border border-gray-300 rounded-md text-sm"
+          />
+        </div>
+      )}
+      {/* Rating: any authenticated user can rate once */}
+      {isAuthenticated && (
+        <div className="mb-4 p-4 bg-gray-50 rounded-lg flex flex-wrap items-center gap-4">
+          <div className="flex items-center gap-2">
+            <span className="text-sm font-medium text-gray-700">Rating</span>
+            {ratingData && (
+              <span className="text-sm text-gray-600">
+                {ratingData.averageStars != null ? `${ratingData.averageStars} (${ratingData.count})` : "No ratings yet"}
+              </span>
+            )}
+          </div>
+          <div className="flex items-center gap-1">
+            {[1, 2, 3, 4, 5].map((star) => (
+              <button
+                key={star}
+                type="button"
+                onClick={() => setRatingMutation.mutate(star)}
+                disabled={setRatingMutation.isPending}
+                className="p-0.5 rounded hover:bg-gray-200 disabled:opacity-50"
+                title={`Rate ${star} star${star > 1 ? "s" : ""}`}
+              >
+                {ratingData?.myStars != null && star <= ratingData.myStars ? (
+                  <StarIconSolid className="h-6 w-6 text-amber-500" />
+                ) : (
+                  <StarIcon className="h-6 w-6 text-gray-400" />
+                )}
+              </button>
+            ))}
+          </div>
+        </div>
+      )}
+      {isOwner && bookmarkedByData && bookmarkedByData.bookmarkedBy.length > 0 && (
+        <div className="mb-4 p-4 bg-gray-50 rounded-lg">
+          <div className="flex items-center gap-2 mb-2">
+            <BookmarkIcon className="h-5 w-5 text-gray-500" />
+            <span className="text-sm font-medium text-gray-700">Bookmarked by</span>
+          </div>
+          <ul className="text-sm text-gray-600 space-y-1">
+            {bookmarkedByData.bookmarkedBy.map((b) => (
+              <li key={b.userId}>
+                {b.name ?? b.userId} · {new Date(b.bookmarkedAt).toLocaleDateString()}
+              </li>
+            ))}
+          </ul>
         </div>
       )}
       <h1 className="text-3xl font-bold text-gray-900 mt-4 mb-6">

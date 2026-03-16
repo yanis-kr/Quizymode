@@ -87,7 +87,7 @@ export function ItemListView({
                 type="button"
                 onClick={() =>
                   collectionId
-                    ? navigate(`/explore/collection/${collectionId}/item/${item.id}`)
+                    ? navigate(`/explore/collections/${collectionId}/item/${item.id}`)
                     : navigate(`/explore/item/${item.id}?return=${encodeURIComponent(window.location.pathname)}`)
                 }
                 className="p-2 text-indigo-600 hover:bg-indigo-50 rounded-md"
@@ -101,7 +101,7 @@ export function ItemListView({
                 type="button"
                 onClick={() =>
                   collectionId
-                    ? navigate(`/quiz/collection/${collectionId}/item/${item.id}`)
+                    ? navigate(`/quiz/collections/${collectionId}/item/${item.id}`)
                     : navigate(`/quiz/item/${item.id}`)
                 }
                 className="p-2 text-purple-600 hover:bg-purple-50 rounded-md"

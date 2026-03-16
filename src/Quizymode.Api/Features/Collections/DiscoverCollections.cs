@@ -14,6 +14,7 @@ public static class DiscoverCollections
     public sealed record CollectionDiscoverItem(
         string Id,
         string Name,
+        string? Description,
         string CreatedBy,
         DateTime CreatedAt,
         int ItemCount,
@@ -66,7 +67,8 @@ public static class DiscoverCollections
             if (!string.IsNullOrWhiteSpace(query))
             {
                 var term = query.Trim().ToLower();
-                q = q.Where(c => c.Name.ToLower().Contains(term));
+                q = q.Where(c => c.Name.ToLower().Contains(term) ||
+                    (c.Description != null && c.Description.ToLower().Contains(term)));
             }
 
             var totalCount = await q.CountAsync(cancellationToken);
@@ -111,6 +113,7 @@ public static class DiscoverCollections
                 .Select(c => new CollectionDiscoverItem(
                     c.Id.ToString(),
                     c.Name,
+                    c.Description,
                     c.CreatedBy,
                     c.CreatedAt,
                     countMap.GetValueOrDefault(c.Id, 0),

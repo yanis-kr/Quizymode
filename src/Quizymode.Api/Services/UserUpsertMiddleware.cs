@@ -133,7 +133,7 @@ internal sealed class UserUpsertMiddleware
                         }
                         else
                         {
-                            // Truly new user
+                            // Truly new user: create user, default collection, and set it as active
                             var userEntity = new User
                             {
                                 Id = Guid.NewGuid(),
@@ -145,6 +145,28 @@ internal sealed class UserUpsertMiddleware
                             };
 
                             db.Users.Add(userEntity);
+
+                            var defaultCollection = new Collection
+                            {
+                                Id = Guid.NewGuid(),
+                                Name = "Default Collection",
+                                CreatedBy = userEntity.Id.ToString(),
+                                CreatedAt = DateTime.UtcNow,
+                                IsPublic = false
+                            };
+                            db.Collections.Add(defaultCollection);
+
+                            var activeCollectionSetting = new UserSetting
+                            {
+                                Id = Guid.NewGuid(),
+                                UserId = userEntity.Id,
+                                Key = "ActiveCollectionId",
+                                Value = defaultCollection.Id.ToString(),
+                                CreatedAt = DateTime.UtcNow,
+                                UpdatedAt = DateTime.UtcNow
+                            };
+                            db.UserSettings.Add(activeCollectionSetting);
+
                             try
                             {
                                 await db.SaveChangesAsync(context.RequestAborted);

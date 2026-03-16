@@ -45,22 +45,22 @@ function App() {
           element={<ExploreModePage />}
         />
         <Route
-          path="/explore/collection/:collectionId/item/:itemId"
+          path="/explore/collections/:collectionId/item/:itemId"
           element={<ExploreModePage />}
         />
         <Route
-          path="/explore/collection/:collectionId"
+          path="/explore/collections/:collectionId"
           element={<ExploreModePage />}
         />
         <Route path="/explore/:category?" element={<ExploreModePage />} />
         <Route path="/quiz/item/:itemId" element={<QuizModePage />} />
         <Route path="/quiz/:category/item/:itemId" element={<QuizModePage />} />
         <Route
-          path="/quiz/collection/:collectionId/item/:itemId"
+          path="/quiz/collections/:collectionId/item/:itemId"
           element={<QuizModePage />}
         />
         <Route
-          path="/quiz/collection/:collectionId"
+          path="/quiz/collections/:collectionId"
           element={<QuizModePage />}
         />
         <Route path="/quiz/:category?" element={<QuizModePage />} />

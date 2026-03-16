@@ -73,6 +73,7 @@ export interface RandomItemsResponse {
 export interface CollectionResponse {
   id: string;
   name: string;
+  description?: string | null;
   createdBy: string;
   createdAt: string;
   itemCount: number;
@@ -87,6 +88,7 @@ export interface CollectionsResponse {
 export interface CollectionDiscoverItem {
   id: string;
   name: string;
+  description?: string | null;
   createdBy: string;
   createdAt: string;
   itemCount: number;
@@ -106,13 +108,22 @@ export interface BookmarkItem {
   itemCount: number;
 }
 
-export interface SharedWithMeItem {
-  id: string;
-  name: string;
-  createdBy: string;
-  createdAt: string;
-  itemCount: number;
-  sharedAt: string;
+/** Collection rating: stats and current user's rating */
+export interface CollectionRatingResponse {
+  count: number;
+  averageStars: number | null;
+  myStars: number | null;
+}
+
+/** User who bookmarked a collection (owner view) */
+export interface CollectionBookmarkerItem {
+  userId: string;
+  name: string | null;
+  bookmarkedAt: string;
+}
+
+export interface CollectionBookmarkedByResponse {
+  bookmarkedBy: CollectionBookmarkerItem[];
 }
 
 export interface ReviewResponse {
@@ -170,10 +181,14 @@ export interface UpdateItemRequest {
 
 export interface CreateCollectionRequest {
   name: string;
+  description?: string | null;
+  isPublic?: boolean;
 }
 
 export interface UpdateCollectionRequest {
-  name: string;
+  name?: string;
+  description?: string | null;
+  isPublic?: boolean;
 }
 
 export interface AddItemToCollectionRequest {

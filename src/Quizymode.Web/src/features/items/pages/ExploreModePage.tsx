@@ -254,7 +254,7 @@ const ExploreModePage = () => {
       const firstId = items[0].id;
       if (collectionId) {
         navigate(
-          `/explore/collection/${collectionId}/item/${firstId}${exploreItemSearch}`,
+          `/explore/collections/${collectionId}/item/${firstId}${exploreItemSearch}`,
           { replace: true }
         );
       } else if (category) {
@@ -356,7 +356,7 @@ const ExploreModePage = () => {
       if (items[newIndex]) {
         if (collectionId) {
           navigate(
-            `/explore/collection/${collectionId}/item/${items[newIndex].id}${exploreItemSearch}`,
+            `/explore/collections/${collectionId}/item/${items[newIndex].id}${exploreItemSearch}`,
             { replace: true }
           );
         } else if (category) {
@@ -375,7 +375,7 @@ const ExploreModePage = () => {
       if (items[newIndex]) {
         if (collectionId) {
           navigate(
-            `/explore/collection/${collectionId}/item/${items[newIndex].id}${exploreItemSearch}`,
+            `/explore/collections/${collectionId}/item/${items[newIndex].id}${exploreItemSearch}`,
             { replace: true }
           );
         } else if (category) {
@@ -416,7 +416,7 @@ const ExploreModePage = () => {
             }
             if (collectionId)
               navigate(
-                `/quiz/collection/${collectionId}/item/${currentItem?.id ?? items[0]?.id}${search}`
+                `/quiz/collections/${collectionId}/item/${currentItem?.id ?? items[0]?.id}${search}`
               );
             else if (category)
               navigate(

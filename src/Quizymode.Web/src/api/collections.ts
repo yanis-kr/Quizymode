@@ -11,7 +11,8 @@ import type {
   BulkAddItemsToCollectionResponse,
   DiscoverCollectionsResponse,
   BookmarkItem,
-  SharedWithMeItem,
+  CollectionRatingResponse,
+  CollectionBookmarkedByResponse,
 } from "@/types/api";
 
 export const collectionsApi = {
@@ -78,15 +79,6 @@ export const collectionsApi = {
     return response.data;
   },
 
-  getSharedWithMe: async (): Promise<{
-    collections: SharedWithMeItem[];
-  }> => {
-    const response = await apiClient.get<{ collections: SharedWithMeItem[] }>(
-      "/collections/shared-with-me"
-    );
-    return response.data;
-  },
-
   bookmark: async (collectionId: string): Promise<void> => {
     await apiClient.post(`/collections/${collectionId}/bookmark`);
   },
@@ -95,13 +87,29 @@ export const collectionsApi = {
     await apiClient.delete(`/collections/${collectionId}/bookmark`);
   },
 
-  share: async (
+  getRating: async (collectionId: string): Promise<CollectionRatingResponse> => {
+    const response = await apiClient.get<CollectionRatingResponse>(
+      `/collections/${collectionId}/rating`
+    );
+    return response.data;
+  },
+
+  setRating: async (
     collectionId: string,
-    data: { userId?: string; email?: string }
-  ): Promise<{ shareId: string }> => {
-    const response = await apiClient.post<{ shareId: string }>(
-      `/collections/${collectionId}/share`,
-      data
+    stars: number
+  ): Promise<{ id: string; collectionId: string; stars: number; createdAt: string; updatedAt?: string }> => {
+    const response = await apiClient.post<{ id: string; collectionId: string; stars: number; createdAt: string; updatedAt?: string }>(
+      `/collections/${collectionId}/rating`,
+      { stars }
+    );
+    return response.data;
+  },
+
+  getBookmarkedBy: async (
+    collectionId: string
+  ): Promise<CollectionBookmarkedByResponse> => {
+    const response = await apiClient.get<CollectionBookmarkedByResponse>(
+      `/collections/${collectionId}/bookmarks`
     );
     return response.data;
   },
