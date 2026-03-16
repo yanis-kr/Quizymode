@@ -392,10 +392,13 @@ const ExploreModePage = () => {
       <ScopeSecondaryBar
         scopeType={collectionId ? "collection" : "category"}
         activeMode="explore"
-        availableModes={["list", "explore", "quiz"]}
+        availableModes={collectionId ? ["list", "explore", "quiz"] : ["sets", "list", "explore", "quiz"]}
         onModeChange={(mode) => {
           const search = exploreItemSearch;
-          if (mode === "list") {
+          if (mode === "sets") {
+            if (category) navigate(buildCategoryPath(categoryNameToSlug(category), keywords || []));
+            else navigate("/categories");
+          } else if (mode === "list") {
             if (collectionId) navigate(`/collections/${collectionId}`);
             else if (category)
               navigate(

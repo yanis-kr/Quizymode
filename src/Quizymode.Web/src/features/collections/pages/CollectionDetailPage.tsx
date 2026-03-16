@@ -94,13 +94,13 @@ const CollectionDetailPage = () => {
     },
   });
 
+  const isOwner = isAuthenticated && !!userId && collectionData?.createdBy === userId;
+
   const { data: bookmarkedByData } = useQuery({
     queryKey: ["collectionBookmarkedBy", id],
     queryFn: () => collectionsApi.getBookmarkedBy(id!),
     enabled: !!id && isOwner,
   });
-
-  const isOwner = isAuthenticated && userId && collectionData?.createdBy === userId;
   const allItems = itemsData?.items || [];
 
   const totalCount = allItems.length;

@@ -909,15 +909,20 @@ const CategoriesPage = () => {
             </div>
           </FilterSection>
           <div className="flex flex-wrap items-center justify-between gap-3 mt-2">
-            <Breadcrumb
-              categoryName={categoryName}
-              pathKeywords={categoryName ? pathKeywordsFromUrl : filterKeywordsFromQuery}
-              keywordDescriptions={categoryName ? breadcrumbKeywordDescriptions : undefined}
-              onNavigate={(path) => {
-                if (path.includes("?")) navigate(path);
-                else navigateToSets(path);
-              }}
-            />
+            <div className="flex flex-wrap items-center gap-2">
+              <Breadcrumb
+                categoryName={categoryName}
+                pathKeywords={categoryName ? pathKeywordsFromUrl : filterKeywordsFromQuery}
+                keywordDescriptions={categoryName ? breadcrumbKeywordDescriptions : undefined}
+                onNavigate={(path) => {
+                  if (path.includes("?")) navigate(path);
+                  else navigateToSets(path);
+                }}
+              />
+              <span className="text-sm text-gray-600" aria-label="Item count">
+                ({scopeTotalCount})
+              </span>
+            </div>
             <div className="flex flex-wrap items-center gap-3 flex-shrink-0">
               <div className="flex items-center gap-2">
                 <label className="text-sm text-gray-600">Per page:</label>
@@ -937,18 +942,6 @@ const CategoriesPage = () => {
               </div>
             </div>
           </div>
-            <h1 className="text-3xl font-bold text-gray-900 mt-4 mb-6">
-              Items
-            </h1>
-            <p className="text-gray-600 text-sm mb-6">
-              {categoryName
-                ? keywordsForItems.length > 0
-                  ? `Items in ${categoryName} / ${keywordsForItems.join(" / ")}`
-                  : `All items in ${categoryName}`
-                : keywordsForItems.length > 0
-                  ? `Items in ${keywordsForItems.join(" / ")} (all categories)`
-                  : "Items across all categories"}
-            </p>
 
             {scopeDisplayItems.length === 0 ? (
               <div className="text-center py-12">
@@ -1026,11 +1019,7 @@ const CategoriesPage = () => {
           <ScopeSecondaryBar
             scopeType="category"
             activeMode="sets"
-            availableModes={
-              sortedKeywords.length > 0
-                ? ["sets", "list", "explore", "quiz"]
-                : ["list", "explore", "quiz"]
-            }
+            availableModes={["sets", "list", "explore", "quiz"]}
             onModeChange={(mode) => {
               const path = scopePathWithNav;
               const kw = keywordsForItems;

@@ -2,6 +2,7 @@ import { useState, useEffect, useRef } from "react";
 import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
 import { collectionsApi } from "@/api/collections";
 import { useAuth } from "@/contexts/AuthContext";
+import { useActiveCollection } from "@/hooks/useActiveCollection";
 import { Navigate, Link, useSearchParams, useNavigate } from "react-router-dom";
 import {
   TrashIcon,
@@ -10,8 +11,13 @@ import {
   AcademicCapIcon,
   BookmarkIcon,
   MagnifyingGlassIcon,
+  PencilSquareIcon,
+  LinkIcon,
+  CheckCircleIcon,
+  CircleStackIcon,
+  InformationCircleIcon,
 } from "@heroicons/react/24/outline";
-import { BookmarkIcon as BookmarkIconSolid } from "@heroicons/react/24/solid";
+import { BookmarkIcon as BookmarkIconSolid, CheckCircleIcon as CheckCircleIconSolid } from "@heroicons/react/24/solid";
 import LoadingSpinner from "@/components/LoadingSpinner";
 import ErrorMessage from "@/components/ErrorMessage";
 import type { CollectionDiscoverItem } from "@/types/api";
@@ -21,36 +27,69 @@ type TabId = "mine" | "bookmarked" | "discover";
 interface CollectionCardProps {
   id: string;
   name: string;
+  description?: string | null;
+  isPublic?: boolean;
   itemCount: number;
   createdAt: string;
   createdBy?: string;
   isOwner?: boolean;
   isBookmarked?: boolean;
   selectedCollectionId?: string | null;
+  activeCollectionId?: string | null;
   cardRef?: React.RefObject<HTMLDivElement | null>;
   onBookmark?: (id: string) => void;
   onUnbookmark?: (id: string) => void;
   onDelete?: (id: string, name: string) => void;
+  onEdit?: (id: string, payload: { name: string; description: string | null; isPublic: boolean }) => void;
+  onSetActive?: (id: string) => void;
+  onCopyLink?: (id: string, isPublic: boolean) => void;
+  onSelect?: (id: string) => void;
   isBookmarkPending?: boolean;
   isDeletePending?: boolean;
+  isEditPending?: boolean;
 }
 
 function CollectionCard({
   id,
   name,
+  description,
+  isPublic,
   itemCount,
   createdAt,
   createdBy,
   isOwner,
   isBookmarked,
   selectedCollectionId,
+  activeCollectionId,
   cardRef,
   onBookmark,
   onUnbookmark,
   onDelete,
+  onEdit,
+  onSetActive,
+  onCopyLink,
+  onSelect,
   isBookmarkPending,
   isDeletePending,
+  isEditPending,
 }: CollectionCardProps) {
+  const isActive = activeCollectionId === id;
+
+  const titleArea = (
+    <>
+      <h3 className="text-lg font-medium text-gray-900">{name}</h3>
+      <p className="mt-2 text-sm text-gray-500">
+        {itemCount} {itemCount === 1 ? "item" : "items"}
+      </p>
+      {createdBy && (
+        <p className="mt-1 text-xs text-gray-400">By {createdBy}</p>
+      )}
+      <p className="mt-1 text-sm text-gray-500">
+        Created {new Date(createdAt).toLocaleDateString()}
+      </p>
+    </>
+  );
+
   return (
     <div
       ref={cardRef}
@@ -59,19 +98,71 @@ function CollectionCard({
       }`}
     >
       <div className="flex justify-between items-start mb-4">
-        <Link to={`/collections/${id}`} className="flex-1">
-          <h3 className="text-lg font-medium text-gray-900">{name}</h3>
-          <p className="mt-2 text-sm text-gray-500">
-            {itemCount} {itemCount === 1 ? "item" : "items"}
-          </p>
-          {createdBy && (
-            <p className="mt-1 text-xs text-gray-400">By {createdBy}</p>
+        <div className="flex-1 min-w-0">
+          {onSelect ? (
+            <button
+              type="button"
+              onClick={(e) => { e.preventDefault(); e.stopPropagation(); onSelect(id); }}
+              className="text-left w-full hover:opacity-90 focus:outline-none focus:ring-0"
+            >
+              {titleArea}
+            </button>
+          ) : (
+            <Link to={`/collections/${id}`} className="block">
+              {titleArea}
+            </Link>
           )}
-          <p className="mt-1 text-sm text-gray-500">
-            Created {new Date(createdAt).toLocaleDateString()}
-          </p>
-        </Link>
-        <div className="flex items-center gap-1 ml-2">
+        </div>
+        <div className="flex items-center gap-1 ml-2 flex-wrap justify-end">
+          {isOwner && onEdit && (
+            <button
+              onClick={(e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                onEdit(id, { name, description: description ?? null, isPublic: isPublic ?? false });
+              }}
+              disabled={isEditPending}
+              className="p-2 text-gray-600 hover:text-indigo-600 hover:bg-indigo-50 rounded-md disabled:opacity-50"
+              title="Edit collection"
+            >
+              <PencilSquareIcon className="h-5 w-5" />
+            </button>
+          )}
+          {isOwner && onSetActive && (
+            <button
+              onClick={(e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                onSetActive(id);
+              }}
+              disabled={isEditPending}
+              className={`p-2 rounded-md disabled:opacity-50 ${
+                isActive
+                  ? "text-indigo-600 bg-indigo-50"
+                  : "text-gray-400 hover:text-indigo-600 hover:bg-indigo-50"
+              }`}
+              title={isActive ? "Active collection" : "Set as active collection"}
+            >
+              {isActive ? (
+                <CheckCircleIconSolid className="h-5 w-5" />
+              ) : (
+                <CircleStackIcon className="h-5 w-5" />
+              )}
+            </button>
+          )}
+          {isOwner && onCopyLink && (
+            <button
+              onClick={(e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                onCopyLink(id, isPublic ?? false);
+              }}
+              className="p-2 text-gray-400 hover:text-blue-600 hover:bg-blue-50 rounded-md"
+              title="Copy shared link"
+            >
+              <LinkIcon className="h-5 w-5" />
+            </button>
+          )}
           {isOwner && onDelete && (
             <button
               onClick={(e) => {
@@ -149,10 +240,16 @@ function CollectionCard({
 const CollectionsPage = () => {
   const { isAuthenticated, isLoading: authLoading, userId } = useAuth();
   const queryClient = useQueryClient();
+  const { activeCollectionId, setActiveCollectionId } = useActiveCollection();
   const [showCreateModal, setShowCreateModal] = useState(false);
   const [collectionName, setCollectionName] = useState("");
   const [createCollectionDescription, setCreateCollectionDescription] = useState("");
   const [createCollectionIsPublic, setCreateCollectionIsPublic] = useState(false);
+  const [editingCollectionId, setEditingCollectionId] = useState<string | null>(null);
+  const [editingName, setEditingName] = useState("");
+  const [editingDescription, setEditingDescription] = useState("");
+  const [editingIsPublic, setEditingIsPublic] = useState(false);
+  const [copyLinkWarning, setCopyLinkWarning] = useState<string | null>(null);
   const [searchParams, setSearchParams] = useSearchParams();
   const selectedCollectionId = searchParams.get("selected");
   const tabParam = searchParams.get("tab") as TabId | null;
@@ -218,6 +315,16 @@ const CollectionsPage = () => {
     onError: (err: unknown) => console.error("Failed to create collection:", err),
   });
 
+  const updateMutation = useMutation({
+    mutationFn: ({ id, payload }: { id: string; payload: { name?: string; description?: string | null; isPublic?: boolean } }) =>
+      collectionsApi.update(id, payload),
+    onSuccess: () => {
+      queryClient.invalidateQueries({ queryKey: ["collections"] });
+      setEditingCollectionId(null);
+    },
+    onError: (err: unknown) => console.error("Failed to update collection:", err),
+  });
+
   const deleteMutation = useMutation({
     mutationFn: (id: string) => collectionsApi.delete(id),
     onSuccess: () => {
@@ -263,6 +370,44 @@ const CollectionsPage = () => {
     }
   };
 
+  const handleOpenEdit = (id: string, payload: { name: string; description: string | null; isPublic: boolean }) => {
+    setEditingCollectionId(id);
+    setEditingName(payload.name);
+    setEditingDescription(payload.description ?? "");
+    setEditingIsPublic(payload.isPublic);
+  };
+
+  const handleSaveEdit = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!editingCollectionId || !editingName.trim()) return;
+    updateMutation.mutate({
+      id: editingCollectionId,
+      payload: {
+        name: editingName.trim(),
+        description: editingDescription.trim() || null,
+        isPublic: editingIsPublic,
+      },
+    });
+  };
+
+  const handleCopyLink = (collectionId: string, isPublic: boolean) => {
+    const url = `${window.location.origin}/collections/${collectionId}`;
+    void navigator.clipboard.writeText(url).then(() => {
+      if (!isPublic) {
+        setCopyLinkWarning("Collection is private. Others cannot open this link until you make it public (Edit → Shared with others).");
+        setTimeout(() => setCopyLinkWarning(null), 6000);
+      }
+    });
+  };
+
+  const handleSelectCollection = (id: string) => {
+    setSearchParams((prev) => {
+      const next = new URLSearchParams(prev);
+      next.set("selected", id);
+      return next;
+    });
+  };
+
   const handleCreateCollection = (e: React.FormEvent) => {
     e.preventDefault();
     if (collectionName.trim()) {
@@ -278,6 +423,14 @@ const CollectionsPage = () => {
   const bookmarkedCollections = bookmarksData?.collections ?? [];
   const discoverItems = discoverData?.items ?? [];
   const discoverTotal = discoverData?.totalCount ?? 0;
+
+  const currentList = activeTab === "mine" ? myCollections : activeTab === "bookmarked" ? bookmarkedCollections : discoverItems;
+  const selectedCollection =
+    selectedCollectionId != null
+      ? (currentList as { id: string; name: string; description?: string | null; createdBy?: string; createdAt: string }[]).find(
+          (c) => c.id === selectedCollectionId
+        )
+      : null;
 
   if (authLoading) return <LoadingSpinner />;
   if (!authLoading && !isAuthenticated) return <Navigate to="/login" replace />;
@@ -319,15 +472,43 @@ const CollectionsPage = () => {
             </button>
           ))}
         </div>
-        {activeTab === "mine" && (
-          <button
-            onClick={() => setShowCreateModal(true)}
-            className="px-4 py-2 bg-indigo-600 text-white rounded-md hover:bg-indigo-700"
-          >
-            Create Collection
-          </button>
-        )}
+      {activeTab === "mine" && (
+        <button
+          onClick={() => setShowCreateModal(true)}
+          className="px-4 py-2 bg-indigo-600 text-white rounded-md hover:bg-indigo-700"
+        >
+          Create Collection
+        </button>
+      )}
       </div>
+
+      {copyLinkWarning && (
+        <div className="mb-4 p-3 bg-amber-50 border border-amber-200 rounded-md text-sm text-amber-800 flex items-center justify-between gap-2">
+          <span>{copyLinkWarning}</span>
+          <button type="button" onClick={() => setCopyLinkWarning(null)} className="text-amber-600 hover:text-amber-800 font-medium">Dismiss</button>
+        </div>
+      )}
+
+      {selectedCollection && (
+        <div className="mb-4 p-4 bg-gray-50 border border-gray-200 rounded-lg">
+          <div className="flex flex-wrap items-start justify-between gap-3">
+            <div className="min-w-0 flex-1">
+              <h2 className="text-lg font-semibold text-gray-900">{selectedCollection.name}</h2>
+              {selectedCollection.description != null && selectedCollection.description !== "" && (
+                <p className="mt-1 text-sm text-gray-600 whitespace-pre-wrap">{selectedCollection.description}</p>
+              )}
+            </div>
+            <Link
+              to={`/collections/${selectedCollection.id}`}
+              className="inline-flex items-center gap-1.5 px-3 py-2 text-sm font-medium text-indigo-600 bg-white border border-gray-300 rounded-md hover:bg-indigo-50 hover:border-indigo-200"
+              title="View details (created by, date, items)"
+            >
+              <InformationCircleIcon className="h-5 w-5" />
+              View details
+            </Link>
+          </div>
+        </div>
+      )}
 
       {activeTab === "discover" && (
         <div className="mb-4 flex flex-wrap items-center gap-4">
@@ -461,6 +642,90 @@ const CollectionsPage = () => {
         </div>
       )}
 
+      {editingCollectionId && (
+        <div
+          className="fixed inset-0 bg-gray-600 bg-opacity-50 overflow-y-auto h-full w-full z-50"
+          onClick={() => {
+            if (!updateMutation.isPending) {
+              setEditingCollectionId(null);
+            }
+          }}
+        >
+          <div
+            className="relative top-20 mx-auto p-5 border w-96 shadow-lg rounded-md bg-white"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <div className="mt-3">
+              <h3 className="text-lg font-medium text-gray-900 mb-4">Edit Collection</h3>
+              <form onSubmit={handleSaveEdit}>
+                <div className="mb-4">
+                  <label htmlFor="edit-collection-name" className="block text-sm font-medium text-gray-700 mb-2">
+                    Name
+                  </label>
+                  <input
+                    id="edit-collection-name"
+                    type="text"
+                    value={editingName}
+                    onChange={(e) => setEditingName(e.target.value)}
+                    placeholder="Collection name"
+                    required
+                    maxLength={200}
+                    className="w-full px-3 py-2 border border-gray-300 rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                    autoFocus
+                  />
+                </div>
+                <div className="mb-4">
+                  <label htmlFor="edit-collection-description" className="block text-sm font-medium text-gray-700 mb-2">
+                    Description (optional)
+                  </label>
+                  <textarea
+                    id="edit-collection-description"
+                    value={editingDescription}
+                    onChange={(e) => setEditingDescription(e.target.value)}
+                    placeholder="e.g. Biology chapter 5 practice set"
+                    rows={2}
+                    maxLength={2000}
+                    className="w-full px-3 py-2 border border-gray-300 rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                  />
+                </div>
+                <div className="mb-4 flex items-center">
+                  <input
+                    id="edit-collection-is-public"
+                    type="checkbox"
+                    checked={editingIsPublic}
+                    onChange={(e) => setEditingIsPublic(e.target.checked)}
+                    className="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500"
+                  />
+                  <label htmlFor="edit-collection-is-public" className="ml-2 block text-sm text-gray-700">
+                    Shared with others (anyone with the link can view and quiz; appears in Discover)
+                  </label>
+                </div>
+                <div className="flex justify-end space-x-3">
+                  <button
+                    type="button"
+                    onClick={() => setEditingCollectionId(null)}
+                    className="px-4 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-md hover:bg-gray-50"
+                    disabled={updateMutation.isPending}
+                  >
+                    Cancel
+                  </button>
+                  <button
+                    type="submit"
+                    disabled={updateMutation.isPending || !editingName.trim()}
+                    className="px-4 py-2 text-sm font-medium text-white bg-indigo-600 rounded-md hover:bg-indigo-700 disabled:opacity-50 disabled:cursor-not-allowed"
+                  >
+                    {updateMutation.isPending ? "Saving..." : "Save"}
+                  </button>
+                </div>
+              </form>
+              {updateMutation.isError && (
+                <div className="mt-3 text-sm text-red-600">Failed to update collection. Please try again.</div>
+              )}
+            </div>
+          </div>
+        </div>
+      )}
+
       {activeTab === "mine" && (
         myCollections.length > 0 ? (
           <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
@@ -469,12 +734,20 @@ const CollectionsPage = () => {
                 key={c.id}
                 id={c.id}
                 name={c.name}
+                description={c.description}
+                isPublic={c.isPublic}
                 itemCount={c.itemCount}
                 createdAt={c.createdAt}
                 isOwner={true}
                 selectedCollectionId={selectedCollectionId}
+                activeCollectionId={activeCollectionId}
                 cardRef={selectedCollectionId === c.id ? selectedCollectionRef : undefined}
+                onEdit={handleOpenEdit}
+                onSetActive={setActiveCollectionId}
+                onCopyLink={handleCopyLink}
+                onSelect={handleSelectCollection}
                 onDelete={handleDeleteCollection}
+                isEditPending={updateMutation.isPending}
                 isDeletePending={deleteMutation.isPending}
               />
             ))}
@@ -502,6 +775,7 @@ const CollectionsPage = () => {
                 selectedCollectionId={selectedCollectionId}
                 cardRef={selectedCollectionId === c.id ? selectedCollectionRef : undefined}
                 onUnbookmark={(id) => unbookmarkMutation.mutate(id)}
+                onSelect={handleSelectCollection}
                 isBookmarkPending={unbookmarkMutation.isPending}
               />
             ))}
@@ -537,6 +811,7 @@ const CollectionsPage = () => {
                     cardRef={selectedCollectionId === c.id ? selectedCollectionRef : undefined}
                     onBookmark={!c.isBookmarked ? (id) => bookmarkMutation.mutate(id) : undefined}
                     onUnbookmark={c.isBookmarked ? (id) => unbookmarkMutation.mutate(id) : undefined}
+                    onSelect={handleSelectCollection}
                     isBookmarkPending={bookmarkMutation.isPending || unbookmarkMutation.isPending}
                   />
                 ))}

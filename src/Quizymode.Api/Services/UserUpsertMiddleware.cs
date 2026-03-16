@@ -271,6 +271,32 @@ internal sealed class UserUpsertMiddleware
         {
             // Log the error but don't fail the request
             _logger.LogError(ex, "User upsert failed: {Message}", ex.Message);
+            // Fallback: if user already exists in DB, set UserId so read-only endpoints (e.g. GET users/settings) still work
+            if (context.User?.Identity?.IsAuthenticated == true)
+            {
+                string? subject = context.User.FindFirstValue("sub") ?? context.User.FindFirstValue(ClaimTypes.NameIdentifier);
+                if (!string.IsNullOrWhiteSpace(subject))
+                {
+                    try
+                    {
+                        var db = context.RequestServices.GetRequiredService<ApplicationDbContext>();
+                        var existingUser = await db.Users
+                            .AsNoTracking()
+                            .Where(u => u.Subject == subject)
+                            .Select(u => u.Id)
+                            .FirstOrDefaultAsync(context.RequestAborted);
+                        if (existingUser != default)
+                        {
+                            context.Items["UserId"] = existingUser.ToString();
+                            _logger.LogDebug("Set UserId from fallback lookup after upsert failure for subject {Subject}", subject);
+                        }
+                    }
+                    catch (Exception fallbackEx)
+                    {
+                        _logger.LogWarning(fallbackEx, "Fallback user lookup failed for subject {Subject}", subject);
+                    }
+                }
+            }
         }
 
         await _next(context);
