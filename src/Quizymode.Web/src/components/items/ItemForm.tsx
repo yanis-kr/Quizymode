@@ -8,6 +8,10 @@ import ErrorMessage from "@/components/ErrorMessage";
 export interface ItemFormValues {
   category: string;
   isPrivate: boolean;
+  /** Navigation keyword rank 1 (from dropdown or custom private). */
+  navigationRank1: string;
+  /** Navigation keyword rank 2 (from dropdown or custom private). */
+  navigationRank2: string;
   question: string;
   correctAnswer: string;
   incorrectAnswers: string[];
@@ -23,12 +27,20 @@ export interface ItemFormProps {
   onSubmit: (e: React.FormEvent) => void;
   onCancel: () => void;
   categories: { category: string }[];
+  /** Rank-1 navigation keyword names for the selected category (for dropdown). */
+  rank1Options?: string[];
+  /** Rank-2 navigation keyword names for the selected rank1 (for dropdown). */
+  rank2Options?: string[];
+  isLoadingRank1?: boolean;
+  isLoadingRank2?: boolean;
   isAdmin: boolean;
   isPending: boolean;
   validationError?: string;
   submitError?: string;
   onDismissSubmitError?: () => void;
 }
+
+const CUSTOM_RANK_OPTION = "__custom__";
 
 export function ItemForm({
   mode,
@@ -37,6 +49,10 @@ export function ItemForm({
   onSubmit,
   onCancel,
   categories,
+  rank1Options = [],
+  rank2Options = [],
+  isLoadingRank1,
+  isLoadingRank2,
   isAdmin,
   isPending,
   validationError,
@@ -45,6 +61,25 @@ export function ItemForm({
 }: ItemFormProps) {
   const [newKeywordName, setNewKeywordName] = useState("");
   const [newKeywordIsPrivate, setNewKeywordIsPrivate] = useState(true);
+
+  const rank1InList = rank1Options.some(
+    (o) => o.toLowerCase() === values.navigationRank1.trim().toLowerCase()
+  );
+  const rank2InList = rank2Options.some(
+    (o) => o.toLowerCase() === values.navigationRank2.trim().toLowerCase()
+  );
+  const rank1SelectValue =
+    values.navigationRank1 && rank1InList
+      ? rank1Options.find((o) => o.toLowerCase() === values.navigationRank1.trim().toLowerCase()) ?? ""
+      : values.navigationRank1.trim()
+        ? CUSTOM_RANK_OPTION
+        : "";
+  const rank2SelectValue =
+    values.navigationRank2 && rank2InList
+      ? rank2Options.find((o) => o.toLowerCase() === values.navigationRank2.trim().toLowerCase()) ?? ""
+      : values.navigationRank2.trim()
+        ? CUSTOM_RANK_OPTION
+        : "";
 
   const addKeyword = () => {
     const trimmedName = newKeywordName.trim().toLowerCase();
@@ -114,6 +149,85 @@ export function ItemForm({
           ))}
         </select>
       </div>
+
+      {rank1Options.length >= 0 && (
+        <>
+          <div>
+            <label htmlFor="item-form-rank1" className="block text-sm font-medium text-gray-700 mb-2">
+              Navigation keyword rank 1
+            </label>
+            <select
+              id="item-form-rank1"
+              value={rank1SelectValue}
+              onChange={(e) => {
+                const v = e.target.value;
+                if (v === CUSTOM_RANK_OPTION) {
+                  onChange({ ...values, navigationRank1: "", navigationRank2: "" });
+                } else {
+                  onChange({ ...values, navigationRank1: v, navigationRank2: "" });
+                }
+              }}
+              disabled={!values.category || isLoadingRank1}
+              className="w-full px-3 py-2 border border-gray-300 rounded-md text-sm"
+            >
+              <option value="">— Select or add your own —</option>
+              {rank1Options.map((name) => (
+                <option key={name} value={name}>
+                  {name}
+                </option>
+              ))}
+              <option value={CUSTOM_RANK_OPTION}>— Create my own (private) —</option>
+            </select>
+            {(rank1SelectValue === CUSTOM_RANK_OPTION || (values.navigationRank1.trim() && !rank1InList)) && (
+              <input
+                type="text"
+                value={values.navigationRank1}
+                onChange={(e) => onChange({ ...values, navigationRank1: e.target.value.slice(0, 30) })}
+                placeholder="Private keyword name (max 30 chars)"
+                maxLength={30}
+                className="mt-2 w-full px-3 py-2 border border-gray-300 rounded-md text-sm"
+              />
+            )}
+          </div>
+          <div>
+            <label htmlFor="item-form-rank2" className="block text-sm font-medium text-gray-700 mb-2">
+              Navigation keyword rank 2
+            </label>
+            <select
+              id="item-form-rank2"
+              value={rank2SelectValue}
+              onChange={(e) => {
+                const v = e.target.value;
+                if (v === CUSTOM_RANK_OPTION) {
+                  onChange({ ...values, navigationRank2: "" });
+                } else {
+                  onChange({ ...values, navigationRank2: v });
+                }
+              }}
+              disabled={!values.navigationRank1.trim() || isLoadingRank2}
+              className="w-full px-3 py-2 border border-gray-300 rounded-md text-sm"
+            >
+              <option value="">— Select or add your own —</option>
+              {rank2Options.map((name) => (
+                <option key={name} value={name}>
+                  {name}
+                </option>
+              ))}
+              <option value={CUSTOM_RANK_OPTION}>— Create my own (private) —</option>
+            </select>
+            {(rank2SelectValue === CUSTOM_RANK_OPTION || (values.navigationRank2.trim() && !rank2InList)) && (
+              <input
+                type="text"
+                value={values.navigationRank2}
+                onChange={(e) => onChange({ ...values, navigationRank2: e.target.value.slice(0, 30) })}
+                placeholder="Private keyword name (max 30 chars)"
+                maxLength={30}
+                className="mt-2 w-full px-3 py-2 border border-gray-300 rounded-md text-sm"
+              />
+            )}
+          </div>
+        </>
+      )}
 
       <div>
         <label className="flex items-center">

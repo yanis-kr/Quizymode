@@ -6,6 +6,7 @@ import { useAuth } from "@/contexts/AuthContext";
 import { Navigate } from "react-router-dom";
 import { ItemForm } from "@/components/items/ItemForm";
 import { categoriesApi } from "@/api/categories";
+import { keywordsApi } from "@/api/keywords";
 import { useQuery } from "@tanstack/react-query";
 import type { KeywordRequest } from "@/types/api";
 
@@ -19,6 +20,8 @@ const CreateItemPage = () => {
   const [formData, setFormData] = useState({
     category: "",
     isPrivate: true, // Default to true for regular users
+    navigationRank1: "",
+    navigationRank2: "",
     question: "",
     correctAnswer: "",
     incorrectAnswers: ["", "", ""],
@@ -30,6 +33,21 @@ const CreateItemPage = () => {
     queryKey: ["categories"],
     queryFn: () => categoriesApi.getAll(),
   });
+  const { data: rank1Data, isLoading: isLoadingRank1 } = useQuery({
+    queryKey: ["keywords", "rank1", formData.category],
+    queryFn: () => keywordsApi.getNavigationKeywords(formData.category, []),
+    enabled: !!formData.category.trim(),
+  });
+  const { data: rank2Data, isLoading: isLoadingRank2 } = useQuery({
+    queryKey: ["keywords", "rank2", formData.category, formData.navigationRank1],
+    queryFn: () =>
+      keywordsApi.getNavigationKeywords(formData.category, [formData.navigationRank1]),
+    enabled: !!formData.category.trim() && !!formData.navigationRank1.trim(),
+  });
+  const rank1Options = (rank1Data?.keywords ?? [])
+    .filter((k) => k.name.toLowerCase() !== "other")
+    .map((k) => k.name);
+  const rank2Options = (rank2Data?.keywords ?? []).map((k) => k.name);
 
   const [validationError, setValidationError] = useState<string>("");
 
@@ -40,7 +58,11 @@ const CreateItemPage = () => {
     if (keywordsFromUrl.length > 0) {
       setFormData((prev) => ({
         ...prev,
-        keywords: keywordsFromUrl.map((name) => ({ name, isPrivate: true })),
+        navigationRank1: keywordsFromUrl[0] ?? "",
+        navigationRank2: keywordsFromUrl[1] ?? "",
+        keywords: keywordsFromUrl
+          .slice(2)
+          .map((name) => ({ name, isPrivate: true })),
       }));
     }
   }, [categoryFromUrl, keywordsFromUrl]);
@@ -74,10 +96,34 @@ const CreateItemPage = () => {
       return;
     }
 
+    const r1 = formData.navigationRank1.trim().toLowerCase();
+    const r2 = formData.navigationRank2.trim().toLowerCase();
+    const navKeywords: KeywordRequest[] = [];
+    if (r1) {
+      navKeywords.push({
+        name: formData.navigationRank1.trim(),
+        isPrivate: !rank1Options.some((o) => o.toLowerCase() === r1),
+      });
+    }
+    if (r2) {
+      navKeywords.push({
+        name: formData.navigationRank2.trim(),
+        isPrivate: !rank2Options.some((o) => o.toLowerCase() === r2),
+      });
+    }
+    const otherKeywords = formData.keywords.filter(
+      (k) => k.name.toLowerCase() !== r1 && k.name.toLowerCase() !== r2
+    );
+    const allKeywords = [...navKeywords, ...otherKeywords];
+
     const data = {
-      ...formData,
+      category: formData.category.trim(),
+      isPrivate: formData.isPrivate,
+      question: formData.question.trim(),
+      correctAnswer: formData.correctAnswer.trim(),
       incorrectAnswers: filteredIncorrectAnswers,
-      keywords: formData.keywords.length > 0 ? formData.keywords : undefined,
+      explanation: formData.explanation.trim(),
+      keywords: allKeywords.length > 0 ? allKeywords : undefined,
       source: formData.source.trim() || undefined,
     };
 
@@ -115,6 +161,10 @@ const CreateItemPage = () => {
           onSubmit={handleSubmit}
           onCancel={() => navigate("/categories")}
           categories={categoriesData?.categories ?? []}
+          rank1Options={rank1Options}
+          rank2Options={rank2Options}
+          isLoadingRank1={isLoadingRank1}
+          isLoadingRank2={isLoadingRank2}
           isAdmin={!!isAdmin}
           isPending={createMutation.isPending}
           validationError={validationError}

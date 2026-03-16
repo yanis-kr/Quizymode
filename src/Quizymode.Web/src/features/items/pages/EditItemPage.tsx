@@ -8,6 +8,7 @@ import LoadingSpinner from "@/components/LoadingSpinner";
 import ErrorMessage from "@/components/ErrorMessage";
 import { ItemForm } from "@/components/items/ItemForm";
 import { categoriesApi } from "@/api/categories";
+import { keywordsApi } from "@/api/keywords";
 import type { KeywordRequest } from "@/types/api";
 
 const EditItemPage = () => {
@@ -18,6 +19,8 @@ const EditItemPage = () => {
   const [formData, setFormData] = useState({
     category: "",
     isPrivate: true, // Default to true for regular users
+    navigationRank1: "",
+    navigationRank2: "",
     question: "",
     correctAnswer: "",
     incorrectAnswers: ["", "", ""],
@@ -29,6 +32,21 @@ const EditItemPage = () => {
     queryKey: ["categories"],
     queryFn: () => categoriesApi.getAll(),
   });
+  const { data: rank1Data, isLoading: isLoadingRank1 } = useQuery({
+    queryKey: ["keywords", "rank1", formData.category],
+    queryFn: () => keywordsApi.getNavigationKeywords(formData.category, []),
+    enabled: !!formData.category.trim(),
+  });
+  const { data: rank2Data, isLoading: isLoadingRank2 } = useQuery({
+    queryKey: ["keywords", "rank2", formData.category, formData.navigationRank1],
+    queryFn: () =>
+      keywordsApi.getNavigationKeywords(formData.category, [formData.navigationRank1]),
+    enabled: !!formData.category.trim() && !!formData.navigationRank1.trim(),
+  });
+  const rank1Options = (rank1Data?.keywords ?? [])
+    .filter((k) => k.name.toLowerCase() !== "other")
+    .map((k) => k.name);
+  const rank2Options = (rank2Data?.keywords ?? []).map((k) => k.name);
 
   const {
     data: itemData,
@@ -45,9 +63,12 @@ const EditItemPage = () => {
   // Populate form when item data loads
   useEffect(() => {
     if (itemData) {
+      const breadcrumb = itemData.navigationBreadcrumb ?? [];
       setFormData({
         category: itemData.category || "",
         isPrivate: itemData.isPrivate || false,
+        navigationRank1: breadcrumb[0] ?? "",
+        navigationRank2: breadcrumb[1] ?? "",
         question: itemData.question || "",
         correctAnswer: itemData.correctAnswer || "",
         incorrectAnswers:
@@ -56,7 +77,13 @@ const EditItemPage = () => {
             : ["", "", ""],
         explanation: itemData.explanation || "",
         keywords: itemData.keywords
-          ? itemData.keywords.map((k) => ({ name: k.name, isPrivate: k.isPrivate }))
+          ? itemData.keywords
+              .filter(
+                (k) =>
+                  breadcrumb[0]?.toLowerCase() !== k.name.toLowerCase() &&
+                  breadcrumb[1]?.toLowerCase() !== k.name.toLowerCase()
+              )
+              .map((k) => ({ name: k.name, isPrivate: k.isPrivate }))
           : [],
         source: itemData.source || "",
       });
@@ -92,6 +119,26 @@ const EditItemPage = () => {
       return;
     }
 
+    const r1 = formData.navigationRank1.trim().toLowerCase();
+    const r2 = formData.navigationRank2.trim().toLowerCase();
+    const navKeywords: KeywordRequest[] = [];
+    if (r1) {
+      navKeywords.push({
+        name: formData.navigationRank1.trim(),
+        isPrivate: !rank1Options.some((o) => o.toLowerCase() === r1),
+      });
+    }
+    if (r2) {
+      navKeywords.push({
+        name: formData.navigationRank2.trim(),
+        isPrivate: !rank2Options.some((o) => o.toLowerCase() === r2),
+      });
+    }
+    const otherKeywords = formData.keywords.filter(
+      (k) => k.name.toLowerCase() !== r1 && k.name.toLowerCase() !== r2
+    );
+    const allKeywords = [...navKeywords, ...otherKeywords];
+
     const data = {
       category: formData.category.trim(),
       isPrivate: formData.isPrivate,
@@ -99,7 +146,7 @@ const EditItemPage = () => {
       correctAnswer: formData.correctAnswer.trim(),
       incorrectAnswers: filteredIncorrectAnswers,
       explanation: formData.explanation.trim(),
-      keywords: formData.keywords.length > 0 ? formData.keywords : undefined,
+      keywords: allKeywords.length > 0 ? allKeywords : undefined,
       source: formData.source.trim() || undefined,
     };
 
@@ -150,6 +197,10 @@ const EditItemPage = () => {
           onSubmit={handleSubmit}
           onCancel={() => navigate("/categories")}
           categories={categoriesData?.categories ?? []}
+          rank1Options={rank1Options}
+          rank2Options={rank2Options}
+          isLoadingRank1={isLoadingRank1}
+          isLoadingRank2={isLoadingRank2}
           isAdmin={!!isAdmin}
           isPending={updateMutation.isPending}
           validationError={validationError}

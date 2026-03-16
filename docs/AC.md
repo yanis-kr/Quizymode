@@ -293,6 +293,8 @@ Terms used in this document with a specific meaning:
 
 *(To be expanded: create, update, delete, visibility, categories, keywords, ratings, comments, etc.)*
 
+- **AC 2.1.1** [Authenticated] **Given** I am creating or editing an item, **when** I set the category, **then** I can choose a **navigation keyword rank 1** (and optionally **rank 2**) from dropdowns populated for that category; I may select existing keywords or create my own **private** keyword by typing a name. The chosen rank1 and rank2 are sent as item keywords on save; existing selections come from the navigation API; custom names are stored as private keywords.
+
 ---
 
 ## 3. Categories and keywords
