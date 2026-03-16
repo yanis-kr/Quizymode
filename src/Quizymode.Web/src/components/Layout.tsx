@@ -43,8 +43,16 @@ const Layout = ({ children }: LayoutProps) => {
   };
 
   const isPathActive = (basePath: string) => {
-    if (location.pathname === basePath) return true;
-    if (location.pathname.startsWith(`${basePath}/`)) return true;
+    const path = location.pathname;
+    if (path === basePath) return true;
+    if (path.startsWith(`${basePath}/`)) return true;
+    // Treat explore/quiz collection routes as part of Collections
+    if (
+      basePath === "/collections" &&
+      (path.startsWith("/explore/collections/") || path.startsWith("/quiz/collections/"))
+    ) {
+      return true;
+    }
     return false;
   };
 

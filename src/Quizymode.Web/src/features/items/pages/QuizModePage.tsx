@@ -24,6 +24,9 @@ import {
 } from "@/utils/categorySlug";
 import { ExploreQuizBreadcrumb } from "@/components/ExploreQuizBreadcrumb";
 import { ScopeSecondaryBar } from "@/components/ScopeSecondaryBar";
+import { StarIcon, XMarkIcon } from "@heroicons/react/24/outline";
+import { StarIcon as StarIconSolid } from "@heroicons/react/24/solid";
+import type { CollectionRatingResponse } from "@/types/api";
 
 const QuizModePage = () => {
   const { category: categorySlug, collectionId, itemId } = useParams();
@@ -66,6 +69,7 @@ const QuizModePage = () => {
   const [commentsDrawerItemId, setCommentsDrawerItemId] = useState<string | null>(
     null
   );
+  const [showDetails, setShowDetails] = useState(false);
   const hasSyncedInitialItemUrl = useRef(false);
 
   // Fetch categories to convert slug to actual category name
@@ -556,6 +560,12 @@ const QuizModePage = () => {
     );
   }
 
+  const { data: ratingData } = useQuery<CollectionRatingResponse>({
+    queryKey: ["collectionRating", collectionId],
+    queryFn: () => collectionsApi.getRating(collectionId!),
+    enabled: !!collectionId,
+  });
+
   return (
     <div className="px-4 py-6 sm:px-0">
       <ScopeSecondaryBar
@@ -600,24 +610,111 @@ const QuizModePage = () => {
           }
         }}
       />
+      {collectionId && collectionInfo && (
+        <div className="flex flex-wrap items-center justify-between gap-4 mt-4 mb-4">
+          <div className="min-w-0">
+            <div className="text-xs font-medium text-gray-500 uppercase tracking-wide">
+              Collection
+            </div>
+            <div className="flex flex-wrap items-baseline gap-2">
+              <div className="text-lg font-semibold text-gray-900 truncate max-w-xs sm:max-w-sm md:max-w-md">
+                {collectionInfo.name}
+              </div>
+              {collectionInfo.description && collectionInfo.description.trim() !== "" && (
+                <div className="text-sm text-gray-500 truncate max-w-xs sm:max-w-sm md:max-w-lg">
+                  {collectionInfo.description}
+                </div>
+              )}
+            </div>
+          </div>
+          <div className="flex flex-wrap items-center gap-4">
+            <div className="text-sm text-gray-600">
+              {collectionInfo.itemCount ?? items.length} items
+            </div>
+            {ratingData && (
+              <div className="flex items-center gap-2">
+                <span className="text-sm font-medium text-gray-700">Rating</span>
+                <div className="flex items-center gap-1">
+                  {[1, 2, 3, 4, 5].map((star) => (
+                    <span key={star} className="p-0.5">
+                      {ratingData.averageStars != null && star <= Math.round(ratingData.averageStars) ? (
+                        <StarIconSolid className="h-4 w-4 text-amber-500" />
+                      ) : (
+                        <StarIcon className="h-4 w-4 text-gray-300" />
+                      )}
+                    </span>
+                  ))}
+                </div>
+                <span className="text-xs text-gray-500">
+                  {ratingData.averageStars != null
+                    ? `${ratingData.averageStars} (${ratingData.count})`
+                    : "No ratings yet"}
+                </span>
+              </div>
+            )}
+            <button
+              type="button"
+              onClick={() => setShowDetails(true)}
+              className="inline-flex items-center px-3 py-1.5 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-md hover:bg-gray-50"
+            >
+              Details
+            </button>
+          </div>
+        </div>
+      )}
+      {showDetails && collectionId && collectionInfo && (
+        <div
+          className="fixed inset-0 bg-gray-600 bg-opacity-50 overflow-y-auto h-full w-full z-40"
+          onClick={() => setShowDetails(false)}
+        >
+          <div
+            className="relative top-24 mx-auto p-5 border w-full max-w-md shadow-lg rounded-md bg-white"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <div className="flex justify-between items-center mb-4">
+              <h3 className="text-lg font-medium text-gray-900">Collection details</h3>
+              <button
+                onClick={() => setShowDetails(false)}
+                className="text-gray-400 hover:text-gray-500"
+              >
+                <XMarkIcon className="h-5 w-5" />
+              </button>
+            </div>
+            <dl className="space-y-2 text-sm text-gray-700">
+              <div className="flex justify-between gap-4">
+                <dt className="font-medium text-gray-600">Name</dt>
+                <dd className="text-right break-words">{collectionInfo.name}</dd>
+              </div>
+              <div className="flex justify-between gap-4">
+                <dt className="font-medium text-gray-600">Author</dt>
+                <dd className="text-right break-all">{collectionInfo.createdBy}</dd>
+              </div>
+              <div className="flex justify-between gap-4">
+                <dt className="font-medium text-gray-600">Created</dt>
+                <dd className="text-right">
+                  {new Date(collectionInfo.createdAt).toLocaleString()}
+                </dd>
+              </div>
+              <div className="flex justify-between gap-4">
+                <dt className="font-medium text-gray-600">Items</dt>
+                <dd className="text-right">{collectionInfo.itemCount}</dd>
+              </div>
+              {"isPublic" in collectionInfo && (
+                <div className="flex justify-between gap-4">
+                  <dt className="font-medium text-gray-600">Visibility</dt>
+                  <dd className="text-right">
+                    {collectionInfo.isPublic ? "Public" : "Private"}
+                  </dd>
+                </div>
+              )}
+            </dl>
+          </div>
+        </div>
+      )}
       <StudyShell
         backContent={
           <>
-            {collectionId && (
-              <div className="mb-6 flex items-center space-x-4">
-                <button
-                  onClick={() => navigate("/collections")}
-                  className="flex items-center px-3 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-md hover:bg-gray-50"
-                >
-                  ← Go Back
-                </button>
-                {collectionInfo && (
-                  <h1 className="text-3xl font-bold text-gray-900">
-                    {collectionInfo.name}
-                  </h1>
-                )}
-              </div>
-            )}
+            {collectionId && null}
             {category && !collectionId && (
               <div className="mb-6">
                 <ExploreQuizBreadcrumb

@@ -182,44 +182,6 @@ const CollectionDetailPage = () => {
           <div className="text-sm text-gray-600">
             {collectionData?.itemCount ?? totalCount} items
           </div>
-          {isAuthenticated && (
-            <div className="flex items-center gap-2">
-              <span className="text-sm font-medium text-gray-700">Rating</span>
-              <div className="flex items-center gap-1">
-                {[1, 2, 3, 4, 5].map((star) => (
-                  <button
-                    key={star}
-                    type="button"
-                    onClick={() => setRatingMutation.mutate(star)}
-                    disabled={setRatingMutation.isPending}
-                    className="p-0.5 rounded hover:bg-gray-200 disabled:opacity-50"
-                    title={`Rate ${star} star${star > 1 ? "s" : ""}`}
-                  >
-                    {ratingData?.myStars != null && star <= ratingData.myStars ? (
-                      <StarIconSolid className="h-5 w-5 text-amber-500" />
-                    ) : (
-                      <StarIcon className="h-5 w-5 text-gray-400" />
-                    )}
-                  </button>
-                ))}
-              </div>
-              {ratingData && (
-                <span className="text-xs text-gray-500">
-                  {ratingData.averageStars != null
-                    ? `${ratingData.averageStars} (${ratingData.count})`
-                    : "No ratings yet"}
-                </span>
-              )}
-            </div>
-          )}
-          {!isAuthenticated && ratingData && (
-            <div className="text-sm text-gray-600">
-              Rating:{" "}
-              {ratingData.averageStars != null
-                ? `${ratingData.averageStars} (${ratingData.count})`
-                : "No ratings yet"}
-            </div>
-          )}
           {allItems.length > 0 && (
             <div className="flex items-center gap-2">
               <label className="text-sm text-gray-600">Per page:</label>
@@ -296,19 +258,59 @@ const CollectionDetailPage = () => {
           />
         </div>
       )}
-      {isOwner && bookmarkedByData && bookmarkedByData.bookmarkedBy.length > 0 && (
-        <div className="mb-4 p-4 bg-gray-50 rounded-lg">
-          <div className="flex items-center gap-2 mb-2">
-            <BookmarkIcon className="h-5 w-5 text-gray-500" />
-            <span className="text-sm font-medium text-gray-700">Bookmarked by</span>
+      {isOwner && (
+        <div className="mb-4 p-4 bg-gray-50 rounded-lg space-y-3">
+          <div className="flex flex-wrap items-center gap-3">
+            <div className="flex items-center gap-2">
+              <BookmarkIcon className="h-5 w-5 text-gray-500 flex-shrink-0" />
+              <span className="text-sm font-medium text-gray-700">Bookmarked by</span>
+              {bookmarkedByData && (
+                <span className="text-xs text-gray-500">
+                  {bookmarkedByData.bookmarkedBy.length} user
+                  {bookmarkedByData.bookmarkedBy.length === 1 ? "" : "s"}
+                </span>
+              )}
+            </div>
           </div>
-          <ul className="text-sm text-gray-600 space-y-1">
-            {bookmarkedByData.bookmarkedBy.map((b) => (
-              <li key={b.userId}>
-                {b.name ?? b.userId} · {new Date(b.bookmarkedAt).toLocaleDateString()}
-              </li>
-            ))}
-          </ul>
+          <div className="flex flex-wrap items-center gap-3 pt-1 border-t border-gray-200">
+            <span className="text-sm font-medium text-gray-700">Rating</span>
+            <div className="flex items-center gap-1 flex-shrink-0">
+              {[1, 2, 3, 4, 5].map((star) => (
+                <button
+                  key={star}
+                  type="button"
+                  onClick={() => setRatingMutation.mutate(star)}
+                  disabled={setRatingMutation.isPending}
+                  className="p-0.5 rounded hover:bg-gray-200 disabled:opacity-50"
+                  title={`Rate ${star} star${star > 1 ? "s" : ""}`}
+                >
+                  {ratingData?.myStars != null && star <= ratingData.myStars ? (
+                    <StarIconSolid className="h-5 w-5 text-amber-500" />
+                  ) : (
+                    <StarIcon className="h-5 w-5 text-gray-400" />
+                  )}
+                </button>
+              ))}
+            </div>
+            <span className="text-sm text-gray-500">
+              {ratingData?.averageStars != null
+                ? `${ratingData.averageStars} (${ratingData.count} rating${ratingData.count === 1 ? "" : "s"})`
+                : "No ratings yet"}
+            </span>
+          </div>
+          {bookmarkedByData && bookmarkedByData.bookmarkedBy.length > 0 ? (
+            <ul className="text-sm text-gray-600 space-y-1">
+              {bookmarkedByData.bookmarkedBy.map((b) => (
+                <li key={b.userId}>
+                  {b.name ?? b.userId} · {new Date(b.bookmarkedAt).toLocaleDateString()}
+                </li>
+              ))}
+            </ul>
+          ) : (
+            <p className="text-sm text-gray-500">
+              No one has bookmarked this collection yet.
+            </p>
+          )}
         </div>
       )}
       {showDetails && collectionData && (

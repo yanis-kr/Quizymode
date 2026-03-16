@@ -24,52 +24,7 @@ internal sealed class DatabaseSeederHostedService(
 
     public async Task StartAsync(CancellationToken cancellationToken)
     {
-        // Retry logic: Wait for database to be available and retry migration
-        const int maxRetries = 5;
-        const int delayMs = 2000;
-        bool migrationSucceeded = false;
-        
-        for (int attempt = 1; attempt <= maxRetries; attempt++)
-        {
-            try
-            {
-                using IServiceScope scope = _serviceProvider.CreateScope();
-                ApplicationDbContext db = scope.ServiceProvider.GetRequiredService<ApplicationDbContext>();
-
-                _logger.LogInformation("Attempting to apply database migrations (attempt {Attempt}/{MaxRetries})...", attempt, maxRetries);
-                
-                // Check if we can connect to the database
-                bool canConnect = await db.Database.CanConnectAsync(cancellationToken);
-                _logger.LogInformation("Database connection check: {CanConnect}", canConnect);
-                
-                // Apply migrations (MigrateAsync should create the database and __EFMigrationsHistory table if needed)
-                 await db.Database.MigrateAsync(cancellationToken);
-                
-                _logger.LogInformation("Database migrations applied successfully.");
-                migrationSucceeded = true;
-                break; // Success, exit retry loop
-            }
-            catch (Exception ex) when (attempt < maxRetries)
-            {
-                string fullError = GetFullExceptionMessage(ex);
-                _logger.LogWarning(ex, "Migration attempt {Attempt} failed. Retrying in {Delay}ms... Error: {Error}", attempt, delayMs, fullError);
-                await Task.Delay(delayMs, cancellationToken);
-                continue;
-            }
-            catch (Exception ex)
-            {
-                string fullError = GetFullExceptionMessage(ex);
-                _logger.LogError(ex, "All migration attempts failed. Last error: {Error}", fullError);
-                throw; // Re-throw on final attempt
-            }
-        }
-        
-        if (!migrationSucceeded)
-        {
-            _logger.LogError("Failed to apply database migrations after {MaxRetries} attempts.", maxRetries);
-            return; // Exit early if migrations failed
-        }
-        
+        // Migrations are applied in Program.cs before the app accepts requests.
         try
         {
             using IServiceScope scope = _serviceProvider.CreateScope();
@@ -80,6 +35,9 @@ internal sealed class DatabaseSeederHostedService(
 
             // Ensure CollectionBookmarks and CollectionShares if AddCollectionDiscoveryAndSharing migration was not applied
             await EnsureCollectionDiscoverySchemaAsync(db, cancellationToken);
+
+            // Ensure CollectionRatings if AddCollectionRatings migration was not applied
+            await EnsureCollectionRatingsSchemaAsync(db, cancellationToken);
 
             // Seed categories and navigation keywords (always run, idempotent)
             await SeedCategoriesAndNavigationAsync(db, cancellationToken);
@@ -427,6 +385,41 @@ internal sealed class DatabaseSeederHostedService(
             """
             INSERT INTO "__EFMigrationsHistory" ("MigrationId", "ProductVersion")
             VALUES ('20260314000000_AddCollectionDiscoveryAndSharing', '10.0.2')
+            ON CONFLICT ("MigrationId") DO NOTHING
+            """,
+            cancellationToken);
+    }
+
+    /// <summary>
+    /// Ensures CollectionRatings table exists (AddCollectionRatings migration).
+    /// Idempotent: safe to run when the migration was not applied.
+    /// </summary>
+    private static async Task EnsureCollectionRatingsSchemaAsync(ApplicationDbContext db, CancellationToken cancellationToken)
+    {
+        await db.Database.ExecuteSqlRawAsync(
+            """
+            CREATE TABLE IF NOT EXISTS "CollectionRatings" (
+                "Id" uuid NOT NULL,
+                "CollectionId" uuid NOT NULL,
+                "Stars" integer NOT NULL,
+                "CreatedBy" character varying(100) NOT NULL,
+                "CreatedAt" timestamp with time zone NOT NULL,
+                "UpdatedAt" timestamp with time zone NULL,
+                CONSTRAINT "PK_CollectionRatings" PRIMARY KEY ("Id"),
+                CONSTRAINT "CK_CollectionRatings_Stars_Range" CHECK ("Stars" >= 1 AND "Stars" <= 5)
+            )
+            """,
+            cancellationToken);
+        await db.Database.ExecuteSqlRawAsync(
+            "CREATE INDEX IF NOT EXISTS \"IX_CollectionRatings_CollectionId\" ON \"CollectionRatings\" (\"CollectionId\")",
+            cancellationToken);
+        await db.Database.ExecuteSqlRawAsync(
+            "CREATE UNIQUE INDEX IF NOT EXISTS \"IX_CollectionRatings_CollectionId_CreatedBy\" ON \"CollectionRatings\" (\"CollectionId\", \"CreatedBy\")",
+            cancellationToken);
+        await db.Database.ExecuteSqlRawAsync(
+            """
+            INSERT INTO "__EFMigrationsHistory" ("MigrationId", "ProductVersion")
+            VALUES ('20260316000001_AddCollectionRatings', '10.0.2')
             ON CONFLICT ("MigrationId") DO NOTHING
             """,
             cancellationToken);

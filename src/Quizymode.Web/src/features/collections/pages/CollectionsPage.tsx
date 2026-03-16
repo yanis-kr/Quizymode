@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect } from "react";
 import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
 import { collectionsApi } from "@/api/collections";
 import { useAuth } from "@/contexts/AuthContext";
@@ -15,12 +15,13 @@ import {
   LinkIcon,
   CheckCircleIcon,
   CircleStackIcon,
-  InformationCircleIcon,
+  StarIcon,
 } from "@heroicons/react/24/outline";
+import { StarIcon as StarIconSolid } from "@heroicons/react/24/solid";
 import { BookmarkIcon as BookmarkIconSolid, CheckCircleIcon as CheckCircleIconSolid } from "@heroicons/react/24/solid";
 import LoadingSpinner from "@/components/LoadingSpinner";
 import ErrorMessage from "@/components/ErrorMessage";
-import type { CollectionDiscoverItem } from "@/types/api";
+import type { CollectionDiscoverItem, CollectionRatingResponse } from "@/types/api";
 
 type TabId = "mine" | "bookmarked" | "discover";
 
@@ -47,6 +48,8 @@ interface CollectionCardProps {
   isBookmarkPending?: boolean;
   isDeletePending?: boolean;
   isEditPending?: boolean;
+  showRating?: boolean;
+  onRate?: (id: string, stars: number) => void;
 }
 
 function CollectionCard({
@@ -72,8 +75,51 @@ function CollectionCard({
   isBookmarkPending,
   isDeletePending,
   isEditPending,
+  showRating,
+  onRate,
 }: CollectionCardProps) {
   const isActive = activeCollectionId === id;
+  const queryClient = useQueryClient();
+
+  const { data: ratingData } = useQuery({
+    queryKey: ["collectionRating", id],
+    queryFn: () => collectionsApi.getRating(id),
+    enabled: !!showRating,
+  });
+
+  const setRatingMutation = useMutation({
+    mutationFn: (stars: number) => collectionsApi.setRating(id, stars),
+    onMutate: async (stars) => {
+      await queryClient.cancelQueries({ queryKey: ["collectionRating", id] });
+      const previous = queryClient.getQueryData<CollectionRatingResponse>(["collectionRating", id]);
+      queryClient.setQueryData<CollectionRatingResponse>(["collectionRating", id], (old) => {
+        if (!old) return { count: 1, averageStars: stars, myStars: stars };
+        const newCount = old.myStars == null ? old.count + 1 : old.count;
+        const newAvg =
+          old.averageStars != null && old.count > 0
+            ? old.myStars != null
+              ? (old.averageStars * old.count - old.myStars + stars) / old.count
+              : (old.averageStars * old.count + stars) / newCount
+            : stars;
+        return {
+          count: newCount,
+          averageStars: Math.round(newAvg * 100) / 100,
+          myStars: stars,
+        };
+      });
+      return { previous };
+    },
+    onError: (_err, _stars, context) => {
+      if (context?.previous != null) {
+        queryClient.setQueryData(["collectionRating", id], context.previous);
+      } else {
+        queryClient.invalidateQueries({ queryKey: ["collectionRating", id] });
+      }
+    },
+    onSettled: () => {
+      queryClient.invalidateQueries({ queryKey: ["collectionRating", id] });
+    },
+  });
 
   const titleArea = (
     <>
@@ -207,6 +253,39 @@ function CollectionCard({
           )}
         </div>
       </div>
+      {showRating && (
+        <div className="flex flex-wrap items-center gap-2 mt-3 pt-3 border-t border-gray-100">
+          <span className="text-sm font-medium text-gray-700">Rating</span>
+          <div className="flex items-center gap-0.5">
+            {[1, 2, 3, 4, 5].map((star) => (
+              <button
+                key={star}
+                type="button"
+                onClick={(e) => {
+                  e.preventDefault();
+                  e.stopPropagation();
+                  setRatingMutation.mutate(star);
+                  onRate?.(id, star);
+                }}
+                disabled={setRatingMutation.isPending}
+                className="p-0.5 rounded hover:bg-gray-100 disabled:opacity-50"
+                title={`Rate ${star} star${star > 1 ? "s" : ""}`}
+              >
+                {ratingData?.myStars != null && star <= ratingData.myStars ? (
+                  <StarIconSolid className="h-5 w-5 text-amber-500" />
+                ) : (
+                  <StarIcon className="h-5 w-5 text-gray-300" />
+                )}
+              </button>
+            ))}
+          </div>
+          <span className="text-xs text-gray-500">
+            {ratingData?.averageStars != null
+              ? `${ratingData.averageStars} (${ratingData.count})`
+              : "No ratings yet"}
+          </span>
+        </div>
+      )}
       <div className="flex flex-wrap gap-2 mt-4">
         <Link
           to={`/collections/${id}`}
@@ -251,13 +330,11 @@ const CollectionsPage = () => {
   const [editingIsPublic, setEditingIsPublic] = useState(false);
   const [copyLinkWarning, setCopyLinkWarning] = useState<string | null>(null);
   const [searchParams, setSearchParams] = useSearchParams();
-  const selectedCollectionId = searchParams.get("selected");
   const tabParam = searchParams.get("tab") as TabId | null;
   const [activeTab, setActiveTab] = useState<TabId>(tabParam && ["mine", "bookmarked", "discover"].includes(tabParam) ? tabParam : "mine");
   const [discoverQuery, setDiscoverQuery] = useState("");
   const [discoverPage, setDiscoverPage] = useState(1);
   const [collectionIdInput, setCollectionIdInput] = useState("");
-  const selectedCollectionRef = useRef<HTMLDivElement>(null);
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -293,14 +370,6 @@ const CollectionsPage = () => {
     queryFn: () => collectionsApi.discover(discoverQuery || undefined, discoverPage, 12),
     enabled: activeTab === "discover",
   });
-
-  useEffect(() => {
-    if (selectedCollectionId && (data?.collections?.length || bookmarksData?.collections?.length) && selectedCollectionRef.current) {
-      setTimeout(() => {
-        selectedCollectionRef.current?.scrollIntoView({ behavior: "smooth", block: "center" });
-      }, 100);
-    }
-  }, [selectedCollectionId, data?.collections, bookmarksData?.collections]);
 
   const createMutation = useMutation({
     mutationFn: (payload: { name: string; isPublic?: boolean }) =>
@@ -400,14 +469,6 @@ const CollectionsPage = () => {
     });
   };
 
-  const handleSelectCollection = (id: string) => {
-    setSearchParams((prev) => {
-      const next = new URLSearchParams(prev);
-      next.set("selected", id);
-      return next;
-    });
-  };
-
   const handleCreateCollection = (e: React.FormEvent) => {
     e.preventDefault();
     if (collectionName.trim()) {
@@ -425,12 +486,6 @@ const CollectionsPage = () => {
   const discoverTotal = discoverData?.totalCount ?? 0;
 
   const currentList = activeTab === "mine" ? myCollections : activeTab === "bookmarked" ? bookmarkedCollections : discoverItems;
-  const selectedCollection =
-    selectedCollectionId != null
-      ? (currentList as { id: string; name: string; description?: string | null; createdBy?: string; createdAt: string }[]).find(
-          (c) => c.id === selectedCollectionId
-        )
-      : null;
 
   if (authLoading) return <LoadingSpinner />;
   if (!authLoading && !isAuthenticated) return <Navigate to="/login" replace />;
@@ -486,27 +541,6 @@ const CollectionsPage = () => {
         <div className="mb-4 p-3 bg-amber-50 border border-amber-200 rounded-md text-sm text-amber-800 flex items-center justify-between gap-2">
           <span>{copyLinkWarning}</span>
           <button type="button" onClick={() => setCopyLinkWarning(null)} className="text-amber-600 hover:text-amber-800 font-medium">Dismiss</button>
-        </div>
-      )}
-
-      {selectedCollection && (
-        <div className="mb-4 p-4 bg-gray-50 border border-gray-200 rounded-lg">
-          <div className="flex flex-wrap items-start justify-between gap-3">
-            <div className="min-w-0 flex-1">
-              <h2 className="text-lg font-semibold text-gray-900">{selectedCollection.name}</h2>
-              {selectedCollection.description != null && selectedCollection.description !== "" && (
-                <p className="mt-1 text-sm text-gray-600 whitespace-pre-wrap">{selectedCollection.description}</p>
-              )}
-            </div>
-            <Link
-              to={`/collections/${selectedCollection.id}`}
-              className="inline-flex items-center gap-1.5 px-3 py-2 text-sm font-medium text-indigo-600 bg-white border border-gray-300 rounded-md hover:bg-indigo-50 hover:border-indigo-200"
-              title="View details (created by, date, items)"
-            >
-              <InformationCircleIcon className="h-5 w-5" />
-              View details
-            </Link>
-          </div>
         </div>
       )}
 
@@ -739,13 +773,10 @@ const CollectionsPage = () => {
                 itemCount={c.itemCount}
                 createdAt={c.createdAt}
                 isOwner={true}
-                selectedCollectionId={selectedCollectionId}
                 activeCollectionId={activeCollectionId}
-                cardRef={selectedCollectionId === c.id ? selectedCollectionRef : undefined}
                 onEdit={handleOpenEdit}
                 onSetActive={setActiveCollectionId}
                 onCopyLink={handleCopyLink}
-                onSelect={handleSelectCollection}
                 onDelete={handleDeleteCollection}
                 isEditPending={updateMutation.isPending}
                 isDeletePending={deleteMutation.isPending}
@@ -772,11 +803,9 @@ const CollectionsPage = () => {
                 createdBy={c.createdBy}
                 isOwner={userId ? c.createdBy === userId : false}
                 isBookmarked={true}
-                selectedCollectionId={selectedCollectionId}
-                cardRef={selectedCollectionId === c.id ? selectedCollectionRef : undefined}
                 onUnbookmark={(id) => unbookmarkMutation.mutate(id)}
-                onSelect={handleSelectCollection}
                 isBookmarkPending={unbookmarkMutation.isPending}
+                showRating={true}
               />
             ))}
           </div>
@@ -807,12 +836,10 @@ const CollectionsPage = () => {
                     createdBy={c.createdBy}
                     isOwner={false}
                     isBookmarked={c.isBookmarked}
-                    selectedCollectionId={selectedCollectionId}
-                    cardRef={selectedCollectionId === c.id ? selectedCollectionRef : undefined}
                     onBookmark={!c.isBookmarked ? (id) => bookmarkMutation.mutate(id) : undefined}
                     onUnbookmark={c.isBookmarked ? (id) => unbookmarkMutation.mutate(id) : undefined}
-                    onSelect={handleSelectCollection}
                     isBookmarkPending={bookmarkMutation.isPending || unbookmarkMutation.isPending}
+                    showRating={true}
                   />
                 ))}
               </div>
