@@ -13,7 +13,6 @@ public static class AddItemsBulk
         bool IsPrivate);
 
     public sealed record ItemRequest(
-        string Category,
         string Question,
         string CorrectAnswer,
         List<string> IncorrectAnswers,
@@ -25,6 +24,10 @@ public static class AddItemsBulk
 
     public sealed record Request(
         bool IsPrivate,
+        string Category,
+        string Keyword1,
+        string? Keyword2,
+        List<KeywordRequest> Keywords,
         List<ItemRequest> Items,
         Guid? UploadId = null);
 
@@ -62,6 +65,30 @@ public static class AddItemsBulk
 
             RuleForEach(x => x.Items)
                 .SetValidator(new ItemRequestValidator());
+
+            RuleFor(x => x.Category)
+                .NotEmpty()
+                .WithMessage("Category is required")
+                .MaximumLength(100)
+                .WithMessage("Category must not exceed 100 characters");
+
+            RuleFor(x => x.Keyword1)
+                .NotEmpty()
+                .WithMessage("Keyword1 (primary topic) is required")
+                .MaximumLength(30)
+                .WithMessage("Keyword1 must not exceed 30 characters");
+
+            RuleFor(x => x.Keyword2)
+                .MaximumLength(30)
+                .WithMessage("Keyword2 must not exceed 30 characters");
+
+            RuleFor(x => x.Keywords)
+                .NotNull()
+                .WithMessage("Keywords list is required")
+                .Must(k => k.Count <= 50)
+                .WithMessage("Cannot assign more than 50 default keywords")
+                .ForEach(rule => rule
+                    .SetValidator(new KeywordRequestValidator()));
         }
     }
 
@@ -69,12 +96,6 @@ public static class AddItemsBulk
     {
         public ItemRequestValidator()
         {
-            RuleFor(x => x.Category)
-                .NotEmpty()
-                .WithMessage("Category is required")
-                .MaximumLength(100)
-                .WithMessage("Category must not exceed 100 characters");
-
             RuleFor(x => x.Question)
                 .NotEmpty()
                 .WithMessage("Question is required")

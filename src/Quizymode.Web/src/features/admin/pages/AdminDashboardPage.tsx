@@ -44,6 +44,17 @@ const AdminDashboardPage = () => {
           <p className="text-sm text-gray-500">Assign keywords to parents and set rank</p>
         </Link>
         <Link
+          to="/admin/keyword-review"
+          className="bg-white shadow rounded-lg p-6 hover:shadow-lg transition-shadow cursor-pointer"
+        >
+          <h3 className="text-lg font-medium text-gray-900 mb-2">
+            Review Private Keywords
+          </h3>
+          <p className="text-sm text-gray-500">
+            Approve or reject new private keywords
+          </p>
+        </Link>
+        <Link
           to="/admin/categories"
           className="bg-white shadow rounded-lg p-6 hover:shadow-lg transition-shadow cursor-pointer"
         >

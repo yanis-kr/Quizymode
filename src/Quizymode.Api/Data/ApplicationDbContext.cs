@@ -40,6 +40,8 @@ public sealed class ApplicationDbContext : DbContext
 
     public DbSet<CategoryKeyword> CategoryKeywords => Set<CategoryKeyword>();
 
+    public DbSet<CategoryKeywordSuggestion> CategoryKeywordSuggestions => Set<CategoryKeywordSuggestion>();
+
     public DbSet<UserSetting> UserSettings => Set<UserSetting>();
 
     public DbSet<Upload> Uploads => Set<Upload>();

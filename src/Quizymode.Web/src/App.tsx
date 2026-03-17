@@ -16,6 +16,7 @@ import ReviewBoardPage from "./features/admin/pages/ReviewBoardPage";
 import DatabaseSizePage from "./features/admin/pages/DatabaseSizePage";
 import AuditLogsPage from "./features/admin/pages/AuditLogsPage";
 import AdminKeywordsPage from "./features/admin/pages/AdminKeywordsPage";
+import AdminKeywordReviewPage from "./features/admin/pages/AdminKeywordReviewPage";
 import AdminCategoriesPage from "./features/admin/pages/AdminCategoriesPage";
 import AdminUserSettingsPage from "./features/admin/pages/AdminUserSettingsPage";
 import BulkCreateItemsPage from "./features/items/pages/BulkCreateItemsPage";
@@ -83,6 +84,7 @@ function App() {
         <Route path="/admin/database-size" element={<DatabaseSizePage />} />
         <Route path="/admin/audit-logs" element={<AuditLogsPage />} />
         <Route path="/admin/keywords" element={<AdminKeywordsPage />} />
+        <Route path="/admin/keyword-review" element={<AdminKeywordReviewPage />} />
         <Route path="/admin/categories" element={<AdminCategoriesPage />} />
         <Route path="/admin/user-settings" element={<AdminUserSettingsPage />} />
         <Route path="/about" element={<AboutPage />} />

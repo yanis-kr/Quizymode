@@ -19,6 +19,31 @@ interface ReviewBoardResponse {
   items: ReviewBoardItemResponse[];
 }
 
+export interface PendingKeywordResponse {
+  id: string;
+  name: string;
+  slug?: string | null;
+  isPrivate: boolean;
+  createdBy: string;
+  createdAt: string;
+  usageCount: number;
+}
+
+export interface PendingKeywordsResponse {
+  keywords: PendingKeywordResponse[];
+}
+
+export interface KeywordReviewResponse {
+  id: string;
+  name: string;
+  slug?: string | null;
+  isPrivate: boolean;
+  isReviewPending: boolean;
+  createdAt: string;
+  reviewedAt?: string | null;
+  reviewedBy?: string | null;
+}
+
 interface DatabaseSizeResponse {
   sizeBytes: number;
   sizeMegabytes: number;
@@ -178,6 +203,27 @@ export const adminApi = {
 
   deleteCategory: async (id: string): Promise<void> => {
     await apiClient.delete(`/admin/categories/${id}`);
+  },
+
+  getPendingKeywords: async (): Promise<PendingKeywordsResponse> => {
+    const response = await apiClient.get<PendingKeywordsResponse>(
+      "/admin/keywords/pending"
+    );
+    return response.data;
+  },
+
+  approveKeyword: async (id: string): Promise<KeywordReviewResponse> => {
+    const response = await apiClient.post<KeywordReviewResponse>(
+      `/admin/keywords/${id}/approve`
+    );
+    return response.data;
+  },
+
+  rejectKeyword: async (id: string): Promise<KeywordReviewResponse> => {
+    const response = await apiClient.post<KeywordReviewResponse>(
+      `/admin/keywords/${id}/reject`
+    );
+    return response.data;
   },
 };
 

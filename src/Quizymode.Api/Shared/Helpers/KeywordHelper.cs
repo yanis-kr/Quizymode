@@ -27,14 +27,37 @@ internal static class KeywordHelper
     }
 
     /// <summary>
-    /// Returns true if the name is valid for a new keyword: alphanumeric and hyphens only (no spaces or special chars).
+    /// Normalizes a keyword name for storage/validation:
+    /// - trims
+    /// - replaces any whitespace sequence with a single hyphen
+    /// - collapses multiple hyphens
+    /// Does not change casing; callers may lower-case if desired.
+    /// </summary>
+    public static string NormalizeKeywordName(string name)
+    {
+        if (string.IsNullOrWhiteSpace(name))
+            return string.Empty;
+
+        string s = name.Trim();
+        s = Regex.Replace(s, @"\s+", "-");
+        s = Regex.Replace(s, @"-+", "-").Trim('-');
+        return s;
+    }
+
+    /// <summary>
+    /// Returns true if the name is valid for a new keyword: alphanumeric and hyphens only (no spaces or special chars),
+    /// after applying NormalizeKeywordName.
     /// </summary>
     public static bool IsValidKeywordNameFormat(string name)
     {
         if (string.IsNullOrWhiteSpace(name))
             return false;
-        string trimmed = name.Trim();
-        return Regex.IsMatch(trimmed, @"^[a-zA-Z0-9\-]+$") && trimmed.Length <= 30;
+
+        string normalized = NormalizeKeywordName(name);
+        if (string.IsNullOrEmpty(normalized))
+            return false;
+
+        return Regex.IsMatch(normalized, @"^[a-zA-Z0-9\-]+$") && normalized.Length <= 30;
     }
 }
 

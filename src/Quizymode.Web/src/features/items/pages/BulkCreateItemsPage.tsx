@@ -25,7 +25,6 @@ const KEYWORD_MAX_LEN = 30;
 type Step = "setup" | "prompt" | "paste" | "review";
 
 interface ParsedItem {
-  category: string;
   question: string;
   correctAnswer: string;
   incorrectAnswers: string[];
@@ -215,7 +214,6 @@ Generate the JSON array only.`;
           keywords = (o.keywords as (string | { name?: string })[]).map((k) => (typeof k === "string" ? k : (k as { name?: string }).name ?? "").trim()).filter(Boolean);
         }
         items.push({
-          category: selectedCategory || itemCategory,
           question,
           correctAnswer,
           incorrectAnswers: incorrectAnswers.slice(0, 5),
@@ -240,14 +238,29 @@ Generate the JSON array only.`;
   const bulkCreateMutation = useMutation({
     mutationFn: async (itemsToSave: ParsedItem[]) => {
       const isPrivate = !isAdmin;
-      const keywordRequests = navKeywords.map((name) => ({ name: name.trim(), isPrivate }));
+      const keywordRequests: { name: string; isPrivate: boolean }[] = [];
+      navKeywords.forEach((name) => {
+        const trimmed = name.trim();
+        if (!trimmed) return;
+        if (!keywordRequests.some((k) => k.name.toLowerCase() === trimmed.toLowerCase())) {
+          keywordRequests.push({ name: trimmed, isPrivate });
+        }
+      });
       extraKeywords.forEach((name) => {
-        if (name && !keywordRequests.some((k) => k.name.toLowerCase() === name.toLowerCase())) {
-          keywordRequests.push({ name, isPrivate });
+        const trimmed = name.trim();
+        if (
+          trimmed &&
+          !keywordRequests.some((k) => k.name.toLowerCase() === trimmed.toLowerCase())
+        ) {
+          keywordRequests.push({ name: trimmed, isPrivate });
         }
       });
       const payload = {
         isPrivate,
+        category: category,
+        keyword1: primaryTopic.trim(),
+        keyword2: subtopic.trim() || null,
+        keywords: keywordRequests,
         items: itemsToSave.map((item) => {
           const itemKeywords = [...keywordRequests];
           (item.keywords ?? []).forEach((k) => {
@@ -257,7 +270,6 @@ Generate the JSON array only.`;
             }
           });
           return {
-            category: item.category || category,
             question: item.question,
             correctAnswer: item.correctAnswer,
             incorrectAnswers: item.incorrectAnswers,
@@ -577,7 +589,7 @@ Generate the JSON array only.`;
                       <p className="text-xs text-gray-600 mt-1">
                         ✓ {item.correctAnswer}
                         {item.incorrectAnswers.length > 0 && (
-                          <> · ✗ {item.incorrectAnswers.slice(0, 2).join(", ")}</>
+                          <> · ✗ {item.incorrectAnswers.join(", ")}</>
                         )}
                       </p>
                     </div>

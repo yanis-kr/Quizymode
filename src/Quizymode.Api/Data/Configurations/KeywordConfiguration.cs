@@ -26,6 +26,15 @@ internal sealed class KeywordConfiguration : IEntityTypeConfiguration<Keyword>
             .IsRequired()
             .HasDefaultValue(false);
 
+        builder.Property(x => x.IsReviewPending)
+            .IsRequired()
+            .HasDefaultValue(false);
+
+        builder.Property(x => x.ReviewedAt);
+
+        builder.Property(x => x.ReviewedBy)
+            .HasMaxLength(100);
+
         builder.Property(x => x.CreatedBy)
             .IsRequired()
             .HasMaxLength(100);
