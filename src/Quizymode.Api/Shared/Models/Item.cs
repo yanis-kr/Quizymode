@@ -32,6 +32,16 @@ public sealed class Item
     /// </summary>
     public Guid? UploadId { get; set; }
 
+    /// <summary>
+    /// Optional factual risk indicator 0-1: higher = more uncertainty or inferred content.
+    /// </summary>
+    public decimal? FactualRisk { get; set; }
+
+    /// <summary>
+    /// Optional review notes: ambiguity, assumptions, outdated info, etc.
+    /// </summary>
+    public string? ReviewComments { get; set; }
+
     // Navigation property for keywords (not mapped directly, accessed via ItemKeywords)
     public List<ItemKeyword> ItemKeywords { get; set; } = new();
 

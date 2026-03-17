@@ -141,7 +141,9 @@ internal static class AddItemsBulkHandler
                         CreatedAt = DateTime.UtcNow,
                         CategoryId = category.Id,
                         Source = string.IsNullOrWhiteSpace(itemRequest.Source) ? null : itemRequest.Source.Trim(),
-                        UploadId = request.UploadId
+                        UploadId = request.UploadId,
+                        FactualRisk = itemRequest.FactualRisk is >= 0m and <= 1m ? itemRequest.FactualRisk : null,
+                        ReviewComments = string.IsNullOrWhiteSpace(itemRequest.ReviewComments) ? null : itemRequest.ReviewComments.Trim()
                     };
 
                     itemsToInsert.Add(item);

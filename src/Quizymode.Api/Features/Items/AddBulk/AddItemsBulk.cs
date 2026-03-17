@@ -19,7 +19,9 @@ public static class AddItemsBulk
         List<string> IncorrectAnswers,
         string Explanation,
         List<KeywordRequest>? Keywords = null,
-        string? Source = null);
+        string? Source = null,
+        decimal? FactualRisk = null,
+        string? ReviewComments = null);
 
     public sealed record Request(
         bool IsPrivate,
@@ -107,6 +109,16 @@ public static class AddItemsBulk
                 .WithMessage("Cannot assign more than 50 keywords to an item")
                 .ForEach(rule => rule
                     .SetValidator(new KeywordRequestValidator()));
+
+            RuleFor(x => x.FactualRisk)
+                .InclusiveBetween(0m, 1m)
+                .When(x => x.FactualRisk.HasValue)
+                .WithMessage("FactualRisk must be between 0 and 1");
+
+            RuleFor(x => x.ReviewComments)
+                .MaximumLength(500)
+                .When(x => x.ReviewComments != null)
+                .WithMessage("ReviewComments must not exceed 500 characters");
         }
     }
 

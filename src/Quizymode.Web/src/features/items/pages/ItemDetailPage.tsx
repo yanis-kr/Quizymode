@@ -204,6 +204,30 @@ const ItemDetailPage = () => {
                     <p className="font-medium text-gray-900">{item.source}</p>
                   </div>
                 )}
+                {item.factualRisk != null && (
+                  <div className="sm:col-span-2">
+                    <span className="text-gray-500">Factual risk</span>
+                    <p className="font-medium text-gray-900">
+                      <span
+                        className={`inline-flex items-center px-2 py-0.5 rounded text-xs font-medium ${
+                          item.factualRisk >= 0.7
+                            ? "bg-amber-100 text-amber-800"
+                            : item.factualRisk >= 0.4
+                            ? "bg-yellow-100 text-yellow-800"
+                            : "bg-gray-100 text-gray-800"
+                        }`}
+                      >
+                        {(item.factualRisk * 100).toFixed(0)}%
+                      </span>
+                    </p>
+                  </div>
+                )}
+                {item.reviewComments && (
+                  <div className="sm:col-span-2">
+                    <span className="text-gray-500">Review comments</span>
+                    <p className="font-medium text-gray-900">{item.reviewComments}</p>
+                  </div>
+                )}
               </div>
             </div>
 

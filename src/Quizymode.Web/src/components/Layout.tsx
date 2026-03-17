@@ -100,6 +100,12 @@ const Layout = ({ children }: LayoutProps) => {
                     >
                       Add Items
                     </Link>
+                    <Link
+                      to="/study-guide"
+                      className={desktopNavLinkClass(isPathActive("/study-guide"))}
+                    >
+                      Study Guide
+                    </Link>
                     {userIsAdmin && (
                       <Link
                         to="/admin"
@@ -200,6 +206,13 @@ const Layout = ({ children }: LayoutProps) => {
                     onClick={closeMobileMenu}
                   >
                     Add Items
+                  </Link>
+                  <Link
+                    to="/study-guide"
+                    className={mobileNavLinkClass(isPathActive("/study-guide"))}
+                    onClick={closeMobileMenu}
+                  >
+                    Study Guide
                   </Link>
                   {userIsAdmin && (
                     <Link

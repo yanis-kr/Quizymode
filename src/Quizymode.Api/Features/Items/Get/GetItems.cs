@@ -49,7 +49,9 @@ public static class GetItems
         List<KeywordResponse> Keywords,
         List<CollectionResponse> Collections,
         string? Source,
-        string? UploadId = null);
+        string? UploadId = null,
+        decimal? FactualRisk = null,
+        string? ReviewComments = null);
 
     public sealed record KeywordResponse(
         string Id,

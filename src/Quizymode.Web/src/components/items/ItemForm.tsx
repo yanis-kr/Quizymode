@@ -18,6 +18,10 @@ export interface ItemFormValues {
   explanation: string;
   keywords: KeywordRequest[];
   source: string;
+  /** Optional factual risk 0–1. */
+  factualRisk: string;
+  /** Optional review notes. */
+  reviewComments: string;
 }
 
 export interface ItemFormProps {
@@ -316,6 +320,36 @@ export function ItemForm({
           onChange={(e) => onChange({ ...values, source: e.target.value })}
           maxLength={200}
           placeholder="e.g., ChatGPT, Claude, Manual"
+          className="w-full px-3 py-2 border border-gray-300 rounded-md text-sm"
+        />
+      </div>
+
+      <div>
+        <label className="block text-sm font-medium text-gray-700 mb-2">
+          Factual risk (optional, 0–1)
+        </label>
+        <input
+          type="number"
+          min={0}
+          max={1}
+          step={0.1}
+          value={values.factualRisk}
+          onChange={(e) => onChange({ ...values, factualRisk: e.target.value })}
+          placeholder="e.g. 0.2"
+          className="w-full px-3 py-2 border border-gray-300 rounded-md text-sm"
+        />
+      </div>
+
+      <div>
+        <label className="block text-sm font-medium text-gray-700 mb-2">
+          Review comments (optional)
+        </label>
+        <textarea
+          value={values.reviewComments}
+          onChange={(e) => onChange({ ...values, reviewComments: e.target.value.slice(0, 500) })}
+          maxLength={500}
+          rows={2}
+          placeholder="Uncertainty, assumptions, outdated info..."
           className="w-full px-3 py-2 border border-gray-300 rounded-md text-sm"
         />
       </div>

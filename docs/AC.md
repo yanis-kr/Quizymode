@@ -478,6 +478,65 @@ User settings are key-value pairs stored per user (e.g. **PageSize** for default
 
 ---
 
+## 6. Study guides and import
+
+### AC 6.1 Study guide CRUD and 100 KB limit
+
+**API**
+
+- **AC 6.1.1** [Authenticated] **Given** I am authenticated and have no study guide yet, **when** I call `GET /study-guides/current`, **then** the API returns 404 Not Found (no guide exists); the body may be empty or ProblemDetails, and no study guide is created implicitly.
+- **AC 6.1.2** [Authenticated] **Given** I am authenticated, **when** I call `PUT /study-guides/current` with a JSON body `{ "title": "...", "contentText": "..." }` whose UTF-8 byte length is at most 100 KB, **then** the API upserts my single private study guide (creating it if missing, replacing it if it exists) and returns 200 with `id`, `title`, `sizeBytes`, and `updatedUtc`; `sizeBytes` equals the UTF-8 byte length of `contentText`.
+- **AC 6.1.3** [Authenticated] **Given** I try to save a study guide whose `contentText` exceeds 100 KB UTF-8 bytes, **when** I call `PUT /study-guides/current`, **then** the API returns 400 Bad Request with a validation error explaining that the 100 KB limit was exceeded; the previous guide (if any) is left unchanged.
+- **AC 6.1.4** [Authenticated] **Given** I have a study guide, **when** I call `DELETE /study-guides/current`, **then** the API deletes my study guide (idempotent) and returns 204 No Content; subsequent `GET /study-guides/current` returns 404 until I create a new one.
+- **AC 6.1.5** [Anonymous] **Given** I am not authenticated, **when** I call any of `GET/PUT/DELETE /study-guides/current`, **then** the API returns 401 Unauthorized.
+
+**UI**
+
+- **AC 6.1.6** [Authenticated] **Given** I open the Study Guide screen, **when** the page loads, **then** I see a title input, a large text area for study guide text, preparation instructions, a byte counter and remaining bytes indicator, and Save/Delete/Cancel controls; the byte counter updates as I type, and the Save button is disabled when the content exceeds 100 KB.
+- **AC 6.1.7** [Authenticated] **Given** I have a saved study guide, **when** I visit the Study Guide screen, **then** the title and content area are pre-filled with my latest saved values, and clicking **Start import workflow** takes me to the import wizard at `/study-guide/import`.
+
+### AC 6.2 Study guide import session and chunking
+
+**API**
+
+- **AC 6.2.1** [Authenticated] **Given** I have a study guide, **when** I call `POST /study-guides/import/sessions` with a body containing `categoryName` (required), `navigationKeywordPath` (array of zero, one, or two keyword names), optional `defaultKeywords`, and `targetItemsPerChunk` (5–50), **then** the API validates the request, ensures a study guide exists for me, creates a `StudyGuideImportSession` tied to my guide and user, and returns 201 with `sessionId`, `studyGuideId`, `studyGuideTitle`, and `studyGuideSizeBytes`.
+- **AC 6.2.2** [Authenticated] **Given** I do not have a study guide saved, **when** I call `POST /study-guides/import/sessions`, **then** the API returns 404 Not Found with an error indicating that no study guide exists.
+- **AC 6.2.3** [Authenticated] **Given** I own an import session, **when** I call `POST /study-guides/import/sessions/{id}/generate-chunks`, **then** the API deterministically chunks my study guide text into one or more `StudyGuideChunk` records (target ~8–10 KB, hard max ~14 KB), generates a full prompt string for each chunk, stores them, updates the session status to `ChunksGenerated`, and returns 200 with a list of chunks (id, index, title, sizeBytes).
+- **AC 6.2.4** [Authenticated] **Given** I own an import session, **when** I call `GET /study-guides/import/sessions/{id}`, **then** the API returns 200 with session metadata (id, studyGuideId, categoryName, navigationKeywordPath, defaultKeywords, targetItemsPerChunk, status) plus arrays of chunks (including `promptText`), per-chunk prompt results (validation status, messages, parsed JSON string when valid), and (when present) a dedup result summary.
+- **AC 6.2.5** [Authenticated] **Given** I am not the owner of the session or the session does not exist, **when** I call `GET` or `POST` on any `study-guides/import/sessions/{id}*` endpoint, **then** the API returns 404 Not Found (session is not visible outside the owner).
+
+**UI**
+
+- **AC 6.2.6** [Authenticated] **Given** I have a study guide and navigate to `/study-guide/import`, **when** the page loads, **then** I see a stepper-style wizard with at least: (1) Session setup (category + navigation + default keywords + target items per chunk), (2) Prompts & chunks, (3) Optional dedup, (4) Final import summary.
+- **AC 6.2.7** [Authenticated] **Given** I fill out the session setup form with a category (and optional navigation keywords and default keywords) and click the button to create a session, **when** the request succeeds, **then** I advance to the prompts step and the wizard uses the returned session id for subsequent operations.
+
+### AC 6.3 Prompt copy/paste, validation, and dedup
+
+**API**
+
+- **AC 6.3.1** [Authenticated] **Given** I own an import session with generated chunks, **when** I call `POST /study-guides/import/sessions/{id}/chunks/{chunkIndex}/result` with `{ "rawResponseText": "<AI text>" }`, **then** the API attempts to parse `rawResponseText` as JSON, requires a top-level array of objects, runs item-level validation (question, correctAnswer, incorrectAnswers, explanation, source, factualRisk, reviewComments) using the same rules as bulk add, stores the raw text and the validated JSON string when valid, and returns 200 with `validationStatus` (`Valid` or `Invalid`), validation messages, and the parsed JSON string when valid.
+- **AC 6.3.2** [Authenticated] **Given** my chunk response JSON is malformed or fails validation, **when** I call `POST /study-guides/import/sessions/{id}/chunks/{chunkIndex}/result`, **then** the API returns 200 with `validationStatus = "Invalid"`, a non-empty list of human-readable messages, and `parsedItemsJson = null`; the bad response is still stored for audit.
+- **AC 6.3.3** [Authenticated] **Given** my session has more than one chunk and at least one validated prompt result, **when** I call `GET /study-guides/import/sessions/{id}`, **then** the response includes a `dedupResult` object with a generated `dedupPromptText` that summarizes all validated questions and instructions for dedup; if no validated results exist yet, `dedupPromptText` may be null.
+- **AC 6.3.4** [Authenticated] **Given** I own an import session, **when** I call `POST /study-guides/import/sessions/{id}/dedup-result` with `{ "rawDedupResponseText": "<AI text>" }`, **then** the API validates the JSON array using the same item rules, stores the raw and parsed dedup JSON, and returns `validationStatus` and messages similar to per-chunk validation.
+
+**UI**
+
+- **AC 6.3.5** [Authenticated] **Given** I am on the Prompts step of the import wizard, **when** chunks have been generated, **then** I see one panel per chunk with the chunk title, size, a **Copy prompt** button (copies the full prompt), a textarea to paste the AI JSON response, and a **Validate JSON** button that calls the per-chunk result endpoint and shows a status pill (Validated / Invalid / Not validated) plus any validation messages.
+- **AC 6.3.6** [Authenticated] **Given** my session has multiple chunks and at least one validated prompt result, **when** I go to the Dedup step, **then** I see the generated dedup prompt, a **Copy dedup prompt** button, a textarea to paste the deduplicated JSON array, and a **Validate dedup JSON** button; validation results are reflected in the status text and messages.
+
+### AC 6.4 Finalize import
+
+**API**
+
+- **AC 6.4.1** [Authenticated] **Given** I own an import session with either (a) a valid dedup result or (b) one or more valid per-chunk results and no dedup result, **when** I call `POST /study-guides/import/sessions/{id}/finalize`, **then** the API maps the validated JSON items into `AddItemsBulk.Request` payload(s) with `IsPrivate = true`, `Category` = session category, and keywords including the navigation path and any extra keywords, invokes the existing bulk handler, and returns 200 with created/duplicate/failed counts, created item ids, and any error messages.
+- **AC 6.4.2** [Authenticated] **Given** I call `POST /study-guides/import/sessions/{id}/finalize` when there are no valid results to import (no valid dedup and no valid per-chunk responses), **when** the request is processed, **then** the API returns 400 Bad Request with a validation error (e.g. `Import.NoItems`) explaining that there are no items to import.
+
+**UI**
+
+- **AC 6.4.3** [Authenticated] **Given** I am on the import wizard and at least one valid result is available, **when** I click **Finalize import**, **then** the wizard calls the finalize endpoint, disables the button while pending, and after a successful response shows a confirmation panel summarizing the import (at minimum: that items were imported as private under the selected category) plus a link or button to navigate back to Categories.
+
+---
+
 ## Unclarities / questions for product owner
 
 - **Shareable link vs IsPublic**: Resolved — if a collection is **not** shared with others (IsPublic = false), only the owner can access it by ID or link. When **Shared with others** is on (IsPublic = true), anyone with the link (or who finds it by ID or via Discover) can view and quiz, and the collection appears in Discover. The UI uses the label **"Shared with others"** for this toggle. Users can search or enter a collection ID to open it (see AC 1.9.6).

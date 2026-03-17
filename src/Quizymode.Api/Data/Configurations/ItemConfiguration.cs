@@ -69,6 +69,14 @@ internal sealed class ItemConfiguration : IEntityTypeConfiguration<Item>
         builder.Property(x => x.UploadId)
             .IsRequired(false);
 
+        builder.Property(x => x.FactualRisk)
+            .HasPrecision(5, 4)
+            .IsRequired(false);
+
+        builder.Property(x => x.ReviewComments)
+            .HasMaxLength(500)
+            .IsRequired(false);
+
         // Foreign key relationship to Category
         builder.HasOne(x => x.Category)
             .WithMany(c => c.Items)

@@ -23,7 +23,9 @@ public static class UpdateItem
         bool IsPrivate,
         List<KeywordRequest>? Keywords = null,
         bool? ReadyForReview = null,
-        string? Source = null);
+        string? Source = null,
+        decimal? FactualRisk = null,
+        string? ReviewComments = null);
 
     public sealed record Response(
         string Id,
@@ -34,7 +36,9 @@ public static class UpdateItem
         List<string> IncorrectAnswers,
         string Explanation,
         DateTime CreatedAt,
-        string? Source);
+        string? Source,
+        decimal? FactualRisk = null,
+        string? ReviewComments = null);
 
     public sealed class Validator : AbstractValidator<Request>
     {
@@ -78,6 +82,16 @@ public static class UpdateItem
             RuleFor(x => x.Source)
                 .MaximumLength(200)
                 .WithMessage("Source must not exceed 200 characters");
+
+            RuleFor(x => x.FactualRisk)
+                .InclusiveBetween(0m, 1m)
+                .When(x => x.FactualRisk.HasValue)
+                .WithMessage("FactualRisk must be between 0 and 1");
+
+            RuleFor(x => x.ReviewComments)
+                .MaximumLength(500)
+                .When(x => x.ReviewComments != null)
+                .WithMessage("ReviewComments must not exceed 500 characters");
         }
     }
 
@@ -202,6 +216,12 @@ public static class UpdateItem
                 item.Source = string.IsNullOrWhiteSpace(request.Source) ? null : request.Source.Trim();
             }
 
+            item.FactualRisk = request.FactualRisk is >= 0m and <= 1m ? request.FactualRisk : item.FactualRisk;
+            if (request.ReviewComments is not null)
+            {
+                item.ReviewComments = string.IsNullOrWhiteSpace(request.ReviewComments) ? null : request.ReviewComments.Trim();
+            }
+
             // Handle keywords update
             if (request.Keywords is not null)
             {
@@ -307,7 +327,9 @@ public static class UpdateItem
                 item.IncorrectAnswers,
                 item.Explanation,
                 item.CreatedAt,
-                item.Source);
+                item.Source,
+                item.FactualRisk,
+                item.ReviewComments);
 
             return Result.Success(response);
         }

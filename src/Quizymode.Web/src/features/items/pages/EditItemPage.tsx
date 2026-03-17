@@ -27,6 +27,8 @@ const EditItemPage = () => {
     explanation: "",
     keywords: [] as KeywordRequest[],
     source: "",
+    factualRisk: "",
+    reviewComments: "",
   });
   const { data: categoriesData } = useQuery({
     queryKey: ["categories"],
@@ -86,6 +88,9 @@ const EditItemPage = () => {
               .map((k) => ({ name: k.name, isPrivate: k.isPrivate }))
           : [],
         source: itemData.source || "",
+        factualRisk:
+          itemData.factualRisk != null ? String(itemData.factualRisk) : "",
+        reviewComments: itemData.reviewComments || "",
       });
     }
   }, [itemData]);
@@ -139,6 +144,10 @@ const EditItemPage = () => {
     );
     const allKeywords = [...navKeywords, ...otherKeywords];
 
+    const factualRiskNum =
+      formData.factualRisk.trim() !== ""
+        ? parseFloat(formData.factualRisk.trim())
+        : undefined;
     const data = {
       category: formData.category.trim(),
       isPrivate: formData.isPrivate,
@@ -148,6 +157,11 @@ const EditItemPage = () => {
       explanation: formData.explanation.trim(),
       keywords: allKeywords.length > 0 ? allKeywords : undefined,
       source: formData.source.trim() || undefined,
+      factualRisk:
+        factualRiskNum !== undefined && factualRiskNum >= 0 && factualRiskNum <= 1
+          ? factualRiskNum
+          : undefined,
+      reviewComments: formData.reviewComments.trim() || undefined,
     };
 
     updateMutation.mutate(data);

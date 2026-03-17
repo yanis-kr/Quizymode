@@ -28,6 +28,8 @@ const CreateItemPage = () => {
     explanation: "",
     keywords: [] as KeywordRequest[],
     source: "",
+    factualRisk: "",
+    reviewComments: "",
   });
   const { data: categoriesData } = useQuery({
     queryKey: ["categories"],
@@ -116,6 +118,10 @@ const CreateItemPage = () => {
     );
     const allKeywords = [...navKeywords, ...otherKeywords];
 
+    const factualRiskNum =
+      formData.factualRisk.trim() !== ""
+        ? parseFloat(formData.factualRisk.trim())
+        : undefined;
     const data = {
       category: formData.category.trim(),
       isPrivate: formData.isPrivate,
@@ -125,6 +131,11 @@ const CreateItemPage = () => {
       explanation: formData.explanation.trim(),
       keywords: allKeywords.length > 0 ? allKeywords : undefined,
       source: formData.source.trim() || undefined,
+      factualRisk:
+        factualRiskNum !== undefined && factualRiskNum >= 0 && factualRiskNum <= 1
+          ? factualRiskNum
+          : undefined,
+      reviewComments: formData.reviewComments.trim() || undefined,
     };
 
     createMutation.mutate(data);

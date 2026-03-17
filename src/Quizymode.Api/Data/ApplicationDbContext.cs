@@ -44,6 +44,16 @@ public sealed class ApplicationDbContext : DbContext
 
     public DbSet<Upload> Uploads => Set<Upload>();
 
+    public DbSet<StudyGuide> StudyGuides => Set<StudyGuide>();
+
+    public DbSet<StudyGuideImportSession> StudyGuideImportSessions => Set<StudyGuideImportSession>();
+
+    public DbSet<StudyGuideChunk> StudyGuideChunks => Set<StudyGuideChunk>();
+
+    public DbSet<StudyGuidePromptResult> StudyGuidePromptResults => Set<StudyGuidePromptResult>();
+
+    public DbSet<StudyGuideDedupResult> StudyGuideDedupResults => Set<StudyGuideDedupResult>();
+
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         modelBuilder.ApplyConfigurationsFromAssembly(typeof(ApplicationDbContext).Assembly);

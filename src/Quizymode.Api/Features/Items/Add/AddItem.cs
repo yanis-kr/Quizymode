@@ -22,7 +22,9 @@ public static class AddItem
         List<KeywordRequest>? Keywords = null,
         bool ReadyForReview = false,
         string? Source = null,
-        Guid? UploadId = null);
+        Guid? UploadId = null,
+        decimal? FactualRisk = null,
+        string? ReviewComments = null);
 
     public sealed record Response(
         string Id,
@@ -34,7 +36,9 @@ public static class AddItem
         string Explanation,
         DateTime CreatedAt,
         string? Source,
-        string? UploadId = null);
+        string? UploadId = null,
+        decimal? FactualRisk = null,
+        string? ReviewComments = null);
 
     public sealed class Validator : AbstractValidator<Request>
     {
@@ -78,6 +82,16 @@ public static class AddItem
             RuleFor(x => x.Source)
                 .MaximumLength(200)
                 .WithMessage("Source must not exceed 200 characters");
+
+            RuleFor(x => x.FactualRisk)
+                .InclusiveBetween(0m, 1m)
+                .When(x => x.FactualRisk.HasValue)
+                .WithMessage("FactualRisk must be between 0 and 1");
+
+            RuleFor(x => x.ReviewComments)
+                .MaximumLength(500)
+                .When(x => x.ReviewComments != null)
+                .WithMessage("ReviewComments must not exceed 500 characters");
         }
     }
 

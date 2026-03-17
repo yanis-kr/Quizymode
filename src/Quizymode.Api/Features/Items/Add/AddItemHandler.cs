@@ -87,7 +87,9 @@ internal static class AddItemHandler
                 CreatedAt = DateTime.UtcNow,
                 ReadyForReview = request.ReadyForReview,
                 CategoryId = category.Id,
-                Source = string.IsNullOrWhiteSpace(request.Source) ? null : request.Source.Trim()
+                Source = string.IsNullOrWhiteSpace(request.Source) ? null : request.Source.Trim(),
+                FactualRisk = request.FactualRisk is >= 0m and <= 1m ? request.FactualRisk : null,
+                ReviewComments = string.IsNullOrWhiteSpace(request.ReviewComments) ? null : request.ReviewComments.Trim()
             };
 
             db.Items.Add(item);
@@ -183,7 +185,9 @@ internal static class AddItemHandler
                 item.Explanation,
                 item.CreatedAt,
                 item.Source,
-                item.UploadId?.ToString());
+                item.UploadId?.ToString(),
+                item.FactualRisk,
+                item.ReviewComments);
 
             return Result.Success(response);
         }

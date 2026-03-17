@@ -31,7 +31,9 @@ internal sealed class ItemResponseMapper
             visibleKeywords,
             collections,
             item.Source,
-            item.UploadId?.ToString());
+            item.UploadId?.ToString(),
+            item.FactualRisk,
+            item.ReviewComments);
     }
 
     private List<GetItems.KeywordResponse> FilterVisibleKeywords(Item item)
