@@ -155,6 +155,7 @@ public static class AddItemsBulk
             IUserContext userContext,
             ICategoryResolver categoryResolver,
             IAuditService auditService,
+            IProfanityFilterService profanityFilter,
             CancellationToken cancellationToken)
         {
             if (!userContext.IsAuthenticated || string.IsNullOrEmpty(userContext.UserId))
@@ -168,7 +169,7 @@ public static class AddItemsBulk
                 return Results.BadRequest(validationResult.Errors);
             }
 
-            Result<Response> result = await AddItemsBulkHandler.HandleAsync(request, db, simHashService, userContext, categoryResolver, auditService, cancellationToken);
+            Result<Response> result = await AddItemsBulkHandler.HandleAsync(request, db, simHashService, userContext, categoryResolver, auditService, profanityFilter, cancellationToken);
 
             return result.Match(
                 value => Results.Ok(value),

@@ -42,6 +42,7 @@ public sealed class AddItemsBulkTests : ItemTestFixture
             _userContextMock.Object,
             CategoryResolver,
             _auditServiceMock.Object,
+            ProfanityFilter,
             CancellationToken.None);
 
         // Assert
@@ -85,6 +86,7 @@ public sealed class AddItemsBulkTests : ItemTestFixture
             _userContextMock.Object,
             CategoryResolver,
             _auditServiceMock.Object,
+            ProfanityFilter,
             CancellationToken.None);
 
         // Assert
@@ -189,6 +191,7 @@ public sealed class AddItemsBulkTests : ItemTestFixture
             _userContextMock.Object,
             CategoryResolver,
             _auditServiceMock.Object,
+            ProfanityFilter,
             CancellationToken.None);
 
         // Assert

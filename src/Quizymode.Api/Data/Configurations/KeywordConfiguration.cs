@@ -19,6 +19,9 @@ internal sealed class KeywordConfiguration : IEntityTypeConfiguration<Keyword>
             .IsRequired()
             .HasMaxLength(30);
 
+        builder.Property(x => x.Slug)
+            .HasMaxLength(30);
+
         builder.Property(x => x.IsPrivate)
             .IsRequired()
             .HasDefaultValue(false);

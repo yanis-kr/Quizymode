@@ -108,9 +108,10 @@ internal sealed class DatabaseSeederHostedService(
                             Items: itemRequests
                         );
 
-                        // Get CategoryResolver and AuditService from scope
+                        // Get CategoryResolver, AuditService, and ProfanityFilter from scope
                         ICategoryResolver categoryResolver = scope.ServiceProvider.GetRequiredService<ICategoryResolver>();
                         IAuditService auditService = scope.ServiceProvider.GetRequiredService<IAuditService>();
+                        IProfanityFilterService profanityFilter = scope.ServiceProvider.GetRequiredService<IProfanityFilterService>();
 
                         // Use bulk add handler
                         Result<AddItemsBulk.Response> result = await AddItemsBulkHandler.HandleAsync(
@@ -120,6 +121,7 @@ internal sealed class DatabaseSeederHostedService(
                             seederUserContext,
                             categoryResolver,
                             auditService,
+                            profanityFilter,
                             cancellationToken);
 
                         if (result.IsSuccess && result.Value is not null)

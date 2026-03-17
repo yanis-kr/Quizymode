@@ -15,10 +15,12 @@ public abstract class ItemTestFixture : DatabaseTestFixture
 {
     protected ISimHashService SimHashService { get; }
     protected ICategoryResolver CategoryResolver { get; }
+    protected IProfanityFilterService ProfanityFilter { get; }
 
     protected ItemTestFixture()
     {
         SimHashService = new SimHashService();
+        ProfanityFilter = new ProfanityFilterService();
         
         ILogger<CategoryResolver> logger = NullLogger<CategoryResolver>.Instance;
         CategoryResolver = new CategoryResolver(DbContext, logger);

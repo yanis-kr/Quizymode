@@ -71,6 +71,7 @@ public static class UploadItemsToCollection
             IUserContext userContext,
             ICategoryResolver categoryResolver,
             IAuditService auditService,
+            IProfanityFilterService profanityFilter,
             CancellationToken cancellationToken)
         {
             if (!userContext.IsAuthenticated || string.IsNullOrEmpty(userContext.UserId))
@@ -84,7 +85,7 @@ public static class UploadItemsToCollection
                 return Results.BadRequest(validationResult.Errors);
             }
 
-            Result<Response> result = await HandleAsync(request, db, simHashService, userContext, categoryResolver, auditService, cancellationToken);
+            Result<Response> result = await HandleAsync(request, db, simHashService, userContext, categoryResolver, auditService, profanityFilter, cancellationToken);
 
             return result.Match(
                 value => Results.Created($"/api/collections/{value.CollectionId}", value),
@@ -107,6 +108,7 @@ public static class UploadItemsToCollection
         IUserContext userContext,
         ICategoryResolver categoryResolver,
         IAuditService auditService,
+        IProfanityFilterService profanityFilter,
         CancellationToken cancellationToken)
     {
         if (string.IsNullOrEmpty(userContext.UserId) || !Guid.TryParse(userContext.UserId, out Guid userIdGuid))
@@ -144,7 +146,7 @@ public static class UploadItemsToCollection
             UploadId: upload.Id);
 
         Result<AddItemsBulk.Response> bulkResult = await AddItemsBulkHandler.HandleAsync(
-            bulkRequest, db, simHashService, userContext, categoryResolver, auditService, cancellationToken);
+            bulkRequest, db, simHashService, userContext, categoryResolver, auditService, profanityFilter, cancellationToken);
 
         if (bulkResult.IsFailure)
         {

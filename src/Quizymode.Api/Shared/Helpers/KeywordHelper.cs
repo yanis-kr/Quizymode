@@ -25,5 +25,16 @@ internal static class KeywordHelper
         s = Regex.Replace(s, @"-+", "-").Trim('-');
         return s;
     }
+
+    /// <summary>
+    /// Returns true if the name is valid for a new keyword: alphanumeric and hyphens only (no spaces or special chars).
+    /// </summary>
+    public static bool IsValidKeywordNameFormat(string name)
+    {
+        if (string.IsNullOrWhiteSpace(name))
+            return false;
+        string trimmed = name.Trim();
+        return Regex.IsMatch(trimmed, @"^[a-zA-Z0-9\-]+$") && trimmed.Length <= 30;
+    }
 }
 

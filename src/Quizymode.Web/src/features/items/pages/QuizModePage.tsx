@@ -172,6 +172,12 @@ const QuizModePage = () => {
     enabled: !!collectionId, // Allow anonymous: shareable link shows collection name and items
   });
 
+  const { data: ratingData } = useQuery<CollectionRatingResponse>({
+    queryKey: ["collectionRating", collectionId],
+    queryFn: () => collectionsApi.getRating(collectionId!),
+    enabled: !!collectionId,
+  });
+
   const { data, isLoading, error, refetch } = useQuery({
     queryKey: ["randomItems", category, quizSize, keywords],
     queryFn: () => itemsApi.getRandom(category, quizSize, keywords),
@@ -559,12 +565,6 @@ const QuizModePage = () => {
       </div>
     );
   }
-
-  const { data: ratingData } = useQuery<CollectionRatingResponse>({
-    queryKey: ["collectionRating", collectionId],
-    queryFn: () => collectionsApi.getRating(collectionId!),
-    enabled: !!collectionId,
-  });
 
   return (
     <div className="px-4 py-6 sm:px-0">

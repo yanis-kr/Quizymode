@@ -2,6 +2,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Storage;
 using Quizymode.Api.Data;
 using Quizymode.Api.Services;
+using Quizymode.Api.Shared.Helpers;
 using Quizymode.Api.Shared.Kernel;
 using Quizymode.Api.Shared.Models;
 
@@ -16,6 +17,7 @@ internal static class AddItemsBulkHandler
         IUserContext userContext,
         ICategoryResolver categoryResolver,
         IAuditService auditService,
+        IProfanityFilterService profanityFilter,
         CancellationToken cancellationToken)
     {
         try
@@ -51,6 +53,31 @@ internal static class AddItemsBulkHandler
                 AddItemsBulk.ItemRequest itemRequest = request.Items[i];
                 try
                 {
+                    // Validate keyword names (format: alphanumeric + hyphen; profanity) before creating item
+                    bool skipItemDueToKeyword = false;
+                    if (itemRequest.Keywords is { Count: > 0 })
+                    {
+                        foreach (var kw in itemRequest.Keywords)
+                        {
+                            string name = kw.Name?.Trim() ?? "";
+                            if (string.IsNullOrEmpty(name)) continue;
+                            if (!KeywordHelper.IsValidKeywordNameFormat(name))
+                            {
+                                errors.Add(new AddItemsBulk.ItemError(i, itemRequest.Question, $"Keyword '{name}' is invalid. Use only letters, numbers, and hyphens (max 30 characters)."));
+                                skipItemDueToKeyword = true;
+                                break;
+                            }
+                            if (profanityFilter.ContainsProfanity(name))
+                            {
+                                errors.Add(new AddItemsBulk.ItemError(i, itemRequest.Question, $"Keyword '{name}' was rejected by content filter."));
+                                skipItemDueToKeyword = true;
+                                break;
+                            }
+                        }
+                        if (skipItemDueToKeyword)
+                            continue;
+                    }
+
                     // Compute fuzzy signature only from the question (normalized to lowercase)
                     string questionText = itemRequest.Question.Trim().ToLowerInvariant();
                     string fuzzySignature = simHashService.ComputeSimHash(questionText);
@@ -222,12 +249,14 @@ internal static class AddItemsBulkHandler
 
                             if (keyword is null)
                             {
-                                // Create new keyword as non-navigation (no CategoryKeyword entry).
-                                // Admin can later promote keywords into navigation by setting NavigationRank and ParentName.
+                                // Create new keyword: Name and Slug from input (Slug = slugified name). Admin can update Name/Slug independently later.
+                                string slug = KeywordHelper.NameToSlug(keywordRequest.Name.Trim());
+                                if (string.IsNullOrEmpty(slug)) slug = normalizedName;
                                 keyword = new Keyword
                                 {
                                     Id = Guid.NewGuid(),
                                     Name = normalizedName,
+                                    Slug = slug,
                                     IsPrivate = keywordRequest.IsPrivate,
                                     CreatedBy = userId,
                                     CreatedAt = DateTime.UtcNow

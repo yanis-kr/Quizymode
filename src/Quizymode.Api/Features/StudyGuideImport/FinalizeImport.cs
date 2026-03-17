@@ -38,12 +38,13 @@ public static class FinalizeImport
             ISimHashService simHashService,
             ICategoryResolver categoryResolver,
             IAuditService auditService,
+            IProfanityFilterService profanityFilter,
             CancellationToken cancellationToken)
         {
             if (!userContext.IsAuthenticated || string.IsNullOrEmpty(userContext.UserId))
                 return Results.Unauthorized();
 
-            Result<Response?> result = await HandleAsync(id, db, userContext, simHashService, categoryResolver, auditService, cancellationToken);
+            Result<Response?> result = await HandleAsync(id, db, userContext, simHashService, categoryResolver, auditService, profanityFilter, cancellationToken);
             return result.Match(
                 value => value is null ? Results.NotFound() : Results.Ok(value),
                 error => CustomResults.Problem(result));
@@ -57,6 +58,7 @@ public static class FinalizeImport
         ISimHashService simHashService,
         ICategoryResolver categoryResolver,
         IAuditService auditService,
+        IProfanityFilterService profanityFilter,
         CancellationToken cancellationToken)
     {
         if (!Guid.TryParse(id, out Guid sessionId))
@@ -121,6 +123,7 @@ public static class FinalizeImport
             userContext,
             categoryResolver,
             auditService,
+            profanityFilter,
             cancellationToken);
 
         if (bulkResult.IsFailure)

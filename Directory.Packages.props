@@ -14,6 +14,7 @@
     <PackageVersion Include="Serilog.Sinks.Console" Version="6.1.1" />
     <PackageVersion Include="Serilog.Sinks.Grafana.Loki" Version="8.3.2" />
     <!-- Validation -->
+    <PackageVersion Include="DotnetBadWordDetector" Version="2.0.0" />
     <PackageVersion Include="FluentValidation.DependencyInjectionExtensions" Version="12.1.1" />
     <PackageVersion Include="FluentValidation" Version="12.1.1" />
     <!-- Database -->
