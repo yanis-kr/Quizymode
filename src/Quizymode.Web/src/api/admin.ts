@@ -11,6 +11,8 @@ interface ReviewBoardItemResponse {
   explanation: string;
   createdBy: string;
   createdAt: string;
+  factualRisk?: number | null;
+  reviewComments?: string | null;
 }
 
 interface ReviewBoardResponse {
@@ -54,6 +56,17 @@ export const adminApi = {
   approveItem: async (id: string): Promise<ReviewBoardItemResponse> => {
     const response = await apiClient.put<ReviewBoardItemResponse>(
       `/admin/items/${id}/approval`
+    );
+    return response.data;
+  },
+
+  rejectItem: async (
+    id: string,
+    reason?: string
+  ): Promise<ReviewBoardItemResponse> => {
+    const response = await apiClient.put<ReviewBoardItemResponse>(
+      `/admin/items/${id}/rejection`,
+      { reason }
     );
     return response.data;
   },

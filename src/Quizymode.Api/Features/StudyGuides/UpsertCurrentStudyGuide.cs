@@ -12,7 +12,7 @@ namespace Quizymode.Api.Features.StudyGuides;
 
 public static class UpsertCurrentStudyGuide
 {
-    public const int MaxTotalBytesPerUser = 102_400; // 100 KB
+    public const int DefaultMaxTotalBytesPerUser = 51_200; // 50 KB default
 
     public sealed record Request(string Title, string ContentText);
 
@@ -88,14 +88,37 @@ public static class UpsertCurrentStudyGuide
     {
         try
         {
+            if (!Guid.TryParse(userId, out Guid userGuid))
+            {
+                return Result.Failure<Response>(
+                    Error.Validation("StudyGuide.InvalidUserId", "Invalid user ID format"));
+            }
+
+            int maxBytes = DefaultMaxTotalBytesPerUser;
+
+            // Allow per-user override via UserSettings (key: StudyGuideMaxBytes)
+            UserSetting? sizeSetting = await db.UserSettings
+                .FirstOrDefaultAsync(
+                    us => us.UserId == userGuid && us.Key == "StudyGuideMaxBytes",
+                    cancellationToken);
+
+            if (sizeSetting is not null && int.TryParse(sizeSetting.Value, out int parsed))
+            {
+                // Clamp to [0, 1_000_000]; 0 means no study guide allowed (only empty text)
+                if (parsed < 0) parsed = 0;
+                if (parsed > 1_000_000) parsed = 1_000_000;
+                maxBytes = parsed;
+            }
+
             int sizeBytes = Encoding.UTF8.GetByteCount(request.ContentText);
 
-            if (sizeBytes > MaxTotalBytesPerUser)
+            if (sizeBytes > maxBytes)
             {
+                int maxKb = maxBytes / 1024;
                 return Result.Failure<Response>(
                     Error.Validation(
                         "StudyGuide.SizeExceeded",
-                        $"Study guide text exceeds the limit. Maximum is {MaxTotalBytesPerUser / 1024} KB ({MaxTotalBytesPerUser} bytes). Current size: {sizeBytes} bytes."));
+                        $"Study guide text exceeds the limit. Maximum is {maxKb} KB ({maxBytes} bytes). Current size: {sizeBytes} bytes."));
             }
 
             StudyGuide? existing = await db.StudyGuides

@@ -170,6 +170,7 @@ export interface CreateItemRequest {
   uploadId?: string | null;
   factualRisk?: number | null;
   reviewComments?: string | null;
+  readyForReview?: boolean | null;
 }
 
 export interface UpdateItemRequest {
@@ -183,6 +184,7 @@ export interface UpdateItemRequest {
   source?: string;
   factualRisk?: number | null;
   reviewComments?: string | null;
+  readyForReview?: boolean | null;
 }
 
 export interface CreateCollectionRequest {

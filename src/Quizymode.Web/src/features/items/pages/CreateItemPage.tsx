@@ -30,6 +30,7 @@ const CreateItemPage = () => {
     source: "",
     factualRisk: "",
     reviewComments: "",
+    readyForReview: false,
   });
   const { data: categoriesData } = useQuery({
     queryKey: ["categories"],
@@ -136,6 +137,7 @@ const CreateItemPage = () => {
           ? factualRiskNum
           : undefined,
       reviewComments: formData.reviewComments.trim() || undefined,
+      readyForReview: formData.readyForReview,
     };
 
     createMutation.mutate(data);

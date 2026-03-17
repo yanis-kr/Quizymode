@@ -50,6 +50,15 @@ const AdminDashboardPage = () => {
           <h3 className="text-lg font-medium text-gray-900 mb-2">Manage Categories</h3>
           <p className="text-sm text-gray-500">Rename categories</p>
         </Link>
+        <Link
+          to="/admin/user-settings"
+          className="bg-white shadow rounded-lg p-6 hover:shadow-lg transition-shadow cursor-pointer"
+        >
+          <h3 className="text-lg font-medium text-gray-900 mb-2">User Settings</h3>
+          <p className="text-sm text-gray-500">
+            Review and update per-user study guide size limits
+          </p>
+        </Link>
       </div>
     </div>
   );

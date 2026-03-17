@@ -293,7 +293,41 @@ Terms used in this document with a specific meaning:
 
 *(To be expanded: create, update, delete, visibility, categories, keywords, ratings, comments, etc.)*
 
+### AC 2.1 Creating and editing items
+
+**UI**
+
 - **AC 2.1.1** [Authenticated] **Given** I am creating or editing an item, **when** I set the category, **then** I can choose a **navigation keyword rank 1** (and optionally **rank 2**) from dropdowns populated for that category; I may select existing keywords or create my own **private** keyword by typing a name. The chosen rank1 and rank2 are sent as item keywords on save; existing selections come from the navigation API; custom names are stored as private keywords.
+- **AC 2.1.2** [Authenticated] **Given** I am creating or editing an item as a **regular user (non-admin)**, **when** the item form is shown, **then** I do **not** see inputs for **Factual risk (0–1)** or **Review comments**; the form only shows fields for question, answers, explanation, source, navigation keywords, and simple tags.
+- **AC 2.1.3** [Admin] **Given** I am creating or editing an item as an **admin**, **when** the item form is shown, **then** I can see and edit optional **Factual risk (0–1)** and **Review comments** fields, in addition to all fields available to regular users.
+- **AC 2.1.4** [Authenticated] **Given** I am creating or editing an item as a **regular user**, **when** I want admins to review my item to make it public, **then** I can toggle a checkbox labeled (or equivalent to) **“Request admin review to make this item public”**; turning it on marks the item as ready for admin review and adds it to the admin review board; turning it off removes it from the review board if it has not been approved yet.
+
+**API**
+
+- **AC 2.1.5** [Authenticated] **Given** I am creating an item via `POST /items`, **when** I include `readyForReview = true` in the request body, **then** the API stores this flag on the item (e.g. `ReadyForReview = true`) while keeping `IsPrivate = true`; only admins can later change the item to non-private.
+- **AC 2.1.6** [Authenticated] **Given** I am updating my own item via `PUT /items/{id}`, **when** I include `readyForReview = true` or `false` in the request body, **then** the API updates the stored review flag but does **not** allow me to change `IsPrivate` from true to false unless I am an admin.
+
+### AC 2.2 Add Items hub and Study Guide entrypoint
+
+**UI**
+
+- **AC 2.2.1** [Authenticated] **Given** I am signed in, **when** I click **Add Items** in the main navigation or from the home page, **then** I am taken to the Add Items page at `/items/add`, which shows a hub of options instead of going directly to a specific create form.
+- **AC 2.2.2** [Authenticated] **Given** I am on the Add Items page, **when** the page loads, **then** I see a **My Study Guide** option that navigates to `/study-guide` where I can edit my study guide text; there is no separate **Study Guide** entry in the top navigation.
+- **AC 2.2.3** [Authenticated] **Given** I am on the Add Items page, **when** I choose **Create a New Item**, **then** I am taken to the single-item create form at `/items/create` and any `category`/`keywords` from the URL are pre-filled in the form.
+- **AC 2.2.4** [Authenticated] **Given** I am on the Add Items page and have a study guide, **when** I choose **Create Items from Study Guide**, **then** I am taken to the study guide import wizard at `/study-guide/import` where I can select category, navigation keywords (rank 1 and 2), extra keywords, and import multiple items generated from my study guide.
+- **AC 2.2.5** [Authenticated] **Given** I am on the Add Items page and want AI-generated questions without using my study guide, **when** I choose **Bulk Create Items (no Study Guide)**, **then** I am taken to `/items/bulk-create`, where I can copy an AI prompt, ask an AI to generate random questions for the selected category/keywords, paste the resulting JSON array, and create multiple items at once; any `category`/`keywords` in the Add Items URL are forwarded to this page.
+
+### AC 2.2 Admin review board for items
+
+**API**
+
+- **AC 2.2.1** [Admin] **Given** I am an admin, **when** I call `GET /admin/items/review-board`, **then** the API returns only items where the internal flag `ReadyForReview = true`, ordered by creation date (newest first), including question, answers, category, source, factual risk (if any), and review comments (if any).
+- **AC 2.2.2** [Admin] **Given** I am an admin, **when** I call `PUT /admin/items/{id}/approval` for an item that is ready for review, **then** the API makes the item **public** (`IsPrivate = false`) and clears the review flag (`ReadyForReview = false`) so it no longer appears in the review board.
+- **AC 2.2.3** [Admin] **Given** I am an admin, **when** I call `PUT /admin/items/{id}/rejection` with an optional `reason` in the body for an item that is ready for review, **then** the API keeps the item **private** (`IsPrivate = true`), clears the review flag (`ReadyForReview = false`), and appends a rejection note to `ReviewComments` including the rejection time, the admin identifier, and the optional reason text.
+
+**UI**
+
+- **AC 2.2.4** [Admin] **Given** I am on the Admin review board screen for items, **when** the list loads, **then** I see only items that are marked ready for review (per API), with enough context to decide (question, answers, category, source, factual risk, comments); from this screen I can **approve** an item, which makes it public and removes it from the list, or **reject** an item with an optional free-text reason, which keeps it private, removes it from the list, and stores the rejection note in the item's review comments.
 
 ---
 
@@ -476,17 +510,30 @@ User settings are key-value pairs stored per user (e.g. **PageSize** for default
 
 *(To be expanded: admin-only endpoints, review board, etc.)*
 
+### AC 5.1 Admin: per-user study guide settings
+
+**API**
+
+- **AC 5.1.1** [Admin] **Given** I am an admin, **when** I call `GET /admin/users/{id}/settings` for a valid user ID, **then** the API returns 200 with a dictionary of that user's settings (key-value pairs); if the user has no settings, an empty dictionary is returned; if the user does not exist, the API returns 404.
+- **AC 5.1.2** [Admin] **Given** I am an admin, **when** I call `PUT /admin/users/{id}/settings` with a JSON body `{ "key": "...", "value": "..." }` for a valid user ID, **then** the API upserts that setting for the specified user (creates if missing, updates if present) and returns 200 with the key, value, and updatedAt; if the user does not exist or the request is invalid, an error is returned (404 or 400).
+- **AC 5.1.3** [Admin] **Given** I am an admin and I call `PUT /admin/users/{id}/settings` with key `"StudyGuideMaxBytes"` and a numeric value in the range 0–1,000,000 (as a string), **when** the request succeeds, **then** that value becomes the per-user study guide byte limit for that user; if the setting is absent, the default limit of 51,200 bytes (50 KB) applies.
+
+**UI**
+
+- **AC 5.1.4** [Admin] **Given** I am on the Admin Dashboard, **when** I click **User Settings**, **then** I am taken to an Admin User Settings page where I can enter a user ID, load that user's details, and view their effective study guide limit.
+- **AC 5.1.5** [Admin] **Given** I have loaded a user on the Admin User Settings page, **when** I edit the **StudyGuideMaxBytes** value (or leave it blank for default) and click **Save**, **then** the UI calls the admin user-settings API to upsert the `"StudyGuideMaxBytes"` setting for that user; after a successful save, the effective limit (bytes and KB) reflects the new value.
+
 ---
 
 ## 6. Study guides and import
 
-### AC 6.1 Study guide CRUD and 100 KB limit
+### AC 6.1 Study guide CRUD and per-user size limit
 
 **API**
 
 - **AC 6.1.1** [Authenticated] **Given** I am authenticated and have no study guide yet, **when** I call `GET /study-guides/current`, **then** the API returns 404 Not Found (no guide exists); the body may be empty or ProblemDetails, and no study guide is created implicitly.
-- **AC 6.1.2** [Authenticated] **Given** I am authenticated, **when** I call `PUT /study-guides/current` with a JSON body `{ "title": "...", "contentText": "..." }` whose UTF-8 byte length is at most 100 KB, **then** the API upserts my single private study guide (creating it if missing, replacing it if it exists) and returns 200 with `id`, `title`, `sizeBytes`, and `updatedUtc`; `sizeBytes` equals the UTF-8 byte length of `contentText`.
-- **AC 6.1.3** [Authenticated] **Given** I try to save a study guide whose `contentText` exceeds 100 KB UTF-8 bytes, **when** I call `PUT /study-guides/current`, **then** the API returns 400 Bad Request with a validation error explaining that the 100 KB limit was exceeded; the previous guide (if any) is left unchanged.
+- **AC 6.1.2** [Authenticated] **Given** I am authenticated, **when** I call `PUT /study-guides/current` with a JSON body `{ "title": "...", "contentText": "..." }` whose UTF-8 byte length is at most my **per-user study guide byte limit**, **then** the API upserts my single private study guide (creating it if missing, replacing it if it exists) and returns 200 with `id`, `title`, `sizeBytes`, and `updatedUtc`; `sizeBytes` equals the UTF-8 byte length of `contentText`.
+- **AC 6.1.3** [Authenticated] **Given** I try to save a study guide whose `contentText` exceeds my **per-user study guide byte limit**, **when** I call `PUT /study-guides/current`, **then** the API returns 400 Bad Request with a validation error explaining that the limit was exceeded (including the maximum bytes and current size); the previous guide (if any) is left unchanged.
 - **AC 6.1.4** [Authenticated] **Given** I have a study guide, **when** I call `DELETE /study-guides/current`, **then** the API deletes my study guide (idempotent) and returns 204 No Content; subsequent `GET /study-guides/current` returns 404 until I create a new one.
 - **AC 6.1.5** [Anonymous] **Given** I am not authenticated, **when** I call any of `GET/PUT/DELETE /study-guides/current`, **then** the API returns 401 Unauthorized.
 

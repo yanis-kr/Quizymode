@@ -1,5 +1,10 @@
 import { useNavigate, useSearchParams } from "react-router-dom";
-import { PlusIcon, DocumentPlusIcon, ArrowUpTrayIcon } from "@heroicons/react/24/outline";
+import {
+  PlusIcon,
+  DocumentPlusIcon,
+  ArrowUpTrayIcon,
+  BookOpenIcon,
+} from "@heroicons/react/24/outline";
 import { useAuth } from "@/contexts/AuthContext";
 import { Navigate } from "react-router-dom";
 
@@ -36,12 +41,21 @@ const AddItemsPage = () => {
     return `/items/upload${params.toString() ? `?${params.toString()}` : ""}`;
   };
 
+  const buildStudyGuideUrl = () => "/study-guide";
+
+  const buildStudyGuideImportUrl = () => {
+    const params = new URLSearchParams();
+    if (category) params.set("category", category);
+    if (keywords.length > 0) params.set("keywords", keywords.join(","));
+    return `/study-guide/import${params.toString() ? `?${params.toString()}` : ""}`;
+  };
+
   return (
     <div className="px-4 py-6 sm:px-0">
       <div className="max-w-2xl mx-auto">
         <h1 className="text-3xl font-bold text-gray-900 mb-2">Add Items</h1>
         <p className="text-gray-600 text-sm mb-6">
-          Create a new quiz item, bulk add from JSON, or upload to a new collection.
+          Use your study guide or AI to create quiz items, or add them one by one.
         </p>
         {category && (
           <p className="text-sm text-gray-500 mb-6">
@@ -51,6 +65,20 @@ const AddItemsPage = () => {
             )}
           </p>
         )}
+        <div className="flex flex-col sm:flex-row gap-4 flex-wrap mb-6">
+          <button
+            onClick={() => navigate(buildStudyGuideUrl())}
+            className="flex items-center gap-3 px-6 py-4 bg-slate-800 text-white rounded-lg hover:bg-slate-900 transition-colors text-left"
+          >
+            <BookOpenIcon className="h-8 w-8 flex-shrink-0" />
+            <div>
+              <span className="font-medium block">My Study Guide</span>
+              <span className="text-sm text-slate-200">
+                Paste or edit your study guide text to reuse when generating items.
+              </span>
+            </div>
+          </button>
+        </div>
         <div className="flex flex-col sm:flex-row gap-4 flex-wrap">
           <button
             onClick={() => navigate(buildCreateUrl())}
@@ -58,28 +86,32 @@ const AddItemsPage = () => {
           >
             <PlusIcon className="h-8 w-8 flex-shrink-0" />
             <div>
-              <span className="font-medium block">Create Item</span>
-              <span className="text-sm text-indigo-100">Add a single quiz item</span>
+              <span className="font-medium block">Create a New Item</span>
+              <span className="text-sm text-indigo-100">Add a single quiz item with full control.</span>
+            </div>
+          </button>
+          <button
+            onClick={() => navigate(buildStudyGuideImportUrl())}
+            className="flex items-center gap-3 px-6 py-4 bg-emerald-600 text-white rounded-lg hover:bg-emerald-700 transition-colors text-left"
+          >
+            <DocumentPlusIcon className="h-8 w-8 flex-shrink-0" />
+            <div>
+              <span className="font-medium block">Create Items from Study Guide</span>
+              <span className="text-sm text-emerald-100">
+                Generate AI prompts from your study guide, paste JSON, validate, and import.
+              </span>
             </div>
           </button>
           <button
             onClick={() => navigate(buildBulkUrl())}
-            className="flex items-center gap-3 px-6 py-4 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors text-left"
-          >
-            <DocumentPlusIcon className="h-8 w-8 flex-shrink-0" />
-            <div>
-              <span className="font-medium block">Bulk Add</span>
-              <span className="text-sm text-green-100">Add multiple items from JSON</span>
-            </div>
-          </button>
-          <button
-            onClick={() => navigate(buildUploadUrl())}
             className="flex items-center gap-3 px-6 py-4 bg-amber-600 text-white rounded-lg hover:bg-amber-700 transition-colors text-left"
           >
             <ArrowUpTrayIcon className="h-8 w-8 flex-shrink-0" />
             <div>
-              <span className="font-medium block">Upload to collection</span>
-              <span className="text-sm text-amber-100">Upload JSON into a new shareable collection</span>
+              <span className="font-medium block">Bulk Create Items (no Study Guide)</span>
+              <span className="text-sm text-amber-100">
+                Ask AI to generate random questions for this category/keywords and paste JSON.
+              </span>
             </div>
           </button>
         </div>

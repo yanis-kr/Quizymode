@@ -29,6 +29,7 @@ const EditItemPage = () => {
     source: "",
     factualRisk: "",
     reviewComments: "",
+    readyForReview: false,
   });
   const { data: categoriesData } = useQuery({
     queryKey: ["categories"],
@@ -91,6 +92,7 @@ const EditItemPage = () => {
         factualRisk:
           itemData.factualRisk != null ? String(itemData.factualRisk) : "",
         reviewComments: itemData.reviewComments || "",
+        readyForReview: false,
       });
     }
   }, [itemData]);
@@ -162,6 +164,7 @@ const EditItemPage = () => {
           ? factualRiskNum
           : undefined,
       reviewComments: formData.reviewComments.trim() || undefined,
+      readyForReview: formData.readyForReview,
     };
 
     updateMutation.mutate(data);
