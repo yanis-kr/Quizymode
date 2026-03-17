@@ -11,7 +11,7 @@ const ItemsPage = () => {
   const navigate = useNavigate();
   const category = searchParams.get("category") || undefined;
   const [mode, setMode] = useState<"explore" | "quiz" | null>(null);
-  /** List mode loads all available items (backend max 1000) into memory */
+  /** List mode (Random Items) loads all available items (backend max 1000) into memory */
   const LIST_MAX_ITEMS = 1000;
   const [page, setPage] = useState(1);
   const pageSize = 10;
@@ -71,7 +71,7 @@ const ItemsPage = () => {
             {category ? `Category: ${category}` : "Get Random Items"}
           </h1>
           <p className="text-gray-600 text-sm mb-6">
-            Select a mode to interact with quiz items. Choose Explore Mode to view questions with answers and explanations, or Quiz Mode to test your knowledge with multiple-choice questions.
+            Select a mode to interact with quiz items. Choose Flashcards Mode to view questions with answers and explanations, or Quiz Mode to test your knowledge with multiple-choice questions.
           </p>
 
           <p className="text-sm text-gray-600 mb-6">
@@ -84,7 +84,7 @@ const ItemsPage = () => {
               className="bg-white overflow-hidden shadow rounded-lg hover:shadow-lg transition-shadow p-6 text-left"
             >
               <h3 className="text-lg font-medium text-gray-900 mb-2">
-                Explore Mode
+                Flashcards Mode
               </h3>
               <p className="text-sm text-gray-500">
                 View questions with answers and explanations
@@ -117,7 +117,7 @@ const ItemsPage = () => {
     <div className="px-4 py-6 sm:px-0">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-3xl font-bold text-gray-900 mb-2">
-          {mode === "explore" ? "Explore Mode" : "Quiz Mode"}
+          {mode === "explore" ? "Flashcards Mode" : "Quiz Mode"}
         </h1>
         <p className="text-gray-600 text-sm mb-6">
           {mode === "explore" 

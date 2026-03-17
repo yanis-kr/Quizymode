@@ -1,6 +1,6 @@
 /**
- * Shared mode tabs for study/browse screens: Sets | List | Explore | Quiz.
- * Visibility: show Sets only when scope has child buckets; show Explore/Quiz only when scope has items.
+ * Shared mode tabs for study/browse screens: Sets | List | Flashcards | Quiz.
+ * Visibility: show Sets only when scope has child buckets; show Flashcards/Quiz only when scope has items.
  */
 import {
   Squares2X2Icon,
@@ -35,7 +35,7 @@ export function ModeSwitcher({
   const modes: { mode: ViewMode; label: string; icon: React.ComponentType<{ className?: string }> }[] = [
     { mode: "sets", label: "Sets", icon: Squares2X2Icon },
     { mode: "list", label: "List", icon: ListBulletIcon },
-    { mode: "explore", label: "Explore", icon: MagnifyingGlassIcon },
+    { mode: "explore", label: "Flashcards", icon: MagnifyingGlassIcon },
     { mode: "quiz", label: "Quiz", icon: AcademicCapIcon },
   ];
 

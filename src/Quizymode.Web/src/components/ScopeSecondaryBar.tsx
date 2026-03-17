@@ -1,5 +1,5 @@
 /**
- * Secondary bar for scope screens: mode switcher (Sets|List|Explore|Quiz).
+ * Secondary bar for scope screens: mode switcher (Sets|List Items|Flashcards|Quiz).
  * Rendered by scope pages (categories, collection, explore, quiz, my-items) below the main nav.
  */
 import type { ReactNode } from "react";

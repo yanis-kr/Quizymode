@@ -298,6 +298,8 @@ internal sealed class ItemQueryBuilder
 
     /// <summary>
     /// Applies simple keyword filtering with AND semantics when no category is specified.
+    /// When both public and private keywords share the same name, public keywords win;
+    /// if no public keyword exists for a given name, the user's private keyword is used.
     /// </summary>
     private async Task<Result<IQueryable<Item>>> ApplySimpleKeywordFilterAsync(
         IQueryable<Item> query,
@@ -316,23 +318,46 @@ internal sealed class ItemQueryBuilder
 
         List<string> normalizedKeywords = request.Keywords!
             .Select(k => k.Trim().ToLower())
+            .Where(k => !string.IsNullOrEmpty(k))
             .ToList();
 
-        List<Guid> visibleKeywordIds = await keywordQuery
-            .Where(k => normalizedKeywords.Contains(k.Name.ToLower()))
-            .Select(k => k.Id)
-            .ToListAsync(_cancellationToken);
-
-        if (visibleKeywordIds.Count != normalizedKeywords.Count)
+        if (normalizedKeywords.Count == 0)
         {
-            // Not all keywords found, return empty result
-            return Result.Success(query.Where(i => false));
+            return Result.Success(query);
         }
 
-        // AND semantics: item must have ALL keywords
-        foreach (Guid keywordId in visibleKeywordIds)
+        // Load all visible keyword candidates that match any requested name.
+        List<Keyword> candidates = await keywordQuery
+            .Where(k => normalizedKeywords.Contains(k.Name.ToLower()))
+            .ToListAsync(_cancellationToken);
+
+        // For each requested name, choose a single effective keyword ID:
+        // - Prefer public keyword when present
+        // - Otherwise fall back to user's private keyword (when visible)
+        List<Guid> effectiveKeywordIds = new();
+
+        foreach (string nameLower in normalizedKeywords)
         {
-            query = query.Where(i => i.ItemKeywords.Any(ik => ik.KeywordId == keywordId));
+            List<Keyword> matchesForName = candidates
+                .Where(k => k.Name.Equals(nameLower, StringComparison.OrdinalIgnoreCase))
+                .ToList();
+
+            if (matchesForName.Count == 0)
+            {
+                // Requested keyword not found in visible set -> no items should match
+                return Result.Success(query.Where(i => false));
+            }
+
+            Keyword? publicMatch = matchesForName.FirstOrDefault(k => !k.IsPrivate);
+            Keyword chosen = publicMatch ?? matchesForName[0];
+            effectiveKeywordIds.Add(chosen.Id);
+        }
+
+        // AND semantics: item must have ALL effective keywords
+        foreach (Guid keywordId in effectiveKeywordIds.Distinct())
+        {
+            Guid captured = keywordId;
+            query = query.Where(i => i.ItemKeywords.Any(ik => ik.KeywordId == captured));
         }
 
         return Result.Success(query);
@@ -340,6 +365,8 @@ internal sealed class ItemQueryBuilder
 
     /// <summary>
     /// Applies keyword filtering with AND semantics, respecting category context.
+    /// When both public and private keywords share the same name, public keywords win;
+    /// if no public keyword exists for a given name, the user's private keyword is used.
     /// </summary>
     private async Task<Result<IQueryable<Item>>> ApplyAndKeywordFilterAsync(
         IQueryable<Item> query,
@@ -359,23 +386,43 @@ internal sealed class ItemQueryBuilder
 
         List<string> normalizedKeywords = request.Keywords!
             .Select(k => k.Trim().ToLower())
+            .Where(k => !string.IsNullOrEmpty(k))
             .ToList();
 
-        List<Guid> visibleKeywordIds = await keywordQuery
-            .Where(k => normalizedKeywords.Contains(k.Name.ToLower()))
-            .Select(k => k.Id)
-            .ToListAsync(_cancellationToken);
-
-        if (visibleKeywordIds.Count != normalizedKeywords.Count)
+        if (normalizedKeywords.Count == 0)
         {
-            // Not all keywords found, return empty result
-            return Result.Success(query.Where(i => false));
+            return Result.Success(query);
         }
 
-        // AND semantics: item must have ALL keywords
-        foreach (Guid keywordId in visibleKeywordIds)
+        // Load all visible keyword candidates that match any requested name.
+        List<Keyword> candidates = await keywordQuery
+            .Where(k => normalizedKeywords.Contains(k.Name.ToLower()))
+            .ToListAsync(_cancellationToken);
+
+        List<Guid> effectiveKeywordIds = new();
+
+        foreach (string nameLower in normalizedKeywords)
         {
-            query = query.Where(i => i.ItemKeywords.Any(ik => ik.KeywordId == keywordId));
+            List<Keyword> matchesForName = candidates
+                .Where(k => k.Name.Equals(nameLower, StringComparison.OrdinalIgnoreCase))
+                .ToList();
+
+            if (matchesForName.Count == 0)
+            {
+                // Requested keyword not found in visible set -> no items should match
+                return Result.Success(query.Where(i => false));
+            }
+
+            Keyword? publicMatch = matchesForName.FirstOrDefault(k => !k.IsPrivate);
+            Keyword chosen = publicMatch ?? matchesForName[0];
+            effectiveKeywordIds.Add(chosen.Id);
+        }
+
+        // AND semantics: item must have ALL effective keywords
+        foreach (Guid keywordId in effectiveKeywordIds.Distinct())
+        {
+            Guid captured = keywordId;
+            query = query.Where(i => i.ItemKeywords.Any(ik => ik.KeywordId == captured));
         }
 
         return Result.Success(query);

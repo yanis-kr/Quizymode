@@ -301,7 +301,7 @@ function CollectionCard({
           onClick={(e) => e.stopPropagation()}
         >
           <EyeIcon className="h-4 w-4 mr-1" />
-          Explore
+          Flashcards
         </Link>
         <Link
           to={`/quiz/collections/${id}`}

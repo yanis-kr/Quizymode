@@ -109,12 +109,12 @@ const HomePage = () => {
                 </span>
               </li>
               <li className="flex items-start">
-                <BookOpenIcon className="h-5 w-5 text-green-500 mr-2 mt-0.5 flex-shrink-0" />
-                <span className="text-gray-700">
-                  <strong>Explore Mode</strong> - View questions and answers
-                  with detailed explanations
-                </span>
-              </li>
+              <BookOpenIcon className="h-5 w-5 text-green-500 mr-2 mt-0.5 flex-shrink-0" />
+              <span className="text-gray-700">
+                <strong>Flashcards Mode</strong> - View questions and answers
+                with detailed explanations in a flashcard-style flow
+              </span>
+            </li>
               <li className="flex items-start">
                 <AcademicCapIcon className="h-5 w-5 text-green-500 mr-2 mt-0.5 flex-shrink-0" />
                 <span className="text-gray-700">
@@ -222,7 +222,7 @@ const HomePage = () => {
                 Select Your Mode
               </h4>
               <p className="text-gray-600 text-sm">
-                Choose between Explore mode to learn or Quiz mode to test your
+                Choose between Flashcards mode to learn or Quiz mode to test your
                 knowledge
               </p>
             </div>

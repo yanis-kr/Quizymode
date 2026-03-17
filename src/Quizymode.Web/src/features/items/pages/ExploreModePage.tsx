@@ -35,7 +35,7 @@ const ExploreModePage = () => {
   const keywords = keywordsParam
     ? keywordsParam.split(",").map((k) => k.trim()).filter(Boolean)
     : undefined;
-  /** Query string for explore item URLs; preserves keywords, return, and scope filter params across prev/next and mode switch */
+/** Query string for Flashcards item URLs; preserves keywords, return, and scope filter params across prev/next and mode switch */
   const exploreItemSearch = useMemo(() => {
     const params = new URLSearchParams();
     if (returnUrl) params.set("return", returnUrl);
@@ -53,7 +53,7 @@ const ExploreModePage = () => {
     const s = params.toString();
     return s ? `?${s}` : "";
   }, [returnUrl, keywords, searchParams]);
-  /** Explore loads all available items (backend max 1000) into memory */
+  /** Flashcards mode loads all available items (backend max 1000) into memory */
   const EXPLORE_MAX_ITEMS = 1000;
   const [currentIndex, setCurrentIndex] = useState(0);
   const [selectedItemForCollections, setSelectedItemForCollections] = useState<
@@ -209,7 +209,7 @@ const ExploreModePage = () => {
     }
   }, [itemId, hasRestoredItems, category, collectionId]);
 
-  // Clear sessionStorage when starting a fresh explore (no itemId, no collectionId)
+  // Clear sessionStorage when starting fresh in Flashcards mode (no itemId, no collectionId)
   // This ensures we always fetch fresh items instead of restoring old ones
   useEffect(() => {
     if (!itemId && !collectionId && !hasRestoredItems) {
@@ -253,7 +253,7 @@ const ExploreModePage = () => {
     }
   }, [itemId, items]);
 
-  // Sync URL to include first item id when landing on explore without item in path (e.g. /explore/certs?keywords=...)
+  // Sync URL to include first item id when landing on Flashcards without item in path (e.g. /explore/certs?keywords=...)
   useEffect(() => {
     if (
       !itemId &&
@@ -289,7 +289,7 @@ const ExploreModePage = () => {
     navigate,
   ]);
 
-  // In list view (no itemId in URL), subscribe to current item so +/− invalidation triggers re-render and UI updates
+  // In List Items view (no itemId in URL), subscribe to current item so +/− invalidation triggers re-render and UI updates
   const currentListItem = items[currentIndex];
   const currentItemIdForQuery = currentListItem?.id;
   const { data: currentItemData } = useQuery({
@@ -573,8 +573,8 @@ const ExploreModePage = () => {
             )}
           </>
         }
-        title="Explore Mode"
-        description="Study mode for reviewing quiz items. View questions, answers, and explanations. Navigate through items using the arrow buttons or click on related items in comments."
+        title="Flashcards Mode"
+        description="Flashcards-style study mode for reviewing quiz items. View questions, answers, and explanations. Navigate through items using the arrow buttons or click on related items in comments."
         currentIndex={currentIndex}
         totalCount={items.length}
         onPrev={handlePrev}

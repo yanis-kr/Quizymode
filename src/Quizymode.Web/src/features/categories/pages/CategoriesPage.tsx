@@ -690,7 +690,7 @@ const CategoriesPage = () => {
 
   const buildItemsViewPath = () => scopePathWithNav;
 
-  /** Build query params for scope filters (item type, search, rating) for use in Explore/Quiz URLs */
+  /** Build query params for scope filters (item type, search, rating) for use in Flashcards/Quiz URLs */
   const buildScopeFilterQuery = () => {
     const p = new URLSearchParams();
     if (scopeFilterType !== "all") p.set("filterType", scopeFilterType);
@@ -1428,7 +1428,7 @@ function ActionButtons({
         className="inline-flex items-center gap-1 px-3 py-1.5 text-sm font-medium text-indigo-600 bg-indigo-50 rounded-md hover:bg-indigo-100"
       >
         <MagnifyingGlassIcon className="h-4 w-4" />
-        Explore mode
+        Flashcards mode
       </button>
       <button
         onClick={onQuiz}
