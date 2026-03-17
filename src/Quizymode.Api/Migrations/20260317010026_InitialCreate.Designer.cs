@@ -12,15 +12,15 @@ using Quizymode.Api.Data;
 namespace Quizymode.Api.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20260119053545_AddUserSettings")]
-    partial class AddUserSettings
+    [Migration("20260317010026_InitialCreate")]
+    partial class InitialCreate
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "9.0.0")
+                .HasAnnotation("ProductVersion", "10.0.2")
                 .HasAnnotation("Relational:MaxIdentifierLength", 63);
 
             NpgsqlModelBuilderExtensions.UseIdentityByDefaultColumns(modelBuilder);
@@ -81,6 +81,10 @@ namespace Quizymode.Api.Migrations
                         .HasMaxLength(100)
                         .HasColumnType("character varying(100)");
 
+                    b.Property<string>("Description")
+                        .HasMaxLength(500)
+                        .HasColumnType("character varying(500)");
+
                     b.Property<bool>("IsPrivate")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("boolean")
@@ -90,6 +94,10 @@ namespace Quizymode.Api.Migrations
                         .IsRequired()
                         .HasMaxLength(100)
                         .HasColumnType("character varying(100)");
+
+                    b.Property<string>("ShortDescription")
+                        .HasMaxLength(120)
+                        .HasColumnType("character varying(120)");
 
                     b.HasKey("Id");
 
@@ -101,6 +109,52 @@ namespace Quizymode.Api.Migrations
                     b.HasIndex("IsPrivate", "CreatedBy");
 
                     b.ToTable("Categories", (string)null);
+                });
+
+            modelBuilder.Entity("Quizymode.Api.Shared.Models.CategoryKeyword", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uuid")
+                        .HasDefaultValueSql("gen_random_uuid()");
+
+                    b.Property<Guid>("CategoryId")
+                        .HasColumnType("uuid");
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<string>("Description")
+                        .HasMaxLength(500)
+                        .HasColumnType("character varying(500)");
+
+                    b.Property<Guid>("KeywordId")
+                        .HasColumnType("uuid");
+
+                    b.Property<int?>("NavigationRank")
+                        .HasColumnType("integer");
+
+                    b.Property<string>("ParentName")
+                        .HasMaxLength(30)
+                        .HasColumnType("character varying(30)");
+
+                    b.Property<int>("SortRank")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer")
+                        .HasDefaultValue(0);
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("KeywordId");
+
+                    b.HasIndex("CategoryId", "KeywordId")
+                        .IsUnique();
+
+                    b.HasIndex("CategoryId", "NavigationRank");
+
+                    b.HasIndex("CategoryId", "ParentName");
+
+                    b.ToTable("CategoryKeywords", (string)null);
                 });
 
             modelBuilder.Entity("Quizymode.Api.Shared.Models.Collection", b =>
@@ -116,6 +170,12 @@ namespace Quizymode.Api.Migrations
                         .IsRequired()
                         .HasColumnType("text");
 
+                    b.Property<string>("Description")
+                        .HasColumnType("text");
+
+                    b.Property<bool>("IsPublic")
+                        .HasColumnType("boolean");
+
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasColumnType("text");
@@ -126,6 +186,34 @@ namespace Quizymode.Api.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Collections");
+                });
+
+            modelBuilder.Entity("Quizymode.Api.Shared.Models.CollectionBookmark", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uuid");
+
+                    b.Property<Guid>("CollectionId")
+                        .HasColumnType("uuid");
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<string>("UserId")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("CollectionId");
+
+                    b.HasIndex("UserId");
+
+                    b.HasIndex("UserId", "CollectionId")
+                        .IsUnique();
+
+                    b.ToTable("CollectionBookmarks");
                 });
 
             modelBuilder.Entity("Quizymode.Api.Shared.Models.CollectionItem", b =>
@@ -146,6 +234,76 @@ namespace Quizymode.Api.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("CollectionItems");
+                });
+
+            modelBuilder.Entity("Quizymode.Api.Shared.Models.CollectionRating", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uuid")
+                        .HasDefaultValueSql("gen_random_uuid()");
+
+                    b.Property<Guid>("CollectionId")
+                        .HasColumnType("uuid");
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<string>("CreatedBy")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("character varying(100)");
+
+                    b.Property<int>("Stars")
+                        .HasColumnType("integer");
+
+                    b.Property<DateTime?>("UpdatedAt")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("CollectionId");
+
+                    b.HasIndex("CollectionId", "CreatedBy")
+                        .IsUnique();
+
+                    b.ToTable("CollectionRatings", null, t =>
+                        {
+                            t.HasCheckConstraint("CK_CollectionRatings_Stars_Range", "\"Stars\" >= 1 AND \"Stars\" <= 5");
+                        });
+                });
+
+            modelBuilder.Entity("Quizymode.Api.Shared.Models.CollectionShare", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uuid");
+
+                    b.Property<Guid>("CollectionId")
+                        .HasColumnType("uuid");
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<string>("SharedBy")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("SharedWithEmail")
+                        .HasColumnType("text");
+
+                    b.Property<string>("SharedWithUserId")
+                        .HasColumnType("text");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("CollectionId");
+
+                    b.HasIndex("SharedWithEmail");
+
+                    b.HasIndex("SharedWithUserId");
+
+                    b.ToTable("CollectionShares");
                 });
 
             modelBuilder.Entity("Quizymode.Api.Shared.Models.Comment", b =>
@@ -208,8 +366,12 @@ namespace Quizymode.Api.Migrations
 
                     b.Property<string>("Explanation")
                         .IsRequired()
-                        .HasMaxLength(2000)
-                        .HasColumnType("character varying(2000)");
+                        .HasMaxLength(4000)
+                        .HasColumnType("character varying(4000)");
+
+                    b.Property<decimal?>("FactualRisk")
+                        .HasPrecision(5, 4)
+                        .HasColumnType("numeric(5,4)");
 
                     b.Property<int>("FuzzyBucket")
                         .HasColumnType("integer");
@@ -238,6 +400,17 @@ namespace Quizymode.Api.Migrations
                         .HasColumnType("boolean")
                         .HasDefaultValue(false);
 
+                    b.Property<string>("ReviewComments")
+                        .HasMaxLength(500)
+                        .HasColumnType("character varying(500)");
+
+                    b.Property<string>("Source")
+                        .HasMaxLength(200)
+                        .HasColumnType("character varying(200)");
+
+                    b.Property<Guid?>("UploadId")
+                        .HasColumnType("uuid");
+
                     b.HasKey("Id");
 
                     b.HasIndex("CategoryId");
@@ -245,6 +418,8 @@ namespace Quizymode.Api.Migrations
                     b.HasIndex("CreatedAt");
 
                     b.HasIndex("FuzzyBucket");
+
+                    b.HasIndex("UploadId");
 
                     b.HasIndex("CategoryId", "IsPrivate");
 
@@ -389,6 +564,238 @@ namespace Quizymode.Api.Migrations
                     b.ToTable("Requests");
                 });
 
+            modelBuilder.Entity("Quizymode.Api.Shared.Models.StudyGuide", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uuid")
+                        .HasDefaultValueSql("gen_random_uuid()");
+
+                    b.Property<string>("ContentText")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<DateTime>("CreatedUtc")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<int>("SizeBytes")
+                        .HasColumnType("integer");
+
+                    b.Property<string>("Title")
+                        .IsRequired()
+                        .HasMaxLength(200)
+                        .HasColumnType("character varying(200)");
+
+                    b.Property<DateTime>("UpdatedUtc")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<string>("UserId")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("character varying(100)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("UserId")
+                        .IsUnique();
+
+                    b.ToTable("StudyGuides", (string)null);
+                });
+
+            modelBuilder.Entity("Quizymode.Api.Shared.Models.StudyGuideChunk", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uuid")
+                        .HasDefaultValueSql("gen_random_uuid()");
+
+                    b.Property<int>("ChunkIndex")
+                        .HasColumnType("integer");
+
+                    b.Property<string>("ChunkText")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<DateTime>("CreatedUtc")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<Guid>("ImportSessionId")
+                        .HasColumnType("uuid");
+
+                    b.Property<string>("PromptText")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<int>("SizeBytes")
+                        .HasColumnType("integer");
+
+                    b.Property<string>("Title")
+                        .IsRequired()
+                        .HasMaxLength(500)
+                        .HasColumnType("character varying(500)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ImportSessionId", "ChunkIndex")
+                        .IsUnique();
+
+                    b.ToTable("StudyGuideChunks", (string)null);
+                });
+
+            modelBuilder.Entity("Quizymode.Api.Shared.Models.StudyGuideDedupResult", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uuid")
+                        .HasDefaultValueSql("gen_random_uuid()");
+
+                    b.Property<DateTime>("CreatedUtc")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<Guid>("ImportSessionId")
+                        .HasColumnType("uuid");
+
+                    b.Property<string>("ParsedDedupItemsJson")
+                        .HasColumnType("text");
+
+                    b.Property<string>("RawDedupResponseText")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<int>("ValidationStatus")
+                        .HasColumnType("integer");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ImportSessionId")
+                        .IsUnique();
+
+                    b.ToTable("StudyGuideDedupResults", (string)null);
+                });
+
+            modelBuilder.Entity("Quizymode.Api.Shared.Models.StudyGuideImportSession", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uuid")
+                        .HasDefaultValueSql("gen_random_uuid()");
+
+                    b.Property<string>("CategoryName")
+                        .IsRequired()
+                        .HasMaxLength(200)
+                        .HasColumnType("character varying(200)");
+
+                    b.Property<DateTime>("CreatedUtc")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<string>("DefaultKeywordsJson")
+                        .HasMaxLength(2000)
+                        .HasColumnType("character varying(2000)");
+
+                    b.Property<string>("NavigationKeywordPathJson")
+                        .IsRequired()
+                        .HasMaxLength(2000)
+                        .HasColumnType("character varying(2000)");
+
+                    b.Property<int>("Status")
+                        .HasColumnType("integer");
+
+                    b.Property<Guid>("StudyGuideId")
+                        .HasColumnType("uuid");
+
+                    b.Property<int>("TargetItemsPerChunk")
+                        .HasColumnType("integer");
+
+                    b.Property<DateTime>("UpdatedUtc")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<string>("UserId")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("character varying(100)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("StudyGuideId");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("StudyGuideImportSessions", (string)null);
+                });
+
+            modelBuilder.Entity("Quizymode.Api.Shared.Models.StudyGuidePromptResult", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uuid")
+                        .HasDefaultValueSql("gen_random_uuid()");
+
+                    b.Property<int>("ChunkIndex")
+                        .HasColumnType("integer");
+
+                    b.Property<DateTime>("CreatedUtc")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<Guid>("ImportSessionId")
+                        .HasColumnType("uuid");
+
+                    b.Property<string>("ParsedItemsJson")
+                        .HasColumnType("text");
+
+                    b.Property<string>("RawResponseText")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<DateTime>("UpdatedUtc")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<string>("ValidationMessagesJson")
+                        .HasMaxLength(4000)
+                        .HasColumnType("character varying(4000)");
+
+                    b.Property<int>("ValidationStatus")
+                        .HasColumnType("integer");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ImportSessionId", "ChunkIndex")
+                        .IsUnique();
+
+                    b.ToTable("StudyGuidePromptResults", (string)null);
+                });
+
+            modelBuilder.Entity("Quizymode.Api.Shared.Models.Upload", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uuid")
+                        .HasDefaultValueSql("gen_random_uuid()");
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<string>("Hash")
+                        .IsRequired()
+                        .HasMaxLength(64)
+                        .HasColumnType("character varying(64)");
+
+                    b.Property<string>("InputText")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<Guid>("UserId")
+                        .HasColumnType("uuid");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("CreatedAt");
+
+                    b.HasIndex("UserId", "Hash")
+                        .IsUnique();
+
+                    b.ToTable("Uploads", (string)null);
+                });
+
             modelBuilder.Entity("Quizymode.Api.Shared.Models.User", b =>
                 {
                     b.Property<Guid>("Id")
@@ -467,6 +874,25 @@ namespace Quizymode.Api.Migrations
                     b.ToTable("UserSettings", (string)null);
                 });
 
+            modelBuilder.Entity("Quizymode.Api.Shared.Models.CategoryKeyword", b =>
+                {
+                    b.HasOne("Quizymode.Api.Shared.Models.Category", "Category")
+                        .WithMany()
+                        .HasForeignKey("CategoryId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.HasOne("Quizymode.Api.Shared.Models.Keyword", "Keyword")
+                        .WithMany()
+                        .HasForeignKey("KeywordId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.Navigation("Category");
+
+                    b.Navigation("Keyword");
+                });
+
             modelBuilder.Entity("Quizymode.Api.Shared.Models.Item", b =>
                 {
                     b.HasOne("Quizymode.Api.Shared.Models.Category", "Category")
@@ -492,6 +918,50 @@ namespace Quizymode.Api.Migrations
                         .IsRequired();
 
                     b.Navigation("Keyword");
+                });
+
+            modelBuilder.Entity("Quizymode.Api.Shared.Models.StudyGuideChunk", b =>
+                {
+                    b.HasOne("Quizymode.Api.Shared.Models.StudyGuideImportSession", "ImportSession")
+                        .WithMany()
+                        .HasForeignKey("ImportSessionId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("ImportSession");
+                });
+
+            modelBuilder.Entity("Quizymode.Api.Shared.Models.StudyGuideDedupResult", b =>
+                {
+                    b.HasOne("Quizymode.Api.Shared.Models.StudyGuideImportSession", "ImportSession")
+                        .WithMany()
+                        .HasForeignKey("ImportSessionId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("ImportSession");
+                });
+
+            modelBuilder.Entity("Quizymode.Api.Shared.Models.StudyGuideImportSession", b =>
+                {
+                    b.HasOne("Quizymode.Api.Shared.Models.StudyGuide", "StudyGuide")
+                        .WithMany()
+                        .HasForeignKey("StudyGuideId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("StudyGuide");
+                });
+
+            modelBuilder.Entity("Quizymode.Api.Shared.Models.StudyGuidePromptResult", b =>
+                {
+                    b.HasOne("Quizymode.Api.Shared.Models.StudyGuideImportSession", "ImportSession")
+                        .WithMany()
+                        .HasForeignKey("ImportSessionId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("ImportSession");
                 });
 
             modelBuilder.Entity("Quizymode.Api.Shared.Models.UserSetting", b =>

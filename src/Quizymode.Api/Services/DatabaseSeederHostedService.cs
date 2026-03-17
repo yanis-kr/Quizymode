@@ -25,19 +25,13 @@ internal sealed class DatabaseSeederHostedService(
     public async Task StartAsync(CancellationToken cancellationToken)
     {
         // Migrations are applied in Program.cs before the app accepts requests.
+        // Apply any pending migrations here so schema is up to date before seeding (idempotent; no-op if already applied).
         try
         {
             using IServiceScope scope = _serviceProvider.CreateScope();
             ApplicationDbContext db = scope.ServiceProvider.GetRequiredService<ApplicationDbContext>();
 
-            // Ensure schema for Description/Uploads/UploadId if migration was not applied (e.g. deployment without migration)
-            await EnsureDescriptionAndUploadsSchemaAsync(db, cancellationToken);
-
-            // Ensure CollectionBookmarks and CollectionShares if AddCollectionDiscoveryAndSharing migration was not applied
-            await EnsureCollectionDiscoverySchemaAsync(db, cancellationToken);
-
-            // Ensure CollectionRatings if AddCollectionRatings migration was not applied
-            await EnsureCollectionRatingsSchemaAsync(db, cancellationToken);
+            await db.Database.MigrateAsync(cancellationToken);
 
             // Seed categories and navigation keywords (always run, idempotent)
             await SeedCategoriesAndNavigationAsync(db, cancellationToken);
@@ -274,155 +268,6 @@ internal sealed class DatabaseSeederHostedService(
         await db.SaveChangesAsync(cancellationToken);
         
         _logger.LogInformation("Added {Count} ratings (5 stars) for Science category items.", ratings.Count);
-    }
-
-    /// <summary>
-    /// Ensures schema for Description columns (Categories, CategoryKeywords, Collections), Collections.IsPublic, Uploads table, and Item.UploadId.
-    /// Idempotent: safe to run when migration was not applied (e.g. deployment without migration file).
-    /// </summary>
-    private static async Task EnsureDescriptionAndUploadsSchemaAsync(ApplicationDbContext db, CancellationToken cancellationToken)
-    {
-        await db.Database.ExecuteSqlRawAsync(
-            "ALTER TABLE \"Categories\" ADD COLUMN IF NOT EXISTS \"Description\" character varying(500) NULL",
-            cancellationToken);
-        await db.Database.ExecuteSqlRawAsync(
-            "ALTER TABLE \"Categories\" ADD COLUMN IF NOT EXISTS \"ShortDescription\" character varying(120) NULL",
-            cancellationToken);
-        await db.Database.ExecuteSqlRawAsync(
-            "ALTER TABLE \"CategoryKeywords\" ADD COLUMN IF NOT EXISTS \"Description\" character varying(500) NULL",
-            cancellationToken);
-        await db.Database.ExecuteSqlRawAsync(
-            "ALTER TABLE \"Collections\" ADD COLUMN IF NOT EXISTS \"Description\" text NULL",
-            cancellationToken);
-        await db.Database.ExecuteSqlRawAsync(
-            "ALTER TABLE \"Collections\" ADD COLUMN IF NOT EXISTS \"IsPublic\" boolean NOT NULL DEFAULT FALSE",
-            cancellationToken);
-        await db.Database.ExecuteSqlRawAsync(
-            """
-            CREATE TABLE IF NOT EXISTS "Uploads" (
-                "Id" uuid NOT NULL DEFAULT gen_random_uuid(),
-                "InputText" text NOT NULL,
-                "UserId" uuid NOT NULL,
-                "CreatedAt" timestamp with time zone NOT NULL,
-                "Hash" character varying(64) NOT NULL,
-                CONSTRAINT "PK_Uploads" PRIMARY KEY ("Id")
-            )
-            """,
-            cancellationToken);
-        await db.Database.ExecuteSqlRawAsync(
-            "CREATE UNIQUE INDEX IF NOT EXISTS \"IX_Uploads_UserId_Hash\" ON \"Uploads\" (\"UserId\", \"Hash\")",
-            cancellationToken);
-        await db.Database.ExecuteSqlRawAsync(
-            "CREATE INDEX IF NOT EXISTS \"IX_Uploads_CreatedAt\" ON \"Uploads\" (\"CreatedAt\")",
-            cancellationToken);
-        await db.Database.ExecuteSqlRawAsync(
-            "ALTER TABLE \"Items\" ADD COLUMN IF NOT EXISTS \"UploadId\" uuid NULL",
-            cancellationToken);
-        await db.Database.ExecuteSqlRawAsync(
-            "CREATE INDEX IF NOT EXISTS \"IX_Items_UploadId\" ON \"Items\" (\"UploadId\")",
-            cancellationToken);
-        // Mark migration as applied so future "dotnet ef database update" does not re-apply
-        await db.Database.ExecuteSqlRawAsync(
-            """
-            INSERT INTO "__EFMigrationsHistory" ("MigrationId", "ProductVersion")
-            VALUES ('20260130150000_AddCategoryKeywordDescriptionsUploadsAndItemUploadId', '10.0.2')
-            ON CONFLICT ("MigrationId") DO NOTHING
-            """,
-            cancellationToken);
-    }
-
-    /// <summary>
-    /// Ensures CollectionBookmarks and CollectionShares tables exist (AddCollectionDiscoveryAndSharing migration).
-    /// Idempotent: safe to run when migration was not applied.
-    /// </summary>
-    private static async Task EnsureCollectionDiscoverySchemaAsync(ApplicationDbContext db, CancellationToken cancellationToken)
-    {
-        await db.Database.ExecuteSqlRawAsync(
-            """
-            CREATE TABLE IF NOT EXISTS "CollectionBookmarks" (
-                "Id" uuid NOT NULL,
-                "UserId" text NOT NULL,
-                "CollectionId" uuid NOT NULL,
-                "CreatedAt" timestamp with time zone NOT NULL,
-                CONSTRAINT "PK_CollectionBookmarks" PRIMARY KEY ("Id")
-            )
-            """,
-            cancellationToken);
-        await db.Database.ExecuteSqlRawAsync(
-            "CREATE UNIQUE INDEX IF NOT EXISTS \"IX_CollectionBookmarks_UserId_CollectionId\" ON \"CollectionBookmarks\" (\"UserId\", \"CollectionId\")",
-            cancellationToken);
-        await db.Database.ExecuteSqlRawAsync(
-            "CREATE INDEX IF NOT EXISTS \"IX_CollectionBookmarks_UserId\" ON \"CollectionBookmarks\" (\"UserId\")",
-            cancellationToken);
-        await db.Database.ExecuteSqlRawAsync(
-            "CREATE INDEX IF NOT EXISTS \"IX_CollectionBookmarks_CollectionId\" ON \"CollectionBookmarks\" (\"CollectionId\")",
-            cancellationToken);
-
-        await db.Database.ExecuteSqlRawAsync(
-            """
-            CREATE TABLE IF NOT EXISTS "CollectionShares" (
-                "Id" uuid NOT NULL,
-                "CollectionId" uuid NOT NULL,
-                "SharedBy" text NOT NULL,
-                "SharedWithUserId" text NULL,
-                "SharedWithEmail" text NULL,
-                "CreatedAt" timestamp with time zone NOT NULL,
-                CONSTRAINT "PK_CollectionShares" PRIMARY KEY ("Id")
-            )
-            """,
-            cancellationToken);
-        await db.Database.ExecuteSqlRawAsync(
-            "CREATE INDEX IF NOT EXISTS \"IX_CollectionShares_CollectionId\" ON \"CollectionShares\" (\"CollectionId\")",
-            cancellationToken);
-        await db.Database.ExecuteSqlRawAsync(
-            "CREATE INDEX IF NOT EXISTS \"IX_CollectionShares_SharedWithUserId\" ON \"CollectionShares\" (\"SharedWithUserId\")",
-            cancellationToken);
-        await db.Database.ExecuteSqlRawAsync(
-            "CREATE INDEX IF NOT EXISTS \"IX_CollectionShares_SharedWithEmail\" ON \"CollectionShares\" (\"SharedWithEmail\")",
-            cancellationToken);
-
-        await db.Database.ExecuteSqlRawAsync(
-            """
-            INSERT INTO "__EFMigrationsHistory" ("MigrationId", "ProductVersion")
-            VALUES ('20260314000000_AddCollectionDiscoveryAndSharing', '10.0.2')
-            ON CONFLICT ("MigrationId") DO NOTHING
-            """,
-            cancellationToken);
-    }
-
-    /// <summary>
-    /// Ensures CollectionRatings table exists (AddCollectionRatings migration).
-    /// Idempotent: safe to run when the migration was not applied.
-    /// </summary>
-    private static async Task EnsureCollectionRatingsSchemaAsync(ApplicationDbContext db, CancellationToken cancellationToken)
-    {
-        await db.Database.ExecuteSqlRawAsync(
-            """
-            CREATE TABLE IF NOT EXISTS "CollectionRatings" (
-                "Id" uuid NOT NULL,
-                "CollectionId" uuid NOT NULL,
-                "Stars" integer NOT NULL,
-                "CreatedBy" character varying(100) NOT NULL,
-                "CreatedAt" timestamp with time zone NOT NULL,
-                "UpdatedAt" timestamp with time zone NULL,
-                CONSTRAINT "PK_CollectionRatings" PRIMARY KEY ("Id"),
-                CONSTRAINT "CK_CollectionRatings_Stars_Range" CHECK ("Stars" >= 1 AND "Stars" <= 5)
-            )
-            """,
-            cancellationToken);
-        await db.Database.ExecuteSqlRawAsync(
-            "CREATE INDEX IF NOT EXISTS \"IX_CollectionRatings_CollectionId\" ON \"CollectionRatings\" (\"CollectionId\")",
-            cancellationToken);
-        await db.Database.ExecuteSqlRawAsync(
-            "CREATE UNIQUE INDEX IF NOT EXISTS \"IX_CollectionRatings_CollectionId_CreatedBy\" ON \"CollectionRatings\" (\"CollectionId\", \"CreatedBy\")",
-            cancellationToken);
-        await db.Database.ExecuteSqlRawAsync(
-            """
-            INSERT INTO "__EFMigrationsHistory" ("MigrationId", "ProductVersion")
-            VALUES ('20260316000001_AddCollectionRatings', '10.0.2')
-            ON CONFLICT ("MigrationId") DO NOTHING
-            """,
-            cancellationToken);
     }
 
     private async Task SeedCategoriesAndNavigationAsync(ApplicationDbContext db, CancellationToken cancellationToken)
