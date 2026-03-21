@@ -267,9 +267,8 @@ export interface CategoryKeywordAdminResponse {
 
 export interface CreateCategoryKeywordRequest {
   categoryId: string;
-  keywordId: string;
-  navigationRank: number;
-  parentName?: string | null;
+  parentKeywordId?: string | null;
+  childKeywordId: string;
   sortRank?: number;
   description?: string | null;
 }
@@ -288,8 +287,7 @@ export interface CategoryKeywordsAdminResponse {
 }
 
 export interface UpdateCategoryKeywordRequest {
-  parentName?: string | null;
-  navigationRank?: number | null;
+  parentKeywordId?: string | null;
   sortRank?: number | null;
   description?: string | null;
 }

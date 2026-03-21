@@ -115,7 +115,16 @@ public static class FinalizeImport
             return Result.Failure<Response?>(Error.Validation("Import.NoItems", "No items to import."));
 
         var uploadId = Guid.NewGuid();
-        var bulkRequest = new AddItemsBulk.Request(IsPrivate: true, itemsToImport, UploadId: uploadId);
+        string keyword1 = navPath.Count > 0 ? navPath[0] : "other";
+        string? keyword2 = navPath.Count > 1 ? navPath[1] : null;
+        var bulkRequest = new AddItemsBulk.Request(
+            IsPrivate: true,
+            Category: session.CategoryName,
+            Keyword1: keyword1,
+            Keyword2: keyword2,
+            Keywords: sessionKeywords,
+            Items: itemsToImport,
+            UploadId: uploadId);
         Result<AddItemsBulk.Response> bulkResult = await AddItemsBulkHandler.HandleAsync(
             bulkRequest,
             db,

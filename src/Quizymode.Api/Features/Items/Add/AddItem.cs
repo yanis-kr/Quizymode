@@ -14,6 +14,8 @@ public static class AddItem
 
     public sealed record Request(
         string Category,
+        string NavigationKeyword1,
+        string NavigationKeyword2,
         bool IsPrivate,
         string Question,
         string CorrectAnswer,
@@ -47,6 +49,18 @@ public static class AddItem
             RuleFor(x => x.Category)
                 .NotEmpty()
                 .WithMessage("Category is required");
+
+            RuleFor(x => x.NavigationKeyword1)
+                .NotEmpty()
+                .WithMessage("NavigationKeyword1 (primary topic) is required")
+                .MaximumLength(30)
+                .WithMessage("NavigationKeyword1 must not exceed 30 characters");
+
+            RuleFor(x => x.NavigationKeyword2)
+                .NotEmpty()
+                .WithMessage("NavigationKeyword2 (subtopic) is required")
+                .MaximumLength(30)
+                .WithMessage("NavigationKeyword2 must not exceed 30 characters");
 
             RuleFor(x => x.Question)
                 .NotEmpty()
@@ -127,6 +141,7 @@ public static class AddItem
             IUserContext userContext,
             IAuditService auditService,
             ICategoryResolver categoryResolver,
+            IProfanityFilterService profanityFilter,
             CancellationToken cancellationToken)
         {
             var validationResult = await validator.ValidateAsync(request, cancellationToken);
@@ -135,7 +150,7 @@ public static class AddItem
                 return Results.BadRequest(validationResult.Errors);
             }
 
-            Result<Response> result = await AddItemHandler.HandleAsync(request, db, simHashService, userContext, auditService, categoryResolver, cancellationToken);
+            Result<Response> result = await AddItemHandler.HandleAsync(request, db, simHashService, userContext, auditService, categoryResolver, profanityFilter, cancellationToken);
 
             return result.Match(
                 value => Results.Created($"/api/items/{value.Id}", value),

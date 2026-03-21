@@ -14,8 +14,8 @@ public static class DeleteCategoryKeyword
         {
             app.MapDelete("admin/category-keywords/{id:guid}", Handler)
                 .WithTags("Admin")
-                .WithSummary("Delete category keyword (Admin only)")
-                .WithDescription("Removes a keyword from navigation for a category. The keyword entity remains; only the navigation assignment is removed.")
+                .WithSummary("Delete keyword relation (Admin only)")
+                .WithDescription("Removes a keyword relation from navigation for a category. The keyword entity remains.")
                 .RequireAuthorization("Admin")
                 .Produces(StatusCodes.Status204NoContent)
                 .Produces(StatusCodes.Status404NotFound);
@@ -40,11 +40,11 @@ public static class DeleteCategoryKeyword
         ApplicationDbContext db,
         CancellationToken cancellationToken)
     {
-        CategoryKeyword? ck = await db.CategoryKeywords.FindAsync([id], cancellationToken);
-        if (ck is null)
-            return Result.Failure(Error.NotFound("Admin.CategoryKeywordNotFound", $"CategoryKeyword {id} not found"));
+        KeywordRelation? kr = await db.KeywordRelations.FindAsync([id], cancellationToken);
+        if (kr is null)
+            return Result.Failure(Error.NotFound("Admin.CategoryKeywordNotFound", $"KeywordRelation {id} not found"));
 
-        db.CategoryKeywords.Remove(ck);
+        db.KeywordRelations.Remove(kr);
         await db.SaveChangesAsync(cancellationToken);
         return Result.Success();
     }

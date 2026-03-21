@@ -17,8 +17,13 @@ public static class UploadItemsToCollection
 {
     /// <summary>
     /// InputText is the raw upload content (e.g. JSON string) used to compute a hash for duplicate detection.
+    /// Category, Keyword1, Keyword2 define navigation; Keywords are additional default keywords for all items.
     /// </summary>
     public sealed record Request(
+        string Category,
+        string Keyword1,
+        string? Keyword2,
+        List<AddItemsBulk.KeywordRequest> Keywords,
         List<AddItemsBulk.ItemRequest> Items,
         string InputText);
 
@@ -35,6 +40,15 @@ public static class UploadItemsToCollection
         {
             _userContext = userContext;
             int maxItems = _userContext.IsAdmin ? 1000 : 100;
+            RuleFor(x => x.Category)
+                .NotEmpty()
+                .WithMessage("Category is required");
+            RuleFor(x => x.Keyword1)
+                .NotEmpty()
+                .WithMessage("Keyword1 (primary topic) is required");
+            RuleFor(x => x.Keywords)
+                .NotNull()
+                .WithMessage("Keywords is required");
             RuleFor(x => x.Items)
                 .NotNull()
                 .WithMessage("Items is required")
@@ -142,6 +156,10 @@ public static class UploadItemsToCollection
         bool isPrivate = !userContext.IsAdmin;
         AddItemsBulk.Request bulkRequest = new(
             IsPrivate: isPrivate,
+            Category: request.Category,
+            Keyword1: request.Keyword1,
+            Keyword2: request.Keyword2,
+            Keywords: request.Keywords,
             Items: request.Items,
             UploadId: upload.Id);
 

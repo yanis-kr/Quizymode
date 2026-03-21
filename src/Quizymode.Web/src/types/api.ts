@@ -160,6 +160,8 @@ export interface KeywordRequest {
 
 export interface CreateItemRequest {
   category: string;
+  navigationKeyword1: string;
+  navigationKeyword2: string;
   isPrivate: boolean;
   question: string;
   correctAnswer: string;
@@ -175,6 +177,8 @@ export interface CreateItemRequest {
 
 export interface UpdateItemRequest {
   category?: string;
+  navigationKeyword1?: string;
+  navigationKeyword2?: string;
   isPrivate?: boolean;
   question?: string;
   correctAnswer?: string;

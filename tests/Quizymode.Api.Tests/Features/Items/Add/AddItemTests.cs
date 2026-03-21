@@ -26,9 +26,15 @@ public sealed class AddItemTests : ItemTestFixture
     [Fact]
     public async Task HandleAsync_ValidRequest_CreatesItem()
     {
-        // Arrange
+        // Arrange: ensure geography has nav keywords (topics -> europe)
+        Item seed = await CreateItemWithCategoryAsync("geography", "seed", "seed", new List<string>(), "seed", false, _userContextMock.Object.UserId!);
+        DbContext.Items.Remove(seed);
+        await DbContext.SaveChangesAsync();
+
         AddItem.Request request = new(
             Category: "geography",
+            NavigationKeyword1: "topics",
+            NavigationKeyword2: "europe",
             IsPrivate: false,
             Question: "What is the capital of France?",
             CorrectAnswer: "Paris",
@@ -81,6 +87,8 @@ public sealed class AddItemTests : ItemTestFixture
 
         AddItem.Request request = new(
             Category: "geography",
+            NavigationKeyword1: "topics",
+            NavigationKeyword2: "europe",
             IsPrivate: false,
             Question: "What is the capital of France?",
             CorrectAnswer: "Paris",
@@ -107,9 +115,10 @@ public sealed class AddItemTests : ItemTestFixture
     [Fact]
     public void Validator_EmptyCategory_ReturnsError()
     {
-        // Arrange
         AddItem.Request request = new(
             Category: "",
+            NavigationKeyword1: "topics",
+            NavigationKeyword2: "europe",
             IsPrivate: false,
             Question: "What is the capital of France?",
             CorrectAnswer: "Paris",
@@ -129,13 +138,14 @@ public sealed class AddItemTests : ItemTestFixture
     [Fact]
     public void Validator_TooManyIncorrectAnswers_ReturnsError()
     {
-        // Arrange
         AddItem.Request request = new(
             Category: "geography",
+            NavigationKeyword1: "topics",
+            NavigationKeyword2: "europe",
             IsPrivate: false,
             Question: "What is the capital of France?",
             CorrectAnswer: "Paris",
-            IncorrectAnswers: new List<string> { "Lyon", "Marseille", "Nice", "Toulouse", "Bordeaux" }, // 5 items
+            IncorrectAnswers: new List<string> { "Lyon", "Marseille", "Nice", "Toulouse", "Bordeaux" },
             Explanation: "");
 
         AddItem.Validator validator = new();

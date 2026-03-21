@@ -125,6 +125,10 @@ const EditItemPage = () => {
       setValidationError("Please provide at least one incorrect answer");
       return;
     }
+    if (!formData.navigationRank1.trim() || !formData.navigationRank2.trim()) {
+      setValidationError("Primary topic and subtopic are required");
+      return;
+    }
 
     const r1 = formData.navigationRank1.trim().toLowerCase();
     const r2 = formData.navigationRank2.trim().toLowerCase();
@@ -152,6 +156,8 @@ const EditItemPage = () => {
         : undefined;
     const data = {
       category: formData.category.trim(),
+      navigationKeyword1: formData.navigationRank1.trim(),
+      navigationKeyword2: formData.navigationRank2.trim(),
       isPrivate: formData.isPrivate,
       question: formData.question.trim(),
       correctAnswer: formData.correctAnswer.trim(),

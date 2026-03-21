@@ -48,5 +48,13 @@ public sealed class Item
     // Navigation property for category
     public Guid? CategoryId { get; set; }
     public Category? Category { get; set; }
+
+    /// <summary>Rank-1 navigation keyword (primary topic). Required for items in navigation tree.</summary>
+    public Guid? NavigationKeywordId1 { get; set; }
+    public Keyword? NavigationKeyword1 { get; set; }
+
+    /// <summary>Rank-2 navigation keyword (subtopic). Required for items in navigation tree.</summary>
+    public Guid? NavigationKeywordId2 { get; set; }
+    public Keyword? NavigationKeyword2 { get; set; }
 }
 

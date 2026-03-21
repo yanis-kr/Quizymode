@@ -10,9 +10,8 @@ public static class CreateCategoryKeyword
 {
     public sealed record CreateCategoryKeywordRequest(
         Guid CategoryId,
-        Guid KeywordId,
-        int NavigationRank,
-        string? ParentName,
+        Guid? ParentKeywordId,
+        Guid ChildKeywordId,
         int SortRank = 0,
         string? Description = null);
 
@@ -31,8 +30,8 @@ public static class CreateCategoryKeyword
         {
             app.MapPost("admin/category-keywords", Handler)
                 .WithTags("Admin")
-                .WithSummary("Create category keyword (Admin only)")
-                .WithDescription("Adds a keyword to navigation for a category. Rank 1 = top-level, Rank 2 = under a parent. \"Other\" is not allowed.")
+                .WithSummary("Create keyword relation (Admin only)")
+                .WithDescription("Adds a keyword to navigation for a category. ParentKeywordId null = root (rank 1); otherwise rank 2 under that parent. \"Other\" is not allowed.")
                 .RequireAuthorization("Admin")
                 .Produces<CreateCategoryKeywordResponse>(StatusCodes.Status201Created)
                 .Produces(StatusCodes.Status400BadRequest)
@@ -53,6 +52,7 @@ public static class CreateCategoryKeyword
                     "Admin.KeywordNotFound" => Results.NotFound(),
                     "Admin.KeywordOtherNotAllowed" => Results.BadRequest(),
                     "Admin.CategoryKeywordAlreadyExists" => Results.BadRequest(),
+                    "Admin.InvalidParent" => Results.BadRequest(),
                     _ => CustomResults.Problem(result)
                 });
         }
@@ -63,12 +63,12 @@ public static class CreateCategoryKeyword
         ApplicationDbContext db,
         CancellationToken cancellationToken)
     {
-        Keyword? keyword = await db.Keywords.FindAsync([request.KeywordId], cancellationToken);
-        if (keyword is null)
+        Keyword? childKeyword = await db.Keywords.FindAsync([request.ChildKeywordId], cancellationToken);
+        if (childKeyword is null)
             return Result.Failure<CreateCategoryKeywordResponse>(
                 Error.NotFound("Admin.KeywordNotFound", "Keyword not found"));
 
-        if (string.Equals(keyword.Name, "other", StringComparison.OrdinalIgnoreCase))
+        if (string.Equals(childKeyword.Name, "other", StringComparison.OrdinalIgnoreCase))
             return Result.Failure<CreateCategoryKeywordResponse>(
                 Error.Validation("Admin.KeywordOtherNotAllowed", "\"Other\" cannot be added as a navigation keyword."));
 
@@ -77,44 +77,57 @@ public static class CreateCategoryKeyword
             return Result.Failure<CreateCategoryKeywordResponse>(
                 Error.NotFound("Admin.CategoryNotFound", "Category not found"));
 
-        bool exists = await db.CategoryKeywords
-            .AnyAsync(ck => ck.CategoryId == request.CategoryId && ck.KeywordId == request.KeywordId, cancellationToken);
+        bool exists = await db.KeywordRelations.AnyAsync(kr =>
+            kr.CategoryId == request.CategoryId &&
+            kr.ParentKeywordId == request.ParentKeywordId &&
+            kr.ChildKeywordId == request.ChildKeywordId,
+            cancellationToken);
         if (exists)
             return Result.Failure<CreateCategoryKeywordResponse>(
-                Error.Validation("Admin.CategoryKeywordAlreadyExists", "This keyword is already assigned to this category."));
+                Error.Validation("Admin.CategoryKeywordAlreadyExists", "This relation already exists."));
 
-        if (request.NavigationRank != 1 && request.NavigationRank != 2)
-            return Result.Failure<CreateCategoryKeywordResponse>(
-                Error.Validation("Admin.InvalidNavigationRank", "NavigationRank must be 1 or 2."));
-
-        string? parentName = null;
-        if (request.NavigationRank == 2)
+        if (request.ParentKeywordId.HasValue)
         {
-            if (string.IsNullOrWhiteSpace(request.ParentName))
+            bool validParent = await db.KeywordRelations.AnyAsync(kr =>
+                kr.CategoryId == request.CategoryId &&
+                kr.ParentKeywordId == null &&
+                kr.ChildKeywordId == request.ParentKeywordId.Value,
+                cancellationToken);
+            if (!validParent)
                 return Result.Failure<CreateCategoryKeywordResponse>(
-                    Error.Validation("Admin.ParentRequired", "Parent name is required for rank 2."));
-            parentName = request.ParentName.Trim();
+                    Error.Validation("Admin.InvalidParent", "ParentKeywordId must be a root (rank-1) keyword for this category."));
         }
 
-        var ck = new CategoryKeyword
+        var kr = new KeywordRelation
         {
+            Id = Guid.NewGuid(),
             CategoryId = request.CategoryId,
-            KeywordId = request.KeywordId,
-            NavigationRank = request.NavigationRank,
-            ParentName = parentName,
-            SortRank = request.SortRank,
+            ParentKeywordId = request.ParentKeywordId,
+            ChildKeywordId = request.ChildKeywordId,
+            SortOrder = request.SortRank,
             Description = string.IsNullOrWhiteSpace(request.Description) ? null : request.Description.Trim(),
+            IsPrivate = false,
+            CreatedBy = null,
+            IsReviewPending = false,
+            CreatedAt = DateTime.UtcNow
         };
-        db.CategoryKeywords.Add(ck);
+        db.KeywordRelations.Add(kr);
         await db.SaveChangesAsync(cancellationToken);
 
+        string? parentName = null;
+        if (request.ParentKeywordId.HasValue)
+        {
+            Keyword? parent = await db.Keywords.FindAsync([request.ParentKeywordId.Value], cancellationToken);
+            parentName = parent?.Name;
+        }
+
         return Result.Success(new CreateCategoryKeywordResponse(
-            ck.Id,
-            ck.CategoryId,
-            ck.KeywordId,
-            ck.NavigationRank,
-            ck.ParentName,
-            ck.SortRank,
-            ck.Description));
+            kr.Id,
+            kr.CategoryId,
+            kr.ChildKeywordId,
+            kr.ParentKeywordId == null ? 1 : 2,
+            parentName,
+            kr.SortOrder,
+            kr.Description));
     }
 }

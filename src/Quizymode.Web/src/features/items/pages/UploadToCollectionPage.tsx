@@ -123,8 +123,8 @@ const UploadToCollectionPage = () => {
   const examplePrompt = EXAMPLE_PROMPT(topicName, uploadId);
 
   const uploadMutation = useMutation({
-    mutationFn: ({ items, inputText }: { items: CreateItemRequest[]; inputText: string }) =>
-      itemsApi.uploadToCollection({ items, inputText }),
+    mutationFn: (payload: Parameters<typeof itemsApi.uploadToCollection>[0]) =>
+      itemsApi.uploadToCollection(payload),
     onSuccess: (data: UploadToCollectionResponse) => {
       navigate(`/explore/collections/${data.collectionId}`);
     },
@@ -170,7 +170,6 @@ const UploadToCollectionPage = () => {
       return;
     }
     const mapped = items.map((row: Record<string, unknown>) => ({
-      category: String(row.category ?? categoryName),
       isPrivate: true,
       question: String(row.question ?? ""),
       correctAnswer: String(row.correctAnswer ?? ""),
@@ -184,8 +183,19 @@ const UploadToCollectionPage = () => {
           )
         : undefined,
       source: row.source != null ? String(row.source) : undefined,
-    })) as CreateItemRequest[];
-    uploadMutation.mutate({ items: mapped, inputText: jsonText });
+    }));
+    const defaultKeywords = [
+      { name: rank1Name.trim(), isPrivate: true },
+      { name: rank2Name.trim(), isPrivate: true },
+    ];
+    uploadMutation.mutate({
+      category: categoryName.trim(),
+      keyword1: rank1Name.trim(),
+      keyword2: rank2Name.trim(),
+      keywords: defaultKeywords,
+      items: mapped,
+      inputText: jsonText,
+    });
   };
 
   const copyPrompt = () => {

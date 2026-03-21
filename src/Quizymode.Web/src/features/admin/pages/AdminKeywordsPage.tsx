@@ -74,7 +74,7 @@ const AdminKeywordsPage = () => {
   const [addCategoryId, setAddCategoryId] = React.useState<string>("");
   const [addKeywordId, setAddKeywordId] = React.useState<string>("");
   const [addRank, setAddRank] = React.useState<1 | 2>(1);
-  const [addParentName, setAddParentName] = React.useState<string>("");
+  const [addParentKeywordId, setAddParentKeywordId] = React.useState<string>("");
   const [addSortRank, setAddSortRank] = React.useState<number>(0);
   const [addDescription, setAddDescription] = React.useState<string>("");
 
@@ -160,7 +160,7 @@ const AdminKeywordsPage = () => {
               onChange={(e) => {
                 setAddCategoryId(e.target.value);
                 setAddKeywordId("");
-                setAddParentName("");
+                setAddParentKeywordId("");
               }}
               className="ml-2 rounded border border-gray-300 text-sm"
             >
@@ -207,8 +207,8 @@ const AdminKeywordsPage = () => {
             <label className="text-sm font-medium text-gray-700">
               Parent (rank-1)
               <select
-                value={addParentName}
-                onChange={(e) => setAddParentName(e.target.value)}
+                value={addParentKeywordId}
+                onChange={(e) => setAddParentKeywordId(e.target.value)}
                 className="ml-2 rounded border border-gray-300 text-sm min-w-[120px]"
               >
                 <option value="">Select parent</option>
@@ -219,7 +219,7 @@ const AdminKeywordsPage = () => {
                       r.categoryName
                   )
                   .map((r) => (
-                    <option key={r.keywordName} value={r.keywordName}>
+                    <option key={r.keywordId} value={r.keywordId}>
                       {r.keywordName}
                     </option>
                   ))}
@@ -250,24 +250,23 @@ const AdminKeywordsPage = () => {
             type="button"
             onClick={() => {
               if (!addCategoryId || !addKeywordId) return;
-              if (addRank === 2 && !addParentName) return;
+              if (addRank === 2 && !addParentKeywordId) return;
               createMutation.mutate({
                 categoryId: addCategoryId,
-                keywordId: addKeywordId,
-                navigationRank: addRank,
-                parentName: addRank === 2 ? addParentName : null,
+                childKeywordId: addKeywordId,
+                parentKeywordId: addRank === 2 ? addParentKeywordId : null,
                 sortRank: addSortRank,
                 description: addDescription.trim() || null,
               });
               setAddKeywordId("");
-              setAddParentName("");
+              setAddParentKeywordId("");
               setAddSortRank(0);
               setAddDescription("");
             }}
             disabled={
               !addCategoryId ||
               !addKeywordId ||
-              (addRank === 2 && !addParentName) ||
+              (addRank === 2 && !addParentKeywordId) ||
               createMutation.isPending
             }
             className="rounded bg-indigo-600 px-3 py-1.5 text-sm font-medium text-white hover:bg-indigo-700 disabled:opacity-50"
@@ -331,7 +330,7 @@ const AdminKeywordsPage = () => {
                           r.categoryName === kw.categoryName &&
                           r.keywordName !== kw.keywordName
                       )
-                      .map((r) => r.keywordName)}
+                      .map((r) => ({ keywordName: r.keywordName, keywordId: r.keywordId }))}
                     onSave={(body) => updateMutation.mutate({ id: kw.id, body })}
                     isSaving={updateMutation.isPending}
                     onDelete={() => deleteMutation.mutate(kw.id)}
@@ -361,36 +360,33 @@ function KeywordRow({
 }: {
   keyword: CategoryKeywordAdminResponse;
   description: string;
-  rank1Options: string[];
+  rank1Options: { keywordName: string; keywordId: string }[];
   onSave: (body: UpdateCategoryKeywordRequest) => void;
   isSaving: boolean;
   onDelete: () => void;
   isDeleting: boolean;
 }) {
-  const [parentName, setParentName] = React.useState<string>(keyword.parentName ?? "");
-  const [navigationRank, setNavigationRank] = React.useState<number | "">(
-    keyword.navigationRank ?? ""
-  );
+  const initialParentId =
+    keyword.parentName && keyword.navigationRank === 2
+      ? rank1Options.find((o) => o.keywordName === keyword.parentName)?.keywordId ?? ""
+      : "";
+  const [parentKeywordId, setParentKeywordId] = React.useState<string>(initialParentId);
   const [sortRank, setSortRank] = React.useState<number | "">(keyword.sortRank);
   const [descValue, setDescValue] = React.useState(description);
   const [dirty, setDirty] = React.useState(false);
 
   React.useEffect(() => {
-    setParentName(keyword.parentName ?? "");
-    setNavigationRank(keyword.navigationRank ?? "");
+    const nextParentId =
+      keyword.parentName && keyword.navigationRank === 2
+        ? rank1Options.find((o) => o.keywordName === keyword.parentName)?.keywordId ?? ""
+        : "";
+    setParentKeywordId(nextParentId);
     setSortRank(keyword.sortRank);
     setDescValue(description);
-  }, [keyword.id, keyword.parentName, keyword.navigationRank, keyword.sortRank, description]);
+  }, [keyword.id, keyword.parentName, keyword.navigationRank, keyword.sortRank, description, rank1Options]);
 
   const handleParentChange = (value: string) => {
-    setParentName(value);
-    setDirty(true);
-  };
-
-  const handleRankChange = (value: string) => {
-    const n = value === "" ? "" : parseInt(value, 10);
-    setNavigationRank(n);
-    if (n === 1) setParentName("");
+    setParentKeywordId(value);
     setDirty(true);
   };
 
@@ -406,9 +402,10 @@ function KeywordRow({
 
   const handleSave = () => {
     const body: UpdateCategoryKeywordRequest = {};
-    if (keyword.parentName !== (parentName || null)) body.parentName = parentName || null;
-    if (keyword.navigationRank !== (navigationRank === "" ? null : navigationRank))
-      body.navigationRank = navigationRank === "" ? null : navigationRank;
+    const currentParentId = keyword.parentName && keyword.navigationRank === 2
+      ? rank1Options.find((o) => o.keywordName === keyword.parentName)?.keywordId ?? null
+      : null;
+    if (currentParentId !== (parentKeywordId || null)) body.parentKeywordId = parentKeywordId || null;
     if (keyword.sortRank !== (sortRank === "" ? keyword.sortRank : sortRank))
       body.sortRank = sortRank === "" ? undefined : sortRank;
     if ((keyword.description ?? "") !== descValue.trim()) body.description = descValue.trim() || null;
@@ -432,28 +429,20 @@ function KeywordRow({
           className="w-full rounded border-gray-300 text-sm"
         />
       </td>
-      <td className="px-4 py-2">
-        <select
-          value={navigationRank === "" ? "" : navigationRank}
-          onChange={(e) => handleRankChange(e.target.value)}
-          className="rounded border-gray-300 text-sm"
-        >
-          <option value="">—</option>
-          <option value={1}>1</option>
-          <option value={2}>2</option>
-        </select>
+      <td className="px-4 py-2 text-sm text-gray-900">
+        {keyword.navigationRank === 1 ? "1" : "2"}
       </td>
       <td className="px-4 py-2">
         <select
-          value={parentName}
+          value={parentKeywordId}
           onChange={(e) => handleParentChange(e.target.value)}
           className="rounded border-gray-300 text-sm min-w-[120px]"
-          disabled={navigationRank === 1}
+          disabled={keyword.navigationRank === 1}
         >
           <option value="">None</option>
-          {rank1Options.map((name) => (
-            <option key={name} value={name}>
-              {name}
+          {rank1Options.map((o) => (
+            <option key={o.keywordId} value={o.keywordId}>
+              {o.keywordName}
             </option>
           ))}
         </select>

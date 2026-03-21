@@ -84,16 +84,28 @@ internal sealed class DatabaseSeederHostedService(
                         }
 
                         // Convert to AddItemsBulk.Request format from JSON; exclude keywords that match the category name
+                        string category = items[0].Category.Trim();
+                        List<string>? firstKeywords = items[0].Keywords?
+                            .Where(k => !string.Equals(k.Trim(), category, StringComparison.OrdinalIgnoreCase))
+                            .Select(k => k.Trim())
+                            .Where(k => !string.IsNullOrEmpty(k))
+                            .ToList();
+                        string keyword1 = firstKeywords is { Count: > 0 } ? firstKeywords[0] : "other";
+                        string? keyword2 = firstKeywords is { Count: > 1 } ? firstKeywords[1] : null;
+                        List<AddItemsBulk.KeywordRequest> defaultKeywords = (firstKeywords ?? new List<string>())
+                            .Select(k => new AddItemsBulk.KeywordRequest(k, false))
+                            .ToList();
+                        if (defaultKeywords.Count == 0)
+                            defaultKeywords.Add(new AddItemsBulk.KeywordRequest("other", false));
+
                         List<AddItemsBulk.ItemRequest> itemRequests = items.Select(item =>
                         {
-                            string category = item.Category.Trim();
                             List<string>? keywords = item.Keywords?
-                                .Where(k => !string.Equals(k.Trim(), category, StringComparison.OrdinalIgnoreCase))
+                                .Where(k => !string.Equals(k.Trim(), item.Category.Trim(), StringComparison.OrdinalIgnoreCase))
                                 .Select(k => k.Trim())
                                 .Where(k => !string.IsNullOrEmpty(k))
                                 .ToList();
                             return new AddItemsBulk.ItemRequest(
-                                Category: category,
                                 Question: item.Question,
                                 CorrectAnswer: item.CorrectAnswer,
                                 IncorrectAnswers: item.IncorrectAnswers,
@@ -104,7 +116,11 @@ internal sealed class DatabaseSeederHostedService(
                         }).ToList();
 
                         AddItemsBulk.Request bulkRequest = new AddItemsBulk.Request(
-                            IsPrivate: false, // Seed items are global
+                            IsPrivate: false,
+                            Category: category,
+                            Keyword1: keyword1,
+                            Keyword2: keyword2,
+                            Keywords: defaultKeywords,
                             Items: itemRequests
                         );
 
@@ -551,32 +567,31 @@ internal sealed class DatabaseSeederHostedService(
             await db.SaveChangesAsync(cancellationToken);
         }
 
-        CategoryKeyword? existing = await db.CategoryKeywords
-            .FirstOrDefaultAsync(ck => ck.CategoryId == category.Id && ck.KeywordId == otherKeyword.Id, cancellationToken);
+        bool exists = await db.KeywordRelations.AnyAsync(kr =>
+            kr.CategoryId == category.Id && kr.ParentKeywordId == null && kr.ChildKeywordId == otherKeyword.Id,
+            cancellationToken);
 
-        if (existing is not null)
+        if (exists)
         {
             if (description is not null)
             {
-                existing.Description = description;
-                await db.SaveChangesAsync(cancellationToken);
+                KeywordRelation? kr = await db.KeywordRelations.FirstOrDefaultAsync(kr =>
+                    kr.CategoryId == category.Id && kr.ChildKeywordId == otherKeyword.Id, cancellationToken);
+                if (kr != null) { kr.Description = description; await db.SaveChangesAsync(cancellationToken); }
             }
             return;
         }
 
-        // Create CategoryKeyword entry for "other"
-        CategoryKeyword categoryKeyword = new CategoryKeyword
+        db.KeywordRelations.Add(new KeywordRelation
         {
             Id = Guid.NewGuid(),
             CategoryId = category.Id,
-            KeywordId = otherKeyword.Id,
-            NavigationRank = 1,
-            ParentName = null,
-            SortRank = 0,
+            ParentKeywordId = null,
+            ChildKeywordId = otherKeyword.Id,
+            SortOrder = 0,
             Description = description,
             CreatedAt = DateTime.UtcNow
-        };
-        db.CategoryKeywords.Add(categoryKeyword);
+        });
         await db.SaveChangesAsync(cancellationToken);
     }
 
@@ -608,32 +623,45 @@ internal sealed class DatabaseSeederHostedService(
             await db.SaveChangesAsync(cancellationToken);
         }
 
-        CategoryKeyword? existing = await db.CategoryKeywords
-            .FirstOrDefaultAsync(ck => ck.CategoryId == category.Id && ck.KeywordId == keyword.Id, cancellationToken);
+        Guid? parentKeywordId = null;
+        if (navigationRank == 2 && !string.IsNullOrWhiteSpace(parentName))
+        {
+            Keyword? parentKw = await db.Keywords.FirstOrDefaultAsync(k => k.Name.ToLower() == parentName.ToLower(), cancellationToken);
+            if (parentKw != null)
+            {
+                bool parentIsRoot = await db.KeywordRelations.AnyAsync(kr =>
+                    kr.CategoryId == category.Id && kr.ParentKeywordId == null && kr.ChildKeywordId == parentKw.Id,
+                    cancellationToken);
+                if (parentIsRoot)
+                    parentKeywordId = parentKw.Id;
+            }
+        }
 
-        if (existing is not null)
+        bool exists = await db.KeywordRelations.AnyAsync(kr =>
+            kr.CategoryId == category.Id && kr.ParentKeywordId == parentKeywordId && kr.ChildKeywordId == keyword.Id,
+            cancellationToken);
+
+        if (exists)
         {
             if (description is not null)
             {
-                existing.Description = description;
-                await db.SaveChangesAsync(cancellationToken);
+                KeywordRelation? kr = await db.KeywordRelations.FirstOrDefaultAsync(kr =>
+                    kr.CategoryId == category.Id && kr.ChildKeywordId == keyword.Id, cancellationToken);
+                if (kr != null) { kr.Description = description; await db.SaveChangesAsync(cancellationToken); }
             }
             return;
         }
 
-        // Create CategoryKeyword entry
-        CategoryKeyword categoryKeyword = new CategoryKeyword
+        db.KeywordRelations.Add(new KeywordRelation
         {
             Id = Guid.NewGuid(),
             CategoryId = category.Id,
-            KeywordId = keyword.Id,
-            NavigationRank = navigationRank,
-            ParentName = parentName?.ToLowerInvariant(), // Store normalized
-            SortRank = sortRank,
+            ParentKeywordId = parentKeywordId,
+            ChildKeywordId = keyword.Id,
+            SortOrder = sortRank,
             Description = description,
             CreatedAt = DateTime.UtcNow
-        };
-        db.CategoryKeywords.Add(categoryKeyword);
+        });
         await db.SaveChangesAsync(cancellationToken);
     }
 }

@@ -48,9 +48,10 @@ public static class GetAvailableKeywordsForCategory
         if (!categoryExists)
             return Result.Failure<Response>(Error.NotFound("Admin.CategoryNotFound", "Category not found"));
 
-        List<Guid> assignedKeywordIds = await db.CategoryKeywords
-            .Where(ck => ck.CategoryId == categoryId)
-            .Select(ck => ck.KeywordId)
+        List<Guid> assignedKeywordIds = await db.KeywordRelations
+            .Where(kr => kr.CategoryId == categoryId)
+            .Select(kr => kr.ChildKeywordId)
+            .Distinct()
             .ToListAsync(cancellationToken);
 
         List<KeywordOption> available = await db.Keywords

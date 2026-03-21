@@ -38,9 +38,7 @@ public sealed class ApplicationDbContext : DbContext
 
     public DbSet<Category> Categories => Set<Category>();
 
-    public DbSet<CategoryKeyword> CategoryKeywords => Set<CategoryKeyword>();
-
-    public DbSet<CategoryKeywordSuggestion> CategoryKeywordSuggestions => Set<CategoryKeywordSuggestion>();
+    public DbSet<KeywordRelation> KeywordRelations => Set<KeywordRelation>();
 
     public DbSet<UserSetting> UserSettings => Set<UserSetting>();
 

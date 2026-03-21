@@ -80,12 +80,16 @@ public static class GetKeywordDescriptions
 
         List<string> normalized = keywordNames.Select(k => k.Trim().ToLower()).ToList();
 
-        // Only rank-1 and rank-2 navigation keywords have descriptions for the breadcrumb
-        var dbResults = await db.CategoryKeywords
-            .Where(ck => ck.CategoryId == categoryId.Value)
-            .Where(ck => ck.NavigationRank == 1 || ck.NavigationRank == 2)
-            .Where(ck => normalized.Contains(ck.Keyword.Name.ToLower()))
-            .Select(ck => new { ck.Keyword.Name, ck.Description })
+        IQueryable<KeywordRelation> descQuery = db.KeywordRelations
+            .Include(kr => kr.ChildKeyword)
+            .Where(kr => kr.CategoryId == categoryId.Value)
+            .Where(kr => normalized.Contains(kr.ChildKeyword.Name.ToLower()));
+        if (!userContext.IsAuthenticated || string.IsNullOrEmpty(userContext.UserId))
+            descQuery = descQuery.Where(kr => !kr.IsPrivate);
+        else
+            descQuery = descQuery.Where(kr => !kr.IsPrivate || kr.CreatedBy == userContext.UserId);
+        var dbResults = await descQuery
+            .Select(kr => new { kr.ChildKeyword.Name, kr.Description })
             .ToListAsync(cancellationToken);
 
         // Preserve order of keywordNames; include description null for any not found

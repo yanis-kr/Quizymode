@@ -74,7 +74,6 @@ internal static class StudyGuideItemValidator
                         keywordRequests.Add(new AddItemsBulk.KeywordRequest(k.Trim().ToLowerInvariant(), true));
 
             items.Add(new AddItemsBulk.ItemRequest(
-                categoryName,
                 question!.Trim(),
                 correctAnswer!.Trim(),
                 incorrectAnswers!.Select(a => a.Trim()).ToList(),

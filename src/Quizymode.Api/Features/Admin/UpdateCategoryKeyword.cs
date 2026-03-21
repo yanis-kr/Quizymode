@@ -1,6 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using Quizymode.Api.Data;
 using Quizymode.Api.Infrastructure;
+using Quizymode.Api.Services;
 using Quizymode.Api.Shared.Kernel;
 using Quizymode.Api.Shared.Models;
 
@@ -9,10 +10,10 @@ namespace Quizymode.Api.Features.Admin;
 public static class UpdateCategoryKeyword
 {
     public sealed record UpdateCategoryKeywordRequest(
-        string? ParentName,
-        int? NavigationRank,
+        Guid? ParentKeywordId,
         int? SortRank,
-        string? Description = null);
+        string? Description = null,
+        bool? Approve = null);
 
     public sealed record UpdateCategoryKeywordResponse(
         Guid Id,
@@ -21,7 +22,9 @@ public static class UpdateCategoryKeyword
         int? NavigationRank,
         string? ParentName,
         int SortRank,
-        string? Description);
+        string? Description,
+        bool IsPrivate,
+        bool IsReviewPending);
 
     public sealed class Endpoint : IEndpoint
     {
@@ -29,8 +32,8 @@ public static class UpdateCategoryKeyword
         {
             app.MapPut("admin/category-keywords/{id:guid}", Handler)
                 .WithTags("Admin")
-                .WithSummary("Update category keyword (Admin only)")
-                .WithDescription("Updates a CategoryKeyword's parent, navigation rank, sort rank, or description.")
+                .WithSummary("Update keyword relation (Admin only)")
+                .WithDescription("Updates a KeywordRelation's parent, sort order, or description. Set Approve=true to make the relation public (IsPrivate=false, IsReviewPending=false).")
                 .RequireAuthorization("Admin")
                 .Produces<UpdateCategoryKeywordResponse>(StatusCodes.Status200OK)
                 .Produces(StatusCodes.Status404NotFound)
@@ -41,14 +44,16 @@ public static class UpdateCategoryKeyword
             Guid id,
             UpdateCategoryKeywordRequest request,
             ApplicationDbContext db,
+            IUserContext userContext,
             CancellationToken cancellationToken)
         {
-            Result<UpdateCategoryKeywordResponse> result = await HandleAsync(id, request, db, cancellationToken);
+            Result<UpdateCategoryKeywordResponse> result = await HandleAsync(id, request, db, userContext, cancellationToken);
             return result.Match(
                 value => Results.Ok(value),
                 failure => failure.Error.Code switch
                 {
                     "Admin.CategoryKeywordNotFound" => Results.NotFound(),
+                    "Admin.InvalidParent" => Results.BadRequest(),
                     _ => CustomResults.Problem(result)
                 });
         }
@@ -58,57 +63,57 @@ public static class UpdateCategoryKeyword
         Guid id,
         UpdateCategoryKeywordRequest request,
         ApplicationDbContext db,
+        IUserContext userContext,
         CancellationToken cancellationToken)
     {
-        CategoryKeyword? ck = await db.CategoryKeywords
+        KeywordRelation? kr = await db.KeywordRelations
             .Include(x => x.Category)
-            .Include(x => x.Keyword)
+            .Include(x => x.ChildKeyword)
+            .Include(x => x.ParentKeyword)
             .FirstOrDefaultAsync(x => x.Id == id, cancellationToken);
 
-        if (ck is null)
-        {
+        if (kr is null)
             return Result.Failure<UpdateCategoryKeywordResponse>(
-                Error.NotFound("Admin.CategoryKeywordNotFound", $"CategoryKeyword {id} not found"));
-        }
+                Error.NotFound("Admin.CategoryKeywordNotFound", $"KeywordRelation {id} not found"));
 
-        if (request.ParentName is not null)
+        if (request.ParentKeywordId.HasValue)
         {
-            string normalized = request.ParentName.Trim();
-            ck.ParentName = string.IsNullOrEmpty(normalized) ? null : normalized.ToLowerInvariant();
-        }
-
-        if (request.NavigationRank.HasValue)
-        {
-            int rank = request.NavigationRank.Value;
-            if (rank != 1 && rank != 2)
-            {
+            bool validParent = await db.KeywordRelations.AnyAsync(k =>
+                k.CategoryId == kr.CategoryId &&
+                k.ParentKeywordId == null &&
+                k.ChildKeywordId == request.ParentKeywordId.Value,
+                cancellationToken);
+            if (!validParent)
                 return Result.Failure<UpdateCategoryKeywordResponse>(
-                    Error.Validation("Admin.InvalidNavigationRank", "NavigationRank must be 1 or 2"));
-            }
-            ck.NavigationRank = rank;
-            if (rank == 1)
-                ck.ParentName = null;
+                    Error.Validation("Admin.InvalidParent", "ParentKeywordId must be a root (rank-1) keyword for this category."));
+            kr.ParentKeywordId = request.ParentKeywordId;
         }
 
         if (request.SortRank.HasValue)
-        {
-            ck.SortRank = request.SortRank.Value;
-        }
+            kr.SortOrder = request.SortRank.Value;
 
         if (request.Description is not null)
+            kr.Description = string.IsNullOrWhiteSpace(request.Description) ? null : request.Description.Trim();
+
+        if (request.Approve == true)
         {
-            ck.Description = string.IsNullOrWhiteSpace(request.Description) ? null : request.Description.Trim();
+            kr.IsPrivate = false;
+            kr.IsReviewPending = false;
+            kr.ReviewedAt = DateTime.UtcNow;
+            kr.ReviewedBy = userContext.UserId ?? "admin";
         }
 
         await db.SaveChangesAsync(cancellationToken);
 
         return Result.Success(new UpdateCategoryKeywordResponse(
-            ck.Id,
-            ck.CategoryId,
-            ck.KeywordId,
-            ck.NavigationRank,
-            ck.ParentName,
-            ck.SortRank,
-            ck.Description));
+            kr.Id,
+            kr.CategoryId,
+            kr.ChildKeywordId,
+            kr.ParentKeywordId == null ? 1 : 2,
+            kr.ParentKeyword?.Name,
+            kr.SortOrder,
+            kr.Description,
+            kr.IsPrivate,
+            kr.IsReviewPending));
     }
 }

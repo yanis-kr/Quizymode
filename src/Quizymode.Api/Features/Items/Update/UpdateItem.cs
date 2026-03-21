@@ -16,6 +16,8 @@ public static class UpdateItem
 
     public sealed record Request(
         string Category,
+        string NavigationKeyword1,
+        string NavigationKeyword2,
         string Question,
         string CorrectAnswer,
         List<string> IncorrectAnswers,
@@ -47,6 +49,18 @@ public static class UpdateItem
             RuleFor(x => x.Category)
                 .NotEmpty()
                 .WithMessage("Category is required");
+
+            RuleFor(x => x.NavigationKeyword1)
+                .NotEmpty()
+                .WithMessage("NavigationKeyword1 (primary topic) is required")
+                .MaximumLength(30)
+                .WithMessage("NavigationKeyword1 must not exceed 30 characters");
+
+            RuleFor(x => x.NavigationKeyword2)
+                .NotEmpty()
+                .WithMessage("NavigationKeyword2 (subtopic) is required")
+                .MaximumLength(30)
+                .WithMessage("NavigationKeyword2 must not exceed 30 characters");
 
             RuleFor(x => x.Question)
                 .NotEmpty()
@@ -128,6 +142,7 @@ public static class UpdateItem
             IUserContext userContext,
             IAuditService auditService,
             ICategoryResolver categoryResolver,
+            IProfanityFilterService profanityFilter,
             CancellationToken cancellationToken)
         {
             var validationResult = await validator.ValidateAsync(request, cancellationToken);
@@ -136,7 +151,7 @@ public static class UpdateItem
                 return Results.BadRequest(validationResult.Errors);
             }
 
-            Result<Response> result = await HandleAsync(id, request, db, simHashService, userContext, auditService, categoryResolver, cancellationToken);
+            Result<Response> result = await HandleAsync(id, request, db, simHashService, userContext, auditService, categoryResolver, profanityFilter, cancellationToken);
 
             return result.Match(
                 value => Results.Ok(value),
@@ -154,6 +169,7 @@ public static class UpdateItem
         IUserContext userContext,
         IAuditService auditService,
         ICategoryResolver categoryResolver,
+        IProfanityFilterService profanityFilter,
         CancellationToken cancellationToken)
     {
         try
@@ -197,7 +213,42 @@ public static class UpdateItem
             }
 
             Category category = categoryResult.Value!;
-            
+
+            if (profanityFilter.ContainsProfanity(request.NavigationKeyword1))
+                return Result.Failure<Response>(Error.Validation("Item.InvalidNavigationKeyword1", "Primary topic was rejected by content filter."));
+            if (profanityFilter.ContainsProfanity(request.NavigationKeyword2))
+                return Result.Failure<Response>(Error.Validation("Item.InvalidNavigationKeyword2", "Subtopic was rejected by content filter."));
+            if (request.Keywords != null)
+            {
+                foreach (var kw in request.Keywords)
+                {
+                    if (!string.IsNullOrWhiteSpace(kw.Name) && profanityFilter.ContainsProfanity(kw.Name))
+                        return Result.Failure<Response>(Error.Validation("Item.InvalidKeyword", $"Keyword '{kw.Name}' was rejected by content filter."));
+                }
+            }
+
+            string nav1 = request.NavigationKeyword1.Trim().ToLowerInvariant();
+            string nav2 = request.NavigationKeyword2.Trim().ToLowerInvariant();
+            IQueryable<KeywordRelation> nav1Query = db.KeywordRelations
+                .Include(kr => kr.ChildKeyword)
+                .Where(kr => kr.CategoryId == category.Id && kr.ParentKeywordId == null && kr.ChildKeyword.Name.ToLower() == nav1);
+            nav1Query = nav1Query.Where(kr => !kr.IsPrivate || kr.CreatedBy == userId);
+            Guid? nav1Id = await nav1Query.Select(kr => kr.ChildKeywordId).FirstOrDefaultAsync(cancellationToken);
+            if (nav1Id == default)
+            {
+                return Result.Failure<Response>(Error.Validation("Item.InvalidNavigationKeyword1", $"'{request.NavigationKeyword1}' is not a valid primary topic for category '{category.Name}'."));
+            }
+
+            IQueryable<KeywordRelation> nav2Query = db.KeywordRelations
+                .Include(kr => kr.ChildKeyword)
+                .Where(kr => kr.CategoryId == category.Id && kr.ParentKeywordId == nav1Id && kr.ChildKeyword.Name.ToLower() == nav2);
+            nav2Query = nav2Query.Where(kr => !kr.IsPrivate || kr.CreatedBy == userId);
+            Guid? nav2Id = await nav2Query.Select(kr => kr.ChildKeywordId).FirstOrDefaultAsync(cancellationToken);
+            if (nav2Id == default)
+            {
+                return Result.Failure<Response>(Error.Validation("Item.InvalidNavigationKeyword2", $"'{request.NavigationKeyword2}' is not a valid subtopic under '{request.NavigationKeyword1}' for category '{category.Name}'."));
+            }
+
             // Update item properties
             item.Question = request.Question;
             item.CorrectAnswer = request.CorrectAnswer;
@@ -205,6 +256,8 @@ public static class UpdateItem
             item.Explanation = request.Explanation;
             item.IsPrivate = effectiveIsPrivate;
             item.CategoryId = category.Id;
+            item.NavigationKeywordId1 = nav1Id;
+            item.NavigationKeywordId2 = nav2Id;
             if (request.ReadyForReview.HasValue)
             {
                 item.ReadyForReview = request.ReadyForReview.Value;
@@ -225,19 +278,22 @@ public static class UpdateItem
             // Handle keywords update
             if (request.Keywords is not null)
             {
-                // Remove all existing keywords for this item
                 List<ItemKeyword> existingItemKeywords = await db.ItemKeywords
                     .Where(ik => ik.ItemId == itemId)
                     .ToListAsync(cancellationToken);
                 db.ItemKeywords.RemoveRange(existingItemKeywords);
                 await db.SaveChangesAsync(cancellationToken);
 
+                List<KeywordRequest> effectiveKeywords = request.Keywords.ToList();
+                if (!effectiveKeywords.Any(k => k.Name.Trim().Equals(request.NavigationKeyword1, StringComparison.OrdinalIgnoreCase)))
+                    effectiveKeywords.Insert(0, new KeywordRequest(request.NavigationKeyword1, effectiveIsPrivate));
+                if (!effectiveKeywords.Any(k => k.Name.Trim().Equals(request.NavigationKeyword2, StringComparison.OrdinalIgnoreCase)))
+                    effectiveKeywords.Add(new KeywordRequest(request.NavigationKeyword2, effectiveIsPrivate));
+
                 // Regular users can only create private keywords
-                List<KeywordRequest> effectiveKeywords = request.Keywords;
                 if (!userContext.IsAdmin)
                 {
-                    // Force all keywords to be private for regular users
-                    effectiveKeywords = request.Keywords.Select(k => new KeywordRequest(k.Name, true)).ToList();
+                    effectiveKeywords = effectiveKeywords.Select(k => new KeywordRequest(k.Name, true)).ToList();
                 }
                 
                 // Add new keywords
@@ -258,7 +314,7 @@ public static class UpdateItem
                         {
                             keyword = await db.Keywords
                                 .FirstOrDefaultAsync(k => 
-                                    k.Name == normalizedName && 
+                                    k.Name.ToLower() == normalizedName && 
                                     k.IsPrivate == true &&
                                     k.CreatedBy == userId,
                                     cancellationToken);
@@ -267,22 +323,21 @@ public static class UpdateItem
                         {
                             keyword = await db.Keywords
                                 .FirstOrDefaultAsync(k => 
-                                    k.Name == normalizedName && 
+                                    k.Name.ToLower() == normalizedName && 
                                     k.IsPrivate == false,
                                     cancellationToken);
                         }
 
                         if (keyword is null)
                         {
-                            // Create new keyword as non-navigation (no CategoryKeyword entry).
-                            // Admin can later promote keywords into navigation by setting NavigationRank and ParentName.
                             keyword = new Keyword
                             {
                                 Id = Guid.NewGuid(),
                                 Name = normalizedName,
                                 IsPrivate = keywordRequest.IsPrivate,
                                 CreatedBy = userId,
-                                CreatedAt = DateTime.UtcNow
+                                CreatedAt = DateTime.UtcNow,
+                                IsReviewPending = keywordRequest.IsPrivate
                             };
                             db.Keywords.Add(keyword);
                             await db.SaveChangesAsync(cancellationToken);

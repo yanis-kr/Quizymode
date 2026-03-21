@@ -63,10 +63,11 @@ internal static class AddItemsBulkHandler
 
             Category category = categoryResult.Value!;
 
-            // Preload navigation keywords for this category
-            List<CategoryKeyword> navForCategory = await db.CategoryKeywords
-                .Include(ck => ck.Keyword)
-                .Where(ck => ck.CategoryId == category.Id)
+            // Navigation: only public relations or current user's private (so they can use their own suggested links)
+            List<KeywordRelation> navForCategory = await db.KeywordRelations
+                .Include(kr => kr.ChildKeyword)
+                .Include(kr => kr.ParentKeyword)
+                .Where(kr => kr.CategoryId == category.Id && (!kr.IsPrivate || kr.CreatedBy == userId))
                 .ToListAsync(cancellationToken);
 
             string normalizedKeyword1 = KeywordHelper.NormalizeKeywordName(request.Keyword1);
@@ -74,23 +75,25 @@ internal static class AddItemsBulkHandler
                 ? null
                 : KeywordHelper.NormalizeKeywordName(request.Keyword2);
 
-            // Helper local functions
+            // Validate nav keywords for profanity
+            if (profanityFilter.ContainsProfanity(normalizedKeyword1))
+                return Result.Failure<AddItemsBulk.Response>(Error.Validation("Items.BulkInvalidKeyword1", "Primary topic (Keyword1) was rejected by content filter."));
+            if (!string.IsNullOrEmpty(normalizedKeyword2) && profanityFilter.ContainsProfanity(normalizedKeyword2))
+                return Result.Failure<AddItemsBulk.Response>(Error.Validation("Items.BulkInvalidKeyword2", "Subtopic (Keyword2) was rejected by content filter."));
+
             async Task<Keyword> FindOrCreateKeywordAsync(string name, bool isPrivate)
             {
                 string normalized = name.Trim().ToLowerInvariant();
                 Keyword? existing = await db.Keywords
                     .FirstOrDefaultAsync(k =>
-                        k.Name == normalized &&
+                        k.Name.ToLower() == normalized &&
                         k.IsPrivate == isPrivate &&
                         (isPrivate ? k.CreatedBy == userId : true),
                         cancellationToken);
-
                 if (existing is not null)
                     return existing;
-
                 string slug = KeywordHelper.NameToSlug(name);
                 if (string.IsNullOrEmpty(slug)) slug = normalized;
-
                 Keyword keyword = new Keyword
                 {
                     Id = Guid.NewGuid(),
@@ -98,143 +101,122 @@ internal static class AddItemsBulkHandler
                     Slug = slug,
                     IsPrivate = isPrivate,
                     CreatedBy = userId,
-                    CreatedAt = DateTime.UtcNow
+                    CreatedAt = DateTime.UtcNow,
+                    IsReviewPending = isPrivate
                 };
                 db.Keywords.Add(keyword);
                 await db.SaveChangesAsync(cancellationToken);
                 return keyword;
             }
 
-            async Task EnsureSuggestionAsync(Category categoryEntity, Keyword keyword, int requestedRank, string? requestedParentName)
+            async Task EnsureRelationAsync(Category categoryEntity, Keyword keyword, Guid? parentKeywordId)
             {
-                bool existsPending = await db.CategoryKeywordSuggestions.AnyAsync(s =>
-                        s.CategoryId == categoryEntity.Id &&
-                        s.KeywordId == keyword.Id &&
-                        s.RequestedRank == requestedRank &&
-                        s.RequestedParentName == requestedParentName &&
-                        s.Status == "Pending",
-                        cancellationToken);
-                if (existsPending)
-                    return;
-
-                CategoryKeywordSuggestion suggestion = new CategoryKeywordSuggestion
+                bool exists = await db.KeywordRelations.AnyAsync(kr =>
+                    kr.CategoryId == categoryEntity.Id &&
+                    kr.ParentKeywordId == parentKeywordId &&
+                    kr.ChildKeywordId == keyword.Id,
+                    cancellationToken);
+                if (exists) return;
+                db.KeywordRelations.Add(new KeywordRelation
                 {
                     Id = Guid.NewGuid(),
                     CategoryId = categoryEntity.Id,
-                    KeywordId = keyword.Id,
-                    RequestedRank = requestedRank,
-                    RequestedParentName = requestedParentName,
-                    RequestedBy = userId,
-                    RequestedAt = DateTime.UtcNow,
-                    Status = "Pending"
-                };
-                db.CategoryKeywordSuggestions.Add(suggestion);
-                await db.SaveChangesAsync(cancellationToken);
-            }
-
-            // Handle keyword1 (primary topic)
-            Keyword keyword1Entity;
-            CategoryKeyword? keyword1Nav = navForCategory
-                .FirstOrDefault(ck =>
-                    ck.Keyword.Name.ToLower() == normalizedKeyword1.ToLower() &&
-                    ck.NavigationRank == 1);
-
-            CategoryKeyword? keyword1AsRank2 = navForCategory
-                .FirstOrDefault(ck =>
-                    ck.Keyword.Name.ToLower() == normalizedKeyword1.ToLower() &&
-                    ck.NavigationRank == 2);
-
-            Keyword? existingKeyword1 = await db.Keywords
-                .FirstOrDefaultAsync(k => k.Name == normalizedKeyword1.ToLower(), cancellationToken);
-
-            if (keyword1AsRank2 is not null)
-            {
-                return Result.Failure<AddItemsBulk.Response>(
-                    Error.Validation("Items.BulkInvalidKeyword1", "Cannot use subtopic name as primary topic (rank1) for this category."));
-            }
-
-            if (keyword1Nav is null && existingKeyword1 is null)
-            {
-                // Case: keyword1 not in keyword list at all -> create private + rank1 navigation
-                keyword1Entity = await FindOrCreateKeywordAsync(normalizedKeyword1, isPrivate: true);
-
-                CategoryKeyword newNav = new CategoryKeyword
-                {
-                    Id = Guid.NewGuid(),
-                    CategoryId = category.Id,
-                    KeywordId = keyword1Entity.Id,
-                    NavigationRank = 1,
-                    ParentName = null,
-                    SortRank = 0,
+                    ParentKeywordId = parentKeywordId,
+                    ChildKeywordId = keyword.Id,
+                    SortOrder = 0,
+                    IsPrivate = true,
+                    CreatedBy = userId,
+                    IsReviewPending = true,
                     CreatedAt = DateTime.UtcNow
-                };
-                db.CategoryKeywords.Add(newNav);
+                });
                 await db.SaveChangesAsync(cancellationToken);
-                navForCategory.Add(newNav);
-            }
-            else
-            {
-                keyword1Entity = existingKeyword1 ?? keyword1Nav!.Keyword;
-
-                if (keyword1Nav is null)
-                {
-                    // Exists as keyword but not navigation -> create suggestion
-                    await EnsureSuggestionAsync(category, keyword1Entity, requestedRank: 1, requestedParentName: null);
-                }
             }
 
-            // Handle keyword2 (subtopic), if provided
-            Keyword? keyword2Entity = null;
-            if (!string.IsNullOrEmpty(normalizedKeyword2))
+            // Rank-1: relation with ParentKeywordId null
+            KeywordRelation? keyword1Rel = navForCategory.FirstOrDefault(kr =>
+                kr.ParentKeywordId == null && kr.ChildKeyword.Name.ToLower() == normalizedKeyword1.ToLower());
+            bool keyword1AsRank2 = navForCategory.Any(kr =>
+                kr.ParentKeywordId != null && kr.ChildKeyword.Name.ToLower() == normalizedKeyword1.ToLower());
+
+            if (keyword1AsRank2)
+                return Result.Failure<AddItemsBulk.Response>(Error.Validation("Items.BulkInvalidKeyword1", "Cannot use subtopic name as primary topic (rank1) for this category."));
+
+            Keyword keyword1Entity;
+            if (keyword1Rel is null)
             {
-                CategoryKeyword? keyword2Nav = navForCategory
-                    .FirstOrDefault(ck =>
-                        ck.Keyword.Name.ToLower() == normalizedKeyword2.ToLower() &&
-                        ck.NavigationRank == 2 &&
-                        ck.ParentName == keyword1Entity.Name);
-
-                CategoryKeyword? keyword2AsRank1 = navForCategory
-                    .FirstOrDefault(ck =>
-                        ck.Keyword.Name.ToLower() == normalizedKeyword2.ToLower() &&
-                        ck.NavigationRank == 1);
-
-                Keyword? existingKeyword2 = await db.Keywords
-                    .FirstOrDefaultAsync(k => k.Name == normalizedKeyword2.ToLower(), cancellationToken);
-
-                if (keyword2AsRank1 is not null)
+                keyword1Entity = await FindOrCreateKeywordAsync(normalizedKeyword1, isPrivate: true);
+                bool exists = await db.KeywordRelations.AnyAsync(kr =>
+                    kr.CategoryId == category.Id && kr.ParentKeywordId == null && kr.ChildKeywordId == keyword1Entity.Id,
+                    cancellationToken);
+                if (!exists)
                 {
-                    return Result.Failure<AddItemsBulk.Response>(
-                        Error.Validation("Items.BulkInvalidKeyword2", "Cannot use primary topic name as subtopic (rank2) for this category."));
-                }
-
-                if (keyword2Nav is null && existingKeyword2 is null)
-                {
-                    // New subtopic: create private keyword + rank2 navigation
-                    keyword2Entity = await FindOrCreateKeywordAsync(normalizedKeyword2, isPrivate: true);
-
-                    CategoryKeyword newNav2 = new CategoryKeyword
+                    db.KeywordRelations.Add(new KeywordRelation
                     {
                         Id = Guid.NewGuid(),
                         CategoryId = category.Id,
-                        KeywordId = keyword2Entity.Id,
-                        NavigationRank = 2,
-                        ParentName = keyword1Entity.Name,
-                        SortRank = 0,
+                        ParentKeywordId = null,
+                        ChildKeywordId = keyword1Entity.Id,
+                        SortOrder = 0,
+                        IsPrivate = true,
+                        CreatedBy = userId,
+                        IsReviewPending = true,
                         CreatedAt = DateTime.UtcNow
-                    };
-                    db.CategoryKeywords.Add(newNav2);
+                    });
                     await db.SaveChangesAsync(cancellationToken);
-                    navForCategory.Add(newNav2);
+                }
+            }
+            else
+            {
+                keyword1Entity = keyword1Rel.ChildKeyword;
+                bool hasRelation = await db.KeywordRelations.AnyAsync(kr =>
+                    kr.CategoryId == category.Id && kr.ParentKeywordId == null && kr.ChildKeywordId == keyword1Entity.Id,
+                    cancellationToken);
+                if (!hasRelation)
+                    await EnsureRelationAsync(category, keyword1Entity, null);
+            }
+
+            Keyword? keyword2Entity = null;
+            if (!string.IsNullOrEmpty(normalizedKeyword2))
+            {
+                KeywordRelation? keyword2Rel = navForCategory.FirstOrDefault(kr =>
+                    kr.ParentKeywordId == keyword1Entity.Id && kr.ChildKeyword.Name.ToLower() == normalizedKeyword2.ToLower());
+                bool keyword2AsRank1 = navForCategory.Any(kr =>
+                    kr.ParentKeywordId == null && kr.ChildKeyword.Name.ToLower() == normalizedKeyword2.ToLower());
+
+                if (keyword2AsRank1)
+                    return Result.Failure<AddItemsBulk.Response>(Error.Validation("Items.BulkInvalidKeyword2", "Cannot use primary topic name as subtopic (rank2) for this category."));
+
+                if (keyword2Rel is null)
+                {
+                    keyword2Entity = await FindOrCreateKeywordAsync(normalizedKeyword2, isPrivate: true);
+                    bool exists = await db.KeywordRelations.AnyAsync(kr =>
+                        kr.CategoryId == category.Id && kr.ParentKeywordId == keyword1Entity.Id && kr.ChildKeywordId == keyword2Entity.Id,
+                        cancellationToken);
+                    if (!exists)
+                    {
+                        db.KeywordRelations.Add(new KeywordRelation
+                        {
+                            Id = Guid.NewGuid(),
+                            CategoryId = category.Id,
+                            ParentKeywordId = keyword1Entity.Id,
+                            ChildKeywordId = keyword2Entity.Id,
+                            SortOrder = 0,
+                            IsPrivate = true,
+                            CreatedBy = userId,
+                            IsReviewPending = true,
+                            CreatedAt = DateTime.UtcNow
+                        });
+                        await db.SaveChangesAsync(cancellationToken);
+                    }
                 }
                 else
                 {
-                    keyword2Entity = existingKeyword2 ?? keyword2Nav!.Keyword;
-
-                    if (keyword2Nav is null)
-                    {
-                        // Exists as keyword but not navigation under this parent -> suggest rank2
-                        await EnsureSuggestionAsync(category, keyword2Entity, requestedRank: 2, requestedParentName: keyword1Entity.Name);
-                    }
+                    keyword2Entity = keyword2Rel.ChildKeyword;
+                    bool hasRelation = await db.KeywordRelations.AnyAsync(kr =>
+                        kr.CategoryId == category.Id && kr.ParentKeywordId == keyword1Entity.Id && kr.ChildKeywordId == keyword2Entity.Id,
+                        cancellationToken);
+                    if (!hasRelation)
+                        await EnsureRelationAsync(category, keyword2Entity, keyword1Entity.Id);
                 }
             }
 
@@ -363,6 +345,8 @@ internal static class AddItemsBulkHandler
                         CreatedBy = userId,
                         CreatedAt = DateTime.UtcNow,
                         CategoryId = category.Id,
+                        NavigationKeywordId1 = keyword1Entity.Id,
+                        NavigationKeywordId2 = keyword2Entity?.Id,
                         Source = string.IsNullOrWhiteSpace(itemRequest.Source) ? null : itemRequest.Source.Trim(),
                         UploadId = request.UploadId,
                         FactualRisk = itemRequest.FactualRisk is >= 0m and <= 1m ? itemRequest.FactualRisk : null,
@@ -393,12 +377,11 @@ internal static class AddItemsBulkHandler
                     Item item = kvp.Value;
                     AddItemsBulk.ItemRequest itemRequest = request.Items[originalIndex];
                     
-                    // Use effective keywords (already adjusted for regular users)
                     List<AddItemsBulk.KeywordRequest>? keywordsToProcess = itemRequest.Keywords;
                     if (keywordsToProcess is null || keywordsToProcess.Count == 0)
-                    {
+                        keywordsToProcess = defaultKeywords;
+                    if (keywordsToProcess is null || keywordsToProcess.Count == 0)
                         continue;
-                    }
                     
                     // For regular users, ensure all keywords are private
                     if (!userContext.IsAdmin)
@@ -439,12 +422,12 @@ internal static class AddItemsBulkHandler
                         // Check cache first
                         if (!keywordCache.TryGetValue(cacheKey, out Keyword? keyword))
                         {
-                            // Find or create keyword
+                            // Find or create keyword (case-insensitive lookup to avoid duplicates)
                             if (keywordRequest.IsPrivate)
                             {
                                 keyword = await db.Keywords
                                     .FirstOrDefaultAsync(k => 
-                                        k.Name == normalizedName && 
+                                        k.Name.ToLower() == normalizedName && 
                                         k.IsPrivate == true &&
                                         k.CreatedBy == userId,
                                         cancellationToken);
@@ -453,7 +436,7 @@ internal static class AddItemsBulkHandler
                             {
                                 keyword = await db.Keywords
                                     .FirstOrDefaultAsync(k => 
-                                        k.Name == normalizedName && 
+                                        k.Name.ToLower() == normalizedName && 
                                         k.IsPrivate == false,
                                         cancellationToken);
                             }
@@ -470,7 +453,8 @@ internal static class AddItemsBulkHandler
                                     Slug = slug,
                                     IsPrivate = keywordRequest.IsPrivate,
                                     CreatedBy = userId,
-                                    CreatedAt = DateTime.UtcNow
+                                    CreatedAt = DateTime.UtcNow,
+                                    IsReviewPending = keywordRequest.IsPrivate
                                 };
                                 db.Keywords.Add(keyword);
                                 await db.SaveChangesAsync(cancellationToken);

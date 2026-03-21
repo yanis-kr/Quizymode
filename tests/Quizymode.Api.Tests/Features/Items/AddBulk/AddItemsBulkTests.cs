@@ -25,13 +25,17 @@ public sealed class AddItemsBulkTests : ItemTestFixture
     [Fact]
     public async Task HandleAsync_ValidRequest_CreatesAllItems()
     {
-        // Arrange
+        var keywords = new List<AddItemsBulk.KeywordRequest> { new("topics", false), new("europe", false) };
         AddItemsBulk.Request request = new(
             IsPrivate: false,
+            Category: "geography",
+            Keyword1: "topics",
+            Keyword2: "europe",
+            Keywords: keywords,
             Items: new List<AddItemsBulk.ItemRequest>
             {
-                new("geography", "What is the capital of France?", "Paris", new List<string> { "Lyon", "Marseille" }, "Paris is the capital"),
-                new("geography", "What is the capital of Germany?", "Berlin", new List<string> { "Munich", "Hamburg" }, "Berlin is the capital")
+                new("What is the capital of France?", "Paris", new List<string> { "Lyon", "Marseille" }, "Paris is the capital"),
+                new("What is the capital of Germany?", "Berlin", new List<string> { "Munich", "Hamburg" }, "Berlin is the capital")
             });
 
         // Act
@@ -70,12 +74,17 @@ public sealed class AddItemsBulkTests : ItemTestFixture
             isPrivate: false,
             createdBy: "test-user");
 
+        var keywords = new List<AddItemsBulk.KeywordRequest> { new("topics", false), new("europe", false) };
         AddItemsBulk.Request request = new(
             IsPrivate: false,
+            Category: "geography",
+            Keyword1: "topics",
+            Keyword2: "europe",
+            Keywords: keywords,
             Items: new List<AddItemsBulk.ItemRequest>
             {
-                new("geography", "What is the capital of France?", "Paris", new List<string> { "Lyon", "Marseille" }, "Duplicate"),
-                new("geography", "What is the capital of Germany?", "Berlin", new List<string> { "Munich" }, "New item")
+                new("What is the capital of France?", "Paris", new List<string> { "Lyon", "Marseille" }, "Duplicate"),
+                new("What is the capital of Germany?", "Berlin", new List<string> { "Munich" }, "New item")
             });
 
         // Act
@@ -99,9 +108,12 @@ public sealed class AddItemsBulkTests : ItemTestFixture
     [Fact]
     public void Validator_EmptyItemsList_ReturnsError()
     {
-        // Arrange
         AddItemsBulk.Request request = new(
             IsPrivate: false,
+            Category: "geography",
+            Keyword1: "topics",
+            Keyword2: "europe",
+            Keywords: new List<AddItemsBulk.KeywordRequest> { new("topics", false), new("europe", false) },
             Items: new List<AddItemsBulk.ItemRequest>());
 
         AddItemsBulk.Validator validator = new(_userContextMock.Object);
@@ -120,7 +132,6 @@ public sealed class AddItemsBulkTests : ItemTestFixture
         // Arrange
         List<AddItemsBulk.ItemRequest> items = Enumerable.Range(1, 101)
             .Select(i => new AddItemsBulk.ItemRequest(
-                "geography",
                 $"Question {i}",
                 $"Answer {i}",
                 new List<string> { "Wrong1" },
@@ -129,6 +140,10 @@ public sealed class AddItemsBulkTests : ItemTestFixture
 
         AddItemsBulk.Request request = new(
             IsPrivate: false,
+            Category: "geography",
+            Keyword1: "topics",
+            Keyword2: "europe",
+            Keywords: new List<AddItemsBulk.KeywordRequest> { new("topics", false), new("europe", false) },
             Items: items);
 
         // Use non-admin user context to test the 100-item limit for regular users
@@ -169,18 +184,19 @@ public sealed class AddItemsBulkTests : ItemTestFixture
             isPrivate: false,
             createdBy: "test-user");
 
+        var keywords = new List<AddItemsBulk.KeywordRequest> { new("topics", false), new("europe", false) };
         AddItemsBulk.Request request = new(
             IsPrivate: false,
+            Category: "geography",
+            Keyword1: "topics",
+            Keyword2: "europe",
+            Keywords: keywords,
             Items: new List<AddItemsBulk.ItemRequest>
             {
-                // Duplicate 1 - should be rejected
-                new("geography", "What is the capital of France?", "Paris", new List<string> { "Lyon", "Marseille" }, "Duplicate 1"),
-                // New item - should be accepted
-                new("geography", "What is the capital of Italy?", "Rome", new List<string> { "Milan", "Naples" }, "New item"),
-                // Duplicate 2 - should be rejected
-                new("geography", "What is the capital of Germany?", "Berlin", new List<string> { "Munich", "Hamburg" }, "Duplicate 2"),
-                // Another new item - should be accepted
-                new("geography", "What is the capital of Spain?", "Madrid", new List<string> { "Barcelona", "Valencia" }, "New item 2")
+                new("What is the capital of France?", "Paris", new List<string> { "Lyon", "Marseille" }, "Duplicate 1"),
+                new("What is the capital of Italy?", "Rome", new List<string> { "Milan", "Naples" }, "New item"),
+                new("What is the capital of Germany?", "Berlin", new List<string> { "Munich", "Hamburg" }, "Duplicate 2"),
+                new("What is the capital of Spain?", "Madrid", new List<string> { "Barcelona", "Valencia" }, "New item 2")
             });
 
         // Act

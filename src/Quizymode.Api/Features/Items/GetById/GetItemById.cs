@@ -179,33 +179,26 @@ public static class GetItemById
         Item item,
         CancellationToken cancellationToken)
     {
-        if (!item.CategoryId.HasValue || item.Category is null)
+        if (!item.CategoryId.HasValue)
             return new List<string>();
 
-        Guid categoryId = item.CategoryId.Value;
-        HashSet<Guid> itemKeywordIds = item.ItemKeywords.Select(ik => ik.KeywordId).ToHashSet();
-        if (itemKeywordIds.Count == 0)
+        if (item.NavigationKeywordId1 == null)
             return new List<string> { "other" };
 
-        // Find rank-1: any item keyword that is a nav rank-1 for this category
-        string? rank1Name = await db.CategoryKeywords
-            .Where(ck => ck.CategoryId == categoryId && ck.NavigationRank == 1 && itemKeywordIds.Contains(ck.KeywordId))
-            .Select(ck => ck.Keyword!.Name)
+        string? rank1Name = await db.Keywords
+            .Where(k => k.Id == item.NavigationKeywordId1)
+            .Select(k => k.Name)
             .FirstOrDefaultAsync(cancellationToken);
-
         if (rank1Name == null)
             return new List<string> { "other" };
 
-        // Find rank-2 under this rank-1: any item keyword that is nav rank-2 with this parent
-        string rank1Lower = rank1Name.ToLower();
-        string? rank2Name = await db.CategoryKeywords
-            .Where(ck => ck.CategoryId == categoryId
-                && ck.NavigationRank == 2
-                && ck.ParentName != null && ck.ParentName.ToLower() == rank1Lower
-                && itemKeywordIds.Contains(ck.KeywordId))
-            .Select(ck => ck.Keyword!.Name)
-            .FirstOrDefaultAsync(cancellationToken);
+        if (item.NavigationKeywordId2 == null)
+            return new List<string> { rank1Name };
 
+        string? rank2Name = await db.Keywords
+            .Where(k => k.Id == item.NavigationKeywordId2)
+            .Select(k => k.Name)
+            .FirstOrDefaultAsync(cancellationToken);
         if (rank2Name != null)
             return new List<string> { rank1Name, rank2Name };
         return new List<string> { rank1Name };

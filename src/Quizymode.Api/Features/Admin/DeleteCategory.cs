@@ -16,7 +16,7 @@ public static class DeleteCategory
             app.MapDelete("admin/categories/{id:guid}", Handler)
                 .WithTags("Admin")
                 .WithSummary("Delete category (Admin only)")
-                .WithDescription("Deletes a category only when it has no items. CategoryKeywords for this category are removed.")
+                .WithDescription("Deletes a category only when it has no items. KeywordRelations for this category are removed.")
                 .RequireAuthorization("Admin")
                 .Produces(StatusCodes.Status204NoContent)
                 .Produces(StatusCodes.Status404NotFound)
@@ -60,11 +60,10 @@ public static class DeleteCategory
                 Error.Conflict("Admin.CategoryHasItems", $"Cannot delete category: it has {itemCount} item(s). Remove or reassign items first."));
         }
 
-        // Remove category keywords (navigation metadata) for this category
-        List<CategoryKeyword> categoryKeywords = await db.CategoryKeywords
-            .Where(ck => ck.CategoryId == id)
+        List<KeywordRelation> relations = await db.KeywordRelations
+            .Where(kr => kr.CategoryId == id)
             .ToListAsync(cancellationToken);
-        db.CategoryKeywords.RemoveRange(categoryKeywords);
+        db.KeywordRelations.RemoveRange(relations);
         db.Categories.Remove(category);
         await db.SaveChangesAsync(cancellationToken);
 

@@ -78,10 +78,26 @@ internal sealed class ItemConfiguration : IEntityTypeConfiguration<Item>
             .IsRequired(false);
 
         // Foreign key relationship to Category
+        builder.Property(x => x.NavigationKeywordId1).IsRequired(false);
+        builder.Property(x => x.NavigationKeywordId2).IsRequired(false);
+
         builder.HasOne(x => x.Category)
             .WithMany(c => c.Items)
             .HasForeignKey(x => x.CategoryId)
             .OnDelete(DeleteBehavior.SetNull);
+
+        builder.HasOne(x => x.NavigationKeyword1)
+            .WithMany()
+            .HasForeignKey(x => x.NavigationKeywordId1)
+            .OnDelete(DeleteBehavior.Restrict);
+
+        builder.HasOne(x => x.NavigationKeyword2)
+            .WithMany()
+            .HasForeignKey(x => x.NavigationKeywordId2)
+            .OnDelete(DeleteBehavior.Restrict);
+
+        builder.HasIndex(x => x.NavigationKeywordId1);
+        builder.HasIndex(x => x.NavigationKeywordId2);
 
         builder.HasIndex(x => x.UploadId);
 

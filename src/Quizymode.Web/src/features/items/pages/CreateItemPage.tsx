@@ -123,8 +123,15 @@ const CreateItemPage = () => {
       formData.factualRisk.trim() !== ""
         ? parseFloat(formData.factualRisk.trim())
         : undefined;
+    if (!formData.navigationRank1.trim() || !formData.navigationRank2.trim()) {
+      setValidationError("Primary topic and subtopic are required");
+      return;
+    }
+
     const data = {
       category: formData.category.trim(),
+      navigationKeyword1: formData.navigationRank1.trim(),
+      navigationKeyword2: formData.navigationRank2.trim(),
       isPrivate: formData.isPrivate,
       question: formData.question.trim(),
       correctAnswer: formData.correctAnswer.trim(),

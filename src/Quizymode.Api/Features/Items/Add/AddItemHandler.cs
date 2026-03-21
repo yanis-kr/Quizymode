@@ -15,6 +15,7 @@ internal static class AddItemHandler
         IUserContext userContext,
         IAuditService auditService,
         ICategoryResolver categoryResolver,
+        IProfanityFilterService profanityFilter,
         CancellationToken cancellationToken)
     {
         try
@@ -51,7 +52,40 @@ internal static class AddItemHandler
             }
 
             Category category = categoryResult.Value!;
-            
+
+            // Validate navigation and item keywords for profanity
+            if (profanityFilter.ContainsProfanity(request.NavigationKeyword1))
+                return Result.Failure<AddItem.Response>(Error.Validation("Item.InvalidNavigationKeyword1", "Primary topic was rejected by content filter."));
+            if (profanityFilter.ContainsProfanity(request.NavigationKeyword2))
+                return Result.Failure<AddItem.Response>(Error.Validation("Item.InvalidNavigationKeyword2", "Subtopic was rejected by content filter."));
+            if (request.Keywords != null)
+            {
+                foreach (var kw in request.Keywords)
+                {
+                    if (!string.IsNullOrWhiteSpace(kw.Name) && profanityFilter.ContainsProfanity(kw.Name))
+                        return Result.Failure<AddItem.Response>(Error.Validation("Item.InvalidKeyword", $"Keyword '{kw.Name}' was rejected by content filter."));
+                }
+            }
+
+            // Resolve navigation keywords (rank-1 and rank-2) via KeywordRelation for this category (only visible relations)
+            string nav1 = request.NavigationKeyword1.Trim().ToLowerInvariant();
+            string nav2 = request.NavigationKeyword2.Trim().ToLowerInvariant();
+            IQueryable<KeywordRelation> nav1Query = db.KeywordRelations
+                .Include(kr => kr.ChildKeyword)
+                .Where(kr => kr.CategoryId == category.Id && kr.ParentKeywordId == null && kr.ChildKeyword.Name.ToLower() == nav1);
+            nav1Query = nav1Query.Where(kr => !kr.IsPrivate || kr.CreatedBy == userId);
+            Guid? nav1Id = await nav1Query.Select(kr => kr.ChildKeywordId).FirstOrDefaultAsync(cancellationToken);
+            if (nav1Id == default)
+                return Result.Failure<AddItem.Response>(Error.Validation("Item.InvalidNavigationKeyword1", $"'{request.NavigationKeyword1}' is not a valid primary topic for category '{category.Name}'."));
+
+            IQueryable<KeywordRelation> nav2Query = db.KeywordRelations
+                .Include(kr => kr.ChildKeyword)
+                .Where(kr => kr.CategoryId == category.Id && kr.ParentKeywordId == nav1Id && kr.ChildKeyword.Name.ToLower() == nav2);
+            nav2Query = nav2Query.Where(kr => !kr.IsPrivate || kr.CreatedBy == userId);
+            Guid? nav2Id = await nav2Query.Select(kr => kr.ChildKeywordId).FirstOrDefaultAsync(cancellationToken);
+            if (nav2Id == default)
+                return Result.Failure<AddItem.Response>(Error.Validation("Item.InvalidNavigationKeyword2", $"'{request.NavigationKeyword2}' is not a valid subtopic under '{request.NavigationKeyword1}' for category '{category.Name}'."));
+
             // Check for duplicates - only for the same user
             // Different users can add the same items
             // Check using CategoryId
@@ -87,6 +121,8 @@ internal static class AddItemHandler
                 CreatedAt = DateTime.UtcNow,
                 ReadyForReview = request.ReadyForReview,
                 CategoryId = category.Id,
+                NavigationKeywordId1 = nav1Id,
+                NavigationKeywordId2 = nav2Id,
                 Source = string.IsNullOrWhiteSpace(request.Source) ? null : request.Source.Trim(),
                 FactualRisk = request.FactualRisk is >= 0m and <= 1m ? request.FactualRisk : null,
                 ReviewComments = string.IsNullOrWhiteSpace(request.ReviewComments) ? null : request.ReviewComments.Trim()
@@ -95,12 +131,18 @@ internal static class AddItemHandler
             db.Items.Add(item);
             await db.SaveChangesAsync(cancellationToken);
 
-            // Handle keywords if provided
-            if (effectiveKeywords is not null && effectiveKeywords.Count > 0)
+            // Ensure nav keywords are in the list so we create ItemKeywords for them
+            List<AddItem.KeywordRequest>? keywordsForItem = effectiveKeywords?.ToList() ?? new List<AddItem.KeywordRequest>();
+            if (!keywordsForItem.Any(k => k.Name.Trim().Equals(request.NavigationKeyword1, StringComparison.OrdinalIgnoreCase)))
+                keywordsForItem.Insert(0, new AddItem.KeywordRequest(request.NavigationKeyword1, effectiveIsPrivate));
+            if (!keywordsForItem.Any(k => k.Name.Trim().Equals(request.NavigationKeyword2, StringComparison.OrdinalIgnoreCase)))
+                keywordsForItem.Add(new AddItem.KeywordRequest(request.NavigationKeyword2, effectiveIsPrivate));
+
+            if (keywordsForItem.Count > 0)
             {
                 List<ItemKeyword> itemKeywords = new();
 
-                foreach (AddItem.KeywordRequest keywordRequest in effectiveKeywords)
+                foreach (AddItem.KeywordRequest keywordRequest in keywordsForItem)
                 {
                     // Normalize keyword name (trim and to lowercase for consistency)
                     string normalizedName = keywordRequest.Name.Trim().ToLowerInvariant();
@@ -109,39 +151,36 @@ internal static class AddItemHandler
                         continue;
                     }
 
-                    // Find or create keyword
+                    // Find or create keyword (case-insensitive lookup to avoid duplicates)
                     Keyword? keyword = null;
                     if (keywordRequest.IsPrivate)
                     {
-                        // Private keyword: must match name, IsPrivate=true, and CreatedBy
                         keyword = await db.Keywords
                             .FirstOrDefaultAsync(k => 
-                                k.Name == normalizedName && 
+                                k.Name.ToLower() == normalizedName && 
                                 k.IsPrivate == true &&
                                 k.CreatedBy == userId,
                                 cancellationToken);
                     }
                     else
                     {
-                        // Global keyword: must match name and IsPrivate=false (CreatedBy doesn't matter)
                         keyword = await db.Keywords
                             .FirstOrDefaultAsync(k => 
-                                k.Name == normalizedName && 
+                                k.Name.ToLower() == normalizedName && 
                                 k.IsPrivate == false,
                                 cancellationToken);
                     }
 
                     if (keyword is null)
                     {
-                        // Create new keyword as non-navigation (no CategoryKeyword entry).
-                        // Admin can later promote keywords into navigation by setting NavigationRank and ParentName.
                         keyword = new Keyword
                         {
                             Id = Guid.NewGuid(),
                             Name = normalizedName,
                             IsPrivate = keywordRequest.IsPrivate,
                             CreatedBy = userId,
-                            CreatedAt = DateTime.UtcNow
+                            CreatedAt = DateTime.UtcNow,
+                            IsReviewPending = keywordRequest.IsPrivate
                         };
                         db.Keywords.Add(keyword);
                         await db.SaveChangesAsync(cancellationToken);
@@ -158,11 +197,8 @@ internal static class AddItemHandler
                     itemKeywords.Add(itemKeyword);
                 }
 
-                if (itemKeywords.Count > 0)
-                {
-                    db.ItemKeywords.AddRange(itemKeywords);
-                    await db.SaveChangesAsync(cancellationToken);
-                }
+                db.ItemKeywords.AddRange(itemKeywords);
+                await db.SaveChangesAsync(cancellationToken);
             }
 
             // Log audit entry

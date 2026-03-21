@@ -127,7 +127,7 @@ public static class GetKeywords
             }
 
             // Determine navigation layer to return
-            int? targetRank = await DetermineTargetRankAsync(request.SelectedKeywords, db, categoryId.Value, cancellationToken);
+            int? targetRank = await DetermineTargetRankAsync(request.SelectedKeywords, db, categoryId.Value, userContext, cancellationToken);
             
             if (!targetRank.HasValue)
             {
@@ -221,6 +221,7 @@ public static class GetKeywords
         List<string>? selectedKeywords,
         ApplicationDbContext db,
         Guid categoryId,
+        IUserContext userContext,
         CancellationToken cancellationToken)
     {
         if (selectedKeywords is null || selectedKeywords.Count == 0)
@@ -228,16 +229,20 @@ public static class GetKeywords
             return 1; // Show rank-1 keywords
         }
 
-        // Check if any selected keyword is a rank-1 navigation keyword
         List<string> normalizedKeywords = selectedKeywords
             .Select(k => k.Trim().ToLower())
             .ToList();
 
-        bool hasRank1Keyword = await db.CategoryKeywords
-            .Where(ck => ck.CategoryId == categoryId
-                && ck.NavigationRank == 1
-                && normalizedKeywords.Contains(ck.Keyword.Name.ToLower()))
-            .AnyAsync(cancellationToken);
+        IQueryable<KeywordRelation> rank1Query = db.KeywordRelations
+            .Include(kr => kr.ChildKeyword)
+            .Where(kr => kr.CategoryId == categoryId
+                && kr.ParentKeywordId == null
+                && normalizedKeywords.Contains(kr.ChildKeyword.Name.ToLower()));
+        if (!userContext.IsAuthenticated || string.IsNullOrEmpty(userContext.UserId))
+            rank1Query = rank1Query.Where(kr => !kr.IsPrivate);
+        else
+            rank1Query = rank1Query.Where(kr => !kr.IsPrivate || kr.CreatedBy == userContext.UserId);
+        bool hasRank1Keyword = await rank1Query.AnyAsync(cancellationToken);
 
         if (!hasRank1Keyword)
         {
@@ -276,24 +281,24 @@ public static class GetKeywords
         string safeCurrentUserId = currentUserId ?? string.Empty;
         int isAuthenticatedInt = isAuthenticated ? 1 : 0;
 
-        // Build WHERE clause for parent filter (for rank-2)
-        string? parentName = null;
+        // For rank-2, resolve parent (rank-1) keyword ID from selected keywords (only visible relations)
+        Guid? parentKeywordId = null;
         if (targetRank == 2 && selectedKeywords is not null && selectedKeywords.Count > 0)
         {
-            // Find the rank-1 keyword from selected keywords
-            List<string> normalizedSelected = selectedKeywords
-                .Select(k => k.Trim().ToLower())
-                .ToList();
-            string? rank1Keyword = await db.CategoryKeywords
-                .Where(ck => ck.CategoryId == categoryId
-                    && ck.NavigationRank == 1
-                    && normalizedSelected.Contains(ck.Keyword.Name.ToLower()))
-                .Select(ck => ck.Keyword.Name)
-                .FirstOrDefaultAsync(cancellationToken);
-
-            parentName = rank1Keyword?.ToLower();
+            List<string> normalizedSelected = selectedKeywords.Select(k => k.Trim().ToLower()).ToList();
+            IQueryable<KeywordRelation> parentQuery = db.KeywordRelations
+                .Include(kr => kr.ChildKeyword)
+                .Where(kr => kr.CategoryId == categoryId && kr.ParentKeywordId == null && normalizedSelected.Contains(kr.ChildKeyword.Name.ToLower()));
+            if (!isAuthenticated)
+                parentQuery = parentQuery.Where(kr => !kr.IsPrivate);
+            else
+                parentQuery = parentQuery.Where(kr => !kr.IsPrivate || kr.CreatedBy == safeCurrentUserId);
+            parentKeywordId = await parentQuery.Select(kr => kr.ChildKeywordId).FirstOrDefaultAsync(cancellationToken);
+            if (parentKeywordId == default)
+                parentKeywordId = null;
         }
 
+        // Rank 1 = ParentKeywordId IS NULL; Rank 2 = ParentKeywordId = parent keyword ID. Item count from Items where Nav1 or Nav2 = ChildKeywordId.
         string sql = @"
             SELECT
                 k.""Name"",
@@ -326,31 +331,29 @@ public static class GetKeywords
                         END), 2)::double precision
                     ELSE NULL
                 END AS ""AverageRating"",
-                ck.""NavigationRank""::int AS ""NavigationRank"",
-                ck.""SortRank""::int AS ""SortRank"",
-                ck.""Description""
-            FROM ""CategoryKeywords"" ck
-            INNER JOIN ""Keywords"" k ON k.""Id"" = ck.""KeywordId""
-            LEFT JOIN ""ItemKeywords"" ik ON ik.""KeywordId"" = k.""Id""
-            LEFT JOIN ""Items"" i ON i.""Id"" = ik.""ItemId"" AND i.""CategoryId"" = ck.""CategoryId""
+                (CASE WHEN kr.""ParentKeywordId"" IS NULL THEN 1 ELSE 2 END)::int AS ""NavigationRank"",
+                kr.""SortOrder""::int AS ""SortRank"",
+                kr.""Description""
+            FROM ""KeywordRelations"" kr
+            INNER JOIN ""Keywords"" k ON k.""Id"" = kr.""ChildKeywordId""
+            LEFT JOIN ""Items"" i ON i.""CategoryId"" = kr.""CategoryId"" AND (i.""NavigationKeywordId1"" = kr.""ChildKeywordId"" OR i.""NavigationKeywordId2"" = kr.""ChildKeywordId"")
             LEFT JOIN ""Categories"" c ON c.""Id"" = i.""CategoryId""
             LEFT JOIN ""Ratings"" r ON r.""ItemId"" = i.""Id"" AND r.""Stars"" IS NOT NULL
-            WHERE ck.""CategoryId"" = @CategoryId
-                AND ck.""NavigationRank"" = @TargetRank
+            WHERE kr.""CategoryId"" = @CategoryId
+                AND ((@ParentKeywordId IS NULL AND kr.""ParentKeywordId"" IS NULL) OR (kr.""ParentKeywordId"" = @ParentKeywordId))
+                AND ((@IsAuthenticated = 0 AND kr.""IsPrivate"" = false) OR (@IsAuthenticated = 1 AND (kr.""IsPrivate"" = false OR (kr.""IsPrivate"" = true AND kr.""CreatedBy"" = @CurrentUserId))))
                 AND (
                     (@IsAuthenticated = 0 AND k.""IsPrivate"" = false)
                     OR (@IsAuthenticated = 1 AND (k.""IsPrivate"" = false OR (k.""IsPrivate"" = true AND k.""CreatedBy"" = @CurrentUserId)))
                 )
-                AND (@ParentName IS NULL OR LOWER(ck.""ParentName"") = @ParentName)
-            GROUP BY k.""Name"", ck.""NavigationRank"", ck.""SortRank"", ck.""Description""
-            ORDER BY ck.""SortRank"" ASC, k.""Name"" ASC";
+            GROUP BY k.""Name"", kr.""ParentKeywordId"", kr.""SortOrder"", kr.""Description""
+            ORDER BY kr.""SortOrder"" ASC, k.""Name"" ASC";
 
         DynamicParameters parameters = new DynamicParameters();
         parameters.Add("CategoryId", categoryId);
-        parameters.Add("TargetRank", targetRank);
         parameters.Add("IsAuthenticated", isAuthenticatedInt);
         parameters.Add("CurrentUserId", safeCurrentUserId);
-        parameters.Add("ParentName", parentName, System.Data.DbType.String);
+        parameters.Add("ParentKeywordId", parentKeywordId, System.Data.DbType.Guid);
 
         List<KeywordResponse> keywords = (await connection.QueryAsync<KeywordRow>(
             new CommandDefinition(
@@ -401,17 +404,24 @@ public static class GetKeywords
             return new List<KeywordResponse>();
         }
 
-        // Item IDs in category with visibility that have ALL path keywords
+        // Item IDs in category with visibility: match by NavigationKeywordId1/2 when path length 1 or 2, else by ItemKeywords
         IQueryable<Item> itemsQuery = db.Items.Where(i => i.CategoryId == categoryId);
         if (!userContext.IsAuthenticated || string.IsNullOrEmpty(userContext.UserId))
             itemsQuery = itemsQuery.Where(i => !i.IsPrivate);
         else
             itemsQuery = itemsQuery.Where(i => !i.IsPrivate || (i.IsPrivate && i.CreatedBy == userContext.UserId));
 
-        foreach (Guid kid in pathKeywordIds)
+        if (pathKeywordIds.Count == 1)
+            itemsQuery = itemsQuery.Where(i => i.NavigationKeywordId1 == pathKeywordIds[0]);
+        else if (pathKeywordIds.Count == 2)
+            itemsQuery = itemsQuery.Where(i => i.NavigationKeywordId1 == pathKeywordIds[0] && i.NavigationKeywordId2 == pathKeywordIds[1]);
+        else
         {
-            Guid captured = kid;
-            itemsQuery = itemsQuery.Where(i => i.ItemKeywords.Any(ik => ik.KeywordId == captured));
+            foreach (Guid kid in pathKeywordIds)
+            {
+                Guid captured = kid;
+                itemsQuery = itemsQuery.Where(i => i.ItemKeywords.Any(ik => ik.KeywordId == captured));
+            }
         }
 
         List<Guid> matchingItemIds = await itemsQuery.Select(i => i.Id).ToListAsync(cancellationToken);
@@ -480,30 +490,20 @@ public static class GetKeywords
         string? currentUserId = userContext.UserId;
         bool isAuthenticated = userContext.IsAuthenticated && !string.IsNullOrEmpty(currentUserId);
 
-        // Get all rank-1 keywords for this category
-        List<Guid> rank1KeywordIds = await db.CategoryKeywords
-            .Where(ck => ck.CategoryId == categoryId && ck.NavigationRank == 1)
-            .Select(ck => ck.KeywordId)
+        List<Guid> rank1KeywordIds = await db.KeywordRelations
+            .Where(kr => kr.CategoryId == categoryId && kr.ParentKeywordId == null)
+            .Select(kr => kr.ChildKeywordId)
             .ToListAsync(cancellationToken);
 
-        IQueryable<Item> query = db.Items
-            .Where(i => i.CategoryId == categoryId);
+        IQueryable<Item> query = db.Items.Where(i => i.CategoryId == categoryId);
 
-        // Apply visibility filter
         if (!isAuthenticated || string.IsNullOrEmpty(currentUserId))
-        {
             query = query.Where(i => !i.IsPrivate);
-        }
         else
-        {
             query = query.Where(i => !i.IsPrivate || (i.IsPrivate && i.CreatedBy == currentUserId));
-        }
 
-        // Items that have no rank-1 keyword assigned
         if (rank1KeywordIds.Count > 0)
-        {
-            query = query.Where(i => !i.ItemKeywords.Any(ik => rank1KeywordIds.Contains(ik.KeywordId)));
-        }
+            query = query.Where(i => i.NavigationKeywordId1 == null || !rank1KeywordIds.Contains(i.NavigationKeywordId1.Value));
 
         return await query.CountAsync(cancellationToken);
     }

@@ -435,18 +435,18 @@ internal sealed class ItemQueryBuilder
         IQueryable<Item> query,
         Guid categoryId)
     {
-        // Get all rank-1 keywords for this category
-        List<Guid> rank1KeywordIds = await _db.CategoryKeywords
-            .Where(ck => ck.CategoryId == categoryId && ck.NavigationRank == 1)
-            .Select(ck => ck.KeywordId)
+        IQueryable<KeywordRelation> rank1Query = _db.KeywordRelations
+            .Where(kr => kr.CategoryId == categoryId && kr.ParentKeywordId == null);
+        if (!_userContext.IsAuthenticated || string.IsNullOrEmpty(_userContext.UserId))
+            rank1Query = rank1Query.Where(kr => !kr.IsPrivate);
+        else
+            rank1Query = rank1Query.Where(kr => !kr.IsPrivate || kr.CreatedBy == _userContext.UserId);
+        List<Guid> rank1KeywordIds = await rank1Query
+            .Select(kr => kr.ChildKeywordId)
             .ToListAsync(_cancellationToken);
 
-        // Items that have no rank-1 keyword assigned
         if (rank1KeywordIds.Count > 0)
-        {
-            query = query.Where(i => !i.ItemKeywords.Any(ik => rank1KeywordIds.Contains(ik.KeywordId)));
-        }
-        // If no rank-1 keywords exist, all items in category match "other"
+            query = query.Where(i => i.NavigationKeywordId1 == null || !rank1KeywordIds.Contains(i.NavigationKeywordId1.Value));
 
         return Result.Success(query);
     }
