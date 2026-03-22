@@ -94,6 +94,7 @@ const isOnPublicRoute = (): boolean => {
   const publicRoutes = [
     "/",
     "/categories",
+    "/collections",
     "/login",
     "/signup",
     "/explore",

@@ -52,6 +52,7 @@ public sealed class UpdateItemTests : ItemTestFixture
             _userContextMock.Object,
             _auditServiceMock.Object,
             CategoryResolver,
+            ProfanityFilter,
             CancellationToken.None);
 
         // Assert
@@ -112,6 +113,7 @@ public sealed class UpdateItemTests : ItemTestFixture
             _userContextMock.Object,
             _auditServiceMock.Object,
             CategoryResolver,
+            ProfanityFilter,
             CancellationToken.None);
 
         // Assert
@@ -155,6 +157,7 @@ public sealed class UpdateItemTests : ItemTestFixture
             _userContextMock.Object,
             _auditServiceMock.Object,
             CategoryResolver,
+            ProfanityFilter,
             CancellationToken.None);
 
         // Assert
@@ -189,6 +192,7 @@ public sealed class UpdateItemTests : ItemTestFixture
             _userContextMock.Object,
             _auditServiceMock.Object,
             CategoryResolver,
+            ProfanityFilter,
             CancellationToken.None);
 
         // Assert
@@ -222,6 +226,7 @@ public sealed class UpdateItemTests : ItemTestFixture
             _userContextMock.Object,
             _auditServiceMock.Object,
             CategoryResolver,
+            ProfanityFilter,
             CancellationToken.None);
 
         // Assert

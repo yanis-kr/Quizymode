@@ -86,14 +86,14 @@ const Layout = ({ children }: LayoutProps) => {
                 >
                   Categories
                 </Link>
+                <Link
+                  to="/collections"
+                  className={desktopNavLinkClass(isPathActive("/collections"))}
+                >
+                  Collections
+                </Link>
                 {isAuthenticated && (
                   <>
-                    <Link
-                      to="/collections"
-                      className={desktopNavLinkClass(isPathActive("/collections"))}
-                    >
-                      Collections
-                    </Link>
                     <Link
                       to="/items/add"
                       className={desktopNavLinkClass(isPathActive("/items"))}
@@ -185,15 +185,15 @@ const Layout = ({ children }: LayoutProps) => {
               >
                 Categories
               </Link>
+              <Link
+                to="/collections"
+                className={mobileNavLinkClass(isPathActive("/collections"))}
+                onClick={closeMobileMenu}
+              >
+                Collections
+              </Link>
               {isAuthenticated && (
                 <>
-                  <Link
-                    to="/collections"
-                    className={mobileNavLinkClass(isPathActive("/collections"))}
-                    onClick={closeMobileMenu}
-                  >
-                    Collections
-                  </Link>
                   <Link
                     to="/items/add"
                     className={mobileNavLinkClass(isPathActive("/items"))}

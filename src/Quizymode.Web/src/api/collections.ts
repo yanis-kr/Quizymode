@@ -57,15 +57,25 @@ export const collectionsApi = {
     return response.data;
   },
 
-  discover: async (
-    q?: string,
-    page?: number,
-    pageSize?: number
-  ): Promise<DiscoverCollectionsResponse> => {
+  discover: async (options: {
+    q?: string;
+    page?: number;
+    pageSize?: number;
+    /** Category name (global navigation) */
+    category?: string;
+    /** Comma-separated L1 / L2 navigation keyword names */
+    keywords?: string;
+    /** Comma-separated item tag keyword names */
+    tags?: string;
+  } = {}): Promise<DiscoverCollectionsResponse> => {
     const params = new URLSearchParams();
+    const { q, page, pageSize, category, keywords, tags } = options;
     if (q != null && q !== "") params.set("q", q);
     if (page != null) params.set("page", String(page));
     if (pageSize != null) params.set("pageSize", String(pageSize));
+    if (category != null && category !== "") params.set("category", category);
+    if (keywords != null && keywords !== "") params.set("keywords", keywords);
+    if (tags != null && tags !== "") params.set("tags", tags);
     const response = await apiClient.get<DiscoverCollectionsResponse>(
       `/collections/discover?${params.toString()}`
     );

@@ -49,6 +49,7 @@ public sealed class AddItemTests : ItemTestFixture
             _userContextMock.Object,
             _auditServiceMock.Object,
             CategoryResolver,
+            ProfanityFilter,
             CancellationToken.None);
 
         // Assert
@@ -103,6 +104,7 @@ public sealed class AddItemTests : ItemTestFixture
             _userContextMock.Object,
             _auditServiceMock.Object,
             CategoryResolver,
+            ProfanityFilter,
             CancellationToken.None);
 
         // Assert - AddItem allows duplicates, so it should succeed

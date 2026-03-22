@@ -1,9 +1,11 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useMemo } from "react";
 import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
 import { collectionsApi } from "@/api/collections";
+import { categoriesApi } from "@/api/categories";
+import { keywordsApi } from "@/api/keywords";
 import { useAuth } from "@/contexts/AuthContext";
 import { useActiveCollection } from "@/hooks/useActiveCollection";
-import { Navigate, Link, useSearchParams, useNavigate } from "react-router-dom";
+import { Link, useSearchParams, useNavigate } from "react-router-dom";
 import {
   TrashIcon,
   ListBulletIcon,
@@ -13,7 +15,6 @@ import {
   MagnifyingGlassIcon,
   PencilSquareIcon,
   LinkIcon,
-  CheckCircleIcon,
   CircleStackIcon,
   StarIcon,
 } from "@heroicons/react/24/outline";
@@ -21,7 +22,11 @@ import { StarIcon as StarIconSolid } from "@heroicons/react/24/solid";
 import { BookmarkIcon as BookmarkIconSolid, CheckCircleIcon as CheckCircleIconSolid } from "@heroicons/react/24/solid";
 import LoadingSpinner from "@/components/LoadingSpinner";
 import ErrorMessage from "@/components/ErrorMessage";
-import type { CollectionDiscoverItem, CollectionRatingResponse } from "@/types/api";
+import type {
+  CollectionDiscoverItem,
+  CollectionRatingResponse,
+  CreateCollectionRequest,
+} from "@/types/api";
 
 type TabId = "mine" | "bookmarked" | "discover";
 
@@ -49,6 +54,8 @@ interface CollectionCardProps {
   isDeletePending?: boolean;
   isEditPending?: boolean;
   showRating?: boolean;
+  /** When true, show average rating only (no submit). Use for anonymous users. */
+  readOnlyRating?: boolean;
   onRate?: (id: string, stars: number) => void;
 }
 
@@ -76,6 +83,7 @@ function CollectionCard({
   isDeletePending,
   isEditPending,
   showRating,
+  readOnlyRating,
   onRate,
 }: CollectionCardProps) {
   const isActive = activeCollectionId === id;
@@ -253,7 +261,28 @@ function CollectionCard({
           )}
         </div>
       </div>
-      {showRating && (
+      {showRating && readOnlyRating && (
+        <div className="flex flex-wrap items-center gap-2 mt-3 pt-3 border-t border-gray-100">
+          <span className="text-sm font-medium text-gray-700">Rating</span>
+          <div className="flex items-center gap-0.5" aria-hidden>
+            {[1, 2, 3, 4, 5].map((star) => {
+              const avg = ratingData?.averageStars;
+              const filled = avg != null && star <= Math.round(avg);
+              return filled ? (
+                <StarIconSolid key={star} className="h-5 w-5 text-amber-500" />
+              ) : (
+                <StarIcon key={star} className="h-5 w-5 text-gray-300" />
+              );
+            })}
+          </div>
+          <span className="text-xs text-gray-500">
+            {ratingData?.averageStars != null
+              ? `${ratingData.averageStars} (${ratingData.count})`
+              : "No ratings yet"}
+          </span>
+        </div>
+      )}
+      {showRating && !readOnlyRating && (
         <div className="flex flex-wrap items-center gap-2 mt-3 pt-3 border-t border-gray-100">
           <span className="text-sm font-medium text-gray-700">Rating</span>
           <div className="flex items-center gap-0.5">
@@ -334,6 +363,10 @@ const CollectionsPage = () => {
   const [activeTab, setActiveTab] = useState<TabId>(tabParam && ["mine", "bookmarked", "discover"].includes(tabParam) ? tabParam : "mine");
   const [discoverQuery, setDiscoverQuery] = useState("");
   const [discoverPage, setDiscoverPage] = useState(1);
+  const [discoverCategory, setDiscoverCategory] = useState("");
+  const [discoverNav1, setDiscoverNav1] = useState("");
+  const [discoverNav2, setDiscoverNav2] = useState("");
+  const [discoverTags, setDiscoverTags] = useState("");
   const [collectionIdInput, setCollectionIdInput] = useState("");
   const navigate = useNavigate();
 
@@ -343,7 +376,24 @@ const CollectionsPage = () => {
     }
   }, [tabParam]);
 
+  useEffect(() => {
+    if (authLoading || isAuthenticated) return;
+    if (activeTab === "mine" || activeTab === "bookmarked") {
+      setActiveTab("discover");
+      setSearchParams((prev) => {
+        const next = new URLSearchParams(prev);
+        next.set("tab", "discover");
+        return next;
+      });
+    }
+  }, [authLoading, isAuthenticated, activeTab, setSearchParams]);
+
+  useEffect(() => {
+    if (!discoverNav1.trim()) setDiscoverNav2("");
+  }, [discoverNav1]);
+
   const setTab = (tab: TabId) => {
+    if (!isAuthenticated && (tab === "mine" || tab === "bookmarked")) return;
     setActiveTab(tab);
     setSearchParams((prev) => {
       const next = new URLSearchParams(prev);
@@ -351,6 +401,15 @@ const CollectionsPage = () => {
       return next;
     });
   };
+
+  const discoverKeywordsParam = useMemo(() => {
+    if (!discoverCategory.trim()) return undefined;
+    const k1 = discoverNav1.trim();
+    const k2 = discoverNav2.trim();
+    if (k2) return `${k1},${k2}`;
+    if (k1) return k1;
+    return undefined;
+  }, [discoverCategory, discoverNav1, discoverNav2]);
 
   const { data, isLoading, error, refetch } = useQuery({
     queryKey: ["collections"],
@@ -365,15 +424,77 @@ const CollectionsPage = () => {
     enabled: isAuthenticated && !authLoading && activeTab === "bookmarked",
   });
 
-  const { data: discoverData, isLoading: discoverLoading } = useQuery({
-    queryKey: ["collections", "discover", discoverQuery, discoverPage],
-    queryFn: () => collectionsApi.discover(discoverQuery || undefined, discoverPage, 12),
+  const { data: discoverCategoriesData } = useQuery({
+    queryKey: ["categories"],
+    queryFn: () => categoriesApi.getAll(),
     enabled: activeTab === "discover",
   });
 
+  const { data: discoverRank1Data, isLoading: discoverRank1Loading } = useQuery({
+    queryKey: ["keywords", "rank1", "discover", discoverCategory],
+    queryFn: () => keywordsApi.getNavigationKeywords(discoverCategory, []),
+    enabled: activeTab === "discover" && !!discoverCategory.trim(),
+  });
+
+  const { data: discoverRank2Data, isLoading: discoverRank2Loading } = useQuery({
+    queryKey: ["keywords", "rank2", "discover", discoverCategory, discoverNav1],
+    queryFn: () => keywordsApi.getNavigationKeywords(discoverCategory, [discoverNav1]),
+    enabled:
+      activeTab === "discover" && !!discoverCategory.trim() && !!discoverNav1.trim(),
+  });
+
+  const { data: discoverData, isLoading: discoverLoading } = useQuery({
+    queryKey: [
+      "collections",
+      "discover",
+      discoverQuery,
+      discoverPage,
+      discoverCategory,
+      discoverKeywordsParam,
+      discoverTags,
+    ],
+    queryFn: () =>
+      collectionsApi.discover({
+        q: discoverQuery || undefined,
+        page: discoverPage,
+        pageSize: 12,
+        category: discoverCategory.trim() || undefined,
+        keywords: discoverKeywordsParam,
+        tags: discoverTags.trim() || undefined,
+      }),
+    enabled: activeTab === "discover",
+  });
+
+  const discoverRank1Options = useMemo(
+    () =>
+      (discoverRank1Data?.keywords ?? []).filter((k) => k.name.toLowerCase() !== "other"),
+    [discoverRank1Data]
+  );
+
+  const discoverRank2Options = useMemo(
+    () =>
+      (discoverRank2Data?.keywords ?? []).filter((k) => k.name.toLowerCase() !== "other"),
+    [discoverRank2Data]
+  );
+
+  const sortedDiscoverCategories = useMemo(
+    () =>
+      [...(discoverCategoriesData?.categories ?? [])].sort((a, b) =>
+        a.category.localeCompare(b.category)
+      ),
+    [discoverCategoriesData]
+  );
+
+  const clearDiscoverFilters = () => {
+    setDiscoverCategory("");
+    setDiscoverNav1("");
+    setDiscoverNav2("");
+    setDiscoverTags("");
+    setDiscoverPage(1);
+  };
+
   const createMutation = useMutation({
-    mutationFn: (payload: { name: string; isPublic?: boolean }) =>
-      collectionsApi.create(payload),
+    mutationFn: (payload: CreateCollectionRequest) => collectionsApi.create(payload),
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ["collections"] });
       setShowCreateModal(false);
@@ -484,13 +605,15 @@ const CollectionsPage = () => {
   const bookmarkedCollections = bookmarksData?.collections ?? [];
   const discoverItems = discoverData?.items ?? [];
   const discoverTotal = discoverData?.totalCount ?? 0;
-
-  const currentList = activeTab === "mine" ? myCollections : activeTab === "bookmarked" ? bookmarkedCollections : discoverItems;
+  const discoverHasActiveFilters =
+    !!discoverQuery.trim() ||
+    !!discoverCategory.trim() ||
+    !!discoverNav1.trim() ||
+    !!discoverNav2.trim() ||
+    !!discoverTags.trim();
 
   if (authLoading) return <LoadingSpinner />;
-  if (!authLoading && !isAuthenticated) return <Navigate to="/login" replace />;
 
-  const showMineContent = activeTab === "mine" && (isLoading || error || myCollections.length > 0 || !isLoading);
   if (activeTab === "mine" && isLoading) return <LoadingSpinner />;
   if (activeTab === "mine" && error) {
     return (
@@ -506,28 +629,37 @@ const CollectionsPage = () => {
       <div className="mb-6">
         <h1 className="text-3xl font-bold text-gray-900 mb-2">Collections</h1>
         <p className="text-gray-600 text-sm">
-          Your collections, bookmarks, and discover public collections. You can also open a collection by ID.
+          {isAuthenticated
+            ? "Your collections, bookmarks, and discover public collections. You can also open a collection by ID."
+            : "Browse public collections by topic or search. Sign in to manage your own collections and bookmarks. You can open a collection by ID."}
         </p>
       </div>
 
       <div className="flex flex-wrap items-center justify-between gap-4 mb-6">
         <div className="flex rounded-lg border border-gray-200 overflow-hidden bg-white">
-          {(["mine", "bookmarked", "discover"] as const).map((tab) => (
-            <button
-              key={tab}
-              type="button"
-              onClick={() => setTab(tab)}
-              className={`px-4 py-2 text-sm font-medium capitalize ${
-                activeTab === tab
-                  ? "bg-indigo-600 text-white"
-                  : "bg-white text-gray-700 hover:bg-gray-50"
-              }`}
-            >
-              {tab === "mine" ? "Mine" : tab === "bookmarked" ? "Bookmarked" : "Discover"}
-            </button>
-          ))}
+          {(["mine", "bookmarked", "discover"] as const).map((tab) => {
+            const locked = !isAuthenticated && (tab === "mine" || tab === "bookmarked");
+            return (
+              <button
+                key={tab}
+                type="button"
+                disabled={locked}
+                title={locked ? "Sign in to use this tab" : undefined}
+                onClick={() => setTab(tab)}
+                className={`px-4 py-2 text-sm font-medium capitalize ${
+                  activeTab === tab
+                    ? "bg-indigo-600 text-white"
+                    : locked
+                      ? "bg-gray-50 text-gray-400 cursor-not-allowed"
+                      : "bg-white text-gray-700 hover:bg-gray-50"
+                }`}
+              >
+                {tab === "mine" ? "Mine" : tab === "bookmarked" ? "Bookmarked" : "Discover"}
+              </button>
+            );
+          })}
         </div>
-      {activeTab === "mine" && (
+      {activeTab === "mine" && isAuthenticated && (
         <button
           onClick={() => setShowCreateModal(true)}
           className="px-4 py-2 bg-indigo-600 text-white rounded-md hover:bg-indigo-700"
@@ -545,45 +677,140 @@ const CollectionsPage = () => {
       )}
 
       {activeTab === "discover" && (
-        <div className="mb-4 flex flex-wrap items-center gap-4">
-          <div className="flex flex-wrap items-center gap-2">
-            <div className="relative flex-1 min-w-[200px] max-w-md">
-              <MagnifyingGlassIcon className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-gray-400" />
+        <div className="mb-4 space-y-4">
+          <div className="flex flex-wrap items-center gap-4">
+            <div className="flex flex-wrap items-center gap-2">
+              <div className="relative flex-1 min-w-[200px] max-w-md">
+                <MagnifyingGlassIcon className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-gray-400" />
+                <input
+                  type="search"
+                  placeholder="Search public collections..."
+                  value={discoverQuery}
+                  onChange={(e) => {
+                    setDiscoverQuery(e.target.value);
+                    setDiscoverPage(1);
+                  }}
+                  onKeyDown={(e) => e.key === "Enter" && setDiscoverPage(1)}
+                  className="w-full pl-10 pr-3 py-2 border border-gray-300 rounded-md text-sm focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500"
+                />
+              </div>
+              <button
+                type="button"
+                onClick={() => setDiscoverPage(1)}
+                className="px-3 py-2 bg-gray-100 text-gray-700 rounded-md hover:bg-gray-200 text-sm"
+              >
+                Search
+              </button>
+            </div>
+            <div className="flex items-center gap-2">
               <input
-                type="search"
-                placeholder="Search public collections..."
-                value={discoverQuery}
+                type="text"
+                placeholder="Collection ID (e.g. from link)"
+                value={collectionIdInput}
+                onChange={(e) => setCollectionIdInput(e.target.value.trim())}
+                onKeyDown={(e) => e.key === "Enter" && handleOpenCollectionById()}
+                className="min-w-[240px] px-3 py-2 border border-gray-300 rounded-md text-sm focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 font-mono"
+              />
+              <button
+                type="button"
+                onClick={handleOpenCollectionById}
+                className="px-3 py-2 bg-indigo-600 text-white rounded-md hover:bg-indigo-700 text-sm whitespace-nowrap"
+              >
+                Open by ID
+              </button>
+            </div>
+          </div>
+          <div className="flex flex-wrap items-end gap-3 p-3 bg-white border border-gray-200 rounded-lg">
+            <div>
+              <label htmlFor="discover-category" className="block text-xs font-medium text-gray-600 mb-1">
+                Category
+              </label>
+              <select
+                id="discover-category"
+                value={discoverCategory}
                 onChange={(e) => {
-                  setDiscoverQuery(e.target.value);
+                  setDiscoverCategory(e.target.value);
+                  setDiscoverNav1("");
+                  setDiscoverNav2("");
                   setDiscoverPage(1);
                 }}
-                onKeyDown={(e) => e.key === "Enter" && setDiscoverPage(1)}
-                className="w-full pl-10 pr-3 py-2 border border-gray-300 rounded-md text-sm focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500"
+                className="min-w-[160px] px-2 py-2 border border-gray-300 rounded-md text-sm focus:ring-2 focus:ring-indigo-500"
+              >
+                <option value="">All categories</option>
+                {sortedDiscoverCategories.map((c) => (
+                  <option key={c.category} value={c.category}>
+                    {c.category}
+                  </option>
+                ))}
+              </select>
+            </div>
+            <div>
+              <label htmlFor="discover-nav1" className="block text-xs font-medium text-gray-600 mb-1">
+                Topic (L1)
+              </label>
+              <select
+                id="discover-nav1"
+                value={discoverNav1}
+                disabled={!discoverCategory.trim() || discoverRank1Loading}
+                onChange={(e) => {
+                  setDiscoverNav1(e.target.value);
+                  setDiscoverNav2("");
+                  setDiscoverPage(1);
+                }}
+                className="min-w-[140px] px-2 py-2 border border-gray-300 rounded-md text-sm focus:ring-2 focus:ring-indigo-500 disabled:bg-gray-100"
+              >
+                <option value="">Any</option>
+                {discoverRank1Options.map((k) => (
+                  <option key={k.name} value={k.name}>
+                    {k.name}
+                  </option>
+                ))}
+              </select>
+            </div>
+            <div>
+              <label htmlFor="discover-nav2" className="block text-xs font-medium text-gray-600 mb-1">
+                Subtopic (L2)
+              </label>
+              <select
+                id="discover-nav2"
+                value={discoverNav2}
+                disabled={!discoverNav1.trim() || discoverRank2Loading}
+                onChange={(e) => {
+                  setDiscoverNav2(e.target.value);
+                  setDiscoverPage(1);
+                }}
+                className="min-w-[140px] px-2 py-2 border border-gray-300 rounded-md text-sm focus:ring-2 focus:ring-indigo-500 disabled:bg-gray-100"
+              >
+                <option value="">Any</option>
+                {discoverRank2Options.map((k) => (
+                  <option key={k.name} value={k.name}>
+                    {k.name}
+                  </option>
+                ))}
+              </select>
+            </div>
+            <div className="flex-1 min-w-[180px] max-w-xs">
+              <label htmlFor="discover-tags" className="block text-xs font-medium text-gray-600 mb-1">
+                Item tags
+              </label>
+              <input
+                id="discover-tags"
+                type="text"
+                placeholder="e.g. s3, ec2"
+                value={discoverTags}
+                onChange={(e) => {
+                  setDiscoverTags(e.target.value);
+                  setDiscoverPage(1);
+                }}
+                className="w-full px-2 py-2 border border-gray-300 rounded-md text-sm focus:ring-2 focus:ring-indigo-500"
               />
             </div>
             <button
               type="button"
-              onClick={() => setDiscoverPage(1)}
-              className="px-3 py-2 bg-gray-100 text-gray-700 rounded-md hover:bg-gray-200 text-sm"
+              onClick={clearDiscoverFilters}
+              className="px-3 py-2 text-sm text-gray-700 border border-gray-300 rounded-md hover:bg-gray-50"
             >
-              Search
-            </button>
-          </div>
-          <div className="flex items-center gap-2">
-            <input
-              type="text"
-              placeholder="Collection ID (e.g. from link)"
-              value={collectionIdInput}
-              onChange={(e) => setCollectionIdInput(e.target.value.trim())}
-              onKeyDown={(e) => e.key === "Enter" && handleOpenCollectionById()}
-              className="min-w-[240px] px-3 py-2 border border-gray-300 rounded-md text-sm focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 font-mono"
-            />
-            <button
-              type="button"
-              onClick={handleOpenCollectionById}
-              className="px-3 py-2 bg-indigo-600 text-white rounded-md hover:bg-indigo-700 text-sm whitespace-nowrap"
-            >
-              Open by ID
+              Clear filters
             </button>
           </div>
         </div>
@@ -836,10 +1063,19 @@ const CollectionsPage = () => {
                     createdBy={c.createdBy}
                     isOwner={false}
                     isBookmarked={c.isBookmarked}
-                    onBookmark={!c.isBookmarked ? (id) => bookmarkMutation.mutate(id) : undefined}
-                    onUnbookmark={c.isBookmarked ? (id) => unbookmarkMutation.mutate(id) : undefined}
+                    onBookmark={
+                      isAuthenticated && !c.isBookmarked
+                        ? (id) => bookmarkMutation.mutate(id)
+                        : undefined
+                    }
+                    onUnbookmark={
+                      isAuthenticated && c.isBookmarked
+                        ? (id) => unbookmarkMutation.mutate(id)
+                        : undefined
+                    }
                     isBookmarkPending={bookmarkMutation.isPending || unbookmarkMutation.isPending}
                     showRating={true}
+                    readOnlyRating={!isAuthenticated}
                   />
                 ))}
               </div>
@@ -870,7 +1106,9 @@ const CollectionsPage = () => {
           ) : (
             <div className="text-center py-12">
               <p className="text-gray-500">
-                {discoverQuery ? "No public collections match your search." : "No public collections yet. Create a collection and make it public to share it."}
+                {discoverHasActiveFilters
+                  ? "No public collections match your search or filters."
+                  : "No public collections yet. Create a collection and make it public to share it."}
               </p>
             </div>
           )}

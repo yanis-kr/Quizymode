@@ -112,7 +112,7 @@ Terms used in this document with a specific meaning:
 | **Breadcrumb** | A navigation trail showing the current path (e.g. **Categories** → category name → keyword(s)). Each segment is clickable and takes the user back to that level. On category pages, keyword segments may show descriptions as tooltips. Used to orient the user and allow quick navigation up the hierarchy. |
 | **Bucket** | In the Sets view (Categories), a clickable card/cell representing a keyword or category, showing name, item count, and optional description. Clicking navigates deeper or opens the item list. |
 | **Default collection** | The collection created automatically for a user (e.g. "Default Collection") when they have none; used as the initial active collection. |
-| **Discover** | The feature where anyone can search and browse **public** collections shared by others (IsPublic = true). Results are searchable by collection name, description, or owner name. |
+| **Discover** | The feature where anyone can search and browse **public** collections shared by others (IsPublic = true). Results can be narrowed by **text** (`q`) on collection name and description, and by **item taxonomy**: optional category, up to two **navigation** keyword names (L1/L2, matching item `NavigationKeywordId1` / `NavigationKeywordId2`), and optional **item tag** names (AND on `ItemKeywords`). |
 | **Item visibility** | Rules for which items a user sees outside a specific collection context: **Anonymous** — only non-private items; **Authenticated** — non-private items plus their own private items. Used when listing items by category/keywords or in APIs that filter by visibility (e.g. `GET /items` by category); collection-scoped visibility is defined separately. |
 | **Item-level keyword** | A keyword that is a tag on items but is **not** used as rank-1 or rank-2 in the **KeywordRelation** tree for that category. Can be used as a filter (e.g. in query params) to narrow the item list; does not drive the Sets hierarchy. |
 | **Metadata** (e.g. collection) | Summary data for a resource (name, description, owner, item count, IsPublic, etc.) **without** the full list of items. Items are loaded separately (e.g. `GET /items?collectionId=...`). |
@@ -183,6 +183,7 @@ Terms used in this document with a specific meaning:
 - **AC 1.3.4** [Owner] **Given** I am on the Collections page (My collections tab), **when** the list loads, **then** each of my collection cards shows: (1) an **Edit** control (e.g. pencil icon) that opens a modal to edit name, description, and "Shared with others"; (2) a **Set active** control that sets this collection as my active collection (current active is indicated); (3) a **Copy link** control that copies the collection URL (e.g. `{origin}/collections/{id}`) to the clipboard.
 - **AC 1.3.5** [Owner] **Given** I use the Copy link control on a collection that is **not** public, **when** the link is copied, **then** the UI shows a warning that others cannot open the link until I make the collection public (Edit → Shared with others); I can dismiss the warning.
 - **AC 1.3.6** [Owner / Authenticated] **Given** I am on the Collections page (any tab), **when** I select a collection (e.g. by clicking its name on a card), **then** the UI shows a panel with the collection **name**, **description** (if any), and a **View details** control that opens the collection detail page (created by, date, items).
+- **AC 1.3.7** [Anonymous] **Given** I am not signed in, **when** I open `/collections`, **then** I can use **Discover**; **Mine** and **Bookmarked** are disabled until I sign in; I do not see create-collection or other owner-only actions on this page; Discover supports category, L1/L2, item tags, text search, and open-by-ID; collection ratings on cards are **read-only** and bookmark controls are not offered until I sign in.
 
 ---
 
@@ -267,15 +268,18 @@ Terms used in this document with a specific meaning:
 
 **API**
 
-- **AC 1.9.1** [Anyone] **Given** collections exist with `IsPublic = true`, **when** anyone calls `GET /collections/discover?q=...`, **then** the API returns those collections matching the search by **collection name**, **collection description**, or **collection owner (user) display name**; pagination applies; if authenticated, bookmark state can be returned.
+- **AC 1.9.1** [Anyone] **Given** collections exist with `IsPublic = true`, **when** anyone calls `GET /collections/discover` with optional `q`, `page`, `pageSize`, **then** the API returns matching public collections paginated; if `q` is set, the collection's **name** or **description** must match (case-insensitive contains); if authenticated, bookmark state can be returned per collection.
+- **AC 1.9.1a** [Anyone] **Given** I call `GET /collections/discover` with optional `category` (category name), optional `keywords` (comma-separated, 0–2 **navigation** keyword names, requires `category`), and optional `tags` (comma-separated item tag names, AND semantics on item keywords), **then** only public collections that contain **at least one item** satisfying **all** supplied item filters are included; when `q` is also set, the collection must match **both** the text filter and the item filters. Unknown category (for filters) yields no matches; unknown tag name yields no matches; `keywords` without `category` returns **400**.
+- **AC 1.9.1b** [Anyone] **Given** I pass `category` and one or two `keywords`, **when** the path is not valid for that category (same rules as item navigation), **then** the API returns **400** with a validation-style error.
 - **AC 1.9.2** [Anyone] **Given** a collection has `IsPublic = false`, **when** discover is queried, **then** that collection does not appear in the response.
 - **AC 1.9.3** [Anyone] **Given** I call discover or view discover results, **when** the API returns public collections from other users, **then** the response **must not include** other users' **email addresses** (e.g. only owner id and/or display name); this prevents email leaking to spammers.
 
 **UI**
 
-- **AC 1.9.4** [Anyone] **Given** I am on Discover, **when** I search, **then** I can search by collection name, description, or owner name; I see only public collections per API; results are paginated and (when signed in) show my bookmark state.
+- **AC 1.9.4** [Anyone] **Given** I am on Discover, **when** I use text search and optional filters (category, L1/L2, item tags), **then** results match the API; I see only public collections; results are paginated; when signed in I see my bookmark state and can bookmark or unbookmark.
 - **AC 1.9.5** [Anyone] **Given** I am viewing Discover results, **when** I see other users' collections, **then** I do **not** see other users' email addresses (only owner display name or identifier as provided by the API); the UI must not display or leak emails.
 - **AC 1.9.6** [Anyone] **Given** I have or know a collection ID, **when** I search or enter the collection ID in the UI (e.g. on Discover or an "Open collection by ID" control), **then** I can open that collection at `/collections/{id}`; if it is public or I am the owner, I see metadata and items; otherwise I see an appropriate error. This allows finding a collection by ID without browsing discover.
+- **AC 1.9.7** [Anyone] **Given** I am not signed in, **when** I use the main site navigation, **then** I still see **Collections** and can open the Collections page to use Discover (see AC 1.3.7).
 
 ---
 
