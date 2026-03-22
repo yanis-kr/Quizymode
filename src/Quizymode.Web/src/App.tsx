@@ -73,6 +73,7 @@ function App() {
         <Route path="/items/add" element={<AddItemsPage />} />
         <Route path="/items/bulk-create" element={<BulkCreateItemsPage />} />
         <Route path="/items/upload" element={<UploadToCollectionPage />} />
+        <Route path="/add-new-item" element={<CreateItemPage />} />
         <Route path="/items/create" element={<CreateItemPage />} />
         <Route path="/items/:id/edit" element={<EditItemPage />} />
         <Route path="/items/:id/comments" element={<ItemCommentsPage />} />

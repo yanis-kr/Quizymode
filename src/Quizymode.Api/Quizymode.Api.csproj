@@ -29,14 +29,13 @@
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
     <PackageReference Include="Dapper" />
-    <PackageReference Include="YamlDotNet" />
     <PackageReference Include="Npgsql.OpenTelemetry" />
     <PackageReference Include="Swashbuckle.AspNetCore.SwaggerUI" />
-    <PackageReference Include="DotnetBadWordDetector" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\Quizymode.Api.ServiceDefaults\Quizymode.ServiceDefaults.csproj" />
+    <ProjectReference Include="..\Quizymode.Taxonomy\Quizymode.Taxonomy.csproj" />
   </ItemGroup>
 
   <ItemGroup>
@@ -44,6 +43,9 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Include="..\..\docs\quizymode_taxonomy.yaml" Link="data\taxonomy\quizymode_taxonomy.yaml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="..\..\docs\quizymode_taxonomy_seed.sql" Link="data\taxonomy\quizymode_taxonomy_seed.sql">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
   </ItemGroup>

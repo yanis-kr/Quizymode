@@ -19,23 +19,10 @@ internal static class AddItemsBulkHandler
         ITaxonomyItemCategoryResolver itemCategoryResolver,
         ITaxonomyRegistry taxonomyRegistry,
         IAuditService auditService,
-        IProfanityFilterService profanityFilter,
         CancellationToken cancellationToken)
     {
         try
         {
-            IDbContextTransaction? transaction = null;
-            if (db.Database.IsRelational())
-            {
-                try
-                {
-                    transaction = await db.Database.BeginTransactionAsync(cancellationToken);
-                }
-                catch (NotSupportedException)
-                {
-                }
-            }
-
             string userId = userContext.UserId ?? throw new InvalidOperationException("User ID is required for bulk item creation");
 
             bool effectiveIsPrivate = userContext.IsAdmin ? request.IsPrivate : true;
@@ -59,11 +46,6 @@ internal static class AddItemsBulkHandler
 
             string normalizedKeyword1 = KeywordHelper.NormalizeKeywordName(request.Keyword1);
             string normalizedKeyword2 = KeywordHelper.NormalizeKeywordName(request.Keyword2 ?? "");
-
-            if (profanityFilter.ContainsProfanity(normalizedKeyword1))
-                return Result.Failure<AddItemsBulk.Response>(Error.Validation("Items.BulkInvalidKeyword1", "Primary topic (Keyword1) was rejected by content filter."));
-            if (!string.IsNullOrEmpty(normalizedKeyword2) && profanityFilter.ContainsProfanity(normalizedKeyword2))
-                return Result.Failure<AddItemsBulk.Response>(Error.Validation("Items.BulkInvalidKeyword2", "Subtopic (Keyword2) was rejected by content filter."));
 
             Result<(Keyword Nav1, Keyword Nav2)> navResult = await ItemNavigationAndKeywordsHelper.ResolvePublicNavigationAsync(
                 db,
@@ -91,9 +73,6 @@ internal static class AddItemsBulkHandler
                         Error.Validation("Items.BulkInvalidKeyword", $"Default keyword '{n}' is invalid. Use only letters, numbers, and hyphens (max 30 characters)."));
                 }
 
-                if (profanityFilter.ContainsProfanity(n))
-                    return Result.Failure<AddItemsBulk.Response>(Error.Validation("Items.BulkInvalidKeyword", $"Default keyword '{n}' was rejected by content filter."));
-
                 if (string.Equals(n, normalizedKeyword1, StringComparison.OrdinalIgnoreCase)
                     || string.Equals(n, normalizedKeyword2, StringComparison.OrdinalIgnoreCase))
                     continue;
@@ -113,6 +92,20 @@ internal static class AddItemsBulkHandler
                 bulkDefaultExtraNames.Add(n);
             }
 
+            IDbContextTransaction? transaction = null;
+            if (db.Database.IsRelational())
+            {
+                try
+                {
+                    transaction = await db.Database.BeginTransactionAsync(cancellationToken);
+                }
+                catch (NotSupportedException)
+                {
+                }
+            }
+
+            try
+            {
             for (int i = 0; i < request.Items.Count; i++)
             {
                 AddItemsBulk.ItemRequest itemRequest = request.Items[i];
@@ -129,13 +122,6 @@ internal static class AddItemsBulkHandler
                             if (!KeywordHelper.IsValidKeywordNameFormat(name))
                             {
                                 errors.Add(new AddItemsBulk.ItemError(i, itemRequest.Question, $"Keyword '{name}' is invalid. Use only letters, numbers, and hyphens (max 30 characters)."));
-                                skipItem = true;
-                                break;
-                            }
-
-                            if (profanityFilter.ContainsProfanity(name))
-                            {
-                                errors.Add(new AddItemsBulk.ItemError(i, itemRequest.Question, $"Keyword '{name}' was rejected by content filter."));
                                 skipItem = true;
                                 break;
                             }
@@ -327,12 +313,38 @@ internal static class AddItemsBulkHandler
                 errors,
                 createdIds);
 
-            return Result.Success(response);
+                return Result.Success(response);
+            }
+            catch
+            {
+                await TryRollbackTransactionAsync(transaction, cancellationToken);
+                throw;
+            }
+            finally
+            {
+                if (transaction is not null)
+                    await transaction.DisposeAsync();
+            }
         }
         catch (Exception ex)
         {
             return Result.Failure<AddItemsBulk.Response>(
                 Error.Problem("Items.BulkCreateFailed", $"Failed to create items: {ex.Message}"));
+        }
+    }
+
+    private static async Task TryRollbackTransactionAsync(
+        IDbContextTransaction? transaction,
+        CancellationToken cancellationToken)
+    {
+        if (transaction is null)
+            return;
+        try
+        {
+            await transaction.RollbackAsync(cancellationToken);
+        }
+        catch (ObjectDisposedException)
+        {
         }
     }
 }

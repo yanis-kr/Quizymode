@@ -18,7 +18,6 @@ internal static class AddItemHandler
         IAuditService auditService,
         ITaxonomyItemCategoryResolver itemCategoryResolver,
         ITaxonomyRegistry taxonomyRegistry,
-        IProfanityFilterService profanityFilter,
         CancellationToken cancellationToken)
     {
         try
@@ -42,11 +41,6 @@ internal static class AddItemHandler
 
             Category category = categoryResult.Value!;
 
-            if (profanityFilter.ContainsProfanity(request.NavigationKeyword1))
-                return Result.Failure<AddItem.Response>(Error.Validation("Item.InvalidNavigationKeyword1", "Primary topic was rejected by content filter."));
-            if (profanityFilter.ContainsProfanity(request.NavigationKeyword2))
-                return Result.Failure<AddItem.Response>(Error.Validation("Item.InvalidNavigationKeyword2", "Subtopic was rejected by content filter."));
-
             string nav1Norm = KeywordHelper.NormalizeKeywordName(request.NavigationKeyword1);
             string nav2Norm = KeywordHelper.NormalizeKeywordName(request.NavigationKeyword2);
 
@@ -64,9 +58,6 @@ internal static class AddItemHandler
                         return Result.Failure<AddItem.Response>(
                             Error.Validation("Item.InvalidKeyword", $"Keyword '{n}' is invalid. Use only letters, numbers, and hyphens (max 30 characters)."));
                     }
-
-                    if (profanityFilter.ContainsProfanity(n))
-                        return Result.Failure<AddItem.Response>(Error.Validation("Item.InvalidKeyword", $"Keyword '{n}' was rejected by content filter."));
 
                     if (string.Equals(n, nav1Norm, StringComparison.OrdinalIgnoreCase)
                         || string.Equals(n, nav2Norm, StringComparison.OrdinalIgnoreCase))

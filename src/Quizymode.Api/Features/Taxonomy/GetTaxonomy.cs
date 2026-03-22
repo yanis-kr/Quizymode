@@ -1,5 +1,6 @@
 using Quizymode.Api.Features;
 using Quizymode.Api.Services.Taxonomy;
+using Quizymode.Taxonomy;
 
 namespace Quizymode.Api.Features.Taxonomy;
 

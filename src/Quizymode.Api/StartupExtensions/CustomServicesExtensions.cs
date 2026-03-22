@@ -28,7 +28,6 @@ internal static partial class StartupExtensions
         builder.Services.AddScoped<ITaxonomyItemCategoryResolver, TaxonomyItemCategoryResolver>();
         builder.Services.AddScoped<IStudyGuideChunkingService, StudyGuideChunkingService>();
         builder.Services.AddScoped<IStudyGuidePromptBuilderService, StudyGuidePromptBuilderService>();
-        builder.Services.AddSingleton<IProfanityFilterService, ProfanityFilterService>();
         builder.Services.AddMemoryCache();
         return builder;
     }

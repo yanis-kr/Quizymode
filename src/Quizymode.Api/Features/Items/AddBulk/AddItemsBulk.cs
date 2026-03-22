@@ -180,7 +180,6 @@ public static class AddItemsBulk
             ITaxonomyItemCategoryResolver itemCategoryResolver,
             ITaxonomyRegistry taxonomyRegistry,
             IAuditService auditService,
-            IProfanityFilterService profanityFilter,
             CancellationToken cancellationToken)
         {
             if (!userContext.IsAuthenticated || string.IsNullOrEmpty(userContext.UserId))
@@ -202,7 +201,6 @@ public static class AddItemsBulk
                 itemCategoryResolver,
                 taxonomyRegistry,
                 auditService,
-                profanityFilter,
                 cancellationToken);
 
             return result.Match(

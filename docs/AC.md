@@ -16,16 +16,17 @@ Use these global contracts unless a specific AC explicitly defines a different b
   - **404 Not Found**: Resource does not exist **or** its existence must not be revealed to this caller (e.g. private collections/items for non-owners).
   - **400 Bad Request**: Validation or contract errors (missing/invalid parameters, malformed body, business-rule violations that are not authorization).
 - **Pagination shape**
-  - Paged list endpoints return an object with at least: `items` (array), `totalCount` (number), `pageNumber` (number), `pageSize` (number), and may include `hasNext` / `hasPrevious`.
+  - Paged list endpoints return an object with at least: `items` (array), `totalCount` (number), and page metadata. The exact page metadata fields are endpoint-specific today (for example `page` or `pageNumber`, plus `pageSize` and sometimes `totalPages` / `hasNext` / `hasPrevious`).
 - **Date/time format**
   - All timestamps in APIs are ISO 8601 UTC strings (e.g. `2026-03-15T14:30:00Z`). Clients SHOULD treat them as UTC and convert to local time zones for display.
 - **ProblemDetails / error shape**
-  - Error responses use RFC 7807-style **ProblemDetails** with fields: `type`, `title`, `status`, `detail`, and optional `errors` (dictionary of field → messages) for validation errors. The HTTP status code matches `status`.
+  - Most domain and authorization errors use RFC 7807-style **ProblemDetails** with fields such as `type`, `title`, `status`, and `detail`.
+  - Some validation failures currently return framework-native validation payloads (for example FluentValidation error arrays) instead of a uniform `ProblemDetails.errors` shape. Feature-specific ACs should call out stricter requirements where they matter.
 - **Naming conventions**
   - JSON fields use **camelCase** (e.g. `isPublic`, `createdBy`, `pageSize`). Database columns and C# properties may use **PascalCase**, but the wire format follows the JSON naming.
 - **Idempotent behavior**
   - **GET**, **HEAD**, and **OPTIONS** are side-effect free.
-  - **DELETE** is idempotent: deleting an already-deleted or non-existent resource returns a success status (e.g. 204) without error.
+  - Some **DELETE** endpoints are idempotent, but this is not yet a universal contract. Unless a feature-specific AC says otherwise, repeated delete of a missing resource may return `404 Not Found`.
   - **POST/PUT/PATCH** for "toggle" or "upsert" operations (e.g. bookmarking, ratings, user settings) are idempotent per `(user, resource)` pair: repeating the same request leaves state unchanged and returns success.
 - **Null vs empty collections**
   - Collection-valued fields and list endpoints return **empty arrays** (`[]`) when there are no items, not `null`. Scalars may be `null` when meaningfully "missing" (e.g. optional description).
@@ -366,7 +367,7 @@ Terms used in this document with a specific meaning:
 
 ### AC 2.2.6 Bulk Create Items (AI-assisted, no Study Guide)
 
-**Design:** The user selects category, navigation keywords (rank 1 and rank 2), optional extra keywords, and optionally a collection. The app generates a prompt for any AI assistant (e.g. ChatGPT, Claude) **asking for up to 15 questions**; if the AI returns more, the app accepts all returned items up to the **API hard limit** (e.g. 1,000 for admins, 100 for regular users). The user copies the prompt, pastes it into an AI assistant, then pastes the AI response back. Parsed items are kept **in memory** (not saved to the database) until the user reviews and accepts them. On accept, items are saved via the existing bulk API; if a collection was selected, accepted items are also added to that collection. New **private keywords** (and private navigation keywords) chosen during setup are only created when the user confirms import (accept/accept all), not when generating the prompt. When the user pastes back the AI response: **category** — items whose category is invalid (e.g. does not match the selected category) are rejected; **keywords** — if rank-1/rank-2 or regular keywords in the response are not in the existing list, they are added as **new private keywords** (provided the profanity filter approves).
+**Design:** The user selects category, navigation keywords (rank 1 and rank 2), optional extra keywords, and optionally a collection. The app generates a prompt for any AI assistant (e.g. ChatGPT, Claude) **asking for up to 15 questions**; if the AI returns more, the app accepts all returned items up to the **API hard limit** (e.g. 1,000 for admins, 100 for regular users). The user copies the prompt, pastes it into an AI assistant, then pastes the AI response back. Parsed items are kept **in memory** (not saved to the database) until the user reviews and accepts them. On accept, items are saved via the existing bulk API; if a collection was selected, accepted items are also added to that collection. New **private keywords** (and private navigation keywords) chosen during setup are only created when the user confirms import (accept/accept all), not when generating the prompt. When the user pastes back the AI response: **category** — items whose category is invalid (e.g. does not match the selected category) are rejected; **keywords** — if rank-1/rank-2 or regular keywords in the response are not in the existing list, they are added as **new private keywords** (subject to keyword format rules).
 
 **Data source:** Taxonomy structure for category and L1/L2 navigation comes from **`GET /taxonomy`** (cached for the session). Item counts and ratings for browse still use **`GET /categories`** and **`GET /keywords`** where needed. The user's collections come from **`GET /collections`**. The UI should use cached data (e.g. React Query or equivalent) so taxonomy-backed dropdowns minimize round trips.
 
@@ -395,9 +396,9 @@ Terms used in this document with a specific meaning:
 
 **Validation of new private keywords (API or shared rules)**
 
-- **AC 2.2.6.12** [Authenticated] **Given** I submit a bulk create that includes a **new private keyword** (name not yet in the system for my user), **when** the backend validates the keyword name, **then** it must be **alphanumeric and may contain hyphens** as separators (no spaces or special characters); a **profanity filter** (implemented via an **external library**) rejects blocked terms with a validation error. Same rules apply if the UI validates custom keywords before allowing "Generate Prompt" or "Accept"; the source of truth for persistence is the API.
+- **AC 2.2.6.12** [Authenticated] **Given** I submit a bulk create that includes a **new private keyword** (name not yet in the system for my user), **when** the backend validates the keyword name, **then** it must be **alphanumeric and may contain hyphens** as separators (no spaces or special characters); invalid names are rejected with a validation error. Same rules apply if the UI validates custom keywords before allowing "Generate Prompt" or "Accept"; the source of truth for persistence is the API.
 - **AC 2.2.6.13** [Authenticated] **Given** I enter a new keyword in the Bulk Create flow (custom primary topic, subtopic, or additional keyword), **when** that keyword is created on confirm import, **then** the backend stores it with **Name** and **Slug** both set from my input (Slug = slugified form of the name). An **admin** can later update the keyword's **Name** and **Slug** independently (e.g. via admin keyword management).
-- **AC 2.2.6.14** [Authenticated] **Given** I have pasted the AI response and the app parses it, **when** an item has a **category** that is invalid (e.g. does not match the category I selected for this bulk create), **then** that item is **rejected** (excluded from the review list or marked invalid and not saveable). When an item contains **keywords** (rank-1, rank-2, or regular) that are not in the existing keyword list, **then** those keywords are **added as new private keywords** when I accept the item, provided they pass the profanity filter and format rules; items are not rejected solely because they contain new keyword names.
+- **AC 2.2.6.14** [Authenticated] **Given** I have pasted the AI response and the app parses it, **when** an item has a **category** that is invalid (e.g. does not match the category I selected for this bulk create), **then** that item is **rejected** (excluded from the review list or marked invalid and not saveable). When an item contains **keywords** (rank-1, rank-2, or regular) that are not in the existing keyword list, **then** those keywords are **added as new private keywords** when I accept the item, provided they pass format rules; items are not rejected solely because they contain new keyword names.
 - **AC 2.2.6.15** [Authenticated] **Given** the AI returns optional **keywords** on items, **when** the app parses the response, **then** it keeps at most **five** keywords per item that match the allowed keyword format, deduplicates case-insensitively, and drops keywords that duplicate my navigation topics or my setup **additional keywords**; invalid or duplicate suggestions are silently omitted. On save, retained keywords are merged with navigation and extra keywords per item like other bulk item keywords.
 
 ### AC 2.2 Admin review board for items
@@ -641,7 +642,7 @@ Authentication uses **email + password** with secure password hashing and short-
 
 **API**
 
-- **AC 4.4.1** [Authenticated] **Given** I am authenticated and have an active refresh token, **when** I call `POST /auth/logout`, **then** the API revokes or deletes my refresh token(s) associated with the current client, clears any auth cookies used for refresh, and returns **204 No Content** (or 200 with a simple body); access tokens already issued remain naturally valid until expiry but are no longer refreshable.
+- **AC 4.4.1** [Authenticated] **Given** I am authenticated, **when** I call `POST /auth/logout`, **then** the API records a logout audit event for the current user and returns success (currently **200 OK** with a simple body). Authentication itself is managed by the external identity provider; this endpoint does not directly rotate passwords or manage provider refresh-token state.
 
 **UI**
 
@@ -651,26 +652,22 @@ Authentication uses **email + password** with secure password hashing and short-
 
 **API**
 
-- **AC 4.5.1** [Authenticated] **Given** I am authenticated, **when** I call `GET /users/me`, **then** the API returns **200 OK** with my profile (id, email, displayName, createdAt, role, and any other non-sensitive fields); it does **not** return password hashes or secrets.
-- **AC 4.5.2** [Authenticated] **Given** I am authenticated, **when** I call `PUT /users/me` with a body that includes editable fields (e.g. `displayName`), **then** the API updates only those allowed fields and returns the updated profile; it ignores or rejects attempts to change email to an existing user's email, or to change protected fields such as `role`.
+- **AC 4.5.1** [Authenticated] **Given** I am authenticated, **when** I call `GET /users/me`, **then** the API returns **200 OK** with my current app profile fields: `id`, `name`, `email`, `isAdmin`, `createdAt`, and `lastLogin`; it does **not** return password hashes, provider tokens, or other secrets.
+- **AC 4.5.2** [Authenticated] **Given** I am authenticated, **when** I call `PUT /users/me` with `{ "name": "..." }`, **then** the API updates my display name / username and returns the updated profile payload. Attempts to change fields outside the supported request contract are not part of this endpoint.
 - **AC 4.5.3** [Anonymous] **Given** I am not authenticated, **when** I call `GET /users/me` or `PUT /users/me`, **then** the API returns **401 Unauthorized**.
 
 **UI**
 
-- **AC 4.5.4** [Authenticated] **Given** I am authenticated, **when** I open the **Profile** page, **then** the UI loads my profile via `GET /users/me` and shows non-editable fields (e.g. email) plus editable fields (e.g. display name); saving changes calls `PUT /users/me` and displays success or validation errors.
+- **AC 4.5.4** [Authenticated] **Given** I am authenticated, **when** I open the **Profile** UI from the site chrome, **then** the UI shows my current profile in a modal, including non-editable fields (email, role/admin flag, created date, last login) and editable name; saving changes calls `PUT /users/me` and displays success or validation errors.
 
 ### AC 4.6 Password change and reset
 
-**API**
+Quizymode currently relies on the external identity provider for password, recovery, and confirmation flows. These behaviors are intentionally outside the app API documented here.
 
-- **AC 4.6.1** [Authenticated] **Given** I am authenticated and know my current password, **when** I call `POST /auth/change-password` with `{ "currentPassword": "...", "newPassword": "..." }`, **then** the API verifies the current password, validates the new password against policy, updates my stored password hash, invalidates existing refresh tokens, and returns **204 No Content** (or 200 with a simple body); on incorrect current password it returns **400 Bad Request** with a generic message.
-- **AC 4.6.2** [Anonymous] **Given** I have forgotten my password, **when** I call `POST /auth/forgot-password` with my email address, **then** the API (if the email exists) generates a **time-limited, single-use reset token**, stores it server-side, and sends an out-of-band reset link (e.g. email); the API always returns **200 OK** with a generic message and never reveals whether the email exists.
-- **AC 4.6.3** [Anonymous] **Given** I have a valid reset token, **when** I call `POST /auth/reset-password` with `{ "token": "...", "newPassword": "..." }`, **then** the API validates the token, checks password policy, updates my password hash, invalidates the reset token, and returns **204 No Content**; invalid or expired tokens return **400 Bad Request** with a generic error.
+**Current app scope**
 
-**UI**
-
-- **AC 4.6.4** [Anonymous] **Given** I am on the **Forgot password** screen, **when** I submit my email, **then** the UI calls `POST /auth/forgot-password` and always shows a generic success message (e.g. "If an account exists, you'll receive an email"), without indicating whether the email is registered.
-- **AC 4.6.5** [Anonymous] **Given** I open a password reset link containing a token, **when** I submit a new password on the reset screen, **then** the UI calls `POST /auth/reset-password`; on success it directs me to the login page with a success message; on failure it shows a generic error and suggests requesting a new reset link.
+- **AC 4.6.1** [Anonymous] **Given** I am not signed in, **when** I visit the app, **then** I can access the implemented authentication screens for **Sign in** and **Sign up**.
+- **AC 4.6.2** [User] **Given** I sign in, sign up, confirm signup, or recover account access, **when** those flows require password or recovery handling, **then** the behavior is provided by the configured identity provider rather than by first-party Quizymode API endpoints.
 
 ---
 
@@ -684,6 +681,7 @@ User settings are key-value pairs stored per user (e.g. **PageSize** for default
 - **AC 4.7.2** [Anonymous] **Given** I am not authenticated, **when** I call `GET /users/settings`, **then** the API returns 401.
 - **AC 4.7.3** [Authenticated] **Given** I am authenticated, **when** I call `PUT /users/settings` with a JSON body `{ "key": "...", "value": "..." }`, **then** the API upserts that setting for my user (creates if missing, updates if present) and returns 200 with the key, value, and updatedAt. Key and value are required; key max length 100, value max length 500.
 - **AC 4.7.4** [Anonymous] **Given** I am not authenticated, **when** I call `PUT /users/settings`, **then** the API returns 401.
+- **AC 4.7.4a** [Authenticated] **Given** I am authenticated, **when** I call `PUT /users/settings` with key `"StudyGuideMaxBytes"` and a numeric value in the range `0`–`1,000,000` (stored as a string), **then** that value becomes my effective study-guide byte limit; if the setting is absent, the default is **51,200 bytes (50 KB)**.
 
 **Default pagination (PageSize)**
 
@@ -730,7 +728,7 @@ User settings are key-value pairs stored per user (e.g. **PageSize** for default
 
 **UI**
 
-- **AC 6.1.6** [Authenticated] **Given** I open the Study Guide screen, **when** the page loads, **then** I see a title input, a large text area for study guide text, preparation instructions, a byte counter and remaining bytes indicator, and Save/Delete/Cancel controls; the byte counter updates as I type, and the Save button is disabled when the content exceeds 100 KB.
+- **AC 6.1.6** [Authenticated] **Given** I open the Study Guide screen, **when** the page loads, **then** I see a title input, a large text area for study guide text, preparation instructions, a byte counter and remaining bytes indicator, and Save/Delete/Cancel controls; the byte counter updates as I type, and the Save button is disabled when the content exceeds my effective study-guide limit (default **51,200 bytes / 50 KB**, unless overridden by `StudyGuideMaxBytes`).
 - **AC 6.1.7** [Authenticated] **Given** I have a saved study guide, **when** I visit the Study Guide screen, **then** the title and content area are pre-filled with my latest saved values, and clicking **Start import workflow** takes me to the import wizard at `/study-guide/import`.
 
 ### AC 6.2 Study guide import session and chunking

@@ -49,7 +49,6 @@ public sealed class AddItemsBulkTests : ItemTestFixture
             TaxonomyItemCategoryResolver,
             TaxonomyRegistry,
             _auditServiceMock.Object,
-            ProfanityFilter,
             CancellationToken.None);
 
         // Assert
@@ -99,7 +98,6 @@ public sealed class AddItemsBulkTests : ItemTestFixture
             TaxonomyItemCategoryResolver,
             TaxonomyRegistry,
             _auditServiceMock.Object,
-            ProfanityFilter,
             CancellationToken.None);
 
         // Assert
@@ -212,7 +210,6 @@ public sealed class AddItemsBulkTests : ItemTestFixture
             TaxonomyItemCategoryResolver,
             TaxonomyRegistry,
             _auditServiceMock.Object,
-            ProfanityFilter,
             CancellationToken.None);
 
         // Assert
@@ -225,6 +222,64 @@ public sealed class AddItemsBulkTests : ItemTestFixture
         result.Value.DuplicateQuestions.Should().Contain("What is the capital of Germany?");
         result.Value.DuplicateQuestions.Should().NotContain("What is the capital of Italy?");
         result.Value.DuplicateQuestions.Should().NotContain("What is the capital of Spain?");
+    }
+
+    [Fact]
+    public async Task HandleAsync_InvalidCategory_DoesNotLeaveDbTransactionOpen()
+    {
+        AddItemsBulk.Request request = new(
+            IsPrivate: false,
+            Category: "not-a-real-category-slug",
+            Keyword1: "capitals",
+            Keyword2: "europe",
+            Keywords: [],
+            Items: new List<AddItemsBulk.ItemRequest>
+            {
+                new("Q?", "A", new List<string> { "x" }, "e")
+            });
+
+        Result<AddItemsBulk.Response> result = await AddItemsBulkHandler.HandleAsync(
+            request,
+            DbContext,
+            SimHashService,
+            _userContextMock.Object,
+            TaxonomyItemCategoryResolver,
+            TaxonomyRegistry,
+            _auditServiceMock.Object,
+            CancellationToken.None);
+
+        result.IsSuccess.Should().BeFalse();
+        DbContext.Database.CurrentTransaction.Should().BeNull();
+    }
+
+    [Fact]
+    public async Task HandleAsync_InvalidNavigation_DoesNotLeaveDbTransactionOpen()
+    {
+        await EnsureGeographyPublicWithNavAsync("test-user");
+
+        AddItemsBulk.Request request = new(
+            IsPrivate: false,
+            Category: "geography",
+            Keyword1: "capitals",
+            Keyword2: "not-a-valid-l2-under-capitals",
+            Keywords: [],
+            Items: new List<AddItemsBulk.ItemRequest>
+            {
+                new("Q?", "A", new List<string> { "x" }, "e")
+            });
+
+        Result<AddItemsBulk.Response> result = await AddItemsBulkHandler.HandleAsync(
+            request,
+            DbContext,
+            SimHashService,
+            _userContextMock.Object,
+            TaxonomyItemCategoryResolver,
+            TaxonomyRegistry,
+            _auditServiceMock.Object,
+            CancellationToken.None);
+
+        result.IsSuccess.Should().BeFalse();
+        DbContext.Database.CurrentTransaction.Should().BeNull();
     }
 
 }

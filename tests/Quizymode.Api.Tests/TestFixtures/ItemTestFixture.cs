@@ -18,14 +18,12 @@ namespace Quizymode.Api.Tests.TestFixtures;
 public abstract class ItemTestFixture : DatabaseTestFixture
 {
     protected ISimHashService SimHashService { get; }
-    protected IProfanityFilterService ProfanityFilter { get; }
     protected ITaxonomyRegistry TaxonomyRegistry { get; }
     protected ITaxonomyItemCategoryResolver TaxonomyItemCategoryResolver { get; }
 
     protected ItemTestFixture()
     {
         SimHashService = new SimHashService();
-        ProfanityFilter = new ProfanityFilterService();
 
         IHostEnvironment hostEnvironment = new TestHostEnvironment();
         IOptions<TaxonomyOptions> taxonomyOptions = Options.Create(new TaxonomyOptions());

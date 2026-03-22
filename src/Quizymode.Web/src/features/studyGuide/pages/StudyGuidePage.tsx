@@ -7,8 +7,6 @@ import { studyGuidesApi } from "@/api/studyGuides";
 import LoadingSpinner from "@/components/LoadingSpinner";
 import ErrorMessage from "@/components/ErrorMessage";
 
-const MAX_BYTES = studyGuidesApi.maxBytesPerUser;
-
 function getUtf8ByteCount(text: string): number {
   return new TextEncoder().encode(text).length;
 }
@@ -28,6 +26,14 @@ const StudyGuidePage = () => {
   const [title, setTitle] = React.useState("");
   const [contentText, setContentText] = React.useState("");
   const [saveError, setSaveError] = React.useState<string | null>(null);
+
+  const { data: effectiveMaxBytes = studyGuidesApi.defaultMaxBytesPerUser } = useQuery({
+    queryKey: ["studyGuide", "maxBytes"],
+    queryFn: () => studyGuidesApi.getEffectiveMaxBytes(),
+    enabled: isAuthenticated,
+    staleTime: 60_000,
+    retry: false,
+  });
 
   const { data: guide, isLoading } = useQuery({
     queryKey: ["studyGuide", "current"],
@@ -79,8 +85,8 @@ const StudyGuidePage = () => {
   });
 
   const currentBytes = getUtf8ByteCount(contentText);
-  const remainingBytes = Math.max(0, MAX_BYTES - currentBytes);
-  const isOverLimit = currentBytes > MAX_BYTES;
+  const remainingBytes = Math.max(0, effectiveMaxBytes - currentBytes);
+  const isOverLimit = currentBytes > effectiveMaxBytes;
 
   const handleSave = (e: React.FormEvent) => {
     e.preventDefault();
@@ -92,7 +98,7 @@ const StudyGuidePage = () => {
     }
     if (isOverLimit) {
       setSaveError(
-        `Content exceeds the ${MAX_BYTES / 1024} KB limit (current: ${(currentBytes / 1024).toFixed(1)} KB).`
+        `Content exceeds the ${effectiveMaxBytes.toLocaleString()} byte limit (current: ${currentBytes.toLocaleString()} bytes).`
       );
       return;
     }
@@ -116,7 +122,7 @@ const StudyGuidePage = () => {
     <div className="px-4 py-6 sm:px-0 max-w-4xl mx-auto">
       <h1 className="text-2xl font-bold text-gray-900 mb-2">Study Guide</h1>
       <p className="text-gray-600 text-sm mb-4">
-        Store your study guide text here (max {MAX_BYTES / 1024} KB total). You can then use it to
+        Store your study guide text here (max {(effectiveMaxBytes / 1024).toFixed(1)} KB total). You can then use it to
         generate prompts and import items.
       </p>
 
@@ -161,7 +167,7 @@ const StudyGuidePage = () => {
               {currentBytes.toLocaleString()} bytes
               {isOverLimit && (
                 <span className="text-red-600 ml-1">
-                  (over {MAX_BYTES / 1024} KB limit)
+                  (over {(effectiveMaxBytes / 1024).toFixed(1)} KB limit)
                 </span>
               )}
             </span>

@@ -21,7 +21,23 @@ export interface UpsertStudyGuideResponse {
   updatedUtc: string;
 }
 
-const MAX_BYTES = 102_400; // 100 KB
+const DEFAULT_MAX_BYTES = 51_200; // 50 KB
+const MAX_STUDY_GUIDE_BYTES = 1_000_000;
+const STUDY_GUIDE_MAX_BYTES_KEY = "StudyGuideMaxBytes";
+
+function parseEffectiveMaxBytes(settings: Record<string, string> | undefined): number {
+  const rawValue = settings?.[STUDY_GUIDE_MAX_BYTES_KEY];
+  if (rawValue == null || rawValue.trim() === "") {
+    return DEFAULT_MAX_BYTES;
+  }
+
+  const parsed = Number.parseInt(rawValue, 10);
+  if (!Number.isFinite(parsed)) {
+    return DEFAULT_MAX_BYTES;
+  }
+
+  return Math.max(0, Math.min(MAX_STUDY_GUIDE_BYTES, parsed));
+}
 
 export const studyGuidesApi = {
   getCurrent: async (): Promise<StudyGuideResponse | null> => {
@@ -53,7 +69,12 @@ export const studyGuidesApi = {
     await apiClient.delete("/study-guides/current");
   },
 
-  maxBytesPerUser: MAX_BYTES,
+  getEffectiveMaxBytes: async (): Promise<number> => {
+    const response = await apiClient.get<{ settings: Record<string, string> }>("/users/settings");
+    return parseEffectiveMaxBytes(response.data.settings);
+  },
+
+  defaultMaxBytesPerUser: DEFAULT_MAX_BYTES,
 };
 
 // --- Study guide import (sessions, chunks, finalize) ---

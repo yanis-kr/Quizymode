@@ -143,7 +143,6 @@ public static class AddItem
             IAuditService auditService,
             ITaxonomyItemCategoryResolver itemCategoryResolver,
             ITaxonomyRegistry taxonomyRegistry,
-            IProfanityFilterService profanityFilter,
             CancellationToken cancellationToken)
         {
             var validationResult = await validator.ValidateAsync(request, cancellationToken);
@@ -160,7 +159,6 @@ public static class AddItem
                 auditService,
                 itemCategoryResolver,
                 taxonomyRegistry,
-                profanityFilter,
                 cancellationToken);
 
             return result.Match(

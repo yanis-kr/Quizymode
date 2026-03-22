@@ -145,7 +145,6 @@ public static class UpdateItem
             IAuditService auditService,
             ITaxonomyItemCategoryResolver itemCategoryResolver,
             ITaxonomyRegistry taxonomyRegistry,
-            IProfanityFilterService profanityFilter,
             CancellationToken cancellationToken)
         {
             var validationResult = await validator.ValidateAsync(request, cancellationToken);
@@ -163,7 +162,6 @@ public static class UpdateItem
                 auditService,
                 itemCategoryResolver,
                 taxonomyRegistry,
-                profanityFilter,
                 cancellationToken);
 
             return result.Match(
@@ -183,7 +181,6 @@ public static class UpdateItem
         IAuditService auditService,
         ITaxonomyItemCategoryResolver itemCategoryResolver,
         ITaxonomyRegistry taxonomyRegistry,
-        IProfanityFilterService profanityFilter,
         CancellationToken cancellationToken)
     {
         try
@@ -222,11 +219,6 @@ public static class UpdateItem
 
             Category category = categoryResult.Value!;
 
-            if (profanityFilter.ContainsProfanity(request.NavigationKeyword1))
-                return Result.Failure<Response>(Error.Validation("Item.InvalidNavigationKeyword1", "Primary topic was rejected by content filter."));
-            if (profanityFilter.ContainsProfanity(request.NavigationKeyword2))
-                return Result.Failure<Response>(Error.Validation("Item.InvalidNavigationKeyword2", "Subtopic was rejected by content filter."));
-
             string nav1Norm = KeywordHelper.NormalizeKeywordName(request.NavigationKeyword1);
             string nav2Norm = KeywordHelper.NormalizeKeywordName(request.NavigationKeyword2);
 
@@ -244,9 +236,6 @@ public static class UpdateItem
                         return Result.Failure<Response>(
                             Error.Validation("Item.InvalidKeyword", $"Keyword '{n}' is invalid. Use only letters, numbers, and hyphens (max 30 characters)."));
                     }
-
-                    if (profanityFilter.ContainsProfanity(n))
-                        return Result.Failure<Response>(Error.Validation("Item.InvalidKeyword", $"Keyword '{n}' was rejected by content filter."));
 
                     if (string.Equals(n, nav1Norm, StringComparison.OrdinalIgnoreCase)
                         || string.Equals(n, nav2Norm, StringComparison.OrdinalIgnoreCase))

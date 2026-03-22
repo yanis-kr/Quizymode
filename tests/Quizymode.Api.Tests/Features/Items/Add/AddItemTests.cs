@@ -48,7 +48,6 @@ public sealed class AddItemTests : ItemTestFixture
             _auditServiceMock.Object,
             TaxonomyItemCategoryResolver,
             TaxonomyRegistry,
-            ProfanityFilter,
             CancellationToken.None);
 
         // Assert
@@ -104,7 +103,6 @@ public sealed class AddItemTests : ItemTestFixture
             _auditServiceMock.Object,
             TaxonomyItemCategoryResolver,
             TaxonomyRegistry,
-            ProfanityFilter,
             CancellationToken.None);
 
         // Assert - AddItem allows duplicates, so it should succeed

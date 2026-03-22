@@ -53,7 +53,6 @@ public sealed class UpdateItemTests : ItemTestFixture
             _auditServiceMock.Object,
             TaxonomyItemCategoryResolver,
             TaxonomyRegistry,
-            ProfanityFilter,
             CancellationToken.None);
 
         // Assert
@@ -115,7 +114,6 @@ public sealed class UpdateItemTests : ItemTestFixture
             _auditServiceMock.Object,
             TaxonomyItemCategoryResolver,
             TaxonomyRegistry,
-            ProfanityFilter,
             CancellationToken.None);
 
         // Assert
@@ -160,7 +158,6 @@ public sealed class UpdateItemTests : ItemTestFixture
             _auditServiceMock.Object,
             TaxonomyItemCategoryResolver,
             TaxonomyRegistry,
-            ProfanityFilter,
             CancellationToken.None);
 
         // Assert
@@ -196,7 +193,6 @@ public sealed class UpdateItemTests : ItemTestFixture
             _auditServiceMock.Object,
             TaxonomyItemCategoryResolver,
             TaxonomyRegistry,
-            ProfanityFilter,
             CancellationToken.None);
 
         // Assert
@@ -231,7 +227,6 @@ public sealed class UpdateItemTests : ItemTestFixture
             _auditServiceMock.Object,
             TaxonomyItemCategoryResolver,
             TaxonomyRegistry,
-            ProfanityFilter,
             CancellationToken.None);
 
         // Assert

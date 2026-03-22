@@ -1,4 +1,4 @@
-namespace Quizymode.Api.Services.Taxonomy;
+namespace Quizymode.Taxonomy;
 
 public sealed class TaxonomyCategoryDefinition
 {

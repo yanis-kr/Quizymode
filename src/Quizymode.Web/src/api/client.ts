@@ -6,7 +6,7 @@ import { setTokens } from "@/utils/tokenStorage";
 
 // In dev, always use "/api" so Vite proxies to the backend (avoids CORS and SSL cert issues).
 // In production, use VITE_API_URL from env (e.g. .env.production).
-const API_URL = import.meta.env.DEV
+export const API_URL = import.meta.env.DEV
   ? "/api"
   : (import.meta.env.VITE_API_URL || "https://localhost:8082");
 

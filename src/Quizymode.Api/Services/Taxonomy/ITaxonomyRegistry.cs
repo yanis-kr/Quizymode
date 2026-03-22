@@ -1,3 +1,5 @@
+using Quizymode.Taxonomy;
+
 namespace Quizymode.Api.Services.Taxonomy;
 
 public interface ITaxonomyRegistry

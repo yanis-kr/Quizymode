@@ -138,6 +138,18 @@ internal sealed class UserUpsertMiddleware
                             .FromSqlInterpolated($"SELECT * FROM \"Users\" WHERE \"Subject\" = {subject} FOR UPDATE")
                             .AsTracking()
                             .FirstOrDefaultAsync(context.RequestAborted);
+
+                        // Serialize concurrent first-time sign-ins for the same email (PostgreSQL only).
+                        // Without this, parallel requests can both pass the email-exists check and hit IX_Users_Email.
+                        if (lockedUser is null
+                            && !string.IsNullOrWhiteSpace(email)
+                            && db.Database.ProviderName?.Contains("Npgsql", StringComparison.OrdinalIgnoreCase) == true)
+                        {
+                            string emailLockKey = email.Trim().ToLowerInvariant();
+                            await db.Database.ExecuteSqlInterpolatedAsync(
+                                $"SELECT pg_advisory_xact_lock(hashtext({emailLockKey}), 810572531)",
+                                context.RequestAborted);
+                        }
                     
                     Guid userId;
                     bool shouldLogLogin = false;

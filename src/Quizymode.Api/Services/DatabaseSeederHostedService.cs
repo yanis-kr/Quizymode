@@ -1,3 +1,5 @@
+using System.Data;
+using System.Data.Common;
 using System.Text.Json;
 using System.Text.Json.Serialization;
 using Microsoft.EntityFrameworkCore;
@@ -18,14 +20,14 @@ internal sealed class DatabaseSeederHostedService(
     ISimHashService simHashService,
     IWebHostEnvironment environment,
     IOptions<SeedOptions> seedOptions,
-    ITaxonomyRegistry taxonomyRegistry) : IHostedService
+    IOptions<TaxonomyOptions> taxonomyOptions) : IHostedService
 {
     private readonly ILogger<DatabaseSeederHostedService> _logger = logger;
     private readonly IServiceProvider _serviceProvider = serviceProvider;
     private readonly ISimHashService _simHashService = simHashService;
     private readonly IWebHostEnvironment _environment = environment;
     private readonly SeedOptions _seedOptions = seedOptions.Value;
-    private readonly ITaxonomyRegistry _taxonomyRegistry = taxonomyRegistry;
+    private readonly TaxonomyOptions _taxonomyOptions = taxonomyOptions.Value;
 
     public async Task StartAsync(CancellationToken cancellationToken)
     {
@@ -153,7 +155,6 @@ internal sealed class DatabaseSeederHostedService(
                         ITaxonomyItemCategoryResolver itemCategoryResolver = scope.ServiceProvider.GetRequiredService<ITaxonomyItemCategoryResolver>();
                         ITaxonomyRegistry taxonomyRegistry = scope.ServiceProvider.GetRequiredService<ITaxonomyRegistry>();
                         IAuditService auditService = scope.ServiceProvider.GetRequiredService<IAuditService>();
-                        IProfanityFilterService profanityFilter = scope.ServiceProvider.GetRequiredService<IProfanityFilterService>();
 
                         Result<AddItemsBulk.Response> result = await AddItemsBulkHandler.HandleAsync(
                             bulkRequest,
@@ -163,7 +164,6 @@ internal sealed class DatabaseSeederHostedService(
                             itemCategoryResolver,
                             taxonomyRegistry,
                             auditService,
-                            profanityFilter,
                             cancellationToken);
 
                         if (result.IsSuccess && result.Value is not null)
@@ -280,7 +280,9 @@ internal sealed class DatabaseSeederHostedService(
     {
         // Find the Science category
         Category? scienceCategory = await db.Categories
-            .FirstOrDefaultAsync(c => c.Name.ToLower() == "science", cancellationToken);
+            .Where(c => c.Name.ToLower() == "science")
+            .OrderBy(c => c.Id)
+            .FirstOrDefaultAsync(cancellationToken);
 
         if (scienceCategory is null)
         {
@@ -316,219 +318,43 @@ internal sealed class DatabaseSeederHostedService(
 
     private async Task SeedCategoriesAndNavigationAsync(ApplicationDbContext db, CancellationToken cancellationToken)
     {
-        _logger.LogInformation("Seeding categories and navigation keywords from taxonomy...");
+        _logger.LogInformation("Seeding categories and navigation from generated taxonomy SQL...");
 
-        Dictionary<string, Category> categories = new(StringComparer.OrdinalIgnoreCase);
-
-        foreach (string categorySlug in _taxonomyRegistry.CategorySlugs)
+        string sqlPath;
+        try
         {
-            TaxonomyCategoryDefinition? def = _taxonomyRegistry.GetCategory(categorySlug);
-            if (def is null)
-                continue;
-
-            string shortDesc = ShortDescriptionFromCategory(def.Description);
-            Category? existingCategory = await db.Categories
-                .FirstOrDefaultAsync(c => c.Name.ToLower() == categorySlug.ToLower(), cancellationToken);
-
-            if (existingCategory is null)
-            {
-                Category newCategory = new Category
-                {
-                    Id = Guid.NewGuid(),
-                    Name = categorySlug,
-                    Description = def.Description,
-                    ShortDescription = shortDesc,
-                    IsPrivate = false,
-                    CreatedBy = "seeder",
-                    CreatedAt = DateTime.UtcNow
-                };
-                db.Categories.Add(newCategory);
-                await db.SaveChangesAsync(cancellationToken);
-                categories[categorySlug] = newCategory;
-                _logger.LogInformation("Created category: {CategoryName}", categorySlug);
-            }
-            else
-            {
-                existingCategory.Description = def.Description;
-                existingCategory.ShortDescription = shortDesc;
-                await db.SaveChangesAsync(cancellationToken);
-                categories[categorySlug] = existingCategory;
-            }
+            sqlPath = TaxonomyYamlLoader.ResolveSeedSqlPath(_environment, _taxonomyOptions);
+        }
+        catch (FileNotFoundException ex)
+        {
+            _logger.LogError(
+                ex,
+                "Taxonomy seed SQL not found. Generate it with: dotnet run --project tools/Quizymode.TaxonomySqlGen");
+            throw;
         }
 
-        const string otherKeywordDescription = "Items not in a specific subcategory.";
+        string sql = await File.ReadAllTextAsync(sqlPath, cancellationToken);
+        DbConnection conn = db.Database.GetDbConnection();
+        bool shouldClose = conn.State != ConnectionState.Open;
+        if (shouldClose)
+            await db.Database.OpenConnectionAsync(cancellationToken);
 
-        foreach ((string _, Category category) in categories)
+        try
         {
-            await SeedOtherKeywordAsync(db, category, cancellationToken, otherKeywordDescription);
+            await using DbTransaction tx = await conn.BeginTransactionAsync(cancellationToken);
+            await using DbCommand cmd = conn.CreateCommand();
+            cmd.Transaction = tx;
+            cmd.CommandText = sql;
+            await cmd.ExecuteNonQueryAsync(cancellationToken);
+            await tx.CommitAsync(cancellationToken);
+        }
+        finally
+        {
+            if (shouldClose)
+                await db.Database.CloseConnectionAsync();
         }
 
-        foreach (string categorySlug in _taxonomyRegistry.CategorySlugs)
-        {
-            TaxonomyCategoryDefinition? def = _taxonomyRegistry.GetCategory(categorySlug);
-            if (def is null || !categories.TryGetValue(categorySlug, out Category? category))
-                continue;
-
-            for (int i = 0; i < def.L1Groups.Count; i++)
-            {
-                TaxonomyL1Group l1 = def.L1Groups[i];
-                await SeedNavigationKeywordAsync(
-                    db,
-                    category,
-                    l1.Slug,
-                    navigationRank: 1,
-                    parentName: null,
-                    sortRank: i + 1,
-                    cancellationToken,
-                    string.IsNullOrWhiteSpace(l1.Description) ? null : l1.Description);
-
-                for (int j = 0; j < l1.L2Leaves.Count; j++)
-                {
-                    TaxonomyL2Leaf l2 = l1.L2Leaves[j];
-                    await SeedNavigationKeywordAsync(
-                        db,
-                        category,
-                        l2.Slug,
-                        navigationRank: 2,
-                        parentName: l1.Slug,
-                        sortRank: j,
-                        cancellationToken,
-                        string.IsNullOrWhiteSpace(l2.Description) ? null : l2.Description);
-                }
-            }
-        }
-
-        _logger.LogInformation("Categories and navigation keywords seeding completed.");
-    }
-
-    private static string ShortDescriptionFromCategory(string description)
-    {
-        if (string.IsNullOrWhiteSpace(description))
-            return "";
-        string[] words = description.Split(' ', StringSplitOptions.RemoveEmptyEntries);
-        return words.Length <= 5 ? string.Join(" ", words) : string.Join(" ", words.Take(5));
-    }
-
-    private async Task SeedOtherKeywordAsync(
-        ApplicationDbContext db,
-        Category category,
-        CancellationToken cancellationToken,
-        string? description = null)
-    {
-        // Find or create "other" keyword (global) first
-        Keyword? otherKeyword = await db.Keywords
-            .FirstOrDefaultAsync(k => k.Name.ToLower() == "other" && !k.IsPrivate, cancellationToken);
-
-        if (otherKeyword is null)
-        {
-            otherKeyword = new Keyword
-            {
-                Id = Guid.NewGuid(),
-                Name = "other",
-                IsPrivate = false,
-                CreatedBy = "seeder",
-                CreatedAt = DateTime.UtcNow
-            };
-            db.Keywords.Add(otherKeyword);
-            await db.SaveChangesAsync(cancellationToken);
-        }
-
-        bool exists = await db.KeywordRelations.AnyAsync(kr =>
-            kr.CategoryId == category.Id && kr.ParentKeywordId == null && kr.ChildKeywordId == otherKeyword.Id,
-            cancellationToken);
-
-        if (exists)
-        {
-            if (description is not null)
-            {
-                KeywordRelation? kr = await db.KeywordRelations.FirstOrDefaultAsync(kr =>
-                    kr.CategoryId == category.Id && kr.ChildKeywordId == otherKeyword.Id, cancellationToken);
-                if (kr != null) { kr.Description = description; await db.SaveChangesAsync(cancellationToken); }
-            }
-            return;
-        }
-
-        db.KeywordRelations.Add(new KeywordRelation
-        {
-            Id = Guid.NewGuid(),
-            CategoryId = category.Id,
-            ParentKeywordId = null,
-            ChildKeywordId = otherKeyword.Id,
-            SortOrder = 0,
-            Description = description,
-            CreatedAt = DateTime.UtcNow
-        });
-        await db.SaveChangesAsync(cancellationToken);
-    }
-
-    private async Task SeedNavigationKeywordAsync(
-        ApplicationDbContext db,
-        Category category,
-        string keywordName,
-        int navigationRank,
-        string? parentName,
-        int sortRank,
-        CancellationToken cancellationToken,
-        string? description = null)
-    {
-        // Find or create keyword (global) first
-        Keyword? keyword = await db.Keywords
-            .FirstOrDefaultAsync(k => k.Name.ToLower() == keywordName.ToLower() && !k.IsPrivate, cancellationToken);
-
-        if (keyword is null)
-        {
-            keyword = new Keyword
-            {
-                Id = Guid.NewGuid(),
-                Name = keywordName.ToLowerInvariant(), // Store normalized
-                IsPrivate = false,
-                CreatedBy = "seeder",
-                CreatedAt = DateTime.UtcNow
-            };
-            db.Keywords.Add(keyword);
-            await db.SaveChangesAsync(cancellationToken);
-        }
-
-        Guid? parentKeywordId = null;
-        if (navigationRank == 2 && !string.IsNullOrWhiteSpace(parentName))
-        {
-            Keyword? parentKw = await db.Keywords.FirstOrDefaultAsync(k => k.Name.ToLower() == parentName.ToLower(), cancellationToken);
-            if (parentKw != null)
-            {
-                bool parentIsRoot = await db.KeywordRelations.AnyAsync(kr =>
-                    kr.CategoryId == category.Id && kr.ParentKeywordId == null && kr.ChildKeywordId == parentKw.Id,
-                    cancellationToken);
-                if (parentIsRoot)
-                    parentKeywordId = parentKw.Id;
-            }
-        }
-
-        bool exists = await db.KeywordRelations.AnyAsync(kr =>
-            kr.CategoryId == category.Id && kr.ParentKeywordId == parentKeywordId && kr.ChildKeywordId == keyword.Id,
-            cancellationToken);
-
-        if (exists)
-        {
-            if (description is not null)
-            {
-                KeywordRelation? kr = await db.KeywordRelations.FirstOrDefaultAsync(kr =>
-                    kr.CategoryId == category.Id && kr.ChildKeywordId == keyword.Id, cancellationToken);
-                if (kr != null) { kr.Description = description; await db.SaveChangesAsync(cancellationToken); }
-            }
-            return;
-        }
-
-        db.KeywordRelations.Add(new KeywordRelation
-        {
-            Id = Guid.NewGuid(),
-            CategoryId = category.Id,
-            ParentKeywordId = parentKeywordId,
-            ChildKeywordId = keyword.Id,
-            SortOrder = sortRank,
-            Description = description,
-            CreatedAt = DateTime.UtcNow
-        });
-        await db.SaveChangesAsync(cancellationToken);
+        _logger.LogInformation("Taxonomy seed SQL applied.");
     }
 }
 

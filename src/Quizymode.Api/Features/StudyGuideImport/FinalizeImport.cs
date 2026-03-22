@@ -40,7 +40,6 @@ public static class FinalizeImport
             ITaxonomyItemCategoryResolver itemCategoryResolver,
             ITaxonomyRegistry taxonomyRegistry,
             IAuditService auditService,
-            IProfanityFilterService profanityFilter,
             CancellationToken cancellationToken)
         {
             if (!userContext.IsAuthenticated || string.IsNullOrEmpty(userContext.UserId))
@@ -54,7 +53,6 @@ public static class FinalizeImport
                 itemCategoryResolver,
                 taxonomyRegistry,
                 auditService,
-                profanityFilter,
                 cancellationToken);
             return result.Match(
                 value => value is null ? Results.NotFound() : Results.Ok(value),
@@ -70,7 +68,6 @@ public static class FinalizeImport
         ITaxonomyItemCategoryResolver itemCategoryResolver,
         ITaxonomyRegistry taxonomyRegistry,
         IAuditService auditService,
-        IProfanityFilterService profanityFilter,
         CancellationToken cancellationToken)
     {
         if (!Guid.TryParse(id, out Guid sessionId))
@@ -156,7 +153,6 @@ public static class FinalizeImport
             itemCategoryResolver,
             taxonomyRegistry,
             auditService,
-            profanityFilter,
             cancellationToken);
 
         if (bulkResult.IsFailure)

@@ -90,7 +90,6 @@ public static class UploadItemsToCollection
             ITaxonomyItemCategoryResolver itemCategoryResolver,
             ITaxonomyRegistry taxonomyRegistry,
             IAuditService auditService,
-            IProfanityFilterService profanityFilter,
             CancellationToken cancellationToken)
         {
             if (!userContext.IsAuthenticated || string.IsNullOrEmpty(userContext.UserId))
@@ -112,7 +111,6 @@ public static class UploadItemsToCollection
                 itemCategoryResolver,
                 taxonomyRegistry,
                 auditService,
-                profanityFilter,
                 cancellationToken);
 
             return result.Match(
@@ -137,7 +135,6 @@ public static class UploadItemsToCollection
         ITaxonomyItemCategoryResolver itemCategoryResolver,
         ITaxonomyRegistry taxonomyRegistry,
         IAuditService auditService,
-        IProfanityFilterService profanityFilter,
         CancellationToken cancellationToken)
     {
         if (string.IsNullOrEmpty(userContext.UserId) || !Guid.TryParse(userContext.UserId, out Guid userIdGuid))
@@ -186,7 +183,6 @@ public static class UploadItemsToCollection
             itemCategoryResolver,
             taxonomyRegistry,
             auditService,
-            profanityFilter,
             cancellationToken);
 
         if (bulkResult.IsFailure)
