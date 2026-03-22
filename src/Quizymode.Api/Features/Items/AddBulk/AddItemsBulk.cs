@@ -79,6 +79,8 @@ public static class AddItemsBulk
                 .WithMessage("Keyword1 must not exceed 30 characters");
 
             RuleFor(x => x.Keyword2)
+                .NotEmpty()
+                .WithMessage("Keyword2 (subtopic) is required")
                 .MaximumLength(30)
                 .WithMessage("Keyword2 must not exceed 30 characters");
 

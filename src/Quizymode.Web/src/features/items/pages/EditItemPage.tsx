@@ -10,6 +10,7 @@ import { ItemForm } from "@/components/items/ItemForm";
 import { categoriesApi } from "@/api/categories";
 import { keywordsApi } from "@/api/keywords";
 import type { KeywordRequest } from "@/types/api";
+import { validateNavigationKeywordName } from "@/utils/navigationKeywordRules";
 
 const EditItemPage = () => {
   const { id } = useParams<{ id: string }>();
@@ -126,25 +127,29 @@ const EditItemPage = () => {
       return;
     }
     if (!formData.navigationRank1.trim() || !formData.navigationRank2.trim()) {
-      setValidationError("Primary topic and subtopic are required");
+      setValidationError("Primary topic (rank 1) and subtopic (rank 2) are required.");
+      return;
+    }
+    const navFormatError =
+      validateNavigationKeywordName(formData.navigationRank1) ??
+      validateNavigationKeywordName(formData.navigationRank2);
+    if (navFormatError) {
+      setValidationError(navFormatError);
       return;
     }
 
     const r1 = formData.navigationRank1.trim().toLowerCase();
     const r2 = formData.navigationRank2.trim().toLowerCase();
-    const navKeywords: KeywordRequest[] = [];
-    if (r1) {
-      navKeywords.push({
+    const navKeywords: KeywordRequest[] = [
+      {
         name: formData.navigationRank1.trim(),
         isPrivate: !rank1Options.some((o) => o.toLowerCase() === r1),
-      });
-    }
-    if (r2) {
-      navKeywords.push({
+      },
+      {
         name: formData.navigationRank2.trim(),
         isPrivate: !rank2Options.some((o) => o.toLowerCase() === r2),
-      });
-    }
+      },
+    ];
     const otherKeywords = formData.keywords.filter(
       (k) => k.name.toLowerCase() !== r1 && k.name.toLowerCase() !== r2
     );

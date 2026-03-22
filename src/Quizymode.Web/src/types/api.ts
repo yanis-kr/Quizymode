@@ -237,7 +237,7 @@ export interface BulkCreateItemsRequest {
   isPrivate: boolean;
   category: string;
   keyword1: string;
-  keyword2?: string | null;
+  keyword2: string;
   keywords: KeywordRequest[];
   items: CreateItemRequest[];
 }

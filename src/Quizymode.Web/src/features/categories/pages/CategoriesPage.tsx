@@ -24,6 +24,7 @@ import {
   isAllCategoriesSlug,
   getAllCategoriesSlug,
 } from "@/utils/categorySlug";
+import { buildAddItemsPathWithParams } from "@/utils/addItemsScopeUrl";
 import { ScopeFilterCombobox } from "@/components/ScopeFilterCombobox";
 import { FilterSection } from "../../items/components/filters/FilterSection";
 import { AddFiltersSection } from "../../items/components/filters/AddFiltersSection";
@@ -1027,6 +1028,22 @@ const CategoriesPage = () => {
               else if (mode === "explore") navigateToExplore(categoryNameToSlug(categoryName)!, kw);
               else if (mode === "quiz") navigateToQuiz(categoryNameToSlug(categoryName)!, kw);
             }}
+            endSlot={
+              isAuthenticated ? (
+                <Link
+                  to={buildAddItemsPathWithParams(
+                    categoryName,
+                    pathKeywordsFromUrl,
+                    filterKeywordsFromQuery
+                  )}
+                  className="inline-flex items-center gap-1 px-3 py-1.5 text-sm font-medium text-white bg-green-600 rounded-md hover:bg-green-700 shrink-0"
+                  title="Add items for this category and navigation path"
+                >
+                  <PlusIcon className="h-4 w-4" />
+                  Add
+                </Link>
+              ) : null
+            }
           />
           <FilterSection
             showFilters={showFilters}
@@ -1139,23 +1156,6 @@ const CategoriesPage = () => {
             />
             <div className="flex flex-wrap items-center gap-3 flex-shrink-0">
               <SortControl sortBy={sortBy} onSortChange={handleSortChange} />
-              {keywordsFromUrl.length >= 2 && isAuthenticated && (
-                <button
-                  onClick={() => {
-                    const params = new URLSearchParams();
-                    params.set("category", categoryName);
-                    if (keywordsFromUrl.length > 0) {
-                      params.set("keywords", keywordsFromUrl.join(","));
-                    }
-                    navigate(`/items/add?${params.toString()}`);
-                  }}
-                  className="inline-flex items-center gap-1 px-3 py-1.5 text-sm font-medium text-white bg-green-600 rounded-md hover:bg-green-700"
-                  title="Add items"
-                >
-                  <PlusIcon className="h-4 w-4" />
-                  Add
-                </button>
-              )}
             </div>
           </div>
           <h1 className="text-3xl font-bold text-gray-900 mt-4 mb-2">

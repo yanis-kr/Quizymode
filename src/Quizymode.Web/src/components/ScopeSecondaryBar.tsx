@@ -14,6 +14,8 @@ export interface ScopeSecondaryBarProps {
   onModeChange: (mode: ViewMode) => void;
   /** Optional slot for filter toggle / filter summary (e.g. when activeMode === "list") */
   filterSlot?: ReactNode;
+  /** Optional actions on the far right (e.g. Add items) */
+  endSlot?: ReactNode;
   className?: string;
 }
 
@@ -23,8 +25,17 @@ export function ScopeSecondaryBar({
   availableModes,
   onModeChange,
   filterSlot,
+  endSlot,
   className = "",
 }: ScopeSecondaryBarProps) {
+  const right =
+    filterSlot != null || endSlot != null ? (
+      <div className="flex flex-1 flex-wrap items-center justify-end gap-2 min-w-0">
+        {filterSlot}
+        {endSlot}
+      </div>
+    ) : null;
+
   return (
     <div
       className={`flex flex-wrap items-center gap-3 py-3 px-4 bg-white border-b border-gray-200 ${className}`}
@@ -38,7 +49,7 @@ export function ScopeSecondaryBar({
           onChange={onModeChange}
         />
       )}
-      {filterSlot != null && <div className="flex-1 flex items-center justify-end min-w-0">{filterSlot}</div>}
+      {right}
     </div>
   );
 }

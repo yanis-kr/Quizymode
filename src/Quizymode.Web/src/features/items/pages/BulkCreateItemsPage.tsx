@@ -17,10 +17,10 @@ import {
   ClipboardDocumentIcon,
   CheckIcon,
 } from "@heroicons/react/24/outline";
+import { ItemTopicScopeFields } from "@/components/items/ItemTopicScopeFields";
+import { validateNavigationKeywordName } from "@/utils/navigationKeywordRules";
 
 const MAX_PROMPT_QUESTIONS = 15;
-const KEYWORD_FORMAT = /^[a-zA-Z0-9\-]+$/;
-const KEYWORD_MAX_LEN = 30;
 
 type Step = "setup" | "prompt" | "paste" | "review";
 
@@ -30,7 +30,46 @@ interface ParsedItem {
   incorrectAnswers: string[];
   explanation: string;
   source?: string;
+  /** AI-only tags (merged with setup scope on save). */
   keywords?: string[];
+  /** Nav + user extras + AI tags, deduped (case-insensitive); for review display. */
+  consolidatedKeywords: string[];
+}
+
+/** Comma-separated extras from setup, trim + dedupe by case, preserve first spelling. */
+function parseExtraKeywordsFromText(text: string): string[] {
+  const seen = new Set<string>();
+  const out: string[] = [];
+  for (const part of text.split(",")) {
+    const t = part.trim();
+    if (!t) continue;
+    const lower = t.toLowerCase();
+    if (seen.has(lower)) continue;
+    seen.add(lower);
+    out.push(t);
+  }
+  return out;
+}
+
+/** Single ordered list: navigation, then user extras, then AI suggestions; dedupe case-insensitive. */
+function consolidateBulkItemKeywords(
+  nav: string[],
+  extrasFromText: string[],
+  aiTags: string[]
+): string[] {
+  const seen = new Set<string>();
+  const out: string[] = [];
+  for (const bucket of [nav, extrasFromText, aiTags]) {
+    for (const raw of bucket) {
+      const t = raw.trim();
+      if (!t) continue;
+      const k = t.toLowerCase();
+      if (seen.has(k)) continue;
+      seen.add(k);
+      out.push(t);
+    }
+  }
+  return out;
 }
 
 const BulkCreateItemsPage = () => {
@@ -103,12 +142,10 @@ const BulkCreateItemsPage = () => {
   });
   const collections = collectionsData?.collections ?? [];
 
-  const navKeywords = useMemo(() => {
-    const list: string[] = [];
-    if (primaryTopic.trim()) list.push(primaryTopic.trim());
-    if (subtopic.trim()) list.push(subtopic.trim());
-    return list;
-  }, [primaryTopic, subtopic]);
+  const navKeywords = useMemo(
+    () => [primaryTopic.trim(), subtopic.trim()].filter(Boolean),
+    [primaryTopic, subtopic]
+  );
 
   const extraKeywords = useMemo(
     () =>
@@ -118,14 +155,6 @@ const BulkCreateItemsPage = () => {
         .filter(Boolean),
     [extraKeywordsText]
   );
-
-  const validateKeywordFormat = (name: string): string | null => {
-    const t = name.trim();
-    if (!t) return null;
-    if (t.length > KEYWORD_MAX_LEN) return `Max ${KEYWORD_MAX_LEN} characters`;
-    if (!KEYWORD_FORMAT.test(t)) return "Use only letters, numbers, and hyphens";
-    return null;
-  };
 
   const handleGeneratePrompt = () => {
     setLocalError(null);
@@ -137,10 +166,23 @@ const BulkCreateItemsPage = () => {
       setLocalError("Select or enter a primary topic (rank 1).");
       return;
     }
-    const navLine =
-      [primaryTopic, subtopic].filter(Boolean).join(" → ") || primaryTopic;
+    if (!subtopic.trim()) {
+      setLocalError("Select or enter a subtopic (rank 2).");
+      return;
+    }
+    const r1Err = validateNavigationKeywordName(primaryTopic);
+    const r2Err = validateNavigationKeywordName(subtopic);
+    if (r1Err || r2Err) {
+      setLocalError(r1Err || r2Err || "");
+      return;
+    }
+    const navLine = `${primaryTopic.trim()} → ${subtopic.trim()}`;
     const extraLine =
       extraKeywords.length > 0 ? ` Tags to include on each item: ${extraKeywords.join(", ")}.` : "";
+    const reservedTagsHint =
+      extraKeywords.length > 0
+        ? ` Do not repeat these user-supplied tags: ${extraKeywords.join(", ")}.`
+        : "";
     const prompt = `You are creating study flashcards for an app called Quizymode.
 
 Create up to ${MAX_PROMPT_QUESTIONS} quiz items for:
@@ -154,6 +196,7 @@ Each item must be a JSON object with this exact shape:
   "question": "Question text?",
   "correctAnswer": "Correct answer",
   "incorrectAnswers": ["Wrong 1", "Wrong 2", "Wrong 3"],
+  "keywords": ["optional-extra-tag-1", "optional-extra-tag-2"],
   "explanation": "Short explanation (optional but recommended)",
   "source": "Your assistant name"
 }
@@ -162,6 +205,7 @@ Requirements:
 - Return a single JSON array of items: [ { ... }, { ... }, ... ].
 - Do NOT include any explanations, prose, comments, Markdown, or code fences. Output raw JSON only.
 - Every item must have: "category", non-empty "question", non-empty "correctAnswer", 1–5 "incorrectAnswers", optional "explanation" and "source".
+- Optional "keywords": up to 5 extra tags per item (letters, numbers, hyphens only; lowercase recommended). Suggest tags that help discovery (skills, subthemes, standards) for that specific question. Do not repeat the navigation topic path ("${navLine}") or the category name as tags; omit "keywords" or use [] if none.${reservedTagsHint}
 - All strings must be plain text (no HTML, no LaTeX).
 
 Generate the JSON array only.`;
@@ -193,6 +237,19 @@ Generate the JSON array only.`;
         return;
       }
       const selectedCategory = category.trim();
+      const reservedKeywordLower = new Set<string>();
+      const catLower = selectedCategory.toLowerCase();
+      if (catLower) reservedKeywordLower.add(catLower);
+      navKeywords.forEach((n) => {
+        const t = n.trim().toLowerCase();
+        if (t) reservedKeywordLower.add(t);
+      });
+      extraKeywords.forEach((n) => {
+        if (n) reservedKeywordLower.add(n);
+      });
+
+      const extrasFromText = parseExtraKeywordsFromText(extraKeywordsText);
+
       const items: ParsedItem[] = [];
       for (let i = 0; i < parsed.length; i++) {
         const o = parsed[i] as Record<string, unknown>;
@@ -211,8 +268,26 @@ Generate the JSON array only.`;
         const source = (o.source ?? "").toString().trim() || undefined;
         let keywords: string[] = [];
         if (Array.isArray(o.keywords)) {
-          keywords = (o.keywords as (string | { name?: string })[]).map((k) => (typeof k === "string" ? k : (k as { name?: string }).name ?? "").trim()).filter(Boolean);
+          const raw = (o.keywords as (string | { name?: string })[]).map((k) =>
+            typeof k === "string" ? k : ((k as { name?: string }).name ?? "")
+          );
+          const seen = new Set<string>();
+          for (const k of raw) {
+            const trimmed = k.trim();
+            if (!trimmed) continue;
+            if (validateNavigationKeywordName(trimmed)) continue;
+            const lower = trimmed.toLowerCase();
+            if (reservedKeywordLower.has(lower) || seen.has(lower)) continue;
+            seen.add(lower);
+            keywords.push(trimmed);
+            if (keywords.length >= 5) break;
+          }
         }
+        const consolidatedKeywords = consolidateBulkItemKeywords(
+          navKeywords,
+          extrasFromText,
+          keywords
+        );
         items.push({
           question,
           correctAnswer,
@@ -220,6 +295,7 @@ Generate the JSON array only.`;
           explanation,
           source,
           keywords: keywords.length > 0 ? keywords : undefined,
+          consolidatedKeywords,
         });
       }
       if (items.length === 0) {
@@ -259,7 +335,7 @@ Generate the JSON array only.`;
         isPrivate,
         category: category,
         keyword1: primaryTopic.trim(),
-        keyword2: subtopic.trim() || null,
+        keyword2: subtopic.trim(),
         keywords: keywordRequests,
         items: itemsToSave.map((item) => {
           const itemKeywords = [...keywordRequests];
@@ -343,8 +419,8 @@ Generate the JSON array only.`;
     return <Navigate to="/login" replace />;
   }
 
-  const primaryTopicError = validateKeywordFormat(primaryTopic);
-  const subtopicError = validateKeywordFormat(subtopic);
+  const primaryTopicError = validateNavigationKeywordName(primaryTopic);
+  const subtopicError = validateNavigationKeywordName(subtopic);
 
   return (
     <div className="px-4 py-6 sm:px-0">
@@ -363,114 +439,75 @@ Generate the JSON array only.`;
         {step === "setup" && (
           <div className="bg-white shadow rounded-lg p-6 space-y-6">
             <h2 className="text-lg font-medium text-gray-900">1. Setup</h2>
-            <p className="text-sm text-gray-500">
-              Primary topic is the main subject under this category (e.g. a language or exam name). Subtopic narrows it further (e.g. a specific unit). These help you and others find your items in the app.
-            </p>
-            <div className="grid gap-4 sm:grid-cols-2">
+            <section className="rounded-lg border border-gray-200 bg-slate-50/80 p-4 sm:p-5 space-y-5">
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1">Category *</label>
-                <select
-                  value={category}
-                  onChange={(e) => {
-                    setCategory(e.target.value);
+                <h3 className="text-sm font-semibold text-gray-900">Topic and tags</h3>
+                <p className="mt-1 text-xs text-gray-500">
+                  Same scope fields as when you add a single item: category, primary topic, and subtopic are required.
+                  Optional comma-separated tags apply to every generated item and appear in the AI prompt.
+                </p>
+              </div>
+              <ItemTopicScopeFields
+                idPrefix="bulk-topic-scope"
+                categories={categoryOptions}
+                category={category}
+                rank1={primaryTopic}
+                rank2={subtopic}
+                onScopeChange={(patch) => {
+                  if (patch.category !== undefined) {
+                    setCategory(patch.category);
                     setPrimaryTopic("");
                     setSubtopic("");
-                  }}
-                  className="w-full px-3 py-2 border border-gray-300 rounded-md text-sm"
-                >
-                  <option value="">Select category</option>
-                  {categoryOptions.map((c) => (
-                    <option key={c.id} value={c.category}>
-                      {c.category}
-                    </option>
-                  ))}
-                </select>
-              </div>
-              <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1">Primary topic (rank 1) *</label>
-                <select
-                  value={rank1Keywords.some((k) => k.name === primaryTopic) ? primaryTopic : ""}
-                  onChange={(e) => {
-                    setPrimaryTopic(e.target.value);
-                    setSubtopic("");
-                  }}
-                  className="w-full px-3 py-2 border border-gray-300 rounded-md text-sm"
-                >
-                  <option value="">Select or type below</option>
-                  {rank1Keywords.map((k) => (
-                    <option key={k.name} value={k.name}>
-                      {k.name}
-                    </option>
-                  ))}
-                </select>
-                <input
-                  type="text"
-                  value={rank1Keywords.some((k) => k.name === primaryTopic) ? "" : primaryTopic}
-                  onChange={(e) => setPrimaryTopic(e.target.value.slice(0, KEYWORD_MAX_LEN))}
-                  placeholder="Or type custom (letters, numbers, hyphens)"
-                  className="mt-1 w-full px-3 py-2 border border-gray-300 rounded-md text-sm"
-                />
-                {primaryTopicError && (
-                  <p className="mt-1 text-xs text-red-600">{primaryTopicError}</p>
-                )}
-              </div>
-              <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1">Subtopic (rank 2)</label>
-                <select
-                  value={rank2Keywords.some((k) => k.name === subtopic) ? subtopic : ""}
-                  onChange={(e) => setSubtopic(e.target.value)}
-                  disabled={!primaryTopic}
-                  className="w-full px-3 py-2 border border-gray-300 rounded-md text-sm"
-                >
-                  <option value="">Optional</option>
-                  {rank2Keywords.map((k) => (
-                    <option key={k.name} value={k.name}>
-                      {k.name}
-                    </option>
-                  ))}
-                </select>
-                <input
-                  type="text"
-                  value={rank2Keywords.some((k) => k.name === subtopic) ? "" : subtopic}
-                  onChange={(e) => setSubtopic(e.target.value.slice(0, KEYWORD_MAX_LEN))}
-                  placeholder="Or type custom"
-                  disabled={!primaryTopic}
-                  className="mt-1 w-full px-3 py-2 border border-gray-300 rounded-md text-sm"
-                />
-                {subtopicError && <p className="mt-1 text-xs text-red-600">{subtopicError}</p>}
-              </div>
-              <div className="sm:col-span-2">
-                <label className="block text-sm font-medium text-gray-700 mb-1">Additional keywords (comma-separated)</label>
+                    return;
+                  }
+                  if (patch.rank1 !== undefined) setPrimaryTopic(patch.rank1);
+                  if (patch.rank2 !== undefined) setSubtopic(patch.rank2);
+                }}
+                rank1Options={rank1Keywords.map((k) => k.name)}
+                rank2Options={rank2Keywords.map((k) => k.name)}
+              />
+              <div className="pt-4 border-t border-gray-200/90">
+                <label className="block text-sm font-medium text-gray-700 mb-1">
+                  Additional keywords (comma-separated, optional)
+                </label>
                 <input
                   type="text"
                   value={extraKeywordsText}
                   onChange={(e) => setExtraKeywordsText(e.target.value)}
-                  className="w-full px-3 py-2 border border-gray-300 rounded-md text-sm"
-                  placeholder="e.g. practice, exam"
+                  className="w-full px-3 py-2 border border-gray-300 rounded-md text-sm bg-white"
+                  placeholder="e.g. practice, exam-prep"
                 />
-                <p className="mt-1 text-xs text-gray-500">These will be included in the prompt and attached to each item. Use letters, numbers, hyphens.</p>
+                <p className="mt-1 text-xs text-gray-500">
+                  Included in the prompt and attached to each saved item. Use letters, numbers, and hyphens per tag.
+                </p>
               </div>
-              <div className="sm:col-span-2">
-                <label className="block text-sm font-medium text-gray-700 mb-1">Add to collection (optional)</label>
-                <select
-                  value={collectionId}
-                  onChange={(e) => setCollectionId(e.target.value)}
-                  className="w-full px-3 py-2 border border-gray-300 rounded-md text-sm"
-                >
-                  <option value="">None</option>
-                  {collections.map((c) => (
-                    <option key={c.id} value={c.id}>
-                      {c.name}
-                    </option>
-                  ))}
-                </select>
-              </div>
+            </section>
+            <div>
+              <label className="block text-sm font-medium text-gray-700 mb-1">Add to collection (optional)</label>
+              <select
+                value={collectionId}
+                onChange={(e) => setCollectionId(e.target.value)}
+                className="w-full max-w-md px-3 py-2 border border-gray-300 rounded-md text-sm"
+              >
+                <option value="">None</option>
+                {collections.map((c) => (
+                  <option key={c.id} value={c.id}>
+                    {c.name}
+                  </option>
+                ))}
+              </select>
             </div>
             <div className="flex gap-3">
               <button
                 type="button"
                 onClick={handleGeneratePrompt}
-                disabled={!category || !primaryTopic.trim() || !!primaryTopicError || !!subtopicError}
+                disabled={
+                  !category ||
+                  !primaryTopic.trim() ||
+                  !subtopic.trim() ||
+                  !!primaryTopicError ||
+                  !!subtopicError
+                }
                 className="px-4 py-2 text-sm font-medium text-white bg-indigo-600 rounded-md hover:bg-indigo-700 disabled:opacity-50"
               >
                 Generate Prompt
@@ -528,14 +565,14 @@ Generate the JSON array only.`;
           <div className="bg-white shadow rounded-lg p-6 space-y-4">
             <h2 className="text-lg font-medium text-gray-900">3. Paste AI response</h2>
             <p className="text-sm text-gray-500">
-              Paste the raw JSON array from your AI assistant below. Items will be checked; only those matching your selected category will be kept. You can then review and accept or reject each before saving.
+              Paste the raw JSON array from your AI assistant below. Items will be checked; only those matching your selected category will be kept. Optional per-item <code className="text-xs bg-gray-100 px-1 rounded">keywords</code> (up to five per item, format-valid and not duplicating your topic or extra tags) are merged with your setup tags on save. On the review step, each row shows that full combined tag list. You can then accept or reject each item before saving.
             </p>
             <textarea
               value={pastedResponse}
               onChange={(e) => setPastedResponse(e.target.value)}
               rows={12}
               className="w-full px-3 py-2 border border-gray-300 rounded-md text-sm font-mono"
-              placeholder='[ { "category": "...", "question": "...", ... }, ... ]'
+              placeholder='[ { "category": "...", "question": "...", "keywords": ["tag-one"], ... }, ... ]'
             />
             <div className="flex gap-3">
               <button
@@ -561,6 +598,7 @@ Generate the JSON array only.`;
             <h2 className="text-lg font-medium text-gray-900">4. Review items</h2>
             <p className="text-sm text-gray-500">
               Items are not saved yet. Accept to save to the database{collectionId ? " and add to your selected collection" : ""}. Reject to discard.
+              Each row shows the full tag list: your category topics and optional extra tags from setup, plus any extra tags the AI suggested for that item (duplicates removed).
             </p>
             <div className="flex gap-2 mb-4">
               <button
@@ -592,6 +630,11 @@ Generate the JSON array only.`;
                           <> · ✗ {item.incorrectAnswers.join(", ")}</>
                         )}
                       </p>
+                      {item.consolidatedKeywords.length > 0 && (
+                        <p className="text-xs text-indigo-700 mt-1">
+                          Tags: {item.consolidatedKeywords.join(", ")}
+                        </p>
+                      )}
                     </div>
                     <div className="flex shrink-0 gap-1">
                       <button

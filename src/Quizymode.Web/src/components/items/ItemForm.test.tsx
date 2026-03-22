@@ -6,12 +6,17 @@ import { ItemForm } from "./ItemForm";
 const defaultValues = {
   category: "",
   isPrivate: true,
+  navigationRank1: "",
+  navigationRank2: "",
+  readyForReview: false,
   question: "",
   correctAnswer: "",
   incorrectAnswers: ["", "", ""],
   explanation: "",
-  keywords: [],
+  keywords: [] as { name: string; isPrivate: boolean }[],
   source: "",
+  factualRisk: "",
+  reviewComments: "",
 };
 
 describe("ItemForm", () => {

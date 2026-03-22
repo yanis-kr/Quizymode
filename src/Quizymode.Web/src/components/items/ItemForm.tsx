@@ -4,6 +4,7 @@
 import { useState } from "react";
 import type { KeywordRequest } from "@/types/api";
 import ErrorMessage from "@/components/ErrorMessage";
+import { ItemTopicScopeFields } from "@/components/items/ItemTopicScopeFields";
 
 export interface ItemFormValues {
   category: string;
@@ -46,8 +47,6 @@ export interface ItemFormProps {
   onDismissSubmitError?: () => void;
 }
 
-const CUSTOM_RANK_OPTION = "__custom__";
-
 export function ItemForm({
   mode,
   values,
@@ -67,25 +66,6 @@ export function ItemForm({
 }: ItemFormProps) {
   const [newKeywordName, setNewKeywordName] = useState("");
   const [newKeywordIsPrivate, setNewKeywordIsPrivate] = useState(true);
-
-  const rank1InList = rank1Options.some(
-    (o) => o.toLowerCase() === values.navigationRank1.trim().toLowerCase()
-  );
-  const rank2InList = rank2Options.some(
-    (o) => o.toLowerCase() === values.navigationRank2.trim().toLowerCase()
-  );
-  const rank1SelectValue =
-    values.navigationRank1 && rank1InList
-      ? rank1Options.find((o) => o.toLowerCase() === values.navigationRank1.trim().toLowerCase()) ?? ""
-      : values.navigationRank1.trim()
-        ? CUSTOM_RANK_OPTION
-        : "";
-  const rank2SelectValue =
-    values.navigationRank2 && rank2InList
-      ? rank2Options.find((o) => o.toLowerCase() === values.navigationRank2.trim().toLowerCase()) ?? ""
-      : values.navigationRank2.trim()
-        ? CUSTOM_RANK_OPTION
-        : "";
 
   const addKeyword = () => {
     const trimmedName = newKeywordName.trim().toLowerCase();
@@ -136,104 +116,90 @@ export function ItemForm({
         />
       )}
 
-      <div>
-        <label htmlFor="item-form-category" className="block text-sm font-medium text-gray-700 mb-2">
-          Category *
-        </label>
-        <select
-          id="item-form-category"
-          value={values.category}
-          onChange={(e) => onChange({ ...values, category: e.target.value })}
-          required
-          className="w-full px-3 py-2 border border-gray-300 rounded-md text-sm"
-        >
-          <option value="">Select a category</option>
-          {categories.map((cat) => (
-            <option key={cat.category} value={cat.category}>
-              {cat.category}
-            </option>
-          ))}
-        </select>
-      </div>
-
-      {rank1Options.length >= 0 && (
-        <>
-          <div>
-            <label htmlFor="item-form-rank1" className="block text-sm font-medium text-gray-700 mb-2">
-              Navigation keyword rank 1
-            </label>
-            <select
-              id="item-form-rank1"
-              value={rank1SelectValue}
-              onChange={(e) => {
-                const v = e.target.value;
-                if (v === CUSTOM_RANK_OPTION) {
-                  onChange({ ...values, navigationRank1: "", navigationRank2: "" });
-                } else {
-                  onChange({ ...values, navigationRank1: v, navigationRank2: "" });
-                }
-              }}
-              disabled={!values.category || isLoadingRank1}
-              className="w-full px-3 py-2 border border-gray-300 rounded-md text-sm"
-            >
-              <option value="">— Select or add your own —</option>
-              {rank1Options.map((name) => (
-                <option key={name} value={name}>
-                  {name}
-                </option>
-              ))}
-              <option value={CUSTOM_RANK_OPTION}>— Create my own (private) —</option>
-            </select>
-            {(rank1SelectValue === CUSTOM_RANK_OPTION || (values.navigationRank1.trim() && !rank1InList)) && (
+      <section className="rounded-lg border border-gray-200 bg-slate-50/80 p-4 sm:p-5 space-y-5">
+        <div>
+          <h2 className="text-sm font-semibold text-gray-900">Topic and tags</h2>
+          <p className="mt-1 text-xs text-gray-500">
+            Category, primary topic, and subtopic define where the item appears when browsing. Extra
+            keywords are optional tags for finer search.
+          </p>
+        </div>
+        <ItemTopicScopeFields
+          idPrefix="item-form"
+          categories={categories}
+          category={values.category}
+          rank1={values.navigationRank1}
+          rank2={values.navigationRank2}
+          onScopeChange={(patch) =>
+            onChange({
+              ...values,
+              ...(patch.category !== undefined && { category: patch.category }),
+              ...(patch.rank1 !== undefined && { navigationRank1: patch.rank1 }),
+              ...(patch.rank2 !== undefined && { navigationRank2: patch.rank2 }),
+            })
+          }
+          rank1Options={rank1Options}
+          rank2Options={rank2Options}
+          isLoadingRank1={isLoadingRank1}
+          isLoadingRank2={isLoadingRank2}
+        />
+        <div className="pt-4 border-t border-gray-200/90">
+          <label className="block text-sm font-medium text-gray-700 mb-2">
+            Additional keywords (optional, max 10 characters each)
+          </label>
+          <div className="flex gap-2 mb-2">
+            <input
+              type="text"
+              value={newKeywordName}
+              onChange={(e) =>
+                setNewKeywordName(e.target.value.slice(0, 10))
+              }
+              placeholder="Keyword name (max 10 chars)"
+              maxLength={10}
+              className="flex-1 px-3 py-2 border border-gray-300 rounded-md text-sm"
+              onKeyPress={(e) => e.key === "Enter" && (e.preventDefault(), addKeyword())}
+            />
+            <label className="flex items-center px-3 py-2 border border-gray-300 rounded-md text-sm">
               <input
-                type="text"
-                value={values.navigationRank1}
-                onChange={(e) => onChange({ ...values, navigationRank1: e.target.value.slice(0, 30) })}
-                placeholder="Private keyword name (max 30 chars)"
-                maxLength={30}
-                className="mt-2 w-full px-3 py-2 border border-gray-300 rounded-md text-sm"
+                type="checkbox"
+                checked={newKeywordIsPrivate}
+                onChange={(e) => setNewKeywordIsPrivate(e.target.checked)}
+                disabled={!isAdmin}
+                className="mr-2"
               />
-            )}
-          </div>
-          <div>
-            <label htmlFor="item-form-rank2" className="block text-sm font-medium text-gray-700 mb-2">
-              Navigation keyword rank 2
+              Private
             </label>
-            <select
-              id="item-form-rank2"
-              value={rank2SelectValue}
-              onChange={(e) => {
-                const v = e.target.value;
-                if (v === CUSTOM_RANK_OPTION) {
-                  onChange({ ...values, navigationRank2: "" });
-                } else {
-                  onChange({ ...values, navigationRank2: v });
-                }
-              }}
-              disabled={!values.navigationRank1.trim() || isLoadingRank2}
-              className="w-full px-3 py-2 border border-gray-300 rounded-md text-sm"
+            <button
+              type="button"
+              onClick={addKeyword}
+              className="px-4 py-2 text-sm font-medium text-white bg-indigo-600 rounded-md hover:bg-indigo-700"
             >
-              <option value="">— Select or add your own —</option>
-              {rank2Options.map((name) => (
-                <option key={name} value={name}>
-                  {name}
-                </option>
-              ))}
-              <option value={CUSTOM_RANK_OPTION}>— Create my own (private) —</option>
-            </select>
-            {(rank2SelectValue === CUSTOM_RANK_OPTION || (values.navigationRank2.trim() && !rank2InList)) && (
-              <input
-                type="text"
-                value={values.navigationRank2}
-                onChange={(e) => onChange({ ...values, navigationRank2: e.target.value.slice(0, 30) })}
-                placeholder="Private keyword name (max 30 chars)"
-                maxLength={30}
-                className="mt-2 w-full px-3 py-2 border border-gray-300 rounded-md text-sm"
-              />
-            )}
+              Add
+            </button>
           </div>
-        </>
-      )}
+          {values.keywords.length > 0 && (
+            <div className="flex flex-wrap gap-2">
+              {values.keywords.map((keyword, index) => (
+                <span
+                  key={index}
+                  className="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-blue-100 text-blue-800"
+                >
+                  {keyword.name}
+                  {keyword.isPrivate && <span className="ml-1 text-xs">🔒</span>}
+                  <button
+                    type="button"
+                    onClick={() => removeKeyword(index)}
+                    className="ml-2 inline-flex items-center justify-center w-4 h-4 rounded-full hover:bg-blue-200"
+                    aria-label={`Remove ${keyword.name}`}
+                  >
+                    ×
+                  </button>
+                </span>
+              ))}
+            </div>
+          )}
+        </div>
+      </section>
 
       <div>
         <label className="flex items-center">
@@ -384,63 +350,6 @@ export function ItemForm({
           </div>
         </>
       )}
-
-      <div>
-        <label className="block text-sm font-medium text-gray-700 mb-2">
-          Keywords (optional, max 10 characters each)
-        </label>
-        <div className="flex gap-2 mb-2">
-          <input
-            type="text"
-            value={newKeywordName}
-            onChange={(e) =>
-              setNewKeywordName(e.target.value.slice(0, 10))
-            }
-            placeholder="Keyword name (max 10 chars)"
-            maxLength={10}
-            className="flex-1 px-3 py-2 border border-gray-300 rounded-md text-sm"
-            onKeyPress={(e) => e.key === "Enter" && (e.preventDefault(), addKeyword())}
-          />
-          <label className="flex items-center px-3 py-2 border border-gray-300 rounded-md text-sm">
-            <input
-              type="checkbox"
-              checked={newKeywordIsPrivate}
-              onChange={(e) => setNewKeywordIsPrivate(e.target.checked)}
-              disabled={!isAdmin}
-              className="mr-2"
-            />
-            Private
-          </label>
-          <button
-            type="button"
-            onClick={addKeyword}
-            className="px-4 py-2 text-sm font-medium text-white bg-indigo-600 rounded-md hover:bg-indigo-700"
-          >
-            Add
-          </button>
-        </div>
-        {values.keywords.length > 0 && (
-          <div className="flex flex-wrap gap-2">
-            {values.keywords.map((keyword, index) => (
-              <span
-                key={index}
-                className="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-blue-100 text-blue-800"
-              >
-                {keyword.name}
-                {keyword.isPrivate && <span className="ml-1 text-xs">🔒</span>}
-                <button
-                  type="button"
-                  onClick={() => removeKeyword(index)}
-                  className="ml-2 inline-flex items-center justify-center w-4 h-4 rounded-full hover:bg-blue-200"
-                  aria-label={`Remove ${keyword.name}`}
-                >
-                  ×
-                </button>
-              </span>
-            ))}
-          </div>
-        )}
-      </div>
 
       <div className="flex justify-end space-x-4">
         <button

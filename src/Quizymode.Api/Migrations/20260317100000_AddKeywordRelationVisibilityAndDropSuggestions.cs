@@ -1,11 +1,16 @@
 using System;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Migrations;
+using Quizymode.Api.Data;
 
 #nullable disable
 
 namespace Quizymode.Api.Migrations;
 
 /// <inheritdoc />
+[DbContext(typeof(ApplicationDbContext))]
+[Migration("20260317100000_AddKeywordRelationVisibilityAndDropSuggestions")]
 public partial class AddKeywordRelationVisibilityAndDropSuggestions : Migration
 {
     /// <inheritdoc />
