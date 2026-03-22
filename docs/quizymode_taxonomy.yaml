@@ -358,129 +358,8 @@ business:
         kanban: Flow boards
         risk: Project risk
         stakeholders: People involved
-math:
-  description: Math
-  keywords:
-    general:
-      description: Mixed math
-      keywords:
-        general: Mixed math
-        basics: Core review
-        word-problems: Applied math
-        mixed: Mixed sets
-        formulas: Key formulas
-    arithmetic:
-      description: Number basics
-      keywords:
-        general-arithmetic: Number basics
-        addition: Add numbers
-        subtraction: Take away
-        multiplication: Times tables
-        division: Split numbers
-        fractions: Part of whole
-        decimals: Decimal math
-    pre-algebra:
-      description: Pre algebra
-      keywords:
-        general-pre-algebra: Pre algebra
-        integers: Whole numbers
-        ratios: Compare values
-        percents: Percent math
-        order-ops: PEMDAS
-        variables: Unknowns
-        expressions: Math phrases
-    algebra:
-      description: Algebra
-      keywords:
-        general-algebra: Algebra
-        equations: Solve x
-        inequalities: Value ranges
-        functions: Input output
-        polynomials: Many terms
-        systems: Two equations
-        factoring: Break apart
-    geometry:
-      description: Shapes
-      keywords:
-        general-geometry: Shapes
-        angles: Angle rules
-        triangles: Three sides
-        circles: Round shapes
-        area: Surface size
-        volume: 3D size
-        proofs: Logical steps
-    trig:
-      description: Trig
-      keywords:
-        general-trig: Trig
-        sin-cos-tan: Main ratios
-        unit-circle: Angle wheel
-        identities: Trig rules
-        graphs: Wave graphs
-        triangles: Right trig
-        applications: Real use
-    precalc:
-      description: Precalculus
-      keywords:
-        general-precalc: Precalculus
-        functions: Function study
-        sequences: Number patterns
-        matrices: Array math
-        vectors: Direction math
-        conics: Curve shapes
-        limits: Near values
-    calculus:
-      description: Calculus
-      keywords:
-        general-calculus: Calculus
-        limits: Near values
-        derivatives: Rate change
-        integrals: Area sums
-        series: Infinite sums
-        multivariable: Many vars
-        applications: Real use
-    statistics:
-      description: Statistics
-      keywords:
-        general-statistics: Statistics
-        descriptive: Data summary
-        distributions: Data shapes
-        sampling: Pick data
-        hypothesis: Test claims
-        regression: Trend lines
-        survey: Question data
-    probability:
-      description: Probability
-      keywords:
-        general-probability: Probability
-        basic: Chance basics
-        conditional: Given chance
-        combinatorics: Count ways
-        random-vars: Random values
-        binomial: Two outcome
-        expected-value: Avg outcome
-    linear-algebra:
-      description: Linear alg
-      keywords:
-        general-linear-algebra: Linear alg
-        vectors: Direction math
-        matrices: Array math
-        systems: Linear eqs
-        eigenvalues: Scale factors
-        transformations: Space moves
-        determinants: Matrix value
-    discrete-math:
-      description: Discrete math
-      keywords:
-        general-discrete-math: Discrete math
-        logic: True false
-        sets: Group math
-        graphs: Node links
-        counting: Count ways
-        proofs: Reasoning
-        number-theory: Integers
 science:
-  description: Science
+  description: Natural sciences, mathematics, statistics, lab skills, and quantitative reasoning—from biology and chemistry through calculus, data, and discrete math.
   keywords:
     general:
       description: Mixed science
@@ -600,6 +479,124 @@ science:
         graphs: Data graphs
         reports: Lab writing
         methods: Tests steps
+    math-general:
+      description: Mixed math
+      keywords:
+        general-math: Mixed math
+        basics: Core review
+        word-problems: Applied math
+        mixed: Mixed sets
+        formulas: Key formulas
+    arithmetic:
+      description: Number basics
+      keywords:
+        general-arithmetic: Number basics
+        addition: Add numbers
+        subtraction: Take away
+        multiplication: Times tables
+        division: Split numbers
+        fractions: Part of whole
+        decimals: Decimal math
+    pre-algebra:
+      description: Pre algebra
+      keywords:
+        general-pre-algebra: Pre algebra
+        integers: Whole numbers
+        ratios: Compare values
+        percents: Percent math
+        order-ops: PEMDAS
+        variables: Unknowns
+        expressions: Math phrases
+    algebra:
+      description: Algebra
+      keywords:
+        general-algebra: Algebra
+        equations: Solve x
+        inequalities: Value ranges
+        functions: Input output
+        polynomials: Many terms
+        systems: Two equations
+        factoring: Break apart
+    geometry:
+      description: Shapes
+      keywords:
+        general-geometry: Shapes
+        angles: Angle rules
+        triangles: Three sides
+        circles: Round shapes
+        area: Surface size
+        volume: 3D size
+        proofs: Logical steps
+    trig:
+      description: Trig
+      keywords:
+        general-trig: Trig
+        sin-cos-tan: Main ratios
+        unit-circle: Angle wheel
+        identities: Trig rules
+        graphs: Wave graphs
+        triangles: Right trig
+        applications: Real use
+    precalc:
+      description: Precalculus
+      keywords:
+        general-precalc: Precalculus
+        functions: Function study
+        sequences: Number patterns
+        matrices: Array math
+        vectors: Direction math
+        conics: Curve shapes
+        limits: Near values
+    calculus:
+      description: Calculus
+      keywords:
+        general-calculus: Calculus
+        limits: Near values
+        derivatives: Rate change
+        integrals: Area sums
+        series: Infinite sums
+        multivariable: Many vars
+        applications: Real use
+    statistics:
+      description: Statistics
+      keywords:
+        general-statistics: Statistics
+        descriptive: Data summary
+        distributions: Data shapes
+        sampling: Pick data
+        hypothesis: Test claims
+        regression: Trend lines
+        survey: Question data
+    probability:
+      description: Probability
+      keywords:
+        general-probability: Probability
+        basic: Chance basics
+        conditional: Given chance
+        combinatorics: Count ways
+        random-vars: Random values
+        binomial: Two outcome
+        expected-value: Avg outcome
+    linear-algebra:
+      description: Linear alg
+      keywords:
+        general-linear-algebra: Linear alg
+        vectors: Direction math
+        matrices: Array math
+        systems: Linear eqs
+        eigenvalues: Scale factors
+        transformations: Space moves
+        determinants: Matrix value
+    discrete-math:
+      description: Discrete math
+      keywords:
+        general-discrete-math: Discrete math
+        logic: True false
+        sets: Group math
+        graphs: Node links
+        counting: Count ways
+        proofs: Reasoning
+        number-theory: Integers
 history:
   description: History
   keywords:
@@ -1324,6 +1321,68 @@ sports:
         equipment: Required gear
         officials: Refs judges
         formats: Game formats
+nature:
+  description: Wildlife, plants, ecosystems, outdoor recreation, and survival skills.
+  keywords:
+    general:
+      description: Mixed nature
+      keywords:
+        general: Mixed nature
+        basics: Core nature
+        mixed: Cross topic
+    survival:
+      description: Survival skills
+      keywords:
+        general-survival: Survival skills
+        forest: Forest and woodland
+        tropical-island: Tropical island
+        basics: Core survival
+        shelter: Shelter build
+        water: Water needs
+        fire: Fire making
+    camping:
+      description: Camping
+      keywords:
+        general-camping: Camping
+        basics: Camping fundamentals
+        gear: Gear and kits
+        safety: Outdoor safety
+    navigation:
+      description: Navigation
+      keywords:
+        general-navigation: Navigation
+        map-compass: Map and compass
+        orienteering: Course nav
+        gps: GPS basics
+    animals:
+      description: Animals
+      keywords:
+        general-animals: Animals
+        wildlife: Wild animals
+        predators: Predators
+        marine: Sea life
+        birds: Birds
+    plants:
+      description: Plants
+      keywords:
+        general-plants: Plants
+        poisonous: Poisonous plants
+        trees: Trees
+        wild-edibles: Foraging basics
+    ecosystems:
+      description: Ecosystems
+      keywords:
+        general-ecosystems: Ecosystems
+        tundra: Tundra biomes
+        forests: Forest biomes
+        oceans: Marine ecosystems
+    phenomena:
+      description: Natural phenomena
+      keywords:
+        general-phenomena: Natural phenomena
+        aurora: Aurora and lights
+        weather-events: Storms and extremes
+        geology-events: Earth events
 trivia:
   description: Trivia
   keywords:

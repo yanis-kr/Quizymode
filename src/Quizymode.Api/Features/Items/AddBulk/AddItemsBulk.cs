@@ -2,6 +2,7 @@ using FluentValidation;
 using Quizymode.Api.Data;
 using Quizymode.Api.Infrastructure;
 using Quizymode.Api.Services;
+using Quizymode.Api.Services.Taxonomy;
 using Quizymode.Api.Shared.Kernel;
 
 namespace Quizymode.Api.Features.Items.AddBulk;
@@ -176,7 +177,8 @@ public static class AddItemsBulk
             ApplicationDbContext db,
             ISimHashService simHashService,
             IUserContext userContext,
-            ICategoryResolver categoryResolver,
+            ITaxonomyItemCategoryResolver itemCategoryResolver,
+            ITaxonomyRegistry taxonomyRegistry,
             IAuditService auditService,
             IProfanityFilterService profanityFilter,
             CancellationToken cancellationToken)
@@ -192,7 +194,16 @@ public static class AddItemsBulk
                 return Results.BadRequest(validationResult.Errors);
             }
 
-            Result<Response> result = await AddItemsBulkHandler.HandleAsync(request, db, simHashService, userContext, categoryResolver, auditService, profanityFilter, cancellationToken);
+            Result<Response> result = await AddItemsBulkHandler.HandleAsync(
+                request,
+                db,
+                simHashService,
+                userContext,
+                itemCategoryResolver,
+                taxonomyRegistry,
+                auditService,
+                profanityFilter,
+                cancellationToken);
 
             return result.Match(
                 value => Results.Ok(value),

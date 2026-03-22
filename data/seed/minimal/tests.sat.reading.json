@@ -1,6 +1,6 @@
 [
   {
-    "category": "tests",
+    "category": "exams",
     "question": "The word 'ubiquitous' most nearly means:",
     "correctAnswer": "widespread",
     "incorrectAnswers": [
@@ -9,11 +9,16 @@
       "ancient"
     ],
     "explanation": "Ubiquitous means present or appearing everywhere.",
-    "keywords": ["sat", "reading", "vocabulary", "ubiquitous"],
-    "source": "initial seed"
+    "keywords": [
+      "vocabulary",
+      "ubiquitous"
+    ],
+    "source": "initial seed",
+    "navigationKeyword1": "sat",
+    "navigationKeyword2": "reading"
   },
   {
-    "category": "tests",
+    "category": "exams",
     "question": "The word 'ephemeral' most nearly means:",
     "correctAnswer": "short-lived",
     "incorrectAnswers": [
@@ -22,11 +27,14 @@
       "ancient"
     ],
     "explanation": "Ephemeral describes something that lasts for a very short time.",
-    "keywords": ["sat", "reading", "vocabulary", "ephemeral"],
+    "keywords": [
+      "vocabulary",
+      "ephemeral"
+    ],
     "source": "initial seed"
   },
   {
-    "category": "tests",
+    "category": "exams",
     "question": "The word 'ambiguous' most nearly means:",
     "correctAnswer": "unclear",
     "incorrectAnswers": [
@@ -35,7 +43,10 @@
       "simple"
     ],
     "explanation": "Ambiguous means having more than one possible meaning or interpretation.",
-    "keywords": ["sat", "reading", "vocabulary", "ambiguous"],
+    "keywords": [
+      "vocabulary",
+      "ambiguous"
+    ],
     "source": "initial seed"
   }
 ]

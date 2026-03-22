@@ -1,6 +1,6 @@
 [
   {
-    "category": "language",
+    "category": "languages",
     "question": "How do you say hello in French?",
     "correctAnswer": "Bonjour",
     "incorrectAnswers": [
@@ -9,11 +9,17 @@
       "Au revoir"
     ],
     "explanation": "Bonjour is the standard greeting for hello.",
-    "keywords": ["french", "greetings", "bonjour", "core-100"],
-    "source": "initial seed"
+    "keywords": [
+      "greetings",
+      "bonjour",
+      "core-100"
+    ],
+    "source": "initial seed",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "vocab"
   },
   {
-    "category": "language",
+    "category": "languages",
     "question": "How do you say goodbye in French?",
     "correctAnswer": "Au revoir",
     "incorrectAnswers": [
@@ -22,7 +28,11 @@
       "Merci"
     ],
     "explanation": "Au revoir means goodbye.",
-    "keywords": ["french", "greetings", "goodbye", "core-100"],
+    "keywords": [
+      "greetings",
+      "goodbye",
+      "core-100"
+    ],
     "source": "initial seed"
   }
 ]

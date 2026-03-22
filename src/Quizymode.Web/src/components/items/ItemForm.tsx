@@ -1,10 +1,13 @@
 /**
  * Shared form for creating and editing quiz items. Used by CreateItemPage and EditItemPage.
  */
-import { useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import type { KeywordRequest } from "@/types/api";
 import ErrorMessage from "@/components/ErrorMessage";
 import { ItemTopicScopeFields } from "@/components/items/ItemTopicScopeFields";
+import { NAV_KEYWORD_MAX_LEN } from "@/utils/navigationKeywordRules";
+
+const EXTRA_KEYWORD_AUTOCOMPLETE_LIMIT = 10;
 
 export interface ItemFormValues {
   category: string;
@@ -45,6 +48,9 @@ export interface ItemFormProps {
   validationError?: string;
   submitError?: string;
   onDismissSubmitError?: () => void;
+  /** Sorted unique names: item tags (per category) + taxonomy slugs; filtered by prefix in the UI (max 10). */
+  extraKeywordAutocompleteSource?: string[];
+  extraKeywordAutocompleteLoading?: boolean;
 }
 
 export function ItemForm({
@@ -63,30 +69,63 @@ export function ItemForm({
   validationError,
   submitError,
   onDismissSubmitError,
+  extraKeywordAutocompleteSource = [],
+  extraKeywordAutocompleteLoading = false,
 }: ItemFormProps) {
   const [newKeywordName, setNewKeywordName] = useState("");
-  const [newKeywordIsPrivate, setNewKeywordIsPrivate] = useState(true);
+  const [suggestOpen, setSuggestOpen] = useState(false);
+  const [highlightIndex, setHighlightIndex] = useState(-1);
+  const keywordInputContainerRef = useRef<HTMLDivElement>(null);
+  const listboxId = `${mode}-extra-keyword-listbox`;
 
-  const addKeyword = () => {
-    const trimmedName = newKeywordName.trim().toLowerCase();
-    if (trimmedName.length === 0 || trimmedName.length > 10) return;
-    if (
-      values.keywords.some(
-        (k) =>
-          k.name.toLowerCase() === trimmedName && k.isPrivate === newKeywordIsPrivate
-      )
-    )
-      return;
+  const r1 = values.navigationRank1.trim().toLowerCase();
+  const r2 = values.navigationRank2.trim().toLowerCase();
+  const prefix = newKeywordName.trim().toLowerCase();
+
+  const matches = useMemo(() => {
+    if (prefix.length === 0) return [];
+    const already = new Set(values.keywords.map((k) => k.name.toLowerCase()));
+    return extraKeywordAutocompleteSource
+      .filter((name) => name.toLowerCase().startsWith(prefix))
+      .filter((name) => {
+        const n = name.toLowerCase();
+        return !already.has(n) && n !== r1 && n !== r2;
+      })
+      .slice(0, EXTRA_KEYWORD_AUTOCOMPLETE_LIMIT);
+  }, [prefix, extraKeywordAutocompleteSource, values.keywords, r1, r2]);
+
+  useEffect(() => {
+    setHighlightIndex(matches.length > 0 ? 0 : -1);
+  }, [prefix, matches.length]);
+
+  useEffect(() => {
+    if (!suggestOpen) return;
+    const onDocDown = (ev: MouseEvent) => {
+      if (
+        keywordInputContainerRef.current &&
+        !keywordInputContainerRef.current.contains(ev.target as Node)
+      ) {
+        setSuggestOpen(false);
+      }
+    };
+    document.addEventListener("mousedown", onDocDown);
+    return () => document.removeEventListener("mousedown", onDocDown);
+  }, [suggestOpen]);
+
+  const tryAddKeyword = (raw: string) => {
+    const trimmedName = raw.trim().toLowerCase();
+    if (trimmedName.length === 0 || trimmedName.length > NAV_KEYWORD_MAX_LEN) return;
+    if (values.keywords.some((k) => k.name.toLowerCase() === trimmedName)) return;
     onChange({
       ...values,
-      keywords: [
-        ...values.keywords,
-        { name: trimmedName, isPrivate: newKeywordIsPrivate },
-      ],
+      keywords: [...values.keywords, { name: trimmedName, isPrivate: true }],
     });
     setNewKeywordName("");
-    setNewKeywordIsPrivate(!isAdmin);
+    setSuggestOpen(false);
+    setHighlightIndex(-1);
   };
+
+  const addKeyword = () => tryAddKeyword(newKeywordName);
 
   const removeKeyword = (index: number) => {
     onChange({
@@ -145,34 +184,115 @@ export function ItemForm({
         />
         <div className="pt-4 border-t border-gray-200/90">
           <label className="block text-sm font-medium text-gray-700 mb-2">
-            Additional keywords (optional, max 10 characters each)
+            Additional keywords (optional; official taxonomy slugs attach as shared tags, new labels
+            are private until reviewed)
           </label>
+          <p className="text-xs text-gray-500 mb-2">
+            Type to see up to {EXTRA_KEYWORD_AUTOCOMPLETE_LIMIT} matching tags (prefix search), or enter a
+            new label (letters, numbers, hyphens; max {NAV_KEYWORD_MAX_LEN} chars).
+          </p>
+          {extraKeywordAutocompleteLoading && values.category.trim() !== "" && (
+            <p className="text-xs text-gray-500 mb-2" aria-live="polite">
+              Loading keyword suggestions for this category…
+            </p>
+          )}
           <div className="flex gap-2 mb-2">
-            <input
-              type="text"
-              value={newKeywordName}
-              onChange={(e) =>
-                setNewKeywordName(e.target.value.slice(0, 10))
-              }
-              placeholder="Keyword name (max 10 chars)"
-              maxLength={10}
-              className="flex-1 px-3 py-2 border border-gray-300 rounded-md text-sm"
-              onKeyPress={(e) => e.key === "Enter" && (e.preventDefault(), addKeyword())}
-            />
-            <label className="flex items-center px-3 py-2 border border-gray-300 rounded-md text-sm">
+            <div ref={keywordInputContainerRef} className="relative flex-1">
               <input
-                type="checkbox"
-                checked={newKeywordIsPrivate}
-                onChange={(e) => setNewKeywordIsPrivate(e.target.checked)}
-                disabled={!isAdmin}
-                className="mr-2"
+                type="text"
+                value={newKeywordName}
+                onChange={(e) => {
+                  setNewKeywordName(e.target.value.slice(0, NAV_KEYWORD_MAX_LEN));
+                  setSuggestOpen(true);
+                }}
+                onFocus={() => setSuggestOpen(true)}
+                onBlur={() => {
+                  // Defer so mousedown on an option runs first
+                  window.setTimeout(() => setSuggestOpen(false), 120);
+                }}
+                placeholder={`Keyword (max ${NAV_KEYWORD_MAX_LEN} chars)`}
+                maxLength={NAV_KEYWORD_MAX_LEN}
+                autoComplete="off"
+                role="combobox"
+                aria-expanded={Boolean(suggestOpen && matches.length > 0)}
+                aria-controls={listboxId}
+                aria-autocomplete="list"
+                aria-activedescendant={
+                  suggestOpen && highlightIndex >= 0 && matches[highlightIndex]
+                    ? `${listboxId}-opt-${highlightIndex}`
+                    : undefined
+                }
+                className="w-full px-3 py-2 border border-gray-300 rounded-md text-sm"
+                onKeyDown={(e) => {
+                  if (e.key === "ArrowDown") {
+                    if (matches.length === 0) return;
+                    e.preventDefault();
+                    setSuggestOpen(true);
+                    setHighlightIndex((i) =>
+                      i < matches.length - 1 ? i + 1 : i >= 0 ? i : 0
+                    );
+                    return;
+                  }
+                  if (e.key === "ArrowUp") {
+                    if (matches.length === 0) return;
+                    e.preventDefault();
+                    setSuggestOpen(true);
+                    setHighlightIndex((i) => (i > 0 ? i - 1 : 0));
+                    return;
+                  }
+                  if (e.key === "Escape") {
+                    if (suggestOpen) {
+                      e.preventDefault();
+                      setSuggestOpen(false);
+                    }
+                    return;
+                  }
+                  if (e.key === "Enter") {
+                    e.preventDefault();
+                    if (
+                      suggestOpen &&
+                      matches.length > 0 &&
+                      highlightIndex >= 0 &&
+                      matches[highlightIndex]
+                    ) {
+                      tryAddKeyword(matches[highlightIndex]);
+                    } else {
+                      addKeyword();
+                    }
+                  }
+                }}
               />
-              Private
-            </label>
+              {suggestOpen && matches.length > 0 && (
+                <ul
+                  id={listboxId}
+                  role="listbox"
+                  className="absolute z-20 mt-1 max-h-60 w-full overflow-auto rounded-md border border-gray-200 bg-white py-1 text-sm shadow-lg"
+                >
+                  {matches.map((name, idx) => (
+                    <li
+                      key={name}
+                      id={`${listboxId}-opt-${idx}`}
+                      role="option"
+                      aria-selected={idx === highlightIndex}
+                      className={`cursor-pointer px-3 py-2 ${
+                        idx === highlightIndex ? "bg-indigo-50 text-indigo-900" : "text-gray-800"
+                      }`}
+                      onMouseEnter={() => setHighlightIndex(idx)}
+                      onMouseDown={(ev) => {
+                        ev.preventDefault();
+                        tryAddKeyword(name);
+                      }}
+                    >
+                      {name}
+                    </li>
+                  ))}
+                </ul>
+              )}
+            </div>
             <button
               type="button"
               onClick={addKeyword}
-              className="px-4 py-2 text-sm font-medium text-white bg-indigo-600 rounded-md hover:bg-indigo-700"
+              className="px-4 py-2 text-sm font-medium text-white bg-indigo-600 rounded-md hover:bg-indigo-700 shrink-0"
             >
               Add
             </button>

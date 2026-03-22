@@ -3,6 +3,8 @@ using Microsoft.EntityFrameworkCore;
 using Quizymode.Api.Data;
 using Quizymode.Api.Infrastructure;
 using Quizymode.Api.Services;
+using Quizymode.Api.Services.Taxonomy;
+using Quizymode.Api.Shared.Helpers;
 using Quizymode.Api.Shared.Kernel;
 using Quizymode.Api.Shared.Models;
 
@@ -141,7 +143,8 @@ public static class UpdateItem
             ISimHashService simHashService,
             IUserContext userContext,
             IAuditService auditService,
-            ICategoryResolver categoryResolver,
+            ITaxonomyItemCategoryResolver itemCategoryResolver,
+            ITaxonomyRegistry taxonomyRegistry,
             IProfanityFilterService profanityFilter,
             CancellationToken cancellationToken)
         {
@@ -151,7 +154,17 @@ public static class UpdateItem
                 return Results.BadRequest(validationResult.Errors);
             }
 
-            Result<Response> result = await HandleAsync(id, request, db, simHashService, userContext, auditService, categoryResolver, profanityFilter, cancellationToken);
+            Result<Response> result = await HandleAsync(
+                id,
+                request,
+                db,
+                simHashService,
+                userContext,
+                auditService,
+                itemCategoryResolver,
+                taxonomyRegistry,
+                profanityFilter,
+                cancellationToken);
 
             return result.Match(
                 value => Results.Ok(value),
@@ -168,7 +181,8 @@ public static class UpdateItem
         ISimHashService simHashService,
         IUserContext userContext,
         IAuditService auditService,
-        ICategoryResolver categoryResolver,
+        ITaxonomyItemCategoryResolver itemCategoryResolver,
+        ITaxonomyRegistry taxonomyRegistry,
         IProfanityFilterService profanityFilter,
         CancellationToken cancellationToken)
     {
@@ -193,18 +207,12 @@ public static class UpdateItem
             string fuzzySignature = simHashService.ComputeSimHash(questionText);
             int fuzzyBucket = simHashService.GetFuzzyBucket(fuzzySignature);
 
-            // Regular users can only create/update private items
-            // They cannot change items to global (IsPrivate = false)
             bool effectiveIsPrivate = userContext.IsAdmin ? request.IsPrivate : true;
-            
+
             string userId = userContext.UserId ?? throw new InvalidOperationException("User ID is required for item update");
-            
-            // Resolve category via CategoryResolver
-            Result<Category> categoryResult = await categoryResolver.ResolveOrCreateAsync(
+
+            Result<Category> categoryResult = await itemCategoryResolver.ResolveForItemAsync(
                 request.Category,
-                isPrivate: effectiveIsPrivate,
-                currentUserId: userId,
-                isAdmin: userContext.IsAdmin,
                 cancellationToken);
 
             if (categoryResult.IsFailure)
@@ -218,36 +226,46 @@ public static class UpdateItem
                 return Result.Failure<Response>(Error.Validation("Item.InvalidNavigationKeyword1", "Primary topic was rejected by content filter."));
             if (profanityFilter.ContainsProfanity(request.NavigationKeyword2))
                 return Result.Failure<Response>(Error.Validation("Item.InvalidNavigationKeyword2", "Subtopic was rejected by content filter."));
-            if (request.Keywords != null)
+
+            string nav1Norm = KeywordHelper.NormalizeKeywordName(request.NavigationKeyword1);
+            string nav2Norm = KeywordHelper.NormalizeKeywordName(request.NavigationKeyword2);
+
+            if (request.Keywords is not null)
             {
-                foreach (var kw in request.Keywords)
+                foreach (KeywordRequest kw in request.Keywords)
                 {
-                    if (!string.IsNullOrWhiteSpace(kw.Name) && profanityFilter.ContainsProfanity(kw.Name))
-                        return Result.Failure<Response>(Error.Validation("Item.InvalidKeyword", $"Keyword '{kw.Name}' was rejected by content filter."));
+                    if (string.IsNullOrWhiteSpace(kw.Name))
+                        continue;
+                    string n = KeywordHelper.NormalizeKeywordName(kw.Name);
+                    if (string.IsNullOrEmpty(n))
+                        continue;
+                    if (!KeywordHelper.IsValidKeywordNameFormat(n))
+                    {
+                        return Result.Failure<Response>(
+                            Error.Validation("Item.InvalidKeyword", $"Keyword '{n}' is invalid. Use only letters, numbers, and hyphens (max 30 characters)."));
+                    }
+
+                    if (profanityFilter.ContainsProfanity(n))
+                        return Result.Failure<Response>(Error.Validation("Item.InvalidKeyword", $"Keyword '{n}' was rejected by content filter."));
+
+                    if (string.Equals(n, nav1Norm, StringComparison.OrdinalIgnoreCase)
+                        || string.Equals(n, nav2Norm, StringComparison.OrdinalIgnoreCase))
+                        continue;
                 }
             }
 
-            string nav1 = request.NavigationKeyword1.Trim().ToLowerInvariant();
-            string nav2 = request.NavigationKeyword2.Trim().ToLowerInvariant();
-            IQueryable<KeywordRelation> nav1Query = db.KeywordRelations
-                .Include(kr => kr.ChildKeyword)
-                .Where(kr => kr.CategoryId == category.Id && kr.ParentKeywordId == null && kr.ChildKeyword.Name.ToLower() == nav1);
-            nav1Query = nav1Query.Where(kr => !kr.IsPrivate || kr.CreatedBy == userId);
-            Guid? nav1Id = await nav1Query.Select(kr => kr.ChildKeywordId).FirstOrDefaultAsync(cancellationToken);
-            if (nav1Id == default)
-            {
-                return Result.Failure<Response>(Error.Validation("Item.InvalidNavigationKeyword1", $"'{request.NavigationKeyword1}' is not a valid primary topic for category '{category.Name}'."));
-            }
+            Result<(Keyword Nav1, Keyword Nav2)> navResult = await ItemNavigationAndKeywordsHelper.ResolvePublicNavigationAsync(
+                db,
+                taxonomyRegistry,
+                category,
+                request.NavigationKeyword1,
+                request.NavigationKeyword2,
+                cancellationToken);
 
-            IQueryable<KeywordRelation> nav2Query = db.KeywordRelations
-                .Include(kr => kr.ChildKeyword)
-                .Where(kr => kr.CategoryId == category.Id && kr.ParentKeywordId == nav1Id && kr.ChildKeyword.Name.ToLower() == nav2);
-            nav2Query = nav2Query.Where(kr => !kr.IsPrivate || kr.CreatedBy == userId);
-            Guid? nav2Id = await nav2Query.Select(kr => kr.ChildKeywordId).FirstOrDefaultAsync(cancellationToken);
-            if (nav2Id == default)
-            {
-                return Result.Failure<Response>(Error.Validation("Item.InvalidNavigationKeyword2", $"'{request.NavigationKeyword2}' is not a valid subtopic under '{request.NavigationKeyword1}' for category '{category.Name}'."));
-            }
+            if (navResult.IsFailure)
+                return Result.Failure<Response>(navResult.Error!);
+
+            (Keyword navK1, Keyword navK2) = navResult.Value!;
 
             // Update item properties
             item.Question = request.Question;
@@ -256,8 +274,8 @@ public static class UpdateItem
             item.Explanation = request.Explanation;
             item.IsPrivate = effectiveIsPrivate;
             item.CategoryId = category.Id;
-            item.NavigationKeywordId1 = nav1Id;
-            item.NavigationKeywordId2 = nav2Id;
+            item.NavigationKeywordId1 = navK1.Id;
+            item.NavigationKeywordId2 = navK2.Id;
             if (request.ReadyForReview.HasValue)
             {
                 item.ReadyForReview = request.ReadyForReview.Value;
@@ -275,7 +293,6 @@ public static class UpdateItem
                 item.ReviewComments = string.IsNullOrWhiteSpace(request.ReviewComments) ? null : request.ReviewComments.Trim();
             }
 
-            // Handle keywords update
             if (request.Keywords is not null)
             {
                 List<ItemKeyword> existingItemKeywords = await db.ItemKeywords
@@ -284,80 +301,60 @@ public static class UpdateItem
                 db.ItemKeywords.RemoveRange(existingItemKeywords);
                 await db.SaveChangesAsync(cancellationToken);
 
-                List<KeywordRequest> effectiveKeywords = request.Keywords.ToList();
-                if (!effectiveKeywords.Any(k => k.Name.Trim().Equals(request.NavigationKeyword1, StringComparison.OrdinalIgnoreCase)))
-                    effectiveKeywords.Insert(0, new KeywordRequest(request.NavigationKeyword1, effectiveIsPrivate));
-                if (!effectiveKeywords.Any(k => k.Name.Trim().Equals(request.NavigationKeyword2, StringComparison.OrdinalIgnoreCase)))
-                    effectiveKeywords.Add(new KeywordRequest(request.NavigationKeyword2, effectiveIsPrivate));
+                List<string> orderedNames = [];
 
-                // Regular users can only create private keywords
-                if (!userContext.IsAdmin)
+                void AddUniqueName(string raw)
                 {
-                    effectiveKeywords = effectiveKeywords.Select(k => new KeywordRequest(k.Name, true)).ToList();
+                    string n = KeywordHelper.NormalizeKeywordName(raw);
+                    if (string.IsNullOrEmpty(n))
+                        return;
+                    if (orderedNames.Any(x => string.Equals(x, n, StringComparison.OrdinalIgnoreCase)))
+                        return;
+                    orderedNames.Add(n);
                 }
-                
-                // Add new keywords
-                if (effectiveKeywords.Count > 0)
+
+                AddUniqueName(request.NavigationKeyword1);
+                AddUniqueName(request.NavigationKeyword2);
+                foreach (KeywordRequest kw in request.Keywords)
+                    AddUniqueName(kw.Name);
+
+                List<ItemKeyword> itemKeywords = [];
+                HashSet<Guid> attached = [];
+
+                foreach (string normalizedName in orderedNames)
                 {
-                    List<ItemKeyword> itemKeywords = new();
-
-                    foreach (KeywordRequest keywordRequest in effectiveKeywords)
+                    Keyword keyword;
+                    if (string.Equals(normalizedName, navK1.Name, StringComparison.OrdinalIgnoreCase))
+                        keyword = navK1;
+                    else if (string.Equals(normalizedName, navK2.Name, StringComparison.OrdinalIgnoreCase))
+                        keyword = navK2;
+                    else
                     {
-                        string normalizedName = keywordRequest.Name.Trim().ToLowerInvariant();
-                        if (string.IsNullOrEmpty(normalizedName))
-                        {
-                            continue;
-                        }
-
-                        Keyword? keyword = null;
-                        if (keywordRequest.IsPrivate)
-                        {
-                            keyword = await db.Keywords
-                                .FirstOrDefaultAsync(k => 
-                                    k.Name.ToLower() == normalizedName && 
-                                    k.IsPrivate == true &&
-                                    k.CreatedBy == userId,
-                                    cancellationToken);
-                        }
-                        else
-                        {
-                            keyword = await db.Keywords
-                                .FirstOrDefaultAsync(k => 
-                                    k.Name.ToLower() == normalizedName && 
-                                    k.IsPrivate == false,
-                                    cancellationToken);
-                        }
-
-                        if (keyword is null)
-                        {
-                            keyword = new Keyword
-                            {
-                                Id = Guid.NewGuid(),
-                                Name = normalizedName,
-                                IsPrivate = keywordRequest.IsPrivate,
-                                CreatedBy = userId,
-                                CreatedAt = DateTime.UtcNow,
-                                IsReviewPending = keywordRequest.IsPrivate
-                            };
-                            db.Keywords.Add(keyword);
-                            await db.SaveChangesAsync(cancellationToken);
-                        }
-
-                        ItemKeyword itemKeyword = new ItemKeyword
-                        {
-                            Id = Guid.NewGuid(),
-                            ItemId = itemId,
-                            KeywordId = keyword.Id,
-                            AddedAt = DateTime.UtcNow
-                        };
-                        itemKeywords.Add(itemKeyword);
+                        keyword = await ItemNavigationAndKeywordsHelper.GetOrCreateKeywordForItemAttachmentAsync(
+                            db,
+                            taxonomyRegistry,
+                            category.Name,
+                            userId,
+                            normalizedName,
+                            cancellationToken);
                     }
 
-                    if (itemKeywords.Count > 0)
+                    if (!attached.Add(keyword.Id))
+                        continue;
+
+                    itemKeywords.Add(new ItemKeyword
                     {
-                        db.ItemKeywords.AddRange(itemKeywords);
-                        await db.SaveChangesAsync(cancellationToken);
-                    }
+                        Id = Guid.NewGuid(),
+                        ItemId = itemId,
+                        KeywordId = keyword.Id,
+                        AddedAt = DateTime.UtcNow
+                    });
+                }
+
+                if (itemKeywords.Count > 0)
+                {
+                    db.ItemKeywords.AddRange(itemKeywords);
+                    await db.SaveChangesAsync(cancellationToken);
                 }
             }
 

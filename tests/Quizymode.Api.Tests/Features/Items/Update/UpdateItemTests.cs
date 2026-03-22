@@ -34,7 +34,7 @@ public sealed class UpdateItemTests : ItemTestFixture
 
         UpdateItem.Request request = new(
             Category: "geography",
-            NavigationKeyword1: "topics",
+            NavigationKeyword1: "capitals",
             NavigationKeyword2: "europe",
             Question: "What is the capital of France?",
             CorrectAnswer: "Paris",
@@ -51,7 +51,8 @@ public sealed class UpdateItemTests : ItemTestFixture
             SimHashService,
             _userContextMock.Object,
             _auditServiceMock.Object,
-            CategoryResolver,
+            TaxonomyItemCategoryResolver,
+            TaxonomyRegistry,
             ProfanityFilter,
             CancellationToken.None);
 
@@ -95,7 +96,7 @@ public sealed class UpdateItemTests : ItemTestFixture
 
         UpdateItem.Request request = new(
             Category: "geography",
-            NavigationKeyword1: "topics",
+            NavigationKeyword1: "capitals",
             NavigationKeyword2: "europe",
             Question: "What is the capital of France?",
             CorrectAnswer: "Paris",
@@ -112,7 +113,8 @@ public sealed class UpdateItemTests : ItemTestFixture
             SimHashService,
             _userContextMock.Object,
             _auditServiceMock.Object,
-            CategoryResolver,
+            TaxonomyItemCategoryResolver,
+            TaxonomyRegistry,
             ProfanityFilter,
             CancellationToken.None);
 
@@ -139,7 +141,7 @@ public sealed class UpdateItemTests : ItemTestFixture
 
         UpdateItem.Request request = new(
             Category: "geography",
-            NavigationKeyword1: "topics",
+            NavigationKeyword1: "capitals",
             NavigationKeyword2: "europe",
             Question: "What is the capital of France?",
             CorrectAnswer: "Paris",
@@ -156,7 +158,8 @@ public sealed class UpdateItemTests : ItemTestFixture
             SimHashService,
             _userContextMock.Object,
             _auditServiceMock.Object,
-            CategoryResolver,
+            TaxonomyItemCategoryResolver,
+            TaxonomyRegistry,
             ProfanityFilter,
             CancellationToken.None);
 
@@ -174,7 +177,7 @@ public sealed class UpdateItemTests : ItemTestFixture
         // Arrange
         UpdateItem.Request request = new(
             Category: "geography",
-            NavigationKeyword1: "topics",
+            NavigationKeyword1: "capitals",
             NavigationKeyword2: "europe",
             Question: "Test?",
             CorrectAnswer: "Answer",
@@ -191,7 +194,8 @@ public sealed class UpdateItemTests : ItemTestFixture
             SimHashService,
             _userContextMock.Object,
             _auditServiceMock.Object,
-            CategoryResolver,
+            TaxonomyItemCategoryResolver,
+            TaxonomyRegistry,
             ProfanityFilter,
             CancellationToken.None);
 
@@ -208,7 +212,7 @@ public sealed class UpdateItemTests : ItemTestFixture
         Guid nonExistentId = Guid.NewGuid();
         UpdateItem.Request request = new(
             Category: "geography",
-            NavigationKeyword1: "topics",
+            NavigationKeyword1: "capitals",
             NavigationKeyword2: "europe",
             Question: "Test?",
             CorrectAnswer: "Answer",
@@ -225,7 +229,8 @@ public sealed class UpdateItemTests : ItemTestFixture
             SimHashService,
             _userContextMock.Object,
             _auditServiceMock.Object,
-            CategoryResolver,
+            TaxonomyItemCategoryResolver,
+            TaxonomyRegistry,
             ProfanityFilter,
             CancellationToken.None);
 

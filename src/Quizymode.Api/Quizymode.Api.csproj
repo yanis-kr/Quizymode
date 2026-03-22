@@ -29,6 +29,7 @@
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
     <PackageReference Include="Dapper" />
+    <PackageReference Include="YamlDotNet" />
     <PackageReference Include="Npgsql.OpenTelemetry" />
     <PackageReference Include="Swashbuckle.AspNetCore.SwaggerUI" />
     <PackageReference Include="DotnetBadWordDetector" />
@@ -40,6 +41,9 @@
 
   <ItemGroup>
     <None Include="..\..\data\seed\**\*.json" Link="data\seed\%(RecursiveDir)%(Filename)%(Extension)">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="..\..\docs\quizymode_taxonomy.yaml" Link="data\taxonomy\quizymode_taxonomy.yaml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
   </ItemGroup>

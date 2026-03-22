@@ -1,6 +1,8 @@
 [
   {
-    "category": "tests",
+    "category": "exams",
+    "navigationKeyword1": "act",
+    "navigationKeyword2": "math",
     "question": "What is the value of 7 + 8 × 2?",
     "correctAnswer": "23",
     "incorrectAnswers": [
@@ -9,11 +11,11 @@
       "14"
     ],
     "explanation": "Multiply first: 8×2=16, then add 7.",
-    "keywords": ["act", "math", "order-of-operations", "arithmetic"],
+    "keywords": ["order-of-operations", "arithmetic"],
     "source": "initial seed"
   },
   {
-    "category": "tests",
+    "category": "exams",
     "question": "What is 45 percent of 200?",
     "correctAnswer": "90",
     "incorrectAnswers": [
@@ -22,11 +24,11 @@
       "100"
     ],
     "explanation": "0.45×200=90.",
-    "keywords": ["act", "math", "percentages", "arithmetic"],
+    "keywords": ["percentages", "arithmetic"],
     "source": "initial seed"
   },
   {
-    "category": "tests",
+    "category": "exams",
     "question": "If x + 5 = 12, what is x?",
     "correctAnswer": "7",
     "incorrectAnswers": [
@@ -35,7 +37,7 @@
       "60"
     ],
     "explanation": "Subtract 5 from both sides: x = 12 - 5 = 7.",
-    "keywords": ["act", "math", "algebra", "equations"],
+    "keywords": ["algebra", "equations"],
     "source": "initial seed"
   }
 ]

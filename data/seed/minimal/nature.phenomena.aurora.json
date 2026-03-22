@@ -9,8 +9,13 @@
       "Volcanic activity"
     ],
     "explanation": "Solar wind particles are guided by Earth's magnetic field to polar regions, where they excite atmospheric gases to create auroras.",
-    "keywords": ["phenomena", "aurora", "solar-wind", "magnetic-field"],
-    "source": "initial seed"
+    "keywords": [
+      "solar-wind",
+      "magnetic-field"
+    ],
+    "source": "initial seed",
+    "navigationKeyword1": "phenomena",
+    "navigationKeyword2": "aurora"
   },
   {
     "category": "nature",
@@ -22,7 +27,10 @@
       "Only in the Northern Hemisphere"
     ],
     "explanation": "Auroras occur near magnetic poles where Earth's magnetic field lines converge, allowing solar particles to enter the atmosphere.",
-    "keywords": ["phenomena", "aurora", "polar-regions", "geography"],
+    "keywords": [
+      "polar-regions",
+      "geography"
+    ],
     "source": "initial seed"
   },
   {
@@ -35,7 +43,10 @@
       "The temperature"
     ],
     "explanation": "Different gases (oxygen, nitrogen) at different altitudes emit specific colors when excited by solar particles.",
-    "keywords": ["phenomena", "aurora", "colors", "atmosphere"],
+    "keywords": [
+      "colors",
+      "atmosphere"
+    ],
     "source": "initial seed"
   }
 ]

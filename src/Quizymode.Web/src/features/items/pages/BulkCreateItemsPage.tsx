@@ -9,8 +9,7 @@ import { useAuth } from "@/contexts/AuthContext";
 import { Navigate } from "react-router-dom";
 import ErrorMessage from "@/components/ErrorMessage";
 import { apiClient } from "@/api/client";
-import { categoriesApi } from "@/api/categories";
-import { keywordsApi } from "@/api/keywords";
+import { taxonomyApi } from "@/api/taxonomy";
 import { collectionsApi } from "@/api/collections";
 import {
   XMarkIcon,
@@ -96,16 +95,34 @@ const BulkCreateItemsPage = () => {
     details: string;
   }>({ isOpen: false, message: "", details: "" });
 
-  const { data: categoriesData } = useQuery({
-    queryKey: ["categories"],
-    queryFn: () => categoriesApi.getAll(),
+  const { data: taxonomyData, isLoading: isTaxonomyLoading } = useQuery({
+    queryKey: ["taxonomy"],
+    queryFn: () => taxonomyApi.getAll(),
     enabled: isAuthenticated,
+    staleTime: 24 * 60 * 60 * 1000,
   });
-  const categories = categoriesData?.categories ?? [];
-  const categoryOptions = useMemo(
-    () => [...categories].sort((a, b) => a.category.localeCompare(b.category)),
-    [categories]
+
+  const categoryOptions = useMemo(() => {
+    const rows = (taxonomyData?.categories ?? []).map((c) => ({
+      category: c.slug,
+    }));
+    return [...rows].sort((a, b) => a.category.localeCompare(b.category));
+  }, [taxonomyData]);
+
+  const selectedTaxonomyCategory = useMemo(
+    () => taxonomyData?.categories.find((c) => c.slug === category),
+    [taxonomyData, category]
   );
+
+  const rank1OptionSlugs = useMemo(
+    () => selectedTaxonomyCategory?.groups.map((g) => g.slug) ?? [],
+    [selectedTaxonomyCategory]
+  );
+
+  const rank2OptionSlugs = useMemo(() => {
+    const g = selectedTaxonomyCategory?.groups.find((x) => x.slug === primaryTopic);
+    return g?.keywords.map((k) => k.slug) ?? [];
+  }, [selectedTaxonomyCategory, primaryTopic]);
 
   useEffect(() => {
     if (categoryOptions.length === 0) return;
@@ -117,23 +134,6 @@ const BulkCreateItemsPage = () => {
       if (urlKeywords.length > 1) setSubtopic(urlKeywords[1] ?? "");
     }
   }, [urlCategory, urlKeywords, categoryOptions.length]);
-
-  const { data: rank1Data } = useQuery({
-    queryKey: ["keywords", "rank1", category],
-    queryFn: () => keywordsApi.getNavigationKeywords(category, []),
-    enabled: isAuthenticated && !!category.trim(),
-  });
-  const rank1Keywords = (rank1Data?.keywords ?? []).filter(
-    (k) => k.name.toLowerCase() !== "other"
-  );
-
-  const { data: rank2Data } = useQuery({
-    queryKey: ["keywords", "rank2", category, primaryTopic],
-    queryFn: () =>
-      keywordsApi.getNavigationKeywords(category, primaryTopic ? [primaryTopic] : []),
-    enabled: isAuthenticated && !!category.trim() && !!primaryTopic.trim(),
-  });
-  const rank2Keywords = rank2Data?.keywords ?? [];
 
   const { data: collectionsData } = useQuery({
     queryKey: ["collections"],
@@ -314,21 +314,14 @@ Generate the JSON array only.`;
   const bulkCreateMutation = useMutation({
     mutationFn: async (itemsToSave: ParsedItem[]) => {
       const isPrivate = !isAdmin;
-      const keywordRequests: { name: string; isPrivate: boolean }[] = [];
-      navKeywords.forEach((name) => {
-        const trimmed = name.trim();
-        if (!trimmed) return;
-        if (!keywordRequests.some((k) => k.name.toLowerCase() === trimmed.toLowerCase())) {
-          keywordRequests.push({ name: trimmed, isPrivate });
-        }
-      });
+      const defaultExtraRequests: { name: string; isPrivate: boolean }[] = [];
       extraKeywords.forEach((name) => {
         const trimmed = name.trim();
         if (
           trimmed &&
-          !keywordRequests.some((k) => k.name.toLowerCase() === trimmed.toLowerCase())
+          !defaultExtraRequests.some((k) => k.name.toLowerCase() === trimmed.toLowerCase())
         ) {
-          keywordRequests.push({ name: trimmed, isPrivate });
+          defaultExtraRequests.push({ name: trimmed, isPrivate: true });
         }
       });
       const payload = {
@@ -336,21 +329,19 @@ Generate the JSON array only.`;
         category: category,
         keyword1: primaryTopic.trim(),
         keyword2: subtopic.trim(),
-        keywords: keywordRequests,
+        keywords: defaultExtraRequests,
         items: itemsToSave.map((item) => {
-          const itemKeywords = [...keywordRequests];
-          (item.keywords ?? []).forEach((k) => {
-            const n = k.trim().toLowerCase();
-            if (n && !itemKeywords.some((x) => x.name.toLowerCase() === n)) {
-              itemKeywords.push({ name: k.trim(), isPrivate });
-            }
-          });
+          const aiExtras =
+            (item.keywords ?? [])
+              .map((k) => k.trim())
+              .filter(Boolean)
+              .map((k) => ({ name: k, isPrivate: true as boolean }));
           return {
             question: item.question,
             correctAnswer: item.correctAnswer,
             incorrectAnswers: item.incorrectAnswers,
             explanation: item.explanation || "",
-            keywords: itemKeywords.length > 0 ? itemKeywords : undefined,
+            keywords: aiExtras.length > 0 ? aiExtras : undefined,
             source: item.source,
           };
         }),
@@ -463,8 +454,10 @@ Generate the JSON array only.`;
                   if (patch.rank1 !== undefined) setPrimaryTopic(patch.rank1);
                   if (patch.rank2 !== undefined) setSubtopic(patch.rank2);
                 }}
-                rank1Options={rank1Keywords.map((k) => k.name)}
-                rank2Options={rank2Keywords.map((k) => k.name)}
+                rank1Options={rank1OptionSlugs}
+                rank2Options={rank2OptionSlugs}
+                isLoadingRank1={isTaxonomyLoading && !!category.trim()}
+                isLoadingRank2={isTaxonomyLoading && !!primaryTopic.trim()}
               />
               <div className="pt-4 border-t border-gray-200/90">
                 <label className="block text-sm font-medium text-gray-700 mb-1">

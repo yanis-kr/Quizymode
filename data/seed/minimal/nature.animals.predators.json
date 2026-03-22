@@ -9,8 +9,13 @@
       "Slow movement"
     ],
     "explanation": "Nocturnal predators have evolved superior night vision and acute hearing to locate prey in darkness.",
-    "keywords": ["animals", "predators", "adaptations", "nocturnal"],
-    "source": "initial seed"
+    "keywords": [
+      "adaptations",
+      "nocturnal"
+    ],
+    "source": "initial seed",
+    "navigationKeyword1": "animals",
+    "navigationKeyword2": "predators"
   },
   {
     "category": "nature",
@@ -22,7 +27,10 @@
       "Waiting for prey to come to them"
     ],
     "explanation": "Pack predators like wolves coordinate hunts with different roles (chasers, ambushers) to increase success.",
-    "keywords": ["animals", "predators", "hunting", "social"],
+    "keywords": [
+      "hunting",
+      "social"
+    ],
     "source": "initial seed"
   },
   {
@@ -35,7 +43,10 @@
       "A predator that is endangered"
     ],
     "explanation": "Apex predators occupy the highest trophic level and have no natural predators themselves.",
-    "keywords": ["animals", "predators", "ecology", "food-chain"],
+    "keywords": [
+      "ecology",
+      "food-chain"
+    ],
     "source": "initial seed"
   }
 ]

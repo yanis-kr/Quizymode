@@ -25,11 +25,13 @@ public sealed class AddItemsBulkTests : ItemTestFixture
     [Fact]
     public async Task HandleAsync_ValidRequest_CreatesAllItems()
     {
-        var keywords = new List<AddItemsBulk.KeywordRequest> { new("topics", false), new("europe", false) };
+        await EnsureGeographyPublicWithNavAsync("test-user");
+
+        var keywords = new List<AddItemsBulk.KeywordRequest> { new("capitals", false), new("europe", false) };
         AddItemsBulk.Request request = new(
             IsPrivate: false,
             Category: "geography",
-            Keyword1: "topics",
+            Keyword1: "capitals",
             Keyword2: "europe",
             Keywords: keywords,
             Items: new List<AddItemsBulk.ItemRequest>
@@ -44,7 +46,8 @@ public sealed class AddItemsBulkTests : ItemTestFixture
             DbContext,
             SimHashService,
             _userContextMock.Object,
-            CategoryResolver,
+            TaxonomyItemCategoryResolver,
+            TaxonomyRegistry,
             _auditServiceMock.Object,
             ProfanityFilter,
             CancellationToken.None);
@@ -74,11 +77,11 @@ public sealed class AddItemsBulkTests : ItemTestFixture
             isPrivate: false,
             createdBy: "test-user");
 
-        var keywords = new List<AddItemsBulk.KeywordRequest> { new("topics", false), new("europe", false) };
+        var keywords = new List<AddItemsBulk.KeywordRequest> { new("capitals", false), new("europe", false) };
         AddItemsBulk.Request request = new(
             IsPrivate: false,
             Category: "geography",
-            Keyword1: "topics",
+            Keyword1: "capitals",
             Keyword2: "europe",
             Keywords: keywords,
             Items: new List<AddItemsBulk.ItemRequest>
@@ -93,7 +96,8 @@ public sealed class AddItemsBulkTests : ItemTestFixture
             DbContext,
             SimHashService,
             _userContextMock.Object,
-            CategoryResolver,
+            TaxonomyItemCategoryResolver,
+            TaxonomyRegistry,
             _auditServiceMock.Object,
             ProfanityFilter,
             CancellationToken.None);
@@ -111,9 +115,9 @@ public sealed class AddItemsBulkTests : ItemTestFixture
         AddItemsBulk.Request request = new(
             IsPrivate: false,
             Category: "geography",
-            Keyword1: "topics",
+            Keyword1: "capitals",
             Keyword2: "europe",
-            Keywords: new List<AddItemsBulk.KeywordRequest> { new("topics", false), new("europe", false) },
+            Keywords: new List<AddItemsBulk.KeywordRequest> { new("capitals", false), new("europe", false) },
             Items: new List<AddItemsBulk.ItemRequest>());
 
         AddItemsBulk.Validator validator = new(_userContextMock.Object);
@@ -141,9 +145,9 @@ public sealed class AddItemsBulkTests : ItemTestFixture
         AddItemsBulk.Request request = new(
             IsPrivate: false,
             Category: "geography",
-            Keyword1: "topics",
+            Keyword1: "capitals",
             Keyword2: "europe",
-            Keywords: new List<AddItemsBulk.KeywordRequest> { new("topics", false), new("europe", false) },
+            Keywords: new List<AddItemsBulk.KeywordRequest> { new("capitals", false), new("europe", false) },
             Items: items);
 
         // Use non-admin user context to test the 100-item limit for regular users
@@ -184,11 +188,11 @@ public sealed class AddItemsBulkTests : ItemTestFixture
             isPrivate: false,
             createdBy: "test-user");
 
-        var keywords = new List<AddItemsBulk.KeywordRequest> { new("topics", false), new("europe", false) };
+        var keywords = new List<AddItemsBulk.KeywordRequest> { new("capitals", false), new("europe", false) };
         AddItemsBulk.Request request = new(
             IsPrivate: false,
             Category: "geography",
-            Keyword1: "topics",
+            Keyword1: "capitals",
             Keyword2: "europe",
             Keywords: keywords,
             Items: new List<AddItemsBulk.ItemRequest>
@@ -205,7 +209,8 @@ public sealed class AddItemsBulkTests : ItemTestFixture
             DbContext,
             SimHashService,
             _userContextMock.Object,
-            CategoryResolver,
+            TaxonomyItemCategoryResolver,
+            TaxonomyRegistry,
             _auditServiceMock.Object,
             ProfanityFilter,
             CancellationToken.None);

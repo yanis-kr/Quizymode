@@ -1,6 +1,8 @@
 using System.Collections.Concurrent;
 using System.Security.Claims;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Storage;
+using Npgsql;
 using Quizymode.Api.Data;
 using Quizymode.Api.Shared.Models;
 
@@ -18,6 +20,50 @@ internal sealed class UserUpsertMiddleware
     // Limit concurrent database operations per user to reduce contention
     // Even with database locking, reducing concurrent requests helps performance
     private const int MaxConcurrentPerUser = 3;
+
+    private static bool TryGetPostgresException(Exception? ex, out PostgresException? pg)
+    {
+        while (ex is not null)
+        {
+            if (ex is PostgresException found)
+            {
+                pg = found;
+                return true;
+            }
+
+            ex = ex.InnerException;
+        }
+
+        pg = null;
+        return false;
+    }
+
+    private static bool IsDuplicateUsersEmail(DbUpdateException ex)
+    {
+        if (!TryGetPostgresException(ex, out PostgresException? pg) || pg is null)
+            return false;
+
+        return pg.SqlState == PostgresErrorCodes.UniqueViolation
+            && pg.ConstraintName == "IX_Users_Email";
+    }
+
+    private static async Task TryRollbackCurrentTransactionAsync(
+        ApplicationDbContext db,
+        CancellationToken cancellationToken)
+    {
+        IDbContextTransaction? tx = db.Database.CurrentTransaction;
+        if (tx is null)
+            return;
+
+        try
+        {
+            await tx.RollbackAsync(cancellationToken);
+        }
+        catch (ObjectDisposedException)
+        {
+            // Already rolled back / disposed (e.g. after duplicate-email retry path).
+        }
+    }
 
     public UserUpsertMiddleware(RequestDelegate next, ILogger<UserUpsertMiddleware> logger)
     {
@@ -103,8 +149,9 @@ internal sealed class UserUpsertMiddleware
                         User? existingByEmail = null;
                         if (!string.IsNullOrWhiteSpace(email))
                         {
+                            string emailNorm = email.Trim().ToLowerInvariant();
                             existingByEmail = await db.Users
-                                .Where(u => u.Email != null && u.Email.Trim().ToLower() == email.Trim().ToLower())
+                                .Where(u => u.Email != null && u.Email.Trim().ToLower() == emailNorm)
                                 .AsTracking()
                                 .FirstOrDefaultAsync(context.RequestAborted);
                             if (existingByEmail is not null)
@@ -171,14 +218,17 @@ internal sealed class UserUpsertMiddleware
                             {
                                 await db.SaveChangesAsync(context.RequestAborted);
                             }
-                            catch (DbUpdateException ex) when (ex.InnerException is Npgsql.PostgresException pg && pg.SqlState == "23505" && pg.ConstraintName == "IX_Users_Email")
+                            catch (DbUpdateException ex) when (IsDuplicateUsersEmail(ex))
                             {
                                 // Race: another request inserted same email - load and use that user, update Subject
                                 await transaction.RollbackAsync(context.RequestAborted);
-                                await transaction.DisposeAsync();
-                                await using var retryTransaction = await db.Database.BeginTransactionAsync(System.Data.IsolationLevel.ReadCommitted, context.RequestAborted);
-                                var byEmail = await db.Users
-                                    .Where(u => u.Email != null && u.Email.Trim().ToLower() == email!.Trim().ToLower())
+                                db.ChangeTracker.Clear();
+                                await using var retryTransaction = await db.Database.BeginTransactionAsync(
+                                    System.Data.IsolationLevel.ReadCommitted,
+                                    context.RequestAborted);
+                                string emailNorm = email!.Trim().ToLowerInvariant();
+                                User? byEmail = await db.Users
+                                    .Where(u => u.Email != null && u.Email.Trim().ToLower() == emailNorm)
                                     .AsTracking()
                                     .FirstOrDefaultAsync(context.RequestAborted);
                                 if (byEmail is not null)
@@ -188,10 +238,19 @@ internal sealed class UserUpsertMiddleware
                                     await db.SaveChangesAsync(context.RequestAborted);
                                     await retryTransaction.CommitAsync(context.RequestAborted);
                                     userId = byEmail.Id;
-                                    _logger.LogInformation("Duplicate key on insert - linked existing user (UserId: {UserId}) to Subject: {Subject}", userId, subject);
+                                    _logger.LogInformation(
+                                        "Duplicate key on insert - linked existing user (UserId: {UserId}) to Subject: {Subject}",
+                                        userId,
+                                        subject);
                                 }
                                 else
+                                {
+                                    _logger.LogWarning(
+                                        "IX_Users_Email violation but no row matched email after rollback (subject {Subject})",
+                                        subject);
                                     throw;
+                                }
+
                                 goto afterUpsert;
                             }
                             userId = userEntity.Id;
@@ -256,7 +315,7 @@ internal sealed class UserUpsertMiddleware
                 }
                 catch
                 {
-                    await transaction.RollbackAsync(context.RequestAborted);
+                    await TryRollbackCurrentTransactionAsync(db, context.RequestAborted);
                     throw;
                 }
             }

@@ -9,8 +9,14 @@
       "Netherlands"
     ],
     "explanation": "Jamestown, founded in 1607, was an English settlement in Virginia.",
-    "keywords": ["us-history", "jamestown", "settlement", "virginia"],
-    "source": "initial seed"
+    "keywords": [
+      "jamestown",
+      "settlement",
+      "virginia"
+    ],
+    "source": "initial seed",
+    "navigationKeyword1": "us-history",
+    "navigationKeyword2": "colonial"
   },
   {
     "category": "history",
@@ -22,7 +28,10 @@
       "1630"
     ],
     "explanation": "Jamestown was founded in 1607 by the Virginia Company.",
-    "keywords": ["us-history", "colonial-period", "dates"],
+    "keywords": [
+      "colonial-period",
+      "dates"
+    ],
     "source": "initial seed"
   }
 ]

@@ -1,6 +1,6 @@
 [
   {
-    "category": "general",
+    "category": "trivia",
     "question": "What is the world record for the largest collection of rubber ducks?",
     "correctAnswer": "Over 5,000 rubber ducks",
     "incorrectAnswers": [
@@ -9,11 +9,15 @@
       "Over 3,000 rubber ducks"
     ],
     "explanation": "Collectors have amassed collections of over 5,000 rubber ducks.",
-    "keywords": ["world-records", "weird", "collections"],
-    "source": "initial seed"
+    "keywords": [
+      "collections"
+    ],
+    "source": "initial seed",
+    "navigationKeyword1": "general",
+    "navigationKeyword2": "hard"
   },
   {
-    "category": "general",
+    "category": "trivia",
     "question": "What is the record for the longest time balancing on one foot?",
     "correctAnswer": "Over 76 hours",
     "incorrectAnswers": [
@@ -22,11 +26,14 @@
       "Over 60 hours"
     ],
     "explanation": "The world record for balancing on one foot exceeds 76 hours.",
-    "keywords": ["world-records", "weird", "balance", "endurance"],
+    "keywords": [
+      "balance",
+      "endurance"
+    ],
     "source": "initial seed"
   },
   {
-    "category": "general",
+    "category": "trivia",
     "question": "What is the world record for the most people simultaneously hula hooping?",
     "correctAnswer": "Over 4,000 people",
     "incorrectAnswers": [
@@ -35,7 +42,9 @@
       "Over 3,000 people"
     ],
     "explanation": "Events have coordinated over 4,000 people hula hooping simultaneously.",
-    "keywords": ["world-records", "weird", "group-activities"],
+    "keywords": [
+      "group-activities"
+    ],
     "source": "initial seed"
   }
 ]

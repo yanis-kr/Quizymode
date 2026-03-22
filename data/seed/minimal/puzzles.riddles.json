@@ -1,6 +1,6 @@
 [
   {
-    "category": "puzzles",
+    "category": "humanities",
     "question": "I speak without a mouth and hear without ears. I have no body, but I come alive with wind. What am I?",
     "correctAnswer": "An echo",
     "incorrectAnswers": [
@@ -9,11 +9,16 @@
       "A whisper"
     ],
     "explanation": "An echo speaks (repeats sounds) without a mouth and hears without ears, and is created by wind/sound waves.",
-    "keywords": ["riddles", "sound", "nature"],
-    "source": "initial seed"
+    "keywords": [
+      "sound",
+      "nature"
+    ],
+    "source": "initial seed",
+    "navigationKeyword1": "philosophy",
+    "navigationKeyword2": "logic"
   },
   {
-    "category": "puzzles",
+    "category": "humanities",
     "question": "The more you take, the more you leave behind. What am I?",
     "correctAnswer": "Footsteps",
     "incorrectAnswers": [
@@ -22,11 +27,13 @@
       "Memories"
     ],
     "explanation": "When you walk, you take steps and leave footsteps behind you.",
-    "keywords": ["riddles", "footsteps", "logic"],
+    "keywords": [
+      "footsteps"
+    ],
     "source": "initial seed"
   },
   {
-    "category": "puzzles",
+    "category": "humanities",
     "question": "I have cities, but no houses. I have mountains, but no trees. I have water, but no fish. What am I?",
     "correctAnswer": "A map",
     "incorrectAnswers": [
@@ -35,7 +42,10 @@
       "A photograph"
     ],
     "explanation": "A map shows cities, mountains, and water bodies but they are representations, not the actual things.",
-    "keywords": ["riddles", "geography", "representation"],
+    "keywords": [
+      "geography",
+      "representation"
+    ],
     "source": "initial seed"
   }
 ]

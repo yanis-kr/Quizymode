@@ -4,6 +4,7 @@ using Quizymode.Api.Data;
 using Quizymode.Api.Features.Items.AddBulk;
 using Quizymode.Api.Infrastructure;
 using Quizymode.Api.Services;
+using Quizymode.Api.Services.Taxonomy;
 using Quizymode.Api.Shared.Kernel;
 using Quizymode.Api.Shared.Models;
 
@@ -36,7 +37,8 @@ public static class FinalizeImport
             ApplicationDbContext db,
             IUserContext userContext,
             ISimHashService simHashService,
-            ICategoryResolver categoryResolver,
+            ITaxonomyItemCategoryResolver itemCategoryResolver,
+            ITaxonomyRegistry taxonomyRegistry,
             IAuditService auditService,
             IProfanityFilterService profanityFilter,
             CancellationToken cancellationToken)
@@ -44,7 +46,16 @@ public static class FinalizeImport
             if (!userContext.IsAuthenticated || string.IsNullOrEmpty(userContext.UserId))
                 return Results.Unauthorized();
 
-            Result<Response?> result = await HandleAsync(id, db, userContext, simHashService, categoryResolver, auditService, profanityFilter, cancellationToken);
+            Result<Response?> result = await HandleAsync(
+                id,
+                db,
+                userContext,
+                simHashService,
+                itemCategoryResolver,
+                taxonomyRegistry,
+                auditService,
+                profanityFilter,
+                cancellationToken);
             return result.Match(
                 value => value is null ? Results.NotFound() : Results.Ok(value),
                 error => CustomResults.Problem(result));
@@ -56,7 +67,8 @@ public static class FinalizeImport
         ApplicationDbContext db,
         IUserContext userContext,
         ISimHashService simHashService,
-        ICategoryResolver categoryResolver,
+        ITaxonomyItemCategoryResolver itemCategoryResolver,
+        ITaxonomyRegistry taxonomyRegistry,
         IAuditService auditService,
         IProfanityFilterService profanityFilter,
         CancellationToken cancellationToken)
@@ -71,8 +83,19 @@ public static class FinalizeImport
         if (session is null)
             return Result.Success<Response?>(null);
 
-        var navPath = JsonSerializer.Deserialize<List<string>>(session.NavigationKeywordPathJson) ?? new List<string>();
-        var sessionKeywords = navPath.Select(k => new AddItemsBulk.KeywordRequest(k, true)).ToList();
+        List<string> navPath = JsonSerializer.Deserialize<List<string>>(session.NavigationKeywordPathJson) ?? [];
+        if (navPath.Count < 2)
+        {
+            return Result.Failure<Response?>(
+                Error.Validation(
+                    "Import.InvalidNavigation",
+                    "Study guide navigation must include a primary topic and subtopic (at least two keywords)."));
+        }
+
+        List<AddItemsBulk.KeywordRequest> sessionKeywords = navPath
+            .Skip(2)
+            .Select(k => new AddItemsBulk.KeywordRequest(k, true))
+            .ToList();
 
         List<AddItemsBulk.ItemRequest>? itemsToImport = null;
 
@@ -114,10 +137,10 @@ public static class FinalizeImport
         if (itemsToImport == null || itemsToImport.Count == 0)
             return Result.Failure<Response?>(Error.Validation("Import.NoItems", "No items to import."));
 
-        var uploadId = Guid.NewGuid();
-        string keyword1 = navPath.Count > 0 ? navPath[0] : "other";
-        string? keyword2 = navPath.Count > 1 ? navPath[1] : null;
-        var bulkRequest = new AddItemsBulk.Request(
+        Guid uploadId = Guid.NewGuid();
+        string keyword1 = navPath[0];
+        string keyword2 = navPath[1];
+        AddItemsBulk.Request bulkRequest = new AddItemsBulk.Request(
             IsPrivate: true,
             Category: session.CategoryName,
             Keyword1: keyword1,
@@ -130,7 +153,8 @@ public static class FinalizeImport
             db,
             simHashService,
             userContext,
-            categoryResolver,
+            itemCategoryResolver,
+            taxonomyRegistry,
             auditService,
             profanityFilter,
             cancellationToken);

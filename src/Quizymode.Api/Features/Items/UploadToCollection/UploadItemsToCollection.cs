@@ -8,6 +8,7 @@ using Quizymode.Api.Features.Collections;
 using Quizymode.Api.Features.Items.AddBulk;
 using Quizymode.Api.Infrastructure;
 using Quizymode.Api.Services;
+using Quizymode.Api.Services.Taxonomy;
 using Quizymode.Api.Shared.Kernel;
 using Quizymode.Api.Shared.Models;
 
@@ -22,7 +23,7 @@ public static class UploadItemsToCollection
     public sealed record Request(
         string Category,
         string Keyword1,
-        string? Keyword2,
+        string Keyword2,
         List<AddItemsBulk.KeywordRequest> Keywords,
         List<AddItemsBulk.ItemRequest> Items,
         string InputText);
@@ -46,6 +47,9 @@ public static class UploadItemsToCollection
             RuleFor(x => x.Keyword1)
                 .NotEmpty()
                 .WithMessage("Keyword1 (primary topic) is required");
+            RuleFor(x => x.Keyword2)
+                .NotEmpty()
+                .WithMessage("Keyword2 (subtopic) is required");
             RuleFor(x => x.Keywords)
                 .NotNull()
                 .WithMessage("Keywords is required");
@@ -83,7 +87,8 @@ public static class UploadItemsToCollection
             ApplicationDbContext db,
             ISimHashService simHashService,
             IUserContext userContext,
-            ICategoryResolver categoryResolver,
+            ITaxonomyItemCategoryResolver itemCategoryResolver,
+            ITaxonomyRegistry taxonomyRegistry,
             IAuditService auditService,
             IProfanityFilterService profanityFilter,
             CancellationToken cancellationToken)
@@ -99,7 +104,16 @@ public static class UploadItemsToCollection
                 return Results.BadRequest(validationResult.Errors);
             }
 
-            Result<Response> result = await HandleAsync(request, db, simHashService, userContext, categoryResolver, auditService, profanityFilter, cancellationToken);
+            Result<Response> result = await HandleAsync(
+                request,
+                db,
+                simHashService,
+                userContext,
+                itemCategoryResolver,
+                taxonomyRegistry,
+                auditService,
+                profanityFilter,
+                cancellationToken);
 
             return result.Match(
                 value => Results.Created($"/api/collections/{value.CollectionId}", value),
@@ -120,7 +134,8 @@ public static class UploadItemsToCollection
         ApplicationDbContext db,
         ISimHashService simHashService,
         IUserContext userContext,
-        ICategoryResolver categoryResolver,
+        ITaxonomyItemCategoryResolver itemCategoryResolver,
+        ITaxonomyRegistry taxonomyRegistry,
         IAuditService auditService,
         IProfanityFilterService profanityFilter,
         CancellationToken cancellationToken)
@@ -164,7 +179,15 @@ public static class UploadItemsToCollection
             UploadId: upload.Id);
 
         Result<AddItemsBulk.Response> bulkResult = await AddItemsBulkHandler.HandleAsync(
-            bulkRequest, db, simHashService, userContext, categoryResolver, auditService, profanityFilter, cancellationToken);
+            bulkRequest,
+            db,
+            simHashService,
+            userContext,
+            itemCategoryResolver,
+            taxonomyRegistry,
+            auditService,
+            profanityFilter,
+            cancellationToken);
 
         if (bulkResult.IsFailure)
         {

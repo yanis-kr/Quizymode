@@ -3,10 +3,7 @@ import { useMutation, useQuery } from "@tanstack/react-query";
 import { useNavigate, useSearchParams, Link } from "react-router-dom";
 import { useAuth } from "@/contexts/AuthContext";
 import { itemsApi, type UploadToCollectionResponse } from "@/api/items";
-import { categoriesApi } from "@/api/categories";
-import { keywordsApi } from "@/api/keywords";
-import type { CreateItemRequest } from "@/types/api";
-import LoadingSpinner from "@/components/LoadingSpinner";
+import { taxonomyApi } from "@/api/taxonomy";
 import ErrorMessage from "@/components/ErrorMessage";
 import { DocumentArrowUpIcon, ClipboardDocumentIcon } from "@heroicons/react/24/outline";
 
@@ -55,36 +52,37 @@ const UploadToCollectionPage = () => {
   const [uploadId] = React.useState(() => crypto.randomUUID());
   const [copiedPrompt, setCopiedPrompt] = React.useState(false);
 
-  const { data: categoriesData } = useQuery({
-    queryKey: ["categories"],
-    queryFn: () => categoriesApi.getAll(),
+  const { data: taxonomyData, isLoading: isTaxonomyLoading } = useQuery({
+    queryKey: ["taxonomy"],
+    queryFn: () => taxonomyApi.getAll(),
     enabled: !!isAuthenticated,
+    staleTime: 24 * 60 * 60 * 1000,
   });
-  const categories = categoriesData?.categories ?? [];
-  const categoryOptions = [...categories].sort((a, b) => a.category.localeCompare(b.category));
 
-  const {
-    data: rank1Data,
-    isLoading: isLoadingRank1,
-  } = useQuery({
-    queryKey: ["keywords", "rank1", categoryName],
-    queryFn: () => keywordsApi.getNavigationKeywords(categoryName, []),
-    enabled: !!isAuthenticated && !!categoryName.trim(),
-  });
-  // Only show rank1 options when loaded for current category (avoid showing previous category's keywords)
-  const rank1Keywords = isLoadingRank1
-    ? []
-    : (rank1Data?.keywords ?? []).filter((k) => k.name.toLowerCase() !== "other");
+  const categoryOptions = React.useMemo(() => {
+    const rows = (taxonomyData?.categories ?? []).map((c) => ({
+      category: c.slug,
+    }));
+    return [...rows].sort((a, b) => a.category.localeCompare(b.category));
+  }, [taxonomyData]);
 
-  const {
-    data: rank2Data,
-    isLoading: isLoadingRank2,
-  } = useQuery({
-    queryKey: ["keywords", "rank2", categoryName, rank1Name],
-    queryFn: () => keywordsApi.getNavigationKeywords(categoryName, rank1Name ? [rank1Name] : []),
-    enabled: !!isAuthenticated && !!categoryName.trim() && !!rank1Name.trim(),
-  });
-  const rank2Keywords = isLoadingRank2 ? [] : (rank2Data?.keywords ?? []);
+  const selectedTaxonomyCategory = React.useMemo(
+    () => taxonomyData?.categories.find((c) => c.slug === categoryName),
+    [taxonomyData, categoryName]
+  );
+
+  const rank1Slugs = React.useMemo(
+    () => selectedTaxonomyCategory?.groups.map((g) => g.slug) ?? [],
+    [selectedTaxonomyCategory]
+  );
+
+  const rank2Slugs = React.useMemo(() => {
+    const g = selectedTaxonomyCategory?.groups.find((x) => x.slug === rank1Name);
+    return g?.keywords.map((k) => k.slug) ?? [];
+  }, [selectedTaxonomyCategory, rank1Name]);
+
+  const isLoadingRank1 = isTaxonomyLoading && !!categoryName.trim();
+  const isLoadingRank2 = isTaxonomyLoading && !!rank1Name.trim();
 
   // Only sync from URL when we're still on the same category (avoid repopulating after user switches category)
   React.useEffect(() => {
@@ -108,16 +106,16 @@ const UploadToCollectionPage = () => {
   }, [categoryParam, categoryName, rank1Name, keywordsFromUrl, rank2Name]);
   // Clear rank1/rank2 when they are invalid for the current category's options
   React.useEffect(() => {
-    if (rank1Name && rank1Keywords.length > 0 && !rank1Keywords.some((k) => k.name === rank1Name)) {
+    if (rank1Name && rank1Slugs.length > 0 && !rank1Slugs.includes(rank1Name)) {
       setRank1Name("");
       setRank2Name("");
     }
-  }, [rank1Name, rank1Keywords]);
+  }, [rank1Name, rank1Slugs]);
   React.useEffect(() => {
-    if (rank2Name && rank2Keywords.length > 0 && !rank2Keywords.some((k) => k.name === rank2Name)) {
+    if (rank2Name && rank2Slugs.length > 0 && !rank2Slugs.includes(rank2Name)) {
       setRank2Name("");
     }
-  }, [rank2Name, rank2Keywords]);
+  }, [rank2Name, rank2Slugs]);
 
   const topicName = [categoryName, rank1Name, rank2Name].filter(Boolean).join(" / ") || "your chosen topic";
   const examplePrompt = EXAMPLE_PROMPT(topicName, uploadId);
@@ -179,20 +177,18 @@ const UploadToCollectionPage = () => {
       explanation: String(row.explanation ?? ""),
       keywords: Array.isArray(row.keywords)
         ? row.keywords.map((k: string | { name?: string }) =>
-            typeof k === "string" ? { name: k, isPrivate: false } : { name: String(k.name ?? ""), isPrivate: false }
+            typeof k === "string"
+              ? { name: k, isPrivate: true }
+              : { name: String(k.name ?? ""), isPrivate: true }
           )
         : undefined,
       source: row.source != null ? String(row.source) : undefined,
     }));
-    const defaultKeywords = [
-      { name: rank1Name.trim(), isPrivate: true },
-      { name: rank2Name.trim(), isPrivate: true },
-    ];
     uploadMutation.mutate({
       category: categoryName.trim(),
       keyword1: rank1Name.trim(),
       keyword2: rank2Name.trim(),
-      keywords: defaultKeywords,
+      keywords: [],
       items: mapped,
       inputText: jsonText,
     });
@@ -263,9 +259,9 @@ const UploadToCollectionPage = () => {
               disabled={!categoryName || isLoadingRank1}
             >
               <option value="">{isLoadingRank1 ? "Loading…" : "— Select —"}</option>
-              {rank1Keywords.map((k) => (
-                <option key={k.name} value={k.name}>
-                  {k.name}
+              {rank1Slugs.map((name) => (
+                <option key={name} value={name}>
+                  {name}
                 </option>
               ))}
             </select>
@@ -283,9 +279,9 @@ const UploadToCollectionPage = () => {
               disabled={!rank1Name || isLoadingRank2}
             >
               <option value="">{isLoadingRank2 ? "Loading…" : "— Select —"}</option>
-              {rank2Keywords.map((k) => (
-                <option key={k.name} value={k.name}>
-                  {k.name}
+              {rank2Slugs.map((name) => (
+                <option key={name} value={name}>
+                  {name}
                 </option>
               ))}
             </select>

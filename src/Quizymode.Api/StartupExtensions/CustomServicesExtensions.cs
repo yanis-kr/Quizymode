@@ -1,4 +1,5 @@
 using Quizymode.Api.Services;
+using Quizymode.Api.Services.Taxonomy;
 using Quizymode.Api.Shared.Options;
 
 namespace Quizymode.Api.StartupExtensions;
@@ -16,12 +17,15 @@ internal static partial class StartupExtensions
     {
         builder.Services.Configure<SeedOptions>(builder.Configuration.GetSection(SeedOptions.SectionName));
         builder.Services.Configure<CategoryOptions>(builder.Configuration.GetSection(CategoryOptions.SectionName));
+        builder.Services.Configure<TaxonomyOptions>(builder.Configuration.GetSection(TaxonomyOptions.SectionName));
+        builder.Services.AddSingleton<ITaxonomyRegistry, TaxonomyRegistry>();
         // SimHashService is stateless, so it can be a singleton
         builder.Services.AddSingleton<ISimHashService, SimHashService>();
         builder.Services.AddHttpContextAccessor();
         builder.Services.AddScoped<IUserContext, UserContext>();
         builder.Services.AddScoped<IAuditService, AuditService>();
         builder.Services.AddScoped<ICategoryResolver, CategoryResolver>();
+        builder.Services.AddScoped<ITaxonomyItemCategoryResolver, TaxonomyItemCategoryResolver>();
         builder.Services.AddScoped<IStudyGuideChunkingService, StudyGuideChunkingService>();
         builder.Services.AddScoped<IStudyGuidePromptBuilderService, StudyGuidePromptBuilderService>();
         builder.Services.AddSingleton<IProfanityFilterService, ProfanityFilterService>();

@@ -1,12 +1,8 @@
 /**
  * Shared category + navigation rank-1 / rank-2 fields for create item, edit item, and bulk AI create.
+ * Options come from taxonomy (YAML); navigation paths must be selected, not free-typed.
  */
-import {
-  validateNavigationKeywordName,
-  NAV_KEYWORD_MAX_LEN,
-} from "@/utils/navigationKeywordRules";
-
-const CUSTOM_RANK_OPTION = "__custom__";
+import { validateNavigationKeywordName } from "@/utils/navigationKeywordRules";
 
 export type TopicScopePatch = Partial<{
   category: string;
@@ -48,18 +44,12 @@ export function ItemTopicScopeFields({
   const rank2InList = rank2Options.some(
     (o) => o.toLowerCase() === rank2.trim().toLowerCase()
   );
-  const rank1SelectValue =
-    rank1 && rank1InList
-      ? rank1Options.find((o) => o.toLowerCase() === rank1.trim().toLowerCase()) ?? ""
-      : rank1.trim()
-        ? CUSTOM_RANK_OPTION
-        : "";
-  const rank2SelectValue =
-    rank2 && rank2InList
-      ? rank2Options.find((o) => o.toLowerCase() === rank2.trim().toLowerCase()) ?? ""
-      : rank2.trim()
-        ? CUSTOM_RANK_OPTION
-        : "";
+  const rank1SelectValue = rank1InList
+    ? rank1Options.find((o) => o.toLowerCase() === rank1.trim().toLowerCase()) ?? ""
+    : "";
+  const rank2SelectValue = rank2InList
+    ? rank2Options.find((o) => o.toLowerCase() === rank2.trim().toLowerCase()) ?? ""
+    : "";
 
   const rank1Error = validateNavigationKeywordName(rank1);
   const rank2Error = validateNavigationKeywordName(rank2);
@@ -108,43 +98,28 @@ export function ItemTopicScopeFields({
           value={rank1SelectValue}
           onChange={(e) => {
             const v = e.target.value;
-            if (v === CUSTOM_RANK_OPTION) {
-              onScopeChange({ rank1: "", rank2: "" });
-            } else {
-              onScopeChange({ rank1: v, rank2: "" });
-            }
+            onScopeChange({ rank1: v, rank2: "" });
           }}
           disabled={disabled || !category || isLoadingRank1}
           className="w-full px-3 py-2 border border-gray-300 rounded-md text-sm"
         >
-          <option value="">— Select or add your own —</option>
+          <option value="">
+            {isLoadingRank1 ? "Loading…" : "— Select primary topic —"}
+          </option>
           {rank1Options.map((name) => (
             <option key={name} value={name}>
               {name}
             </option>
           ))}
-          <option value={CUSTOM_RANK_OPTION}>— Create my own (private) —</option>
         </select>
-        {(rank1SelectValue === CUSTOM_RANK_OPTION || (rank1.trim() && !rank1InList)) && (
-          <>
-            <input
-              type="text"
-              id={`${idPrefix}-rank1-custom`}
-              value={rank1}
-              onChange={(e) =>
-                onScopeChange({
-                  rank1: e.target.value.slice(0, NAV_KEYWORD_MAX_LEN),
-                })
-              }
-              placeholder="Private keyword name (letters, numbers, hyphens; max 30)"
-              maxLength={NAV_KEYWORD_MAX_LEN}
-              disabled={disabled}
-              className="mt-2 w-full px-3 py-2 border border-gray-300 rounded-md text-sm"
-            />
-            {rank1Error && (
-              <p className="mt-1 text-xs text-red-600">{rank1Error}</p>
-            )}
-          </>
+        {rank1.trim() && !rank1InList && !isLoadingRank1 && (
+          <p className="mt-1 text-xs text-amber-700">
+            Current value is not in the taxonomy list for this category. Choose a valid primary
+            topic.
+          </p>
+        )}
+        {rank1Error && rank1InList && (
+          <p className="mt-1 text-xs text-red-600">{rank1Error}</p>
         )}
       </div>
 
@@ -158,45 +133,26 @@ export function ItemTopicScopeFields({
         <select
           id={`${idPrefix}-rank2`}
           value={rank2SelectValue}
-          onChange={(e) => {
-            const v = e.target.value;
-            if (v === CUSTOM_RANK_OPTION) {
-              onScopeChange({ rank2: "" });
-            } else {
-              onScopeChange({ rank2: v });
-            }
-          }}
+          onChange={(e) => onScopeChange({ rank2: e.target.value })}
           disabled={disabled || !rank1.trim() || isLoadingRank2}
           className="w-full px-3 py-2 border border-gray-300 rounded-md text-sm"
         >
-          <option value="">— Select or add your own —</option>
+          <option value="">
+            {isLoadingRank2 ? "Loading…" : "— Select subtopic —"}
+          </option>
           {rank2Options.map((name) => (
             <option key={name} value={name}>
               {name}
             </option>
           ))}
-          <option value={CUSTOM_RANK_OPTION}>— Create my own (private) —</option>
         </select>
-        {(rank2SelectValue === CUSTOM_RANK_OPTION || (rank2.trim() && !rank2InList)) && (
-          <>
-            <input
-              type="text"
-              id={`${idPrefix}-rank2-custom`}
-              value={rank2}
-              onChange={(e) =>
-                onScopeChange({
-                  rank2: e.target.value.slice(0, NAV_KEYWORD_MAX_LEN),
-                })
-              }
-              placeholder="Private keyword name (letters, numbers, hyphens; max 30)"
-              maxLength={NAV_KEYWORD_MAX_LEN}
-              disabled={disabled}
-              className="mt-2 w-full px-3 py-2 border border-gray-300 rounded-md text-sm"
-            />
-            {rank2Error && (
-              <p className="mt-1 text-xs text-red-600">{rank2Error}</p>
-            )}
-          </>
+        {rank2.trim() && !rank2InList && !isLoadingRank2 && rank1InList && (
+          <p className="mt-1 text-xs text-amber-700">
+            Current value is not valid under this primary topic. Choose a valid subtopic.
+          </p>
+        )}
+        {rank2Error && rank2InList && (
+          <p className="mt-1 text-xs text-red-600">{rank2Error}</p>
         )}
       </div>
     </div>

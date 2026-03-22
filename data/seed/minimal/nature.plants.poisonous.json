@@ -9,8 +9,13 @@
       "If animals eat it, humans can too"
     ],
     "explanation": "Many poisonous plants look similar to edible ones, so positive identification is essential before consumption.",
-    "keywords": ["plants", "poisonous", "safety", "identification"],
-    "source": "initial seed"
+    "keywords": [
+      "safety",
+      "identification"
+    ],
+    "source": "initial seed",
+    "navigationKeyword1": "plants",
+    "navigationKeyword2": "poisonous"
   },
   {
     "category": "nature",
@@ -22,7 +27,10 @@
       "Only the roots"
     ],
     "explanation": "Urushiol oil is present throughout poison ivy plants and causes contact dermatitis in sensitive individuals.",
-    "keywords": ["plants", "poisonous", "allergies", "urushiol"],
+    "keywords": [
+      "allergies",
+      "urushiol"
+    ],
     "source": "initial seed"
   },
   {
@@ -35,7 +43,10 @@
       "Scratch the affected area"
     ],
     "explanation": "Immediate washing can remove oils before they bind to skin, reducing or preventing reaction.",
-    "keywords": ["plants", "poisonous", "first-aid", "treatment"],
+    "keywords": [
+      "first-aid",
+      "treatment"
+    ],
     "source": "initial seed"
   }
 ]

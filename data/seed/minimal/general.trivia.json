@@ -1,6 +1,6 @@
 [
   {
-    "category": "general",
+    "category": "trivia",
     "question": "What is the smallest prime number?",
     "correctAnswer": "2",
     "incorrectAnswers": [
@@ -9,11 +9,16 @@
       "0"
     ],
     "explanation": "2 is the smallest and only even prime number.",
-    "keywords": ["trivia", "math", "prime"],
-    "source": "initial seed"
+    "keywords": [
+      "math",
+      "prime"
+    ],
+    "source": "initial seed",
+    "navigationKeyword1": "general",
+    "navigationKeyword2": "mixed"
   },
   {
-    "category": "general",
+    "category": "trivia",
     "question": "How many continents are there?",
     "correctAnswer": "7",
     "incorrectAnswers": [
@@ -22,7 +27,10 @@
       "8"
     ],
     "explanation": "There are 7 continents: Africa, Antarctica, Asia, Australia, Europe, North America, and South America.",
-    "keywords": ["trivia", "geography", "continents"],
+    "keywords": [
+      "geography",
+      "continents"
+    ],
     "source": "initial seed"
   }
 ]

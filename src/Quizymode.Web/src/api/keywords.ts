@@ -10,6 +10,11 @@ export interface KeywordDescriptionsResponse {
   keywords: KeywordDescriptionItem[];
 }
 
+/** Distinct item-level tag names in a category (for create/edit autocomplete). */
+export interface ItemTagKeywordsResponse {
+  names: string[];
+}
+
 export const keywordsApi = {
   getNavigationKeywords: async (
     category: string,
@@ -22,6 +27,15 @@ export const keywordsApi = {
     const response = await apiClient.get<KeywordsResponse>("/keywords", {
       params,
     });
+    return response.data;
+  },
+
+  /** Sorted distinct names from ItemKeywords in the category; cache per category on the client. */
+  getItemTagKeywords: async (category: string): Promise<ItemTagKeywordsResponse> => {
+    const response = await apiClient.get<ItemTagKeywordsResponse>(
+      "/keywords/item-tags",
+      { params: { category } }
+    );
     return response.data;
   },
 

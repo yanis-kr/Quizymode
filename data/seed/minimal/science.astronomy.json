@@ -9,8 +9,13 @@
       "Saturn"
     ],
     "explanation": "Mars is known as the Red Planet due to iron oxide on its surface.",
-    "keywords": ["astronomy", "mars", "planets"],
-    "source": "initial seed"
+    "keywords": [
+      "mars",
+      "planets"
+    ],
+    "source": "initial seed",
+    "navigationKeyword1": "astronomy",
+    "navigationKeyword2": "solar-system"
   },
   {
     "category": "science",
@@ -22,7 +27,10 @@
       "Earth"
     ],
     "explanation": "Jupiter is the largest planet in our solar system.",
-    "keywords": ["astronomy", "planets", "size"],
+    "keywords": [
+      "planets",
+      "size"
+    ],
     "source": "initial seed"
   }
 ]

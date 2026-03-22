@@ -9,8 +9,13 @@
       "9"
     ],
     "explanation": "A soccer team has 11 players on the field at one time, including the goalkeeper.",
-    "keywords": ["soccer", "football", "players"],
-    "source": "initial seed"
+    "keywords": [
+      "football",
+      "players"
+    ],
+    "source": "initial seed",
+    "navigationKeyword1": "soccer",
+    "navigationKeyword2": "world-cup"
   },
   {
     "category": "sports",
@@ -22,7 +27,11 @@
       "Unlimited"
     ],
     "explanation": "In most professional soccer matches, teams are allowed up to 5 substitutions per game.",
-    "keywords": ["soccer", "football", "rules", "substitutions"],
+    "keywords": [
+      "football",
+      "rules",
+      "substitutions"
+    ],
     "source": "initial seed"
   },
   {
@@ -35,7 +44,11 @@
       "120 minutes"
     ],
     "explanation": "A standard soccer match consists of two 45-minute halves, totaling 90 minutes of play.",
-    "keywords": ["soccer", "football", "rules", "duration"],
+    "keywords": [
+      "football",
+      "rules",
+      "duration"
+    ],
     "source": "initial seed"
   }
 ]

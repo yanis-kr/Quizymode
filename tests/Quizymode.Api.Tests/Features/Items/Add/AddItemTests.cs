@@ -26,14 +26,12 @@ public sealed class AddItemTests : ItemTestFixture
     [Fact]
     public async Task HandleAsync_ValidRequest_CreatesItem()
     {
-        // Arrange: ensure geography has nav keywords (topics -> europe)
-        Item seed = await CreateItemWithCategoryAsync("geography", "seed", "seed", new List<string>(), "seed", false, _userContextMock.Object.UserId!);
-        DbContext.Items.Remove(seed);
-        await DbContext.SaveChangesAsync();
+        // Arrange: public geography + nav path required by taxonomy and ResolvePublicNavigationAsync
+        await EnsureGeographyPublicWithNavAsync(_userContextMock.Object.UserId!);
 
         AddItem.Request request = new(
             Category: "geography",
-            NavigationKeyword1: "topics",
+            NavigationKeyword1: "capitals",
             NavigationKeyword2: "europe",
             IsPrivate: false,
             Question: "What is the capital of France?",
@@ -48,7 +46,8 @@ public sealed class AddItemTests : ItemTestFixture
             SimHashService,
             _userContextMock.Object,
             _auditServiceMock.Object,
-            CategoryResolver,
+            TaxonomyItemCategoryResolver,
+            TaxonomyRegistry,
             ProfanityFilter,
             CancellationToken.None);
 
@@ -88,7 +87,7 @@ public sealed class AddItemTests : ItemTestFixture
 
         AddItem.Request request = new(
             Category: "geography",
-            NavigationKeyword1: "topics",
+            NavigationKeyword1: "capitals",
             NavigationKeyword2: "europe",
             IsPrivate: false,
             Question: "What is the capital of France?",
@@ -103,7 +102,8 @@ public sealed class AddItemTests : ItemTestFixture
             SimHashService,
             _userContextMock.Object,
             _auditServiceMock.Object,
-            CategoryResolver,
+            TaxonomyItemCategoryResolver,
+            TaxonomyRegistry,
             ProfanityFilter,
             CancellationToken.None);
 
@@ -119,7 +119,7 @@ public sealed class AddItemTests : ItemTestFixture
     {
         AddItem.Request request = new(
             Category: "",
-            NavigationKeyword1: "topics",
+            NavigationKeyword1: "capitals",
             NavigationKeyword2: "europe",
             IsPrivate: false,
             Question: "What is the capital of France?",
@@ -142,7 +142,7 @@ public sealed class AddItemTests : ItemTestFixture
     {
         AddItem.Request request = new(
             Category: "geography",
-            NavigationKeyword1: "topics",
+            NavigationKeyword1: "capitals",
             NavigationKeyword2: "europe",
             IsPrivate: false,
             Question: "What is the capital of France?",
