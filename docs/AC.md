@@ -443,7 +443,7 @@ Categories are **public only** (there is no private category). Users navigate by
 **API**
 
 - **AC 3.0.1** [Anyone] **Given** the home page is loaded and `GET /categories` succeeds, **when** the UI renders the category card grid on `/`, **then** each home-page category card may show the live item count from the categories API for its matching category slug; if the API fails or is unavailable, the page still renders without those counts.
-- **AC 3.0.2** [Anyone] **Given** the application database has been seeded, **when** anyone opens the home-page sample collection link, **then** it resolves to a fixed public collection that contains exactly five public starter items chosen for the home-page demo flow.
+- **AC 3.0.2** [Anyone] **Given** the application database has been seeded, **when** anyone opens the home-page sample collection link, **then** it resolves to a fixed public collection of exactly five public fun-trivia items seeded specifically for the home-page demo flow.
 
 **UI**
 

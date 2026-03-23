@@ -23,13 +23,38 @@ internal sealed class DatabaseSeederHostedService(
     IOptions<TaxonomyOptions> taxonomyOptions) : IHostedService
 {
     private static readonly Guid HomeSampleCollectionId = new("8f9b8c14-8d30-4d94-9b20-4c7bb7f7f511");
-    private static readonly HomeSampleScope[] HomeSampleScopes =
+    private static readonly HomeSampleTriviaItemSeed[] HomeSampleTriviaItems =
     [
-        new("exams", "aws", "saa-c03"),
-        new("science", "astronomy", "solar-system"),
-        new("geography", "capitals", "world"),
-        new("languages", "spanish", "vocab"),
-        new("nature", "survival", "tropical-island"),
+        new(
+            "What color is the \"black box\" recorder on most commercial airplanes?",
+            "Bright orange",
+            ["Black", "Silver", "Yellow"],
+            "Flight recorders are painted bright orange so they are easier to locate after an accident.",
+            ["aviation", "surprising-facts"]),
+        new(
+            "What animal's fingerprints are so close to humans that they can confuse crime-scene analysis?",
+            "Koalas",
+            ["Chimpanzees", "Dogs", "Otters"],
+            "Koala fingerprints have ridge patterns so similar to human fingerprints that they have reportedly confused investigators.",
+            ["animals", "weird"]),
+        new(
+            "Which planet has a day longer than its year?",
+            "Venus",
+            ["Mars", "Mercury", "Neptune"],
+            "Venus rotates extremely slowly, so one full spin takes longer than one trip around the Sun.",
+            ["space", "planets"]),
+        new(
+            "What is the national animal of Scotland?",
+            "The unicorn",
+            ["The stag", "The lion", "The golden eagle"],
+            "Scotland's national animal is the unicorn, chosen for its symbolism in Celtic mythology and heraldry.",
+            ["countries", "symbols"]),
+        new(
+            "What everyday food never really spoils when stored properly?",
+            "Honey",
+            ["Brown rice", "Milk chocolate", "Sea salt crackers"],
+            "Honey's low moisture and natural chemistry make it famously long-lasting, and edible ancient honey has even been found in tombs.",
+            ["food", "fun-facts"]),
     ];
 
     private readonly ILogger<DatabaseSeederHostedService> _logger = logger;
@@ -47,6 +72,9 @@ internal sealed class DatabaseSeederHostedService(
         {
             using IServiceScope scope = _serviceProvider.CreateScope();
             ApplicationDbContext db = scope.ServiceProvider.GetRequiredService<ApplicationDbContext>();
+            ITaxonomyItemCategoryResolver itemCategoryResolver = scope.ServiceProvider.GetRequiredService<ITaxonomyItemCategoryResolver>();
+            ITaxonomyRegistry taxonomyRegistry = scope.ServiceProvider.GetRequiredService<ITaxonomyRegistry>();
+            IAuditService auditService = scope.ServiceProvider.GetRequiredService<IAuditService>();
 
             await db.Database.MigrateAsync(cancellationToken);
 
@@ -162,10 +190,6 @@ internal sealed class DatabaseSeederHostedService(
                             Items: itemRequests
                         );
 
-                        ITaxonomyItemCategoryResolver itemCategoryResolver = scope.ServiceProvider.GetRequiredService<ITaxonomyItemCategoryResolver>();
-                        ITaxonomyRegistry taxonomyRegistry = scope.ServiceProvider.GetRequiredService<ITaxonomyRegistry>();
-                        IAuditService auditService = scope.ServiceProvider.GetRequiredService<IAuditService>();
-
                         Result<AddItemsBulk.Response> result = await AddItemsBulkHandler.HandleAsync(
                             bulkRequest,
                             db,
@@ -228,7 +252,12 @@ internal sealed class DatabaseSeederHostedService(
                 _logger.LogInformation("Skipping seeding; items already present.");
             }
 
-            await EnsureHomeSampleCollectionAsync(db, cancellationToken);
+            await EnsureHomeSampleCollectionAsync(
+                db,
+                itemCategoryResolver,
+                taxonomyRegistry,
+                auditService,
+                cancellationToken);
         }
         catch (Exception ex)
         {
@@ -328,18 +357,28 @@ internal sealed class DatabaseSeederHostedService(
         _logger.LogInformation("Added {Count} ratings (5 stars) for Science category items.", ratings.Count);
     }
 
-    private async Task EnsureHomeSampleCollectionAsync(ApplicationDbContext db, CancellationToken cancellationToken)
+    private async Task EnsureHomeSampleCollectionAsync(
+        ApplicationDbContext db,
+        ITaxonomyItemCategoryResolver itemCategoryResolver,
+        ITaxonomyRegistry taxonomyRegistry,
+        IAuditService auditService,
+        CancellationToken cancellationToken)
     {
-        List<Guid> sampleItemIds = await GetHomeSampleItemIdsAsync(db, cancellationToken);
+        List<Guid> sampleItemIds = await EnsureHomeSampleTriviaItemsAsync(
+            db,
+            itemCategoryResolver,
+            taxonomyRegistry,
+            auditService,
+            cancellationToken);
         if (sampleItemIds.Count == 0)
         {
             _logger.LogWarning("No public items available for the homepage sample collection. Skipping collection seed.");
             return;
         }
 
-        const string sampleCollectionName = "Quizymode Starter Collection";
+        const string sampleCollectionName = "Fun Trivia Facts";
         const string sampleCollectionDescription =
-            "A public five-item sampler spanning AWS, astronomy, geography, Spanish, and outdoor survival.";
+            "A public five-item trivia sampler with surprising facts and easy conversation-starter questions.";
 
         Collection? collection = await db.Collections
             .FirstOrDefaultAsync(c => c.Id == HomeSampleCollectionId, cancellationToken);
@@ -406,43 +445,63 @@ internal sealed class DatabaseSeederHostedService(
             sampleItemIds.Count);
     }
 
-    private async Task<List<Guid>> GetHomeSampleItemIdsAsync(ApplicationDbContext db, CancellationToken cancellationToken)
+    private async Task<List<Guid>> EnsureHomeSampleTriviaItemsAsync(
+        ApplicationDbContext db,
+        ITaxonomyItemCategoryResolver itemCategoryResolver,
+        ITaxonomyRegistry taxonomyRegistry,
+        IAuditService auditService,
+        CancellationToken cancellationToken)
     {
-        List<Guid> selectedIds = [];
+        AddItemsBulk.Request request = new(
+            IsPrivate: false,
+            Category: "trivia",
+            Keyword1: "general",
+            Keyword2: "mixed",
+            Keywords: [],
+            Items: HomeSampleTriviaItems
+                .Select(item => new AddItemsBulk.ItemRequest(
+                    Question: item.Question,
+                    CorrectAnswer: item.CorrectAnswer,
+                    IncorrectAnswers: item.IncorrectAnswers,
+                    Explanation: item.Explanation,
+                    Keywords: item.Keywords
+                        .Select(keyword => new AddItemsBulk.KeywordRequest(keyword, false))
+                        .ToList(),
+                    Source: "seed: home sample collection"))
+                .ToList());
 
-        foreach (HomeSampleScope scope in HomeSampleScopes)
+        Result<AddItemsBulk.Response> result = await AddItemsBulkHandler.HandleAsync(
+            request,
+            db,
+            _simHashService,
+            new SeederUserContext(),
+            itemCategoryResolver,
+            taxonomyRegistry,
+            auditService,
+            cancellationToken);
+
+        if (result.IsFailure)
         {
-            Guid? itemId = await db.Items
-                .AsNoTracking()
-                .Where(i => !i.IsPrivate)
-                .Where(i => i.Category != null && i.Category.Name == scope.Category)
-                .Where(i => i.NavigationKeyword1 != null && i.NavigationKeyword1.Name == scope.Keyword1)
-                .Where(i => i.NavigationKeyword2 != null && i.NavigationKeyword2.Name == scope.Keyword2)
-                .OrderBy(i => i.CreatedAt)
-                .Select(i => (Guid?)i.Id)
-                .FirstOrDefaultAsync(cancellationToken);
-
-            if (itemId.HasValue && !selectedIds.Contains(itemId.Value))
-            {
-                selectedIds.Add(itemId.Value);
-            }
+            _logger.LogWarning(
+                "Failed to seed homepage trivia items: {Error}",
+                result.Error?.Description ?? "Unknown error");
         }
 
-        if (selectedIds.Count >= HomeSampleScopes.Length)
-        {
-            return selectedIds;
-        }
+        List<string> questions = HomeSampleTriviaItems
+            .Select(item => item.Question)
+            .ToList();
 
-        List<Guid> fallbackIds = await db.Items
+        return await db.Items
             .AsNoTracking()
-            .Where(i => !i.IsPrivate && !selectedIds.Contains(i.Id))
+            .Where(i => !i.IsPrivate)
+            .Where(i => i.CreatedBy == "seeder")
+            .Where(i => i.Category != null && i.Category.Name == "trivia")
+            .Where(i => i.NavigationKeyword1 != null && i.NavigationKeyword1.Name == "general")
+            .Where(i => i.NavigationKeyword2 != null && i.NavigationKeyword2.Name == "mixed")
+            .Where(i => questions.Contains(i.Question))
             .OrderBy(i => i.CreatedAt)
             .Select(i => i.Id)
-            .Take(HomeSampleScopes.Length - selectedIds.Count)
             .ToListAsync(cancellationToken);
-
-        selectedIds.AddRange(fallbackIds);
-        return selectedIds;
     }
 
     private async Task SeedCategoriesAndNavigationAsync(ApplicationDbContext db, CancellationToken cancellationToken)
@@ -513,4 +572,9 @@ internal sealed class SeederUserContext : IUserContext
     public bool IsAdmin => true;
 }
 
-internal sealed record HomeSampleScope(string Category, string Keyword1, string Keyword2);
+internal sealed record HomeSampleTriviaItemSeed(
+    string Question,
+    string CorrectAnswer,
+    List<string> IncorrectAnswers,
+    string Explanation,
+    List<string> Keywords);

@@ -83,8 +83,7 @@ const HomePage = () => {
                   Browse categories, open a set, and start learning immediately.
                 </h1>
                 <p className="mt-5 max-w-2xl text-lg leading-8 text-slate-200">
-                  Quizymode is now the home page. Categories stay visible even when the data layer is unavailable,
-                  and live counters appear automatically when the API comes back.
+                  Explore study topics, jump into featured sets, and open a starter collection in one click.
                 </p>
 
                 <div className="mt-8 flex flex-col gap-3 sm:flex-row">
@@ -123,20 +122,20 @@ const HomePage = () => {
                   Starter Collection
                 </div>
                 <div className="mt-3 text-3xl font-semibold text-white">
-                  5 quick cards
+                  5 fun trivia facts
                 </div>
                 <p className="mt-3 text-sm leading-7 text-slate-200">
-                  A public sample collection seeded into the app so new users can open a working flow instantly.
-                  It pulls five curated items across multiple Quizymode categories.
+                  A public sample collection seeded into the app so new users can open a playful trivia round instantly.
+                  It includes five surprising facts designed for quick demo sessions.
                 </p>
                 <div className="mt-6 grid gap-3 sm:grid-cols-2">
                   <div className="rounded-2xl border border-white/10 bg-slate-950/35 p-4">
                     <div className="text-xs uppercase tracking-[0.18em] text-slate-400">Includes</div>
-                    <div className="mt-2 text-sm font-medium text-white">AWS, science, geography, languages, nature</div>
+                    <div className="mt-2 text-sm font-medium text-white">Airplanes, koalas, planets, Scotland, honey</div>
                   </div>
                   <div className="rounded-2xl border border-white/10 bg-slate-950/35 p-4">
                     <div className="text-xs uppercase tracking-[0.18em] text-slate-400">Best For</div>
-                    <div className="mt-2 text-sm font-medium text-white">Demoing explore mode and quick quiz starts</div>
+                    <div className="mt-2 text-sm font-medium text-white">Icebreakers, quick quizzes, and first-time visits</div>
                   </div>
                 </div>
                 <Link
@@ -161,8 +160,7 @@ const HomePage = () => {
                 </h2>
               </div>
               <div className="max-w-2xl text-sm leading-7 text-slate-600">
-                The cards below are bundled with the frontend, so the homepage stays useful even if the database is
-                offline. When the categories API responds, item counts appear automatically.
+                Pick a category to browse focused sets, open item lists, or jump straight into flashcards and quiz mode.
               </div>
             </div>
 
@@ -182,7 +180,7 @@ const HomePage = () => {
                       className="absolute inset-0 h-full w-full object-cover transition duration-500 group-hover:scale-105"
                     />
                     <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(2,6,23,0.08)_0%,rgba(2,6,23,0.52)_44%,rgba(2,6,23,0.92)_100%)]" />
-                    <div className="relative flex min-h-[260px] flex-col justify-end p-6 text-white">
+                    <div className="relative flex min-h-[220px] flex-col justify-end p-5 text-white">
                       {liveCount != null && (
                         <div className="absolute right-5 top-5 rounded-full border border-white/18 bg-slate-950/45 px-3 py-1 text-xs font-semibold text-sky-100 backdrop-blur">
                           {formatItemCount(liveCount)}
