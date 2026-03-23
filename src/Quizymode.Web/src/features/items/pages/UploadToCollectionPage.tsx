@@ -237,7 +237,7 @@ const UploadToCollectionPage = () => {
             >
               <option value="">— Select —</option>
               {categoryOptions.map((c) => (
-                <option key={c.id} value={c.category}>
+                <option key={c.category} value={c.category}>
                   {c.category}
                 </option>
               ))}

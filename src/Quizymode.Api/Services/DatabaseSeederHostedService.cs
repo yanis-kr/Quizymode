@@ -22,6 +22,16 @@ internal sealed class DatabaseSeederHostedService(
     IOptions<SeedOptions> seedOptions,
     IOptions<TaxonomyOptions> taxonomyOptions) : IHostedService
 {
+    private static readonly Guid HomeSampleCollectionId = new("8f9b8c14-8d30-4d94-9b20-4c7bb7f7f511");
+    private static readonly HomeSampleScope[] HomeSampleScopes =
+    [
+        new("exams", "aws", "saa-c03"),
+        new("science", "astronomy", "solar-system"),
+        new("geography", "capitals", "world"),
+        new("languages", "spanish", "vocab"),
+        new("nature", "survival", "tropical-island"),
+    ];
+
     private readonly ILogger<DatabaseSeederHostedService> _logger = logger;
     private readonly IServiceProvider _serviceProvider = serviceProvider;
     private readonly ISimHashService _simHashService = simHashService;
@@ -217,6 +227,8 @@ internal sealed class DatabaseSeederHostedService(
             {
                 _logger.LogInformation("Skipping seeding; items already present.");
             }
+
+            await EnsureHomeSampleCollectionAsync(db, cancellationToken);
         }
         catch (Exception ex)
         {
@@ -316,6 +328,123 @@ internal sealed class DatabaseSeederHostedService(
         _logger.LogInformation("Added {Count} ratings (5 stars) for Science category items.", ratings.Count);
     }
 
+    private async Task EnsureHomeSampleCollectionAsync(ApplicationDbContext db, CancellationToken cancellationToken)
+    {
+        List<Guid> sampleItemIds = await GetHomeSampleItemIdsAsync(db, cancellationToken);
+        if (sampleItemIds.Count == 0)
+        {
+            _logger.LogWarning("No public items available for the homepage sample collection. Skipping collection seed.");
+            return;
+        }
+
+        const string sampleCollectionName = "Quizymode Starter Collection";
+        const string sampleCollectionDescription =
+            "A public five-item sampler spanning AWS, astronomy, geography, Spanish, and outdoor survival.";
+
+        Collection? collection = await db.Collections
+            .FirstOrDefaultAsync(c => c.Id == HomeSampleCollectionId, cancellationToken);
+
+        if (collection is null)
+        {
+            collection = new Collection
+            {
+                Id = HomeSampleCollectionId,
+                Name = sampleCollectionName,
+                Description = sampleCollectionDescription,
+                CreatedBy = "seeder",
+                CreatedAt = DateTime.UtcNow,
+                IsPublic = true,
+            };
+            await db.Collections.AddAsync(collection, cancellationToken);
+        }
+        else
+        {
+            collection.Name = sampleCollectionName;
+            collection.Description = sampleCollectionDescription;
+            collection.IsPublic = true;
+            collection.UpdatedAt = DateTime.UtcNow;
+        }
+
+        List<CollectionItem> existingLinks = await db.CollectionItems
+            .Where(ci => ci.CollectionId == HomeSampleCollectionId)
+            .ToListAsync(cancellationToken);
+
+        HashSet<Guid> desiredItemIds = sampleItemIds.ToHashSet();
+        List<CollectionItem> linksToRemove = existingLinks
+            .Where(link => !desiredItemIds.Contains(link.ItemId))
+            .ToList();
+
+        if (linksToRemove.Count > 0)
+        {
+            db.CollectionItems.RemoveRange(linksToRemove);
+        }
+
+        HashSet<Guid> existingItemIds = existingLinks
+            .Select(link => link.ItemId)
+            .ToHashSet();
+
+        List<CollectionItem> linksToAdd = sampleItemIds
+            .Where(itemId => !existingItemIds.Contains(itemId))
+            .Select(itemId => new CollectionItem
+            {
+                CollectionId = HomeSampleCollectionId,
+                ItemId = itemId,
+                AddedAt = DateTime.UtcNow,
+            })
+            .ToList();
+
+        if (linksToAdd.Count > 0)
+        {
+            await db.CollectionItems.AddRangeAsync(linksToAdd, cancellationToken);
+        }
+
+        await db.SaveChangesAsync(cancellationToken);
+
+        _logger.LogInformation(
+            "Ensured homepage sample collection {CollectionId} with {ItemCount} items.",
+            HomeSampleCollectionId,
+            sampleItemIds.Count);
+    }
+
+    private async Task<List<Guid>> GetHomeSampleItemIdsAsync(ApplicationDbContext db, CancellationToken cancellationToken)
+    {
+        List<Guid> selectedIds = [];
+
+        foreach (HomeSampleScope scope in HomeSampleScopes)
+        {
+            Guid? itemId = await db.Items
+                .AsNoTracking()
+                .Where(i => !i.IsPrivate)
+                .Where(i => i.Category != null && i.Category.Name == scope.Category)
+                .Where(i => i.NavigationKeyword1 != null && i.NavigationKeyword1.Name == scope.Keyword1)
+                .Where(i => i.NavigationKeyword2 != null && i.NavigationKeyword2.Name == scope.Keyword2)
+                .OrderBy(i => i.CreatedAt)
+                .Select(i => (Guid?)i.Id)
+                .FirstOrDefaultAsync(cancellationToken);
+
+            if (itemId.HasValue && !selectedIds.Contains(itemId.Value))
+            {
+                selectedIds.Add(itemId.Value);
+            }
+        }
+
+        if (selectedIds.Count >= HomeSampleScopes.Length)
+        {
+            return selectedIds;
+        }
+
+        List<Guid> fallbackIds = await db.Items
+            .AsNoTracking()
+            .Where(i => !i.IsPrivate && !selectedIds.Contains(i.Id))
+            .OrderBy(i => i.CreatedAt)
+            .Select(i => i.Id)
+            .Take(HomeSampleScopes.Length - selectedIds.Count)
+            .ToListAsync(cancellationToken);
+
+        selectedIds.AddRange(fallbackIds);
+        return selectedIds;
+    }
+
     private async Task SeedCategoriesAndNavigationAsync(ApplicationDbContext db, CancellationToken cancellationToken)
     {
         _logger.LogInformation("Seeding categories and navigation from generated taxonomy SQL...");
@@ -383,3 +512,5 @@ internal sealed class SeederUserContext : IUserContext
     public string? UserId => "seeder";
     public bool IsAdmin => true;
 }
+
+internal sealed record HomeSampleScope(string Category, string Keyword1, string Keyword2);

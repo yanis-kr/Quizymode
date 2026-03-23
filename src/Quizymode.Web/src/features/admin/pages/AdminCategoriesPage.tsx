@@ -114,7 +114,6 @@ const AdminCategoriesPage = () => {
                 .map((cat) => (
                   <CategoryRow
                     key={cat.id}
-                    id={cat.id}
                     name={cat.category}
                     description={cat.description ?? ""}
                     shortDescription={cat.shortDescription ?? ""}
@@ -213,7 +212,7 @@ function AddCategoryForm({
       >
         {isCreating ? "Adding…" : "Add category"}
       </button>
-      {createError && (
+      {Boolean(createError) && (
         <p className="text-sm text-red-600">Failed to add category. Name may already exist.</p>
       )}
     </form>
@@ -221,7 +220,6 @@ function AddCategoryForm({
 }
 
 function CategoryRow({
-  id,
   name,
   description,
   shortDescription,
@@ -232,7 +230,6 @@ function CategoryRow({
   isDeleting,
   saveError,
 }: {
-  id: string;
   name: string;
   description: string;
   shortDescription: string;
@@ -369,7 +366,7 @@ function CategoryRow({
             )}
           </span>
         )}
-        {saveError && (
+        {Boolean(saveError) && (
           <p className="text-xs text-red-600 mt-1">Save failed. Try again.</p>
         )}
       </td>

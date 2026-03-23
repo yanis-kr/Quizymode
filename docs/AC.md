@@ -438,6 +438,22 @@ Categories are **public only** (there is no private category). Users navigate by
 
 ---
 
+### AC 3.0 Home page
+
+**API**
+
+- **AC 3.0.1** [Anyone] **Given** the home page is loaded and `GET /categories` succeeds, **when** the UI renders the category card grid on `/`, **then** each home-page category card may show the live item count from the categories API for its matching category slug; if the API fails or is unavailable, the page still renders without those counts.
+- **AC 3.0.2** [Anyone] **Given** the application database has been seeded, **when** anyone opens the home-page sample collection link, **then** it resolves to a fixed public collection that contains exactly five public starter items chosen for the home-page demo flow.
+
+**UI**
+
+- **AC 3.0.3** [Anyone] **Given** I open `/`, **when** the page loads, **then** Quizymode itself is the home page (not a separate marketing landing page), and the primary navigation includes a **Home** link to `/`.
+- **AC 3.0.4** [Anyone] **Given** I am on the home page, **when** the hero section is shown, **then** I see a clear call to browse categories and a link to the public sample collection used as a starter/demo collection.
+- **AC 3.0.5** [Anyone] **Given** I am on the home page, **when** the category section loads, **then** I see a static grid of category boxes with image artwork and descriptions that are bundled with the frontend and do not depend on the database being available; clicking a category box opens `/categories/{categorySlug}`.
+- **AC 3.0.6** [Anyone] **Given** I am on the home page below the categories section, **when** I view featured content, **then** I see a horizontal carousel of six featured sets; each card links directly to a concrete category scope path (for example `/categories/exams/aws/saa-c03`) and can be opened without additional filtering steps.
+
+---
+
 ### AC 3.1 Listing categories
 
 **API**

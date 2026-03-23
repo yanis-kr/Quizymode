@@ -24,7 +24,6 @@ export const RatingFilter = ({
   const onlyUnrated = value.onlyUnrated ?? false;
   const includeUnrated = value.includeUnrated ?? false;
   const hasRange = value.min !== null || value.max !== null;
-  const hasActive = onlyUnrated || hasRange;
 
   const handleMinInput = (n: number) => {
     const newMin = Math.max(MIN, Math.min(n, maxVal));

@@ -42,6 +42,8 @@ const Layout = ({ children }: LayoutProps) => {
     setMobileMenuOpen(false);
   };
 
+  const isHomePage = location.pathname === "/";
+
   const isPathActive = (basePath: string) => {
     const path = location.pathname;
     if (path === basePath) return true;
@@ -80,6 +82,12 @@ const Layout = ({ children }: LayoutProps) => {
                 Quizymode
               </Link>
               <div className="hidden sm:ml-6 sm:flex sm:space-x-8">
+                <Link
+                  to="/"
+                  className={desktopNavLinkClass(isPathActive("/"))}
+                >
+                  Home
+                </Link>
                 <Link
                   to="/categories"
                   className={desktopNavLinkClass(isPathActive("/categories"))}
@@ -179,6 +187,13 @@ const Layout = ({ children }: LayoutProps) => {
           <div className="sm:hidden">
             <div className="pt-2 pb-3 space-y-1">
               <Link
+                to="/"
+                className={mobileNavLinkClass(isPathActive("/"))}
+                onClick={closeMobileMenu}
+              >
+                Home
+              </Link>
+              <Link
                 to="/categories"
                 className={mobileNavLinkClass(isPathActive("/categories"))}
                 onClick={closeMobileMenu}
@@ -268,7 +283,15 @@ const Layout = ({ children }: LayoutProps) => {
           </div>
         )}
       </nav>
-      <main className="max-w-7xl mx-auto py-6 sm:px-6 lg:px-8">{children}</main>
+      <main
+        className={
+          isHomePage
+            ? "py-0"
+            : "max-w-7xl mx-auto py-6 sm:px-6 lg:px-8"
+        }
+      >
+        {children}
+      </main>
       <UserProfileModal
         isOpen={showProfileModal}
         onClose={() => setShowProfileModal(false)}

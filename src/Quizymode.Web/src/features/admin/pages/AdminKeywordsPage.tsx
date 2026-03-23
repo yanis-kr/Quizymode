@@ -195,7 +195,7 @@ const AdminKeywordsPage = () => {
               onChange={(e) => {
                 const v = parseInt(e.target.value, 10) as 1 | 2;
                 setAddRank(v);
-                if (v === 1) setAddParentName("");
+                if (v === 1) setAddParentKeywordId("");
               }}
               className="ml-2 rounded border border-gray-300 text-sm"
             >
