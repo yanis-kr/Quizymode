@@ -20,10 +20,14 @@ import {
 } from "@/utils/categorySlug";
 import { ExploreQuizBreadcrumb } from "@/components/ExploreQuizBreadcrumb";
 import { ScopeSecondaryBar } from "@/components/ScopeSecondaryBar";
+import { ScopePathHeader } from "@/components/ScopePathHeader";
+import type { ViewMode } from "@/components/ModeSwitcher";
 import { StarIcon, XMarkIcon } from "@heroicons/react/24/outline";
 import { StarIcon as StarIconSolid } from "@heroicons/react/24/solid";
 import type { CollectionRatingResponse } from "@/types/api";
 import { useQuery as useRatingQuery } from "@tanstack/react-query";
+import { getCategoryScopeModeConfig } from "@/features/categories/utils/categoryScopeMode";
+import { getStudyScopeKeywords } from "@/features/items/utils/studyScopeParams";
 
 const ExploreModePage = () => {
   const { category: categorySlug, collectionId, itemId } = useParams();
@@ -31,15 +35,20 @@ const ExploreModePage = () => {
   const navigate = useNavigate();
   const { isAuthenticated } = useAuth();
   const returnUrl = searchParams.get("return");
-  const keywordsParam = searchParams.get("keywords");
-  const keywords = keywordsParam
-    ? keywordsParam.split(",").map((k) => k.trim()).filter(Boolean)
-    : undefined;
+  const hasCategoryScope = !!categorySlug && !collectionId;
+  const hasExplicitNavParam = searchParams.has("nav");
+  const { keywords, navigationKeywords, filterKeywords } = useMemo(
+    () => getStudyScopeKeywords(searchParams, hasCategoryScope),
+    [searchParams, hasCategoryScope]
+  );
 /** Query string for Flashcards item URLs; preserves keywords, return, and scope filter params across prev/next and mode switch */
   const exploreItemSearch = useMemo(() => {
     const params = new URLSearchParams();
     if (returnUrl) params.set("return", returnUrl);
-    if (keywords?.length) params.set("keywords", keywords.join(","));
+    if (hasCategoryScope && (hasExplicitNavParam || navigationKeywords.length > 0)) {
+      params.set("nav", navigationKeywords.join(","));
+    }
+    if (keywords.length > 0) params.set("keywords", keywords.join(","));
     const filterType = searchParams.get("filterType");
     if (filterType) params.set("filterType", filterType);
     const search = searchParams.get("search");
@@ -52,7 +61,14 @@ const ExploreModePage = () => {
     if (searchParams.get("ratingOnlyUnrated") === "1") params.set("ratingOnlyUnrated", "1");
     const s = params.toString();
     return s ? `?${s}` : "";
-  }, [returnUrl, keywords, searchParams]);
+  }, [
+    hasCategoryScope,
+    hasExplicitNavParam,
+    navigationKeywords,
+    returnUrl,
+    keywords,
+    searchParams,
+  ]);
   /** Flashcards mode loads all available items (backend max 1000) into memory */
   const EXPLORE_MAX_ITEMS = 1000;
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -90,10 +106,10 @@ const ExploreModePage = () => {
 
   // Fetch navigation keyword descriptions for breadcrumb tooltips
   const { data: keywordDescriptionsData } = useQuery({
-    queryKey: ["keyword-descriptions", category, keywords],
+    queryKey: ["keyword-descriptions", category, navigationKeywords],
     queryFn: () =>
-      keywordsApi.getKeywordDescriptions(category!, keywords ?? []),
-    enabled: !!category && (keywords?.length ?? 0) > 0,
+      keywordsApi.getKeywordDescriptions(category!, navigationKeywords),
+    enabled: !!category && navigationKeywords.length > 0,
   });
   const keywordDescriptions =
     keywordDescriptionsData?.keywords?.map((k) => k.description) ?? undefined;
@@ -360,6 +376,33 @@ const ExploreModePage = () => {
     );
   }
 
+  const hideSetsMode = !!category && navigationKeywords.length >= 2;
+  const categoryAvailableModes: ViewMode[] = collectionId
+    ? ["list", "explore", "quiz"]
+    : getCategoryScopeModeConfig("sets", hideSetsMode).availableModes;
+  const categoryScopePath = category
+    ? buildCategoryPath(categoryNameToSlug(category), navigationKeywords)
+    : "/categories";
+  const categoryListSearch = (() => {
+    const params = new URLSearchParams();
+    params.set("view", "items");
+    if (filterKeywords.length > 0) {
+      params.set("keywords", filterKeywords.join(","));
+    }
+    const filterType = searchParams.get("filterType");
+    if (filterType) params.set("filterType", filterType);
+    const search = searchParams.get("search");
+    if (search) params.set("search", search);
+    const ratingMin = searchParams.get("ratingMin");
+    if (ratingMin) params.set("ratingMin", ratingMin);
+    const ratingMax = searchParams.get("ratingMax");
+    if (ratingMax) params.set("ratingMax", ratingMax);
+    if (searchParams.get("ratingUnrated") === "1") params.set("ratingUnrated", "1");
+    if (searchParams.get("ratingOnlyUnrated") === "1") params.set("ratingOnlyUnrated", "1");
+    const query = params.toString();
+    return query ? `?${query}` : "";
+  })();
+
   const handlePrev = () => {
     if (currentIndex > 0) {
       const newIndex = currentIndex - 1;
@@ -403,18 +446,16 @@ const ExploreModePage = () => {
       <ScopeSecondaryBar
         scopeType={collectionId ? "collection" : "category"}
         activeMode="explore"
-        availableModes={collectionId ? ["list", "explore", "quiz"] : ["sets", "list", "explore", "quiz"]}
+        availableModes={categoryAvailableModes}
         onModeChange={(mode) => {
           const search = exploreItemSearch;
           if (mode === "sets") {
-            if (category) navigate(buildCategoryPath(categoryNameToSlug(category), keywords || []));
+            if (category) navigate(categoryScopePath);
             else navigate("/categories");
           } else if (mode === "list") {
             if (collectionId) navigate(`/collections/${collectionId}`);
             else if (category)
-              navigate(
-                `${buildCategoryPath(categoryNameToSlug(category), keywords || [])}?view=items`
-              );
+              navigate(`${categoryScopePath}${categoryListSearch}`);
             else navigate("/categories");
           } else if (mode === "quiz") {
             const targetItemId = currentItem?.id ?? items[0]?.id;
@@ -493,6 +534,22 @@ const ExploreModePage = () => {
           </div>
         </div>
       )}
+      {category && !collectionId && (
+        <ScopePathHeader
+          breadcrumb={
+            <ExploreQuizBreadcrumb
+              mode="explore"
+              categorySlug={categoryNameToSlug(category)}
+              categoryDisplayName={category}
+              keywords={navigationKeywords}
+              keywordDescriptions={keywordDescriptions}
+              onNavigate={(path) => navigate(path)}
+            />
+          }
+          count={items.length}
+          hint="Flashcards-style study mode for reviewing quiz items."
+        />
+      )}
       {showDetails && collectionId && collectionInfo && (
         <div
           className="fixed inset-0 bg-gray-600 bg-opacity-50 overflow-y-auto h-full w-full z-40"
@@ -545,19 +602,6 @@ const ExploreModePage = () => {
       <StudyShell
         backContent={
           <>
-            {collectionId && null}
-            {category && !collectionId && (
-              <div className="mb-6">
-                <ExploreQuizBreadcrumb
-                  mode="explore"
-                  categorySlug={categoryNameToSlug(category)}
-                  categoryDisplayName={category}
-                  keywords={keywords || []}
-                  keywordDescriptions={keywordDescriptions}
-                  onNavigate={(path) => navigate(path)}
-                />
-              </div>
-            )}
             {!category && !collectionId && returnUrl && (
               <div className="mb-6">
                 <nav className="flex items-center gap-1 text-sm text-gray-600">
@@ -573,8 +617,11 @@ const ExploreModePage = () => {
             )}
           </>
         }
-        title="Flashcards Mode"
-        description="Flashcards-style study mode for reviewing quiz items. View questions, answers, and explanations. Navigate through items using the arrow buttons or click on related items in comments."
+        description={
+          !category || !!collectionId
+            ? "Flashcards-style study mode for reviewing quiz items."
+            : undefined
+        }
         currentIndex={currentIndex}
         totalCount={items.length}
         onPrev={handlePrev}
@@ -611,15 +658,6 @@ const ExploreModePage = () => {
             >
               ← Back to collection
             </button>
-          ) : category ? (
-            <ExploreQuizBreadcrumb
-              mode="explore"
-              categorySlug={categoryNameToSlug(category)}
-              categoryDisplayName={category}
-              keywords={keywords || []}
-              keywordDescriptions={keywordDescriptions}
-              onNavigate={(path) => navigate(path)}
-            />
           ) : returnUrl ? (
             <button
               onClick={() => navigate(returnUrl)}

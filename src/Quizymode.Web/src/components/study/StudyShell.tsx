@@ -12,7 +12,7 @@ import { ItemCollectionControls } from "@/components/ItemCollectionControls";
 export interface StudyShellProps {
   /** Back link / breadcrumb above the card */
   backContent?: ReactNode;
-  title: string;
+  title?: string;
   description?: string;
   /** Optional control (e.g. quiz size) to show in header */
   headerExtra?: ReactNode;
@@ -76,20 +76,26 @@ export function StudyShell({
         {backContent}
 
         <div className="bg-white shadow rounded-lg p-6 mb-4">
-          <div className="flex justify-between items-center mb-2">
-            <h2 className="text-2xl font-bold text-gray-900">{title}</h2>
-            {currentItem && (
-              <Link
-                to={`/items/${currentItem.id}`}
-                className="p-2 text-indigo-600 hover:bg-indigo-50 rounded-md"
-                title="View item details"
-              >
-                <EyeIcon className="h-5 w-5" />
-              </Link>
-            )}
-          </div>
+          {(title || currentItem) && (
+            <div className="flex justify-between items-start gap-3 mb-2">
+              <div>
+                {title ? (
+                  <h2 className="text-2xl font-bold text-gray-900">{title}</h2>
+                ) : null}
+              </div>
+              {currentItem && (
+                <Link
+                  to={`/items/${currentItem.id}`}
+                  className="p-2 text-indigo-600 hover:bg-indigo-50 rounded-md"
+                  title="View item details"
+                >
+                  <EyeIcon className="h-5 w-5" />
+                </Link>
+              )}
+            </div>
+          )}
           {description && (
-            <p className="text-gray-600 text-sm mb-4">{description}</p>
+            <p className="text-xs text-gray-500 mb-4">{description}</p>
           )}
           {headerExtra}
 

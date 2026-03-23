@@ -1,5 +1,5 @@
 import { useState, useEffect, useMemo, useRef } from "react";
-import { useQuery, useQueryClient } from "@tanstack/react-query";
+import { useQuery } from "@tanstack/react-query";
 import { useNavigate, useSearchParams, useParams, Link } from "react-router-dom";
 import { categoriesApi } from "@/api/categories";
 import { keywordsApi } from "@/api/keywords";
@@ -11,6 +11,7 @@ import ItemListSection from "@/components/ItemListSection";
 import ItemCollectionsModal from "@/components/ItemCollectionsModal";
 import { ItemCollectionControls } from "@/components/ItemCollectionControls";
 import { ScopeSecondaryBar } from "@/components/ScopeSecondaryBar";
+import { ScopePathHeader } from "@/components/ScopePathHeader";
 import { BucketGridView } from "@/components/BucketGridView";
 import { useAuth } from "@/contexts/AuthContext";
 import { usePageSize } from "@/hooks/usePageSize";
@@ -19,7 +20,6 @@ import {
   categoryNameToSlug,
   findCategoryNameFromSlug,
   buildCategoryPath,
-  getCategoryBasePath,
   parseKeywordSegment,
   isAllCategoriesSlug,
   getAllCategoriesSlug,
@@ -35,6 +35,7 @@ import { filterItems } from "../../items/utils/itemFilters";
 import { useBulkRatings } from "../../items/hooks/useBulkRatings";
 import type { FilterType } from "../../items/types/filters";
 import type { ItemTypeFilter as ItemTypeFilterValue } from "../../items/types/filters";
+import { getCategoryScopeModeConfig } from "../utils/categoryScopeMode";
 import {
   AcademicCapIcon,
   ListBulletIcon,
@@ -81,7 +82,6 @@ const CategoriesPage = () => {
     pageSizeFromUrl !== 10 ? pageSizeFromUrl : userPageSize;
   const view = viewFromUrl === "items" ? "items" : "sets";
   const navigate = useNavigate();
-  const queryClient = useQueryClient();
   // Scope filter state (synced from URL, applied on Apply)
   const filterTypeFromUrl = (searchParams.get("filterType") || "all") as ItemTypeFilterValue;
   const scopeSearchFromUrl = searchParams.get("search") || "";
@@ -177,7 +177,7 @@ const CategoriesPage = () => {
   const handleApplyFilter = () => {
     const path = buildCategoryPath(filterCategorySlug, filterKeywords);
     const params = new URLSearchParams();
-    params.set("view", view);
+    params.set("view", activeView);
     params.set("page", "1");
     params.set("pagesize", pageSize.toString());
     if (sortBy) params.set("sort", sortBy);
@@ -220,7 +220,7 @@ const CategoriesPage = () => {
   };
 
   const handleFilterPrimaryTopicChange = (kw1: string) => {
-    setFilterKeywords((prev) => (kw1 ? [kw1] : []));
+    setFilterKeywords(kw1 ? [kw1] : []);
   };
 
   const handleFilterSubtopicChange = (kw2: string) => {
@@ -395,10 +395,24 @@ const CategoriesPage = () => {
     filterKeywordsFromQuery,
     tagFromUrl,
   ]);
+  const remainingNavigationKeywordCount = useMemo(() => {
+    if (!keywordsData?.keywords) return 0;
+    const pathKwLower = new Set(pathKeywordsFromUrl.map((k) => k.toLowerCase()));
+    return keywordsData.keywords.filter(
+      (keyword) => !pathKwLower.has(keyword.name.toLowerCase())
+    ).length;
+  }, [keywordsData?.keywords, pathKeywordsFromUrl]);
 
   const isLeaf = !!categoryName && pathKeywordsFromUrl.length >= 2;
+  const effectiveLeaf =
+    isLeaf || (keywordsFromUrl.length >= 1 && remainingNavigationKeywordCount === 0);
+  const hideSetsMode = isLeaf || (view === "sets" && effectiveLeaf);
+  const { activeView, availableModes: categoryAvailableModes } =
+    getCategoryScopeModeConfig(view, hideSetsMode);
 
-  const isItemsViewAllowed = view === "items" && (!!categoryName || isAllCategoriesSlug(categorySlugParam));
+  const isItemsViewAllowed =
+    activeView === "items" &&
+    (!!categoryName || isAllCategoriesSlug(categorySlugParam));
   const scopeIsPrivate =
     scopeFilterType === "all" ? undefined : scopeFilterType === "private";
   const hasClientSideScopeFilters =
@@ -547,8 +561,16 @@ const CategoriesPage = () => {
     });
   }, [keywordsData?.keywords, pathKeywordsFromUrl, sortBy]);
 
-  const effectiveLeaf =
-    isLeaf || (keywordsFromUrl.length >= 1 && sortedKeywords.length === 0);
+  const setsScopeCount = useMemo(() => {
+    if (!categoryName) return null;
+    if (pathKeywordsFromUrl.length === 0) {
+      return currentCategoryMeta?.count ?? null;
+    }
+    if (sortedKeywords.length > 0) {
+      return sortedKeywords.reduce((sum, keyword) => sum + keyword.itemCount, 0);
+    }
+    return null;
+  }, [categoryName, currentCategoryMeta?.count, pathKeywordsFromUrl.length, sortedKeywords]);
 
   const handleSortChange = (newSort: SortOption) => {
     setSortBy(newSort);
@@ -567,9 +589,6 @@ const CategoriesPage = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
-  const categoryBasePath = getCategoryBasePath(
-    categorySlugParam ?? getAllCategoriesSlug()
-  );
   // Full path = category + nav keywords (path segments); "all" has no path keywords
   const scopePathWithNav = useMemo(
     () =>
@@ -638,6 +657,7 @@ const CategoriesPage = () => {
   ) => {
     const deduped = dedupeKeywords(kws);
     const p = buildScopeFilterQuery();
+    p.set("nav", pathKeywordsFromUrl.join(","));
     if (deduped.length > 0) p.set("keywords", deduped.join(","));
     const query = p.toString() ? `?${p.toString()}` : "";
     if (filteredItems && filteredItems.length > 0) {
@@ -663,6 +683,7 @@ const CategoriesPage = () => {
   ) => {
     const deduped = dedupeKeywords(kws);
     const p = buildScopeFilterQuery();
+    p.set("nav", pathKeywordsFromUrl.join(","));
     if (deduped.length > 0) p.set("keywords", deduped.join(","));
     const query = p.toString() ? `?${p.toString()}` : "";
     if (filteredItems && filteredItems.length > 0) {
@@ -769,7 +790,7 @@ const CategoriesPage = () => {
     );
   }
 
-  if (view === "items" && (categoryName || isAllCategoriesSlug(categorySlugParam))) {
+  if (activeView === "items" && (categoryName || isAllCategoriesSlug(categorySlugParam))) {
     if (isLoadingItems) return <LoadingSpinner />;
     if (itemsError) {
       const itemsErrorDetail = getApiErrorMessage(itemsError);
@@ -798,7 +819,7 @@ const CategoriesPage = () => {
           <ScopeSecondaryBar
             scopeType="category"
             activeMode="list"
-            availableModes={["sets", "list", "explore", "quiz"]}
+            availableModes={categoryAvailableModes}
             onModeChange={(mode) => {
               const path = scopePathWithNav;
               const kw = keywordsForItems;
@@ -909,8 +930,8 @@ const CategoriesPage = () => {
               )}
             </div>
           </FilterSection>
-          <div className="flex flex-wrap items-center justify-between gap-3 mt-2">
-            <div className="flex flex-wrap items-center gap-2">
+          <ScopePathHeader
+            breadcrumb={
               <Breadcrumb
                 categoryName={categoryName}
                 pathKeywords={categoryName ? pathKeywordsFromUrl : filterKeywordsFromQuery}
@@ -920,11 +941,10 @@ const CategoriesPage = () => {
                   else navigateToSets(path);
                 }}
               />
-              <span className="text-sm text-gray-600" aria-label="Item count">
-                ({scopeTotalCount})
-              </span>
-            </div>
-            <div className="flex flex-wrap items-center gap-3 flex-shrink-0">
+            }
+            count={scopeTotalCount}
+            hint="Browse items in this scope."
+            endSlot={
               <div className="flex items-center gap-2">
                 <label className="text-sm text-gray-600">Per page:</label>
                 <select
@@ -941,8 +961,8 @@ const CategoriesPage = () => {
                   ))}
                 </select>
               </div>
-            </div>
-          </div>
+            }
+          />
 
             {scopeDisplayItems.length === 0 ? (
               <div className="text-center py-12">
@@ -1006,7 +1026,7 @@ const CategoriesPage = () => {
     );
   }
 
-  if (categoryName && view === "sets") {
+  if (categoryName && activeView === "sets") {
     if (isLoadingKeywords) return <LoadingSpinner />;
 
     return (
@@ -1020,7 +1040,7 @@ const CategoriesPage = () => {
           <ScopeSecondaryBar
             scopeType="category"
             activeMode="sets"
-            availableModes={["sets", "list", "explore", "quiz"]}
+            availableModes={categoryAvailableModes}
             onModeChange={(mode) => {
               const path = scopePathWithNav;
               const kw = keywordsForItems;
@@ -1147,27 +1167,23 @@ const CategoriesPage = () => {
               )}
             </div>
           </FilterSection>
-          <div className="flex flex-wrap items-center justify-between gap-3 mt-2">
-            <Breadcrumb
-              categoryName={categoryName}
-              pathKeywords={pathKeywordsFromUrl}
-              keywordDescriptions={breadcrumbKeywordDescriptions}
-              onNavigate={navigateToSets}
-            />
-            <div className="flex flex-wrap items-center gap-3 flex-shrink-0">
-              <SortControl sortBy={sortBy} onSortChange={handleSortChange} />
-            </div>
-          </div>
-          <h1 className="text-3xl font-bold text-gray-900 mt-4 mb-2">
-            {keywordsFromUrl.length === 0
-              ? categoryName
-              : keywordsFromUrl.join(" / ")}
-          </h1>
-          {keywordsFromUrl.length === 0 && currentCategoryMeta?.description ? (
-            <p className="text-gray-600 text-sm mb-6">{currentCategoryMeta.description}</p>
-          ) : (
-            <div className="mb-6" />
-          )}
+          <ScopePathHeader
+            breadcrumb={
+              <Breadcrumb
+                categoryName={categoryName}
+                pathKeywords={pathKeywordsFromUrl}
+                keywordDescriptions={breadcrumbKeywordDescriptions}
+                onNavigate={navigateToSets}
+              />
+            }
+            count={setsScopeCount}
+            hint={
+              keywordsFromUrl.length === 0 && currentCategoryMeta?.description
+                ? currentCategoryMeta.description
+                : "Browse subtopics in this scope."
+            }
+            endSlot={<SortControl sortBy={sortBy} onSortChange={handleSortChange} />}
+          />
 
           {sortedKeywords.length > 0 ? (
               <BucketGridView
