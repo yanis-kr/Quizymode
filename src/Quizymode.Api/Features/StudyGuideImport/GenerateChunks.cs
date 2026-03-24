@@ -66,10 +66,16 @@ public static class GenerateChunks
         var defaultKw = string.IsNullOrEmpty(session.DefaultKeywordsJson)
             ? null
             : JsonSerializer.Deserialize<List<string>>(session.DefaultKeywordsJson);
+        int targetSetCount = Math.Clamp(session.TargetItemsPerChunk, 1, 6);
 
-        IReadOnlyList<ChunkResult> chunkResults = chunkingService.Chunk(session.StudyGuide.ContentText, session.StudyGuide.Title);
+        IReadOnlyList<ChunkResult> chunkResults = chunkingService.Chunk(
+            session.StudyGuide.ContentText,
+            session.StudyGuide.Title,
+            targetSetCount);
 
         await db.StudyGuideChunks.Where(c => c.ImportSessionId == sessionId).ExecuteDeleteAsync(cancellationToken);
+        await db.StudyGuidePromptResults.Where(r => r.ImportSessionId == sessionId).ExecuteDeleteAsync(cancellationToken);
+        await db.StudyGuideDedupResults.Where(d => d.ImportSessionId == sessionId).ExecuteDeleteAsync(cancellationToken);
 
         var chunkInfos = new List<ChunkInfo>();
         var previousQuestionTexts = new List<string>();
@@ -79,6 +85,7 @@ public static class GenerateChunks
             ChunkResult cr = chunkResults[i];
             string promptText = promptBuilder.BuildChunkPrompt(
                 i,
+                chunkResults.Count,
                 cr.Title,
                 cr.ChunkText,
                 session.CategoryName,

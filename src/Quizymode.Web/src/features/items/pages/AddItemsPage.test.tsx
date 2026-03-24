@@ -73,6 +73,15 @@ function renderPage(initialEntry: string) {
               </>
             }
           />
+          <Route
+            path="/study-guide/import"
+            element={
+              <>
+                <div>Study Guide Import Route</div>
+                <LocationDisplay />
+              </>
+            }
+          />
         </Routes>
       </MemoryRouter>
     </QueryClientProvider>
@@ -137,18 +146,37 @@ describe("AddItemsPage", () => {
     );
   });
 
-  it("navigates to the dedicated create-item route while preserving scope", async () => {
+  it("navigates to the manual-entry route while preserving scope", async () => {
     const user = userEvent.setup({ delay: null });
 
     renderPage("/items/add?category=science&keywords=anatomy,muscular,arms");
 
-    await user.click(await screen.findByRole("button", { name: /create a new item/i }));
+    await user.click(await screen.findByRole("button", { name: /add manually/i }));
 
     expect(await screen.findByText("Create Route")).toBeInTheDocument();
 
     const location = screen.getByTestId("location").textContent ?? "";
     expect(decodeURIComponent(location)).toContain(
       "/add-new-item?category=science&keywords=anatomy,muscular,arms"
+    );
+  });
+
+  it("navigates to the study-guide prompt-set route while preserving scope", async () => {
+    const user = userEvent.setup({ delay: null });
+
+    renderPage("/items/add?category=science&keywords=anatomy,muscular,arms");
+
+    await user.click(
+      await screen.findByRole("button", {
+        name: /generate ai sets from study guide/i,
+      })
+    );
+
+    expect(await screen.findByText("Study Guide Import Route")).toBeInTheDocument();
+
+    const location = screen.getByTestId("location").textContent ?? "";
+    expect(decodeURIComponent(location)).toContain(
+      "/study-guide/import?category=science&keywords=anatomy,muscular,arms"
     );
   });
 });

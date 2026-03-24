@@ -16,7 +16,7 @@ public static class CreateImportSession
         string CategoryName,
         IReadOnlyList<string> NavigationKeywordPath,
         IReadOnlyList<string>? DefaultKeywords = null,
-        int TargetItemsPerChunk = 15);
+        int TargetSetCount = 3);
 
     public sealed record Response(
         string SessionId,
@@ -38,9 +38,9 @@ public static class CreateImportSession
                 .NotNull()
                 .WithMessage("NavigationKeywordPath is required");
 
-            RuleFor(x => x.TargetItemsPerChunk)
-                .InclusiveBetween(5, 50)
-                .WithMessage("TargetItemsPerChunk must be between 5 and 50");
+            RuleFor(x => x.TargetSetCount)
+                .InclusiveBetween(1, 6)
+                .WithMessage("TargetSetCount must be between 1 and 6");
         }
     }
 
@@ -101,7 +101,7 @@ public static class CreateImportSession
             DefaultKeywordsJson = request.DefaultKeywords != null && request.DefaultKeywords.Count > 0
                 ? JsonSerializer.Serialize(request.DefaultKeywords)
                 : null,
-            TargetItemsPerChunk = request.TargetItemsPerChunk,
+            TargetItemsPerChunk = request.TargetSetCount,
             Status = StudyGuideImportSessionStatus.Draft,
             CreatedUtc = DateTime.UtcNow,
             UpdatedUtc = DateTime.UtcNow

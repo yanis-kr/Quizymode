@@ -83,7 +83,7 @@ export interface CreateImportSessionRequest {
   categoryName: string;
   navigationKeywordPath: string[];
   defaultKeywords?: string[];
-  targetItemsPerChunk?: number;
+  targetSetCount?: number;
 }
 
 export interface CreateImportSessionResponse {
@@ -121,7 +121,7 @@ export interface ImportSessionResponse {
   categoryName: string;
   navigationKeywordPath: string[];
   defaultKeywords: string[] | null;
-  targetItemsPerChunk: number;
+  targetSetCount: number;
   status: string;
   chunks: ChunkInfo[];
   promptResults: PromptResultDto[];

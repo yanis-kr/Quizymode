@@ -88,8 +88,12 @@ public static class SubmitDedupResult
                 null));
         }
 
-        var navPath = JsonSerializer.Deserialize<List<string>>(session.NavigationKeywordPathJson) ?? new List<string>();
-        var sessionKeywords = navPath.Select(k => new Quizymode.Api.Features.Items.AddBulk.AddItemsBulk.KeywordRequest(k, true)).ToList();
+        var defaultKeywords = string.IsNullOrEmpty(session.DefaultKeywordsJson)
+            ? new List<string>()
+            : JsonSerializer.Deserialize<List<string>>(session.DefaultKeywordsJson) ?? new List<string>();
+        var sessionKeywords = defaultKeywords
+            .Select(k => new Quizymode.Api.Features.Items.AddBulk.AddItemsBulk.KeywordRequest(k, true))
+            .ToList();
 
         (bool isValid, List<string> messages, var _) = StudyGuideItemValidator.ValidateAndMap(
             array,

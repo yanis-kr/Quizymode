@@ -6,6 +6,7 @@ public interface IStudyGuidePromptBuilderService
 {
     string BuildChunkPrompt(
         int chunkIndex,
+        int chunkCount,
         string chunkTitle,
         string chunkText,
         string categoryName,
@@ -37,6 +38,7 @@ internal sealed class StudyGuidePromptBuilderService : IStudyGuidePromptBuilderS
 
     public string BuildChunkPrompt(
         int chunkIndex,
+        int chunkCount,
         string chunkTitle,
         string chunkText,
         string categoryName,
@@ -45,16 +47,19 @@ internal sealed class StudyGuidePromptBuilderService : IStudyGuidePromptBuilderS
         IReadOnlyList<string>? previousQuestionTexts)
     {
         var sb = new StringBuilder();
-        sb.AppendLine("You are creating quiz items for an app. Generate a JSON array of quiz items from the following study guide chunk.");
+        sb.AppendLine("You are creating new private quiz items for an app called Quizymode.");
+        sb.AppendLine($"Generate 10 to 15 new quiz items from the following study guide excerpt for prompt set {chunkIndex + 1} of {chunkCount}.");
         sb.AppendLine();
         sb.AppendLine("Rules:");
         sb.AppendLine("- Category for all items: " + categoryName);
         if (navigationKeywordPath.Count > 0)
             sb.AppendLine("- Navigation path (use as context): " + string.Join(" / ", navigationKeywordPath));
         if (defaultKeywords != null && defaultKeywords.Count > 0)
-            sb.AppendLine("- Default keywords to include where relevant: " + string.Join(", ", defaultKeywords));
+            sb.AppendLine("- Default extra keywords already applied to every imported item: " + string.Join(", ", defaultKeywords));
+        sb.AppendLine("- Keep the items grounded in the excerpt and avoid duplicating concepts across prompt sets.");
         sb.AppendLine("- Return ONLY a single JSON array of items. No markdown, no code fences, no commentary.");
-        sb.AppendLine("- question and correctAnswer are required. incorrectAnswers must be an array with at least 1 item (recommended 3).");
+        sb.AppendLine("- question and correctAnswer are required. incorrectAnswers must be an array with 1 to 4 items.");
+        sb.AppendLine("- Optional keywords are per-item extras only. Do not repeat the category, navigation path, or default extra keywords there.");
         sb.AppendLine("- factualRisk: number 0-1 (optional). reviewComments: string (optional).");
         sb.AppendLine();
 

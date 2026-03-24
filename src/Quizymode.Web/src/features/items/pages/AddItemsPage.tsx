@@ -179,7 +179,7 @@ const AddItemsPage = () => {
   const buildStudyGuideImportUrl = () =>
     `/study-guide/import${buildQueryString()}`;
 
-  const buildStudyGuideUrl = () => "/study-guide";
+  const buildStudyGuideUrl = () => `/study-guide${buildQueryString()}`;
 
   if (!isAuthenticated) {
     return <Navigate to="/login" replace />;
@@ -190,8 +190,9 @@ const AddItemsPage = () => {
       <div className="max-w-3xl mx-auto">
         <h1 className="text-3xl font-bold text-gray-900 mb-2">Add Items</h1>
         <p className="text-gray-600 text-sm mb-6">
-          Choose where new items should live, then pick how to add them. Your choices are kept in the
-          address bar so links to single create, bulk create, and study-guide import stay in sync.
+          Choose the scope once, then pick one of three ways to add new private items. The selected
+          category, navigation path, and extra keywords stay in the URL so each path starts with the
+          same setup.
         </p>
 
         <section className="rounded-lg border border-gray-200 bg-slate-50/80 p-4 sm:p-5 space-y-4 mb-8">
@@ -332,20 +333,6 @@ const AddItemsPage = () => {
           </div>
         </section>
 
-        <div className="flex flex-col sm:flex-row gap-4 flex-wrap mb-6">
-          <button
-            onClick={() => navigate(buildStudyGuideUrl())}
-            className="flex items-center gap-3 px-6 py-4 bg-slate-800 text-white rounded-lg hover:bg-slate-900 transition-colors text-left"
-          >
-            <BookOpenIcon className="h-8 w-8 flex-shrink-0" />
-            <div>
-              <span className="font-medium block">My Study Guide</span>
-              <span className="text-sm text-slate-200">
-                Paste or edit your study guide text to reuse when generating items.
-              </span>
-            </div>
-          </button>
-        </div>
         <div className="flex flex-col sm:flex-row gap-4 flex-wrap">
           <button
             onClick={() => navigate(buildCreateUrl())}
@@ -353,21 +340,9 @@ const AddItemsPage = () => {
           >
             <PlusIcon className="h-8 w-8 flex-shrink-0" />
             <div>
-              <span className="font-medium block">Create a New Item</span>
+              <span className="font-medium block">Add Manually</span>
               <span className="text-sm text-indigo-100">
-                Add a single quiz item with full control.
-              </span>
-            </div>
-          </button>
-          <button
-            onClick={() => navigate(buildStudyGuideImportUrl())}
-            className="flex items-center gap-3 px-6 py-4 bg-emerald-600 text-white rounded-lg hover:bg-emerald-700 transition-colors text-left"
-          >
-            <DocumentPlusIcon className="h-8 w-8 flex-shrink-0" />
-            <div>
-              <span className="font-medium block">Create Items from Study Guide</span>
-              <span className="text-sm text-emerald-100">
-                Generate AI prompts from your study guide, paste JSON, validate, and import.
+                Enter one new private item yourself with full control over the content.
               </span>
             </div>
           </button>
@@ -377,12 +352,37 @@ const AddItemsPage = () => {
           >
             <ArrowUpTrayIcon className="h-8 w-8 flex-shrink-0" />
             <div>
-              <span className="font-medium block">Bulk Create Items (no Study Guide)</span>
+              <span className="font-medium block">Generate One AI Batch</span>
               <span className="text-sm text-amber-100">
-                Ask AI to generate questions for this scope and paste JSON.
+                Generate a prompt for 10-15 new private items for this exact scope, then paste the JSON.
               </span>
             </div>
           </button>
+          <button
+            onClick={() => navigate(buildStudyGuideImportUrl())}
+            className="flex items-center gap-3 px-6 py-4 bg-emerald-600 text-white rounded-lg hover:bg-emerald-700 transition-colors text-left"
+          >
+            <DocumentPlusIcon className="h-8 w-8 flex-shrink-0" />
+            <div>
+              <span className="font-medium block">Generate AI Sets from Study Guide</span>
+              <span className="text-sm text-emerald-100">
+                Use your uploaded study guide to create several prompt sets, each asking for 10-15 new private items.
+              </span>
+            </div>
+          </button>
+        </div>
+
+        <div className="mt-6 rounded-lg border border-slate-200 bg-slate-50 px-4 py-3 text-sm text-slate-700">
+          <div className="flex items-start gap-3">
+            <BookOpenIcon className="h-5 w-5 flex-shrink-0 text-slate-500 mt-0.5" />
+            <p>
+              Need to upload or edit the study guide first?{" "}
+              <Link to={buildStudyGuideUrl()} className="font-medium text-indigo-600 hover:text-indigo-800">
+                Open Study Guide
+              </Link>
+              . Your selected scope will be kept when you continue to prompt sets.
+            </p>
+          </div>
         </div>
 
         <p className="mt-8 text-xs text-gray-500">

@@ -81,6 +81,9 @@ public static class FinalizeImport
             return Result.Success<Response?>(null);
 
         List<string> navPath = JsonSerializer.Deserialize<List<string>>(session.NavigationKeywordPathJson) ?? [];
+        List<string> defaultKeywords = string.IsNullOrEmpty(session.DefaultKeywordsJson)
+            ? []
+            : JsonSerializer.Deserialize<List<string>>(session.DefaultKeywordsJson) ?? [];
         if (navPath.Count < 2)
         {
             return Result.Failure<Response?>(
@@ -89,8 +92,7 @@ public static class FinalizeImport
                     "Study guide navigation must include a primary topic and subtopic (at least two keywords)."));
         }
 
-        List<AddItemsBulk.KeywordRequest> sessionKeywords = navPath
-            .Skip(2)
+        List<AddItemsBulk.KeywordRequest> sessionKeywords = defaultKeywords
             .Select(k => new AddItemsBulk.KeywordRequest(k, true))
             .ToList();
 

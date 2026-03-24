@@ -1,6 +1,6 @@
 /**
- * Bulk Create Items (AI-assisted): select category/keywords/collection → generate prompt →
- * copy to AI → paste response → review in memory → accept/reject → save via API.
+ * Generate one AI batch: choose scope and keywords, create a prompt for 10-15 private items,
+ * copy it to AI, paste the response, review in memory, then accept/reject before saving.
  */
 import { useState, useMemo, useEffect } from "react";
 import { useNavigate, useSearchParams } from "react-router-dom";
@@ -10,7 +10,6 @@ import { Navigate } from "react-router-dom";
 import ErrorMessage from "@/components/ErrorMessage";
 import { apiClient } from "@/api/client";
 import { taxonomyApi } from "@/api/taxonomy";
-import { collectionsApi } from "@/api/collections";
 import {
   XMarkIcon,
   ClipboardDocumentIcon,
@@ -72,7 +71,7 @@ function consolidateBulkItemKeywords(
 }
 
 const BulkCreateItemsPage = () => {
-  const { isAuthenticated, isAdmin } = useAuth();
+  const { isAuthenticated } = useAuth();
   const navigate = useNavigate();
   const [searchParams] = useSearchParams();
   const urlCategory = searchParams.get("category") ?? "";
@@ -83,7 +82,6 @@ const BulkCreateItemsPage = () => {
   const [primaryTopic, setPrimaryTopic] = useState("");
   const [subtopic, setSubtopic] = useState("");
   const [extraKeywordsText, setExtraKeywordsText] = useState("");
-  const [collectionId, setCollectionId] = useState("");
   const [generatedPrompt, setGeneratedPrompt] = useState("");
   const [pastedResponse, setPastedResponse] = useState("");
   const [pendingItems, setPendingItems] = useState<ParsedItem[]>([]);
@@ -135,13 +133,6 @@ const BulkCreateItemsPage = () => {
     }
   }, [urlCategory, urlKeywords, categoryOptions.length]);
 
-  const { data: collectionsData } = useQuery({
-    queryKey: ["collections"],
-    queryFn: () => collectionsApi.getAll(),
-    enabled: isAuthenticated,
-  });
-  const collections = collectionsData?.collections ?? [];
-
   const navKeywords = useMemo(
     () => [primaryTopic.trim(), subtopic.trim()].filter(Boolean),
     [primaryTopic, subtopic]
@@ -183,9 +174,9 @@ const BulkCreateItemsPage = () => {
       extraKeywords.length > 0
         ? ` Do not repeat these user-supplied tags: ${extraKeywords.join(", ")}.`
         : "";
-    const prompt = `You are creating study flashcards for an app called Quizymode.
+    const prompt = `You are creating new private quiz items for an app called Quizymode.
 
-Create up to ${MAX_PROMPT_QUESTIONS} quiz items for:
+Create 10 to ${MAX_PROMPT_QUESTIONS} new quiz items for:
 - Category: ${category}
 - Topic: ${navLine}
 ${extraLine}
@@ -207,6 +198,7 @@ Requirements:
 - Every item must have: "category", non-empty "question", non-empty "correctAnswer", 1–5 "incorrectAnswers", optional "explanation" and "source".
 - Optional "keywords": up to 5 extra tags per item (letters, numbers, hyphens only; lowercase recommended). Suggest tags that help discovery (skills, subthemes, standards) for that specific question. Do not repeat the navigation topic path ("${navLine}") or the category name as tags; omit "keywords" or use [] if none.${reservedTagsHint}
 - All strings must be plain text (no HTML, no LaTeX).
+- Keep the questions varied and avoid near-duplicates.
 
 Generate the JSON array only.`;
 
@@ -313,7 +305,6 @@ Generate the JSON array only.`;
 
   const bulkCreateMutation = useMutation({
     mutationFn: async (itemsToSave: ParsedItem[]) => {
-      const isPrivate = !isAdmin;
       const defaultExtraRequests: { name: string; isPrivate: boolean }[] = [];
       extraKeywords.forEach((name) => {
         const trimmed = name.trim();
@@ -325,7 +316,7 @@ Generate the JSON array only.`;
         }
       });
       const payload = {
-        isPrivate,
+        isPrivate: true,
         category: category,
         keyword1: primaryTopic.trim(),
         keyword2: subtopic.trim(),
@@ -357,15 +348,7 @@ Generate the JSON array only.`;
       }>("/items/bulk", payload);
       return res.data;
     },
-    onSuccess: async (data, variables) => {
-      const ids = data.createdItemIds ?? [];
-      if (collectionId && ids.length > 0) {
-        try {
-          await collectionsApi.bulkAddItems(collectionId, { itemIds: ids });
-        } catch (e) {
-          console.error("Failed to add items to collection:", e);
-        }
-      }
+    onSuccess: (data, variables) => {
       setResultModal({
         isOpen: true,
         message: `Saved ${data.createdCount} item(s).${data.duplicateCount ? ` ${data.duplicateCount} duplicate(s) skipped.` : ""}${data.failedCount ? ` ${data.failedCount} failed.` : ""}`,
@@ -416,9 +399,9 @@ Generate the JSON array only.`;
   return (
     <div className="px-4 py-6 sm:px-0">
       <div className="max-w-4xl mx-auto">
-        <h1 className="text-3xl font-bold text-gray-900 mb-2">Bulk Create Items</h1>
+        <h1 className="text-3xl font-bold text-gray-900 mb-2">Generate One AI Batch</h1>
         <p className="text-gray-600 text-sm mb-6">
-          Choose a category and topics, generate a prompt for any AI assistant, paste the response, then review and save items.
+          Choose a category and topic path, generate a prompt for any AI assistant, paste the response, then review and save 10-15 new private items.
         </p>
 
         {localError && (
@@ -429,13 +412,13 @@ Generate the JSON array only.`;
 
         {step === "setup" && (
           <div className="bg-white shadow rounded-lg p-6 space-y-6">
-            <h2 className="text-lg font-medium text-gray-900">1. Setup</h2>
+            <h2 className="text-lg font-medium text-gray-900">1. Scope</h2>
             <section className="rounded-lg border border-gray-200 bg-slate-50/80 p-4 sm:p-5 space-y-5">
               <div>
                 <h3 className="text-sm font-semibold text-gray-900">Topic and tags</h3>
                 <p className="mt-1 text-xs text-gray-500">
                   Same scope fields as when you add a single item: category, primary topic, and subtopic are required.
-                  Optional comma-separated tags apply to every generated item and appear in the AI prompt.
+                  Optional comma-separated tags apply to every saved item and appear in the AI prompt.
                 </p>
               </div>
               <ItemTopicScopeFields
@@ -475,21 +458,6 @@ Generate the JSON array only.`;
                 </p>
               </div>
             </section>
-            <div>
-              <label className="block text-sm font-medium text-gray-700 mb-1">Add to collection (optional)</label>
-              <select
-                value={collectionId}
-                onChange={(e) => setCollectionId(e.target.value)}
-                className="w-full max-w-md px-3 py-2 border border-gray-300 rounded-md text-sm"
-              >
-                <option value="">None</option>
-                {collections.map((c) => (
-                  <option key={c.id} value={c.id}>
-                    {c.name}
-                  </option>
-                ))}
-              </select>
-            </div>
             <div className="flex gap-3">
               <button
                 type="button"
@@ -503,7 +471,7 @@ Generate the JSON array only.`;
                 }
                 className="px-4 py-2 text-sm font-medium text-white bg-indigo-600 rounded-md hover:bg-indigo-700 disabled:opacity-50"
               >
-                Generate Prompt
+                Generate AI Prompt
               </button>
               <button
                 type="button"
@@ -518,9 +486,9 @@ Generate the JSON array only.`;
 
         {step === "prompt" && (
           <div className="bg-white shadow rounded-lg p-6 space-y-4">
-            <h2 className="text-lg font-medium text-gray-900">2. Copy prompt and paste into your AI assistant</h2>
+            <h2 className="text-lg font-medium text-gray-900">2. Copy prompt and run it in your AI assistant</h2>
             <p className="text-sm text-gray-500">
-              Copy the prompt below, paste it into ChatGPT, Claude, or any AI assistant. Then paste the AI’s JSON response back into this app in the next step.
+              Copy the prompt below, paste it into ChatGPT, Claude, or any AI assistant, and ask it for 10-15 new items. Then paste the AI response back into this app in the next step.
             </p>
             <div className="flex justify-end">
               <button
@@ -590,7 +558,7 @@ Generate the JSON array only.`;
           <div className="bg-white shadow rounded-lg p-6 space-y-4">
             <h2 className="text-lg font-medium text-gray-900">4. Review items</h2>
             <p className="text-sm text-gray-500">
-              Items are not saved yet. Accept to save to the database{collectionId ? " and add to your selected collection" : ""}. Reject to discard.
+              Items are not saved yet. Accept to save them as private items. Reject to discard.
               Each row shows the full tag list: your category topics and optional extra tags from setup, plus any extra tags the AI suggested for that item (duplicates removed).
             </p>
             <div className="flex gap-2 mb-4">
@@ -685,7 +653,7 @@ Generate the JSON array only.`;
             onClick={(e) => e.stopPropagation()}
           >
             <div className="flex justify-between items-center mb-4">
-              <h3 className="text-lg font-medium text-gray-900">Bulk Create Results</h3>
+              <h3 className="text-lg font-medium text-gray-900">AI Batch Results</h3>
               <button
                 onClick={() => setResultModal({ isOpen: false, message: "", details: "" })}
                 className="text-gray-400 hover:text-gray-500"

@@ -1,6 +1,6 @@
 import * as React from "react";
 import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { useAuth } from "@/contexts/AuthContext";
 import { Navigate } from "react-router-dom";
 import { studyGuidesApi } from "@/api/studyGuides";
@@ -22,6 +22,7 @@ const PREPARATION_INSTRUCTIONS = `Preparation tips for best results:
 const StudyGuidePage = () => {
   const { isAuthenticated } = useAuth();
   const navigate = useNavigate();
+  const location = useLocation();
   const queryClient = useQueryClient();
   const [title, setTitle] = React.useState("");
   const [contentText, setContentText] = React.useState("");
@@ -126,6 +127,11 @@ const StudyGuidePage = () => {
         Store your study guide text here (max {(effectiveMaxBytes / 1024).toFixed(1)} KB total). You can then use it to
         generate prompts and import items.
       </p>
+      {location.search && (
+        <p className="text-xs text-indigo-700 mb-4">
+          Your selected category, topic path, and extra keywords will be kept when you continue to AI prompt sets.
+        </p>
+      )}
 
       <div className="mb-4 p-4 bg-amber-50 border border-amber-200 rounded-lg text-sm text-amber-900">
         <h2 className="font-medium mb-2">Preparation instructions</h2>
@@ -201,10 +207,10 @@ const StudyGuidePage = () => {
           {guide && (
             <button
               type="button"
-              onClick={() => navigate("/study-guide/import")}
+              onClick={() => navigate(`/study-guide/import${location.search}`)}
               className="px-4 py-2 text-sm font-medium text-indigo-700 bg-indigo-50 border border-indigo-200 rounded-md hover:bg-indigo-100"
             >
-              Start import workflow
+              Continue to prompt sets
             </button>
           )}
           <button
