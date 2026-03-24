@@ -18,6 +18,60 @@ exams:
         sap-c02: Arch pro
         soa-c02: SysOps admin
         aif-c01: AI basics
+    aws-topics:
+      description: AWS service and domain tags for exam items
+      keywords:
+        aws-saa-c03: SAA-C03
+        aws-compute: Compute domain
+        aws-storage: Storage domain
+        ec2: Amazon EC2
+        s3: Amazon S3
+        databases: Databases
+        aws-database: Database domain
+        aws-networking: Networking domain
+        rds: Amazon RDS
+        lambda: AWS Lambda
+        aws-security: Security domain
+        alb: Application Load Balancer
+        vpc: Amazon VPC
+        auto-scaling: Auto Scaling
+        aws-integration: Integration domain
+        aws-services: Cross-service
+        aws-management: Management tools
+        mysql: MySQL
+        iam: AWS IAM
+        dynamodb: Amazon DynamoDB
+        aws-analytics: Analytics domain
+        api-gateway: Amazon API Gateway
+        aurora: Amazon Aurora
+        cloudfront: Amazon CloudFront
+        ebs: Amazon EBS
+        postgresql: PostgreSQL
+        serverless: Serverless
+        cloudwatch: Amazon CloudWatch
+        kms: AWS KMS
+        route53: Amazon Route 53
+        organizations: AWS Organizations
+        ecs: Amazon ECS
+        glacier: Amazon S3 Glacier
+        sqs: Amazon SQS
+        kinesis: Amazon Kinesis
+        datasync: AWS DataSync
+        aws-cloud-practitioner: Cloud Practitioner
+        aws-fundamentals: AWS fundamentals
+        fsx: Amazon FSx
+        nlb: Network Load Balancer
+        elasticache: Amazon ElastiCache
+        eventbridge: Amazon EventBridge
+        aws-ai: AWS AI
+        aws-aif-c01: AIF-C01
+        aws-architecture: Architecture patterns
+        aws-development: Development domain
+        aws-dva-c02: DVA-C02
+        aws-operations: Operations domain
+        aws-sap-c02: SAP-C02
+        aws-soa-c02: SOA-C02
+        sns: Amazon SNS
     azure:
       description: Azure certs
       keywords:

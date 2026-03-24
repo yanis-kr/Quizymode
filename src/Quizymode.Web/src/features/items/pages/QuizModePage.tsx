@@ -89,6 +89,40 @@ const QuizModePage = () => {
   const [showDetails, setShowDetails] = useState(false);
   const hasSyncedInitialItemUrl = useRef(false);
 
+  /** Category/global quiz uses random N items; changing size must refetch and drop session-cached lists. */
+  const handleQuizSizeChange = (raw: string) => {
+    const n = parseInt(raw, 10);
+    if (Number.isNaN(n)) return;
+    const next = Math.min(1000, Math.max(1, n));
+    if (collectionId) {
+      setQuizSize(next);
+      return;
+    }
+    if (next === quizSize) return;
+
+    setQuizSize(next);
+    setStoredItems(null);
+    setCurrentIndex(0);
+    setSelectedAnswer(null);
+    setShowAnswer(false);
+    setStats({ total: 0, correct: 0 });
+    hasSyncedInitialItemUrl.current = false;
+    sessionStorage.removeItem("navigationContext_quiz");
+    sessionStorage.removeItem("quiz_scope_items_from_categories");
+
+    if (category) {
+      navigate(`/quiz/${categoryNameToSlug(category)}${quizItemSearch}`, {
+        replace: true,
+      });
+    } else {
+      navigate(`/quiz${quizItemSearch}`, { replace: true });
+    }
+
+    void queryClient.invalidateQueries({
+      queryKey: ["randomItems", category, next, navigationKeywords, filterKeywords],
+    });
+  };
+
   // Fetch categories to convert slug to actual category name
   const { data: categoriesData } = useQuery({
     queryKey: ["categories"],
@@ -210,6 +244,30 @@ const QuizModePage = () => {
     enabled:
       !collectionId &&
       !storedItems &&
+      (!categorySlug || !!categoriesData?.categories),
+  });
+
+  const { data: scopeCountData } = useQuery({
+    queryKey: ["scopeCount", category, navigationKeywords, filterKeywords],
+    queryFn: () =>
+      itemsApi.getAll(
+        category,
+        undefined,
+        filterKeywords.length > 0 ? filterKeywords : undefined,
+        undefined,
+        undefined,
+        1,
+        1,
+        {
+          navigationKeywords:
+            hasCategoryScope && navigationKeywords.length > 0
+              ? navigationKeywords
+              : undefined,
+        }
+      ),
+    enabled:
+      !collectionId &&
+      !!category &&
       (!categorySlug || !!categoriesData?.categories),
   });
 
@@ -638,18 +696,6 @@ const QuizModePage = () => {
               navigate(`${categoryScopePath}${categoryListSearch}`);
             else navigate("/categories");
           } else if (mode === "explore") {
-            const targetItemId = currentItem?.id ?? items[0]?.id;
-            if (items.length > 0 && targetItemId) {
-              sessionStorage.setItem(
-                "navigationContext_explore",
-                JSON.stringify({
-                  mode: "explore",
-                  category: category,
-                  items: items,
-                  currentIndex: currentIndex,
-                })
-              );
-            }
             if (collectionId)
               navigate(
                 `${buildCollectionStudyPath("explore", collectionId, collectionInfo?.name, currentItem?.id ?? items[0]?.id)}${search}`
@@ -727,7 +773,7 @@ const QuizModePage = () => {
               onNavigate={(path) => navigate(path)}
             />
           }
-          count={items.length}
+          count={scopeCountData?.totalCount ?? items.length}
           hint="Test your knowledge with interactive quizzes."
         />
       )}
@@ -800,10 +846,7 @@ const QuizModePage = () => {
                   min={1}
                   max={1000}
                   value={quizSize}
-                  onChange={(e) => {
-                    const n = parseInt(e.target.value, 10);
-                    if (!Number.isNaN(n)) setQuizSize(Math.min(1000, Math.max(1, n)));
-                  }}
+                  onChange={(e) => handleQuizSizeChange(e.target.value)}
                   className="w-20 rounded-md border border-gray-300 px-2 py-1 text-sm"
                 />
                 <span className="text-gray-500">items (change refetches)</span>

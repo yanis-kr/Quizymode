@@ -73,6 +73,8 @@ These invariants apply everywhere unless explicitly overridden by a feature-spec
 
 - **Invariant K1 – Public categories**
   - Categories are always public; there are no private categories. Category lists and navigation are visible to all users; item-level visibility rules still apply within categories. (See AC 3.1.1–3.1.2.)
+- **Taxonomy item-tag slugs**
+  - Any keyword name listed in a category’s taxonomy definition (`docs/quizymode_taxonomy.yaml`, including every L1 and L2 slug in that category) is treated as a **public** tag when attached to items: the API resolves or creates a non-private keyword (seeded by the taxonomy SQL as seeder-owned) instead of a user-private, review-pending keyword.
 - **Invariant K2 – Private navigation keywords**
   - Private navigation or item-level keywords (`IsPrivate = true`, `CreatedBy = user`) are visible only to their creator when authenticated. Anonymous users and other authenticated users never see another user’s private keywords in browsing or search. (See AC 3.3.1 and Terms / dictionary.)
 - **Invariant K3 – Keyword-based navigation stability**
@@ -543,6 +545,7 @@ Categories are **public only** (there is no private category). Users navigate by
 - **AC 3.6.3** [Anyone] **Given** I am on **Flashcards** or **Quiz** for a **category** scope, **when** I view the scope secondary bar, **then** non-leaf scopes show **Sets | List Items | Flashcards | Quiz** (same as on Sets/List Items), and clicking **Sets** navigates back to the Sets view for that scope. Leaf scopes follow **AC 3.6.3a**. For **collection** scope, the bar shows only **List Items | Flashcards | Quiz** (no Sets).
 - **AC 3.6.3a** [Anyone] **Given** I am on **Flashcards** or **Quiz** for a **leaf category** scope, **when** I view the scope secondary bar, **then** it omits **Sets** and shows only **List Items | Flashcards | Quiz**.
 - **AC 3.6.4** [Anyone] **Given** I am on **Flashcards** or **Quiz** for a category scope, **when** the page is shown, **then** I see the same breadcrumb and item count at the top as in List Items mode (for example `Categories > exams > act > math (3)`), and the mode guidance is shown as a compact hint instead of a large page title plus descriptive paragraph.
+- **AC 3.6.5** [Anyone] **Given** I am in **Quiz** mode for a **category or global** scope (not a collection) and I change **Quiz size**, **when** the new size is applied, **then** the app requests a **new random set** of that many items for the current scope, clears in-session cached item lists used for quiz navigation, resets quiz progress for that run, and updates the URL so it no longer points at an item from the previous set unless that item is re-selected by the new load.
 
 ---
 

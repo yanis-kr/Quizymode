@@ -76,18 +76,15 @@ const Layout = ({ children }: LayoutProps) => {
             <div className="flex">
               <Link
                 to="/"
-                className="flex items-center px-2 py-4 text-xl font-bold text-indigo-600"
+                className={`flex items-center px-2 py-4 text-xl font-bold text-indigo-600 hover:text-indigo-700 border-b-2 -mb-px ${
+                  isPathActive("/") ? "border-indigo-600" : "border-transparent"
+                }`}
                 onClick={closeMobileMenu}
+                aria-current={isPathActive("/") ? "page" : undefined}
               >
                 Quizymode
               </Link>
               <div className="hidden sm:ml-6 sm:flex sm:space-x-8">
-                <Link
-                  to="/"
-                  className={desktopNavLinkClass(isPathActive("/"))}
-                >
-                  Home
-                </Link>
                 <Link
                   to="/categories"
                   className={desktopNavLinkClass(isPathActive("/categories"))}
@@ -186,13 +183,6 @@ const Layout = ({ children }: LayoutProps) => {
         {mobileMenuOpen && (
           <div className="sm:hidden">
             <div className="pt-2 pb-3 space-y-1">
-              <Link
-                to="/"
-                className={mobileNavLinkClass(isPathActive("/"))}
-                onClick={closeMobileMenu}
-              >
-                Home
-              </Link>
               <Link
                 to="/categories"
                 className={mobileNavLinkClass(isPathActive("/categories"))}

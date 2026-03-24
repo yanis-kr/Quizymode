@@ -154,7 +154,7 @@ describe("CreateItemPage", () => {
           category: "science",
           navigationKeyword1: "physiology",
           navigationKeyword2: "cells",
-          keywords: [{ name: "arms", isPrivate: true }],
+          keywords: [{ name: "arms", isPrivate: false }],
         })
       )
     );

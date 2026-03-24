@@ -106,7 +106,7 @@ const EditItemPage = () => {
                   breadcrumb[0]?.toLowerCase() !== k.name.toLowerCase() &&
                   breadcrumb[1]?.toLowerCase() !== k.name.toLowerCase()
               )
-              .map((k) => ({ name: k.name, isPrivate: true }))
+              .map((k) => ({ name: k.name, isPrivate: k.isPrivate }))
           : [],
         source: itemData.source || "",
         factualRisk:
@@ -163,9 +163,9 @@ const EditItemPage = () => {
 
     const r1 = formData.navigationRank1.trim().toLowerCase();
     const r2 = formData.navigationRank2.trim().toLowerCase();
-    const otherKeywords = formData.keywords
-      .filter((k) => k.name.toLowerCase() !== r1 && k.name.toLowerCase() !== r2)
-      .map((k) => ({ ...k, isPrivate: true }));
+    const otherKeywords = formData.keywords.filter(
+      (k) => k.name.toLowerCase() !== r1 && k.name.toLowerCase() !== r2
+    );
 
     const factualRiskNum =
       formData.factualRisk.trim() !== ""
@@ -248,6 +248,7 @@ const EditItemPage = () => {
           onDismissSubmitError={() => updateMutation.reset()}
           extraKeywordAutocompleteSource={extraKeywordAutocompleteSource}
           extraKeywordAutocompleteLoading={itemTagKeywordsLoading}
+          taxonomyPublicSlugs={selectedCategory?.allKeywordSlugs ?? []}
         />
       </div>
     </div>

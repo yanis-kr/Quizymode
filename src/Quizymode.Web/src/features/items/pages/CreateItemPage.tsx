@@ -1,5 +1,6 @@
 import { useMemo, useState } from "react";
-import { Navigate, useNavigate, useSearchParams } from "react-router-dom";
+import { Link, Navigate, useLocation, useNavigate, useSearchParams } from "react-router-dom";
+import { ArrowLeftIcon } from "@heroicons/react/24/outline";
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import { isAxiosError } from "axios";
 import { itemsApi } from "@/api/items";
@@ -10,6 +11,7 @@ import type { CreateItemRequest } from "@/types/api";
 import { validateNavigationKeywordName } from "@/utils/navigationKeywordRules";
 import { useExtraKeywordAutocompleteSource } from "@/hooks/useExtraKeywordAutocompleteSource";
 import { parseKeywordsParam } from "@/utils/addItemsScopeUrl";
+import LoadingSpinner from "@/components/LoadingSpinner";
 
 interface ApiValidationError {
   errorMessage?: string;
@@ -27,8 +29,12 @@ function buildInitialFormData(
   category: string,
   rank1: string,
   rank2: string,
-  extraKeywords: string[]
+  extraKeywords: string[],
+  taxonomyAllSlugs: readonly string[]
 ): ItemFormValues {
+  const publicSet = new Set(
+    taxonomyAllSlugs.map((s) => s.trim().toLowerCase()).filter(Boolean)
+  );
   return {
     category,
     isPrivate: true,
@@ -38,7 +44,10 @@ function buildInitialFormData(
     correctAnswer: "",
     incorrectAnswers: ["", "", ""],
     explanation: "",
-    keywords: extraKeywords.map((name) => ({ name, isPrivate: true })),
+    keywords: extraKeywords.map((name) => {
+      const n = name.trim().toLowerCase();
+      return { name: n, isPrivate: !publicSet.has(n) };
+    }),
     source: "",
     factualRisk: "",
     reviewComments: "",
@@ -162,12 +171,10 @@ function CreateItemEditor({
 
     const rank1 = formData.navigationRank1.trim().toLowerCase();
     const rank2 = formData.navigationRank2.trim().toLowerCase();
-    const otherKeywords = formData.keywords
-      .filter((keyword) => {
-        const name = keyword.name.toLowerCase();
-        return name !== rank1 && name !== rank2;
-      })
-      .map((keyword) => ({ ...keyword, isPrivate: true }));
+    const otherKeywords = formData.keywords.filter((keyword) => {
+      const name = keyword.name.toLowerCase();
+      return name !== rank1 && name !== rank2;
+    });
 
     const factualRiskNum =
       formData.factualRisk.trim() !== ""
@@ -215,15 +222,29 @@ function CreateItemEditor({
       onDismissSubmitError={() => createMutation.reset()}
       extraKeywordAutocompleteSource={extraKeywordAutocompleteSource}
       extraKeywordAutocompleteLoading={itemTagKeywordsLoading}
+      taxonomyPublicSlugs={selectedCategory?.allKeywordSlugs ?? []}
     />
   );
 }
 
 const CreateItemPage = () => {
   const { isAuthenticated, isAdmin } = useAuth();
+  const location = useLocation();
   const [searchParams] = useSearchParams();
   const categoryFromUrl = searchParams.get("category") || "";
   const keywordsParam = searchParams.get("keywords");
+
+  const { data: taxonomyBootstrap, isLoading: isTaxonomyBootstrapLoading } = useQuery({
+    queryKey: ["taxonomy"],
+    queryFn: () => taxonomyApi.getAll(),
+    staleTime: 24 * 60 * 60 * 1000,
+    enabled: isAuthenticated,
+  });
+
+  const taxonomyAllSlugsForCategory = useMemo(() => {
+    const cat = taxonomyBootstrap?.categories.find((c) => c.slug === categoryFromUrl);
+    return cat?.allKeywordSlugs ?? [];
+  }, [taxonomyBootstrap, categoryFromUrl]);
   const { rank1: rank1FromUrl, rank2: rank2FromUrl, extrasJoined } = useMemo(
     () => parseKeywordsParam(keywordsParam),
     [keywordsParam]
@@ -243,9 +264,16 @@ const CreateItemPage = () => {
         categoryFromUrl,
         rank1FromUrl,
         rank2FromUrl,
-        extraKeywordsFromUrl
+        extraKeywordsFromUrl,
+        taxonomyAllSlugsForCategory
       ),
-    [categoryFromUrl, rank1FromUrl, rank2FromUrl, extraKeywordsFromUrl]
+    [
+      categoryFromUrl,
+      rank1FromUrl,
+      rank2FromUrl,
+      extraKeywordsFromUrl,
+      taxonomyAllSlugsForCategory,
+    ]
   );
 
   const scopeKey = useMemo(
@@ -257,9 +285,24 @@ const CreateItemPage = () => {
     return <Navigate to="/login" replace />;
   }
 
+  if (isTaxonomyBootstrapLoading) {
+    return <LoadingSpinner />;
+  }
+
+  const addItemsBackTo = `/items/add${location.search}`;
+
   return (
     <div className="px-4 py-6 sm:px-0">
       <div className="max-w-2xl mx-auto">
+        <div className="mb-4">
+          <Link
+            to={addItemsBackTo}
+            className="inline-flex items-center gap-2 text-sm font-medium text-indigo-700 hover:text-indigo-900"
+          >
+            <ArrowLeftIcon className="h-4 w-4 shrink-0" aria-hidden />
+            Back to Add Items
+          </Link>
+        </div>
         <h1 className="text-3xl font-bold text-gray-900 mb-2">
           Create New Item
         </h1>

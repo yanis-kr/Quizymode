@@ -120,6 +120,7 @@ const StudyGuidePage = () => {
 
   return (
     <div className="px-4 py-6 sm:px-0 max-w-4xl mx-auto">
+      <div className="rounded-xl bg-white/95 text-gray-900 shadow-sm border border-slate-200/80 p-6 sm:p-8">
       <h1 className="text-2xl font-bold text-gray-900 mb-2">Study Guide</h1>
       <p className="text-gray-600 text-sm mb-4">
         Store your study guide text here (max {(effectiveMaxBytes / 1024).toFixed(1)} KB total). You can then use it to
@@ -143,7 +144,7 @@ const StudyGuidePage = () => {
             onChange={(e) => setTitle(e.target.value.slice(0, 200))}
             maxLength={200}
             required
-            className="w-full px-3 py-2 border border-gray-300 rounded-md text-sm"
+            className="w-full px-3 py-2 border border-gray-300 rounded-md text-sm bg-white text-gray-900 placeholder:text-gray-500"
             placeholder="e.g. AWS SAA Study Notes"
           />
         </div>
@@ -157,7 +158,7 @@ const StudyGuidePage = () => {
             value={contentText}
             onChange={(e) => setContentText(e.target.value)}
             rows={16}
-            className={`w-full px-3 py-2 border rounded-md text-sm font-mono ${
+            className={`w-full px-3 py-2 border rounded-md text-sm font-mono bg-white text-gray-900 placeholder:text-gray-500 ${
               isOverLimit ? "border-red-500 bg-red-50" : "border-gray-300"
             }`}
             placeholder="Paste your study guide text here..."
@@ -215,6 +216,7 @@ const StudyGuidePage = () => {
           </button>
         </div>
       </form>
+      </div>
     </div>
   );
 };

@@ -51,6 +51,8 @@ export interface ItemFormProps {
   /** Sorted unique names: item tags (per category) + taxonomy slugs; filtered by prefix in the UI (max 10). */
   extraKeywordAutocompleteSource?: string[];
   extraKeywordAutocompleteLoading?: boolean;
+  /** Category taxonomy slugs (L1/L2 and shared tags). Matching extra keywords show as public in the UI. */
+  taxonomyPublicSlugs?: string[];
 }
 
 export function ItemForm({
@@ -71,12 +73,18 @@ export function ItemForm({
   onDismissSubmitError,
   extraKeywordAutocompleteSource = [],
   extraKeywordAutocompleteLoading = false,
+  taxonomyPublicSlugs = [],
 }: ItemFormProps) {
   const [newKeywordName, setNewKeywordName] = useState("");
   const [suggestOpen, setSuggestOpen] = useState(false);
   const [highlightIndex, setHighlightIndex] = useState(-1);
   const keywordInputContainerRef = useRef<HTMLDivElement>(null);
   const listboxId = `${mode}-extra-keyword-listbox`;
+
+  const publicTaxonomySlugSet = useMemo(
+    () => new Set(taxonomyPublicSlugs.map((s) => s.trim().toLowerCase()).filter(Boolean)),
+    [taxonomyPublicSlugs]
+  );
 
   const r1 = values.navigationRank1.trim().toLowerCase();
   const r2 = values.navigationRank2.trim().toLowerCase();
@@ -116,9 +124,10 @@ export function ItemForm({
     const trimmedName = raw.trim().toLowerCase();
     if (trimmedName.length === 0 || trimmedName.length > NAV_KEYWORD_MAX_LEN) return;
     if (values.keywords.some((k) => k.name.toLowerCase() === trimmedName)) return;
+    const isPublicTag = publicTaxonomySlugSet.has(trimmedName);
     onChange({
       ...values,
-      keywords: [...values.keywords, { name: trimmedName, isPrivate: true }],
+      keywords: [...values.keywords, { name: trimmedName, isPrivate: !isPublicTag }],
     });
     setNewKeywordName("");
     setSuggestOpen(false);
@@ -222,7 +231,7 @@ export function ItemForm({
                     ? `${listboxId}-opt-${highlightIndex}`
                     : undefined
                 }
-                className="w-full px-3 py-2 border border-gray-300 rounded-md text-sm"
+                className="w-full px-3 py-2 border border-gray-300 rounded-md text-sm bg-white text-gray-900 placeholder:text-gray-500"
                 onKeyDown={(e) => {
                   if (e.key === "ArrowDown") {
                     if (matches.length === 0) return;
@@ -365,7 +374,7 @@ export function ItemForm({
           onChange={(e) => onChange({ ...values, question: e.target.value })}
           required
           rows={3}
-          className="w-full px-3 py-2 border border-gray-300 rounded-md text-sm"
+          className="w-full px-3 py-2 border border-gray-300 rounded-md text-sm bg-white text-gray-900 placeholder:text-gray-500"
         />
       </div>
 
@@ -380,7 +389,7 @@ export function ItemForm({
             onChange({ ...values, correctAnswer: e.target.value })
           }
           required
-          className="w-full px-3 py-2 border border-gray-300 rounded-md text-sm"
+          className="w-full px-3 py-2 border border-gray-300 rounded-md text-sm bg-white text-gray-900 placeholder:text-gray-500"
         />
       </div>
 
@@ -397,7 +406,7 @@ export function ItemForm({
               handleIncorrectAnswerChange(index, e.target.value)
             }
             placeholder={`Incorrect answer ${index + 1}`}
-            className="w-full px-3 py-2 border border-gray-300 rounded-md text-sm mb-2"
+            className="w-full px-3 py-2 border border-gray-300 rounded-md text-sm mb-2 bg-white text-gray-900 placeholder:text-gray-500"
           />
         ))}
       </div>
@@ -412,7 +421,7 @@ export function ItemForm({
             onChange({ ...values, explanation: e.target.value })
           }
           rows={3}
-          className="w-full px-3 py-2 border border-gray-300 rounded-md text-sm"
+          className="w-full px-3 py-2 border border-gray-300 rounded-md text-sm bg-white text-gray-900 placeholder:text-gray-500"
         />
       </div>
 
@@ -426,7 +435,7 @@ export function ItemForm({
           onChange={(e) => onChange({ ...values, source: e.target.value })}
           maxLength={200}
           placeholder="e.g., ChatGPT, Claude, Manual"
-          className="w-full px-3 py-2 border border-gray-300 rounded-md text-sm"
+          className="w-full px-3 py-2 border border-gray-300 rounded-md text-sm bg-white text-gray-900 placeholder:text-gray-500"
         />
       </div>
 
@@ -446,7 +455,7 @@ export function ItemForm({
                 onChange({ ...values, factualRisk: e.target.value })
               }
               placeholder="e.g. 0.2"
-              className="w-full px-3 py-2 border border-gray-300 rounded-md text-sm"
+              className="w-full px-3 py-2 border border-gray-300 rounded-md text-sm bg-white text-gray-900 placeholder:text-gray-500"
             />
           </div>
 
@@ -465,7 +474,7 @@ export function ItemForm({
               maxLength={500}
               rows={2}
               placeholder="Uncertainty, assumptions, outdated info..."
-              className="w-full px-3 py-2 border border-gray-300 rounded-md text-sm"
+              className="w-full px-3 py-2 border border-gray-300 rounded-md text-sm bg-white text-gray-900 placeholder:text-gray-500"
             />
           </div>
         </>

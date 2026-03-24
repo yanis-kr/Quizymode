@@ -18,6 +18,7 @@ vi.mock("@/api/items", () => ({
   itemsApi: {
     getRandom: vi.fn(),
     getById: vi.fn(),
+    getAll: vi.fn(),
   },
 }));
 
@@ -121,6 +122,14 @@ describe("QuizModePage", () => {
       items: [item],
     } as Awaited<ReturnType<typeof itemsApi.getRandom>>);
 
+    vi.mocked(itemsApi.getAll).mockResolvedValue({
+      items: [item],
+      totalCount: 623,
+      page: 1,
+      pageSize: 1,
+      totalPages: 623,
+    } as Awaited<ReturnType<typeof itemsApi.getAll>>);
+
     vi.mocked(itemsApi.getById).mockResolvedValue(
       item as Awaited<ReturnType<typeof itemsApi.getById>>
     );
@@ -143,7 +152,7 @@ describe("QuizModePage", () => {
     expect(
       await screen.findByText(/Test your knowledge with interactive quizzes/i)
     ).toBeInTheDocument();
-    expect(screen.getByLabelText(/item count/i)).toHaveTextContent("(1)");
+    expect(screen.getByLabelText(/item count/i)).toHaveTextContent("(623)");
     expect(screen.getByRole("button", { name: "act" })).toBeInTheDocument();
     expect(screen.getByRole("button", { name: "math" })).toBeInTheDocument();
     expect(
@@ -161,6 +170,19 @@ describe("QuizModePage", () => {
         "act",
         "math",
       ])
+    );
+
+    await waitFor(() =>
+      expect(itemsApi.getAll).toHaveBeenCalledWith(
+        "exams",
+        undefined,
+        ["algebra"],
+        undefined,
+        undefined,
+        1,
+        1,
+        { navigationKeywords: ["act", "math"] }
+      )
     );
 
     await user.click(screen.getByRole("tab", { name: /list/i }));
