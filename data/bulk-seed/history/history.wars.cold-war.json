@@ -5,10 +5,19 @@
     "navigationKeyword2": "cold-war",
     "question": "From June 1948 to May 1949, Western allies supplied blockaded West Berlin mainly by which method?",
     "correctAnswer": "An around-the-clock airlift",
-    "incorrectAnswers": ["Amphibious landings up the Spree", "A negotiated Soviet corridor toll", "Underground freight tunnels only"],
+    "incorrectAnswers": [
+      "Amphibious landings up the Spree",
+      "A negotiated Soviet corridor toll",
+      "Underground freight tunnels only"
+    ],
     "explanation": "The airlift broke the ground blockade without triggering a wider shooting war over the city.",
-    "keywords": ["berlin-airlift", "1948", "blockade"],
-    "source": "https://www.britannica.com/event/Berlin-blockade-and-airlift"
+    "keywords": [
+      "berlin-airlift",
+      "1948",
+      "blockade"
+    ],
+    "source": "https://www.britannica.com/event/Berlin-blockade-and-airlift",
+    "seedId": "8c391469-20fd-4442-8f5f-1d20be641455"
   },
   {
     "category": "history",
@@ -16,10 +25,19 @@
     "navigationKeyword2": "cold-war",
     "question": "North Korean forces crossed the 38th parallel on June 25, 1950, beginning which conflict?",
     "correctAnswer": "The Korean War",
-    "incorrectAnswers": ["The Vietnam War", "The Sino-Indian War", "The Arab-Israeli War of 1948"],
+    "incorrectAnswers": [
+      "The Vietnam War",
+      "The Sino-Indian War",
+      "The Arab-Israeli War of 1948"
+    ],
     "explanation": "UN-backed defense and later Chinese intervention turned a civil war into a superpower-tinged stalemate.",
-    "keywords": ["korea", "1950", "38th-parallel"],
-    "source": "https://www.britannica.com/event/Korean-War"
+    "keywords": [
+      "korea",
+      "1950",
+      "38th-parallel"
+    ],
+    "source": "https://www.britannica.com/event/Korean-War",
+    "seedId": "e8188298-9781-4b01-b705-2b7b062a6919"
   },
   {
     "category": "history",
@@ -27,10 +45,19 @@
     "navigationKeyword2": "cold-war",
     "question": "East German authorities began sealing road links and building barriers across Berlin on which night in August 1961?",
     "correctAnswer": "August 12–13, 1961",
-    "incorrectAnswers": ["June 17, 1953", "November 9, 1989", "May 8, 1945"],
+    "incorrectAnswers": [
+      "June 17, 1953",
+      "November 9, 1989",
+      "May 8, 1945"
+    ],
     "explanation": "The closure stopped mass emigration through Berlin and made the Cold War’s division visible in concrete and wire.",
-    "keywords": ["berlin-wall", "1961", "east-germany"],
-    "source": "https://www.britannica.com/event/Berlin-Wall"
+    "keywords": [
+      "berlin-wall",
+      "1961",
+      "east-germany"
+    ],
+    "source": "https://www.britannica.com/event/Berlin-Wall",
+    "seedId": "6d4d92fe-e5dd-4d9e-9ee7-94ccdcb245a6"
   },
   {
     "category": "history",
@@ -38,10 +65,19 @@
     "navigationKeyword2": "cold-war",
     "question": "The October 1962 crisis peaked over Soviet nuclear missiles placed on which Caribbean island allied with Moscow?",
     "correctAnswer": "Cuba",
-    "incorrectAnswers": ["Jamaica", "Dominican Republic", "Grenada"],
+    "incorrectAnswers": [
+      "Jamaica",
+      "Dominican Republic",
+      "Grenada"
+    ],
     "explanation": "A naval quarantine and secret diplomacy led to withdrawal of the missiles in exchange for reciprocal concessions.",
-    "keywords": ["cuban-missile-crisis", "1962", "kennedy"],
-    "source": "https://www.britannica.com/event/Cuban-missile-crisis"
+    "keywords": [
+      "cuban-missile-crisis",
+      "1962",
+      "kennedy"
+    ],
+    "source": "https://www.britannica.com/event/Cuban-missile-crisis",
+    "seedId": "7fe83a00-5f68-4682-bf7f-e5a682bea12d"
   },
   {
     "category": "history",
@@ -49,10 +85,19 @@
     "navigationKeyword2": "cold-war",
     "question": "Soviet forces crossed into Afghanistan in December 1979 to support which faction’s contested leadership?",
     "correctAnswer": "The communist government facing rural insurgency",
-    "incorrectAnswers": ["The Afghan monarchy restoration", "A NATO-trained republic", "A nonaligned coalition cabinet"],
+    "incorrectAnswers": [
+      "The Afghan monarchy restoration",
+      "A NATO-trained republic",
+      "A nonaligned coalition cabinet"
+    ],
     "explanation": "The intervention bogged down in guerrilla war, strained Soviet resources, and became a defining late Cold War conflict.",
-    "keywords": ["afghanistan", "1979", "soviet-union"],
-    "source": "https://www.britannica.com/event/Soviet-invasion-of-Afghanistan"
+    "keywords": [
+      "afghanistan",
+      "1979",
+      "soviet-union"
+    ],
+    "source": "https://www.britannica.com/event/Soviet-invasion-of-Afghanistan",
+    "seedId": "f1bde147-7643-48bc-af9f-06573fa13827"
   },
   {
     "category": "history",
@@ -60,10 +105,19 @@
     "navigationKeyword2": "cold-war",
     "question": "Warsaw Pact tanks rolled into Prague in August 1968 to crush which reform movement led by Alexander Dubček?",
     "correctAnswer": "The Prague Spring",
-    "incorrectAnswers": ["Solidarity", "Hungarian Revolution reforms", "Perestroika"],
+    "incorrectAnswers": [
+      "Solidarity",
+      "Hungarian Revolution reforms",
+      "Perestroika"
+    ],
     "explanation": "The invasion showed Soviet willingness to use force to enforce political orthodoxy within the eastern bloc.",
-    "keywords": ["prague-spring", "1968", "czechoslovakia"],
-    "source": "https://www.britannica.com/event/Prague-Spring"
+    "keywords": [
+      "prague-spring",
+      "1968",
+      "czechoslovakia"
+    ],
+    "source": "https://www.britannica.com/event/Prague-Spring",
+    "seedId": "2df0b9f8-1b9d-4881-9f2a-f615f7ae93f1"
   },
   {
     "category": "history",
@@ -71,10 +125,19 @@
     "navigationKeyword2": "cold-war",
     "question": "During the 1956 Hungarian Uprising, Soviet forces reoccupied Budapest after Imre Nagy’s government withdrew from what alliance?",
     "correctAnswer": "The Warsaw Pact",
-    "incorrectAnswers": ["NATO", "The European Coal and Steel Community", "The Non-Aligned Movement"],
+    "incorrectAnswers": [
+      "NATO",
+      "The European Coal and Steel Community",
+      "The Non-Aligned Movement"
+    ],
     "explanation": "Moscow treated exit from the pact as an existential threat and crushed the revolution within days.",
-    "keywords": ["hungary", "1956", "budapest"],
-    "source": "https://www.britannica.com/event/Hungarian-Revolution"
+    "keywords": [
+      "hungary",
+      "1956",
+      "budapest"
+    ],
+    "source": "https://www.britannica.com/event/Hungarian-Revolution",
+    "seedId": "fb86b6fb-136b-4e4d-b918-611eefcf1796"
   },
   {
     "category": "history",
@@ -82,10 +145,19 @@
     "navigationKeyword2": "cold-war",
     "question": "The 1962 agreement that ended the acute missile crisis included a secret U.S. pledge to remove Jupiter missiles from which NATO ally?",
     "correctAnswer": "Turkey",
-    "incorrectAnswers": ["West Germany", "Italy", "Greece"],
+    "incorrectAnswers": [
+      "West Germany",
+      "Italy",
+      "Greece"
+    ],
     "explanation": "Parallel concessions reduced incentives for either side to escalate once public missile withdrawals were arranged.",
-    "keywords": ["missile-crisis", "turkey", "1962"],
-    "source": "https://www.britannica.com/event/Cuban-missile-crisis"
+    "keywords": [
+      "missile-crisis",
+      "turkey",
+      "1962"
+    ],
+    "source": "https://www.britannica.com/event/Cuban-missile-crisis",
+    "seedId": "365c668e-f666-4d74-8d5c-870cd624b89f"
   },
   {
     "category": "history",
@@ -93,10 +165,19 @@
     "navigationKeyword2": "cold-war",
     "question": "UN forces under Douglas MacArthur launched a September 1950 amphibious landing at which port that outflanked North Korean lines?",
     "correctAnswer": "Inchon",
-    "incorrectAnswers": ["Pusan", "Wonsan", "Seoul harbor only"],
+    "incorrectAnswers": [
+      "Pusan",
+      "Wonsan",
+      "Seoul harbor only"
+    ],
     "explanation": "The bold maneuver recaptured Seoul and reversed the war’s momentum until Chinese intervention.",
-    "keywords": ["inchon", "1950", "macarthur"],
-    "source": "https://www.britannica.com/event/Battle-of-Inchon"
+    "keywords": [
+      "inchon",
+      "1950",
+      "macarthur"
+    ],
+    "source": "https://www.britannica.com/event/Battle-of-Inchon",
+    "seedId": "504d76ab-b08a-4209-aa39-d71e411aa3b3"
   },
   {
     "category": "history",
@@ -104,10 +185,19 @@
     "navigationKeyword2": "cold-war",
     "question": "The 1973 Yom Kippur War saw Egypt and Syria attack Israel during a holiday while Cold War patrons rushed resupply to which sides?",
     "correctAnswer": "Soviet aid to Arab states and U.S. aid to Israel",
-    "incorrectAnswers": ["U.S. aid to both Arab states", "Chinese aid to Israel", "French neutrality only"],
+    "incorrectAnswers": [
+      "U.S. aid to both Arab states",
+      "Chinese aid to Israel",
+      "French neutrality only"
+    ],
     "explanation": "Superpower logistics and diplomacy turned a regional war into a global energy and détente shock.",
-    "keywords": ["yom-kippur", "1973", "detente"],
-    "source": "https://www.britannica.com/event/Yom-Kippur-War"
+    "keywords": [
+      "yom-kippur",
+      "1973",
+      "detente"
+    ],
+    "source": "https://www.britannica.com/event/Yom-Kippur-War",
+    "seedId": "b91349a6-bf7e-4fa4-9093-ac46c9940d4b"
   },
   {
     "category": "history",
@@ -115,10 +205,19 @@
     "navigationKeyword2": "cold-war",
     "question": "Which 1961 CIA-backed invasion of Cuba at the Bay of Pigs failed to spark a popular uprising against Fidel Castro?",
     "correctAnswer": "The Bay of Pigs invasion",
-    "incorrectAnswers": ["Operation Urgent Fury", "Operation Just Cause", "The Mariel boatlift"],
+    "incorrectAnswers": [
+      "Operation Urgent Fury",
+      "Operation Just Cause",
+      "The Mariel boatlift"
+    ],
     "explanation": "The fiasco pushed Castro closer to the USSR and set the stage for the missile crisis the next year.",
-    "keywords": ["bay-of-pigs", "1961", "cuba"],
-    "source": "https://www.britannica.com/event/Bay-of-Pigs-invasion"
+    "keywords": [
+      "bay-of-pigs",
+      "1961",
+      "cuba"
+    ],
+    "source": "https://www.britannica.com/event/Bay-of-Pigs-invasion",
+    "seedId": "3da35099-c1b2-4571-be5e-5186b8509c57"
   },
   {
     "category": "history",
@@ -126,9 +225,18 @@
     "navigationKeyword2": "cold-war",
     "question": "The 1979 revolution that ousted the Shah and installed an Islamic republic in Iran intensified U.S.–Soviet competition over which resource-rich region?",
     "correctAnswer": "The Persian Gulf and broader Middle East",
-    "incorrectAnswers": ["The Baltic Sea exclusively", "The Horn of Africa only", "The South China Sea"],
+    "incorrectAnswers": [
+      "The Baltic Sea exclusively",
+      "The Horn of Africa only",
+      "The South China Sea"
+    ],
     "explanation": "Energy security fears and proxy alignments made the Gulf a central Cold War flashpoint through the 1980s.",
-    "keywords": ["iran", "1979", "gulf"],
-    "source": "https://www.britannica.com/event/Iranian-Revolution"
+    "keywords": [
+      "iran",
+      "1979",
+      "gulf"
+    ],
+    "source": "https://www.britannica.com/event/Iranian-Revolution",
+    "seedId": "dca3b9ee-f277-4ba6-a92b-bd3e9b047e44"
   }
 ]

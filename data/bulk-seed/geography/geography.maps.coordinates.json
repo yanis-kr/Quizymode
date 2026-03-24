@@ -16,7 +16,8 @@
       "latitude",
       "usgs"
     ],
-    "source": "https://www.usgs.gov/faqs/how-much-distance-does-degree-minute-and-second-cover-your-maps"
+    "source": "https://www.usgs.gov/faqs/how-much-distance-does-degree-minute-and-second-cover-your-maps",
+    "seedId": "4e4b99e4-d3d7-43a7-8759-8ecda54f36a6"
   },
   {
     "category": "geography",
@@ -35,7 +36,8 @@
       "longitude",
       "meridians"
     ],
-    "source": "https://www.usgs.gov/faqs/how-much-distance-does-degree-minute-and-second-cover-your-maps"
+    "source": "https://www.usgs.gov/faqs/how-much-distance-does-degree-minute-and-second-cover-your-maps",
+    "seedId": "4d7b97aa-0894-4cb6-9fe1-c4faa50125db"
   },
   {
     "category": "geography",
@@ -54,7 +56,8 @@
       "utm",
       "grids"
     ],
-    "source": "https://www.usgs.gov/faqs/what-does-term-utm-mean-utm-better-or-more-accurate-latitudelongitude"
+    "source": "https://www.usgs.gov/faqs/what-does-term-utm-mean-utm-better-or-more-accurate-latitudelongitude",
+    "seedId": "dc02437d-ea12-4541-a163-fbd835d6ec97"
   },
   {
     "category": "geography",
@@ -73,7 +76,8 @@
       "utm",
       "zones"
     ],
-    "source": "https://www.usgs.gov/faqs/what-does-term-utm-mean-utm-better-or-more-accurate-latitudelongitude"
+    "source": "https://www.usgs.gov/faqs/what-does-term-utm-mean-utm-better-or-more-accurate-latitudelongitude",
+    "seedId": "b2c9ece3-afa5-4732-8878-5fe9921ce3c4"
   },
   {
     "category": "geography",
@@ -92,7 +96,8 @@
       "utm",
       "longitude"
     ],
-    "source": "https://www.usgs.gov/faqs/what-does-term-utm-mean-utm-better-or-more-accurate-latitudelongitude"
+    "source": "https://www.usgs.gov/faqs/what-does-term-utm-mean-utm-better-or-more-accurate-latitudelongitude",
+    "seedId": "34cc17cb-fbbb-4d96-aa87-168639fe0134"
   },
   {
     "category": "geography",
@@ -111,7 +116,8 @@
       "graticule",
       "mapping"
     ],
-    "source": "https://www.usgs.gov/faqs/how-large-north-american-datum-1927-nad-27-nad-83-shift"
+    "source": "https://www.usgs.gov/faqs/how-large-north-american-datum-1927-nad-27-nad-83-shift",
+    "seedId": "a0993a21-837c-49e4-9e41-ce61e928f51e"
   },
   {
     "category": "geography",
@@ -130,7 +136,8 @@
       "navigation",
       "history"
     ],
-    "source": "https://www.britannica.com/technology/navigation-technology"
+    "source": "https://www.britannica.com/technology/navigation-technology",
+    "seedId": "2b23514d-ecfa-42a5-ab3c-655892011147"
   },
   {
     "category": "geography",
@@ -149,7 +156,8 @@
       "celestial-navigation",
       "north"
     ],
-    "source": "https://www.britannica.com/technology/navigation-technology"
+    "source": "https://www.britannica.com/technology/navigation-technology",
+    "seedId": "10320dc9-caa7-478b-a527-53e219ca8db7"
   },
   {
     "category": "geography",
@@ -168,7 +176,8 @@
       "cardinal-directions",
       "sun"
     ],
-    "source": "https://www.britannica.com/technology/navigation-technology"
+    "source": "https://www.britannica.com/technology/navigation-technology",
+    "seedId": "cc653b25-519d-44a5-b358-711755300992"
   },
   {
     "category": "geography",
@@ -187,7 +196,8 @@
       "globe",
       "maps"
     ],
-    "source": "https://www.britannica.com/science/map"
+    "source": "https://www.britannica.com/science/map",
+    "seedId": "a0383da7-39eb-42d4-85a5-69815c92871a"
   },
   {
     "category": "geography",
@@ -206,6 +216,7 @@
       "cartography",
       "definitions"
     ],
-    "source": "https://www.britannica.com/science/map"
+    "source": "https://www.britannica.com/science/map",
+    "seedId": "87442254-e0f2-4693-8b5c-a6bde4a00849"
   }
 ]

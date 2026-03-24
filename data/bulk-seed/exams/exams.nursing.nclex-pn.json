@@ -5,10 +5,19 @@
     "navigationKeyword2": "nclex-pn",
     "question": "What does the NCLEX-PN assess for entry-level practical/vocational nurses?",
     "correctAnswer": "Knowledge, skills, abilities, and clinical judgment",
-    "incorrectAnswers": ["Only memorized procedures", "Only medication names", "Only charting speed"],
+    "incorrectAnswers": [
+      "Only memorized procedures",
+      "Only medication names",
+      "Only charting speed"
+    ],
     "explanation": "NCSBN says the NCLEX assesses the knowledge, skills, abilities, and clinical judgment essential for the entry-level LPN/VN.",
-    "keywords": ["nclex-pn", "nclex", "client-needs"],
-    "source": "https://www.ncsbn.org/public-files/2026_PN_Test%20Plan-F.pdf"
+    "keywords": [
+      "nclex-pn",
+      "nclex",
+      "client-needs"
+    ],
+    "source": "https://www.ncsbn.org/public-files/2026_PN_Test%20Plan-F.pdf",
+    "seedId": "93afa8c6-c1b1-4a1f-a104-98dfcf4c9c05"
   },
   {
     "category": "exams",
@@ -16,10 +25,19 @@
     "navigationKeyword2": "nclex-pn",
     "question": "How many major Client Needs categories are in the 2026 NCLEX-PN test plan?",
     "correctAnswer": "Four",
-    "incorrectAnswers": ["Three", "Five", "Eight"],
+    "incorrectAnswers": [
+      "Three",
+      "Five",
+      "Eight"
+    ],
     "explanation": "NCSBN organizes NCLEX-PN content into four major Client Needs categories.",
-    "keywords": ["nclex-pn", "nclex", "client-needs"],
-    "source": "https://www.ncsbn.org/public-files/2026_PN_Test%20Plan-F.pdf"
+    "keywords": [
+      "nclex-pn",
+      "nclex",
+      "client-needs"
+    ],
+    "source": "https://www.ncsbn.org/public-files/2026_PN_Test%20Plan-F.pdf",
+    "seedId": "1717a751-d85d-4c77-8328-d823fb7da0ec"
   },
   {
     "category": "exams",
@@ -27,10 +45,19 @@
     "navigationKeyword2": "nclex-pn",
     "question": "Which NCLEX-PN category includes Coordinated Care?",
     "correctAnswer": "Safe and Effective Care Environment",
-    "incorrectAnswers": ["Psychosocial Integrity", "Health Promotion and Maintenance", "Physiological Integrity"],
+    "incorrectAnswers": [
+      "Psychosocial Integrity",
+      "Health Promotion and Maintenance",
+      "Physiological Integrity"
+    ],
     "explanation": "Coordinated Care is a subcategory within Safe and Effective Care Environment on the NCLEX-PN.",
-    "keywords": ["nclex-pn", "nclex", "client-needs"],
-    "source": "https://www.ncsbn.org/public-files/2026_PN_Test%20Plan-F.pdf"
+    "keywords": [
+      "nclex-pn",
+      "nclex",
+      "client-needs"
+    ],
+    "source": "https://www.ncsbn.org/public-files/2026_PN_Test%20Plan-F.pdf",
+    "seedId": "0601e845-5dea-4a46-94e2-2f29e7c7899e"
   },
   {
     "category": "exams",
@@ -38,10 +65,19 @@
     "navigationKeyword2": "nclex-pn",
     "question": "Which NCLEX-PN subcategory focuses on infection prevention?",
     "correctAnswer": "Safety and Infection Prevention and Control",
-    "incorrectAnswers": ["Health Promotion and Maintenance", "Basic Care and Comfort", "Physiological Adaptation"],
+    "incorrectAnswers": [
+      "Health Promotion and Maintenance",
+      "Basic Care and Comfort",
+      "Physiological Adaptation"
+    ],
     "explanation": "NCSBN lists Safety and Infection Prevention and Control under Safe and Effective Care Environment.",
-    "keywords": ["nclex-pn", "nclex", "client-needs"],
-    "source": "https://www.ncsbn.org/public-files/2026_PN_Test%20Plan-F.pdf"
+    "keywords": [
+      "nclex-pn",
+      "nclex",
+      "client-needs"
+    ],
+    "source": "https://www.ncsbn.org/public-files/2026_PN_Test%20Plan-F.pdf",
+    "seedId": "d42e3b4b-4250-4a76-aec1-cc7de41ead44"
   },
   {
     "category": "exams",
@@ -49,10 +85,19 @@
     "navigationKeyword2": "nclex-pn",
     "question": "Which Physiological Integrity subcategory covers medications on NCLEX-PN?",
     "correctAnswer": "Pharmacological Therapies",
-    "incorrectAnswers": ["Basic Care and Comfort", "Reduction of Risk Potential", "Health Promotion and Maintenance"],
+    "incorrectAnswers": [
+      "Basic Care and Comfort",
+      "Reduction of Risk Potential",
+      "Health Promotion and Maintenance"
+    ],
     "explanation": "NCSBN lists Pharmacological Therapies under Physiological Integrity for NCLEX-PN.",
-    "keywords": ["nclex-pn", "nclex", "client-needs"],
-    "source": "https://www.ncsbn.org/public-files/2026_PN_Test%20Plan-F.pdf"
+    "keywords": [
+      "nclex-pn",
+      "nclex",
+      "client-needs"
+    ],
+    "source": "https://www.ncsbn.org/public-files/2026_PN_Test%20Plan-F.pdf",
+    "seedId": "7f962842-e2d5-411d-acc4-1ba44f4f6dde"
   },
   {
     "category": "exams",
@@ -60,10 +105,19 @@
     "navigationKeyword2": "nclex-pn",
     "question": "What percentage of the NCLEX-PN test plan is Coordinated Care?",
     "correctAnswer": "21%",
-    "incorrectAnswers": ["13%", "10%", "18%"],
+    "incorrectAnswers": [
+      "13%",
+      "10%",
+      "18%"
+    ],
     "explanation": "NCSBN lists Coordinated Care at 21% in the 2026 NCLEX-PN test plan.",
-    "keywords": ["nclex-pn", "nclex", "client-needs"],
-    "source": "https://www.ncsbn.org/public-files/2026_PN_Test%20Plan-F.pdf"
+    "keywords": [
+      "nclex-pn",
+      "nclex",
+      "client-needs"
+    ],
+    "source": "https://www.ncsbn.org/public-files/2026_PN_Test%20Plan-F.pdf",
+    "seedId": "defdecb6-f0fa-42f2-b5a1-388ef831eafe"
   },
   {
     "category": "exams",
@@ -71,10 +125,19 @@
     "navigationKeyword2": "nclex-pn",
     "question": "What percentage of the NCLEX-PN test plan is Health Promotion and Maintenance?",
     "correctAnswer": "9%",
-    "incorrectAnswers": ["6%", "12%", "15%"],
+    "incorrectAnswers": [
+      "6%",
+      "12%",
+      "15%"
+    ],
     "explanation": "NCSBN lists Health Promotion and Maintenance at 9% in the 2026 NCLEX-PN test plan.",
-    "keywords": ["nclex-pn", "nclex", "client-needs"],
-    "source": "https://www.ncsbn.org/public-files/2026_PN_Test%20Plan-F.pdf"
+    "keywords": [
+      "nclex-pn",
+      "nclex",
+      "client-needs"
+    ],
+    "source": "https://www.ncsbn.org/public-files/2026_PN_Test%20Plan-F.pdf",
+    "seedId": "eaaafc03-43d1-4cc8-a108-d09973ec1327"
   },
   {
     "category": "exams",
@@ -82,10 +145,19 @@
     "navigationKeyword2": "nclex-pn",
     "question": "What percentage of the NCLEX-PN test plan is Psychosocial Integrity?",
     "correctAnswer": "12%",
-    "incorrectAnswers": ["9%", "10%", "21%"],
+    "incorrectAnswers": [
+      "9%",
+      "10%",
+      "21%"
+    ],
     "explanation": "NCSBN lists Psychosocial Integrity at 12% in the 2026 NCLEX-PN test plan.",
-    "keywords": ["nclex-pn", "nclex", "client-needs"],
-    "source": "https://www.ncsbn.org/public-files/2026_PN_Test%20Plan-F.pdf"
+    "keywords": [
+      "nclex-pn",
+      "nclex",
+      "client-needs"
+    ],
+    "source": "https://www.ncsbn.org/public-files/2026_PN_Test%20Plan-F.pdf",
+    "seedId": "6a19e957-cc47-4684-94e6-bc507acf2709"
   },
   {
     "category": "exams",
@@ -93,10 +165,19 @@
     "navigationKeyword2": "nclex-pn",
     "question": "How are NCLEX-PN examinations administered?",
     "correctAnswer": "Adaptively in variable-length format",
-    "incorrectAnswers": ["Only as fixed 125-question tests", "Only as paper booklets", "In essay-only format"],
+    "incorrectAnswers": [
+      "Only as fixed 125-question tests",
+      "Only as paper booklets",
+      "In essay-only format"
+    ],
     "explanation": "NCSBN states that NCLEX-PN examinations are administered adaptively in variable-length format.",
-    "keywords": ["nclex-pn", "nclex", "client-needs"],
-    "source": "https://www.ncsbn.org/public-files/2026_PN_Test%20Plan-F.pdf"
+    "keywords": [
+      "nclex-pn",
+      "nclex",
+      "client-needs"
+    ],
+    "source": "https://www.ncsbn.org/public-files/2026_PN_Test%20Plan-F.pdf",
+    "seedId": "e3c6a826-5932-4a65-b017-410c3d0058f0"
   },
   {
     "category": "exams",
@@ -104,9 +185,18 @@
     "navigationKeyword2": "nclex-pn",
     "question": "Which integrated process is fundamental throughout the NCLEX-PN test plan?",
     "correctAnswer": "Clinical Judgment",
-    "incorrectAnswers": ["Portfolio Management", "Tax Compliance", "Sentence Completion"],
+    "incorrectAnswers": [
+      "Portfolio Management",
+      "Tax Compliance",
+      "Sentence Completion"
+    ],
     "explanation": "Clinical Judgment is one of the integrated processes applied throughout the NCLEX-PN test plan.",
-    "keywords": ["nclex-pn", "nclex", "client-needs"],
-    "source": "https://www.ncsbn.org/public-files/2026_PN_Test%20Plan-F.pdf"
+    "keywords": [
+      "nclex-pn",
+      "nclex",
+      "client-needs"
+    ],
+    "source": "https://www.ncsbn.org/public-files/2026_PN_Test%20Plan-F.pdf",
+    "seedId": "ab16745b-4f26-4759-ab67-04051bf1785e"
   }
 ]

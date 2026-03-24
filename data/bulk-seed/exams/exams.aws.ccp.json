@@ -16,7 +16,8 @@
       "aws-fundamentals",
       "pricing"
     ],
-    "source": "https://aws.amazon.com/pricing/"
+    "source": "https://aws.amazon.com/pricing/",
+    "seedId": "df32589b-ddc1-4ef9-8ab9-9c17134fa6b4"
   },
   {
     "category": "exams",
@@ -35,7 +36,8 @@
       "aws-fundamentals",
       "security"
     ],
-    "source": "https://aws.amazon.com/compliance/shared-responsibility-model/"
+    "source": "https://aws.amazon.com/compliance/shared-responsibility-model/",
+    "seedId": "873ccc91-662a-4120-8de4-bcc636e11e11"
   },
   {
     "category": "exams",
@@ -54,7 +56,8 @@
       "aws-fundamentals",
       "security"
     ],
-    "source": "https://aws.amazon.com/compliance/shared-responsibility-model/"
+    "source": "https://aws.amazon.com/compliance/shared-responsibility-model/",
+    "seedId": "ef2a4d34-3c7a-4ad6-8996-d8817278f13d"
   },
   {
     "category": "exams",
@@ -73,7 +76,8 @@
       "aws-fundamentals",
       "infrastructure"
     ],
-    "source": "https://aws.amazon.com/about-aws/global-infrastructure/regions_az/"
+    "source": "https://aws.amazon.com/about-aws/global-infrastructure/regions_az/",
+    "seedId": "7f277617-9758-4f35-b63a-877a52bd1cbf"
   },
   {
     "category": "exams",
@@ -92,7 +96,8 @@
       "aws-fundamentals",
       "compute"
     ],
-    "source": "https://aws.amazon.com/ec2/"
+    "source": "https://aws.amazon.com/ec2/",
+    "seedId": "6b0406bc-21cf-4575-bd94-f2650c214804"
   },
   {
     "category": "exams",
@@ -111,7 +116,8 @@
       "aws-fundamentals",
       "storage"
     ],
-    "source": "https://aws.amazon.com/s3/"
+    "source": "https://aws.amazon.com/s3/",
+    "seedId": "5263b74d-6ef1-4bdf-8405-e80aae6e383d"
   },
   {
     "category": "exams",
@@ -130,7 +136,8 @@
       "aws-fundamentals",
       "storage"
     ],
-    "source": "https://docs.aws.amazon.com/AmazonS3/latest/userguide/sc-howtoset.html"
+    "source": "https://docs.aws.amazon.com/AmazonS3/latest/userguide/sc-howtoset.html",
+    "seedId": "8fe867dc-d0f4-410b-99d3-da5a5edf978e"
   },
   {
     "category": "exams",
@@ -149,7 +156,8 @@
       "aws-fundamentals",
       "database"
     ],
-    "source": "https://aws.amazon.com/rds/"
+    "source": "https://aws.amazon.com/rds/",
+    "seedId": "8e123952-408c-4bd0-b2f1-6d745029c8bc"
   },
   {
     "category": "exams",
@@ -168,7 +176,8 @@
       "aws-fundamentals",
       "networking"
     ],
-    "source": "https://aws.amazon.com/cloudfront/"
+    "source": "https://aws.amazon.com/cloudfront/",
+    "seedId": "1c434624-d918-4951-be7a-144ff084308f"
   },
   {
     "category": "exams",
@@ -187,7 +196,8 @@
       "aws-fundamentals",
       "security"
     ],
-    "source": "https://aws.amazon.com/iam/"
+    "source": "https://aws.amazon.com/iam/",
+    "seedId": "94f2d498-e28c-4f4c-bed0-6de87841f976"
   },
   {
     "category": "exams",
@@ -206,7 +216,8 @@
       "aws-fundamentals",
       "monitoring"
     ],
-    "source": "https://aws.amazon.com/cloudwatch/"
+    "source": "https://aws.amazon.com/cloudwatch/",
+    "seedId": "e853113d-2430-4a33-ba9f-2ec086f379df"
   },
   {
     "category": "exams",
@@ -225,7 +236,8 @@
       "aws-fundamentals",
       "pricing"
     ],
-    "source": "https://docs.aws.amazon.com/pricing-calculator/latest/userguide/what-is-pricing-calculator.html"
+    "source": "https://docs.aws.amazon.com/pricing-calculator/latest/userguide/what-is-pricing-calculator.html",
+    "seedId": "c1e353d9-5bcf-45a7-be1d-d45ba4e10c92"
   },
   {
     "category": "exams",
@@ -244,7 +256,8 @@
       "aws-fundamentals",
       "serverless"
     ],
-    "source": "https://aws.amazon.com/lambda/"
+    "source": "https://aws.amazon.com/lambda/",
+    "seedId": "0cff7e3b-8287-47d7-9dae-3d4ebf7756b5"
   },
   {
     "category": "exams",
@@ -263,7 +276,8 @@
       "aws-fundamentals",
       "networking"
     ],
-    "source": "https://aws.amazon.com/vpc/"
+    "source": "https://aws.amazon.com/vpc/",
+    "seedId": "4b9cb853-a3f8-4eb4-b044-a2bf51f78a0a"
   },
   {
     "category": "exams",
@@ -282,6 +296,7 @@
       "aws-fundamentals",
       "architecture"
     ],
-    "source": "https://aws.amazon.com/well-architected-tool/"
+    "source": "https://aws.amazon.com/well-architected-tool/",
+    "seedId": "837dd6d3-2088-455f-ba18-b9adfb66da81"
   }
 ]

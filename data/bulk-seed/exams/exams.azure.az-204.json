@@ -16,7 +16,8 @@
       "azure-development",
       "azure-services"
     ],
-    "source": "https://learn.microsoft.com/en-us/azure/app-service/overview"
+    "source": "https://learn.microsoft.com/en-us/azure/app-service/overview",
+    "seedId": "c483f345-cd48-4371-b6e2-02b589621655"
   },
   {
     "category": "exams",
@@ -35,7 +36,8 @@
       "azure-development",
       "azure-services"
     ],
-    "source": "https://learn.microsoft.com/en-us/azure/azure-functions/"
+    "source": "https://learn.microsoft.com/en-us/azure/azure-functions/",
+    "seedId": "ad9533dc-2c61-4976-919a-0e003fdaac72"
   },
   {
     "category": "exams",
@@ -54,7 +56,8 @@
       "azure-development",
       "azure-services"
     ],
-    "source": "https://learn.microsoft.com/en-us/azure/cosmos-db/overview"
+    "source": "https://learn.microsoft.com/en-us/azure/cosmos-db/overview",
+    "seedId": "5cbb41e9-e4e7-47ec-9a5b-d0abbbf9240a"
   },
   {
     "category": "exams",
@@ -73,7 +76,8 @@
       "azure-development",
       "azure-services"
     ],
-    "source": "https://learn.microsoft.com/en-us/azure/storage/queues/storage-queues-introduction"
+    "source": "https://learn.microsoft.com/en-us/azure/storage/queues/storage-queues-introduction",
+    "seedId": "a6bae7b7-8cda-4d4c-ae4b-f4e487162189"
   },
   {
     "category": "exams",
@@ -92,7 +96,8 @@
       "azure-development",
       "azure-services"
     ],
-    "source": "https://learn.microsoft.com/en-us/azure/service-bus-messaging/service-bus-messaging-overview"
+    "source": "https://learn.microsoft.com/en-us/azure/service-bus-messaging/service-bus-messaging-overview",
+    "seedId": "8fecfcfd-9d2c-4788-b542-1c8622e12bd1"
   },
   {
     "category": "exams",
@@ -111,7 +116,8 @@
       "azure-development",
       "azure-services"
     ],
-    "source": "https://learn.microsoft.com/en-us/azure/event-grid/overview"
+    "source": "https://learn.microsoft.com/en-us/azure/event-grid/overview",
+    "seedId": "a8ab806f-91c5-4148-9672-b1b559c0a8a4"
   },
   {
     "category": "exams",
@@ -130,7 +136,8 @@
       "azure-development",
       "azure-services"
     ],
-    "source": "https://learn.microsoft.com/en-us/azure/api-management/api-management-key-concepts"
+    "source": "https://learn.microsoft.com/en-us/azure/api-management/api-management-key-concepts",
+    "seedId": "750f7e43-d271-44c4-8933-30dbfff7b40d"
   },
   {
     "category": "exams",
@@ -149,7 +156,8 @@
       "azure-development",
       "azure-services"
     ],
-    "source": "https://learn.microsoft.com/en-us/azure/azure-app-configuration/overview"
+    "source": "https://learn.microsoft.com/en-us/azure/azure-app-configuration/overview",
+    "seedId": "46897cf1-ed08-402c-8071-b5219a755ebb"
   },
   {
     "category": "exams",
@@ -168,7 +176,8 @@
       "azure-development",
       "azure-services"
     ],
-    "source": "https://learn.microsoft.com/en-us/azure/key-vault/general/overview"
+    "source": "https://learn.microsoft.com/en-us/azure/key-vault/general/overview",
+    "seedId": "25b08230-d1ad-4b42-aeea-27d94147c878"
   },
   {
     "category": "exams",
@@ -187,7 +196,8 @@
       "azure-development",
       "azure-services"
     ],
-    "source": "https://learn.microsoft.com/en-us/azure/container-apps/overview"
+    "source": "https://learn.microsoft.com/en-us/azure/container-apps/overview",
+    "seedId": "d0eaed5c-e8fb-4efe-af5d-4c240350cd68"
   },
   {
     "category": "exams",
@@ -206,7 +216,8 @@
       "azure-development",
       "azure-services"
     ],
-    "source": "https://learn.microsoft.com/en-us/azure/azure-monitor/app/app-insights-overview"
+    "source": "https://learn.microsoft.com/en-us/azure/azure-monitor/app/app-insights-overview",
+    "seedId": "8ede9c0f-69c2-4307-a80f-56a86e562aca"
   },
   {
     "category": "exams",
@@ -225,6 +236,7 @@
       "azure-development",
       "azure-services"
     ],
-    "source": "https://learn.microsoft.com/en-us/azure/storage/blobs/storage-blobs-introduction"
+    "source": "https://learn.microsoft.com/en-us/azure/storage/blobs/storage-blobs-introduction",
+    "seedId": "41b94d5e-defa-4412-984d-607678299303"
   }
 ]

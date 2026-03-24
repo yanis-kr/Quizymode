@@ -16,7 +16,8 @@
       "lightning",
       "thunder"
     ],
-    "source": "https://www.nssl.noaa.gov/education/svrwx101/thunderstorms/"
+    "source": "https://www.nssl.noaa.gov/education/svrwx101/thunderstorms/",
+    "seedId": "ecc78c3c-f685-4dce-b738-0985016958d8"
   },
   {
     "category": "geography",
@@ -35,7 +36,8 @@
       "severe-thunderstorm",
       "hail"
     ],
-    "source": "https://www.nssl.noaa.gov/education/svrwx101/thunderstorms/"
+    "source": "https://www.nssl.noaa.gov/education/svrwx101/thunderstorms/",
+    "seedId": "6db90f58-53b0-4ed9-afb2-2fe31eda5232"
   },
   {
     "category": "geography",
@@ -54,7 +56,8 @@
       "thunderstorm-formation",
       "lifting-mechanism"
     ],
-    "source": "https://www.nssl.noaa.gov/education/svrwx101/thunderstorms/"
+    "source": "https://www.nssl.noaa.gov/education/svrwx101/thunderstorms/",
+    "seedId": "21952c8f-8b49-400d-9647-ccb24173e061"
   },
   {
     "category": "geography",
@@ -73,7 +76,8 @@
       "thunderstorm-life-cycle",
       "mature-stage"
     ],
-    "source": "https://www.nssl.noaa.gov/education/svrwx101/thunderstorms/"
+    "source": "https://www.nssl.noaa.gov/education/svrwx101/thunderstorms/",
+    "seedId": "3bd5d8c3-50c4-4388-954a-32a622547459"
   },
   {
     "category": "geography",
@@ -92,7 +96,8 @@
       "thunderstorm-frequency",
       "united-states"
     ],
-    "source": "https://www.nssl.noaa.gov/education/svrwx101/thunderstorms/"
+    "source": "https://www.nssl.noaa.gov/education/svrwx101/thunderstorms/",
+    "seedId": "67fc44aa-927c-46d6-99aa-1abbf8b359bf"
   },
   {
     "category": "geography",
@@ -111,7 +116,8 @@
       "supercell",
       "tornado"
     ],
-    "source": "https://www.nssl.noaa.gov/education/svrwx101/tornadoes/"
+    "source": "https://www.nssl.noaa.gov/education/svrwx101/tornadoes/",
+    "seedId": "04d0327f-318a-44a2-8e20-769e637fda86"
   },
   {
     "category": "geography",
@@ -130,7 +136,8 @@
       "ef-scale",
       "tornado-damage"
     ],
-    "source": "https://www.nssl.noaa.gov/education/svrwx101/tornadoes/"
+    "source": "https://www.nssl.noaa.gov/education/svrwx101/tornadoes/",
+    "seedId": "ae2ba599-17ec-434f-abb0-a0e47414add5"
   },
   {
     "category": "geography",
@@ -149,7 +156,8 @@
       "hurricane-threshold",
       "tropical-cyclone"
     ],
-    "source": "https://www.nhc.noaa.gov/climo/"
+    "source": "https://www.nhc.noaa.gov/climo/",
+    "seedId": "9df3b199-cd94-4e49-b4b9-0cc7ff91f7ec"
   },
   {
     "category": "geography",
@@ -168,7 +176,8 @@
       "atlantic-hurricane-season",
       "june-november"
     ],
-    "source": "https://www.nhc.noaa.gov/climo/"
+    "source": "https://www.nhc.noaa.gov/climo/",
+    "seedId": "d14dbf90-dce4-436b-8555-ef6efa9a6c02"
   },
   {
     "category": "geography",
@@ -187,6 +196,7 @@
       "atlantic-hurricane-peak",
       "september"
     ],
-    "source": "https://www.nhc.noaa.gov/climo/"
+    "source": "https://www.nhc.noaa.gov/climo/",
+    "seedId": "1aab8069-5db7-42e2-b03b-4410afbb6a45"
   }
 ]

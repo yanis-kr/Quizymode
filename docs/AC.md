@@ -128,6 +128,8 @@ Terms used in this document with a specific meaning:
 | **Public keyword / item** | A keyword or item with `IsPrivate = false` (or equivalent). Visible to everyone in general discovery flows (category browsing, search) and via direct item access where allowed by API rules. |
 | **Scope** | The **list of items** returned in a given context. Scope is determined by: (1) **Category/keywords** — navigation (path) and optional filters (query, scope filters) on the Categories page; or (2) **Collection** — items in a specific collection (collection-scoped visibility). The same scope can be viewed in **List Items**, **Flashcards**, or **Quiz** (and in Categories, also **Sets**). |
 | **Scope filter** | On the Categories page, filters applied to the current scope to narrow the list (e.g. item type, search text, rating) without changing the category/keyword path. Applied in addition to path and query keywords. |
+| **Seed set** | A logical source-controlled manifest of repo-managed items identified by a string such as `core-public-items`. Seed sync operates within one seed set at a time. |
+| **Seed-managed item** | A public item whose content is controlled by the admin seed-sync process and tracked with stable metadata such as `SeedId`, `SeedSet`, `SeedHash`, and last-sync time. |
 | **Shared with others** | UI label for a collection with **IsPublic** = true: anyone with the link can view and quiz; the collection appears in Discover. |
 | **Slug** | A URL-friendly segment for a **category or navigation keyword** name: lowercase, spaces to dashes, special characters removed (e.g. "ACT Math" → `act-math`, "World Records" → `world-records`). Used in the path (e.g. `/categories/act-math/world-records`). The frontend resolves the category slug back to the canonical category name for API calls; keyword segments are treated as keyword **slugs** and are resolved on the backend. |
 | **Sets view** | On the Categories page, the view that shows a grid of **buckets** (keywords or categories). Clicking a bucket either navigates deeper (adds a keyword to the path) or, at the leaf, opens the List view for that scope. Collections do not have a Sets view. |
@@ -601,8 +603,9 @@ On the Categories page (Sets view and List view), a **filter panel** lets the us
 
 - **AC 3.10.1** [Anyone] **Given** the API is running, **when** I call `GET /taxonomy` (no auth required), **then** the response lists all taxonomy categories with nested L1 → L2 navigation slugs (and optional flat slug lists) sourced only from the in-memory registry, not from ad-hoc DB growth.
 - **AC 3.10.2** [Authenticated] **Given** I create or update an item (single `POST /items`, `PUT /items/{id}`, `POST /items/bulk`, upload-to-collection, or study-guide finalize), **when** I supply a category name, **then** it must match a taxonomy category **and** exist already as a **public** row in `Categories`; the API does **not** create new global categories as a side effect of item ingress.
-- **AC 3.10.3** [Authenticated] **Given** I supply `navigationKeyword1` and `navigationKeyword2` on item ingress, **when** the pair is not a valid (L1, L2) path for that category in the taxonomy, **then** the request fails validation; bulk and import flows do **not** auto-create private `KeywordRelation` rows for missing navigation.
-- **AC 3.10.4** [Authenticated] **Given** I attach extra keywords beyond the two navigation slugs, **when** a keyword slug matches a taxonomy slug for that category, **then** it is attached as a **public** keyword without review pending; **when** it does not match taxonomy, **then** it is stored as a **private** user keyword with **review pending** (including for admins). Extras are matched on **exact** slug equality only (edit-distance similarity is not used).
+- **AC 3.10.2a** [Admin] **Given** I call the repo-managed seed-sync endpoints (`POST /admin/seed-sync/preview` or `POST /admin/seed-sync/apply`), **when** an item payload supplies a category name, **then** it must match a taxonomy category **and** an existing public `Categories` row; seed sync does not create new public categories.
+- **AC 3.10.3** [Authenticated] **Given** I supply `navigationKeyword1` and `navigationKeyword2` on item ingress, **when** the pair is not a valid (L1, L2) path for that category in the taxonomy, **then** the request fails validation; bulk, import, and admin seed-sync flows do **not** auto-create missing `KeywordRelation` rows for navigation.
+- **AC 3.10.4** [Authenticated] **Given** I attach extra keywords beyond the two navigation slugs in the regular user-facing item ingress flows (`POST /items`, `PUT /items/{id}`, `POST /items/bulk`, upload-to-collection, or study-guide finalize), **when** a keyword slug matches a taxonomy slug for that category, **then** it is attached as a **public** keyword without review pending; **when** it does not match taxonomy, **then** it is stored as a **private** user keyword with **review pending** (including for admins using those same non-seed-sync flows). Extras are matched on **exact** slug equality only (edit-distance similarity is not used).
 - **AC 3.10.5** [Anyone] **Given** Discover item filters use `category` and `keywords` (L1/L2), **when** the keyword path is invalid for that category under the same taxonomy rules as items, **then** the API returns **400** (see also AC 1.9.1b).
 
 **UI**
@@ -717,8 +720,6 @@ User settings are key-value pairs stored per user (e.g. **PageSize** for default
 
 ## 5. Admin
 
-*(To be expanded: admin-only endpoints, review board, etc.)*
-
 ### AC 5.1 Admin: per-user study guide settings
 
 **API**
@@ -731,6 +732,27 @@ User settings are key-value pairs stored per user (e.g. **PageSize** for default
 
 - **AC 5.1.4** [Admin] **Given** I am on the Admin Dashboard, **when** I click **User Settings**, **then** I am taken to an Admin User Settings page where I can enter a user ID, load that user's details, and view their effective study guide limit.
 - **AC 5.1.5** [Admin] **Given** I have loaded a user on the Admin User Settings page, **when** I edit the **StudyGuideMaxBytes** value (or leave it blank for default) and click **Save**, **then** the UI calls the admin user-settings API to upsert the `"StudyGuideMaxBytes"` setting for that user; after a successful save, the effective limit (bytes and KB) reflects the new value.
+
+---
+
+### AC 5.2 Admin: repo-managed seed sync for items
+
+**Design:** Admin seed sync imports a **source-controlled manifest** for one **seed set** at a time. The runtime API contract is one manifest payload per request; if the repo stores items in multiple taxonomy-scoped files, tooling must merge them into that manifest before preview/apply. Each incoming item has a stable `seedId`. Categories and navigation use taxonomy slugs (`category`, `navigationKeyword1`, `navigationKeyword2`), not database keyword IDs. Preview shows only the **delta** for an existing seed set and suppresses the full changed-item list on the **initial seed**. Apply upserts repo-managed public items by `seedId`, refreshes seed metadata, recreates missing DB rows from the manifest, and ensures extra keywords from the manifest exist as **public** keywords. Current behavior reports rows already in the DB but absent from the manifest via `missingFromPayloadCount`; it does **not** delete or retire them.
+
+**API**
+
+- **AC 5.2.1** [Admin] **Given** I am an admin, **when** I call `POST /admin/seed-sync/preview` with a JSON body containing `schemaVersion`, `seedSet`, `items`, and optional `deltaPreviewLimit`, **then** the API validates the request and returns 200 with summary counts at least for `created`, `updated`, `adopted`, `unchanged`, and `missingFromPayload`, plus a `changes` array containing only delta items (not unchanged items), capped by `deltaPreviewLimit`.
+- **AC 5.2.2** [Admin] **Given** a seed set has **no existing seed-managed rows** yet, **when** I call `POST /admin/seed-sync/preview`, **then** the API still validates the manifest and returns summary counts, but marks the preview as suppressed for the initial seed (e.g. `previewSuppressed = true`) and returns an empty `changes` array instead of listing the entire initial payload.
+- **AC 5.2.3** [Admin] **Given** I call preview or apply with invalid input (for example duplicate `seedId` values in the request, an unsupported `schemaVersion`, an invalid taxonomy category, an invalid navigation path, or a `seedId` already assigned to a different `seedSet`), **when** the request is processed, **then** the API returns 400 Bad Request with a validation or contract error and does not mutate data.
+- **AC 5.2.4** [Admin] **Given** I call `POST /admin/seed-sync/apply` with an item whose `seedId` already exists on a seed-managed row in the same `seedSet`, **when** the source-controlled content differs, **then** the API updates that existing DB row in place (question, answers, explanation, source, navigation, and extra keywords) and refreshes seed metadata instead of creating a duplicate item.
+- **AC 5.2.5** [Admin] **Given** I call `POST /admin/seed-sync/apply` with an item whose `seedId` does **not** exist in the current database (for example because the row was manually deleted earlier), **when** the request succeeds, **then** the API creates a new public seed-managed item for that `seedId`.
+- **AC 5.2.6** [Admin] **Given** I perform the **first** successful apply for a seed set and an existing public legacy seeder row exactly matches the incoming item by category, rank-1, rank-2, and question text, **when** the apply runs, **then** the API may adopt that existing row into seed-managed state instead of inserting a duplicate row; the response counts it as `adopted`.
+- **AC 5.2.7** [Admin] **Given** an admin seed-sync item includes extra keywords beyond the navigation pair, **when** a keyword name does not already exist as a public keyword, **then** the API creates it as a **public** keyword (not private pending) and attaches it to the seed-managed item; navigation keywords are also attached to the item keywords like other item ingress flows.
+- **AC 5.2.8** [Admin] **Given** a seed-managed row already exists in the same `seedSet` but its `seedId` is not present in the uploaded manifest, **when** I call preview or apply, **then** the API reports that row in the aggregate count `missingFromPayloadCount`; current apply behavior does **not** delete or retire that row automatically.
+
+**UI**
+
+- **AC 5.2.9** [Admin] **Given** an admin UI is built on top of the seed-sync API, **when** it requests a preview for an existing seed set, **then** it should show only the returned delta rows and summary counts rather than rendering the full uploaded manifest; on an initial seed, it should rely on the summary counts and the suppressed-preview flag instead of trying to render the whole payload.
 
 ---
 

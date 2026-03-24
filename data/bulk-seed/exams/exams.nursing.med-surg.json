@@ -5,10 +5,19 @@
     "navigationKeyword2": "med-surg",
     "question": "What is sepsis?",
     "correctAnswer": "The body's extreme response to an infection",
-    "incorrectAnswers": ["A mild reaction to dehydration", "A localized skin infection only", "A chronic autoimmune disorder"],
+    "incorrectAnswers": [
+      "A mild reaction to dehydration",
+      "A localized skin infection only",
+      "A chronic autoimmune disorder"
+    ],
     "explanation": "CDC defines sepsis as the body's extreme response to an infection.",
-    "keywords": ["med-surg", "nclex", "acute-care"],
-    "source": "https://www.cdc.gov/sepsis/about/index.html"
+    "keywords": [
+      "med-surg",
+      "nclex",
+      "acute-care"
+    ],
+    "source": "https://www.cdc.gov/sepsis/about/index.html",
+    "seedId": "08a78861-6399-482a-93e6-77060f3a1208"
   },
   {
     "category": "exams",
@@ -16,10 +25,19 @@
     "navigationKeyword2": "med-surg",
     "question": "How does CDC classify sepsis?",
     "correctAnswer": "A life-threatening medical emergency",
-    "incorrectAnswers": ["A routine outpatient condition", "A minor medication reaction", "A self-limited viral syndrome"],
+    "incorrectAnswers": [
+      "A routine outpatient condition",
+      "A minor medication reaction",
+      "A self-limited viral syndrome"
+    ],
     "explanation": "CDC states that sepsis is a life-threatening medical emergency.",
-    "keywords": ["med-surg", "nclex", "acute-care"],
-    "source": "https://www.cdc.gov/sepsis/about/index.html"
+    "keywords": [
+      "med-surg",
+      "nclex",
+      "acute-care"
+    ],
+    "source": "https://www.cdc.gov/sepsis/about/index.html",
+    "seedId": "dd0f792e-7cfb-4f92-b178-c78c0b68d0e9"
   },
   {
     "category": "exams",
@@ -27,10 +45,19 @@
     "navigationKeyword2": "med-surg",
     "question": "Which mental-status change is a common sign of sepsis?",
     "correctAnswer": "Confusion or disorientation",
-    "incorrectAnswers": ["Improved concentration", "Euphoria", "Increased appetite"],
+    "incorrectAnswers": [
+      "Improved concentration",
+      "Euphoria",
+      "Increased appetite"
+    ],
     "explanation": "CDC lists confusion or disorientation as a possible sign of sepsis.",
-    "keywords": ["med-surg", "nclex", "acute-care"],
-    "source": "https://www.cdc.gov/sepsis/about/index.html"
+    "keywords": [
+      "med-surg",
+      "nclex",
+      "acute-care"
+    ],
+    "source": "https://www.cdc.gov/sepsis/about/index.html",
+    "seedId": "670094f8-f3d1-43a3-90a2-6a116b5cf8ee"
   },
   {
     "category": "exams",
@@ -38,10 +65,19 @@
     "navigationKeyword2": "med-surg",
     "question": "Which cardiovascular finding is listed by CDC as a sign of sepsis?",
     "correctAnswer": "High heart rate or weak pulse",
-    "incorrectAnswers": ["Low respiratory rate only", "Strong bounding pulse only", "Isolated bradycardia after sleep"],
+    "incorrectAnswers": [
+      "Low respiratory rate only",
+      "Strong bounding pulse only",
+      "Isolated bradycardia after sleep"
+    ],
     "explanation": "CDC lists high heart rate or weak pulse among common sepsis signs.",
-    "keywords": ["med-surg", "nclex", "acute-care"],
-    "source": "https://www.cdc.gov/sepsis/about/index.html"
+    "keywords": [
+      "med-surg",
+      "nclex",
+      "acute-care"
+    ],
+    "source": "https://www.cdc.gov/sepsis/about/index.html",
+    "seedId": "69a516ab-798e-4dd8-b76d-f13ae5bd7d53"
   },
   {
     "category": "exams",
@@ -49,10 +85,19 @@
     "navigationKeyword2": "med-surg",
     "question": "Which symptom is most common in a heart attack?",
     "correctAnswer": "Chest pain",
-    "incorrectAnswers": ["Blurred vision", "Ear pain", "Frequent urination"],
+    "incorrectAnswers": [
+      "Blurred vision",
+      "Ear pain",
+      "Frequent urination"
+    ],
     "explanation": "MedlinePlus states that chest pain is the most common symptom of a heart attack.",
-    "keywords": ["med-surg", "nclex", "cardiac-care"],
-    "source": "https://medlineplus.gov/ency/article/000195.htm"
+    "keywords": [
+      "med-surg",
+      "nclex",
+      "cardiac-care"
+    ],
+    "source": "https://medlineplus.gov/ency/article/000195.htm",
+    "seedId": "c79214c2-7fad-453a-8627-2f05021edfd0"
   },
   {
     "category": "exams",
@@ -60,10 +105,19 @@
     "navigationKeyword2": "med-surg",
     "question": "How long does heart attack pain most often last?",
     "correctAnswer": "Longer than 20 minutes",
-    "incorrectAnswers": ["Less than 1 minute", "About 5 minutes exactly", "Only a few seconds"],
+    "incorrectAnswers": [
+      "Less than 1 minute",
+      "About 5 minutes exactly",
+      "Only a few seconds"
+    ],
     "explanation": "MedlinePlus says heart attack pain most often lasts longer than 20 minutes.",
-    "keywords": ["med-surg", "nclex", "cardiac-care"],
-    "source": "https://medlineplus.gov/ency/article/000195.htm"
+    "keywords": [
+      "med-surg",
+      "nclex",
+      "cardiac-care"
+    ],
+    "source": "https://medlineplus.gov/ency/article/000195.htm",
+    "seedId": "65e30f69-056d-42da-85b1-8a8de071f844"
   },
   {
     "category": "exams",
@@ -71,10 +125,19 @@
     "navigationKeyword2": "med-surg",
     "question": "Which symptom can occur with a heart attack even without chest discomfort?",
     "correctAnswer": "Shortness of breath",
-    "incorrectAnswers": ["Hearing loss", "Rash on the hands", "Tooth sensitivity only"],
+    "incorrectAnswers": [
+      "Hearing loss",
+      "Rash on the hands",
+      "Tooth sensitivity only"
+    ],
     "explanation": "MedlinePlus lists shortness of breath as a heart attack symptom that can occur with or without chest discomfort.",
-    "keywords": ["med-surg", "nclex", "cardiac-care"],
-    "source": "https://medlineplus.gov/heartattack.html"
+    "keywords": [
+      "med-surg",
+      "nclex",
+      "cardiac-care"
+    ],
+    "source": "https://medlineplus.gov/heartattack.html",
+    "seedId": "44c63fe1-c93c-4099-853d-027ada5ecf69"
   },
   {
     "category": "exams",
@@ -82,10 +145,19 @@
     "navigationKeyword2": "med-surg",
     "question": "What is a common symptom of deep vein thrombosis?",
     "correctAnswer": "Swelling of a leg or arm",
-    "incorrectAnswers": ["Bilateral hearing loss", "Yellowing of the eyes", "Frequent sneezing"],
+    "incorrectAnswers": [
+      "Bilateral hearing loss",
+      "Yellowing of the eyes",
+      "Frequent sneezing"
+    ],
     "explanation": "MedlinePlus lists swelling of a leg or arm as a common DVT symptom.",
-    "keywords": ["med-surg", "nclex", "vascular-care"],
-    "source": "https://medlineplus.gov/ency/article/000156.htm"
+    "keywords": [
+      "med-surg",
+      "nclex",
+      "vascular-care"
+    ],
+    "source": "https://medlineplus.gov/ency/article/000156.htm",
+    "seedId": "6c65da71-583f-4c11-ac4d-809bbe1dd873"
   },
   {
     "category": "exams",
@@ -93,10 +165,19 @@
     "navigationKeyword2": "med-surg",
     "question": "Which imaging test is often used to diagnose a DVT?",
     "correctAnswer": "Doppler ultrasound",
-    "incorrectAnswers": ["Chest X-ray", "EEG", "Mammogram"],
+    "incorrectAnswers": [
+      "Chest X-ray",
+      "EEG",
+      "Mammogram"
+    ],
     "explanation": "MedlinePlus lists Doppler ultrasound of the area of concern as a common DVT test.",
-    "keywords": ["med-surg", "nclex", "vascular-care"],
-    "source": "https://medlineplus.gov/ency/article/000156.htm"
+    "keywords": [
+      "med-surg",
+      "nclex",
+      "vascular-care"
+    ],
+    "source": "https://medlineplus.gov/ency/article/000156.htm",
+    "seedId": "ee095d22-4ec4-4104-a141-c9079083bfef"
   },
   {
     "category": "exams",
@@ -104,9 +185,18 @@
     "navigationKeyword2": "med-surg",
     "question": "Which DVT complication may be fatal?",
     "correctAnswer": "Pulmonary embolism",
-    "incorrectAnswers": ["Migraine headache", "Otitis media", "Appendicitis"],
+    "incorrectAnswers": [
+      "Migraine headache",
+      "Otitis media",
+      "Appendicitis"
+    ],
     "explanation": "MedlinePlus lists pulmonary embolism as a possible DVT complication that may be fatal.",
-    "keywords": ["med-surg", "nclex", "vascular-care"],
-    "source": "https://medlineplus.gov/ency/article/000156.htm"
+    "keywords": [
+      "med-surg",
+      "nclex",
+      "vascular-care"
+    ],
+    "source": "https://medlineplus.gov/ency/article/000156.htm",
+    "seedId": "92d0302d-b585-4f74-98b6-0d81170bb5aa"
   }
 ]

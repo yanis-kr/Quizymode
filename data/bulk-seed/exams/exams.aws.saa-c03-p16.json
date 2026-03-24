@@ -1,0 +1,454 @@
+[
+  {
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "saa-c03",
+    "question": "What should a solutions architect do to ensure that all objects uploaded to an Amazon S3 bucket are encrypted?",
+    "correctAnswer": "Update the bucket policy to deny if the PutObject does not have an s3:x-amz-acl header set.",
+    "incorrectAnswers": [
+      "Update the bucket policy to deny if the PutObject does not have an s3:x-amz-acl header set to private.",
+      "Update the bucket policy to deny if the PutObject does not have an aws:SecureTransport header set to true.",
+      "Update the bucket policy to deny if the PutObject does not have an x-amz-server-side-encryption header set."
+    ],
+    "explanation": "SAA-C03 practice scenario (extract question #321). Correct choice: A.",
+    "keywords": [
+      "aws-saa-c03",
+      "aws-storage",
+      "s3"
+    ],
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "seedId": "c4f31260-9ed6-4f16-bb8f-b34bf14f554a"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "saa-c03",
+    "question": "A solutions architect is designing a multi-tier application for a company. The application's users upload images from a mobile device. The\napplication generates a thumbnail of each image and returns a message to the user to conrm that the image was uploaded successfully.\nThe thumbnail generation can take up to 60 seconds, but the company wants to provide a faster response time to its users to notify them that the\noriginal image was received. The solutions architect must design the application to asynchronously dispatch requests to the different application\ntiers.\nWhat should the solutions architect do to meet these requirements?",
+    "correctAnswer": "Write a custom AWS Lambda function to generate the thumbnail and alert the user. Use the image upload process as an event source to invoke the Lambda function.",
+    "incorrectAnswers": [
+      "Create an AWS Step Functions workflow. Configure Step Functions to handle the orchestration between the application tiers and alert the user when thumbnail generation is complete.",
+      "Create an Amazon Simple Queue Service (Amazon SQS) message queue. As images are uploaded, place a message on the SQS queue for thumbnail generation. Alert the user through an application message that the image was received.",
+      "Create Amazon Simple Notification Service (Amazon SNS) notication topics and subscriptions. Use one subscription with the application to generate the thumbnail after the image upload is complete. Use a second subscription to message the user's mobile app by way of a push notication after thumbnail generation is complete."
+    ],
+    "explanation": "SAA-C03 practice scenario (extract question #322). Correct choice: A.",
+    "keywords": [
+      "aws-saa-c03",
+      "aws-compute",
+      "lambda"
+    ],
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "seedId": "c5dcf2c4-172b-4f96-a579-7d877b38ad69"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "saa-c03",
+    "question": "A company’s facility has badge readers at every entraffice throughout the building. When badges are scanned, the readers send a message over\nHTTPS to indicate who attempted to access that particular entraffice.\nA solutions architect must design a system to process these messages from the sensors. The solution must be highly available, and the results\nmust be made available for the company’s security team to analyze.\nWhich system architecture should the solutions architect recommend?",
+    "correctAnswer": "Launch an Amazon EC2 instance to serve as the HTTPS endpoint and to process the messages. Configure the EC2 instance to save the results to an Amazon S3 bucket.",
+    "incorrectAnswers": [
+      "Create an HTTPS endpoint in Amazon API Gateway. Configure the API Gateway endpoint to invoke an AWS Lambda function to process the messages and save the results to an Amazon DynamoDB table.",
+      "Use Amazon Route 53 to direct incoming sensor messages to an AWS Lambda function. Configure the Lambda function to process the messages and save the results to an Amazon DynamoDB table.",
+      "Create a gateway VPC endpoint for Amazon S3. Configure a Site-to-Site VPN connection from the facility network to the VPC so that sensor data can be written directly to an S3 bucket by way of the VPC endpoint. --- Page 117 ---"
+    ],
+    "explanation": "SAA-C03 practice scenario (extract question #323). Correct choice: A.",
+    "keywords": [
+      "aws-saa-c03",
+      "aws-storage",
+      "aws-compute",
+      "s3",
+      "ec2"
+    ],
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "seedId": "21406457-82fe-43f2-955b-ae531c868397"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "saa-c03",
+    "question": "A company wants to implement a disaster recovery plan for its primary on-premises le storage volume. The le storage volume is mounted from\nan Internet Small Computer Systems Interface (iSCSI) device on a local storage server. The le storage volume holds hundreds of terabytes (TB)\nof data.\nThe company wants to ensure that end users retain immediate access to all le types from the on-premises systems without experiencing latency.\nWhich solution will meet these requirements with the LEAST amount of change to the company's existing infrastructure?",
+    "correctAnswer": "Provision an Amazon S3 File Gateway as a virtual machine (VM) that is hosted on premises. Set the local cache to 10 TB. Modify existing applications to access the les through the NFS protocol. To recover from a disaster, provision an Amazon EC2 instance and mount the S3 bucket that contains the les.",
+    "incorrectAnswers": [
+      "Provision an AWS Storage Gateway tape gateway. Use a data backup solution to back up all existing data to a virtual tape library. Configure the data backup solution to run nightly after the initial backup is complete. To recover from a disaster, provision an Amazon EC2 instance and restore the data to an Amazon Elastic Block Store (Amazon EBS) volume from the volumes in the virtual tape library.",
+      "Provision an AWS Storage Gateway Volume Gateway cached volume. Set the local cache to 10 TB. Mount the Volume Gateway cached volume to the existing le server by using iSCSI, and copy all les to the storage volume. Configure scheduled snapshots of the storage volume. To recover from a disaster, restore a snapshot to an Amazon Elastic Block Store (Amazon EBS) volume and attach the EBS volume to an Amazon EC2 instance.",
+      "Provision an AWS Storage Gateway Volume Gateway stored volume with the same amount of disk space as the existing le storage volume. Mount the Volume Gateway stored volume to the existing le server by using iSCSI, and copy all les to the storage volume. Configure scheduled snapshots of the storage volume. To recover from a disaster, restore a snapshot to an Amazon Elastic Block Store (Amazon EBS) volume and attach the EBS volume to an Amazon EC2 instance."
+    ],
+    "explanation": "SAA-C03 practice scenario (extract question #324). Correct choice: A.",
+    "keywords": [
+      "aws-saa-c03",
+      "aws-storage",
+      "aws-compute",
+      "s3",
+      "ec2"
+    ],
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "seedId": "0b3677f0-1b06-47a0-b048-6f76333e5230"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "saa-c03",
+    "question": "A company is hosting a web application from an Amazon S3 bucket. The application uses Amazon Cognito as an identity provider to authenticate\nusers and return a JSON Web Token (JWT) that provides access to protected resources that are stored in another S3 bucket.\nUpon deployment of the application, users report errors and are unable to access the protected content. A solutions architect must resolve this\nissue by providing proper permissions so that users can access the protected content.\nWhich solution meets these requirements?",
+    "correctAnswer": "Update the Amazon Cognito identity pool to assume the proper IAM role for access to the protected content.",
+    "incorrectAnswers": [
+      "Update the S3 ACL to allow the application to access the protected content.",
+      "Redeploy the application to Amazon S3 to prevent eventually consistent reads in the S3 bucket from affecting the ability of users to access the protected content.",
+      "Update the Amazon Cognito pool to use custom attribute mappings within the identity pool and grant users the proper permissions to access the protected content. --- Page 118 ---"
+    ],
+    "explanation": "SAA-C03 practice scenario (extract question #325). Correct choice: A.",
+    "keywords": [
+      "aws-saa-c03",
+      "aws-security",
+      "aws-storage",
+      "s3",
+      "iam",
+      "cognito"
+    ],
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "seedId": "c821cee0-f8aa-4b54-b6b3-d94adc353448"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "saa-c03",
+    "question": "A solutions architect must secure a VPC network that hosts Amazon EC2 instances. The EC2 instances contain highly sensitive data and run in a\nprivate subnet. According to company policy, the EC2 instances that run in the VPC can access only approved third-party software repositories on\nthe internet for software product updates that use the third party’s URL. Other internet traffic must be blocked.\nWhich solution meets these requirements?",
+    "correctAnswer": "Update the route table for the private subnet to route the outbound traffic to an AWS Network Firewall rewall. Configure domain list rule groups.",
+    "incorrectAnswers": [
+      "Set up an AWS WAF web ACL. Create a custom set of rules that lter traffic requests based on source and destination IP address range sets.",
+      "Implement strict inbound security group rules. Configure an outbound rule that allows traffic only to the authorized software repositories on the internet by specifying the URLs.",
+      "Configure an Application Load Balancer (ALB) in front of the EC2 instances. Direct all outbound traffic to the ALB. Use a URL-based rule listener in the ALB’s target group for outbound access to the internet. --- Page 119 ---"
+    ],
+    "explanation": "SAA-C03 practice scenario (extract question #327). Correct choice: A.",
+    "keywords": [
+      "aws-saa-c03",
+      "aws-networking",
+      "aws-compute",
+      "ec2",
+      "vpc"
+    ],
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "seedId": "3b4eaa96-c1f6-40c5-994a-c65b03010bef"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "saa-c03",
+    "question": "A company is hosting a three-tier ecommerce application in the AWS Cloud. The company hosts the website on Amazon S3 and integrates the\nwebsite with an API that handles sales requests. The company hosts the API on three Amazon EC2 instances behind an Application Load\nBalancer (ALB). The API consists of static and dynamic front-end content along with backend workers that process sales requests\nasynchronously.\nThe company is expecting a signicant and sudden increase in the number of sales requests during events for the launch of new products.\nWhat should a solutions architect recommend to ensure that all the requests are processed successfully?",
+    "correctAnswer": "Add an Amazon CloudFront distribution for the dynamic content. Increase the number of EC2 instances to handle the increase in traffic.",
+    "incorrectAnswers": [
+      "Add an Amazon CloudFront distribution for the static content. Place the EC2 instances in an Auto Scaling group to launch new instances based on network traffic.",
+      "Add an Amazon CloudFront distribution for the dynamic content. Add an Amazon ElastiCache instance in front of the ALB to reduce traffic for the API to handle.",
+      "Add an Amazon CloudFront distribution for the static content. Add an Amazon Simple Queue Service (Amazon SQS) queue to receive requests from the website for later processing by the EC2 instances."
+    ],
+    "explanation": "SAA-C03 practice scenario (extract question #328). Correct choice: A.",
+    "keywords": [
+      "aws-saa-c03",
+      "aws-networking",
+      "aws-storage",
+      "s3",
+      "ec2",
+      "cloudfront",
+      "alb"
+    ],
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "seedId": "f1913670-b1f3-4428-8776-80ab8e892a0c"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "saa-c03",
+    "question": "A security audit reveals that Amazon EC2 instances are not being patched regularly. A solutions architect needs to provide a solution that will run\nregular security scans across a large eet of EC2 instances. The solution should also patch the EC2 instances on a regular schedule and provide a\nreport of each instance’s patch status.\nWhich solution will meet these requirements?",
+    "correctAnswer": "Set up Amazon Macie to scan the EC2 instances for software vulnerabilities. Set up a cron job on each EC2 instance to patch the instance on a regular schedule.",
+    "incorrectAnswers": [
+      "Turn on Amazon GuardDuty in the account. Configure GuardDuty to scan the EC2 instances for software vulnerabilities. Set up AWS Systems Manager Session Manager to patch the EC2 instances on a regular schedule.",
+      "Set up Amazon Detective to scan the EC2 instances for software vulnerabilities. Set up an Amazon EventBridge scheduled rule to patch the EC2 instances on a regular schedule.",
+      "Turn on Amazon Inspector in the account. Configure Amazon Inspector to scan the EC2 instances for software vulnerabilities. Set up AWS Systems Manager Patch Manager to patch the EC2 instances on a regular schedule."
+    ],
+    "explanation": "SAA-C03 practice scenario (extract question #329). Correct choice: A.",
+    "keywords": [
+      "aws-saa-c03",
+      "aws-compute",
+      "aws-security",
+      "ec2"
+    ],
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "seedId": "5fd94648-525e-42d8-b00c-00a7e4a2387e"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "saa-c03",
+    "question": "A company is planning to store data on Amazon RDS DB instances. The company must encrypt the data at rest.\nWhat should a solutions architect do to meet this requirement?",
+    "correctAnswer": "Create a key in AWS Key Management Service (AWS KMS). Enable encryption for the DB instances.",
+    "incorrectAnswers": [
+      "Create an encryption key. Store the key in AWS Secrets Manager. Use the key to encrypt the DB instances.",
+      "Generate a certicate in AWS Certicate Manager (ACM). Enable SSL/TLS on the DB instances by using the certicate.",
+      "Generate a certicate in AWS Identity and Access Management (IAM). Enable SSL/TLS on the DB instances by using the certicate. --- Page 120 ---"
+    ],
+    "explanation": "SAA-C03 practice scenario (extract question #330). Correct choice: A.",
+    "keywords": [
+      "aws-saa-c03",
+      "aws-database",
+      "aws-security",
+      "databases",
+      "rds",
+      "kms"
+    ],
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "seedId": "da8563cc-92c4-4e61-8bb7-8c11034d17ba"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "saa-c03",
+    "question": "A company must migrate 20 TB of data from a data center to the AWS Cloud within 30 days. The company’s network bandwidth is limited to 15\nMbps and cannot exceed 70% utilization.\nWhat should a solutions architect do to meet these requirements?",
+    "correctAnswer": "Use AWS Snowball.",
+    "incorrectAnswers": [
+      "Use AWS DataSync.",
+      "Use a secure VPN connection.",
+      "Use Amazon S3 Transfer Acceleration."
+    ],
+    "explanation": "SAA-C03 practice scenario (extract question #331). Correct choice: A.",
+    "keywords": [
+      "aws-saa-c03",
+      "aws-storage",
+      "snowball"
+    ],
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "seedId": "b5314898-bac7-431a-a460-a72b2af912e4"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "saa-c03",
+    "question": "A company needs to provide its employees with secure access to condential and sensitive les. The company wants to ensure that the les can\nbe accessed only by authorized users. The les must be downloaded securely to the employees’ devices.\nThe les are stored in an on-premises Windows le server. However, due to an increase in remote usage, the le server is running out of capacity.\n.\nWhich solution will meet these requirements?",
+    "correctAnswer": "Migrate the le server to an Amazon EC2 instance in a public subnet. Configure the security group to limit inbound traffic to the employees’ IP addresses.",
+    "incorrectAnswers": [
+      "Migrate the les to an Amazon FSx for Windows File Server le system. Integrate the Amazon FSx le system with the on-premises Active Directory. Configure AWS Client VPN.",
+      "Migrate the les to Amazon S3, and create a private VPC endpoint. Create a signed URL to allow download.",
+      "Migrate the les to Amazon S3, and create a public VPC endpoint. Allow employees to sign on with AWS IAM Identity Center (AWS Single Sign-On)."
+    ],
+    "explanation": "SAA-C03 practice scenario (extract question #332). Correct choice: A.",
+    "keywords": [
+      "aws-saa-c03",
+      "aws-compute",
+      "aws-networking",
+      "ec2"
+    ],
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "seedId": "bdb8e4cc-6e72-4794-8dea-149f48c5d139"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "saa-c03",
+    "question": "A company’s application runs on Amazon EC2 instances behind an Application Load Balancer (ALB). The instances run in an Amazon EC2 Auto\nScaling group across multiple Availability Zones. On the rst day of every month at midnight, the application becomes much slower when the\nmonth-end nancial calculation batch runs. This causes the CPU utilization of the EC2 instances to immediately peak to 100%, which disrupts the\napplication.\nWhat should a solutions architect recommend to ensure the application is able to handle the workload and avoid downtime?",
+    "correctAnswer": "Configure an Amazon CloudFront distribution in front of the ALB.",
+    "incorrectAnswers": [
+      "Configure an EC2 Auto Scaling simple scaling policy based on CPU utilization.",
+      "Configure an EC2 Auto Scaling scheduled scaling policy based on the monthly schedule.",
+      "Configure Amazon ElastiCache to remove some of the workload from the EC2 instances. --- Page 121 ---"
+    ],
+    "explanation": "SAA-C03 practice scenario (extract question #333). Correct choice: A.",
+    "keywords": [
+      "aws-saa-c03",
+      "aws-networking",
+      "aws-compute",
+      "ec2",
+      "cloudfront",
+      "alb"
+    ],
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "seedId": "98d335e6-441d-42e8-a45e-d52cbcd029f5"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "saa-c03",
+    "question": "A company wants to give a customer the ability to use on-premises Microsoft Active Directory to download les that are stored in Amazon S3. The\ncustomer’s application uses an SFTP client to download the les.\nWhich solution will meet these requirements with the LEAST operational overhead and no changes to the customer’s application?",
+    "correctAnswer": "Set up AWS Transfer Family with SFTP for Amazon S3. Configure integrated Active Directory authentication.",
+    "incorrectAnswers": [
+      "Set up AWS Database Migration Service (AWS DMS) to synchronize the on-premises client with Amazon S3. Configure integrated Active Directory authentication.",
+      "Set up AWS DataSync to synchronize between the on-premises location and the S3 location by using AWS IAM Identity Center (AWS Single Sign-On).",
+      "Set up a Windows Amazon EC2 instance with SFTP to connect the on-premises client with Amazon S3. Integrate AWS Identity and Access Management (IAM)."
+    ],
+    "explanation": "SAA-C03 practice scenario (extract question #334). Correct choice: A.",
+    "keywords": [
+      "aws-saa-c03",
+      "aws-storage",
+      "aws-security",
+      "s3"
+    ],
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "seedId": "208e533f-d3f3-49d7-bb8b-23bcf5135b7f"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "saa-c03",
+    "question": "A company is experiencing sudden increases in demand. The company needs to provision large Amazon EC2 instances from an Amazon Machine\nImage (AMI). The instances will run in an Auto Scaling group. The company needs a solution that provides minimum initialization latency to meet\nthe demand.\nWhich solution meets these requirements?",
+    "correctAnswer": "Use the aws ec2 register-image command to create an AMI from a snapshot. Use AWS Step Functions to replace the AMI in the Auto Scaling group.",
+    "incorrectAnswers": [
+      "Enable Amazon Elastic Block Store (Amazon EBS) fast snapshot restore on a snapshot. Provision an AMI by using the snapshot. Replace the AMI in the Auto Scaling group with the new AMI.",
+      "Enable AMI creation and dene lifecycle rules in Amazon Data Lifecycle Manager (Amazon DLM). Create an AWS Lambda function that modies the AMI in the Auto Scaling group.",
+      "Use Amazon EventBridge to invoke AWS Backup lifecycle policies that provision AMIs. Configure Auto Scaling group capacity limits as an event source in EventBridge. --- Page 122 ---"
+    ],
+    "explanation": "SAA-C03 practice scenario (extract question #335). Correct choice: A.",
+    "keywords": [
+      "aws-saa-c03",
+      "aws-compute",
+      "aws-integration",
+      "ec2",
+      "auto-scaling",
+      "step-functions"
+    ],
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "seedId": "9bf4a651-af55-4d36-a269-a8f2bd85f8c0"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "saa-c03",
+    "question": "A company hosts a multi-tier web application that uses an Amazon Aurora MySQL DB cluster for storage. The application tier is hosted on\nAmazon EC2 instances. The company’s IT security guidelines mandate that the database credentials be encrypted and rotated every 14 days.\nWhat should a solutions architect do to meet this requirement with the LEAST operational effort?",
+    "correctAnswer": "Create a new AWS Key Management Service (AWS KMS) encryption key. Use AWS Secrets Manager to create a new secret that uses the KMS key with the appropriate credentials. Associate the secret with the Aurora DB cluster. Configure a custom rotation period of 14 days.",
+    "incorrectAnswers": [
+      "Create two parameters in AWS Systems Manager Parameter Store: one for the user name as a string parameter and one that uses the SecureString type for the password. Select AWS Key Management Service (AWS KMS) encryption for the password parameter, and load these parameters in the application tier. Implement an AWS Lambda function that rotates the password every 14 days.",
+      "Store a le that contains the credentials in an AWS Key Management Service (AWS KMS) encrypted Amazon Elastic File System (Amazon EFS) le system. Mount the EFS le system in all EC2 instances of the application tier. Restrict the access to the le on the le system so that the application can read the le and that only super users can modify the le. Implement an AWS Lambda function that rotates the key in Aurora every 14 days and writes new credentials into the le.",
+      "Store a le that contains the credentials in an AWS Key Management Service (AWS KMS) encrypted Amazon S3 bucket that the application uses to load the credentials. Download the le to the application regularly to ensure that the correct credentials are used. Implement an AWS Lambda function that rotates the Aurora credentials every 14 days and uploads these credentials to the le in the S3 bucket."
+    ],
+    "explanation": "SAA-C03 practice scenario (extract question #336). Correct choice: A.",
+    "keywords": [
+      "aws-saa-c03",
+      "aws-security",
+      "aws-database",
+      "databases",
+      "aurora",
+      "ec2",
+      "kms",
+      "secrets-manager",
+      "mysql"
+    ],
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "seedId": "946dff48-b00f-4f93-a213-8856edd4584a"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "saa-c03",
+    "question": "A company has deployed a web application on AWS. The company hosts the backend database on Amazon RDS for MySQL with a primary DB\ninstance and ve read replicas to support scaling needs. The read replicas must lag no more than 1 second behind the primary DB instance. The\ndatabase routinely runs scheduled stored procedures.\nAs traffic on the website increases, the replicas experience additional lag during periods of peak load. A solutions architect must reduce the\nreplication lag as much as possible. The solutions architect must minimize changes to the application code and must minimize ongoing\noperational overhead.\nWhich solution will meet these requirements?",
+    "correctAnswer": "Migrate the database to Amazon Aurora MySQL. Replace the read replicas with Aurora Replicas, and congure Aurora Auto Scaling. Replace the stored procedures with Aurora MySQL native functions.",
+    "incorrectAnswers": [
+      "Deploy an Amazon ElastiCache for Redis cluster in front of the database. Modify the application to check the cache before the application queries the database. Replace the stored procedures with AWS Lambda functions.",
+      "Migrate the database to a MySQL database that runs on Amazon EC2 instances. Choose large, compute optimized EC2 instances for all replica nodes. Maintain the stored procedures on the EC2 instances.",
+      "Migrate the database to Amazon DynamoDB. Provision a large number of read capacity units (RCUs) to support the required throughput, and congure on-demand capacity scaling. Replace the stored procedures with DynamoDB streams. --- Page 123 ---"
+    ],
+    "explanation": "SAA-C03 practice scenario (extract question #337). Correct choice: A.",
+    "keywords": [
+      "aws-saa-c03",
+      "aws-database",
+      "aws-compute",
+      "databases",
+      "aurora",
+      "auto-scaling",
+      "mysql"
+    ],
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "seedId": "be71a53d-5535-4893-a323-63d10fe6b7be"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "saa-c03",
+    "question": "A solutions architect must create a disaster recovery (DR) plan for a high-volume software as a service (SaaS) platform. All data for the platform\nis stored in an Amazon Aurora MySQL DB cluster.\nThe DR plan must replicate data to a secondary AWS Region.\nWhich solution will meet these requirements MOST cost-effectively?",
+    "correctAnswer": "Use MySQL binary log replication to an Aurora cluster in the secondary Region. Provision one DB instance for the Aurora cluster in the secondary Region.",
+    "incorrectAnswers": [
+      "Set up an Aurora global database for the DB cluster. When setup is complete, remove the DB instance from the secondary Region.",
+      "Use AWS Database Migration Service (AWS DMS) to continuously replicate data to an Aurora cluster in the secondary Region. Remove the DB instance from the secondary Region.",
+      "Set up an Aurora global database for the DB cluster. Specify a minimum of one DB instance in the secondary Region."
+    ],
+    "explanation": "SAA-C03 practice scenario (extract question #338). Correct choice: A.",
+    "keywords": [
+      "aws-saa-c03",
+      "aws-database",
+      "databases",
+      "aurora",
+      "mysql"
+    ],
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "seedId": "e3b655f4-37db-4df9-8c70-e9b65b614a2e"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "saa-c03",
+    "question": "A company has a custom application with embedded credentials that retrieves information from an Amazon RDS MySQL DB instance.\nManagement says the application must be made more secure with the least amount of programming effort.\nWhat should a solutions architect do to meet these requirements?",
+    "correctAnswer": "Use AWS Key Management Service (AWS KMS) to create keys. Configure the application to load the database credentials from AWS KMS. Enable automatic key rotation.",
+    "incorrectAnswers": [
+      "Create credentials on the RDS for MySQL database for the application user and store the credentials in AWS Secrets Manager. Configure the application to load the database credentials from Secrets Manager. Create an AWS Lambda function that rotates the credentials in Secret Manager.",
+      "Create credentials on the RDS for MySQL database for the application user and store the credentials in AWS Secrets Manager. Configure the application to load the database credentials from Secrets Manager. Set up a credentials rotation schedule for the application user in the RDS for MySQL database using Secrets Manager.",
+      "Create credentials on the RDS for MySQL database for the application user and store the credentials in AWS Systems Manager Parameter Store. Configure the application to load the database credentials from Parameter Store. Set up a credentials rotation schedule for the application user in the RDS for MySQL database using Parameter Store."
+    ],
+    "explanation": "SAA-C03 practice scenario (extract question #339). Correct choice: A.",
+    "keywords": [
+      "aws-saa-c03",
+      "aws-database",
+      "aws-security",
+      "databases",
+      "rds",
+      "kms",
+      "mysql"
+    ],
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "seedId": "f37059ae-b3b7-4a9e-be22-2a49aa15d104"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "saa-c03",
+    "question": "A media company hosts its website on AWS. The website application’s architecture includes a eet of Amazon EC2 instances behind an\nApplication Load Balancer (ALB) and a database that is hosted on Amazon Aurora. The company’s cybersecurity team reports that the application\nis vulnerable to SQL injection.\nHow should the company resolve this issue?",
+    "correctAnswer": "Use AWS WAF in front of the ALB. Associate the appropriate web ACLs with AWS WAF.",
+    "incorrectAnswers": [
+      "Create an ALB listener rule to reply to SQL injections with a xed response.",
+      "Subscribe to AWS Shield Advanced to block all SQL injection attempts automatically.",
+      "Set up Amazon Inspector to block all SQL injection attempts automatically. --- Page 124 ---"
+    ],
+    "explanation": "SAA-C03 practice scenario (extract question #340). Correct choice: A.",
+    "keywords": [
+      "aws-saa-c03",
+      "aws-networking",
+      "aws-database",
+      "databases",
+      "aurora",
+      "ec2",
+      "alb",
+      "waf"
+    ],
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "seedId": "30bb1701-ff5f-42c8-9d05-432c8c13778a"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "saa-c03",
+    "question": "A company has an Amazon S3 data lake that is governed by AWS Lake Formation. The company wants to create a visualization in Amazon\nQuickSight by joining the data in the data lake with operational data that is stored in an Amazon Aurora MySQL database. The company wants to\nenforce column-level authorization so that the company’s marketing team can access only a subset of columns in the database.\nWhich solution will meet these requirements with the LEAST operational overhead?",
+    "correctAnswer": "Use Amazon EMR to ingest the data directly from the database to the QuickSight SPICE engine. Include only the required columns.",
+    "incorrectAnswers": [
+      "Use AWS Glue Studio to ingest the data from the database to the S3 data lake. Attach an IAM policy to the QuickSight users to enforce column-level access control. Use Amazon S3 as the data source in QuickSight.",
+      "Use AWS Glue Elastic Views to create a materialized view for the database in Amazon S3. Create an S3 bucket policy to enforce column- level access control for the QuickSight users. Use Amazon S3 as the data source in QuickSight.",
+      "Use a Lake Formation blueprint to ingest the data from the database to the S3 data lake. Use Lake Formation to enforce column-level access control for the QuickSight users. Use Amazon Athena as the data source in QuickSight."
+    ],
+    "explanation": "SAA-C03 practice scenario (extract question #341). Correct choice: A.",
+    "keywords": [
+      "aws-saa-c03",
+      "aws-database",
+      "aws-analytics",
+      "databases",
+      "aurora",
+      "s3",
+      "emr",
+      "quicksight",
+      "mysql"
+    ],
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "seedId": "7b487150-44ad-43b6-a46e-49320c7e9f21"
+  }
+]

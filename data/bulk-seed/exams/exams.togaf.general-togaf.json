@@ -5,10 +5,19 @@
     "navigationKeyword2": "general-togaf",
     "question": "What is the exam number for the TOGAF Enterprise Architecture Part 1 exam?",
     "correctAnswer": "OGEA-101",
-    "incorrectAnswers": ["OGEA-102", "OG0-091", "X2202"],
+    "incorrectAnswers": [
+      "OGEA-102",
+      "OG0-091",
+      "X2202"
+    ],
     "explanation": "The Open Group identifies the TOGAF Enterprise Architecture Part 1 exam as OGEA-101.",
-    "keywords": ["togaf", "general-togaf", "test-prep"],
-    "source": "https://help.opengroup.org/hc/en-us/articles/32158230604050-What-Is-the-Exam-Plan-for-the-OGEA-101-TOGAF-Enterprise-Architecture-Part-1-Exam"
+    "keywords": [
+      "togaf",
+      "general-togaf",
+      "test-prep"
+    ],
+    "source": "https://help.opengroup.org/hc/en-us/articles/32158230604050-What-Is-the-Exam-Plan-for-the-OGEA-101-TOGAF-Enterprise-Architecture-Part-1-Exam",
+    "seedId": "68545df5-0cd6-476c-ad27-4a87d3c98f1a"
   },
   {
     "category": "exams",
@@ -16,10 +25,19 @@
     "navigationKeyword2": "general-togaf",
     "question": "How many questions are on the TOGAF Enterprise Architecture Part 1 exam?",
     "correctAnswer": "40 multiple-choice questions",
-    "incorrectAnswers": ["8 scenario questions", "60 multiple-choice questions", "20 essay questions"],
+    "incorrectAnswers": [
+      "8 scenario questions",
+      "60 multiple-choice questions",
+      "20 essay questions"
+    ],
     "explanation": "The Open Group says the Part 1 exam consists of 40 multiple-choice questions.",
-    "keywords": ["togaf", "general-togaf", "test-prep"],
-    "source": "https://help.opengroup.org/hc/en-us/articles/32158230604050-What-Is-the-Exam-Plan-for-the-OGEA-101-TOGAF-Enterprise-Architecture-Part-1-Exam"
+    "keywords": [
+      "togaf",
+      "general-togaf",
+      "test-prep"
+    ],
+    "source": "https://help.opengroup.org/hc/en-us/articles/32158230604050-What-Is-the-Exam-Plan-for-the-OGEA-101-TOGAF-Enterprise-Architecture-Part-1-Exam",
+    "seedId": "e83b41b4-ed15-4fa4-b574-742ae1cb2a6d"
   },
   {
     "category": "exams",
@@ -27,10 +45,19 @@
     "navigationKeyword2": "general-togaf",
     "question": "What is the passing score for the TOGAF Enterprise Architecture Part 1 exam?",
     "correctAnswer": "60%",
-    "incorrectAnswers": ["50%", "70%", "75%"],
+    "incorrectAnswers": [
+      "50%",
+      "70%",
+      "75%"
+    ],
     "explanation": "The Open Group says candidates need at least 60% to pass Part 1.",
-    "keywords": ["togaf", "general-togaf", "test-prep"],
-    "source": "https://help.opengroup.org/hc/en-us/articles/32158230604050-What-Is-the-Exam-Plan-for-the-OGEA-101-TOGAF-Enterprise-Architecture-Part-1-Exam"
+    "keywords": [
+      "togaf",
+      "general-togaf",
+      "test-prep"
+    ],
+    "source": "https://help.opengroup.org/hc/en-us/articles/32158230604050-What-Is-the-Exam-Plan-for-the-OGEA-101-TOGAF-Enterprise-Architecture-Part-1-Exam",
+    "seedId": "fec95b4e-0b23-474e-b0f4-bd9e6e006776"
   },
   {
     "category": "exams",
@@ -38,10 +65,19 @@
     "navigationKeyword2": "general-togaf",
     "question": "What is the exam number for the TOGAF Enterprise Architecture Part 2 exam?",
     "correctAnswer": "OGEA-102",
-    "incorrectAnswers": ["OGEA-101", "OG0-092", "B227"],
+    "incorrectAnswers": [
+      "OGEA-101",
+      "OG0-092",
+      "B227"
+    ],
     "explanation": "The Open Group identifies the TOGAF Enterprise Architecture Part 2 exam as OGEA-102.",
-    "keywords": ["togaf", "general-togaf", "test-prep"],
-    "source": "https://staging.certification.opengroup.org/togaf%C2%AE%C2%A0enterprise-architecture%C2%A0part-2-exam"
+    "keywords": [
+      "togaf",
+      "general-togaf",
+      "test-prep"
+    ],
+    "source": "https://staging.certification.opengroup.org/togaf%C2%AE%C2%A0enterprise-architecture%C2%A0part-2-exam",
+    "seedId": "84c35850-7b9e-4e01-b7de-a4ce9952e6c5"
   },
   {
     "category": "exams",
@@ -49,10 +85,19 @@
     "navigationKeyword2": "general-togaf",
     "question": "What format is used for the TOGAF Enterprise Architecture Part 2 exam?",
     "correctAnswer": "8 scenario-based complex multiple-choice questions with gradient scoring",
-    "incorrectAnswers": ["40 simple multiple-choice questions only", "A lab exam with simulations", "An oral panel interview"],
+    "incorrectAnswers": [
+      "40 simple multiple-choice questions only",
+      "A lab exam with simulations",
+      "An oral panel interview"
+    ],
     "explanation": "The Open Group describes Part 2 as a scenario-based, complex multiple-choice exam with 8 questions and gradient scoring.",
-    "keywords": ["togaf", "general-togaf", "test-prep"],
-    "source": "https://www.opengroup.org/certifications/togaf-portfolio-faq"
+    "keywords": [
+      "togaf",
+      "general-togaf",
+      "test-prep"
+    ],
+    "source": "https://www.opengroup.org/certifications/togaf-portfolio-faq",
+    "seedId": "72c40c54-389e-43b2-8905-3cb31565782d"
   },
   {
     "category": "exams",
@@ -60,10 +105,19 @@
     "navigationKeyword2": "general-togaf",
     "question": "Is the TOGAF Enterprise Architecture Part 2 exam open book?",
     "correctAnswer": "Yes, it includes built-in electronic reference material",
-    "incorrectAnswers": ["No, it is fully closed book", "Only paper books are allowed", "Only personal notes are allowed"],
+    "incorrectAnswers": [
+      "No, it is fully closed book",
+      "Only paper books are allowed",
+      "Only personal notes are allowed"
+    ],
     "explanation": "The Open Group says Part 2 includes open-book reference material available electronically within the exam.",
-    "keywords": ["togaf", "general-togaf", "test-prep"],
-    "source": "https://help.opengroup.org/hc/en-us/articles/32109993154066-What-Open-Book-Is-Provided-With-the-TOGAF-Enterprise-Architecture-Part-2-Exam"
+    "keywords": [
+      "togaf",
+      "general-togaf",
+      "test-prep"
+    ],
+    "source": "https://help.opengroup.org/hc/en-us/articles/32109993154066-What-Open-Book-Is-Provided-With-the-TOGAF-Enterprise-Architecture-Part-2-Exam",
+    "seedId": "bdecd5b4-a265-446c-819d-845151809ada"
   },
   {
     "category": "exams",
@@ -71,9 +125,18 @@
     "navigationKeyword2": "general-togaf",
     "question": "If a candidate passes Part 2 but not Part 1, do they qualify for TOGAF Enterprise Architecture Practitioner?",
     "correctAnswer": "No, both Part 1 and Part 2 must be passed",
-    "incorrectAnswers": ["Yes, Part 2 alone is enough", "Yes, but only for one year", "Only if they took accredited training"],
+    "incorrectAnswers": [
+      "Yes, Part 2 alone is enough",
+      "Yes, but only for one year",
+      "Only if they took accredited training"
+    ],
     "explanation": "The Open Group says Part 2 alone is not sufficient; both parts must be passed for certifications that require two exams.",
-    "keywords": ["togaf", "general-togaf", "test-prep"],
-    "source": "https://help.opengroup.org/hc/en-us/articles/23988947385362-Can-I-Get-Certified-If-I-Passed-Part-2-but-Not-Part-1"
+    "keywords": [
+      "togaf",
+      "general-togaf",
+      "test-prep"
+    ],
+    "source": "https://help.opengroup.org/hc/en-us/articles/23988947385362-Can-I-Get-Certified-If-I-Passed-Part-2-but-Not-Part-1",
+    "seedId": "f30ab28a-2613-461d-a7ad-9da637122547"
   }
 ]

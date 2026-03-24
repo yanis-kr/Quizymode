@@ -16,7 +16,8 @@
       "aws-ai",
       "aws-services"
     ],
-    "source": "https://aws.amazon.com/bedrock/"
+    "source": "https://aws.amazon.com/bedrock/",
+    "seedId": "2e18aedd-0652-4c3a-9372-e154b69a7a28"
   },
   {
     "category": "exams",
@@ -35,7 +36,8 @@
       "aws-ai",
       "aws-services"
     ],
-    "source": "https://aws.amazon.com/bedrock/"
+    "source": "https://aws.amazon.com/bedrock/",
+    "seedId": "37ec2845-0179-4139-b447-804abca36b59"
   },
   {
     "category": "exams",
@@ -54,7 +56,8 @@
       "aws-ai",
       "aws-services"
     ],
-    "source": "https://aws.amazon.com/rekognition/"
+    "source": "https://aws.amazon.com/rekognition/",
+    "seedId": "1b27ad43-e890-476d-bba3-67026063d1c1"
   },
   {
     "category": "exams",
@@ -73,7 +76,8 @@
       "aws-ai",
       "aws-services"
     ],
-    "source": "https://aws.amazon.com/textract/"
+    "source": "https://aws.amazon.com/textract/",
+    "seedId": "ebdac012-b49b-419b-b452-cb96f20a2b09"
   },
   {
     "category": "exams",
@@ -92,7 +96,8 @@
       "aws-ai",
       "aws-services"
     ],
-    "source": "https://aws.amazon.com/comprehend/"
+    "source": "https://aws.amazon.com/comprehend/",
+    "seedId": "639308c4-17fc-4009-aebb-a3a1f8efba6f"
   },
   {
     "category": "exams",
@@ -111,7 +116,8 @@
       "aws-ai",
       "aws-services"
     ],
-    "source": "https://aws.amazon.com/transcribe/"
+    "source": "https://aws.amazon.com/transcribe/",
+    "seedId": "d27523d0-2ba9-4087-a43b-49b7fdf2f0dd"
   },
   {
     "category": "exams",
@@ -130,7 +136,8 @@
       "aws-ai",
       "aws-services"
     ],
-    "source": "https://aws.amazon.com/translate/"
+    "source": "https://aws.amazon.com/translate/",
+    "seedId": "e0328444-66c6-4fc8-ab17-435557d36aaa"
   },
   {
     "category": "exams",
@@ -149,7 +156,8 @@
       "aws-ai",
       "aws-services"
     ],
-    "source": "https://aws.amazon.com/polly/"
+    "source": "https://aws.amazon.com/polly/",
+    "seedId": "70c5edf3-9542-4afa-b1f2-14f09f779e9d"
   },
   {
     "category": "exams",
@@ -168,7 +176,8 @@
       "aws-ai",
       "aws-services"
     ],
-    "source": "https://aws.amazon.com/lex/"
+    "source": "https://aws.amazon.com/lex/",
+    "seedId": "9967e4da-fec6-4e50-a459-a9dff03568f7"
   },
   {
     "category": "exams",
@@ -187,7 +196,8 @@
       "aws-ai",
       "aws-services"
     ],
-    "source": "https://aws.amazon.com/personalize/"
+    "source": "https://aws.amazon.com/personalize/",
+    "seedId": "16329453-7945-48a6-bdda-904ab3392ae8"
   },
   {
     "category": "exams",
@@ -206,7 +216,8 @@
       "aws-ai",
       "aws-services"
     ],
-    "source": "https://aws.amazon.com/sagemaker/ai/"
+    "source": "https://aws.amazon.com/sagemaker/ai/",
+    "seedId": "440cdb7b-b822-4033-ad3c-20058f2fe386"
   },
   {
     "category": "exams",
@@ -225,6 +236,7 @@
       "aws-ai",
       "aws-services"
     ],
-    "source": "https://aws.amazon.com/bedrock/"
+    "source": "https://aws.amazon.com/bedrock/",
+    "seedId": "49c01ac7-3697-4200-ad68-7290d562ffc3"
   }
 ]

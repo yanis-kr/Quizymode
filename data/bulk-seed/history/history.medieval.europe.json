@@ -5,10 +5,19 @@
     "navigationKeyword2": "europe",
     "question": "On 14 October 1066 near Hastings, which duke’s army broke the English shield wall and replaced the Anglo-Saxon king?",
     "correctAnswer": "William of Normandy (William the Conqueror)",
-    "incorrectAnswers": ["Harald Hardrada of Norway", "Philip I of France", "Robert Guiscard of Apulia"],
+    "incorrectAnswers": [
+      "Harald Hardrada of Norway",
+      "Philip I of France",
+      "Robert Guiscard of Apulia"
+    ],
     "explanation": "William, duke of Normandy, defeated King Harold II at Hastings and went on to consolidate Norman rule in England.",
-    "keywords": ["medieval-europe", "norman-conquest", "england"],
-    "source": "https://www.britannica.com/event/Battle-of-Hastings"
+    "keywords": [
+      "medieval-europe",
+      "norman-conquest",
+      "england"
+    ],
+    "source": "https://www.britannica.com/event/Battle-of-Hastings",
+    "seedId": "615b84e2-8cba-4a1e-877b-a29483f48c18"
   },
   {
     "category": "history",
@@ -16,10 +25,19 @@
     "navigationKeyword2": "europe",
     "question": "Barons at Runnymede in 1215 forced King John to seal a charter limiting arbitrary royal justice and taxation—what is it called?",
     "correctAnswer": "Magna Carta",
-    "incorrectAnswers": ["The Constitutions of Clarendon", "The Golden Bull of 1356", "The Pragmatic Sanction"],
+    "incorrectAnswers": [
+      "The Constitutions of Clarendon",
+      "The Golden Bull of 1356",
+      "The Pragmatic Sanction"
+    ],
     "explanation": "Magna Carta became a foundational text for later ideas about written limits on royal power in England.",
-    "keywords": ["medieval-europe", "england", "law"],
-    "source": "https://www.britannica.com/topic/Magna-Carta"
+    "keywords": [
+      "medieval-europe",
+      "england",
+      "law"
+    ],
+    "source": "https://www.britannica.com/topic/Magna-Carta",
+    "seedId": "5192b31c-f9a4-47e7-ab12-1c84dac6158e"
   },
   {
     "category": "history",
@@ -27,10 +45,19 @@
     "navigationKeyword2": "europe",
     "question": "Mid-fourteenth-century ships and trade routes helped spread which pandemic that killed huge numbers across Europe?",
     "correctAnswer": "The Black Death (bubonic plague)",
-    "incorrectAnswers": ["The Justinianic Plague only", "The 1918 influenza", "Smallpox in the New World"],
+    "incorrectAnswers": [
+      "The Justinianic Plague only",
+      "The 1918 influenza",
+      "Smallpox in the New World"
+    ],
     "explanation": "The Black Death was a catastrophic plague outbreak associated with Yersinia pestis that reshaped medieval European society.",
-    "keywords": ["medieval-europe", "disease", "demography"],
-    "source": "https://www.britannica.com/event/Black-Death"
+    "keywords": [
+      "medieval-europe",
+      "disease",
+      "demography"
+    ],
+    "source": "https://www.britannica.com/event/Black-Death",
+    "seedId": "f03b2102-fbf6-416f-bfa5-42e66c7084db"
   },
   {
     "category": "history",
@@ -38,10 +65,19 @@
     "navigationKeyword2": "europe",
     "question": "On Christmas Day 800 in Rome, Pope Leo III crowned which Frankish king emperor of the Romans?",
     "correctAnswer": "Charlemagne",
-    "incorrectAnswers": ["Otto I", "Frederick Barbarossa", "Charles Martel"],
+    "incorrectAnswers": [
+      "Otto I",
+      "Frederick Barbarossa",
+      "Charles Martel"
+    ],
     "explanation": "Charlemagne’s coronation symbolized a revived western imperial title tied to papal legitimacy.",
-    "keywords": ["medieval-europe", "carolingian", "empire"],
-    "source": "https://www.britannica.com/biography/Charlemagne"
+    "keywords": [
+      "medieval-europe",
+      "carolingian",
+      "empire"
+    ],
+    "source": "https://www.britannica.com/biography/Charlemagne",
+    "seedId": "67c49c90-c3e8-4258-a596-2ddd24f23a7f"
   },
   {
     "category": "history",
@@ -49,10 +85,19 @@
     "navigationKeyword2": "europe",
     "question": "Raiders from Scandinavia struck Lindisfarne’s monastery in 793, a traditional start date for which era in British and Irish memory?",
     "correctAnswer": "The Viking Age",
-    "incorrectAnswers": ["The Hundred Years’ War", "The Investiture Controversy", "The Italian Renaissance"],
+    "incorrectAnswers": [
+      "The Hundred Years’ War",
+      "The Investiture Controversy",
+      "The Italian Renaissance"
+    ],
     "explanation": "The sack of Lindisfarne is often cited as an opening shock of Scandinavian seaborne raids on Christian Europe.",
-    "keywords": ["medieval-europe", "vikings", "british-isles"],
-    "source": "https://www.britannica.com/event/Lindisfarne-Raid"
+    "keywords": [
+      "medieval-europe",
+      "vikings",
+      "british-isles"
+    ],
+    "source": "https://www.britannica.com/event/Lindisfarne-Raid",
+    "seedId": "7e03ae18-d643-4c0b-943d-693e0ed4290f"
   },
   {
     "category": "history",
@@ -60,10 +105,19 @@
     "navigationKeyword2": "europe",
     "question": "Which long series of conflicts, punctuated by truces, pitted the English and French crowns from the 14th into the 15th century?",
     "correctAnswer": "The Hundred Years’ War",
-    "incorrectAnswers": ["The Thirty Years’ War", "The War of the Spanish Succession", "The Napoleonic Wars"],
+    "incorrectAnswers": [
+      "The Thirty Years’ War",
+      "The War of the Spanish Succession",
+      "The Napoleonic Wars"
+    ],
     "explanation": "The Hundred Years’ War was a prolonged struggle over the French throne and English continental holdings.",
-    "keywords": ["medieval-europe", "france", "england"],
-    "source": "https://www.britannica.com/event/Hundred-Years-War"
+    "keywords": [
+      "medieval-europe",
+      "france",
+      "england"
+    ],
+    "source": "https://www.britannica.com/event/Hundred-Years-War",
+    "seedId": "d0b99c10-75e6-4f6d-bd1f-d2390e0074bb"
   },
   {
     "category": "history",
@@ -71,10 +125,19 @@
     "navigationKeyword2": "europe",
     "question": "In 1415 English longbowmen under Henry V won a famous victory over a larger French army at which battle in northern France?",
     "correctAnswer": "Agincourt (Azincourt)",
-    "incorrectAnswers": ["Crécy", "Poitiers", "Orléans"],
+    "incorrectAnswers": [
+      "Crécy",
+      "Poitiers",
+      "Orléans"
+    ],
     "explanation": "Agincourt became emblematic of English archery tactics during the Hundred Years’ War.",
-    "keywords": ["medieval-europe", "hundred-years-war", "warfare"],
-    "source": "https://www.britannica.com/event/Battle-of-Agincourt"
+    "keywords": [
+      "medieval-europe",
+      "hundred-years-war",
+      "warfare"
+    ],
+    "source": "https://www.britannica.com/event/Battle-of-Agincourt",
+    "seedId": "af95e8ac-fdf7-40a7-a8c2-4ac941ebab88"
   },
   {
     "category": "history",
@@ -82,10 +145,19 @@
     "navigationKeyword2": "europe",
     "question": "From the late 14th century, rival popes in Rome and Avignon (and sometimes a third line) deepened which crisis in Latin Christianity?",
     "correctAnswer": "The Western Schism (Great Schism of the West)",
-    "incorrectAnswers": ["The East–West Schism of 1054", "The Protestant Reformation", "The Iconoclast Controversy"],
+    "incorrectAnswers": [
+      "The East–West Schism of 1054",
+      "The Protestant Reformation",
+      "The Iconoclast Controversy"
+    ],
     "explanation": "The Western Schism saw multiple claimants to the papacy and undermined papal unity until the Council of Constance.",
-    "keywords": ["medieval-europe", "papacy", "religion"],
-    "source": "https://www.britannica.com/event/Western-Schism"
+    "keywords": [
+      "medieval-europe",
+      "papacy",
+      "religion"
+    ],
+    "source": "https://www.britannica.com/event/Western-Schism",
+    "seedId": "502ea12b-b7d8-4b1b-a07a-b27dfa7e108c"
   },
   {
     "category": "history",
@@ -93,10 +165,19 @@
     "navigationKeyword2": "europe",
     "question": "Merchant guilds from northern ports coordinated trade and diplomacy in a league whose leading city was Lübeck—what was the league called?",
     "correctAnswer": "The Hanseatic League",
-    "incorrectAnswers": ["The Lombard League", "The Swabian League", "The Catholic League (France)"],
+    "incorrectAnswers": [
+      "The Lombard League",
+      "The Swabian League",
+      "The Catholic League (France)"
+    ],
     "explanation": "The Hanseatic League linked trading towns around the Baltic and North seas for mutual commercial advantage.",
-    "keywords": ["medieval-europe", "trade", "baltic"],
-    "source": "https://www.britannica.com/topic/Hanseatic-League"
+    "keywords": [
+      "medieval-europe",
+      "trade",
+      "baltic"
+    ],
+    "source": "https://www.britannica.com/topic/Hanseatic-League",
+    "seedId": "735df168-25e0-4be5-a9d3-8f491eae02b3"
   },
   {
     "category": "history",
@@ -104,10 +185,19 @@
     "navigationKeyword2": "europe",
     "question": "Which Italian city claims the oldest university in continuous operation in Europe, chartered as a studium generale in the 11th century?",
     "correctAnswer": "Bologna",
-    "incorrectAnswers": ["Oxford", "Salamanca", "Prague"],
+    "incorrectAnswers": [
+      "Oxford",
+      "Salamanca",
+      "Prague"
+    ],
     "explanation": "The University of Bologna is widely cited as the first university in the sense of a chartered corporation of masters and students.",
-    "keywords": ["medieval-europe", "education", "italy"],
-    "source": "https://www.britannica.com/topic/University-of-Bologna"
+    "keywords": [
+      "medieval-europe",
+      "education",
+      "italy"
+    ],
+    "source": "https://www.britannica.com/topic/University-of-Bologna",
+    "seedId": "e6805cac-eaff-4c4b-8eb7-5b06cf26e9fe"
   },
   {
     "category": "history",
@@ -115,10 +205,19 @@
     "navigationKeyword2": "europe",
     "question": "The 1122 Concordat of Worms settled a long conflict between popes and Holy Roman emperors over appointing bishops and controlling church lands. What is that conflict called?",
     "correctAnswer": "The Investiture Controversy",
-    "incorrectAnswers": ["The Avignon Papacy", "The War of Investitures (Spain)", "The Schmalkaldic War"],
+    "incorrectAnswers": [
+      "The Avignon Papacy",
+      "The War of Investitures (Spain)",
+      "The Schmalkaldic War"
+    ],
     "explanation": "The Investiture Controversy pitted emperors and popes over control of ecclesiastical appointments in Latin Christendom.",
-    "keywords": ["medieval-europe", "church", "holy-roman-empire"],
-    "source": "https://www.britannica.com/event/Investiture-Controversy"
+    "keywords": [
+      "medieval-europe",
+      "church",
+      "holy-roman-empire"
+    ],
+    "source": "https://www.britannica.com/event/Investiture-Controversy",
+    "seedId": "8eac57f1-11dc-4888-87a7-9b1652842622"
   },
   {
     "category": "history",
@@ -126,9 +225,18 @@
     "navigationKeyword2": "europe",
     "question": "Pilgrims approaching Chartres see flying buttresses and vast stained-glass windows in a style historians label what?",
     "correctAnswer": "Gothic architecture",
-    "incorrectAnswers": ["Romanesque only", "Baroque", "Neoclassical"],
+    "incorrectAnswers": [
+      "Romanesque only",
+      "Baroque",
+      "Neoclassical"
+    ],
     "explanation": "High medieval cathedrals like Chartres exemplify Gothic engineering and luminous stained-glass programs.",
-    "keywords": ["medieval-europe", "architecture", "france"],
-    "source": "https://www.britannica.com/topic/Gothic-architecture"
+    "keywords": [
+      "medieval-europe",
+      "architecture",
+      "france"
+    ],
+    "source": "https://www.britannica.com/topic/Gothic-architecture",
+    "seedId": "c3cfcde3-7919-4e49-a296-a74ee8638df1"
   }
 ]

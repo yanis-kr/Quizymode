@@ -5,10 +5,19 @@
     "navigationKeyword2": "ancient",
     "question": "Which Nubian kingdom south of Egypt grew wealthy controlling Nile trade and briefly ruled Egypt as the 25th Dynasty?",
     "correctAnswer": "Kush",
-    "incorrectAnswers": ["Axum alone in 1500 bce", "Great Zimbabwe in Nubia", "Carthage on the Upper Nile"],
+    "incorrectAnswers": [
+      "Axum alone in 1500 bce",
+      "Great Zimbabwe in Nubia",
+      "Carthage on the Upper Nile"
+    ],
     "explanation": "Pyramids at Meroë and royal burials at Kurru illustrate its long dialogue with pharaonic and later Roman power.",
-    "keywords": ["kush", "nubia", "egypt"],
-    "source": "https://www.britannica.com/place/Kush"
+    "keywords": [
+      "kush",
+      "nubia",
+      "egypt"
+    ],
+    "source": "https://www.britannica.com/place/Kush",
+    "seedId": "44ecbb4c-8879-42db-8c98-3756d6f22d93"
   },
   {
     "category": "history",
@@ -16,10 +25,19 @@
     "navigationKeyword2": "ancient",
     "question": "Northern Ethiopian Aksumite kings minted coins and traded across the Red Sea while rivaling which lower Nile kingdom?",
     "correctAnswer": "Meroë (Kushite successor state)",
-    "incorrectAnswers": ["The Han dynasty", "Mycenaean Greece", "The Olmec heartland"],
+    "incorrectAnswers": [
+      "The Han dynasty",
+      "Mycenaean Greece",
+      "The Olmec heartland"
+    ],
     "explanation": "Christianization in the 4th century linked Aksum to Byzantine networks while Arabian wars later eroded its overseas sway.",
-    "keywords": ["aksum", "ethiopia", "trade"],
-    "source": "https://www.britannica.com/place/Aksum-ancient-kingdom-Africa"
+    "keywords": [
+      "aksum",
+      "ethiopia",
+      "trade"
+    ],
+    "source": "https://www.britannica.com/place/Aksum-ancient-kingdom-Africa",
+    "seedId": "f2045c02-a958-4f25-b785-4e0994e0afd8"
   },
   {
     "category": "history",
@@ -27,10 +45,19 @@
     "navigationKeyword2": "ancient",
     "question": "Mortarless stone enclosures and the Zimbabwe Bird carvings symbolize which Shona-linked trading center flourishing c. 1100–1450?",
     "correctAnswer": "Great Zimbabwe",
-    "incorrectAnswers": ["Jenne-jeno alone", "Kilwa Kisiwani’s hill fort", "Meroë’s stone circles only"],
+    "incorrectAnswers": [
+      "Jenne-jeno alone",
+      "Kilwa Kisiwani’s hill fort",
+      "Meroë’s stone circles only"
+    ],
     "explanation": "Cattle, crops, and Indian Ocean gold exports sustained a regional power later mythologized by colonial speculators.",
-    "keywords": ["great-zimbabwe", "shona", "trade"],
-    "source": "https://www.britannica.com/place/Great-Zimbabwe"
+    "keywords": [
+      "great-zimbabwe",
+      "shona",
+      "trade"
+    ],
+    "source": "https://www.britannica.com/place/Great-Zimbabwe",
+    "seedId": "98d8a21e-543a-4c19-88c0-d3dd6bcc2142"
   },
   {
     "category": "history",
@@ -38,10 +65,19 @@
     "navigationKeyword2": "ancient",
     "question": "Phoenician settlers from Tyre founded which North African thalassocracy that fought Rome in three Punic Wars?",
     "correctAnswer": "Carthage",
-    "incorrectAnswers": ["Alexandria in Morocco", "Volubilis alone", "Great Zimbabwe’s navy"],
+    "incorrectAnswers": [
+      "Alexandria in Morocco",
+      "Volubilis alone",
+      "Great Zimbabwe’s navy"
+    ],
     "explanation": "Its agrarian hinterland and ports linked Mediterranean silver with trans-Saharan relays long before Roman Africa.",
-    "keywords": ["carthage", "phoenician", "punic"],
-    "source": "https://www.britannica.com/place/Carthage-ancient-city-Tunisia"
+    "keywords": [
+      "carthage",
+      "phoenician",
+      "punic"
+    ],
+    "source": "https://www.britannica.com/place/Carthage-ancient-city-Tunisia",
+    "seedId": "27225d06-27ef-4526-a10c-7b7f7fbd7fee"
   },
   {
     "category": "history",
@@ -49,10 +85,19 @@
     "navigationKeyword2": "ancient",
     "question": "Which Sudanic empire, also called Wagadu, taxed trans-Saharan gold and salt traffic between the 7th and 13th centuries?",
     "correctAnswer": "Ghana (the West African empire)",
-    "incorrectAnswers": ["The modern Republic of Ghana in 800 ce", "The Zulu kingdom", "The Sokoto caliphate"],
+    "incorrectAnswers": [
+      "The modern Republic of Ghana in 800 ce",
+      "The Zulu kingdom",
+      "The Sokoto caliphate"
+    ],
     "explanation": "Arab chroniclers described ghāna as a royal title while Kumbi Saleh archaeology hints at paired Muslim and royal towns.",
-    "keywords": ["ghana", "wagadu", "trade"],
-    "source": "https://www.britannica.com/place/Ghana-historical-West-African-empire"
+    "keywords": [
+      "ghana",
+      "wagadu",
+      "trade"
+    ],
+    "source": "https://www.britannica.com/place/Ghana-historical-West-African-empire",
+    "seedId": "a4ca98bc-f93b-4e14-ac1c-b1ad27cd9df1"
   },
   {
     "category": "history",
@@ -60,10 +105,19 @@
     "navigationKeyword2": "ancient",
     "question": "Sundiata Keita’s Mande forces broke Susu power and laid foundations for which gold-rich successor to Ghana?",
     "correctAnswer": "The empire of Mali",
-    "incorrectAnswers": ["The Ethiopian Solomonic empire", "The Kanem-Bornu navy", "The Merina kingdom"],
+    "incorrectAnswers": [
+      "The Ethiopian Solomonic empire",
+      "The Kanem-Bornu navy",
+      "The Merina kingdom"
+    ],
     "explanation": "Later rulers like Mūsā I displayed fabulous hajj wealth, projecting Sahelian Islam across the Mediterranean imagination.",
-    "keywords": ["mali", "sundiata", "west-africa"],
-    "source": "https://www.britannica.com/place/Mali-historical-empire-Africa"
+    "keywords": [
+      "mali",
+      "sundiata",
+      "west-africa"
+    ],
+    "source": "https://www.britannica.com/place/Mali-historical-empire-Africa",
+    "seedId": "07a67fd1-d747-474e-b713-50c9a7aaa0c1"
   },
   {
     "category": "history",
@@ -71,10 +125,19 @@
     "navigationKeyword2": "ancient",
     "question": "Mūsā I’s 1324 pilgrimage spending reportedly depressed gold prices for years in which Egyptian city?",
     "correctAnswer": "Cairo",
-    "incorrectAnswers": ["Cordoba", "Venice alone", "Samarkand"],
+    "incorrectAnswers": [
+      "Cordoba",
+      "Venice alone",
+      "Samarkand"
+    ],
     "explanation": "Chroniclers linked his largesse to Mali’s reputation as a kingdom of almost mythical mineral abundance.",
-    "keywords": ["mansa-musa", "mali", "cairo"],
-    "source": "https://www.britannica.com/biography/Musa-I-of-Mali"
+    "keywords": [
+      "mansa-musa",
+      "mali",
+      "cairo"
+    ],
+    "source": "https://www.britannica.com/biography/Musa-I-of-Mali",
+    "seedId": "0af0d4f5-cc48-471a-b1d7-2374032cc0fa"
   },
   {
     "category": "history",
@@ -82,10 +145,19 @@
     "navigationKeyword2": "ancient",
     "question": "Askia Muhammad and Sunni Ali are remembered as expansionist rulers of which Niger-bend empire after Mali’s fragmentation?",
     "correctAnswer": "The Songhai empire",
-    "incorrectAnswers": ["The Kingdom of Kongo in 900 ce", "Ptolemaic Egypt", "The Ghana Empire in 1600"],
+    "incorrectAnswers": [
+      "The Kingdom of Kongo in 900 ce",
+      "Ptolemaic Egypt",
+      "The Ghana Empire in 1600"
+    ],
     "explanation": "Moroccan invasion at Tondibi (1591) ended its riverine hegemony yet left scholarly chronicles in Timbuktu.",
-    "keywords": ["songhai", "timbuktu", "sahel"],
-    "source": "https://www.britannica.com/place/Songhai-empire"
+    "keywords": [
+      "songhai",
+      "timbuktu",
+      "sahel"
+    ],
+    "source": "https://www.britannica.com/place/Songhai-empire",
+    "seedId": "d3168538-f039-4a4d-ac17-fd6b1a84a80d"
   },
   {
     "category": "history",
@@ -93,10 +165,19 @@
     "navigationKeyword2": "ancient",
     "question": "Terracotta heads and ironworking from central Nigeria are associated with which early 1st-millennium bce–ce culture?",
     "correctAnswer": "The Nok culture",
-    "incorrectAnswers": ["Swahili stone towns", "Coptic monasticism", "San rock art exclusively"],
+    "incorrectAnswers": [
+      "Swahili stone towns",
+      "Coptic monasticism",
+      "San rock art exclusively"
+    ],
     "explanation": "Its artistic naturalism intrigues archaeologists studying transitions to complex societies south of the Sahara.",
-    "keywords": ["nok", "nigeria", "iron"],
-    "source": "https://www.britannica.com/topic/Nok-culture"
+    "keywords": [
+      "nok",
+      "nigeria",
+      "iron"
+    ],
+    "source": "https://www.britannica.com/topic/Nok-culture",
+    "seedId": "3740887c-7774-489e-b3dc-20a905604cdd"
   },
   {
     "category": "history",
@@ -104,10 +185,19 @@
     "navigationKeyword2": "ancient",
     "question": "Ptolemaic rulers in which Nile entrepôt controlled Upper Egypt and Red Sea trade before Roman annexation in 30 bce?",
     "correctAnswer": "Alexandria (Ptolemaic capital)",
-    "incorrectAnswers": ["Carthage on the Nile", "Meroë in the Delta", "Volubilis in Lower Egypt"],
+    "incorrectAnswers": [
+      "Carthage on the Nile",
+      "Meroë in the Delta",
+      "Volubilis in Lower Egypt"
+    ],
     "explanation": "Its library and lighthouse fame symbolized Hellenistic Africa’s fusion with pharaonic administration.",
-    "keywords": ["ptolemy", "alexandria", "egypt"],
-    "source": "https://www.britannica.com/place/Alexandria-Egypt"
+    "keywords": [
+      "ptolemy",
+      "alexandria",
+      "egypt"
+    ],
+    "source": "https://www.britannica.com/place/Alexandria-Egypt",
+    "seedId": "865c437c-f114-4a61-92cc-8b03c5630acf"
   },
   {
     "category": "history",
@@ -115,10 +205,19 @@
     "navigationKeyword2": "ancient",
     "question": "After 146 bce Rome annexed Carthage’s heartland as which grain-exporting province whose amphitheater at El Djem still stands?",
     "correctAnswer": "The Roman province of Africa (roughly modern Tunisia)",
-    "incorrectAnswers": ["Germania Superior", "Roman Britain alone", "Mauretania Tingitana only"],
+    "incorrectAnswers": [
+      "Germania Superior",
+      "Roman Britain alone",
+      "Mauretania Tingitana only"
+    ],
     "explanation": "Olive oil and wheat from its coast fed imperial distributions, tying North African estates to Rome’s urban diet.",
-    "keywords": ["roman-africa", "tunisia", "empire"],
-    "source": "https://www.britannica.com/place/Africa-Roman-territory"
+    "keywords": [
+      "roman-africa",
+      "tunisia",
+      "empire"
+    ],
+    "source": "https://www.britannica.com/place/Africa-Roman-territory",
+    "seedId": "9f878c1e-9681-4bc3-9a45-59541b52b17a"
   },
   {
     "category": "history",
@@ -126,9 +225,18 @@
     "navigationKeyword2": "ancient",
     "question": "Which semi-legendary founder of Mali appears in the Epic of Sundiata as the unifier of Mande clans against Sumanguru?",
     "correctAnswer": "Sundiata Keita",
-    "incorrectAnswers": ["Shaka Zulu", "Ezana of Aksum", "Piankhi of Napata"],
+    "incorrectAnswers": [
+      "Shaka Zulu",
+      "Ezana of Aksum",
+      "Piankhi of Napata"
+    ],
     "explanation": "Griot performances and Arabic histories alike embed him in Sahelian statecraft memory.",
-    "keywords": ["sundiata", "mali", "epic"],
-    "source": "https://www.britannica.com/biography/Sundiata-Keita"
+    "keywords": [
+      "sundiata",
+      "mali",
+      "epic"
+    ],
+    "source": "https://www.britannica.com/biography/Sundiata-Keita",
+    "seedId": "80c5db6a-2ee1-4d63-9b13-b6d0ce8d044d"
   }
 ]

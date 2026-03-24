@@ -16,7 +16,8 @@
       "aws-operations",
       "aws-services"
     ],
-    "source": "https://aws.amazon.com/cloudtrail/"
+    "source": "https://aws.amazon.com/cloudtrail/",
+    "seedId": "04938314-cfa2-49f2-a208-2f1422800925"
   },
   {
     "category": "exams",
@@ -35,7 +36,8 @@
       "aws-operations",
       "aws-services"
     ],
-    "source": "https://aws.amazon.com/config/"
+    "source": "https://aws.amazon.com/config/",
+    "seedId": "d2061294-3143-4eae-a30a-7788f09aeddb"
   },
   {
     "category": "exams",
@@ -54,7 +56,8 @@
       "aws-operations",
       "aws-services"
     ],
-    "source": "https://aws.amazon.com/systems-manager/"
+    "source": "https://aws.amazon.com/systems-manager/",
+    "seedId": "705a0fcb-60e8-4a82-83e6-ee9d400d74d2"
   },
   {
     "category": "exams",
@@ -73,7 +76,8 @@
       "aws-operations",
       "aws-services"
     ],
-    "source": "https://aws.amazon.com/backup/"
+    "source": "https://aws.amazon.com/backup/",
+    "seedId": "0e8402e4-4bd1-46d2-b201-4f594a63b941"
   },
   {
     "category": "exams",
@@ -92,7 +96,8 @@
       "aws-operations",
       "aws-services"
     ],
-    "source": "https://aws.amazon.com/security-hub/"
+    "source": "https://aws.amazon.com/security-hub/",
+    "seedId": "f559cf40-7c1d-4193-8461-56fc4d87d750"
   },
   {
     "category": "exams",
@@ -111,7 +116,8 @@
       "aws-operations",
       "aws-services"
     ],
-    "source": "https://aws.amazon.com/waf/"
+    "source": "https://aws.amazon.com/waf/",
+    "seedId": "8729df0e-1e19-491e-ac05-1a3647bf4299"
   },
   {
     "category": "exams",
@@ -130,7 +136,8 @@
       "aws-operations",
       "aws-services"
     ],
-    "source": "https://aws.amazon.com/cloudwatch/"
+    "source": "https://aws.amazon.com/cloudwatch/",
+    "seedId": "858fa1ce-ef44-4f3d-b7da-b4663f88d981"
   },
   {
     "category": "exams",
@@ -149,7 +156,8 @@
       "aws-operations",
       "aws-services"
     ],
-    "source": "https://aws.amazon.com/autoscaling/"
+    "source": "https://aws.amazon.com/autoscaling/",
+    "seedId": "8f0402ba-cd00-4bca-9710-526a6334e201"
   },
   {
     "category": "exams",
@@ -168,7 +176,8 @@
       "aws-operations",
       "aws-services"
     ],
-    "source": "https://aws.amazon.com/elasticloadbalancing/"
+    "source": "https://aws.amazon.com/elasticloadbalancing/",
+    "seedId": "ac27893b-aef8-4c6f-9b05-d22c8aabdbcf"
   },
   {
     "category": "exams",
@@ -187,7 +196,8 @@
       "aws-operations",
       "aws-services"
     ],
-    "source": "https://aws.amazon.com/route53/"
+    "source": "https://aws.amazon.com/route53/",
+    "seedId": "ebc31a07-0803-4f89-ac63-f3ba50a00b8f"
   },
   {
     "category": "exams",
@@ -206,7 +216,8 @@
       "aws-operations",
       "aws-services"
     ],
-    "source": "https://aws.amazon.com/organizations/"
+    "source": "https://aws.amazon.com/organizations/",
+    "seedId": "f1db5d56-cf5d-4966-85ec-036fd3aefe93"
   },
   {
     "category": "exams",
@@ -225,6 +236,7 @@
       "aws-operations",
       "aws-services"
     ],
-    "source": "https://docs.aws.amazon.com/awssupport/latest/user/trusted-advisor.html"
+    "source": "https://docs.aws.amazon.com/awssupport/latest/user/trusted-advisor.html",
+    "seedId": "bbdbc8ac-927f-46a1-ab0f-902cce0d8504"
   }
 ]

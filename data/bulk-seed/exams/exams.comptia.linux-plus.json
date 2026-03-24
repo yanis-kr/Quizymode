@@ -5,10 +5,19 @@
     "navigationKeyword2": "linux-plus",
     "question": "What does the `ls` command do in Linux?",
     "correctAnswer": "Lists directory contents",
-    "incorrectAnswers": ["Stops a service", "Changes file ownership", "Encrypts a partition"],
+    "incorrectAnswers": [
+      "Stops a service",
+      "Changes file ownership",
+      "Encrypts a partition"
+    ],
     "explanation": "The `ls` command displays files and directories.",
-    "keywords": ["linux-plus", "linux-admin", "comptia"],
-    "source": "https://man7.org/linux/man-pages/man1/ls.1.html"
+    "keywords": [
+      "linux-plus",
+      "linux-admin",
+      "comptia"
+    ],
+    "source": "https://man7.org/linux/man-pages/man1/ls.1.html",
+    "seedId": "e0f5edcc-d44d-4dd3-bf9d-685fab5699a4"
   },
   {
     "category": "exams",
@@ -16,10 +25,19 @@
     "navigationKeyword2": "linux-plus",
     "question": "What does `chmod` change?",
     "correctAnswer": "File or directory permissions",
-    "incorrectAnswers": ["The kernel version", "The package repository", "The DNS resolver only"],
+    "incorrectAnswers": [
+      "The kernel version",
+      "The package repository",
+      "The DNS resolver only"
+    ],
     "explanation": "`chmod` changes access permissions on files and directories.",
-    "keywords": ["linux-plus", "linux-admin", "comptia"],
-    "source": "https://man7.org/linux/man-pages/man1/chmod.1.html"
+    "keywords": [
+      "linux-plus",
+      "linux-admin",
+      "comptia"
+    ],
+    "source": "https://man7.org/linux/man-pages/man1/chmod.1.html",
+    "seedId": "6d2a4c80-2b14-46a3-b85c-c3a61a48fe74"
   },
   {
     "category": "exams",
@@ -27,10 +45,19 @@
     "navigationKeyword2": "linux-plus",
     "question": "What is `grep` commonly used for?",
     "correctAnswer": "Searching text for lines that match a pattern",
-    "incorrectAnswers": ["Mounting storage volumes", "Starting containers", "Adding users to groups"],
+    "incorrectAnswers": [
+      "Mounting storage volumes",
+      "Starting containers",
+      "Adding users to groups"
+    ],
     "explanation": "`grep` searches input for patterns and prints matching lines.",
-    "keywords": ["linux-plus", "linux-admin", "comptia"],
-    "source": "https://man7.org/linux/man-pages/man1/grep.1.html"
+    "keywords": [
+      "linux-plus",
+      "linux-admin",
+      "comptia"
+    ],
+    "source": "https://man7.org/linux/man-pages/man1/grep.1.html",
+    "seedId": "31755928-4a67-43b0-9920-bebfa4fc6396"
   },
   {
     "category": "exams",
@@ -38,10 +65,19 @@
     "navigationKeyword2": "linux-plus",
     "question": "What is `systemctl` used for on a systemd-based Linux system?",
     "correctAnswer": "Managing services and system units",
-    "incorrectAnswers": ["Editing kernel source code", "Creating VLAN trunks", "Formatting cloud buckets"],
+    "incorrectAnswers": [
+      "Editing kernel source code",
+      "Creating VLAN trunks",
+      "Formatting cloud buckets"
+    ],
     "explanation": "`systemctl` is the primary command-line tool for controlling systemd services and units.",
-    "keywords": ["linux-plus", "linux-admin", "comptia"],
-    "source": "https://www.freedesktop.org/software/systemd/man/systemctl.html"
+    "keywords": [
+      "linux-plus",
+      "linux-admin",
+      "comptia"
+    ],
+    "source": "https://www.freedesktop.org/software/systemd/man/systemctl.html",
+    "seedId": "3910be49-c532-45e0-a722-dad3d3193605"
   },
   {
     "category": "exams",
@@ -49,10 +85,19 @@
     "navigationKeyword2": "linux-plus",
     "question": "What is `journalctl` used for?",
     "correctAnswer": "Viewing and querying logs from the systemd journal",
-    "incorrectAnswers": ["Changing file permissions", "Managing DNS zones", "Configuring RAID arrays"],
+    "incorrectAnswers": [
+      "Changing file permissions",
+      "Managing DNS zones",
+      "Configuring RAID arrays"
+    ],
     "explanation": "`journalctl` reads systemd journal logs.",
-    "keywords": ["linux-plus", "linux-admin", "comptia"],
-    "source": "https://www.freedesktop.org/software/systemd/man/journalctl.html"
+    "keywords": [
+      "linux-plus",
+      "linux-admin",
+      "comptia"
+    ],
+    "source": "https://www.freedesktop.org/software/systemd/man/journalctl.html",
+    "seedId": "cdd29b83-7bbc-4921-a6ca-46bf5bda16f7"
   },
   {
     "category": "exams",
@@ -60,10 +105,19 @@
     "navigationKeyword2": "linux-plus",
     "question": "What is nftables used for?",
     "correctAnswer": "Packet filtering and firewall rules",
-    "incorrectAnswers": ["Package signing only", "Container image building", "Kernel panic analysis"],
+    "incorrectAnswers": [
+      "Package signing only",
+      "Container image building",
+      "Kernel panic analysis"
+    ],
     "explanation": "nftables is a Linux packet filtering and classification framework.",
-    "keywords": ["linux-plus", "linux-admin", "comptia"],
-    "source": "https://wiki.nftables.org/wiki-nftables/index.php/Main_Page"
+    "keywords": [
+      "linux-plus",
+      "linux-admin",
+      "comptia"
+    ],
+    "source": "https://wiki.nftables.org/wiki-nftables/index.php/Main_Page",
+    "seedId": "351a40ba-4817-415d-ad3b-9e975a183570"
   },
   {
     "category": "exams",
@@ -71,10 +125,19 @@
     "navigationKeyword2": "linux-plus",
     "question": "What is LVM primarily used for?",
     "correctAnswer": "Flexible logical volume management on top of physical storage",
-    "incorrectAnswers": ["Routing network packets", "Translating IP addresses", "Managing SSL certificates"],
+    "incorrectAnswers": [
+      "Routing network packets",
+      "Translating IP addresses",
+      "Managing SSL certificates"
+    ],
     "explanation": "LVM lets administrators create, resize, and manage logical storage volumes flexibly.",
-    "keywords": ["linux-plus", "linux-admin", "comptia"],
-    "source": "https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/9/html/configuring_and_managing_logical_volumes/index"
+    "keywords": [
+      "linux-plus",
+      "linux-admin",
+      "comptia"
+    ],
+    "source": "https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/9/html/configuring_and_managing_logical_volumes/index",
+    "seedId": "e937aea9-673c-4643-b98a-7dc91ecf75aa"
   },
   {
     "category": "exams",
@@ -82,10 +145,19 @@
     "navigationKeyword2": "linux-plus",
     "question": "What does SSH provide on a Linux server?",
     "correctAnswer": "Encrypted remote shell access",
-    "incorrectAnswers": ["Disk compression", "Static route summarization", "Directory replication only"],
+    "incorrectAnswers": [
+      "Disk compression",
+      "Static route summarization",
+      "Directory replication only"
+    ],
     "explanation": "SSH provides secure remote access and command execution.",
-    "keywords": ["linux-plus", "linux-admin", "comptia"],
-    "source": "https://www.rfc-editor.org/rfc/rfc4251"
+    "keywords": [
+      "linux-plus",
+      "linux-admin",
+      "comptia"
+    ],
+    "source": "https://www.rfc-editor.org/rfc/rfc4251",
+    "seedId": "676e2a68-d2ab-4a65-acd6-7b0491e71807"
   },
   {
     "category": "exams",
@@ -93,10 +165,19 @@
     "navigationKeyword2": "linux-plus",
     "question": "What is the purpose of the `tar` utility?",
     "correctAnswer": "Creating and extracting archives",
-    "incorrectAnswers": ["Managing firewall zones", "Restarting systemd units", "Inspecting block devices"],
+    "incorrectAnswers": [
+      "Managing firewall zones",
+      "Restarting systemd units",
+      "Inspecting block devices"
+    ],
     "explanation": "`tar` is used to package files into archives and extract them later.",
-    "keywords": ["linux-plus", "linux-admin", "comptia"],
-    "source": "https://www.gnu.org/software/tar/manual/tar.html"
+    "keywords": [
+      "linux-plus",
+      "linux-admin",
+      "comptia"
+    ],
+    "source": "https://www.gnu.org/software/tar/manual/tar.html",
+    "seedId": "675b30ff-f5a4-4bcf-a73c-007a00dd9e8a"
   },
   {
     "category": "exams",
@@ -104,9 +185,18 @@
     "navigationKeyword2": "linux-plus",
     "question": "Why is Python commonly useful in Linux administration?",
     "correctAnswer": "It can automate repetitive operational tasks and scripts",
-    "incorrectAnswers": ["It replaces the kernel scheduler", "It mounts file systems automatically without commands", "It is required to use SSH"],
+    "incorrectAnswers": [
+      "It replaces the kernel scheduler",
+      "It mounts file systems automatically without commands",
+      "It is required to use SSH"
+    ],
     "explanation": "Python is commonly used to automate system administration tasks.",
-    "keywords": ["linux-plus", "linux-admin", "comptia"],
-    "source": "https://docs.python.org/3/tutorial/"
+    "keywords": [
+      "linux-plus",
+      "linux-admin",
+      "comptia"
+    ],
+    "source": "https://docs.python.org/3/tutorial/",
+    "seedId": "876ea4af-9237-43a4-8090-514059ea5300"
   }
 ]

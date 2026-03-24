@@ -1,0 +1,460 @@
+[
+  {
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "saa-c03",
+    "question": "A company manages its own Amazon EC2 instances that run MySQL databases. The company is manually managing replication and scaling as\ndemand increases or decreases. The company needs a new solution that simplies the process of adding or removing compute capacity to or\nfrom its database tier as needed. The solution also must offer improved performance, scaling, and durability with minimal effort from operations.\nWhich solution meets these requirements?",
+    "correctAnswer": "Migrate the databases to Amazon Aurora Serverless for Aurora MySQL.",
+    "incorrectAnswers": [
+      "Migrate the databases to Amazon Aurora Serverless for Aurora PostgreSQL.",
+      "Combine the databases into one larger MySQL database. Run the larger database on larger EC2 instances.",
+      "Create an EC2 Auto Scaling group for the database tier. Migrate the existing databases to the new environment."
+    ],
+    "explanation": "SAA-C03 practice scenario (extract question #229). Correct choice: A.",
+    "keywords": [
+      "aws-saa-c03",
+      "aws-database",
+      "aws-compute",
+      "databases",
+      "aurora",
+      "ec2",
+      "serverless",
+      "mysql"
+    ],
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "seedId": "ce21a52e-9f8c-4f75-98a0-40ee38f78e0c"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "saa-c03",
+    "question": "A company is concerned that two NAT instances in use will no longer be able to support the traffic needed for the company’s application. A\nsolutions architect wants to implement a solution that is highly available, fault tolerant, and automatically scalable.\nWhat should the solutions architect recommend?",
+    "correctAnswer": "Remove the two NAT instances and replace them with two NAT gateways in the same Availability Zone.",
+    "incorrectAnswers": [
+      "Use Auto Scaling groups with Network Load Balancers for the NAT instances in different Availability Zones.",
+      "Remove the two NAT instances and replace them with two NAT gateways in different Availability Zones.",
+      "Replace the two NAT instances with Spot Instances in different Availability Zones and deploy a Network Load Balancer. --- Page 84 ---"
+    ],
+    "explanation": "SAA-C03 practice scenario (extract question #230). Correct choice: A.",
+    "keywords": [
+      "aws-saa-c03",
+      "aws-networking",
+      "nat-gateway"
+    ],
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "seedId": "fb1df85f-1582-4307-8564-be9aa538e50c"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "saa-c03",
+    "question": "An application runs on an Amazon EC2 instance that has an Elastic IP address in VPC A. The application requires access to a database in VPC B.\nBoth VPCs are in the same AWS account.\nWhich solution will provide the required access MOST securely?",
+    "correctAnswer": "Create a DB instance security group that allows all traffic from the public IP address of the application server in VPC A.",
+    "incorrectAnswers": [
+      "Configure a VPC peering connection between VPC A and VPC B.",
+      "Make the DB instance publicly accessible. Assign a public IP address to the DB instance.",
+      "Launch an EC2 instance with an Elastic IP address into VPC B. Proxy all requests through the new EC2 instance."
+    ],
+    "explanation": "SAA-C03 practice scenario (extract question #231). Correct choice: A.",
+    "keywords": [
+      "aws-saa-c03",
+      "aws-compute",
+      "aws-networking",
+      "ec2",
+      "vpc"
+    ],
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "seedId": "8efface6-eff2-4898-94b1-b9bf650c43c2"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "saa-c03",
+    "question": "A company runs demonstration environments for its customers on Amazon EC2 instances. Each environment is isolated in its own VPC. The\ncompany’s operations team needs to be notied when RDP or SSH access to an environment has been established.",
+    "correctAnswer": "Configure Amazon CloudWatch Application Insights to create AWS Systems Manager OpsItems when RDP or SSH access is detected.",
+    "incorrectAnswers": [
+      "Configure the EC2 instances with an IAM instance profile that has an IAM role with the AmazonSSMManagedInstanceCore policy attached.",
+      "Publish VPC ow logs to Amazon CloudWatch Logs. Create required metric lters. Create an Amazon CloudWatch metric alarm with a notication action for when the alarm is in the ALARM state.",
+      "Configure an Amazon EventBridge rule to listen for events of type EC2 Instance State-change Notification. Configure an Amazon Simple Notification Service (Amazon SNS) topic as a target. Subscribe the operations team to the topic."
+    ],
+    "explanation": "SAA-C03 practice scenario (extract question #232). Correct choice: A.",
+    "keywords": [
+      "aws-saa-c03",
+      "aws-management",
+      "aws-compute",
+      "ec2",
+      "vpc",
+      "cloudwatch",
+      "systems-manager"
+    ],
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "seedId": "b3e193d6-63d9-4cb8-b58e-b92a2a43994e"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "saa-c03",
+    "question": "A company is building a new web-based customer relationship management application. The application will use several Amazon EC2 instances\nthat are backed by Amazon Elastic Block Store (Amazon EBS) volumes behind an Application Load Balancer (ALB). The application will also use\nan Amazon Aurora database. All data for the application must be encrypted at rest and in transit.\nWhich solution will meet these requirements?",
+    "correctAnswer": "Use AWS Key Management Service (AWS KMS) certicates on the ALB to encrypt data in transit. Use AWS Certicate Manager (ACM) to encrypt the EBS volumes and Aurora database storage at rest.",
+    "incorrectAnswers": [
+      "Use the AWS root account to log in to the AWS Management Console. Upload the company’s encryption certicates. While in the root account, select the option to turn on encryption for all data at rest and in transit for the account.",
+      "Use AWS Key Management Service (AWS KMS) to encrypt the EBS volumes and Aurora database storage at rest. Attach an AWS Certicate Manager (ACM) certicate to the ALB to encrypt data in transit.",
+      "Use BitLocker to encrypt all data at rest. Import the company’s TLS certicate keys to AWS Key Management Service (AWS KMS) Attach the KMS keys to the ALB to encrypt data in transit."
+    ],
+    "explanation": "SAA-C03 practice scenario (extract question #234). Correct choice: A.",
+    "keywords": [
+      "aws-saa-c03",
+      "aws-networking",
+      "aws-security",
+      "databases",
+      "aurora",
+      "ebs",
+      "ec2",
+      "alb",
+      "kms"
+    ],
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "seedId": "7f9c2251-9a9d-43a1-a5a2-539fe5ec3909"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "saa-c03",
+    "question": "A company is moving its on-premises Oracle database to Amazon Aurora PostgreSQL. The database has several applications that write to the\nsame tables. The applications need to be migrated one by one with a month in between each migration. Management has expressed concerns\nthat the database has a high number of reads and writes. The data must be kept in sync across both databases throughout the migration.\nWhat should a solutions architect recommend?",
+    "correctAnswer": "Use AWS DataSync for the initial migration. Use AWS Database Migration Service (AWS DMS) to create a change data capture (CDC) replication task and a table mapping to select all tables.",
+    "incorrectAnswers": [
+      "Use AWS DataSync for the initial migration. Use AWS Database Migration Service (AWS DMS) to create a full load plus change data capture (CDC) replication task and a table mapping to select all tables.",
+      "Use the AWS Schema Conversion Tool with AWS Database Migration Service (AWS DMS) using a memory optimized replication instance. Create a full load plus change data capture (CDC) replication task and a table mapping to select all tables.",
+      "Use the AWS Schema Conversion Tool with AWS Database Migration Service (AWS DMS) using a compute optimized replication instance. Create a full load plus change data capture (CDC) replication task and a table mapping to select the largest tables. --- Page 86 ---"
+    ],
+    "explanation": "SAA-C03 practice scenario (extract question #235). Correct choice: A.",
+    "keywords": [
+      "aws-saa-c03",
+      "aws-migration",
+      "aws-storage",
+      "databases",
+      "aurora",
+      "datasync",
+      "dms",
+      "postgresql"
+    ],
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "seedId": "21f8530c-0ef0-42e4-b79f-bb87bdfcf45e"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "saa-c03",
+    "question": "A company has a three-tier application for image sharing. The application uses an Amazon EC2 instance for the front-end layer, another EC2\ninstance for the application layer, and a third EC2 instance for a MySQL database. A solutions architect must design a scalable and highly\navailable solution that requires the least amount of change to the application.\nWhich solution meets these requirements?",
+    "correctAnswer": "Use Amazon S3 to host the front-end layer. Use AWS Lambda functions for the application layer. Move the database to an Amazon DynamoDB table. Use Amazon S3 to store and serve users’ images.",
+    "incorrectAnswers": [
+      "Use load-balanced Multi-AZ AWS Elastic Beanstalk environments for the front-end layer and the application layer. Move the database to an Amazon RDS DB instance with multiple read replicas to serve users’ images.",
+      "Use Amazon S3 to host the front-end layer. Use a eet of EC2 instances in an Auto Scaling group for the application layer. Move the database to a memory optimized instance type to store and serve users’ images.",
+      "Use load-balanced Multi-AZ AWS Elastic Beanstalk environments for the front-end layer and the application layer. Move the database to an Amazon RDS Multi-AZ DB instance. Use Amazon S3 to store and serve users’ images."
+    ],
+    "explanation": "SAA-C03 practice scenario (extract question #236). Correct choice: A.",
+    "keywords": [
+      "aws-saa-c03",
+      "aws-database",
+      "aws-compute",
+      "databases",
+      "dynamodb",
+      "s3",
+      "lambda",
+      "ec2",
+      "mysql"
+    ],
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "seedId": "7df3e080-e072-46b1-9e4c-f1c90ee8e7e5"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "saa-c03",
+    "question": "An application running on an Amazon EC2 instance in VPC-A needs to access les in another EC2 instance in VPC-B. Both VPCs are in separate\nAWS accounts. The network administrator needs to design a solution to congure secure access to EC2 instance in VPC-B from VPC-A. The\nconnectivity should not have a single point of failure or bandwidth concerns.\nWhich solution will meet these requirements?",
+    "correctAnswer": "Set up a VPC peering connection between VPC-A and VPC-B.",
+    "incorrectAnswers": [
+      "Set up VPC gateway endpoints for the EC2 instance running in VPC-B.",
+      "Attach a virtual private gateway to VPC-B and set up routing from VPC-A.",
+      "Create a private virtual interface (VIF) for the EC2 instance running in VPC-B and add appropriate routes from VPC-A."
+    ],
+    "explanation": "SAA-C03 practice scenario (extract question #237). Correct choice: A.",
+    "keywords": [
+      "aws-saa-c03",
+      "aws-compute",
+      "aws-networking",
+      "ec2",
+      "vpc"
+    ],
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "seedId": "6ed293b0-5445-4f7b-a34c-ae5e9ce91b59"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "saa-c03",
+    "question": "A company wants to experiment with individual AWS accounts for its engineer team. The company wants to be notied as soon as the Amazon\nEC2 instance usage for a given month exceeds a specific threshold for each account.\nWhat should a solutions architect do to meet this requirement MOST cost-effectively?",
+    "correctAnswer": "Use Cost Explorer to create a daily report of costs by service. Filter the report by EC2 instances. Configure Cost Explorer to send an Amazon Simple Email Service (Amazon SES) notication when a threshold is exceeded.",
+    "incorrectAnswers": [
+      "Use Cost Explorer to create a monthly report of costs by service. Filter the report by EC2 instances. Configure Cost Explorer to send an Amazon Simple Email Service (Amazon SES) notication when a threshold is exceeded.",
+      "Use AWS Budgets to create a cost budget for each account. Set the period to monthly. Set the scope to EC2 instances. Set an alert threshold for the budget. Configure an Amazon Simple Notification Service (Amazon SNS) topic to receive a notication when a threshold is exceeded.",
+      "Use AWS Cost and Usage Reports to create a report with hourly granularity. Integrate the report data with Amazon Athena. Use Amazon EventBridge to schedule an Athena query. Configure an Amazon Simple Notification Service (Amazon SNS) topic to receive a notication when a threshold is exceeded. --- Page 87 ---"
+    ],
+    "explanation": "SAA-C03 practice scenario (extract question #238). Correct choice: A.",
+    "keywords": [
+      "aws-saa-c03",
+      "aws-compute",
+      "aws-management",
+      "ec2"
+    ],
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "seedId": "c6e0b010-1167-4954-b2d5-8d9bc24f36e8"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "saa-c03",
+    "question": "A solutions architect needs to design a new microservice for a company’s application. Clients must be able to call an HTTPS endpoint to reach the\nmicroservice. The microservice also must use AWS Identity and Access Management (IAM) to authenticate calls. The solutions architect will write\nthe logic for this microservice by using a single AWS Lambda function that is written in Go 1.x.\nWhich solution will deploy the function in the MOST operationally efficient way?",
+    "correctAnswer": "Create an Amazon API Gateway REST API. Configure the method to use the Lambda function. Enable IAM authentication on the API.",
+    "incorrectAnswers": [
+      "Create a Lambda function URL for the function. Specify AWS_IAM as the authentication type.",
+      "Create an Amazon CloudFront distribution. Deploy the function to Lambda@Edge. Integrate IAM authentication logic into the Lambda@Edge function.",
+      "Create an Amazon CloudFront distribution. Deploy the function to CloudFront Functions. Specify AWS_IAM as the authentication type."
+    ],
+    "explanation": "SAA-C03 practice scenario (extract question #239). Correct choice: A.",
+    "keywords": [
+      "aws-saa-c03",
+      "aws-compute",
+      "aws-security",
+      "lambda",
+      "api-gateway",
+      "iam"
+    ],
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "seedId": "e8c66473-48ff-488d-add5-e157a6ef8c35"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "saa-c03",
+    "question": "A company previously migrated its data warehouse solution to AWS. The company also has an AWS Direct Connect connection. Corporate oce\nusers query the data warehouse using a visualization tool. The average size of a query returned by the data warehouse is 50 MB and each\nwebpage sent by the visualization tool is approximately 500 KB. Result sets returned by the data warehouse are not cached.\nWhich solution provides the LOWEST data transfer egress cost for the company?",
+    "correctAnswer": "Host the visualization tool on premises and query the data warehouse directly over the internet.",
+    "incorrectAnswers": [
+      "Host the visualization tool in the same AWS Region as the data warehouse. Access it over the internet.",
+      "Host the visualization tool on premises and query the data warehouse directly over a Direct Connect connection at a location in the same AWS Region.",
+      "Host the visualization tool in the same AWS Region as the data warehouse and access it over a Direct Connect connection at a location in the same Region."
+    ],
+    "explanation": "SAA-C03 practice scenario (extract question #240). Correct choice: A.",
+    "keywords": [
+      "aws-saa-c03",
+      "aws-networking",
+      "direct-connect"
+    ],
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "seedId": "902f5b0e-466f-4046-851c-fcf67677b2c9"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "saa-c03",
+    "question": "An online learning company is migrating to the AWS Cloud. The company maintains its student records in a PostgreSQL database. The company\nneeds a solution in which its data is available and online across multiple AWS Regions at all times.\nWhich solution will meet these requirements with the LEAST amount of operational overhead?",
+    "correctAnswer": "Migrate the PostgreSQL database to a PostgreSQL cluster on Amazon EC2 instances.",
+    "incorrectAnswers": [
+      "Migrate the PostgreSQL database to an Amazon RDS for PostgreSQL DB instance with the Multi-AZ feature turned on.",
+      "Migrate the PostgreSQL database to an Amazon RDS for PostgreSQL DB instance. Create a read replica in another Region.",
+      "Migrate the PostgreSQL database to an Amazon RDS for PostgreSQL DB instance. Set up DB snapshots to be copied to another Region. --- Page 88 ---"
+    ],
+    "explanation": "SAA-C03 practice scenario (extract question #241). Correct choice: A.",
+    "keywords": [
+      "aws-saa-c03",
+      "aws-database",
+      "aws-compute",
+      "databases",
+      "ec2",
+      "postgresql"
+    ],
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "seedId": "c645423c-58da-4b4c-b7b3-1fcb5044c226"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "saa-c03",
+    "question": "A company hosts its web application on AWS using seven Amazon EC2 instances. The company requires that the IP addresses of all healthy EC2\ninstances be returned in response to DNS queries.\nWhich policy should be used to meet this requirement?",
+    "correctAnswer": "Simple routing policy",
+    "incorrectAnswers": [
+      "Latency routing policy",
+      "Multivalue routing policy",
+      "Geolocation routing policy"
+    ],
+    "explanation": "SAA-C03 practice scenario (extract question #242). Correct choice: A.",
+    "keywords": [
+      "aws-saa-c03",
+      "aws-compute",
+      "aws-networking",
+      "ec2",
+      "dns"
+    ],
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "seedId": "e05385e0-77cd-4ea8-8327-cdfc28a623ef"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "saa-c03",
+    "question": "A medical research lab produces data that is related to a new study. The lab wants to make the data available with minimum latency to clinics\nacross the country for their on-premises, le-based applications. The data les are stored in an Amazon S3 bucket that has read-only permissions\nfor each clinic.\nWhat should a solutions architect recommend to meet these requirements?",
+    "correctAnswer": "Deploy an AWS Storage Gateway le gateway as a virtual machine (VM) on premises at each clinic",
+    "incorrectAnswers": [
+      "Migrate the les to each clinic’s on-premises applications by using AWS DataSync for processing.",
+      "Deploy an AWS Storage Gateway volume gateway as a virtual machine (VM) on premises at each clinic.",
+      "Attach an Amazon Elastic File System (Amazon EFS) le system to each clinic’s on-premises servers."
+    ],
+    "explanation": "SAA-C03 practice scenario (extract question #243). Correct choice: A.",
+    "keywords": [
+      "aws-saa-c03",
+      "aws-storage",
+      "s3"
+    ],
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "seedId": "a80d7599-ac20-4c08-8d7d-e2ce26a9e31a"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "saa-c03",
+    "question": "A company is using a content management system that runs on a single Amazon EC2 instance. The EC2 instance contains both the web server\nand the database software. The company must make its website platform highly available and must enable the website to scale to meet user\ndemand.\nWhat should a solutions architect recommend to meet these requirements?",
+    "correctAnswer": "Move the database to Amazon RDS, and enable automatic backups. Manually launch another EC2 instance in the same Availability Zone. Configure an Application Load Balancer in the Availability Zone, and set the two instances as targets.",
+    "incorrectAnswers": [
+      "Migrate the database to an Amazon Aurora instance with a read replica in the same Availability Zone as the existing EC2 instance. Manually launch another EC2 instance in the same Availability Zone. Configure an Application Load Balancer, and set the two EC2 instances as targets.",
+      "Move the database to Amazon Aurora with a read replica in another Availability Zone. Create an Amazon Machine Image (AMI) from the EC2 instance. Configure an Application Load Balancer in two Availability Zones. Attach an Auto Scaling group that uses the AMI across two Availability Zones.",
+      "Move the database to a separate EC2 instance, and schedule backups to Amazon S3. Create an Amazon Machine Image (AMI) from the original EC2 instance. Configure an Application Load Balancer in two Availability Zones. Attach an Auto Scaling group that uses the AMI across two Availability Zones. --- Page 89 ---"
+    ],
+    "explanation": "SAA-C03 practice scenario (extract question #244). Correct choice: A.",
+    "keywords": [
+      "aws-saa-c03",
+      "aws-database",
+      "aws-compute",
+      "databases",
+      "rds",
+      "ec2",
+      "alb"
+    ],
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "seedId": "b81b9323-8417-464c-862a-1730c0769e3f"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "saa-c03",
+    "question": "A company is launching an application on AWS. The application uses an Application Load Balancer (ALB) to direct traffic to at least two Amazon\nEC2 instances in a single target group. The instances are in an Auto Scaling group for each environment. The company requires a development\nenvironment and a production environment. The production environment will have periods of high traffic.\nWhich solution will congure the development environment MOST cost-effectively?",
+    "correctAnswer": "Recongure the target group in the development environment to have only one EC2 instance as a target.",
+    "incorrectAnswers": [
+      "Change the ALB balancing algorithm to least outstanding requests.",
+      "Reduce the size of the EC2 instances in both environments.",
+      "Reduce the maximum number of EC2 instances in the development environment’s Auto Scaling group."
+    ],
+    "explanation": "SAA-C03 practice scenario (extract question #245). Correct choice: A.",
+    "keywords": [
+      "aws-saa-c03",
+      "aws-compute",
+      "aws-networking",
+      "ec2",
+      "auto-scaling",
+      "alb"
+    ],
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "seedId": "44ab839d-2b23-4582-af05-e4393b97de19"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "saa-c03",
+    "question": "A company runs a web application on Amazon EC2 instances in multiple Availability Zones. The EC2 instances are in private subnets. A solutions\narchitect implements an internet-facing Application Load Balancer (ALB) and species the EC2 instances as the target group. However, the\ninternet traffic is not reaching the EC2 instances.\nHow should the solutions architect recongure the architecture to resolve this issue?",
+    "correctAnswer": "Replace the ALB with a Network Load Balancer. Configure a NAT gateway in a public subnet to allow internet traffic.",
+    "incorrectAnswers": [
+      "Move the EC2 instances to public subnets. Add a rule to the EC2 instances’ security groups to allow outbound traffic to 0.0.0.0/0.",
+      "Update the route tables for the EC2 instances’ subnets to send 0.0.0.0/0 traffic through the internet gateway route. Add a rule to the EC2 instances’ security groups to allow outbound traffic to 0.0.0.0/0.",
+      "Create public subnets in each Availability Zone. Associate the public subnets with the ALB. Update the route tables for the public subnets with a route to the private subnets."
+    ],
+    "explanation": "SAA-C03 practice scenario (extract question #246). Correct choice: A.",
+    "keywords": [
+      "aws-saa-c03",
+      "aws-networking",
+      "aws-compute",
+      "ec2",
+      "alb",
+      "nlb",
+      "nat-gateway"
+    ],
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "seedId": "f0165bca-fb34-4a49-b4f6-877cb670005d"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "saa-c03",
+    "question": "A company runs analytics software on Amazon EC2 instances. The software accepts job requests from users to process data that has been\nuploaded to Amazon S3. Users report that some submitted data is not being processed Amazon CloudWatch reveals that the EC2 instances have\na consistent CPU utilization at or near 100%. The company wants to improve system performance and scale the system based on user load.\nWhat should a solutions architect do to meet these requirements?",
+    "correctAnswer": "Create a copy of the instance. Place all instances behind an Application Load Balancer.",
+    "incorrectAnswers": [
+      "Create an S3 VPC endpoint for Amazon S3. Update the software to reference the endpoint.",
+      "Stop the EC2 instances. Modify the instance type to one with a more powerful CPU and more memory. Restart the instances.",
+      "Route incoming requests to Amazon Simple Queue Service (Amazon SQS). Configure an EC2 Auto Scaling group based on queue size. Update the software to read from the queue."
+    ],
+    "explanation": "SAA-C03 practice scenario (extract question #248). Correct choice: A.",
+    "keywords": [
+      "aws-saa-c03",
+      "aws-storage",
+      "aws-compute",
+      "s3",
+      "ec2",
+      "alb",
+      "cloudwatch"
+    ],
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "seedId": "8e19025e-ad54-46fc-97b2-0d75083dafe4"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "saa-c03",
+    "question": "A company is implementing a shared storage solution for a media application that is hosted in the AWS Cloud. The company needs the ability to\nuse SMB clients to access data. The solution must be fully managed.\nWhich AWS solution meets these requirements?",
+    "correctAnswer": "Create an AWS Storage Gateway volume gateway. Create a fifile share that uses the required client protocol. Connect the application server to the fifile share.",
+    "incorrectAnswers": [
+      "Create an AWS Storage Gateway tape gateway. Configure tapes to use Amazon S3. Connect the application server to the tape gateway.",
+      "Create an Amazon EC2 Windows instance. Install and congure a Windows fifile share role on the instance. Connect the application server to the fifile share.",
+      "Create an Amazon FSx for Windows File Server le system. Attach the le system to the origin server. Connect the application server to the le system."
+    ],
+    "explanation": "SAA-C03 practice scenario (extract question #249). Correct choice: A.",
+    "keywords": [
+      "aws-saa-c03",
+      "aws-storage",
+      "s3",
+      "fsx",
+      "ec2"
+    ],
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "seedId": "3311526e-9702-4233-98a2-0d5fea2fdd99"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "saa-c03",
+    "question": "A company’s security team requests that network traffic be captured in VPC Flow Logs. The logs will be frequently accessed for 90 days and then\naccessed intermittently.\nWhat should a solutions architect do to meet these requirements when conguring the logs?",
+    "correctAnswer": "Use Amazon CloudWatch as the target. Set the CloudWatch log group with an expiration of 90 days",
+    "incorrectAnswers": [
+      "Use Amazon Kinesis as the target. Configure the Kinesis stream to always retain the logs for 90 days.",
+      "Use AWS CloudTrail as the target. Configure CloudTrail to save to an Amazon S3 bucket, and enable S3 Intelligent-Tiering.",
+      "Use Amazon S3 as the target. Enable an S3 Lifecycle policy to transition the logs to S3 Standard-Infrequent Access (S3 Standard-IA) after 90 days. --- Page 91 ---"
+    ],
+    "explanation": "SAA-C03 practice scenario (extract question #250). Correct choice: A.",
+    "keywords": [
+      "aws-saa-c03",
+      "aws-networking",
+      "aws-management",
+      "vpc",
+      "cloudwatch"
+    ],
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "seedId": "f6879a96-dcc4-4a27-aaf8-43df265fe435"
+  }
+]

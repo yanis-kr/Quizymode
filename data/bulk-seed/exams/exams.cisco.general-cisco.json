@@ -5,10 +5,19 @@
     "navigationKeyword2": "general-cisco",
     "question": "What exam code is used for Cisco CCNA?",
     "correctAnswer": "200-301",
-    "incorrectAnswers": ["200-201", "300-410", "350-401"],
+    "incorrectAnswers": [
+      "200-201",
+      "300-410",
+      "350-401"
+    ],
     "explanation": "Cisco lists 200-301 as the current CCNA exam code.",
-    "keywords": ["ccna", "general-cisco", "test-prep"],
-    "source": "https://www.cisco.com/c/en/us/training-events/training-certifications/exams/current-list/ccna-200-301.html"
+    "keywords": [
+      "ccna",
+      "general-cisco",
+      "test-prep"
+    ],
+    "source": "https://www.cisco.com/c/en/us/training-events/training-certifications/exams/current-list/ccna-200-301.html",
+    "seedId": "fae89324-c3a5-4a3b-9ed3-8434b7117978"
   },
   {
     "category": "exams",
@@ -16,10 +25,19 @@
     "navigationKeyword2": "general-cisco",
     "question": "How long is the 200-301 CCNA exam?",
     "correctAnswer": "120 minutes",
-    "incorrectAnswers": ["90 minutes", "150 minutes", "180 minutes"],
+    "incorrectAnswers": [
+      "90 minutes",
+      "150 minutes",
+      "180 minutes"
+    ],
     "explanation": "Cisco lists the current CCNA exam duration as 120 minutes.",
-    "keywords": ["ccna", "general-cisco", "test-prep"],
-    "source": "https://www.cisco.com/c/en/us/training-events/training-certifications/exams/current-list/ccna-200-301.html"
+    "keywords": [
+      "ccna",
+      "general-cisco",
+      "test-prep"
+    ],
+    "source": "https://www.cisco.com/c/en/us/training-events/training-certifications/exams/current-list/ccna-200-301.html",
+    "seedId": "4145e41d-7e08-4cec-aa21-3cb41424f665"
   },
   {
     "category": "exams",
@@ -27,10 +45,19 @@
     "navigationKeyword2": "general-cisco",
     "question": "What is the listed price of the 200-301 CCNA exam?",
     "correctAnswer": "$US300",
-    "incorrectAnswers": ["$US150", "$US250", "$US400"],
+    "incorrectAnswers": [
+      "$US150",
+      "$US250",
+      "$US400"
+    ],
     "explanation": "Cisco lists the current CCNA exam price as $US300.",
-    "keywords": ["ccna", "general-cisco", "test-prep"],
-    "source": "https://www.cisco.com/c/en/us/training-events/training-certifications/exams/current-list/ccna-200-301.html"
+    "keywords": [
+      "ccna",
+      "general-cisco",
+      "test-prep"
+    ],
+    "source": "https://www.cisco.com/c/en/us/training-events/training-certifications/exams/current-list/ccna-200-301.html",
+    "seedId": "d671b8be-1dca-4447-839f-5bd4bfae5617"
   },
   {
     "category": "exams",
@@ -38,10 +65,19 @@
     "navigationKeyword2": "general-cisco",
     "question": "How many exams are required to earn CCNP Enterprise?",
     "correctAnswer": "Two",
-    "incorrectAnswers": ["One", "Three", "Four"],
+    "incorrectAnswers": [
+      "One",
+      "Three",
+      "Four"
+    ],
     "explanation": "Cisco says CCNP Enterprise requires two exams.",
-    "keywords": ["ccnp", "general-cisco", "test-prep"],
-    "source": "https://www.cisco.com/site/us/en/learn/training-certifications/certifications/enterprise/ccnp-enterprise/index.html"
+    "keywords": [
+      "ccnp",
+      "general-cisco",
+      "test-prep"
+    ],
+    "source": "https://www.cisco.com/site/us/en/learn/training-certifications/certifications/enterprise/ccnp-enterprise/index.html",
+    "seedId": "d3c6fa1a-8dd0-4dcc-a5cc-faa5d790611b"
   },
   {
     "category": "exams",
@@ -49,10 +85,19 @@
     "navigationKeyword2": "general-cisco",
     "question": "Which two exam types make up CCNP Enterprise?",
     "correctAnswer": "A core exam and a CCNP Enterprise concentration exam",
-    "incorrectAnswers": ["A lab exam and an oral exam", "Two core exams", "A fundamentals exam and a practice test"],
+    "incorrectAnswers": [
+      "A lab exam and an oral exam",
+      "Two core exams",
+      "A fundamentals exam and a practice test"
+    ],
     "explanation": "Cisco states that CCNP Enterprise requires a core exam plus one concentration exam.",
-    "keywords": ["ccnp", "general-cisco", "test-prep"],
-    "source": "https://www.cisco.com/site/us/en/learn/training-certifications/certifications/enterprise/ccnp-enterprise/index.html"
+    "keywords": [
+      "ccnp",
+      "general-cisco",
+      "test-prep"
+    ],
+    "source": "https://www.cisco.com/site/us/en/learn/training-certifications/certifications/enterprise/ccnp-enterprise/index.html",
+    "seedId": "1d471c57-f8c4-4786-8c19-6181e91db072"
   },
   {
     "category": "exams",
@@ -60,10 +105,19 @@
     "navigationKeyword2": "general-cisco",
     "question": "How many exams are required to earn CCIE Enterprise Infrastructure?",
     "correctAnswer": "Two",
-    "incorrectAnswers": ["One", "Three", "Four"],
+    "incorrectAnswers": [
+      "One",
+      "Three",
+      "Four"
+    ],
     "explanation": "Cisco says the certification requires two exams.",
-    "keywords": ["ccie", "general-cisco", "test-prep"],
-    "source": "https://www.cisco.com/site/us/en/learn/training-certifications/certifications/enterprise/ccie-enterprise-infrastructure/index.html"
+    "keywords": [
+      "ccie",
+      "general-cisco",
+      "test-prep"
+    ],
+    "source": "https://www.cisco.com/site/us/en/learn/training-certifications/certifications/enterprise/ccie-enterprise-infrastructure/index.html",
+    "seedId": "468efef2-696a-4f2b-a4cf-549fd3886716"
   },
   {
     "category": "exams",
@@ -71,10 +125,19 @@
     "navigationKeyword2": "general-cisco",
     "question": "What formal prerequisites does Cisco list for CCIE Enterprise Infrastructure?",
     "correctAnswer": "No formal prerequisites",
-    "incorrectAnswers": ["CCNP Enterprise is required", "A college degree is required", "Five years of Cisco employment is required"],
+    "incorrectAnswers": [
+      "CCNP Enterprise is required",
+      "A college degree is required",
+      "Five years of Cisco employment is required"
+    ],
     "explanation": "Cisco says there are no formal prerequisites for this certification.",
-    "keywords": ["ccie", "general-cisco", "test-prep"],
-    "source": "https://www.cisco.com/site/us/en/learn/training-certifications/certifications/enterprise/ccie-enterprise-infrastructure/index.html"
+    "keywords": [
+      "ccie",
+      "general-cisco",
+      "test-prep"
+    ],
+    "source": "https://www.cisco.com/site/us/en/learn/training-certifications/certifications/enterprise/ccie-enterprise-infrastructure/index.html",
+    "seedId": "15fb1313-3c78-44de-994b-97e5bf058f3b"
   },
   {
     "category": "exams",
@@ -82,10 +145,19 @@
     "navigationKeyword2": "general-cisco",
     "question": "What core exam is required for Cisco's Cybersecurity Associate certification?",
     "correctAnswer": "200-201 CBROPS",
-    "incorrectAnswers": ["200-301 CCNA", "200-901 CCNAAUTO", "350-401 ENCOR"],
+    "incorrectAnswers": [
+      "200-301 CCNA",
+      "200-901 CCNAAUTO",
+      "350-401 ENCOR"
+    ],
     "explanation": "Cisco lists Understanding Cisco Cybersecurity Operations Fundamentals (200-201 CBROPS) as the core exam.",
-    "keywords": ["cyberops", "general-cisco", "test-prep"],
-    "source": "https://www.cisco.com/site/us/en/learn/training-certifications/certifications/cybersecurity/associate/exams-and-training.html"
+    "keywords": [
+      "cyberops",
+      "general-cisco",
+      "test-prep"
+    ],
+    "source": "https://www.cisco.com/site/us/en/learn/training-certifications/certifications/cybersecurity/associate/exams-and-training.html",
+    "seedId": "98731a2e-f90f-4b60-afa6-e89083ebda36"
   },
   {
     "category": "exams",
@@ -93,10 +165,19 @@
     "navigationKeyword2": "general-cisco",
     "question": "What numeric exam code is used for Cisco's CCNA Automation exam?",
     "correctAnswer": "200-901",
-    "incorrectAnswers": ["200-301", "200-201", "350-401"],
+    "incorrectAnswers": [
+      "200-301",
+      "200-201",
+      "350-401"
+    ],
     "explanation": "Cisco lists 200-901 as the exam code for CCNA Automation.",
-    "keywords": ["devnet", "general-cisco", "test-prep"],
-    "source": "https://www.cisco.com/site/us/en/learn/training-certifications/certifications/automation/ccna-automation/exams-and-training.html"
+    "keywords": [
+      "devnet",
+      "general-cisco",
+      "test-prep"
+    ],
+    "source": "https://www.cisco.com/site/us/en/learn/training-certifications/certifications/automation/ccna-automation/exams-and-training.html",
+    "seedId": "5fcec8ae-278c-441b-ae56-b4a1fe967e8f"
   },
   {
     "category": "exams",
@@ -104,9 +185,18 @@
     "navigationKeyword2": "general-cisco",
     "question": "How long is the 200-901 CCNA Automation exam?",
     "correctAnswer": "120 minutes",
-    "incorrectAnswers": ["90 minutes", "150 minutes", "180 minutes"],
+    "incorrectAnswers": [
+      "90 minutes",
+      "150 minutes",
+      "180 minutes"
+    ],
     "explanation": "Cisco lists the CCNA Automation exam duration as 120 minutes.",
-    "keywords": ["devnet", "general-cisco", "test-prep"],
-    "source": "https://www.cisco.com/site/us/en/learn/training-certifications/certifications/automation/ccna-automation/exams-and-training.html"
+    "keywords": [
+      "devnet",
+      "general-cisco",
+      "test-prep"
+    ],
+    "source": "https://www.cisco.com/site/us/en/learn/training-certifications/certifications/automation/ccna-automation/exams-and-training.html",
+    "seedId": "080c1681-b0b6-4098-94ee-00a693121e81"
   }
 ]

@@ -70,6 +70,15 @@ const AdminDashboardPage = () => {
             Review and update per-user study guide size limits
           </p>
         </Link>
+        <Link
+          to="/admin/seed-sync"
+          className="bg-white shadow rounded-lg p-6 hover:shadow-lg transition-shadow cursor-pointer"
+        >
+          <h3 className="text-lg font-medium text-gray-900 mb-2">Seed Sync</h3>
+          <p className="text-sm text-gray-500">
+            Preview and apply repo-managed seed manifests
+          </p>
+        </Link>
       </div>
     </div>
   );

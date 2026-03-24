@@ -16,7 +16,8 @@
       "azure-fundamentals",
       "azure-services"
     ],
-    "source": "https://learn.microsoft.com/en-us/azure/reliability/regions-overview"
+    "source": "https://learn.microsoft.com/en-us/azure/reliability/regions-overview",
+    "seedId": "dde2cee7-05c5-45a9-88fe-92652e685d1f"
   },
   {
     "category": "exams",
@@ -35,7 +36,8 @@
       "azure-fundamentals",
       "azure-services"
     ],
-    "source": "https://learn.microsoft.com/en-us/azure/reliability/availability-zones-overview"
+    "source": "https://learn.microsoft.com/en-us/azure/reliability/availability-zones-overview",
+    "seedId": "ad80b7e2-4db1-4891-8575-0cc5169dbdff"
   },
   {
     "category": "exams",
@@ -54,7 +56,8 @@
       "azure-fundamentals",
       "azure-services"
     ],
-    "source": "https://learn.microsoft.com/en-us/azure/virtual-machines/overview"
+    "source": "https://learn.microsoft.com/en-us/azure/virtual-machines/overview",
+    "seedId": "0757021b-73a9-4e90-965e-28b56028e61c"
   },
   {
     "category": "exams",
@@ -73,7 +76,8 @@
       "azure-fundamentals",
       "azure-services"
     ],
-    "source": "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-networks-overview"
+    "source": "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-networks-overview",
+    "seedId": "1772def8-cc39-4124-b9b3-1ee4a493b1ac"
   },
   {
     "category": "exams",
@@ -92,7 +96,8 @@
       "azure-fundamentals",
       "azure-services"
     ],
-    "source": "https://learn.microsoft.com/en-us/azure/storage/blobs/storage-blobs-introduction"
+    "source": "https://learn.microsoft.com/en-us/azure/storage/blobs/storage-blobs-introduction",
+    "seedId": "29776fef-e3d3-481b-a3f9-0e04f335ea4d"
   },
   {
     "category": "exams",
@@ -111,7 +116,8 @@
       "azure-fundamentals",
       "azure-services"
     ],
-    "source": "https://learn.microsoft.com/en-us/entra/fundamentals/what-is-entra"
+    "source": "https://learn.microsoft.com/en-us/entra/fundamentals/what-is-entra",
+    "seedId": "f47629b4-c5ef-40f0-b48b-9a4831f88474"
   },
   {
     "category": "exams",
@@ -130,7 +136,8 @@
       "azure-fundamentals",
       "azure-services"
     ],
-    "source": "https://learn.microsoft.com/en-us/azure/role-based-access-control/overview"
+    "source": "https://learn.microsoft.com/en-us/azure/role-based-access-control/overview",
+    "seedId": "de595698-bb35-4747-b085-f0d7a6952ba4"
   },
   {
     "category": "exams",
@@ -149,7 +156,8 @@
       "azure-fundamentals",
       "azure-services"
     ],
-    "source": "https://learn.microsoft.com/en-us/azure/azure-monitor/fundamentals/overview"
+    "source": "https://learn.microsoft.com/en-us/azure/azure-monitor/fundamentals/overview",
+    "seedId": "cd1e50a5-a702-4afc-914f-22e03880f1e0"
   },
   {
     "category": "exams",
@@ -168,7 +176,8 @@
       "azure-fundamentals",
       "azure-services"
     ],
-    "source": "https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/overview"
+    "source": "https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/overview",
+    "seedId": "68c9f032-2614-4c46-9b8d-5968008887d8"
   },
   {
     "category": "exams",
@@ -187,7 +196,8 @@
       "azure-fundamentals",
       "azure-services"
     ],
-    "source": "https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/overview"
+    "source": "https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/overview",
+    "seedId": "cc358bed-aa91-4298-8e1c-6126e2fdcb28"
   },
   {
     "category": "exams",
@@ -206,7 +216,8 @@
       "azure-fundamentals",
       "azure-services"
     ],
-    "source": "https://learn.microsoft.com/en-us/azure/virtual-machine-scale-sets/overview"
+    "source": "https://learn.microsoft.com/en-us/azure/virtual-machine-scale-sets/overview",
+    "seedId": "c5992c93-3fa5-4ccb-a49a-e28038b7a580"
   },
   {
     "category": "exams",
@@ -225,6 +236,7 @@
       "azure-fundamentals",
       "azure-services"
     ],
-    "source": "https://learn.microsoft.com/en-us/azure/azure-functions/"
+    "source": "https://learn.microsoft.com/en-us/azure/azure-functions/",
+    "seedId": "97a3b56f-784d-47c5-a184-884ee1aa2881"
   }
 ]

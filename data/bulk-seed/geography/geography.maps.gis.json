@@ -16,7 +16,8 @@
       "definitions",
       "usgs"
     ],
-    "source": "https://www.usgs.gov/faqs/what-geographic-information-system-gis"
+    "source": "https://www.usgs.gov/faqs/what-geographic-information-system-gis",
+    "seedId": "6885dda8-04d2-4bcc-a5ff-d980ae4bdae7"
   },
   {
     "category": "geography",
@@ -35,7 +36,8 @@
       "spatial-data",
       "basics"
     ],
-    "source": "https://www.usgs.gov/faqs/what-geographic-information-system-gis"
+    "source": "https://www.usgs.gov/faqs/what-geographic-information-system-gis",
+    "seedId": "90fdcc5f-f15c-416a-8156-680a10c8bc33"
   },
   {
     "category": "geography",
@@ -54,7 +56,8 @@
       "habitat",
       "analysis"
     ],
-    "source": "https://www.usgs.gov/faqs/what-geographic-information-system-gis"
+    "source": "https://www.usgs.gov/faqs/what-geographic-information-system-gis",
+    "seedId": "6a37ee72-af05-40e1-94c5-1f4c8dc10e1d"
   },
   {
     "category": "geography",
@@ -73,7 +76,8 @@
       "us-topo",
       "pdf"
     ],
-    "source": "https://www.usgs.gov/faqs/can-i-import-a-us-topo-map-my-geographic-information-system-gis"
+    "source": "https://www.usgs.gov/faqs/can-i-import-a-us-topo-map-my-geographic-information-system-gis",
+    "seedId": "36739f12-4803-4157-9378-4b38a2a65a9a"
   },
   {
     "category": "geography",
@@ -92,7 +96,8 @@
       "us-topo",
       "workflow"
     ],
-    "source": "https://www.usgs.gov/faqs/can-i-import-a-us-topo-map-my-geographic-information-system-gis"
+    "source": "https://www.usgs.gov/faqs/can-i-import-a-us-topo-map-my-geographic-information-system-gis",
+    "seedId": "a5599c93-a5da-48d6-8f2a-35fa816a3708"
   },
   {
     "category": "geography",
@@ -111,7 +116,8 @@
       "noaa",
       "geoplatform"
     ],
-    "source": "https://www.climate.gov/maps-data/dataset/noaas-geoplatform-geospatial-data-maps-apps"
+    "source": "https://www.climate.gov/maps-data/dataset/noaas-geoplatform-geospatial-data-maps-apps",
+    "seedId": "c8a4bd3f-c1f0-4a8d-836f-d54fd0cd52f2"
   },
   {
     "category": "geography",
@@ -130,7 +136,8 @@
       "ncei",
       "climate-data"
     ],
-    "source": "https://www.climate.gov/maps-data/dataset/ncei-map-viewer-application-data-locator"
+    "source": "https://www.climate.gov/maps-data/dataset/ncei-map-viewer-application-data-locator",
+    "seedId": "3d74bc27-39ef-40ec-8363-dac365e6bf9f"
   },
   {
     "category": "geography",
@@ -149,7 +156,8 @@
       "hydrology",
       "pollution"
     ],
-    "source": "https://www.usgs.gov/faqs/what-geographic-information-system-gis"
+    "source": "https://www.usgs.gov/faqs/what-geographic-information-system-gis",
+    "seedId": "2ba460e8-8775-4a7e-b24d-4844baf9b48a"
   },
   {
     "category": "geography",
@@ -168,7 +176,8 @@
       "applications",
       "usgs"
     ],
-    "source": "https://www.usgs.gov/faqs/what-geographic-information-system-gis"
+    "source": "https://www.usgs.gov/faqs/what-geographic-information-system-gis",
+    "seedId": "aa8f3bbe-e8e1-4963-b9b5-c296817e413e"
   },
   {
     "category": "geography",
@@ -187,7 +196,8 @@
       "national-map",
       "usgs"
     ],
-    "source": "https://www.usgs.gov/faqs/what-topographic-map"
+    "source": "https://www.usgs.gov/faqs/what-topographic-map",
+    "seedId": "b4cc2f16-d6ff-42c6-9838-a3df3864a7ec"
   },
   {
     "category": "geography",
@@ -206,6 +216,7 @@
       "drought",
       "noaa"
     ],
-    "source": "https://www.climate.gov/maps-data/dataset/droughtgov-maps-graphs-and-more"
+    "source": "https://www.climate.gov/maps-data/dataset/droughtgov-maps-graphs-and-more",
+    "seedId": "bb1e149c-60a6-4a02-a601-5b3fe4a059d9"
   }
 ]

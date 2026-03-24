@@ -5,10 +5,19 @@
     "navigationKeyword2": "world-war-2",
     "question": "Germany’s September 1, 1939 invasion of which country triggered Anglo-French declarations of war?",
     "correctAnswer": "Poland",
-    "incorrectAnswers": ["Czechoslovakia again in 1939", "Austria", "Belgium first"],
+    "incorrectAnswers": [
+      "Czechoslovakia again in 1939",
+      "Austria",
+      "Belgium first"
+    ],
     "explanation": "The Nazi-Soviet pact’s secret protocols partitioned Polish territory between aggressors.",
-    "keywords": ["poland", "1939", "invasion"],
-    "source": "https://www.britannica.com/event/World-War-II"
+    "keywords": [
+      "poland",
+      "1939",
+      "invasion"
+    ],
+    "source": "https://www.britannica.com/event/World-War-II",
+    "seedId": "de33b342-addd-45b5-b31c-393ae313c11b"
   },
   {
     "category": "history",
@@ -16,10 +25,19 @@
     "navigationKeyword2": "world-war-2",
     "question": "Which June 22, 1941 German invasion opened the gigantic eastern front against the USSR?",
     "correctAnswer": "Operation Barbarossa",
-    "incorrectAnswers": ["Operation Overlord", "Operation Sea Lion", "Case Yellow"],
+    "incorrectAnswers": [
+      "Operation Overlord",
+      "Operation Sea Lion",
+      "Case Yellow"
+    ],
     "explanation": "Blitzkrieg depths stalled before Moscow as winter and reserves blunted panzer spearheads.",
-    "keywords": ["barbarossa", "soviet-union", "1941"],
-    "source": "https://www.britannica.com/event/Operation-Barbarossa"
+    "keywords": [
+      "barbarossa",
+      "soviet-union",
+      "1941"
+    ],
+    "source": "https://www.britannica.com/event/Operation-Barbarossa",
+    "seedId": "146e0314-cae3-433a-8330-e6d2f4013df6"
   },
   {
     "category": "history",
@@ -27,10 +45,19 @@
     "navigationKeyword2": "world-war-2",
     "question": "Japan’s December 7, 1941 carrier strike targeted which U.S. naval base in Hawaiʻi?",
     "correctAnswer": "Pearl Harbor",
-    "incorrectAnswers": ["San Diego fleet anchorage", "Manila Bay only", "Midway before construction"],
+    "incorrectAnswers": [
+      "San Diego fleet anchorage",
+      "Manila Bay only",
+      "Midway before construction"
+    ],
     "explanation": "The attack unified American public opinion for total war across both oceans.",
-    "keywords": ["pearl-harbor", "1941", "japan"],
-    "source": "https://www.britannica.com/event/Pearl-Harbor-attack"
+    "keywords": [
+      "pearl-harbor",
+      "1941",
+      "japan"
+    ],
+    "source": "https://www.britannica.com/event/Pearl-Harbor-attack",
+    "seedId": "ac58e410-4b0b-45df-a84d-4501b996129d"
   },
   {
     "category": "history",
@@ -38,10 +65,19 @@
     "navigationKeyword2": "world-war-2",
     "question": "Which June 1942 Pacific carrier battle is considered the turning point against Japan’s eastern expansion?",
     "correctAnswer": "The Battle of Midway",
-    "incorrectAnswers": ["The Battle of the Bulge", "El Alamein naval phase", "Coral Sea landings"],
+    "incorrectAnswers": [
+      "The Battle of the Bulge",
+      "El Alamein naval phase",
+      "Coral Sea landings"
+    ],
     "explanation": "U.S. dive-bombers destroyed four Japanese fleet carriers in a single afternoon.",
-    "keywords": ["midway", "pacific", "1942"],
-    "source": "https://www.britannica.com/event/Battle-of-Midway"
+    "keywords": [
+      "midway",
+      "pacific",
+      "1942"
+    ],
+    "source": "https://www.britannica.com/event/Battle-of-Midway",
+    "seedId": "063e05c4-e128-43a2-bddd-900d98c6be48"
   },
   {
     "category": "history",
@@ -49,10 +85,19 @@
     "navigationKeyword2": "world-war-2",
     "question": "Paulus’s Sixth Army surrendered in February 1943 after which city battle on the Volga?",
     "correctAnswer": "Stalingrad (Volgograd)",
-    "incorrectAnswers": ["Leningrad exclusively", "Kursk in 1941", "Sevastopol on the Volga"],
+    "incorrectAnswers": [
+      "Leningrad exclusively",
+      "Kursk in 1941",
+      "Sevastopol on the Volga"
+    ],
     "explanation": "Soviet encirclement destroyed an entire German field army, shifting strategic initiative east.",
-    "keywords": ["stalingrad", "1943", "eastern-front"],
-    "source": "https://www.britannica.com/event/Battle-of-Stalingrad"
+    "keywords": [
+      "stalingrad",
+      "1943",
+      "eastern-front"
+    ],
+    "source": "https://www.britannica.com/event/Battle-of-Stalingrad",
+    "seedId": "315b3261-8563-4320-9f48-6a7b897945ec"
   },
   {
     "category": "history",
@@ -60,10 +105,19 @@
     "navigationKeyword2": "world-war-2",
     "question": "What was the Allied code name for the June 6, 1944 combined amphibious and airborne invasion of Normandy?",
     "correctAnswer": "Operation Overlord (D-Day, June 6, 1944)",
-    "incorrectAnswers": ["Operation Torch", "Operation Market Garden", "Operation Husky"],
+    "incorrectAnswers": [
+      "Operation Torch",
+      "Operation Market Garden",
+      "Operation Husky"
+    ],
     "explanation": "Overlord coordinated landings on several beaches and supporting airborne drops; it broke into occupied France and opened the Western Front.",
-    "keywords": ["d-day", "normandy", "1944"],
-    "source": "https://www.britannica.com/event/Normandy-Invasion"
+    "keywords": [
+      "d-day",
+      "normandy",
+      "1944"
+    ],
+    "source": "https://www.britannica.com/event/Normandy-Invasion",
+    "seedId": "301f4058-b136-4446-8506-1bf132c6ab00"
   },
   {
     "category": "history",
@@ -71,10 +125,19 @@
     "navigationKeyword2": "world-war-2",
     "question": "The Wannsee Conference (1942) coordinated the bureaucratic acceleration of what Nazi program?",
     "correctAnswer": "The ‘Final Solution’ genocide of European Jews",
-    "incorrectAnswers": ["The euthanasia program only", "Generalplan Ost without Jews", "V-2 rocket production"],
+    "incorrectAnswers": [
+      "The euthanasia program only",
+      "Generalplan Ost without Jews",
+      "V-2 rocket production"
+    ],
     "explanation": "Railway timetables linked death camps to ghettos across occupied Europe.",
-    "keywords": ["holocaust", "wannsee", "genocide"],
-    "source": "https://www.britannica.com/event/Holocaust"
+    "keywords": [
+      "holocaust",
+      "wannsee",
+      "genocide"
+    ],
+    "source": "https://www.britannica.com/event/Holocaust",
+    "seedId": "5f549d8b-6818-4c8e-ad66-605139cfa976"
   },
   {
     "category": "history",
@@ -82,10 +145,19 @@
     "navigationKeyword2": "world-war-2",
     "question": "Allied firebombing of which city in February 1945 created a firestorm that killed tens of thousands?",
     "correctAnswer": "Dresden",
-    "incorrectAnswers": ["Hiroshima in February", "London by USAAF", "Berlin exclusively"],
+    "incorrectAnswers": [
+      "Hiroshima in February",
+      "London by USAAF",
+      "Berlin exclusively"
+    ],
     "explanation": "Moral debates about strategic bombing intensified as victory neared.",
-    "keywords": ["dresden", "bombing", "1945"],
-    "source": "https://www.britannica.com/event/Bombing-of-Dresden"
+    "keywords": [
+      "dresden",
+      "bombing",
+      "1945"
+    ],
+    "source": "https://www.britannica.com/event/Bombing-of-Dresden",
+    "seedId": "fba20d77-b1df-4aee-85d7-8444379cc31f"
   },
   {
     "category": "history",
@@ -93,10 +165,19 @@
     "navigationKeyword2": "world-war-2",
     "question": "Which August 1945 Manhattan Project weaponings forced Japan’s surrender debate after Hiroshima?",
     "correctAnswer": "Atomic bombings of Hiroshima and Nagasaki",
-    "incorrectAnswers": ["Tokyo gas attacks only", "Kyushu invasion without bombs", "Okinawa atomic test"],
+    "incorrectAnswers": [
+      "Tokyo gas attacks only",
+      "Kyushu invasion without bombs",
+      "Okinawa atomic test"
+    ],
     "explanation": "Emperor Hirohito’s broadcast cited a ‘new and most cruel bomb’ in accepting defeat.",
-    "keywords": ["hiroshima", "nagasaki", "1945"],
-    "source": "https://www.britannica.com/event/atomic-bombings-of-Hiroshima-and-Nagasaki"
+    "keywords": [
+      "hiroshima",
+      "nagasaki",
+      "1945"
+    ],
+    "source": "https://www.britannica.com/event/atomic-bombings-of-Hiroshima-and-Nagasaki",
+    "seedId": "f3f23ea1-1acb-4807-ab09-9c743aa3bad0"
   },
   {
     "category": "history",
@@ -104,10 +185,19 @@
     "navigationKeyword2": "world-war-2",
     "question": "Hitler’s December 1944 Ardennes counteroffensive is popularly known as what?",
     "correctAnswer": "The Battle of the Bulge",
-    "incorrectAnswers": ["Operation Barbarossa replay", "Anzio breakout", "Kursk in Belgium"],
+    "incorrectAnswers": [
+      "Operation Barbarossa replay",
+      "Anzio breakout",
+      "Kursk in Belgium"
+    ],
     "explanation": "Allied logistics and air power eventually closed the salient after initial surprise.",
-    "keywords": ["bulge", "ardennes", "1944"],
-    "source": "https://www.britannica.com/event/Battle-of-the-Bulge"
+    "keywords": [
+      "bulge",
+      "ardennes",
+      "1944"
+    ],
+    "source": "https://www.britannica.com/event/Battle-of-the-Bulge",
+    "seedId": "27b6e231-4732-410c-90e6-64529c9d9d54"
   },
   {
     "category": "history",
@@ -115,10 +205,19 @@
     "navigationKeyword2": "world-war-2",
     "question": "Which June 1940 British evacuation from France saved the core of the expeditionary force?",
     "correctAnswer": "Dunkirk (Dunkerque)",
-    "incorrectAnswers": ["Dieppe 1940", "Crete evacuation", "Singapore 1940"],
+    "incorrectAnswers": [
+      "Dieppe 1940",
+      "Crete evacuation",
+      "Singapore 1940"
+    ],
     "explanation": "Civilian boats supplemented Royal Navy lifts under Luftwaffe harassment.",
-    "keywords": ["dunkirk", "1940", "britain"],
-    "source": "https://www.britannica.com/event/Dunkirk-evacuation"
+    "keywords": [
+      "dunkirk",
+      "1940",
+      "britain"
+    ],
+    "source": "https://www.britannica.com/event/Dunkirk-evacuation",
+    "seedId": "f7857888-6d56-4c4d-b1ad-df9c443014b5"
   },
   {
     "category": "history",
@@ -126,9 +225,18 @@
     "navigationKeyword2": "world-war-2",
     "question": "El Alamein battles in Egypt pitted Rommel’s Afrika Korps against which British field marshal’s forces?",
     "correctAnswer": "Bernard Law Montgomery (among earlier commanders)",
-    "incorrectAnswers": ["Douglas MacArthur", "Georgy Zhukov in Egypt", "Dwight Eisenhower at El Alamein"],
+    "incorrectAnswers": [
+      "Douglas MacArthur",
+      "Georgy Zhukov in Egypt",
+      "Dwight Eisenhower at El Alamein"
+    ],
     "explanation": "Victory secured Alexandria and Suez, enabling the Torch landings in northwest Africa.",
-    "keywords": ["el-alamein", "north-africa", "rommel"],
-    "source": "https://www.britannica.com/event/battles-of-El-Alamein"
+    "keywords": [
+      "el-alamein",
+      "north-africa",
+      "rommel"
+    ],
+    "source": "https://www.britannica.com/event/battles-of-El-Alamein",
+    "seedId": "5d76b857-e4a2-4c24-adb3-3e6db4d78cfb"
   }
 ]

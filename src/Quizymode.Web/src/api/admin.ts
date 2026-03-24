@@ -70,6 +70,65 @@ interface AuditLogsResponse {
   totalPages: number;
 }
 
+export interface SeedSyncItemRequest {
+  seedId: string;
+  category: string;
+  navigationKeyword1: string;
+  navigationKeyword2: string;
+  question: string;
+  correctAnswer: string;
+  incorrectAnswers: string[];
+  explanation?: string | null;
+  keywords?: string[] | null;
+  source?: string | null;
+}
+
+export interface SeedSyncRequest {
+  schemaVersion: number;
+  seedSet: string;
+  items: SeedSyncItemRequest[];
+  deltaPreviewLimit?: number;
+}
+
+export interface SeedSyncChangeResponse {
+  seedId: string;
+  action: string;
+  category: string;
+  navigationKeyword1: string;
+  navigationKeyword2: string;
+  question: string;
+  changedFields: string[];
+}
+
+export interface SeedSyncPreviewResponse {
+  seedSet: string;
+  isInitialSeed: boolean;
+  previewSuppressed: boolean;
+  totalItemsInPayload: number;
+  existingManagedItemCount: number;
+  createdCount: number;
+  updatedCount: number;
+  adoptedCount: number;
+  unchangedCount: number;
+  missingFromPayloadCount: number;
+  hasMoreChanges: boolean;
+  changes: SeedSyncChangeResponse[];
+}
+
+export interface SeedSyncApplyResponse {
+  seedSet: string;
+  isInitialSeed: boolean;
+  totalItemsInPayload: number;
+  existingManagedItemCount: number;
+  createdCount: number;
+  updatedCount: number;
+  adoptedCount: number;
+  unchangedCount: number;
+  missingFromPayloadCount: number;
+  hasMoreChanges: boolean;
+  changes: SeedSyncChangeResponse[];
+}
+
 export const adminApi = {
   getReviewBoardItems: async (): Promise<ReviewBoardResponse> => {
     const response = await apiClient.get<ReviewBoardResponse>(
@@ -222,6 +281,26 @@ export const adminApi = {
   rejectKeyword: async (id: string): Promise<KeywordReviewResponse> => {
     const response = await apiClient.post<KeywordReviewResponse>(
       `/admin/keywords/${id}/reject`
+    );
+    return response.data;
+  },
+
+  previewSeedSync: async (
+    data: SeedSyncRequest
+  ): Promise<SeedSyncPreviewResponse> => {
+    const response = await apiClient.post<SeedSyncPreviewResponse>(
+      "/admin/seed-sync/preview",
+      data
+    );
+    return response.data;
+  },
+
+  applySeedSync: async (
+    data: SeedSyncRequest
+  ): Promise<SeedSyncApplyResponse> => {
+    const response = await apiClient.post<SeedSyncApplyResponse>(
+      "/admin/seed-sync/apply",
+      data
     );
     return response.data;
   },

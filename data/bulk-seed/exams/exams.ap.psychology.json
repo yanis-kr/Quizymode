@@ -5,10 +5,19 @@
     "navigationKeyword2": "psychology",
     "question": "A dog learns to salivate when it hears a bell paired with food. This is an example of what?",
     "correctAnswer": "Classical conditioning",
-    "incorrectAnswers": ["Operant conditioning", "Observational learning", "Cognitive dissonance"],
+    "incorrectAnswers": [
+      "Operant conditioning",
+      "Observational learning",
+      "Cognitive dissonance"
+    ],
     "explanation": "A neutral stimulus becomes associated with an automatic response through classical conditioning.",
-    "keywords": ["ap-psychology", "learning", "psychology"],
-    "source": "https://openstax.org/details/books/psychology-2e"
+    "keywords": [
+      "ap-psychology",
+      "learning",
+      "psychology"
+    ],
+    "source": "https://openstax.org/details/books/psychology-2e",
+    "seedId": "dc5fcf66-1c1d-4fde-9bf2-da556272ab01"
   },
   {
     "category": "exams",
@@ -16,10 +25,19 @@
     "navigationKeyword2": "psychology",
     "question": "Which brain structure is strongly associated with forming new explicit memories?",
     "correctAnswer": "Hippocampus",
-    "incorrectAnswers": ["Medulla", "Cerebellum", "Amygdala"],
+    "incorrectAnswers": [
+      "Medulla",
+      "Cerebellum",
+      "Amygdala"
+    ],
     "explanation": "The hippocampus is central to memory formation.",
-    "keywords": ["ap-psychology", "memory", "psychology"],
-    "source": "https://openstax.org/details/books/psychology-2e"
+    "keywords": [
+      "ap-psychology",
+      "memory",
+      "psychology"
+    ],
+    "source": "https://openstax.org/details/books/psychology-2e",
+    "seedId": "8703de52-4e38-4183-a27a-92d289c34c21"
   },
   {
     "category": "exams",
@@ -27,10 +45,19 @@
     "navigationKeyword2": "psychology",
     "question": "Giving a reward to increase a behavior is called what?",
     "correctAnswer": "Positive reinforcement",
-    "incorrectAnswers": ["Negative reinforcement", "Punishment", "Extinction"],
+    "incorrectAnswers": [
+      "Negative reinforcement",
+      "Punishment",
+      "Extinction"
+    ],
     "explanation": "Positive reinforcement adds a desirable outcome to strengthen behavior.",
-    "keywords": ["ap-psychology", "operant-conditioning", "psychology"],
-    "source": "https://openstax.org/details/books/psychology-2e"
+    "keywords": [
+      "ap-psychology",
+      "operant-conditioning",
+      "psychology"
+    ],
+    "source": "https://openstax.org/details/books/psychology-2e",
+    "seedId": "12fdc112-29a6-486d-ab5d-b343164b24f3"
   },
   {
     "category": "exams",
@@ -38,10 +65,19 @@
     "navigationKeyword2": "psychology",
     "question": "What is the bystander effect?",
     "correctAnswer": "People are less likely to help when others are present",
-    "incorrectAnswers": ["People remember events more accurately in groups", "People learn faster by watching others", "People prefer larger social groups"],
+    "incorrectAnswers": [
+      "People remember events more accurately in groups",
+      "People learn faster by watching others",
+      "People prefer larger social groups"
+    ],
     "explanation": "Diffusion of responsibility can reduce helping behavior in groups.",
-    "keywords": ["ap-psychology", "social-psychology", "psychology"],
-    "source": "https://openstax.org/details/books/psychology-2e"
+    "keywords": [
+      "ap-psychology",
+      "social-psychology",
+      "psychology"
+    ],
+    "source": "https://openstax.org/details/books/psychology-2e",
+    "seedId": "e33e04ce-b1b3-4e76-b03c-0553a80cd967"
   },
   {
     "category": "exams",
@@ -49,9 +85,18 @@
     "navigationKeyword2": "psychology",
     "question": "In an experiment, which variable is deliberately changed by the researcher?",
     "correctAnswer": "Independent variable",
-    "incorrectAnswers": ["Dependent variable", "Control group", "Correlation coefficient"],
+    "incorrectAnswers": [
+      "Dependent variable",
+      "Control group",
+      "Correlation coefficient"
+    ],
     "explanation": "The independent variable is manipulated to test its effect.",
-    "keywords": ["ap-psychology", "research-methods", "psychology"],
-    "source": "https://openstax.org/details/books/psychology-2e"
+    "keywords": [
+      "ap-psychology",
+      "research-methods",
+      "psychology"
+    ],
+    "source": "https://openstax.org/details/books/psychology-2e",
+    "seedId": "06afba5a-1930-4340-b347-adaf1e748b10"
   }
 ]

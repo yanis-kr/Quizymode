@@ -19,6 +19,7 @@ import AdminKeywordsPage from "./features/admin/pages/AdminKeywordsPage";
 import AdminKeywordReviewPage from "./features/admin/pages/AdminKeywordReviewPage";
 import AdminCategoriesPage from "./features/admin/pages/AdminCategoriesPage";
 import AdminUserSettingsPage from "./features/admin/pages/AdminUserSettingsPage";
+import AdminSeedSyncPage from "./features/admin/pages/AdminSeedSyncPage";
 import BulkCreateItemsPage from "./features/items/pages/BulkCreateItemsPage";
 import AddItemsPage from "./features/items/pages/AddItemsPage";
 import UploadToCollectionPage from "./features/items/pages/UploadToCollectionPage";
@@ -105,6 +106,7 @@ function App() {
         <Route path="/admin/keyword-review" element={<AdminKeywordReviewPage />} />
         <Route path="/admin/categories" element={<AdminCategoriesPage />} />
         <Route path="/admin/user-settings" element={<AdminUserSettingsPage />} />
+        <Route path="/admin/seed-sync" element={<AdminSeedSyncPage />} />
         <Route path="/about" element={<AboutPage />} />
         <Route path="/roadmap" element={<RoadmapPage />} />
         <Route path="/feedback" element={<FeedbackPage />} />

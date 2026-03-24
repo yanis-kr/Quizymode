@@ -5,10 +5,19 @@
     "navigationKeyword2": "revolution",
     "question": "The first armed clashes of the Revolutionary War erupted in April 1775 at Lexington and which neighboring town?",
     "correctAnswer": "Concord",
-    "incorrectAnswers": ["Bunker Hill", "Trenton", "Saratoga"],
+    "incorrectAnswers": [
+      "Bunker Hill",
+      "Trenton",
+      "Saratoga"
+    ],
     "explanation": "British troops marched to seize militia supplies, sparking musket fire and a running fight back to Boston.",
-    "keywords": ["revolution", "massachusetts", "1775"],
-    "source": "https://www.britannica.com/event/Battles-of-Lexington-and-Concord"
+    "keywords": [
+      "revolution",
+      "massachusetts",
+      "1775"
+    ],
+    "source": "https://www.britannica.com/event/Battles-of-Lexington-and-Concord",
+    "seedId": "adf88211-b4aa-421b-9d20-640d6e814450"
   },
   {
     "category": "history",
@@ -16,10 +25,19 @@
     "navigationKeyword2": "revolution",
     "question": "Colonial militia fortified Breed’s Hill in June 1775, though the battle is traditionally named after which nearby height?",
     "correctAnswer": "Bunker Hill",
-    "incorrectAnswers": ["Dorchester Heights", "Copp’s Hill", "Beacon Hill"],
+    "incorrectAnswers": [
+      "Dorchester Heights",
+      "Copp’s Hill",
+      "Beacon Hill"
+    ],
     "explanation": "Patriots inflicted heavy casualties before yielding ground, showing they could stand against regulars.",
-    "keywords": ["revolution", "boston", "1775"],
-    "source": "https://www.britannica.com/event/Battle-of-Bunker-Hill"
+    "keywords": [
+      "revolution",
+      "boston",
+      "1775"
+    ],
+    "source": "https://www.britannica.com/event/Battle-of-Bunker-Hill",
+    "seedId": "61f247cf-c0da-45e1-b5c9-e226fb2ed578"
   },
   {
     "category": "history",
@@ -27,10 +45,19 @@
     "navigationKeyword2": "revolution",
     "question": "Thomas Paine’s January 1776 pamphlet Common Sense urged complete independence from which monarch?",
     "correctAnswer": "George III",
-    "incorrectAnswers": ["Louis XVI", "Charles III", "George II"],
+    "incorrectAnswers": [
+      "Louis XVI",
+      "Charles III",
+      "George II"
+    ],
     "explanation": "Plain-language arguments sold hundreds of thousands of copies, shifting opinion toward separation.",
-    "keywords": ["revolution", "pamphlet", "independence"],
-    "source": "https://www.britannica.com/topic/Common-Sense-pamphlet-by-Paine"
+    "keywords": [
+      "revolution",
+      "pamphlet",
+      "independence"
+    ],
+    "source": "https://www.britannica.com/topic/Common-Sense-pamphlet-by-Paine",
+    "seedId": "751503a7-1727-4a56-ad6c-51715a0fe655"
   },
   {
     "category": "history",
@@ -38,10 +65,19 @@
     "navigationKeyword2": "revolution",
     "question": "The Continental Congress adopted the Declaration of Independence primarily drafted by which Virginian?",
     "correctAnswer": "Thomas Jefferson",
-    "incorrectAnswers": ["John Adams", "Benjamin Franklin alone", "Alexander Hamilton"],
+    "incorrectAnswers": [
+      "John Adams",
+      "Benjamin Franklin alone",
+      "Alexander Hamilton"
+    ],
     "explanation": "Jefferson’s committee draft asserted natural rights and listed grievances against George III.",
-    "keywords": ["revolution", "declaration", "1776"],
-    "source": "https://www.britannica.com/event/Declaration-of-Independence"
+    "keywords": [
+      "revolution",
+      "declaration",
+      "1776"
+    ],
+    "source": "https://www.britannica.com/event/Declaration-of-Independence",
+    "seedId": "ba64fece-06c2-46d8-a11c-e62078466f89"
   },
   {
     "category": "history",
@@ -49,10 +85,19 @@
     "navigationKeyword2": "revolution",
     "question": "Horatio Gates’s victory in October 1777 at which New York battle helped convince France to ally openly with the United States?",
     "correctAnswer": "Saratoga",
-    "incorrectAnswers": ["Long Island", "Brandywine", "Monmouth"],
+    "incorrectAnswers": [
+      "Long Island",
+      "Brandywine",
+      "Monmouth"
+    ],
     "explanation": "Burgoyne’s surrender demonstrated the rebellion could defeat a major British field army.",
-    "keywords": ["revolution", "saratoga", "france"],
-    "source": "https://www.britannica.com/event/Battle-of-Saratoga-United-States-history"
+    "keywords": [
+      "revolution",
+      "saratoga",
+      "france"
+    ],
+    "source": "https://www.britannica.com/event/Battle-of-Saratoga-United-States-history",
+    "seedId": "5f5fadbd-ee24-4342-964a-9c2dea4da6ee"
   },
   {
     "category": "history",
@@ -60,10 +105,19 @@
     "navigationKeyword2": "revolution",
     "question": "Washington’s Christmas 1776 crossing of the Delaware River set up a surprise attack on Hessian troops in which New Jersey town?",
     "correctAnswer": "Trenton",
-    "incorrectAnswers": ["Princeton", "Newark", "Camden"],
+    "incorrectAnswers": [
+      "Princeton",
+      "Newark",
+      "Camden"
+    ],
     "explanation": "The first Battle of Trenton revived morale after months of defeats around New York.",
-    "keywords": ["revolution", "new-jersey", "washington"],
-    "source": "https://www.britannica.com/event/Battle-of-Trenton"
+    "keywords": [
+      "revolution",
+      "new-jersey",
+      "washington"
+    ],
+    "source": "https://www.britannica.com/event/Battle-of-Trenton",
+    "seedId": "d6a44bf7-6474-4011-86bb-2aef884bebb3"
   },
   {
     "category": "history",
@@ -71,10 +125,19 @@
     "navigationKeyword2": "revolution",
     "question": "The Continental Army’s harsh winter encampment of 1777–78, marked by Steuben’s drill reforms, occurred where?",
     "correctAnswer": "Valley Forge",
-    "incorrectAnswers": ["Morristown", "West Point", "Cambridge"],
+    "incorrectAnswers": [
+      "Morristown",
+      "West Point",
+      "Cambridge"
+    ],
     "explanation": "Short rations and disease tested morale while the army professionalized for campaigns ahead.",
-    "keywords": ["revolution", "continental-army", "pennsylvania"],
-    "source": "https://www.britannica.com/place/Valley-Forge"
+    "keywords": [
+      "revolution",
+      "continental-army",
+      "pennsylvania"
+    ],
+    "source": "https://www.britannica.com/place/Valley-Forge",
+    "seedId": "5357042c-79c5-4d1f-b051-dddbf85c8085"
   },
   {
     "category": "history",
@@ -82,10 +145,19 @@
     "navigationKeyword2": "revolution",
     "question": "The 1783 Treaty of Paris recognized American independence and set a western boundary to which river for the new nation?",
     "correctAnswer": "The Mississippi River",
-    "incorrectAnswers": ["The Hudson River", "The St. Lawrence River", "The Colorado River"],
+    "incorrectAnswers": [
+      "The Hudson River",
+      "The St. Lawrence River",
+      "The Colorado River"
+    ],
     "explanation": "Britain ceded the trans-Appalachian region east of the Mississippi, though Indigenous nations were not parties.",
-    "keywords": ["revolution", "treaty", "diplomacy"],
-    "source": "https://www.britannica.com/event/Treaty-of-Paris-1783"
+    "keywords": [
+      "revolution",
+      "treaty",
+      "diplomacy"
+    ],
+    "source": "https://www.britannica.com/event/Treaty-of-Paris-1783",
+    "seedId": "d87c9296-43be-4ea9-adc9-06d65821d4e1"
   },
   {
     "category": "history",
@@ -93,10 +165,19 @@
     "navigationKeyword2": "revolution",
     "question": "Americans who continued to support the British Crown during the war were commonly labeled what?",
     "correctAnswer": "Loyalists (Tories)",
-    "incorrectAnswers": ["Federalists", "Anti-Federalists", "Copperheads"],
+    "incorrectAnswers": [
+      "Federalists",
+      "Anti-Federalists",
+      "Copperheads"
+    ],
     "explanation": "Many Loyalists fled to Canada, Britain, or the Caribbean after peace, fearing reprisals.",
-    "keywords": ["revolution", "loyalists", "civil-war"],
-    "source": "https://www.britannica.com/topic/Loyalist-American-Revolution"
+    "keywords": [
+      "revolution",
+      "loyalists",
+      "civil-war"
+    ],
+    "source": "https://www.britannica.com/topic/Loyalist-American-Revolution",
+    "seedId": "c9603c39-83dc-4f71-83d7-c387a780e34c"
   },
   {
     "category": "history",
@@ -104,10 +185,19 @@
     "navigationKeyword2": "revolution",
     "question": "The nation’s first frame of government, adopted during the Revolution, was called what?",
     "correctAnswer": "The Articles of Confederation",
-    "incorrectAnswers": ["The Constitution of 1787", "The Albany Plan", "The Northwest Ordinance"],
+    "incorrectAnswers": [
+      "The Constitution of 1787",
+      "The Albany Plan",
+      "The Northwest Ordinance"
+    ],
     "explanation": "Weak central authority under the Articles later spurred the Philadelphia Convention’s reforms.",
-    "keywords": ["revolution", "government", "articles"],
-    "source": "https://www.britannica.com/topic/Articles-of-Confederation"
+    "keywords": [
+      "revolution",
+      "government",
+      "articles"
+    ],
+    "source": "https://www.britannica.com/topic/Articles-of-Confederation",
+    "seedId": "898a56db-a0c7-4596-9175-5eb64a6d8e02"
   },
   {
     "category": "history",
@@ -115,10 +205,19 @@
     "navigationKeyword2": "revolution",
     "question": "John Paul Jones’s 1779 duel with HMS Serapis off England’s coast made him a naval hero of which emerging navy?",
     "correctAnswer": "The Continental Navy",
-    "incorrectAnswers": ["The Royal Navy", "The French Navy", "The Spanish Armada"],
+    "incorrectAnswers": [
+      "The Royal Navy",
+      "The French Navy",
+      "The Spanish Armada"
+    ],
     "explanation": "Jones’s refusal to surrender—“I have not yet begun to fight”—symbolized American resolve at sea.",
-    "keywords": ["revolution", "navy", "jones"],
-    "source": "https://www.britannica.com/biography/John-Paul-Jones"
+    "keywords": [
+      "revolution",
+      "navy",
+      "jones"
+    ],
+    "source": "https://www.britannica.com/biography/John-Paul-Jones",
+    "seedId": "300192d2-1fc0-4d92-926c-82fe720a6c7d"
   },
   {
     "category": "history",
@@ -126,9 +225,18 @@
     "navigationKeyword2": "revolution",
     "question": "The Franco-American victory at Yorktown forced the surrender of which British general in October 1781?",
     "correctAnswer": "Charles Cornwallis",
-    "incorrectAnswers": ["William Howe", "John Burgoyne", "Henry Clinton"],
+    "incorrectAnswers": [
+      "William Howe",
+      "John Burgoyne",
+      "Henry Clinton"
+    ],
     "explanation": "French fleet and siege artillery trapped Cornwallis on the Virginia peninsula, effectively ending major combat.",
-    "keywords": ["revolution", "yorktown", "cornwallis"],
-    "source": "https://www.britannica.com/event/Siege-of-Yorktown"
+    "keywords": [
+      "revolution",
+      "yorktown",
+      "cornwallis"
+    ],
+    "source": "https://www.britannica.com/event/Siege-of-Yorktown",
+    "seedId": "359789a5-f9ea-4b54-a1f7-296b4da685ee"
   }
 ]

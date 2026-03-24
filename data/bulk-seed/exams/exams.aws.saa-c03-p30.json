@@ -1,0 +1,447 @@
+[
+  {
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "saa-c03",
+    "question": "A company wants to monitor its AWS costs for nancial review. The cloud operations team is designing an architecture in the AWS Organizations\nmanagement account to query AWS Cost and Usage Reports for all member accounts. The team must run this query once a month and provide a\ndetailed analysis of the bill.\nWhich solution is the MOST scalable and cost-effective way to meet these requirements?",
+    "correctAnswer": "Enable Cost and Usage Reports in the management account. Deliver reports to Amazon Kinesis. Use Amazon EMR for analysis.",
+    "incorrectAnswers": [
+      "Enable Cost and Usage Reports in the management account. Deliver the reports to Amazon S3 Use Amazon Athena for analysis.",
+      "Enable Cost and Usage Reports for member accounts. Deliver the reports to Amazon S3 Use Amazon Redshift for analysis.",
+      "Enable Cost and Usage Reports for member accounts. Deliver the reports to Amazon Kinesis. Use Amazon QuickSight tor analysis."
+    ],
+    "explanation": "SAA-C03 practice scenario (extract question #641). Correct choice: A.",
+    "keywords": [
+      "aws-saa-c03",
+      "aws-analytics",
+      "aws-management",
+      "kinesis",
+      "emr",
+      "organizations"
+    ],
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "seedId": "6304a73e-1014-47e9-a4fe-4ff0e22c5e9c"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "saa-c03",
+    "question": "A company wants to run a gaming application on Amazon EC2 instances that are part of an Auto Scaling group in the AWS Cloud. The application\nwill transmit data by using UDP packets. The company wants to ensure that the application can scale out and in as traffic increases and\ndecreases.\nWhat should a solutions architect do to meet these requirements?",
+    "correctAnswer": "Attach a Network Load Balancer to the Auto Scaling group.",
+    "incorrectAnswers": [
+      "Attach an Application Load Balancer to the Auto Scaling group.",
+      "Deploy an Amazon Route 53 record set with a weighted policy to route traffic appropriately.",
+      "Deploy a NAT instance that is congured with port forwarding to the EC2 instances in the Auto Scaling group. --- Page 234 ---"
+    ],
+    "explanation": "SAA-C03 practice scenario (extract question #642). Correct choice: A.",
+    "keywords": [
+      "aws-saa-c03",
+      "aws-compute",
+      "aws-networking",
+      "ec2",
+      "auto-scaling",
+      "nlb"
+    ],
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "seedId": "c9bf7f14-2013-46a8-88b9-8a0afd7d5691"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "saa-c03",
+    "question": "A company runs several websites on AWS for its different brands. Each website generates tens of gigabytes of web traffic logs each day. A\nsolutions architect needs to design a scalable solution to give the company's developers the ability to analyze traffic patterns across all the\ncompany's websites. This analysis by the developers will occur on demand once a week over the course of several months. The solution must\nsupport queries with standard SQL.\nWhich solution will meet these requirements MOST cost-effectively?",
+    "correctAnswer": "Store the logs in Amazon S3. Use Amazon Athena tor analysis.",
+    "incorrectAnswers": [
+      "Store the logs in Amazon RDS. Use a database client for analysis.",
+      "Store the logs in Amazon OpenSearch Service. Use OpenSearch Service for analysis.",
+      "Store the logs in an Amazon EMR cluster Use a supported open-source framework for SQL-based analysis."
+    ],
+    "explanation": "SAA-C03 practice scenario (extract question #643). Correct choice: A.",
+    "keywords": [
+      "aws-saa-c03",
+      "aws-storage",
+      "aws-analytics",
+      "s3",
+      "athena"
+    ],
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "seedId": "65164ced-e9bd-4cbc-8ba4-ec712488aaa7"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "saa-c03",
+    "question": "A company is required to use cryptographic keys in its on-premises key manager. The key manager is outside of the AWS Cloud because of\nregulatory and compliance requirements. The company wants to manage encryption and decryption by using cryptographic keys that are retained\noutside of the AWS Cloud and that support a variety of external key managers from different vendors.\nWhich solution will meet these requirements with the LEAST operational overhead?",
+    "correctAnswer": "Use AWS CloudHSM key store backed by a CloudHSM cluster.",
+    "incorrectAnswers": [
+      "Use an AWS Key Management Service (AWS KMS) external key store backed by an external key manager.",
+      "Use the default AWS Key Management Service (AWS KMS) managed key store.",
+      "Use a custom key store backed by an AWS CloudHSM cluster. --- Page 235 ---"
+    ],
+    "explanation": "SAA-C03 practice scenario (extract question #645). Correct choice: A.",
+    "keywords": [
+      "aws-saa-c03",
+      "aws-security",
+      "kms"
+    ],
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "seedId": "59da6cd4-83fc-454f-a51d-d1f45b7bd41a"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "saa-c03",
+    "question": "A solutions architect needs to host a high performance computing (HPC) workload in the AWS Cloud. The workload will run on hundreds of\nAmazon EC2 instances and will require parallel access to a shared le system to enable distributed processing of large datasets. Datasets will be\naccessed across multiple instances simultaneously. The workload requires access latency within 1 ms. After processing has completed,\nengineers will need access to the dataset for manual postprocessing.\nWhich solution will meet these requirements?",
+    "correctAnswer": "Use Amazon Elastic File System (Amazon EFS) as a shared le system. Access the dataset from Amazon EFS.",
+    "incorrectAnswers": [
+      "Mount an Amazon S3 bucket to serve as the shared le system. Perform postprocessing directly from the S3 bucket.",
+      "Use Amazon FSx for Lustre as a shared le system. Link the le system to an Amazon S3 bucket for postprocessing.",
+      "Configure AWS Resource Access Manager to share an Amazon S3 bucket so that it can be mounted to all instances for processing and postprocessing."
+    ],
+    "explanation": "SAA-C03 practice scenario (extract question #646). Correct choice: A.",
+    "keywords": [
+      "aws-saa-c03",
+      "aws-storage",
+      "aws-compute",
+      "efs",
+      "ec2"
+    ],
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "seedId": "11445e81-a3f4-44da-9632-5d51df9abf6f"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "saa-c03",
+    "question": "A gaming company is building an application with Voice over IP capabilities. The application will serve traffic to users across the world. The\napplication needs to be highly available with an automated failover across AWS Regions. The company wants to minimize the latency of users\nwithout relying on IP address caching on user devices.\nWhat should a solutions architect do to meet these requirements?",
+    "correctAnswer": "Use AWS Global Accelerator with health checks.",
+    "incorrectAnswers": [
+      "Use Amazon Route 53 with a geolocation routing policy.",
+      "Create an Amazon CloudFront distribution that includes multiple origins.",
+      "Create an Application Load Balancer that uses path-based routing."
+    ],
+    "explanation": "SAA-C03 practice scenario (extract question #647). Correct choice: A.",
+    "keywords": [
+      "aws-saa-c03",
+      "aws-networking",
+      "global-accelerator"
+    ],
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "seedId": "7fadeeee-d530-4e74-91df-a3e7097c4ec0"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "saa-c03",
+    "question": "A weather forecasting company needs to process hundreds of gigabytes of data with sub-millisecond latency. The company has a high\nperformance computing (HPC) environment in its data center and wants to expand its forecasting capabilities.\nA solutions architect must identify a highly available cloud storage solution that can handle large amounts of sustained throughput. Files that are\nstored in the solution should be accessible to thousands of compute instances that will simultaneously access and process the entire dataset.\nWhat should the solutions architect do to meet these requirements?",
+    "correctAnswer": "Use Amazon FSx for Lustre scratch le systems.",
+    "incorrectAnswers": [
+      "Use Amazon FSx for Lustre persistent le systems.",
+      "Use Amazon Elastic File System (Amazon EFS) with Bursting Throughput mode.",
+      "Use Amazon Elastic File System (Amazon EFS) with Provisioned Throughput mode. --- Page 236 ---"
+    ],
+    "explanation": "SAA-C03 practice scenario (extract question #648). Correct choice: A.",
+    "keywords": [
+      "aws-saa-c03",
+      "aws-storage",
+      "fsx"
+    ],
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "seedId": "627105ec-91de-42b0-82f1-6f20311c3945"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "saa-c03",
+    "question": "An ecommerce company runs a PostgreSQL database on premises. The database stores data by using high IOPS Amazon Elastic Block Store\n(Amazon EBS) block storage. The daily peak I/O transactions per second do not exceed 15,000 IOPS. The company wants to migrate the database\nto Amazon RDS for PostgreSQL and provision disk IOPS performance independent of disk storage capacity.\nWhich solution will meet these requirements MOST cost-effectively?",
+    "correctAnswer": "Configure the General Purpose SSD (gp2) EBS volume storage type and provision 15,000 IOPS.",
+    "incorrectAnswers": [
+      "Configure the Provisioned IOPS SSD (io1) EBS volume storage type and provision 15,000 IOPS.",
+      "Configure the General Purpose SSD (gp3) EBS volume storage type and provision 15,000 IOPS.",
+      "Configure the EBS magnetic volume type to achieve maximum IOPS."
+    ],
+    "explanation": "SAA-C03 practice scenario (extract question #649). Correct choice: A.",
+    "keywords": [
+      "aws-saa-c03",
+      "aws-database",
+      "aws-storage",
+      "databases",
+      "rds",
+      "ebs",
+      "postgresql"
+    ],
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "seedId": "b96b71c7-43b8-4eb1-aebf-c97752a7b953"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "saa-c03",
+    "question": "A company wants to migrate its on-premises Microsoft SQL Server Enterprise edition database to AWS. The company's online application uses the\ndatabase to process transactions. The data analysis team uses the same production database to run reports for analytical processing. The\ncompany wants to reduce operational overhead by moving to managed services wherever possible.\nWhich solution will meet these requirements with the LEAST operational overhead?",
+    "correctAnswer": "Migrate to Amazon RDS for Microsoft SOL Server. Use read replicas for reporting purposes",
+    "incorrectAnswers": [
+      "Migrate to Microsoft SQL Server on Amazon EC2. Use Always On read replicas for reporting purposes",
+      "Migrate to Amazon DynamoDB. Use DynamoDB on-demand replicas for reporting purposes",
+      "Migrate to Amazon Aurora MySQL. Use Aurora read replicas for reporting purposes"
+    ],
+    "explanation": "SAA-C03 practice scenario (extract question #650). Correct choice: A.",
+    "keywords": [
+      "aws-saa-c03",
+      "aws-database",
+      "databases",
+      "rds"
+    ],
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "seedId": "ac18678e-072d-4fad-b135-ff712cd0c5b0"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "saa-c03",
+    "question": "A company stores a large volume of image les in an Amazon S3 bucket. The images need to be readily available for the rst 180 days. The\nimages are infrequently accessed for the next 180 days. After 360 days, the images need to be archived but must be available instantly upon\nrequest. After 5 years, only auditors can access the images. The auditors must be able to retrieve the images within 12 hours. The images cannot\nbe lost during this process.\nA developer will use S3 Standard storage for the rst 180 days. The developer needs to congure an S3 Lifecycle rule.\nWhich solution will meet these requirements MOST cost-effectively?",
+    "correctAnswer": "Transition the objects to S3 One Zone-Infrequent Access (S3 One Zone-IA) after 180 days. S3 Glacier Instant Retrieval after 360 days, and S3 Glacier Deep Archive after 5 years.",
+    "incorrectAnswers": [
+      "Transition the objects to S3 One Zone-Infrequent Access (S3 One Zone-IA) after 180 days. S3 Glacier Flexible Retrieval after 360 days, and S3 Glacier Deep Archive after 5 years.",
+      "Transition the objects to S3 Standard-Infrequent Access (S3 Standard-IA) after 180 days, S3 Glacier Instant Retrieval after 360 days, and S3 Glacier Deep Archive after 5 years.",
+      "Transition the objects to S3 Standard-Infrequent Access (S3 Standard-IA) after 180 days, S3 Glacier Flexible Retrieval after 360 days, and S3 Glacier Deep Archive after 5 years. --- Page 237 ---"
+    ],
+    "explanation": "SAA-C03 practice scenario (extract question #651). Correct choice: A.",
+    "keywords": [
+      "aws-saa-c03",
+      "aws-storage",
+      "s3",
+      "glacier"
+    ],
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "seedId": "08e0c885-98b9-4d7e-9dcf-e4fb4db3da60"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "saa-c03",
+    "question": "A company has a large data workload that runs for 6 hours each day. The company cannot lose any data while the process is running. A solutions\narchitect is designing an Amazon EMR cluster conguration to support this critical data workload.\nWhich solution will meet these requirements MOST cost-effectively?",
+    "correctAnswer": "Configure a long-running cluster that runs the primary node and core nodes on On-Demand Instances and the task nodes on Spot Instances.",
+    "incorrectAnswers": [
+      "Configure a transient cluster that runs the primary node and core nodes on On-Demand Instances and the task nodes on Spot Instances.",
+      "Configure a transient cluster that runs the primary node on an On-Demand Instance and the core nodes and task nodes on Spot Instances.",
+      "Configure a long-running cluster that runs the primary node on an On-Demand Instance, the core nodes on Spot Instances, and the task nodes on Spot Instances."
+    ],
+    "explanation": "SAA-C03 practice scenario (extract question #652). Correct choice: A.",
+    "keywords": [
+      "aws-saa-c03",
+      "aws-compute",
+      "aws-analytics",
+      "emr"
+    ],
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "seedId": "1f125042-ea00-4722-ae4b-e627722cb174"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "saa-c03",
+    "question": "A company maintains an Amazon RDS database that maps users to cost centers. The company has accounts in an organization in AWS\nOrganizations. The company needs a solution that will tag all resources that are created in a specific AWS account in the organization. The\nsolution must tag each resource with the cost center ID of the user who created the resource.\nWhich solution will meet these requirements?",
+    "correctAnswer": "Move the specific AWS account to a new organizational unit (OU) in Organizations from the management account. Create a service control policy (SCP) that requires all existing resources to have the correct cost center tag before the resources are created. Apply the SCP to the new OU.",
+    "incorrectAnswers": [
+      "Create an AWS Lambda function to tag the resources after the Lambda function looks up the appropriate cost center from the RDS database. Configure an Amazon EventBridge rule that reacts to AWS CloudTrail events to invoke the Lambda function.",
+      "Create an AWS CloudFormation stack to deploy an AWS Lambda function. Configure the Lambda function to look up the appropriate cost center from the RDS database and to tag resources. Create an Amazon EventBridge scheduled rule to invoke the CloudFormation stack.",
+      "Create an AWS Lambda function to tag the resources with a default value. Configure an Amazon EventBridge rule that reacts to AWS CloudTrail events to invoke the Lambda function when a resource is missing the cost center tag. --- Page 238 ---"
+    ],
+    "explanation": "SAA-C03 practice scenario (extract question #653). Correct choice: A.",
+    "keywords": [
+      "aws-saa-c03",
+      "aws-database",
+      "aws-management",
+      "databases",
+      "rds",
+      "organizations"
+    ],
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "seedId": "dcc12030-78f9-42a2-a2e0-07b3bfdfe5d9"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "saa-c03",
+    "question": "A company recently migrated its web application to the AWS Cloud. The company uses an Amazon EC2 instance to run multiple processes to host\nthe application. The processes include an Apache web server that serves static content. The Apache web server makes requests to a PHP\napplication that uses a local Redis server for user sessions.\nThe company wants to redesign the architecture to be highly available and to use AWS managed solutions.\nWhich solution will meet these requirements?",
+    "correctAnswer": "Use AWS Elastic Beanstalk to host the static content and the PHP application. Configure Elastic Beanstalk to deploy its EC2 instance into a public subnet. Assign a public IP address.",
+    "incorrectAnswers": [
+      "Use AWS Lambda to host the static content and the PHP application. Use an Amazon API Gateway REST API to proxy requests to the Lambda function. Set the API Gateway CORS conguration to respond to the domain name. Configure Amazon ElastiCache for Redis to handle session information.",
+      "Keep the backend code on the EC2 instance. Create an Amazon ElastiCache for Redis cluster that has Multi-AZ enabled. Configure the ElastiCache for Redis cluster in cluster mode. Copy the frontend resources to Amazon S3. Configure the backend code to reference the EC2 instance.",
+      "Configure an Amazon CloudFront distribution with an Amazon S3 endpoint to an S3 bucket that is congured to host the static content. Configure an Application Load Balancer that targets an Amazon Elastic Container Service (Amazon ECS) service that runs AWS Fargate tasks for the PHP application. Configure the PHP application to use an Amazon ElastiCache for Redis cluster that runs in multiple Availability Zones."
+    ],
+    "explanation": "SAA-C03 practice scenario (extract question #654). Correct choice: A.",
+    "keywords": [
+      "aws-saa-c03",
+      "aws-compute",
+      "aws-networking",
+      "databases",
+      "elasticache",
+      "ec2",
+      "elastic-beanstalk"
+    ],
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "seedId": "a0bece6b-98e5-49d2-accb-e9e08c724f94"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "saa-c03",
+    "question": "A company runs a website that stores images of historical events. Website users need the ability to search and view images based on the year\nthat the event in the image occurred. On average, users request each image only once or twice a year. The company wants a highly available\nsolution to store and deliver the images to users.\nWhich solution will meet these requirements MOST cost-effectively?",
+    "correctAnswer": "Store images in Amazon Elastic Block Store (Amazon EBS). Use a web server that runs on Amazon EC2.",
+    "incorrectAnswers": [
+      "Store images in Amazon Elastic File System (Amazon EFS). Use a web server that runs on Amazon EC2.",
+      "Store images in Amazon S3 Standard. Use S3 Standard to directly deliver images by using a static website.",
+      "Store images in Amazon S3 Standard-Infrequent Access (S3 Standard-IA). Use S3 Standard-IA to directly deliver images by using a static website."
+    ],
+    "explanation": "SAA-C03 practice scenario (extract question #656). Correct choice: A.",
+    "keywords": [
+      "aws-saa-c03",
+      "aws-storage",
+      "aws-compute",
+      "ebs",
+      "ec2"
+    ],
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "seedId": "b5cfd200-e2ac-4910-ad05-315083ca22c4"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "saa-c03",
+    "question": "A company has multiple AWS accounts in an organization in AWS Organizations that different business units use. The company has multiple\noces around the world. The company needs to update security group rules to allow new oce CIDR ranges or to remove old CIDR ranges across\nthe organization. The company wants to centralize the management of security group rules to minimize the administrative overhead that updating\nCIDR ranges requires.\nWhich solution will meet these requirements MOST cost-effectively?",
+    "correctAnswer": "Create VPC security groups in the organization's management account. Update the security groups when a CIDR range update is necessary.",
+    "incorrectAnswers": [
+      "Create a VPC customer managed prex list that contains the list of CIDRs. Use AWS Resource Access Manager (AWS RAM) to share the prex list across the organization. Use the prex list in the security groups across the organization.",
+      "Create an AWS managed prex list. Use an AWS Security Hub policy to enforce the security group update across the organization. Use an AWS Lambda function to update the prex list automatically when the CIDR ranges change.",
+      "Create security groups in a central administrative AWS account. Create an AWS Firewall Manager common security group policy for the whole organization. Select the previously created security groups as primary groups in the policy."
+    ],
+    "explanation": "SAA-C03 practice scenario (extract question #657). Correct choice: A.",
+    "keywords": [
+      "aws-saa-c03",
+      "aws-networking",
+      "aws-management",
+      "vpc",
+      "organizations"
+    ],
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "seedId": "b15b17d2-0341-44a1-8a0d-aca396f385f6"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "saa-c03",
+    "question": "A company is relocating its data center and wants to securely transfer 50 TB of data to AWS within 2 weeks. The existing data center has a Site-to-\nSite VPN connection to AWS that is 90% utilized.\nWhich AWS service should a solutions architect use to meet these requirements?",
+    "correctAnswer": "AWS DataSync with a VPC endpoint",
+    "incorrectAnswers": [
+      "AWS Direct Connect",
+      "AWS Snowball Edge Storage Optimized",
+      "AWS Storage Gateway"
+    ],
+    "explanation": "SAA-C03 practice scenario (extract question #659). Correct choice: A.",
+    "keywords": [
+      "aws-saa-c03",
+      "aws-networking",
+      "aws-storage",
+      "vpc",
+      "vpc-endpoint",
+      "site-to-site-vpn",
+      "datasync"
+    ],
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "seedId": "54419709-4865-4e59-9c60-48b51813a12c"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "saa-c03",
+    "question": "A company hosts an application on Amazon EC2 On-Demand Instances in an Auto Scaling group. Application peak hours occur at the same time\neach day. Application users report slow application performance at the start of peak hours. The application performs normally 2-3 hours after\npeak hours begin. The company wants to ensure that the application works properly at the start of peak hours.\nWhich solution will meet these requirements?",
+    "correctAnswer": "Configure an Application Load Balancer to distribute traffic properly to the instances.",
+    "incorrectAnswers": [
+      "Configure a dynamic scaling policy for the Auto Scaling group to launch new instances based on memory utilization.",
+      "Configure a dynamic scaling policy for the Auto Scaling group to launch new instances based on CPU utilization.",
+      "Configure a scheduled scaling policy for the Auto Scaling group to launch new instances before peak hours."
+    ],
+    "explanation": "SAA-C03 practice scenario (extract question #660). Correct choice: A.",
+    "keywords": [
+      "aws-saa-c03",
+      "aws-compute",
+      "aws-networking",
+      "ec2",
+      "auto-scaling",
+      "alb"
+    ],
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "seedId": "09ad822c-88a3-46b7-8c4f-cec69d6cba7a"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "saa-c03",
+    "question": "A company runs applications on AWS that connect to the company's Amazon RDS database. The applications scale on weekends and at peak\ntimes of the year. The company wants to scale the database more effectively for its applications that connect to the database.\nWhich solution will meet these requirements with the LEAST operational overhead?",
+    "correctAnswer": "Use Amazon DynamoDB with connection pooling with a target group conguration for the database. Change the applications to use the DynamoDB endpoint.",
+    "incorrectAnswers": [
+      "Use Amazon RDS Proxy with a target group for the database. Change the applications to use the RDS Proxy endpoint.",
+      "Use a custom proxy that runs on Amazon EC2 as an intermediary to the database. Change the applications to use the custom proxy endpoint.",
+      "Use an AWS Lambda function to provide connection pooling with a target group conguration for the database. Change the applications to use the Lambda function. --- Page 241 ---"
+    ],
+    "explanation": "SAA-C03 practice scenario (extract question #661). Correct choice: A.",
+    "keywords": [
+      "aws-saa-c03",
+      "aws-database",
+      "databases",
+      "dynamodb",
+      "rds"
+    ],
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "seedId": "8d8dab11-4de2-4e40-a82a-60c1b10fdede"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "saa-c03",
+    "question": "A company uses AWS Cost Explorer to monitor its AWS costs. The company notices that Amazon Elastic Block Store (Amazon EBS) storage and\nsnapshot costs increase every month. However, the company does not purchase additional EBS storage every month. The company wants to\noptimize monthly costs for its current storage usage.\nWhich solution will meet these requirements with the LEAST operational overhead?",
+    "correctAnswer": "Use logs in Amazon CloudWatch Logs to monitor the storage utilization of Amazon EBS. Use Amazon EBS Elastic Volumes to reduce the size of the EBS volumes.",
+    "incorrectAnswers": [
+      "Use a custom script to monitor space usage. Use Amazon EBS Elastic Volumes to reduce the size of the EBS volumes.",
+      "Delete all expired and unused snapshots to reduce snapshot costs.",
+      "Delete all nonessential snapshots. Use Amazon Data Lifecycle Manager to create and manage the snapshots according to the company's snapshot policy requirements."
+    ],
+    "explanation": "SAA-C03 practice scenario (extract question #662). Correct choice: A.",
+    "keywords": [
+      "aws-saa-c03",
+      "aws-management",
+      "aws-storage",
+      "ebs",
+      "cloudwatch"
+    ],
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "seedId": "0503dcde-5f6f-4998-a1c2-6abb79ddf177"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "saa-c03",
+    "question": "A company is developing a new application on AWS. The application consists of an Amazon Elastic Container Service (Amazon ECS) cluster, an\nAmazon S3 bucket that contains assets for the application, and an Amazon RDS for MySQL database that contains the dataset for the application.\nThe dataset contains sensitive information. The company wants to ensure that only the ECS cluster can access the data in the RDS for MySQL\ndatabase and the data in the S3 bucket.\nWhich solution will meet these requirements?",
+    "correctAnswer": "Create a new AWS Key Management Service (AWS KMS) customer managed key to encrypt both the S3 bucket and the RDS for MySQL database. Ensure that the KMS key policy includes encrypt and decrypt permissions for the ECS task execution role.",
+    "incorrectAnswers": [
+      "Create an AWS Key Management Service (AWS KMS) AWS managed key to encrypt both the S3 bucket and the RDS for MySQL database. Ensure that the S3 bucket policy species the ECS task execution role as a user.",
+      "Create an S3 bucket policy that restricts bucket access to the ECS task execution role. Create a VPC endpoint for Amazon RDS for MySQL. Update the RDS for MySQL security group to allow access from only the subnets that the ECS cluster will generate tasks in.",
+      "Create a VPC endpoint for Amazon RDS for MySQL. Update the RDS for MySQL security group to allow access from only the subnets that the ECS cluster will generate tasks in. Create a VPC endpoint for Amazon S3. Update the S3 bucket policy to allow access from only the S3 VPC endpoint. --- Page 242 ---"
+    ],
+    "explanation": "SAA-C03 practice scenario (extract question #663). Correct choice: A.",
+    "keywords": [
+      "aws-saa-c03",
+      "aws-database",
+      "aws-storage",
+      "databases",
+      "rds",
+      "s3",
+      "ecs",
+      "kms",
+      "mysql"
+    ],
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "seedId": "e04a08f7-5e9f-41f1-8b85-8daaa13c8acf"
+  }
+]

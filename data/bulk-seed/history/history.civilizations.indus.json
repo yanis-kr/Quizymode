@@ -5,10 +5,19 @@
     "navigationKeyword2": "indus",
     "question": "Archaeologists date the urban Indus civilization’s core florescence to roughly which span in the third and second millennia BCE?",
     "correctAnswer": "About 2600–1900 BCE (with southern sites sometimes persisting later)",
-    "incorrectAnswers": ["8000–6000 BCE", "500 BCE–200 CE", "1200–800 BCE only"],
+    "incorrectAnswers": [
+      "8000–6000 BCE",
+      "500 BCE–200 CE",
+      "1200–800 BCE only"
+    ],
     "explanation": "Those centuries bracket the major planned cities, standardized weights, and long-distance trade attested archaeologically.",
-    "keywords": ["chronology", "bronze-age", "south-asia"],
-    "source": "https://www.britannica.com/topic/Indus-civilization"
+    "keywords": [
+      "chronology",
+      "bronze-age",
+      "south-asia"
+    ],
+    "source": "https://www.britannica.com/topic/Indus-civilization",
+    "seedId": "29fc6764-5173-4848-b293-e7d6fc94fb7d"
   },
   {
     "category": "history",
@@ -16,10 +25,19 @@
     "navigationKeyword2": "indus",
     "question": "The civilization was first identified in 1921 at Harappa in Punjab and then in 1922 at which major Sindh site?",
     "correctAnswer": "Mohenjo-daro",
-    "incorrectAnswers": ["Lothal alone first", "Taxila", "Pataliputra"],
+    "incorrectAnswers": [
+      "Lothal alone first",
+      "Taxila",
+      "Pataliputra"
+    ],
     "explanation": "Pairing the two megasites revealed a shared material culture across hundreds of miles along the Indus system.",
-    "keywords": ["mohenjo-daro", "harappa", "discovery"],
-    "source": "https://www.britannica.com/place/Mohenjo-daro"
+    "keywords": [
+      "mohenjo-daro",
+      "harappa",
+      "discovery"
+    ],
+    "source": "https://www.britannica.com/place/Mohenjo-daro",
+    "seedId": "dbe77230-2747-4bf8-83f4-746e7231580f"
   },
   {
     "category": "history",
@@ -27,10 +45,19 @@
     "navigationKeyword2": "indus",
     "question": "Mohenjo-daro’s ‘Great Bath’ and orderly brick drains illustrate advanced concern with what urban problem?",
     "correctAnswer": "Water management, hygiene, and drainage",
-    "incorrectAnswers": ["Airship mooring", "Optical telegraph lines", "Underground rail transit"],
+    "incorrectAnswers": [
+      "Airship mooring",
+      "Optical telegraph lines",
+      "Underground rail transit"
+    ],
     "explanation": "Sophisticated sewers and sump wells supported dense occupation in a flood-prone river environment.",
-    "keywords": ["great-bath", "urban-planning", "hydraulics"],
-    "source": "https://www.britannica.com/place/Mohenjo-daro"
+    "keywords": [
+      "great-bath",
+      "urban-planning",
+      "hydraulics"
+    ],
+    "source": "https://www.britannica.com/place/Mohenjo-daro",
+    "seedId": "86df8d02-780e-401d-b025-bff7847ef2cf"
   },
   {
     "category": "history",
@@ -38,10 +65,19 @@
     "navigationKeyword2": "indus",
     "question": "Indus farmers grew six-row barley, wheat, field peas, and some of the earliest attested traces of which fiber crop?",
     "correctAnswer": "Cotton",
-    "incorrectAnswers": ["Indigo only as staple food", "Rubber", "Tea"],
+    "incorrectAnswers": [
+      "Indigo only as staple food",
+      "Rubber",
+      "Tea"
+    ],
     "explanation": "Cotton cultivation underpinned spinning and trade ties visible in archaeological seed and textile impressions.",
-    "keywords": ["agriculture", "cotton", "economy"],
-    "source": "https://www.britannica.com/topic/Indus-civilization"
+    "keywords": [
+      "agriculture",
+      "cotton",
+      "economy"
+    ],
+    "source": "https://www.britannica.com/topic/Indus-civilization",
+    "seedId": "5b5dac3d-41d9-4115-9591-c73f3c05431a"
   },
   {
     "category": "history",
@@ -49,10 +85,19 @@
     "navigationKeyword2": "indus",
     "question": "Short inscriptions on seals and pottery use a script that today is generally described how?",
     "correctAnswer": "Still undeciphered",
-    "incorrectAnswers": ["Fully read as Sanskrit", "Identical to cuneiform", "Proven Linear Elamite"],
+    "incorrectAnswers": [
+      "Fully read as Sanskrit",
+      "Identical to cuneiform",
+      "Proven Linear Elamite"
+    ],
     "explanation": "Without bilingual texts, political titles and phonetic values remain contested among specialists.",
-    "keywords": ["script", "seals", "harappan"],
-    "source": "https://www.britannica.com/topic/Harappan-script"
+    "keywords": [
+      "script",
+      "seals",
+      "harappan"
+    ],
+    "source": "https://www.britannica.com/topic/Harappan-script",
+    "seedId": "1074f17a-6699-418b-aba6-869daa2a32e6"
   },
   {
     "category": "history",
@@ -60,10 +105,19 @@
     "navigationKeyword2": "indus",
     "question": "Remarkably uniform cubical stone weights across Indus sites imply strong control over what economic practice?",
     "correctAnswer": "Trade measurement and commodity exchange",
-    "incorrectAnswers": ["Astrological timekeeping only", "Musical tuning standards", "Ship hull plating"],
+    "incorrectAnswers": [
+      "Astrological timekeeping only",
+      "Musical tuning standards",
+      "Ship hull plating"
+    ],
     "explanation": "Standardized mass units eased taxation, long-distance exchange, and workshop output across city networks.",
-    "keywords": ["weights", "trade", "administration"],
-    "source": "https://www.britannica.com/topic/Indus-civilization"
+    "keywords": [
+      "weights",
+      "trade",
+      "administration"
+    ],
+    "source": "https://www.britannica.com/topic/Indus-civilization",
+    "seedId": "d0e53434-5ed5-4741-a44a-c2414d12f6b7"
   },
   {
     "category": "history",
@@ -71,10 +125,19 @@
     "navigationKeyword2": "indus",
     "question": "The ruins of Mohenjo-daro were inscribed as a UNESCO World Heritage site in which year?",
     "correctAnswer": "1980",
-    "incorrectAnswers": ["1947", "1960", "2001"],
+    "incorrectAnswers": [
+      "1947",
+      "1960",
+      "2001"
+    ],
     "explanation": "Global listing recognized outstanding universal value while highlighting threats from salinity and groundwater.",
-    "keywords": ["unesco", "mohenjo-daro", "heritage"],
-    "source": "https://www.britannica.com/place/Mohenjo-daro"
+    "keywords": [
+      "unesco",
+      "mohenjo-daro",
+      "heritage"
+    ],
+    "source": "https://www.britannica.com/place/Mohenjo-daro",
+    "seedId": "a66ef2c9-e581-4e6f-afb2-589e97ea76fb"
   },
   {
     "category": "history",
@@ -82,10 +145,19 @@
     "navigationKeyword2": "indus",
     "question": "Indus material has been found as far west as Sutkagen Dor near which sea’s shore in Pakistani Balochistan?",
     "correctAnswer": "The Arabian Sea",
-    "incorrectAnswers": ["The Baltic Sea", "The Sea of Japan", "The Red Sea exclusively"],
+    "incorrectAnswers": [
+      "The Baltic Sea",
+      "The Sea of Japan",
+      "The Red Sea exclusively"
+    ],
     "explanation": "Coastal outposts show maritime orientation linking the plateau and delta economies.",
-    "keywords": ["sutkagen-dor", "trade", "coast"],
-    "source": "https://www.britannica.com/topic/Indus-civilization"
+    "keywords": [
+      "sutkagen-dor",
+      "trade",
+      "coast"
+    ],
+    "source": "https://www.britannica.com/topic/Indus-civilization",
+    "seedId": "892e5f12-d166-4f5b-9567-1885a7c8fe3f"
   },
   {
     "category": "history",
@@ -93,10 +165,19 @@
     "navigationKeyword2": "indus",
     "question": "On the Indian side, Rupnagar (Ropar) in eastern Punjab marks the civilization’s reach toward which major northern river basin?",
     "correctAnswer": "The Yamuna (Jumna) basin toward Delhi",
-    "incorrectAnswers": ["The Brahmaputra headwaters only", "The Godavari delta alone", "The upper Irrawaddy"],
+    "incorrectAnswers": [
+      "The Brahmaputra headwaters only",
+      "The Godavari delta alone",
+      "The upper Irrawaddy"
+    ],
     "explanation": "Eastern scatter patterns show interaction zones with Gangetic societies beyond the Indus core.",
-    "keywords": ["rupnagar", "expansion", "punjab"],
-    "source": "https://www.britannica.com/topic/Indus-civilization"
+    "keywords": [
+      "rupnagar",
+      "expansion",
+      "punjab"
+    ],
+    "source": "https://www.britannica.com/topic/Indus-civilization",
+    "seedId": "ec5ccb8c-b278-408e-a2b3-abcc107b3611"
   },
   {
     "category": "history",
@@ -104,10 +185,19 @@
     "navigationKeyword2": "indus",
     "question": "Harappa and Mohenjo-daro each covered roughly how much area at their urban peak according to common archaeological estimates cited in surveys?",
     "correctAnswer": "On the order of one square mile (about 1.6 km) each before decline",
-    "incorrectAnswers": ["Ten square miles each routinely", "Only ten acres each", "One hundred square miles"],
+    "incorrectAnswers": [
+      "Ten square miles each routinely",
+      "Only ten acres each",
+      "One hundred square miles"
+    ],
     "explanation": "Such scale implies substantial populations, granaries, and labor mobilization for brick architecture.",
-    "keywords": ["cities", "scale", "urbanism"],
-    "source": "https://www.britannica.com/topic/Indus-civilization"
+    "keywords": [
+      "cities",
+      "scale",
+      "urbanism"
+    ],
+    "source": "https://www.britannica.com/topic/Indus-civilization",
+    "seedId": "3218c5a9-eb5c-4778-8263-5143f47cbb75"
   },
   {
     "category": "history",
@@ -115,10 +205,19 @@
     "navigationKeyword2": "indus",
     "question": "Indus burials and figurines have prompted extensive debate about social roles, but written royal names remain unknown chiefly because of what barrier?",
     "correctAnswer": "Undeciphered script and lack of long bilingual texts",
-    "incorrectAnswers": ["Total absence of metallurgy", "No excavation since 1920", "Destruction by volcanic ash"],
+    "incorrectAnswers": [
+      "Total absence of metallurgy",
+      "No excavation since 1920",
+      "Destruction by volcanic ash"
+    ],
     "explanation": "Archaeology must infer hierarchy from house size, craft quarters, and civic works rather than king lists.",
-    "keywords": ["politics", "archaeology", "limits"],
-    "source": "https://www.britannica.com/topic/Indus-civilization"
+    "keywords": [
+      "politics",
+      "archaeology",
+      "limits"
+    ],
+    "source": "https://www.britannica.com/topic/Indus-civilization",
+    "seedId": "470cafeb-42d5-416a-81ce-e63cf8a8c720"
   },
   {
     "category": "history",
@@ -126,9 +225,18 @@
     "navigationKeyword2": "indus",
     "question": "Scholars often compare the Indus network’s extent with contemporary Mesopotamia and Egypt as one of the world’s three earliest what?",
     "correctAnswer": "Urban-centered civilizations with writing and state-scale organization",
-    "incorrectAnswers": ["Iron Age empires", "Oceanic nomad confederations", "Medieval university towns"],
+    "incorrectAnswers": [
+      "Iron Age empires",
+      "Oceanic nomad confederations",
+      "Medieval university towns"
+    ],
     "explanation": "That triad framing highlights parallel experiments in cities, surplus management, and interregional trade.",
-    "keywords": ["comparison", "urban-culture", "world-history"],
-    "source": "https://www.britannica.com/topic/Indus-civilization"
+    "keywords": [
+      "comparison",
+      "urban-culture",
+      "world-history"
+    ],
+    "source": "https://www.britannica.com/topic/Indus-civilization",
+    "seedId": "62dc73a3-4f21-4c89-bd2a-c3b455745020"
   }
 ]

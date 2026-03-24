@@ -16,7 +16,8 @@
       "us-states",
       "land-area"
     ],
-    "source": "https://www.census.gov/geographies/reference-files/2010/geo/state-area.html"
+    "source": "https://www.census.gov/geographies/reference-files/2010/geo/state-area.html",
+    "seedId": "6dd46a20-4aa3-4af1-85c6-912275d1b53f"
   },
   {
     "category": "geography",
@@ -35,7 +36,8 @@
       "us-states",
       "land-area"
     ],
-    "source": "https://www.census.gov/geographies/reference-files/2010/geo/state-area.html"
+    "source": "https://www.census.gov/geographies/reference-files/2010/geo/state-area.html",
+    "seedId": "7c5199fb-0f35-4a84-aeb9-907c9c28445d"
   },
   {
     "category": "geography",
@@ -54,7 +56,8 @@
       "us-states",
       "land-area"
     ],
-    "source": "https://www.census.gov/geographies/reference-files/2010/geo/state-area.html"
+    "source": "https://www.census.gov/geographies/reference-files/2010/geo/state-area.html",
+    "seedId": "1a09e79e-941c-429e-be33-e1fadc3c96fc"
   },
   {
     "category": "geography",
@@ -73,7 +76,8 @@
       "us-states",
       "population"
     ],
-    "source": "https://www.census.gov/data/tables/2020/dec/2020-apportionment-data.html"
+    "source": "https://www.census.gov/data/tables/2020/dec/2020-apportionment-data.html",
+    "seedId": "876652b7-631a-47c0-845e-93742a700b8c"
   },
   {
     "category": "geography",
@@ -92,7 +96,8 @@
       "us-states",
       "great-lakes"
     ],
-    "source": "https://www.britannica.com/place/Lake-Michigan"
+    "source": "https://www.britannica.com/place/Lake-Michigan",
+    "seedId": "2c1d57b0-709d-4e65-94af-5b0720c19572"
   },
   {
     "category": "geography",
@@ -111,7 +116,8 @@
       "us-states",
       "borders"
     ],
-    "source": "https://www.britannica.com/place/Four-Corners"
+    "source": "https://www.britannica.com/place/Four-Corners",
+    "seedId": "0bba2b4b-7840-45ba-827c-eb8140822520"
   },
   {
     "category": "geography",
@@ -130,7 +136,8 @@
       "us-states",
       "pacific"
     ],
-    "source": "https://www.britannica.com/place/Hawaii-state"
+    "source": "https://www.britannica.com/place/Hawaii-state",
+    "seedId": "3413a643-c5ab-4e5b-8af0-1f1fe5ca878c"
   },
   {
     "category": "geography",
@@ -149,7 +156,8 @@
       "us-states",
       "state-names"
     ],
-    "source": "https://www.britannica.com/place/Washington-state"
+    "source": "https://www.britannica.com/place/Washington-state",
+    "seedId": "81d3d69a-a314-4dc3-9778-35205d3c73fa"
   },
   {
     "category": "geography",
@@ -168,7 +176,8 @@
       "us-states",
       "great-lakes"
     ],
-    "source": "https://www.britannica.com/place/Michigan"
+    "source": "https://www.britannica.com/place/Michigan",
+    "seedId": "e04a18f4-9b14-4f3f-a36b-f9eb799a7d15"
   },
   {
     "category": "geography",
@@ -187,7 +196,8 @@
       "us-states",
       "counties"
     ],
-    "source": "https://www.census.gov/geographies/reference-files/2010/geo/state-local-geo-guides-2010/texas.html"
+    "source": "https://www.census.gov/geographies/reference-files/2010/geo/state-local-geo-guides-2010/texas.html",
+    "seedId": "57913170-9114-4184-8aa7-4c03a263f635"
   },
   {
     "category": "geography",
@@ -206,6 +216,7 @@
       "us-states",
       "nebraska"
     ],
-    "source": "https://www.britannica.com/place/Nebraska-state"
+    "source": "https://www.britannica.com/place/Nebraska-state",
+    "seedId": "719809a7-0c64-49e4-b416-1bd7acaf694a"
   }
 ]

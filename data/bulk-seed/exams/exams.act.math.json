@@ -5,10 +5,19 @@
     "navigationKeyword2": "math",
     "question": "What is 15% of 80?",
     "correctAnswer": "12",
-    "incorrectAnswers": ["8", "10", "15"],
+    "incorrectAnswers": [
+      "8",
+      "10",
+      "15"
+    ],
     "explanation": "Fifteen percent means 0.15, and 0.15 x 80 = 12.",
-    "keywords": ["act-math", "percent", "algebra"],
-    "source": "https://assets.openstax.org/oscms-prodcms/media/documents/Prealgebra2e-WEB_0qbw93r.pdf"
+    "keywords": [
+      "act-math",
+      "percent",
+      "algebra"
+    ],
+    "source": "https://assets.openstax.org/oscms-prodcms/media/documents/Prealgebra2e-WEB_0qbw93r.pdf",
+    "seedId": "88587b5d-d060-4b17-aa62-a3f6451b3047"
   },
   {
     "category": "exams",
@@ -16,10 +25,19 @@
     "navigationKeyword2": "math",
     "question": "What is 3 + 4 x 2?",
     "correctAnswer": "11",
-    "incorrectAnswers": ["14", "10", "7"],
+    "incorrectAnswers": [
+      "14",
+      "10",
+      "7"
+    ],
     "explanation": "Order of operations applies multiplication before addition, so 3 + 8 = 11.",
-    "keywords": ["act-math", "order-of-operations", "algebra"],
-    "source": "https://assets.openstax.org/oscms-prodcms/media/documents/Prealgebra2e-WEB_0qbw93r.pdf"
+    "keywords": [
+      "act-math",
+      "order-of-operations",
+      "algebra"
+    ],
+    "source": "https://assets.openstax.org/oscms-prodcms/media/documents/Prealgebra2e-WEB_0qbw93r.pdf",
+    "seedId": "b9eb6b2d-c454-4627-955d-cf4eff92cc1f"
   },
   {
     "category": "exams",
@@ -27,10 +45,19 @@
     "navigationKeyword2": "math",
     "question": "Solve: x + 7 = 19.",
     "correctAnswer": "12",
-    "incorrectAnswers": ["10", "11", "26"],
+    "incorrectAnswers": [
+      "10",
+      "11",
+      "26"
+    ],
     "explanation": "Subtract 7 from both sides to get x = 12.",
-    "keywords": ["act-math", "linear-equations", "algebra"],
-    "source": "https://assets.openstax.org/oscms-prodcms/media/documents/Prealgebra2e-WEB_0qbw93r.pdf"
+    "keywords": [
+      "act-math",
+      "linear-equations",
+      "algebra"
+    ],
+    "source": "https://assets.openstax.org/oscms-prodcms/media/documents/Prealgebra2e-WEB_0qbw93r.pdf",
+    "seedId": "cdbf9071-1f72-4c4a-beef-e9536ad8d6b7"
   },
   {
     "category": "exams",
@@ -38,10 +65,19 @@
     "navigationKeyword2": "math",
     "question": "Solve: 3x = 21.",
     "correctAnswer": "7",
-    "incorrectAnswers": ["6", "8", "18"],
+    "incorrectAnswers": [
+      "6",
+      "8",
+      "18"
+    ],
     "explanation": "Divide both sides by 3 to get x = 7.",
-    "keywords": ["act-math", "linear-equations", "algebra"],
-    "source": "https://assets.openstax.org/oscms-prodcms/media/documents/Prealgebra2e-WEB_0qbw93r.pdf"
+    "keywords": [
+      "act-math",
+      "linear-equations",
+      "algebra"
+    ],
+    "source": "https://assets.openstax.org/oscms-prodcms/media/documents/Prealgebra2e-WEB_0qbw93r.pdf",
+    "seedId": "57c4a1e0-ed2f-41f6-b659-803a72e4e8a4"
   },
   {
     "category": "exams",
@@ -49,10 +85,19 @@
     "navigationKeyword2": "math",
     "question": "What is 2^5?",
     "correctAnswer": "32",
-    "incorrectAnswers": ["10", "16", "64"],
+    "incorrectAnswers": [
+      "10",
+      "16",
+      "64"
+    ],
     "explanation": "2^5 means 2 multiplied by itself five times, which equals 32.",
-    "keywords": ["act-math", "exponents", "algebra"],
-    "source": "https://assets.openstax.org/oscms-prodcms/media/documents/Prealgebra2e-WEB_0qbw93r.pdf"
+    "keywords": [
+      "act-math",
+      "exponents",
+      "algebra"
+    ],
+    "source": "https://assets.openstax.org/oscms-prodcms/media/documents/Prealgebra2e-WEB_0qbw93r.pdf",
+    "seedId": "3e61a6c5-f4e9-4794-be8a-840505cf5fe6"
   },
   {
     "category": "exams",
@@ -60,10 +105,19 @@
     "navigationKeyword2": "math",
     "question": "What is the area of a triangle with base 10 and height 4?",
     "correctAnswer": "20 square units",
-    "incorrectAnswers": ["14 square units", "24 square units", "40 square units"],
+    "incorrectAnswers": [
+      "14 square units",
+      "24 square units",
+      "40 square units"
+    ],
     "explanation": "Triangle area is 1/2 x base x height, so 1/2 x 10 x 4 = 20.",
-    "keywords": ["act-math", "geometry", "area"],
-    "source": "https://assets.openstax.org/oscms-prodcms/media/documents/Prealgebra2e-WEB_0qbw93r.pdf"
+    "keywords": [
+      "act-math",
+      "geometry",
+      "area"
+    ],
+    "source": "https://assets.openstax.org/oscms-prodcms/media/documents/Prealgebra2e-WEB_0qbw93r.pdf",
+    "seedId": "815a65ac-394d-4448-b1e3-57c24aba2444"
   },
   {
     "category": "exams",
@@ -71,10 +125,19 @@
     "navigationKeyword2": "math",
     "question": "What is the mean of 4, 6, and 8?",
     "correctAnswer": "6",
-    "incorrectAnswers": ["5", "7", "18"],
+    "incorrectAnswers": [
+      "5",
+      "7",
+      "18"
+    ],
     "explanation": "Add the values and divide by 3: (4 + 6 + 8) / 3 = 6.",
-    "keywords": ["act-math", "statistics", "mean"],
-    "source": "https://assets.openstax.org/oscms-prodcms/media/documents/Prealgebra2e-WEB_0qbw93r.pdf"
+    "keywords": [
+      "act-math",
+      "statistics",
+      "mean"
+    ],
+    "source": "https://assets.openstax.org/oscms-prodcms/media/documents/Prealgebra2e-WEB_0qbw93r.pdf",
+    "seedId": "51391fed-0bcc-473e-b653-4005ec9318d3"
   },
   {
     "category": "exams",
@@ -82,10 +145,19 @@
     "navigationKeyword2": "math",
     "question": "What is the probability of heads on one fair coin flip?",
     "correctAnswer": "1/2",
-    "incorrectAnswers": ["1/3", "1/4", "2/3"],
+    "incorrectAnswers": [
+      "1/3",
+      "1/4",
+      "2/3"
+    ],
     "explanation": "A fair coin has two equally likely outcomes, so heads has probability 1/2.",
-    "keywords": ["act-math", "probability", "statistics"],
-    "source": "https://assets.openstax.org/oscms-prodcms/media/documents/AlgebraAndTrigonometry-OP_1tE6R5r.pdf"
+    "keywords": [
+      "act-math",
+      "probability",
+      "statistics"
+    ],
+    "source": "https://assets.openstax.org/oscms-prodcms/media/documents/AlgebraAndTrigonometry-OP_1tE6R5r.pdf",
+    "seedId": "5cf3fe39-4635-4e93-b540-9e6c0a4f5bc2"
   },
   {
     "category": "exams",
@@ -93,10 +165,19 @@
     "navigationKeyword2": "math",
     "question": "What is the slope between (1, 2) and (3, 6)?",
     "correctAnswer": "2",
-    "incorrectAnswers": ["1", "3", "4"],
+    "incorrectAnswers": [
+      "1",
+      "3",
+      "4"
+    ],
     "explanation": "Slope is rise over run: (6 - 2) / (3 - 1) = 4 / 2 = 2.",
-    "keywords": ["act-math", "slope", "coordinate-geometry"],
-    "source": "https://assets.openstax.org/oscms-prodcms/media/documents/AlgebraAndTrigonometry-OP_1tE6R5r.pdf"
+    "keywords": [
+      "act-math",
+      "slope",
+      "coordinate-geometry"
+    ],
+    "source": "https://assets.openstax.org/oscms-prodcms/media/documents/AlgebraAndTrigonometry-OP_1tE6R5r.pdf",
+    "seedId": "9d05e7f6-7653-4608-8981-3ea29e86d196"
   },
   {
     "category": "exams",
@@ -104,9 +185,18 @@
     "navigationKeyword2": "math",
     "question": "Solve: x^2 = 9.",
     "correctAnswer": "x = 3 or x = -3",
-    "incorrectAnswers": ["x = 9 only", "x = 81", "x = 0 or x = 9"],
+    "incorrectAnswers": [
+      "x = 9 only",
+      "x = 81",
+      "x = 0 or x = 9"
+    ],
     "explanation": "Both 3^2 and (-3)^2 equal 9.",
-    "keywords": ["act-math", "quadratics", "algebra"],
-    "source": "https://assets.openstax.org/oscms-prodcms/media/documents/AlgebraAndTrigonometry-OP_1tE6R5r.pdf"
+    "keywords": [
+      "act-math",
+      "quadratics",
+      "algebra"
+    ],
+    "source": "https://assets.openstax.org/oscms-prodcms/media/documents/AlgebraAndTrigonometry-OP_1tE6R5r.pdf",
+    "seedId": "671e385b-7d02-4024-80f0-3e2156b59803"
   }
 ]

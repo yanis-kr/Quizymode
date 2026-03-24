@@ -16,7 +16,8 @@
       "maps",
       "usgs"
     ],
-    "source": "https://www.usgs.gov/faqs/how-are-different-map-projections-used"
+    "source": "https://www.usgs.gov/faqs/how-are-different-map-projections-used",
+    "seedId": "2a946ad3-b949-4f64-9ff5-6bceab0aeb5e"
   },
   {
     "category": "geography",
@@ -35,7 +36,8 @@
       "distortion",
       "globe"
     ],
-    "source": "https://www.usgs.gov/faqs/how-are-different-map-projections-used"
+    "source": "https://www.usgs.gov/faqs/how-are-different-map-projections-used",
+    "seedId": "d0b3b99d-8a67-47f3-ab96-e566946a7d84"
   },
   {
     "category": "geography",
@@ -54,7 +56,8 @@
       "utm",
       "mercator"
     ],
-    "source": "https://www.usgs.gov/faqs/what-does-term-utm-mean-utm-better-or-more-accurate-latitudelongitude"
+    "source": "https://www.usgs.gov/faqs/what-does-term-utm-mean-utm-better-or-more-accurate-latitudelongitude",
+    "seedId": "db884294-e998-4317-9e55-a2524c4187d7"
   },
   {
     "category": "geography",
@@ -73,7 +76,8 @@
       "utm",
       "zones"
     ],
-    "source": "https://www.usgs.gov/faqs/what-does-term-utm-mean-utm-better-or-more-accurate-latitudelongitude"
+    "source": "https://www.usgs.gov/faqs/what-does-term-utm-mean-utm-better-or-more-accurate-latitudelongitude",
+    "seedId": "ba91ac74-d2a5-4944-9013-ab9e4663beb1"
   },
   {
     "category": "geography",
@@ -92,7 +96,8 @@
       "cartography",
       "basics"
     ],
-    "source": "https://www.britannica.com/science/map"
+    "source": "https://www.britannica.com/science/map",
+    "seedId": "aff489e8-47cc-4fd1-8cdf-f02f1857b55d"
   },
   {
     "category": "geography",
@@ -111,7 +116,8 @@
       "globe",
       "accuracy"
     ],
-    "source": "https://www.britannica.com/science/map"
+    "source": "https://www.britannica.com/science/map",
+    "seedId": "eee45d92-207c-4755-b1b2-aec9126924fe"
   },
   {
     "category": "geography",
@@ -130,7 +136,8 @@
       "hydrography",
       "oceans"
     ],
-    "source": "https://www.britannica.com/science/map"
+    "source": "https://www.britannica.com/science/map",
+    "seedId": "670485c3-de6b-44f4-b567-f06c8cd5ef89"
   },
   {
     "category": "geography",
@@ -149,7 +156,8 @@
       "wind-rose",
       "history"
     ],
-    "source": "https://www.britannica.com/technology/navigation-technology"
+    "source": "https://www.britannica.com/technology/navigation-technology",
+    "seedId": "cd2b5f50-c1a8-4e48-85c9-b87fd04d55e9"
   },
   {
     "category": "geography",
@@ -168,7 +176,8 @@
       "wind-rose",
       "navigation"
     ],
-    "source": "https://www.britannica.com/technology/navigation-technology"
+    "source": "https://www.britannica.com/technology/navigation-technology",
+    "seedId": "d1790696-930a-4310-b696-35809abf61b8"
   },
   {
     "category": "geography",
@@ -187,7 +196,8 @@
       "gis",
       "us-topo"
     ],
-    "source": "https://www.usgs.gov/faqs/can-i-import-a-us-topo-map-my-geographic-information-system-gis"
+    "source": "https://www.usgs.gov/faqs/can-i-import-a-us-topo-map-my-geographic-information-system-gis",
+    "seedId": "f319d5d7-422a-4288-9d37-554dc3debd0a"
   },
   {
     "category": "geography",
@@ -206,6 +216,7 @@
       "noaa",
       "gis"
     ],
-    "source": "https://www.climate.gov/maps-data/dataset/ncei-map-viewer-application-data-locator"
+    "source": "https://www.climate.gov/maps-data/dataset/ncei-map-viewer-application-data-locator",
+    "seedId": "08c413c6-7fa3-4430-9167-c24296639903"
   }
 ]

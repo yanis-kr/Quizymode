@@ -5,10 +5,19 @@
     "navigationKeyword2": "pca",
     "question": "Which Google Cloud service provides virtual machines for application workloads?",
     "correctAnswer": "Compute Engine",
-    "incorrectAnswers": ["Cloud Storage", "Cloud Armor", "Pub/Sub"],
+    "incorrectAnswers": [
+      "Cloud Storage",
+      "Cloud Armor",
+      "Pub/Sub"
+    ],
     "explanation": "Compute Engine provides virtual machines for a wide range of workloads.",
-    "keywords": ["gcp-pca", "google-cloud-architecture", "solution-design"],
-    "source": "https://cloud.google.com/compute"
+    "keywords": [
+      "gcp-pca",
+      "google-cloud-architecture",
+      "solution-design"
+    ],
+    "source": "https://cloud.google.com/compute",
+    "seedId": "29387300-28dc-4197-8eb1-8cbd8a619ece"
   },
   {
     "category": "exams",
@@ -16,10 +25,19 @@
     "navigationKeyword2": "pca",
     "question": "Which Google Cloud service provides managed Kubernetes for container platforms?",
     "correctAnswer": "Google Kubernetes Engine (GKE)",
-    "incorrectAnswers": ["Cloud SQL", "Cloud Storage", "Cloud Monitoring"],
+    "incorrectAnswers": [
+      "Cloud SQL",
+      "Cloud Storage",
+      "Cloud Monitoring"
+    ],
     "explanation": "GKE is the managed Kubernetes service on Google Cloud.",
-    "keywords": ["gcp-pca", "google-cloud-architecture", "solution-design"],
-    "source": "https://cloud.google.com/kubernetes-engine"
+    "keywords": [
+      "gcp-pca",
+      "google-cloud-architecture",
+      "solution-design"
+    ],
+    "source": "https://cloud.google.com/kubernetes-engine",
+    "seedId": "0e97713d-ebb1-485a-99fe-c18901e51ad2"
   },
   {
     "category": "exams",
@@ -27,10 +45,19 @@
     "navigationKeyword2": "pca",
     "question": "Which Google Cloud service is used for object storage in many cloud architectures?",
     "correctAnswer": "Cloud Storage",
-    "incorrectAnswers": ["Cloud Armor", "BigQuery", "Cloud NAT"],
+    "incorrectAnswers": [
+      "Cloud Armor",
+      "BigQuery",
+      "Cloud NAT"
+    ],
     "explanation": "Cloud Storage is Google's object storage service and is commonly used in application architectures.",
-    "keywords": ["gcp-pca", "google-cloud-architecture", "solution-design"],
-    "source": "https://cloud.google.com/storage"
+    "keywords": [
+      "gcp-pca",
+      "google-cloud-architecture",
+      "solution-design"
+    ],
+    "source": "https://cloud.google.com/storage",
+    "seedId": "2b9f65aa-38f8-4528-a908-86ebf59ca38f"
   },
   {
     "category": "exams",
@@ -38,10 +65,19 @@
     "navigationKeyword2": "pca",
     "question": "Which Google Cloud service provides traffic distribution and high availability for applications?",
     "correctAnswer": "Cloud Load Balancing",
-    "incorrectAnswers": ["Cloud Storage", "Bigtable", "Pub/Sub"],
+    "incorrectAnswers": [
+      "Cloud Storage",
+      "Bigtable",
+      "Pub/Sub"
+    ],
     "explanation": "Cloud Load Balancing distributes traffic across backend resources.",
-    "keywords": ["gcp-pca", "google-cloud-architecture", "solution-design"],
-    "source": "https://cloud.google.com/load-balancing"
+    "keywords": [
+      "gcp-pca",
+      "google-cloud-architecture",
+      "solution-design"
+    ],
+    "source": "https://cloud.google.com/load-balancing",
+    "seedId": "62678bdf-bc06-4037-a874-950a799a991b"
   },
   {
     "category": "exams",
@@ -49,10 +85,19 @@
     "navigationKeyword2": "pca",
     "question": "Which Google Cloud product is used for hybrid connectivity between on-premises and Google Cloud networks?",
     "correctAnswer": "Cloud Interconnect",
-    "incorrectAnswers": ["Cloud Storage", "BigQuery", "Cloud SQL"],
+    "incorrectAnswers": [
+      "Cloud Storage",
+      "BigQuery",
+      "Cloud SQL"
+    ],
     "explanation": "Cloud Interconnect is part of Google Cloud's hybrid connectivity offerings.",
-    "keywords": ["gcp-pca", "google-cloud-architecture", "solution-design"],
-    "source": "https://cloud.google.com/hybrid-connectivity"
+    "keywords": [
+      "gcp-pca",
+      "google-cloud-architecture",
+      "solution-design"
+    ],
+    "source": "https://cloud.google.com/hybrid-connectivity",
+    "seedId": "069db33d-74b2-4f30-881b-d3a1684a1b9a"
   },
   {
     "category": "exams",
@@ -60,10 +105,19 @@
     "navigationKeyword2": "pca",
     "question": "Which Google Cloud security product protects applications from DDoS and web attacks?",
     "correctAnswer": "Cloud Armor",
-    "incorrectAnswers": ["Cloud Storage", "Pub/Sub", "Cloud SQL"],
+    "incorrectAnswers": [
+      "Cloud Storage",
+      "Pub/Sub",
+      "Cloud SQL"
+    ],
     "explanation": "Cloud Armor is Google's edge security and application protection product.",
-    "keywords": ["gcp-pca", "google-cloud-architecture", "solution-design"],
-    "source": "https://cloud.google.com/security/products/armor"
+    "keywords": [
+      "gcp-pca",
+      "google-cloud-architecture",
+      "solution-design"
+    ],
+    "source": "https://cloud.google.com/security/products/armor",
+    "seedId": "b68b24bd-a251-4ce8-95a8-b73ffd45e9b2"
   },
   {
     "category": "exams",
@@ -71,10 +125,19 @@
     "navigationKeyword2": "pca",
     "question": "Which Google Cloud database provides virtually unlimited scale with relational semantics?",
     "correctAnswer": "Spanner",
-    "incorrectAnswers": ["Bigtable", "Cloud Storage", "Pub/Sub"],
+    "incorrectAnswers": [
+      "Bigtable",
+      "Cloud Storage",
+      "Pub/Sub"
+    ],
     "explanation": "Spanner is Google's scalable relational database service.",
-    "keywords": ["gcp-pca", "google-cloud-architecture", "solution-design"],
-    "source": "https://cloud.google.com/spanner"
+    "keywords": [
+      "gcp-pca",
+      "google-cloud-architecture",
+      "solution-design"
+    ],
+    "source": "https://cloud.google.com/spanner",
+    "seedId": "f7832918-8b1e-43d0-9646-bc248f62c473"
   },
   {
     "category": "exams",
@@ -82,10 +145,19 @@
     "navigationKeyword2": "pca",
     "question": "Which Google Cloud service is a serverless enterprise data warehouse?",
     "correctAnswer": "BigQuery",
-    "incorrectAnswers": ["Cloud NAT", "Cloud Armor", "VPC"],
+    "incorrectAnswers": [
+      "Cloud NAT",
+      "Cloud Armor",
+      "VPC"
+    ],
     "explanation": "BigQuery is Google's serverless platform for analytics and data warehousing.",
-    "keywords": ["gcp-pca", "google-cloud-architecture", "solution-design"],
-    "source": "https://cloud.google.com/bigquery"
+    "keywords": [
+      "gcp-pca",
+      "google-cloud-architecture",
+      "solution-design"
+    ],
+    "source": "https://cloud.google.com/bigquery",
+    "seedId": "81e7d8ee-f6aa-4b63-92e1-de37cca57d0e"
   },
   {
     "category": "exams",
@@ -93,10 +165,19 @@
     "navigationKeyword2": "pca",
     "question": "Which Google Cloud service is the basis for private networking and segmentation?",
     "correctAnswer": "Virtual Private Cloud (VPC)",
-    "incorrectAnswers": ["Cloud Storage", "Bigtable", "Cloud Monitoring"],
+    "incorrectAnswers": [
+      "Cloud Storage",
+      "Bigtable",
+      "Cloud Monitoring"
+    ],
     "explanation": "VPC provides the private networking foundation for Google Cloud solutions.",
-    "keywords": ["gcp-pca", "google-cloud-architecture", "solution-design"],
-    "source": "https://cloud.google.com/vpc"
+    "keywords": [
+      "gcp-pca",
+      "google-cloud-architecture",
+      "solution-design"
+    ],
+    "source": "https://cloud.google.com/vpc",
+    "seedId": "fde4eabd-0e70-491d-8ef7-59d00c7de528"
   },
   {
     "category": "exams",
@@ -104,9 +185,18 @@
     "navigationKeyword2": "pca",
     "question": "Which Google Cloud service runs containers on a managed serverless platform?",
     "correctAnswer": "Cloud Run",
-    "incorrectAnswers": ["Cloud SQL", "BigQuery", "Cloud Armor"],
+    "incorrectAnswers": [
+      "Cloud SQL",
+      "BigQuery",
+      "Cloud Armor"
+    ],
     "explanation": "Cloud Run lets you run containerized applications without managing servers.",
-    "keywords": ["gcp-pca", "google-cloud-architecture", "solution-design"],
-    "source": "https://cloud.google.com/run"
+    "keywords": [
+      "gcp-pca",
+      "google-cloud-architecture",
+      "solution-design"
+    ],
+    "source": "https://cloud.google.com/run",
+    "seedId": "ac452133-237b-4da5-815e-f5e5a3742747"
   }
 ]

@@ -1,0 +1,449 @@
+[
+  {
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "saa-c03",
+    "question": "A company hosts an application on AWS Lambda functions that are invoked by an Amazon API Gateway API. The Lambda functions save\ncustomer data to an Amazon Aurora MySQL database. Whenever the company upgrades the database, the Lambda functions fail to establish\ndatabase connections until the upgrade is complete. The result is that customer data is not recorded for some of the event.\nA solutions architect needs to design a solution that stores customer data that is created during database upgrades.\nWhich solution will meet these requirements?",
+    "correctAnswer": "Provision an Amazon RDS proxy to sit between the Lambda functions and the database. Configure the Lambda functions to connect to the RDS proxy.",
+    "incorrectAnswers": [
+      "Increase the run time of the Lambda functions to the maximum. Create a retry mechanism in the code that stores the customer data in the database.",
+      "Persist the customer data to Lambda local storage. Configure new Lambda functions to scan the local storage to save the customer data to the database.",
+      "Store the customer data in an Amazon Simple Queue Service (Amazon SQS) FIFO queue. Create a new Lambda function that polls the queue and stores the customer data in the database."
+    ],
+    "explanation": "SAA-C03 practice scenario (extract question #87). Correct choice: A.",
+    "keywords": [
+      "aws-saa-c03",
+      "aws-database",
+      "aws-compute",
+      "databases",
+      "aurora",
+      "lambda",
+      "api-gateway",
+      "mysql"
+    ],
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "seedId": "f7a57202-bf12-406b-9456-6b226ff34f88"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "saa-c03",
+    "question": "A survey company has gathered data for several years from areas in the United States. The company hosts the data in an Amazon S3 bucket that\nis 3 TB in size and growing. The company has started to share the data with a European marketing rm that has S3 buckets. The company wants\nto ensure that its data transfer costs remain as low as possible.\nWhich solution will meet these requirements?",
+    "correctAnswer": "Configure the Requester Pays feature on the company's S3 bucket.",
+    "incorrectAnswers": [
+      "Configure S3 Cross-Region Replication from the company's S3 bucket to one of the marketing rm's S3 buckets.",
+      "Configure cross-account access for the marketing rm so that the marketing rm has access to the company's S3 bucket.",
+      "Configure the company's S3 bucket to use S3 Intelligent-Tiering. Sync the S3 bucket to one of the marketing rm's S3 buckets. --- Page 32 ---"
+    ],
+    "explanation": "SAA-C03 practice scenario (extract question #88). Correct choice: A.",
+    "keywords": [
+      "aws-saa-c03",
+      "aws-storage",
+      "s3"
+    ],
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "seedId": "778a4e4a-6f41-4c41-8fc9-f5be9671eb7e"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "saa-c03",
+    "question": "A company uses Amazon S3 to store its condential audit documents. The S3 bucket uses bucket policies to restrict access to audit team IAM\nuser credentials according to the principle of least privilege. Company managers are worried about accidental deletion of documents in the S3\nbucket and want a more secure solution.\nWhat should a solutions architect do to secure the audit documents?",
+    "correctAnswer": "Enable the versioning and MFA Delete features on the S3 bucket.",
+    "incorrectAnswers": [
+      "Enable multi-factor authentication (MFA) on the IAM user credentials for each audit team IAM user account.",
+      "Add an S3 Lifecycle policy to the audit team's IAM user accounts to deny the s3:DeleteObject action during audit dates.",
+      "Use AWS Key Management Service (AWS KMS) to encrypt the S3 bucket and restrict audit team IAM user accounts from accessing the KMS key."
+    ],
+    "explanation": "SAA-C03 practice scenario (extract question #89). Correct choice: A.",
+    "keywords": [
+      "aws-saa-c03",
+      "aws-security",
+      "aws-storage",
+      "s3",
+      "iam"
+    ],
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "seedId": "97f0b317-b9ef-4979-9f7b-2457739b73a8"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "saa-c03",
+    "question": "A company is using a SQL database to store movie data that is publicly accessible. The database runs on an Amazon RDS Single-AZ DB instance.\nA script runs queries at random intervals each day to record the number of new movies that have been added to the database. The script must\nreport a nal total during business hours.\nThe company's development team notices that the database performance is inadequate for development tasks when the script is running. A\nsolutions architect must recommend a solution to resolve this issue.\nWhich solution will meet this requirement with the LEAST operational overhead?",
+    "correctAnswer": "Modify the DB instance to be a Multi-AZ deployment.",
+    "incorrectAnswers": [
+      "Create a read replica of the database. Configure the script to query only the read replica.",
+      "Instruct the development team to manually export the entries in the database at the end of each day.",
+      "Use Amazon ElastiCache to cache the common queries that the script runs against the database."
+    ],
+    "explanation": "SAA-C03 practice scenario (extract question #90). Correct choice: A.",
+    "keywords": [
+      "aws-saa-c03",
+      "aws-database",
+      "databases",
+      "rds"
+    ],
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "seedId": "f0b469cc-a6a8-4106-b907-b7a9e84ff9eb"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "saa-c03",
+    "question": "A company has applications that run on Amazon EC2 instances in a VPC. One of the applications needs to call the Amazon S3 API to store and\nread objects. According to the company's security regulations, no traffic from the applications is allowed to travel across the internet.\nWhich solution will meet these requirements?",
+    "correctAnswer": "Configure an S3 gateway endpoint.",
+    "incorrectAnswers": [
+      "Create an S3 bucket in a private subnet.",
+      "Create an S3 bucket in the same AWS Region as the EC2 instances.",
+      "Configure a NAT gateway in the same subnet as the EC2 instances. --- Page 33 ---"
+    ],
+    "explanation": "SAA-C03 practice scenario (extract question #91). Correct choice: A.",
+    "keywords": [
+      "aws-saa-c03",
+      "aws-storage",
+      "aws-compute",
+      "s3",
+      "ec2",
+      "vpc",
+      "vpc-endpoint"
+    ],
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "seedId": "76f37950-4e77-438c-af8e-0acdc1fe79bb"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "saa-c03",
+    "question": "A company runs an on-premises application that is powered by a MySQL database. The company is migrating the application to AWS to increase\nthe application's elasticity and availability.\nThe current architecture shows heavy read activity on the database during times of normal operation. Every 4 hours, the company's development\nteam pulls a full export of the production database to populate a database in the staging environment. During this period, users experience\nunacceptable application latency. The development team is unable to use the staging environment until the procedure completes.\nA solutions architect must recommend replacement architecture that alleviates the application latency issue. The replacement architecture also\nmust give the development team the ability to continue using the staging environment without delay.\nWhich solution meets these requirements?",
+    "correctAnswer": "Use Amazon Aurora MySQL with Multi-AZ Aurora Replicas for production. Populate the staging database by implementing a backup and restore process that uses the mysqldump utility.",
+    "incorrectAnswers": [
+      "Use Amazon Aurora MySQL with Multi-AZ Aurora Replicas for production. Use database cloning to create the staging database on-demand.",
+      "Use Amazon RDS for MySQL with a Multi-AZ deployment and read replicas for production. Use the standby instance for the staging database.",
+      "Use Amazon RDS for MySQL with a Multi-AZ deployment and read replicas for production. Populate the staging database by implementing a backup and restore process that uses the mysqldump utility. --- Page 34 ---"
+    ],
+    "explanation": "SAA-C03 practice scenario (extract question #93). Correct choice: A.",
+    "keywords": [
+      "aws-saa-c03",
+      "aws-database",
+      "databases",
+      "aurora",
+      "mysql"
+    ],
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "seedId": "fd80936b-25cf-4530-906a-271b1740b7ff"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "saa-c03",
+    "question": "A company is designing an application where users upload small les into Amazon S3. After a user uploads a le, the le requires one-time simple\nprocessing to transform the data and save the data in JSON format for later analysis.\nEach le must be processed as quickly as possible after it is uploaded. Demand will vary. On some days, users will upload a high number of les.\nOn other days, users will upload a few les or no les.\nWhich solution meets these requirements with the LEAST operational overhead?",
+    "correctAnswer": "Configure Amazon EMR to read text les from Amazon S3. Run processing scripts to transform the data. Store the resulting JSON le in an Amazon Aurora DB cluster.",
+    "incorrectAnswers": [
+      "Configure Amazon S3 to send an event notication to an Amazon Simple Queue Service (Amazon SQS) queue. Use Amazon EC2 instances to read from the queue and process the data. Store the resulting JSON le in Amazon DynamoDB.",
+      "Configure Amazon S3 to send an event notication to an Amazon Simple Queue Service (Amazon SQS) queue. Use an AWS Lambda function to read from the queue and process the data. Store the resulting JSON le in Amazon DynamoDB.",
+      "Configure Amazon EventBridge (Amazon CloudWatch Events) to send an event to Amazon Kinesis Data Streams when a new le is uploaded. Use an AWS Lambda function to consume the event from the stream and process the data. Store the resulting JSON le in an Amazon Aurora DB cluster."
+    ],
+    "explanation": "SAA-C03 practice scenario (extract question #94). Correct choice: A.",
+    "keywords": [
+      "aws-saa-c03",
+      "aws-storage",
+      "aws-database",
+      "databases",
+      "aurora",
+      "s3",
+      "emr"
+    ],
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "seedId": "274b49c1-8ca3-465a-808b-bafdead365af"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "saa-c03",
+    "question": "An application allows users at a company's headquarters to access product data. The product data is stored in an Amazon RDS MySQL DB\ninstance. The operations team has isolated an application performance slowdown and wants to separate read traffic from write traffic. A solutions\narchitect needs to optimize the application's performance quickly.\nWhat should the solutions architect recommend?",
+    "correctAnswer": "Change the existing database to a Multi-AZ deployment. Serve the read requests from the primary Availability Zone.",
+    "incorrectAnswers": [
+      "Change the existing database to a Multi-AZ deployment. Serve the read requests from the secondary Availability Zone.",
+      "Create read replicas for the database. Configure the read replicas with half of the compute and storage resources as the source database.",
+      "Create read replicas for the database. Configure the read replicas with the same compute and storage resources as the source database. --- Page 35 ---"
+    ],
+    "explanation": "SAA-C03 practice scenario (extract question #95). Correct choice: A.",
+    "keywords": [
+      "aws-saa-c03",
+      "aws-database",
+      "databases",
+      "rds",
+      "mysql"
+    ],
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "seedId": "d2557917-daa6-423e-a8dc-30fe256b516e"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "saa-c03",
+    "question": "An Amazon EC2 administrator created the following policy associated with an IAM group containing several users:\nWhat is the effect of this policy?",
+    "correctAnswer": "Users can terminate an EC2 instance in any AWS Region except us-east-1.",
+    "incorrectAnswers": [
+      "Users can terminate an EC2 instance with the IP address 10.100.100.1 in the us-east-1 Region.",
+      "Users can terminate an EC2 instance in the us-east-1 Region when the user's source IP is 10.100.100.254.",
+      "Users cannot terminate an EC2 instance in the us-east-1 Region when the user's source IP is 10.100.100.254."
+    ],
+    "explanation": "SAA-C03 practice scenario (extract question #96). Correct choice: A.",
+    "keywords": [
+      "aws-saa-c03",
+      "aws-compute",
+      "aws-security",
+      "ec2",
+      "iam"
+    ],
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "seedId": "dbb8f81d-989c-4d73-be01-2149b9db6d0b"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "saa-c03",
+    "question": "A company has a large Microsoft SharePoint deployment running on-premises that requires Microsoft Windows shared le storage. The company\nwants to migrate this workload to the AWS Cloud and is considering various storage options. The storage solution must be highly available and\nintegrated with Active Directory for access control.\nWhich solution will satisfy these requirements?",
+    "correctAnswer": "Configure Amazon EFS storage and set the Active Directory domain for authentication.",
+    "incorrectAnswers": [
+      "Create an SMB fifile share on an AWS Storage Gateway le gateway in two Availability Zones.",
+      "Create an Amazon S3 bucket and congure Microsoft Windows Server to mount it as a volume.",
+      "Create an Amazon FSx for Windows File Server le system on AWS and set the Active Directory domain for authentication. --- Page 36 ---"
+    ],
+    "explanation": "SAA-C03 practice scenario (extract question #97). Correct choice: A.",
+    "keywords": [
+      "aws-saa-c03",
+      "aws-storage",
+      "aws-security",
+      "efs"
+    ],
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "seedId": "3b913a55-fecf-4eb4-a04f-b2bfd97e572b"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "saa-c03",
+    "question": "An image-processing company has a web application that users use to upload images. The application uploads the images into an Amazon S3\nbucket. The company has set up S3 event notications to publish the object creation events to an Amazon Simple Queue Service (Amazon SQS)\nstandard queue. The SQS queue serves as the event source for an AWS Lambda function that processes the images and sends the results to\nusers through email.\nUsers report that they are receiving multiple email messages for every uploaded image. A solutions architect determines that SQS messages are\ninvoking the Lambda function more than once, resulting in multiple email messages.\nWhat should the solutions architect do to resolve this issue with the LEAST operational overhead?",
+    "correctAnswer": "Set up long polling in the SQS queue by increasing the ReceiveMessage wait time to 30 seconds.",
+    "incorrectAnswers": [
+      "Change the SQS standard queue to an SQS FIFO queue. Use the message deduplication ID to discard duplicate messages.",
+      "Increase the visibility timeout in the SQS queue to a value that is greater than the total of the function timeout and the batch window timeout.",
+      "Modify the Lambda function to delete each message from the SQS queue immediately after the message is read before processing."
+    ],
+    "explanation": "SAA-C03 practice scenario (extract question #98). Correct choice: A.",
+    "keywords": [
+      "aws-saa-c03",
+      "aws-integration",
+      "aws-storage",
+      "s3",
+      "lambda",
+      "sqs"
+    ],
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "seedId": "aac2d16c-428b-48b3-be61-454785a1ac88"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "saa-c03",
+    "question": "A company is implementing a shared storage solution for a gaming application that is hosted in an on-premises data center. The company needs\nthe ability to use Lustre clients to access data. The solution must be fully managed.\nWhich solution meets these requirements?",
+    "correctAnswer": "Create an AWS Storage Gateway le gateway. Create a fifile share that uses the required client protocol. Connect the application server to the fifile share.",
+    "incorrectAnswers": [
+      "Create an Amazon EC2 Windows instance. Install and congure a Windows fifile share role on the instance. Connect the application server to the fifile share.",
+      "Create an Amazon Elastic File System (Amazon EFS) le system, and congure it to support Lustre. Attach the le system to the origin server. Connect the application server to the le system.",
+      "Create an Amazon FSx for Lustre le system. Attach the le system to the origin server. Connect the application server to the le system."
+    ],
+    "explanation": "SAA-C03 practice scenario (extract question #99). Correct choice: A.",
+    "keywords": [
+      "aws-saa-c03",
+      "aws-storage",
+      "efs",
+      "fsx",
+      "ec2"
+    ],
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "seedId": "640629aa-44b6-4934-aa1b-c454f1dd65a5"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "saa-c03",
+    "question": "A company's containerized application runs on an Amazon EC2 instance. The application needs to download security certicates before it can\ncommunicate with other business applications. The company wants a highly secure solution to encrypt and decrypt the certicates in near real\ntime. The solution also needs to store data in highly available storage after the data is encrypted.\nWhich solution will meet these requirements with the LEAST operational overhead?",
+    "correctAnswer": "Create AWS Secrets Manager secrets for encrypted certicates. Manually update the certicates as needed. Control access to the data by using ne-grained IAM access.",
+    "incorrectAnswers": [
+      "Create an AWS Lambda function that uses the Python cryptography library to receive and perform encryption operations. Store the function in an Amazon S3 bucket.",
+      "Create an AWS Key Management Service (AWS KMS) customer managed key. Allow the EC2 role to use the KMS key for encryption operations. Store the encrypted data on Amazon S3.",
+      "Create an AWS Key Management Service (AWS KMS) customer managed key. Allow the EC2 role to use the KMS key for encryption operations. Store the encrypted data on Amazon Elastic Block Store (Amazon EBS) volumes. --- Page 37 ---"
+    ],
+    "explanation": "SAA-C03 practice scenario (extract question #100). Correct choice: A.",
+    "keywords": [
+      "aws-saa-c03",
+      "aws-security",
+      "aws-compute",
+      "ec2",
+      "iam",
+      "secrets-manager"
+    ],
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "seedId": "dae8106b-7ae7-44a3-b34d-678400b3ec04"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "saa-c03",
+    "question": "A solutions architect is designing a VPC with public and private subnets. The VPC and subnets use IPv4 CIDR blocks. There is one public subnet\nand one private subnet in each of three Availability Zones (AZs) for high availability. An internet gateway is used to provide internet access for the\npublic subnets. The private subnets require access to the internet to allow Amazon EC2 instances to download software updates.\nWhat should the solutions architect do to enable Internet access for the private subnets?",
+    "correctAnswer": "Create an egress-only internet gateway on one of the public subnets. Update the route table for the private subnets that forward non-VPC traffic to the egress-only Internet gateway.",
+    "incorrectAnswers": [
+      "Create three NAT gateways, one for each public subnet in each AZ. Create a private route table for each AZ that forwards non-VPC traffic to the NAT gateway in its AZ.",
+      "Create three NAT instances, one for each private subnet in each AZ. Create a private route table for each AZ that forwards non-VPC traffic to the NAT instance in its AZ.",
+      "Create a second internet gateway on one of the private subnets. Update the route table for the private subnets that forward non-VPC traffic to the private internet gateway."
+    ],
+    "explanation": "SAA-C03 practice scenario (extract question #101). Correct choice: D.",
+    "keywords": [
+      "aws-saa-c03",
+      "aws-networking",
+      "aws-compute",
+      "ec2",
+      "vpc"
+    ],
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "seedId": "64aadce3-0c38-49cc-8b0f-0023e0a56d6d"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "saa-c03",
+    "question": "A company has an AWS Glue extraffict, transform, and load (ETL) job that runs every day at the same time. The job processes XML data that is in an\nAmazon S3 bucket. New data is added to the S3 bucket every day. A solutions architect notices that AWS Glue is processing all the data during\neach run.\nWhat should the solutions architect do to prevent AWS Glue from reprocessing old data?",
+    "correctAnswer": "Edit the job to use job bookmarks.",
+    "incorrectAnswers": [
+      "Edit the job to delete data after the data is processed.",
+      "Edit the job by setting the NumberOfWorkers eld to 1.",
+      "Use a FindMatches machine learning (ML) transform. --- Page 38 ---"
+    ],
+    "explanation": "SAA-C03 practice scenario (extract question #103). Correct choice: A.",
+    "keywords": [
+      "aws-saa-c03",
+      "aws-analytics",
+      "aws-storage",
+      "s3",
+      "glue"
+    ],
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "seedId": "8add7264-7a58-4ebc-9e35-2821e6b2ab99"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "saa-c03",
+    "question": "A company is preparing to deploy a new serverless workload. A solutions architect must use the principle of least privilege to congure\npermissions that will be used to run an AWS Lambda function. An Amazon EventBridge (Amazon CloudWatch Events) rule will invoke the function.\nWhich solution meets these requirements?",
+    "correctAnswer": "Add an execution role to the function with lambda:InvokeFunction as the action and * as the principal.",
+    "incorrectAnswers": [
+      "Add an execution role to the function with lambda:InvokeFunction as the action and Service: lambda.amazonaws.com as the principal.",
+      "Add a resource-based policy to the function with lambda:* as the action and Service: events.amazonaws.com as the principal.",
+      "Add a resource-based policy to the function with lambda:InvokeFunction as the action and Service: events.amazonaws.com as the principal."
+    ],
+    "explanation": "SAA-C03 practice scenario (extract question #105). Correct choice: A.",
+    "keywords": [
+      "aws-saa-c03",
+      "aws-integration",
+      "aws-compute",
+      "lambda",
+      "eventbridge",
+      "cloudwatch",
+      "serverless"
+    ],
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "seedId": "1be4b96e-0fa2-40fc-9953-6169b52aaaad"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "saa-c03",
+    "question": "A company is preparing to store condential data in Amazon S3. For compliance reasons, the data must be encrypted at rest. Encryption key\nusage must be logged for auditing purposes. Keys must be rotated every year.\nWhich solution meets these requirements and is the MOST operationally efficient?",
+    "correctAnswer": "Server-side encryption with customer-provided keys (SSE-C)",
+    "incorrectAnswers": [
+      "Server-side encryption with Amazon S3 managed keys (SSE-S3)",
+      "Server-side encryption with AWS KMS keys (SSE-KMS) with manual rotation",
+      "Server-side encryption with AWS KMS keys (SSE-KMS) with automatic rotation --- Page 39 ---"
+    ],
+    "explanation": "SAA-C03 practice scenario (extract question #106). Correct choice: A.",
+    "keywords": [
+      "aws-saa-c03",
+      "aws-storage",
+      "aws-security",
+      "s3"
+    ],
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "seedId": "4299bd18-dd51-4030-8ef9-9e794939aa7c"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "saa-c03",
+    "question": "A bicycle sharing company is developing a multi-tier architecture to traffick the location of its bicycles during peak operating hours. The company\nwants to use these data points in its existing analytics platform. A solutions architect must determine the most viable multi-tier option to support\nthis architecture. The data points must be accessible from the REST API.\nWhich action meets these requirements for storing and retrieving location data?",
+    "correctAnswer": "Use Amazon Athena with Amazon S3.",
+    "incorrectAnswers": [
+      "Use Amazon API Gateway with AWS Lambda.",
+      "Use Amazon QuickSight with Amazon Redshift.",
+      "Use Amazon API Gateway with Amazon Kinesis Data Analytics."
+    ],
+    "explanation": "SAA-C03 practice scenario (extract question #107). Correct choice: A.",
+    "keywords": [
+      "aws-saa-c03",
+      "aws-storage",
+      "aws-analytics",
+      "s3",
+      "athena"
+    ],
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "seedId": "ffed6773-ad4e-4d68-a41a-765cec032d71"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "saa-c03",
+    "question": "A company has an automobile sales website that stores its listings in a database on Amazon RDS. When an automobile is sold, the listing needs\nto be removed from the website and the data must be sent to multiple target systems.\nWhich design should a solutions architect recommend?",
+    "correctAnswer": "Create an AWS Lambda function triggered when the database on Amazon RDS is updated to send the information to an Amazon Simple Queue Service (Amazon SQS) queue for the targets to consume.",
+    "incorrectAnswers": [
+      "Create an AWS Lambda function triggered when the database on Amazon RDS is updated to send the information to an Amazon Simple Queue Service (Amazon SQS) FIFO queue for the targets to consume.",
+      "Subscribe to an RDS event notication and send an Amazon Simple Queue Service (Amazon SQS) queue fanned out to multiple Amazon Simple Notification Service (Amazon SNS) topics. Use AWS Lambda functions to update the targets.",
+      "Subscribe to an RDS event notication and send an Amazon Simple Notification Service (Amazon SNS) topic fanned out to multiple Amazon Simple Queue Service (Amazon SQS) queues. Use AWS Lambda functions to update the targets."
+    ],
+    "explanation": "SAA-C03 practice scenario (extract question #108). Correct choice: A.",
+    "keywords": [
+      "aws-saa-c03",
+      "aws-integration",
+      "aws-database",
+      "databases",
+      "rds",
+      "lambda",
+      "sqs"
+    ],
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "seedId": "6f5f59e2-7332-4c69-8ec2-13c12208b79f"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "saa-c03",
+    "question": "A company needs to store data in Amazon S3 and must prevent the data from being changed. The company wants new objects that are uploaded\nto Amazon S3 to remain unchangeable for a nonspecific amount of time until the company decides to modify the objects. Only specific users in\nthe company's AWS account can have the ability 10 delete the objects.\nWhat should a solutions architect do to meet these requirements?",
+    "correctAnswer": "Create an S3 Glacier vault. Apply a write-once, read-many (WORM) vault lock policy to the objects.",
+    "incorrectAnswers": [
+      "Create an S3 bucket with S3 Object Lock enabled. Enable versioning. Set a retention period of 100 years. Use governance mode as the S3 bucket’s default retention mode for new objects.",
+      "Create an S3 bucket. Use AWS CloudTrail to traffick any S3 API events that modify the objects. Upon notication, restore the modied objects from any backup versions that the company has.",
+      "Create an S3 bucket with S3 Object Lock enabled. Enable versioning. Add a legal hold to the objects. Add the s3:PutObjectLegalHold permission to the IAM policies of users who need to delete the objects. --- Page 40 ---"
+    ],
+    "explanation": "SAA-C03 practice scenario (extract question #109). Correct choice: A.",
+    "keywords": [
+      "aws-saa-c03",
+      "aws-storage",
+      "s3",
+      "glacier"
+    ],
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "seedId": "6e34f40e-c8ce-4bcc-ab12-0c0b1a3eb668"
+  }
+]

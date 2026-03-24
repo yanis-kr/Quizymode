@@ -16,7 +16,8 @@
       "contours",
       "usgs"
     ],
-    "source": "https://www.usgs.gov/faqs/what-topographic-map"
+    "source": "https://www.usgs.gov/faqs/what-topographic-map",
+    "seedId": "25abb42b-ed6a-4f87-9d27-93a979ffe048"
   },
   {
     "category": "geography",
@@ -35,7 +36,8 @@
       "contours",
       "elevation"
     ],
-    "source": "https://www.usgs.gov/faqs/what-topographic-map"
+    "source": "https://www.usgs.gov/faqs/what-topographic-map",
+    "seedId": "0a5bdd77-3232-4683-a0f5-088848a2ef66"
   },
   {
     "category": "geography",
@@ -54,7 +56,8 @@
       "hydrography",
       "features"
     ],
-    "source": "https://www.usgs.gov/faqs/what-topographic-map"
+    "source": "https://www.usgs.gov/faqs/what-topographic-map",
+    "seedId": "f06d2030-c5c4-4044-9765-97a0b6a06af0"
   },
   {
     "category": "geography",
@@ -73,7 +76,8 @@
       "us-topo",
       "scale"
     ],
-    "source": "https://www.usgs.gov/faqs/what-topographic-map"
+    "source": "https://www.usgs.gov/faqs/what-topographic-map",
+    "seedId": "f913a02c-63fb-4bd2-94e1-cf0511b7ec12"
   },
   {
     "category": "geography",
@@ -92,7 +96,8 @@
       "quadrangles",
       "usgs"
     ],
-    "source": "https://www.usgs.gov/faqs/how-do-i-find-download-or-order-topographic-maps"
+    "source": "https://www.usgs.gov/faqs/how-do-i-find-download-or-order-topographic-maps",
+    "seedId": "108d6637-fa1d-4e96-b7c2-1f98141ed64d"
   },
   {
     "category": "geography",
@@ -111,7 +116,8 @@
       "land-use",
       "planning"
     ],
-    "source": "https://www.britannica.com/science/map"
+    "source": "https://www.britannica.com/science/map",
+    "seedId": "6175048c-a9e5-4e51-9822-a30ff6f44ecc"
   },
   {
     "category": "geography",
@@ -130,7 +136,8 @@
       "elevation",
       "sea-level"
     ],
-    "source": "https://www.britannica.com/science/map"
+    "source": "https://www.britannica.com/science/map",
+    "seedId": "a88a3466-6c4b-46f0-b13d-f518b6ebfc75"
   },
   {
     "category": "geography",
@@ -149,7 +156,8 @@
       "cultural-features",
       "infrastructure"
     ],
-    "source": "https://www.britannica.com/science/topographic-map"
+    "source": "https://www.britannica.com/science/topographic-map",
+    "seedId": "c1364b11-745e-4187-84ee-90907c19abe4"
   },
   {
     "category": "geography",
@@ -168,7 +176,8 @@
       "bathymetry",
       "oceans"
     ],
-    "source": "https://www.britannica.com/science/map"
+    "source": "https://www.britannica.com/science/map",
+    "seedId": "a2c06de3-8d11-41b1-a0e9-26990e9afa72"
   },
   {
     "category": "geography",
@@ -187,7 +196,8 @@
       "topobuilder",
       "on-demand"
     ],
-    "source": "https://www.usgs.gov/faqs/what-topographic-map"
+    "source": "https://www.usgs.gov/faqs/what-topographic-map",
+    "seedId": "e80feaf2-2943-4a75-9dd0-5ca7ac29bae8"
   },
   {
     "category": "geography",
@@ -206,6 +216,7 @@
       "map-types",
       "scale"
     ],
-    "source": "https://www.britannica.com/science/topographic-map"
+    "source": "https://www.britannica.com/science/topographic-map",
+    "seedId": "8091b763-683e-4c0c-bb17-ee334b0e670d"
   }
 ]

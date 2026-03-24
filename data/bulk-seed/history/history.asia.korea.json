@@ -5,10 +5,19 @@
     "navigationKeyword2": "korea",
     "question": "Before unification under Silla, the Korean peninsula was dominated by Koguryŏ, Paekche, and which third kingdom?",
     "correctAnswer": "Silla (with Kaya confederacies nearby)",
-    "incorrectAnswers": ["Joseon at that era", "Goryeo in the same centuries", "Balhae alone as a trio member"],
+    "incorrectAnswers": [
+      "Joseon at that era",
+      "Goryeo in the same centuries",
+      "Balhae alone as a trio member"
+    ],
     "explanation": "Buddhist culture, horse armor, and Chinese tribute politics marked the Three Kingdoms period.",
-    "keywords": ["korea", "three-kingdoms", "ancient"],
-    "source": "https://www.britannica.com/place/Korea/The-Three-Kingdoms-period"
+    "keywords": [
+      "korea",
+      "three-kingdoms",
+      "ancient"
+    ],
+    "source": "https://www.britannica.com/place/Korea/The-Three-Kingdoms-period",
+    "seedId": "74eaba24-4c0c-4ec5-a4ea-08cab9526ede"
   },
   {
     "category": "history",
@@ -16,10 +25,19 @@
     "navigationKeyword2": "korea",
     "question": "Wang Kŏn founded which dynasty in 918 whose name still labels the modern Korean alphabet’s formal alias?",
     "correctAnswer": "Goryeo (Koryŏ)",
-    "incorrectAnswers": ["Joseon immediately in 918", "Balhae as southern successor", "Silla restored universally"],
+    "incorrectAnswers": [
+      "Joseon immediately in 918",
+      "Balhae as southern successor",
+      "Silla restored universally"
+    ],
     "explanation": "Celadon, Tripitaka printing blocks, and Mongol tributary status characterize the long Goryeo centuries.",
-    "keywords": ["korea", "goryeo", "medieval"],
-    "source": "https://www.britannica.com/topic/Koryo-dynasty"
+    "keywords": [
+      "korea",
+      "goryeo",
+      "medieval"
+    ],
+    "source": "https://www.britannica.com/topic/Koryo-dynasty",
+    "seedId": "0cabc006-a8df-4146-9d70-37509f7b23a3"
   },
   {
     "category": "history",
@@ -27,10 +45,19 @@
     "navigationKeyword2": "korea",
     "question": "General Yi Sŏng-gye’s 1392 coup inaugurated which Confucian-bureaucratic dynasty lasting until 1910?",
     "correctAnswer": "The Joseon (Chosŏn) dynasty",
-    "incorrectAnswers": ["The Goryeo restoration", "The Japanese shogunate in Seoul", "The Yuan province of Liaoyang only"],
+    "incorrectAnswers": [
+      "The Goryeo restoration",
+      "The Japanese shogunate in Seoul",
+      "The Yuan province of Liaoyang only"
+    ],
     "explanation": "Hangul promulgation, yangban elites, and Hideyoshi’s invasions shaped its later crises.",
-    "keywords": ["korea", "joseon", "yi-dynasty"],
-    "source": "https://www.britannica.com/topic/Choson-dynasty"
+    "keywords": [
+      "korea",
+      "joseon",
+      "yi-dynasty"
+    ],
+    "source": "https://www.britannica.com/topic/Choson-dynasty",
+    "seedId": "7239073d-46c9-49d9-b601-f131bfa4eda2"
   },
   {
     "category": "history",
@@ -38,10 +65,19 @@
     "navigationKeyword2": "korea",
     "question": "Japan formally annexed Korea as a colony after which 1905 agreement that stripped Seoul of diplomatic power?",
     "correctAnswer": "The Japan–Korea Treaty of 1905 (Eulsa Protectorate Treaty)",
-    "incorrectAnswers": ["The Treaty of Shimonoseki alone", "The Ganghwa Treaty of 1876 exclusively", "The Portsmouth Treaty"],
+    "incorrectAnswers": [
+      "The Treaty of Shimonoseki alone",
+      "The Ganghwa Treaty of 1876 exclusively",
+      "The Portsmouth Treaty"
+    ],
     "explanation": "Itō Hirobumi’s residents-general rule paved the way to full annexation in 1910.",
-    "keywords": ["korea", "japan", "colonial"],
-    "source": "https://www.britannica.com/place/Korea/Korea-under-Japanese-rule"
+    "keywords": [
+      "korea",
+      "japan",
+      "colonial"
+    ],
+    "source": "https://www.britannica.com/place/Korea/Korea-under-Japanese-rule",
+    "seedId": "ac3ea2e8-cfbe-41c6-b910-254cea945324"
   },
   {
     "category": "history",
@@ -49,10 +85,19 @@
     "navigationKeyword2": "korea",
     "question": "March 1, 1919, nationwide protests against Japanese rule are commemorated as what Korean holiday?",
     "correctAnswer": "Samil (March First) Independence Movement Day",
-    "incorrectAnswers": ["Hangul Day", "Liberation Day (August 15) only", "Kim Il-Sung’s birthday"],
+    "incorrectAnswers": [
+      "Hangul Day",
+      "Liberation Day (August 15) only",
+      "Kim Il-Sung’s birthday"
+    ],
     "explanation": "Paris Peace echoes and Wilsonian language inspired mass demonstrations brutally suppressed by gendarmes.",
-    "keywords": ["korea", "1919", "independence"],
-    "source": "https://www.britannica.com/event/March-First-Movement"
+    "keywords": [
+      "korea",
+      "1919",
+      "independence"
+    ],
+    "source": "https://www.britannica.com/event/March-First-Movement",
+    "seedId": "af8e5ca0-2db5-4e50-bb55-f6eb5ba6eea0"
   },
   {
     "category": "history",
@@ -60,10 +105,19 @@
     "navigationKeyword2": "korea",
     "question": "At the end of World War II, Soviet and U.S. zones of occupation met roughly along which latitude line?",
     "correctAnswer": "The 38th parallel",
-    "incorrectAnswers": ["The Yalu River", "The Demilitarized Zone of 1953 only", "The Tropic of Cancer"],
+    "incorrectAnswers": [
+      "The Yalu River",
+      "The Demilitarized Zone of 1953 only",
+      "The Tropic of Cancer"
+    ],
     "explanation": "Cold War rivalry hardened temporary lines into competing Korean states by 1948.",
-    "keywords": ["korea", "division", "cold-war"],
-    "source": "https://www.britannica.com/place/38th-parallel"
+    "keywords": [
+      "korea",
+      "division",
+      "cold-war"
+    ],
+    "source": "https://www.britannica.com/place/38th-parallel",
+    "seedId": "96a1b6aa-5a72-428f-b202-cfa47bfd2d18"
   },
   {
     "category": "history",
@@ -71,10 +125,19 @@
     "navigationKeyword2": "korea",
     "question": "Kim Il-Sung’s June 1950 invasion aimed to reunify the peninsula under whose regime?",
     "correctAnswer": "The Democratic People’s Republic of Korea (North Korea)",
-    "incorrectAnswers": ["The First Republic of Korea first", "The United Nations trusteeship alone", "Manchukuo restoration"],
+    "incorrectAnswers": [
+      "The First Republic of Korea first",
+      "The United Nations trusteeship alone",
+      "Manchukuo restoration"
+    ],
     "explanation": "Inchon, Chinese intervention, and stalemate along the pre-armistice line consumed three years of war.",
-    "keywords": ["korea", "korean-war", "1950"],
-    "source": "https://www.britannica.com/event/Korean-War"
+    "keywords": [
+      "korea",
+      "korean-war",
+      "1950"
+    ],
+    "source": "https://www.britannica.com/event/Korean-War",
+    "seedId": "204f7f27-2285-4579-b82f-3cf449db4cae"
   },
   {
     "category": "history",
@@ -82,10 +145,19 @@
     "navigationKeyword2": "korea",
     "question": "Park Chung-hee’s 1961 coup launched export-led industrialization sometimes nicknamed after which river?",
     "correctAnswer": "The Han River Miracle (South Korean development model)",
-    "incorrectAnswers": ["The Taedong River program", "The Yalu boom alone", "The Nakdong nexus exclusively"],
+    "incorrectAnswers": [
+      "The Taedong River program",
+      "The Yalu boom alone",
+      "The Nakdong nexus exclusively"
+    ],
     "explanation": "Chaebols, U.S. security umbrellas, and compressed growth transformed an agrarian war-torn south.",
-    "keywords": ["korea", "park-chung-hee", "development"],
-    "source": "https://www.britannica.com/biography/Park-Chung-Hee"
+    "keywords": [
+      "korea",
+      "park-chung-hee",
+      "development"
+    ],
+    "source": "https://www.britannica.com/biography/Park-Chung-Hee",
+    "seedId": "2f06c279-fcbc-4315-8ac0-64d77cbed1a1"
   },
   {
     "category": "history",
@@ -93,10 +165,19 @@
     "navigationKeyword2": "korea",
     "question": "Roh Tae-woo’s June 29, 1987, reform pledge followed massive protests demanding what change to the presidency?",
     "correctAnswer": "Direct popular election of the president",
-    "incorrectAnswers": ["Abolition of the National Assembly only", "Immediate union with North Korea", "Restoration of Syngman Rhee’s constitution"],
+    "incorrectAnswers": [
+      "Abolition of the National Assembly only",
+      "Immediate union with North Korea",
+      "Restoration of Syngman Rhee’s constitution"
+    ],
     "explanation": "The June Struggle pressured the ruling DJP to scrap indirect election schemes and draft a democratic constitution.",
-    "keywords": ["korea", "democratization", "1987"],
-    "source": "https://www.britannica.com/biography/Roh-Tae-Woo"
+    "keywords": [
+      "korea",
+      "democratization",
+      "1987"
+    ],
+    "source": "https://www.britannica.com/biography/Roh-Tae-Woo",
+    "seedId": "fc1901bd-fc3a-4b46-a715-b35f0c598d60"
   },
   {
     "category": "history",
@@ -104,10 +185,19 @@
     "navigationKeyword2": "korea",
     "question": "Kim Dae-jung’s 2000 Pyongyang summit with Kim Jong Il was dubbed which sunshine-themed policy?",
     "correctAnswer": "The Sunshine Policy",
-    "incorrectAnswers": ["The Hermit Kingdom Doctrine", "The Northern Limit Line Accord of 1972", "The Panmunjom Formula only"],
+    "incorrectAnswers": [
+      "The Hermit Kingdom Doctrine",
+      "The Northern Limit Line Accord of 1972",
+      "The Panmunjom Formula only"
+    ],
     "explanation": "Family reunions and Kaesŏng industrial hopes briefly eased inter-Korean tension.",
-    "keywords": ["korea", "sunshine-policy", "engagement"],
-    "source": "https://www.britannica.com/biography/Kim-Dae-Jung"
+    "keywords": [
+      "korea",
+      "sunshine-policy",
+      "engagement"
+    ],
+    "source": "https://www.britannica.com/biography/Kim-Dae-Jung",
+    "seedId": "115665a8-3026-4301-8e11-779b03e59f58"
   },
   {
     "category": "history",
@@ -115,10 +205,19 @@
     "navigationKeyword2": "korea",
     "question": "Chun Doo-hwan’s paratroopers crushed which May 1980 southern city uprising that became a democracy movement symbol?",
     "correctAnswer": "The Gwangju Uprising",
-    "incorrectAnswers": ["The Busan student spring alone", "The Seoul spring of 1987 only", "The Jeju April 3 incident of the same month"],
+    "incorrectAnswers": [
+      "The Busan student spring alone",
+      "The Seoul spring of 1987 only",
+      "The Jeju April 3 incident of the same month"
+    ],
     "explanation": "Hundreds died as citizens armed themselves briefly before tanks retook the city; memory fueled the 1987 transition.",
-    "keywords": ["korea", "gwangju", "1980"],
-    "source": "https://www.britannica.com/event/Gwangju-Uprising"
+    "keywords": [
+      "korea",
+      "gwangju",
+      "1980"
+    ],
+    "source": "https://www.britannica.com/event/Gwangju-Uprising",
+    "seedId": "0eab6545-c737-4f2b-b4b2-e694c0a5d87c"
   },
   {
     "category": "history",
@@ -126,9 +225,18 @@
     "navigationKeyword2": "korea",
     "question": "2018 saw the first inter-Korean summit in Panmunjom between Moon Jae-in and which North Korean leader?",
     "correctAnswer": "Kim Jong Un",
-    "incorrectAnswers": ["Kim Jong Il posthumously", "Kim Il Sung via medium", "Hwang Jang-yop as head of state"],
+    "incorrectAnswers": [
+      "Kim Jong Il posthumously",
+      "Kim Il Sung via medium",
+      "Hwang Jang-yop as head of state"
+    ],
     "explanation": "Olympic diplomacy and a vague denuclearization pledge followed, though implementation stalled.",
-    "keywords": ["korea", "summit", "2018"],
-    "source": "https://www.britannica.com/biography/Moon-Jae-In"
+    "keywords": [
+      "korea",
+      "summit",
+      "2018"
+    ],
+    "source": "https://www.britannica.com/biography/Moon-Jae-In",
+    "seedId": "7c8bda6f-2041-4360-bec0-df44e06a7027"
   }
 ]

@@ -5,10 +5,19 @@
     "navigationKeyword2": "arab-world",
     "question": "Muhammad’s 622 hijra from Mecca to which oasis marks year 1 of the Islamic lunar calendar?",
     "correctAnswer": "Medina (Yathrib)",
-    "incorrectAnswers": ["Taif alone", "Jerusalem immediately", "Kufa in Iraq"],
+    "incorrectAnswers": [
+      "Taif alone",
+      "Jerusalem immediately",
+      "Kufa in Iraq"
+    ],
     "explanation": "The Constitution of Medina and subsequent Muslim polity grew from that refuge community.",
-    "keywords": ["arab-world", "hijra", "medina"],
-    "source": "https://www.britannica.com/biography/Muhammad"
+    "keywords": [
+      "arab-world",
+      "hijra",
+      "medina"
+    ],
+    "source": "https://www.britannica.com/biography/Muhammad",
+    "seedId": "1595ffc2-699c-4a0f-84d0-3ec829e5f8d3"
   },
   {
     "category": "history",
@@ -16,10 +25,19 @@
     "navigationKeyword2": "arab-world",
     "question": "The first four ‘rightly guided’ caliphs—Abū Bakr, ʿUmar, ʿUthmān, and ʿAlī—are known by what caliphal label?",
     "correctAnswer": "The Rashidun caliphate",
-    "incorrectAnswers": ["The Umayyad line only", "The Fatimid imamate", "The Abbasid revolutionaries"],
+    "incorrectAnswers": [
+      "The Umayyad line only",
+      "The Fatimid imamate",
+      "The Abbasid revolutionaries"
+    ],
     "explanation": "Their conquests carried Arabic administration from the Maghrib to the Oxus in a single generation.",
-    "keywords": ["arab-world", "rashidun", "caliphate"],
-    "source": "https://www.britannica.com/topic/Rashidun-caliphate"
+    "keywords": [
+      "arab-world",
+      "rashidun",
+      "caliphate"
+    ],
+    "source": "https://www.britannica.com/topic/Rashidun-caliphate",
+    "seedId": "aea2f9de-6688-40e5-a74a-9539f0809cb9"
   },
   {
     "category": "history",
@@ -27,10 +45,19 @@
     "navigationKeyword2": "arab-world",
     "question": "Muʿāwiyah’s move of the capital to Damascus founded which caliphal dynasty?",
     "correctAnswer": "The Umayyad caliphate",
-    "incorrectAnswers": ["The Abbasids immediately", "The Almoravids", "The Mamluk sultanate"],
+    "incorrectAnswers": [
+      "The Abbasids immediately",
+      "The Almoravids",
+      "The Mamluk sultanate"
+    ],
     "explanation": "Arab tribal armies, Dome aesthetics, and mawālī tensions characterized their century of rule.",
-    "keywords": ["arab-world", "umayyad", "damascus"],
-    "source": "https://www.britannica.com/topic/Umayyad-caliphate"
+    "keywords": [
+      "arab-world",
+      "umayyad",
+      "damascus"
+    ],
+    "source": "https://www.britannica.com/topic/Umayyad-caliphate",
+    "seedId": "2b8e7819-c4e6-40ed-9bc7-d1493d52bb27"
   },
   {
     "category": "history",
@@ -38,10 +65,19 @@
     "navigationKeyword2": "arab-world",
     "question": "The 750 revolution of Khurasani armies enthroned which family claiming descent from Muhammad’s uncle al-ʿAbbās?",
     "correctAnswer": "The Abbasid dynasty",
-    "incorrectAnswers": ["The Umayyad Spanish branch", "The Fatimids in Cairo", "The Seljuk sultans"],
+    "incorrectAnswers": [
+      "The Umayyad Spanish branch",
+      "The Fatimids in Cairo",
+      "The Seljuk sultans"
+    ],
     "explanation": "Baghdad’s Round City and translation movement framed a cosmopolitan Islamic high culture.",
-    "keywords": ["arab-world", "abbasid", "baghdad"],
-    "source": "https://www.britannica.com/topic/Abbasid-caliphate"
+    "keywords": [
+      "arab-world",
+      "abbasid",
+      "baghdad"
+    ],
+    "source": "https://www.britannica.com/topic/Abbasid-caliphate",
+    "seedId": "5b21fc0d-78e3-4a7a-becb-9e6b1d70268b"
   },
   {
     "category": "history",
@@ -49,10 +85,19 @@
     "navigationKeyword2": "arab-world",
     "question": "Which Andalusian philosopher’s commentaries on Aristotle re-entered Latin Europe via Toledo translators?",
     "correctAnswer": "Ibn Rushd (Averroës)",
-    "incorrectAnswers": ["Al-Ghazālī alone for Aristotle revival", "Ibn Sīnā without Latin reception", "Al-Fārābī exclusively in Paris"],
+    "incorrectAnswers": [
+      "Al-Ghazālī alone for Aristotle revival",
+      "Ibn Sīnā without Latin reception",
+      "Al-Fārābī exclusively in Paris"
+    ],
     "explanation": "Cordoba and Almohad patronage framed his rationalist jurisprudence debates with the theologians.",
-    "keywords": ["arab-world", "averroes", "andalus"],
-    "source": "https://www.britannica.com/biography/Averroes"
+    "keywords": [
+      "arab-world",
+      "averroes",
+      "andalus"
+    ],
+    "source": "https://www.britannica.com/biography/Averroes",
+    "seedId": "8a43093c-1bcc-4919-b751-d9c2d367b0d3"
   },
   {
     "category": "history",
@@ -60,10 +105,19 @@
     "navigationKeyword2": "arab-world",
     "question": "Saladin’s 1187 recapture of Jerusalem responded to which crusader kingdom’s aggression at Ḥaṭṭīn?",
     "correctAnswer": "The Latin Kingdom of Jerusalem",
-    "incorrectAnswers": ["The Byzantine rump state", "The Il-khan Mongols", "The Mamluk sultanate before founding"],
+    "incorrectAnswers": [
+      "The Byzantine rump state",
+      "The Il-khan Mongols",
+      "The Mamluk sultanate before founding"
+    ],
     "explanation": "Ayyubid diplomacy balanced jihad rhetoric with trade accords with Italian maritime cities.",
-    "keywords": ["arab-world", "saladin", "crusades"],
-    "source": "https://www.britannica.com/biography/Saladin"
+    "keywords": [
+      "arab-world",
+      "saladin",
+      "crusades"
+    ],
+    "source": "https://www.britannica.com/biography/Saladin",
+    "seedId": "c19f4d6f-89e9-4a87-8813-0b67fc422b96"
   },
   {
     "category": "history",
@@ -71,10 +125,19 @@
     "navigationKeyword2": "arab-world",
     "question": "Muhammad Ali Pasha’s Egypt built a modern navy that briefly challenged which Ottoman sultan’s authority?",
     "correctAnswer": "Mahmud II (and successors) within the empire Egypt still nominally served",
-    "incorrectAnswers": ["Napoleon III as caliph", "Ismail I Safavid", "Abbas I of Persia only"],
+    "incorrectAnswers": [
+      "Napoleon III as caliph",
+      "Ismail I Safavid",
+      "Abbas I of Persia only"
+    ],
     "explanation": "Industrial monopolies, conscript peasants, and Syrian campaigns foreshadowed separate Egyptian interests.",
-    "keywords": ["arab-world", "muhammad-ali", "egypt"],
-    "source": "https://www.britannica.com/biography/Muhammad-Ali-pasha-and-viceroy-of-Egypt"
+    "keywords": [
+      "arab-world",
+      "muhammad-ali",
+      "egypt"
+    ],
+    "source": "https://www.britannica.com/biography/Muhammad-Ali-pasha-and-viceroy-of-Egypt",
+    "seedId": "c94cf904-4afb-4210-b099-7ac0f5a8a32c"
   },
   {
     "category": "history",
@@ -82,10 +145,19 @@
     "navigationKeyword2": "arab-world",
     "question": "The 1916 Sykes-Picot map is shorthand for Anglo-French partition plans during which war?",
     "correctAnswer": "World War I",
-    "incorrectAnswers": ["The Crimean War", "World War II exclusively", "The Franco-Prussian War"],
+    "incorrectAnswers": [
+      "The Crimean War",
+      "World War II exclusively",
+      "The Franco-Prussian War"
+    ],
     "explanation": "Arab nationalist expectations of independence clashed with mandate rule legitimized at Versailles.",
-    "keywords": ["arab-world", "sykes-picot", "wwi"],
-    "source": "https://www.britannica.com/event/Sykes-Picot-Agreement"
+    "keywords": [
+      "arab-world",
+      "sykes-picot",
+      "wwi"
+    ],
+    "source": "https://www.britannica.com/event/Sykes-Picot-Agreement",
+    "seedId": "0e485c68-012e-4b9a-9c9f-7c50d120cb92"
   },
   {
     "category": "history",
@@ -93,10 +165,19 @@
     "navigationKeyword2": "arab-world",
     "question": "Gamal Abdel Nasser nationalized the Suez Canal Company in 1956, provoking intervention by Britain, France, and which neighbor?",
     "correctAnswer": "Israel",
-    "incorrectAnswers": ["Turkey", "Italy", "Greece"],
+    "incorrectAnswers": [
+      "Turkey",
+      "Italy",
+      "Greece"
+    ],
     "explanation": "U.S. and Soviet pressure forced withdrawal, boosting Nasser’s pan-Arab prestige.",
-    "keywords": ["arab-world", "nasser", "suez"],
-    "source": "https://www.britannica.com/biography/Gamal-Abdel-Nasser"
+    "keywords": [
+      "arab-world",
+      "nasser",
+      "suez"
+    ],
+    "source": "https://www.britannica.com/biography/Gamal-Abdel-Nasser",
+    "seedId": "3609981b-90ea-4a87-bf17-78699a736275"
   },
   {
     "category": "history",
@@ -104,10 +185,19 @@
     "navigationKeyword2": "arab-world",
     "question": "The 1973 Ramadan/Yom Kippur War saw Egyptian forces cross which canal’s cease-fire line?",
     "correctAnswer": "The Suez Canal (Bar-Lev Line)",
-    "incorrectAnswers": ["The Bosporus", "The Strait of Hormuz", "The Shatt al-Arab exclusively"],
+    "incorrectAnswers": [
+      "The Bosporus",
+      "The Strait of Hormuz",
+      "The Shatt al-Arab exclusively"
+    ],
     "explanation": "OPEC oil leverage and superpower détente framed the postwar disengagement agreements.",
-    "keywords": ["arab-world", "1973", "egypt"],
-    "source": "https://www.britannica.com/event/Yom-Kippur-War"
+    "keywords": [
+      "arab-world",
+      "1973",
+      "egypt"
+    ],
+    "source": "https://www.britannica.com/event/Yom-Kippur-War",
+    "seedId": "533fd220-41dd-457e-bb49-fd0eddc34c62"
   },
   {
     "category": "history",
@@ -115,10 +205,19 @@
     "navigationKeyword2": "arab-world",
     "question": "Iraq’s 1990 invasion of its small oil-rich neighbor triggered which U.S.-led coalition war?",
     "correctAnswer": "The Persian Gulf War (Operation Desert Storm)",
-    "incorrectAnswers": ["The Iran-Iraq War continuation only", "The 2003 Iraq War at that date", "The Lebanese Civil War"],
+    "incorrectAnswers": [
+      "The Iran-Iraq War continuation only",
+      "The 2003 Iraq War at that date",
+      "The Lebanese Civil War"
+    ],
     "explanation": "UN resolutions, air supremacy, and a hundred-hour ground offensive liberated Kuwait.",
-    "keywords": ["arab-world", "gulf-war", "kuwait"],
-    "source": "https://www.britannica.com/event/Persian-Gulf-War"
+    "keywords": [
+      "arab-world",
+      "gulf-war",
+      "kuwait"
+    ],
+    "source": "https://www.britannica.com/event/Persian-Gulf-War",
+    "seedId": "15186caa-9a16-4263-bd3e-e7d0248c92ee"
   },
   {
     "category": "history",
@@ -126,9 +225,18 @@
     "navigationKeyword2": "arab-world",
     "question": "Which uprising began after Mohamed Bouazizi’s self-immolation in Sidi Bouzid and ousted Tunisia’s Zine el-Abidine Ben Ali in January 2011?",
     "correctAnswer": "The Jasmine Revolution (Tunisian revolution)",
-    "incorrectAnswers": ["The Cedar Revolution in Tunis", "The Green Movement", "The Hirak in Algiers"],
+    "incorrectAnswers": [
+      "The Cedar Revolution in Tunis",
+      "The Green Movement",
+      "The Hirak in Algiers"
+    ],
     "explanation": "Its success cascaded into Egyptian, Libyan, Yemeni, and Syrian protest waves.",
-    "keywords": ["arab-world", "arab-spring", "tunisia"],
-    "source": "https://www.britannica.com/event/Jasmine-Revolution"
+    "keywords": [
+      "arab-world",
+      "arab-spring",
+      "tunisia"
+    ],
+    "source": "https://www.britannica.com/event/Jasmine-Revolution",
+    "seedId": "0b9d42bc-f9e8-42f4-8e61-269428fb7a0e"
   }
 ]

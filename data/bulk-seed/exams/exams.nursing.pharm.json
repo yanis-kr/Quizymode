@@ -5,10 +5,19 @@
     "navigationKeyword2": "pharm",
     "question": "Antibiotics treat infections caused by what?",
     "correctAnswer": "Bacteria",
-    "incorrectAnswers": ["Viruses", "Allergies", "Heat exposure"],
+    "incorrectAnswers": [
+      "Viruses",
+      "Allergies",
+      "Heat exposure"
+    ],
     "explanation": "CDC says antibiotics only treat certain infections caused by bacteria.",
-    "keywords": ["nursing-pharm", "nclex", "medication-safety"],
-    "source": "https://www.cdc.gov/antibiotic-use/about/index.html"
+    "keywords": [
+      "nursing-pharm",
+      "nclex",
+      "medication-safety"
+    ],
+    "source": "https://www.cdc.gov/antibiotic-use/about/index.html",
+    "seedId": "a22a30de-de2b-4c1e-a068-92e18e582efd"
   },
   {
     "category": "exams",
@@ -16,10 +25,19 @@
     "navigationKeyword2": "pharm",
     "question": "Do antibiotics work on viruses?",
     "correctAnswer": "No",
-    "incorrectAnswers": ["Yes", "Only with food", "Only in children"],
+    "incorrectAnswers": [
+      "Yes",
+      "Only with food",
+      "Only in children"
+    ],
     "explanation": "CDC states that antibiotics do not work on viruses.",
-    "keywords": ["nursing-pharm", "nclex", "medication-safety"],
-    "source": "https://www.cdc.gov/antibiotic-use/about/index.html"
+    "keywords": [
+      "nursing-pharm",
+      "nclex",
+      "medication-safety"
+    ],
+    "source": "https://www.cdc.gov/antibiotic-use/about/index.html",
+    "seedId": "1a10a92e-1f1d-4c56-a565-59ba129c4eaf"
   },
   {
     "category": "exams",
@@ -27,10 +45,19 @@
     "navigationKeyword2": "pharm",
     "question": "Which common illness listed by CDC does not need antibiotics?",
     "correctAnswer": "Flu",
-    "incorrectAnswers": ["Strep throat", "Whooping cough", "Urinary tract infection caused by bacteria"],
+    "incorrectAnswers": [
+      "Strep throat",
+      "Whooping cough",
+      "Urinary tract infection caused by bacteria"
+    ],
     "explanation": "CDC lists flu as a viral illness that does not respond to antibiotics.",
-    "keywords": ["nursing-pharm", "nclex", "medication-safety"],
-    "source": "https://www.cdc.gov/antibiotic-use/about/index.html"
+    "keywords": [
+      "nursing-pharm",
+      "nclex",
+      "medication-safety"
+    ],
+    "source": "https://www.cdc.gov/antibiotic-use/about/index.html",
+    "seedId": "86d1dc5d-db01-41aa-b2a0-942f582ada8e"
   },
   {
     "category": "exams",
@@ -38,10 +65,19 @@
     "navigationKeyword2": "pharm",
     "question": "What should you do with leftover antibiotics?",
     "correctAnswer": "Do not save them for later",
-    "incorrectAnswers": ["Use them for any future fever", "Share them with family", "Double the next prescribed dose"],
+    "incorrectAnswers": [
+      "Use them for any future fever",
+      "Share them with family",
+      "Double the next prescribed dose"
+    ],
     "explanation": "CDC advises not to save antibiotics for later use.",
-    "keywords": ["nursing-pharm", "nclex", "medication-safety"],
-    "source": "https://www.cdc.gov/antibiotic-use/about/index.html"
+    "keywords": [
+      "nursing-pharm",
+      "nclex",
+      "medication-safety"
+    ],
+    "source": "https://www.cdc.gov/antibiotic-use/about/index.html",
+    "seedId": "17ec0b58-bff7-4e87-a58e-955543420210"
   },
   {
     "category": "exams",
@@ -49,10 +85,19 @@
     "navigationKeyword2": "pharm",
     "question": "Should you take antibiotics prescribed for someone else?",
     "correctAnswer": "No",
-    "incorrectAnswers": ["Yes, if symptoms look similar", "Yes, if the dose is smaller", "Only after meals"],
+    "incorrectAnswers": [
+      "Yes, if symptoms look similar",
+      "Yes, if the dose is smaller",
+      "Only after meals"
+    ],
     "explanation": "CDC says you should not take antibiotics prescribed for someone else.",
-    "keywords": ["nursing-pharm", "nclex", "medication-safety"],
-    "source": "https://www.cdc.gov/antibiotic-use/about/index.html"
+    "keywords": [
+      "nursing-pharm",
+      "nclex",
+      "medication-safety"
+    ],
+    "source": "https://www.cdc.gov/antibiotic-use/about/index.html",
+    "seedId": "ef2423a6-0321-4925-9f0c-b5ef8e4b8adb"
   },
   {
     "category": "exams",
@@ -60,10 +105,19 @@
     "navigationKeyword2": "pharm",
     "question": "What medicine can rapidly reverse an opioid overdose?",
     "correctAnswer": "Naloxone",
-    "incorrectAnswers": ["Warfarin", "Metformin", "Nitroglycerin"],
+    "incorrectAnswers": [
+      "Warfarin",
+      "Metformin",
+      "Nitroglycerin"
+    ],
     "explanation": "CDC says naloxone is a lifesaving medicine that can reverse an opioid overdose.",
-    "keywords": ["nursing-pharm", "nclex", "medication-safety"],
-    "source": "https://www.cdc.gov/overdose-prevention/reversing-overdose/about-naloxone.html"
+    "keywords": [
+      "nursing-pharm",
+      "nclex",
+      "medication-safety"
+    ],
+    "source": "https://www.cdc.gov/overdose-prevention/reversing-overdose/about-naloxone.html",
+    "seedId": "353f3268-d13b-4bc9-919a-2c42906d9244"
   },
   {
     "category": "exams",
@@ -71,10 +125,19 @@
     "navigationKeyword2": "pharm",
     "question": "During an opioid overdose, naloxone can quickly restore what?",
     "correctAnswer": "Normal breathing",
-    "incorrectAnswers": ["Kidney function", "Hearing", "Blood clotting"],
+    "incorrectAnswers": [
+      "Kidney function",
+      "Hearing",
+      "Blood clotting"
+    ],
     "explanation": "CDC says naloxone can restore normal breathing within 2 to 3 minutes in an opioid overdose.",
-    "keywords": ["nursing-pharm", "nclex", "medication-safety"],
-    "source": "https://www.cdc.gov/overdose-prevention/reversing-overdose/about-naloxone.html"
+    "keywords": [
+      "nursing-pharm",
+      "nclex",
+      "medication-safety"
+    ],
+    "source": "https://www.cdc.gov/overdose-prevention/reversing-overdose/about-naloxone.html",
+    "seedId": "73864580-7096-4c04-b13d-bf3e314e7583"
   },
   {
     "category": "exams",
@@ -82,10 +145,19 @@
     "navigationKeyword2": "pharm",
     "question": "Taking too much acetaminophen can seriously damage which organ?",
     "correctAnswer": "The liver",
-    "incorrectAnswers": ["The spleen", "The thyroid", "The appendix"],
+    "incorrectAnswers": [
+      "The spleen",
+      "The thyroid",
+      "The appendix"
+    ],
     "explanation": "FDA warns that taking too much acetaminophen can cause liver damage.",
-    "keywords": ["nursing-pharm", "nclex", "medication-safety"],
-    "source": "https://www.fda.gov/drugs/safe-use-over-counter-pain-relievers-and-fever-reducers/careful-acetaminophen-pain-relief-medicines-can-cause-liver-damage"
+    "keywords": [
+      "nursing-pharm",
+      "nclex",
+      "medication-safety"
+    ],
+    "source": "https://www.fda.gov/drugs/safe-use-over-counter-pain-relievers-and-fever-reducers/careful-acetaminophen-pain-relief-medicines-can-cause-liver-damage",
+    "seedId": "d78931f6-0e2b-4f6c-8a3a-7692c95766ef"
   },
   {
     "category": "exams",
@@ -93,10 +165,19 @@
     "navigationKeyword2": "pharm",
     "question": "Sublingual nitroglycerin tablets are used to treat what?",
     "correctAnswer": "Episodes of angina",
-    "incorrectAnswers": ["Bacterial pneumonia", "Hypoglycemia", "Urinary retention"],
+    "incorrectAnswers": [
+      "Bacterial pneumonia",
+      "Hypoglycemia",
+      "Urinary retention"
+    ],
     "explanation": "MedlinePlus says nitroglycerin sublingual tablets are used to treat episodes of angina.",
-    "keywords": ["nursing-pharm", "nclex", "cardiac-meds"],
-    "source": "https://medlineplus.gov/druginfo/meds/a601086.html"
+    "keywords": [
+      "nursing-pharm",
+      "nclex",
+      "cardiac-meds"
+    ],
+    "source": "https://medlineplus.gov/druginfo/meds/a601086.html",
+    "seedId": "e1527013-c8ed-4e2d-b904-13bc96baeda5"
   },
   {
     "category": "exams",
@@ -104,9 +185,18 @@
     "navigationKeyword2": "pharm",
     "question": "How should vitamin K foods be handled while taking warfarin?",
     "correctAnswer": "Keep the weekly amount consistent",
-    "incorrectAnswers": ["Avoid all vegetables completely", "Double intake on weekends", "Take vitamin K only with warfarin doses"],
+    "incorrectAnswers": [
+      "Avoid all vegetables completely",
+      "Double intake on weekends",
+      "Take vitamin K only with warfarin doses"
+    ],
     "explanation": "MedlinePlus advises people taking warfarin to keep the amount of vitamin K in the diet about the same from week to week.",
-    "keywords": ["nursing-pharm", "nclex", "medication-safety"],
-    "source": "https://medlineplus.gov/druginfo/meds/a682277.html"
+    "keywords": [
+      "nursing-pharm",
+      "nclex",
+      "medication-safety"
+    ],
+    "source": "https://medlineplus.gov/druginfo/meds/a682277.html",
+    "seedId": "5b657f76-b20d-40d1-9b50-6345753f3ae0"
   }
 ]

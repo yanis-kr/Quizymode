@@ -5,10 +5,19 @@
     "navigationKeyword2": "ai-900",
     "question": "Which Azure offering provides prebuilt and customizable APIs for AI workloads?",
     "correctAnswer": "Azure AI services",
-    "incorrectAnswers": ["Azure Backup", "Azure Load Balancer", "Azure Files"],
+    "incorrectAnswers": [
+      "Azure Backup",
+      "Azure Load Balancer",
+      "Azure Files"
+    ],
     "explanation": "Azure AI services provides prebuilt and customizable APIs, models, and tools for AI applications.",
-    "keywords": ["ai-900", "azure-ai", "ai-services"],
-    "source": "https://learn.microsoft.com/en-us/azure/ai-services/what-are-ai-services"
+    "keywords": [
+      "ai-900",
+      "azure-ai",
+      "ai-services"
+    ],
+    "source": "https://learn.microsoft.com/en-us/azure/ai-services/what-are-ai-services",
+    "seedId": "ceae7325-73ed-4866-a700-4b004c0dd6ae"
   },
   {
     "category": "exams",
@@ -16,10 +25,19 @@
     "navigationKeyword2": "ai-900",
     "question": "Which Azure AI service supports speech-to-text and text-to-speech scenarios?",
     "correctAnswer": "Azure AI Speech",
-    "incorrectAnswers": ["Azure Files", "Azure Load Balancer", "Azure Backup"],
+    "incorrectAnswers": [
+      "Azure Files",
+      "Azure Load Balancer",
+      "Azure Backup"
+    ],
     "explanation": "Azure AI Speech handles speech recognition, speech synthesis, and related audio AI tasks.",
-    "keywords": ["ai-900", "azure-ai", "ai-services"],
-    "source": "https://learn.microsoft.com/en-us/azure/ai-services/speech-service/overview"
+    "keywords": [
+      "ai-900",
+      "azure-ai",
+      "ai-services"
+    ],
+    "source": "https://learn.microsoft.com/en-us/azure/ai-services/speech-service/overview",
+    "seedId": "0bc9b669-b40c-4001-bd2c-15f3e7567e9d"
   },
   {
     "category": "exams",
@@ -27,10 +45,19 @@
     "navigationKeyword2": "ai-900",
     "question": "Which Azure AI service analyzes images and other visual content?",
     "correctAnswer": "Azure AI Vision",
-    "incorrectAnswers": ["Azure Backup", "Azure DNS", "Azure Files"],
+    "incorrectAnswers": [
+      "Azure Backup",
+      "Azure DNS",
+      "Azure Files"
+    ],
     "explanation": "Azure AI Vision is used for computer vision workloads on images and visual data.",
-    "keywords": ["ai-900", "azure-ai", "ai-services"],
-    "source": "https://learn.microsoft.com/en-us/azure/ai-services/computer-vision/overview"
+    "keywords": [
+      "ai-900",
+      "azure-ai",
+      "ai-services"
+    ],
+    "source": "https://learn.microsoft.com/en-us/azure/ai-services/computer-vision/overview",
+    "seedId": "daa0e013-3378-42d9-9c69-e8c892bbf90f"
   },
   {
     "category": "exams",
@@ -38,10 +65,19 @@
     "navigationKeyword2": "ai-900",
     "question": "Which Azure AI service extracts insights from text?",
     "correctAnswer": "Azure AI Language",
-    "incorrectAnswers": ["Azure Site Recovery", "Azure Files", "Azure Load Balancer"],
+    "incorrectAnswers": [
+      "Azure Site Recovery",
+      "Azure Files",
+      "Azure Load Balancer"
+    ],
     "explanation": "Azure AI Language supports text analysis and natural language processing workloads.",
-    "keywords": ["ai-900", "azure-ai", "ai-services"],
-    "source": "https://learn.microsoft.com/en-us/azure/ai-services/language-service/overview"
+    "keywords": [
+      "ai-900",
+      "azure-ai",
+      "ai-services"
+    ],
+    "source": "https://learn.microsoft.com/en-us/azure/ai-services/language-service/overview",
+    "seedId": "1b092ee4-536e-4291-a3cb-d53e3162cb24"
   },
   {
     "category": "exams",
@@ -49,10 +85,19 @@
     "navigationKeyword2": "ai-900",
     "question": "Which Azure AI service extracts text and structure from documents?",
     "correctAnswer": "Azure AI Document Intelligence",
-    "incorrectAnswers": ["Azure Virtual Network", "Azure Backup", "Azure Monitor"],
+    "incorrectAnswers": [
+      "Azure Virtual Network",
+      "Azure Backup",
+      "Azure Monitor"
+    ],
     "explanation": "Azure AI Document Intelligence is designed for document extraction and understanding.",
-    "keywords": ["ai-900", "azure-ai", "ai-services"],
-    "source": "https://learn.microsoft.com/en-us/azure/ai-services/document-intelligence/overview"
+    "keywords": [
+      "ai-900",
+      "azure-ai",
+      "ai-services"
+    ],
+    "source": "https://learn.microsoft.com/en-us/azure/ai-services/document-intelligence/overview",
+    "seedId": "ab2dde3e-1d7a-493c-939c-f0e96351f064"
   },
   {
     "category": "exams",
@@ -60,10 +105,19 @@
     "navigationKeyword2": "ai-900",
     "question": "Which Azure service connects enterprise data to AI-powered search and retrieval?",
     "correctAnswer": "Azure AI Search",
-    "incorrectAnswers": ["Azure Load Balancer", "Azure Backup", "Azure Files"],
+    "incorrectAnswers": [
+      "Azure Load Balancer",
+      "Azure Backup",
+      "Azure Files"
+    ],
     "explanation": "Azure AI Search is a fully managed cloud-hosted service that connects data to AI.",
-    "keywords": ["ai-900", "azure-ai", "ai-services"],
-    "source": "https://learn.microsoft.com/en-us/azure/search/search-what-is-azure-search"
+    "keywords": [
+      "ai-900",
+      "azure-ai",
+      "ai-services"
+    ],
+    "source": "https://learn.microsoft.com/en-us/azure/search/search-what-is-azure-search",
+    "seedId": "4b8a16ff-e56b-418d-85a2-a51dda8097cb"
   },
   {
     "category": "exams",
@@ -71,10 +125,19 @@
     "navigationKeyword2": "ai-900",
     "question": "Which Azure service provides REST API access to OpenAI models on Azure?",
     "correctAnswer": "Azure OpenAI",
-    "incorrectAnswers": ["Azure Backup", "Azure Files", "Azure DNS"],
+    "incorrectAnswers": [
+      "Azure Backup",
+      "Azure Files",
+      "Azure DNS"
+    ],
     "explanation": "Azure OpenAI provides API access to OpenAI language and embeddings models on Azure.",
-    "keywords": ["ai-900", "azure-ai", "ai-services"],
-    "source": "https://learn.microsoft.com/en-us/azure/ai-services/openai/overview"
+    "keywords": [
+      "ai-900",
+      "azure-ai",
+      "ai-services"
+    ],
+    "source": "https://learn.microsoft.com/en-us/azure/ai-services/openai/overview",
+    "seedId": "83f56137-103d-447e-8ec2-5e5300b362e8"
   },
   {
     "category": "exams",
@@ -82,10 +145,19 @@
     "navigationKeyword2": "ai-900",
     "question": "Which Azure service accelerates and manages the machine learning project lifecycle?",
     "correctAnswer": "Azure Machine Learning",
-    "incorrectAnswers": ["Azure Queue Storage", "Azure Load Balancer", "Azure Files"],
+    "incorrectAnswers": [
+      "Azure Queue Storage",
+      "Azure Load Balancer",
+      "Azure Files"
+    ],
     "explanation": "Azure Machine Learning is the cloud service for building, training, deploying, and managing ML models.",
-    "keywords": ["ai-900", "azure-ai", "ai-services"],
-    "source": "https://learn.microsoft.com/en-us/azure/machine-learning/overview-what-is-azure-machine-learning"
+    "keywords": [
+      "ai-900",
+      "azure-ai",
+      "ai-services"
+    ],
+    "source": "https://learn.microsoft.com/en-us/azure/machine-learning/overview-what-is-azure-machine-learning",
+    "seedId": "1ff8613f-121d-4b5e-88af-0ec6aaef81bd"
   },
   {
     "category": "exams",
@@ -93,10 +165,19 @@
     "navigationKeyword2": "ai-900",
     "question": "Which Azure service would you use to ground a chatbot in proprietary enterprise content?",
     "correctAnswer": "Azure AI Search",
-    "incorrectAnswers": ["Azure Backup", "Azure DNS", "Azure Files"],
+    "incorrectAnswers": [
+      "Azure Backup",
+      "Azure DNS",
+      "Azure Files"
+    ],
     "explanation": "Azure AI Search is used to ground chatbots and agents in enterprise and web data.",
-    "keywords": ["ai-900", "azure-ai", "ai-services"],
-    "source": "https://learn.microsoft.com/en-us/azure/search/search-what-is-azure-search"
+    "keywords": [
+      "ai-900",
+      "azure-ai",
+      "ai-services"
+    ],
+    "source": "https://learn.microsoft.com/en-us/azure/search/search-what-is-azure-search",
+    "seedId": "bc094403-bac3-45b3-bcc7-4756e2be6fbf"
   },
   {
     "category": "exams",
@@ -104,9 +185,18 @@
     "navigationKeyword2": "ai-900",
     "question": "Which Azure AI service family includes speech, vision, language, and document capabilities?",
     "correctAnswer": "Azure AI services",
-    "incorrectAnswers": ["Azure Firewall", "Azure Policy", "Azure Load Balancer"],
+    "incorrectAnswers": [
+      "Azure Firewall",
+      "Azure Policy",
+      "Azure Load Balancer"
+    ],
     "explanation": "Azure AI services is the umbrella offering for multiple prebuilt AI capabilities.",
-    "keywords": ["ai-900", "azure-ai", "ai-services"],
-    "source": "https://learn.microsoft.com/en-us/azure/ai-services/what-are-ai-services"
+    "keywords": [
+      "ai-900",
+      "azure-ai",
+      "ai-services"
+    ],
+    "source": "https://learn.microsoft.com/en-us/azure/ai-services/what-are-ai-services",
+    "seedId": "086764eb-d994-42ea-91b0-08b9e03fa5d2"
   }
 ]

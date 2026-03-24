@@ -16,7 +16,8 @@
       "azure-admin",
       "azure-services"
     ],
-    "source": "https://learn.microsoft.com/en-us/azure/storage/common/storage-account-overview"
+    "source": "https://learn.microsoft.com/en-us/azure/storage/common/storage-account-overview",
+    "seedId": "74ef546c-8897-4313-b805-e9377f76a874"
   },
   {
     "category": "exams",
@@ -35,7 +36,8 @@
       "azure-admin",
       "azure-services"
     ],
-    "source": "https://learn.microsoft.com/en-us/azure/storage/files/storage-files-introduction"
+    "source": "https://learn.microsoft.com/en-us/azure/storage/files/storage-files-introduction",
+    "seedId": "c00f9136-ba4e-41f6-9274-d6c771dacbad"
   },
   {
     "category": "exams",
@@ -54,7 +56,8 @@
       "azure-admin",
       "azure-services"
     ],
-    "source": "https://learn.microsoft.com/en-us/azure/key-vault/general/overview"
+    "source": "https://learn.microsoft.com/en-us/azure/key-vault/general/overview",
+    "seedId": "ff0c472a-39f0-4cbd-897f-4bee59a2ce01"
   },
   {
     "category": "exams",
@@ -73,7 +76,8 @@
       "azure-admin",
       "azure-services"
     ],
-    "source": "https://learn.microsoft.com/en-us/azure/backup/backup-overview"
+    "source": "https://learn.microsoft.com/en-us/azure/backup/backup-overview",
+    "seedId": "fece2bb9-bd03-4593-b18f-b533702cae4d"
   },
   {
     "category": "exams",
@@ -92,7 +96,8 @@
       "azure-admin",
       "azure-services"
     ],
-    "source": "https://learn.microsoft.com/en-us/azure/site-recovery/site-recovery-overview"
+    "source": "https://learn.microsoft.com/en-us/azure/site-recovery/site-recovery-overview",
+    "seedId": "99a8fa9a-e4cc-4677-9bda-9569b7c286ae"
   },
   {
     "category": "exams",
@@ -111,7 +116,8 @@
       "azure-admin",
       "azure-services"
     ],
-    "source": "https://learn.microsoft.com/en-us/azure/load-balancer/load-balancer-overview"
+    "source": "https://learn.microsoft.com/en-us/azure/load-balancer/load-balancer-overview",
+    "seedId": "66d76e06-0f12-45e1-ba3d-2047876befb4"
   },
   {
     "category": "exams",
@@ -130,7 +136,8 @@
       "azure-admin",
       "azure-services"
     ],
-    "source": "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-networks-overview"
+    "source": "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-networks-overview",
+    "seedId": "8a56b495-d36c-4489-8685-e183cd51454d"
   },
   {
     "category": "exams",
@@ -149,7 +156,8 @@
       "azure-admin",
       "azure-services"
     ],
-    "source": "https://learn.microsoft.com/en-us/azure/virtual-network/network-security-groups-overview"
+    "source": "https://learn.microsoft.com/en-us/azure/virtual-network/network-security-groups-overview",
+    "seedId": "ee3e65d9-4141-4038-9f91-ac0100fc1713"
   },
   {
     "category": "exams",
@@ -168,7 +176,8 @@
       "azure-admin",
       "azure-services"
     ],
-    "source": "https://learn.microsoft.com/en-us/azure/azure-monitor/fundamentals/overview"
+    "source": "https://learn.microsoft.com/en-us/azure/azure-monitor/fundamentals/overview",
+    "seedId": "746e1d50-5a38-4f9d-a56e-aaef86c64fdc"
   },
   {
     "category": "exams",
@@ -187,7 +196,8 @@
       "azure-admin",
       "azure-services"
     ],
-    "source": "https://learn.microsoft.com/en-us/azure/role-based-access-control/overview"
+    "source": "https://learn.microsoft.com/en-us/azure/role-based-access-control/overview",
+    "seedId": "9676d640-a2d7-49a3-b732-87ea99b67b86"
   },
   {
     "category": "exams",
@@ -206,7 +216,8 @@
       "azure-admin",
       "azure-services"
     ],
-    "source": "https://learn.microsoft.com/en-us/entra/fundamentals/what-is-entra"
+    "source": "https://learn.microsoft.com/en-us/entra/fundamentals/what-is-entra",
+    "seedId": "45c58e24-0e7d-4064-b795-657386899c7d"
   },
   {
     "category": "exams",
@@ -225,6 +236,7 @@
       "azure-admin",
       "azure-services"
     ],
-    "source": "https://learn.microsoft.com/en-us/azure/virtual-machine-scale-sets/overview"
+    "source": "https://learn.microsoft.com/en-us/azure/virtual-machine-scale-sets/overview",
+    "seedId": "726dd277-cf19-451b-a867-2ad31b69a6b4"
   }
 ]

@@ -1,0 +1,376 @@
+[
+  {
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "saa-c03",
+    "question": "A company has a web application that runs on premises. The application experiences latency issues during peak hours. The latency issues occur\ntwice each month. At the start of a latency issue, the application's CPU utilization immediately increases to 10 times its normal amount.\nThe company wants to migrate the application to AWS to improve latency. The company also wants to scale the application automatically when\napplication demand increases. The company will use AWS Elastic Beanstalk for application deployment.\nWhich solution will meet these requirements?",
+    "correctAnswer": "Configure an Elastic Beanstalk environment to use burstable performance instances in unlimited mode. Configure the environment to scale based on requests.",
+    "incorrectAnswers": [
+      "Configure an Elastic Beanstalk environment to use compute optimized instances. Configure the environment to scale based on requests.",
+      "Configure an Elastic Beanstalk environment to use compute optimized instances. Configure the environment to scale on a schedule.",
+      "Configure an Elastic Beanstalk environment to use burstable performance instances in unlimited mode. Configure the environment to scale on predictive metrics."
+    ],
+    "explanation": "SAA-C03 practice scenario (extract question #664). Correct choice: A.",
+    "keywords": [
+      "aws-saa-c03",
+      "aws-compute",
+      "elastic-beanstalk"
+    ],
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "seedId": "4b68bf0f-4717-42f5-af4c-7f8ff974572d"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "saa-c03",
+    "question": "A company has customers located across the world. The company wants to use automation to secure its systems and network infrastructure. The\ncompany's security team must be able to traffick and audit all incremental changes to the infrastructure.\nWhich solution will meet these requirements?",
+    "correctAnswer": "Use AWS Organizations to set up the infrastructure. Use AWS Cong to traffick changes.",
+    "incorrectAnswers": [
+      "Use AWS CloudFormation to set up the infrastructure. Use AWS Cong to traffick changes.",
+      "Use AWS Organizations to set up the infrastructure. Use AWS Service Catalog to traffick changes.",
+      "Use AWS CloudFormation to set up the infrastructure. Use AWS Service Catalog to traffick changes."
+    ],
+    "explanation": "SAA-C03 practice scenario (extract question #665). Correct choice: A.",
+    "keywords": [
+      "aws-saa-c03",
+      "aws-management",
+      "organizations"
+    ],
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "seedId": "aed40ea4-36d1-4fb0-b36d-5091855e732c"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "saa-c03",
+    "question": "A company is moving its data and applications to AWS during a multiyear migration project. The company wants to securely access data on\nAmazon S3 from the company's AWS Region and from the company's on-premises location. The data must not traverse the internet. The company\nhas established an AWS Direct Connect connection between its Region and its on-premises location.\nWhich solution will meet these requirements?",
+    "correctAnswer": "Create gateway endpoints for Amazon S3. Use the gateway endpoints to securely access the data from the Region and the on-premises location.",
+    "incorrectAnswers": [
+      "Create a gateway in AWS Transit Gateway to access Amazon S3 securely from the Region and the on-premises location.",
+      "Create interface endpoints for Amazon S3. Use the interface endpoints to securely access the data from the Region and the on-premises location.",
+      "Use an AWS Key Management Service (AWS KMS) key to access the data securely from the Region and the on-premises location."
+    ],
+    "explanation": "SAA-C03 practice scenario (extract question #667). Correct choice: A.",
+    "keywords": [
+      "aws-saa-c03",
+      "aws-storage",
+      "aws-networking",
+      "s3",
+      "direct-connect",
+      "vpc-endpoint"
+    ],
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "seedId": "6b29f3cc-6051-41ed-8e1e-492d401db17e"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "saa-c03",
+    "question": "A company created a new organization in AWS Organizations. The organization has multiple accounts for the company's development teams. The\ndevelopment team members use AWS IAM Identity Center (AWS Single Sign-On) to access the accounts. For each of the company's applications,\nthe development teams must use a predened application name to tag resources that are created.\nA solutions architect needs to design a solution that gives the development team the ability to create resources only if the application name tag\nhas an approved value.\nWhich solution will meet these requirements?",
+    "correctAnswer": "Create an IAM group that has a conditional Allow policy that requires the application name tag to be specied for resources to be created.",
+    "incorrectAnswers": [
+      "Create a cross-account role that has a Deny policy for any resource that has the application name tag.",
+      "Create a resource group in AWS Resource Groups to validate that the tags are applied to all resources in all accounts.",
+      "Create a tag policy in Organizations that has a list of allowed application names."
+    ],
+    "explanation": "SAA-C03 practice scenario (extract question #668). Correct choice: A.",
+    "keywords": [
+      "aws-saa-c03",
+      "aws-security",
+      "aws-management",
+      "iam",
+      "organizations"
+    ],
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "seedId": "7ac52016-23fd-4a8e-b503-5d99b7fad4bc"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "saa-c03",
+    "question": "A company runs its databases on Amazon RDS for PostgreSQL. The company wants a secure solution to manage the master user password by\nrotating the password every 30 days.\nWhich solution will meet these requirements with the LEAST operational overhead?",
+    "correctAnswer": "Use Amazon EventBridge to schedule a custom AWS Lambda function to rotate the password every 30 days.",
+    "incorrectAnswers": [
+      "Use the modify-db-instance command in the AWS CLI to change the password.",
+      "Integrate AWS Secrets Manager with Amazon RDS for PostgreSQL to automate password rotation.",
+      "Integrate AWS Systems Manager Parameter Store with Amazon RDS for PostgreSQL to automate password rotation. --- Page 244 ---"
+    ],
+    "explanation": "SAA-C03 practice scenario (extract question #669). Correct choice: A.",
+    "keywords": [
+      "aws-saa-c03",
+      "aws-database",
+      "aws-compute",
+      "databases",
+      "rds",
+      "lambda",
+      "eventbridge",
+      "postgresql"
+    ],
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "seedId": "bc338b18-08f0-495c-bca9-54bb88b5ca61"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "saa-c03",
+    "question": "A company performs tests on an application that uses an Amazon DynamoDB table. The tests run for 4 hours once a week. The company knows\nhow many read and write operations the application performs to the table each second during the tests. The company does not currently use\nDynamoDB for any other use case. A solutions architect needs to optimize the costs for the table.\nWhich solution will meet these requirements?",
+    "correctAnswer": "Choose on-demand mode. Update the read and write capacity units appropriately.",
+    "incorrectAnswers": [
+      "Choose provisioned mode. Update the read and write capacity units appropriately.",
+      "Purchase DynamoDB reserved capacity for a 1-year term.",
+      "Purchase DynamoDB reserved capacity for a 3-year term."
+    ],
+    "explanation": "SAA-C03 practice scenario (extract question #670). Correct choice: A.",
+    "keywords": [
+      "aws-saa-c03",
+      "aws-database",
+      "databases",
+      "dynamodb"
+    ],
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "seedId": "eae42c8a-5be9-4c50-aa5b-9ef3eaf6d24d"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "saa-c03",
+    "question": "A company runs its applications on Amazon EC2 instances. The company performs periodic nancial assessments of its AWS costs. The\ncompany recently identied unusual spending.\nThe company needs a solution to prevent unusual spending. The solution must monitor costs and notify responsible stakeholders in the event of\nunusual spending.\nWhich solution will meet these requirements?",
+    "correctAnswer": "Use an AWS Budgets template to create a zero spend budget.",
+    "incorrectAnswers": [
+      "Create an AWS Cost Anomaly Detection monitor in the AWS Billing and Cost Management console.",
+      "Create AWS Pricing Calculator estimates for the current running workload pricing details.",
+      "Use Amazon CloudWatch to monitor costs and to identify unusual spending."
+    ],
+    "explanation": "SAA-C03 practice scenario (extract question #671). Correct choice: A.",
+    "keywords": [
+      "aws-saa-c03",
+      "aws-compute",
+      "aws-management",
+      "ec2"
+    ],
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "seedId": "9ef175b2-f5e0-4abb-8d45-9b46c9531eb4"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "saa-c03",
+    "question": "A marketing company receives a large amount of new clickstream data in Amazon S3 from a marketing campaign. The company needs to analyze\nthe clickstream data in Amazon S3 quickly. Then the company needs to determine whether to process the data further in the data pipeline.\nWhich solution will meet these requirements with the LEAST operational overhead?",
+    "correctAnswer": "Create external tables in a Spark catalog. Configure jobs in AWS Glue to query the data.",
+    "incorrectAnswers": [
+      "Configure an AWS Glue crawler to crawl the data. Configure Amazon Athena to query the data.",
+      "Create external tables in a Hive metastore. Configure Spark jobs in Amazon EMR to query the data.",
+      "Configure an AWS Glue crawler to crawl the data. Configure Amazon Kinesis Data Analytics to use SQL to query the data. --- Page 245 ---"
+    ],
+    "explanation": "SAA-C03 practice scenario (extract question #672). Correct choice: A.",
+    "keywords": [
+      "aws-saa-c03",
+      "aws-analytics",
+      "aws-storage",
+      "s3",
+      "glue"
+    ],
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "seedId": "36dd44c7-090d-46c0-a81c-597488cfeb2c"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "saa-c03",
+    "question": "A company runs an SMB le server in its data center. The le server stores large les that the company frequently accesses for up to 7 days after\nthe le creation date. After 7 days, the company needs to be able to access the les with a maximum retrieval time of 24 hours.\nWhich solution will meet these requirements?",
+    "correctAnswer": "Use AWS DataSync to copy data that is older than 7 days from the SMB le server to AWS.",
+    "incorrectAnswers": [
+      "Create an Amazon S3 File Gateway to increase the company's storage space. Create an S3 Lifecycle policy to transition the data to S3 Glacier Deep Archive after 7 days.",
+      "Create an Amazon FSx File Gateway to increase the company's storage space. Create an Amazon S3 Lifecycle policy to transition the data after 7 days.",
+      "Configure access to Amazon S3 for each user. Create an S3 Lifecycle policy to transition the data to S3 Glacier Flexible Retrieval after 7 days."
+    ],
+    "explanation": "SAA-C03 practice scenario (extract question #673). Correct choice: A.",
+    "keywords": [
+      "aws-saa-c03",
+      "aws-storage",
+      "datasync"
+    ],
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "seedId": "cdbdfb9b-51af-4423-8822-68c4d6e2c242"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "saa-c03",
+    "question": "A company uses Amazon EC2 instances and Amazon Elastic Block Store (Amazon EBS) volumes to run an application. The company creates one\nsnapshot of each EBS volume every day to meet compliance requirements. The company wants to implement an architecture that prevents the\naccidental deletion of EBS volume snapshots. The solution must not change the administrative rights of the storage administrator user.\nWhich solution will meet these requirements with the LEAST administrative effort?",
+    "correctAnswer": "Create an IAM role that has permission to delete snapshots. Attach the role to a new EC2 instance. Use the AWS CLI from the new EC2 instance to delete snapshots.",
+    "incorrectAnswers": [
+      "Create an IAM policy that denies snapshot deletion. Attach the policy to the storage administrator user.",
+      "Add tags to the snapshots. Create retention rules in Recycle Bin for EBS snapshots that have the tags.",
+      "Lock the EBS snapshots to prevent deletion. --- Page 246 ---"
+    ],
+    "explanation": "SAA-C03 practice scenario (extract question #675). Correct choice: A.",
+    "keywords": [
+      "aws-saa-c03",
+      "aws-storage",
+      "aws-compute",
+      "ebs",
+      "ec2",
+      "iam"
+    ],
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "seedId": "b03cf906-9e17-43ac-a491-0c90e0f3ff25"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "saa-c03",
+    "question": "A company's application uses Network Load Balancers, Auto Scaling groups, Amazon EC2 instances, and databases that are deployed in an\nAmazon VPC. The company wants to capture information about traffic to and from the network interfaces in near real time in its Amazon VPC. The\ncompany wants to send the information to Amazon OpenSearch Service for analysis.\nWhich solution will meet these requirements?",
+    "correctAnswer": "Create a log group in Amazon CloudWatch Logs. Configure VPC Flow Logs to send the log data to the log group. Use Amazon Kinesis Data Streams to stream the logs from the log group to OpenSearch Service.",
+    "incorrectAnswers": [
+      "Create a log group in Amazon CloudWatch Logs. Configure VPC Flow Logs to send the log data to the log group. Use Amazon Kinesis Data Firehose to stream the logs from the log group to OpenSearch Service.",
+      "Create a trail in AWS CloudTrail. Configure VPC Flow Logs to send the log data to the trail. Use Amazon Kinesis Data Streams to stream the logs from the trail to OpenSearch Service.",
+      "Create a trail in AWS CloudTrail. Configure VPC Flow Logs to send the log data to the trail. Use Amazon Kinesis Data Firehose to stream the logs from the trail to OpenSearch Service."
+    ],
+    "explanation": "SAA-C03 practice scenario (extract question #676). Correct choice: A.",
+    "keywords": [
+      "aws-saa-c03",
+      "aws-analytics",
+      "aws-compute",
+      "ec2",
+      "auto-scaling",
+      "kinesis",
+      "opensearch",
+      "vpc",
+      "nlb"
+    ],
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "seedId": "b0ccfb76-2ca2-45a1-9eb5-3b19a7f0c625"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "saa-c03",
+    "question": "A company is developing an application that will run on a production Amazon Elastic Kubernetes Service (Amazon EKS) cluster. The EKS cluster\nhas managed node groups that are provisioned with On-Demand Instances.\nThe company needs a dedicated EKS cluster for development work. The company will use the development cluster infrequently to test the\nresiliency of the application. The EKS cluster must manage all the nodes.\nWhich solution will meet these requirements MOST cost-effectively?",
+    "correctAnswer": "Create a managed node group that contains only Spot Instances.",
+    "incorrectAnswers": [
+      "Create two managed node groups. Provision one node group with On-Demand Instances. Provision the second node group with Spot Instances.",
+      "Create an Auto Scaling group that has a launch conguration that uses Spot Instances. Configure the user data to add the nodes to the EKS cluster.",
+      "Create a managed node group that contains only On-Demand Instances."
+    ],
+    "explanation": "SAA-C03 practice scenario (extract question #677). Correct choice: A.",
+    "keywords": [
+      "aws-saa-c03",
+      "aws-compute",
+      "eks"
+    ],
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "seedId": "2a4a4894-601e-4959-bbee-f61c2970594b"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "saa-c03",
+    "question": "A company stores sensitive data in Amazon S3. A solutions architect needs to create an encryption solution. The company needs to fully control\nthe ability of users to create, rotate, and disable encryption keys with minimal effort for any data that must be encrypted.\nWhich solution will meet these requirements?",
+    "correctAnswer": "Use default server-side encryption with Amazon S3 managed encryption keys (SSE-S3) to store the sensitive data.",
+    "incorrectAnswers": [
+      "Create a customer managed key by using AWS Key Management Service (AWS KMS). Use the new key to encrypt the S3 objects by using server-side encryption with AWS KMS keys (SSE-KMS).",
+      "Create an AWS managed key by using AWS Key Management Service (AWS KMS). Use the new key to encrypt the S3 objects by using server-side encryption with AWS KMS keys (SSE-KMS).",
+      "Download S3 objects to an Amazon EC2 instance. Encrypt the objects by using customer managed keys. Upload the encrypted objects back into Amazon S3. --- Page 247 ---"
+    ],
+    "explanation": "SAA-C03 practice scenario (extract question #678). Correct choice: A.",
+    "keywords": [
+      "aws-saa-c03",
+      "aws-storage",
+      "aws-security",
+      "s3"
+    ],
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "seedId": "1c5cd336-2d23-48b3-a66b-bf4eacbe128e"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "saa-c03",
+    "question": "A solutions architect needs to copy les from an Amazon S3 bucket to an Amazon Elastic File System (Amazon EFS) le system and another S3\nbucket. The les must be copied continuously. New les are added to the original S3 bucket consistently. The copied les should be overwritten\nonly if the source le changes.\nWhich solution will meet these requirements with the LEAST operational overhead?",
+    "correctAnswer": "Create an AWS DataSync location for both the destination S3 bucket and the EFS le system. Create a task for the destination S3 bucket and the EFS le system. Set the transfer mode to transfer only data that has changed.",
+    "incorrectAnswers": [
+      "Create an AWS Lambda function. Mount the le system to the function. Set up an S3 event notication to invoke the function when les are created and changed in Amazon S3. Configure the function to copy les to the le system and the destination S3 bucket.",
+      "Create an AWS DataSync location for both the destination S3 bucket and the EFS le system. Create a task for the destination S3 bucket and the EFS le system. Set the transfer mode to transfer all data.",
+      "Launch an Amazon EC2 instance in the same VPC as the le system. Mount the le system. Create a script to routinely synchronize all objects that changed in the origin S3 bucket to the destination S3 bucket and the mounted le system."
+    ],
+    "explanation": "SAA-C03 practice scenario (extract question #680). Correct choice: A.",
+    "keywords": [
+      "aws-saa-c03",
+      "aws-storage",
+      "s3",
+      "efs",
+      "datasync"
+    ],
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "seedId": "01e17b5b-37e8-40d2-9721-8a708e3c1fcf"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "saa-c03",
+    "question": "A company uses Amazon EC2 instances and stores data on Amazon Elastic Block Store (Amazon EBS) volumes. The company must ensure that\nall data is encrypted at rest by using AWS Key Management Service (AWS KMS). The company must be able to control rotation of the encryption\nkeys.\nWhich solution will meet these requirements with the LEAST operational overhead?",
+    "correctAnswer": "Create a customer managed key. Use the key to encrypt the EBS volumes.",
+    "incorrectAnswers": [
+      "Use an AWS managed key to encrypt the EBS volumes. Use the key to congure automatic key rotation.",
+      "Create an external KMS key with imported key material. Use the key to encrypt the EBS volumes.",
+      "Use an AWS owned key to encrypt the EBS volumes. --- Page 248 ---"
+    ],
+    "explanation": "SAA-C03 practice scenario (extract question #681). Correct choice: A.",
+    "keywords": [
+      "aws-saa-c03",
+      "aws-storage",
+      "aws-compute",
+      "ebs",
+      "ec2",
+      "kms"
+    ],
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "seedId": "f872d8f6-61c0-451b-9194-52c25e59d005"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "saa-c03",
+    "question": "A company needs a solution to enforce data encryption at rest on Amazon EC2 instances. The solution must automatically identify noncompliant\nresources and enforce compliance policies on ndings.\nWhich solution will meet these requirements with the LEAST administrative overhead?",
+    "correctAnswer": "Use an IAM policy that allows users to create only encrypted Amazon Elastic Block Store (Amazon EBS) volumes. Use AWS Cong and AWS Systems Manager to automate the detection and remediation of unencrypted EBS volumes.",
+    "incorrectAnswers": [
+      "Use AWS Key Management Service (AWS KMS) to manage access to encrypted Amazon Elastic Block Store (Amazon EBS) volumes. Use AWS Lambda and Amazon EventBridge to automate the detection and remediation of unencrypted EBS volumes.",
+      "Use Amazon Macie to detect unencrypted Amazon Elastic Block Store (Amazon EBS) volumes. Use AWS Systems Manager Automation rules to automatically encrypt existing and new EBS volumes.",
+      "Use Amazon inspector to detect unencrypted Amazon Elastic Block Store (Amazon EBS) volumes. Use AWS Systems Manager Automation rules to automatically encrypt existing and new EBS volumes."
+    ],
+    "explanation": "SAA-C03 practice scenario (extract question #682). Correct choice: A.",
+    "keywords": [
+      "aws-saa-c03",
+      "aws-storage",
+      "aws-compute",
+      "ebs",
+      "ec2",
+      "iam",
+      "systems-manager"
+    ],
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "seedId": "412be007-ab00-4df3-a696-ef57fcfc318e"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "saa-c03",
+    "question": "A company wants to migrate its web applications from on premises to AWS. The company is located close to the eu-central-1 Region. Because of\nregulations, the company cannot launch some of its applications in eu-central-1. The company wants to achieve single-digit millisecond latency.\nWhich solution will meet these requirements?",
+    "correctAnswer": "Deploy the applications in eu-central-1. Extend the company’s VPC from eu-central-1 to an edge location in Amazon CloudFront.",
+    "incorrectAnswers": [
+      "Deploy the applications in AWS Local Zones by extending the company's VPC from eu-central-1 to the chosen Local Zone.",
+      "Deploy the applications in eu-central-1. Extend the company’s VPC from eu-central-1 to the regional edge caches in Amazon CloudFront.",
+      "Deploy the applications in AWS Wavelength Zones by extending the company’s VPC from eu-central-1 to the chosen Wavelength Zone."
+    ],
+    "explanation": "SAA-C03 practice scenario (extract question #684). Correct choice: A.",
+    "keywords": [
+      "aws-saa-c03",
+      "aws-networking",
+      "cloudfront",
+      "vpc"
+    ],
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "seedId": "2aa77c81-15c2-4592-a359-4779dbdd88cc"
+  }
+]

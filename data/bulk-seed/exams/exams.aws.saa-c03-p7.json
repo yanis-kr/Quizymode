@@ -1,0 +1,448 @@
+[
+  {
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "saa-c03",
+    "question": "A company recently migrated a message processing system to AWS. The system receives messages into an ActiveMQ queue running on an\nAmazon EC2 instance. Messages are processed by a consumer application running on Amazon EC2. The consumer application processes the\nmessages and writes results to a MySQL database running on Amazon EC2. The company wants this application to be highly available with low\noperational complexity.\nWhich architecture offers the HIGHEST availability?",
+    "correctAnswer": "Add a second ActiveMQ server to another Availability Zone. Add an additional consumer EC2 instance in another Availability Zone. Replicate the MySQL database to another Availability Zone.",
+    "incorrectAnswers": [
+      "Use Amazon MQ with active/standby brokers congured across two Availability Zones. Add an additional consumer EC2 instance in another Availability Zone. Replicate the MySQL database to another Availability Zone.",
+      "Use Amazon MQ with active/standby brokers congured across two Availability Zones. Add an additional consumer EC2 instance in another Availability Zone. Use Amazon RDS for MySQL with Multi-AZ enabled.",
+      "Use Amazon MQ with active/standby brokers congured across two Availability Zones. Add an Auto Scaling group for the consumer EC2 instances across two Availability Zones. Use Amazon RDS for MySQL with Multi-AZ enabled. --- Page 41 ---"
+    ],
+    "explanation": "SAA-C03 practice scenario (extract question #111). Correct choice: A.",
+    "keywords": [
+      "aws-saa-c03",
+      "aws-database",
+      "aws-compute",
+      "databases",
+      "ec2",
+      "mysql"
+    ],
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "seedId": "d2cd1917-0451-4476-ab86-76fa0e107b51"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "saa-c03",
+    "question": "A company hosts a containerized web application on a eet of on-premises servers that process incoming requests. The number of requests is\ngrowing quickly. The on-premises servers cannot handle the increased number of requests. The company wants to move the application to AWS\nwith minimum code changes and minimum development effort.\nWhich solution will meet these requirements with the LEAST operational overhead?",
+    "correctAnswer": "Use AWS Fargate on Amazon Elastic Container Service (Amazon ECS) to run the containerized web application with Service Auto Scaling. Use an Application Load Balancer to distribute the incoming requests.",
+    "incorrectAnswers": [
+      "Use two Amazon EC2 instances to host the containerized web application. Use an Application Load Balancer to distribute the incoming requests.",
+      "Use AWS Lambda with a new code that uses one of the supported languages. Create multiple Lambda functions to support the load. Use Amazon API Gateway as an entry point to the Lambda functions.",
+      "Use a high performance computing (HPC) solution such as AWS ParallelCluster to establish an HPC cluster that can process the incoming requests at the appropriate scale."
+    ],
+    "explanation": "SAA-C03 practice scenario (extract question #112). Correct choice: A.",
+    "keywords": [
+      "aws-saa-c03",
+      "aws-compute",
+      "aws-networking",
+      "fargate",
+      "ecs",
+      "auto-scaling",
+      "alb"
+    ],
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "seedId": "8099e40c-22ec-42ae-8ac5-51abeafd8a00"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "saa-c03",
+    "question": "A company uses 50 TB of data for reporting. The company wants to move this data from on premises to AWS. A custom application in the\ncompany’s data center runs a weekly data transformation job. The company plans to pause the application until the data transfer is complete and\nneeds to begin the transfer process as soon as possible.\nThe data center does not have any available network bandwidth for additional workloads. A solutions architect must transfer the data and must\ncongure the transformation job to continue to run in the AWS Cloud.\nWhich solution will meet these requirements with the LEAST operational overhead?",
+    "correctAnswer": "Use AWS DataSync to move the data. Create a custom transformation job by using AWS Glue.",
+    "incorrectAnswers": [
+      "Order an AWS Snowcone device to move the data. Deploy the transformation application to the device.",
+      "Order an AWS Snowball Edge Storage Optimized device. Copy the data to the device. Create a custom transformation job by using AWS Glue.",
+      "Order an AWS Snowball Edge Storage Optimized device that includes Amazon EC2 compute. Copy the data to the device. Create a new EC2 instance on AWS to run the transformation application."
+    ],
+    "explanation": "SAA-C03 practice scenario (extract question #113). Correct choice: A.",
+    "keywords": [
+      "aws-saa-c03",
+      "aws-analytics",
+      "aws-storage",
+      "glue",
+      "datasync"
+    ],
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "seedId": "e419cc38-6a7b-4c58-a109-0e677001a311"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "saa-c03",
+    "question": "A company has created an image analysis application in which users can upload photos and add photo frames to their images. The users upload\nimages and metadata to indicate which photo frames they want to add to their images. The application uses a single Amazon EC2 instance and\nAmazon DynamoDB to store the metadata.\nThe application is becoming more popular, and the number of users is increasing. The company expects the number of concurrent users to vary\nsignicantly depending on the time of day and day of week. The company must ensure that the application can scale to meet the needs of the\ngrowing user base.\nWhich solution meats these requirements?",
+    "correctAnswer": "Increase the number of EC2 instances to three. Use Provisioned IOPS SSD (io2) Amazon Elastic Block Store (Amazon EBS) volumes to store the photos and metadata. --- Page 42 ---",
+    "incorrectAnswers": [
+      "Use AWS Lambda to process the photos. Store the photos and metadata in DynamoDB.",
+      "Use Amazon Kinesis Data Firehose to process the photos and to store the photos and metadata.",
+      "Use AWS Lambda to process the photos. Store the photos in Amazon S3. Retain DynamoDB to store the metadata."
+    ],
+    "explanation": "SAA-C03 practice scenario (extract question #114). Correct choice: D.",
+    "keywords": [
+      "aws-saa-c03",
+      "aws-storage",
+      "aws-database",
+      "databases",
+      "dynamodb",
+      "ebs",
+      "ec2"
+    ],
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "seedId": "26dd0860-a49b-4a0e-921c-ba3bb59476d2"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "saa-c03",
+    "question": "A medical records company is hosting an application on Amazon EC2 instances. The application processes customer data les that are stored on\nAmazon S3. The EC2 instances are hosted in public subnets. The EC2 instances access Amazon S3 over the internet, but they do not require any\nother network access.\nA new requirement mandates that the network traffic for le transfers take a private route and not be sent over the internet.\nWhich change to the network architecture should a solutions architect recommend to meet this requirement?",
+    "correctAnswer": "Remove the internet gateway from the VPC. Set up an AWS Direct Connect connection, and route traffic to Amazon S3 over the Direct Connect connection.",
+    "incorrectAnswers": [
+      "Create a NAT gateway. Configure the route table for the public subnets to send traffic to Amazon S3 through the NAT gateway.",
+      "Configure the security group for the EC2 instances to restrict outbound traffic so that only traffic to the S3 prex list is permitted.",
+      "Move the EC2 instances to private subnets. Create a VPC endpoint for Amazon S3, and link the endpoint to the route table for the private subnets."
+    ],
+    "explanation": "SAA-C03 practice scenario (extract question #115). Correct choice: D.",
+    "keywords": [
+      "aws-saa-c03",
+      "aws-networking",
+      "aws-storage",
+      "s3",
+      "ec2",
+      "vpc",
+      "direct-connect"
+    ],
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "seedId": "35d95b86-0842-42cb-916b-914a09a85e6c"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "saa-c03",
+    "question": "A company stores its application logs in an Amazon CloudWatch Logs log group. A new policy requires the company to store all application logs\nin Amazon OpenSearch Service (Amazon Elasticsearch Service) in near-real time.\nWhich solution will meet this requirement with the LEAST operational overhead?",
+    "correctAnswer": "Configure a CloudWatch Logs subscription to stream the logs to Amazon OpenSearch Service (Amazon Elasticsearch Service).",
+    "incorrectAnswers": [
+      "Create an AWS Lambda function. Use the log group to invoke the function to write the logs to Amazon OpenSearch Service (Amazon Elasticsearch Service).",
+      "Create an Amazon Kinesis Data Firehose delivery stream. Configure the log group as the delivery streams sources. Configure Amazon OpenSearch Service (Amazon Elasticsearch Service) as the delivery stream's destination.",
+      "Install and congure Amazon Kinesis Agent on each application server to deliver the logs to Amazon Kinesis Data Streams. Configure Kinesis Data Streams to deliver the logs to Amazon OpenSearch Service (Amazon Elasticsearch Service). --- Page 43 ---"
+    ],
+    "explanation": "SAA-C03 practice scenario (extract question #117). Correct choice: A.",
+    "keywords": [
+      "aws-saa-c03",
+      "aws-analytics",
+      "aws-management",
+      "opensearch",
+      "cloudwatch"
+    ],
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "seedId": "9f6301ae-0450-4753-b41d-a10eb2168e2d"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "saa-c03",
+    "question": "A company is building a web-based application running on Amazon EC2 instances in multiple Availability Zones. The web application will provide\naccess to a repository of text documents totaling about 900 TB in size. The company anticipates that the web application will experience periods\nof high demand. A solutions architect must ensure that the storage component for the text documents can scale to meet the demand of the\napplication at all times. The company is concerned about the overall cost of the solution.\nWhich storage solution meets these requirements MOST cost-effectively?",
+    "correctAnswer": "Amazon S3",
+    "incorrectAnswers": [
+      "Amazon Elastic Block Store (Amazon EBS)",
+      "Amazon Elastic File System (Amazon EFS)",
+      "Amazon OpenSearch Service (Amazon Elasticsearch Service)"
+    ],
+    "explanation": "SAA-C03 practice scenario (extract question #118). Correct choice: D.",
+    "keywords": [
+      "aws-saa-c03",
+      "aws-storage",
+      "aws-compute",
+      "s3",
+      "ec2"
+    ],
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "seedId": "454cf60c-641d-4ed3-afd4-3264d54f1bd7"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "saa-c03",
+    "question": "A global company is using Amazon API Gateway to design REST APIs for its loyalty club users in the us-east-1 Region and the ap-southeast-2\nRegion. A solutions architect must design a solution to protect these API Gateway managed REST APIs across multiple accounts from SQL\ninjection and cross-site scripting attacks.\nWhich solution will meet these requirements with the LEAST amount of administrative effort?",
+    "correctAnswer": "Set up AWS WAF in both Regions. Associate Regional web ACLs with an API stage.",
+    "incorrectAnswers": [
+      "Set up AWS Firewall Manager in both Regions. Centrally congure AWS WAF rules.",
+      "Set up AWS Shield in bath Regions. Associate Regional web ACLs with an API stage.",
+      "Set up AWS Shield in one of the Regions. Associate Regional web ACLs with an API stage."
+    ],
+    "explanation": "SAA-C03 practice scenario (extract question #119). Correct choice: A.",
+    "keywords": [
+      "aws-saa-c03",
+      "aws-security",
+      "aws-integration",
+      "api-gateway",
+      "waf"
+    ],
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "seedId": "293c69d1-971b-4699-ac02-3c08ff67d762"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "saa-c03",
+    "question": "A company has implemented a self-managed DNS solution on three Amazon EC2 instances behind a Network Load Balancer (NLB) in the us-west-\n2 Region. Most of the company's users are located in the United States and Europe. The company wants to improve the performance and\navailability of the solution. The company launches and congures three EC2 instances in the eu-west-1 Region and adds the EC2 instances as\ntargets for a new NLB.\nWhich solution can the company use to route traffic to all the EC2 instances?",
+    "correctAnswer": "Replace the two NLBs with two Application Load Balancers (ALBs). Create an Amazon Route 53 latency routing policy to route requests to one of the two ALBs. Create an Amazon CloudFront distribution. Use the Route 53 record as the distribution’s origin. --- Page 44 ---",
+    "incorrectAnswers": [
+      "Create an Amazon Route 53 geolocation routing policy to route requests to one of the two NLBs. Create an Amazon CloudFront distribution. Use the Route 53 record as the distribution’s origin.",
+      "Create a standard accelerator in AWS Global Accelerator. Create endpoint groups in us-west-2 and eu-west-1. Add the two NLBs as endpoints for the endpoint groups.",
+      "Attach Elastic IP addresses to the six EC2 instances. Create an Amazon Route 53 geolocation routing policy to route requests to one of the six EC2 instances. Create an Amazon CloudFront distribution. Use the Route 53 record as the distribution's origin."
+    ],
+    "explanation": "SAA-C03 practice scenario (extract question #120). Correct choice: D.",
+    "keywords": [
+      "aws-saa-c03",
+      "aws-networking",
+      "aws-compute",
+      "ec2",
+      "cloudfront",
+      "route53",
+      "alb",
+      "nlb"
+    ],
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "seedId": "10954002-8e9b-4d67-a8b1-e26c13e8ee9c"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "saa-c03",
+    "question": "A company is running an online transaction processing (OLTP) workload on AWS. This workload uses an unencrypted Amazon RDS DB instance in\na Multi-AZ deployment. Daily database snapshots are taken from this instance.\nWhat should a solutions architect do to ensure the database and snapshots are always encrypted moving forward?",
+    "correctAnswer": "Copy the snapshots to an Amazon S3 bucket that is encrypted using server-side encryption with AWS Key Management Service (AWS KMS) managed keys (SSE-KMS).",
+    "incorrectAnswers": [
+      "Encrypt a copy of the latest DB snapshot. Replace existing DB instance by restoring the encrypted snapshot.",
+      "Create a new encrypted Amazon Elastic Block Store (Amazon EBS) volume and copy the snapshots to it. Enable encryption on the DB instance.",
+      "Copy the snapshots and enable encryption using AWS Key Management Service (AWS KMS) Restore encrypted snapshot to an existing DB instance."
+    ],
+    "explanation": "SAA-C03 practice scenario (extract question #121). Correct choice: D.",
+    "keywords": [
+      "aws-saa-c03",
+      "aws-database",
+      "aws-storage",
+      "databases",
+      "rds",
+      "s3",
+      "kms"
+    ],
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "seedId": "08ab0f6f-c40e-49dd-a065-3b28a3912b58"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "saa-c03",
+    "question": "A company wants to build a scalable key management infrastructure to support developers who need to encrypt data in their applications.\nWhat should a solutions architect do to reduce the operational burden?",
+    "correctAnswer": "Use multi-factor authentication (MFA) to protect the encryption keys.",
+    "incorrectAnswers": [
+      "Use AWS Key Management Service (AWS KMS) to protect the encryption keys.",
+      "Use AWS Certicate Manager (ACM) to create, store, and assign the encryption keys.",
+      "Use an IAM policy to limit the scope of users who have access permissions to protect the encryption keys."
+    ],
+    "explanation": "SAA-C03 practice scenario (extract question #122). Correct choice: A.",
+    "keywords": [
+      "aws-saa-c03",
+      "aws-security",
+      "iam",
+      "kms"
+    ],
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "seedId": "4a970c4b-a0ae-4ffe-ab57-aaec08c24641"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "saa-c03",
+    "question": "A company has a dynamic web application hosted on two Amazon EC2 instances. The company has its own SSL certicate, which is on each\ninstance to perform SSL termination.\nThere has been an increase in traffic recently, and the operations team determined that SSL encryption and decryption is causing the compute\ncapacity of the web servers to reach their maximum limit.\nWhat should a solutions architect do to increase the application's performance?",
+    "correctAnswer": "Create a new SSL certicate using AWS Certicate Manager (ACM). Install the ACM certicate on each instance.",
+    "incorrectAnswers": [
+      "Create an Amazon S3 bucket Migrate the SSL certicate to the S3 bucket. Configure the EC2 instances to reference the bucket for SSL termination.",
+      "Create another EC2 instance as a proxy server. Migrate the SSL certicate to the new instance and congure it to direct connections to the existing EC2 instances.",
+      "Import the SSL certicate into AWS Certicate Manager (ACM). Create an Application Load Balancer with an HTTPS listener that uses the SSL certicate from ACM. --- Page 45 ---"
+    ],
+    "explanation": "SAA-C03 practice scenario (extract question #123). Correct choice: A.",
+    "keywords": [
+      "aws-saa-c03",
+      "aws-compute",
+      "aws-security",
+      "ec2"
+    ],
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "seedId": "42b9073c-3486-4a87-a479-6a64e20e271b"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "saa-c03",
+    "question": "A company has a highly dynamic batch processing job that uses many Amazon EC2 instances to complete it. The job is stateless in nature, can be\nstarted and stopped at any given time with no negative impact, and typically takes upwards of 60 minutes total to complete. The company has\nasked a solutions architect to design a scalable and cost-effective solution that meets the requirements of the job.\nWhat should the solutions architect recommend?",
+    "correctAnswer": "Implement EC2 Spot Instances.",
+    "incorrectAnswers": [
+      "Purchase EC2 Reserved Instances.",
+      "Implement EC2 On-Demand Instances.",
+      "Implement the processing on AWS Lambda."
+    ],
+    "explanation": "SAA-C03 practice scenario (extract question #124). Correct choice: A.",
+    "keywords": [
+      "aws-saa-c03",
+      "aws-compute",
+      "ec2"
+    ],
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "seedId": "aa2a4419-97f0-4515-8c62-94f6669c0ec2"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "saa-c03",
+    "question": "A solutions architect needs to implement a solution to reduce a company's storage costs. All the company's data is in the Amazon S3 Standard\nstorage class. The company must keep all data for at least 25 years. Data from the most recent 2 years must be highly available and immediately\nretrievable.\nWhich solution will meet these requirements?",
+    "correctAnswer": "Set up an S3 Lifecycle policy to transition objects to S3 Glacier Deep Archive immediately.",
+    "incorrectAnswers": [
+      "Set up an S3 Lifecycle policy to transition objects to S3 Glacier Deep Archive after 2 years.",
+      "Use S3 Intelligent-Tiering. Activate the archiving option to ensure that data is archived in S3 Glacier Deep Archive.",
+      "Set up an S3 Lifecycle policy to transition objects to S3 One Zone-Infrequent Access (S3 One Zone-IA) immediately and to S3 Glacier Deep Archive after 2 years. --- Page 46 ---"
+    ],
+    "explanation": "SAA-C03 practice scenario (extract question #126). Correct choice: A.",
+    "keywords": [
+      "aws-saa-c03",
+      "aws-storage",
+      "s3",
+      "glacier"
+    ],
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "seedId": "b4200d3e-31e4-419e-a90a-94fc2db01de3"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "saa-c03",
+    "question": "A media company is evaluating the possibility of moving its systems to the AWS Cloud. The company needs at least 10 TB of storage with the\nmaximum possible I/O performance for video processing, 300 TB of very durable storage for storing media content, and 900 TB of storage to meet\nrequirements for archival media that is not in use anymore.\nWhich set of services should a solutions architect recommend to meet these requirements?",
+    "correctAnswer": "Amazon EC2 instance store for maximum performance, Amazon S3 for durable data storage, and Amazon S3 Glacier for archival storage",
+    "incorrectAnswers": [
+      "Amazon EBS for maximum performance, Amazon S3 for durable data storage, and Amazon S3 Glacier for archival storage",
+      "Amazon EBS for maximum performance, Amazon EFS for durable data storage, and Amazon S3 Glacier for archival storage",
+      "Amazon EC2 instance store for maximum performance, Amazon EFS for durable data storage, and Amazon S3 for archival storage"
+    ],
+    "explanation": "SAA-C03 practice scenario (extract question #127). Correct choice: D.",
+    "keywords": [
+      "aws-saa-c03",
+      "aws-storage",
+      "aws-compute",
+      "s3",
+      "glacier",
+      "ec2"
+    ],
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "seedId": "4a96d7ae-d63b-4ca6-9127-b83efb987d45"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "saa-c03",
+    "question": "A company wants to run applications in containers in the AWS Cloud. These applications are stateless and can tolerate disruptions within the\nunderlying infrastructure. The company needs a solution that minimizes cost and operational overhead.\nWhat should a solutions architect do to meet these requirements?",
+    "correctAnswer": "Use On-Demand Instances in an Amazon Elastic Kubernetes Service (Amazon EKS) managed node group.",
+    "incorrectAnswers": [
+      "Use Spot Instances in an Amazon EC2 Auto Scaling group to run the application containers.",
+      "Use Spot Instances in an Amazon Elastic Kubernetes Service (Amazon EKS) managed node group.",
+      "Use On-Demand Instances in an Amazon EC2 Auto Scaling group to run the application containers."
+    ],
+    "explanation": "SAA-C03 practice scenario (extract question #128). Correct choice: D.",
+    "keywords": [
+      "aws-saa-c03",
+      "aws-compute",
+      "eks"
+    ],
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "seedId": "9fbd84a1-2b9f-4145-afeb-09b5e205ea37"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "saa-c03",
+    "question": "An application runs on Amazon EC2 instances across multiple Availability Zonas. The instances run in an Amazon EC2 Auto Scaling group behind\nan Application Load Balancer. The application performs best when the CPU utilization of the EC2 instances is at or near 40%.\nWhat should a solutions architect do to maintain the desired performance across all instances in the group?",
+    "correctAnswer": "Use scheduled scaling actions to scale up and scale down the Auto Scaling group.",
+    "incorrectAnswers": [
+      "Use a simple scaling policy to dynamically scale the Auto Scaling group.",
+      "Use a target trafficking policy to dynamically scale the Auto Scaling group.",
+      "Use an AWS Lambda function ta update the desired Auto Scaling group capacity."
+    ],
+    "explanation": "SAA-C03 practice scenario (extract question #130). Correct choice: D.",
+    "keywords": [
+      "aws-saa-c03",
+      "aws-compute",
+      "aws-networking",
+      "ec2",
+      "auto-scaling",
+      "alb"
+    ],
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "seedId": "4f11a3c1-af56-49cb-bad3-2d3343de7f23"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "saa-c03",
+    "question": "A company is developing a le-sharing application that will use an Amazon S3 bucket for storage. The company wants to serve all the les\nthrough an Amazon CloudFront distribution. The company does not want the les to be accessible through direct navigation to the S3 URL.\nWhat should a solutions architect do to meet these requirements?",
+    "correctAnswer": "Create an origin access identity (OAI). Assign the OAI to the CloudFront distribution. Configure the S3 bucket permissions so that only the OAI has read permission.",
+    "incorrectAnswers": [
+      "Write individual policies for each S3 bucket to grant read permission for only CloudFront access.",
+      "Create an IAM user. Grant the user read permission to objects in the S3 bucket. Assign the user to CloudFront.",
+      "Write an S3 bucket policy that assigns the CloudFront distribution ID as the Principal and assigns the target S3 bucket as the Amazon Resource Name (ARN)."
+    ],
+    "explanation": "SAA-C03 practice scenario (extract question #131). Correct choice: D.",
+    "keywords": [
+      "aws-saa-c03",
+      "aws-storage",
+      "aws-networking",
+      "s3",
+      "cloudfront"
+    ],
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "seedId": "8fd55cbb-cbc8-45f4-9abd-829316404a7f"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "saa-c03",
+    "question": "A company’s website provides users with downloadable historical performance reports. The website needs a solution that will scale to meet the\ncompany’s website demands globally. The solution should be cost-effective, limit the provisioning of infrastructure resources, and provide the\nfastest possible response time.\nWhich combination should a solutions architect recommend to meet these requirements?",
+    "correctAnswer": "Amazon CloudFront and Amazon S3",
+    "incorrectAnswers": [
+      "AWS Lambda and Amazon DynamoDB",
+      "Application Load Balancer with Amazon EC2 Auto Scaling",
+      "Amazon Route 53 with internal Application Load Balancers --- Page 48 ---"
+    ],
+    "explanation": "SAA-C03 practice scenario (extract question #132). Correct choice: A.",
+    "keywords": [
+      "aws-saa-c03",
+      "aws-storage",
+      "aws-networking",
+      "s3",
+      "cloudfront"
+    ],
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "seedId": "42b8a006-3a92-4f73-a00b-6f94e61df0ab"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "saa-c03",
+    "question": "A company runs an Oracle database on premises. As part of the company’s migration to AWS, the company wants to upgrade the database to the\nmost recent available version. The company also wants to set up disaster recovery (DR) for the database. The company needs to minimize the\noperational overhead for normal operations and DR setup. The company also needs to maintain access to the database's underlying operating\nsystem.\nWhich solution will meet these requirements?",
+    "correctAnswer": "Migrate the Oracle database to Amazon RDS for Oracle. Create a standby database in another Availability Zone.",
+    "incorrectAnswers": [
+      "Migrate the Oracle database to an Amazon EC2 instance. Set up database replication to a different AWS Region.",
+      "Migrate the Oracle database to Amazon RDS for Oracle. Activate Cross-Region automated backups to replicate the snapshots to another AWS Region.",
+      "Migrate the Oracle database to Amazon RDS Custom for Oracle. Create a read replica for the database in another AWS Region."
+    ],
+    "explanation": "SAA-C03 practice scenario (extract question #133). Correct choice: D.",
+    "keywords": [
+      "aws-saa-c03",
+      "aws-database",
+      "databases",
+      "rds"
+    ],
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "seedId": "775b6e8b-a3f2-4046-b512-8006a7f2ff1e"
+  }
+]

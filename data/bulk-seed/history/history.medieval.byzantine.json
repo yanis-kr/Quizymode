@@ -5,10 +5,19 @@
     "navigationKeyword2": "byzantine",
     "question": "Which sixth-century emperor commissioned a massive legal compilation that reorganized Roman law for his empire?",
     "correctAnswer": "Justinian I",
-    "incorrectAnswers": ["Constantine I", "Heraclius", "Basil II"],
+    "incorrectAnswers": [
+      "Constantine I",
+      "Heraclius",
+      "Basil II"
+    ],
     "explanation": "Justinian’s Corpus Juris Civilis (including the Codex and Digest) systematized Roman law for Byzantine governance.",
-    "keywords": ["byzantine-empire", "justinian", "law"],
-    "source": "https://www.britannica.com/biography/Justinian-I-Byzantine-emperor"
+    "keywords": [
+      "byzantine-empire",
+      "justinian",
+      "law"
+    ],
+    "source": "https://www.britannica.com/biography/Justinian-I-Byzantine-emperor",
+    "seedId": "815ab65a-e96d-438a-8720-d88d9becfc2d"
   },
   {
     "category": "history",
@@ -16,10 +25,19 @@
     "navigationKeyword2": "byzantine",
     "question": "Worshippers entering Constantinople’s great church rebuilt under Justinian walked beneath a vast dome on pendentives—what is the building?",
     "correctAnswer": "Hagia Sophia",
-    "incorrectAnswers": ["St. Peter’s Basilica", "The Pantheon (Rome)", "The Church of the Holy Sepulchre"],
+    "incorrectAnswers": [
+      "St. Peter’s Basilica",
+      "The Pantheon (Rome)",
+      "The Church of the Holy Sepulchre"
+    ],
     "explanation": "Hagia Sophia’s dome became the architectural signature of Byzantine imperial Christianity.",
-    "keywords": ["byzantine-empire", "architecture", "constantinople"],
-    "source": "https://www.britannica.com/place/Hagia-Sophia"
+    "keywords": [
+      "byzantine-empire",
+      "architecture",
+      "constantinople"
+    ],
+    "source": "https://www.britannica.com/place/Hagia-Sophia",
+    "seedId": "c66e59b1-b017-4de3-9606-aa6e50f81237"
   },
   {
     "category": "history",
@@ -27,10 +45,19 @@
     "navigationKeyword2": "byzantine",
     "question": "In 532 Constantinople’s factions rioted until troops massacred thousands in the square before the imperial palace—what are those riots called?",
     "correctAnswer": "The Nika Riots",
-    "incorrectAnswers": ["The Sicilian Vespers", "The St. Bartholomew’s Day massacre", "The Gordon Riots"],
+    "incorrectAnswers": [
+      "The Sicilian Vespers",
+      "The St. Bartholomew’s Day massacre",
+      "The Gordon Riots"
+    ],
     "explanation": "The Nika Riots nearly toppled Justinian before Belisarius and Mundus crushed the insurrection in the Hippodrome area.",
-    "keywords": ["byzantine-empire", "justinian", "constantinople"],
-    "source": "https://www.britannica.com/topic/Nika-riots"
+    "keywords": [
+      "byzantine-empire",
+      "justinian",
+      "constantinople"
+    ],
+    "source": "https://www.britannica.com/topic/Nika-riots",
+    "seedId": "d203c563-c462-4e8b-9508-1ebc6e4873dc"
   },
   {
     "category": "history",
@@ -38,10 +65,19 @@
     "navigationKeyword2": "byzantine",
     "question": "When advisers urged flight during the 532 faction revolt, which empress reportedly insisted that purple made a fine burial shroud and pressed Justinian to stay?",
     "correctAnswer": "Theodora",
-    "incorrectAnswers": ["Irene", "Zoe", "Theophano"],
+    "incorrectAnswers": [
+      "Irene",
+      "Zoe",
+      "Theophano"
+    ],
     "explanation": "Byzantine tradition credits Theodora with stiffening Justinian’s resolve at the height of the Nika Riots.",
-    "keywords": ["byzantine-empire", "empress", "politics"],
-    "source": "https://www.britannica.com/biography/Theodora-Byzantine-empress-died-548"
+    "keywords": [
+      "byzantine-empire",
+      "empress",
+      "politics"
+    ],
+    "source": "https://www.britannica.com/biography/Theodora-Byzantine-empress-died-548",
+    "seedId": "45369b6a-4d52-47f6-b2ec-c6b2acc8cb41"
   },
   {
     "category": "history",
@@ -49,10 +85,19 @@
     "navigationKeyword2": "byzantine",
     "question": "Eighth- and ninth-century emperors who smashed sacred images sparked which religious conflict in the eastern empire?",
     "correctAnswer": "Iconoclasm",
-    "incorrectAnswers": ["Monophysitism", "Pelagianism", "Jansenism"],
+    "incorrectAnswers": [
+      "Monophysitism",
+      "Pelagianism",
+      "Jansenism"
+    ],
     "explanation": "Byzantine iconoclasm was an imperial and clerical movement against religious images and their veneration.",
-    "keywords": ["byzantine-empire", "religion", "art"],
-    "source": "https://www.britannica.com/topic/iconoclasm-Christianity"
+    "keywords": [
+      "byzantine-empire",
+      "religion",
+      "art"
+    ],
+    "source": "https://www.britannica.com/topic/iconoclasm-Christianity",
+    "seedId": "cbcd2fde-86e2-4d27-927d-b94f18f7191c"
   },
   {
     "category": "history",
@@ -60,10 +105,19 @@
     "navigationKeyword2": "byzantine",
     "question": "Which Macedonian-dynasty Byzantine emperor destroyed the First Bulgarian Empire and presided over a medieval peak of imperial territory around 1018?",
     "correctAnswer": "Basil II",
-    "incorrectAnswers": ["Leo III", "Alexius I Comnenus", "Manuel I Comnenus"],
+    "incorrectAnswers": [
+      "Leo III",
+      "Alexius I Comnenus",
+      "Manuel I Comnenus"
+    ],
     "explanation": "Basil II presided over a peak of medieval Byzantine power and crushed the First Bulgarian Empire.",
-    "keywords": ["byzantine-empire", "macedonian-dynasty", "warfare"],
-    "source": "https://www.britannica.com/biography/Basil-II-Byzantine-emperor"
+    "keywords": [
+      "byzantine-empire",
+      "macedonian-dynasty",
+      "warfare"
+    ],
+    "source": "https://www.britannica.com/biography/Basil-II-Byzantine-emperor",
+    "seedId": "c474c535-3628-4d4f-a875-80cef89ddd23"
   },
   {
     "category": "history",
@@ -71,10 +125,19 @@
     "navigationKeyword2": "byzantine",
     "question": "In 1054 legates from Rome and the patriarch of Constantinople exchanged sentences of excommunication, deepening what split?",
     "correctAnswer": "The East–West Schism",
-    "incorrectAnswers": ["The Western Schism", "The Great Awakening", "The Nestorian schism"],
+    "incorrectAnswers": [
+      "The Western Schism",
+      "The Great Awakening",
+      "The Nestorian schism"
+    ],
     "explanation": "The mutual excommunications of 1054 symbolize the growing breach between Latin and Greek Christianity.",
-    "keywords": ["byzantine-empire", "christianity", "schism"],
-    "source": "https://www.britannica.com/event/East-West-Schism-1054"
+    "keywords": [
+      "byzantine-empire",
+      "christianity",
+      "schism"
+    ],
+    "source": "https://www.britannica.com/event/East-West-Schism-1054",
+    "seedId": "d0a6910a-56ee-4027-b279-5239acd12336"
   },
   {
     "category": "history",
@@ -82,10 +145,19 @@
     "navigationKeyword2": "byzantine",
     "question": "In 1204 crusaders stormed which Christian metropolis and briefly ruled a Latin empire from its ancient forums?",
     "correctAnswer": "Constantinople",
-    "incorrectAnswers": ["Antioch", "Thessalonica", "Nicaea"],
+    "incorrectAnswers": [
+      "Antioch",
+      "Thessalonica",
+      "Nicaea"
+    ],
     "explanation": "The Fourth Crusade’s sack of Constantinople shattered Byzantine continuity and entrenched Latin rule for decades.",
-    "keywords": ["byzantine-empire", "crusades", "constantinople"],
-    "source": "https://www.britannica.com/event/Fourth-Crusade"
+    "keywords": [
+      "byzantine-empire",
+      "crusades",
+      "constantinople"
+    ],
+    "source": "https://www.britannica.com/event/Fourth-Crusade",
+    "seedId": "f7f05d58-ce33-400e-a107-5680545e1077"
   },
   {
     "category": "history",
@@ -93,10 +165,19 @@
     "navigationKeyword2": "byzantine",
     "question": "Ottoman forces using cannon breached the Theodosian Walls in 1453, ending which state’s thousand-year Roman continuity?",
     "correctAnswer": "The Byzantine (Eastern Roman) Empire",
-    "incorrectAnswers": ["The Holy Roman Empire", "The Latin Empire of Constantinople", "The Serbian Empire"],
+    "incorrectAnswers": [
+      "The Holy Roman Empire",
+      "The Latin Empire of Constantinople",
+      "The Serbian Empire"
+    ],
     "explanation": "Mehmed II’s conquest of Constantinople is the conventional end date for the Byzantine Empire.",
-    "keywords": ["byzantine-empire", "ottomans", "1453"],
-    "source": "https://www.britannica.com/event/Fall-of-Constantinople"
+    "keywords": [
+      "byzantine-empire",
+      "ottomans",
+      "1453"
+    ],
+    "source": "https://www.britannica.com/event/Fall-of-Constantinople",
+    "seedId": "55f6c384-3af7-47f9-bfaf-f8bbfea9fd0b"
   },
   {
     "category": "history",
@@ -104,10 +185,19 @@
     "navigationKeyword2": "byzantine",
     "question": "Byzantine defenders reportedly sprayed enemy ships with an incendiary mixture called what in modern histories?",
     "correctAnswer": "Greek fire",
-    "incorrectAnswers": ["Wildfire (fictional)", "Greek wine", "Napalm (modern term only)"],
+    "incorrectAnswers": [
+      "Wildfire (fictional)",
+      "Greek wine",
+      "Napalm (modern term only)"
+    ],
     "explanation": "Greek fire was a Byzantine naval weapon using flammable liquid projected against enemy fleets.",
-    "keywords": ["byzantine-empire", "navy", "siege"],
-    "source": "https://www.britannica.com/technology/Greek-fire"
+    "keywords": [
+      "byzantine-empire",
+      "navy",
+      "siege"
+    ],
+    "source": "https://www.britannica.com/technology/Greek-fire",
+    "seedId": "8d27fe9c-8c24-49ea-aae3-2324f8c72284"
   },
   {
     "category": "history",
@@ -115,10 +205,19 @@
     "navigationKeyword2": "byzantine",
     "question": "Which general under Justinian reconquered Vandal Africa and much of Ostrogothic Italy for Constantinople?",
     "correctAnswer": "Belisarius",
-    "incorrectAnswers": ["Narses", "Heraclius", "John Tzimisces"],
+    "incorrectAnswers": [
+      "Narses",
+      "Heraclius",
+      "John Tzimisces"
+    ],
     "explanation": "Belisarius led the main Byzantine campaigns that briefly restored imperial rule in the western Mediterranean.",
-    "keywords": ["byzantine-empire", "justinian", "military"],
-    "source": "https://www.britannica.com/biography/Belisarius-Byzantine-general"
+    "keywords": [
+      "byzantine-empire",
+      "justinian",
+      "military"
+    ],
+    "source": "https://www.britannica.com/biography/Belisarius-Byzantine-general",
+    "seedId": "f55507b2-be21-443b-9083-a279f6cb431b"
   },
   {
     "category": "history",
@@ -126,9 +225,18 @@
     "navigationKeyword2": "byzantine",
     "question": "The Byzantine state’s official and literary language shifted from Latin to which tongue across late antiquity and the early Middle Ages?",
     "correctAnswer": "Greek",
-    "incorrectAnswers": ["Old Church Slavonic", "Armenian", "Syriac only"],
+    "incorrectAnswers": [
+      "Old Church Slavonic",
+      "Armenian",
+      "Syriac only"
+    ],
     "explanation": "Medieval Romans of the east called themselves Rhomaioi and increasingly used medieval Greek for administration and culture.",
-    "keywords": ["byzantine-empire", "language", "culture"],
-    "source": "https://www.britannica.com/place/Byzantine-Empire"
+    "keywords": [
+      "byzantine-empire",
+      "language",
+      "culture"
+    ],
+    "source": "https://www.britannica.com/place/Byzantine-Empire",
+    "seedId": "4e5e1b00-e083-4b63-8fe1-50afa7756048"
   }
 ]
