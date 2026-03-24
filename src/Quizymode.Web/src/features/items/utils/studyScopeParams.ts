@@ -1,8 +1,16 @@
-function parseKeywordList(value: string | null | undefined): string[] {
+import { categoryNameToSlug } from "@/utils/categorySlug";
+
+function parseKeywordList(
+  value: string | null | undefined,
+  options?: { slugify?: boolean }
+): string[] {
   if (!value) return [];
   return value
     .split(",")
     .map((keyword) => keyword.trim())
+    .map((keyword) =>
+      options?.slugify ? categoryNameToSlug(keyword) : keyword
+    )
     .filter(Boolean);
 }
 
@@ -25,7 +33,7 @@ export function getStudyScopeKeywords(
   }
 
   const navigationKeywords = searchParams.has("nav")
-    ? parseKeywordList(searchParams.get("nav"))
+    ? parseKeywordList(searchParams.get("nav"), { slugify: true })
     : keywords;
   const navigationKeywordSet = new Set(
     navigationKeywords.map((keyword) => keyword.toLowerCase())

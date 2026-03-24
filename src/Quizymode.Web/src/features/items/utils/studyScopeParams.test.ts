@@ -33,4 +33,14 @@ describe("getStudyScopeKeywords", () => {
       filterKeywords: [],
     });
   });
+
+  it("normalizes nav values with spaces into slug form", () => {
+    const searchParams = new URLSearchParams("nav=soccer,world cup");
+
+    expect(getStudyScopeKeywords(searchParams, true)).toEqual({
+      keywords: [],
+      navigationKeywords: ["soccer", "world-cup"],
+      filterKeywords: [],
+    });
+  });
 });

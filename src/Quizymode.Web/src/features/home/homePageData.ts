@@ -97,7 +97,7 @@ export const featuredSetCards: FeaturedSetCard[] = [
   },
   {
     id: "soccer-world-cup",
-    path: "/quiz/sports?nav=soccer,world%20cup",
+    path: "/quiz/sports?nav=soccer,world-cup",
     eyebrow: "Competition",
     title: "World Cup Starter",
     description: "Teams, substitutions, tournament rules, and a clean on-ramp into soccer quizzes.",
@@ -110,7 +110,7 @@ export const featuredSetCards: FeaturedSetCard[] = [
   },
   {
     id: "tropical-island",
-    path: "/quiz/nature?nav=survival,tropical%20island",
+    path: "/quiz/nature?nav=survival,tropical-island",
     eyebrow: "Survival",
     title: "Tropical Island Survival",
     description: "Water, shelter, signaling, and the practical decisions that matter first.",
@@ -123,7 +123,7 @@ export const featuredSetCards: FeaturedSetCard[] = [
   },
   {
     id: "solar-system",
-    path: "/quiz/science?nav=astronomy,solar%20system",
+    path: "/quiz/science?nav=astronomy,solar-system",
     eyebrow: "Space",
     title: "Solar System Sprint",
     description: "Planets, scale, motion, and the easy wins every astronomy round needs.",
