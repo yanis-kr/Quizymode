@@ -50,18 +50,18 @@ describe("HomePage", () => {
 
     expect(
       screen.getByRole("heading", {
-        name: /browse categories, open a set, and start learning immediately/i,
+        name: /build, share, and study your own quizzes/i,
       })
     ).toBeInTheDocument();
-    expect(screen.getByRole("heading", { name: /explore all quizymode categories/i })).toBeInTheDocument();
+    expect(screen.getByRole("heading", { name: /explore categories/i })).toBeInTheDocument();
     expect(screen.getByRole("link", { name: /exams/i })).toHaveAttribute("href", "/categories/exams");
     expect(screen.getByRole("link", { name: /aws saa-c03/i })).toHaveAttribute(
       "href",
-      "/categories/exams/aws/saa-c03"
+      "/quiz/exams?nav=aws,saa-c03"
     );
-    expect(screen.getByRole("link", { name: /open sample collection/i })).toHaveAttribute(
+    expect(screen.getByRole("link", { name: /try sample collection/i })).toHaveAttribute(
       "href",
-      "/collections/8f9b8c14-8d30-4d94-9b20-4c7bb7f7f511"
+      "/quiz/collections/8f9b8c14-8d30-4d94-9b20-4c7bb7f7f511/sample+collection"
     );
 
     await waitFor(() => expect(categoriesApi.getAll).toHaveBeenCalledTimes(1));

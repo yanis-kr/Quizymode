@@ -1,0 +1,211 @@
+[
+  {
+    "category": "geography",
+    "navigationKeyword1": "capitals",
+    "navigationKeyword2": "europe",
+    "question": "What is the national capital of France?",
+    "correctAnswer": "Paris",
+    "incorrectAnswers": [
+      "Lyon",
+      "Marseille",
+      "Toulouse"
+    ],
+    "explanation": "Paris has long been France’s political and cultural capital on the Seine River.",
+    "keywords": [
+      "europe",
+      "france",
+      "western-europe"
+    ],
+    "source": "https://www.britannica.com/place/Paris"
+  },
+  {
+    "category": "geography",
+    "navigationKeyword1": "capitals",
+    "navigationKeyword2": "europe",
+    "question": "What is the national capital of Germany?",
+    "correctAnswer": "Berlin",
+    "incorrectAnswers": [
+      "Munich",
+      "Frankfurt",
+      "Hamburg"
+    ],
+    "explanation": "Berlin is the seat of Germany’s federal government after reunification in 1990.",
+    "keywords": [
+      "europe",
+      "germany",
+      "central-europe"
+    ],
+    "source": "https://www.britannica.com/place/Berlin"
+  },
+  {
+    "category": "geography",
+    "navigationKeyword1": "capitals",
+    "navigationKeyword2": "europe",
+    "question": "What is the national capital of Italy?",
+    "correctAnswer": "Rome",
+    "incorrectAnswers": [
+      "Milan",
+      "Naples",
+      "Florence"
+    ],
+    "explanation": "Rome is Italy’s capital and also the seat of the Roman Catholic papacy in Vatican City.",
+    "keywords": [
+      "europe",
+      "italy",
+      "southern-europe"
+    ],
+    "source": "https://www.britannica.com/place/Rome"
+  },
+  {
+    "category": "geography",
+    "navigationKeyword1": "capitals",
+    "navigationKeyword2": "europe",
+    "question": "What is the national capital of Spain?",
+    "correctAnswer": "Madrid",
+    "incorrectAnswers": [
+      "Barcelona",
+      "Seville",
+      "Valencia"
+    ],
+    "explanation": "Madrid lies on the Meseta Central and serves as Spain’s political capital.",
+    "keywords": [
+      "europe",
+      "spain",
+      "iberia"
+    ],
+    "source": "https://www.britannica.com/place/Madrid"
+  },
+  {
+    "category": "geography",
+    "navigationKeyword1": "capitals",
+    "navigationKeyword2": "europe",
+    "question": "What is the national capital of the United Kingdom?",
+    "correctAnswer": "London",
+    "incorrectAnswers": [
+      "Edinburgh",
+      "Cardiff",
+      "Belfast"
+    ],
+    "explanation": "London on the River Thames is the UK’s primary seat of government and monarchy.",
+    "keywords": [
+      "europe",
+      "the-united-kingdom",
+      "northern-europe"
+    ],
+    "source": "https://www.britannica.com/place/London"
+  },
+  {
+    "category": "geography",
+    "navigationKeyword1": "capitals",
+    "navigationKeyword2": "europe",
+    "question": "What is the national capital of Poland?",
+    "correctAnswer": "Warsaw",
+    "incorrectAnswers": [
+      "Kraków",
+      "Gdańsk",
+      "Wrocław"
+    ],
+    "explanation": "Warsaw on the Vistula River is Poland’s capital and largest city.",
+    "keywords": [
+      "europe",
+      "poland",
+      "eastern-europe"
+    ],
+    "source": "https://www.britannica.com/place/Warsaw"
+  },
+  {
+    "category": "geography",
+    "navigationKeyword1": "capitals",
+    "navigationKeyword2": "europe",
+    "question": "What is the national capital of Norway?",
+    "correctAnswer": "Oslo",
+    "incorrectAnswers": [
+      "Bergen",
+      "Trondheim",
+      "Stavanger"
+    ],
+    "explanation": "Oslo lies at the head of Oslofjord and is Norway’s governmental capital.",
+    "keywords": [
+      "europe",
+      "norway",
+      "scandinavia"
+    ],
+    "source": "https://www.britannica.com/place/Oslo"
+  },
+  {
+    "category": "geography",
+    "navigationKeyword1": "capitals",
+    "navigationKeyword2": "europe",
+    "question": "What is the national capital of Sweden?",
+    "correctAnswer": "Stockholm",
+    "incorrectAnswers": [
+      "Gothenburg",
+      "Malmö",
+      "Uppsala"
+    ],
+    "explanation": "Stockholm spreads across islands and shores where Lake Mälaren meets the Baltic Sea.",
+    "keywords": [
+      "europe",
+      "sweden",
+      "scandinavia"
+    ],
+    "source": "https://www.britannica.com/place/Stockholm"
+  },
+  {
+    "category": "geography",
+    "navigationKeyword1": "capitals",
+    "navigationKeyword2": "europe",
+    "question": "What is the national capital of Ukraine?",
+    "correctAnswer": "Kyiv",
+    "incorrectAnswers": [
+      "Kharkiv",
+      "Odesa",
+      "Lviv"
+    ],
+    "explanation": "Kyiv on the Dnieper River is Ukraine’s capital and historic political center.",
+    "keywords": [
+      "europe",
+      "ukraine",
+      "eastern-europe"
+    ],
+    "source": "https://www.britannica.com/place/Kyiv"
+  },
+  {
+    "category": "geography",
+    "navigationKeyword1": "capitals",
+    "navigationKeyword2": "europe",
+    "question": "What city hosts the principal federal authorities of Switzerland?",
+    "correctAnswer": "Bern",
+    "incorrectAnswers": [
+      "Zurich",
+      "Geneva",
+      "Basel"
+    ],
+    "explanation": "Bern is the seat of Switzerland’s federal government and key administrative institutions.",
+    "keywords": [
+      "europe",
+      "alpine-europe",
+      "switzerland"
+    ],
+    "source": "https://www.britannica.com/place/Bern"
+  },
+  {
+    "category": "geography",
+    "navigationKeyword1": "capitals",
+    "navigationKeyword2": "europe",
+    "question": "What is the national capital of Greece?",
+    "correctAnswer": "Athens",
+    "incorrectAnswers": [
+      "Thessaloniki",
+      "Patras",
+      "Heraklion"
+    ],
+    "explanation": "Athens is Greece’s capital and the historic heart of Attica.",
+    "keywords": [
+      "europe",
+      "greece",
+      "southern-europe"
+    ],
+    "source": "https://www.britannica.com/place/Athens"
+  }
+]

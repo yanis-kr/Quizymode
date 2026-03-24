@@ -1,0 +1,230 @@
+[
+  {
+    "category": "exams",
+    "navigationKeyword1": "azure",
+    "navigationKeyword2": "az-104",
+    "question": "What does an Azure storage account contain?",
+    "correctAnswer": "Azure Storage data objects such as blobs, files, queues, and tables",
+    "incorrectAnswers": [
+      "Only virtual machines",
+      "Only identity objects",
+      "Only DNS records"
+    ],
+    "explanation": "A storage account is the top-level container for Azure Storage services and data objects.",
+    "keywords": [
+      "az-104",
+      "azure-admin",
+      "azure-services"
+    ],
+    "source": "https://learn.microsoft.com/en-us/azure/storage/common/storage-account-overview"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "azure",
+    "navigationKeyword2": "az-104",
+    "question": "Which Azure service provides fully managed file shares in the cloud?",
+    "correctAnswer": "Azure Files",
+    "incorrectAnswers": [
+      "Azure Event Grid",
+      "Azure Monitor",
+      "Microsoft Entra ID"
+    ],
+    "explanation": "Azure Files provides managed SMB and NFS file shares.",
+    "keywords": [
+      "az-104",
+      "azure-admin",
+      "azure-services"
+    ],
+    "source": "https://learn.microsoft.com/en-us/azure/storage/files/storage-files-introduction"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "azure",
+    "navigationKeyword2": "az-104",
+    "question": "Which Azure service stores secrets, keys, and certificates?",
+    "correctAnswer": "Azure Key Vault",
+    "incorrectAnswers": [
+      "Azure Load Balancer",
+      "Azure Backup",
+      "Azure Queue Storage"
+    ],
+    "explanation": "Azure Key Vault securely stores and controls access to secrets, keys, and certificates.",
+    "keywords": [
+      "az-104",
+      "azure-admin",
+      "azure-services"
+    ],
+    "source": "https://learn.microsoft.com/en-us/azure/key-vault/general/overview"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "azure",
+    "navigationKeyword2": "az-104",
+    "question": "Which Azure service provides simple, secure, and cost-effective backup?",
+    "correctAnswer": "Azure Backup",
+    "incorrectAnswers": [
+      "Azure Event Grid",
+      "Azure RBAC",
+      "Azure Load Balancer"
+    ],
+    "explanation": "Azure Backup is Microsoft's managed backup service for Azure and some on-premises workloads.",
+    "keywords": [
+      "az-104",
+      "azure-admin",
+      "azure-services"
+    ],
+    "source": "https://learn.microsoft.com/en-us/azure/backup/backup-overview"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "azure",
+    "navigationKeyword2": "az-104",
+    "question": "Which Azure service supports disaster recovery for keeping apps and workloads online during outages?",
+    "correctAnswer": "Azure Site Recovery",
+    "incorrectAnswers": [
+      "Azure App Configuration",
+      "Azure Queue Storage",
+      "Azure Load Balancer"
+    ],
+    "explanation": "Azure Site Recovery is part of Azure's business continuity and disaster recovery capabilities.",
+    "keywords": [
+      "az-104",
+      "azure-admin",
+      "azure-services"
+    ],
+    "source": "https://learn.microsoft.com/en-us/azure/site-recovery/site-recovery-overview"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "azure",
+    "navigationKeyword2": "az-104",
+    "question": "Which Azure service distributes incoming traffic across backend resources?",
+    "correctAnswer": "Azure Load Balancer",
+    "incorrectAnswers": [
+      "Azure Key Vault",
+      "Azure Backup",
+      "Azure Queue Storage"
+    ],
+    "explanation": "Azure Load Balancer distributes traffic to backend pool resources.",
+    "keywords": [
+      "az-104",
+      "azure-admin",
+      "azure-services"
+    ],
+    "source": "https://learn.microsoft.com/en-us/azure/load-balancer/load-balancer-overview"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "azure",
+    "navigationKeyword2": "az-104",
+    "question": "Which Azure service is the fundamental building block for private networking?",
+    "correctAnswer": "Azure Virtual Network",
+    "incorrectAnswers": [
+      "Azure Backup",
+      "Azure Blob Storage",
+      "Azure Cosmos DB"
+    ],
+    "explanation": "Azure Virtual Network provides private networking for Azure resources and on-premises connectivity.",
+    "keywords": [
+      "az-104",
+      "azure-admin",
+      "azure-services"
+    ],
+    "source": "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-networks-overview"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "azure",
+    "navigationKeyword2": "az-104",
+    "question": "What do Azure network security groups do?",
+    "correctAnswer": "Filter inbound and outbound network traffic using security rules",
+    "incorrectAnswers": [
+      "Store secrets and certificates",
+      "Provide object storage",
+      "Publish APIs to developers"
+    ],
+    "explanation": "Network security groups contain rules that allow or deny traffic by source, destination, port, and protocol.",
+    "keywords": [
+      "az-104",
+      "azure-admin",
+      "azure-services"
+    ],
+    "source": "https://learn.microsoft.com/en-us/azure/virtual-network/network-security-groups-overview"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "azure",
+    "navigationKeyword2": "az-104",
+    "question": "Which Azure service collects, analyzes, and acts on telemetry from cloud and hybrid environments?",
+    "correctAnswer": "Azure Monitor",
+    "incorrectAnswers": [
+      "Azure Load Balancer",
+      "Azure Files",
+      "Azure Queue Storage"
+    ],
+    "explanation": "Azure Monitor is Microsoft's observability platform for metrics, logs, and alerts.",
+    "keywords": [
+      "az-104",
+      "azure-admin",
+      "azure-services"
+    ],
+    "source": "https://learn.microsoft.com/en-us/azure/azure-monitor/fundamentals/overview"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "azure",
+    "navigationKeyword2": "az-104",
+    "question": "Which Azure feature controls who can access resources and what they can do?",
+    "correctAnswer": "Azure RBAC",
+    "incorrectAnswers": [
+      "Azure Blob Storage",
+      "Azure Load Balancer",
+      "Azure Queue Storage"
+    ],
+    "explanation": "Azure role-based access control manages permissions to Azure resources.",
+    "keywords": [
+      "az-104",
+      "azure-admin",
+      "azure-services"
+    ],
+    "source": "https://learn.microsoft.com/en-us/azure/role-based-access-control/overview"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "azure",
+    "navigationKeyword2": "az-104",
+    "question": "Which Microsoft service provides cloud-based identity and access management for Azure?",
+    "correctAnswer": "Microsoft Entra ID",
+    "incorrectAnswers": [
+      "Azure Backup",
+      "Azure Queue Storage",
+      "Azure Files"
+    ],
+    "explanation": "Microsoft Entra ID provides identity and access management across Azure and Microsoft services.",
+    "keywords": [
+      "az-104",
+      "azure-admin",
+      "azure-services"
+    ],
+    "source": "https://learn.microsoft.com/en-us/entra/fundamentals/what-is-entra"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "azure",
+    "navigationKeyword2": "az-104",
+    "question": "Which Azure service manages a group of load-balanced VMs that can scale automatically?",
+    "correctAnswer": "Azure Virtual Machine Scale Sets",
+    "incorrectAnswers": [
+      "Azure Blob Storage",
+      "Azure Key Vault",
+      "Azure API Management"
+    ],
+    "explanation": "Virtual Machine Scale Sets let you deploy and manage groups of load-balanced VMs.",
+    "keywords": [
+      "az-104",
+      "azure-admin",
+      "azure-services"
+    ],
+    "source": "https://learn.microsoft.com/en-us/azure/virtual-machine-scale-sets/overview"
+  }
+]

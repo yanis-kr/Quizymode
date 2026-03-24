@@ -1,0 +1,211 @@
+[
+  {
+    "category": "geography",
+    "navigationKeyword1": "capitals",
+    "navigationKeyword2": "world",
+    "question": "What is the national capital of Australia?",
+    "correctAnswer": "Canberra",
+    "incorrectAnswers": [
+      "Sydney",
+      "Melbourne",
+      "Brisbane"
+    ],
+    "explanation": "Britannica identifies Canberra in the Australian Capital Territory as Australia’s capital.",
+    "keywords": [
+      "world",
+      "australia",
+      "oceania"
+    ],
+    "source": "https://www.britannica.com/place/Canberra"
+  },
+  {
+    "category": "geography",
+    "navigationKeyword1": "capitals",
+    "navigationKeyword2": "world",
+    "question": "What is the national capital of New Zealand?",
+    "correctAnswer": "Wellington",
+    "incorrectAnswers": [
+      "Auckland",
+      "Christchurch",
+      "Dunedin"
+    ],
+    "explanation": "Britannica places New Zealand’s government in Wellington on North Island.",
+    "keywords": [
+      "world",
+      "new-zealand",
+      "oceania"
+    ],
+    "source": "https://www.britannica.com/place/Wellington-New-Zealand"
+  },
+  {
+    "category": "geography",
+    "navigationKeyword1": "capitals",
+    "navigationKeyword2": "world",
+    "question": "What is the national capital of India?",
+    "correctAnswer": "New Delhi",
+    "incorrectAnswers": [
+      "Mumbai",
+      "Kolkata",
+      "Chennai"
+    ],
+    "explanation": "Britannica treats New Delhi as the seat of India’s national government within the Delhi capital territory.",
+    "keywords": [
+      "world",
+      "india",
+      "south-asia"
+    ],
+    "source": "https://www.britannica.com/place/New-Delhi"
+  },
+  {
+    "category": "geography",
+    "navigationKeyword1": "capitals",
+    "navigationKeyword2": "world",
+    "question": "What is the national capital of Indonesia?",
+    "correctAnswer": "Jakarta",
+    "incorrectAnswers": [
+      "Surabaya",
+      "Bandung",
+      "Medan"
+    ],
+    "explanation": "Britannica lists Jakarta on Java as Indonesia’s capital and largest city.",
+    "keywords": [
+      "world",
+      "indonesia",
+      "southeast-asia"
+    ],
+    "source": "https://www.britannica.com/place/Jakarta"
+  },
+  {
+    "category": "geography",
+    "navigationKeyword1": "capitals",
+    "navigationKeyword2": "world",
+    "question": "What is the national capital of Malaysia?",
+    "correctAnswer": "Kuala Lumpur",
+    "incorrectAnswers": [
+      "George Town",
+      "Ipoh",
+      "Johor Bahru"
+    ],
+    "explanation": "Britannica identifies Kuala Lumpur as Malaysia’s capital and principal city.",
+    "keywords": [
+      "world",
+      "malaysia",
+      "southeast-asia"
+    ],
+    "source": "https://www.britannica.com/place/Kuala-Lumpur"
+  },
+  {
+    "category": "geography",
+    "navigationKeyword1": "capitals",
+    "navigationKeyword2": "world",
+    "question": "The city-state of Singapore uses which city as its national capital?",
+    "correctAnswer": "Singapore",
+    "incorrectAnswers": [
+      "Putrajaya",
+      "Bangkok",
+      "Manila"
+    ],
+    "explanation": "Britannica describes Singapore as an independent city-state where the urban area itself forms the country.",
+    "keywords": [
+      "world",
+      "southeast-asia",
+      "singapore"
+    ],
+    "source": "https://www.britannica.com/place/Singapore"
+  },
+  {
+    "category": "geography",
+    "navigationKeyword1": "capitals",
+    "navigationKeyword2": "world",
+    "question": "What is the national capital of the Netherlands?",
+    "correctAnswer": "Amsterdam",
+    "incorrectAnswers": [
+      "The Hague",
+      "Rotterdam",
+      "Utrecht"
+    ],
+    "explanation": "Britannica calls Amsterdam the Netherlands’ capital and principal commercial center, while noting government administration is mainly in The Hague.",
+    "keywords": [
+      "world",
+      "the-netherlands",
+      "western-europe"
+    ],
+    "source": "https://www.britannica.com/place/Amsterdam"
+  },
+  {
+    "category": "geography",
+    "navigationKeyword1": "capitals",
+    "navigationKeyword2": "world",
+    "question": "What is the national capital of Belgium?",
+    "correctAnswer": "Brussels",
+    "incorrectAnswers": [
+      "Antwerp",
+      "Ghent",
+      "Bruges"
+    ],
+    "explanation": "Britannica names Brussels as Belgium’s capital and administrative heart.",
+    "keywords": [
+      "world",
+      "belgium",
+      "western-europe"
+    ],
+    "source": "https://www.britannica.com/place/Brussels"
+  },
+  {
+    "category": "geography",
+    "navigationKeyword1": "capitals",
+    "navigationKeyword2": "world",
+    "question": "What is the national capital of Switzerland?",
+    "correctAnswer": "Bern",
+    "incorrectAnswers": [
+      "Zurich",
+      "Geneva",
+      "Basel"
+    ],
+    "explanation": "Britannica identifies Bern (Berne) as Switzerland’s capital while larger cities handle finance and trade.",
+    "keywords": [
+      "world",
+      "switzerland",
+      "western-europe"
+    ],
+    "source": "https://www.britannica.com/place/Bern"
+  },
+  {
+    "category": "geography",
+    "navigationKeyword1": "capitals",
+    "navigationKeyword2": "world",
+    "question": "What is the national capital of Portugal?",
+    "correctAnswer": "Lisbon",
+    "incorrectAnswers": [
+      "Porto",
+      "Coimbra",
+      "Faro"
+    ],
+    "explanation": "Britannica places Portugal’s government in Lisbon on the Tagus estuary.",
+    "keywords": [
+      "world",
+      "portugal",
+      "iberia"
+    ],
+    "source": "https://www.britannica.com/place/Lisbon"
+  },
+  {
+    "category": "geography",
+    "navigationKeyword1": "capitals",
+    "navigationKeyword2": "world",
+    "question": "What is the national capital of Austria?",
+    "correctAnswer": "Vienna",
+    "incorrectAnswers": [
+      "Salzburg",
+      "Graz",
+      "Innsbruck"
+    ],
+    "explanation": "Britannica describes Vienna as Austria’s capital and cultural center on the Danube.",
+    "keywords": [
+      "world",
+      "austria",
+      "central-europe"
+    ],
+    "source": "https://www.britannica.com/place/Vienna"
+  }
+]

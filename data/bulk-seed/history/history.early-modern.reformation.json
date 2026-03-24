@@ -1,0 +1,134 @@
+[
+  {
+    "category": "history",
+    "navigationKeyword1": "early-modern",
+    "navigationKeyword2": "reformation",
+    "question": "Martin Luther reportedly nailed Ninety-five Theses to a Wittenberg church door in which year?",
+    "correctAnswer": "1517",
+    "incorrectAnswers": ["1492", "1555", "1618"],
+    "explanation": "Luther’s 1517 protest against indulgence preaching is the conventional starting date for the German Reformation.",
+    "keywords": ["reformation", "luther", "germany"],
+    "source": "https://www.britannica.com/event/Reformation"
+  },
+  {
+    "category": "history",
+    "navigationKeyword1": "early-modern",
+    "navigationKeyword2": "reformation",
+    "question": "At the Diet of Worms, which Holy Roman Emperor declared Luther an outlaw after he refused to recant?",
+    "correctAnswer": "Charles V",
+    "incorrectAnswers": ["Maximilian I", "Ferdinand I", "Rudolf II"],
+    "explanation": "Charles V summoned Luther and issued the Edict of Worms condemning his teachings.",
+    "keywords": ["reformation", "luther", "empire"],
+    "source": "https://www.britannica.com/event/Diet-of-Worms"
+  },
+  {
+    "category": "history",
+    "navigationKeyword1": "early-modern",
+    "navigationKeyword2": "reformation",
+    "question": "John Calvin’s ministry and academy made which Swiss city a hub of Reformed Protestantism?",
+    "correctAnswer": "Geneva",
+    "incorrectAnswers": ["Zürich", "Basel", "Bern"],
+    "explanation": "Calvin shaped Geneva into a model Reformed community whose influence spread across Europe.",
+    "keywords": ["reformation", "calvin", "switzerland"],
+    "source": "https://www.britannica.com/biography/John-Calvin"
+  },
+  {
+    "category": "history",
+    "navigationKeyword1": "early-modern",
+    "navigationKeyword2": "reformation",
+    "question": "The 1555 Peace of Augsburg settled religious division in the Holy Roman Empire by tying each territory’s official church to what?",
+    "correctAnswer": "The faith of its ruling prince (Lutheran or Catholic)",
+    "incorrectAnswers": ["A popular vote in each village", "The pope’s appointment of every pastor", "Uniform Calvinism across the empire"],
+    "explanation": "Princes could choose Lutheranism or Catholicism for their lands; subjects were expected to conform or relocate, embedding religion in territorial sovereignty.",
+    "keywords": ["reformation", "germany", "peace"],
+    "source": "https://www.britannica.com/event/Peace-of-Augsburg"
+  },
+  {
+    "category": "history",
+    "navigationKeyword1": "early-modern",
+    "navigationKeyword2": "reformation",
+    "question": "Henry VIII’s 1534 English act declared him supreme head of which institution in his realms?",
+    "correctAnswer": "The Church of England",
+    "incorrectAnswers": ["The Presbyterian Kirk", "The Lutheran churches", "The Roman Curia"],
+    "explanation": "The Act of Supremacy broke papal jurisdiction and made the crown head of the English church.",
+    "keywords": ["reformation", "england", "henry-viii"],
+    "source": "https://www.britannica.com/biography/Henry-VIII-king-of-England"
+  },
+  {
+    "category": "history",
+    "navigationKeyword1": "early-modern",
+    "navigationKeyword2": "reformation",
+    "question": "Catholic bishops gathered at Trent for decades to define doctrine and reform discipline in response to Protestantism—what is that council called?",
+    "correctAnswer": "The Council of Trent",
+    "incorrectAnswers": ["The Council of Constance", "The Council of Florence", "Vatican Council I"],
+    "explanation": "Trent codified Catholic teaching on scripture, tradition, sacraments, and clerical life.",
+    "keywords": ["reformation", "catholic", "council"],
+    "source": "https://www.britannica.com/event/Council-of-Trent"
+  },
+  {
+    "category": "history",
+    "navigationKeyword1": "early-modern",
+    "navigationKeyword2": "reformation",
+    "question": "Ulrich Zwingli’s reforms began in which Swiss city’s Grossmünster, parallel to Luther’s work?",
+    "correctAnswer": "Zürich",
+    "incorrectAnswers": ["Geneva", "Lausanne", "Fribourg"],
+    "explanation": "Zwingli led the Zürich Reformation, an important early Swiss Protestant movement.",
+    "keywords": ["reformation", "zwingli", "switzerland"],
+    "source": "https://www.britannica.com/biography/Huldrych-Zwingli"
+  },
+  {
+    "category": "history",
+    "navigationKeyword1": "early-modern",
+    "navigationKeyword2": "reformation",
+    "question": "Which radical wing rejected infant baptism and stressed adult believers’ baptism, drawing persecution across Europe?",
+    "correctAnswer": "Anabaptists",
+    "incorrectAnswers": ["Jesuits", "Hussites", "Waldensians only"],
+    "explanation": "Anabaptist communities formed alternative ecclesial models outside magisterial Protestant establishments.",
+    "keywords": ["reformation", "radical", "baptism"],
+    "source": "https://www.britannica.com/topic/Anabaptist"
+  },
+  {
+    "category": "history",
+    "navigationKeyword1": "early-modern",
+    "navigationKeyword2": "reformation",
+    "question": "John Knox studied with Calvin and carried Reformed Protestantism to which kingdom?",
+    "correctAnswer": "Scotland",
+    "incorrectAnswers": ["Ireland", "Poland", "Sweden"],
+    "explanation": "Knox helped establish Presbyterian governance as Scotland’s national church form.",
+    "keywords": ["reformation", "scotland", "knox"],
+    "source": "https://www.britannica.com/biography/John-Knox"
+  },
+  {
+    "category": "history",
+    "navigationKeyword1": "early-modern",
+    "navigationKeyword2": "reformation",
+    "question": "Ignatius of Loyola’s society, founded vows and schools to advance Catholic renewal during the Counter-Reformation—what is it?",
+    "correctAnswer": "The Society of Jesus (Jesuits)",
+    "incorrectAnswers": ["The Franciscans", "The Dominicans", "The Carthusians"],
+    "explanation": "Jesuit colleges and missions became principal instruments of Catholic reform and expansion.",
+    "keywords": ["reformation", "catholic", "jesuits"],
+    "source": "https://www.britannica.com/topic/Society-of-Jesus"
+  },
+  {
+    "category": "history",
+    "navigationKeyword1": "early-modern",
+    "navigationKeyword2": "reformation",
+    "question": "Philip Melanchthon’s Lutheran confession, presented to Charles V at Augsburg in 1530, is known by what name?",
+    "correctAnswer": "The Augsburg Confession",
+    "incorrectAnswers": ["The Westminster Confession", "The Belgic Confession", "The Formula of Concord alone"],
+    "explanation": "The Augsburg Confession summarized Lutheran doctrine for imperial deliberation.",
+    "keywords": ["reformation", "lutheran", "germany"],
+    "source": "https://www.britannica.com/topic/Augsburg-Confession"
+  },
+  {
+    "category": "history",
+    "navigationKeyword1": "early-modern",
+    "navigationKeyword2": "reformation",
+    "question": "The 1598 Edict of Nantes granted limited toleration to Huguenots in which kingdom?",
+    "correctAnswer": "France",
+    "incorrectAnswers": ["Spain", "Portugal", "England"],
+    "explanation": "Henry IV’s edict ended France’s religious civil wars with provisional rights for Protestants.",
+    "keywords": ["reformation", "france", "toleration"],
+    "source": "https://www.britannica.com/topic/Edict-of-Nantes"
+  }
+]

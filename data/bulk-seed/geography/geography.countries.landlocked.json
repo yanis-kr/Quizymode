@@ -1,0 +1,192 @@
+[
+  {
+    "category": "geography",
+    "navigationKeyword1": "countries",
+    "navigationKeyword2": "landlocked",
+    "question": "Which country is the world’s largest landlocked state by area?",
+    "correctAnswer": "Kazakhstan",
+    "incorrectAnswers": [
+      "Mongolia",
+      "Chad",
+      "Niger"
+    ],
+    "explanation": "Kazakhstan in Central Asia has the greatest territory of any country without a coastline.",
+    "keywords": [
+      "landlocked",
+      "central-asia",
+      "kazakhstan"
+    ],
+    "source": "https://www.britannica.com/place/Kazakhstan"
+  },
+  {
+    "category": "geography",
+    "navigationKeyword1": "countries",
+    "navigationKeyword2": "landlocked",
+    "question": "Which landlocked country lies between Russia to the north and China to the south?",
+    "correctAnswer": "Mongolia",
+    "incorrectAnswers": [
+      "Nepal",
+      "Bhutan",
+      "Kyrgyzstan"
+    ],
+    "explanation": "Mongolia is an expansive landlocked plateau country bracketed by Russia and China.",
+    "keywords": [
+      "landlocked",
+      "east-asia",
+      "mongolia"
+    ],
+    "source": "https://www.britannica.com/place/Mongolia"
+  },
+  {
+    "category": "geography",
+    "navigationKeyword1": "countries",
+    "navigationKeyword2": "landlocked",
+    "question": "Which doubly landlocked European country is entirely surrounded by other landlocked states?",
+    "correctAnswer": "Liechtenstein",
+    "incorrectAnswers": [
+      "Switzerland",
+      "Austria",
+      "Luxembourg"
+    ],
+    "explanation": "Liechtenstein borders only Switzerland and Austria, both of which are themselves landlocked.",
+    "keywords": [
+      "landlocked",
+      "europe",
+      "microstates"
+    ],
+    "source": "https://www.britannica.com/place/Liechtenstein"
+  },
+  {
+    "category": "geography",
+    "navigationKeyword1": "countries",
+    "navigationKeyword2": "landlocked",
+    "question": "Which South American country lost its Pacific coastline in a 19th-century war and remains landlocked today?",
+    "correctAnswer": "Bolivia",
+    "incorrectAnswers": [
+      "Paraguay",
+      "Peru",
+      "Ecuador"
+    ],
+    "explanation": "Bolivia is landlocked in the Andean interior, having lost coastal territory to Chile in the War of the Pacific era.",
+    "keywords": [
+      "landlocked",
+      "south-america",
+      "bolivia"
+    ],
+    "source": "https://www.britannica.com/place/Bolivia"
+  },
+  {
+    "category": "geography",
+    "navigationKeyword1": "countries",
+    "navigationKeyword2": "landlocked",
+    "question": "Which landlocked South American country lies between Brazil, Bolivia, and Argentina?",
+    "correctAnswer": "Paraguay",
+    "incorrectAnswers": [
+      "Uruguay",
+      "Chile",
+      "Guyana"
+    ],
+    "explanation": "Paraguay has no seacoast and sits in the heart of the southern interior of South America.",
+    "keywords": [
+      "landlocked",
+      "south-america",
+      "paraguay"
+    ],
+    "source": "https://www.britannica.com/place/Paraguay"
+  },
+  {
+    "category": "geography",
+    "navigationKeyword1": "countries",
+    "navigationKeyword2": "landlocked",
+    "question": "Which landlocked African country lies largely in the southern Sahara and Sahel transition belt?",
+    "correctAnswer": "Niger",
+    "incorrectAnswers": [
+      "Senegal",
+      "Ghana",
+      "Gabon"
+    ],
+    "explanation": "Niger is a vast landlocked Sahelian state without ocean frontage.",
+    "keywords": [
+      "landlocked",
+      "africa",
+      "sahel"
+    ],
+    "source": "https://www.britannica.com/place/Niger"
+  },
+  {
+    "category": "geography",
+    "navigationKeyword1": "countries",
+    "navigationKeyword2": "landlocked",
+    "question": "Which landlocked country sits high in the Himalayas between China and India?",
+    "correctAnswer": "Nepal",
+    "incorrectAnswers": [
+      "Bangladesh",
+      "Myanmar",
+      "Pakistan"
+    ],
+    "explanation": "Nepal is a mountainous landlocked state on the spine of the Himalayas.",
+    "keywords": [
+      "landlocked",
+      "south-asia",
+      "himalayas"
+    ],
+    "source": "https://www.britannica.com/place/Nepal"
+  },
+  {
+    "category": "geography",
+    "navigationKeyword1": "countries",
+    "navigationKeyword2": "landlocked",
+    "question": "Which landlocked nation in southern Africa includes the Okavango Delta region?",
+    "correctAnswer": "Botswana",
+    "incorrectAnswers": [
+      "Namibia",
+      "Mozambique",
+      "South Africa"
+    ],
+    "explanation": "Botswana is landlocked in the Kalahari basin and contains the inland Okavango Delta.",
+    "keywords": [
+      "landlocked",
+      "southern-africa",
+      "botswana"
+    ],
+    "source": "https://www.britannica.com/place/Botswana"
+  },
+  {
+    "category": "geography",
+    "navigationKeyword1": "countries",
+    "navigationKeyword2": "landlocked",
+    "question": "Which Central European landlocked country’s capital is Vienna?",
+    "correctAnswer": "Austria",
+    "incorrectAnswers": [
+      "Hungary",
+      "Slovakia",
+      "Czech Republic"
+    ],
+    "explanation": "Austria is a landlocked Alpine and Danubian country bordering several neighbors.",
+    "keywords": [
+      "landlocked",
+      "europe",
+      "austria"
+    ],
+    "source": "https://www.britannica.com/place/Austria"
+  },
+  {
+    "category": "geography",
+    "navigationKeyword1": "countries",
+    "navigationKeyword2": "landlocked",
+    "question": "Which landlocked Central Asian country has its capital at Tashkent and includes Samarkand and Bukhara?",
+    "correctAnswer": "Uzbekistan",
+    "incorrectAnswers": [
+      "Turkmenistan",
+      "Kyrgyzstan",
+      "Tajikistan"
+    ],
+    "explanation": "Uzbekistan lies between the Syr Darya and Amu Darya basins and has no access to the open ocean.",
+    "keywords": [
+      "landlocked",
+      "central-asia",
+      "uzbekistan"
+    ],
+    "source": "https://www.britannica.com/place/Uzbekistan"
+  }
+]

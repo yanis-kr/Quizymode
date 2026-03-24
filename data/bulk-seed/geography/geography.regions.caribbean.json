@@ -1,0 +1,211 @@
+[
+  {
+    "category": "geography",
+    "navigationKeyword1": "regions",
+    "navigationKeyword2": "caribbean",
+    "question": "The Caribbean Sea is a suboceanic basin of which ocean?",
+    "correctAnswer": "The western Atlantic Ocean",
+    "incorrectAnswers": [
+      "The Indian Ocean",
+      "The Arctic Ocean only",
+      "The Southern Ocean around Antarctica"
+    ],
+    "explanation": "Britannica defines the Caribbean Sea as a basin of the western Atlantic Ocean between roughly 9°–22° N latitude.",
+    "keywords": [
+      "caribbean",
+      "caribbean-sea",
+      "atlantic"
+    ],
+    "source": "https://www.britannica.com/place/Caribbean-Sea"
+  },
+  {
+    "category": "geography",
+    "navigationKeyword1": "regions",
+    "navigationKeyword2": "caribbean",
+    "question": "About how large is the Caribbean Sea in area?",
+    "correctAnswer": "Roughly 1,063,000 square miles (2,753,000 square km)",
+    "incorrectAnswers": [
+      "About 10,000 square miles total",
+      "Larger than all Pacific waters",
+      "Under 50,000 square km"
+    ],
+    "explanation": "Britannica gives the Caribbean Sea’s extent as about 1,063,000 square miles (2,753,000 square km).",
+    "keywords": [
+      "caribbean",
+      "area",
+      "caribbean-sea"
+    ],
+    "source": "https://www.britannica.com/place/Caribbean-Sea"
+  },
+  {
+    "category": "geography",
+    "navigationKeyword1": "regions",
+    "navigationKeyword2": "caribbean",
+    "question": "Which island group forms the northern boundary of the Caribbean Sea alongside Cuba, Hispaniola, Jamaica, and Puerto Rico?",
+    "correctAnswer": "The Greater Antilles",
+    "incorrectAnswers": [
+      "The Aleutian Islands",
+      "The Falkland Islands",
+      "The Kuril Islands"
+    ],
+    "explanation": "Britannica states the Caribbean is bounded on the north by the Greater Antilles islands including Cuba, Hispaniola, Jamaica, and Puerto Rico.",
+    "keywords": [
+      "caribbean",
+      "greater-antilles",
+      "islands"
+    ],
+    "source": "https://www.britannica.com/place/Caribbean-Sea"
+  },
+  {
+    "category": "geography",
+    "navigationKeyword1": "regions",
+    "navigationKeyword2": "caribbean",
+    "question": "The eastern boundary of the Caribbean Sea is marked by which arc of islands running toward Trinidad?",
+    "correctAnswer": "The Lesser Antilles",
+    "incorrectAnswers": [
+      "The Japanese archipelago",
+      "The British Isles",
+      "The Malay Archipelago only"
+    ],
+    "explanation": "Britannica places the Lesser Antilles chain along the Caribbean’s eastern margin from the Virgin Islands toward Trinidad.",
+    "keywords": [
+      "caribbean",
+      "lesser-antilles",
+      "island-arc"
+    ],
+    "source": "https://www.britannica.com/place/Caribbean-Sea"
+  },
+  {
+    "category": "geography",
+    "navigationKeyword1": "regions",
+    "navigationKeyword2": "caribbean",
+    "question": "Within the Caribbean Sea itself, which nation’s island is described as the largest among many interior islands?",
+    "correctAnswer": "Jamaica",
+    "incorrectAnswers": [
+      "Iceland",
+      "Madagascar",
+      "Newfoundland"
+    ],
+    "explanation": "Britannica notes that within the Caribbean’s boundaries, Jamaica south of Cuba is the largest of numerous islands.",
+    "keywords": [
+      "caribbean",
+      "jamaica",
+      "islands"
+    ],
+    "source": "https://www.britannica.com/place/Caribbean-Sea"
+  },
+  {
+    "category": "geography",
+    "navigationKeyword1": "regions",
+    "navigationKeyword2": "caribbean",
+    "question": "The Caribbean’s greatest known depth, the Cayman Trench (Bartlett Deep), lies between which two land areas?",
+    "correctAnswer": "Cuba and Jamaica",
+    "incorrectAnswers": [
+      "Japan and Korea",
+      "Spain and Morocco",
+      "Britain and Ireland"
+    ],
+    "explanation": "Britannica locates the Cayman Trench between Cuba and Jamaica at roughly 25,216 feet (7,686 m) below sea level.",
+    "keywords": [
+      "caribbean",
+      "cayman-trench",
+      "bathymetry"
+    ],
+    "source": "https://www.britannica.com/place/Caribbean-Sea"
+  },
+  {
+    "category": "geography",
+    "navigationKeyword1": "regions",
+    "navigationKeyword2": "caribbean",
+    "question": "Caribbean climate is generally described as what, with strong local variation by elevation and winds?",
+    "correctAnswer": "Tropical",
+    "incorrectAnswers": [
+      "Polar tundra everywhere",
+      "Dry steppe only",
+      "Alpine glacier climate throughout"
+    ],
+    "explanation": "Britannica summarizes Caribbean climate as generally tropical with large local differences tied to mountains, currents, and trade winds.",
+    "keywords": [
+      "caribbean",
+      "climate",
+      "tropical"
+    ],
+    "source": "https://www.britannica.com/place/Caribbean-Sea"
+  },
+  {
+    "category": "geography",
+    "navigationKeyword1": "regions",
+    "navigationKeyword2": "caribbean",
+    "question": "North Atlantic deep water enters the Caribbean beneath which passage between Cuba and Hispaniola?",
+    "correctAnswer": "The Windward Passage",
+    "incorrectAnswers": [
+      "The Strait of Gibraltar",
+      "The Bering Strait",
+      "The English Channel"
+    ],
+    "explanation": "Britannica notes North Atlantic deep water flows into the Caribbean under the Windward Passage between Cuba and Hispaniola.",
+    "keywords": [
+      "caribbean",
+      "hydrology",
+      "windward-passage"
+    ],
+    "source": "https://www.britannica.com/place/Caribbean-Sea"
+  },
+  {
+    "category": "geography",
+    "navigationKeyword1": "regions",
+    "navigationKeyword2": "caribbean",
+    "question": "Most Caribbean hurricanes form in the eastern Atlantic near which island group before tracking westward?",
+    "correctAnswer": "The Cape Verde Islands",
+    "incorrectAnswers": [
+      "The Azores only",
+      "The Maldives",
+      "The Solomon Islands"
+    ],
+    "explanation": "Britannica states many hurricanes form near the Cape Verde Islands and follow trade-wind paths into the Caribbean and Gulf of Mexico.",
+    "keywords": [
+      "caribbean",
+      "hurricanes",
+      "cape-verde"
+    ],
+    "source": "https://www.britannica.com/place/Caribbean-Sea"
+  },
+  {
+    "category": "geography",
+    "navigationKeyword1": "regions",
+    "navigationKeyword2": "caribbean",
+    "question": "Surface water leaving the Caribbean into the Gulf of Mexico is forced mainly through which channel?",
+    "correctAnswer": "The Yucatán Channel",
+    "incorrectAnswers": [
+      "The Mozambique Channel",
+      "The Kattegat",
+      "The Taiwan Strait"
+    ],
+    "explanation": "Britannica explains trade winds push Caribbean surface water through the narrow Yucatán Channel into the Gulf of Mexico.",
+    "keywords": [
+      "caribbean",
+      "yucatan-channel",
+      "currents"
+    ],
+    "source": "https://www.britannica.com/place/Caribbean-Sea"
+  },
+  {
+    "category": "geography",
+    "navigationKeyword1": "regions",
+    "navigationKeyword2": "caribbean",
+    "question": "The Caribbean Sea together with the Gulf of Mexico forms what larger oceanographic unit?",
+    "correctAnswer": "The Central American Sea",
+    "incorrectAnswers": [
+      "The Southern Ocean",
+      "The Mediterranean Basin",
+      "The Sea of Okhotsk"
+    ],
+    "explanation": "Britannica notes the preferred oceanographic label pairs the Caribbean with the Gulf of Mexico as the Central American Sea.",
+    "keywords": [
+      "caribbean",
+      "oceanography",
+      "gulf-of-mexico"
+    ],
+    "source": "https://www.britannica.com/place/Caribbean-Sea"
+  }
+]

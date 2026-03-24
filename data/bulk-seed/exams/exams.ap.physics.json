@@ -1,0 +1,57 @@
+[
+  {
+    "category": "exams",
+    "navigationKeyword1": "ap",
+    "navigationKeyword2": "physics",
+    "question": "A 2 kg object experiences a net force of 6 N. What is its acceleration?",
+    "correctAnswer": "3 m/s^2",
+    "incorrectAnswers": ["2 m/s^2", "8 m/s^2", "12 m/s^2"],
+    "explanation": "By Newton's second law, a = F/m = 6/2 = 3.",
+    "keywords": ["ap-physics", "newtons-laws", "physics"],
+    "source": "https://openstax.org/details/books/college-physics-ap-courses"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "ap",
+    "navigationKeyword2": "physics",
+    "question": "What is the kinetic energy of a 4 kg object moving at 5 m/s?",
+    "correctAnswer": "50 J",
+    "incorrectAnswers": ["20 J", "40 J", "100 J"],
+    "explanation": "Kinetic energy is 1/2 mv^2 = 1/2 x 4 x 25 = 50.",
+    "keywords": ["ap-physics", "energy", "physics"],
+    "source": "https://openstax.org/details/books/college-physics-ap-courses"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "ap",
+    "navigationKeyword2": "physics",
+    "question": "When is momentum conserved in a system?",
+    "correctAnswer": "When there is no net external force",
+    "incorrectAnswers": ["When mass is zero", "When velocity is constant for each object", "When the objects stop moving"],
+    "explanation": "Total momentum stays constant in an isolated system.",
+    "keywords": ["ap-physics", "momentum", "physics"],
+    "source": "https://openstax.org/details/books/college-physics-ap-courses"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "ap",
+    "navigationKeyword2": "physics",
+    "question": "How much work is done by a 10 N force acting over 3 m in the same direction?",
+    "correctAnswer": "30 J",
+    "incorrectAnswers": ["7 J", "13 J", "60 J"],
+    "explanation": "Work equals force times displacement when the force is parallel to the motion.",
+    "keywords": ["ap-physics", "work", "physics"],
+    "source": "https://openstax.org/details/books/college-physics-ap-courses"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "ap",
+    "navigationKeyword2": "physics",
+    "question": "If an object moves at constant velocity in a straight line, what is its net force?",
+    "correctAnswer": "0 N",
+    "incorrectAnswers": ["Equal to its mass", "Equal to its speed", "Always 1 N"],
+    "explanation": "Constant velocity means zero acceleration, so the net force must be zero.",
+    "keywords": ["ap-physics", "forces", "physics"],
+    "source": "https://openstax.org/details/books/college-physics-ap-courses"
+  }
+]

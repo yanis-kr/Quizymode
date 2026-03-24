@@ -12,6 +12,7 @@ import { ScopeSecondaryBar } from "@/components/ScopeSecondaryBar";
 import { EyeIcon, MinusIcon, StarIcon, BookmarkIcon, XMarkIcon } from "@heroicons/react/24/outline";
 import { StarIcon as StarIconSolid } from "@heroicons/react/24/solid";
 import { buildCategoryPath, categoryNameToSlug } from "@/utils/categorySlug";
+import { buildCollectionPath, buildCollectionStudyPath } from "@/utils/collectionPath";
 
 const PAGE_SIZE_OPTIONS = [10, 25, 50, 100];
 
@@ -27,22 +28,6 @@ const CollectionDetailPage = () => {
   const [itemsPage, setItemsPage] = useState(1);
   const [pageSize, setPageSize] = useState(25);
   const [showDetails, setShowDetails] = useState(false);
-
-  // Unified URL: redirect to explore/quiz routes when view param is set (keeps existing explore/quiz pages)
-  useEffect(() => {
-    if (!id) return;
-    if (view === "explore") {
-      const path = itemId
-        ? `/explore/collections/${id}/item/${itemId}`
-        : `/explore/collections/${id}`;
-      navigate(path, { replace: true });
-    } else if (view === "quiz") {
-      const path = itemId
-        ? `/quiz/collections/${id}/item/${itemId}`
-        : `/quiz/collections/${id}`;
-      navigate(path, { replace: true });
-    }
-  }, [id, view, itemId, navigate]);
 
   const {
     data: collectionData,
@@ -63,6 +48,19 @@ const CollectionDetailPage = () => {
     queryFn: () => collectionsApi.getItems(id!),
     enabled: !!id,
   });
+
+  // Unified URL: redirect to explore/quiz routes when view param is set (keeps existing explore/quiz pages)
+  useEffect(() => {
+    if (!id) return;
+    if ((view === "explore" || view === "quiz") && !collectionData?.name) return;
+    if (view === "explore") {
+      const path = buildCollectionStudyPath("explore", id, collectionData?.name, itemId);
+      navigate(path, { replace: true });
+    } else if (view === "quiz") {
+      const path = buildCollectionStudyPath("quiz", id, collectionData?.name, itemId);
+      navigate(path, { replace: true });
+    }
+  }, [id, view, itemId, navigate, collectionData?.name]);
 
   const removeItemMutation = useMutation({
     mutationFn: (itemId: string) => collectionsApi.removeItem(id!, itemId),
@@ -147,7 +145,8 @@ const CollectionDetailPage = () => {
   // Redirecting to explore/quiz routes (unified URL entry)
   if (view === "explore" || view === "quiz") return <LoadingSpinner />;
 
-  const collectionReturnUrl = id ? `/collections/${id}` : undefined;
+  const collectionPath = id ? buildCollectionPath(id, collectionData?.name) : undefined;
+  const collectionReturnUrl = collectionPath;
 
   return (
     <div className="px-4 py-6 sm:px-0">
@@ -157,8 +156,9 @@ const CollectionDetailPage = () => {
           activeMode="list"
           availableModes={["list", "explore", "quiz"]}
           onModeChange={(mode) => {
-            if (mode === "explore") navigate(`/collections/${id}?view=explore`);
-            else if (mode === "quiz") navigate(`/collections/${id}?view=quiz`);
+            if (!id) return;
+            if (mode === "explore") navigate(`${buildCollectionPath(id, collectionData?.name)}?view=explore`);
+            else if (mode === "quiz") navigate(`${buildCollectionPath(id, collectionData?.name)}?view=quiz`);
           }}
         />
       )}

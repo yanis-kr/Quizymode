@@ -1,0 +1,211 @@
+[
+  {
+    "category": "geography",
+    "navigationKeyword1": "physical",
+    "navigationKeyword2": "mountains",
+    "question": "Which peak is Earth’s highest above sea level?",
+    "correctAnswer": "Mount Everest",
+    "incorrectAnswers": [
+      "K2",
+      "Kangchenjunga",
+      "Lhotse"
+    ],
+    "explanation": "Everest on the Nepal–Tibet border reaches the highest surveyed elevation on Earth’s surface.",
+    "keywords": [
+      "mountains",
+      "himalayas",
+      "elevation"
+    ],
+    "source": "https://www.britannica.com/place/Mount-Everest"
+  },
+  {
+    "category": "geography",
+    "navigationKeyword1": "physical",
+    "navigationKeyword2": "mountains",
+    "question": "Which mountain is the second-highest on Earth after Everest?",
+    "correctAnswer": "K2",
+    "incorrectAnswers": [
+      "Kangchenjunga",
+      "Makalu",
+      "Cho Oyu"
+    ],
+    "explanation": "K2 in the Karakoram Range is the world’s second-highest summit.",
+    "keywords": [
+      "mountains",
+      "karakoram",
+      "elevation"
+    ],
+    "source": "https://www.britannica.com/place/K2"
+  },
+  {
+    "category": "geography",
+    "navigationKeyword1": "physical",
+    "navigationKeyword2": "mountains",
+    "question": "Which mountain range runs along the western edge of South America?",
+    "correctAnswer": "Andes Mountains",
+    "incorrectAnswers": [
+      "Rocky Mountains",
+      "Atlas Mountains",
+      "Drakensberg"
+    ],
+    "explanation": "The Andes form a continuous high cordillera from Venezuela to Chile.",
+    "keywords": [
+      "mountains",
+      "andes",
+      "south-america"
+    ],
+    "source": "https://www.britannica.com/place/Andes-Mountains"
+  },
+  {
+    "category": "geography",
+    "navigationKeyword1": "physical",
+    "navigationKeyword2": "mountains",
+    "question": "Which range contains Mount Everest and many of the world’s highest peaks?",
+    "correctAnswer": "Himalayas",
+    "incorrectAnswers": [
+      "Alps",
+      "Ural Mountains",
+      "Caucasus Mountains"
+    ],
+    "explanation": "The Himalayas stretch across South Asia north of the Indian subcontinent.",
+    "keywords": [
+      "mountains",
+      "himalayas",
+      "asia"
+    ],
+    "source": "https://www.britannica.com/place/Himalayas"
+  },
+  {
+    "category": "geography",
+    "navigationKeyword1": "physical",
+    "navigationKeyword2": "mountains",
+    "question": "Which European range arcs across Switzerland, France, and northern Italy?",
+    "correctAnswer": "Alps",
+    "incorrectAnswers": [
+      "Pyrenees",
+      "Carpathians",
+      "Apennines"
+    ],
+    "explanation": "The Alps are Europe’s great middle mountain system north of the Mediterranean.",
+    "keywords": [
+      "mountains",
+      "alps",
+      "europe"
+    ],
+    "source": "https://www.britannica.com/place/Alps"
+  },
+  {
+    "category": "geography",
+    "navigationKeyword1": "physical",
+    "navigationKeyword2": "mountains",
+    "question": "Which North African range lies between the Mediterranean and the Sahara?",
+    "correctAnswer": "Atlas Mountains",
+    "incorrectAnswers": [
+      "Ethiopian Highlands",
+      "Drakensberg",
+      "Tibesti Mountains"
+    ],
+    "explanation": "The Atlas stretches across Morocco, Algeria, and Tunisia.",
+    "keywords": [
+      "mountains",
+      "atlas",
+      "africa"
+    ],
+    "source": "https://www.britannica.com/place/Atlas-Mountains"
+  },
+  {
+    "category": "geography",
+    "navigationKeyword1": "physical",
+    "navigationKeyword2": "mountains",
+    "question": "Which range forms part of the traditional boundary between Europe and Asia?",
+    "correctAnswer": "Ural Mountains",
+    "incorrectAnswers": [
+      "Caucasus Mountains",
+      "Carpathian Mountains",
+      "Scandes"
+    ],
+    "explanation": "The Urals run north–south from the Arctic toward Kazakhstan.",
+    "keywords": [
+      "mountains",
+      "urals",
+      "europe-asia"
+    ],
+    "source": "https://www.britannica.com/place/Ural-Mountains"
+  },
+  {
+    "category": "geography",
+    "navigationKeyword1": "physical",
+    "navigationKeyword2": "mountains",
+    "question": "Which freestanding volcanic peak in Tanzania is Africa’s highest mountain?",
+    "correctAnswer": "Kilimanjaro",
+    "incorrectAnswers": [
+      "Mount Kenya",
+      "Ras Dashen",
+      "Mount Stanley"
+    ],
+    "explanation": "Kilimanjaro rises from the East African plateau near the Kenyan border.",
+    "keywords": [
+      "mountains",
+      "kilimanjaro",
+      "africa"
+    ],
+    "source": "https://www.britannica.com/place/Kilimanjaro"
+  },
+  {
+    "category": "geography",
+    "navigationKeyword1": "physical",
+    "navigationKeyword2": "mountains",
+    "question": "Which Andean summit is the highest mountain outside Asia?",
+    "correctAnswer": "Aconcagua",
+    "incorrectAnswers": [
+      "Ojos del Salado",
+      "Mont Blanc",
+      "Denali"
+    ],
+    "explanation": "Aconcagua in Argentina exceeds all other peaks in the Americas.",
+    "keywords": [
+      "mountains",
+      "andes",
+      "south-america"
+    ],
+    "source": "https://www.britannica.com/place/Aconcagua"
+  },
+  {
+    "category": "geography",
+    "navigationKeyword1": "physical",
+    "navigationKeyword2": "mountains",
+    "question": "Which massif is the highest in the Alps and Western Europe?",
+    "correctAnswer": "Mont Blanc",
+    "incorrectAnswers": [
+      "Matterhorn",
+      "Monte Rosa",
+      "Finsteraarhorn"
+    ],
+    "explanation": "Mont Blanc on the France–Italy border is the Alps’ culminating summit.",
+    "keywords": [
+      "mountains",
+      "alps",
+      "europe"
+    ],
+    "source": "https://www.britannica.com/place/Mont-Blanc-mountain-Europe"
+  },
+  {
+    "category": "geography",
+    "navigationKeyword1": "physical",
+    "navigationKeyword2": "mountains",
+    "question": "Which range forms a high barrier between France and Spain?",
+    "correctAnswer": "Pyrenees",
+    "incorrectAnswers": [
+      "Alps",
+      "Apennines",
+      "Carpathians"
+    ],
+    "explanation": "The Pyrenees stretch from the Bay of Biscay to the Mediterranean between Iberia and France.",
+    "keywords": [
+      "mountains",
+      "pyrenees",
+      "europe"
+    ],
+    "source": "https://www.britannica.com/place/Pyrenees"
+  }
+]

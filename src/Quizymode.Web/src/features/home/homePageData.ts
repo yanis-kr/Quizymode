@@ -1,4 +1,6 @@
-const createCardArt = ({
+import { categoryThemes, getCategoryThemeBySlug } from "@/features/categories/categoryThemes";
+
+const createFeaturedSetArt = ({
   label,
   primary,
   secondary,
@@ -39,6 +41,7 @@ const createCardArt = ({
   `)}`;
 
 export const HOME_SAMPLE_COLLECTION_ID = "8f9b8c14-8d30-4d94-9b20-4c7bb7f7f511";
+export const HOME_SAMPLE_COLLECTION_NAME = "Sample Collection";
 
 export interface HomeCategoryCard {
   slug: string;
@@ -56,149 +59,36 @@ export interface FeaturedSetCard {
   image: string;
 }
 
-export const homeCategoryCards: HomeCategoryCard[] = [
-  {
-    slug: "exams",
-    name: "Exams",
-    description: "Certification prep, standardized tests, and professional exam drills.",
-    image: createCardArt({
-      label: "EXAMS",
-      primary: "#0f172a",
-      secondary: "#1d4ed8",
-      accent: "#60a5fa",
-    }),
-  },
-  {
-    slug: "tech",
-    name: "Tech",
-    description: "Programming, cloud, security, systems, and modern engineering topics.",
-    image: createCardArt({
-      label: "TECH",
-      primary: "#081f1b",
-      secondary: "#0f766e",
-      accent: "#5eead4",
-    }),
-  },
-  {
-    slug: "business",
-    name: "Business",
-    description: "Finance, marketing, strategy, operations, and management frameworks.",
-    image: createCardArt({
-      label: "BUSINESS",
-      primary: "#24140d",
-      secondary: "#b45309",
-      accent: "#fbbf24",
-    }),
-  },
-  {
-    slug: "science",
-    name: "Science",
-    description: "Astronomy, biology, chemistry, math, statistics, and lab skills.",
-    image: createCardArt({
-      label: "SCIENCE",
-      primary: "#111827",
-      secondary: "#4338ca",
-      accent: "#a78bfa",
-    }),
-  },
-  {
-    slug: "history",
-    name: "History",
-    description: "Ancient worlds, modern eras, wars, timelines, and major turning points.",
-    image: createCardArt({
-      label: "HISTORY",
-      primary: "#29180f",
-      secondary: "#9a3412",
-      accent: "#fdba74",
-    }),
-  },
-  {
-    slug: "geography",
-    name: "Geography",
-    description: "Countries, capitals, regions, travel landmarks, and map-based study.",
-    image: createCardArt({
-      label: "GEOGRAPHY",
-      primary: "#0b1f35",
-      secondary: "#0369a1",
-      accent: "#7dd3fc",
-    }),
-  },
-  {
-    slug: "languages",
-    name: "Languages",
-    description: "Spanish, French, grammar, ESL, travel phrases, and vocabulary review.",
-    image: createCardArt({
-      label: "LANGUAGES",
-      primary: "#22143a",
-      secondary: "#7c3aed",
-      accent: "#c4b5fd",
-    }),
-  },
-  {
-    slug: "humanities",
-    name: "Humanities",
-    description: "Literature, philosophy, music, film, visual art, and culture.",
-    image: createCardArt({
-      label: "HUMANITIES",
-      primary: "#1f1a0c",
-      secondary: "#a16207",
-      accent: "#fde68a",
-    }),
-  },
-  {
-    slug: "civics",
-    name: "Civics",
-    description: "Government, law, rights, institutions, citizenship, and public policy.",
-    image: createCardArt({
-      label: "CIVICS",
-      primary: "#13253b",
-      secondary: "#2563eb",
-      accent: "#93c5fd",
-    }),
-  },
-  {
-    slug: "sports",
-    name: "Sports",
-    description: "Rules, champions, events, teams, player roles, and competitive trivia.",
-    image: createCardArt({
-      label: "SPORTS",
-      primary: "#1a1b0f",
-      secondary: "#4d7c0f",
-      accent: "#bef264",
-    }),
-  },
-  {
-    slug: "nature",
-    name: "Nature",
-    description: "Wildlife, ecosystems, camping, navigation, and survival knowledge.",
-    image: createCardArt({
-      label: "NATURE",
-      primary: "#0d1f12",
-      secondary: "#15803d",
-      accent: "#86efac",
-    }),
-  },
-  {
-    slug: "trivia",
-    name: "Trivia",
-    description: "Movies, music, pop culture, brands, games, and high-energy fun facts.",
-    image: createCardArt({
-      label: "TRIVIA",
-      primary: "#2a1327",
-      secondary: "#be185d",
-      accent: "#f9a8d4",
-    }),
-  },
-];
+const categoryDescriptions = new Map<string, string>([
+  ["exams", "Certification prep, standardized tests, and professional exam drills."],
+  ["tech", "Programming, cloud, security, systems, and modern engineering topics."],
+  ["business", "Finance, marketing, strategy, operations, and management frameworks."],
+  ["science", "Astronomy, biology, chemistry, math, statistics, and lab skills."],
+  ["history", "Ancient worlds, modern eras, wars, timelines, and major turning points."],
+  ["geography", "Countries, capitals, regions, travel landmarks, and map-based study."],
+  ["languages", "Spanish, French, grammar, ESL, travel phrases, and vocabulary review."],
+  ["humanities", "Literature, philosophy, music, film, visual art, and culture."],
+  ["civics", "Government, law, rights, institutions, citizenship, and public policy."],
+  ["sports", "Rules, champions, events, teams, player roles, and competitive trivia."],
+  ["nature", "Wildlife, ecosystems, camping, navigation, and survival knowledge."],
+  ["trivia", "Movies, music, pop culture, brands, games, and high-energy fun facts."],
+]);
+
+export const homeCategoryCards: HomeCategoryCard[] = categoryThemes.map((theme) => ({
+  slug: theme.slug,
+  name: theme.name,
+  description: categoryDescriptions.get(theme.slug) ?? "",
+  image: getCategoryThemeBySlug(theme.slug).image,
+}));
 
 export const featuredSetCards: FeaturedSetCard[] = [
   {
     id: "aws-saa-c03",
-    path: "/categories/exams/aws/saa-c03",
+    path: "/quiz/exams?nav=aws,saa-c03",
     eyebrow: "Cloud Cert",
     title: "AWS SAA-C03",
     description: "A fast set for architecture basics, S3, Lambda, and common cert patterns.",
-    image: createCardArt({
+    image: createFeaturedSetArt({
       label: "AWS SAA",
       primary: "#111827",
       secondary: "#1d4ed8",
@@ -206,12 +96,38 @@ export const featuredSetCards: FeaturedSetCard[] = [
     }),
   },
   {
+    id: "soccer-world-cup",
+    path: "/quiz/sports?nav=soccer,world%20cup",
+    eyebrow: "Competition",
+    title: "World Cup Starter",
+    description: "Teams, substitutions, tournament rules, and a clean on-ramp into soccer quizzes.",
+    image: createFeaturedSetArt({
+      label: "WORLD CUP",
+      primary: "#17240e",
+      secondary: "#4d7c0f",
+      accent: "#bef264",
+    }),
+  },
+  {
+    id: "tropical-island",
+    path: "/quiz/nature?nav=survival,tropical%20island",
+    eyebrow: "Survival",
+    title: "Tropical Island Survival",
+    description: "Water, shelter, signaling, and the practical decisions that matter first.",
+    image: createFeaturedSetArt({
+      label: "SURVIVAL",
+      primary: "#0a2415",
+      secondary: "#15803d",
+      accent: "#86efac",
+    }),
+  },
+  {
     id: "solar-system",
-    path: "/categories/science/astronomy/solar-system",
+    path: "/quiz/science?nav=astronomy,solar%20system",
     eyebrow: "Space",
     title: "Solar System Sprint",
     description: "Planets, scale, motion, and the easy wins every astronomy round needs.",
-    image: createCardArt({
+    image: createFeaturedSetArt({
       label: "SOLAR",
       primary: "#120c2f",
       secondary: "#4338ca",
@@ -220,11 +136,11 @@ export const featuredSetCards: FeaturedSetCard[] = [
   },
   {
     id: "world-capitals",
-    path: "/categories/geography/capitals/world",
+    path: "/quiz/geography?nav=capitals,world",
     eyebrow: "Maps",
     title: "World Capitals Express",
     description: "A quick route through major capitals and the country-city pairs worth knowing.",
-    image: createCardArt({
+    image: createFeaturedSetArt({
       label: "CAPITALS",
       primary: "#082032",
       secondary: "#0284c7",
@@ -232,42 +148,16 @@ export const featuredSetCards: FeaturedSetCard[] = [
     }),
   },
   {
-    id: "tropical-island",
-    path: "/categories/nature/survival/tropical-island",
-    eyebrow: "Survival",
-    title: "Tropical Island Survival",
-    description: "Water, shelter, signaling, and the practical decisions that matter first.",
-    image: createCardArt({
-      label: "SURVIVAL",
-      primary: "#0a2415",
-      secondary: "#15803d",
-      accent: "#86efac",
-    }),
-  },
-  {
     id: "spanish-vocab",
-    path: "/categories/languages/spanish/vocab",
+    path: "/quiz/languages?nav=spanish,vocab",
     eyebrow: "Language",
     title: "Spanish Core Vocab",
     description: "Greetings, everyday words, and beginner-friendly recall reps for quick practice.",
-    image: createCardArt({
+    image: createFeaturedSetArt({
       label: "SPANISH",
       primary: "#24124a",
       secondary: "#7c3aed",
       accent: "#c4b5fd",
-    }),
-  },
-  {
-    id: "soccer-world-cup",
-    path: "/categories/sports/soccer/world-cup",
-    eyebrow: "Competition",
-    title: "World Cup Starter",
-    description: "Teams, substitutions, tournament rules, and a clean on-ramp into soccer quizzes.",
-    image: createCardArt({
-      label: "WORLD CUP",
-      primary: "#17240e",
-      secondary: "#4d7c0f",
-      accent: "#bef264",
     }),
   },
 ];

@@ -1,0 +1,112 @@
+[
+  {
+    "category": "exams",
+    "navigationKeyword1": "comptia",
+    "navigationKeyword2": "cloud-plus",
+    "question": "What does hybrid cloud mean?",
+    "correctAnswer": "Using a mix of on-premises or private resources together with public cloud services",
+    "incorrectAnswers": ["Using only one public cloud region", "Running applications without virtualization", "Using cloud services without networking"],
+    "explanation": "Hybrid cloud combines different environments such as on-premises systems and public cloud services.",
+    "keywords": ["cloud-plus", "cloud-ops", "comptia"],
+    "source": "https://learn.microsoft.com/en-us/azure/architecture/guide/architecture-styles/hybrid"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "comptia",
+    "navigationKeyword2": "cloud-plus",
+    "question": "What is infrastructure as code (IaC)?",
+    "correctAnswer": "Managing and provisioning infrastructure through machine-readable definitions",
+    "incorrectAnswers": ["Writing end-user spreadsheets", "Replacing all APIs with manual tickets", "A method for cooling data centers"],
+    "explanation": "IaC manages infrastructure using code and declarative definitions instead of manual changes.",
+    "keywords": ["cloud-plus", "cloud-ops", "comptia"],
+    "source": "https://developer.hashicorp.com/terraform/intro"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "comptia",
+    "navigationKeyword2": "cloud-plus",
+    "question": "What does container orchestration help manage?",
+    "correctAnswer": "Deployment, scaling, and lifecycle management of containers",
+    "incorrectAnswers": ["Physical cabling layouts", "Only user account passwords", "PDF versioning"],
+    "explanation": "Container orchestration platforms automate deployment, scaling, and management of containerized workloads.",
+    "keywords": ["cloud-plus", "cloud-ops", "comptia"],
+    "source": "https://kubernetes.io/docs/concepts/overview/what-is-kubernetes/"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "comptia",
+    "navigationKeyword2": "cloud-plus",
+    "question": "What is high availability designed to reduce?",
+    "correctAnswer": "Service downtime from component or system failures",
+    "incorrectAnswers": ["Network bandwidth only", "Password complexity", "The need for monitoring"],
+    "explanation": "High availability architectures aim to keep services running even when components fail.",
+    "keywords": ["cloud-plus", "cloud-ops", "comptia"],
+    "source": "https://docs.aws.amazon.com/wellarchitected/latest/reliability-pillar/welcome.html"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "comptia",
+    "navigationKeyword2": "cloud-plus",
+    "question": "What does autoscaling do in a cloud environment?",
+    "correctAnswer": "Adjusts available capacity based on demand or policy",
+    "incorrectAnswers": ["Encrypts storage volumes", "Assigns VLANs to routers", "Converts object storage to block storage"],
+    "explanation": "Autoscaling automatically changes capacity to meet workload demand.",
+    "keywords": ["cloud-plus", "cloud-ops", "comptia"],
+    "source": "https://docs.aws.amazon.com/autoscaling/ec2/userguide/what-is-amazon-ec2-auto-scaling.html"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "comptia",
+    "navigationKeyword2": "cloud-plus",
+    "question": "Which storage type is typically accessed over a network as discrete objects rather than blocks?",
+    "correctAnswer": "Object storage",
+    "incorrectAnswers": ["Block storage only", "L1 cache", "Swap memory"],
+    "explanation": "Object storage manages data as objects rather than fixed blocks or hierarchical files.",
+    "keywords": ["cloud-plus", "cloud-ops", "comptia"],
+    "source": "https://docs.aws.amazon.com/AmazonS3/latest/userguide/Welcome.html"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "comptia",
+    "navigationKeyword2": "cloud-plus",
+    "question": "What is a snapshot commonly used for in cloud operations?",
+    "correctAnswer": "Capturing a point-in-time copy of data or storage state",
+    "incorrectAnswers": ["Replacing IAM policies", "Blocking DDoS attacks by itself", "Publishing DNS records"],
+    "explanation": "Snapshots capture a point-in-time copy that can support backup or recovery workflows.",
+    "keywords": ["cloud-plus", "cloud-ops", "comptia"],
+    "source": "https://learn.microsoft.com/en-us/azure/virtual-machines/snapshot-copy-managed-disk"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "comptia",
+    "navigationKeyword2": "cloud-plus",
+    "question": "Why is cost tagging useful in cloud billing management?",
+    "correctAnswer": "It helps attribute spending to projects, teams, or environments",
+    "incorrectAnswers": ["It encrypts virtual networks", "It creates backups automatically", "It replaces identity management"],
+    "explanation": "Tags are commonly used to organize and track cloud spend by resource ownership or purpose.",
+    "keywords": ["cloud-plus", "cloud-ops", "comptia"],
+    "source": "https://learn.microsoft.com/en-us/azure/cost-management-billing/costs/enable-tag-inheritance"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "comptia",
+    "navigationKeyword2": "cloud-plus",
+    "question": "What is multi-cloud?",
+    "correctAnswer": "Using services from more than one cloud provider",
+    "incorrectAnswers": ["Using multiple VLANs in one data center", "Running several VMs on one host", "Using only one provider across regions"],
+    "explanation": "Multi-cloud refers to consuming cloud services from more than one provider.",
+    "keywords": ["cloud-plus", "cloud-ops", "comptia"],
+    "source": "https://learn.microsoft.com/en-us/azure/architecture/guide/multicloud/overview"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "comptia",
+    "navigationKeyword2": "cloud-plus",
+    "question": "What is ISO 27001?",
+    "correctAnswer": "A standard for information security management systems",
+    "incorrectAnswers": ["A routing protocol", "A hypervisor feature", "A Linux file system"],
+    "explanation": "ISO/IEC 27001 is a widely used standard for information security management systems.",
+    "keywords": ["cloud-plus", "cloud-ops", "comptia"],
+    "source": "https://www.iso.org/isoiec-27001-information-security.html"
+  }
+]

@@ -1,0 +1,287 @@
+[
+  {
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "ccp",
+    "question": "Which AWS pricing model lets you pay only for the resources you use?",
+    "correctAnswer": "Pay-as-you-go pricing",
+    "incorrectAnswers": [
+      "Upfront hardware purchase",
+      "Per-seat licensing",
+      "Fixed annual capacity"
+    ],
+    "explanation": "AWS pricing is primarily pay-as-you-go, so you pay only for what you consume.",
+    "keywords": [
+      "aws-cloud-practitioner",
+      "aws-fundamentals",
+      "pricing"
+    ],
+    "source": "https://aws.amazon.com/pricing/"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "ccp",
+    "question": "Under the AWS shared responsibility model, who secures AWS data centers?",
+    "correctAnswer": "AWS",
+    "incorrectAnswers": [
+      "The customer",
+      "The customer's AWS Partner",
+      "AWS Support"
+    ],
+    "explanation": "AWS is responsible for the physical facilities and infrastructure that run AWS services.",
+    "keywords": [
+      "aws-cloud-practitioner",
+      "aws-fundamentals",
+      "security"
+    ],
+    "source": "https://aws.amazon.com/compliance/shared-responsibility-model/"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "ccp",
+    "question": "For Amazon EC2, who is responsible for patching the guest operating system?",
+    "correctAnswer": "The customer",
+    "incorrectAnswers": [
+      "AWS",
+      "AWS Support",
+      "Amazon RDS"
+    ],
+    "explanation": "For EC2, customers manage the guest OS, including updates and security patches.",
+    "keywords": [
+      "aws-cloud-practitioner",
+      "aws-fundamentals",
+      "security"
+    ],
+    "source": "https://aws.amazon.com/compliance/shared-responsibility-model/"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "ccp",
+    "question": "What is an AWS Availability Zone?",
+    "correctAnswer": "One or more discrete data centers in an AWS Region",
+    "incorrectAnswers": [
+      "A global billing boundary",
+      "An IAM security principal",
+      "A private network connection to AWS"
+    ],
+    "explanation": "An Availability Zone is made up of one or more discrete data centers within a Region.",
+    "keywords": [
+      "aws-cloud-practitioner",
+      "aws-fundamentals",
+      "infrastructure"
+    ],
+    "source": "https://aws.amazon.com/about-aws/global-infrastructure/regions_az/"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "ccp",
+    "question": "Which AWS service provides resizable virtual servers in the cloud?",
+    "correctAnswer": "Amazon EC2",
+    "incorrectAnswers": [
+      "Amazon S3",
+      "AWS Lambda",
+      "Amazon RDS"
+    ],
+    "explanation": "Amazon EC2 provides secure, resizable compute capacity.",
+    "keywords": [
+      "aws-cloud-practitioner",
+      "aws-fundamentals",
+      "compute"
+    ],
+    "source": "https://aws.amazon.com/ec2/"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "ccp",
+    "question": "Which AWS service is designed for object storage?",
+    "correctAnswer": "Amazon S3",
+    "incorrectAnswers": [
+      "Amazon EC2",
+      "Amazon RDS",
+      "Amazon VPC"
+    ],
+    "explanation": "Amazon S3 is AWS object storage.",
+    "keywords": [
+      "aws-cloud-practitioner",
+      "aws-fundamentals",
+      "storage"
+    ],
+    "source": "https://aws.amazon.com/s3/"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "ccp",
+    "question": "What is the default storage class for an S3 object if none is specified in a general purpose bucket?",
+    "correctAnswer": "S3 Standard",
+    "incorrectAnswers": [
+      "S3 Standard-IA",
+      "S3 Glacier Flexible Retrieval",
+      "S3 One Zone-IA"
+    ],
+    "explanation": "Amazon S3 uses S3 Standard by default for objects in general purpose buckets.",
+    "keywords": [
+      "aws-cloud-practitioner",
+      "aws-fundamentals",
+      "storage"
+    ],
+    "source": "https://docs.aws.amazon.com/AmazonS3/latest/userguide/sc-howtoset.html"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "ccp",
+    "question": "Which AWS service is a managed relational database service?",
+    "correctAnswer": "Amazon RDS",
+    "incorrectAnswers": [
+      "Amazon DynamoDB",
+      "Amazon S3",
+      "Amazon CloudFront"
+    ],
+    "explanation": "Amazon RDS is AWS's managed relational database service.",
+    "keywords": [
+      "aws-cloud-practitioner",
+      "aws-fundamentals",
+      "database"
+    ],
+    "source": "https://aws.amazon.com/rds/"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "ccp",
+    "question": "Which AWS service is a content delivery network?",
+    "correctAnswer": "Amazon CloudFront",
+    "incorrectAnswers": [
+      "Amazon Route 53",
+      "Elastic Load Balancing",
+      "Amazon VPC"
+    ],
+    "explanation": "Amazon CloudFront is AWS's CDN for low-latency content delivery.",
+    "keywords": [
+      "aws-cloud-practitioner",
+      "aws-fundamentals",
+      "networking"
+    ],
+    "source": "https://aws.amazon.com/cloudfront/"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "ccp",
+    "question": "Which AWS service lets you manage users, roles, and permissions?",
+    "correctAnswer": "AWS Identity and Access Management (IAM)",
+    "incorrectAnswers": [
+      "Amazon CloudWatch",
+      "AWS Shield",
+      "AWS Artifact"
+    ],
+    "explanation": "IAM is used to manage identities and access to AWS services and resources.",
+    "keywords": [
+      "aws-cloud-practitioner",
+      "aws-fundamentals",
+      "security"
+    ],
+    "source": "https://aws.amazon.com/iam/"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "ccp",
+    "question": "Which AWS service collects metrics, logs, and alarms for AWS resources and applications?",
+    "correctAnswer": "Amazon CloudWatch",
+    "incorrectAnswers": [
+      "Amazon S3",
+      "Amazon CloudFront",
+      "AWS Identity and Access Management (IAM)"
+    ],
+    "explanation": "CloudWatch provides observability data such as metrics, logs, and alarms.",
+    "keywords": [
+      "aws-cloud-practitioner",
+      "aws-fundamentals",
+      "monitoring"
+    ],
+    "source": "https://aws.amazon.com/cloudwatch/"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "ccp",
+    "question": "Which AWS tool helps estimate monthly AWS costs before deployment?",
+    "correctAnswer": "AWS Pricing Calculator",
+    "incorrectAnswers": [
+      "AWS Budgets",
+      "Amazon CloudWatch",
+      "AWS Trusted Advisor"
+    ],
+    "explanation": "AWS Pricing Calculator is used to model solutions and estimate AWS costs before you build.",
+    "keywords": [
+      "aws-cloud-practitioner",
+      "aws-fundamentals",
+      "pricing"
+    ],
+    "source": "https://docs.aws.amazon.com/pricing-calculator/latest/userguide/what-is-pricing-calculator.html"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "ccp",
+    "question": "Which AWS service lets you run code without provisioning or managing servers?",
+    "correctAnswer": "AWS Lambda",
+    "incorrectAnswers": [
+      "Amazon EC2",
+      "Amazon VPC",
+      "Amazon S3"
+    ],
+    "explanation": "AWS Lambda runs code while AWS handles the underlying infrastructure.",
+    "keywords": [
+      "aws-cloud-practitioner",
+      "aws-fundamentals",
+      "serverless"
+    ],
+    "source": "https://aws.amazon.com/lambda/"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "ccp",
+    "question": "Which AWS service lets you build a logically isolated virtual network in AWS?",
+    "correctAnswer": "Amazon VPC",
+    "incorrectAnswers": [
+      "Amazon CloudFront",
+      "AWS Identity and Access Management (IAM)",
+      "Amazon Route 53"
+    ],
+    "explanation": "Amazon VPC provides a logically isolated virtual network for AWS resources.",
+    "keywords": [
+      "aws-cloud-practitioner",
+      "aws-fundamentals",
+      "networking"
+    ],
+    "source": "https://aws.amazon.com/vpc/"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "ccp",
+    "question": "Which AWS tool helps review workloads against AWS best practices?",
+    "correctAnswer": "AWS Well-Architected Tool",
+    "incorrectAnswers": [
+      "AWS Pricing Calculator",
+      "AWS Artifact",
+      "Amazon Inspector"
+    ],
+    "explanation": "The AWS Well-Architected Tool helps evaluate workloads using AWS best practices.",
+    "keywords": [
+      "aws-cloud-practitioner",
+      "aws-fundamentals",
+      "architecture"
+    ],
+    "source": "https://aws.amazon.com/well-architected-tool/"
+  }
+]

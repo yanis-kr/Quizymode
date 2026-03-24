@@ -1,0 +1,211 @@
+[
+  {
+    "category": "geography",
+    "navigationKeyword1": "capitals",
+    "navigationKeyword2": "asia",
+    "question": "What is the national capital of Japan?",
+    "correctAnswer": "Tokyo",
+    "incorrectAnswers": [
+      "Osaka",
+      "Kyoto",
+      "Yokohama"
+    ],
+    "explanation": "Tokyo is the seat of Japan’s government and imperial palace on Honshu.",
+    "keywords": [
+      "asia",
+      "japan",
+      "east-asia"
+    ],
+    "source": "https://www.britannica.com/place/Tokyo"
+  },
+  {
+    "category": "geography",
+    "navigationKeyword1": "capitals",
+    "navigationKeyword2": "asia",
+    "question": "What is the national capital of China?",
+    "correctAnswer": "Beijing",
+    "incorrectAnswers": [
+      "Shanghai",
+      "Guangzhou",
+      "Chengdu"
+    ],
+    "explanation": "Beijing in northern China is the capital of the People’s Republic of China.",
+    "keywords": [
+      "asia",
+      "china",
+      "east-asia"
+    ],
+    "source": "https://www.britannica.com/place/Beijing"
+  },
+  {
+    "category": "geography",
+    "navigationKeyword1": "capitals",
+    "navigationKeyword2": "asia",
+    "question": "What planned city near Delhi serves as India’s capital?",
+    "correctAnswer": "New Delhi",
+    "incorrectAnswers": [
+      "Mumbai",
+      "Kolkata",
+      "Chennai"
+    ],
+    "explanation": "New Delhi is the capital district where India’s central government institutions are located.",
+    "keywords": [
+      "asia",
+      "south-asia",
+      "india"
+    ],
+    "source": "https://www.britannica.com/place/New-Delhi"
+  },
+  {
+    "category": "geography",
+    "navigationKeyword1": "capitals",
+    "navigationKeyword2": "asia",
+    "question": "What is the national capital of South Korea?",
+    "correctAnswer": "Seoul",
+    "incorrectAnswers": [
+      "Busan",
+      "Incheon",
+      "Daegu"
+    ],
+    "explanation": "Seoul lies on the Han River basin and is South Korea’s political and economic hub.",
+    "keywords": [
+      "asia",
+      "south-korea",
+      "east-asia"
+    ],
+    "source": "https://www.britannica.com/place/Seoul"
+  },
+  {
+    "category": "geography",
+    "navigationKeyword1": "capitals",
+    "navigationKeyword2": "asia",
+    "question": "What is the national capital of Thailand?",
+    "correctAnswer": "Bangkok",
+    "incorrectAnswers": [
+      "Chiang Mai",
+      "Phuket",
+      "Pattaya"
+    ],
+    "explanation": "Bangkok on the Chao Phraya River delta is Thailand’s primate city and capital.",
+    "keywords": [
+      "asia",
+      "thailand",
+      "southeast-asia"
+    ],
+    "source": "https://www.britannica.com/place/Bangkok"
+  },
+  {
+    "category": "geography",
+    "navigationKeyword1": "capitals",
+    "navigationKeyword2": "asia",
+    "question": "What is the national capital of Vietnam?",
+    "correctAnswer": "Hanoi",
+    "incorrectAnswers": [
+      "Ho Chi Minh City",
+      "Da Nang",
+      "Hue"
+    ],
+    "explanation": "Hanoi in the Red River Delta is Vietnam’s northern capital.",
+    "keywords": [
+      "asia",
+      "vietnam",
+      "southeast-asia"
+    ],
+    "source": "https://www.britannica.com/place/Hanoi"
+  },
+  {
+    "category": "geography",
+    "navigationKeyword1": "capitals",
+    "navigationKeyword2": "asia",
+    "question": "What is the national capital of the Philippines?",
+    "correctAnswer": "Manila",
+    "incorrectAnswers": [
+      "Cebu City",
+      "Davao City",
+      "Iloilo City"
+    ],
+    "explanation": "The national government is centered on Manila and the wider National Capital Region.",
+    "keywords": [
+      "asia",
+      "the-philippines",
+      "southeast-asia"
+    ],
+    "source": "https://www.britannica.com/place/Manila"
+  },
+  {
+    "category": "geography",
+    "navigationKeyword1": "capitals",
+    "navigationKeyword2": "asia",
+    "question": "What is the national capital of Pakistan?",
+    "correctAnswer": "Islamabad",
+    "incorrectAnswers": [
+      "Karachi",
+      "Lahore",
+      "Peshawar"
+    ],
+    "explanation": "Islamabad was built as a planned capital in the Margalla foothills north of former colonial centers.",
+    "keywords": [
+      "asia",
+      "pakistan",
+      "south-asia"
+    ],
+    "source": "https://www.britannica.com/place/Islamabad"
+  },
+  {
+    "category": "geography",
+    "navigationKeyword1": "capitals",
+    "navigationKeyword2": "asia",
+    "question": "What is the national capital of Saudi Arabia?",
+    "correctAnswer": "Riyadh",
+    "incorrectAnswers": [
+      "Jeddah",
+      "Mecca",
+      "Medina"
+    ],
+    "explanation": "Riyadh on the Najd plateau is the political capital of the Saudi kingdom.",
+    "keywords": [
+      "asia",
+      "saudi-arabia",
+      "middle-east"
+    ],
+    "source": "https://www.britannica.com/place/Riyadh"
+  },
+  {
+    "category": "geography",
+    "navigationKeyword1": "capitals",
+    "navigationKeyword2": "asia",
+    "question": "What is the national capital of the United Arab Emirates?",
+    "correctAnswer": "Abu Dhabi",
+    "incorrectAnswers": [
+      "Dubai",
+      "Sharjah",
+      "Ras al-Khaimah"
+    ],
+    "explanation": "Abu Dhabi city is the UAE’s federal capital on the Persian Gulf.",
+    "keywords": [
+      "asia",
+      "the-united-arab-emirates",
+      "middle-east"
+    ],
+    "source": "https://www.britannica.com/place/Abu-Dhabi"
+  },
+  {
+    "category": "geography",
+    "navigationKeyword1": "capitals",
+    "navigationKeyword2": "asia",
+    "question": "What is the national capital of Mongolia?",
+    "correctAnswer": "Ulaanbaatar",
+    "incorrectAnswers": [
+      "Ulan-Ude",
+      "Hohhot",
+      "Irkutsk"
+    ],
+    "explanation": "Ulaanbaatar lies in north-central Mongolia and is its primate city and government seat.",
+    "keywords": [
+      "asia",
+      "mongolia",
+      "east-asia"
+    ],
+    "source": "https://www.britannica.com/place/Ulaanbaatar"
+  }
+]

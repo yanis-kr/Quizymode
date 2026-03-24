@@ -1,0 +1,112 @@
+[
+  {
+    "category": "exams",
+    "navigationKeyword1": "gcp",
+    "navigationKeyword2": "pcai",
+    "question": "Which Google Cloud platform is used to build and use generative AI and machine learning models?",
+    "correctAnswer": "Vertex AI",
+    "incorrectAnswers": ["Cloud Armor", "Cloud SQL", "Cloud DNS"],
+    "explanation": "Vertex AI is Google Cloud's AI platform for model building, training, and serving.",
+    "keywords": ["gcp-pcai", "google-cloud-ai", "ai-platforms"],
+    "source": "https://cloud.google.com/vertex-ai"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "gcp",
+    "navigationKeyword2": "pcai",
+    "question": "Which Google Cloud service is commonly used to store training data and model artifacts as objects?",
+    "correctAnswer": "Cloud Storage",
+    "incorrectAnswers": ["Cloud Armor", "Pub/Sub", "Cloud NAT"],
+    "explanation": "Cloud Storage is Google's object storage service and is commonly used for AI data assets.",
+    "keywords": ["gcp-pcai", "google-cloud-ai", "ai-platforms"],
+    "source": "https://cloud.google.com/storage"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "gcp",
+    "navigationKeyword2": "pcai",
+    "question": "Which Google Cloud service is a serverless data warehouse for large-scale analytics on AI data?",
+    "correctAnswer": "BigQuery",
+    "incorrectAnswers": ["Cloud SQL", "Cloud Armor", "Cloud DNS"],
+    "explanation": "BigQuery is used for analytics workloads and often supports AI and data preparation pipelines.",
+    "keywords": ["gcp-pcai", "google-cloud-ai", "ai-platforms"],
+    "source": "https://cloud.google.com/bigquery"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "gcp",
+    "navigationKeyword2": "pcai",
+    "question": "Which Google Cloud service supports event-driven messaging between AI system components?",
+    "correctAnswer": "Pub/Sub",
+    "incorrectAnswers": ["Cloud SQL", "Cloud Armor", "Bigtable"],
+    "explanation": "Pub/Sub is used for decoupled messaging and event delivery in distributed systems.",
+    "keywords": ["gcp-pcai", "google-cloud-ai", "ai-platforms"],
+    "source": "https://cloud.google.com/pubsub"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "gcp",
+    "navigationKeyword2": "pcai",
+    "question": "Which Google Cloud service runs containerized AI applications on a managed serverless platform?",
+    "correctAnswer": "Cloud Run",
+    "incorrectAnswers": ["Cloud Storage", "Cloud SQL", "Cloud Armor"],
+    "explanation": "Cloud Run runs containerized applications without managing servers.",
+    "keywords": ["gcp-pcai", "google-cloud-ai", "ai-platforms"],
+    "source": "https://cloud.google.com/run"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "gcp",
+    "navigationKeyword2": "pcai",
+    "question": "Which Google Cloud service provides managed Kubernetes for containerized AI workloads?",
+    "correctAnswer": "Google Kubernetes Engine (GKE)",
+    "incorrectAnswers": ["Cloud SQL", "Cloud DNS", "Cloud Armor"],
+    "explanation": "GKE is Google's managed Kubernetes platform for containerized workloads, including AI systems.",
+    "keywords": ["gcp-pcai", "google-cloud-ai", "ai-platforms"],
+    "source": "https://cloud.google.com/kubernetes-engine"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "gcp",
+    "navigationKeyword2": "pcai",
+    "question": "Which Google Cloud service monitors the health and performance of AI applications and infrastructure?",
+    "correctAnswer": "Cloud Monitoring",
+    "incorrectAnswers": ["Cloud SQL", "Cloud NAT", "Cloud Armor"],
+    "explanation": "Cloud Monitoring provides observability for applications and infrastructure.",
+    "keywords": ["gcp-pcai", "google-cloud-ai", "ai-platforms"],
+    "source": "https://cloud.google.com/monitoring"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "gcp",
+    "navigationKeyword2": "pcai",
+    "question": "Which Google Cloud service provides scalable virtual machines for custom AI workloads?",
+    "correctAnswer": "Compute Engine",
+    "incorrectAnswers": ["Cloud DNS", "Cloud Armor", "Pub/Sub"],
+    "explanation": "Compute Engine provides virtual machines for custom compute workloads, including AI infrastructure.",
+    "keywords": ["gcp-pcai", "google-cloud-ai", "ai-platforms"],
+    "source": "https://cloud.google.com/compute"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "gcp",
+    "navigationKeyword2": "pcai",
+    "question": "Which Google Cloud database offers relational consistency at large scale for application backends?",
+    "correctAnswer": "Spanner",
+    "incorrectAnswers": ["Cloud Storage", "Cloud Armor", "Cloud DNS"],
+    "explanation": "Spanner is Google's scalable relational database and can support AI application backends.",
+    "keywords": ["gcp-pcai", "google-cloud-ai", "ai-platforms"],
+    "source": "https://cloud.google.com/spanner"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "gcp",
+    "navigationKeyword2": "pcai",
+    "question": "Which Google Cloud service would you use to build, train, and serve AI models?",
+    "correctAnswer": "Vertex AI",
+    "incorrectAnswers": ["Cloud NAT", "Cloud Armor", "Cloud SQL"],
+    "explanation": "Vertex AI is the primary Google Cloud service for model development and serving.",
+    "keywords": ["gcp-pcai", "google-cloud-ai", "ai-platforms"],
+    "source": "https://cloud.google.com/vertex-ai"
+  }
+]

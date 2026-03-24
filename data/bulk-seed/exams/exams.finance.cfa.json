@@ -1,0 +1,112 @@
+[
+  {
+    "category": "exams",
+    "navigationKeyword1": "finance",
+    "navigationKeyword2": "cfa",
+    "question": "An investor wants to reduce company-specific risk without exiting the stock market. Which approach best matches that goal?",
+    "correctAnswer": "Diversify across multiple investments",
+    "incorrectAnswers": ["Concentrate in one high-conviction stock", "Replace equities with cash only", "Trade the same stock more often"],
+    "explanation": "SEC Investor.gov describes diversification as spreading money among various investments so losses in one holding may be offset by gains in others.",
+    "keywords": ["cfa", "diversification", "portfolio-management"],
+    "source": "https://www.investor.gov/introduction-investing/investing-basics/glossary/diversification"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "finance",
+    "navigationKeyword2": "cfa",
+    "question": "Which description best matches asset allocation?",
+    "correctAnswer": "Dividing investments among categories such as stocks, bonds, and cash",
+    "incorrectAnswers": ["Buying only the cheapest stock in a sector", "Reinvesting all dividends into one fund", "Borrowing to increase market exposure"],
+    "explanation": "Investor.gov defines asset allocation as dividing investments among categories such as stocks, bonds, and cash.",
+    "keywords": ["cfa", "asset-allocation", "portfolio-management"],
+    "source": "https://www.investor.gov/introduction-investing/investing-basics/glossary/asset-allocation"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "finance",
+    "navigationKeyword2": "cfa",
+    "question": "If market interest rates rise after an investor buys a bond, what usually happens if the investor sells that bond before maturity?",
+    "correctAnswer": "It may have to be sold at a discount below par",
+    "incorrectAnswers": ["It must be sold above par", "Its coupon rate automatically rises", "Its maturity date shortens"],
+    "explanation": "Investor.gov notes that when interest rates rise after purchase, a bondholder selling before maturity may have to sell at a discount below par.",
+    "keywords": ["cfa", "bonds", "interest-rate-risk"],
+    "source": "https://www.investor.gov/glossary-term-categories/bond"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "finance",
+    "navigationKeyword2": "cfa",
+    "question": "What does a company's P/E ratio compare?",
+    "correctAnswer": "Current stock price to earnings per share",
+    "incorrectAnswers": ["Dividend yield to book value", "Revenue to free cash flow", "Assets to liabilities"],
+    "explanation": "Investor.gov says the P/E ratio is calculated by dividing the current stock price by current earnings per share.",
+    "keywords": ["cfa", "valuation", "pe-ratio"],
+    "source": "https://www.investor.gov/introduction-investing/investing-basics/glossary/price-earnings-pe-ratio"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "finance",
+    "navigationKeyword2": "cfa",
+    "question": "How is earnings per share calculated?",
+    "correctAnswer": "Net profit divided by common shares outstanding",
+    "incorrectAnswers": ["Revenue divided by assets", "Dividends divided by liabilities", "Cash flow divided by debt"],
+    "explanation": "Investor.gov defines earnings per share as a public company's net profit divided by the number of its common shares.",
+    "keywords": ["cfa", "valuation", "earnings-per-share"],
+    "source": "https://www.investor.gov/introduction-investing/investing-basics/glossary/earnings-share"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "finance",
+    "navigationKeyword2": "cfa",
+    "question": "What does a fund's expense ratio represent?",
+    "correctAnswer": "The annual percentage of average net assets used to pay operating expenses",
+    "incorrectAnswers": ["The percentage of portfolio gains distributed as dividends", "The maximum loss investors can experience", "The broker commission on each trade"],
+    "explanation": "Investor.gov defines the expense ratio as the percentage of a fund's average net assets used each year to pay operating expenses.",
+    "keywords": ["cfa", "funds", "expense-ratio"],
+    "source": "https://www.investor.gov/index.php/introduction-investing/investing-basics/glossary/expense-ratio"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "finance",
+    "navigationKeyword2": "cfa",
+    "question": "Which characteristic distinguishes an ETF from a traditional mutual fund?",
+    "correctAnswer": "ETF shares trade on exchanges at market prices during the day",
+    "incorrectAnswers": ["ETFs cannot hold bonds", "ETFs have no expenses", "ETF investors own the sponsoring broker"],
+    "explanation": "Investor.gov explains that, unlike mutual funds, ETF shares are bought and sold on national securities exchanges at market prices.",
+    "keywords": ["cfa", "etf", "funds"],
+    "source": "https://www.investor.gov/introduction-investing/investing-basics/glossary/exchange-traded-fund-etf"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "finance",
+    "navigationKeyword2": "cfa",
+    "question": "Which municipal bond is backed by revenues from a specific project rather than the issuer's taxing power?",
+    "correctAnswer": "A revenue bond",
+    "incorrectAnswers": ["A general obligation bond", "A zero-coupon Treasury", "A callable preferred share"],
+    "explanation": "Investor.gov says revenue bonds are backed by revenues from a specific project or source, unlike general obligation bonds backed by full faith and credit.",
+    "keywords": ["cfa", "fixed-income", "municipal-bonds"],
+    "source": "https://www.investor.gov/index.php/introduction-investing/investing-basics/glossary/bonds-municipal"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "finance",
+    "navigationKeyword2": "cfa",
+    "question": "What does current yield on a bond measure?",
+    "correctAnswer": "Annual interest relative to the bond's current market price",
+    "incorrectAnswers": ["The issuer's tax rate", "The bond's probability of default", "The number of coupon payments remaining"],
+    "explanation": "Investor.gov defines current yield as the ratio of the interest rate payable on a bond to its actual market price.",
+    "keywords": ["cfa", "fixed-income", "yield"],
+    "source": "https://www.investor.gov/glossary-term-categories/bond"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "finance",
+    "navigationKeyword2": "cfa",
+    "question": "For a fund, what does net asset value represent before dividing by shares outstanding?",
+    "correctAnswer": "Total assets minus total liabilities",
+    "incorrectAnswers": ["Revenue minus expenses", "Cash minus dividends", "Principal plus coupon interest"],
+    "explanation": "Investor.gov defines net asset value as an investment company's total assets minus its total liabilities.",
+    "keywords": ["cfa", "funds", "net-asset-value"],
+    "source": "https://www.investor.gov/introduction-investing/investing-basics/glossary/net-asset-value"
+  }
+]

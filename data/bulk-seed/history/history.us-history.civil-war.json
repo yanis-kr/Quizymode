@@ -1,0 +1,134 @@
+[
+  {
+    "category": "history",
+    "navigationKeyword1": "us-history",
+    "navigationKeyword2": "civil-war",
+    "question": "Confederate forces opened the Civil War by bombarding which federal fort in Charleston Harbor in April 1861?",
+    "correctAnswer": "Fort Sumter",
+    "incorrectAnswers": ["Fort McHenry", "Fort Ticonderoga", "Fort Duquesne"],
+    "explanation": "Lincoln’s decision to resupply the garrison prompted South Carolina batteries to fire on the unfinished fort.",
+    "keywords": ["civil-war", "1861", "south-carolina"],
+    "source": "https://www.britannica.com/event/Fort-Sumter"
+  },
+  {
+    "category": "history",
+    "navigationKeyword1": "us-history",
+    "navigationKeyword2": "civil-war",
+    "question": "The first major land battle of the war, fought in July 1861 near Manassas, Virginia, is often called what in the North?",
+    "correctAnswer": "First Bull Run (First Manassas)",
+    "incorrectAnswers": ["Shiloh", "Antietam", "Chancellorsville"],
+    "explanation": "Union hopes for a quick victory collapsed when Confederate reinforcements turned an apparent Federal success into a rout.",
+    "keywords": ["civil-war", "virginia", "1861"],
+    "source": "https://www.britannica.com/event/First-Battle-of-Bull-Run"
+  },
+  {
+    "category": "history",
+    "navigationKeyword1": "us-history",
+    "navigationKeyword2": "civil-war",
+    "question": "George B. McClellan’s Peninsula Campaign aimed to capture which Confederate capital by advancing up the Virginia Peninsula?",
+    "correctAnswer": "Richmond",
+    "incorrectAnswers": ["Atlanta", "Montgomery", "Charleston"],
+    "explanation": "Robert E. Lee’s Army of Northern Virginia blocked McClellan’s cautious advance during the Seven Days’ Battles.",
+    "keywords": ["civil-war", "virginia", "peninsula-campaign"],
+    "source": "https://www.britannica.com/event/Peninsula-Campaign"
+  },
+  {
+    "category": "history",
+    "navigationKeyword1": "us-history",
+    "navigationKeyword2": "civil-war",
+    "question": "The bloodiest single day in U.S. military history occurred at which September 1862 Maryland battle?",
+    "correctAnswer": "Antietam (Sharpsburg)",
+    "incorrectAnswers": ["Gettysburg", "Shiloh", "Cold Harbor"],
+    "explanation": "Lee’s first invasion of the North ended in stalemate along Antietam Creek, enabling Lincoln to issue a preliminary emancipation proclamation.",
+    "keywords": ["civil-war", "maryland", "1862"],
+    "source": "https://www.britannica.com/event/Battle-of-Antietam"
+  },
+  {
+    "category": "history",
+    "navigationKeyword1": "us-history",
+    "navigationKeyword2": "civil-war",
+    "question": "Abraham Lincoln’s Emancipation Proclamation (1863) declared freedom for enslaved people in states still in rebellion as of which date?",
+    "correctAnswer": "January 1, 1863",
+    "incorrectAnswers": ["July 4, 1862", "April 9, 1865", "December 6, 1865"],
+    "explanation": "The proclamation reframed the war as a struggle against slavery and cleared the way for Black enlistment in Union armies.",
+    "keywords": ["civil-war", "emancipation", "lincoln"],
+    "source": "https://www.britannica.com/event/Emancipation-Proclamation"
+  },
+  {
+    "category": "history",
+    "navigationKeyword1": "us-history",
+    "navigationKeyword2": "civil-war",
+    "question": "Ulysses S. Grant’s capture of which Mississippi River city in July 1863 split the Confederacy in two?",
+    "correctAnswer": "Vicksburg",
+    "incorrectAnswers": ["New Orleans", "Memphis", "Natchez"],
+    "explanation": "The long siege ended with Confederate surrender on July 4, the same day Lee began retreating from Gettysburg.",
+    "keywords": ["civil-war", "mississippi", "grant"],
+    "source": "https://www.britannica.com/event/Siege-of-Vicksburg"
+  },
+  {
+    "category": "history",
+    "navigationKeyword1": "us-history",
+    "navigationKeyword2": "civil-war",
+    "question": "Pickett’s Charge failed on the third day of which July 1863 Pennsylvania battle?",
+    "correctAnswer": "Gettysburg",
+    "incorrectAnswers": ["Chancellorsville", "Fredericksburg", "Wilderness"],
+    "explanation": "Meade’s Army of the Potomac repulsed Lee’s assault on Cemetery Ridge, marking a turning point in the Eastern Theater.",
+    "keywords": ["civil-war", "pennsylvania", "gettysburg"],
+    "source": "https://www.britannica.com/event/Battle-of-Gettysburg"
+  },
+  {
+    "category": "history",
+    "navigationKeyword1": "us-history",
+    "navigationKeyword2": "civil-war",
+    "question": "William T. Sherman’s 1864 “March to the Sea” cut a swath of destruction across which state to Savannah?",
+    "correctAnswer": "Georgia",
+    "incorrectAnswers": ["South Carolina", "Alabama", "Tennessee"],
+    "explanation": "Sherman’s hard-war strategy aimed to break Confederate morale and logistics by targeting railroads and civilian supplies.",
+    "keywords": ["civil-war", "sherman", "georgia"],
+    "source": "https://www.britannica.com/event/Shermans-March-to-the-Sea"
+  },
+  {
+    "category": "history",
+    "navigationKeyword1": "us-history",
+    "navigationKeyword2": "civil-war",
+    "question": "Robert E. Lee surrendered the Army of Northern Virginia to Grant at which Virginia courthouse in April 1865?",
+    "correctAnswer": "Appomattox Court House",
+    "incorrectAnswers": ["Richmond", "Petersburg", "Lexington"],
+    "explanation": "The surrender set the pattern for remaining Confederate forces to lay down arms in the following weeks.",
+    "keywords": ["civil-war", "lee", "grant"],
+    "source": "https://www.britannica.com/event/Appomattox-Court-House"
+  },
+  {
+    "category": "history",
+    "navigationKeyword1": "us-history",
+    "navigationKeyword2": "civil-war",
+    "question": "John Wilkes Booth assassinated Lincoln on April 14, 1865, while the president attended a play at which Washington theater?",
+    "correctAnswer": "Ford’s Theatre",
+    "incorrectAnswers": ["The National Theatre", "Ford’s Opera House in New York", "The White House East Room"],
+    "explanation": "Lincoln died the next morning; Andrew Johnson became president as the nation entered Reconstruction.",
+    "keywords": ["civil-war", "lincoln", "assassination"],
+    "source": "https://www.britannica.com/biography/Abraham-Lincoln"
+  },
+  {
+    "category": "history",
+    "navigationKeyword1": "us-history",
+    "navigationKeyword2": "civil-war",
+    "question": "The Union ironclad Monitor fought the Confederate Virginia (ex-Merrimack) in March 1862 at the mouth of which Virginia river?",
+    "correctAnswer": "The James River (Hampton Roads)",
+    "incorrectAnswers": ["The Potomac River", "The Mississippi River", "The Savannah River"],
+    "explanation": "The duel between ironclads signaled the obsolescence of wooden warships in naval combat.",
+    "keywords": ["civil-war", "navy", "ironclads"],
+    "source": "https://www.britannica.com/event/Battle-of-the-Monitor-and-Merrimack"
+  },
+  {
+    "category": "history",
+    "navigationKeyword1": "us-history",
+    "navigationKeyword2": "civil-war",
+    "question": "Draft opposition exploded into deadly riots in 1863 in which Northern city over class and race tensions?",
+    "correctAnswer": "New York City",
+    "incorrectAnswers": ["Boston", "Philadelphia", "Chicago"],
+    "explanation": "Mobs attacked African Americans and federal property before troops returning from Gettysburg helped restore order.",
+    "keywords": ["civil-war", "draft-riots", "new-york"],
+    "source": "https://www.britannica.com/event/New-York-Draft-Riots"
+  }
+]

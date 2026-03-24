@@ -1,0 +1,230 @@
+[
+  {
+    "category": "exams",
+    "navigationKeyword1": "azure",
+    "navigationKeyword2": "az-204",
+    "question": "Which Azure service lets you run web apps, mobile back ends, and REST APIs without managing underlying infrastructure?",
+    "correctAnswer": "Azure App Service",
+    "incorrectAnswers": [
+      "Azure Blob Storage",
+      "Azure Load Balancer",
+      "Azure Backup"
+    ],
+    "explanation": "Azure App Service is a managed platform for web apps, mobile back ends, and APIs.",
+    "keywords": [
+      "az-204",
+      "azure-development",
+      "azure-services"
+    ],
+    "source": "https://learn.microsoft.com/en-us/azure/app-service/overview"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "azure",
+    "navigationKeyword2": "az-204",
+    "question": "Which Azure service provides serverless, event-driven compute?",
+    "correctAnswer": "Azure Functions",
+    "incorrectAnswers": [
+      "Azure Load Balancer",
+      "Azure Files",
+      "Azure Key Vault"
+    ],
+    "explanation": "Azure Functions is Microsoft's serverless compute platform.",
+    "keywords": [
+      "az-204",
+      "azure-development",
+      "azure-services"
+    ],
+    "source": "https://learn.microsoft.com/en-us/azure/azure-functions/"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "azure",
+    "navigationKeyword2": "az-204",
+    "question": "Which Azure database service is a globally distributed database for the AI era?",
+    "correctAnswer": "Azure Cosmos DB",
+    "incorrectAnswers": [
+      "Azure Load Balancer",
+      "Azure Backup",
+      "Azure Files"
+    ],
+    "explanation": "Azure Cosmos DB is Microsoft's globally distributed database service.",
+    "keywords": [
+      "az-204",
+      "azure-development",
+      "azure-services"
+    ],
+    "source": "https://learn.microsoft.com/en-us/azure/cosmos-db/overview"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "azure",
+    "navigationKeyword2": "az-204",
+    "question": "Which Azure messaging service stores large numbers of messages for asynchronous processing?",
+    "correctAnswer": "Azure Queue Storage",
+    "incorrectAnswers": [
+      "Azure Load Balancer",
+      "Azure Files",
+      "Azure Key Vault"
+    ],
+    "explanation": "Azure Queue Storage is commonly used to create a backlog of work for asynchronous processing.",
+    "keywords": [
+      "az-204",
+      "azure-development",
+      "azure-services"
+    ],
+    "source": "https://learn.microsoft.com/en-us/azure/storage/queues/storage-queues-introduction"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "azure",
+    "navigationKeyword2": "az-204",
+    "question": "Which Azure messaging service is a fully managed enterprise message broker with queues and publish-subscribe topics?",
+    "correctAnswer": "Azure Service Bus",
+    "incorrectAnswers": [
+      "Azure Backup",
+      "Azure Files",
+      "Azure Virtual Network"
+    ],
+    "explanation": "Azure Service Bus provides reliable enterprise messaging with queues and topics.",
+    "keywords": [
+      "az-204",
+      "azure-development",
+      "azure-services"
+    ],
+    "source": "https://learn.microsoft.com/en-us/azure/service-bus-messaging/service-bus-messaging-overview"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "azure",
+    "navigationKeyword2": "az-204",
+    "question": "Which Azure service is a fully managed publish-subscribe service for event distribution?",
+    "correctAnswer": "Azure Event Grid",
+    "incorrectAnswers": [
+      "Azure Files",
+      "Azure Backup",
+      "Azure Key Vault"
+    ],
+    "explanation": "Azure Event Grid distributes events for event-driven architectures.",
+    "keywords": [
+      "az-204",
+      "azure-development",
+      "azure-services"
+    ],
+    "source": "https://learn.microsoft.com/en-us/azure/event-grid/overview"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "azure",
+    "navigationKeyword2": "az-204",
+    "question": "Which Azure service is a hybrid multicloud management platform for APIs?",
+    "correctAnswer": "Azure API Management",
+    "incorrectAnswers": [
+      "Azure Blob Storage",
+      "Azure Site Recovery",
+      "Azure Files"
+    ],
+    "explanation": "Azure API Management manages the API lifecycle and exposes APIs securely.",
+    "keywords": [
+      "az-204",
+      "azure-development",
+      "azure-services"
+    ],
+    "source": "https://learn.microsoft.com/en-us/azure/api-management/api-management-key-concepts"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "azure",
+    "navigationKeyword2": "az-204",
+    "question": "Which Azure service centrally manages application settings and feature flags?",
+    "correctAnswer": "Azure App Configuration",
+    "incorrectAnswers": [
+      "Azure Backup",
+      "Azure Files",
+      "Azure Load Balancer"
+    ],
+    "explanation": "Azure App Configuration centralizes application settings and feature flags.",
+    "keywords": [
+      "az-204",
+      "azure-development",
+      "azure-services"
+    ],
+    "source": "https://learn.microsoft.com/en-us/azure/azure-app-configuration/overview"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "azure",
+    "navigationKeyword2": "az-204",
+    "question": "Which Azure service securely stores tokens, passwords, certificates, and API keys?",
+    "correctAnswer": "Azure Key Vault",
+    "incorrectAnswers": [
+      "Azure Load Balancer",
+      "Azure Event Grid",
+      "Azure Files"
+    ],
+    "explanation": "Azure Key Vault securely stores and controls access to application secrets and keys.",
+    "keywords": [
+      "az-204",
+      "azure-development",
+      "azure-services"
+    ],
+    "source": "https://learn.microsoft.com/en-us/azure/key-vault/general/overview"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "azure",
+    "navigationKeyword2": "az-204",
+    "question": "Which Azure service runs containerized applications on a serverless platform?",
+    "correctAnswer": "Azure Container Apps",
+    "incorrectAnswers": [
+      "Azure Backup",
+      "Azure Queue Storage",
+      "Microsoft Entra ID"
+    ],
+    "explanation": "Azure Container Apps is a serverless platform for running containerized applications.",
+    "keywords": [
+      "az-204",
+      "azure-development",
+      "azure-services"
+    ],
+    "source": "https://learn.microsoft.com/en-us/azure/container-apps/overview"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "azure",
+    "navigationKeyword2": "az-204",
+    "question": "Which Azure feature of Azure Monitor is used for application performance monitoring?",
+    "correctAnswer": "Application Insights",
+    "incorrectAnswers": [
+      "Azure Files",
+      "Azure Backup",
+      "Azure Load Balancer"
+    ],
+    "explanation": "Application Insights is the Azure Monitor APM feature for application telemetry and diagnostics.",
+    "keywords": [
+      "az-204",
+      "azure-development",
+      "azure-services"
+    ],
+    "source": "https://learn.microsoft.com/en-us/azure/azure-monitor/app/app-insights-overview"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "azure",
+    "navigationKeyword2": "az-204",
+    "question": "Which Azure service is Microsoft's object storage solution for unstructured data?",
+    "correctAnswer": "Azure Blob Storage",
+    "incorrectAnswers": [
+      "Azure Load Balancer",
+      "Azure Backup",
+      "Azure Site Recovery"
+    ],
+    "explanation": "Azure Blob Storage is the object storage service for large amounts of unstructured data.",
+    "keywords": [
+      "az-204",
+      "azure-development",
+      "azure-services"
+    ],
+    "source": "https://learn.microsoft.com/en-us/azure/storage/blobs/storage-blobs-introduction"
+  }
+]

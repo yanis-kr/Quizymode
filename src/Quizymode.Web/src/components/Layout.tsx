@@ -69,8 +69,8 @@ const Layout = ({ children }: LayoutProps) => {
     }`;
 
   return (
-    <div className="min-h-screen bg-gray-50">
-      <nav className="bg-white shadow-sm">
+    <div className="min-h-screen bg-[radial-gradient(circle_at_top,#1e3a8a_0%,#0f172a_34%,#020617_100%)]">
+      <nav className="border-b border-slate-200/70 bg-white/95 shadow-sm backdrop-blur">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between h-16">
             <div className="flex">

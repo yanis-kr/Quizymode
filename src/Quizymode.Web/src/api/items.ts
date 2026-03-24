@@ -22,7 +22,10 @@ export const itemsApi = {
     collectionId?: string,
     isRandom?: boolean,
     page: number = 1,
-    pageSize: number = 10
+    pageSize: number = 10,
+    options?: {
+      navigationKeywords?: string[];
+    }
   ): Promise<ItemsResponse> => {
     const params: Record<string, string | number | boolean> = {
       page,
@@ -31,6 +34,9 @@ export const itemsApi = {
     if (category) params.category = category;
     if (isPrivate !== undefined) params.isPrivate = isPrivate;
     if (keywords && keywords.length > 0) params.keywords = keywords.join(",");
+    if (options?.navigationKeywords && options.navigationKeywords.length > 0) {
+      params.nav = options.navigationKeywords.join(",");
+    }
     if (collectionId) params.collectionId = collectionId;
     if (isRandom !== undefined) params.isRandom = isRandom;
     const response = await apiClient.get<ItemsResponse>("/items", { params });
@@ -45,7 +51,10 @@ export const itemsApi = {
   getRandom: async (
     category?: string,
     count: number = 10,
-    keywords?: string[]
+    keywords?: string[],
+    options?: {
+      navigationKeywords?: string[];
+    }
   ): Promise<RandomItemsResponse> => {
     const params: Record<string, string | number | boolean> = {
       isRandom: true,
@@ -53,6 +62,9 @@ export const itemsApi = {
     };
     if (category) params.category = category;
     if (keywords && keywords.length > 0) params.keywords = keywords.join(",");
+    if (options?.navigationKeywords && options.navigationKeywords.length > 0) {
+      params.nav = options.navigationKeywords.join(",");
+    }
     const response = await apiClient.get<ItemsResponse>("/items", {
       params,
     });

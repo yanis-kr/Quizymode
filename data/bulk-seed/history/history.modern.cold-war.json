@@ -1,0 +1,134 @@
+[
+  {
+    "category": "history",
+    "navigationKeyword1": "modern",
+    "navigationKeyword2": "cold-war",
+    "question": "Winston Churchill’s 1946 Fulton, Missouri, speech famously said an “iron curtain” had descended across which continent?",
+    "correctAnswer": "Europe",
+    "incorrectAnswers": ["Asia", "Africa", "South America"],
+    "explanation": "Churchill warned that Soviet-dominated eastern Europe was sealed off from free contact with the West.",
+    "keywords": ["cold-war", "churchill", "soviet-union"],
+    "source": "https://www.britannica.com/biography/Winston-Churchill"
+  },
+  {
+    "category": "history",
+    "navigationKeyword1": "modern",
+    "navigationKeyword2": "cold-war",
+    "question": "Harry Truman’s 1947 pledge to support “free peoples” resisting subjugation is known as what doctrine?",
+    "correctAnswer": "The Truman Doctrine",
+    "incorrectAnswers": ["The Eisenhower Doctrine", "The Nixon Doctrine", "The Carter Doctrine"],
+    "explanation": "Congress backed aid to Greece and Turkey, framing containment of communism as a global U.S. responsibility.",
+    "keywords": ["cold-war", "truman", "containment"],
+    "source": "https://www.britannica.com/event/Truman-Doctrine"
+  },
+  {
+    "category": "history",
+    "navigationKeyword1": "modern",
+    "navigationKeyword2": "cold-war",
+    "question": "The 1948–49 Allied airlift supplied West Berlin after which power blockaded land routes into the city?",
+    "correctAnswer": "The Soviet Union",
+    "incorrectAnswers": ["France", "Poland", "Yugoslavia"],
+    "explanation": "Stalin’s blockade failed as British and American planes ferried food and fuel around the clock.",
+    "keywords": ["cold-war", "berlin", "blockade"],
+    "source": "https://www.britannica.com/event/Berlin-blockade-and-airlift"
+  },
+  {
+    "category": "history",
+    "navigationKeyword1": "modern",
+    "navigationKeyword2": "cold-war",
+    "question": "NATO’s founding treaty was signed in 1949 by the United States, Canada, and most states in which region?",
+    "correctAnswer": "Western Europe",
+    "incorrectAnswers": ["Latin America", "Sub-Saharan Africa", "The Middle East exclusively"],
+    "explanation": "The North Atlantic Treaty Organization committed members to collective defense against armed attack.",
+    "keywords": ["cold-war", "nato", "alliance"],
+    "source": "https://www.britannica.com/event/North-Atlantic-Treaty"
+  },
+  {
+    "category": "history",
+    "navigationKeyword1": "modern",
+    "navigationKeyword2": "cold-war",
+    "question": "The Warsaw Pact (1955) united the USSR and its satellite armies chiefly to counter which Western alliance?",
+    "correctAnswer": "NATO",
+    "incorrectAnswers": ["SEATO", "CENTO", "The ANZUS Pact"],
+    "explanation": "East-bloc leaders treated NATO’s rearmament of West Germany as a threat requiring a formal military bloc.",
+    "keywords": ["cold-war", "warsaw-pact", "eastern-europe"],
+    "source": "https://www.britannica.com/event/Warsaw-Pact"
+  },
+  {
+    "category": "history",
+    "navigationKeyword1": "modern",
+    "navigationKeyword2": "cold-war",
+    "question": "The Korean War (1950–53) ended with an armistice that left which peninsula divided near the 38th parallel?",
+    "correctAnswer": "Korea",
+    "incorrectAnswers": ["Vietnam", "Cyprus", "Germany"],
+    "explanation": "UN forces led by the United States fought Chinese and North Korean troops to a stalemate along the DMZ.",
+    "keywords": ["cold-war", "korea", "conflict"],
+    "source": "https://www.britannica.com/event/Korean-War"
+  },
+  {
+    "category": "history",
+    "navigationKeyword1": "modern",
+    "navigationKeyword2": "cold-war",
+    "question": "The 1962 Cuban missile crisis pitted the United States against which Soviet premier over nuclear missiles in Cuba?",
+    "correctAnswer": "Nikita Khrushchev",
+    "incorrectAnswers": ["Joseph Stalin", "Leonid Brezhnev", "Mikhail Gorbachev"],
+    "explanation": "Secret Soviet deployments triggered a naval quarantine and brought the superpowers to the brink of nuclear war.",
+    "keywords": ["cold-war", "cuba", "nuclear"],
+    "source": "https://www.britannica.com/event/Cuban-missile-crisis"
+  },
+  {
+    "category": "history",
+    "navigationKeyword1": "modern",
+    "navigationKeyword2": "cold-war",
+    "question": "The USSR’s October 1957 launch of which satellite shocked American assumptions about missile and space leadership?",
+    "correctAnswer": "Sputnik 1",
+    "incorrectAnswers": ["Explorer 1", "Vostok 1", "Luna 2"],
+    "explanation": "Sputnik’s beeping signal spurred U.S. science education reforms and accelerated the space race.",
+    "keywords": ["cold-war", "space-race", "soviet-union"],
+    "source": "https://www.britannica.com/technology/Sputnik"
+  },
+  {
+    "category": "history",
+    "navigationKeyword1": "modern",
+    "navigationKeyword2": "cold-war",
+    "question": "Soviet-led Warsaw Pact troops crushed the 1968 Prague Spring reform movement in which country?",
+    "correctAnswer": "Czechoslovakia",
+    "incorrectAnswers": ["Hungary", "Poland", "Romania"],
+    "explanation": "Alexander Dubček’s “socialism with a human face” ended when tanks occupied Prague and ousted the reformers.",
+    "keywords": ["cold-war", "czechoslovakia", "prague-spring"],
+    "source": "https://www.britannica.com/event/Prague-Spring"
+  },
+  {
+    "category": "history",
+    "navigationKeyword1": "modern",
+    "navigationKeyword2": "cold-war",
+    "question": "Imre Nagy’s government was overthrown when Soviet forces invaded Budapest during which 1956 uprising?",
+    "correctAnswer": "The Hungarian Revolution",
+    "incorrectAnswers": ["The Poznań riots", "The Solidarity crisis", "The Velvet Revolution"],
+    "explanation": "Hungarian workers and students demanded neutrality and multiparty rule until Red Army divisions restored communist control.",
+    "keywords": ["cold-war", "hungary", "1956"],
+    "source": "https://www.britannica.com/event/Hungarian-Revolution"
+  },
+  {
+    "category": "history",
+    "navigationKeyword1": "modern",
+    "navigationKeyword2": "cold-war",
+    "question": "Richard Nixon and Mao Zedong’s 1972 Shanghai Communiqué opened a strategic rapprochement between the United States and which state?",
+    "correctAnswer": "The People’s Republic of China",
+    "incorrectAnswers": ["North Vietnam", "Cuba", "Albania"],
+    "explanation": "Both sides sought leverage against the Soviet Union while managing the Taiwan issue ambiguously.",
+    "keywords": ["cold-war", "china", "diplomacy"],
+    "source": "https://www.britannica.com/event/Shanghai-Communiqué"
+  },
+  {
+    "category": "history",
+    "navigationKeyword1": "modern",
+    "navigationKeyword2": "cold-war",
+    "question": "Ronald Reagan’s 1987 Berlin speech challenged Mikhail Gorbachev to “tear down” which dividing structure?",
+    "correctAnswer": "The Berlin Wall",
+    "incorrectAnswers": ["The Maginot Line", "The Great Wall of China", "The Iron Curtain border fences in Austria"],
+    "explanation": "The wall’s fall in 1989 symbolized the collapse of communist control in eastern Europe.",
+    "keywords": ["cold-war", "berlin", "reagan"],
+    "source": "https://www.britannica.com/topic/Berlin-Wall"
+  }
+]

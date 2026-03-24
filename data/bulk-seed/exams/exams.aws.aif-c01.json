@@ -1,0 +1,230 @@
+[
+  {
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "aif-c01",
+    "question": "Which AWS service is the platform for building generative AI applications and agents at production scale?",
+    "correctAnswer": "Amazon Bedrock",
+    "incorrectAnswers": [
+      "Amazon Rekognition",
+      "Amazon Polly",
+      "Amazon SQS"
+    ],
+    "explanation": "Amazon Bedrock is AWS's platform for building generative AI applications and agents.",
+    "keywords": [
+      "aws-aif-c01",
+      "aws-ai",
+      "aws-services"
+    ],
+    "source": "https://aws.amazon.com/bedrock/"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "aif-c01",
+    "question": "Which AWS service gives access to foundation models from leading AI companies?",
+    "correctAnswer": "Amazon Bedrock",
+    "incorrectAnswers": [
+      "Amazon Textract",
+      "Amazon Transcribe",
+      "Amazon Translate"
+    ],
+    "explanation": "Amazon Bedrock provides access to foundation models and evaluation tools.",
+    "keywords": [
+      "aws-aif-c01",
+      "aws-ai",
+      "aws-services"
+    ],
+    "source": "https://aws.amazon.com/bedrock/"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "aif-c01",
+    "question": "Which AWS service analyzes images and videos with machine learning?",
+    "correctAnswer": "Amazon Rekognition",
+    "incorrectAnswers": [
+      "Amazon Comprehend",
+      "Amazon Polly",
+      "Amazon Route 53"
+    ],
+    "explanation": "Amazon Rekognition provides image recognition and video analysis capabilities.",
+    "keywords": [
+      "aws-aif-c01",
+      "aws-ai",
+      "aws-services"
+    ],
+    "source": "https://aws.amazon.com/rekognition/"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "aif-c01",
+    "question": "Which AWS service extracts text and structured data from documents?",
+    "correctAnswer": "Amazon Textract",
+    "incorrectAnswers": [
+      "Amazon Translate",
+      "Amazon Lex",
+      "Amazon CloudWatch"
+    ],
+    "explanation": "Amazon Textract is AWS's document text and data extraction service.",
+    "keywords": [
+      "aws-aif-c01",
+      "aws-ai",
+      "aws-services"
+    ],
+    "source": "https://aws.amazon.com/textract/"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "aif-c01",
+    "question": "Which AWS service derives insights from text in documents, emails, and reviews?",
+    "correctAnswer": "Amazon Comprehend",
+    "incorrectAnswers": [
+      "Amazon Rekognition",
+      "Amazon Polly",
+      "AWS Lambda"
+    ],
+    "explanation": "Amazon Comprehend analyzes text to uncover useful insights.",
+    "keywords": [
+      "aws-aif-c01",
+      "aws-ai",
+      "aws-services"
+    ],
+    "source": "https://aws.amazon.com/comprehend/"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "aif-c01",
+    "question": "Which AWS service automatically converts speech to text?",
+    "correctAnswer": "Amazon Transcribe",
+    "incorrectAnswers": [
+      "Amazon Translate",
+      "Amazon Textract",
+      "Amazon EventBridge"
+    ],
+    "explanation": "Amazon Transcribe is AWS's speech-to-text service.",
+    "keywords": [
+      "aws-aif-c01",
+      "aws-ai",
+      "aws-services"
+    ],
+    "source": "https://aws.amazon.com/transcribe/"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "aif-c01",
+    "question": "Which AWS service provides neural machine translation?",
+    "correctAnswer": "Amazon Translate",
+    "incorrectAnswers": [
+      "Amazon Textract",
+      "Amazon Rekognition",
+      "Amazon S3"
+    ],
+    "explanation": "Amazon Translate is AWS's machine translation service.",
+    "keywords": [
+      "aws-aif-c01",
+      "aws-ai",
+      "aws-services"
+    ],
+    "source": "https://aws.amazon.com/translate/"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "aif-c01",
+    "question": "Which AWS service turns text into natural-sounding speech?",
+    "correctAnswer": "Amazon Polly",
+    "incorrectAnswers": [
+      "Amazon Comprehend",
+      "Amazon CloudTrail",
+      "Amazon SQS"
+    ],
+    "explanation": "Amazon Polly is AWS's text-to-speech service.",
+    "keywords": [
+      "aws-aif-c01",
+      "aws-ai",
+      "aws-services"
+    ],
+    "source": "https://aws.amazon.com/polly/"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "aif-c01",
+    "question": "Which AWS service adds AI-powered chatbots to applications?",
+    "correctAnswer": "Amazon Lex",
+    "incorrectAnswers": [
+      "Amazon Aurora",
+      "Amazon EFS",
+      "AWS Backup"
+    ],
+    "explanation": "Amazon Lex is AWS's service for building conversational chatbots.",
+    "keywords": [
+      "aws-aif-c01",
+      "aws-ai",
+      "aws-services"
+    ],
+    "source": "https://aws.amazon.com/lex/"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "aif-c01",
+    "question": "Which AWS service delivers personalized recommendations in real time?",
+    "correctAnswer": "Amazon Personalize",
+    "incorrectAnswers": [
+      "Amazon Route 53",
+      "AWS CloudFormation",
+      "Amazon EBS"
+    ],
+    "explanation": "Amazon Personalize provides AI-powered personalization and recommendations.",
+    "keywords": [
+      "aws-aif-c01",
+      "aws-ai",
+      "aws-services"
+    ],
+    "source": "https://aws.amazon.com/personalize/"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "aif-c01",
+    "question": "Which AWS service builds, trains, and deploys AI models with fully managed infrastructure?",
+    "correctAnswer": "Amazon SageMaker AI",
+    "incorrectAnswers": [
+      "Amazon CloudFront",
+      "AWS WAF",
+      "Amazon SNS"
+    ],
+    "explanation": "Amazon SageMaker AI provides managed infrastructure, tools, and workflows for AI models.",
+    "keywords": [
+      "aws-aif-c01",
+      "aws-ai",
+      "aws-services"
+    ],
+    "source": "https://aws.amazon.com/sagemaker/ai/"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "aif-c01",
+    "question": "Which Amazon Bedrock feature helps block harmful content in generative AI applications?",
+    "correctAnswer": "Bedrock Guardrails",
+    "incorrectAnswers": [
+      "AWS Auto Scaling",
+      "Amazon Route 53 health checks",
+      "Amazon EBS snapshots"
+    ],
+    "explanation": "Bedrock Guardrails helps apply safety controls to generative AI applications.",
+    "keywords": [
+      "aws-aif-c01",
+      "aws-ai",
+      "aws-services"
+    ],
+    "source": "https://aws.amazon.com/bedrock/"
+  }
+]

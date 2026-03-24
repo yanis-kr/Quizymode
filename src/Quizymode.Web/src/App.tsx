@@ -49,7 +49,15 @@ function App() {
           element={<ExploreModePage />}
         />
         <Route
+          path="/explore/collections/:collectionId/:slug/item/:itemId"
+          element={<ExploreModePage />}
+        />
+        <Route
           path="/explore/collections/:collectionId/item/:itemId"
+          element={<ExploreModePage />}
+        />
+        <Route
+          path="/explore/collections/:collectionId/:slug"
           element={<ExploreModePage />}
         />
         <Route
@@ -60,7 +68,15 @@ function App() {
         <Route path="/quiz/item/:itemId" element={<QuizModePage />} />
         <Route path="/quiz/:category/item/:itemId" element={<QuizModePage />} />
         <Route
+          path="/quiz/collections/:collectionId/:slug/item/:itemId"
+          element={<QuizModePage />}
+        />
+        <Route
           path="/quiz/collections/:collectionId/item/:itemId"
+          element={<QuizModePage />}
+        />
+        <Route
+          path="/quiz/collections/:collectionId/:slug"
           element={<QuizModePage />}
         />
         <Route
@@ -79,6 +95,7 @@ function App() {
         <Route path="/items/:id/comments" element={<ItemCommentsPage />} />
         <Route path="/items/:id" element={<ItemDetailPage />} />
         <Route path="/collections" element={<CollectionsPage />} />
+        <Route path="/collections/:id/:slug" element={<CollectionDetailPage />} />
         <Route path="/collections/:id" element={<CollectionDetailPage />} />
         <Route path="/admin" element={<AdminDashboardPage />} />
         <Route path="/admin/review-board" element={<ReviewBoardPage />} />

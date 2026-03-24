@@ -1,0 +1,57 @@
+[
+  {
+    "category": "exams",
+    "navigationKeyword1": "ap",
+    "navigationKeyword2": "world-history",
+    "question": "What was a major purpose of the Silk Roads?",
+    "correctAnswer": "To connect Afro-Eurasian trade networks",
+    "incorrectAnswers": ["To spread feudalism to the Americas", "To link Australia with Europe", "To transport coal during the Industrial Revolution"],
+    "explanation": "The Silk Roads linked regions across Asia, the Middle East, and Europe through trade.",
+    "keywords": ["ap-world-history", "trade-networks", "history"],
+    "source": "https://openstax.org/details/books/world-history-volume-2"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "ap",
+    "navigationKeyword2": "world-history",
+    "question": "What does the term \"Columbian Exchange\" refer to?",
+    "correctAnswer": "The transfer of plants, animals, diseases, and people between hemispheres",
+    "incorrectAnswers": ["The first use of paper money in Europe", "A trade agreement inside the Roman Empire", "The spread of railroads across Africa"],
+    "explanation": "After 1492, the Eastern and Western Hemispheres exchanged crops, animals, diseases, and populations.",
+    "keywords": ["ap-world-history", "global-exchange", "history"],
+    "source": "https://openstax.org/details/books/world-history-volume-2"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "ap",
+    "navigationKeyword2": "world-history",
+    "question": "In which country did the Industrial Revolution begin?",
+    "correctAnswer": "Great Britain",
+    "incorrectAnswers": ["China", "Russia", "Spain"],
+    "explanation": "Industrialization first accelerated in Great Britain in the eighteenth century.",
+    "keywords": ["ap-world-history", "industrialization", "history"],
+    "source": "https://openstax.org/details/books/world-history-volume-2"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "ap",
+    "navigationKeyword2": "world-history",
+    "question": "Why was the printing press historically significant in Europe?",
+    "correctAnswer": "It spread ideas more quickly and widely",
+    "incorrectAnswers": ["It replaced all handwritten laws overnight", "It ended religious conflict in Europe", "It made feudalism stronger"],
+    "explanation": "Cheap printed material accelerated literacy, debate, and the circulation of ideas.",
+    "keywords": ["ap-world-history", "cultural-developments", "history"],
+    "source": "https://openstax.org/details/books/world-history-volume-2"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "ap",
+    "navigationKeyword2": "world-history",
+    "question": "What political idea helped fuel many independence movements in the nineteenth and twentieth centuries?",
+    "correctAnswer": "Nationalism",
+    "incorrectAnswers": ["Mercantilism", "Feudalism", "Animism"],
+    "explanation": "Nationalism encouraged groups to seek self-rule and national identity.",
+    "keywords": ["ap-world-history", "nationalism", "history"],
+    "source": "https://openstax.org/details/books/world-history-volume-2"
+  }
+]

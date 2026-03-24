@@ -1,0 +1,134 @@
+[
+  {
+    "category": "history",
+    "navigationKeyword1": "ancient",
+    "navigationKeyword2": "china",
+    "question": "Archaeologists read royal divination records scratched on ox scapulas and turtle plastron pieces from which Bronze Age dynasty?",
+    "correctAnswer": "The Shang dynasty",
+    "incorrectAnswers": ["The Han dynasty", "The Tang dynasty", "The Ming dynasty"],
+    "explanation": "Oracle-bone inscriptions are a hallmark of Shang court practice and are among China’s earliest surviving Chinese writing.",
+    "keywords": ["ancient-china", "shang", "writing"],
+    "source": "https://www.britannica.com/place/Shang-dynasty"
+  },
+  {
+    "category": "history",
+    "navigationKeyword1": "ancient",
+    "navigationKeyword2": "china",
+    "question": "In 221 BCE, which ruler proclaimed himself emperor after defeating rival states and unifying much of the Chinese heartland?",
+    "correctAnswer": "Qin Shi Huang (Ying Zheng)",
+    "incorrectAnswers": ["Liu Bang", "Wu Zhao", "Kublai Khan"],
+    "explanation": "The king of Qin completed the conquest of rival Warring States and took the title First Emperor (Shihuangdi).",
+    "keywords": ["ancient-china", "qin", "unification"],
+    "source": "https://www.britannica.com/biography/Shihuangdi"
+  },
+  {
+    "category": "history",
+    "navigationKeyword1": "ancient",
+    "navigationKeyword2": "china",
+    "question": "Near the First Emperor’s tomb outside Xi’an, excavations revealed thousands of life-sized clay soldiers forming which famous burial army?",
+    "correctAnswer": "The Terracotta Army",
+    "incorrectAnswers": ["The Forbidden Guard regiment", "The Ming spirit road statues", "The Tang tomb figurines of Xian"],
+    "explanation": "The terracotta warriors and horses were buried in pits associated with the tomb complex of China’s first emperor.",
+    "keywords": ["ancient-china", "qin", "archaeology"],
+    "source": "https://www.britannica.com/topic/terra-cotta-army"
+  },
+  {
+    "category": "history",
+    "navigationKeyword1": "ancient",
+    "navigationKeyword2": "china",
+    "question": "Travelers today walk ramparts in northern China promoted as a unified defensive system largely associated with which dynasty’s consolidation efforts?",
+    "correctAnswer": "The Qin dynasty",
+    "incorrectAnswers": ["The Song dynasty alone", "The Qing dynasty alone", "The Republic of China in 1912"],
+    "explanation": "Earlier northern walls existed, but the Qin state famously linked and extended fortifications into a more integrated northern barrier.",
+    "keywords": ["ancient-china", "qin", "great-wall"],
+    "source": "https://www.britannica.com/place/Great-Wall-of-China"
+  },
+  {
+    "category": "history",
+    "navigationKeyword1": "ancient",
+    "navigationKeyword2": "china",
+    "question": "After Qin collapse, which long-lasting imperial house is credited with consolidating bureaucracy, expanding territory, and opening western contacts including envoys like Zhang Qian?",
+    "correctAnswer": "The Han dynasty",
+    "incorrectAnswers": ["The Xia dynasty", "The Sui dynasty", "The Liao dynasty"],
+    "explanation": "The Han succeeded the Qin and shaped institutions and expansion that defined classical imperial China for centuries.",
+    "keywords": ["ancient-china", "han", "empire"],
+    "source": "https://www.britannica.com/topic/Han-dynasty"
+  },
+  {
+    "category": "history",
+    "navigationKeyword1": "ancient",
+    "navigationKeyword2": "china",
+    "question": "Which Spring and Autumn thinker’s teachings on ethics, family roles, and good government later became a core state ideology?",
+    "correctAnswer": "Confucius",
+    "incorrectAnswers": ["Laozi", "Mozi", "Han Feizi"],
+    "explanation": "Confucius (Kong Fuzi) shaped a moral and political tradition that deeply influenced East Asian governance and education.",
+    "keywords": ["ancient-china", "philosophy", "confucianism"],
+    "source": "https://www.britannica.com/biography/Confucius"
+  },
+  {
+    "category": "history",
+    "navigationKeyword1": "ancient",
+    "navigationKeyword2": "china",
+    "question": "Zhou rulers justified overthrowing the Shang by claiming which idea that Heaven withdrew mandate from unjust kings?",
+    "correctAnswer": "The Mandate of Heaven",
+    "incorrectAnswers": ["The Iron Law of Oligarchy", "The divine right of kings (European formula)", "The Pax Sinica"],
+    "explanation": "The Mandate of Heaven explained dynastic change as moral approval or withdrawal of Heaven’s support.",
+    "keywords": ["ancient-china", "zhou", "political-thought"],
+    "source": "https://www.britannica.com/topic/tianming"
+  },
+  {
+    "category": "history",
+    "navigationKeyword1": "ancient",
+    "navigationKeyword2": "china",
+    "question": "Before Qin unification, which era name describes centuries when large Chinese states fought for survival and supremacy?",
+    "correctAnswer": "The Warring States period",
+    "incorrectAnswers": ["The Five Dynasties period", "The Era of Princes (Japan)", "The Time of Troubles (Russia)"],
+    "explanation": "The Warring States period was the final phase of Eastern Zhou disunity that ended with Qin conquest.",
+    "keywords": ["ancient-china", "zhou", "warfare"],
+    "source": "https://www.britannica.com/event/Warring-States"
+  },
+  {
+    "category": "history",
+    "navigationKeyword1": "ancient",
+    "navigationKeyword2": "china",
+    "question": "Qin ministers often cited which harsh philosophy of laws and state power that contrasted with Confucian moral persuasion?",
+    "correctAnswer": "Legalism",
+    "incorrectAnswers": ["Daoism", "Neo-Confucianism", "Chan Buddhism"],
+    "explanation": "Legalist thinkers emphasized strict laws, rewards, and punishments to strengthen the ruler’s state.",
+    "keywords": ["ancient-china", "qin", "philosophy"],
+    "source": "https://www.britannica.com/topic/Legalism"
+  },
+  {
+    "category": "history",
+    "navigationKeyword1": "ancient",
+    "navigationKeyword2": "china",
+    "question": "Western Han court records praise which explorer’s missions westward for opening diplomatic and trade routes across Central Asia?",
+    "correctAnswer": "Zhang Qian",
+    "incorrectAnswers": ["Xuanzang", "Zheng He", "Marco Polo"],
+    "explanation": "Zhang Qian’s embassies under Emperor Wudi are traditionally tied to expanding Han contacts toward Ferghana and beyond.",
+    "keywords": ["ancient-china", "han", "silk-road"],
+    "source": "https://www.britannica.com/biography/Zhang-Qian"
+  },
+  {
+    "category": "history",
+    "navigationKeyword1": "ancient",
+    "navigationKeyword2": "china",
+    "question": "Bronze dings and gu vessels used in ancestral rites are characteristic material culture of which pre-imperial and early imperial Chinese world?",
+    "correctAnswer": "Shang and Zhou China",
+    "incorrectAnswers": ["Yuan porcelain workshops", "Ming blue-and-white kilns only", "Qing jade courts only"],
+    "explanation": "Ritual bronzes are iconic artifacts of Shang and Zhou elite religion and political display.",
+    "keywords": ["ancient-china", "bronze-age", "ritual"],
+    "source": "https://www.britannica.com/art/Chinese-bronzes/Introduction"
+  },
+  {
+    "category": "history",
+    "navigationKeyword1": "ancient",
+    "navigationKeyword2": "china",
+    "question": "Before the Warring States free-for-all, which era covers centuries when Zhou kings still held ritual precedence while powerful regional lords fought for hegemony?",
+    "correctAnswer": "The Spring and Autumn period",
+    "incorrectAnswers": ["The Three Kingdoms period", "The Northern and Southern dynasties", "The Five Dynasties period"],
+    "explanation": "The Spring and Autumn period (Chunqiu) preceded the Warring States and is named after a chronicle tradition associated with Lu.",
+    "keywords": ["ancient-china", "zhou", "chronology"],
+    "source": "https://www.britannica.com/event/Spring-and-Autumn-Period"
+  }
+]

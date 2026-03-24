@@ -1,13 +1,14 @@
-import { useMemo, useRef } from "react";
+import { useMemo } from "react";
 import { Link } from "react-router-dom";
 import { useQuery } from "@tanstack/react-query";
-import { ArrowRightIcon, ChevronLeftIcon, ChevronRightIcon } from "@heroicons/react/24/outline";
+import { ArrowRightIcon } from "@heroicons/react/24/outline";
 import { SEO } from "@/components/SEO";
 import { categoriesApi } from "@/api/categories";
-import { useAuth } from "@/contexts/AuthContext";
+import { buildCollectionStudyPath } from "@/utils/collectionPath";
 import {
   featuredSetCards,
   HOME_SAMPLE_COLLECTION_ID,
+  HOME_SAMPLE_COLLECTION_NAME,
   homeCategoryCards,
 } from "../homePageData";
 
@@ -18,9 +19,6 @@ function formatItemCount(count: number) {
 }
 
 const HomePage = () => {
-  const { isAuthenticated } = useAuth();
-  const featuredRailRef = useRef<HTMLDivElement | null>(null);
-
   const { data: categoriesData } = useQuery({
     queryKey: ["home", "categories"],
     queryFn: () => categoriesApi.getAll(),
@@ -35,18 +33,6 @@ const HomePage = () => {
     }
     return map;
   }, [categoriesData?.categories]);
-
-  const scrollFeaturedRail = (direction: -1 | 1) => {
-    const rail = featuredRailRef.current;
-    if (!rail) {
-      return;
-    }
-
-    rail.scrollBy({
-      left: direction * Math.min(rail.clientWidth * 0.9, 960),
-      behavior: "smooth",
-    });
-  };
 
   return (
     <>
@@ -64,8 +50,8 @@ const HomePage = () => {
         }}
       />
 
-      <div className="bg-slate-950 text-slate-900">
-        <section className="relative overflow-hidden bg-[radial-gradient(circle_at_top,#1e3a8a_0%,#0f172a_42%,#020617_100%)] text-white">
+      <div className="overflow-hidden bg-slate-950 text-white">
+        <section className="relative overflow-hidden bg-[radial-gradient(circle_at_top,#1e3a8a_0%,#0f172a_42%,#020617_100%)]">
           <div className="absolute inset-0 opacity-30">
             <div className="absolute inset-y-0 left-[-8%] w-1/3 skew-x-[-24deg] bg-white/5" />
             <div className="absolute inset-y-0 left-[24%] w-24 rotate-12 bg-sky-400/20 blur-3xl" />
@@ -73,203 +59,109 @@ const HomePage = () => {
             <div className="absolute inset-x-0 bottom-0 h-40 bg-[linear-gradient(180deg,transparent_0%,rgba(2,6,23,0.92)_100%)]" />
           </div>
 
-          <div className="relative mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8 lg:py-24">
-            <div className="grid gap-10 lg:grid-cols-[minmax(0,1.15fr)_minmax(320px,420px)] lg:items-center">
-              <div>
-                <div className="inline-flex items-center rounded-full border border-white/15 bg-white/8 px-3 py-1 text-xs font-semibold uppercase tracking-[0.24em] text-sky-100">
-                  Quizymode Home
+          <div className="relative mx-auto max-w-7xl px-4 py-3 sm:px-6 xl:h-[calc(100vh-4rem)] xl:max-h-[calc(100vh-4rem)] lg:px-8 lg:py-3">
+            <div className="flex flex-col gap-3 xl:grid xl:h-full xl:min-h-0 xl:grid-rows-[minmax(0,0.3fr)_minmax(0,0.5fr)_minmax(0,0.2fr)]">
+              <section className="rounded-[24px] border border-white/12 bg-white/8 p-4 shadow-2xl shadow-slate-950/30 backdrop-blur lg:flex lg:items-center lg:justify-between lg:gap-8 lg:px-6 lg:py-4 xl:min-h-0">
+                <div className="max-w-3xl">
+                  <h1 className="text-2xl font-semibold tracking-tight text-white sm:text-3xl lg:text-[2.35rem] lg:leading-tight">
+                    Build, share, and study your own quizzes.
+                  </h1>
+                  <p className="mt-2 max-w-2xl text-sm leading-6 text-slate-200 lg:text-base">
+                    Browse a vast public question bank, upload your own questions, share collections, and turn study guides into private practice sets with AI-assisted import.
+                  </p>
                 </div>
-                <h1 className="mt-6 max-w-3xl text-4xl font-semibold tracking-tight text-white sm:text-5xl lg:text-6xl">
-                  Browse categories, open a set, and start learning immediately.
-                </h1>
-                <p className="mt-5 max-w-2xl text-lg leading-8 text-slate-200">
-                  Explore study topics, jump into featured sets, and open a starter collection in one click.
-                </p>
-
-                <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+                <div className="mt-4 flex shrink-0 items-center lg:mt-0">
                   <Link
-                    to="/categories"
-                    className="inline-flex items-center justify-center gap-2 rounded-full bg-sky-500 px-6 py-3 text-sm font-semibold text-slate-950 transition hover:bg-sky-400"
+                    to={buildCollectionStudyPath(
+                      "quiz",
+                      HOME_SAMPLE_COLLECTION_ID,
+                      HOME_SAMPLE_COLLECTION_NAME
+                    )}
+                    className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-[linear-gradient(135deg,#38bdf8_0%,#2563eb_100%)] px-7 py-3 text-sm font-semibold text-white shadow-lg shadow-sky-500/30 transition hover:scale-[1.02] hover:shadow-sky-400/40 sm:w-auto"
                   >
-                    Explore Categories
-                    <ArrowRightIcon className="h-4 w-4" />
-                  </Link>
-                  <Link
-                    to={`/collections/${HOME_SAMPLE_COLLECTION_ID}`}
-                    className="inline-flex items-center justify-center gap-2 rounded-full border border-white/20 bg-white/10 px-6 py-3 text-sm font-semibold text-white transition hover:bg-white/15"
-                  >
-                    Open Sample Collection
+                    Try Sample Collection
                     <ArrowRightIcon className="h-4 w-4" />
                   </Link>
                 </div>
+              </section>
 
-                <div className="mt-4 text-sm text-slate-300">
-                  {isAuthenticated ? (
-                    <Link to="/items/add" className="font-medium text-sky-200 transition hover:text-white">
-                      Add your own items
-                    </Link>
-                  ) : (
-                    <Link to="/signup" className="font-medium text-sky-200 transition hover:text-white">
-                      Create a free account
-                    </Link>
-                  )}{" "}
-                  to build private or shared study flows.
+              <section className="rounded-[26px] bg-[linear-gradient(180deg,rgba(248,250,252,0.98)_0%,rgba(239,246,255,0.98)_100%)] p-4 text-slate-950 shadow-xl shadow-slate-950/25 lg:px-5 lg:py-4 xl:grid xl:min-h-0 xl:grid-rows-[auto_minmax(0,1fr)]">
+                <div className="flex items-end justify-between gap-3">
+                  <h2 className="text-2xl font-semibold tracking-tight sm:text-3xl">Explore Categories</h2>
+                  <Link to="/categories" className="text-sm font-semibold text-sky-700 transition hover:text-sky-900">
+                    View all
+                  </Link>
                 </div>
-              </div>
 
-              <div className="rounded-[32px] border border-white/12 bg-white/8 p-6 shadow-2xl shadow-slate-950/40 backdrop-blur">
-                <div className="text-xs font-semibold uppercase tracking-[0.22em] text-sky-100">
-                  Starter Collection
-                </div>
-                <div className="mt-3 text-3xl font-semibold text-white">
-                  5 fun trivia facts
-                </div>
-                <p className="mt-3 text-sm leading-7 text-slate-200">
-                  A public sample collection seeded into the app so new users can open a playful trivia round instantly.
-                  It includes five surprising facts designed for quick demo sessions.
-                </p>
-                <div className="mt-6 grid gap-3 sm:grid-cols-2">
-                  <div className="rounded-2xl border border-white/10 bg-slate-950/35 p-4">
-                    <div className="text-xs uppercase tracking-[0.18em] text-slate-400">Includes</div>
-                    <div className="mt-2 text-sm font-medium text-white">Airplanes, koalas, planets, Scotland, honey</div>
-                  </div>
-                  <div className="rounded-2xl border border-white/10 bg-slate-950/35 p-4">
-                    <div className="text-xs uppercase tracking-[0.18em] text-slate-400">Best For</div>
-                    <div className="mt-2 text-sm font-medium text-white">Icebreakers, quick quizzes, and first-time visits</div>
-                  </div>
-                </div>
-                <Link
-                  to={`/collections/${HOME_SAMPLE_COLLECTION_ID}`}
-                  className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-sky-200 transition hover:text-white"
-                >
-                  View sample collection
-                  <ArrowRightIcon className="h-4 w-4" />
-                </Link>
-              </div>
-            </div>
-          </div>
-        </section>
+                <div className="mt-3 grid grid-cols-2 gap-2.5 md:grid-cols-3 xl:min-h-0 xl:grid-cols-4 xl:grid-rows-3">
+                  {homeCategoryCards.map((category) => {
+                    const liveCount = countsByCategory.get(category.slug);
 
-        <section className="bg-[linear-gradient(180deg,#f8fafc_0%,#eef4ff_100%)]">
-          <div className="mx-auto max-w-7xl px-4 py-14 sm:px-6 lg:px-8 lg:py-16">
-            <div className="mb-8 flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
-              <div>
-                <div className="text-sm font-semibold uppercase tracking-[0.2em] text-sky-700">Categories</div>
-                <h2 className="mt-2 text-3xl font-semibold tracking-tight text-slate-950 sm:text-4xl">
-                  Explore all Quizymode categories
-                </h2>
-              </div>
-              <div className="max-w-2xl text-sm leading-7 text-slate-600">
-                Pick a category to browse focused sets, open item lists, or jump straight into flashcards and quiz mode.
-              </div>
-            </div>
-
-            <div className="grid gap-5 sm:grid-cols-2 xl:grid-cols-3">
-              {homeCategoryCards.map((category) => {
-                const liveCount = countsByCategory.get(category.slug);
-
-                return (
-                  <Link
-                    key={category.slug}
-                    to={`/categories/${category.slug}`}
-                    className="group relative overflow-hidden rounded-[28px] border border-slate-200 bg-slate-900 shadow-lg shadow-slate-300/40 transition duration-200 hover:-translate-y-1 hover:shadow-xl"
-                  >
-                    <img
-                      src={category.image}
-                      alt=""
-                      className="absolute inset-0 h-full w-full object-cover transition duration-500 group-hover:scale-105"
-                    />
-                    <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(2,6,23,0.08)_0%,rgba(2,6,23,0.52)_44%,rgba(2,6,23,0.92)_100%)]" />
-                    <div className="relative flex min-h-[220px] flex-col justify-end p-5 text-white">
-                      {liveCount != null && (
-                        <div className="absolute right-5 top-5 rounded-full border border-white/18 bg-slate-950/45 px-3 py-1 text-xs font-semibold text-sky-100 backdrop-blur">
-                          {formatItemCount(liveCount)}
+                    return (
+                      <Link
+                        key={category.slug}
+                        to={`/categories/${category.slug}`}
+                        className="group relative isolate overflow-hidden rounded-[18px] border border-slate-200/80 bg-slate-900 shadow-md shadow-slate-300/20 transition duration-200 hover:-translate-y-0.5 hover:shadow-lg"
+                      >
+                        <img
+                          src={category.image}
+                          alt=""
+                          className="absolute inset-0 h-full w-full object-cover transition duration-500 group-hover:scale-105"
+                        />
+                        <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(2,6,23,0.04)_0%,rgba(2,6,23,0.3)_42%,rgba(2,6,23,0.88)_100%)]" />
+                        <div className="relative flex h-full min-h-[104px] flex-col justify-between p-3 text-white sm:min-h-[124px] xl:min-h-0">
+                          <div className="flex justify-end">
+                            {liveCount != null && (
+                              <div className="rounded-full border border-white/18 bg-slate-950/45 px-2.5 py-1 text-[11px] font-semibold text-sky-100 backdrop-blur">
+                                {formatItemCount(liveCount)}
+                              </div>
+                            )}
+                          </div>
+                          <div className="flex items-end justify-between gap-2">
+                            <h3 className="text-base font-semibold leading-tight tracking-tight sm:text-lg lg:text-[1.02rem]">
+                              {category.name}
+                            </h3>
+                            <ArrowRightIcon className="h-4 w-4 shrink-0 text-sky-200 transition group-hover:translate-x-1" />
+                          </div>
                         </div>
-                      )}
-                      <div className="text-xs font-semibold uppercase tracking-[0.22em] text-sky-200">Browse</div>
-                      <div className="mt-2 flex items-center gap-2">
-                        <h3 className="text-2xl font-semibold tracking-tight">{category.name}</h3>
-                        <ArrowRightIcon className="h-5 w-5 text-sky-200 transition group-hover:translate-x-1" />
+                      </Link>
+                    );
+                  })}
+                </div>
+              </section>
+
+              <section className="rounded-[24px] border border-white/10 bg-slate-950/70 p-3 shadow-xl shadow-slate-950/25 xl:grid xl:min-h-0 xl:grid-rows-[auto_minmax(0,1fr)]">
+                <div className="flex items-center justify-between gap-3">
+                  <div className="text-xs font-semibold uppercase tracking-[0.22em] text-sky-300">Quick Starts</div>
+                </div>
+
+                <div className="mt-2 flex gap-2.5 overflow-x-auto pb-1 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+                  {featuredSetCards.map((set) => (
+                    <Link
+                      key={set.id}
+                      to={set.path}
+                      className="group relative min-w-0 shrink-0 basis-[calc(50%-0.3125rem)] overflow-hidden rounded-[18px] border border-white/10 bg-slate-900/90 transition duration-200 hover:-translate-y-0.5 hover:border-sky-300/50 md:basis-[calc((100%-0.833rem)/3)] xl:basis-[calc((100%-1.875rem)/4)]"
+                    >
+                      <img
+                        src={set.image}
+                        alt=""
+                        className="absolute inset-0 h-full w-full object-cover transition duration-500 group-hover:scale-105"
+                      />
+                      <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(2,6,23,0.05)_0%,rgba(2,6,23,0.78)_100%)]" />
+                      <div className="relative flex h-full min-h-[104px] flex-col justify-between p-3 sm:min-h-[124px] xl:min-h-0">
+                        <div className="text-[10px] font-semibold uppercase tracking-[0.2em] text-sky-300">{set.eyebrow}</div>
+                        <div className="flex items-center justify-between gap-2">
+                          <h3 className="text-sm font-semibold text-white">{set.title}</h3>
+                          <ArrowRightIcon className="h-4 w-4 shrink-0 text-sky-200 transition group-hover:translate-x-1" />
+                        </div>
                       </div>
-                      <p className="mt-3 max-w-md text-sm leading-6 text-slate-200">{category.description}</p>
-                    </div>
-                  </Link>
-                );
-              })}
+                    </Link>
+                  ))}
+                </div>
+              </section>
             </div>
           </div>
         </section>
-
-        <section className="bg-slate-950 pb-16 pt-2 text-white">
-          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-            <div className="mb-6 flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
-              <div>
-                <div className="text-sm font-semibold uppercase tracking-[0.2em] text-sky-300">Featured Sets</div>
-                <h2 className="mt-2 text-3xl font-semibold tracking-tight text-white sm:text-4xl">
-                  Six clean entry points into the catalog
-                </h2>
-                <p className="mt-3 max-w-2xl text-sm leading-7 text-slate-300">
-                  These links go straight into category scopes such as <span className="font-semibold text-sky-200">/exams/aws/saa-c03</span>.
-                </p>
-              </div>
-              <div className="flex items-center gap-2">
-                <button
-                  type="button"
-                  onClick={() => scrollFeaturedRail(-1)}
-                  className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-white/12 bg-white/6 text-white transition hover:bg-white/12"
-                  aria-label="Scroll featured sets left"
-                >
-                  <ChevronLeftIcon className="h-5 w-5" />
-                </button>
-                <button
-                  type="button"
-                  onClick={() => scrollFeaturedRail(1)}
-                  className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-white/12 bg-white/6 text-white transition hover:bg-white/12"
-                  aria-label="Scroll featured sets right"
-                >
-                  <ChevronRightIcon className="h-5 w-5" />
-                </button>
-              </div>
-            </div>
-
-            <div
-              ref={featuredRailRef}
-              className="flex snap-x snap-mandatory gap-5 overflow-x-auto pb-4 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
-            >
-              {featuredSetCards.map((set) => (
-                <Link
-                  key={set.id}
-                  to={set.path}
-                  className="group min-w-[280px] max-w-[280px] snap-start overflow-hidden rounded-[28px] border border-white/10 bg-slate-900 shadow-lg shadow-slate-950/40 transition duration-200 hover:-translate-y-1 hover:border-sky-300/50 sm:min-w-[320px] sm:max-w-[320px]"
-                >
-                  <div className="relative h-48 overflow-hidden">
-                    <img
-                      src={set.image}
-                      alt=""
-                      className="h-full w-full object-cover transition duration-500 group-hover:scale-105"
-                    />
-                    <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(2,6,23,0.08)_0%,rgba(2,6,23,0.6)_100%)]" />
-                  </div>
-                  <div className="p-5">
-                    <div className="text-xs font-semibold uppercase tracking-[0.22em] text-sky-300">{set.eyebrow}</div>
-                    <h3 className="mt-2 text-xl font-semibold text-white">{set.title}</h3>
-                    <p className="mt-3 text-sm leading-6 text-slate-300">{set.description}</p>
-                    <div className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-sky-200">
-                      Open set
-                      <ArrowRightIcon className="h-4 w-4 transition group-hover:translate-x-1" />
-                    </div>
-                  </div>
-                </Link>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {typeof __BUILD_TIME__ !== "undefined" && (
-          <div className="border-t border-slate-800 bg-slate-950 px-4 py-4 text-center text-xs text-slate-500">
-            Built {new Date(__BUILD_TIME__).toLocaleString()}
-          </div>
-        )}
       </div>
     </>
   );

@@ -1,0 +1,134 @@
+[
+  {
+    "category": "history",
+    "navigationKeyword1": "civilizations",
+    "navigationKeyword2": "maya",
+    "question": "Classic Maya civilization is most closely associated with which crop that underpinned highland and lowland farming?",
+    "correctAnswer": "Maize (corn)",
+    "incorrectAnswers": ["Potatoes", "Rice", "Wheat"],
+    "explanation": "Intensive maize agriculture supported dense populations, tribute systems, and urban centers across the Maya lowlands.",
+    "keywords": ["agriculture", "maize", "mesoamerica"],
+    "source": "https://www.britannica.com/topic/Maya-people"
+  },
+  {
+    "category": "history",
+    "navigationKeyword1": "civilizations",
+    "navigationKeyword2": "maya",
+    "question": "Which major Petén city rose to regional dominance in the Classic period and is known for towering temples and rich inscriptions?",
+    "correctAnswer": "Tikal",
+    "incorrectAnswers": ["Cuzco", "Tenochtitlan", "Chan Chan"],
+    "explanation": "Tikal exemplifies lowland Maya urbanism, dynastic competition, and integration of ritual architecture with kingship.",
+    "keywords": ["tikal", "classic-period", "peten"],
+    "source": "https://www.britannica.com/place/Tikal"
+  },
+  {
+    "category": "history",
+    "navigationKeyword1": "civilizations",
+    "navigationKeyword2": "maya",
+    "question": "Maya scribes recorded history and ritual using which kind of writing system on monuments and books?",
+    "correctAnswer": "Hieroglyphic writing",
+    "incorrectAnswers": ["Cuneiform", "Linear B", "Arabic script"],
+    "explanation": "Logo-syllabic Maya texts anchor modern understanding of dynasties, warfare, and astronomy.",
+    "keywords": ["writing", "glyphs", "inscriptions"],
+    "source": "https://www.britannica.com/topic/Maya-hieroglyphic-writing"
+  },
+  {
+    "category": "history",
+    "navigationKeyword1": "civilizations",
+    "navigationKeyword2": "maya",
+    "question": "The Maya Long Count tracked long spans of time from a fixed creation-era anchor; scholars often cite which starting date near 3114 BCE?",
+    "correctAnswer": "August 11, 3114 BCE (in the GMT correlation commonly used in scholarship)",
+    "incorrectAnswers": ["January 1, 1 CE", "476 CE fall of Rome", "1492 CE"],
+    "explanation": "Correlation debates exist, but the GMT 584283 constant underlies many published conversions of Maya dates.",
+    "keywords": ["long-count", "calendar", "classic-maya"],
+    "source": "https://www.britannica.com/topic/Maya-calendar"
+  },
+  {
+    "category": "history",
+    "navigationKeyword1": "civilizations",
+    "navigationKeyword2": "maya",
+    "question": "Many southern lowland centers saw population decline and monument erection stop around which centuries CE?",
+    "correctAnswer": "Roughly the 8th to 10th centuries CE",
+    "incorrectAnswers": ["The 5th century BCE", "The 15th century CE uniformly", "The 18th century CE"],
+    "explanation": "Archaeologists link the Classic ‘collapse’ to intertwined political, environmental, and demographic stresses rather than a single cause.",
+    "keywords": ["collapse", "classic-maya", "archaeology"],
+    "source": "https://www.britannica.com/topic/Maya-people"
+  },
+  {
+    "category": "history",
+    "navigationKeyword1": "civilizations",
+    "navigationKeyword2": "maya",
+    "question": "The Postclassic center Chichén Itzá in Yucatán is famous for a step pyramid dedicated to which feathered-serpent deity?",
+    "correctAnswer": "Kukulkan (Quetzalcoatl in central Mexican analogy)",
+    "incorrectAnswers": ["Huitzilopochtli as primary patron there", "Inti", "Viracocha"],
+    "explanation": "Equinox shadow effects on the Castillo stairs dramatize the serpent’s descent, tying architecture to seasonal ritual.",
+    "keywords": ["chichen-itza", "yucatan", "kukulkan"],
+    "source": "https://www.britannica.com/place/Chichen-Itza"
+  },
+  {
+    "category": "history",
+    "navigationKeyword1": "civilizations",
+    "navigationKeyword2": "maya",
+    "question": "Copán in western Honduras is especially noted for ornate stelae portraying which institution?",
+    "correctAnswer": "Divine kingship and dynastic succession",
+    "incorrectAnswers": ["Democratic city councils", "Pure theocracy without rulers", "Inca provincial administration"],
+    "explanation": "Copán’s sculptural programs broadcast royal genealogies and ritual authority to subjects and rival polities.",
+    "keywords": ["copan", "stelae", "kingship"],
+    "source": "https://www.britannica.com/place/Copan"
+  },
+  {
+    "category": "history",
+    "navigationKeyword1": "civilizations",
+    "navigationKeyword2": "maya",
+    "question": "Which surviving pre-Columbian folding book is famous for Maya astronomical tables, including Venus cycle calculations?",
+    "correctAnswer": "The Dresden Codex",
+    "incorrectAnswers": ["The Domesday Book", "The Book of Kells", "The Codex Gigas"],
+    "explanation": "The codex’s eclipse and Venus tables illustrate how Maya scribes linked sky events to ritual calendars.",
+    "keywords": ["dresden-codex", "astronomy", "manuscripts"],
+    "source": "https://www.britannica.com/topic/Dresden-Codex"
+  },
+  {
+    "category": "history",
+    "navigationKeyword1": "civilizations",
+    "navigationKeyword2": "maya",
+    "question": "Palenque’s Temple of the Inscriptions yielded the tomb of which 7th-century ruler associated with long texts?",
+    "correctAnswer": "K’inich Janaab Pakal (Pacal the Great)",
+    "incorrectAnswers": ["Moctezuma II", "Pachacuti Inca Yupanqui", "Shield Jaguar"],
+    "explanation": "The sarcophagus lid’s iconography became an iconic image of Classic Maya cosmology and royal apotheosis themes.",
+    "keywords": ["palenque", "pakal", "chiapas"],
+    "source": "https://www.britannica.com/place/Palenque-ancient-city-Mexico"
+  },
+  {
+    "category": "history",
+    "navigationKeyword1": "civilizations",
+    "navigationKeyword2": "maya",
+    "question": "Sixteenth-century Spanish campaigns against Maya polities in Yucatán are especially associated with which conquistador’s lengthy expeditions and chronicle?",
+    "correctAnswer": "Francisco de Montejo and his relatives’ campaigns (Montejo enterprise)",
+    "incorrectAnswers": ["Hernán Cortés alone for all Yucatán", "Francisco Pizarro", "Pedro de Alvarado only with no follow-on"],
+    "explanation": "Multiple entrada waves across decades eventually tied Yucatec cities into Spanish colonial administration.",
+    "keywords": ["conquest", "yucatan", "spain"],
+    "source": "https://www.britannica.com/biography/Francisco-de-Montejo"
+  },
+  {
+    "category": "history",
+    "navigationKeyword1": "civilizations",
+    "navigationKeyword2": "maya",
+    "question": "Maya mathematics included a shell symbol for zero and used which base for place-value notation alongside bars and dots?",
+    "correctAnswer": "Base 20 (vigesimal)",
+    "incorrectAnswers": ["Base 10 only without place value", "Base 60", "Base 2"],
+    "explanation": "Vigesimal structure shaped calendar calculations and long-distance arithmetic on monuments.",
+    "keywords": ["mathematics", "zero", "calendar"],
+    "source": "https://www.britannica.com/science/Mayan-calendar"
+  },
+  {
+    "category": "history",
+    "navigationKeyword1": "civilizations",
+    "navigationKeyword2": "maya",
+    "question": "Uaxactún’s early astronomical complex helped archaeologists document alignments tied to which celestial rhythm?",
+    "correctAnswer": "The solar year and horizon positions such as solstices",
+    "incorrectAnswers": ["Lunar eclipses only", "Halley’s comet exclusively", "Polar night cycles in Norway"],
+    "explanation": "E-group–style layouts illustrate how Maya architects embedded sky watching into civic plans.",
+    "keywords": ["astronomy", "uaxactun", "e-group"],
+    "source": "https://www.britannica.com/place/Uaxactun"
+  }
+]

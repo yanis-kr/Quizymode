@@ -1,0 +1,134 @@
+[
+  {
+    "category": "history",
+    "navigationKeyword1": "europe",
+    "navigationKeyword2": "eastern-europe",
+    "question": "The Partitions of the late 18th century erased which dual monarchy from Europe’s map until 1918?",
+    "correctAnswer": "Poland-Lithuania (the Polish-Lithuanian Commonwealth)",
+    "incorrectAnswers": ["Bohemia", "Hungary alone", "Wallachia"],
+    "explanation": "Russia, Prussia, and Austria carved up the commonwealth, shaping Eastern Europe’s imperial borders.",
+    "keywords": ["eastern-europe", "poland", "partitions"],
+    "source": "https://www.britannica.com/event/Partitions-of-Poland"
+  },
+  {
+    "category": "history",
+    "navigationKeyword1": "europe",
+    "navigationKeyword2": "eastern-europe",
+    "question": "The Kingdom of Serbs, Croats, and Slovenes (later Yugoslavia) emerged from the collapse of which empires after 1918?",
+    "correctAnswer": "Austria-Hungary and the Ottoman Empire (among other wartime changes)",
+    "incorrectAnswers": ["The Russian Empire only", "The Spanish Empire", "The Mughal Empire"],
+    "explanation": "South Slav unification under a Serbian dynasty fused diverse nations within one state.",
+    "keywords": ["eastern-europe", "yugoslavia", "world-war-i"],
+    "source": "https://www.britannica.com/place/Yugoslavia"
+  },
+  {
+    "category": "history",
+    "navigationKeyword1": "europe",
+    "navigationKeyword2": "eastern-europe",
+    "question": "Imre Nagy’s government fell when Soviet tanks crushed which 1956 anti-Stalinist uprising?",
+    "correctAnswer": "The Hungarian Revolution",
+    "incorrectAnswers": ["The Prague Spring", "Solidarity", "The March Events in Albania"],
+    "explanation": "Hungarians demanded neutrality and multiparty rule before Red Army intervention restored communist control.",
+    "keywords": ["eastern-europe", "hungary", "1956"],
+    "source": "https://www.britannica.com/event/Hungarian-Revolution"
+  },
+  {
+    "category": "history",
+    "navigationKeyword1": "europe",
+    "navigationKeyword2": "eastern-europe",
+    "question": "Alexander Dubček’s reform program of “socialism with a human face” was crushed in which 1968 invasion?",
+    "correctAnswer": "The Warsaw Pact invasion of Czechoslovakia",
+    "incorrectAnswers": ["The Soviet invasion of Finland", "The East German uprising of 1953", "The Polish December 1970 riots"],
+    "explanation": "Prague Spring liberalization ended as tanks occupied Prague and ousted reform leaders.",
+    "keywords": ["eastern-europe", "czechoslovakia", "prague-spring"],
+    "source": "https://www.britannica.com/event/Prague-Spring"
+  },
+  {
+    "category": "history",
+    "navigationKeyword1": "europe",
+    "navigationKeyword2": "eastern-europe",
+    "question": "Lech Wałęsa helped lead which Polish trade union that challenged communist rule in 1980?",
+    "correctAnswer": "Solidarity (Solidarność)",
+    "incorrectAnswers": ["Free German Youth", "COMECON", "The Writers’ Union alone"],
+    "explanation": "Gdańsk shipyard strikes forced recognition of an independent union, a pivotal crack in the Eastern Bloc.",
+    "keywords": ["eastern-europe", "poland", "solidarity"],
+    "source": "https://www.britannica.com/topic/Solidarity-Polish-trade-union"
+  },
+  {
+    "category": "history",
+    "navigationKeyword1": "europe",
+    "navigationKeyword2": "eastern-europe",
+    "question": "On August 23, 1989, roughly two million people formed a human chain across Estonia, Latvia, and Lithuania to mark 50 years since which pact’s secret protocols?",
+    "correctAnswer": "The German-Soviet Nonaggression Pact (Molotov-Ribbentrop Pact)",
+    "incorrectAnswers": ["The Treaty of Versailles", "The Yalta Agreement", "The Helsinki Accords"],
+    "explanation": "The Baltic Way protest highlighted Soviet annexation of the republics in 1940 following the pact’s spheres-of-influence deal.",
+    "keywords": ["eastern-europe", "baltic", "1989"],
+    "source": "https://www.britannica.com/event/German-Soviet-Nonaggression-Pact"
+  },
+  {
+    "category": "history",
+    "navigationKeyword1": "europe",
+    "navigationKeyword2": "eastern-europe",
+    "question": "Nicolae Ceaușescu’s dictatorship ended with his execution during which 1989 revolution?",
+    "correctAnswer": "The Romanian Revolution",
+    "incorrectAnswers": ["The Velvet Revolution (Czechoslovakia)", "The Singing Revolution (Baltics)", "The Bulldozer Revolution (Serbia)"],
+    "explanation": "Protests in Timișoara spread to Bucharest as the army switched sides.",
+    "keywords": ["eastern-europe", "romania", "1989"],
+    "source": "https://www.britannica.com/biography/Nicolae-Ceausescu"
+  },
+  {
+    "category": "history",
+    "navigationKeyword1": "europe",
+    "navigationKeyword2": "eastern-europe",
+    "question": "The Dayton Accords (1995) ended the deadliest fighting in the breakup of which multiethnic federation?",
+    "correctAnswer": "Yugoslavia",
+    "incorrectAnswers": ["Czechoslovakia", "The Soviet Union", "Austria-Hungary"],
+    "explanation": "Bosnia’s war drew in UN, NATO, and regional actors before the U.S.-brokered agreement.",
+    "keywords": ["eastern-europe", "bosnia", "dayton"],
+    "source": "https://www.britannica.com/event/Dayton-Accords"
+  },
+  {
+    "category": "history",
+    "navigationKeyword1": "europe",
+    "navigationKeyword2": "eastern-europe",
+    "question": "The Battle of Kosovo (1389) pitted an Ottoman army against a Christian coalition led by which Serbian prince?",
+    "correctAnswer": "Lazar Hrebeljanović (Prince Lazar)",
+    "incorrectAnswers": ["Skanderbeg", "Stephen the Great", "Jan Sobieski"],
+    "explanation": "The battle became a foundational myth in Serbian nationalism despite ambiguous military outcomes.",
+    "keywords": ["eastern-europe", "serbia", "ottomans"],
+    "source": "https://www.britannica.com/event/Battle-of-Kosovo"
+  },
+  {
+    "category": "history",
+    "navigationKeyword1": "europe",
+    "navigationKeyword2": "eastern-europe",
+    "question": "Czechoslovakia split peacefully into the Czech Republic and Slovakia on January 1 of which year?",
+    "correctAnswer": "1993",
+    "incorrectAnswers": ["1989", "1991", "2004"],
+    "explanation": "Parliamentary votes executed the ‘Velvet Divorce’ without the violence seen in Yugoslavia.",
+    "keywords": ["eastern-europe", "czechoslovakia", "velvet-divorce"],
+    "source": "https://www.britannica.com/topic/Velvet-Divorce"
+  },
+  {
+    "category": "history",
+    "navigationKeyword1": "europe",
+    "navigationKeyword2": "eastern-europe",
+    "question": "The Crimean War (1853–56) pitted Russia against an alliance including Britain, France, and which Muslim empire?",
+    "correctAnswer": "The Ottoman Empire",
+    "incorrectAnswers": ["Persia", "Morocco", "Egypt under Muhammad Ali as independent belligerent"],
+    "explanation": "The war highlighted Eastern Question rivalries and led to modest Ottoman reforms.",
+    "keywords": ["eastern-europe", "crimean-war", "black-sea"],
+    "source": "https://www.britannica.com/event/Crimean-War"
+  },
+  {
+    "category": "history",
+    "navigationKeyword1": "europe",
+    "navigationKeyword2": "eastern-europe",
+    "question": "Bulgaria gained autonomy after the 1877–78 Russo-Turkish War, later revised at which European diplomatic congress?",
+    "correctAnswer": "The Congress of Berlin (1878)",
+    "incorrectAnswers": ["The Congress of Vienna", "The Treaty of Brest-Litovsk", "Yalta Conference"],
+    "explanation": "Bismarck chaired adjustments that limited a Greater Bulgaria and returned Macedonia to Ottoman rule.",
+    "keywords": ["eastern-europe", "bulgaria", "berlin-congress"],
+    "source": "https://www.britannica.com/event/Congress-of-Berlin"
+  }
+]

@@ -39,11 +39,10 @@ describe("BucketGridView", () => {
     expect(screen.getByText("First category")).toBeInTheDocument();
   });
 
-  it("renders Public/Private badge when isPrivate is defined", () => {
+  it("renders Private badge when a bucket is private", () => {
     render(
       <BucketGridView buckets={mockBuckets} onOpenBucket={() => {}} />
     );
-    expect(screen.getByText("Public")).toBeInTheDocument();
     expect(screen.getByText("Private")).toBeInTheDocument();
   });
 

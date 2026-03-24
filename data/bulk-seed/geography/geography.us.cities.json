@@ -1,0 +1,211 @@
+[
+  {
+    "category": "geography",
+    "navigationKeyword1": "us",
+    "navigationKeyword2": "cities",
+    "question": "Since the first U.S. census in 1790, which city has been the largest in the United States?",
+    "correctAnswer": "New York City",
+    "incorrectAnswers": [
+      "Philadelphia",
+      "Boston",
+      "Baltimore"
+    ],
+    "explanation": "New York City has remained the country’s most populous city across every decennial census.",
+    "keywords": [
+      "cities",
+      "us-cities",
+      "population"
+    ],
+    "source": "https://www.britannica.com/place/New-York-City"
+  },
+  {
+    "category": "geography",
+    "navigationKeyword1": "us",
+    "navigationKeyword2": "cities",
+    "question": "Which city is the most populous in California?",
+    "correctAnswer": "Los Angeles",
+    "incorrectAnswers": [
+      "San Diego",
+      "San Jose",
+      "San Francisco"
+    ],
+    "explanation": "Los Angeles anchors Southern California and is the state’s largest municipality.",
+    "keywords": [
+      "cities",
+      "california",
+      "us-cities"
+    ],
+    "source": "https://www.britannica.com/place/Los-Angeles-California"
+  },
+  {
+    "category": "geography",
+    "navigationKeyword1": "us",
+    "navigationKeyword2": "cities",
+    "question": "Which city is the most populous in Texas?",
+    "correctAnswer": "Houston",
+    "incorrectAnswers": [
+      "San Antonio",
+      "Dallas",
+      "Austin"
+    ],
+    "explanation": "Houston is the largest city in Texas by population within city limits.",
+    "keywords": [
+      "cities",
+      "texas",
+      "us-cities"
+    ],
+    "source": "https://www.britannica.com/place/Houston"
+  },
+  {
+    "category": "geography",
+    "navigationKeyword1": "us",
+    "navigationKeyword2": "cities",
+    "question": "Which city is both the capital and the most populous in Arizona?",
+    "correctAnswer": "Phoenix",
+    "incorrectAnswers": [
+      "Tucson",
+      "Mesa",
+      "Scottsdale"
+    ],
+    "explanation": "Phoenix is the seat of state government and Arizona’s largest city.",
+    "keywords": [
+      "cities",
+      "arizona",
+      "us-cities"
+    ],
+    "source": "https://www.britannica.com/place/Phoenix-Arizona"
+  },
+  {
+    "category": "geography",
+    "navigationKeyword1": "us",
+    "navigationKeyword2": "cities",
+    "question": "Which city is the most populous in Illinois?",
+    "correctAnswer": "Chicago",
+    "incorrectAnswers": [
+      "Aurora",
+      "Naperville",
+      "Joliet"
+    ],
+    "explanation": "Chicago on Lake Michigan far exceeds any other Illinois city in population.",
+    "keywords": [
+      "cities",
+      "illinois",
+      "us-cities"
+    ],
+    "source": "https://www.britannica.com/place/Chicago"
+  },
+  {
+    "category": "geography",
+    "navigationKeyword1": "us",
+    "navigationKeyword2": "cities",
+    "question": "Which city is the most populous in Pennsylvania?",
+    "correctAnswer": "Philadelphia",
+    "incorrectAnswers": [
+      "Pittsburgh",
+      "Allentown",
+      "Erie"
+    ],
+    "explanation": "Philadelphia is the Commonwealth’s largest city and a major Atlantic port.",
+    "keywords": [
+      "cities",
+      "pennsylvania",
+      "us-cities"
+    ],
+    "source": "https://www.britannica.com/place/Philadelphia"
+  },
+  {
+    "category": "geography",
+    "navigationKeyword1": "us",
+    "navigationKeyword2": "cities",
+    "question": "Which city is the most populous in Washington state?",
+    "correctAnswer": "Seattle",
+    "incorrectAnswers": [
+      "Spokane",
+      "Tacoma",
+      "Vancouver"
+    ],
+    "explanation": "Seattle on Puget Sound is the largest city in Washington.",
+    "keywords": [
+      "cities",
+      "washington-state",
+      "us-cities"
+    ],
+    "source": "https://www.britannica.com/place/Seattle-Washington"
+  },
+  {
+    "category": "geography",
+    "navigationKeyword1": "us",
+    "navigationKeyword2": "cities",
+    "question": "Which city is the most populous in Georgia?",
+    "correctAnswer": "Atlanta",
+    "incorrectAnswers": [
+      "Augusta",
+      "Columbus",
+      "Savannah"
+    ],
+    "explanation": "Atlanta is Georgia’s capital and primate city.",
+    "keywords": [
+      "cities",
+      "georgia",
+      "us-cities"
+    ],
+    "source": "https://www.britannica.com/place/Atlanta"
+  },
+  {
+    "category": "geography",
+    "navigationKeyword1": "us",
+    "navigationKeyword2": "cities",
+    "question": "Which North Carolina city is nicknamed the Queen City?",
+    "correctAnswer": "Charlotte",
+    "incorrectAnswers": [
+      "Raleigh",
+      "Greensboro",
+      "Asheville"
+    ],
+    "explanation": "Charlotte was named for Queen Charlotte Sophia of Mecklenburg-Strelitz and bears the Queen City nickname.",
+    "keywords": [
+      "cities",
+      "us-cities",
+      "north-carolina"
+    ],
+    "source": "https://www.britannica.com/place/Charlotte-North-Carolina"
+  },
+  {
+    "category": "geography",
+    "navigationKeyword1": "us",
+    "navigationKeyword2": "cities",
+    "question": "Which city is the most populous in Michigan?",
+    "correctAnswer": "Detroit",
+    "incorrectAnswers": [
+      "Grand Rapids",
+      "Warren",
+      "Sterling Heights"
+    ],
+    "explanation": "Detroit remains Michigan’s largest city despite long-term population change.",
+    "keywords": [
+      "cities",
+      "michigan",
+      "us-cities"
+    ],
+    "source": "https://www.britannica.com/place/Detroit"
+  },
+  {
+    "category": "geography",
+    "navigationKeyword1": "us",
+    "navigationKeyword2": "cities",
+    "question": "Which city is the most populous in Ohio?",
+    "correctAnswer": "Columbus",
+    "incorrectAnswers": [
+      "Cleveland",
+      "Cincinnati",
+      "Toledo"
+    ],
+    "explanation": "Columbus is Ohio’s capital and largest city.",
+    "keywords": [
+      "cities",
+      "ohio",
+      "us-cities"
+    ],
+    "source": "https://www.britannica.com/place/Columbus-Ohio"
+  }
+]

@@ -1,0 +1,134 @@
+[
+  {
+    "category": "history",
+    "navigationKeyword1": "ancient",
+    "navigationKeyword2": "rome",
+    "question": "Republican Rome fought three major wars against which powerful city-state on the Gulf of Tunis?",
+    "correctAnswer": "Carthage",
+    "incorrectAnswers": ["Syracuse", "Massalia", "Alexandria"],
+    "explanation": "The Punic Wars were Rome’s long struggle against Carthage for western Mediterranean dominance.",
+    "keywords": ["ancient-rome", "punic-wars", "republic"],
+    "source": "https://www.britannica.com/event/Punic-Wars"
+  },
+  {
+    "category": "history",
+    "navigationKeyword1": "ancient",
+    "navigationKeyword2": "rome",
+    "question": "In January 49 BCE, Julius Caesar famously violated senatorial orders by leading his army across which northern Italian river?",
+    "correctAnswer": "The Rubicon",
+    "incorrectAnswers": ["The Tiber", "The Po", "The Arno"],
+    "explanation": "Caesar’s crossing of the Rubicon began open civil war against the senatorial faction led by Pompey.",
+    "keywords": ["ancient-rome", "caesar", "civil-war"],
+    "source": "https://www.britannica.com/biography/Julius-Caesar-Roman-ruler"
+  },
+  {
+    "category": "history",
+    "navigationKeyword1": "ancient",
+    "navigationKeyword2": "rome",
+    "question": "After Actium, which adoptive heir of Caesar consolidated power and is considered Rome’s first emperor under the principate?",
+    "correctAnswer": "Augustus",
+    "incorrectAnswers": ["Tiberius", "Nero", "Trajan"],
+    "explanation": "Octavian, later titled Augustus, transformed the defeated republic into the Roman Empire’s monarchy in all but name.",
+    "keywords": ["ancient-rome", "augustus", "empire"],
+    "source": "https://www.britannica.com/biography/Augustus-Roman-emperor"
+  },
+  {
+    "category": "history",
+    "navigationKeyword1": "ancient",
+    "navigationKeyword2": "rome",
+    "question": "Visitors today line up outside an enormous oval amphitheater in Rome long called the Flavian Amphitheatre. What is its common English name?",
+    "correctAnswer": "The Colosseum",
+    "incorrectAnswers": ["The Circus Maximus", "The Pantheon", "The Theatre of Pompey"],
+    "explanation": "The Colosseum is the huge Flavian-era amphitheater used for gladiatorial shows and public spectacles.",
+    "keywords": ["ancient-rome", "architecture", "games"],
+    "source": "https://www.britannica.com/topic/Colosseum"
+  },
+  {
+    "category": "history",
+    "navigationKeyword1": "ancient",
+    "navigationKeyword2": "rome",
+    "question": "Early republican Romans inscribed fundamental statutes on bronze tablets displayed in the Forum in which foundational law code of 451–450 BCE?",
+    "correctAnswer": "The Twelve Tables",
+    "incorrectAnswers": ["The Corpus Juris Civilis", "The Laws of the Twelve Olympians", "The Justinian Code"],
+    "explanation": "The Twelve Tables were Rome’s earliest published body of law, a milestone toward written legal rules.",
+    "keywords": ["ancient-rome", "law", "republic"],
+    "source": "https://www.britannica.com/topic/Twelve-Tables"
+  },
+  {
+    "category": "history",
+    "navigationKeyword1": "ancient",
+    "navigationKeyword2": "rome",
+    "question": "During the Second Punic War, which Carthaginian general took war elephants over the Alps into Italy?",
+    "correctAnswer": "Hannibal",
+    "incorrectAnswers": ["Hasdrubal Barca", "Scipio Africanus", "Pyrrhus of Epirus"],
+    "explanation": "Hannibal’s Alpine invasion brought Carthaginian armies deep into Italy and threatened Rome itself.",
+    "keywords": ["ancient-rome", "punic-wars", "hannibal"],
+    "source": "https://www.britannica.com/biography/Hannibal-Carthaginian-general"
+  },
+  {
+    "category": "history",
+    "navigationKeyword1": "ancient",
+    "navigationKeyword2": "rome",
+    "question": "The abbreviation SPQR on Roman monuments and military gear identified the two sources from which the republic and empire claimed civic legitimacy. Which pair?",
+    "correctAnswer": "The Senate and the Roman people",
+    "incorrectAnswers": ["The emperor and the Praetorian Guard alone", "The consuls and the Senate, excluding the people", "The army and the provincial governors"],
+    "explanation": "SPQR abbreviates Senātus Populusque Rōmānus: public acts invoked both the deliberative senatorial order and the citizen body of Rome.",
+    "keywords": ["ancient-rome", "republic", "symbols"],
+    "source": "https://www.britannica.com/place/ancient-Rome/The-Senate"
+  },
+  {
+    "category": "history",
+    "navigationKeyword1": "ancient",
+    "navigationKeyword2": "rome",
+    "question": "Which legendary figure is said to have killed his brother and founded Rome on the Palatine Hill in traditional stories?",
+    "correctAnswer": "Romulus",
+    "incorrectAnswers": ["Remus", "Aeneas", "Numa Pompilius"],
+    "explanation": "Roman myth credits Romulus with founding the city after a fatal quarrel with his twin Remus.",
+    "keywords": ["ancient-rome", "myth", "origins"],
+    "source": "https://www.britannica.com/topic/Romulus-and-Remus"
+  },
+  {
+    "category": "history",
+    "navigationKeyword1": "ancient",
+    "navigationKeyword2": "rome",
+    "question": "Victorious general Pompey’s stone theater complex in the Campus Martius helped fix gladiatorial shows where in the city?",
+    "correctAnswer": "Rome",
+    "incorrectAnswers": ["Capua only", "Ostia only", "Pompeii only"],
+    "explanation": "Pompey’s monumental theater in Rome was an early permanent venue associating elite politics with public games.",
+    "keywords": ["ancient-rome", "republic", "games"],
+    "source": "https://www.britannica.com/place/Pompeys-Theatre"
+  },
+  {
+    "category": "history",
+    "navigationKeyword1": "ancient",
+    "navigationKeyword2": "rome",
+    "question": "Brutus and Cassius led the conspiracy that assassinated Caesar on which Roman calendar date in 44 BCE?",
+    "correctAnswer": "The Ides of March (15 March)",
+    "incorrectAnswers": ["The Kalends of April", "The Nones of February", "The Ides of June"],
+    "explanation": "Ancient sources date Caesar’s murder to the Ides of March, 15 March 44 BCE.",
+    "keywords": ["ancient-rome", "caesar", "republic"],
+    "source": "https://www.britannica.com/biography/Julius-Caesar-Roman-ruler"
+  },
+  {
+    "category": "history",
+    "navigationKeyword1": "ancient",
+    "navigationKeyword2": "rome",
+    "question": "Which magistracy, held briefly during emergencies, gave Cincinnatus legendary fame for returning promptly to his farm?",
+    "correctAnswer": "Dictator",
+    "incorrectAnswers": ["Tribune of the plebs", "Censor", "Pontifex maximus"],
+    "explanation": "Roman dictators were temporary executives appointed for crises; Cincinnatus is the model of brief service.",
+    "keywords": ["ancient-rome", "republic", "magistrates"],
+    "source": "https://www.britannica.com/biography/Lucius-Quinctius-Cincinnatus"
+  },
+  {
+    "category": "history",
+    "navigationKeyword1": "ancient",
+    "navigationKeyword2": "rome",
+    "question": "Concrete vaults and a grand portico mark which temple in Rome rebuilt under Hadrian and dedicated to all gods?",
+    "correctAnswer": "The Pantheon",
+    "incorrectAnswers": ["The Temple of Jupiter Optimus Maximus", "The Temple of Vesta", "The Basilica of Maxentius"],
+    "explanation": "The Pantheon’s surviving rotunda is a famous monument to Roman engineering and imperial religious display.",
+    "keywords": ["ancient-rome", "architecture", "religion"],
+    "source": "https://www.britannica.com/topic/Pantheon-building-Rome-Italy"
+  }
+]

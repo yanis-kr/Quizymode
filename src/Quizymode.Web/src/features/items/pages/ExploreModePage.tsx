@@ -18,6 +18,7 @@ import {
   findCategoryNameFromSlug,
   buildCategoryPath,
 } from "@/utils/categorySlug";
+import { buildCollectionPath, buildCollectionStudyPath } from "@/utils/collectionPath";
 import { ExploreQuizBreadcrumb } from "@/components/ExploreQuizBreadcrumb";
 import { ScopeSecondaryBar } from "@/components/ScopeSecondaryBar";
 import { ScopePathHeader } from "@/components/ScopePathHeader";
@@ -176,8 +177,16 @@ const ExploreModePage = () => {
   });
 
   const { data, isLoading, error, refetch } = useQuery({
-    queryKey: ["randomItems", category, EXPLORE_MAX_ITEMS, keywords],
-    queryFn: () => itemsApi.getRandom(category, EXPLORE_MAX_ITEMS, keywords),
+    queryKey: ["randomItems", category, EXPLORE_MAX_ITEMS, navigationKeywords, filterKeywords],
+    queryFn: () =>
+      itemsApi.getRandom(
+        category,
+        EXPLORE_MAX_ITEMS,
+        filterKeywords.length > 0 ? filterKeywords : undefined,
+        {
+          navigationKeywords: hasCategoryScope && navigationKeywords.length > 0 ? navigationKeywords : undefined,
+        }
+      ),
     enabled: !collectionId && !storedItems && !isCategoryResolving, // Don't load if we have stored items or category is still resolving
   });
 
@@ -281,7 +290,7 @@ const ExploreModePage = () => {
       const firstId = items[0].id;
       if (collectionId) {
         navigate(
-          `/explore/collections/${collectionId}/item/${firstId}${exploreItemSearch}`,
+          `${buildCollectionStudyPath("explore", collectionId, collectionInfo?.name, firstId)}${exploreItemSearch}`,
           { replace: true }
         );
       } else if (category) {
@@ -402,6 +411,9 @@ const ExploreModePage = () => {
     const query = params.toString();
     return query ? `?${query}` : "";
   })();
+  const collectionListPath = collectionId
+    ? buildCollectionPath(collectionId, collectionInfo?.name)
+    : null;
 
   const handlePrev = () => {
     if (currentIndex > 0) {
@@ -410,7 +422,7 @@ const ExploreModePage = () => {
       if (items[newIndex]) {
         if (collectionId) {
           navigate(
-            `/explore/collections/${collectionId}/item/${items[newIndex].id}${exploreItemSearch}`,
+            `${buildCollectionStudyPath("explore", collectionId, collectionInfo?.name, items[newIndex].id)}${exploreItemSearch}`,
             { replace: true }
           );
         } else if (category) {
@@ -429,7 +441,7 @@ const ExploreModePage = () => {
       if (items[newIndex]) {
         if (collectionId) {
           navigate(
-            `/explore/collections/${collectionId}/item/${items[newIndex].id}${exploreItemSearch}`,
+            `${buildCollectionStudyPath("explore", collectionId, collectionInfo?.name, items[newIndex].id)}${exploreItemSearch}`,
             { replace: true }
           );
         } else if (category) {
@@ -453,7 +465,7 @@ const ExploreModePage = () => {
             if (category) navigate(categoryScopePath);
             else navigate("/categories");
           } else if (mode === "list") {
-            if (collectionId) navigate(`/collections/${collectionId}`);
+            if (collectionId && collectionListPath) navigate(collectionListPath);
             else if (category)
               navigate(`${categoryScopePath}${categoryListSearch}`);
             else navigate("/categories");
@@ -471,7 +483,7 @@ const ExploreModePage = () => {
             }
             if (collectionId)
               navigate(
-                `/quiz/collections/${collectionId}/item/${currentItem?.id ?? items[0]?.id}${search}`
+                `${buildCollectionStudyPath("quiz", collectionId, collectionInfo?.name, currentItem?.id ?? items[0]?.id)}${search}`
               );
             else if (category)
               navigate(
@@ -652,7 +664,7 @@ const ExploreModePage = () => {
         footerContent={
           collectionId ? (
             <button
-              onClick={() => navigate(`/collections/${collectionId}`)}
+              onClick={() => collectionListPath && navigate(collectionListPath)}
               className="text-indigo-600 hover:text-indigo-700"
               type="button"
             >

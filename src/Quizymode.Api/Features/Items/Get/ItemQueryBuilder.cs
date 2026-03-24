@@ -37,13 +37,18 @@ internal sealed class ItemQueryBuilder
     /// </summary>
     public async Task<Result<IQueryable<Item>>> BuildQueryAsync(GetItems.QueryRequest request)
     {
-        // Validate navigation path only when 1-2 keywords (nav hierarchy). 3+ keywords are item-level.
-        if (!string.IsNullOrEmpty(request.Category) && request.Keywords is not null
-            && request.Keywords.Count > 0 && request.Keywords.Count <= 2)
+        if (request.NavigationKeywords is not null && request.NavigationKeywords.Count > 2)
+        {
+            return Result.Failure<IQueryable<Item>>(
+                Error.Validation("Navigation.InvalidPath", "Navigation path supports at most two keywords."));
+        }
+
+        if (!string.IsNullOrEmpty(request.Category) && request.NavigationKeywords is not null
+            && request.NavigationKeywords.Count > 0)
         {
             Result pathValidationResult = await Quizymode.Api.Features.Keywords.NavigationPathValidator.ValidatePathAsync(
                 request.Category,
-                request.Keywords,
+                request.NavigationKeywords,
                 _db,
                 _userContext,
                 _cancellationToken);
@@ -75,6 +80,13 @@ internal sealed class ItemQueryBuilder
             return categoryResult;
         }
         query = categoryResult.Value;
+
+        Result<IQueryable<Item>> navigationResult = await ApplyNavigationFilterAsync(query, request);
+        if (navigationResult.IsFailure)
+        {
+            return navigationResult;
+        }
+        query = navigationResult.Value;
 
         Result<IQueryable<Item>> keywordResult = await ApplyKeywordFilterAsync(query, request);
         if (keywordResult.IsFailure)
@@ -242,6 +254,107 @@ internal sealed class ItemQueryBuilder
             .FirstOrDefault(c => string.Equals(CategoryHelper.NameToSlug(c.Name), requestedSlug, StringComparison.OrdinalIgnoreCase));
 
         return bySlug?.Id;
+    }
+
+    private async Task<Result<IQueryable<Item>>> ApplyNavigationFilterAsync(
+        IQueryable<Item> query,
+        GetItems.QueryRequest request)
+    {
+        if (request.NavigationKeywords is null || request.NavigationKeywords.Count == 0)
+        {
+            return Result.Success(query);
+        }
+
+        if (string.IsNullOrWhiteSpace(request.Category))
+        {
+            return Result.Failure<IQueryable<Item>>(
+                Error.Validation("Navigation.CategoryRequired", "Category is required when filtering by navigation path."));
+        }
+
+        Guid? categoryId = await ResolveCategoryIdAsync(request.Category.Trim());
+        if (!categoryId.HasValue)
+        {
+            return Result.Success(query.Where(i => false));
+        }
+
+        List<string> normalizedKeywords = request.NavigationKeywords
+            .Select(k => k.Trim().ToLowerInvariant())
+            .Where(k => !string.IsNullOrWhiteSpace(k))
+            .ToList();
+
+        if (normalizedKeywords.Count == 0)
+        {
+            return Result.Success(query);
+        }
+
+        if (normalizedKeywords.Contains("other"))
+        {
+            if (normalizedKeywords.Count > 1)
+            {
+                return Result.Success(query.Where(i => false));
+            }
+
+            return await ApplyOtherKeywordFilterAsync(query, categoryId.Value);
+        }
+
+        Guid? rank1KeywordId = await ResolveNavigationKeywordIdAsync(
+            categoryId.Value,
+            normalizedKeywords[0],
+            null);
+
+        if (!rank1KeywordId.HasValue)
+        {
+            return Result.Success(query.Where(i => false));
+        }
+
+        query = query.Where(i => i.NavigationKeywordId1 == rank1KeywordId.Value);
+
+        if (normalizedKeywords.Count == 1)
+        {
+            return Result.Success(query);
+        }
+
+        Guid? rank2KeywordId = await ResolveNavigationKeywordIdAsync(
+            categoryId.Value,
+            normalizedKeywords[1],
+            rank1KeywordId);
+
+        if (!rank2KeywordId.HasValue)
+        {
+            return Result.Success(query.Where(i => false));
+        }
+
+        query = query.Where(i => i.NavigationKeywordId2 == rank2KeywordId.Value);
+        return Result.Success(query);
+    }
+
+    private async Task<Guid?> ResolveNavigationKeywordIdAsync(
+        Guid categoryId,
+        string keywordName,
+        Guid? parentKeywordId)
+    {
+        string keywordLower = keywordName.ToLowerInvariant();
+        IQueryable<KeywordRelation> query = _db.KeywordRelations
+            .Include(kr => kr.ChildKeyword)
+            .Where(kr =>
+                kr.CategoryId == categoryId &&
+                kr.ParentKeywordId == parentKeywordId &&
+                kr.ChildKeyword.Name.ToLower() == keywordLower);
+
+        if (!_userContext.IsAuthenticated || string.IsNullOrEmpty(_userContext.UserId))
+        {
+            query = query.Where(kr => !kr.IsPrivate && !kr.ChildKeyword.IsPrivate);
+        }
+        else
+        {
+            query = query.Where(kr =>
+                (!kr.IsPrivate || kr.CreatedBy == _userContext.UserId) &&
+                (!kr.ChildKeyword.IsPrivate || kr.ChildKeyword.CreatedBy == _userContext.UserId));
+        }
+
+        return await query
+            .Select(kr => (Guid?)kr.ChildKeywordId)
+            .FirstOrDefaultAsync(_cancellationToken);
     }
 
     /// <summary>

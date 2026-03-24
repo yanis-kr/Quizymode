@@ -1,0 +1,112 @@
+[
+  {
+    "category": "exams",
+    "navigationKeyword1": "gcp",
+    "navigationKeyword2": "pde",
+    "question": "Which Google Cloud service is a serverless data warehouse for analytics?",
+    "correctAnswer": "BigQuery",
+    "incorrectAnswers": ["Cloud Armor", "VPC", "Cloud NAT"],
+    "explanation": "BigQuery is Google's serverless analytics and data warehouse platform.",
+    "keywords": ["gcp-pde", "google-cloud-data", "data-engineering"],
+    "source": "https://cloud.google.com/bigquery"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "gcp",
+    "navigationKeyword2": "pde",
+    "question": "Which Google Cloud service supports both batch and streaming data processing?",
+    "correctAnswer": "Dataflow",
+    "incorrectAnswers": ["Cloud SQL", "Cloud Storage", "Cloud DNS"],
+    "explanation": "Dataflow is Google's managed service for batch and streaming data pipelines.",
+    "keywords": ["gcp-pde", "google-cloud-data", "data-engineering"],
+    "source": "https://cloud.google.com/dataflow"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "gcp",
+    "navigationKeyword2": "pde",
+    "question": "Which Google Cloud service handles asynchronous event ingestion and messaging?",
+    "correctAnswer": "Pub/Sub",
+    "incorrectAnswers": ["Compute Engine", "Cloud Armor", "Cloud SQL"],
+    "explanation": "Pub/Sub is commonly used for event ingestion and decoupled data pipelines.",
+    "keywords": ["gcp-pde", "google-cloud-data", "data-engineering"],
+    "source": "https://cloud.google.com/pubsub"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "gcp",
+    "navigationKeyword2": "pde",
+    "question": "Which Google Cloud service runs managed Apache Spark and Hadoop workloads?",
+    "correctAnswer": "Dataproc",
+    "incorrectAnswers": ["Cloud DNS", "Cloud Armor", "Cloud NAT"],
+    "explanation": "Dataproc is Google Cloud's managed service for Spark, Hadoop, and related open source tools.",
+    "keywords": ["gcp-pde", "google-cloud-data", "data-engineering"],
+    "source": "https://cloud.google.com/dataproc"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "gcp",
+    "navigationKeyword2": "pde",
+    "question": "Which Google Cloud service is commonly used as object storage for data lakes?",
+    "correctAnswer": "Cloud Storage",
+    "incorrectAnswers": ["Cloud Armor", "Cloud SQL", "VPC"],
+    "explanation": "Cloud Storage is the object storage foundation for many Google Cloud data platforms.",
+    "keywords": ["gcp-pde", "google-cloud-data", "data-engineering"],
+    "source": "https://cloud.google.com/storage"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "gcp",
+    "navigationKeyword2": "pde",
+    "question": "Which Google Cloud database is a low-latency NoSQL database for large-scale workloads?",
+    "correctAnswer": "Bigtable",
+    "incorrectAnswers": ["Cloud Armor", "Cloud DNS", "Cloud NAT"],
+    "explanation": "Bigtable is Google's scalable NoSQL database service.",
+    "keywords": ["gcp-pde", "google-cloud-data", "data-engineering"],
+    "source": "https://cloud.google.com/bigtable"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "gcp",
+    "navigationKeyword2": "pde",
+    "question": "Which Google Cloud service provides managed relational databases for operational data stores?",
+    "correctAnswer": "Cloud SQL",
+    "incorrectAnswers": ["Pub/Sub", "Cloud DNS", "Cloud Armor"],
+    "explanation": "Cloud SQL provides managed MySQL, PostgreSQL, and SQL Server databases.",
+    "keywords": ["gcp-pde", "google-cloud-data", "data-engineering"],
+    "source": "https://cloud.google.com/sql"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "gcp",
+    "navigationKeyword2": "pde",
+    "question": "Which Google Cloud database offers relational consistency at global scale?",
+    "correctAnswer": "Spanner",
+    "incorrectAnswers": ["Cloud Storage", "Cloud Armor", "Cloud NAT"],
+    "explanation": "Spanner is Google's globally scalable relational database service.",
+    "keywords": ["gcp-pde", "google-cloud-data", "data-engineering"],
+    "source": "https://cloud.google.com/spanner"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "gcp",
+    "navigationKeyword2": "pde",
+    "question": "Which Google Cloud platform is used to build and deploy machine learning models?",
+    "correctAnswer": "Vertex AI",
+    "incorrectAnswers": ["Cloud DNS", "Cloud NAT", "Cloud Armor"],
+    "explanation": "Vertex AI is Google's AI platform for building, training, and serving ML models.",
+    "keywords": ["gcp-pde", "google-cloud-data", "data-engineering"],
+    "source": "https://cloud.google.com/vertex-ai"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "gcp",
+    "navigationKeyword2": "pde",
+    "question": "Which Google Cloud service is used to publish and subscribe to event streams in data pipelines?",
+    "correctAnswer": "Pub/Sub",
+    "incorrectAnswers": ["Cloud SQL", "Compute Engine", "Cloud Armor"],
+    "explanation": "Pub/Sub supports publish-subscribe messaging for distributed systems and pipelines.",
+    "keywords": ["gcp-pde", "google-cloud-data", "data-engineering"],
+    "source": "https://cloud.google.com/pubsub"
+  }
+]

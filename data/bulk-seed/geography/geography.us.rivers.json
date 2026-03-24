@@ -1,0 +1,211 @@
+[
+  {
+    "category": "geography",
+    "navigationKeyword1": "us",
+    "navigationKeyword2": "rivers",
+    "question": "Which river is described as the longest in North America?",
+    "correctAnswer": "Mississippi River",
+    "incorrectAnswers": [
+      "Missouri River",
+      "Colorado River",
+      "Rio Grande"
+    ],
+    "explanation": "The Mississippi flows from Minnesota to the Gulf of Mexico and is the continent’s longest river.",
+    "keywords": [
+      "rivers",
+      "us-rivers",
+      "mississippi"
+    ],
+    "source": "https://www.britannica.com/place/Mississippi-River"
+  },
+  {
+    "category": "geography",
+    "navigationKeyword1": "us",
+    "navigationKeyword2": "rivers",
+    "question": "Which major river joins the Mississippi near St. Louis, Missouri?",
+    "correctAnswer": "Missouri River",
+    "incorrectAnswers": [
+      "Ohio River",
+      "Arkansas River",
+      "Tennessee River"
+    ],
+    "explanation": "The Missouri meets the Mississippi just north of St. Louis.",
+    "keywords": [
+      "rivers",
+      "us-rivers",
+      "missouri"
+    ],
+    "source": "https://www.britannica.com/place/Missouri-River"
+  },
+  {
+    "category": "geography",
+    "navigationKeyword1": "us",
+    "navigationKeyword2": "rivers",
+    "question": "Which river meets the Mississippi at Cairo, Illinois, and is the larger stream at that confluence?",
+    "correctAnswer": "Ohio River",
+    "incorrectAnswers": [
+      "Illinois River",
+      "Tennessee River",
+      "Cumberland River"
+    ],
+    "explanation": "At Cairo the Ohio contributes more flow than the upper Mississippi above the junction.",
+    "keywords": [
+      "rivers",
+      "us-rivers",
+      "ohio"
+    ],
+    "source": "https://www.britannica.com/place/Mississippi-River"
+  },
+  {
+    "category": "geography",
+    "navigationKeyword1": "us",
+    "navigationKeyword2": "rivers",
+    "question": "Which river carved the Grand Canyon in northern Arizona?",
+    "correctAnswer": "Colorado River",
+    "incorrectAnswers": [
+      "Green River",
+      "Snake River",
+      "Rio Grande"
+    ],
+    "explanation": "The Colorado cut the canyon as it crossed the Colorado Plateau.",
+    "keywords": [
+      "rivers",
+      "us-rivers",
+      "colorado"
+    ],
+    "source": "https://www.britannica.com/place/Colorado-River"
+  },
+  {
+    "category": "geography",
+    "navigationKeyword1": "us",
+    "navigationKeyword2": "rivers",
+    "question": "Which river forms part of the border between Texas and Mexico?",
+    "correctAnswer": "Rio Grande",
+    "incorrectAnswers": [
+      "Pecos River",
+      "Red River",
+      "Sabine River"
+    ],
+    "explanation": "The Rio Grande separates much of Texas from Mexico.",
+    "keywords": [
+      "rivers",
+      "us-rivers",
+      "border"
+    ],
+    "source": "https://www.britannica.com/place/Rio-Grande-river-United-States-Mexico"
+  },
+  {
+    "category": "geography",
+    "navigationKeyword1": "us",
+    "navigationKeyword2": "rivers",
+    "question": "Which river is the largest in the Pacific Northwest of the United States?",
+    "correctAnswer": "Columbia River",
+    "incorrectAnswers": [
+      "Snake River",
+      "Colorado River",
+      "Sacramento River"
+    ],
+    "explanation": "The Columbia drains a vast area and reaches the Pacific near Astoria, Oregon.",
+    "keywords": [
+      "rivers",
+      "us-rivers",
+      "columbia"
+    ],
+    "source": "https://www.britannica.com/place/Columbia-River"
+  },
+  {
+    "category": "geography",
+    "navigationKeyword1": "us",
+    "navigationKeyword2": "rivers",
+    "question": "Which river flows past New York City into Upper New York Bay?",
+    "correctAnswer": "Hudson River",
+    "incorrectAnswers": [
+      "Delaware River",
+      "Connecticut River",
+      "Mohawk River"
+    ],
+    "explanation": "The Hudson estuary forms one of the world’s major harbors at New York City.",
+    "keywords": [
+      "rivers",
+      "us-rivers",
+      "hudson"
+    ],
+    "source": "https://www.britannica.com/place/Hudson-River"
+  },
+  {
+    "category": "geography",
+    "navigationKeyword1": "us",
+    "navigationKeyword2": "rivers",
+    "question": "Which river borders Washington, D.C., on one side and separates it from Virginia?",
+    "correctAnswer": "Potomac River",
+    "incorrectAnswers": [
+      "Susquehanna River",
+      "James River",
+      "Rappahannock River"
+    ],
+    "explanation": "The Potomac flows along the southwestern edge of the District of Columbia.",
+    "keywords": [
+      "rivers",
+      "us-rivers",
+      "potomac"
+    ],
+    "source": "https://www.britannica.com/place/Potomac-River"
+  },
+  {
+    "category": "geography",
+    "navigationKeyword1": "us",
+    "navigationKeyword2": "rivers",
+    "question": "Which river is a major tributary of the Columbia and flows through Hells Canyon?",
+    "correctAnswer": "Snake River",
+    "incorrectAnswers": [
+      "Willamette River",
+      "Clearwater River",
+      "Salmon River"
+    ],
+    "explanation": "The Snake joins the Columbia in Washington after crossing Idaho.",
+    "keywords": [
+      "rivers",
+      "us-rivers",
+      "snake"
+    ],
+    "source": "https://www.britannica.com/place/Snake-River"
+  },
+  {
+    "category": "geography",
+    "navigationKeyword1": "us",
+    "navigationKeyword2": "rivers",
+    "question": "Which river rises in the Colorado Rockies and joins the Mississippi in Arkansas?",
+    "correctAnswer": "Arkansas River",
+    "incorrectAnswers": [
+      "Red River",
+      "Platte River",
+      "Canadian River"
+    ],
+    "explanation": "The Arkansas heads near Leadville, Colorado, then crosses Kansas, Oklahoma, and Arkansas to the Mississippi.",
+    "keywords": [
+      "rivers",
+      "us-rivers",
+      "arkansas"
+    ],
+    "source": "https://www.britannica.com/place/Arkansas-River"
+  },
+  {
+    "category": "geography",
+    "navigationKeyword1": "us",
+    "navigationKeyword2": "rivers",
+    "question": "Which river drains much of Tennessee and Alabama and is a major Ohio tributary?",
+    "correctAnswer": "Tennessee River",
+    "incorrectAnswers": [
+      "Cumberland River",
+      "Alabama River",
+      "Chattahoochee River"
+    ],
+    "explanation": "The Tennessee turns north through Tennessee and joins the Ohio in western Kentucky.",
+    "keywords": [
+      "rivers",
+      "us-rivers",
+      "tennessee"
+    ],
+    "source": "https://www.britannica.com/place/Tennessee-River"
+  }
+]

@@ -1,0 +1,230 @@
+[
+  {
+    "category": "geography",
+    "navigationKeyword1": "world",
+    "navigationKeyword2": "north-america",
+    "question": "Which major mountain system extends from western Canada into the western United States and includes the Continental Divide in many areas?",
+    "correctAnswer": "The Rocky Mountains",
+    "incorrectAnswers": [
+      "The Appalachian Mountains",
+      "The Sierra Nevada",
+      "The Cascade Range"
+    ],
+    "explanation": "The Rockies form a broad cordillera along much of western North America, separating Pacific-bound drainage from interior drainage in many places.",
+    "keywords": [
+      "north-america",
+      "mountain-ranges",
+      "rockies"
+    ],
+    "source": "https://www.britannica.com/place/Rocky-Mountains"
+  },
+  {
+    "category": "geography",
+    "navigationKeyword1": "world",
+    "navigationKeyword2": "north-america",
+    "question": "Which ancient mountain chain runs roughly parallel to the eastern coast of the United States?",
+    "correctAnswer": "The Appalachian Mountains",
+    "incorrectAnswers": [
+      "The Rocky Mountains",
+      "The Coast Ranges",
+      "The Brooks Range"
+    ],
+    "explanation": "The Appalachians form a long belt of mountains and ridges from eastern Canada into the southeastern United States.",
+    "keywords": [
+      "north-america",
+      "mountain-ranges",
+      "appalachians"
+    ],
+    "source": "https://www.britannica.com/place/Appalachian-Mountains"
+  },
+  {
+    "category": "geography",
+    "navigationKeyword1": "world",
+    "navigationKeyword2": "north-america",
+    "question": "Which group of interconnected freshwater lakes forms part of the international border between the United States and Canada?",
+    "correctAnswer": "The Great Lakes",
+    "incorrectAnswers": [
+      "The Great Salt Lake and its neighbors",
+      "The Finger Lakes",
+      "The Great Slave and Great Bear lakes"
+    ],
+    "explanation": "The five Great Lakes (Superior, Michigan, Huron, Erie, and Ontario) lie along or near the US–Canada boundary in eastern North America.",
+    "keywords": [
+      "north-america",
+      "great-lakes",
+      "freshwater"
+    ],
+    "source": "https://www.britannica.com/place/Great-Lakes"
+  },
+  {
+    "category": "geography",
+    "navigationKeyword1": "world",
+    "navigationKeyword2": "north-america",
+    "question": "By surface area, which of the Great Lakes is the largest?",
+    "correctAnswer": "Lake Superior",
+    "incorrectAnswers": [
+      "Lake Michigan",
+      "Lake Huron",
+      "Lake Ontario"
+    ],
+    "explanation": "Lake Superior is the largest Great Lake by surface area and holds the greatest volume of water among them.",
+    "keywords": [
+      "north-america",
+      "great-lakes",
+      "lakes"
+    ],
+    "source": "https://www.britannica.com/place/Lake-Superior"
+  },
+  {
+    "category": "geography",
+    "navigationKeyword1": "world",
+    "navigationKeyword2": "north-america",
+    "question": "Which major river empties into the Gulf of Mexico through a broad delta in southern Louisiana?",
+    "correctAnswer": "The Mississippi River",
+    "incorrectAnswers": [
+      "The Rio Grande",
+      "The Colorado River",
+      "The Columbia River"
+    ],
+    "explanation": "The Mississippi drains a vast central US watershed and reaches the Gulf of Mexico south of New Orleans.",
+    "keywords": [
+      "north-america",
+      "rivers",
+      "mississippi"
+    ],
+    "source": "https://www.britannica.com/place/Mississippi-River"
+  },
+  {
+    "category": "geography",
+    "navigationKeyword1": "world",
+    "navigationKeyword2": "north-america",
+    "question": "Which large inland sea in northeastern Canada is linked to the Atlantic via Hudson Strait?",
+    "correctAnswer": "Hudson Bay",
+    "incorrectAnswers": [
+      "Baffin Bay",
+      "Labrador Sea",
+      "James Bay only"
+    ],
+    "explanation": "Hudson Bay is a huge body of water in central-northeastern Canada, opening to the Atlantic through Hudson Strait.",
+    "keywords": [
+      "north-america",
+      "arctic",
+      "canada"
+    ],
+    "source": "https://www.britannica.com/place/Hudson-Bay"
+  },
+  {
+    "category": "geography",
+    "navigationKeyword1": "world",
+    "navigationKeyword2": "north-america",
+    "question": "Which gulf lies between the eastern coast of Mexico and the US Gulf Coast states?",
+    "correctAnswer": "The Gulf of Mexico",
+    "incorrectAnswers": [
+      "The Gulf of California",
+      "Hudson Bay",
+      "The Caribbean Sea"
+    ],
+    "explanation": "The Gulf of Mexico is a marginal sea of the Atlantic bordered by the southeastern United States, eastern Mexico, and Cuba.",
+    "keywords": [
+      "north-america",
+      "gulf",
+      "atlantic"
+    ],
+    "source": "https://www.britannica.com/place/Gulf-of-Mexico-Gulf-of-America"
+  },
+  {
+    "category": "geography",
+    "navigationKeyword1": "world",
+    "navigationKeyword2": "north-america",
+    "question": "Which strait separates northwestern Alaska from northeastern Russia at their closest approach?",
+    "correctAnswer": "The Bering Strait",
+    "incorrectAnswers": [
+      "The Davis Strait",
+      "The Strait of Belle Isle",
+      "The Strait of Georgia"
+    ],
+    "explanation": "The Bering Strait connects the Pacific Arctic with the Bering Sea and lies between the Chukotka Peninsula and the Seward Peninsula region of Alaska.",
+    "keywords": [
+      "north-america",
+      "straits",
+      "arctic"
+    ],
+    "source": "https://www.britannica.com/place/Bering-Strait"
+  },
+  {
+    "category": "geography",
+    "navigationKeyword1": "world",
+    "navigationKeyword2": "north-america",
+    "question": "Greenland, the world’s largest island, is part of which European kingdom?",
+    "correctAnswer": "Denmark",
+    "incorrectAnswers": [
+      "Canada",
+      "Norway",
+      "Iceland"
+    ],
+    "explanation": "Greenland is an autonomous territory within the Kingdom of Denmark and lies geographically between the Arctic and Atlantic oceans.",
+    "keywords": [
+      "north-america",
+      "arctic",
+      "greenland"
+    ],
+    "source": "https://www.britannica.com/place/Greenland"
+  },
+  {
+    "category": "geography",
+    "navigationKeyword1": "world",
+    "navigationKeyword2": "north-america",
+    "question": "Which vast Precambrian shield region is centered on Hudson Bay and covers much of eastern and central Canada?",
+    "correctAnswer": "The Canadian Shield",
+    "incorrectAnswers": [
+      "The Colorado Plateau",
+      "The Basin and Range Province",
+      "The Piedmont Plateau"
+    ],
+    "explanation": "The Canadian Shield is a broad expanse of ancient crystalline rock underlying much of Canada and extending into Greenland.",
+    "keywords": [
+      "north-america",
+      "canada",
+      "geology"
+    ],
+    "source": "https://www.britannica.com/place/Canadian-Shield"
+  },
+  {
+    "category": "geography",
+    "navigationKeyword1": "world",
+    "navigationKeyword2": "north-america",
+    "question": "Which river system, draining northwestern Canada to the Arctic Ocean, is Canada’s longest?",
+    "correctAnswer": "The Mackenzie River system",
+    "incorrectAnswers": [
+      "The St. Lawrence River",
+      "The Yukon River",
+      "The Nelson River"
+    ],
+    "explanation": "The Mackenzie system flows from the Rocky Mountain headwaters region northward to the Beaufort Sea and is Canada’s longest river system.",
+    "keywords": [
+      "north-america",
+      "rivers",
+      "canada"
+    ],
+    "source": "https://www.britannica.com/place/Mackenzie-River"
+  },
+  {
+    "category": "geography",
+    "navigationKeyword1": "world",
+    "navigationKeyword2": "north-america",
+    "question": "The Yucatán Peninsula lies between the Gulf of Mexico and which other body of water?",
+    "correctAnswer": "The Caribbean Sea",
+    "incorrectAnswers": [
+      "The Pacific Ocean",
+      "The Gulf of California",
+      "The Adriatic Sea"
+    ],
+    "explanation": "The Yucatán Peninsula projects northward between the Gulf of Mexico to the west and north and the Caribbean Sea to the east.",
+    "keywords": [
+      "north-america",
+      "peninsulas",
+      "caribbean"
+    ],
+    "source": "https://www.britannica.com/place/Yucatan-Peninsula"
+  }
+]

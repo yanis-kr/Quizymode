@@ -1,0 +1,57 @@
+[
+  {
+    "category": "exams",
+    "navigationKeyword1": "ap",
+    "navigationKeyword2": "chemistry",
+    "question": "An atom with 17 protons is which element?",
+    "correctAnswer": "Chlorine",
+    "incorrectAnswers": ["Oxygen", "Sodium", "Argon"],
+    "explanation": "The number of protons determines the element, and atomic number 17 is chlorine.",
+    "keywords": ["ap-chemistry", "atomic-structure", "chemistry"],
+    "source": "https://openstax.org/details/books/chemistry-2e"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "ap",
+    "navigationKeyword2": "chemistry",
+    "question": "What is the strongest intermolecular force between water molecules?",
+    "correctAnswer": "Hydrogen bonding",
+    "incorrectAnswers": ["London dispersion forces only", "Ionic bonding", "Metallic bonding"],
+    "explanation": "Water molecules form hydrogen bonds because hydrogen is bonded to oxygen.",
+    "keywords": ["ap-chemistry", "intermolecular-forces", "chemistry"],
+    "source": "https://openstax.org/details/books/chemistry-2e"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "ap",
+    "navigationKeyword2": "chemistry",
+    "question": "What happens to the pressure of a gas in a sealed rigid container when its temperature increases?",
+    "correctAnswer": "The pressure increases",
+    "incorrectAnswers": ["The pressure decreases", "The pressure stays the same", "The gas disappears"],
+    "explanation": "At constant volume, higher temperature means more energetic collisions and higher pressure.",
+    "keywords": ["ap-chemistry", "gases", "chemistry"],
+    "source": "https://openstax.org/details/books/chemistry-2e"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "ap",
+    "navigationKeyword2": "chemistry",
+    "question": "What is the pH of a 0.001 M HCl solution?",
+    "correctAnswer": "3",
+    "incorrectAnswers": ["1", "2", "11"],
+    "explanation": "0.001 equals 10^-3, so the pH is 3 for this strong acid.",
+    "keywords": ["ap-chemistry", "acids-and-bases", "chemistry"],
+    "source": "https://openstax.org/details/books/chemistry-2e"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "ap",
+    "navigationKeyword2": "chemistry",
+    "question": "If more reactant is added to a system at equilibrium, the equilibrium usually shifts in which direction?",
+    "correctAnswer": "Toward products",
+    "incorrectAnswers": ["Toward reactants", "Nowhere, equilibrium stops", "Toward zero pressure only"],
+    "explanation": "By Le Chatelier's principle, the system tends to consume the added reactant.",
+    "keywords": ["ap-chemistry", "equilibrium", "chemistry"],
+    "source": "https://openstax.org/details/books/chemistry-2e"
+  }
+]

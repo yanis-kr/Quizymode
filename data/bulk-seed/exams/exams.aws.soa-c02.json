@@ -1,0 +1,230 @@
+[
+  {
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "soa-c02",
+    "question": "Which AWS service tracks user activity and API usage across AWS environments?",
+    "correctAnswer": "AWS CloudTrail",
+    "incorrectAnswers": [
+      "Amazon Route 53",
+      "AWS Backup",
+      "Amazon EFS"
+    ],
+    "explanation": "AWS CloudTrail is AWS's secure standardized API logging service.",
+    "keywords": [
+      "aws-soa-c02",
+      "aws-operations",
+      "aws-services"
+    ],
+    "source": "https://aws.amazon.com/cloudtrail/"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "soa-c02",
+    "question": "Which AWS service assesses, audits, and evaluates resource configurations?",
+    "correctAnswer": "AWS Config",
+    "incorrectAnswers": [
+      "Amazon Route 53 Resolver",
+      "Amazon SQS",
+      "AWS Direct Connect"
+    ],
+    "explanation": "AWS Config continuously records and evaluates AWS resource configurations.",
+    "keywords": [
+      "aws-soa-c02",
+      "aws-operations",
+      "aws-services"
+    ],
+    "source": "https://aws.amazon.com/config/"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "soa-c02",
+    "question": "Which AWS service provides centralized operations management for nodes at scale?",
+    "correctAnswer": "AWS Systems Manager",
+    "incorrectAnswers": [
+      "Amazon CloudFront",
+      "AWS WAF",
+      "Amazon Aurora"
+    ],
+    "explanation": "AWS Systems Manager is AWS's centralized operations management service.",
+    "keywords": [
+      "aws-soa-c02",
+      "aws-operations",
+      "aws-services"
+    ],
+    "source": "https://aws.amazon.com/systems-manager/"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "soa-c02",
+    "question": "Which AWS service centrally automates backups across AWS services and hybrid workloads?",
+    "correctAnswer": "AWS Backup",
+    "incorrectAnswers": [
+      "AWS Transit Gateway",
+      "Amazon Route 53",
+      "AWS CloudFormation"
+    ],
+    "explanation": "AWS Backup centralizes and automates data protection across AWS and hybrid workloads.",
+    "keywords": [
+      "aws-soa-c02",
+      "aws-operations",
+      "aws-services"
+    ],
+    "source": "https://aws.amazon.com/backup/"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "soa-c02",
+    "question": "Which AWS service prioritizes critical security issues and helps respond at scale?",
+    "correctAnswer": "AWS Security Hub",
+    "incorrectAnswers": [
+      "Amazon Route 53 Resolver",
+      "Amazon EBS",
+      "AWS Direct Connect"
+    ],
+    "explanation": "AWS Security Hub centralizes visibility and prioritizes critical security issues.",
+    "keywords": [
+      "aws-soa-c02",
+      "aws-operations",
+      "aws-services"
+    ],
+    "source": "https://aws.amazon.com/security-hub/"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "soa-c02",
+    "question": "Which AWS service protects web applications from common exploits?",
+    "correctAnswer": "AWS WAF",
+    "incorrectAnswers": [
+      "Amazon SQS",
+      "AWS Backup",
+      "Amazon Route 53"
+    ],
+    "explanation": "AWS WAF protects web applications and APIs from common web exploits.",
+    "keywords": [
+      "aws-soa-c02",
+      "aws-operations",
+      "aws-services"
+    ],
+    "source": "https://aws.amazon.com/waf/"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "soa-c02",
+    "question": "Which AWS service provides metrics, logs, and alarms for operational visibility?",
+    "correctAnswer": "Amazon CloudWatch",
+    "incorrectAnswers": [
+      "AWS Organizations",
+      "Amazon Route 53 Resolver",
+      "AWS Direct Connect"
+    ],
+    "explanation": "Amazon CloudWatch provides observability data and operational insights.",
+    "keywords": [
+      "aws-soa-c02",
+      "aws-operations",
+      "aws-services"
+    ],
+    "source": "https://aws.amazon.com/cloudwatch/"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "soa-c02",
+    "question": "Which AWS service automatically adjusts capacity based on demand to maintain steady performance?",
+    "correctAnswer": "AWS Auto Scaling",
+    "incorrectAnswers": [
+      "AWS Backup",
+      "Amazon Route 53",
+      "AWS WAF"
+    ],
+    "explanation": "AWS Auto Scaling automatically adds or removes capacity as demand changes.",
+    "keywords": [
+      "aws-soa-c02",
+      "aws-operations",
+      "aws-services"
+    ],
+    "source": "https://aws.amazon.com/autoscaling/"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "soa-c02",
+    "question": "Which AWS service distributes traffic across multiple targets and Availability Zones?",
+    "correctAnswer": "Elastic Load Balancing",
+    "incorrectAnswers": [
+      "AWS Organizations",
+      "AWS Config",
+      "Amazon S3"
+    ],
+    "explanation": "Elastic Load Balancing distributes incoming traffic across targets in one or more AZs.",
+    "keywords": [
+      "aws-soa-c02",
+      "aws-operations",
+      "aws-services"
+    ],
+    "source": "https://aws.amazon.com/elasticloadbalancing/"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "soa-c02",
+    "question": "Which AWS DNS service can route traffic to healthy endpoints using health checks?",
+    "correctAnswer": "Amazon Route 53",
+    "incorrectAnswers": [
+      "AWS Config",
+      "AWS Backup",
+      "Amazon EBS"
+    ],
+    "explanation": "Amazon Route 53 supports health checks and can route traffic to healthy endpoints.",
+    "keywords": [
+      "aws-soa-c02",
+      "aws-operations",
+      "aws-services"
+    ],
+    "source": "https://aws.amazon.com/route53/"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "soa-c02",
+    "question": "Which AWS service centrally manages multiple AWS accounts and governance controls?",
+    "correctAnswer": "AWS Organizations",
+    "incorrectAnswers": [
+      "Amazon Route 53 Resolver",
+      "Amazon CloudFront",
+      "AWS Systems Manager"
+    ],
+    "explanation": "AWS Organizations enables central governance and management across multiple AWS accounts.",
+    "keywords": [
+      "aws-soa-c02",
+      "aws-operations",
+      "aws-services"
+    ],
+    "source": "https://aws.amazon.com/organizations/"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "soa-c02",
+    "question": "Which AWS support tool makes recommendations to improve cost, performance, and security?",
+    "correctAnswer": "AWS Trusted Advisor",
+    "incorrectAnswers": [
+      "Amazon EventBridge",
+      "AWS WAF",
+      "Amazon DynamoDB"
+    ],
+    "explanation": "AWS Trusted Advisor inspects the environment and recommends ways to improve cost, availability, performance, and security.",
+    "keywords": [
+      "aws-soa-c02",
+      "aws-operations",
+      "aws-services"
+    ],
+    "source": "https://docs.aws.amazon.com/awssupport/latest/user/trusted-advisor.html"
+  }
+]

@@ -1,0 +1,112 @@
+[
+  {
+    "category": "exams",
+    "navigationKeyword1": "cisco",
+    "navigationKeyword2": "cyberops",
+    "question": "What is an indicator of compromise (IOC)?",
+    "correctAnswer": "Evidence that suggests a system may have been breached or misused",
+    "incorrectAnswers": ["A guaranteed proof of data recovery", "A firewall rule that blocks all traffic", "A backup schedule"],
+    "explanation": "CISA describes IOCs as forensic data or artifacts that suggest potential intrusion activity.",
+    "keywords": ["cyberops", "ioc", "cisco"],
+    "source": "https://www.cisa.gov/news-events/news/understanding-indicators-compromise"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "cisco",
+    "navigationKeyword2": "cyberops",
+    "question": "What is the main role of a SIEM platform?",
+    "correctAnswer": "Collecting and correlating security logs and events from multiple sources",
+    "incorrectAnswers": ["Replacing endpoint backups", "Provisioning switch ports", "Allocating IP addresses"],
+    "explanation": "SIEM platforms aggregate and correlate security-relevant telemetry to support detection and investigation.",
+    "keywords": ["cyberops", "siem", "cisco"],
+    "source": "https://learn.microsoft.com/en-us/azure/sentinel/overview"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "cisco",
+    "navigationKeyword2": "cyberops",
+    "question": "What is a packet capture primarily used for during an investigation?",
+    "correctAnswer": "Inspecting network traffic in detail",
+    "incorrectAnswers": ["Resetting user passwords", "Updating BIOS firmware", "Defragmenting storage"],
+    "explanation": "Packet captures let analysts inspect network conversations and protocol details.",
+    "keywords": ["cyberops", "pcap", "cisco"],
+    "source": "https://www.wireshark.org/docs/wsug_html_chunked/ChCapCapturingSection.html"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "cisco",
+    "navigationKeyword2": "cyberops",
+    "question": "Why do analysts compare file hashes during triage?",
+    "correctAnswer": "To help verify integrity or identify known malicious files",
+    "incorrectAnswers": ["To assign VLANs", "To translate DNS names", "To rotate logs automatically"],
+    "explanation": "Hash values are commonly used to check file integrity and compare files against known threat intelligence.",
+    "keywords": ["cyberops", "hashing", "cisco"],
+    "source": "https://csrc.nist.gov/glossary/term/hash_function"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "cisco",
+    "navigationKeyword2": "cyberops",
+    "question": "What is phishing?",
+    "correctAnswer": "A social engineering attempt to trick users into revealing data or performing unsafe actions",
+    "incorrectAnswers": ["A method for compressing log files", "A route advertisement attack only", "A backup verification process"],
+    "explanation": "CISA explains phishing as a common social engineering technique used to steal credentials or deliver malware.",
+    "keywords": ["cyberops", "phishing", "cisco"],
+    "source": "https://www.cisa.gov/news-events/news/avoiding-social-engineering-and-phishing-attacks"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "cisco",
+    "navigationKeyword2": "cyberops",
+    "question": "What is a false positive in security monitoring?",
+    "correctAnswer": "A benign event incorrectly flagged as malicious",
+    "incorrectAnswers": ["A successful exploit missed by controls", "A verified malware sample", "A completed backup job"],
+    "explanation": "Analysts must distinguish benign events incorrectly flagged by detections from true malicious activity.",
+    "keywords": ["cyberops", "detections", "cisco"],
+    "source": "https://learn.microsoft.com/en-us/azure/sentinel/false-positives"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "cisco",
+    "navigationKeyword2": "cyberops",
+    "question": "What does the principle of least privilege mean?",
+    "correctAnswer": "Users and systems should receive only the access needed to perform their tasks",
+    "incorrectAnswers": ["Everyone should have local admin rights", "Privileges should expire every hour", "Only network admins can use MFA"],
+    "explanation": "Least privilege limits access to the minimum necessary to reduce risk.",
+    "keywords": ["cyberops", "least-privilege", "cisco"],
+    "source": "https://csrc.nist.gov/glossary/term/least_privilege"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "cisco",
+    "navigationKeyword2": "cyberops",
+    "question": "What does endpoint detection and response (EDR) focus on?",
+    "correctAnswer": "Monitoring endpoints for suspicious behavior and supporting response actions",
+    "incorrectAnswers": ["Managing DNS zones", "Load balancing web traffic", "Provisioning cloud storage only"],
+    "explanation": "EDR tools focus on endpoint visibility, detection, investigation, and response.",
+    "keywords": ["cyberops", "edr", "cisco"],
+    "source": "https://learn.microsoft.com/en-us/defender-endpoint/overview-endpoint-detection-response"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "cisco",
+    "navigationKeyword2": "cyberops",
+    "question": "Why is chain of custody important for digital evidence?",
+    "correctAnswer": "It documents how evidence was handled so its integrity and admissibility can be defended",
+    "incorrectAnswers": ["It speeds up DHCP leasing", "It compresses evidence files", "It replaces forensic imaging"],
+    "explanation": "Proper evidence handling records who collected, transferred, and analyzed evidence.",
+    "keywords": ["cyberops", "forensics", "cisco"],
+    "source": "https://www.justice.gov/criminal-ccips/file/442211/dl"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "cisco",
+    "navigationKeyword2": "cyberops",
+    "question": "What is an incident response playbook?",
+    "correctAnswer": "A documented set of steps for handling a specific type of security incident",
+    "incorrectAnswers": ["A list of approved passwords", "A router configuration archive", "A wireless heat map"],
+    "explanation": "Playbooks standardize repeatable response actions for common incident categories.",
+    "keywords": ["cyberops", "incident-response", "cisco"],
+    "source": "https://learn.microsoft.com/en-us/azure/sentinel/automation/playbook-triggers-actions"
+  }
+]

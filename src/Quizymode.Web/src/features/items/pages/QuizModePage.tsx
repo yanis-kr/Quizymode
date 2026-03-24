@@ -22,6 +22,7 @@ import {
   findCategoryNameFromSlug,
   buildCategoryPath,
 } from "@/utils/categorySlug";
+import { buildCollectionPath, buildCollectionStudyPath } from "@/utils/collectionPath";
 import { ExploreQuizBreadcrumb } from "@/components/ExploreQuizBreadcrumb";
 import { ScopeSecondaryBar } from "@/components/ScopeSecondaryBar";
 import { ScopePathHeader } from "@/components/ScopePathHeader";
@@ -195,8 +196,16 @@ const QuizModePage = () => {
   });
 
   const { data, isLoading, error, refetch } = useQuery({
-    queryKey: ["randomItems", category, quizSize, keywords],
-    queryFn: () => itemsApi.getRandom(category, quizSize, keywords),
+    queryKey: ["randomItems", category, quizSize, navigationKeywords, filterKeywords],
+    queryFn: () =>
+      itemsApi.getRandom(
+        category,
+        quizSize,
+        filterKeywords.length > 0 ? filterKeywords : undefined,
+        {
+          navigationKeywords: hasCategoryScope && navigationKeywords.length > 0 ? navigationKeywords : undefined,
+        }
+      ),
     // When URL has a category slug, wait for categories so we send resolved name; otherwise API can resolve by slug.
     enabled:
       !collectionId &&
@@ -336,7 +345,7 @@ const QuizModePage = () => {
       const firstId = items[0].id;
       if (collectionId) {
         navigate(
-          `/quiz/collections/${collectionId}/item/${firstId}${quizItemSearch}`,
+          `${buildCollectionStudyPath("quiz", collectionId, collectionInfo?.name, firstId)}${quizItemSearch}`,
           { replace: true }
         );
       } else if (category) {
@@ -474,7 +483,7 @@ const QuizModePage = () => {
       if (items[newIndex]) {
         if (collectionId) {
           navigate(
-            `/quiz/collections/${collectionId}/item/${items[newIndex].id}${quizItemSearch}`,
+            `${buildCollectionStudyPath("quiz", collectionId, collectionInfo?.name, items[newIndex].id)}${quizItemSearch}`,
             { replace: true }
           );
         } else if (category) {
@@ -495,7 +504,7 @@ const QuizModePage = () => {
       if (items[newIndex]) {
         if (collectionId) {
           navigate(
-            `/quiz/collections/${collectionId}/item/${items[newIndex].id}${quizItemSearch}`,
+            `${buildCollectionStudyPath("quiz", collectionId, collectionInfo?.name, items[newIndex].id)}${quizItemSearch}`,
             { replace: true }
           );
         } else if (category) {
@@ -546,7 +555,7 @@ const QuizModePage = () => {
       return;
     }
     queryClient.setQueryData(
-      ["randomItems", category, quizSize, keywords],
+      ["randomItems", category, quizSize, navigationKeywords, filterKeywords],
       (old: { items?: { id: string; collections?: { id: string; name: string; createdAt?: string }[] }[] } | undefined) => {
         if (!old?.items) return old;
         return {
@@ -608,6 +617,9 @@ const QuizModePage = () => {
     const query = params.toString();
     return query ? `?${query}` : "";
   })();
+  const collectionListPath = collectionId
+    ? buildCollectionPath(collectionId, collectionInfo?.name)
+    : null;
 
   return (
     <div className="px-4 py-6 sm:px-0">
@@ -621,7 +633,7 @@ const QuizModePage = () => {
             if (category) navigate(categoryScopePath);
             else navigate("/categories");
           } else if (mode === "list") {
-            if (collectionId) navigate(`/collections/${collectionId}`);
+            if (collectionId && collectionListPath) navigate(collectionListPath);
             else if (category)
               navigate(`${categoryScopePath}${categoryListSearch}`);
             else navigate("/categories");
@@ -640,7 +652,7 @@ const QuizModePage = () => {
             }
             if (collectionId)
               navigate(
-                `/explore/collections/${collectionId}/item/${currentItem?.id ?? items[0]?.id}${search}`
+                `${buildCollectionStudyPath("explore", collectionId, collectionInfo?.name, currentItem?.id ?? items[0]?.id)}${search}`
               );
             else if (category)
               navigate(
@@ -815,7 +827,7 @@ const QuizModePage = () => {
         footerContent={
           collectionId ? (
             <button
-              onClick={() => navigate(`/collections/${collectionId}`)}
+              onClick={() => collectionListPath && navigate(collectionListPath)}
               className="text-indigo-600 hover:text-indigo-700"
               type="button"
             >

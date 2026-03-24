@@ -1,0 +1,211 @@
+[
+  {
+    "category": "geography",
+    "navigationKeyword1": "maps",
+    "navigationKeyword2": "projection",
+    "question": "The method used to show part of the spherical Earth on a flat map or screen is called what?",
+    "correctAnswer": "a map projection",
+    "incorrectAnswers": [
+      "a contour interval",
+      "a magnetic declination",
+      "an isobar"
+    ],
+    "explanation": "USGS defines a map projection as the method for portraying the spherical Earth on a flat surface.",
+    "keywords": [
+      "projection",
+      "maps",
+      "usgs"
+    ],
+    "source": "https://www.usgs.gov/faqs/how-are-different-map-projections-used"
+  },
+  {
+    "category": "geography",
+    "navigationKeyword1": "maps",
+    "navigationKeyword2": "projection",
+    "question": "Can any flat map show every global geographic property perfectly at once?",
+    "correctAnswer": "No; every flat map misrepresents the Earth in some way.",
+    "incorrectAnswers": [
+      "Yes, if it uses satellite photos only.",
+      "Yes, equal-area maps never distort shapes.",
+      "Yes, digital screens remove projection error."
+    ],
+    "explanation": "USGS states no flat map can rival a globe; every flat map misrepresents the surface somehow.",
+    "keywords": [
+      "projection",
+      "distortion",
+      "globe"
+    ],
+    "source": "https://www.usgs.gov/faqs/how-are-different-map-projections-used"
+  },
+  {
+    "category": "geography",
+    "navigationKeyword1": "maps",
+    "navigationKeyword2": "projection",
+    "question": "The UTM coordinate grid is based on which projection family?",
+    "correctAnswer": "Transverse Mercator",
+    "incorrectAnswers": [
+      "Albers equal-area conic",
+      "Gnomonic",
+      "Van der Grinten only"
+    ],
+    "explanation": "USGS notes UTM is a plane grid based on the Transverse Mercator projection.",
+    "keywords": [
+      "projection",
+      "utm",
+      "mercator"
+    ],
+    "source": "https://www.usgs.gov/faqs/what-does-term-utm-mean-utm-better-or-more-accurate-latitudelongitude"
+  },
+  {
+    "category": "geography",
+    "navigationKeyword1": "maps",
+    "navigationKeyword2": "projection",
+    "question": "How wide is each UTM zone in degrees of longitude?",
+    "correctAnswer": "6 degrees",
+    "incorrectAnswers": [
+      "1 degree",
+      "10 degrees",
+      "15 degrees"
+    ],
+    "explanation": "USGS specifies each UTM zone spans 6° of longitude.",
+    "keywords": [
+      "projection",
+      "utm",
+      "zones"
+    ],
+    "source": "https://www.usgs.gov/faqs/what-does-term-utm-mean-utm-better-or-more-accurate-latitudelongitude"
+  },
+  {
+    "category": "geography",
+    "navigationKeyword1": "maps",
+    "navigationKeyword2": "projection",
+    "question": "Formal mapmaking requires projecting the spherical Earth onto what?",
+    "correctAnswer": "a map plane",
+    "incorrectAnswers": [
+      "a single point",
+      "a sound wave",
+      "a barograph trace"
+    ],
+    "explanation": "Britannica notes maps imply a formal method of projecting the sphere to a map plane.",
+    "keywords": [
+      "projection",
+      "cartography",
+      "basics"
+    ],
+    "source": "https://www.britannica.com/science/map"
+  },
+  {
+    "category": "geography",
+    "navigationKeyword1": "maps",
+    "navigationKeyword2": "projection",
+    "question": "Which representation does Britannica say can truly represent the entire Earth’s surface without projection trade-offs?",
+    "correctAnswer": "a globe",
+    "incorrectAnswers": [
+      "any flat wall map",
+      "a Mercator phone screen alone",
+      "a single hemisphere cone"
+    ],
+    "explanation": "Britannica contrasts globes as spherical maps with flat maps that require projection choices.",
+    "keywords": [
+      "projection",
+      "globe",
+      "accuracy"
+    ],
+    "source": "https://www.britannica.com/science/map"
+  },
+  {
+    "category": "geography",
+    "navigationKeyword1": "maps",
+    "navigationKeyword2": "projection",
+    "question": "Hydrography today focuses especially on ocean depths and what other oceanic quantities?",
+    "correctAnswer": "current directions and intensities",
+    "incorrectAnswers": [
+      "volcanic lightning rates",
+      "urban bus frequencies",
+      "lunar soil chemistry"
+    ],
+    "explanation": "Britannica states modern hydrography emphasizes depths and current directions and intensities.",
+    "keywords": [
+      "projection",
+      "hydrography",
+      "oceans"
+    ],
+    "source": "https://www.britannica.com/science/map"
+  },
+  {
+    "category": "geography",
+    "navigationKeyword1": "maps",
+    "navigationKeyword2": "projection",
+    "question": "Which ancient monument in Athens is tied to an early eight-point wind rose used by mariners?",
+    "correctAnswer": "the Tower of the Winds",
+    "incorrectAnswers": [
+      "the Colosseum",
+      "Stonehenge",
+      "the Great Pyramid of Giza"
+    ],
+    "explanation": "Britannica links the octagonal Tower of the Winds to classical wind-direction mapping.",
+    "keywords": [
+      "projection",
+      "wind-rose",
+      "history"
+    ],
+    "source": "https://www.britannica.com/technology/navigation-technology"
+  },
+  {
+    "category": "geography",
+    "navigationKeyword1": "maps",
+    "navigationKeyword2": "projection",
+    "question": "Portuguese explorers in the age of discovery helped replace which older wind-rose division with a finer system?",
+    "correctAnswer": "a 12-point wind rose used by some medieval navigators",
+    "incorrectAnswers": [
+      "a 32-point GPS grid",
+      "a 3-point monsoon dial",
+      "a 100-point compass app"
+    ],
+    "explanation": "Britannica notes Portuguese navigators moved from some 12-point roses to a 16-point system.",
+    "keywords": [
+      "projection",
+      "wind-rose",
+      "navigation"
+    ],
+    "source": "https://www.britannica.com/technology/navigation-technology"
+  },
+  {
+    "category": "geography",
+    "navigationKeyword1": "maps",
+    "navigationKeyword2": "projection",
+    "question": "Modern USGS topographic map products are derived primarily from what kind of underlying data?",
+    "correctAnswer": "GIS data sets",
+    "incorrectAnswers": [
+      "hand-painted parchment only",
+      "single-flight sketches",
+      "crowdsourced photos without control"
+    ],
+    "explanation": "USGS states modern US Topo maps are derived from GIS data sets.",
+    "keywords": [
+      "projection",
+      "gis",
+      "us-topo"
+    ],
+    "source": "https://www.usgs.gov/faqs/can-i-import-a-us-topo-map-my-geographic-information-system-gis"
+  },
+  {
+    "category": "geography",
+    "navigationKeyword1": "maps",
+    "navigationKeyword2": "projection",
+    "question": "Which US agency hosts the Map Viewer Application for locating climate and weather-related geospatial data?",
+    "correctAnswer": "NOAA National Centers for Environmental Information",
+    "incorrectAnswers": [
+      "NASA Artemis launch control",
+      "the Federal Reserve Board",
+      "the U.S. Mint"
+    ],
+    "explanation": "NOAA Climate.gov lists NCEI’s Map Viewer Application for finding climate and weather data.",
+    "keywords": [
+      "projection",
+      "noaa",
+      "gis"
+    ],
+    "source": "https://www.climate.gov/maps-data/dataset/ncei-map-viewer-application-data-locator"
+  }
+]

@@ -1,0 +1,134 @@
+[
+  {
+    "category": "history",
+    "navigationKeyword1": "us-history",
+    "navigationKeyword2": "reconstruction",
+    "question": "Congress created which agency in 1865 to aid formerly enslaved people with food, schools, and labor contracts?",
+    "correctAnswer": "The Freedmen’s Bureau (Bureau of Refugees, Freedmen, and Abandoned Lands)",
+    "incorrectAnswers": ["The Homestead Bureau", "The Indian Office", "The Pension Bureau"],
+    "explanation": "The bureau operated until 1872, mediating between planters and freedpeople across the defeated South.",
+    "keywords": ["reconstruction", "freedmen", "bureau"],
+    "source": "https://www.britannica.com/topic/Freedmens-Bureau"
+  },
+  {
+    "category": "history",
+    "navigationKeyword1": "us-history",
+    "navigationKeyword2": "reconstruction",
+    "question": "Southern states passed restrictive labor and vagrancy laws in 1865–66 widely known by what name?",
+    "correctAnswer": "Black Codes",
+    "incorrectAnswers": ["Jim Crow laws (later era)", "Alien and Sedition Acts", "Insurrection Acts"],
+    "explanation": "Republicans in Congress saw Black Codes as an attempt to restore slavery in all but name.",
+    "keywords": ["reconstruction", "black-codes", "south"],
+    "source": "https://www.britannica.com/topic/Black-Code-United-States-history"
+  },
+  {
+    "category": "history",
+    "navigationKeyword1": "us-history",
+    "navigationKeyword2": "reconstruction",
+    "question": "The Thirteenth Amendment, ratified in December 1865, abolished what institution nationwide?",
+    "correctAnswer": "Slavery and involuntary servitude (except as punishment for crime)",
+    "incorrectAnswers": ["Indentured servitude for Europeans only", "Debt peonage in the North only", "The Electoral College"],
+    "explanation": "The amendment constitutionalized emancipation beyond the wartime proclamation’s scope.",
+    "keywords": ["reconstruction", "thirteenth-amendment", "slavery"],
+    "source": "https://www.britannica.com/topic/Thirteenth-Amendment-United-States-Constitution"
+  },
+  {
+    "category": "history",
+    "navigationKeyword1": "us-history",
+    "navigationKeyword2": "reconstruction",
+    "question": "Radical Republicans like Thaddeus Stevens pushed which 1867 statutes dividing the South into military districts?",
+    "correctAnswer": "The Reconstruction Acts (Military Reconstruction Acts)",
+    "incorrectAnswers": ["The Kansas-Nebraska Act", "The Force Acts of 1870 only", "The Dawes Act"],
+    "explanation": "The acts required new state constitutions with Black male suffrage before readmission to the Union.",
+    "keywords": ["reconstruction", "congress", "military-rule"],
+    "source": "https://www.britannica.com/topic/Reconstruction-Acts"
+  },
+  {
+    "category": "history",
+    "navigationKeyword1": "us-history",
+    "navigationKeyword2": "reconstruction",
+    "question": "The Fourteenth Amendment (1868) established birthright citizenship and equal protection under the laws for whom?",
+    "correctAnswer": "All persons born or naturalized in the United States (including formerly enslaved Americans)",
+    "incorrectAnswers": ["Only white male citizens", "Only property owners", "Only Union veterans"],
+    "explanation": "Its due process and equal protection clauses became foundations of later civil rights litigation.",
+    "keywords": ["reconstruction", "fourteenth-amendment", "citizenship"],
+    "source": "https://www.britannica.com/topic/Fourteenth-Amendment-United-States-Constitution"
+  },
+  {
+    "category": "history",
+    "navigationKeyword1": "us-history",
+    "navigationKeyword2": "reconstruction",
+    "question": "The Fifteenth Amendment (1870) barred denial of the vote based on race, color, or what other status?",
+    "correctAnswer": "Previous condition of servitude",
+    "incorrectAnswers": ["Religion", "Property ownership", "Literacy"],
+    "explanation": "The amendment enfranchised Black men; women of all races remained largely excluded until 1920.",
+    "keywords": ["reconstruction", "fifteenth-amendment", "suffrage"],
+    "source": "https://www.britannica.com/topic/Fifteenth-Amendment-United-States-Constitution"
+  },
+  {
+    "category": "history",
+    "navigationKeyword1": "us-history",
+    "navigationKeyword2": "reconstruction",
+    "question": "The House impeached Andrew Johnson in 1868 chiefly over his violation of which law protecting cabinet officers?",
+    "correctAnswer": "The Tenure of Office Act",
+    "incorrectAnswers": ["The Pendleton Act", "The Logan Act", "The Sherman Antitrust Act"],
+    "explanation": "Johnson’s removal of Secretary of War Stanton triggered the trial; the Senate fell one vote short of conviction.",
+    "keywords": ["reconstruction", "impeachment", "johnson"],
+    "source": "https://www.britannica.com/event/Impeachment-trial-of-Andrew-Johnson"
+  },
+  {
+    "category": "history",
+    "navigationKeyword1": "us-history",
+    "navigationKeyword2": "reconstruction",
+    "question": "The Enforcement Acts of 1870–71 targeted intimidation by which white supremacist organization?",
+    "correctAnswer": "The Ku Klux Klan",
+    "incorrectAnswers": ["The Know-Nothing Party", "The Molly Maguires", "The White League only"],
+    "explanation": "Federal authority briefly suppressed Klan violence through prosecutions under the acts.",
+    "keywords": ["reconstruction", "kkk", "enforcement-acts"],
+    "source": "https://www.britannica.com/topic/Ku-Klux-Klan"
+  },
+  {
+    "category": "history",
+    "navigationKeyword1": "us-history",
+    "navigationKeyword2": "reconstruction",
+    "question": "Northerners who moved south to serve as teachers, officials, or investors were often derided as what?",
+    "correctAnswer": "Carpetbaggers",
+    "incorrectAnswers": ["Copperheads", "Redeemers", "Scalawags"],
+    "explanation": "Democrats used the slur to paint Reconstruction governments as corrupt outside impositions.",
+    "keywords": ["reconstruction", "carpetbagger", "politics"],
+    "source": "https://www.britannica.com/topic/carpetbagger-United-States-history"
+  },
+  {
+    "category": "history",
+    "navigationKeyword1": "us-history",
+    "navigationKeyword2": "reconstruction",
+    "question": "White southerners who backed Republican Reconstruction policies were nicknamed what?",
+    "correctAnswer": "Scalawags",
+    "incorrectAnswers": ["Bourbons", "Copperheads", "Know-Nothings"],
+    "explanation": "Scalawags included small farmers and Unionists who allied with freedpeople against planter Democrats.",
+    "keywords": ["reconstruction", "scalawag", "south"],
+    "source": "https://www.britannica.com/topic/scalawag-United-States-history"
+  },
+  {
+    "category": "history",
+    "navigationKeyword1": "us-history",
+    "navigationKeyword2": "reconstruction",
+    "question": "The disputed 1876 presidential election was resolved by a deal that withdrew federal troops from which region?",
+    "correctAnswer": "The South (former Confederate states)",
+    "incorrectAnswers": ["The Great Plains", "Alaska", "Puerto Rico"],
+    "explanation": "Rutherford B. Hayes’s inauguration followed promises to end ‘bayonet rule,’ enabling Redeemer Democrats.",
+    "keywords": ["reconstruction", "compromise", "1877"],
+    "source": "https://www.britannica.com/event/Compromise-of-1877"
+  },
+  {
+    "category": "history",
+    "navigationKeyword1": "us-history",
+    "navigationKeyword2": "reconstruction",
+    "question": "Hiram Revels of Mississippi became the first African American to serve in which national body in 1870?",
+    "correctAnswer": "The United States Senate",
+    "incorrectAnswers": ["The House of Representatives", "The Supreme Court", "The Electoral College"],
+    "explanation": "During Reconstruction, Black legislators in southern states briefly helped shape public education and civil rights laws.",
+    "keywords": ["reconstruction", "revels", "congress"],
+    "source": "https://www.britannica.com/biography/Hiram-Revels"
+  }
+]

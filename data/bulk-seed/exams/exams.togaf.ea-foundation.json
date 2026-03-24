@@ -1,0 +1,79 @@
+[
+  {
+    "category": "exams",
+    "navigationKeyword1": "togaf",
+    "navigationKeyword2": "ea-foundation",
+    "question": "What is the core method at the heart of TOGAF?",
+    "correctAnswer": "The Architecture Development Method (ADM)",
+    "incorrectAnswers": ["The Zachman matrix", "The ITIL service lifecycle", "The ArchiMate metamodel"],
+    "explanation": "The Open Group says the TOGAF Architecture Development Method forms the core of TOGAF.",
+    "keywords": ["togaf", "ea-foundation", "adm"],
+    "source": "https://www.opengroup.org/architecture/togaf7-doc/arch/p2/p2_intro.htm"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "togaf",
+    "navigationKeyword2": "ea-foundation",
+    "question": "What is the purpose of the TOGAF Preliminary Phase?",
+    "correctAnswer": "To define where, what, why, who, and how architecture work will be done and establish the architecture capability",
+    "incorrectAnswers": ["To finalize the migration roadmap", "To govern solution delivery only", "To produce the Technology Architecture"],
+    "explanation": "The Open Group describes the Preliminary Phase as defining where, what, why, who, and how architecture is done and establishing the framework needed for new architecture work.",
+    "keywords": ["togaf", "ea-foundation", "preliminary-phase"],
+    "source": "https://www.opengroup.org/soa/source-book/togaf/p4.htm"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "togaf",
+    "navigationKeyword2": "ea-foundation",
+    "question": "What is the main purpose of Phase A in the TOGAF ADM?",
+    "correctAnswer": "To establish the architecture project and create the Architecture Vision",
+    "incorrectAnswers": ["To define detailed technology standards", "To run implementation governance reviews", "To retire the architecture repository"],
+    "explanation": "The Open Group says Phase A is concerned with establishing the architecture project, obtaining approval to proceed, and creating a compelling Architecture Vision.",
+    "keywords": ["togaf", "ea-foundation", "phase-a"],
+    "source": "https://www.opengroup.org/soa/source-book/togaf/p4.htm"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "togaf",
+    "navigationKeyword2": "ea-foundation",
+    "question": "Which ADM phase is focused on Business Architecture?",
+    "correctAnswer": "Phase B",
+    "incorrectAnswers": ["Phase C", "Phase F", "Phase H"],
+    "explanation": "The Open Group lists Phase B as the Business Architecture phase.",
+    "keywords": ["togaf", "ea-foundation", "phase-b"],
+    "source": "https://www.opengroup.org/soa/source-book/togaf/p4.htm"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "togaf",
+    "navigationKeyword2": "ea-foundation",
+    "question": "Which ADM phase covers Information Systems Architectures, including Applications and Data?",
+    "correctAnswer": "Phase C",
+    "incorrectAnswers": ["Phase A", "Phase D", "Phase G"],
+    "explanation": "The Open Group lists Phase C as Information Systems Architectures, covering Applications and Data.",
+    "keywords": ["togaf", "ea-foundation", "phase-c"],
+    "source": "https://www.opengroup.org/soa/source-book/togaf/p4.htm"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "togaf",
+    "navigationKeyword2": "ea-foundation",
+    "question": "Which ADM phase is focused on Technology Architecture?",
+    "correctAnswer": "Phase D",
+    "incorrectAnswers": ["Phase B", "Phase E", "Phase H"],
+    "explanation": "The Open Group lists Phase D as the Technology Architecture phase.",
+    "keywords": ["togaf", "ea-foundation", "phase-d"],
+    "source": "https://www.opengroup.org/soa/source-book/togaf/p4.htm"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "togaf",
+    "navigationKeyword2": "ea-foundation",
+    "question": "What central role does Requirements Management play in TOGAF?",
+    "correctAnswer": "It sits at the center of the ADM and supports all phases",
+    "incorrectAnswers": ["It is used only in Phase A", "It applies only after implementation starts", "It replaces architecture governance"],
+    "explanation": "The Open Group blog notes that Requirements Management plays a central role in TOGAF's architecture work.",
+    "keywords": ["togaf", "ea-foundation", "requirements-management"],
+    "source": "https://blog.opengroup.org/2011/12/16/how-to-manage-requirements-within-the-enterprise-architecture-using-the-togaf-and-sabsa-frameworks-2/"
+  }
+]

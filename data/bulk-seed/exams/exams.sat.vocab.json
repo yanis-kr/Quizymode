@@ -1,0 +1,68 @@
+[
+  {
+    "category": "exams",
+    "navigationKeyword1": "sat",
+    "navigationKeyword2": "vocab",
+    "question": "Because the directions were so ___, everyone knew exactly what to do.",
+    "correctAnswer": "explicit",
+    "incorrectAnswers": ["ambiguous", "casual", "temporary"],
+    "explanation": "\"Explicit\" fits because clear directions remove confusion.",
+    "keywords": ["sat-vocab", "context-clues", "word-meaning"],
+    "source": "https://satsuite.collegeboard.org/sat/practice-preparation"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "sat",
+    "navigationKeyword2": "vocab",
+    "question": "The editor asked for a more ___ summary, so Maya cut unnecessary details.",
+    "correctAnswer": "concise",
+    "incorrectAnswers": ["ambiguous", "lengthy", "informal"],
+    "explanation": "\"Concise\" means brief and to the point.",
+    "keywords": ["sat-vocab", "context-clues", "word-meaning"],
+    "source": "https://satsuite.collegeboard.org/sat/practice-preparation"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "sat",
+    "navigationKeyword2": "vocab",
+    "question": "From the chart and paragraph, the reader can ___ that sales rose after the new ad campaign.",
+    "correctAnswer": "infer",
+    "incorrectAnswers": ["ignore", "delay", "contradict"],
+    "explanation": "\"Infer\" means to reach a conclusion from evidence.",
+    "keywords": ["sat-vocab", "context-clues", "word-meaning"],
+    "source": "https://satsuite.collegeboard.org/sat/practice-preparation"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "sat",
+    "navigationKeyword2": "vocab",
+    "question": "The two reports seemed to conflict at first, but the researcher was able to ___ them into one clear conclusion.",
+    "correctAnswer": "synthesize",
+    "incorrectAnswers": ["separate", "erase", "question"],
+    "explanation": "\"Synthesize\" means to combine parts into a coherent whole.",
+    "keywords": ["sat-vocab", "context-clues", "word-meaning"],
+    "source": "https://satsuite.collegeboard.org/sat/practice-preparation"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "sat",
+    "navigationKeyword2": "vocab",
+    "question": "The witness gave an ___ answer that could be interpreted in two different ways.",
+    "correctAnswer": "ambiguous",
+    "incorrectAnswers": ["explicit", "analogous", "precise"],
+    "explanation": "\"Ambiguous\" means open to more than one interpretation.",
+    "keywords": ["sat-vocab", "context-clues", "word-meaning"],
+    "source": "https://satsuite.collegeboard.org/sat/practice-preparation"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "sat",
+    "navigationKeyword2": "vocab",
+    "question": "The scientist used multiple trials to ___ her claim with evidence.",
+    "correctAnswer": "corroborate",
+    "incorrectAnswers": ["obscure", "weaken", "dismiss"],
+    "explanation": "\"Corroborate\" means to support with evidence.",
+    "keywords": ["sat-vocab", "context-clues", "word-meaning"],
+    "source": "https://satsuite.collegeboard.org/sat/practice-preparation"
+  }
+]

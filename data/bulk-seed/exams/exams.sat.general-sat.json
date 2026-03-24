@@ -1,0 +1,57 @@
+[
+  {
+    "category": "exams",
+    "navigationKeyword1": "sat",
+    "navigationKeyword2": "general-sat",
+    "question": "What are the two main sections on the digital SAT?",
+    "correctAnswer": "Reading and Writing, and Math",
+    "incorrectAnswers": ["Reading and Science", "Writing and History", "Math and Essay"],
+    "explanation": "College Board says the digital SAT has two sections: Reading and Writing, and Math.",
+    "keywords": ["sat-format", "test-prep"],
+    "source": "https://satsuite.collegeboard.org/sat/whats-on-the-test"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "sat",
+    "navigationKeyword2": "general-sat",
+    "question": "How long does the current digital SAT take to complete?",
+    "correctAnswer": "About 2 hours and 14 minutes",
+    "incorrectAnswers": ["90 minutes", "3 hours", "4 hours"],
+    "explanation": "College Board says the digital SAT takes 2 hours and 14 minutes.",
+    "keywords": ["sat-format", "timing", "test-prep"],
+    "source": "https://satsuite.collegeboard.org/digital/digital-sat/what-to-expect"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "sat",
+    "navigationKeyword2": "general-sat",
+    "question": "How is the digital SAT organized within each section?",
+    "correctAnswer": "Each section has two modules",
+    "incorrectAnswers": ["Each section has one long booklet", "Each section has four modules", "Only Math has modules"],
+    "explanation": "College Board says each SAT section is divided into two modules.",
+    "keywords": ["sat-format", "modules", "test-prep"],
+    "source": "https://satsuite.collegeboard.org/digital/why-digital"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "sat",
+    "navigationKeyword2": "general-sat",
+    "question": "Is there a break during the digital SAT?",
+    "correctAnswer": "Yes, there is a 10-minute break between sections",
+    "incorrectAnswers": ["No break is provided", "There are two 15-minute breaks", "Only accommodations include breaks"],
+    "explanation": "College Board says students get a 10-minute break between the Reading and Writing section and the Math section.",
+    "keywords": ["sat-format", "break", "test-prep"],
+    "source": "https://satsuite.collegeboard.org/digital/digital-sat/what-to-expect"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "sat",
+    "navigationKeyword2": "general-sat",
+    "question": "What does adaptive testing mean on the digital SAT?",
+    "correctAnswer": "Performance on the first module influences the difficulty of the second module",
+    "incorrectAnswers": ["The test changes subjects based on your major", "You can skip any question without penalty", "The score adjusts only after college applications are submitted"],
+    "explanation": "College Board explains that the digital SAT uses a multistage adaptive design in which performance on the first module affects the second module.",
+    "keywords": ["sat-format", "adaptive-testing", "test-prep"],
+    "source": "https://satsuite.collegeboard.org/digital/why-digital"
+  }
+]

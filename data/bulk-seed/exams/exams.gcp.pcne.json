@@ -1,0 +1,112 @@
+[
+  {
+    "category": "exams",
+    "navigationKeyword1": "gcp",
+    "navigationKeyword2": "pcne",
+    "question": "Which Google Cloud service provides private networking for cloud resources?",
+    "correctAnswer": "Virtual Private Cloud (VPC)",
+    "incorrectAnswers": ["Cloud SQL", "BigQuery", "Cloud Storage"],
+    "explanation": "VPC is the private networking foundation for Google Cloud resources.",
+    "keywords": ["gcp-pcne", "google-cloud-networking", "network-services"],
+    "source": "https://cloud.google.com/vpc"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "gcp",
+    "navigationKeyword2": "pcne",
+    "question": "Which Google Cloud service distributes traffic to backend services globally?",
+    "correctAnswer": "Cloud Load Balancing",
+    "incorrectAnswers": ["Cloud SQL", "Cloud Storage", "Bigtable"],
+    "explanation": "Cloud Load Balancing distributes traffic across backend services.",
+    "keywords": ["gcp-pcne", "google-cloud-networking", "network-services"],
+    "source": "https://cloud.google.com/load-balancing"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "gcp",
+    "navigationKeyword2": "pcne",
+    "question": "Which Google Cloud service translates domain names to IP addresses?",
+    "correctAnswer": "Cloud DNS",
+    "incorrectAnswers": ["Cloud SQL", "Cloud Armor", "BigQuery"],
+    "explanation": "Cloud DNS is Google's managed authoritative DNS service.",
+    "keywords": ["gcp-pcne", "google-cloud-networking", "network-services"],
+    "source": "https://cloud.google.com/products/networking/"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "gcp",
+    "navigationKeyword2": "pcne",
+    "question": "Which Google Cloud service provides managed network address translation?",
+    "correctAnswer": "Cloud NAT",
+    "incorrectAnswers": ["Cloud Storage", "Cloud SQL", "Pub/Sub"],
+    "explanation": "Cloud NAT provides managed network address translation for outbound connectivity.",
+    "keywords": ["gcp-pcne", "google-cloud-networking", "network-services"],
+    "source": "https://cloud.google.com/nat"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "gcp",
+    "navigationKeyword2": "pcne",
+    "question": "Which Google Cloud offering is used for hybrid connectivity with on-premises networks?",
+    "correctAnswer": "Cloud Interconnect",
+    "incorrectAnswers": ["Cloud Storage", "BigQuery", "Cloud Armor"],
+    "explanation": "Cloud Interconnect is part of Google's hybrid connectivity portfolio.",
+    "keywords": ["gcp-pcne", "google-cloud-networking", "network-services"],
+    "source": "https://cloud.google.com/hybrid-connectivity"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "gcp",
+    "navigationKeyword2": "pcne",
+    "question": "Which Google Cloud service protects applications from DDoS and web-based attacks?",
+    "correctAnswer": "Cloud Armor",
+    "incorrectAnswers": ["Cloud SQL", "Cloud Storage", "Bigtable"],
+    "explanation": "Cloud Armor provides application security and DDoS protection.",
+    "keywords": ["gcp-pcne", "google-cloud-networking", "network-services"],
+    "source": "https://cloud.google.com/security/products/armor"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "gcp",
+    "navigationKeyword2": "pcne",
+    "question": "Which Google Cloud security product includes Cloud Firewall?",
+    "correctAnswer": "Cloud Firewall",
+    "incorrectAnswers": ["Cloud Storage", "Pub/Sub", "BigQuery"],
+    "explanation": "Cloud Firewall is Google's cloud-first firewall product.",
+    "keywords": ["gcp-pcne", "google-cloud-networking", "network-services"],
+    "source": "https://cloud.google.com/security/products/firewall"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "gcp",
+    "navigationKeyword2": "pcne",
+    "question": "Which Google Cloud service helps analyze network topology and connectivity health?",
+    "correctAnswer": "Network Intelligence Center",
+    "incorrectAnswers": ["Cloud Storage", "Cloud SQL", "Bigtable"],
+    "explanation": "Network Intelligence Center provides visibility and diagnostics for Google Cloud networking.",
+    "keywords": ["gcp-pcne", "google-cloud-networking", "network-services"],
+    "source": "https://cloud.google.com/network-intelligence-center"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "gcp",
+    "navigationKeyword2": "pcne",
+    "question": "Which Google Cloud service monitors the performance, availability, and health of infrastructure?",
+    "correctAnswer": "Cloud Monitoring",
+    "incorrectAnswers": ["Cloud Storage", "Cloud NAT", "Cloud SQL"],
+    "explanation": "Cloud Monitoring provides metrics, dashboards, and alerts for infrastructure and applications.",
+    "keywords": ["gcp-pcne", "google-cloud-networking", "network-services"],
+    "source": "https://cloud.google.com/monitoring"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "gcp",
+    "navigationKeyword2": "pcne",
+    "question": "Which Google Cloud networking service would you choose for private network segmentation and routing?",
+    "correctAnswer": "Virtual Private Cloud (VPC)",
+    "incorrectAnswers": ["Cloud SQL", "BigQuery", "Cloud Storage"],
+    "explanation": "VPC provides network isolation, segmentation, routing, and connectivity controls.",
+    "keywords": ["gcp-pcne", "google-cloud-networking", "network-services"],
+    "source": "https://cloud.google.com/vpc"
+  }
+]

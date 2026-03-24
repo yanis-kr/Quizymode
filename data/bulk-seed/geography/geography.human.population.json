@@ -1,0 +1,211 @@
+[
+  {
+    "category": "geography",
+    "navigationKeyword1": "human",
+    "navigationKeyword2": "population",
+    "question": "According to the United Nations World Population Prospects 2024, which country has the largest population?",
+    "correctAnswer": "India",
+    "incorrectAnswers": [
+      "China",
+      "United States",
+      "Indonesia"
+    ],
+    "explanation": "UN mid-2024 estimates rank India first globally in population size.",
+    "keywords": [
+      "population",
+      "un-estimates",
+      "south-asia"
+    ],
+    "source": "https://www.un.org/development/desa/pd/world-population-prospects-2024"
+  },
+  {
+    "category": "geography",
+    "navigationKeyword1": "human",
+    "navigationKeyword2": "population",
+    "question": "On what date did the United Nations mark the world population reaching eight billion?",
+    "correctAnswer": "15 November 2022",
+    "incorrectAnswers": [
+      "1 January 2020",
+      "31 December 2021",
+      "20 March 2023"
+    ],
+    "explanation": "The UN observed the Day of Eight Billion on 15 November 2022.",
+    "keywords": [
+      "population",
+      "milestones",
+      "united-nations"
+    ],
+    "source": "https://www.un.org/en/dayof8billion"
+  },
+  {
+    "category": "geography",
+    "navigationKeyword1": "human",
+    "navigationKeyword2": "population",
+    "question": "Which African country has the largest population on the continent?",
+    "correctAnswer": "Nigeria",
+    "incorrectAnswers": [
+      "Ethiopia",
+      "Egypt",
+      "Democratic Republic of the Congo"
+    ],
+    "explanation": "Nigeria is the most populous country in Africa.",
+    "keywords": [
+      "population",
+      "africa",
+      "nigeria"
+    ],
+    "source": "https://www.britannica.com/place/Nigeria"
+  },
+  {
+    "category": "geography",
+    "navigationKeyword1": "human",
+    "navigationKeyword2": "population",
+    "question": "Which Southeast Asian archipelago country is among the world’s most populous states?",
+    "correctAnswer": "Indonesia",
+    "incorrectAnswers": [
+      "Malaysia",
+      "Philippines",
+      "Thailand"
+    ],
+    "explanation": "Indonesia ranks among the top countries globally in total population.",
+    "keywords": [
+      "population",
+      "indonesia",
+      "southeast-asia"
+    ],
+    "source": "https://www.britannica.com/place/Indonesia"
+  },
+  {
+    "category": "geography",
+    "navigationKeyword1": "human",
+    "navigationKeyword2": "population",
+    "question": "Which South Asian country has a very high population density on its fertile delta plains?",
+    "correctAnswer": "Bangladesh",
+    "incorrectAnswers": [
+      "Nepal",
+      "Bhutan",
+      "Sri Lanka"
+    ],
+    "explanation": "Bangladesh packs a large population into a compact riverine territory.",
+    "keywords": [
+      "population",
+      "density",
+      "south-asia"
+    ],
+    "source": "https://www.britannica.com/place/Bangladesh"
+  },
+  {
+    "category": "geography",
+    "navigationKeyword1": "human",
+    "navigationKeyword2": "population",
+    "question": "Which country lies along the Indus Valley and is among the world’s most populous states?",
+    "correctAnswer": "Pakistan",
+    "incorrectAnswers": [
+      "Afghanistan",
+      "Iran",
+      "Nepal"
+    ],
+    "explanation": "Pakistan is a densely peopled South Asian country draining the Indus system.",
+    "keywords": [
+      "population",
+      "pakistan",
+      "south-asia"
+    ],
+    "source": "https://www.britannica.com/place/Pakistan"
+  },
+  {
+    "category": "geography",
+    "navigationKeyword1": "human",
+    "navigationKeyword2": "population",
+    "question": "Which country in the Americas has the largest population?",
+    "correctAnswer": "United States",
+    "incorrectAnswers": [
+      "Brazil",
+      "Mexico",
+      "Canada"
+    ],
+    "explanation": "The United States exceeds any other American country in population.",
+    "keywords": [
+      "population",
+      "americas",
+      "united-states"
+    ],
+    "source": "https://www.britannica.com/place/United-States"
+  },
+  {
+    "category": "geography",
+    "navigationKeyword1": "human",
+    "navigationKeyword2": "population",
+    "question": "Which South American country is the continent’s most populous?",
+    "correctAnswer": "Brazil",
+    "incorrectAnswers": [
+      "Argentina",
+      "Colombia",
+      "Peru"
+    ],
+    "explanation": "Brazil’s population is larger than that of any other South American state.",
+    "keywords": [
+      "population",
+      "brazil",
+      "south-america"
+    ],
+    "source": "https://www.britannica.com/place/Brazil"
+  },
+  {
+    "category": "geography",
+    "navigationKeyword1": "human",
+    "navigationKeyword2": "population",
+    "question": "Which European Union member state has the largest population?",
+    "correctAnswer": "Germany",
+    "incorrectAnswers": [
+      "France",
+      "Italy",
+      "Spain"
+    ],
+    "explanation": "Germany is the most populous country in the European Union.",
+    "keywords": [
+      "population",
+      "european-union",
+      "germany"
+    ],
+    "source": "https://www.britannica.com/place/Germany"
+  },
+  {
+    "category": "geography",
+    "navigationKeyword1": "human",
+    "navigationKeyword2": "population",
+    "question": "The U.S. Census Bureau nests nine census divisions inside how many census regions?",
+    "correctAnswer": "Four",
+    "incorrectAnswers": [
+      "Three",
+      "Five",
+      "Nine"
+    ],
+    "explanation": "Four census regions group the states for statistical summaries.",
+    "keywords": [
+      "population",
+      "census",
+      "united-states"
+    ],
+    "source": "https://www.census.gov/programs-surveys/popest/about/glossary/geo-terms.html"
+  },
+  {
+    "category": "geography",
+    "navigationKeyword1": "human",
+    "navigationKeyword2": "population",
+    "question": "Which East Asian island country has a large population despite limited arable land?",
+    "correctAnswer": "Japan",
+    "incorrectAnswers": [
+      "Mongolia",
+      "Laos",
+      "Cambodia"
+    ],
+    "explanation": "Japan is densely settled on its coastal plains and major urban corridors.",
+    "keywords": [
+      "population",
+      "japan",
+      "east-asia"
+    ],
+    "source": "https://www.britannica.com/place/Japan"
+  }
+]

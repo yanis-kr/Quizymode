@@ -1,0 +1,112 @@
+[
+  {
+    "category": "exams",
+    "navigationKeyword1": "azure",
+    "navigationKeyword2": "az-305",
+    "question": "What is an Azure region?",
+    "correctAnswer": "A set of physical facilities that include datacenters and networking infrastructure",
+    "incorrectAnswers": ["A single availability zone", "A billing-only container", "A subnet inside a virtual network"],
+    "explanation": "An Azure region contains one or more datacenters plus networking infrastructure.",
+    "keywords": ["az-305", "azure-architecture", "solution-design"],
+    "source": "https://learn.microsoft.com/en-us/azure/reliability/regions-overview"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "azure",
+    "navigationKeyword2": "az-305",
+    "question": "What do Azure availability zones provide?",
+    "correctAnswer": "Fault isolation within a region",
+    "incorrectAnswers": ["Global DNS resolution", "Identity federation", "Object storage tiering"],
+    "explanation": "Availability zones are separated groups of datacenters within a region for redundancy and fault isolation.",
+    "keywords": ["az-305", "azure-architecture", "solution-design"],
+    "source": "https://learn.microsoft.com/en-us/azure/reliability/availability-zones-overview"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "azure",
+    "navigationKeyword2": "az-305",
+    "question": "Which Azure service is the deployment and management layer for Azure resources?",
+    "correctAnswer": "Azure Resource Manager",
+    "incorrectAnswers": ["Azure Load Balancer", "Azure AI Search", "Azure Backup"],
+    "explanation": "Azure Resource Manager is the deployment and management service for Azure.",
+    "keywords": ["az-305", "azure-architecture", "solution-design"],
+    "source": "https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/overview"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "azure",
+    "navigationKeyword2": "az-305",
+    "question": "Which Azure framework helps review workloads against architecture best practices?",
+    "correctAnswer": "Azure Well-Architected Framework",
+    "incorrectAnswers": ["Azure Service Health", "Azure Site Recovery", "Azure Policy"],
+    "explanation": "The Azure Well-Architected Framework provides guidance for improving workload quality across key pillars.",
+    "keywords": ["az-305", "azure-architecture", "solution-design"],
+    "source": "https://learn.microsoft.com/en-us/azure/well-architected/"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "azure",
+    "navigationKeyword2": "az-305",
+    "question": "Which Azure service distributes inbound traffic across backend resources?",
+    "correctAnswer": "Azure Load Balancer",
+    "incorrectAnswers": ["Azure Key Vault", "Azure Cosmos DB", "Azure Data Factory"],
+    "explanation": "Azure Load Balancer distributes inbound traffic to backend pool instances.",
+    "keywords": ["az-305", "azure-architecture", "solution-design"],
+    "source": "https://learn.microsoft.com/en-us/azure/load-balancer/load-balancer-overview"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "azure",
+    "navigationKeyword2": "az-305",
+    "question": "Which Azure service lets you run web apps and REST APIs without managing the underlying infrastructure?",
+    "correctAnswer": "Azure App Service",
+    "incorrectAnswers": ["Azure Files", "Azure Backup", "Azure Queue Storage"],
+    "explanation": "Azure App Service is a managed platform for web apps, mobile back ends, and APIs.",
+    "keywords": ["az-305", "azure-architecture", "solution-design"],
+    "source": "https://learn.microsoft.com/en-us/azure/app-service/overview"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "azure",
+    "navigationKeyword2": "az-305",
+    "question": "Which Azure service stores secrets, keys, and certificates?",
+    "correctAnswer": "Azure Key Vault",
+    "incorrectAnswers": ["Azure Virtual Network", "Azure Monitor", "Azure Load Balancer"],
+    "explanation": "Azure Key Vault secures and manages secrets, keys, and certificates.",
+    "keywords": ["az-305", "azure-architecture", "solution-design"],
+    "source": "https://learn.microsoft.com/en-us/azure/key-vault/general/overview"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "azure",
+    "navigationKeyword2": "az-305",
+    "question": "Which Azure service provides the fundamental building block for private networking?",
+    "correctAnswer": "Azure Virtual Network",
+    "incorrectAnswers": ["Azure Backup", "Azure AI Search", "Azure Blob Storage"],
+    "explanation": "Azure Virtual Network is the core private networking service in Azure.",
+    "keywords": ["az-305", "azure-architecture", "solution-design"],
+    "source": "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-networks-overview"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "azure",
+    "navigationKeyword2": "az-305",
+    "question": "Which Azure database service is a fully managed NoSQL and vector database?",
+    "correctAnswer": "Azure Cosmos DB",
+    "incorrectAnswers": ["Azure Files", "Azure Load Balancer", "Azure Site Recovery"],
+    "explanation": "Azure Cosmos DB is Microsoft's fully managed NoSQL and vector database service.",
+    "keywords": ["az-305", "azure-architecture", "solution-design"],
+    "source": "https://learn.microsoft.com/en-us/azure/cosmos-db/overview"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "azure",
+    "navigationKeyword2": "az-305",
+    "question": "Which Azure service connects enterprise data to AI-powered search experiences?",
+    "correctAnswer": "Azure AI Search",
+    "incorrectAnswers": ["Azure Backup", "Azure Virtual Machines", "Azure Load Balancer"],
+    "explanation": "Azure AI Search is a fully managed search service that connects data to AI.",
+    "keywords": ["az-305", "azure-architecture", "solution-design"],
+    "source": "https://learn.microsoft.com/en-us/azure/search/search-what-is-azure-search"
+  }
+]

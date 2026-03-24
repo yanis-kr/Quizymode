@@ -1,0 +1,57 @@
+[
+  {
+    "category": "exams",
+    "navigationKeyword1": "gre",
+    "navigationKeyword2": "verbal",
+    "question": "Because the memo was so ___, no one knew what action to take.",
+    "correctAnswer": "ambiguous",
+    "incorrectAnswers": ["precise", "practical", "efficient"],
+    "explanation": "\"Ambiguous\" fits because an unclear memo would cause confusion.",
+    "keywords": ["gre-verbal", "text-completion", "verbal-reasoning"],
+    "source": "https://www.ets.org/pdfs/gre/gre-sample-questions.pdf"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "gre",
+    "navigationKeyword2": "verbal",
+    "question": "Although the speaker sounded ___, the evidence supporting her claim was weak.",
+    "correctAnswer": "confident",
+    "incorrectAnswers": ["confused", "silent", "reluctant"],
+    "explanation": "The contrast word \"although\" suggests strong delivery despite weak evidence.",
+    "keywords": ["gre-verbal", "sentence-equivalence", "verbal-reasoning"],
+    "source": "https://www.ets.org/pdfs/gre/gre-sample-questions.pdf"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "gre",
+    "navigationKeyword2": "verbal",
+    "question": "The scientist's explanation was so ___ that even beginners understood it.",
+    "correctAnswer": "clear",
+    "incorrectAnswers": ["arcane", "tentative", "fragmented"],
+    "explanation": "If beginners understood it, the explanation must have been clear.",
+    "keywords": ["gre-verbal", "text-completion", "verbal-reasoning"],
+    "source": "https://www.ets.org/pdfs/gre/gre-sample-questions.pdf"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "gre",
+    "navigationKeyword2": "verbal",
+    "question": "The committee praised the proposal for being practical rather than ___.",
+    "correctAnswer": "theoretical",
+    "incorrectAnswers": ["useful", "efficient", "careful"],
+    "explanation": "\"Practical\" contrasts most naturally with \"theoretical.\"",
+    "keywords": ["gre-verbal", "sentence-equivalence", "verbal-reasoning"],
+    "source": "https://www.ets.org/pdfs/gre/gre-sample-questions.pdf"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "gre",
+    "navigationKeyword2": "verbal",
+    "question": "Despite early criticism, the book became highly ___ among scholars.",
+    "correctAnswer": "influential",
+    "incorrectAnswers": ["obscure", "careless", "skeptical"],
+    "explanation": "The contrast implies that the book later gained major importance.",
+    "keywords": ["gre-verbal", "text-completion", "verbal-reasoning"],
+    "source": "https://www.ets.org/pdfs/gre/gre-sample-questions.pdf"
+  }
+]

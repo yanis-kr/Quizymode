@@ -1,0 +1,211 @@
+[
+  {
+    "category": "geography",
+    "navigationKeyword1": "capitals",
+    "navigationKeyword2": "americas",
+    "question": "What is the national capital of Canada?",
+    "correctAnswer": "Ottawa",
+    "incorrectAnswers": [
+      "Toronto",
+      "Montreal",
+      "Vancouver"
+    ],
+    "explanation": "Ottawa in southeastern Ontario is Canada’s capital on the Ottawa River.",
+    "keywords": [
+      "americas",
+      "canada",
+      "north-america"
+    ],
+    "source": "https://www.britannica.com/place/Ottawa"
+  },
+  {
+    "category": "geography",
+    "navigationKeyword1": "capitals",
+    "navigationKeyword2": "americas",
+    "question": "What is the national capital of Mexico?",
+    "correctAnswer": "Mexico City",
+    "incorrectAnswers": [
+      "Guadalajara",
+      "Monterrey",
+      "Puebla"
+    ],
+    "explanation": "Mexico City is the federal district and seat of Mexico’s national government.",
+    "keywords": [
+      "americas",
+      "mexico",
+      "north-america"
+    ],
+    "source": "https://www.britannica.com/place/Mexico-City"
+  },
+  {
+    "category": "geography",
+    "navigationKeyword1": "capitals",
+    "navigationKeyword2": "americas",
+    "question": "What city is the seat of the United States federal government?",
+    "correctAnswer": "Washington, D.C.",
+    "incorrectAnswers": [
+      "New York City",
+      "Philadelphia",
+      "Chicago"
+    ],
+    "explanation": "Washington, D.C., is the federal capital district on the Potomac River.",
+    "keywords": [
+      "americas",
+      "north-america",
+      "united-states"
+    ],
+    "source": "https://www.britannica.com/place/Washington-DC"
+  },
+  {
+    "category": "geography",
+    "navigationKeyword1": "capitals",
+    "navigationKeyword2": "americas",
+    "question": "What is the national capital of Brazil?",
+    "correctAnswer": "Brasília",
+    "incorrectAnswers": [
+      "São Paulo",
+      "Rio de Janeiro",
+      "Salvador"
+    ],
+    "explanation": "Brasília was built as Brazil’s planned capital in the central highlands.",
+    "keywords": [
+      "americas",
+      "brazil",
+      "south-america"
+    ],
+    "source": "https://www.britannica.com/place/Brasilia"
+  },
+  {
+    "category": "geography",
+    "navigationKeyword1": "capitals",
+    "navigationKeyword2": "americas",
+    "question": "What is the national capital of Argentina?",
+    "correctAnswer": "Buenos Aires",
+    "incorrectAnswers": [
+      "Córdoba",
+      "Rosario",
+      "Mendoza"
+    ],
+    "explanation": "Buenos Aires on the Río de la Plata is Argentina’s capital.",
+    "keywords": [
+      "americas",
+      "argentina",
+      "south-america"
+    ],
+    "source": "https://www.britannica.com/place/Buenos-Aires"
+  },
+  {
+    "category": "geography",
+    "navigationKeyword1": "capitals",
+    "navigationKeyword2": "americas",
+    "question": "What is the national capital of Chile?",
+    "correctAnswer": "Santiago",
+    "incorrectAnswers": [
+      "Valparaíso",
+      "Concepción",
+      "Antofagasta"
+    ],
+    "explanation": "Santiago lies in Chile’s central valley and hosts the national government.",
+    "keywords": [
+      "americas",
+      "chile",
+      "south-america"
+    ],
+    "source": "https://www.britannica.com/place/Santiago"
+  },
+  {
+    "category": "geography",
+    "navigationKeyword1": "capitals",
+    "navigationKeyword2": "americas",
+    "question": "What is the national capital of Colombia?",
+    "correctAnswer": "Bogotá",
+    "incorrectAnswers": [
+      "Medellín",
+      "Cali",
+      "Cartagena"
+    ],
+    "explanation": "Bogotá high in the Andes is Colombia’s capital.",
+    "keywords": [
+      "americas",
+      "colombia",
+      "south-america"
+    ],
+    "source": "https://www.britannica.com/place/Bogota"
+  },
+  {
+    "category": "geography",
+    "navigationKeyword1": "capitals",
+    "navigationKeyword2": "americas",
+    "question": "What is the national capital of Peru?",
+    "correctAnswer": "Lima",
+    "incorrectAnswers": [
+      "Cusco",
+      "Arequipa",
+      "Trujillo"
+    ],
+    "explanation": "Lima on the Pacific coastal plain is Peru’s capital.",
+    "keywords": [
+      "americas",
+      "peru",
+      "south-america"
+    ],
+    "source": "https://www.britannica.com/place/Lima"
+  },
+  {
+    "category": "geography",
+    "navigationKeyword1": "capitals",
+    "navigationKeyword2": "americas",
+    "question": "What is the national capital of Cuba?",
+    "correctAnswer": "Havana",
+    "incorrectAnswers": [
+      "Santiago de Cuba",
+      "Camagüey",
+      "Holguín"
+    ],
+    "explanation": "Havana on Cuba’s northwest coast is the island nation’s capital.",
+    "keywords": [
+      "americas",
+      "cuba",
+      "caribbean"
+    ],
+    "source": "https://www.britannica.com/place/Havana"
+  },
+  {
+    "category": "geography",
+    "navigationKeyword1": "capitals",
+    "navigationKeyword2": "americas",
+    "question": "What is the national capital of Ecuador?",
+    "correctAnswer": "Quito",
+    "incorrectAnswers": [
+      "Guayaquil",
+      "Cuenca",
+      "Manta"
+    ],
+    "explanation": "Quito in the Andes is Ecuador’s capital.",
+    "keywords": [
+      "americas",
+      "ecuador",
+      "south-america"
+    ],
+    "source": "https://www.britannica.com/place/Quito"
+  },
+  {
+    "category": "geography",
+    "navigationKeyword1": "capitals",
+    "navigationKeyword2": "americas",
+    "question": "What is the national capital of Venezuela?",
+    "correctAnswer": "Caracas",
+    "incorrectAnswers": [
+      "Maracaibo",
+      "Valencia",
+      "Barquisimeto"
+    ],
+    "explanation": "Caracas in a mountain valley near the Caribbean coast is Venezuela’s capital.",
+    "keywords": [
+      "americas",
+      "venezuela",
+      "south-america"
+    ],
+    "source": "https://www.britannica.com/place/Caracas"
+  }
+]

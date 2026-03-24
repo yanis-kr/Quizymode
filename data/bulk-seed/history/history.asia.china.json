@@ -1,0 +1,134 @@
+[
+  {
+    "category": "history",
+    "navigationKeyword1": "asia",
+    "navigationKeyword2": "china",
+    "question": "In 221 BCE, which ruler proclaimed himself First Emperor after crushing rival Warring States?",
+    "correctAnswer": "Qin Shi Huang (Ying Zheng)",
+    "incorrectAnswers": ["Han Wudi", "Tang Taizong", "Kublai Khan"],
+    "explanation": "His legalist centralization, standardization of script, and Great Wall links shaped all later Chinese imperial administration.",
+    "keywords": ["china", "qin", "unification"],
+    "source": "https://www.britannica.com/biography/Qin-Shi-Huang"
+  },
+  {
+    "category": "history",
+    "navigationKeyword1": "asia",
+    "navigationKeyword2": "china",
+    "question": "Successive northern dynasties linked frontier fortifications into the vast defensive system known today as what?",
+    "correctAnswer": "The Great Wall of China",
+    "incorrectAnswers": ["The Grand Canal alone", "The Long Wall of Korea", "The Jade Gate barrier only"],
+    "explanation": "Although often associated with the Ming era visible today, wall-building began centuries earlier as a response to steppe raids.",
+    "keywords": ["china", "great-wall", "frontier"],
+    "source": "https://www.britannica.com/topic/Great-Wall-of-China"
+  },
+  {
+    "category": "history",
+    "navigationKeyword1": "asia",
+    "navigationKeyword2": "china",
+    "question": "Han expansion and caravan traffic helped fix which overland trade corridor linking China to Central Asia and beyond?",
+    "correctAnswer": "The Silk Road",
+    "incorrectAnswers": ["The Spice Route only by sea", "The Amber Road", "The Via Maris"],
+    "explanation": "Silk, horses, and ideas moved along oasis routes while states taxed and protected caravans.",
+    "keywords": ["china", "silk-road", "trade"],
+    "source": "https://www.britannica.com/topic/Silk-Road-trade-route"
+  },
+  {
+    "category": "history",
+    "navigationKeyword1": "asia",
+    "navigationKeyword2": "china",
+    "question": "Chang’an glittered as capital during which dynasty’s golden age of poetry, Buddhism, and westward reach?",
+    "correctAnswer": "The Tang dynasty (618–907 CE)",
+    "incorrectAnswers": ["The Yuan dynasty only", "The Shang dynasty", "The Republic of China (1912)"],
+    "explanation": "Examination culture, cosmopolitan markets, and Taizong’s expansion typified Tang power before late-rebellion decline.",
+    "keywords": ["china", "tang", "chang-an"],
+    "source": "https://www.britannica.com/topic/Tang-dynasty"
+  },
+  {
+    "category": "history",
+    "navigationKeyword1": "asia",
+    "navigationKeyword2": "china",
+    "question": "The Yongle emperor sent which Muslim eunuch admiral on massive Indian Ocean expeditions early in the 1400s?",
+    "correctAnswer": "Zheng He",
+    "incorrectAnswers": ["Koxinga (Zheng Chenggong)", "Lin Zexu", "Zeng Guofan"],
+    "explanation": "His treasure fleets displayed Ming prestige from Southeast Asia to the African coast before the state curbed oceanic ambition.",
+    "keywords": ["china", "ming", "maritime"],
+    "source": "https://www.britannica.com/biography/Zheng-He"
+  },
+  {
+    "category": "history",
+    "navigationKeyword1": "asia",
+    "navigationKeyword2": "china",
+    "question": "Qing efforts to halt British opium smuggling escalated into which mid-19th-century clashes that opened treaty ports?",
+    "correctAnswer": "The Opium Wars",
+    "incorrectAnswers": ["The Boxer Rebellion alone", "The Taiping wars only", "The Sino-French War exclusively"],
+    "explanation": "Unequal treaties after British and Franco-British victories eroded Qing sovereignty and ceded Hong Kong Island.",
+    "keywords": ["china", "opium", "qing"],
+    "source": "https://www.britannica.com/topic/Opium-Wars"
+  },
+  {
+    "category": "history",
+    "navigationKeyword1": "asia",
+    "navigationKeyword2": "china",
+    "question": "Hong Xiuquan’s Christian-inspired ‘Heavenly Kingdom’ sparked which catastrophic 1850s–1864 rebellion?",
+    "correctAnswer": "The Taiping Rebellion",
+    "incorrectAnswers": ["The Nian Rebellion alone", "The White Lotus uprising only", "The Dungan revolts exclusively"],
+    "explanation": "It ravaged the Yangzi heartland and fatally weakened the Qing before Zeng Guofan’s armies retook Nanjing.",
+    "keywords": ["china", "taiping", "qing"],
+    "source": "https://www.britannica.com/event/Taiping-Rebellion"
+  },
+  {
+    "category": "history",
+    "navigationKeyword1": "asia",
+    "navigationKeyword2": "china",
+    "question": "The Wuchang mutiny of October 10, 1911, helped trigger the collapse of which dynasty?",
+    "correctAnswer": "The Qing (Manchu) dynasty",
+    "incorrectAnswers": ["The Ming dynasty", "The Song dynasty", "The Yuan dynasty only"],
+    "explanation": "Yuan Shikai and republicans negotiated the child emperor Puyi’s abdication in 1912.",
+    "keywords": ["china", "1911", "republic"],
+    "source": "https://www.britannica.com/event/Chinese-Revolution-1911-1912"
+  },
+  {
+    "category": "history",
+    "navigationKeyword1": "asia",
+    "navigationKeyword2": "china",
+    "question": "Which 1934–35 retreat cemented Mao Zedong’s leadership as Communist armies escaped Jiangxi encirclement?",
+    "correctAnswer": "The Long March",
+    "incorrectAnswers": ["The Northern Expedition", "The Hundred Regiments Offensive", "The Jiangxi Soviet purge only"],
+    "explanation": "The trek to Shaanxi preserved the Red Army cadre that would fight Japan and later the Nationalists.",
+    "keywords": ["china", "long-march", "ccp"],
+    "source": "https://www.britannica.com/event/Long-March"
+  },
+  {
+    "category": "history",
+    "navigationKeyword1": "asia",
+    "navigationKeyword2": "china",
+    "question": "After Japan’s 1945 surrender, renewed fighting between Nationalists and Communists ended in 1949 with whose mainland victory?",
+    "correctAnswer": "Mao Zedong’s Chinese Communist Party",
+    "incorrectAnswers": ["Chiang Kai-shek’s permanent reconquest", "The Manchukuo restoration", "A coalition under the Dalai Lama"],
+    "explanation": "The People’s Republic was proclaimed in Beijing while the Nationalists withdrew to Taiwan.",
+    "keywords": ["china", "civil-war", "1949"],
+    "source": "https://www.britannica.com/event/Chinese-Civil-War"
+  },
+  {
+    "category": "history",
+    "navigationKeyword1": "asia",
+    "navigationKeyword2": "china",
+    "question": "Red Guards and ‘struggle sessions’ typified which Maoist campaign from 1966 aimed at renewing revolution?",
+    "correctAnswer": "The Cultural Revolution",
+    "incorrectAnswers": ["The Great Leap Forward alone", "The Hundred Flowers Movement only", "The Four Modernizations"],
+    "explanation": "Schools shut, cadres purged, and cultural relics smashed until the army and later Deng-era reforms wound it down.",
+    "keywords": ["china", "cultural-revolution", "mao"],
+    "source": "https://www.britannica.com/event/Cultural-Revolution"
+  },
+  {
+    "category": "history",
+    "navigationKeyword1": "asia",
+    "navigationKeyword2": "china",
+    "question": "Which post-Mao leader opened special economic zones and declared ‘to get rich is glorious’ while reforming the command economy?",
+    "correctAnswer": "Deng Xiaoping",
+    "incorrectAnswers": ["Hua Guofeng alone", "Jiang Zemin in 1966", "Lin Biao"],
+    "explanation": "Household responsibility in agriculture and foreign investment transformed China after 1978.",
+    "keywords": ["china", "reform", "deng"],
+    "source": "https://www.britannica.com/biography/Deng-Xiaoping"
+  }
+]

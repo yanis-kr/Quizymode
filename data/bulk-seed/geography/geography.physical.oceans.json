@@ -1,0 +1,211 @@
+[
+  {
+    "category": "geography",
+    "navigationKeyword1": "physical",
+    "navigationKeyword2": "oceans",
+    "question": "Modern geography often treats which circumpolar body of water encircling Antarctica as a distinct ocean alongside the Pacific, Atlantic, Indian, and Arctic?",
+    "correctAnswer": "The Southern Ocean",
+    "incorrectAnswers": [
+      "The Red Sea",
+      "The Caspian Sea",
+      "The Sargasso Sea only"
+    ],
+    "explanation": "Britannica and other references increasingly recognize a Southern Ocean ringing Antarctica; the Pacific remains the largest single basin by area.",
+    "keywords": [
+      "oceans",
+      "southern-ocean",
+      "antarctica"
+    ],
+    "source": "https://www.britannica.com/place/Pacific-Ocean"
+  },
+  {
+    "category": "geography",
+    "navigationKeyword1": "physical",
+    "navigationKeyword2": "oceans",
+    "question": "Which ocean lies between the Americas to the west and Europe and Africa to the east?",
+    "correctAnswer": "Atlantic Ocean",
+    "incorrectAnswers": [
+      "Indian Ocean",
+      "Southern Ocean",
+      "Arctic Ocean"
+    ],
+    "explanation": "The Atlantic stretches in an S-shape between the New World and the Old World.",
+    "keywords": [
+      "oceans",
+      "atlantic",
+      "basin"
+    ],
+    "source": "https://www.britannica.com/place/Atlantic-Ocean"
+  },
+  {
+    "category": "geography",
+    "navigationKeyword1": "physical",
+    "navigationKeyword2": "oceans",
+    "question": "Which ocean lies mainly south of Asia and between Africa and Australia?",
+    "correctAnswer": "Indian Ocean",
+    "incorrectAnswers": [
+      "Pacific Ocean",
+      "Southern Ocean",
+      "Red Sea"
+    ],
+    "explanation": "The Indian Ocean is bounded by Africa, Asia, Australia, and the Southern Ocean.",
+    "keywords": [
+      "oceans",
+      "indian-ocean",
+      "monsoon"
+    ],
+    "source": "https://www.britannica.com/place/Indian-Ocean"
+  },
+  {
+    "category": "geography",
+    "navigationKeyword1": "physical",
+    "navigationKeyword2": "oceans",
+    "question": "Which ocean surrounds the North Pole and is the smallest by area?",
+    "correctAnswer": "Arctic Ocean",
+    "incorrectAnswers": [
+      "Southern Ocean",
+      "Baltic Sea",
+      "Hudson Bay"
+    ],
+    "explanation": "The Arctic Ocean is the shallowest and smallest of the world oceans.",
+    "keywords": [
+      "oceans",
+      "arctic",
+      "polar"
+    ],
+    "source": "https://www.britannica.com/place/Arctic-Ocean"
+  },
+  {
+    "category": "geography",
+    "navigationKeyword1": "physical",
+    "navigationKeyword2": "oceans",
+    "question": "In which ocean is the Mariana Trench, home to Challenger Deep?",
+    "correctAnswer": "Pacific Ocean",
+    "incorrectAnswers": [
+      "Atlantic Ocean",
+      "Indian Ocean",
+      "Arctic Ocean"
+    ],
+    "explanation": "The Mariana Trench lies east of the Mariana Islands in the western Pacific.",
+    "keywords": [
+      "oceans",
+      "trenches",
+      "pacific"
+    ],
+    "source": "https://www.britannica.com/place/Mariana-Trench"
+  },
+  {
+    "category": "geography",
+    "navigationKeyword1": "physical",
+    "navigationKeyword2": "oceans",
+    "question": "Which marginal sea of the Atlantic separates southern Europe from North Africa?",
+    "correctAnswer": "Mediterranean Sea",
+    "incorrectAnswers": [
+      "Black Sea",
+      "Caspian Sea",
+      "Red Sea"
+    ],
+    "explanation": "The Mediterranean connects to the Atlantic through the Strait of Gibraltar.",
+    "keywords": [
+      "oceans",
+      "seas",
+      "mediterranean"
+    ],
+    "source": "https://www.britannica.com/place/Mediterranean-Sea"
+  },
+  {
+    "category": "geography",
+    "navigationKeyword1": "physical",
+    "navigationKeyword2": "oceans",
+    "question": "Which sea borders the northeastern coasts of Canada and Greenland and links to the Atlantic?",
+    "correctAnswer": "Labrador Sea",
+    "incorrectAnswers": [
+      "Bering Sea",
+      "Sea of Okhotsk",
+      "Tasman Sea"
+    ],
+    "explanation": "The Labrador Sea lies between Labrador and Greenland as part of the North Atlantic system.",
+    "keywords": [
+      "oceans",
+      "seas",
+      "labrador"
+    ],
+    "source": "https://www.britannica.com/place/Labrador-Sea"
+  },
+  {
+    "category": "geography",
+    "navigationKeyword1": "physical",
+    "navigationKeyword2": "oceans",
+    "question": "Which sea separates southern Europe from western Asia?",
+    "correctAnswer": "Aegean Sea",
+    "incorrectAnswers": [
+      "Adriatic Sea",
+      "Baltic Sea",
+      "North Sea"
+    ],
+    "explanation": "The Aegean lies between Greece and Türkiye and opens into the Mediterranean.",
+    "keywords": [
+      "oceans",
+      "seas",
+      "aegean"
+    ],
+    "source": "https://www.britannica.com/place/Aegean-Sea"
+  },
+  {
+    "category": "geography",
+    "navigationKeyword1": "physical",
+    "navigationKeyword2": "oceans",
+    "question": "Which sea lies between the Arabian Peninsula and northeastern Africa?",
+    "correctAnswer": "Red Sea",
+    "incorrectAnswers": [
+      "Persian Gulf",
+      "Caspian Sea",
+      "Arabian Sea"
+    ],
+    "explanation": "The long narrow Red Sea connects to the Indian Ocean through the Gulf of Aden and Bab el-Mandeb.",
+    "keywords": [
+      "oceans",
+      "seas",
+      "red-sea"
+    ],
+    "source": "https://www.britannica.com/place/Red-Sea"
+  },
+  {
+    "category": "geography",
+    "navigationKeyword1": "physical",
+    "navigationKeyword2": "oceans",
+    "question": "Which warm Atlantic current carries tropical water northward past eastern North America?",
+    "correctAnswer": "Gulf Stream",
+    "incorrectAnswers": [
+      "Canary Current",
+      "Labrador Current",
+      "Benguela Current"
+    ],
+    "explanation": "The Gulf Stream flows along the U.S. East Coast before heading toward the North Atlantic.",
+    "keywords": [
+      "oceans",
+      "currents",
+      "atlantic"
+    ],
+    "source": "https://www.britannica.com/place/Gulf-Stream"
+  },
+  {
+    "category": "geography",
+    "navigationKeyword1": "physical",
+    "navigationKeyword2": "oceans",
+    "question": "Which gulf is the largest in the world by surface area?",
+    "correctAnswer": "Gulf of Mexico",
+    "incorrectAnswers": [
+      "Hudson Bay",
+      "Bay of Bengal",
+      "Persian Gulf"
+    ],
+    "explanation": "The Gulf of Mexico is a broad marginal sea of the Atlantic bordering the southeastern United States and eastern Mexico.",
+    "keywords": [
+      "oceans",
+      "gulfs",
+      "gulf-of-mexico"
+    ],
+    "source": "https://www.britannica.com/place/Gulf-of-Mexico-Gulf-of-America"
+  }
+]

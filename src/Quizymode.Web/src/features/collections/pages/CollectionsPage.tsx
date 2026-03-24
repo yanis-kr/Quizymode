@@ -22,6 +22,7 @@ import { StarIcon as StarIconSolid } from "@heroicons/react/24/solid";
 import { BookmarkIcon as BookmarkIconSolid, CheckCircleIcon as CheckCircleIconSolid } from "@heroicons/react/24/solid";
 import LoadingSpinner from "@/components/LoadingSpinner";
 import ErrorMessage from "@/components/ErrorMessage";
+import { buildCollectionPath, buildCollectionStudyPath } from "@/utils/collectionPath";
 import type {
   CollectionDiscoverItem,
   CollectionRatingResponse,
@@ -48,7 +49,7 @@ interface CollectionCardProps {
   onDelete?: (id: string, name: string) => void;
   onEdit?: (id: string, payload: { name: string; description: string | null; isPublic: boolean }) => void;
   onSetActive?: (id: string) => void;
-  onCopyLink?: (id: string, isPublic: boolean) => void;
+  onCopyLink?: (id: string, name: string, isPublic: boolean) => void;
   onSelect?: (id: string) => void;
   isBookmarkPending?: boolean;
   isDeletePending?: boolean;
@@ -88,6 +89,9 @@ function CollectionCard({
 }: CollectionCardProps) {
   const isActive = activeCollectionId === id;
   const queryClient = useQueryClient();
+  const collectionPath = buildCollectionPath(id, name);
+  const explorePath = buildCollectionStudyPath("explore", id, name);
+  const quizPath = buildCollectionStudyPath("quiz", id, name);
 
   const { data: ratingData } = useQuery({
     queryKey: ["collectionRating", id],
@@ -162,7 +166,7 @@ function CollectionCard({
               {titleArea}
             </button>
           ) : (
-            <Link to={`/collections/${id}`} className="block">
+            <Link to={collectionPath} className="block">
               {titleArea}
             </Link>
           )}
@@ -209,7 +213,7 @@ function CollectionCard({
               onClick={(e) => {
                 e.preventDefault();
                 e.stopPropagation();
-                onCopyLink(id, isPublic ?? false);
+                onCopyLink(id, name, isPublic ?? false);
               }}
               className="p-2 text-gray-400 hover:text-blue-600 hover:bg-blue-50 rounded-md"
               title="Copy shared link"
@@ -317,7 +321,7 @@ function CollectionCard({
       )}
       <div className="flex flex-wrap gap-2 mt-4">
         <Link
-          to={`/collections/${id}`}
+          to={collectionPath}
           className="flex items-center px-3 py-2 text-sm font-medium text-blue-600 bg-blue-50 rounded-md hover:bg-blue-100"
           onClick={(e) => e.stopPropagation()}
         >
@@ -325,7 +329,7 @@ function CollectionCard({
           List
         </Link>
         <Link
-          to={`/explore/collections/${id}`}
+          to={explorePath}
           className="flex items-center px-3 py-2 text-sm font-medium text-indigo-600 bg-indigo-50 rounded-md hover:bg-indigo-100"
           onClick={(e) => e.stopPropagation()}
         >
@@ -333,7 +337,7 @@ function CollectionCard({
           Flashcards
         </Link>
         <Link
-          to={`/quiz/collections/${id}`}
+          to={quizPath}
           className="flex items-center px-3 py-2 text-sm font-medium text-green-600 bg-green-50 rounded-md hover:bg-green-100"
           onClick={(e) => e.stopPropagation()}
         >
@@ -554,7 +558,7 @@ const CollectionsPage = () => {
     if (!id) return;
     const guidRegex = /^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$/;
     if (guidRegex.test(id)) {
-      navigate(`/collections/${id}`);
+      navigate(buildCollectionPath(id));
     } else {
       window.alert("Please enter a valid collection ID (GUID format).");
     }
@@ -580,8 +584,8 @@ const CollectionsPage = () => {
     });
   };
 
-  const handleCopyLink = (collectionId: string, isPublic: boolean) => {
-    const url = `${window.location.origin}/collections/${collectionId}`;
+  const handleCopyLink = (collectionId: string, collectionName: string, isPublic: boolean) => {
+    const url = `${window.location.origin}${buildCollectionPath(collectionId, collectionName)}`;
     void navigator.clipboard.writeText(url).then(() => {
       if (!isPublic) {
         setCopyLinkWarning("Collection is private. Others cannot open this link until you make it public (Edit → Shared with others).");

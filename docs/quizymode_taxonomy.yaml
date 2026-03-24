@@ -59,41 +59,34 @@ exams:
     act:
       description: ACT prep
       keywords:
-        general-act: ACT prep
-        math: Math section
-        english: English rules
-        reading: Reading comp
-        science: Science read
-        writing: Essay prep
+        general-act: ACT format
+        math: Math problems
+        english: Grammar edits
     sat:
       description: SAT prep
       keywords:
-        general-sat: SAT prep
-        math: Math section
-        reading: Reading comp
-        writing: Writing rules
+        general-sat: SAT format
+        math: Math problems
+        writing: Grammar edits
         vocab: Word meaning
-        dsat: Digital SAT
     ap:
       description: AP exams
       keywords:
-        general-ap: AP exams
-        calculus: Calc exams
-        biology: Bio exam
-        chemistry: Chem exam
-        physics: Physics exam
+        general-ap: AP format
+        calculus: Calculus content
+        biology: Biology content
+        chemistry: Chemistry content
+        physics: Physics content
         us-history: US history
         world-history: World history
-        psychology: Psych exam
+        psychology: Psychology content
     gre:
       description: GRE prep
       keywords:
-        general-gre: GRE prep
-        quant: Math section
-        verbal: Word section
-        writing: Essay tasks
+        general-gre: GRE format
+        quant: Quant problems
+        verbal: Text completion
         vocab: Word meaning
-        mixed: Mixed sets
     nursing:
       description: Nursing exams
       keywords:
@@ -112,6 +105,12 @@ exams:
         frm: Risk cert
         series-7: Broker exam
         ea: Tax exam
+    togaf:
+      description: TOGAF certs
+      keywords:
+        general-togaf: TOGAF overview
+        ea-foundation: EA foundation
+        ea-practitioner: EA practitioner
 tech:
   description: Tech
   keywords:

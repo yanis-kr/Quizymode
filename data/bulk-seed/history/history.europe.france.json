@@ -1,0 +1,134 @@
+[
+  {
+    "category": "history",
+    "navigationKeyword1": "europe",
+    "navigationKeyword2": "france",
+    "question": "Joan of Arc’s relief of which city in 1429 became a turning point in the Hundred Years’ War?",
+    "correctAnswer": "Orléans",
+    "incorrectAnswers": ["Paris", "Rouen", "Calais"],
+    "explanation": "Her victories bolstered Charles VII’s legitimacy before her capture and trial.",
+    "keywords": ["france", "joan-of-arc", "hundred-years-war"],
+    "source": "https://www.britannica.com/biography/Saint-Joan-of-Arc"
+  },
+  {
+    "category": "history",
+    "navigationKeyword1": "europe",
+    "navigationKeyword2": "france",
+    "question": "Louis XIV centralized absolutism from which palace complex outside Paris?",
+    "correctAnswer": "Versailles",
+    "incorrectAnswers": ["Fontainebleau only", "The Louvre as main court", "Chambord"],
+    "explanation": "Nobles were housed at Versailles to keep them under royal surveillance and patronage.",
+    "keywords": ["france", "louis-xiv", "versailles"],
+    "source": "https://www.britannica.com/biography/Louis-XIV-king-of-France"
+  },
+  {
+    "category": "history",
+    "navigationKeyword1": "europe",
+    "navigationKeyword2": "france",
+    "question": "The 1789 storming of which Paris fortress-prison symbolized the start of the French Revolution?",
+    "correctAnswer": "The Bastille",
+    "incorrectAnswers": ["The Conciergerie", "Les Invalides", "The Tuileries"],
+    "explanation": "Parisians seized arms and gunpowder, forcing royal concessions to the National Assembly.",
+    "keywords": ["france", "revolution", "1789"],
+    "source": "https://www.britannica.com/event/French-Revolution"
+  },
+  {
+    "category": "history",
+    "navigationKeyword1": "europe",
+    "navigationKeyword2": "france",
+    "question": "Napoleon Bonaparte crowned himself emperor in 1804 after a coup that ended which republic?",
+    "correctAnswer": "The First French Republic",
+    "incorrectAnswers": ["The July Monarchy", "The Second Empire", "The Directory alone without Consulate"],
+    "explanation": "His legal and administrative reforms, including the Napoleonic Code, outlasted his military empire.",
+    "keywords": ["france", "napoleon", "empire"],
+    "source": "https://www.britannica.com/biography/Napoleon-I-emperor-of-the-French"
+  },
+  {
+    "category": "history",
+    "navigationKeyword1": "europe",
+    "navigationKeyword2": "france",
+    "question": "The Paris Commune briefly ruled the capital in 1871 after defeat in which war?",
+    "correctAnswer": "The Franco-Prussian War",
+    "incorrectAnswers": ["The Crimean War", "World War I", "The Algerian War"],
+    "explanation": "Radical workers and National Guard units proclaimed a commune crushed by Versailles troops.",
+    "keywords": ["france", "commune", "1871"],
+    "source": "https://www.britannica.com/event/Paris-Commune"
+  },
+  {
+    "category": "history",
+    "navigationKeyword1": "europe",
+    "navigationKeyword2": "france",
+    "question": "Alfred Dreyfus’s wrongful conviction for espionage exposed antisemitism and divided France during which scandal?",
+    "correctAnswer": "The Dreyfus Affair",
+    "incorrectAnswers": ["The Panama Scandal", "The Stavisky Affair", "The XYZ Affair"],
+    "explanation": "Émile Zola’s “J’accuse…!” mobilized intellectuals for Dreyfus’s eventual exoneration.",
+    "keywords": ["france", "dreyfus", "third-republic"],
+    "source": "https://www.britannica.com/event/Dreyfus-affair"
+  },
+  {
+    "category": "history",
+    "navigationKeyword1": "europe",
+    "navigationKeyword2": "france",
+    "question": "Charles de Gaulle led the Free French against occupation and later founded which postwar political order?",
+    "correctAnswer": "The Fifth Republic (1958 constitution)",
+    "incorrectAnswers": ["The Second Empire", "The Paris Commune", "The Directory"],
+    "explanation": "De Gaulle strengthened presidential power and withdrew from NATO’s integrated military command in 1966.",
+    "keywords": ["france", "de-gaulle", "fifth-republic"],
+    "source": "https://www.britannica.com/biography/Charles-de-Gaulle"
+  },
+  {
+    "category": "history",
+    "navigationKeyword1": "europe",
+    "navigationKeyword2": "france",
+    "question": "The 1919 Paris Peace Conference produced the Treaty of Versailles, which blamed Germany for starting which war?",
+    "correctAnswer": "World War I",
+    "incorrectAnswers": ["The Franco-Prussian War", "The Crimean War", "The Seven Years’ War"],
+    "explanation": "French security concerns shaped harsh reparations and demilitarization clauses on Germany’s western border.",
+    "keywords": ["france", "versailles", "world-war-i"],
+    "source": "https://www.britannica.com/event/Treaty-of-Versailles"
+  },
+  {
+    "category": "history",
+    "navigationKeyword1": "europe",
+    "navigationKeyword2": "france",
+    "question": "The Vichy regime collaborated with Nazi Germany after France’s defeat in which campaign?",
+    "correctAnswer": "The Battle of France (1940)",
+    "incorrectAnswers": ["The Nivelle Offensive", "Dien Bien Phu", "Sedan 1870 only"],
+    "explanation": "Marshal Pétain’s government ruled the southern zone until Allied liberation.",
+    "keywords": ["france", "world-war-ii", "vichy"],
+    "source": "https://www.britannica.com/place/Vichy-France"
+  },
+  {
+    "category": "history",
+    "navigationKeyword1": "europe",
+    "navigationKeyword2": "france",
+    "question": "Student-worker protests in May 1968 challenged the conservatism of which French president’s government?",
+    "correctAnswer": "Charles de Gaulle",
+    "incorrectAnswers": ["François Mitterrand", "Georges Pompidou (prime minister in 1968)", "Valéry Giscard d’Estaing"],
+    "explanation": "De Gaulle briefly disappeared to a French military base before rallying support in a snap election.",
+    "keywords": ["france", "1968", "protests"],
+    "source": "https://www.britannica.com/event/events-of-May-1968-French-history"
+  },
+  {
+    "category": "history",
+    "navigationKeyword1": "europe",
+    "navigationKeyword2": "france",
+    "question": "France’s Algerian War ended in 1962 with independence for Algeria after which referendum?",
+    "correctAnswer": "The Évian Accords and subsequent self-determination votes",
+    "incorrectAnswers": ["The Treaty of Frankfurt", "The Congress of Vienna", "The Sykes-Picot Agreement"],
+    "explanation": "The conflict had toppled the Fourth Republic and brought de Gaulle back to power.",
+    "keywords": ["france", "algeria", "decolonization"],
+    "source": "https://www.britannica.com/event/Algerian-War"
+  },
+  {
+    "category": "history",
+    "navigationKeyword1": "europe",
+    "navigationKeyword2": "france",
+    "question": "The Edict of Nantes (1598) temporarily ended France’s wars of religion by granting toleration to whom?",
+    "correctAnswer": "French Protestants (Huguenots)",
+    "incorrectAnswers": ["French Jews", "Waldensians in Savoy only", "Eastern Orthodox merchants"],
+    "explanation": "Louis XIV later revoked the edict, spurring Huguenot emigration.",
+    "keywords": ["france", "huguenots", "religion"],
+    "source": "https://www.britannica.com/event/Edict-of-Nantes"
+  }
+]

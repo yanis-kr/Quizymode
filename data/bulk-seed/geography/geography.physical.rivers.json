@@ -1,0 +1,211 @@
+[
+  {
+    "category": "geography",
+    "navigationKeyword1": "physical",
+    "navigationKeyword2": "rivers",
+    "question": "Which major north-flowing African river drains into the Mediterranean Sea?",
+    "correctAnswer": "Nile River",
+    "incorrectAnswers": [
+      "Congo River",
+      "Niger River",
+      "Zambezi River"
+    ],
+    "explanation": "The Nile crosses northeastern Africa and empties into a large delta in Egypt.",
+    "keywords": [
+      "rivers",
+      "africa",
+      "drainage"
+    ],
+    "source": "https://www.britannica.com/place/Nile-River"
+  },
+  {
+    "category": "geography",
+    "navigationKeyword1": "physical",
+    "navigationKeyword2": "rivers",
+    "question": "Which South American river has the largest discharge volume of any river in the world?",
+    "correctAnswer": "Amazon River",
+    "incorrectAnswers": [
+      "Orinoco River",
+      "Paraná River",
+      "Magdalena River"
+    ],
+    "explanation": "The Amazon moves more water than any other river on Earth.",
+    "keywords": [
+      "rivers",
+      "amazon",
+      "south-america"
+    ],
+    "source": "https://www.britannica.com/place/Amazon-River"
+  },
+  {
+    "category": "geography",
+    "navigationKeyword1": "physical",
+    "navigationKeyword2": "rivers",
+    "question": "Which river is China’s longest and reaches the East China Sea near Shanghai?",
+    "correctAnswer": "Yangtze River",
+    "incorrectAnswers": [
+      "Yellow River",
+      "Pearl River",
+      "Mekong River"
+    ],
+    "explanation": "The Yangtze crosses central and eastern China to the East China Sea.",
+    "keywords": [
+      "rivers",
+      "yangtze",
+      "asia"
+    ],
+    "source": "https://www.britannica.com/place/Yangtze-River"
+  },
+  {
+    "category": "geography",
+    "navigationKeyword1": "physical",
+    "navigationKeyword2": "rivers",
+    "question": "Which river crosses the equator twice in central Africa?",
+    "correctAnswer": "Congo River",
+    "incorrectAnswers": [
+      "Niger River",
+      "Orange River",
+      "Limpopo River"
+    ],
+    "explanation": "The Congo loops through the Congo Basin and crosses the equator in two places.",
+    "keywords": [
+      "rivers",
+      "congo",
+      "africa"
+    ],
+    "source": "https://www.britannica.com/place/Congo-River"
+  },
+  {
+    "category": "geography",
+    "navigationKeyword1": "physical",
+    "navigationKeyword2": "rivers",
+    "question": "Which river is the longest in western Europe that flows to the North Sea?",
+    "correctAnswer": "Rhine River",
+    "incorrectAnswers": [
+      "Seine River",
+      "Elbe River",
+      "Loire River"
+    ],
+    "explanation": "The Rhine rises in the Alps and reaches the North Sea through the Netherlands.",
+    "keywords": [
+      "rivers",
+      "rhine",
+      "europe"
+    ],
+    "source": "https://www.britannica.com/place/Rhine-River"
+  },
+  {
+    "category": "geography",
+    "navigationKeyword1": "physical",
+    "navigationKeyword2": "rivers",
+    "question": "Which river is Russia’s principal watercourse draining to the Caspian Sea?",
+    "correctAnswer": "Volga River",
+    "incorrectAnswers": [
+      "Don River",
+      "Dnieper River",
+      "Ob River"
+    ],
+    "explanation": "The Volga is Europe’s longest river and ends in the Caspian.",
+    "keywords": [
+      "rivers",
+      "volga",
+      "europe"
+    ],
+    "source": "https://www.britannica.com/place/Volga-River"
+  },
+  {
+    "category": "geography",
+    "navigationKeyword1": "physical",
+    "navigationKeyword2": "rivers",
+    "question": "Which river is sacred to many Hindus and drains the southern Himalayas across northern India?",
+    "correctAnswer": "Ganges River",
+    "incorrectAnswers": [
+      "Indus River",
+      "Brahmaputra River",
+      "Godavari River"
+    ],
+    "explanation": "The Ganges flows southeast across the Gangetic Plain to the Bay of Bengal.",
+    "keywords": [
+      "rivers",
+      "ganges",
+      "south-asia"
+    ],
+    "source": "https://www.britannica.com/place/Ganges-River"
+  },
+  {
+    "category": "geography",
+    "navigationKeyword1": "physical",
+    "navigationKeyword2": "rivers",
+    "question": "Which river is the longest in Southeast Asia and flows through several countries before reaching Vietnam’s delta?",
+    "correctAnswer": "Mekong River",
+    "incorrectAnswers": [
+      "Irrawaddy River",
+      "Chao Phraya River",
+      "Red River"
+    ],
+    "explanation": "The Mekong rises in the Tibetan Plateau region and crosses mainland Southeast Asia.",
+    "keywords": [
+      "rivers",
+      "mekong",
+      "southeast-asia"
+    ],
+    "source": "https://www.britannica.com/place/Mekong-River"
+  },
+  {
+    "category": "geography",
+    "navigationKeyword1": "physical",
+    "navigationKeyword2": "rivers",
+    "question": "Which river forms part of the border between the United States and Mexico?",
+    "correctAnswer": "Rio Grande",
+    "incorrectAnswers": [
+      "Colorado River",
+      "Gila River",
+      "Pecos River"
+    ],
+    "explanation": "The Rio Grande separates Texas from several Mexican states on its lower course.",
+    "keywords": [
+      "rivers",
+      "rio-grande",
+      "north-america"
+    ],
+    "source": "https://www.britannica.com/place/Rio-Grande-river-United-States-Mexico"
+  },
+  {
+    "category": "geography",
+    "navigationKeyword1": "physical",
+    "navigationKeyword2": "rivers",
+    "question": "Which river is the longest in Australia’s Murray–Darling basin?",
+    "correctAnswer": "Murray River",
+    "incorrectAnswers": [
+      "Darling River",
+      "Murrumbidgee River",
+      "Cooper Creek"
+    ],
+    "explanation": "The Murray drains southeastern Australia and reaches the Southern Ocean in South Australia.",
+    "keywords": [
+      "rivers",
+      "murray",
+      "australia"
+    ],
+    "source": "https://www.britannica.com/place/Murray-River"
+  },
+  {
+    "category": "geography",
+    "navigationKeyword1": "physical",
+    "navigationKeyword2": "rivers",
+    "question": "Which river drains much of central Europe and enters the Black Sea?",
+    "correctAnswer": "Danube River",
+    "incorrectAnswers": [
+      "Dnieper River",
+      "Vistula River",
+      "Po River"
+    ],
+    "explanation": "The Danube passes through or borders multiple countries before its delta on the Black Sea.",
+    "keywords": [
+      "rivers",
+      "danube",
+      "europe"
+    ],
+    "source": "https://www.britannica.com/place/Danube-River"
+  }
+]

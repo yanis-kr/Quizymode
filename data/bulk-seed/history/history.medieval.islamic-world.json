@@ -1,0 +1,134 @@
+[
+  {
+    "category": "history",
+    "navigationKeyword1": "medieval",
+    "navigationKeyword2": "islamic-world",
+    "question": "In 762 the Abbasids began building a round planned capital on the Tigris that became Islam’s great intellectual hub—what city?",
+    "correctAnswer": "Baghdad",
+    "incorrectAnswers": ["Damascus", "Córdoba", "Cairo"],
+    "explanation": "The Abbasid caliphs founded Baghdad as their imperial seat and center of administration and culture.",
+    "keywords": ["islamic-world", "abbasid", "caliphate"],
+    "source": "https://www.britannica.com/place/Baghdad"
+  },
+  {
+    "category": "history",
+    "navigationKeyword1": "medieval",
+    "navigationKeyword2": "islamic-world",
+    "question": "Which caliphal dynasty moved the capital east from Damascus and overthrew the Umayyads in 750?",
+    "correctAnswer": "The Abbasids",
+    "incorrectAnswers": ["The Fatimids", "The Seljuks", "The Ottomans"],
+    "explanation": "The Abbasid Revolution replaced Umayyad rule and inaugurated a new line of caliphs claiming Hashimid legitimacy.",
+    "keywords": ["islamic-world", "abbasid", "revolution"],
+    "source": "https://www.britannica.com/topic/Abbasid-caliphate"
+  },
+  {
+    "category": "history",
+    "navigationKeyword1": "medieval",
+    "navigationKeyword2": "islamic-world",
+    "question": "Which Baghdad institution under Abbasid patronage is most closely tied to translating and studying Greek, Persian, and Indian learning?",
+    "correctAnswer": "The House of Wisdom (Bayt al-Hikma)",
+    "incorrectAnswers": ["The Library of Alexandria (Ptolemaic)", "The Escorial manuscript hall", "The Vatican Secret Archive"],
+    "explanation": "The House of Wisdom symbolizes Abbasid-era translation and research that preserved and extended Greek and Indian learning.",
+    "keywords": ["islamic-world", "science", "baghdad"],
+    "source": "https://www.britannica.com/place/Bayt-al-Hikmah"
+  },
+  {
+    "category": "history",
+    "navigationKeyword1": "medieval",
+    "navigationKeyword2": "islamic-world",
+    "question": "After the Umayyad capital fell, which family continued Umayyad rule from al-Andalus with a rival caliphate at Córdoba?",
+    "correctAnswer": "The Umayyads of Córdoba",
+    "incorrectAnswers": ["The Almoravids", "The Almohads", "The Nasrids of Granada"],
+    "explanation": "Abd al-Rahman I and his successors maintained an Umayyad emirate, later caliphate, in Islamic Spain.",
+    "keywords": ["islamic-world", "al-andalus", "umayyad"],
+    "source": "https://www.britannica.com/topic/Umayyad-dynasty-Islamic-history"
+  },
+  {
+    "category": "history",
+    "navigationKeyword1": "medieval",
+    "navigationKeyword2": "islamic-world",
+    "question": "In 732 Frankish troops under Charles Martel checked a Muslim raid northward from Aquitaine at which battle near Tours and Poitiers?",
+    "correctAnswer": "The Battle of Tours (Battle of Poitiers)",
+    "incorrectAnswers": ["The Battle of Yarmuk", "The Battle of Manzikert", "The Battle of Las Navas de Tolosa"],
+    "explanation": "Medieval Latin sources celebrate Tours/Poitiers as a turning point that slowed Umayyad expansion into Francia.",
+    "keywords": ["islamic-world", "francia", "warfare"],
+    "source": "https://www.britannica.com/event/Battle-of-Tours-732"
+  },
+  {
+    "category": "history",
+    "navigationKeyword1": "medieval",
+    "navigationKeyword2": "islamic-world",
+    "question": "Which Kurdish-led sultan recaptured Jerusalem for Muslim rule in 1187 after the Battle of Ḥaṭṭīn?",
+    "correctAnswer": "Saladin (Salah al-Din)",
+    "incorrectAnswers": ["Baybars", "Nur al-Din", "Al-Kamil"],
+    "explanation": "Saladin’s Ayyubid forces defeated the Latin kingdom’s army at Hattin and soon took Jerusalem.",
+    "keywords": ["islamic-world", "crusades", "ayyubid"],
+    "source": "https://www.britannica.com/biography/Saladin"
+  },
+  {
+    "category": "history",
+    "navigationKeyword1": "medieval",
+    "navigationKeyword2": "islamic-world",
+    "question": "Ismaili rulers who claimed descent from Fatima built al-Qahira as a palace city that grew into which medieval metropolis?",
+    "correctAnswer": "Cairo",
+    "incorrectAnswers": ["Kairouan", "Fez", "Samarkand"],
+    "explanation": "The Fatimid caliphate founded Cairo as a ceremonial capital that became Egypt’s enduring urban center.",
+    "keywords": ["islamic-world", "fatimid", "egypt"],
+    "source": "https://www.britannica.com/topic/Fatimid-dynasty"
+  },
+  {
+    "category": "history",
+    "navigationKeyword1": "medieval",
+    "navigationKeyword2": "islamic-world",
+    "question": "Turkic war bands bearing the title sultan entered the Islamic heartland and took Baghdad under which dynasty’s later rulers?",
+    "correctAnswer": "The Seljuks",
+    "incorrectAnswers": ["The Mamluks", "The Safavids", "The Timurids"],
+    "explanation": "Seljuk sultans dominated Persia and Iraq and patronized Sunni institutions like the Nizamiyya madrasas.",
+    "keywords": ["islamic-world", "seljuk", "iran"],
+    "source": "https://www.britannica.com/place/Seljuq"
+  },
+  {
+    "category": "history",
+    "navigationKeyword1": "medieval",
+    "navigationKeyword2": "islamic-world",
+    "question": "Cordoban philosopher Ibn Rushy, Latinized as whom, commented on Aristotle and influenced medieval European schools?",
+    "correctAnswer": "Averroës",
+    "incorrectAnswers": ["Avicenna", "Al-Ghazali", "Al-Farabi"],
+    "explanation": "Ibn Rushd’s Aristotelian commentaries were translated into Latin and shaped scholastic debates.",
+    "keywords": ["islamic-world", "philosophy", "al-andalus"],
+    "source": "https://www.britannica.com/biography/Averroes"
+  },
+  {
+    "category": "history",
+    "navigationKeyword1": "medieval",
+    "navigationKeyword2": "islamic-world",
+    "question": "Slave-soldiers who seized power in Egypt and stopped the Mongols at ʿAyn Jālūt belonged to which regime?",
+    "correctAnswer": "The Mamluk Sultanate",
+    "incorrectAnswers": ["The Ilkhanate", "The Golden Horde", "The Delhi Sultanate"],
+    "explanation": "The Mamluks of Egypt defeated Hülegü’s Mongols at Ain Jalut and ended Crusader coastal enclaves.",
+    "keywords": ["islamic-world", "mamluks", "mongols"],
+    "source": "https://www.britannica.com/event/Battle-of-Ain-Jalut"
+  },
+  {
+    "category": "history",
+    "navigationKeyword1": "medieval",
+    "navigationKeyword2": "islamic-world",
+    "question": "Muslim-ruled Iberia and parts of southern France are grouped under which Arabic name in modern histories?",
+    "correctAnswer": "Al-Andalus",
+    "incorrectAnswers": ["Ifriqiya", "Mashriq", "Bilad al-Sudan"],
+    "explanation": "Al-Andalus denotes the civilization of Islamic Spain where Umayyad, Almoravid, Almohad, and Nasrid states flourished.",
+    "keywords": ["islamic-world", "al-andalus", "iberia"],
+    "source": "https://www.britannica.com/place/Al-Andalus"
+  },
+  {
+    "category": "history",
+    "navigationKeyword1": "medieval",
+    "navigationKeyword2": "islamic-world",
+    "question": "Pilgrims still walk the courtyard of the Great Mosque at Córdoba, famed for striped arches from which Umayyad Spanish realm?",
+    "correctAnswer": "The Umayyad emirate/caliphate of Córdoba",
+    "incorrectAnswers": ["The Fatimid caliphate", "The Ottoman eyalet of Algiers", "The Marinid sultanate"],
+    "explanation": "Córdoba’s mosque-cathedral epitomizes the art and architecture of medieval al-Andalus under Umayyad rule.",
+    "keywords": ["islamic-world", "al-andalus", "architecture"],
+    "source": "https://www.britannica.com/topic/Mosque-Cathedral-of-Cordoba"
+  }
+]

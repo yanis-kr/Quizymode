@@ -1,0 +1,211 @@
+[
+  {
+    "category": "geography",
+    "navigationKeyword1": "physical",
+    "navigationKeyword2": "plates",
+    "question": "Earth’s brittle outer shell is broken into giant pieces that creep over hotter, softer mantle rock—what are those moving pieces called?",
+    "correctAnswer": "Tectonic plates",
+    "incorrectAnswers": [
+      "Single unbroken crustal shells",
+      "Atmospheric jet streaks",
+      "Ocean currents only"
+    ],
+    "explanation": "Tectonic plates are irregular rock slabs composed of oceanic and continental lithosphere.",
+    "keywords": [
+      "plates",
+      "plate-tectonics",
+      "lithosphere"
+    ],
+    "source": "https://pubs.usgs.gov/gip/dynamic/tectonic.html"
+  },
+  {
+    "category": "geography",
+    "navigationKeyword1": "physical",
+    "navigationKeyword2": "plates",
+    "question": "Which oceanic plate is named among the largest tectonic plates on Earth?",
+    "correctAnswer": "Pacific Plate",
+    "incorrectAnswers": [
+      "Juan de Fuca Plate",
+      "Cocos Plate",
+      "Nazca Plate"
+    ],
+    "explanation": "The Pacific Plate is one of the largest plates and underlies much of the Pacific basin.",
+    "keywords": [
+      "plates",
+      "plate-tectonics",
+      "pacific-plate"
+    ],
+    "source": "https://pubs.usgs.gov/gip/dynamic/tectonic.html"
+  },
+  {
+    "category": "geography",
+    "navigationKeyword1": "physical",
+    "navigationKeyword2": "plates",
+    "question": "Which plate is named among the largest and includes much of North America?",
+    "correctAnswer": "North American Plate",
+    "incorrectAnswers": [
+      "South American Plate",
+      "Eurasian Plate",
+      "African Plate"
+    ],
+    "explanation": "The North American Plate carries the continent and adjacent Atlantic and Arctic ocean floor.",
+    "keywords": [
+      "plates",
+      "plate-tectonics",
+      "north-america"
+    ],
+    "source": "https://pubs.usgs.gov/gip/dynamic/tectonic.html"
+  },
+  {
+    "category": "geography",
+    "navigationKeyword1": "physical",
+    "navigationKeyword2": "plates",
+    "question": "Where is earthquake and volcanic activity mainly concentrated in the plate-tectonics model?",
+    "correctAnswer": "Near plate boundaries",
+    "incorrectAnswers": [
+      "Only at equatorial latitudes",
+      "Only under continents",
+      "Randomly across plate interiors"
+    ],
+    "explanation": "Most seismic and volcanic activity occurs close to the edges where plates interact.",
+    "keywords": [
+      "plates",
+      "plate-tectonics",
+      "earthquakes"
+    ],
+    "source": "https://pubs.usgs.gov/gip/dynamic/tectonic.html"
+  },
+  {
+    "category": "geography",
+    "navigationKeyword1": "physical",
+    "navigationKeyword2": "plates",
+    "question": "Which type of crust is denser: oceanic crust or continental crust?",
+    "correctAnswer": "Oceanic crust",
+    "incorrectAnswers": [
+      "Continental crust",
+      "They are equal",
+      "Neither has crust"
+    ],
+    "explanation": "Oceanic crust is basaltic and denser than the granitic rocks typical of continents.",
+    "keywords": [
+      "plates",
+      "plate-tectonics",
+      "crust"
+    ],
+    "source": "https://pubs.usgs.gov/gip/dynamic/tectonic.html"
+  },
+  {
+    "category": "geography",
+    "navigationKeyword1": "physical",
+    "navigationKeyword2": "plates",
+    "question": "What process occurs when denser oceanic lithosphere sinks beneath another plate?",
+    "correctAnswer": "Subduction",
+    "incorrectAnswers": [
+      "Rifting",
+      "Obduction",
+      "Isostasy"
+    ],
+    "explanation": "Subduction consumes oceanic plates at convergent margins.",
+    "keywords": [
+      "plates",
+      "plate-tectonics",
+      "subduction"
+    ],
+    "source": "https://pubs.usgs.gov/gip/dynamic/tectonic.html"
+  },
+  {
+    "category": "geography",
+    "navigationKeyword1": "physical",
+    "navigationKeyword2": "plates",
+    "question": "Off Oregon and Washington, which small oceanic plate is subducting beneath North America?",
+    "correctAnswer": "Juan de Fuca Plate",
+    "incorrectAnswers": [
+      "Pacific Plate",
+      "Cocos Plate",
+      "Philippine Sea Plate"
+    ],
+    "explanation": "The Juan de Fuca Plate is a remnant of the Farallon Plate subducting eastward beneath the continent.",
+    "keywords": [
+      "plates",
+      "plate-tectonics",
+      "cascadia"
+    ],
+    "source": "https://pubs.usgs.gov/gip/dynamic/tectonic.html"
+  },
+  {
+    "category": "geography",
+    "navigationKeyword1": "physical",
+    "navigationKeyword2": "plates",
+    "question": "Compared with oceanic lithosphere, how thick is typical continental lithosphere?",
+    "correctAnswer": "Thicker",
+    "incorrectAnswers": [
+      "Thinner",
+      "The same thickness",
+      "Absent"
+    ],
+    "explanation": "Continental crust is much thicker than oceanic crust, partly offsetting its lower density.",
+    "keywords": [
+      "plates",
+      "plate-tectonics",
+      "continental-crust"
+    ],
+    "source": "https://pubs.usgs.gov/gip/dynamic/tectonic.html"
+  },
+  {
+    "category": "geography",
+    "navigationKeyword1": "physical",
+    "navigationKeyword2": "plates",
+    "question": "Tectonic plates have been drifting on Earth’s surface for roughly how long?",
+    "correctAnswer": "Since early in Earth’s 4.6-billion-year history",
+    "incorrectAnswers": [
+      "Only the last million years",
+      "Only since the Ice Ages",
+      "Only since recorded history"
+    ],
+    "explanation": "USGS notes plates probably formed very early and have moved ever since.",
+    "keywords": [
+      "plates",
+      "plate-tectonics",
+      "geologic-time"
+    ],
+    "source": "https://pubs.usgs.gov/gip/dynamic/tectonic.html"
+  },
+  {
+    "category": "geography",
+    "navigationKeyword1": "physical",
+    "navigationKeyword2": "plates",
+    "question": "Which plate is named among the largest and includes much of Antarctica?",
+    "correctAnswer": "Antarctic Plate",
+    "incorrectAnswers": [
+      "Scotia Plate",
+      "Somali Plate",
+      "Caribbean Plate"
+    ],
+    "explanation": "The Antarctic Plate underlies Antarctica and surrounding Southern Ocean floor.",
+    "keywords": [
+      "plates",
+      "plate-tectonics",
+      "antarctic"
+    ],
+    "source": "https://pubs.usgs.gov/gip/dynamic/tectonic.html"
+  },
+  {
+    "category": "geography",
+    "navigationKeyword1": "physical",
+    "navigationKeyword2": "plates",
+    "question": "Why do continents float higher than ocean basins despite being very massive?",
+    "correctAnswer": "Continental rocks are less dense than oceanic basalt",
+    "incorrectAnswers": [
+      "Continents are hollow",
+      "Ocean water pushes continents up",
+      "Gravity is weaker on land"
+    ],
+    "explanation": "Light granitic continental crust and its thick root buoy continents like iceberg tips.",
+    "keywords": [
+      "plates",
+      "plate-tectonics",
+      "buoyancy"
+    ],
+    "source": "https://pubs.usgs.gov/gip/dynamic/tectonic.html"
+  }
+]

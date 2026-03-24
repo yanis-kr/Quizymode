@@ -4,6 +4,31 @@ public sealed class Item
 {
     public Guid Id { get; set; }
 
+    /// <summary>
+    /// Stable identifier for repo-managed seed items. Null for user-created items.
+    /// </summary>
+    public Guid? SeedId { get; set; }
+
+    /// <summary>
+    /// True when this row is managed by the admin seed-sync process.
+    /// </summary>
+    public bool IsSeedManaged { get; set; }
+
+    /// <summary>
+    /// Logical seed collection name so multiple managed sets can coexist.
+    /// </summary>
+    public string? SeedSet { get; set; }
+
+    /// <summary>
+    /// Hash of the canonical seed payload used to detect drift quickly.
+    /// </summary>
+    public string? SeedHash { get; set; }
+
+    /// <summary>
+    /// Timestamp of the last successful seed sync for this item.
+    /// </summary>
+    public DateTime? SeedLastSyncedAt { get; set; }
+
     public bool IsPrivate { get; set; }
 
     public string Question { get; set; } = string.Empty;
@@ -57,4 +82,3 @@ public sealed class Item
     public Guid? NavigationKeywordId2 { get; set; }
     public Keyword? NavigationKeyword2 { get; set; }
 }
-

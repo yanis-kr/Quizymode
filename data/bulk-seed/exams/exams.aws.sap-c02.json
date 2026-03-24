@@ -1,0 +1,230 @@
+[
+  {
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "sap-c02",
+    "question": "Which AWS service provides a dedicated network connection from on premises to AWS?",
+    "correctAnswer": "AWS Direct Connect",
+    "incorrectAnswers": [
+      "Amazon Route 53",
+      "Amazon CloudFront",
+      "AWS CloudFormation"
+    ],
+    "explanation": "AWS Direct Connect creates a dedicated network connection to AWS without using the public internet path.",
+    "keywords": [
+      "aws-sap-c02",
+      "aws-architecture",
+      "aws-services"
+    ],
+    "source": "https://aws.amazon.com/directconnect/"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "sap-c02",
+    "question": "Which AWS service connects VPCs, AWS accounts, and on-premises networks through a central hub?",
+    "correctAnswer": "AWS Transit Gateway",
+    "incorrectAnswers": [
+      "Amazon Route 53 Resolver",
+      "AWS Backup",
+      "Amazon CloudWatch"
+    ],
+    "explanation": "AWS Transit Gateway acts as a central hub for connecting VPCs and on-premises networks.",
+    "keywords": [
+      "aws-sap-c02",
+      "aws-architecture",
+      "aws-services"
+    ],
+    "source": "https://aws.amazon.com/transit-gateway/"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "sap-c02",
+    "question": "Which AWS service resolves DNS queries in hybrid cloud environments?",
+    "correctAnswer": "Amazon Route 53 Resolver",
+    "incorrectAnswers": [
+      "Amazon SQS",
+      "AWS WAF",
+      "Amazon DynamoDB"
+    ],
+    "explanation": "Amazon Route 53 Resolver is AWS's DNS resolution service for hybrid environments.",
+    "keywords": [
+      "aws-sap-c02",
+      "aws-architecture",
+      "aws-services"
+    ],
+    "source": "https://aws.amazon.com/route53/resolver/"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "sap-c02",
+    "question": "Which AWS service centrally governs multiple AWS accounts?",
+    "correctAnswer": "AWS Organizations",
+    "incorrectAnswers": [
+      "Amazon Route 53",
+      "AWS Config",
+      "Amazon CloudTrail"
+    ],
+    "explanation": "AWS Organizations provides central governance and management across multiple AWS accounts.",
+    "keywords": [
+      "aws-sap-c02",
+      "aws-architecture",
+      "aws-services"
+    ],
+    "source": "https://aws.amazon.com/organizations/"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "sap-c02",
+    "question": "Which AWS service provisions infrastructure as code?",
+    "correctAnswer": "AWS CloudFormation",
+    "incorrectAnswers": [
+      "Amazon CloudWatch",
+      "AWS Backup",
+      "Amazon Route 53 Resolver"
+    ],
+    "explanation": "AWS CloudFormation speeds cloud provisioning with infrastructure as code.",
+    "keywords": [
+      "aws-sap-c02",
+      "aws-architecture",
+      "aws-services"
+    ],
+    "source": "https://aws.amazon.com/cloudformation/"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "sap-c02",
+    "question": "Which AWS service distributes incoming traffic across targets in multiple Availability Zones?",
+    "correctAnswer": "Elastic Load Balancing",
+    "incorrectAnswers": [
+      "AWS Direct Connect",
+      "AWS Config",
+      "Amazon SQS"
+    ],
+    "explanation": "Elastic Load Balancing distributes traffic across targets in one or more AZs.",
+    "keywords": [
+      "aws-sap-c02",
+      "aws-architecture",
+      "aws-services"
+    ],
+    "source": "https://aws.amazon.com/elasticloadbalancing/"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "sap-c02",
+    "question": "Which AWS service automatically adjusts capacity to maintain performance at the lowest possible cost?",
+    "correctAnswer": "AWS Auto Scaling",
+    "incorrectAnswers": [
+      "Amazon Route 53",
+      "AWS WAF",
+      "AWS CloudTrail"
+    ],
+    "explanation": "AWS Auto Scaling monitors applications and automatically adjusts capacity.",
+    "keywords": [
+      "aws-sap-c02",
+      "aws-architecture",
+      "aws-services"
+    ],
+    "source": "https://aws.amazon.com/autoscaling/"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "sap-c02",
+    "question": "Which AWS DNS service routes end users to internet applications?",
+    "correctAnswer": "Amazon Route 53",
+    "incorrectAnswers": [
+      "Amazon CloudWatch",
+      "AWS Backup",
+      "Amazon EBS"
+    ],
+    "explanation": "Amazon Route 53 is AWS's highly available DNS service for internet applications.",
+    "keywords": [
+      "aws-sap-c02",
+      "aws-architecture",
+      "aws-services"
+    ],
+    "source": "https://aws.amazon.com/route53/"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "sap-c02",
+    "question": "Which AWS service helps observe and optimize workloads with metrics, logs, and traces?",
+    "correctAnswer": "Amazon CloudWatch",
+    "incorrectAnswers": [
+      "AWS Organizations",
+      "Amazon Route 53 Resolver",
+      "AWS Direct Connect"
+    ],
+    "explanation": "Amazon CloudWatch provides observability across applications and infrastructure.",
+    "keywords": [
+      "aws-sap-c02",
+      "aws-architecture",
+      "aws-services"
+    ],
+    "source": "https://aws.amazon.com/cloudwatch/"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "sap-c02",
+    "question": "Which AWS relational database service automates provisioning, backups, and patching?",
+    "correctAnswer": "Amazon RDS",
+    "incorrectAnswers": [
+      "Amazon S3",
+      "Amazon Route 53",
+      "AWS WAF"
+    ],
+    "explanation": "Amazon RDS automates common relational database administration tasks.",
+    "keywords": [
+      "aws-sap-c02",
+      "aws-architecture",
+      "aws-services"
+    ],
+    "source": "https://aws.amazon.com/rds/"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "sap-c02",
+    "question": "Which Amazon RDS deployment option is designed for high availability?",
+    "correctAnswer": "Multi-AZ deployments",
+    "incorrectAnswers": [
+      "Single-AZ snapshots",
+      "S3 Standard storage class",
+      "Route 53 health checks"
+    ],
+    "explanation": "Amazon RDS Multi-AZ deployments are the high-availability option for RDS.",
+    "keywords": [
+      "aws-sap-c02",
+      "aws-architecture",
+      "aws-services"
+    ],
+    "source": "https://aws.amazon.com/rds/"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "sap-c02",
+    "question": "Which AWS service centrally manages and automates data protection across AWS and hybrid workloads?",
+    "correctAnswer": "AWS Backup",
+    "incorrectAnswers": [
+      "AWS Transit Gateway",
+      "Amazon Route 53",
+      "AWS CloudFormation"
+    ],
+    "explanation": "AWS Backup centralizes and automates data protection policies and operations.",
+    "keywords": [
+      "aws-sap-c02",
+      "aws-architecture",
+      "aws-services"
+    ],
+    "source": "https://aws.amazon.com/backup/"
+  }
+]

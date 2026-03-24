@@ -1,0 +1,112 @@
+[
+  {
+    "category": "exams",
+    "navigationKeyword1": "cisco",
+    "navigationKeyword2": "ccie",
+    "question": "What problem does VXLAN primarily solve in modern data center networks?",
+    "correctAnswer": "Extending Layer 2 segments across a Layer 3 transport network",
+    "incorrectAnswers": ["Replacing DNS resolution", "Encrypting all management traffic", "Assigning DHCP leases"],
+    "explanation": "Cisco says VXLAN extends Layer 2 networks across Layer 3 infrastructure using MAC-in-UDP encapsulation.",
+    "keywords": ["ccie", "vxlan", "cisco"],
+    "source": "https://www.cisco.com/c/en/us/td/docs/switches/datacenter/nexus9000/sw/6-x/vxlan/configuration/guide/b_Cisco_Nexus_9000_Series_NX-OS_VXLAN_Configuration_Guide/b_Cisco_Nexus_9000_Series_NX-OS_VXLAN_Configuration_Guide_chapter_01.html"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "cisco",
+    "navigationKeyword2": "ccie",
+    "question": "What does a VTEP do in a VXLAN network?",
+    "correctAnswer": "Encapsulates and decapsulates traffic entering or leaving the VXLAN overlay",
+    "incorrectAnswers": ["Allocates MAC addresses to endpoints", "Acts as a DNS forwarder", "Replaces the default gateway"],
+    "explanation": "Cisco defines VTEPs as the devices that map endpoints to VXLAN segments and perform encapsulation and decapsulation.",
+    "keywords": ["ccie", "vxlan", "cisco"],
+    "source": "https://www.cisco.com/c/en/us/td/docs/switches/datacenter/nexus9000/sw/6-x/vxlan/configuration/guide/b_Cisco_Nexus_9000_Series_NX-OS_VXLAN_Configuration_Guide/b_Cisco_Nexus_9000_Series_NX-OS_VXLAN_Configuration_Guide_chapter_01.html"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "cisco",
+    "navigationKeyword2": "ccie",
+    "question": "How many segments can VXLAN theoretically support with its 24-bit VNID?",
+    "correctAnswer": "About 16 million",
+    "incorrectAnswers": ["About 4 thousand", "About 65 thousand", "About 1 billion"],
+    "explanation": "A 24-bit VXLAN Network Identifier supports roughly 16 million segments.",
+    "keywords": ["ccie", "vxlan", "cisco"],
+    "source": "https://www.cisco.com/c/en/us/td/docs/switches/datacenter/nexus9000/sw/6-x/vxlan/configuration/guide/b_Cisco_Nexus_9000_Series_NX-OS_VXLAN_Configuration_Guide/b_Cisco_Nexus_9000_Series_NX-OS_VXLAN_Configuration_Guide_chapter_01.html"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "cisco",
+    "navigationKeyword2": "ccie",
+    "question": "What is the role of BFD in a routed network?",
+    "correctAnswer": "Rapidly detecting forwarding path failures between two systems",
+    "incorrectAnswers": ["Assigning VLAN tags", "Compressing BGP tables", "Generating SSH keys"],
+    "explanation": "BFD is designed to provide fast detection of faults in the path between forwarding engines.",
+    "keywords": ["ccie", "bfd", "cisco"],
+    "source": "https://www.rfc-editor.org/rfc/rfc5880"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "cisco",
+    "navigationKeyword2": "ccie",
+    "question": "What does MPLS forwarding use instead of performing a full IP routing lookup at every hop?",
+    "correctAnswer": "Labels",
+    "incorrectAnswers": ["Only MAC addresses", "Only TCP ports", "Only VLAN IDs"],
+    "explanation": "MPLS forwards packets using short labels rather than relying solely on destination IP lookups at each hop.",
+    "keywords": ["ccie", "mpls", "cisco"],
+    "source": "https://www.rfc-editor.org/rfc/rfc3031"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "cisco",
+    "navigationKeyword2": "ccie",
+    "question": "In multicast PIM sparse mode, what shared control point is used to connect senders and receivers initially?",
+    "correctAnswer": "A Rendezvous Point",
+    "incorrectAnswers": ["A route reflector", "A designated NAT gateway", "A DHCP relay"],
+    "explanation": "PIM sparse mode uses a Rendezvous Point to connect multicast sources and receivers.",
+    "keywords": ["ccie", "multicast", "cisco"],
+    "source": "https://www.rfc-editor.org/rfc/rfc4601"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "cisco",
+    "navigationKeyword2": "ccie",
+    "question": "What advantage does a route reflector provide in large iBGP deployments?",
+    "correctAnswer": "It reduces the scaling burden of a full-mesh iBGP topology",
+    "incorrectAnswers": ["It replaces the IGP entirely", "It disables next-hop processing", "It eliminates AS numbers"],
+    "explanation": "Route reflectors are used to scale iBGP by reducing full-mesh session requirements.",
+    "keywords": ["ccie", "bgp", "cisco"],
+    "source": "https://www.rfc-editor.org/rfc/rfc4456"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "cisco",
+    "navigationKeyword2": "ccie",
+    "question": "Why would an engineer use VRF on an enterprise edge device?",
+    "correctAnswer": "To isolate traffic domains with separate routing tables that can even use overlapping IP space",
+    "incorrectAnswers": ["To disable all dynamic routing", "To replace DNS and DHCP", "To convert IPv4 to Ethernet frames"],
+    "explanation": "Cisco documentation explains that VRF keeps routing domains separate and allows overlapping address spaces.",
+    "keywords": ["ccie", "vrf", "cisco"],
+    "source": "https://www.cisco.com/c/en/us/td/docs/net_mgmt/prime/network/3-8/reference/guide/vrf.html"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "cisco",
+    "navigationKeyword2": "ccie",
+    "question": "What does HSRP present to end hosts on a subnet?",
+    "correctAnswer": "A single virtual default gateway backed by multiple routers",
+    "incorrectAnswers": ["A shared DNS zone", "A tunneling protocol for overlays", "A QoS scheduler"],
+    "explanation": "Cisco says HSRP lets multiple routers appear as one virtual gateway for hosts.",
+    "keywords": ["ccie", "hsrp", "cisco"],
+    "source": "https://www.cisco.com/en/US/docs/switches/metro/me3600x_3800x/trash/swhsrp.html"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "cisco",
+    "navigationKeyword2": "ccie",
+    "question": "What benefit does OSPF provide in large enterprise networks?",
+    "correctAnswer": "Fast convergence with a scalable link-state design",
+    "incorrectAnswers": ["Built-in application load balancing", "Automatic IPsec encryption", "Direct packet capture on endpoints"],
+    "explanation": "Cisco describes OSPF as a link-state routing protocol known for fast convergence and scalability.",
+    "keywords": ["ccie", "ospf", "cisco"],
+    "source": "https://www.cisco.com/c/en/us/products/ios-nx-os-software/open-shortest-path-first-ospf/index.html"
+  }
+]

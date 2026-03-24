@@ -1,0 +1,57 @@
+[
+  {
+    "category": "exams",
+    "navigationKeyword1": "sat",
+    "navigationKeyword2": "writing",
+    "question": "Which transition best completes the sentence: \"The sample size increased; ___, the results became more reliable\"?",
+    "correctAnswer": "therefore",
+    "incorrectAnswers": ["however", "meanwhile", "for instance"],
+    "explanation": "\"Therefore\" correctly signals cause and effect.",
+    "keywords": ["sat-writing", "transitions", "grammar"],
+    "source": "https://satsuite.collegeboard.org/sat/practice-preparation"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "sat",
+    "navigationKeyword2": "writing",
+    "question": "Which sentence uses parallel structure?",
+    "correctAnswer": "The internship requires students to research, write, and revise.",
+    "incorrectAnswers": ["The internship requires students to research, writing, and revision.", "The internship requires researching, to write, and revision.", "The internship requires students who research, writing, and revise."],
+    "explanation": "Parallel items should share the same grammatical form.",
+    "keywords": ["sat-writing", "parallel-structure", "grammar"],
+    "source": "https://satsuite.collegeboard.org/sat/practice-preparation"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "sat",
+    "navigationKeyword2": "writing",
+    "question": "Which version correctly fixes the sentence boundary error?",
+    "correctAnswer": "The report was finished, so the editor submitted it.",
+    "incorrectAnswers": ["The report was finished, the editor submitted it.", "The report was finished so, the editor submitted it.", "The report was finished; so the editor submitted it."],
+    "explanation": "A comma plus coordinating conjunction correctly joins the clauses.",
+    "keywords": ["sat-writing", "boundaries", "grammar"],
+    "source": "https://satsuite.collegeboard.org/sat/practice-preparation"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "sat",
+    "navigationKeyword2": "writing",
+    "question": "Which word choice is most appropriate for a formal SAT passage?",
+    "correctAnswer": "many",
+    "incorrectAnswers": ["a bunch of", "tons of", "a whole lot of"],
+    "explanation": "SAT Writing favors precise, standard written English.",
+    "keywords": ["sat-writing", "word-choice", "grammar"],
+    "source": "https://satsuite.collegeboard.org/sat/practice-preparation"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "sat",
+    "navigationKeyword2": "writing",
+    "question": "Which sentence most concisely combines the ideas?",
+    "correctAnswer": "The lab was crowded, but the students finished on time.",
+    "incorrectAnswers": ["The lab was crowded, and this was a fact, but the students finished on time.", "The lab was crowded, but in spite of that fact the students were able to finish on time.", "The lab was crowded, and the students, however, finished on time."],
+    "explanation": "The best SAT revision preserves meaning with the clearest wording.",
+    "keywords": ["sat-writing", "concision", "grammar"],
+    "source": "https://satsuite.collegeboard.org/sat/practice-preparation"
+  }
+]
