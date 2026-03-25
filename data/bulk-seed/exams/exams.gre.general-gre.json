@@ -1,0 +1,101 @@
+[
+  {
+    "category": "exams",
+    "navigationKeyword1": "gre",
+    "navigationKeyword2": "general-gre",
+    "question": "Which section of the GRE measures your ability to analyze and evaluate written arguments?",
+    "correctAnswer": "Analytical Writing",
+    "incorrectAnswers": [
+      "Quantitative Reasoning",
+      "Verbal Reasoning",
+      "Experimental Research"
+    ],
+    "explanation": "ETS says the Analytical Writing section measures critical thinking and analytical writing skills, including analyzing arguments.",
+    "keywords": [
+      "gre-format",
+      "test-prep"
+    ],
+    "source": "https://www.ets.org/gre/test-takers/general-test/structure.html",
+    "seedId": "6d3f9cbb-379f-4577-ba91-36b338d45b8a"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "gre",
+    "navigationKeyword2": "general-gre",
+    "question": "How many tasks are in the current GRE Analytical Writing section?",
+    "correctAnswer": "One task",
+    "incorrectAnswers": [
+      "Two tasks",
+      "Three tasks",
+      "No writing tasks"
+    ],
+    "explanation": "ETS says the current GRE Analytical Writing section contains one 'Analyze an Issue' task.",
+    "keywords": [
+      "gre-format",
+      "analytical-writing",
+      "test-prep"
+    ],
+    "source": "https://www.ets.org/gre/test-takers/general-test/structure.html",
+    "seedId": "213cdd45-59f5-4708-bfc0-89f4f764e1d5"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "gre",
+    "navigationKeyword2": "general-gre",
+    "question": "How much time is given for the current GRE Analytical Writing task?",
+    "correctAnswer": "30 minutes",
+    "incorrectAnswers": [
+      "20 minutes",
+      "45 minutes",
+      "60 minutes"
+    ],
+    "explanation": "ETS allots 30 minutes for the Analytical Writing section's single task.",
+    "keywords": [
+      "gre-format",
+      "analytical-writing",
+      "test-prep"
+    ],
+    "source": "https://www.ets.org/gre/test-takers/general-test/structure.html",
+    "seedId": "1372736a-3aaf-463e-a2c6-2697807fc3cf"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "gre",
+    "navigationKeyword2": "general-gre",
+    "question": "Which GRE section includes reading comprehension, text completion, and sentence equivalence questions?",
+    "correctAnswer": "Verbal Reasoning",
+    "incorrectAnswers": [
+      "Quantitative Reasoning",
+      "Analytical Writing",
+      "Research Writing"
+    ],
+    "explanation": "ETS says the Verbal Reasoning section includes reading comprehension, text completion, and sentence equivalence.",
+    "keywords": [
+      "gre-format",
+      "verbal-reasoning",
+      "test-prep"
+    ],
+    "source": "https://www.ets.org/gre/test-takers/general-test/structure.html",
+    "seedId": "60b7cefd-df17-4fbc-9d1d-46926128767f"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "gre",
+    "navigationKeyword2": "general-gre",
+    "question": "How long is each GRE Verbal or Quantitative section on the current General Test?",
+    "correctAnswer": "21 to 26 minutes depending on section type",
+    "incorrectAnswers": [
+      "10 minutes each",
+      "45 minutes each",
+      "60 minutes each"
+    ],
+    "explanation": "ETS lists shorter timing for the current GRE, with section lengths varying by Verbal and Quantitative section type.",
+    "keywords": [
+      "gre-format",
+      "timing",
+      "test-prep"
+    ],
+    "source": "https://www.ets.org/gre/test-takers/general-test/structure.html",
+    "seedId": "bfcbb052-2159-4469-8b6b-1b8c967e3cd3"
+  }
+]

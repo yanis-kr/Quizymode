@@ -1,0 +1,202 @@
+[
+  {
+    "category": "sports",
+    "navigationKeyword1": "baseball",
+    "navigationKeyword2": "mlb",
+    "question": "What does MLB stand for?",
+    "correctAnswer": "Major League Baseball",
+    "incorrectAnswers": [
+      "Main League Baseball",
+      "Major League Batting",
+      "Master League Baseball"
+    ],
+    "explanation": "MLB is short for Major League Baseball.",
+    "keywords": [
+      "baseball",
+      "mlb",
+      "league"
+    ],
+    "source": "https://www.mlb.com/history",
+    "seedId": "c809d249-789f-40df-b43e-eef85fc15f53"
+  },
+  {
+    "category": "sports",
+    "navigationKeyword1": "baseball",
+    "navigationKeyword2": "mlb",
+    "question": "Which two leagues make up MLB?",
+    "correctAnswer": "American League and National League",
+    "incorrectAnswers": [
+      "East League and West League",
+      "Major and Minor League",
+      "Federal and Union League"
+    ],
+    "explanation": "MLB is split into the American and National Leagues.",
+    "keywords": [
+      "baseball",
+      "mlb",
+      "leagues"
+    ],
+    "source": "https://www.mlb.com/history",
+    "seedId": "f46d62ae-1feb-491a-b121-1000eb887a12"
+  },
+  {
+    "category": "sports",
+    "navigationKeyword1": "baseball",
+    "navigationKeyword2": "mlb",
+    "question": "How many teams currently play in MLB?",
+    "correctAnswer": "30",
+    "incorrectAnswers": [
+      "28",
+      "32",
+      "24"
+    ],
+    "explanation": "Major League Baseball has 30 clubs.",
+    "keywords": [
+      "baseball",
+      "mlb",
+      "teams"
+    ],
+    "source": "https://www.mlb.com/history",
+    "seedId": "df8f9829-15e5-4c8d-9bd9-2bda879300e8"
+  },
+  {
+    "category": "sports",
+    "navigationKeyword1": "baseball",
+    "navigationKeyword2": "mlb",
+    "question": "Which trophy goes to the World Series champion?",
+    "correctAnswer": "The Commissioner's Trophy",
+    "incorrectAnswers": [
+      "Vince Lombardi Trophy",
+      "Stanley Cup",
+      "Larry O'Brien Trophy"
+    ],
+    "explanation": "The World Series winner receives the Commissioner's Trophy.",
+    "keywords": [
+      "baseball",
+      "mlb",
+      "trophy"
+    ],
+    "source": "https://www.mlb.com/history",
+    "seedId": "1cca8cfd-8e8f-4b23-a441-a2c1546eb38f"
+  },
+  {
+    "category": "sports",
+    "navigationKeyword1": "baseball",
+    "navigationKeyword2": "mlb",
+    "question": "Which team won the 2024 World Series?",
+    "correctAnswer": "Los Angeles Dodgers",
+    "incorrectAnswers": [
+      "New York Yankees",
+      "Texas Rangers",
+      "Houston Astros"
+    ],
+    "explanation": "The Dodgers beat the Yankees to win the 2024 World Series.",
+    "keywords": [
+      "baseball",
+      "mlb",
+      "world-series"
+    ],
+    "source": "https://www.mlb.com/history",
+    "seedId": "f430af7e-cea4-4cc7-b031-f8a99dc34114"
+  },
+  {
+    "category": "sports",
+    "navigationKeyword1": "baseball",
+    "navigationKeyword2": "mlb",
+    "question": "Which team ended a 108-year championship drought by winning the 2016 World Series?",
+    "correctAnswer": "Chicago Cubs",
+    "incorrectAnswers": [
+      "Cleveland Guardians",
+      "Boston Red Sox",
+      "St. Louis Cardinals"
+    ],
+    "explanation": "Chicago beat Cleveland in seven games to win in 2016.",
+    "keywords": [
+      "baseball",
+      "mlb",
+      "cubs"
+    ],
+    "source": "https://www.mlb.com/history",
+    "seedId": "45f45427-f84c-4b37-adbf-2233c8248733"
+  },
+  {
+    "category": "sports",
+    "navigationKeyword1": "baseball",
+    "navigationKeyword2": "mlb",
+    "question": "Which stadium is famously associated with the Green Monster?",
+    "correctAnswer": "Fenway Park",
+    "incorrectAnswers": [
+      "Wrigley Field",
+      "Dodger Stadium",
+      "Yankee Stadium"
+    ],
+    "explanation": "The Green Monster is Fenway Park's left-field wall.",
+    "keywords": [
+      "baseball",
+      "mlb",
+      "fenway"
+    ],
+    "source": "https://www.mlb.com/history",
+    "seedId": "2499b913-62e7-4889-8e16-a2ebc5236847"
+  },
+  {
+    "category": "sports",
+    "navigationKeyword1": "baseball",
+    "navigationKeyword2": "mlb",
+    "question": "Which New York team is associated with Yankee Stadium?",
+    "correctAnswer": "New York Yankees",
+    "incorrectAnswers": [
+      "New York Mets",
+      "Boston Red Sox",
+      "Chicago White Sox"
+    ],
+    "explanation": "Yankee Stadium is the home of the Yankees.",
+    "keywords": [
+      "baseball",
+      "mlb",
+      "yankees"
+    ],
+    "source": "https://www.mlb.com/history",
+    "seedId": "c939451a-a5e9-4c8d-8bb8-12c9395b1049"
+  },
+  {
+    "category": "sports",
+    "navigationKeyword1": "baseball",
+    "navigationKeyword2": "mlb",
+    "question": "How many innings are in a regulation MLB game?",
+    "correctAnswer": "Nine",
+    "incorrectAnswers": [
+      "Seven",
+      "Eight",
+      "Ten"
+    ],
+    "explanation": "A standard MLB game lasts nine innings.",
+    "keywords": [
+      "baseball",
+      "mlb",
+      "innings"
+    ],
+    "source": "https://www.mlb.com/history",
+    "seedId": "b3399990-f2f8-46d0-9ee8-12d9b9800fe8"
+  },
+  {
+    "category": "sports",
+    "navigationKeyword1": "baseball",
+    "navigationKeyword2": "mlb",
+    "question": "Which team won the 2023 World Series?",
+    "correctAnswer": "Texas Rangers",
+    "incorrectAnswers": [
+      "Arizona Diamondbacks",
+      "Houston Astros",
+      "Atlanta Braves"
+    ],
+    "explanation": "Texas won the 2023 World Series over Arizona.",
+    "keywords": [
+      "baseball",
+      "mlb",
+      "rangers"
+    ],
+    "source": "https://www.mlb.com/history",
+    "seedId": "db05a016-46ba-43df-9373-22f7cb19ad37"
+  }
+]

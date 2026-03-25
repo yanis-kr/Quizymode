@@ -1,0 +1,192 @@
+[
+  {
+    "category": "trivia",
+    "navigationKeyword1": "games",
+    "navigationKeyword2": "series",
+    "question": "The Legend of Zelda to recurring princess name what?",
+    "correctAnswer": "Zelda",
+    "incorrectAnswers": [
+      "Peach",
+      "Samus",
+      "Lara"
+    ],
+    "explanation": "Princess Zelda names the series.",
+    "keywords": [
+      "zelda",
+      "nintendo"
+    ],
+    "source": "https://www.britannica.com/topic/The-Legend-of-Zelda",
+    "seedId": "38acc607-d476-4cf7-9b9d-9bd039ab5027"
+  },
+  {
+    "category": "trivia",
+    "navigationKeyword1": "games",
+    "navigationKeyword2": "series",
+    "question": "Pok\u00e9mon to players collecting and battling what?",
+    "correctAnswer": "creatures called Pok\u00e9mon",
+    "incorrectAnswers": [
+      "spaceships",
+      "race cars",
+      "chess pieces"
+    ],
+    "explanation": "Pok\u00e9mon centers on creature collection battles.",
+    "keywords": [
+      "pokemon",
+      "rpg"
+    ],
+    "source": "https://www.britannica.com/topic/Pokemon-electronic-game",
+    "seedId": "ea7c948e-d1df-4c71-82c7-331745b0791c"
+  },
+  {
+    "category": "trivia",
+    "navigationKeyword1": "games",
+    "navigationKeyword2": "series",
+    "question": "Which genre is associated with Call of Duty?",
+    "correctAnswer": "first-person shooter",
+    "incorrectAnswers": [
+      "racing sim",
+      "rhythm",
+      "farming"
+    ],
+    "explanation": "Call of Duty is an FPS franchise.",
+    "keywords": [
+      "cod",
+      "fps"
+    ],
+    "source": "https://www.britannica.com/topic/Call-of-Duty-electronic-game",
+    "seedId": "6a717220-56bf-4cdf-a3af-790ea0714d91"
+  },
+  {
+    "category": "trivia",
+    "navigationKeyword1": "games",
+    "navigationKeyword2": "series",
+    "question": "Which country\u2019s RPG developer historically is most closely associated with Final Fantasy?",
+    "correctAnswer": "Japan",
+    "incorrectAnswers": [
+      "Canada",
+      "France",
+      "South Africa"
+    ],
+    "explanation": "Final Fantasy is a Japanese RPG series.",
+    "keywords": [
+      "final-fantasy",
+      "jrpg"
+    ],
+    "source": "https://www.britannica.com/topic/Final-Fantasy-electronic-game",
+    "seedId": "2e47224c-2203-4d2b-ae2c-df8b2cbc481c"
+  },
+  {
+    "category": "trivia",
+    "navigationKeyword1": "games",
+    "navigationKeyword2": "series",
+    "question": "Which sport is most closely associated with Madden NFL games?",
+    "correctAnswer": "American football",
+    "incorrectAnswers": [
+      "cricket",
+      "rugby union only",
+      "lacrosse"
+    ],
+    "explanation": "Madden simulates American football.",
+    "keywords": [
+      "madden",
+      "sports-games"
+    ],
+    "source": "https://www.britannica.com/topic/Madden-NFL",
+    "seedId": "832d2de1-c8db-4c4a-9ee8-b5bdd41b1592"
+  },
+  {
+    "category": "trivia",
+    "navigationKeyword1": "games",
+    "navigationKeyword2": "series",
+    "question": "Civilization series models what scale strategy?",
+    "correctAnswer": "turn-based empire building",
+    "incorrectAnswers": [
+      "real-time fighting only",
+      "rhythm timing only",
+      "tile-matching only"
+    ],
+    "explanation": "Civilization is turn-based empire strategy.",
+    "keywords": [
+      "civ",
+      "strategy"
+    ],
+    "source": "https://www.britannica.com/topic/Civilization-electronic-game",
+    "seedId": "1762a380-72b0-40ed-9cd1-7b18235056c0"
+  },
+  {
+    "category": "trivia",
+    "navigationKeyword1": "games",
+    "navigationKeyword2": "series",
+    "question": "Sims series with simulating what?",
+    "correctAnswer": "daily life of characters",
+    "incorrectAnswers": [
+      "stock exchanges only",
+      "naval battles only",
+      "golf swings only"
+    ],
+    "explanation": "The Sims simulates life management.",
+    "keywords": [
+      "sims",
+      "simulation"
+    ],
+    "source": "https://www.britannica.com/topic/The-Sims",
+    "seedId": "fe8a2f25-807c-4566-895d-907bae084aab"
+  },
+  {
+    "category": "trivia",
+    "navigationKeyword1": "games",
+    "navigationKeyword2": "series",
+    "question": "Which genre blend is most closely associated with Resident Evil?",
+    "correctAnswer": "survival horror",
+    "incorrectAnswers": [
+      "sports management",
+      "puzzle-only",
+      "rhythm"
+    ],
+    "explanation": "Resident Evil is survival horror.",
+    "keywords": [
+      "resident-evil",
+      "horror"
+    ],
+    "source": "https://www.britannica.com/topic/Resident-Evil-electronic-game",
+    "seedId": "11e3ec24-4c5f-4b24-a011-1ebefbf2487d"
+  },
+  {
+    "category": "trivia",
+    "navigationKeyword1": "games",
+    "navigationKeyword2": "series",
+    "question": "Which racing format is most closely associated with Mario Kart?",
+    "correctAnswer": "kart racing with items",
+    "incorrectAnswers": [
+      "open-world flight",
+      "submarine sim",
+      "chess clocks"
+    ],
+    "explanation": "Mario Kart is item-based kart racing.",
+    "keywords": [
+      "mario-kart",
+      "racing"
+    ],
+    "source": "https://www.britannica.com/topic/Mario-Kart",
+    "seedId": "f5a51626-900d-431b-8014-0dff0c84c009"
+  },
+  {
+    "category": "trivia",
+    "navigationKeyword1": "games",
+    "navigationKeyword2": "series",
+    "question": "Animal Crossing emphasizes what pacing?",
+    "correctAnswer": "slow-paced town life",
+    "incorrectAnswers": [
+      "competitive esports",
+      "battle royale",
+      "speedrunning"
+    ],
+    "explanation": "Animal Crossing focuses on relaxed town life.",
+    "keywords": [
+      "animal-crossing",
+      "life-sim"
+    ],
+    "source": "https://www.britannica.com/topic/Animal-Crossing-electronic-game",
+    "seedId": "725de8b0-85f5-48d1-a757-5a74aa95a66e"
+  }
+]

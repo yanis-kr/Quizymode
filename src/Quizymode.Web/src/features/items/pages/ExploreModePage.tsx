@@ -1,25 +1,34 @@
-import { useState, useEffect, useMemo } from "react";
+import { useState, useEffect, useMemo, useRef } from "react";
 import { useParams, useNavigate, useSearchParams } from "react-router-dom";
 import { useQuery } from "@tanstack/react-query";
 import { itemsApi } from "@/api/items";
 import { collectionsApi } from "@/api/collections";
 import { categoriesApi } from "@/api/categories";
+import { keywordsApi } from "@/api/keywords";
 import { useAuth } from "@/contexts/AuthContext";
 import LoadingSpinner from "@/components/LoadingSpinner";
 import ErrorMessage from "@/components/ErrorMessage";
-import ItemRatingsComments from "@/components/ItemRatingsComments";
+import { CommentsDrawer } from "@/components/CommentsDrawer";
+import { StudyShell } from "@/components/study/StudyShell";
+import { ExploreRenderer } from "@/components/study/ExploreRenderer";
 import ItemCollectionsModal from "@/components/ItemCollectionsModal";
 import { Link } from "react-router-dom";
 import {
   categoryNameToSlug,
   findCategoryNameFromSlug,
+  buildCategoryPath,
 } from "@/utils/categorySlug";
-import {
-  FolderIcon,
-  ChevronLeftIcon,
-  ChevronRightIcon,
-  ArrowLeftIcon,
-} from "@heroicons/react/24/outline";
+import { buildCollectionPath, buildCollectionStudyPath } from "@/utils/collectionPath";
+import { ExploreQuizBreadcrumb } from "@/components/ExploreQuizBreadcrumb";
+import { ScopeSecondaryBar } from "@/components/ScopeSecondaryBar";
+import { ScopePathHeader } from "@/components/ScopePathHeader";
+import type { ViewMode } from "@/components/ModeSwitcher";
+import { StarIcon, XMarkIcon } from "@heroicons/react/24/outline";
+import { StarIcon as StarIconSolid } from "@heroicons/react/24/solid";
+import type { CollectionRatingResponse } from "@/types/api";
+import { useQuery as useRatingQuery } from "@tanstack/react-query";
+import { getCategoryScopeModeConfig } from "@/features/categories/utils/categoryScopeMode";
+import { getStudyScopeKeywords } from "@/features/items/utils/studyScopeParams";
 
 const ExploreModePage = () => {
   const { category: categorySlug, collectionId, itemId } = useParams();
@@ -27,11 +36,51 @@ const ExploreModePage = () => {
   const navigate = useNavigate();
   const { isAuthenticated } = useAuth();
   const returnUrl = searchParams.get("return");
+  const hasCategoryScope = !!categorySlug && !collectionId;
+  const hasExplicitNavParam = searchParams.has("nav");
+  const { keywords, navigationKeywords, filterKeywords } = useMemo(
+    () => getStudyScopeKeywords(searchParams, hasCategoryScope),
+    [searchParams, hasCategoryScope]
+  );
+/** Query string for Flashcards item URLs; preserves keywords, return, and scope filter params across prev/next and mode switch */
+  const exploreItemSearch = useMemo(() => {
+    const params = new URLSearchParams();
+    if (returnUrl) params.set("return", returnUrl);
+    if (hasCategoryScope && (hasExplicitNavParam || navigationKeywords.length > 0)) {
+      params.set("nav", navigationKeywords.join(","));
+    }
+    if (keywords.length > 0) params.set("keywords", keywords.join(","));
+    const filterType = searchParams.get("filterType");
+    if (filterType) params.set("filterType", filterType);
+    const search = searchParams.get("search");
+    if (search) params.set("search", search);
+    const ratingMin = searchParams.get("ratingMin");
+    if (ratingMin) params.set("ratingMin", ratingMin);
+    const ratingMax = searchParams.get("ratingMax");
+    if (ratingMax) params.set("ratingMax", ratingMax);
+    if (searchParams.get("ratingUnrated") === "1") params.set("ratingUnrated", "1");
+    if (searchParams.get("ratingOnlyUnrated") === "1") params.set("ratingOnlyUnrated", "1");
+    const s = params.toString();
+    return s ? `?${s}` : "";
+  }, [
+    hasCategoryScope,
+    hasExplicitNavParam,
+    navigationKeywords,
+    returnUrl,
+    keywords,
+    searchParams,
+  ]);
+  /** Flashcards mode loads all available items (backend max 1000) into memory */
+  const EXPLORE_MAX_ITEMS = 1000;
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [count] = useState(100); // Increased default to fetch more items
   const [selectedItemForCollections, setSelectedItemForCollections] = useState<
     string | null
   >(null);
+  const [commentsDrawerItemId, setCommentsDrawerItemId] = useState<string | null>(
+    null
+  );
+  const [showDetails, setShowDetails] = useState(false);
+  const hasSyncedInitialItemUrl = useRef(false);
 
   // Fetch categories to convert slug to actual category name
   const { data: categoriesData } = useQuery({
@@ -56,6 +105,16 @@ const ExploreModePage = () => {
   // Track whether we're still resolving the category name from slug
   const isCategoryResolving = !!categorySlug && !categoriesData?.categories;
 
+  // Fetch navigation keyword descriptions for breadcrumb tooltips
+  const { data: keywordDescriptionsData } = useQuery({
+    queryKey: ["keyword-descriptions", category, navigationKeywords],
+    queryFn: () =>
+      keywordsApi.getKeywordDescriptions(category!, navigationKeywords),
+    enabled: !!category && navigationKeywords.length > 0,
+  });
+  const keywordDescriptions =
+    keywordDescriptionsData?.keywords?.map((k) => k.description) ?? undefined;
+
   // Check sessionStorage for stored items (when navigating with itemId from ItemsPage or comments)
   // Must be declared before useQuery that references it
   // Initialize synchronously from sessionStorage to avoid race conditions
@@ -68,10 +127,15 @@ const ExploreModePage = () => {
         try {
           const context = JSON.parse(stored);
           if (context.items && context.mode === "explore") {
-            // Only restore if category matches (or both are undefined/null)
+            // Restore if we navigated here with this list (itemId in stored items) or category matches
+            const itemInStoredList = context.items.some(
+              (item: { id?: string }) => item.id === itemId
+            );
             const categoryMatches =
-              (!context.category && !category) || context.category === category;
-            if (categoryMatches) {
+              (!context.category && !category) ||
+              context.category === category ||
+              !category;
+            if (itemInStoredList || categoryMatches) {
               return context.items;
             }
           }
@@ -103,12 +167,26 @@ const ExploreModePage = () => {
   const { data: collectionInfo } = useQuery({
     queryKey: ["collection", collectionId],
     queryFn: () => collectionsApi.getById(collectionId!),
-    enabled: !!collectionId && isAuthenticated,
+    enabled: !!collectionId,
+  });
+
+  const { data: ratingData } = useRatingQuery<CollectionRatingResponse>({
+    queryKey: ["collectionRating", collectionId],
+    queryFn: () => collectionsApi.getRating(collectionId!),
+    enabled: !!collectionId,
   });
 
   const { data, isLoading, error, refetch } = useQuery({
-    queryKey: ["randomItems", category, count],
-    queryFn: () => itemsApi.getRandom(category, count),
+    queryKey: ["randomItems", category, EXPLORE_MAX_ITEMS, navigationKeywords, filterKeywords],
+    queryFn: () =>
+      itemsApi.getRandom(
+        category,
+        EXPLORE_MAX_ITEMS,
+        filterKeywords.length > 0 ? filterKeywords : undefined,
+        {
+          navigationKeywords: hasCategoryScope && navigationKeywords.length > 0 ? navigationKeywords : undefined,
+        }
+      ),
     enabled: !collectionId && !storedItems && !isCategoryResolving, // Don't load if we have stored items or category is still resolving
   });
 
@@ -120,15 +198,19 @@ const ExploreModePage = () => {
       if (stored) {
         try {
           const context = JSON.parse(stored);
-          if (
-            context.items &&
-            context.mode === "explore" &&
-            context.items.length > 0
-          ) {
-            // Only restore if category matches (or both are undefined/null)
-            const categoryMatches =
-              (!context.category && !category) || context.category === category;
-            if (categoryMatches) {
+            if (
+              context.items &&
+              context.mode === "explore" &&
+              context.items.length > 0
+            ) {
+              const itemInStoredList = context.items.some(
+                (item: { id?: string }) => item.id === itemId
+              );
+              const categoryMatches =
+                (!context.category && !category) ||
+                context.category === category ||
+                !category;
+              if (itemInStoredList || categoryMatches) {
               // Set storedItems state with the full items list
               setStoredItems(context.items);
 
@@ -152,7 +234,7 @@ const ExploreModePage = () => {
     }
   }, [itemId, hasRestoredItems, category, collectionId]);
 
-  // Clear sessionStorage when starting a fresh explore (no itemId, no collectionId)
+  // Clear sessionStorage when starting fresh in Flashcards mode (no itemId, no collectionId)
   // This ensures we always fetch fresh items instead of restoring old ones
   useEffect(() => {
     if (!itemId && !collectionId && !hasRestoredItems) {
@@ -196,10 +278,53 @@ const ExploreModePage = () => {
     }
   }, [itemId, items]);
 
-  // Use singleItemData for currentItem if available and itemId matches, to ensure we have latest data including collections
-  const currentItem = (itemId && singleItemData && singleItemData.id === itemId) 
-    ? singleItemData 
-    : items[currentIndex];
+  // Sync URL to include first item id when landing on Flashcards without item in path (e.g. /explore/certs?keywords=...)
+  useEffect(() => {
+    if (
+      !itemId &&
+      items.length > 0 &&
+      currentIndex === 0 &&
+      !hasSyncedInitialItemUrl.current
+    ) {
+      hasSyncedInitialItemUrl.current = true;
+      const firstId = items[0].id;
+      if (collectionId) {
+        navigate(
+          `${buildCollectionStudyPath("explore", collectionId, collectionInfo?.name, firstId)}${exploreItemSearch}`,
+          { replace: true }
+        );
+      } else if (category) {
+        navigate(
+          `/explore/${categoryNameToSlug(category)}/item/${firstId}${exploreItemSearch}`,
+          { replace: true }
+        );
+      } else {
+        navigate(`/explore/item/${firstId}${exploreItemSearch}`, {
+          replace: true,
+        });
+      }
+    }
+  }, [
+    itemId,
+    items,
+    currentIndex,
+    collectionId,
+    category,
+    exploreItemSearch,
+    navigate,
+  ]);
+
+  // In List Items view (no itemId in URL), subscribe to current item so +/− invalidation triggers re-render and UI updates
+  const currentListItem = items[currentIndex];
+  const currentItemIdForQuery = currentListItem?.id;
+  const { data: currentItemData } = useQuery({
+    queryKey: ["item", currentItemIdForQuery],
+    queryFn: () => itemsApi.getById(currentItemIdForQuery!),
+    enabled: !!currentItemIdForQuery && !itemId && items.length > 0,
+  });
+  const currentItem = (itemId && singleItemData && singleItemData.id === itemId)
+    ? singleItemData
+    : (currentItemData?.id === currentListItem?.id ? currentItemData : currentListItem);
 
   useEffect(() => {
     if (items.length > 0 && currentIndex >= items.length) {
@@ -260,251 +385,338 @@ const ExploreModePage = () => {
     );
   }
 
+  const hideSetsMode = !!category && navigationKeywords.length >= 2;
+  const categoryAvailableModes: ViewMode[] = collectionId
+    ? ["list", "explore", "quiz"]
+    : getCategoryScopeModeConfig("sets", hideSetsMode).availableModes;
+  const categoryScopePath = category
+    ? buildCategoryPath(categoryNameToSlug(category), navigationKeywords)
+    : "/categories";
+  const categoryListSearch = (() => {
+    const params = new URLSearchParams();
+    params.set("view", "items");
+    if (filterKeywords.length > 0) {
+      params.set("keywords", filterKeywords.join(","));
+    }
+    const filterType = searchParams.get("filterType");
+    if (filterType) params.set("filterType", filterType);
+    const search = searchParams.get("search");
+    if (search) params.set("search", search);
+    const ratingMin = searchParams.get("ratingMin");
+    if (ratingMin) params.set("ratingMin", ratingMin);
+    const ratingMax = searchParams.get("ratingMax");
+    if (ratingMax) params.set("ratingMax", ratingMax);
+    if (searchParams.get("ratingUnrated") === "1") params.set("ratingUnrated", "1");
+    if (searchParams.get("ratingOnlyUnrated") === "1") params.set("ratingOnlyUnrated", "1");
+    const query = params.toString();
+    return query ? `?${query}` : "";
+  })();
+  const collectionListPath = collectionId
+    ? buildCollectionPath(collectionId, collectionInfo?.name)
+    : null;
+
+  const handlePrev = () => {
+    if (currentIndex > 0) {
+      const newIndex = currentIndex - 1;
+      setCurrentIndex(newIndex);
+      if (items[newIndex]) {
+        if (collectionId) {
+          navigate(
+            `${buildCollectionStudyPath("explore", collectionId, collectionInfo?.name, items[newIndex].id)}${exploreItemSearch}`,
+            { replace: true }
+          );
+        } else if (category) {
+          navigate(`/explore/${categoryNameToSlug(category)}/item/${items[newIndex].id}${exploreItemSearch}`, { replace: true });
+        } else {
+          navigate(`/explore/item/${items[newIndex].id}${exploreItemSearch}`, { replace: true });
+        }
+      }
+    }
+  };
+
+  const handleNext = () => {
+    if (currentIndex < items.length - 1) {
+      const newIndex = currentIndex + 1;
+      setCurrentIndex(newIndex);
+      if (items[newIndex]) {
+        if (collectionId) {
+          navigate(
+            `${buildCollectionStudyPath("explore", collectionId, collectionInfo?.name, items[newIndex].id)}${exploreItemSearch}`,
+            { replace: true }
+          );
+        } else if (category) {
+          navigate(`/explore/${categoryNameToSlug(category)}/item/${items[newIndex].id}${exploreItemSearch}`, { replace: true });
+        } else {
+          navigate(`/explore/item/${items[newIndex].id}${exploreItemSearch}`, { replace: true });
+        }
+      }
+    }
+  };
+
   return (
     <div className="px-4 py-6 sm:px-0">
-      <div className="max-w-4xl mx-auto">
-        {collectionId && (
-          <div className="mb-6 flex items-center space-x-4">
-            <button
-              onClick={() => navigate("/collections")}
-              className="flex items-center px-3 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-md hover:bg-gray-50"
-            >
-              <ArrowLeftIcon className="h-4 w-4 mr-2" />
-              Go Back
-            </button>
-            {collectionInfo && (
-              <h1 className="text-3xl font-bold text-gray-900">
+      <ScopeSecondaryBar
+        scopeType={collectionId ? "collection" : "category"}
+        activeMode="explore"
+        availableModes={categoryAvailableModes}
+        onModeChange={(mode) => {
+          const search = exploreItemSearch;
+          if (mode === "sets") {
+            if (category) navigate(categoryScopePath);
+            else navigate("/categories");
+          } else if (mode === "list") {
+            if (collectionId && collectionListPath) navigate(collectionListPath);
+            else if (category)
+              navigate(`${categoryScopePath}${categoryListSearch}`);
+            else navigate("/categories");
+          } else if (mode === "quiz") {
+            const targetItemId = currentItem?.id ?? items[0]?.id;
+            if (items.length > 0 && targetItemId) {
+              const payload = {
+                mode: "quiz" as const,
+                category: category,
+                items: items,
+                currentIndex: currentIndex,
+              };
+              sessionStorage.setItem("navigationContext_quiz", JSON.stringify(payload));
+              sessionStorage.setItem("quiz_scope_items_from_categories", JSON.stringify(payload));
+            }
+            if (collectionId)
+              navigate(
+                `${buildCollectionStudyPath("quiz", collectionId, collectionInfo?.name, currentItem?.id ?? items[0]?.id)}${search}`
+              );
+            else if (category)
+              navigate(
+                `/quiz/${categoryNameToSlug(category)}/item/${currentItem?.id ?? items[0]?.id}${search}`
+              );
+            else if (items[0])
+              navigate(`/quiz/item/${currentItem?.id ?? items[0].id}${search}`);
+          }
+        }}
+      />
+      {collectionId && collectionInfo && (
+        <div className="flex flex-wrap items-center justify-between gap-4 mt-4 mb-4">
+          <div className="min-w-0">
+            <div className="text-xs font-medium text-gray-500 uppercase tracking-wide">
+              Collection
+            </div>
+            <div className="flex flex-wrap items-baseline gap-2">
+              <div className="text-lg font-semibold text-gray-900 truncate max-w-xs sm:max-w-sm md:max-w-md">
                 {collectionInfo.name}
-              </h1>
-            )}
+              </div>
+              {collectionInfo.description && collectionInfo.description.trim() !== "" && (
+                <div className="text-sm text-gray-500 truncate max-w-xs sm:max-w-sm md:max-w-lg">
+                  {collectionInfo.description}
+                </div>
+              )}
+            </div>
           </div>
-        )}
-        {category && !collectionId && (
-          <div className="mb-6 flex items-center space-x-4">
-            <button
-              onClick={() => navigate(returnUrl || "/categories")}
-              className="flex items-center px-3 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-md hover:bg-gray-50"
-            >
-              <ArrowLeftIcon className="h-4 w-4 mr-2" />
-              Go Back
-            </button>
-            <h1 className="text-3xl font-bold text-gray-900">
-              {category}
-            </h1>
-          </div>
-        )}
-        {!category && !collectionId && (
-          <div className="mb-6 flex items-center space-x-4">
-            {returnUrl && (
-              <button
-                onClick={() => navigate(returnUrl)}
-                className="flex items-center px-3 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-md hover:bg-gray-50"
-              >
-                <ArrowLeftIcon className="h-4 w-4 mr-2" />
-                Go Back
-              </button>
-            )}
-          </div>
-        )}
-        <div className="bg-white shadow rounded-lg p-6 mb-4">
-          <div className="flex justify-between items-center mb-2">
-            <h2 className="text-2xl font-bold text-gray-900">Explore Mode</h2>
-          </div>
-          <p className="text-gray-600 text-sm mb-4">
-            Study mode for reviewing quiz items. View questions, answers, and explanations. Navigate through items using the arrow buttons or click on related items in comments.
-          </p>
-          <div className="flex justify-between items-center mb-4">
-            <div className="flex items-center space-x-4">
-              <div className="flex items-center space-x-2">
-                <button
-                  onClick={() => {
-                    if (currentIndex > 0) {
-                      const newIndex = currentIndex - 1;
-                      setCurrentIndex(newIndex);
-                      // Update URL based on context
-                      if (items[newIndex]) {
-                        const returnParam = returnUrl ? `?return=${encodeURIComponent(returnUrl)}` : "";
-                        if (collectionId) {
-                          navigate(
-                            `/explore/collection/${collectionId}/item/${items[newIndex].id}${returnParam}`,
-                            { replace: true }
-                          );
-                        } else if (category) {
-                          navigate(`/explore/${categoryNameToSlug(category)}/item/${items[newIndex].id}${returnParam}`, { replace: true });
-                        } else {
-                          navigate(`/explore/item/${items[newIndex].id}${returnParam}`, {
-                            replace: true,
-                          });
-                        }
-                      }
-                    }
-                  }}
-                  disabled={currentIndex === 0}
-                  className="p-1 text-gray-600 hover:text-gray-900 disabled:text-gray-300 disabled:cursor-not-allowed"
-                  title="Previous item"
-                >
-                  <ChevronLeftIcon className="h-5 w-5" />
-                </button>
-                <span className="text-sm text-gray-500 min-w-[80px] text-center">
-                  {currentIndex + 1} of {items.length}
+          <div className="flex flex-wrap items-center gap-4">
+            <div className="text-sm text-gray-600">
+              {collectionInfo.itemCount ?? items.length} items
+            </div>
+            {ratingData && (
+              <div className="flex items-center gap-2">
+                <span className="text-sm font-medium text-gray-700">Rating</span>
+                <div className="flex items-center gap-1">
+                  {[1, 2, 3, 4, 5].map((star) => (
+                    <span key={star} className="p-0.5">
+                      {ratingData.averageStars != null && star <= Math.round(ratingData.averageStars) ? (
+                        <StarIconSolid className="h-4 w-4 text-amber-500" />
+                      ) : (
+                        <StarIcon className="h-4 w-4 text-gray-300" />
+                      )}
+                    </span>
+                  ))}
+                </div>
+                <span className="text-xs text-gray-500">
+                  {ratingData.averageStars != null
+                    ? `${ratingData.averageStars} (${ratingData.count})`
+                    : "No ratings yet"}
                 </span>
-                <button
-                  onClick={() => {
-                    if (currentIndex < items.length - 1) {
-                      const newIndex = currentIndex + 1;
-                      setCurrentIndex(newIndex);
-                      // Update URL based on context
-                      if (items[newIndex]) {
-                        const returnParam = returnUrl ? `?return=${encodeURIComponent(returnUrl)}` : "";
-                        if (collectionId) {
-                          navigate(
-                            `/explore/collection/${collectionId}/item/${items[newIndex].id}${returnParam}`,
-                            { replace: true }
-                          );
-                        } else if (category) {
-                          navigate(`/explore/${categoryNameToSlug(category)}/item/${items[newIndex].id}${returnParam}`, { replace: true });
-                        } else {
-                          navigate(`/explore/item/${items[newIndex].id}${returnParam}`, {
-                            replace: true,
-                          });
-                        }
-                      }
-                    }
-                  }}
-                  disabled={currentIndex >= items.length - 1}
-                  className="p-1 text-gray-600 hover:text-gray-900 disabled:text-gray-300 disabled:cursor-not-allowed"
-                  title="Next item"
-                >
-                  <ChevronRightIcon className="h-5 w-5" />
-                </button>
               </div>
-            </div>
-          </div>
-
-          {currentItem && (
-            <div className="space-y-4">
-              <div>
-                <h3 className="text-lg font-medium text-gray-900 mb-2">
-                  Question
-                </h3>
-                <p className="text-gray-700">{currentItem.question}</p>
-              </div>
-
-              <div>
-                <h3 className="text-lg font-medium text-gray-900 mb-2">
-                  Answer
-                </h3>
-                <p className="text-gray-700 font-semibold">
-                  {currentItem.correctAnswer}
-                </p>
-              </div>
-
-              {currentItem.explanation && (
-                <div>
-                  <h3 className="text-lg font-medium text-gray-900 mb-2">
-                    Explanation
-                  </h3>
-                  <p className="text-gray-700">{currentItem.explanation}</p>
-                </div>
-              )}
-
-              <div className="text-sm text-gray-500 space-y-1">
-                <div>Category: {currentItem.category}</div>
-                {currentItem.source && (
-                  <div>Source: {currentItem.source}</div>
-                )}
-              </div>
-
-              {/* Ratings and Comments */}
-              <ItemRatingsComments
-                itemId={currentItem.id}
-                navigationContext={navigationContext}
-              />
-
-              {/* Collection Controls */}
-              {(isAuthenticated || (currentItem.collections && currentItem.collections.length > 0)) && (
-                <div className="mt-4 flex items-center gap-2 flex-wrap">
-                  {isAuthenticated && (
-                    <button
-                      onClick={() => setSelectedItemForCollections(currentItem.id)}
-                      className="p-2 text-blue-600 hover:bg-blue-50 rounded-md"
-                      title="Manage collections"
-                    >
-                      <FolderIcon className="h-5 w-5" />
-                    </button>
-                  )}
-                  {currentItem.collections && currentItem.collections.length > 0 && (
-                    <div className="flex items-center gap-2 flex-wrap">
-                      {currentItem.collections.map((collection: { id: string; name: string }) => (
-                        <button
-                          key={collection.id}
-                          onClick={() => navigate(`/collections?selected=${collection.id}`)}
-                          className="inline-flex items-center px-2 py-1 rounded text-xs font-medium bg-emerald-100 text-emerald-800 hover:bg-emerald-200 transition-colors"
-                          title={`Collection: ${collection.name}`}
-                        >
-                          {collection.name}
-                        </button>
-                      ))}
-                    </div>
-                  )}
-                </div>
-              )}
-            </div>
-          )}
-
-          <div className="flex justify-between mt-6">
+            )}
             <button
-              onClick={() => setCurrentIndex((prev) => Math.max(0, prev - 1))}
-              disabled={currentIndex === 0}
-              className="px-4 py-2 bg-gray-200 text-gray-700 rounded-md hover:bg-gray-300 disabled:opacity-50 disabled:cursor-not-allowed"
+              type="button"
+              onClick={() => setShowDetails(true)}
+              className="inline-flex items-center px-3 py-1.5 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-md hover:bg-gray-50"
             >
-              Previous
-            </button>
-            <button
-              onClick={() =>
-                setCurrentIndex((prev) => Math.min(items.length - 1, prev + 1))
-              }
-              disabled={currentIndex === items.length - 1}
-              className="px-4 py-2 bg-indigo-600 text-white rounded-md hover:bg-indigo-700 disabled:opacity-50 disabled:cursor-not-allowed"
-            >
-              Next
+              Details
             </button>
           </div>
         </div>
-
-        {!isAuthenticated && (
-          <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-4 mb-4">
-            <p className="text-sm text-yellow-800">
-              <Link to="/signup" className="font-medium underline">
-                Sign up
-              </Link>{" "}
-              or{" "}
-              <Link to="/login" className="font-medium underline">
-                sign in
-              </Link>{" "}
-              to create your own items and collections!
-            </p>
-          </div>
-        )}
-
-        <div className="text-center">
-          <button
-            onClick={() => {
-              if (collectionId) {
-                navigate(`/collections/${collectionId}`);
-              } else if (returnUrl) {
-                navigate(returnUrl);
-              } else {
-                navigate("/categories");
-              }
-            }}
-            className="text-indigo-600 hover:text-indigo-700"
+      )}
+      {category && !collectionId && (
+        <ScopePathHeader
+          breadcrumb={
+            <ExploreQuizBreadcrumb
+              mode="explore"
+              categorySlug={categoryNameToSlug(category)}
+              categoryDisplayName={category}
+              keywords={navigationKeywords}
+              keywordDescriptions={keywordDescriptions}
+              onNavigate={(path) => navigate(path)}
+            />
+          }
+          count={items.length}
+          hint="Flashcards-style study mode for reviewing quiz items."
+        />
+      )}
+      {showDetails && collectionId && collectionInfo && (
+        <div
+          className="fixed inset-0 bg-gray-600 bg-opacity-50 overflow-y-auto h-full w-full z-40"
+          onClick={() => setShowDetails(false)}
+        >
+          <div
+            className="relative top-24 mx-auto p-5 border w-full max-w-md shadow-lg rounded-md bg-white"
+            onClick={(e) => e.stopPropagation()}
           >
-            ← Go back
-          </button>
+            <div className="flex justify-between items-center mb-4">
+              <h3 className="text-lg font-medium text-gray-900">Collection details</h3>
+              <button
+                onClick={() => setShowDetails(false)}
+                className="text-gray-400 hover:text-gray-500"
+              >
+                <XMarkIcon className="h-5 w-5" />
+              </button>
+            </div>
+            <dl className="space-y-2 text-sm text-gray-700">
+              <div className="flex justify-between gap-4">
+                <dt className="font-medium text-gray-600">Name</dt>
+                <dd className="text-right break-words">{collectionInfo.name}</dd>
+              </div>
+              <div className="flex justify-between gap-4">
+                <dt className="font-medium text-gray-600">Author</dt>
+                <dd className="text-right break-all">{collectionInfo.createdBy}</dd>
+              </div>
+              <div className="flex justify-between gap-4">
+                <dt className="font-medium text-gray-600">Created</dt>
+                <dd className="text-right">
+                  {new Date(collectionInfo.createdAt).toLocaleString()}
+                </dd>
+              </div>
+              <div className="flex justify-between gap-4">
+                <dt className="font-medium text-gray-600">Items</dt>
+                <dd className="text-right">{collectionInfo.itemCount}</dd>
+              </div>
+              {"isPublic" in collectionInfo && (
+                <div className="flex justify-between gap-4">
+                  <dt className="font-medium text-gray-600">Visibility</dt>
+                  <dd className="text-right">
+                    {collectionInfo.isPublic ? "Public" : "Private"}
+                  </dd>
+                </div>
+              )}
+            </dl>
+          </div>
         </div>
-      </div>
+      )}
+      <StudyShell
+        backContent={
+          <>
+            {!category && !collectionId && returnUrl && (
+              <div className="mb-6">
+                <nav className="flex items-center gap-1 text-sm text-gray-600">
+                  <button
+                    onClick={() => navigate(returnUrl)}
+                    className="text-indigo-600 hover:text-indigo-800"
+                    type="button"
+                  >
+                    ← Back
+                  </button>
+                </nav>
+              </div>
+            )}
+          </>
+        }
+        description={
+          !category || !!collectionId
+            ? "Flashcards-style study mode for reviewing quiz items."
+            : undefined
+        }
+        currentIndex={currentIndex}
+        totalCount={items.length}
+        onPrev={handlePrev}
+        onNext={handleNext}
+        isPrevDisabled={currentIndex === 0}
+        isNextDisabled={currentIndex >= items.length - 1}
+        currentItem={currentItem ?? undefined}
+        navigationContext={navigationContext}
+        onOpenComments={(id) => setCommentsDrawerItemId(id)}
+        onOpenManageCollections={(id) => setSelectedItemForCollections(id)}
+        isAuthenticated={isAuthenticated}
+        signUpPrompt={
+          !isAuthenticated ? (
+            <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-4 mb-4">
+              <p className="text-sm text-yellow-800">
+                <Link to="/signup" className="font-medium underline">
+                  Sign up
+                </Link>{" "}
+                or{" "}
+                <Link to="/login" className="font-medium underline">
+                  sign in
+                </Link>{" "}
+                to create your own items and collections!
+              </p>
+            </div>
+          ) : undefined
+        }
+        footerContent={
+          collectionId ? (
+            <button
+              onClick={() => collectionListPath && navigate(collectionListPath)}
+              className="text-indigo-600 hover:text-indigo-700"
+              type="button"
+            >
+              ← Back to collection
+            </button>
+          ) : returnUrl ? (
+            <button
+              onClick={() => navigate(returnUrl)}
+              className="text-indigo-600 hover:text-indigo-700"
+              type="button"
+            >
+              ← Back
+            </button>
+          ) : (
+            <Link to="/categories" className="text-indigo-600 hover:text-indigo-700">
+              ← Categories
+            </Link>
+          )
+        }
+      >
+        {currentItem && <ExploreRenderer item={currentItem} />}
+      </StudyShell>
 
+      <CommentsDrawer
+        itemId={commentsDrawerItemId}
+        onClose={() => setCommentsDrawerItemId(null)}
+        onNavigateToItem={(targetId) => {
+          const idx = items.findIndex((i) => i.id === targetId);
+          if (idx !== -1) {
+            setCurrentIndex(idx);
+            setCommentsDrawerItemId(targetId);
+          }
+        }}
+        previousItemId={
+          commentsDrawerItemId
+            ? (() => {
+                const idx = items.findIndex((i) => i.id === commentsDrawerItemId);
+                return idx > 0 ? items[idx - 1]?.id ?? null : null;
+              })()
+            : null
+        }
+        nextItemId={
+          commentsDrawerItemId
+            ? (() => {
+                const idx = items.findIndex((i) => i.id === commentsDrawerItemId);
+                return idx >= 0 && idx < items.length - 1
+                  ? items[idx + 1]?.id ?? null
+                  : null;
+              })()
+            : null
+        }
+      />
       {selectedItemForCollections && (
         <ItemCollectionsModal
           isOpen={!!selectedItemForCollections}

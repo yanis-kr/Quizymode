@@ -1,6 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using Quizymode.Api.Data;
 using Quizymode.Api.Infrastructure;
+using Quizymode.Api.Services;
 using Quizymode.Api.Shared.Kernel;
 using Quizymode.Api.Shared.Models;
 
@@ -24,9 +25,10 @@ public static class DeleteCollection
         private static async Task<IResult> Handler(
             string id,
             ApplicationDbContext db,
+            IUserContext userContext,
             CancellationToken cancellationToken)
         {
-            Result result = await HandleAsync(id, db, cancellationToken);
+            Result result = await HandleAsync(id, db, userContext, cancellationToken);
 
             return result.Match(
                 () => Results.NoContent(),
@@ -39,6 +41,7 @@ public static class DeleteCollection
     public static async Task<Result> HandleAsync(
         string id,
         ApplicationDbContext db,
+        IUserContext userContext,
         CancellationToken cancellationToken)
     {
         try
@@ -56,6 +59,28 @@ public static class DeleteCollection
             {
                 return Result.Failure(
                     Error.NotFound("Collection.NotFound", $"Collection with id {id} not found"));
+            }
+
+            if (string.IsNullOrEmpty(userContext.UserId) || collection.CreatedBy != userContext.UserId)
+            {
+                return Result.Failure(
+                    Error.Validation("Collection.Forbidden", "You can only delete your own collections"));
+            }
+
+            var bookmarks = await db.CollectionBookmarks
+                .Where(b => b.CollectionId == collectionId)
+                .ToListAsync(cancellationToken);
+            if (bookmarks.Count > 0)
+            {
+                db.CollectionBookmarks.RemoveRange(bookmarks);
+            }
+
+            var shares = await db.CollectionShares
+                .Where(s => s.CollectionId == collectionId)
+                .ToListAsync(cancellationToken);
+            if (shares.Count > 0)
+            {
+                db.CollectionShares.RemoveRange(shares);
             }
 
             // Remove related collection items first

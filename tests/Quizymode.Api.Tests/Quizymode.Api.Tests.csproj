@@ -27,5 +27,10 @@
     <ProjectReference Include="..\..\src\Quizymode.Api\Quizymode.Api.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Include="..\..\docs\quizymode_taxonomy.yaml" Link="data\taxonomy\quizymode_taxonomy.yaml" CopyToOutputDirectory="PreserveNewest" />
+    <None Include="..\..\docs\quizymode_taxonomy_seed.sql" Link="data\taxonomy\quizymode_taxonomy_seed.sql" CopyToOutputDirectory="PreserveNewest" />
+  </ItemGroup>
+
 </Project>
 

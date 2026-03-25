@@ -1,0 +1,202 @@
+[
+  {
+    "category": "sports",
+    "navigationKeyword1": "basketball",
+    "navigationKeyword2": "wnba",
+    "question": "What does WNBA stand for?",
+    "correctAnswer": "Women's National Basketball Association",
+    "incorrectAnswers": [
+      "World National Basketball Association",
+      "Women's North Basketball Association",
+      "Western National Basketball Association"
+    ],
+    "explanation": "WNBA is short for Women's National Basketball Association.",
+    "keywords": [
+      "basketball",
+      "wnba",
+      "league"
+    ],
+    "source": "https://www.wnba.com/history",
+    "seedId": "e0db1eba-8eaa-439e-ab22-3ed93a5e0f99"
+  },
+  {
+    "category": "sports",
+    "navigationKeyword1": "basketball",
+    "navigationKeyword2": "wnba",
+    "question": "Which team won the 2024 WNBA Finals?",
+    "correctAnswer": "New York Liberty",
+    "incorrectAnswers": [
+      "Minnesota Lynx",
+      "Las Vegas Aces",
+      "Seattle Storm"
+    ],
+    "explanation": "The Liberty won their first WNBA title in 2024.",
+    "keywords": [
+      "basketball",
+      "wnba",
+      "champions"
+    ],
+    "source": "https://www.wnba.com/history",
+    "seedId": "f2391217-1840-4ed4-901e-a370201881e3"
+  },
+  {
+    "category": "sports",
+    "navigationKeyword1": "basketball",
+    "navigationKeyword2": "wnba",
+    "question": "Which franchise won the 2022 and 2023 WNBA titles?",
+    "correctAnswer": "Las Vegas Aces",
+    "incorrectAnswers": [
+      "New York Liberty",
+      "Seattle Storm",
+      "Chicago Sky"
+    ],
+    "explanation": "Las Vegas repeated as champion in 2023 after winning in 2022.",
+    "keywords": [
+      "basketball",
+      "wnba",
+      "aces"
+    ],
+    "source": "https://www.wnba.com/history",
+    "seedId": "ac6109c0-5fc3-4ebe-8118-6b8bdeff2cad"
+  },
+  {
+    "category": "sports",
+    "navigationKeyword1": "basketball",
+    "navigationKeyword2": "wnba",
+    "question": "Which city is home to the Seattle Storm?",
+    "correctAnswer": "Seattle",
+    "incorrectAnswers": [
+      "Phoenix",
+      "Dallas",
+      "Atlanta"
+    ],
+    "explanation": "The Storm are based in Seattle, Washington.",
+    "keywords": [
+      "basketball",
+      "wnba",
+      "teams"
+    ],
+    "source": "https://www.wnba.com/history",
+    "seedId": "2e21b693-fc81-4480-b005-86a4ca71c654"
+  },
+  {
+    "category": "sports",
+    "navigationKeyword1": "basketball",
+    "navigationKeyword2": "wnba",
+    "question": "Which team was led by Maya Moore during four championship seasons in the 2010s?",
+    "correctAnswer": "Minnesota Lynx",
+    "incorrectAnswers": [
+      "Phoenix Mercury",
+      "New York Liberty",
+      "Indiana Fever"
+    ],
+    "explanation": "Minnesota built a dynasty around Maya Moore and other stars.",
+    "keywords": [
+      "basketball",
+      "wnba",
+      "lynx"
+    ],
+    "source": "https://www.wnba.com/history",
+    "seedId": "70351415-8e70-4b3b-8ac9-134274b147bb"
+  },
+  {
+    "category": "sports",
+    "navigationKeyword1": "basketball",
+    "navigationKeyword2": "wnba",
+    "question": "Which player led the Phoenix Mercury to multiple WNBA titles and became one of the league's greatest scorers?",
+    "correctAnswer": "Diana Taurasi",
+    "incorrectAnswers": [
+      "Sue Bird",
+      "Tamika Catchings",
+      "Candace Parker"
+    ],
+    "explanation": "Taurasi became the signature scorer of the Mercury.",
+    "keywords": [
+      "basketball",
+      "wnba",
+      "diana-taurasi"
+    ],
+    "source": "https://www.britannica.com/biography/Diana-Taurasi",
+    "seedId": "a1907370-f515-4edd-b5dd-07235f0f86ee"
+  },
+  {
+    "category": "sports",
+    "navigationKeyword1": "basketball",
+    "navigationKeyword2": "wnba",
+    "question": "Which Seattle Storm star retired as the WNBA's all-time assists leader?",
+    "correctAnswer": "Sue Bird",
+    "incorrectAnswers": [
+      "Becky Hammon",
+      "Chelsea Gray",
+      "Diana Taurasi"
+    ],
+    "explanation": "Sue Bird finished her career as the league leader in assists.",
+    "keywords": [
+      "basketball",
+      "wnba",
+      "sue-bird"
+    ],
+    "source": "https://www.britannica.com/biography/Sue-Bird",
+    "seedId": "288f7516-62ad-4648-bb7d-92809978a017"
+  },
+  {
+    "category": "sports",
+    "navigationKeyword1": "basketball",
+    "navigationKeyword2": "wnba",
+    "question": "Which player won WNBA championships with the Sparks, Sky, and Aces?",
+    "correctAnswer": "Candace Parker",
+    "incorrectAnswers": [
+      "Lisa Leslie",
+      "A'ja Wilson",
+      "Breanna Stewart"
+    ],
+    "explanation": "Candace Parker won titles with multiple franchises.",
+    "keywords": [
+      "basketball",
+      "wnba",
+      "candace-parker"
+    ],
+    "source": "https://www.britannica.com/biography/Candace-Parker",
+    "seedId": "320a48a5-da22-487e-8851-e29db08da762"
+  },
+  {
+    "category": "sports",
+    "navigationKeyword1": "basketball",
+    "navigationKeyword2": "wnba",
+    "question": "How many minutes are in a regulation WNBA game?",
+    "correctAnswer": "40 minutes",
+    "incorrectAnswers": [
+      "48 minutes",
+      "32 minutes",
+      "50 minutes"
+    ],
+    "explanation": "WNBA games have four 10-minute quarters.",
+    "keywords": [
+      "basketball",
+      "wnba",
+      "game-length"
+    ],
+    "source": "https://www.wnba.com/history",
+    "seedId": "5197c46e-385b-44bb-9149-f0618505bf24"
+  },
+  {
+    "category": "sports",
+    "navigationKeyword1": "basketball",
+    "navigationKeyword2": "wnba",
+    "question": "Which New York Liberty star won Finals MVP in 2024?",
+    "correctAnswer": "Jonquel Jones",
+    "incorrectAnswers": [
+      "Breanna Stewart",
+      "Sabrina Ionescu",
+      "Betnijah Laney-Hamilton"
+    ],
+    "explanation": "Jones earned the 2024 Finals MVP honor.",
+    "keywords": [
+      "basketball",
+      "wnba",
+      "finals-mvp"
+    ],
+    "source": "https://www.wnba.com/history",
+    "seedId": "6c45bf05-c6da-49ef-a59a-7137163779ac"
+  }
+]

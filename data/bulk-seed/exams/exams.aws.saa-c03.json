@@ -1,0 +1,254 @@
+[
+  {
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "saa-c03",
+    "question": "Which AWS service provides DNS routing for internet applications?",
+    "correctAnswer": "Amazon Route 53",
+    "incorrectAnswers": [
+      "Amazon CloudFront",
+      "Elastic Load Balancing",
+      "Amazon VPC"
+    ],
+    "explanation": "Amazon Route 53 is AWS's DNS service for routing users to applications.",
+    "keywords": [
+      "aws-saa-c03",
+      "aws-networking",
+      "route53"
+    ],
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "seedId": "fb0deaa1-a7a6-46b7-8b96-ec22d5564037"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "saa-c03",
+    "question": "Which AWS service distributes incoming traffic across multiple targets and Availability Zones?",
+    "correctAnswer": "Elastic Load Balancing",
+    "incorrectAnswers": [
+      "Amazon Route 53",
+      "Amazon S3",
+      "AWS Step Functions"
+    ],
+    "explanation": "Elastic Load Balancing distributes application traffic across targets in one or more AZs.",
+    "keywords": [
+      "aws-saa-c03",
+      "aws-networking",
+      "s3",
+      "step-functions",
+      "route53"
+    ],
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "seedId": "a52d262c-4c73-4145-b8c3-e10138081bfb"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "saa-c03",
+    "question": "Which AWS storage service provides block volumes that attach to EC2 instances?",
+    "correctAnswer": "Amazon EBS",
+    "incorrectAnswers": [
+      "Amazon EFS",
+      "Amazon S3",
+      "Amazon CloudFront"
+    ],
+    "explanation": "Amazon EBS creates block storage volumes that can be attached to EC2 instances.",
+    "keywords": [
+      "aws-saa-c03",
+      "aws-storage",
+      "aws-compute",
+      "ebs",
+      "ec2"
+    ],
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "seedId": "016b2d45-e9e9-4213-8b33-7242a44bdc81"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "saa-c03",
+    "question": "Which AWS storage service provides a shared file system for AWS compute services?",
+    "correctAnswer": "Amazon EFS",
+    "incorrectAnswers": [
+      "Amazon EBS",
+      "Amazon S3",
+      "Amazon DynamoDB"
+    ],
+    "explanation": "Amazon EFS provides shared file storage for AWS compute services.",
+    "keywords": [
+      "aws-saa-c03",
+      "aws-storage",
+      "efs"
+    ],
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "seedId": "4a2f87de-1ab6-4404-9ed2-2bc707c8a962"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "saa-c03",
+    "question": "Which AWS service automatically adjusts capacity to maintain performance and optimize cost?",
+    "correctAnswer": "AWS Auto Scaling",
+    "incorrectAnswers": [
+      "AWS CloudFormation",
+      "Amazon Route 53",
+      "Amazon RDS"
+    ],
+    "explanation": "AWS Auto Scaling monitors applications and automatically adjusts capacity.",
+    "keywords": [
+      "aws-saa-c03",
+      "aws-compute",
+      "auto-scaling"
+    ],
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "seedId": "79ea8ca6-cec6-46ec-8ab1-2110da8bc54b"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "saa-c03",
+    "question": "Which AWS database service is a fully managed serverless NoSQL database?",
+    "correctAnswer": "Amazon DynamoDB",
+    "incorrectAnswers": [
+      "Amazon Aurora",
+      "Amazon RDS",
+      "Amazon EFS"
+    ],
+    "explanation": "Amazon DynamoDB is a fully managed distributed NoSQL database.",
+    "keywords": [
+      "aws-saa-c03",
+      "aws-database",
+      "databases",
+      "dynamodb",
+      "serverless"
+    ],
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "seedId": "433a238f-c066-426c-8405-3bae7943151a"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "saa-c03",
+    "question": "Which AWS relational database service is compatible with MySQL and PostgreSQL?",
+    "correctAnswer": "Amazon Aurora",
+    "incorrectAnswers": [
+      "Amazon DynamoDB",
+      "Amazon S3",
+      "Amazon EBS"
+    ],
+    "explanation": "Amazon Aurora is AWS's high-performance relational database service for MySQL and PostgreSQL compatibility.",
+    "keywords": [
+      "aws-saa-c03",
+      "aws-database",
+      "databases",
+      "aurora",
+      "mysql",
+      "postgresql"
+    ],
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "seedId": "45338db7-6a10-4567-a5b6-d28b01395e39"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "saa-c03",
+    "question": "Which AWS service is used for infrastructure as code?",
+    "correctAnswer": "AWS CloudFormation",
+    "incorrectAnswers": [
+      "Amazon CloudWatch",
+      "Amazon SNS",
+      "AWS Shield"
+    ],
+    "explanation": "AWS CloudFormation speeds cloud provisioning with infrastructure as code.",
+    "keywords": [
+      "aws-saa-c03",
+      "aws-security",
+      "aws-integration",
+      "sns",
+      "shield",
+      "cloudwatch"
+    ],
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "seedId": "b891fde7-d084-452b-bcf4-11c271e00982"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "saa-c03",
+    "question": "What lets instances in a private subnet reach the internet without accepting unsolicited inbound internet traffic?",
+    "correctAnswer": "A NAT gateway",
+    "incorrectAnswers": [
+      "An internet gateway attached directly to the instance",
+      "Amazon CloudFront",
+      "AWS Direct Connect"
+    ],
+    "explanation": "A NAT gateway allows outbound connections from private subnets while blocking unsolicited inbound connections.",
+    "keywords": [
+      "aws-saa-c03",
+      "aws-networking",
+      "nat-gateway"
+    ],
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "seedId": "2e8321c0-cf4c-4842-8459-260ce5338e20"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "saa-c03",
+    "question": "Which Amazon S3 storage class is designed for data with unknown or changing access patterns?",
+    "correctAnswer": "S3 Intelligent-Tiering",
+    "incorrectAnswers": [
+      "S3 One Zone-IA",
+      "S3 Glacier Deep Archive",
+      "S3 Express One Zone"
+    ],
+    "explanation": "S3 Intelligent-Tiering automatically reduces storage cost for unknown or changing access patterns.",
+    "keywords": [
+      "aws-saa-c03",
+      "aws-storage",
+      "s3"
+    ],
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "seedId": "4e5935e5-a366-4936-b84d-cc25c4e57279"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "saa-c03",
+    "question": "Which AWS service sends, stores, and receives messages between software components?",
+    "correctAnswer": "Amazon SQS",
+    "incorrectAnswers": [
+      "Amazon Route 53",
+      "Amazon EFS",
+      "AWS Lambda"
+    ],
+    "explanation": "Amazon SQS is AWS's fully managed message queuing service.",
+    "keywords": [
+      "aws-saa-c03",
+      "aws-integration",
+      "sqs"
+    ],
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "seedId": "45b444f3-8998-46bb-9017-e8125f477227"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "saa-c03",
+    "question": "Which AWS service is a content delivery network for low-latency content delivery?",
+    "correctAnswer": "Amazon CloudFront",
+    "incorrectAnswers": [
+      "Amazon Route 53",
+      "Amazon VPC",
+      "Amazon Aurora"
+    ],
+    "explanation": "Amazon CloudFront is AWS's content delivery network.",
+    "keywords": [
+      "aws-saa-c03",
+      "aws-networking",
+      "cloudfront"
+    ],
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "seedId": "b629e8bc-5480-4090-809c-dd146a5ddf6f"
+  }
+]

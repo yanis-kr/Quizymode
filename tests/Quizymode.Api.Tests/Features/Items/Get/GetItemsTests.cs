@@ -408,4 +408,29 @@ public sealed class GetItemsTests : ItemTestFixture
         result.Value.Items[0].Category.Should().Be("geography");
     }
 
+    [Fact]
+    public async Task HandleAsync_FiltersByNavigationPath_WithoutRequiringMatchingItemTags()
+    {
+        // Arrange
+        await CreateItemWithCategoryAsync("geography", "Q1", "A1", new List<string>(), "", isPrivate: false, createdBy: "test");
+
+        GetItems.QueryRequest request = new(
+            Category: "geography",
+            IsPrivate: null,
+            Keywords: null,
+            CollectionId: null,
+            IsRandom: null,
+            Page: 1,
+            PageSize: 10,
+            NavigationKeywords: new List<string> { "capitals", "europe" });
+
+        // Act
+        Result<GetItems.Response> result = await GetItemsHandler.HandleAsync(request, DbContext, _userContextMock.Object, CancellationToken.None);
+
+        // Assert
+        result.IsSuccess.Should().BeTrue();
+        result.Value.Items.Should().HaveCount(1);
+        result.Value.Items[0].Question.Should().Be("Q1");
+    }
+
 }

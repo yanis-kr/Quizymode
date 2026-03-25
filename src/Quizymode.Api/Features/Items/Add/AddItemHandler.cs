@@ -1,6 +1,8 @@
 using Microsoft.EntityFrameworkCore;
 using Quizymode.Api.Data;
 using Quizymode.Api.Services;
+using Quizymode.Api.Services.Taxonomy;
+using Quizymode.Api.Shared.Helpers;
 using Quizymode.Api.Shared.Kernel;
 using Quizymode.Api.Shared.Models;
 
@@ -14,35 +16,22 @@ internal static class AddItemHandler
         ISimHashService simHashService,
         IUserContext userContext,
         IAuditService auditService,
-        ICategoryResolver categoryResolver,
+        ITaxonomyItemCategoryResolver itemCategoryResolver,
+        ITaxonomyRegistry taxonomyRegistry,
         CancellationToken cancellationToken)
     {
         try
         {
-            // Regular users can only create private items
             bool effectiveIsPrivate = userContext.IsAdmin ? request.IsPrivate : true;
-            
-            // Regular users can only create private keywords
-            List<AddItem.KeywordRequest>? effectiveKeywords = request.Keywords;
-            if (effectiveKeywords is not null && !userContext.IsAdmin)
-            {
-                // Force all keywords to be private for regular users
-                effectiveKeywords = effectiveKeywords.Select(k => new AddItem.KeywordRequest(k.Name, true)).ToList();
-            }
-            
-            // Compute fuzzy signature only from the question (normalized to lowercase)
+
             string questionText = request.Question.Trim().ToLowerInvariant();
             string fuzzySignature = simHashService.ComputeSimHash(questionText);
             int fuzzyBucket = simHashService.GetFuzzyBucket(fuzzySignature);
 
             string userId = userContext.UserId ?? throw new InvalidOperationException("User ID is required for item creation");
-            
-            // Resolve category via CategoryResolver
-            Result<Category> categoryResult = await categoryResolver.ResolveOrCreateAsync(
+
+            Result<Category> categoryResult = await itemCategoryResolver.ResolveForItemAsync(
                 request.Category,
-                isPrivate: effectiveIsPrivate,
-                currentUserId: userId,
-                isAdmin: userContext.IsAdmin,
                 cancellationToken);
 
             if (categoryResult.IsFailure)
@@ -51,22 +40,55 @@ internal static class AddItemHandler
             }
 
             Category category = categoryResult.Value!;
-            
-            // Check for duplicates - only for the same user
-            // Different users can add the same items
-            // Check using CategoryId
+
+            string nav1Norm = KeywordHelper.NormalizeKeywordName(request.NavigationKeyword1);
+            string nav2Norm = KeywordHelper.NormalizeKeywordName(request.NavigationKeyword2);
+
+            if (request.Keywords is not null)
+            {
+                foreach (AddItem.KeywordRequest kw in request.Keywords)
+                {
+                    if (string.IsNullOrWhiteSpace(kw.Name))
+                        continue;
+                    string n = KeywordHelper.NormalizeKeywordName(kw.Name);
+                    if (string.IsNullOrEmpty(n))
+                        continue;
+                    if (!KeywordHelper.IsValidKeywordNameFormat(n))
+                    {
+                        return Result.Failure<AddItem.Response>(
+                            Error.Validation("Item.InvalidKeyword", $"Keyword '{n}' is invalid. Use only letters, numbers, and hyphens (max 30 characters)."));
+                    }
+
+                    if (string.Equals(n, nav1Norm, StringComparison.OrdinalIgnoreCase)
+                        || string.Equals(n, nav2Norm, StringComparison.OrdinalIgnoreCase))
+                        continue;
+                }
+            }
+
+            Result<(Keyword Nav1, Keyword Nav2)> navResult = await ItemNavigationAndKeywordsHelper.ResolvePublicNavigationAsync(
+                db,
+                taxonomyRegistry,
+                category,
+                request.NavigationKeyword1,
+                request.NavigationKeyword2,
+                cancellationToken);
+
+            if (navResult.IsFailure)
+                return Result.Failure<AddItem.Response>(navResult.Error!);
+
+            (Keyword navK1, Keyword navK2) = navResult.Value!;
+
             List<Item> candidateItems = await db.Items
-                .Where(item => 
+                .Where(item =>
                     item.CreatedBy == userId &&
                     item.FuzzyBucket == fuzzyBucket &&
                     item.CategoryId == category.Id)
                 .ToListAsync(cancellationToken);
-            
-            // Compare using category ID and question
+
             bool isDuplicate = candidateItems.Any(item =>
-                (string.Equals(item.Question, request.Question, StringComparison.OrdinalIgnoreCase) ||
-                 item.FuzzySignature == fuzzySignature));
-            
+                string.Equals(item.Question, request.Question, StringComparison.OrdinalIgnoreCase) ||
+                item.FuzzySignature == fuzzySignature);
+
             if (isDuplicate)
             {
                 return Result.Failure<AddItem.Response>(
@@ -87,72 +109,68 @@ internal static class AddItemHandler
                 CreatedAt = DateTime.UtcNow,
                 ReadyForReview = request.ReadyForReview,
                 CategoryId = category.Id,
-                Source = string.IsNullOrWhiteSpace(request.Source) ? null : request.Source.Trim()
+                NavigationKeywordId1 = navK1.Id,
+                NavigationKeywordId2 = navK2.Id,
+                Source = string.IsNullOrWhiteSpace(request.Source) ? null : request.Source.Trim(),
+                FactualRisk = request.FactualRisk is >= 0m and <= 1m ? request.FactualRisk : null,
+                ReviewComments = string.IsNullOrWhiteSpace(request.ReviewComments) ? null : request.ReviewComments.Trim()
             };
 
             db.Items.Add(item);
             await db.SaveChangesAsync(cancellationToken);
 
-            // Handle keywords if provided
-            if (effectiveKeywords is not null && effectiveKeywords.Count > 0)
+            List<string> orderedNames = [];
+            void AddUniqueName(string raw)
             {
-                List<ItemKeyword> itemKeywords = new();
+                string n = KeywordHelper.NormalizeKeywordName(raw);
+                if (string.IsNullOrEmpty(n))
+                    return;
+                if (orderedNames.Any(x => string.Equals(x, n, StringComparison.OrdinalIgnoreCase)))
+                    return;
+                orderedNames.Add(n);
+            }
 
-                foreach (AddItem.KeywordRequest keywordRequest in effectiveKeywords)
+            AddUniqueName(request.NavigationKeyword1);
+            AddUniqueName(request.NavigationKeyword2);
+            if (request.Keywords is not null)
+            {
+                foreach (AddItem.KeywordRequest kw in request.Keywords)
+                    AddUniqueName(kw.Name);
+            }
+
+            if (orderedNames.Count > 0)
+            {
+                List<ItemKeyword> itemKeywords = [];
+                HashSet<Guid> attached = [];
+
+                foreach (string normalizedName in orderedNames)
                 {
-                    // Normalize keyword name (trim and to lowercase for consistency)
-                    string normalizedName = keywordRequest.Name.Trim().ToLowerInvariant();
-                    if (string.IsNullOrEmpty(normalizedName))
-                    {
-                        continue;
-                    }
-
-                    // Find or create keyword
-                    Keyword? keyword = null;
-                    if (keywordRequest.IsPrivate)
-                    {
-                        // Private keyword: must match name, IsPrivate=true, and CreatedBy
-                        keyword = await db.Keywords
-                            .FirstOrDefaultAsync(k => 
-                                k.Name == normalizedName && 
-                                k.IsPrivate == true &&
-                                k.CreatedBy == userId,
-                                cancellationToken);
-                    }
+                    Keyword keyword;
+                    if (string.Equals(normalizedName, navK1.Name, StringComparison.OrdinalIgnoreCase))
+                        keyword = navK1;
+                    else if (string.Equals(normalizedName, navK2.Name, StringComparison.OrdinalIgnoreCase))
+                        keyword = navK2;
                     else
                     {
-                        // Global keyword: must match name and IsPrivate=false (CreatedBy doesn't matter)
-                        keyword = await db.Keywords
-                            .FirstOrDefaultAsync(k => 
-                                k.Name == normalizedName && 
-                                k.IsPrivate == false,
-                                cancellationToken);
+                        keyword = await ItemNavigationAndKeywordsHelper.GetOrCreateKeywordForItemAttachmentAsync(
+                            db,
+                            taxonomyRegistry,
+                            category.Name,
+                            userId,
+                            normalizedName,
+                            cancellationToken);
                     }
 
-                    if (keyword is null)
-                    {
-                        // Create new keyword
-                        keyword = new Keyword
-                        {
-                            Id = Guid.NewGuid(),
-                            Name = normalizedName,
-                            IsPrivate = keywordRequest.IsPrivate,
-                            CreatedBy = userId,
-                            CreatedAt = DateTime.UtcNow
-                        };
-                        db.Keywords.Add(keyword);
-                        await db.SaveChangesAsync(cancellationToken);
-                    }
+                    if (!attached.Add(keyword.Id))
+                        continue;
 
-                    // Create ItemKeyword relationship
-                    ItemKeyword itemKeyword = new ItemKeyword
+                    itemKeywords.Add(new ItemKeyword
                     {
                         Id = Guid.NewGuid(),
                         ItemId = item.Id,
                         KeywordId = keyword.Id,
                         AddedAt = DateTime.UtcNow
-                    };
-                    itemKeywords.Add(itemKeyword);
+                    });
                 }
 
                 if (itemKeywords.Count > 0)
@@ -162,7 +180,6 @@ internal static class AddItemHandler
                 }
             }
 
-            // Log audit entry
             if (!string.IsNullOrEmpty(userId) && Guid.TryParse(userId, out Guid userIdGuid))
             {
                 await auditService.LogAsync(
@@ -181,7 +198,10 @@ internal static class AddItemHandler
                 item.IncorrectAnswers,
                 item.Explanation,
                 item.CreatedAt,
-                item.Source);
+                item.Source,
+                item.UploadId?.ToString(),
+                item.FactualRisk,
+                item.ReviewComments);
 
             return Result.Success(response);
         }
@@ -192,4 +212,3 @@ internal static class AddItemHandler
         }
     }
 }
-

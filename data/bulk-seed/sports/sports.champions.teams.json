@@ -1,0 +1,202 @@
+[
+  {
+    "category": "sports",
+    "navigationKeyword1": "champions",
+    "navigationKeyword2": "teams",
+    "question": "Which NBA franchise won the 2024 championship?",
+    "correctAnswer": "Boston Celtics",
+    "incorrectAnswers": [
+      "Dallas Mavericks",
+      "Denver Nuggets",
+      "Miami Heat"
+    ],
+    "explanation": "Boston won the NBA title in 2024.",
+    "keywords": [
+      "champions",
+      "teams",
+      "celtics"
+    ],
+    "source": "https://www.nba.com/history",
+    "seedId": "ed6f16ba-c79c-46d8-89fd-62305f265e29"
+  },
+  {
+    "category": "sports",
+    "navigationKeyword1": "champions",
+    "navigationKeyword2": "teams",
+    "question": "Which MLB franchise won the 2024 World Series?",
+    "correctAnswer": "Los Angeles Dodgers",
+    "incorrectAnswers": [
+      "New York Yankees",
+      "Houston Astros",
+      "Texas Rangers"
+    ],
+    "explanation": "The Dodgers were baseball's 2024 champions.",
+    "keywords": [
+      "champions",
+      "teams",
+      "dodgers"
+    ],
+    "source": "https://www.mlb.com/glossary",
+    "seedId": "7e21617a-33b8-4931-8267-1445f7293448"
+  },
+  {
+    "category": "sports",
+    "navigationKeyword1": "champions",
+    "navigationKeyword2": "teams",
+    "question": "Which NFL franchise won Super Bowl LVIII?",
+    "correctAnswer": "Kansas City Chiefs",
+    "incorrectAnswers": [
+      "San Francisco 49ers",
+      "Buffalo Bills",
+      "Baltimore Ravens"
+    ],
+    "explanation": "Kansas City won the 2023 season championship in February 2024.",
+    "keywords": [
+      "champions",
+      "teams",
+      "chiefs"
+    ],
+    "source": "https://operations.nfl.com/learn-the-game/nfl-basics/",
+    "seedId": "937cc5db-0447-4589-92b6-2e9857b16412"
+  },
+  {
+    "category": "sports",
+    "navigationKeyword1": "champions",
+    "navigationKeyword2": "teams",
+    "question": "Which NHL team won the 2024 Stanley Cup?",
+    "correctAnswer": "Florida Panthers",
+    "incorrectAnswers": [
+      "Edmonton Oilers",
+      "Vegas Golden Knights",
+      "Colorado Avalanche"
+    ],
+    "explanation": "Florida captured the NHL title in 2024.",
+    "keywords": [
+      "champions",
+      "teams",
+      "panthers"
+    ],
+    "source": "https://www.britannica.com/sports/ice-hockey",
+    "seedId": "a50e281d-ba39-4be2-baca-668ae1e69207"
+  },
+  {
+    "category": "sports",
+    "navigationKeyword1": "champions",
+    "navigationKeyword2": "teams",
+    "question": "Which WNBA team won the 2024 title?",
+    "correctAnswer": "New York Liberty",
+    "incorrectAnswers": [
+      "Minnesota Lynx",
+      "Las Vegas Aces",
+      "Seattle Storm"
+    ],
+    "explanation": "The Liberty won their first WNBA championship in 2024.",
+    "keywords": [
+      "champions",
+      "teams",
+      "liberty"
+    ],
+    "source": "https://www.nba.com/history",
+    "seedId": "a2eff26d-452c-473c-be7a-5efaf28731c6"
+  },
+  {
+    "category": "sports",
+    "navigationKeyword1": "champions",
+    "navigationKeyword2": "teams",
+    "question": "Which soccer nation won the 2022 men's World Cup?",
+    "correctAnswer": "Argentina",
+    "incorrectAnswers": [
+      "France",
+      "Brazil",
+      "Croatia"
+    ],
+    "explanation": "Argentina won the world title in Qatar.",
+    "keywords": [
+      "champions",
+      "teams",
+      "argentina"
+    ],
+    "source": "https://www.britannica.com/sports/football-soccer",
+    "seedId": "1ae1ce7d-62a8-4e42-89d2-3a3dc8193fbf"
+  },
+  {
+    "category": "sports",
+    "navigationKeyword1": "champions",
+    "navigationKeyword2": "teams",
+    "question": "Which club won the 2024 UEFA Champions League?",
+    "correctAnswer": "Real Madrid",
+    "incorrectAnswers": [
+      "Borussia Dortmund",
+      "Manchester City",
+      "Bayern Munich"
+    ],
+    "explanation": "Real Madrid added another European title in 2024.",
+    "keywords": [
+      "champions",
+      "teams",
+      "real-madrid"
+    ],
+    "source": "https://www.britannica.com/sports/football-soccer",
+    "seedId": "9b9bf3e4-f2a1-4189-af0b-47984b6078fd"
+  },
+  {
+    "category": "sports",
+    "navigationKeyword1": "champions",
+    "navigationKeyword2": "teams",
+    "question": "Which college football team won the 2023 season national championship?",
+    "correctAnswer": "Michigan",
+    "incorrectAnswers": [
+      "Washington",
+      "Georgia",
+      "Texas"
+    ],
+    "explanation": "Michigan finished the 2023 season as champion.",
+    "keywords": [
+      "champions",
+      "teams",
+      "michigan"
+    ],
+    "source": "https://operations.nfl.com/learn-the-game/nfl-basics/",
+    "seedId": "5cdd4b3e-1887-4cc1-9e2e-4b1cd1fb8b4a"
+  },
+  {
+    "category": "sports",
+    "navigationKeyword1": "champions",
+    "navigationKeyword2": "teams",
+    "question": "Which franchise won the 2023 World Series?",
+    "correctAnswer": "Texas Rangers",
+    "incorrectAnswers": [
+      "Arizona Diamondbacks",
+      "Atlanta Braves",
+      "Houston Astros"
+    ],
+    "explanation": "Texas won its first World Series in 2023.",
+    "keywords": [
+      "champions",
+      "teams",
+      "rangers"
+    ],
+    "source": "https://www.mlb.com/glossary",
+    "seedId": "f566c29e-91cd-4677-98e2-b0cd6c48ff7c"
+  },
+  {
+    "category": "sports",
+    "navigationKeyword1": "champions",
+    "navigationKeyword2": "teams",
+    "question": "Which franchise won the 2023 Stanley Cup?",
+    "correctAnswer": "Vegas Golden Knights",
+    "incorrectAnswers": [
+      "Florida Panthers",
+      "Colorado Avalanche",
+      "Tampa Bay Lightning"
+    ],
+    "explanation": "Vegas won the NHL title in 2023.",
+    "keywords": [
+      "champions",
+      "teams",
+      "golden-knights"
+    ],
+    "source": "https://www.britannica.com/sports/ice-hockey",
+    "seedId": "687f0b19-a3ee-4d3a-83e1-0dc88a64f4ae"
+  }
+]

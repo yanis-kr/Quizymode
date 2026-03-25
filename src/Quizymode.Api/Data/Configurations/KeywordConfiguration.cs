@@ -19,9 +19,21 @@ internal sealed class KeywordConfiguration : IEntityTypeConfiguration<Keyword>
             .IsRequired()
             .HasMaxLength(30);
 
+        builder.Property(x => x.Slug)
+            .HasMaxLength(30);
+
         builder.Property(x => x.IsPrivate)
             .IsRequired()
             .HasDefaultValue(false);
+
+        builder.Property(x => x.IsReviewPending)
+            .IsRequired()
+            .HasDefaultValue(false);
+
+        builder.Property(x => x.ReviewedAt);
+
+        builder.Property(x => x.ReviewedBy)
+            .HasMaxLength(100);
 
         builder.Property(x => x.CreatedBy)
             .IsRequired()
@@ -33,6 +45,8 @@ internal sealed class KeywordConfiguration : IEntityTypeConfiguration<Keyword>
         // Unique index on Name + CreatedBy + IsPrivate to prevent duplicates
         // For global keywords (IsPrivate=false), Name must be unique globally
         // For private keywords (IsPrivate=true), Name must be unique per user
+        // Note: Keywords participate in navigation via KeywordRelation per category; this constraint
+        // still ensures no duplicate keyword entities per user/visibility scope
         builder.HasIndex(x => new { x.Name, x.CreatedBy, x.IsPrivate })
             .IsUnique();
 

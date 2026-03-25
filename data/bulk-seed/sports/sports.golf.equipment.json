@@ -1,0 +1,202 @@
+[
+  {
+    "category": "sports",
+    "navigationKeyword1": "golf",
+    "navigationKeyword2": "equipment",
+    "question": "Which club is usually used for the longest tee shots on par 4s and par 5s?",
+    "correctAnswer": "Driver",
+    "incorrectAnswers": [
+      "Putter",
+      "Wedge",
+      "7-iron"
+    ],
+    "explanation": "The driver is designed for maximum distance from the tee.",
+    "keywords": [
+      "golf",
+      "equipment",
+      "driver"
+    ],
+    "source": "https://www.usga.org/content/usga/home-page/rules-hub.html",
+    "seedId": "83912e6f-7865-495b-b28d-5743bbecb46e"
+  },
+  {
+    "category": "sports",
+    "navigationKeyword1": "golf",
+    "navigationKeyword2": "equipment",
+    "question": "Which club is designed mainly for use on the green?",
+    "correctAnswer": "Putter",
+    "incorrectAnswers": [
+      "Driver",
+      "Hybrid",
+      "Sand wedge"
+    ],
+    "explanation": "Putters are built for rolling the ball on the green.",
+    "keywords": [
+      "golf",
+      "equipment",
+      "putter"
+    ],
+    "source": "https://www.usga.org/content/usga/home-page/rules-hub.html",
+    "seedId": "7ccf2524-6aef-4548-8040-dc2fe5b60ba5"
+  },
+  {
+    "category": "sports",
+    "navigationKeyword1": "golf",
+    "navigationKeyword2": "equipment",
+    "question": "Which club is specially designed to help play shots from bunkers?",
+    "correctAnswer": "Sand wedge",
+    "incorrectAnswers": [
+      "Driver",
+      "Putter",
+      "3-wood"
+    ],
+    "explanation": "The sand wedge has loft and bounce suited to bunker shots.",
+    "keywords": [
+      "golf",
+      "equipment",
+      "sand-wedge"
+    ],
+    "source": "https://www.usga.org/content/usga/home-page/rules-hub.html",
+    "seedId": "fcacc0f3-b9d3-41c6-8586-bc634914ab20"
+  },
+  {
+    "category": "sports",
+    "navigationKeyword1": "golf",
+    "navigationKeyword2": "equipment",
+    "question": "What small peg lifts the ball for the opening shot on many holes?",
+    "correctAnswer": "Tee",
+    "incorrectAnswers": [
+      "Ball marker",
+      "Divot tool",
+      "Flagstick"
+    ],
+    "explanation": "Players may place the ball on a tee in the teeing area.",
+    "keywords": [
+      "golf",
+      "equipment",
+      "tee"
+    ],
+    "source": "https://www.usga.org/content/usga/home-page/rules-hub.html",
+    "seedId": "694b90a3-bf22-4f29-a1c7-ad768361a8af"
+  },
+  {
+    "category": "sports",
+    "navigationKeyword1": "golf",
+    "navigationKeyword2": "equipment",
+    "question": "Which type of club blends qualities of irons and fairway woods?",
+    "correctAnswer": "Hybrid",
+    "incorrectAnswers": [
+      "Putter",
+      "Wedge",
+      "Pencil iron"
+    ],
+    "explanation": "Hybrids are designed to be easier to hit than long irons for many players.",
+    "keywords": [
+      "golf",
+      "equipment",
+      "hybrid"
+    ],
+    "source": "https://www.usga.org/content/usga/home-page/rules-hub.html",
+    "seedId": "e18efbc7-7ed2-48c1-9c49-76d249993be5"
+  },
+  {
+    "category": "sports",
+    "navigationKeyword1": "golf",
+    "navigationKeyword2": "equipment",
+    "question": "What is the flexible shafted implement used to strike the ball called?",
+    "correctAnswer": "A club",
+    "incorrectAnswers": [
+      "A mallet only",
+      "A net",
+      "A racket"
+    ],
+    "explanation": "Golf is played by striking the ball with clubs.",
+    "keywords": [
+      "golf",
+      "equipment",
+      "club"
+    ],
+    "source": "https://www.britannica.com/sports/golf",
+    "seedId": "efe2e3f3-5a4b-4781-9f38-8ef5b0856ada"
+  },
+  {
+    "category": "sports",
+    "navigationKeyword1": "golf",
+    "navigationKeyword2": "equipment",
+    "question": "What item is used to mark the position of a ball on the green before lifting it?",
+    "correctAnswer": "Ball marker",
+    "incorrectAnswers": [
+      "Glove",
+      "Tee box",
+      "Rangefinder"
+    ],
+    "explanation": "Players use a marker before lifting the ball on the putting green.",
+    "keywords": [
+      "golf",
+      "equipment",
+      "ball-marker"
+    ],
+    "source": "https://www.usga.org/content/usga/home-page/rules-hub.html",
+    "seedId": "60488157-d8cd-40ef-89c1-a59955932e2f"
+  },
+  {
+    "category": "sports",
+    "navigationKeyword1": "golf",
+    "navigationKeyword2": "equipment",
+    "question": "What tool is commonly used to repair pitch marks on the green?",
+    "correctAnswer": "Divot tool",
+    "incorrectAnswers": [
+      "Ball washer",
+      "Scorecard holder",
+      "Range rope"
+    ],
+    "explanation": "A divot or repair tool helps fix ball marks on the green.",
+    "keywords": [
+      "golf",
+      "equipment",
+      "repair"
+    ],
+    "source": "https://www.usga.org/content/usga/home-page/rules-hub.html",
+    "seedId": "0d530647-4a7c-4046-bb26-8d7b1dce68c4"
+  },
+  {
+    "category": "sports",
+    "navigationKeyword1": "golf",
+    "navigationKeyword2": "equipment",
+    "question": "What accessory do many players wear on the lead hand to improve grip?",
+    "correctAnswer": "Golf glove",
+    "incorrectAnswers": [
+      "Wristwatch",
+      "Elbow pad",
+      "Helmet"
+    ],
+    "explanation": "A glove can improve grip and reduce friction.",
+    "keywords": [
+      "golf",
+      "equipment",
+      "glove"
+    ],
+    "source": "https://www.britannica.com/sports/golf",
+    "seedId": "f0142990-4b0f-42b5-8685-128e83746217"
+  },
+  {
+    "category": "sports",
+    "navigationKeyword1": "golf",
+    "navigationKeyword2": "equipment",
+    "question": "What carries a player's clubs around the course?",
+    "correctAnswer": "Golf bag",
+    "incorrectAnswers": [
+      "Club towel",
+      "Locker",
+      "Flagstick"
+    ],
+    "explanation": "Clubs are stored and transported in a golf bag.",
+    "keywords": [
+      "golf",
+      "equipment",
+      "bag"
+    ],
+    "source": "https://www.britannica.com/sports/golf",
+    "seedId": "e0c10590-5407-4f08-9634-4f8a02e5ac1d"
+  }
+]

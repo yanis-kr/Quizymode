@@ -1,6 +1,8 @@
 using System.Collections.Concurrent;
 using System.Security.Claims;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Storage;
+using Npgsql;
 using Quizymode.Api.Data;
 using Quizymode.Api.Shared.Models;
 
@@ -18,6 +20,50 @@ internal sealed class UserUpsertMiddleware
     // Limit concurrent database operations per user to reduce contention
     // Even with database locking, reducing concurrent requests helps performance
     private const int MaxConcurrentPerUser = 3;
+
+    private static bool TryGetPostgresException(Exception? ex, out PostgresException? pg)
+    {
+        while (ex is not null)
+        {
+            if (ex is PostgresException found)
+            {
+                pg = found;
+                return true;
+            }
+
+            ex = ex.InnerException;
+        }
+
+        pg = null;
+        return false;
+    }
+
+    private static bool IsDuplicateUsersEmail(DbUpdateException ex)
+    {
+        if (!TryGetPostgresException(ex, out PostgresException? pg) || pg is null)
+            return false;
+
+        return pg.SqlState == PostgresErrorCodes.UniqueViolation
+            && pg.ConstraintName == "IX_Users_Email";
+    }
+
+    private static async Task TryRollbackCurrentTransactionAsync(
+        ApplicationDbContext db,
+        CancellationToken cancellationToken)
+    {
+        IDbContextTransaction? tx = db.Database.CurrentTransaction;
+        if (tx is null)
+            return;
+
+        try
+        {
+            await tx.RollbackAsync(cancellationToken);
+        }
+        catch (ObjectDisposedException)
+        {
+            // Already rolled back / disposed (e.g. after duplicate-email retry path).
+        }
+    }
 
     public UserUpsertMiddleware(RequestDelegate next, ILogger<UserUpsertMiddleware> logger)
     {
@@ -80,52 +126,154 @@ internal sealed class UserUpsertMiddleware
                 
                 try
                 {
-                    // Use a transaction with serializable isolation level to prevent race conditions
-                    // This ensures only one request can check and update LastLogin at a time
-                    // Database-level locking handles synchronization across all instances
+                    // Use ReadCommitted with FOR UPDATE - row lock prevents concurrent updates.
+                    // Serializable was causing 40001 when multiple requests (e.g. page load) ran in parallel.
                     await using var transaction = await db.Database.BeginTransactionAsync(
-                        System.Data.IsolationLevel.Serializable, 
+                        System.Data.IsolationLevel.ReadCommitted, 
                         context.RequestAborted);
                     try
                     {
-                        // Lock the row for update to prevent concurrent modifications
-                        // This ensures only one request can check and update LastLogin at a time
-                        // FOR UPDATE will block other requests until this transaction commits
-                        // This works across all API instances, not just this one
+                        // Lock the row for update - other requests block until this commits
                         var lockedUser = await db.Users
                             .FromSqlInterpolated($"SELECT * FROM \"Users\" WHERE \"Subject\" = {subject} FOR UPDATE")
                             .AsTracking()
                             .FirstOrDefaultAsync(context.RequestAborted);
+
+                        // Serialize concurrent first-time sign-ins for the same email (PostgreSQL only).
+                        // Without this, parallel requests can both pass the email-exists check and hit IX_Users_Email.
+                        if (lockedUser is null
+                            && !string.IsNullOrWhiteSpace(email)
+                            && db.Database.ProviderName?.Contains("Npgsql", StringComparison.OrdinalIgnoreCase) == true)
+                        {
+                            string emailLockKey = email.Trim().ToLowerInvariant();
+                            await db.Database.ExecuteSqlInterpolatedAsync(
+                                $"SELECT pg_advisory_xact_lock(hashtext({emailLockKey}), 810572531)",
+                                context.RequestAborted);
+                        }
                     
                     Guid userId;
                     bool shouldLogLogin = false;
                     
                     if (lockedUser is null)
                     {
-                        // For new users, set Name from claims if available, otherwise use subject as fallback
-                        var userEntity = new User
+                        // No user with this Subject - may be first login or Subject changed (e.g. Cognito user re-created).
+                        // If a user with this Email already exists, link this login to them (update Subject) to avoid IX_Users_Email violation.
+                        User? existingByEmail = null;
+                        if (!string.IsNullOrWhiteSpace(email))
                         {
-                            Id = Guid.NewGuid(),
-                            Subject = subject,
-                            Email = email,
-                            Name = name, // Use name from claims (or subject as fallback)
-                            CreatedAt = DateTime.UtcNow,
-                            LastLogin = DateTime.UtcNow
-                        };
+                            string emailNorm = email.Trim().ToLowerInvariant();
+                            existingByEmail = await db.Users
+                                .Where(u => u.Email != null && u.Email.Trim().ToLower() == emailNorm)
+                                .AsTracking()
+                                .FirstOrDefaultAsync(context.RequestAborted);
+                            if (existingByEmail is not null)
+                            {
+                                // Lock the row so we can update it (SELECT FOR UPDATE by primary key)
+                                await db.Users
+                                    .FromSqlInterpolated($"SELECT * FROM \"Users\" WHERE \"Id\" = {existingByEmail.Id} FOR UPDATE")
+                                    .AsTracking()
+                                    .FirstOrDefaultAsync(context.RequestAborted);
+                                existingByEmail = await db.Users.FindAsync(new object[] { existingByEmail.Id }, context.RequestAborted);
+                            }
+                        }
 
-                        db.Users.Add(userEntity);
-                        await db.SaveChangesAsync(context.RequestAborted);
-                        userId = userEntity.Id;
-                        _logger.LogInformation("Created new user record for subject: {Subject} with UserId: {UserId}", subject, userId);
-                        
-                        // Commit the transaction before logging audit
-                        await transaction.CommitAsync(context.RequestAborted);
-                        
-                        // Log user creation audit
-                        await auditService.LogAsync(
-                            AuditAction.UserCreated,
-                            userId: userId,
-                            cancellationToken: context.RequestAborted);
+                        if (existingByEmail is not null)
+                        {
+                            // Link this identity (Subject) to the existing user - update Subject and LastLogin
+                            existingByEmail.Subject = subject;
+                            existingByEmail.Email = email;
+                            if (string.IsNullOrWhiteSpace(existingByEmail.Name) || existingByEmail.Name == existingByEmail.Subject)
+                                existingByEmail.Name = name;
+                            existingByEmail.LastLogin = DateTime.UtcNow;
+                            await db.SaveChangesAsync(context.RequestAborted);
+                            userId = existingByEmail.Id;
+                            _logger.LogInformation("Linked existing user (UserId: {UserId}, Email: {Email}) to new Subject: {Subject}", userId, email, subject);
+                            await transaction.CommitAsync(context.RequestAborted);
+                        }
+                        else
+                        {
+                            // Truly new user: create user, default collection, and set it as active
+                            var userEntity = new User
+                            {
+                                Id = Guid.NewGuid(),
+                                Subject = subject,
+                                Email = email,
+                                Name = name,
+                                CreatedAt = DateTime.UtcNow,
+                                LastLogin = DateTime.UtcNow
+                            };
+
+                            db.Users.Add(userEntity);
+
+                            var defaultCollection = new Collection
+                            {
+                                Id = Guid.NewGuid(),
+                                Name = "Default Collection",
+                                CreatedBy = userEntity.Id.ToString(),
+                                CreatedAt = DateTime.UtcNow,
+                                IsPublic = false
+                            };
+                            db.Collections.Add(defaultCollection);
+
+                            var activeCollectionSetting = new UserSetting
+                            {
+                                Id = Guid.NewGuid(),
+                                UserId = userEntity.Id,
+                                Key = "ActiveCollectionId",
+                                Value = defaultCollection.Id.ToString(),
+                                CreatedAt = DateTime.UtcNow,
+                                UpdatedAt = DateTime.UtcNow
+                            };
+                            db.UserSettings.Add(activeCollectionSetting);
+
+                            try
+                            {
+                                await db.SaveChangesAsync(context.RequestAborted);
+                            }
+                            catch (DbUpdateException ex) when (IsDuplicateUsersEmail(ex))
+                            {
+                                // Race: another request inserted same email - load and use that user, update Subject
+                                await transaction.RollbackAsync(context.RequestAborted);
+                                db.ChangeTracker.Clear();
+                                await using var retryTransaction = await db.Database.BeginTransactionAsync(
+                                    System.Data.IsolationLevel.ReadCommitted,
+                                    context.RequestAborted);
+                                string emailNorm = email!.Trim().ToLowerInvariant();
+                                User? byEmail = await db.Users
+                                    .Where(u => u.Email != null && u.Email.Trim().ToLower() == emailNorm)
+                                    .AsTracking()
+                                    .FirstOrDefaultAsync(context.RequestAborted);
+                                if (byEmail is not null)
+                                {
+                                    byEmail.Subject = subject;
+                                    byEmail.LastLogin = DateTime.UtcNow;
+                                    await db.SaveChangesAsync(context.RequestAborted);
+                                    await retryTransaction.CommitAsync(context.RequestAborted);
+                                    userId = byEmail.Id;
+                                    _logger.LogInformation(
+                                        "Duplicate key on insert - linked existing user (UserId: {UserId}) to Subject: {Subject}",
+                                        userId,
+                                        subject);
+                                }
+                                else
+                                {
+                                    _logger.LogWarning(
+                                        "IX_Users_Email violation but no row matched email after rollback (subject {Subject})",
+                                        subject);
+                                    throw;
+                                }
+
+                                goto afterUpsert;
+                            }
+                            userId = userEntity.Id;
+                            _logger.LogInformation("Created new user record for subject: {Subject} with UserId: {UserId}", subject, userId);
+                            await transaction.CommitAsync(context.RequestAborted);
+                            await auditService.LogAsync(
+                                AuditAction.UserCreated,
+                                userId: userId,
+                                cancellationToken: context.RequestAborted);
+                        }
+                    afterUpsert:;
                     }
                     else
                     {
@@ -179,7 +327,7 @@ internal sealed class UserUpsertMiddleware
                 }
                 catch
                 {
-                    await transaction.RollbackAsync(context.RequestAborted);
+                    await TryRollbackCurrentTransactionAsync(db, context.RequestAborted);
                     throw;
                 }
             }
@@ -194,6 +342,32 @@ internal sealed class UserUpsertMiddleware
         {
             // Log the error but don't fail the request
             _logger.LogError(ex, "User upsert failed: {Message}", ex.Message);
+            // Fallback: if user already exists in DB, set UserId so read-only endpoints (e.g. GET users/settings) still work
+            if (context.User?.Identity?.IsAuthenticated == true)
+            {
+                string? subject = context.User.FindFirstValue("sub") ?? context.User.FindFirstValue(ClaimTypes.NameIdentifier);
+                if (!string.IsNullOrWhiteSpace(subject))
+                {
+                    try
+                    {
+                        var db = context.RequestServices.GetRequiredService<ApplicationDbContext>();
+                        var existingUser = await db.Users
+                            .AsNoTracking()
+                            .Where(u => u.Subject == subject)
+                            .Select(u => u.Id)
+                            .FirstOrDefaultAsync(context.RequestAborted);
+                        if (existingUser != default)
+                        {
+                            context.Items["UserId"] = existingUser.ToString();
+                            _logger.LogDebug("Set UserId from fallback lookup after upsert failure for subject {Subject}", subject);
+                        }
+                    }
+                    catch (Exception fallbackEx)
+                    {
+                        _logger.LogWarning(fallbackEx, "Fallback user lookup failed for subject {Subject}", subject);
+                    }
+                }
+            }
         }
 
         await _next(context);

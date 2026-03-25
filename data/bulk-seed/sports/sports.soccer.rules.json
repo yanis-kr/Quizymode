@@ -1,0 +1,202 @@
+[
+  {
+    "category": "sports",
+    "navigationKeyword1": "soccer",
+    "navigationKeyword2": "rules",
+    "question": "How many players from one team are usually on the field in soccer, including the goalkeeper?",
+    "correctAnswer": "11",
+    "incorrectAnswers": [
+      "10",
+      "12",
+      "9"
+    ],
+    "explanation": "A standard side fields 11 players including the goalkeeper.",
+    "keywords": [
+      "soccer",
+      "rules",
+      "players"
+    ],
+    "source": "https://www.theifab.com/laws/latest/",
+    "seedId": "38d6302b-686e-42a5-8eb7-a273dc14dbc2"
+  },
+  {
+    "category": "sports",
+    "navigationKeyword1": "soccer",
+    "navigationKeyword2": "rules",
+    "question": "What is the standard length of a regulation soccer match before extra time?",
+    "correctAnswer": "90 minutes",
+    "incorrectAnswers": [
+      "80 minutes",
+      "100 minutes",
+      "120 minutes"
+    ],
+    "explanation": "A standard match has two 45-minute halves.",
+    "keywords": [
+      "soccer",
+      "rules",
+      "match-length"
+    ],
+    "source": "https://www.theifab.com/laws/latest/",
+    "seedId": "dac803d1-ae65-44d9-8b67-a4e9b036f7d6"
+  },
+  {
+    "category": "sports",
+    "navigationKeyword1": "soccer",
+    "navigationKeyword2": "rules",
+    "question": "What happens when a player is offside at the moment a teammate plays the ball and then becomes involved?",
+    "correctAnswer": "Play is stopped for an offside offense",
+    "incorrectAnswers": [
+      "A penalty kick is awarded automatically",
+      "The goal always stands",
+      "The player is cautioned every time"
+    ],
+    "explanation": "Offside requires involvement in active play before it is penalized.",
+    "keywords": [
+      "soccer",
+      "rules",
+      "offside"
+    ],
+    "source": "https://www.theifab.com/laws/latest/",
+    "seedId": "26be1007-d64c-45ab-b6f1-b637f17fc214"
+  },
+  {
+    "category": "sports",
+    "navigationKeyword1": "soccer",
+    "navigationKeyword2": "rules",
+    "question": "Which player is allowed to handle the ball inside that player's own penalty area?",
+    "correctAnswer": "The goalkeeper",
+    "incorrectAnswers": [
+      "The captain only",
+      "Any defender",
+      "No one"
+    ],
+    "explanation": "Only the goalkeeper may use hands within the team's own penalty area under the laws.",
+    "keywords": [
+      "soccer",
+      "rules",
+      "goalkeeper"
+    ],
+    "source": "https://www.theifab.com/laws/latest/",
+    "seedId": "b650744e-0234-4551-bb22-f7f81e46d72b"
+  },
+  {
+    "category": "sports",
+    "navigationKeyword1": "soccer",
+    "navigationKeyword2": "rules",
+    "question": "How many points is a goal worth in soccer?",
+    "correctAnswer": "One",
+    "incorrectAnswers": [
+      "Two",
+      "Three",
+      "Six"
+    ],
+    "explanation": "Each goal counts as one score in soccer.",
+    "keywords": [
+      "soccer",
+      "rules",
+      "goal"
+    ],
+    "source": "https://www.theifab.com/laws/latest/",
+    "seedId": "77d4a7bd-24e4-4ed9-921b-1d59bea25a97"
+  },
+  {
+    "category": "sports",
+    "navigationKeyword1": "soccer",
+    "navigationKeyword2": "rules",
+    "question": "What color card sends a player off?",
+    "correctAnswer": "Red",
+    "incorrectAnswers": [
+      "Blue",
+      "Green",
+      "Black"
+    ],
+    "explanation": "A red card means the player is sent off.",
+    "keywords": [
+      "soccer",
+      "rules",
+      "red-card"
+    ],
+    "source": "https://www.theifab.com/laws/latest/",
+    "seedId": "ab325849-9618-4719-aac4-42131988a38c"
+  },
+  {
+    "category": "sports",
+    "navigationKeyword1": "soccer",
+    "navigationKeyword2": "rules",
+    "question": "What restart follows when the ball fully crosses the touchline after last touching the defending team?",
+    "correctAnswer": "A throw-in for the attacking team",
+    "incorrectAnswers": [
+      "A goal kick",
+      "A dropped ball",
+      "An indirect free kick"
+    ],
+    "explanation": "Crossing the touchline leads to a throw-in for the team that did not touch it last.",
+    "keywords": [
+      "soccer",
+      "rules",
+      "throw-in"
+    ],
+    "source": "https://www.theifab.com/laws/latest/",
+    "seedId": "415dbc3e-8da5-4f0b-b8a4-1a22415db989"
+  },
+  {
+    "category": "sports",
+    "navigationKeyword1": "soccer",
+    "navigationKeyword2": "rules",
+    "question": "What restart is awarded when the defending team last touches the ball before it crosses its own goal line without a goal?",
+    "correctAnswer": "Corner kick",
+    "incorrectAnswers": [
+      "Goal kick",
+      "Penalty kick",
+      "Throw-in"
+    ],
+    "explanation": "An attacking team gets a corner when defenders touch it last over their own goal line.",
+    "keywords": [
+      "soccer",
+      "rules",
+      "corner-kick"
+    ],
+    "source": "https://www.theifab.com/laws/latest/",
+    "seedId": "ec56f784-8e59-4149-84b2-36ae4267630d"
+  },
+  {
+    "category": "sports",
+    "navigationKeyword1": "soccer",
+    "navigationKeyword2": "rules",
+    "question": "Where is a penalty kick taken from?",
+    "correctAnswer": "The penalty mark",
+    "incorrectAnswers": [
+      "The center circle",
+      "The corner arc",
+      "The edge of the center line"
+    ],
+    "explanation": "Penalty kicks are taken from the penalty mark inside the penalty area.",
+    "keywords": [
+      "soccer",
+      "rules",
+      "penalty-kick"
+    ],
+    "source": "https://www.theifab.com/laws/latest/",
+    "seedId": "b40b8718-780e-45ae-bd44-12c8036fc58e"
+  },
+  {
+    "category": "sports",
+    "navigationKeyword1": "soccer",
+    "navigationKeyword2": "rules",
+    "question": "How many halves make up a standard soccer match?",
+    "correctAnswer": "Two halves",
+    "incorrectAnswers": [
+      "Three periods",
+      "Four quarters",
+      "One long period"
+    ],
+    "explanation": "A standard match is split into two halves.",
+    "keywords": [
+      "soccer",
+      "rules",
+      "halves"
+    ],
+    "source": "https://www.theifab.com/laws/latest/",
+    "seedId": "2c1f8f89-651d-4110-b707-657c1bd0d922"
+  }
+]

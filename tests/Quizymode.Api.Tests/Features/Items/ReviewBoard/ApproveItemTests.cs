@@ -23,7 +23,7 @@ public sealed class ApproveItemTests : DatabaseTestFixture
         await DbContext.SaveChangesAsync();
 
         // Act
-        Result<ApproveItem.Response> result = await ApproveItem.HandleAsync(
+        Result<ApproveItem.ApproveItemResponse> result = await ApproveItem.HandleAsync(
             itemId,
             DbContext,
             CancellationToken.None);
@@ -47,7 +47,7 @@ public sealed class ApproveItemTests : DatabaseTestFixture
         Guid nonExistentId = Guid.NewGuid();
 
         // Act
-        Result<ApproveItem.Response> result = await ApproveItem.HandleAsync(
+        Result<ApproveItem.ApproveItemResponse> result = await ApproveItem.HandleAsync(
             nonExistentId,
             DbContext,
             CancellationToken.None);

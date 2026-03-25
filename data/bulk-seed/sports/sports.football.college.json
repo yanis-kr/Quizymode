@@ -1,0 +1,202 @@
+[
+  {
+    "category": "sports",
+    "navigationKeyword1": "football",
+    "navigationKeyword2": "college",
+    "question": "What does FBS stand for in top-level college football?",
+    "correctAnswer": "Football Bowl Subdivision",
+    "incorrectAnswers": [
+      "Football Bracket Series",
+      "Final Bowl Structure",
+      "Football Base Section"
+    ],
+    "explanation": "FBS is the highest subdivision of NCAA college football.",
+    "keywords": [
+      "football",
+      "college",
+      "fbs"
+    ],
+    "source": "https://www.ncaa.com/sports/football/fbs",
+    "seedId": "eca564c1-117f-4d71-9fb4-8a04cc87df8b"
+  },
+  {
+    "category": "sports",
+    "navigationKeyword1": "football",
+    "navigationKeyword2": "college",
+    "question": "Which trophy is awarded to the Heisman winner?",
+    "correctAnswer": "The Heisman Trophy",
+    "incorrectAnswers": [
+      "The Lombardi Trophy",
+      "The Walter Camp Cup",
+      "The Outland Bowl"
+    ],
+    "explanation": "The Heisman Trophy honors the most outstanding player in college football.",
+    "keywords": [
+      "football",
+      "college",
+      "heisman"
+    ],
+    "source": "https://www.ncaa.com/sports/football/fbs",
+    "seedId": "c128d9e3-9cb2-4903-b255-4b63091a533a"
+  },
+  {
+    "category": "sports",
+    "navigationKeyword1": "football",
+    "navigationKeyword2": "college",
+    "question": "Which school won the College Football Playoff title for the 2023 season in January 2024?",
+    "correctAnswer": "Michigan",
+    "incorrectAnswers": [
+      "Washington",
+      "Georgia",
+      "Alabama"
+    ],
+    "explanation": "Michigan beat Washington for the national title.",
+    "keywords": [
+      "football",
+      "college",
+      "playoff"
+    ],
+    "source": "https://www.ncaa.com/sports/football/fbs",
+    "seedId": "922bf6f2-b67d-4bf8-b304-915af6854364"
+  },
+  {
+    "category": "sports",
+    "navigationKeyword1": "football",
+    "navigationKeyword2": "college",
+    "question": "Which rivalry game is often called The Game?",
+    "correctAnswer": "Michigan vs. Ohio State",
+    "incorrectAnswers": [
+      "Alabama vs. Auburn",
+      "Army vs. Navy",
+      "USC vs. Notre Dame"
+    ],
+    "explanation": "Michigan and Ohio State play the rivalry widely known as The Game.",
+    "keywords": [
+      "football",
+      "college",
+      "rivalry"
+    ],
+    "source": "https://www.ncaa.com/sports/football/fbs",
+    "seedId": "0c17968b-d23a-4f6b-948e-b7bced02c492"
+  },
+  {
+    "category": "sports",
+    "navigationKeyword1": "football",
+    "navigationKeyword2": "college",
+    "question": "Which service academy rivalry is played annually between two military schools?",
+    "correctAnswer": "Army vs. Navy",
+    "incorrectAnswers": [
+      "Air Force vs. BYU",
+      "Texas vs. Oklahoma",
+      "Florida vs. Georgia"
+    ],
+    "explanation": "Army and Navy meet every season in one of the sport's most famous rivalries.",
+    "keywords": [
+      "football",
+      "college",
+      "army-navy"
+    ],
+    "source": "https://www.ncaa.com/sports/football/fbs",
+    "seedId": "f5f9029b-b67c-4b9d-b2de-32ade0d11c79"
+  },
+  {
+    "category": "sports",
+    "navigationKeyword1": "football",
+    "navigationKeyword2": "college",
+    "question": "Which conference is Alabama most associated with?",
+    "correctAnswer": "SEC",
+    "incorrectAnswers": [
+      "Big Ten",
+      "ACC",
+      "Pac-12"
+    ],
+    "explanation": "Alabama is a long-time member of the Southeastern Conference.",
+    "keywords": [
+      "football",
+      "college",
+      "sec"
+    ],
+    "source": "https://www.ncaa.com/sports/football/fbs",
+    "seedId": "8e6b1499-c253-4bc3-9183-12bd83bb34dd"
+  },
+  {
+    "category": "sports",
+    "navigationKeyword1": "football",
+    "navigationKeyword2": "college",
+    "question": "Which bowl game is played in Pasadena on New Year's Day tradition?",
+    "correctAnswer": "Rose Bowl",
+    "incorrectAnswers": [
+      "Sugar Bowl",
+      "Cotton Bowl",
+      "Peach Bowl"
+    ],
+    "explanation": "The Rose Bowl is the historic New Year's game in Pasadena.",
+    "keywords": [
+      "football",
+      "college",
+      "rose-bowl"
+    ],
+    "source": "https://www.ncaa.com/sports/football/fbs",
+    "seedId": "781fa16a-1a4c-4d20-a0e8-9b098ade51cc"
+  },
+  {
+    "category": "sports",
+    "navigationKeyword1": "football",
+    "navigationKeyword2": "college",
+    "question": "Which quarterback won the Heisman Trophy while playing for LSU in 2019?",
+    "correctAnswer": "Joe Burrow",
+    "incorrectAnswers": [
+      "Bryce Young",
+      "Cam Newton",
+      "Tim Tebow"
+    ],
+    "explanation": "Burrow led LSU to an unbeaten national title season in 2019.",
+    "keywords": [
+      "football",
+      "college",
+      "joe-burrow"
+    ],
+    "source": "https://www.ncaa.com/sports/football/fbs",
+    "seedId": "06a57f81-c660-495c-8d2a-f24e52d9e133"
+  },
+  {
+    "category": "sports",
+    "navigationKeyword1": "football",
+    "navigationKeyword2": "college",
+    "question": "Which team won the first four-team CFP national championship game after the 2014 season?",
+    "correctAnswer": "Ohio State",
+    "incorrectAnswers": [
+      "Oregon",
+      "Alabama",
+      "Florida State"
+    ],
+    "explanation": "Ohio State beat Oregon in the first CFP title game.",
+    "keywords": [
+      "football",
+      "college",
+      "cfp-history"
+    ],
+    "source": "https://www.ncaa.com/sports/football/fbs",
+    "seedId": "c02c2bf1-b5c2-4183-9019-d1ba019c98d3"
+  },
+  {
+    "category": "sports",
+    "navigationKeyword1": "football",
+    "navigationKeyword2": "college",
+    "question": "What is the maximum number of scholarship players a team may have on the field at one time in college football?",
+    "correctAnswer": "11",
+    "incorrectAnswers": [
+      "10",
+      "12",
+      "22"
+    ],
+    "explanation": "College football, like the NFL, is played with 11 players per side.",
+    "keywords": [
+      "football",
+      "college",
+      "players"
+    ],
+    "source": "https://www.ncaa.com/sports/football/fbs",
+    "seedId": "3b961e57-4f08-4c5e-bd02-ee61ef0ab2d8"
+  }
+]

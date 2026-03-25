@@ -1,55 +1,522 @@
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useMemo } from "react";
 import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
 import { collectionsApi } from "@/api/collections";
+import { categoriesApi } from "@/api/categories";
+import { keywordsApi } from "@/api/keywords";
 import { useAuth } from "@/contexts/AuthContext";
-import { Navigate, Link, useSearchParams } from "react-router-dom";
+import { useActiveCollection } from "@/hooks/useActiveCollection";
+import { Link, useSearchParams, useNavigate } from "react-router-dom";
 import {
   TrashIcon,
   ListBulletIcon,
   EyeIcon,
   AcademicCapIcon,
+  BookmarkIcon,
+  MagnifyingGlassIcon,
+  PencilSquareIcon,
+  LinkIcon,
+  CircleStackIcon,
+  StarIcon,
 } from "@heroicons/react/24/outline";
+import { StarIcon as StarIconSolid } from "@heroicons/react/24/solid";
+import { BookmarkIcon as BookmarkIconSolid, CheckCircleIcon as CheckCircleIconSolid } from "@heroicons/react/24/solid";
 import LoadingSpinner from "@/components/LoadingSpinner";
 import ErrorMessage from "@/components/ErrorMessage";
+import { buildCollectionPath, buildCollectionStudyPath } from "@/utils/collectionPath";
+import type {
+  CollectionDiscoverItem,
+  CollectionRatingResponse,
+  CreateCollectionRequest,
+} from "@/types/api";
+
+type TabId = "mine" | "bookmarked" | "discover";
+
+interface CollectionCardProps {
+  id: string;
+  name: string;
+  description?: string | null;
+  isPublic?: boolean;
+  itemCount: number;
+  createdAt: string;
+  createdBy?: string;
+  isOwner?: boolean;
+  isBookmarked?: boolean;
+  selectedCollectionId?: string | null;
+  activeCollectionId?: string | null;
+  cardRef?: React.RefObject<HTMLDivElement | null>;
+  onBookmark?: (id: string) => void;
+  onUnbookmark?: (id: string) => void;
+  onDelete?: (id: string, name: string) => void;
+  onEdit?: (id: string, payload: { name: string; description: string | null; isPublic: boolean }) => void;
+  onSetActive?: (id: string) => void;
+  onCopyLink?: (id: string, name: string, isPublic: boolean) => void;
+  onSelect?: (id: string) => void;
+  isBookmarkPending?: boolean;
+  isDeletePending?: boolean;
+  isEditPending?: boolean;
+  showRating?: boolean;
+  /** When true, show average rating only (no submit). Use for anonymous users. */
+  readOnlyRating?: boolean;
+  onRate?: (id: string, stars: number) => void;
+}
+
+function CollectionCard({
+  id,
+  name,
+  description,
+  isPublic,
+  itemCount,
+  createdAt,
+  createdBy,
+  isOwner,
+  isBookmarked,
+  selectedCollectionId,
+  activeCollectionId,
+  cardRef,
+  onBookmark,
+  onUnbookmark,
+  onDelete,
+  onEdit,
+  onSetActive,
+  onCopyLink,
+  onSelect,
+  isBookmarkPending,
+  isDeletePending,
+  isEditPending,
+  showRating,
+  readOnlyRating,
+  onRate,
+}: CollectionCardProps) {
+  const isActive = activeCollectionId === id;
+  const queryClient = useQueryClient();
+  const collectionPath = buildCollectionPath(id, name);
+  const explorePath = buildCollectionStudyPath("explore", id, name);
+  const quizPath = buildCollectionStudyPath("quiz", id, name);
+
+  const { data: ratingData } = useQuery({
+    queryKey: ["collectionRating", id],
+    queryFn: () => collectionsApi.getRating(id),
+    enabled: !!showRating,
+  });
+
+  const setRatingMutation = useMutation({
+    mutationFn: (stars: number) => collectionsApi.setRating(id, stars),
+    onMutate: async (stars) => {
+      await queryClient.cancelQueries({ queryKey: ["collectionRating", id] });
+      const previous = queryClient.getQueryData<CollectionRatingResponse>(["collectionRating", id]);
+      queryClient.setQueryData<CollectionRatingResponse>(["collectionRating", id], (old) => {
+        if (!old) return { count: 1, averageStars: stars, myStars: stars };
+        const newCount = old.myStars == null ? old.count + 1 : old.count;
+        const newAvg =
+          old.averageStars != null && old.count > 0
+            ? old.myStars != null
+              ? (old.averageStars * old.count - old.myStars + stars) / old.count
+              : (old.averageStars * old.count + stars) / newCount
+            : stars;
+        return {
+          count: newCount,
+          averageStars: Math.round(newAvg * 100) / 100,
+          myStars: stars,
+        };
+      });
+      return { previous };
+    },
+    onError: (_err, _stars, context) => {
+      if (context?.previous != null) {
+        queryClient.setQueryData(["collectionRating", id], context.previous);
+      } else {
+        queryClient.invalidateQueries({ queryKey: ["collectionRating", id] });
+      }
+    },
+    onSettled: () => {
+      queryClient.invalidateQueries({ queryKey: ["collectionRating", id] });
+    },
+  });
+
+  const titleArea = (
+    <>
+      <h3 className="text-lg font-medium text-gray-900">{name}</h3>
+      <p className="mt-2 text-sm text-gray-500">
+        {itemCount} {itemCount === 1 ? "item" : "items"}
+      </p>
+      {createdBy && (
+        <p className="mt-1 text-xs text-gray-400">By {createdBy}</p>
+      )}
+      <p className="mt-1 text-sm text-gray-500">
+        Created {new Date(createdAt).toLocaleDateString()}
+      </p>
+    </>
+  );
+
+  return (
+    <div
+      ref={cardRef}
+      className={`bg-white overflow-hidden shadow rounded-lg hover:shadow-lg transition-shadow p-6 ${
+        selectedCollectionId === id ? "ring-2 ring-indigo-500 ring-offset-2" : ""
+      }`}
+    >
+      <div className="flex justify-between items-start mb-4">
+        <div className="flex-1 min-w-0">
+          {onSelect ? (
+            <button
+              type="button"
+              onClick={(e) => { e.preventDefault(); e.stopPropagation(); onSelect(id); }}
+              className="text-left w-full hover:opacity-90 focus:outline-none focus:ring-0"
+            >
+              {titleArea}
+            </button>
+          ) : (
+            <Link to={collectionPath} className="block">
+              {titleArea}
+            </Link>
+          )}
+        </div>
+        <div className="flex items-center gap-1 ml-2 flex-wrap justify-end">
+          {isOwner && onEdit && (
+            <button
+              onClick={(e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                onEdit(id, { name, description: description ?? null, isPublic: isPublic ?? false });
+              }}
+              disabled={isEditPending}
+              className="p-2 text-gray-600 hover:text-indigo-600 hover:bg-indigo-50 rounded-md disabled:opacity-50"
+              title="Edit collection"
+            >
+              <PencilSquareIcon className="h-5 w-5" />
+            </button>
+          )}
+          {isOwner && onSetActive && (
+            <button
+              onClick={(e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                onSetActive(id);
+              }}
+              disabled={isEditPending}
+              className={`p-2 rounded-md disabled:opacity-50 ${
+                isActive
+                  ? "text-indigo-600 bg-indigo-50"
+                  : "text-gray-400 hover:text-indigo-600 hover:bg-indigo-50"
+              }`}
+              title={isActive ? "Active collection" : "Set as active collection"}
+            >
+              {isActive ? (
+                <CheckCircleIconSolid className="h-5 w-5" />
+              ) : (
+                <CircleStackIcon className="h-5 w-5" />
+              )}
+            </button>
+          )}
+          {isOwner && onCopyLink && (
+            <button
+              onClick={(e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                onCopyLink(id, name, isPublic ?? false);
+              }}
+              className="p-2 text-gray-400 hover:text-blue-600 hover:bg-blue-50 rounded-md"
+              title="Copy shared link"
+            >
+              <LinkIcon className="h-5 w-5" />
+            </button>
+          )}
+          {isOwner && onDelete && (
+            <button
+              onClick={(e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                onDelete(id, name);
+              }}
+              disabled={isDeletePending}
+              className="p-2 text-red-600 hover:text-red-700 hover:bg-red-50 rounded-md disabled:opacity-50"
+              title="Delete collection"
+            >
+              <TrashIcon className="h-5 w-5" />
+            </button>
+          )}
+          {!isOwner && isBookmarked && onUnbookmark && (
+            <button
+              onClick={(e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                onUnbookmark(id);
+              }}
+              disabled={isBookmarkPending}
+              className="p-2 text-amber-600 hover:bg-amber-50 rounded-md disabled:opacity-50"
+              title="Remove bookmark"
+            >
+              <BookmarkIconSolid className="h-5 w-5" />
+            </button>
+          )}
+          {!isOwner && !isBookmarked && onBookmark && (
+            <button
+              onClick={(e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                onBookmark(id);
+              }}
+              disabled={isBookmarkPending}
+              className="p-2 text-gray-400 hover:text-amber-600 hover:bg-amber-50 rounded-md disabled:opacity-50"
+              title="Bookmark collection"
+            >
+              <BookmarkIcon className="h-5 w-5" />
+            </button>
+          )}
+        </div>
+      </div>
+      {showRating && readOnlyRating && (
+        <div className="flex flex-wrap items-center gap-2 mt-3 pt-3 border-t border-gray-100">
+          <span className="text-sm font-medium text-gray-700">Rating</span>
+          <div className="flex items-center gap-0.5" aria-hidden>
+            {[1, 2, 3, 4, 5].map((star) => {
+              const avg = ratingData?.averageStars;
+              const filled = avg != null && star <= Math.round(avg);
+              return filled ? (
+                <StarIconSolid key={star} className="h-5 w-5 text-amber-500" />
+              ) : (
+                <StarIcon key={star} className="h-5 w-5 text-gray-300" />
+              );
+            })}
+          </div>
+          <span className="text-xs text-gray-500">
+            {ratingData?.averageStars != null
+              ? `${ratingData.averageStars} (${ratingData.count})`
+              : "No ratings yet"}
+          </span>
+        </div>
+      )}
+      {showRating && !readOnlyRating && (
+        <div className="flex flex-wrap items-center gap-2 mt-3 pt-3 border-t border-gray-100">
+          <span className="text-sm font-medium text-gray-700">Rating</span>
+          <div className="flex items-center gap-0.5">
+            {[1, 2, 3, 4, 5].map((star) => (
+              <button
+                key={star}
+                type="button"
+                onClick={(e) => {
+                  e.preventDefault();
+                  e.stopPropagation();
+                  setRatingMutation.mutate(star);
+                  onRate?.(id, star);
+                }}
+                disabled={setRatingMutation.isPending}
+                className="p-0.5 rounded hover:bg-gray-100 disabled:opacity-50"
+                title={`Rate ${star} star${star > 1 ? "s" : ""}`}
+              >
+                {ratingData?.myStars != null && star <= ratingData.myStars ? (
+                  <StarIconSolid className="h-5 w-5 text-amber-500" />
+                ) : (
+                  <StarIcon className="h-5 w-5 text-gray-300" />
+                )}
+              </button>
+            ))}
+          </div>
+          <span className="text-xs text-gray-500">
+            {ratingData?.averageStars != null
+              ? `${ratingData.averageStars} (${ratingData.count})`
+              : "No ratings yet"}
+          </span>
+        </div>
+      )}
+      <div className="flex flex-wrap gap-2 mt-4">
+        <Link
+          to={collectionPath}
+          className="flex items-center px-3 py-2 text-sm font-medium text-blue-600 bg-blue-50 rounded-md hover:bg-blue-100"
+          onClick={(e) => e.stopPropagation()}
+        >
+          <ListBulletIcon className="h-4 w-4 mr-1" />
+          List
+        </Link>
+        <Link
+          to={explorePath}
+          className="flex items-center px-3 py-2 text-sm font-medium text-indigo-600 bg-indigo-50 rounded-md hover:bg-indigo-100"
+          onClick={(e) => e.stopPropagation()}
+        >
+          <EyeIcon className="h-4 w-4 mr-1" />
+          Flashcards
+        </Link>
+        <Link
+          to={quizPath}
+          className="flex items-center px-3 py-2 text-sm font-medium text-green-600 bg-green-50 rounded-md hover:bg-green-100"
+          onClick={(e) => e.stopPropagation()}
+        >
+          <AcademicCapIcon className="h-4 w-4 mr-1" />
+          Quiz
+        </Link>
+      </div>
+    </div>
+  );
+}
 
 const CollectionsPage = () => {
-  const { isAuthenticated, isLoading: authLoading } = useAuth();
+  const { isAuthenticated, isLoading: authLoading, userId } = useAuth();
   const queryClient = useQueryClient();
+  const { activeCollectionId, setActiveCollectionId } = useActiveCollection();
   const [showCreateModal, setShowCreateModal] = useState(false);
   const [collectionName, setCollectionName] = useState("");
-  const [searchParams] = useSearchParams();
-  const selectedCollectionId = searchParams.get("selected");
-  const selectedCollectionRef = useRef<HTMLDivElement>(null);
+  const [createCollectionDescription, setCreateCollectionDescription] = useState("");
+  const [createCollectionIsPublic, setCreateCollectionIsPublic] = useState(false);
+  const [editingCollectionId, setEditingCollectionId] = useState<string | null>(null);
+  const [editingName, setEditingName] = useState("");
+  const [editingDescription, setEditingDescription] = useState("");
+  const [editingIsPublic, setEditingIsPublic] = useState(false);
+  const [copyLinkWarning, setCopyLinkWarning] = useState<string | null>(null);
+  const [searchParams, setSearchParams] = useSearchParams();
+  const tabParam = searchParams.get("tab") as TabId | null;
+  const [activeTab, setActiveTab] = useState<TabId>(tabParam && ["mine", "bookmarked", "discover"].includes(tabParam) ? tabParam : "mine");
+  const [discoverQuery, setDiscoverQuery] = useState("");
+  const [discoverPage, setDiscoverPage] = useState(1);
+  const [discoverCategory, setDiscoverCategory] = useState("");
+  const [discoverNav1, setDiscoverNav1] = useState("");
+  const [discoverNav2, setDiscoverNav2] = useState("");
+  const [discoverTags, setDiscoverTags] = useState("");
+  const [collectionIdInput, setCollectionIdInput] = useState("");
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    if (tabParam && ["mine", "bookmarked", "discover"].includes(tabParam)) {
+      setActiveTab(tabParam as TabId);
+    }
+  }, [tabParam]);
+
+  useEffect(() => {
+    if (authLoading || isAuthenticated) return;
+    if (activeTab === "mine" || activeTab === "bookmarked") {
+      setActiveTab("discover");
+      setSearchParams((prev) => {
+        const next = new URLSearchParams(prev);
+        next.set("tab", "discover");
+        return next;
+      });
+    }
+  }, [authLoading, isAuthenticated, activeTab, setSearchParams]);
+
+  useEffect(() => {
+    if (!discoverNav1.trim()) setDiscoverNav2("");
+  }, [discoverNav1]);
+
+  const setTab = (tab: TabId) => {
+    if (!isAuthenticated && (tab === "mine" || tab === "bookmarked")) return;
+    setActiveTab(tab);
+    setSearchParams((prev) => {
+      const next = new URLSearchParams(prev);
+      next.set("tab", tab);
+      return next;
+    });
+  };
+
+  const discoverKeywordsParam = useMemo(() => {
+    if (!discoverCategory.trim()) return undefined;
+    const k1 = discoverNav1.trim();
+    const k2 = discoverNav2.trim();
+    if (k2) return `${k1},${k2}`;
+    if (k1) return k1;
+    return undefined;
+  }, [discoverCategory, discoverNav1, discoverNav2]);
 
   const { data, isLoading, error, refetch } = useQuery({
     queryKey: ["collections"],
     queryFn: () => collectionsApi.getAll(),
     enabled: isAuthenticated && !authLoading,
-    retry: false, // Don't retry if auth fails
+    retry: false,
   });
 
-  // Scroll to selected collection when data is loaded
-  useEffect(() => {
-    if (selectedCollectionId && data?.collections && selectedCollectionRef.current) {
-      setTimeout(() => {
-        selectedCollectionRef.current?.scrollIntoView({
-          behavior: "smooth",
-          block: "center",
-        });
-      }, 100);
-    }
-  }, [selectedCollectionId, data?.collections]);
+  const { data: bookmarksData } = useQuery({
+    queryKey: ["collections", "bookmarks"],
+    queryFn: () => collectionsApi.getBookmarks(),
+    enabled: isAuthenticated && !authLoading && activeTab === "bookmarked",
+  });
+
+  const { data: discoverCategoriesData } = useQuery({
+    queryKey: ["categories"],
+    queryFn: () => categoriesApi.getAll(),
+    enabled: activeTab === "discover",
+  });
+
+  const { data: discoverRank1Data, isLoading: discoverRank1Loading } = useQuery({
+    queryKey: ["keywords", "rank1", "discover", discoverCategory],
+    queryFn: () => keywordsApi.getNavigationKeywords(discoverCategory, []),
+    enabled: activeTab === "discover" && !!discoverCategory.trim(),
+  });
+
+  const { data: discoverRank2Data, isLoading: discoverRank2Loading } = useQuery({
+    queryKey: ["keywords", "rank2", "discover", discoverCategory, discoverNav1],
+    queryFn: () => keywordsApi.getNavigationKeywords(discoverCategory, [discoverNav1]),
+    enabled:
+      activeTab === "discover" && !!discoverCategory.trim() && !!discoverNav1.trim(),
+  });
+
+  const { data: discoverData, isLoading: discoverLoading } = useQuery({
+    queryKey: [
+      "collections",
+      "discover",
+      discoverQuery,
+      discoverPage,
+      discoverCategory,
+      discoverKeywordsParam,
+      discoverTags,
+    ],
+    queryFn: () =>
+      collectionsApi.discover({
+        q: discoverQuery || undefined,
+        page: discoverPage,
+        pageSize: 12,
+        category: discoverCategory.trim() || undefined,
+        keywords: discoverKeywordsParam,
+        tags: discoverTags.trim() || undefined,
+      }),
+    enabled: activeTab === "discover",
+  });
+
+  const discoverRank1Options = useMemo(
+    () =>
+      (discoverRank1Data?.keywords ?? []).filter((k) => k.name.toLowerCase() !== "other"),
+    [discoverRank1Data]
+  );
+
+  const discoverRank2Options = useMemo(
+    () =>
+      (discoverRank2Data?.keywords ?? []).filter((k) => k.name.toLowerCase() !== "other"),
+    [discoverRank2Data]
+  );
+
+  const sortedDiscoverCategories = useMemo(
+    () =>
+      [...(discoverCategoriesData?.categories ?? [])].sort((a, b) =>
+        a.category.localeCompare(b.category)
+      ),
+    [discoverCategoriesData]
+  );
+
+  const clearDiscoverFilters = () => {
+    setDiscoverCategory("");
+    setDiscoverNav1("");
+    setDiscoverNav2("");
+    setDiscoverTags("");
+    setDiscoverPage(1);
+  };
 
   const createMutation = useMutation({
-    mutationFn: (name: string) => collectionsApi.create({ name }),
+    mutationFn: (payload: CreateCollectionRequest) => collectionsApi.create(payload),
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ["collections"] });
       setShowCreateModal(false);
       setCollectionName("");
+      setCreateCollectionDescription("");
+      setCreateCollectionIsPublic(false);
     },
-    onError: (error: unknown) => {
-      console.error("Failed to create collection:", error);
+    onError: (err: unknown) => console.error("Failed to create collection:", err),
+  });
+
+  const updateMutation = useMutation({
+    mutationFn: ({ id, payload }: { id: string; payload: { name?: string; description?: string | null; isPublic?: boolean } }) =>
+      collectionsApi.update(id, payload),
+    onSuccess: () => {
+      queryClient.invalidateQueries({ queryKey: ["collections"] });
+      setEditingCollectionId(null);
     },
+    onError: (err: unknown) => console.error("Failed to update collection:", err),
   });
 
   const deleteMutation = useMutation({
@@ -57,68 +524,302 @@ const CollectionsPage = () => {
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ["collections"] });
     },
-    onError: (error: unknown) => {
-      console.error("Failed to delete collection:", error);
-    },
+    onError: (err: unknown) => console.error("Failed to delete collection:", err),
   });
 
-  const handleDeleteCollection = (
-    collectionId: string,
-    collectionName: string
-  ) => {
-    if (
-      window.confirm(
-        `Are you sure you want to delete "${collectionName}"? This action cannot be undone.`
-      )
-    ) {
+  const bookmarkMutation = useMutation({
+    mutationFn: (id: string) => collectionsApi.bookmark(id),
+    onSuccess: () => {
+      queryClient.invalidateQueries({ queryKey: ["collections"] });
+      queryClient.invalidateQueries({ queryKey: ["collections", "bookmarks"] });
+      queryClient.invalidateQueries({ queryKey: ["collections", "discover"] });
+    },
+    onError: (err: unknown) => console.error("Failed to bookmark:", err),
+  });
+
+  const unbookmarkMutation = useMutation({
+    mutationFn: (id: string) => collectionsApi.unbookmark(id),
+    onSuccess: () => {
+      queryClient.invalidateQueries({ queryKey: ["collections"] });
+      queryClient.invalidateQueries({ queryKey: ["collections", "bookmarks"] });
+      queryClient.invalidateQueries({ queryKey: ["collections", "discover"] });
+    },
+    onError: (err: unknown) => console.error("Failed to remove bookmark:", err),
+  });
+
+  const handleDeleteCollection = (collectionId: string, collectionName: string) => {
+    if (window.confirm(`Are you sure you want to delete "${collectionName}"? This action cannot be undone.`)) {
       deleteMutation.mutate(collectionId);
     }
+  };
+
+  const handleOpenCollectionById = () => {
+    const id = collectionIdInput.trim();
+    if (!id) return;
+    const guidRegex = /^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$/;
+    if (guidRegex.test(id)) {
+      navigate(buildCollectionPath(id));
+    } else {
+      window.alert("Please enter a valid collection ID (GUID format).");
+    }
+  };
+
+  const handleOpenEdit = (id: string, payload: { name: string; description: string | null; isPublic: boolean }) => {
+    setEditingCollectionId(id);
+    setEditingName(payload.name);
+    setEditingDescription(payload.description ?? "");
+    setEditingIsPublic(payload.isPublic);
+  };
+
+  const handleSaveEdit = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!editingCollectionId || !editingName.trim()) return;
+    updateMutation.mutate({
+      id: editingCollectionId,
+      payload: {
+        name: editingName.trim(),
+        description: editingDescription.trim() || null,
+        isPublic: editingIsPublic,
+      },
+    });
+  };
+
+  const handleCopyLink = (collectionId: string, collectionName: string, isPublic: boolean) => {
+    const url = `${window.location.origin}${buildCollectionPath(collectionId, collectionName)}`;
+    void navigator.clipboard.writeText(url).then(() => {
+      if (!isPublic) {
+        setCopyLinkWarning("Collection is private. Others cannot open this link until you make it public (Edit → Shared with others).");
+        setTimeout(() => setCopyLinkWarning(null), 6000);
+      }
+    });
   };
 
   const handleCreateCollection = (e: React.FormEvent) => {
     e.preventDefault();
     if (collectionName.trim()) {
-      createMutation.mutate(collectionName.trim());
+      createMutation.mutate({
+        name: collectionName.trim(),
+        description: createCollectionDescription.trim() || undefined,
+        isPublic: createCollectionIsPublic,
+      });
     }
   };
 
-  // Wait for auth to finish loading before making decisions
-  if (authLoading) {
-    return <LoadingSpinner />;
-  }
+  const myCollections = data?.collections ?? [];
+  const bookmarkedCollections = bookmarksData?.collections ?? [];
+  const discoverItems = discoverData?.items ?? [];
+  const discoverTotal = discoverData?.totalCount ?? 0;
+  const discoverHasActiveFilters =
+    !!discoverQuery.trim() ||
+    !!discoverCategory.trim() ||
+    !!discoverNav1.trim() ||
+    !!discoverNav2.trim() ||
+    !!discoverTags.trim();
 
-  // Only redirect if auth is finished loading and user is not authenticated
-  if (!authLoading && !isAuthenticated) {
-    return <Navigate to="/login" replace />;
-  }
+  if (authLoading) return <LoadingSpinner />;
 
-  if (isLoading) return <LoadingSpinner />;
-  if (error)
+  if (activeTab === "mine" && isLoading) return <LoadingSpinner />;
+  if (activeTab === "mine" && error) {
     return (
       <ErrorMessage
         message="Failed to load collections"
         onRetry={() => refetch()}
       />
     );
+  }
 
   return (
     <div className="px-4 py-6 sm:px-0">
       <div className="mb-6">
-        <h1 className="text-3xl font-bold text-gray-900 mb-2">My Collections</h1>
+        <h1 className="text-3xl font-bold text-gray-900 mb-2">Collections</h1>
         <p className="text-gray-600 text-sm">
-          Organize quiz items into custom collections. Group related items together for easier study and practice.
+          {isAuthenticated
+            ? "Your collections, bookmarks, and discover public collections. You can also open a collection by ID."
+            : "Browse public collections by topic or search. Sign in to manage your own collections and bookmarks. You can open a collection by ID."}
         </p>
       </div>
-      <div className="mb-6 flex justify-end items-center">
+
+      <div className="flex flex-wrap items-center justify-between gap-4 mb-6">
+        <div className="flex rounded-lg border border-gray-200 overflow-hidden bg-white">
+          {(["mine", "bookmarked", "discover"] as const).map((tab) => {
+            const locked = !isAuthenticated && (tab === "mine" || tab === "bookmarked");
+            return (
+              <button
+                key={tab}
+                type="button"
+                disabled={locked}
+                title={locked ? "Sign in to use this tab" : undefined}
+                onClick={() => setTab(tab)}
+                className={`px-4 py-2 text-sm font-medium capitalize ${
+                  activeTab === tab
+                    ? "bg-indigo-600 text-white"
+                    : locked
+                      ? "bg-gray-50 text-gray-400 cursor-not-allowed"
+                      : "bg-white text-gray-700 hover:bg-gray-50"
+                }`}
+              >
+                {tab === "mine" ? "Mine" : tab === "bookmarked" ? "Bookmarked" : "Discover"}
+              </button>
+            );
+          })}
+        </div>
+      {activeTab === "mine" && isAuthenticated && (
         <button
           onClick={() => setShowCreateModal(true)}
           className="px-4 py-2 bg-indigo-600 text-white rounded-md hover:bg-indigo-700"
         >
           Create Collection
         </button>
+      )}
       </div>
 
-      {/* Create Collection Modal */}
+      {copyLinkWarning && (
+        <div className="mb-4 p-3 bg-amber-50 border border-amber-200 rounded-md text-sm text-amber-800 flex items-center justify-between gap-2">
+          <span>{copyLinkWarning}</span>
+          <button type="button" onClick={() => setCopyLinkWarning(null)} className="text-amber-600 hover:text-amber-800 font-medium">Dismiss</button>
+        </div>
+      )}
+
+      {activeTab === "discover" && (
+        <div className="mb-4 space-y-4">
+          <div className="flex flex-wrap items-center gap-4">
+            <div className="flex flex-wrap items-center gap-2">
+              <div className="relative flex-1 min-w-[200px] max-w-md">
+                <MagnifyingGlassIcon className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-gray-400" />
+                <input
+                  type="search"
+                  placeholder="Search public collections..."
+                  value={discoverQuery}
+                  onChange={(e) => {
+                    setDiscoverQuery(e.target.value);
+                    setDiscoverPage(1);
+                  }}
+                  onKeyDown={(e) => e.key === "Enter" && setDiscoverPage(1)}
+                  className="w-full pl-10 pr-3 py-2 border border-gray-300 rounded-md text-sm focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500"
+                />
+              </div>
+              <button
+                type="button"
+                onClick={() => setDiscoverPage(1)}
+                className="px-3 py-2 bg-gray-100 text-gray-700 rounded-md hover:bg-gray-200 text-sm"
+              >
+                Search
+              </button>
+            </div>
+            <div className="flex items-center gap-2">
+              <input
+                type="text"
+                placeholder="Collection ID (e.g. from link)"
+                value={collectionIdInput}
+                onChange={(e) => setCollectionIdInput(e.target.value.trim())}
+                onKeyDown={(e) => e.key === "Enter" && handleOpenCollectionById()}
+                className="min-w-[240px] px-3 py-2 border border-gray-300 rounded-md text-sm focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 font-mono"
+              />
+              <button
+                type="button"
+                onClick={handleOpenCollectionById}
+                className="px-3 py-2 bg-indigo-600 text-white rounded-md hover:bg-indigo-700 text-sm whitespace-nowrap"
+              >
+                Open by ID
+              </button>
+            </div>
+          </div>
+          <div className="flex flex-wrap items-end gap-3 p-3 bg-white border border-gray-200 rounded-lg">
+            <div>
+              <label htmlFor="discover-category" className="block text-xs font-medium text-gray-600 mb-1">
+                Category
+              </label>
+              <select
+                id="discover-category"
+                value={discoverCategory}
+                onChange={(e) => {
+                  setDiscoverCategory(e.target.value);
+                  setDiscoverNav1("");
+                  setDiscoverNav2("");
+                  setDiscoverPage(1);
+                }}
+                className="min-w-[160px] px-2 py-2 border border-gray-300 rounded-md text-sm focus:ring-2 focus:ring-indigo-500"
+              >
+                <option value="">All categories</option>
+                {sortedDiscoverCategories.map((c) => (
+                  <option key={c.category} value={c.category}>
+                    {c.category}
+                  </option>
+                ))}
+              </select>
+            </div>
+            <div>
+              <label htmlFor="discover-nav1" className="block text-xs font-medium text-gray-600 mb-1">
+                Topic (L1)
+              </label>
+              <select
+                id="discover-nav1"
+                value={discoverNav1}
+                disabled={!discoverCategory.trim() || discoverRank1Loading}
+                onChange={(e) => {
+                  setDiscoverNav1(e.target.value);
+                  setDiscoverNav2("");
+                  setDiscoverPage(1);
+                }}
+                className="min-w-[140px] px-2 py-2 border border-gray-300 rounded-md text-sm focus:ring-2 focus:ring-indigo-500 disabled:bg-gray-100"
+              >
+                <option value="">Any</option>
+                {discoverRank1Options.map((k) => (
+                  <option key={k.name} value={k.name}>
+                    {k.name}
+                  </option>
+                ))}
+              </select>
+            </div>
+            <div>
+              <label htmlFor="discover-nav2" className="block text-xs font-medium text-gray-600 mb-1">
+                Subtopic (L2)
+              </label>
+              <select
+                id="discover-nav2"
+                value={discoverNav2}
+                disabled={!discoverNav1.trim() || discoverRank2Loading}
+                onChange={(e) => {
+                  setDiscoverNav2(e.target.value);
+                  setDiscoverPage(1);
+                }}
+                className="min-w-[140px] px-2 py-2 border border-gray-300 rounded-md text-sm focus:ring-2 focus:ring-indigo-500 disabled:bg-gray-100"
+              >
+                <option value="">Any</option>
+                {discoverRank2Options.map((k) => (
+                  <option key={k.name} value={k.name}>
+                    {k.name}
+                  </option>
+                ))}
+              </select>
+            </div>
+            <div className="flex-1 min-w-[180px] max-w-xs">
+              <label htmlFor="discover-tags" className="block text-xs font-medium text-gray-600 mb-1">
+                Item tags
+              </label>
+              <input
+                id="discover-tags"
+                type="text"
+                placeholder="e.g. s3, ec2"
+                value={discoverTags}
+                onChange={(e) => {
+                  setDiscoverTags(e.target.value);
+                  setDiscoverPage(1);
+                }}
+                className="w-full px-2 py-2 border border-gray-300 rounded-md text-sm focus:ring-2 focus:ring-indigo-500"
+              />
+            </div>
+            <button
+              type="button"
+              onClick={clearDiscoverFilters}
+              className="px-3 py-2 text-sm text-gray-700 border border-gray-300 rounded-md hover:bg-gray-50"
+            >
+              Clear filters
+            </button>
+          </div>
+        </div>
+      )}
+
       {showCreateModal && (
         <div
           className="fixed inset-0 bg-gray-600 bg-opacity-50 overflow-y-auto h-full w-full z-50"
@@ -126,6 +827,8 @@ const CollectionsPage = () => {
             if (!createMutation.isPending) {
               setShowCreateModal(false);
               setCollectionName("");
+              setCreateCollectionDescription("");
+              setCreateCollectionIsPublic(false);
             }
           }}
         >
@@ -134,15 +837,10 @@ const CollectionsPage = () => {
             onClick={(e) => e.stopPropagation()}
           >
             <div className="mt-3">
-              <h3 className="text-lg font-medium text-gray-900 mb-4">
-                Create New Collection
-              </h3>
+              <h3 className="text-lg font-medium text-gray-900 mb-4">Create New Collection</h3>
               <form onSubmit={handleCreateCollection}>
                 <div className="mb-4">
-                  <label
-                    htmlFor="collection-name"
-                    className="block text-sm font-medium text-gray-700 mb-2"
-                  >
+                  <label htmlFor="collection-name" className="block text-sm font-medium text-gray-700 mb-2">
                     Collection Name
                   </label>
                   <input
@@ -157,13 +855,36 @@ const CollectionsPage = () => {
                     autoFocus
                   />
                 </div>
+                <div className="mb-4">
+                  <label htmlFor="collection-description" className="block text-sm font-medium text-gray-700 mb-2">
+                    Description (optional, helps find it in search)
+                  </label>
+                  <textarea
+                    id="collection-description"
+                    value={createCollectionDescription}
+                    onChange={(e) => setCreateCollectionDescription(e.target.value)}
+                    placeholder="e.g. Biology chapter 5 practice set"
+                    rows={2}
+                    maxLength={2000}
+                    className="w-full px-3 py-2 border border-gray-300 rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                  />
+                </div>
+                <div className="mb-4 flex items-center">
+                  <input
+                    id="collection-is-public"
+                    type="checkbox"
+                    checked={createCollectionIsPublic}
+                    onChange={(e) => setCreateCollectionIsPublic(e.target.checked)}
+                    className="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500"
+                  />
+                  <label htmlFor="collection-is-public" className="ml-2 block text-sm text-gray-700">
+                    Shared with others (anyone with the link can view and quiz; also appears in Discover)
+                  </label>
+                </div>
                 <div className="flex justify-end space-x-3">
                   <button
                     type="button"
-                    onClick={() => {
-                      setShowCreateModal(false);
-                      setCollectionName("");
-                    }}
+                    onClick={() => { setShowCreateModal(false); setCollectionName(""); setCreateCollectionDescription(""); setCreateCollectionIsPublic(false); }}
                     className="px-4 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-md hover:bg-gray-50"
                     disabled={createMutation.isPending}
                   >
@@ -171,9 +892,7 @@ const CollectionsPage = () => {
                   </button>
                   <button
                     type="submit"
-                    disabled={
-                      createMutation.isPending || !collectionName.trim()
-                    }
+                    disabled={createMutation.isPending || !collectionName.trim()}
                     className="px-4 py-2 text-sm font-medium text-white bg-indigo-600 rounded-md hover:bg-indigo-700 disabled:opacity-50 disabled:cursor-not-allowed"
                   >
                     {createMutation.isPending ? "Creating..." : "Create"}
@@ -181,89 +900,223 @@ const CollectionsPage = () => {
                 </div>
               </form>
               {createMutation.isError && (
-                <div className="mt-3 text-sm text-red-600">
-                  Failed to create collection. Please try again.
-                </div>
+                <div className="mt-3 text-sm text-red-600">Failed to create collection. Please try again.</div>
               )}
             </div>
           </div>
         </div>
       )}
 
-      {data?.collections && data.collections.length > 0 ? (
-        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          {data.collections.map((collection) => (
-            <div
-              key={collection.id}
-              ref={selectedCollectionId === collection.id ? selectedCollectionRef : null}
-              className={`bg-white overflow-hidden shadow rounded-lg hover:shadow-lg transition-shadow p-6 ${
-                selectedCollectionId === collection.id
-                  ? "ring-2 ring-indigo-500 ring-offset-2"
-                  : ""
-              }`}
-            >
-              <div className="flex justify-between items-start mb-4">
-                <Link to={`/collections/${collection.id}`} className="flex-1">
-                  <h3 className="text-lg font-medium text-gray-900">
-                    {collection.name}
-                  </h3>
-                  <p className="mt-2 text-sm text-gray-500">
-                    {collection.itemCount}{" "}
-                    {collection.itemCount === 1 ? "item" : "items"}
-                  </p>
-                  <p className="mt-1 text-sm text-gray-500">
-                    Created{" "}
-                    {new Date(collection.createdAt).toLocaleDateString()}
-                  </p>
-                </Link>
-                <button
-                  onClick={(e) => {
-                    e.preventDefault();
-                    e.stopPropagation();
-                    handleDeleteCollection(collection.id, collection.name);
-                  }}
-                  disabled={deleteMutation.isPending}
-                  className="ml-2 p-2 text-red-600 hover:text-red-700 hover:bg-red-50 rounded-md disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
-                  title="Delete collection"
-                >
-                  <TrashIcon className="h-5 w-5" />
-                </button>
-              </div>
-              <div className="flex space-x-2 mt-4">
-                <Link
-                  to={`/collections/${collection.id}`}
-                  className="flex items-center px-3 py-2 text-sm font-medium text-blue-600 bg-blue-50 rounded-md hover:bg-blue-100"
-                  onClick={(e) => e.stopPropagation()}
-                >
-                  <ListBulletIcon className="h-4 w-4 mr-1" />
-                  List Items
-                </Link>
-                <Link
-                  to={`/explore/collection/${collection.id}`}
-                  className="flex items-center px-3 py-2 text-sm font-medium text-indigo-600 bg-indigo-50 rounded-md hover:bg-indigo-100"
-                  onClick={(e) => e.stopPropagation()}
-                >
-                  <EyeIcon className="h-4 w-4 mr-1" />
-                  Explore
-                </Link>
-                <Link
-                  to={`/quiz/collection/${collection.id}`}
-                  className="flex items-center px-3 py-2 text-sm font-medium text-green-600 bg-green-50 rounded-md hover:bg-green-100"
-                  onClick={(e) => e.stopPropagation()}
-                >
-                  <AcademicCapIcon className="h-4 w-4 mr-1" />
-                  Quiz
-                </Link>
-              </div>
+      {editingCollectionId && (
+        <div
+          className="fixed inset-0 bg-gray-600 bg-opacity-50 overflow-y-auto h-full w-full z-50"
+          onClick={() => {
+            if (!updateMutation.isPending) {
+              setEditingCollectionId(null);
+            }
+          }}
+        >
+          <div
+            className="relative top-20 mx-auto p-5 border w-96 shadow-lg rounded-md bg-white"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <div className="mt-3">
+              <h3 className="text-lg font-medium text-gray-900 mb-4">Edit Collection</h3>
+              <form onSubmit={handleSaveEdit}>
+                <div className="mb-4">
+                  <label htmlFor="edit-collection-name" className="block text-sm font-medium text-gray-700 mb-2">
+                    Name
+                  </label>
+                  <input
+                    id="edit-collection-name"
+                    type="text"
+                    value={editingName}
+                    onChange={(e) => setEditingName(e.target.value)}
+                    placeholder="Collection name"
+                    required
+                    maxLength={200}
+                    className="w-full px-3 py-2 border border-gray-300 rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                    autoFocus
+                  />
+                </div>
+                <div className="mb-4">
+                  <label htmlFor="edit-collection-description" className="block text-sm font-medium text-gray-700 mb-2">
+                    Description (optional)
+                  </label>
+                  <textarea
+                    id="edit-collection-description"
+                    value={editingDescription}
+                    onChange={(e) => setEditingDescription(e.target.value)}
+                    placeholder="e.g. Biology chapter 5 practice set"
+                    rows={2}
+                    maxLength={2000}
+                    className="w-full px-3 py-2 border border-gray-300 rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                  />
+                </div>
+                <div className="mb-4 flex items-center">
+                  <input
+                    id="edit-collection-is-public"
+                    type="checkbox"
+                    checked={editingIsPublic}
+                    onChange={(e) => setEditingIsPublic(e.target.checked)}
+                    className="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500"
+                  />
+                  <label htmlFor="edit-collection-is-public" className="ml-2 block text-sm text-gray-700">
+                    Shared with others (anyone with the link can view and quiz; appears in Discover)
+                  </label>
+                </div>
+                <div className="flex justify-end space-x-3">
+                  <button
+                    type="button"
+                    onClick={() => setEditingCollectionId(null)}
+                    className="px-4 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-md hover:bg-gray-50"
+                    disabled={updateMutation.isPending}
+                  >
+                    Cancel
+                  </button>
+                  <button
+                    type="submit"
+                    disabled={updateMutation.isPending || !editingName.trim()}
+                    className="px-4 py-2 text-sm font-medium text-white bg-indigo-600 rounded-md hover:bg-indigo-700 disabled:opacity-50 disabled:cursor-not-allowed"
+                  >
+                    {updateMutation.isPending ? "Saving..." : "Save"}
+                  </button>
+                </div>
+              </form>
+              {updateMutation.isError && (
+                <div className="mt-3 text-sm text-red-600">Failed to update collection. Please try again.</div>
+              )}
             </div>
-          ))}
+          </div>
         </div>
-      ) : (
-        <div className="text-center py-12">
-          <p className="text-gray-500">
-            No collections found. Create your first collection!
-          </p>
-        </div>
+      )}
+
+      {activeTab === "mine" && (
+        myCollections.length > 0 ? (
+          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            {myCollections.map((c) => (
+              <CollectionCard
+                key={c.id}
+                id={c.id}
+                name={c.name}
+                description={c.description}
+                isPublic={c.isPublic}
+                itemCount={c.itemCount}
+                createdAt={c.createdAt}
+                isOwner={true}
+                activeCollectionId={activeCollectionId}
+                onEdit={handleOpenEdit}
+                onSetActive={setActiveCollectionId}
+                onCopyLink={handleCopyLink}
+                onDelete={handleDeleteCollection}
+                isEditPending={updateMutation.isPending}
+                isDeletePending={deleteMutation.isPending}
+              />
+            ))}
+          </div>
+        ) : (
+          <div className="text-center py-12">
+            <p className="text-gray-500">No collections yet. Create your first collection!</p>
+          </div>
+        )
+      )}
+
+      {activeTab === "bookmarked" && (
+        bookmarkedCollections.length > 0 ? (
+          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            {bookmarkedCollections.map((c) => (
+              <CollectionCard
+                key={c.id}
+                id={c.id}
+                name={c.name}
+                itemCount={c.itemCount}
+                createdAt={c.createdAt}
+                createdBy={c.createdBy}
+                isOwner={userId ? c.createdBy === userId : false}
+                isBookmarked={true}
+                onUnbookmark={(id) => unbookmarkMutation.mutate(id)}
+                isBookmarkPending={unbookmarkMutation.isPending}
+                showRating={true}
+              />
+            ))}
+          </div>
+        ) : (
+          <div className="text-center py-12">
+            <p className="text-gray-500">No bookmarked collections. Use Discover to find and bookmark public collections.</p>
+          </div>
+        )
+      )}
+
+      {activeTab === "discover" && (
+        <>
+          {discoverLoading ? (
+            <LoadingSpinner />
+          ) : discoverItems.length > 0 ? (
+            <>
+              <p className="text-sm text-gray-500 mb-4">
+                {discoverTotal} public collection{discoverTotal !== 1 ? "s" : ""} found. Make your collection public in its settings to appear here.
+              </p>
+              <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+                {discoverItems.map((c: CollectionDiscoverItem) => (
+                  <CollectionCard
+                    key={c.id}
+                    id={c.id}
+                    name={c.name}
+                    itemCount={c.itemCount}
+                    createdAt={c.createdAt}
+                    createdBy={c.createdBy}
+                    isOwner={false}
+                    isBookmarked={c.isBookmarked}
+                    onBookmark={
+                      isAuthenticated && !c.isBookmarked
+                        ? (id) => bookmarkMutation.mutate(id)
+                        : undefined
+                    }
+                    onUnbookmark={
+                      isAuthenticated && c.isBookmarked
+                        ? (id) => unbookmarkMutation.mutate(id)
+                        : undefined
+                    }
+                    isBookmarkPending={bookmarkMutation.isPending || unbookmarkMutation.isPending}
+                    showRating={true}
+                    readOnlyRating={!isAuthenticated}
+                  />
+                ))}
+              </div>
+              {discoverTotal > discoverItems.length && (
+                <div className="mt-4 flex justify-center gap-2">
+                  <button
+                    type="button"
+                    disabled={discoverPage <= 1}
+                    onClick={() => setDiscoverPage((p) => Math.max(1, p - 1))}
+                    className="px-3 py-2 border border-gray-300 rounded-md text-sm disabled:opacity-50"
+                  >
+                    Previous
+                  </button>
+                  <span className="py-2 text-sm text-gray-600">
+                    Page {discoverPage} of {Math.ceil(discoverTotal / 12)}
+                  </span>
+                  <button
+                    type="button"
+                    disabled={discoverPage >= Math.ceil(discoverTotal / 12)}
+                    onClick={() => setDiscoverPage((p) => p + 1)}
+                    className="px-3 py-2 border border-gray-300 rounded-md text-sm disabled:opacity-50"
+                  >
+                    Next
+                  </button>
+                </div>
+              )}
+            </>
+          ) : (
+            <div className="text-center py-12">
+              <p className="text-gray-500">
+                {discoverHasActiveFilters
+                  ? "No public collections match your search or filters."
+                  : "No public collections yet. Create a collection and make it public to share it."}
+              </p>
+            </div>
+          )}
+        </>
       )}
     </div>
   );

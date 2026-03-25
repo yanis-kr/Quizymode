@@ -1,0 +1,202 @@
+[
+  {
+    "category": "sports",
+    "navigationKeyword1": "baseball",
+    "navigationKeyword2": "records",
+    "question": "Who holds the MLB career home run record?",
+    "correctAnswer": "Barry Bonds",
+    "incorrectAnswers": [
+      "Hank Aaron",
+      "Babe Ruth",
+      "Alex Rodriguez"
+    ],
+    "explanation": "Bonds finished with the most home runs in MLB history.",
+    "keywords": [
+      "baseball",
+      "records",
+      "home-runs"
+    ],
+    "source": "https://www.mlb.com/history",
+    "seedId": "9dd61449-7dce-4d82-8d63-211cec197f2a"
+  },
+  {
+    "category": "sports",
+    "navigationKeyword1": "baseball",
+    "navigationKeyword2": "records",
+    "question": "Who holds the MLB career hits record?",
+    "correctAnswer": "Pete Rose",
+    "incorrectAnswers": [
+      "Ty Cobb",
+      "Derek Jeter",
+      "Stan Musial"
+    ],
+    "explanation": "Rose finished with the most hits in major league history.",
+    "keywords": [
+      "baseball",
+      "records",
+      "hits"
+    ],
+    "source": "https://www.mlb.com/history",
+    "seedId": "f3ac0dfa-5b76-48b7-8539-e430e31185c5"
+  },
+  {
+    "category": "sports",
+    "navigationKeyword1": "baseball",
+    "navigationKeyword2": "records",
+    "question": "Who holds the MLB career strikeout record for pitchers?",
+    "correctAnswer": "Nolan Ryan",
+    "incorrectAnswers": [
+      "Randy Johnson",
+      "Roger Clemens",
+      "Steve Carlton"
+    ],
+    "explanation": "Ryan struck out more batters than any other pitcher.",
+    "keywords": [
+      "baseball",
+      "records",
+      "strikeouts"
+    ],
+    "source": "https://www.mlb.com/history",
+    "seedId": "4181c0d5-d0e4-44a0-9a03-77cafaf66a96"
+  },
+  {
+    "category": "sports",
+    "navigationKeyword1": "baseball",
+    "navigationKeyword2": "records",
+    "question": "Who holds the MLB record for most consecutive games played?",
+    "correctAnswer": "Cal Ripken Jr.",
+    "incorrectAnswers": [
+      "Lou Gehrig",
+      "Derek Jeter",
+      "Pete Rose"
+    ],
+    "explanation": "Ripken broke Gehrig's famous iron-man record and extended it to 2,632 games.",
+    "keywords": [
+      "baseball",
+      "records",
+      "consecutive-games"
+    ],
+    "source": "https://www.mlb.com/history",
+    "seedId": "7d3bf504-79b4-4513-bc8a-8be9c9a53180"
+  },
+  {
+    "category": "sports",
+    "navigationKeyword1": "baseball",
+    "navigationKeyword2": "records",
+    "question": "What is the MLB single-season home run record?",
+    "correctAnswer": "73",
+    "incorrectAnswers": [
+      "61",
+      "70",
+      "66"
+    ],
+    "explanation": "Barry Bonds hit 73 home runs in the 2001 season.",
+    "keywords": [
+      "baseball",
+      "records",
+      "single-season-home-runs"
+    ],
+    "source": "https://www.mlb.com/history",
+    "seedId": "90876ffd-dee0-46bc-9ab3-8100d178e4a3"
+  },
+  {
+    "category": "sports",
+    "navigationKeyword1": "baseball",
+    "navigationKeyword2": "records",
+    "question": "What is Joe DiMaggio's famous hitting streak record?",
+    "correctAnswer": "56 games",
+    "incorrectAnswers": [
+      "44 games",
+      "50 games",
+      "60 games"
+    ],
+    "explanation": "DiMaggio's 56-game streak remains one of baseball's iconic records.",
+    "keywords": [
+      "baseball",
+      "records",
+      "hitting-streak"
+    ],
+    "source": "https://www.mlb.com/history",
+    "seedId": "260b3d8c-cad3-4ae4-943c-663ac99a1345"
+  },
+  {
+    "category": "sports",
+    "navigationKeyword1": "baseball",
+    "navigationKeyword2": "records",
+    "question": "Who holds the MLB career saves record?",
+    "correctAnswer": "Mariano Rivera",
+    "incorrectAnswers": [
+      "Trevor Hoffman",
+      "Dennis Eckersley",
+      "Rollie Fingers"
+    ],
+    "explanation": "Rivera retired with the most saves in major league history.",
+    "keywords": [
+      "baseball",
+      "records",
+      "saves"
+    ],
+    "source": "https://www.mlb.com/history",
+    "seedId": "5eacbb81-f80d-4578-92d4-847d1b45c883"
+  },
+  {
+    "category": "sports",
+    "navigationKeyword1": "baseball",
+    "navigationKeyword2": "records",
+    "question": "Who holds the MLB career RBI record?",
+    "correctAnswer": "Hank Aaron",
+    "incorrectAnswers": [
+      "Barry Bonds",
+      "Babe Ruth",
+      "Albert Pujols"
+    ],
+    "explanation": "Aaron drove in more runs than any player in major league history.",
+    "keywords": [
+      "baseball",
+      "records",
+      "rbi"
+    ],
+    "source": "https://www.mlb.com/history",
+    "seedId": "1340c20a-f459-4c49-9bd4-11298855c21b"
+  },
+  {
+    "category": "sports",
+    "navigationKeyword1": "baseball",
+    "navigationKeyword2": "records",
+    "question": "Who holds the MLB record for most career wins by a pitcher?",
+    "correctAnswer": "Cy Young",
+    "incorrectAnswers": [
+      "Walter Johnson",
+      "Greg Maddux",
+      "Nolan Ryan"
+    ],
+    "explanation": "Cy Young won 511 games, a record from an earlier pitching era.",
+    "keywords": [
+      "baseball",
+      "records",
+      "wins"
+    ],
+    "source": "https://www.mlb.com/history",
+    "seedId": "a4d8e1be-9a9c-42bb-bfb1-fa650eada6cd"
+  },
+  {
+    "category": "sports",
+    "navigationKeyword1": "baseball",
+    "navigationKeyword2": "records",
+    "question": "What is the highest batting average in a modern full MLB season since 1941?",
+    "correctAnswer": ".406",
+    "incorrectAnswers": [
+      ".400",
+      ".394",
+      ".367"
+    ],
+    "explanation": "Ted Williams hit .406 in 1941, the last .400 average in a full season.",
+    "keywords": [
+      "baseball",
+      "records",
+      "batting-average"
+    ],
+    "source": "https://www.mlb.com/history",
+    "seedId": "6d7bf2ce-8f65-43d5-839b-0331fdd1171f"
+  }
+]

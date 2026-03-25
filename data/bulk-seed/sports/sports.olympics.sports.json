@@ -1,0 +1,202 @@
+[
+  {
+    "category": "sports",
+    "navigationKeyword1": "olympics",
+    "navigationKeyword2": "sports",
+    "question": "Which endurance event combines swimming, cycling, and running in the Summer Olympics?",
+    "correctAnswer": "Triathlon",
+    "incorrectAnswers": [
+      "Decathlon",
+      "Pentathlon fencing",
+      "Biathlon"
+    ],
+    "explanation": "Triathlon is the three-discipline endurance race.",
+    "keywords": [
+      "olympics",
+      "sports",
+      "triathlon"
+    ],
+    "source": "https://olympics.com/en/olympic-games",
+    "seedId": "f8077c4d-383e-425b-8bf2-9ca597d230eb"
+  },
+  {
+    "category": "sports",
+    "navigationKeyword1": "olympics",
+    "navigationKeyword2": "sports",
+    "question": "Which Winter Olympic sport combines cross-country skiing and rifle shooting?",
+    "correctAnswer": "Biathlon",
+    "incorrectAnswers": [
+      "Nordic combined",
+      "Luge",
+      "Snowboard cross"
+    ],
+    "explanation": "Biathlon athletes ski and shoot in alternating segments.",
+    "keywords": [
+      "olympics",
+      "sports",
+      "biathlon"
+    ],
+    "source": "https://olympics.com/en/olympic-games",
+    "seedId": "6ff7e8f2-27a7-4ce4-8725-969c38c11696"
+  },
+  {
+    "category": "sports",
+    "navigationKeyword1": "olympics",
+    "navigationKeyword2": "sports",
+    "question": "Which Summer Olympic team sport is played on a hard court with five players per side?",
+    "correctAnswer": "Basketball",
+    "incorrectAnswers": [
+      "Handball",
+      "Field hockey",
+      "Volleyball"
+    ],
+    "explanation": "Basketball has been a core Olympic team sport for decades.",
+    "keywords": [
+      "olympics",
+      "sports",
+      "basketball"
+    ],
+    "source": "https://olympics.com/en/olympic-games",
+    "seedId": "fb7d0db9-fa63-40de-a1e8-73da2ecfd9c5"
+  },
+  {
+    "category": "sports",
+    "navigationKeyword1": "olympics",
+    "navigationKeyword2": "sports",
+    "question": "Which Winter Olympic sliding sport features face-first athletes on small sleds?",
+    "correctAnswer": "Skeleton",
+    "incorrectAnswers": [
+      "Luge",
+      "Bobsleigh",
+      "Curling"
+    ],
+    "explanation": "Skeleton racers go headfirst down the ice track.",
+    "keywords": [
+      "olympics",
+      "sports",
+      "skeleton"
+    ],
+    "source": "https://olympics.com/en/olympic-games",
+    "seedId": "1d93aa67-ebe7-4024-8d88-8853ec5ceefb"
+  },
+  {
+    "category": "sports",
+    "navigationKeyword1": "olympics",
+    "navigationKeyword2": "sports",
+    "question": "Which Summer Olympic racquet sport returned to the Games in 1988?",
+    "correctAnswer": "Tennis",
+    "incorrectAnswers": [
+      "Squash",
+      "Table tennis",
+      "Badminton"
+    ],
+    "explanation": "Tennis returned to the Olympic program in the late 20th century.",
+    "keywords": [
+      "olympics",
+      "sports",
+      "tennis"
+    ],
+    "source": "https://olympics.com/en/olympic-games",
+    "seedId": "ddd2f856-252f-4fe0-bfb6-7c41d42c0da7"
+  },
+  {
+    "category": "sports",
+    "navigationKeyword1": "olympics",
+    "navigationKeyword2": "sports",
+    "question": "Which Winter Olympic sport is played with stones and sweeping on ice?",
+    "correctAnswer": "Curling",
+    "incorrectAnswers": [
+      "Figure skating",
+      "Short track",
+      "Speed skating"
+    ],
+    "explanation": "Curling is the target sport played on ice with stones and brooms.",
+    "keywords": [
+      "olympics",
+      "sports",
+      "curling"
+    ],
+    "source": "https://olympics.com/en/olympic-games",
+    "seedId": "9b71ee15-e6cb-4e88-8f1d-033e21a66600"
+  },
+  {
+    "category": "sports",
+    "navigationKeyword1": "olympics",
+    "navigationKeyword2": "sports",
+    "question": "Which Summer Olympic sport includes the 100-meter dash and marathon?",
+    "correctAnswer": "Athletics",
+    "incorrectAnswers": [
+      "Cycling",
+      "Rowing",
+      "Gymnastics"
+    ],
+    "explanation": "Athletics is the Olympic umbrella for track and field events.",
+    "keywords": [
+      "olympics",
+      "sports",
+      "athletics"
+    ],
+    "source": "https://olympics.com/en/olympic-games",
+    "seedId": "ecce646e-a5f8-43ce-859e-993436e066c4"
+  },
+  {
+    "category": "sports",
+    "navigationKeyword1": "olympics",
+    "navigationKeyword2": "sports",
+    "question": "Which Winter Olympic sport features jumps and spins scored on artistic execution and technique?",
+    "correctAnswer": "Figure skating",
+    "incorrectAnswers": [
+      "Ice hockey",
+      "Luge",
+      "Bobsleigh"
+    ],
+    "explanation": "Figure skating blends technical elements and artistry.",
+    "keywords": [
+      "olympics",
+      "sports",
+      "figure-skating"
+    ],
+    "source": "https://olympics.com/en/olympic-games",
+    "seedId": "f9987d8f-3d89-451a-9e9d-6cfbf16e9323"
+  },
+  {
+    "category": "sports",
+    "navigationKeyword1": "olympics",
+    "navigationKeyword2": "sports",
+    "question": "Which Summer Olympic combat sport includes throws, pins, and joint locks?",
+    "correctAnswer": "Judo",
+    "incorrectAnswers": [
+      "Boxing",
+      "Fencing",
+      "Taekwondo"
+    ],
+    "explanation": "Judo is the Olympic grappling sport derived from Japan.",
+    "keywords": [
+      "olympics",
+      "sports",
+      "judo"
+    ],
+    "source": "https://olympics.com/en/olympic-games",
+    "seedId": "66e53b7e-3a14-4a57-a4cc-a440c034b01e"
+  },
+  {
+    "category": "sports",
+    "navigationKeyword1": "olympics",
+    "navigationKeyword2": "sports",
+    "question": "Which Winter Olympic sport consists of downhill, giant slalom, slalom, and super-G disciplines?",
+    "correctAnswer": "Alpine skiing",
+    "incorrectAnswers": [
+      "Cross-country skiing",
+      "Freestyle skiing",
+      "Snowboarding"
+    ],
+    "explanation": "Alpine skiing includes the main downhill and turning events.",
+    "keywords": [
+      "olympics",
+      "sports",
+      "alpine-skiing"
+    ],
+    "source": "https://olympics.com/en/olympic-games",
+    "seedId": "971c8012-4c1a-4668-9867-bde1257d6ad1"
+  }
+]

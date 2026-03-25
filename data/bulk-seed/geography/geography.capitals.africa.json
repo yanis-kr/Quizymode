@@ -1,0 +1,222 @@
+[
+  {
+    "category": "geography",
+    "navigationKeyword1": "capitals",
+    "navigationKeyword2": "africa",
+    "question": "What is the national capital of Egypt?",
+    "correctAnswer": "Cairo",
+    "incorrectAnswers": [
+      "Alexandria",
+      "Luxor",
+      "Giza"
+    ],
+    "explanation": "Cairo on the Nile is Egypt’s capital and largest city.",
+    "keywords": [
+      "africa",
+      "egypt",
+      "north-africa"
+    ],
+    "source": "https://www.britannica.com/place/Cairo",
+    "seedId": "2439617c-514a-47eb-8d22-f3e871bc6f17"
+  },
+  {
+    "category": "geography",
+    "navigationKeyword1": "capitals",
+    "navigationKeyword2": "africa",
+    "question": "What is the national capital of Nigeria?",
+    "correctAnswer": "Abuja",
+    "incorrectAnswers": [
+      "Lagos",
+      "Kano",
+      "Ibadan"
+    ],
+    "explanation": "Abuja was planned as Nigeria’s capital in the Federal Capital Territory.",
+    "keywords": [
+      "africa",
+      "nigeria",
+      "west-africa"
+    ],
+    "source": "https://www.britannica.com/place/Abuja-national-capital-Nigeria",
+    "seedId": "f69de58a-dd3c-42d8-b7bc-1b75b696b63c"
+  },
+  {
+    "category": "geography",
+    "navigationKeyword1": "capitals",
+    "navigationKeyword2": "africa",
+    "question": "What is the national capital of Kenya?",
+    "correctAnswer": "Nairobi",
+    "incorrectAnswers": [
+      "Mombasa",
+      "Kisumu",
+      "Nakuru"
+    ],
+    "explanation": "Nairobi is Kenya’s capital on the high interior plateau.",
+    "keywords": [
+      "africa",
+      "kenya",
+      "east-africa"
+    ],
+    "source": "https://www.britannica.com/place/Nairobi",
+    "seedId": "e9b5d615-288b-4ca8-a73a-975c97f899c4"
+  },
+  {
+    "category": "geography",
+    "navigationKeyword1": "capitals",
+    "navigationKeyword2": "africa",
+    "question": "What is the national capital of Ethiopia?",
+    "correctAnswer": "Addis Ababa",
+    "incorrectAnswers": [
+      "Dire Dawa",
+      "Mekelle",
+      "Gondar"
+    ],
+    "explanation": "Addis Ababa is Ethiopia’s seat of government in the central highlands.",
+    "keywords": [
+      "africa",
+      "ethiopia",
+      "east-africa"
+    ],
+    "source": "https://www.britannica.com/place/Addis-Ababa",
+    "seedId": "c45ee426-ec8b-4362-9cd0-739a6f08a9de"
+  },
+  {
+    "category": "geography",
+    "navigationKeyword1": "capitals",
+    "navigationKeyword2": "africa",
+    "question": "What is the national capital of Ghana?",
+    "correctAnswer": "Accra",
+    "incorrectAnswers": [
+      "Kumasi",
+      "Tamale",
+      "Takoradi"
+    ],
+    "explanation": "Accra on the Gulf of Guinea coast is Ghana’s capital.",
+    "keywords": [
+      "africa",
+      "ghana",
+      "west-africa"
+    ],
+    "source": "https://www.britannica.com/place/Accra",
+    "seedId": "9722f5d4-6da3-4736-ae26-1f9b13e4e935"
+  },
+  {
+    "category": "geography",
+    "navigationKeyword1": "capitals",
+    "navigationKeyword2": "africa",
+    "question": "What is the national capital of Morocco?",
+    "correctAnswer": "Rabat",
+    "incorrectAnswers": [
+      "Casablanca",
+      "Marrakech",
+      "Fès"
+    ],
+    "explanation": "Rabat on the Atlantic coast is Morocco’s capital.",
+    "keywords": [
+      "africa",
+      "morocco",
+      "north-africa"
+    ],
+    "source": "https://www.britannica.com/place/Rabat",
+    "seedId": "595b5c75-b066-4106-b15f-8b7aea9e5b8c"
+  },
+  {
+    "category": "geography",
+    "navigationKeyword1": "capitals",
+    "navigationKeyword2": "africa",
+    "question": "What is the national capital of Algeria?",
+    "correctAnswer": "Algiers",
+    "incorrectAnswers": [
+      "Oran",
+      "Constantine",
+      "Annaba"
+    ],
+    "explanation": "Algiers on the Mediterranean is Algeria’s capital and chief port.",
+    "keywords": [
+      "africa",
+      "algeria",
+      "north-africa"
+    ],
+    "source": "https://www.britannica.com/place/Algiers",
+    "seedId": "e5ff9cee-0be3-479f-9a99-9369a2851727"
+  },
+  {
+    "category": "geography",
+    "navigationKeyword1": "capitals",
+    "navigationKeyword2": "africa",
+    "question": "What is the national capital of Uganda?",
+    "correctAnswer": "Kampala",
+    "incorrectAnswers": [
+      "Entebbe",
+      "Jinja",
+      "Mbale"
+    ],
+    "explanation": "Kampala north of Lake Victoria is Uganda’s capital.",
+    "keywords": [
+      "africa",
+      "uganda",
+      "east-africa"
+    ],
+    "source": "https://www.britannica.com/place/Kampala",
+    "seedId": "63cbab48-6f90-46d2-8aa0-7d5aae0af9e9"
+  },
+  {
+    "category": "geography",
+    "navigationKeyword1": "capitals",
+    "navigationKeyword2": "africa",
+    "question": "What is the national capital of Senegal?",
+    "correctAnswer": "Dakar",
+    "incorrectAnswers": [
+      "Thiès",
+      "Saint-Louis",
+      "Ziguinchor"
+    ],
+    "explanation": "Dakar on the Cap-Vert peninsula is Senegal’s capital.",
+    "keywords": [
+      "africa",
+      "senegal",
+      "west-africa"
+    ],
+    "source": "https://www.britannica.com/place/Dakar",
+    "seedId": "63a71b41-3153-4bae-bef0-79e761c122bc"
+  },
+  {
+    "category": "geography",
+    "navigationKeyword1": "capitals",
+    "navigationKeyword2": "africa",
+    "question": "What is the national capital of Tanzania?",
+    "correctAnswer": "Dodoma",
+    "incorrectAnswers": [
+      "Dar es Salaam",
+      "Arusha",
+      "Mwanza"
+    ],
+    "explanation": "Dodoma is Tanzania’s designated national capital in the interior.",
+    "keywords": [
+      "africa",
+      "tanzania",
+      "east-africa"
+    ],
+    "source": "https://www.britannica.com/place/Dodoma",
+    "seedId": "7391141d-854d-452c-8621-a98b0831dafe"
+  },
+  {
+    "category": "geography",
+    "navigationKeyword1": "capitals",
+    "navigationKeyword2": "africa",
+    "question": "What is the national capital of Angola?",
+    "correctAnswer": "Luanda",
+    "incorrectAnswers": [
+      "Huambo",
+      "Lobito",
+      "Benguela"
+    ],
+    "explanation": "Luanda on the Atlantic is Angola’s capital and main port.",
+    "keywords": [
+      "africa",
+      "angola",
+      "southern-africa"
+    ],
+    "source": "https://www.britannica.com/place/Luanda",
+    "seedId": "ca9ba9ff-d96d-4e90-826a-6da794238408"
+  }
+]

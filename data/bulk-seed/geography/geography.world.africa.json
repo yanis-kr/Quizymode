@@ -1,0 +1,242 @@
+[
+  {
+    "category": "geography",
+    "navigationKeyword1": "world",
+    "navigationKeyword2": "africa",
+    "question": "Which vast desert covers much of northern Africa?",
+    "correctAnswer": "The Sahara",
+    "incorrectAnswers": [
+      "The Kalahari Desert",
+      "The Namib Desert",
+      "The Arabian Desert"
+    ],
+    "explanation": "The Sahara is an immense arid region stretching across North Africa from the Atlantic to the Red Sea.",
+    "keywords": [
+      "africa",
+      "deserts",
+      "north-africa"
+    ],
+    "source": "https://www.britannica.com/place/Sahara-desert-Africa",
+    "seedId": "ac990596-89b1-421e-a04b-7f469272a0ab"
+  },
+  {
+    "category": "geography",
+    "navigationKeyword1": "world",
+    "navigationKeyword2": "africa",
+    "question": "Which river is the longest on the African continent?",
+    "correctAnswer": "The Nile",
+    "incorrectAnswers": [
+      "The Congo River",
+      "The Niger River",
+      "The Zambezi River"
+    ],
+    "explanation": "The Nile flows north through northeastern Africa and is widely listed as Africa’s longest river.",
+    "keywords": [
+      "africa",
+      "rivers",
+      "nile"
+    ],
+    "source": "https://www.britannica.com/place/Nile-River",
+    "seedId": "d3f7e57d-628e-48f2-8e55-873943a34e43"
+  },
+  {
+    "category": "geography",
+    "navigationKeyword1": "world",
+    "navigationKeyword2": "africa",
+    "question": "By surface area, which lake is the largest on the African continent?",
+    "correctAnswer": "Lake Victoria",
+    "incorrectAnswers": [
+      "Lake Tanganyika",
+      "Lake Malawi (Nyasa)",
+      "Lake Chad"
+    ],
+    "explanation": "Lake Victoria, bordered by Uganda, Kenya, and Tanzania, is Africa’s largest lake by surface area.",
+    "keywords": [
+      "africa",
+      "lakes",
+      "great-lakes"
+    ],
+    "source": "https://www.britannica.com/place/Lake-Victoria",
+    "seedId": "2f0cb766-f328-4b88-b923-12860351b86d"
+  },
+  {
+    "category": "geography",
+    "navigationKeyword1": "world",
+    "navigationKeyword2": "africa",
+    "question": "Which free-standing volcanic massif is the highest peak in Africa?",
+    "correctAnswer": "Mount Kilimanjaro",
+    "incorrectAnswers": [
+      "Mount Kenya",
+      "Ras Dashen",
+      "Mount Stanley"
+    ],
+    "explanation": "Kilimanjaro rises in northeastern Tanzania and is commonly cited as Africa’s tallest mountain.",
+    "keywords": [
+      "africa",
+      "mountains",
+      "east-africa"
+    ],
+    "source": "https://www.britannica.com/place/Mount-Kilimanjaro",
+    "seedId": "6629c1ea-f279-4267-b55e-94175f89e514"
+  },
+  {
+    "category": "geography",
+    "navigationKeyword1": "world",
+    "navigationKeyword2": "africa",
+    "question": "Which mountain range runs across northwestern Africa and is especially prominent in Morocco and Algeria?",
+    "correctAnswer": "The Atlas Mountains",
+    "incorrectAnswers": [
+      "The Drakensberg",
+      "The Ethiopian Highlands",
+      "The Rwenzori Range"
+    ],
+    "explanation": "The Atlas system extends across the Maghreb region, separating the Mediterranean and Atlantic coasts from the Sahara.",
+    "keywords": [
+      "africa",
+      "mountain-ranges",
+      "north-africa"
+    ],
+    "source": "https://www.britannica.com/place/Atlas-Mountains",
+    "seedId": "ae0d095f-b1ba-4aaa-a065-a6a415857a32"
+  },
+  {
+    "category": "geography",
+    "navigationKeyword1": "world",
+    "navigationKeyword2": "africa",
+    "question": "Which narrow sea lies between the northeastern African coast and the Arabian Peninsula?",
+    "correctAnswer": "The Red Sea",
+    "incorrectAnswers": [
+      "The Mediterranean Sea",
+      "The Arabian Sea",
+      "The Persian Gulf"
+    ],
+    "explanation": "The Red Sea is an inlet of the Indian Ocean between Africa and southwest Asia.",
+    "keywords": [
+      "africa",
+      "seas",
+      "northeast-africa"
+    ],
+    "source": "https://www.britannica.com/place/Red-Sea",
+    "seedId": "a757e0d3-9941-4dc1-a17d-5d64bfc809b6"
+  },
+  {
+    "category": "geography",
+    "navigationKeyword1": "world",
+    "navigationKeyword2": "africa",
+    "question": "Which broad embayment of the eastern Atlantic borders countries such as Nigeria and Ghana?",
+    "correctAnswer": "The Gulf of Guinea",
+    "incorrectAnswers": [
+      "The Gulf of Aden",
+      "The Gulf of Suez",
+      "The Gulf of Aqaba"
+    ],
+    "explanation": "The Gulf of Guinea is the large eastern bight of the Atlantic along Africa’s west-central coast.",
+    "keywords": [
+      "africa",
+      "atlantic",
+      "west-africa"
+    ],
+    "source": "https://www.britannica.com/place/Gulf-of-Guinea",
+    "seedId": "9fd1fadc-cc7a-4678-8562-ff1b1f62ed7a"
+  },
+  {
+    "category": "geography",
+    "navigationKeyword1": "world",
+    "navigationKeyword2": "africa",
+    "question": "Which large semi-arid sandy savanna region covers much of Botswana and parts of surrounding countries?",
+    "correctAnswer": "The Kalahari Desert",
+    "incorrectAnswers": [
+      "The Sahara",
+      "The Namib Desert",
+      "The Danakil Desert"
+    ],
+    "explanation": "The Kalahari is a broad dry plateau and sand basin region in southern Africa, mainly in Botswana.",
+    "keywords": [
+      "africa",
+      "deserts",
+      "southern-africa"
+    ],
+    "source": "https://www.britannica.com/place/Kalahari-Desert",
+    "seedId": "dd49eb78-9cfa-48ee-8006-9ca496b5e732"
+  },
+  {
+    "category": "geography",
+    "navigationKeyword1": "world",
+    "navigationKeyword2": "africa",
+    "question": "Which major trench-and-rift system runs north–south through eastern Africa and is associated with deep lakes and high escarpments?",
+    "correctAnswer": "The Great Rift Valley",
+    "incorrectAnswers": [
+      "The Congo Basin",
+      "The Niger Delta",
+      "The Okavango Basin"
+    ],
+    "explanation": "The Great Rift Valley is part of a geologic rift system extending from the Middle East through eastern Africa.",
+    "keywords": [
+      "africa",
+      "rift-valley",
+      "physical-geography"
+    ],
+    "source": "https://www.britannica.com/place/Great-Rift-Valley",
+    "seedId": "b593226f-d86a-4172-a2af-4e9045770fb3"
+  },
+  {
+    "category": "geography",
+    "navigationKeyword1": "world",
+    "navigationKeyword2": "africa",
+    "question": "After the Nile, which river is the second longest in Africa?",
+    "correctAnswer": "The Congo River",
+    "incorrectAnswers": [
+      "The Niger River",
+      "The Orange River",
+      "The Limpopo River"
+    ],
+    "explanation": "The Congo drains a vast equatorial basin in west-central Africa and is commonly ranked second in length on the continent after the Nile.",
+    "keywords": [
+      "africa",
+      "rivers",
+      "congo-basin"
+    ],
+    "source": "https://www.britannica.com/place/Congo-River",
+    "seedId": "c475e9ca-3b7c-4939-8548-b719238e89b8"
+  },
+  {
+    "category": "geography",
+    "navigationKeyword1": "world",
+    "navigationKeyword2": "africa",
+    "question": "Victoria Falls is formed by which major southern African river?",
+    "correctAnswer": "The Zambezi River",
+    "incorrectAnswers": [
+      "The Orange River",
+      "The Limpopo River",
+      "The Okavango River"
+    ],
+    "explanation": "Victoria Falls spans the Zambezi on the border between Zambia and Zimbabwe.",
+    "keywords": [
+      "africa",
+      "rivers",
+      "waterfalls"
+    ],
+    "source": "https://www.britannica.com/place/Victoria-Falls-waterfall-Zambia-Zimbabwe",
+    "seedId": "9a754608-a878-433f-9eac-fc23acfc02b3"
+  },
+  {
+    "category": "geography",
+    "navigationKeyword1": "world",
+    "navigationKeyword2": "africa",
+    "question": "Which long rift lake is shared by Tanzania, the Democratic Republic of the Congo, Burundi, and Zambia?",
+    "correctAnswer": "Lake Tanganyika",
+    "incorrectAnswers": [
+      "Lake Malawi",
+      "Lake Turkana",
+      "Lake Albert"
+    ],
+    "explanation": "Lake Tanganyika lies in the western branch of the East African Rift and borders four countries along its shoreline.",
+    "keywords": [
+      "africa",
+      "lakes",
+      "great-lakes"
+    ],
+    "source": "https://www.britannica.com/place/Lake-Tanganyika",
+    "seedId": "b0865087-eb23-4ebb-a54a-b66caa1401c6"
+  }
+]

@@ -1,0 +1,222 @@
+[
+  {
+    "category": "geography",
+    "navigationKeyword1": "us",
+    "navigationKeyword2": "states",
+    "question": "Which U.S. state has the largest land area?",
+    "correctAnswer": "Alaska",
+    "incorrectAnswers": [
+      "Texas",
+      "California",
+      "Montana"
+    ],
+    "explanation": "Alaska’s land area is larger than any other state’s in Census Bureau measurements.",
+    "keywords": [
+      "states",
+      "us-states",
+      "land-area"
+    ],
+    "source": "https://www.census.gov/geographies/reference-files/2010/geo/state-area.html",
+    "seedId": "6dd46a20-4aa3-4af1-85c6-912275d1b53f"
+  },
+  {
+    "category": "geography",
+    "navigationKeyword1": "us",
+    "navigationKeyword2": "states",
+    "question": "Which U.S. state has the smallest total area?",
+    "correctAnswer": "Rhode Island",
+    "incorrectAnswers": [
+      "Delaware",
+      "Connecticut",
+      "New Jersey"
+    ],
+    "explanation": "Rhode Island’s total area is the smallest among the 50 states in Census tables.",
+    "keywords": [
+      "states",
+      "us-states",
+      "land-area"
+    ],
+    "source": "https://www.census.gov/geographies/reference-files/2010/geo/state-area.html",
+    "seedId": "7c5199fb-0f35-4a84-aeb9-907c9c28445d"
+  },
+  {
+    "category": "geography",
+    "navigationKeyword1": "us",
+    "navigationKeyword2": "states",
+    "question": "After Alaska, which state has the next-largest total area?",
+    "correctAnswer": "Texas",
+    "incorrectAnswers": [
+      "California",
+      "Montana",
+      "New Mexico"
+    ],
+    "explanation": "Texas ranks second to Alaska in total area in official Census Bureau area data.",
+    "keywords": [
+      "states",
+      "us-states",
+      "land-area"
+    ],
+    "source": "https://www.census.gov/geographies/reference-files/2010/geo/state-area.html",
+    "seedId": "1a09e79e-941c-429e-be33-e1fadc3c96fc"
+  },
+  {
+    "category": "geography",
+    "navigationKeyword1": "us",
+    "navigationKeyword2": "states",
+    "question": "In 2020 census resident population, which state was the most populous?",
+    "correctAnswer": "California",
+    "incorrectAnswers": [
+      "Texas",
+      "Florida",
+      "New York"
+    ],
+    "explanation": "California had the largest resident population of any state in the 2020 Census.",
+    "keywords": [
+      "states",
+      "us-states",
+      "population"
+    ],
+    "source": "https://www.census.gov/data/tables/2020/dec/2020-apportionment-data.html",
+    "seedId": "876652b7-631a-47c0-845e-93742a700b8c"
+  },
+  {
+    "category": "geography",
+    "navigationKeyword1": "us",
+    "navigationKeyword2": "states",
+    "question": "Which Great Lake lies wholly within the United States?",
+    "correctAnswer": "Lake Michigan",
+    "incorrectAnswers": [
+      "Lake Superior",
+      "Lake Huron",
+      "Lake Erie"
+    ],
+    "explanation": "Lake Michigan is the only Great Lake bordered only by U.S. states.",
+    "keywords": [
+      "states",
+      "us-states",
+      "great-lakes"
+    ],
+    "source": "https://www.britannica.com/place/Lake-Michigan",
+    "seedId": "2c1d57b0-709d-4e65-94af-5b0720c19572"
+  },
+  {
+    "category": "geography",
+    "navigationKeyword1": "us",
+    "navigationKeyword2": "states",
+    "question": "Which four states meet at the Four Corners monument?",
+    "correctAnswer": "Arizona, Colorado, New Mexico, and Utah",
+    "incorrectAnswers": [
+      "Kansas, Colorado, Oklahoma, and Texas",
+      "California, Nevada, Oregon, and Idaho",
+      "Montana, Wyoming, North Dakota, and South Dakota"
+    ],
+    "explanation": "Four Corners is the only U.S. point where four state boundaries meet.",
+    "keywords": [
+      "states",
+      "us-states",
+      "borders"
+    ],
+    "source": "https://www.britannica.com/place/Four-Corners",
+    "seedId": "0bba2b4b-7840-45ba-827c-eb8140822520"
+  },
+  {
+    "category": "geography",
+    "navigationKeyword1": "us",
+    "navigationKeyword2": "states",
+    "question": "Which state is made up mainly of islands in the Pacific?",
+    "correctAnswer": "Hawaii",
+    "incorrectAnswers": [
+      "Alaska",
+      "Florida",
+      "California"
+    ],
+    "explanation": "Hawaii is an island state far southwest of the contiguous United States.",
+    "keywords": [
+      "states",
+      "us-states",
+      "pacific"
+    ],
+    "source": "https://www.britannica.com/place/Hawaii-state",
+    "seedId": "3413a643-c5ab-4e5b-8af0-1f1fe5ca878c"
+  },
+  {
+    "category": "geography",
+    "navigationKeyword1": "us",
+    "navigationKeyword2": "states",
+    "question": "Which U.S. state is named after the first U.S. president?",
+    "correctAnswer": "Washington",
+    "incorrectAnswers": [
+      "Virginia",
+      "Georgia",
+      "Maryland"
+    ],
+    "explanation": "Washington state honors George Washington.",
+    "keywords": [
+      "states",
+      "us-states",
+      "state-names"
+    ],
+    "source": "https://www.britannica.com/place/Washington-state",
+    "seedId": "81d3d69a-a314-4dc3-9778-35205d3c73fa"
+  },
+  {
+    "category": "geography",
+    "navigationKeyword1": "us",
+    "navigationKeyword2": "states",
+    "question": "Which state includes the Upper Peninsula and Lower Peninsula separated by the Straits of Mackinac?",
+    "correctAnswer": "Michigan",
+    "incorrectAnswers": [
+      "Wisconsin",
+      "Minnesota",
+      "Ohio"
+    ],
+    "explanation": "Michigan’s two peninsulas are linked by the Mackinac Bridge.",
+    "keywords": [
+      "states",
+      "us-states",
+      "great-lakes"
+    ],
+    "source": "https://www.britannica.com/place/Michigan",
+    "seedId": "e04a18f4-9b14-4f3f-a36b-f9eb799a7d15"
+  },
+  {
+    "category": "geography",
+    "navigationKeyword1": "us",
+    "navigationKeyword2": "states",
+    "question": "How many counties does Texas have?",
+    "correctAnswer": "254",
+    "incorrectAnswers": [
+      "159",
+      "100",
+      "314"
+    ],
+    "explanation": "Texas is divided into 254 counties, more than any other U.S. state.",
+    "keywords": [
+      "states",
+      "us-states",
+      "counties"
+    ],
+    "source": "https://www.census.gov/geographies/reference-files/2010/geo/state-local-geo-guides-2010/texas.html",
+    "seedId": "57913170-9114-4184-8aa7-4c03a263f635"
+  },
+  {
+    "category": "geography",
+    "navigationKeyword1": "us",
+    "navigationKeyword2": "states",
+    "question": "Which U.S. state is the only one with a unicameral (one-house) state legislature?",
+    "correctAnswer": "Nebraska",
+    "incorrectAnswers": [
+      "Texas",
+      "California",
+      "New York"
+    ],
+    "explanation": "Nebraska’s Unicameral is the sole single-chamber state legislature in the United States.",
+    "keywords": [
+      "states",
+      "us-states",
+      "nebraska"
+    ],
+    "source": "https://www.britannica.com/place/Nebraska-state",
+    "seedId": "719809a7-0c64-49e4-b416-1bd7acaf694a"
+  }
+]

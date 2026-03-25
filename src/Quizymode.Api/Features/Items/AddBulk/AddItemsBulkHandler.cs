@@ -2,6 +2,8 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Storage;
 using Quizymode.Api.Data;
 using Quizymode.Api.Services;
+using Quizymode.Api.Services.Taxonomy;
+using Quizymode.Api.Shared.Helpers;
 using Quizymode.Api.Shared.Kernel;
 using Quizymode.Api.Shared.Models;
 
@@ -14,13 +16,82 @@ internal static class AddItemsBulkHandler
         ApplicationDbContext db,
         ISimHashService simHashService,
         IUserContext userContext,
-        ICategoryResolver categoryResolver,
+        ITaxonomyItemCategoryResolver itemCategoryResolver,
+        ITaxonomyRegistry taxonomyRegistry,
         IAuditService auditService,
         CancellationToken cancellationToken)
     {
         try
         {
-            // Use transaction if supported, otherwise skip (for InMemory database in tests)
+            string userId = userContext.UserId ?? throw new InvalidOperationException("User ID is required for bulk item creation");
+
+            bool effectiveIsPrivate = userContext.IsAdmin ? request.IsPrivate : true;
+
+            List<Item> itemsToInsert = [];
+            Dictionary<int, Item> itemIndexMap = new();
+            List<string> duplicateQuestions = [];
+            List<AddItemsBulk.ItemError> errors = [];
+
+            Result<Category> categoryResult = await itemCategoryResolver.ResolveForItemAsync(
+                request.Category,
+                cancellationToken);
+
+            if (categoryResult.IsFailure)
+            {
+                return Result.Failure<AddItemsBulk.Response>(
+                    Error.Validation("Items.BulkInvalidCategory", categoryResult.Error!.Description));
+            }
+
+            Category category = categoryResult.Value!;
+
+            string normalizedKeyword1 = KeywordHelper.NormalizeKeywordName(request.Keyword1);
+            string normalizedKeyword2 = KeywordHelper.NormalizeKeywordName(request.Keyword2 ?? "");
+
+            Result<(Keyword Nav1, Keyword Nav2)> navResult = await ItemNavigationAndKeywordsHelper.ResolvePublicNavigationAsync(
+                db,
+                taxonomyRegistry,
+                category,
+                request.Keyword1,
+                request.Keyword2 ?? "",
+                cancellationToken);
+
+            if (navResult.IsFailure)
+            {
+                return Result.Failure<AddItemsBulk.Response>(navResult.Error!);
+            }
+
+            (Keyword keyword1Entity, Keyword keyword2Entity) = navResult.Value!;
+
+            foreach (AddItemsBulk.KeywordRequest kw in request.Keywords)
+            {
+                string n = KeywordHelper.NormalizeKeywordName(kw.Name);
+                if (string.IsNullOrEmpty(n))
+                    continue;
+                if (!KeywordHelper.IsValidKeywordNameFormat(n))
+                {
+                    return Result.Failure<AddItemsBulk.Response>(
+                        Error.Validation("Items.BulkInvalidKeyword", $"Default keyword '{n}' is invalid. Use only letters, numbers, and hyphens (max 30 characters)."));
+                }
+
+                if (string.Equals(n, normalizedKeyword1, StringComparison.OrdinalIgnoreCase)
+                    || string.Equals(n, normalizedKeyword2, StringComparison.OrdinalIgnoreCase))
+                    continue;
+            }
+
+            List<string> bulkDefaultExtraNames = [];
+            foreach (AddItemsBulk.KeywordRequest kw in request.Keywords)
+            {
+                string n = KeywordHelper.NormalizeKeywordName(kw.Name);
+                if (string.IsNullOrEmpty(n))
+                    continue;
+                if (bulkDefaultExtraNames.Any(x => string.Equals(x, n, StringComparison.OrdinalIgnoreCase)))
+                    continue;
+                if (string.Equals(n, keyword1Entity.Name, StringComparison.OrdinalIgnoreCase)
+                    || string.Equals(n, keyword2Entity.Name, StringComparison.OrdinalIgnoreCase))
+                    continue;
+                bulkDefaultExtraNames.Add(n);
+            }
+
             IDbContextTransaction? transaction = null;
             if (db.Database.IsRelational())
             {
@@ -30,84 +101,69 @@ internal static class AddItemsBulkHandler
                 }
                 catch (NotSupportedException)
                 {
-                    // Some database providers don't support transactions
-                    // Continue without transaction
                 }
             }
 
-            string userId = userContext.UserId ?? throw new InvalidOperationException("User ID is required for bulk item creation");
-            
-            // Regular users can only create private items
-            bool effectiveIsPrivate = userContext.IsAdmin ? request.IsPrivate : true;
-
-            List<Item> itemsToInsert = new();
-            Dictionary<int, Item> itemIndexMap = new(); // Map original index to created item
-            Dictionary<int, Category> categoryMap = new(); // Map item index to resolved category
-            List<string> duplicateQuestions = new();
-            List<AddItemsBulk.ItemError> errors = new();
-
+            try
+            {
             for (int i = 0; i < request.Items.Count; i++)
             {
                 AddItemsBulk.ItemRequest itemRequest = request.Items[i];
                 try
                 {
-                    // Compute fuzzy signature only from the question (normalized to lowercase)
+                    bool skipItem = false;
+                    if (itemRequest.Keywords is { Count: > 0 })
+                    {
+                        foreach (var kw in itemRequest.Keywords)
+                        {
+                            string name = KeywordHelper.NormalizeKeywordName(kw.Name ?? string.Empty);
+                            if (string.IsNullOrEmpty(name))
+                                continue;
+                            if (!KeywordHelper.IsValidKeywordNameFormat(name))
+                            {
+                                errors.Add(new AddItemsBulk.ItemError(i, itemRequest.Question, $"Keyword '{name}' is invalid. Use only letters, numbers, and hyphens (max 30 characters)."));
+                                skipItem = true;
+                                break;
+                            }
+
+                            if (string.Equals(name, keyword1Entity.Name, StringComparison.OrdinalIgnoreCase)
+                                || string.Equals(name, keyword2Entity.Name, StringComparison.OrdinalIgnoreCase))
+                                continue;
+                        }
+                    }
+
+                    if (skipItem)
+                        continue;
+
                     string questionText = itemRequest.Question.Trim().ToLowerInvariant();
                     string fuzzySignature = simHashService.ComputeSimHash(questionText);
                     int fuzzyBucket = simHashService.GetFuzzyBucket(fuzzySignature);
 
-                    // Resolve category via CategoryResolver
-                    Result<Category> categoryResult = await categoryResolver.ResolveOrCreateAsync(
-                        itemRequest.Category,
-                        isPrivate: effectiveIsPrivate,
-                        currentUserId: userId,
-                        isAdmin: userContext.IsAdmin,
-                        cancellationToken);
-
-                    if (categoryResult.IsFailure)
-                    {
-                        errors.Add(new AddItemsBulk.ItemError(i, itemRequest.Question, categoryResult.Error!.Description));
-                        continue;
-                    }
-
-                    Category category = categoryResult.Value!;
-                    
-                    // Check for duplicates - only for the same user
-                    // Different users can add the same items
-                    // Check using CategoryId
-                    // Exclude items that are already in the current batch (itemsToInsert)
                     bool isDuplicate = false;
                     try
                     {
                         List<Guid> existingItemIds = itemsToInsert.Select(it => it.Id).ToList();
-                        
-                        // Get items with matching fuzzy bucket and category (potential duplicates)
+
                         List<Item> candidateItems = await db.Items
-                            .Where(item => 
+                            .Where(item =>
                                 item.CreatedBy == userId &&
                                 item.FuzzyBucket == fuzzyBucket &&
                                 item.CategoryId == category.Id &&
                                 !existingItemIds.Contains(item.Id))
                             .ToListAsync(cancellationToken);
-                        
+
                         if (candidateItems.Count > 0)
                         {
-                            // Check if any candidate item has the same question/fuzzy signature
                             isDuplicate = candidateItems.Any(item =>
-                            {
-                                bool questionMatches = string.Equals(item.Question, itemRequest.Question, StringComparison.OrdinalIgnoreCase);
-                                bool fuzzyMatches = item.FuzzySignature == fuzzySignature;
-                                
-                                return questionMatches || fuzzyMatches;
-                            });
+                                string.Equals(item.Question, itemRequest.Question, StringComparison.OrdinalIgnoreCase) ||
+                                item.FuzzySignature == fuzzySignature);
                         }
                     }
                     catch (Exception ex)
                     {
-                        // If duplicate check fails, provide user-friendly error
                         errors.Add(new AddItemsBulk.ItemError(
-                            i, 
-                            itemRequest.Question, 
+                            i,
+                            itemRequest.Question,
                             $"Unable to check for duplicates: {ex.Message}"));
                         continue;
                     }
@@ -116,15 +172,6 @@ internal static class AddItemsBulkHandler
                     {
                         duplicateQuestions.Add(itemRequest.Question);
                         continue;
-                    }
-
-                    // Regular users can only create private items
-                    // Also ensure keywords are private for regular users
-                    List<AddItemsBulk.KeywordRequest>? effectiveKeywords = itemRequest.Keywords;
-                    if (effectiveKeywords is not null && !userContext.IsAdmin)
-                    {
-                        // Force all keywords to be private for regular users
-                        effectiveKeywords = effectiveKeywords.Select(k => new AddItemsBulk.KeywordRequest(k.Name, effectiveIsPrivate)).ToList();
                     }
 
                     Item item = new Item
@@ -140,12 +187,16 @@ internal static class AddItemsBulkHandler
                         CreatedBy = userId,
                         CreatedAt = DateTime.UtcNow,
                         CategoryId = category.Id,
-                        Source = string.IsNullOrWhiteSpace(itemRequest.Source) ? null : itemRequest.Source.Trim()
+                        NavigationKeywordId1 = keyword1Entity.Id,
+                        NavigationKeywordId2 = keyword2Entity.Id,
+                        Source = string.IsNullOrWhiteSpace(itemRequest.Source) ? null : itemRequest.Source.Trim(),
+                        UploadId = request.UploadId,
+                        FactualRisk = itemRequest.FactualRisk is >= 0m and <= 1m ? itemRequest.FactualRisk : null,
+                        ReviewComments = string.IsNullOrWhiteSpace(itemRequest.ReviewComments) ? null : itemRequest.ReviewComments.Trim()
                     };
 
                     itemsToInsert.Add(item);
                     itemIndexMap[i] = item;
-                    categoryMap[i] = category;
                 }
                 catch (Exception ex)
                 {
@@ -158,91 +209,73 @@ internal static class AddItemsBulkHandler
                 db.Items.AddRange(itemsToInsert);
                 await db.SaveChangesAsync(cancellationToken);
 
-                // Handle keywords for all items
-                List<ItemKeyword> itemKeywordsToInsert = new();
-                Dictionary<string, Keyword> keywordCache = new(); // Cache to avoid duplicate lookups
+                List<ItemKeyword> itemKeywordsToInsert = [];
+                Dictionary<string, Keyword> keywordCache = new(StringComparer.OrdinalIgnoreCase);
 
                 foreach (KeyValuePair<int, Item> kvp in itemIndexMap)
                 {
                     int originalIndex = kvp.Key;
                     Item item = kvp.Value;
                     AddItemsBulk.ItemRequest itemRequest = request.Items[originalIndex];
-                    
-                    // Use effective keywords (already adjusted for regular users)
-                    List<AddItemsBulk.KeywordRequest>? keywordsToProcess = itemRequest.Keywords;
-                    if (keywordsToProcess is null || keywordsToProcess.Count == 0)
+
+                    List<string> orderedNames = [];
+
+                    void AddUnique(string raw)
                     {
-                        continue;
+                        string n = KeywordHelper.NormalizeKeywordName(raw);
+                        if (string.IsNullOrEmpty(n))
+                            return;
+                        if (orderedNames.Any(x => string.Equals(x, n, StringComparison.OrdinalIgnoreCase)))
+                            return;
+                        orderedNames.Add(n);
                     }
-                    
-                    // For regular users, ensure all keywords are private
-                    if (!userContext.IsAdmin)
+
+                    AddUnique(keyword1Entity.Name);
+                    AddUnique(keyword2Entity.Name);
+
+                    if (itemRequest.Keywords is { Count: > 0 })
                     {
-                        keywordsToProcess = keywordsToProcess.Select(k => new AddItemsBulk.KeywordRequest(k.Name, true)).ToList();
+                        foreach (AddItemsBulk.KeywordRequest ik in itemRequest.Keywords)
+                            AddUnique(ik.Name);
+                    }
+                    else
+                    {
+                        foreach (string extra in bulkDefaultExtraNames)
+                            AddUnique(extra);
                     }
 
-                    foreach (AddItemsBulk.KeywordRequest keywordRequest in keywordsToProcess)
+                    HashSet<Guid> attached = [];
+
+                    foreach (string normalizedName in orderedNames)
                     {
-                        // Normalize keyword name
-                        string normalizedName = keywordRequest.Name.Trim().ToLowerInvariant();
-                        if (string.IsNullOrEmpty(normalizedName))
+                        string cacheKey = normalizedName;
+                        Keyword keyword;
+                        if (string.Equals(normalizedName, keyword1Entity.Name, StringComparison.OrdinalIgnoreCase))
+                            keyword = keyword1Entity;
+                        else if (string.Equals(normalizedName, keyword2Entity.Name, StringComparison.OrdinalIgnoreCase))
+                            keyword = keyword2Entity;
+                        else if (!keywordCache.TryGetValue(cacheKey, out keyword!))
                         {
-                            continue;
-                        }
-
-                        // Create cache key
-                        string cacheKey = keywordRequest.IsPrivate 
-                            ? $"{normalizedName}:private:{userId}"
-                            : $"{normalizedName}:global";
-
-                        // Check cache first
-                        if (!keywordCache.TryGetValue(cacheKey, out Keyword? keyword))
-                        {
-                            // Find or create keyword
-                            if (keywordRequest.IsPrivate)
-                            {
-                                keyword = await db.Keywords
-                                    .FirstOrDefaultAsync(k => 
-                                        k.Name == normalizedName && 
-                                        k.IsPrivate == true &&
-                                        k.CreatedBy == userId,
-                                        cancellationToken);
-                            }
-                            else
-                            {
-                                keyword = await db.Keywords
-                                    .FirstOrDefaultAsync(k => 
-                                        k.Name == normalizedName && 
-                                        k.IsPrivate == false,
-                                        cancellationToken);
-                            }
-
-                            if (keyword is null)
-                            {
-                                keyword = new Keyword
-                                {
-                                    Id = Guid.NewGuid(),
-                                    Name = normalizedName,
-                                    IsPrivate = keywordRequest.IsPrivate,
-                                    CreatedBy = userId,
-                                    CreatedAt = DateTime.UtcNow
-                                };
-                                db.Keywords.Add(keyword);
-                                await db.SaveChangesAsync(cancellationToken);
-                            }
-
+                            keyword = await ItemNavigationAndKeywordsHelper.GetOrCreateKeywordForItemAttachmentAsync(
+                                db,
+                                taxonomyRegistry,
+                                category.Name,
+                                userId,
+                                normalizedName,
+                                cancellationToken);
                             keywordCache[cacheKey] = keyword;
                         }
 
-                        // Create ItemKeyword relationship
-                        ItemKeyword itemKeyword = new ItemKeyword
+                        if (!attached.Add(keyword.Id))
+                            continue;
+
+                        itemKeywordsToInsert.Add(new ItemKeyword
                         {
                             Id = Guid.NewGuid(),
                             ItemId = item.Id,
                             KeywordId = keyword.Id,
                             AddedAt = DateTime.UtcNow
-                        };
-                        itemKeywordsToInsert.Add(itemKeyword);
+                        });
                     }
                 }
 
@@ -252,7 +285,6 @@ internal static class AddItemsBulkHandler
                     await db.SaveChangesAsync(cancellationToken);
                 }
 
-                // Log audit entries for all created items
                 if (!string.IsNullOrEmpty(userId) && Guid.TryParse(userId, out Guid userIdGuid))
                 {
                     foreach (Item item in itemsToInsert)
@@ -271,15 +303,28 @@ internal static class AddItemsBulkHandler
                 await transaction.CommitAsync(cancellationToken);
             }
 
+            List<Guid> createdIds = itemsToInsert.Select(i => i.Id).ToList();
             AddItemsBulk.Response response = new AddItemsBulk.Response(
                 request.Items.Count,
                 itemsToInsert.Count,
                 duplicateQuestions.Count,
                 errors.Count,
                 duplicateQuestions,
-                errors);
+                errors,
+                createdIds);
 
-            return Result.Success(response);
+                return Result.Success(response);
+            }
+            catch
+            {
+                await TryRollbackTransactionAsync(transaction, cancellationToken);
+                throw;
+            }
+            finally
+            {
+                if (transaction is not null)
+                    await transaction.DisposeAsync();
+            }
         }
         catch (Exception ex)
         {
@@ -287,5 +332,19 @@ internal static class AddItemsBulkHandler
                 Error.Problem("Items.BulkCreateFailed", $"Failed to create items: {ex.Message}"));
         }
     }
-}
 
+    private static async Task TryRollbackTransactionAsync(
+        IDbContextTransaction? transaction,
+        CancellationToken cancellationToken)
+    {
+        if (transaction is null)
+            return;
+        try
+        {
+            await transaction.RollbackAsync(cancellationToken);
+        }
+        catch (ObjectDisposedException)
+        {
+        }
+    }
+}

@@ -1,0 +1,439 @@
+[
+  {
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "saa-c03",
+    "question": "A company needs to migrate a MySQL database from its on-premises data center to AWS within 2 weeks. The database is 20 TB in size. The\ncompany wants to complete the migration with minimal downtime.\nWhich solution will migrate the database MOST cost-effectively?",
+    "correctAnswer": "Order an AWS Snowball Edge Storage Optimized device. Use AWS Database Migration Service (AWS DMS) with AWS Schema Conversion Tool (AWS SCT) to migrate the database with replication of ongoing changes. Send the Snowball Edge device to AWS to nish the migration and continue the ongoing replication.",
+    "incorrectAnswers": [
+      "Order an AWS Snowmobile vehicle. Use AWS Database Migration Service (AWS DMS) with AWS Schema Conversion Tool (AWS SCT) to migrate the database with ongoing changes. Send the Snowmobile vehicle back to AWS to nish the migration and continue the ongoing replication.",
+      "Order an AWS Snowball Edge Compute Optimized with GPU device. Use AWS Database Migration Service (AWS DMS) with AWS Schema Conversion Tool (AWS SCT) to migrate the database with ongoing changes. Send the Snowball device to AWS to nish the migration and continue the ongoing replication",
+      "Order a 1 GB dedicated AWS Direct Connect connection to establish a connection with the data center. Use AWS Database Migration Service (AWS DMS) with AWS Schema Conversion Tool (AWS SCT) to migrate the database with replication of ongoing changes."
+    ],
+    "explanation": "SAA-C03 practice scenario (extract question #435). Correct choice: A.",
+    "keywords": [
+      "aws-saa-c03",
+      "aws-migration",
+      "aws-storage",
+      "databases",
+      "snowball",
+      "dms",
+      "mysql"
+    ],
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "seedId": "188cdc56-d32a-4510-809c-eacd034a63fa"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "saa-c03",
+    "question": "A company moved its on-premises PostgreSQL database to an Amazon RDS for PostgreSQL DB instance. The company successfully launched a\nnew product. The workload on the database has increased. The company wants to accommodate the larger workload without adding\ninfrastructure.\nWhich solution will meet these requirements MOST cost-effectively?",
+    "correctAnswer": "Buy reserved DB instances for the total workload. Make the Amazon RDS for PostgreSQL DB instance larger.",
+    "incorrectAnswers": [
+      "Make the Amazon RDS for PostgreSQL DB instance a Multi-AZ DB instance.",
+      "Buy reserved DB instances for the total workload. Add another Amazon RDS for PostgreSQL DB instance.",
+      "Make the Amazon RDS for PostgreSQL DB instance an on-demand DB instance."
+    ],
+    "explanation": "SAA-C03 practice scenario (extract question #436). Correct choice: A.",
+    "keywords": [
+      "aws-saa-c03",
+      "aws-database",
+      "databases",
+      "rds",
+      "postgresql"
+    ],
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "seedId": "b63e7e56-2670-479b-932f-a569fdc34d8e"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "saa-c03",
+    "question": "A company operates an ecommerce website on Amazon EC2 instances behind an Application Load Balancer (ALB) in an Auto Scaling group. The\nsite is experiencing performance issues related to a high request rate from illegitimate external systems with changing IP addresses. The security\nteam is worried about potential DDoS attacks against the website. The company must block the illegitimate incoming requests in a way that has a\nminimal impact on legitimate users.\nWhat should a solutions architect recommend?",
+    "correctAnswer": "Deploy Amazon Inspector and associate it with the ALB.",
+    "incorrectAnswers": [
+      "Deploy AWS WAF, associate it with the ALB, and congure a rate-limiting rule.",
+      "Deploy rules to the network ACLs associated with the ALB to block the incomingtraffic.",
+      "Deploy Amazon GuardDuty and enable rate-limiting protection when conguring GuardDuty."
+    ],
+    "explanation": "SAA-C03 practice scenario (extract question #437). Correct choice: A.",
+    "keywords": [
+      "aws-saa-c03",
+      "aws-compute",
+      "aws-networking",
+      "ec2",
+      "auto-scaling",
+      "alb"
+    ],
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "seedId": "2c0913ac-59b5-4600-a0ba-94feaef99dce"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "saa-c03",
+    "question": "A company wants to share accounting data with an external auditor. The data is stored in an Amazon RDS DB instance that resides in a private\nsubnet. The auditor has its own AWS account and requires its own copy of the database.\nWhat is the MOST secure way for the company to share the database with the auditor?",
+    "correctAnswer": "Create a read replica of the database. Configure IAM standard database authentication to grant the auditor access.",
+    "incorrectAnswers": [
+      "Export the database contents to text les. Store the les in an Amazon S3 bucket. Create a new IAM user for the auditor. Grant the user access to the S3 bucket.",
+      "Copy a snapshot of the database to an Amazon S3 bucket. Create an IAM user. Share the user's keys with the auditor to grant access to the object in the S3 bucket.",
+      "Create an encrypted snapshot of the database. Share the snapshot with the auditor. Allow access to the AWS Key Management Service (AWS KMS) encryption key."
+    ],
+    "explanation": "SAA-C03 practice scenario (extract question #438). Correct choice: A.",
+    "keywords": [
+      "aws-saa-c03",
+      "aws-database",
+      "aws-networking",
+      "databases",
+      "rds",
+      "iam"
+    ],
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "seedId": "907a7579-e0cd-43e3-91da-5b865b8b19b5"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "saa-c03",
+    "question": "A solutions architect congured a VPC that has a small range of IP addresses. The number of Amazon EC2 instances that are in the VPC is\nincreasing, and there is an insucient number of IP addresses for future workloads.\nWhich solution resolves this issue with the LEAST operational overhead?",
+    "correctAnswer": "Add an additional IPv4 CIDR block to increase the number of IP addresses and create additional subnets in the VPC. Create new resources in the new subnets by using the new CIDR.",
+    "incorrectAnswers": [
+      "Create a second VPC with additional subnets. Use a peering connection to connect the second VPC with the rst VPC Update the routes and create new resources in the subnets of the second VPC.",
+      "Use AWS Transit Gateway to add a transit gateway and connect a second VPC with the rst VPUpdate the routes of the transit gateway and VPCs. Create new resources in the subnets of the second VPC.",
+      "Create a second VPC. Create a Site-to-Site VPN connection between the rst VPC and the second VPC by using a VPN-hosted solution on Amazon EC2 and a virtual private gateway. Update the route between VPCs to the traffic through the VPN. Create new resources in the subnets of the second VPC."
+    ],
+    "explanation": "SAA-C03 practice scenario (extract question #439). Correct choice: A.",
+    "keywords": [
+      "aws-saa-c03",
+      "aws-networking",
+      "aws-compute",
+      "ec2",
+      "vpc"
+    ],
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "seedId": "200354d3-9275-45c3-8435-735754d8662f"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "saa-c03",
+    "question": "A company hosts a multi-tier web application on Amazon Linux Amazon EC2 instances behind an Application Load Balancer. The instances run in\nan Auto Scaling group across multiple Availability Zones. The company observes that the Auto Scaling group launches more On-Demand\nInstances when the application's end users access high volumes of static web content. The company wants to optimize cost.\nWhat should a solutions architect do to redesign the application MOST cost-effectively?",
+    "correctAnswer": "Update the Auto Scaling group to use Reserved Instances instead of On-Demand Instances.",
+    "incorrectAnswers": [
+      "Update the Auto Scaling group to scale by launching Spot Instances instead of On-Demand Instances.",
+      "Create an Amazon CloudFront distribution to host the static web contents from an Amazon S3 bucket.",
+      "Create an AWS Lambda function behind an Amazon API Gateway API to host the static website contents."
+    ],
+    "explanation": "SAA-C03 practice scenario (extract question #441). Correct choice: A.",
+    "keywords": [
+      "aws-saa-c03",
+      "aws-compute",
+      "aws-networking",
+      "ec2",
+      "auto-scaling",
+      "alb"
+    ],
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "seedId": "e5ffedc6-f91a-4680-b44c-57a3c37faaa0"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "saa-c03",
+    "question": "A company stores several petabytes of data across multiple AWS accounts. The company uses AWS Lake Formation to manage its data lake. The\ncompany's data science team wants to securely share selective data from its accounts with the company's engineering team for analytical\npurposes.\nWhich solution will meet these requirements with the LEAST operational overhead?",
+    "correctAnswer": "Copy the required data to a common account. Create an IAM access role in that account. Grant access by specifying a permission policy that includes users from the engineering team accounts as trusted entities.",
+    "incorrectAnswers": [
+      "Use the Lake Formation permissions Grant command in each account where the data is stored to allow the required engineering team users to access the data.",
+      "Use AWS Data Exchange to privately publish the required data to the required engineering team accounts.",
+      "Use Lake Formation tag-based access control to authorize and grant cross-account permissions for the required data to the engineering team accounts."
+    ],
+    "explanation": "SAA-C03 practice scenario (extract question #442). Correct choice: A.",
+    "keywords": [
+      "aws-saa-c03",
+      "aws-security",
+      "iam"
+    ],
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "seedId": "f5c8693c-df6b-4158-aa5a-39611cebe362"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "saa-c03",
+    "question": "A company wants to host a scalable web application on AWS. The application will be accessed by users from different geographic regions of the\nworld. Application users will be able to download and upload unique data up to gigabytes in size. The development team wants a cost-effective\nsolution to minimize upload and download latency and maximize performance.\nWhat should a solutions architect do to accomplish this?",
+    "correctAnswer": "Use Amazon S3 with Transfer Acceleration to host the application.",
+    "incorrectAnswers": [
+      "Use Amazon S3 with CacheControl headers to host the application.",
+      "Use Amazon EC2 with Auto Scaling and Amazon CloudFront to host the application.",
+      "Use Amazon EC2 with Auto Scaling and Amazon ElastiCache to host the application."
+    ],
+    "explanation": "SAA-C03 practice scenario (extract question #443). Correct choice: A.",
+    "keywords": [
+      "aws-saa-c03",
+      "aws-storage",
+      "s3"
+    ],
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "seedId": "3e24eaf9-36a4-42aa-aa3b-1126c594c6f9"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "saa-c03",
+    "question": "A company has hired a solutions architect to design a reliable architecture for its application. The application consists of one Amazon RDS DB\ninstance and two manually provisioned Amazon EC2 instances that run web servers. The EC2 instances are located in a single Availability Zone.\nAn employee recently deleted the DB instance, and the application was unavailable for 24 hours as a result. The company is concerned with the\noverall reliability of its environment.\nWhat should the solutions architect do to maximize reliability of the application's infrastructure?",
+    "correctAnswer": "Delete one EC2 instance and enable termination protection on the other EC2 instance. Update the DB instance to be Multi-AZ, and enable deletion protection.",
+    "incorrectAnswers": [
+      "Update the DB instance to be Multi-AZ, and enable deletion protection. Place the EC2 instances behind an Application Load Balancer, and run them in an EC2 Auto Scaling group across multiple Availability Zones.",
+      "Create an additional DB instance along with an Amazon API Gateway and an AWS Lambda function. Configure the application to invoke the Lambda function through API Gateway. Have the Lambda function write the data to the two DB instances.",
+      "Place the EC2 instances in an EC2 Auto Scaling group that has multiple subnets located in multiple Availability Zones. Use Spot Instances instead of On-Demand Instances. Set up Amazon CloudWatch alarms to monitor the health of the instances Update the DB instance to be Multi-AZ, and enable deletion protection."
+    ],
+    "explanation": "SAA-C03 practice scenario (extract question #444). Correct choice: A.",
+    "keywords": [
+      "aws-saa-c03",
+      "aws-database",
+      "aws-compute",
+      "databases",
+      "rds",
+      "ec2"
+    ],
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "seedId": "6ee25b66-515d-4d71-b31f-229ff7105564"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "saa-c03",
+    "question": "A company is storing 700 terabytes of data on a large network-attached storage (NAS) system in its corporate data center. The company has a\nhybrid environment with a 10 Gbps AWS Direct Connect connection.\nAfter an audit from a regulator, the company has 90 days to move the data to the cloud. The company needs to move the data efficiently and\nwithout disruption. The company still needs to be able to access and update the data during the transfer window.\nWhich solution will meet these requirements?",
+    "correctAnswer": "Create an AWS DataSync agent in the corporate data center. Create a data transfer task Start the transfer to an Amazon S3 bucket.",
+    "incorrectAnswers": [
+      "Back up the data to AWS Snowball Edge Storage Optimized devices. Ship the devices to an AWS data center. Mount a target Amazon S3 bucket on the on-premises le system.",
+      "Use rsync to copy the data directly from local storage to a designated Amazon S3 bucket over the Direct Connect connection.",
+      "Back up the data on tapes. Ship the tapes to an AWS data center. Mount a target Amazon S3 bucket on the on-premises le system."
+    ],
+    "explanation": "SAA-C03 practice scenario (extract question #445). Correct choice: A.",
+    "keywords": [
+      "aws-saa-c03",
+      "aws-storage",
+      "aws-networking",
+      "s3",
+      "direct-connect",
+      "datasync"
+    ],
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "seedId": "96ededf6-c101-4471-a222-d0af8e214748"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "saa-c03",
+    "question": "A company stores data in PDF format in an Amazon S3 bucket. The company must follow a legal requirement to retain all new and existing data in\nAmazon S3 for 7 years.\nWhich solution will meet these requirements with the LEAST operational overhead?",
+    "correctAnswer": "Turn on the S3 Versioning feature for the S3 bucket. Configure S3 Lifecycle to delete the data after 7 years. Configure multi-factor authentication (MFA) delete for all S3 objects.",
+    "incorrectAnswers": [
+      "Turn on S3 Object Lock with governance retention mode for the S3 bucket. Set the retention period to expire after 7 years. Recopy all existing objects to bring the existing data into compliance.",
+      "Turn on S3 Object Lock with compliance retention mode for the S3 bucket. Set the retention period to expire after 7 years. Recopy all existing objects to bring the existing data into compliance.",
+      "Turn on S3 Object Lock with compliance retention mode for the S3 bucket. Set the retention period to expire after 7 years. Use S3 Batch Operations to bring the existing data into compliance."
+    ],
+    "explanation": "SAA-C03 practice scenario (extract question #446). Correct choice: A.",
+    "keywords": [
+      "aws-saa-c03",
+      "aws-storage",
+      "s3"
+    ],
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "seedId": "d7e6ee06-4961-4f48-9cad-cb5ba04561f3"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "saa-c03",
+    "question": "A company has a stateless web application that runs on AWS Lambda functions that are invoked by Amazon API Gateway. The company wants to\ndeploy the application across multiple AWS Regions to provide Regional failover capabilities.\nWhat should a solutions architect do to route traffic to multiple Regions?",
+    "correctAnswer": "Create Amazon Route 53 health checks for each Region. Use an active-active failover conguration.",
+    "incorrectAnswers": [
+      "Create an Amazon CloudFront distribution with an origin for each Region. Use CloudFront health checks to route traffic.",
+      "Create a transit gateway. Attach the transit gateway to the API Gateway endpoint in each Region. Configure the transit gateway to route requests.",
+      "Create an Application Load Balancer in the primary Region. Set the target group to point to the API Gateway endpoint hostnames in each Region."
+    ],
+    "explanation": "SAA-C03 practice scenario (extract question #447). Correct choice: A.",
+    "keywords": [
+      "aws-saa-c03",
+      "aws-compute",
+      "aws-networking",
+      "lambda",
+      "api-gateway",
+      "route53"
+    ],
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "seedId": "1a6e5cb4-ae12-432f-b802-99383eedaf18"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "saa-c03",
+    "question": "A company has two VPCs named Management and Production. The Management VPC uses VPNs through a customer gateway to connect to a\nsingle device in the data center. The Production VPC uses a virtual private gateway with two attached AWS Direct Connect connections. The\nManagement and Production VPCs both use a single VPC peering connection to allow communication between the applications.\nWhat should a solutions architect do to mitigate any single point of failure in this architecture?",
+    "correctAnswer": "Add a set of VPNs between the Management and Production VPCs.",
+    "incorrectAnswers": [
+      "Add a second virtual private gateway and attach it to the Management VPC.",
+      "Add a second set of VPNs to the Management VPC from a second customer gateway device.",
+      "Add a second VPC peering connection between the Management VPC and the Production VPC."
+    ],
+    "explanation": "SAA-C03 practice scenario (extract question #448). Correct choice: A.",
+    "keywords": [
+      "aws-saa-c03",
+      "aws-networking",
+      "vpc",
+      "direct-connect"
+    ],
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "seedId": "2862de9f-2e2b-435e-9913-66b8303429fa"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "saa-c03",
+    "question": "A company runs its application on an Oracle database. The company plans to quickly migrate to AWS because of limited resources for the\ndatabase, backup administration, and data center maintenance. The application uses third-party database features that require privileged access.\nWhich solution will help the company migrate the database to AWS MOST cost-effectively?",
+    "correctAnswer": "Migrate the database to Amazon RDS for Oracle. Replace third-party features with cloud services.",
+    "incorrectAnswers": [
+      "Migrate the database to Amazon RDS Custom for Oracle. Customize the database settings to support third-party features.",
+      "Migrate the database to an Amazon EC2 Amazon Machine Image (AMI) for Oracle. Customize the database settings to support third-party features.",
+      "Migrate the database to Amazon RDS for PostgreSQL by rewriting the application code to remove dependency on Oracle APEX."
+    ],
+    "explanation": "SAA-C03 practice scenario (extract question #449). Correct choice: A.",
+    "keywords": [
+      "aws-saa-c03",
+      "aws-database",
+      "databases",
+      "rds"
+    ],
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "seedId": "bf3f6d1a-b94e-4ede-963a-ca7fd931745a"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "saa-c03",
+    "question": "A company runs a Java-based job on an Amazon EC2 instance. The job runs every hour and takes 10 seconds to run. The job runs on a scheduled\ninterval and consumes 1 GB of memory. The CPU utilization of the instance is low except for short surges during which the job uses the maximum\nCPU available. The company wants to optimize the costs to run the job.\nWhich solution will meet these requirements?",
+    "correctAnswer": "Use AWS App2Container (A2C) to containerize the job. Run the job as an Amazon Elastic Container Service (Amazon ECS) task on AWS Fargate with 0.5 virtual CPU (vCPU) and 1 GB of memory.",
+    "incorrectAnswers": [
+      "Copy the code into an AWS Lambda function that has 1 GB of memory. Create an Amazon EventBridge scheduled rule to run the code each hour.",
+      "Use AWS App2Container (A2C) to containerize the job. Install the container in the existing Amazon Machine Image (AMI). Ensure that the schedule stops the container when the task nishes.",
+      "Configure the existing schedule to stop the EC2 instance at the completion of the job and restart the EC2 instance when the next job starts."
+    ],
+    "explanation": "SAA-C03 practice scenario (extract question #452). Correct choice: A.",
+    "keywords": [
+      "aws-saa-c03",
+      "aws-compute",
+      "ec2",
+      "fargate",
+      "ecs"
+    ],
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "seedId": "f275348f-bd16-493f-b2d9-581ac870ce3a"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "saa-c03",
+    "question": "A company wants to implement a backup strategy for Amazon EC2 data and multiple Amazon S3 buckets. Because of regulatory requirements,\nthe company must retain backup les for a specific time period. The company must not alter the les for the duration of the retention period.\nWhich solution will meet these requirements?",
+    "correctAnswer": "Use AWS Backup to create a backup vault that has a vault lock in governance mode. Create the required backup plan.",
+    "incorrectAnswers": [
+      "Use Amazon Data Lifecycle Manager to create the required automated snapshot policy.",
+      "Use Amazon S3 File Gateway to create the backup. Configure the appropriate S3 Lifecycle management.",
+      "Use AWS Backup to create a backup vault that has a vault lock in compliance mode. Create the required backup plan."
+    ],
+    "explanation": "SAA-C03 practice scenario (extract question #453). Correct choice: A.",
+    "keywords": [
+      "aws-saa-c03",
+      "aws-storage",
+      "aws-compute",
+      "s3",
+      "ec2",
+      "aws-backup"
+    ],
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "seedId": "4322bbd2-41e3-45f6-a702-22533cceedf2"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "saa-c03",
+    "question": "A company has resources across multiple AWS Regions and accounts. A newly hired solutions architect discovers a previous employee did not\nprovide details about the resources inventory. The solutions architect needs to build and map the relationship details of the various workloads\nacross all accounts.\nWhich solution will meet these requirements in the MOST operationally efficient way?",
+    "correctAnswer": "Use AWS Systems Manager Inventory to generate a map view from the detailed view report.",
+    "incorrectAnswers": [
+      "Use AWS Step Functions to collect workload details. Build architecture diagrams of the workloads manually.",
+      "Use Workload Discovery on AWS to generate architecture diagrams of the workloads.",
+      "Use AWS X-Ray to view the workload details. Build architecture diagrams with relationships."
+    ],
+    "explanation": "SAA-C03 practice scenario (extract question #454). Correct choice: A.",
+    "keywords": [
+      "aws-saa-c03",
+      "aws-management",
+      "systems-manager"
+    ],
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "seedId": "68fdaa91-cc10-4e4d-a209-c133a759121e"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "saa-c03",
+    "question": "A company runs applications on Amazon EC2 instances in one AWS Region. The company wants to back up the EC2 instances to a second\nRegion. The company also wants to provision EC2 resources in the second Region and manage the EC2 instances centrally from one AWS\naccount.\nWhich solution will meet these requirements MOST cost-effectively?",
+    "correctAnswer": "Create a disaster recovery (DR) plan that has a similar number of EC2 instances in the second Region. Configure data replication.",
+    "incorrectAnswers": [
+      "Create point-in-time Amazon Elastic Block Store (Amazon EBS) snapshots of the EC2 instances. Copy the snapshots to the second Region periodically.",
+      "Create a backup plan by using AWS Backup. Configure cross-Region backup to the second Region for the EC2 instances.",
+      "Deploy a similar number of EC2 instances in the second Region. Use AWS DataSync to transfer the data from the source Region to the second Region."
+    ],
+    "explanation": "SAA-C03 practice scenario (extract question #456). Correct choice: A.",
+    "keywords": [
+      "aws-saa-c03",
+      "aws-compute",
+      "ec2"
+    ],
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "seedId": "dd2be615-7d9b-4253-99a1-6f959767cf99"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "saa-c03",
+    "question": "A company that uses AWS is building an application to transfer data to a product manufacturer. The company has its own identity provider (IdP).\nThe company wants the IdP to authenticate application users while the users use the application to transfer data. The company must use\nApplicability Statement 2 (AS2) protocol.\nWhich solution will meet these requirements?",
+    "correctAnswer": "Use AWS DataSync to transfer the data. Create an AWS Lambda function for IdP authentication.",
+    "incorrectAnswers": [
+      "Use Amazon AppFlow ows to transfer the data. Create an Amazon Elastic Container Service (Amazon ECS) task for IdP authentication.",
+      "Use AWS Transfer Family to transfer the data. Create an AWS Lambda function for IdP authentication.",
+      "Use AWS Storage Gateway to transfer the data. Create an Amazon Cognito identity pool for IdP authentication."
+    ],
+    "explanation": "SAA-C03 practice scenario (extract question #457). Correct choice: A.",
+    "keywords": [
+      "aws-saa-c03",
+      "aws-storage",
+      "aws-compute",
+      "lambda",
+      "datasync"
+    ],
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "seedId": "fa905107-64ad-424d-9258-fce4236f3fb2"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "saa-c03",
+    "question": "A company uses AWS Organizations to run workloads within multiple AWS accounts. A tagging policy adds department tags to AWS resources\nwhen the company creates tags.\nAn accounting team needs to determine spending on Amazon EC2 consumption. The accounting team must determine which departments are\nresponsible for the costs regardless ofAWS account. The accounting team has access to AWS Cost Explorer for all AWS accounts within the\norganization and needs to access all reports from Cost Explorer.\nWhich solution meets these requirements in the MOST operationally efficient way?",
+    "correctAnswer": "From the Organizations management account billing console, activate a user-dened cost allocation tag named department. Create one cost report in Cost Explorer grouping by tag name, and lter by EC2.",
+    "incorrectAnswers": [
+      "From the Organizations management account billing console, activate an AWS-dened cost allocation tag named department. Create one cost report in Cost Explorer grouping by tag name, and lter by EC2.",
+      "From the Organizations member account billing console, activate a user-dened cost allocation tag named department. Create one cost report in Cost Explorer grouping by the tag name, and lter by EC2.",
+      "From the Organizations member account billing console, activate an AWS-dened cost allocation tag named department. Create one cost report in Cost Explorer grouping by tag name, and lter by EC2."
+    ],
+    "explanation": "SAA-C03 practice scenario (extract question #459). Correct choice: A.",
+    "keywords": [
+      "aws-saa-c03",
+      "aws-management",
+      "aws-compute",
+      "ec2",
+      "organizations"
+    ],
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "seedId": "a135226d-4bfb-4742-8605-64004de2211e"
+  }
+]

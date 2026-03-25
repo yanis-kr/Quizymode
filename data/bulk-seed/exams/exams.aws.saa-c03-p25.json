@@ -1,0 +1,446 @@
+[
+  {
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "saa-c03",
+    "question": "A company is migrating its workloads to AWS. The company has transactional and sensitive data in its databases. The company wants to use\nAWS Cloud solutions to increase security and reduce operational overhead for the databases.\nWhich solution will meet these requirements?",
+    "correctAnswer": "Migrate the databases to Amazon EC2. Use an AWS Key Management Service (AWS KMS) AWS managed key for encryption.",
+    "incorrectAnswers": [
+      "Migrate the databases to Amazon RDS Configure encryption at rest.",
+      "Migrate the data to Amazon S3 Use Amazon Macie for data security and protection",
+      "Migrate the database to Amazon RDS. Use Amazon CloudWatch Logs for data security and protection."
+    ],
+    "explanation": "SAA-C03 practice scenario (extract question #529). Correct choice: A.",
+    "keywords": [
+      "aws-saa-c03",
+      "aws-compute",
+      "aws-security",
+      "ec2",
+      "kms"
+    ],
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "seedId": "14d8cda4-dafe-43d6-ba30-4183e8d25f36"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "saa-c03",
+    "question": "A company has an online gaming application that has TCP and UDP multiplayer gaming capabilities. The company uses Amazon Route 53 to point\nthe application traffic to multiple Network Load Balancers (NLBs) in different AWS Regions. The company needs to improve application\nperformance and decrease latency for the online game in preparation for user growth.\nWhich solution will meet these requirements?",
+    "correctAnswer": "Add an Amazon CloudFront distribution in front of the NLBs. Increase the Cache-Control max-age parameter.",
+    "incorrectAnswers": [
+      "Replace the NLBs with Application Load Balancers (ALBs). Configure Route 53 to use latency-based routing.",
+      "Add AWS Global Accelerator in front of the NLBs. Configure a Global Accelerator endpoint to use the correct listener ports.",
+      "Add an Amazon API Gateway endpoint behind the NLBs. Enable API caching. Override method caching for the different stages."
+    ],
+    "explanation": "SAA-C03 practice scenario (extract question #530). Correct choice: A.",
+    "keywords": [
+      "aws-saa-c03",
+      "aws-networking",
+      "cloudfront",
+      "route53",
+      "nlb"
+    ],
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "seedId": "589c4fd0-aec4-46fc-9612-510c6c1119b2"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "saa-c03",
+    "question": "A company needs to integrate with a third-party data feed. The data feed sends a webhook to notify an external service when new data is ready for\nconsumption. A developer wrote an AWS Lambda function to retrieve data when the company receives a webhook callback. The developer must\nmake the Lambda function available for the third party to call.\nWhich solution will meet these requirements with the MOST operational eciency?",
+    "correctAnswer": "Create a function URL for the Lambda function. Provide the Lambda function URL to the third party for the webhook.",
+    "incorrectAnswers": [
+      "Deploy an Application Load Balancer (ALB) in front of the Lambda function. Provide the ALB URL to the third party for the webhook.",
+      "Create an Amazon Simple Notification Service (Amazon SNS) topic. Attach the topic to the Lambda function. Provide the public hostname of the SNS topic to the third party for the webhook.",
+      "Create an Amazon Simple Queue Service (Amazon SQS) queue. Attach the queue to the Lambda function. Provide the public hostname of the SQS queue to the third party for the webhook."
+    ],
+    "explanation": "SAA-C03 practice scenario (extract question #531). Correct choice: A.",
+    "keywords": [
+      "aws-saa-c03",
+      "aws-compute",
+      "lambda"
+    ],
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "seedId": "4134caf2-3778-40d0-862d-1d9d454b6be7"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "saa-c03",
+    "question": "A company stores data in Amazon S3. According to regulations, the data must not contain personally identiable information (PII). The company\nrecently discovered that S3 buckets have some objects that contain PII. The company needs to automatically detect PII in S3 buckets and to notify\nthe company’s security team.\nWhich solution will meet these requirements?",
+    "correctAnswer": "Use Amazon Macie. Create an Amazon EventBridge rule to lter the SensitiveData event type from Macie ndings and to send an Amazon Simple Notification Service (Amazon SNS) notication to the security team.",
+    "incorrectAnswers": [
+      "Use Amazon GuardDuty. Create an Amazon EventBridge rule to lter the CRITICAL event type from GuardDuty ndings and to send an Amazon Simple Notification Service (Amazon SNS) notication to the security team.",
+      "Use Amazon Macie. Create an Amazon EventBridge rule to lter the SensitiveData:S3Object/Personal event type from Macie ndings and to send an Amazon Simple Queue Service (Amazon SQS) notication to the security team.",
+      "Use Amazon GuardDuty. Create an Amazon EventBridge rule to lter the CRITICAL event type from GuardDuty ndings and to send an Amazon Simple Queue Service (Amazon SQS) notication to the security team."
+    ],
+    "explanation": "SAA-C03 practice scenario (extract question #533). Correct choice: A.",
+    "keywords": [
+      "aws-saa-c03",
+      "aws-integration",
+      "aws-storage",
+      "s3",
+      "sns",
+      "eventbridge"
+    ],
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "seedId": "a92bb177-6ad6-4c1a-ab3c-cd426b25d6ad"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "saa-c03",
+    "question": "A company wants to build a logging solution for its multiple AWS accounts. The company currently stores the logs from all accounts in a\ncentralized account. The company has created an Amazon S3 bucket in the centralized account to store the VPC ow logs and AWS CloudTrail\nlogs. All logs must be highly available for 30 days for frequent analysis, retained for an additional 60 days for backup purposes, and deleted 90\ndays after creation.\nWhich solution will meet these requirements MOST cost-effectively?",
+    "correctAnswer": "Transition objects to the S3 Standard storage class 30 days after creation. Write an expiration action that directs Amazon S3 to delete objects after 90 days.",
+    "incorrectAnswers": [
+      "Transition objects to the S3 Standard-Infrequent Access (S3 Standard-IA) storage class 30 days after creation. Move all objects to the S3 Glacier Flexible Retrieval storage class after 90 days. Write an expiration action that directs Amazon S3 to delete objects after 90 days.",
+      "Transition objects to the S3 Glacier Flexible Retrieval storage class 30 days after creation. Write an expiration action that directs Amazon S3 to delete objects after 90 days.",
+      "Transition objects to the S3 One Zone-Infrequent Access (S3 One Zone-IA) storage class 30 days after creation. Move all objects to the S3 Glacier Flexible Retrieval storage class after 90 days. Write an expiration action that directs Amazon S3 to delete objects after 90 days."
+    ],
+    "explanation": "SAA-C03 practice scenario (extract question #534). Correct choice: A.",
+    "keywords": [
+      "aws-saa-c03",
+      "aws-storage",
+      "aws-networking",
+      "s3",
+      "vpc",
+      "cloudtrail"
+    ],
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "seedId": "130cb6c2-eda4-4aa1-a907-32fa2f9f809f"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "saa-c03",
+    "question": "A company is building an Amazon Elastic Kubernetes Service (Amazon EKS) cluster for its workloads. All secrets that are stored in Amazon EKS\nmust be encrypted in the Kubernetes etcd key-value store.\nWhich solution will meet these requirements?",
+    "correctAnswer": "Create a new AWS Key Management Service (AWS KMS) key. Use AWS Secrets Manager to manage, rotate, and store all secrets in Amazon EKS.",
+    "incorrectAnswers": [
+      "Create a new AWS Key Management Service (AWS KMS) key. Enable Amazon EKS KMS secrets encryption on the Amazon EKS cluster.",
+      "Create the Amazon EKS cluster with default options. Use the Amazon Elastic Block Store (Amazon EBS) Container Storage Interface (CSI) driver as an add-on.",
+      "Create a new AWS Key Management Service (AWS KMS) key with the alias/aws/ebs alias. Enable default Amazon Elastic Block Store (Amazon EBS) volume encryption for the account."
+    ],
+    "explanation": "SAA-C03 practice scenario (extract question #535). Correct choice: A.",
+    "keywords": [
+      "aws-saa-c03",
+      "aws-security",
+      "aws-compute",
+      "eks",
+      "kms",
+      "secrets-manager"
+    ],
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "seedId": "a14e32e9-fb9c-46bf-bd51-98e2289093d7"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "saa-c03",
+    "question": "A company wants to provide data scientists with near real-time read-only access to the company's production Amazon RDS for PostgreSQL\ndatabase. The database is currently congured as a Single-AZ database. The data scientists use complex queries that will not affect the\nproduction database. The company needs a solution that is highly available.\nWhich solution will meet these requirements MOST cost-effectively?",
+    "correctAnswer": "Scale the existing production database in a maintenance window to provide enough power for the data scientists.",
+    "incorrectAnswers": [
+      "Change the setup from a Single-AZ to a Multi-AZ instance deployment with a larger secondary standby instance. Provide the data scientists access to the secondary instance.",
+      "Change the setup from a Single-AZ to a Multi-AZ instance deployment. Provide two additional read replicas for the data scientists.",
+      "Change the setup from a Single-AZ to a Multi-AZ cluster deployment with two readable standby instances. Provide read endpoints to the data scientists."
+    ],
+    "explanation": "SAA-C03 practice scenario (extract question #536). Correct choice: A.",
+    "keywords": [
+      "aws-saa-c03",
+      "aws-database",
+      "databases",
+      "rds",
+      "postgresql"
+    ],
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "seedId": "a3195dde-e22d-4653-b376-cfa4e7c051b7"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "saa-c03",
+    "question": "A company runs a three-tier web application in the AWS Cloud that operates across three Availability Zones. The application architecture has an\nApplication Load Balancer, an Amazon EC2 web server that hosts user session states, and a MySQL database that runs on an EC2 instance. The\ncompany expects sudden increases in application traffic. The company wants to be able to scale to meet future application capacity demands and\nto ensure high availability across all three Availability Zones.\nWhich solution will meet these requirements?",
+    "correctAnswer": "Migrate the MySQL database to Amazon RDS for MySQL with a Multi-AZ DB cluster deployment. Use Amazon ElastiCache for Redis with high availability to store session data and to cache reads. Migrate the web server to an Auto Scaling group that is in three Availability Zones.",
+    "incorrectAnswers": [
+      "Migrate the MySQL database to Amazon RDS for MySQL with a Multi-AZ DB cluster deployment. Use Amazon ElastiCache for Memcached with high availability to store session data and to cache reads. Migrate the web server to an Auto Scaling group that is in three Availability Zones.",
+      "Migrate the MySQL database to Amazon DynamoDB Use DynamoDB Accelerator (DAX) to cache reads. Store the session data in DynamoDB. Migrate the web server to an Auto Scaling group that is in three Availability Zones.",
+      "Migrate the MySQL database to Amazon RDS for MySQL in a single Availability Zone. Use Amazon ElastiCache for Redis with high availability to store session data and to cache reads. Migrate the web server to an Auto Scaling group that is in three Availability Zones."
+    ],
+    "explanation": "SAA-C03 practice scenario (extract question #537). Correct choice: A.",
+    "keywords": [
+      "aws-saa-c03",
+      "aws-database",
+      "aws-compute",
+      "databases",
+      "rds",
+      "elasticache",
+      "ec2",
+      "auto-scaling",
+      "alb"
+    ],
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "seedId": "1b192283-bfee-464b-961d-fd3512591a58"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "saa-c03",
+    "question": "A global video streaming company uses Amazon CloudFront as a content distribution network (CDN). The company wants to roll out content in a\nphased manner across multiple countries. The company needs to ensure that viewers who are outside the countries to which the company rolls\nout content are not able to view the content.\nWhich solution will meet these requirements?",
+    "correctAnswer": "Add geographic restrictions to the content in CloudFront by using an allow list. Set up a custom error message.",
+    "incorrectAnswers": [
+      "Set up a new URL tor restricted content. Authorize access by using a signed URL and cookies. Set up a custom error message.",
+      "Encrypt the data for the content that the company distributes. Set up a custom error message.",
+      "Create a new URL for restricted content. Set up a time-restricted access policy for signed URLs."
+    ],
+    "explanation": "SAA-C03 practice scenario (extract question #538). Correct choice: A.",
+    "keywords": [
+      "aws-saa-c03",
+      "aws-networking",
+      "cloudfront"
+    ],
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "seedId": "0084ec55-3d8f-4b15-bae7-ede6b7ace266"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "saa-c03",
+    "question": "A company wants to use the AWS Cloud to improve its on-premises disaster recovery (DR) conguration. The company's core production business\napplication uses Microsoft SQL Server Standard, which runs on a virtual machine (VM). The application has a recovery point objective (RPO) of 30\nseconds or fewer and a recovery time objective (RTO) of 60 minutes. The DR solution needs to minimize costs wherever possible.\nWhich solution will meet these requirements?",
+    "correctAnswer": "Configure a multi-site active/active setup between the on-premises server and AWS by using Microsoft SQL Server Enterprise with Always On availability groups.",
+    "incorrectAnswers": [
+      "Configure a warm standby Amazon RDS for SQL Server database on AWS. Configure AWS Database Migration Service (AWS DMS) to use change data capture (CDC).",
+      "Use AWS Elastic Disaster Recovery congured to replicate disk changes to AWS as a pilot light.",
+      "Use third-party backup software to capture backups every night. Store a secondary set of backups in Amazon S3."
+    ],
+    "explanation": "SAA-C03 practice scenario (extract question #539). Correct choice: A.",
+    "keywords": [
+      "aws-saa-c03",
+      "aws-migration",
+      "aws-storage",
+      "databases",
+      "rds",
+      "s3",
+      "dms"
+    ],
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "seedId": "a2b64547-6018-4bcc-9460-2ce6bd275964"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "saa-c03",
+    "question": "A company has an on-premises server that uses an Oracle database to process and store customer information. The company wants to use an\nAWS database service to achieve higher availability and to improve application performance. The company also wants to ooad reporting from its\nprimary database system.\nWhich solution will meet these requirements in the MOST operationally efficient way?",
+    "correctAnswer": "Use AWS Database Migration Service (AWS DMS) to create an Amazon RDS DB instance in multiple AWS Regions. Point the reporting functions toward a separate DB instance from the primary DB instance.",
+    "incorrectAnswers": [
+      "Use Amazon RDS in a Single-AZ deployment to create an Oracle database. Create a read replica in the same zone as the primary DB instance. Direct the reporting functions to the read replica.",
+      "Use Amazon RDS deployed in a Multi-AZ cluster deployment to create an Oracle database. Direct the reporting functions to use the reader instance in the cluster deployment.",
+      "Use Amazon RDS deployed in a Multi-AZ instance deployment to create an Amazon Aurora database. Direct the reporting functions to the reader instances."
+    ],
+    "explanation": "SAA-C03 practice scenario (extract question #540). Correct choice: A.",
+    "keywords": [
+      "aws-saa-c03",
+      "aws-migration",
+      "aws-database",
+      "databases",
+      "rds",
+      "dms"
+    ],
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "seedId": "31047359-2b38-4d68-b780-d9ee56054789"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "saa-c03",
+    "question": "A media company uses an Amazon CloudFront distribution to deliver content over the internet. The company wants only premium customers to\nhave access to the media streams and le content. The company stores all content in an Amazon S3 bucket. The company also delivers content\non demand to customers for a specific purpose, such as movie rentals or music downloads.\nWhich solution will meet these requirements?",
+    "correctAnswer": "Generate and provide S3 signed cookies to premium customers.",
+    "incorrectAnswers": [
+      "Generate and provide CloudFront signed URLs to premium customers.",
+      "Use origin access control (OAC) to limit the access of non-premium customers.",
+      "Generate and activate eld-level encryption to block non-premium customers."
+    ],
+    "explanation": "SAA-C03 practice scenario (extract question #542). Correct choice: A.",
+    "keywords": [
+      "aws-saa-c03",
+      "aws-storage",
+      "aws-networking",
+      "s3",
+      "cloudfront"
+    ],
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "seedId": "0f3d13cd-654b-415f-8121-a6c286fbda92"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "saa-c03",
+    "question": "A retail company uses a regional Amazon API Gateway API for its public REST APIs. The API Gateway endpoint is a custom domain name that\npoints to an Amazon Route 53 alias record. A solutions architect needs to create a solution that has minimal effects on customers and minimal\ndata loss to release the new version of APIs.\nWhich solution will meet these requirements?",
+    "correctAnswer": "Create a canary release deployment stage for API Gateway. Deploy the latest API version. Point an appropriate percentage of traffic to the canary stage. After API verication, promote the canary stage to the production stage.",
+    "incorrectAnswers": [
+      "Create a new API Gateway endpoint with a new version of the API in OpenAPI YAML le format. Use the import-to-update operation in merge mode into the API in API Gateway. Deploy the new version of the API to the production stage.",
+      "Create a new API Gateway endpoint with a new version of the API in OpenAPI JSON le format. Use the import-to-update operation in overwrite mode into the API in API Gateway. Deploy the new version of the API to the production stage.",
+      "Create a new API Gateway endpoint with new versions of the API denitions. Create a custom domain name for the new API Gateway API. Point the Route 53 alias record to the new API Gateway API custom domain name."
+    ],
+    "explanation": "SAA-C03 practice scenario (extract question #544). Correct choice: A.",
+    "keywords": [
+      "aws-saa-c03",
+      "aws-networking",
+      "aws-integration",
+      "api-gateway",
+      "route53",
+      "vpc-endpoint"
+    ],
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "seedId": "b5c4fcd4-9ca8-47bb-bf3e-ea1269f7e7c8"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "saa-c03",
+    "question": "A company wants to direct its users to a backup static error page if the company's primary website is unavailable. The primary website's DNS\nrecords are hosted in Amazon Route 53. The domain is pointing to an Application Load Balancer (ALB). The company needs a solution that\nminimizes changes and infrastructure overhead.\nWhich solution will meet these requirements?",
+    "correctAnswer": "Update the Route 53 records to use a latency routing policy. Add a static error page that is hosted in an Amazon S3 bucket to the records so that the traffic is sent to the most responsive endpoints.",
+    "incorrectAnswers": [
+      "Set up a Route 53 active-passive failover conguration. Direct traffic to a static error page that is hosted in an Amazon S3 bucket when Route 53 health checks determine that the ALB endpoint is unhealthy.",
+      "Set up a Route 53 active-active conguration with the ALB and an Amazon EC2 instance that hosts a static error page as endpoints. Configure Route 53 to send requests to the instance only if the health checks fail for the ALB.",
+      "Update the Route 53 records to use a multivalue answer routing policy. Create a health check. Direct traffic to the website if the health check passes. Direct traffic to a static error page that is hosted in Amazon S3 if the health check does not pass."
+    ],
+    "explanation": "SAA-C03 practice scenario (extract question #545). Correct choice: A.",
+    "keywords": [
+      "aws-saa-c03",
+      "aws-networking",
+      "aws-storage",
+      "s3",
+      "route53",
+      "alb"
+    ],
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "seedId": "232b2d05-95a1-4b3e-97b7-91d606aef14e"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "saa-c03",
+    "question": "A recent analysis of a company's IT expenses highlights the need to reduce backup costs. The company's chief information ocer wants to\nsimplify the on-premises backup infrastructure and reduce costs by eliminating the use of physical backup tapes. The company must preserve the\nexisting investment in the on-premises backup applications and workflows.\nWhat should a solutions architect recommend?",
+    "correctAnswer": "Set up AWS Storage Gateway to connect with the backup applications using the NFS interface.",
+    "incorrectAnswers": [
+      "Set up an Amazon EFS le system that connects with the backup applications using the NFS interface.",
+      "Set up an Amazon EFS le system that connects with the backup applications using the iSCSI interface.",
+      "Set up AWS Storage Gateway to connect with the backup applications using the iSCSI-virtual tape library (VTL) interface."
+    ],
+    "explanation": "SAA-C03 practice scenario (extract question #546). Correct choice: A.",
+    "keywords": [
+      "aws-saa-c03",
+      "aws-storage",
+      "efs"
+    ],
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "seedId": "8670e23f-25f9-429e-ba37-f42acb1aa042"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "saa-c03",
+    "question": "A company has data collection sensors at different locations. The data collection sensors stream a high volume of data to the company. The\ncompany wants to design a platform on AWS to ingest and process high-volume streaming data. The solution must be scalable and support data\ncollection in near real time. The company must store the data in Amazon S3 for future reporting.\nWhich solution will meet these requirements with the LEAST operational overhead?",
+    "correctAnswer": "Use Amazon Kinesis Data Firehose (note: outdated; now Amazon Data Firehose) to deliver streaming data to Amazon S3.",
+    "incorrectAnswers": [
+      "Use AWS Glue to deliver streaming data to Amazon S3.",
+      "Use AWS Lambda to deliver streaming data and store the data to Amazon S3.",
+      "Use AWS Database Migration Service (AWS DMS) to deliver streaming data to Amazon S3."
+    ],
+    "explanation": "SAA-C03 practice scenario (extract question #547). Correct choice: A.",
+    "keywords": [
+      "aws-saa-c03",
+      "aws-analytics",
+      "aws-storage",
+      "s3",
+      "kinesis"
+    ],
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "seedId": "f15ba43d-6b68-4e13-8287-d0e83e6739fc"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "saa-c03",
+    "question": "A company has separate AWS accounts for its nance, data analytics, and development departments. Because of costs and security concerns,\nthe company wants to control which services each AWS account can use.\nWhich solution will meet these requirements with the LEAST operational overhead?",
+    "correctAnswer": "Use AWS Systems Manager templates to control which AWS services each department can use.",
+    "incorrectAnswers": [
+      "Create organization units (OUs) for each department in AWS Organizations. Attach service control policies (SCPs) to the OUs.",
+      "Use AWS CloudFormation to automatically provision only the AWS services that each department can use.",
+      "Set up a list of products in AWS Service Catalog in the AWS accounts to manage and control the usage of specific AWS services."
+    ],
+    "explanation": "SAA-C03 practice scenario (extract question #548). Correct choice: A.",
+    "keywords": [
+      "aws-saa-c03",
+      "aws-management",
+      "systems-manager"
+    ],
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "seedId": "d030af7e-da58-4854-b89c-ee6912f9165c"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "saa-c03",
+    "question": "A company has created a multi-tier application for its ecommerce website. The website uses an Application Load Balancer that resides in the\npublic subnets, a web tier in the public subnets, and a MySQL cluster hosted on Amazon EC2 instances in the private subnets. The MySQL\ndatabase needs to retrieve product catalog and pricing information that is hosted on the internet by a third-party provider. A solutions architect\nmust devise a strategy that maximizes security without increasing operational overhead.\nWhat should the solutions architect do to meet these requirements?",
+    "correctAnswer": "Deploy a NAT instance in the VPC. Route all the internet-based traffic through the NAT instance.",
+    "incorrectAnswers": [
+      "Deploy a NAT gateway in the public subnets. Modify the private subnet route table to direct all internet-bound traffic to the NAT gateway.",
+      "Configure an internet gateway and attach it to the VPModify the private subnet route table to direct internet-bound traffic to the internet gateway.",
+      "Configure a virtual private gateway and attach it to the VPC. Modify the private subnet route table to direct internet-bound traffic to the virtual private gateway."
+    ],
+    "explanation": "SAA-C03 practice scenario (extract question #549). Correct choice: A.",
+    "keywords": [
+      "aws-saa-c03",
+      "aws-networking",
+      "aws-compute",
+      "databases",
+      "ec2",
+      "vpc",
+      "alb",
+      "mysql"
+    ],
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "seedId": "7ac9fed6-73bd-48e3-bdd7-c8a96934777e"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "saa-c03",
+    "question": "A company has a nancial application that produces reports. The reports average 50 KB in size and are stored in Amazon S3. The reports are\nfrequently accessed during the rst week after production and must be stored for several years. The reports must be retrievable within 6 hours.\nWhich solution meets these requirements MOST cost-effectively?",
+    "correctAnswer": "Use S3 Standard. Use an S3 Lifecycle rule to transition the reports to S3 Glacier after 7 days.",
+    "incorrectAnswers": [
+      "Use S3 Standard. Use an S3 Lifecycle rule to transition the reports to S3 Standard-Infrequent Access (S3 Standard-IA) after 7 days.",
+      "Use S3 Intelligent-Tiering. Configure S3 Intelligent-Tiering to transition the reports to S3 Standard-Infrequent Access (S3 Standard-IA) and S3 Glacier.",
+      "Use S3 Standard. Use an S3 Lifecycle rule to transition the reports to S3 Glacier Deep Archive after 7 days."
+    ],
+    "explanation": "SAA-C03 practice scenario (extract question #551). Correct choice: A.",
+    "keywords": [
+      "aws-saa-c03",
+      "aws-storage",
+      "s3",
+      "glacier"
+    ],
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "seedId": "1e980945-09f3-4dc3-986e-eb432eecc1f3"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "saa-c03",
+    "question": "A company needs to optimize the cost of its Amazon EC2 instances. The company also needs to change the type and family of its EC2 instances\nevery 2-3 months.\nWhat should the company do to meet these requirements?",
+    "correctAnswer": "Purchase Partial Upfront Reserved Instances for a 3-year term.",
+    "incorrectAnswers": [
+      "Purchase a No Upfront Compute Savings Plan for a 1-year term.",
+      "Purchase All Upfront Reserved Instances for a 1-year term.",
+      "Purchase an All Upfront EC2 Instance Savings Plan for a 1-year term."
+    ],
+    "explanation": "SAA-C03 practice scenario (extract question #552). Correct choice: A.",
+    "keywords": [
+      "aws-saa-c03",
+      "aws-compute",
+      "ec2"
+    ],
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "seedId": "ceec5f05-6b8c-444f-b90c-feb8c3c0822f"
+  }
+]

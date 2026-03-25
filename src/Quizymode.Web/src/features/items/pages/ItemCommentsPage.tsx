@@ -29,9 +29,14 @@ const ItemCommentsPage = () => {
     ? parseInt(currentIndexParam, 10)
     : null;
   const itemIds = itemIdsParam ? itemIdsParam.split(",") : [];
+  const returnUrl = searchParams.get("return");
   const hasNavigation = mode && currentIndex !== null && itemIds.length > 0;
 
   const handleNavigateBack = () => {
+    if (returnUrl) {
+      navigate(returnUrl);
+      return;
+    }
     if (hasNavigation && mode && currentIndex !== null && itemId) {
       // Navigate back to the item in the list context
       // If we have category/collection, navigate with itemId (will load full list)

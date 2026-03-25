@@ -1,0 +1,202 @@
+[
+  {
+    "category": "sports",
+    "navigationKeyword1": "soccer",
+    "navigationKeyword2": "positions",
+    "question": "Which position is the only one allowed to handle the ball in open play inside the penalty area?",
+    "correctAnswer": "Goalkeeper",
+    "incorrectAnswers": [
+      "Center-back",
+      "Striker",
+      "Winger"
+    ],
+    "explanation": "The goalkeeper has the special handling privilege inside the team's own penalty area.",
+    "keywords": [
+      "soccer",
+      "positions",
+      "goalkeeper"
+    ],
+    "source": "https://www.theifab.com/laws/latest/",
+    "seedId": "a2f0fe83-2907-458b-a6d8-1584264a79f1"
+  },
+  {
+    "category": "sports",
+    "navigationKeyword1": "soccer",
+    "navigationKeyword2": "positions",
+    "question": "Which position usually leads the line and tries to score most directly?",
+    "correctAnswer": "Striker",
+    "incorrectAnswers": [
+      "Full-back",
+      "Sweeper",
+      "Holding midfielder"
+    ],
+    "explanation": "A striker is the primary central attacker.",
+    "keywords": [
+      "soccer",
+      "positions",
+      "striker"
+    ],
+    "source": "https://www.britannica.com/sports/football-soccer",
+    "seedId": "617e9b7f-890c-417d-8d79-6ee73ce619bf"
+  },
+  {
+    "category": "sports",
+    "navigationKeyword1": "soccer",
+    "navigationKeyword2": "positions",
+    "question": "Which defender usually plays near the middle of the back line?",
+    "correctAnswer": "Center-back",
+    "incorrectAnswers": [
+      "Winger",
+      "Attacking midfielder",
+      "Goalkeeper"
+    ],
+    "explanation": "Center-backs anchor the central defense.",
+    "keywords": [
+      "soccer",
+      "positions",
+      "center-back"
+    ],
+    "source": "https://www.britannica.com/sports/football-soccer",
+    "seedId": "d0018a73-e5d3-4721-9810-9132ddb66508"
+  },
+  {
+    "category": "sports",
+    "navigationKeyword1": "soccer",
+    "navigationKeyword2": "positions",
+    "question": "Which wide defender often supports both defense and attack along a flank?",
+    "correctAnswer": "Full-back",
+    "incorrectAnswers": [
+      "Sweeper",
+      "Target forward",
+      "Goalkeeper"
+    ],
+    "explanation": "Full-backs work along the left or right side of defense.",
+    "keywords": [
+      "soccer",
+      "positions",
+      "full-back"
+    ],
+    "source": "https://www.britannica.com/sports/football-soccer",
+    "seedId": "1d0be495-d057-4348-a352-b3273d03a57a"
+  },
+  {
+    "category": "sports",
+    "navigationKeyword1": "soccer",
+    "navigationKeyword2": "positions",
+    "question": "Which position often links defense and attack from the center of midfield?",
+    "correctAnswer": "Central midfielder",
+    "incorrectAnswers": [
+      "Goalkeeper",
+      "Center-back",
+      "Striker"
+    ],
+    "explanation": "Central midfielders connect the team's phases of play.",
+    "keywords": [
+      "soccer",
+      "positions",
+      "midfield"
+    ],
+    "source": "https://www.britannica.com/sports/football-soccer",
+    "seedId": "2377a000-78a7-4875-bcef-d310fc7b18b8"
+  },
+  {
+    "category": "sports",
+    "navigationKeyword1": "soccer",
+    "navigationKeyword2": "positions",
+    "question": "Which attacking role commonly starts wide and tries to beat defenders near the sideline?",
+    "correctAnswer": "Winger",
+    "incorrectAnswers": [
+      "Center-back",
+      "Goalkeeper",
+      "Sweeper"
+    ],
+    "explanation": "Wingers usually attack from wide areas.",
+    "keywords": [
+      "soccer",
+      "positions",
+      "winger"
+    ],
+    "source": "https://www.britannica.com/sports/football-soccer",
+    "seedId": "7c951e15-cd73-4344-a359-a517f1d258ae"
+  },
+  {
+    "category": "sports",
+    "navigationKeyword1": "soccer",
+    "navigationKeyword2": "positions",
+    "question": "Which midfield role usually sits deeper to shield the defense?",
+    "correctAnswer": "Defensive midfielder",
+    "incorrectAnswers": [
+      "Second striker",
+      "Winger",
+      "Goalkeeper"
+    ],
+    "explanation": "A defensive midfielder helps break up attacks in front of the back line.",
+    "keywords": [
+      "soccer",
+      "positions",
+      "defensive-midfielder"
+    ],
+    "source": "https://www.britannica.com/sports/football-soccer",
+    "seedId": "0c9c74c8-4368-487d-9084-aa04d83873a0"
+  },
+  {
+    "category": "sports",
+    "navigationKeyword1": "soccer",
+    "navigationKeyword2": "positions",
+    "question": "Which player often operates behind the striker to create chances?",
+    "correctAnswer": "Attacking midfielder",
+    "incorrectAnswers": [
+      "Center-back",
+      "Goalkeeper",
+      "Left-back"
+    ],
+    "explanation": "Attacking midfielders usually supply passes and shots in advanced central areas.",
+    "keywords": [
+      "soccer",
+      "positions",
+      "attacking-midfielder"
+    ],
+    "source": "https://www.britannica.com/sports/football-soccer",
+    "seedId": "f62c2b58-ba33-4f50-8416-f6b0d58bcfdf"
+  },
+  {
+    "category": "sports",
+    "navigationKeyword1": "soccer",
+    "navigationKeyword2": "positions",
+    "question": "Which position can describe a defender with freedom to cover behind other backs?",
+    "correctAnswer": "Sweeper",
+    "incorrectAnswers": [
+      "Target striker",
+      "Goalkeeper",
+      "Winger"
+    ],
+    "explanation": "The sweeper is a deeper covering defender in some systems.",
+    "keywords": [
+      "soccer",
+      "positions",
+      "sweeper"
+    ],
+    "source": "https://www.britannica.com/sports/football-soccer",
+    "seedId": "a7ed814a-7179-4635-9bd3-06c78fe9b408"
+  },
+  {
+    "category": "sports",
+    "navigationKeyword1": "soccer",
+    "navigationKeyword2": "positions",
+    "question": "What is a wing-back best described as?",
+    "correctAnswer": "A wide player with both full-back and attacking duties",
+    "incorrectAnswers": [
+      "A central striker only",
+      "A goalkeeper's backup only",
+      "A referee position"
+    ],
+    "explanation": "Wing-backs combine flank defending with forward support.",
+    "keywords": [
+      "soccer",
+      "positions",
+      "wing-back"
+    ],
+    "source": "https://www.britannica.com/sports/football-soccer",
+    "seedId": "f30f2edd-1576-4c27-96f4-2800f9da4abd"
+  }
+]

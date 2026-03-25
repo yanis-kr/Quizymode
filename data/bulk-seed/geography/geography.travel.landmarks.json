@@ -1,0 +1,222 @@
+[
+  {
+    "category": "geography",
+    "navigationKeyword1": "travel",
+    "navigationKeyword2": "landmarks",
+    "question": "The Taj Mahal in Agra is described as an immense mausoleum built mainly of what material?",
+    "correctAnswer": "White marble",
+    "incorrectAnswers": [
+      "Red sandstone only",
+      "Reinforced concrete only",
+      "Timber shingles only"
+    ],
+    "explanation": "UNESCO describes the Taj Mahal as an immense white-marble mausoleum commissioned by Mughal emperor Shah Jahan.",
+    "keywords": [
+      "landmarks",
+      "taj-mahal",
+      "india"
+    ],
+    "source": "https://whc.unesco.org/en/list/252",
+    "seedId": "30a6f6b9-1c6e-4060-b7e0-67001e7300d7"
+  },
+  {
+    "category": "geography",
+    "navigationKeyword1": "travel",
+    "navigationKeyword2": "landmarks",
+    "question": "Construction of the Taj Mahal’s main mausoleum spanned roughly which years?",
+    "correctAnswer": "1632 to 1648 CE (with later additions to 1653)",
+    "incorrectAnswers": [
+      "1799 to 1815 only",
+      "1066 to 1087",
+      "1889 to 1900 only"
+    ],
+    "explanation": "UNESCO notes construction from 1632–1648 CE, with mosque, guest house, and gateway works continuing to about 1653.",
+    "keywords": [
+      "landmarks",
+      "taj-mahal",
+      "history"
+    ],
+    "source": "https://whc.unesco.org/en/list/252",
+    "seedId": "a03146f2-acc9-4122-b130-920fa522c977"
+  },
+  {
+    "category": "geography",
+    "navigationKeyword1": "travel",
+    "navigationKeyword2": "landmarks",
+    "question": "The Taj Mahal stands on which river’s right bank?",
+    "correctAnswer": "The Yamuna River",
+    "incorrectAnswers": [
+      "The Amazon River",
+      "The Rhine",
+      "The Mississippi"
+    ],
+    "explanation": "UNESCO places the Taj Mahal on the Yamuna’s right bank within a large Mughal garden in Agra District.",
+    "keywords": [
+      "landmarks",
+      "yamuna",
+      "agra"
+    ],
+    "source": "https://whc.unesco.org/en/list/252",
+    "seedId": "46c00b74-2402-413d-bba3-0d432f0c3eab"
+  },
+  {
+    "category": "geography",
+    "navigationKeyword1": "travel",
+    "navigationKeyword2": "landmarks",
+    "question": "The Eiffel Tower in Paris was built for which 1889 event?",
+    "correctAnswer": "The Exposition Universelle (world’s fair) celebrating the French Revolution’s centennial",
+    "incorrectAnswers": [
+      "The 1900 Antarctic expedition launch",
+      "Napoleon’s 1799 coronation only",
+      "The 1944 liberation parade planning"
+    ],
+    "explanation": "Britannica ties the Eiffel Tower to the 1889 Paris world’s fair marking the centennial of the French Revolution.",
+    "keywords": [
+      "landmarks",
+      "eiffel-tower",
+      "paris"
+    ],
+    "source": "https://www.britannica.com/topic/Eiffel-Tower-Paris-France",
+    "seedId": "62ba36cf-2c1c-4c0a-944f-2516517dffa1"
+  },
+  {
+    "category": "geography",
+    "navigationKeyword1": "travel",
+    "navigationKeyword2": "landmarks",
+    "question": "When the Eiffel Tower opened in 1889, about how tall was it—including its flag—making it the tallest structure in the world at the time?",
+    "correctAnswer": "About 312 meters (roughly 1,024 feet)",
+    "incorrectAnswers": [
+      "About 50 meters—shorter than a soccer pitch",
+      "About 150 meters—half its real height",
+      "About 600 meters—twice as tall as today"
+    ],
+    "explanation": "Britannica records the tower stood about 300 m to the top of the flagpole at opening (later retrofits and antennas changed the exact height over time).",
+    "keywords": [
+      "landmarks",
+      "eiffel-tower",
+      "engineering"
+    ],
+    "source": "https://www.britannica.com/topic/Eiffel-Tower-Paris-France",
+    "seedId": "b4fd9e2b-a769-4b4a-b3e7-7e3108f7948c"
+  },
+  {
+    "category": "geography",
+    "navigationKeyword1": "travel",
+    "navigationKeyword2": "landmarks",
+    "question": "The ancient city of Petra in Jordan is famous for monuments carved mainly from what rock?",
+    "correctAnswer": "Sandstone",
+    "incorrectAnswers": [
+      "Granite only",
+      "Volcanic basalt columns only",
+      "Glacial ice"
+    ],
+    "explanation": "Britannica describes Petra’s rose-red sandstone cliffs hollowed into tombs and temples along the Siq gorge.",
+    "keywords": [
+      "landmarks",
+      "petra",
+      "jordan"
+    ],
+    "source": "https://www.britannica.com/place/Petra-ancient-city-Jordan",
+    "seedId": "a53ccce5-1696-4a99-901d-94d9a393c292"
+  },
+  {
+    "category": "geography",
+    "navigationKeyword1": "travel",
+    "navigationKeyword2": "landmarks",
+    "question": "Petra was the capital of which ancient Arab kingdom?",
+    "correctAnswer": "Nabataea",
+    "incorrectAnswers": [
+      "Phoenicia",
+      "Aksum",
+      "Khmer"
+    ],
+    "explanation": "Britannica identifies Petra as chief city of the Nabataean kingdom, a trading hub controlling incense routes.",
+    "keywords": [
+      "landmarks",
+      "petra",
+      "nabataean"
+    ],
+    "source": "https://www.britannica.com/place/Petra-ancient-city-Jordan",
+    "seedId": "6867bdb2-8378-407d-b95f-01558356d318"
+  },
+  {
+    "category": "geography",
+    "navigationKeyword1": "travel",
+    "navigationKeyword2": "landmarks",
+    "question": "The Statue of Liberty stands on which island in New York Harbor?",
+    "correctAnswer": "Liberty Island",
+    "incorrectAnswers": [
+      "Manhattan Island",
+      "Long Island",
+      "Ellis Island only"
+    ],
+    "explanation": "Britannica places the Statue of Liberty on Liberty Island in Upper New York Bay.",
+    "keywords": [
+      "landmarks",
+      "statue-of-liberty",
+      "new-york"
+    ],
+    "source": "https://www.britannica.com/topic/Statue-of-Liberty",
+    "seedId": "b627e959-fd90-464b-b65f-fd1557989d5a"
+  },
+  {
+    "category": "geography",
+    "navigationKeyword1": "travel",
+    "navigationKeyword2": "landmarks",
+    "question": "Which French sculptor designed the Statue of Liberty’s copper skin and overall form?",
+    "correctAnswer": "Frédéric Auguste Bartholdi",
+    "incorrectAnswers": [
+      "Gustave Eiffel",
+      "Auguste Rodin",
+      "Claude Monet"
+    ],
+    "explanation": "Britannica credits Bartholdi with the statue’s design; Gustave Eiffel engineered its internal iron framework.",
+    "keywords": [
+      "landmarks",
+      "statue-of-liberty",
+      "france"
+    ],
+    "source": "https://www.britannica.com/topic/Statue-of-Liberty",
+    "seedId": "1b0af394-a0dc-467b-a7cd-b1ff778424a5"
+  },
+  {
+    "category": "geography",
+    "navigationKeyword1": "travel",
+    "navigationKeyword2": "landmarks",
+    "question": "The Great Pyramid of Giza is the only ancient wonder that is what today?",
+    "correctAnswer": "Substantially still in existence",
+    "incorrectAnswers": [
+      "Completely underwater",
+      "Known only from satellite radar with no ruins",
+      "Rebuilt entirely of glass"
+    ],
+    "explanation": "Britannica’s Seven Wonders list calls the Pyramids of Giza the only ancient wonder largely surviving today.",
+    "keywords": [
+      "landmarks",
+      "giza",
+      "egypt"
+    ],
+    "source": "https://www.britannica.com/topic/Seven-Wonders-of-the-World",
+    "seedId": "aa6793e9-3697-4c31-a803-1c608979e7ba"
+  },
+  {
+    "category": "geography",
+    "navigationKeyword1": "travel",
+    "navigationKeyword2": "landmarks",
+    "question": "The Sydney Opera House’s sail-like shells overlook which harbor?",
+    "correctAnswer": "Sydney Harbour",
+    "incorrectAnswers": [
+      "San Francisco Bay",
+      "Rio de Janeiro’s Guanabara Bay",
+      "Oslofjord"
+    ],
+    "explanation": "Britannica situates the Sydney Opera House on Bennelong Point projecting into Sydney Harbour.",
+    "keywords": [
+      "landmarks",
+      "sydney-opera-house",
+      "australia"
+    ],
+    "source": "https://www.britannica.com/topic/Sydney-Opera-House",
+    "seedId": "3b6c0d63-ac88-4887-977a-a238a77e9667"
+  }
+]

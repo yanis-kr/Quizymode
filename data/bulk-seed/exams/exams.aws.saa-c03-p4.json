@@ -1,0 +1,439 @@
+[
+  {
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "saa-c03",
+    "question": "A company runs a highly available image-processing application on Amazon EC2 instances in a single VPC. The EC2 instances run inside several\nsubnets across multiple Availability Zones. The EC2 instances do not communicate with each other. However, the EC2 instances download images\nfrom Amazon S3 and upload images to Amazon S3 through a single NAT gateway. The company is concerned about data transfer charges.\nWhat is the MOST cost-effective way for the company to avoid Regional data transfer charges?",
+    "correctAnswer": "Provision an EC2 Dedicated Host to run the EC2 instances.",
+    "incorrectAnswers": [
+      "Launch the NAT gateway in each Availability Zone.",
+      "Replace the NAT gateway with a NAT instance.",
+      "Deploy a gateway VPC endpoint for Amazon S3."
+    ],
+    "explanation": "SAA-C03 practice scenario (extract question #42). Correct choice: D.",
+    "keywords": [
+      "aws-saa-c03",
+      "aws-networking",
+      "aws-storage",
+      "s3",
+      "ec2",
+      "vpc",
+      "nat-gateway"
+    ],
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "seedId": "e771aed1-0561-4f97-afa9-a05f82ab8d3c"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "saa-c03",
+    "question": "A company has an on-premises application that generates a large amount of time-sensitive data that is backed up to Amazon S3. The application\nhas grown and there are user complaints about internet bandwidth limitations. A solutions architect needs to design a long-term solution that\nallows for both timely backups to Amazon S3 and with minimal impact on internet connectivity for internal users.\nWhich solution meets these requirements?",
+    "correctAnswer": "Submit a support ticket through the AWS Management Console. Request the removal of S3 service limits from the account.",
+    "incorrectAnswers": [
+      "Establish AWS VPN connections and proxy all traffic through a VPC gateway endpoint.",
+      "Establish a new AWS Direct Connect connection and direct backup traffic through this new connection.",
+      "Order daily AWS Snowball devices. Load the data onto the Snowball devices and return the devices to AWS each day."
+    ],
+    "explanation": "SAA-C03 practice scenario (extract question #43). Correct choice: D.",
+    "keywords": [
+      "aws-saa-c03",
+      "aws-storage",
+      "s3"
+    ],
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "seedId": "9a9c5a43-4d37-4236-b7c6-497ff583f8ab"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "saa-c03",
+    "question": "A company has an application that provides marketing services to stores. The services are based on previous purchases by store customers. The\nstores upload transaction data to the company through SFTP, and the data is processed and analyzed to generate new marketing offers. Some of\nthe les can exceed 200 GB in size.\nRecently, the company discovered that some of the stores have uploaded les that contain personally identiable information (PII) that should not\nhave been included. The company wants administrators to be alerted if PII is shared again. The company also wants to automate remediation.\nWhat should a solutions architect do to meet these requirements with the LEAST development effort?",
+    "correctAnswer": "Use an Amazon S3 bucket as a secure transfer point. Use Amazon Inspector to scan the objects in the bucket. If objects contain PII, trigger an S3 Lifecycle policy to remove the objects that contain PII.",
+    "incorrectAnswers": [
+      "Use an Amazon S3 bucket as a secure transfer point. Use Amazon Macie to scan the objects in the bucket. If objects contain PII, use Amazon Simple Notification Service (Amazon SNS) to trigger a notication to the administrators to remove the objects that contain PII.",
+      "Implement custom scanning algorithms in an AWS Lambda function. Trigger the function when objects are loaded into the bucket. If objects contain PII, use Amazon Simple Notification Service (Amazon SNS) to trigger a notication to the administrators to remove the objects that contain PII.",
+      "Implement custom scanning algorithms in an AWS Lambda function. Trigger the function when objects are loaded into the bucket. If objects contain PII, use Amazon Simple Email Service (Amazon SES) to trigger a notication to the administrators and trigger an S3 Lifecycle policy to remove the objects that contain PII."
+    ],
+    "explanation": "SAA-C03 practice scenario (extract question #46). Correct choice: A.",
+    "keywords": [
+      "aws-saa-c03",
+      "aws-storage",
+      "aws-security",
+      "s3"
+    ],
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "seedId": "193a5580-729d-4569-bb78-516b0f5aae8c"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "saa-c03",
+    "question": "A company needs guaranteed Amazon EC2 capacity in three specific Availability Zones in a specific AWS Region for an upcoming event that will\nlast 1 week.\nWhat should the company do to guarantee the EC2 capacity?",
+    "correctAnswer": "Purchase Reserved Instances that specify the Region needed.",
+    "incorrectAnswers": [
+      "Create an On-Demand Capacity Reservation that species the Region needed.",
+      "Purchase Reserved Instances that specify the Region and three Availability Zones needed.",
+      "Create an On-Demand Capacity Reservation that species the Region and three Availability Zones needed."
+    ],
+    "explanation": "SAA-C03 practice scenario (extract question #47). Correct choice: A.",
+    "keywords": [
+      "aws-saa-c03",
+      "aws-compute",
+      "ec2"
+    ],
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "seedId": "15c6b35b-a994-4db8-b207-c70d8d76dcde"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "saa-c03",
+    "question": "A company's website uses an Amazon EC2 instance store for its catalog of items. The company wants to make sure that the catalog is highly\navailable and that the catalog is stored in a durable location.\nWhat should a solutions architect do to meet these requirements?",
+    "correctAnswer": "Move the catalog to Amazon ElastiCache for Redis.",
+    "incorrectAnswers": [
+      "Deploy a larger EC2 instance with a larger instance store.",
+      "Move the catalog from the instance store to Amazon S3 Glacier Deep Archive.",
+      "Move the catalog to an Amazon Elastic File System (Amazon EFS) le system."
+    ],
+    "explanation": "SAA-C03 practice scenario (extract question #48). Correct choice: A.",
+    "keywords": [
+      "aws-saa-c03",
+      "aws-database",
+      "aws-compute",
+      "databases",
+      "elasticache",
+      "ec2"
+    ],
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "seedId": "a33b1193-a101-4d2b-91f6-6b6d99ff82fc"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "saa-c03",
+    "question": "A company stores call transcript les on a monthly basis. Users access the les randomly within 1 year of the call, but users access the les\ninfrequently after 1 year. The company wants to optimize its solution by giving users the ability to query and retrieve les that are less than 1-year-\nold as quickly as possible. A delay in retrieving older les is acceptable.\nWhich solution will meet these requirements MOST cost-effectively?",
+    "correctAnswer": "Store individual les with tags in Amazon S3 Glacier Instant Retrieval. Query the tags to retrieve the les from S3 Glacier Instant Retrieval.",
+    "incorrectAnswers": [
+      "Store individual les in Amazon S3 Intelligent-Tiering. Use S3 Lifecycle policies to move the les to S3 Glacier Flexible Retrieval after 1 year. Query and retrieve the les that are in Amazon S3 by using Amazon Athena. Query and retrieve the les that are in S3 Glacier by using S3 Glacier Select.",
+      "Store individual les with tags in Amazon S3 Standard storage. Store search metadata for each archive in Amazon S3 Standard storage. Use S3 Lifecycle policies to move the les to S3 Glacier Instant Retrieval after 1 year. Query and retrieve the les by searching for metadata from Amazon S3.",
+      "Store individual les in Amazon S3 Standard storage. Use S3 Lifecycle policies to move the les to S3 Glacier Deep Archive after 1 year. Store search metadata in Amazon RDS. Query the les from Amazon RDS. Retrieve the les from S3 Glacier Deep Archive."
+    ],
+    "explanation": "SAA-C03 practice scenario (extract question #49). Correct choice: A.",
+    "keywords": [
+      "aws-saa-c03",
+      "aws-storage",
+      "s3",
+      "glacier"
+    ],
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "seedId": "2c6234db-067b-47fa-9452-03d788f07ccc"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "saa-c03",
+    "question": "A company has a production workload that runs on 1,000 Amazon EC2 Linux instances. The workload is powered by third-party software. The\ncompany needs to patch the third-party software on all EC2 instances as quickly as possible to remediate a critical security vulnerability.\nWhat should a solutions architect do to meet these requirements?",
+    "correctAnswer": "Create an AWS Lambda function to apply the patch to all EC2 instances.",
+    "incorrectAnswers": [
+      "Configure AWS Systems Manager Patch Manager to apply the patch to all EC2 instances.",
+      "Schedule an AWS Systems Manager maintenance window to apply the patch to all EC2 instances.",
+      "Use AWS Systems Manager Run Command to run a custom command that applies the patch to all EC2 instances."
+    ],
+    "explanation": "SAA-C03 practice scenario (extract question #50). Correct choice: A.",
+    "keywords": [
+      "aws-saa-c03",
+      "aws-compute",
+      "lambda",
+      "ec2"
+    ],
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "seedId": "8f0f1f9c-93ce-4f1f-821f-1a00045ef0cf"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "saa-c03",
+    "question": "A company wants to migrate its on-premises application to AWS. The application produces output les that vary in size from tens of gigabytes to\nhundreds of terabytes. The application data must be stored in a standard le system structure. The company wants a solution that scales\nautomatically. is highly available, and requires minimum operational overhead.\nWhich solution will meet these requirements?",
+    "correctAnswer": "Migrate the application to run as containers on Amazon Elastic Container Service (Amazon ECS). Use Amazon S3 for storage.",
+    "incorrectAnswers": [
+      "Migrate the application to run as containers on Amazon Elastic Kubernetes Service (Amazon EKS). Use Amazon Elastic Block Store (Amazon EBS) for storage.",
+      "Migrate the application to Amazon EC2 instances in a Multi-AZ Auto Scaling group. Use Amazon Elastic File System (Amazon EFS) for storage.",
+      "Migrate the application to Amazon EC2 instances in a Multi-AZ Auto Scaling group. Use Amazon Elastic Block Store (Amazon EBS) for storage."
+    ],
+    "explanation": "SAA-C03 practice scenario (extract question #52). Correct choice: A.",
+    "keywords": [
+      "aws-saa-c03",
+      "aws-storage",
+      "aws-compute",
+      "s3",
+      "ecs"
+    ],
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "seedId": "a7e41b99-fcae-4c53-b02d-e811f51e0d14"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "saa-c03",
+    "question": "A company needs to store its accounting records in Amazon S3. The records must be immediately accessible for 1 year and then must be\narchived for an additional 9 years. No one at the company, including administrative users and root users, can be able to delete the records during\nthe entire 10-year period. The records must be stored with maximum resiliency.\nWhich solution will meet these requirements?",
+    "correctAnswer": "Store the records in S3 Glacier for the entire 10-year period. Use an access control policy to deny deletion of the records for a period of 10 years.",
+    "incorrectAnswers": [
+      "Store the records by using S3 Intelligent-Tiering. Use an IAM policy to deny deletion of the records. After 10 years, change the IAM policy to allow deletion.",
+      "Use an S3 Lifecycle policy to transition the records from S3 Standard to S3 Glacier Deep Archive after 1 year. Use S3 Object Lock in compliance mode for a period of 10 years.",
+      "Use an S3 Lifecycle policy to transition the records from S3 Standard to S3 One Zone-Infrequent Access (S3 One Zone-IA) after 1 year. Use S3 Object Lock in governance mode for a period of 10 years."
+    ],
+    "explanation": "SAA-C03 practice scenario (extract question #53). Correct choice: A.",
+    "keywords": [
+      "aws-saa-c03",
+      "aws-storage",
+      "s3",
+      "glacier"
+    ],
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "seedId": "7895598a-5ad5-47b3-ad13-5b1d13323940"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "saa-c03",
+    "question": "A company runs multiple Windows workloads on AWS. The company's employees use Windows fifile shares that are hosted on two Amazon EC2\ninstances. The fifile shares synchronize data between themselves and maintain duplicate copies. The company wants a highly available and\ndurable storage solution that preserves how users currently access the les.\nWhat should a solutions architect do to meet these requirements?",
+    "correctAnswer": "Migrate all the data to Amazon S3. Set up IAM authentication for users to access les.",
+    "incorrectAnswers": [
+      "Set up an Amazon S3 File Gateway. Mount the S3 File Gateway on the existing EC2 instances.",
+      "Extend the fifile share environment to Amazon FSx for Windows File Server with a Multi-AZ conguration. Migrate all the data to FSx for Windows File Server.",
+      "Extend the fifile share environment to Amazon Elastic File System (Amazon EFS) with a Multi-AZ conguration. Migrate all the data to Amazon EFS."
+    ],
+    "explanation": "SAA-C03 practice scenario (extract question #54). Correct choice: A.",
+    "keywords": [
+      "aws-saa-c03",
+      "aws-storage",
+      "aws-compute",
+      "s3",
+      "ec2",
+      "iam"
+    ],
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "seedId": "880fd3ac-429c-4ed8-9ecd-eb47be0133ac"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "saa-c03",
+    "question": "A solutions architect is developing a VPC architecture that includes multiple subnets. The architecture will host applications that use Amazon EC2\ninstances and Amazon RDS DB instances. The architecture consists of six subnets in two Availability Zones. Each Availability Zone includes a\npublic subnet, a private subnet, and a dedicated subnet for databases. Only EC2 instances that run in the private subnets can have access to the\nRDS databases.\nWhich solution will meet these requirements?",
+    "correctAnswer": "Create a new route table that excludes the route to the public subnets' CIDR blocks. Associate the route table with the database subnets.",
+    "incorrectAnswers": [
+      "Create a security group that denies inbound traffic from the security group that is assigned to instances in the public subnets. Attach the security group to the DB instances.",
+      "Create a security group that allows inbound traffic from the security group that is assigned to instances in the private subnets. Attach the security group to the DB instances.",
+      "Create a new peering connection between the public subnets and the private subnets. Create a different peering connection between the private subnets and the database subnets."
+    ],
+    "explanation": "SAA-C03 practice scenario (extract question #55). Correct choice: A.",
+    "keywords": [
+      "aws-saa-c03",
+      "aws-networking",
+      "aws-database",
+      "databases",
+      "rds",
+      "ec2",
+      "vpc"
+    ],
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "seedId": "c2d2c950-1f57-4f5a-84c5-fccad3575013"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "saa-c03",
+    "question": "A company has registered its domain name with Amazon Route 53. The company uses Amazon API Gateway in the ca-central-1 Region as a public\ninterface for its backend microservice APIs. Third-party services consume the APIs securely. The company wants to design its API Gateway URL\nwith the company's domain name and corresponding certicate so that the third-party services can use HTTPS.\nWhich solution will meet these requirements?",
+    "correctAnswer": "Create a Regional API Gateway endpoint. Associate the API Gateway endpoint with the company's domain name. Import the public certicate associated with the company's domain name into AWS Certicate Manager (ACM) in the us-east-1 Region. Attach the certicate to the API Gateway APIs. Create Route 53 DNS records with the company's domain name. Point an A record to the company's domain name.",
+    "incorrectAnswers": [
+      "Create stage variables in API Gateway with Name=\"Endpoint-URL\" and Value=\"Company Domain Name\" to overwrite the default URL. Import the public certicate associated with the company's domain name into AWS Certicate Manager (ACM).",
+      "Create Route 53 DNS records with the company's domain name. Point the alias record to the Regional API Gateway stage endpoint. Import the public certicate associated with the company's domain name into AWS Certicate Manager (ACM) in the us-east-1 Region.",
+      "Create a Regional API Gateway endpoint. Associate the API Gateway endpoint with the company's domain name. Import the public certicate associated with the company's domain name into AWS Certicate Manager (ACM) in the same Region. Attach the certicate to the API Gateway endpoint. Configure Route 53 to route traffic to the API Gateway endpoint."
+    ],
+    "explanation": "SAA-C03 practice scenario (extract question #56). Correct choice: D.",
+    "keywords": [
+      "aws-saa-c03",
+      "aws-networking",
+      "aws-security",
+      "api-gateway",
+      "route53",
+      "vpc-endpoint"
+    ],
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "seedId": "d3313d3a-6cbc-4b52-9fdd-d7ad3b2a8fc8"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "saa-c03",
+    "question": "A company is running a popular social media website. The website gives users the ability to upload images to share with other users. The\ncompany wants to make sure that the images do not contain inappropriate content. The company needs a solution that minimizes development\neffort.\nWhat should a solutions architect do to meet these requirements?",
+    "correctAnswer": "Use AWS Fargate to deploy a custom machine learning model to detect inappropriate content. Use ground truth to label low-confidence predictions.",
+    "incorrectAnswers": [
+      "Use Amazon Comprehend to detect inappropriate content. Use human review for low-confidence predictions.",
+      "Use Amazon Rekognition to detect inappropriate content. Use human review for low-confidence predictions.",
+      "Use Amazon SageMaker to detect inappropriate content. Use ground truth to label low-confidence predictions."
+    ],
+    "explanation": "SAA-C03 practice scenario (extract question #57). Correct choice: D.",
+    "keywords": [
+      "aws-saa-c03",
+      "aws-compute",
+      "fargate"
+    ],
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "seedId": "a1ec59ed-73af-4962-b6ea-0c3ae3b34989"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "saa-c03",
+    "question": "A company wants to run its critical applications in containers to meet requirements for scalability and availability. The company prefers to focus\non maintenance of the critical applications. The company does not want to be responsible for provisioning and managing the underlying\ninfrastructure that runs the containerized workload.\nWhat should a solutions architect do to meet these requirements?",
+    "correctAnswer": "Use Amazon EC2 instances from an Amazon Elastic Container Service (Amazon ECS)-optimized Amazon Machine Image (AMI).",
+    "incorrectAnswers": [
+      "Use Amazon EC2 instances, and install Docker on the instances.",
+      "Use Amazon Elastic Container Service (Amazon ECS) on Amazon EC2 worker nodes.",
+      "Use Amazon Elastic Container Service (Amazon ECS) on AWS Fargate."
+    ],
+    "explanation": "SAA-C03 practice scenario (extract question #58). Correct choice: D.",
+    "keywords": [
+      "aws-saa-c03",
+      "aws-compute",
+      "ec2",
+      "ecs"
+    ],
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "seedId": "39b3ef75-2c74-45af-bd52-b225f169fac0"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "saa-c03",
+    "question": "A company hosts more than 300 global websites and applications. The company requires a platform to analyze more than 30 TB of clickstream\ndata each day.\nWhat should a solutions architect do to transmit and process the clickstream data?",
+    "correctAnswer": "Design an AWS Data Pipeline to archive the data to an Amazon S3 bucket and run an Amazon EMR cluster with the data to generate analytics.",
+    "incorrectAnswers": [
+      "Create an Auto Scaling group of Amazon EC2 instances to process the data and send it to an Amazon S3 data lake for Amazon Redshift to use for analysis.",
+      "Cache the data to Amazon CloudFront. Store the data in an Amazon S3 bucket. When an object is added to the S3 bucket. run an AWS Lambda function to process the data for analysis.",
+      "Collect the data from Amazon Kinesis Data Streams. Use Amazon Kinesis Data Firehose (note: outdated; now Amazon Data Firehose) to transmit the data to an Amazon S3 data lake. Load the data in Amazon Redshift for analysis."
+    ],
+    "explanation": "SAA-C03 practice scenario (extract question #59). Correct choice: A.",
+    "keywords": [
+      "aws-saa-c03",
+      "aws-storage",
+      "aws-analytics",
+      "s3",
+      "emr"
+    ],
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "seedId": "8ae7d854-135e-4840-af8b-7d1b05a2d90e"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "saa-c03",
+    "question": "A company has a website hosted on AWS. The website is behind an Application Load Balancer (ALB) that is congured to handle HTTP and\nHTTPS separately. The company wants to forward all requests to the website so that the requests will use HTTPS.\nWhat should a solutions architect do to meet this requirement?",
+    "correctAnswer": "Update the ALB's network ACL to accept only HTTPS traffic.",
+    "incorrectAnswers": [
+      "Create a rule that replaces the HTTP in the URL with HTTPS.",
+      "Create a listener rule on the ALB to redirect HTTP traffic to HTTPS.",
+      "Replace the ALB with a Network Load Balancer congured to use Server Name Indication (SNI)."
+    ],
+    "explanation": "SAA-C03 practice scenario (extract question #60). Correct choice: A.",
+    "keywords": [
+      "aws-saa-c03",
+      "aws-networking",
+      "alb"
+    ],
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "seedId": "bd3c4b55-ba00-486f-8af4-8260c36fa37a"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "saa-c03",
+    "question": "A company is developing a two-tier web application on AWS. The company's developers have deployed the application on an Amazon EC2\ninstance that connects directly to a backend Amazon RDS database. The company must not hardcode database credentials in the application. The\ncompany must also implement a solution to automatically rotate the database credentials on a regular basis.\nWhich solution will meet these requirements with the LEAST operational overhead?",
+    "correctAnswer": "Store the database credentials in the instance metadata. Use Amazon EventBridge (note: outdated alias \"Amazon CloudWatch Events\"; same service, now EventBridge) rules to run a scheduled AWS Lambda function that updates the RDS credentials and instance metadata at the same time.",
+    "incorrectAnswers": [
+      "Store the database credentials in a conguration le in an encrypted Amazon S3 bucket. Use Amazon EventBridge (note: outdated alias \"Amazon CloudWatch Events\"; same service, now EventBridge) rules to run a scheduled AWS Lambda function that updates the RDS credentials and the credentials in the conguration le at the same time. Use S3 Versioning to ensure the ability to fall back to previous values.",
+      "Store the database credentials as a secret in AWS Secrets Manager. Turn on automatic rotation for the secret. Attach the required permission to the EC2 role to grant access to the secret.",
+      "Store the database credentials as encrypted parameters in AWS Systems Manager Parameter Store. Turn on automatic rotation for the encrypted parameters. Attach the required permission to the EC2 role to grant access to the encrypted parameters."
+    ],
+    "explanation": "SAA-C03 practice scenario (extract question #61). Correct choice: A.",
+    "keywords": [
+      "aws-saa-c03",
+      "aws-compute",
+      "aws-integration",
+      "databases",
+      "rds",
+      "lambda",
+      "ec2",
+      "eventbridge",
+      "cloudwatch"
+    ],
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "seedId": "829ee0c4-2979-4068-88d0-f82b0b8f6a61"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "saa-c03",
+    "question": "A company is deploying a new public web application to AWS. The application will run behind an Application Load Balancer (ALB). The application\nneeds to be encrypted at the edge with an SSL/TLS certicate that is issued by an external certicate authority (CA). The certicate must be\nrotated each year before the certicate expires.\nWhat should a solutions architect do to meet these requirements?",
+    "correctAnswer": "Use AWS Certicate Manager (ACM) to issue an SSL/TLS certicate. Apply the certicate to the ALB. Use the managed renewal feature to automatically rotate the certicate.",
+    "incorrectAnswers": [
+      "Use AWS Certicate Manager (ACM) to issue an SSL/TLS certicate. Import the key material from the certicate. Apply the certicate to the ALUse the managed renewal feature to automatically rotate the certicate.",
+      "Use AWS Certicate Manager (ACM) Private Certicate Authority to issue an SSL/TLS certicate from the root CA. Apply the certicate to the ALB. Use the managed renewal feature to automatically rotate the certicate.",
+      "Use AWS Certicate Manager (ACM) to import an SSL/TLS certicate. Apply the certicate to the ALB. Use Amazon EventBridge (note: outdated alias \"Amazon CloudWatch Events\"; same service, now EventBridge) to send a notication when the certicate is nearing expiration. Rotate the certicate manually."
+    ],
+    "explanation": "SAA-C03 practice scenario (extract question #62). Correct choice: A.",
+    "keywords": [
+      "aws-saa-c03",
+      "aws-networking",
+      "aws-security",
+      "alb"
+    ],
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "seedId": "4c93c70e-3463-4a63-8bc3-1d42305ebdcf"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "saa-c03",
+    "question": "A company runs its infrastructure on AWS and has a registered base of 700,000 users for its document management application. The company\nintends to create a product that converts large .pdf les to .jpg image les. The .pdf les average 5 MB in size. The company needs to store the\noriginal les and the converted les. A solutions architect must design a scalable solution to accommodate demand that will grow rapidly over\ntime.\nWhich solution meets these requirements MOST cost-effectively?",
+    "correctAnswer": "Save the .pdf les to Amazon S3. Configure an S3 PUT event to invoke an AWS Lambda function to convert the les to .jpg format and store them back in Amazon S3.",
+    "incorrectAnswers": [
+      "Save the .pdf les to Amazon DynamoDUse the DynamoDB Streams feature to invoke an AWS Lambda function to convert the les to .jpg format and store them back in DynamoDB.",
+      "Upload the .pdf les to an AWS Elastic Beanstalk application that includes Amazon EC2 instances, Amazon Elastic Block Store (Amazon EBS) storage, and an Auto Scaling group. Use a program in the EC2 instances to convert the les to .jpg format. Save the .pdf les and the .jpg les in the EBS store.",
+      "Upload the .pdf les to an AWS Elastic Beanstalk application that includes Amazon EC2 instances, Amazon Elastic File System (Amazon EFS) storage, and an Auto Scaling group. Use a program in the EC2 instances to convert the le to .jpg format. Save the .pdf les and the .jpg les in the EBS store."
+    ],
+    "explanation": "SAA-C03 practice scenario (extract question #63). Correct choice: A.",
+    "keywords": [
+      "aws-saa-c03",
+      "aws-storage",
+      "aws-compute",
+      "s3",
+      "lambda"
+    ],
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "seedId": "fbfbb44e-eb5a-4d3b-8cf6-7a7d2b6a4083"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "saa-c03",
+    "question": "A company has more than 5 TB of le data on Windows le servers that run on premises. Users and applications interact with the data each day.\nThe company is moving its Windows workloads to AWS. As the company continues this process, the company requires access to AWS and on-\npremises le storage with minimum latency. The company needs a solution that minimizes operational overhead and requires no signicant\nchanges to the existing le access patterns. The company uses an AWS Site-to-Site VPN connection for connectivity to AWS.\nWhat should a solutions architect do to meet these requirements?",
+    "correctAnswer": "Deploy and congure Amazon FSx for Windows File Server on AWS. Move the on-premises le data to FSx for Windows File Server. Recongure the workloads to use FSx for Windows File Server on AWS.",
+    "incorrectAnswers": [
+      "Deploy and congure an Amazon S3 File Gateway on premises. Move the on-premises le data to the S3 File Gateway. Recongure the on- premises workloads and the cloud workloads to use the S3 File Gateway.",
+      "Deploy and congure an Amazon S3 File Gateway on premises. Move the on-premises le data to Amazon S3. Recongure the workloads to use either Amazon S3 directly or the S3 File Gateway. depending on each workload's location.",
+      "Deploy and congure Amazon FSx for Windows File Server on AWS. Deploy and congure an Amazon FSx File Gateway on premises. Move the on-premises le data to the FSx File Gateway. Configure the cloud workloads to use FSx for Windows File Server on AWS. Configure the on- premises workloads to use the FSx File Gateway."
+    ],
+    "explanation": "SAA-C03 practice scenario (extract question #64). Correct choice: A.",
+    "keywords": [
+      "aws-saa-c03",
+      "aws-storage",
+      "aws-networking",
+      "fsx",
+      "site-to-site-vpn"
+    ],
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "seedId": "74754940-eaef-44c3-a17a-a028e9c1f193"
+  }
+]

@@ -9,6 +9,10 @@ import type {
   AddItemToCollectionRequest,
   BulkAddItemsToCollectionRequest,
   BulkAddItemsToCollectionResponse,
+  DiscoverCollectionsResponse,
+  BookmarkItem,
+  CollectionRatingResponse,
+  CollectionBookmarkedByResponse,
 } from "@/types/api";
 
 export const collectionsApi = {
@@ -49,6 +53,73 @@ export const collectionsApi = {
     const response = await apiClient.put<CollectionResponse>(
       `/collections/${id}`,
       data
+    );
+    return response.data;
+  },
+
+  discover: async (options: {
+    q?: string;
+    page?: number;
+    pageSize?: number;
+    /** Category name (global navigation) */
+    category?: string;
+    /** Comma-separated L1 / L2 navigation keyword names */
+    keywords?: string;
+    /** Comma-separated item tag keyword names */
+    tags?: string;
+  } = {}): Promise<DiscoverCollectionsResponse> => {
+    const params = new URLSearchParams();
+    const { q, page, pageSize, category, keywords, tags } = options;
+    if (q != null && q !== "") params.set("q", q);
+    if (page != null) params.set("page", String(page));
+    if (pageSize != null) params.set("pageSize", String(pageSize));
+    if (category != null && category !== "") params.set("category", category);
+    if (keywords != null && keywords !== "") params.set("keywords", keywords);
+    if (tags != null && tags !== "") params.set("tags", tags);
+    const response = await apiClient.get<DiscoverCollectionsResponse>(
+      `/collections/discover?${params.toString()}`
+    );
+    return response.data;
+  },
+
+  getBookmarks: async (): Promise<{ collections: BookmarkItem[] }> => {
+    const response = await apiClient.get<{ collections: BookmarkItem[] }>(
+      "/collections/bookmarks"
+    );
+    return response.data;
+  },
+
+  bookmark: async (collectionId: string): Promise<void> => {
+    await apiClient.post(`/collections/${collectionId}/bookmark`);
+  },
+
+  unbookmark: async (collectionId: string): Promise<void> => {
+    await apiClient.delete(`/collections/${collectionId}/bookmark`);
+  },
+
+  getRating: async (collectionId: string): Promise<CollectionRatingResponse> => {
+    const response = await apiClient.get<CollectionRatingResponse>(
+      `/collections/${collectionId}/rating`
+    );
+    return response.data;
+  },
+
+  setRating: async (
+    collectionId: string,
+    stars: number
+  ): Promise<{ id: string; collectionId: string; stars: number; createdAt: string; updatedAt?: string }> => {
+    const response = await apiClient.post<{ id: string; collectionId: string; stars: number; createdAt: string; updatedAt?: string }>(
+      `/collections/${collectionId}/rating`,
+      { stars }
+    );
+    return response.data;
+  },
+
+  getBookmarkedBy: async (
+    collectionId: string
+  ): Promise<CollectionBookmarkedByResponse> => {
+    const response = await apiClient.get<CollectionBookmarkedByResponse>(
+      `/collections/${collectionId}/bookmarks`
     );
     return response.data;
   },

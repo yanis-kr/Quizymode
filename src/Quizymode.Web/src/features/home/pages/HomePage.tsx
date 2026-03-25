@@ -1,302 +1,167 @@
+import { useMemo } from "react";
 import { Link } from "react-router-dom";
-import { useAuth } from "@/contexts/AuthContext";
+import { useQuery } from "@tanstack/react-query";
+import { ArrowRightIcon } from "@heroicons/react/24/outline";
 import { SEO } from "@/components/SEO";
+import { categoriesApi } from "@/api/categories";
+import { buildCollectionStudyPath } from "@/utils/collectionPath";
 import {
-  AcademicCapIcon,
-  BookOpenIcon,
-  PlusCircleIcon,
-  FolderIcon,
-  StarIcon,
-  ArrowRightIcon,
-  CodeBracketIcon,
-} from "@heroicons/react/24/outline";
+  featuredSetCards,
+  HOME_SAMPLE_COLLECTION_ID,
+  HOME_SAMPLE_COLLECTION_NAME,
+  homeCategoryCards,
+} from "../homePageData";
+
+const numberFormatter = new Intl.NumberFormat("en-US");
+
+function formatItemCount(count: number) {
+  return `${numberFormatter.format(count)} item${count === 1 ? "" : "s"}`;
+}
 
 const HomePage = () => {
-  const { isAuthenticated } = useAuth();
+  const { data: categoriesData } = useQuery({
+    queryKey: ["home", "categories"],
+    queryFn: () => categoriesApi.getAll(),
+    retry: false,
+    staleTime: 5 * 60 * 1000,
+  });
+
+  const countsByCategory = useMemo(() => {
+    const map = new Map<string, number>();
+    for (const category of categoriesData?.categories ?? []) {
+      map.set(category.category.toLowerCase(), category.count);
+    }
+    return map;
+  }, [categoriesData?.categories]);
 
   return (
     <>
       <SEO
+        title="Quizymode"
+        description="Browse Quizymode categories, jump into featured sets, and try a public sample collection."
         canonical="https://www.quizymode.com"
         structuredData={{
           "@context": "https://schema.org",
           "@type": "WebSite",
-          "name": "Quizymode",
-          "url": "https://www.quizymode.com",
-          "description":
-            "Smart learning platform with flashcards and interactive quizzes",
-          "potentialAction": {
-            "@type": "SearchAction",
-            "target": "https://www.quizymode.com/items?search={search_term_string}",
-            "query-input": "required name=search_term_string",
-          },
+          name: "Quizymode",
+          url: "https://www.quizymode.com",
+          description:
+            "Browse-first quiz platform with categories, featured sets, and public collections.",
         }}
       />
-      <div className="min-h-screen">
-      {/* Hero Section */}
-      <div className="bg-gradient-to-br from-indigo-600 to-purple-600 text-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
-          <div className="text-center">
-            <h1 className="text-5xl font-bold mb-6">Welcome to Quizymode</h1>
-            <p className="text-xl mb-8 text-indigo-100 max-w-2xl mx-auto">
-              Your interactive learning platform for exploring and creating quiz
-              content. Browse questions, test your knowledge, and build your own
-              quiz collections.
-            </p>
-            <div className="flex gap-4 justify-center">
-              {isAuthenticated ? (
-                <>
+
+      <div className="overflow-hidden bg-slate-950 text-white">
+        <section className="relative overflow-hidden bg-[radial-gradient(circle_at_top,#1e3a8a_0%,#0f172a_42%,#020617_100%)]">
+          <div className="absolute inset-0 opacity-30">
+            <div className="absolute inset-y-0 left-[-8%] w-1/3 skew-x-[-24deg] bg-white/5" />
+            <div className="absolute inset-y-0 left-[24%] w-24 rotate-12 bg-sky-400/20 blur-3xl" />
+            <div className="absolute inset-y-0 right-[18%] w-20 -rotate-12 bg-indigo-300/20 blur-3xl" />
+            <div className="absolute inset-x-0 bottom-0 h-40 bg-[linear-gradient(180deg,transparent_0%,rgba(2,6,23,0.92)_100%)]" />
+          </div>
+
+          <div className="relative mx-auto max-w-7xl px-4 py-2 sm:px-6 xl:h-[calc(100vh-4rem)] xl:max-h-[calc(100vh-4rem)] lg:px-8 lg:py-2">
+            <div className="flex flex-col gap-2.5 xl:grid xl:h-full xl:min-h-0 xl:grid-rows-[minmax(0,0.21fr)_minmax(0,0.59fr)_minmax(0,0.2fr)]">
+              <section className="rounded-[24px] border border-white/12 bg-white/8 p-3 shadow-2xl shadow-slate-950/30 backdrop-blur lg:flex lg:items-center lg:justify-between lg:gap-6 lg:px-5 lg:py-3 xl:min-h-0">
+                <div className="max-w-3xl">
+                  <h1 className="text-xl font-semibold tracking-tight text-white sm:text-2xl lg:text-[1.65rem] lg:leading-snug">
+                    Build, share, and study your own quizzes.
+                  </h1>
+                  <p className="mt-1.5 max-w-2xl text-xs leading-5 text-slate-200 lg:text-sm">
+                    Browse a vast public question bank, upload your own questions, share collections, and turn study guides into private practice sets with AI-assisted import.
+                  </p>
+                </div>
+                <div className="mt-3 flex shrink-0 items-center lg:mt-0">
                   <Link
-                    to="/categories"
-                    className="bg-white text-indigo-600 px-6 py-3 rounded-lg font-semibold hover:bg-indigo-50 transition-colors inline-flex items-center gap-2"
+                    to={buildCollectionStudyPath(
+                      "quiz",
+                      HOME_SAMPLE_COLLECTION_ID,
+                      HOME_SAMPLE_COLLECTION_NAME
+                    )}
+                    className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-[linear-gradient(135deg,#38bdf8_0%,#2563eb_100%)] px-6 py-2.5 text-sm font-semibold text-white shadow-lg shadow-sky-500/30 transition hover:scale-[1.02] hover:shadow-sky-400/40 sm:w-auto"
                   >
-                    Browse Categories
-                    <ArrowRightIcon className="h-5 w-5" />
+                    Try Sample Collection
+                    <ArrowRightIcon className="h-4 w-4" />
                   </Link>
-                  <Link
-                    to="/my-items"
-                    className="bg-indigo-700 text-white px-6 py-3 rounded-lg font-semibold hover:bg-indigo-800 transition-colors inline-flex items-center gap-2"
-                  >
-                    My Items
-                    <ArrowRightIcon className="h-5 w-5" />
+                </div>
+              </section>
+
+              <section className="rounded-[26px] bg-[linear-gradient(180deg,rgba(248,250,252,0.98)_0%,rgba(239,246,255,0.98)_100%)] p-4 text-slate-950 shadow-xl shadow-slate-950/25 lg:px-5 lg:py-4 xl:grid xl:min-h-0 xl:grid-rows-[auto_minmax(0,1fr)]">
+                <div className="flex items-end justify-between gap-3">
+                  <h2 className="text-xl font-semibold tracking-tight sm:text-2xl">Explore Categories</h2>
+                  <Link to="/categories" className="text-sm font-semibold text-sky-700 transition hover:text-sky-900">
+                    View all
                   </Link>
-                </>
-              ) : (
-                <>
-                  <Link
-                    to="/categories"
-                    className="bg-white text-indigo-600 px-6 py-3 rounded-lg font-semibold hover:bg-indigo-50 transition-colors inline-flex items-center gap-2"
-                  >
-                    Start Exploring
-                    <ArrowRightIcon className="h-5 w-5" />
-                  </Link>
-                  <Link
-                    to="/signup"
-                    className="bg-indigo-700 text-white px-6 py-3 rounded-lg font-semibold hover:bg-indigo-800 transition-colors inline-flex items-center gap-2"
-                  >
-                    Sign Up Free
-                    <ArrowRightIcon className="h-5 w-5" />
-                  </Link>
-                </>
-              )}
+                </div>
+
+                <div className="mt-3 grid grid-cols-2 gap-3 md:grid-cols-3 xl:min-h-0 xl:grid-cols-4 xl:grid-rows-3">
+                  {homeCategoryCards.map((category) => {
+                    const liveCount = countsByCategory.get(category.slug);
+
+                    return (
+                      <Link
+                        key={category.slug}
+                        to={`/categories/${category.slug}`}
+                        className="group relative isolate overflow-hidden rounded-[22px] border border-slate-200/80 bg-slate-900 shadow-md shadow-slate-300/20 transition duration-200 hover:-translate-y-0.5 hover:shadow-lg"
+                      >
+                        <img
+                          src={category.image}
+                          alt=""
+                          className="absolute inset-0 h-full w-full object-cover transition duration-500 group-hover:scale-105"
+                        />
+                        <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(2,6,23,0.04)_0%,rgba(2,6,23,0.3)_42%,rgba(2,6,23,0.88)_100%)]" />
+                        <div className="relative flex h-full min-h-[125px] flex-col justify-between p-3.5 text-white sm:min-h-[149px] xl:min-h-0">
+                          <div className="flex justify-end">
+                            {liveCount != null && (
+                              <div className="rounded-full border border-white/18 bg-slate-950/45 px-3 py-1 text-xs font-semibold text-sky-100 backdrop-blur">
+                                {formatItemCount(liveCount)}
+                              </div>
+                            )}
+                          </div>
+                          <div className="flex items-end justify-between gap-2">
+                            <h3 className="text-lg font-semibold leading-tight tracking-tight sm:text-xl lg:text-[1.225rem]">
+                              {category.name}
+                            </h3>
+                            <ArrowRightIcon className="h-4 w-4 shrink-0 text-sky-200 transition group-hover:translate-x-1" />
+                          </div>
+                        </div>
+                      </Link>
+                    );
+                  })}
+                </div>
+              </section>
+
+              <section className="rounded-[24px] border border-white/10 bg-slate-950/70 p-3 shadow-xl shadow-slate-950/25 xl:grid xl:min-h-0 xl:grid-rows-[auto_minmax(0,1fr)]">
+                <div className="flex items-center justify-between gap-3">
+                  <div className="text-xs font-semibold uppercase tracking-[0.22em] text-sky-300">Quick Starts</div>
+                </div>
+
+                <div className="mt-2 flex gap-2.5 overflow-x-auto pb-1 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+                  {featuredSetCards.map((set) => (
+                    <Link
+                      key={set.id}
+                      to={set.path}
+                      className="group relative min-w-0 shrink-0 basis-[calc(50%-0.3125rem)] overflow-hidden rounded-[18px] border border-white/10 bg-slate-900/90 transition duration-200 hover:-translate-y-0.5 hover:border-sky-300/50 md:basis-[calc((100%-0.833rem)/3)] xl:basis-[calc((100%-1.875rem)/4)]"
+                    >
+                      <img
+                        src={set.image}
+                        alt=""
+                        className="absolute inset-0 h-full w-full object-cover transition duration-500 group-hover:scale-105"
+                      />
+                      <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(2,6,23,0.05)_0%,rgba(2,6,23,0.78)_100%)]" />
+                      <div className="relative flex h-full min-h-[104px] flex-col justify-between p-3 sm:min-h-[124px] xl:min-h-0">
+                        <div className="text-[10px] font-semibold uppercase tracking-[0.2em] text-sky-300">{set.eyebrow}</div>
+                        <div className="flex items-center justify-between gap-2">
+                          <h3 className="text-sm font-semibold text-white">{set.title}</h3>
+                          <ArrowRightIcon className="h-4 w-4 shrink-0 text-sky-200 transition group-hover:translate-x-1" />
+                        </div>
+                      </div>
+                    </Link>
+                  ))}
+                </div>
+              </section>
             </div>
           </div>
-        </div>
-      </div>
-
-      {/* Features Section */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <h2 className="text-3xl font-bold text-center mb-12 text-gray-900">
-          What You Can Do
-        </h2>
-
-        <div className="grid md:grid-cols-2 gap-8 mb-16">
-          {/* Anonymous Users */}
-          <div className="bg-white rounded-lg shadow-lg p-8 border-2 border-gray-100">
-            <div className="flex items-center mb-4">
-              <BookOpenIcon className="h-8 w-8 text-indigo-600 mr-3" />
-              <h3 className="text-2xl font-bold text-gray-900">For Everyone</h3>
-            </div>
-            <p className="text-gray-600 mb-6">
-              Explore quiz content without signing up. Perfect for learning and
-              testing your knowledge.
-            </p>
-            <ul className="space-y-3">
-              <li className="flex items-start">
-                <AcademicCapIcon className="h-5 w-5 text-green-500 mr-2 mt-0.5 flex-shrink-0" />
-                <span className="text-gray-700">
-                  <strong>Browse Categories</strong> - Explore questions by topic
-                </span>
-              </li>
-              <li className="flex items-start">
-                <BookOpenIcon className="h-5 w-5 text-green-500 mr-2 mt-0.5 flex-shrink-0" />
-                <span className="text-gray-700">
-                  <strong>Explore Mode</strong> - View questions and answers
-                  with detailed explanations
-                </span>
-              </li>
-              <li className="flex items-start">
-                <AcademicCapIcon className="h-5 w-5 text-green-500 mr-2 mt-0.5 flex-shrink-0" />
-                <span className="text-gray-700">
-                  <strong>Quiz Mode</strong> - Test your knowledge with
-                  multiple-choice questions and track your score
-                </span>
-              </li>
-            </ul>
-            <div className="mt-6">
-              <Link
-                to="/categories"
-                className="text-indigo-600 font-semibold hover:text-indigo-700 inline-flex items-center gap-1"
-              >
-                Browse Categories
-                <ArrowRightIcon className="h-4 w-4" />
-              </Link>
-            </div>
-          </div>
-
-          {/* Signed-in Users */}
-          <div className="bg-gradient-to-br from-indigo-50 to-purple-50 rounded-lg shadow-lg p-8 border-2 border-indigo-200">
-            <div className="flex items-center mb-4">
-              <StarIcon className="h-8 w-8 text-purple-600 mr-3" />
-              <h3 className="text-2xl font-bold text-gray-900">For Members</h3>
-            </div>
-            <p className="text-gray-600 mb-6">
-              Sign up to unlock powerful features for creating and managing your
-              own quiz content.
-            </p>
-            <ul className="space-y-3">
-              <li className="flex items-start">
-                <PlusCircleIcon className="h-5 w-5 text-purple-600 mr-2 mt-0.5 flex-shrink-0" />
-                <span className="text-gray-700">
-                  <strong>Create Items</strong> - Add your own questions with
-                  answers and explanations
-                </span>
-              </li>
-              <li className="flex items-start">
-                <FolderIcon className="h-5 w-5 text-purple-600 mr-2 mt-0.5 flex-shrink-0" />
-                <span className="text-gray-700">
-                  <strong>Collections</strong> - Organize items into custom
-                  collections for easy access
-                </span>
-              </li>
-              <li className="flex items-start">
-                <StarIcon className="h-5 w-5 text-purple-600 mr-2 mt-0.5 flex-shrink-0" />
-                <span className="text-gray-700">
-                  <strong>Rate & Comment</strong> - Share feedback and
-                  contribute to the community
-                </span>
-              </li>
-              <li className="flex items-start">
-                <AcademicCapIcon className="h-5 w-5 text-purple-600 mr-2 mt-0.5 flex-shrink-0" />
-                <span className="text-gray-700">
-                  <strong>Private Items</strong> - Keep your personal quiz items
-                  private or share them publicly
-                </span>
-              </li>
-            </ul>
-            <div className="mt-6">
-              {isAuthenticated ? (
-                <Link
-                  to="/my-items"
-                  className="text-purple-600 font-semibold hover:text-purple-700 inline-flex items-center gap-1"
-                >
-                  Go to My Items
-                  <ArrowRightIcon className="h-4 w-4" />
-                </Link>
-              ) : (
-                <Link
-                  to="/signup"
-                  className="bg-purple-600 text-white px-4 py-2 rounded-lg font-semibold hover:bg-purple-700 transition-colors inline-flex items-center gap-1"
-                >
-                  Sign Up Now
-                  <ArrowRightIcon className="h-4 w-4" />
-                </Link>
-              )}
-            </div>
-          </div>
-        </div>
-
-        {/* How It Works */}
-        <div className="bg-gray-50 rounded-lg p-8 mt-12">
-          <h3 className="text-2xl font-bold text-center mb-8 text-gray-900">
-            How It Works
-          </h3>
-          <div className="grid md:grid-cols-3 gap-6">
-            <div className="text-center">
-              <div className="bg-indigo-100 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
-                <span className="text-2xl font-bold text-indigo-600">1</span>
-              </div>
-              <h4 className="font-semibold text-gray-900 mb-2">
-                Choose a Category
-              </h4>
-              <p className="text-gray-600 text-sm">
-                Browse available categories and subcategories to find topics
-                that interest you
-              </p>
-            </div>
-            <div className="text-center">
-              <div className="bg-indigo-100 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
-                <span className="text-2xl font-bold text-indigo-600">2</span>
-              </div>
-              <h4 className="font-semibold text-gray-900 mb-2">
-                Select Your Mode
-              </h4>
-              <p className="text-gray-600 text-sm">
-                Choose between Explore mode to learn or Quiz mode to test your
-                knowledge
-              </p>
-            </div>
-            <div className="text-center">
-              <div className="bg-indigo-100 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
-                <span className="text-2xl font-bold text-indigo-600">3</span>
-              </div>
-              <h4 className="font-semibold text-gray-900 mb-2">
-                Learn & Create
-              </h4>
-              <p className="text-gray-600 text-sm">
-                Study questions, track your progress, and create your own quiz
-                content
-              </p>
-            </div>
-          </div>
-        </div>
-
-        {/* Open Source Section */}
-        <div className="mt-16 pt-8 border-t border-gray-200">
-          <div className="text-center">
-            <h3 className="text-xl font-semibold text-gray-900 mb-4">
-              Open Source
-            </h3>
-            <p className="text-gray-600 mb-4">
-              Quizymode is open source and available on GitHub. Check out the
-              source code, contribute, or report issues.
-            </p>
-            <a
-              href="https://github.com/yanis-kr/Quizymode"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 text-indigo-600 hover:text-indigo-700 font-semibold transition-colors"
-            >
-              <CodeBracketIcon className="h-5 w-5" />
-              View on GitHub
-              <ArrowRightIcon className="h-4 w-4" />
-            </a>
-          </div>
-        </div>
-
-        {/* Footer Links */}
-        <div className="mt-12 pt-8 border-t border-gray-200">
-          <div className="flex flex-wrap justify-center gap-6 text-sm">
-            <Link
-              to="/about"
-              className="text-gray-600 hover:text-indigo-600 transition-colors"
-            >
-              About
-            </Link>
-            <Link
-              to="/roadmap"
-              className="text-gray-600 hover:text-indigo-600 transition-colors"
-            >
-              Roadmap
-            </Link>
-            <Link
-              to="/feedback"
-              className="text-gray-600 hover:text-indigo-600 transition-colors"
-            >
-              Feedback
-            </Link>
-          </div>
-        </div>
-      </div>
-
-      {/* Build Timestamp Footer */}
-      {typeof __BUILD_TIME__ !== "undefined" && (
-        <div className="text-center py-4">
-          <p className="text-xs text-gray-500">
-            Built {new Date(__BUILD_TIME__).toLocaleString()}
-          </p>
-        </div>
-      )}
+        </section>
       </div>
     </>
   );

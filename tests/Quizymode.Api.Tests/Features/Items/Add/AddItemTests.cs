@@ -26,9 +26,13 @@ public sealed class AddItemTests : ItemTestFixture
     [Fact]
     public async Task HandleAsync_ValidRequest_CreatesItem()
     {
-        // Arrange
+        // Arrange: public geography + nav path required by taxonomy and ResolvePublicNavigationAsync
+        await EnsureGeographyPublicWithNavAsync(_userContextMock.Object.UserId!);
+
         AddItem.Request request = new(
             Category: "geography",
+            NavigationKeyword1: "capitals",
+            NavigationKeyword2: "europe",
             IsPrivate: false,
             Question: "What is the capital of France?",
             CorrectAnswer: "Paris",
@@ -42,7 +46,8 @@ public sealed class AddItemTests : ItemTestFixture
             SimHashService,
             _userContextMock.Object,
             _auditServiceMock.Object,
-            CategoryResolver,
+            TaxonomyItemCategoryResolver,
+            TaxonomyRegistry,
             CancellationToken.None);
 
         // Assert
@@ -81,6 +86,8 @@ public sealed class AddItemTests : ItemTestFixture
 
         AddItem.Request request = new(
             Category: "geography",
+            NavigationKeyword1: "capitals",
+            NavigationKeyword2: "europe",
             IsPrivate: false,
             Question: "What is the capital of France?",
             CorrectAnswer: "Paris",
@@ -94,7 +101,8 @@ public sealed class AddItemTests : ItemTestFixture
             SimHashService,
             _userContextMock.Object,
             _auditServiceMock.Object,
-            CategoryResolver,
+            TaxonomyItemCategoryResolver,
+            TaxonomyRegistry,
             CancellationToken.None);
 
         // Assert - AddItem allows duplicates, so it should succeed
@@ -107,9 +115,10 @@ public sealed class AddItemTests : ItemTestFixture
     [Fact]
     public void Validator_EmptyCategory_ReturnsError()
     {
-        // Arrange
         AddItem.Request request = new(
             Category: "",
+            NavigationKeyword1: "capitals",
+            NavigationKeyword2: "europe",
             IsPrivate: false,
             Question: "What is the capital of France?",
             CorrectAnswer: "Paris",
@@ -129,13 +138,14 @@ public sealed class AddItemTests : ItemTestFixture
     [Fact]
     public void Validator_TooManyIncorrectAnswers_ReturnsError()
     {
-        // Arrange
         AddItem.Request request = new(
             Category: "geography",
+            NavigationKeyword1: "capitals",
+            NavigationKeyword2: "europe",
             IsPrivate: false,
             Question: "What is the capital of France?",
             CorrectAnswer: "Paris",
-            IncorrectAnswers: new List<string> { "Lyon", "Marseille", "Nice", "Toulouse", "Bordeaux" }, // 5 items
+            IncorrectAnswers: new List<string> { "Lyon", "Marseille", "Nice", "Toulouse", "Bordeaux" },
             Explanation: "");
 
         AddItem.Validator validator = new();

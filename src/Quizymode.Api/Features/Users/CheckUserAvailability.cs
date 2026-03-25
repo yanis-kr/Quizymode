@@ -6,9 +6,9 @@ namespace Quizymode.Api.Features.Users;
 
 public static class CheckUserAvailability
 {
-    public sealed record Request(string? Username, string? Email);
+    public sealed record CheckUserAvailabilityRequest(string? Username, string? Email);
 
-    public sealed record Response(bool IsUsernameAvailable, bool IsEmailAvailable, string? UsernameError, string? EmailError);
+    public sealed record CheckUserAvailabilityResponse(bool IsUsernameAvailable, bool IsEmailAvailable, string? UsernameError, string? EmailError);
 
     public sealed class Endpoint : IEndpoint
     {
@@ -18,7 +18,7 @@ public static class CheckUserAvailability
                 .WithTags("Users")
                 .WithSummary("Check if username and/or email are available")
                 .WithDescription("Checks if the provided username and/or email are already registered. Returns availability status for each.")
-                .Produces<Response>(StatusCodes.Status200OK)
+                .Produces<CheckUserAvailabilityResponse>(StatusCodes.Status200OK)
                 .Produces(StatusCodes.Status400BadRequest);
         }
 
@@ -64,7 +64,7 @@ public static class CheckUserAvailability
                 }
             }
 
-            Response response = new(
+            CheckUserAvailabilityResponse response = new(
                 isUsernameAvailable,
                 isEmailAvailable,
                 usernameError,

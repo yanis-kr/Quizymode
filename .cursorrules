@@ -38,3 +38,9 @@
 - Keep common services under Services folder
 - Keep Program.cs small and move all services and pipeline setup under StartupExtensions folder
 - Dependency Injections required just by featureX should be declared under /Features/FeatureX; these registration classes can be inherited from IFeatureRegistration with method AddToServiceCollection(IServiceCollection services, IConfiguration configuration); on startup scoop the assembly to run all instances of this interface to register feature specific services.
+- After each change, provide a short summary that includes:
+  1. What changes were made (brief list).
+  2. Restart API needed: y/n.
+  3. Restart web app (npm run dev) needed: y/n.
+  4. A suggested git commit message (under 68 characters).
+- After making code changes: run build, then run tests. If build fails, fix the issues and run build again. If tests fail, fix the issues and run tests again. Repeat until build and tests pass.

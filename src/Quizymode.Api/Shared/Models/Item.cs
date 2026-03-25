@@ -4,6 +4,31 @@ public sealed class Item
 {
     public Guid Id { get; set; }
 
+    /// <summary>
+    /// Stable identifier for repo-managed seed items. Null for user-created items.
+    /// </summary>
+    public Guid? SeedId { get; set; }
+
+    /// <summary>
+    /// True when this row is managed by the admin seed-sync process.
+    /// </summary>
+    public bool IsSeedManaged { get; set; }
+
+    /// <summary>
+    /// Logical seed collection name so multiple managed sets can coexist.
+    /// </summary>
+    public string? SeedSet { get; set; }
+
+    /// <summary>
+    /// Hash of the canonical seed payload used to detect drift quickly.
+    /// </summary>
+    public string? SeedHash { get; set; }
+
+    /// <summary>
+    /// Timestamp of the last successful seed sync for this item.
+    /// </summary>
+    public DateTime? SeedLastSyncedAt { get; set; }
+
     public bool IsPrivate { get; set; }
 
     public string Question { get; set; } = string.Empty;
@@ -27,11 +52,33 @@ public sealed class Item
 
     public string? Source { get; set; }
 
+    /// <summary>
+    /// Optional link to the Upload record that created this item (e.g. bulk upload from JSON).
+    /// </summary>
+    public Guid? UploadId { get; set; }
+
+    /// <summary>
+    /// Optional factual risk indicator 0-1: higher = more uncertainty or inferred content.
+    /// </summary>
+    public decimal? FactualRisk { get; set; }
+
+    /// <summary>
+    /// Optional review notes: ambiguity, assumptions, outdated info, etc.
+    /// </summary>
+    public string? ReviewComments { get; set; }
+
     // Navigation property for keywords (not mapped directly, accessed via ItemKeywords)
     public List<ItemKeyword> ItemKeywords { get; set; } = new();
 
     // Navigation property for category
     public Guid? CategoryId { get; set; }
     public Category? Category { get; set; }
-}
 
+    /// <summary>Rank-1 navigation keyword (primary topic). Required for items in navigation tree.</summary>
+    public Guid? NavigationKeywordId1 { get; set; }
+    public Keyword? NavigationKeyword1 { get; set; }
+
+    /// <summary>Rank-2 navigation keyword (subtopic). Required for items in navigation tree.</summary>
+    public Guid? NavigationKeywordId2 { get; set; }
+    public Keyword? NavigationKeyword2 { get; set; }
+}

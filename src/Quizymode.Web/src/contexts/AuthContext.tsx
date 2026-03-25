@@ -13,6 +13,7 @@ import {
   confirmSignUp,
 } from "aws-amplify/auth";
 import { setTokens, clearTokens } from "@/utils/tokenStorage";
+import { authApi } from "@/api/auth";
 
 interface AuthContextType {
   isAuthenticated: boolean;
@@ -302,6 +303,7 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
 
   const logout = async () => {
     try {
+      await authApi.logoutAudit();
       await signOut();
       clearAuthState();
     } catch (error) {

@@ -1,0 +1,202 @@
+[
+  {
+    "category": "sports",
+    "navigationKeyword1": "tennis",
+    "navigationKeyword2": "rankings",
+    "question": "Which organization runs the main men's professional singles rankings?",
+    "correctAnswer": "ATP",
+    "incorrectAnswers": [
+      "ITF",
+      "USTA",
+      "USTF"
+    ],
+    "explanation": "The ATP maintains the men's professional tour rankings.",
+    "keywords": [
+      "tennis",
+      "rankings",
+      "atp"
+    ],
+    "source": "https://www.atptour.com/en/rankings/singles",
+    "seedId": "87390b5e-1f77-487e-9f86-355517d9cedd"
+  },
+  {
+    "category": "sports",
+    "navigationKeyword1": "tennis",
+    "navigationKeyword2": "rankings",
+    "question": "Which organization runs the main women's professional singles rankings?",
+    "correctAnswer": "WTA",
+    "incorrectAnswers": [
+      "ITF",
+      "USTA",
+      "ATP"
+    ],
+    "explanation": "The WTA publishes the women's professional rankings.",
+    "keywords": [
+      "tennis",
+      "rankings",
+      "wta"
+    ],
+    "source": "https://www.wtatennis.com/rankings/singles",
+    "seedId": "f799eb73-044c-43d9-b4fa-df3f1f630064"
+  },
+  {
+    "category": "sports",
+    "navigationKeyword1": "tennis",
+    "navigationKeyword2": "rankings",
+    "question": "ATP and WTA rankings are primarily based on what?",
+    "correctAnswer": "Ranking points earned in tournaments",
+    "incorrectAnswers": [
+      "Career win percentage only",
+      "Coach votes",
+      "Prize money only"
+    ],
+    "explanation": "Players are ranked by points collected from tournament results.",
+    "keywords": [
+      "tennis",
+      "rankings",
+      "points"
+    ],
+    "source": "https://www.atptour.com/en/rankings/rankings-faq",
+    "seedId": "40002d17-80b2-4c92-8e41-12556192e13b"
+  },
+  {
+    "category": "sports",
+    "navigationKeyword1": "tennis",
+    "navigationKeyword2": "rankings",
+    "question": "Over roughly what rolling period are ATP and WTA ranking points counted?",
+    "correctAnswer": "About 52 weeks",
+    "incorrectAnswers": [
+      "One month",
+      "Two years",
+      "A single season only"
+    ],
+    "explanation": "The rankings are based on a rolling 52-week system.",
+    "keywords": [
+      "tennis",
+      "rankings",
+      "52-weeks"
+    ],
+    "source": "https://www.atptour.com/en/rankings/rankings-faq",
+    "seedId": "a2ed85de-d80b-4c28-a35e-a98ab3052ddd"
+  },
+  {
+    "category": "sports",
+    "navigationKeyword1": "tennis",
+    "navigationKeyword2": "rankings",
+    "question": "Winning a Grand Slam singles title usually gives how many ATP ranking points?",
+    "correctAnswer": "2000",
+    "incorrectAnswers": [
+      "1000",
+      "1500",
+      "2500"
+    ],
+    "explanation": "A Grand Slam title is the highest standard points award on the regular scale.",
+    "keywords": [
+      "tennis",
+      "rankings",
+      "grand-slam-points"
+    ],
+    "source": "https://www.atptour.com/en/rankings/rankings-faq",
+    "seedId": "de61d46e-98c1-4711-baba-5943817e09eb"
+  },
+  {
+    "category": "sports",
+    "navigationKeyword1": "tennis",
+    "navigationKeyword2": "rankings",
+    "question": "Which player finishes a week at No. 1 if that player has the most ranking points?",
+    "correctAnswer": "The player with the highest total points",
+    "incorrectAnswers": [
+      "The oldest player",
+      "The player with the most aces",
+      "The defending champion only"
+    ],
+    "explanation": "The rankings order players by total ranking points.",
+    "keywords": [
+      "tennis",
+      "rankings",
+      "world-no-1"
+    ],
+    "source": "https://www.atptour.com/en/rankings/rankings-faq",
+    "seedId": "a1bbfc71-0546-44d1-9f80-6e68de8fb758"
+  },
+  {
+    "category": "sports",
+    "navigationKeyword1": "tennis",
+    "navigationKeyword2": "rankings",
+    "question": "Do ATP and WTA rankings use separate systems or one combined list?",
+    "correctAnswer": "Separate systems",
+    "incorrectAnswers": [
+      "One shared list",
+      "Only national rankings",
+      "Only team rankings"
+    ],
+    "explanation": "Men's and women's professional tours publish separate rankings.",
+    "keywords": [
+      "tennis",
+      "rankings",
+      "tour-structure"
+    ],
+    "source": "https://www.britannica.com/sports/tennis",
+    "seedId": "658af01c-b0e0-44d2-8d12-463132fae8b2"
+  },
+  {
+    "category": "sports",
+    "navigationKeyword1": "tennis",
+    "navigationKeyword2": "rankings",
+    "question": "Why does a player lose ranking points after failing to match last year's result in the same event?",
+    "correctAnswer": "Because the system replaces older results in a rolling cycle",
+    "incorrectAnswers": [
+      "Because points expire every month",
+      "Because only finals count",
+      "Because points depend on sponsorship"
+    ],
+    "explanation": "The rolling ranking system drops points from the previous year's events.",
+    "keywords": [
+      "tennis",
+      "rankings",
+      "rolling-system"
+    ],
+    "source": "https://www.atptour.com/en/rankings/rankings-faq",
+    "seedId": "ba379475-7c3f-4c45-989e-481da0fef55f"
+  },
+  {
+    "category": "sports",
+    "navigationKeyword1": "tennis",
+    "navigationKeyword2": "rankings",
+    "question": "What does being seeded in a tournament usually depend on?",
+    "correctAnswer": "A player's ranking",
+    "incorrectAnswers": [
+      "A random draw only",
+      "The color of the kit",
+      "Nationality alone"
+    ],
+    "explanation": "Seeds are generally assigned based on ranking to separate top players in the draw.",
+    "keywords": [
+      "tennis",
+      "rankings",
+      "seeding"
+    ],
+    "source": "https://www.britannica.com/sports/tennis",
+    "seedId": "251f7f0e-6483-4307-9ab9-15886eaa25e3"
+  },
+  {
+    "category": "sports",
+    "navigationKeyword1": "tennis",
+    "navigationKeyword2": "rankings",
+    "question": "If a player reaches No. 1 in the ATP rankings, what does that mean?",
+    "correctAnswer": "He currently has the most ATP ranking points",
+    "incorrectAnswers": [
+      "He has won every tournament that year",
+      "He is the defending Wimbledon champion only",
+      "He has the most career titles automatically"
+    ],
+    "explanation": "World No. 1 reflects the highest current ATP points total.",
+    "keywords": [
+      "tennis",
+      "rankings",
+      "no-1"
+    ],
+    "source": "https://www.atptour.com/en/rankings/rankings-faq",
+    "seedId": "295a21f8-a4bb-434d-a729-832818d74b12"
+  }
+]

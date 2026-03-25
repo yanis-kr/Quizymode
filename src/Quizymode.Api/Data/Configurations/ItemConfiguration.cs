@@ -15,6 +15,24 @@ internal sealed class ItemConfiguration : IEntityTypeConfiguration<Item>
         builder.Property(x => x.Id)
             .HasDefaultValueSql("gen_random_uuid()");
 
+        builder.Property(x => x.SeedId)
+            .IsRequired(false);
+
+        builder.Property(x => x.IsSeedManaged)
+            .IsRequired()
+            .HasDefaultValue(false);
+
+        builder.Property(x => x.SeedSet)
+            .HasMaxLength(100)
+            .IsRequired(false);
+
+        builder.Property(x => x.SeedHash)
+            .HasMaxLength(64)
+            .IsRequired(false);
+
+        builder.Property(x => x.SeedLastSyncedAt)
+            .IsRequired(false);
+
         builder.Property(x => x.IsPrivate)
             .IsRequired()
             .HasDefaultValue(false);
@@ -66,11 +84,43 @@ internal sealed class ItemConfiguration : IEntityTypeConfiguration<Item>
         builder.Property(x => x.CategoryId)
             .IsRequired(false);
 
+        builder.Property(x => x.UploadId)
+            .IsRequired(false);
+
+        builder.Property(x => x.FactualRisk)
+            .HasPrecision(5, 4)
+            .IsRequired(false);
+
+        builder.Property(x => x.ReviewComments)
+            .HasMaxLength(500)
+            .IsRequired(false);
+
         // Foreign key relationship to Category
+        builder.Property(x => x.NavigationKeywordId1).IsRequired(false);
+        builder.Property(x => x.NavigationKeywordId2).IsRequired(false);
+
         builder.HasOne(x => x.Category)
             .WithMany(c => c.Items)
             .HasForeignKey(x => x.CategoryId)
             .OnDelete(DeleteBehavior.SetNull);
+
+        builder.HasOne(x => x.NavigationKeyword1)
+            .WithMany()
+            .HasForeignKey(x => x.NavigationKeywordId1)
+            .OnDelete(DeleteBehavior.Restrict);
+
+        builder.HasOne(x => x.NavigationKeyword2)
+            .WithMany()
+            .HasForeignKey(x => x.NavigationKeywordId2)
+            .OnDelete(DeleteBehavior.Restrict);
+
+        builder.HasIndex(x => x.NavigationKeywordId1);
+        builder.HasIndex(x => x.NavigationKeywordId2);
+
+        builder.HasIndex(x => x.UploadId);
+        builder.HasIndex(x => x.SeedId)
+            .IsUnique();
+        builder.HasIndex(x => new { x.IsSeedManaged, x.SeedSet });
 
         // Add check constraint for incorrect answers array length (0-4 items)
         builder.ToTable(t => t.HasCheckConstraint(
@@ -87,4 +137,3 @@ internal sealed class ItemConfiguration : IEntityTypeConfiguration<Item>
         builder.HasIndex(x => new { x.IsPrivate, x.CreatedBy });
     }
 }
-

@@ -11,10 +11,37 @@ interface ReviewBoardItemResponse {
   explanation: string;
   createdBy: string;
   createdAt: string;
+  factualRisk?: number | null;
+  reviewComments?: string | null;
 }
 
 interface ReviewBoardResponse {
   items: ReviewBoardItemResponse[];
+}
+
+export interface PendingKeywordResponse {
+  id: string;
+  name: string;
+  slug?: string | null;
+  isPrivate: boolean;
+  createdBy: string;
+  createdAt: string;
+  usageCount: number;
+}
+
+export interface PendingKeywordsResponse {
+  keywords: PendingKeywordResponse[];
+}
+
+export interface KeywordReviewResponse {
+  id: string;
+  name: string;
+  slug?: string | null;
+  isPrivate: boolean;
+  isReviewPending: boolean;
+  createdAt: string;
+  reviewedAt?: string | null;
+  reviewedBy?: string | null;
 }
 
 interface DatabaseSizeResponse {
@@ -43,6 +70,65 @@ interface AuditLogsResponse {
   totalPages: number;
 }
 
+export interface SeedSyncItemRequest {
+  seedId: string;
+  category: string;
+  navigationKeyword1: string;
+  navigationKeyword2: string;
+  question: string;
+  correctAnswer: string;
+  incorrectAnswers: string[];
+  explanation?: string | null;
+  keywords?: string[] | null;
+  source?: string | null;
+}
+
+export interface SeedSyncRequest {
+  schemaVersion: number;
+  seedSet: string;
+  items: SeedSyncItemRequest[];
+  deltaPreviewLimit?: number;
+}
+
+export interface SeedSyncChangeResponse {
+  seedId: string;
+  action: string;
+  category: string;
+  navigationKeyword1: string;
+  navigationKeyword2: string;
+  question: string;
+  changedFields: string[];
+}
+
+export interface SeedSyncPreviewResponse {
+  seedSet: string;
+  isInitialSeed: boolean;
+  previewSuppressed: boolean;
+  totalItemsInPayload: number;
+  existingManagedItemCount: number;
+  createdCount: number;
+  updatedCount: number;
+  adoptedCount: number;
+  unchangedCount: number;
+  missingFromPayloadCount: number;
+  hasMoreChanges: boolean;
+  changes: SeedSyncChangeResponse[];
+}
+
+export interface SeedSyncApplyResponse {
+  seedSet: string;
+  isInitialSeed: boolean;
+  totalItemsInPayload: number;
+  existingManagedItemCount: number;
+  createdCount: number;
+  updatedCount: number;
+  adoptedCount: number;
+  unchangedCount: number;
+  missingFromPayloadCount: number;
+  hasMoreChanges: boolean;
+  changes: SeedSyncChangeResponse[];
+}
+
 export const adminApi = {
   getReviewBoardItems: async (): Promise<ReviewBoardResponse> => {
     const response = await apiClient.get<ReviewBoardResponse>(
@@ -54,6 +140,17 @@ export const adminApi = {
   approveItem: async (id: string): Promise<ReviewBoardItemResponse> => {
     const response = await apiClient.put<ReviewBoardItemResponse>(
       `/admin/items/${id}/approval`
+    );
+    return response.data;
+  },
+
+  rejectItem: async (
+    id: string,
+    reason?: string
+  ): Promise<ReviewBoardItemResponse> => {
+    const response = await apiClient.put<ReviewBoardItemResponse>(
+      `/admin/items/${id}/rejection`,
+      { reason }
     );
     return response.data;
   },
@@ -75,7 +172,7 @@ export const adminApi = {
     return response.data;
   },
 
-  getAuditLogs: async (
+    getAuditLogs: async (
     actionTypes?: string[],
     page: number = 1,
     pageSize: number = 50
@@ -93,4 +190,183 @@ export const adminApi = {
     );
     return response.data;
   },
+
+  getCategoryKeywords: async (
+    category?: string | null,
+    rank?: number | null
+  ): Promise<CategoryKeywordsAdminResponse> => {
+    const params: Record<string, string | number> = {};
+    if (category) params.category = category;
+    if (rank != null) params.rank = rank;
+    const response = await apiClient.get<CategoryKeywordsAdminResponse>(
+      "/admin/keywords",
+      { params }
+    );
+    return response.data;
+  },
+
+  updateCategoryKeyword: async (
+    id: string,
+    data: UpdateCategoryKeywordRequest
+  ): Promise<CategoryKeywordAdminResponse> => {
+    const response = await apiClient.put<CategoryKeywordAdminResponse>(
+      `/admin/category-keywords/${id}`,
+      data
+    );
+    return response.data;
+  },
+
+  createCategoryKeyword: async (
+    data: CreateCategoryKeywordRequest
+  ): Promise<CategoryKeywordAdminResponse> => {
+    const response = await apiClient.post<CategoryKeywordAdminResponse>(
+      "/admin/category-keywords",
+      data
+    );
+    return response.data;
+  },
+
+  deleteCategoryKeyword: async (id: string): Promise<void> => {
+    await apiClient.delete(`/admin/category-keywords/${id}`);
+  },
+
+  getAvailableKeywordsForCategory: async (
+    categoryId: string
+  ): Promise<AvailableKeywordsResponse> => {
+    const response = await apiClient.get<AvailableKeywordsResponse>(
+      `/admin/categories/${categoryId}/keywords-available`
+    );
+    return response.data;
+  },
+
+  updateCategory: async (
+    id: string,
+    data: UpdateCategoryRequest
+  ): Promise<UpdateCategoryResponse> => {
+    const response = await apiClient.put<UpdateCategoryResponse>(
+      `/admin/categories/${id}`,
+      data
+    );
+    return response.data;
+  },
+
+  createCategory: async (
+    data: CreateCategoryRequest
+  ): Promise<CreateCategoryResponse> => {
+    const response = await apiClient.post<CreateCategoryResponse>(
+      "/admin/categories",
+      data
+    );
+    return response.data;
+  },
+
+  deleteCategory: async (id: string): Promise<void> => {
+    await apiClient.delete(`/admin/categories/${id}`);
+  },
+
+  getPendingKeywords: async (): Promise<PendingKeywordsResponse> => {
+    const response = await apiClient.get<PendingKeywordsResponse>(
+      "/admin/keywords/pending"
+    );
+    return response.data;
+  },
+
+  approveKeyword: async (id: string): Promise<KeywordReviewResponse> => {
+    const response = await apiClient.post<KeywordReviewResponse>(
+      `/admin/keywords/${id}/approve`
+    );
+    return response.data;
+  },
+
+  rejectKeyword: async (id: string): Promise<KeywordReviewResponse> => {
+    const response = await apiClient.post<KeywordReviewResponse>(
+      `/admin/keywords/${id}/reject`
+    );
+    return response.data;
+  },
+
+  previewSeedSync: async (
+    data: SeedSyncRequest
+  ): Promise<SeedSyncPreviewResponse> => {
+    const response = await apiClient.post<SeedSyncPreviewResponse>(
+      "/admin/seed-sync/preview",
+      data
+    );
+    return response.data;
+  },
+
+  applySeedSync: async (
+    data: SeedSyncRequest
+  ): Promise<SeedSyncApplyResponse> => {
+    const response = await apiClient.post<SeedSyncApplyResponse>(
+      "/admin/seed-sync/apply",
+      data
+    );
+    return response.data;
+  },
 };
+
+export interface CreateCategoryRequest {
+  name: string;
+  description?: string | null;
+  shortDescription?: string | null;
+}
+
+export interface CreateCategoryResponse {
+  id: string;
+  name: string;
+  description?: string | null;
+  shortDescription?: string | null;
+}
+
+export interface UpdateCategoryRequest {
+  name: string;
+  description?: string | null;
+  shortDescription?: string | null;
+}
+
+export interface UpdateCategoryResponse {
+  id: string;
+  name: string;
+  description?: string | null;
+  shortDescription?: string | null;
+}
+
+export interface CategoryKeywordAdminResponse {
+  id: string;
+  categoryId: string;
+  categoryName: string;
+  keywordId: string;
+  keywordName: string;
+  navigationRank: number | null;
+  parentName: string | null;
+  sortRank: number;
+  description?: string | null;
+}
+
+export interface CreateCategoryKeywordRequest {
+  categoryId: string;
+  parentKeywordId?: string | null;
+  childKeywordId: string;
+  sortRank?: number;
+  description?: string | null;
+}
+
+export interface KeywordOption {
+  id: string;
+  name: string;
+}
+
+export interface AvailableKeywordsResponse {
+  keywords: KeywordOption[];
+}
+
+export interface CategoryKeywordsAdminResponse {
+  keywords: CategoryKeywordAdminResponse[];
+}
+
+export interface UpdateCategoryKeywordRequest {
+  parentKeywordId?: string | null;
+  sortRank?: number | null;
+  description?: string | null;
+}

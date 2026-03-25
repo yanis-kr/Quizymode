@@ -1,0 +1,202 @@
+[
+  {
+    "category": "exams",
+    "navigationKeyword1": "finance",
+    "navigationKeyword2": "ea",
+    "question": "What generally determines a taxpayer's filing status for the year?",
+    "correctAnswer": "Marital status on the last day of the year",
+    "incorrectAnswers": [
+      "Age on the first day of the year",
+      "The date the return is filed",
+      "Whether the taxpayer receives a refund"
+    ],
+    "explanation": "The IRS says filing status is generally based on marital status on the last day of the year.",
+    "keywords": [
+      "ea",
+      "tax",
+      "filing-status"
+    ],
+    "source": "https://www.irs.gov/filing/filing-status",
+    "seedId": "20a154d1-035a-4172-bb44-e880b1972423"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "finance",
+    "navigationKeyword2": "ea",
+    "question": "Which taxpayer generally uses the Single filing status?",
+    "correctAnswer": "Someone who is unmarried, divorced, or legally separated",
+    "incorrectAnswers": [
+      "Anyone with only wage income",
+      "Any taxpayer with one dependent",
+      "Anyone under age 65"
+    ],
+    "explanation": "The IRS states that Single generally applies if you are unmarried, divorced, or legally separated.",
+    "keywords": [
+      "ea",
+      "tax",
+      "filing-status"
+    ],
+    "source": "https://www.irs.gov/filing/filing-status",
+    "seedId": "1b76043d-4fba-49b5-a64c-3306469e284b"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "finance",
+    "navigationKeyword2": "ea",
+    "question": "What happens on a married filing jointly return?",
+    "correctAnswer": "Both spouses report combined income and combined allowable expenses",
+    "incorrectAnswers": [
+      "Each spouse reports only their own income on separate returns",
+      "Only one spouse reports wage income",
+      "The spouses cannot claim credits together"
+    ],
+    "explanation": "IRS Publication 17 says that on a joint return, spouses report combined income and deduct combined allowable expenses.",
+    "keywords": [
+      "ea",
+      "tax",
+      "married-filing-jointly"
+    ],
+    "source": "https://www.irs.gov/publications/p17/ar01.html",
+    "seedId": "ab1a99bf-103e-475f-a74b-4123e51a20e5"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "finance",
+    "navigationKeyword2": "ea",
+    "question": "Which statement best describes married filing separately?",
+    "correctAnswer": "Each spouse generally reports only their own income, deductions, and credits",
+    "incorrectAnswers": [
+      "It is available only to self-employed taxpayers",
+      "It combines both spouses' income on one return",
+      "It requires a dependent child"
+    ],
+    "explanation": "The IRS explains that when filing separately, each spouse reports only their own income, deductions, and credits on their individual return.",
+    "keywords": [
+      "ea",
+      "tax",
+      "married-filing-separately"
+    ],
+    "source": "https://www.irs.gov/individuals/filing-taxes-after-divorce-or-separation",
+    "seedId": "8167acba-fbe0-4d8b-800e-2b30f0b993cc"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "finance",
+    "navigationKeyword2": "ea",
+    "question": "Which taxpayer may qualify as head of household?",
+    "correctAnswer": "A single taxpayer who paid more than half of household costs and has a qualifying dependent",
+    "incorrectAnswers": [
+      "Any married taxpayer filing separately",
+      "Any taxpayer with investment income",
+      "Anyone who rented for at least six months"
+    ],
+    "explanation": "The IRS says head of household generally applies if you're single, paid more than half of your living expenses, and have a qualifying dependent.",
+    "keywords": [
+      "ea",
+      "tax",
+      "head-of-household"
+    ],
+    "source": "https://www.irs.gov/filing/filing-status",
+    "seedId": "d0ef578d-f0ac-4dd7-b1da-e4db4b42050f"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "finance",
+    "navigationKeyword2": "ea",
+    "question": "When may a taxpayer use qualifying surviving spouse status?",
+    "correctAnswer": "When the spouse died in the past two years and the taxpayer has a dependent child",
+    "incorrectAnswers": [
+      "Only in the year of marriage",
+      "Only if the taxpayer has business income",
+      "Whenever the taxpayer files an extension"
+    ],
+    "explanation": "The IRS lists qualifying surviving spouse as a filing status for a taxpayer whose spouse died during the past two years and who has a dependent child.",
+    "keywords": [
+      "ea",
+      "tax",
+      "filing-status"
+    ],
+    "source": "https://www.irs.gov/filing/filing-status",
+    "seedId": "4a593478-8509-4060-9dcf-b5c7a13a0ed5"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "finance",
+    "navigationKeyword2": "ea",
+    "question": "What does Form W-2 primarily report to an employee?",
+    "correctAnswer": "Wages and related tax reporting information",
+    "incorrectAnswers": [
+      "Only deductible business mileage",
+      "Interest income from bank accounts",
+      "Capital gains from stock sales"
+    ],
+    "explanation": "The IRS FAQ for Form W-2 covers wages, tips, Social Security, Medicare, and related employee tax reporting information.",
+    "keywords": [
+      "ea",
+      "tax",
+      "form-w2"
+    ],
+    "source": "https://www.irs.gov/faqs/small-business-self-employed-other-business/form-w-2-fica-medicare-tips-employee-benefits",
+    "seedId": "000a2ff3-b442-4b2f-9048-ecb1d4f8e439"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "finance",
+    "navigationKeyword2": "ea",
+    "question": "What type of income is reported on Form 1099-INT?",
+    "correctAnswer": "Interest income",
+    "incorrectAnswers": [
+      "Wage income",
+      "Capital losses",
+      "Self-employment tax"
+    ],
+    "explanation": "The IRS page for Form 1099-INT identifies it as the form used to report interest income.",
+    "keywords": [
+      "ea",
+      "tax",
+      "1099-int"
+    ],
+    "source": "https://www.irs.gov/forms-pubs/about-form-1099-int",
+    "seedId": "89480d55-b35d-4b55-99d3-e8f93165e202"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "finance",
+    "navigationKeyword2": "ea",
+    "question": "When is a capital gain generally long-term for federal tax purposes?",
+    "correctAnswer": "When the asset was held for more than one year before disposition",
+    "incorrectAnswers": [
+      "When it was held at least 30 days",
+      "When it produced dividend income",
+      "When it was sold at a profit in December"
+    ],
+    "explanation": "IRS Topic No. 409 says a capital gain or loss is generally long-term if the asset was held for more than one year before disposition.",
+    "keywords": [
+      "ea",
+      "tax",
+      "capital-gains"
+    ],
+    "source": "https://www.irs.gov/taxtopics/tc409",
+    "seedId": "8aa27c85-2b7b-49ca-8133-ba28830333ec"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "finance",
+    "navigationKeyword2": "ea",
+    "question": "After listing sales on Form 8949, where are capital gains and deductible capital losses summarized?",
+    "correctAnswer": "Schedule D (Form 1040)",
+    "incorrectAnswers": [
+      "Schedule C",
+      "Form W-2",
+      "Form 4868"
+    ],
+    "explanation": "IRS Topic No. 409 says most sales are reported on Form 8949 and then summarized on Schedule D (Form 1040).",
+    "keywords": [
+      "ea",
+      "tax",
+      "schedule-d"
+    ],
+    "source": "https://www.irs.gov/taxtopics/tc409",
+    "seedId": "d7191971-4701-45ac-b03f-92e5a711b627"
+  }
+]

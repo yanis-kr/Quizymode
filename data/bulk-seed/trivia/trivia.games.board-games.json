@@ -1,0 +1,192 @@
+[
+  {
+    "category": "trivia",
+    "navigationKeyword1": "games",
+    "navigationKeyword2": "board-games",
+    "question": "FIDE Laws of Chess state the game is played between two opponents who move how many sets of pieces?",
+    "correctAnswer": "two",
+    "incorrectAnswers": [
+      "one",
+      "three",
+      "four"
+    ],
+    "explanation": "Chess is a game between two opponents who move their own pieces.",
+    "keywords": [
+      "chess",
+      "rules"
+    ],
+    "source": "https://handbook.fide.com/chapter/B010201",
+    "seedId": "1c2a549d-7877-4ee5-ae92-f38a2a4e0355"
+  },
+  {
+    "category": "trivia",
+    "navigationKeyword1": "games",
+    "navigationKeyword2": "board-games",
+    "question": "FIDE assigns which colors to the two sides in standard chess?",
+    "correctAnswer": "white and black",
+    "incorrectAnswers": [
+      "red and blue",
+      "gold and silver",
+      "green and yellow"
+    ],
+    "explanation": "FIDE uses White and Black is side designations.",
+    "keywords": [
+      "chess",
+      "rules"
+    ],
+    "source": "https://handbook.fide.com/chapter/B010201",
+    "seedId": "a5f57451-f3f7-4735-a0b3-37469a88e9a0"
+  },
+  {
+    "category": "trivia",
+    "navigationKeyword1": "games",
+    "navigationKeyword2": "board-games",
+    "question": "Monopoly as a board game centered on buying and trading what?",
+    "correctAnswer": "properties",
+    "incorrectAnswers": [
+      "cards only",
+      "dice only",
+      "tiles only"
+    ],
+    "explanation": "Monopoly focuses on property trading.",
+    "keywords": [
+      "monopoly",
+      "economics"
+    ],
+    "source": "https://www.britannica.com/topic/Monopoly-board-game",
+    "seedId": "42823840-7e2b-42df-8517-3f3241e1622e"
+  },
+  {
+    "category": "trivia",
+    "navigationKeyword1": "games",
+    "navigationKeyword2": "board-games",
+    "question": "Scrabble to forming words on a grid using what?",
+    "correctAnswer": "letter tiles",
+    "incorrectAnswers": [
+      "picture cards",
+      "chessmen",
+      "dominoes"
+    ],
+    "explanation": "Scrabble uses letter tiles on a board.",
+    "keywords": [
+      "scrabble",
+      "words"
+    ],
+    "source": "https://www.britannica.com/topic/Scrabble-board-game",
+    "seedId": "68c63746-7f61-4abf-a446-9df6381d9758"
+  },
+  {
+    "category": "trivia",
+    "navigationKeyword1": "games",
+    "navigationKeyword2": "board-games",
+    "question": "Checkers (draughts) to captures moved how?",
+    "correctAnswer": "diagonally on dark squares",
+    "incorrectAnswers": [
+      "orthogonally only",
+      "knight moves",
+      "any direction"
+    ],
+    "explanation": "Checkers moves diagonally on dark squares.",
+    "keywords": [
+      "checkers",
+      "strategy"
+    ],
+    "source": "https://www.britannica.com/topic/checkers",
+    "seedId": "cf46258b-2ab0-4ba4-8dab-bb39b3821cc4"
+  },
+  {
+    "category": "trivia",
+    "navigationKeyword1": "games",
+    "navigationKeyword2": "board-games",
+    "question": "Go with placing stones on a grid in which countries\u2019 traditional play?",
+    "correctAnswer": "China, Korea, and Japan",
+    "incorrectAnswers": [
+      "Brazil, Chile, Argentina",
+      "Norway, Sweden, Finland",
+      "Egypt, Sudan, Libya"
+    ],
+    "explanation": "Go is historically rooted in East Asia.",
+    "keywords": [
+      "go-game",
+      "strategy"
+    ],
+    "source": "https://www.britannica.com/topic/go-game",
+    "seedId": "4ce2d75a-eb65-43e3-9742-54d88012be59"
+  },
+  {
+    "category": "trivia",
+    "navigationKeyword1": "games",
+    "navigationKeyword2": "board-games",
+    "question": "Clue (Cluedo) as solving what kind of puzzle?",
+    "correctAnswer": "a murder mystery",
+    "incorrectAnswers": [
+      "a stock trade",
+      "a sports bracket",
+      "a crossword only"
+    ],
+    "explanation": "Clue is a murder-mystery deduction game.",
+    "keywords": [
+      "clue",
+      "deduction"
+    ],
+    "source": "https://www.britannica.com/topic/Clue-board-game",
+    "seedId": "3acc1509-5ba0-42bc-b8cb-8d0428932642"
+  },
+  {
+    "category": "trivia",
+    "navigationKeyword1": "games",
+    "navigationKeyword2": "board-games",
+    "question": "Backgammon to combining dice rolls with movement on a board marked with how many narrow triangles?",
+    "correctAnswer": "24",
+    "incorrectAnswers": [
+      "16",
+      "32",
+      "12"
+    ],
+    "explanation": "Backgammon boards have 24 points.",
+    "keywords": [
+      "backgammon",
+      "dice"
+    ],
+    "source": "https://www.britannica.com/topic/backgammon",
+    "seedId": "aac3d21c-c27a-41ea-ba06-16d1d24349b8"
+  },
+  {
+    "category": "trivia",
+    "navigationKeyword1": "games",
+    "navigationKeyword2": "board-games",
+    "question": "Risk to strategy over a map divided into what?",
+    "correctAnswer": "territories",
+    "incorrectAnswers": [
+      "cards only",
+      "letters only",
+      "hex puzzles only"
+    ],
+    "explanation": "Risk is fought over territories.",
+    "keywords": [
+      "risk",
+      "strategy"
+    ],
+    "source": "https://www.britannica.com/topic/Risk-board-game",
+    "seedId": "ee4d73c0-b910-4edd-81ef-bfc1eb39b551"
+  },
+  {
+    "category": "trivia",
+    "navigationKeyword1": "games",
+    "navigationKeyword2": "board-games",
+    "question": "Chess as a game of perfect information with no hidden what?",
+    "correctAnswer": "no hidden cards or dice outcomes",
+    "incorrectAnswers": [
+      "hidden auctions",
+      "secret teams",
+      "random tile bags"
+    ],
+    "explanation": "Chess is fully visible with deterministic moves.",
+    "keywords": [
+      "chess",
+      "strategy"
+    ],
+    "source": "https://handbook.fide.com/chapter/B010201",
+    "seedId": "44e601dc-3427-4143-a8fb-fb7fd9bef796"
+  }
+]

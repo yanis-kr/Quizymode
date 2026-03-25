@@ -1,0 +1,202 @@
+[
+  {
+    "category": "sports",
+    "navigationKeyword1": "hockey",
+    "navigationKeyword2": "positions",
+    "question": "Which player defends the net and can use special pads and a catching glove?",
+    "correctAnswer": "Goaltender",
+    "incorrectAnswers": [
+      "Center",
+      "Winger",
+      "Defenseman"
+    ],
+    "explanation": "The goaltender is the last line of defense.",
+    "keywords": [
+      "hockey",
+      "positions",
+      "goalie"
+    ],
+    "source": "https://www.britannica.com/sports/ice-hockey",
+    "seedId": "d70fc856-c8fd-4c98-82b7-a3492f259c4d"
+  },
+  {
+    "category": "sports",
+    "navigationKeyword1": "hockey",
+    "navigationKeyword2": "positions",
+    "question": "Which forward usually takes most faceoffs in hockey?",
+    "correctAnswer": "Center",
+    "incorrectAnswers": [
+      "Left wing",
+      "Right wing",
+      "Defenseman"
+    ],
+    "explanation": "Centers commonly handle faceoffs and middle-lane play.",
+    "keywords": [
+      "hockey",
+      "positions",
+      "center"
+    ],
+    "source": "https://www.britannica.com/sports/ice-hockey",
+    "seedId": "b9538be5-2672-4461-a103-ce13a0a36e88"
+  },
+  {
+    "category": "sports",
+    "navigationKeyword1": "hockey",
+    "navigationKeyword2": "positions",
+    "question": "Which skater position primarily plays on the blue line in front of the goalie?",
+    "correctAnswer": "Defenseman",
+    "incorrectAnswers": [
+      "Center",
+      "Winger",
+      "Goal judge"
+    ],
+    "explanation": "Defensemen patrol the back end and support breakouts.",
+    "keywords": [
+      "hockey",
+      "positions",
+      "defenseman"
+    ],
+    "source": "https://www.britannica.com/sports/ice-hockey",
+    "seedId": "583d5c8e-e961-422b-b101-3ebcd4082eb8"
+  },
+  {
+    "category": "sports",
+    "navigationKeyword1": "hockey",
+    "navigationKeyword2": "positions",
+    "question": "Which positions usually attack along the boards on either side of the center?",
+    "correctAnswer": "Wingers",
+    "incorrectAnswers": [
+      "Goalies",
+      "Referees",
+      "Defense pairs"
+    ],
+    "explanation": "Left and right wings flank the center among the forwards.",
+    "keywords": [
+      "hockey",
+      "positions",
+      "wingers"
+    ],
+    "source": "https://www.britannica.com/sports/ice-hockey",
+    "seedId": "2ffe81d7-1dc1-41bc-b059-0fd4fb05f203"
+  },
+  {
+    "category": "sports",
+    "navigationKeyword1": "hockey",
+    "navigationKeyword2": "positions",
+    "question": "What is the common name for the goalie position?",
+    "correctAnswer": "Netminder",
+    "incorrectAnswers": [
+      "Blue-liner",
+      "Playmaker",
+      "Pivot"
+    ],
+    "explanation": "Netminder is a common synonym for goaltender.",
+    "keywords": [
+      "hockey",
+      "positions",
+      "netminder"
+    ],
+    "source": "https://www.britannica.com/sports/ice-hockey",
+    "seedId": "24946f88-27dd-48ba-a0a1-27d56e4e79fc"
+  },
+  {
+    "category": "sports",
+    "navigationKeyword1": "hockey",
+    "navigationKeyword2": "positions",
+    "question": "Which forward role is often associated with playmaking from the middle of the ice?",
+    "correctAnswer": "Center",
+    "incorrectAnswers": [
+      "Left defense",
+      "Goalie",
+      "Linesman"
+    ],
+    "explanation": "Centers often create offense through passes and faceoff wins.",
+    "keywords": [
+      "hockey",
+      "positions",
+      "playmaker"
+    ],
+    "source": "https://www.britannica.com/sports/ice-hockey",
+    "seedId": "5edc0195-a7aa-439e-a2e7-8e34e8ebbf1b"
+  },
+  {
+    "category": "sports",
+    "navigationKeyword1": "hockey",
+    "navigationKeyword2": "positions",
+    "question": "Which defenders usually work as a pair in their own zone?",
+    "correctAnswer": "Defensemen",
+    "incorrectAnswers": [
+      "Centers",
+      "Goalies",
+      "Officials"
+    ],
+    "explanation": "Defensemen usually play in pairs and rotate with forward lines.",
+    "keywords": [
+      "hockey",
+      "positions",
+      "pair"
+    ],
+    "source": "https://www.britannica.com/sports/ice-hockey",
+    "seedId": "b65f9555-3c7c-4735-9eea-e2ea53189d85"
+  },
+  {
+    "category": "sports",
+    "navigationKeyword1": "hockey",
+    "navigationKeyword2": "positions",
+    "question": "Which winger usually lines up on the left side of the ice at even strength?",
+    "correctAnswer": "Left wing",
+    "incorrectAnswers": [
+      "Right defense",
+      "Goaltender",
+      "Center only"
+    ],
+    "explanation": "Left wing is the forward position on the left side.",
+    "keywords": [
+      "hockey",
+      "positions",
+      "left-wing"
+    ],
+    "source": "https://www.britannica.com/sports/ice-hockey",
+    "seedId": "5e78feee-711c-4c04-bf24-614a4d61a955"
+  },
+  {
+    "category": "sports",
+    "navigationKeyword1": "hockey",
+    "navigationKeyword2": "positions",
+    "question": "Which winger usually lines up on the right side of the ice at even strength?",
+    "correctAnswer": "Right wing",
+    "incorrectAnswers": [
+      "Left defense",
+      "Goalie",
+      "Center only"
+    ],
+    "explanation": "Right wing is the forward position on the right side.",
+    "keywords": [
+      "hockey",
+      "positions",
+      "right-wing"
+    ],
+    "source": "https://www.britannica.com/sports/ice-hockey",
+    "seedId": "f116693e-2335-487b-b585-f04a2aee31bd"
+  },
+  {
+    "category": "sports",
+    "navigationKeyword1": "hockey",
+    "navigationKeyword2": "positions",
+    "question": "Which position is most directly responsible for stopping shots?",
+    "correctAnswer": "Goaltender",
+    "incorrectAnswers": [
+      "Center",
+      "Winger",
+      "Defenseman"
+    ],
+    "explanation": "Stopping pucks is the goalie's primary job.",
+    "keywords": [
+      "hockey",
+      "positions",
+      "shots"
+    ],
+    "source": "https://www.britannica.com/sports/ice-hockey",
+    "seedId": "cf1fd373-5d81-494c-b1d9-58d000df1cb3"
+  }
+]

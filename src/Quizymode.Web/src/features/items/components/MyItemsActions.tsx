@@ -2,11 +2,11 @@ import { useNavigate } from "react-router-dom";
 import type { ItemResponse } from "@/types/api";
 import {
   EyeIcon,
-  FolderIcon,
   PencilIcon,
   TrashIcon,
   AcademicCapIcon,
 } from "@heroicons/react/24/outline";
+import { ItemCollectionControls } from "@/components/ItemCollectionControls";
 
 interface MyItemsActionsProps {
   item: ItemResponse;
@@ -58,13 +58,11 @@ export const MyItemsActions = ({
       >
         <AcademicCapIcon className="h-5 w-5" />
       </button>
-      <button
-        onClick={() => onManageCollections(item.id)}
-        className="p-2 text-blue-600 hover:bg-blue-50 rounded-md"
-        title="Manage collections"
-      >
-        <FolderIcon className="h-5 w-5" />
-      </button>
+      <ItemCollectionControls
+        itemId={item.id}
+        itemCollectionIds={new Set((item.collections ?? []).map((c) => c.id))}
+        onOpenManageCollections={() => onManageCollections(item.id)}
+      />
       <button
         onClick={() => navigate(`/items/${item.id}/edit`)}
         disabled={!canEditDelete}

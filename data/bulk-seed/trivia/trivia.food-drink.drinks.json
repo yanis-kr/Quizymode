@@ -1,0 +1,192 @@
+[
+  {
+    "category": "trivia",
+    "navigationKeyword1": "food-drink",
+    "navigationKeyword2": "drinks",
+    "question": "Tea is made from leaves of which plant species?",
+    "correctAnswer": "Camellia sinensis",
+    "incorrectAnswers": [
+      "Coffea arabica",
+      "Theobroma cacao",
+      "Saccharum officinarum"
+    ],
+    "explanation": "Tea comes from Camellia sinensis.",
+    "keywords": [
+      "tea",
+      "beverages"
+    ],
+    "source": "https://www.britannica.com/plant/tea-plant",
+    "seedId": "e803c0b6-0f43-4fad-8479-26b25875883e"
+  },
+  {
+    "category": "trivia",
+    "navigationKeyword1": "food-drink",
+    "navigationKeyword2": "drinks",
+    "question": "Coffee beverages are made from seeds commonly called what?",
+    "correctAnswer": "beans",
+    "incorrectAnswers": [
+      "bulbs",
+      "rhizomes",
+      "sparkling water"
+    ],
+    "explanation": "Coffee uses seeds called beans.",
+    "keywords": [
+      "coffee",
+      "beverages"
+    ],
+    "source": "https://www.britannica.com/plant/coffee",
+    "seedId": "bb2cd7bd-b6c9-4308-8688-69f361235be0"
+  },
+  {
+    "category": "trivia",
+    "navigationKeyword1": "food-drink",
+    "navigationKeyword2": "drinks",
+    "question": "Water is the principal component of most beverages and essential for what human need?",
+    "correctAnswer": "hydration",
+    "incorrectAnswers": [
+      "calcification of bone only",
+      "melanin production only",
+      "insulin resistance"
+    ],
+    "explanation": "Water is central to hydration.",
+    "keywords": [
+      "water",
+      "health"
+    ],
+    "source": "https://www.britannica.com/science/water",
+    "seedId": "bffd1828-a7c3-4fda-9a8d-537aa66e4fde"
+  },
+  {
+    "category": "trivia",
+    "navigationKeyword1": "food-drink",
+    "navigationKeyword2": "drinks",
+    "question": "Beer fermentation with sugars converted by yeast primarily into alcohol and what gas?",
+    "correctAnswer": "carbon dioxide",
+    "incorrectAnswers": [
+      "nitrogen only",
+      "argon",
+      "helium"
+    ],
+    "explanation": "Beer fermentation produces ethanol and CO\u2082.",
+    "keywords": [
+      "beer",
+      "fermentation"
+    ],
+    "source": "https://www.britannica.com/topic/beer",
+    "seedId": "1585c0fe-146c-47fd-8f53-f79b32a8c3bb"
+  },
+  {
+    "category": "trivia",
+    "navigationKeyword1": "food-drink",
+    "navigationKeyword2": "drinks",
+    "question": "Wine to fermentation of sugars in what fruit?",
+    "correctAnswer": "grapes",
+    "incorrectAnswers": [
+      "apples only",
+      "olives",
+      "tomatoes"
+    ],
+    "explanation": "Wine is typically grape-fermented.",
+    "keywords": [
+      "wine",
+      "fermentation"
+    ],
+    "source": "https://www.britannica.com/topic/wine",
+    "seedId": "ed126034-180d-4e6d-946b-a2e5eca1ea93"
+  },
+  {
+    "category": "trivia",
+    "navigationKeyword1": "food-drink",
+    "navigationKeyword2": "drinks",
+    "question": "Milk as a nutrient-rich liquid produced by female mammals for what purpose?",
+    "correctAnswer": "nursing offspring",
+    "incorrectAnswers": [
+      "photosynthesis",
+      "pollination",
+      "hibernation"
+    ],
+    "explanation": "Milk nourishes young mammals.",
+    "keywords": [
+      "milk",
+      "dairy"
+    ],
+    "source": "https://www.britannica.com/topic/milk",
+    "seedId": "e6327b7e-13bc-472d-a648-f2abf092841b"
+  },
+  {
+    "category": "trivia",
+    "navigationKeyword1": "food-drink",
+    "navigationKeyword2": "drinks",
+    "question": "Citrus juices to fruits high in which vitamin?",
+    "correctAnswer": "vitamin C",
+    "incorrectAnswers": [
+      "vitamin D only",
+      "vitamin B12 only",
+      "vitamin K only"
+    ],
+    "explanation": "Citrus is rich in vitamin C.",
+    "keywords": [
+      "juice",
+      "vitamins"
+    ],
+    "source": "https://www.britannica.com/plant/citrus-plant",
+    "seedId": "01c2642d-c887-4606-b4c2-09a891eade1f"
+  },
+  {
+    "category": "trivia",
+    "navigationKeyword1": "food-drink",
+    "navigationKeyword2": "drinks",
+    "question": "Cocoa beverages derive from seeds of which plant?",
+    "correctAnswer": "Theobroma cacao",
+    "incorrectAnswers": [
+      "Camellia sinensis",
+      "Coffea robusta",
+      "barley"
+    ],
+    "explanation": "Cocoa comes from cacao seeds.",
+    "keywords": [
+      "cocoa",
+      "beverages"
+    ],
+    "source": "https://www.britannica.com/topic/cocoa-food",
+    "seedId": "68a8897a-578c-4097-8829-677aa0c46539"
+  },
+  {
+    "category": "trivia",
+    "navigationKeyword1": "food-drink",
+    "navigationKeyword2": "drinks",
+    "question": "Sparkling water with dissolved what?",
+    "correctAnswer": "carbon dioxide",
+    "incorrectAnswers": [
+      "oxygen only",
+      "nitrogen only",
+      "helium"
+    ],
+    "explanation": "Carbonation is dissolved CO\u2082.",
+    "keywords": [
+      "carbonation",
+      "water"
+    ],
+    "source": "https://www.britannica.com/topic/carbonated-drink",
+    "seedId": "13399bf3-a3f1-4a1e-8e9d-5d4761f88b48"
+  },
+  {
+    "category": "trivia",
+    "navigationKeyword1": "food-drink",
+    "navigationKeyword2": "drinks",
+    "question": "Smoothies to blended fruits and often what dairy or substitute?",
+    "correctAnswer": "yogurt or milk",
+    "incorrectAnswers": [
+      "raw rice",
+      "flour only",
+      "vinegar"
+    ],
+    "explanation": "Smoothies commonly include yogurt or milk.",
+    "keywords": [
+      "smoothies",
+      "fruit"
+    ],
+    "source": "https://www.britannica.com/topic/smoothie",
+    "seedId": "2577a151-2578-4946-97c3-33d245da0b96"
+  }
+]

@@ -11,13 +11,14 @@ const ItemsPage = () => {
   const navigate = useNavigate();
   const category = searchParams.get("category") || undefined;
   const [mode, setMode] = useState<"explore" | "quiz" | null>(null);
-  const [count, setCount] = useState(10);
+  /** List mode (Random Items) loads all available items (backend max 1000) into memory */
+  const LIST_MAX_ITEMS = 1000;
   const [page, setPage] = useState(1);
   const pageSize = 10;
 
   const { data, isLoading, error, refetch } = useQuery({
-    queryKey: ["randomItems", category, count],
-    queryFn: () => itemsApi.getRandom(category, count),
+    queryKey: ["randomItems", category, LIST_MAX_ITEMS],
+    queryFn: () => itemsApi.getRandom(category, LIST_MAX_ITEMS),
     enabled: mode !== null,
   });
 
@@ -70,22 +71,12 @@ const ItemsPage = () => {
             {category ? `Category: ${category}` : "Get Random Items"}
           </h1>
           <p className="text-gray-600 text-sm mb-6">
-            Select a mode to interact with quiz items. Choose Explore Mode to view questions with answers and explanations, or Quiz Mode to test your knowledge with multiple-choice questions.
+            Select a mode to interact with quiz items. Choose Flashcards Mode to view questions with answers and explanations, or Quiz Mode to test your knowledge with multiple-choice questions.
           </p>
 
-          <div className="mb-6">
-            <label className="block text-sm font-medium text-gray-700 mb-2">
-              Number of items
-            </label>
-            <input
-              type="number"
-              min="1"
-              max="100"
-              value={count}
-              onChange={(e) => setCount(parseInt(e.target.value) || 10)}
-              className="block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm px-4 py-2 border"
-            />
-          </div>
+          <p className="text-sm text-gray-600 mb-6">
+            All available items in this category will be loaded (up to 1000).
+          </p>
 
           <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
             <button
@@ -93,7 +84,7 @@ const ItemsPage = () => {
               className="bg-white overflow-hidden shadow rounded-lg hover:shadow-lg transition-shadow p-6 text-left"
             >
               <h3 className="text-lg font-medium text-gray-900 mb-2">
-                Explore Mode
+                Flashcards Mode
               </h3>
               <p className="text-sm text-gray-500">
                 View questions with answers and explanations
@@ -126,7 +117,7 @@ const ItemsPage = () => {
     <div className="px-4 py-6 sm:px-0">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-3xl font-bold text-gray-900 mb-2">
-          {mode === "explore" ? "Explore Mode" : "Quiz Mode"}
+          {mode === "explore" ? "Flashcards Mode" : "Quiz Mode"}
         </h1>
         <p className="text-gray-600 text-sm mb-6">
           {mode === "explore" 

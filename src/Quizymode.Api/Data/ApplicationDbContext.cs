@@ -22,6 +22,12 @@ public sealed class ApplicationDbContext : DbContext
 
     public DbSet<CollectionItem> CollectionItems => Set<CollectionItem>();
 
+    public DbSet<CollectionBookmark> CollectionBookmarks => Set<CollectionBookmark>();
+
+    public DbSet<CollectionShare> CollectionShares => Set<CollectionShare>();
+
+    public DbSet<CollectionRating> CollectionRatings => Set<CollectionRating>();
+
     public DbSet<User> Users => Set<User>();
 
     public DbSet<Audit> Audits => Set<Audit>();
@@ -32,7 +38,21 @@ public sealed class ApplicationDbContext : DbContext
 
     public DbSet<Category> Categories => Set<Category>();
 
+    public DbSet<KeywordRelation> KeywordRelations => Set<KeywordRelation>();
+
     public DbSet<UserSetting> UserSettings => Set<UserSetting>();
+
+    public DbSet<Upload> Uploads => Set<Upload>();
+
+    public DbSet<StudyGuide> StudyGuides => Set<StudyGuide>();
+
+    public DbSet<StudyGuideImportSession> StudyGuideImportSessions => Set<StudyGuideImportSession>();
+
+    public DbSet<StudyGuideChunk> StudyGuideChunks => Set<StudyGuideChunk>();
+
+    public DbSet<StudyGuidePromptResult> StudyGuidePromptResults => Set<StudyGuidePromptResult>();
+
+    public DbSet<StudyGuideDedupResult> StudyGuideDedupResults => Set<StudyGuideDedupResult>();
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {

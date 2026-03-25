@@ -19,6 +19,12 @@ internal sealed class CategoryConfiguration : IEntityTypeConfiguration<Category>
             .IsRequired()
             .HasMaxLength(100);
 
+        builder.Property(x => x.Description)
+            .HasMaxLength(500);
+
+        builder.Property(x => x.ShortDescription)
+            .HasMaxLength(120);
+
         builder.Property(x => x.IsPrivate)
             .IsRequired()
             .HasDefaultValue(false);

@@ -1,0 +1,202 @@
+[
+  {
+    "category": "sports",
+    "navigationKeyword1": "rules",
+    "navigationKeyword2": "equipment",
+    "question": "Which piece of football equipment protects the player's head?",
+    "correctAnswer": "Helmet",
+    "incorrectAnswers": [
+      "Shin guard",
+      "Putter",
+      "Glove only"
+    ],
+    "explanation": "Helmets are required protective headgear in football.",
+    "keywords": [
+      "rules",
+      "equipment",
+      "helmet"
+    ],
+    "source": "https://operations.nfl.com/learn-the-game/nfl-basics/",
+    "seedId": "ee760887-8782-43dc-bed6-a39a68983a32"
+  },
+  {
+    "category": "sports",
+    "navigationKeyword1": "rules",
+    "navigationKeyword2": "equipment",
+    "question": "Which hockey item is used to strike the puck?",
+    "correctAnswer": "Stick",
+    "incorrectAnswers": [
+      "Bat",
+      "Racquet",
+      "Club"
+    ],
+    "explanation": "Players use a hockey stick to pass and shoot the puck.",
+    "keywords": [
+      "rules",
+      "equipment",
+      "stick"
+    ],
+    "source": "https://www.britannica.com/sports/ice-hockey",
+    "seedId": "71fc9ba6-114e-46dc-8d32-c488f40628a2"
+  },
+  {
+    "category": "sports",
+    "navigationKeyword1": "rules",
+    "navigationKeyword2": "equipment",
+    "question": "Which golf club is mainly used on the green?",
+    "correctAnswer": "Putter",
+    "incorrectAnswers": [
+      "Driver",
+      "Sand wedge",
+      "Hybrid"
+    ],
+    "explanation": "Putters are designed for short rolling strokes on the green.",
+    "keywords": [
+      "rules",
+      "equipment",
+      "putter"
+    ],
+    "source": "https://www.usga.org/content/usga/home-page/rules-hub.html",
+    "seedId": "ecffc2d8-a447-4264-b0c4-d990953de94c"
+  },
+  {
+    "category": "sports",
+    "navigationKeyword1": "rules",
+    "navigationKeyword2": "equipment",
+    "question": "Which baseball equipment item protects the catcher from foul tips and pitches?",
+    "correctAnswer": "Mask",
+    "incorrectAnswers": [
+      "Batting tee",
+      "Rosin bag",
+      "Lineup card"
+    ],
+    "explanation": "Catchers wear a protective mask as part of their gear.",
+    "keywords": [
+      "rules",
+      "equipment",
+      "catcher-mask"
+    ],
+    "source": "https://www.mlb.com/glossary",
+    "seedId": "244909d5-7fe6-4d04-9ed6-c2f9a9b54731"
+  },
+  {
+    "category": "sports",
+    "navigationKeyword1": "rules",
+    "navigationKeyword2": "equipment",
+    "question": "Which basketball equipment item sits 10 feet above the floor and defines the scoring target?",
+    "correctAnswer": "Basket rim and backboard",
+    "incorrectAnswers": [
+      "Shot clock horn",
+      "Jump circle",
+      "Bench chair"
+    ],
+    "explanation": "Teams score by sending the ball through the rim attached to the backboard.",
+    "keywords": [
+      "rules",
+      "equipment",
+      "basket"
+    ],
+    "source": "https://www.britannica.com/sports/basketball",
+    "seedId": "3a05b660-c60e-4ba9-8206-4710d9cbaf9f"
+  },
+  {
+    "category": "sports",
+    "navigationKeyword1": "rules",
+    "navigationKeyword2": "equipment",
+    "question": "Which soccer equipment item must every outfield player wear under the socks in organized play?",
+    "correctAnswer": "Shin guards",
+    "incorrectAnswers": [
+      "Batting gloves",
+      "Elbow pads",
+      "Helmet visor"
+    ],
+    "explanation": "Shin guards are standard protective equipment in soccer.",
+    "keywords": [
+      "rules",
+      "equipment",
+      "shin-guards"
+    ],
+    "source": "https://www.theifab.com/laws/latest/",
+    "seedId": "67e747d1-ea6b-40f0-a481-77129a56c49a"
+  },
+  {
+    "category": "sports",
+    "navigationKeyword1": "rules",
+    "navigationKeyword2": "equipment",
+    "question": "Which item marks the boundary line in baseball and fair territory decisions?",
+    "correctAnswer": "Foul line",
+    "incorrectAnswers": [
+      "Center circle",
+      "Blue line",
+      "End zone pylon"
+    ],
+    "explanation": "The foul lines define fair and foul territory from home plate outward.",
+    "keywords": [
+      "rules",
+      "equipment",
+      "field-lines"
+    ],
+    "source": "https://www.mlb.com/glossary",
+    "seedId": "4da3b3c2-9681-4230-ae17-89820572a0a1"
+  },
+  {
+    "category": "sports",
+    "navigationKeyword1": "rules",
+    "navigationKeyword2": "equipment",
+    "question": "Which item in tennis divides the court and must be cleared on most shots?",
+    "correctAnswer": "Net",
+    "incorrectAnswers": [
+      "Backboard",
+      "Wall pad",
+      "Yellow card"
+    ],
+    "explanation": "The tennis net separates the two sides of the court.",
+    "keywords": [
+      "rules",
+      "equipment",
+      "net"
+    ],
+    "source": "https://www.britannica.com/sports",
+    "seedId": "e0b7f0f8-953f-4476-b9fd-234d5d47c5af"
+  },
+  {
+    "category": "sports",
+    "navigationKeyword1": "rules",
+    "navigationKeyword2": "equipment",
+    "question": "Which football equipment item is worn on the upper body for impact protection?",
+    "correctAnswer": "Shoulder pads",
+    "incorrectAnswers": [
+      "Skates",
+      "Face cage only",
+      "Arm sleeve"
+    ],
+    "explanation": "Shoulder pads help absorb contact in football.",
+    "keywords": [
+      "rules",
+      "equipment",
+      "shoulder-pads"
+    ],
+    "source": "https://operations.nfl.com/learn-the-game/nfl-basics/",
+    "seedId": "4a976ba7-57fa-455f-b646-8f619e5a1589"
+  },
+  {
+    "category": "sports",
+    "navigationKeyword1": "rules",
+    "navigationKeyword2": "equipment",
+    "question": "Which golf item is used to raise the ball slightly off the ground for the opening shot on many holes?",
+    "correctAnswer": "Tee",
+    "incorrectAnswers": [
+      "Ball marker",
+      "Divot tool",
+      "Flagstick"
+    ],
+    "explanation": "Players may place the ball on a tee in the teeing area.",
+    "keywords": [
+      "rules",
+      "equipment",
+      "tee"
+    ],
+    "source": "https://www.usga.org/content/usga/home-page/rules-hub.html",
+    "seedId": "02368d92-8635-4189-bad5-48c77c1cc1b2"
+  }
+]

@@ -2,6 +2,7 @@ using FluentValidation;
 using Quizymode.Api.Data;
 using Quizymode.Api.Infrastructure;
 using Quizymode.Api.Services;
+using Quizymode.Api.Services.Taxonomy;
 using Quizymode.Api.Shared.Kernel;
 
 namespace Quizymode.Api.Features.Items.Add;
@@ -14,6 +15,8 @@ public static class AddItem
 
     public sealed record Request(
         string Category,
+        string NavigationKeyword1,
+        string NavigationKeyword2,
         bool IsPrivate,
         string Question,
         string CorrectAnswer,
@@ -21,7 +24,10 @@ public static class AddItem
         string Explanation,
         List<KeywordRequest>? Keywords = null,
         bool ReadyForReview = false,
-        string? Source = null);
+        string? Source = null,
+        Guid? UploadId = null,
+        decimal? FactualRisk = null,
+        string? ReviewComments = null);
 
     public sealed record Response(
         string Id,
@@ -32,7 +38,10 @@ public static class AddItem
         List<string> IncorrectAnswers,
         string Explanation,
         DateTime CreatedAt,
-        string? Source);
+        string? Source,
+        string? UploadId = null,
+        decimal? FactualRisk = null,
+        string? ReviewComments = null);
 
     public sealed class Validator : AbstractValidator<Request>
     {
@@ -41,6 +50,18 @@ public static class AddItem
             RuleFor(x => x.Category)
                 .NotEmpty()
                 .WithMessage("Category is required");
+
+            RuleFor(x => x.NavigationKeyword1)
+                .NotEmpty()
+                .WithMessage("NavigationKeyword1 (primary topic) is required")
+                .MaximumLength(30)
+                .WithMessage("NavigationKeyword1 must not exceed 30 characters");
+
+            RuleFor(x => x.NavigationKeyword2)
+                .NotEmpty()
+                .WithMessage("NavigationKeyword2 (subtopic) is required")
+                .MaximumLength(30)
+                .WithMessage("NavigationKeyword2 must not exceed 30 characters");
 
             RuleFor(x => x.Question)
                 .NotEmpty()
@@ -76,6 +97,16 @@ public static class AddItem
             RuleFor(x => x.Source)
                 .MaximumLength(200)
                 .WithMessage("Source must not exceed 200 characters");
+
+            RuleFor(x => x.FactualRisk)
+                .InclusiveBetween(0m, 1m)
+                .When(x => x.FactualRisk.HasValue)
+                .WithMessage("FactualRisk must be between 0 and 1");
+
+            RuleFor(x => x.ReviewComments)
+                .MaximumLength(500)
+                .When(x => x.ReviewComments != null)
+                .WithMessage("ReviewComments must not exceed 500 characters");
         }
     }
 
@@ -110,7 +141,8 @@ public static class AddItem
             ISimHashService simHashService,
             IUserContext userContext,
             IAuditService auditService,
-            ICategoryResolver categoryResolver,
+            ITaxonomyItemCategoryResolver itemCategoryResolver,
+            ITaxonomyRegistry taxonomyRegistry,
             CancellationToken cancellationToken)
         {
             var validationResult = await validator.ValidateAsync(request, cancellationToken);
@@ -119,7 +151,15 @@ public static class AddItem
                 return Results.BadRequest(validationResult.Errors);
             }
 
-            Result<Response> result = await AddItemHandler.HandleAsync(request, db, simHashService, userContext, auditService, categoryResolver, cancellationToken);
+            Result<Response> result = await AddItemHandler.HandleAsync(
+                request,
+                db,
+                simHashService,
+                userContext,
+                auditService,
+                itemCategoryResolver,
+                taxonomyRegistry,
+                cancellationToken);
 
             return result.Match(
                 value => Results.Created($"/api/items/{value.Id}", value),

@@ -1,0 +1,202 @@
+[
+  {
+    "category": "sports",
+    "navigationKeyword1": "olympics",
+    "navigationKeyword2": "hosts",
+    "question": "Which city hosted the 2024 Summer Olympics?",
+    "correctAnswer": "Paris",
+    "incorrectAnswers": [
+      "Los Angeles",
+      "Tokyo",
+      "London"
+    ],
+    "explanation": "Paris hosted the 2024 Summer Games.",
+    "keywords": [
+      "olympics",
+      "hosts",
+      "paris"
+    ],
+    "source": "https://olympics.com/en/olympic-games",
+    "seedId": "a36ef15f-aa7c-4ddf-8ac5-f7a6e3233bf8"
+  },
+  {
+    "category": "sports",
+    "navigationKeyword1": "olympics",
+    "navigationKeyword2": "hosts",
+    "question": "Which city will host the 2028 Summer Olympics?",
+    "correctAnswer": "Los Angeles",
+    "incorrectAnswers": [
+      "Brisbane",
+      "Paris",
+      "Rome"
+    ],
+    "explanation": "Los Angeles is scheduled to host the 2028 Summer Games.",
+    "keywords": [
+      "olympics",
+      "hosts",
+      "los-angeles"
+    ],
+    "source": "https://olympics.com/en/olympic-games",
+    "seedId": "fe64302e-5026-4091-9d09-0219452898c5"
+  },
+  {
+    "category": "sports",
+    "navigationKeyword1": "olympics",
+    "navigationKeyword2": "hosts",
+    "question": "Which city hosted the 2022 Winter Olympics?",
+    "correctAnswer": "Beijing",
+    "incorrectAnswers": [
+      "PyeongChang",
+      "Vancouver",
+      "Milan"
+    ],
+    "explanation": "Beijing hosted the 2022 Winter Games.",
+    "keywords": [
+      "olympics",
+      "hosts",
+      "beijing"
+    ],
+    "source": "https://olympics.com/en/olympic-games",
+    "seedId": "585d8c33-cd00-4757-9f74-892634451285"
+  },
+  {
+    "category": "sports",
+    "navigationKeyword1": "olympics",
+    "navigationKeyword2": "hosts",
+    "question": "Which Australian city will host the 2032 Summer Olympics?",
+    "correctAnswer": "Brisbane",
+    "incorrectAnswers": [
+      "Sydney",
+      "Melbourne",
+      "Perth"
+    ],
+    "explanation": "Brisbane is scheduled to host the 2032 Summer Games.",
+    "keywords": [
+      "olympics",
+      "hosts",
+      "brisbane"
+    ],
+    "source": "https://olympics.com/en/olympic-games",
+    "seedId": "8acfc04f-67d4-4f70-9548-90c308a29505"
+  },
+  {
+    "category": "sports",
+    "navigationKeyword1": "olympics",
+    "navigationKeyword2": "hosts",
+    "question": "Which city hosted the 2012 Summer Olympics?",
+    "correctAnswer": "London",
+    "incorrectAnswers": [
+      "Paris",
+      "Athens",
+      "Berlin"
+    ],
+    "explanation": "London hosted the 2012 Summer Games.",
+    "keywords": [
+      "olympics",
+      "hosts",
+      "london"
+    ],
+    "source": "https://olympics.com/en/olympic-games",
+    "seedId": "6bf936f8-1af9-46b6-98a9-5a2aa966ef24"
+  },
+  {
+    "category": "sports",
+    "navigationKeyword1": "olympics",
+    "navigationKeyword2": "hosts",
+    "question": "Which city hosted the 2016 Summer Olympics?",
+    "correctAnswer": "Rio de Janeiro",
+    "incorrectAnswers": [
+      "Sao Paulo",
+      "Buenos Aires",
+      "Madrid"
+    ],
+    "explanation": "Rio hosted the 2016 Summer Games.",
+    "keywords": [
+      "olympics",
+      "hosts",
+      "rio"
+    ],
+    "source": "https://olympics.com/en/olympic-games",
+    "seedId": "cc5f2001-2420-4c27-bf01-c97f6b6ac1d2"
+  },
+  {
+    "category": "sports",
+    "navigationKeyword1": "olympics",
+    "navigationKeyword2": "hosts",
+    "question": "Which country hosted the 2018 Winter Olympics in PyeongChang?",
+    "correctAnswer": "South Korea",
+    "incorrectAnswers": [
+      "Japan",
+      "China",
+      "Norway"
+    ],
+    "explanation": "PyeongChang 2018 was held in South Korea.",
+    "keywords": [
+      "olympics",
+      "hosts",
+      "south-korea"
+    ],
+    "source": "https://olympics.com/en/olympic-games",
+    "seedId": "57076a9c-099e-4472-b6ea-4ed2595cb34d"
+  },
+  {
+    "category": "sports",
+    "navigationKeyword1": "olympics",
+    "navigationKeyword2": "hosts",
+    "question": "Which country hosted the 2008 Summer Olympics in Beijing?",
+    "correctAnswer": "China",
+    "incorrectAnswers": [
+      "Japan",
+      "South Korea",
+      "Thailand"
+    ],
+    "explanation": "Beijing 2008 was held in China.",
+    "keywords": [
+      "olympics",
+      "hosts",
+      "china"
+    ],
+    "source": "https://olympics.com/en/olympic-games",
+    "seedId": "9996e271-33d8-4913-a187-e7b737ac982c"
+  },
+  {
+    "category": "sports",
+    "navigationKeyword1": "olympics",
+    "navigationKeyword2": "hosts",
+    "question": "Which city hosted the first modern Olympic Games in 1896?",
+    "correctAnswer": "Athens",
+    "incorrectAnswers": [
+      "Paris",
+      "Rome",
+      "London"
+    ],
+    "explanation": "Athens staged the first modern Olympics.",
+    "keywords": [
+      "olympics",
+      "hosts",
+      "athens"
+    ],
+    "source": "https://www.britannica.com/sports/Olympic-Games",
+    "seedId": "254c3e7d-07a5-47ce-aa31-74d45d501017"
+  },
+  {
+    "category": "sports",
+    "navigationKeyword1": "olympics",
+    "navigationKeyword2": "hosts",
+    "question": "Which two cities will jointly host the 2026 Winter Olympics?",
+    "correctAnswer": "Milan and Cortina d'Ampezzo",
+    "incorrectAnswers": [
+      "Rome and Turin",
+      "Venice and Verona",
+      "Naples and Bari"
+    ],
+    "explanation": "The 2026 Winter Games are assigned to Milan and Cortina d'Ampezzo.",
+    "keywords": [
+      "olympics",
+      "hosts",
+      "milan-cortina"
+    ],
+    "source": "https://olympics.com/en/olympic-games",
+    "seedId": "2578046f-6a9a-486f-837f-a937ea3d6d9b"
+  }
+]

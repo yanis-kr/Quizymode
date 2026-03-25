@@ -2,6 +2,8 @@
 
 export interface CategoryResponse {
   category: string;
+  description: string | null;
+  shortDescription: string | null;
   count: number;
   id: string;
   isPrivate: boolean;
@@ -12,6 +14,20 @@ export interface CategoriesResponse {
   categories: CategoryResponse[];
 }
 
+/** Navigation keyword (rank-1/rank-2) with aggregates from GET /keywords */
+export interface NavKeywordResponse {
+  name: string;
+  itemCount: number;
+  averageRating: number | null;
+  navigationRank: number;
+  description?: string | null;
+  /** When > 0, show a "Private" badge (e.g. yellow) on the keyword set. */
+  privateItemCount?: number;
+}
+
+export interface KeywordsResponse {
+  keywords: NavKeywordResponse[];
+}
 
 export interface KeywordResponse {
   id: string;
@@ -34,9 +50,14 @@ export interface ItemResponse {
   incorrectAnswers: string[];
   explanation: string;
   createdAt: string;
+  createdBy?: string | null;
   keywords: KeywordResponse[];
   collections: ItemCollectionResponse[];
   source?: string | null;
+  /** Navigation path for breadcrumbs, e.g. [rank1, rank2] or ["other"]. Use "other" in URLs; display as "Others". */
+  navigationBreadcrumb?: string[];
+  factualRisk?: number | null;
+  reviewComments?: string | null;
 }
 
 export interface ItemsResponse {
@@ -54,13 +75,57 @@ export interface RandomItemsResponse {
 export interface CollectionResponse {
   id: string;
   name: string;
+  description?: string | null;
+  createdBy: string;
+  createdAt: string;
+  itemCount: number;
+  isPublic?: boolean;
+}
+
+export interface CollectionsResponse {
+  collections: CollectionResponse[];
+}
+
+/** Discover (public) collections - item includes bookmark state */
+export interface CollectionDiscoverItem {
+  id: string;
+  name: string;
+  description?: string | null;
+  createdBy: string;
+  createdAt: string;
+  itemCount: number;
+  isBookmarked: boolean;
+}
+
+export interface DiscoverCollectionsResponse {
+  items: CollectionDiscoverItem[];
+  totalCount: number;
+}
+
+export interface BookmarkItem {
+  id: string;
+  name: string;
   createdBy: string;
   createdAt: string;
   itemCount: number;
 }
 
-export interface CollectionsResponse {
-  collections: CollectionResponse[];
+/** Collection rating: stats and current user's rating */
+export interface CollectionRatingResponse {
+  count: number;
+  averageStars: number | null;
+  myStars: number | null;
+}
+
+/** User who bookmarked a collection (owner view) */
+export interface CollectionBookmarkerItem {
+  userId: string;
+  name: string | null;
+  bookmarkedAt: string;
+}
+
+export interface CollectionBookmarkedByResponse {
+  bookmarkedBy: CollectionBookmarkerItem[];
 }
 
 export interface ReviewResponse {
@@ -95,6 +160,8 @@ export interface KeywordRequest {
 
 export interface CreateItemRequest {
   category: string;
+  navigationKeyword1: string;
+  navigationKeyword2: string;
   isPrivate: boolean;
   question: string;
   correctAnswer: string;
@@ -102,10 +169,16 @@ export interface CreateItemRequest {
   explanation: string;
   keywords?: KeywordRequest[];
   source?: string;
+  uploadId?: string | null;
+  factualRisk?: number | null;
+  reviewComments?: string | null;
+  readyForReview?: boolean | null;
 }
 
 export interface UpdateItemRequest {
   category?: string;
+  navigationKeyword1?: string;
+  navigationKeyword2?: string;
   isPrivate?: boolean;
   question?: string;
   correctAnswer?: string;
@@ -113,14 +186,21 @@ export interface UpdateItemRequest {
   explanation?: string;
   keywords?: KeywordRequest[];
   source?: string;
+  factualRisk?: number | null;
+  reviewComments?: string | null;
+  readyForReview?: boolean | null;
 }
 
 export interface CreateCollectionRequest {
   name: string;
+  description?: string | null;
+  isPublic?: boolean;
 }
 
 export interface UpdateCollectionRequest {
-  name: string;
+  name?: string;
+  description?: string | null;
+  isPublic?: boolean;
 }
 
 export interface AddItemToCollectionRequest {
@@ -154,6 +234,11 @@ export interface CreateRequestRequest {
 }
 
 export interface BulkCreateItemsRequest {
+  isPrivate: boolean;
+  category: string;
+  keyword1: string;
+  keyword2: string;
+  keywords: KeywordRequest[];
   items: CreateItemRequest[];
 }
 

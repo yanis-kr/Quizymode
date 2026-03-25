@@ -3,14 +3,16 @@ using Quizymode.Api.Data;
 using Quizymode.Api.Infrastructure;
 using Quizymode.Api.Services;
 using Quizymode.Api.Shared.Kernel;
+using Quizymode.Api.Shared.Models;
 
 namespace Quizymode.Api.Features.Collections;
 
 public static class GetCollections
 {
+    private const string DefaultCollectionName = "Default Collection";
     public sealed record Response(List<CollectionResponse> Collections);
 
-    public sealed record CollectionResponse(string Id, string Name, DateTime CreatedAt, int ItemCount);
+    public sealed record CollectionResponse(string Id, string Name, string? Description, DateTime CreatedAt, int ItemCount, bool IsPublic);
 
     public sealed class Endpoint : IEndpoint
     {
@@ -48,7 +50,6 @@ public static class GetCollections
     {
         try
         {
-            // Match collection.CreatedBy to user subject or name identifier stored in UserContext.UserId
             var subject = userContext.UserId!;
 
             var collections = await db.Collections
@@ -57,9 +58,29 @@ public static class GetCollections
                 .Select(c => new CollectionResponse(
                     c.Id.ToString(),
                     c.Name,
+                    c.Description,
                     c.CreatedAt,
-                    db.CollectionItems.Count(ci => ci.CollectionId == c.Id)))
+                    db.CollectionItems.Count(ci => ci.CollectionId == c.Id),
+                    c.IsPublic))
                 .ToListAsync(cancellationToken);
+
+            // Ensure user has at least one collection (Default) on first use (e.g. legacy users; new users get it at signup in UserUpsertMiddleware)
+            if (collections.Count == 0)
+            {
+                var defaultCollection = new Collection
+                {
+                    Id = Guid.NewGuid(),
+                    Name = DefaultCollectionName,
+                    CreatedBy = subject,
+                    CreatedAt = DateTime.UtcNow
+                };
+                db.Collections.Add(defaultCollection);
+                await db.SaveChangesAsync(cancellationToken);
+                collections = new List<CollectionResponse>
+                {
+                    new(defaultCollection.Id.ToString(), defaultCollection.Name, defaultCollection.Description, defaultCollection.CreatedAt, 0, false)
+                };
+            }
 
             return Result.Success(new Response(collections));
         }

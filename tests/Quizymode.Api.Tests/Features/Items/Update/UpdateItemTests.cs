@@ -34,6 +34,8 @@ public sealed class UpdateItemTests : ItemTestFixture
 
         UpdateItem.Request request = new(
             Category: "geography",
+            NavigationKeyword1: "capitals",
+            NavigationKeyword2: "europe",
             Question: "What is the capital of France?",
             CorrectAnswer: "Paris",
             IncorrectAnswers: new List<string> { "Lyon", "Marseille" },
@@ -49,7 +51,8 @@ public sealed class UpdateItemTests : ItemTestFixture
             SimHashService,
             _userContextMock.Object,
             _auditServiceMock.Object,
-            CategoryResolver,
+            TaxonomyItemCategoryResolver,
+            TaxonomyRegistry,
             CancellationToken.None);
 
         // Assert
@@ -92,6 +95,8 @@ public sealed class UpdateItemTests : ItemTestFixture
 
         UpdateItem.Request request = new(
             Category: "geography",
+            NavigationKeyword1: "capitals",
+            NavigationKeyword2: "europe",
             Question: "What is the capital of France?",
             CorrectAnswer: "Paris",
             IncorrectAnswers: new List<string> { "Lyon", "Marseille" },
@@ -107,7 +112,8 @@ public sealed class UpdateItemTests : ItemTestFixture
             SimHashService,
             _userContextMock.Object,
             _auditServiceMock.Object,
-            CategoryResolver,
+            TaxonomyItemCategoryResolver,
+            TaxonomyRegistry,
             CancellationToken.None);
 
         // Assert
@@ -133,6 +139,8 @@ public sealed class UpdateItemTests : ItemTestFixture
 
         UpdateItem.Request request = new(
             Category: "geography",
+            NavigationKeyword1: "capitals",
+            NavigationKeyword2: "europe",
             Question: "What is the capital of France?",
             CorrectAnswer: "Paris",
             IncorrectAnswers: new List<string> { "Lyon" },
@@ -148,7 +156,8 @@ public sealed class UpdateItemTests : ItemTestFixture
             SimHashService,
             _userContextMock.Object,
             _auditServiceMock.Object,
-            CategoryResolver,
+            TaxonomyItemCategoryResolver,
+            TaxonomyRegistry,
             CancellationToken.None);
 
         // Assert
@@ -165,6 +174,8 @@ public sealed class UpdateItemTests : ItemTestFixture
         // Arrange
         UpdateItem.Request request = new(
             Category: "geography",
+            NavigationKeyword1: "capitals",
+            NavigationKeyword2: "europe",
             Question: "Test?",
             CorrectAnswer: "Answer",
             IncorrectAnswers: new List<string>(),
@@ -180,7 +191,8 @@ public sealed class UpdateItemTests : ItemTestFixture
             SimHashService,
             _userContextMock.Object,
             _auditServiceMock.Object,
-            CategoryResolver,
+            TaxonomyItemCategoryResolver,
+            TaxonomyRegistry,
             CancellationToken.None);
 
         // Assert
@@ -196,6 +208,8 @@ public sealed class UpdateItemTests : ItemTestFixture
         Guid nonExistentId = Guid.NewGuid();
         UpdateItem.Request request = new(
             Category: "geography",
+            NavigationKeyword1: "capitals",
+            NavigationKeyword2: "europe",
             Question: "Test?",
             CorrectAnswer: "Answer",
             IncorrectAnswers: new List<string>(),
@@ -211,7 +225,8 @@ public sealed class UpdateItemTests : ItemTestFixture
             SimHashService,
             _userContextMock.Object,
             _auditServiceMock.Object,
-            CategoryResolver,
+            TaxonomyItemCategoryResolver,
+            TaxonomyRegistry,
             CancellationToken.None);
 
         // Assert

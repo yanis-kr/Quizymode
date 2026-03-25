@@ -1,7 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using Quizymode.Api.Data;
 using Quizymode.Api.Services;
-using Quizymode.Api.Shared.Models;
 
 namespace Quizymode.Api.Features.Items.Get;
 
@@ -43,26 +42,36 @@ internal sealed class ItemCollectionLoader
 
         // Get collections that belong to the authenticated user
         // Admins can see all collections
+        // Project only Id, Name, CreatedAt so we don't require IsPublic (avoids dependency on AddCollectionDiscoveryAndSharing migration)
         var collectionItems = await _db.CollectionItems
             .Where(ci => itemIds.Contains(ci.ItemId))
-            .Join(_db.Collections, ci => ci.CollectionId, c => c.Id, (ci, c) => new { ItemId = ci.ItemId, Collection = c })
-            .Where(x => x.Collection.CreatedBy == collectionUserId || _userContext.IsAdmin)
-            .OrderBy(x => x.Collection.Name)
+            .Join(
+                _db.Collections,
+                ci => ci.CollectionId,
+                c => c.Id,
+                (ci, c) => new
+                {
+                    ci.ItemId,
+                    CollectionId = c.Id,
+                    CollectionName = c.Name,
+                    CollectionCreatedAt = c.CreatedAt,
+                    CollectionCreatedBy = c.CreatedBy
+                })
+            .Where(x => x.CollectionCreatedBy == collectionUserId || _userContext.IsAdmin)
+            .OrderBy(x => x.CollectionName)
             .ToListAsync(_cancellationToken);
 
         foreach (var ci in collectionItems)
         {
-            Collection collection = ci.Collection;
-
             if (!itemCollectionsMap.ContainsKey(ci.ItemId))
             {
                 itemCollectionsMap[ci.ItemId] = new List<GetItems.CollectionResponse>();
             }
 
             itemCollectionsMap[ci.ItemId].Add(new GetItems.CollectionResponse(
-                collection.Id.ToString(),
-                collection.Name,
-                collection.CreatedAt));
+                ci.CollectionId.ToString(),
+                ci.CollectionName,
+                ci.CollectionCreatedAt));
         }
 
         return itemCollectionsMap;

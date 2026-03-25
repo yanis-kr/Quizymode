@@ -1,0 +1,102 @@
+[
+  {
+    "category": "exams",
+    "navigationKeyword1": "act",
+    "navigationKeyword2": "english",
+    "question": "Which sentence is punctuated correctly?",
+    "correctAnswer": "After the game, the team celebrated.",
+    "incorrectAnswers": [
+      "After the game the team celebrated.",
+      "After the game; the team celebrated.",
+      "After the game: the team celebrated."
+    ],
+    "explanation": "An introductory phrase is followed by a comma.",
+    "keywords": [
+      "act-english",
+      "punctuation",
+      "grammar"
+    ],
+    "source": "https://www.act.org/content/dam/act/unsecured/Preparing-for-the-ACT.pdf",
+    "seedId": "7d2fd283-77fa-460f-b302-f358346f12d4"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "act",
+    "navigationKeyword2": "english",
+    "question": "Which verb correctly completes the sentence: \"Neither the coach nor the players ___ late\"?",
+    "correctAnswer": "were",
+    "incorrectAnswers": [
+      "was",
+      "is",
+      "be"
+    ],
+    "explanation": "With \"neither ... nor,\" the verb agrees with the nearer subject, \"players.\"",
+    "keywords": [
+      "act-english",
+      "subject-verb-agreement",
+      "grammar"
+    ],
+    "source": "https://owl.purdue.edu/owl/general_writing/grammar/subject_verb_agreement.html",
+    "seedId": "3290f297-11e2-4cc2-8d40-1b7906d5580d"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "act",
+    "navigationKeyword2": "english",
+    "question": "Which option is the most concise replacement for \"due to the fact that\"?",
+    "correctAnswer": "because",
+    "incorrectAnswers": [
+      "owing to the circumstance that",
+      "in view of the fact that",
+      "for the reason that"
+    ],
+    "explanation": "ACT English rewards clear, concise phrasing.",
+    "keywords": [
+      "act-english",
+      "concision",
+      "grammar"
+    ],
+    "source": "https://www.act.org/content/dam/act/unsecured/Preparing-for-the-ACT.pdf",
+    "seedId": "90d91a77-a775-49a2-a70c-745f8c0f79e6"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "act",
+    "navigationKeyword2": "english",
+    "question": "Which transition best shows contrast?",
+    "correctAnswer": "However",
+    "incorrectAnswers": [
+      "Therefore",
+      "For example",
+      "Similarly"
+    ],
+    "explanation": "\"However\" signals a contrast between ideas.",
+    "keywords": [
+      "act-english",
+      "transitions",
+      "grammar"
+    ],
+    "source": "https://www.act.org/content/dam/act/unsecured/Preparing-for-the-ACT.pdf",
+    "seedId": "6287de81-74d0-4216-aec7-c5d4e83a1461"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "act",
+    "navigationKeyword2": "english",
+    "question": "Which sentence correctly joins two independent clauses?",
+    "correctAnswer": "The storm ended, and the fans returned.",
+    "incorrectAnswers": [
+      "The storm ended, the fans returned.",
+      "The storm ended and, the fans returned.",
+      "The storm ended; and the fans returned."
+    ],
+    "explanation": "Two independent clauses can be joined by a comma and coordinating conjunction.",
+    "keywords": [
+      "act-english",
+      "sentence-structure",
+      "grammar"
+    ],
+    "source": "https://owl.purdue.edu/owl/general_writing/punctuation/independent_and_dependent_clauses/index.html",
+    "seedId": "29275334-870a-4c69-9d55-10d2502237a7"
+  }
+]

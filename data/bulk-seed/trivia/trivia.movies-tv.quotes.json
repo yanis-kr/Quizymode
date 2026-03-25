@@ -1,0 +1,192 @@
+[
+  {
+    "category": "trivia",
+    "navigationKeyword1": "movies-tv",
+    "navigationKeyword2": "quotes",
+    "question": "At the 95th Academy Awards, which song won Original Song (identify by title and source film)?",
+    "correctAnswer": "Naatu Naatu (RRR)",
+    "incorrectAnswers": [
+      "Lift Me Up (Black Panther: Wakanda Forever)",
+      "Hold My Hand (Top Gun: Maverick)",
+      "Applause (Tell It like a Woman)"
+    ],
+    "explanation": "Naatu Naatu from RRR as Original Song winner.",
+    "keywords": [
+      "oscars",
+      "song-awards"
+    ],
+    "source": "https://www.oscars.org/oscars/ceremonies/2023",
+    "seedId": "bc5b31cf-a08f-4cfe-b49f-39dff09573d7"
+  },
+  {
+    "category": "trivia",
+    "navigationKeyword1": "movies-tv",
+    "navigationKeyword2": "quotes",
+    "question": "At the 95th Academy Awards, which screenplay won Best Original Screenplay?",
+    "correctAnswer": "Everything Everywhere All at Once",
+    "incorrectAnswers": [
+      "The Banshees of Inisherin",
+      "T\u00e1r",
+      "Triangle of Sadness"
+    ],
+    "explanation": "Daniel Kwan & Daniel Scheinert\u2019s script as Original Screenplay winner.",
+    "keywords": [
+      "oscars",
+      "screenwriting"
+    ],
+    "source": "https://www.oscars.org/oscars/ceremonies/2023",
+    "seedId": "3e80c0bb-a235-413d-a2ba-b577db01cf86"
+  },
+  {
+    "category": "trivia",
+    "navigationKeyword1": "movies-tv",
+    "navigationKeyword2": "quotes",
+    "question": "At the 95th Academy Awards, which screenplay won Best Adapted Screenplay?",
+    "correctAnswer": "Women Talking",
+    "incorrectAnswers": [
+      "All Quiet on the Western Front",
+      "Glass Onion",
+      "Living"
+    ],
+    "explanation": "Women Talking won Best Adapted Screenplay.",
+    "keywords": [
+      "oscars",
+      "screenwriting"
+    ],
+    "source": "https://www.oscars.org/oscars/ceremonies/2023",
+    "seedId": "dd00f50f-4a31-496e-ae42-ecd1f7e2c0ba"
+  },
+  {
+    "category": "trivia",
+    "navigationKeyword1": "movies-tv",
+    "navigationKeyword2": "quotes",
+    "question": "At the 94th Academy Awards, which song won Best Original Song?",
+    "correctAnswer": "No Time To Die (No Time to Die)",
+    "incorrectAnswers": [
+      "Be Alive (King Richard)",
+      "Dos Oruguitas (Encanto)",
+      "Down To Joy (Belfast)"
+    ],
+    "explanation": "No Time To Die won Best Original Song at the 94th Academy Awards.",
+    "keywords": [
+      "oscars",
+      "song-awards"
+    ],
+    "source": "https://www.oscars.org/oscars/ceremonies/2022",
+    "seedId": "ee1878c0-e05c-4c4b-88e7-7f4a01e43482"
+  },
+  {
+    "category": "trivia",
+    "navigationKeyword1": "movies-tv",
+    "navigationKeyword2": "quotes",
+    "question": "Which classic film is associated with \u2018Here\u2019s looking at you, kid\u2019?",
+    "correctAnswer": "Casablanca",
+    "incorrectAnswers": [
+      "Gone with the Wind",
+      "Citizen Kane",
+      "The Maltese Falcon"
+    ],
+    "explanation": "The line is widely tied to Casablanca.",
+    "keywords": [
+      "classic-film",
+      "dialogue"
+    ],
+    "source": "https://www.britannica.com/topic/Casablanca-film",
+    "seedId": "5ea39927-acd6-4fa6-975b-c0416d5ffd07"
+  },
+  {
+    "category": "trivia",
+    "navigationKeyword1": "movies-tv",
+    "navigationKeyword2": "quotes",
+    "question": "Which actor\u2019s Terminator role is most closely associated with \u2018I\u2019ll be back\u2019?",
+    "correctAnswer": "Arnold Schwarzenegger",
+    "incorrectAnswers": [
+      "Sylvester Stallone",
+      "Bruce Willis",
+      "Jean-Claude Van Damme"
+    ],
+    "explanation": "The line is associated with Schwarzenegger\u2019s Terminator.",
+    "keywords": [
+      "action-film",
+      "catchphrases"
+    ],
+    "source": "https://www.britannica.com/topic/The-Terminator-film",
+    "seedId": "7ae2d116-81e2-4be1-b5a7-20360c5c77c4"
+  },
+  {
+    "category": "trivia",
+    "navigationKeyword1": "movies-tv",
+    "navigationKeyword2": "quotes",
+    "question": "Which saga is most closely associated with \u2018May the Force be with you\u2019?",
+    "correctAnswer": "Star Wars",
+    "incorrectAnswers": [
+      "Star Trek",
+      "The Matrix",
+      "Blade Runner"
+    ],
+    "explanation": "The phrase is from Star Wars.",
+    "keywords": [
+      "star-wars",
+      "dialogue"
+    ],
+    "source": "https://www.britannica.com/topic/Star-Wars-film-series",
+    "seedId": "0639031f-95e4-483a-9a56-e9a5a0f76d08"
+  },
+  {
+    "category": "trivia",
+    "navigationKeyword1": "movies-tv",
+    "navigationKeyword2": "quotes",
+    "question": "Shakespeare\u2019s \u2018To be, or not to be\u2019 soliloquy appears in which play?",
+    "correctAnswer": "Hamlet",
+    "incorrectAnswers": [
+      "Macbeth",
+      "Othello",
+      "King Lear"
+    ],
+    "explanation": "The soliloquy is from Hamlet.",
+    "keywords": [
+      "shakespeare",
+      "theater"
+    ],
+    "source": "https://www.britannica.com/topic/Hamlet-play-by-Shakespeare",
+    "seedId": "d8317ea8-1fb8-4e4d-8f23-2ade4a8fd7e7"
+  },
+  {
+    "category": "trivia",
+    "navigationKeyword1": "movies-tv",
+    "navigationKeyword2": "quotes",
+    "question": "Which detective tradition is most closely associated with \u2018Elementary, my dear Watson\u2019 popular culture phrase?",
+    "correctAnswer": "Sherlock Holmes adaptations",
+    "incorrectAnswers": [
+      "Miss Marple",
+      "Hercule Poirot",
+      "Philip Marlowe"
+    ],
+    "explanation": "The phrase is popularly linked to Holmes adaptations.",
+    "keywords": [
+      "holmes",
+      "adaptations"
+    ],
+    "source": "https://www.britannica.com/topic/Sherlock-Holmes-fictional-character",
+    "seedId": "0385e154-033d-4e60-a6fd-abe0de0c0c5e"
+  },
+  {
+    "category": "trivia",
+    "navigationKeyword1": "movies-tv",
+    "navigationKeyword2": "quotes",
+    "question": "At the 95th Academy Awards, which film won Best Documentary Short Film?",
+    "correctAnswer": "The Elephant Whisperers",
+    "incorrectAnswers": [
+      "Haulout",
+      "The Martha Mitchell Effect",
+      "Stranger at the Gate"
+    ],
+    "explanation": "The Elephant Whisperers won Best Documentary Short Film.",
+    "keywords": [
+      "oscars",
+      "documentary"
+    ],
+    "source": "https://www.oscars.org/oscars/ceremonies/2023",
+    "seedId": "b32e7999-f1d7-41c4-96e8-bb73b85d15e9"
+  }
+]

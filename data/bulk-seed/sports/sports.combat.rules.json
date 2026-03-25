@@ -1,0 +1,202 @@
+[
+  {
+    "category": "sports",
+    "navigationKeyword1": "combat",
+    "navigationKeyword2": "rules",
+    "question": "What result ends a fight when one competitor taps to an opponent's hold?",
+    "correctAnswer": "Submission",
+    "incorrectAnswers": [
+      "Split decision",
+      "Standing count",
+      "No contest"
+    ],
+    "explanation": "A tap signals that the fighter yields to the technique.",
+    "keywords": [
+      "combat",
+      "rules",
+      "submission"
+    ],
+    "source": "https://www.britannica.com/sports/mixed-martial-arts",
+    "seedId": "a2ed254e-661d-4426-8ae8-4a6a74880ef4"
+  },
+  {
+    "category": "sports",
+    "navigationKeyword1": "combat",
+    "navigationKeyword2": "rules",
+    "question": "What result ends a fight when the referee stops it because the fighter cannot defend?",
+    "correctAnswer": "Technical knockout",
+    "incorrectAnswers": [
+      "Draw",
+      "Split decision",
+      "Majority decision"
+    ],
+    "explanation": "A TKO happens when the referee intervenes short of a formal knockout count.",
+    "keywords": [
+      "combat",
+      "rules",
+      "tko"
+    ],
+    "source": "https://www.britannica.com/sports/mixed-martial-arts",
+    "seedId": "d44b098e-6b48-42b8-9585-c942568e1558"
+  },
+  {
+    "category": "sports",
+    "navigationKeyword1": "combat",
+    "navigationKeyword2": "rules",
+    "question": "What is a knockout?",
+    "correctAnswer": "A finish where the fighter cannot continue after being struck down",
+    "incorrectAnswers": [
+      "A scorecard win",
+      "A draw after all rounds",
+      "A disqualification for low blows"
+    ],
+    "explanation": "A knockout ends the bout immediately when the downed fighter cannot continue.",
+    "keywords": [
+      "combat",
+      "rules",
+      "knockout"
+    ],
+    "source": "https://www.britannica.com/sports/boxing",
+    "seedId": "8b01fb2b-7a17-4e71-b0b8-d72c4a0489fa"
+  },
+  {
+    "category": "sports",
+    "navigationKeyword1": "combat",
+    "navigationKeyword2": "rules",
+    "question": "How do judges usually score boxing and MMA rounds under the common 10-point system?",
+    "correctAnswer": "The winner gets 10 and the loser usually gets 9 or fewer",
+    "incorrectAnswers": [
+      "Both fighters always get 10",
+      "The loser gets 10 automatically",
+      "Rounds are not scored"
+    ],
+    "explanation": "Many combat sports use the 10-point must system for judging rounds.",
+    "keywords": [
+      "combat",
+      "rules",
+      "judging"
+    ],
+    "source": "https://www.britannica.com/sports/boxing",
+    "seedId": "718e6a3b-25d3-4696-920a-df70a5826d2b"
+  },
+  {
+    "category": "sports",
+    "navigationKeyword1": "combat",
+    "navigationKeyword2": "rules",
+    "question": "What is the standing tie-up range called in combat sports like boxing and MMA?",
+    "correctAnswer": "Clinch",
+    "incorrectAnswers": [
+      "Mount",
+      "Sprawl",
+      "Escape"
+    ],
+    "explanation": "The clinch is close-range contact while fighters are upright.",
+    "keywords": [
+      "combat",
+      "rules",
+      "clinch"
+    ],
+    "source": "https://www.britannica.com/sports/mixed-martial-arts",
+    "seedId": "e5a76953-30ff-4931-9186-737c08bb28a8"
+  },
+  {
+    "category": "sports",
+    "navigationKeyword1": "combat",
+    "navigationKeyword2": "rules",
+    "question": "What is an illegal strike to the back of the head usually treated as?",
+    "correctAnswer": "A foul",
+    "incorrectAnswers": [
+      "A bonus point",
+      "A submission",
+      "A legal finishing blow"
+    ],
+    "explanation": "Blows to prohibited target areas are fouls.",
+    "keywords": [
+      "combat",
+      "rules",
+      "foul"
+    ],
+    "source": "https://www.britannica.com/sports/mixed-martial-arts",
+    "seedId": "f5e52a9a-10a9-402f-8fef-bfcea32c8808"
+  },
+  {
+    "category": "sports",
+    "navigationKeyword1": "combat",
+    "navigationKeyword2": "rules",
+    "question": "What happens in a split decision?",
+    "correctAnswer": "Judges disagree, but one fighter still wins on the cards",
+    "incorrectAnswers": [
+      "The fight is always ruled a draw",
+      "Both fighters are disqualified",
+      "The referee scores alone"
+    ],
+    "explanation": "A split decision means the judges' scorecards are not unanimous.",
+    "keywords": [
+      "combat",
+      "rules",
+      "split-decision"
+    ],
+    "source": "https://www.britannica.com/sports/boxing",
+    "seedId": "15ef6669-f768-4952-a0b4-749b2f4f2f7f"
+  },
+  {
+    "category": "sports",
+    "navigationKeyword1": "combat",
+    "navigationKeyword2": "rules",
+    "question": "What kind of stoppage happens when an accidental clash or foul makes a bout unfinishable under some conditions?",
+    "correctAnswer": "No contest or technical decision",
+    "incorrectAnswers": [
+      "Automatic knockout",
+      "Immediate title change",
+      "Submission win"
+    ],
+    "explanation": "Certain accidental endings are ruled no contest or technical decision depending on the rules and round reached.",
+    "keywords": [
+      "combat",
+      "rules",
+      "stoppage"
+    ],
+    "source": "https://www.britannica.com/sports/mixed-martial-arts",
+    "seedId": "e993094b-c3c2-4950-85dc-f512f0145eba"
+  },
+  {
+    "category": "sports",
+    "navigationKeyword1": "combat",
+    "navigationKeyword2": "rules",
+    "question": "What is a corner in boxing and MMA?",
+    "correctAnswer": "The fighter's team area between rounds",
+    "incorrectAnswers": [
+      "The center of the ring",
+      "The judges' table",
+      "The scorecard office"
+    ],
+    "explanation": "The corner team advises and treats the fighter between rounds.",
+    "keywords": [
+      "combat",
+      "rules",
+      "corner"
+    ],
+    "source": "https://www.britannica.com/sports/boxing",
+    "seedId": "174d1c4a-85c1-49b8-a39c-4500e3751da0"
+  },
+  {
+    "category": "sports",
+    "navigationKeyword1": "combat",
+    "navigationKeyword2": "rules",
+    "question": "What determines a unanimous decision?",
+    "correctAnswer": "All judges score the fight for the same winner",
+    "incorrectAnswers": [
+      "Two judges score a draw",
+      "The referee stops the bout",
+      "One judge picks each fighter"
+    ],
+    "explanation": "A unanimous decision requires all judges to favor the same fighter.",
+    "keywords": [
+      "combat",
+      "rules",
+      "unanimous-decision"
+    ],
+    "source": "https://www.britannica.com/sports/boxing",
+    "seedId": "8263b41c-debb-4139-956b-0ff4c3446239"
+  }
+]

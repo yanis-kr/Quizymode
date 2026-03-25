@@ -3,6 +3,8 @@ using Microsoft.EntityFrameworkCore;
 using Quizymode.Api.Data;
 using Quizymode.Api.Infrastructure;
 using Quizymode.Api.Services;
+using Quizymode.Api.Services.Taxonomy;
+using Quizymode.Api.Shared.Helpers;
 using Quizymode.Api.Shared.Kernel;
 using Quizymode.Api.Shared.Models;
 
@@ -16,6 +18,8 @@ public static class UpdateItem
 
     public sealed record Request(
         string Category,
+        string NavigationKeyword1,
+        string NavigationKeyword2,
         string Question,
         string CorrectAnswer,
         List<string> IncorrectAnswers,
@@ -23,7 +27,9 @@ public static class UpdateItem
         bool IsPrivate,
         List<KeywordRequest>? Keywords = null,
         bool? ReadyForReview = null,
-        string? Source = null);
+        string? Source = null,
+        decimal? FactualRisk = null,
+        string? ReviewComments = null);
 
     public sealed record Response(
         string Id,
@@ -34,7 +40,9 @@ public static class UpdateItem
         List<string> IncorrectAnswers,
         string Explanation,
         DateTime CreatedAt,
-        string? Source);
+        string? Source,
+        decimal? FactualRisk = null,
+        string? ReviewComments = null);
 
     public sealed class Validator : AbstractValidator<Request>
     {
@@ -43,6 +51,18 @@ public static class UpdateItem
             RuleFor(x => x.Category)
                 .NotEmpty()
                 .WithMessage("Category is required");
+
+            RuleFor(x => x.NavigationKeyword1)
+                .NotEmpty()
+                .WithMessage("NavigationKeyword1 (primary topic) is required")
+                .MaximumLength(30)
+                .WithMessage("NavigationKeyword1 must not exceed 30 characters");
+
+            RuleFor(x => x.NavigationKeyword2)
+                .NotEmpty()
+                .WithMessage("NavigationKeyword2 (subtopic) is required")
+                .MaximumLength(30)
+                .WithMessage("NavigationKeyword2 must not exceed 30 characters");
 
             RuleFor(x => x.Question)
                 .NotEmpty()
@@ -78,6 +98,16 @@ public static class UpdateItem
             RuleFor(x => x.Source)
                 .MaximumLength(200)
                 .WithMessage("Source must not exceed 200 characters");
+
+            RuleFor(x => x.FactualRisk)
+                .InclusiveBetween(0m, 1m)
+                .When(x => x.FactualRisk.HasValue)
+                .WithMessage("FactualRisk must be between 0 and 1");
+
+            RuleFor(x => x.ReviewComments)
+                .MaximumLength(500)
+                .When(x => x.ReviewComments != null)
+                .WithMessage("ReviewComments must not exceed 500 characters");
         }
     }
 
@@ -113,7 +143,8 @@ public static class UpdateItem
             ISimHashService simHashService,
             IUserContext userContext,
             IAuditService auditService,
-            ICategoryResolver categoryResolver,
+            ITaxonomyItemCategoryResolver itemCategoryResolver,
+            ITaxonomyRegistry taxonomyRegistry,
             CancellationToken cancellationToken)
         {
             var validationResult = await validator.ValidateAsync(request, cancellationToken);
@@ -122,7 +153,16 @@ public static class UpdateItem
                 return Results.BadRequest(validationResult.Errors);
             }
 
-            Result<Response> result = await HandleAsync(id, request, db, simHashService, userContext, auditService, categoryResolver, cancellationToken);
+            Result<Response> result = await HandleAsync(
+                id,
+                request,
+                db,
+                simHashService,
+                userContext,
+                auditService,
+                itemCategoryResolver,
+                taxonomyRegistry,
+                cancellationToken);
 
             return result.Match(
                 value => Results.Ok(value),
@@ -139,7 +179,8 @@ public static class UpdateItem
         ISimHashService simHashService,
         IUserContext userContext,
         IAuditService auditService,
-        ICategoryResolver categoryResolver,
+        ITaxonomyItemCategoryResolver itemCategoryResolver,
+        ITaxonomyRegistry taxonomyRegistry,
         CancellationToken cancellationToken)
     {
         try
@@ -163,18 +204,12 @@ public static class UpdateItem
             string fuzzySignature = simHashService.ComputeSimHash(questionText);
             int fuzzyBucket = simHashService.GetFuzzyBucket(fuzzySignature);
 
-            // Regular users can only create/update private items
-            // They cannot change items to global (IsPrivate = false)
             bool effectiveIsPrivate = userContext.IsAdmin ? request.IsPrivate : true;
-            
+
             string userId = userContext.UserId ?? throw new InvalidOperationException("User ID is required for item update");
-            
-            // Resolve category via CategoryResolver
-            Result<Category> categoryResult = await categoryResolver.ResolveOrCreateAsync(
+
+            Result<Category> categoryResult = await itemCategoryResolver.ResolveForItemAsync(
                 request.Category,
-                isPrivate: effectiveIsPrivate,
-                currentUserId: userId,
-                isAdmin: userContext.IsAdmin,
                 cancellationToken);
 
             if (categoryResult.IsFailure)
@@ -183,7 +218,44 @@ public static class UpdateItem
             }
 
             Category category = categoryResult.Value!;
-            
+
+            string nav1Norm = KeywordHelper.NormalizeKeywordName(request.NavigationKeyword1);
+            string nav2Norm = KeywordHelper.NormalizeKeywordName(request.NavigationKeyword2);
+
+            if (request.Keywords is not null)
+            {
+                foreach (KeywordRequest kw in request.Keywords)
+                {
+                    if (string.IsNullOrWhiteSpace(kw.Name))
+                        continue;
+                    string n = KeywordHelper.NormalizeKeywordName(kw.Name);
+                    if (string.IsNullOrEmpty(n))
+                        continue;
+                    if (!KeywordHelper.IsValidKeywordNameFormat(n))
+                    {
+                        return Result.Failure<Response>(
+                            Error.Validation("Item.InvalidKeyword", $"Keyword '{n}' is invalid. Use only letters, numbers, and hyphens (max 30 characters)."));
+                    }
+
+                    if (string.Equals(n, nav1Norm, StringComparison.OrdinalIgnoreCase)
+                        || string.Equals(n, nav2Norm, StringComparison.OrdinalIgnoreCase))
+                        continue;
+                }
+            }
+
+            Result<(Keyword Nav1, Keyword Nav2)> navResult = await ItemNavigationAndKeywordsHelper.ResolvePublicNavigationAsync(
+                db,
+                taxonomyRegistry,
+                category,
+                request.NavigationKeyword1,
+                request.NavigationKeyword2,
+                cancellationToken);
+
+            if (navResult.IsFailure)
+                return Result.Failure<Response>(navResult.Error!);
+
+            (Keyword navK1, Keyword navK2) = navResult.Value!;
+
             // Update item properties
             item.Question = request.Question;
             item.CorrectAnswer = request.CorrectAnswer;
@@ -191,6 +263,8 @@ public static class UpdateItem
             item.Explanation = request.Explanation;
             item.IsPrivate = effectiveIsPrivate;
             item.CategoryId = category.Id;
+            item.NavigationKeywordId1 = navK1.Id;
+            item.NavigationKeywordId2 = navK2.Id;
             if (request.ReadyForReview.HasValue)
             {
                 item.ReadyForReview = request.ReadyForReview.Value;
@@ -202,85 +276,74 @@ public static class UpdateItem
                 item.Source = string.IsNullOrWhiteSpace(request.Source) ? null : request.Source.Trim();
             }
 
-            // Handle keywords update
+            item.FactualRisk = request.FactualRisk is >= 0m and <= 1m ? request.FactualRisk : item.FactualRisk;
+            if (request.ReviewComments is not null)
+            {
+                item.ReviewComments = string.IsNullOrWhiteSpace(request.ReviewComments) ? null : request.ReviewComments.Trim();
+            }
+
             if (request.Keywords is not null)
             {
-                // Remove all existing keywords for this item
                 List<ItemKeyword> existingItemKeywords = await db.ItemKeywords
                     .Where(ik => ik.ItemId == itemId)
                     .ToListAsync(cancellationToken);
                 db.ItemKeywords.RemoveRange(existingItemKeywords);
                 await db.SaveChangesAsync(cancellationToken);
 
-                // Regular users can only create private keywords
-                List<KeywordRequest> effectiveKeywords = request.Keywords;
-                if (!userContext.IsAdmin)
+                List<string> orderedNames = [];
+
+                void AddUniqueName(string raw)
                 {
-                    // Force all keywords to be private for regular users
-                    effectiveKeywords = request.Keywords.Select(k => new KeywordRequest(k.Name, true)).ToList();
+                    string n = KeywordHelper.NormalizeKeywordName(raw);
+                    if (string.IsNullOrEmpty(n))
+                        return;
+                    if (orderedNames.Any(x => string.Equals(x, n, StringComparison.OrdinalIgnoreCase)))
+                        return;
+                    orderedNames.Add(n);
                 }
-                
-                // Add new keywords
-                if (effectiveKeywords.Count > 0)
+
+                AddUniqueName(request.NavigationKeyword1);
+                AddUniqueName(request.NavigationKeyword2);
+                foreach (KeywordRequest kw in request.Keywords)
+                    AddUniqueName(kw.Name);
+
+                List<ItemKeyword> itemKeywords = [];
+                HashSet<Guid> attached = [];
+
+                foreach (string normalizedName in orderedNames)
                 {
-                    List<ItemKeyword> itemKeywords = new();
-
-                    foreach (KeywordRequest keywordRequest in effectiveKeywords)
+                    Keyword keyword;
+                    if (string.Equals(normalizedName, navK1.Name, StringComparison.OrdinalIgnoreCase))
+                        keyword = navK1;
+                    else if (string.Equals(normalizedName, navK2.Name, StringComparison.OrdinalIgnoreCase))
+                        keyword = navK2;
+                    else
                     {
-                        string normalizedName = keywordRequest.Name.Trim().ToLowerInvariant();
-                        if (string.IsNullOrEmpty(normalizedName))
-                        {
-                            continue;
-                        }
-
-                        Keyword? keyword = null;
-                        if (keywordRequest.IsPrivate)
-                        {
-                            keyword = await db.Keywords
-                                .FirstOrDefaultAsync(k => 
-                                    k.Name == normalizedName && 
-                                    k.IsPrivate == true &&
-                                    k.CreatedBy == userId,
-                                    cancellationToken);
-                        }
-                        else
-                        {
-                            keyword = await db.Keywords
-                                .FirstOrDefaultAsync(k => 
-                                    k.Name == normalizedName && 
-                                    k.IsPrivate == false,
-                                    cancellationToken);
-                        }
-
-                        if (keyword is null)
-                        {
-                            keyword = new Keyword
-                            {
-                                Id = Guid.NewGuid(),
-                                Name = normalizedName,
-                                IsPrivate = keywordRequest.IsPrivate,
-                                CreatedBy = userId,
-                                CreatedAt = DateTime.UtcNow
-                            };
-                            db.Keywords.Add(keyword);
-                            await db.SaveChangesAsync(cancellationToken);
-                        }
-
-                        ItemKeyword itemKeyword = new ItemKeyword
-                        {
-                            Id = Guid.NewGuid(),
-                            ItemId = itemId,
-                            KeywordId = keyword.Id,
-                            AddedAt = DateTime.UtcNow
-                        };
-                        itemKeywords.Add(itemKeyword);
+                        keyword = await ItemNavigationAndKeywordsHelper.GetOrCreateKeywordForItemAttachmentAsync(
+                            db,
+                            taxonomyRegistry,
+                            category.Name,
+                            userId,
+                            normalizedName,
+                            cancellationToken);
                     }
 
-                    if (itemKeywords.Count > 0)
+                    if (!attached.Add(keyword.Id))
+                        continue;
+
+                    itemKeywords.Add(new ItemKeyword
                     {
-                        db.ItemKeywords.AddRange(itemKeywords);
-                        await db.SaveChangesAsync(cancellationToken);
-                    }
+                        Id = Guid.NewGuid(),
+                        ItemId = itemId,
+                        KeywordId = keyword.Id,
+                        AddedAt = DateTime.UtcNow
+                    });
+                }
+
+                if (itemKeywords.Count > 0)
+                {
+                    db.ItemKeywords.AddRange(itemKeywords);
+                    await db.SaveChangesAsync(cancellationToken);
                 }
             }
 
@@ -305,7 +368,9 @@ public static class UpdateItem
                 item.IncorrectAnswers,
                 item.Explanation,
                 item.CreatedAt,
-                item.Source);
+                item.Source,
+                item.FactualRisk,
+                item.ReviewComments);
 
             return Result.Success(response);
         }

@@ -1,0 +1,97 @@
+[
+  {
+    "category": "exams",
+    "navigationKeyword1": "ap",
+    "navigationKeyword2": "general-ap",
+    "question": "Which AP exam is built around cellular processes, genetics, evolution, and ecology?",
+    "correctAnswer": "AP Biology",
+    "incorrectAnswers": [
+      "AP Calculus AB",
+      "AP Chemistry",
+      "AP US History"
+    ],
+    "explanation": "AP Biology centers on major biological themes including cellular processes, genetics, evolution, and ecology.",
+    "keywords": [
+      "ap-biology",
+      "test-prep"
+    ],
+    "source": "https://apstudents.collegeboard.org/courses/ap-biology",
+    "seedId": "2c37df9b-62c7-4a91-9acf-e80a10169894"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "ap",
+    "navigationKeyword2": "general-ap",
+    "question": "Which AP math course focuses on limits, derivatives, integrals, and the Fundamental Theorem of Calculus?",
+    "correctAnswer": "AP Calculus AB",
+    "incorrectAnswers": [
+      "AP Statistics",
+      "AP Physics 1",
+      "AP Precalculus"
+    ],
+    "explanation": "AP Calculus AB covers limits, derivatives, integrals, and the Fundamental Theorem of Calculus.",
+    "keywords": [
+      "ap-calculus",
+      "test-prep"
+    ],
+    "source": "https://apstudents.collegeboard.org/courses/ap-calculus-ab",
+    "seedId": "cbfa90bc-e828-4a02-a4cc-30cca770eb86"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "ap",
+    "navigationKeyword2": "general-ap",
+    "question": "Which AP science course emphasizes atomic structure, intermolecular forces, kinetics, and equilibrium?",
+    "correctAnswer": "AP Chemistry",
+    "incorrectAnswers": [
+      "AP Biology",
+      "AP Environmental Science",
+      "AP Physics C: Mechanics"
+    ],
+    "explanation": "AP Chemistry covers atomic structure, intermolecular forces, chemical reactions, kinetics, and equilibrium.",
+    "keywords": [
+      "ap-chemistry",
+      "test-prep"
+    ],
+    "source": "https://apstudents.collegeboard.org/courses/ap-chemistry",
+    "seedId": "448cb67e-c4d3-475f-8dfb-b66b1eaeb935"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "ap",
+    "navigationKeyword2": "general-ap",
+    "question": "Which AP history course surveys the history of the United States from pre-Columbian societies to the present?",
+    "correctAnswer": "AP United States History",
+    "incorrectAnswers": [
+      "AP World History: Modern",
+      "AP Human Geography",
+      "AP Comparative Government and Politics"
+    ],
+    "explanation": "AP United States History surveys the political, social, cultural, and economic history of the United States.",
+    "keywords": [
+      "ap-us-history",
+      "test-prep"
+    ],
+    "source": "https://apstudents.collegeboard.org/courses/ap-united-states-history",
+    "seedId": "ab5fb70f-631c-45dc-851a-a188d35b6489"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "ap",
+    "navigationKeyword2": "general-ap",
+    "question": "Which AP social science course studies behavior and mental processes?",
+    "correctAnswer": "AP Psychology",
+    "incorrectAnswers": [
+      "AP Microeconomics",
+      "AP Macroeconomics",
+      "AP Seminar"
+    ],
+    "explanation": "AP Psychology introduces the study of behavior and mental processes.",
+    "keywords": [
+      "ap-psychology",
+      "test-prep"
+    ],
+    "source": "https://apstudents.collegeboard.org/courses/ap-psychology",
+    "seedId": "3483c01c-4db0-4f8a-8ec5-ce3c0ff0dea8"
+  }
+]

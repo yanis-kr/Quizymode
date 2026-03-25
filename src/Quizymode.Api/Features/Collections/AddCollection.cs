@@ -9,23 +9,29 @@ namespace Quizymode.Api.Features.Collections;
 
 public static class AddCollection
 {
-    public sealed record Request(string Name);
+    public sealed record Request(string Name, string? Description = null, bool? IsPublic = null);
 
     public sealed record Response(
         string Id,
         string Name,
-        DateTime CreatedAt);
+        string? Description,
+        DateTime CreatedAt,
+        bool IsPublic);
 
     public sealed class Validator : AbstractValidator<Request>
     {
         public Validator()
         {
-            RuleFor(x => x.Name)
+        RuleFor(x => x.Name)
                 .NotEmpty()
                 .WithMessage("Name is required")
                 .MaximumLength(200)
                 .WithMessage("Name must not exceed 200 characters");
-        }
+        RuleFor(x => x.Description)
+                .MaximumLength(2000)
+                .WithMessage("Description must not exceed 2000 characters")
+                .When(x => x.Description != null);
+    }
     }
 
     public sealed class Endpoint : IEndpoint
@@ -34,7 +40,7 @@ public static class AddCollection
         {
             app.MapPost("collections", Handler)
                 .WithTags("Collections")
-                .WithSummary("Create a named private collection")
+                .WithSummary("Create a collection (optionally public for shareable link)")
                 .RequireAuthorization()
                 .Produces<Response>(StatusCodes.Status201Created)
                 .Produces(StatusCodes.Status400BadRequest);
@@ -92,8 +98,10 @@ public static class AddCollection
             {
                 Id = Guid.NewGuid(),
                 Name = request.Name,
+                Description = request.Description,
                 CreatedBy = userId,
-                CreatedAt = DateTime.UtcNow
+                CreatedAt = DateTime.UtcNow,
+                IsPublic = request.IsPublic ?? false
             };
 
             db.Collections.Add(entity);
@@ -102,7 +110,9 @@ public static class AddCollection
             Response response = new(
                 entity.Id.ToString(),
                 entity.Name,
-                entity.CreatedAt);
+                entity.Description,
+                entity.CreatedAt,
+                entity.IsPublic);
 
             return Result.Success(response);
         }

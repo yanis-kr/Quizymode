@@ -1,0 +1,202 @@
+[
+  {
+    "category": "sports",
+    "navigationKeyword1": "tennis",
+    "navigationKeyword2": "grand-slams",
+    "question": "Which Grand Slam tournament is played at Wimbledon?",
+    "correctAnswer": "The Championships, Wimbledon",
+    "incorrectAnswers": [
+      "US Open",
+      "Australian Open",
+      "Davis Cup"
+    ],
+    "explanation": "Wimbledon is the grass-court major staged in London.",
+    "keywords": [
+      "tennis",
+      "grand-slams",
+      "wimbledon"
+    ],
+    "source": "https://www.britannica.com/sports/Wimbledon-tennis",
+    "seedId": "e8d1d105-0a72-4c8b-8b78-f614979707d1"
+  },
+  {
+    "category": "sports",
+    "navigationKeyword1": "tennis",
+    "navigationKeyword2": "grand-slams",
+    "question": "Which Grand Slam is played on clay at Roland Garros?",
+    "correctAnswer": "French Open",
+    "incorrectAnswers": [
+      "US Open",
+      "Australian Open",
+      "Wimbledon"
+    ],
+    "explanation": "The French Open is the only major played on clay.",
+    "keywords": [
+      "tennis",
+      "grand-slams",
+      "clay"
+    ],
+    "source": "https://www.britannica.com/sports/French-Open",
+    "seedId": "a3e81adc-c6f5-498b-bb37-0722c8ec3c8a"
+  },
+  {
+    "category": "sports",
+    "navigationKeyword1": "tennis",
+    "navigationKeyword2": "grand-slams",
+    "question": "Which Grand Slam is traditionally played in Melbourne?",
+    "correctAnswer": "Australian Open",
+    "incorrectAnswers": [
+      "French Open",
+      "Wimbledon",
+      "Davis Cup"
+    ],
+    "explanation": "The Australian Open is held each year in Melbourne.",
+    "keywords": [
+      "tennis",
+      "grand-slams",
+      "melbourne"
+    ],
+    "source": "https://www.britannica.com/sports/Australian-Open",
+    "seedId": "521af940-5bbb-4b03-9e1a-af82ad59417c"
+  },
+  {
+    "category": "sports",
+    "navigationKeyword1": "tennis",
+    "navigationKeyword2": "grand-slams",
+    "question": "Which Grand Slam ends the tennis major season in New York?",
+    "correctAnswer": "US Open",
+    "incorrectAnswers": [
+      "Wimbledon",
+      "French Open",
+      "ATP Finals"
+    ],
+    "explanation": "The US Open is played late in the calendar year in New York.",
+    "keywords": [
+      "tennis",
+      "grand-slams",
+      "new-york"
+    ],
+    "source": "https://www.britannica.com/sports/US-Open-tennis",
+    "seedId": "e991d39b-766a-4615-b2a8-3ebf6dbe9325"
+  },
+  {
+    "category": "sports",
+    "navigationKeyword1": "tennis",
+    "navigationKeyword2": "grand-slams",
+    "question": "How many singles majors make up the Grand Slam in tennis?",
+    "correctAnswer": "Four",
+    "incorrectAnswers": [
+      "Two",
+      "Three",
+      "Five"
+    ],
+    "explanation": "Tennis recognizes four major championships each year.",
+    "keywords": [
+      "tennis",
+      "grand-slams",
+      "majors"
+    ],
+    "source": "https://www.britannica.com/sports/tennis",
+    "seedId": "7a171878-557b-4611-ba61-0fbc49c784e4"
+  },
+  {
+    "category": "sports",
+    "navigationKeyword1": "tennis",
+    "navigationKeyword2": "grand-slams",
+    "question": "Which major is the oldest tennis tournament in the world?",
+    "correctAnswer": "Wimbledon",
+    "incorrectAnswers": [
+      "US Open",
+      "Australian Open",
+      "French Open"
+    ],
+    "explanation": "Wimbledon began in 1877 and predates the other majors.",
+    "keywords": [
+      "tennis",
+      "grand-slams",
+      "history"
+    ],
+    "source": "https://www.britannica.com/sports/Wimbledon-tennis",
+    "seedId": "82c3ae78-0d48-4c6e-9814-0bc5bb42088b"
+  },
+  {
+    "category": "sports",
+    "navigationKeyword1": "tennis",
+    "navigationKeyword2": "grand-slams",
+    "question": "Which two Grand Slam tournaments are played on hard courts?",
+    "correctAnswer": "Australian Open and US Open",
+    "incorrectAnswers": [
+      "French Open and Wimbledon",
+      "Wimbledon and Australian Open",
+      "French Open and US Open"
+    ],
+    "explanation": "The Australian Open and US Open are the hard-court majors.",
+    "keywords": [
+      "tennis",
+      "grand-slams",
+      "hard-courts"
+    ],
+    "source": "https://www.britannica.com/sports/tennis",
+    "seedId": "174c1235-b3ce-4dcd-99e0-1bb801098965"
+  },
+  {
+    "category": "sports",
+    "navigationKeyword1": "tennis",
+    "navigationKeyword2": "grand-slams",
+    "question": "Which Grand Slam is most associated with grass courts and all-white clothing traditions?",
+    "correctAnswer": "Wimbledon",
+    "incorrectAnswers": [
+      "Australian Open",
+      "French Open",
+      "US Open"
+    ],
+    "explanation": "Wimbledon is the traditional grass-court major with a white clothing rule.",
+    "keywords": [
+      "tennis",
+      "grand-slams",
+      "tradition"
+    ],
+    "source": "https://www.britannica.com/sports/Wimbledon-tennis",
+    "seedId": "5086b441-a7d0-4be9-adcf-be1a22002eaa"
+  },
+  {
+    "category": "sports",
+    "navigationKeyword1": "tennis",
+    "navigationKeyword2": "grand-slams",
+    "question": "If a player wins all four majors in one calendar year, what has that player completed?",
+    "correctAnswer": "A calendar Grand Slam",
+    "incorrectAnswers": [
+      "A golden set",
+      "A Davis sweep",
+      "A masters slam"
+    ],
+    "explanation": "Winning the four majors in one year is called a calendar Grand Slam.",
+    "keywords": [
+      "tennis",
+      "grand-slams",
+      "calendar-grand-slam"
+    ],
+    "source": "https://www.britannica.com/sports/tennis",
+    "seedId": "3f74e180-cb73-4ef6-b07e-658cb485e2e7"
+  },
+  {
+    "category": "sports",
+    "navigationKeyword1": "tennis",
+    "navigationKeyword2": "grand-slams",
+    "question": "Which Grand Slam is usually the first major played each year?",
+    "correctAnswer": "Australian Open",
+    "incorrectAnswers": [
+      "French Open",
+      "Wimbledon",
+      "US Open"
+    ],
+    "explanation": "The Australian Open opens the major season in January.",
+    "keywords": [
+      "tennis",
+      "grand-slams",
+      "calendar"
+    ],
+    "source": "https://www.britannica.com/sports/Australian-Open",
+    "seedId": "f30461b1-b60b-47ef-95a0-9f24a8acf759"
+  }
+]

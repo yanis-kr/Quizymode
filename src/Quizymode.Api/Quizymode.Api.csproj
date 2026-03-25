@@ -5,7 +5,7 @@
     <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <NoWarn>$(NoWarn);1591</NoWarn>
-    <Version>1.0.3</Version>
+    <Version>2.0.0</Version>
   </PropertyGroup>
 
   <ItemGroup>
@@ -35,10 +35,17 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Quizymode.Api.ServiceDefaults\Quizymode.ServiceDefaults.csproj" />
+    <ProjectReference Include="..\Quizymode.Taxonomy\Quizymode.Taxonomy.csproj" />
   </ItemGroup>
 
   <ItemGroup>
     <None Include="..\..\data\seed\**\*.json" Link="data\seed\%(RecursiveDir)%(Filename)%(Extension)">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="..\..\docs\quizymode_taxonomy.yaml" Link="data\taxonomy\quizymode_taxonomy.yaml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="..\..\docs\quizymode_taxonomy_seed.sql" Link="data\taxonomy\quizymode_taxonomy_seed.sql">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
   </ItemGroup>

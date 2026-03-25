@@ -12,9 +12,11 @@ public static class GetCollectionById
     public sealed record Response(
         string Id,
         string Name,
+        string? Description,
         string CreatedBy,
         DateTime CreatedAt,
-        int ItemCount);
+        int ItemCount,
+        bool IsPublic);
 
     public sealed class Endpoint : IEndpoint
     {
@@ -23,9 +25,8 @@ public static class GetCollectionById
             app.MapGet("collections/{id:guid}", Handler)
                 .WithTags("Collections")
                 .WithSummary("Get a collection by ID")
-                .RequireAuthorization()
+                .WithDescription("View collection by ID. Allowed if collection is public or you are the owner. Otherwise 404.")
                 .Produces<Response>(StatusCodes.Status200OK)
-                .Produces(StatusCodes.Status403Forbidden)
                 .Produces(StatusCodes.Status404NotFound);
         }
 
@@ -35,20 +36,13 @@ public static class GetCollectionById
             IUserContext userContext,
             CancellationToken cancellationToken)
         {
-            if (!userContext.IsAuthenticated)
-            {
-                return Results.Unauthorized();
-            }
-
             Result<Response> result = await HandleAsync(id, db, userContext, cancellationToken);
 
             return result.Match(
                 value => Results.Ok(value),
                 failure => failure.Error.Type == ErrorType.NotFound
                     ? Results.NotFound()
-                    : failure.Error.Type == ErrorType.Validation
-                        ? Results.StatusCode(StatusCodes.Status403Forbidden)
-                        : CustomResults.Problem(result));
+                    : CustomResults.Problem(result));
         }
     }
 
@@ -69,12 +63,10 @@ public static class GetCollectionById
                     Error.NotFound("Collection.NotFound", "Collection not found"));
             }
 
-            // Authorization: allow if user is owner or admin
-            var subject = userContext.UserId;
-            if (collection.CreatedBy != subject && !userContext.IsAdmin)
+            if (!await CanAccessCollectionAsync(db, collection, userContext, cancellationToken))
             {
                 return Result.Failure<Response>(
-                    Error.Validation("Collection.AccessDenied", "Access denied"));
+                    Error.NotFound("Collection.NotFound", "Collection not found"));
             }
 
             int itemCount = await db.CollectionItems
@@ -83,9 +75,11 @@ public static class GetCollectionById
             Response response = new(
                 collection.Id.ToString(),
                 collection.Name,
+                collection.Description,
                 collection.CreatedBy,
                 collection.CreatedAt,
-                itemCount);
+                itemCount,
+                collection.IsPublic);
 
             return Result.Success(response);
         }
@@ -94,6 +88,24 @@ public static class GetCollectionById
             return Result.Failure<Response>(
                 Error.Problem("Collection.GetFailed", $"Failed to get collection: {ex.Message}"));
         }
+    }
+
+    /// <summary>
+    /// User can access if collection is public or they are the owner.
+    /// </summary>
+    internal static Task<bool> CanAccessCollectionAsync(
+        ApplicationDbContext db,
+        Collection collection,
+        IUserContext userContext,
+        CancellationToken cancellationToken)
+    {
+        if (collection.IsPublic)
+            return Task.FromResult(true);
+
+        if (!userContext.IsAuthenticated || string.IsNullOrEmpty(userContext.UserId))
+            return Task.FromResult(false);
+
+        return Task.FromResult(collection.CreatedBy == userContext.UserId);
     }
 
     public sealed class FeatureRegistration : IFeatureRegistration

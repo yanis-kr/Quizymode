@@ -1,0 +1,242 @@
+[
+  {
+    "category": "history",
+    "navigationKeyword1": "us-history",
+    "navigationKeyword2": "colonial",
+    "question": "England’s first permanent settlement in North America, founded in 1607 on the James River, was called what?",
+    "correctAnswer": "Jamestown",
+    "incorrectAnswers": [
+      "Plymouth",
+      "Roanoke",
+      "St. Augustine"
+    ],
+    "explanation": "The Virginia Company’s fort endured starvation and Powhatan diplomacy before stabilizing tobacco exports.",
+    "keywords": [
+      "colonial",
+      "virginia",
+      "english"
+    ],
+    "source": "https://www.britannica.com/place/Jamestown-colony",
+    "seedId": "2ea38a78-e2a8-4e9b-9e5b-16c382ae1f82"
+  },
+  {
+    "category": "history",
+    "navigationKeyword1": "us-history",
+    "navigationKeyword2": "colonial",
+    "question": "Separatists known as Pilgrims founded Plymouth Plantation after landing at which Cape Cod harbor in 1620?",
+    "correctAnswer": "Provincetown Harbor (before relocating to Plymouth)",
+    "incorrectAnswers": [
+      "Boston Harbor",
+      "New York Bay",
+      "Chesapeake Bay"
+    ],
+    "explanation": "The Mayflower passengers signed a compact before exploring the coast and choosing Plymouth as their site.",
+    "keywords": [
+      "colonial",
+      "pilgrims",
+      "massachusetts"
+    ],
+    "source": "https://www.britannica.com/topic/Mayflower-ship",
+    "seedId": "b37a9557-9e4a-4303-9198-45add19746c6"
+  },
+  {
+    "category": "history",
+    "navigationKeyword1": "us-history",
+    "navigationKeyword2": "colonial",
+    "question": "The Mayflower Compact (1620) established civil self-government for which colony’s male signers?",
+    "correctAnswer": "Plymouth Colony",
+    "incorrectAnswers": [
+      "Massachusetts Bay Colony",
+      "Rhode Island",
+      "New Netherland"
+    ],
+    "explanation": "The document framed rule by consent pending a royal patent, shaping New England political culture.",
+    "keywords": [
+      "colonial",
+      "mayflower",
+      "law"
+    ],
+    "source": "https://www.britannica.com/topic/Mayflower-Compact",
+    "seedId": "c43f50c5-1823-450f-b2f8-9bb6db443119"
+  },
+  {
+    "category": "history",
+    "navigationKeyword1": "us-history",
+    "navigationKeyword2": "colonial",
+    "question": "The 1636–37 Pequot War in southern New England chiefly pitted English colonists and allies against which Indigenous nation?",
+    "correctAnswer": "The Pequot",
+    "incorrectAnswers": [
+      "The Iroquois Confederacy",
+      "The Cherokee",
+      "The Sioux"
+    ],
+    "explanation": "Mystic River’s massacre broke Pequot power and redistributed their lands to colonists.",
+    "keywords": [
+      "colonial",
+      "pequot",
+      "new-england"
+    ],
+    "source": "https://www.britannica.com/event/Pequot-War",
+    "seedId": "e7035fb3-b3a4-4765-9024-ad7d97a3cd86"
+  },
+  {
+    "category": "history",
+    "navigationKeyword1": "us-history",
+    "navigationKeyword2": "colonial",
+    "question": "Parliament’s Navigation Acts sought to ensure that colonial trade enriched which country’s merchants and navy?",
+    "correctAnswer": "England (later Great Britain)",
+    "incorrectAnswers": [
+      "Spain",
+      "France",
+      "The Dutch Republic"
+    ],
+    "explanation": "Enumerated commodities and shipping rules tied American plantations to imperial markets.",
+    "keywords": [
+      "colonial",
+      "trade",
+      "mercantilism"
+    ],
+    "source": "https://www.britannica.com/topic/Navigation-Acts",
+    "seedId": "42c2eb5d-e95c-43ca-8970-589218e0d53d"
+  },
+  {
+    "category": "history",
+    "navigationKeyword1": "us-history",
+    "navigationKeyword2": "colonial",
+    "question": "Jonathan Edwards’s “Sinners in the Hands of an Angry God” epitomized which 18th-century religious revival?",
+    "correctAnswer": "The First Great Awakening",
+    "incorrectAnswers": [
+      "The Second Great Awakening",
+      "The Holiness Movement",
+      "The Social Gospel"
+    ],
+    "explanation": "Itinerant preachers stirred emotional conversions and challenged established parish authority.",
+    "keywords": [
+      "colonial",
+      "religion",
+      "awakening"
+    ],
+    "source": "https://www.britannica.com/event/Great-Awakening",
+    "seedId": "061cf35a-81bf-4a10-859e-250684bb048a"
+  },
+  {
+    "category": "history",
+    "navigationKeyword1": "us-history",
+    "navigationKeyword2": "colonial",
+    "question": "Nathaniel Bacon led 1676 rebels against Governor Berkeley’s policies toward frontier land and which neighbors?",
+    "correctAnswer": "Virginia’s Indigenous nations (and related grievances against elite rule)",
+    "incorrectAnswers": [
+      "Spanish Florida",
+      "French Canada",
+      "Dutch New Amsterdam"
+    ],
+    "explanation": "Bacon’s Rebellion combined class resentment with demands for aggressive expansion against Native communities.",
+    "keywords": [
+      "colonial",
+      "virginia",
+      "rebellion"
+    ],
+    "source": "https://www.britannica.com/event/Bacons-Rebellion",
+    "seedId": "a2104d73-282c-4f44-8a8f-ba1d295d461f"
+  },
+  {
+    "category": "history",
+    "navigationKeyword1": "us-history",
+    "navigationKeyword2": "colonial",
+    "question": "The 1754 Albany Congress, featuring Benjamin Franklin’s snake cartoon, sought unity against which rival empire?",
+    "correctAnswer": "France (in the run-up to the French and Indian War)",
+    "incorrectAnswers": [
+      "Russia",
+      "Ottoman Empire",
+      "Portugal"
+    ],
+    "explanation": "Colonial delegates debated intercolonial defense while Britain and France clashed over the Ohio Valley.",
+    "keywords": [
+      "colonial",
+      "seven-years-war",
+      "albany"
+    ],
+    "source": "https://www.britannica.com/event/Albany-Congress",
+    "seedId": "5d62cc70-f749-4978-96a0-a48db1171a01"
+  },
+  {
+    "category": "history",
+    "navigationKeyword1": "us-history",
+    "navigationKeyword2": "colonial",
+    "question": "The 1692 witch trials led to executions in which Massachusetts Bay settlement?",
+    "correctAnswer": "Salem",
+    "incorrectAnswers": [
+      "Hartford",
+      "Newport",
+      "Philadelphia"
+    ],
+    "explanation": "Spectral evidence, village feuds, and magisterial panic produced one of colonial America’s darkest episodes.",
+    "keywords": [
+      "colonial",
+      "salem",
+      "trials"
+    ],
+    "source": "https://www.britannica.com/event/Salem-witch-trials",
+    "seedId": "bb65cee4-348b-4656-a962-df118c8fc411"
+  },
+  {
+    "category": "history",
+    "navigationKeyword1": "us-history",
+    "navigationKeyword2": "colonial",
+    "question": "Charles II granted his brother the Duke of York a patent that led England to seize which Dutch trading colony in 1664?",
+    "correctAnswer": "New Amsterdam (renamed New York)",
+    "incorrectAnswers": [
+      "New Sweden",
+      "Pensacola",
+      "Havana"
+    ],
+    "explanation": "English troops forced Director-General Stuyvesant’s surrender, integrating the Hudson estuary into New York.",
+    "keywords": [
+      "colonial",
+      "new-york",
+      "dutch"
+    ],
+    "source": "https://www.britannica.com/biography/Peter-Stuyvesant",
+    "seedId": "a9f425ca-686b-45e8-a6fe-a0be32832df1"
+  },
+  {
+    "category": "history",
+    "navigationKeyword1": "us-history",
+    "navigationKeyword2": "colonial",
+    "question": "The 1649 Maryland Toleration Act briefly protected Catholics and Protestants in which proprietary colony?",
+    "correctAnswer": "Maryland",
+    "incorrectAnswers": [
+      "Massachusetts",
+      "Connecticut",
+      "New Hampshire"
+    ],
+    "explanation": "Cecilius Calvert’s experiment aimed to attract settlers amid England’s religious strife.",
+    "keywords": [
+      "colonial",
+      "maryland",
+      "religion"
+    ],
+    "source": "https://www.britannica.com/topic/Maryland-Toleration-Act",
+    "seedId": "26d2f603-fd9b-48be-a95c-693a7cf17ef8"
+  },
+  {
+    "category": "history",
+    "navigationKeyword1": "us-history",
+    "navigationKeyword2": "colonial",
+    "question": "George III’s Proclamation of 1763 forbade colonial settlement west of which Appalachian boundary line?",
+    "correctAnswer": "The proclamation line along the Appalachian watershed (reserved lands for Indigenous nations)",
+    "incorrectAnswers": [
+      "The Mississippi River",
+      "The Rio Grande",
+      "The 49th parallel"
+    ],
+    "explanation": "Frontier colonists resented the restriction after Britain gained French claims in the peace settlement.",
+    "keywords": [
+      "colonial",
+      "frontier",
+      "british-policy"
+    ],
+    "source": "https://www.britannica.com/event/Proclamation-of-1763",
+    "seedId": "a4646bdc-ddb4-4e43-a4a7-75e72903068c"
+  }
+]

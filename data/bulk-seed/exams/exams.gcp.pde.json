@@ -1,0 +1,202 @@
+[
+  {
+    "category": "exams",
+    "navigationKeyword1": "gcp",
+    "navigationKeyword2": "pde",
+    "question": "Which Google Cloud service is a serverless data warehouse for analytics?",
+    "correctAnswer": "BigQuery",
+    "incorrectAnswers": [
+      "Cloud Armor",
+      "VPC",
+      "Cloud NAT"
+    ],
+    "explanation": "BigQuery is Google's serverless analytics and data warehouse platform.",
+    "keywords": [
+      "gcp-pde",
+      "google-cloud-data",
+      "data-engineering"
+    ],
+    "source": "https://cloud.google.com/bigquery",
+    "seedId": "c657d7e3-5728-4bbf-9be2-7c3d74122918"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "gcp",
+    "navigationKeyword2": "pde",
+    "question": "Which Google Cloud service supports both batch and streaming data processing?",
+    "correctAnswer": "Dataflow",
+    "incorrectAnswers": [
+      "Cloud SQL",
+      "Cloud Storage",
+      "Cloud DNS"
+    ],
+    "explanation": "Dataflow is Google's managed service for batch and streaming data pipelines.",
+    "keywords": [
+      "gcp-pde",
+      "google-cloud-data",
+      "data-engineering"
+    ],
+    "source": "https://cloud.google.com/dataflow",
+    "seedId": "4a200cb7-239f-4030-994f-93ef70cc2701"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "gcp",
+    "navigationKeyword2": "pde",
+    "question": "Which Google Cloud service handles asynchronous event ingestion and messaging?",
+    "correctAnswer": "Pub/Sub",
+    "incorrectAnswers": [
+      "Compute Engine",
+      "Cloud Armor",
+      "Cloud SQL"
+    ],
+    "explanation": "Pub/Sub is commonly used for event ingestion and decoupled data pipelines.",
+    "keywords": [
+      "gcp-pde",
+      "google-cloud-data",
+      "data-engineering"
+    ],
+    "source": "https://cloud.google.com/pubsub",
+    "seedId": "57438105-b460-48dc-a322-4a206371bb9b"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "gcp",
+    "navigationKeyword2": "pde",
+    "question": "Which Google Cloud service runs managed Apache Spark and Hadoop workloads?",
+    "correctAnswer": "Dataproc",
+    "incorrectAnswers": [
+      "Cloud DNS",
+      "Cloud Armor",
+      "Cloud NAT"
+    ],
+    "explanation": "Dataproc is Google Cloud's managed service for Spark, Hadoop, and related open source tools.",
+    "keywords": [
+      "gcp-pde",
+      "google-cloud-data",
+      "data-engineering"
+    ],
+    "source": "https://cloud.google.com/dataproc",
+    "seedId": "f91b6ad5-c5e9-4955-aee6-7c5f18e088ae"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "gcp",
+    "navigationKeyword2": "pde",
+    "question": "Which Google Cloud service is commonly used as object storage for data lakes?",
+    "correctAnswer": "Cloud Storage",
+    "incorrectAnswers": [
+      "Cloud Armor",
+      "Cloud SQL",
+      "VPC"
+    ],
+    "explanation": "Cloud Storage is the object storage foundation for many Google Cloud data platforms.",
+    "keywords": [
+      "gcp-pde",
+      "google-cloud-data",
+      "data-engineering"
+    ],
+    "source": "https://cloud.google.com/storage",
+    "seedId": "a534ca9c-4a81-4eff-9e2e-be113efb1926"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "gcp",
+    "navigationKeyword2": "pde",
+    "question": "Which Google Cloud database is a low-latency NoSQL database for large-scale workloads?",
+    "correctAnswer": "Bigtable",
+    "incorrectAnswers": [
+      "Cloud Armor",
+      "Cloud DNS",
+      "Cloud NAT"
+    ],
+    "explanation": "Bigtable is Google's scalable NoSQL database service.",
+    "keywords": [
+      "gcp-pde",
+      "google-cloud-data",
+      "data-engineering"
+    ],
+    "source": "https://cloud.google.com/bigtable",
+    "seedId": "274e02a6-33ef-462a-9a93-4d1a7765b8ed"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "gcp",
+    "navigationKeyword2": "pde",
+    "question": "Which Google Cloud service provides managed relational databases for operational data stores?",
+    "correctAnswer": "Cloud SQL",
+    "incorrectAnswers": [
+      "Pub/Sub",
+      "Cloud DNS",
+      "Cloud Armor"
+    ],
+    "explanation": "Cloud SQL provides managed MySQL, PostgreSQL, and SQL Server databases.",
+    "keywords": [
+      "gcp-pde",
+      "google-cloud-data",
+      "data-engineering"
+    ],
+    "source": "https://cloud.google.com/sql",
+    "seedId": "d34da7ee-b6b7-43f2-b8f7-0bd8f6ebfa2c"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "gcp",
+    "navigationKeyword2": "pde",
+    "question": "Which Google Cloud database offers relational consistency at global scale?",
+    "correctAnswer": "Spanner",
+    "incorrectAnswers": [
+      "Cloud Storage",
+      "Cloud Armor",
+      "Cloud NAT"
+    ],
+    "explanation": "Spanner is Google's globally scalable relational database service.",
+    "keywords": [
+      "gcp-pde",
+      "google-cloud-data",
+      "data-engineering"
+    ],
+    "source": "https://cloud.google.com/spanner",
+    "seedId": "ea763090-a227-4942-b48e-ddf241f258c3"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "gcp",
+    "navigationKeyword2": "pde",
+    "question": "Which Google Cloud platform is used to build and deploy machine learning models?",
+    "correctAnswer": "Vertex AI",
+    "incorrectAnswers": [
+      "Cloud DNS",
+      "Cloud NAT",
+      "Cloud Armor"
+    ],
+    "explanation": "Vertex AI is Google's AI platform for building, training, and serving ML models.",
+    "keywords": [
+      "gcp-pde",
+      "google-cloud-data",
+      "data-engineering"
+    ],
+    "source": "https://cloud.google.com/vertex-ai",
+    "seedId": "1c1aa8f1-c38b-4a47-95c5-562cd512f515"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "gcp",
+    "navigationKeyword2": "pde",
+    "question": "Which Google Cloud service is used to publish and subscribe to event streams in data pipelines?",
+    "correctAnswer": "Pub/Sub",
+    "incorrectAnswers": [
+      "Cloud SQL",
+      "Compute Engine",
+      "Cloud Armor"
+    ],
+    "explanation": "Pub/Sub supports publish-subscribe messaging for distributed systems and pipelines.",
+    "keywords": [
+      "gcp-pde",
+      "google-cloud-data",
+      "data-engineering"
+    ],
+    "source": "https://cloud.google.com/pubsub",
+    "seedId": "5ff2ac48-0775-4695-985d-007deee387ac"
+  }
+]

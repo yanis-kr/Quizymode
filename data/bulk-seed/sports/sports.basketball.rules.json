@@ -1,0 +1,202 @@
+[
+  {
+    "category": "sports",
+    "navigationKeyword1": "basketball",
+    "navigationKeyword2": "rules",
+    "question": "How many points is a standard free throw worth?",
+    "correctAnswer": "One point",
+    "incorrectAnswers": [
+      "Two points",
+      "Three points",
+      "Zero points"
+    ],
+    "explanation": "A successful free throw counts for one point.",
+    "keywords": [
+      "basketball",
+      "rules",
+      "free-throw"
+    ],
+    "source": "https://official.nba.com/rule-no-5-scoring-and-timing/",
+    "seedId": "568816cd-f60b-4f01-9e6a-8e13bea05b23"
+  },
+  {
+    "category": "sports",
+    "navigationKeyword1": "basketball",
+    "navigationKeyword2": "rules",
+    "question": "How many points is a shot worth from behind the three-point line?",
+    "correctAnswer": "Three points",
+    "incorrectAnswers": [
+      "One point",
+      "Two points",
+      "Four points"
+    ],
+    "explanation": "Shots made beyond the three-point arc count for three.",
+    "keywords": [
+      "basketball",
+      "rules",
+      "three-pointer"
+    ],
+    "source": "https://official.nba.com/rule-no-5-scoring-and-timing/",
+    "seedId": "c901de2b-34ca-412e-9aca-6b4cfd752632"
+  },
+  {
+    "category": "sports",
+    "navigationKeyword1": "basketball",
+    "navigationKeyword2": "rules",
+    "question": "How long is the NBA shot clock?",
+    "correctAnswer": "24 seconds",
+    "incorrectAnswers": [
+      "20 seconds",
+      "30 seconds",
+      "35 seconds"
+    ],
+    "explanation": "Teams have 24 seconds to attempt a shot in the NBA.",
+    "keywords": [
+      "basketball",
+      "rules",
+      "shot-clock"
+    ],
+    "source": "https://official.nba.com/rule-no-7-24-second-clock/",
+    "seedId": "97f38aa7-5527-45f7-b0c1-65dfc305a125"
+  },
+  {
+    "category": "sports",
+    "navigationKeyword1": "basketball",
+    "navigationKeyword2": "rules",
+    "question": "How many personal fouls disqualify a player in an NBA game?",
+    "correctAnswer": "Six",
+    "incorrectAnswers": [
+      "Five",
+      "Seven",
+      "Eight"
+    ],
+    "explanation": "An NBA player fouls out after six personal fouls.",
+    "keywords": [
+      "basketball",
+      "rules",
+      "fouls"
+    ],
+    "source": "https://official.nba.com/rule-no-3-players-substitutes-and-coaches/",
+    "seedId": "75d67f96-625b-4a12-8bdb-b3cec6fc49fc"
+  },
+  {
+    "category": "sports",
+    "navigationKeyword1": "basketball",
+    "navigationKeyword2": "rules",
+    "question": "How many players from one team are on the court during play?",
+    "correctAnswer": "Five",
+    "incorrectAnswers": [
+      "Four",
+      "Six",
+      "Seven"
+    ],
+    "explanation": "Basketball is played five-on-five in standard professional games.",
+    "keywords": [
+      "basketball",
+      "rules",
+      "players"
+    ],
+    "source": "https://www.britannica.com/sports/basketball",
+    "seedId": "024a7af4-06fc-44d0-8091-acc74cc1d3d2"
+  },
+  {
+    "category": "sports",
+    "navigationKeyword1": "basketball",
+    "navigationKeyword2": "rules",
+    "question": "What violation occurs when a player takes more than two steps without dribbling?",
+    "correctAnswer": "Traveling",
+    "incorrectAnswers": [
+      "Goaltending",
+      "Backcourt",
+      "Palming"
+    ],
+    "explanation": "Traveling penalizes illegal movement without a proper dribble.",
+    "keywords": [
+      "basketball",
+      "rules",
+      "traveling"
+    ],
+    "source": "https://www.britannica.com/sports/basketball",
+    "seedId": "eb0f20a5-b565-4cec-8bac-eafe74ce30e1"
+  },
+  {
+    "category": "sports",
+    "navigationKeyword1": "basketball",
+    "navigationKeyword2": "rules",
+    "question": "What violation is called when a team fails to advance the ball over midcourt in time?",
+    "correctAnswer": "An 8-second violation",
+    "incorrectAnswers": [
+      "A 3-second violation",
+      "A lane violation",
+      "A goaltend"
+    ],
+    "explanation": "NBA teams must get the ball into the frontcourt within eight seconds.",
+    "keywords": [
+      "basketball",
+      "rules",
+      "backcourt"
+    ],
+    "source": "https://official.nba.com/rule-no-10-violations-and-penalties/",
+    "seedId": "34f6d5b5-ca6f-4e7b-b979-8aa088c22be0"
+  },
+  {
+    "category": "sports",
+    "navigationKeyword1": "basketball",
+    "navigationKeyword2": "rules",
+    "question": "What happens when a defender illegally blocks a shot after it is descending toward the basket?",
+    "correctAnswer": "Goaltending is called",
+    "incorrectAnswers": [
+      "The basket counts as four points",
+      "The shooter is ejected",
+      "Play always continues"
+    ],
+    "explanation": "Goaltending protects legal scoring chances near the rim.",
+    "keywords": [
+      "basketball",
+      "rules",
+      "goaltending"
+    ],
+    "source": "https://official.nba.com/rule-no-11-basket-interference-goaltending/",
+    "seedId": "8cb91898-b79d-440a-b613-32d3be8dfaf4"
+  },
+  {
+    "category": "sports",
+    "navigationKeyword1": "basketball",
+    "navigationKeyword2": "rules",
+    "question": "How many quarters are in a standard professional basketball game?",
+    "correctAnswer": "Four",
+    "incorrectAnswers": [
+      "Two",
+      "Three",
+      "Six"
+    ],
+    "explanation": "Professional basketball games are split into four quarters.",
+    "keywords": [
+      "basketball",
+      "rules",
+      "quarters"
+    ],
+    "source": "https://www.britannica.com/sports/basketball",
+    "seedId": "9468b44e-1748-42cc-857e-17cd3f2310bb"
+  },
+  {
+    "category": "sports",
+    "navigationKeyword1": "basketball",
+    "navigationKeyword2": "rules",
+    "question": "What type of foul is called when an offensive player runs into a legally set defender?",
+    "correctAnswer": "Charging",
+    "incorrectAnswers": [
+      "Blocking",
+      "Technical",
+      "Flagrant"
+    ],
+    "explanation": "Charging is an offensive foul caused by illegal contact into a set defender.",
+    "keywords": [
+      "basketball",
+      "rules",
+      "charging"
+    ],
+    "source": "https://www.britannica.com/sports/basketball",
+    "seedId": "45271d26-0e15-45a5-ae2d-b2d33cee7c09"
+  }
+]

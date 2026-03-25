@@ -1,0 +1,202 @@
+[
+  {
+    "category": "sports",
+    "navigationKeyword1": "hockey",
+    "navigationKeyword2": "nhl",
+    "question": "What does NHL stand for?",
+    "correctAnswer": "National Hockey League",
+    "incorrectAnswers": [
+      "Northern Hockey League",
+      "National Handball League",
+      "North Hockey League"
+    ],
+    "explanation": "NHL is short for National Hockey League.",
+    "keywords": [
+      "hockey",
+      "nhl",
+      "league"
+    ],
+    "source": "https://www.nhl.com/info/nhl-records",
+    "seedId": "93582941-b83e-4318-b9e7-541bead285c1"
+  },
+  {
+    "category": "sports",
+    "navigationKeyword1": "hockey",
+    "navigationKeyword2": "nhl",
+    "question": "How many teams play in the NHL?",
+    "correctAnswer": "32",
+    "incorrectAnswers": [
+      "30",
+      "28",
+      "34"
+    ],
+    "explanation": "The NHL has 32 teams split across two conferences.",
+    "keywords": [
+      "hockey",
+      "nhl",
+      "teams"
+    ],
+    "source": "https://www.nhl.com/info/nhl-records",
+    "seedId": "9cfd0211-ffb3-4e6e-9c19-c9dbba1e0386"
+  },
+  {
+    "category": "sports",
+    "navigationKeyword1": "hockey",
+    "navigationKeyword2": "nhl",
+    "question": "Which trophy is awarded to the NHL playoff champion?",
+    "correctAnswer": "Stanley Cup",
+    "incorrectAnswers": [
+      "Conn Smythe Trophy",
+      "Hart Trophy",
+      "Lombardi Trophy"
+    ],
+    "explanation": "The Stanley Cup goes to the NHL champion.",
+    "keywords": [
+      "hockey",
+      "nhl",
+      "stanley-cup"
+    ],
+    "source": "https://www.nhl.com/info/stanley-cup-winners-complete-list",
+    "seedId": "02006acb-faeb-46b2-be13-1f9feb087c6a"
+  },
+  {
+    "category": "sports",
+    "navigationKeyword1": "hockey",
+    "navigationKeyword2": "nhl",
+    "question": "Which team won the 2024 Stanley Cup Final?",
+    "correctAnswer": "Florida Panthers",
+    "incorrectAnswers": [
+      "Edmonton Oilers",
+      "Vegas Golden Knights",
+      "Colorado Avalanche"
+    ],
+    "explanation": "Florida beat Edmonton to win the 2024 Stanley Cup.",
+    "keywords": [
+      "hockey",
+      "nhl",
+      "panthers"
+    ],
+    "source": "https://www.nhl.com/info/stanley-cup-winners-complete-list",
+    "seedId": "bdc44db9-2e23-48b9-86af-82830fbb17d1"
+  },
+  {
+    "category": "sports",
+    "navigationKeyword1": "hockey",
+    "navigationKeyword2": "nhl",
+    "question": "Which franchise has won the most Stanley Cups?",
+    "correctAnswer": "Montreal Canadiens",
+    "incorrectAnswers": [
+      "Toronto Maple Leafs",
+      "Detroit Red Wings",
+      "Boston Bruins"
+    ],
+    "explanation": "Montreal leads the Stanley Cup winners list.",
+    "keywords": [
+      "hockey",
+      "nhl",
+      "canadiens"
+    ],
+    "source": "https://www.nhl.com/info/stanley-cup-winners-complete-list",
+    "seedId": "6f00792f-fd23-4d83-a3a6-323d311e15c7"
+  },
+  {
+    "category": "sports",
+    "navigationKeyword1": "hockey",
+    "navigationKeyword2": "nhl",
+    "question": "Which team is based in Toronto and wears blue and white?",
+    "correctAnswer": "Toronto Maple Leafs",
+    "incorrectAnswers": [
+      "Montreal Canadiens",
+      "Ottawa Senators",
+      "Boston Bruins"
+    ],
+    "explanation": "Toronto's historic NHL club is the Maple Leafs.",
+    "keywords": [
+      "hockey",
+      "nhl",
+      "maple-leafs"
+    ],
+    "source": "https://www.nhl.com/info/nhl-records",
+    "seedId": "64e7d2ab-0aa5-4029-9c8a-1357d010c880"
+  },
+  {
+    "category": "sports",
+    "navigationKeyword1": "hockey",
+    "navigationKeyword2": "nhl",
+    "question": "Which team won the 2023 Stanley Cup Final?",
+    "correctAnswer": "Vegas Golden Knights",
+    "incorrectAnswers": [
+      "Florida Panthers",
+      "Colorado Avalanche",
+      "Tampa Bay Lightning"
+    ],
+    "explanation": "Vegas won its first Stanley Cup in 2023.",
+    "keywords": [
+      "hockey",
+      "nhl",
+      "golden-knights"
+    ],
+    "source": "https://www.nhl.com/info/stanley-cup-winners-complete-list",
+    "seedId": "b8dc725c-93cb-4bed-847f-d18d85719f13"
+  },
+  {
+    "category": "sports",
+    "navigationKeyword1": "hockey",
+    "navigationKeyword2": "nhl",
+    "question": "How many regulation periods are played in an NHL game?",
+    "correctAnswer": "Three",
+    "incorrectAnswers": [
+      "Two",
+      "Four",
+      "Five"
+    ],
+    "explanation": "An NHL game has three periods in regulation.",
+    "keywords": [
+      "hockey",
+      "nhl",
+      "periods"
+    ],
+    "source": "https://www.britannica.com/sports/ice-hockey",
+    "seedId": "123f3aba-7e8a-4226-ae56-72e7645d0d8f"
+  },
+  {
+    "category": "sports",
+    "navigationKeyword1": "hockey",
+    "navigationKeyword2": "nhl",
+    "question": "Which team famously played at Joe Louis Arena for decades?",
+    "correctAnswer": "Detroit Red Wings",
+    "incorrectAnswers": [
+      "Chicago Blackhawks",
+      "St. Louis Blues",
+      "Buffalo Sabres"
+    ],
+    "explanation": "Joe Louis Arena was the long-time home of the Red Wings.",
+    "keywords": [
+      "hockey",
+      "nhl",
+      "red-wings"
+    ],
+    "source": "https://www.nhl.com/info/nhl-records",
+    "seedId": "59b234b9-d8f3-4b95-8306-307ab75cfb8f"
+  },
+  {
+    "category": "sports",
+    "navigationKeyword1": "hockey",
+    "navigationKeyword2": "nhl",
+    "question": "Which Canadian franchise ended a long drought by reaching the 2024 Stanley Cup Final?",
+    "correctAnswer": "Edmonton Oilers",
+    "incorrectAnswers": [
+      "Vancouver Canucks",
+      "Toronto Maple Leafs",
+      "Calgary Flames"
+    ],
+    "explanation": "Edmonton reached the 2024 final before losing to Florida.",
+    "keywords": [
+      "hockey",
+      "nhl",
+      "oilers"
+    ],
+    "source": "https://www.nhl.com/info/stanley-cup-winners-complete-list",
+    "seedId": "aaa057b4-833e-44f7-81c8-3e9021e9ab2b"
+  }
+]

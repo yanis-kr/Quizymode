@@ -1,0 +1,222 @@
+[
+  {
+    "category": "geography",
+    "navigationKeyword1": "flags",
+    "navigationKeyword2": "regions",
+    "question": "The European Union flag shows how many gold stars in a circle on a blue field?",
+    "correctAnswer": "12",
+    "incorrectAnswers": [
+      "27",
+      "15",
+      "6"
+    ],
+    "explanation": "The EU’s official description states the flag features a circle of 12 gold stars on blue; the number is not tied to the count of member countries.",
+    "keywords": [
+      "regions",
+      "european-union",
+      "vexillology"
+    ],
+    "source": "https://european-union.europa.eu/principles-countries-history/symbols/european-flag_en",
+    "seedId": "40279e66-ebf5-446f-85d0-03b62bd02c93"
+  },
+  {
+    "category": "geography",
+    "navigationKeyword1": "flags",
+    "navigationKeyword2": "regions",
+    "question": "Scotland’s regional flag flown within the United Kingdom is known as what cross?",
+    "correctAnswer": "The Cross of St. Andrew (a white saltire on blue)",
+    "incorrectAnswers": [
+      "The Cross of St. George on white",
+      "A red dragon on green and white",
+      "A gold fleur-de-lis on blue quarters"
+    ],
+    "explanation": "Britannica describes Scotland’s flag as a blue field bearing a white saltire reaching the corners, called the Cross of St. Andrew.",
+    "keywords": [
+      "regions",
+      "scotland",
+      "saltire"
+    ],
+    "source": "https://www.britannica.com/topic/flag-of-Scotland",
+    "seedId": "17d5df93-8dd6-4c17-bd80-ce7469456b1e"
+  },
+  {
+    "category": "geography",
+    "navigationKeyword1": "flags",
+    "navigationKeyword2": "regions",
+    "question": "The flag of Wales displays horizontal stripes of white and green with what central emblem?",
+    "correctAnswer": "A large red dragon",
+    "incorrectAnswers": [
+      "A white saltire only",
+      "A single white star in a blue triangle",
+      "A grizzly bear and the words California Republic"
+    ],
+    "explanation": "Britannica states the Welsh flag has horizontal white and green stripes bearing a large red dragon.",
+    "keywords": [
+      "regions",
+      "wales",
+      "dragon"
+    ],
+    "source": "https://www.britannica.com/topic/flag-of-Wales",
+    "seedId": "54f5733c-c1b8-4a66-bb6d-599108193db1"
+  },
+  {
+    "category": "geography",
+    "navigationKeyword1": "flags",
+    "navigationKeyword2": "regions",
+    "question": "England’s flag, flown subordinate to the Union Jack, consists of what?",
+    "correctAnswer": "A white field with a red cross (Cross of St. George)",
+    "incorrectAnswers": [
+      "Blue with a yellow saltire",
+      "Green with a white maple leaf",
+      "Red and white stripes with a blue canton of 50 stars"
+    ],
+    "explanation": "Britannica defines England’s flag as a white field bearing the red Cross of St. George.",
+    "keywords": [
+      "regions",
+      "england",
+      "st-george"
+    ],
+    "source": "https://www.britannica.com/topic/flag-of-England",
+    "seedId": "5413f623-e3ee-46d8-952c-9966f9a83480"
+  },
+  {
+    "category": "geography",
+    "navigationKeyword1": "flags",
+    "navigationKeyword2": "regions",
+    "question": "Quebec’s provincial flag, nicknamed the fleurdelisé, places white fleurs-de-lis where?",
+    "correctAnswer": "In each quarter of a blue field divided by a central white cross",
+    "incorrectAnswers": [
+      "Only along one red stripe",
+      "Inside a yellow circle on red",
+      "Solely on the Union Jack canton"
+    ],
+    "explanation": "Britannica describes Quebec’s flag as a blue field quartered by a white cross with a white fleur-de-lis in each quarter.",
+    "keywords": [
+      "regions",
+      "quebec",
+      "canada"
+    ],
+    "source": "https://www.britannica.com/topic/flag-of-Quebec",
+    "seedId": "05b48d87-ffd2-4e65-8ee1-cdd11a20a901"
+  },
+  {
+    "category": "geography",
+    "navigationKeyword1": "flags",
+    "navigationKeyword2": "regions",
+    "question": "Puerto Rico’s flag has five horizontal red and white stripes and, at the hoist, what?",
+    "correctAnswer": "A blue triangle bearing one white star",
+    "incorrectAnswers": [
+      "A green maple leaf on a white band",
+      "Two golden lions on red",
+      "A black double-headed eagle"
+    ],
+    "explanation": "Britannica describes the Puerto Rican commonwealth flag as five red and white stripes with a blue triangle and white star at the hoist.",
+    "keywords": [
+      "regions",
+      "puerto-rico",
+      "caribbean"
+    ],
+    "source": "https://www.britannica.com/topic/flag-of-Puerto-Rico",
+    "seedId": "1788c763-896e-4d04-8b0c-9445287f4710"
+  },
+  {
+    "category": "geography",
+    "navigationKeyword1": "flags",
+    "navigationKeyword2": "regions",
+    "question": "The Texas state flag is sometimes called what?",
+    "correctAnswer": "The Lone Star Flag",
+    "incorrectAnswers": [
+      "The Bear Flag",
+      "The Maple Leaf Flag",
+      "The Stars and Bars"
+    ],
+    "explanation": "Britannica notes the Texas flag is known as the Lone Star Flag: a vertical blue hoist stripe with a white star and white-over-red horizontal stripes on the fly.",
+    "keywords": [
+      "regions",
+      "texas",
+      "united-states"
+    ],
+    "source": "https://www.britannica.com/topic/flag-of-Texas",
+    "seedId": "be187830-bafa-4f5d-b8b4-1f86a4dad406"
+  },
+  {
+    "category": "geography",
+    "navigationKeyword1": "flags",
+    "navigationKeyword2": "regions",
+    "question": "California’s state flag is also known by what nickname?",
+    "correctAnswer": "The Bear Flag",
+    "incorrectAnswers": [
+      "The Lone Star Flag",
+      "The Saltire",
+      "The Fleurdelisé"
+    ],
+    "explanation": "Britannica explains California’s flag shows a grizzly bear above “California Republic” with a red stripe and a red star in the hoist corner, nicknamed the Bear Flag.",
+    "keywords": [
+      "regions",
+      "california",
+      "united-states"
+    ],
+    "source": "https://www.britannica.com/topic/flag-of-California",
+    "seedId": "65f99ae3-6d11-4f98-a19b-85ca085ba852"
+  },
+  {
+    "category": "geography",
+    "navigationKeyword1": "flags",
+    "navigationKeyword2": "regions",
+    "question": "Hawaii’s state flag, like those of Texas and California, is noted for what?",
+    "correctAnswer": "It features a design used by a formerly independent country",
+    "incorrectAnswers": [
+      "It has no colours at all",
+      "It is identical to the Union Jack only",
+      "It cannot be flown with the U.S. flag"
+    ],
+    "explanation": "Britannica groups Hawaii with Texas and California as U.S. state flags that reuse designs from formerly independent polities.",
+    "keywords": [
+      "regions",
+      "hawaii",
+      "united-states"
+    ],
+    "source": "https://www.britannica.com/topic/flag-of-California",
+    "seedId": "2718275e-cf32-4975-964e-fbec707767d6"
+  },
+  {
+    "category": "geography",
+    "navigationKeyword1": "flags",
+    "navigationKeyword2": "regions",
+    "question": "When did the Council of Europe first adopt the design now used as the European flag?",
+    "correctAnswer": "1955",
+    "incorrectAnswers": [
+      "1848",
+      "2002",
+      "1989"
+    ],
+    "explanation": "The European Union’s official history notes the Council of Europe adopted the present flag design in December 1955; EU institutions later adopted the same flag.",
+    "keywords": [
+      "regions",
+      "europe",
+      "history"
+    ],
+    "source": "https://european-union.europa.eu/principles-countries-history/symbols/european-flag_en",
+    "seedId": "1b17fc3b-9db9-4274-a1f9-090a6a4383bc"
+  },
+  {
+    "category": "geography",
+    "navigationKeyword1": "flags",
+    "navigationKeyword2": "regions",
+    "question": "The EU flag’s stars stand for what ideals among Europe’s peoples?",
+    "correctAnswer": "Unity, solidarity, and harmony",
+    "incorrectAnswers": [
+      "War, competition, and isolation",
+      "Only economic tariffs",
+      "Colonial expansion"
+    ],
+    "explanation": "The EU states the 12 stars represent ideals of unity, solidarity, and harmony among the peoples of Europe.",
+    "keywords": [
+      "regions",
+      "european-union",
+      "symbolism"
+    ],
+    "source": "https://european-union.europa.eu/principles-countries-history/symbols/european-flag_en",
+    "seedId": "fd37e092-4feb-4c49-a09c-c952c9a1f51d"
+  }
+]

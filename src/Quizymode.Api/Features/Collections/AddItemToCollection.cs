@@ -1,5 +1,6 @@
 using FluentValidation;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Logging;
 using Quizymode.Api.Data;
 using Quizymode.Api.Infrastructure;
 using Quizymode.Api.Services;
@@ -88,6 +89,7 @@ public static class CollectionItems
             AddRequest request,
             ApplicationDbContext db,
             IUserContext userContext,
+            ILogger<Endpoint> logger,
             CancellationToken cancellationToken)
         {
             Result<CollectionItemResponse> result = await HandleAddAsync(
@@ -101,7 +103,7 @@ public static class CollectionItems
                 value => Results.Created($"/api/collections/{value.CollectionId}/items/{value.ItemId}", value),
                 failure => failure.Error.Type == ErrorType.NotFound
                     ? Results.NotFound()
-                    : CustomResults.Problem(result));
+                    : CustomResults.Problem(result, logger));
         }
 
         private static async Task<IResult> BulkAddHandler(
@@ -109,6 +111,7 @@ public static class CollectionItems
             BulkAddRequest request,
             ApplicationDbContext db,
             IUserContext userContext,
+            ILogger<Endpoint> logger,
             CancellationToken cancellationToken)
         {
             Result<BulkAddResponse> result = await HandleBulkAddAsync(
@@ -122,7 +125,7 @@ public static class CollectionItems
                 value => Results.Ok(value),
                 failure => failure.Error.Type == ErrorType.NotFound
                     ? Results.NotFound()
-                    : CustomResults.Problem(result));
+                    : CustomResults.Problem(result, logger));
         }
 
         private static async Task<IResult> RemoveHandler(
@@ -130,6 +133,7 @@ public static class CollectionItems
             Guid itemId,
             ApplicationDbContext db,
             IUserContext userContext,
+            ILogger<Endpoint> logger,
             CancellationToken cancellationToken)
         {
             Result result = await HandleRemoveAsync(collectionId, itemId, db, userContext, cancellationToken);
@@ -138,7 +142,7 @@ public static class CollectionItems
                 () => Results.NoContent(),
                 failure => failure.Error.Type == ErrorType.NotFound
                     ? Results.NotFound()
-                    : CustomResults.Problem(result));
+                    : CustomResults.Problem(result, logger));
         }
     }
 
@@ -166,6 +170,12 @@ public static class CollectionItems
                     Error.NotFound("Collection.NotFound", $"Collection with id {collectionId} not found"));
             }
 
+            if (collection.CreatedBy != userContext.UserId)
+            {
+                return Result.Failure<CollectionItemResponse>(
+                    Error.Validation("CollectionItems.Forbidden", "Only the collection owner can add or remove items."));
+            }
+
             Item? item = await db.Items
                 .FirstOrDefaultAsync(i => i.Id == request.ItemId, cancellationToken);
 
@@ -175,14 +185,19 @@ public static class CollectionItems
                     Error.NotFound("Item.NotFound", $"Item with id {request.ItemId} not found"));
             }
 
-            bool exists = await db.CollectionItems.AnyAsync(
-                ci => ci.CollectionId == collectionId && ci.ItemId == request.ItemId,
-                cancellationToken);
+            CollectionItem? existing = await db.CollectionItems
+                .FirstOrDefaultAsync(
+                    ci => ci.CollectionId == collectionId && ci.ItemId == request.ItemId,
+                    cancellationToken);
 
-            if (exists)
+            if (existing is not null)
             {
-                return Result.Failure<CollectionItemResponse>(
-                    Error.Conflict("CollectionItems.AlreadyExists", "Item is already in the collection."));
+                // Idempotent: already in collection — return success with existing link
+                return Result.Success(new CollectionItemResponse(
+                    existing.Id.ToString(),
+                    existing.CollectionId,
+                    existing.ItemId,
+                    existing.AddedAt));
             }
 
             CollectionItem entity = new()
@@ -233,6 +248,12 @@ public static class CollectionItems
             {
                 return Result.Failure<BulkAddResponse>(
                     Error.NotFound("Collection.NotFound", $"Collection with id {collectionId} not found"));
+            }
+
+            if (collection.CreatedBy != userContext.UserId)
+            {
+                return Result.Failure<BulkAddResponse>(
+                    Error.Validation("CollectionItems.Forbidden", "Only the collection owner can add or remove items."));
             }
 
             // Get existing collection items to skip duplicates
@@ -300,6 +321,21 @@ public static class CollectionItems
             {
                 return Result.Failure(
                     Error.Validation("CollectionItems.Unauthorized", "User must be authenticated."));
+            }
+
+            Collection? collection = await db.Collections
+                .FirstOrDefaultAsync(c => c.Id == collectionId, cancellationToken);
+
+            if (collection is null)
+            {
+                return Result.Failure(
+                    Error.NotFound("Collection.NotFound", $"Collection with id {collectionId} not found"));
+            }
+
+            if (collection.CreatedBy != userContext.UserId)
+            {
+                return Result.Failure(
+                    Error.Validation("CollectionItems.Forbidden", "Only the collection owner can add or remove items."));
             }
 
             CollectionItem? entity = await db.CollectionItems

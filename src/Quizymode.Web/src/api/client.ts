@@ -4,7 +4,11 @@ import { getToken, clearTokens, isTokenExpired } from "@/utils/tokenStorage";
 import { fetchAuthSession } from "aws-amplify/auth";
 import { setTokens } from "@/utils/tokenStorage";
 
-const API_URL = import.meta.env.VITE_API_URL || "https://localhost:8080";
+// In dev, always use "/api" so Vite proxies to the backend (avoids CORS and SSL cert issues).
+// In production, use VITE_API_URL from env (e.g. .env.production).
+export const API_URL = import.meta.env.DEV
+  ? "/api"
+  : (import.meta.env.VITE_API_URL || "https://localhost:8082");
 
 export const apiClient: AxiosInstance = axios.create({
   baseURL: API_URL,
@@ -90,6 +94,7 @@ const isOnPublicRoute = (): boolean => {
   const publicRoutes = [
     "/",
     "/categories",
+    "/collections",
     "/login",
     "/signup",
     "/explore",
@@ -103,7 +108,7 @@ const isOnPublicRoute = (): boolean => {
 
 // Helper to check if an endpoint is public
 const isPublicEndpoint = (url: string): boolean => {
-  const publicEndpoints = ["/categories", "/categories/"];
+  const publicEndpoints = ["/categories", "/categories/", "/keywords", "/items", "/collections"];
   return (
     publicEndpoints.some((endpoint) => url.includes(endpoint)) ||
     /^\/categories\/[^\/]+\/subcategories/.test(url)

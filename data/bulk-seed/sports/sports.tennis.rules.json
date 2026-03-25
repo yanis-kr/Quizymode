@@ -1,0 +1,202 @@
+[
+  {
+    "category": "sports",
+    "navigationKeyword1": "tennis",
+    "navigationKeyword2": "rules",
+    "question": "What word is used for zero points in tennis scoring?",
+    "correctAnswer": "Love",
+    "incorrectAnswers": [
+      "Blank",
+      "Nil",
+      "Duck"
+    ],
+    "explanation": "Tennis uses the traditional term love for zero.",
+    "keywords": [
+      "tennis",
+      "rules",
+      "scoring"
+    ],
+    "source": "https://www.itftennis.com/en/about-us/governance/rules-and-regulations/",
+    "seedId": "9e95f192-3c7c-42f7-86b3-bc59c2678491"
+  },
+  {
+    "category": "sports",
+    "navigationKeyword1": "tennis",
+    "navigationKeyword2": "rules",
+    "question": "How many points are needed to win a standard game if there is no deuce?",
+    "correctAnswer": "Four points",
+    "incorrectAnswers": [
+      "Three points",
+      "Five points",
+      "Six points"
+    ],
+    "explanation": "A player wins a game by taking points to 15, 30, 40, then game.",
+    "keywords": [
+      "tennis",
+      "rules",
+      "game"
+    ],
+    "source": "https://www.itftennis.com/en/about-us/governance/rules-and-regulations/",
+    "seedId": "1a6fdcb7-014b-4ab3-8a2a-10de36588084"
+  },
+  {
+    "category": "sports",
+    "navigationKeyword1": "tennis",
+    "navigationKeyword2": "rules",
+    "question": "What score comes after 30 in a tennis game?",
+    "correctAnswer": "40",
+    "incorrectAnswers": [
+      "45",
+      "50",
+      "60"
+    ],
+    "explanation": "The standard sequence is love, 15, 30, 40.",
+    "keywords": [
+      "tennis",
+      "rules",
+      "point-sequence"
+    ],
+    "source": "https://www.itftennis.com/en/about-us/governance/rules-and-regulations/",
+    "seedId": "c54d06c1-26a2-4845-9901-3622480eba7b"
+  },
+  {
+    "category": "sports",
+    "navigationKeyword1": "tennis",
+    "navigationKeyword2": "rules",
+    "question": "When both players reach 40 in a game, what is the score called?",
+    "correctAnswer": "Deuce",
+    "incorrectAnswers": [
+      "Tie-break",
+      "Advantage",
+      "Let"
+    ],
+    "explanation": "At 40-all, the game reaches deuce.",
+    "keywords": [
+      "tennis",
+      "rules",
+      "deuce"
+    ],
+    "source": "https://www.itftennis.com/en/about-us/governance/rules-and-regulations/",
+    "seedId": "6abb0ace-9165-46d7-8812-9edbeacaf70f"
+  },
+  {
+    "category": "sports",
+    "navigationKeyword1": "tennis",
+    "navigationKeyword2": "rules",
+    "question": "After deuce, what is the next point called for the player who wins it?",
+    "correctAnswer": "Advantage",
+    "incorrectAnswers": [
+      "Break point",
+      "Set point",
+      "Match point"
+    ],
+    "explanation": "A player who wins the point after deuce gains advantage.",
+    "keywords": [
+      "tennis",
+      "rules",
+      "advantage"
+    ],
+    "source": "https://www.itftennis.com/en/about-us/governance/rules-and-regulations/",
+    "seedId": "833b77f8-28d4-4927-bbc2-6ce35ed6c34d"
+  },
+  {
+    "category": "sports",
+    "navigationKeyword1": "tennis",
+    "navigationKeyword2": "rules",
+    "question": "How many points does a player need to win a standard tie-break, with a two-point margin?",
+    "correctAnswer": "Seven",
+    "incorrectAnswers": [
+      "Five",
+      "Six",
+      "Eight"
+    ],
+    "explanation": "A standard tie-break is won at seven points, but by two.",
+    "keywords": [
+      "tennis",
+      "rules",
+      "tie-break"
+    ],
+    "source": "https://www.itftennis.com/en/about-us/governance/rules-and-regulations/",
+    "seedId": "53096896-554f-488b-ab85-51cee3a05931"
+  },
+  {
+    "category": "sports",
+    "navigationKeyword1": "tennis",
+    "navigationKeyword2": "rules",
+    "question": "How many games does a player usually need to win a set, with a margin of two?",
+    "correctAnswer": "Six games",
+    "incorrectAnswers": [
+      "Four games",
+      "Five games",
+      "Seven games"
+    ],
+    "explanation": "Most sets are won by taking six games with a two-game margin.",
+    "keywords": [
+      "tennis",
+      "rules",
+      "set"
+    ],
+    "source": "https://www.itftennis.com/en/about-us/governance/rules-and-regulations/",
+    "seedId": "d1e822ef-dc8e-44e6-9634-00636fc213f3"
+  },
+  {
+    "category": "sports",
+    "navigationKeyword1": "tennis",
+    "navigationKeyword2": "rules",
+    "question": "What happens if a served ball touches the net and still lands in the correct service box?",
+    "correctAnswer": "It is a let and the serve is replayed",
+    "incorrectAnswers": [
+      "The server loses the point",
+      "The returner gets the point",
+      "Play continues automatically"
+    ],
+    "explanation": "A legal serve touching the net is replayed as a let.",
+    "keywords": [
+      "tennis",
+      "rules",
+      "let"
+    ],
+    "source": "https://www.itftennis.com/en/about-us/governance/rules-and-regulations/",
+    "seedId": "41020614-e9f7-429d-b61f-ea899877ec4d"
+  },
+  {
+    "category": "sports",
+    "navigationKeyword1": "tennis",
+    "navigationKeyword2": "rules",
+    "question": "What is it called when the receiving player wins the server's game?",
+    "correctAnswer": "A break of serve",
+    "incorrectAnswers": [
+      "A hold",
+      "A let",
+      "A walkover"
+    ],
+    "explanation": "Winning the opponent's service game is a break.",
+    "keywords": [
+      "tennis",
+      "rules",
+      "break"
+    ],
+    "source": "https://www.britannica.com/sports/tennis",
+    "seedId": "43b30e3a-08c2-432b-9151-84cbd7149849"
+  },
+  {
+    "category": "sports",
+    "navigationKeyword1": "tennis",
+    "navigationKeyword2": "rules",
+    "question": "How many chances does a player get to make a legal serve before losing the point for a double fault?",
+    "correctAnswer": "Two",
+    "incorrectAnswers": [
+      "One",
+      "Three",
+      "Unlimited"
+    ],
+    "explanation": "A server gets a first serve and a second serve chance.",
+    "keywords": [
+      "tennis",
+      "rules",
+      "serve"
+    ],
+    "source": "https://www.itftennis.com/en/about-us/governance/rules-and-regulations/",
+    "seedId": "0eac668c-94e6-4594-b632-e3da69e62d2f"
+  }
+]

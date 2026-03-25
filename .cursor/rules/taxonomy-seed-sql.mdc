@@ -1,0 +1,18 @@
+---
+description: Regenerate taxonomy bulk SQL when YAML changes
+globs: docs/quizymode_taxonomy.yaml, docs/quizymode_taxonomy_seed.sql
+alwaysApply: false
+---
+
+# Taxonomy YAML and generated seed SQL
+
+- **`docs/quizymode_taxonomy.yaml`** is the only hand-edited source for category + navigation keyword structure. Keep it human-friendly (nested `description` + `keywords` maps as today).
+- **`docs/quizymode_taxonomy_seed.sql`** is **generated**. Do not edit it by hand.
+- After any change to `quizymode_taxonomy.yaml`, regenerate and commit both files:
+
+```bash
+dotnet run --project tools/Quizymode.TaxonomySqlGen
+```
+
+- The API applies that SQL in **one transaction** at startup (see `DatabaseSeederHostedService`). Migrations stay on EF Core; taxonomy rows come from this script.
+- Parser + models live in **`src/Quizymode.Taxonomy`** (`TaxonomyYamlParser`); the generator is **`tools/Quizymode.TaxonomySqlGen`**.

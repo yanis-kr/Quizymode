@@ -1,0 +1,439 @@
+[
+  {
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "saa-c03",
+    "question": "A company wants to use Amazon FSx for Windows File Server for its Amazon EC2 instances that have an SMB fifile share mounted as a volume in\nthe us-east-1 Region. The company has a recovery point objective (RPO) of 5 minutes for planned system maintenance or unplanned service\ndisruptions. The company needs to replicate the le system to the us-west-2 Region. The replicated data must not be deleted by any user for 5\nyears.\nWhich solution will meet these requirements?",
+    "correctAnswer": "Create an FSx for Windows File Server le system in us-east-1 that has a Single-AZ 2 deployment type. Use AWS Backup to create a daily backup plan that includes a backup rule that copies the backup to us-west-2. Configure AWS Backup Vault Lock in compliance mode for a target vault in us-west-2. Configure a minimum duration of 5 years.",
+    "incorrectAnswers": [
+      "Create an FSx for Windows File Server le system in us-east-1 that has a Multi-AZ deployment type. Use AWS Backup to create a daily backup plan that includes a backup rule that copies the backup to us-west-2. Configure AWS Backup Vault Lock in governance mode for a target vault in us-west-2. Configure a minimum duration of 5 years.",
+      "Create an FSx for Windows File Server le system in us-east-1 that has a Multi-AZ deployment type. Use AWS Backup to create a daily backup plan that includes a backup rule that copies the backup to us-west-2. Configure AWS Backup Vault Lock in compliance mode for a target vault in us-west-2. Configure a minimum duration of 5 years.",
+      "Create an FSx for Windows File Server le system in us-east-1 that has a Single-AZ 2 deployment type. Use AWS Backup to create a daily backup plan that includes a backup rule that copies the backup to us-west-2. Configure AWS Backup Vault Lock in governance mode for a target vault in us-west-2. Configure a minimum duration of 5 years."
+    ],
+    "explanation": "SAA-C03 practice scenario (extract question #618). Correct choice: A.",
+    "keywords": [
+      "aws-saa-c03",
+      "aws-storage",
+      "aws-compute",
+      "fsx",
+      "ec2",
+      "aws-backup"
+    ],
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "seedId": "d3c85f8d-eae2-4d5d-b460-efd46e1630ae"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "saa-c03",
+    "question": "A solutions architect is designing a security solution for a company that wants to provide developers with individual AWS accounts through AWS\nOrganizations, while also maintaining standard security controls. Because the individual developers will have AWS account root user-level access\nto their own accounts, the solutions architect wants to ensure that the mandatory AWS CloudTrail conguration that is applied to new developer\naccounts is not modied.\nWhich action meets these requirements?",
+    "correctAnswer": "Create an IAM policy that prohibits changes to CloudTrail. and attach it to the root user.",
+    "incorrectAnswers": [
+      "Create a new trail in CloudTrail from within the developer accounts with the organization trails option enabled.",
+      "Create a service control policy (SCP) that prohibits changes to CloudTrail, and attach it the developer accounts.",
+      "Create a service-linked role for CloudTrail with a policy condition that allows changes only from an Amazon Resource Name (ARN) in the management account."
+    ],
+    "explanation": "SAA-C03 practice scenario (extract question #619). Correct choice: A.",
+    "keywords": [
+      "aws-saa-c03",
+      "aws-management",
+      "aws-security",
+      "iam",
+      "organizations",
+      "cloudtrail"
+    ],
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "seedId": "895fc48f-153b-424b-bc06-fb404fff5e5b"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "saa-c03",
+    "question": "A company is planning to deploy a business-critical application in the AWS Cloud. The application requires durable storage with consistent, low-\nlatency performance.\nWhich type of storage should a solutions architect recommend to meet these requirements?",
+    "correctAnswer": "Instance store volume",
+    "incorrectAnswers": [
+      "Amazon ElastiCache for Memcached cluster",
+      "Provisioned IOPS SSD Amazon Elastic Block Store (Amazon EBS) volume",
+      "Throughput Optimized HDD Amazon Elastic Block Store (Amazon EBS) volume"
+    ],
+    "explanation": "SAA-C03 practice scenario (extract question #620). Correct choice: A.",
+    "keywords": [
+      "aws-saa-c03",
+      "aws-storage",
+      "aws-database",
+      "databases",
+      "elasticache",
+      "ebs"
+    ],
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "seedId": "41db7189-d72f-42f6-9682-58df024c3f48"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "saa-c03",
+    "question": "An online photo-sharing company stores its photos in an Amazon S3 bucket that exists in the us-west-1 Region. The company needs to store a\ncopy of all new photos in the us-east-1 Region.\nWhich solution will meet this requirement with the LEAST operational effort?",
+    "correctAnswer": "Create a second S3 bucket in us-east-1. Use S3 Cross-Region Replication to copy photos from the existing S3 bucket to the second S3 bucket.",
+    "incorrectAnswers": [
+      "Create a cross-origin resource sharing (CORS) conguration of the existing S3 bucket. Specify us-east-1 in the CORS rule's AllowedOrigin element.",
+      "Create a second S3 bucket in us-east-1 across multiple Availability Zones. Create an S3 Lifecycle rule to save photos into the second S3 bucket.",
+      "Create a second S3 bucket in us-east-1. Configure S3 event notications on object creation and update events to invoke an AWS Lambda function to copy photos from the existing S3 bucket to the second S3 bucket."
+    ],
+    "explanation": "SAA-C03 practice scenario (extract question #621). Correct choice: A.",
+    "keywords": [
+      "aws-saa-c03",
+      "aws-storage",
+      "s3"
+    ],
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "seedId": "e585add6-a168-45d5-95db-e9a8b0bdc64d"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "saa-c03",
+    "question": "A company uses Amazon API Gateway to manage its REST APIs that third-party service providers access. The company must protect the REST\nAPIs from SQL injection and cross-site scripting attacks.\nWhat is the MOST operationally efficient solution that meets these requirements?",
+    "correctAnswer": "Configure AWS Shield.",
+    "incorrectAnswers": [
+      "Configure AWS WAF.",
+      "Set up API Gateway with an Amazon CloudFront distribution. Configure AWS Shield in CloudFront.",
+      "Set up API Gateway with an Amazon CloudFront distribution. Configure AWS WAF in CloudFront."
+    ],
+    "explanation": "SAA-C03 practice scenario (extract question #623). Correct choice: A.",
+    "keywords": [
+      "aws-saa-c03",
+      "aws-security",
+      "aws-integration",
+      "api-gateway",
+      "shield"
+    ],
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "seedId": "2311d310-2252-4eb7-acbf-66e7d391fb16"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "saa-c03",
+    "question": "A company wants to provide users with access to AWS resources. The company has 1,500 users and manages their access to on-premises\nresources through Active Directory user groups on the corporate network. However, the company does not want users to have to maintain another\nidentity to access the resources. A solutions architect must manage user access to the AWS resources while preserving access to the on-\npremises resources.\nWhat should the solutions architect do to meet these requirements?",
+    "correctAnswer": "Create an IAM user for each user in the company. Attach the appropriate policies to each user.",
+    "incorrectAnswers": [
+      "Use Amazon Cognito with an Active Directory user pool. Create roles with the appropriate policies attached.",
+      "Dene cross-account roles with the appropriate policies attached. Map the roles to the Active Directory groups.",
+      "Configure Security Assertion Markup Language (SAML) 2 0-based federation. Create roles with the appropriate policies attached Map the roles to the Active Directory groups."
+    ],
+    "explanation": "SAA-C03 practice scenario (extract question #624). Correct choice: A.",
+    "keywords": [
+      "aws-saa-c03",
+      "aws-security",
+      "iam"
+    ],
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "seedId": "7638338f-9009-4fe5-9a05-9c2228dd7e56"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "saa-c03",
+    "question": "A company is hosting a website behind multiple Application Load Balancers. The company has different distribution rights for its content around\nthe world. A solutions architect needs to ensure that users are served the correct content without violating distribution rights.\nWhich conguration should the solutions architect choose to meet these requirements?",
+    "correctAnswer": "Configure Amazon CloudFront with AWS WAF.",
+    "incorrectAnswers": [
+      "Configure Application Load Balancers with AWS WAF",
+      "Configure Amazon Route 53 with a geolocation policy",
+      "Configure Amazon Route 53 with a geoproximity routing policy"
+    ],
+    "explanation": "SAA-C03 practice scenario (extract question #625). Correct choice: A.",
+    "keywords": [
+      "aws-saa-c03",
+      "aws-networking",
+      "aws-security",
+      "cloudfront",
+      "alb",
+      "waf"
+    ],
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "seedId": "1a5d429a-b185-4a8e-b0aa-3309bd231250"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "saa-c03",
+    "question": "A company stores its data on premises. The amount of data is growing beyond the company's available capacity.\nThe company wants to migrate its data from the on-premises location to an Amazon S3 bucket. The company needs a solution that will\nautomatically validate the integrity of the data after the transfer.\nWhich solution will meet these requirements?",
+    "correctAnswer": "Order an AWS Snowball Edge device. Configure the Snowball Edge device to perform the online data transfer to an S3 bucket",
+    "incorrectAnswers": [
+      "Deploy an AWS DataSync agent on premises. Configure the DataSync agent to perform the online data transfer to an S3 bucket.",
+      "Create an Amazon S3 File Gateway on premises Configure the S3 File Gateway to perform the online data transfer to an S3 bucket",
+      "Configure an accelerator in Amazon S3 Transfer Acceleration on premises. Configure the accelerator to perform the online data transfer to an S3 bucket."
+    ],
+    "explanation": "SAA-C03 practice scenario (extract question #626). Correct choice: A.",
+    "keywords": [
+      "aws-saa-c03",
+      "aws-storage",
+      "s3",
+      "snowball"
+    ],
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "seedId": "afd24ca4-dce1-4e67-b308-1eca491416f9"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "saa-c03",
+    "question": "A company wants to migrate two DNS servers to AWS. The servers host a total of approximately 200 zones and receive 1 million requests each\nday on average. The company wants to maximize availability while minimizing the operational overhead that is related to the management of the\ntwo servers.\nWhat should a solutions architect recommend to meet these requirements?",
+    "correctAnswer": "Create 200 new hosted zones in the Amazon Route 53 console Import zone les.",
+    "incorrectAnswers": [
+      "Launch a single large Amazon EC2 instance Import zone tiles. Configure Amazon CloudWatch alarms and notications to alert the company about any downtime.",
+      "Migrate the servers to AWS by using AWS Server Migration Service (AWS SMS). Configure Amazon CloudWatch alarms and notications to alert the company about any downtime.",
+      "Launch an Amazon EC2 instance in an Auto Scaling group across two Availability Zones. Import zone les. Set the desired capacity to 1 and the maximum capacity to 3 for the Auto Scaling group. Configure scaling alarms to scale based on CPU utilization."
+    ],
+    "explanation": "SAA-C03 practice scenario (extract question #627). Correct choice: A.",
+    "keywords": [
+      "aws-saa-c03",
+      "aws-networking",
+      "route53"
+    ],
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "seedId": "88e86a01-5fb3-4b65-b9a1-b6ce568acb89"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "saa-c03",
+    "question": "A global company runs its applications in multiple AWS accounts in AWS Organizations. The company's applications use multipart uploads to\nupload data to multiple Amazon S3 buckets across AWS Regions. The company wants to report on incomplete multipart uploads for cost\ncompliance purposes.\nWhich solution will meet these requirements with the LEAST operational overhead?",
+    "correctAnswer": "Configure AWS Config with a rule to report the incomplete multipart upload object count.",
+    "incorrectAnswers": [
+      "Create a service control policy (SCP) to report the incomplete multipart upload object count.",
+      "Configure S3 Storage Lens to report the incomplete multipart upload object count.",
+      "Create an S3 Multi-Region Access Point to report the incomplete multipart upload object count."
+    ],
+    "explanation": "SAA-C03 practice scenario (extract question #628). Correct choice: A.",
+    "keywords": [
+      "aws-saa-c03",
+      "aws-storage",
+      "aws-management",
+      "s3",
+      "organizations"
+    ],
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "seedId": "e2664ed0-ff9f-449e-8b30-d4d6c9d9363f"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "saa-c03",
+    "question": "A company runs a production database on Amazon RDS for MySQL. The company wants to upgrade the database version for security compliance\nreasons. Because the database contains critical data, the company wants a quick solution to upgrade and test functionality without losing any\ndata.\nWhich solution will meet these requirements with the LEAST operational overhead?",
+    "correctAnswer": "Create an RDS manual snapshot. Upgrade to the new version of Amazon RDS for MySQL.",
+    "incorrectAnswers": [
+      "Use native backup and restore. Restore the data to the upgraded new version of Amazon RDS for MySQL.",
+      "Use AWS Database Migration Service (AWS DMS) to replicate the data to the upgraded new version of Amazon RDS for MySQL.",
+      "Use Amazon RDS Blue/Green Deployments to deploy and test production changes."
+    ],
+    "explanation": "SAA-C03 practice scenario (extract question #629). Correct choice: A.",
+    "keywords": [
+      "aws-saa-c03",
+      "aws-database",
+      "databases",
+      "rds",
+      "mysql"
+    ],
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "seedId": "41f0357e-1779-4f3b-ad7d-af7814fc7328"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "saa-c03",
+    "question": "A solutions architect is creating a data processing job that runs once daily and can take up to 2 hours to complete. If the job is interrupted, it has\nto restart from the beginning.\nHow should the solutions architect address this issue in the MOST cost-effective manner?",
+    "correctAnswer": "Create a script that runs locally on an Amazon EC2 Reserved Instance that is triggered by a cron job.",
+    "incorrectAnswers": [
+      "Create an AWS Lambda function triggered by an Amazon EventBridge scheduled event.",
+      "Use an Amazon Elastic Container Service (Amazon ECS) Fargate task triggered by an Amazon EventBridge scheduled event.",
+      "Use an Amazon Elastic Container Service (Amazon ECS) task running on Amazon EC2 triggered by an Amazon EventBridge scheduled event."
+    ],
+    "explanation": "SAA-C03 practice scenario (extract question #630). Correct choice: A.",
+    "keywords": [
+      "aws-saa-c03",
+      "aws-compute",
+      "ec2"
+    ],
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "seedId": "972bbe43-cea6-4b89-b5f6-44e0cb6418bf"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "saa-c03",
+    "question": "A social media company wants to store its database of user profiles, relationships, and interactions in the AWS Cloud. The company needs an\napplication to monitor any changes in the database. The application needs to analyze the relationships between the data entities and to provide\nrecommendations to users.\nWhich solution will meet these requirements with the LEAST operational overhead?",
+    "correctAnswer": "Use Amazon Neptune to store the information. Use Amazon Kinesis Data Streams to process changes in the database.",
+    "incorrectAnswers": [
+      "Use Amazon Neptune to store the information. Use Neptune Streams to process changes in the database.",
+      "Use Amazon Quantum Ledger Database (Amazon QLDB) to store the information. Use Amazon Kinesis Data Streams to process changes in the database.",
+      "Use Amazon Quantum Ledger Database (Amazon QLDB) to store the information. Use Neptune Streams to process changes in the database."
+    ],
+    "explanation": "SAA-C03 practice scenario (extract question #631). Correct choice: A.",
+    "keywords": [
+      "aws-saa-c03",
+      "aws-analytics",
+      "kinesis"
+    ],
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "seedId": "7820ec96-05ea-4bd2-8324-cc6401806081"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "saa-c03",
+    "question": "A company is creating a new application that will store a large amount of data. The data will be analyzed hourly and will be modied by several\nAmazon EC2 Linux instances that are deployed across multiple Availability Zones. The needed amount of storage space will continue to grow for\nthe next 6 months.\nWhich storage solution should a solutions architect recommend to meet these requirements?",
+    "correctAnswer": "Store the data in Amazon S3 Glacier. Update the S3 Glacier vault policy to allow access to the application instances.",
+    "incorrectAnswers": [
+      "Store the data in an Amazon Elastic Block Store (Amazon EBS) volume. Mount the EBS volume on the application instances.",
+      "Store the data in an Amazon Elastic File System (Amazon EFS) le system. Mount the le system on the application instances.",
+      "Store the data in an Amazon Elastic Block Store (Amazon EBS) Provisioned IOPS volume shared between the application instances."
+    ],
+    "explanation": "SAA-C03 practice scenario (extract question #632). Correct choice: A.",
+    "keywords": [
+      "aws-saa-c03",
+      "aws-storage",
+      "aws-compute",
+      "s3",
+      "glacier",
+      "ec2"
+    ],
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "seedId": "dfc2c8a2-9fd9-4341-83df-643665ec4598"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "saa-c03",
+    "question": "A company manages an application that stores data on an Amazon RDS for PostgreSQL Multi-AZ DB instance. Increases in traffic are causing\nperformance profilems. The company determines that database queries are the primary reason for the slow performance.\nWhat should a solutions architect do to improve the application's performance?",
+    "correctAnswer": "Serve read traffic from the Multi-AZ standby replica.",
+    "incorrectAnswers": [
+      "Configure the DB instance to use Transfer Acceleration.",
+      "Create a read replica from the source DB instance. Serve read traffic from the read replica.",
+      "Use Amazon Kinesis Data Firehose (note: outdated; now Amazon Data Firehose) between the application and Amazon RDS to increase the concurrency of database requests."
+    ],
+    "explanation": "SAA-C03 practice scenario (extract question #633). Correct choice: A.",
+    "keywords": [
+      "aws-saa-c03",
+      "aws-database",
+      "databases",
+      "rds",
+      "postgresql"
+    ],
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "seedId": "bf19c3bd-da5c-4f32-a6ec-a68b84357687"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "saa-c03",
+    "question": "A company collects 10 GB of telemetry data daily from various machines. The company stores the data in an Amazon S3 bucket in a source data\naccount.\nThe company has hired several consulting agencies to use this data for analysis. Each agency needs read access to the data for its analysts. The\ncompany must share the data from the source data account by choosing a solution that maximizes security and operational eciency.\nWhich solution will meet these requirements?",
+    "correctAnswer": "Configure S3 global tables to replicate data for each agency.",
+    "incorrectAnswers": [
+      "Make the S3 bucket public for a limited time. Inform only the agencies.",
+      "Configure cross-account access for the S3 bucket to the accounts that the agencies own.",
+      "Set up an IAM user for each analyst in the source data account. Grant each user access to the S3 bucket."
+    ],
+    "explanation": "SAA-C03 practice scenario (extract question #634). Correct choice: A.",
+    "keywords": [
+      "aws-saa-c03",
+      "aws-storage",
+      "s3"
+    ],
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "seedId": "5e707b57-cd88-405d-b600-75a7bffa8f67"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "saa-c03",
+    "question": "A company uses Amazon FSx for NetApp ONTAP in its primary AWS Region for CIFS and NFS fifile shares. Applications that run on Amazon EC2\ninstances access the fifile shares. The company needs a storage disaster recovery (DR) solution in a secondary Region. The data that is replicated\nin the secondary Region needs to be accessed by using the same protocols as the primary Region.\nWhich solution will meet these requirements with the LEAST operational overhead?",
+    "correctAnswer": "Create an AWS Lambda function to copy the data to an Amazon S3 bucket. Replicate the S3 bucket to the secondary Region.",
+    "incorrectAnswers": [
+      "Create a backup of the FSx for ONTAP volumes by using AWS Backup. Copy the volumes to the secondary Region. Create a new FSx for ONTAP instance from the backup.",
+      "Create an FSx for ONTAP instance in the secondary Region. Use NetApp SnapMirror to replicate data from the primary Region to the secondary Region.",
+      "Create an Amazon Elastic File System (Amazon EFS) volume. Migrate the current data to the volume. Replicate the volume to the secondary Region."
+    ],
+    "explanation": "SAA-C03 practice scenario (extract question #635). Correct choice: A.",
+    "keywords": [
+      "aws-saa-c03",
+      "aws-storage",
+      "aws-compute",
+      "s3",
+      "fsx",
+      "lambda",
+      "ec2"
+    ],
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "seedId": "c66de88e-e604-43b8-8ce6-ed7dc422af85"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "saa-c03",
+    "question": "A development team is creating an event-based application that uses AWS Lambda functions. Events will be generated when les are added to an\nAmazon S3 bucket. The development team currently has Amazon Simple Notification Service (Amazon SNS) congured as the event target from\nAmazon S3.\nWhat should a solutions architect do to process the events from Amazon S3 in a scalable way?",
+    "correctAnswer": "Create an SNS subscription that processes the event in Amazon Elastic Container Service (Amazon ECS) before the event runs in Lambda.",
+    "incorrectAnswers": [
+      "Create an SNS subscription that processes the event in Amazon Elastic Kubernetes Service (Amazon EKS) before the event runs in Lambda",
+      "Create an SNS subscription that sends the event to Amazon Simple Queue Service (Amazon SQS). Configure the SOS queue to trigger a Lambda function.",
+      "Create an SNS subscription that sends the event to AWS Server Migration Service (AWS SMS). Configure the Lambda function to poll from the SMS event."
+    ],
+    "explanation": "SAA-C03 practice scenario (extract question #636). Correct choice: A.",
+    "keywords": [
+      "aws-saa-c03",
+      "aws-compute",
+      "aws-integration",
+      "s3",
+      "lambda",
+      "ecs",
+      "sns"
+    ],
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "seedId": "9173918e-a8a1-4ce7-83d5-5958622138c3"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "saa-c03",
+    "question": "A company collects and shares research data with the company's employees all over the world. The company wants to collect and store the data\nin an Amazon S3 bucket and process the data in the AWS Cloud. The company will share the data with the company's employees. The company\nneeds a secure solution in the AWS Cloud that minimizes operational overhead.\nWhich solution will meet these requirements?",
+    "correctAnswer": "Use an AWS Lambda function to create an S3 presigned URL. Instruct employees to use the URL.",
+    "incorrectAnswers": [
+      "Create an IAM user for each employee. Create an IAM policy for each employee to allow S3 access. Instruct employees to use the AWS Management Console.",
+      "Create an S3 File Gateway. Create a share for uploading and a share for downloading. Allow employees to mount shares on their local computers to use S3 File Gateway.",
+      "Configure AWS Transfer Family SFTP endpoints. Select the custom identity provider options. Use AWS Secrets Manager to manage the user credentials Instruct employees to use Transfer Family."
+    ],
+    "explanation": "SAA-C03 practice scenario (extract question #638). Correct choice: A.",
+    "keywords": [
+      "aws-saa-c03",
+      "aws-storage",
+      "aws-compute",
+      "s3",
+      "lambda"
+    ],
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "seedId": "c3174171-4bdc-42bb-9640-b46a685b8d6d"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "saa-c03",
+    "question": "A company is building a new furniture inventory application. The company has deployed the application on a eet ofAmazon EC2 instances across\nmultiple Availability Zones. The EC2 instances run behind an Application Load Balancer (ALB) in their VPC.\nA solutions architect has observed that incoming traffic seems to favor one EC2 instance, resulting in latency for some requests.\nWhat should the solutions architect do to resolve this issue?",
+    "correctAnswer": "Disable session anity (sticky sessions) on the ALB",
+    "incorrectAnswers": [
+      "Replace the ALB with a Network Load Balancer",
+      "Increase the number of EC2 instances in each Availability Zone",
+      "Adjust the frequency of the health checks on the ALB's target group"
+    ],
+    "explanation": "SAA-C03 practice scenario (extract question #639). Correct choice: A.",
+    "keywords": [
+      "aws-saa-c03",
+      "aws-networking",
+      "aws-compute",
+      "ec2",
+      "vpc",
+      "alb"
+    ],
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "seedId": "a903049a-ad30-458a-b90e-6077d1a8a319"
+  }
+]

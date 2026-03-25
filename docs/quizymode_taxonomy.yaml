@@ -1,0 +1,1567 @@
+exams:
+  description: Exams
+  keywords:
+    general:
+      description: Mixed exams
+      keywords:
+        general: Mixed exams
+        mixed: Any exam mix
+        timed: Timed practice
+        basics: Core review
+    aws:
+      description: AWS certs
+      keywords:
+        general-aws: AWS certs
+        ccp: Cloud basics
+        saa-c03: Arch associate
+        dva-c02: Dev associate
+        sap-c02: Arch pro
+        soa-c02: SysOps admin
+        aif-c01: AI basics
+    aws-topics:
+      description: AWS service and domain tags for exam items
+      keywords:
+        aws-saa-c03: SAA-C03
+        aws-compute: Compute domain
+        aws-storage: Storage domain
+        ec2: Amazon EC2
+        s3: Amazon S3
+        databases: Databases
+        aws-database: Database domain
+        aws-networking: Networking domain
+        rds: Amazon RDS
+        lambda: AWS Lambda
+        aws-security: Security domain
+        alb: Application Load Balancer
+        vpc: Amazon VPC
+        auto-scaling: Auto Scaling
+        aws-integration: Integration domain
+        aws-services: Cross-service
+        aws-management: Management tools
+        mysql: MySQL
+        iam: AWS IAM
+        dynamodb: Amazon DynamoDB
+        aws-analytics: Analytics domain
+        api-gateway: Amazon API Gateway
+        aurora: Amazon Aurora
+        cloudfront: Amazon CloudFront
+        ebs: Amazon EBS
+        postgresql: PostgreSQL
+        serverless: Serverless
+        cloudwatch: Amazon CloudWatch
+        kms: AWS KMS
+        route53: Amazon Route 53
+        organizations: AWS Organizations
+        ecs: Amazon ECS
+        glacier: Amazon S3 Glacier
+        sqs: Amazon SQS
+        kinesis: Amazon Kinesis
+        datasync: AWS DataSync
+        aws-cloud-practitioner: Cloud Practitioner
+        aws-fundamentals: AWS fundamentals
+        fsx: Amazon FSx
+        nlb: Network Load Balancer
+        elasticache: Amazon ElastiCache
+        eventbridge: Amazon EventBridge
+        aws-ai: AWS AI
+        aws-aif-c01: AIF-C01
+        aws-architecture: Architecture patterns
+        aws-development: Development domain
+        aws-dva-c02: DVA-C02
+        aws-operations: Operations domain
+        aws-sap-c02: SAP-C02
+        aws-soa-c02: SOA-C02
+        sns: Amazon SNS
+    azure:
+      description: Azure certs
+      keywords:
+        general-azure: Azure certs
+        az-900: Cloud basics
+        az-104: Admin associate
+        az-204: Dev associate
+        az-305: Arch design
+        dp-900: Data basics
+        ai-900: AI basics
+    gcp:
+      description: GCP certs
+      keywords:
+        general-gcp: GCP certs
+        ace: Cloud engineer
+        pca: Cloud architect
+        pde: Data engineer
+        pcne: Cloud network
+        pcai: GenAI engineer
+    comptia:
+      description: CompTIA certs
+      keywords:
+        general-comptia: CompTIA
+        a-plus: PC support
+        network-plus: Net basics
+        security-plus: Sec basics
+        linux-plus: Linux admin
+        cloud-plus: Cloud ops
+        cysa-plus: Sec analyst
+    cisco:
+      description: Cisco certs
+      keywords:
+        general-cisco: Cisco certs
+        ccna: Net associate
+        ccnp: Net pro
+        devnet: Net automation
+        cyberops: SOC analyst
+        ccie: Expert track
+    act:
+      description: ACT prep
+      keywords:
+        general-act: ACT format
+        math: Math problems
+        english: Grammar edits
+    sat:
+      description: SAT prep
+      keywords:
+        general-sat: SAT format
+        math: Math problems
+        writing: Grammar edits
+        vocab: Word meaning
+    ap:
+      description: AP exams
+      keywords:
+        general-ap: AP format
+        calculus: Calculus content
+        biology: Biology content
+        chemistry: Chemistry content
+        physics: Physics content
+        us-history: US history
+        world-history: World history
+        psychology: Psychology content
+    gre:
+      description: GRE prep
+      keywords:
+        general-gre: GRE format
+        quant: Quant problems
+        verbal: Text completion
+        vocab: Word meaning
+    nursing:
+      description: Nursing exams
+      keywords:
+        general-nursing: Nursing exams
+        nclex-rn: RN licensure
+        nclex-pn: PN licensure
+        med-surg: Clinical care
+        pharm: Drug review
+        fundamentals: Nursing basics
+    finance:
+      description: Finance exams
+      keywords:
+        general-finance: Finance exams
+        cpa: Accounting cert
+        cfa: Investing cert
+        frm: Risk cert
+        series-7: Broker exam
+        ea: Tax exam
+    togaf:
+      description: TOGAF certs
+      keywords:
+        general-togaf: TOGAF overview
+        ea-foundation: EA foundation
+        ea-practitioner: EA practitioner
+tech:
+  description: Tech
+  keywords:
+    general:
+      description: Mixed tech
+      keywords:
+        general: Mixed tech
+        basics: Core concepts
+        mixed: Cross topic
+        tools: Common tools
+    programming:
+      description: Coding
+      keywords:
+        general-programming: Coding
+        csharp: C# language
+        python: Python language
+        java: Java language
+        javascript: JS language
+        typescript: Typed JS
+        go: Go language
+        rust: Rust language
+    web-dev:
+      description: Web building
+      keywords:
+        general-web-dev: Web basics
+        html-css: Page styling
+        frontend: UI apps
+        backend: Server apps
+        react: React apps
+        nodejs: Node backend
+        api-design: API design
+        testing: Web testing
+    cs-core:
+      description: CS basics
+      keywords:
+        general-cs-core: CS basics
+        algorithms: Algo skills
+        data-structs: Core structs
+        os: Operating sys
+        networking: Net basics
+        architecture: System design
+        oop: Object design
+        compilers: Language tools
+    data:
+      description: Data work
+      keywords:
+        general-data: Data work
+        analytics: Data insights
+        data-eng: Pipelines
+        data-science: Modeling
+        visualization: Charts
+        bi-tools: BI platforms
+        etl: Data flows
+        warehousing: Data stores
+    databases:
+      description: Databases
+      keywords:
+        general-databases: Databases
+        sql: SQL queries
+        postgres: Postgres DB
+        mysql: MySQL DB
+        sql-server: SQL Server
+        nosql: Nonrelational
+        indexing: Fast lookup
+        modeling: Data design
+    cloud:
+      description: Cloud systems
+      keywords:
+        general-cloud: Cloud basics
+        aws: AWS services
+        azure: Azure services
+        gcp: GCP services
+        serverless: Event apps
+        containers: Container apps
+        kubernetes: Cluster ops
+        iam: Access control
+    ai-ml:
+      description: AI and ML
+      keywords:
+        general-ai-ml: AI and ML
+        ml-basics: Model basics
+        llms: Large models
+        prompt-eng: Prompt writing
+        deep-learning: Neural nets
+        nlp: Language AI
+        computer-vision: Image AI
+    security:
+      description: Security
+      keywords:
+        general-security: Security
+        sec-basics: Core defense
+        appsec: App defense
+        netsec: Network defense
+        iam: Identity access
+        cryptography: Secure math
+        pentest: Attack testing
+    devops:
+      description: DevOps
+      keywords:
+        general-devops: DevOps
+        git: Version control
+        ci-cd: Build deploy
+        docker: Containers
+        kubernetes: Cluster ops
+        observability: Logs traces
+        sre: Reliability
+        terraform: Infra code
+    mobile:
+      description: Mobile apps
+      keywords:
+        general-mobile: Mobile apps
+        android: Android apps
+        ios: iPhone apps
+        flutter: Cross platform
+        react-native: JS mobile
+        mobile-ui: App design
+    networking:
+      description: Computer nets
+      keywords:
+        general-networking: Computer nets
+        tcp-ip: IP basics
+        dns: Name lookup
+        routing: Traffic paths
+        wifi: Wireless nets
+        protocols: Net rules
+        http: Web protocol
+business:
+  description: Business
+  keywords:
+    general:
+      description: Mixed business
+      keywords:
+        general: Mixed business
+        basics: Core concepts
+        mixed: Cross topic
+        case-study: Real cases
+    finance:
+      description: Finance
+      keywords:
+        general-finance: Finance
+        personal-finance: Money basics
+        corporate-finance: Company money
+        investing: Markets
+        valuation: Asset value
+        banking: Bank basics
+        risk: Risk basics
+    accounting:
+      description: Accounting
+      keywords:
+        general-accounting: Accounting
+        bookkeeping: Daily records
+        financial: Statements
+        managerial: Internal costs
+        tax: Tax basics
+        audit: Audit work
+        ratios: Key ratios
+    economics:
+      description: Economics
+      keywords:
+        general-economics: Economics
+        micro: Markets
+        macro: Big picture
+        supply-demand: Price basics
+        trade: Global trade
+        inflation: Price growth
+        policy: Gov action
+    management:
+      description: Management
+      keywords:
+        general-management: Management
+        leadership: Leading teams
+        operations: Run work
+        decision-making: Choices
+        change: Change work
+        productivity: Better output
+        culture: Team culture
+    marketing:
+      description: Marketing
+      keywords:
+        general-marketing: Marketing
+        branding: Brand image
+        digital: Online reach
+        seo: Search growth
+        content: Content plans
+        social-media: Social reach
+        research: Market study
+    sales:
+      description: Sales
+      keywords:
+        general-sales: Sales
+        prospecting: Find leads
+        pipeline: Sales stages
+        negotiation: Deal skills
+        closing: Win deals
+        crm: Sales tools
+        b2b: Business sales
+    operations:
+      description: Operations
+      keywords:
+        general-operations: Operations
+        process: Workflows
+        supply-chain: Goods flow
+        quality: Quality work
+        inventory: Stock control
+        logistics: Shipping
+        lean: Waste cuts
+    strategy:
+      description: Strategy
+      keywords:
+        general-strategy: Strategy
+        competitive: Market edge
+        growth: Scale plans
+        swot: SWOT basics
+        pricing: Price plans
+        innovation: New ideas
+        planning: Long plans
+    hr:
+      description: HR
+      keywords:
+        general-hr: HR
+        recruiting: Hiring
+        training: Skill growth
+        performance: Reviews
+        pay-benefits: Comp plans
+        labor: Work rules
+        engagement: Team morale
+    entrepreneurship:
+      description: Startups
+      keywords:
+        general-entrepreneurship: Startups
+        idea: Business idea
+        mvp: First product
+        funding: Raise money
+        bootstrapping: Self fund
+        pitching: Pitch skills
+        founders: Founder life
+    project-mgmt:
+      description: Project work
+      keywords:
+        general-project-mgmt: Project work
+        planning: Project plans
+        agile: Agile work
+        scrum: Sprint work
+        kanban: Flow boards
+        risk: Project risk
+        stakeholders: People involved
+science:
+  description: Natural sciences, mathematics, statistics, lab skills, and quantitative reasoning—from biology and chemistry through calculus, data, and discrete math.
+  keywords:
+    general:
+      description: Mixed science
+      keywords:
+        general: Mixed science
+        basics: Core science
+        lab-skills: Lab work
+        mixed: Cross topic
+        review: Quick review
+    biology:
+      description: Biology
+      keywords:
+        general-biology: Biology
+        cells: Cell basics
+        genetics: Genes
+        ecology: Living systems
+        evolution: Species change
+        anatomy: Body parts
+        microbiology: Micro life
+    chemistry:
+      description: Chemistry
+      keywords:
+        general-chemistry: Chemistry
+        atoms: Atom basics
+        periodic-table: Element chart
+        bonding: How atoms join
+        reactions: Chem changes
+        stoichiometry: Reaction math
+        organic: Carbon chem
+    physics:
+      description: Physics
+      keywords:
+        general-physics: Physics
+        motion: Move and force
+        energy: Work and power
+        waves: Sound light
+        electricity: Charge flow
+        magnetism: Mag fields
+        modern: Modern physics
+    earth-space:
+      description: Earth space
+      keywords:
+        general-earth-space: Earth space
+        geology: Rocks earth
+        weather: Weather
+        climate: Climate
+        oceanography: Oceans
+        astronomy: Space study
+        space: Space facts
+    health:
+      description: Health
+      keywords:
+        general-health: Health
+        nutrition: Food health
+        disease: Illness basics
+        public-health: Community health
+        wellness: Healthy habits
+        medical-terms: Health terms
+        first-aid: Basic care
+    nursing:
+      description: Nursing
+      keywords:
+        general-nursing: Nursing
+        fundamentals: Nursing basics
+        med-surg: Clinical care
+        pharm: Drug care
+        pediatrics: Child care
+        ob: Maternal care
+        critical-care: ICU care
+    anatomy:
+      description: Anatomy
+      keywords:
+        general-anatomy: Anatomy
+        skeletal: Bones
+        muscular: Muscles
+        cardio: Heart vessels
+        respiratory: Breathing
+        nervous: Nerves brain
+        digestive: Food system
+    environmental:
+      description: Environment
+      keywords:
+        general-environmental: Environment
+        ecosystems: Natural webs
+        conservation: Protect nature
+        pollution: Air land water
+        energy: Energy use
+        climate: Climate issues
+        sustainability: Long term use
+    astronomy:
+      description: Astronomy
+      keywords:
+        general-astronomy: Astronomy
+        solar-system: Nearby space
+        stars: Star basics
+        galaxies: Galaxy basics
+        cosmology: Universe
+        space-missions: Space travel
+        telescopes: Sky tools
+    psychology:
+      description: Psychology
+      keywords:
+        general-psychology: Psychology
+        cognition: Thinking mind
+        development: Life stages
+        behavior: Actions
+        social: Group mind
+        abnormal: Mental disorders
+        research: Psych methods
+    lab-skills:
+      description: Lab skills
+      keywords:
+        general-lab-skills: Lab skills
+        measurement: Measure well
+        safety: Safe lab
+        equipment: Lab tools
+        graphs: Data graphs
+        reports: Lab writing
+        methods: Tests steps
+    math-general:
+      description: Mixed math
+      keywords:
+        general-math: Mixed math
+        basics: Core review
+        word-problems: Applied math
+        mixed: Mixed sets
+        formulas: Key formulas
+    arithmetic:
+      description: Number basics
+      keywords:
+        general-arithmetic: Number basics
+        addition: Add numbers
+        subtraction: Take away
+        multiplication: Times tables
+        division: Split numbers
+        fractions: Part of whole
+        decimals: Decimal math
+    pre-algebra:
+      description: Pre algebra
+      keywords:
+        general-pre-algebra: Pre algebra
+        integers: Whole numbers
+        ratios: Compare values
+        percents: Percent math
+        order-ops: PEMDAS
+        variables: Unknowns
+        expressions: Math phrases
+    algebra:
+      description: Algebra
+      keywords:
+        general-algebra: Algebra
+        equations: Solve x
+        inequalities: Value ranges
+        functions: Input output
+        polynomials: Many terms
+        systems: Two equations
+        factoring: Break apart
+    geometry:
+      description: Shapes
+      keywords:
+        general-geometry: Shapes
+        angles: Angle rules
+        triangles: Three sides
+        circles: Round shapes
+        area: Surface size
+        volume: 3D size
+        proofs: Logical steps
+    trig:
+      description: Trig
+      keywords:
+        general-trig: Trig
+        sin-cos-tan: Main ratios
+        unit-circle: Angle wheel
+        identities: Trig rules
+        graphs: Wave graphs
+        triangles: Right trig
+        applications: Real use
+    precalc:
+      description: Precalculus
+      keywords:
+        general-precalc: Precalculus
+        functions: Function study
+        sequences: Number patterns
+        matrices: Array math
+        vectors: Direction math
+        conics: Curve shapes
+        limits: Near values
+    calculus:
+      description: Calculus
+      keywords:
+        general-calculus: Calculus
+        limits: Near values
+        derivatives: Rate change
+        integrals: Area sums
+        series: Infinite sums
+        multivariable: Many vars
+        applications: Real use
+    statistics:
+      description: Statistics
+      keywords:
+        general-statistics: Statistics
+        descriptive: Data summary
+        distributions: Data shapes
+        sampling: Pick data
+        hypothesis: Test claims
+        regression: Trend lines
+        survey: Question data
+    probability:
+      description: Probability
+      keywords:
+        general-probability: Probability
+        basic: Chance basics
+        conditional: Given chance
+        combinatorics: Count ways
+        random-vars: Random values
+        binomial: Two outcome
+        expected-value: Avg outcome
+    linear-algebra:
+      description: Linear alg
+      keywords:
+        general-linear-algebra: Linear alg
+        vectors: Direction math
+        matrices: Array math
+        systems: Linear eqs
+        eigenvalues: Scale factors
+        transformations: Space moves
+        determinants: Matrix value
+    discrete-math:
+      description: Discrete math
+      keywords:
+        general-discrete-math: Discrete math
+        logic: True false
+        sets: Group math
+        graphs: Node links
+        counting: Count ways
+        proofs: Reasoning
+        number-theory: Integers
+history:
+  description: History
+  keywords:
+    general:
+      description: Mixed history
+      keywords:
+        general: Mixed history
+        timelines: Time order
+        key-dates: Major dates
+        themes: Big themes
+        mixed: Cross era
+    ancient:
+      description: Ancient world
+      keywords:
+        general-ancient: Ancient world
+        egypt: Nile kingdom
+        greece: Greek world
+        rome: Roman world
+        mesopotamia: First states
+        china: Early China
+        india: Early India
+    medieval:
+      description: Medieval era
+      keywords:
+        general-medieval: Medieval era
+        europe: Medieval Europe
+        byzantine: Eastern empire
+        islamic-world: Islamic world
+        feudalism: Feudal life
+        crusades: Holy wars
+        knights: Warrior class
+    early-modern:
+      description: Early modern
+      keywords:
+        general-early-modern: Early modern
+        renaissance: Rebirth era
+        reformation: Church split
+        exploration: Sea voyages
+        enlightenment: Reason era
+        revolutions: Early revolts
+        empires: Global empires
+    modern:
+      description: Modern era
+      keywords:
+        general-modern: Modern era
+        industrial: Machine age
+        imperialism: Empire rule
+        nationalism: Nation ideas
+        cold-war: Superpower era
+        globalization: Global links
+        decolonization: New nations
+    us-history:
+      description: US history
+      keywords:
+        general-us-history: US history
+        colonial: Colonial era
+        revolution: Independence
+        civil-war: Civil War
+        reconstruction: Post war
+        20th-century: Modern US
+        presidents: US leaders
+    europe:
+      description: Europe history
+      keywords:
+        general-europe: Europe history
+        britain: British past
+        france: French past
+        germany: German past
+        russia: Russian past
+        eastern-europe: East Europe
+        western-europe: West Europe
+    asia:
+      description: Asia history
+      keywords:
+        general-asia: Asia history
+        china: Chinese past
+        japan: Japanese past
+        india: Indian past
+        korea: Korean past
+        southeast-asia: SE Asia
+        mongols: Steppe empire
+    middle-east:
+      description: Middle East
+      keywords:
+        general-middle-east: Middle East
+        ottoman: Ottoman rule
+        persia: Persian past
+        arab-world: Arab history
+        israel-palestine: Modern conflict
+        ancient-near-east: Early region
+        oil-era: Oil politics
+    africa:
+      description: Africa history
+      keywords:
+        general-africa: Africa history
+        ancient: Early Africa
+        west-africa: West kingdoms
+        east-africa: East coast
+        north-africa: North region
+        colonial: Colonial rule
+        independence: New states
+    wars:
+      description: Wars
+      keywords:
+        general-wars: Wars
+        world-war-1: Great War
+        world-war-2: Global war
+        civil-war: Civil war
+        napoleonic: Napoleon wars
+        cold-war: Cold conflict
+        military-leaders: War leaders
+    civilizations:
+      description: Civilizations
+      keywords:
+        general-civilizations: Civilizations
+        maya: Maya world
+        aztec: Aztec world
+        inca: Inca world
+        persian: Persian world
+        ottoman: Ottoman world
+        indus: Indus world
+geography:
+  description: Geography
+  keywords:
+    general:
+      description: Mixed geo
+      keywords:
+        general: Mixed geo
+        maps: Map basics
+        mixed: Cross topic
+        location: Where places are
+        world: World overview
+    world:
+      description: World regions
+      keywords:
+        general-world: World regions
+        europe: Europe
+        asia: Asia
+        africa: Africa
+        north-america: North America
+        south-america: South America
+        oceania: Oceania
+    countries:
+      description: Countries
+      keywords:
+        general-countries: Countries
+        largest: Largest lands
+        smallest: Small states
+        islands: Island nations
+        landlocked: No sea access
+        borders: Border pairs
+        sovereignty: State status
+    capitals:
+      description: Capitals
+      keywords:
+        general-capitals: Capitals
+        world: World capitals
+        europe: Europe caps
+        asia: Asia caps
+        africa: Africa caps
+        americas: Americas caps
+        mixed: Mixed sets
+    us:
+      description: US geography
+      keywords:
+        general-us: US geography
+        states: US states
+        capitals: State capitals
+        regions: US regions
+        rivers: US rivers
+        mountains: US mountains
+        cities: US cities
+    physical:
+      description: Landforms
+      keywords:
+        general-physical: Landforms
+        mountains: Mountain ranges
+        rivers: Rivers
+        deserts: Dry lands
+        oceans: World oceans
+        islands: Islands
+        plates: Tectonic plates
+    human:
+      description: People places
+      keywords:
+        general-human: People places
+        population: Population
+        urbanization: City growth
+        migration: People move
+        culture: Cultural areas
+        economy: Economic maps
+        language: Language maps
+    maps:
+      description: Map skills
+      keywords:
+        general-maps: Map skills
+        coordinates: Lat lon
+        scale: Map scale
+        projection: Map shapes
+        compass: Directions
+        topographic: Contour maps
+        gis: Spatial data
+    climate:
+      description: Climate
+      keywords:
+        general-climate: Climate
+        zones: Climate zones
+        weather: Weather
+        biomes: Living zones
+        seasons: Season cycles
+        storms: Storms
+        change: Climate change
+    flags:
+      description: Flags
+      keywords:
+        general-flags: Flags
+        countries: National flags
+        colors: Flag colors
+        symbols: Flag symbols
+        regions: Regional flags
+        mixed: Mixed flags
+    regions:
+      description: Subregions
+      keywords:
+        general-regions: Subregions
+        middle-east: Middle East
+        caribbean: Caribbean
+        balkans: Balkans
+        scandinavia: Scandinavia
+        sahel: Sahel
+        southeast-asia: SE Asia
+    travel:
+      description: Travel places
+      keywords:
+        general-travel: Travel places
+        landmarks: Famous places
+        cities: Famous cities
+        wonders: World wonders
+        routes: Travel routes
+        airports: Major airports
+        mixed: Travel mix
+languages:
+  description: Languages
+  keywords:
+    general:
+      description: Mixed language
+      keywords:
+        general: Mixed language
+        basics: Core language
+        mixed: Cross language
+        conversation: Speaking basics
+        reading: Reading skills
+    english:
+      description: English
+      keywords:
+        general-english: English
+        grammar: Grammar rules
+        vocab: Word building
+        idioms: Common idioms
+        reading: Reading skills
+        writing: Writing skills
+        pronunciation: Sound practice
+    spanish:
+      description: Spanish
+      keywords:
+        general-spanish: Spanish
+        grammar: Grammar rules
+        vocab: Word building
+        travel: Travel phrases
+        conversation: Everyday talk
+        verbs: Verb forms
+        listening: Listening
+    french:
+      description: French
+      keywords:
+        general-french: French
+        grammar: Grammar rules
+        vocab: Word building
+        travel: Travel phrases
+        conversation: Everyday talk
+        verbs: Verb forms
+        listening: Listening
+    german:
+      description: German
+      keywords:
+        general-german: German
+        grammar: Grammar rules
+        vocab: Word building
+        travel: Travel phrases
+        conversation: Everyday talk
+        cases: Case system
+        listening: Listening
+    other-langs:
+      description: More languages
+      keywords:
+        general-other-langs: More languages
+        italian: Italian
+        portuguese: Portuguese
+        japanese: Japanese
+        chinese: Chinese
+        korean: Korean
+        arabic: Arabic
+        russian: Russian
+    esl:
+      description: English learners
+      keywords:
+        general-esl: English learners
+        beginner: Starting ESL
+        grammar: Grammar help
+        vocab: Useful words
+        reading: Simple reading
+        speaking: Speak English
+        listening: Hear English
+    grammar:
+      description: Grammar
+      keywords:
+        general-grammar: Grammar
+        parts-of-speech: Word types
+        tenses: Time forms
+        sentence-form: Sentence form
+        punctuation: Writing marks
+        agreement: Word matching
+        usage: Correct use
+    vocab:
+      description: Vocabulary
+      keywords:
+        general-vocab: Vocabulary
+        beginner: Starter words
+        academic: School words
+        business: Work words
+        travel: Trip words
+        roots: Word roots
+        synonyms: Similar words
+    idioms:
+      description: Idioms
+      keywords:
+        general-idioms: Idioms
+        english: English idioms
+        spanish: Spanish idioms
+        french: French idioms
+        sayings: Common sayings
+        slang: Casual speech
+        proverbs: Wise sayings
+    travel:
+      description: Travel talk
+      keywords:
+        general-travel: Travel talk
+        airport: Airport help
+        hotel: Hotel talk
+        restaurant: Food orders
+        directions: Ask the way
+        shopping: Store talk
+        emergency: Urgent help
+    mixed:
+      description: Mixed sets
+      keywords:
+        general-mixed: Mixed sets
+        beginner: Starter mix
+        grammar: Grammar mix
+        vocab: Word mix
+        travel: Travel mix
+        conversation: Speaking mix
+humanities:
+  description: Humanities
+  keywords:
+    general:
+      description: Mixed hum
+      keywords:
+        general: Mixed hum
+        themes: Big ideas
+        terms: Core terms
+        mixed: Cross topic
+        survey: Broad review
+    literature:
+      description: Literature
+      keywords:
+        general-literature: Literature
+        world: World lit
+        poetry: Poems
+        novels: Long fiction
+        drama: Plays
+        authors: Writers
+        literary-terms: Lit terms
+    philosophy:
+      description: Philosophy
+      keywords:
+        general-philosophy: Philosophy
+        ethics: Right and wrong
+        logic: Reasoning
+        metaphysics: Reality
+        epistemology: Knowledge
+        ancient: Early thinkers
+        modern: Modern thinkers
+    religion-myth:
+      description: Belief stories
+      keywords:
+        general-religion-myth: Belief stories
+        world-religions: Major faiths
+        bible: Bible topics
+        greek-myth: Greek myths
+        norse-myth: Norse myths
+        hinduism: Hindu beliefs
+        buddhism: Buddhist ideas
+    music:
+      description: Music
+      keywords:
+        general-music: Music
+        theory: Music basics
+        instruments: Instruments
+        genres: Music styles
+        composers: Composers
+        songs: Famous songs
+        notation: Music reading
+    visual-art:
+      description: Visual art
+      keywords:
+        general-visual-art: Visual art
+        painting: Painting
+        sculpture: Sculpture
+        design: Design basics
+        artists: Famous artists
+        techniques: Art methods
+        color: Color theory
+    film:
+      description: Film
+      keywords:
+        general-film: Film
+        genres: Film styles
+        directors: Directors
+        movies: Famous films
+        film-terms: Film terms
+        awards: Film awards
+        history: Film history
+    theater:
+      description: Theater
+      keywords:
+        general-theater: Theater
+        plays: Famous plays
+        drama: Drama basics
+        musicals: Stage musicals
+        actors: Stage actors
+        stagecraft: Stage work
+        history: Theater past
+    ethics:
+      description: Ethics
+      keywords:
+        general-ethics: Ethics
+        applied: Real issues
+        virtue: Character ethics
+        duty: Duty ethics
+        consequences: Outcome ethics
+        bioethics: Life ethics
+        justice: Fairness
+    culture:
+      description: Culture
+      keywords:
+        general-culture: Culture
+        traditions: Customs
+        symbols: Shared signs
+        media: Culture media
+        identity: Social identity
+        rituals: Ritual life
+        global: World culture
+    art-history:
+      description: Art history
+      keywords:
+        general-art-history: Art history
+        renaissance: Renaissance
+        baroque: Baroque
+        modern: Modern art
+        ancient: Ancient art
+        movements: Art movements
+        museums: Major museums
+    mixed:
+      description: Mixed sets
+      keywords:
+        general-mixed: Mixed sets
+        literature: Lit mix
+        arts: Arts mix
+        belief: Belief mix
+        philosophy: Ideas mix
+        culture: Culture mix
+civics:
+  description: Civics
+  keywords:
+    general:
+      description: Mixed civics
+      keywords:
+        general: Mixed civics
+        basics: Core civics
+        terms: Key terms
+        mixed: Cross topic
+        review: Quick review
+    government:
+      description: Government
+      keywords:
+        general-government: Government
+        branches: Three branches
+        federalism: Shared power
+        state-local: State local
+        checks-balances: Power limits
+        bureaucracy: Agencies
+        public-admin: Public admin
+    constitution:
+      description: Constitution
+      keywords:
+        general-constitution: Constitution
+        preamble: Opening text
+        articles: Main articles
+        amendments: Amendments
+        bill-of-rights: Core rights
+        interpretation: Meaning debates
+        landmark-cases: Big cases
+    law:
+      description: Law
+      keywords:
+        general-law: Law
+        criminal: Crime law
+        civil: Civil law
+        court-system: Courts
+        due-process: Fair process
+        evidence: Proof rules
+        legal-terms: Law terms
+    rights:
+      description: Rights
+      keywords:
+        general-rights: Rights
+        speech: Free speech
+        religion: Religious freedom
+        privacy: Privacy
+        equal-protection: Equal treatment
+        voting: Voting rights
+        civil-rights: Civil rights
+    elections:
+      description: Elections
+      keywords:
+        general-elections: Elections
+        voting: How voting works
+        parties: Political parties
+        campaigns: Campaigns
+        electoral-college: Electoral votes
+        primaries: Primary races
+        polling: Public polls
+    citizenship:
+      description: Citizenship
+      keywords:
+        general-citizenship: Citizenship
+        naturalization: Become citizen
+        civics-test: US civics test
+        duties: Citizen duties
+        symbols: National symbols
+        holidays: Civic holidays
+        immigration: Immigration
+    public-policy:
+      description: Policy
+      keywords:
+        general-public-policy: Policy
+        education: School policy
+        healthcare: Health policy
+        tax: Tax policy
+        environment: Green policy
+        housing: Housing policy
+        transport: Transit policy
+    us-civics:
+      description: US civics
+      keywords:
+        general-us-civics: US civics
+        founding: Founding era
+        institutions: US institutions
+        presidency: President role
+        congress: Congress role
+        supreme-court: Top court
+        states: State powers
+    comparative-gov:
+      description: Gov systems
+      keywords:
+        general-comparative-gov: Gov systems
+        democracy: Rule by vote
+        authoritarian: Central rule
+        parliamentary: Parliament gov
+        republic: Republics
+        monarchy: Monarchies
+        constitutions: Gov charters
+    international:
+      description: World civics
+      keywords:
+        general-international: World civics
+        un: United Nations
+        treaties: Treaties
+        diplomacy: State relations
+        human-rights: Human rights
+        ngo: Global groups
+        conflict: Global conflict
+    media-civics:
+      description: Media civics
+      keywords:
+        general-media-civics: Media civics
+        news-literacy: Read news well
+        misinformation: False claims
+        public-opinion: Opinion trends
+        speech: Media speech
+        campaign-media: Political media
+        debate: Public debate
+sports:
+  description: Sports
+  keywords:
+    general:
+      description: Mixed sports
+      keywords:
+        general: Mixed sports
+        basics: Core sports
+        mixed: Cross sport
+        teams: Famous teams
+        events: Major events
+    tennis:
+      description: Tennis
+      keywords:
+        general-tennis: Tennis
+        grand-slams: Major events
+        players: Famous players
+        champions: Title winners
+        rules: Match rules
+        shots: Shot types
+        rankings: Player ranks
+    soccer:
+      description: Soccer
+      keywords:
+        general-soccer: Soccer
+        world-cup: World Cup
+        clubs: Club teams
+        players: Famous players
+        champions: Title winners
+        rules: Game rules
+        positions: Field roles
+    basketball:
+      description: Basketball
+      keywords:
+        general-basketball: Basketball
+        nba: NBA
+        wnba: WNBA
+        players: Famous players
+        champions: Title winners
+        rules: Game rules
+        positions: Court roles
+    football:
+      description: Football
+      keywords:
+        general-football: Football
+        nfl: NFL
+        college: College ball
+        players: Famous players
+        champions: Title winners
+        rules: Game rules
+        positions: Field roles
+    baseball:
+      description: Baseball
+      keywords:
+        general-baseball: Baseball
+        mlb: MLB
+        players: Famous players
+        champions: Title winners
+        rules: Game rules
+        positions: Field roles
+        records: Top records
+    hockey:
+      description: Hockey
+      keywords:
+        general-hockey: Hockey
+        nhl: NHL
+        players: Famous players
+        champions: Title winners
+        rules: Game rules
+        positions: Ice roles
+        records: Top records
+    golf:
+      description: Golf
+      keywords:
+        general-golf: Golf
+        majors: Major events
+        players: Famous players
+        champions: Title winners
+        rules: Golf rules
+        courses: Famous courses
+        equipment: Golf gear
+    combat:
+      description: Combat sports
+      keywords:
+        general-combat: Combat sports
+        boxing: Boxing
+        mma: MMA
+        ufc: UFC
+        champions: Title holders
+        rules: Fight rules
+        weight-classes: Weight groups
+    olympics:
+      description: Olympics
+      keywords:
+        general-olympics: Olympics
+        summer: Summer Games
+        winter: Winter Games
+        sports: Olympic sports
+        athletes: Olympians
+        hosts: Host cities
+        medals: Medal counts
+    champions:
+      description: Winners
+      keywords:
+        general-champions: Winners
+        dynasties: Long winners
+        records: Win records
+        upsets: Big surprises
+        legends: All time greats
+        teams: Champion teams
+        athletes: Champion stars
+    rules:
+      description: Rules
+      keywords:
+        general-rules: Rules
+        scoring: How to score
+        penalties: Rule breaks
+        positions: Player roles
+        equipment: Required gear
+        officials: Refs judges
+        formats: Game formats
+nature:
+  description: Wildlife, plants, ecosystems, outdoor recreation, and survival skills.
+  keywords:
+    general:
+      description: Mixed nature
+      keywords:
+        general: Mixed nature
+        basics: Core nature
+        mixed: Cross topic
+    survival:
+      description: Survival skills
+      keywords:
+        general-survival: Survival skills
+        forest: Forest and woodland
+        tropical-island: Tropical island
+        basics: Core survival
+        shelter: Shelter build
+        water: Water needs
+        fire: Fire making
+    camping:
+      description: Camping
+      keywords:
+        general-camping: Camping
+        basics: Camping fundamentals
+        gear: Gear and kits
+        safety: Outdoor safety
+    navigation:
+      description: Navigation
+      keywords:
+        general-navigation: Navigation
+        map-compass: Map and compass
+        orienteering: Course nav
+        gps: GPS basics
+    animals:
+      description: Animals
+      keywords:
+        general-animals: Animals
+        wildlife: Wild animals
+        predators: Predators
+        marine: Sea life
+        birds: Birds
+    plants:
+      description: Plants
+      keywords:
+        general-plants: Plants
+        poisonous: Poisonous plants
+        trees: Trees
+        wild-edibles: Foraging basics
+    ecosystems:
+      description: Ecosystems
+      keywords:
+        general-ecosystems: Ecosystems
+        tundra: Tundra biomes
+        forests: Forest biomes
+        oceans: Marine ecosystems
+    phenomena:
+      description: Natural phenomena
+      keywords:
+        general-phenomena: Natural phenomena
+        aurora: Aurora and lights
+        weather-events: Storms and extremes
+        geology-events: Earth events
+trivia:
+  description: Trivia
+  keywords:
+    general:
+      description: Mixed trivia
+      keywords:
+        general: Mixed trivia
+        random: Random facts
+        mixed: Cross topic
+        easy: Easy fun
+        hard: Tough fun
+    movies-tv:
+      description: Screen trivia
+      keywords:
+        general-movies-tv: Screen trivia
+        movies: Movie facts
+        tv: TV shows
+        characters: Screen roles
+        quotes: Famous lines
+        awards: Screen awards
+        franchises: Big series
+    music:
+      description: Music trivia
+      keywords:
+        general-music: Music trivia
+        songs: Hit songs
+        artists: Famous artists
+        albums: Album facts
+        lyrics: Song lines
+        genres: Music styles
+        awards: Music awards
+    pop-culture:
+      description: Pop culture
+      keywords:
+        general-pop-culture: Pop culture
+        celebrities: Famous people
+        memes: Internet jokes
+        fashion: Style trends
+        internet: Online culture
+        viral: Viral moments
+        fandoms: Fan worlds
+    animals:
+      description: Animals
+      keywords:
+        general-animals: Animals
+        wildlife: Wild animals
+        pets: Pet facts
+        ocean: Sea life
+        birds: Bird facts
+        dinosaurs: Dino facts
+        weird: Odd animals
+    food-drink:
+      description: Food trivia
+      keywords:
+        general-food-drink: Food trivia
+        cuisine: World foods
+        desserts: Sweet foods
+        drinks: Drink facts
+        ingredients: Kitchen basics
+        brands: Food brands
+        restaurants: Famous chains
+    travel:
+      description: Travel trivia
+      keywords:
+        general-travel: Travel trivia
+        landmarks: Famous places
+        cities: City facts
+        countries: Country facts
+        wonders: World wonders
+        airports: Airport facts
+        hotels: Hotel facts
+    famous-people:
+      description: People trivia
+      keywords:
+        general-famous-people: People trivia
+        actors: Screen stars
+        athletes: Sports stars
+        leaders: World leaders
+        inventors: Big inventors
+        authors: Writers
+        mixed: Mixed people
+    brands:
+      description: Brand trivia
+      keywords:
+        general-brands: Brand trivia
+        logos: Logo facts
+        slogans: Brand lines
+        products: Famous products
+        companies: Company facts
+        mascots: Brand mascots
+        history: Brand history
+    internet:
+      description: Internet trivia
+      keywords:
+        general-internet: Internet trivia
+        apps: App facts
+        websites: Site facts
+        gaming: Gaming culture
+        memes: Meme facts
+        tech: Tech fun
+        social-media: Social apps
+    games:
+      description: Game trivia
+      keywords:
+        general-games: Game trivia
+        video-games: Video games
+        board-games: Board games
+        card-games: Card games
+        characters: Game roles
+        consoles: Game systems
+        series: Game series
+    mixed:
+      description: Mixed sets
+      keywords:
+        general-mixed: Mixed sets
+        easy: Easy mix
+        hard: Hard mix
+        party: Party quiz
+        family: Family fun
+        random: Random mix
+concerns:
+- niche exam families like lsat mcat bar pmp scrum and real-estate are not first-class yet
+- rare languages fit under other-langs until one earns enough volume for its own l1
+- cross-disciplinary topics like biostats legal-history sports-business and econ-history will use general or mixed
+- some country-specific civics and law content outside us-civics or comparative-gov may feel broad
+- niche humanities like dance architecture comics and design-theory are covered only indirectly
+- smaller sports like cricket rugby cycling and motorsport would start in general unless volume grows
+- fast-moving trivia like memes influencers and live pop moments may need periodic refreshes
+- this is browse-first so edge cases should start in general or mixed and earn new buckets later

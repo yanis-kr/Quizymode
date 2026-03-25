@@ -1,0 +1,202 @@
+[
+  {
+    "category": "exams",
+    "navigationKeyword1": "cisco",
+    "navigationKeyword2": "ccna",
+    "question": "What field does a router examine to decide how to forward an IP packet?",
+    "correctAnswer": "The destination IP address",
+    "incorrectAnswers": [
+      "The source MAC address only",
+      "The monitor serial number",
+      "The switch port label"
+    ],
+    "explanation": "Routers choose forwarding paths by examining packet headers, especially the destination IP address.",
+    "keywords": [
+      "ccna",
+      "routing",
+      "cisco"
+    ],
+    "source": "https://www.cisco.com/c/en/us/solutions/small-business/resource-center/networking/how-does-a-router-work.html",
+    "seedId": "6999c25d-8103-43a9-96b8-2adc3ea3317c"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "cisco",
+    "navigationKeyword2": "ccna",
+    "question": "What does a switch typically use to forward a frame inside a LAN?",
+    "correctAnswer": "The destination MAC address",
+    "incorrectAnswers": [
+      "The destination TCP port",
+      "The BIOS version",
+      "The subnet mask length only"
+    ],
+    "explanation": "Switches build MAC address tables and forward frames toward the destination MAC address.",
+    "keywords": [
+      "ccna",
+      "switching",
+      "cisco"
+    ],
+    "source": "https://www.cisco.com/c/en/us/products/switches/what-is-network-switching.html",
+    "seedId": "112ae4bc-893d-41da-ba2a-eb3ffa151762"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "cisco",
+    "navigationKeyword2": "ccna",
+    "question": "What is the main purpose of a VLAN on a switch?",
+    "correctAnswer": "To segment a network into separate logical broadcast domains",
+    "incorrectAnswers": [
+      "To increase disk storage",
+      "To replace DHCP",
+      "To encrypt every frame automatically"
+    ],
+    "explanation": "Cisco says VLANs segment a physical switch into multiple logical broadcast domains.",
+    "keywords": [
+      "ccna",
+      "vlan",
+      "cisco"
+    ],
+    "source": "https://www.cisco.com/c/en/us/td/docs/switches/lan/c9000/lyr2-fwd/vlan/vlan-configuration-guide/configure-vlan.html",
+    "seedId": "60e45404-5793-4bbb-a86d-3e7e78a9f823"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "cisco",
+    "navigationKeyword2": "ccna",
+    "question": "Why are trunk links used between switches?",
+    "correctAnswer": "To carry traffic for multiple VLANs across one link",
+    "incorrectAnswers": [
+      "To disable MAC learning",
+      "To replace routing tables",
+      "To prevent IP addressing"
+    ],
+    "explanation": "Cisco trunking documentation explains that trunks carry tagged traffic for multiple VLANs.",
+    "keywords": [
+      "ccna",
+      "trunking",
+      "cisco"
+    ],
+    "source": "https://www.cisco.com/c/en/us/support/docs/application-networking-services/css-11000-series-content-services-switches/21303-css-dot1q.html",
+    "seedId": "677a0cf6-ab92-43c5-8b57-6d67575146e0"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "cisco",
+    "navigationKeyword2": "ccna",
+    "question": "What service automatically gives IP configuration information to clients?",
+    "correctAnswer": "DHCP",
+    "incorrectAnswers": [
+      "SSH",
+      "NAT",
+      "STP"
+    ],
+    "explanation": "DHCP assigns IP addresses and related network configuration parameters to clients automatically.",
+    "keywords": [
+      "ccna",
+      "dhcp",
+      "cisco"
+    ],
+    "source": "https://www.rfc-editor.org/rfc/rfc2131",
+    "seedId": "fdbcdc81-86d8-4ba7-a741-f35135e5b7d3"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "cisco",
+    "navigationKeyword2": "ccna",
+    "question": "What problem does ARP solve on an IPv4 Ethernet network?",
+    "correctAnswer": "It maps an IP address to a MAC address",
+    "incorrectAnswers": [
+      "It translates private IPs to public IPs",
+      "It encrypts management traffic",
+      "It elects a root bridge"
+    ],
+    "explanation": "ARP resolves a known IPv4 address to the corresponding hardware address on the local network.",
+    "keywords": [
+      "ccna",
+      "arp",
+      "cisco"
+    ],
+    "source": "https://www.rfc-editor.org/rfc/rfc826",
+    "seedId": "02025f8d-94b0-4e0a-aae3-e7147a8ecbd9"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "cisco",
+    "navigationKeyword2": "ccna",
+    "question": "What is the role of DNS in a network?",
+    "correctAnswer": "Translating host names into IP addresses",
+    "incorrectAnswers": [
+      "Assigning VLAN IDs",
+      "Negotiating switch trunks",
+      "Forwarding packets between subnets"
+    ],
+    "explanation": "DNS provides name-to-address translation so hosts can locate services by name.",
+    "keywords": [
+      "ccna",
+      "dns",
+      "cisco"
+    ],
+    "source": "https://www.rfc-editor.org/rfc/rfc1034",
+    "seedId": "405926af-3f76-471a-a853-9809e2659eb8"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "cisco",
+    "navigationKeyword2": "ccna",
+    "question": "What is the purpose of a default gateway for a host?",
+    "correctAnswer": "To send traffic to destinations outside the local subnet",
+    "incorrectAnswers": [
+      "To assign the host's MAC address",
+      "To terminate all VLANs automatically",
+      "To replace the DNS server"
+    ],
+    "explanation": "The default gateway is the router a host uses to reach remote networks.",
+    "keywords": [
+      "ccna",
+      "default-gateway",
+      "cisco"
+    ],
+    "source": "https://www.cisco.com/c/en/us/solutions/small-business/resource-center/networking/what-is-a-router.html",
+    "seedId": "6ab78a49-9ac0-4aab-9adf-f8c6ae5c8d86"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "cisco",
+    "navigationKeyword2": "ccna",
+    "question": "What does SSH provide for network device administration?",
+    "correctAnswer": "Encrypted remote command-line access",
+    "incorrectAnswers": [
+      "Automatic address assignment",
+      "Layer 2 loop prevention",
+      "Passive packet capture"
+    ],
+    "explanation": "SSH is a secure remote login protocol used for encrypted management access.",
+    "keywords": [
+      "ccna",
+      "ssh",
+      "cisco"
+    ],
+    "source": "https://www.rfc-editor.org/rfc/rfc4251",
+    "seedId": "9c58e6df-779e-42bb-bfbc-8bdfd01485dc"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "cisco",
+    "navigationKeyword2": "ccna",
+    "question": "What does NAT typically do at the network edge?",
+    "correctAnswer": "Translates private internal addresses before traffic goes to an external network",
+    "incorrectAnswers": [
+      "Builds a spanning tree topology",
+      "Converts TCP into UDP",
+      "Creates VLAN membership tables"
+    ],
+    "explanation": "Cisco explains that NAT translates private IP addresses to public IP addresses before packets are sent outside the network.",
+    "keywords": [
+      "ccna",
+      "nat",
+      "cisco"
+    ],
+    "source": "https://www.cisco.com/c/en/us/products/routers/network-address-translation.html",
+    "seedId": "5a08cd84-24a5-425b-b9d0-67f2fd6e7f81"
+  }
+]

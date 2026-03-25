@@ -1,0 +1,222 @@
+[
+  {
+    "category": "geography",
+    "navigationKeyword1": "physical",
+    "navigationKeyword2": "islands",
+    "question": "Which island is the world’s largest (excluding continental landmasses classified as continents)?",
+    "correctAnswer": "Greenland",
+    "incorrectAnswers": [
+      "New Guinea",
+      "Borneo",
+      "Madagascar"
+    ],
+    "explanation": "Greenland is a massive island between the Arctic and Atlantic oceans.",
+    "keywords": [
+      "islands",
+      "greenland",
+      "arctic"
+    ],
+    "source": "https://www.britannica.com/place/Greenland",
+    "seedId": "6ec7bad8-fa7a-47e3-aaa7-6cdfa1e7b351"
+  },
+  {
+    "category": "geography",
+    "navigationKeyword1": "physical",
+    "navigationKeyword2": "islands",
+    "question": "Which island is divided between Indonesia and Papua New Guinea?",
+    "correctAnswer": "New Guinea",
+    "incorrectAnswers": [
+      "Borneo",
+      "Sumatra",
+      "Sulawesi"
+    ],
+    "explanation": "New Guinea is the world’s second-largest island and lies north of Australia.",
+    "keywords": [
+      "islands",
+      "new-guinea",
+      "pacific"
+    ],
+    "source": "https://www.britannica.com/place/New-Guinea",
+    "seedId": "bb31eda0-14ce-4661-9ba5-5599b081527a"
+  },
+  {
+    "category": "geography",
+    "navigationKeyword1": "physical",
+    "navigationKeyword2": "islands",
+    "question": "Which island in Southeast Asia is shared by Brunei, Indonesia, and Malaysia?",
+    "correctAnswer": "Borneo",
+    "incorrectAnswers": [
+      "Java",
+      "Sumatra",
+      "Timor"
+    ],
+    "explanation": "Borneo lies at the center of Maritime Southeast Asia.",
+    "keywords": [
+      "islands",
+      "borneo",
+      "southeast-asia"
+    ],
+    "source": "https://www.britannica.com/place/Borneo",
+    "seedId": "2be5a93c-252f-46af-aab8-319a4d2ad6ba"
+  },
+  {
+    "category": "geography",
+    "navigationKeyword1": "physical",
+    "navigationKeyword2": "islands",
+    "question": "Which large island lies off the southeastern coast of Africa?",
+    "correctAnswer": "Madagascar",
+    "incorrectAnswers": [
+      "Zanzibar",
+      "Mauritius",
+      "Réunion"
+    ],
+    "explanation": "Madagascar is the fourth-largest island and hosts unique wildlife.",
+    "keywords": [
+      "islands",
+      "madagascar",
+      "indian-ocean"
+    ],
+    "source": "https://www.britannica.com/place/Madagascar",
+    "seedId": "83a4c562-66e3-4053-a8e3-f765308464e2"
+  },
+  {
+    "category": "geography",
+    "navigationKeyword1": "physical",
+    "navigationKeyword2": "islands",
+    "question": "Which is the largest island in Canada?",
+    "correctAnswer": "Baffin Island",
+    "incorrectAnswers": [
+      "Victoria Island",
+      "Ellesmere Island",
+      "Newfoundland"
+    ],
+    "explanation": "Baffin Island is part of Nunavut in the Canadian Arctic Archipelago.",
+    "keywords": [
+      "islands",
+      "baffin",
+      "arctic"
+    ],
+    "source": "https://www.britannica.com/place/Baffin-Island",
+    "seedId": "4698ab33-2d70-4145-a384-9b1d207d9967"
+  },
+  {
+    "category": "geography",
+    "navigationKeyword1": "physical",
+    "navigationKeyword2": "islands",
+    "question": "Which island is the largest and most populous in Japan?",
+    "correctAnswer": "Honshu",
+    "incorrectAnswers": [
+      "Hokkaido",
+      "Kyushu",
+      "Shikoku"
+    ],
+    "explanation": "Honshu hosts Tokyo, Osaka, and Kyoto along its Pacific side.",
+    "keywords": [
+      "islands",
+      "japan",
+      "honshu"
+    ],
+    "source": "https://www.britannica.com/place/Honshu",
+    "seedId": "ca3694e9-7b52-4d7b-980e-4996faa7d11d"
+  },
+  {
+    "category": "geography",
+    "navigationKeyword1": "physical",
+    "navigationKeyword2": "islands",
+    "question": "Which island includes the nations of England, Scotland, and Wales?",
+    "correctAnswer": "Great Britain",
+    "incorrectAnswers": [
+      "Ireland",
+      "Iceland",
+      "Sicily"
+    ],
+    "explanation": "Great Britain is the largest island of the British Isles.",
+    "keywords": [
+      "islands",
+      "great-britain",
+      "europe"
+    ],
+    "source": "https://www.britannica.com/place/Great-Britain-island-Europe",
+    "seedId": "f5e1040f-e5ad-44a9-8ee7-7c5344bada7d"
+  },
+  {
+    "category": "geography",
+    "navigationKeyword1": "physical",
+    "navigationKeyword2": "islands",
+    "question": "Which Indonesian island lies west of Java and is one of the world’s largest islands?",
+    "correctAnswer": "Sumatra",
+    "incorrectAnswers": [
+      "Sulawesi",
+      "Flores",
+      "Lombok"
+    ],
+    "explanation": "Sumatra stretches along the equator at the eastern edge of the Indian Ocean.",
+    "keywords": [
+      "islands",
+      "sumatra",
+      "indonesia"
+    ],
+    "source": "https://www.britannica.com/place/Sumatra",
+    "seedId": "4b8ebbe8-c0c8-4391-aada-0812a3199f0e"
+  },
+  {
+    "category": "geography",
+    "navigationKeyword1": "physical",
+    "navigationKeyword2": "islands",
+    "question": "Which Indonesian island is home to roughly half of the country’s people?",
+    "correctAnswer": "Java",
+    "incorrectAnswers": [
+      "Bali",
+      "Sumatra",
+      "Sulawesi"
+    ],
+    "explanation": "Java is one of the world’s most densely populated large islands and anchors Indonesia’s core cities.",
+    "keywords": [
+      "islands",
+      "java",
+      "indonesia"
+    ],
+    "source": "https://www.britannica.com/place/Java-island-Indonesia",
+    "seedId": "26644350-ac1f-4b1b-bfc9-b92352593af3"
+  },
+  {
+    "category": "geography",
+    "navigationKeyword1": "physical",
+    "navigationKeyword2": "islands",
+    "question": "Which Mediterranean island is Italy’s largest region by land area?",
+    "correctAnswer": "Sicily",
+    "incorrectAnswers": [
+      "Sardinia",
+      "Corsica",
+      "Crete"
+    ],
+    "explanation": "Sicily lies off the toe of the Italian peninsula across the Strait of Messina.",
+    "keywords": [
+      "islands",
+      "sicily",
+      "mediterranean"
+    ],
+    "source": "https://www.britannica.com/place/Sicily",
+    "seedId": "fa6e0a74-e51d-4c0e-b264-931c53906741"
+  },
+  {
+    "category": "geography",
+    "navigationKeyword1": "physical",
+    "navigationKeyword2": "islands",
+    "question": "Which island state lies south of the Australian mainland across Bass Strait?",
+    "correctAnswer": "Tasmania",
+    "incorrectAnswers": [
+      "New Zealand",
+      "Fiji",
+      "New Caledonia"
+    ],
+    "explanation": "Tasmania is an Australian state whose capital is Hobart.",
+    "keywords": [
+      "islands",
+      "tasmania",
+      "australia"
+    ],
+    "source": "https://www.britannica.com/place/Tasmania",
+    "seedId": "f52ef5d6-b937-42b2-9f12-7bd617e3ed7e"
+  }
+]

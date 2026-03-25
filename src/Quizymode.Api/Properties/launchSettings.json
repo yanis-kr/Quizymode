@@ -4,7 +4,7 @@
       "commandName": "Project",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development",
-        "APP_SEED__PATH": "data/seed"
+        "APP_SEED__PATH": "data/seed/minimal"
       },
       "dotnetRunMessages": true,
       "applicationUrl": "http://localhost:8081",
@@ -14,7 +14,7 @@
       "commandName": "Project",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development",
-        "APP_SEED__PATH": "data/seed"
+        "APP_SEED__PATH": "data/seed/minimal"
       },
       "dotnetRunMessages": true,
       "applicationUrl": "https://localhost:8082;http://localhost:8081",

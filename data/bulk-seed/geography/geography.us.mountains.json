@@ -1,0 +1,222 @@
+[
+  {
+    "category": "geography",
+    "navigationKeyword1": "us",
+    "navigationKeyword2": "mountains",
+    "question": "Which peak is the highest point in the United States?",
+    "correctAnswer": "Denali",
+    "incorrectAnswers": [
+      "Mount Whitney",
+      "Mount Rainier",
+      "Mauna Kea"
+    ],
+    "explanation": "Denali in the Alaska Range is the highest summit in the country.",
+    "keywords": [
+      "mountains",
+      "us-mountains",
+      "alaska"
+    ],
+    "source": "https://www.britannica.com/place/Denali",
+    "seedId": "381a6be9-b0d0-4bec-af92-528c462ca62a"
+  },
+  {
+    "category": "geography",
+    "navigationKeyword1": "us",
+    "navigationKeyword2": "mountains",
+    "question": "Which mountain is the highest in the contiguous 48 states?",
+    "correctAnswer": "Mount Whitney",
+    "incorrectAnswers": [
+      "Mount Elbert",
+      "Mount Rainier",
+      "Pikes Peak"
+    ],
+    "explanation": "Mount Whitney stands in California’s Sierra Nevada east of the San Joaquin Valley.",
+    "keywords": [
+      "mountains",
+      "us-mountains",
+      "sierra-nevada"
+    ],
+    "source": "https://www.britannica.com/place/Mount-Whitney",
+    "seedId": "667e0a00-8c74-49a5-b0fa-1937d89ee920"
+  },
+  {
+    "category": "geography",
+    "navigationKeyword1": "us",
+    "navigationKeyword2": "mountains",
+    "question": "Which North American mountain system runs from Canada into the western United States?",
+    "correctAnswer": "Rocky Mountains",
+    "incorrectAnswers": [
+      "Appalachian Mountains",
+      "Cascade Range",
+      "Sierra Nevada"
+    ],
+    "explanation": "The Rockies form the great western cordillera from British Columbia to New Mexico.",
+    "keywords": [
+      "mountains",
+      "us-mountains",
+      "rockies"
+    ],
+    "source": "https://www.britannica.com/place/Rocky-Mountains",
+    "seedId": "4c6cfae5-5dc9-4604-9929-fff4128f6827"
+  },
+  {
+    "category": "geography",
+    "navigationKeyword1": "us",
+    "navigationKeyword2": "mountains",
+    "question": "Which ancient mountain chain runs along the eastern United States?",
+    "correctAnswer": "Appalachian Mountains",
+    "incorrectAnswers": [
+      "Ozark Mountains",
+      "Sierra Nevada",
+      "Brooks Range"
+    ],
+    "explanation": "The Appalachians extend from Alabama into eastern Canada.",
+    "keywords": [
+      "mountains",
+      "us-mountains",
+      "appalachians"
+    ],
+    "source": "https://www.britannica.com/place/Appalachian-Mountains",
+    "seedId": "7ddd92c6-fc9e-4bc8-b562-4c6e33308f23"
+  },
+  {
+    "category": "geography",
+    "navigationKeyword1": "us",
+    "navigationKeyword2": "mountains",
+    "question": "Which California–Nevada range contains Mount Whitney?",
+    "correctAnswer": "Sierra Nevada",
+    "incorrectAnswers": [
+      "Cascade Range",
+      "Coast Ranges",
+      "Peninsular Ranges"
+    ],
+    "explanation": "The Sierra Nevada is a high granitic range along California’s eastern edge.",
+    "keywords": [
+      "mountains",
+      "us-mountains",
+      "sierra-nevada"
+    ],
+    "source": "https://www.britannica.com/place/Sierra-Nevada-mountains",
+    "seedId": "22a78d6e-648d-4e7e-a814-96765bbafc72"
+  },
+  {
+    "category": "geography",
+    "navigationKeyword1": "us",
+    "navigationKeyword2": "mountains",
+    "question": "Which volcanic range includes Mount Rainier and Mount St. Helens?",
+    "correctAnswer": "Cascade Range",
+    "incorrectAnswers": [
+      "Rocky Mountains",
+      "Olympic Mountains",
+      "Bitterroot Range"
+    ],
+    "explanation": "The Cascades form a volcanic arc through Washington, Oregon, and northern California.",
+    "keywords": [
+      "mountains",
+      "us-mountains",
+      "cascades"
+    ],
+    "source": "https://www.britannica.com/place/Cascade-Range",
+    "seedId": "0c24e6b8-6758-4515-a62c-856202933eb9"
+  },
+  {
+    "category": "geography",
+    "navigationKeyword1": "us",
+    "navigationKeyword2": "mountains",
+    "question": "Which New Hampshire peak is the highest in the northeastern United States?",
+    "correctAnswer": "Mount Washington",
+    "incorrectAnswers": [
+      "Mount Mansfield",
+      "Mount Katahdin",
+      "Mount Marcy"
+    ],
+    "explanation": "Mount Washington in the Presidential Range is the highest summit in the Northeast.",
+    "keywords": [
+      "mountains",
+      "us-mountains",
+      "white-mountains"
+    ],
+    "source": "https://www.britannica.com/place/Mount-Washington-New-Hampshire",
+    "seedId": "40bdfcb8-d0c4-41b1-8589-5d66764ebf1f"
+  },
+  {
+    "category": "geography",
+    "navigationKeyword1": "us",
+    "navigationKeyword2": "mountains",
+    "question": "Which highland region covers much of northern Arkansas and southern Missouri?",
+    "correctAnswer": "Ozark Mountains",
+    "incorrectAnswers": [
+      "Ouachita Mountains",
+      "Cumberland Plateau",
+      "Piedmont"
+    ],
+    "explanation": "The Ozarks are a heavily dissected plateau famous for springs and caverns.",
+    "keywords": [
+      "mountains",
+      "us-mountains",
+      "ozarks"
+    ],
+    "source": "https://www.britannica.com/place/Ozark-Mountains",
+    "seedId": "01a84366-c35f-4351-a0ab-9408c61f7863"
+  },
+  {
+    "category": "geography",
+    "navigationKeyword1": "us",
+    "navigationKeyword2": "mountains",
+    "question": "Which range stretches east–west across northern Alaska south of the Arctic coastal plain?",
+    "correctAnswer": "Brooks Range",
+    "incorrectAnswers": [
+      "Alaska Range",
+      "Coast Mountains",
+      "Mackenzie Mountains"
+    ],
+    "explanation": "The Brooks Range divides Alaska’s North Slope from the interior.",
+    "keywords": [
+      "mountains",
+      "us-mountains",
+      "brooks-range"
+    ],
+    "source": "https://www.britannica.com/place/Brooks-Range",
+    "seedId": "210d0069-7537-42cd-8682-5beea45c807a"
+  },
+  {
+    "category": "geography",
+    "navigationKeyword1": "us",
+    "navigationKeyword2": "mountains",
+    "question": "Which New York upland includes Adirondack Park, the largest U.S. state-level protected area?",
+    "correctAnswer": "Adirondack Mountains",
+    "incorrectAnswers": [
+      "Catskill Mountains",
+      "Allegheny Plateau",
+      "Taconic Mountains"
+    ],
+    "explanation": "The Adirondacks are an uplifted dome of ancient rocks in northern New York.",
+    "keywords": [
+      "mountains",
+      "us-mountains",
+      "adirondacks"
+    ],
+    "source": "https://www.britannica.com/place/Adirondack-Mountains",
+    "seedId": "2b78eb4d-aaaf-48d3-86d0-ae24e5aa4f2a"
+  },
+  {
+    "category": "geography",
+    "navigationKeyword1": "us",
+    "navigationKeyword2": "mountains",
+    "question": "Which dormant volcano on the island of Hawaii is noted for high-elevation astronomy observatories?",
+    "correctAnswer": "Mauna Kea",
+    "incorrectAnswers": [
+      "Mauna Loa",
+      "Haleakala",
+      "Mount Redoubt"
+    ],
+    "explanation": "Mauna Kea’s dry summit hosts major optical and infrared telescopes.",
+    "keywords": [
+      "mountains",
+      "us-mountains",
+      "hawaii"
+    ],
+    "source": "https://www.britannica.com/place/Mauna-Kea",
+    "seedId": "473b3d09-cfeb-49e0-bbaf-9d09d463c251"
+  }
+]

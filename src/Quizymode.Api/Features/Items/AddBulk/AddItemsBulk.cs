@@ -2,6 +2,7 @@ using FluentValidation;
 using Quizymode.Api.Data;
 using Quizymode.Api.Infrastructure;
 using Quizymode.Api.Services;
+using Quizymode.Api.Services.Taxonomy;
 using Quizymode.Api.Shared.Kernel;
 
 namespace Quizymode.Api.Features.Items.AddBulk;
@@ -13,17 +14,23 @@ public static class AddItemsBulk
         bool IsPrivate);
 
     public sealed record ItemRequest(
-        string Category,
         string Question,
         string CorrectAnswer,
         List<string> IncorrectAnswers,
         string Explanation,
         List<KeywordRequest>? Keywords = null,
-        string? Source = null);
+        string? Source = null,
+        decimal? FactualRisk = null,
+        string? ReviewComments = null);
 
     public sealed record Request(
         bool IsPrivate,
-        List<ItemRequest> Items);
+        string Category,
+        string Keyword1,
+        string? Keyword2,
+        List<KeywordRequest> Keywords,
+        List<ItemRequest> Items,
+        Guid? UploadId = null);
 
     public sealed record Response(
         int TotalRequested,
@@ -31,7 +38,8 @@ public static class AddItemsBulk
         int DuplicateCount,
         int FailedCount,
         List<string> DuplicateQuestions,
-        List<ItemError> Errors);
+        List<ItemError> Errors,
+        List<Guid>? CreatedItemIds = null);
 
     public sealed record ItemError(
         int Index,
@@ -58,6 +66,32 @@ public static class AddItemsBulk
 
             RuleForEach(x => x.Items)
                 .SetValidator(new ItemRequestValidator());
+
+            RuleFor(x => x.Category)
+                .NotEmpty()
+                .WithMessage("Category is required")
+                .MaximumLength(100)
+                .WithMessage("Category must not exceed 100 characters");
+
+            RuleFor(x => x.Keyword1)
+                .NotEmpty()
+                .WithMessage("Keyword1 (primary topic) is required")
+                .MaximumLength(30)
+                .WithMessage("Keyword1 must not exceed 30 characters");
+
+            RuleFor(x => x.Keyword2)
+                .NotEmpty()
+                .WithMessage("Keyword2 (subtopic) is required")
+                .MaximumLength(30)
+                .WithMessage("Keyword2 must not exceed 30 characters");
+
+            RuleFor(x => x.Keywords)
+                .NotNull()
+                .WithMessage("Keywords list is required")
+                .Must(k => k.Count <= 50)
+                .WithMessage("Cannot assign more than 50 default keywords")
+                .ForEach(rule => rule
+                    .SetValidator(new KeywordRequestValidator()));
         }
     }
 
@@ -65,12 +99,6 @@ public static class AddItemsBulk
     {
         public ItemRequestValidator()
         {
-            RuleFor(x => x.Category)
-                .NotEmpty()
-                .WithMessage("Category is required")
-                .MaximumLength(100)
-                .WithMessage("Category must not exceed 100 characters");
-
             RuleFor(x => x.Question)
                 .NotEmpty()
                 .WithMessage("Question is required")
@@ -105,6 +133,16 @@ public static class AddItemsBulk
                 .WithMessage("Cannot assign more than 50 keywords to an item")
                 .ForEach(rule => rule
                     .SetValidator(new KeywordRequestValidator()));
+
+            RuleFor(x => x.FactualRisk)
+                .InclusiveBetween(0m, 1m)
+                .When(x => x.FactualRisk.HasValue)
+                .WithMessage("FactualRisk must be between 0 and 1");
+
+            RuleFor(x => x.ReviewComments)
+                .MaximumLength(500)
+                .When(x => x.ReviewComments != null)
+                .WithMessage("ReviewComments must not exceed 500 characters");
         }
     }
 
@@ -139,7 +177,8 @@ public static class AddItemsBulk
             ApplicationDbContext db,
             ISimHashService simHashService,
             IUserContext userContext,
-            ICategoryResolver categoryResolver,
+            ITaxonomyItemCategoryResolver itemCategoryResolver,
+            ITaxonomyRegistry taxonomyRegistry,
             IAuditService auditService,
             CancellationToken cancellationToken)
         {
@@ -154,7 +193,15 @@ public static class AddItemsBulk
                 return Results.BadRequest(validationResult.Errors);
             }
 
-            Result<Response> result = await AddItemsBulkHandler.HandleAsync(request, db, simHashService, userContext, categoryResolver, auditService, cancellationToken);
+            Result<Response> result = await AddItemsBulkHandler.HandleAsync(
+                request,
+                db,
+                simHashService,
+                userContext,
+                itemCategoryResolver,
+                taxonomyRegistry,
+                auditService,
+                cancellationToken);
 
             return result.Match(
                 value => Results.Ok(value),

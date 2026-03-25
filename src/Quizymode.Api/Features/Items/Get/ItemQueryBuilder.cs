@@ -1,6 +1,8 @@
 using Microsoft.EntityFrameworkCore;
 using Quizymode.Api.Data;
+using Quizymode.Api.Features.Collections;
 using Quizymode.Api.Services;
+using Quizymode.Api.Shared.Helpers;
 using Quizymode.Api.Shared.Kernel;
 using Quizymode.Api.Shared.Models;
 
@@ -35,14 +37,42 @@ internal sealed class ItemQueryBuilder
     /// </summary>
     public async Task<Result<IQueryable<Item>>> BuildQueryAsync(GetItems.QueryRequest request)
     {
+        if (request.NavigationKeywords is not null && request.NavigationKeywords.Count > 2)
+        {
+            return Result.Failure<IQueryable<Item>>(
+                Error.Validation("Navigation.InvalidPath", "Navigation path supports at most two keywords."));
+        }
+
+        if (!string.IsNullOrEmpty(request.Category) && request.NavigationKeywords is not null
+            && request.NavigationKeywords.Count > 0)
+        {
+            Result pathValidationResult = await Quizymode.Api.Features.Keywords.NavigationPathValidator.ValidatePathAsync(
+                request.Category,
+                request.NavigationKeywords,
+                _db,
+                _userContext,
+                _cancellationToken);
+
+            if (pathValidationResult.IsFailure)
+            {
+                return Result.Failure<IQueryable<Item>>(pathValidationResult.Error!);
+            }
+        }
+
         IQueryable<Item> query = _db.Items.AsQueryable();
 
-        Result<IQueryable<Item>> visibilityResult = ApplyVisibilityFilter(query, request);
-        if (visibilityResult.IsFailure)
+        // When loading by collectionId, allow only if collection is public or user is owner/shared; then bypass item visibility so all items in collection are visible
+        bool skipVisibilityForCollection = request.CollectionId.HasValue;
+
+        if (!skipVisibilityForCollection)
         {
-            return visibilityResult;
+            Result<IQueryable<Item>> visibilityResult = ApplyVisibilityFilter(query, request);
+            if (visibilityResult.IsFailure)
+            {
+                return visibilityResult;
+            }
+            query = visibilityResult.Value;
         }
-        query = visibilityResult.Value;
 
         Result<IQueryable<Item>> categoryResult = await ApplyCategoryFilterAsync(query, request);
         if (categoryResult.IsFailure)
@@ -50,6 +80,13 @@ internal sealed class ItemQueryBuilder
             return categoryResult;
         }
         query = categoryResult.Value;
+
+        Result<IQueryable<Item>> navigationResult = await ApplyNavigationFilterAsync(query, request);
+        if (navigationResult.IsFailure)
+        {
+            return navigationResult;
+        }
+        query = navigationResult.Value;
 
         Result<IQueryable<Item>> keywordResult = await ApplyKeywordFilterAsync(query, request);
         if (keywordResult.IsFailure)
@@ -204,14 +241,127 @@ internal sealed class ItemQueryBuilder
             }
         }
 
-        return null;
+        // Fallback: resolve by slug (e.g. URL "certs" -> category "Certs")
+        string requestedSlug = CategoryHelper.NameToSlug(categoryName);
+        if (string.IsNullOrEmpty(requestedSlug))
+            return null;
+
+        List<Category> allForSlug = await _db.Categories
+            .Where(c => !c.IsPrivate || (_userContext.IsAuthenticated && c.CreatedBy == _userContext.UserId))
+            .ToListAsync(_cancellationToken);
+
+        Category? bySlug = allForSlug
+            .FirstOrDefault(c => string.Equals(CategoryHelper.NameToSlug(c.Name), requestedSlug, StringComparison.OrdinalIgnoreCase));
+
+        return bySlug?.Id;
+    }
+
+    private async Task<Result<IQueryable<Item>>> ApplyNavigationFilterAsync(
+        IQueryable<Item> query,
+        GetItems.QueryRequest request)
+    {
+        if (request.NavigationKeywords is null || request.NavigationKeywords.Count == 0)
+        {
+            return Result.Success(query);
+        }
+
+        if (string.IsNullOrWhiteSpace(request.Category))
+        {
+            return Result.Failure<IQueryable<Item>>(
+                Error.Validation("Navigation.CategoryRequired", "Category is required when filtering by navigation path."));
+        }
+
+        Guid? categoryId = await ResolveCategoryIdAsync(request.Category.Trim());
+        if (!categoryId.HasValue)
+        {
+            return Result.Success(query.Where(i => false));
+        }
+
+        List<string> normalizedKeywords = request.NavigationKeywords
+            .Select(k => k.Trim().ToLowerInvariant())
+            .Where(k => !string.IsNullOrWhiteSpace(k))
+            .ToList();
+
+        if (normalizedKeywords.Count == 0)
+        {
+            return Result.Success(query);
+        }
+
+        if (normalizedKeywords.Contains("other"))
+        {
+            if (normalizedKeywords.Count > 1)
+            {
+                return Result.Success(query.Where(i => false));
+            }
+
+            return await ApplyOtherKeywordFilterAsync(query, categoryId.Value);
+        }
+
+        Guid? rank1KeywordId = await ResolveNavigationKeywordIdAsync(
+            categoryId.Value,
+            normalizedKeywords[0],
+            null);
+
+        if (!rank1KeywordId.HasValue)
+        {
+            return Result.Success(query.Where(i => false));
+        }
+
+        query = query.Where(i => i.NavigationKeywordId1 == rank1KeywordId.Value);
+
+        if (normalizedKeywords.Count == 1)
+        {
+            return Result.Success(query);
+        }
+
+        Guid? rank2KeywordId = await ResolveNavigationKeywordIdAsync(
+            categoryId.Value,
+            normalizedKeywords[1],
+            rank1KeywordId);
+
+        if (!rank2KeywordId.HasValue)
+        {
+            return Result.Success(query.Where(i => false));
+        }
+
+        query = query.Where(i => i.NavigationKeywordId2 == rank2KeywordId.Value);
+        return Result.Success(query);
+    }
+
+    private async Task<Guid?> ResolveNavigationKeywordIdAsync(
+        Guid categoryId,
+        string keywordName,
+        Guid? parentKeywordId)
+    {
+        string keywordLower = keywordName.ToLowerInvariant();
+        IQueryable<KeywordRelation> query = _db.KeywordRelations
+            .Include(kr => kr.ChildKeyword)
+            .Where(kr =>
+                kr.CategoryId == categoryId &&
+                kr.ParentKeywordId == parentKeywordId &&
+                kr.ChildKeyword.Name.ToLower() == keywordLower);
+
+        if (!_userContext.IsAuthenticated || string.IsNullOrEmpty(_userContext.UserId))
+        {
+            query = query.Where(kr => !kr.IsPrivate && !kr.ChildKeyword.IsPrivate);
+        }
+        else
+        {
+            query = query.Where(kr =>
+                (!kr.IsPrivate || kr.CreatedBy == _userContext.UserId) &&
+                (!kr.ChildKeyword.IsPrivate || kr.ChildKeyword.CreatedBy == _userContext.UserId));
+        }
+
+        return await query
+            .Select(kr => (Guid?)kr.ChildKeywordId)
+            .FirstOrDefaultAsync(_cancellationToken);
     }
 
     /// <summary>
-    /// Applies keyword filtering to the query. First resolves keyword names to IDs,
-    /// respecting visibility (anonymous users see only global keywords, authenticated users
-    /// see global + their own private keywords). Then filters items that have any of the
-    /// specified keywords. Returns empty result if none of the requested keywords are found.
+    /// Applies keyword filtering to the query using AND semantics (items must have ALL selected keywords).
+    /// Handles the special "other" keyword which returns items with no rank-1 navigation keyword assigned.
+    /// First resolves keyword names to IDs, respecting visibility (anonymous users see only global keywords,
+    /// authenticated users see global + their own private keywords).
     /// </summary>
     private async Task<Result<IQueryable<Item>>> ApplyKeywordFilterAsync(
         IQueryable<Item> query,
@@ -222,6 +372,52 @@ internal sealed class ItemQueryBuilder
             return Result.Success(query);
         }
 
+        // Check if category is specified (required for "other" keyword and navigation context)
+        if (string.IsNullOrEmpty(request.Category))
+        {
+            // Without category, fall back to simple keyword matching (AND semantics)
+            return await ApplySimpleKeywordFilterAsync(query, request);
+        }
+
+        Guid? categoryId = await ResolveCategoryIdAsync(request.Category.Trim());
+        if (!categoryId.HasValue)
+        {
+            // Category not found, return empty result
+            return Result.Success(query.Where(i => false));
+        }
+
+        // Check for "other" keyword
+        List<string> normalizedKeywords = request.Keywords
+            .Select(k => k.Trim().ToLower())
+            .ToList();
+
+        bool hasOtherKeyword = normalizedKeywords.Contains("other");
+
+        if (hasOtherKeyword && normalizedKeywords.Count > 1)
+        {
+            // "other" cannot be combined with other keywords
+            return Result.Success(query.Where(i => false));
+        }
+
+        if (hasOtherKeyword)
+        {
+            // Special handling for "other": items with no rank-1 navigation keyword
+            return await ApplyOtherKeywordFilterAsync(query, categoryId.Value);
+        }
+
+        // Regular keyword filtering with AND semantics
+        return await ApplyAndKeywordFilterAsync(query, request, categoryId.Value);
+    }
+
+    /// <summary>
+    /// Applies simple keyword filtering with AND semantics when no category is specified.
+    /// When both public and private keywords share the same name, public keywords win;
+    /// if no public keyword exists for a given name, the user's private keyword is used.
+    /// </summary>
+    private async Task<Result<IQueryable<Item>>> ApplySimpleKeywordFilterAsync(
+        IQueryable<Item> query,
+        GetItems.QueryRequest request)
+    {
         IQueryable<Keyword> keywordQuery = _db.Keywords.AsQueryable();
 
         if (!_userContext.IsAuthenticated || string.IsNullOrEmpty(_userContext.UserId))
@@ -233,19 +429,137 @@ internal sealed class ItemQueryBuilder
             keywordQuery = keywordQuery.Where(k => !k.IsPrivate || (k.IsPrivate && k.CreatedBy == _userContext.UserId));
         }
 
-        List<Guid> visibleKeywordIds = await keywordQuery
-            .Where(k => request.Keywords.Contains(k.Name))
-            .Select(k => k.Id)
+        List<string> normalizedKeywords = request.Keywords!
+            .Select(k => k.Trim().ToLower())
+            .Where(k => !string.IsNullOrEmpty(k))
+            .ToList();
+
+        if (normalizedKeywords.Count == 0)
+        {
+            return Result.Success(query);
+        }
+
+        // Load all visible keyword candidates that match any requested name.
+        List<Keyword> candidates = await keywordQuery
+            .Where(k => normalizedKeywords.Contains(k.Name.ToLower()))
             .ToListAsync(_cancellationToken);
 
-        if (visibleKeywordIds.Count > 0)
+        // For each requested name, choose a single effective keyword ID:
+        // - Prefer public keyword when present
+        // - Otherwise fall back to user's private keyword (when visible)
+        List<Guid> effectiveKeywordIds = new();
+
+        foreach (string nameLower in normalizedKeywords)
         {
-            query = query.Where(i => i.ItemKeywords.Any(ik => visibleKeywordIds.Contains(ik.KeywordId)));
+            List<Keyword> matchesForName = candidates
+                .Where(k => k.Name.Equals(nameLower, StringComparison.OrdinalIgnoreCase))
+                .ToList();
+
+            if (matchesForName.Count == 0)
+            {
+                // Requested keyword not found in visible set -> no items should match
+                return Result.Success(query.Where(i => false));
+            }
+
+            Keyword? publicMatch = matchesForName.FirstOrDefault(k => !k.IsPrivate);
+            Keyword chosen = publicMatch ?? matchesForName[0];
+            effectiveKeywordIds.Add(chosen.Id);
+        }
+
+        // AND semantics: item must have ALL effective keywords
+        foreach (Guid keywordId in effectiveKeywordIds.Distinct())
+        {
+            Guid captured = keywordId;
+            query = query.Where(i => i.ItemKeywords.Any(ik => ik.KeywordId == captured));
+        }
+
+        return Result.Success(query);
+    }
+
+    /// <summary>
+    /// Applies keyword filtering with AND semantics, respecting category context.
+    /// When both public and private keywords share the same name, public keywords win;
+    /// if no public keyword exists for a given name, the user's private keyword is used.
+    /// </summary>
+    private async Task<Result<IQueryable<Item>>> ApplyAndKeywordFilterAsync(
+        IQueryable<Item> query,
+        GetItems.QueryRequest request,
+        Guid categoryId)
+    {
+        IQueryable<Keyword> keywordQuery = _db.Keywords.AsQueryable();
+
+        if (!_userContext.IsAuthenticated || string.IsNullOrEmpty(_userContext.UserId))
+        {
+            keywordQuery = keywordQuery.Where(k => !k.IsPrivate);
         }
         else
         {
-            query = query.Where(i => false);
+            keywordQuery = keywordQuery.Where(k => !k.IsPrivate || (k.IsPrivate && k.CreatedBy == _userContext.UserId));
         }
+
+        List<string> normalizedKeywords = request.Keywords!
+            .Select(k => k.Trim().ToLower())
+            .Where(k => !string.IsNullOrEmpty(k))
+            .ToList();
+
+        if (normalizedKeywords.Count == 0)
+        {
+            return Result.Success(query);
+        }
+
+        // Load all visible keyword candidates that match any requested name.
+        List<Keyword> candidates = await keywordQuery
+            .Where(k => normalizedKeywords.Contains(k.Name.ToLower()))
+            .ToListAsync(_cancellationToken);
+
+        List<Guid> effectiveKeywordIds = new();
+
+        foreach (string nameLower in normalizedKeywords)
+        {
+            List<Keyword> matchesForName = candidates
+                .Where(k => k.Name.Equals(nameLower, StringComparison.OrdinalIgnoreCase))
+                .ToList();
+
+            if (matchesForName.Count == 0)
+            {
+                // Requested keyword not found in visible set -> no items should match
+                return Result.Success(query.Where(i => false));
+            }
+
+            Keyword? publicMatch = matchesForName.FirstOrDefault(k => !k.IsPrivate);
+            Keyword chosen = publicMatch ?? matchesForName[0];
+            effectiveKeywordIds.Add(chosen.Id);
+        }
+
+        // AND semantics: item must have ALL effective keywords
+        foreach (Guid keywordId in effectiveKeywordIds.Distinct())
+        {
+            Guid captured = keywordId;
+            query = query.Where(i => i.ItemKeywords.Any(ik => ik.KeywordId == captured));
+        }
+
+        return Result.Success(query);
+    }
+
+    /// <summary>
+    /// Applies the special "other" keyword filter: items with no rank-1 navigation keyword assigned.
+    /// </summary>
+    private async Task<Result<IQueryable<Item>>> ApplyOtherKeywordFilterAsync(
+        IQueryable<Item> query,
+        Guid categoryId)
+    {
+        IQueryable<KeywordRelation> rank1Query = _db.KeywordRelations
+            .Where(kr => kr.CategoryId == categoryId && kr.ParentKeywordId == null);
+        if (!_userContext.IsAuthenticated || string.IsNullOrEmpty(_userContext.UserId))
+            rank1Query = rank1Query.Where(kr => !kr.IsPrivate);
+        else
+            rank1Query = rank1Query.Where(kr => !kr.IsPrivate || kr.CreatedBy == _userContext.UserId);
+        List<Guid> rank1KeywordIds = await rank1Query
+            .Select(kr => kr.ChildKeywordId)
+            .ToListAsync(_cancellationToken);
+
+        if (rank1KeywordIds.Count > 0)
+            query = query.Where(i => i.NavigationKeywordId1 == null || !rank1KeywordIds.Contains(i.NavigationKeywordId1.Value));
 
         return Result.Success(query);
     }
@@ -275,17 +589,10 @@ internal sealed class ItemQueryBuilder
                 Error.NotFound("Collection.NotFound", "Collection not found"));
         }
 
-        string? subject = _userContext.UserId;
-        if (string.IsNullOrEmpty(subject))
+        if (!await GetCollectionById.CanAccessCollectionAsync(_db, collection, _userContext, _cancellationToken))
         {
             return Result.Failure<IQueryable<Item>>(
-                Error.Validation("Items.Unauthorized", "Must be authenticated to view collection items"));
-        }
-
-        if (collection.CreatedBy != subject && !_userContext.IsAdmin)
-        {
-            return Result.Failure<IQueryable<Item>>(
-                Error.Validation("Collection.AccessDenied", "Access denied"));
+                Error.NotFound("Collection.NotFound", "Collection not found"));
         }
 
         List<Guid> itemIdsInCollection = await _db.CollectionItems

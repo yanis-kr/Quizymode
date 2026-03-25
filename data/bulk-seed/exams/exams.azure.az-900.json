@@ -1,0 +1,242 @@
+[
+  {
+    "category": "exams",
+    "navigationKeyword1": "azure",
+    "navigationKeyword2": "az-900",
+    "question": "What is an Azure region?",
+    "correctAnswer": "A set of datacenters deployed within a latency-defined perimeter",
+    "incorrectAnswers": [
+      "A single virtual machine host",
+      "A billing-only container",
+      "A subnet inside a virtual network"
+    ],
+    "explanation": "An Azure region is a geographic area containing one or more datacenters connected with low-latency networking.",
+    "keywords": [
+      "az-900",
+      "azure-fundamentals",
+      "azure-services"
+    ],
+    "source": "https://learn.microsoft.com/en-us/azure/reliability/regions-overview",
+    "seedId": "dde2cee7-05c5-45a9-88fe-92652e685d1f"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "azure",
+    "navigationKeyword2": "az-900",
+    "question": "What are Azure availability zones?",
+    "correctAnswer": "Separated groups of datacenters within a region",
+    "incorrectAnswers": [
+      "Different Azure subscriptions",
+      "Storage account tiers",
+      "Azure billing scopes"
+    ],
+    "explanation": "Availability zones are physically separated zones within a region with independent power, cooling, and networking.",
+    "keywords": [
+      "az-900",
+      "azure-fundamentals",
+      "azure-services"
+    ],
+    "source": "https://learn.microsoft.com/en-us/azure/reliability/availability-zones-overview",
+    "seedId": "ad80b7e2-4db1-4891-8575-0cc5169dbdff"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "azure",
+    "navigationKeyword2": "az-900",
+    "question": "Which Azure service provides virtual machines in the cloud?",
+    "correctAnswer": "Azure Virtual Machines",
+    "incorrectAnswers": [
+      "Azure Blob Storage",
+      "Azure Monitor",
+      "Microsoft Entra ID"
+    ],
+    "explanation": "Azure Virtual Machines provide virtualization without needing to buy and maintain physical hardware.",
+    "keywords": [
+      "az-900",
+      "azure-fundamentals",
+      "azure-services"
+    ],
+    "source": "https://learn.microsoft.com/en-us/azure/virtual-machines/overview",
+    "seedId": "0757021b-73a9-4e90-965e-28b56028e61c"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "azure",
+    "navigationKeyword2": "az-900",
+    "question": "Which Azure service is the fundamental building block for a private network in Azure?",
+    "correctAnswer": "Azure Virtual Network",
+    "incorrectAnswers": [
+      "Azure Blob Storage",
+      "Azure App Service",
+      "Azure Monitor"
+    ],
+    "explanation": "Azure Virtual Network provides private networking for Azure resources, the internet, and on-premises networks.",
+    "keywords": [
+      "az-900",
+      "azure-fundamentals",
+      "azure-services"
+    ],
+    "source": "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-networks-overview",
+    "seedId": "1772def8-cc39-4124-b9b3-1ee4a493b1ac"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "azure",
+    "navigationKeyword2": "az-900",
+    "question": "Which Azure storage service is Microsoft's object storage solution for the cloud?",
+    "correctAnswer": "Azure Blob Storage",
+    "incorrectAnswers": [
+      "Azure Virtual Machines",
+      "Azure RBAC",
+      "Azure Load Balancer"
+    ],
+    "explanation": "Azure Blob Storage is optimized for storing large amounts of unstructured data.",
+    "keywords": [
+      "az-900",
+      "azure-fundamentals",
+      "azure-services"
+    ],
+    "source": "https://learn.microsoft.com/en-us/azure/storage/blobs/storage-blobs-introduction",
+    "seedId": "29776fef-e3d3-481b-a3f9-0e04f335ea4d"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "azure",
+    "navigationKeyword2": "az-900",
+    "question": "Which Microsoft service provides cloud-based identity and access management for Azure?",
+    "correctAnswer": "Microsoft Entra ID",
+    "incorrectAnswers": [
+      "Azure Blob Storage",
+      "Azure Load Balancer",
+      "Azure Functions"
+    ],
+    "explanation": "Microsoft Entra ID is Microsoft's cloud-based identity and access management service.",
+    "keywords": [
+      "az-900",
+      "azure-fundamentals",
+      "azure-services"
+    ],
+    "source": "https://learn.microsoft.com/en-us/entra/fundamentals/what-is-entra",
+    "seedId": "f47629b4-c5ef-40f0-b48b-9a4831f88474"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "azure",
+    "navigationKeyword2": "az-900",
+    "question": "Which Azure feature provides fine-grained access management to Azure resources?",
+    "correctAnswer": "Azure RBAC",
+    "incorrectAnswers": [
+      "Azure Blob Storage",
+      "Azure Virtual Machine Scale Sets",
+      "Azure Load Balancer"
+    ],
+    "explanation": "Azure RBAC controls who has access to Azure resources and what they can do.",
+    "keywords": [
+      "az-900",
+      "azure-fundamentals",
+      "azure-services"
+    ],
+    "source": "https://learn.microsoft.com/en-us/azure/role-based-access-control/overview",
+    "seedId": "de595698-bb35-4747-b085-f0d7a6952ba4"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "azure",
+    "navigationKeyword2": "az-900",
+    "question": "Which Azure service is Microsoft's unified observability service?",
+    "correctAnswer": "Azure Monitor",
+    "incorrectAnswers": [
+      "Azure Virtual Network",
+      "Microsoft Entra ID",
+      "Azure App Service"
+    ],
+    "explanation": "Azure Monitor collects, analyzes, and acts on telemetry from cloud and hybrid environments.",
+    "keywords": [
+      "az-900",
+      "azure-fundamentals",
+      "azure-services"
+    ],
+    "source": "https://learn.microsoft.com/en-us/azure/azure-monitor/fundamentals/overview",
+    "seedId": "cd1e50a5-a702-4afc-914f-22e03880f1e0"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "azure",
+    "navigationKeyword2": "az-900",
+    "question": "Which Azure service provides the deployment and management layer for Azure resources?",
+    "correctAnswer": "Azure Resource Manager",
+    "incorrectAnswers": [
+      "Azure Blob Storage",
+      "Azure Load Balancer",
+      "Azure Virtual Machines"
+    ],
+    "explanation": "Azure Resource Manager is the deployment and management service for Azure.",
+    "keywords": [
+      "az-900",
+      "azure-fundamentals",
+      "azure-services"
+    ],
+    "source": "https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/overview",
+    "seedId": "68c9f032-2614-4c46-9b8d-5968008887d8"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "azure",
+    "navigationKeyword2": "az-900",
+    "question": "What is an Azure resource group?",
+    "correctAnswer": "A container that holds related resources for an Azure solution",
+    "incorrectAnswers": [
+      "A physical Azure datacenter",
+      "An identity provider",
+      "A virtual machine image"
+    ],
+    "explanation": "A resource group is used to manage related Azure resources together.",
+    "keywords": [
+      "az-900",
+      "azure-fundamentals",
+      "azure-services"
+    ],
+    "source": "https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/overview",
+    "seedId": "cc358bed-aa91-4298-8e1c-6126e2fdcb28"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "azure",
+    "navigationKeyword2": "az-900",
+    "question": "Which Azure service lets you create and manage a group of load-balanced virtual machines that can scale automatically?",
+    "correctAnswer": "Azure Virtual Machine Scale Sets",
+    "incorrectAnswers": [
+      "Azure Blob Storage",
+      "Azure RBAC",
+      "Azure App Service"
+    ],
+    "explanation": "Virtual Machine Scale Sets manage groups of load-balanced VMs and can autoscale.",
+    "keywords": [
+      "az-900",
+      "azure-fundamentals",
+      "azure-services"
+    ],
+    "source": "https://learn.microsoft.com/en-us/azure/virtual-machine-scale-sets/overview",
+    "seedId": "c5992c93-3fa5-4ccb-a49a-e28038b7a580"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "azure",
+    "navigationKeyword2": "az-900",
+    "question": "Which Azure service provides serverless, event-driven compute?",
+    "correctAnswer": "Azure Functions",
+    "incorrectAnswers": [
+      "Azure Blob Storage",
+      "Azure Load Balancer",
+      "Azure Virtual Network"
+    ],
+    "explanation": "Azure Functions provides scalable, serverless hosting for event-driven code.",
+    "keywords": [
+      "az-900",
+      "azure-fundamentals",
+      "azure-services"
+    ],
+    "source": "https://learn.microsoft.com/en-us/azure/azure-functions/",
+    "seedId": "97a3b56f-784d-47c5-a184-884ee1aa2881"
+  }
+]

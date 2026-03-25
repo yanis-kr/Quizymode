@@ -1,24 +1,28 @@
 import type { ItemResponse } from "@/types/api";
-import type { RatingFilterValue } from "../types/filters";
+import type { RatingRangeFilter } from "../types/filters";
 
 interface FilterItemsParams {
   items: ItemResponse[];
   searchText: string;
-  ratingFilter: RatingFilterValue;
+  ratingRange: RatingRangeFilter;
   ratingsMap: Map<string, number | null>;
   ratingsLoaded: boolean;
 }
 
 /**
- * Filters items based on search text and rating filter
+ * Filters items based on search text and rating (range or only unrated).
  */
 export const filterItems = ({
   items,
   searchText,
-  ratingFilter,
+  ratingRange,
   ratingsMap,
   ratingsLoaded,
 }: FilterItemsParams): ItemResponse[] => {
+  const onlyUnrated = ratingRange.onlyUnrated === true;
+  const hasRange = ratingRange.min !== null || ratingRange.max !== null;
+  const hasRatingFilter = onlyUnrated || hasRange;
+
   return items.filter((item) => {
     // Search filter
     if (searchText) {
@@ -35,55 +39,31 @@ export const filterItems = ({
       if (!matchesSearch) return false;
     }
 
-    // Rating filter - only apply if ratings query has succeeded
-    if (ratingFilter !== "all" && ratingsLoaded) {
+    // Rating filter
+    if (hasRatingFilter && ratingsLoaded) {
       const averageStars = ratingsMap.get(item.id);
       const itemInMap = ratingsMap.has(item.id);
-
-      if (!itemInMap) {
-        // Item not in ratings map yet
-        if (ratingFilter === "none") {
-          // Include items with no rating data
-          return true;
-        } else {
-          // For rating filters (1+, 2+, etc.), exclude items not in map
-          return false;
-        }
-      }
-
-      // Item is in map - check its rating value
-      const hasValidRating =
+      const rating =
+        itemInMap &&
         averageStars !== null &&
         averageStars !== undefined &&
         typeof averageStars === "number" &&
         !isNaN(averageStars) &&
-        averageStars > 0;
+        averageStars > 0
+          ? averageStars
+          : null;
 
-      if (ratingFilter === "none") {
-        // Show only items with no rating
-        return !hasValidRating;
-      } else {
-        // For rating filters (1+, 2+, etc.), only show items with valid ratings
-        if (!hasValidRating) {
-          return false;
-        }
-
-        // Now check the rating threshold
-        const rating = averageStars as number;
-        if (ratingFilter === "1+") {
-          return rating >= 1;
-        } else if (ratingFilter === "2+") {
-          return rating >= 2;
-        } else if (ratingFilter === "3+") {
-          return rating >= 3;
-        } else if (ratingFilter === "4+") {
-          return rating >= 4;
-        } else if (ratingFilter === "5") {
-          // For exactly 5 stars, check if it's >= 4.5 (to account for rounding)
-          return rating >= 4.5;
-        }
-        return true;
+      if (onlyUnrated) {
+        return rating === null;
       }
+
+      if (rating === null) {
+        return ratingRange.includeUnrated === true;
+      }
+
+      const min = ratingRange.min ?? 1;
+      const max = ratingRange.max ?? 5;
+      return rating >= min && rating <= max;
     }
 
     return true;

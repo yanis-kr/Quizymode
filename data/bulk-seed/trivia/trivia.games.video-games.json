@@ -1,0 +1,192 @@
+[
+  {
+    "category": "trivia",
+    "navigationKeyword1": "games",
+    "navigationKeyword2": "video-games",
+    "question": "Tetris as stacking what shapes?",
+    "correctAnswer": "tetromino blocks",
+    "incorrectAnswers": [
+      "hexagonal prisms",
+      "spheres only",
+      "triangles only"
+    ],
+    "explanation": "Tetris stacks tetrominoes.",
+    "keywords": [
+      "tetris",
+      "puzzle"
+    ],
+    "source": "https://www.britannica.com/topic/Tetris",
+    "seedId": "54710732-aaa0-4949-b8dc-eddc1701d9da"
+  },
+  {
+    "category": "trivia",
+    "navigationKeyword1": "games",
+    "navigationKeyword2": "video-games",
+    "question": "Pong to simulating which sport electronically?",
+    "correctAnswer": "table tennis",
+    "incorrectAnswers": [
+      "soccer",
+      "golf",
+      "boxing"
+    ],
+    "explanation": "Pong simulates table tennis.",
+    "keywords": [
+      "pong",
+      "arcade"
+    ],
+    "source": "https://www.britannica.com/topic/Pong-electronic-game",
+    "seedId": "705ca6bd-25cf-423f-b79b-c5f418ef4545"
+  },
+  {
+    "category": "trivia",
+    "navigationKeyword1": "games",
+    "navigationKeyword2": "video-games",
+    "question": "Spacewar! to early development at which university?",
+    "correctAnswer": "MIT",
+    "incorrectAnswers": [
+      "Oxford",
+      "Sorbonne",
+      "Tokyo University"
+    ],
+    "explanation": "Spacewar! emerged from MIT-era computing culture.",
+    "keywords": [
+      "spacewar",
+      "history"
+    ],
+    "source": "https://www.britannica.com/topic/Spacewar-electronic-game",
+    "seedId": "48aa2dec-1df5-4c49-a4e0-c9052895537d"
+  },
+  {
+    "category": "trivia",
+    "navigationKeyword1": "games",
+    "navigationKeyword2": "video-games",
+    "question": "Which online play format popularized in its battle royale mode is associated with Fortnite?",
+    "correctAnswer": "last-player-standing matches",
+    "incorrectAnswers": [
+      "turn-based mail",
+      "hot-seat only",
+      "LAN chess"
+    ],
+    "explanation": "Fortnite\u2019s battle royale is last-player-standing.",
+    "keywords": [
+      "fortnite",
+      "battle-royale"
+    ],
+    "source": "https://www.britannica.com/topic/Fortnite-electronic-game",
+    "seedId": "6c1859d5-3737-4447-973d-2bb92da46004"
+  },
+  {
+    "category": "trivia",
+    "navigationKeyword1": "games",
+    "navigationKeyword2": "video-games",
+    "question": "Minecraft emphasizes mining and what complementary activity?",
+    "correctAnswer": "crafting",
+    "incorrectAnswers": [
+      "racing",
+      "dancing",
+      "singing"
+    ],
+    "explanation": "Minecraft is mining and crafting sandbox play.",
+    "keywords": [
+      "minecraft",
+      "sandbox"
+    ],
+    "source": "https://www.britannica.com/topic/Minecraft",
+    "seedId": "918e11ac-a626-4bef-a2d3-e2f218f07172"
+  },
+  {
+    "category": "trivia",
+    "navigationKeyword1": "games",
+    "navigationKeyword2": "video-games",
+    "question": "Which genre is most closely associated with World of Warcraft?",
+    "correctAnswer": "MMORPG",
+    "incorrectAnswers": [
+      "rhythm game",
+      "visual novel",
+      "dating sim"
+    ],
+    "explanation": "WoW is a massively multiplayer online RPG.",
+    "keywords": [
+      "wow",
+      "mmorpg"
+    ],
+    "source": "https://www.britannica.com/topic/World-of-Warcraft",
+    "seedId": "e6d727c6-7212-4444-acf2-643519fbc35e"
+  },
+  {
+    "category": "trivia",
+    "navigationKeyword1": "games",
+    "navigationKeyword2": "video-games",
+    "question": "Doom (1993) with popularizing which perspective shooters?",
+    "correctAnswer": "first-person",
+    "incorrectAnswers": [
+      "third-person only",
+      "isometric only",
+      "side-scroller only"
+    ],
+    "explanation": "Doom helped popularize FPS.",
+    "keywords": [
+      "doom",
+      "fps"
+    ],
+    "source": "https://www.britannica.com/topic/Doom-electronic-game",
+    "seedId": "7f7d7871-6fd3-4f5c-bf3f-2ca88a7b776f"
+  },
+  {
+    "category": "trivia",
+    "navigationKeyword1": "games",
+    "navigationKeyword2": "video-games",
+    "question": "Angry Birds as physics puzzles involving launching what at structures?",
+    "correctAnswer": "birds",
+    "incorrectAnswers": [
+      "cats",
+      "rocks",
+      "boats"
+    ],
+    "explanation": "Angry Birds launches birds at structures.",
+    "keywords": [
+      "angry-birds",
+      "mobile"
+    ],
+    "source": "https://www.britannica.com/topic/Angry-Birds-electronic-game",
+    "seedId": "7cdf8cd9-6ab1-46f7-9fac-19617b7eef7a"
+  },
+  {
+    "category": "trivia",
+    "navigationKeyword1": "games",
+    "navigationKeyword2": "video-games",
+    "question": "Which platform category first is associated with Candy Crush Saga?",
+    "correctAnswer": "mobile puzzle",
+    "incorrectAnswers": [
+      "flight simulator",
+      "MMO raid",
+      "RTS"
+    ],
+    "explanation": "Candy Crush is a mobile puzzle hit.",
+    "keywords": [
+      "candy-crush",
+      "mobile"
+    ],
+    "source": "https://www.britannica.com/topic/Candy-Crush-Saga",
+    "seedId": "283818a1-cfed-4df6-a3f4-390f895f548e"
+  },
+  {
+    "category": "trivia",
+    "navigationKeyword1": "games",
+    "navigationKeyword2": "video-games",
+    "question": "Esports to competitive play of what?",
+    "correctAnswer": "video games",
+    "incorrectAnswers": [
+      "board games only",
+      "card games only",
+      "outdoor sports only"
+    ],
+    "explanation": "Esports is organized competitive video gaming.",
+    "keywords": [
+      "esports",
+      "competition"
+    ],
+    "source": "https://www.britannica.com/topic/esports",
+    "seedId": "78b07049-f92d-473b-9144-c445926c13b3"
+  }
+]

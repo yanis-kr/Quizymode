@@ -1,0 +1,192 @@
+[
+  {
+    "category": "trivia",
+    "navigationKeyword1": "famous-people",
+    "navigationKeyword2": "actors",
+    "question": "At the 95th Academy Awards, who won Best Actor?",
+    "correctAnswer": "Brendan Fraser",
+    "incorrectAnswers": [
+      "Austin Butler",
+      "Colin Farrell",
+      "Paul Mescal"
+    ],
+    "explanation": "Brendan Fraser won Best Actor at the 95th Academy Awards.",
+    "keywords": [
+      "oscars",
+      "film"
+    ],
+    "source": "https://www.oscars.org/oscars/ceremonies/2023",
+    "seedId": "28ee7657-70e2-4ca3-904c-6cb8bf7714b5"
+  },
+  {
+    "category": "trivia",
+    "navigationKeyword1": "famous-people",
+    "navigationKeyword2": "actors",
+    "question": "At the 94th Academy Awards, who won Best Actor?",
+    "correctAnswer": "Will Smith",
+    "incorrectAnswers": [
+      "Benedict Cumberbatch",
+      "Andrew Garfield",
+      "Denzel Washington"
+    ],
+    "explanation": "Will Smith won Best Actor at the 94th Academy Awards.",
+    "keywords": [
+      "oscars",
+      "film"
+    ],
+    "source": "https://www.oscars.org/oscars/ceremonies/2022",
+    "seedId": "667a863d-09d6-4e29-8186-1e0b255e9aa8"
+  },
+  {
+    "category": "trivia",
+    "navigationKeyword1": "famous-people",
+    "navigationKeyword2": "actors",
+    "question": "Charlie Chaplin as a star of which silent-film era medium?",
+    "correctAnswer": "motion pictures",
+    "incorrectAnswers": [
+      "radio drama",
+      "television news",
+      "opera stage only"
+    ],
+    "explanation": "Chaplin is tied to silent motion pictures.",
+    "keywords": [
+      "silent-film",
+      "comedy"
+    ],
+    "source": "https://www.britannica.com/biography/Charlie-Chaplin",
+    "seedId": "337faee9-c3f5-43ad-a7d5-a20003ba55f1"
+  },
+  {
+    "category": "trivia",
+    "navigationKeyword1": "famous-people",
+    "navigationKeyword2": "actors",
+    "question": "Meryl Streep with extensive work primarily in what medium?",
+    "correctAnswer": "film and television",
+    "incorrectAnswers": [
+      "ballet",
+      "opera singing",
+      "classical sculpture"
+    ],
+    "explanation": "Streep\u2019s film and television career.",
+    "keywords": [
+      "acting",
+      "awards"
+    ],
+    "source": "https://www.britannica.com/biography/Meryl-Streep",
+    "seedId": "cb280c47-5761-468d-acf2-8330eadb5d86"
+  },
+  {
+    "category": "trivia",
+    "navigationKeyword1": "famous-people",
+    "navigationKeyword2": "actors",
+    "question": "Sidney Poitier was the first Black actor to win which competitive Oscar category?",
+    "correctAnswer": "Best Actor",
+    "incorrectAnswers": [
+      "Best Supporting Actor",
+      "Best Director",
+      "Best Cinematography"
+    ],
+    "explanation": "Poitier\u2019s historic Best Actor win.",
+    "keywords": [
+      "oscars",
+      "history"
+    ],
+    "source": "https://www.britannica.com/biography/Sidney-Poitier",
+    "seedId": "dfafa523-5ee8-4ac5-9083-3229e07ab287"
+  },
+  {
+    "category": "trivia",
+    "navigationKeyword1": "famous-people",
+    "navigationKeyword2": "actors",
+    "question": "Which classic 1961 film set in New York is most associated with Audrey Hepburn strongly?",
+    "correctAnswer": "Breakfast at Tiffany\u2019s",
+    "incorrectAnswers": [
+      "Casablanca",
+      "Gone with the Wind",
+      "The Godfather"
+    ],
+    "explanation": "Breakfast at Tiffany\u2019s is a signature Hepburn film.",
+    "keywords": [
+      "classic-film",
+      "hollywood"
+    ],
+    "source": "https://www.britannica.com/biography/Audrey-Hepburn",
+    "seedId": "a7da23c9-7c6d-48c0-bafa-2e7727ab0665"
+  },
+  {
+    "category": "trivia",
+    "navigationKeyword1": "famous-people",
+    "navigationKeyword2": "actors",
+    "question": "Denzel Washington to multiple Academy Awards including a Supporting Actor win for which 1989 film?",
+    "correctAnswer": "Glory",
+    "incorrectAnswers": [
+      "Training Day",
+      "Malcolm X",
+      "Fences"
+    ],
+    "explanation": "Washington\u2019s Supporting Actor win for Glory.",
+    "keywords": [
+      "oscars",
+      "film"
+    ],
+    "source": "https://www.britannica.com/biography/Denzel-Washington",
+    "seedId": "d2284fe9-6a7e-430e-b86a-24f6c0cc169a"
+  },
+  {
+    "category": "trivia",
+    "navigationKeyword1": "famous-people",
+    "navigationKeyword2": "actors",
+    "question": "Katharine Hepburn as setting a record for competitive Oscars won by a performer in which categories?",
+    "correctAnswer": "acting categories",
+    "incorrectAnswers": [
+      "directing categories",
+      "music categories",
+      "visual effects categories"
+    ],
+    "explanation": "Hepburn\u2019s record acting Oscar wins.",
+    "keywords": [
+      "oscars",
+      "classic-film"
+    ],
+    "source": "https://www.britannica.com/biography/Katharine-Hepburn",
+    "seedId": "292d57aa-0fa1-48cd-bfe2-67d0e52e0bba"
+  },
+  {
+    "category": "trivia",
+    "navigationKeyword1": "famous-people",
+    "navigationKeyword2": "actors",
+    "question": "Tom Hanks with back-to-back Best Actor Oscars in the 1990s for Philadelphia and which other film?",
+    "correctAnswer": "Forrest Gump",
+    "incorrectAnswers": [
+      "Saving Private Ryan",
+      "Cast Away",
+      "Apollo 13"
+    ],
+    "explanation": "Tom Hanks won back-to-back Best Actor Oscars for Philadelphia and Forrest Gump.",
+    "keywords": [
+      "oscars",
+      "1990s"
+    ],
+    "source": "https://www.britannica.com/biography/Tom-Hanks",
+    "seedId": "b07c0349-792d-453b-a639-065548f188d4"
+  },
+  {
+    "category": "trivia",
+    "navigationKeyword1": "famous-people",
+    "navigationKeyword2": "actors",
+    "question": "Leonardo DiCaprio to an Oscar win for which survival epic?",
+    "correctAnswer": "The Revenant",
+    "incorrectAnswers": [
+      "Titanic",
+      "The Aviator",
+      "The Wolf of Wall Street"
+    ],
+    "explanation": "DiCaprio\u2019s Oscar is tied to The Revenant.",
+    "keywords": [
+      "oscars",
+      "film"
+    ],
+    "source": "https://www.britannica.com/biography/Leonardo-DiCaprio",
+    "seedId": "7e711e92-58a5-46f3-b8c6-7e4d6ba48ab0"
+  }
+]

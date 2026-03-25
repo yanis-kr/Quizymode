@@ -36,6 +36,49 @@ const AdminDashboardPage = () => {
           <h3 className="text-lg font-medium text-gray-900 mb-2">Audit Logs</h3>
           <p className="text-sm text-gray-500">View system audit logs with filters</p>
         </Link>
+        <Link
+          to="/admin/keywords"
+          className="bg-white shadow rounded-lg p-6 hover:shadow-lg transition-shadow cursor-pointer"
+        >
+          <h3 className="text-lg font-medium text-gray-900 mb-2">Manage Keywords</h3>
+          <p className="text-sm text-gray-500">Assign keywords to parents and set rank</p>
+        </Link>
+        <Link
+          to="/admin/keyword-review"
+          className="bg-white shadow rounded-lg p-6 hover:shadow-lg transition-shadow cursor-pointer"
+        >
+          <h3 className="text-lg font-medium text-gray-900 mb-2">
+            Review Private Keywords
+          </h3>
+          <p className="text-sm text-gray-500">
+            Approve or reject new private keywords
+          </p>
+        </Link>
+        <Link
+          to="/admin/categories"
+          className="bg-white shadow rounded-lg p-6 hover:shadow-lg transition-shadow cursor-pointer"
+        >
+          <h3 className="text-lg font-medium text-gray-900 mb-2">Manage Categories</h3>
+          <p className="text-sm text-gray-500">Rename categories</p>
+        </Link>
+        <Link
+          to="/admin/user-settings"
+          className="bg-white shadow rounded-lg p-6 hover:shadow-lg transition-shadow cursor-pointer"
+        >
+          <h3 className="text-lg font-medium text-gray-900 mb-2">User Settings</h3>
+          <p className="text-sm text-gray-500">
+            Review and update per-user study guide size limits
+          </p>
+        </Link>
+        <Link
+          to="/admin/seed-sync"
+          className="bg-white shadow rounded-lg p-6 hover:shadow-lg transition-shadow cursor-pointer"
+        >
+          <h3 className="text-lg font-medium text-gray-900 mb-2">Seed Sync</h3>
+          <p className="text-sm text-gray-500">
+            Preview and apply repo-managed seed manifests
+          </p>
+        </Link>
       </div>
     </div>
   );

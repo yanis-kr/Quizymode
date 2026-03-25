@@ -28,7 +28,8 @@ public static class GetItems
         Guid? CollectionId,
         bool? IsRandom,
         int Page = 1,
-        int PageSize = 10);
+        int PageSize = 10,
+        List<string>? NavigationKeywords = null);
 
     public sealed record Response(
         List<ItemResponse> Items,
@@ -48,7 +49,10 @@ public static class GetItems
         DateTime CreatedAt,
         List<KeywordResponse> Keywords,
         List<CollectionResponse> Collections,
-        string? Source);
+        string? Source,
+        string? UploadId = null,
+        decimal? FactualRisk = null,
+        string? ReviewComments = null);
 
     public sealed record KeywordResponse(
         string Id,
@@ -83,6 +87,7 @@ public static class GetItems
             string? category,
             bool? isPrivate,
             string? keywords,
+            string? nav,
             Guid? collectionId,
             bool? isRandom,
             int page = 1,
@@ -109,7 +114,15 @@ public static class GetItems
                     .ToList();
             }
 
-            var request = new QueryRequest(category, isPrivate, keywordList, collectionId, isRandom, page, pageSize);
+            List<string>? navigationKeywordList = null;
+            if (!string.IsNullOrEmpty(nav))
+            {
+                navigationKeywordList = nav.Split(',', StringSplitOptions.RemoveEmptyEntries | StringSplitOptions.TrimEntries)
+                    .Where(k => !string.IsNullOrWhiteSpace(k))
+                    .ToList();
+            }
+
+            var request = new QueryRequest(category, isPrivate, keywordList, collectionId, isRandom, page, pageSize, navigationKeywordList);
             Result<Response> result = await GetItemsHandler.HandleAsync(request, db, userContext, cancellationToken);
 
             return result.Match(

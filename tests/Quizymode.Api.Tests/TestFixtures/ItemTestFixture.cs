@@ -1,9 +1,13 @@
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Logging.Abstractions;
 using Moq;
+using Microsoft.Extensions.Options;
 using Quizymode.Api.Services;
+using Quizymode.Api.Services.Taxonomy;
 using Quizymode.Api.Shared.Models;
+using Quizymode.Api.Shared.Options;
 
 namespace Quizymode.Api.Tests.TestFixtures;
 
@@ -14,14 +18,18 @@ namespace Quizymode.Api.Tests.TestFixtures;
 public abstract class ItemTestFixture : DatabaseTestFixture
 {
     protected ISimHashService SimHashService { get; }
-    protected ICategoryResolver CategoryResolver { get; }
+    protected ITaxonomyRegistry TaxonomyRegistry { get; }
+    protected ITaxonomyItemCategoryResolver TaxonomyItemCategoryResolver { get; }
 
     protected ItemTestFixture()
     {
         SimHashService = new SimHashService();
-        
-        ILogger<CategoryResolver> logger = NullLogger<CategoryResolver>.Instance;
-        CategoryResolver = new CategoryResolver(DbContext, logger);
+
+        IHostEnvironment hostEnvironment = new TestHostEnvironment();
+        IOptions<TaxonomyOptions> taxonomyOptions = Options.Create(new TaxonomyOptions());
+        ILogger<TaxonomyRegistry> taxonomyLogger = NullLogger<TaxonomyRegistry>.Instance;
+        TaxonomyRegistry = new TaxonomyRegistry(hostEnvironment, taxonomyOptions, taxonomyLogger);
+        TaxonomyItemCategoryResolver = new TaxonomyItemCategoryResolver(DbContext, TaxonomyRegistry);
     }
 
     /// <summary>
@@ -76,7 +84,7 @@ public abstract class ItemTestFixture : DatabaseTestFixture
         // Note: Category names are unique (unique constraint on Name), so we check by name only
         Category? category = await DbContext.Categories
             .FirstOrDefaultAsync(c => c.Name == categoryName);
-        
+
         if (category is null)
         {
             category = new Category
@@ -91,7 +99,9 @@ public abstract class ItemTestFixture : DatabaseTestFixture
             await DbContext.SaveChangesAsync();
         }
 
-        // Create item
+        // Ensure geography (or test category) has keyword relations for nav; create if missing
+        (Guid nav1Id, Guid nav2Id) = await EnsureCategoryHasKeywordRelationsAsync(category.Id, categoryName, createdBy);
+
         string questionText = question.Trim().ToLowerInvariant();
         Item item = new Item
         {
@@ -105,7 +115,9 @@ public abstract class ItemTestFixture : DatabaseTestFixture
             FuzzyBucket = SimHashService.GetFuzzyBucket(SimHashService.ComputeSimHash(questionText)),
             CreatedBy = createdBy,
             CreatedAt = DateTime.UtcNow,
-            CategoryId = category.Id
+            CategoryId = category.Id,
+            NavigationKeywordId1 = nav1Id,
+            NavigationKeywordId2 = nav2Id
         };
 
         DbContext.Items.Add(item);
@@ -113,5 +125,73 @@ public abstract class ItemTestFixture : DatabaseTestFixture
 
         return item;
     }
-}
 
+    /// <summary>
+    /// Ensures a public <c>geography</c> category and taxonomy-aligned nav keywords exist (for item/bulk tests).
+    /// </summary>
+    protected async Task EnsureGeographyPublicWithNavAsync(string createdBy)
+    {
+        Category? category = await DbContext.Categories.FirstOrDefaultAsync(c => c.Name.ToLower() == "geography");
+        if (category is null)
+        {
+            category = new Category
+            {
+                Id = Guid.NewGuid(),
+                Name = "geography",
+                IsPrivate = false,
+                CreatedBy = createdBy,
+                CreatedAt = DateTime.UtcNow
+            };
+            DbContext.Categories.Add(category);
+            await DbContext.SaveChangesAsync();
+        }
+        else if (category.IsPrivate)
+        {
+            category.IsPrivate = false;
+            await DbContext.SaveChangesAsync();
+        }
+
+        await EnsureCategoryHasKeywordRelationsAsync(category.Id, "geography", createdBy);
+    }
+
+    /// <summary>
+    /// Ensures the category has at least one rank-1 and one rank-2 keyword relation aligned with taxonomy
+    /// (e.g. geography: <c>capitals</c> → <c>europe</c>). Returns (nav1KeywordId, nav2KeywordId).
+    /// </summary>
+    protected async Task<(Guid Nav1Id, Guid Nav2Id)> EnsureCategoryHasKeywordRelationsAsync(Guid categoryId, string categoryName, string createdBy)
+    {
+        const string rank1Name = "capitals";
+        const string rank2Name = "europe";
+        Keyword? k1 = await DbContext.Keywords.FirstOrDefaultAsync(k => k.Name == rank1Name);
+        if (k1 is null)
+        {
+            k1 = new Keyword { Id = Guid.NewGuid(), Name = rank1Name, IsPrivate = false, CreatedBy = createdBy, CreatedAt = DateTime.UtcNow };
+            DbContext.Keywords.Add(k1);
+            await DbContext.SaveChangesAsync();
+        }
+
+        Keyword? k2 = await DbContext.Keywords.FirstOrDefaultAsync(k => k.Name == rank2Name);
+        if (k2 is null)
+        {
+            k2 = new Keyword { Id = Guid.NewGuid(), Name = rank2Name, IsPrivate = false, CreatedBy = createdBy, CreatedAt = DateTime.UtcNow };
+            DbContext.Keywords.Add(k2);
+            await DbContext.SaveChangesAsync();
+        }
+
+        bool hasR1 = await DbContext.KeywordRelations.AnyAsync(kr => kr.CategoryId == categoryId && kr.ParentKeywordId == null && kr.ChildKeywordId == k1.Id);
+        if (!hasR1)
+        {
+            DbContext.KeywordRelations.Add(new KeywordRelation { Id = Guid.NewGuid(), CategoryId = categoryId, ParentKeywordId = null, ChildKeywordId = k1.Id, SortOrder = 0, CreatedAt = DateTime.UtcNow });
+            await DbContext.SaveChangesAsync();
+        }
+
+        bool hasR2 = await DbContext.KeywordRelations.AnyAsync(kr => kr.CategoryId == categoryId && kr.ParentKeywordId == k1.Id && kr.ChildKeywordId == k2.Id);
+        if (!hasR2)
+        {
+            DbContext.KeywordRelations.Add(new KeywordRelation { Id = Guid.NewGuid(), CategoryId = categoryId, ParentKeywordId = k1.Id, ChildKeywordId = k2.Id, SortOrder = 0, CreatedAt = DateTime.UtcNow });
+            await DbContext.SaveChangesAsync();
+        }
+
+        return (k1.Id, k2.Id);
+    }
+}

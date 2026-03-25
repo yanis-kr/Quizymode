@@ -1,49 +1,144 @@
-import { useState } from "react";
-import { useNavigate } from "react-router-dom";
-import { useMutation, useQueryClient } from "@tanstack/react-query";
+import { useMemo, useState } from "react";
+import { Link, Navigate, useLocation, useNavigate, useSearchParams } from "react-router-dom";
+import { ArrowLeftIcon } from "@heroicons/react/24/outline";
+import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
+import { isAxiosError } from "axios";
 import { itemsApi } from "@/api/items";
+import { taxonomyApi } from "@/api/taxonomy";
 import { useAuth } from "@/contexts/AuthContext";
-import { Navigate } from "react-router-dom";
-import ErrorMessage from "@/components/ErrorMessage";
-import { categoriesApi } from "@/api/categories";
-import { useQuery } from "@tanstack/react-query";
-import type { KeywordRequest } from "@/types/api";
+import { ItemForm, type ItemFormValues } from "@/components/items/ItemForm";
+import type { CreateItemRequest } from "@/types/api";
+import { validateNavigationKeywordName } from "@/utils/navigationKeywordRules";
+import { useExtraKeywordAutocompleteSource } from "@/hooks/useExtraKeywordAutocompleteSource";
+import { parseKeywordsParam } from "@/utils/addItemsScopeUrl";
+import LoadingSpinner from "@/components/LoadingSpinner";
 
-const CreateItemPage = () => {
-  const { isAuthenticated, isAdmin } = useAuth();
-  const navigate = useNavigate();
-  const queryClient = useQueryClient();
-  const [formData, setFormData] = useState({
-    category: "",
-    isPrivate: true, // Default to true for regular users
+interface ApiValidationError {
+  errorMessage?: string;
+  message?: string;
+}
+
+interface ApiProblemDetails {
+  title?: string;
+  detail?: string;
+}
+
+type CreateItemErrorResponse = ApiValidationError[] | string | ApiProblemDetails;
+
+function buildInitialFormData(
+  category: string,
+  rank1: string,
+  rank2: string,
+  extraKeywords: string[],
+  taxonomyAllSlugs: readonly string[]
+): ItemFormValues {
+  const publicSet = new Set(
+    taxonomyAllSlugs.map((s) => s.trim().toLowerCase()).filter(Boolean)
+  );
+  return {
+    category,
+    isPrivate: true,
+    navigationRank1: rank1,
+    navigationRank2: rank2,
     question: "",
     correctAnswer: "",
     incorrectAnswers: ["", "", ""],
     explanation: "",
-    keywords: [] as KeywordRequest[],
+    keywords: extraKeywords.map((name) => {
+      const n = name.trim().toLowerCase();
+      return { name: n, isPrivate: !publicSet.has(n) };
+    }),
     source: "",
-  });
-  const [newKeywordName, setNewKeywordName] = useState("");
-  const [newKeywordIsPrivate, setNewKeywordIsPrivate] = useState(true); // Default to true for regular users
+    factualRisk: "",
+    reviewComments: "",
+    readyForReview: false,
+  };
+}
 
-  const { data: categoriesData } = useQuery({
-    queryKey: ["categories"],
-    queryFn: () => categoriesApi.getAll(),
+function getSubmitErrorMessage(error: unknown): string {
+  if (!isAxiosError<CreateItemErrorResponse>(error)) {
+    return error instanceof Error ? error.message : "Failed to create item.";
+  }
+
+  const data = error.response?.data;
+  if (!data) return error.message ?? "Failed to create item.";
+  if (Array.isArray(data)) {
+    return data
+      .map((entry) => entry.errorMessage ?? entry.message ?? JSON.stringify(entry))
+      .join(", ");
+  }
+  if (typeof data === "string") return data;
+  return data.title ?? data.detail ?? error.message ?? "Failed to create item.";
+}
+
+function CreateItemEditor({
+  initialValues,
+  isAdmin,
+  isAuthenticated,
+}: {
+  initialValues: ItemFormValues;
+  isAdmin: boolean;
+  isAuthenticated: boolean;
+}) {
+  const navigate = useNavigate();
+  const queryClient = useQueryClient();
+  const [formData, setFormData] = useState(initialValues);
+  const [validationError, setValidationError] = useState("");
+
+  const { data: taxonomyData, isLoading: isTaxonomyLoading } = useQuery({
+    queryKey: ["taxonomy"],
+    queryFn: () => taxonomyApi.getAll(),
+    staleTime: 24 * 60 * 60 * 1000,
   });
 
-  const [validationError, setValidationError] = useState<string>("");
+  const categoriesForForm = useMemo(
+    () => (taxonomyData?.categories ?? []).map((category) => ({ category: category.slug })),
+    [taxonomyData]
+  );
+
+  const selectedCategory = useMemo(
+    () => taxonomyData?.categories.find((category) => category.slug === formData.category),
+    [taxonomyData, formData.category]
+  );
+
+  const rank1Options = useMemo(
+    () => selectedCategory?.groups.map((group) => group.slug) ?? [],
+    [selectedCategory]
+  );
+
+  const rank2Options = useMemo(() => {
+    const group = selectedCategory?.groups.find(
+      (candidate) => candidate.slug === formData.navigationRank1
+    );
+    return group?.keywords.map((keyword) => keyword.slug) ?? [];
+  }, [selectedCategory, formData.navigationRank1]);
+
+  const taxonomyExtraSlugs = useMemo(() => {
+    const rank1 = formData.navigationRank1.trim().toLowerCase();
+    const rank2 = formData.navigationRank2.trim().toLowerCase();
+    return (selectedCategory?.allKeywordSlugs ?? []).filter(
+      (slug) => slug.toLowerCase() !== rank1 && slug.toLowerCase() !== rank2
+    );
+  }, [selectedCategory, formData.navigationRank1, formData.navigationRank2]);
+
+  const { extraKeywordAutocompleteSource, itemTagKeywordsLoading } =
+    useExtraKeywordAutocompleteSource(formData.category, taxonomyExtraSlugs, isAuthenticated);
 
   const createMutation = useMutation({
-    mutationFn: (data: any) => itemsApi.create(data),
-    onSuccess: () => {
-      queryClient.invalidateQueries({ queryKey: ["myItems"] });
+    mutationFn: (data: CreateItemRequest) => itemsApi.create(data),
+    onSuccess: (data, variables) => {
+      queryClient.invalidateQueries({ queryKey: ["categoryItems"] });
       queryClient.invalidateQueries({ queryKey: ["categories"] });
-      navigate("/my-items");
+      const category = variables.category.trim();
+      if (category) {
+        queryClient.invalidateQueries({ queryKey: ["itemTagKeywords", category] });
+      }
+      const createdItemId = typeof data?.id === "string" ? data.id : "";
+      navigate(createdItemId ? `/items/${createdItemId}` : "/categories");
     },
-    onError: (error: any) => {
+    onError: (error: unknown) => {
       console.error("Failed to create item:", error);
-      // Log the full error for debugging
-      if (error?.response?.data) {
+      if (isAxiosError<CreateItemErrorResponse>(error) && error.response?.data) {
         console.error("API Error Details:", error.response.data);
       }
     },
@@ -53,313 +148,176 @@ const CreateItemPage = () => {
     e.preventDefault();
     setValidationError("");
 
-    // Validate that at least one incorrect answer is provided
     const filteredIncorrectAnswers = formData.incorrectAnswers.filter(
-      (ans) => ans.trim() !== ""
+      (answer) => answer.trim() !== ""
     );
     if (filteredIncorrectAnswers.length === 0) {
       setValidationError("Please provide at least one incorrect answer");
       return;
     }
 
-    const data = {
-      ...formData,
+    if (!formData.navigationRank1.trim() || !formData.navigationRank2.trim()) {
+      setValidationError("Primary topic (rank 1) and subtopic (rank 2) are required.");
+      return;
+    }
+
+    const navFormatError =
+      validateNavigationKeywordName(formData.navigationRank1) ??
+      validateNavigationKeywordName(formData.navigationRank2);
+    if (navFormatError) {
+      setValidationError(navFormatError);
+      return;
+    }
+
+    const rank1 = formData.navigationRank1.trim().toLowerCase();
+    const rank2 = formData.navigationRank2.trim().toLowerCase();
+    const otherKeywords = formData.keywords.filter((keyword) => {
+      const name = keyword.name.toLowerCase();
+      return name !== rank1 && name !== rank2;
+    });
+
+    const factualRiskNum =
+      formData.factualRisk.trim() !== ""
+        ? parseFloat(formData.factualRisk.trim())
+        : undefined;
+
+    const data: CreateItemRequest = {
+      category: formData.category.trim(),
+      navigationKeyword1: formData.navigationRank1.trim(),
+      navigationKeyword2: formData.navigationRank2.trim(),
+      isPrivate: formData.isPrivate,
+      question: formData.question.trim(),
+      correctAnswer: formData.correctAnswer.trim(),
       incorrectAnswers: filteredIncorrectAnswers,
-      keywords: formData.keywords.length > 0 ? formData.keywords : undefined,
+      explanation: formData.explanation.trim(),
+      keywords: otherKeywords.length > 0 ? otherKeywords : undefined,
       source: formData.source.trim() || undefined,
+      factualRisk:
+        factualRiskNum !== undefined && factualRiskNum >= 0 && factualRiskNum <= 1
+          ? factualRiskNum
+          : undefined,
+      reviewComments: formData.reviewComments.trim() || undefined,
+      readyForReview: formData.readyForReview,
     };
 
     createMutation.mutate(data);
   };
 
-  const addKeyword = () => {
-    const trimmedName = newKeywordName.trim().toLowerCase();
-    if (trimmedName.length === 0 || trimmedName.length > 10) {
-      return;
-    }
-    if (formData.keywords.some((k) => k.name.toLowerCase() === trimmedName && k.isPrivate === newKeywordIsPrivate)) {
-      return; // Already exists
-    }
-    setFormData({
-      ...formData,
-      keywords: [...formData.keywords, { name: trimmedName, isPrivate: newKeywordIsPrivate }],
-    });
-    setNewKeywordName("");
-    setNewKeywordIsPrivate(false);
-  };
+  return (
+    <ItemForm
+      mode="create"
+      values={formData}
+      onChange={setFormData}
+      onSubmit={handleSubmit}
+      onCancel={() => navigate("/categories")}
+      categories={categoriesForForm}
+      rank1Options={rank1Options}
+      rank2Options={rank2Options}
+      isLoadingRank1={isTaxonomyLoading && !!formData.category}
+      isLoadingRank2={isTaxonomyLoading && !!formData.navigationRank1}
+      isAdmin={isAdmin}
+      isPending={createMutation.isPending}
+      validationError={validationError}
+      submitError={createMutation.isError ? getSubmitErrorMessage(createMutation.error) : undefined}
+      onDismissSubmitError={() => createMutation.reset()}
+      extraKeywordAutocompleteSource={extraKeywordAutocompleteSource}
+      extraKeywordAutocompleteLoading={itemTagKeywordsLoading}
+      taxonomyPublicSlugs={selectedCategory?.allKeywordSlugs ?? []}
+    />
+  );
+}
 
-  const removeKeyword = (index: number) => {
-    setFormData({
-      ...formData,
-      keywords: formData.keywords.filter((_, i) => i !== index),
-    });
-  };
+const CreateItemPage = () => {
+  const { isAuthenticated, isAdmin } = useAuth();
+  const location = useLocation();
+  const [searchParams] = useSearchParams();
+  const categoryFromUrl = searchParams.get("category") || "";
+  const keywordsParam = searchParams.get("keywords");
 
-  const handleIncorrectAnswerChange = (index: number, value: string) => {
-    const newAnswers = [...formData.incorrectAnswers];
-    newAnswers[index] = value;
-    setFormData({ ...formData, incorrectAnswers: newAnswers });
-  };
+  const { data: taxonomyBootstrap, isLoading: isTaxonomyBootstrapLoading } = useQuery({
+    queryKey: ["taxonomy"],
+    queryFn: () => taxonomyApi.getAll(),
+    staleTime: 24 * 60 * 60 * 1000,
+    enabled: isAuthenticated,
+  });
+
+  const taxonomyAllSlugsForCategory = useMemo(() => {
+    const cat = taxonomyBootstrap?.categories.find((c) => c.slug === categoryFromUrl);
+    return cat?.allKeywordSlugs ?? [];
+  }, [taxonomyBootstrap, categoryFromUrl]);
+  const { rank1: rank1FromUrl, rank2: rank2FromUrl, extrasJoined } = useMemo(
+    () => parseKeywordsParam(keywordsParam),
+    [keywordsParam]
+  );
+  const extraKeywordsFromUrl = useMemo(
+    () =>
+      extrasJoined
+        .split(",")
+        .map((name) => name.trim())
+        .filter(Boolean),
+    [extrasJoined]
+  );
+
+  const initialFormData = useMemo(
+    () =>
+      buildInitialFormData(
+        categoryFromUrl,
+        rank1FromUrl,
+        rank2FromUrl,
+        extraKeywordsFromUrl,
+        taxonomyAllSlugsForCategory
+      ),
+    [
+      categoryFromUrl,
+      rank1FromUrl,
+      rank2FromUrl,
+      extraKeywordsFromUrl,
+      taxonomyAllSlugsForCategory,
+    ]
+  );
+
+  const scopeKey = useMemo(
+    () => [categoryFromUrl, rank1FromUrl, rank2FromUrl, extraKeywordsFromUrl.join(",")].join("|"),
+    [categoryFromUrl, rank1FromUrl, rank2FromUrl, extraKeywordsFromUrl]
+  );
 
   if (!isAuthenticated) {
     return <Navigate to="/login" replace />;
   }
 
+  if (isTaxonomyBootstrapLoading) {
+    return <LoadingSpinner />;
+  }
+
+  const addItemsBackTo = `/items/add${location.search}`;
+
   return (
     <div className="px-4 py-6 sm:px-0">
       <div className="max-w-2xl mx-auto">
+        <div className="mb-4">
+          <Link
+            to={addItemsBackTo}
+            className="inline-flex items-center gap-2 text-sm font-medium text-indigo-700 hover:text-indigo-900"
+          >
+            <ArrowLeftIcon className="h-4 w-4 shrink-0" aria-hidden />
+            Back to Add Items
+          </Link>
+        </div>
         <h1 className="text-3xl font-bold text-gray-900 mb-2">
           Create New Item
         </h1>
         <p className="text-gray-600 text-sm mb-6">
-          Create a new quiz item with a question, correct answer, incorrect answer options, and optional explanation. Regular users can create private items; admins can create public items visible to everyone.
+          Create a new quiz item with a question, correct answer, incorrect answer options, and
+          optional explanation. Regular users can create private items; admins can create public
+          items visible to everyone.
         </p>
 
-        {validationError && (
-          <div className="mb-4">
-            <ErrorMessage
-              message={validationError}
-              onRetry={() => setValidationError("")}
-            />
-          </div>
-        )}
-
-        {createMutation.isError && (
-          <div className="mb-4">
-            <ErrorMessage
-              message={
-                createMutation.error &&
-                (createMutation.error as any).response?.data
-                  ? Array.isArray((createMutation.error as any).response.data)
-                    ? (createMutation.error as any).response.data
-                        .map(
-                          (err: any) =>
-                            err.errorMessage ||
-                            err.message ||
-                            JSON.stringify(err)
-                        )
-                        .join(", ")
-                    : typeof (createMutation.error as any).response.data ===
-                      "string"
-                    ? (createMutation.error as any).response.data
-                    : (createMutation.error as any).response.data.title ||
-                      (createMutation.error as any).response.data.detail ||
-                      "Failed to create item"
-                  : createMutation.error instanceof Error
-                  ? createMutation.error.message
-                  : "Failed to create item. Please check the browser console for details."
-              }
-              onRetry={() => createMutation.reset()}
-            />
-          </div>
-        )}
-
-        <form
-          onSubmit={handleSubmit}
-          className="bg-white shadow rounded-lg p-6 space-y-6"
-        >
-          <div>
-            <label className="block text-sm font-medium text-gray-700 mb-2">
-              Category *
-            </label>
-            <select
-              value={formData.category}
-              onChange={(e) =>
-                setFormData({ ...formData, category: e.target.value })
-              }
-              required
-              className="w-full px-3 py-2 border border-gray-300 rounded-md text-sm"
-            >
-              <option value="">Select a category</option>
-              {categoriesData?.categories.map((cat) => (
-                <option key={cat.category} value={cat.category}>
-                  {cat.category}
-                </option>
-              ))}
-            </select>
-          </div>
-
-          <div>
-            <label className="flex items-center">
-              <input
-                type="checkbox"
-                checked={formData.isPrivate}
-                onChange={(e) =>
-                  setFormData({ ...formData, isPrivate: e.target.checked })
-                }
-                disabled={!isAdmin}
-                className="mr-2"
-              />
-              <span className="text-sm font-medium text-gray-700">
-                Private Item {!isAdmin && "(default for regular users)"}
-              </span>
-            </label>
-            <p className="mt-1 ml-6 text-sm text-gray-500">
-              Private items are visible only to your account. {!isAdmin && "Only admins can create public items."}
-            </p>
-          </div>
-
-          <div>
-            <label className="block text-sm font-medium text-gray-700 mb-2">
-              Question *
-            </label>
-            <textarea
-              value={formData.question}
-              onChange={(e) =>
-                setFormData({ ...formData, question: e.target.value })
-              }
-              required
-              rows={3}
-              className="w-full px-3 py-2 border border-gray-300 rounded-md text-sm"
-            />
-          </div>
-
-          <div>
-            <label className="block text-sm font-medium text-gray-700 mb-2">
-              Correct Answer *
-            </label>
-            <input
-              type="text"
-              value={formData.correctAnswer}
-              onChange={(e) =>
-                setFormData({ ...formData, correctAnswer: e.target.value })
-              }
-              required
-              className="w-full px-3 py-2 border border-gray-300 rounded-md text-sm"
-            />
-          </div>
-
-          <div>
-            <label className="block text-sm font-medium text-gray-700 mb-2">
-              Incorrect Answers (at least 1 required) *
-            </label>
-            {formData.incorrectAnswers.map((answer, index) => (
-              <input
-                key={index}
-                type="text"
-                value={answer}
-                onChange={(e) =>
-                  handleIncorrectAnswerChange(index, e.target.value)
-                }
-                placeholder={`Incorrect answer ${index + 1}`}
-                className="w-full px-3 py-2 border border-gray-300 rounded-md text-sm mb-2"
-              />
-            ))}
-          </div>
-
-          <div>
-            <label className="block text-sm font-medium text-gray-700 mb-2">
-              Explanation
-            </label>
-            <textarea
-              value={formData.explanation}
-              onChange={(e) =>
-                setFormData({ ...formData, explanation: e.target.value })
-              }
-              rows={3}
-              className="w-full px-3 py-2 border border-gray-300 rounded-md text-sm"
-            />
-          </div>
-
-          <div>
-            <label className="block text-sm font-medium text-gray-700 mb-2">
-              Source (optional)
-            </label>
-            <input
-              type="text"
-              value={formData.source}
-              onChange={(e) =>
-                setFormData({ ...formData, source: e.target.value })
-              }
-              maxLength={200}
-              placeholder="e.g., ChatGPT, Claude, Manual, Textbook Name"
-              className="w-full px-3 py-2 border border-gray-300 rounded-md text-sm"
-            />
-            <p className="mt-1 text-sm text-gray-500">
-              Optional source attribution (max 200 characters).
-            </p>
-          </div>
-
-          <div>
-            <label className="block text-sm font-medium text-gray-700 mb-2">
-              Keywords (optional, max 10 characters each)
-            </label>
-            <div className="flex gap-2 mb-2">
-              <input
-                type="text"
-                value={newKeywordName}
-                onChange={(e) => {
-                  const value = e.target.value.slice(0, 10);
-                  setNewKeywordName(value);
-                }}
-                placeholder="Keyword name (max 10 chars)"
-                maxLength={10}
-                className="flex-1 px-3 py-2 border border-gray-300 rounded-md text-sm"
-                onKeyPress={(e) => {
-                  if (e.key === "Enter") {
-                    e.preventDefault();
-                    addKeyword();
-                  }
-                }}
-              />
-              <label className="flex items-center px-3 py-2 border border-gray-300 rounded-md text-sm">
-                <input
-                  type="checkbox"
-                  checked={newKeywordIsPrivate}
-                  onChange={(e) => setNewKeywordIsPrivate(e.target.checked)}
-                  disabled={!isAdmin}
-                  className="mr-2"
-                />
-                Private {!isAdmin && "(default)"}
-              </label>
-              <button
-                type="button"
-                onClick={addKeyword}
-                className="px-4 py-2 text-sm font-medium text-white bg-indigo-600 rounded-md hover:bg-indigo-700"
-              >
-                Add
-              </button>
-            </div>
-            {formData.keywords.length > 0 && (
-              <div className="flex flex-wrap gap-2">
-                {formData.keywords.map((keyword, index) => (
-                  <span
-                    key={index}
-                    className="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-blue-100 text-blue-800"
-                  >
-                    {keyword.name}
-                    {keyword.isPrivate && <span className="ml-1 text-xs">🔒</span>}
-                    <button
-                      type="button"
-                      onClick={() => removeKeyword(index)}
-                      className="ml-2 inline-flex items-center justify-center w-4 h-4 rounded-full hover:bg-blue-200"
-                      aria-label={`Remove ${keyword.name}`}
-                    >
-                      ×
-                    </button>
-                  </span>
-                ))}
-              </div>
-            )}
-          </div>
-
-          <div className="flex justify-end space-x-4">
-            <button
-              type="button"
-              onClick={() => navigate("/my-items")}
-              className="px-4 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-md hover:bg-gray-50"
-            >
-              Cancel
-            </button>
-            <button
-              type="submit"
-              disabled={createMutation.isPending}
-              className="px-4 py-2 text-sm font-medium text-white bg-indigo-600 rounded-md hover:bg-indigo-700 disabled:opacity-50"
-            >
-              {createMutation.isPending ? "Creating..." : "Create Item"}
-            </button>
-          </div>
-        </form>
+        <CreateItemEditor
+          key={scopeKey}
+          initialValues={initialFormData}
+          isAdmin={!!isAdmin}
+          isAuthenticated={isAuthenticated}
+        />
       </div>
     </div>
   );

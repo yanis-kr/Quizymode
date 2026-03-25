@@ -1,0 +1,202 @@
+[
+  {
+    "category": "sports",
+    "navigationKeyword1": "baseball",
+    "navigationKeyword2": "players",
+    "question": "Which player broke MLB's color barrier with the Brooklyn Dodgers in 1947?",
+    "correctAnswer": "Jackie Robinson",
+    "incorrectAnswers": [
+      "Satchel Paige",
+      "Willie Mays",
+      "Hank Aaron"
+    ],
+    "explanation": "Robinson's debut transformed Major League Baseball and American sports.",
+    "keywords": [
+      "baseball",
+      "players",
+      "jackie-robinson"
+    ],
+    "source": "https://www.britannica.com/biography/Jackie-Robinson",
+    "seedId": "5a1bc636-9f87-4b09-9917-9cf6d55b7284"
+  },
+  {
+    "category": "sports",
+    "navigationKeyword1": "baseball",
+    "navigationKeyword2": "players",
+    "question": "Which outfielder hit 755 career home runs before Barry Bonds passed him?",
+    "correctAnswer": "Hank Aaron",
+    "incorrectAnswers": [
+      "Babe Ruth",
+      "Willie Mays",
+      "Mickey Mantle"
+    ],
+    "explanation": "Aaron held the career home run record for decades.",
+    "keywords": [
+      "baseball",
+      "players",
+      "hank-aaron"
+    ],
+    "source": "https://www.britannica.com/biography/Hank-Aaron",
+    "seedId": "040453c7-8688-4e74-9b1e-a1c698c9748a"
+  },
+  {
+    "category": "sports",
+    "navigationKeyword1": "baseball",
+    "navigationKeyword2": "players",
+    "question": "Which Yankees slugger was nicknamed the Sultan of Swat?",
+    "correctAnswer": "Babe Ruth",
+    "incorrectAnswers": [
+      "Lou Gehrig",
+      "Joe DiMaggio",
+      "Mickey Mantle"
+    ],
+    "explanation": "Babe Ruth became baseball's first great home-run icon.",
+    "keywords": [
+      "baseball",
+      "players",
+      "babe-ruth"
+    ],
+    "source": "https://www.britannica.com/biography/Babe-Ruth",
+    "seedId": "f9a17dfc-7e25-45b7-a113-c4676bec4f6d"
+  },
+  {
+    "category": "sports",
+    "navigationKeyword1": "baseball",
+    "navigationKeyword2": "players",
+    "question": "Which center fielder is famous for The Catch in the 1954 World Series?",
+    "correctAnswer": "Willie Mays",
+    "incorrectAnswers": [
+      "Duke Snider",
+      "Mickey Mantle",
+      "Ken Griffey Jr."
+    ],
+    "explanation": "Mays made one of baseball's most famous defensive plays in the Polo Grounds.",
+    "keywords": [
+      "baseball",
+      "players",
+      "willie-mays"
+    ],
+    "source": "https://www.britannica.com/biography/Willie-Mays",
+    "seedId": "b1959a84-f3f3-428d-b353-2439cfc17952"
+  },
+  {
+    "category": "sports",
+    "navigationKeyword1": "baseball",
+    "navigationKeyword2": "players",
+    "question": "Which Yankees iron man had a streak of 2,130 consecutive games played?",
+    "correctAnswer": "Lou Gehrig",
+    "incorrectAnswers": [
+      "Cal Ripken Jr.",
+      "Joe DiMaggio",
+      "Derek Jeter"
+    ],
+    "explanation": "Gehrig set the original famous consecutive-games mark.",
+    "keywords": [
+      "baseball",
+      "players",
+      "lou-gehrig"
+    ],
+    "source": "https://www.britannica.com/biography/Lou-Gehrig",
+    "seedId": "484327d7-6b2d-45ac-ad2d-b8446c61e783"
+  },
+  {
+    "category": "sports",
+    "navigationKeyword1": "baseball",
+    "navigationKeyword2": "players",
+    "question": "Which Red Sox legend was nicknamed The Splendid Splinter?",
+    "correctAnswer": "Ted Williams",
+    "incorrectAnswers": [
+      "Carl Yastrzemski",
+      "David Ortiz",
+      "Joe Cronin"
+    ],
+    "explanation": "Williams remains one of the greatest hitters in baseball history.",
+    "keywords": [
+      "baseball",
+      "players",
+      "ted-williams"
+    ],
+    "source": "https://www.britannica.com/biography/Ted-Williams",
+    "seedId": "c22e234b-6c62-4487-ba52-4122f3e8296d"
+  },
+  {
+    "category": "sports",
+    "navigationKeyword1": "baseball",
+    "navigationKeyword2": "players",
+    "question": "Which Yankees closer is MLB's all-time saves leader?",
+    "correctAnswer": "Mariano Rivera",
+    "incorrectAnswers": [
+      "Trevor Hoffman",
+      "Dennis Eckersley",
+      "Rollie Fingers"
+    ],
+    "explanation": "Rivera finished with the most saves in MLB history.",
+    "keywords": [
+      "baseball",
+      "players",
+      "mariano-rivera"
+    ],
+    "source": "https://www.mlb.com/history",
+    "seedId": "dcc10d47-125f-44f0-958f-66fac561c380"
+  },
+  {
+    "category": "sports",
+    "navigationKeyword1": "baseball",
+    "navigationKeyword2": "players",
+    "question": "Which two-way Japanese star won AL MVP awards while pitching and hitting for the Angels?",
+    "correctAnswer": "Shohei Ohtani",
+    "incorrectAnswers": [
+      "Ichiro Suzuki",
+      "Hideki Matsui",
+      "Yu Darvish"
+    ],
+    "explanation": "Ohtani revived the two-way superstar model in MLB.",
+    "keywords": [
+      "baseball",
+      "players",
+      "shohei-ohtani"
+    ],
+    "source": "https://www.britannica.com/biography/Shohei-Ohtani",
+    "seedId": "d9971fae-fbf3-475f-8bc4-ad41d764a979"
+  },
+  {
+    "category": "sports",
+    "navigationKeyword1": "baseball",
+    "navigationKeyword2": "players",
+    "question": "Which shortstop spent his whole MLB career with the New York Yankees and later became team captain?",
+    "correctAnswer": "Derek Jeter",
+    "incorrectAnswers": [
+      "Alex Rodriguez",
+      "Nomar Garciaparra",
+      "Cal Ripken Jr."
+    ],
+    "explanation": "Jeter became the face of the Yankees in the late 1990s and 2000s.",
+    "keywords": [
+      "baseball",
+      "players",
+      "derek-jeter"
+    ],
+    "source": "https://www.britannica.com/biography/Derek-Jeter",
+    "seedId": "443edb2c-8ddd-479d-836a-caab68637cff"
+  },
+  {
+    "category": "sports",
+    "navigationKeyword1": "baseball",
+    "navigationKeyword2": "players",
+    "question": "Which outfielder hit .367 in 1941, the last .400-level full season in MLB?",
+    "correctAnswer": "Ted Williams",
+    "incorrectAnswers": [
+      "Joe DiMaggio",
+      "Ty Cobb",
+      "Stan Musial"
+    ],
+    "explanation": "Williams' 1941 average remains the last .400 benchmark in a full season.",
+    "keywords": [
+      "baseball",
+      "players",
+      "batting-average"
+    ],
+    "source": "https://www.britannica.com/biography/Ted-Williams",
+    "seedId": "61a49ba6-a8b9-4a86-83a9-d12f6b093ed9"
+  }
+]

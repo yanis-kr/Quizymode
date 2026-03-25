@@ -2,6 +2,7 @@ using FluentValidation;
 using Microsoft.EntityFrameworkCore;
 using Quizymode.Api.Data;
 using Quizymode.Api.Infrastructure;
+using Quizymode.Api.Services;
 using Quizymode.Api.Shared.Kernel;
 using Quizymode.Api.Shared.Models;
 
@@ -9,13 +10,15 @@ namespace Quizymode.Api.Features.Collections;
 
 public static class UpdateCollection
 {
-    public sealed record Request(string Name);
+    public sealed record Request(string? Name, string? Description, bool? IsPublic);
 
     public sealed record Response(
         string Id,
         string Name,
+        string? Description,
         DateTime CreatedAt,
-        DateTime? UpdatedAt);
+        DateTime? UpdatedAt,
+        bool IsPublic);
 
     public sealed class Validator : AbstractValidator<Request>
     {
@@ -23,9 +26,16 @@ public static class UpdateCollection
         {
             RuleFor(x => x.Name)
                 .NotEmpty()
-                .WithMessage("Name is required")
+                .WithMessage("Name cannot be empty")
+                .When(x => x.Name != null);
+            RuleFor(x => x.Name)
                 .MaximumLength(200)
-                .WithMessage("Name must not exceed 200 characters");
+                .WithMessage("Name must not exceed 200 characters")
+                .When(x => x.Name != null);
+            RuleFor(x => x.Description)
+                .MaximumLength(2000)
+                .WithMessage("Description must not exceed 2000 characters")
+                .When(x => x.Description != null);
         }
     }
 
@@ -47,6 +57,7 @@ public static class UpdateCollection
             Request request,
             IValidator<Request> validator,
             ApplicationDbContext db,
+            IUserContext userContext,
             CancellationToken cancellationToken)
         {
             var validationResult = await validator.ValidateAsync(request, cancellationToken);
@@ -55,7 +66,7 @@ public static class UpdateCollection
                 return Results.BadRequest(validationResult.Errors);
             }
 
-            Result<Response> result = await HandleAsync(id, request, db, cancellationToken);
+            Result<Response> result = await HandleAsync(id, request, db, userContext, cancellationToken);
 
             return result.Match(
                 value => Results.Ok(value),
@@ -69,6 +80,7 @@ public static class UpdateCollection
         string id,
         Request request,
         ApplicationDbContext db,
+        IUserContext userContext,
         CancellationToken cancellationToken)
     {
         try
@@ -88,7 +100,20 @@ public static class UpdateCollection
                     Error.NotFound("Collection.NotFound", $"Collection with id {id} not found"));
             }
 
-            collection.Name = request.Name;
+            if (string.IsNullOrEmpty(userContext.UserId) || collection.CreatedBy != userContext.UserId)
+            {
+                return Result.Failure<Response>(
+                    Error.Validation("Collection.Forbidden", "You can only update your own collections"));
+            }
+
+            if (request.Name != null)
+                collection.Name = request.Name;
+            if (request.Description != null)
+                collection.Description = string.IsNullOrWhiteSpace(request.Description) ? null : request.Description;
+            if (request.IsPublic.HasValue)
+            {
+                collection.IsPublic = request.IsPublic.Value;
+            }
             collection.UpdatedAt = DateTime.UtcNow;
 
             await db.SaveChangesAsync(cancellationToken);
@@ -96,8 +121,10 @@ public static class UpdateCollection
             Response response = new(
                 collection.Id.ToString(),
                 collection.Name,
+                collection.Description,
                 collection.CreatedAt,
-                collection.UpdatedAt);
+                collection.UpdatedAt,
+                collection.IsPublic);
 
             return Result.Success(response);
         }

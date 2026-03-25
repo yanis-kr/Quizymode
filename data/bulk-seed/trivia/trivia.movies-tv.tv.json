@@ -1,0 +1,192 @@
+[
+  {
+    "category": "trivia",
+    "navigationKeyword1": "movies-tv",
+    "navigationKeyword2": "tv",
+    "question": "Emmy Awards principally honor excellence in which medium?",
+    "correctAnswer": "television",
+    "incorrectAnswers": [
+      "radio only",
+      "theater only",
+      "podcasts only"
+    ],
+    "explanation": "Emmys recognize television.",
+    "keywords": [
+      "emmys",
+      "awards"
+    ],
+    "source": "https://www.britannica.com/art/Emmy-Awards",
+    "seedId": "b67429b1-f210-4391-81d7-8e7dced0d44a"
+  },
+  {
+    "category": "trivia",
+    "navigationKeyword1": "movies-tv",
+    "navigationKeyword2": "tv",
+    "question": "The word \"sitcom\" is short for what kind of TV series?",
+    "correctAnswer": "comedy series",
+    "incorrectAnswers": [
+      "horror anthologies",
+      "news magazines",
+      "documentary miniseries"
+    ],
+    "explanation": "Sitcoms are situational comedies.",
+    "keywords": [
+      "sitcoms",
+      "genres"
+    ],
+    "source": "https://www.britannica.com/art/sitcom",
+    "seedId": "4a370d1c-c40d-4ad6-a44e-e870edbbaa7b"
+  },
+  {
+    "category": "trivia",
+    "navigationKeyword1": "movies-tv",
+    "navigationKeyword2": "tv",
+    "question": "Soap operas are known for what kind of long-running storytelling?",
+    "correctAnswer": "serialized daytime drama",
+    "incorrectAnswers": [
+      "sports broadcasts",
+      "weather loops",
+      "game shows only"
+    ],
+    "explanation": "Soaps are serialized dramas.",
+    "keywords": [
+      "soap-operas",
+      "daytime"
+    ],
+    "source": "https://www.britannica.com/art/soap-opera",
+    "seedId": "31987199-1742-4be9-bae5-787d7cbacf2d"
+  },
+  {
+    "category": "trivia",
+    "navigationKeyword1": "movies-tv",
+    "navigationKeyword2": "tv",
+    "question": "Late-night talk shows usually pair monologues with what other segments?",
+    "correctAnswer": "celebrity interviews",
+    "incorrectAnswers": [
+      "musical performances",
+      "panel discussions",
+      "audience games"
+    ],
+    "explanation": "Late-night shows feature interviews.",
+    "keywords": [
+      "late-night",
+      "talk-shows"
+    ],
+    "source": "https://www.britannica.com/topic/late-night-television",
+    "seedId": "4b6a13d8-19d8-420d-af08-39d4c8b09519"
+  },
+  {
+    "category": "trivia",
+    "navigationKeyword1": "movies-tv",
+    "navigationKeyword2": "tv",
+    "question": "Binge-watching means viewing many episodes how?",
+    "correctAnswer": "in succession",
+    "incorrectAnswers": [
+      "once per year",
+      "random shuffle",
+      "alphabetical order only"
+    ],
+    "explanation": "Binge-watching streams many episodes back-to-back.",
+    "keywords": [
+      "streaming",
+      "habits"
+    ],
+    "source": "https://www.britannica.com/topic/binge-watching",
+    "seedId": "2b683eed-536b-4835-9f64-f507c9c97c70"
+  },
+  {
+    "category": "trivia",
+    "navigationKeyword1": "movies-tv",
+    "navigationKeyword2": "tv",
+    "question": "Public broadcasting is often built around education and what other mission?",
+    "correctAnswer": "cultural programming",
+    "incorrectAnswers": [
+      "news coverage",
+      "arts programming",
+      "civic information"
+    ],
+    "explanation": "PBS-style broadcasting emphasizes education and culture.",
+    "keywords": [
+      "pbs",
+      "public-tv"
+    ],
+    "source": "https://www.britannica.com/topic/public-broadcasting",
+    "seedId": "0597eac4-2595-4eca-bd89-bd75c9fe5b96"
+  },
+  {
+    "category": "trivia",
+    "navigationKeyword1": "movies-tv",
+    "navigationKeyword2": "tv",
+    "question": "Historically, cable TV signals were delivered through what?",
+    "correctAnswer": "coaxial cables",
+    "incorrectAnswers": [
+      "fiber to the home only",
+      "over-the-air antennas only",
+      "satellite dishes only"
+    ],
+    "explanation": "Cable used coaxial distribution.",
+    "keywords": [
+      "cable-tv",
+      "history"
+    ],
+    "source": "https://www.britannica.com/technology/cable-television",
+    "seedId": "e602d1a5-7f61-4b69-92e8-ab48cbb80e37"
+  },
+  {
+    "category": "trivia",
+    "navigationKeyword1": "movies-tv",
+    "navigationKeyword2": "tv",
+    "question": "Streaming delivers video over what?",
+    "correctAnswer": "the internet",
+    "incorrectAnswers": [
+      "postal DVD only",
+      "VHS tape",
+      "cultural programming"
+    ],
+    "explanation": "Streaming uses internet delivery.",
+    "keywords": [
+      "streaming",
+      "ott"
+    ],
+    "source": "https://www.britannica.com/technology/streaming-media",
+    "seedId": "9e1ef75a-6baa-424a-8e0b-a7085d049fe6"
+  },
+  {
+    "category": "trivia",
+    "navigationKeyword1": "movies-tv",
+    "navigationKeyword2": "tv",
+    "question": "A TV pilot is a test episode used to decide what?",
+    "correctAnswer": "series pickup",
+    "incorrectAnswers": [
+      "network schedules",
+      "season renewals",
+      "spin-off plans"
+    ],
+    "explanation": "TV pilots test series viability.",
+    "keywords": [
+      "pilots",
+      "development"
+    ],
+    "source": "https://www.britannica.com/topic/television-pilot",
+    "seedId": "5e01b125-f683-4c43-a122-9bb96189fb08"
+  },
+  {
+    "category": "trivia",
+    "navigationKeyword1": "movies-tv",
+    "navigationKeyword2": "tv",
+    "question": "A season finale concludes what unit of episodes?",
+    "correctAnswer": "a season",
+    "incorrectAnswers": [
+      "a commercial break",
+      "a single scene",
+      "a credits crawl"
+    ],
+    "explanation": "Finales end a season\u2019s arc.",
+    "keywords": [
+      "season-finale",
+      "narrative"
+    ],
+    "source": "https://www.britannica.com/art/television-program",
+    "seedId": "20a421cc-eb61-410c-8a93-6f1ced8559ff"
+  }
+]

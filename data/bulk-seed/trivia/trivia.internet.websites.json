@@ -1,0 +1,192 @@
+[
+  {
+    "category": "trivia",
+    "navigationKeyword1": "internet",
+    "navigationKeyword2": "websites",
+    "question": "The early World Wide Web was built around linking documents with what?",
+    "correctAnswer": "hypertext",
+    "incorrectAnswers": [
+      "microfilm",
+      "fax pages",
+      "audio tape"
+    ],
+    "explanation": "Tim Berners-Lee's early World Wide Web project was built around hypertext links between documents.",
+    "keywords": [
+      "websites",
+      "web-history"
+    ],
+    "source": "https://www.w3.org/History/19921103-hypertext/hypertext/WWW/TheProject.html",
+    "seedId": "69e3e8e9-603a-41f2-8069-8d4db6739d27"
+  },
+  {
+    "category": "trivia",
+    "navigationKeyword1": "internet",
+    "navigationKeyword2": "websites",
+    "question": "Which standards body publishes HTML recommendations?",
+    "correctAnswer": "W3C",
+    "incorrectAnswers": [
+      "IETF",
+      "ICANN",
+      "IEEE"
+    ],
+    "explanation": "HTML recommendations are published by the World Wide Web Consortium, or W3C.",
+    "keywords": [
+      "websites",
+      "web-history"
+    ],
+    "source": "https://www.w3.org/TR/html52/",
+    "seedId": "9b25675a-6561-4634-b6fc-2bba670ff840"
+  },
+  {
+    "category": "trivia",
+    "navigationKeyword1": "internet",
+    "navigationKeyword2": "websites",
+    "question": "Which organization publishes RFC documents such as RFC 7230?",
+    "correctAnswer": "RFC Editor",
+    "incorrectAnswers": [
+      "W3C",
+      "UNESCO",
+      "Mozilla Foundation"
+    ],
+    "explanation": "RFC documents are published through the RFC Editor.",
+    "keywords": [
+      "websites",
+      "web-history"
+    ],
+    "source": "https://www.rfc-editor.org/rfc/rfc7230",
+    "seedId": "a6050c38-2d1e-47e7-b84d-c5b9ed148e18"
+  },
+  {
+    "category": "trivia",
+    "navigationKeyword1": "internet",
+    "navigationKeyword2": "websites",
+    "question": "Wikipedia is best described as what kind of site?",
+    "correctAnswer": "a volunteer-edited online encyclopedia",
+    "incorrectAnswers": [
+      "an online stock exchange",
+      "a restaurant guide only",
+      "a cloud gaming service"
+    ],
+    "explanation": "Wikipedia is an online encyclopedia edited by volunteers.",
+    "keywords": [
+      "websites",
+      "web-history"
+    ],
+    "source": "https://www.britannica.com/topic/Wikipedia",
+    "seedId": "bfed3ec2-7afd-4c44-93d7-0651bd2ea775"
+  },
+  {
+    "category": "trivia",
+    "navigationKeyword1": "internet",
+    "navigationKeyword2": "websites",
+    "question": "What do e-commerce sites primarily sell online?",
+    "correctAnswer": "goods or services",
+    "incorrectAnswers": [
+      "bus schedules only",
+      "weather forecasts only",
+      "printer drivers only"
+    ],
+    "explanation": "E-commerce sites are built to sell goods or services online.",
+    "keywords": [
+      "websites",
+      "web-history"
+    ],
+    "source": "https://www.britannica.com/technology/e-commerce",
+    "seedId": "9425b1c5-3c71-4da9-aa0c-4d13b8d91aeb"
+  },
+  {
+    "category": "trivia",
+    "navigationKeyword1": "internet",
+    "navigationKeyword2": "websites",
+    "question": "Blogs are known for publishing dated what?",
+    "correctAnswer": "posts or articles",
+    "incorrectAnswers": [
+      "blueprints",
+      "tax returns",
+      "circuit boards"
+    ],
+    "explanation": "Blogs typically publish dated posts or articles.",
+    "keywords": [
+      "websites",
+      "web-history"
+    ],
+    "source": "https://www.britannica.com/technology/blog",
+    "seedId": "376c5e32-3982-4a74-842b-b7c1da8cca84"
+  },
+  {
+    "category": "trivia",
+    "navigationKeyword1": "internet",
+    "navigationKeyword2": "websites",
+    "question": "Internet forums are centered on threaded what?",
+    "correctAnswer": "discussions",
+    "incorrectAnswers": [
+      "downloads",
+      "thumbnails",
+      "toolbars"
+    ],
+    "explanation": "Forums organize conversations as threaded discussions.",
+    "keywords": [
+      "websites",
+      "web-history"
+    ],
+    "source": "https://www.britannica.com/technology/Internet-forum",
+    "seedId": "610ee05a-ff6f-4487-a8cf-80ed13fe1cb8"
+  },
+  {
+    "category": "trivia",
+    "navigationKeyword1": "internet",
+    "navigationKeyword2": "websites",
+    "question": "A landing page is usually built for a specific marketing what?",
+    "correctAnswer": "campaign",
+    "incorrectAnswers": [
+      "keyboard layout",
+      "spreadsheet formula",
+      "operating system update"
+    ],
+    "explanation": "Landing pages are usually designed around a specific marketing campaign.",
+    "keywords": [
+      "websites",
+      "web-history"
+    ],
+    "source": "https://www.britannica.com/topic/landing-page",
+    "seedId": "e9f33fe7-5731-479b-b78b-4820cc846a32"
+  },
+  {
+    "category": "trivia",
+    "navigationKeyword1": "internet",
+    "navigationKeyword2": "websites",
+    "question": "A CDN improves website speed by moving content closer to whom?",
+    "correctAnswer": "end users",
+    "incorrectAnswers": [
+      "software developers",
+      "data cables",
+      "search engines"
+    ],
+    "explanation": "Content delivery networks speed up sites by caching content closer to end users.",
+    "keywords": [
+      "websites",
+      "web-history"
+    ],
+    "source": "https://www.britannica.com/technology/content-delivery-network",
+    "seedId": "facd4143-3d79-4576-95f3-f53ffbde286c"
+  },
+  {
+    "category": "trivia",
+    "navigationKeyword1": "internet",
+    "navigationKeyword2": "websites",
+    "question": "A paywall blocks access until a user does what?",
+    "correctAnswer": "pays or subscribes",
+    "incorrectAnswers": [
+      "changes browser tabs",
+      "resizes the window",
+      "downloads a font"
+    ],
+    "explanation": "A paywall restricts access until payment or subscription is provided.",
+    "keywords": [
+      "websites",
+      "web-history"
+    ],
+    "source": "https://www.britannica.com/topic/paywall",
+    "seedId": "e667f3ae-5725-413f-ae29-e89fedc519c9"
+  }
+]

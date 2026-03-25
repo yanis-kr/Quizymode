@@ -1,0 +1,202 @@
+[
+  {
+    "category": "exams",
+    "navigationKeyword1": "comptia",
+    "navigationKeyword2": "general-comptia",
+    "question": "What is the exam series code for CompTIA A+ Core 1 V15?",
+    "correctAnswer": "220-1201",
+    "incorrectAnswers": [
+      "220-1101",
+      "N10-009",
+      "SY0-701"
+    ],
+    "explanation": "CompTIA lists 220-1201 as the Core 1 exam series code for A+ V15.",
+    "keywords": [
+      "a-plus",
+      "general-comptia",
+      "test-prep"
+    ],
+    "source": "https://www.comptia.org/en-us/certifications/a/core-1-v15/",
+    "seedId": "c1219ad6-2a2f-4638-8a37-e22ae044fbd4"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "comptia",
+    "navigationKeyword2": "general-comptia",
+    "question": "What is the exam series code for Cloud+ V4?",
+    "correctAnswer": "CV0-004",
+    "incorrectAnswers": [
+      "CV0-003",
+      "SY0-701",
+      "CS0-003"
+    ],
+    "explanation": "CompTIA lists CV0-004 as the Cloud+ V4 exam series code.",
+    "keywords": [
+      "cloud-plus",
+      "general-comptia",
+      "test-prep"
+    ],
+    "source": "https://www.comptia.org/en-us/certifications/cloud/",
+    "seedId": "2e8215c1-39e6-499f-af46-33010e023a25"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "comptia",
+    "navigationKeyword2": "general-comptia",
+    "question": "What is the exam series code for CySA+ V3?",
+    "correctAnswer": "CS0-003",
+    "incorrectAnswers": [
+      "SY0-701",
+      "CV0-004",
+      "XK0-006"
+    ],
+    "explanation": "CompTIA lists CS0-003 as the CySA+ V3 exam series code.",
+    "keywords": [
+      "cysa-plus",
+      "general-comptia",
+      "test-prep"
+    ],
+    "source": "https://www.comptia.org/en-us/certifications/cybersecurity-analyst/",
+    "seedId": "81861278-d746-48e9-b353-a2f719f7456b"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "comptia",
+    "navigationKeyword2": "general-comptia",
+    "question": "What is the exam series code for Linux+ V8?",
+    "correctAnswer": "XK0-006",
+    "incorrectAnswers": [
+      "XK0-005",
+      "CV0-004",
+      "CS0-003"
+    ],
+    "explanation": "CompTIA lists XK0-006 as the Linux+ V8 exam series code.",
+    "keywords": [
+      "linux-plus",
+      "general-comptia",
+      "test-prep"
+    ],
+    "source": "https://www.comptia.org/en-us/certifications/linux/v8/",
+    "seedId": "9140c46c-23cd-434d-a3dc-aaf42d1a0ae2"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "comptia",
+    "navigationKeyword2": "general-comptia",
+    "question": "What is the exam series code for the current CompTIA Network+ exam?",
+    "correctAnswer": "N10-009",
+    "incorrectAnswers": [
+      "220-1201",
+      "SY0-701",
+      "XK0-005"
+    ],
+    "explanation": "CompTIA lists N10-009 as the exam series code for Network+ V9.",
+    "keywords": [
+      "network-plus",
+      "general-comptia",
+      "test-prep"
+    ],
+    "source": "https://www.comptia.org/en-us/certifications/network/",
+    "seedId": "71c699c8-576c-41e6-b0cc-03ebb2e529ec"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "comptia",
+    "navigationKeyword2": "general-comptia",
+    "question": "What is the exam series code for CompTIA Security+ V7?",
+    "correctAnswer": "SY0-701",
+    "incorrectAnswers": [
+      "CS0-003",
+      "CV0-004",
+      "XK0-006"
+    ],
+    "explanation": "CompTIA lists SY0-701 as the Security+ V7 exam series code.",
+    "keywords": [
+      "security-plus",
+      "general-comptia",
+      "test-prep"
+    ],
+    "source": "https://www.comptia.org/en-us/certifications/security/",
+    "seedId": "1126bdda-2024-4201-8324-f70637a1a6f3"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "comptia",
+    "navigationKeyword2": "general-comptia",
+    "question": "What is the passing score for Security+?",
+    "correctAnswer": "750",
+    "incorrectAnswers": [
+      "720",
+      "700",
+      "800"
+    ],
+    "explanation": "The Security+ passing score is 750 on a 100-900 scale.",
+    "keywords": [
+      "security-plus",
+      "general-comptia",
+      "test-prep"
+    ],
+    "source": "https://www.comptia.org/en-us/certifications/security/",
+    "seedId": "b60e6802-7f7f-4f1e-850b-d5fc1747b95b"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "comptia",
+    "navigationKeyword2": "general-comptia",
+    "question": "What is the passing score for CySA+?",
+    "correctAnswer": "750",
+    "incorrectAnswers": [
+      "700",
+      "720",
+      "800"
+    ],
+    "explanation": "The CySA+ passing score is 750 on a 100-900 scale.",
+    "keywords": [
+      "cysa-plus",
+      "general-comptia",
+      "test-prep"
+    ],
+    "source": "https://www.comptia.org/en-us/certifications/cybersecurity-analyst/",
+    "seedId": "c3178cec-c282-4ebd-bc9e-83bedb1ba1fd"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "comptia",
+    "navigationKeyword2": "general-comptia",
+    "question": "What is the passing score for Linux+ V8?",
+    "correctAnswer": "720",
+    "incorrectAnswers": [
+      "700",
+      "750",
+      "800"
+    ],
+    "explanation": "The Linux+ V8 passing score is 720 on a 100-900 scale.",
+    "keywords": [
+      "linux-plus",
+      "general-comptia",
+      "test-prep"
+    ],
+    "source": "https://www.comptia.org/en-us/certifications/linux/v8/",
+    "seedId": "4764d840-7b9b-4415-9d5d-863ffd95ad72"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "comptia",
+    "navigationKeyword2": "general-comptia",
+    "question": "What experience does CompTIA recommend before taking Security+?",
+    "correctAnswer": "CompTIA Network+ and two years in a security or systems administrator role",
+    "incorrectAnswers": [
+      "No prior experience",
+      "Five years as a cloud architect",
+      "Only CompTIA A+"
+    ],
+    "explanation": "CompTIA recommends Network+ plus two years of relevant security or systems administration experience.",
+    "keywords": [
+      "security-plus",
+      "general-comptia",
+      "test-prep"
+    ],
+    "source": "https://www.comptia.org/en-us/certifications/security/",
+    "seedId": "ec2ecaaf-e752-4930-8421-3517ad434e7f"
+  }
+]

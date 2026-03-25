@@ -1,6 +1,6 @@
 import type { ReactNode } from "react";
 import { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useQuery } from "@tanstack/react-query";
 import { useAuth } from "@/contexts/AuthContext";
 import { usersApi } from "@/api/users";
@@ -14,6 +14,7 @@ interface LayoutProps {
 const Layout = ({ children }: LayoutProps) => {
   const { isAuthenticated, logout, username, email, isAdmin } = useAuth();
   const navigate = useNavigate();
+  const location = useLocation();
   const [showProfileModal, setShowProfileModal] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
@@ -41,44 +42,73 @@ const Layout = ({ children }: LayoutProps) => {
     setMobileMenuOpen(false);
   };
 
+  const isHomePage = location.pathname === "/";
+
+  const isPathActive = (basePath: string) => {
+    const path = location.pathname;
+    if (path === basePath) return true;
+    if (path.startsWith(`${basePath}/`)) return true;
+    // Treat explore/quiz collection routes as part of Collections
+    if (
+      basePath === "/collections" &&
+      (path.startsWith("/explore/collections/") || path.startsWith("/quiz/collections/"))
+    ) {
+      return true;
+    }
+    return false;
+  };
+
+  const desktopNavLinkClass = (active: boolean) =>
+    `inline-flex items-center px-1 pt-1 text-sm font-medium ${
+      active ? "text-indigo-600" : "text-gray-900 hover:text-indigo-600"
+    }`;
+
+  const mobileNavLinkClass = (active: boolean) =>
+    `block px-3 py-2 text-base font-medium ${
+      active ? "text-indigo-600 bg-gray-50" : "text-gray-900 hover:text-indigo-600 hover:bg-gray-50"
+    }`;
+
   return (
-    <div className="min-h-screen bg-gray-50">
-      <nav className="bg-white shadow-sm">
+    <div className="min-h-screen bg-[radial-gradient(circle_at_top,#1e3a8a_0%,#0f172a_34%,#020617_100%)]">
+      <nav className="border-b border-slate-200/70 bg-white/95 shadow-sm backdrop-blur">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between h-16">
             <div className="flex">
               <Link
                 to="/"
-                className="flex items-center px-2 py-4 text-xl font-bold text-indigo-600"
+                className={`flex items-center px-2 py-4 text-xl font-bold text-indigo-600 hover:text-indigo-700 border-b-2 -mb-px ${
+                  isPathActive("/") ? "border-indigo-600" : "border-transparent"
+                }`}
                 onClick={closeMobileMenu}
+                aria-current={isPathActive("/") ? "page" : undefined}
               >
                 Quizymode
               </Link>
               <div className="hidden sm:ml-6 sm:flex sm:space-x-8">
                 <Link
                   to="/categories"
-                  className="inline-flex items-center px-1 pt-1 text-sm font-medium text-gray-900 hover:text-indigo-600"
+                  className={desktopNavLinkClass(isPathActive("/categories"))}
                 >
                   Categories
+                </Link>
+                <Link
+                  to="/collections"
+                  className={desktopNavLinkClass(isPathActive("/collections"))}
+                >
+                  Collections
                 </Link>
                 {isAuthenticated && (
                   <>
                     <Link
-                      to="/my-items"
-                      className="inline-flex items-center px-1 pt-1 text-sm font-medium text-gray-900 hover:text-indigo-600"
+                      to="/items/add"
+                      className={desktopNavLinkClass(isPathActive("/items"))}
                     >
-                      My Items
-                    </Link>
-                    <Link
-                      to="/collections"
-                      className="inline-flex items-center px-1 pt-1 text-sm font-medium text-gray-900 hover:text-indigo-600"
-                    >
-                      My Collections
+                      Add Items
                     </Link>
                     {userIsAdmin && (
                       <Link
                         to="/admin"
-                        className="inline-flex items-center px-1 pt-1 text-sm font-medium text-gray-900 hover:text-indigo-600"
+                        className={desktopNavLinkClass(isPathActive("/admin"))}
                       >
                         Admin
                       </Link>
@@ -104,7 +134,7 @@ const Layout = ({ children }: LayoutProps) => {
               </button>
 
               {/* Desktop menu */}
-              <div className="hidden sm:flex sm:items-center">
+              <div className="hidden sm:flex sm:items-center sm:gap-3">
                 {isAuthenticated ? (
                   <div className="flex items-center space-x-4">
                     <button
@@ -155,31 +185,31 @@ const Layout = ({ children }: LayoutProps) => {
             <div className="pt-2 pb-3 space-y-1">
               <Link
                 to="/categories"
-                className="block px-3 py-2 text-base font-medium text-gray-900 hover:text-indigo-600 hover:bg-gray-50"
+                className={mobileNavLinkClass(isPathActive("/categories"))}
                 onClick={closeMobileMenu}
               >
                 Categories
               </Link>
+              <Link
+                to="/collections"
+                className={mobileNavLinkClass(isPathActive("/collections"))}
+                onClick={closeMobileMenu}
+              >
+                Collections
+              </Link>
               {isAuthenticated && (
                 <>
                   <Link
-                    to="/my-items"
-                    className="block px-3 py-2 text-base font-medium text-gray-900 hover:text-indigo-600 hover:bg-gray-50"
+                    to="/items/add"
+                    className={mobileNavLinkClass(isPathActive("/items"))}
                     onClick={closeMobileMenu}
                   >
-                    My Items
-                  </Link>
-                  <Link
-                    to="/collections"
-                    className="block px-3 py-2 text-base font-medium text-gray-900 hover:text-indigo-600 hover:bg-gray-50"
-                    onClick={closeMobileMenu}
-                  >
-                    My Collections
+                    Add Items
                   </Link>
                   {userIsAdmin && (
                     <Link
                       to="/admin"
-                      className="block px-3 py-2 text-base font-medium text-gray-900 hover:text-indigo-600 hover:bg-gray-50"
+                      className={mobileNavLinkClass(isPathActive("/admin"))}
                       onClick={closeMobileMenu}
                     >
                       Admin
@@ -243,7 +273,15 @@ const Layout = ({ children }: LayoutProps) => {
           </div>
         )}
       </nav>
-      <main className="max-w-7xl mx-auto py-6 sm:px-6 lg:px-8">{children}</main>
+      <main
+        className={
+          isHomePage
+            ? "py-0"
+            : "max-w-7xl mx-auto py-6 sm:px-6 lg:px-8"
+        }
+      >
+        {children}
+      </main>
       <UserProfileModal
         isOpen={showProfileModal}
         onClose={() => setShowProfileModal(false)}

@@ -1,0 +1,102 @@
+[
+  {
+    "category": "exams",
+    "navigationKeyword1": "ap",
+    "navigationKeyword2": "biology",
+    "question": "Which transport process moves molecules across a membrane without energy and with the help of a protein?",
+    "correctAnswer": "Facilitated diffusion",
+    "incorrectAnswers": [
+      "Active transport",
+      "Endocytosis",
+      "Osmosis"
+    ],
+    "explanation": "Facilitated diffusion uses membrane proteins but does not require ATP.",
+    "keywords": [
+      "ap-biology",
+      "cell-transport",
+      "life-science"
+    ],
+    "source": "https://openstax.org/details/books/biology-2e",
+    "seedId": "09418ebc-2e29-4021-9c1b-973df76b5e91"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "ap",
+    "navigationKeyword2": "biology",
+    "question": "What is the most likely effect of a mutation that changes a codon but not the amino acid it encodes?",
+    "correctAnswer": "It is a silent mutation",
+    "incorrectAnswers": [
+      "It always stops translation",
+      "It always changes protein shape",
+      "It deletes the gene"
+    ],
+    "explanation": "A silent mutation changes the DNA sequence without changing the amino acid.",
+    "keywords": [
+      "ap-biology",
+      "gene-expression",
+      "life-science"
+    ],
+    "source": "https://openstax.org/details/books/biology-2e",
+    "seedId": "58de316d-5d56-4b41-80df-d8b1adc2c199"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "ap",
+    "navigationKeyword2": "biology",
+    "question": "Which process during meiosis increases genetic variation by exchanging DNA between homologous chromosomes?",
+    "correctAnswer": "Crossing over",
+    "incorrectAnswers": [
+      "Binary fission",
+      "Transcription",
+      "Mitosis"
+    ],
+    "explanation": "Crossing over occurs in meiosis I and produces new allele combinations.",
+    "keywords": [
+      "ap-biology",
+      "heredity",
+      "life-science"
+    ],
+    "source": "https://openstax.org/details/books/biology-2e",
+    "seedId": "48d7697f-849d-48d8-b5a2-39d835abcc09"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "ap",
+    "navigationKeyword2": "biology",
+    "question": "If an enzyme is heated far above its optimal temperature, what usually happens first?",
+    "correctAnswer": "Its shape changes and activity drops",
+    "incorrectAnswers": [
+      "It begins making ATP",
+      "It becomes a lipid",
+      "It starts replicating DNA"
+    ],
+    "explanation": "Excess heat can denature an enzyme and reduce substrate binding.",
+    "keywords": [
+      "ap-biology",
+      "enzymes",
+      "life-science"
+    ],
+    "source": "https://openstax.org/details/books/biology-2e",
+    "seedId": "5e9c5afd-4f34-40c5-bc08-4b5010709309"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "ap",
+    "navigationKeyword2": "biology",
+    "question": "In natural selection, a trait tends to become more common when it does what?",
+    "correctAnswer": "Increases reproductive success",
+    "incorrectAnswers": [
+      "Appears in every organism",
+      "Requires no genes",
+      "Eliminates variation completely"
+    ],
+    "explanation": "Traits that improve survival or reproduction are more likely to be passed on.",
+    "keywords": [
+      "ap-biology",
+      "natural-selection",
+      "life-science"
+    ],
+    "source": "https://openstax.org/details/books/biology-2e",
+    "seedId": "a754fa46-e33e-4c38-81ed-9ef9a2527fab"
+  }
+]

@@ -1,0 +1,222 @@
+[
+  {
+    "category": "geography",
+    "navigationKeyword1": "capitals",
+    "navigationKeyword2": "world",
+    "question": "What is the national capital of Australia?",
+    "correctAnswer": "Canberra",
+    "incorrectAnswers": [
+      "Sydney",
+      "Melbourne",
+      "Brisbane"
+    ],
+    "explanation": "Britannica identifies Canberra in the Australian Capital Territory as Australia’s capital.",
+    "keywords": [
+      "world",
+      "australia",
+      "oceania"
+    ],
+    "source": "https://www.britannica.com/place/Canberra",
+    "seedId": "133cbe9c-282d-4ac3-b518-07dafcda77a3"
+  },
+  {
+    "category": "geography",
+    "navigationKeyword1": "capitals",
+    "navigationKeyword2": "world",
+    "question": "What is the national capital of New Zealand?",
+    "correctAnswer": "Wellington",
+    "incorrectAnswers": [
+      "Auckland",
+      "Christchurch",
+      "Dunedin"
+    ],
+    "explanation": "Britannica places New Zealand’s government in Wellington on North Island.",
+    "keywords": [
+      "world",
+      "new-zealand",
+      "oceania"
+    ],
+    "source": "https://www.britannica.com/place/Wellington-New-Zealand",
+    "seedId": "19c1c93f-0c46-431f-924b-f66f776d3af4"
+  },
+  {
+    "category": "geography",
+    "navigationKeyword1": "capitals",
+    "navigationKeyword2": "world",
+    "question": "What is the national capital of India?",
+    "correctAnswer": "New Delhi",
+    "incorrectAnswers": [
+      "Mumbai",
+      "Kolkata",
+      "Chennai"
+    ],
+    "explanation": "Britannica treats New Delhi as the seat of India’s national government within the Delhi capital territory.",
+    "keywords": [
+      "world",
+      "india",
+      "south-asia"
+    ],
+    "source": "https://www.britannica.com/place/New-Delhi",
+    "seedId": "937f5323-4604-4dba-9540-8f0aa7eeac04"
+  },
+  {
+    "category": "geography",
+    "navigationKeyword1": "capitals",
+    "navigationKeyword2": "world",
+    "question": "What is the national capital of Indonesia?",
+    "correctAnswer": "Jakarta",
+    "incorrectAnswers": [
+      "Surabaya",
+      "Bandung",
+      "Medan"
+    ],
+    "explanation": "Britannica lists Jakarta on Java as Indonesia’s capital and largest city.",
+    "keywords": [
+      "world",
+      "indonesia",
+      "southeast-asia"
+    ],
+    "source": "https://www.britannica.com/place/Jakarta",
+    "seedId": "c9c1d58c-7507-4aab-a703-78f5e61bb0ac"
+  },
+  {
+    "category": "geography",
+    "navigationKeyword1": "capitals",
+    "navigationKeyword2": "world",
+    "question": "What is the national capital of Malaysia?",
+    "correctAnswer": "Kuala Lumpur",
+    "incorrectAnswers": [
+      "George Town",
+      "Ipoh",
+      "Johor Bahru"
+    ],
+    "explanation": "Britannica identifies Kuala Lumpur as Malaysia’s capital and principal city.",
+    "keywords": [
+      "world",
+      "malaysia",
+      "southeast-asia"
+    ],
+    "source": "https://www.britannica.com/place/Kuala-Lumpur",
+    "seedId": "832ae5c3-e366-4bda-92a4-54d5733cc845"
+  },
+  {
+    "category": "geography",
+    "navigationKeyword1": "capitals",
+    "navigationKeyword2": "world",
+    "question": "The city-state of Singapore uses which city as its national capital?",
+    "correctAnswer": "Singapore",
+    "incorrectAnswers": [
+      "Putrajaya",
+      "Bangkok",
+      "Manila"
+    ],
+    "explanation": "Britannica describes Singapore as an independent city-state where the urban area itself forms the country.",
+    "keywords": [
+      "world",
+      "southeast-asia",
+      "singapore"
+    ],
+    "source": "https://www.britannica.com/place/Singapore",
+    "seedId": "45353aec-8599-42cd-af38-793a023d33cd"
+  },
+  {
+    "category": "geography",
+    "navigationKeyword1": "capitals",
+    "navigationKeyword2": "world",
+    "question": "What is the national capital of the Netherlands?",
+    "correctAnswer": "Amsterdam",
+    "incorrectAnswers": [
+      "The Hague",
+      "Rotterdam",
+      "Utrecht"
+    ],
+    "explanation": "Britannica calls Amsterdam the Netherlands’ capital and principal commercial center, while noting government administration is mainly in The Hague.",
+    "keywords": [
+      "world",
+      "the-netherlands",
+      "western-europe"
+    ],
+    "source": "https://www.britannica.com/place/Amsterdam",
+    "seedId": "e2bb0023-f4d5-4bbc-923e-852b320a0f4c"
+  },
+  {
+    "category": "geography",
+    "navigationKeyword1": "capitals",
+    "navigationKeyword2": "world",
+    "question": "What is the national capital of Belgium?",
+    "correctAnswer": "Brussels",
+    "incorrectAnswers": [
+      "Antwerp",
+      "Ghent",
+      "Bruges"
+    ],
+    "explanation": "Britannica names Brussels as Belgium’s capital and administrative heart.",
+    "keywords": [
+      "world",
+      "belgium",
+      "western-europe"
+    ],
+    "source": "https://www.britannica.com/place/Brussels",
+    "seedId": "ddc70977-814d-498a-9e3b-082b56535f96"
+  },
+  {
+    "category": "geography",
+    "navigationKeyword1": "capitals",
+    "navigationKeyword2": "world",
+    "question": "What is the national capital of Switzerland?",
+    "correctAnswer": "Bern",
+    "incorrectAnswers": [
+      "Zurich",
+      "Geneva",
+      "Basel"
+    ],
+    "explanation": "Britannica identifies Bern (Berne) as Switzerland’s capital while larger cities handle finance and trade.",
+    "keywords": [
+      "world",
+      "switzerland",
+      "western-europe"
+    ],
+    "source": "https://www.britannica.com/place/Bern",
+    "seedId": "944c28d9-cb37-4e30-b07f-e61a0bc38666"
+  },
+  {
+    "category": "geography",
+    "navigationKeyword1": "capitals",
+    "navigationKeyword2": "world",
+    "question": "What is the national capital of Portugal?",
+    "correctAnswer": "Lisbon",
+    "incorrectAnswers": [
+      "Porto",
+      "Coimbra",
+      "Faro"
+    ],
+    "explanation": "Britannica places Portugal’s government in Lisbon on the Tagus estuary.",
+    "keywords": [
+      "world",
+      "portugal",
+      "iberia"
+    ],
+    "source": "https://www.britannica.com/place/Lisbon",
+    "seedId": "3eea07a9-9836-45ba-9c06-0fa1b070f76f"
+  },
+  {
+    "category": "geography",
+    "navigationKeyword1": "capitals",
+    "navigationKeyword2": "world",
+    "question": "What is the national capital of Austria?",
+    "correctAnswer": "Vienna",
+    "incorrectAnswers": [
+      "Salzburg",
+      "Graz",
+      "Innsbruck"
+    ],
+    "explanation": "Britannica describes Vienna as Austria’s capital and cultural center on the Danube.",
+    "keywords": [
+      "world",
+      "austria",
+      "central-europe"
+    ],
+    "source": "https://www.britannica.com/place/Vienna",
+    "seedId": "05fc682a-0f63-47fa-a5f0-d4536c16f276"
+  }
+]

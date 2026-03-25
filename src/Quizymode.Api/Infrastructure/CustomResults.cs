@@ -1,21 +1,46 @@
+using Microsoft.Extensions.Logging;
 using Quizymode.Api.Shared.Kernel;
 
 namespace Quizymode.Api.Infrastructure;
 
 public static class CustomResults
 {
-    public static IResult Problem(Result result)
+    /// <summary>
+    /// Returns a ProblemDetails result for a failed <see cref="Result"/>.
+    /// When <paramref name="logger"/> is provided, logs the error details (code, description, status).
+    /// </summary>
+    public static IResult Problem(Result result, ILogger? logger = null)
     {
         if (result.IsSuccess)
         {
             throw new InvalidOperationException();
         }
 
+        int statusCode = GetStatusCode(result.Error.Type);
+        if (logger is not null)
+        {
+            if (statusCode >= 500)
+                logger.LogError("Request failed: Code={Code}, Detail={Detail}, StatusCode={StatusCode}",
+                    result.Error.Code, result.Error.Description, statusCode);
+            else
+                logger.LogWarning("Request failed: Code={Code}, Detail={Detail}, StatusCode={StatusCode}",
+                    result.Error.Code, result.Error.Description, statusCode);
+        }
+
         return Results.Problem(
             title: GetTitle(result.Error),
             detail: GetDetail(result.Error),
             type: GetType(result.Error.Type),
-            statusCode: GetStatusCode(result.Error.Type));
+            statusCode: statusCode);
+
+        static int GetStatusCode(ErrorType errorType) =>
+            errorType switch
+            {
+                ErrorType.Validation or ErrorType.Problem => StatusCodes.Status400BadRequest,
+                ErrorType.NotFound => StatusCodes.Status404NotFound,
+                ErrorType.Conflict => StatusCodes.Status409Conflict,
+                _ => StatusCodes.Status500InternalServerError
+            };
 
         static string GetTitle(Error error) =>
             error.Type switch
@@ -45,15 +70,6 @@ public static class CustomResults
                 ErrorType.NotFound => "https://tools.ietf.org/html/rfc7231#section-6.5.4",
                 ErrorType.Conflict => "https://tools.ietf.org/html/rfc7231#section-6.5.8",
                 _ => "https://tools.ietf.org/html/rfc7231#section-6.6.1"
-            };
-
-        static int GetStatusCode(ErrorType errorType) =>
-            errorType switch
-            {
-                ErrorType.Validation or ErrorType.Problem => StatusCodes.Status400BadRequest,
-                ErrorType.NotFound => StatusCodes.Status404NotFound,
-                ErrorType.Conflict => StatusCodes.Status409Conflict,
-                _ => StatusCodes.Status500InternalServerError
             };
     }
 

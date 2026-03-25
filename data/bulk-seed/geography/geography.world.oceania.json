@@ -1,0 +1,222 @@
+[
+  {
+    "category": "geography",
+    "navigationKeyword1": "world",
+    "navigationKeyword2": "oceania",
+    "question": "Which country occupies the continent of Australia?",
+    "correctAnswer": "Australia",
+    "incorrectAnswers": [
+      "New Zealand",
+      "Papua New Guinea",
+      "Fiji"
+    ],
+    "explanation": "The Commonwealth of Australia is the sovereign state that covers the Australian continental landmass.",
+    "keywords": [
+      "oceania",
+      "australia",
+      "continents"
+    ],
+    "source": "https://www.britannica.com/place/Australia",
+    "seedId": "3c2eab12-b2f2-4fdd-92af-e6e32a1632e1"
+  },
+  {
+    "category": "geography",
+    "navigationKeyword1": "world",
+    "navigationKeyword2": "oceania",
+    "question": "Which sea lies between Australia and New Zealand?",
+    "correctAnswer": "The Tasman Sea",
+    "incorrectAnswers": [
+      "The Coral Sea",
+      "The Timor Sea",
+      "The Arafura Sea"
+    ],
+    "explanation": "The Tasman Sea is a southwestern arm of the South Pacific separating Australia’s east coast from New Zealand.",
+    "keywords": [
+      "oceania",
+      "seas",
+      "pacific"
+    ],
+    "source": "https://www.britannica.com/place/Tasman-Sea",
+    "seedId": "173abdbf-8ea2-4eac-ace2-afad21e288d6"
+  },
+  {
+    "category": "geography",
+    "navigationKeyword1": "world",
+    "navigationKeyword2": "oceania",
+    "question": "New Zealand’s two main islands are the North Island and which other island?",
+    "correctAnswer": "The South Island",
+    "incorrectAnswers": [
+      "Tasmania",
+      "New Britain",
+      "Guadalcanal"
+    ],
+    "explanation": "New Zealand consists mainly of the North Island (Te Ika-a-Māui) and the larger South Island (Te Waipounamu).",
+    "keywords": [
+      "oceania",
+      "new-zealand",
+      "islands"
+    ],
+    "source": "https://www.britannica.com/place/New-Zealand",
+    "seedId": "a11d037a-b580-4459-a6ea-7dd3b71d2363"
+  },
+  {
+    "category": "geography",
+    "navigationKeyword1": "world",
+    "navigationKeyword2": "oceania",
+    "question": "Which independent country occupies the eastern half of the island of New Guinea?",
+    "correctAnswer": "Papua New Guinea",
+    "incorrectAnswers": [
+      "Indonesia",
+      "Solomon Islands",
+      "Vanuatu"
+    ],
+    "explanation": "Papua New Guinea lies on the eastern half of New Guinea; the western portion is part of Indonesia.",
+    "keywords": [
+      "oceania",
+      "melanesia",
+      "new-guinea"
+    ],
+    "source": "https://www.britannica.com/place/Papua-New-Guinea",
+    "seedId": "edd4192f-ff94-44ed-a6c9-4c32faab117a"
+  },
+  {
+    "category": "geography",
+    "navigationKeyword1": "world",
+    "navigationKeyword2": "oceania",
+    "question": "Which massive coral reef system lies off Queensland, northeastern Australia?",
+    "correctAnswer": "The Great Barrier Reef",
+    "incorrectAnswers": [
+      "The Mesoamerican Reef",
+      "The Florida Reef",
+      "Ningaloo Reef"
+    ],
+    "explanation": "The Great Barrier Reef is Earth’s largest coral reef complex, paralleling Queensland’s coast.",
+    "keywords": [
+      "oceania",
+      "coral-reefs",
+      "australia"
+    ],
+    "source": "https://www.britannica.com/place/Great-Barrier-Reef",
+    "seedId": "9c97821c-b2ca-4c69-b81e-5613e82b7bd0"
+  },
+  {
+    "category": "geography",
+    "navigationKeyword1": "world",
+    "navigationKeyword2": "oceania",
+    "question": "Australia sits on its own major plate named for the continent—what is that plate commonly called?",
+    "correctAnswer": "The Australian Plate",
+    "incorrectAnswers": [
+      "The Pacific Plate",
+      "The Nazca Plate",
+      "The Eurasian Plate"
+    ],
+    "explanation": "Australia lies mainly on the Australian Plate; some models merge it with India into an Indo-Australian Plate.",
+    "keywords": [
+      "oceania",
+      "plate-tectonics",
+      "australia"
+    ],
+    "source": "https://www.britannica.com/place/Pacific-Ocean",
+    "seedId": "d16a15be-d739-4a18-931b-49de2e61a617"
+  },
+  {
+    "category": "geography",
+    "navigationKeyword1": "world",
+    "navigationKeyword2": "oceania",
+    "question": "Which Melanesian archipelago country lies west of Fiji and east of Australia?",
+    "correctAnswer": "Vanuatu",
+    "incorrectAnswers": [
+      "Samoa",
+      "Tonga",
+      "Palau"
+    ],
+    "explanation": "Vanuatu is a Y-shaped island chain in the southwestern Pacific, part of Melanesia.",
+    "keywords": [
+      "oceania",
+      "melanesia",
+      "archipelagos"
+    ],
+    "source": "https://www.britannica.com/place/Vanuatu",
+    "seedId": "a2aff60b-5423-41bc-b288-4a3aca71e5a7"
+  },
+  {
+    "category": "geography",
+    "navigationKeyword1": "world",
+    "navigationKeyword2": "oceania",
+    "question": "Which low-lying island country is spread across many atolls in the central Pacific?",
+    "correctAnswer": "Kiribati",
+    "incorrectAnswers": [
+      "Fiji",
+      "Samoa",
+      "Palau"
+    ],
+    "explanation": "Kiribati comprises numerous scattered atolls and reef islands straddling the equator in Micronesia and Polynesia.",
+    "keywords": [
+      "oceania",
+      "micronesia",
+      "atolls"
+    ],
+    "source": "https://www.britannica.com/place/Kiribati",
+    "seedId": "c780c3f6-6a9c-4238-8632-8b7b2d2bc5ec"
+  },
+  {
+    "category": "geography",
+    "navigationKeyword1": "world",
+    "navigationKeyword2": "oceania",
+    "question": "Which French overseas collectivity includes Tahiti and other Society Islands in the South Pacific?",
+    "correctAnswer": "French Polynesia",
+    "incorrectAnswers": [
+      "New Caledonia",
+      "Wallis and Futuna",
+      "American Samoa"
+    ],
+    "explanation": "French Polynesia is an overseas collectivity of France centered on the Society Islands, including Tahiti.",
+    "keywords": [
+      "oceania",
+      "polynesia",
+      "france"
+    ],
+    "source": "https://www.britannica.com/place/French-Polynesia",
+    "seedId": "79f7476c-4158-423d-800d-e3802abb6722"
+  },
+  {
+    "category": "geography",
+    "navigationKeyword1": "world",
+    "navigationKeyword2": "oceania",
+    "question": "Which Australian island state lies south of Victoria across the Bass Strait?",
+    "correctAnswer": "Tasmania",
+    "incorrectAnswers": [
+      "Kangaroo Island",
+      "New Zealand",
+      "Norfolk Island"
+    ],
+    "explanation": "Tasmania is an island state of Australia separated from the mainland by Bass Strait.",
+    "keywords": [
+      "oceania",
+      "australia",
+      "islands"
+    ],
+    "source": "https://www.britannica.com/place/Tasmania",
+    "seedId": "89aa121b-a227-41dc-93cd-0fb5cd98bd95"
+  },
+  {
+    "category": "geography",
+    "navigationKeyword1": "world",
+    "navigationKeyword2": "oceania",
+    "question": "Fiji’s two largest islands, Viti Levu and Vanua Levu, lie in which ocean?",
+    "correctAnswer": "The Pacific Ocean",
+    "incorrectAnswers": [
+      "The Indian Ocean",
+      "The Atlantic Ocean",
+      "The Southern Ocean only"
+    ],
+    "explanation": "Fiji is an archipelagic country in Melanesia within the tropical southwestern Pacific Ocean.",
+    "keywords": [
+      "oceania",
+      "melanesia",
+      "fiji"
+    ],
+    "source": "https://www.britannica.com/place/Fiji-republic-Pacific-Ocean",
+    "seedId": "d54977b9-af28-48a6-9793-8552d2923263"
+  }
+]

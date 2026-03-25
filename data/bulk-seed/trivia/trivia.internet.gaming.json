@@ -1,0 +1,192 @@
+[
+  {
+    "category": "trivia",
+    "navigationKeyword1": "internet",
+    "navigationKeyword2": "gaming",
+    "question": "Esports is competitive what?",
+    "correctAnswer": "video gaming",
+    "incorrectAnswers": [
+      "chess by mail",
+      "poker in casinos only",
+      "outdoor athletics"
+    ],
+    "explanation": "Esports is competitive video gaming.",
+    "keywords": [
+      "esports",
+      "online"
+    ],
+    "source": "https://www.britannica.com/topic/esports",
+    "seedId": "42da86bf-5b78-4e38-ac41-154685053f04"
+  },
+  {
+    "category": "trivia",
+    "navigationKeyword1": "internet",
+    "navigationKeyword2": "gaming",
+    "question": "Streaming gameplay involves broadcasting video over what?",
+    "correctAnswer": "the internet",
+    "incorrectAnswers": [
+      "shortwave radio",
+      "telegraph",
+      "fax"
+    ],
+    "explanation": "Gameplay streaming uses internet video.",
+    "keywords": [
+      "streaming",
+      "twitch"
+    ],
+    "source": "https://www.britannica.com/technology/video-streaming",
+    "seedId": "94409462-18fd-42f1-af9e-faef6842654e"
+  },
+  {
+    "category": "trivia",
+    "navigationKeyword1": "internet",
+    "navigationKeyword2": "gaming",
+    "question": "MMORPGs to many players inhabiting what?",
+    "correctAnswer": "a shared online world",
+    "incorrectAnswers": [
+      "a single-player cartridge",
+      "a local chess club",
+      "a paper dungeon"
+    ],
+    "explanation": "MMORPGs host persistent online worlds.",
+    "keywords": [
+      "mmorpg",
+      "online"
+    ],
+    "source": "https://www.britannica.com/topic/massively-multiplayer-online-game",
+    "seedId": "55235324-5e12-4d88-b6cf-db8f6cc09f8d"
+  },
+  {
+    "category": "trivia",
+    "navigationKeyword1": "internet",
+    "navigationKeyword2": "gaming",
+    "question": "Lag in online games stems mainly from network what?",
+    "correctAnswer": "latency",
+    "incorrectAnswers": [
+      "keyboard size",
+      "monitor brightness",
+      "chair height"
+    ],
+    "explanation": "Lag reflects network latency.",
+    "keywords": [
+      "latency",
+      "netcode"
+    ],
+    "source": "https://www.britannica.com/technology/latency",
+    "seedId": "211a533d-5f29-4255-b482-b0833886d79c"
+  },
+  {
+    "category": "trivia",
+    "navigationKeyword1": "internet",
+    "navigationKeyword2": "gaming",
+    "question": "Loot boxes with randomized what purchases?",
+    "correctAnswer": "in-game rewards",
+    "incorrectAnswers": [
+      "physical toys only",
+      "movie tickets",
+      "groceries"
+    ],
+    "explanation": "Loot boxes randomize digital rewards.",
+    "keywords": [
+      "loot-boxes",
+      "monetization"
+    ],
+    "source": "https://www.britannica.com/topic/loot-box-video-games",
+    "seedId": "385f71d1-4dc2-4bed-9c90-91be2210fe4b"
+  },
+  {
+    "category": "trivia",
+    "navigationKeyword1": "internet",
+    "navigationKeyword2": "gaming",
+    "question": "Voice chat in games to real-time what transmission?",
+    "correctAnswer": "audio",
+    "incorrectAnswers": [
+      "postal mail",
+      "Morse only",
+      "fax tones"
+    ],
+    "explanation": "Voice chat sends real-time audio.",
+    "keywords": [
+      "voice-chat",
+      "multiplayer"
+    ],
+    "source": "https://www.britannica.com/technology/Voice-over-IP",
+    "seedId": "e1a2e74b-7401-4975-9b5a-ebb0a97b2848"
+  },
+  {
+    "category": "trivia",
+    "navigationKeyword1": "internet",
+    "navigationKeyword2": "gaming",
+    "question": "Patches to post-release software what?",
+    "correctAnswer": "updates",
+    "incorrectAnswers": [
+      "hardware soldering",
+      "disk defrag only",
+      "printer alignment"
+    ],
+    "explanation": "Patches update games after release.",
+    "keywords": [
+      "patches",
+      "live-service"
+    ],
+    "source": "https://www.britannica.com/technology/software-update",
+    "seedId": "c9225d36-39de-48a7-a720-b2e81c4721ae"
+  },
+  {
+    "category": "trivia",
+    "navigationKeyword1": "internet",
+    "navigationKeyword2": "gaming",
+    "question": "Speedrunning as completing games emphasizing what metric?",
+    "correctAnswer": "fastest time",
+    "incorrectAnswers": [
+      "highest weight lifted",
+      "lowest score",
+      "slowest pace"
+    ],
+    "explanation": "Speedrunning minimizes completion time.",
+    "keywords": [
+      "speedrun",
+      "community"
+    ],
+    "source": "https://www.britannica.com/topic/speedrunning",
+    "seedId": "5dad34d1-7648-4a25-a1c7-a78e27c0c72f"
+  },
+  {
+    "category": "trivia",
+    "navigationKeyword1": "internet",
+    "navigationKeyword2": "gaming",
+    "question": "Cross-platform play allows different what to play together?",
+    "correctAnswer": "console or PC systems",
+    "incorrectAnswers": [
+      "board sizes",
+      "card decks",
+      "chess clocks"
+    ],
+    "explanation": "Cross-platform links disparate gaming systems.",
+    "keywords": [
+      "cross-play",
+      "multiplayer"
+    ],
+    "source": "https://www.britannica.com/topic/video-game-console",
+    "seedId": "fd3fcbfd-c663-4457-9b87-9ab9f01d0447"
+  },
+  {
+    "category": "trivia",
+    "navigationKeyword1": "internet",
+    "navigationKeyword2": "gaming",
+    "question": "Cloud gaming to running games on remote what?",
+    "correctAnswer": "servers",
+    "incorrectAnswers": [
+      "toasters",
+      "calculators",
+      "typewriters"
+    ],
+    "explanation": "Cloud gaming executes on remote servers.",
+    "keywords": [
+      "cloud-gaming",
+      "streaming"
+    ],
+    "source": "https://www.britannica.com/technology/cloud-gaming",
+    "seedId": "821250a3-e903-4d57-bdef-c5c6e7bdc4ef"
+  }
+]

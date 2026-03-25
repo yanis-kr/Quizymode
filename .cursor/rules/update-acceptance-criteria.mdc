@@ -1,0 +1,44 @@
+---
+description: Update docs/ACCEPTANCE_CRITERIA.md when application behavior or API contracts change
+globs: 
+  - "**/Features/**/*.cs"
+  - "**/pages/**/*.tsx"
+  - "**/api/**/*.ts"
+alwaysApply: false
+---
+
+# Update acceptance criteria when app behavior changes
+
+When you change **how the application behaves** (not refactors that preserve behavior), update the acceptance-criteria document so it stays the single source of truth.
+
+## When to update
+
+- **API**: New or changed endpoints; changed auth (RequireAuthorization / anonymous); changed validation or error responses; changed ownership or visibility rules.
+- **Frontend**: New or changed user flows; changed when data is loaded (e.g. enabled conditions); changed what is shown to anonymous vs authenticated users.
+- **Business rules**: Who can do what (e.g. only owner can add/remove items); what is visible to whom (e.g. items in a collection by link); defaults (e.g. first collection created automatically).
+
+## What to update
+
+- **File**: `docs/ACCEPTANCE_CRITERIA.md`
+- **Format**: Keep the Given/When/Then style. One short sentence per clause. Group by feature area (Collections, Items, Categories, etc.).
+- **Content**: Add new scenarios or edit existing ones so they match the current code and product intent. Remove or mark obsolete behavior if something was intentionally dropped.
+
+## How to update
+
+1. After implementing a feature or behavior change, open `docs/ACCEPTANCE_CRITERIA.md`.
+2. Find the relevant section (e.g. "1. Collections") or add a new subsection.
+3. Add or edit acceptance criteria so that:
+   - **Given** describes the preconditions (auth, role, data state).
+   - **When** describes the action (user or API request).
+   - **Then** describes the expected outcome (success, error, visibility).
+4. Keep criteria concise and testable; avoid implementation detail.
+
+## Example
+
+If you add a rule that "only the collection owner can delete the collection", ensure there is a criterion like:
+
+- **Given** I am not the owner of the collection  
+- **When** I try to delete the collection  
+- **Then** the request is rejected (e.g. 400 Forbidden).
+
+If you change that behavior later (e.g. allow admins to delete), update this criterion accordingly.

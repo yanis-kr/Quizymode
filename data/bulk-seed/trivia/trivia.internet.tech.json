@@ -1,0 +1,192 @@
+[
+  {
+    "category": "trivia",
+    "navigationKeyword1": "internet",
+    "navigationKeyword2": "tech",
+    "question": "In an HTML document, which element contains the visible page content?",
+    "correctAnswer": "<body>",
+    "incorrectAnswers": [
+      "<head>",
+      "<title>",
+      "<meta>"
+    ],
+    "explanation": "The body element contains the page content users actually see.",
+    "keywords": [
+      "internet-tech",
+      "web-basics"
+    ],
+    "source": "https://www.w3.org/TR/html52/",
+    "seedId": "7cac2e4f-5858-42d9-99d1-507984627b92"
+  },
+  {
+    "category": "trivia",
+    "navigationKeyword1": "internet",
+    "navigationKeyword2": "tech",
+    "question": "Which TCP port is the default for HTTP when no port is specified?",
+    "correctAnswer": "80",
+    "incorrectAnswers": [
+      "21",
+      "443",
+      "8080"
+    ],
+    "explanation": "RFC 7230 uses port 80 as the default for HTTP URIs without an explicit port.",
+    "keywords": [
+      "internet-tech",
+      "web-basics"
+    ],
+    "source": "https://www.rfc-editor.org/rfc/rfc7230",
+    "seedId": "e5b017fd-1882-49a0-87a2-cce7ce104d0a"
+  },
+  {
+    "category": "trivia",
+    "navigationKeyword1": "internet",
+    "navigationKeyword2": "tech",
+    "question": "TCP is usually described as operating at which layer?",
+    "correctAnswer": "transport layer",
+    "incorrectAnswers": [
+      "application layer",
+      "physical layer",
+      "presentation layer"
+    ],
+    "explanation": "TCP is the transport-layer protocol responsible for reliable ordered delivery.",
+    "keywords": [
+      "internet-tech",
+      "web-basics"
+    ],
+    "source": "https://www.britannica.com/technology/Transmission-Control-Protocol",
+    "seedId": "bcb4f1e9-9b70-473e-a7e8-781005c03401"
+  },
+  {
+    "category": "trivia",
+    "navigationKeyword1": "internet",
+    "navigationKeyword2": "tech",
+    "question": "What does an IP address identify on a network?",
+    "correctAnswer": "a host or device",
+    "incorrectAnswers": [
+      "a browser tab",
+      "a password",
+      "a hard drive"
+    ],
+    "explanation": "An IP address identifies a host or device on a network.",
+    "keywords": [
+      "internet-tech",
+      "web-basics"
+    ],
+    "source": "https://www.britannica.com/technology/IP-address",
+    "seedId": "c8def8df-3b0f-48c8-80c8-d0b748f94e87"
+  },
+  {
+    "category": "trivia",
+    "navigationKeyword1": "internet",
+    "navigationKeyword2": "tech",
+    "question": "HTTPS is HTTP plus what added protection?",
+    "correctAnswer": "TLS encryption",
+    "incorrectAnswers": [
+      "image compression",
+      "file backup",
+      "printer sharing"
+    ],
+    "explanation": "HTTPS secures HTTP traffic by using TLS encryption.",
+    "keywords": [
+      "internet-tech",
+      "web-basics"
+    ],
+    "source": "https://www.britannica.com/technology/HTTPS",
+    "seedId": "ba9f8a46-e599-4806-8868-0d706d0f8159"
+  },
+  {
+    "category": "trivia",
+    "navigationKeyword1": "internet",
+    "navigationKeyword2": "tech",
+    "question": "Wi-Fi is mainly used to provide what kind of access?",
+    "correctAnswer": "wireless local-area network access",
+    "incorrectAnswers": [
+      "satellite television access",
+      "GPS navigation access",
+      "cell tower maintenance"
+    ],
+    "explanation": "Wi-Fi uses radio waves to provide wireless local-area network access.",
+    "keywords": [
+      "internet-tech",
+      "web-basics"
+    ],
+    "source": "https://www.britannica.com/technology/Wi-Fi",
+    "seedId": "52b28172-47b1-48fe-bb96-41414c834ffd"
+  },
+  {
+    "category": "trivia",
+    "navigationKeyword1": "internet",
+    "navigationKeyword2": "tech",
+    "question": "Bluetooth is designed for short-range wireless connections between what?",
+    "correctAnswer": "nearby personal devices",
+    "incorrectAnswers": [
+      "office buildings",
+      "power stations",
+      "train depots"
+    ],
+    "explanation": "Bluetooth is meant for short-range links between nearby personal devices.",
+    "keywords": [
+      "internet-tech",
+      "web-basics"
+    ],
+    "source": "https://www.britannica.com/technology/Bluetooth-technology",
+    "seedId": "3ee6c956-9408-4061-a464-6e093820f9ac"
+  },
+  {
+    "category": "trivia",
+    "navigationKeyword1": "internet",
+    "navigationKeyword2": "tech",
+    "question": "Fiber-optic cables transmit data using what?",
+    "correctAnswer": "light pulses",
+    "incorrectAnswers": [
+      "magnetic ink",
+      "sound waves",
+      "mechanical gears"
+    ],
+    "explanation": "Fiber-optic systems carry data as pulses of light.",
+    "keywords": [
+      "internet-tech",
+      "web-basics"
+    ],
+    "source": "https://www.britannica.com/technology/fiber-optics",
+    "seedId": "ec48d2ef-98bc-456e-a95f-24c6b6e7f568"
+  },
+  {
+    "category": "trivia",
+    "navigationKeyword1": "internet",
+    "navigationKeyword2": "tech",
+    "question": "Routers are used to forward packets between what?",
+    "correctAnswer": "networks",
+    "incorrectAnswers": [
+      "screens",
+      "spreadsheets",
+      "keyboards"
+    ],
+    "explanation": "Routers direct packets from one network to another.",
+    "keywords": [
+      "internet-tech",
+      "web-basics"
+    ],
+    "source": "https://www.britannica.com/technology/router-computer-science",
+    "seedId": "38d8a389-7553-4e51-a511-33f2d10e7c15"
+  },
+  {
+    "category": "trivia",
+    "navigationKeyword1": "internet",
+    "navigationKeyword2": "tech",
+    "question": "Network latency is commonly measured in what units?",
+    "correctAnswer": "milliseconds",
+    "incorrectAnswers": [
+      "kilograms",
+      "liters",
+      "volts"
+    ],
+    "explanation": "Latency is a measure of delay, commonly reported in milliseconds.",
+    "keywords": [
+      "internet-tech",
+      "web-basics"
+    ],
+    "source": "https://www.britannica.com/technology/latency",
+    "seedId": "c12a20c2-9e16-44e3-a827-59a5c8dca70c"
+  }
+]

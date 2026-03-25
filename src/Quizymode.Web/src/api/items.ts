@@ -8,6 +8,12 @@ import type {
   BulkCreateItemsRequest,
 } from "@/types/api";
 
+export interface UploadToCollectionResponse {
+  collectionId: string;
+  name: string;
+  itemCount: number;
+}
+
 export const itemsApi = {
   getAll: async (
     category?: string,
@@ -16,7 +22,10 @@ export const itemsApi = {
     collectionId?: string,
     isRandom?: boolean,
     page: number = 1,
-    pageSize: number = 10
+    pageSize: number = 10,
+    options?: {
+      navigationKeywords?: string[];
+    }
   ): Promise<ItemsResponse> => {
     const params: Record<string, string | number | boolean> = {
       page,
@@ -25,6 +34,9 @@ export const itemsApi = {
     if (category) params.category = category;
     if (isPrivate !== undefined) params.isPrivate = isPrivate;
     if (keywords && keywords.length > 0) params.keywords = keywords.join(",");
+    if (options?.navigationKeywords && options.navigationKeywords.length > 0) {
+      params.nav = options.navigationKeywords.join(",");
+    }
     if (collectionId) params.collectionId = collectionId;
     if (isRandom !== undefined) params.isRandom = isRandom;
     const response = await apiClient.get<ItemsResponse>("/items", { params });
@@ -38,18 +50,24 @@ export const itemsApi = {
 
   getRandom: async (
     category?: string,
-    count: number = 10
+    count: number = 10,
+    keywords?: string[],
+    options?: {
+      navigationKeywords?: string[];
+    }
   ): Promise<RandomItemsResponse> => {
-    // Use GET /items with isRandom=true instead of /items/random
     const params: Record<string, string | number | boolean> = {
       isRandom: true,
       pageSize: count,
     };
     if (category) params.category = category;
+    if (keywords && keywords.length > 0) params.keywords = keywords.join(",");
+    if (options?.navigationKeywords && options.navigationKeywords.length > 0) {
+      params.nav = options.navigationKeywords.join(",");
+    }
     const response = await apiClient.get<ItemsResponse>("/items", {
       params,
     });
-    // Convert ItemsResponse to RandomItemsResponse format
     return { items: response.data.items };
   },
 
@@ -75,6 +93,22 @@ export const itemsApi = {
   ): Promise<{ created: number; skipped: number }> => {
     const response = await apiClient.post<{ created: number; skipped: number }>(
       "/items/bulk",
+      data
+    );
+    return response.data;
+  },
+
+  /** Upload JSON items into a new collection. Requires category, keyword1, keyword2, keywords; inputText is the raw JSON for duplicate detection. Non-admin: private only. */
+  uploadToCollection: async (data: {
+    category: string;
+    keyword1: string;
+    keyword2: string | null;
+    keywords: { name: string; isPrivate: boolean }[];
+    items: Omit<CreateItemRequest, "category" | "navigationKeyword1" | "navigationKeyword2">[];
+    inputText: string;
+  }): Promise<UploadToCollectionResponse> => {
+    const response = await apiClient.post<UploadToCollectionResponse>(
+      "/items/upload-to-collection",
       data
     );
     return response.data;

@@ -1,0 +1,192 @@
+[
+  {
+    "category": "trivia",
+    "navigationKeyword1": "music",
+    "navigationKeyword2": "albums",
+    "question": "The Grammy Awards honor achievements in what industry?",
+    "correctAnswer": "recorded music",
+    "incorrectAnswers": [
+      "film editing",
+      "architecture",
+      "chemistry"
+    ],
+    "explanation": "Grammys honor recorded music.",
+    "keywords": [
+      "grammys",
+      "awards"
+    ],
+    "source": "https://www.britannica.com/art/Grammy-Awards",
+    "seedId": "f433c0ab-b298-4c40-b881-b57fe9b93e4b"
+  },
+  {
+    "category": "trivia",
+    "navigationKeyword1": "music",
+    "navigationKeyword2": "albums",
+    "question": "Historically, an LP record used what playback format?",
+    "correctAnswer": "long-play vinyl album",
+    "incorrectAnswers": [
+      "8-track only",
+      "wax cylinder only",
+      "piano roll"
+    ],
+    "explanation": "LP denotes long-play vinyl albums.",
+    "keywords": [
+      "vinyl",
+      "history"
+    ],
+    "source": "https://www.britannica.com/technology/long-play-record",
+    "seedId": "f1902dc8-9228-4db7-afc1-6d23408aacf6"
+  },
+  {
+    "category": "trivia",
+    "navigationKeyword1": "music",
+    "navigationKeyword2": "albums",
+    "question": "A concept album is built around a unified what across its tracks?",
+    "correctAnswer": "theme or story",
+    "incorrectAnswers": [
+      "random singles",
+      "unrelated jingles",
+      "white noise"
+    ],
+    "explanation": "Concept albums share a theme.",
+    "keywords": [
+      "concept-album",
+      "rock"
+    ],
+    "source": "https://www.britannica.com/topic/concept-album",
+    "seedId": "a4ea3369-cba4-4cc5-95a3-345ddd97e1a5"
+  },
+  {
+    "category": "trivia",
+    "navigationKeyword1": "music",
+    "navigationKeyword2": "albums",
+    "question": "Compilation albums usually collect what?",
+    "correctAnswer": "previously released tracks",
+    "incorrectAnswers": [
+      "live orchestras only",
+      "sheet music only",
+      "ringtones only"
+    ],
+    "explanation": "Compilations gather existing recordings.",
+    "keywords": [
+      "compilation",
+      "releases"
+    ],
+    "source": "https://www.britannica.com/topic/compilation-album",
+    "seedId": "f36a00b7-1d37-473b-ac7a-3f57665d6525"
+  },
+  {
+    "category": "trivia",
+    "navigationKeyword1": "music",
+    "navigationKeyword2": "albums",
+    "question": "A soundtrack usually collects music from what kind of media?",
+    "correctAnswer": "films or shows",
+    "incorrectAnswers": [
+      "cookbooks",
+      "sports rulebooks",
+      "recorded music"
+    ],
+    "explanation": "Soundtracks come from screen media.",
+    "keywords": [
+      "soundtrack",
+      "film-music"
+    ],
+    "source": "https://www.britannica.com/topic/soundtrack",
+    "seedId": "f1ea1d65-23ce-4dda-8657-222cd834c6e5"
+  },
+  {
+    "category": "trivia",
+    "navigationKeyword1": "music",
+    "navigationKeyword2": "albums",
+    "question": "Historically, a mixtape was a curated what on cassette?",
+    "correctAnswer": "song collections",
+    "incorrectAnswers": [
+      "software patches",
+      "radio towers",
+      "phone books"
+    ],
+    "explanation": "Mixtapes are curated song sets.",
+    "keywords": [
+      "mixtape",
+      "hip-hop"
+    ],
+    "source": "https://www.britannica.com/topic/mixtape",
+    "seedId": "accceceb-4428-478c-924a-b8e456f351eb"
+  },
+  {
+    "category": "trivia",
+    "navigationKeyword1": "music",
+    "navigationKeyword2": "albums",
+    "question": "An EP is shorter than a full what?",
+    "correctAnswer": "albums",
+    "incorrectAnswers": [
+      "symphonies",
+      "operas",
+      "ballets"
+    ],
+    "explanation": "EPs are shorter than LPs.",
+    "keywords": [
+      "ep",
+      "releases"
+    ],
+    "source": "https://www.britannica.com/topic/extended-play",
+    "seedId": "466c6cf0-016b-4e20-8714-5727aa5ef1ad"
+  },
+  {
+    "category": "trivia",
+    "navigationKeyword1": "music",
+    "navigationKeyword2": "albums",
+    "question": "Remastered albums are meant to improve what?",
+    "correctAnswer": "audio quality",
+    "incorrectAnswers": [
+      "cover weight",
+      "vinyl color",
+      "jewel case plastic"
+    ],
+    "explanation": "Remasters improve sound quality.",
+    "keywords": [
+      "remaster",
+      "audio"
+    ],
+    "source": "https://www.britannica.com/topic/remastering",
+    "seedId": "3c9fcde6-f247-4187-a421-173509a29168"
+  },
+  {
+    "category": "trivia",
+    "navigationKeyword1": "music",
+    "navigationKeyword2": "albums",
+    "question": "Live albums are recordings captured during what?",
+    "correctAnswer": "concerts",
+    "incorrectAnswers": [
+      "studio overdubs only",
+      "silent film scoring only",
+      "rehearsals only"
+    ],
+    "explanation": "Live albums capture performances.",
+    "keywords": [
+      "live-album",
+      "concerts"
+    ],
+    "source": "https://www.britannica.com/topic/live-album",
+    "seedId": "301ba1e3-5b5a-4324-9bd1-dc93ea0dbddb"
+  },
+  {
+    "category": "trivia",
+    "navigationKeyword1": "music",
+    "navigationKeyword2": "albums",
+    "question": "Studio albums are recorded mainly where?",
+    "correctAnswer": "recording studios",
+    "incorrectAnswers": [
+      "sports arenas only",
+      "subways",
+      "forests only"
+    ],
+    "explanation": "Studio albums are made in studios.",
+    "keywords": [
+      "studio-album",
+      "production"
+    ],
+    "source": "https://www.britannica.com/topic/recording-studio",
+    "seedId": "eaa7cffa-ff11-462f-ada6-477448a9be38"
+  }
+]

@@ -1,0 +1,192 @@
+[
+  {
+    "category": "trivia",
+    "navigationKeyword1": "food-drink",
+    "navigationKeyword2": "cuisine",
+    "question": "Paella is most strongly associated with which Spanish region?",
+    "correctAnswer": "Valencia",
+    "incorrectAnswers": [
+      "Andalusia",
+      "Galicia",
+      "Basque Country"
+    ],
+    "explanation": "Paella originated on Spain's Mediterranean coast and is especially associated with Valencia.",
+    "keywords": [
+      "global-cuisine",
+      "signature-dishes"
+    ],
+    "source": "https://www.britannica.com/topic/paella",
+    "seedId": "d7738239-da65-434a-9e0f-ad638c93636e"
+  },
+  {
+    "category": "trivia",
+    "navigationKeyword1": "food-drink",
+    "navigationKeyword2": "cuisine",
+    "question": "What spice gives paella its signature yellow color?",
+    "correctAnswer": "saffron",
+    "incorrectAnswers": [
+      "paprika",
+      "turmeric",
+      "cumin"
+    ],
+    "explanation": "Paella is traditionally made with saffron-flavored rice.",
+    "keywords": [
+      "global-cuisine",
+      "signature-dishes"
+    ],
+    "source": "https://www.britannica.com/topic/paella",
+    "seedId": "6a4042ec-13cb-4921-81d4-a4618820a167"
+  },
+  {
+    "category": "trivia",
+    "navigationKeyword1": "food-drink",
+    "navigationKeyword2": "cuisine",
+    "question": "Pho is widely regarded as the national dish of which country?",
+    "correctAnswer": "Vietnam",
+    "incorrectAnswers": [
+      "Thailand",
+      "Cambodia",
+      "Laos"
+    ],
+    "explanation": "Britannica identifies pho as the national dish of Vietnam.",
+    "keywords": [
+      "global-cuisine",
+      "signature-dishes"
+    ],
+    "source": "https://www.britannica.com/topic/pho",
+    "seedId": "f167a203-8ca0-4106-97e4-6e66ebd093ca"
+  },
+  {
+    "category": "trivia",
+    "navigationKeyword1": "food-drink",
+    "navigationKeyword2": "cuisine",
+    "question": "What meat is most commonly used in traditional pho?",
+    "correctAnswer": "beef",
+    "incorrectAnswers": [
+      "lamb",
+      "duck",
+      "veal"
+    ],
+    "explanation": "The most common protein in pho is thinly sliced beef.",
+    "keywords": [
+      "global-cuisine",
+      "signature-dishes"
+    ],
+    "source": "https://www.britannica.com/topic/pho",
+    "seedId": "22afc911-f1b7-4878-9543-c1376f2a7e3f"
+  },
+  {
+    "category": "trivia",
+    "navigationKeyword1": "food-drink",
+    "navigationKeyword2": "cuisine",
+    "question": "Kimchi most commonly uses what main vegetable?",
+    "correctAnswer": "cabbage",
+    "incorrectAnswers": [
+      "spinach",
+      "eggplant",
+      "green beans"
+    ],
+    "explanation": "Kimchi is most often made with celery cabbage, also called napa cabbage.",
+    "keywords": [
+      "global-cuisine",
+      "signature-dishes"
+    ],
+    "source": "https://www.britannica.com/topic/kimchi",
+    "seedId": "70ddb1bb-9cef-4892-8138-5b8ca26f0614"
+  },
+  {
+    "category": "trivia",
+    "navigationKeyword1": "food-drink",
+    "navigationKeyword2": "cuisine",
+    "question": "Hummus is traditionally blended with what sesame-based ingredient?",
+    "correctAnswer": "tahini",
+    "incorrectAnswers": [
+      "miso",
+      "harissa",
+      "aioli"
+    ],
+    "explanation": "Classic hummus is made from chickpeas mixed with tahini.",
+    "keywords": [
+      "global-cuisine",
+      "signature-dishes"
+    ],
+    "source": "https://www.britannica.com/topic/hummus",
+    "seedId": "11af5444-1968-4455-8abe-292e6720929d"
+  },
+  {
+    "category": "trivia",
+    "navigationKeyword1": "food-drink",
+    "navigationKeyword2": "cuisine",
+    "question": "Falafel is usually made from chickpeas or what other bean?",
+    "correctAnswer": "fava beans",
+    "incorrectAnswers": [
+      "black beans",
+      "kidney beans",
+      "soybeans"
+    ],
+    "explanation": "Falafel is made from ground chickpeas, fava beans, or a mixture of both.",
+    "keywords": [
+      "global-cuisine",
+      "signature-dishes"
+    ],
+    "source": "https://www.britannica.com/topic/falafel",
+    "seedId": "ee05f89f-4d55-4db4-a6b8-7ec6f3ec2dcd"
+  },
+  {
+    "category": "trivia",
+    "navigationKeyword1": "food-drink",
+    "navigationKeyword2": "cuisine",
+    "question": "What sauce completes the classic trio of fries, cheese curds, and poutine?",
+    "correctAnswer": "gravy",
+    "incorrectAnswers": [
+      "marinara",
+      "b?chamel",
+      "soy sauce"
+    ],
+    "explanation": "Classic poutine is made with fries, cheese curds, and gravy.",
+    "keywords": [
+      "global-cuisine",
+      "signature-dishes"
+    ],
+    "source": "https://www.britannica.com/topic/poutine",
+    "seedId": "a90c88a9-50ab-4e93-956f-e2fe561fe377"
+  },
+  {
+    "category": "trivia",
+    "navigationKeyword1": "food-drink",
+    "navigationKeyword2": "cuisine",
+    "question": "Ramen is a staple of fast food in which country?",
+    "correctAnswer": "Japan",
+    "incorrectAnswers": [
+      "China",
+      "South Korea",
+      "Thailand"
+    ],
+    "explanation": "Britannica describes ramen as a staple of Japanese fast food.",
+    "keywords": [
+      "global-cuisine",
+      "signature-dishes"
+    ],
+    "source": "https://www.britannica.com/topic/ramen",
+    "seedId": "45b9534a-7e83-4c8b-8d08-05f882d1514a"
+  },
+  {
+    "category": "trivia",
+    "navigationKeyword1": "food-drink",
+    "navigationKeyword2": "cuisine",
+    "question": "Traditional enchiladas are usually made with what kind of tortillas?",
+    "correctAnswer": "corn tortillas",
+    "incorrectAnswers": [
+      "wonton wrappers",
+      "naan bread",
+      "rice paper"
+    ],
+    "explanation": "Enchiladas are traditionally built from rolled corn tortillas covered in chili sauce.",
+    "keywords": [
+      "global-cuisine",
+      "signature-dishes"
+    ],
+    "source": "https://www.britannica.com/topic/enchilada",
+    "seedId": "0338c526-4d28-4173-b41f-d2d44d4c1931"
+  }
+]

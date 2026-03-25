@@ -1,0 +1,202 @@
+[
+  {
+    "category": "sports",
+    "navigationKeyword1": "soccer",
+    "navigationKeyword2": "players",
+    "question": "Which Argentine star captained his country to the 2022 World Cup title?",
+    "correctAnswer": "Lionel Messi",
+    "incorrectAnswers": [
+      "Angel Di Maria",
+      "Diego Maradona",
+      "Javier Mascherano"
+    ],
+    "explanation": "Messi led Argentina to the 2022 title in Qatar.",
+    "keywords": [
+      "soccer",
+      "players",
+      "lionel-messi"
+    ],
+    "source": "https://www.britannica.com/biography/Lionel-Messi",
+    "seedId": "6212218f-14e0-41a2-8d23-58c5c89c982c"
+  },
+  {
+    "category": "sports",
+    "navigationKeyword1": "soccer",
+    "navigationKeyword2": "players",
+    "question": "Which Portuguese forward became famous for starring at Manchester United, Real Madrid, and Juventus?",
+    "correctAnswer": "Cristiano Ronaldo",
+    "incorrectAnswers": [
+      "Luis Figo",
+      "Eusebio",
+      "Bruno Fernandes"
+    ],
+    "explanation": "Ronaldo starred for top clubs in England, Spain, and Italy.",
+    "keywords": [
+      "soccer",
+      "players",
+      "cristiano-ronaldo"
+    ],
+    "source": "https://www.britannica.com/biography/Cristiano-Ronaldo",
+    "seedId": "7f107f8b-e7d3-4cec-a038-8ef9142f07d5"
+  },
+  {
+    "category": "sports",
+    "navigationKeyword1": "soccer",
+    "navigationKeyword2": "players",
+    "question": "Which Brazilian forward won three FIFA World Cups as a player?",
+    "correctAnswer": "Pele",
+    "incorrectAnswers": [
+      "Ronaldo",
+      "Romario",
+      "Ronaldinho"
+    ],
+    "explanation": "Pele was part of Brazil's title teams in 1958, 1962, and 1970.",
+    "keywords": [
+      "soccer",
+      "players",
+      "pele"
+    ],
+    "source": "https://www.britannica.com/biography/Pele",
+    "seedId": "17955df5-f319-4ac5-938b-74e880483ff1"
+  },
+  {
+    "category": "sports",
+    "navigationKeyword1": "soccer",
+    "navigationKeyword2": "players",
+    "question": "Which Argentine playmaker scored the Hand of God goal in 1986?",
+    "correctAnswer": "Diego Maradona",
+    "incorrectAnswers": [
+      "Lionel Messi",
+      "Gabriel Batistuta",
+      "Juan Roman Riquelme"
+    ],
+    "explanation": "Maradona's quarterfinal against England made the phrase famous.",
+    "keywords": [
+      "soccer",
+      "players",
+      "diego-maradona"
+    ],
+    "source": "https://www.britannica.com/biography/Diego-Maradona",
+    "seedId": "561fe375-4060-4101-886a-11d04df00357"
+  },
+  {
+    "category": "sports",
+    "navigationKeyword1": "soccer",
+    "navigationKeyword2": "players",
+    "question": "Which French midfielder captained France to the 1998 World Cup title?",
+    "correctAnswer": "Didier Deschamps",
+    "incorrectAnswers": [
+      "Zinedine Zidane",
+      "Patrick Vieira",
+      "Laurent Blanc"
+    ],
+    "explanation": "Deschamps captained the host nation to the 1998 title.",
+    "keywords": [
+      "soccer",
+      "players",
+      "didier-deschamps"
+    ],
+    "source": "https://www.britannica.com/biography/Didier-Deschamps",
+    "seedId": "cc7a0fac-11b8-4dae-8345-cfc8dfd87e5e"
+  },
+  {
+    "category": "sports",
+    "navigationKeyword1": "soccer",
+    "navigationKeyword2": "players",
+    "question": "Which French playmaker scored twice in the 1998 World Cup final?",
+    "correctAnswer": "Zinedine Zidane",
+    "incorrectAnswers": [
+      "Thierry Henry",
+      "David Trezeguet",
+      "Michel Platini"
+    ],
+    "explanation": "Zidane's two headed goals helped France beat Brazil.",
+    "keywords": [
+      "soccer",
+      "players",
+      "zinedine-zidane"
+    ],
+    "source": "https://www.britannica.com/biography/Zinedine-Zidane",
+    "seedId": "15750cb6-3abd-4b4c-a266-6bca98b356e8"
+  },
+  {
+    "category": "sports",
+    "navigationKeyword1": "soccer",
+    "navigationKeyword2": "players",
+    "question": "Which Dutch forward was nicknamed The Flying Dutchman and starred for Arsenal?",
+    "correctAnswer": "Dennis Bergkamp",
+    "incorrectAnswers": [
+      "Robin van Persie",
+      "Ruud Gullit",
+      "Patrick Kluivert"
+    ],
+    "explanation": "Bergkamp became one of Arsenal's most admired attackers.",
+    "keywords": [
+      "soccer",
+      "players",
+      "dennis-bergkamp"
+    ],
+    "source": "https://www.britannica.com/biography/Dennis-Bergkamp",
+    "seedId": "34d43d75-8c5a-4e7d-a8e9-46bf56057d85"
+  },
+  {
+    "category": "sports",
+    "navigationKeyword1": "soccer",
+    "navigationKeyword2": "players",
+    "question": "Which Liberian striker won the Ballon d'Or in 1995?",
+    "correctAnswer": "George Weah",
+    "incorrectAnswers": [
+      "Samuel Eto'o",
+      "Didier Drogba",
+      "Abedi Pele"
+    ],
+    "explanation": "Weah remains the only African-born Ballon d'Or winner.",
+    "keywords": [
+      "soccer",
+      "players",
+      "george-weah"
+    ],
+    "source": "https://www.britannica.com/biography/George-Weah",
+    "seedId": "71855382-b53c-4080-acf9-731d8867b3e4"
+  },
+  {
+    "category": "sports",
+    "navigationKeyword1": "soccer",
+    "navigationKeyword2": "players",
+    "question": "Which Spanish midfielder was central to Barcelona and Spain during the tiki-taka era?",
+    "correctAnswer": "Xavi",
+    "incorrectAnswers": [
+      "David Villa",
+      "Fernando Torres",
+      "Iker Casillas"
+    ],
+    "explanation": "Xavi was one of the defining passers of Spain's golden generation.",
+    "keywords": [
+      "soccer",
+      "players",
+      "xavi"
+    ],
+    "source": "https://www.britannica.com/biography/Xavi",
+    "seedId": "5ddc5efc-008f-4e15-be59-f9be89c72aee"
+  },
+  {
+    "category": "sports",
+    "navigationKeyword1": "soccer",
+    "navigationKeyword2": "players",
+    "question": "Which goalkeeper captained Spain to the 2010 World Cup title?",
+    "correctAnswer": "Iker Casillas",
+    "incorrectAnswers": [
+      "David de Gea",
+      "Sergio Ramos",
+      "Xabi Alonso"
+    ],
+    "explanation": "Casillas lifted Spain's first men's World Cup in 2010.",
+    "keywords": [
+      "soccer",
+      "players",
+      "iker-casillas"
+    ],
+    "source": "https://www.britannica.com/biography/Iker-Casillas",
+    "seedId": "1811164c-d71e-4c68-84ea-c0a2ed41ed01"
+  }
+]

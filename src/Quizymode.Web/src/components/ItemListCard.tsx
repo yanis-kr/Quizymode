@@ -3,38 +3,30 @@ import { ratingsApi } from "@/api/ratings";
 import { useQuery } from "@tanstack/react-query";
 import { useNavigate } from "react-router-dom";
 import type { ItemResponse, KeywordResponse, ItemCollectionResponse } from "@/types/api";
+import ItemRatingsComments from "./ItemRatingsComments";
 
 interface ItemListCardProps {
   item: ItemResponse;
-  isSelected?: boolean;
-  onToggleSelect?: () => void;
-  onKeywordClick?: (keywordName: string) => void;
+  onKeywordClick?: (keywordName: string, item?: ItemResponse) => void;
   selectedKeywords?: string[];
   actions?: React.ReactNode;
+  /** When true, shows full ratings (set stars) and comments link */
+  showRatingsAndComments?: boolean;
+  returnUrl?: string;
 }
 
 const ItemListCard = ({
   item,
-  isSelected,
-  onToggleSelect,
   onKeywordClick,
   selectedKeywords,
   actions,
+  showRatingsAndComments,
+  returnUrl,
 }: ItemListCardProps) => {
-  const hasSelection = typeof onToggleSelect === "function";
-
   return (
     <div className="bg-white shadow rounded-lg p-6">
       <div className="flex justify-between items-start">
         <div className="flex items-start space-x-3 flex-1">
-          {hasSelection && (
-            <input
-              type="checkbox"
-              checked={isSelected}
-              onChange={onToggleSelect}
-              className="mt-1 h-4 w-4 text-indigo-600 border-gray-300 rounded focus:ring-indigo-500"
-            />
-          )}
           <div className="flex-1">
             <h3 className="text-lg font-medium text-gray-900">
               {item.question}
@@ -51,9 +43,15 @@ const ItemListCard = ({
             <KeywordsAndCollectionsSection
               keywords={item.keywords}
               collections={item.collections}
-              onKeywordClick={onKeywordClick}
+              onKeywordClick={onKeywordClick ? (kw) => onKeywordClick(kw, item) : undefined}
               selectedKeywords={selectedKeywords}
             />
+            {showRatingsAndComments && (
+              <ItemRatingsComments
+                itemId={item.id}
+                returnUrl={returnUrl}
+              />
+            )}
           </div>
         </div>
         {actions && <div className="flex space-x-1 ml-4">{actions}</div>}

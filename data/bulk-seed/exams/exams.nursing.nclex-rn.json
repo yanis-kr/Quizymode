@@ -1,0 +1,202 @@
+[
+  {
+    "category": "exams",
+    "navigationKeyword1": "nursing",
+    "navigationKeyword2": "nclex-rn",
+    "question": "What does the NCLEX-RN assess for entry-level nurses?",
+    "correctAnswer": "Knowledge, skills, abilities, and clinical judgment",
+    "incorrectAnswers": [
+      "Only memorized facts",
+      "Only communication skills",
+      "Only medication calculations"
+    ],
+    "explanation": "NCSBN says the NCLEX assesses the knowledge, skills, abilities, and clinical judgment essential for the entry-level nurse.",
+    "keywords": [
+      "nclex-rn",
+      "nclex",
+      "client-needs"
+    ],
+    "source": "https://www.ncsbn.org/public-files/2026_RN_Test-Plan_English-F.pdf",
+    "seedId": "d321a6ed-4cca-4811-9f0c-b2fe4ce6f488"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "nursing",
+    "navigationKeyword2": "nclex-rn",
+    "question": "How many major Client Needs categories are in the 2026 NCLEX-RN test plan?",
+    "correctAnswer": "Four",
+    "incorrectAnswers": [
+      "Three",
+      "Five",
+      "Eight"
+    ],
+    "explanation": "NCSBN organizes NCLEX-RN content into four major Client Needs categories.",
+    "keywords": [
+      "nclex-rn",
+      "nclex",
+      "client-needs"
+    ],
+    "source": "https://www.ncsbn.org/public-files/2026_RN_Test-Plan_English-F.pdf",
+    "seedId": "adce2b9f-5589-4597-9b28-ae65b5b7c921"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "nursing",
+    "navigationKeyword2": "nclex-rn",
+    "question": "Which NCLEX-RN category includes Management of Care?",
+    "correctAnswer": "Safe and Effective Care Environment",
+    "incorrectAnswers": [
+      "Psychosocial Integrity",
+      "Health Promotion and Maintenance",
+      "Physiological Integrity"
+    ],
+    "explanation": "Management of Care is a subcategory within Safe and Effective Care Environment.",
+    "keywords": [
+      "nclex-rn",
+      "nclex",
+      "client-needs"
+    ],
+    "source": "https://www.ncsbn.org/public-files/2026_RN_Test-Plan_English-F.pdf",
+    "seedId": "78326426-20e6-4976-a5e5-92d21943b2c1"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "nursing",
+    "navigationKeyword2": "nclex-rn",
+    "question": "Which NCLEX-RN category stands alone rather than being split into subcategories?",
+    "correctAnswer": "Psychosocial Integrity",
+    "incorrectAnswers": [
+      "Physiological Integrity",
+      "Safe and Effective Care Environment",
+      "Management of Care"
+    ],
+    "explanation": "Psychosocial Integrity is one of the four major categories and is not split into subcategories.",
+    "keywords": [
+      "nclex-rn",
+      "nclex",
+      "client-needs"
+    ],
+    "source": "https://www.ncsbn.org/public-files/2026_RN_Test-Plan_English-F.pdf",
+    "seedId": "58e84e98-3e57-401c-b3de-2910ec6413a5"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "nursing",
+    "navigationKeyword2": "nclex-rn",
+    "question": "Which Physiological Integrity subcategory covers medications and IV therapies on NCLEX-RN?",
+    "correctAnswer": "Pharmacological and Parenteral Therapies",
+    "incorrectAnswers": [
+      "Basic Care and Comfort",
+      "Reduction of Risk Potential",
+      "Health Promotion and Maintenance"
+    ],
+    "explanation": "NCSBN lists Pharmacological and Parenteral Therapies under Physiological Integrity for NCLEX-RN.",
+    "keywords": [
+      "nclex-rn",
+      "nclex",
+      "client-needs"
+    ],
+    "source": "https://www.ncsbn.org/public-files/2026_RN_Test-Plan_English-F.pdf",
+    "seedId": "741296a6-1d28-4799-bbbd-fa42b6854310"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "nursing",
+    "navigationKeyword2": "nclex-rn",
+    "question": "What percentage of the NCLEX-RN test plan is Management of Care?",
+    "correctAnswer": "18%",
+    "incorrectAnswers": [
+      "9%",
+      "14%",
+      "21%"
+    ],
+    "explanation": "NCSBN lists Management of Care at 18% in the 2026 NCLEX-RN test plan.",
+    "keywords": [
+      "nclex-rn",
+      "nclex",
+      "client-needs"
+    ],
+    "source": "https://www.ncsbn.org/public-files/2026_RN_Test-Plan_English-F.pdf",
+    "seedId": "04f6bca3-8954-4a0a-ab53-4bba5b7809be"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "nursing",
+    "navigationKeyword2": "nclex-rn",
+    "question": "What percentage of the NCLEX-RN test plan is Health Promotion and Maintenance?",
+    "correctAnswer": "9%",
+    "incorrectAnswers": [
+      "12%",
+      "14%",
+      "18%"
+    ],
+    "explanation": "NCSBN lists Health Promotion and Maintenance at 9% in the 2026 NCLEX-RN test plan.",
+    "keywords": [
+      "nclex-rn",
+      "nclex",
+      "client-needs"
+    ],
+    "source": "https://www.ncsbn.org/public-files/2026_RN_Test-Plan_English-F.pdf",
+    "seedId": "50570c55-f897-4d01-a694-f2f0c51dee42"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "nursing",
+    "navigationKeyword2": "nclex-rn",
+    "question": "What percentage of the NCLEX-RN test plan is Physiological Adaptation?",
+    "correctAnswer": "14%",
+    "incorrectAnswers": [
+      "9%",
+      "10%",
+      "18%"
+    ],
+    "explanation": "NCSBN lists Physiological Adaptation at 14% in the 2026 NCLEX-RN test plan.",
+    "keywords": [
+      "nclex-rn",
+      "nclex",
+      "client-needs"
+    ],
+    "source": "https://www.ncsbn.org/public-files/2026_RN_Test-Plan_English-F.pdf",
+    "seedId": "72bf5d77-8dfc-481a-ac4b-041f3742c5df"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "nursing",
+    "navigationKeyword2": "nclex-rn",
+    "question": "How are NCLEX-RN examinations administered?",
+    "correctAnswer": "Adaptively in variable-length format",
+    "incorrectAnswers": [
+      "Only as fixed 100-question paper tests",
+      "Only in oral stations",
+      "In a single handwritten essay format"
+    ],
+    "explanation": "NCSBN states that NCLEX-RN examinations are administered adaptively in variable-length format.",
+    "keywords": [
+      "nclex-rn",
+      "nclex",
+      "client-needs"
+    ],
+    "source": "https://www.ncsbn.org/public-files/2026_RN_Test-Plan_English-F.pdf",
+    "seedId": "d49bd399-fab4-4bf9-84fd-18023f397c86"
+  },
+  {
+    "category": "exams",
+    "navigationKeyword1": "nursing",
+    "navigationKeyword2": "nclex-rn",
+    "question": "Which integrated process is fundamental throughout the NCLEX-RN test plan?",
+    "correctAnswer": "Clinical Judgment",
+    "incorrectAnswers": [
+      "Capital Budgeting",
+      "Technical Analysis",
+      "Sentence Equivalence"
+    ],
+    "explanation": "Clinical Judgment is one of the integrated processes applied throughout the NCLEX-RN test plan.",
+    "keywords": [
+      "nclex-rn",
+      "nclex",
+      "client-needs"
+    ],
+    "source": "https://www.ncsbn.org/public-files/2026_RN_Test-Plan_English-F.pdf",
+    "seedId": "eef4adc8-6e55-4db6-bc83-d9419e7d7a3b"
+  }
+]

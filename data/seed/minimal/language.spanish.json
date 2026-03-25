@@ -1,0 +1,38 @@
+[
+  {
+    "category": "languages",
+    "question": "How do you say hello in Spanish?",
+    "correctAnswer": "Hola",
+    "incorrectAnswers": [
+      "Adi\u00f3s",
+      "Gracias",
+      "Por favor"
+    ],
+    "explanation": "Hola is the standard greeting for hello in Spanish.",
+    "keywords": [
+      "greetings",
+      "hola",
+      "core-100"
+    ],
+    "source": "initial seed",
+    "navigationKeyword1": "spanish",
+    "navigationKeyword2": "vocab"
+  },
+  {
+    "category": "languages",
+    "question": "How do you say thank you in Spanish?",
+    "correctAnswer": "Gracias",
+    "incorrectAnswers": [
+      "Por favor",
+      "De nada",
+      "Hola"
+    ],
+    "explanation": "Gracias means thank you in Spanish.",
+    "keywords": [
+      "gracias",
+      "courtesy",
+      "core-100"
+    ],
+    "source": "initial seed"
+  }
+]

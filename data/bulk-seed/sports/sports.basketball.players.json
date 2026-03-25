@@ -1,0 +1,202 @@
+[
+  {
+    "category": "sports",
+    "navigationKeyword1": "basketball",
+    "navigationKeyword2": "players",
+    "question": "Which player won six NBA championships with the Chicago Bulls in the 1990s?",
+    "correctAnswer": "Michael Jordan",
+    "incorrectAnswers": [
+      "Kobe Bryant",
+      "LeBron James",
+      "Magic Johnson"
+    ],
+    "explanation": "Jordan led the Bulls to two three-peats in the 1990s.",
+    "keywords": [
+      "basketball",
+      "players",
+      "michael-jordan"
+    ],
+    "source": "https://www.britannica.com/biography/Michael-Jordan",
+    "seedId": "e1008408-1980-42af-b759-2428ff5cf3a7"
+  },
+  {
+    "category": "sports",
+    "navigationKeyword1": "basketball",
+    "navigationKeyword2": "players",
+    "question": "Which player became the NBA's all-time leading scorer?",
+    "correctAnswer": "LeBron James",
+    "incorrectAnswers": [
+      "Kareem Abdul-Jabbar",
+      "Karl Malone",
+      "Kobe Bryant"
+    ],
+    "explanation": "LeBron James passed Kareem Abdul-Jabbar for the career scoring lead.",
+    "keywords": [
+      "basketball",
+      "players",
+      "lebron-james"
+    ],
+    "source": "https://www.nba.com/history",
+    "seedId": "d3bd4f84-de44-48f3-9d5f-dd78b65807d1"
+  },
+  {
+    "category": "sports",
+    "navigationKeyword1": "basketball",
+    "navigationKeyword2": "players",
+    "question": "Which Hall of Fame center was famous for the skyhook?",
+    "correctAnswer": "Kareem Abdul-Jabbar",
+    "incorrectAnswers": [
+      "Shaquille O'Neal",
+      "Hakeem Olajuwon",
+      "Wilt Chamberlain"
+    ],
+    "explanation": "Kareem's skyhook became one of basketball's signature shots.",
+    "keywords": [
+      "basketball",
+      "players",
+      "kareem"
+    ],
+    "source": "https://www.britannica.com/biography/Kareem-Abdul-Jabbar",
+    "seedId": "19089b01-a450-4ddf-92ad-96f281e05961"
+  },
+  {
+    "category": "sports",
+    "navigationKeyword1": "basketball",
+    "navigationKeyword2": "players",
+    "question": "Which Los Angeles Lakers guard was nicknamed Magic?",
+    "correctAnswer": "Magic Johnson",
+    "incorrectAnswers": [
+      "Jerry West",
+      "Kobe Bryant",
+      "Steve Nash"
+    ],
+    "explanation": "Magic Johnson led the Lakers' Showtime era.",
+    "keywords": [
+      "basketball",
+      "players",
+      "magic-johnson"
+    ],
+    "source": "https://www.britannica.com/biography/Magic-Johnson",
+    "seedId": "2d6ad9ec-8989-4fef-998d-ebd564f01a00"
+  },
+  {
+    "category": "sports",
+    "navigationKeyword1": "basketball",
+    "navigationKeyword2": "players",
+    "question": "Which Boston Celtics forward became known as Larry Legend?",
+    "correctAnswer": "Larry Bird",
+    "incorrectAnswers": [
+      "Kevin McHale",
+      "Paul Pierce",
+      "John Havlicek"
+    ],
+    "explanation": "Larry Bird was the face of the Celtics in the 1980s.",
+    "keywords": [
+      "basketball",
+      "players",
+      "larry-bird"
+    ],
+    "source": "https://www.britannica.com/biography/Larry-Bird",
+    "seedId": "51672cda-aa8c-4d59-8a6d-d65b2b27f3df"
+  },
+  {
+    "category": "sports",
+    "navigationKeyword1": "basketball",
+    "navigationKeyword2": "players",
+    "question": "Which center won titles with the Lakers and was famous for power and broken backboards earlier in his career?",
+    "correctAnswer": "Shaquille O'Neal",
+    "incorrectAnswers": [
+      "David Robinson",
+      "Patrick Ewing",
+      "Alonzo Mourning"
+    ],
+    "explanation": "O'Neal was one of the most dominant centers in league history.",
+    "keywords": [
+      "basketball",
+      "players",
+      "shaquille-oneal"
+    ],
+    "source": "https://www.britannica.com/biography/Shaquille-ONeal",
+    "seedId": "294e3718-c23a-4ff9-a13c-9d628f7160f8"
+  },
+  {
+    "category": "sports",
+    "navigationKeyword1": "basketball",
+    "navigationKeyword2": "players",
+    "question": "Which Los Angeles Lakers star scored 81 points in a 2006 NBA game?",
+    "correctAnswer": "Kobe Bryant",
+    "incorrectAnswers": [
+      "Michael Jordan",
+      "Allen Iverson",
+      "James Harden"
+    ],
+    "explanation": "Bryant's 81-point game is the second-highest single-game total in NBA history.",
+    "keywords": [
+      "basketball",
+      "players",
+      "kobe-bryant"
+    ],
+    "source": "https://www.britannica.com/biography/Kobe-Bryant",
+    "seedId": "5f48cbe4-b914-4af7-9584-72db2d39b02c"
+  },
+  {
+    "category": "sports",
+    "navigationKeyword1": "basketball",
+    "navigationKeyword2": "players",
+    "question": "Which point guard is most associated with the Golden State Warriors' three-point revolution?",
+    "correctAnswer": "Stephen Curry",
+    "incorrectAnswers": [
+      "Chris Paul",
+      "Damian Lillard",
+      "Klay Thompson"
+    ],
+    "explanation": "Curry changed offensive basketball with elite long-range shooting.",
+    "keywords": [
+      "basketball",
+      "players",
+      "stephen-curry"
+    ],
+    "source": "https://www.britannica.com/biography/Stephen-Curry",
+    "seedId": "985edf75-63df-413b-8133-742e0b9332a6"
+  },
+  {
+    "category": "sports",
+    "navigationKeyword1": "basketball",
+    "navigationKeyword2": "players",
+    "question": "Which WNBA and UConn star became the face of the Seattle Storm and later the New York Liberty?",
+    "correctAnswer": "Breanna Stewart",
+    "incorrectAnswers": [
+      "Diana Taurasi",
+      "Maya Moore",
+      "A'ja Wilson"
+    ],
+    "explanation": "Stewart won titles and MVP honors in the WNBA.",
+    "keywords": [
+      "basketball",
+      "players",
+      "breanna-stewart"
+    ],
+    "source": "https://www.britannica.com/biography/Breanna-Stewart",
+    "seedId": "755244bf-8fd9-4c8d-9a1b-962e732db9a0"
+  },
+  {
+    "category": "sports",
+    "navigationKeyword1": "basketball",
+    "navigationKeyword2": "players",
+    "question": "Which Las Vegas Aces star won back-to-back WNBA MVP awards in 2022 and 2023?",
+    "correctAnswer": "A'ja Wilson",
+    "incorrectAnswers": [
+      "Chelsea Gray",
+      "Sabrina Ionescu",
+      "Brittney Griner"
+    ],
+    "explanation": "Wilson became the centerpiece of the Aces' title run.",
+    "keywords": [
+      "basketball",
+      "players",
+      "aja-wilson"
+    ],
+    "source": "https://www.wnba.com/history",
+    "seedId": "535eea71-189b-443a-8c9c-0eddb848e43a"
+  }
+]

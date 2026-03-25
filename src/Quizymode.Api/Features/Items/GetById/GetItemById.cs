@@ -18,9 +18,14 @@ public static class GetItemById
         List<string> IncorrectAnswers,
         string Explanation,
         DateTime CreatedAt,
+        string? CreatedBy,
         List<KeywordResponse> Keywords,
         List<CollectionResponse> Collections,
-        string? Source);
+        string? Source,
+        string? UploadId = null,
+        List<string> NavigationBreadcrumb = null!, // Navigation path for breadcrumbs: e.g. [rank1, rank2] or ["other"] when item has no rank1/rank2 keyword. Use "other" in URLs; display as "Others".
+        decimal? FactualRisk = null,
+        string? ReviewComments = null);
 
     public sealed record KeywordResponse(
         string Id,
@@ -136,6 +141,9 @@ public static class GetItemById
                     c.CreatedAt)).ToList();
             }
 
+            // Build navigation breadcrumb: rank1, rank2 (or "other" when item has no nav keyword for that level)
+            List<string> navigationBreadcrumb = await GetNavigationBreadcrumbAsync(db, item, cancellationToken);
+
             Response response = new(
                 item.Id.ToString(),
                 categoryName,
@@ -145,9 +153,14 @@ public static class GetItemById
                 item.IncorrectAnswers,
                 item.Explanation,
                 item.CreatedAt,
+                item.CreatedBy,
                 visibleKeywords,
                 collections,
-                item.Source);
+                item.Source,
+                item.UploadId?.ToString(),
+                navigationBreadcrumb,
+                item.FactualRisk,
+                item.ReviewComments);
 
             return Result.Success(response);
         }
@@ -156,6 +169,39 @@ public static class GetItemById
             return Result.Failure<Response>(
                 Error.Problem("Item.GetFailed", $"Failed to get item: {ex.Message}"));
         }
+    }
+
+    /// <summary>
+    /// Returns navigation path for breadcrumbs: [rank1Name, rank2Name] using "other" when item has no nav keyword at that level.
+    /// </summary>
+    private static async Task<List<string>> GetNavigationBreadcrumbAsync(
+        ApplicationDbContext db,
+        Item item,
+        CancellationToken cancellationToken)
+    {
+        if (!item.CategoryId.HasValue)
+            return new List<string>();
+
+        if (item.NavigationKeywordId1 == null)
+            return new List<string> { "other" };
+
+        string? rank1Name = await db.Keywords
+            .Where(k => k.Id == item.NavigationKeywordId1)
+            .Select(k => k.Name)
+            .FirstOrDefaultAsync(cancellationToken);
+        if (rank1Name == null)
+            return new List<string> { "other" };
+
+        if (item.NavigationKeywordId2 == null)
+            return new List<string> { rank1Name };
+
+        string? rank2Name = await db.Keywords
+            .Where(k => k.Id == item.NavigationKeywordId2)
+            .Select(k => k.Name)
+            .FirstOrDefaultAsync(cancellationToken);
+        if (rank2Name != null)
+            return new List<string> { rank1Name, rank2Name };
+        return new List<string> { rank1Name };
     }
 
     public sealed class FeatureRegistration : IFeatureRegistration

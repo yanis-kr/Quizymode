@@ -1,0 +1,202 @@
+[
+  {
+    "category": "sports",
+    "navigationKeyword1": "football",
+    "navigationKeyword2": "nfl",
+    "question": "What does NFL stand for?",
+    "correctAnswer": "National Football League",
+    "incorrectAnswers": [
+      "National Field League",
+      "North Football League",
+      "National Finals League"
+    ],
+    "explanation": "NFL is short for National Football League.",
+    "keywords": [
+      "football",
+      "nfl",
+      "league"
+    ],
+    "source": "https://operations.nfl.com/learn-the-game/nfl-basics/",
+    "seedId": "aad71236-62bf-4ed4-9bc0-f1e11383ba7a"
+  },
+  {
+    "category": "sports",
+    "navigationKeyword1": "football",
+    "navigationKeyword2": "nfl",
+    "question": "How many teams play in the NFL?",
+    "correctAnswer": "32",
+    "incorrectAnswers": [
+      "30",
+      "28",
+      "36"
+    ],
+    "explanation": "The NFL has 32 franchises split between two conferences.",
+    "keywords": [
+      "football",
+      "nfl",
+      "teams"
+    ],
+    "source": "https://operations.nfl.com/learn-the-game/nfl-basics/",
+    "seedId": "6f722805-258f-4e26-9ad4-cda90b534d42"
+  },
+  {
+    "category": "sports",
+    "navigationKeyword1": "football",
+    "navigationKeyword2": "nfl",
+    "question": "Which trophy is awarded to the Super Bowl champion?",
+    "correctAnswer": "Vince Lombardi Trophy",
+    "incorrectAnswers": [
+      "Larry O'Brien Trophy",
+      "Stanley Cup",
+      "Commissioner's Trophy"
+    ],
+    "explanation": "The Super Bowl winner receives the Vince Lombardi Trophy.",
+    "keywords": [
+      "football",
+      "nfl",
+      "trophy"
+    ],
+    "source": "https://operations.nfl.com/learn-the-game/nfl-basics/",
+    "seedId": "7956fc82-2ac7-451a-b67b-3ec7e7524419"
+  },
+  {
+    "category": "sports",
+    "navigationKeyword1": "football",
+    "navigationKeyword2": "nfl",
+    "question": "Which two conferences make up the NFL?",
+    "correctAnswer": "AFC and NFC",
+    "incorrectAnswers": [
+      "East and West",
+      "American and National",
+      "North and South"
+    ],
+    "explanation": "The NFL is organized into the AFC and NFC.",
+    "keywords": [
+      "football",
+      "nfl",
+      "conferences"
+    ],
+    "source": "https://operations.nfl.com/learn-the-game/nfl-basics/",
+    "seedId": "53a63efb-24ce-4608-8294-a9eb0ed3524c"
+  },
+  {
+    "category": "sports",
+    "navigationKeyword1": "football",
+    "navigationKeyword2": "nfl",
+    "question": "Which team won Super Bowl LVIII in February 2024?",
+    "correctAnswer": "Kansas City Chiefs",
+    "incorrectAnswers": [
+      "San Francisco 49ers",
+      "Philadelphia Eagles",
+      "Baltimore Ravens"
+    ],
+    "explanation": "Kansas City beat San Francisco in overtime in Super Bowl LVIII.",
+    "keywords": [
+      "football",
+      "nfl",
+      "super-bowl"
+    ],
+    "source": "https://operations.nfl.com/learn-the-game/nfl-basics/",
+    "seedId": "336c4a20-ec43-4a80-bb36-f8297688ea4e"
+  },
+  {
+    "category": "sports",
+    "navigationKeyword1": "football",
+    "navigationKeyword2": "nfl",
+    "question": "Which team is most associated with the Frozen Tundra nickname?",
+    "correctAnswer": "Green Bay Packers",
+    "incorrectAnswers": [
+      "Chicago Bears",
+      "Buffalo Bills",
+      "Denver Broncos"
+    ],
+    "explanation": "The phrase refers to Lambeau Field in Green Bay.",
+    "keywords": [
+      "football",
+      "nfl",
+      "packers"
+    ],
+    "source": "https://operations.nfl.com/learn-the-game/nfl-basics/",
+    "seedId": "65dae210-3b72-4ff0-b661-829dc6decd10"
+  },
+  {
+    "category": "sports",
+    "navigationKeyword1": "football",
+    "navigationKeyword2": "nfl",
+    "question": "Which franchise won six Super Bowls with quarterback Tom Brady?",
+    "correctAnswer": "New England Patriots",
+    "incorrectAnswers": [
+      "Pittsburgh Steelers",
+      "Dallas Cowboys",
+      "San Francisco 49ers"
+    ],
+    "explanation": "Brady led New England to six titles.",
+    "keywords": [
+      "football",
+      "nfl",
+      "patriots"
+    ],
+    "source": "https://operations.nfl.com/learn-the-game/nfl-basics/",
+    "seedId": "c7d00f4b-9ae8-4ba5-8fb0-5e686e1c1ef4"
+  },
+  {
+    "category": "sports",
+    "navigationKeyword1": "football",
+    "navigationKeyword2": "nfl",
+    "question": "Which team plays home games at Lambeau Field?",
+    "correctAnswer": "Green Bay Packers",
+    "incorrectAnswers": [
+      "Minnesota Vikings",
+      "Detroit Lions",
+      "Chicago Bears"
+    ],
+    "explanation": "Lambeau Field is the historic home of the Packers.",
+    "keywords": [
+      "football",
+      "nfl",
+      "lambeau"
+    ],
+    "source": "https://operations.nfl.com/learn-the-game/nfl-basics/",
+    "seedId": "147c48a7-fa54-4da4-b70b-492cf64b9955"
+  },
+  {
+    "category": "sports",
+    "navigationKeyword1": "football",
+    "navigationKeyword2": "nfl",
+    "question": "How long is a regulation NFL game?",
+    "correctAnswer": "60 minutes",
+    "incorrectAnswers": [
+      "48 minutes",
+      "90 minutes",
+      "80 minutes"
+    ],
+    "explanation": "An NFL game has four 15-minute quarters.",
+    "keywords": [
+      "football",
+      "nfl",
+      "game-length"
+    ],
+    "source": "https://operations.nfl.com/learn-the-game/nfl-basics/",
+    "seedId": "0b09b761-065a-4e58-b106-9148a8e36de3"
+  },
+  {
+    "category": "sports",
+    "navigationKeyword1": "football",
+    "navigationKeyword2": "nfl",
+    "question": "How many points is a touchdown worth before the extra-point try?",
+    "correctAnswer": "Six",
+    "incorrectAnswers": [
+      "Three",
+      "One",
+      "Seven"
+    ],
+    "explanation": "A touchdown is worth six points before the conversion attempt.",
+    "keywords": [
+      "football",
+      "nfl",
+      "touchdown"
+    ],
+    "source": "https://operations.nfl.com/learn-the-game/nfl-basics/",
+    "seedId": "3d972c53-040c-4d1b-87c4-d52c20283dc3"
+  }
+]

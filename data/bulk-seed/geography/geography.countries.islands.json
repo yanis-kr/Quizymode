@@ -1,0 +1,222 @@
+[
+  {
+    "category": "geography",
+    "navigationKeyword1": "countries",
+    "navigationKeyword2": "islands",
+    "question": "Which East Asian archipelago country includes Honshu, Kyushu, Shikoku, and Hokkaido?",
+    "correctAnswer": "Japan",
+    "incorrectAnswers": [
+      "Philippines",
+      "Indonesia",
+      "Taiwan"
+    ],
+    "explanation": "Japan is a volcanic island chain whose four largest islands are Honshu, Hokkaido, Kyushu, and Shikoku.",
+    "keywords": [
+      "islands",
+      "island-nations",
+      "east-asia"
+    ],
+    "source": "https://www.britannica.com/place/Japan",
+    "seedId": "92384577-59ed-4139-b42a-308571af6787"
+  },
+  {
+    "category": "geography",
+    "navigationKeyword1": "countries",
+    "navigationKeyword2": "islands",
+    "question": "Which island nation off Africa’s southeastern coast is the world’s fourth-largest island?",
+    "correctAnswer": "Madagascar",
+    "incorrectAnswers": [
+      "Mauritius",
+      "Sri Lanka",
+      "Zanzibar"
+    ],
+    "explanation": "Madagascar is a single large island country in the Indian Ocean east of mainland Africa.",
+    "keywords": [
+      "islands",
+      "island-nations",
+      "africa"
+    ],
+    "source": "https://www.britannica.com/place/Madagascar",
+    "seedId": "cf2966ec-df19-4dc9-8bb2-ed61420cae1c"
+  },
+  {
+    "category": "geography",
+    "navigationKeyword1": "countries",
+    "navigationKeyword2": "islands",
+    "question": "Which North Atlantic island country lies just south of the Arctic Circle between Greenland and Norway?",
+    "correctAnswer": "Iceland",
+    "incorrectAnswers": [
+      "Ireland",
+      "Faroe Islands",
+      "Svalbard"
+    ],
+    "explanation": "Iceland is a volcanic island state in the North Atlantic on the Mid-Atlantic Ridge.",
+    "keywords": [
+      "islands",
+      "island-nations",
+      "atlantic"
+    ],
+    "source": "https://www.britannica.com/place/Iceland",
+    "seedId": "8f432807-ab75-4a6b-927b-940288fdcafb"
+  },
+  {
+    "category": "geography",
+    "navigationKeyword1": "countries",
+    "navigationKeyword2": "islands",
+    "question": "The United Kingdom’s core territory includes the island of Great Britain and part of which other island?",
+    "correctAnswer": "Ireland (Northern Ireland)",
+    "incorrectAnswers": [
+      "Iceland",
+      "Newfoundland",
+      "Sicily"
+    ],
+    "explanation": "The UK comprises Great Britain, northeastern Ireland, and many smaller islands.",
+    "keywords": [
+      "islands",
+      "island-nations",
+      "europe"
+    ],
+    "source": "https://www.britannica.com/place/United-Kingdom",
+    "seedId": "c9ce7a53-1920-436f-a929-b8251849add3"
+  },
+  {
+    "category": "geography",
+    "navigationKeyword1": "countries",
+    "navigationKeyword2": "islands",
+    "question": "Which Caribbean island country is the largest by area in the West Indies?",
+    "correctAnswer": "Cuba",
+    "incorrectAnswers": [
+      "Jamaica",
+      "the Dominican Republic",
+      "Puerto Rico"
+    ],
+    "explanation": "Cuba is the largest island state in the Caribbean region.",
+    "keywords": [
+      "islands",
+      "island-nations",
+      "caribbean"
+    ],
+    "source": "https://www.britannica.com/place/Cuba",
+    "seedId": "89541380-caf0-4c07-9354-fe1a96efabef"
+  },
+  {
+    "category": "geography",
+    "navigationKeyword1": "countries",
+    "navigationKeyword2": "islands",
+    "question": "Which Indian Ocean island country lies southeast of India?",
+    "correctAnswer": "Sri Lanka",
+    "incorrectAnswers": [
+      "Maldives",
+      "Mauritius",
+      "Seychelles"
+    ],
+    "explanation": "Sri Lanka occupies a large island off India’s southeastern tip.",
+    "keywords": [
+      "islands",
+      "island-nations",
+      "south-asia"
+    ],
+    "source": "https://www.britannica.com/place/Sri-Lanka",
+    "seedId": "291cf9f5-7c76-47b6-be34-bdf5ed64d48a"
+  },
+  {
+    "category": "geography",
+    "navigationKeyword1": "countries",
+    "navigationKeyword2": "islands",
+    "question": "Which archipelagic Southeast Asian country has about 7,000 islands and includes Luzon and Mindanao?",
+    "correctAnswer": "Philippines",
+    "incorrectAnswers": [
+      "Malaysia",
+      "Vietnam",
+      "Papua New Guinea"
+    ],
+    "explanation": "The Philippines is an island nation of the western Pacific centered on Luzon, Visayas, and Mindanao.",
+    "keywords": [
+      "islands",
+      "island-nations",
+      "southeast-asia"
+    ],
+    "source": "https://www.britannica.com/place/Philippines",
+    "seedId": "a4ccc4e7-b66b-4564-9344-164a08e4ec8d"
+  },
+  {
+    "category": "geography",
+    "navigationKeyword1": "countries",
+    "navigationKeyword2": "islands",
+    "question": "Which country in the British Isles occupies most of the island of Ireland?",
+    "correctAnswer": "Ireland",
+    "incorrectAnswers": [
+      "Iceland",
+      "United Kingdom",
+      "France"
+    ],
+    "explanation": "The Republic of Ireland covers most of the island of Ireland, separate from Northern Ireland in the UK.",
+    "keywords": [
+      "islands",
+      "island-nations",
+      "europe"
+    ],
+    "source": "https://www.britannica.com/place/Ireland",
+    "seedId": "fa7cf7bb-3786-444c-af4d-5a8df0e62625"
+  },
+  {
+    "category": "geography",
+    "navigationKeyword1": "countries",
+    "navigationKeyword2": "islands",
+    "question": "Which Mediterranean island country lies south of Turkey?",
+    "correctAnswer": "Cyprus",
+    "incorrectAnswers": [
+      "Crete",
+      "Sicily",
+      "Rhodes"
+    ],
+    "explanation": "Cyprus is an independent island state in the eastern Mediterranean.",
+    "keywords": [
+      "islands",
+      "island-nations",
+      "mediterranean"
+    ],
+    "source": "https://www.britannica.com/place/Cyprus",
+    "seedId": "d6370043-2e31-4e2e-907e-1729a78dfca7"
+  },
+  {
+    "category": "geography",
+    "navigationKeyword1": "countries",
+    "navigationKeyword2": "islands",
+    "question": "Which eastern Caribbean country includes the main island of Saint Vincent and the northern Grenadines?",
+    "correctAnswer": "Saint Vincent and the Grenadines",
+    "incorrectAnswers": [
+      "Saint Lucia",
+      "Grenada",
+      "Barbados"
+    ],
+    "explanation": "Saint Vincent and the Grenadines is an independent multi-island state in the Lesser Antilles.",
+    "keywords": [
+      "islands",
+      "island-nations",
+      "caribbean"
+    ],
+    "source": "https://www.britannica.com/place/Saint-Vincent-and-the-Grenadines",
+    "seedId": "d92b8d98-50e8-48f6-bdba-c1fdc19188be"
+  },
+  {
+    "category": "geography",
+    "navigationKeyword1": "countries",
+    "navigationKeyword2": "islands",
+    "question": "Which Pacific country’s two main islands are called Upolu and Savaiʻi?",
+    "correctAnswer": "Samoa",
+    "incorrectAnswers": [
+      "Tonga",
+      "Fiji",
+      "Vanuatu"
+    ],
+    "explanation": "Samoa is a Polynesian nation centered on the islands of Upolu and Savaiʻi.",
+    "keywords": [
+      "islands",
+      "island-nations",
+      "polynesia"
+    ],
+    "source": "https://www.britannica.com/place/Samoa",
+    "seedId": "cae058c2-d1d6-44d2-99b9-3e6b20a2631f"
+  }
+]

@@ -18,7 +18,9 @@ public static class GetReviewBoardItems
         List<string> IncorrectAnswers,
         string Explanation,
         string CreatedBy,
-        DateTime CreatedAt);
+        DateTime CreatedAt,
+        decimal? FactualRisk = null,
+        string? ReviewComments = null);
 
     public sealed class Endpoint : IEndpoint
     {
@@ -68,7 +70,9 @@ public static class GetReviewBoardItems
                     i.IncorrectAnswers,
                     i.Explanation,
                     i.CreatedBy,
-                    i.CreatedAt);
+                    i.CreatedAt,
+                    i.FactualRisk,
+                    i.ReviewComments);
             }).ToList();
 
             return Result.Success(new Response(itemResponses));

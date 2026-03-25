@@ -1,3 +1,5 @@
+using System.Text.RegularExpressions;
+
 namespace Quizymode.Api.Shared.Helpers;
 
 /// <summary>
@@ -5,6 +7,21 @@ namespace Quizymode.Api.Shared.Helpers;
 /// </summary>
 internal static class CategoryHelper
 {
+    /// <summary>
+    /// Converts a category name to a URL-friendly slug (matches frontend categoryNameToSlug).
+    /// Used to resolve category from URL slug when exact name match fails.
+    /// </summary>
+    public static string NameToSlug(string name)
+    {
+        if (string.IsNullOrWhiteSpace(name))
+            return string.Empty;
+        string s = name.Trim().ToLowerInvariant();
+        s = Regex.Replace(s, @"[^\w\s-]", "");
+        s = Regex.Replace(s, @"\s+", "-");
+        s = Regex.Replace(s, @"-+", "-").Trim('-');
+        return s;
+    }
+
     /// <summary>
     /// Normalizes a category name to a standardized format:
     /// First letter capitalized, rest lowercase (e.g., "spanish" -> "Spanish", "SPANISH" -> "Spanish").

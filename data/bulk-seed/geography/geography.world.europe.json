@@ -1,0 +1,242 @@
+[
+  {
+    "category": "geography",
+    "navigationKeyword1": "world",
+    "navigationKeyword2": "europe",
+    "question": "Which mountain range forms a high natural border between France and Spain?",
+    "correctAnswer": "The Pyrenees",
+    "incorrectAnswers": [
+      "The Alps",
+      "The Apennines",
+      "The Carpathians"
+    ],
+    "explanation": "The Pyrenees stretch along the France–Spain frontier, separating the Iberian Peninsula from the rest of Europe.",
+    "keywords": [
+      "europe",
+      "mountain-ranges",
+      "borders"
+    ],
+    "source": "https://www.britannica.com/place/Pyrenees",
+    "seedId": "52494387-6064-4132-8dcd-6f250f8da689"
+  },
+  {
+    "category": "geography",
+    "navigationKeyword1": "world",
+    "navigationKeyword2": "europe",
+    "question": "Which river is widely cited as the longest river in Europe?",
+    "correctAnswer": "The Volga",
+    "incorrectAnswers": [
+      "The Danube",
+      "The Rhine",
+      "The Dnieper"
+    ],
+    "explanation": "The Volga flows mostly through Russia and is commonly listed as Europe’s longest river by length.",
+    "keywords": [
+      "europe",
+      "rivers",
+      "physical-geography"
+    ],
+    "source": "https://www.britannica.com/place/Volga-River",
+    "seedId": "94226c67-a4b6-4c1a-9621-1e7a70998d44"
+  },
+  {
+    "category": "geography",
+    "navigationKeyword1": "world",
+    "navigationKeyword2": "europe",
+    "question": "Which strait connects the Mediterranean Sea to the Atlantic Ocean?",
+    "correctAnswer": "Strait of Gibraltar",
+    "incorrectAnswers": [
+      "Bosporus",
+      "Strait of Dover",
+      "Strait of Messina"
+    ],
+    "explanation": "The Strait of Gibraltar lies between southern Spain and northern Morocco and links the Mediterranean with the Atlantic.",
+    "keywords": [
+      "europe",
+      "straits",
+      "water-bodies"
+    ],
+    "source": "https://www.britannica.com/place/Strait-of-Gibraltar",
+    "seedId": "af098110-fe52-46ea-9108-515602ec0864"
+  },
+  {
+    "category": "geography",
+    "navigationKeyword1": "world",
+    "navigationKeyword2": "europe",
+    "question": "Which sea lies east of Sweden’s Baltic coast?",
+    "correctAnswer": "The Baltic Sea",
+    "incorrectAnswers": [
+      "The North Sea",
+      "The Norwegian Sea",
+      "The Celtic Sea"
+    ],
+    "explanation": "Sweden’s eastern seaboard fronts the Baltic Sea, which also borders several other northern European states.",
+    "keywords": [
+      "europe",
+      "seas",
+      "northern-europe"
+    ],
+    "source": "https://www.britannica.com/place/Baltic-Sea",
+    "seedId": "598a0064-6351-4a19-ae21-f75d9edad940"
+  },
+  {
+    "category": "geography",
+    "navigationKeyword1": "world",
+    "navigationKeyword2": "europe",
+    "question": "Which mountain system is commonly used as part of the boundary between Europe and Asia?",
+    "correctAnswer": "The Ural Mountains",
+    "incorrectAnswers": [
+      "The Caucasus Mountains",
+      "The Alps",
+      "The Atlas Mountains"
+    ],
+    "explanation": "The Urals run roughly north–south through Russia and are a standard geographic divider between Europe and Asia.",
+    "keywords": [
+      "europe",
+      "mountain-ranges",
+      "boundaries"
+    ],
+    "source": "https://www.britannica.com/place/Ural-Mountains",
+    "seedId": "6f9a3d4a-4463-4a78-a44c-600028c43ce2"
+  },
+  {
+    "category": "geography",
+    "navigationKeyword1": "world",
+    "navigationKeyword2": "europe",
+    "question": "Into which sea does the Danube River discharge?",
+    "correctAnswer": "The Black Sea",
+    "incorrectAnswers": [
+      "The Mediterranean Sea",
+      "The Baltic Sea",
+      "The Caspian Sea"
+    ],
+    "explanation": "The Danube’s delta empties into the Black Sea after crossing much of Central and Eastern Europe.",
+    "keywords": [
+      "europe",
+      "rivers",
+      "black-sea"
+    ],
+    "source": "https://www.britannica.com/place/Danube-River",
+    "seedId": "8ba67c15-ca11-4ffd-a569-8a98b01957db"
+  },
+  {
+    "category": "geography",
+    "navigationKeyword1": "world",
+    "navigationKeyword2": "europe",
+    "question": "Which major European range includes Mont Blanc, Western Europe’s highest peak?",
+    "correctAnswer": "The Alps",
+    "incorrectAnswers": [
+      "The Pyrenees",
+      "The Apennines",
+      "The Dinaric Alps"
+    ],
+    "explanation": "Mont Blanc sits in the Alps on the France–Italy border and is the tallest peak in Western Europe.",
+    "keywords": [
+      "europe",
+      "mountain-ranges",
+      "alps"
+    ],
+    "source": "https://www.britannica.com/place/Alps-mountains-Europe",
+    "seedId": "e419d60c-316c-4832-b8d4-b8a3ee5bdb66"
+  },
+  {
+    "category": "geography",
+    "navigationKeyword1": "world",
+    "navigationKeyword2": "europe",
+    "question": "Which narrow sea separates southern England from northern France?",
+    "correctAnswer": "The English Channel",
+    "incorrectAnswers": [
+      "The Irish Sea",
+      "The North Sea",
+      "The Bay of Biscay"
+    ],
+    "explanation": "The English Channel lies between Great Britain and northwestern France and connects to the North Sea.",
+    "keywords": [
+      "europe",
+      "seas",
+      "northwest-europe"
+    ],
+    "source": "https://www.britannica.com/place/English-Channel",
+    "seedId": "7237e1d8-0c5a-4888-9204-3f05f9babaac"
+  },
+  {
+    "category": "geography",
+    "navigationKeyword1": "world",
+    "navigationKeyword2": "europe",
+    "question": "Iceland’s volcanism is closely associated with which plate boundary setting?",
+    "correctAnswer": "A divergent boundary along the Mid-Atlantic Ridge",
+    "incorrectAnswers": [
+      "A collision between the African and Indian plates",
+      "Subduction of the Pacific Plate under Asia",
+      "The San Andreas transform fault"
+    ],
+    "explanation": "Iceland straddles the divergent boundary where the North American and Eurasian plates move apart along the Mid-Atlantic Ridge.",
+    "keywords": [
+      "europe",
+      "tectonics",
+      "iceland"
+    ],
+    "source": "https://www.britannica.com/place/Iceland",
+    "seedId": "c81c223a-180a-442a-8950-3adb2b2e8527"
+  },
+  {
+    "category": "geography",
+    "navigationKeyword1": "world",
+    "navigationKeyword2": "europe",
+    "question": "Which peninsula includes mainland Norway and Sweden?",
+    "correctAnswer": "The Scandinavian Peninsula",
+    "incorrectAnswers": [
+      "The Iberian Peninsula",
+      "The Balkan Peninsula",
+      "The Jutland Peninsula"
+    ],
+    "explanation": "Norway and Sweden occupy most of the Scandinavian Peninsula in northern Europe.",
+    "keywords": [
+      "europe",
+      "peninsulas",
+      "northern-europe"
+    ],
+    "source": "https://www.britannica.com/place/Scandinavian-Peninsula",
+    "seedId": "20be43bf-f270-47f3-9632-36e67821b1a6"
+  },
+  {
+    "category": "geography",
+    "navigationKeyword1": "world",
+    "navigationKeyword2": "europe",
+    "question": "Which bay lies west of France and north of Spain?",
+    "correctAnswer": "The Bay of Biscay",
+    "incorrectAnswers": [
+      "The Gulf of Bothnia",
+      "The Gulf of Finland",
+      "The Adriatic Sea"
+    ],
+    "explanation": "The Bay of Biscay is part of the North Atlantic east of Spain and west of France.",
+    "keywords": [
+      "europe",
+      "atlantic",
+      "water-bodies"
+    ],
+    "source": "https://www.britannica.com/place/Bay-of-Biscay",
+    "seedId": "8e63e41d-8000-42a2-83b0-dc2ca9503941"
+  },
+  {
+    "category": "geography",
+    "navigationKeyword1": "world",
+    "navigationKeyword2": "europe",
+    "question": "Which shallow arm of the Black Sea lies north of Crimea and connects to the main basin through the Kerch Strait?",
+    "correctAnswer": "The Sea of Azov",
+    "incorrectAnswers": [
+      "The Baltic Sea",
+      "The Adriatic Sea",
+      "The White Sea"
+    ],
+    "explanation": "The Sea of Azov is the small northern extension of the Black Sea linked by the Kerch Strait.",
+    "keywords": [
+      "europe",
+      "seas",
+      "sea-of-azov"
+    ],
+    "source": "https://www.britannica.com/place/Sea-of-Azov",
+    "seedId": "d5f03ae6-d888-4ebd-bf6c-4137e755eb2d"
+  }
+]

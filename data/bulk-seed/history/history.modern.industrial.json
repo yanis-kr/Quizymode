@@ -1,0 +1,242 @@
+[
+  {
+    "category": "history",
+    "navigationKeyword1": "modern",
+    "navigationKeyword2": "industrial",
+    "question": "Historians usually place the first Industrial Revolution’s core period in Britain between about which centuries?",
+    "correctAnswer": "The mid-18th to early 19th century (about 1760–1830)",
+    "incorrectAnswers": [
+      "The 13th to 14th centuries",
+      "The 1920s to 1950s only",
+      "The late Roman Empire"
+    ],
+    "explanation": "Mechanized textile production, coal-fueled steam power, and the factory system spread from Britain before reaching other regions.",
+    "keywords": [
+      "industrial",
+      "britain",
+      "industrial-revolution"
+    ],
+    "source": "https://www.britannica.com/event/Industrial-Revolution",
+    "seedId": "0f92b13c-4064-4663-907e-49b3bb477ce9"
+  },
+  {
+    "category": "history",
+    "navigationKeyword1": "modern",
+    "navigationKeyword2": "industrial",
+    "question": "James Watt is best known for improvements to which prime mover that powered factories, mills, and locomotives?",
+    "correctAnswer": "The steam engine",
+    "incorrectAnswers": [
+      "The water frame alone",
+      "The internal-combustion engine",
+      "The electric dynamo"
+    ],
+    "explanation": "Watt’s separate condenser and other refinements made steam engines far more efficient than earlier Newcomen types.",
+    "keywords": [
+      "industrial",
+      "steam",
+      "invention"
+    ],
+    "source": "https://www.britannica.com/biography/James-Watt",
+    "seedId": "2bb3cc8e-7028-4a60-84e9-e609a10dd557"
+  },
+  {
+    "category": "history",
+    "navigationKeyword1": "modern",
+    "navigationKeyword2": "industrial",
+    "question": "James Hargreaves’s spinning jenny (c. 1764) helped revolutionize which industry central to Britain’s factory boom?",
+    "correctAnswer": "Cotton textile manufacturing",
+    "incorrectAnswers": [
+      "Shipbuilding",
+      "Printing",
+      "Winemaking"
+    ],
+    "explanation": "Mechanized spinning raised yarn output and shifted textile work from cottages to early factories.",
+    "keywords": [
+      "industrial",
+      "textiles",
+      "invention"
+    ],
+    "source": "https://www.britannica.com/biography/James-Hargreaves",
+    "seedId": "8112f2ad-6ab8-4bd1-982f-e38bb93db850"
+  },
+  {
+    "category": "history",
+    "navigationKeyword1": "modern",
+    "navigationKeyword2": "industrial",
+    "question": "Richard Arkwright’s water-powered mills made him a leading promoter of which new labor organization?",
+    "correctAnswer": "The factory system",
+    "incorrectAnswers": [
+      "The domestic putting-out system alone",
+      "Feudal corvée labor",
+      "Plantation gang labor exclusively"
+    ],
+    "explanation": "Arkwright concentrated workers under one roof with machine discipline, a hallmark of industrial capitalism.",
+    "keywords": [
+      "industrial",
+      "factory",
+      "britain"
+    ],
+    "source": "https://www.britannica.com/biography/Richard-Arkwright",
+    "seedId": "78815257-4619-477c-9053-0e76c6860e39"
+  },
+  {
+    "category": "history",
+    "navigationKeyword1": "modern",
+    "navigationKeyword2": "industrial",
+    "question": "George Stephenson’s Rocket (1829) helped establish which form of land transport for bulk goods and passengers?",
+    "correctAnswer": "Steam railways",
+    "incorrectAnswers": [
+      "Canal barges alone",
+      "Horse-drawn omnibuses",
+      "Electric streetcars"
+    ],
+    "explanation": "Rail networks linked coalfields, ports, and cities, shrinking time and cost for moving raw materials and finished goods.",
+    "keywords": [
+      "industrial",
+      "railways",
+      "transport"
+    ],
+    "source": "https://www.britannica.com/biography/George-Stephenson",
+    "seedId": "67b8fca2-07c3-4e4a-b0e9-4864603d625b"
+  },
+  {
+    "category": "history",
+    "navigationKeyword1": "modern",
+    "navigationKeyword2": "industrial",
+    "question": "British workers who smashed mechanized looms in the 1810s protested under which collective name?",
+    "correctAnswer": "Luddites",
+    "incorrectAnswers": [
+      "Chartists",
+      "Levellers",
+      "Sans-culottes"
+    ],
+    "explanation": "Luddite actions targeted machines they blamed for job loss and falling wages, not abstract opposition to all technology.",
+    "keywords": [
+      "industrial",
+      "labor",
+      "protest"
+    ],
+    "source": "https://www.britannica.com/topic/Luddite",
+    "seedId": "a8a04e53-5aa9-4308-afb9-600d11ac1af7"
+  },
+  {
+    "category": "history",
+    "navigationKeyword1": "modern",
+    "navigationKeyword2": "industrial",
+    "question": "Henry Bessemer’s 1856 process slashed the cost of producing which structural metal essential to rails and skyscrapers?",
+    "correctAnswer": "Steel",
+    "incorrectAnswers": [
+      "Bronze",
+      "Cast iron alone",
+      "Aluminum"
+    ],
+    "explanation": "Cheap steel underpinned the second Industrial Revolution’s bridges, ships, and armaments.",
+    "keywords": [
+      "industrial",
+      "steel",
+      "metallurgy"
+    ],
+    "source": "https://www.britannica.com/biography/Henry-Bessemer",
+    "seedId": "046bc39e-01d8-45d1-bfa9-886a8a085675"
+  },
+  {
+    "category": "history",
+    "navigationKeyword1": "modern",
+    "navigationKeyword2": "industrial",
+    "question": "The Crystal Palace exhibition in London (1851) showcased British manufacturing might during which queen’s reign?",
+    "correctAnswer": "Queen Victoria",
+    "incorrectAnswers": [
+      "Queen Elizabeth I",
+      "Queen Anne",
+      "Queen Mary I"
+    ],
+    "explanation": "The Great Exhibition celebrated industrial design and free trade optimism at the height of Britain’s workshop-of-the-world role.",
+    "keywords": [
+      "industrial",
+      "britain",
+      "exhibition"
+    ],
+    "source": "https://www.britannica.com/topic/Great-Exhibition-of-1851",
+    "seedId": "621391d0-911f-4c8b-946f-84d462fb8774"
+  },
+  {
+    "category": "history",
+    "navigationKeyword1": "modern",
+    "navigationKeyword2": "industrial",
+    "question": "Samuel Morse helped popularize which communication technology that synchronized markets and military orders across continents?",
+    "correctAnswer": "The electric telegraph",
+    "incorrectAnswers": [
+      "The semaphore tower network alone",
+      "The wireless radio",
+      "The pneumatic post"
+    ],
+    "explanation": "Telegraph wires carried Morse code messages near the speed of light, revolutionizing news and railroad dispatching.",
+    "keywords": [
+      "industrial",
+      "telegraph",
+      "communication"
+    ],
+    "source": "https://www.britannica.com/biography/Samuel-F-B-Morse",
+    "seedId": "4a25e322-454b-4133-bea5-18c4343a58db"
+  },
+  {
+    "category": "history",
+    "navigationKeyword1": "modern",
+    "navigationKeyword2": "industrial",
+    "question": "Rapid factory growth turned which English city into a byword for early industrial urban crowding and cotton mills?",
+    "correctAnswer": "Manchester",
+    "incorrectAnswers": [
+      "Bath",
+      "Canterbury",
+      "Salisbury"
+    ],
+    "explanation": "Manchester’s mills drew rural laborers into dense neighborhoods, inspiring observers from Engels to Dickens.",
+    "keywords": [
+      "industrial",
+      "urbanization",
+      "england"
+    ],
+    "source": "https://www.britannica.com/place/Manchester-England",
+    "seedId": "863aa53e-6f97-4ddf-a236-3ae0f8f65371"
+  },
+  {
+    "category": "history",
+    "navigationKeyword1": "modern",
+    "navigationKeyword2": "industrial",
+    "question": "Britain’s 1833 Factory Act chiefly targeted abusive working conditions for which vulnerable mill employees?",
+    "correctAnswer": "Children",
+    "incorrectAnswers": [
+      "Only adult men over 60",
+      "Only agricultural laborers",
+      "Only domestic servants"
+    ],
+    "explanation": "Parliament began regulating child hours and education in textile mills, reflecting mounting reform pressure.",
+    "keywords": [
+      "industrial",
+      "labor",
+      "reform"
+    ],
+    "source": "https://www.britannica.com/event/Factory-Act-United-Kingdom-1833",
+    "seedId": "09700c49-f7d8-4dcc-b360-a00efcdfe97c"
+  },
+  {
+    "category": "history",
+    "navigationKeyword1": "modern",
+    "navigationKeyword2": "industrial",
+    "question": "Eli Whitney’s cotton gin (1793) intensified plantation demand for enslaved labor in which U.S. region?",
+    "correctAnswer": "The American South",
+    "incorrectAnswers": [
+      "New England only",
+      "The Pacific Northwest",
+      "The Great Lakes frontier only"
+    ],
+    "explanation": "Mechanical separation of cotton fiber from seed made short-staple cotton wildly profitable and expanded slavery’s footprint.",
+    "keywords": [
+      "industrial",
+      "cotton",
+      "united-states"
+    ],
+    "source": "https://www.britannica.com/biography/Eli-Whitney",
+    "seedId": "ba7959b5-b93e-40d8-a271-6f39c037a779"
+  }
+]

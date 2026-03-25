@@ -1,0 +1,202 @@
+[
+  {
+    "category": "sports",
+    "navigationKeyword1": "olympics",
+    "navigationKeyword2": "medals",
+    "question": "Which color medal is awarded for first place in an Olympic event?",
+    "correctAnswer": "Gold",
+    "incorrectAnswers": [
+      "Silver",
+      "Bronze",
+      "Blue"
+    ],
+    "explanation": "Olympic champions receive the gold medal.",
+    "keywords": [
+      "olympics",
+      "medals",
+      "gold"
+    ],
+    "source": "https://olympics.com/en/olympic-games",
+    "seedId": "dea6b923-c8c1-49fb-bd24-586325e459de"
+  },
+  {
+    "category": "sports",
+    "navigationKeyword1": "olympics",
+    "navigationKeyword2": "medals",
+    "question": "Which country won the most gold medals at the 2024 Paris Olympics?",
+    "correctAnswer": "United States",
+    "incorrectAnswers": [
+      "China",
+      "Japan",
+      "Great Britain"
+    ],
+    "explanation": "The United States finished first in golds at Paris 2024.",
+    "keywords": [
+      "olympics",
+      "medals",
+      "paris-2024"
+    ],
+    "source": "https://olympics.com/en/olympic-games",
+    "seedId": "13a53a04-965e-48de-bfc9-6d1847720cfe"
+  },
+  {
+    "category": "sports",
+    "navigationKeyword1": "olympics",
+    "navigationKeyword2": "medals",
+    "question": "Which country won the most gold medals at the 2020 Tokyo Olympics?",
+    "correctAnswer": "United States",
+    "incorrectAnswers": [
+      "China",
+      "Japan",
+      "ROC"
+    ],
+    "explanation": "The United States topped the gold medal table at Tokyo 2020.",
+    "keywords": [
+      "olympics",
+      "medals",
+      "tokyo-2020"
+    ],
+    "source": "https://olympics.com/en/olympic-games",
+    "seedId": "d0407679-65e2-4451-8e81-92d212ea74b4"
+  },
+  {
+    "category": "sports",
+    "navigationKeyword1": "olympics",
+    "navigationKeyword2": "medals",
+    "question": "Which medal is awarded for second place?",
+    "correctAnswer": "Silver",
+    "incorrectAnswers": [
+      "Gold",
+      "Bronze",
+      "Copper"
+    ],
+    "explanation": "Second-place finishers receive silver medals.",
+    "keywords": [
+      "olympics",
+      "medals",
+      "silver"
+    ],
+    "source": "https://olympics.com/en/olympic-games",
+    "seedId": "030c5b98-b07c-4c46-8dde-f466973b1d74"
+  },
+  {
+    "category": "sports",
+    "navigationKeyword1": "olympics",
+    "navigationKeyword2": "medals",
+    "question": "Which medal is awarded for third place?",
+    "correctAnswer": "Bronze",
+    "incorrectAnswers": [
+      "Silver",
+      "Gold",
+      "Tin"
+    ],
+    "explanation": "Third-place finishers receive bronze medals.",
+    "keywords": [
+      "olympics",
+      "medals",
+      "bronze"
+    ],
+    "source": "https://olympics.com/en/olympic-games",
+    "seedId": "e2d6406a-a7ee-4250-8d33-80081a5be2c8"
+  },
+  {
+    "category": "sports",
+    "navigationKeyword1": "olympics",
+    "navigationKeyword2": "medals",
+    "question": "Which swimmer holds the all-time Olympic record for total medals?",
+    "correctAnswer": "Michael Phelps",
+    "incorrectAnswers": [
+      "Mark Spitz",
+      "Katie Ledecky",
+      "Carl Lewis"
+    ],
+    "explanation": "Phelps is the most decorated Olympian by total medals.",
+    "keywords": [
+      "olympics",
+      "medals",
+      "phelps"
+    ],
+    "source": "https://olympics.com/en/olympic-games",
+    "seedId": "c258e8a8-0504-48e1-a3b5-995dd0de4eb9"
+  },
+  {
+    "category": "sports",
+    "navigationKeyword1": "olympics",
+    "navigationKeyword2": "medals",
+    "question": "Which country won the most total medals at the 2016 Rio Olympics?",
+    "correctAnswer": "United States",
+    "incorrectAnswers": [
+      "China",
+      "Great Britain",
+      "Russia"
+    ],
+    "explanation": "The United States led the total medal count in Rio.",
+    "keywords": [
+      "olympics",
+      "medals",
+      "rio-2016"
+    ],
+    "source": "https://olympics.com/en/olympic-games",
+    "seedId": "d4dc37e1-75b2-405b-a098-291713782ee5"
+  },
+  {
+    "category": "sports",
+    "navigationKeyword1": "olympics",
+    "navigationKeyword2": "medals",
+    "question": "What is the highest honor on an Olympic medal podium?",
+    "correctAnswer": "Standing on the center step",
+    "incorrectAnswers": [
+      "Standing on the left step",
+      "Receiving the bronze medal",
+      "Carrying the flag only"
+    ],
+    "explanation": "Gold medalists stand on the center step above silver and bronze.",
+    "keywords": [
+      "olympics",
+      "medals",
+      "podium"
+    ],
+    "source": "https://olympics.com/en/olympic-games",
+    "seedId": "49a22f77-6626-4b1b-ad03-a056ed136a0b"
+  },
+  {
+    "category": "sports",
+    "navigationKeyword1": "olympics",
+    "navigationKeyword2": "medals",
+    "question": "Which country won the most gold medals at the 2008 Beijing Olympics?",
+    "correctAnswer": "China",
+    "incorrectAnswers": [
+      "United States",
+      "Russia",
+      "Great Britain"
+    ],
+    "explanation": "China led the gold medal table as host in 2008.",
+    "keywords": [
+      "olympics",
+      "medals",
+      "beijing-2008"
+    ],
+    "source": "https://olympics.com/en/olympic-games",
+    "seedId": "278df495-0aeb-4359-a62e-9bd6fd40e745"
+  },
+  {
+    "category": "sports",
+    "navigationKeyword1": "olympics",
+    "navigationKeyword2": "medals",
+    "question": "Which athlete won eight medals at the 2024 Paris Olympics?",
+    "correctAnswer": "No athlete reached eight",
+    "incorrectAnswers": [
+      "Leon Marchand",
+      "Katie Ledecky",
+      "Simone Biles"
+    ],
+    "explanation": "No single athlete won eight medals at Paris 2024.",
+    "keywords": [
+      "olympics",
+      "medals",
+      "paris-count"
+    ],
+    "source": "https://olympics.com/en/olympic-games",
+    "seedId": "e46137b9-dc24-4c67-83b6-1d16a7623c75"
+  }
+]

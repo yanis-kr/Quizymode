@@ -1,41 +1,127 @@
-import { useState, useEffect, useMemo } from "react";
+import { useState, useEffect, useMemo, useRef } from "react";
 import {
   useParams,
   useNavigate,
+  useSearchParams,
   Link,
 } from "react-router-dom";
-import { useQuery } from "@tanstack/react-query";
+import { useQuery, useQueryClient } from "@tanstack/react-query";
 import { itemsApi } from "@/api/items";
 import { collectionsApi } from "@/api/collections";
 import { categoriesApi } from "@/api/categories";
+import { keywordsApi } from "@/api/keywords";
 import { useAuth } from "@/contexts/AuthContext";
 import LoadingSpinner from "@/components/LoadingSpinner";
 import ErrorMessage from "@/components/ErrorMessage";
-import ItemRatingsComments from "@/components/ItemRatingsComments";
+import { CommentsDrawer } from "@/components/CommentsDrawer";
+import { StudyShell } from "@/components/study/StudyShell";
+import { QuizRenderer } from "@/components/study/QuizRenderer";
 import ItemCollectionsModal from "@/components/ItemCollectionsModal";
 import {
   categoryNameToSlug,
   findCategoryNameFromSlug,
+  buildCategoryPath,
 } from "@/utils/categorySlug";
-import {
-  FolderIcon,
-  ChevronLeftIcon,
-  ChevronRightIcon,
-  ArrowLeftIcon,
-} from "@heroicons/react/24/outline";
+import { buildCollectionPath, buildCollectionStudyPath } from "@/utils/collectionPath";
+import { ExploreQuizBreadcrumb } from "@/components/ExploreQuizBreadcrumb";
+import { ScopeSecondaryBar } from "@/components/ScopeSecondaryBar";
+import { ScopePathHeader } from "@/components/ScopePathHeader";
+import type { ViewMode } from "@/components/ModeSwitcher";
+import { StarIcon, XMarkIcon } from "@heroicons/react/24/outline";
+import { StarIcon as StarIconSolid } from "@heroicons/react/24/solid";
+import type { CollectionRatingResponse } from "@/types/api";
+import { getCategoryScopeModeConfig } from "@/features/categories/utils/categoryScopeMode";
+import { getStudyScopeKeywords } from "@/features/items/utils/studyScopeParams";
 
 const QuizModePage = () => {
   const { category: categorySlug, collectionId, itemId } = useParams();
+  const [searchParams] = useSearchParams();
   const navigate = useNavigate();
+  const queryClient = useQueryClient();
+  const returnUrl = searchParams.get("return");
+  const hasCategoryScope = !!categorySlug && !collectionId;
+  const hasExplicitNavParam = searchParams.has("nav");
+  const { keywords, navigationKeywords, filterKeywords } = useMemo(
+    () => getStudyScopeKeywords(searchParams, hasCategoryScope),
+    [searchParams, hasCategoryScope]
+  );
+  /** Query string for quiz item URLs; preserves keywords, return, and scope filter params across prev/next and mode switch */
+  const quizItemSearch = useMemo(() => {
+    const params = new URLSearchParams();
+    if (returnUrl) params.set("return", returnUrl);
+    if (hasCategoryScope && (hasExplicitNavParam || navigationKeywords.length > 0)) {
+      params.set("nav", navigationKeywords.join(","));
+    }
+    if (keywords.length > 0) params.set("keywords", keywords.join(","));
+    const filterType = searchParams.get("filterType");
+    if (filterType) params.set("filterType", filterType);
+    const search = searchParams.get("search");
+    if (search) params.set("search", search);
+    const ratingMin = searchParams.get("ratingMin");
+    if (ratingMin) params.set("ratingMin", ratingMin);
+    const ratingMax = searchParams.get("ratingMax");
+    if (ratingMax) params.set("ratingMax", ratingMax);
+    if (searchParams.get("ratingUnrated") === "1") params.set("ratingUnrated", "1");
+    if (searchParams.get("ratingOnlyUnrated") === "1") params.set("ratingOnlyUnrated", "1");
+    const s = params.toString();
+    return s ? `?${s}` : "";
+  }, [
+    hasCategoryScope,
+    hasExplicitNavParam,
+    navigationKeywords,
+    returnUrl,
+    keywords,
+    searchParams,
+  ]);
   const { isAuthenticated } = useAuth();
   const [currentIndex, setCurrentIndex] = useState(0);
   const [selectedAnswer, setSelectedAnswer] = useState<string | null>(null);
   const [showAnswer, setShowAnswer] = useState(false);
   const [stats, setStats] = useState({ total: 0, correct: 0 });
-  const [count] = useState(100); // Increased default to fetch more items
+  /** Quiz uses random N items (default 10); changing this refetches items */
+  const [quizSize, setQuizSize] = useState(10);
   const [selectedItemForCollections, setSelectedItemForCollections] = useState<
     string | null
   >(null);
+  const [commentsDrawerItemId, setCommentsDrawerItemId] = useState<string | null>(
+    null
+  );
+  const [showDetails, setShowDetails] = useState(false);
+  const hasSyncedInitialItemUrl = useRef(false);
+
+  /** Category/global quiz uses random N items; changing size must refetch and drop session-cached lists. */
+  const handleQuizSizeChange = (raw: string) => {
+    const n = parseInt(raw, 10);
+    if (Number.isNaN(n)) return;
+    const next = Math.min(1000, Math.max(1, n));
+    if (collectionId) {
+      setQuizSize(next);
+      return;
+    }
+    if (next === quizSize) return;
+
+    setQuizSize(next);
+    setStoredItems(null);
+    setCurrentIndex(0);
+    setSelectedAnswer(null);
+    setShowAnswer(false);
+    setStats({ total: 0, correct: 0 });
+    hasSyncedInitialItemUrl.current = false;
+    sessionStorage.removeItem("navigationContext_quiz");
+    sessionStorage.removeItem("quiz_scope_items_from_categories");
+
+    if (category) {
+      navigate(`/quiz/${categoryNameToSlug(category)}${quizItemSearch}`, {
+        replace: true,
+      });
+    } else {
+      navigate(`/quiz${quizItemSearch}`, { replace: true });
+    }
+
+    void queryClient.invalidateQueries({
+      queryKey: ["randomItems", category, next, navigationKeywords, filterKeywords],
+    });
+  };
 
   // Fetch categories to convert slug to actual category name
   const { data: categoriesData } = useQuery({
@@ -56,22 +142,53 @@ const QuizModePage = () => {
     return actualCategoryName || categorySlug; // Fallback to slug if not found
   }, [categorySlug, categoriesData?.categories]);
 
+  // Fetch navigation keyword descriptions for breadcrumb tooltips
+  const { data: keywordDescriptionsData } = useQuery({
+    queryKey: ["keyword-descriptions", category, navigationKeywords],
+    queryFn: () =>
+      keywordsApi.getKeywordDescriptions(category!, navigationKeywords),
+    enabled: !!category && navigationKeywords.length > 0,
+  });
+  const keywordDescriptions =
+    keywordDescriptionsData?.keywords?.map((k) => k.description) ?? undefined;
+
   // Check sessionStorage for stored items (when navigating with itemId from ItemsPage or comments)
   // Must be declared before useQuery that references it
   // Initialize synchronously from sessionStorage to avoid race conditions
-  // Restore if we have an itemId (meaning we're navigating to a specific item)
+  // Prefer dedicated key from Categories list (filtered scope) so we use it before any overwrite
   const getStoredItems = (): any[] | null => {
     if (!collectionId && itemId) {
-      // Restore when navigating to a specific item (from ItemsPage or comments)
+      const fromCategories = sessionStorage.getItem(
+        "quiz_scope_items_from_categories"
+      );
+      if (fromCategories) {
+        try {
+          const context = JSON.parse(fromCategories);
+          if (
+            context.items &&
+            Array.isArray(context.items) &&
+            context.items.some((item: { id?: string }) => item.id === itemId)
+          ) {
+            sessionStorage.removeItem("quiz_scope_items_from_categories");
+            return context.items;
+          }
+        } catch (e) {
+          sessionStorage.removeItem("quiz_scope_items_from_categories");
+        }
+      }
       const stored = sessionStorage.getItem("navigationContext_quiz");
       if (stored) {
         try {
           const context = JSON.parse(stored);
           if (context.items && context.mode === "quiz") {
-            // Only restore if category matches (or both are undefined/null)
+            const itemInStoredList = context.items.some(
+              (item: { id?: string }) => item.id === itemId
+            );
             const categoryMatches =
-              (!context.category && !category) || context.category === category;
-            if (categoryMatches) {
+              (!context.category && !category) ||
+              context.category === category ||
+              !category;
+            if (itemInStoredList || categoryMatches) {
               return context.items;
             }
           }
@@ -103,13 +220,55 @@ const QuizModePage = () => {
   const { data: collectionInfo } = useQuery({
     queryKey: ["collection", collectionId],
     queryFn: () => collectionsApi.getById(collectionId!),
-    enabled: !!collectionId && isAuthenticated,
+    enabled: !!collectionId, // Allow anonymous: shareable link shows collection name and items
+  });
+
+  const { data: ratingData } = useQuery<CollectionRatingResponse>({
+    queryKey: ["collectionRating", collectionId],
+    queryFn: () => collectionsApi.getRating(collectionId!),
+    enabled: !!collectionId,
   });
 
   const { data, isLoading, error, refetch } = useQuery({
-    queryKey: ["randomItems", category, count],
-    queryFn: () => itemsApi.getRandom(category, count),
-    enabled: !collectionId && !storedItems, // Don't load if we have stored items
+    queryKey: ["randomItems", category, quizSize, navigationKeywords, filterKeywords],
+    queryFn: () =>
+      itemsApi.getRandom(
+        category,
+        quizSize,
+        filterKeywords.length > 0 ? filterKeywords : undefined,
+        {
+          navigationKeywords: hasCategoryScope && navigationKeywords.length > 0 ? navigationKeywords : undefined,
+        }
+      ),
+    // When URL has a category slug, wait for categories so we send resolved name; otherwise API can resolve by slug.
+    enabled:
+      !collectionId &&
+      !storedItems &&
+      (!categorySlug || !!categoriesData?.categories),
+  });
+
+  const { data: scopeCountData } = useQuery({
+    queryKey: ["scopeCount", category, navigationKeywords, filterKeywords],
+    queryFn: () =>
+      itemsApi.getAll(
+        category,
+        undefined,
+        filterKeywords.length > 0 ? filterKeywords : undefined,
+        undefined,
+        undefined,
+        1,
+        1,
+        {
+          navigationKeywords:
+            hasCategoryScope && navigationKeywords.length > 0
+              ? navigationKeywords
+              : undefined,
+        }
+      ),
+    enabled:
+      !collectionId &&
+      !!category &&
+      (!categorySlug || !!categoriesData?.categories),
   });
 
   // Restore items, index, and quiz state from sessionStorage on mount
@@ -125,10 +284,14 @@ const QuizModePage = () => {
             context.mode === "quiz" &&
             context.items.length > 0
           ) {
-            // Only restore if category matches (or both are undefined/null)
+            const itemInStoredList = context.items.some(
+              (item: { id?: string }) => item.id === itemId
+            );
             const categoryMatches =
-              (!context.category && !category) || context.category === category;
-            if (categoryMatches) {
+              (!context.category && !category) ||
+              context.category === category ||
+              !category;
+            if (itemInStoredList || categoryMatches) {
               // Set storedItems state with the full items list
               setStoredItems(context.items);
 
@@ -227,6 +390,42 @@ const QuizModePage = () => {
       }
     }
   }, [itemId, items]);
+
+  // Sync URL to include first item id when landing on quiz without item in path (e.g. /quiz/certs?keywords=...)
+  useEffect(() => {
+    if (
+      !itemId &&
+      items.length > 0 &&
+      currentIndex === 0 &&
+      !hasSyncedInitialItemUrl.current
+    ) {
+      hasSyncedInitialItemUrl.current = true;
+      const firstId = items[0].id;
+      if (collectionId) {
+        navigate(
+          `${buildCollectionStudyPath("quiz", collectionId, collectionInfo?.name, firstId)}${quizItemSearch}`,
+          { replace: true }
+        );
+      } else if (category) {
+        navigate(
+          `/quiz/${categoryNameToSlug(category)}/item/${firstId}${quizItemSearch}`,
+          { replace: true }
+        );
+      } else {
+        navigate(`/quiz/item/${firstId}${quizItemSearch}`, {
+          replace: true,
+        });
+      }
+    }
+  }, [
+    itemId,
+    items,
+    currentIndex,
+    collectionId,
+    category,
+    quizItemSearch,
+    navigate,
+  ]);
 
   const currentItem = items[currentIndex];
 
@@ -335,10 +534,98 @@ const QuizModePage = () => {
 
   const handleNext = () => {
     if (currentIndex < items.length - 1) {
-      setCurrentIndex((prev) => prev + 1);
+      const newIndex = currentIndex + 1;
+      setCurrentIndex(newIndex);
       setSelectedAnswer(null);
       setShowAnswer(false);
+      if (items[newIndex]) {
+        if (collectionId) {
+          navigate(
+            `${buildCollectionStudyPath("quiz", collectionId, collectionInfo?.name, items[newIndex].id)}${quizItemSearch}`,
+            { replace: true }
+          );
+        } else if (category) {
+          navigate(`/quiz/${categoryNameToSlug(category)}/item/${items[newIndex].id}${quizItemSearch}`, { replace: true });
+        } else {
+          navigate(`/quiz/item/${items[newIndex].id}${quizItemSearch}`, { replace: true });
+        }
+      }
     }
+  };
+
+  const handlePrev = () => {
+    if (currentIndex > 0) {
+      const newIndex = currentIndex - 1;
+      setCurrentIndex(newIndex);
+      setSelectedAnswer(null);
+      setShowAnswer(false);
+      if (items[newIndex]) {
+        if (collectionId) {
+          navigate(
+            `${buildCollectionStudyPath("quiz", collectionId, collectionInfo?.name, items[newIndex].id)}${quizItemSearch}`,
+            { replace: true }
+          );
+        } else if (category) {
+          navigate(`/quiz/${categoryNameToSlug(category)}/item/${items[newIndex].id}${quizItemSearch}`, { replace: true });
+        } else {
+          navigate(`/quiz/item/${items[newIndex].id}${quizItemSearch}`, { replace: true });
+        }
+      }
+    }
+  };
+
+  const handleCollectionChange = (
+    changedItemId: string,
+    _updatedCollectionIds: Set<string>,
+    payload: { added?: { id: string; name: string }; removedId?: string }
+  ) => {
+    const applyPayload = (collections: { id: string; name: string; createdAt?: string }[] = []) => {
+      if (payload.added) {
+        return [
+          ...collections.filter((c) => c.id !== payload.added!.id),
+          {
+            id: payload.added.id,
+            name: payload.added.name,
+            createdAt: new Date().toISOString(),
+          },
+        ];
+      }
+      if (payload.removedId) {
+        return collections.filter((c) => c.id !== payload.removedId);
+      }
+      return collections;
+    };
+
+    if (collectionId) {
+      queryClient.invalidateQueries({ queryKey: ["collectionItems", collectionId] });
+      return;
+    }
+    if (storedItems) {
+      setStoredItems((prev) =>
+        prev
+          ? prev.map((item) =>
+              item.id === changedItemId
+                ? { ...item, collections: applyPayload(item.collections ?? []) }
+                : item
+            )
+          : prev
+      );
+      return;
+    }
+    queryClient.setQueryData(
+      ["randomItems", category, quizSize, navigationKeywords, filterKeywords],
+      (old: { items?: { id: string; collections?: { id: string; name: string; createdAt?: string }[] }[] } | undefined) => {
+        if (!old?.items) return old;
+        return {
+          ...old,
+          items: old.items.map((item) =>
+            item.id === changedItemId
+              ? { ...item, collections: applyPayload(item.collections ?? []) }
+              : item
+          ),
+        };
+      }
+    );
   };
 
   if (isLoadingItems) return <LoadingSpinner />;
@@ -362,284 +649,283 @@ const QuizModePage = () => {
     );
   }
 
+  const hideSetsMode = !!category && navigationKeywords.length >= 2;
+  const categoryAvailableModes: ViewMode[] = collectionId
+    ? ["list", "explore", "quiz"]
+    : getCategoryScopeModeConfig("sets", hideSetsMode).availableModes;
+  const categoryScopePath = category
+    ? buildCategoryPath(categoryNameToSlug(category), navigationKeywords)
+    : "/categories";
+  const categoryListSearch = (() => {
+    const params = new URLSearchParams();
+    params.set("view", "items");
+    if (filterKeywords.length > 0) {
+      params.set("keywords", filterKeywords.join(","));
+    }
+    const filterType = searchParams.get("filterType");
+    if (filterType) params.set("filterType", filterType);
+    const search = searchParams.get("search");
+    if (search) params.set("search", search);
+    const ratingMin = searchParams.get("ratingMin");
+    if (ratingMin) params.set("ratingMin", ratingMin);
+    const ratingMax = searchParams.get("ratingMax");
+    if (ratingMax) params.set("ratingMax", ratingMax);
+    if (searchParams.get("ratingUnrated") === "1") params.set("ratingUnrated", "1");
+    if (searchParams.get("ratingOnlyUnrated") === "1") params.set("ratingOnlyUnrated", "1");
+    const query = params.toString();
+    return query ? `?${query}` : "";
+  })();
+  const collectionListPath = collectionId
+    ? buildCollectionPath(collectionId, collectionInfo?.name)
+    : null;
+
   return (
     <div className="px-4 py-6 sm:px-0">
-      <div className="max-w-4xl mx-auto">
-        {collectionId && (
-          <div className="mb-6 flex items-center space-x-4">
-            <button
-              onClick={() => navigate("/collections")}
-              className="flex items-center px-3 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-md hover:bg-gray-50"
-            >
-              <ArrowLeftIcon className="h-4 w-4 mr-2" />
-              Go Back
-            </button>
-            {collectionInfo && (
-              <h1 className="text-3xl font-bold text-gray-900">
+      <ScopeSecondaryBar
+        scopeType={collectionId ? "collection" : "category"}
+        activeMode="quiz"
+        availableModes={categoryAvailableModes}
+        onModeChange={(mode) => {
+          const search = quizItemSearch;
+          if (mode === "sets") {
+            if (category) navigate(categoryScopePath);
+            else navigate("/categories");
+          } else if (mode === "list") {
+            if (collectionId && collectionListPath) navigate(collectionListPath);
+            else if (category)
+              navigate(`${categoryScopePath}${categoryListSearch}`);
+            else navigate("/categories");
+          } else if (mode === "explore") {
+            if (collectionId)
+              navigate(
+                `${buildCollectionStudyPath("explore", collectionId, collectionInfo?.name, currentItem?.id ?? items[0]?.id)}${search}`
+              );
+            else if (category)
+              navigate(
+                `/explore/${categoryNameToSlug(category)}/item/${currentItem?.id ?? items[0]?.id}${search}`
+              );
+            else if (items[0])
+              navigate(`/explore/item/${currentItem?.id ?? items[0].id}${search}`);
+          }
+        }}
+      />
+      {collectionId && collectionInfo && (
+        <div className="flex flex-wrap items-center justify-between gap-4 mt-4 mb-4">
+          <div className="min-w-0">
+            <div className="text-xs font-medium text-gray-500 uppercase tracking-wide">
+              Collection
+            </div>
+            <div className="flex flex-wrap items-baseline gap-2">
+              <div className="text-lg font-semibold text-gray-900 truncate max-w-xs sm:max-w-sm md:max-w-md">
                 {collectionInfo.name}
-              </h1>
-            )}
-          </div>
-        )}
-        {category && !collectionId && (
-          <div className="mb-6 flex items-center space-x-4">
-            <button
-              onClick={() => navigate("/categories")}
-              className="flex items-center px-3 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-md hover:bg-gray-50"
-            >
-              <ArrowLeftIcon className="h-4 w-4 mr-2" />
-              Go Back
-            </button>
-            <h1 className="text-3xl font-bold text-gray-900">
-              {category}
-            </h1>
-          </div>
-        )}
-        <div className="bg-white shadow rounded-lg p-6 mb-4">
-          <div className="flex justify-between items-center mb-2">
-            <h2 className="text-2xl font-bold text-gray-900">Quiz Mode</h2>
-          </div>
-          <p className="text-gray-600 text-sm mb-4">
-            Test your knowledge with interactive quizzes. Select an answer to see if you're correct, then view the explanation. Track your score as you progress through items.
-          </p>
-          <div className="flex justify-between items-center mb-4">
-            <div className="flex items-center space-x-4">
-              <div className="flex items-center space-x-2">
-                <button
-                  onClick={() => {
-                    if (currentIndex > 0) {
-                      const newIndex = currentIndex - 1;
-                      setCurrentIndex(newIndex);
-                      setSelectedAnswer(null);
-                      setShowAnswer(false);
-                      // Update URL based on context
-                      if (items[newIndex]) {
-                        if (collectionId) {
-                          navigate(
-                            `/quiz/collection/${collectionId}/item/${items[newIndex].id}`,
-                            { replace: true }
-                          );
-                        } else if (category) {
-                          navigate(`/quiz/${categoryNameToSlug(category)}/item/${items[newIndex].id}`, { replace: true });
-                        } else {
-                          navigate(`/quiz/item/${items[newIndex].id}`, {
-                            replace: true,
-                          });
-                        }
-                      }
-                    }
-                  }}
-                  disabled={currentIndex === 0}
-                  className="p-1 text-gray-600 hover:text-gray-900 disabled:text-gray-300 disabled:cursor-not-allowed"
-                  title="Previous item"
-                >
-                  <ChevronLeftIcon className="h-5 w-5" />
-                </button>
-                <span className="text-sm text-gray-500 min-w-[80px] text-center">
-                  {currentIndex + 1} of {items.length}
-                </span>
-                <button
-                  onClick={() => {
-                    if (currentIndex < items.length - 1) {
-                      const newIndex = currentIndex + 1;
-                      setCurrentIndex(newIndex);
-                      setSelectedAnswer(null);
-                      setShowAnswer(false);
-                      // Update URL based on context
-                      if (items[newIndex]) {
-                        if (collectionId) {
-                          navigate(
-                            `/quiz/collection/${collectionId}/item/${items[newIndex].id}`,
-                            { replace: true }
-                          );
-                        } else if (category) {
-                          navigate(`/quiz/${categoryNameToSlug(category)}/item/${items[newIndex].id}`, { replace: true });
-                        } else {
-                          navigate(`/quiz/item/${items[newIndex].id}`, {
-                            replace: true,
-                          });
-                        }
-                      }
-                    }
-                  }}
-                  disabled={currentIndex >= items.length - 1}
-                  className="p-1 text-gray-600 hover:text-gray-900 disabled:text-gray-300 disabled:cursor-not-allowed"
-                  title="Next item"
-                >
-                  <ChevronRightIcon className="h-5 w-5" />
-                </button>
               </div>
+              {collectionInfo.description && collectionInfo.description.trim() !== "" && (
+                <div className="text-sm text-gray-500 truncate max-w-xs sm:max-w-sm md:max-w-lg">
+                  {collectionInfo.description}
+                </div>
+              )}
             </div>
           </div>
-
-          <div className="mb-4 p-4 bg-gray-50 rounded-lg">
+          <div className="flex flex-wrap items-center gap-4">
             <div className="text-sm text-gray-600">
-              Score: {stats.correct} / {stats.total} correct
-              {stats.total > 0 && (
-                <span className="ml-2">
-                  ({Math.round((stats.correct / stats.total) * 100)}%)
+              {collectionInfo.itemCount ?? items.length} items
+            </div>
+            {ratingData && (
+              <div className="flex items-center gap-2">
+                <span className="text-sm font-medium text-gray-700">Rating</span>
+                <div className="flex items-center gap-1">
+                  {[1, 2, 3, 4, 5].map((star) => (
+                    <span key={star} className="p-0.5">
+                      {ratingData.averageStars != null && star <= Math.round(ratingData.averageStars) ? (
+                        <StarIconSolid className="h-4 w-4 text-amber-500" />
+                      ) : (
+                        <StarIcon className="h-4 w-4 text-gray-300" />
+                      )}
+                    </span>
+                  ))}
+                </div>
+                <span className="text-xs text-gray-500">
+                  {ratingData.averageStars != null
+                    ? `${ratingData.averageStars} (${ratingData.count})`
+                    : "No ratings yet"}
                 </span>
-              )}
-            </div>
-          </div>
-
-          {currentItem && (
-            <div className="space-y-4">
-              <div>
-                <h3 className="text-lg font-medium text-gray-900 mb-2">
-                  Question
-                </h3>
-                <p className="text-gray-700">{currentItem.question}</p>
               </div>
-
-              <div>
-                <h3 className="text-lg font-medium text-gray-900 mb-2">
-                  Select an answer:
-                </h3>
-                <div className="space-y-2">
-                  {options.map((option, index) => {
-                    const letter = String.fromCharCode(65 + index); // A, B, C, D
-                    const isCorrect = option === currentItem.correctAnswer;
-                    const isSelected = selectedAnswer === option;
-                    let bgColor = "bg-white hover:bg-gray-50";
-                    if (showAnswer) {
-                      if (isCorrect) {
-                        bgColor = "bg-green-100 border-green-500";
-                      } else if (isSelected && !isCorrect) {
-                        bgColor = "bg-red-100 border-red-500";
-                      }
-                    }
-
-                    return (
-                      <button
-                        key={index}
-                        onClick={() => handleAnswerSelect(option)}
-                        disabled={showAnswer}
-                        className={`w-full text-left p-4 border-2 rounded-lg ${bgColor} ${
-                          showAnswer ? "cursor-default" : "cursor-pointer"
-                        }`}
-                      >
-                        <span className="font-medium">{letter}.</span> {option}
-                      </button>
-                    );
-                  })}
-                </div>
-              </div>
-
-              {showAnswer && (
-                <div className="mt-4 p-4 bg-blue-50 rounded-lg">
-                  <p className="text-sm font-medium text-blue-900">
-                    Correct Answer: {currentItem.correctAnswer}
-                  </p>
-                  {currentItem.explanation && (
-                    <p className="text-sm text-blue-700 mt-2">
-                      {currentItem.explanation}
-                    </p>
-                  )}
-                </div>
-              )}
-
-              <div className="text-sm text-gray-500 space-y-1">
-                <div>Category: {currentItem.category}</div>
-                {currentItem.source && (
-                  <div>Source: {currentItem.source}</div>
-                )}
-              </div>
-
-              {/* Ratings and Comments */}
-              {showAnswer && (
-                <ItemRatingsComments
-                  itemId={currentItem.id}
-                  navigationContext={navigationContext}
-                />
-              )}
-
-              {/* Collection Controls */}
-              {showAnswer && isAuthenticated && (
-                <div className="mt-4 flex items-center gap-2 flex-wrap">
-                  <button
-                    onClick={() =>
-                      setSelectedItemForCollections(currentItem.id)
-                    }
-                    className="p-2 text-blue-600 hover:bg-blue-50 rounded-md"
-                    title="Manage collections"
-                  >
-                    <FolderIcon className="h-5 w-5" />
-                  </button>
-                  {currentItem.collections && currentItem.collections.length > 0 && (
-                    <div className="flex items-center gap-2 flex-wrap">
-                      {currentItem.collections.map((collection: { id: string; name: string }) => (
-                        <button
-                          key={collection.id}
-                          onClick={() => navigate(`/collections?selected=${collection.id}`)}
-                          className="inline-flex items-center px-2 py-1 rounded text-xs font-medium bg-emerald-100 text-emerald-800 hover:bg-emerald-200 transition-colors"
-                          title={`Collection: ${collection.name}`}
-                        >
-                          {collection.name}
-                        </button>
-                      ))}
-                    </div>
-                  )}
-                </div>
-              )}
-            </div>
-          )}
-
-          <div className="flex justify-between mt-6">
-            <button
-              onClick={() => {
-                setCurrentIndex((prev) => Math.max(0, prev - 1));
-                setSelectedAnswer(null);
-                setShowAnswer(false);
-              }}
-              disabled={currentIndex === 0}
-              className="px-4 py-2 bg-gray-200 text-gray-700 rounded-md hover:bg-gray-300 disabled:opacity-50 disabled:cursor-not-allowed"
-            >
-              Previous
-            </button>
-            {showAnswer && (
-              <button
-                onClick={handleNext}
-                disabled={currentIndex === items.length - 1}
-                className="px-4 py-2 bg-indigo-600 text-white rounded-md hover:bg-indigo-700 disabled:opacity-50 disabled:cursor-not-allowed"
-              >
-                Next Question
-              </button>
             )}
+            <button
+              type="button"
+              onClick={() => setShowDetails(true)}
+              className="inline-flex items-center px-3 py-1.5 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-md hover:bg-gray-50"
+            >
+              Details
+            </button>
           </div>
         </div>
-
-        {!isAuthenticated && (
-          <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-4 mb-4">
-            <p className="text-sm text-yellow-800">
-              <Link to="/signup" className="font-medium underline">
-                Sign up
-              </Link>{" "}
-              or{" "}
-              <Link to="/login" className="font-medium underline">
-                sign in
-              </Link>{" "}
-              to create your own items and collections!
-            </p>
-          </div>
-        )}
-
-        <div className="text-center">
-          <button
-            onClick={() => {
-              if (collectionId) {
-                navigate(`/collections/${collectionId}`);
-              } else {
-                navigate("/categories");
-              }
-            }}
-            className="text-indigo-600 hover:text-indigo-700"
+      )}
+      {category && !collectionId && (
+        <ScopePathHeader
+          breadcrumb={
+            <ExploreQuizBreadcrumb
+              mode="quiz"
+              categorySlug={categoryNameToSlug(category)}
+              categoryDisplayName={category}
+              keywords={navigationKeywords}
+              keywordDescriptions={keywordDescriptions}
+              onNavigate={(path) => navigate(path)}
+            />
+          }
+          count={scopeCountData?.totalCount ?? items.length}
+          hint="Test your knowledge with interactive quizzes."
+        />
+      )}
+      {showDetails && collectionId && collectionInfo && (
+        <div
+          className="fixed inset-0 bg-gray-600 bg-opacity-50 overflow-y-auto h-full w-full z-40"
+          onClick={() => setShowDetails(false)}
+        >
+          <div
+            className="relative top-24 mx-auto p-5 border w-full max-w-md shadow-lg rounded-md bg-white"
+            onClick={(e) => e.stopPropagation()}
           >
-            ← Go back
-          </button>
+            <div className="flex justify-between items-center mb-4">
+              <h3 className="text-lg font-medium text-gray-900">Collection details</h3>
+              <button
+                onClick={() => setShowDetails(false)}
+                className="text-gray-400 hover:text-gray-500"
+              >
+                <XMarkIcon className="h-5 w-5" />
+              </button>
+            </div>
+            <dl className="space-y-2 text-sm text-gray-700">
+              <div className="flex justify-between gap-4">
+                <dt className="font-medium text-gray-600">Name</dt>
+                <dd className="text-right break-words">{collectionInfo.name}</dd>
+              </div>
+              <div className="flex justify-between gap-4">
+                <dt className="font-medium text-gray-600">Author</dt>
+                <dd className="text-right break-all">{collectionInfo.createdBy}</dd>
+              </div>
+              <div className="flex justify-between gap-4">
+                <dt className="font-medium text-gray-600">Created</dt>
+                <dd className="text-right">
+                  {new Date(collectionInfo.createdAt).toLocaleString()}
+                </dd>
+              </div>
+              <div className="flex justify-between gap-4">
+                <dt className="font-medium text-gray-600">Items</dt>
+                <dd className="text-right">{collectionInfo.itemCount}</dd>
+              </div>
+              {"isPublic" in collectionInfo && (
+                <div className="flex justify-between gap-4">
+                  <dt className="font-medium text-gray-600">Visibility</dt>
+                  <dd className="text-right">
+                    {collectionInfo.isPublic ? "Public" : "Private"}
+                  </dd>
+                </div>
+              )}
+            </dl>
+          </div>
         </div>
-      </div>
+      )}
+      <StudyShell
+        backContent={
+          <>
+          </>
+        }
+        description={
+          !category || !!collectionId
+            ? "Test your knowledge with interactive quizzes."
+            : undefined
+        }
+        headerExtra={
+          !collectionId ? (
+            <div className="flex items-center gap-4 mb-4 flex-wrap">
+              <label className="flex items-center gap-2 text-sm text-gray-700">
+                <span>Quiz size:</span>
+                <input
+                  type="number"
+                  min={1}
+                  max={1000}
+                  value={quizSize}
+                  onChange={(e) => handleQuizSizeChange(e.target.value)}
+                  className="w-20 rounded-md border border-gray-300 px-2 py-1 text-sm"
+                />
+                <span className="text-gray-500">items (change refetches)</span>
+              </label>
+            </div>
+          ) : undefined
+        }
+        currentIndex={currentIndex}
+        totalCount={items.length}
+        onPrev={handlePrev}
+        onNext={handleNext}
+        isPrevDisabled={currentIndex === 0}
+        isNextDisabled={currentIndex >= items.length - 1}
+        currentItem={currentItem ?? undefined}
+        navigationContext={navigationContext}
+        onOpenComments={(id) => setCommentsDrawerItemId(id)}
+        onOpenManageCollections={(id) => setSelectedItemForCollections(id)}
+        onCollectionChange={handleCollectionChange}
+        isAuthenticated={isAuthenticated}
+        showRatingsAndCollections={showAnswer}
+        footerContent={
+          collectionId ? (
+            <button
+              onClick={() => collectionListPath && navigate(collectionListPath)}
+              className="text-indigo-600 hover:text-indigo-700"
+              type="button"
+            >
+              ← Back to collection
+            </button>
+          ) : (
+            <Link to="/categories" className="text-indigo-600 hover:text-indigo-700">
+              ← Categories
+            </Link>
+          )
+        }
+      >
+        {currentItem && (
+          <QuizRenderer
+            item={currentItem}
+            options={options}
+            selectedAnswer={selectedAnswer}
+            showAnswer={showAnswer}
+            onAnswerSelect={handleAnswerSelect}
+            stats={stats}
+          />
+        )}
+      </StudyShell>
 
+      <CommentsDrawer
+        itemId={commentsDrawerItemId}
+        onClose={() => setCommentsDrawerItemId(null)}
+        onNavigateToItem={(targetId) => {
+          const idx = items.findIndex((i) => i.id === targetId);
+          if (idx !== -1) {
+            setCurrentIndex(idx);
+            setCommentsDrawerItemId(targetId);
+            setSelectedAnswer(null);
+            setShowAnswer(false);
+          }
+        }}
+        previousItemId={
+          commentsDrawerItemId
+            ? (() => {
+                const idx = items.findIndex((i) => i.id === commentsDrawerItemId);
+                return idx > 0 ? items[idx - 1]?.id ?? null : null;
+              })()
+            : null
+        }
+        nextItemId={
+          commentsDrawerItemId
+            ? (() => {
+                const idx = items.findIndex((i) => i.id === commentsDrawerItemId);
+                return idx >= 0 && idx < items.length - 1
+                  ? items[idx + 1]?.id ?? null
+                  : null;
+              })()
+            : null
+        }
+      />
       {selectedItemForCollections && (
         <ItemCollectionsModal
           isOpen={!!selectedItemForCollections}
