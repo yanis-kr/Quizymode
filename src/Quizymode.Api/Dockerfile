@@ -16,9 +16,13 @@ WORKDIR /src
 COPY ["Directory.Build.props", "Directory.Packages.props", "global.json", "./"]
 COPY ["src/Quizymode.Api/Quizymode.Api.csproj", "Quizymode.Api/"]
 COPY ["src/Quizymode.Api.ServiceDefaults/Quizymode.ServiceDefaults.csproj", "Quizymode.Api.ServiceDefaults/"]
+COPY ["src/Quizymode.Taxonomy/Quizymode.Taxonomy.csproj", "Quizymode.Taxonomy/"]
 RUN dotnet restore "./Quizymode.Api/Quizymode.Api.csproj"
 COPY src/Quizymode.Api/. ./Quizymode.Api/
 COPY src/Quizymode.Api.ServiceDefaults/. ./Quizymode.Api.ServiceDefaults/
+COPY src/Quizymode.Taxonomy/. ./Quizymode.Taxonomy/
+COPY docs /docs
+COPY data /data
 WORKDIR "/src/Quizymode.Api"
 
 # This stage is used to publish the service project to be copied to the final stage
