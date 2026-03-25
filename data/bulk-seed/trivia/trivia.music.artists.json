@@ -1,0 +1,192 @@
+[
+  {
+    "category": "trivia",
+    "navigationKeyword1": "music",
+    "navigationKeyword2": "artists",
+    "question": "The Beatles are most associated with which city's 1960s music scene?",
+    "correctAnswer": "Liverpool",
+    "incorrectAnswers": [
+      "Nashville",
+      "Vienna",
+      "Cairo"
+    ],
+    "explanation": "The Beatles formed in Liverpool.",
+    "keywords": [
+      "beatles",
+      "rock"
+    ],
+    "source": "https://www.britannica.com/topic/the-Beatles",
+    "seedId": "03e8bce9-e1ff-4eb7-98cc-70685d12fb5e"
+  },
+  {
+    "category": "trivia",
+    "navigationKeyword1": "music",
+    "navigationKeyword2": "artists",
+    "question": "Beethoven is most associated with which musical tradition?",
+    "correctAnswer": "Western classical music",
+    "incorrectAnswers": [
+      "gamelan",
+      "ragas",
+      "taiko"
+    ],
+    "explanation": "Beethoven is a classical composer.",
+    "keywords": [
+      "classical",
+      "composer"
+    ],
+    "source": "https://www.britannica.com/biography/Ludwig-van-Beethoven",
+    "seedId": "754a8d5a-ecbe-4ad3-bc85-78850face785"
+  },
+  {
+    "category": "trivia",
+    "navigationKeyword1": "music",
+    "navigationKeyword2": "artists",
+    "question": "Mozart is most associated with which musical era?",
+    "correctAnswer": "Classical period",
+    "incorrectAnswers": [
+      "Baroque only",
+      "Romantic only",
+      "Modernist only"
+    ],
+    "explanation": "Mozart is a Classical-period composer.",
+    "keywords": [
+      "mozart",
+      "classical"
+    ],
+    "source": "https://www.britannica.com/biography/Wolfgang-Amadeus-Mozart",
+    "seedId": "b4855a32-6b5a-483f-a7a2-b18ffc1a8008"
+  },
+  {
+    "category": "trivia",
+    "navigationKeyword1": "music",
+    "navigationKeyword2": "artists",
+    "question": "Elvis Presley is widely known by what music title?",
+    "correctAnswer": "King of Rock and Roll",
+    "incorrectAnswers": [
+      "Queen of Soul",
+      "Duke of Jazz",
+      "Count of Disco"
+    ],
+    "explanation": "Presley is called the King of Rock and Roll.",
+    "keywords": [
+      "elvis",
+      "rock"
+    ],
+    "source": "https://www.britannica.com/biography/Elvis-Presley",
+    "seedId": "dad7d3ca-5e0f-4274-815d-449454f198ee"
+  },
+  {
+    "category": "trivia",
+    "navigationKeyword1": "music",
+    "navigationKeyword2": "artists",
+    "question": "Beyonc? is associated with R&B and what other genre?",
+    "correctAnswer": "pop",
+    "incorrectAnswers": [
+      "polka",
+      "sea shanties",
+      "gregorian chant"
+    ],
+    "explanation": "Beyonc\u00e9 works across R&B and pop.",
+    "keywords": [
+      "beyonce",
+      "pop"
+    ],
+    "source": "https://www.britannica.com/biography/Beyonce",
+    "seedId": "f1a450ee-31be-4aa2-9048-c7a89110d6a9"
+  },
+  {
+    "category": "trivia",
+    "navigationKeyword1": "music",
+    "navigationKeyword2": "artists",
+    "question": "Bob Dylan helped blend folk with what rock style?",
+    "correctAnswer": "folk rock",
+    "incorrectAnswers": [
+      "disco",
+      "ska",
+      "grunge"
+    ],
+    "explanation": "Dylan helped pioneer folk rock.",
+    "keywords": [
+      "dylan",
+      "folk-rock"
+    ],
+    "source": "https://www.britannica.com/biography/Bob-Dylan",
+    "seedId": "67ed5b4e-88b2-4618-8109-eb982377e86a"
+  },
+  {
+    "category": "trivia",
+    "navigationKeyword1": "music",
+    "navigationKeyword2": "artists",
+    "question": "Louis Armstrong is most associated with which instrument?",
+    "correctAnswer": "trumpet",
+    "incorrectAnswers": [
+      "cello",
+      "oboe",
+      "timpani"
+    ],
+    "explanation": "Armstrong was a trumpeter and vocalist.",
+    "keywords": [
+      "jazz",
+      "trumpet"
+    ],
+    "source": "https://www.britannica.com/biography/Louis-Armstrong",
+    "seedId": "a2419723-bb3d-432e-b716-ea268df71952"
+  },
+  {
+    "category": "trivia",
+    "navigationKeyword1": "music",
+    "navigationKeyword2": "artists",
+    "question": "Taylor Swift is known for songwriting built heavily on what?",
+    "correctAnswer": "personal narrative",
+    "incorrectAnswers": [
+      "fictional characters",
+      "news headlines",
+      "historical myths"
+    ],
+    "explanation": "Swift\u2019s songs often reflect personal narrative.",
+    "keywords": [
+      "songwriting",
+      "pop"
+    ],
+    "source": "https://www.britannica.com/biography/Taylor-Swift",
+    "seedId": "31016099-f9a7-4aec-8b8a-84b37589dd34"
+  },
+  {
+    "category": "trivia",
+    "navigationKeyword1": "music",
+    "navigationKeyword2": "artists",
+    "question": "Michael Jackson is strongly associated with what dance move nickname?",
+    "correctAnswer": "Moonwalk",
+    "incorrectAnswers": [
+      "waltz",
+      "foxtrot",
+      "polka"
+    ],
+    "explanation": "Jackson popularized the moonwalk.",
+    "keywords": [
+      "mj",
+      "dance"
+    ],
+    "source": "https://www.britannica.com/biography/Michael-Jackson-American-singer-songwriter",
+    "seedId": "5fc57a45-4493-4aff-8efb-6203d996a41c"
+  },
+  {
+    "category": "trivia",
+    "navigationKeyword1": "music",
+    "navigationKeyword2": "artists",
+    "question": "Aretha Franklin is known by what honorific title?",
+    "correctAnswer": "Queen of Soul",
+    "incorrectAnswers": [
+      "King of Pop",
+      "Prince of Funk",
+      "Duke of Jazz"
+    ],
+    "explanation": "Franklin is called the Queen of Soul.",
+    "keywords": [
+      "soul",
+      "vocals"
+    ],
+    "source": "https://www.britannica.com/biography/Aretha-Franklin",
+    "seedId": "3bd2df24-c813-4cf7-a471-b3fcfd8dd798"
+  }
+]

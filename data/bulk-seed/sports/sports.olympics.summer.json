@@ -1,0 +1,202 @@
+[
+  {
+    "category": "sports",
+    "navigationKeyword1": "olympics",
+    "navigationKeyword2": "summer",
+    "question": "How often are the Summer Olympic Games usually held?",
+    "correctAnswer": "Every four years",
+    "incorrectAnswers": [
+      "Every year",
+      "Every two years",
+      "Every six years"
+    ],
+    "explanation": "The Summer Games follow a four-year cycle.",
+    "keywords": [
+      "olympics",
+      "summer",
+      "cycle"
+    ],
+    "source": "https://olympics.com/en/olympic-games",
+    "seedId": "3139390e-5380-4430-9d92-eea98687bcbd"
+  },
+  {
+    "category": "sports",
+    "navigationKeyword1": "olympics",
+    "navigationKeyword2": "summer",
+    "question": "Which city hosted the 2024 Summer Olympics?",
+    "correctAnswer": "Paris",
+    "incorrectAnswers": [
+      "Tokyo",
+      "Los Angeles",
+      "London"
+    ],
+    "explanation": "Paris hosted the 2024 Summer Games.",
+    "keywords": [
+      "olympics",
+      "summer",
+      "paris"
+    ],
+    "source": "https://olympics.com/en/olympic-games",
+    "seedId": "ef53e9fd-7b41-4029-a1a8-87afea5b5c58"
+  },
+  {
+    "category": "sports",
+    "navigationKeyword1": "olympics",
+    "navigationKeyword2": "summer",
+    "question": "Which city hosted the postponed 2020 Summer Olympics in 2021?",
+    "correctAnswer": "Tokyo",
+    "incorrectAnswers": [
+      "Beijing",
+      "Rio de Janeiro",
+      "Paris"
+    ],
+    "explanation": "Tokyo remained the official host of the 2020 Games even though they were held in 2021.",
+    "keywords": [
+      "olympics",
+      "summer",
+      "tokyo"
+    ],
+    "source": "https://olympics.com/en/olympic-games",
+    "seedId": "ba99a3e0-3a4c-4a90-a66f-07c57f056215"
+  },
+  {
+    "category": "sports",
+    "navigationKeyword1": "olympics",
+    "navigationKeyword2": "summer",
+    "question": "Which symbol with five interlocking colors represents the Olympic movement?",
+    "correctAnswer": "Olympic rings",
+    "incorrectAnswers": [
+      "Laurel crown",
+      "Torch relay baton",
+      "Victory bell"
+    ],
+    "explanation": "The rings are the best-known Olympic emblem.",
+    "keywords": [
+      "olympics",
+      "summer",
+      "rings"
+    ],
+    "source": "https://www.britannica.com/sports/Olympic-Games",
+    "seedId": "d8174980-0d24-4a3b-8818-5f232f13a9a9"
+  },
+  {
+    "category": "sports",
+    "navigationKeyword1": "olympics",
+    "navigationKeyword2": "summer",
+    "question": "Which Summer Games city famously featured a 2008 opening ceremony at the Bird's Nest stadium?",
+    "correctAnswer": "Beijing",
+    "incorrectAnswers": [
+      "Athens",
+      "Rio de Janeiro",
+      "Sydney"
+    ],
+    "explanation": "Beijing hosted the 2008 Summer Olympics.",
+    "keywords": [
+      "olympics",
+      "summer",
+      "beijing"
+    ],
+    "source": "https://olympics.com/en/olympic-games",
+    "seedId": "2b712383-9052-4a53-804e-1e237737f5d1"
+  },
+  {
+    "category": "sports",
+    "navigationKeyword1": "olympics",
+    "navigationKeyword2": "summer",
+    "question": "Which city hosted the 2016 Summer Olympics?",
+    "correctAnswer": "Rio de Janeiro",
+    "incorrectAnswers": [
+      "London",
+      "Tokyo",
+      "Madrid"
+    ],
+    "explanation": "Rio hosted the 2016 Summer Games.",
+    "keywords": [
+      "olympics",
+      "summer",
+      "rio"
+    ],
+    "source": "https://olympics.com/en/olympic-games",
+    "seedId": "042c8c0f-163d-4019-80be-e87cdc490a4b"
+  },
+  {
+    "category": "sports",
+    "navigationKeyword1": "olympics",
+    "navigationKeyword2": "summer",
+    "question": "Which city hosted the 2012 Summer Olympics?",
+    "correctAnswer": "London",
+    "incorrectAnswers": [
+      "Paris",
+      "Athens",
+      "Sydney"
+    ],
+    "explanation": "London hosted the 2012 Summer Games.",
+    "keywords": [
+      "olympics",
+      "summer",
+      "london"
+    ],
+    "source": "https://olympics.com/en/olympic-games",
+    "seedId": "9f2d517f-e5c2-45a2-b46e-56af0731087c"
+  },
+  {
+    "category": "sports",
+    "navigationKeyword1": "olympics",
+    "navigationKeyword2": "summer",
+    "question": "Which city hosted the 2000 Summer Olympics?",
+    "correctAnswer": "Sydney",
+    "incorrectAnswers": [
+      "Melbourne",
+      "Athens",
+      "Atlanta"
+    ],
+    "explanation": "Sydney hosted the 2000 Summer Games.",
+    "keywords": [
+      "olympics",
+      "summer",
+      "sydney"
+    ],
+    "source": "https://olympics.com/en/olympic-games",
+    "seedId": "3346e900-14a5-4dbd-9c51-bbe72d129a10"
+  },
+  {
+    "category": "sports",
+    "navigationKeyword1": "olympics",
+    "navigationKeyword2": "summer",
+    "question": "Which city will host the 2028 Summer Olympics?",
+    "correctAnswer": "Los Angeles",
+    "incorrectAnswers": [
+      "Brisbane",
+      "Paris",
+      "Rome"
+    ],
+    "explanation": "Los Angeles is the planned host of the 2028 Summer Games.",
+    "keywords": [
+      "olympics",
+      "summer",
+      "los-angeles"
+    ],
+    "source": "https://olympics.com/en/olympic-games",
+    "seedId": "08110221-8c49-459c-a1bc-97e57720b8d6"
+  },
+  {
+    "category": "sports",
+    "navigationKeyword1": "olympics",
+    "navigationKeyword2": "summer",
+    "question": "Which city hosted the first modern Summer Olympics in 1896?",
+    "correctAnswer": "Athens",
+    "incorrectAnswers": [
+      "Paris",
+      "London",
+      "Rome"
+    ],
+    "explanation": "Athens staged the first modern Olympic Games in 1896.",
+    "keywords": [
+      "olympics",
+      "summer",
+      "athens"
+    ],
+    "source": "https://www.britannica.com/sports/Olympic-Games",
+    "seedId": "95cd7d37-5434-4fe0-b0e7-e98a94d1af33"
+  }
+]

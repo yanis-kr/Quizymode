@@ -50,7 +50,7 @@
     "incorrectAnswers": [
       "Create an organizational unit (OU) for each department. Add the aws:PrincipalOrgPaths global condition key to the S3 bucket policy.",
       "Use AWS CloudTrail to monitor the CreateAccount, InviteAccountToOrganization, LeaveOrganization, and RemoveAccountFromOrganization events. Update the S3 bucket policy accordingly.",
-      "Tag each user that needs access to the S3 bucket. Add the aws:PrincipalTag global condition key to the S3 bucket policy. --- Page 3 ---"
+      "Tag each user that needs access to the S3 bucket. Add the aws:PrincipalTag global condition key to the S3 bucket policy."
     ],
     "explanation": "SAA-C03 practice scenario (extract question #3). Correct choice: A.",
     "keywords": [
@@ -120,7 +120,7 @@
     "incorrectAnswers": [
       "Create an S3 bucket. Create an IAM role that has permissions to write to the S3 bucket. Use the AWS CLI to copy all les locally to the S3 bucket.",
       "Deploy an S3 File Gateway on premises. Create a public service endpoint to connect to the S3 File Gateway. Create an S3 bucket. Create a new NFS fifile share on the S3 File Gateway. Point the new fifile share to the S3 bucket. Transfer the data from the existing NFS fifile share to the S3 File Gateway.",
-      "Set up an AWS Direct Connect connection between the on-premises network and AWS. Deploy an S3 File Gateway on premises. Create a public virtual interface (VIF) to connect to the S3 File Gateway. Create an S3 bucket. Create a new NFS fifile share on the S3 File Gateway. Point the new fifile share to the S3 bucket. Transfer the data from the existing NFS fifile share to the S3 File Gateway. --- Page 4 ---"
+      "Set up an AWS Direct Connect connection between the on-premises network and AWS. Deploy an S3 File Gateway on premises. Create a public virtual interface (VIF) to connect to the S3 File Gateway. Create an S3 bucket. Create a new NFS fifile share on the S3 File Gateway. Point the new fifile share to the S3 bucket. Transfer the data from the existing NFS fifile share to the S3 File Gateway."
     ],
     "explanation": "SAA-C03 practice scenario (extract question #6). Correct choice: B.",
     "keywords": [
@@ -139,7 +139,7 @@
     "question": "A company has an application that ingests incoming messages. Dozens of other applications and microservices then quickly consume these\nmessages. The number of messages varies drastically and sometimes increases suddenly to 100,000 each second. The company wants to\ndecouple the solution and increase scalability.\nWhich solution meets these requirements?",
     "correctAnswer": "Publish the messages to an Amazon Simple Notification Service (Amazon SNS) topic with multiple Amazon Simple Queue Service (Amazon SQS) subscriptions. Configure the consumer applications to process the messages from the queues.",
     "incorrectAnswers": [
-      "Persist the messages to Amazon Kinesis Data Analytics. Configure the consumer applications to read and process the messages.",
+      "Persist the messages to Amazon Kinesis Data Analytics (note: outdated; now Amazon Managed Service for Apache Flink for SQL/streaming analytics workloads). Configure the consumer applications to read and process the messages.",
       "Deploy the ingestion application on Amazon EC2 instances in an Auto Scaling group to scale the number of EC2 instances based on CPU metrics.",
       "Write the messages to Amazon Kinesis Data Streams with a single shard. Use an AWS Lambda function to preprocess messages and store them in Amazon DynamoDB. Configure the consumer applications to read from DynamoDB to process the messages."
     ],
@@ -162,7 +162,7 @@
     "incorrectAnswers": [
       "Configure an Amazon Simple Queue Service (Amazon SQS) queue as a destination for the jobs. Implement the compute nodes with Amazon EC2 instances that are managed in an Auto Scaling group. Configure EC2 Auto Scaling to use scheduled scaling.",
       "Implement the primary server and the compute nodes with Amazon EC2 instances that are managed in an Auto Scaling group. Configure AWS CloudTrail as a destination for the jobs. Configure EC2 Auto Scaling based on the load on the primary server.",
-      "Implement the primary server and the compute nodes with Amazon EC2 instances that are managed in an Auto Scaling group. Configure Amazon EventBridge (Amazon CloudWatch Events) as a destination for the jobs. Configure EC2 Auto Scaling based on the load on the compute nodes."
+      "Implement the primary server and the compute nodes with Amazon EC2 instances that are managed in an Auto Scaling group. Configure Amazon EventBridge (note: outdated alias \"Amazon CloudWatch Events\"; same service, now EventBridge) as a destination for the jobs. Configure EC2 Auto Scaling based on the load on the compute nodes."
     ],
     "explanation": "SAA-C03 practice scenario (extract question #8). Correct choice: B.",
     "keywords": [
@@ -185,7 +185,7 @@
     "incorrectAnswers": [
       "Use AWS DataSync to copy data that is older than 7 days from the SMB le server to AWS.",
       "Create an Amazon FSx for Windows File Server le system to extend the company's storage space.",
-      "Install a utility on each user's computer to access Amazon S3. Create an S3 Lifecycle policy to transition the data to S3 Glacier Flexible Retrieval after 7 days. --- Page 5 ---"
+      "Install a utility on each user's computer to access Amazon S3. Create an S3 Lifecycle policy to transition the data to S3 Glacier Flexible Retrieval after 7 days."
     ],
     "explanation": "SAA-C03 practice scenario (extract question #9). Correct choice: B.",
     "keywords": [
@@ -253,7 +253,7 @@
     "incorrectAnswers": [
       "Create an Amazon CloudFront distribution that has the ALB as an origin. Create an AWS Global Accelerator standard accelerator that has the S3 bucket as an endpoint Configure Route 53 to route traffic to the CloudFront distribution.",
       "Create an Amazon CloudFront distribution that has the S3 bucket as an origin. Create an AWS Global Accelerator standard accelerator that has the ALB and the CloudFront distribution as endpoints. Create a custom domain name that points to the accelerator DNS name. Use the custom domain name as an endpoint for the web application.",
-      "Create an Amazon CloudFront distribution that has the ALB as an origin. Create an AWS Global Accelerator standard accelerator that has the S3 bucket as an endpoint. Create two domain names. Point one domain name to the CloudFront DNS name for dynamic content. Point the other domain name to the accelerator DNS name for static content. Use the domain names as endpoints for the web application. --- Page 6 ---"
+      "Create an Amazon CloudFront distribution that has the ALB as an origin. Create an AWS Global Accelerator standard accelerator that has the S3 bucket as an endpoint. Create two domain names. Point one domain name to the CloudFront DNS name for dynamic content. Point the other domain name to the accelerator DNS name for static content. Use the domain names as endpoints for the web application."
     ],
     "explanation": "SAA-C03 practice scenario (extract question #12). Correct choice: A.",
     "keywords": [
@@ -277,7 +277,7 @@
     "correctAnswer": "Store the credentials as secrets in AWS Secrets Manager. Use multi-Region secret replication for the required Regions. Configure Secrets Manager to rotate the secrets on a schedule.",
     "incorrectAnswers": [
       "Store the credentials as secrets in AWS Systems Manager by creating a secure string parameter. Use multi-Region secret replication for the required Regions. Configure Systems Manager to rotate the secrets on a schedule.",
-      "Store the credentials in an Amazon S3 bucket that has server-side encryption (SSE) enabled. Use Amazon EventBridge (Amazon CloudWatch Events) to invoke an AWS Lambda function to rotate the credentials.",
+      "Store the credentials in an Amazon S3 bucket that has server-side encryption (SSE) enabled. Use Amazon EventBridge (note: outdated alias \"Amazon CloudWatch Events\"; same service, now EventBridge) to invoke an AWS Lambda function to rotate the credentials.",
       "Encrypt the credentials as secrets by using AWS Key Management Service (AWS KMS) multi-Region customer managed keys. Store the secrets in an Amazon DynamoDB global table. Use an AWS Lambda function to retrieve the secrets from DynamoDB. Use the RDS API to rotate the secrets."
     ],
     "explanation": "SAA-C03 practice scenario (extract question #13). Correct choice: A.",
@@ -328,7 +328,7 @@
     "incorrectAnswers": [
       "Use Amazon GuardDuty for traffic inspection and traffic ltering in the production VPC.",
       "Use Trac Mirroring to mirror traffic from the production VPC for traffic inspection and ltering.",
-      "Use AWS Firewall Manager to create the required rules for traffic inspection and traffic ltering for the production VPC. --- Page 7 ---"
+      "Use AWS Firewall Manager to create the required rules for traffic inspection and traffic ltering for the production VPC."
     ],
     "explanation": "SAA-C03 practice scenario (extract question #15). Correct choice: C.",
     "keywords": [
@@ -436,7 +436,7 @@
     "navigationKeyword1": "aws",
     "navigationKeyword2": "saa-c03",
     "question": "An ecommerce company wants to launch a one-deal-a-day website on AWS. Each day will feature exactly one product on sale for a period of 24\nhours. The company wants to be able to handle millions of requests each hour with millisecond latency during peak hours.\nWhich solution will meet these requirements with the LEAST operational overhead?",
-    "correctAnswer": "Use an Amazon S3 bucket to host the website's static content. Deploy an Amazon CloudFront distribution. Set the S3 bucket as the origin. Use Amazon API Gateway and AWS Lambda functions for the backend APIs. Store the data in Amazon DynamoDB. --- Page 9 ---",
+    "correctAnswer": "Use an Amazon S3 bucket to host the website's static content. Deploy an Amazon CloudFront distribution. Set the S3 bucket as the origin. Use Amazon API Gateway and AWS Lambda functions for the backend APIs. Store the data in Amazon DynamoDB.",
     "incorrectAnswers": [
       "Use Amazon S3 to host the full website in different S3 buckets. Add Amazon CloudFront distributions. Set the S3 buckets as origins for the distributions. Store the order data in Amazon S3.",
       "Deploy the full website on Amazon EC2 instances that run in Auto Scaling groups across multiple Availability Zones. Add an Application Load Balancer (ALB) to distribute the website traffic. Add another ALB for the backend APIs. Store the data in Amazon RDS for MySQL.",

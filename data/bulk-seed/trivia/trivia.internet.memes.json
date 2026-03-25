@@ -1,0 +1,192 @@
+[
+  {
+    "category": "trivia",
+    "navigationKeyword1": "internet",
+    "navigationKeyword2": "memes",
+    "question": "Who introduced the term \"meme\" in 1976?",
+    "correctAnswer": "Richard Dawkins",
+    "incorrectAnswers": [
+      "Marshall McLuhan",
+      "Tim Berners-Lee",
+      "Alan Turing"
+    ],
+    "explanation": "Britannica says Richard Dawkins introduced the term in 1976.",
+    "keywords": [
+      "internet-culture",
+      "meme-history"
+    ],
+    "source": "https://www.britannica.com/topic/meme",
+    "seedId": "cc45647c-c4cf-45e1-9210-77a78e732a6b"
+  },
+  {
+    "category": "trivia",
+    "navigationKeyword1": "internet",
+    "navigationKeyword2": "memes",
+    "question": "The word \"meme\" comes from a Greek term meaning what?",
+    "correctAnswer": "imitated",
+    "incorrectAnswers": [
+      "encrypted",
+      "animated",
+      "transmitted"
+    ],
+    "explanation": "Britannica traces meme to the Greek mimema, meaning imitated.",
+    "keywords": [
+      "internet-culture",
+      "meme-history"
+    ],
+    "source": "https://www.britannica.com/topic/meme",
+    "seedId": "5b83b902-c846-4297-8d20-c294e91f54a4"
+  },
+  {
+    "category": "trivia",
+    "navigationKeyword1": "internet",
+    "navigationKeyword2": "memes",
+    "question": "Internet memes usually spread by what process?",
+    "correctAnswer": "imitation",
+    "incorrectAnswers": [
+      "encryption",
+      "compression",
+      "moderation"
+    ],
+    "explanation": "Britannica defines memes as cultural information spread by imitation.",
+    "keywords": [
+      "internet-culture",
+      "meme-history"
+    ],
+    "source": "https://www.britannica.com/topic/meme",
+    "seedId": "e918ee5c-aad7-4c65-bd94-e32ad191cb69"
+  },
+  {
+    "category": "trivia",
+    "navigationKeyword1": "internet",
+    "navigationKeyword2": "memes",
+    "question": "A GIF is best known for what kind of image behavior?",
+    "correctAnswer": "looping animation",
+    "incorrectAnswers": [
+      "3D printing",
+      "voice recognition",
+      "GPS tracking"
+    ],
+    "explanation": "GIFs are widely used for short looping animations online.",
+    "keywords": [
+      "internet-culture",
+      "meme-history"
+    ],
+    "source": "https://www.britannica.com/technology/GIF",
+    "seedId": "182ceb98-816a-4ca8-bdc1-2d357f0401bd"
+  },
+  {
+    "category": "trivia",
+    "navigationKeyword1": "internet",
+    "navigationKeyword2": "memes",
+    "question": "Emoji are standardized what?",
+    "correctAnswer": "pictographs",
+    "incorrectAnswers": [
+      "podcasts",
+      "passwords",
+      "playlists"
+    ],
+    "explanation": "Britannica describes emoji as standardized pictographs used in digital communication.",
+    "keywords": [
+      "internet-culture",
+      "meme-history"
+    ],
+    "source": "https://www.britannica.com/topic/emoji",
+    "seedId": "73f62f28-d789-4cdb-837b-1433bb036f4d"
+  },
+  {
+    "category": "trivia",
+    "navigationKeyword1": "internet",
+    "navigationKeyword2": "memes",
+    "question": "Hashtags are mainly used to group posts under shared what?",
+    "correctAnswer": "topics",
+    "incorrectAnswers": [
+      "pixels",
+      "passwords",
+      "playlists"
+    ],
+    "explanation": "Hashtags help organize posts around shared topics and keywords.",
+    "keywords": [
+      "internet-culture",
+      "meme-history"
+    ],
+    "source": "https://www.britannica.com/topic/hashtag",
+    "seedId": "c7db2661-dda0-42a6-9d80-cb92b3d9dc86"
+  },
+  {
+    "category": "trivia",
+    "navigationKeyword1": "internet",
+    "navigationKeyword2": "memes",
+    "question": "The name \"copypasta\" comes from doing what to text repeatedly?",
+    "correctAnswer": "copying and pasting it",
+    "incorrectAnswers": [
+      "translating and dubbing it",
+      "deleting and restoring it",
+      "printing and scanning it"
+    ],
+    "explanation": "Copypasta refers to blocks of text repeatedly copied and pasted online.",
+    "keywords": [
+      "internet-culture",
+      "meme-history"
+    ],
+    "source": "https://www.britannica.com/topic/copypasta",
+    "seedId": "3738944b-8df1-44b4-a17e-85ec69528c6f"
+  },
+  {
+    "category": "trivia",
+    "navigationKeyword1": "internet",
+    "navigationKeyword2": "memes",
+    "question": "Reaction images are usually posted to convey what?",
+    "correctAnswer": "emotion or tone",
+    "incorrectAnswers": [
+      "battery life",
+      "screen size",
+      "file format"
+    ],
+    "explanation": "Reaction images are used to express emotion or tone in online conversations.",
+    "keywords": [
+      "internet-culture",
+      "meme-history"
+    ],
+    "source": "https://www.britannica.com/topic/reaction-gif",
+    "seedId": "903f42e7-5ab9-4f77-af21-e8a7c64315b6"
+  },
+  {
+    "category": "trivia",
+    "navigationKeyword1": "internet",
+    "navigationKeyword2": "memes",
+    "question": "Which cryptocurrency was created as a joke based on a popular meme?",
+    "correctAnswer": "Dogecoin",
+    "incorrectAnswers": [
+      "Ethereum",
+      "Litecoin",
+      "Monero"
+    ],
+    "explanation": "Britannica notes Dogecoin was created as a joke based on a meme.",
+    "keywords": [
+      "internet-culture",
+      "meme-history"
+    ],
+    "source": "https://www.britannica.com/money/meme-coin-trading",
+    "seedId": "b883fec5-4ffe-4b81-8814-e5732c8447c2"
+  },
+  {
+    "category": "trivia",
+    "navigationKeyword1": "internet",
+    "navigationKeyword2": "memes",
+    "question": "Internet memes often take the form of pictures, videos, or what other broad category?",
+    "correctAnswer": "other media",
+    "incorrectAnswers": [
+      "printer drivers",
+      "spreadsheet tabs",
+      "graphics cards"
+    ],
+    "explanation": "Internet memes often appear as pictures, videos, or other media shared online.",
+    "keywords": [
+      "internet-culture",
+      "meme-history"
+    ],
+    "source": "https://www.britannica.com/topic/meme",
+    "seedId": "485649cb-c2d7-43d5-9157-4de85ae2031e"
+  }
+]

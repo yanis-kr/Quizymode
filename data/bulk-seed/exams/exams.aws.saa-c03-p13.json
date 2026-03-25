@@ -30,7 +30,7 @@
     "incorrectAnswers": [
       "Amazon Elastic Block Store (Amazon EBS)",
       "Amazon S3 Glacier Deep Archive",
-      "AWS Backup --- Page 92 ---"
+      "AWS Backup"
     ],
     "explanation": "SAA-C03 practice scenario (extract question #252). Correct choice: A.",
     "keywords": [
@@ -72,7 +72,7 @@
     "incorrectAnswers": [
       "Create security group rules using the security group ID as the source or destination.",
       "Create security group rules using the VPC CIDR blocks as the source or destination.",
-      "Create security group rules using the subnet CIDR blocks as the source or destination. --- Page 93 ---"
+      "Create security group rules using the subnet CIDR blocks as the source or destination."
     ],
     "explanation": "SAA-C03 practice scenario (extract question #254). Correct choice: A.",
     "keywords": [
@@ -90,7 +90,7 @@
     "navigationKeyword1": "aws",
     "navigationKeyword2": "saa-c03",
     "question": "A company has an ecommerce checkout workflow that writes an order to a database and calls a service to process the payment. Users are\nexperiencing timeouts during the checkout process. When users resubmit the checkout form, multiple unique orders are created for the same\ndesired transaction.\nHow should a solutions architect refactor this workflow to prevent the creation of multiple orders?",
-    "correctAnswer": "Configure the web application to send an order message to Amazon Kinesis Data Firehose. Set the payment service to retrieve the message from Kinesis Data Firehose and process the order.",
+    "correctAnswer": "Configure the web application to send an order message to Amazon Kinesis Data Firehose (note: outdated; now Amazon Data Firehose). Set the payment service to retrieve the message from Kinesis Data Firehose (note: outdated; now Amazon Data Firehose) and process the order.",
     "incorrectAnswers": [
       "Create a rule in AWS CloudTrail to invoke an AWS Lambda function based on the logged application path request. Use Lambda to query the database, call the payment service, and pass in the order information.",
       "Store the order in the database. Send a message that includes the order number to Amazon Simple Notification Service (Amazon SNS). Set the payment service to poll Amazon SNS, retrieve the message, and process the order.",
@@ -110,11 +110,11 @@
     "navigationKeyword1": "aws",
     "navigationKeyword2": "saa-c03",
     "question": "A company is building a solution that will report Amazon EC2 Auto Scaling events across all the applications in an AWS account. The company\nneeds to use a serverless solution to store the EC2 Auto Scaling status data in Amazon S3. The company then will use the data in Amazon S3 to\nprovide near-real-time updates in a dashboard. The solution must not affect the speed of EC2 instance launches.\nHow should the company move the data to Amazon S3 to meet these requirements?",
-    "correctAnswer": "Use an Amazon CloudWatch metric stream to send the EC2 Auto Scaling status data to Amazon Kinesis Data Firehose. Store the data in Amazon S3.",
+    "correctAnswer": "Use an Amazon CloudWatch metric stream to send the EC2 Auto Scaling status data to Amazon Kinesis Data Firehose (note: outdated; now Amazon Data Firehose). Store the data in Amazon S3.",
     "incorrectAnswers": [
-      "Launch an Amazon EMR cluster to collect the EC2 Auto Scaling status data and send the data to Amazon Kinesis Data Firehose. Store the data in Amazon S3.",
+      "Launch an Amazon EMR cluster to collect the EC2 Auto Scaling status data and send the data to Amazon Kinesis Data Firehose (note: outdated; now Amazon Data Firehose). Store the data in Amazon S3.",
       "Create an Amazon EventBridge rule to invoke an AWS Lambda function on a schedule. Configure the Lambda function to send the EC2 Auto Scaling status data directly to Amazon S3.",
-      "Use a bootstrap script during the launch of an EC2 instance to install Amazon Kinesis Agent. Configure Kinesis Agent to collect the EC2 Auto Scaling status data and send the data to Amazon Kinesis Data Firehose. Store the data in Amazon S3. --- Page 94 ---"
+      "Use a bootstrap script during the launch of an EC2 instance to install Amazon Kinesis Agent. Configure Kinesis Agent to collect the EC2 Auto Scaling status data and send the data to Amazon Kinesis Data Firehose (note: outdated; now Amazon Data Firehose). Store the data in Amazon S3."
     ],
     "explanation": "SAA-C03 practice scenario (extract question #257). Correct choice: A.",
     "keywords": [
@@ -185,7 +185,7 @@
     "incorrectAnswers": [
       "Assign a tag with a Restrict tag key and a Compliance tag value. Map the Active Directory groups to IAM groups to restrict access.",
       "Create an IAM service-linked role that is linked directly to FSx for Windows File Server to restrict access.",
-      "Join the le system to the Active Directory to restrict access. --- Page 95 ---"
+      "Join the le system to the Active Directory to restrict access."
     ],
     "explanation": "SAA-C03 practice scenario (extract question #260). Correct choice: A.",
     "keywords": [
@@ -207,7 +207,7 @@
     "incorrectAnswers": [
       "Create a Transit VPC. Update the VPC route tables in the Cache VPC and the App VPC to route traffic through the Transit VPC. Configure an inbound rule for the ElastiCache cluster's security group to allow inbound connection from the application’s security group.",
       "Create a peering connection between the VPCs. Add a route table entry for the peering connection in both VPCs. Configure an inbound rule for the peering connection’s security group to allow inbound connection from the application’s security group.",
-      "Create a Transit VPC. Update the VPC route tables in the Cache VPC and the App VPC to route traffic through the Transit VPC. Configure an inbound rule for the Transit VPC’s security group to allow inbound connection from the application’s security group. --- Page 96 ---"
+      "Create a Transit VPC. Update the VPC route tables in the Cache VPC and the App VPC to route traffic through the Transit VPC. Configure an inbound rule for the Transit VPC’s security group to allow inbound connection from the application’s security group."
     ],
     "explanation": "SAA-C03 practice scenario (extract question #262). Correct choice: A.",
     "keywords": [
@@ -253,7 +253,7 @@
     "incorrectAnswers": [
       "Configure a public Application Load Balancer with multiple redundant Amazon EC2 instances in private subnets. Configure Amazon CloudFront to deliver HTTPS content using the EC2 instances as the origin.",
       "Configure a public Application Load Balancer (ALB) with multiple redundant Amazon EC2 instances in private subnets. Configure Amazon CloudFront to deliver HTTPS content using the public ALB as the origin.",
-      "Configure a public Application Load Balancer with multiple redundant Amazon EC2 instances in public subnets. Configure Amazon CloudFront to deliver HTTPS content using the EC2 instances as the origin. --- Page 97 ---"
+      "Configure a public Application Load Balancer with multiple redundant Amazon EC2 instances in public subnets. Configure Amazon CloudFront to deliver HTTPS content using the EC2 instances as the origin."
     ],
     "explanation": "SAA-C03 practice scenario (extract question #265). Correct choice: A.",
     "keywords": [
@@ -296,11 +296,11 @@
     "navigationKeyword1": "aws",
     "navigationKeyword2": "saa-c03",
     "question": "A company has one million users that use its mobile app. The company must analyze the data usage in near-real time. The company also must\nencrypt the data in near-real time and must store the data in a centralized location in Apache Parquet format for further processing.\nWhich solution will meet these requirements with the LEAST operational overhead?",
-    "correctAnswer": "Create an Amazon Kinesis data stream to store the data in Amazon S3. Create an Amazon Kinesis Data Analytics application to analyze the data. Invoke an AWS Lambda function to send the data to the Kinesis Data Analytics application.",
+    "correctAnswer": "Create an Amazon Kinesis data stream to store the data in Amazon S3. Create an Amazon Kinesis Data Analytics (note: outdated; now Amazon Managed Service for Apache Flink for SQL/streaming analytics workloads) application to analyze the data. Invoke an AWS Lambda function to send the data to the Kinesis Data Analytics (note: outdated; now Amazon Managed Service for Apache Flink for SQL/streaming analytics workloads) application.",
     "incorrectAnswers": [
       "Create an Amazon Kinesis data stream to store the data in Amazon S3. Create an Amazon EMR cluster to analyze the data. Invoke an AWS Lambda function to send the data to the EMR cluster.",
-      "Create an Amazon Kinesis Data Firehose delivery stream to store the data in Amazon S3. Create an Amazon EMR cluster to analyze the data.",
-      "Create an Amazon Kinesis Data Firehose delivery stream to store the data in Amazon S3. Create an Amazon Kinesis Data Analytics application to analyze the data."
+      "Create an Amazon Kinesis Data Firehose (note: outdated; now Amazon Data Firehose) delivery stream to store the data in Amazon S3. Create an Amazon EMR cluster to analyze the data.",
+      "Create an Amazon Kinesis Data Firehose (note: outdated; now Amazon Data Firehose) delivery stream to store the data in Amazon S3. Create an Amazon Kinesis Data Analytics (note: outdated; now Amazon Managed Service for Apache Flink for SQL/streaming analytics workloads) application to analyze the data."
     ],
     "explanation": "SAA-C03 practice scenario (extract question #267). Correct choice: A.",
     "keywords": [
@@ -323,7 +323,7 @@
     "incorrectAnswers": [
       "Use RDS Proxy between the application and the database.",
       "Migrate the application from EC2 instances to AWS Lambda.",
-      "Migrate the database from Amazon RDS for MySQL to Amazon DynamoDB. --- Page 98 ---"
+      "Migrate the database from Amazon RDS for MySQL to Amazon DynamoDB."
     ],
     "explanation": "SAA-C03 practice scenario (extract question #268). Correct choice: A.",
     "keywords": [
@@ -390,7 +390,7 @@
     "incorrectAnswers": [
       "Increase the maximum capacity for the Auto Scaling group.",
       "Configure scheduled scaling to scale up to the desired compute level.",
-      "Change the scaling policy to add more EC2 instances during each scaling operation. --- Page 99 ---"
+      "Change the scaling policy to add more EC2 instances during each scaling operation."
     ],
     "explanation": "SAA-C03 practice scenario (extract question #271). Correct choice: A.",
     "keywords": [

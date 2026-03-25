@@ -1,0 +1,202 @@
+[
+  {
+    "category": "sports",
+    "navigationKeyword1": "hockey",
+    "navigationKeyword2": "records",
+    "question": "Who holds the NHL record for career goals?",
+    "correctAnswer": "Wayne Gretzky",
+    "incorrectAnswers": [
+      "Alex Ovechkin",
+      "Gordie Howe",
+      "Jaromir Jagr"
+    ],
+    "explanation": "Gretzky remains the all-time career goals leader on the NHL records list used here.",
+    "keywords": [
+      "hockey",
+      "records",
+      "goals"
+    ],
+    "source": "https://www.nhl.com/info/nhl-records",
+    "seedId": "c67454c3-819e-4496-9d56-060137539aaa"
+  },
+  {
+    "category": "sports",
+    "navigationKeyword1": "hockey",
+    "navigationKeyword2": "records",
+    "question": "Who holds the NHL record for career assists?",
+    "correctAnswer": "Wayne Gretzky",
+    "incorrectAnswers": [
+      "Mark Messier",
+      "Mario Lemieux",
+      "Ron Francis"
+    ],
+    "explanation": "Gretzky leads the NHL in career assists.",
+    "keywords": [
+      "hockey",
+      "records",
+      "assists"
+    ],
+    "source": "https://www.nhl.com/info/nhl-records",
+    "seedId": "85713237-0ec8-4566-9e00-423e99f3736b"
+  },
+  {
+    "category": "sports",
+    "navigationKeyword1": "hockey",
+    "navigationKeyword2": "records",
+    "question": "Who holds the NHL record for career points?",
+    "correctAnswer": "Wayne Gretzky",
+    "incorrectAnswers": [
+      "Jaromir Jagr",
+      "Mark Messier",
+      "Gordie Howe"
+    ],
+    "explanation": "Gretzky leads the league in total career points.",
+    "keywords": [
+      "hockey",
+      "records",
+      "points"
+    ],
+    "source": "https://www.nhl.com/info/nhl-records",
+    "seedId": "a5f5a79c-8a58-429d-a62f-ffca20cb3037"
+  },
+  {
+    "category": "sports",
+    "navigationKeyword1": "hockey",
+    "navigationKeyword2": "records",
+    "question": "Which goalie holds the NHL record for career wins?",
+    "correctAnswer": "Martin Brodeur",
+    "incorrectAnswers": [
+      "Patrick Roy",
+      "Marc-Andre Fleury",
+      "Dominik Hasek"
+    ],
+    "explanation": "Brodeur retired with the most career wins.",
+    "keywords": [
+      "hockey",
+      "records",
+      "wins"
+    ],
+    "source": "https://www.nhl.com/info/nhl-records",
+    "seedId": "51b9f9e8-5880-465b-b40b-17c383574cd1"
+  },
+  {
+    "category": "sports",
+    "navigationKeyword1": "hockey",
+    "navigationKeyword2": "records",
+    "question": "Which goalie holds the NHL record for career shutouts?",
+    "correctAnswer": "Martin Brodeur",
+    "incorrectAnswers": [
+      "Terry Sawchuk",
+      "Patrick Roy",
+      "Dominik Hasek"
+    ],
+    "explanation": "Brodeur also leads the league in career shutouts.",
+    "keywords": [
+      "hockey",
+      "records",
+      "shutouts"
+    ],
+    "source": "https://www.nhl.com/info/nhl-records",
+    "seedId": "9bdf58b0-4775-4729-aba1-397cca64de88"
+  },
+  {
+    "category": "sports",
+    "navigationKeyword1": "hockey",
+    "navigationKeyword2": "records",
+    "question": "Which team has won the most Stanley Cups?",
+    "correctAnswer": "Montreal Canadiens",
+    "incorrectAnswers": [
+      "Toronto Maple Leafs",
+      "Detroit Red Wings",
+      "Boston Bruins"
+    ],
+    "explanation": "Montreal leads the Stanley Cup winners list.",
+    "keywords": [
+      "hockey",
+      "records",
+      "stanley-cups"
+    ],
+    "source": "https://www.nhl.com/info/nhl-records",
+    "seedId": "b185e9f7-0a8b-435c-814a-04b70660267b"
+  },
+  {
+    "category": "sports",
+    "navigationKeyword1": "hockey",
+    "navigationKeyword2": "records",
+    "question": "What is the NHL record for goals in a single season by one player?",
+    "correctAnswer": "92",
+    "incorrectAnswers": [
+      "76",
+      "82",
+      "88"
+    ],
+    "explanation": "Gretzky scored 92 goals in the 1981-82 season.",
+    "keywords": [
+      "hockey",
+      "records",
+      "single-season-goals"
+    ],
+    "source": "https://www.nhl.com/info/nhl-records",
+    "seedId": "37b1e492-cef1-4073-a079-95991c757953"
+  },
+  {
+    "category": "sports",
+    "navigationKeyword1": "hockey",
+    "navigationKeyword2": "records",
+    "question": "What is the NHL record for points in a single season by one player?",
+    "correctAnswer": "215",
+    "incorrectAnswers": [
+      "200",
+      "198",
+      "205"
+    ],
+    "explanation": "Gretzky recorded 215 points in 1985-86.",
+    "keywords": [
+      "hockey",
+      "records",
+      "single-season-points"
+    ],
+    "source": "https://www.nhl.com/info/nhl-records",
+    "seedId": "e5b02ae5-cade-45ff-aa03-75930bb5b47e"
+  },
+  {
+    "category": "sports",
+    "navigationKeyword1": "hockey",
+    "navigationKeyword2": "records",
+    "question": "Which player scored 50 goals in 39 games in a famous 1981-82 stretch?",
+    "correctAnswer": "Wayne Gretzky",
+    "incorrectAnswers": [
+      "Mike Bossy",
+      "Mario Lemieux",
+      "Brett Hull"
+    ],
+    "explanation": "Gretzky reached 50 goals in fewer games than anyone else.",
+    "keywords": [
+      "hockey",
+      "records",
+      "50-in-39"
+    ],
+    "source": "https://www.nhl.com/info/nhl-records",
+    "seedId": "c6a25ad9-b423-4f65-868e-579591841353"
+  },
+  {
+    "category": "sports",
+    "navigationKeyword1": "hockey",
+    "navigationKeyword2": "records",
+    "question": "Which franchise went 35 years between Stanley Cups before winning in 1994?",
+    "correctAnswer": "New York Rangers",
+    "incorrectAnswers": [
+      "Chicago Blackhawks",
+      "Boston Bruins",
+      "Toronto Maple Leafs"
+    ],
+    "explanation": "The Rangers ended a long championship drought in 1994.",
+    "keywords": [
+      "hockey",
+      "records",
+      "drought"
+    ],
+    "source": "https://www.nhl.com/info/nhl-records",
+    "seedId": "f824dd1c-1694-43cd-93ce-5d601c19099b"
+  }
+]

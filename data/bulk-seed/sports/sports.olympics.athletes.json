@@ -1,0 +1,202 @@
+[
+  {
+    "category": "sports",
+    "navigationKeyword1": "olympics",
+    "navigationKeyword2": "athletes",
+    "question": "Which American swimmer won eight gold medals at the 2008 Beijing Olympics?",
+    "correctAnswer": "Michael Phelps",
+    "incorrectAnswers": [
+      "Mark Spitz",
+      "Ryan Lochte",
+      "Caeleb Dressel"
+    ],
+    "explanation": "Phelps set the single-Games gold-medal record in Beijing.",
+    "keywords": [
+      "olympics",
+      "athletes",
+      "phelps"
+    ],
+    "source": "https://www.britannica.com/biography/Michael-Phelps",
+    "seedId": "589723af-426b-4f07-b205-bbaabe96d8e4"
+  },
+  {
+    "category": "sports",
+    "navigationKeyword1": "olympics",
+    "navigationKeyword2": "athletes",
+    "question": "Which Jamaican sprinter became famous for winning Olympic 100-meter titles with world-record speed?",
+    "correctAnswer": "Usain Bolt",
+    "incorrectAnswers": [
+      "Yohan Blake",
+      "Asafa Powell",
+      "Justin Gatlin"
+    ],
+    "explanation": "Bolt became the signature sprint star of the modern Olympics.",
+    "keywords": [
+      "olympics",
+      "athletes",
+      "bolt"
+    ],
+    "source": "https://www.britannica.com/biography/Usain-Bolt",
+    "seedId": "d9472f7d-c1a3-4f88-94e5-f4884c9252f7"
+  },
+  {
+    "category": "sports",
+    "navigationKeyword1": "olympics",
+    "navigationKeyword2": "athletes",
+    "question": "Which American gymnast won four gold medals at the 2016 Rio Olympics?",
+    "correctAnswer": "Simone Biles",
+    "incorrectAnswers": [
+      "Nadia Comaneci",
+      "Suni Lee",
+      "Aly Raisman"
+    ],
+    "explanation": "Biles dominated women's gymnastics in Rio.",
+    "keywords": [
+      "olympics",
+      "athletes",
+      "biles"
+    ],
+    "source": "https://olympics.com/en/olympic-games",
+    "seedId": "997c5918-adbc-4444-8084-8be04d42ce11"
+  },
+  {
+    "category": "sports",
+    "navigationKeyword1": "olympics",
+    "navigationKeyword2": "athletes",
+    "question": "Which Soviet gymnast famously scored the first perfect 10 in Olympic gymnastics?",
+    "correctAnswer": "Nadia Comaneci",
+    "incorrectAnswers": [
+      "Olga Korbut",
+      "Larisa Latynina",
+      "Simone Biles"
+    ],
+    "explanation": "Comaneci's perfect 10 came at Montreal 1976.",
+    "keywords": [
+      "olympics",
+      "athletes",
+      "comaneci"
+    ],
+    "source": "https://www.britannica.com/biography/Nadia-Comaneci",
+    "seedId": "c4f6a851-4db9-4648-9793-d49256405843"
+  },
+  {
+    "category": "sports",
+    "navigationKeyword1": "olympics",
+    "navigationKeyword2": "athletes",
+    "question": "Which U.S. track star won four gold medals at the 1936 Berlin Olympics?",
+    "correctAnswer": "Jesse Owens",
+    "incorrectAnswers": [
+      "Carl Lewis",
+      "Bob Beamon",
+      "Jim Thorpe"
+    ],
+    "explanation": "Owens' performance in Berlin became one of Olympic history's defining moments.",
+    "keywords": [
+      "olympics",
+      "athletes",
+      "owens"
+    ],
+    "source": "https://www.britannica.com/biography/Jesse-Owens",
+    "seedId": "422ffd6e-9b3b-48f0-8974-a13e37f1040b"
+  },
+  {
+    "category": "sports",
+    "navigationKeyword1": "olympics",
+    "navigationKeyword2": "athletes",
+    "question": "Which Romanian rower holds a record number of Olympic medals for her sport?",
+    "correctAnswer": "Elisabeta Lipa",
+    "incorrectAnswers": [
+      "Katerina Emmons",
+      "Birgit Fischer",
+      "Valentina Vezzali"
+    ],
+    "explanation": "Lipa became one of the most decorated rowers in Olympic history.",
+    "keywords": [
+      "olympics",
+      "athletes",
+      "lipa"
+    ],
+    "source": "https://olympics.com/en/olympic-games",
+    "seedId": "4e4baed0-d868-4d00-8877-cabebf1a8299"
+  },
+  {
+    "category": "sports",
+    "navigationKeyword1": "olympics",
+    "navigationKeyword2": "athletes",
+    "question": "Which American sprinter won four gold medals at the 1984 Los Angeles Olympics?",
+    "correctAnswer": "Carl Lewis",
+    "incorrectAnswers": [
+      "Michael Johnson",
+      "Maurice Greene",
+      "Michael Marsh"
+    ],
+    "explanation": "Lewis matched Jesse Owens' four-gold feat in Los Angeles.",
+    "keywords": [
+      "olympics",
+      "athletes",
+      "carl-lewis"
+    ],
+    "source": "https://www.britannica.com/biography/Carl-Lewis",
+    "seedId": "984db7b0-37a9-41ce-80d6-67c687cd1fbe"
+  },
+  {
+    "category": "sports",
+    "navigationKeyword1": "olympics",
+    "navigationKeyword2": "athletes",
+    "question": "Which Kenyan runner won Olympic marathons at Rio 2016 and Tokyo 2020?",
+    "correctAnswer": "Eliud Kipchoge",
+    "incorrectAnswers": [
+      "Wilson Kipsang",
+      "Geoffrey Kamworor",
+      "Samuel Wanjiru"
+    ],
+    "explanation": "Kipchoge won back-to-back Olympic marathon gold medals.",
+    "keywords": [
+      "olympics",
+      "athletes",
+      "marathon"
+    ],
+    "source": "https://olympics.com/en/olympic-games",
+    "seedId": "5572f365-6e9a-456e-9587-43a4f3617808"
+  },
+  {
+    "category": "sports",
+    "navigationKeyword1": "olympics",
+    "navigationKeyword2": "athletes",
+    "question": "Which British distance star won 5,000m and 10,000m doubles at London 2012 and Rio 2016?",
+    "correctAnswer": "Mo Farah",
+    "incorrectAnswers": [
+      "Sebastian Coe",
+      "Steve Cram",
+      "David Rudisha"
+    ],
+    "explanation": "Farah completed consecutive Olympic distance doubles in 2012 and 2016.",
+    "keywords": [
+      "olympics",
+      "athletes",
+      "mo-farah"
+    ],
+    "source": "https://olympics.com/en/olympic-games",
+    "seedId": "2ac06021-e05e-480a-8987-0893bb258f71"
+  },
+  {
+    "category": "sports",
+    "navigationKeyword1": "olympics",
+    "navigationKeyword2": "athletes",
+    "question": "Which Norwegian cross-country skier won three gold medals at the 2022 Beijing Winter Olympics?",
+    "correctAnswer": "Therese Johaug",
+    "incorrectAnswers": [
+      "Johannes Klaebo",
+      "Frida Karlsson",
+      "Iivo Niskanen"
+    ],
+    "explanation": "Johaug was one of the standout athletes of Beijing 2022.",
+    "keywords": [
+      "olympics",
+      "athletes",
+      "winter"
+    ],
+    "source": "https://olympics.com/en/olympic-games",
+    "seedId": "bbcf86fd-d871-4312-ba19-1f84ec4f200c"
+  }
+]

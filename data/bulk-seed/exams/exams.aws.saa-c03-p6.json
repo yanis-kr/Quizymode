@@ -33,7 +33,7 @@
     "incorrectAnswers": [
       "Configure S3 Cross-Region Replication from the company's S3 bucket to one of the marketing rm's S3 buckets.",
       "Configure cross-account access for the marketing rm so that the marketing rm has access to the company's S3 bucket.",
-      "Configure the company's S3 bucket to use S3 Intelligent-Tiering. Sync the S3 bucket to one of the marketing rm's S3 buckets. --- Page 32 ---"
+      "Configure the company's S3 bucket to use S3 Intelligent-Tiering. Sync the S3 bucket to one of the marketing rm's S3 buckets."
     ],
     "explanation": "SAA-C03 practice scenario (extract question #88). Correct choice: A.",
     "keywords": [
@@ -96,7 +96,7 @@
     "incorrectAnswers": [
       "Create an S3 bucket in a private subnet.",
       "Create an S3 bucket in the same AWS Region as the EC2 instances.",
-      "Configure a NAT gateway in the same subnet as the EC2 instances. --- Page 33 ---"
+      "Configure a NAT gateway in the same subnet as the EC2 instances."
     ],
     "explanation": "SAA-C03 practice scenario (extract question #91). Correct choice: A.",
     "keywords": [
@@ -120,7 +120,7 @@
     "incorrectAnswers": [
       "Use Amazon Aurora MySQL with Multi-AZ Aurora Replicas for production. Use database cloning to create the staging database on-demand.",
       "Use Amazon RDS for MySQL with a Multi-AZ deployment and read replicas for production. Use the standby instance for the staging database.",
-      "Use Amazon RDS for MySQL with a Multi-AZ deployment and read replicas for production. Populate the staging database by implementing a backup and restore process that uses the mysqldump utility. --- Page 34 ---"
+      "Use Amazon RDS for MySQL with a Multi-AZ deployment and read replicas for production. Populate the staging database by implementing a backup and restore process that uses the mysqldump utility."
     ],
     "explanation": "SAA-C03 practice scenario (extract question #93). Correct choice: A.",
     "keywords": [
@@ -142,7 +142,7 @@
     "incorrectAnswers": [
       "Configure Amazon S3 to send an event notication to an Amazon Simple Queue Service (Amazon SQS) queue. Use Amazon EC2 instances to read from the queue and process the data. Store the resulting JSON le in Amazon DynamoDB.",
       "Configure Amazon S3 to send an event notication to an Amazon Simple Queue Service (Amazon SQS) queue. Use an AWS Lambda function to read from the queue and process the data. Store the resulting JSON le in Amazon DynamoDB.",
-      "Configure Amazon EventBridge (Amazon CloudWatch Events) to send an event to Amazon Kinesis Data Streams when a new le is uploaded. Use an AWS Lambda function to consume the event from the stream and process the data. Store the resulting JSON le in an Amazon Aurora DB cluster."
+      "Configure Amazon EventBridge (note: outdated alias \"Amazon CloudWatch Events\"; same service, now EventBridge) to send an event to Amazon Kinesis Data Streams when a new le is uploaded. Use an AWS Lambda function to consume the event from the stream and process the data. Store the resulting JSON le in an Amazon Aurora DB cluster."
     ],
     "explanation": "SAA-C03 practice scenario (extract question #94). Correct choice: A.",
     "keywords": [
@@ -166,7 +166,7 @@
     "incorrectAnswers": [
       "Change the existing database to a Multi-AZ deployment. Serve the read requests from the secondary Availability Zone.",
       "Create read replicas for the database. Configure the read replicas with half of the compute and storage resources as the source database.",
-      "Create read replicas for the database. Configure the read replicas with the same compute and storage resources as the source database. --- Page 35 ---"
+      "Create read replicas for the database. Configure the read replicas with the same compute and storage resources as the source database."
     ],
     "explanation": "SAA-C03 practice scenario (extract question #95). Correct choice: A.",
     "keywords": [
@@ -210,7 +210,7 @@
     "incorrectAnswers": [
       "Create an SMB fifile share on an AWS Storage Gateway le gateway in two Availability Zones.",
       "Create an Amazon S3 bucket and congure Microsoft Windows Server to mount it as a volume.",
-      "Create an Amazon FSx for Windows File Server le system on AWS and set the Active Directory domain for authentication. --- Page 36 ---"
+      "Create an Amazon FSx for Windows File Server le system on AWS and set the Active Directory domain for authentication."
     ],
     "explanation": "SAA-C03 practice scenario (extract question #97). Correct choice: A.",
     "keywords": [
@@ -276,7 +276,7 @@
     "incorrectAnswers": [
       "Create an AWS Lambda function that uses the Python cryptography library to receive and perform encryption operations. Store the function in an Amazon S3 bucket.",
       "Create an AWS Key Management Service (AWS KMS) customer managed key. Allow the EC2 role to use the KMS key for encryption operations. Store the encrypted data on Amazon S3.",
-      "Create an AWS Key Management Service (AWS KMS) customer managed key. Allow the EC2 role to use the KMS key for encryption operations. Store the encrypted data on Amazon Elastic Block Store (Amazon EBS) volumes. --- Page 37 ---"
+      "Create an AWS Key Management Service (AWS KMS) customer managed key. Allow the EC2 role to use the KMS key for encryption operations. Store the encrypted data on Amazon Elastic Block Store (Amazon EBS) volumes."
     ],
     "explanation": "SAA-C03 practice scenario (extract question #100). Correct choice: A.",
     "keywords": [
@@ -321,7 +321,7 @@
     "incorrectAnswers": [
       "Edit the job to delete data after the data is processed.",
       "Edit the job by setting the NumberOfWorkers eld to 1.",
-      "Use a FindMatches machine learning (ML) transform. --- Page 38 ---"
+      "Use a FindMatches machine learning (ML) transform."
     ],
     "explanation": "SAA-C03 practice scenario (extract question #103). Correct choice: A.",
     "keywords": [
@@ -338,7 +338,7 @@
     "category": "exams",
     "navigationKeyword1": "aws",
     "navigationKeyword2": "saa-c03",
-    "question": "A company is preparing to deploy a new serverless workload. A solutions architect must use the principle of least privilege to congure\npermissions that will be used to run an AWS Lambda function. An Amazon EventBridge (Amazon CloudWatch Events) rule will invoke the function.\nWhich solution meets these requirements?",
+    "question": "A company is preparing to deploy a new serverless workload. A solutions architect must use the principle of least privilege to congure\npermissions that will be used to run an AWS Lambda function. An Amazon EventBridge (note: outdated alias \"Amazon CloudWatch Events\"; same service, now EventBridge) rule will invoke the function.\nWhich solution meets these requirements?",
     "correctAnswer": "Add an execution role to the function with lambda:InvokeFunction as the action and * as the principal.",
     "incorrectAnswers": [
       "Add an execution role to the function with lambda:InvokeFunction as the action and Service: lambda.amazonaws.com as the principal.",
@@ -367,7 +367,7 @@
     "incorrectAnswers": [
       "Server-side encryption with Amazon S3 managed keys (SSE-S3)",
       "Server-side encryption with AWS KMS keys (SSE-KMS) with manual rotation",
-      "Server-side encryption with AWS KMS keys (SSE-KMS) with automatic rotation --- Page 39 ---"
+      "Server-side encryption with AWS KMS keys (SSE-KMS) with automatic rotation"
     ],
     "explanation": "SAA-C03 practice scenario (extract question #106). Correct choice: A.",
     "keywords": [
@@ -388,7 +388,7 @@
     "incorrectAnswers": [
       "Use Amazon API Gateway with AWS Lambda.",
       "Use Amazon QuickSight with Amazon Redshift.",
-      "Use Amazon API Gateway with Amazon Kinesis Data Analytics."
+      "Use Amazon API Gateway with Amazon Kinesis Data Analytics (note: outdated; now Amazon Managed Service for Apache Flink for SQL/streaming analytics workloads)."
     ],
     "explanation": "SAA-C03 practice scenario (extract question #107). Correct choice: A.",
     "keywords": [
@@ -434,7 +434,7 @@
     "incorrectAnswers": [
       "Create an S3 bucket with S3 Object Lock enabled. Enable versioning. Set a retention period of 100 years. Use governance mode as the S3 bucket’s default retention mode for new objects.",
       "Create an S3 bucket. Use AWS CloudTrail to traffick any S3 API events that modify the objects. Upon notication, restore the modied objects from any backup versions that the company has.",
-      "Create an S3 bucket with S3 Object Lock enabled. Enable versioning. Add a legal hold to the objects. Add the s3:PutObjectLegalHold permission to the IAM policies of users who need to delete the objects. --- Page 40 ---"
+      "Create an S3 bucket with S3 Object Lock enabled. Enable versioning. Add a legal hold to the objects. Add the s3:PutObjectLegalHold permission to the IAM policies of users who need to delete the objects."
     ],
     "explanation": "SAA-C03 practice scenario (extract question #109). Correct choice: A.",
     "keywords": [

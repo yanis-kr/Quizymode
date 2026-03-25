@@ -28,7 +28,7 @@
     "navigationKeyword1": "aws",
     "navigationKeyword2": "saa-c03",
     "question": "A company runs workloads on AWS. The company needs to connect to a service from an external provider. The service is hosted in the provider's\nVPC. According to the company’s security team, the connectivity must be private and must be restricted to the target service. The connection\nmust be initiated only from the company’s VPC.\nWhich solution will mast these requirements?",
-    "correctAnswer": "Ask the provider to create a VPC endpoint for the target service. Use AWS PrivateLink to connect to the target service. --- Page 49 ---",
+    "correctAnswer": "Ask the provider to create a VPC endpoint for the target service. Use AWS PrivateLink to connect to the target service.",
     "incorrectAnswers": [
       "Create a VPC peering connection between the company's VPC and the provider's VPC. Update the route table to connect to the target service.",
       "Ask the provider to create a virtual private gateway in its VPC. Use AWS PrivateLink to connect to the target service.",
@@ -73,7 +73,7 @@
     "incorrectAnswers": [
       "Migrate the queue to a redundant pair (active/standby) of RabbitMQ instances on Amazon MQ. Create a Multi-AZ Auto Scaling group for EC2 instances that host the application. Migrate the database to run on a Multi-AZ deployment of Amazon RDS for PostgreSQL.",
       "Create a Multi-AZ Auto Scaling group for EC2 instances that host the RabbitMQ queue. Create another Multi-AZ Auto Scaling group for EC2 instances that host the application. Migrate the database to run on a Multi-AZ deployment of Amazon RDS for PostgreSQL.",
-      "Create a Multi-AZ Auto Scaling group for EC2 instances that host the RabbitMQ queue. Create another Multi-AZ Auto Scaling group for EC2 instances that host the application. Create a third Multi-AZ Auto Scaling group for EC2 instances that host the PostgreSQL database --- Page 50 ---"
+      "Create a Multi-AZ Auto Scaling group for EC2 instances that host the RabbitMQ queue. Create another Multi-AZ Auto Scaling group for EC2 instances that host the application. Create a third Multi-AZ Auto Scaling group for EC2 instances that host the PostgreSQL database"
     ],
     "explanation": "SAA-C03 practice scenario (extract question #138). Correct choice: A.",
     "keywords": [
@@ -96,9 +96,9 @@
     "question": "A reporting team receives les each day in an Amazon S3 bucket. The reporting team manually reviews and copies the les from this initial S3\nbucket to an analysis S3 bucket each day at the same time to use with Amazon QuickSight. Additional teams are starting to send more les in\nlarger sizes to the initial S3 bucket.\nThe reporting team wants to move the les automatically analysis S3 bucket as the les enter the initial S3 bucket. The reporting team also wants\nto use AWS Lambda functions to run pattern-matching code on the copied data. In addition, the reporting team wants to send the data les to a\npipeline in Amazon SageMaker Pipelines.\nWhat should a solutions architect do to meet these requirements with the LEAST operational overhead?",
     "correctAnswer": "Create a Lambda function to copy the les to the analysis S3 bucket. Create an S3 event notication for the analysis S3 bucket. Configure Lambda and SageMaker Pipelines as destinations of the event notication. Configure s3:ObjectCreated:Put as the event type.",
     "incorrectAnswers": [
-      "Create a Lambda function to copy the les to the analysis S3 bucket. Configure the analysis S3 bucket to send event notications to Amazon EventBridge (Amazon CloudWatch Events). Configure an ObjectCreated rule in EventBridge (CloudWatch Events). Configure Lambda and SageMaker Pipelines as targets for the rule.",
+      "Create a Lambda function to copy the les to the analysis S3 bucket. Configure the analysis S3 bucket to send event notications to Amazon EventBridge (note: outdated alias \"Amazon CloudWatch Events\"; same service, now EventBridge). Configure an ObjectCreated rule in EventBridge (note: outdated alias \"CloudWatch Events\"). Configure Lambda and SageMaker Pipelines as targets for the rule.",
       "Configure S3 replication between the S3 buckets. Create an S3 event notication for the analysis S3 bucket. Configure Lambda and SageMaker Pipelines as destinations of the event notication. Configure s3:ObjectCreated:Put as the event type.",
-      "Configure S3 replication between the S3 buckets. Configure the analysis S3 bucket to send event notications to Amazon EventBridge (Amazon CloudWatch Events). Configure an ObjectCreated rule in EventBridge (CloudWatch Events). Configure Lambda and SageMaker Pipelines as targets for the rule."
+      "Configure S3 replication between the S3 buckets. Configure the analysis S3 bucket to send event notications to Amazon EventBridge (note: outdated alias \"Amazon CloudWatch Events\"; same service, now EventBridge). Configure an ObjectCreated rule in EventBridge (note: outdated alias \"CloudWatch Events\"). Configure Lambda and SageMaker Pipelines as targets for the rule."
     ],
     "explanation": "SAA-C03 practice scenario (extract question #139). Correct choice: A.",
     "keywords": [
@@ -164,7 +164,7 @@
     "navigationKeyword1": "aws",
     "navigationKeyword2": "saa-c03",
     "question": "A company wants to migrate its existing on-premises monolithic application to AWS. The company wants to keep as much of the front-end code\nand the backend code as possible. However, the company wants to break the application into smaller applications. A different team will manage\neach application. The company needs a highly scalable solution that minimizes operational overhead.\nWhich solution will meet these requirements?",
-    "correctAnswer": "Host the application on Amazon Elastic Container Service (Amazon ECS). Set up an Application Load Balancer with Amazon ECS as the target. --- Page 52 ---",
+    "correctAnswer": "Host the application on Amazon Elastic Container Service (Amazon ECS). Set up an Application Load Balancer with Amazon ECS as the target.",
     "incorrectAnswers": [
       "Host the application on AWS Lambda. Integrate the application with Amazon API Gateway.",
       "Host the application with AWS Amplify. Connect the application to an Amazon API Gateway API that is integrated with AWS Lambda.",
@@ -238,7 +238,7 @@
     "incorrectAnswers": [
       "Use Reserved Instances for the baseline level of usage. Use Spot instances for any additional capacity that the application needs.",
       "Use On-Demand Instances for the baseline level of usage. Use Spot Instances for any additional capacity that the application needs.",
-      "Use Dedicated Instances for the baseline level of usage. Use On-Demand Instances for any additional capacity that the application needs. --- Page 53 ---"
+      "Use Dedicated Instances for the baseline level of usage. Use On-Demand Instances for any additional capacity that the application needs."
     ],
     "explanation": "SAA-C03 practice scenario (extract question #146). Correct choice: A.",
     "keywords": [
@@ -304,7 +304,7 @@
     "incorrectAnswers": [
       "Create an Amazon Simple Notification Service (Amazon SNS) topic to deliver notications containing payloads to process. Configure an AWS Lambda function as a subscriber.",
       "Create an Amazon Simple Queue Service (Amazon SQS) standard queue to hold messages. Set up an AWS Lambda function to process messages from the queue independently.",
-      "Create an Amazon Simple Notification Service (Amazon SNS) topic to deliver notications containing payloads to process. Configure an Amazon Simple Queue Service (Amazon SQS) queue as a subscriber. --- Page 54 ---"
+      "Create an Amazon Simple Notification Service (Amazon SNS) topic to deliver notications containing payloads to process. Configure an Amazon Simple Queue Service (Amazon SQS) queue as a subscriber."
     ],
     "explanation": "SAA-C03 practice scenario (extract question #149). Correct choice: A.",
     "keywords": [
@@ -348,7 +348,7 @@
     "incorrectAnswers": [
       "Create an Amazon ElastiCache for Redis cache cluster that gives users the ability to access the data from the cache when the DB instance is stopped. Invalidate the cache after the DB instance is started.",
       "Launch an Amazon EC2 instance. Create an IAM role that grants access to Amazon RDS. Attach the role to the EC2 instance. Configure a cron job to start and stop the EC2 instance on the desired schedule.",
-      "Create AWS Lambda functions to start and stop the DB instance. Create Amazon EventBridge (Amazon CloudWatch Events) scheduled rules to invoke the Lambda functions. Configure the Lambda functions as event targets for the rules. --- Page 55 ---"
+      "Create AWS Lambda functions to start and stop the DB instance. Create Amazon EventBridge (note: outdated alias \"Amazon CloudWatch Events\"; same service, now EventBridge) scheduled rules to invoke the Lambda functions. Configure the Lambda functions as event targets for the rules."
     ],
     "explanation": "SAA-C03 practice scenario (extract question #152). Correct choice: A.",
     "keywords": [
@@ -413,7 +413,7 @@
     "incorrectAnswers": [
       "Deploy AWS Global Accelerator to connect the S3 buckets to the web application.",
       "Deploy Amazon CloudFront to connect the S3 buckets to CloudFront edge servers.",
-      "Use Amazon Simple Queue Service (Amazon SQS) to connect the S3 buckets to the web application. --- Page 56 ---"
+      "Use Amazon Simple Queue Service (Amazon SQS) to connect the S3 buckets to the web application."
     ],
     "explanation": "SAA-C03 practice scenario (extract question #155). Correct choice: A.",
     "keywords": [
@@ -434,7 +434,7 @@
     "incorrectAnswers": [
       "AWS Global Accelerator",
       "Amazon Route 53",
-      "Amazon S3 Transfer Acceleration --- Page 57 ---"
+      "Amazon S3 Transfer Acceleration"
     ],
     "explanation": "SAA-C03 practice scenario (extract question #158). Correct choice: A.",
     "keywords": [

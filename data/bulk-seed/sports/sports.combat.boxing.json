@@ -1,0 +1,202 @@
+[
+  {
+    "category": "sports",
+    "navigationKeyword1": "combat",
+    "navigationKeyword2": "boxing",
+    "question": "Which combat sport is fought mainly with punches and gloved hands?",
+    "correctAnswer": "Boxing",
+    "incorrectAnswers": [
+      "Wrestling",
+      "Judo",
+      "Fencing"
+    ],
+    "explanation": "Boxing is a striking sport centered on punches.",
+    "keywords": [
+      "combat",
+      "boxing",
+      "sport"
+    ],
+    "source": "https://www.britannica.com/sports/boxing",
+    "seedId": "a98702ff-de13-4a76-9701-9fb1c5eff4dc"
+  },
+  {
+    "category": "sports",
+    "navigationKeyword1": "combat",
+    "navigationKeyword2": "boxing",
+    "question": "What is the area where a professional boxing match takes place called?",
+    "correctAnswer": "The ring",
+    "incorrectAnswers": [
+      "The octagon",
+      "The mat",
+      "The piste"
+    ],
+    "explanation": "Boxing matches are fought in a roped ring.",
+    "keywords": [
+      "combat",
+      "boxing",
+      "ring"
+    ],
+    "source": "https://www.britannica.com/sports/boxing",
+    "seedId": "289184b8-1f65-4033-8702-aea75aaf53b6"
+  },
+  {
+    "category": "sports",
+    "navigationKeyword1": "combat",
+    "navigationKeyword2": "boxing",
+    "question": "How many counts does a referee usually give after a knockdown?",
+    "correctAnswer": "Ten",
+    "incorrectAnswers": [
+      "Five",
+      "Eight",
+      "Twelve"
+    ],
+    "explanation": "A boxer must beat the count to continue after a knockdown.",
+    "keywords": [
+      "combat",
+      "boxing",
+      "count"
+    ],
+    "source": "https://www.britannica.com/sports/boxing",
+    "seedId": "d9052852-2022-4325-a821-0f4e8563902c"
+  },
+  {
+    "category": "sports",
+    "navigationKeyword1": "combat",
+    "navigationKeyword2": "boxing",
+    "question": "Which legendary heavyweight defeated George Foreman in the Rumble in the Jungle?",
+    "correctAnswer": "Muhammad Ali",
+    "incorrectAnswers": [
+      "Joe Frazier",
+      "Larry Holmes",
+      "Mike Tyson"
+    ],
+    "explanation": "Ali beat Foreman in Zaire in 1974.",
+    "keywords": [
+      "combat",
+      "boxing",
+      "ali"
+    ],
+    "source": "https://www.britannica.com/biography/Muhammad-Ali-boxer",
+    "seedId": "bf500d85-2c56-4afb-ab1f-68f33f1e1cf2"
+  },
+  {
+    "category": "sports",
+    "navigationKeyword1": "combat",
+    "navigationKeyword2": "boxing",
+    "question": "What result ends a fight when a boxer cannot continue before the count expires?",
+    "correctAnswer": "Knockout",
+    "incorrectAnswers": [
+      "Split draw",
+      "Technical decision",
+      "No contest"
+    ],
+    "explanation": "A knockout ends the bout immediately when the downed boxer cannot continue in time.",
+    "keywords": [
+      "combat",
+      "boxing",
+      "knockout"
+    ],
+    "source": "https://www.britannica.com/sports/boxing",
+    "seedId": "26045d9e-e3f4-4e4a-ba61-a6e174c6e61a"
+  },
+  {
+    "category": "sports",
+    "navigationKeyword1": "combat",
+    "navigationKeyword2": "boxing",
+    "question": "Which body part may not legally be struck below in boxing, leading to a low-blow foul?",
+    "correctAnswer": "The beltline area below the waist",
+    "incorrectAnswers": [
+      "The shoulder",
+      "The forehead",
+      "The glove"
+    ],
+    "explanation": "Punches below the legal target area are fouls.",
+    "keywords": [
+      "combat",
+      "boxing",
+      "foul"
+    ],
+    "source": "https://www.britannica.com/sports/boxing",
+    "seedId": "6a8f37d1-93a4-48cf-8da6-e1f7fd882dce"
+  },
+  {
+    "category": "sports",
+    "navigationKeyword1": "combat",
+    "navigationKeyword2": "boxing",
+    "question": "What is it called when a fighter wins on the scorecards without a knockout?",
+    "correctAnswer": "Decision",
+    "incorrectAnswers": [
+      "Disqualification only",
+      "Submission",
+      "Pinfall"
+    ],
+    "explanation": "Many bouts go the scheduled distance and are decided by judges.",
+    "keywords": [
+      "combat",
+      "boxing",
+      "decision"
+    ],
+    "source": "https://www.britannica.com/sports/boxing",
+    "seedId": "79a6d734-7c1f-4fa1-804e-ac53c6c5804b"
+  },
+  {
+    "category": "sports",
+    "navigationKeyword1": "combat",
+    "navigationKeyword2": "boxing",
+    "question": "Which boxer was nicknamed Iron Mike?",
+    "correctAnswer": "Mike Tyson",
+    "incorrectAnswers": [
+      "Lennox Lewis",
+      "Evander Holyfield",
+      "Riddick Bowe"
+    ],
+    "explanation": "Tyson became one of the sport's most feared heavyweight champions.",
+    "keywords": [
+      "combat",
+      "boxing",
+      "tyson"
+    ],
+    "source": "https://www.britannica.com/biography/Mike-Tyson",
+    "seedId": "7938be27-fba3-4080-be02-7ce3d47dcc79"
+  },
+  {
+    "category": "sports",
+    "navigationKeyword1": "combat",
+    "navigationKeyword2": "boxing",
+    "question": "Which punch travels straight from the lead hand?",
+    "correctAnswer": "Jab",
+    "incorrectAnswers": [
+      "Uppercut",
+      "Hook",
+      "Haymaker"
+    ],
+    "explanation": "The jab is the quickest and most common lead-hand punch.",
+    "keywords": [
+      "combat",
+      "boxing",
+      "jab"
+    ],
+    "source": "https://www.britannica.com/sports/boxing",
+    "seedId": "caae599e-4de2-47d6-9b90-6d9d787c29cb"
+  },
+  {
+    "category": "sports",
+    "navigationKeyword1": "combat",
+    "navigationKeyword2": "boxing",
+    "question": "Which punch usually rises upward from below toward the chin or body?",
+    "correctAnswer": "Uppercut",
+    "incorrectAnswers": [
+      "Jab",
+      "Check hook",
+      "Feint"
+    ],
+    "explanation": "The uppercut is delivered on an upward arc.",
+    "keywords": [
+      "combat",
+      "boxing",
+      "uppercut"
+    ],
+    "source": "https://www.britannica.com/sports/boxing",
+    "seedId": "25a74086-380a-4350-9c71-3f9fce783480"
+  }
+]

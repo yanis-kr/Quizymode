@@ -33,7 +33,7 @@
     "incorrectAnswers": [
       "Configure three Application Load Balancers (ALBs) in the three AWS Regions to address the on-premises endpoints. Create an accelerator by using AWS Global Accelerator, and register the ALBs as its endpoints. Provide access to the application by using a CNAME that points to the accelerator DNS.",
       "Configure three Network Load Balancers (NLBs) in the three AWS Regions to address the on-premises endpoints. In Route 53, create a latency-based record that points to the three NLBs, and use it as an origin for an Amazon CloudFront distribution. Provide access to the application by using a CNAME that points to the CloudFront DNS.",
-      "Configure three Application Load Balancers (ALBs) in the three AWS Regions to address the on-premises endpoints. In Route 53, create a latency-based record that points to the three ALBs, and use it as an origin for an Amazon CloudFront distribution. Provide access to the application by using a CNAME that points to the CloudFront DNS. --- Page 134 ---"
+      "Configure three Application Load Balancers (ALBs) in the three AWS Regions to address the on-premises endpoints. In Route 53, create a latency-based record that points to the three ALBs, and use it as an origin for an Amazon CloudFront distribution. Provide access to the application by using a CNAME that points to the CloudFront DNS."
     ],
     "explanation": "SAA-C03 practice scenario (extract question #367). Correct choice: A.",
     "keywords": [
@@ -71,10 +71,10 @@
     "navigationKeyword1": "aws",
     "navigationKeyword2": "saa-c03",
     "question": "A company has migrated an application to Amazon EC2 Linux instances. One of these EC2 instances runs several 1-hour tasks on a schedule.\nThese tasks were written by different teams and have no common programming language. The company is concerned about performance and\nscalability while these tasks run on a single instance. A solutions architect needs to implement a solution to resolve these concerns.\nWhich solution will meet these requirements with the LEAST operational overhead?",
-    "correctAnswer": "Use AWS Batch to run the tasks as jobs. Schedule the jobs by using Amazon EventBridge (Amazon CloudWatch Events).",
+    "correctAnswer": "Use AWS Batch to run the tasks as jobs. Schedule the jobs by using Amazon EventBridge (note: outdated alias \"Amazon CloudWatch Events\"; same service, now EventBridge).",
     "incorrectAnswers": [
       "Convert the EC2 instance to a container. Use AWS App Runner to create the container on demand to run the tasks as jobs.",
-      "Copy the tasks into AWS Lambda functions. Schedule the Lambda functions by using Amazon EventBridge (Amazon CloudWatch Events).",
+      "Copy the tasks into AWS Lambda functions. Schedule the Lambda functions by using Amazon EventBridge (note: outdated alias \"Amazon CloudWatch Events\"; same service, now EventBridge).",
       "Create an Amazon Machine Image (AMI) of the EC2 instance that runs the tasks. Create an Auto Scaling group with the AMI to run multiple copies of the instance."
     ],
     "explanation": "SAA-C03 practice scenario (extract question #369). Correct choice: A.",
@@ -98,7 +98,7 @@
     "incorrectAnswers": [
       "Provision a NAT instance in a private subnet. Modify each private subnet's route table with a default route that points to the NAT instance.",
       "Provision a NAT gateway in a public subnet. Modify each private subnet's route table with a default route that points to the NAT gateway.",
-      "Provision a NAT gateway in a private subnet. Modify each private subnet's route table with a default route that points to the NAT gateway. --- Page 135 ---"
+      "Provision a NAT gateway in a private subnet. Modify each private subnet's route table with a default route that points to the NAT gateway."
     ],
     "explanation": "SAA-C03 practice scenario (extract question #370). Correct choice: A.",
     "keywords": [
@@ -120,7 +120,7 @@
     "incorrectAnswers": [
       "Store the images in Amazon S3 buckets. Use Amazon DynamoDB with the geographic code as the key and the image S3 URL as the value.",
       "Store the images and geographic codes in an Amazon DynamoDB table. Configure DynamoDB Accelerator (DAX) during times of high load.",
-      "Store the images in Amazon S3 buckets. Store geographic codes and image S3 URLs in a database table. Use Oracle running on an Amazon RDS Multi-AZ DB instance. --- Page 136 ---"
+      "Store the images in Amazon S3 buckets. Store geographic codes and image S3 URLs in a database table. Use Oracle running on an Amazon RDS Multi-AZ DB instance."
     ],
     "explanation": "SAA-C03 practice scenario (extract question #372). Correct choice: A.",
     "keywords": [
@@ -136,7 +136,7 @@
     "category": "exams",
     "navigationKeyword1": "aws",
     "navigationKeyword2": "saa-c03",
-    "question": "A company has an application that collects data from IoT sensors on automobiles. The data is streamed and stored in Amazon S3 through\nAmazon Kinesis Data Firehose. The data produces trillions of S3 objects each year. Each morning, the company uses the data from the previous\n30 days to retrain a suite of machine learning (ML) models.\nFour times each year, the company uses the data from the previous 12 months to perform analysis and train other ML models. The data must be\navailable with minimal delay for up to 1 year. After 1 year, the data must be retained for archival purposes.\nWhich storage solution meets these requirements MOST cost-effectively?",
+    "question": "A company has an application that collects data from IoT sensors on automobiles. The data is streamed and stored in Amazon S3 through\nAmazon Kinesis Data Firehose (note: outdated; now Amazon Data Firehose). The data produces trillions of S3 objects each year. Each morning, the company uses the data from the previous\n30 days to retrain a suite of machine learning (ML) models.\nFour times each year, the company uses the data from the previous 12 months to perform analysis and train other ML models. The data must be\navailable with minimal delay for up to 1 year. After 1 year, the data must be retained for archival purposes.\nWhich storage solution meets these requirements MOST cost-effectively?",
     "correctAnswer": "Use the S3 Intelligent-Tiering storage class. Create an S3 Lifecycle policy to transition objects to S3 Glacier Deep Archive after 1 year.",
     "incorrectAnswers": [
       "Use the S3 Intelligent-Tiering storage class. Configure S3 Intelligent-Tiering to automatically move objects to S3 Glacier Deep Archive after 1 year.",
@@ -164,7 +164,7 @@
     "incorrectAnswers": [
       "Launch a third-party virtual network appliance in each VPC. Establish an IPsec VPN tunnel between the data center and each virtual appliance.",
       "Set up three AWS Direct Connect connections from the data center to a Direct Connect gateway in us-east-1. Establish connectivity by conguring each VPC to use one of the Direct Connect connections.",
-      "Set up one AWS Direct Connect connection from the data center to AWS. Create a transit gateway, and attach each VPC to the transit gateway. Establish connectivity between the Direct Connect connection and the transit gateway. --- Page 137 ---"
+      "Set up one AWS Direct Connect connection from the data center to AWS. Create a transit gateway, and attach each VPC to the transit gateway. Establish connectivity between the Direct Connect connection and the transit gateway."
     ],
     "explanation": "SAA-C03 practice scenario (extract question #374). Correct choice: A.",
     "keywords": [
@@ -232,7 +232,7 @@
     "incorrectAnswers": [
       "Use a scheduled AWS Lambda function and run a script remotely on all EC2 instances to send data to the audit system.",
       "Use an EC2 Auto Scaling launch conguration to run a custom script through user data to send data to the audit system when instances are launched and terminated.",
-      "Run a custom script on the instance operating system to send data to the audit system. Configure the script to be invoked by the EC2 Auto Scaling group when the instance starts and is terminated. --- Page 138 ---"
+      "Run a custom script on the instance operating system to send data to the audit system. Configure the script to be invoked by the EC2 Auto Scaling group when the instance starts and is terminated."
     ],
     "explanation": "SAA-C03 practice scenario (extract question #377). Correct choice: B.",
     "keywords": [
@@ -303,7 +303,7 @@
     "incorrectAnswers": [
       "Explore AWS Marketplace for partner solutions that will automatically start and stop the EC2 instances and DB instances on a schedule.",
       "Launch another EC2 instance. Configure a crontab schedule to run shell scripts that will start and stop the existing EC2 instances and DB instances on a schedule.",
-      "Create an AWS Lambda function that will start and stop the EC2 instances and DB instances. Configure Amazon EventBridge to invoke the Lambda function on a schedule. --- Page 139 ---"
+      "Create an AWS Lambda function that will start and stop the EC2 instances and DB instances. Configure Amazon EventBridge to invoke the Lambda function on a schedule."
     ],
     "explanation": "SAA-C03 practice scenario (extract question #380). Correct choice: A.",
     "keywords": [
@@ -371,7 +371,7 @@
     "incorrectAnswers": [
       "Dedicated On-Demand Hosts",
       "Dedicated Reserved Instances",
-      "Dedicated On-Demand Instances --- Page 140 ---"
+      "Dedicated On-Demand Instances"
     ],
     "explanation": "SAA-C03 practice scenario (extract question #383). Correct choice: A.",
     "keywords": [
@@ -436,7 +436,7 @@
     "incorrectAnswers": [
       "Implement Amazon ElastiCache to cache the large datasets.",
       "Implement an RDS for MySQL read replica to cache database calls.",
-      "Implement Amazon Kinesis Data Firehose to stream the calls to the database. --- Page 141 ---"
+      "Implement Amazon Kinesis Data Firehose (note: outdated; now Amazon Data Firehose) to stream the calls to the database."
     ],
     "explanation": "SAA-C03 practice scenario (extract question #386). Correct choice: A.",
     "keywords": [

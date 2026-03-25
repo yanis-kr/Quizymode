@@ -1,0 +1,202 @@
+[
+  {
+    "category": "sports",
+    "navigationKeyword1": "golf",
+    "navigationKeyword2": "champions",
+    "question": "Who won the 2025 Masters Tournament?",
+    "correctAnswer": "Rory McIlroy",
+    "incorrectAnswers": [
+      "Scottie Scheffler",
+      "Ludvig Aberg",
+      "Bryson DeChambeau"
+    ],
+    "explanation": "McIlroy won the 2025 Masters to complete the career Grand Slam.",
+    "keywords": [
+      "golf",
+      "champions",
+      "masters"
+    ],
+    "source": "https://www.masters.com/en_US/index.html",
+    "seedId": "e4906a96-9bad-4ec1-ac80-4afc1900f0e3"
+  },
+  {
+    "category": "sports",
+    "navigationKeyword1": "golf",
+    "navigationKeyword2": "champions",
+    "question": "Who won the 2024 Masters Tournament?",
+    "correctAnswer": "Scottie Scheffler",
+    "incorrectAnswers": [
+      "Rory McIlroy",
+      "Collin Morikawa",
+      "Ludvig Aberg"
+    ],
+    "explanation": "Scheffler earned his second Masters title in 2024.",
+    "keywords": [
+      "golf",
+      "champions",
+      "scheffler"
+    ],
+    "source": "https://www.masters.com/en_US/index.html",
+    "seedId": "a77da5c3-3f7f-401b-94c5-71330d366170"
+  },
+  {
+    "category": "sports",
+    "navigationKeyword1": "golf",
+    "navigationKeyword2": "champions",
+    "question": "Who won the 2024 U.S. Open?",
+    "correctAnswer": "Bryson DeChambeau",
+    "incorrectAnswers": [
+      "Rory McIlroy",
+      "Tony Finau",
+      "Tommy Fleetwood"
+    ],
+    "explanation": "DeChambeau won the U.S. Open at Pinehurst No. 2.",
+    "keywords": [
+      "golf",
+      "champions",
+      "us-open"
+    ],
+    "source": "https://www.usopen.com/",
+    "seedId": "48e3a4da-c657-48f5-8a89-99f9ecedd66a"
+  },
+  {
+    "category": "sports",
+    "navigationKeyword1": "golf",
+    "navigationKeyword2": "champions",
+    "question": "Who won the 2024 PGA Championship?",
+    "correctAnswer": "Xander Schauffele",
+    "incorrectAnswers": [
+      "Brooks Koepka",
+      "Scottie Scheffler",
+      "Viktor Hovland"
+    ],
+    "explanation": "Schauffele won his first major at the 2024 PGA Championship.",
+    "keywords": [
+      "golf",
+      "champions",
+      "pga"
+    ],
+    "source": "https://www.pgachampionship.com/",
+    "seedId": "e104c7b5-4c98-4bb7-a512-c53b8ace1061"
+  },
+  {
+    "category": "sports",
+    "navigationKeyword1": "golf",
+    "navigationKeyword2": "champions",
+    "question": "Who won The Open Championship in 2024?",
+    "correctAnswer": "Xander Schauffele",
+    "incorrectAnswers": [
+      "Rory McIlroy",
+      "Shane Lowry",
+      "Justin Rose"
+    ],
+    "explanation": "Schauffele added The Open to his 2024 major haul.",
+    "keywords": [
+      "golf",
+      "champions",
+      "open"
+    ],
+    "source": "https://www.theopen.com/",
+    "seedId": "e086c4cb-ef05-4f39-a8e6-d9017903283d"
+  },
+  {
+    "category": "sports",
+    "navigationKeyword1": "golf",
+    "navigationKeyword2": "champions",
+    "question": "Which golfer won the Masters in 2019 after an 11-year major drought?",
+    "correctAnswer": "Tiger Woods",
+    "incorrectAnswers": [
+      "Phil Mickelson",
+      "Brooks Koepka",
+      "Dustin Johnson"
+    ],
+    "explanation": "Woods' 2019 Masters win was one of the sport's biggest comeback stories.",
+    "keywords": [
+      "golf",
+      "champions",
+      "tiger"
+    ],
+    "source": "https://www.masters.com/en_US/index.html",
+    "seedId": "07f23fd4-7b82-47d7-bacc-f11690e10096"
+  },
+  {
+    "category": "sports",
+    "navigationKeyword1": "golf",
+    "navigationKeyword2": "champions",
+    "question": "Who won the 2021 PGA Championship at age 50?",
+    "correctAnswer": "Phil Mickelson",
+    "incorrectAnswers": [
+      "Brooks Koepka",
+      "Louis Oosthuizen",
+      "Jordan Spieth"
+    ],
+    "explanation": "Mickelson became the oldest men's major winner with that title.",
+    "keywords": [
+      "golf",
+      "champions",
+      "mickelson"
+    ],
+    "source": "https://www.pgachampionship.com/",
+    "seedId": "61658ba9-1e66-4a60-9702-1765aa1948e0"
+  },
+  {
+    "category": "sports",
+    "navigationKeyword1": "golf",
+    "navigationKeyword2": "champions",
+    "question": "Which golfer won the 2000 U.S. Open by a record 15 strokes?",
+    "correctAnswer": "Tiger Woods",
+    "incorrectAnswers": [
+      "Ernie Els",
+      "Vijay Singh",
+      "Phil Mickelson"
+    ],
+    "explanation": "Woods dominated Pebble Beach in 2000.",
+    "keywords": [
+      "golf",
+      "champions",
+      "record-margin"
+    ],
+    "source": "https://www.usopen.com/",
+    "seedId": "dfaa2a06-91a3-4ab5-ba46-f8d661665afe"
+  },
+  {
+    "category": "sports",
+    "navigationKeyword1": "golf",
+    "navigationKeyword2": "champions",
+    "question": "Who won The Open Championship in 2019 at Royal Portrush?",
+    "correctAnswer": "Shane Lowry",
+    "incorrectAnswers": [
+      "Rory McIlroy",
+      "Tommy Fleetwood",
+      "Brooks Koepka"
+    ],
+    "explanation": "Lowry won on the island of Ireland at Royal Portrush.",
+    "keywords": [
+      "golf",
+      "champions",
+      "lowry"
+    ],
+    "source": "https://www.theopen.com/",
+    "seedId": "093cf130-7cdb-41f9-b3ff-44e2a992ad0d"
+  },
+  {
+    "category": "sports",
+    "navigationKeyword1": "golf",
+    "navigationKeyword2": "champions",
+    "question": "Which golfer won the 2023 Masters Tournament?",
+    "correctAnswer": "Jon Rahm",
+    "incorrectAnswers": [
+      "Brooks Koepka",
+      "Scottie Scheffler",
+      "Rory McIlroy"
+    ],
+    "explanation": "Rahm won the green jacket in 2023.",
+    "keywords": [
+      "golf",
+      "champions",
+      "rahm"
+    ],
+    "source": "https://www.masters.com/en_US/index.html",
+    "seedId": "b8277fc5-d521-4676-bc50-55286c737c1d"
+  }
+]

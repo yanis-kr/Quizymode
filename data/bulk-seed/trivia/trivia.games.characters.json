@@ -1,0 +1,192 @@
+[
+  {
+    "category": "trivia",
+    "navigationKeyword1": "games",
+    "navigationKeyword2": "characters",
+    "question": "Which Nintendo franchise platforming hero role is most closely associated with Mario?",
+    "correctAnswer": "plumber adventurer in Mushroom Kingdom settings",
+    "incorrectAnswers": [
+      "Halo supersoldier",
+      "Kratos from Greek myth",
+      "Geralt of Rivia"
+    ],
+    "explanation": "Mario is Nintendo\u2019s iconic platforming character.",
+    "keywords": [
+      "mario",
+      "nintendo"
+    ],
+    "source": "https://www.britannica.com/topic/Super-Mario-Bros-electronic-game",
+    "seedId": "7e202ead-4de9-4677-afe6-18f5dd5eddbb"
+  },
+  {
+    "category": "trivia",
+    "navigationKeyword1": "games",
+    "navigationKeyword2": "characters",
+    "question": "Which action-adventure Nintendo series is associated with Link?",
+    "correctAnswer": "The Legend of Zelda",
+    "incorrectAnswers": [
+      "Metroid",
+      "Pikmin",
+      "Splatoon"
+    ],
+    "explanation": "Link is the Zelda series protagonist.",
+    "keywords": [
+      "zelda",
+      "nintendo"
+    ],
+    "source": "https://www.britannica.com/topic/The-Legend-of-Zelda",
+    "seedId": "e0d5401a-d72d-402c-b73d-6a42e13eedca"
+  },
+  {
+    "category": "trivia",
+    "navigationKeyword1": "games",
+    "navigationKeyword2": "characters",
+    "question": "Pac-Man to eating pellets while avoiding what?",
+    "correctAnswer": "ghosts",
+    "incorrectAnswers": [
+      "tanks",
+      "aliens",
+      "zombies"
+    ],
+    "explanation": "Pac-Man avoids ghosts while eating pellets.",
+    "keywords": [
+      "arcade",
+      "classic"
+    ],
+    "source": "https://www.britannica.com/topic/Pac-Man-electronic-game",
+    "seedId": "975b97a4-760d-4751-b29d-297f769911df"
+  },
+  {
+    "category": "trivia",
+    "navigationKeyword1": "games",
+    "navigationKeyword2": "characters",
+    "question": "Sonic as which fast animal mascot?",
+    "correctAnswer": "hedgehog",
+    "incorrectAnswers": [
+      "fox",
+      "badger",
+      "rabbit"
+    ],
+    "explanation": "Sonic is a hedgehog character.",
+    "keywords": [
+      "sonic",
+      "sega"
+    ],
+    "source": "https://www.britannica.com/topic/Sonic-the-Hedgehog",
+    "seedId": "bef9420b-609a-4fb5-b551-9029950a12a3"
+  },
+  {
+    "category": "trivia",
+    "navigationKeyword1": "games",
+    "navigationKeyword2": "characters",
+    "question": "Which adventure genre is most closely associated with Lara Croft?",
+    "correctAnswer": "action-adventure archaeology",
+    "incorrectAnswers": [
+      "farming sim",
+      "rhythm dance",
+      "racing sim"
+    ],
+    "explanation": "Lara Croft stars in Tomb Raider adventures.",
+    "keywords": [
+      "tomb-raider",
+      "heroine"
+    ],
+    "source": "https://www.britannica.com/topic/Lara-Croft",
+    "seedId": "c9651827-cd7b-4243-bd7d-a7f6ca16eb72"
+  },
+  {
+    "category": "trivia",
+    "navigationKeyword1": "games",
+    "navigationKeyword2": "characters",
+    "question": "Which sci-fi shooter series is associated with Master Chief?",
+    "correctAnswer": "Halo",
+    "incorrectAnswers": [
+      "Call of Duty",
+      "Battlefield",
+      "Destiny"
+    ],
+    "explanation": "Master Chief is Halo\u2019s protagonist.",
+    "keywords": [
+      "halo",
+      "fps"
+    ],
+    "source": "https://www.britannica.com/topic/Halo-electronic-game",
+    "seedId": "eaa3a50f-377e-49a2-ae95-49f8d734a3af"
+  },
+  {
+    "category": "trivia",
+    "navigationKeyword1": "games",
+    "navigationKeyword2": "characters",
+    "question": "Which franchise is most closely associated with Pikachu?",
+    "correctAnswer": "Pok\u00e9mon",
+    "incorrectAnswers": [
+      "Digimon",
+      "Yu-Gi-Oh!",
+      "Beyblade"
+    ],
+    "explanation": "Pikachu is a Pok\u00e9mon mascot.",
+    "keywords": [
+      "pokemon",
+      "nintendo"
+    ],
+    "source": "https://www.britannica.com/topic/Pokemon-electronic-game",
+    "seedId": "d23dda14-ecc3-4196-8f24-fd339e0fad9b"
+  },
+  {
+    "category": "trivia",
+    "navigationKeyword1": "games",
+    "navigationKeyword2": "characters",
+    "question": "Geralt of Rivia stars in which fantasy game series?",
+    "correctAnswer": "The Witcher",
+    "incorrectAnswers": [
+      "Dark Souls",
+      "Skyrim",
+      "Dragon Age"
+    ],
+    "explanation": "Geralt is The Witcher\u2019s lead.",
+    "keywords": [
+      "witcher",
+      "rpg"
+    ],
+    "source": "https://www.britannica.com/topic/The-Witcher",
+    "seedId": "445f9f9d-371a-4525-944f-f5592a9e56a9"
+  },
+  {
+    "category": "trivia",
+    "navigationKeyword1": "games",
+    "navigationKeyword2": "characters",
+    "question": "Which block-building game is most closely associated with Steve (default player)?",
+    "correctAnswer": "Minecraft",
+    "incorrectAnswers": [
+      "Roblox",
+      "Fortnite",
+      "Terraria"
+    ],
+    "explanation": "Minecraft\u2019s default skin is often called Steve.",
+    "keywords": [
+      "minecraft",
+      "sandbox"
+    ],
+    "source": "https://www.britannica.com/topic/Minecraft",
+    "seedId": "88185453-e023-45d6-baaa-a18b125aaab8"
+  },
+  {
+    "category": "trivia",
+    "navigationKeyword1": "games",
+    "navigationKeyword2": "characters",
+    "question": "Kratos with mythology-inspired combat in which series?",
+    "correctAnswer": "God of War",
+    "incorrectAnswers": [
+      "Assassin\u2019s Creed",
+      "Prince of Persia",
+      "Devil May Cry"
+    ],
+    "explanation": "Kratos leads God of War.",
+    "keywords": [
+      "god-of-war",
+      "action"
+    ],
+    "source": "https://www.britannica.com/topic/God-of-War-electronic-game",
+    "seedId": "99cf0281-1e20-4114-bcbb-cd534b8ce188"
+  }
+]

@@ -57,7 +57,7 @@
     "incorrectAnswers": [
       "Write orders to an Amazon Simple Queue Service (Amazon SQS) queue. Use EC2 instances in an Auto Scaling group behind an Application Load Balancer to read from the SQS queue and process orders into the database.",
       "Write orders to Amazon Simple Notification Service (Amazon SNS). Subscribe the database endpoint to the SNS topic. Use EC2 instances in an Auto Scaling group behind an Application Load Balancer to read from the SNS topic.",
-      "Write orders to an Amazon Simple Queue Service (Amazon SQS) queue when the EC2 instance reaches CPU threshold limits. Use scheduled scaling of EC2 instances in an Auto Scaling group behind an Application Load Balancer to read from the SQS queue and process orders into the database. --- Page 170 ---"
+      "Write orders to an Amazon Simple Queue Service (Amazon SQS) queue when the EC2 instance reaches CPU threshold limits. Use scheduled scaling of EC2 instances in an Auto Scaling group behind an Application Load Balancer to read from the SQS queue and process orders into the database."
     ],
     "explanation": "SAA-C03 practice scenario (extract question #462). Correct choice: A.",
     "keywords": [
@@ -125,7 +125,7 @@
     "incorrectAnswers": [
       "Use Throughput Optimized HDD (st1) EBS volumes with Amazon Elastic Block Store (Amazon EBS) Multi-Attach",
       "Use Provisioned IOPS SSD (io2) EBS volumes with Amazon Elastic Block Store (Amazon EBS) Multi-Attach",
-      "Use General Purpose SSD (gp2) EBS volumes with Amazon Elastic Block Store (Amazon EBS) Multi-Attach --- Page 171 ---"
+      "Use General Purpose SSD (gp2) EBS volumes with Amazon Elastic Block Store (Amazon EBS) Multi-Attach"
     ],
     "explanation": "SAA-C03 practice scenario (extract question #465). Correct choice: A.",
     "keywords": [
@@ -192,7 +192,7 @@
     "incorrectAnswers": [
       "Design a REST API by using Amazon API Gateway. Host the application in Amazon Elastic Container Service (Amazon ECS) in a private subnet. Create a private VPC link for API Gateway to access Amazon ECS.",
       "Design a WebSocket API by using Amazon API Gateway. Host the application in Amazon Elastic Container Service (Amazon ECS) in a private subnet. Create a security group for API Gateway to access Amazon ECS.",
-      "Design a REST API by using Amazon API Gateway. Host the application in Amazon Elastic Container Service (Amazon ECS) in a private subnet. Create a security group for API Gateway to access Amazon ECS. --- Page 172 ---"
+      "Design a REST API by using Amazon API Gateway. Host the application in Amazon Elastic Container Service (Amazon ECS) in a private subnet. Create a security group for API Gateway to access Amazon ECS."
     ],
     "explanation": "SAA-C03 practice scenario (extract question #468). Correct choice: A.",
     "keywords": [
@@ -257,7 +257,7 @@
     "incorrectAnswers": [
       "Enable S3 Transfer Acceleration for the S3 bucket",
       "Create a gateway VPC endpoint for Amazon S3. Associate this endpoint with all route tables in the VPC",
-      "Create an interface endpoint for Amazon S3 in the VPC. Associate this endpoint with all route tables in the VPC --- Page 173 ---"
+      "Create an interface endpoint for Amazon S3 in the VPC. Associate this endpoint with all route tables in the VPC"
     ],
     "explanation": "SAA-C03 practice scenario (extract question #471). Correct choice: A.",
     "keywords": [
@@ -324,7 +324,7 @@
     "incorrectAnswers": [
       "Use AWS Direct Connect gateways across all Regions to connect VPCs across regions and manage VPC communications.",
       "Use AWS Transit Gateway to manage VPC communication in a single Region and Transit Gateway peering across Regions to manage VPC communications.",
-      "Use AWS PrivateLink across all Regions to connect VPCs across Regions and manage VPC communications --- Page 174 ---"
+      "Use AWS PrivateLink across all Regions to connect VPCs across Regions and manage VPC communications"
     ],
     "explanation": "SAA-C03 practice scenario (extract question #474). Correct choice: A.",
     "keywords": [
@@ -367,7 +367,7 @@
     "incorrectAnswers": [
       "Create IAM roles that have least privilege permission. Attach the roles to the IAM groups",
       "Create an IAM policy that grants least privilege permission. Attach the policy to the IAM groups",
-      "Create IAM roles. Associate the roles with a permissions boundary that denes the maximum permissions --- Page 175 ---"
+      "Create IAM roles. Associate the roles with a permissions boundary that denes the maximum permissions"
     ],
     "explanation": "SAA-C03 practice scenario (extract question #476). Correct choice: A.",
     "keywords": [
@@ -408,7 +408,7 @@
     "correctAnswer": "Use AWS Systems Manager to replicate and provision the prototype infrastructure in two Availability Zones",
     "incorrectAnswers": [
       "Dene the infrastructure as a template by using the prototype infrastructure as a guide. Deploy the infrastructure with AWS CloudFormation.",
-      "Use AWS Cong to record the inventory of resources that are used in the prototype infrastructure. Use AWS Cong to deploy the prototype infrastructure into two Availability Zones.",
+      "Use AWS Config to record the inventory of resources that are used in the prototype infrastructure. Use AWS Config to deploy the prototype infrastructure into two Availability Zones.",
       "Use AWS Elastic Beanstalk and congure it to use an automated reference to the prototype infrastructure to automatically deploy new environments in two Availability Zones."
     ],
     "explanation": "SAA-C03 practice scenario (extract question #479). Correct choice: A.",
@@ -434,7 +434,7 @@
     "incorrectAnswers": [
       "VPC endpoint",
       "Private subnet",
-      "Virtual private gateway --- Page 177 ---"
+      "Virtual private gateway"
     ],
     "explanation": "SAA-C03 practice scenario (extract question #480). Correct choice: A.",
     "keywords": [

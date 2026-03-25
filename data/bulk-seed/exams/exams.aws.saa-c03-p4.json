@@ -73,7 +73,7 @@
     "incorrectAnswers": [
       "Create an On-Demand Capacity Reservation that species the Region needed.",
       "Purchase Reserved Instances that specify the Region and three Availability Zones needed.",
-      "Create an On-Demand Capacity Reservation that species the Region and three Availability Zones needed. --- Page 18 ---"
+      "Create an On-Demand Capacity Reservation that species the Region and three Availability Zones needed."
     ],
     "explanation": "SAA-C03 practice scenario (extract question #47). Correct choice: A.",
     "keywords": [
@@ -137,7 +137,7 @@
     "incorrectAnswers": [
       "Configure AWS Systems Manager Patch Manager to apply the patch to all EC2 instances.",
       "Schedule an AWS Systems Manager maintenance window to apply the patch to all EC2 instances.",
-      "Use AWS Systems Manager Run Command to run a custom command that applies the patch to all EC2 instances. --- Page 19 ---"
+      "Use AWS Systems Manager Run Command to run a custom command that applies the patch to all EC2 instances."
     ],
     "explanation": "SAA-C03 practice scenario (extract question #50). Correct choice: A.",
     "keywords": [
@@ -180,7 +180,7 @@
     "incorrectAnswers": [
       "Store the records by using S3 Intelligent-Tiering. Use an IAM policy to deny deletion of the records. After 10 years, change the IAM policy to allow deletion.",
       "Use an S3 Lifecycle policy to transition the records from S3 Standard to S3 Glacier Deep Archive after 1 year. Use S3 Object Lock in compliance mode for a period of 10 years.",
-      "Use an S3 Lifecycle policy to transition the records from S3 Standard to S3 One Zone-Infrequent Access (S3 One Zone-IA) after 1 year. Use S3 Object Lock in governance mode for a period of 10 years. --- Page 20 ---"
+      "Use an S3 Lifecycle policy to transition the records from S3 Standard to S3 One Zone-Infrequent Access (S3 One Zone-IA) after 1 year. Use S3 Object Lock in governance mode for a period of 10 years."
     ],
     "explanation": "SAA-C03 practice scenario (extract question #53). Correct choice: A.",
     "keywords": [
@@ -244,7 +244,7 @@
     "navigationKeyword1": "aws",
     "navigationKeyword2": "saa-c03",
     "question": "A company has registered its domain name with Amazon Route 53. The company uses Amazon API Gateway in the ca-central-1 Region as a public\ninterface for its backend microservice APIs. Third-party services consume the APIs securely. The company wants to design its API Gateway URL\nwith the company's domain name and corresponding certicate so that the third-party services can use HTTPS.\nWhich solution will meet these requirements?",
-    "correctAnswer": "Create a Regional API Gateway endpoint. Associate the API Gateway endpoint with the company's domain name. Import the public certicate associated with the company's domain name into AWS Certicate Manager (ACM) in the us-east-1 Region. Attach the certicate to the API Gateway APIs. Create Route 53 DNS records with the company's domain name. Point an A record to the company's domain name. --- Page 21 ---",
+    "correctAnswer": "Create a Regional API Gateway endpoint. Associate the API Gateway endpoint with the company's domain name. Import the public certicate associated with the company's domain name into AWS Certicate Manager (ACM) in the us-east-1 Region. Attach the certicate to the API Gateway APIs. Create Route 53 DNS records with the company's domain name. Point an A record to the company's domain name.",
     "incorrectAnswers": [
       "Create stage variables in API Gateway with Name=\"Endpoint-URL\" and Value=\"Company Domain Name\" to overwrite the default URL. Import the public certicate associated with the company's domain name into AWS Certicate Manager (ACM).",
       "Create Route 53 DNS records with the company's domain name. Point the alias record to the Regional API Gateway stage endpoint. Import the public certicate associated with the company's domain name into AWS Certicate Manager (ACM) in the us-east-1 Region.",
@@ -312,7 +312,7 @@
     "incorrectAnswers": [
       "Create an Auto Scaling group of Amazon EC2 instances to process the data and send it to an Amazon S3 data lake for Amazon Redshift to use for analysis.",
       "Cache the data to Amazon CloudFront. Store the data in an Amazon S3 bucket. When an object is added to the S3 bucket. run an AWS Lambda function to process the data for analysis.",
-      "Collect the data from Amazon Kinesis Data Streams. Use Amazon Kinesis Data Firehose to transmit the data to an Amazon S3 data lake. Load the data in Amazon Redshift for analysis. --- Page 22 ---"
+      "Collect the data from Amazon Kinesis Data Streams. Use Amazon Kinesis Data Firehose (note: outdated; now Amazon Data Firehose) to transmit the data to an Amazon S3 data lake. Load the data in Amazon Redshift for analysis."
     ],
     "explanation": "SAA-C03 practice scenario (extract question #59). Correct choice: A.",
     "keywords": [
@@ -350,9 +350,9 @@
     "navigationKeyword1": "aws",
     "navigationKeyword2": "saa-c03",
     "question": "A company is developing a two-tier web application on AWS. The company's developers have deployed the application on an Amazon EC2\ninstance that connects directly to a backend Amazon RDS database. The company must not hardcode database credentials in the application. The\ncompany must also implement a solution to automatically rotate the database credentials on a regular basis.\nWhich solution will meet these requirements with the LEAST operational overhead?",
-    "correctAnswer": "Store the database credentials in the instance metadata. Use Amazon EventBridge (Amazon CloudWatch Events) rules to run a scheduled AWS Lambda function that updates the RDS credentials and instance metadata at the same time.",
+    "correctAnswer": "Store the database credentials in the instance metadata. Use Amazon EventBridge (note: outdated alias \"Amazon CloudWatch Events\"; same service, now EventBridge) rules to run a scheduled AWS Lambda function that updates the RDS credentials and instance metadata at the same time.",
     "incorrectAnswers": [
-      "Store the database credentials in a conguration le in an encrypted Amazon S3 bucket. Use Amazon EventBridge (Amazon CloudWatch Events) rules to run a scheduled AWS Lambda function that updates the RDS credentials and the credentials in the conguration le at the same time. Use S3 Versioning to ensure the ability to fall back to previous values.",
+      "Store the database credentials in a conguration le in an encrypted Amazon S3 bucket. Use Amazon EventBridge (note: outdated alias \"Amazon CloudWatch Events\"; same service, now EventBridge) rules to run a scheduled AWS Lambda function that updates the RDS credentials and the credentials in the conguration le at the same time. Use S3 Versioning to ensure the ability to fall back to previous values.",
       "Store the database credentials as a secret in AWS Secrets Manager. Turn on automatic rotation for the secret. Attach the required permission to the EC2 role to grant access to the secret.",
       "Store the database credentials as encrypted parameters in AWS Systems Manager Parameter Store. Turn on automatic rotation for the encrypted parameters. Attach the required permission to the EC2 role to grant access to the encrypted parameters."
     ],
@@ -380,7 +380,7 @@
     "incorrectAnswers": [
       "Use AWS Certicate Manager (ACM) to issue an SSL/TLS certicate. Import the key material from the certicate. Apply the certicate to the ALUse the managed renewal feature to automatically rotate the certicate.",
       "Use AWS Certicate Manager (ACM) Private Certicate Authority to issue an SSL/TLS certicate from the root CA. Apply the certicate to the ALB. Use the managed renewal feature to automatically rotate the certicate.",
-      "Use AWS Certicate Manager (ACM) to import an SSL/TLS certicate. Apply the certicate to the ALB. Use Amazon EventBridge (Amazon CloudWatch Events) to send a notication when the certicate is nearing expiration. Rotate the certicate manually. --- Page 23 ---"
+      "Use AWS Certicate Manager (ACM) to import an SSL/TLS certicate. Apply the certicate to the ALB. Use Amazon EventBridge (note: outdated alias \"Amazon CloudWatch Events\"; same service, now EventBridge) to send a notication when the certicate is nearing expiration. Rotate the certicate manually."
     ],
     "explanation": "SAA-C03 practice scenario (extract question #62). Correct choice: A.",
     "keywords": [

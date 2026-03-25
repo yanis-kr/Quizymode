@@ -28,7 +28,7 @@
     "incorrectAnswers": [
       "Migrate the database to an Amazon Aurora MySQL database. Deploy Aurora Read Replicas in each Region. Use the correct Regional endpoint in each Regional deployment for access to the database.",
       "Migrate the database to an Amazon RDS for MySQL database. Deploy MySQL read replicas in each Region. Use the correct Regional endpoint in each Regional deployment for access to the database.",
-      "Migrate the application to an Amazon Aurora Serverless database. Deploy instances of the database to each Region. Use the correct Regional endpoint in each Regional deployment to access the database. Use AWS Lambda functions to process event streams in each Region to synchronize the databases. --- Page 187 ---"
+      "Migrate the application to an Amazon Aurora Serverless database. Deploy instances of the database to each Region. Use the correct Regional endpoint in each Regional deployment to access the database. Use AWS Lambda functions to process event streams in each Region to synchronize the databases."
     ],
     "explanation": "SAA-C03 practice scenario (extract question #507). Correct choice: A.",
     "keywords": [
@@ -49,7 +49,7 @@
     "incorrectAnswers": [
       "Modify the network ACL for the web tier subnets. Add an inbound deny rule for the IP addresses that are consuming resources.",
       "Modify the inbound security group for the application tier. Add a deny rule for the IP addresses that are consuming resources.",
-      "Modify the network ACL for the application tier subnets. Add an inbound deny rule for the IP addresses that are consuming resources. --- Page 188 ---"
+      "Modify the network ACL for the application tier subnets. Add an inbound deny rule for the IP addresses that are consuming resources."
     ],
     "explanation": "SAA-C03 practice scenario (extract question #509). Correct choice: A.",
     "keywords": [
@@ -109,11 +109,11 @@
     "navigationKeyword1": "aws",
     "navigationKeyword2": "saa-c03",
     "question": "A company uses AWS Organizations with resources tagged by account. The company also uses AWS Backup to back up its AWS infrastructure\nresources. The company needs to back up all AWS resources.\nWhich solution will meet these requirements with the LEAST operational overhead?",
-    "correctAnswer": "Use AWS Cong to identify all untagged resources. Tag the identied resources programmatically. Use tags in the backup plan.",
+    "correctAnswer": "Use AWS Config to identify all untagged resources. Tag the identied resources programmatically. Use tags in the backup plan.",
     "incorrectAnswers": [
-      "Use AWS Cong to identify all resources that are not running. Add those resources to the backup vault.",
+      "Use AWS Config to identify all resources that are not running. Add those resources to the backup vault.",
       "Require all AWS account owners to review their resources to identify the resources that need to be backed up.",
-      "Use Amazon Inspector to identify all noncompliant resources. --- Page 189 ---"
+      "Use Amazon Inspector to identify all noncompliant resources."
     ],
     "explanation": "SAA-C03 practice scenario (extract question #512). Correct choice: A.",
     "keywords": [
@@ -202,7 +202,7 @@
     "incorrectAnswers": [
       "Install the Amazon CloudWatch agent. Push all logs to a CloudWatch log group. Export the logs to an S3 bucket from the group for archival purposes.",
       "Create a Systems Manager document to upload all server logs to a central S3 bucket. Use Amazon EventBridge to run the Systems Manager document against all servers that are in the account daily.",
-      "Install an Amazon CloudWatch agent. Push all logs to a CloudWatch log group. Create a CloudWatch logs subscription that pushes any incoming log events to an Amazon Kinesis Data Firehose delivery stream. Set Amazon S3 as the destination."
+      "Install an Amazon CloudWatch agent. Push all logs to a CloudWatch log group. Create a CloudWatch logs subscription that pushes any incoming log events to an Amazon Kinesis Data Firehose (note: outdated; now Amazon Data Firehose) delivery stream. Set Amazon S3 as the destination."
     ],
     "explanation": "SAA-C03 practice scenario (extract question #517). Correct choice: A.",
     "keywords": [
@@ -224,7 +224,7 @@
     "incorrectAnswers": [
       "Increase the RDS database instance size",
       "Change the RDS database instance storage type to Provisioned IOPS",
-      "Back up the RDS database, increase the storage capacity, restore the database, and stop the previous instance --- Page 191 ---"
+      "Back up the RDS database, increase the storage capacity, restore the database, and stop the previous instance"
     ],
     "explanation": "SAA-C03 practice scenario (extract question #518). Correct choice: A.",
     "keywords": [
@@ -246,7 +246,7 @@
     "incorrectAnswers": [
       "Create AWS Service Catalog products for the customers.",
       "Create AWS Systems Manager templates for the customers.",
-      "Create AWS Cong items for the customers."
+      "Create AWS Config items for the customers."
     ],
     "explanation": "SAA-C03 practice scenario (extract question #519). Correct choice: A.",
     "keywords": [
@@ -266,7 +266,7 @@
     "incorrectAnswers": [
       "Configure DynamoDB in on-demand mode by using the DynamoDB Standard table class.",
       "Configure DynamoDB with provisioned read and write by using the DynamoDB Standard Infrequent Access (DynamoDB Standard-IA) table class. Set DynamoDB auto scaling to a maximum dened capacity.",
-      "Configure DynamoDB in on-demand mode by using the DynamoDB Standard Infrequent Access (DynamoDB Standard-IA) table class. --- Page 192 ---"
+      "Configure DynamoDB in on-demand mode by using the DynamoDB Standard Infrequent Access (DynamoDB Standard-IA) table class."
     ],
     "explanation": "SAA-C03 practice scenario (extract question #520). Correct choice: A.",
     "keywords": [
@@ -314,7 +314,7 @@
     "incorrectAnswers": [
       "Amazon CloudFront with Lambda@Edge functions",
       "Edge-optimized Amazon API Gateway with AWS Lambda functions",
-      "Amazon Athena Federated Query with a DynamoDB connector --- Page 193 ---"
+      "Amazon Athena Federated Query with a DynamoDB connector"
     ],
     "explanation": "SAA-C03 practice scenario (extract question #523). Correct choice: A.",
     "keywords": [
@@ -378,7 +378,7 @@
     "incorrectAnswers": [
       "Set up a secondary Aurora PostgreSQL cluster in the same AWS Region. During failover, update the application to use the secondary cluster's writer endpoint.",
       "Create an Amazon ElastiCache for Memcached cluster to handle the load during failover.",
-      "Set up an Amazon RDS proxy for the database. Update the application to use the proxy endpoint. --- Page 194 ---"
+      "Set up an Amazon RDS proxy for the database. Update the application to use the proxy endpoint."
     ],
     "explanation": "SAA-C03 practice scenario (extract question #526). Correct choice: A.",
     "keywords": [
@@ -425,7 +425,7 @@
     "incorrectAnswers": [
       "Use an Amazon EC2 instance that runs an FTP server to store incoming les on an Amazon Elastic Block Store (Amazon EBS) volume. Configure a job queue in AWS Batch. Use Amazon EventBridge rules to invoke the job to process the les nightly from the EBS volume. Delete the les after the job has processed the les.",
       "Use AWS Transfer Family to create an FTP server to store incoming les on an Amazon Elastic Block Store (Amazon EBS) volume. Configure a job queue in AWS Batch. Use an Amazon S3 event notication when each le arrives to invoke the job in AWS Batch. Delete the les after the job has processed the les.",
-      "Use AWS Transfer Family to create an FTP server to store incoming les in Amazon S3 Standard. Create an AWS Lambda function to process the les and to delete the les after they are processed. Use an S3 event notication to invoke the Lambda function when the les arrive. --- Page 195 ---"
+      "Use AWS Transfer Family to create an FTP server to store incoming les in Amazon S3 Standard. Create an AWS Lambda function to process the les and to delete the les after they are processed. Use an S3 event notication to invoke the Lambda function when the les arrive."
     ],
     "explanation": "SAA-C03 practice scenario (extract question #528). Correct choice: A.",
     "keywords": [

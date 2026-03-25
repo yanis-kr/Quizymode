@@ -1,0 +1,202 @@
+[
+  {
+    "category": "sports",
+    "navigationKeyword1": "soccer",
+    "navigationKeyword2": "champions",
+    "question": "Who won the 2023 UEFA Champions League final?",
+    "correctAnswer": "Manchester City",
+    "incorrectAnswers": [
+      "Inter Milan",
+      "Real Madrid",
+      "Bayern Munich"
+    ],
+    "explanation": "Manchester City beat Inter Milan to win the 2023 final.",
+    "keywords": [
+      "soccer",
+      "champions",
+      "ucl"
+    ],
+    "source": "https://www.uefa.com/uefachampionsleague/history/",
+    "seedId": "80110e7b-8ace-4fd4-b902-9af7dc8a866f"
+  },
+  {
+    "category": "sports",
+    "navigationKeyword1": "soccer",
+    "navigationKeyword2": "champions",
+    "question": "Who won the 2024 UEFA Champions League final at Wembley?",
+    "correctAnswer": "Real Madrid",
+    "incorrectAnswers": [
+      "Borussia Dortmund",
+      "Manchester City",
+      "Bayern Munich"
+    ],
+    "explanation": "Real Madrid beat Borussia Dortmund in the 2024 final.",
+    "keywords": [
+      "soccer",
+      "champions",
+      "real-madrid"
+    ],
+    "source": "https://www.uefa.com/uefachampionsleague/history/",
+    "seedId": "d2bbe686-e144-4816-b4b6-6dfd9ac1f730"
+  },
+  {
+    "category": "sports",
+    "navigationKeyword1": "soccer",
+    "navigationKeyword2": "champions",
+    "question": "Which club won the 1999 UEFA Champions League final with two late goals against Bayern Munich?",
+    "correctAnswer": "Manchester United",
+    "incorrectAnswers": [
+      "Real Madrid",
+      "Juventus",
+      "AC Milan"
+    ],
+    "explanation": "Manchester United scored twice late in Barcelona to win the 1999 final.",
+    "keywords": [
+      "soccer",
+      "champions",
+      "1999"
+    ],
+    "source": "https://www.uefa.com/uefachampionsleague/history/",
+    "seedId": "37971de1-02fc-4d09-89a1-b42512b6fbfa"
+  },
+  {
+    "category": "sports",
+    "navigationKeyword1": "soccer",
+    "navigationKeyword2": "champions",
+    "question": "Who won the 2010 FIFA World Cup?",
+    "correctAnswer": "Spain",
+    "incorrectAnswers": [
+      "Netherlands",
+      "Germany",
+      "Italy"
+    ],
+    "explanation": "Spain won the world title in South Africa.",
+    "keywords": [
+      "soccer",
+      "champions",
+      "world-title"
+    ],
+    "source": "https://www.fifa.com/tournaments/mens/worldcup/southafrica2010",
+    "seedId": "1558bdb1-36e5-4515-8228-474296f6bebb"
+  },
+  {
+    "category": "sports",
+    "navigationKeyword1": "soccer",
+    "navigationKeyword2": "champions",
+    "question": "Which nation won UEFA Euro 2016 on French soil?",
+    "correctAnswer": "Portugal",
+    "incorrectAnswers": [
+      "France",
+      "Germany",
+      "Spain"
+    ],
+    "explanation": "Portugal beat France in extra time in the final.",
+    "keywords": [
+      "soccer",
+      "champions",
+      "euro-2016"
+    ],
+    "source": "https://www.uefa.com/uefaeuro/history/",
+    "seedId": "424a1ad7-a6ef-4989-bebb-47dc758a2941"
+  },
+  {
+    "category": "sports",
+    "navigationKeyword1": "soccer",
+    "navigationKeyword2": "champions",
+    "question": "Which club won the 2009 UEFA Champions League final under Pep Guardiola?",
+    "correctAnswer": "Barcelona",
+    "incorrectAnswers": [
+      "Manchester United",
+      "Chelsea",
+      "Inter Milan"
+    ],
+    "explanation": "Barcelona beat Manchester United in the 2009 final.",
+    "keywords": [
+      "soccer",
+      "champions",
+      "barcelona"
+    ],
+    "source": "https://www.uefa.com/uefachampionsleague/history/",
+    "seedId": "2b13c44e-4a5f-4b91-b800-e534b48ce01f"
+  },
+  {
+    "category": "sports",
+    "navigationKeyword1": "soccer",
+    "navigationKeyword2": "champions",
+    "question": "Who won the 2014 FIFA World Cup final after extra time against Argentina?",
+    "correctAnswer": "Germany",
+    "incorrectAnswers": [
+      "Brazil",
+      "France",
+      "Spain"
+    ],
+    "explanation": "Germany beat Argentina in Rio to win the 2014 title.",
+    "keywords": [
+      "soccer",
+      "champions",
+      "germany"
+    ],
+    "source": "https://www.fifa.com/tournaments/mens/worldcup/brazil2014",
+    "seedId": "5d20b1d2-5835-4859-9022-beae3546da94"
+  },
+  {
+    "category": "sports",
+    "navigationKeyword1": "soccer",
+    "navigationKeyword2": "champions",
+    "question": "Which club won the 2012 UEFA Champions League final in Munich?",
+    "correctAnswer": "Chelsea",
+    "incorrectAnswers": [
+      "Bayern Munich",
+      "Barcelona",
+      "Real Madrid"
+    ],
+    "explanation": "Chelsea beat Bayern on penalties in the 2012 final.",
+    "keywords": [
+      "soccer",
+      "champions",
+      "chelsea"
+    ],
+    "source": "https://www.uefa.com/uefachampionsleague/history/",
+    "seedId": "a6201d63-eec5-47f2-bb97-dce5bd78a606"
+  },
+  {
+    "category": "sports",
+    "navigationKeyword1": "soccer",
+    "navigationKeyword2": "champions",
+    "question": "Which nation won the 2004 UEFA European Championship in a famous upset?",
+    "correctAnswer": "Greece",
+    "incorrectAnswers": [
+      "Portugal",
+      "France",
+      "Italy"
+    ],
+    "explanation": "Greece shocked the field and beat Portugal in the final.",
+    "keywords": [
+      "soccer",
+      "champions",
+      "greece"
+    ],
+    "source": "https://www.uefa.com/uefaeuro/history/",
+    "seedId": "0238b82c-b4a7-49eb-b964-80dbb3e0ac54"
+  },
+  {
+    "category": "sports",
+    "navigationKeyword1": "soccer",
+    "navigationKeyword2": "champions",
+    "question": "Which club won the 2005 UEFA Champions League final after coming back from 3-0 down?",
+    "correctAnswer": "Liverpool",
+    "incorrectAnswers": [
+      "AC Milan",
+      "Arsenal",
+      "Chelsea"
+    ],
+    "explanation": "Liverpool drew level with AC Milan and won on penalties in Istanbul.",
+    "keywords": [
+      "soccer",
+      "champions",
+      "istanbul"
+    ],
+    "source": "https://www.uefa.com/uefachampionsleague/history/",
+    "seedId": "5f36eed7-8452-44e1-b387-9e466aaf74bd"
+  }
+]

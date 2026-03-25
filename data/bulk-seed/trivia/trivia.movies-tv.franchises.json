@@ -1,0 +1,192 @@
+[
+  {
+    "category": "trivia",
+    "navigationKeyword1": "movies-tv",
+    "navigationKeyword2": "franchises",
+    "question": "The Marvel Cinematic Universe to serialized films produced chiefly by which studio?",
+    "correctAnswer": "Marvel Studios",
+    "incorrectAnswers": [
+      "Lucasfilm",
+      "Pixar",
+      "A24"
+    ],
+    "explanation": "The MCU is centered on Marvel Studios films.",
+    "keywords": [
+      "mcu",
+      "superheroes"
+    ],
+    "source": "https://www.britannica.com/topic/Marvel-Cinematic-Universe",
+    "seedId": "464b5a0f-0d5f-48e8-bc68-1fc8686ddc91"
+  },
+  {
+    "category": "trivia",
+    "navigationKeyword1": "movies-tv",
+    "navigationKeyword2": "franchises",
+    "question": "Star Wars with space opera created by whom?",
+    "correctAnswer": "George Lucas",
+    "incorrectAnswers": [
+      "Steven Spielberg",
+      "Ridley Scott",
+      "James Cameron"
+    ],
+    "explanation": "Lucas created Star Wars.",
+    "keywords": [
+      "star-wars",
+      "space-opera"
+    ],
+    "source": "https://www.britannica.com/topic/Star-Wars-film-series",
+    "seedId": "0617ba26-41b1-4b6d-b90a-799ef21222f2"
+  },
+  {
+    "category": "trivia",
+    "navigationKeyword1": "movies-tv",
+    "navigationKeyword2": "franchises",
+    "question": "Star Trek to exploratory starship stories often led by captains from which organization?",
+    "correctAnswer": "Starfleet",
+    "incorrectAnswers": [
+      "Galactic Empire",
+      "SPECTRE",
+      "Umbrella Corp"
+    ],
+    "explanation": "Star Trek follows Starfleet crews.",
+    "keywords": [
+      "star-trek",
+      "sci-fi"
+    ],
+    "source": "https://www.britannica.com/topic/Star-Trek-American-television-series",
+    "seedId": "d87606fd-4d5d-41d7-85fe-945cbb6ee1bb"
+  },
+  {
+    "category": "trivia",
+    "navigationKeyword1": "movies-tv",
+    "navigationKeyword2": "franchises",
+    "question": "James Bond films to spy adventures of agent designation what?",
+    "correctAnswer": "007",
+    "incorrectAnswers": [
+      "001",
+      "314",
+      "404"
+    ],
+    "explanation": "Bond is agent 007.",
+    "keywords": [
+      "bond",
+      "spy-fi"
+    ],
+    "source": "https://www.britannica.com/topic/James-Bond-film-series",
+    "seedId": "1f8b4dc5-491a-4a00-b4c4-b7247a54ebcd"
+  },
+  {
+    "category": "trivia",
+    "navigationKeyword1": "movies-tv",
+    "navigationKeyword2": "franchises",
+    "question": "Middle-earth films with adapting which author?",
+    "correctAnswer": "J.R.R. Tolkien",
+    "incorrectAnswers": [
+      "George R.R. Martin",
+      "Ursula K. Le Guin",
+      "Brandon Sanderson"
+    ],
+    "explanation": "Middle-earth adaptations come from Tolkien.",
+    "keywords": [
+      "tolkien",
+      "fantasy"
+    ],
+    "source": "https://www.britannica.com/topic/The-Lord-of-the-Rings-film-series",
+    "seedId": "624bb29a-89b9-4d50-ab22-893d2746d844"
+  },
+  {
+    "category": "trivia",
+    "navigationKeyword1": "movies-tv",
+    "navigationKeyword2": "franchises",
+    "question": "Fast & Furious to stories centered on what?",
+    "correctAnswer": "street racing and heists",
+    "incorrectAnswers": [
+      "ballet",
+      "cooking",
+      "chess"
+    ],
+    "explanation": "Fast & Furious focuses on cars, racing, and heists.",
+    "keywords": [
+      "fast-furious",
+      "action"
+    ],
+    "source": "https://www.britannica.com/topic/Fast-Furious-film-series",
+    "seedId": "b2954290-7908-4330-8623-73a6746aa9a3"
+  },
+  {
+    "category": "trivia",
+    "navigationKeyword1": "movies-tv",
+    "navigationKeyword2": "franchises",
+    "question": "Which spy-action lead star famously doing stunts is most closely associated with Mission: Impossible?",
+    "correctAnswer": "Tom Cruise",
+    "incorrectAnswers": [
+      "Tom Hanks",
+      "Tom Hardy",
+      "Tom Holland"
+    ],
+    "explanation": "Cruise leads Mission: Impossible.",
+    "keywords": [
+      "mission-impossible",
+      "action"
+    ],
+    "source": "https://www.britannica.com/topic/Mission-Impossible-film-series",
+    "seedId": "157846a6-5469-4b1c-89df-09d6c495f727"
+  },
+  {
+    "category": "trivia",
+    "navigationKeyword1": "movies-tv",
+    "navigationKeyword2": "franchises",
+    "question": "Jurassic Park with dinosaurs brought back via what biotechnology?",
+    "correctAnswer": "cloning from ancient DNA",
+    "incorrectAnswers": [
+      "alchemy",
+      "cold fusion",
+      "perpetual motion"
+    ],
+    "explanation": "Jurassic Park uses genetic cloning fiction.",
+    "keywords": [
+      "jurassic-park",
+      "sci-fi"
+    ],
+    "source": "https://www.britannica.com/topic/Jurassic-Park-film",
+    "seedId": "576ba44e-a82a-4f99-9c56-3321b589e04b"
+  },
+  {
+    "category": "trivia",
+    "navigationKeyword1": "movies-tv",
+    "navigationKeyword2": "franchises",
+    "question": "Which sport is most closely associated with Rocky films?",
+    "correctAnswer": "boxing",
+    "incorrectAnswers": [
+      "curling",
+      "rowing",
+      "fencing"
+    ],
+    "explanation": "Rocky is a boxing franchise.",
+    "keywords": [
+      "rocky",
+      "sports-film"
+    ],
+    "source": "https://www.britannica.com/topic/Rocky-film-series",
+    "seedId": "e7c8f6cb-aa68-49b1-aa95-9f25d536bc31"
+  },
+  {
+    "category": "trivia",
+    "navigationKeyword1": "movies-tv",
+    "navigationKeyword2": "franchises",
+    "question": "Which animation studio historically is most closely associated with Toy Story franchise?",
+    "correctAnswer": "Pixar Animation Studios",
+    "incorrectAnswers": [
+      "Studio Ghibli",
+      "DreamWorks Animation",
+      "Blue Sky"
+    ],
+    "explanation": "Toy Story is a Pixar franchise.",
+    "keywords": [
+      "toy-story",
+      "animation"
+    ],
+    "source": "https://www.britannica.com/topic/Toy-Story-film-series",
+    "seedId": "8627ad5a-7b5c-4bea-b903-79be07e5f4a4"
+  }
+]

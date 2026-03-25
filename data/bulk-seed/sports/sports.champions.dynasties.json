@@ -1,0 +1,202 @@
+[
+  {
+    "category": "sports",
+    "navigationKeyword1": "champions",
+    "navigationKeyword2": "dynasties",
+    "question": "Which NBA team won six titles in the 1990s behind Michael Jordan?",
+    "correctAnswer": "Chicago Bulls",
+    "incorrectAnswers": [
+      "Boston Celtics",
+      "San Antonio Spurs",
+      "Los Angeles Lakers"
+    ],
+    "explanation": "The Bulls built one of the most famous dynasties in basketball history.",
+    "keywords": [
+      "champions",
+      "dynasties",
+      "bulls"
+    ],
+    "source": "https://www.nba.com/history",
+    "seedId": "4acabfab-8d29-4dfb-89b3-cf2be8671ef0"
+  },
+  {
+    "category": "sports",
+    "navigationKeyword1": "champions",
+    "navigationKeyword2": "dynasties",
+    "question": "Which NFL team won four Super Bowls in six seasons during the 1970s?",
+    "correctAnswer": "Pittsburgh Steelers",
+    "incorrectAnswers": [
+      "Dallas Cowboys",
+      "Miami Dolphins",
+      "San Francisco 49ers"
+    ],
+    "explanation": "Pittsburgh's Steel Curtain era defined the decade.",
+    "keywords": [
+      "champions",
+      "dynasties",
+      "steelers"
+    ],
+    "source": "https://operations.nfl.com/learn-the-game/nfl-basics/",
+    "seedId": "b2626a87-fd2b-483c-8e52-c718553c4b1b"
+  },
+  {
+    "category": "sports",
+    "navigationKeyword1": "champions",
+    "navigationKeyword2": "dynasties",
+    "question": "Which MLB franchise won five straight World Series from 1949 to 1953?",
+    "correctAnswer": "New York Yankees",
+    "incorrectAnswers": [
+      "Brooklyn Dodgers",
+      "St. Louis Cardinals",
+      "Cleveland Indians"
+    ],
+    "explanation": "The Yankees dominated postwar baseball in the early 1950s.",
+    "keywords": [
+      "champions",
+      "dynasties",
+      "yankees"
+    ],
+    "source": "https://www.mlb.com/history",
+    "seedId": "89d4cac4-7099-4b20-8cb8-477aacef375a"
+  },
+  {
+    "category": "sports",
+    "navigationKeyword1": "champions",
+    "navigationKeyword2": "dynasties",
+    "question": "Which NHL team won four straight Stanley Cups from 1976 to 1979?",
+    "correctAnswer": "Montreal Canadiens",
+    "incorrectAnswers": [
+      "New York Islanders",
+      "Edmonton Oilers",
+      "Boston Bruins"
+    ],
+    "explanation": "Montreal's late-1970s run remains one of hockey's great dynasties.",
+    "keywords": [
+      "champions",
+      "dynasties",
+      "canadiens"
+    ],
+    "source": "https://www.nhl.com/info/stanley-cup-winners-complete-list",
+    "seedId": "d0ef0ed8-2bee-484f-9d92-e9745aab48b1"
+  },
+  {
+    "category": "sports",
+    "navigationKeyword1": "champions",
+    "navigationKeyword2": "dynasties",
+    "question": "Which WNBA team won four titles in seven seasons during the 2010s?",
+    "correctAnswer": "Minnesota Lynx",
+    "incorrectAnswers": [
+      "Seattle Storm",
+      "Phoenix Mercury",
+      "Las Vegas Aces"
+    ],
+    "explanation": "The Lynx anchored the decade with multiple championships.",
+    "keywords": [
+      "champions",
+      "dynasties",
+      "lynx"
+    ],
+    "source": "https://www.wnba.com/history",
+    "seedId": "3501a650-9619-4547-a125-261558095103"
+  },
+  {
+    "category": "sports",
+    "navigationKeyword1": "champions",
+    "navigationKeyword2": "dynasties",
+    "question": "Which college football program won national titles in 2009, 2011, and 2012 under Nick Saban?",
+    "correctAnswer": "Alabama",
+    "incorrectAnswers": [
+      "LSU",
+      "Clemson",
+      "Ohio State"
+    ],
+    "explanation": "Alabama's modern run under Saban became a defining dynasty.",
+    "keywords": [
+      "champions",
+      "dynasties",
+      "alabama"
+    ],
+    "source": "https://operations.nfl.com/learn-the-game/nfl-basics/",
+    "seedId": "3096a84a-f1a2-4657-8648-e84f4ed8c34a"
+  },
+  {
+    "category": "sports",
+    "navigationKeyword1": "champions",
+    "navigationKeyword2": "dynasties",
+    "question": "Which NBA franchise won three titles in four years from 2000 through 2002 with Shaq and Kobe?",
+    "correctAnswer": "Los Angeles Lakers",
+    "incorrectAnswers": [
+      "San Antonio Spurs",
+      "Detroit Pistons",
+      "Miami Heat"
+    ],
+    "explanation": "The Lakers three-peated at the start of the 2000s.",
+    "keywords": [
+      "champions",
+      "dynasties",
+      "lakers"
+    ],
+    "source": "https://www.nba.com/history",
+    "seedId": "8bbbade1-1f0f-4081-bf9f-d10e59b8f697"
+  },
+  {
+    "category": "sports",
+    "navigationKeyword1": "champions",
+    "navigationKeyword2": "dynasties",
+    "question": "Which NFL franchise won six Super Bowls with Tom Brady and Bill Belichick?",
+    "correctAnswer": "New England Patriots",
+    "incorrectAnswers": [
+      "Green Bay Packers",
+      "Denver Broncos",
+      "Kansas City Chiefs"
+    ],
+    "explanation": "The Brady-Belichick era produced one of football's great dynasties.",
+    "keywords": [
+      "champions",
+      "dynasties",
+      "patriots"
+    ],
+    "source": "https://operations.nfl.com/learn-the-game/nfl-basics/",
+    "seedId": "45f634f3-d587-4d74-88f2-f214dfd901d8"
+  },
+  {
+    "category": "sports",
+    "navigationKeyword1": "champions",
+    "navigationKeyword2": "dynasties",
+    "question": "Which NHL team won four consecutive Stanley Cups from 1980 to 1983?",
+    "correctAnswer": "New York Islanders",
+    "incorrectAnswers": [
+      "Edmonton Oilers",
+      "Montreal Canadiens",
+      "Philadelphia Flyers"
+    ],
+    "explanation": "The Islanders ruled the NHL in the early 1980s.",
+    "keywords": [
+      "champions",
+      "dynasties",
+      "islanders"
+    ],
+    "source": "https://www.nhl.com/info/stanley-cup-winners-complete-list",
+    "seedId": "77a29ffd-5895-4226-ae5c-b3dd2e478012"
+  },
+  {
+    "category": "sports",
+    "navigationKeyword1": "champions",
+    "navigationKeyword2": "dynasties",
+    "question": "Which NBA team reached five straight Finals from 2015 through 2019?",
+    "correctAnswer": "Golden State Warriors",
+    "incorrectAnswers": [
+      "Cleveland Cavaliers",
+      "Miami Heat",
+      "Boston Celtics"
+    ],
+    "explanation": "Golden State's run defined the late 2010s in the NBA.",
+    "keywords": [
+      "champions",
+      "dynasties",
+      "warriors"
+    ],
+    "source": "https://www.nba.com/history",
+    "seedId": "973b0a77-8ba8-45b3-b973-e5e207826615"
+  }
+]

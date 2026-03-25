@@ -48,7 +48,7 @@
     "incorrectAnswers": [
       "Create an HTTPS endpoint in Amazon API Gateway. Configure the API Gateway endpoint to invoke an AWS Lambda function to process the messages and save the results to an Amazon DynamoDB table.",
       "Use Amazon Route 53 to direct incoming sensor messages to an AWS Lambda function. Configure the Lambda function to process the messages and save the results to an Amazon DynamoDB table.",
-      "Create a gateway VPC endpoint for Amazon S3. Configure a Site-to-Site VPN connection from the facility network to the VPC so that sensor data can be written directly to an S3 bucket by way of the VPC endpoint. --- Page 117 ---"
+      "Create a gateway VPC endpoint for Amazon S3. Configure a Site-to-Site VPN connection from the facility network to the VPC so that sensor data can be written directly to an S3 bucket by way of the VPC endpoint."
     ],
     "explanation": "SAA-C03 practice scenario (extract question #323). Correct choice: A.",
     "keywords": [
@@ -92,7 +92,7 @@
     "incorrectAnswers": [
       "Update the S3 ACL to allow the application to access the protected content.",
       "Redeploy the application to Amazon S3 to prevent eventually consistent reads in the S3 bucket from affecting the ability of users to access the protected content.",
-      "Update the Amazon Cognito pool to use custom attribute mappings within the identity pool and grant users the proper permissions to access the protected content. --- Page 118 ---"
+      "Update the Amazon Cognito pool to use custom attribute mappings within the identity pool and grant users the proper permissions to access the protected content."
     ],
     "explanation": "SAA-C03 practice scenario (extract question #325). Correct choice: A.",
     "keywords": [
@@ -115,7 +115,7 @@
     "incorrectAnswers": [
       "Set up an AWS WAF web ACL. Create a custom set of rules that lter traffic requests based on source and destination IP address range sets.",
       "Implement strict inbound security group rules. Configure an outbound rule that allows traffic only to the authorized software repositories on the internet by specifying the URLs.",
-      "Configure an Application Load Balancer (ALB) in front of the EC2 instances. Direct all outbound traffic to the ALB. Use a URL-based rule listener in the ALB’s target group for outbound access to the internet. --- Page 119 ---"
+      "Configure an Application Load Balancer (ALB) in front of the EC2 instances. Direct all outbound traffic to the ALB. Use a URL-based rule listener in the ALB’s target group for outbound access to the internet."
     ],
     "explanation": "SAA-C03 practice scenario (extract question #327). Correct choice: A.",
     "keywords": [
@@ -182,7 +182,7 @@
     "incorrectAnswers": [
       "Create an encryption key. Store the key in AWS Secrets Manager. Use the key to encrypt the DB instances.",
       "Generate a certicate in AWS Certicate Manager (ACM). Enable SSL/TLS on the DB instances by using the certicate.",
-      "Generate a certicate in AWS Identity and Access Management (IAM). Enable SSL/TLS on the DB instances by using the certicate. --- Page 120 ---"
+      "Generate a certicate in AWS Identity and Access Management (IAM). Enable SSL/TLS on the DB instances by using the certicate."
     ],
     "explanation": "SAA-C03 practice scenario (extract question #330). Correct choice: A.",
     "keywords": [
@@ -246,7 +246,7 @@
     "incorrectAnswers": [
       "Configure an EC2 Auto Scaling simple scaling policy based on CPU utilization.",
       "Configure an EC2 Auto Scaling scheduled scaling policy based on the monthly schedule.",
-      "Configure Amazon ElastiCache to remove some of the workload from the EC2 instances. --- Page 121 ---"
+      "Configure Amazon ElastiCache to remove some of the workload from the EC2 instances."
     ],
     "explanation": "SAA-C03 practice scenario (extract question #333). Correct choice: A.",
     "keywords": [
@@ -290,7 +290,7 @@
     "incorrectAnswers": [
       "Enable Amazon Elastic Block Store (Amazon EBS) fast snapshot restore on a snapshot. Provision an AMI by using the snapshot. Replace the AMI in the Auto Scaling group with the new AMI.",
       "Enable AMI creation and dene lifecycle rules in Amazon Data Lifecycle Manager (Amazon DLM). Create an AWS Lambda function that modies the AMI in the Auto Scaling group.",
-      "Use Amazon EventBridge to invoke AWS Backup lifecycle policies that provision AMIs. Configure Auto Scaling group capacity limits as an event source in EventBridge. --- Page 122 ---"
+      "Use Amazon EventBridge to invoke AWS Backup lifecycle policies that provision AMIs. Configure Auto Scaling group capacity limits as an event source in EventBridge."
     ],
     "explanation": "SAA-C03 practice scenario (extract question #335). Correct choice: A.",
     "keywords": [
@@ -339,7 +339,7 @@
     "incorrectAnswers": [
       "Deploy an Amazon ElastiCache for Redis cluster in front of the database. Modify the application to check the cache before the application queries the database. Replace the stored procedures with AWS Lambda functions.",
       "Migrate the database to a MySQL database that runs on Amazon EC2 instances. Choose large, compute optimized EC2 instances for all replica nodes. Maintain the stored procedures on the EC2 instances.",
-      "Migrate the database to Amazon DynamoDB. Provision a large number of read capacity units (RCUs) to support the required throughput, and congure on-demand capacity scaling. Replace the stored procedures with DynamoDB streams. --- Page 123 ---"
+      "Migrate the database to Amazon DynamoDB. Provision a large number of read capacity units (RCUs) to support the required throughput, and congure on-demand capacity scaling. Replace the stored procedures with DynamoDB streams."
     ],
     "explanation": "SAA-C03 practice scenario (extract question #337). Correct choice: A.",
     "keywords": [
@@ -409,7 +409,7 @@
     "incorrectAnswers": [
       "Create an ALB listener rule to reply to SQL injections with a xed response.",
       "Subscribe to AWS Shield Advanced to block all SQL injection attempts automatically.",
-      "Set up Amazon Inspector to block all SQL injection attempts automatically. --- Page 124 ---"
+      "Set up Amazon Inspector to block all SQL injection attempts automatically."
     ],
     "explanation": "SAA-C03 practice scenario (extract question #340). Correct choice: A.",
     "keywords": [

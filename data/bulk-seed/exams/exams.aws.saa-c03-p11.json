@@ -27,8 +27,8 @@
     "correctAnswer": "Create an AWS Lambda function to query AWS CloudTrail logs and to send an alert when a CreateImage API call is detected.",
     "incorrectAnswers": [
       "Configure AWS CloudTrail with an Amazon Simple Notification Service (Amazon SNS) notication that occurs when updated logs are sent to Amazon S3. Use Amazon Athena to create a new table and to query on CreateImage when an API call is detected.",
-      "Create an Amazon EventBridge (Amazon CloudWatch Events) rule for the CreateImage API call. Configure the target as an Amazon Simple Notification Service (Amazon SNS) topic to send an alert when a CreateImage API call is detected.",
-      "Configure an Amazon Simple Queue Service (Amazon SQS) FIFO queue as a target for AWS CloudTrail logs. Create an AWS Lambda function to send an alert to an Amazon Simple Notification Service (Amazon SNS) topic when a CreateImage API call is detected. --- Page 75 ---"
+      "Create an Amazon EventBridge (note: outdated alias \"Amazon CloudWatch Events\"; same service, now EventBridge) rule for the CreateImage API call. Configure the target as an Amazon Simple Notification Service (Amazon SNS) topic to send an alert when a CreateImage API call is detected.",
+      "Configure an Amazon Simple Queue Service (Amazon SQS) FIFO queue as a target for AWS CloudTrail logs. Create an AWS Lambda function to send an alert to an Amazon Simple Notification Service (Amazon SNS) topic when a CreateImage API call is detected."
     ],
     "explanation": "SAA-C03 practice scenario (extract question #206). Correct choice: A.",
     "keywords": [
@@ -100,7 +100,7 @@
     "incorrectAnswers": [
       "Use session anity (sticky sessions) of the ALB to manage session data.",
       "Use Session Manager from AWS Systems Manager to manage the session.",
-      "Use the GetSessionToken API operation in AWS Security Token Service (AWS STS) to manage the session. --- Page 76 ---"
+      "Use the GetSessionToken API operation in AWS Security Token Service (AWS STS) to manage the session."
     ],
     "explanation": "SAA-C03 practice scenario (extract question #209). Correct choice: A.",
     "keywords": [
@@ -147,7 +147,7 @@
     "incorrectAnswers": [
       "Use the AWS CLI to query each service across all Regions to report the tagged components.",
       "Run a query in Amazon CloudWatch Logs Insights to report on the components with the application tag.",
-      "Run a query with the AWS Resource Groups Tag Editor to report on the resources globally with the application tag. --- Page 77 ---"
+      "Run a query with the AWS Resource Groups Tag Editor to report on the resources globally with the application tag."
     ],
     "explanation": "SAA-C03 practice scenario (extract question #211). Correct choice: A.",
     "keywords": [
@@ -215,7 +215,7 @@
     "incorrectAnswers": [
       "Create an AWS Glue crawler to discover the data. Create an AWS Glue extraffict, transform, and load (ETL) job to transform the data. Specify the transformed data bucket in the output step.",
       "Use AWS Batch to create a job denition with Bash syntax to transform the data and output the data to the transformed data bucket. Use the job denition to submit a job. Specify an array job as the job type.",
-      "Create an AWS Lambda function to transform the data and output the data to the transformed data bucket. Configure an event notication for the S3 bucket. Specify the Lambda function as the destination for the event notication. --- Page 78 ---"
+      "Create an AWS Lambda function to transform the data and output the data to the transformed data bucket. Configure an event notication for the S3 bucket. Specify the Lambda function as the destination for the event notication."
     ],
     "explanation": "SAA-C03 practice scenario (extract question #214). Correct choice: A.",
     "keywords": [
@@ -259,7 +259,7 @@
     "incorrectAnswers": [
       "Turn on the default encryption settings for the S3 bucket. Use the S3 Inventory feature to create a .csv le that lists the unencrypted objects. Run an S3 Batch Operations job that uses the copy command to encrypt those objects.",
       "Create a new encryption key by using AWS Key Management Service (AWS KMS). Change the settings on the S3 bucket to use server-side encryption with AWS KMS managed encryption keys (SSE-KMS). Turn on versioning for the S3 bucket.",
-      "Navigate to Amazon S3 in the AWS Management Console. Browse the S3 bucket’s objects. Sort by the encryption eld. Select each unencrypted object. Use the Modify button to apply default encryption settings to every unencrypted object in the S3 bucket. --- Page 79 ---"
+      "Navigate to Amazon S3 in the AWS Management Console. Browse the S3 bucket’s objects. Sort by the encryption eld. Select each unencrypted object. Use the Modify button to apply default encryption settings to every unencrypted object in the S3 bucket."
     ],
     "explanation": "SAA-C03 practice scenario (extract question #216). Correct choice: A.",
     "keywords": [
@@ -351,7 +351,7 @@
     "incorrectAnswers": [
       "Amazon Elastic File System (Amazon EFS)",
       "Amazon EC2 instance store",
-      "Amazon S3 --- Page 81 ---"
+      "Amazon S3"
     ],
     "explanation": "SAA-C03 practice scenario (extract question #221). Correct choice: A.",
     "keywords": [
@@ -391,7 +391,7 @@
     "question": "A media company collects and analyzes user activity data on premises. The company wants to migrate this capability to AWS. The user activity\ndata store will continue to grow and will be petabytes in size. The company needs to build a highly available data ingestion solution that facilitates\non-demand analytics of existing data and new data with SQL.\nWhich solution will meet these requirements with the LEAST operational overhead?",
     "correctAnswer": "Send activity data to an Amazon Kinesis data stream. Configure the stream to deliver the data to an Amazon S3 bucket.",
     "incorrectAnswers": [
-      "Send activity data to an Amazon Kinesis Data Firehose delivery stream. Configure the stream to deliver the data to an Amazon Redshift cluster.",
+      "Send activity data to an Amazon Kinesis Data Firehose (note: outdated; now Amazon Data Firehose) delivery stream. Configure the stream to deliver the data to an Amazon Redshift cluster.",
       "Place activity data in an Amazon S3 bucket. Configure Amazon S3 to run an AWS Lambda function on the data as the data arrives in the S3 bucket.",
       "Create an ingestion service on Amazon EC2 instances that are spread across multiple Availability Zones. Configure the service to forward data to an Amazon RDS Multi-AZ database."
     ],
@@ -415,7 +415,7 @@
     "incorrectAnswers": [
       "Configure the S3 Lifecycle policy to delete previous versions as well as current versions.",
       "Create an AWS Lambda function to enumerate and delete objects from Amazon S3 that are older than 3 years.",
-      "Configure the parent account as the owner of all objects that are delivered to the S3 bucket. --- Page 83 ---"
+      "Configure the parent account as the owner of all objects that are delivered to the S3 bucket."
     ],
     "explanation": "SAA-C03 practice scenario (extract question #227). Correct choice: A.",
     "keywords": [

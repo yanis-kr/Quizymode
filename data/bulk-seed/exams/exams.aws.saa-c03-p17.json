@@ -8,7 +8,7 @@
     "incorrectAnswers": [
       "Create a scheduled scaling policy for the Auto Scaling group. Set the appropriate desired capacity, minimum capacity, and maximum capacity. Set the recurrence to weekly. Set the start time to 30 minutes before the batch jobs run.",
       "Create a predictive scaling policy for the Auto Scaling group. Configure the policy to scale based on forecast. Set the scaling metric to CPU utilization. Set the target value for the metric to 60%. In the policy, set the instances to pre-launch 30 minutes before the jobs run.",
-      "Create an Amazon EventBridge event to invoke an AWS Lambda function when the CPU utilization metric value for the Auto Scaling group reaches 60%. Configure the Lambda function to increase the Auto Scaling group’s desired capacity and maximum capacity by 20%. --- Page 125 ---"
+      "Create an Amazon EventBridge event to invoke an AWS Lambda function when the CPU utilization metric value for the Auto Scaling group reaches 60%. Configure the Lambda function to increase the Auto Scaling group’s desired capacity and maximum capacity by 20%."
     ],
     "explanation": "SAA-C03 practice scenario (extract question #342). Correct choice: A.",
     "keywords": [
@@ -74,7 +74,7 @@
     "incorrectAnswers": [
       "Use AWS Directory Service for Microsoft Active Directory for authentication. Use AWS Lambda for authorization. Use an Application Load Balancer to serve the web application globally.",
       "Use Amazon Cognito for authentication. Use AWS Lambda for authorization. Use Amazon S3 Transfer Acceleration to serve the web application globally.",
-      "Use AWS Directory Service for Microsoft Active Directory for authentication. Use Lambda@Edge for authorization. Use AWS Elastic Beanstalk to serve the web application globally. --- Page 126 ---"
+      "Use AWS Directory Service for Microsoft Active Directory for authentication. Use Lambda@Edge for authorization. Use AWS Elastic Beanstalk to serve the web application globally."
     ],
     "explanation": "SAA-C03 practice scenario (extract question #345). Correct choice: A.",
     "keywords": [
@@ -138,7 +138,7 @@
     "incorrectAnswers": [
       "Use provisioned mode. Specify the read capacity units (RCUs) and write capacity units (WCUs).",
       "Use on-demand mode. Set the read capacity units (RCUs) and write capacity units (WCUs) high enough to accommodate changes in the workload.",
-      "Use on-demand mode. Specify the read capacity units (RCUs) and write capacity units (WCUs) with reserved capacity. --- Page 127 ---"
+      "Use on-demand mode. Specify the read capacity units (RCUs) and write capacity units (WCUs) with reserved capacity."
     ],
     "explanation": "SAA-C03 practice scenario (extract question #348). Correct choice: A.",
     "keywords": [
@@ -226,7 +226,7 @@
     "incorrectAnswers": [
       "Use a Multi-AZ deployment of an Amazon RDS for MySQL DB instance with a General Purpose SSD (gp2) EBS volume.",
       "Use Amazon S3 Intelligent-Tiering access tiers.",
-      "Use two large EC2 instances to host the database in active-passive mode. --- Page 129 ---"
+      "Use two large EC2 instances to host the database in active-passive mode."
     ],
     "explanation": "SAA-C03 practice scenario (extract question #353). Correct choice: A.",
     "keywords": [
@@ -297,7 +297,7 @@
     "incorrectAnswers": [
       "Move the data objects to S3 Standard-Infrequent Access (S3 Standard-IA) after 30 days.",
       "Move the data objects to S3 One Zone-Infrequent Access (S3 One Zone-IA) after 30 days.",
-      "Move the data objects to S3 One Zone-Infrequent Access (S3 One Zone-IA) immediately. --- Page 130 ---"
+      "Move the data objects to S3 One Zone-Infrequent Access (S3 One Zone-IA) immediately."
     ],
     "explanation": "SAA-C03 practice scenario (extract question #356). Correct choice: A.",
     "keywords": [
@@ -318,7 +318,7 @@
     "incorrectAnswers": [
       "Create a CloudFront origin request policy. Use the policy to automatically resize images and to serve the appropriate format based on the User-Agent HTTP header in the request.",
       "Use a Lambda@Edge function with an external image management library. Associate the Lambda@Edge function with the CloudFront behaviors that serve the images.",
-      "Create a CloudFront response headers policy. Use the policy to automatically resize images and to serve the appropriate format based on the User-Agent HTTP header in the request. --- Page 131 ---"
+      "Create a CloudFront response headers policy. Use the policy to automatically resize images and to serve the appropriate format based on the User-Agent HTTP header in the request."
     ],
     "explanation": "SAA-C03 practice scenario (extract question #358). Correct choice: A.",
     "keywords": [
@@ -386,7 +386,7 @@
     "incorrectAnswers": [
       "Store the data directly in an Amazon S3 bucket. Implement an S3 Lifecycle policy to move older data to S3 Glacier Deep Archive for long- term storage. Run one-time queries on the data in Amazon S3 by using Amazon Athena.",
       "Use Amazon DynamoDB with DynamoDB Accelerator (DAX) for data that is frequently accessed. Export the data to an Amazon S3 bucket by using DynamoDB table export. Run one-time queries on the data in Amazon S3 by using Amazon Athena.",
-      "Use Amazon DynamoDB for data that is frequently accessed. Turn on streaming to Amazon Kinesis Data Streams. Use Amazon Kinesis Data Firehose to read the data from Kinesis Data Streams. Store the records in an Amazon S3 bucket. --- Page 132 ---"
+      "Use Amazon DynamoDB for data that is frequently accessed. Turn on streaming to Amazon Kinesis Data Streams. Use Amazon Kinesis Data Firehose (note: outdated; now Amazon Data Firehose) to read the data from Kinesis Data Streams. Store the records in an Amazon S3 bucket."
     ],
     "explanation": "SAA-C03 practice scenario (extract question #361). Correct choice: A.",
     "keywords": [

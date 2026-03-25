@@ -8,7 +8,7 @@
     "incorrectAnswers": [
       "Order an AWS Snowmobile vehicle. Use AWS Database Migration Service (AWS DMS) with AWS Schema Conversion Tool (AWS SCT) to migrate the database with ongoing changes. Send the Snowmobile vehicle back to AWS to nish the migration and continue the ongoing replication.",
       "Order an AWS Snowball Edge Compute Optimized with GPU device. Use AWS Database Migration Service (AWS DMS) with AWS Schema Conversion Tool (AWS SCT) to migrate the database with ongoing changes. Send the Snowball device to AWS to nish the migration and continue the ongoing replication",
-      "Order a 1 GB dedicated AWS Direct Connect connection to establish a connection with the data center. Use AWS Database Migration Service (AWS DMS) with AWS Schema Conversion Tool (AWS SCT) to migrate the database with replication of ongoing changes. --- Page 161 ---"
+      "Order a 1 GB dedicated AWS Direct Connect connection to establish a connection with the data center. Use AWS Database Migration Service (AWS DMS) with AWS Schema Conversion Tool (AWS SCT) to migrate the database with replication of ongoing changes."
     ],
     "explanation": "SAA-C03 practice scenario (extract question #435). Correct choice: A.",
     "keywords": [
@@ -77,7 +77,7 @@
     "incorrectAnswers": [
       "Export the database contents to text les. Store the les in an Amazon S3 bucket. Create a new IAM user for the auditor. Grant the user access to the S3 bucket.",
       "Copy a snapshot of the database to an Amazon S3 bucket. Create an IAM user. Share the user's keys with the auditor to grant access to the object in the S3 bucket.",
-      "Create an encrypted snapshot of the database. Share the snapshot with the auditor. Allow access to the AWS Key Management Service (AWS KMS) encryption key. --- Page 162 ---"
+      "Create an encrypted snapshot of the database. Share the snapshot with the auditor. Allow access to the AWS Key Management Service (AWS KMS) encryption key."
     ],
     "explanation": "SAA-C03 practice scenario (extract question #438). Correct choice: A.",
     "keywords": [
@@ -122,7 +122,7 @@
     "incorrectAnswers": [
       "Update the Auto Scaling group to scale by launching Spot Instances instead of On-Demand Instances.",
       "Create an Amazon CloudFront distribution to host the static web contents from an Amazon S3 bucket.",
-      "Create an AWS Lambda function behind an Amazon API Gateway API to host the static website contents. --- Page 163 ---"
+      "Create an AWS Lambda function behind an Amazon API Gateway API to host the static website contents."
     ],
     "explanation": "SAA-C03 practice scenario (extract question #441). Correct choice: A.",
     "keywords": [
@@ -185,7 +185,7 @@
     "incorrectAnswers": [
       "Update the DB instance to be Multi-AZ, and enable deletion protection. Place the EC2 instances behind an Application Load Balancer, and run them in an EC2 Auto Scaling group across multiple Availability Zones.",
       "Create an additional DB instance along with an Amazon API Gateway and an AWS Lambda function. Configure the application to invoke the Lambda function through API Gateway. Have the Lambda function write the data to the two DB instances.",
-      "Place the EC2 instances in an EC2 Auto Scaling group that has multiple subnets located in multiple Availability Zones. Use Spot Instances instead of On-Demand Instances. Set up Amazon CloudWatch alarms to monitor the health of the instances Update the DB instance to be Multi-AZ, and enable deletion protection. --- Page 164 ---"
+      "Place the EC2 instances in an EC2 Auto Scaling group that has multiple subnets located in multiple Availability Zones. Use Spot Instances instead of On-Demand Instances. Set up Amazon CloudWatch alarms to monitor the health of the instances Update the DB instance to be Multi-AZ, and enable deletion protection."
     ],
     "explanation": "SAA-C03 practice scenario (extract question #444). Correct choice: A.",
     "keywords": [
@@ -251,7 +251,7 @@
     "incorrectAnswers": [
       "Create an Amazon CloudFront distribution with an origin for each Region. Use CloudFront health checks to route traffic.",
       "Create a transit gateway. Attach the transit gateway to the API Gateway endpoint in each Region. Configure the transit gateway to route requests.",
-      "Create an Application Load Balancer in the primary Region. Set the target group to point to the API Gateway endpoint hostnames in each Region. --- Page 165 ---"
+      "Create an Application Load Balancer in the primary Region. Set the target group to point to the API Gateway endpoint hostnames in each Region."
     ],
     "explanation": "SAA-C03 practice scenario (extract question #447). Correct choice: A.",
     "keywords": [
@@ -338,7 +338,7 @@
     "incorrectAnswers": [
       "Use Amazon Data Lifecycle Manager to create the required automated snapshot policy.",
       "Use Amazon S3 File Gateway to create the backup. Configure the appropriate S3 Lifecycle management.",
-      "Use AWS Backup to create a backup vault that has a vault lock in compliance mode. Create the required backup plan. --- Page 167 ---"
+      "Use AWS Backup to create a backup vault that has a vault lock in compliance mode. Create the required backup plan."
     ],
     "explanation": "SAA-C03 practice scenario (extract question #453). Correct choice: A.",
     "keywords": [
@@ -381,7 +381,7 @@
     "incorrectAnswers": [
       "Create point-in-time Amazon Elastic Block Store (Amazon EBS) snapshots of the EC2 instances. Copy the snapshots to the second Region periodically.",
       "Create a backup plan by using AWS Backup. Configure cross-Region backup to the second Region for the EC2 instances.",
-      "Deploy a similar number of EC2 instances in the second Region. Use AWS DataSync to transfer the data from the source Region to the second Region. --- Page 168 ---"
+      "Deploy a similar number of EC2 instances in the second Region. Use AWS DataSync to transfer the data from the source Region to the second Region."
     ],
     "explanation": "SAA-C03 practice scenario (extract question #456). Correct choice: A.",
     "keywords": [
@@ -423,7 +423,7 @@
     "incorrectAnswers": [
       "From the Organizations management account billing console, activate an AWS-dened cost allocation tag named department. Create one cost report in Cost Explorer grouping by tag name, and lter by EC2.",
       "From the Organizations member account billing console, activate a user-dened cost allocation tag named department. Create one cost report in Cost Explorer grouping by the tag name, and lter by EC2.",
-      "From the Organizations member account billing console, activate an AWS-dened cost allocation tag named department. Create one cost report in Cost Explorer grouping by tag name, and lter by EC2. --- Page 169 ---"
+      "From the Organizations member account billing console, activate an AWS-dened cost allocation tag named department. Create one cost report in Cost Explorer grouping by tag name, and lter by EC2."
     ],
     "explanation": "SAA-C03 practice scenario (extract question #459). Correct choice: A.",
     "keywords": [

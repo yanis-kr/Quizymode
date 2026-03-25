@@ -1,0 +1,202 @@
+[
+  {
+    "category": "sports",
+    "navigationKeyword1": "football",
+    "navigationKeyword2": "champions",
+    "question": "Who won Super Bowl LVIII in February 2024?",
+    "correctAnswer": "Kansas City Chiefs",
+    "incorrectAnswers": [
+      "San Francisco 49ers",
+      "Philadelphia Eagles",
+      "Baltimore Ravens"
+    ],
+    "explanation": "Kansas City beat San Francisco in overtime in Super Bowl LVIII.",
+    "keywords": [
+      "football",
+      "champions",
+      "chiefs"
+    ],
+    "source": "https://operations.nfl.com/learn-the-game/nfl-basics/",
+    "seedId": "e9df97ae-91a8-487f-a3b0-2c675740276e"
+  },
+  {
+    "category": "sports",
+    "navigationKeyword1": "football",
+    "navigationKeyword2": "champions",
+    "question": "Which team won Super Bowl LVII after the 2022 season?",
+    "correctAnswer": "Kansas City Chiefs",
+    "incorrectAnswers": [
+      "Philadelphia Eagles",
+      "Cincinnati Bengals",
+      "Buffalo Bills"
+    ],
+    "explanation": "Kansas City beat Philadelphia in Super Bowl LVII.",
+    "keywords": [
+      "football",
+      "champions",
+      "super-bowl"
+    ],
+    "source": "https://operations.nfl.com/learn-the-game/nfl-basics/",
+    "seedId": "faadb9d7-0e0e-4805-93f7-ff0a7865336c"
+  },
+  {
+    "category": "sports",
+    "navigationKeyword1": "football",
+    "navigationKeyword2": "champions",
+    "question": "Which franchise won six Super Bowls in the 1970s, 2000s, and 2020s?",
+    "correctAnswer": "Pittsburgh Steelers",
+    "incorrectAnswers": [
+      "Dallas Cowboys",
+      "San Francisco 49ers",
+      "New England Patriots"
+    ],
+    "explanation": "Pittsburgh was the first franchise to reach six Super Bowl wins.",
+    "keywords": [
+      "football",
+      "champions",
+      "steelers"
+    ],
+    "source": "https://operations.nfl.com/learn-the-game/nfl-basics/",
+    "seedId": "81a0d725-b8ff-4254-b334-26784f01f1d9"
+  },
+  {
+    "category": "sports",
+    "navigationKeyword1": "football",
+    "navigationKeyword2": "champions",
+    "question": "Which team completed the only perfect season in Super Bowl era history in 1972?",
+    "correctAnswer": "Miami Dolphins",
+    "incorrectAnswers": [
+      "Chicago Bears",
+      "San Francisco 49ers",
+      "Dallas Cowboys"
+    ],
+    "explanation": "Miami finished 17-0 in the 1972 season including the playoffs.",
+    "keywords": [
+      "football",
+      "champions",
+      "perfect-season"
+    ],
+    "source": "https://operations.nfl.com/learn-the-game/nfl-basics/",
+    "seedId": "583901b8-33b4-401c-9c63-4677736d8f7b"
+  },
+  {
+    "category": "sports",
+    "navigationKeyword1": "football",
+    "navigationKeyword2": "champions",
+    "question": "Which college team won the 2023 season national championship in January 2024?",
+    "correctAnswer": "Michigan",
+    "incorrectAnswers": [
+      "Washington",
+      "Georgia",
+      "Texas"
+    ],
+    "explanation": "Michigan beat Washington for the CFP title.",
+    "keywords": [
+      "football",
+      "champions",
+      "college"
+    ],
+    "source": "https://www.ncaa.com/sports/football/fbs",
+    "seedId": "fd0eca36-845c-43a7-9b7f-28c3d1653396"
+  },
+  {
+    "category": "sports",
+    "navigationKeyword1": "football",
+    "navigationKeyword2": "champions",
+    "question": "Which school won back-to-back CFP national titles for the 2021 and 2022 seasons?",
+    "correctAnswer": "Georgia",
+    "incorrectAnswers": [
+      "Alabama",
+      "Michigan",
+      "Clemson"
+    ],
+    "explanation": "Georgia repeated as national champion under Kirby Smart.",
+    "keywords": [
+      "football",
+      "champions",
+      "georgia"
+    ],
+    "source": "https://www.ncaa.com/sports/football/fbs",
+    "seedId": "9ea2f52a-f8eb-4ce6-9244-82b19dc3f869"
+  },
+  {
+    "category": "sports",
+    "navigationKeyword1": "football",
+    "navigationKeyword2": "champions",
+    "question": "Which NFL team won Super Bowl LI after erasing a 28-3 deficit?",
+    "correctAnswer": "New England Patriots",
+    "incorrectAnswers": [
+      "Atlanta Falcons",
+      "Seattle Seahawks",
+      "Denver Broncos"
+    ],
+    "explanation": "New England rallied from 28-3 to win in overtime.",
+    "keywords": [
+      "football",
+      "champions",
+      "patriots"
+    ],
+    "source": "https://operations.nfl.com/learn-the-game/nfl-basics/",
+    "seedId": "4919149a-9b35-488a-b20d-0c2e794c2476"
+  },
+  {
+    "category": "sports",
+    "navigationKeyword1": "football",
+    "navigationKeyword2": "champions",
+    "question": "Which franchise won the first two Super Bowls?",
+    "correctAnswer": "Green Bay Packers",
+    "incorrectAnswers": [
+      "Kansas City Chiefs",
+      "Dallas Cowboys",
+      "New York Jets"
+    ],
+    "explanation": "Green Bay won Super Bowls I and II under Vince Lombardi.",
+    "keywords": [
+      "football",
+      "champions",
+      "packers"
+    ],
+    "source": "https://operations.nfl.com/learn-the-game/nfl-basics/",
+    "seedId": "5b03a9fc-1522-4898-9da2-d5bc8b52a525"
+  },
+  {
+    "category": "sports",
+    "navigationKeyword1": "football",
+    "navigationKeyword2": "champions",
+    "question": "Which team won the College Football Playoff title for the 2019 season behind Joe Burrow?",
+    "correctAnswer": "LSU",
+    "incorrectAnswers": [
+      "Clemson",
+      "Alabama",
+      "Ohio State"
+    ],
+    "explanation": "LSU finished 15-0 and beat Clemson in the title game.",
+    "keywords": [
+      "football",
+      "champions",
+      "lsu"
+    ],
+    "source": "https://www.ncaa.com/sports/football/fbs",
+    "seedId": "f642be05-7946-4489-b12d-1ac8d7d2f5aa"
+  },
+  {
+    "category": "sports",
+    "navigationKeyword1": "football",
+    "navigationKeyword2": "champions",
+    "question": "Which NFL franchise won Super Bowl LVI on its home field?",
+    "correctAnswer": "Los Angeles Rams",
+    "incorrectAnswers": [
+      "Cincinnati Bengals",
+      "Kansas City Chiefs",
+      "San Francisco 49ers"
+    ],
+    "explanation": "The Rams beat Cincinnati in Super Bowl LVI at SoFi Stadium.",
+    "keywords": [
+      "football",
+      "champions",
+      "rams"
+    ],
+    "source": "https://operations.nfl.com/learn-the-game/nfl-basics/",
+    "seedId": "783f2584-303f-4109-aaaf-33d40eadccd2"
+  }
+]

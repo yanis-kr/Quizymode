@@ -1,0 +1,192 @@
+[
+  {
+    "category": "trivia",
+    "navigationKeyword1": "famous-people",
+    "navigationKeyword2": "inventors",
+    "question": "Nobel\u2019s Marie Curie facts note she shared the 1903 Physics Prize for work on radiation phenomena following whose discovery?",
+    "correctAnswer": "Henri Becquerel",
+    "incorrectAnswers": [
+      "Isaac Newton",
+      "Galileo Galilei",
+      "James Clerk Maxwell"
+    ],
+    "explanation": "Marie Curie's 1903 Nobel Prize recognized work related to Becquerel's discovery of radiation.",
+    "keywords": [
+      "physics",
+      "nobel"
+    ],
+    "source": "https://www.nobelprize.org/prizes/physics/1903/marie-curie/facts/",
+    "seedId": "b758d84b-9783-42e7-9a73-2e9b9c911966"
+  },
+  {
+    "category": "trivia",
+    "navigationKeyword1": "famous-people",
+    "navigationKeyword2": "inventors",
+    "question": "Nobel\u2019s Einstein facts page lists his 1921 Physics Prize as especially tied to what law?",
+    "correctAnswer": "law of the photoelectric effect",
+    "incorrectAnswers": [
+      "law of gravitation",
+      "laws of motion",
+      "Snell\u2019s law"
+    ],
+    "explanation": "Einstein's 1921 Nobel Prize recognized his explanation of the photoelectric effect.",
+    "keywords": [
+      "physics",
+      "nobel"
+    ],
+    "source": "https://www.nobelprize.org/prizes/physics/1921/einstein/facts/",
+    "seedId": "5acd201f-b59d-4b2e-9e58-cd8bbce4f221"
+  },
+  {
+    "category": "trivia",
+    "navigationKeyword1": "famous-people",
+    "navigationKeyword2": "inventors",
+    "question": "Thomas Edison strongly with the practical development of which electric lighting technology?",
+    "correctAnswer": "incandescent lamp",
+    "incorrectAnswers": [
+      "LED chips",
+      "neon tubes only",
+      "arc lamps only"
+    ],
+    "explanation": "Edison\u2019s work on practical incandescent lighting.",
+    "keywords": [
+      "electricity",
+      "patents"
+    ],
+    "source": "https://www.britannica.com/biography/Thomas-Edison",
+    "seedId": "008e3d04-ed5a-41e9-8819-342808b368eb"
+  },
+  {
+    "category": "trivia",
+    "navigationKeyword1": "famous-people",
+    "navigationKeyword2": "inventors",
+    "question": "Alexander Graham Bell to the invention of which communication device?",
+    "correctAnswer": "telephone",
+    "incorrectAnswers": [
+      "radio only",
+      "television",
+      "crop rotation"
+    ],
+    "explanation": "Britannica credits Bell with the telephone patent and promotion.",
+    "keywords": [
+      "telecommunications",
+      "history"
+    ],
+    "source": "https://www.britannica.com/biography/Alexander-Graham-Bell",
+    "seedId": "9b0487e9-b182-4699-97ee-a670d7c90d69"
+  },
+  {
+    "category": "trivia",
+    "navigationKeyword1": "famous-people",
+    "navigationKeyword2": "inventors",
+    "question": "The Wright brothers carried out their early powered-flight experiments near which North Carolina location?",
+    "correctAnswer": "Kitty Hawk",
+    "incorrectAnswers": [
+      "Cape Canaveral",
+      "Seattle",
+      "Austin"
+    ],
+    "explanation": "Kitty Hawk flights.",
+    "keywords": [
+      "aviation",
+      "history"
+    ],
+    "source": "https://www.britannica.com/biography/Wright-brothers",
+    "seedId": "222b5e4a-d53c-4e43-8d1b-026ccdf35ed7"
+  },
+  {
+    "category": "trivia",
+    "navigationKeyword1": "famous-people",
+    "navigationKeyword2": "inventors",
+    "question": "Which inventor\u2019s DC systems is associated with Nikola Tesla with alternating-current systems competing?",
+    "correctAnswer": "Thomas Edison",
+    "incorrectAnswers": [
+      "James Watt",
+      "Guglielmo Marconi",
+      "Charles Babbage"
+    ],
+    "explanation": "Tesla's work is linked to the AC/DC rivalry with Edison.",
+    "keywords": [
+      "electricity",
+      "engineering"
+    ],
+    "source": "https://www.britannica.com/biography/Nikola-Tesla",
+    "seedId": "2265c62c-d8d7-420b-b9ff-41179f48c245"
+  },
+  {
+    "category": "trivia",
+    "navigationKeyword1": "famous-people",
+    "navigationKeyword2": "inventors",
+    "question": "Johannes Gutenberg to the spread of printing using what technology?",
+    "correctAnswer": "movable type",
+    "incorrectAnswers": [
+      "photolithography",
+      "offset rollers only",
+      "inkjet nozzles"
+    ],
+    "explanation": "Britannica credits Gutenberg with movable-type printing.",
+    "keywords": [
+      "printing",
+      "history"
+    ],
+    "source": "https://www.britannica.com/biography/Johannes-Gutenberg",
+    "seedId": "40cc8a46-0cc4-4807-bfc6-606584736de1"
+  },
+  {
+    "category": "trivia",
+    "navigationKeyword1": "famous-people",
+    "navigationKeyword2": "inventors",
+    "question": "Tim Berners-Lee to inventing which web concept?",
+    "correctAnswer": "World Wide Web",
+    "incorrectAnswers": [
+      "ARPANET routing",
+      "SMTP email",
+      "DNS root servers"
+    ],
+    "explanation": "Berners-Lee is tied to the World Wide Web.",
+    "keywords": [
+      "internet",
+      "web"
+    ],
+    "source": "https://www.britannica.com/biography/Tim-Berners-Lee",
+    "seedId": "35c06998-1f0d-472e-b94d-d8806c96868f"
+  },
+  {
+    "category": "trivia",
+    "navigationKeyword1": "famous-people",
+    "navigationKeyword2": "inventors",
+    "question": "James Watt with improvements to which machine?",
+    "correctAnswer": "steam engine",
+    "incorrectAnswers": [
+      "printing press",
+      "cotton gin",
+      "telephone"
+    ],
+    "explanation": "Watt\u2019s steam-engine improvements.",
+    "keywords": [
+      "industrial-revolution",
+      "engineering"
+    ],
+    "source": "https://www.britannica.com/biography/James-Watt",
+    "seedId": "857b89c0-e53a-4ab5-8863-2d2fafc9b71c"
+  },
+  {
+    "category": "trivia",
+    "navigationKeyword1": "famous-people",
+    "navigationKeyword2": "inventors",
+    "question": "Which crop is most closely associated with George Washington Carver to agricultural science promoting alternatives?",
+    "correctAnswer": "cotton",
+    "incorrectAnswers": [
+      "rice only",
+      "coffee only",
+      "tea only"
+    ],
+    "explanation": "George Washington Carver promoted crop rotation and alternatives to cotton dependence.",
+    "keywords": [
+      "agriculture",
+      "science"
+    ],
+    "source": "https://www.britannica.com/biography/George-Washington-Carver",
+    "seedId": "fc4bf73e-cc2e-4e3a-b7ce-59c734e65693"
+  }
+]

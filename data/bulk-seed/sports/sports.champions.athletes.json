@@ -1,0 +1,202 @@
+[
+  {
+    "category": "sports",
+    "navigationKeyword1": "champions",
+    "navigationKeyword2": "athletes",
+    "question": "Which athlete won the 2025 Masters to complete the career Grand Slam?",
+    "correctAnswer": "Rory McIlroy",
+    "incorrectAnswers": [
+      "Scottie Scheffler",
+      "Jon Rahm",
+      "Tiger Woods"
+    ],
+    "explanation": "McIlroy joined the rare career Grand Slam club in 2025.",
+    "keywords": [
+      "champions",
+      "athletes",
+      "mcilroy"
+    ],
+    "source": "https://www.usga.org/content/usga/home-page/rules-hub.html",
+    "seedId": "c1e61b06-30cf-44ca-8e4a-6633411be995"
+  },
+  {
+    "category": "sports",
+    "navigationKeyword1": "champions",
+    "navigationKeyword2": "athletes",
+    "question": "Which athlete won the 2024 U.S. Open in golf?",
+    "correctAnswer": "Bryson DeChambeau",
+    "incorrectAnswers": [
+      "Rory McIlroy",
+      "Xander Schauffele",
+      "Brooks Koepka"
+    ],
+    "explanation": "DeChambeau captured the 2024 U.S. Open title.",
+    "keywords": [
+      "champions",
+      "athletes",
+      "dechambeau"
+    ],
+    "source": "https://www.usga.org/content/usga/home-page/rules-hub.html",
+    "seedId": "f30c5015-c5a7-445f-a5ea-3eb46d150918"
+  },
+  {
+    "category": "sports",
+    "navigationKeyword1": "champions",
+    "navigationKeyword2": "athletes",
+    "question": "Which athlete won the 2024 Wimbledon men's singles title?",
+    "correctAnswer": "Carlos Alcaraz",
+    "incorrectAnswers": [
+      "Novak Djokovic",
+      "Daniil Medvedev",
+      "Jannik Sinner"
+    ],
+    "explanation": "Alcaraz repeated as Wimbledon champion in 2024.",
+    "keywords": [
+      "champions",
+      "athletes",
+      "alcaraz"
+    ],
+    "source": "https://www.britannica.com/sports",
+    "seedId": "5b0d7092-0038-4baf-b3ae-62933c6d825c"
+  },
+  {
+    "category": "sports",
+    "navigationKeyword1": "champions",
+    "navigationKeyword2": "athletes",
+    "question": "Which athlete won the 2024 NBA Finals MVP award?",
+    "correctAnswer": "Jaylen Brown",
+    "incorrectAnswers": [
+      "Jayson Tatum",
+      "Luka Doncic",
+      "Jrue Holiday"
+    ],
+    "explanation": "Brown earned Finals MVP in Boston's 2024 title run.",
+    "keywords": [
+      "champions",
+      "athletes",
+      "jaylen-brown"
+    ],
+    "source": "https://www.nba.com/history",
+    "seedId": "dd3a0f02-ebaa-425a-afff-20bfb9779299"
+  },
+  {
+    "category": "sports",
+    "navigationKeyword1": "champions",
+    "navigationKeyword2": "athletes",
+    "question": "Which athlete won the 2024 WNBA Finals MVP award?",
+    "correctAnswer": "Jonquel Jones",
+    "incorrectAnswers": [
+      "Breanna Stewart",
+      "Sabrina Ionescu",
+      "A'ja Wilson"
+    ],
+    "explanation": "Jones led New York to the 2024 WNBA title.",
+    "keywords": [
+      "champions",
+      "athletes",
+      "jonquel-jones"
+    ],
+    "source": "https://www.nba.com/history",
+    "seedId": "bff6af9d-7baa-4b89-90ea-155e62829064"
+  },
+  {
+    "category": "sports",
+    "navigationKeyword1": "champions",
+    "navigationKeyword2": "athletes",
+    "question": "Which athlete won the 2024 Formula 1 drivers' championship?",
+    "correctAnswer": "Max Verstappen",
+    "incorrectAnswers": [
+      "Lewis Hamilton",
+      "Lando Norris",
+      "Charles Leclerc"
+    ],
+    "explanation": "Verstappen secured the 2024 F1 title.",
+    "keywords": [
+      "champions",
+      "athletes",
+      "verstappen"
+    ],
+    "source": "https://www.britannica.com/sports",
+    "seedId": "4fb6bf11-e69c-434e-b72d-d5f8da3b89c6"
+  },
+  {
+    "category": "sports",
+    "navigationKeyword1": "champions",
+    "navigationKeyword2": "athletes",
+    "question": "Which athlete won the men's marathon at the 2024 Paris Olympics?",
+    "correctAnswer": "Tamirat Tola",
+    "incorrectAnswers": [
+      "Eliud Kipchoge",
+      "Benson Kipruto",
+      "Kenenisa Bekele"
+    ],
+    "explanation": "Tola took Olympic marathon gold in Paris.",
+    "keywords": [
+      "champions",
+      "athletes",
+      "marathon"
+    ],
+    "source": "https://olympics.com/en/olympic-games",
+    "seedId": "a6391317-43fd-4373-a8b5-4cb0677a5bf9"
+  },
+  {
+    "category": "sports",
+    "navigationKeyword1": "champions",
+    "navigationKeyword2": "athletes",
+    "question": "Which athlete won the women's all-around gymnastics title at the 2024 Paris Olympics?",
+    "correctAnswer": "Simone Biles",
+    "incorrectAnswers": [
+      "Rebeca Andrade",
+      "Sunisa Lee",
+      "Shilese Jones"
+    ],
+    "explanation": "Biles reclaimed Olympic all-around gold in Paris.",
+    "keywords": [
+      "champions",
+      "athletes",
+      "biles"
+    ],
+    "source": "https://olympics.com/en/olympic-games",
+    "seedId": "6b8f6234-db62-4762-b551-a2ff07de0cff"
+  },
+  {
+    "category": "sports",
+    "navigationKeyword1": "champions",
+    "navigationKeyword2": "athletes",
+    "question": "Which athlete won the 2024 Tour de France?",
+    "correctAnswer": "Tadej Pogacar",
+    "incorrectAnswers": [
+      "Jonas Vingegaard",
+      "Primoz Roglic",
+      "Remco Evenepoel"
+    ],
+    "explanation": "Pogacar won cycling's biggest stage race in 2024.",
+    "keywords": [
+      "champions",
+      "athletes",
+      "pogacar"
+    ],
+    "source": "https://www.britannica.com/sports",
+    "seedId": "15b3c841-6089-41b7-903f-6c98b0321564"
+  },
+  {
+    "category": "sports",
+    "navigationKeyword1": "champions",
+    "navigationKeyword2": "athletes",
+    "question": "Which athlete won the UFC lightweight title after defeating Charles Oliveira in 2022 and still held it through much of 2024?",
+    "correctAnswer": "Islam Makhachev",
+    "incorrectAnswers": [
+      "Dustin Poirier",
+      "Justin Gaethje",
+      "Tony Ferguson"
+    ],
+    "explanation": "Makhachev became the UFC lightweight champion in 2022.",
+    "keywords": [
+      "champions",
+      "athletes",
+      "makhachev"
+    ],
+    "source": "https://www.ufc.com/",
+    "seedId": "b9f4547d-ae82-4502-b28e-ac7bedbde8da"
+  }
+]

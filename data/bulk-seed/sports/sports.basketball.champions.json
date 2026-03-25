@@ -1,0 +1,202 @@
+[
+  {
+    "category": "sports",
+    "navigationKeyword1": "basketball",
+    "navigationKeyword2": "champions",
+    "question": "Who won the 2024 NBA Finals?",
+    "correctAnswer": "Boston Celtics",
+    "incorrectAnswers": [
+      "Dallas Mavericks",
+      "Denver Nuggets",
+      "Miami Heat"
+    ],
+    "explanation": "Boston defeated Dallas to win the 2024 title.",
+    "keywords": [
+      "basketball",
+      "champions",
+      "2024"
+    ],
+    "source": "https://www.nba.com/history",
+    "seedId": "b5fd0a59-7027-4af5-9500-3369d406d419"
+  },
+  {
+    "category": "sports",
+    "navigationKeyword1": "basketball",
+    "navigationKeyword2": "champions",
+    "question": "Which team won the 2023 NBA Finals?",
+    "correctAnswer": "Denver Nuggets",
+    "incorrectAnswers": [
+      "Miami Heat",
+      "Boston Celtics",
+      "Phoenix Suns"
+    ],
+    "explanation": "Denver beat Miami for the franchise's first NBA title.",
+    "keywords": [
+      "basketball",
+      "champions",
+      "2023"
+    ],
+    "source": "https://www.nba.com/history",
+    "seedId": "5d2c950a-cb33-42b7-9882-c2e873f4b73f"
+  },
+  {
+    "category": "sports",
+    "navigationKeyword1": "basketball",
+    "navigationKeyword2": "champions",
+    "question": "Which team completed a 72-win regular season and won the 1996 NBA championship?",
+    "correctAnswer": "Chicago Bulls",
+    "incorrectAnswers": [
+      "Los Angeles Lakers",
+      "Houston Rockets",
+      "Seattle SuperSonics"
+    ],
+    "explanation": "The 1995-96 Bulls capped a historic season with the title.",
+    "keywords": [
+      "basketball",
+      "champions",
+      "bulls"
+    ],
+    "source": "https://www.nba.com/history",
+    "seedId": "0e7db23d-76ef-454e-837b-3ea70e622527"
+  },
+  {
+    "category": "sports",
+    "navigationKeyword1": "basketball",
+    "navigationKeyword2": "champions",
+    "question": "Which franchise won the 2016 NBA Finals after overcoming a 3-1 series deficit?",
+    "correctAnswer": "Cleveland Cavaliers",
+    "incorrectAnswers": [
+      "Golden State Warriors",
+      "San Antonio Spurs",
+      "Miami Heat"
+    ],
+    "explanation": "Cleveland came back against Golden State in the 2016 Finals.",
+    "keywords": [
+      "basketball",
+      "champions",
+      "cavaliers"
+    ],
+    "source": "https://www.nba.com/history",
+    "seedId": "638941e0-5e04-4731-9b4d-932f49aa2d81"
+  },
+  {
+    "category": "sports",
+    "navigationKeyword1": "basketball",
+    "navigationKeyword2": "champions",
+    "question": "Which team won the 2020 NBA title inside the Orlando bubble?",
+    "correctAnswer": "Los Angeles Lakers",
+    "incorrectAnswers": [
+      "Miami Heat",
+      "Boston Celtics",
+      "Denver Nuggets"
+    ],
+    "explanation": "The Lakers beat Miami in the 2020 Finals.",
+    "keywords": [
+      "basketball",
+      "champions",
+      "bubble"
+    ],
+    "source": "https://www.nba.com/history",
+    "seedId": "d1dec212-a803-479b-9d94-858f30b02737"
+  },
+  {
+    "category": "sports",
+    "navigationKeyword1": "basketball",
+    "navigationKeyword2": "champions",
+    "question": "Which team won the first WNBA title in 1997?",
+    "correctAnswer": "Houston Comets",
+    "incorrectAnswers": [
+      "New York Liberty",
+      "Phoenix Mercury",
+      "Los Angeles Sparks"
+    ],
+    "explanation": "Houston launched the league's first dynasty with the inaugural title.",
+    "keywords": [
+      "basketball",
+      "champions",
+      "wnba"
+    ],
+    "source": "https://www.wnba.com/history",
+    "seedId": "ce1d5245-7556-4fac-a63e-584dc91f7dc6"
+  },
+  {
+    "category": "sports",
+    "navigationKeyword1": "basketball",
+    "navigationKeyword2": "champions",
+    "question": "Which franchise won four straight WNBA titles from 1997 through 2000?",
+    "correctAnswer": "Houston Comets",
+    "incorrectAnswers": [
+      "Seattle Storm",
+      "Minnesota Lynx",
+      "Phoenix Mercury"
+    ],
+    "explanation": "The Comets dominated the league's earliest years.",
+    "keywords": [
+      "basketball",
+      "champions",
+      "dynasty"
+    ],
+    "source": "https://www.wnba.com/history",
+    "seedId": "53b7acba-da69-4f66-af45-4105672cb815"
+  },
+  {
+    "category": "sports",
+    "navigationKeyword1": "basketball",
+    "navigationKeyword2": "champions",
+    "question": "Who won the 2024 WNBA Finals?",
+    "correctAnswer": "New York Liberty",
+    "incorrectAnswers": [
+      "Minnesota Lynx",
+      "Las Vegas Aces",
+      "Seattle Storm"
+    ],
+    "explanation": "New York beat Minnesota to claim the 2024 championship.",
+    "keywords": [
+      "basketball",
+      "champions",
+      "liberty"
+    ],
+    "source": "https://www.wnba.com/history",
+    "seedId": "5f45e4cc-cf70-42e4-893f-309fc4510c1f"
+  },
+  {
+    "category": "sports",
+    "navigationKeyword1": "basketball",
+    "navigationKeyword2": "champions",
+    "question": "Which franchise won the 2022 and 2023 WNBA championships?",
+    "correctAnswer": "Las Vegas Aces",
+    "incorrectAnswers": [
+      "New York Liberty",
+      "Chicago Sky",
+      "Seattle Storm"
+    ],
+    "explanation": "Las Vegas repeated before New York won in 2024.",
+    "keywords": [
+      "basketball",
+      "champions",
+      "aces"
+    ],
+    "source": "https://www.wnba.com/history",
+    "seedId": "954cf938-66b8-4563-a332-ce5a0cd63602"
+  },
+  {
+    "category": "sports",
+    "navigationKeyword1": "basketball",
+    "navigationKeyword2": "champions",
+    "question": "Which NBA franchise holds the most championships after the 2024 Finals?",
+    "correctAnswer": "Boston Celtics",
+    "incorrectAnswers": [
+      "Los Angeles Lakers",
+      "Chicago Bulls",
+      "Golden State Warriors"
+    ],
+    "explanation": "Boston moved ahead with its 2024 title.",
+    "keywords": [
+      "basketball",
+      "champions",
+      "most-titles"
+    ],
+    "source": "https://www.nba.com/history",
+    "seedId": "fe5ad540-918b-42bd-9d97-bc65cef6c5fb"
+  }
+]

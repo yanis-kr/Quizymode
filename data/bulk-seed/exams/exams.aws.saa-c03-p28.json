@@ -8,7 +8,7 @@
     "incorrectAnswers": [
       "Use predictive scaling to change the size of the Auto Scaling group.",
       "Use dynamic scaling to change the size of the Auto Scaling group.",
-      "Use schedule scaling to change the size of the Auto Scaling group. --- Page 218 ---"
+      "Use schedule scaling to change the size of the Auto Scaling group."
     ],
     "explanation": "SAA-C03 practice scenario (extract question #595). Correct choice: A.",
     "keywords": [
@@ -98,7 +98,7 @@
     "incorrectAnswers": [
       "Create an Aurora read replica of the RDS for PostgreSQL DB instance. Promote the Aurora read replicate to a new Aurora PostgreSQL DB cluster.",
       "Use data import from Amazon S3 to migrate the database to an Aurora PostgreSQL DB cluster.",
-      "Use the pg_dump utility to back up the RDS for PostgreSQL database. Restore the backup to a new Aurora PostgreSQL DB cluster. --- Page 220 ---"
+      "Use the pg_dump utility to back up the RDS for PostgreSQL database. Restore the backup to a new Aurora PostgreSQL DB cluster."
     ],
     "explanation": "SAA-C03 practice scenario (extract question #601). Correct choice: A.",
     "keywords": [
@@ -165,7 +165,7 @@
     "incorrectAnswers": [
       "Use rsync to transfer the data directly to Amazon S3.",
       "Use the AWS CLI and multiple copy processes to send the data directly to Amazon S3.",
-      "Order multiple AWS Snowball devices. Copy the data to the devices. Send the devices to AWS to copy the data to Amazon S3. --- Page 221 ---"
+      "Order multiple AWS Snowball devices. Copy the data to the devices. Send the devices to AWS to copy the data to Amazon S3."
     ],
     "explanation": "SAA-C03 practice scenario (extract question #604). Correct choice: A.",
     "keywords": [
@@ -227,7 +227,7 @@
     "incorrectAnswers": [
       "Increase the RDS DB instance size. Increase the storage capacity to 24 TiChange the storage type to Provisioned IOPS.",
       "Create an Amazon S3 bucket. Update the application to store documents in the S3 bucket. Store the object metadata in the existing database.",
-      "Create an Amazon DynamoDB table. Update the application to use DynamoDB. Use AWS Database Migration Service (AWS DMS) to migrate data from the Oracle database to DynamoDB. --- Page 222 ---"
+      "Create an Amazon DynamoDB table. Update the application to use DynamoDB. Use AWS Database Migration Service (AWS DMS) to migrate data from the Oracle database to DynamoDB."
     ],
     "explanation": "SAA-C03 practice scenario (extract question #607). Correct choice: A.",
     "keywords": [
@@ -297,7 +297,7 @@
     "incorrectAnswers": [
       "Deploy a gateway VPC endpoint for Amazon S3. Set up an AWS Direct Connect connection between the on-premises network and the VPC.",
       "Set up an AWS Transit Gateway connection from the VPC to the S3 buckets. Create an AWS Site-to-Site VPN connection between the company and the VPC.",
-      "Set up proxy EC2 instances that have routes to NAT gateways. Configure the proxy EC2 instances to fetch S3 data and feed the application instances. --- Page 223 ---"
+      "Set up proxy EC2 instances that have routes to NAT gateways. Configure the proxy EC2 instances to fetch S3 data and feed the application instances."
     ],
     "explanation": "SAA-C03 practice scenario (extract question #610). Correct choice: A.",
     "keywords": [
@@ -367,7 +367,7 @@
     "incorrectAnswers": [
       "Enable secrets encryption in the EKS cluster by using AWS Key Management Service (AWS KMS).",
       "Implement an AWS Lambda function to encrypt the information by using AWS Key Management Service (AWS KMS).",
-      "Use AWS Systems Manager Parameter Store to encrypt the information by using AWS Key Management Service (AWS KMS). --- Page 224 ---"
+      "Use AWS Systems Manager Parameter Store to encrypt the information by using AWS Key Management Service (AWS KMS)."
     ],
     "explanation": "SAA-C03 practice scenario (extract question #613). Correct choice: A.",
     "keywords": [
@@ -431,11 +431,11 @@
     "navigationKeyword1": "aws",
     "navigationKeyword2": "saa-c03",
     "question": "A company has deployed its newest product on AWS. The product runs in an Auto Scaling group behind a Network Load Balancer. The company\nstores the product’s objects in an Amazon S3 bucket.\nThe company recently experienced malicious attacks against its systems. The company needs a solution that continuously monitors for malicious\nactivity in the AWS account, workloads, and access patterns to the S3 bucket. The solution must also report suspicious activity and display the\ninformation on a dashboard.\nWhich solution will meet these requirements?",
-    "correctAnswer": "Configure Amazon Macie to monitor and report ndings to AWS Cong.",
+    "correctAnswer": "Configure Amazon Macie to monitor and report ndings to AWS Config.",
     "incorrectAnswers": [
       "Configure Amazon Inspector to monitor and report ndings to AWS CloudTrail.",
       "Configure Amazon GuardDuty to monitor and report ndings to AWS Security Hub.",
-      "Configure AWS Cong to monitor and report ndings to Amazon EventBridge. --- Page 225 ---"
+      "Configure AWS Config to monitor and report ndings to Amazon EventBridge."
     ],
     "explanation": "SAA-C03 practice scenario (extract question #616). Correct choice: A.",
     "keywords": [

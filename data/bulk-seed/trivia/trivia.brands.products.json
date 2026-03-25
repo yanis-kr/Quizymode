@@ -1,0 +1,192 @@
+[
+  {
+    "category": "trivia",
+    "navigationKeyword1": "brands",
+    "navigationKeyword2": "products",
+    "question": "Microsoft 365 includes Word, Excel, PowerPoint, and which email client?",
+    "correctAnswer": "Outlook",
+    "incorrectAnswers": [
+      "Thunderbird",
+      "Lotus Notes",
+      "Slack"
+    ],
+    "explanation": "Britannica names Outlook among core Microsoft 365 apps.",
+    "keywords": [
+      "software",
+      "microsoft"
+    ],
+    "source": "https://www.britannica.com/money/Microsoft-Corporation",
+    "seedId": "4ae5826a-1827-4a67-97f1-73f404a16cf2"
+  },
+  {
+    "category": "trivia",
+    "navigationKeyword1": "brands",
+    "navigationKeyword2": "products",
+    "question": "Microsoft\u2019s flagship cloud platform as what name?",
+    "correctAnswer": "Azure",
+    "incorrectAnswers": [
+      "AWS",
+      "GCP",
+      "Oracle Cloud"
+    ],
+    "explanation": "Britannica names Azure as Microsoft\u2019s flagship cloud platform.",
+    "keywords": [
+      "cloud",
+      "microsoft"
+    ],
+    "source": "https://www.britannica.com/money/Microsoft-Corporation",
+    "seedId": "04de7cc8-2e7f-48b0-8cb0-c8ff855063c7"
+  },
+  {
+    "category": "trivia",
+    "navigationKeyword1": "brands",
+    "navigationKeyword2": "products",
+    "question": "Apple\u2019s 1976 debut computer product name was what?",
+    "correctAnswer": "Apple I",
+    "incorrectAnswers": [
+      "Macintosh",
+      "Lisa",
+      "iMac"
+    ],
+    "explanation": "The Apple I was Apple's first product unveiled in 1976.",
+    "keywords": [
+      "hardware",
+      "apple"
+    ],
+    "source": "https://www.britannica.com/money/Apple-Inc",
+    "seedId": "cfd36787-f620-48bb-87ef-634dae865057"
+  },
+  {
+    "category": "trivia",
+    "navigationKeyword1": "brands",
+    "navigationKeyword2": "products",
+    "question": "IBM\u2019s Britannica article names which 1981 product line as its first major personal computer?",
+    "correctAnswer": "IBM Personal Computer",
+    "incorrectAnswers": [
+      "System/360",
+      "AS/400",
+      "ThinkPad"
+    ],
+    "explanation": "IBM introduced the IBM Personal Computer in 1981.",
+    "keywords": [
+      "hardware",
+      "ibm"
+    ],
+    "source": "https://www.britannica.com/money/International-Business-Machines-Corporation",
+    "seedId": "eb95f1cf-8432-40db-bc66-227cb2eaa32e"
+  },
+  {
+    "category": "trivia",
+    "navigationKeyword1": "brands",
+    "navigationKeyword2": "products",
+    "question": "Coca\u2011Cola history lists TaB as the company\u2019s first what kind of drink in 1963?",
+    "correctAnswer": "diet drink",
+    "incorrectAnswers": [
+      "energy drink",
+      "juice drink",
+      "sparkling water"
+    ],
+    "explanation": "Coca\u2011Cola\u2019s timeline calls TaB the first diet drink from the company.",
+    "keywords": [
+      "beverages",
+      "coca-cola"
+    ],
+    "source": "https://www.coca-colacompany.com/about-us/history",
+    "seedId": "c2b86ef0-a23e-4d9c-85b8-189147a1b29f"
+  },
+  {
+    "category": "trivia",
+    "navigationKeyword1": "brands",
+    "navigationKeyword2": "products",
+    "question": "Coca\u2011Cola history places introduction of the contour bottle design patent era in which year?",
+    "correctAnswer": "1915",
+    "incorrectAnswers": [
+      "1925",
+      "1900",
+      "1890"
+    ],
+    "explanation": "The contour bottle design effort dates to 1915.",
+    "keywords": [
+      "packaging",
+      "coca-cola"
+    ],
+    "source": "https://www.coca-colacompany.com/about-us/history",
+    "seedId": "15e7fc08-704c-4149-ae81-46c8450d3d1e"
+  },
+  {
+    "category": "trivia",
+    "navigationKeyword1": "brands",
+    "navigationKeyword2": "products",
+    "question": "Nike\u2019s core product category emphasized in Britannica is what?",
+    "correctAnswer": "athletic footwear and apparel",
+    "incorrectAnswers": [
+      "home appliances",
+      "passenger aircraft",
+      "luxury watches"
+    ],
+    "explanation": "Nike\u2019s athletic footwear and apparel business.",
+    "keywords": [
+      "apparel",
+      "nike"
+    ],
+    "source": "https://www.britannica.com/money/Nike-Inc",
+    "seedId": "1cc18d23-d2cd-427c-8367-e74374877dd5"
+  },
+  {
+    "category": "trivia",
+    "navigationKeyword1": "brands",
+    "navigationKeyword2": "products",
+    "question": "Samsung\u2019s Britannica overview highlights memory chips and what display product category?",
+    "correctAnswer": "televisions",
+    "incorrectAnswers": [
+      "railcars",
+      "aircraft",
+      "furniture"
+    ],
+    "explanation": "Televisions are one of Samsung's major electronics categories.",
+    "keywords": [
+      "electronics",
+      "samsung"
+    ],
+    "source": "https://www.britannica.com/money/Samsung-Electronics",
+    "seedId": "6e728581-36f5-4da3-8cac-3f9db57d1fb1"
+  },
+  {
+    "category": "trivia",
+    "navigationKeyword1": "brands",
+    "navigationKeyword2": "products",
+    "question": "McDonald\u2019s is best known globally for which food format?",
+    "correctAnswer": "hamburgers and fast food",
+    "incorrectAnswers": [
+      "sushi",
+      "pizza only",
+      "steakhouses only"
+    ],
+    "explanation": "McDonald\u2019s is a hamburger fast-food chain.",
+    "keywords": [
+      "fast-food",
+      "mcdonalds"
+    ],
+    "source": "https://www.britannica.com/money/McDonalds-Corporation",
+    "seedId": "b2bb6e79-9c8e-4b16-afb4-b528cefff320"
+  },
+  {
+    "category": "trivia",
+    "navigationKeyword1": "brands",
+    "navigationKeyword2": "products",
+    "question": "Adobe\u2019s creative software lineup is closely associated with which image-editing product name?",
+    "correctAnswer": "Photoshop",
+    "incorrectAnswers": [
+      "Excel",
+      "AutoCAD",
+      "Final Cut"
+    ],
+    "explanation": "Adobe is widely identified with Photoshop in creative workflows.",
+    "keywords": [
+      "software",
+      "adobe"
+    ],
+    "source": "https://www.britannica.com/money/Adobe-Inc",
+    "seedId": "f18b687a-dadc-4056-9549-9e4c3ca301c3"
+  }
+]

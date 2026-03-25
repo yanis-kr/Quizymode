@@ -31,7 +31,7 @@
     "incorrectAnswers": [
       "Create an Amazon RDS MySQL DB instance with Multi-AZ functionality enabled to synchronously replicate the data.",
       "Create an Amazon RDS MySQL DB instance and then create a read replica in a separate AWS Region that synchronously replicates the data.",
-      "Create an Amazon EC2 instance with a MySQL engine installed that triggers an AWS Lambda function to synchronously replicate the data to an Amazon RDS MySQL DB instance. --- Page 66 ---"
+      "Create an Amazon EC2 instance with a MySQL engine installed that triggers an AWS Lambda function to synchronously replicate the data to an Amazon RDS MySQL DB instance."
     ],
     "explanation": "SAA-C03 practice scenario (extract question #182). Correct choice: A.",
     "keywords": [
@@ -102,7 +102,7 @@
     "incorrectAnswers": [
       "Create an IAM role with S3 permissions, and then specify that role as the taskRoleArn in the task denition.",
       "Create a security group that allows access from Amazon ECS to Amazon S3, and update the launch conguration used by the ECS cluster.",
-      "Create an IAM user with S3 permissions, and then relaunch the Amazon EC2 instances for the ECS cluster while logged in as this account. --- Page 67 ---"
+      "Create an IAM user with S3 permissions, and then relaunch the Amazon EC2 instances for the ECS cluster while logged in as this account."
     ],
     "explanation": "SAA-C03 practice scenario (extract question #185). Correct choice: A.",
     "keywords": [
@@ -146,7 +146,7 @@
     "incorrectAnswers": [
       "Use Amazon S3 File Gateway as an SFTP server. Expose the S3 File Gateway endpoint URL to the new partner. Share the S3 File Gateway endpoint with the new partner.",
       "Launch an Amazon EC2 instance in a private subnet in a VPInstruct the new partner to upload les to the EC2 instance by using a VPN. Run a cron job script, on the EC2 instance to upload les to the S3 data lake.",
-      "Launch Amazon EC2 instances in a private subnet in a VPC. Place a Network Load Balancer (NLB) in front of the EC2 instances. Create an SFTP listener port for the NLB. Share the NLB hostname with the new partner. Run a cron job script on the EC2 instances to upload les to the S3 data lake. --- Page 68 ---"
+      "Launch Amazon EC2 instances in a private subnet in a VPC. Place a Network Load Balancer (NLB) in front of the EC2 instances. Create an SFTP listener port for the NLB. Share the NLB hostname with the new partner. Run a cron job script on the EC2 instances to upload les to the S3 data lake."
     ],
     "explanation": "SAA-C03 practice scenario (extract question #188). Correct choice: A.",
     "keywords": [
@@ -188,7 +188,7 @@
     "incorrectAnswers": [
       "Create a read replica. Distribute the ordering application to the primary DB instance and the read replica.",
       "Migrate the ordering application to Amazon DynamoDB with on-demand capacity.",
-      "Schedule the reporting queries for non-peak hours. --- Page 69 ---"
+      "Schedule the reporting queries for non-peak hours."
     ],
     "explanation": "SAA-C03 practice scenario (extract question #191). Correct choice: A.",
     "keywords": [
@@ -233,7 +233,7 @@
     "incorrectAnswers": [
       "Launch an EC2 instance in an Availability Zone. Install the database on the EC2 instance. Use an Amazon Machine Image (AMI) to back up the data. Use AWS CloudFormation to automate provisioning of the EC2 instance if a disruptive event occurs.",
       "Launch two EC2 instances, each in a different AWS Region. Install the database on both EC2 instances. Set up database replication. Fail over the database to a second Region.",
-      "Launch an EC2 instance in an Availability Zone. Install the database on the EC2 instance. Use an Amazon Machine Image (AMI) to back up the data. Use EC2 automatic recovery to recover the instance if a disruptive event occurs. --- Page 70 ---"
+      "Launch an EC2 instance in an Availability Zone. Install the database on the EC2 instance. Use an Amazon Machine Image (AMI) to back up the data. Use EC2 automatic recovery to recover the instance if a disruptive event occurs."
     ],
     "explanation": "SAA-C03 practice scenario (extract question #194). Correct choice: A.",
     "keywords": [
@@ -249,7 +249,7 @@
     "navigationKeyword1": "aws",
     "navigationKeyword2": "saa-c03",
     "question": "A company’s order system sends requests from clients to Amazon EC2 instances. The EC2 instances process the orders and then store the orders\nin a database on Amazon RDS. Users report that they must reprocess orders when the system fails. The company wants a resilient solution that\ncan process orders automatically if a system outage occurs.\nWhat should a solutions architect do to meet these requirements?",
-    "correctAnswer": "Move the EC2 instances into an Auto Scaling group. Create an Amazon EventBridge (Amazon CloudWatch Events) rule to target an Amazon Elastic Container Service (Amazon ECS) task.",
+    "correctAnswer": "Move the EC2 instances into an Auto Scaling group. Create an Amazon EventBridge (note: outdated alias \"Amazon CloudWatch Events\"; same service, now EventBridge) rule to target an Amazon Elastic Container Service (Amazon ECS) task.",
     "incorrectAnswers": [
       "Move the EC2 instances into an Auto Scaling group behind an Application Load Balancer (ALB). Update the order system to send messages to the ALB endpoint.",
       "Move the EC2 instances into an Auto Scaling group. Configure the order system to send messages to an Amazon Simple Queue Service (Amazon SQS) queue. Configure the EC2 instances to consume messages from the queue.",
@@ -279,7 +279,7 @@
     "incorrectAnswers": [
       "Use an EC2 instance that runs a monitoring application from AWS Marketplace. Configure the monitoring application to use Amazon DynamoDB Streams to store the timestamp when a new item is created in the table. Use a script that runs on the EC2 instance to delete items that have a timestamp that is older than 30 days.",
       "Configure Amazon DynamoDB Streams to invoke an AWS Lambda function when a new item is created in the table. Configure the Lambda function to delete items in the table that are older than 30 days.",
-      "Extend the application to add an attribute that has a value of the current timestamp plus 30 days to each new item that is created in the table. Configure DynamoDB to use the attribute as the TTL attribute. --- Page 71 ---"
+      "Extend the application to add an attribute that has a value of the current timestamp plus 30 days to each new item that is created in the table. Configure DynamoDB to use the attribute as the TTL attribute."
     ],
     "explanation": "SAA-C03 practice scenario (extract question #196). Correct choice: A.",
     "keywords": [
@@ -323,7 +323,7 @@
     "incorrectAnswers": [
       "Use Amazon Transcribe for multiple speaker recognition. Use Amazon Athena for transcript le analysis.",
       "Use Amazon Translate for multiple speaker recognition. Store the transcript les in Amazon Redshift. Use SQL queries for transcript le analysis.",
-      "Use Amazon Rekognition for multiple speaker recognition. Store the transcript les in Amazon S3. Use Amazon Textraffict for transcript le analysis. --- Page 72 ---"
+      "Use Amazon Rekognition for multiple speaker recognition. Store the transcript les in Amazon S3. Use Amazon Textraffict for transcript le analysis."
     ],
     "explanation": "SAA-C03 practice scenario (extract question #199). Correct choice: A.",
     "keywords": [
@@ -388,7 +388,7 @@
     "incorrectAnswers": [
       "Create an AWS Key Management Service (AWS KMS) customer managed key. Enable automatic key rotation. Set the S3 bucket’s default encryption behavior to use the customer managed KMS key. Move the data to the S3 bucket.",
       "Create an AWS Key Management Service (AWS KMS) customer managed key. Set the S3 bucket’s default encryption behavior to use the customer managed KMS key. Move the data to the S3 bucket. Manually rotate the KMS key every year.",
-      "Encrypt the data with customer key material before moving the data to the S3 bucket. Create an AWS Key Management Service (AWS KMS) key without key material. Import the customer key material into the KMS key. Enable automatic key rotation. --- Page 73 ---"
+      "Encrypt the data with customer key material before moving the data to the S3 bucket. Create an AWS Key Management Service (AWS KMS) key without key material. Import the customer key material into the KMS key. Enable automatic key rotation."
     ],
     "explanation": "SAA-C03 practice scenario (extract question #202). Correct choice: A.",
     "keywords": [
@@ -434,7 +434,7 @@
     "incorrectAnswers": [
       "Schedule an AWS Lambda function to periodically copy data from Amazon RDS to Amazon S3. Create an AWS Glue crawler. Use Amazon Athena to query the data. Use S3 policies to limit access.",
       "Create a data lake by using AWS Lake Formation. Create an AWS Glue JDBC connection to Amazon RDS. Register the S3 bucket in Lake Formation. Use Lake Formation access controls to limit access.",
-      "Create an Amazon Redshift cluster. Schedule an AWS Lambda function to periodically copy data from Amazon S3 and Amazon RDS to Amazon Redshift. Use Amazon Redshift access controls to limit access. --- Page 74 ---"
+      "Create an Amazon Redshift cluster. Schedule an AWS Lambda function to periodically copy data from Amazon S3 and Amazon RDS to Amazon Redshift. Use Amazon Redshift access controls to limit access."
     ],
     "explanation": "SAA-C03 practice scenario (extract question #204). Correct choice: A.",
     "keywords": [

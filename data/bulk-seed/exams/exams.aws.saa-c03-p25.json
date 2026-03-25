@@ -52,7 +52,7 @@
     "incorrectAnswers": [
       "Deploy an Application Load Balancer (ALB) in front of the Lambda function. Provide the ALB URL to the third party for the webhook.",
       "Create an Amazon Simple Notification Service (Amazon SNS) topic. Attach the topic to the Lambda function. Provide the public hostname of the SNS topic to the third party for the webhook.",
-      "Create an Amazon Simple Queue Service (Amazon SQS) queue. Attach the queue to the Lambda function. Provide the public hostname of the SQS queue to the third party for the webhook. --- Page 196 ---"
+      "Create an Amazon Simple Queue Service (Amazon SQS) queue. Attach the queue to the Lambda function. Provide the public hostname of the SQS queue to the third party for the webhook."
     ],
     "explanation": "SAA-C03 practice scenario (extract question #531). Correct choice: A.",
     "keywords": [
@@ -72,7 +72,7 @@
     "incorrectAnswers": [
       "Use Amazon GuardDuty. Create an Amazon EventBridge rule to lter the CRITICAL event type from GuardDuty ndings and to send an Amazon Simple Notification Service (Amazon SNS) notication to the security team.",
       "Use Amazon Macie. Create an Amazon EventBridge rule to lter the SensitiveData:S3Object/Personal event type from Macie ndings and to send an Amazon Simple Queue Service (Amazon SQS) notication to the security team.",
-      "Use Amazon GuardDuty. Create an Amazon EventBridge rule to lter the CRITICAL event type from GuardDuty ndings and to send an Amazon Simple Queue Service (Amazon SQS) notication to the security team. --- Page 197 ---"
+      "Use Amazon GuardDuty. Create an Amazon EventBridge rule to lter the CRITICAL event type from GuardDuty ndings and to send an Amazon Simple Queue Service (Amazon SQS) notication to the security team."
     ],
     "explanation": "SAA-C03 practice scenario (extract question #533). Correct choice: A.",
     "keywords": [
@@ -141,7 +141,7 @@
     "incorrectAnswers": [
       "Change the setup from a Single-AZ to a Multi-AZ instance deployment with a larger secondary standby instance. Provide the data scientists access to the secondary instance.",
       "Change the setup from a Single-AZ to a Multi-AZ instance deployment. Provide two additional read replicas for the data scientists.",
-      "Change the setup from a Single-AZ to a Multi-AZ cluster deployment with two readable standby instances. Provide read endpoints to the data scientists. --- Page 198 ---"
+      "Change the setup from a Single-AZ to a Multi-AZ cluster deployment with two readable standby instances. Provide read endpoints to the data scientists."
     ],
     "explanation": "SAA-C03 practice scenario (extract question #536). Correct choice: A.",
     "keywords": [
@@ -209,7 +209,7 @@
     "incorrectAnswers": [
       "Configure a warm standby Amazon RDS for SQL Server database on AWS. Configure AWS Database Migration Service (AWS DMS) to use change data capture (CDC).",
       "Use AWS Elastic Disaster Recovery congured to replicate disk changes to AWS as a pilot light.",
-      "Use third-party backup software to capture backups every night. Store a secondary set of backups in Amazon S3. --- Page 199 ---"
+      "Use third-party backup software to capture backups every night. Store a secondary set of backups in Amazon S3."
     ],
     "explanation": "SAA-C03 practice scenario (extract question #539). Correct choice: A.",
     "keywords": [
@@ -256,7 +256,7 @@
     "incorrectAnswers": [
       "Generate and provide CloudFront signed URLs to premium customers.",
       "Use origin access control (OAC) to limit the access of non-premium customers.",
-      "Generate and activate eld-level encryption to block non-premium customers. --- Page 200 ---"
+      "Generate and activate eld-level encryption to block non-premium customers."
     ],
     "explanation": "SAA-C03 practice scenario (extract question #542). Correct choice: A.",
     "keywords": [
@@ -278,7 +278,7 @@
     "incorrectAnswers": [
       "Create a new API Gateway endpoint with a new version of the API in OpenAPI YAML le format. Use the import-to-update operation in merge mode into the API in API Gateway. Deploy the new version of the API to the production stage.",
       "Create a new API Gateway endpoint with a new version of the API in OpenAPI JSON le format. Use the import-to-update operation in overwrite mode into the API in API Gateway. Deploy the new version of the API to the production stage.",
-      "Create a new API Gateway endpoint with new versions of the API denitions. Create a custom domain name for the new API Gateway API. Point the Route 53 alias record to the new API Gateway API custom domain name. --- Page 201 ---"
+      "Create a new API Gateway endpoint with new versions of the API denitions. Create a custom domain name for the new API Gateway API. Point the Route 53 alias record to the new API Gateway API custom domain name."
     ],
     "explanation": "SAA-C03 practice scenario (extract question #544). Correct choice: A.",
     "keywords": [
@@ -340,11 +340,11 @@
     "navigationKeyword1": "aws",
     "navigationKeyword2": "saa-c03",
     "question": "A company has data collection sensors at different locations. The data collection sensors stream a high volume of data to the company. The\ncompany wants to design a platform on AWS to ingest and process high-volume streaming data. The solution must be scalable and support data\ncollection in near real time. The company must store the data in Amazon S3 for future reporting.\nWhich solution will meet these requirements with the LEAST operational overhead?",
-    "correctAnswer": "Use Amazon Kinesis Data Firehose to deliver streaming data to Amazon S3.",
+    "correctAnswer": "Use Amazon Kinesis Data Firehose (note: outdated; now Amazon Data Firehose) to deliver streaming data to Amazon S3.",
     "incorrectAnswers": [
       "Use AWS Glue to deliver streaming data to Amazon S3.",
       "Use AWS Lambda to deliver streaming data and store the data to Amazon S3.",
-      "Use AWS Database Migration Service (AWS DMS) to deliver streaming data to Amazon S3. --- Page 202 ---"
+      "Use AWS Database Migration Service (AWS DMS) to deliver streaming data to Amazon S3."
     ],
     "explanation": "SAA-C03 practice scenario (extract question #547). Correct choice: A.",
     "keywords": [

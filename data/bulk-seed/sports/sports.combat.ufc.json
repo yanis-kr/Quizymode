@@ -1,0 +1,202 @@
+[
+  {
+    "category": "sports",
+    "navigationKeyword1": "combat",
+    "navigationKeyword2": "ufc",
+    "question": "What does UFC stand for?",
+    "correctAnswer": "Ultimate Fighting Championship",
+    "incorrectAnswers": [
+      "Universal Fighting Circuit",
+      "United Fight Company",
+      "Ultimate Fighters Council"
+    ],
+    "explanation": "UFC is short for Ultimate Fighting Championship.",
+    "keywords": [
+      "combat",
+      "ufc",
+      "name"
+    ],
+    "source": "https://www.ufc.com/",
+    "seedId": "3faeba40-0961-4181-a660-d40f5bf7d346"
+  },
+  {
+    "category": "sports",
+    "navigationKeyword1": "combat",
+    "navigationKeyword2": "ufc",
+    "question": "What shape is the UFC's signature fenced competition area?",
+    "correctAnswer": "Octagon",
+    "incorrectAnswers": [
+      "Square ring",
+      "Hexagon",
+      "Triangle cage"
+    ],
+    "explanation": "The UFC is famous for using an eight-sided competition area.",
+    "keywords": [
+      "combat",
+      "ufc",
+      "octagon"
+    ],
+    "source": "https://www.ufc.com/",
+    "seedId": "96506250-98c7-43af-8f98-b29fbb4f3de5"
+  },
+  {
+    "category": "sports",
+    "navigationKeyword1": "combat",
+    "navigationKeyword2": "ufc",
+    "question": "How many rounds are in a standard non-title UFC bout?",
+    "correctAnswer": "Three",
+    "incorrectAnswers": [
+      "One",
+      "Five",
+      "Seven"
+    ],
+    "explanation": "Most standard UFC fights are scheduled for three rounds.",
+    "keywords": [
+      "combat",
+      "ufc",
+      "rounds"
+    ],
+    "source": "https://www.ufc.com/",
+    "seedId": "e97f542b-58e5-4424-ae0d-b58f5e2e0ce7"
+  },
+  {
+    "category": "sports",
+    "navigationKeyword1": "combat",
+    "navigationKeyword2": "ufc",
+    "question": "How many rounds are in a UFC title fight or main event scheduled for the longer distance?",
+    "correctAnswer": "Five",
+    "incorrectAnswers": [
+      "Three",
+      "Four",
+      "Seven"
+    ],
+    "explanation": "Championship bouts are typically five rounds.",
+    "keywords": [
+      "combat",
+      "ufc",
+      "title-fights"
+    ],
+    "source": "https://www.ufc.com/",
+    "seedId": "51da5105-bac9-49b8-a56d-66f7bc7291a2"
+  },
+  {
+    "category": "sports",
+    "navigationKeyword1": "combat",
+    "navigationKeyword2": "ufc",
+    "question": "Which heavyweight star became the UFC's biggest crossover draw before fighting Conor McGregor in boxing?",
+    "correctAnswer": "Conor McGregor",
+    "incorrectAnswers": [
+      "Anderson Silva",
+      "Georges St-Pierre",
+      "Demetrious Johnson"
+    ],
+    "explanation": "McGregor became the UFC's most famous crossover superstar of his era.",
+    "keywords": [
+      "combat",
+      "ufc",
+      "mcgregor"
+    ],
+    "source": "https://www.ufc.com/",
+    "seedId": "2cf7fbf1-07c8-4bd0-b977-92debbe5f0d2"
+  },
+  {
+    "category": "sports",
+    "navigationKeyword1": "combat",
+    "navigationKeyword2": "ufc",
+    "question": "Which fighter is associated with the nickname The Notorious in UFC history?",
+    "correctAnswer": "Conor McGregor",
+    "incorrectAnswers": [
+      "Jon Jones",
+      "Khabib Nurmagomedov",
+      "Israel Adesanya"
+    ],
+    "explanation": "The Notorious is McGregor's well-known fight nickname.",
+    "keywords": [
+      "combat",
+      "ufc",
+      "notorious"
+    ],
+    "source": "https://www.ufc.com/",
+    "seedId": "fa23a3d5-0d9d-4bb1-ab73-a5fff0e00f20"
+  },
+  {
+    "category": "sports",
+    "navigationKeyword1": "combat",
+    "navigationKeyword2": "ufc",
+    "question": "Which all-time great long ruled the middleweight division and later fought at light heavyweight?",
+    "correctAnswer": "Anderson Silva",
+    "incorrectAnswers": [
+      "Max Holloway",
+      "Kamaru Usman",
+      "Jose Aldo"
+    ],
+    "explanation": "Silva had one of the longest title reigns in UFC history.",
+    "keywords": [
+      "combat",
+      "ufc",
+      "anderson-silva"
+    ],
+    "source": "https://www.ufc.com/",
+    "seedId": "b56be95d-8033-4190-91ef-9f59892248f7"
+  },
+  {
+    "category": "sports",
+    "navigationKeyword1": "combat",
+    "navigationKeyword2": "ufc",
+    "question": "Which undefeated lightweight champion retired after defeating Justin Gaethje in 2020?",
+    "correctAnswer": "Khabib Nurmagomedov",
+    "incorrectAnswers": [
+      "Islam Makhachev",
+      "Tony Ferguson",
+      "Charles Oliveira"
+    ],
+    "explanation": "Khabib retired with an undefeated professional record.",
+    "keywords": [
+      "combat",
+      "ufc",
+      "khabib"
+    ],
+    "source": "https://www.ufc.com/",
+    "seedId": "3f99a0b0-17b6-424c-910d-dd37e17960fe"
+  },
+  {
+    "category": "sports",
+    "navigationKeyword1": "combat",
+    "navigationKeyword2": "ufc",
+    "question": "Which fighter became a two-division UFC champion by holding featherweight and lightweight titles?",
+    "correctAnswer": "Conor McGregor",
+    "incorrectAnswers": [
+      "Daniel Cormier",
+      "Amanda Nunes",
+      "Henry Cejudo"
+    ],
+    "explanation": "McGregor was the first UFC fighter to hold titles in two divisions simultaneously.",
+    "keywords": [
+      "combat",
+      "ufc",
+      "champ-champ"
+    ],
+    "source": "https://www.ufc.com/",
+    "seedId": "9bbb0f08-5cd3-4ea8-a751-29d91cf64392"
+  },
+  {
+    "category": "sports",
+    "navigationKeyword1": "combat",
+    "navigationKeyword2": "ufc",
+    "question": "Which fighter's rivalry with Daniel Cormier defined the UFC light heavyweight title scene for years?",
+    "correctAnswer": "Jon Jones",
+    "incorrectAnswers": [
+      "Alex Pereira",
+      "Chuck Liddell",
+      "Randy Couture"
+    ],
+    "explanation": "Jones and Cormier had one of the UFC's defining rivalries.",
+    "keywords": [
+      "combat",
+      "ufc",
+      "jon-jones"
+    ],
+    "source": "https://www.ufc.com/",
+    "seedId": "21246086-d435-48c6-b5a3-80e08d9e479a"
+  }
+]

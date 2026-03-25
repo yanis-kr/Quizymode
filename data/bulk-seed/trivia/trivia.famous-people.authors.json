@@ -1,0 +1,192 @@
+[
+  {
+    "category": "trivia",
+    "navigationKeyword1": "famous-people",
+    "navigationKeyword2": "authors",
+    "question": "William Shakespeare principally as a writer of what?",
+    "correctAnswer": "plays and poetry",
+    "incorrectAnswers": [
+      "novels only",
+      "operas only",
+      "newspapers only"
+    ],
+    "explanation": "Shakespeare\u2019s plays and poetry.",
+    "keywords": [
+      "literature",
+      "drama"
+    ],
+    "source": "https://www.britannica.com/biography/William-Shakespeare",
+    "seedId": "29a045ba-8a60-471d-b04c-1020ce5a2a6c"
+  },
+  {
+    "category": "trivia",
+    "navigationKeyword1": "famous-people",
+    "navigationKeyword2": "authors",
+    "question": "Jane Austen with novels exploring manners and marriage in which country\u2019s society?",
+    "correctAnswer": "England",
+    "incorrectAnswers": [
+      "Japan",
+      "Brazil",
+      "Egypt"
+    ],
+    "explanation": "Austen\u2019s novels in English society.",
+    "keywords": [
+      "novels",
+      "regency"
+    ],
+    "source": "https://www.britannica.com/biography/Jane-Austen",
+    "seedId": "afd3991f-5e10-4266-9bc1-b2d274c473d9"
+  },
+  {
+    "category": "trivia",
+    "navigationKeyword1": "famous-people",
+    "navigationKeyword2": "authors",
+    "question": "Mark Twain to regional literature often set along which U.S. river?",
+    "correctAnswer": "Mississippi River",
+    "incorrectAnswers": [
+      "Hudson River",
+      "Colorado River",
+      "Potomac River"
+    ],
+    "explanation": "Twain is connected to Mississippi River settings.",
+    "keywords": [
+      "american-literature",
+      "humor"
+    ],
+    "source": "https://www.britannica.com/biography/Mark-Twain",
+    "seedId": "e9b00443-c454-4d74-9aa5-2910b28f4176"
+  },
+  {
+    "category": "trivia",
+    "navigationKeyword1": "famous-people",
+    "navigationKeyword2": "authors",
+    "question": "Toni Morrison\u2019s Nobel Prize as recognizing achievements in what field?",
+    "correctAnswer": "literature",
+    "incorrectAnswers": [
+      "physics",
+      "peace",
+      "medicine"
+    ],
+    "explanation": "Morrison won the Nobel Prize in Literature.",
+    "keywords": [
+      "novels",
+      "nobel"
+    ],
+    "source": "https://www.britannica.com/biography/Toni-Morrison",
+    "seedId": "a44c8404-b0a1-4d44-a3f4-50cd48328ecb"
+  },
+  {
+    "category": "trivia",
+    "navigationKeyword1": "famous-people",
+    "navigationKeyword2": "authors",
+    "question": "Charles Dickens with which century\u2019s English novelists?",
+    "correctAnswer": "19th century",
+    "incorrectAnswers": [
+      "12th century",
+      "22nd century",
+      "8th century"
+    ],
+    "explanation": "Britannica places Dickens in 19th-century English literature.",
+    "keywords": [
+      "victorian",
+      "novels"
+    ],
+    "source": "https://www.britannica.com/biography/Charles-Dickens",
+    "seedId": "28306497-1fb3-4f11-9db6-3be5d9a0c221"
+  },
+  {
+    "category": "trivia",
+    "navigationKeyword1": "famous-people",
+    "navigationKeyword2": "authors",
+    "question": "Which modernist literary movement context is associated with Virginia Woolf?",
+    "correctAnswer": "modernism",
+    "incorrectAnswers": [
+      "romanticism only",
+      "baroque only",
+      "futurism only"
+    ],
+    "explanation": "Woolf is a modernist writer.",
+    "keywords": [
+      "modernism",
+      "essays"
+    ],
+    "source": "https://www.britannica.com/biography/Virginia-Woolf",
+    "seedId": "4a9cf3aa-116a-4ddd-8d81-e3005aa6cce4"
+  },
+  {
+    "category": "trivia",
+    "navigationKeyword1": "famous-people",
+    "navigationKeyword2": "authors",
+    "question": "Ernest Hemingway to a concise style and which wartime/literary milieu?",
+    "correctAnswer": "20th-century wars and expatriate Paris",
+    "incorrectAnswers": [
+      "ancient Rome only",
+      "Victorian drawing rooms only",
+      "Greek epic"
+    ],
+    "explanation": "Britannica links Hemingway to WWI contexts and Paris literary circles.",
+    "keywords": [
+      "fiction",
+      "nobel"
+    ],
+    "source": "https://www.britannica.com/biography/Ernest-Hemingway",
+    "seedId": "9c538107-0619-4890-8cb5-b723763e0b67"
+  },
+  {
+    "category": "trivia",
+    "navigationKeyword1": "famous-people",
+    "navigationKeyword2": "authors",
+    "question": "Homer as central to which ancient poetic tradition?",
+    "correctAnswer": "Greek epic poetry",
+    "incorrectAnswers": [
+      "Chinese Tang poetry",
+      "Sanskrit drama",
+      "Mayan codices"
+    ],
+    "explanation": "Homer is foundational for Greek epic.",
+    "keywords": [
+      "classics",
+      "epic"
+    ],
+    "source": "https://www.britannica.com/biography/Homer-Greek-poet",
+    "seedId": "5e7c567c-593f-4c30-846d-7996e9fef167"
+  },
+  {
+    "category": "trivia",
+    "navigationKeyword1": "famous-people",
+    "navigationKeyword2": "authors",
+    "question": "Maya Angelou to memoir and poetry rooted especially in which country\u2019s civil rights era?",
+    "correctAnswer": "United States",
+    "incorrectAnswers": [
+      "France",
+      "India",
+      "Australia"
+    ],
+    "explanation": "Angelou\u2019s work is tied to U.S. history and civil rights.",
+    "keywords": [
+      "memoir",
+      "poetry"
+    ],
+    "source": "https://www.britannica.com/biography/Maya-Angelou",
+    "seedId": "9a6c182a-7763-41db-a32c-12a36ba9b097"
+  },
+  {
+    "category": "trivia",
+    "navigationKeyword1": "famous-people",
+    "navigationKeyword2": "authors",
+    "question": "Which best-selling fantasy series is associated with J.K. Rowling?",
+    "correctAnswer": "Harry Potter",
+    "incorrectAnswers": [
+      "The Lord of the Rings",
+      "Narnia",
+      "Dune"
+    ],
+    "explanation": "Rowling is tied to the Harry Potter series.",
+    "keywords": [
+      "fantasy",
+      "novels"
+    ],
+    "source": "https://www.britannica.com/biography/J-K-Rowling",
+    "seedId": "3b6f0d9f-d3c6-4ef5-a244-816e02144502"
+  }
+]

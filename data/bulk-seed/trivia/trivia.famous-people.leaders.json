@@ -1,0 +1,192 @@
+[
+  {
+    "category": "trivia",
+    "navigationKeyword1": "famous-people",
+    "navigationKeyword2": "leaders",
+    "question": "WhiteHouse.gov biography dates George Washington\u2019s presidency as beginning in which year?",
+    "correctAnswer": "1789",
+    "incorrectAnswers": [
+      "1776",
+      "1801",
+      "1812"
+    ],
+    "explanation": "The White House notes Washington became president in 1789.",
+    "keywords": [
+      "presidents",
+      "us-history"
+    ],
+    "source": "https://www.whitehouse.gov/about-the-white-house/presidents/george-washington/",
+    "seedId": "49945ff1-d547-4101-bcc3-ad060dc7b367"
+  },
+  {
+    "category": "trivia",
+    "navigationKeyword1": "famous-people",
+    "navigationKeyword2": "leaders",
+    "question": "WhiteHouse.gov biography dates Abraham Lincoln\u2019s presidency as beginning in which year?",
+    "correctAnswer": "1861",
+    "incorrectAnswers": [
+      "1850",
+      "1877",
+      "1845"
+    ],
+    "explanation": "The White House places Lincoln\u2019s presidency starting in 1861.",
+    "keywords": [
+      "civil-war",
+      "presidents"
+    ],
+    "source": "https://www.whitehouse.gov/about-the-white-house/presidents/abraham-lincoln/",
+    "seedId": "a4ff3ebe-7561-42ae-91bc-ecf210717537"
+  },
+  {
+    "category": "trivia",
+    "navigationKeyword1": "famous-people",
+    "navigationKeyword2": "leaders",
+    "question": "Winston Churchill as a wartime prime minister of which country?",
+    "correctAnswer": "United Kingdom",
+    "incorrectAnswers": [
+      "France",
+      "Germany",
+      "Italy"
+    ],
+    "explanation": "Churchill is British prime minister during WWII.",
+    "keywords": [
+      "world-war-2",
+      "uk"
+    ],
+    "source": "https://www.britannica.com/biography/Winston-Churchill",
+    "seedId": "82a6bff3-419d-4ff0-8188-261517e6194f"
+  },
+  {
+    "category": "trivia",
+    "navigationKeyword1": "famous-people",
+    "navigationKeyword2": "leaders",
+    "question": "Nelson Mandela with ending apartheid in which country?",
+    "correctAnswer": "South Africa",
+    "incorrectAnswers": [
+      "Kenya",
+      "Nigeria",
+      "Morocco"
+    ],
+    "explanation": "Mandela is tied to South African politics.",
+    "keywords": [
+      "apartheid",
+      "south-africa"
+    ],
+    "source": "https://www.britannica.com/biography/Nelson-Mandela",
+    "seedId": "f497135b-41ee-4e60-9899-fa6b1678a7a8"
+  },
+  {
+    "category": "trivia",
+    "navigationKeyword1": "famous-people",
+    "navigationKeyword2": "leaders",
+    "question": "Which nonviolent resistance concept is most closely associated with Mahatma Gandhi?",
+    "correctAnswer": "satyagraha",
+    "incorrectAnswers": [
+      "blitzkrieg",
+      "coup d\u2019\u00e9tat",
+      "guerrilla war"
+    ],
+    "explanation": "Gandhi\u2019s satyagraha campaigns.",
+    "keywords": [
+      "india",
+      "independence"
+    ],
+    "source": "https://www.britannica.com/biography/Mahatma-Gandhi",
+    "seedId": "56442670-390c-4db2-b1a5-c15377375559"
+  },
+  {
+    "category": "trivia",
+    "navigationKeyword1": "famous-people",
+    "navigationKeyword2": "leaders",
+    "question": "Cleopatra to the last era of which ancient kingdom?",
+    "correctAnswer": "Ptolemaic Egypt",
+    "incorrectAnswers": [
+      "Neo-Babylonian Empire",
+      "Han China",
+      "Maurya Empire"
+    ],
+    "explanation": "Britannica places Cleopatra in Ptolemaic Egypt.",
+    "keywords": [
+      "ancient-history",
+      "egypt"
+    ],
+    "source": "https://www.britannica.com/biography/Cleopatra-queen-of-Egypt",
+    "seedId": "a7c800ee-9c70-46b3-b9cb-ffac42167d81"
+  },
+  {
+    "category": "trivia",
+    "navigationKeyword1": "famous-people",
+    "navigationKeyword2": "leaders",
+    "question": "Catherine the Great with ruling which empire?",
+    "correctAnswer": "Russian Empire",
+    "incorrectAnswers": [
+      "Ottoman Empire",
+      "Spanish Empire",
+      "Mughal Empire"
+    ],
+    "explanation": "Catherine is empress of Russia.",
+    "keywords": [
+      "russia",
+      "monarchy"
+    ],
+    "source": "https://www.britannica.com/biography/Catherine-the-Great-empress-of-Russia",
+    "seedId": "12f86842-6550-451c-9987-392166e146f5"
+  },
+  {
+    "category": "trivia",
+    "navigationKeyword1": "famous-people",
+    "navigationKeyword2": "leaders",
+    "question": "Julius Caesar as a leading figure of which ancient state?",
+    "correctAnswer": "Rome",
+    "incorrectAnswers": [
+      "Athens",
+      "Carthage",
+      "Persia"
+    ],
+    "explanation": "Caesar in Roman politics.",
+    "keywords": [
+      "ancient-rome",
+      "history"
+    ],
+    "source": "https://www.britannica.com/biography/Julius-Caesar-Roman-ruler",
+    "seedId": "982eba79-86cc-4365-9011-da203a9e6db4"
+  },
+  {
+    "category": "trivia",
+    "navigationKeyword1": "famous-people",
+    "navigationKeyword2": "leaders",
+    "question": "Which U.S. civil rights era tactic emphasis is most closely associated with Martin Luther King, Jr.?",
+    "correctAnswer": "nonviolent protest",
+    "incorrectAnswers": [
+      "armed insurrection",
+      "secession",
+      "draft riots"
+    ],
+    "explanation": "King\u2019s nonviolent civil rights leadership.",
+    "keywords": [
+      "civil-rights",
+      "us-history"
+    ],
+    "source": "https://www.britannica.com/biography/Martin-Luther-King-Jr",
+    "seedId": "ce4d0ae1-9a45-46c0-93e8-c0f21f770d8e"
+  },
+  {
+    "category": "trivia",
+    "navigationKeyword1": "famous-people",
+    "navigationKeyword2": "leaders",
+    "question": "Which long-reigning modern monarchy is most closely associated with Queen Elizabeth II?",
+    "correctAnswer": "United Kingdom",
+    "incorrectAnswers": [
+      "Brazil",
+      "Mexico",
+      "Thailand"
+    ],
+    "explanation": "Elizabeth II is UK monarch.",
+    "keywords": [
+      "monarchy",
+      "uk"
+    ],
+    "source": "https://www.britannica.com/biography/Elizabeth-II",
+    "seedId": "85c445ba-a7a8-47bc-b889-0e4b50db05cf"
+  }
+]

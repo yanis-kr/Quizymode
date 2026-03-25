@@ -55,7 +55,7 @@
     "incorrectAnswers": [
       "Migrate the application layer to Amazon EC2 Reserved Instances. Migrate the data storage layer to Amazon RDS On-Demand Instances.",
       "Migrate the application layer to Amazon EC2 Reserved Instances. Migrate the data storage layer to Amazon Aurora Reserved Instances.",
-      "Migrate the application layer to Amazon EC2 On-Demand Instances. Migrate the data storage layer to Amazon RDS Reserved Instances. --- Page 109 ---"
+      "Migrate the application layer to Amazon EC2 On-Demand Instances. Migrate the data storage layer to Amazon RDS Reserved Instances."
     ],
     "explanation": "SAA-C03 practice scenario (extract question #300). Correct choice: A.",
     "keywords": [
@@ -97,7 +97,7 @@
     "incorrectAnswers": [
       "Use an AWS Lambda function to scale Amazon ECS based on metric breaches that trigger an Amazon CloudWatch alarm.",
       "Use Amazon EC2 Auto Scaling with simple scaling policies to scale when ECS metric breaches trigger an Amazon CloudWatch alarm.",
-      "Use AWS Application Auto Scaling with target trafficking policies to scale when ECS metric breaches trigger an Amazon CloudWatch alarm. --- Page 110 ---"
+      "Use AWS Application Auto Scaling with target trafficking policies to scale when ECS metric breaches trigger an Amazon CloudWatch alarm."
     ],
     "explanation": "SAA-C03 practice scenario (extract question #303). Correct choice: A.",
     "keywords": [
@@ -160,7 +160,7 @@
     "incorrectAnswers": [
       "Launch all EC2 instances in different Availability Zones within the same AWS Region. Specify a placement group with partition strategy when launching EC2 instances.",
       "Deploy an Auto Scaling group to launch EC2 instances in different Availability Zones based on a network utilization target.",
-      "Deploy an Auto Scaling group with a step scaling policy to launch EC2 instances in different Availability Zones. --- Page 111 ---"
+      "Deploy an Auto Scaling group with a step scaling policy to launch EC2 instances in different Availability Zones."
     ],
     "explanation": "SAA-C03 practice scenario (extract question #306). Correct choice: A.",
     "keywords": [
@@ -200,7 +200,7 @@
     "incorrectAnswers": [
       "Analyze bucket access patterns by using the S3 dashboard in the AWS Management Console.",
       "Turn on the Amazon CloudWatch BucketSizeBytes metric for buckets. Analyze bucket access patterns by using the metrics data with Amazon Athena.",
-      "Turn on AWS CloudTrail for S3 object monitoring. Analyze bucket access patterns by using CloudTrail logs that are integrated with Amazon CloudWatch Logs. --- Page 112 ---"
+      "Turn on AWS CloudTrail for S3 object monitoring. Analyze bucket access patterns by using CloudTrail logs that are integrated with Amazon CloudWatch Logs."
     ],
     "explanation": "SAA-C03 practice scenario (extract question #309). Correct choice: A.",
     "keywords": [
@@ -243,7 +243,7 @@
     "incorrectAnswers": [
       "Create an AWS Lambda function and an Amazon Simple Notification Service (Amazon SNS) topic for each quote type. Subscribe the Lambda function to its associated SNS topic. Configure the application to publish requests for quotes to the appropriate SNS topic.",
       "Create a single Amazon Simple Notification Service (Amazon SNS) topic. Subscribe Amazon Simple Queue Service (Amazon SQS) queues to the SNS topic. Configure SNS message ltering to publish messages to the proper SQS queue based on the quote type. Configure each backend application server to use its own SQS queue.",
-      "Create multiple Amazon Kinesis Data Firehose delivery streams based on the quote type to deliver data streams to an Amazon OpenSearch Service cluster. Configure the application to send messages to the proper delivery stream. Configure each backend group of application servers to search for the messages from OpenSearch Service and process them accordingly. --- Page 113 ---"
+      "Create multiple Amazon Kinesis Data Firehose (note: outdated; now Amazon Data Firehose) delivery streams based on the quote type to deliver data streams to an Amazon OpenSearch Service cluster. Configure the application to send messages to the proper delivery stream. Configure each backend group of application servers to search for the messages from OpenSearch Service and process them accordingly."
     ],
     "explanation": "SAA-C03 practice scenario (extract question #311). Correct choice: A.",
     "keywords": [
@@ -308,7 +308,7 @@
     "incorrectAnswers": [
       "Amazon Aurora Serverless for MySQL",
       "Amazon Redshift Spectrum",
-      "Amazon RDS for MySQL --- Page 114 ---"
+      "Amazon RDS for MySQL"
     ],
     "explanation": "SAA-C03 practice scenario (extract question #314). Correct choice: A.",
     "keywords": [
@@ -376,7 +376,7 @@
     "incorrectAnswers": [
       "Develop a Python script that runs on Amazon EC2 instances to convert the .csv les to .sql les. Invoke the Python script on a cron schedule to store the output les in Amazon S3.",
       "Create an AWS Lambda function and an Amazon DynamoDB table. Use an S3 event to invoke the Lambda function. Configure the Lambda function to perform an extraffict, transform, and load (ETL) job to process the .csv les and store the processed data in the DynamoDB table.",
-      "Use Amazon EventBridge to launch an Amazon EMR cluster on a weekly schedule. Configure the EMR cluster to perform an extraffict, transform, and load (ETL) job to process the .csv les and store the processed data in an Amazon Redshift table. --- Page 115 ---"
+      "Use Amazon EventBridge to launch an Amazon EMR cluster on a weekly schedule. Configure the EMR cluster to perform an extraffict, transform, and load (ETL) job to process the .csv les and store the processed data in an Amazon Redshift table."
     ],
     "explanation": "SAA-C03 practice scenario (extract question #317). Correct choice: A.",
     "keywords": [
@@ -418,11 +418,11 @@
     "navigationKeyword1": "aws",
     "navigationKeyword2": "saa-c03",
     "question": "A company is using a eet of Amazon EC2 instances to ingest data from on-premises data sources. The data is in JSON format and ingestion\nrates can be as high as 1 MB/s. When an EC2 instance is rebooted, the data in-ight is lost. The company’s data science team wants to query\ningested data in near-real time.\nWhich solution provides near-real-time data querying that is scalable with minimal data loss?",
-    "correctAnswer": "Publish data to Amazon Kinesis Data Streams, Use Kinesis Data Analytics to query the data.",
+    "correctAnswer": "Publish data to Amazon Kinesis Data Streams, Use Kinesis Data Analytics (note: outdated; now Amazon Managed Service for Apache Flink for SQL/streaming analytics workloads) to query the data.",
     "incorrectAnswers": [
-      "Publish data to Amazon Kinesis Data Firehose with Amazon Redshift as the destination. Use Amazon Redshift to query the data.",
-      "Store ingested data in an EC2 instance store. Publish data to Amazon Kinesis Data Firehose with Amazon S3 as the destination. Use Amazon Athena to query the data.",
-      "Store ingested data in an Amazon Elastic Block Store (Amazon EBS) volume. Publish data to Amazon ElastiCache for Redis. Subscribe to the Redis channel to query the data. --- Page 116 ---"
+      "Publish data to Amazon Kinesis Data Firehose (note: outdated; now Amazon Data Firehose) with Amazon Redshift as the destination. Use Amazon Redshift to query the data.",
+      "Store ingested data in an EC2 instance store. Publish data to Amazon Kinesis Data Firehose (note: outdated; now Amazon Data Firehose) with Amazon S3 as the destination. Use Amazon Athena to query the data.",
+      "Store ingested data in an Amazon Elastic Block Store (Amazon EBS) volume. Publish data to Amazon ElastiCache for Redis. Subscribe to the Redis channel to query the data."
     ],
     "explanation": "SAA-C03 practice scenario (extract question #320). Correct choice: A.",
     "keywords": [

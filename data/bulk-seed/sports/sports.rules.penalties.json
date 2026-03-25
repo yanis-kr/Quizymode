@@ -1,0 +1,202 @@
+[
+  {
+    "category": "sports",
+    "navigationKeyword1": "rules",
+    "navigationKeyword2": "penalties",
+    "question": "What is the penalty called when an offensive football player moves before the snap?",
+    "correctAnswer": "False start",
+    "incorrectAnswers": [
+      "Offside",
+      "Holding",
+      "Encroachment"
+    ],
+    "explanation": "A false start is a pre-snap offensive penalty.",
+    "keywords": [
+      "rules",
+      "penalties",
+      "football"
+    ],
+    "source": "https://operations.nfl.com/learn-the-game/nfl-basics/",
+    "seedId": "a370ba0f-6af8-4f3a-a3e3-623751cbc3ce"
+  },
+  {
+    "category": "sports",
+    "navigationKeyword1": "rules",
+    "navigationKeyword2": "penalties",
+    "question": "What is it called in hockey when a player uses the stick to impede an opponent?",
+    "correctAnswer": "Hooking",
+    "incorrectAnswers": [
+      "Icing",
+      "Offside",
+      "Faceoff violation"
+    ],
+    "explanation": "Hooking is a standard stick-infraction penalty.",
+    "keywords": [
+      "rules",
+      "penalties",
+      "hockey"
+    ],
+    "source": "https://www.britannica.com/sports/ice-hockey",
+    "seedId": "75ef569a-d889-40b1-ac77-261111cc48a9"
+  },
+  {
+    "category": "sports",
+    "navigationKeyword1": "rules",
+    "navigationKeyword2": "penalties",
+    "question": "What basketball foul is called when an offensive player crashes into a set defender?",
+    "correctAnswer": "Charging",
+    "incorrectAnswers": [
+      "Blocking",
+      "Traveling",
+      "Goaltending"
+    ],
+    "explanation": "Charging is an offensive foul.",
+    "keywords": [
+      "rules",
+      "penalties",
+      "basketball"
+    ],
+    "source": "https://www.britannica.com/sports/basketball",
+    "seedId": "236ed023-1148-40a8-b75b-9b0bfd88e2bb"
+  },
+  {
+    "category": "sports",
+    "navigationKeyword1": "rules",
+    "navigationKeyword2": "penalties",
+    "question": "What is it called in soccer when a defender unfairly trips an opponent?",
+    "correctAnswer": "A foul",
+    "incorrectAnswers": [
+      "An advantage call only",
+      "A hat trick",
+      "A throw-in"
+    ],
+    "explanation": "Tripping an opponent is a foul in soccer.",
+    "keywords": [
+      "rules",
+      "penalties",
+      "soccer"
+    ],
+    "source": "https://www.britannica.com/sports/football-soccer",
+    "seedId": "da5d4d62-72e8-4bbf-ac4c-d780c750f4b5"
+  },
+  {
+    "category": "sports",
+    "navigationKeyword1": "rules",
+    "navigationKeyword2": "penalties",
+    "question": "What is the golf result when a ball finishes out of bounds and stroke-and-distance applies?",
+    "correctAnswer": "Penalty strokes are added",
+    "incorrectAnswers": [
+      "The player loses the hole automatically",
+      "The shot is replayed for free",
+      "The ball is always dropped without penalty"
+    ],
+    "explanation": "Many golf violations and certain ball locations add penalty strokes.",
+    "keywords": [
+      "rules",
+      "penalties",
+      "golf"
+    ],
+    "source": "https://www.usga.org/content/usga/home-page/rules-hub.html",
+    "seedId": "30e9cc88-549d-4451-a0de-043a991aecaa"
+  },
+  {
+    "category": "sports",
+    "navigationKeyword1": "rules",
+    "navigationKeyword2": "penalties",
+    "question": "What is it called when a baseball pitcher throws four balls outside the strike zone to one batter?",
+    "correctAnswer": "A walk",
+    "incorrectAnswers": [
+      "A balk",
+      "An out",
+      "A beanball"
+    ],
+    "explanation": "Four balls award the batter first base.",
+    "keywords": [
+      "rules",
+      "penalties",
+      "baseball"
+    ],
+    "source": "https://www.mlb.com/glossary",
+    "seedId": "49eefaa7-1fe6-427b-97f6-2a369985d8ea"
+  },
+  {
+    "category": "sports",
+    "navigationKeyword1": "rules",
+    "navigationKeyword2": "penalties",
+    "question": "What is the common boxing penalty for an illegal blow below the belt?",
+    "correctAnswer": "A foul warning or point deduction",
+    "incorrectAnswers": [
+      "An automatic knockout",
+      "A goal kick",
+      "A faceoff"
+    ],
+    "explanation": "Low blows are fouls and may lead to warnings or deductions.",
+    "keywords": [
+      "rules",
+      "penalties",
+      "boxing"
+    ],
+    "source": "https://www.britannica.com/sports",
+    "seedId": "5d2a5801-d837-4b9e-a1a3-9aa5bbd98a15"
+  },
+  {
+    "category": "sports",
+    "navigationKeyword1": "rules",
+    "navigationKeyword2": "penalties",
+    "question": "What is the rugby term for a serious offense that can send a player off permanently?",
+    "correctAnswer": "Red card",
+    "incorrectAnswers": [
+      "Icing",
+      "Technical foul",
+      "Timeout"
+    ],
+    "explanation": "A red card ejects the player from the match.",
+    "keywords": [
+      "rules",
+      "penalties",
+      "red-card"
+    ],
+    "source": "https://www.britannica.com/sports",
+    "seedId": "ad73808a-d327-4eaf-bbbf-9586dd6eb62f"
+  },
+  {
+    "category": "sports",
+    "navigationKeyword1": "rules",
+    "navigationKeyword2": "penalties",
+    "question": "What is the soccer restart after a defending team commits a direct-free-kick foul inside its own penalty area?",
+    "correctAnswer": "Penalty kick",
+    "incorrectAnswers": [
+      "Corner kick",
+      "Dropped ball",
+      "Throw-in"
+    ],
+    "explanation": "A direct-free-kick foul inside the box becomes a penalty kick.",
+    "keywords": [
+      "rules",
+      "penalties",
+      "penalty-kick"
+    ],
+    "source": "https://www.britannica.com/sports/football-soccer",
+    "seedId": "c088f80e-174f-4e94-ad25-15a7565dc3ce"
+  },
+  {
+    "category": "sports",
+    "navigationKeyword1": "rules",
+    "navigationKeyword2": "penalties",
+    "question": "What baseball infraction is called when the pitcher makes an illegal motion with runners on base?",
+    "correctAnswer": "Balk",
+    "incorrectAnswers": [
+      "Walk",
+      "Wild pitch",
+      "Hook"
+    ],
+    "explanation": "A balk can advance runners because of an illegal pitching motion.",
+    "keywords": [
+      "rules",
+      "penalties",
+      "balk"
+    ],
+    "source": "https://www.mlb.com/glossary",
+    "seedId": "f6f5bbaa-1663-46fc-875b-a09c3b3bcc81"
+  }
+]

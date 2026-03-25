@@ -1,0 +1,202 @@
+[
+  {
+    "category": "sports",
+    "navigationKeyword1": "baseball",
+    "navigationKeyword2": "positions",
+    "question": "Which player throws the ball to start each plate appearance?",
+    "correctAnswer": "Pitcher",
+    "incorrectAnswers": [
+      "Catcher",
+      "Shortstop",
+      "Center fielder"
+    ],
+    "explanation": "The pitcher delivers the pitch to the batter.",
+    "keywords": [
+      "baseball",
+      "positions",
+      "pitcher"
+    ],
+    "source": "https://www.britannica.com/sports/baseball",
+    "seedId": "866f0dc4-a52a-4778-8ee5-86847e4b85dd"
+  },
+  {
+    "category": "sports",
+    "navigationKeyword1": "baseball",
+    "navigationKeyword2": "positions",
+    "question": "Which position wears most of the protective gear behind home plate?",
+    "correctAnswer": "Catcher",
+    "incorrectAnswers": [
+      "First baseman",
+      "Pitcher",
+      "Shortstop"
+    ],
+    "explanation": "The catcher receives pitches and defends the plate area.",
+    "keywords": [
+      "baseball",
+      "positions",
+      "catcher"
+    ],
+    "source": "https://www.britannica.com/sports/baseball",
+    "seedId": "8c75e819-786a-4498-8a28-7ed26530cdd4"
+  },
+  {
+    "category": "sports",
+    "navigationKeyword1": "baseball",
+    "navigationKeyword2": "positions",
+    "question": "Which infielder stands between second and third base?",
+    "correctAnswer": "Shortstop",
+    "incorrectAnswers": [
+      "Second baseman",
+      "Third baseman",
+      "First baseman"
+    ],
+    "explanation": "The shortstop covers the left side of the infield for most right-handed hitters.",
+    "keywords": [
+      "baseball",
+      "positions",
+      "shortstop"
+    ],
+    "source": "https://www.britannica.com/sports/baseball",
+    "seedId": "e471ff64-75ca-465b-b189-8af054b70adc"
+  },
+  {
+    "category": "sports",
+    "navigationKeyword1": "baseball",
+    "navigationKeyword2": "positions",
+    "question": "Which infielder normally plays closest to first base?",
+    "correctAnswer": "First baseman",
+    "incorrectAnswers": [
+      "Third baseman",
+      "Shortstop",
+      "Catcher"
+    ],
+    "explanation": "The first baseman often receives throws to complete routine outs at first.",
+    "keywords": [
+      "baseball",
+      "positions",
+      "first-base"
+    ],
+    "source": "https://www.britannica.com/sports/baseball",
+    "seedId": "fa3c123d-242a-48e2-bb9b-e9bdbddfab07"
+  },
+  {
+    "category": "sports",
+    "navigationKeyword1": "baseball",
+    "navigationKeyword2": "positions",
+    "question": "Which outfielder usually patrols the middle of the outfield?",
+    "correctAnswer": "Center fielder",
+    "incorrectAnswers": [
+      "Right fielder",
+      "Left fielder",
+      "Catcher"
+    ],
+    "explanation": "Center fielders cover the widest ground in the outfield.",
+    "keywords": [
+      "baseball",
+      "positions",
+      "center-field"
+    ],
+    "source": "https://www.britannica.com/sports/baseball",
+    "seedId": "79e240d5-44fe-484b-9152-f6d2b71b94df"
+  },
+  {
+    "category": "sports",
+    "navigationKeyword1": "baseball",
+    "navigationKeyword2": "positions",
+    "question": "Which infielder defends the bag between first and third but to the right of second base?",
+    "correctAnswer": "Second baseman",
+    "incorrectAnswers": [
+      "Third baseman",
+      "Shortstop",
+      "Pitcher"
+    ],
+    "explanation": "The second baseman works on the right side of the infield.",
+    "keywords": [
+      "baseball",
+      "positions",
+      "second-base"
+    ],
+    "source": "https://www.britannica.com/sports/baseball",
+    "seedId": "46e1f160-10f7-4062-be89-157c516dd17f"
+  },
+  {
+    "category": "sports",
+    "navigationKeyword1": "baseball",
+    "navigationKeyword2": "positions",
+    "question": "Which infielder guards the hot corner?",
+    "correctAnswer": "Third baseman",
+    "incorrectAnswers": [
+      "First baseman",
+      "Second baseman",
+      "Center fielder"
+    ],
+    "explanation": "Third base is nicknamed the hot corner because of hard-hit balls.",
+    "keywords": [
+      "baseball",
+      "positions",
+      "third-base"
+    ],
+    "source": "https://www.britannica.com/sports/baseball",
+    "seedId": "6a8a09a3-d6f3-44dd-8d54-93d653d3800c"
+  },
+  {
+    "category": "sports",
+    "navigationKeyword1": "baseball",
+    "navigationKeyword2": "positions",
+    "question": "Which outfielder is usually positioned to the batter's left in fair territory?",
+    "correctAnswer": "Left fielder",
+    "incorrectAnswers": [
+      "Center fielder",
+      "Shortstop",
+      "First baseman"
+    ],
+    "explanation": "The left fielder covers the outfield area on the third-base side.",
+    "keywords": [
+      "baseball",
+      "positions",
+      "left-field"
+    ],
+    "source": "https://www.britannica.com/sports/baseball",
+    "seedId": "87109dde-4290-4209-8bff-1cfdbdbd6dab"
+  },
+  {
+    "category": "sports",
+    "navigationKeyword1": "baseball",
+    "navigationKeyword2": "positions",
+    "question": "Which outfielder often makes long throws to third base and home from the opposite corner of left field?",
+    "correctAnswer": "Right fielder",
+    "incorrectAnswers": [
+      "Center fielder",
+      "Catcher",
+      "Second baseman"
+    ],
+    "explanation": "Right fielders are often valued for strong throwing arms.",
+    "keywords": [
+      "baseball",
+      "positions",
+      "right-field"
+    ],
+    "source": "https://www.britannica.com/sports/baseball",
+    "seedId": "331bf402-3a5a-43dc-ae3e-ee5232d2fd9b"
+  },
+  {
+    "category": "sports",
+    "navigationKeyword1": "baseball",
+    "navigationKeyword2": "positions",
+    "question": "Which defensive player is position number 6 in scorekeeping?",
+    "correctAnswer": "Shortstop",
+    "incorrectAnswers": [
+      "Second baseman",
+      "Third baseman",
+      "Pitcher"
+    ],
+    "explanation": "Standard baseball notation assigns 6 to the shortstop.",
+    "keywords": [
+      "baseball",
+      "positions",
+      "scorekeeping"
+    ],
+    "source": "https://www.mlb.com/glossary",
+    "seedId": "5cb73c0d-d327-42a4-993b-c244f67e19b8"
+  }
+]

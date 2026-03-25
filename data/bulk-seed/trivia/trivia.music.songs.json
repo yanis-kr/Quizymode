@@ -1,0 +1,192 @@
+[
+  {
+    "category": "trivia",
+    "navigationKeyword1": "music",
+    "navigationKeyword2": "songs",
+    "question": "At the 95th Academy Awards, which song won Best Original Song?",
+    "correctAnswer": "Naatu Naatu (RRR)",
+    "incorrectAnswers": [
+      "Lift Me Up",
+      "Hold My Hand",
+      "This Is A Life"
+    ],
+    "explanation": "Naatu Naatu won Best Original Song at the 95th Academy Awards.",
+    "keywords": [
+      "oscars",
+      "songs"
+    ],
+    "source": "https://www.oscars.org/oscars/ceremonies/2023",
+    "seedId": "76de0f09-222c-4e9d-8549-83db64046698"
+  },
+  {
+    "category": "trivia",
+    "navigationKeyword1": "music",
+    "navigationKeyword2": "songs",
+    "question": "At the 94th Academy Awards, which song won Best Original Song?",
+    "correctAnswer": "No Time To Die",
+    "incorrectAnswers": [
+      "Be Alive",
+      "Dos Oruguitas",
+      "Down To Joy"
+    ],
+    "explanation": "No Time To Die won Best Original Song at the 94th Academy Awards.",
+    "keywords": [
+      "oscars",
+      "songs"
+    ],
+    "source": "https://www.oscars.org/oscars/ceremonies/2022",
+    "seedId": "903e6132-1f5a-4705-98c5-4ff01c33ecf0"
+  },
+  {
+    "category": "trivia",
+    "navigationKeyword1": "music",
+    "navigationKeyword2": "songs",
+    "question": "A single is a release built around an individual what?",
+    "correctAnswer": "tracks",
+    "incorrectAnswers": [
+      "novels",
+      "symphonies",
+      "video codecs"
+    ],
+    "explanation": "Singles highlight individual songs.",
+    "keywords": [
+      "singles",
+      "releases"
+    ],
+    "source": "https://www.britannica.com/topic/single-music",
+    "seedId": "b5f5cae7-a504-4b79-9723-7260b584a6c2"
+  },
+  {
+    "category": "trivia",
+    "navigationKeyword1": "music",
+    "navigationKeyword2": "songs",
+    "question": "A cover song is a new performance of what?",
+    "correctAnswer": "existing compositions",
+    "incorrectAnswers": [
+      "unwritten silence",
+      "random noise",
+      "traffic sounds"
+    ],
+    "explanation": "Covers reinterpret existing songs.",
+    "keywords": [
+      "covers",
+      "interpretation"
+    ],
+    "source": "https://www.britannica.com/topic/cover-version",
+    "seedId": "419fe860-5dba-4fde-84c3-8a9feca8ff22"
+  },
+  {
+    "category": "trivia",
+    "navigationKeyword1": "music",
+    "navigationKeyword2": "songs",
+    "question": "Historically, a B-side was found on the flip side of what format?",
+    "correctAnswer": "vinyl singles",
+    "incorrectAnswers": [
+      "Blu-ray movies",
+      "tracks",
+      "existing songs"
+    ],
+    "explanation": "B-sides were flip sides of singles.",
+    "keywords": [
+      "b-side",
+      "history"
+    ],
+    "source": "https://www.britannica.com/topic/B-side",
+    "seedId": "dd1285e7-aaf3-4a87-a78d-9c2c6094f750"
+  },
+  {
+    "category": "trivia",
+    "navigationKeyword1": "music",
+    "navigationKeyword2": "songs",
+    "question": "Mashups blend multiple what?",
+    "correctAnswer": "recordings",
+    "incorrectAnswers": [
+      "paintings",
+      "novels",
+      "sculptures"
+    ],
+    "explanation": "Mashups combine recordings.",
+    "keywords": [
+      "mashup",
+      "editing"
+    ],
+    "source": "https://www.britannica.com/topic/mashup-music",
+    "seedId": "3960cff7-3cb5-4ab0-9986-cbb875ac6f50"
+  },
+  {
+    "category": "trivia",
+    "navigationKeyword1": "music",
+    "navigationKeyword2": "songs",
+    "question": "Jingles are short advertising what?",
+    "correctAnswer": "songs",
+    "incorrectAnswers": [
+      "novels",
+      "essays",
+      "patents"
+    ],
+    "explanation": "Jingles are ad songs.",
+    "keywords": [
+      "jingles",
+      "advertising"
+    ],
+    "source": "https://www.britannica.com/topic/jingle-advertising",
+    "seedId": "971d9fde-ad34-4117-aa78-31851182eeb6"
+  },
+  {
+    "category": "trivia",
+    "navigationKeyword1": "music",
+    "navigationKeyword2": "songs",
+    "question": "A cappella singing uses vocals without what?",
+    "correctAnswer": "instrumental accompaniment",
+    "incorrectAnswers": [
+      "without audiences",
+      "without rhythm",
+      "without vowels"
+    ],
+    "explanation": "A cappella is unaccompanied voice.",
+    "keywords": [
+      "a-cappella",
+      "vocals"
+    ],
+    "source": "https://www.britannica.com/art/a-cappella-music",
+    "seedId": "be35fc33-b542-4777-be67-827044c63a0d"
+  },
+  {
+    "category": "trivia",
+    "navigationKeyword1": "music",
+    "navigationKeyword2": "songs",
+    "question": "Antiphonal singing follows a call-and-what pattern?",
+    "correctAnswer": "response",
+    "incorrectAnswers": [
+      "compression",
+      "encryption",
+      "fragmentation"
+    ],
+    "explanation": "Antiphony alternates call and response.",
+    "keywords": [
+      "antiphony",
+      "choir"
+    ],
+    "source": "https://www.britannica.com/art/antiphonal-music",
+    "seedId": "f704bb4b-88c0-4a5d-abfa-2e4a6e42f049"
+  },
+  {
+    "category": "trivia",
+    "navigationKeyword1": "music",
+    "navigationKeyword2": "songs",
+    "question": "Lullabies are soothing songs for whom?",
+    "correctAnswer": "infants",
+    "incorrectAnswers": [
+      "marathon runners",
+      "deep-sea divers",
+      "chess players"
+    ],
+    "explanation": "Lullabies calm babies.",
+    "keywords": [
+      "lullabies",
+      "folk"
+    ],
+    "source": "https://www.britannica.com/art/lullaby",
+    "seedId": "39c09d6a-67b4-456e-a19a-ee31fae2e0d6"
+  }
+]

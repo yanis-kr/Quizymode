@@ -1,0 +1,202 @@
+[
+  {
+    "category": "sports",
+    "navigationKeyword1": "hockey",
+    "navigationKeyword2": "rules",
+    "question": "How many players from one team are usually on the ice in normal play, including the goalie?",
+    "correctAnswer": "Six",
+    "incorrectAnswers": [
+      "Five",
+      "Seven",
+      "Eight"
+    ],
+    "explanation": "A standard hockey team has five skaters and one goaltender on the ice.",
+    "keywords": [
+      "hockey",
+      "rules",
+      "players"
+    ],
+    "source": "https://www.britannica.com/sports/ice-hockey",
+    "seedId": "6dc376d1-00bb-4739-a30a-51b6fbb1f3b2"
+  },
+  {
+    "category": "sports",
+    "navigationKeyword1": "hockey",
+    "navigationKeyword2": "rules",
+    "question": "How many regulation periods are in an NHL game?",
+    "correctAnswer": "Three",
+    "incorrectAnswers": [
+      "Two",
+      "Four",
+      "Five"
+    ],
+    "explanation": "An NHL game is divided into three periods.",
+    "keywords": [
+      "hockey",
+      "rules",
+      "periods"
+    ],
+    "source": "https://www.britannica.com/sports/ice-hockey",
+    "seedId": "dc0682d7-4e2a-478c-879a-c0f816340f03"
+  },
+  {
+    "category": "sports",
+    "navigationKeyword1": "hockey",
+    "navigationKeyword2": "rules",
+    "question": "What is it called when an attacking player enters the offensive zone ahead of the puck?",
+    "correctAnswer": "Offside",
+    "incorrectAnswers": [
+      "Icing",
+      "Cross-checking",
+      "Hooking"
+    ],
+    "explanation": "Entering the zone before the puck creates an offside violation.",
+    "keywords": [
+      "hockey",
+      "rules",
+      "offside"
+    ],
+    "source": "https://www.britannica.com/sports/ice-hockey",
+    "seedId": "cc0a3e97-71b3-4324-9dbb-89e3172d8192"
+  },
+  {
+    "category": "sports",
+    "navigationKeyword1": "hockey",
+    "navigationKeyword2": "rules",
+    "question": "What is it called when a team shoots the puck from behind center ice all the way past the opponent's goal line untouched?",
+    "correctAnswer": "Icing",
+    "incorrectAnswers": [
+      "Offside",
+      "Slashing",
+      "Tripping"
+    ],
+    "explanation": "Icing stops play when the puck is sent the length of the ice illegally.",
+    "keywords": [
+      "hockey",
+      "rules",
+      "icing"
+    ],
+    "source": "https://www.britannica.com/sports/ice-hockey",
+    "seedId": "beef760b-dfbb-4972-ad47-40a0aab2bfa8"
+  },
+  {
+    "category": "sports",
+    "navigationKeyword1": "hockey",
+    "navigationKeyword2": "rules",
+    "question": "What advantage does a team gain when the opponent takes a minor penalty?",
+    "correctAnswer": "A power play",
+    "incorrectAnswers": [
+      "A shootout",
+      "An automatic goal",
+      "Extra periods"
+    ],
+    "explanation": "A minor penalty usually gives the other team a temporary skater advantage.",
+    "keywords": [
+      "hockey",
+      "rules",
+      "power-play"
+    ],
+    "source": "https://www.britannica.com/sports/ice-hockey",
+    "seedId": "093c10e7-edce-4dc8-b402-fe10d83390f0"
+  },
+  {
+    "category": "sports",
+    "navigationKeyword1": "hockey",
+    "navigationKeyword2": "rules",
+    "question": "What is the usual length of a minor penalty?",
+    "correctAnswer": "Two minutes",
+    "incorrectAnswers": [
+      "One minute",
+      "Three minutes",
+      "Five minutes"
+    ],
+    "explanation": "Most standard minor penalties last two minutes.",
+    "keywords": [
+      "hockey",
+      "rules",
+      "minor-penalty"
+    ],
+    "source": "https://www.britannica.com/sports/ice-hockey",
+    "seedId": "06c004bf-3840-44ce-9d8e-516e0426ce7c"
+  },
+  {
+    "category": "sports",
+    "navigationKeyword1": "hockey",
+    "navigationKeyword2": "rules",
+    "question": "What is a hat trick in hockey?",
+    "correctAnswer": "Three goals by one player in a game",
+    "incorrectAnswers": [
+      "Three assists by one player",
+      "A shutout in three periods",
+      "Three team power-play goals"
+    ],
+    "explanation": "A hat trick means one player scores three goals in the same game.",
+    "keywords": [
+      "hockey",
+      "rules",
+      "hat-trick"
+    ],
+    "source": "https://www.britannica.com/sports/ice-hockey",
+    "seedId": "2c71b226-eeae-42ca-9bf3-84bfeda4036f"
+  },
+  {
+    "category": "sports",
+    "navigationKeyword1": "hockey",
+    "navigationKeyword2": "rules",
+    "question": "What is a shutout?",
+    "correctAnswer": "A game in which the goalie allows no goals",
+    "incorrectAnswers": [
+      "A game decided by shootout only",
+      "A scoreless tie after one period",
+      "A delayed penalty"
+    ],
+    "explanation": "A shutout is credited when a goalie or goalies allow no goals.",
+    "keywords": [
+      "hockey",
+      "rules",
+      "shutout"
+    ],
+    "source": "https://www.britannica.com/sports/ice-hockey",
+    "seedId": "37fe5dd1-7f56-48fd-ad4d-16fc2ba5353c"
+  },
+  {
+    "category": "sports",
+    "navigationKeyword1": "hockey",
+    "navigationKeyword2": "rules",
+    "question": "Which infraction involves using the stick to impede an opponent's progress?",
+    "correctAnswer": "Hooking",
+    "incorrectAnswers": [
+      "Offside",
+      "Icing",
+      "Faceoff violation"
+    ],
+    "explanation": "Hooking uses the stick to restrain or slow another player.",
+    "keywords": [
+      "hockey",
+      "rules",
+      "hooking"
+    ],
+    "source": "https://www.britannica.com/sports/ice-hockey",
+    "seedId": "e96e1dfb-23d9-45b9-ab8f-2b6f67e4175d"
+  },
+  {
+    "category": "sports",
+    "navigationKeyword1": "hockey",
+    "navigationKeyword2": "rules",
+    "question": "What restarts play after most stoppages in hockey?",
+    "correctAnswer": "A faceoff",
+    "incorrectAnswers": [
+      "A kickoff",
+      "A jump ball",
+      "A throw-in"
+    ],
+    "explanation": "The official drops the puck for a faceoff after many stoppages.",
+    "keywords": [
+      "hockey",
+      "rules",
+      "faceoff"
+    ],
+    "source": "https://www.britannica.com/sports/ice-hockey",
+    "seedId": "d790e6f1-7fc7-4886-adc5-59a493b95085"
+  }
+]

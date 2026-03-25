@@ -56,7 +56,7 @@
     "incorrectAnswers": [
       "Use a CloudFront origin access control (OAC) to create a certicate.",
       "Use AWS Certicate Manager (ACM) to create a certicate. Use DNS validation for the domain.",
-      "Use AWS Certicate Manager (ACM) to create a certicate. Use email validation for the domain. --- Page 212 ---"
+      "Use AWS Certicate Manager (ACM) to create a certicate. Use email validation for the domain."
     ],
     "explanation": "SAA-C03 practice scenario (extract question #577). Correct choice: A.",
     "keywords": [
@@ -121,7 +121,7 @@
     "incorrectAnswers": [
       "Host the application on an Amazon EC2 instance. Use an Amazon Elastic Block Store (Amazon EBS) GP2 volume to run the application.",
       "Configure an Auto Scaling group with an Amazon EC2 instance. Use an Amazon FSx for OpenZFS le system to run the application.",
-      "Host the application on an Amazon EC2 instance. Use an Amazon Elastic Block Store (Amazon EBS) GP3 volume to run the application. --- Page 213 ---"
+      "Host the application on an Amazon EC2 instance. Use an Amazon Elastic Block Store (Amazon EBS) GP3 volume to run the application."
     ],
     "explanation": "SAA-C03 practice scenario (extract question #580). Correct choice: A.",
     "keywords": [
@@ -185,7 +185,7 @@
     "incorrectAnswers": [
       "Use an on-premises backup application to read the data from the tapes and to write directly to Amazon S3 Glacier Deep Archive.",
       "Order multiple AWS Snowball devices that have Tape Gateway. Copy the physical tapes to virtual tapes in Snowball. Ship the Snowball devices to AWS. Create a lifecycle policy to move the tapes to Amazon S3 Glacier Deep Archive.",
-      "Configure an on-premises Tape Gateway. Create virtual tapes in the AWS Cloud. Use backup software to copy the physical tape to the virtual tape. --- Page 214 ---"
+      "Configure an on-premises Tape Gateway. Create virtual tapes in the AWS Cloud. Use backup software to copy the physical tape to the virtual tape."
     ],
     "explanation": "SAA-C03 practice scenario (extract question #583). Correct choice: A.",
     "keywords": [
@@ -247,7 +247,7 @@
     "incorrectAnswers": [
       "Invite the R&D AWS account to be part of the new organization after the R&D AWS account has left the prior organization.",
       "Create a new R&D AWS account in the new organization. Migrate resources from the prior R&D AWS account to the new R&D AWS account.",
-      "Have the R&D AWS account join the new organization. Make the new management account a member of the prior organization. --- Page 215 ---"
+      "Have the R&D AWS account join the new organization. Make the new management account a member of the prior organization."
     ],
     "explanation": "SAA-C03 practice scenario (extract question #586). Correct choice: A.",
     "keywords": [
@@ -266,7 +266,7 @@
     "correctAnswer": "Configure a Gateway Load Balancer (GWLB) in front of an Amazon Elastic Container Service (Amazon ECS) container instance that stores the information that the company receives in an Amazon Elastic File System (Amazon EFS) le system. Authorization is resolved at the GWLB.",
     "incorrectAnswers": [
       "Configure an Amazon API Gateway endpoint in front of an Amazon Kinesis data stream that stores the information that the company receives in an Amazon S3 bucket. Use an AWS Lambda function to resolve authorization.",
-      "Configure an Amazon API Gateway endpoint in front of an Amazon Kinesis Data Firehose that stores the information that the company receives in an Amazon S3 bucket. Use an API Gateway Lambda authorizer to resolve authorization.",
+      "Configure an Amazon API Gateway endpoint in front of an Amazon Kinesis Data Firehose (note: outdated; now Amazon Data Firehose) that stores the information that the company receives in an Amazon S3 bucket. Use an API Gateway Lambda authorizer to resolve authorization.",
       "Configure a Gateway Load Balancer (GWLB) in front of an Amazon Elastic Container Service (Amazon ECS) container instance that stores the information that the company receives on an Amazon Elastic File System (Amazon EFS) le system. Use an AWS Lambda function to resolve authorization."
     ],
     "explanation": "SAA-C03 practice scenario (extract question #587). Correct choice: A.",
@@ -311,7 +311,7 @@
     "incorrectAnswers": [
       "Use Amazon ElastiCache for Redis to store the session state. Update the application to use ElastiCache for Redis to store the session state.",
       "Use an AWS Storage Gateway cached volume to store session data. Update the application to use AWS Storage Gateway cached volume to store the session state.",
-      "Use Amazon RDS to store the session state. Update the application to use Amazon RDS to store the session state. --- Page 216 ---"
+      "Use Amazon RDS to store the session state. Update the application to use Amazon RDS to store the session state."
     ],
     "explanation": "SAA-C03 practice scenario (extract question #589). Correct choice: A.",
     "keywords": [
@@ -380,7 +380,7 @@
     "incorrectAnswers": [
       "Use Amazon S3 to store the images. Create an IAM user for each customer. Add the users to a group that has permission to access the S3 bucket.",
       "Use Amazon EC2 instances that are behind Application Load Balancers (ALBs) to store the images. Deploy the instances only in the countries the company services. Provide customers with links to the ALBs for their specific country's instances.",
-      "Use Amazon S3 to store the images. Use Amazon CloudFront to distribute the images with geographic restrictions. Provide a signed URL for each customer to access the data in CloudFront. --- Page 217 ---"
+      "Use Amazon S3 to store the images. Use Amazon CloudFront to distribute the images with geographic restrictions. Provide a signed URL for each customer to access the data in CloudFront."
     ],
     "explanation": "SAA-C03 practice scenario (extract question #592). Correct choice: A.",
     "keywords": [

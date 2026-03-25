@@ -31,7 +31,7 @@
     "incorrectAnswers": [
       "Attach an Application Load Balancer to the Auto Scaling group.",
       "Deploy an Amazon Route 53 record set with a weighted policy to route traffic appropriately.",
-      "Deploy a NAT instance that is congured with port forwarding to the EC2 instances in the Auto Scaling group. --- Page 234 ---"
+      "Deploy a NAT instance that is congured with port forwarding to the EC2 instances in the Auto Scaling group."
     ],
     "explanation": "SAA-C03 practice scenario (extract question #642). Correct choice: A.",
     "keywords": [
@@ -76,7 +76,7 @@
     "incorrectAnswers": [
       "Use an AWS Key Management Service (AWS KMS) external key store backed by an external key manager.",
       "Use the default AWS Key Management Service (AWS KMS) managed key store.",
-      "Use a custom key store backed by an AWS CloudHSM cluster. --- Page 235 ---"
+      "Use a custom key store backed by an AWS CloudHSM cluster."
     ],
     "explanation": "SAA-C03 practice scenario (extract question #645). Correct choice: A.",
     "keywords": [
@@ -138,7 +138,7 @@
     "incorrectAnswers": [
       "Use Amazon FSx for Lustre persistent le systems.",
       "Use Amazon Elastic File System (Amazon EFS) with Bursting Throughput mode.",
-      "Use Amazon Elastic File System (Amazon EFS) with Provisioned Throughput mode. --- Page 236 ---"
+      "Use Amazon Elastic File System (Amazon EFS) with Provisioned Throughput mode."
     ],
     "explanation": "SAA-C03 practice scenario (extract question #648). Correct choice: A.",
     "keywords": [
@@ -203,7 +203,7 @@
     "incorrectAnswers": [
       "Transition the objects to S3 One Zone-Infrequent Access (S3 One Zone-IA) after 180 days. S3 Glacier Flexible Retrieval after 360 days, and S3 Glacier Deep Archive after 5 years.",
       "Transition the objects to S3 Standard-Infrequent Access (S3 Standard-IA) after 180 days, S3 Glacier Instant Retrieval after 360 days, and S3 Glacier Deep Archive after 5 years.",
-      "Transition the objects to S3 Standard-Infrequent Access (S3 Standard-IA) after 180 days, S3 Glacier Flexible Retrieval after 360 days, and S3 Glacier Deep Archive after 5 years. --- Page 237 ---"
+      "Transition the objects to S3 Standard-Infrequent Access (S3 Standard-IA) after 180 days, S3 Glacier Flexible Retrieval after 360 days, and S3 Glacier Deep Archive after 5 years."
     ],
     "explanation": "SAA-C03 practice scenario (extract question #651). Correct choice: A.",
     "keywords": [
@@ -245,7 +245,7 @@
     "incorrectAnswers": [
       "Create an AWS Lambda function to tag the resources after the Lambda function looks up the appropriate cost center from the RDS database. Configure an Amazon EventBridge rule that reacts to AWS CloudTrail events to invoke the Lambda function.",
       "Create an AWS CloudFormation stack to deploy an AWS Lambda function. Configure the Lambda function to look up the appropriate cost center from the RDS database and to tag resources. Create an Amazon EventBridge scheduled rule to invoke the CloudFormation stack.",
-      "Create an AWS Lambda function to tag the resources with a default value. Configure an Amazon EventBridge rule that reacts to AWS CloudTrail events to invoke the Lambda function when a resource is missing the cost center tag. --- Page 238 ---"
+      "Create an AWS Lambda function to tag the resources with a default value. Configure an Amazon EventBridge rule that reacts to AWS CloudTrail events to invoke the Lambda function when a resource is missing the cost center tag."
     ],
     "explanation": "SAA-C03 practice scenario (extract question #653). Correct choice: A.",
     "keywords": [
@@ -383,7 +383,7 @@
     "incorrectAnswers": [
       "Use Amazon RDS Proxy with a target group for the database. Change the applications to use the RDS Proxy endpoint.",
       "Use a custom proxy that runs on Amazon EC2 as an intermediary to the database. Change the applications to use the custom proxy endpoint.",
-      "Use an AWS Lambda function to provide connection pooling with a target group conguration for the database. Change the applications to use the Lambda function. --- Page 241 ---"
+      "Use an AWS Lambda function to provide connection pooling with a target group conguration for the database. Change the applications to use the Lambda function."
     ],
     "explanation": "SAA-C03 practice scenario (extract question #661). Correct choice: A.",
     "keywords": [
@@ -427,7 +427,7 @@
     "incorrectAnswers": [
       "Create an AWS Key Management Service (AWS KMS) AWS managed key to encrypt both the S3 bucket and the RDS for MySQL database. Ensure that the S3 bucket policy species the ECS task execution role as a user.",
       "Create an S3 bucket policy that restricts bucket access to the ECS task execution role. Create a VPC endpoint for Amazon RDS for MySQL. Update the RDS for MySQL security group to allow access from only the subnets that the ECS cluster will generate tasks in.",
-      "Create a VPC endpoint for Amazon RDS for MySQL. Update the RDS for MySQL security group to allow access from only the subnets that the ECS cluster will generate tasks in. Create a VPC endpoint for Amazon S3. Update the S3 bucket policy to allow access from only the S3 VPC endpoint. --- Page 242 ---"
+      "Create a VPC endpoint for Amazon RDS for MySQL. Update the RDS for MySQL security group to allow access from only the subnets that the ECS cluster will generate tasks in. Create a VPC endpoint for Amazon S3. Update the S3 bucket policy to allow access from only the S3 VPC endpoint."
     ],
     "explanation": "SAA-C03 practice scenario (extract question #663). Correct choice: A.",
     "keywords": [

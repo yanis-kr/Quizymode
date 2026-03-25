@@ -8,7 +8,7 @@
     "incorrectAnswers": [
       "Create Amazon Machine Images (AMIs) to back up the EC2 instances. Copy the AMIs to a secondary AWS Region. Automate infrastructure deployment in the secondary Region by using AWS CloudFormation.",
       "Launch EC2 instances in a secondary AWS Region. Keep the EC2 instances in the secondary Region active at all times.",
-      "Launch EC2 instances in a secondary Availability Zone. Keep the EC2 instances in the secondary Availability Zone active at all times. --- Page 100 ---"
+      "Launch EC2 instances in a secondary Availability Zone. Keep the EC2 instances in the secondary Availability Zone active at all times."
     ],
     "explanation": "SAA-C03 practice scenario (extract question #274). Correct choice: A.",
     "keywords": [
@@ -52,7 +52,7 @@
     "incorrectAnswers": [
       "Use AWS Storage Gateway for volumes to store and process the video content.",
       "Use Amazon EFS for storing the video content. Once processing is complete, transfer the les to Amazon Elastic Block Store (Amazon EBS).",
-      "Use Amazon S3 for storing the video content. Move the les temporarily over to an Amazon Elastic Block Store (Amazon EBS) volume attached to the server for processing. --- Page 101 ---"
+      "Use Amazon S3 for storing the video content. Move the les temporarily over to an Amazon Elastic Block Store (Amazon EBS) volume attached to the server for processing."
     ],
     "explanation": "SAA-C03 practice scenario (extract question #277). Correct choice: A.",
     "keywords": [
@@ -97,7 +97,7 @@
     "incorrectAnswers": [
       "Use standard SQL queries in Amazon Athena to analyze the CloudFront logs in the S3 bucket. Visualize the results with Amazon QuickSight.",
       "Use standard SQL queries in Amazon DynamoDB to analyze the CloudFront logs in the S3 bucket. Visualize the results with AWS Glue.",
-      "Use standard SQL queries in Amazon DynamoDB to analyze the CloudFront logs in the S3 bucket. Visualize the results with Amazon QuickSight. --- Page 102 ---"
+      "Use standard SQL queries in Amazon DynamoDB to analyze the CloudFront logs in the S3 bucket. Visualize the results with Amazon QuickSight."
     ],
     "explanation": "SAA-C03 practice scenario (extract question #280). Correct choice: A.",
     "keywords": [
@@ -166,7 +166,7 @@
     "incorrectAnswers": [
       "Migrate both applications to Amazon Elastic Container Service (Amazon ECS). Configure Amazon FSx File Gateway for storage.",
       "Migrate the simulation application to Linux Amazon EC2 instances. Migrate the visualization application to Windows EC2 instances. Configure Amazon Simple Queue Service (Amazon SQS) to exchange data between the applications.",
-      "Migrate the simulation application to Linux Amazon EC2 instances. Migrate the visualization application to Windows EC2 instances. Configure Amazon FSx for NetApp ONTAP for storage. --- Page 103 ---"
+      "Migrate the simulation application to Linux Amazon EC2 instances. Migrate the visualization application to Windows EC2 instances. Configure Amazon FSx for NetApp ONTAP for storage."
     ],
     "explanation": "SAA-C03 practice scenario (extract question #283). Correct choice: A.",
     "keywords": [
@@ -231,7 +231,7 @@
     "incorrectAnswers": [
       "Add Amazon ElastiCache for Redis or Memcached to the database layer of the web application.",
       "Invalidate the CloudFront cache.",
-      "Use AWS Certicate Manager (ACM) to validate the website’s SSL certicate. --- Page 104 ---"
+      "Use AWS Certicate Manager (ACM) to validate the website’s SSL certicate."
     ],
     "explanation": "SAA-C03 practice scenario (extract question #286). Correct choice: A.",
     "keywords": [
@@ -296,7 +296,7 @@
     "incorrectAnswers": [
       "Apply an IAM role to the Lambda function. Apply an IAM policy to the role to grant read access to the S3 bucket.",
       "Embed an access key and a secret key in the Lambda function’s code to grant the required IAM permissions for read access to the S3 bucket.",
-      "Apply an IAM role to the Lambda function. Apply an IAM policy to the role to grant read access to all S3 buckets in the account. --- Page 105 ---"
+      "Apply an IAM role to the Lambda function. Apply an IAM policy to the role to grant read access to all S3 buckets in the account."
     ],
     "explanation": "SAA-C03 practice scenario (extract question #289). Correct choice: A.",
     "keywords": [
@@ -383,7 +383,7 @@
     "incorrectAnswers": [
       "Store the data in an Amazon S3 bucket. Process and transform the data by using S3 Object Lambda before returning the data to the requesting application.",
       "Process the data and store the transformed data in three separate Amazon S3 buckets so that each application has its own custom dataset. Point each application to its respective S3 bucket.",
-      "Process the data and store the transformed data in three separate Amazon DynamoDB tables so that each application has its own custom dataset. Point each application to its respective DynamoDB table. --- Page 107 ---"
+      "Process the data and store the transformed data in three separate Amazon DynamoDB tables so that each application has its own custom dataset. Point each application to its respective DynamoDB table."
     ],
     "explanation": "SAA-C03 practice scenario (extract question #295). Correct choice: A.",
     "keywords": [
@@ -426,7 +426,7 @@
     "incorrectAnswers": [
       "Create an EC2 Auto Scaling group. Select the existing ALB as the load balancer and the existing target group as the target group. Set a target trafficking scaling policy that is based on the ASGAverageCPUUtilization metric. Set the minimum instances to 2, the desired capacity to 3, the maximum instances to 6, and the target value to 50%. Add the EC2 instances to the Auto Scaling group.",
       "Create an EC2 Auto Scaling group. Select the existing ALB as the load balancer and the existing target group as the target group. Set the minimum instances to 2, the desired capacity to 3, and the maximum instances to 6. Add the EC2 instances to the Auto Scaling group.",
-      "Create two Amazon CloudWatch alarms. Configure the rst CloudWatch alarm to enter the ALARM state when the average CPUUtilization metric is below 20%. Configure the second CloudWatch alarm to enter the ALARM state when the average CPUUtilization matric is above 50%. Configure the alarms to publish to an Amazon Simple Notification Service (Amazon SNS) topic to send an email message. After receiving the message, log in to decrease or increase the number of EC2 instances that are running. --- Page&"
+      "Create two Amazon CloudWatch alarms. Configure the rst CloudWatch alarm to enter the ALARM state when the average CPUUtilization metric is below 20%. Configure the second CloudWatch alarm to enter the ALARM state when the average CPUUtilization matric is above 50%. Configure the alarms to publish to an Amazon Simple Notification Service (Amazon SNS) topic to send an email message. After receiving the message, log in to decrease or increase the number of EC2 instances that are running."
     ],
     "explanation": "SAA-C03 practice scenario (extract question #297). Correct choice: A.",
     "keywords": [

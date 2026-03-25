@@ -6,9 +6,9 @@
     "question": "A solutions architect needs to review a company's Amazon S3 buckets to discover personally identiable information (PII). The company stores\nthe PII data in the us-east-1 Region and us-west-2 Region.\nWhich solution will meet these requirements with the LEAST operational overhead?",
     "correctAnswer": "Configure Amazon Macie in each Region. Create a job to analyze the data that is in Amazon S3.",
     "incorrectAnswers": [
-      "Configure AWS Security Hub for all Regions. Create an AWS Cong rule to analyze the data that is in Amazon S3.",
+      "Configure AWS Security Hub for all Regions. Create an AWS Config rule to analyze the data that is in Amazon S3.",
       "Configure Amazon Inspector to analyze the data that is in Amazon S3.",
-      "Configure Amazon GuardDuty to analyze the data that is in Amazon S3. --- Page 204 ---"
+      "Configure Amazon GuardDuty to analyze the data that is in Amazon S3."
     ],
     "explanation": "SAA-C03 practice scenario (extract question #553). Correct choice: A.",
     "keywords": [
@@ -71,7 +71,7 @@
     "incorrectAnswers": [
       "Create an IAM role that has the required permissions to read and write from the DynamoDB tables. Add the role to the EC2 instance profile, and associate the instance profile with the application instances.",
       "Use the parameter section in the AWS CloudFormation template to have the user input access and secret keys from an already-created IAM user that has the required permissions to read and write from the DynamoDB tables.",
-      "Create an IAM user in the AWS CloudFormation template that has the required permissions to read and write from the DynamoDB tables. Use the GetAtt function to retrieve the access and secret keys, and pass them to the application instances through the user data. --- Page 205 ---"
+      "Create an IAM user in the AWS CloudFormation template that has the required permissions to read and write from the DynamoDB tables. Use the GetAtt function to retrieve the access and secret keys, and pass them to the application instances through the user data."
     ],
     "explanation": "SAA-C03 practice scenario (extract question #556). Correct choice: A.",
     "keywords": [
@@ -139,7 +139,7 @@
     "question": "A company's solutions architect is designing an AWS multi-account solution that uses AWS Organizations. The solutions architect has organized\nthe company's accounts into organizational units (OUs).\nThe solutions architect needs a solution that will identify any changes to the OU hierarchy. The solution also needs to notify the company's\noperations team of any changes.\nWhich solution will meet these requirements with the LEAST operational overhead?",
     "correctAnswer": "Provision the AWS accounts by using AWS Control Tower. Use account drift notications to identify the changes to the OU hierarchy.",
     "incorrectAnswers": [
-      "Provision the AWS accounts by using AWS Control Tower. Use AWS Cong aggregated rules to identify the changes to the OU hierarchy.",
+      "Provision the AWS accounts by using AWS Control Tower. Use AWS Config aggregated rules to identify the changes to the OU hierarchy.",
       "Use AWS Service Catalog to create accounts in Organizations. Use an AWS CloudTrail organization trail to identify the changes to the OU hierarchy.",
       "Use AWS CloudFormation templates to create accounts in Organizations. Use the drift detection operation on a stack to identify the changes to the OU hierarchy."
     ],
@@ -227,7 +227,7 @@
     "incorrectAnswers": [
       "Migrate the database to Amazon Redshift by using the mysqldump utility. Turn on Auto Scaling for the Amazon Redshift cluster.",
       "Use AWS Database Migration Service (AWS DMS) to migrate the database to Amazon Aurora. Turn on Aurora Auto Scaling.",
-      "Use AWS Database Migration Service (AWS DMS) to migrate the database to Amazon DynamoDB. Configure an Auto Scaling policy. --- Page 208 ---"
+      "Use AWS Database Migration Service (AWS DMS) to migrate the database to Amazon DynamoDB. Configure an Auto Scaling policy."
     ],
     "explanation": "SAA-C03 practice scenario (extract question #565). Correct choice: A.",
     "keywords": [
@@ -296,7 +296,7 @@
     "incorrectAnswers": [
       "Amazon S3 Glacier with Amazon ElastiCache",
       "Amazon Elastic Block Store (Amazon EBS) volumes with Amazon CloudFront",
-      "AWS Storage Gateway with Amazon ElastiCache --- Page 209 ---"
+      "AWS Storage Gateway with Amazon ElastiCache"
     ],
     "explanation": "SAA-C03 practice scenario (extract question #568). Correct choice: A.",
     "keywords": [
@@ -362,7 +362,7 @@
     "incorrectAnswers": [
       "Create a certicate in AWS Certicate Manager (ACM) that is signed by the third-party CA. Create an HTTP API in Amazon API Gateway with a custom domain. Configure the custom domain to use the certicate.",
       "Use AWS Certicate Manager (ACM) to create a certicate that is signed by the third-party CA. Import the certicate into AWS Certicate Manager (ACM). Create an AWS Lambda function with a Lambda function URL. Configure the Lambda function URL to use the certicate.",
-      "Create a certicate in AWS Certicate Manager (ACM) that is signed by the third-party CA. Create an AWS Lambda function with a Lambda function URL. Configure the Lambda function URL to use the certicate. --- Page 210 ---"
+      "Create a certicate in AWS Certicate Manager (ACM) that is signed by the third-party CA. Create an AWS Lambda function with a Lambda function URL. Configure the Lambda function URL to use the certicate."
     ],
     "explanation": "SAA-C03 practice scenario (extract question #571). Correct choice: A.",
     "keywords": [
@@ -428,7 +428,7 @@
     "incorrectAnswers": [
       "Migrate the existing RDS for MySQL database to an Aurora MySQL database cluster.",
       "Migrate the existing RDS for MySQL database to an Amazon EC2 instance that runs MySQL. Purchase an instance reservation for the EC2 instance.",
-      "Migrate the existing RDS for MySQL database to an Amazon Elastic Container Service (Amazon ECS) cluster that uses MySQL container images to run tasks. --- Page 211 ---"
+      "Migrate the existing RDS for MySQL database to an Amazon Elastic Container Service (Amazon ECS) cluster that uses MySQL container images to run tasks."
     ],
     "explanation": "SAA-C03 practice scenario (extract question #574). Correct choice: A.",
     "keywords": [

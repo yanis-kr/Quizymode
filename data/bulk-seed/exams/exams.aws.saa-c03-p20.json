@@ -52,7 +52,7 @@
     "incorrectAnswers": [
       "Configure the web instance to send email through Amazon Simple Email Service (Amazon SES).",
       "Configure the web instance to send email through Amazon Simple Notification Service (Amazon SNS).",
-      "Create a separate application tier using EC2 instances dedicated to email processing. Place the instances in an Auto Scaling group. --- Page 151 ---"
+      "Create a separate application tier using EC2 instances dedicated to email processing. Place the instances in an Auto Scaling group."
     ],
     "explanation": "SAA-C03 practice scenario (extract question #413). Correct choice: A.",
     "keywords": [
@@ -135,7 +135,7 @@
     "incorrectAnswers": [
       "Add the development account as a principal in the trust policy of the role in the production account.",
       "Turn off the S3 Block Public Access feature on the S3 bucket in the production account.",
-      "Create a user in the production account with unique credentials for each team member. --- Page 153 ---"
+      "Create a user in the production account with unique credentials for each team member."
     ],
     "explanation": "SAA-C03 practice scenario (extract question #418). Correct choice: A.",
     "keywords": [
@@ -157,7 +157,7 @@
     "incorrectAnswers": [
       "Use an Amazon RDS Multi-AZ DB duster deployment Create two read replicas and point the read workload to the read replicas.",
       "Use an Amazon RDS Multi-AZ DB instance deployment. Point the read workload to the secondary instances in the Multi-AZ pair.",
-      "Use an Amazon RDS Multi-AZ DB cluster deployment Point the read workload to the reader endpoint. --- Page 154 ---"
+      "Use an Amazon RDS Multi-AZ DB cluster deployment Point the read workload to the reader endpoint."
     ],
     "explanation": "SAA-C03 practice scenario (extract question #420). Correct choice: A.",
     "keywords": [
@@ -202,7 +202,7 @@
     "incorrectAnswers": [
       "Direct the requests from the API to an Application Load Balancer (ALB). Deploy the models as Amazon Elastic Container Service (Amazon ECS) services that read from an Amazon Simple Queue Service (Amazon SQS) queue. Use AWS App Mesh to scale the instances of the ECS cluster based on the SQS queue size.",
       "Direct the requests from the API into an Amazon Simple Queue Service (Amazon SQS) queue. Deploy the models as AWS Lambda functions that are invoked by SQS events. Use AWS Auto Scaling to increase the number of vCPUs for the Lambda functions based on the SQS queue size.",
-      "Direct the requests from the API into an Amazon Simple Queue Service (Amazon SQS) queue. Deploy the models as Amazon Elastic Container Service (Amazon ECS) services that read from the queue. Enable AWS Auto Scaling on Amazon ECS for both the cluster and copies of the service based on the queue size. --- Page 155 ---"
+      "Direct the requests from the API into an Amazon Simple Queue Service (Amazon SQS) queue. Deploy the models as Amazon Elastic Container Service (Amazon ECS) services that read from the queue. Enable AWS Auto Scaling on Amazon ECS for both the cluster and copies of the service based on the queue size."
     ],
     "explanation": "SAA-C03 practice scenario (extract question #422). Correct choice: A.",
     "keywords": [
@@ -225,7 +225,7 @@
     "incorrectAnswers": [
       "Use Reserved Instances for the frontend nodes. Use Spot Instances for the backend nodes.",
       "Use Spot Instances for the frontend nodes. Use Reserved Instances for the backend nodes.",
-      "Use Spot Instances for the frontend nodes. Use AWS Fargate for the backend nodes. --- Page 156 ---"
+      "Use Spot Instances for the frontend nodes. Use AWS Fargate for the backend nodes."
     ],
     "explanation": "SAA-C03 practice scenario (extract question #424). Correct choice: A.",
     "keywords": [
@@ -291,7 +291,7 @@
     "incorrectAnswers": [
       "Deploy the application by using AWS Elastic Beanstalk. Configure a load-balanced environment and a rolling deployment policy.",
       "Migrate the database to Amazon ElastiCache. Configure the ElastiCache security group to allow access from the application.",
-      "Launch an Amazon EC2 instance. Install a MySQL server on the EC2 instance. Configure the application on the server. Create an AMI. Use the AMI to create a launch template with an Auto Scaling group. --- Page 157 ---"
+      "Launch an Amazon EC2 instance. Install a MySQL server on the EC2 instance. Configure the application on the server. Create an AMI. Use the AMI to create a launch template with an Auto Scaling group."
     ],
     "explanation": "SAA-C03 practice scenario (extract question #427). Correct choice: A.",
     "keywords": [
@@ -315,7 +315,7 @@
     "incorrectAnswers": [
       "Create an IAM role that includes Lambda as a trusted service. Attach a policy to the role that allows read and write access to the DynamoDB table. Update the conguration of the Lambda function to use the new role as the execution role.",
       "Create an IAM user with programmatic access to the Lambda function. Attach a policy to the user that allows read and write access to the DynamoDB table. Store the access_key_id and secret_access_key parameters in AWS Systems Manager Parameter Store as secure string parameters. Update the Lambda function code to retrieve the secure string parameters before connecting to the DynamoDB table.",
-      "Create an IAM role that includes DynamoDB as a trusted service. Attach a policy to the role that allows read and write access from the Lambda function. Update the code of the Lambda function to attach to the new role as an execution role. --- Page 158 ---"
+      "Create an IAM role that includes DynamoDB as a trusted service. Attach a policy to the role that allows read and write access from the Lambda function. Update the code of the Lambda function to attach to the new role as an execution role."
     ],
     "explanation": "SAA-C03 practice scenario (extract question #428). Correct choice: A.",
     "keywords": [
@@ -341,7 +341,7 @@
     "incorrectAnswers": [
       "Group members are denied any Amazon EC2 permissions in the us-east-1 Region unless they are logged in with multi-factor authentication (MFA).",
       "Group members are allowed the ec2:StopInstances and ec2:TerminateInstances permissions for all Regions when logged in with multi- factor authentication (MFA). Group members are permitted any other Amazon EC2 action.",
-      "Group members are allowed the ec2:StopInstances and ec2:TerminateInstances permissions for the us-east-1 Region only when logged in with multi-factor authentication (MFA). Group members are permitted any other Amazon EC2 action within the us-east-1 Region. --- Page 159 ---"
+      "Group members are allowed the ec2:StopInstances and ec2:TerminateInstances permissions for the us-east-1 Region only when logged in with multi-factor authentication (MFA). Group members are permitted any other Amazon EC2 action within the us-east-1 Region."
     ],
     "explanation": "SAA-C03 practice scenario (extract question #429). Correct choice: A.",
     "keywords": [
@@ -388,7 +388,7 @@
     "incorrectAnswers": [
       "Use Amazon SageMaker to build and train models. Use Amazon QuickSight to visualize the data.",
       "Use a pre-built ML Amazon Machine Image (AMI) from the AWS Marketplace to build and train models. Use Amazon OpenSearch Service to visualize the data.",
-      "Use Amazon QuickSight to build and train models by using calculated elds. Use Amazon QuickSight to visualize the data. --- Page 160 ---"
+      "Use Amazon QuickSight to build and train models by using calculated elds. Use Amazon QuickSight to visualize the data."
     ],
     "explanation": "SAA-C03 practice scenario (extract question #432). Correct choice: A.",
     "keywords": [
@@ -405,7 +405,7 @@
     "navigationKeyword1": "aws",
     "navigationKeyword2": "saa-c03",
     "question": "A company is running its production and nonproduction environment workloads in multiple AWS accounts. The accounts are in an organization in\nAWS Organizations. The company needs to design a solution that will prevent the modication of cost usage tags.\nWhich solution will meet these requirements?",
-    "correctAnswer": "Create a custom AWS Cong rule to prevent tag modication except by authorized principals.",
+    "correctAnswer": "Create a custom AWS Config rule to prevent tag modication except by authorized principals.",
     "incorrectAnswers": [
       "Create a custom trail in AWS CloudTrail to prevent tag modication.",
       "Create a service control policy (SCP) to prevent tag modication except by authorized principals.",

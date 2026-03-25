@@ -1,0 +1,192 @@
+[
+  {
+    "category": "trivia",
+    "navigationKeyword1": "pop-culture",
+    "navigationKeyword2": "fashion",
+    "question": "Fashion design is the creation of clothing for what?",
+    "correctAnswer": "wear and aesthetic expression",
+    "incorrectAnswers": [
+      "bridge loads",
+      "style",
+      "Paris"
+    ],
+    "explanation": "Fashion design shapes wearable aesthetics.",
+    "keywords": [
+      "fashion",
+      "design"
+    ],
+    "source": "https://www.britannica.com/art/fashion-design",
+    "seedId": "9ed5df3c-2a4e-4076-b0e2-17c365ecddbd"
+  },
+  {
+    "category": "trivia",
+    "navigationKeyword1": "pop-culture",
+    "navigationKeyword2": "fashion",
+    "question": "Haute couture has historically been centered in which city?",
+    "correctAnswer": "Paris",
+    "incorrectAnswers": [
+      "Lima",
+      "Ulaanbaatar",
+      "Reykjavik"
+    ],
+    "explanation": "Haute couture is historically Paris-centered.",
+    "keywords": [
+      "couture",
+      "paris"
+    ],
+    "source": "https://www.britannica.com/art/haute-couture",
+    "seedId": "3444c863-24cb-4a14-9e4c-c991b924c451"
+  },
+  {
+    "category": "trivia",
+    "navigationKeyword1": "pop-culture",
+    "navigationKeyword2": "fashion",
+    "question": "Denim is most strongly associated with what garment?",
+    "correctAnswer": "jeans",
+    "incorrectAnswers": [
+      "tuxedos",
+      "saris",
+      "kilts"
+    ],
+    "explanation": "Denim is core to jeans.",
+    "keywords": [
+      "denim",
+      "casual"
+    ],
+    "source": "https://www.britannica.com/topic/denim-textile",
+    "seedId": "9950d6e9-6b07-4ca7-a1a7-f08f855c2448"
+  },
+  {
+    "category": "trivia",
+    "navigationKeyword1": "pop-culture",
+    "navigationKeyword2": "fashion",
+    "question": "Which designer name is most associated with the little black dress?",
+    "correctAnswer": "Coco Chanel",
+    "incorrectAnswers": [
+      "Giorgio Armani only",
+      "Donatella Versace only",
+      "Vivienne Westwood only"
+    ],
+    "explanation": "Chanel popularized the little black dress concept.",
+    "keywords": [
+      "chanel",
+      "classic"
+    ],
+    "source": "https://www.britannica.com/biography/Coco-Chanel",
+    "seedId": "1264baa3-4998-4efc-8015-86c16165d20d"
+  },
+  {
+    "category": "trivia",
+    "navigationKeyword1": "pop-culture",
+    "navigationKeyword2": "fashion",
+    "question": "Sneakers began as casual footwear rooted in what activity?",
+    "correctAnswer": "sports and athletics",
+    "incorrectAnswers": [
+      "deep-sea welding",
+      "librarianship",
+      "astrophysics"
+    ],
+    "explanation": "Sneakers originate from athletic shoes.",
+    "keywords": [
+      "sneakers",
+      "streetwear"
+    ],
+    "source": "https://www.britannica.com/topic/sneaker-footwear",
+    "seedId": "fb08594c-c490-4172-a55e-e57701ecbf3a"
+  },
+  {
+    "category": "trivia",
+    "navigationKeyword1": "pop-culture",
+    "navigationKeyword2": "fashion",
+    "question": "Runway shows present fashion collections how?",
+    "correctAnswer": "live modeled walks",
+    "incorrectAnswers": [
+      "PDF attachments",
+      "radio waves only",
+      "etched stone"
+    ],
+    "explanation": "Runways model clothing live.",
+    "keywords": [
+      "runway",
+      "fashion-week"
+    ],
+    "source": "https://www.britannica.com/topic/fashion-show",
+    "seedId": "fa5a2bf5-d26b-4ef8-9d34-56bb24f6686d"
+  },
+  {
+    "category": "trivia",
+    "navigationKeyword1": "pop-culture",
+    "navigationKeyword2": "fashion",
+    "question": "Which country\u2019s traditional dress is most closely associated with tartan patterns strongly?",
+    "correctAnswer": "Scotland",
+    "incorrectAnswers": [
+      "Madagascar",
+      "Nepal",
+      "Fiji"
+    ],
+    "explanation": "Tartan is associated with Scottish kilts.",
+    "keywords": [
+      "tartan",
+      "textiles"
+    ],
+    "source": "https://www.britannica.com/topic/tartan-textile",
+    "seedId": "8a12910c-ed2d-4ffa-9080-37e1719aa728"
+  },
+  {
+    "category": "trivia",
+    "navigationKeyword1": "pop-culture",
+    "navigationKeyword2": "fashion",
+    "question": "Fast fashion is built on rapid cycles of inexpensive what?",
+    "correctAnswer": "trend-led clothing",
+    "incorrectAnswers": [
+      "bridges",
+      "microchips",
+      "skyscrapers"
+    ],
+    "explanation": "Fast fashion churns trendy apparel quickly.",
+    "keywords": [
+      "fast-fashion",
+      "retail"
+    ],
+    "source": "https://www.britannica.com/topic/fast-fashion",
+    "seedId": "ddd2dc8f-df94-4dfb-8a87-927c99c23c5d"
+  },
+  {
+    "category": "trivia",
+    "navigationKeyword1": "pop-culture",
+    "navigationKeyword2": "fashion",
+    "question": "Millinery is the design of what?",
+    "correctAnswer": "hats",
+    "incorrectAnswers": [
+      "shoes",
+      "belts",
+      "watches"
+    ],
+    "explanation": "Millinery is hat-making.",
+    "keywords": [
+      "hats",
+      "accessories"
+    ],
+    "source": "https://www.britannica.com/topic/millinery",
+    "seedId": "0035b3a3-d6c1-4e56-823c-c9462ca088e0"
+  },
+  {
+    "category": "trivia",
+    "navigationKeyword1": "pop-culture",
+    "navigationKeyword2": "fashion",
+    "question": "The textile industry is centered on weaving and finishing what?",
+    "correctAnswer": "fabrics",
+    "incorrectAnswers": [
+      "steel beams",
+      "concrete slabs",
+      "silicon ingots"
+    ],
+    "explanation": "Textiles are woven fabrics.",
+    "keywords": [
+      "textiles",
+      "supply-chain"
+    ],
+    "source": "https://www.britannica.com/technology/textile",
+    "seedId": "58142bf0-c99c-4654-9ee8-d7998505722d"
+  }
+]

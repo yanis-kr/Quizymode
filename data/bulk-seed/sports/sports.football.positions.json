@@ -1,0 +1,202 @@
+[
+  {
+    "category": "sports",
+    "navigationKeyword1": "football",
+    "navigationKeyword2": "positions",
+    "question": "Which position usually receives the snap and directs the offense?",
+    "correctAnswer": "Quarterback",
+    "incorrectAnswers": [
+      "Linebacker",
+      "Center",
+      "Safety"
+    ],
+    "explanation": "The quarterback is the primary offensive decision-maker.",
+    "keywords": [
+      "football",
+      "positions",
+      "quarterback"
+    ],
+    "source": "https://www.britannica.com/sports/gridiron-football",
+    "seedId": "03e109a2-5353-4d87-95f9-a7a6e42ed7e5"
+  },
+  {
+    "category": "sports",
+    "navigationKeyword1": "football",
+    "navigationKeyword2": "positions",
+    "question": "Which position usually carries the ball on handoffs from the quarterback?",
+    "correctAnswer": "Running back",
+    "incorrectAnswers": [
+      "Cornerback",
+      "Tight end",
+      "Punter"
+    ],
+    "explanation": "Running backs are the main ball carriers in the backfield.",
+    "keywords": [
+      "football",
+      "positions",
+      "running-back"
+    ],
+    "source": "https://www.britannica.com/sports/gridiron-football",
+    "seedId": "5e757dd7-8d83-4aba-8224-ed3683853b6c"
+  },
+  {
+    "category": "sports",
+    "navigationKeyword1": "football",
+    "navigationKeyword2": "positions",
+    "question": "Which offensive player snaps the ball to begin each play?",
+    "correctAnswer": "Center",
+    "incorrectAnswers": [
+      "Guard",
+      "Tackle",
+      "Tight end"
+    ],
+    "explanation": "The center starts each scrimmage play with the snap.",
+    "keywords": [
+      "football",
+      "positions",
+      "center"
+    ],
+    "source": "https://www.britannica.com/sports/gridiron-football",
+    "seedId": "b6119f01-7a93-45aa-9a06-c6efe3eab730"
+  },
+  {
+    "category": "sports",
+    "navigationKeyword1": "football",
+    "navigationKeyword2": "positions",
+    "question": "Which position is primarily responsible for catching passes split wide from the formation?",
+    "correctAnswer": "Wide receiver",
+    "incorrectAnswers": [
+      "Defensive tackle",
+      "Kicker",
+      "Center"
+    ],
+    "explanation": "Wide receivers line up outside and run routes.",
+    "keywords": [
+      "football",
+      "positions",
+      "wide-receiver"
+    ],
+    "source": "https://www.britannica.com/sports/gridiron-football",
+    "seedId": "c025bc5d-0b6b-4ed1-bb3e-5aa2bb28d34a"
+  },
+  {
+    "category": "sports",
+    "navigationKeyword1": "football",
+    "navigationKeyword2": "positions",
+    "question": "Which defensive role often lines up deep to protect against long passes?",
+    "correctAnswer": "Safety",
+    "incorrectAnswers": [
+      "Guard",
+      "Fullback",
+      "Center"
+    ],
+    "explanation": "Safeties are deep defenders in many coverages.",
+    "keywords": [
+      "football",
+      "positions",
+      "safety"
+    ],
+    "source": "https://www.britannica.com/sports/gridiron-football",
+    "seedId": "fad2610d-8f22-413b-b6ee-04b59bff5df4"
+  },
+  {
+    "category": "sports",
+    "navigationKeyword1": "football",
+    "navigationKeyword2": "positions",
+    "question": "Which defensive player often covers wide receivers near the sideline?",
+    "correctAnswer": "Cornerback",
+    "incorrectAnswers": [
+      "Center",
+      "Linebacker",
+      "Running back"
+    ],
+    "explanation": "Cornerbacks are primary perimeter pass defenders.",
+    "keywords": [
+      "football",
+      "positions",
+      "cornerback"
+    ],
+    "source": "https://www.britannica.com/sports/gridiron-football",
+    "seedId": "4afe04e0-0ac5-4efc-bead-53f253db00b1"
+  },
+  {
+    "category": "sports",
+    "navigationKeyword1": "football",
+    "navigationKeyword2": "positions",
+    "question": "Which offensive role combines blocking with pass catching next to the line?",
+    "correctAnswer": "Tight end",
+    "incorrectAnswers": [
+      "Nose tackle",
+      "Safety",
+      "Defensive end"
+    ],
+    "explanation": "Tight ends often block like linemen and catch like receivers.",
+    "keywords": [
+      "football",
+      "positions",
+      "tight-end"
+    ],
+    "source": "https://www.britannica.com/sports/gridiron-football",
+    "seedId": "35d528fc-361e-49e2-a4f6-0f9b55ada225"
+  },
+  {
+    "category": "sports",
+    "navigationKeyword1": "football",
+    "navigationKeyword2": "positions",
+    "question": "Which defensive unit player is usually central to stopping the run and covering short zones?",
+    "correctAnswer": "Linebacker",
+    "incorrectAnswers": [
+      "Quarterback",
+      "Punter",
+      "Wide receiver"
+    ],
+    "explanation": "Linebackers work behind the line and handle mixed duties.",
+    "keywords": [
+      "football",
+      "positions",
+      "linebacker"
+    ],
+    "source": "https://www.britannica.com/sports/gridiron-football",
+    "seedId": "1668b6b5-68d4-40a2-bd43-7ed7db8786b1"
+  },
+  {
+    "category": "sports",
+    "navigationKeyword1": "football",
+    "navigationKeyword2": "positions",
+    "question": "Which special-teams player kicks field goals and extra points?",
+    "correctAnswer": "Kicker",
+    "incorrectAnswers": [
+      "Punter",
+      "Long snapper",
+      "Holder"
+    ],
+    "explanation": "The kicker handles placekicks for points.",
+    "keywords": [
+      "football",
+      "positions",
+      "kicker"
+    ],
+    "source": "https://www.britannica.com/sports/gridiron-football",
+    "seedId": "0a7f46d4-d876-4b38-899a-7d8d77ee71ee"
+  },
+  {
+    "category": "sports",
+    "navigationKeyword1": "football",
+    "navigationKeyword2": "positions",
+    "question": "Which special-teams player usually kicks the ball downfield on fourth down?",
+    "correctAnswer": "Punter",
+    "incorrectAnswers": [
+      "Quarterback",
+      "Guard",
+      "Tailback"
+    ],
+    "explanation": "Punters flip field position on kicking plays.",
+    "keywords": [
+      "football",
+      "positions",
+      "punter"
+    ],
+    "source": "https://www.britannica.com/sports/gridiron-football",
+    "seedId": "02f5f834-5d9b-4428-b753-245b20161b40"
+  }
+]

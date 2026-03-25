@@ -24,9 +24,9 @@
     "navigationKeyword1": "aws",
     "navigationKeyword2": "saa-c03",
     "question": "A company has customers located across the world. The company wants to use automation to secure its systems and network infrastructure. The\ncompany's security team must be able to traffick and audit all incremental changes to the infrastructure.\nWhich solution will meet these requirements?",
-    "correctAnswer": "Use AWS Organizations to set up the infrastructure. Use AWS Cong to traffick changes.",
+    "correctAnswer": "Use AWS Organizations to set up the infrastructure. Use AWS Config to traffick changes.",
     "incorrectAnswers": [
-      "Use AWS CloudFormation to set up the infrastructure. Use AWS Cong to traffick changes.",
+      "Use AWS CloudFormation to set up the infrastructure. Use AWS Config to traffick changes.",
       "Use AWS Organizations to set up the infrastructure. Use AWS Service Catalog to traffick changes.",
       "Use AWS CloudFormation to set up the infrastructure. Use AWS Service Catalog to traffick changes."
     ],
@@ -93,7 +93,7 @@
     "incorrectAnswers": [
       "Use the modify-db-instance command in the AWS CLI to change the password.",
       "Integrate AWS Secrets Manager with Amazon RDS for PostgreSQL to automate password rotation.",
-      "Integrate AWS Systems Manager Parameter Store with Amazon RDS for PostgreSQL to automate password rotation. --- Page 244 ---"
+      "Integrate AWS Systems Manager Parameter Store with Amazon RDS for PostgreSQL to automate password rotation."
     ],
     "explanation": "SAA-C03 practice scenario (extract question #669). Correct choice: A.",
     "keywords": [
@@ -160,7 +160,7 @@
     "incorrectAnswers": [
       "Configure an AWS Glue crawler to crawl the data. Configure Amazon Athena to query the data.",
       "Create external tables in a Hive metastore. Configure Spark jobs in Amazon EMR to query the data.",
-      "Configure an AWS Glue crawler to crawl the data. Configure Amazon Kinesis Data Analytics to use SQL to query the data. --- Page 245 ---"
+      "Configure an AWS Glue crawler to crawl the data. Configure Amazon Kinesis Data Analytics (note: outdated; now Amazon Managed Service for Apache Flink for SQL/streaming analytics workloads) to use SQL to query the data."
     ],
     "explanation": "SAA-C03 practice scenario (extract question #672). Correct choice: A.",
     "keywords": [
@@ -202,7 +202,7 @@
     "incorrectAnswers": [
       "Create an IAM policy that denies snapshot deletion. Attach the policy to the storage administrator user.",
       "Add tags to the snapshots. Create retention rules in Recycle Bin for EBS snapshots that have the tags.",
-      "Lock the EBS snapshots to prevent deletion. --- Page 246 ---"
+      "Lock the EBS snapshots to prevent deletion."
     ],
     "explanation": "SAA-C03 practice scenario (extract question #675). Correct choice: A.",
     "keywords": [
@@ -223,9 +223,9 @@
     "question": "A company's application uses Network Load Balancers, Auto Scaling groups, Amazon EC2 instances, and databases that are deployed in an\nAmazon VPC. The company wants to capture information about traffic to and from the network interfaces in near real time in its Amazon VPC. The\ncompany wants to send the information to Amazon OpenSearch Service for analysis.\nWhich solution will meet these requirements?",
     "correctAnswer": "Create a log group in Amazon CloudWatch Logs. Configure VPC Flow Logs to send the log data to the log group. Use Amazon Kinesis Data Streams to stream the logs from the log group to OpenSearch Service.",
     "incorrectAnswers": [
-      "Create a log group in Amazon CloudWatch Logs. Configure VPC Flow Logs to send the log data to the log group. Use Amazon Kinesis Data Firehose to stream the logs from the log group to OpenSearch Service.",
+      "Create a log group in Amazon CloudWatch Logs. Configure VPC Flow Logs to send the log data to the log group. Use Amazon Kinesis Data Firehose (note: outdated; now Amazon Data Firehose) to stream the logs from the log group to OpenSearch Service.",
       "Create a trail in AWS CloudTrail. Configure VPC Flow Logs to send the log data to the trail. Use Amazon Kinesis Data Streams to stream the logs from the trail to OpenSearch Service.",
-      "Create a trail in AWS CloudTrail. Configure VPC Flow Logs to send the log data to the trail. Use Amazon Kinesis Data Firehose to stream the logs from the trail to OpenSearch Service."
+      "Create a trail in AWS CloudTrail. Configure VPC Flow Logs to send the log data to the trail. Use Amazon Kinesis Data Firehose (note: outdated; now Amazon Data Firehose) to stream the logs from the trail to OpenSearch Service."
     ],
     "explanation": "SAA-C03 practice scenario (extract question #676). Correct choice: A.",
     "keywords": [
@@ -271,7 +271,7 @@
     "incorrectAnswers": [
       "Create a customer managed key by using AWS Key Management Service (AWS KMS). Use the new key to encrypt the S3 objects by using server-side encryption with AWS KMS keys (SSE-KMS).",
       "Create an AWS managed key by using AWS Key Management Service (AWS KMS). Use the new key to encrypt the S3 objects by using server-side encryption with AWS KMS keys (SSE-KMS).",
-      "Download S3 objects to an Amazon EC2 instance. Encrypt the objects by using customer managed keys. Upload the encrypted objects back into Amazon S3. --- Page 247 ---"
+      "Download S3 objects to an Amazon EC2 instance. Encrypt the objects by using customer managed keys. Upload the encrypted objects back into Amazon S3."
     ],
     "explanation": "SAA-C03 practice scenario (extract question #678). Correct choice: A.",
     "keywords": [
@@ -314,7 +314,7 @@
     "incorrectAnswers": [
       "Use an AWS managed key to encrypt the EBS volumes. Use the key to congure automatic key rotation.",
       "Create an external KMS key with imported key material. Use the key to encrypt the EBS volumes.",
-      "Use an AWS owned key to encrypt the EBS volumes. --- Page 248 ---"
+      "Use an AWS owned key to encrypt the EBS volumes."
     ],
     "explanation": "SAA-C03 practice scenario (extract question #681). Correct choice: A.",
     "keywords": [
@@ -333,7 +333,7 @@
     "navigationKeyword1": "aws",
     "navigationKeyword2": "saa-c03",
     "question": "A company needs a solution to enforce data encryption at rest on Amazon EC2 instances. The solution must automatically identify noncompliant\nresources and enforce compliance policies on ndings.\nWhich solution will meet these requirements with the LEAST administrative overhead?",
-    "correctAnswer": "Use an IAM policy that allows users to create only encrypted Amazon Elastic Block Store (Amazon EBS) volumes. Use AWS Cong and AWS Systems Manager to automate the detection and remediation of unencrypted EBS volumes.",
+    "correctAnswer": "Use an IAM policy that allows users to create only encrypted Amazon Elastic Block Store (Amazon EBS) volumes. Use AWS Config and AWS Systems Manager to automate the detection and remediation of unencrypted EBS volumes.",
     "incorrectAnswers": [
       "Use AWS Key Management Service (AWS KMS) to manage access to encrypted Amazon Elastic Block Store (Amazon EBS) volumes. Use AWS Lambda and Amazon EventBridge to automate the detection and remediation of unencrypted EBS volumes.",
       "Use Amazon Macie to detect unencrypted Amazon Elastic Block Store (Amazon EBS) volumes. Use AWS Systems Manager Automation rules to automatically encrypt existing and new EBS volumes.",

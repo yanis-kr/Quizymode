@@ -1,0 +1,202 @@
+[
+  {
+    "category": "sports",
+    "navigationKeyword1": "hockey",
+    "navigationKeyword2": "players",
+    "question": "Which player holds the NHL records for career goals, assists, and points?",
+    "correctAnswer": "Wayne Gretzky",
+    "incorrectAnswers": [
+      "Mario Lemieux",
+      "Gordie Howe",
+      "Sidney Crosby"
+    ],
+    "explanation": "Gretzky owns the league's biggest career offensive records.",
+    "keywords": [
+      "hockey",
+      "players",
+      "wayne-gretzky"
+    ],
+    "source": "https://www.nhl.com/info/nhl-records",
+    "seedId": "6df16ba1-9b4d-4eae-a63a-df5d2214d73b"
+  },
+  {
+    "category": "sports",
+    "navigationKeyword1": "hockey",
+    "navigationKeyword2": "players",
+    "question": "Which Hall of Fame center was nicknamed Mr. Hockey?",
+    "correctAnswer": "Gordie Howe",
+    "incorrectAnswers": [
+      "Bobby Orr",
+      "Wayne Gretzky",
+      "Mark Messier"
+    ],
+    "explanation": "Howe's longevity and all-around game earned the nickname.",
+    "keywords": [
+      "hockey",
+      "players",
+      "gordie-howe"
+    ],
+    "source": "https://www.britannica.com/biography/Gordie-Howe",
+    "seedId": "380c5f98-3cff-4853-91a2-6f68e6dfd758"
+  },
+  {
+    "category": "sports",
+    "navigationKeyword1": "hockey",
+    "navigationKeyword2": "players",
+    "question": "Which defenseman revolutionized offense from the blue line with the Boston Bruins?",
+    "correctAnswer": "Bobby Orr",
+    "incorrectAnswers": [
+      "Ray Bourque",
+      "Nicklas Lidstrom",
+      "Chris Chelios"
+    ],
+    "explanation": "Orr changed the way defensemen attacked in the NHL.",
+    "keywords": [
+      "hockey",
+      "players",
+      "bobby-orr"
+    ],
+    "source": "https://www.britannica.com/biography/Bobby-Orr",
+    "seedId": "9907e7cc-c33a-4108-9b62-7ca8a9d24dc5"
+  },
+  {
+    "category": "sports",
+    "navigationKeyword1": "hockey",
+    "navigationKeyword2": "players",
+    "question": "Which Penguins star returned from cancer treatment to continue a Hall of Fame career?",
+    "correctAnswer": "Mario Lemieux",
+    "incorrectAnswers": [
+      "Jaromir Jagr",
+      "Sidney Crosby",
+      "Evgeni Malkin"
+    ],
+    "explanation": "Lemieux's comeback added to his legendary status in Pittsburgh.",
+    "keywords": [
+      "hockey",
+      "players",
+      "mario-lemieux"
+    ],
+    "source": "https://www.britannica.com/biography/Mario-Lemieux",
+    "seedId": "6ecafbd1-6ce6-4b64-b2f0-a4ee73511e57"
+  },
+  {
+    "category": "sports",
+    "navigationKeyword1": "hockey",
+    "navigationKeyword2": "players",
+    "question": "Which Capitals star broke Gretzky's NHL career goals record in 2025?",
+    "correctAnswer": "Alex Ovechkin",
+    "incorrectAnswers": [
+      "Sidney Crosby",
+      "Jaromir Jagr",
+      "Steven Stamkos"
+    ],
+    "explanation": "Ovechkin passed Gretzky for the all-time career goals lead in 2025.",
+    "keywords": [
+      "hockey",
+      "players",
+      "alex-ovechkin"
+    ],
+    "source": "https://www.nhl.com/info/nhl-records",
+    "seedId": "d867e73f-154e-44b3-bfa3-ee4f733ad55f"
+  },
+  {
+    "category": "sports",
+    "navigationKeyword1": "hockey",
+    "navigationKeyword2": "players",
+    "question": "Which Penguins captain won the Conn Smythe in back-to-back Stanley Cup runs in 2016 and 2017?",
+    "correctAnswer": "Sidney Crosby",
+    "incorrectAnswers": [
+      "Evgeni Malkin",
+      "Kris Letang",
+      "Marc-Andre Fleury"
+    ],
+    "explanation": "Crosby led Pittsburgh to consecutive Stanley Cup titles.",
+    "keywords": [
+      "hockey",
+      "players",
+      "sidney-crosby"
+    ],
+    "source": "https://www.britannica.com/biography/Sidney-Crosby",
+    "seedId": "cf6dcd72-3ec3-4283-bb9f-2e9713722b63"
+  },
+  {
+    "category": "sports",
+    "navigationKeyword1": "hockey",
+    "navigationKeyword2": "players",
+    "question": "Which goalie retired with the NHL record for career wins?",
+    "correctAnswer": "Martin Brodeur",
+    "incorrectAnswers": [
+      "Patrick Roy",
+      "Dominik Hasek",
+      "Henrik Lundqvist"
+    ],
+    "explanation": "Brodeur finished with the most career wins by a goaltender.",
+    "keywords": [
+      "hockey",
+      "players",
+      "martin-brodeur"
+    ],
+    "source": "https://www.nhl.com/info/nhl-records",
+    "seedId": "ed4503ab-b621-4573-b227-1266fd38977c"
+  },
+  {
+    "category": "sports",
+    "navigationKeyword1": "hockey",
+    "navigationKeyword2": "players",
+    "question": "Which Czech goalie was nicknamed The Dominator?",
+    "correctAnswer": "Dominik Hasek",
+    "incorrectAnswers": [
+      "Petr Cech",
+      "Jaroslav Halak",
+      "Roman Cechmanek"
+    ],
+    "explanation": "Hasek became one of the greatest goalies in NHL history.",
+    "keywords": [
+      "hockey",
+      "players",
+      "dominik-hasek"
+    ],
+    "source": "https://www.britannica.com/biography/Dominik-Hasek",
+    "seedId": "e9cf1858-81da-4727-814a-92c53d471998"
+  },
+  {
+    "category": "sports",
+    "navigationKeyword1": "hockey",
+    "navigationKeyword2": "players",
+    "question": "Which player captained the Oilers dynasty and later guaranteed a Rangers championship?",
+    "correctAnswer": "Mark Messier",
+    "incorrectAnswers": [
+      "Paul Coffey",
+      "Jari Kurri",
+      "Wayne Gretzky"
+    ],
+    "explanation": "Messier led champions in both Edmonton and New York.",
+    "keywords": [
+      "hockey",
+      "players",
+      "mark-messier"
+    ],
+    "source": "https://www.britannica.com/biography/Mark-Messier",
+    "seedId": "3dfbcc3d-c6bc-4f80-85d7-73e37f8b070c"
+  },
+  {
+    "category": "sports",
+    "navigationKeyword1": "hockey",
+    "navigationKeyword2": "players",
+    "question": "Which Penguins winger became famous for his flowing hair and longevity across decades?",
+    "correctAnswer": "Jaromir Jagr",
+    "incorrectAnswers": [
+      "Pavel Datsyuk",
+      "Peter Forsberg",
+      "Mats Sundin"
+    ],
+    "explanation": "Jagr remained productive in pro hockey for an extraordinarily long time.",
+    "keywords": [
+      "hockey",
+      "players",
+      "jaromir-jagr"
+    ],
+    "source": "https://www.britannica.com/biography/Jaromir-Jagr",
+    "seedId": "7a95620a-5728-426a-b586-688444148ea9"
+  }
+]

@@ -8,7 +8,7 @@
     "incorrectAnswers": [
       "Use Amazon MQ with active/standby brokers congured across two Availability Zones. Add an additional consumer EC2 instance in another Availability Zone. Replicate the MySQL database to another Availability Zone.",
       "Use Amazon MQ with active/standby brokers congured across two Availability Zones. Add an additional consumer EC2 instance in another Availability Zone. Use Amazon RDS for MySQL with Multi-AZ enabled.",
-      "Use Amazon MQ with active/standby brokers congured across two Availability Zones. Add an Auto Scaling group for the consumer EC2 instances across two Availability Zones. Use Amazon RDS for MySQL with Multi-AZ enabled. --- Page 41 ---"
+      "Use Amazon MQ with active/standby brokers congured across two Availability Zones. Add an Auto Scaling group for the consumer EC2 instances across two Availability Zones. Use Amazon RDS for MySQL with Multi-AZ enabled."
     ],
     "explanation": "SAA-C03 practice scenario (extract question #111). Correct choice: A.",
     "keywords": [
@@ -73,10 +73,10 @@
     "navigationKeyword1": "aws",
     "navigationKeyword2": "saa-c03",
     "question": "A company has created an image analysis application in which users can upload photos and add photo frames to their images. The users upload\nimages and metadata to indicate which photo frames they want to add to their images. The application uses a single Amazon EC2 instance and\nAmazon DynamoDB to store the metadata.\nThe application is becoming more popular, and the number of users is increasing. The company expects the number of concurrent users to vary\nsignicantly depending on the time of day and day of week. The company must ensure that the application can scale to meet the needs of the\ngrowing user base.\nWhich solution meats these requirements?",
-    "correctAnswer": "Increase the number of EC2 instances to three. Use Provisioned IOPS SSD (io2) Amazon Elastic Block Store (Amazon EBS) volumes to store the photos and metadata. --- Page 42 ---",
+    "correctAnswer": "Increase the number of EC2 instances to three. Use Provisioned IOPS SSD (io2) Amazon Elastic Block Store (Amazon EBS) volumes to store the photos and metadata.",
     "incorrectAnswers": [
       "Use AWS Lambda to process the photos. Store the photos and metadata in DynamoDB.",
-      "Use Amazon Kinesis Data Firehose to process the photos and to store the photos and metadata.",
+      "Use Amazon Kinesis Data Firehose (note: outdated; now Amazon Data Firehose) to process the photos and to store the photos and metadata.",
       "Use AWS Lambda to process the photos. Store the photos in Amazon S3. Retain DynamoDB to store the metadata."
     ],
     "explanation": "SAA-C03 practice scenario (extract question #114). Correct choice: D.",
@@ -120,12 +120,12 @@
     "category": "exams",
     "navigationKeyword1": "aws",
     "navigationKeyword2": "saa-c03",
-    "question": "A company stores its application logs in an Amazon CloudWatch Logs log group. A new policy requires the company to store all application logs\nin Amazon OpenSearch Service (Amazon Elasticsearch Service) in near-real time.\nWhich solution will meet this requirement with the LEAST operational overhead?",
-    "correctAnswer": "Configure a CloudWatch Logs subscription to stream the logs to Amazon OpenSearch Service (Amazon Elasticsearch Service).",
+    "question": "A company stores its application logs in an Amazon CloudWatch Logs log group. A new policy requires the company to store all application logs\nin Amazon OpenSearch Service (note: outdated dual label; formerly Amazon Elasticsearch Service) in near-real time.\nWhich solution will meet this requirement with the LEAST operational overhead?",
+    "correctAnswer": "Configure a CloudWatch Logs subscription to stream the logs to Amazon OpenSearch Service (note: outdated dual label; formerly Amazon Elasticsearch Service).",
     "incorrectAnswers": [
-      "Create an AWS Lambda function. Use the log group to invoke the function to write the logs to Amazon OpenSearch Service (Amazon Elasticsearch Service).",
-      "Create an Amazon Kinesis Data Firehose delivery stream. Configure the log group as the delivery streams sources. Configure Amazon OpenSearch Service (Amazon Elasticsearch Service) as the delivery stream's destination.",
-      "Install and congure Amazon Kinesis Agent on each application server to deliver the logs to Amazon Kinesis Data Streams. Configure Kinesis Data Streams to deliver the logs to Amazon OpenSearch Service (Amazon Elasticsearch Service). --- Page 43 ---"
+      "Create an AWS Lambda function. Use the log group to invoke the function to write the logs to Amazon OpenSearch Service (note: outdated dual label; formerly Amazon Elasticsearch Service).",
+      "Create an Amazon Kinesis Data Firehose (note: outdated; now Amazon Data Firehose) delivery stream. Configure the log group as the delivery streams sources. Configure Amazon OpenSearch Service (note: outdated dual label; formerly Amazon Elasticsearch Service) as the delivery stream's destination.",
+      "Install and congure Amazon Kinesis Agent on each application server to deliver the logs to Amazon Kinesis Data Streams. Configure Kinesis Data Streams to deliver the logs to Amazon OpenSearch Service (note: outdated dual label; formerly Amazon Elasticsearch Service)."
     ],
     "explanation": "SAA-C03 practice scenario (extract question #117). Correct choice: A.",
     "keywords": [
@@ -147,7 +147,7 @@
     "incorrectAnswers": [
       "Amazon Elastic Block Store (Amazon EBS)",
       "Amazon Elastic File System (Amazon EFS)",
-      "Amazon OpenSearch Service (Amazon Elasticsearch Service)"
+      "Amazon OpenSearch Service (note: outdated dual label; formerly Amazon Elasticsearch Service)"
     ],
     "explanation": "SAA-C03 practice scenario (extract question #118). Correct choice: D.",
     "keywords": [
@@ -187,7 +187,7 @@
     "navigationKeyword1": "aws",
     "navigationKeyword2": "saa-c03",
     "question": "A company has implemented a self-managed DNS solution on three Amazon EC2 instances behind a Network Load Balancer (NLB) in the us-west-\n2 Region. Most of the company's users are located in the United States and Europe. The company wants to improve the performance and\navailability of the solution. The company launches and congures three EC2 instances in the eu-west-1 Region and adds the EC2 instances as\ntargets for a new NLB.\nWhich solution can the company use to route traffic to all the EC2 instances?",
-    "correctAnswer": "Replace the two NLBs with two Application Load Balancers (ALBs). Create an Amazon Route 53 latency routing policy to route requests to one of the two ALBs. Create an Amazon CloudFront distribution. Use the Route 53 record as the distribution’s origin. --- Page 44 ---",
+    "correctAnswer": "Replace the two NLBs with two Application Load Balancers (ALBs). Create an Amazon Route 53 latency routing policy to route requests to one of the two ALBs. Create an Amazon CloudFront distribution. Use the Route 53 record as the distribution’s origin.",
     "incorrectAnswers": [
       "Create an Amazon Route 53 geolocation routing policy to route requests to one of the two NLBs. Create an Amazon CloudFront distribution. Use the Route 53 record as the distribution’s origin.",
       "Create a standard accelerator in AWS Global Accelerator. Create endpoint groups in us-west-2 and eu-west-1. Add the two NLBs as endpoints for the endpoint groups.",
@@ -261,7 +261,7 @@
     "incorrectAnswers": [
       "Create an Amazon S3 bucket Migrate the SSL certicate to the S3 bucket. Configure the EC2 instances to reference the bucket for SSL termination.",
       "Create another EC2 instance as a proxy server. Migrate the SSL certicate to the new instance and congure it to direct connections to the existing EC2 instances.",
-      "Import the SSL certicate into AWS Certicate Manager (ACM). Create an Application Load Balancer with an HTTPS listener that uses the SSL certicate from ACM. --- Page 45 ---"
+      "Import the SSL certicate into AWS Certicate Manager (ACM). Create an Application Load Balancer with an HTTPS listener that uses the SSL certicate from ACM."
     ],
     "explanation": "SAA-C03 practice scenario (extract question #123). Correct choice: A.",
     "keywords": [
@@ -302,7 +302,7 @@
     "incorrectAnswers": [
       "Set up an S3 Lifecycle policy to transition objects to S3 Glacier Deep Archive after 2 years.",
       "Use S3 Intelligent-Tiering. Activate the archiving option to ensure that data is archived in S3 Glacier Deep Archive.",
-      "Set up an S3 Lifecycle policy to transition objects to S3 One Zone-Infrequent Access (S3 One Zone-IA) immediately and to S3 Glacier Deep Archive after 2 years. --- Page 46 ---"
+      "Set up an S3 Lifecycle policy to transition objects to S3 One Zone-Infrequent Access (S3 One Zone-IA) immediately and to S3 Glacier Deep Archive after 2 years."
     ],
     "explanation": "SAA-C03 practice scenario (extract question #126). Correct choice: A.",
     "keywords": [
@@ -411,7 +411,7 @@
     "incorrectAnswers": [
       "AWS Lambda and Amazon DynamoDB",
       "Application Load Balancer with Amazon EC2 Auto Scaling",
-      "Amazon Route 53 with internal Application Load Balancers --- Page 48 ---"
+      "Amazon Route 53 with internal Application Load Balancers"
     ],
     "explanation": "SAA-C03 practice scenario (extract question #132). Correct choice: A.",
     "keywords": [
