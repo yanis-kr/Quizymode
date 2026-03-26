@@ -1,0 +1,116 @@
+[
+  {
+    "category": "languages",
+    "navigationKeyword1": "other-langs",
+    "navigationKeyword2": "chinese",
+    "question": "What does '你好' (nǐ hǎo) mean?",
+    "correctAnswer": "hello",
+    "incorrectAnswers": [
+      "goodbye",
+      "thank you",
+      "sorry"
+    ],
+    "explanation": "'Nǐ hǎo' is one of the first greetings learners use, like hello.",
+    "keywords": [
+      "hello",
+      "chinese-basics"
+    ],
+    "source": "https://dictionary.cambridge.org/dictionary/english-chinese/hello",
+    "seedId": "b75f80d4-50f9-5f7d-8711-415ab73f040c"
+  },
+  {
+    "category": "languages",
+    "navigationKeyword1": "other-langs",
+    "navigationKeyword2": "chinese",
+    "question": "What does '谢谢' (xièxie) mean?",
+    "correctAnswer": "thank you",
+    "incorrectAnswers": [
+      "please",
+      "hello",
+      "goodbye"
+    ],
+    "explanation": "'Xièxie' is a common way to say thank you.",
+    "keywords": [
+      "thank-you",
+      "chinese-basics"
+    ],
+    "source": "https://dictionary.cambridge.org/dictionary/english-chinese/thank-you",
+    "seedId": "fe8357b9-8583-5469-876e-749f6735dc92"
+  },
+  {
+    "category": "languages",
+    "navigationKeyword1": "other-langs",
+    "navigationKeyword2": "chinese",
+    "question": "What does '水' (shuǐ) mean?",
+    "correctAnswer": "water",
+    "incorrectAnswers": [
+      "fire",
+      "rice",
+      "tea"
+    ],
+    "explanation": "'Shuǐ' means water in basic vocabulary.",
+    "keywords": [
+      "water",
+      "chinese-basics"
+    ],
+    "source": "https://dictionary.cambridge.org/dictionary/english-chinese/water",
+    "seedId": "b173f538-1b4c-5959-92b7-3bb5130743af"
+  },
+  {
+    "category": "languages",
+    "navigationKeyword1": "other-langs",
+    "navigationKeyword2": "chinese",
+    "question": "Why do tones matter in Mandarin for words like 'mā' and 'mà'?",
+    "correctAnswer": "different tones can mean different words",
+    "incorrectAnswers": [
+      "tones never change meaning",
+      "tones are only for songs",
+      "tones only change spelling"
+    ],
+    "explanation": "Tone is part of the word in Mandarin, so changing tone can change meaning.",
+    "keywords": [
+      "tones",
+      "chinese-basics"
+    ],
+    "source": "https://resources.allsetlearning.com/chinese/grammar/Tone_change_rules",
+    "seedId": "4fa3cfe8-e3f6-514a-836d-4a1f9e379047"
+  },
+  {
+    "category": "languages",
+    "navigationKeyword1": "other-langs",
+    "navigationKeyword2": "chinese",
+    "question": "What is a common neutral measure word for many everyday objects, often taught early?",
+    "correctAnswer": "个 (gè)",
+    "incorrectAnswers": [
+      "只 (zhǐ) for every noun in all cases",
+      "本 (běn) for every noun",
+      "张 (zhāng) for every noun"
+    ],
+    "explanation": "'个' is a very common general measure word in beginner speech.",
+    "keywords": [
+      "measure-word",
+      "chinese-basics"
+    ],
+    "source": "https://resources.allsetlearning.com/chinese/grammar/Measure_word_%22ge%22",
+    "seedId": "26410d61-14df-5e84-9c34-1a077d16ba3d"
+  },
+  {
+    "category": "languages",
+    "navigationKeyword1": "other-langs",
+    "navigationKeyword2": "chinese",
+    "question": "What does '是' (shì) often mean in a simple 'A 是 B' sentence?",
+    "correctAnswer": "is / are (linking A and B)",
+    "incorrectAnswers": [
+      "only 'was'",
+      "only 'have'",
+      "only 'want'"
+    ],
+    "explanation": "'Shì' is a basic verb for identity and classification in simple sentences.",
+    "keywords": [
+      "shi",
+      "chinese-basics"
+    ],
+    "source": "https://dictionary.cambridge.org/dictionary/english-chinese/is",
+    "seedId": "ea115f49-076c-54f3-9cf7-b7665136a70c"
+  }
+]

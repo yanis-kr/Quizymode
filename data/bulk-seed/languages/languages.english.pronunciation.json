@@ -1,0 +1,122 @@
+[
+  {
+    "category": "languages",
+    "navigationKeyword1": "english",
+    "navigationKeyword2": "pronunciation",
+    "question": "In many English accents, is the letter k pronounced in knife?",
+    "correctAnswer": "No, the k is usually silent.",
+    "incorrectAnswers": [
+      "Yes, it is always strongly pronounced",
+      "Yes, but only at the end",
+      "Only in plural forms"
+    ],
+    "explanation": "In knife and similar words, the k is typically silent in modern English pronunciation.",
+    "keywords": [
+      "silent-letters",
+      "spelling-sound",
+      "english-pronunciation"
+    ],
+    "source": "https://dictionary.cambridge.org/pronunciation/english/knife",
+    "seedId": "30a489c3-9ff3-5bef-89f7-47584e5063fd"
+  },
+  {
+    "category": "languages",
+    "navigationKeyword1": "english",
+    "navigationKeyword2": "pronunciation",
+    "question": "Which syllable is usually stressed in the word photograph?",
+    "correctAnswer": "The first syllable: PHO-to-graph.",
+    "incorrectAnswers": [
+      "The second syllable",
+      "The third syllable",
+      "No syllable is stressed"
+    ],
+    "explanation": "Photograph usually carries primary stress on the first syllable in common pronunciation.",
+    "keywords": [
+      "word-stress",
+      "syllables",
+      "english-pronunciation"
+    ],
+    "source": "https://dictionary.cambridge.org/dictionary/english/photograph",
+    "seedId": "8c707c9e-59a7-5326-9d32-262e82deb5da"
+  },
+  {
+    "category": "languages",
+    "navigationKeyword1": "english",
+    "navigationKeyword2": "pronunciation",
+    "question": "Which sound is the usual vowel in many unstressed syllables, like the a in about?",
+    "correctAnswer": "the schwa sound (like uh)",
+    "incorrectAnswers": [
+      "a long ee sound",
+      "a long oo sound",
+      "no vowel sound at all"
+    ],
+    "explanation": "Unstressed syllables in English often use a reduced vowel called schwa.",
+    "keywords": [
+      "schwa",
+      "stress",
+      "english-pronunciation"
+    ],
+    "source": "https://www.britishcouncil.org/learnenglish/pronunciation",
+    "seedId": "491dcc4e-94a7-5371-8e40-54054dadbd89"
+  },
+  {
+    "category": "languages",
+    "navigationKeyword1": "english",
+    "navigationKeyword2": "pronunciation",
+    "question": "Which pair shows two different th sounds in thin and this?",
+    "correctAnswer": "voiceless th in thin and voiced th in this",
+    "incorrectAnswers": [
+      "both use k",
+      "both use sh",
+      "both use silent h"
+    ],
+    "explanation": "English has two common th sounds: voiceless as in thin and voiced as in this.",
+    "keywords": [
+      "th-sounds",
+      "consonants",
+      "english-pronunciation"
+    ],
+    "source": "https://dictionary.cambridge.org/help/phonetics.html",
+    "seedId": "0f4a48fb-c129-5352-87ae-ca7a4cbcfe95"
+  },
+  {
+    "category": "languages",
+    "navigationKeyword1": "english",
+    "navigationKeyword2": "pronunciation",
+    "question": "In many American accents, how is the r in car often pronounced?",
+    "correctAnswer": "It is usually pronounced as an r-colored vowel.",
+    "incorrectAnswers": [
+      "It is always silent",
+      "It becomes a k sound",
+      "It becomes a w sound"
+    ],
+    "explanation": "American English often uses a rhotic r sound after vowels in words like car.",
+    "keywords": [
+      "r-sound",
+      "american-english",
+      "english-pronunciation"
+    ],
+    "source": "https://dictionary.cambridge.org/pronunciation/english/car",
+    "seedId": "08bc129c-47bf-5a16-8b03-f10a4850e8ae"
+  },
+  {
+    "category": "languages",
+    "navigationKeyword1": "english",
+    "navigationKeyword2": "pronunciation",
+    "question": "When a word is both a noun and a verb, like record, what often changes?",
+    "correctAnswer": "Which syllable carries the main stress.",
+    "incorrectAnswers": [
+      "The spelling always changes",
+      "The vowels always disappear",
+      "Stress never changes"
+    ],
+    "explanation": "Many noun-verb pairs shift stress, such as RE-cord (noun) versus re-CORD (verb).",
+    "keywords": [
+      "word-stress",
+      "noun-verb-pairs",
+      "english-pronunciation"
+    ],
+    "source": "https://dictionary.cambridge.org/dictionary/english/record",
+    "seedId": "21d0d766-26a7-5063-8a9e-ead04bb4d82a"
+  }
+]

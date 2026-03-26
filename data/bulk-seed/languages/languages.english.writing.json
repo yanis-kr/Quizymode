@@ -1,0 +1,122 @@
+[
+  {
+    "category": "languages",
+    "navigationKeyword1": "english",
+    "navigationKeyword2": "writing",
+    "question": "What is a run-on sentence?",
+    "correctAnswer": "Two complete sentences joined without proper punctuation or a joining word.",
+    "incorrectAnswers": [
+      "Any long sentence",
+      "A sentence with a question mark",
+      "A sentence with one subject only"
+    ],
+    "explanation": "A run-on error happens when independent clauses are stuck together without a correct link like a period, semicolon, or conjunction.",
+    "keywords": [
+      "run-on-sentence",
+      "punctuation",
+      "english-writing"
+    ],
+    "source": "https://owl.purdue.edu/owl/general_writing/mechanics/sentence_clarity/sentence_fragments_and_run_ons.html",
+    "seedId": "945979f1-9f8c-56f1-bc9a-c9614775c64e"
+  },
+  {
+    "category": "languages",
+    "navigationKeyword1": "english",
+    "navigationKeyword2": "writing",
+    "question": "In a basic essay, what does a thesis statement usually do?",
+    "correctAnswer": "It states the main argument or point you will support.",
+    "incorrectAnswers": [
+      "It lists every source you read",
+      "It replaces the conclusion",
+      "It only describes the title font"
+    ],
+    "explanation": "A thesis statement tells the reader the essay's central claim or purpose.",
+    "keywords": [
+      "thesis-statement",
+      "essay",
+      "english-writing"
+    ],
+    "source": "https://writingcenter.unc.edu/tips-and-tools/thesis-statements/",
+    "seedId": "9a06c89c-8715-5976-90a2-dd95f7d953b0"
+  },
+  {
+    "category": "languages",
+    "navigationKeyword1": "english",
+    "navigationKeyword2": "writing",
+    "question": "What is parallel structure in a list?",
+    "correctAnswer": "Each item follows the same grammatical pattern.",
+    "incorrectAnswers": [
+      "Each item must rhyme",
+      "Only the first item needs a verb",
+      "Each item must be a question"
+    ],
+    "explanation": "Parallelism keeps items in the same form, like reading, writing, and revising.",
+    "keywords": [
+      "parallelism",
+      "lists",
+      "english-writing"
+    ],
+    "source": "https://www.merriam-webster.com/words-at-play/parallelism-grammar",
+    "seedId": "332f49f0-ec11-5644-a098-cde2c3cda6a9"
+  },
+  {
+    "category": "languages",
+    "navigationKeyword1": "english",
+    "navigationKeyword2": "writing",
+    "question": "Why do many style guides suggest the serial (Oxford) comma?",
+    "correctAnswer": "It can prevent confusion between the last two items in a list.",
+    "incorrectAnswers": [
+      "It is required in every language",
+      "It replaces all periods",
+      "It makes lists shorter"
+    ],
+    "explanation": "A serial comma before and can clarify meaning, especially when items could blur together.",
+    "keywords": [
+      "serial-comma",
+      "punctuation",
+      "english-writing"
+    ],
+    "source": "https://www.merriam-webster.com/words-at-play/serial-comma-oxford-comma-meaning",
+    "seedId": "5fb86472-7a0f-5101-9ed4-3584dd2a6b22"
+  },
+  {
+    "category": "languages",
+    "navigationKeyword1": "english",
+    "navigationKeyword2": "writing",
+    "question": "In a strong body paragraph, what does the topic sentence usually do?",
+    "correctAnswer": "It states the paragraph's main point.",
+    "incorrectAnswers": [
+      "It hides the main point",
+      "It only greets the reader",
+      "It repeats the title exactly"
+    ],
+    "explanation": "The topic sentence guides the reader by announcing what the paragraph will explain.",
+    "keywords": [
+      "topic-sentence",
+      "body-paragraph",
+      "english-writing"
+    ],
+    "source": "https://writingcenter.unc.edu/tips-and-tools/paragraphs/",
+    "seedId": "03e117fe-8249-51c9-9adf-4815b7cb47de"
+  },
+  {
+    "category": "languages",
+    "navigationKeyword1": "english",
+    "navigationKeyword2": "writing",
+    "question": "When is active voice often clearer than passive voice?",
+    "correctAnswer": "When you want to show who did the action directly.",
+    "incorrectAnswers": [
+      "When you want to hide all subjects",
+      "When you remove the verb",
+      "When you avoid nouns"
+    ],
+    "explanation": "Active voice names the doer first, which is often clearer for readers.",
+    "keywords": [
+      "active-voice",
+      "passive-voice",
+      "english-writing"
+    ],
+    "source": "https://www.grammarly.com/blog/sentences/active-vs-passive-voice/",
+    "seedId": "59fd3f3a-360b-5d1c-b05e-0f154a80cf8a"
+  }
+]

@@ -1,0 +1,122 @@
+[
+  {
+    "category": "business",
+    "navigationKeyword1": "finance",
+    "navigationKeyword2": "investing",
+    "question": "What is the main goal of diversification in investing?",
+    "correctAnswer": "To reduce the impact of one investment doing poorly on the overall portfolio.",
+    "incorrectAnswers": [
+      "To guarantee profits even if markets decline.",
+      "To eliminate all risk so returns cannot vary.",
+      "To concentrate your money into one asset to maximize upside."
+    ],
+    "explanation": "Diversification spreads risk across different assets so one underperformer is less likely to dominate results.",
+    "keywords": [
+      "diversification",
+      "risk",
+      "portfolio-management"
+    ],
+    "source": "https://www.investor.gov/introduction-investing/investing-basics/glossary/diversification",
+    "seedId": "91e04231-c07b-5813-b139-745b9e2c4716"
+  },
+  {
+    "category": "business",
+    "navigationKeyword1": "finance",
+    "navigationKeyword2": "investing",
+    "question": "What is an index fund designed to do?",
+    "correctAnswer": "Track the performance of a specific market index (or a close representation of it).",
+    "incorrectAnswers": [
+      "Act like an actively managed fund that targets a specific stock each week.",
+      "Guarantee a fixed return regardless of market moves.",
+      "Move your allocation each day to maximize short-term gains."
+    ],
+    "explanation": "Index funds are built to mirror an index’s holdings and performance rather than trying to beat it through frequent trading.",
+    "keywords": [
+      "index-funds",
+      "passive-investing",
+      "indexing"
+    ],
+    "source": "https://www.sec.gov/investor/pubs/index-mutualfunds.html",
+    "seedId": "a3ba5422-4258-5af9-a327-8d9db9785dae"
+  },
+  {
+    "category": "business",
+    "navigationKeyword1": "finance",
+    "navigationKeyword2": "investing",
+    "question": "In portfolio terms, what is “rebalancing” usually meant to fix?",
+    "correctAnswer": "That asset weights drift away from your intended mix over time.",
+    "incorrectAnswers": [
+      "It converts your investments into cash automatically at market peaks.",
+      "It prevents any price movement from happening.",
+      "It turns all holdings into insured deposits."
+    ],
+    "explanation": "Rebalancing restores the target allocation by buying what has become underweight and selling what has become overweight, based on your plan.",
+    "keywords": [
+      "rebalancing",
+      "asset-allocation",
+      "risk-control"
+    ],
+    "source": "https://www.finra.org/investors/investing-basics/portfolio-rebalancing",
+    "seedId": "c8d2521a-538b-50c2-a2c7-9e016d29b618"
+  },
+  {
+    "category": "business",
+    "navigationKeyword1": "finance",
+    "navigationKeyword2": "investing",
+    "question": "What does an expected risk-return tradeoff generally mean?",
+    "correctAnswer": "Higher potential returns usually come with greater uncertainty or volatility.",
+    "incorrectAnswers": [
+      "Higher returns are always possible without any extra volatility.",
+      "Risk and return are unrelated in markets.",
+      "Lower-risk choices always provide the highest expected return."
+    ],
+    "explanation": "Many investors use the idea that chasing higher returns typically requires accepting more variability in outcomes.",
+    "keywords": [
+      "risk-return",
+      "volatility",
+      "expected-returns"
+    ],
+    "source": "https://www.investopedia.com/terms/r/riskreturntradeoff.asp",
+    "seedId": "df4228d8-2273-572c-9c67-f77951edf74f"
+  },
+  {
+    "category": "business",
+    "navigationKeyword1": "finance",
+    "navigationKeyword2": "investing",
+    "question": "Why do bonds’ price usually move when interest rates move?",
+    "correctAnswer": "Because the present value of bond payments changes when the market discount rate changes.",
+    "incorrectAnswers": [
+      "Because bond prices are fixed and never respond to rates.",
+      "Because bond prices only react to stock market moves.",
+      "Because bond coupons are recalculated every day based on new rates."
+    ],
+    "explanation": "When rates rise, future bond cash flows are discounted more heavily, which tends to lower bond prices (and vice versa).",
+    "keywords": [
+      "bonds",
+      "interest-rates",
+      "price-risk"
+    ],
+    "source": "https://www.investopedia.com/terms/d/duration.asp",
+    "seedId": "4b3256fd-6cff-570f-80da-897552d3d4ea"
+  },
+  {
+    "category": "business",
+    "navigationKeyword1": "finance",
+    "navigationKeyword2": "investing",
+    "question": "What is the difference between a bond’s coupon rate and its yield?",
+    "correctAnswer": "The coupon rate is the bond’s fixed interest rate on face value, while yield reflects the return based on the bond’s current price.",
+    "incorrectAnswers": [
+      "The coupon rate and yield are always identical for every bond.",
+      "Coupon rate is the return today, and yield is the promised future rate on face value.",
+      "Yield ignores price entirely and only depends on face value."
+    ],
+    "explanation": "Coupon rate is set at issuance, but yield changes with the bond’s price in the market.",
+    "keywords": [
+      "bond-yield",
+      "coupon-rate",
+      "fixed-income"
+    ],
+    "source": "https://www.sec.gov/education/capital-markets/bonds",
+    "seedId": "350da6d4-2951-547f-992b-b3f478edcd63"
+  }
+]

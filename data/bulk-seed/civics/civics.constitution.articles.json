@@ -1,0 +1,116 @@
+[
+  {
+    "category": "civics",
+    "navigationKeyword1": "constitution",
+    "navigationKeyword2": "articles",
+    "question": "Which article creates and structures Congress?",
+    "correctAnswer": "Article I",
+    "incorrectAnswers": [
+      "Article II",
+      "Article III",
+      "Article V"
+    ],
+    "explanation": "Article I establishes the legislative branch and spells out its powers and limits.",
+    "keywords": [
+      "articles",
+      "legislative-branch"
+    ],
+    "source": "https://constitution.congress.gov/constitution/article-1/",
+    "seedId": "cac4f2ad-fbd1-5c06-b7f4-746385bc86ee"
+  },
+  {
+    "category": "civics",
+    "navigationKeyword1": "constitution",
+    "navigationKeyword2": "articles",
+    "question": "Which article vests executive power in the president?",
+    "correctAnswer": "Article II",
+    "incorrectAnswers": [
+      "Article I",
+      "Article III",
+      "Article IV"
+    ],
+    "explanation": "Article II sets up the executive branch and describes presidential roles, selection, and duties.",
+    "keywords": [
+      "articles",
+      "executive-branch"
+    ],
+    "source": "https://www.law.cornell.edu/constitution/article-ii",
+    "seedId": "5ecdbf98-6d10-5167-aca3-af5b46c6b8fa"
+  },
+  {
+    "category": "civics",
+    "navigationKeyword1": "constitution",
+    "navigationKeyword2": "articles",
+    "question": "Which article establishes the federal judiciary, including the Supreme Court?",
+    "correctAnswer": "Article III",
+    "incorrectAnswers": [
+      "Article I",
+      "Article II",
+      "Article VI"
+    ],
+    "explanation": "Article III creates the judicial branch and defines federal judicial power.",
+    "keywords": [
+      "articles",
+      "judicial-branch"
+    ],
+    "source": "https://www.uscourts.gov/about-federal-courts/educational-resources/about-educational-outreach/activity-resources/article-iii",
+    "seedId": "ce236940-85da-5a83-b949-03c04c370fdf"
+  },
+  {
+    "category": "civics",
+    "navigationKeyword1": "constitution",
+    "navigationKeyword2": "articles",
+    "question": "Which article describes how the Constitution may be formally changed?",
+    "correctAnswer": "Article V",
+    "incorrectAnswers": [
+      "Article III",
+      "Article IV",
+      "Article VII"
+    ],
+    "explanation": "Article V lays out the amendment process for proposing and ratifying changes.",
+    "keywords": [
+      "articles",
+      "amendment-process"
+    ],
+    "source": "https://www.senate.gov/civics/constitution_item/constitution.htm?con_article=V",
+    "seedId": "35eacafd-9513-5967-a3e1-1b1687646b2a"
+  },
+  {
+    "category": "civics",
+    "navigationKeyword1": "constitution",
+    "navigationKeyword2": "articles",
+    "question": "Which article contains the Supremacy Clause, making the Constitution and valid federal law the “supreme Law of the Land”?",
+    "correctAnswer": "Article VI",
+    "incorrectAnswers": [
+      "Article IV",
+      "Article V",
+      "Article VII"
+    ],
+    "explanation": "Article VI states that the Constitution, federal laws made under it, and treaties are supreme over conflicting state law.",
+    "keywords": [
+      "articles",
+      "supremacy-clause"
+    ],
+    "source": "https://www.archives.gov/founding-docs/constitution-transcript",
+    "seedId": "26dc1950-582b-5bad-8a54-4d845391a565"
+  },
+  {
+    "category": "civics",
+    "navigationKeyword1": "constitution",
+    "navigationKeyword2": "articles",
+    "question": "Which article addressed how the new Constitution would take effect once enough states approved it?",
+    "correctAnswer": "Article VII",
+    "incorrectAnswers": [
+      "Article V",
+      "Article VI",
+      "Article III"
+    ],
+    "explanation": "Article VII set the ratification rule so the frame of government could go into operation after nine states agreed.",
+    "keywords": [
+      "articles",
+      "ratification"
+    ],
+    "source": "https://constitution.congress.gov/constitution/article-7/",
+    "seedId": "7ba6aca7-0314-51e0-96b7-849c05f9023c"
+  }
+]

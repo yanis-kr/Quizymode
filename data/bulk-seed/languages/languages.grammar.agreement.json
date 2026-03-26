@@ -1,0 +1,122 @@
+[
+  {
+    "category": "languages",
+    "navigationKeyword1": "grammar",
+    "navigationKeyword2": "agreement",
+    "question": "Which verb agrees with the plural subject? \"The keys ___ on the table.\"",
+    "correctAnswer": "are",
+    "incorrectAnswers": [
+      "is",
+      "was",
+      "has"
+    ],
+    "explanation": "A plural subject like \"keys\" takes a plural verb in the present: \"are.\"",
+    "keywords": [
+      "subject-verb-agreement",
+      "plural",
+      "grammar-basics"
+    ],
+    "source": "https://learnenglish.britishcouncil.org/grammar/a1-a2-grammar/subject-verb-agreement-1",
+    "seedId": "dee4e8c2-34d4-532a-88e1-5ad271800191"
+  },
+  {
+    "category": "languages",
+    "navigationKeyword1": "grammar",
+    "navigationKeyword2": "agreement",
+    "question": "Which verb fits? \"She ___ English and Spanish.\"",
+    "correctAnswer": "speaks",
+    "incorrectAnswers": [
+      "speak",
+      "speaking",
+      "are speaking"
+    ],
+    "explanation": "The third-person singular subject \"she\" usually takes a verb with -s in the present: \"speaks.\"",
+    "keywords": [
+      "subject-verb-agreement",
+      "third-person",
+      "grammar-basics"
+    ],
+    "source": "https://dictionary.cambridge.org/grammar/british-grammar/agreement-from-english-grammar-today",
+    "seedId": "efb3dd21-c010-50ee-97ab-0645f97ea05e"
+  },
+  {
+    "category": "languages",
+    "navigationKeyword1": "grammar",
+    "navigationKeyword2": "agreement",
+    "question": "Which sentence matches plural \"these\"?",
+    "correctAnswer": "These are my books.",
+    "incorrectAnswers": [
+      "These is my book.",
+      "These is my books.",
+      "These am my books."
+    ],
+    "explanation": "\"These\" is plural, so the verb and noun should be plural too: \"are\" and \"books.\"",
+    "keywords": [
+      "this-these",
+      "plural",
+      "grammar-basics"
+    ],
+    "source": "https://learnenglish.britishcouncil.org/grammar/a1-a2-grammar/demonstratives",
+    "seedId": "345e64e8-9290-58ab-8ba5-1f722a89a372"
+  },
+  {
+    "category": "languages",
+    "navigationKeyword1": "grammar",
+    "navigationKeyword2": "agreement",
+    "question": "Which pronoun agrees with a singular person when you do not know their gender?",
+    "correctAnswer": "Someone left their bag here.",
+    "incorrectAnswers": [
+      "Someone left they bag here.",
+      "Someone left them bag here.",
+      "Someone left she bag here."
+    ],
+    "explanation": "In modern English, singular \"they/their\" is widely used for an unknown person.",
+    "keywords": [
+      "pronoun-agreement",
+      "singular-they",
+      "grammar-basics"
+    ],
+    "source": "https://www.merriam-webster.com/words-at-play/singular-nonbinary-they",
+    "seedId": "4d70222a-ffd0-544c-8f67-91ca1e767df9"
+  },
+  {
+    "category": "languages",
+    "navigationKeyword1": "grammar",
+    "navigationKeyword2": "agreement",
+    "question": "Which verb fits? \"Each student ___ a notebook.\"",
+    "correctAnswer": "has",
+    "incorrectAnswers": [
+      "have",
+      "are having",
+      "having"
+    ],
+    "explanation": "\"Each\" focuses on one person at a time, so the verb is often singular: \"has.\"",
+    "keywords": [
+      "each",
+      "singular",
+      "grammar-basics"
+    ],
+    "source": "https://learnenglish.britishcouncil.org/grammar/a1-a2-grammar/subject-verb-agreement-1",
+    "seedId": "e2ea95ab-92a1-572d-b873-b919d9dbf96d"
+  },
+  {
+    "category": "languages",
+    "navigationKeyword1": "grammar",
+    "navigationKeyword2": "agreement",
+    "question": "Which verb agrees with the compound subject joined by \"and\"? \"My brother and I ___ going.\"",
+    "correctAnswer": "are",
+    "incorrectAnswers": [
+      "is",
+      "am",
+      "be"
+    ],
+    "explanation": "\"My brother and I\" is a plural subject, so the plural verb \"are\" fits.",
+    "keywords": [
+      "compound-subject",
+      "subject-verb-agreement",
+      "grammar-basics"
+    ],
+    "source": "https://owl.purdue.edu/owl/general_writing/grammar/subject_verb_agreement/index.html",
+    "seedId": "d22e8fb7-4be6-566e-b7c8-7f5c30af2039"
+  }
+]

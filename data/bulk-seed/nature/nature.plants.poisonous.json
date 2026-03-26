@@ -1,0 +1,116 @@
+[
+  {
+    "category": "nature",
+    "navigationKeyword1": "plants",
+    "navigationKeyword2": "poisonous",
+    "question": "What oil in poison ivy causes the itchy skin reaction?",
+    "correctAnswer": "urushiol",
+    "incorrectAnswers": [
+      "capsaicin",
+      "latex",
+      "menthol"
+    ],
+    "explanation": "Poison ivy contains urushiol, an oily compound that triggers contact dermatitis.",
+    "keywords": [
+      "poisonous-plants",
+      "nature-plants"
+    ],
+    "source": "https://www.britannica.com/science/urushiol",
+    "seedId": "71368201-da28-57d2-baf6-1bdeda8400b4"
+  },
+  {
+    "category": "nature",
+    "navigationKeyword1": "plants",
+    "navigationKeyword2": "poisonous",
+    "question": "Poison oak is most often recognized by leaves grouped in how many leaflets?",
+    "correctAnswer": "three",
+    "incorrectAnswers": [
+      "two",
+      "five",
+      "seven"
+    ],
+    "explanation": "Poison oak usually has three leaflets, which is why people say, 'Leaves of three, let it be.'",
+    "keywords": [
+      "poisonous-plants",
+      "nature-plants"
+    ],
+    "source": "https://ipm.ucanr.edu/pdf/pestnotes/pnpoisonoak.pdf",
+    "seedId": "2100b74f-a904-54e4-81c9-dc6f1550d334"
+  },
+  {
+    "category": "nature",
+    "navigationKeyword1": "plants",
+    "navigationKeyword2": "poisonous",
+    "question": "Poison sumac is most often found in what kind of place?",
+    "correctAnswer": "swampy wetlands",
+    "incorrectAnswers": [
+      "dry deserts",
+      "high alpine slopes",
+      "open grass prairies"
+    ],
+    "explanation": "Poison sumac typically grows in swampy, acidic wet areas rather than dry uplands.",
+    "keywords": [
+      "poisonous-plants",
+      "nature-plants"
+    ],
+    "source": "https://www.britannica.com/plant/poison-sumac",
+    "seedId": "3e8eae2f-d860-5026-b965-074db16d225d"
+  },
+  {
+    "category": "nature",
+    "navigationKeyword1": "plants",
+    "navigationKeyword2": "poisonous",
+    "question": "Which part of water hemlock is especially dangerous if eaten?",
+    "correctAnswer": "the roots",
+    "incorrectAnswers": [
+      "only the flowers",
+      "only the seeds",
+      "only the bark"
+    ],
+    "explanation": "Water hemlock is dangerous throughout, but the roots are especially toxic.",
+    "keywords": [
+      "poisonous-plants",
+      "nature-plants"
+    ],
+    "source": "https://www.britannica.com/plant/water-hemlock",
+    "seedId": "824bf197-adb2-5e14-b57c-565d43eed0f4"
+  },
+  {
+    "category": "nature",
+    "navigationKeyword1": "plants",
+    "navigationKeyword2": "poisonous",
+    "question": "Why is burning poison ivy especially dangerous?",
+    "correctAnswer": "the irritating oil can be carried in smoke",
+    "incorrectAnswers": [
+      "it explodes when heated",
+      "it releases carbon monoxide only",
+      "it attracts biting insects"
+    ],
+    "explanation": "Smoke from burning poison ivy can carry urushiol and expose people without direct skin contact.",
+    "keywords": [
+      "poisonous-plants",
+      "nature-plants"
+    ],
+    "source": "https://www.cdc.gov/niosh/topics/plants/exposure.html",
+    "seedId": "ad0c6505-0577-59ca-9003-dc8cf858e71b"
+  },
+  {
+    "category": "nature",
+    "navigationKeyword1": "plants",
+    "navigationKeyword2": "poisonous",
+    "question": "Does fluid from poison ivy blisters spread the rash to new places?",
+    "correctAnswer": "no",
+    "incorrectAnswers": [
+      "yes, always",
+      "only after the first day",
+      "only if the blisters burst outdoors"
+    ],
+    "explanation": "The rash comes from urushiol exposure, not from the fluid inside the blisters.",
+    "keywords": [
+      "poisonous-plants",
+      "nature-plants"
+    ],
+    "source": "https://www.cdc.gov/niosh/topics/plants/symptoms.html",
+    "seedId": "ae932e1e-8377-5216-837d-e03ae3462237"
+  }
+]

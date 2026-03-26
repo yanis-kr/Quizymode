@@ -1,0 +1,122 @@
+[
+  {
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "travel",
+    "question": "You want a one-way train ticket. Which short phrase asks for that?",
+    "correctAnswer": "Un aller simple, s'il vous plaît.",
+    "incorrectAnswers": [
+      "Une table pour deux, s'il vous plaît.",
+      "L'addition, s'il vous plaît.",
+      "Où sont les toilettes ?"
+    ],
+    "explanation": "\"Aller simple\" is a common label for a one-way ticket in travel French.",
+    "keywords": [
+      "ticket",
+      "train",
+      "french-travel"
+    ],
+    "source": "https://dictionary.cambridge.org/dictionary/french-english/aller-simple",
+    "seedId": "c16a41f3-d3c4-5ecc-8a0c-919602660bf4"
+  },
+  {
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "travel",
+    "question": "At the airport, which word usually means \"passport\"?",
+    "correctAnswer": "passeport",
+    "incorrectAnswers": [
+      "valise",
+      "vol",
+      "porte"
+    ],
+    "explanation": "\"Passeport\" is the standard word for passport.",
+    "keywords": [
+      "passport",
+      "airport",
+      "french-travel"
+    ],
+    "source": "https://www.collinsdictionary.com/dictionary/french-english/passeport",
+    "seedId": "a2dd59c1-8ef9-5324-947e-4f018fe47920"
+  },
+  {
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "travel",
+    "question": "Which word often means \"train station\" in city travel signs?",
+    "correctAnswer": "gare",
+    "incorrectAnswers": [
+      "rue",
+      "place",
+      "hôtel"
+    ],
+    "explanation": "\"Gare\" is the common word for a station, especially a train station.",
+    "keywords": [
+      "station",
+      "train",
+      "french-travel"
+    ],
+    "source": "https://dictionary.cambridge.org/dictionary/french-english/gare",
+    "seedId": "70f4f0a5-28f7-55ae-afbd-770b62cf337a"
+  },
+  {
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "travel",
+    "question": "Which phrase politely asks where the nearest bank is?",
+    "correctAnswer": "Où est la banque la plus proche ?",
+    "incorrectAnswers": [
+      "C'est combien ?",
+      "Avez-vous un menu en anglais ?",
+      "Je voudrais le plat du jour."
+    ],
+    "explanation": "\"Où est...\" asks where something is; \"banque\" means bank and \"proche\" means nearby.",
+    "keywords": [
+      "bank",
+      "directions",
+      "french-travel"
+    ],
+    "source": "https://www.collinsdictionary.com/dictionary/french-english/banque",
+    "seedId": "513691bd-1487-5185-929b-2bffdad9b609"
+  },
+  {
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "travel",
+    "question": "Which word means \"left\" when you give or follow directions?",
+    "correctAnswer": "gauche",
+    "incorrectAnswers": [
+      "droite",
+      "tout droit",
+      "près"
+    ],
+    "explanation": "\"Gauche\" means left; \"à gauche\" is a common direction phrase.",
+    "keywords": [
+      "left",
+      "directions",
+      "french-travel"
+    ],
+    "source": "https://dictionary.cambridge.org/dictionary/french-english/gauche",
+    "seedId": "7447bd59-ae2d-5be0-b6aa-e92861214103"
+  },
+  {
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "travel",
+    "question": "At a hotel desk, which phrase asks if they have a free room?",
+    "correctAnswer": "Avez-vous une chambre libre ?",
+    "incorrectAnswers": [
+      "À quelle heure est le vol ?",
+      "Un café au lait, s'il vous plaît.",
+      "Combien coûte l'entrée ?"
+    ],
+    "explanation": "\"Chambre\" means room; \"libre\" often signals that a room is available.",
+    "keywords": [
+      "hotel",
+      "room",
+      "french-travel"
+    ],
+    "source": "https://www.collinsdictionary.com/dictionary/french-english/chambre",
+    "seedId": "42d25dcb-0167-5413-ad69-a7653263211b"
+  }
+]

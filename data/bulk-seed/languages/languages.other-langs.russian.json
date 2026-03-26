@@ -1,0 +1,116 @@
+[
+  {
+    "category": "languages",
+    "navigationKeyword1": "other-langs",
+    "navigationKeyword2": "russian",
+    "question": "What does 'Здравствуйте' (Zdravstvuyte) mean?",
+    "correctAnswer": "hello (polite)",
+    "incorrectAnswers": [
+      "goodbye",
+      "thank you",
+      "please"
+    ],
+    "explanation": "'Zdravstvuyte' is a common polite greeting for strangers and formal settings.",
+    "keywords": [
+      "hello",
+      "russian-basics"
+    ],
+    "source": "https://dictionary.cambridge.org/dictionary/english-russian/hello",
+    "seedId": "ac95d85c-b166-5ef1-890a-5ba42dfe9a0a"
+  },
+  {
+    "category": "languages",
+    "navigationKeyword1": "other-langs",
+    "navigationKeyword2": "russian",
+    "question": "What does 'Спасибо' (Spasibo) mean?",
+    "correctAnswer": "thank you",
+    "incorrectAnswers": [
+      "please",
+      "sorry",
+      "welcome"
+    ],
+    "explanation": "'Spasibo' is the everyday thank you.",
+    "keywords": [
+      "thank-you",
+      "russian-basics"
+    ],
+    "source": "https://dictionary.cambridge.org/dictionary/english-russian/thank-you",
+    "seedId": "4eca38a7-25f0-5477-91a9-0a71e780738b"
+  },
+  {
+    "category": "languages",
+    "navigationKeyword1": "other-langs",
+    "navigationKeyword2": "russian",
+    "question": "What does 'вода' (voda) mean?",
+    "correctAnswer": "water",
+    "incorrectAnswers": [
+      "bread",
+      "milk",
+      "soup"
+    ],
+    "explanation": "'Voda' means water and is very common in daily speech.",
+    "keywords": [
+      "water",
+      "russian-basics"
+    ],
+    "source": "https://dictionary.cambridge.org/dictionary/english-russian/water",
+    "seedId": "e156253c-c61a-59de-8aff-a31b354f01d1"
+  },
+  {
+    "category": "languages",
+    "navigationKeyword1": "other-langs",
+    "navigationKeyword2": "russian",
+    "question": "What does 'да' (da) mean?",
+    "correctAnswer": "yes",
+    "incorrectAnswers": [
+      "no",
+      "maybe",
+      "please"
+    ],
+    "explanation": "'Da' is the basic word for yes.",
+    "keywords": [
+      "yes",
+      "russian-basics"
+    ],
+    "source": "https://dictionary.cambridge.org/dictionary/english-russian/yes",
+    "seedId": "dd3b7291-7040-5b5f-9258-48df9f2b2e87"
+  },
+  {
+    "category": "languages",
+    "navigationKeyword1": "other-langs",
+    "navigationKeyword2": "russian",
+    "question": "What does 'нет' (net) mean?",
+    "correctAnswer": "no",
+    "incorrectAnswers": [
+      "yes",
+      "maybe",
+      "please"
+    ],
+    "explanation": "'Net' is the basic word for no.",
+    "keywords": [
+      "no",
+      "russian-basics"
+    ],
+    "source": "https://dictionary.cambridge.org/dictionary/english-russian/no",
+    "seedId": "7ac44839-bd16-5ca6-9368-496a94e3da8e"
+  },
+  {
+    "category": "languages",
+    "navigationKeyword1": "other-langs",
+    "navigationKeyword2": "russian",
+    "question": "Russian nouns change endings for roles in a sentence. What is this system usually called?",
+    "correctAnswer": "cases",
+    "incorrectAnswers": [
+      "tones",
+      "articles only",
+      "silent letters only"
+    ],
+    "explanation": "Russian uses case endings to show subject, object, and other roles, which learners study step by step.",
+    "keywords": [
+      "cases",
+      "russian-basics"
+    ],
+    "source": "https://www.russianlessons.net/lessons/lesson6_main.php",
+    "seedId": "a5ab6590-d3a2-5462-b597-ec54792055dd"
+  }
+]

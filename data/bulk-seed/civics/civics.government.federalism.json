@@ -1,0 +1,116 @@
+[
+  {
+    "category": "civics",
+    "navigationKeyword1": "government",
+    "navigationKeyword2": "federalism",
+    "question": "What is federalism?",
+    "correctAnswer": "a system that divides power between national and state governments",
+    "incorrectAnswers": [
+      "a system with no states",
+      "a system where courts write all laws",
+      "a system run only by local governments"
+    ],
+    "explanation": "Federalism means government authority is shared between the federal government and the states.",
+    "keywords": [
+      "federalism",
+      "civics-structure"
+    ],
+    "source": "http://archives.gov/legislative/resources/education/federalism/",
+    "seedId": "14b6d939-95a8-56a7-b0ee-2cb25c1f48d4"
+  },
+  {
+    "category": "civics",
+    "navigationKeyword1": "government",
+    "navigationKeyword2": "federalism",
+    "question": "Under the Tenth Amendment, powers not given to the federal government are generally reserved to whom?",
+    "correctAnswer": "the states or the people",
+    "incorrectAnswers": [
+      "the Supreme Court only",
+      "foreign governments",
+      "federal agencies only"
+    ],
+    "explanation": "The Tenth Amendment reserves undelegated powers to the states or the people.",
+    "keywords": [
+      "federalism",
+      "civics-structure"
+    ],
+    "source": "http://archives.gov/legislative/resources/education/federalism/",
+    "seedId": "a902e93a-e5c5-54be-983d-b12b1b002ffa"
+  },
+  {
+    "category": "civics",
+    "navigationKeyword1": "government",
+    "navigationKeyword2": "federalism",
+    "question": "In the United States, who has the authority to print money?",
+    "correctAnswer": "the federal government",
+    "incorrectAnswers": [
+      "state governments",
+      "county governments",
+      "city councils"
+    ],
+    "explanation": "Some powers, like coining money, belong to the national government rather than the states.",
+    "keywords": [
+      "federalism",
+      "civics-structure"
+    ],
+    "source": "https://www.usa.gov/branches-of-government",
+    "seedId": "056a9816-1e97-50c1-bead-937b26a37536"
+  },
+  {
+    "category": "civics",
+    "navigationKeyword1": "government",
+    "navigationKeyword2": "federalism",
+    "question": "Which level of government commonly has primary authority over education policy?",
+    "correctAnswer": "state government",
+    "incorrectAnswers": [
+      "the United Nations",
+      "the federal judiciary",
+      "county sheriffs only"
+    ],
+    "explanation": "Education policy is largely a state responsibility in the U.S. system.",
+    "keywords": [
+      "federalism",
+      "civics-structure"
+    ],
+    "source": "https://www.ncsl.org/resources/details/pgrid/3666/pageid/1/pid/3666/evl/0/categoryid/1061/categoryname/state-federal",
+    "seedId": "e16e1aab-d33c-5d7d-8951-021bdf0b5bdd"
+  },
+  {
+    "category": "civics",
+    "navigationKeyword1": "government",
+    "navigationKeyword2": "federalism",
+    "question": "What does it mean when powers are called 'shared powers' in federalism?",
+    "correctAnswer": "both national and state governments can exercise them",
+    "incorrectAnswers": [
+      "only courts can use them",
+      "they belong to local governments alone",
+      "they change hands every election"
+    ],
+    "explanation": "Some powers are concurrent, meaning both levels of government can use them.",
+    "keywords": [
+      "federalism",
+      "civics-structure"
+    ],
+    "source": "http://archives.gov/legislative/resources/education/federalism/",
+    "seedId": "2d7f8bb3-bfd7-573d-a1c1-c3fa13e51653"
+  },
+  {
+    "category": "civics",
+    "navigationKeyword1": "government",
+    "navigationKeyword2": "federalism",
+    "question": "Why is federalism often described as a shared-power system?",
+    "correctAnswer": "because government authority is split across levels",
+    "incorrectAnswers": [
+      "because every law needs a public vote",
+      "because judges serve in both state and federal courts at once",
+      "because cities outrank states"
+    ],
+    "explanation": "Federalism spreads authority between levels of government instead of placing all power in one place.",
+    "keywords": [
+      "federalism",
+      "civics-structure"
+    ],
+    "source": "https://www.govinfo.gov/collection/constitution-annotated",
+    "seedId": "afcb8b05-50e5-5734-8c8d-140c43622445"
+  }
+]

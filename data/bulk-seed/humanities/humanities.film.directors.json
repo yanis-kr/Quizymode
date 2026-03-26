@@ -1,0 +1,40 @@
+[
+  {
+    "category": "humanities",
+    "navigationKeyword1": "film",
+    "navigationKeyword2": "directors",
+    "question": "What does a film director mainly guide?",
+    "correctAnswer": "the artistic and dramatic shape of a film",
+    "incorrectAnswers": [
+      "the theater snack menu",
+      "the printing of tickets",
+      "the studio parking map"
+    ],
+    "explanation": "Directors help shape performance, camera choices, pacing, and overall interpretation.",
+    "keywords": [
+      "film-directors",
+      "direction"
+    ],
+    "source": "https://www.britannica.com/art/film-director",
+    "seedId": "7307eadf-6824-57ec-b1aa-42bd4865e857"
+  },
+  {
+    "category": "humanities",
+    "navigationKeyword1": "film",
+    "navigationKeyword2": "directors",
+    "question": "Why are directors often studied in film history?",
+    "correctAnswer": "their style can shape how a film looks and feels",
+    "incorrectAnswers": [
+      "they invent every camera",
+      "they finance every movie alone",
+      "they write every film score"
+    ],
+    "explanation": "Directors are often linked to distinctive visual and storytelling choices.",
+    "keywords": [
+      "film-directors",
+      "style"
+    ],
+    "source": "https://www.bfi.org.uk/features/what-is-a-film-director",
+    "seedId": "e1460277-88fc-528a-8223-681501bd9a31"
+  }
+]

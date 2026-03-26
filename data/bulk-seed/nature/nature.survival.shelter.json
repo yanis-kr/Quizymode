@@ -1,0 +1,116 @@
+[
+  {
+    "category": "nature",
+    "navigationKeyword1": "survival",
+    "navigationKeyword2": "shelter",
+    "question": "Which Ten Essential category includes items like a tent, tarp, or bivy?",
+    "correctAnswer": "emergency shelter",
+    "incorrectAnswers": [
+      "illumination",
+      "repair kit",
+      "nutrition"
+    ],
+    "explanation": "Emergency shelter gear helps protect you if weather, injury, or delay keeps you out longer than planned.",
+    "keywords": [
+      "shelter",
+      "nature-outdoors"
+    ],
+    "source": "https://nps.gov/articles/10essentials.htm",
+    "seedId": "323e4ed8-2752-50e3-a55c-0310e7fed152"
+  },
+  {
+    "category": "nature",
+    "navigationKeyword1": "survival",
+    "navigationKeyword2": "shelter",
+    "question": "What does Leave No Trace mean by 'good campsites are found, not made'?",
+    "correctAnswer": "use an existing suitable site instead of building a new one",
+    "incorrectAnswers": [
+      "dig a trench around every tent",
+      "clear all branches from a fresh area",
+      "always camp directly on riverbanks"
+    ],
+    "explanation": "Using already durable or established sites reduces damage to vegetation and soil.",
+    "keywords": [
+      "shelter",
+      "nature-outdoors"
+    ],
+    "source": "https://www.fs.usda.gov/lei/no-trace-ethics.php",
+    "seedId": "ea88a0b3-fcca-57e3-86f3-0254ec5ed1c5"
+  },
+  {
+    "category": "nature",
+    "navigationKeyword1": "survival",
+    "navigationKeyword2": "shelter",
+    "question": "Which of these counts as a durable surface for camping?",
+    "correctAnswer": "rock or gravel",
+    "incorrectAnswers": [
+      "fragile moss bed",
+      "new wildflower patch",
+      "streamside mud"
+    ],
+    "explanation": "Durable surfaces such as rock, gravel, dry grasses, snow, or established sites are better choices for shelter setup.",
+    "keywords": [
+      "shelter",
+      "nature-outdoors"
+    ],
+    "source": "https://www.fs.usda.gov/lei/no-trace-ethics.php",
+    "seedId": "b5194ae0-6746-57b1-bec7-a1bdc3ad438f"
+  },
+  {
+    "category": "nature",
+    "navigationKeyword1": "survival",
+    "navigationKeyword2": "shelter",
+    "question": "How far from lakes and streams should camps usually be set up when possible?",
+    "correctAnswer": "about 200 feet away",
+    "incorrectAnswers": [
+      "right on the shoreline",
+      "about 20 feet away",
+      "as close as the tent rope allows"
+    ],
+    "explanation": "Camping away from water helps protect riparian areas and reduces impact on sensitive habitat.",
+    "keywords": [
+      "shelter",
+      "nature-outdoors"
+    ],
+    "source": "https://www.fs.usda.gov/lei/no-trace-ethics.php",
+    "seedId": "461086ce-d6bf-5e88-8808-6ee5f8c740be"
+  },
+  {
+    "category": "nature",
+    "navigationKeyword1": "survival",
+    "navigationKeyword2": "shelter",
+    "question": "When cold rain threatens, when should you put on rainwear or warm layers?",
+    "correctAnswer": "before you become soaked or chilled",
+    "incorrectAnswers": [
+      "only after you start shivering hard",
+      "once the sun comes back out",
+      "only at bedtime"
+    ],
+    "explanation": "Getting protective layers on early is much easier than recovering after you are already wet and cold.",
+    "keywords": [
+      "shelter",
+      "nature-outdoors"
+    ],
+    "source": "https://www.nps.gov/glba/planyourvisit/hypothermia.htm",
+    "seedId": "b6ad4af5-2e6c-5cbc-b961-e2eff2fdb0f0"
+  },
+  {
+    "category": "nature",
+    "navigationKeyword1": "survival",
+    "navigationKeyword2": "shelter",
+    "question": "Why is staying dry so important when trying to stay warm outdoors?",
+    "correctAnswer": "wetness greatly increases heat loss",
+    "incorrectAnswers": [
+      "it makes maps unreadable",
+      "it reduces oxygen levels",
+      "it prevents fire from giving warmth"
+    ],
+    "explanation": "Wet clothing and wind make it much easier for your body to lose heat and slide toward hypothermia.",
+    "keywords": [
+      "shelter",
+      "nature-outdoors"
+    ],
+    "source": "https://www.nps.gov/pore/planyourvisit/yoursafety_hypothermia.htm",
+    "seedId": "673a7507-8200-5f37-83cf-0da069dcdb60"
+  }
+]

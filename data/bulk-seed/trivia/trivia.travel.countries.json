@@ -1,0 +1,192 @@
+[
+  {
+    "category": "trivia",
+    "navigationKeyword1": "travel",
+    "navigationKeyword2": "countries",
+    "question": "Which country is often called the Land of the Rising Sun?",
+    "correctAnswer": "Japan",
+    "incorrectAnswers": [
+      "China",
+      "South Korea",
+      "Thailand"
+    ],
+    "explanation": "Japan is often called the Land of the Rising Sun.",
+    "keywords": [
+      "countries",
+      "travel-trivia"
+    ],
+    "source": "https://www.britannica.com/place/Japan",
+    "seedId": "15778324-d867-5a26-aff2-553aed99c4bc"
+  },
+  {
+    "category": "trivia",
+    "navigationKeyword1": "travel",
+    "navigationKeyword2": "countries",
+    "question": "Which country has the longest coastline in the world?",
+    "correctAnswer": "Canada",
+    "incorrectAnswers": [
+      "Russia",
+      "Australia",
+      "United States"
+    ],
+    "explanation": "Canada has the longest coastline in the world.",
+    "keywords": [
+      "countries",
+      "travel-trivia"
+    ],
+    "source": "https://www.britannica.com/place/Canada",
+    "seedId": "132a570b-e19c-5919-9857-c853f9b43472"
+  },
+  {
+    "category": "trivia",
+    "navigationKeyword1": "travel",
+    "navigationKeyword2": "countries",
+    "question": "What is the smallest country in the world?",
+    "correctAnswer": "Vatican City",
+    "incorrectAnswers": [
+      "Monaco",
+      "San Marino",
+      "Liechtenstein"
+    ],
+    "explanation": "Vatican City is the worlds smallest country.",
+    "keywords": [
+      "countries",
+      "travel-trivia"
+    ],
+    "source": "https://www.britannica.com/place/Vatican-City",
+    "seedId": "6d08613a-c0cf-535b-b085-25fb66b0717d"
+  },
+  {
+    "category": "trivia",
+    "navigationKeyword1": "travel",
+    "navigationKeyword2": "countries",
+    "question": "Petra is located in which country?",
+    "correctAnswer": "Jordan",
+    "incorrectAnswers": [
+      "Lebanon",
+      "Egypt",
+      "Israel"
+    ],
+    "explanation": "Petra is located in Jordan.",
+    "keywords": [
+      "countries",
+      "travel-trivia"
+    ],
+    "source": "https://www.britannica.com/place/Jordan",
+    "seedId": "5101b561-ff34-55b2-b7d1-e4aefd46cfd4"
+  },
+  {
+    "category": "trivia",
+    "navigationKeyword1": "travel",
+    "navigationKeyword2": "countries",
+    "question": "Mount Kilimanjaro is in which country?",
+    "correctAnswer": "Tanzania",
+    "incorrectAnswers": [
+      "Kenya",
+      "Uganda",
+      "Ethiopia"
+    ],
+    "explanation": "Mount Kilimanjaro is in Tanzania.",
+    "keywords": [
+      "countries",
+      "travel-trivia"
+    ],
+    "source": "https://www.britannica.com/place/Tanzania",
+    "seedId": "fc543447-b7d5-5d72-b451-52aab99484e3"
+  },
+  {
+    "category": "trivia",
+    "navigationKeyword1": "travel",
+    "navigationKeyword2": "countries",
+    "question": "Angkor Wat is in which country?",
+    "correctAnswer": "Cambodia",
+    "incorrectAnswers": [
+      "Thailand",
+      "Laos",
+      "Vietnam"
+    ],
+    "explanation": "Angkor Wat is in Cambodia.",
+    "keywords": [
+      "countries",
+      "travel-trivia"
+    ],
+    "source": "https://www.britannica.com/place/Cambodia",
+    "seedId": "f6e5cf30-668b-592c-952b-a4aeb1a77cea"
+  },
+  {
+    "category": "trivia",
+    "navigationKeyword1": "travel",
+    "navigationKeyword2": "countries",
+    "question": "The pyramids at Giza are in which country?",
+    "correctAnswer": "Egypt",
+    "incorrectAnswers": [
+      "Sudan",
+      "Jordan",
+      "Libya"
+    ],
+    "explanation": "The pyramids at Giza are in Egypt.",
+    "keywords": [
+      "countries",
+      "travel-trivia"
+    ],
+    "source": "https://www.britannica.com/place/Egypt",
+    "seedId": "0dff9428-1a82-5f7e-a705-594840ff1c9a"
+  },
+  {
+    "category": "trivia",
+    "navigationKeyword1": "travel",
+    "navigationKeyword2": "countries",
+    "question": "People nicknamed Kiwis are from which country?",
+    "correctAnswer": "New Zealand",
+    "incorrectAnswers": [
+      "Australia",
+      "Ireland",
+      "Canada"
+    ],
+    "explanation": "Kiwi is a common nickname for people from New Zealand.",
+    "keywords": [
+      "countries",
+      "travel-trivia"
+    ],
+    "source": "https://www.britannica.com/place/New-Zealand",
+    "seedId": "9b5c2fe1-8289-52e6-b972-33ffc8e87f64"
+  },
+  {
+    "category": "trivia",
+    "navigationKeyword1": "travel",
+    "navigationKeyword2": "countries",
+    "question": "Tulips are strongly associated with which country?",
+    "correctAnswer": "Netherlands",
+    "incorrectAnswers": [
+      "Belgium",
+      "Switzerland",
+      "Austria"
+    ],
+    "explanation": "Tulips are strongly associated with the Netherlands.",
+    "keywords": [
+      "countries",
+      "travel-trivia"
+    ],
+    "source": "https://www.britannica.com/place/Netherlands",
+    "seedId": "3d5789c9-e712-5ea5-8a5b-428f8bf85daf"
+  },
+  {
+    "category": "trivia",
+    "navigationKeyword1": "travel",
+    "navigationKeyword2": "countries",
+    "question": "Machu Picchu is in which country?",
+    "correctAnswer": "Peru",
+    "incorrectAnswers": [
+      "Chile",
+      "Bolivia",
+      "Ecuador"
+    ],
+    "explanation": "Machu Picchu is in Peru.",
+    "keywords": [
+      "countries",
+      "travel-trivia"
+    ],
+    "source": "https://www.britannica.com/place/Peru",
+    "seedId": "545ce42d-d066-51c0-b646-8b1c7a895fbe"
+  }
+]

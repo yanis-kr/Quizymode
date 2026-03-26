@@ -3,7 +3,7 @@
     "category": "trivia",
     "navigationKeyword1": "famous-people",
     "navigationKeyword2": "leaders",
-    "question": "WhiteHouse.gov biography dates George Washington\u2019s presidency as beginning in which year?",
+    "question": "WhiteHouse.gov biography dates George Washington’s presidency as beginning in which year?",
     "correctAnswer": "1789",
     "incorrectAnswers": [
       "1776",
@@ -16,26 +16,26 @@
       "us-history"
     ],
     "source": "https://www.whitehouse.gov/about-the-white-house/presidents/george-washington/",
-    "seedId": "49945ff1-d547-4101-bcc3-ad060dc7b367"
+    "seedId": "ae017273-5ed6-503b-8828-0c2d2506ea6f"
   },
   {
     "category": "trivia",
     "navigationKeyword1": "famous-people",
     "navigationKeyword2": "leaders",
-    "question": "WhiteHouse.gov biography dates Abraham Lincoln\u2019s presidency as beginning in which year?",
+    "question": "WhiteHouse.gov biography dates Abraham Lincoln’s presidency as beginning in which year?",
     "correctAnswer": "1861",
     "incorrectAnswers": [
       "1850",
       "1877",
       "1845"
     ],
-    "explanation": "The White House places Lincoln\u2019s presidency starting in 1861.",
+    "explanation": "The White House places Lincoln’s presidency starting in 1861.",
     "keywords": [
       "civil-war",
       "presidents"
     ],
     "source": "https://www.whitehouse.gov/about-the-white-house/presidents/abraham-lincoln/",
-    "seedId": "a4ff3ebe-7561-42ae-91bc-ecf210717537"
+    "seedId": "c25c7f4c-2c17-5527-94af-33226c1d9e9d"
   },
   {
     "category": "trivia",
@@ -54,7 +54,7 @@
       "uk"
     ],
     "source": "https://www.britannica.com/biography/Winston-Churchill",
-    "seedId": "82a6bff3-419d-4ff0-8188-261517e6194f"
+    "seedId": "152ab72a-3c0b-5de0-a8c8-3077ee41d4fb"
   },
   {
     "category": "trivia",
@@ -73,7 +73,7 @@
       "south-africa"
     ],
     "source": "https://www.britannica.com/biography/Nelson-Mandela",
-    "seedId": "f497135b-41ee-4e60-9899-fa6b1678a7a8"
+    "seedId": "3aa40523-f025-52e6-9b52-ae08f2f310f7"
   },
   {
     "category": "trivia",
@@ -83,35 +83,35 @@
     "correctAnswer": "satyagraha",
     "incorrectAnswers": [
       "blitzkrieg",
-      "coup d\u2019\u00e9tat",
+      "coup d’état",
       "guerrilla war"
     ],
-    "explanation": "Gandhi\u2019s satyagraha campaigns.",
+    "explanation": "Gandhi’s satyagraha campaigns.",
     "keywords": [
       "india",
       "independence"
     ],
     "source": "https://www.britannica.com/biography/Mahatma-Gandhi",
-    "seedId": "56442670-390c-4db2-b1a5-c15377375559"
+    "seedId": "baac1d1d-b7ec-5479-98d1-00cb282fca38"
   },
   {
     "category": "trivia",
     "navigationKeyword1": "famous-people",
     "navigationKeyword2": "leaders",
-    "question": "Cleopatra to the last era of which ancient kingdom?",
+    "question": "Cleopatra ruled during the last era of which ancient kingdom?",
     "correctAnswer": "Ptolemaic Egypt",
     "incorrectAnswers": [
       "Neo-Babylonian Empire",
       "Han China",
       "Maurya Empire"
     ],
-    "explanation": "Britannica places Cleopatra in Ptolemaic Egypt.",
+    "explanation": "Cleopatra ruled during the last era of Ptolemaic Egypt.",
     "keywords": [
       "ancient-history",
       "egypt"
     ],
     "source": "https://www.britannica.com/biography/Cleopatra-queen-of-Egypt",
-    "seedId": "a7c800ee-9c70-46b3-b9cb-ffac42167d81"
+    "seedId": "b8c68caf-c8a6-5501-a7d7-83442f061e82"
   },
   {
     "category": "trivia",
@@ -130,7 +130,7 @@
       "monarchy"
     ],
     "source": "https://www.britannica.com/biography/Catherine-the-Great-empress-of-Russia",
-    "seedId": "12f86842-6550-451c-9987-392166e146f5"
+    "seedId": "db722dfb-cf6b-5fa4-b75e-118bb44f2561"
   },
   {
     "category": "trivia",
@@ -149,7 +149,7 @@
       "history"
     ],
     "source": "https://www.britannica.com/biography/Julius-Caesar-Roman-ruler",
-    "seedId": "982eba79-86cc-4365-9011-da203a9e6db4"
+    "seedId": "66e175a4-2a35-5463-ae44-5df57e48f61c"
   },
   {
     "category": "trivia",
@@ -162,13 +162,13 @@
       "secession",
       "draft riots"
     ],
-    "explanation": "King\u2019s nonviolent civil rights leadership.",
+    "explanation": "King’s nonviolent civil rights leadership.",
     "keywords": [
       "civil-rights",
       "us-history"
     ],
     "source": "https://www.britannica.com/biography/Martin-Luther-King-Jr",
-    "seedId": "ce4d0ae1-9a45-46c0-93e8-c0f21f770d8e"
+    "seedId": "c39934c6-1e56-5dd7-96ad-49aba1120ac7"
   },
   {
     "category": "trivia",
@@ -187,6 +187,6 @@
       "uk"
     ],
     "source": "https://www.britannica.com/biography/Elizabeth-II",
-    "seedId": "85c445ba-a7a8-47bc-b889-0e4b50db05cf"
+    "seedId": "a08ca9f4-d148-5211-ac68-ba902a7aea78"
   }
 ]

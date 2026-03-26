@@ -1,0 +1,40 @@
+[
+  {
+    "category": "humanities",
+    "navigationKeyword1": "visual-art",
+    "navigationKeyword2": "artists",
+    "question": "Pablo Picasso is especially linked to which movement?",
+    "correctAnswer": "Cubism",
+    "incorrectAnswers": [
+      "Romanticism",
+      "Baroque",
+      "Minimalism"
+    ],
+    "explanation": "Picasso is one of the artists most associated with Cubism.",
+    "keywords": [
+      "visual-artists",
+      "picasso"
+    ],
+    "source": "https://www.britannica.com/biography/Pablo-Picasso",
+    "seedId": "c2130b36-9ecc-53d7-8541-953bb596668c"
+  },
+  {
+    "category": "humanities",
+    "navigationKeyword1": "visual-art",
+    "navigationKeyword2": "artists",
+    "question": "Frida Kahlo is especially known for what kind of paintings?",
+    "correctAnswer": "self-portraits",
+    "incorrectAnswers": [
+      "seascapes only",
+      "sports scenes only",
+      "abstract grids only"
+    ],
+    "explanation": "Kahlo is famous for self-portraits that join personal identity with symbolism.",
+    "keywords": [
+      "visual-artists",
+      "frida-kahlo"
+    ],
+    "source": "https://www.fridakahlo.org/",
+    "seedId": "f746dc75-f672-55dc-80d3-ed4afaeb6943"
+  }
+]

@@ -1,0 +1,40 @@
+[
+  {
+    "category": "humanities",
+    "navigationKeyword1": "literature",
+    "navigationKeyword2": "literary-terms",
+    "question": "What is a metaphor?",
+    "correctAnswer": "a comparison that says one thing is another",
+    "incorrectAnswers": [
+      "a list of characters",
+      "a chapter heading",
+      "a factual footnote"
+    ],
+    "explanation": "A metaphor links two unlike things directly to create meaning or imagery.",
+    "keywords": [
+      "literary-terms",
+      "metaphor"
+    ],
+    "source": "https://www.poetryfoundation.org/learn/glossary-terms/metaphor",
+    "seedId": "017812be-befb-58ad-8384-7b5decdde937"
+  },
+  {
+    "category": "humanities",
+    "navigationKeyword1": "literature",
+    "navigationKeyword2": "literary-terms",
+    "question": "What is a theme in literature?",
+    "correctAnswer": "a central idea or underlying message",
+    "incorrectAnswers": [
+      "the typeface size",
+      "the author's mailing address",
+      "the order of page numbers"
+    ],
+    "explanation": "A theme is a major idea that a work explores across its details and events.",
+    "keywords": [
+      "literary-terms",
+      "theme"
+    ],
+    "source": "https://www.britannica.com/art/theme-literature",
+    "seedId": "d9326446-0f9b-548a-955c-e78fc1d7bf2c"
+  }
+]

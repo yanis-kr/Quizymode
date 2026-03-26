@@ -1,0 +1,40 @@
+[
+  {
+    "category": "humanities",
+    "navigationKeyword1": "theater",
+    "navigationKeyword2": "history",
+    "question": "Ancient Greek theater is especially important because it helped shape what later tradition?",
+    "correctAnswer": "Western drama",
+    "incorrectAnswers": [
+      "oil painting",
+      "architecture only",
+      "sacred music only"
+    ],
+    "explanation": "Ancient Greek theater strongly influenced later forms of Western drama and performance.",
+    "keywords": [
+      "theater-history",
+      "greece"
+    ],
+    "source": "https://www.britannica.com/art/Western-theatre",
+    "seedId": "8caac659-6783-5d73-91e5-9180e83cf38d"
+  },
+  {
+    "category": "humanities",
+    "navigationKeyword1": "theater",
+    "navigationKeyword2": "history",
+    "question": "Why is theater history often studied by period?",
+    "correctAnswer": "forms, staging, and audience expectations change over time",
+    "incorrectAnswers": [
+      "actors stop using language",
+      "all plays become the same",
+      "theater ignores culture"
+    ],
+    "explanation": "Theater history tracks how styles and practices shift across eras and cultures.",
+    "keywords": [
+      "theater-history",
+      "periods"
+    ],
+    "source": "https://www.loc.gov/collections/plays-and-musicals/",
+    "seedId": "33a2a7eb-4706-59c5-808a-d9f4db897baf"
+  }
+]

@@ -1,0 +1,116 @@
+[
+  {
+    "category": "tech",
+    "navigationKeyword1": "databases",
+    "navigationKeyword2": "sql",
+    "question": "In standard SQL, why can `WHERE` not filter on an aggregate like `COUNT(*)`?",
+    "correctAnswer": "`WHERE` runs before grouping, so aggregates are not available yet",
+    "incorrectAnswers": [
+      "`WHERE` cannot compare numbers",
+      "aggregates are forbidden in SQL",
+      "`WHERE` only works on indexed columns"
+    ],
+    "explanation": "Row filters apply before `GROUP BY`, while aggregates are computed during grouping; use `HAVING` to filter grouped results.",
+    "keywords": [
+      "sql",
+      "query-basics"
+    ],
+    "source": "https://www.postgresql.org/docs/current/sql-select.html",
+    "seedId": "b23c8d1e-5cf8-584b-a6b4-adedffeb7105"
+  },
+  {
+    "category": "tech",
+    "navigationKeyword1": "databases",
+    "navigationKeyword2": "sql",
+    "question": "What is the correct way to test for a missing SQL value in a column?",
+    "correctAnswer": "`IS NULL`",
+    "incorrectAnswers": [
+      "`= NULL`",
+      "`== NULL`",
+      "`NULL = NULL`"
+    ],
+    "explanation": "In SQL, comparisons to `NULL` yield unknown; you must use `IS NULL` or `IS NOT NULL` to test for missing values.",
+    "keywords": [
+      "sql",
+      "null-handling"
+    ],
+    "source": "https://dev.mysql.com/doc/refman/8.0/en/working-with-null.html",
+    "seedId": "d26b3f41-0924-5ce5-bc72-787ea65914cd"
+  },
+  {
+    "category": "tech",
+    "navigationKeyword1": "databases",
+    "navigationKeyword2": "sql",
+    "question": "What does a `PRIMARY KEY` constraint guarantee for the key columns?",
+    "correctAnswer": "uniqueness and disallowing NULLs in those columns",
+    "incorrectAnswers": [
+      "only an index hint, not enforced",
+      "uniqueness but NULLs are allowed",
+      "fast writes without uniqueness"
+    ],
+    "explanation": "A primary key uniquely identifies rows and requires non-null values in the key columns.",
+    "keywords": [
+      "sql",
+      "constraints"
+    ],
+    "source": "https://learn.microsoft.com/en-us/sql/relational-databases/tables/create-primary-keys",
+    "seedId": "5ba6dc18-61c0-5c45-b809-8370b8a984dc"
+  },
+  {
+    "category": "tech",
+    "navigationKeyword1": "databases",
+    "navigationKeyword2": "sql",
+    "question": "How does a `LEFT OUTER JOIN` differ from an `INNER JOIN`?",
+    "correctAnswer": "It keeps unmatched left-table rows and fills the other side with NULLs",
+    "incorrectAnswers": [
+      "It only returns matching rows from both sides",
+      "It removes duplicate keys automatically",
+      "It is faster because it skips NULLs"
+    ],
+    "explanation": "An outer join preserves rows from the preserved side even when there is no match, using NULLs for missing columns.",
+    "keywords": [
+      "sql",
+      "joins"
+    ],
+    "source": "https://sqlite.org/lang_select.html#join_op",
+    "seedId": "0c32ad26-dc0a-551a-a94d-6d40ea210e84"
+  },
+  {
+    "category": "tech",
+    "navigationKeyword1": "databases",
+    "navigationKeyword2": "sql",
+    "question": "In the ACID acronym for transactions, what does the \"A\" stand for?",
+    "correctAnswer": "Atomicity",
+    "incorrectAnswers": [
+      "Availability",
+      "Authentication",
+      "Allocation"
+    ],
+    "explanation": "Atomicity means a transaction’s changes succeed or fail together; there is no partial commit of a failed unit of work.",
+    "keywords": [
+      "sql",
+      "transactions"
+    ],
+    "source": "https://www.postgresql.org/docs/current/transaction-iso.html",
+    "seedId": "f733dfa1-ba0f-5d91-b018-fbc930911837"
+  },
+  {
+    "category": "tech",
+    "navigationKeyword1": "databases",
+    "navigationKeyword2": "sql",
+    "question": "First normal form (1NF) typically requires that each column at each row contains what?",
+    "correctAnswer": "a single atomic (indivisible) value for that attribute",
+    "incorrectAnswers": [
+      "only numeric values",
+      "only values under 255 characters",
+      "only values indexed by the primary key"
+    ],
+    "explanation": "1NF avoids repeating groups and requires atomic values so each attribute holds one value from its domain.",
+    "keywords": [
+      "sql",
+      "normalization"
+    ],
+    "source": "https://www.ibm.com/topics/database-normalization",
+    "seedId": "45977380-b87f-55f0-9984-f2581ef437ff"
+  }
+]

@@ -1,0 +1,116 @@
+[
+  {
+    "category": "languages",
+    "navigationKeyword1": "german",
+    "navigationKeyword2": "vocab",
+    "question": "What does 'das Wasser' mean?",
+    "correctAnswer": "the water",
+    "incorrectAnswers": [
+      "the bread",
+      "the milk",
+      "the air"
+    ],
+    "explanation": "'Wasser' means water, and 'das' is the neuter article for that noun.",
+    "keywords": [
+      "water",
+      "german-vocab"
+    ],
+    "source": "https://dictionary.cambridge.org/dictionary/german-english/wasser",
+    "seedId": "aca0a51d-0338-5a2a-ae0a-e400c0a74612"
+  },
+  {
+    "category": "languages",
+    "navigationKeyword1": "german",
+    "navigationKeyword2": "vocab",
+    "question": "What does 'das Brot' mean?",
+    "correctAnswer": "the bread",
+    "incorrectAnswers": [
+      "the butter",
+      "the cheese",
+      "the soup"
+    ],
+    "explanation": "'Brot' means bread, often used with 'das' as in 'das Brot'.",
+    "keywords": [
+      "bread",
+      "german-vocab"
+    ],
+    "source": "https://www.duden.de/rechtschreibung/Brot",
+    "seedId": "cb906c89-af9c-5de2-95a6-6ee71ffbe5b3"
+  },
+  {
+    "category": "languages",
+    "navigationKeyword1": "german",
+    "navigationKeyword2": "vocab",
+    "question": "What does 'Danke' mean?",
+    "correctAnswer": "thank you",
+    "incorrectAnswers": [
+      "please",
+      "hello",
+      "goodbye"
+    ],
+    "explanation": "'Danke' is a short, common way to say thank you.",
+    "keywords": [
+      "thank-you",
+      "german-vocab"
+    ],
+    "source": "https://dictionary.cambridge.org/dictionary/german-english/danke",
+    "seedId": "b8f71e98-55fc-569d-88f0-e000b824fc19"
+  },
+  {
+    "category": "languages",
+    "navigationKeyword1": "german",
+    "navigationKeyword2": "vocab",
+    "question": "What does 'Bitte' often mean when someone offers you something?",
+    "correctAnswer": "please (or here you go)",
+    "incorrectAnswers": [
+      "sorry",
+      "maybe",
+      "stop"
+    ],
+    "explanation": "'Bitte' is very common for please, and it can also soften offers and replies.",
+    "keywords": [
+      "please",
+      "german-vocab"
+    ],
+    "source": "https://www.goethe.de/en/spr/englisch.html",
+    "seedId": "bbe2dfa6-9f5a-5d3c-b96e-043d975f3e0a"
+  },
+  {
+    "category": "languages",
+    "navigationKeyword1": "german",
+    "navigationKeyword2": "vocab",
+    "question": "What does 'die Familie' mean?",
+    "correctAnswer": "the family",
+    "incorrectAnswers": [
+      "the friend",
+      "the neighbor",
+      "the teacher"
+    ],
+    "explanation": "'Familie' means family, as in 'die Familie'.",
+    "keywords": [
+      "family",
+      "german-vocab"
+    ],
+    "source": "https://dictionary.cambridge.org/dictionary/german-english/familie",
+    "seedId": "989d86aa-ee71-51a4-80c3-777af521e1d8"
+  },
+  {
+    "category": "languages",
+    "navigationKeyword1": "german",
+    "navigationKeyword2": "vocab",
+    "question": "What does 'Guten Morgen' mean?",
+    "correctAnswer": "good morning",
+    "incorrectAnswers": [
+      "good night",
+      "see you soon",
+      "happy birthday"
+    ],
+    "explanation": "'Guten Morgen' is a standard morning greeting.",
+    "keywords": [
+      "good-morning",
+      "german-vocab"
+    ],
+    "source": "https://www.deutsch.info/en/vocabulary/",
+    "seedId": "50814660-a41c-5d91-b615-d05aaa48c6a7"
+  }
+]

@@ -1,0 +1,122 @@
+[
+  {
+    "category": "business",
+    "navigationKeyword1": "finance",
+    "navigationKeyword2": "banking",
+    "question": "What is FDIC deposit insurance designed to protect?",
+    "correctAnswer": "Depositors against the failure of an insured bank, up to the FDIC coverage limit.",
+    "incorrectAnswers": [
+      "Stock prices of bank-owned companies.",
+      "Losses on investments like bond ETFs that are held at the brokerage level.",
+      "Your credit score if you miss loan payments."
+    ],
+    "explanation": "FDIC coverage applies to eligible deposits at an insured bank and is meant to reduce losses when the bank fails.",
+    "keywords": [
+      "fdic",
+      "bank-failure",
+      "deposit-insurance"
+    ],
+    "source": "https://www.fdic.gov/resources/deposit-insurance/",
+    "seedId": "dc2b621d-4dbf-59ae-99f1-7d212df37cb2"
+  },
+  {
+    "category": "business",
+    "navigationKeyword1": "finance",
+    "navigationKeyword2": "banking",
+    "question": "What is the common per-depositor FDIC coverage limit (for most accounts) at an insured bank?",
+    "correctAnswer": "Up to $250,000 per depositor, per insured bank.",
+    "incorrectAnswers": [
+      "Up to $25,000 per depositor, per insured bank.",
+      "Up to $1,000,000 per depositor across all banks.",
+      "Unlimited coverage as long as the bank is federally chartered."
+    ],
+    "explanation": "For most deposit accounts, FDIC’s standard coverage limit is $250,000 per depositor per insured bank.",
+    "keywords": [
+      "fdic-limit",
+      "coverage",
+      "deposits"
+    ],
+    "source": "https://www.fdic.gov/resources/deposit-insurance/estimated-insurance-coverage/",
+    "seedId": "1f961c5f-af9b-5b6d-b52c-5c99bf650a41"
+  },
+  {
+    "category": "business",
+    "navigationKeyword1": "finance",
+    "navigationKeyword2": "banking",
+    "question": "In a typical amortizing loan, what happens over time to each fixed payment?",
+    "correctAnswer": "The interest portion generally goes down and the principal portion goes up as the balance is repaid.",
+    "incorrectAnswers": [
+      "The interest portion goes up because the balance grows.",
+      "Principal stays the same amount every month.",
+      "Interest is removed entirely after the first payment."
+    ],
+    "explanation": "Because interest is calculated on the remaining balance, early payments include more interest and later payments include more principal.",
+    "keywords": [
+      "amortization",
+      "loan-payments",
+      "principal-vs-interest"
+    ],
+    "source": "https://www.federalreserve.gov/consumerinfo/repay-loans.html",
+    "seedId": "5babed28-65f8-5a92-b4a6-57175907c742"
+  },
+  {
+    "category": "business",
+    "navigationKeyword1": "finance",
+    "navigationKeyword2": "banking",
+    "question": "When a bank makes a new loan, what often happens to the money supply process (in simplified terms)?",
+    "correctAnswer": "The loan creates a deposit, which increases the bank-created deposit money in the system.",
+    "incorrectAnswers": [
+      "The bank must withdraw an equal amount of cash from the deposit accounts first, so deposits never rise.",
+      "The loan only changes the bank’s stock price and leaves deposits unchanged.",
+      "The loan guarantees that inflation can’t change because deposits are fixed."
+    ],
+    "explanation": "In a simplified view of banking, loans are funded by creating a deposit that can be used for payments, increasing deposit money.",
+    "keywords": [
+      "bank-lending",
+      "deposit-money",
+      "money-creation"
+    ],
+    "source": "https://www.federalreserve.gov/faqs/money_12845.htm",
+    "seedId": "89100d19-e8f0-56d5-be66-eb058b99325d"
+  },
+  {
+    "category": "business",
+    "navigationKeyword1": "finance",
+    "navigationKeyword2": "banking",
+    "question": "What is the federal funds rate mainly about?",
+    "correctAnswer": "The interest rate banks charge each other for overnight loans of reserves.",
+    "incorrectAnswers": [
+      "The interest rate the federal government charges households for student loans.",
+      "The interest rate set for all credit cards in the U.S. regardless of the lender.",
+      "The inflation rate measured by the Consumer Price Index."
+    ],
+    "explanation": "The federal funds rate is tied to overnight lending among banks and reserve balances, which can influence other interest rates.",
+    "keywords": [
+      "federal-funds-rate",
+      "reserves",
+      "interest-rates"
+    ],
+    "source": "https://www.federalreserve.gov/monetarypolicy/fomc.htm",
+    "seedId": "dd6686ae-4743-539b-aa88-e8086f9a71a9"
+  },
+  {
+    "category": "business",
+    "navigationKeyword1": "finance",
+    "navigationKeyword2": "banking",
+    "question": "What does an interest rate spread usually mean in banking?",
+    "correctAnswer": "The difference between what the bank earns on assets (like loans) and what it pays on liabilities (like deposits).",
+    "incorrectAnswers": [
+      "The difference between the bank’s revenue and its net profit.",
+      "The difference between a loan’s principal and its interest rate.",
+      "The difference between two currencies’ exchange rates."
+    ],
+    "explanation": "Spreads help describe how much more the bank earns than it pays for funding, which matters for profitability.",
+    "keywords": [
+      "interest-rate-spread",
+      "bank-margins",
+      "profitability"
+    ],
+    "source": "https://www.investopedia.com/terms/i/interestratespread.asp",
+    "seedId": "5f6db95a-80fc-5114-a0dd-f0b531f89e33"
+  }
+]

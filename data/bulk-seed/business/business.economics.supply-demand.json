@@ -1,0 +1,122 @@
+[
+  {
+    "category": "business",
+    "navigationKeyword1": "economics",
+    "navigationKeyword2": "supply-demand",
+    "question": "If demand increases while supply stays the same, what typically happens to equilibrium price?",
+    "correctAnswer": "It tends to rise because more buyers compete for the available quantity.",
+    "incorrectAnswers": [
+      "It tends to fall because demand increases reduces buyer competition",
+      "It stays constant because equilibrium price ignores demand changes",
+      "It becomes undefined because supply and demand no longer exist"
+    ],
+    "explanation": "When demand shifts up, the market must move to a higher price (and quantity) to balance supply with the new demand.",
+    "keywords": [
+      "equilibrium",
+      "demand-shift",
+      "price-response"
+    ],
+    "source": "https://www.investopedia.com/terms/d/demand.asp",
+    "seedId": "24b9782a-4947-5411-bcf2-0d8e4b455dc2"
+  },
+  {
+    "category": "business",
+    "navigationKeyword1": "economics",
+    "navigationKeyword2": "supply-demand",
+    "question": "If supply increases while demand stays the same, what typically happens to equilibrium price?",
+    "correctAnswer": "It tends to fall because sellers have more of the product available at each price level.",
+    "incorrectAnswers": [
+      "It tends to rise because supply increases make products scarce",
+      "It stays constant because equilibrium price depends only on demand",
+      "It jumps to a random value unrelated to supply and demand"
+    ],
+    "explanation": "A supply increase pushes the equilibrium toward a higher quantity and a lower price (assuming demand doesn’t change).",
+    "keywords": [
+      "equilibrium",
+      "supply-shift",
+      "price"
+    ],
+    "source": "https://www.oecd.org/",
+    "seedId": "337e03a4-f675-53ab-ac6e-2b83f270c4f9"
+  },
+  {
+    "category": "business",
+    "navigationKeyword1": "economics",
+    "navigationKeyword2": "supply-demand",
+    "question": "What is the key difference between a movement along a curve and a shift of a curve?",
+    "correctAnswer": "A movement changes one variable (like price) while a shift changes the relationship due to other factors.",
+    "incorrectAnswers": [
+      "A shift changes price but a movement always changes demand by definition",
+      "A movement is for supply and a shift is for demand only",
+      "They are identical; economists just use different words"
+    ],
+    "explanation": "On graphs, price changes often cause movements along a demand curve, while changes in tastes, costs, or expectations shift the curve.",
+    "keywords": [
+      "curves",
+      "shifts",
+      "movements"
+    ],
+    "source": "https://www.investopedia.com/terms/d/demand.asp",
+    "seedId": "07dce26f-4060-50f2-94e0-566550781953"
+  },
+  {
+    "category": "business",
+    "navigationKeyword1": "economics",
+    "navigationKeyword2": "supply-demand",
+    "question": "If a government sets a price ceiling below equilibrium, what is a common outcome?",
+    "correctAnswer": "A shortage, because quantity demanded exceeds quantity supplied at that price.",
+    "incorrectAnswers": [
+      "A surplus, because quantity supplied exceeds quantity demanded",
+      "No change, because ceilings don’t affect markets",
+      "Perfect equilibrium, because shortages improve allocation automatically"
+    ],
+    "explanation": "When the ceiling prevents the price from reaching the equilibrium level, the market can’t clear, leading to shortage conditions.",
+    "keywords": [
+      "price-ceiling",
+      "shortage",
+      "market-clearing"
+    ],
+    "source": "https://www.imf.org/en/Topics",
+    "seedId": "6e6dac35-2bc7-5c04-839d-7863dfd8a8b7"
+  },
+  {
+    "category": "business",
+    "navigationKeyword1": "economics",
+    "navigationKeyword2": "supply-demand",
+    "question": "If a government sets a price floor above equilibrium, what is a common outcome?",
+    "correctAnswer": "A surplus, because quantity supplied exceeds quantity demanded at that price.",
+    "incorrectAnswers": [
+      "A shortage, because sellers can’t produce enough",
+      "No effect, because floors do not constrain prices",
+      "Only more inflation, with no quantity effects"
+    ],
+    "explanation": "A floor keeps price from falling to equilibrium; at the higher price, supply tends to exceed demand unless other mechanisms adjust.",
+    "keywords": [
+      "price-floor",
+      "surplus",
+      "price-controls"
+    ],
+    "source": "https://www.investopedia.com/terms/p/pricefloor.asp",
+    "seedId": "3608cd7e-0bcc-5643-8c0b-b7ac8c27b7bd"
+  },
+  {
+    "category": "business",
+    "navigationKeyword1": "economics",
+    "navigationKeyword2": "supply-demand",
+    "question": "How does elasticity relate to consumer sensitivity in supply-and-demand models?",
+    "correctAnswer": "More elastic demand means quantity changes a lot when price changes.",
+    "incorrectAnswers": [
+      "More elastic demand means quantity never changes when price changes",
+      "Elasticity measures only supplier wages, not quantities",
+      "Elasticity refers only to how quickly companies change prices"
+    ],
+    "explanation": "Elasticity captures responsiveness. Elastic demand implies a larger quantity response to price movements than inelastic demand.",
+    "keywords": [
+      "elasticity",
+      "responsiveness",
+      "price-change"
+    ],
+    "source": "https://www.oecd.org/",
+    "seedId": "377225c2-b111-5f34-96aa-e55722b54f78"
+  }
+]

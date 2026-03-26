@@ -1,0 +1,116 @@
+[
+  {
+    "category": "tech",
+    "navigationKeyword1": "web-dev",
+    "navigationKeyword2": "testing",
+    "question": "Unit tests usually focus verification on what scope?",
+    "correctAnswer": "A small unit of code in isolation",
+    "incorrectAnswers": [
+      "The entire production cluster",
+      "Only manual exploratory sessions",
+      "Only legal contracts"
+    ],
+    "explanation": "Units are functions or modules tested with controlled dependencies so failures pinpoint regressions.",
+    "keywords": [
+      "testing",
+      "unit"
+    ],
+    "source": "https://martinfowler.com/bliki/UnitTest.html",
+    "seedId": "4abee362-6ad1-5830-9c82-d47ccd5923f9"
+  },
+  {
+    "category": "tech",
+    "navigationKeyword1": "web-dev",
+    "navigationKeyword2": "testing",
+    "question": "Integration tests primarily catch problems in what?",
+    "correctAnswer": "How real components work together",
+    "incorrectAnswers": [
+      "Only spelling in comments",
+      "Only minified file size",
+      "Only color contrast"
+    ],
+    "explanation": "Integration tests exercise wiring between modules, databases, and services beyond a single function.",
+    "keywords": [
+      "testing",
+      "integration"
+    ],
+    "source": "https://testing.googleblog.com/2015/04/just-say-no-to-more-end-to-end-tests.html",
+    "seedId": "c2e61f03-f41a-5c1a-a21f-3cb7806bf2ad"
+  },
+  {
+    "category": "tech",
+    "navigationKeyword1": "web-dev",
+    "navigationKeyword2": "testing",
+    "question": "The test pyramid recommends many fast tests at the base and fewer of which slower tests at the top?",
+    "correctAnswer": "End-to-end UI tests",
+    "incorrectAnswers": [
+      "Only manual checklists",
+      "Only load tests",
+      "Only security audits"
+    ],
+    "explanation": "A broad base of unit tests with a small peak of flaky-prone E2E tests keeps feedback fast and reliable.",
+    "keywords": [
+      "testing",
+      "pyramid"
+    ],
+    "source": "https://martinfowler.com/articles/practical-test-pyramid.html",
+    "seedId": "2b2265ad-c310-5c52-8b4d-f3c93dd227f2"
+  },
+  {
+    "category": "tech",
+    "navigationKeyword1": "web-dev",
+    "navigationKeyword2": "testing",
+    "question": "What is the main difference between a stub and a mock in test doubles?",
+    "correctAnswer": "Mocks also verify expected calls; stubs mainly return canned data",
+    "incorrectAnswers": [
+      "Stubs always run in parallel",
+      "Mocks cannot throw errors",
+      "Stubs require a database"
+    ],
+    "explanation": "Stubs supply indirect inputs; mocks assert interactions, though terminology varies slightly by community.",
+    "keywords": [
+      "testing",
+      "mocks"
+    ],
+    "source": "https://martinfowler.com/articles/mocksArentStubs.html",
+    "seedId": "c38d119a-6aa2-51e2-bbb0-420f9e1b62f4"
+  },
+  {
+    "category": "tech",
+    "navigationKeyword1": "web-dev",
+    "navigationKeyword2": "testing",
+    "question": "End-to-end browser tests typically drive the application through what interface?",
+    "correctAnswer": "The same UI a user would use",
+    "incorrectAnswers": [
+      "Only raw CPU registers",
+      "Only SQL prompts",
+      "Only DNS lookups"
+    ],
+    "explanation": "E2E tests script browsers to validate full flows across frontend, backend, and infrastructure.",
+    "keywords": [
+      "testing",
+      "e2e"
+    ],
+    "source": "https://developer.mozilla.org/en-US/docs/Glossary/End-to-end_test",
+    "seedId": "5181c0d1-3337-5ada-b69a-9b5ca61ecbfd"
+  },
+  {
+    "category": "tech",
+    "navigationKeyword1": "web-dev",
+    "navigationKeyword2": "testing",
+    "question": "In classic test-driven development, after a test passes, which step refines structure without changing behavior?",
+    "correctAnswer": "Refactor",
+    "incorrectAnswers": [
+      "Deploy",
+      "Delete the test",
+      "Rewrite in another language"
+    ],
+    "explanation": "The red-green-refactor loop cleans duplication while keeping tests green.",
+    "keywords": [
+      "testing",
+      "tdd"
+    ],
+    "source": "https://martinfowler.com/bliki/TestDrivenDevelopment.html",
+    "seedId": "8f4a1575-c029-59f3-a324-0f9150e4fc8d"
+  }
+]

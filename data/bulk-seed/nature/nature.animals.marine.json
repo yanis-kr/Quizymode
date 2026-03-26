@@ -1,0 +1,116 @@
+[
+  {
+    "category": "nature",
+    "navigationKeyword1": "animals",
+    "navigationKeyword2": "marine",
+    "question": "Which animal is the largest known to have ever lived on Earth?",
+    "correctAnswer": "blue whale",
+    "incorrectAnswers": [
+      "whale shark",
+      "giant squid",
+      "megalodon"
+    ],
+    "explanation": "Blue whales are larger than any other known animal, living or extinct.",
+    "keywords": [
+      "marine",
+      "nature-animals"
+    ],
+    "source": "https://www.fisheries.noaa.gov/species/blue-whale",
+    "seedId": "cccc1ec8-a2bf-5158-97b8-f6dcacf257bb"
+  },
+  {
+    "category": "nature",
+    "navigationKeyword1": "animals",
+    "navigationKeyword2": "marine",
+    "question": "Are reef-building corals animals, plants, or fungi?",
+    "correctAnswer": "animals",
+    "incorrectAnswers": [
+      "plants",
+      "fungi",
+      "protists"
+    ],
+    "explanation": "Corals are marine invertebrate animals made of many tiny polyps.",
+    "keywords": [
+      "marine",
+      "nature-animals"
+    ],
+    "source": "https://www.britannica.com/animal/coral",
+    "seedId": "669c0325-36b2-5152-9026-2e7cb32270a7"
+  },
+  {
+    "category": "nature",
+    "navigationKeyword1": "animals",
+    "navigationKeyword2": "marine",
+    "question": "What are dolphins classified as instead of fish?",
+    "correctAnswer": "mammals",
+    "incorrectAnswers": [
+      "reptiles",
+      "amphibians",
+      "cartilaginous fish"
+    ],
+    "explanation": "Dolphins breathe air, nurse their young, and are mammals rather than fish.",
+    "keywords": [
+      "marine",
+      "nature-animals"
+    ],
+    "source": "https://oceanservice.noaa.gov/facts/dolphin.html",
+    "seedId": "1a1f543f-1faf-5adf-9351-72bdbcba2445"
+  },
+  {
+    "category": "nature",
+    "navigationKeyword1": "animals",
+    "navigationKeyword2": "marine",
+    "question": "How many hearts does an octopus have?",
+    "correctAnswer": "three",
+    "incorrectAnswers": [
+      "one",
+      "two",
+      "four"
+    ],
+    "explanation": "An octopus has one main heart and two branchial hearts that serve the gills.",
+    "keywords": [
+      "marine",
+      "nature-animals"
+    ],
+    "source": "https://www.britannica.com/science/How-Many-Hearts-Does-an-Octopus-Have",
+    "seedId": "ce7c6299-5dbc-53a3-a4c2-ff035219455a"
+  },
+  {
+    "category": "nature",
+    "navigationKeyword1": "animals",
+    "navigationKeyword2": "marine",
+    "question": "A narwhal's famous tusk is actually a modified what?",
+    "correctAnswer": "tooth",
+    "incorrectAnswers": [
+      "horn",
+      "bone spur",
+      "whisker"
+    ],
+    "explanation": "The narwhal tusk grows from a tooth, usually the left tooth in males.",
+    "keywords": [
+      "marine",
+      "nature-animals"
+    ],
+    "source": "https://www.fisheries.noaa.gov/species/narwhal/overview",
+    "seedId": "aea74d51-a3d7-5c36-ba68-112a00d3d507"
+  },
+  {
+    "category": "nature",
+    "navigationKeyword1": "animals",
+    "navigationKeyword2": "marine",
+    "question": "Which marine mammal helps protect kelp forests by eating large numbers of sea urchins?",
+    "correctAnswer": "sea otter",
+    "incorrectAnswers": [
+      "harbor seal",
+      "manatee",
+      "walrus"
+    ],
+    "explanation": "Sea otters help kelp forests by keeping urchin populations from exploding.",
+    "keywords": [
+      "marine",
+      "nature-animals"
+    ],
+    "source": "https://www.montereybayaquarium.org/stories/-sea-otters-help-kelp-forests",
+    "seedId": "430dc2db-dcdd-54ab-8418-ccbf24065b43"
+  }
+]

@@ -1,0 +1,135 @@
+[
+  {
+    "category": "tech",
+    "navigationKeyword1": "programming",
+    "navigationKeyword2": "rust",
+    "question": "At a high level, what does Rust's ownership system track for each value?",
+    "correctAnswer": "Which part of the program currently owns it",
+    "incorrectAnswers": [
+      "Only its size in bytes",
+      "Only its CPU cache line",
+      "Only its file path"
+    ],
+    "explanation": "Each value has one owner; when ownership ends, the destructor runs without needing a tracing GC.",
+    "keywords": [
+      "rust",
+      "ownership"
+    ],
+    "source": "https://doc.rust-lang.org/book/ch04-00-ownership.html",
+    "seedId": "2d7dfb16-6c96-516f-8f27-09591413b176"
+  },
+  {
+    "category": "tech",
+    "navigationKeyword1": "programming",
+    "navigationKeyword2": "rust",
+    "question": "Borrowing creates references so you can use data without doing what?",
+    "correctAnswer": "Transferring ownership",
+    "incorrectAnswers": [
+      "Allocating on the heap",
+      "Using pattern matching",
+      "Calling unsafe code"
+    ],
+    "explanation": "Shared and mutable references let functions read or update data while the owner still cleans up.",
+    "keywords": [
+      "rust",
+      "borrowing"
+    ],
+    "source": "https://doc.rust-lang.org/book/ch04-02-references-and-borrowing.html",
+    "seedId": "6c55b267-c055-5cc6-826d-cce62067ba62"
+  },
+  {
+    "category": "tech",
+    "navigationKeyword1": "programming",
+    "navigationKeyword2": "rust",
+    "question": "What does `Option<T>` represent?",
+    "correctAnswer": "A value that is either `Some(T)` or `None`",
+    "incorrectAnswers": [
+      "A value that is always present",
+      "A recoverable error with a message",
+      "A thread handle"
+    ],
+    "explanation": "`Option` replaces null pointers with an explicit sum type for safer APIs.",
+    "keywords": [
+      "rust",
+      "types"
+    ],
+    "source": "https://doc.rust-lang.org/std/option/enum.Option.html",
+    "seedId": "cfcc9985-c6ab-5f70-9107-30926f4f11e9"
+  },
+  {
+    "category": "tech",
+    "navigationKeyword1": "programming",
+    "navigationKeyword2": "rust",
+    "question": "What does `Result<T, E>` primarily model?",
+    "correctAnswer": "Success (`Ok`) or failure (`Err`) without panicking",
+    "incorrectAnswers": [
+      "Optional values only",
+      "Iterator chaining only",
+      "Macro expansion only"
+    ],
+    "explanation": "`Result` is the idiomatic way to return recoverable errors and propagate them with `?`.",
+    "keywords": [
+      "rust",
+      "errors"
+    ],
+    "source": "https://doc.rust-lang.org/std/result/enum.Result.html",
+    "seedId": "fa6347c7-6f93-51c6-958f-3a6b7360e041"
+  },
+  {
+    "category": "tech",
+    "navigationKeyword1": "programming",
+    "navigationKeyword2": "rust",
+    "question": "The `unsafe` keyword allows operations the compiler cannot prove are what?",
+    "correctAnswer": "Memory-safe on their own",
+    "incorrectAnswers": [
+      "Faster than optimized safe code",
+      "Portable to all OS kernels",
+      "Free of undefined behavior"
+    ],
+    "explanation": "Unsafe blocks opt into raw pointers and FFI while the author must uphold safety invariants.",
+    "keywords": [
+      "rust",
+      "unsafe"
+    ],
+    "source": "https://doc.rust-lang.org/nomicon/",
+    "seedId": "baf153ea-3424-51f1-9759-c59595ec504e"
+  },
+  {
+    "category": "tech",
+    "navigationKeyword1": "programming",
+    "navigationKeyword2": "rust",
+    "question": "Traits in Rust define methods that types can implement to share what across different concrete types?",
+    "correctAnswer": "Behavior (methods) in a uniform way",
+    "incorrectAnswers": [
+      "Only string literals",
+      "Only memory addresses",
+      "Only crate names"
+    ],
+    "explanation": "Traits are like interfaces: they describe capabilities so generic code can call the same methods on many types.",
+    "keywords": [
+      "rust",
+      "traits"
+    ],
+    "source": "https://doc.rust-lang.org/book/ch10-02-traits.html",
+    "seedId": "2f47da23-36b2-5c73-ae91-d3b8e66ccf13"
+  },
+  {
+    "category": "tech",
+    "navigationKeyword1": "programming",
+    "navigationKeyword2": "rust",
+    "question": "What service hosts automatically built API documentation for crates published to crates.io?",
+    "correctAnswer": "docs.rs",
+    "incorrectAnswers": [
+      "npmjs.com",
+      "PyPI",
+      "Maven Central"
+    ],
+    "explanation": "`docs.rs` builds and serves rustdoc output for published crates so users can browse types and functions online.",
+    "keywords": [
+      "rust",
+      "documentation"
+    ],
+    "source": "https://docs.rs/",
+    "seedId": "6854f9f7-c1b5-51ff-a1cf-e7727fbb2cf0"
+  }
+]

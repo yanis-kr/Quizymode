@@ -1,0 +1,116 @@
+[
+  {
+    "category": "civics",
+    "navigationKeyword1": "citizenship",
+    "navigationKeyword2": "holidays",
+    "question": "Which federal holiday in January honors the civil rights leader Martin Luther King Jr.?",
+    "correctAnswer": "Martin Luther King Jr. Day",
+    "incorrectAnswers": [
+      "Presidents Day",
+      "Juneteenth National Independence Day",
+      "Columbus Day"
+    ],
+    "explanation": "The holiday falls on the third Monday in January and recognizes Dr. King's legacy.",
+    "keywords": [
+      "mlk-day",
+      "january"
+    ],
+    "source": "https://www.opm.gov/policy-data-oversight/pay-leave/federal-holidays/",
+    "seedId": "8e483eac-673c-5aa2-ac7a-5759cf509a3f"
+  },
+  {
+    "category": "civics",
+    "navigationKeyword1": "citizenship",
+    "navigationKeyword2": "holidays",
+    "question": "Independence Day commemorates the adoption of the Declaration of Independence in which year?",
+    "correctAnswer": "1776",
+    "incorrectAnswers": [
+      "1787",
+      "1789",
+      "1812"
+    ],
+    "explanation": "July Fourth marks the 1776 declaration by the Continental Congress.",
+    "keywords": [
+      "july-fourth",
+      "declaration"
+    ],
+    "source": "https://www.archives.gov/founding-docs/declaration-transcript",
+    "seedId": "e80bfe8c-84fb-5e2d-8244-c41725bb7243"
+  },
+  {
+    "category": "civics",
+    "navigationKeyword1": "citizenship",
+    "navigationKeyword2": "holidays",
+    "question": "Memorial Day in May chiefly honors whom?",
+    "correctAnswer": "members of the U.S. military who died in service",
+    "incorrectAnswers": [
+      "living veterans only",
+      "retired federal judges only",
+      "foreign diplomats"
+    ],
+    "explanation": "Memorial Day focuses on those who died serving the country, distinct from Veterans Day.",
+    "keywords": [
+      "memorial-day",
+      "military"
+    ],
+    "source": "https://www.va.gov/opa/speceven/memorialday/",
+    "seedId": "d9a47b62-b975-5e37-bdce-3c844430cb49"
+  },
+  {
+    "category": "civics",
+    "navigationKeyword1": "citizenship",
+    "navigationKeyword2": "holidays",
+    "question": "Veterans Day on November 11 primarily recognizes whom?",
+    "correctAnswer": "U.S. veterans who served in the armed forces",
+    "incorrectAnswers": [
+      "only active-duty troops on deployment",
+      "only Medal of Honor recipients",
+      "only World War II veterans"
+    ],
+    "explanation": "Veterans Day honors all who served, while Memorial Day focuses on those who died in service.",
+    "keywords": [
+      "veterans-day",
+      "november"
+    ],
+    "source": "https://www.va.gov/opa/vetsday/",
+    "seedId": "ab7426b5-95ae-5011-b5ec-8e0e0a763485"
+  },
+  {
+    "category": "civics",
+    "navigationKeyword1": "citizenship",
+    "navigationKeyword2": "holidays",
+    "question": "Juneteenth National Independence Day marks the end of slavery in which state in 1865, later becoming a federal holiday?",
+    "correctAnswer": "Texas",
+    "incorrectAnswers": [
+      "Virginia",
+      "South Carolina",
+      "New York"
+    ],
+    "explanation": "Federal troops brought news of emancipation to Galveston, Texas, in June 1865, long celebrated as Juneteenth.",
+    "keywords": [
+      "juneteenth",
+      "emancipation"
+    ],
+    "source": "https://www.nps.gov/articles/juneteenth.htm",
+    "seedId": "1cac50ff-56d1-5fc6-b143-f037ac399dff"
+  },
+  {
+    "category": "civics",
+    "navigationKeyword1": "citizenship",
+    "navigationKeyword2": "holidays",
+    "question": "Inauguration Day is observed every four years when it falls on which date?",
+    "correctAnswer": "January 20 (or January 21 when the 20th is Sunday)",
+    "incorrectAnswers": [
+      "November 3",
+      "July 4",
+      "December 25"
+    ],
+    "explanation": "The 20th Amendment sets January 20 as the start of the new presidential term, with a Sunday exception.",
+    "keywords": [
+      "inauguration",
+      "20th-amendment"
+    ],
+    "source": "https://www.law.cornell.edu/constitution/amendmentxx",
+    "seedId": "76761238-3b87-502a-904f-d07fbeaf0aba"
+  }
+]

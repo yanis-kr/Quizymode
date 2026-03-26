@@ -1,0 +1,116 @@
+[
+  {
+    "category": "languages",
+    "navigationKeyword1": "idioms",
+    "navigationKeyword2": "english",
+    "question": "In everyday English, what does the idiom \"break the ice\" usually mean?",
+    "correctAnswer": "Start friendly talk when people feel awkward or shy.",
+    "incorrectAnswers": [
+      "End a meeting early to save time.",
+      "Fix a broken machine very quickly.",
+      "Make the room colder on purpose."
+    ],
+    "explanation": "People use \"break the ice\" when someone helps a group relax and start talking.",
+    "keywords": [
+      "idioms",
+      "conversation"
+    ],
+    "source": "https://dictionary.cambridge.org/dictionary/english/break-the-ice",
+    "seedId": "acbf3266-19a5-5031-8510-8e0b68873e3e"
+  },
+  {
+    "category": "languages",
+    "navigationKeyword1": "idioms",
+    "navigationKeyword2": "english",
+    "question": "If a task is \"a piece of cake,\" what is it like?",
+    "correctAnswer": "Very easy to do.",
+    "incorrectAnswers": [
+      "Very expensive to buy.",
+      "Only for expert cooks.",
+      "Impossible without tools."
+    ],
+    "explanation": "\"A piece of cake\" is a common idiom for something that feels easy.",
+    "keywords": [
+      "idioms",
+      "easy"
+    ],
+    "source": "https://www.merriam-webster.com/dictionary/a%20piece%20of%20cake",
+    "seedId": "152d2b10-8afc-50c8-b3a5-02f32defa401"
+  },
+  {
+    "category": "languages",
+    "navigationKeyword1": "idioms",
+    "navigationKeyword2": "english",
+    "question": "Someone says they are \"under the weather.\" What do they most likely mean?",
+    "correctAnswer": "They feel a little sick.",
+    "incorrectAnswers": [
+      "They are outside in the rain.",
+      "They love storm news.",
+      "They are angry about traffic."
+    ],
+    "explanation": "\"Under the weather\" is a polite way to say you feel unwell, often mildly.",
+    "keywords": [
+      "idioms",
+      "health"
+    ],
+    "source": "https://www.collinsdictionary.com/dictionary/english/under-the-weather",
+    "seedId": "a333368e-1b5a-5a1e-874d-903275185de2"
+  },
+  {
+    "category": "languages",
+    "navigationKeyword1": "idioms",
+    "navigationKeyword2": "english",
+    "question": "If you \"hit the nail on the head,\" what did you do?",
+    "correctAnswer": "You described the problem exactly.",
+    "incorrectAnswers": [
+      "You fixed a chair with a hammer.",
+      "You avoided an important topic.",
+      "You changed your mind at the last second."
+    ],
+    "explanation": "This idiom praises an answer or comment that is exactly right.",
+    "keywords": [
+      "idioms",
+      "accuracy"
+    ],
+    "source": "https://www.oxfordlearnersdictionaries.com/definition/english/hit-the-nail-on-the-head",
+    "seedId": "ac25d3e4-d68e-5563-995a-77df7a06f78a"
+  },
+  {
+    "category": "languages",
+    "navigationKeyword1": "idioms",
+    "navigationKeyword2": "english",
+    "question": "If you \"spill the beans,\" what did you do?",
+    "correctAnswer": "You told a secret you should have kept quiet.",
+    "incorrectAnswers": [
+      "You dropped food on the floor.",
+      "You started cooking beans.",
+      "You refused to answer a simple question."
+    ],
+    "explanation": "\"Spill the beans\" means to reveal secret information too soon.",
+    "keywords": [
+      "idioms",
+      "secrets"
+    ],
+    "source": "https://dictionary.cambridge.org/dictionary/english/spill-the-beans",
+    "seedId": "11c41240-3b86-5771-954a-dac4b8f378af"
+  },
+  {
+    "category": "languages",
+    "navigationKeyword1": "idioms",
+    "navigationKeyword2": "english",
+    "question": "If something happens \"once in a blue moon,\" how often does it happen?",
+    "correctAnswer": "Very rarely.",
+    "incorrectAnswers": [
+      "Every night.",
+      "Only on holidays in winter.",
+      "Two times every week."
+    ],
+    "explanation": "This idiom stresses that an event almost never happens.",
+    "keywords": [
+      "idioms",
+      "frequency"
+    ],
+    "source": "https://dictionary.cambridge.org/dictionary/english/once-in-a-blue-moon",
+    "seedId": "022bf4dc-a87d-5ae3-85dc-2857cde636fd"
+  }
+]

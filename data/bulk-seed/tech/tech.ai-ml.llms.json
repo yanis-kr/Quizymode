@@ -1,0 +1,116 @@
+[
+  {
+    "category": "tech",
+    "navigationKeyword1": "ai-ml",
+    "navigationKeyword2": "llms",
+    "question": "What is the usual next-token objective when training many large language models?",
+    "correctAnswer": "Predict the next token given prior tokens in the sequence",
+    "incorrectAnswers": [
+      "Predict only the first token of a document",
+      "Predict the sum of all token IDs",
+      "Predict a single fixed label for every input"
+    ],
+    "explanation": "Autoregressive language models are trained to estimate conditional probabilities of the next token given the preceding context.",
+    "keywords": [
+      "ai-ml",
+      "llms"
+    ],
+    "source": "https://arxiv.org/abs/2005.14165",
+    "seedId": "9c6321c5-b5bd-54f2-ae7f-c4545b511b69"
+  },
+  {
+    "category": "tech",
+    "navigationKeyword1": "ai-ml",
+    "navigationKeyword2": "llms",
+    "question": "Which architecture introduced scaled dot-product self-attention as the core building block for many modern LLMs?",
+    "correctAnswer": "The Transformer",
+    "incorrectAnswers": [
+      "A pure recurrent neural network",
+      "A decision tree ensemble",
+      "A support vector machine"
+    ],
+    "explanation": "The Transformer model relies on attention to relate all positions to each other in parallel rather than sequential recurrence.",
+    "keywords": [
+      "ai-ml",
+      "transformer"
+    ],
+    "source": "https://arxiv.org/abs/1706.03762",
+    "seedId": "fb9c7ed8-f67d-5b96-a849-a2e938133a6e"
+  },
+  {
+    "category": "tech",
+    "navigationKeyword1": "ai-ml",
+    "navigationKeyword2": "llms",
+    "question": "What does the context window of an LLM limit?",
+    "correctAnswer": "How many tokens the model can attend to in one forward pass",
+    "incorrectAnswers": [
+      "How many users can log in at once",
+      "The size of the training dataset on disk",
+      "The number of programming languages it knows"
+    ],
+    "explanation": "Attention and memory are computed over a bounded number of tokens, so longer prompts and outputs must fit within that window.",
+    "keywords": [
+      "ai-ml",
+      "context-window"
+    ],
+    "source": "https://www.ibm.com/topics/context-window",
+    "seedId": "f0fb8673-8b57-5e9f-95e9-430c723e01f9"
+  },
+  {
+    "category": "tech",
+    "navigationKeyword1": "ai-ml",
+    "navigationKeyword2": "llms",
+    "question": "Compared with only prompting, what does supervised fine-tuning on labeled examples change?",
+    "correctAnswer": "The model weights to better match the target task or style",
+    "incorrectAnswers": [
+      "Only the font size of the output",
+      "The operating system scheduler",
+      "The physical CPU temperature"
+    ],
+    "explanation": "Fine-tuning updates parameters using task-specific data so behavior shifts beyond what fixed prompts alone can achieve.",
+    "keywords": [
+      "ai-ml",
+      "fine-tuning"
+    ],
+    "source": "https://huggingface.co/docs/transformers/training",
+    "seedId": "747ad997-4ef0-52ea-9795-7c63d90fc69f"
+  },
+  {
+    "category": "tech",
+    "navigationKeyword1": "ai-ml",
+    "navigationKeyword2": "llms",
+    "question": "At decoding time, raising the softmax temperature typically does what to token sampling?",
+    "correctAnswer": "Makes the distribution flatter so outputs become more random",
+    "incorrectAnswers": [
+      "Forces the model to repeat one token forever",
+      "Removes all randomness from sampling",
+      "Disables the vocabulary"
+    ],
+    "explanation": "Higher temperature scales logits before softmax, spreading probability mass and increasing diversity of sampled tokens.",
+    "keywords": [
+      "ai-ml",
+      "sampling"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Softmax_function",
+    "seedId": "2530a835-1437-5c78-990d-4e79d8cf2905"
+  },
+  {
+    "category": "tech",
+    "navigationKeyword1": "ai-ml",
+    "navigationKeyword2": "llms",
+    "question": "In retrieval-augmented generation, what extra step happens before the model writes an answer?",
+    "correctAnswer": "Relevant documents or passages are retrieved from a store and conditioned as context",
+    "incorrectAnswers": [
+      "The model deletes its weights",
+      "The prompt is encrypted with AES only",
+      "Training always restarts from zero"
+    ],
+    "explanation": "RAG grounds answers by fetching external text so the model can cite or reason over fresher or private knowledge sources.",
+    "keywords": [
+      "ai-ml",
+      "rag"
+    ],
+    "source": "https://arxiv.org/abs/2005.11401",
+    "seedId": "ae82e5b0-a1dd-5760-9d38-d79a329b3bac"
+  }
+]

@@ -1,0 +1,116 @@
+[
+  {
+    "category": "tech",
+    "navigationKeyword1": "programming",
+    "navigationKeyword2": "python",
+    "question": "In the standard CPython interpreter, what limits parallel execution of Python bytecode across threads?",
+    "correctAnswer": "The global interpreter lock (GIL)",
+    "incorrectAnswers": [
+      "The bytecode verifier",
+      "The import system",
+      "The garbage collector"
+    ],
+    "explanation": "The GIL allows only one thread to execute Python bytecode at a time in CPython, which affects CPU-bound multithreading.",
+    "keywords": [
+      "python",
+      "concurrency"
+    ],
+    "source": "https://wiki.python.org/moin/GlobalInterpreterLock",
+    "seedId": "f74c05b7-99c0-5f67-97ae-4cea00a7e393"
+  },
+  {
+    "category": "tech",
+    "navigationKeyword1": "programming",
+    "navigationKeyword2": "python",
+    "question": "What does `if __name__ == \"__main__\"` typically guard in a `.py` file?",
+    "correctAnswer": "Code that should run only when the file is executed as the main program",
+    "incorrectAnswers": [
+      "Code that runs only during import",
+      "Code that runs only in interactive mode",
+      "Code that runs only under pytest"
+    ],
+    "explanation": "That idiom distinguishes script entry from import: the guarded block runs when you execute the file directly.",
+    "keywords": [
+      "python",
+      "modules"
+    ],
+    "source": "https://docs.python.org/3/tutorial/modules.html",
+    "seedId": "0f5c0d38-4b8f-5ca1-84a9-2e1b3896a804"
+  },
+  {
+    "category": "tech",
+    "navigationKeyword1": "programming",
+    "navigationKeyword2": "python",
+    "question": "Which standard-library module is commonly used to create isolated Python environments?",
+    "correctAnswer": "venv",
+    "incorrectAnswers": [
+      "pipenv",
+      "virtualenv (stdlib)",
+      "conda"
+    ],
+    "explanation": "`venv` ships with Python 3 and creates environments with their own site-packages and interpreter settings.",
+    "keywords": [
+      "python",
+      "tooling"
+    ],
+    "source": "https://docs.python.org/3/library/venv.html",
+    "seedId": "bfbfe445-f06b-537c-885d-0af5b6b73b14"
+  },
+  {
+    "category": "tech",
+    "navigationKeyword1": "programming",
+    "navigationKeyword2": "python",
+    "question": "According to PEP 8, which naming style is recommended for function and variable names?",
+    "correctAnswer": "lowercase with words separated by underscores",
+    "incorrectAnswers": [
+      "camelCase",
+      "PascalCase",
+      "kebab-case"
+    ],
+    "explanation": "PEP 8 prefers snake_case for functions and variables to keep names readable and consistent across the ecosystem.",
+    "keywords": [
+      "python",
+      "style"
+    ],
+    "source": "https://peps.python.org/pep-0008/",
+    "seedId": "e84dd987-b336-56ba-a334-d15a41d9cf3e"
+  },
+  {
+    "category": "tech",
+    "navigationKeyword1": "programming",
+    "navigationKeyword2": "python",
+    "question": "Which keyword turns a function into a generator that yields values lazily?",
+    "correctAnswer": "yield",
+    "incorrectAnswers": [
+      "return",
+      "async",
+      "await"
+    ],
+    "explanation": "`yield` pauses the function and produces a value; the function resumes when iteration continues.",
+    "keywords": [
+      "python",
+      "generators"
+    ],
+    "source": "https://docs.python.org/3/reference/simple_stmts.html#the-yield-statement",
+    "seedId": "62932528-ab2b-55d6-b4e4-6b43430f996f"
+  },
+  {
+    "category": "tech",
+    "navigationKeyword1": "programming",
+    "navigationKeyword2": "python",
+    "question": "Which special method supports the `in` operator for membership testing on a custom class?",
+    "correctAnswer": "__contains__",
+    "incorrectAnswers": [
+      "__iter__",
+      "__getitem__",
+      "__len__"
+    ],
+    "explanation": "`__contains__` defines membership; if absent, Python may fall back to iteration in some cases.",
+    "keywords": [
+      "python",
+      "data-model"
+    ],
+    "source": "https://docs.python.org/3/reference/datamodel.html#object.__contains__",
+    "seedId": "7de39cf9-4b3e-585e-8623-9123bfb2fbab"
+  }
+]

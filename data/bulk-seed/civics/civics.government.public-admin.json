@@ -1,0 +1,116 @@
+[
+  {
+    "category": "civics",
+    "navigationKeyword1": "government",
+    "navigationKeyword2": "public-admin",
+    "question": "What is public administration mainly about?",
+    "correctAnswer": "putting public laws and programs into operation",
+    "incorrectAnswers": [
+      "campaigning for office",
+      "writing constitutions only",
+      "arguing court appeals only"
+    ],
+    "explanation": "Public administration focuses on how government programs are managed and carried out.",
+    "keywords": [
+      "public-admin",
+      "civics-government"
+    ],
+    "source": "https://www.usa.gov/agencies",
+    "seedId": "9750ad10-af8b-57a5-a684-2f0fafb16acd"
+  },
+  {
+    "category": "civics",
+    "navigationKeyword1": "government",
+    "navigationKeyword2": "public-admin",
+    "question": "What does the Office of Management and Budget help oversee?",
+    "correctAnswer": "the president's budget and management priorities",
+    "incorrectAnswers": [
+      "Supreme Court oral arguments",
+      "state election recounts",
+      "foreign constitutions"
+    ],
+    "explanation": "OMB helps the president with budget, management, and regulatory goals across the executive branch.",
+    "keywords": [
+      "public-admin",
+      "civics-government"
+    ],
+    "source": "https://whitehouse.gov/omb/",
+    "seedId": "d4dbf926-be24-5ec6-a968-db0e9cb98d08"
+  },
+  {
+    "category": "civics",
+    "navigationKeyword1": "government",
+    "navigationKeyword2": "public-admin",
+    "question": "What does the Government Accountability Office mainly do for Congress?",
+    "correctAnswer": "helps evaluate how effectively agencies are doing their jobs",
+    "incorrectAnswers": [
+      "writes presidential executive orders",
+      "appoints cabinet secretaries",
+      "runs local police departments"
+    ],
+    "explanation": "GAO gathers information that helps Congress oversee executive branch performance.",
+    "keywords": [
+      "public-admin",
+      "civics-government"
+    ],
+    "source": "https://www.usa.gov/agencies/government-accountability-office",
+    "seedId": "c4eaeb0c-f1b1-5aa8-9929-0d3c82aed7b0"
+  },
+  {
+    "category": "civics",
+    "navigationKeyword1": "government",
+    "navigationKeyword2": "public-admin",
+    "question": "In many cities and counties, what is a professional manager often responsible for?",
+    "correctAnswer": "day-to-day administration of local government",
+    "incorrectAnswers": [
+      "serving as chief justice",
+      "ratifying treaties",
+      "commanding the military"
+    ],
+    "explanation": "Many local governments use professional managers to run daily operations under the policy direction of elected officials.",
+    "keywords": [
+      "public-admin",
+      "civics-government"
+    ],
+    "source": "https://icma.org/description-and-qualifications-professional-manager",
+    "seedId": "73b7f561-0f35-5b29-aee2-de6e4f399001"
+  },
+  {
+    "category": "civics",
+    "navigationKeyword1": "government",
+    "navigationKeyword2": "public-admin",
+    "question": "Why is oversight important in public administration?",
+    "correctAnswer": "to check whether agencies are using authority and resources properly",
+    "incorrectAnswers": [
+      "to cancel all public services",
+      "to replace elections with appointments",
+      "to keep laws secret"
+    ],
+    "explanation": "Oversight helps elected officials and the public monitor how government is performing.",
+    "keywords": [
+      "public-admin",
+      "civics-government"
+    ],
+    "source": "https://www.usa.gov/agencies/government-accountability-office",
+    "seedId": "85d414a4-a701-5558-b93c-4cb390ae3d1e"
+  },
+  {
+    "category": "civics",
+    "navigationKeyword1": "government",
+    "navigationKeyword2": "public-admin",
+    "question": "Why do many governments employ career administrators as well as elected officials?",
+    "correctAnswer": "because administration requires ongoing management and technical expertise",
+    "incorrectAnswers": [
+      "because voters are not allowed to choose leaders",
+      "because laws never change",
+      "because judges run all agencies"
+    ],
+    "explanation": "Elected officials set direction, while career administrators often handle long-term operations and specialized management.",
+    "keywords": [
+      "public-admin",
+      "civics-government"
+    ],
+    "source": "https://www.icma.org/links/about-icma",
+    "seedId": "d491f308-b916-5b84-9219-3342071ea514"
+  }
+]

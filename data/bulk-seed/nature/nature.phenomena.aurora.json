@@ -1,0 +1,116 @@
+[
+  {
+    "category": "nature",
+    "navigationKeyword1": "phenomena",
+    "navigationKeyword2": "aurora",
+    "question": "What causes an aurora to glow?",
+    "correctAnswer": "charged particles striking Earth's upper atmosphere",
+    "incorrectAnswers": [
+      "moonlight reflecting off snow",
+      "volcanic ash catching sunlight",
+      "heat rising from the ground"
+    ],
+    "explanation": "Auroras form when energetic particles from space collide with gases high in Earth's atmosphere.",
+    "keywords": [
+      "aurora",
+      "nature-phenomena"
+    ],
+    "source": "https://www.swpc.noaa.gov/content/aurora-tutorial",
+    "seedId": "b43fc420-f1a5-53da-a967-9641b4b7f99d"
+  },
+  {
+    "category": "nature",
+    "navigationKeyword1": "phenomena",
+    "navigationKeyword2": "aurora",
+    "question": "What is the common name for the aurora borealis?",
+    "correctAnswer": "the northern lights",
+    "incorrectAnswers": [
+      "the midnight sun",
+      "the zodiacal glow",
+      "the polar halo"
+    ],
+    "explanation": "Aurora borealis is the northern-hemisphere aurora, commonly called the northern lights.",
+    "keywords": [
+      "aurora",
+      "nature-phenomena"
+    ],
+    "source": "https://science.nasa.gov/sun/auroras/",
+    "seedId": "7da2ca40-2f9c-5113-bcbb-6fe8d82a33d8"
+  },
+  {
+    "category": "nature",
+    "navigationKeyword1": "phenomena",
+    "navigationKeyword2": "aurora",
+    "question": "Which aurora color is most common?",
+    "correctAnswer": "green",
+    "incorrectAnswers": [
+      "orange",
+      "brown",
+      "pink"
+    ],
+    "explanation": "Green is the most common aurora color and is usually produced by excited oxygen.",
+    "keywords": [
+      "aurora",
+      "nature-phenomena"
+    ],
+    "source": "https://science.nasa.gov/sun/auroras/",
+    "seedId": "2af26343-de47-5b86-93ce-2eebce739eef"
+  },
+  {
+    "category": "nature",
+    "navigationKeyword1": "phenomena",
+    "navigationKeyword2": "aurora",
+    "question": "Auroras are usually strongest and most common near which part of Earth?",
+    "correctAnswer": "the magnetic poles",
+    "incorrectAnswers": [
+      "the equator",
+      "the tropics",
+      "the mid-ocean ridges"
+    ],
+    "explanation": "Auroral activity clusters around the polar regions because particles follow Earth's magnetic field there.",
+    "keywords": [
+      "aurora",
+      "nature-phenomena"
+    ],
+    "source": "https://www.swpc.noaa.gov/content/aurora-tutorial",
+    "seedId": "ee722762-306a-5e87-845d-acf3acaaae9b"
+  },
+  {
+    "category": "nature",
+    "navigationKeyword1": "phenomena",
+    "navigationKeyword2": "aurora",
+    "question": "What stream of particles from the Sun helps drive auroras?",
+    "correctAnswer": "solar wind",
+    "incorrectAnswers": [
+      "sunspots",
+      "sunlight alone",
+      "asteroid dust"
+    ],
+    "explanation": "Solar wind carries charged particles from the Sun that can trigger auroral displays at Earth.",
+    "keywords": [
+      "aurora",
+      "nature-phenomena"
+    ],
+    "source": "https://science.nasa.gov/sun/auroras/",
+    "seedId": "f4527898-201c-544b-a7a7-847f9d4fae09"
+  },
+  {
+    "category": "nature",
+    "navigationKeyword1": "phenomena",
+    "navigationKeyword2": "aurora",
+    "question": "What is the southern-hemisphere aurora called?",
+    "correctAnswer": "aurora australis",
+    "incorrectAnswers": [
+      "aurora equatorialis",
+      "aurora occidentalis",
+      "aurora meridiana"
+    ],
+    "explanation": "Aurora australis is the name for the southern lights.",
+    "keywords": [
+      "aurora",
+      "nature-phenomena"
+    ],
+    "source": "https://science.nasa.gov/sun/auroras/",
+    "seedId": "a975adb5-9599-5bde-9323-f80a00b7ea27"
+  }
+]

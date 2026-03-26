@@ -16,7 +16,7 @@
       "film"
     ],
     "source": "https://www.oscars.org/oscars/ceremonies/2023",
-    "seedId": "28ee7657-70e2-4ca3-904c-6cb8bf7714b5"
+    "seedId": "d9968e72-8a6f-5109-8584-972843f3bdd7"
   },
   {
     "category": "trivia",
@@ -35,7 +35,7 @@
       "film"
     ],
     "source": "https://www.oscars.org/oscars/ceremonies/2022",
-    "seedId": "667a863d-09d6-4e29-8186-1e0b255e9aa8"
+    "seedId": "44db6638-bc2c-5fb6-91f2-29e16591394d"
   },
   {
     "category": "trivia",
@@ -54,7 +54,7 @@
       "comedy"
     ],
     "source": "https://www.britannica.com/biography/Charlie-Chaplin",
-    "seedId": "337faee9-c3f5-43ad-a7d5-a20003ba55f1"
+    "seedId": "3095995e-0820-58b9-954b-dbdb351c443b"
   },
   {
     "category": "trivia",
@@ -67,13 +67,13 @@
       "opera singing",
       "classical sculpture"
     ],
-    "explanation": "Streep\u2019s film and television career.",
+    "explanation": "Streep’s film and television career.",
     "keywords": [
       "acting",
       "awards"
     ],
     "source": "https://www.britannica.com/biography/Meryl-Streep",
-    "seedId": "cb280c47-5761-468d-acf2-8330eadb5d86"
+    "seedId": "d3ad5f2a-233b-5e5f-96e7-f1bb5d1c51ed"
   },
   {
     "category": "trivia",
@@ -86,32 +86,32 @@
       "Best Director",
       "Best Cinematography"
     ],
-    "explanation": "Poitier\u2019s historic Best Actor win.",
+    "explanation": "Poitier’s historic Best Actor win.",
     "keywords": [
       "oscars",
       "history"
     ],
     "source": "https://www.britannica.com/biography/Sidney-Poitier",
-    "seedId": "dfafa523-5ee8-4ac5-9083-3229e07ab287"
+    "seedId": "30fa148f-c06b-536f-9eb7-0826c5e51f1e"
   },
   {
     "category": "trivia",
     "navigationKeyword1": "famous-people",
     "navigationKeyword2": "actors",
     "question": "Which classic 1961 film set in New York is most associated with Audrey Hepburn strongly?",
-    "correctAnswer": "Breakfast at Tiffany\u2019s",
+    "correctAnswer": "Breakfast at Tiffany’s",
     "incorrectAnswers": [
       "Casablanca",
       "Gone with the Wind",
       "The Godfather"
     ],
-    "explanation": "Breakfast at Tiffany\u2019s is a signature Hepburn film.",
+    "explanation": "Breakfast at Tiffany’s is a signature Hepburn film.",
     "keywords": [
       "classic-film",
       "hollywood"
     ],
     "source": "https://www.britannica.com/biography/Audrey-Hepburn",
-    "seedId": "a7da23c9-7c6d-48c0-bafa-2e7727ab0665"
+    "seedId": "96907fb0-258e-59d7-b7ed-0958edb6e5e2"
   },
   {
     "category": "trivia",
@@ -124,13 +124,13 @@
       "Malcolm X",
       "Fences"
     ],
-    "explanation": "Washington\u2019s Supporting Actor win for Glory.",
+    "explanation": "Washington’s Supporting Actor win for Glory.",
     "keywords": [
       "oscars",
       "film"
     ],
     "source": "https://www.britannica.com/biography/Denzel-Washington",
-    "seedId": "d2284fe9-6a7e-430e-b86a-24f6c0cc169a"
+    "seedId": "3f691050-1b63-5b32-af0e-838a841effd7"
   },
   {
     "category": "trivia",
@@ -143,13 +143,13 @@
       "music categories",
       "visual effects categories"
     ],
-    "explanation": "Hepburn\u2019s record acting Oscar wins.",
+    "explanation": "Hepburn’s record acting Oscar wins.",
     "keywords": [
       "oscars",
       "classic-film"
     ],
     "source": "https://www.britannica.com/biography/Katharine-Hepburn",
-    "seedId": "292d57aa-0fa1-48cd-bfe2-67d0e52e0bba"
+    "seedId": "64f16d60-2675-553d-862d-31ac64a683d4"
   },
   {
     "category": "trivia",
@@ -168,7 +168,7 @@
       "1990s"
     ],
     "source": "https://www.britannica.com/biography/Tom-Hanks",
-    "seedId": "b07c0349-792d-453b-a639-065548f188d4"
+    "seedId": "85b5ceb9-fc5f-51d7-a28c-275982ec130b"
   },
   {
     "category": "trivia",
@@ -181,12 +181,12 @@
       "The Aviator",
       "The Wolf of Wall Street"
     ],
-    "explanation": "DiCaprio\u2019s Oscar is tied to The Revenant.",
+    "explanation": "DiCaprio’s Oscar is tied to The Revenant.",
     "keywords": [
       "oscars",
       "film"
     ],
     "source": "https://www.britannica.com/biography/Leonardo-DiCaprio",
-    "seedId": "7e711e92-58a5-46f3-b8c6-7e4d6ba48ab0"
+    "seedId": "94dc53d1-331d-5033-97ba-3ef224bff1ef"
   }
 ]

@@ -1,0 +1,116 @@
+[
+  {
+    "category": "languages",
+    "navigationKeyword1": "other-langs",
+    "navigationKeyword2": "italian",
+    "question": "What does 'Ciao' often mean in everyday Italian?",
+    "correctAnswer": "hi or bye (informal)",
+    "incorrectAnswers": [
+      "please",
+      "excuse me",
+      "you are welcome"
+    ],
+    "explanation": "'Ciao' is a common informal greeting and goodbye, depending on context.",
+    "keywords": [
+      "hello",
+      "italian-basics"
+    ],
+    "source": "https://dictionary.cambridge.org/dictionary/italian-english/ciao",
+    "seedId": "4f3e78bd-c8fb-58f1-bb43-ef65365aa479"
+  },
+  {
+    "category": "languages",
+    "navigationKeyword1": "other-langs",
+    "navigationKeyword2": "italian",
+    "question": "What does 'Grazie' mean?",
+    "correctAnswer": "thank you",
+    "incorrectAnswers": [
+      "please",
+      "sorry",
+      "hello"
+    ],
+    "explanation": "'Grazie' is the standard way to say thank you.",
+    "keywords": [
+      "thank-you",
+      "italian-basics"
+    ],
+    "source": "https://www.treccani.it/vocabolario/grazie/",
+    "seedId": "4928aa8a-e81e-5c6e-90a0-a03849c6c72b"
+  },
+  {
+    "category": "languages",
+    "navigationKeyword1": "other-langs",
+    "navigationKeyword2": "italian",
+    "question": "What does 'acqua' mean?",
+    "correctAnswer": "water",
+    "incorrectAnswers": [
+      "bread",
+      "milk",
+      "wine"
+    ],
+    "explanation": "'Acqua' means water, a very common word in daily life.",
+    "keywords": [
+      "water",
+      "italian-basics"
+    ],
+    "source": "https://dictionary.cambridge.org/dictionary/italian-english/acqua",
+    "seedId": "c7df0546-6cd7-5fba-afe7-eb2f0c7bfe80"
+  },
+  {
+    "category": "languages",
+    "navigationKeyword1": "other-langs",
+    "navigationKeyword2": "italian",
+    "question": "What does 'io sono' mean in a simple introduction?",
+    "correctAnswer": "I am",
+    "incorrectAnswers": [
+      "you are",
+      "we are",
+      "they are"
+    ],
+    "explanation": "'Io sono' uses 'essere' for 'I am', often used in introductions.",
+    "keywords": [
+      "i-am",
+      "italian-basics"
+    ],
+    "source": "https://dictionary.cambridge.org/dictionary/italian-english/sono",
+    "seedId": "230e6ce5-6ed6-53fe-add6-fc5e1aa43e5d"
+  },
+  {
+    "category": "languages",
+    "navigationKeyword1": "other-langs",
+    "navigationKeyword2": "italian",
+    "question": "Which indefinite article often matches a singular masculine noun like 'libro'?",
+    "correctAnswer": "un",
+    "incorrectAnswers": [
+      "una",
+      "il",
+      "la"
+    ],
+    "explanation": "'Un libro' is a common pattern: masculine singular indefinite article 'un' before most consonants.",
+    "keywords": [
+      "articles",
+      "italian-basics"
+    ],
+    "source": "https://www.treccani.it/vocabolario/un/",
+    "seedId": "1b96b51c-e3d2-5689-8e3e-eb28f329fa80"
+  },
+  {
+    "category": "languages",
+    "navigationKeyword1": "other-langs",
+    "navigationKeyword2": "italian",
+    "question": "What does 'dove' mean in a travel question?",
+    "correctAnswer": "where",
+    "incorrectAnswers": [
+      "when",
+      "why",
+      "how"
+    ],
+    "explanation": "'Dove' asks where something is, useful for directions.",
+    "keywords": [
+      "where",
+      "italian-basics"
+    ],
+    "source": "https://dictionary.cambridge.org/dictionary/italian-english/dove",
+    "seedId": "f43fe1bd-ddd0-53da-b867-53753c2d4937"
+  }
+]

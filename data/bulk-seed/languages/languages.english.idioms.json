@@ -1,0 +1,122 @@
+[
+  {
+    "category": "languages",
+    "navigationKeyword1": "english",
+    "navigationKeyword2": "idioms",
+    "question": "If something is a piece of cake, what does that usually mean?",
+    "correctAnswer": "It is very easy.",
+    "incorrectAnswers": [
+      "It is very expensive",
+      "It is a dessert recipe",
+      "It is impossible"
+    ],
+    "explanation": "Piece of cake is an informal idiom meaning something is easy to do.",
+    "keywords": [
+      "piece-of-cake",
+      "easy",
+      "english-idioms"
+    ],
+    "source": "https://dictionary.cambridge.org/dictionary/english/piece-of-cake",
+    "seedId": "53ebb59d-0051-53f7-bf98-110e8b2be42e"
+  },
+  {
+    "category": "languages",
+    "navigationKeyword1": "english",
+    "navigationKeyword2": "idioms",
+    "question": "If you break the ice at a meeting, what did you help people do?",
+    "correctAnswer": "Start talking and feel more comfortable.",
+    "incorrectAnswers": [
+      "End the meeting early",
+      "Fix broken equipment",
+      "Read the rules aloud"
+    ],
+    "explanation": "Break the ice means to reduce tension and help people begin a friendly conversation.",
+    "keywords": [
+      "break-the-ice",
+      "conversation",
+      "english-idioms"
+    ],
+    "source": "https://www.merriam-webster.com/dictionary/break%20the%20ice",
+    "seedId": "dce9ccc1-53e8-55ab-9287-de179b3e853f"
+  },
+  {
+    "category": "languages",
+    "navigationKeyword1": "english",
+    "navigationKeyword2": "idioms",
+    "question": "If you are under the weather, how do you most likely feel?",
+    "correctAnswer": "A little sick or not your usual self.",
+    "incorrectAnswers": [
+      "Very excited",
+      "Standing outside",
+      "Angry at the forecast"
+    ],
+    "explanation": "Under the weather is an idiom meaning mildly ill or unwell.",
+    "keywords": [
+      "under-the-weather",
+      "health",
+      "english-idioms"
+    ],
+    "source": "https://dictionary.cambridge.org/dictionary/english/under-the-weather",
+    "seedId": "f4e0c7fe-3b6f-5ea1-9f77-a8875c33f1cc"
+  },
+  {
+    "category": "languages",
+    "navigationKeyword1": "english",
+    "navigationKeyword2": "idioms",
+    "question": "If something happens once in a blue moon, how often does it happen?",
+    "correctAnswer": "Very rarely.",
+    "incorrectAnswers": [
+      "Every night",
+      "Only on holidays",
+      "Every week"
+    ],
+    "explanation": "Once in a blue moon means something happens very infrequently.",
+    "keywords": [
+      "once-in-a-blue-moon",
+      "rarely",
+      "english-idioms"
+    ],
+    "source": "https://www.merriam-webster.com/dictionary/once%20in%20a%20blue%20moon",
+    "seedId": "6195feca-5f1a-5995-8517-4b800dec413a"
+  },
+  {
+    "category": "languages",
+    "navigationKeyword1": "english",
+    "navigationKeyword2": "idioms",
+    "question": "If you hit the nail on the head, what did you do?",
+    "correctAnswer": "You described something exactly right.",
+    "incorrectAnswers": [
+      "You made a loud noise",
+      "You started a building project",
+      "You avoided the topic"
+    ],
+    "explanation": "Hit the nail on the head means to be exactly correct about something.",
+    "keywords": [
+      "hit-the-nail-on-the-head",
+      "accuracy",
+      "english-idioms"
+    ],
+    "source": "https://dictionary.cambridge.org/dictionary/english/hit-the-nail-on-the-head",
+    "seedId": "066eb43f-f6f0-5296-9c1f-b587651c3eb7"
+  },
+  {
+    "category": "languages",
+    "navigationKeyword1": "english",
+    "navigationKeyword2": "idioms",
+    "question": "If the ball is in your court, who must act next?",
+    "correctAnswer": "You must make the next move or decision.",
+    "incorrectAnswers": [
+      "The referee must act",
+      "Nobody should act",
+      "A sports team must score"
+    ],
+    "explanation": "The ball is in your court means the next step is your responsibility.",
+    "keywords": [
+      "ball-in-your-court",
+      "responsibility",
+      "english-idioms"
+    ],
+    "source": "https://www.merriam-webster.com/dictionary/the%20ball%20is%20in%20one%27s%20court",
+    "seedId": "34046f1f-e824-5c8e-86fd-12964e553594"
+  }
+]

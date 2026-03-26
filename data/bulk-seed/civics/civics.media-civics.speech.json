@@ -1,0 +1,116 @@
+[
+  {
+    "category": "civics",
+    "navigationKeyword1": "media-civics",
+    "navigationKeyword2": "speech",
+    "question": "What is prior restraint in free-press discussions?",
+    "correctAnswer": "government blocking publication before it happens",
+    "incorrectAnswers": [
+      "a private editor choosing not to run a column",
+      "a reader canceling a subscription",
+      "a typo correction after printing"
+    ],
+    "explanation": "Prior restraint raises special concern because it stops speech before the public sees it.",
+    "keywords": [
+      "prior-restraint",
+      "press-freedom"
+    ],
+    "source": "https://www.uscourts.gov/educational-resources/educational-activities/first-amendment-activity",
+    "seedId": "bb2709b1-a025-5f37-8b2e-53e815912eb5"
+  },
+  {
+    "category": "civics",
+    "navigationKeyword1": "media-civics",
+    "navigationKeyword2": "speech",
+    "question": "Why do many democracies protect editorial independence from government officials?",
+    "correctAnswer": "so news organizations can report without fear of punishment for coverage",
+    "incorrectAnswers": [
+      "so only one party may publish",
+      "to ban all criticism of courts",
+      "to end all advertising"
+    ],
+    "explanation": "Independence supports the public’s access to information and accountability reporting.",
+    "keywords": [
+      "editorial-independence",
+      "press"
+    ],
+    "source": "https://www.un.org/en/about-us/universal-declaration-of-human-rights",
+    "seedId": "6602775e-3cbb-585e-b8a6-acfa8b72c3a7"
+  },
+  {
+    "category": "civics",
+    "navigationKeyword1": "media-civics",
+    "navigationKeyword2": "speech",
+    "question": "What is the civic difference between protected opinion and potentially actionable false statements of fact?",
+    "correctAnswer": "false claims of fact that harm reputation may face civil liability where law allows",
+    "incorrectAnswers": [
+      "all opinions are always illegal",
+      "facts never matter in court",
+      "satire is always a crime"
+    ],
+    "explanation": "Law often shields opinion but may address knowingly false factual harm under rules.",
+    "keywords": [
+      "defamation",
+      "opinion"
+    ],
+    "source": "https://www.law.cornell.edu/wex/defamation",
+    "seedId": "bd022e27-7cd0-58be-980b-02dd22d547fc"
+  },
+  {
+    "category": "civics",
+    "navigationKeyword1": "media-civics",
+    "navigationKeyword2": "speech",
+    "question": "What is a public forum in First Amendment teaching about streets and parks?",
+    "correctAnswer": "traditional spaces where expressive rights receive strong protection",
+    "incorrectAnswers": [
+      "any private shopping mall with no rules",
+      "only rooms inside the White House",
+      "places where speech is always banned"
+    ],
+    "explanation": "Historic public spaces are key venues for assembly and expression in civic lessons.",
+    "keywords": [
+      "public-forum",
+      "first-amendment"
+    ],
+    "source": "https://www.uscourts.gov/educational-resources/educational-activities/first-amendment-activity",
+    "seedId": "a070fd8f-182f-5ae9-9282-2088712f52b4"
+  },
+  {
+    "category": "civics",
+    "navigationKeyword1": "media-civics",
+    "navigationKeyword2": "speech",
+    "question": "Why do broadcast rules differ from print in some countries?",
+    "correctAnswer": "scarce spectrum and reach led to extra public-interest duties or limits",
+    "incorrectAnswers": [
+      "because newspapers use no ink",
+      "because TV never reaches children",
+      "because radio has no history"
+    ],
+    "explanation": "Governments sometimes treat airwaves as a shared resource with responsibilities.",
+    "keywords": [
+      "broadcast-regulation",
+      "spectrum"
+    ],
+    "source": "https://www.fcc.gov/consumers/guides/public-and-broadcasting",
+    "seedId": "32205a81-5dfd-58cb-a8f0-f4ce65b6eeb2"
+  },
+  {
+    "category": "civics",
+    "navigationKeyword1": "media-civics",
+    "navigationKeyword2": "speech",
+    "question": "What is anonymous speech in civic debate?",
+    "correctAnswer": "expression where the author’s identity is not revealed",
+    "incorrectAnswers": [
+      "speech that must be false",
+      "speech only allowed for judges",
+      "speech that cannot be written"
+    ],
+    "explanation": "Anonymity can protect dissent but also complicates accountability online.",
+    "keywords": [
+      "anonymity",
+      "expression"
+    ],
+    "source": "https://www.britannica.com/topic/freedom-of-speech",
+    "seedId": "4bcd4956-f8b4-5ae0-9ab4-c0d56ca31b68"
+  }
+]

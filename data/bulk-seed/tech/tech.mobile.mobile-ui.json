@@ -1,0 +1,116 @@
+[
+  {
+    "category": "tech",
+    "navigationKeyword1": "mobile",
+    "navigationKeyword2": "mobile-ui",
+    "question": "Why do mobile guidelines recommend larger touch targets than precise mouse clicks?",
+    "correctAnswer": "Fingers are less precise and need comfortable hit areas",
+    "incorrectAnswers": [
+      "Because screens have fewer pixels than desktops",
+      "Because Wi-Fi requires bigger buttons",
+      "Because fonts must be monospace"
+    ],
+    "explanation": "Minimum target sizes reduce mis-taps and improve accessibility on small screens.",
+    "keywords": [
+      "mobile-ui",
+      "touch-targets"
+    ],
+    "source": "https://developer.apple.com/design/human-interface-guidelines/accessibility",
+    "seedId": "96ee2666-3846-5843-acd3-d4e60eb52f7f"
+  },
+  {
+    "category": "tech",
+    "navigationKeyword1": "mobile",
+    "navigationKeyword2": "mobile-ui",
+    "question": "What is safe area layout mainly handling on modern phones?",
+    "correctAnswer": "Insets for notches, status bars, and home indicators",
+    "incorrectAnswers": [
+      "GPU fan curves",
+      "Database connection pooling",
+      "DNS caching TTLs"
+    ],
+    "explanation": "Safe areas keep primary content away from system UI and hardware cutouts.",
+    "keywords": [
+      "mobile-ui",
+      "safe-area"
+    ],
+    "source": "https://developer.apple.com/documentation/uikit/uiview/positioning-content-relative-to-the-safe-area",
+    "seedId": "2b102d62-40d9-51b7-8ad5-01537dee08df"
+  },
+  {
+    "category": "tech",
+    "navigationKeyword1": "mobile",
+    "navigationKeyword2": "mobile-ui",
+    "question": "What does Material Design provide for Android and other platforms?",
+    "correctAnswer": "A system of components, motion, and theming guidance",
+    "incorrectAnswers": [
+      "A kernel scheduler algorithm",
+      "A SQL dialect",
+      "A blockchain consensus protocol"
+    ],
+    "explanation": "Material defines patterns for buttons, navigation, and adaptive layouts across devices.",
+    "keywords": [
+      "mobile-ui",
+      "material"
+    ],
+    "source": "https://m3.material.io/foundations/overview/introduction",
+    "seedId": "94474bf8-4e4d-5d13-945f-a9f0d8ea289f"
+  },
+  {
+    "category": "tech",
+    "navigationKeyword1": "mobile",
+    "navigationKeyword2": "mobile-ui",
+    "question": "What is progressive disclosure in mobile UX?",
+    "correctAnswer": "Showing advanced options only when needed to reduce overload",
+    "incorrectAnswers": [
+      "Downloading images one pixel per second",
+      "Disabling HTTPS",
+      "Using only uppercase text"
+    ],
+    "explanation": "Layering complexity keeps first screens simple on small displays.",
+    "keywords": [
+      "mobile-ui",
+      "ux"
+    ],
+    "source": "https://www.nngroup.com/articles/progressive-disclosure/",
+    "seedId": "eb7ba039-5775-51fa-9f9a-5dd46858d261"
+  },
+  {
+    "category": "tech",
+    "navigationKeyword1": "mobile",
+    "navigationKeyword2": "mobile-ui",
+    "question": "Why support dynamic type or font scaling on mobile?",
+    "correctAnswer": "So users with low vision can read comfortably",
+    "incorrectAnswers": [
+      "To increase ad impressions",
+      "To speed up CPU clocks",
+      "To reduce battery size"
+    ],
+    "explanation": "Respecting user text size settings is a core accessibility practice.",
+    "keywords": [
+      "mobile-ui",
+      "accessibility"
+    ],
+    "source": "https://developer.android.com/guide/topics/ui/accessibility",
+    "seedId": "3ebc08ad-721e-5a24-a18c-db5aea05f3ec"
+  },
+  {
+    "category": "tech",
+    "navigationKeyword1": "mobile",
+    "navigationKeyword2": "mobile-ui",
+    "question": "What problem does a bottom navigation pattern solve?",
+    "correctAnswer": "Thumb-friendly access to a few primary destinations",
+    "incorrectAnswers": [
+      "Cooling the processor",
+      "Encrypting SQLite at rest",
+      "Rendering 3D meshes"
+    ],
+    "explanation": "Placing key actions near the bottom suits one-handed phone use.",
+    "keywords": [
+      "mobile-ui",
+      "navigation"
+    ],
+    "source": "https://m3.material.io/components/navigation-bar/overview",
+    "seedId": "42fc2046-8105-5583-aec2-a3ca2021abd1"
+  }
+]

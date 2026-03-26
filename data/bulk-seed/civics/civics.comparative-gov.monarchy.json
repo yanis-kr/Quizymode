@@ -1,0 +1,116 @@
+[
+  {
+    "category": "civics",
+    "navigationKeyword1": "comparative-gov",
+    "navigationKeyword2": "monarchy",
+    "question": "What is a constitutional monarchy?",
+    "correctAnswer": "a system where a monarch’s powers are limited by law and elected institutions",
+    "incorrectAnswers": [
+      "rule by random lottery each year",
+      "government with no written rules",
+      "only military courts make laws"
+    ],
+    "explanation": "The crown remains head of state, but real lawmaking sits with parliament and ministers under law.",
+    "keywords": [
+      "constitutional-monarchy",
+      "civics-systems"
+    ],
+    "source": "https://www.britannica.com/topic/constitutional-monarchy",
+    "seedId": "7c837f08-f743-5b71-95c9-c1b12665d052"
+  },
+  {
+    "category": "civics",
+    "navigationKeyword1": "comparative-gov",
+    "navigationKeyword2": "monarchy",
+    "question": "In a parliamentary monarchy, who usually runs day-to-day government?",
+    "correctAnswer": "elected ministers led by a prime minister responsible to parliament",
+    "incorrectAnswers": [
+      "the monarch alone with no advisors",
+      "foreign ambassadors only",
+      "local juries for every policy"
+    ],
+    "explanation": "The sovereign acts as a unifying symbol while ministers hold executive responsibility.",
+    "keywords": [
+      "parliamentary-monarchy",
+      "cabinet"
+    ],
+    "source": "https://www.royal.uk/",
+    "seedId": "70a35433-a8ba-5766-9c08-cd4f83599096"
+  },
+  {
+    "category": "civics",
+    "navigationKeyword1": "comparative-gov",
+    "navigationKeyword2": "monarchy",
+    "question": "Historically, what distinguished absolute monarchy from constitutional forms?",
+    "correctAnswer": "the monarch claimed broad unchecked authority over law and officials",
+    "incorrectAnswers": [
+      "there was no head of state",
+      "only village councils existed",
+      "judges were always elected by lottery"
+    ],
+    "explanation": "Absolute rule concentrated power in the crown before modern limits and charters spread.",
+    "keywords": [
+      "absolute-monarchy",
+      "history"
+    ],
+    "source": "https://www.britannica.com/topic/absolutism-political-systems",
+    "seedId": "d84d0f34-124b-504c-8256-96f6c470598e"
+  },
+  {
+    "category": "civics",
+    "navigationKeyword1": "comparative-gov",
+    "navigationKeyword2": "monarchy",
+    "question": "Why do some monarchies have succession rules fixed in law?",
+    "correctAnswer": "to make orderly transfer of the symbolic role predictable and legitimate",
+    "incorrectAnswers": [
+      "to ban all future elections",
+      "to remove courts from the country",
+      "to end all tax collection"
+    ],
+    "explanation": "Clear succession avoids civil conflict and defines who represents continuity of the state.",
+    "keywords": [
+      "succession",
+      "stability"
+    ],
+    "source": "https://www.parliament.uk/",
+    "seedId": "a1b1a980-1b1c-5edf-9f5c-8a401f48c2f4"
+  },
+  {
+    "category": "civics",
+    "navigationKeyword1": "comparative-gov",
+    "navigationKeyword2": "monarchy",
+    "question": "In civic comparison, what is a figurehead monarch’s main public role today?",
+    "correctAnswer": "symbolic unity, ceremonial duties, and nonpartisan representation of the state",
+    "incorrectAnswers": [
+      "writing every statute personally",
+      "commanding all trials without judges",
+      "dissolving all local governments daily"
+    ],
+    "explanation": "Modern monarchs often stay above party fights while presidents or premiers lead policy.",
+    "keywords": [
+      "head-of-state",
+      "ceremony"
+    ],
+    "source": "https://www.oecd.org/governance/",
+    "seedId": "f2efbe48-1ee6-5c31-a7d4-5320f7212c6f"
+  },
+  {
+    "category": "civics",
+    "navigationKeyword1": "comparative-gov",
+    "navigationKeyword2": "monarchy",
+    "question": "What is a key difference between a hereditary monarchy and an elected head of state in a republic?",
+    "correctAnswer": "the office passes by family line in monarchy and by election or appointment rules in a republic",
+    "incorrectAnswers": [
+      "monarchies never have laws",
+      "republics always ban voting",
+      "only monarchies use courts"
+    ],
+    "explanation": "Inheritance versus selection rules define who fills the top symbolic or executive office.",
+    "keywords": [
+      "hereditary",
+      "republic"
+    ],
+    "source": "https://www.civiced.org/",
+    "seedId": "dc6661e4-363e-5cfb-84ad-9e50e33a7687"
+  }
+]

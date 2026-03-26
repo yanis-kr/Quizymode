@@ -35,6 +35,7 @@ const Layout = ({ children }: LayoutProps) => {
 
   // Use user data from API if available, otherwise fall back to AuthContext values
   const displayName = user?.name || user?.email || username || email || "User";
+  const headerDisplayName = displayName.slice(0, 10);
   const userIsAdmin = user?.isAdmin ?? isAdmin;
   const role = userIsAdmin ? "Admin" : "User";
 
@@ -135,6 +136,12 @@ const Layout = ({ children }: LayoutProps) => {
 
               {/* Desktop menu */}
               <div className="hidden sm:flex sm:items-center sm:gap-3">
+                <Link
+                  to="/about"
+                  className={desktopNavLinkClass(isPathActive("/about"))}
+                >
+                  About
+                </Link>
                 {isAuthenticated ? (
                   <div className="flex items-center space-x-4">
                     <button
@@ -142,13 +149,8 @@ const Layout = ({ children }: LayoutProps) => {
                       className="text-right hover:bg-gray-50 px-2 py-1 rounded-md transition-colors"
                     >
                       <div className="text-sm font-medium text-gray-900">
-                        {displayName}
+                        {headerDisplayName}
                       </div>
-                      {user?.email && user.name && (
-                        <div className="text-xs text-gray-500">
-                          {user.email}
-                        </div>
-                      )}
                       <div className="text-xs text-gray-500">{role}</div>
                     </button>
                     <button
@@ -197,6 +199,13 @@ const Layout = ({ children }: LayoutProps) => {
               >
                 Collections
               </Link>
+              <Link
+                to="/about"
+                className={mobileNavLinkClass(isPathActive("/about"))}
+                onClick={closeMobileMenu}
+              >
+                About
+              </Link>
               {isAuthenticated && (
                 <>
                   <Link
@@ -223,11 +232,8 @@ const Layout = ({ children }: LayoutProps) => {
                 <>
                   <div className="px-4 mb-3">
                     <div className="text-base font-medium text-gray-900">
-                      {displayName}
+                      {headerDisplayName}
                     </div>
-                    {user?.email && user.name && (
-                      <div className="text-sm text-gray-500">{user.email}</div>
-                    )}
                     <div className="text-sm text-gray-500">{role}</div>
                   </div>
                   <div className="space-y-1">

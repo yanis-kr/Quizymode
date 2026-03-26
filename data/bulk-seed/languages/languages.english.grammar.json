@@ -1,0 +1,122 @@
+[
+  {
+    "category": "languages",
+    "navigationKeyword1": "english",
+    "navigationKeyword2": "grammar",
+    "question": "In present simple, what form does a regular verb usually take with he, she, or it?",
+    "correctAnswer": "Add -s (or -es) to the base verb.",
+    "incorrectAnswers": [
+      "Use the base form with no ending",
+      "Use the -ing form",
+      "Use the past participle"
+    ],
+    "explanation": "In present simple, third-person singular subjects (he, she, it) usually take a verb ending in -s or -es, like runs or watches.",
+    "keywords": [
+      "present-simple",
+      "subject-verb-agreement",
+      "english-grammar"
+    ],
+    "source": "https://owl.purdue.edu/owl/general_writing/grammar/subject_verb_agreement.html",
+    "seedId": "bd18841f-8f5e-5f32-9c69-7de5802d9486"
+  },
+  {
+    "category": "languages",
+    "navigationKeyword1": "english",
+    "navigationKeyword2": "grammar",
+    "question": "Which article fits best before a word that starts with a vowel sound, like hour?",
+    "correctAnswer": "an",
+    "incorrectAnswers": [
+      "a",
+      "the",
+      "no article"
+    ],
+    "explanation": "Use an before words that begin with a vowel sound. Hour starts with a vowel sound, so we say an hour.",
+    "keywords": [
+      "articles",
+      "an-vs-a",
+      "english-grammar"
+    ],
+    "source": "https://www.merriam-webster.com/words-at-play/is-it-a-or-an",
+    "seedId": "094292b1-151f-5035-9629-37b0cd2aa995"
+  },
+  {
+    "category": "languages",
+    "navigationKeyword1": "english",
+    "navigationKeyword2": "grammar",
+    "question": "Which pattern is the usual shape of present perfect?",
+    "correctAnswer": "have/has + past participle",
+    "incorrectAnswers": [
+      "will + base verb",
+      "be + -ing",
+      "did + base verb"
+    ],
+    "explanation": "Present perfect is commonly formed with have or has plus the past participle, like have finished.",
+    "keywords": [
+      "present-perfect",
+      "auxiliary-verbs",
+      "english-grammar"
+    ],
+    "source": "https://dictionary.cambridge.org/grammar/british-grammar/present-perfect",
+    "seedId": "cecda511-9d5b-5985-866e-0da8ab066ba2"
+  },
+  {
+    "category": "languages",
+    "navigationKeyword1": "english",
+    "navigationKeyword2": "grammar",
+    "question": "After most prepositions, which verb form is usually required?",
+    "correctAnswer": "the -ing form (gerund)",
+    "incorrectAnswers": [
+      "the base form only",
+      "the infinitive with to",
+      "the past tense"
+    ],
+    "explanation": "After a preposition, English usually uses the -ing form of the verb, for example interested in learning.",
+    "keywords": [
+      "gerund",
+      "prepositions",
+      "english-grammar"
+    ],
+    "source": "https://www.merriam-webster.com/dictionary/gerund",
+    "seedId": "2641e741-82f7-581c-97ed-7c65b67a52bb"
+  },
+  {
+    "category": "languages",
+    "navigationKeyword1": "english",
+    "navigationKeyword2": "grammar",
+    "question": "In a first conditional sentence, what tense is typical in the if-clause?",
+    "correctAnswer": "present (not future with will in the if-part)",
+    "incorrectAnswers": [
+      "past simple",
+      "present perfect",
+      "future with will"
+    ],
+    "explanation": "First conditional if-clauses usually use present tense for future situations, for example If it rains, we will stay home.",
+    "keywords": [
+      "conditionals",
+      "first-conditional",
+      "english-grammar"
+    ],
+    "source": "https://dictionary.cambridge.org/grammar/british-grammar/first-conditional",
+    "seedId": "d731ccd2-f371-58a0-aa15-d6541580fc1f"
+  },
+  {
+    "category": "languages",
+    "navigationKeyword1": "english",
+    "navigationKeyword2": "grammar",
+    "question": "For one-syllable adjectives, what is the usual comparative form?",
+    "correctAnswer": "adjective + -er (and than in comparisons)",
+    "incorrectAnswers": [
+      "more + adjective",
+      "most + adjective",
+      "adjective + -est only"
+    ],
+    "explanation": "Short adjectives often add -er for comparison, like faster than, while longer adjectives often use more.",
+    "keywords": [
+      "comparatives",
+      "adjectives",
+      "english-grammar"
+    ],
+    "source": "https://dictionary.cambridge.org/grammar/british-grammar/comparative-adjectives",
+    "seedId": "0e4736d0-609f-5bf2-8dbc-6bb284f6bc9e"
+  }
+]

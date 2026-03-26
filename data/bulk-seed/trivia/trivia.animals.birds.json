@@ -1,0 +1,192 @@
+[
+  {
+    "category": "trivia",
+    "navigationKeyword1": "animals",
+    "navigationKeyword2": "birds",
+    "question": "What is the largest living bird?",
+    "correctAnswer": "ostrich",
+    "incorrectAnswers": [
+      "emu",
+      "cassowary",
+      "albatross"
+    ],
+    "explanation": "The ostrich is the largest living bird.",
+    "keywords": [
+      "birds",
+      "animal-trivia"
+    ],
+    "source": "https://www.britannica.com/animal/ostrich",
+    "seedId": "1007df90-409c-560f-8754-f6400ba59d94"
+  },
+  {
+    "category": "trivia",
+    "navigationKeyword1": "animals",
+    "navigationKeyword2": "birds",
+    "question": "Which bird can fly backward?",
+    "correctAnswer": "hummingbird",
+    "incorrectAnswers": [
+      "swallow",
+      "sparrow",
+      "falcon"
+    ],
+    "explanation": "Hummingbirds are the only birds that can truly fly backward.",
+    "keywords": [
+      "birds",
+      "animal-trivia"
+    ],
+    "source": "https://www.britannica.com/animal/hummingbird",
+    "seedId": "94d39254-ba73-5447-9681-bc1bbfac7ef3"
+  },
+  {
+    "category": "trivia",
+    "navigationKeyword1": "animals",
+    "navigationKeyword2": "birds",
+    "question": "Penguins are native to which hemisphere?",
+    "correctAnswer": "Southern Hemisphere",
+    "incorrectAnswers": [
+      "Northern Hemisphere",
+      "both hemispheres equally",
+      "the Arctic Circle"
+    ],
+    "explanation": "Penguins are native to the Southern Hemisphere.",
+    "keywords": [
+      "birds",
+      "animal-trivia"
+    ],
+    "source": "https://www.britannica.com/animal/penguin",
+    "seedId": "bc4e6831-1c93-51b9-a822-fd987e171257"
+  },
+  {
+    "category": "trivia",
+    "navigationKeyword1": "animals",
+    "navigationKeyword2": "birds",
+    "question": "Which birds of prey are famous for forward-facing eyes and silent flight?",
+    "correctAnswer": "owls",
+    "incorrectAnswers": [
+      "eagles",
+      "vultures",
+      "ravens"
+    ],
+    "explanation": "Owls are known for forward-facing eyes and quiet flight.",
+    "keywords": [
+      "birds",
+      "animal-trivia"
+    ],
+    "source": "https://www.britannica.com/animal/owl",
+    "seedId": "81b18e93-9e4a-5872-9025-27a7013fcced"
+  },
+  {
+    "category": "trivia",
+    "navigationKeyword1": "animals",
+    "navigationKeyword2": "birds",
+    "question": "Which birds are especially known for mimicking human speech?",
+    "correctAnswer": "parrots",
+    "incorrectAnswers": [
+      "pelicans",
+      "herons",
+      "storks"
+    ],
+    "explanation": "Parrots are especially well known for vocal mimicry.",
+    "keywords": [
+      "birds",
+      "animal-trivia"
+    ],
+    "source": "https://www.britannica.com/animal/parrot",
+    "seedId": "90a6f1e9-9861-57ec-84cc-820f4afd4851"
+  },
+  {
+    "category": "trivia",
+    "navigationKeyword1": "animals",
+    "navigationKeyword2": "birds",
+    "question": "What is the national bird of the United States?",
+    "correctAnswer": "bald eagle",
+    "incorrectAnswers": [
+      "golden eagle",
+      "wild turkey",
+      "red-tailed hawk"
+    ],
+    "explanation": "The bald eagle is the national bird of the United States.",
+    "keywords": [
+      "birds",
+      "animal-trivia"
+    ],
+    "source": "https://www.britannica.com/animal/bald-eagle",
+    "seedId": "c0414728-351b-5a9b-bc8b-f7cf89ff8b17"
+  },
+  {
+    "category": "trivia",
+    "navigationKeyword1": "animals",
+    "navigationKeyword2": "birds",
+    "question": "Which bird is famous for the fastest hunting dive?",
+    "correctAnswer": "peregrine falcon",
+    "incorrectAnswers": [
+      "golden eagle",
+      "osprey",
+      "swift"
+    ],
+    "explanation": "The peregrine falcon is famous for its extremely fast dive.",
+    "keywords": [
+      "birds",
+      "animal-trivia"
+    ],
+    "source": "https://www.britannica.com/animal/peregrine-falcon",
+    "seedId": "5432cb87-179c-53f4-a2be-c5f14ca6865d"
+  },
+  {
+    "category": "trivia",
+    "navigationKeyword1": "animals",
+    "navigationKeyword2": "birds",
+    "question": "Which flightless bird is native to New Zealand?",
+    "correctAnswer": "kiwi",
+    "incorrectAnswers": [
+      "puffin",
+      "ibis",
+      "loon"
+    ],
+    "explanation": "The kiwi is a flightless bird native to New Zealand.",
+    "keywords": [
+      "birds",
+      "animal-trivia"
+    ],
+    "source": "https://www.britannica.com/animal/kiwi-bird",
+    "seedId": "a3424e48-1ef4-573f-bba2-5d0e93da6666"
+  },
+  {
+    "category": "trivia",
+    "navigationKeyword1": "animals",
+    "navigationKeyword2": "birds",
+    "question": "Which bird gets its pink color largely from pigments in its diet?",
+    "correctAnswer": "flamingo",
+    "incorrectAnswers": [
+      "robin",
+      "peacock",
+      "canary"
+    ],
+    "explanation": "Flamingos get much of their pink color from pigments in their food.",
+    "keywords": [
+      "birds",
+      "animal-trivia"
+    ],
+    "source": "https://www.britannica.com/animal/flamingo-bird",
+    "seedId": "1fa4ae72-e86a-5e24-8c54-e10c94021ab0"
+  },
+  {
+    "category": "trivia",
+    "navigationKeyword1": "animals",
+    "navigationKeyword2": "birds",
+    "question": "Emperor penguins breed during which Antarctic season?",
+    "correctAnswer": "winter",
+    "incorrectAnswers": [
+      "summer",
+      "spring",
+      "autumn"
+    ],
+    "explanation": "Emperor penguins breed during the Antarctic winter.",
+    "keywords": [
+      "birds",
+      "animal-trivia"
+    ],
+    "source": "https://www.britannica.com/animal/emperor-penguin",
+    "seedId": "4a63f469-7bda-5877-9596-7d8be3342137"
+  }
+]

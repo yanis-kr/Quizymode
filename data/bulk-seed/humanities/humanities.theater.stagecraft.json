@@ -1,0 +1,40 @@
+[
+  {
+    "category": "humanities",
+    "navigationKeyword1": "theater",
+    "navigationKeyword2": "stagecraft",
+    "question": "What does stagecraft include?",
+    "correctAnswer": "the practical work of sets, lights, costumes, and sound",
+    "incorrectAnswers": [
+      "only book reviews",
+      "only ticket sales",
+      "only audience applause"
+    ],
+    "explanation": "Stagecraft covers the technical and design side of theatrical production.",
+    "keywords": [
+      "stagecraft",
+      "theater"
+    ],
+    "source": "https://www.britannica.com/art/stagecraft",
+    "seedId": "8f5441f1-05cb-511e-8154-4a4b5a688d83"
+  },
+  {
+    "category": "humanities",
+    "navigationKeyword1": "theater",
+    "navigationKeyword2": "stagecraft",
+    "question": "What can lighting do in a play besides help people see?",
+    "correctAnswer": "shape mood and guide attention",
+    "incorrectAnswers": [
+      "rewrite the script",
+      "replace the actors",
+      "serve refreshments"
+    ],
+    "explanation": "Lighting can help create atmosphere and direct the audience's focus.",
+    "keywords": [
+      "stagecraft",
+      "lighting"
+    ],
+    "source": "https://www.vam.ac.uk/articles/an-introduction-to-theatre-design",
+    "seedId": "e97fe646-3ab4-5d57-98a5-f1c41e59e75c"
+  }
+]

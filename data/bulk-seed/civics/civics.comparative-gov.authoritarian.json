@@ -1,0 +1,116 @@
+[
+  {
+    "category": "civics",
+    "navigationKeyword1": "comparative-gov",
+    "navigationKeyword2": "authoritarian",
+    "question": "In an authoritarian system, where is political power usually concentrated?",
+    "correctAnswer": "a small ruling group or single leader with limited political competition",
+    "incorrectAnswers": [
+      "only in local school boards",
+      "split evenly among many independent courts",
+      "rotated randomly each month"
+    ],
+    "explanation": "Authoritarian rule centers power so opposition and contestation are restricted by design.",
+    "keywords": [
+      "authoritarianism",
+      "civics-systems"
+    ],
+    "source": "https://www.britannica.com/topic/authoritarianism",
+    "seedId": "fcde21da-32f0-5f1b-ab22-d3be7d8c64dd"
+  },
+  {
+    "category": "civics",
+    "navigationKeyword1": "comparative-gov",
+    "navigationKeyword2": "authoritarian",
+    "question": "What often happens to independent media in strongly authoritarian settings?",
+    "correctAnswer": "they face censorship, closure, or tight state control",
+    "incorrectAnswers": [
+      "they always receive extra public funding",
+      "they must be owned only by foreign states",
+      "they are banned from reporting weather"
+    ],
+    "explanation": "Without free expression protections, outlets that criticize power are commonly suppressed.",
+    "keywords": [
+      "press-freedom",
+      "civics-systems"
+    ],
+    "source": "https://www.un.org/en/about-us/universal-declaration-of-human-rights",
+    "seedId": "076a2f91-0ff9-5ecf-9bc7-a088b12e3ac9"
+  },
+  {
+    "category": "civics",
+    "navigationKeyword1": "comparative-gov",
+    "navigationKeyword2": "authoritarian",
+    "question": "How does rule of law typically compare in closed authoritarian systems versus robust democracies?",
+    "correctAnswer": "courts and laws are more easily bent to keep rulers in power",
+    "incorrectAnswers": [
+      "judges are always picked only by lottery",
+      "no written laws exist",
+      "only local taxes are enforced"
+    ],
+    "explanation": "Where checks are weak, legal institutions may serve continuity of the regime rather than neutral justice.",
+    "keywords": [
+      "rule-of-law",
+      "judiciary"
+    ],
+    "source": "https://www.oecd.org/governance/",
+    "seedId": "56555cd5-7ab5-5f39-9b96-9bed7d08cfee"
+  },
+  {
+    "category": "civics",
+    "navigationKeyword1": "comparative-gov",
+    "navigationKeyword2": "authoritarian",
+    "question": "What is a common civic-education point about totalitarian rule compared with milder authoritarianism?",
+    "correctAnswer": "totalitarian systems try to control more of public and private life through ideology and surveillance",
+    "incorrectAnswers": [
+      "totalitarian means no government at all",
+      "authoritarian always means direct democracy",
+      "both terms mean the same thing in every book"
+    ],
+    "explanation": "Totalitarian aims at broad social control; some authoritarian setups leave more private space.",
+    "keywords": [
+      "totalitarianism",
+      "comparative-politics"
+    ],
+    "source": "https://www.britannica.com/topic/totalitarianism",
+    "seedId": "223f0017-160b-56c9-a159-911f68710aeb"
+  },
+  {
+    "category": "civics",
+    "navigationKeyword1": "comparative-gov",
+    "navigationKeyword2": "authoritarian",
+    "question": "Why do scholars say elections alone do not prove a country is democratic?",
+    "correctAnswer": "if opposition cannot compete fairly, the vote may not reflect free choice",
+    "incorrectAnswers": [
+      "because all countries use the same voting age",
+      "because monarchies never hold votes",
+      "because courts always cancel results"
+    ],
+    "explanation": "Elections need contest, freedoms, and fair rules—not just ballots—to support democratic legitimacy.",
+    "keywords": [
+      "electoral-authoritarianism",
+      "elections"
+    ],
+    "source": "https://www.civiced.org/",
+    "seedId": "336ba700-ba5c-5590-b496-6d25b8736280"
+  },
+  {
+    "category": "civics",
+    "navigationKeyword1": "comparative-gov",
+    "navigationKeyword2": "authoritarian",
+    "question": "In civic terms, what is a nonviolent tool outside actors sometimes use to pressure authoritarian regimes?",
+    "correctAnswer": "economic sanctions or diplomatic isolation tied to human-rights conditions",
+    "incorrectAnswers": [
+      "abolishing all international law",
+      "mandating a state religion worldwide",
+      "ending all foreign travel for citizens"
+    ],
+    "explanation": "States and organizations may use sanctions and diplomacy to signal disapproval of repression.",
+    "keywords": [
+      "sanctions",
+      "human-rights"
+    ],
+    "source": "https://www.state.gov/",
+    "seedId": "60f376fb-cdce-5094-914a-99c8a9ea4cb3"
+  }
+]

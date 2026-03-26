@@ -4396,7 +4396,7 @@
       "incorrectAnswers": [
         "Create an Amazon Kinesis Data Firehose (note: outdated; now Amazon Data Firehose) delivery stream to ingest the alerts. Configure the Kinesis Data Firehose (note: outdated; now Amazon Data Firehose) stream to deliver the alerts to an Amazon S3 bucket. Set up an S3 Lifecycle conguration to transition data to Amazon S3 Glacier after 14 days.",
         "Launch Amazon EC2 instances across two Availability Zones and place them behind an Elastic Load Balancer to ingest the alerts. Create a script on the EC2 instances that will store the alerts in an Amazon S3 bucket. Set up an S3 Lifecycle conguration to transition data to Amazon S3 Glacier after 14 days.",
-        "Create an Amazon Kinesis Data Firehose (note: outdated; now Amazon Data Firehose) delivery stream to ingest the alerts. Configure the Kinesis Data Firehose (note: outdated; now Amazon Data Firehose) stream to deliver the alerts to an Amazon OpenSearch Service (note: outdated dual label; formerly Amazon Elasticsearch Service) cluster. Set up the Amazon OpenSearch Service (note: outdated dual label; formerly Amazon Elasticsearch Service) cluster to take manual snapshots every day and delete data from the cluster that is older than 14 days."
+        "Create an Amazon Data Firehose (formerly Kinesis Data Firehose) delivery stream to ingest the alerts. Configure it to deliver alerts to an Amazon OpenSearch Service cluster. Set up the cluster to take manual snapshots daily and delete data older than 14 days."
       ],
       "explanation": "SAA-C03 practice scenario (extract question #40). Correct choice: D.",
       "keywords": [

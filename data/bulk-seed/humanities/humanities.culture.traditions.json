@@ -1,0 +1,40 @@
+[
+  {
+    "category": "humanities",
+    "navigationKeyword1": "culture",
+    "navigationKeyword2": "traditions",
+    "question": "What is a tradition?",
+    "correctAnswer": "a practice or custom passed over time",
+    "incorrectAnswers": [
+      "a one-time accident",
+      "a weather report",
+      "a tax invoice"
+    ],
+    "explanation": "Traditions are repeated cultural practices handed down across generations or groups.",
+    "keywords": [
+      "culture",
+      "traditions"
+    ],
+    "source": "https://www.britannica.com/topic/tradition",
+    "seedId": "05fd88ee-6380-5792-a321-0d13e4f2cb21"
+  },
+  {
+    "category": "humanities",
+    "navigationKeyword1": "culture",
+    "navigationKeyword2": "traditions",
+    "question": "Why do traditions matter in culture?",
+    "correctAnswer": "they help preserve shared memory and identity",
+    "incorrectAnswers": [
+      "they replace all change",
+      "they ban creativity",
+      "they remove local differences"
+    ],
+    "explanation": "Traditions help communities carry meanings and practices from one generation to the next.",
+    "keywords": [
+      "culture",
+      "shared-memory"
+    ],
+    "source": "https://www.smithsonianmag.com/arts-culture/",
+    "seedId": "f229d8d1-1e62-5ffb-90c0-ec91c6376ee7"
+  }
+]

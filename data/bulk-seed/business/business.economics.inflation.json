@@ -1,0 +1,122 @@
+[
+  {
+    "category": "business",
+    "navigationKeyword1": "economics",
+    "navigationKeyword2": "inflation",
+    "question": "What does inflation generally mean?",
+    "correctAnswer": "A sustained increase in the general price level of goods and services over time.",
+    "incorrectAnswers": [
+      "A one-time sale discount that lasts a day",
+      "A guaranteed rise in stock prices every month",
+      "A change only in wages with no price impact"
+    ],
+    "explanation": "Inflation is about general, persistent price increases—not single price movements in one product category.",
+    "keywords": [
+      "inflation",
+      "price-levels",
+      "purchasing-power"
+    ],
+    "source": "https://www.imf.org/en/Topics/inflation",
+    "seedId": "a4720326-aca3-59be-85fe-3365db6517cb"
+  },
+  {
+    "category": "business",
+    "navigationKeyword1": "economics",
+    "navigationKeyword2": "inflation",
+    "question": "Why is a measure like CPI important in inflation analysis?",
+    "correctAnswer": "It provides an index that tracks how a typical basket of prices changes over time.",
+    "incorrectAnswers": [
+      "It measures only the number of job openings in the economy",
+      "It guarantees the real value of every contract stays constant",
+      "It lists every product that exists in the country"
+    ],
+    "explanation": "Inflation indices summarize how prices in a representative bundle change, making comparisons possible across time periods.",
+    "keywords": [
+      "cpi",
+      "price-index",
+      "measurement"
+    ],
+    "source": "https://www.investopedia.com/terms/c/consumerpriceindex.asp",
+    "seedId": "d257961e-a233-5ac0-a284-a9a149d9c8d2"
+  },
+  {
+    "category": "business",
+    "navigationKeyword1": "economics",
+    "navigationKeyword2": "inflation",
+    "question": "What is the difference between nominal and real interest rates?",
+    "correctAnswer": "Nominal is the stated rate; real adjusts for inflation’s impact on purchasing power.",
+    "incorrectAnswers": [
+      "Nominal changes with inflation, while real never does",
+      "Real includes taxes automatically and nominal never does",
+      "Nominal is only for savings accounts, while real is only for loans"
+    ],
+    "explanation": "Real interest rates aim to reflect the return after considering how inflation erodes purchasing power.",
+    "keywords": [
+      "nominal-vs-real",
+      "interest-rates",
+      "inflation-adjustment"
+    ],
+    "source": "https://www.federalreserve.gov/faqs/interest-rates.htm",
+    "seedId": "6a099672-2f59-505c-95c1-0fe168448221"
+  },
+  {
+    "category": "business",
+    "navigationKeyword1": "economics",
+    "navigationKeyword2": "inflation",
+    "question": "What is meant by demand-pull inflation in basic macro discussions?",
+    "correctAnswer": "Prices rise because overall demand is strong relative to available supply.",
+    "incorrectAnswers": [
+      "Prices rise because interest rates are set to zero",
+      "Prices rise only when governments cancel spending completely",
+      "Prices rise only due to accounting software updates"
+    ],
+    "explanation": "Demand-pull refers to stronger-than-supplied demand pushing prices upward.",
+    "keywords": [
+      "demand-pull",
+      "aggregate-demand",
+      "prices"
+    ],
+    "source": "https://www.oecd.org/",
+    "seedId": "79901a63-0ca6-5bd4-a01b-1c8ca7c6db14"
+  },
+  {
+    "category": "business",
+    "navigationKeyword1": "economics",
+    "navigationKeyword2": "inflation",
+    "question": "What does it mean to say inflation can reduce purchasing power?",
+    "correctAnswer": "The same amount of money buys fewer goods and services than before.",
+    "incorrectAnswers": [
+      "It means all prices return to normal overnight",
+      "It means your money becomes worth more at the same time price rises",
+      "It means only housing prices change, not other goods"
+    ],
+    "explanation": "When prices rise faster than income, buyers effectively afford less, even if money amounts stay the same.",
+    "keywords": [
+      "purchasing-power",
+      "income",
+      "prices"
+    ],
+    "source": "https://www.investopedia.com/terms/i/inflation.asp",
+    "seedId": "d4c3e27c-265f-5bd7-9d6f-ea5ceb3b1d0c"
+  },
+  {
+    "category": "business",
+    "navigationKeyword1": "economics",
+    "navigationKeyword2": "inflation",
+    "question": "Why do central banks often care about inflation expectations?",
+    "correctAnswer": "If people expect higher inflation, behavior and wage/price setting can adapt and make inflation harder to bring down.",
+    "incorrectAnswers": [
+      "Because expectations control the weather directly",
+      "Because expectations determine stock index values only",
+      "Because expectations replace the need to measure actual inflation"
+    ],
+    "explanation": "Expectations can influence contracts and decisions, affecting how inflation evolves over time.",
+    "keywords": [
+      "inflation-expectations",
+      "wage-setting",
+      "monetary-policy"
+    ],
+    "source": "https://www.imf.org/en/Topics",
+    "seedId": "e647a59a-8743-5c32-a19b-a01ff7c8a53d"
+  }
+]

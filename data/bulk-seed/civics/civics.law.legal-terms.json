@@ -1,0 +1,116 @@
+[
+  {
+    "category": "civics",
+    "navigationKeyword1": "law",
+    "navigationKeyword2": "legal-terms",
+    "question": "What is a court’s authority to hear a certain kind of case called?",
+    "correctAnswer": "jurisdiction",
+    "incorrectAnswers": [
+      "verdict",
+      "statute",
+      "precedent only"
+    ],
+    "explanation": "Jurisdiction is the power of a court to decide a case, which can depend on subject matter, parties, and location.",
+    "keywords": [
+      "legal-terms",
+      "jurisdiction"
+    ],
+    "source": "https://www.law.cornell.edu/wex/jurisdiction",
+    "seedId": "156e1637-aa01-5561-a6be-6d6e6c4282b6"
+  },
+  {
+    "category": "civics",
+    "navigationKeyword1": "law",
+    "navigationKeyword2": "legal-terms",
+    "question": "What is a prior court decision that later courts may follow in similar cases?",
+    "correctAnswer": "precedent",
+    "incorrectAnswers": [
+      "a petition",
+      "a summons",
+      "a deposition"
+    ],
+    "explanation": "Precedent refers to past rulings that guide how new cases with similar facts are decided.",
+    "keywords": [
+      "legal-terms",
+      "precedent"
+    ],
+    "source": "https://www.law.cornell.edu/wex/stare_decisis",
+    "seedId": "536b2564-1c0d-5902-bb52-11cfeb017411"
+  },
+  {
+    "category": "civics",
+    "navigationKeyword1": "law",
+    "navigationKeyword2": "legal-terms",
+    "question": "In a jury trial, what is the jury’s decision on guilt or liability often called?",
+    "correctAnswer": "the verdict",
+    "incorrectAnswers": [
+      "the indictment",
+      "the appeal",
+      "the writ"
+    ],
+    "explanation": "The verdict is the jury’s formal answer to the questions the judge puts to it after trial.",
+    "keywords": [
+      "legal-terms",
+      "trial"
+    ],
+    "source": "https://www.law.cornell.edu/wex/verdict",
+    "seedId": "92969812-dedb-5e7f-8a61-15f8bc6de73e"
+  },
+  {
+    "category": "civics",
+    "navigationKeyword1": "law",
+    "navigationKeyword2": "legal-terms",
+    "question": "What is a written law passed by a legislature?",
+    "correctAnswer": "a statute",
+    "incorrectAnswers": [
+      "a tort",
+      "an injunction only",
+      "a mistrial"
+    ],
+    "explanation": "Statutes are enacted laws, as opposed to rules coming only from court decisions or constitutions.",
+    "keywords": [
+      "legal-terms",
+      "legislation"
+    ],
+    "source": "https://www.law.cornell.edu/wex/statute",
+    "seedId": "01d56d95-238b-5f06-9a77-d858ee0fc5b6"
+  },
+  {
+    "category": "civics",
+    "navigationKeyword1": "law",
+    "navigationKeyword2": "legal-terms",
+    "question": "What is a higher court’s review of a lower court decision usually called?",
+    "correctAnswer": "an appeal",
+    "incorrectAnswers": [
+      "a deposition",
+      "a voir dire",
+      "a bench trial"
+    ],
+    "explanation": "An appeal asks a higher court to review whether the law was applied correctly, not to retry all facts from scratch.",
+    "keywords": [
+      "legal-terms",
+      "appeals"
+    ],
+    "source": "https://www.uscourts.gov/about-federal-courts/court-role-and-structure",
+    "seedId": "a9263454-d82f-51b8-9c5c-f421f9712eaf"
+  },
+  {
+    "category": "civics",
+    "navigationKeyword1": "law",
+    "navigationKeyword2": "legal-terms",
+    "question": "What time limit bars many lawsuits if they are filed too late?",
+    "correctAnswer": "a statute of limitations",
+    "incorrectAnswers": [
+      "a writ of certiorari",
+      "a hung jury",
+      "a plea bargain"
+    ],
+    "explanation": "Statutes of limitations set deadlines for bringing claims so disputes do not linger without end.",
+    "keywords": [
+      "legal-terms",
+      "procedure"
+    ],
+    "source": "https://www.law.cornell.edu/wex/statute_of_limitations",
+    "seedId": "46f7b97a-ca7c-5fe0-a9c2-7244e9ce7d02"
+  }
+]

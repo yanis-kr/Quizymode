@@ -1,0 +1,40 @@
+[
+  {
+    "category": "humanities",
+    "navigationKeyword1": "literature",
+    "navigationKeyword2": "novels",
+    "question": "A novel is usually what kind of work?",
+    "correctAnswer": "a long prose fiction narrative",
+    "incorrectAnswers": [
+      "a short lyric poem",
+      "a legal code",
+      "a musical score"
+    ],
+    "explanation": "Novels are extended prose narratives, usually with developed characters and plot.",
+    "keywords": [
+      "novels",
+      "fiction"
+    ],
+    "source": "https://www.britannica.com/art/novel",
+    "seedId": "92480b26-f925-52b3-868d-4f67eb08b602"
+  },
+  {
+    "category": "humanities",
+    "navigationKeyword1": "literature",
+    "navigationKeyword2": "novels",
+    "question": "What is a narrator in a novel?",
+    "correctAnswer": "the voice that tells the story",
+    "incorrectAnswers": [
+      "the printer of the book",
+      "the first reader",
+      "the cover illustrator"
+    ],
+    "explanation": "The narrator is the perspective or voice through which the story is presented.",
+    "keywords": [
+      "novels",
+      "narrator"
+    ],
+    "source": "https://owl.purdue.edu/owl/subject_specific_writing/creative_writing/fiction_writing_basics/index.html",
+    "seedId": "3de0f25f-a210-59b0-aac5-c910088cdf8c"
+  }
+]

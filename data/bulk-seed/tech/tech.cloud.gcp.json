@@ -1,0 +1,116 @@
+[
+  {
+    "category": "tech",
+    "navigationKeyword1": "cloud",
+    "navigationKeyword2": "gcp",
+    "question": "In Google Cloud, what is the top-level container that owns resources, IAM policies, and billing linkage?",
+    "correctAnswer": "a project",
+    "incorrectAnswers": [
+      "a pod",
+      "a bucket ACL only",
+      "a single Compute Engine disk"
+    ],
+    "explanation": "Projects isolate resources and permissions; APIs, quotas, and billing are associated with a project.",
+    "keywords": [
+      "gcp",
+      "projects"
+    ],
+    "source": "https://cloud.google.com/resource-manager/docs/cloud-platform-resource-hierarchy",
+    "seedId": "65abe010-22c2-5bc6-b476-992873934a4b"
+  },
+  {
+    "category": "tech",
+    "navigationKeyword1": "cloud",
+    "navigationKeyword2": "gcp",
+    "question": "What is a Google Cloud VPC network in practice?",
+    "correctAnswer": "a virtual network for your cloud resources with subnets, routes, and firewall rules",
+    "incorrectAnswers": [
+      "a physical cable between offices",
+      "a BigQuery dataset only",
+      "a Chrome browser profile"
+    ],
+    "explanation": "VPC networks connect Compute Engine VMs, GKE clusters, and other services with controllable IP addressing.",
+    "keywords": [
+      "gcp",
+      "networking"
+    ],
+    "source": "https://www.ibm.com/cloud/learn/vpc",
+    "seedId": "1bf19017-7681-5914-a90a-fc1753cbe981"
+  },
+  {
+    "category": "tech",
+    "navigationKeyword1": "cloud",
+    "navigationKeyword2": "gcp",
+    "question": "What must be globally unique within Cloud Storage?",
+    "correctAnswer": "each bucket name",
+    "incorrectAnswers": [
+      "each object’s creation timestamp",
+      "the project display name",
+      "the Region name"
+    ],
+    "explanation": "Bucket names live in a global namespace, so Cloud Storage enforces uniqueness across projects.",
+    "keywords": [
+      "gcp",
+      "storage"
+    ],
+    "source": "https://cloud.google.com/storage/docs/buckets",
+    "seedId": "2a580a31-120a-5560-acde-ef0a2901d3f9"
+  },
+  {
+    "category": "tech",
+    "navigationKeyword1": "cloud",
+    "navigationKeyword2": "gcp",
+    "question": "How are IAM policies attached in Google Cloud’s resource hierarchy?",
+    "correctAnswer": "they can be set at organization, folder, project, or resource level and inherit downward",
+    "incorrectAnswers": [
+      "only on individual log files",
+      "only inside a single VM RAM page",
+      "only by mailing support"
+    ],
+    "explanation": "Policy inheritance lets administrators grant access broadly or narrowly along the org tree.",
+    "keywords": [
+      "gcp",
+      "iam"
+    ],
+    "source": "https://cloud.google.com/iam/docs/overview",
+    "seedId": "5a5d322c-54f4-57d7-bfbc-fb62b11cd174"
+  },
+  {
+    "category": "tech",
+    "navigationKeyword1": "cloud",
+    "navigationKeyword2": "gcp",
+    "question": "What is a Google Cloud region?",
+    "correctAnswer": "a geographic area where you can run resources with locality and latency characteristics",
+    "incorrectAnswers": [
+      "a single CPU instruction set",
+      "a BigQuery SQL keyword",
+      "a Chrome OS channel"
+    ],
+    "explanation": "Choosing a region affects latency to users and which services and SKUs are available.",
+    "keywords": [
+      "gcp",
+      "regions"
+    ],
+    "source": "https://cloud.google.com/about/locations",
+    "seedId": "6e7c00da-2354-5add-bf99-a2edb7fa4f96"
+  },
+  {
+    "category": "tech",
+    "navigationKeyword1": "cloud",
+    "navigationKeyword2": "gcp",
+    "question": "What is a service account in Google Cloud IAM?",
+    "correctAnswer": "a special account used by workloads and applications to call Google APIs",
+    "incorrectAnswers": [
+      "a customer support ticket",
+      "a free trial coupon",
+      "a browser bookmark"
+    ],
+    "explanation": "Service accounts represent software identities and are granted roles like human users, without interactive login.",
+    "keywords": [
+      "gcp",
+      "identity"
+    ],
+    "source": "https://cloud.google.com/iam/docs/service-accounts",
+    "seedId": "e646b06e-009b-521c-b12a-d9015dd14fed"
+  }
+]

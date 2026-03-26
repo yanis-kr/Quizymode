@@ -1,0 +1,116 @@
+[
+  {
+    "category": "civics",
+    "navigationKeyword1": "citizenship",
+    "navigationKeyword2": "naturalization",
+    "question": "Most lawful permanent residents must wait how long before applying for naturalization based on that status?",
+    "correctAnswer": "five years",
+    "incorrectAnswers": [
+      "one year",
+      "ten years",
+      "twenty years"
+    ],
+    "explanation": "General eligibility usually requires five years as a lawful permanent resident, with continuous residence and other requirements met.",
+    "keywords": [
+      "naturalization",
+      "permanent-resident"
+    ],
+    "source": "https://www.usa.gov/become-us-citizen",
+    "seedId": "807437cd-ed7d-5f8a-aef6-7094c0a6df16"
+  },
+  {
+    "category": "civics",
+    "navigationKeyword1": "citizenship",
+    "navigationKeyword2": "naturalization",
+    "question": "A lawful permanent resident married to a U.S. citizen may qualify for naturalization after how long if other requirements are met?",
+    "correctAnswer": "three years",
+    "incorrectAnswers": [
+      "six months",
+      "two years",
+      "seven years"
+    ],
+    "explanation": "Spouses of citizens can apply after three years of permanent residence if living in marital union and meeting other criteria.",
+    "keywords": [
+      "naturalization",
+      "spouses"
+    ],
+    "source": "https://www.uscis.gov/policy-manual/volume-12-part-d-chapter-2",
+    "seedId": "6506952c-c0c9-572b-8c11-399d82a0c18b"
+  },
+  {
+    "category": "civics",
+    "navigationKeyword1": "citizenship",
+    "navigationKeyword2": "naturalization",
+    "question": "Before naturalization, most applicants must show ability in English and pass a test on what subject?",
+    "correctAnswer": "U.S. civics",
+    "incorrectAnswers": [
+      "state driving rules only",
+      "world geography only",
+      "federal income tax preparation"
+    ],
+    "explanation": "Applicants typically take an English test and a civics test, with exceptions for some older long-term residents.",
+    "keywords": [
+      "english-test",
+      "civics-test"
+    ],
+    "source": "https://www.law.cornell.edu/uscode/text/8/1423",
+    "seedId": "aeea9a4d-5ed7-5bfa-9ac4-aec6484ca012"
+  },
+  {
+    "category": "civics",
+    "navigationKeyword1": "citizenship",
+    "navigationKeyword2": "naturalization",
+    "question": "The final step of naturalization for approved applicants is usually what?",
+    "correctAnswer": "taking the Oath of Allegiance at a ceremony",
+    "incorrectAnswers": [
+      "registering only online with no ceremony",
+      "being sworn in by a state governor only",
+      "receiving a passport before the oath"
+    ],
+    "explanation": "Naturalization is completed when the applicant takes the oath, often in a group ceremony administered by USCIS or a court.",
+    "keywords": [
+      "oath-of-allegiance",
+      "ceremony"
+    ],
+    "source": "https://www.law.cornell.edu/uscode/text/8/1448",
+    "seedId": "f5f352d2-51a4-5d01-bd9c-27bf50993513"
+  },
+  {
+    "category": "civics",
+    "navigationKeyword1": "citizenship",
+    "navigationKeyword2": "naturalization",
+    "question": "Naturalization applicants generally must show \"good moral character\" for what kind of period before filing?",
+    "correctAnswer": "the years of permanent residence required for their application (typically five years, or three for qualifying spouses)",
+    "incorrectAnswers": [
+      "only the month of the interview",
+      "only before entering the United States",
+      "a full lifetime with no exceptions"
+    ],
+    "explanation": "USCIS reviews conduct during the required look-back window for the applicant's specific naturalization basis.",
+    "keywords": [
+      "good-moral-character",
+      "eligibility"
+    ],
+    "source": "https://www.uscis.gov/policy-manual/volume-12-part-d-chapter-9",
+    "seedId": "e2a4a3f7-0ad9-57a5-979e-e381498a67dd"
+  },
+  {
+    "category": "civics",
+    "navigationKeyword1": "citizenship",
+    "navigationKeyword2": "naturalization",
+    "question": "Besides passing tests, what else does naturalization require regarding attachment to the Constitution?",
+    "correctAnswer": "willingness to support and defend the Constitution and laws of the United States",
+    "incorrectAnswers": [
+      "membership in a political party",
+      "renouncing all religious beliefs",
+      "giving up all foreign property"
+    ],
+    "explanation": "Applicants must demonstrate attachment to the principles of the Constitution and willingness to bear true faith and allegiance.",
+    "keywords": [
+      "constitution",
+      "allegiance"
+    ],
+    "source": "https://www.law.cornell.edu/uscode/text/8/1427",
+    "seedId": "09412945-3784-569d-a2ae-731f35e26d1f"
+  }
+]

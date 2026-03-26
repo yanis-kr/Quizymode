@@ -1,0 +1,116 @@
+[
+  {
+    "category": "tech",
+    "navigationKeyword1": "ai-ml",
+    "navigationKeyword2": "deep-learning",
+    "question": "What does backpropagation compute efficiently for a feedforward neural network?",
+    "correctAnswer": "Gradients of the loss with respect to each weight using the chain rule",
+    "incorrectAnswers": [
+      "Only the final accuracy percentage",
+      "The exact optimal weights without iteration",
+      "A random permutation of layers"
+    ],
+    "explanation": "Backprop applies the chain rule layer by layer so gradient descent can update weights toward lower loss.",
+    "keywords": [
+      "ai-ml",
+      "backpropagation"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Backpropagation",
+    "seedId": "ed2f1ef0-d560-58bb-8a16-6962f8bb0631"
+  },
+  {
+    "category": "tech",
+    "navigationKeyword1": "ai-ml",
+    "navigationKeyword2": "deep-learning",
+    "question": "Why is ReLU often preferred over a saturating sigmoid in deep hidden layers?",
+    "correctAnswer": "It reduces vanishing gradients for positive activations and is cheap to compute",
+    "incorrectAnswers": [
+      "It always outputs values between 0 and 1",
+      "It removes the need for any training data",
+      "It guarantees convex loss surfaces"
+    ],
+    "explanation": "ReLU passes positive values linearly and has a simple derivative, helping deeper networks train compared with flat sigmoid tails.",
+    "keywords": [
+      "ai-ml",
+      "activation-functions"
+    ],
+    "source": "https://pytorch.org/docs/stable/generated/torch.nn.ReLU.html",
+    "seedId": "3c27c467-fbb0-50e3-8919-0f378f17456e"
+  },
+  {
+    "category": "tech",
+    "navigationKeyword1": "ai-ml",
+    "navigationKeyword2": "deep-learning",
+    "question": "What is the main role of convolutional layers in image models?",
+    "correctAnswer": "Apply local filters across the image to detect patterns at many positions",
+    "incorrectAnswers": [
+      "Sort pixels alphabetically",
+      "Encrypt the image with a password",
+      "Replace every pixel with the global mean"
+    ],
+    "explanation": "Convolution shares weights across space so small motifs like edges are detected regardless of where they appear.",
+    "keywords": [
+      "ai-ml",
+      "cnn"
+    ],
+    "source": "https://www.tensorflow.org/tutorials/images/intro_to_cnns",
+    "seedId": "45305190-9677-59b2-b4c5-cc7b102c092c"
+  },
+  {
+    "category": "tech",
+    "navigationKeyword1": "ai-ml",
+    "navigationKeyword2": "deep-learning",
+    "question": "Why is dropout applied during training?",
+    "correctAnswer": "Randomly disable units so the network does not rely on specific co-adaptations",
+    "incorrectAnswers": [
+      "To increase the number of parameters",
+      "To freeze all weights permanently",
+      "To convert the model into a decision tree"
+    ],
+    "explanation": "Dropout acts as regularization by sampling thinner subnetworks each step, which reduces overfitting on the training set.",
+    "keywords": [
+      "ai-ml",
+      "dropout"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Dropout_(neural_networks)",
+    "seedId": "ec6b80c1-468a-5a05-9b60-33a4100ce30e"
+  },
+  {
+    "category": "tech",
+    "navigationKeyword1": "ai-ml",
+    "navigationKeyword2": "deep-learning",
+    "question": "What does batch normalization typically normalize in each mini-batch?",
+    "correctAnswer": "Activations using running mean and variance estimates across layers",
+    "incorrectAnswers": [
+      "Only the loss value to zero",
+      "The entire dataset label distribution",
+      "Hardware clock speeds"
+    ],
+    "explanation": "Batch norm stabilizes activations by standardizing and scaling, which helps training deeper networks converge faster.",
+    "keywords": [
+      "ai-ml",
+      "batch-norm"
+    ],
+    "source": "https://keras.io/api/layers/normalization_layers/batch_normalization/",
+    "seedId": "a9383ab1-a265-585a-8abe-82601eaccede"
+  },
+  {
+    "category": "tech",
+    "navigationKeyword1": "ai-ml",
+    "navigationKeyword2": "deep-learning",
+    "question": "In basic gradient descent, what quantity updates each weight?",
+    "correctAnswer": "The negative gradient of the loss scaled by a learning rate",
+    "incorrectAnswers": [
+      "The raw input pixel values only",
+      "A fixed random number unrelated to loss",
+      "The softmax of labels only"
+    ],
+    "explanation": "Weights move opposite the gradient direction so each step reduces the loss function in differentiable models.",
+    "keywords": [
+      "ai-ml",
+      "gradient-descent"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Gradient_descent",
+    "seedId": "91b22f95-df78-5ec8-b86f-379dc562652e"
+  }
+]

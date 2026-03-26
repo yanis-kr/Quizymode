@@ -1,0 +1,116 @@
+[
+  {
+    "category": "civics",
+    "navigationKeyword1": "law",
+    "navigationKeyword2": "due-process",
+    "question": "Which amendment includes due process language that applies to the federal government?",
+    "correctAnswer": "the Fifth Amendment",
+    "incorrectAnswers": [
+      "the First Amendment",
+      "the Tenth Amendment",
+      "the Twenty-Second Amendment"
+    ],
+    "explanation": "The Fifth Amendment says the federal government shall not deprive any person of life, liberty, or property without due process of law.",
+    "keywords": [
+      "due-process",
+      "fifth-amendment"
+    ],
+    "source": "https://constitution.congress.gov/constitution/amendment-5/",
+    "seedId": "7a6376f1-b8e7-5a51-875b-50c951b7046c"
+  },
+  {
+    "category": "civics",
+    "navigationKeyword1": "law",
+    "navigationKeyword2": "due-process",
+    "question": "Which amendment’s due process clause is most often cited when limits apply to states and local governments?",
+    "correctAnswer": "the Fourteenth Amendment",
+    "incorrectAnswers": [
+      "the Second Amendment",
+      "the Eleventh Amendment",
+      "the Sixteenth Amendment"
+    ],
+    "explanation": "The Fourteenth Amendment extends due process protections against state action, not just federal action.",
+    "keywords": [
+      "due-process",
+      "fourteenth-amendment"
+    ],
+    "source": "https://constitution.congress.gov/constitution/amendment-14/",
+    "seedId": "8ec558b9-de45-55b1-870f-ed9f257cbedf"
+  },
+  {
+    "category": "civics",
+    "navigationKeyword1": "law",
+    "navigationKeyword2": "due-process",
+    "question": "What are two basic elements often associated with fair procedure before the government deprives someone of a protected interest?",
+    "correctAnswer": "notice and a meaningful chance to be heard",
+    "incorrectAnswers": [
+      "a unanimous jury in every case",
+      "approval from both houses of Congress for each arrest",
+      "a new trial whenever a party requests one"
+    ],
+    "explanation": "Due process usually requires informing a person of the case against them and a real opportunity to respond.",
+    "keywords": [
+      "due-process",
+      "fair-hearing"
+    ],
+    "source": "https://www.law.cornell.edu/wex/procedural_due_process",
+    "seedId": "56d1292c-eacc-5e91-b423-20ce31333fca"
+  },
+  {
+    "category": "civics",
+    "navigationKeyword1": "law",
+    "navigationKeyword2": "due-process",
+    "question": "Before a long suspension from public school for misconduct, what kind of process do students typically receive at minimum?",
+    "correctAnswer": "some kind of notice and opportunity to respond",
+    "incorrectAnswers": [
+      "no process at all",
+      "a full criminal trial",
+      "a jury drawn from another state"
+    ],
+    "explanation": "Courts have held that longer exclusions from school require fair procedures, not necessarily a full criminal trial.",
+    "keywords": [
+      "due-process",
+      "education"
+    ],
+    "source": "https://www.law.cornell.edu/wex/goss_v._lopez",
+    "seedId": "005d9fb4-7450-5d7a-aafd-3d088bef30f8"
+  },
+  {
+    "category": "civics",
+    "navigationKeyword1": "law",
+    "navigationKeyword2": "due-process",
+    "question": "In criminal cases, what does due process generally require regarding the law charged?",
+    "correctAnswer": "laws must be written clearly enough to give fair warning",
+    "incorrectAnswers": [
+      "laws may be secret until trial",
+      "only judges may know the crime in advance",
+      "statutes need not be published"
+    ],
+    "explanation": "Due process includes the idea that criminal laws cannot be so vague that people cannot understand what is forbidden.",
+    "keywords": [
+      "due-process",
+      "criminal-law"
+    ],
+    "source": "https://www.law.cornell.edu/wex/void_for_vagueness_doctrine",
+    "seedId": "1c255eb8-3899-58f4-aa9c-2a5c69ee5319"
+  },
+  {
+    "category": "civics",
+    "navigationKeyword1": "law",
+    "navigationKeyword2": "due-process",
+    "question": "When government takes private property for public use, what does the Fifth Amendment require?",
+    "correctAnswer": "just compensation",
+    "incorrectAnswers": [
+      "a popular vote in every case",
+      "permission from a foreign court",
+      "automatic waiver of all taxes"
+    ],
+    "explanation": "The Takings Clause requires payment of just compensation when property is taken for public use, part of due process protections.",
+    "keywords": [
+      "due-process",
+      "property"
+    ],
+    "source": "https://constitution.congress.gov/constitution/amendment-5/",
+    "seedId": "b6c2b039-7fa4-568d-802e-8821acc49244"
+  }
+]
