@@ -1,17 +1,17 @@
 [
   {
-    "seedId": "7f7f822b-0b53-4fb7-b9b3-b043f6f6720e",
+    "seedId": "48836c5f-c902-4ca5-9d60-727ddc8b0d6c",
     "category": "science",
     "navigationKeyword1": "geometry",
     "navigationKeyword2": "proofs",
-    "question": "Two-column proof format?",
-    "correctAnswer": "Statements with reasons aligned",
+    "question": "What is a two-column proof?",
+    "correctAnswer": "A proof that pairs each statement with its reason",
     "incorrectAnswers": [
-      "Only paragraphs",
-      "No reasons",
-      "Only algebra"
+      "A proof written only as a diagram",
+      "A proof with no justifications",
+      "A proof that uses only algebraic equations"
     ],
-    "explanation": "Geometry class standard.",
+    "explanation": "Two-column proofs organize each step of reasoning by listing the statement and the theorem, definition, or property that justifies it.",
     "keywords": [
       "two-column-proof",
       "format"
@@ -19,18 +19,18 @@
     "source": "https://www.mathsisfun.com/proof.html"
   },
   {
-    "seedId": "5396a213-2906-4a67-88d6-5a113ebf8446",
+    "seedId": "95882071-6a5d-4cf1-9b0a-a3886444365e",
     "category": "science",
     "navigationKeyword1": "geometry",
     "navigationKeyword2": "proofs",
-    "question": "Proof by contradiction strategy?",
-    "correctAnswer": "Assume opposite of claim; derive contradiction",
+    "question": "What is the main strategy in proof by contradiction?",
+    "correctAnswer": "Assume the opposite of the claim and derive an impossibility",
     "incorrectAnswers": [
-      "Assume claim; done",
-      "Only measure",
-      "Draw picture only"
+      "Assume the claim is true and stop immediately",
+      "Measure the figure only",
+      "Use no definitions or theorems"
     ],
-    "explanation": "Classic for \u221a2 irrational etc.",
+    "explanation": "If assuming the opposite leads to a contradiction, then the original claim must be true.",
     "keywords": [
       "contradiction",
       "logic"
@@ -38,18 +38,18 @@
     "source": "https://en.wikipedia.org/wiki/Proof_by_contradiction"
   },
   {
-    "seedId": "979915a8-4343-4598-bbdc-2bf2bf81fdfd",
+    "seedId": "3552f818-70c5-4dcf-b8a0-9f69c6471e79",
     "category": "science",
     "navigationKeyword1": "geometry",
     "navigationKeyword2": "proofs",
-    "question": "Indirect proof in geometry?",
-    "correctAnswer": "Often contradiction or contrapositive style",
+    "question": "What is an indirect proof in geometry?",
+    "correctAnswer": "A proof that shows the alternative assumption leads to a contradiction",
     "incorrectAnswers": [
-      "Always coordinates",
-      "Never rigorous",
-      "Only calculus"
+      "A proof that avoids all theorems",
+      "A proof that uses only coordinates",
+      "A proof that is less rigorous than a direct proof"
     ],
-    "explanation": "Show impossible alternative.",
+    "explanation": "Indirect proofs often take the form of contradiction or contrapositive reasoning instead of a straight line from hypothesis to conclusion.",
     "keywords": [
       "indirect-proof",
       "geometry"
@@ -57,18 +57,18 @@
     "source": "https://www.mathsisfun.com/proof.html"
   },
   {
-    "seedId": "b852c041-9f93-47c8-b58f-40f4b671b492",
+    "seedId": "06839b85-d388-4ca8-8562-b76787363d84",
     "category": "science",
     "navigationKeyword1": "geometry",
     "navigationKeyword2": "proofs",
-    "question": "CPCTC means?",
+    "question": "What does CPCTC stand for?",
     "correctAnswer": "Corresponding parts of congruent triangles are congruent",
     "incorrectAnswers": [
-      "Triangles always similar",
-      "Angles sum 360",
-      "Parallel lines"
+      "Corresponding points of parallel transversals create congruence",
+      "Congruent polygons contain three congruent triangles",
+      "Common parts of circular theorems create circles"
     ],
-    "explanation": "After congruence proof.",
+    "explanation": "After proving two triangles congruent, CPCTC lets you conclude that their matching sides and angles are equal.",
     "keywords": [
       "cpctc",
       "congruence"
@@ -76,18 +76,18 @@
     "source": "https://www.mathsisfun.com/geometry/triangles-congruent.html"
   },
   {
-    "seedId": "1dd7de66-5930-403e-a705-b429b99622de",
+    "seedId": "2c114074-2c59-4f72-9b05-e888faf05a52",
     "category": "science",
     "navigationKeyword1": "geometry",
     "navigationKeyword2": "proofs",
-    "question": "Transitive property of equality?",
-    "correctAnswer": "If a=b and b=c then a=c",
+    "question": "What does the transitive property of equality say?",
+    "correctAnswer": "If a = b and b = c, then a = c",
     "incorrectAnswers": [
-      "If a=b then a=c always",
-      "Never used",
-      "Only inequalities"
+      "If a = b, then a = c for any c",
+      "Equal quantities cannot be substituted",
+      "It applies only to inequalities"
     ],
-    "explanation": "Algebra in proofs.",
+    "explanation": "The transitive property links equal quantities through a common middle value and is used constantly in proofs.",
     "keywords": [
       "transitive",
       "equality"
@@ -95,18 +95,18 @@
     "source": "https://www.mathsisfun.com/definitions/transitive-property.html"
   },
   {
-    "seedId": "420750a4-992c-4525-989e-2cd59894b973",
+    "seedId": "a56861c5-e501-49e0-822d-cf59fad5127f",
     "category": "science",
     "navigationKeyword1": "geometry",
     "navigationKeyword2": "proofs",
-    "question": "Substitution in proof?",
-    "correctAnswer": "Replace equal quantity in expression",
+    "question": "What does substitution mean in a proof?",
+    "correctAnswer": "Replacing one quantity with another equal quantity",
     "incorrectAnswers": [
-      "Assume unequal",
-      "Only figures",
-      "Never valid"
+      "Replacing a theorem with a guess",
+      "Ignoring equal expressions",
+      "Using a picture instead of algebra"
     ],
-    "explanation": "Fundamental.",
+    "explanation": "If two expressions are equal, one may be substituted for the other to simplify or extend the argument.",
     "keywords": [
       "substitution",
       "algebra"
@@ -114,18 +114,18 @@
     "source": "https://www.mathsisfun.com/definitions/substitution-property-of-equality.html"
   },
   {
-    "seedId": "115d2333-2227-4af7-bf6d-e1c1796045c9",
+    "seedId": "2c45e887-3a8f-46d9-88aa-3799bdf21304",
     "category": "science",
     "navigationKeyword1": "geometry",
     "navigationKeyword2": "proofs",
-    "question": "Why proofs matter?",
-    "correctAnswer": "Guarantee truth from axioms/postulates",
+    "question": "Why are formal proofs important in geometry?",
+    "correctAnswer": "They show a claim follows logically from definitions, axioms, and earlier results",
     "incorrectAnswers": [
-      "Replace intuition always wrongly",
-      "Only history",
-      "Never needed"
+      "They replace all intuition with memorization",
+      "They matter only for historical reasons",
+      "They are optional if the diagram looks correct"
     ],
-    "explanation": "Foundation of geometry.",
+    "explanation": "Proofs establish truth by reasoning, not by appearance, measurement, or guesswork.",
     "keywords": [
       "axiomatic",
       "reasoning"
@@ -133,18 +133,18 @@
     "source": "https://plato.stanford.edu/entries/geometry-finitism/"
   },
   {
-    "seedId": "b4653ae0-786b-4437-a153-1e5b057e2695",
+    "seedId": "df670bf5-ff1b-42a8-b4af-e10e3fe00716",
     "category": "science",
     "navigationKeyword1": "geometry",
     "navigationKeyword2": "proofs",
-    "question": "Auxiliary line role?",
-    "correctAnswer": "Add construction to reveal relationships",
+    "question": "What is the purpose of drawing an auxiliary line in a geometry proof?",
+    "correctAnswer": "To create helpful relationships that are not immediately visible",
     "incorrectAnswers": [
-      "Always forbidden",
-      "Makes proof invalid",
-      "Only in 3D"
+      "To make the diagram invalid",
+      "To avoid using theorems",
+      "To force the figure into three dimensions"
     ],
-    "explanation": "Common strategy.",
+    "explanation": "An auxiliary line can create triangles, parallel lines, or other structures that reveal a theorem you can use.",
     "keywords": [
       "auxiliary-line",
       "proof"
@@ -152,18 +152,18 @@
     "source": "https://en.wikipedia.org/wiki/Auxiliary_line"
   },
   {
-    "seedId": "f249faac-5720-4dec-a284-d5e003ee1269",
+    "seedId": "8a8f3f2a-3f75-4d1d-8dc1-9e08e7d6593b",
     "category": "science",
     "navigationKeyword1": "geometry",
     "navigationKeyword2": "proofs",
-    "question": "Proof angles parallel lines?",
-    "correctAnswer": "Use corresponding/alternate interior theorems",
+    "question": "What angle facts are commonly used when proving statements about parallel lines?",
+    "correctAnswer": "Corresponding, alternate interior, and supplementary-angle relationships",
     "incorrectAnswers": [
-      "Assume conclusion",
-      "Measure only",
-      "No theorems"
+      "Only right angles may be used",
+      "No theorem is needed if the lines look parallel",
+      "Only area formulas apply"
     ],
-    "explanation": "Logical chain.",
+    "explanation": "Parallel-line proofs often rely on angle theorems created by a transversal intersecting the two lines.",
     "keywords": [
       "parallel-proof",
       "reasoning"
@@ -171,18 +171,18 @@
     "source": "https://www.mathsisfun.com/geometry/parallel-lines.html"
   },
   {
-    "seedId": "0dc7fcd3-bc40-4a88-9273-109c3100fbf1",
+    "seedId": "1b1ba029-021a-4dc4-9c74-c87212903874",
     "category": "science",
     "navigationKeyword1": "geometry",
     "navigationKeyword2": "proofs",
-    "question": "Coordinate geometry proof?",
-    "correctAnswer": "Place figure to simplify algebra",
+    "question": "What is a coordinate proof?",
+    "correctAnswer": "A proof that places a figure on a coordinate plane to use algebra",
     "incorrectAnswers": [
-      "Always illegal",
-      "Never simpler",
-      "Only synthetic allowed"
+      "A proof that is less valid than a synthetic proof",
+      "A proof that cannot use geometry concepts",
+      "A proof that requires calculus"
     ],
-    "explanation": "Analytic geometry.",
+    "explanation": "Coordinate proofs translate geometric relationships into equations involving slope, distance, midpoint, and other algebraic tools.",
     "keywords": [
       "coordinate-proof",
       "analytic"
@@ -190,18 +190,18 @@
     "source": "https://www.mathsisfun.com/algebra/line-equation-coordinate.html"
   },
   {
-    "seedId": "f41b4848-a417-4cd4-acfb-c89831cc7406",
+    "seedId": "9e4d85d8-33dc-4550-a22d-f8c5c683fe31",
     "category": "science",
     "navigationKeyword1": "geometry",
     "navigationKeyword2": "proofs",
-    "question": "Paragraph proof?",
-    "correctAnswer": "Narrative reasoning sentences",
+    "question": "What is a paragraph proof?",
+    "correctAnswer": "A proof written as connected sentences instead of statement-reason columns",
     "incorrectAnswers": [
-      "No sentences",
-      "Only symbols",
-      "Two-column only"
+      "A proof with no logical order",
+      "A proof using symbols only",
+      "A proof that replaces the need for theorems"
     ],
-    "explanation": "Still must be logical.",
+    "explanation": "A paragraph proof still needs valid reasoning; it simply presents the argument in prose form.",
     "keywords": [
       "paragraph-proof",
       "writing"
@@ -209,18 +209,18 @@
     "source": "https://www.mathsisfun.com/proof.html"
   },
   {
-    "seedId": "078837cb-1303-40fe-b466-e3d711537fb5",
+    "seedId": "08ec76a1-01c9-4af5-aae1-02dbf67dffd3",
     "category": "science",
     "navigationKeyword1": "geometry",
     "navigationKeyword2": "proofs",
-    "question": "Diagram alone proves?",
-    "correctAnswer": "No; needs logical justification",
+    "question": "Is a diagram by itself enough to prove a geometry statement?",
+    "correctAnswer": "No, a diagram must be supported by logical justification",
     "incorrectAnswers": [
-      "Yes always",
-      "If drawn to scale",
-      "Only circles"
+      "Yes, if it is drawn neatly",
+      "Yes, if it appears to be to scale",
+      "Yes, for circle theorems only"
     ],
-    "explanation": "Pictures assist, don\u2019t replace proof.",
+    "explanation": "A picture can suggest an idea, but a theorem is proved only when each step is justified logically.",
     "keywords": [
       "diagram",
       "rigor"

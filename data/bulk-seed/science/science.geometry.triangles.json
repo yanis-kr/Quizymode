@@ -1,17 +1,17 @@
 [
   {
-    "seedId": "069d91f9-39a1-44e2-803d-23f93c5df4f6",
+    "seedId": "b28602d3-27fe-4d2a-91d1-f4992d601f85",
     "category": "science",
     "navigationKeyword1": "geometry",
     "navigationKeyword2": "triangles",
-    "question": "SSS congruence?",
-    "correctAnswer": "Three sides determine triangle up to congruence",
+    "question": "What does the SSS congruence rule say?",
+    "correctAnswer": "Three matching side lengths determine a triangle up to congruence",
     "incorrectAnswers": [
-      "Always similar not congruent",
-      "Never enough",
-      "Need angles only"
+      "Three sides determine only similarity",
+      "Three sides are never enough",
+      "Three angles are required instead"
     ],
-    "explanation": "Triangle congruence rule.",
+    "explanation": "If all three corresponding sides of two triangles are equal, the triangles must have the same size and shape.",
     "keywords": [
       "sss",
       "congruence"
@@ -19,18 +19,18 @@
     "source": "https://www.mathsisfun.com/geometry/triangles-congruent.html"
   },
   {
-    "seedId": "39239689-238d-49f3-a8b3-4cde6894867e",
+    "seedId": "3b626292-2d1f-40e8-b690-5d019c6f641e",
     "category": "science",
     "navigationKeyword1": "geometry",
     "navigationKeyword2": "triangles",
-    "question": "SAS congruence?",
-    "correctAnswer": "Two sides and included angle",
+    "question": "What information is needed for SAS congruence?",
+    "correctAnswer": "Two sides and the included angle",
     "incorrectAnswers": [
-      "SSA always",
-      "AAA",
-      "ASA wrong"
+      "Two angles and any side",
+      "Three angles only",
+      "Two sides and a nonincluded angle always"
     ],
-    "explanation": "Included angle matters.",
+    "explanation": "SAS uses two side lengths and the angle between them to uniquely determine a triangle.",
     "keywords": [
       "sas",
       "congruence"
@@ -38,18 +38,18 @@
     "source": "https://www.mathsisfun.com/geometry/triangles-congruent.html"
   },
   {
-    "seedId": "0b4d0dd3-1a11-4113-95c9-23aa2ccb1d83",
+    "seedId": "2d51f5b4-806f-4fdd-a52d-778b0f27d56b",
     "category": "science",
     "navigationKeyword1": "geometry",
     "navigationKeyword2": "triangles",
-    "question": "ASA congruence?",
-    "correctAnswer": "Two angles and included side",
+    "question": "What information is needed for ASA congruence?",
+    "correctAnswer": "Two angles and the included side",
     "incorrectAnswers": [
-      "AAA for congruence",
-      "SSA",
-      "SAS same"
+      "Three angles only",
+      "Two sides and a nonincluded angle",
+      "One side only"
     ],
-    "explanation": "Determines shape+size.",
+    "explanation": "ASA works because two angles fix the third angle, and the included side fixes the scale.",
     "keywords": [
       "asa",
       "congruence"
@@ -57,18 +57,18 @@
     "source": "https://www.mathsisfun.com/geometry/triangles-congruent.html"
   },
   {
-    "seedId": "07933512-371e-4f57-bd73-e0e1ed79c6e8",
+    "seedId": "81e98308-1544-4733-9b2b-58b8db96dc20",
     "category": "science",
     "navigationKeyword1": "geometry",
     "navigationKeyword2": "triangles",
-    "question": "Triangle inequality?",
-    "correctAnswer": "Any side < sum of other two",
+    "question": "What does the triangle inequality state?",
+    "correctAnswer": "Any side length must be less than the sum of the other two",
     "incorrectAnswers": [
-      "Any side > sum",
-      "Always equality",
-      "Only right triangles"
+      "Any side length must be greater than the sum of the other two",
+      "Any side length must equal the sum of the other two",
+      "The rule applies only to right triangles"
     ],
-    "explanation": "Constructibility.",
+    "explanation": "If one side is too long, the other two sides cannot meet to form a triangle.",
     "keywords": [
       "triangle-inequality",
       "sides"
@@ -76,18 +76,18 @@
     "source": "https://www.mathsisfun.com/geometry/triangle-inequality.html"
   },
   {
-    "seedId": "09e32763-c04e-4e21-8e7d-27a2d86f13e2",
+    "seedId": "1f445a41-4bc2-4de5-b666-527fc177c1e7",
     "category": "science",
     "navigationKeyword1": "geometry",
     "navigationKeyword2": "triangles",
-    "question": "Midsegment theorem?",
-    "correctAnswer": "Segment joining midpoints parallel to third side and half as long",
+    "question": "What does the triangle midsegment theorem say?",
+    "correctAnswer": "The segment joining two midpoints is parallel to the third side and half its length",
     "incorrectAnswers": [
-      "Equal to third side",
-      "Perpendicular",
-      "No relation"
+      "The segment equals the third side in length",
+      "The segment is always perpendicular to the third side",
+      "There is no fixed relationship"
     ],
-    "explanation": "Useful in proofs.",
+    "explanation": "Connecting the midpoints of two sides creates a segment similar in direction to the third side but scaled by one-half.",
     "keywords": [
       "midsegment",
       "triangle"
@@ -95,18 +95,18 @@
     "source": "https://www.mathsisfun.com/geometry/triangles.html"
   },
   {
-    "seedId": "bf2e7166-368f-42af-ba86-abc7241ff5d1",
+    "seedId": "660c523a-cd59-453c-9668-a0791b80888e",
     "category": "science",
     "navigationKeyword1": "geometry",
     "navigationKeyword2": "triangles",
-    "question": "Centroid is intersection of?",
-    "correctAnswer": "Medians",
+    "question": "The centroid of a triangle is the intersection of which segments?",
+    "correctAnswer": "The medians",
     "incorrectAnswers": [
-      "Altitudes",
-      "Angle bisectors",
-      "Perpendicular bisectors"
+      "The altitudes",
+      "The perpendicular bisectors",
+      "The angle bisectors"
     ],
-    "explanation": "Balances triangle (uniform density).",
+    "explanation": "Each median runs from a vertex to the midpoint of the opposite side, and the three medians meet at the centroid.",
     "keywords": [
       "centroid",
       "medians"
@@ -114,18 +114,18 @@
     "source": "https://www.mathsisfun.com/geometry/triangle-centers.html"
   },
   {
-    "seedId": "f85f9169-a565-417a-88f9-f6f17309f6c7",
+    "seedId": "c398aa32-8db7-4e18-9a47-109dd7919ea6",
     "category": "science",
     "navigationKeyword1": "geometry",
     "navigationKeyword2": "triangles",
-    "question": "Orthocenter is intersection of?",
-    "correctAnswer": "Altitudes",
+    "question": "The orthocenter of a triangle is the intersection of which lines?",
+    "correctAnswer": "The altitudes",
     "incorrectAnswers": [
-      "Medians",
-      "Bisectors of sides",
-      "Midsegments"
+      "The medians",
+      "The angle bisectors",
+      "The midsegments"
     ],
-    "explanation": "May lie outside obtuse triangle.",
+    "explanation": "An altitude goes from a vertex perpendicular to the opposite side, and the three altitudes meet at the orthocenter.",
     "keywords": [
       "orthocenter",
       "altitudes"
@@ -133,18 +133,18 @@
     "source": "https://www.mathsisfun.com/geometry/triangle-centers.html"
   },
   {
-    "seedId": "0ec7e100-024a-462d-a94e-020d72c5d5fa",
+    "seedId": "f96285a9-6c71-4385-8d54-616bcaaf8dd5",
     "category": "science",
     "navigationKeyword1": "geometry",
     "navigationKeyword2": "triangles",
-    "question": "Circumcenter is intersection of?",
-    "correctAnswer": "Perpendicular bisectors of sides",
+    "question": "The circumcenter of a triangle is the intersection of which lines?",
+    "correctAnswer": "The perpendicular bisectors of the sides",
     "incorrectAnswers": [
-      "Medians",
-      "Altitudes",
-      "Angle bisectors"
+      "The medians",
+      "The angle bisectors",
+      "The altitudes"
     ],
-    "explanation": "Center of circumscribed circle.",
+    "explanation": "The circumcenter is equidistant from all three vertices, so it lies where the side perpendicular bisectors meet.",
     "keywords": [
       "circumcenter",
       "circle"
@@ -152,18 +152,18 @@
     "source": "https://www.mathsisfun.com/geometry/triangle-centers.html"
   },
   {
-    "seedId": "97d8963f-396b-4c25-8429-543f97eca9de",
+    "seedId": "49f09dcd-b911-4ca0-947b-d29ee0ce7610",
     "category": "science",
     "navigationKeyword1": "geometry",
     "navigationKeyword2": "triangles",
-    "question": "Incenter is intersection of?",
-    "correctAnswer": "Angle bisectors",
+    "question": "The incenter of a triangle is the intersection of which lines?",
+    "correctAnswer": "The angle bisectors",
     "incorrectAnswers": [
-      "Perpendicular bisectors",
-      "Altitudes",
-      "Medians"
+      "The medians",
+      "The altitudes",
+      "The perpendicular bisectors"
     ],
-    "explanation": "Center of inscribed circle.",
+    "explanation": "The incenter is equally distant from all three sides, so it lies at the intersection of the angle bisectors.",
     "keywords": [
       "incenter",
       "bisectors"
@@ -171,18 +171,18 @@
     "source": "https://www.mathsisfun.com/geometry/triangle-centers.html"
   },
   {
-    "seedId": "bda1d20a-6b03-4d23-9a71-0249df0cb98b",
+    "seedId": "bf992fca-9943-4e0e-83a2-a0a8aee7fbca",
     "category": "science",
     "navigationKeyword1": "geometry",
     "navigationKeyword2": "triangles",
-    "question": "Pythagorean theorem applies to?",
+    "question": "To which triangles does the Pythagorean theorem apply?",
     "correctAnswer": "Right triangles",
     "incorrectAnswers": [
       "All triangles",
-      "Only equilateral",
-      "Only isosceles"
+      "Only equilateral triangles",
+      "Only isosceles triangles"
     ],
-    "explanation": "a^2+b^2=c^2 for legs a,b hypotenuse c.",
+    "explanation": "The equation a^2 + b^2 = c^2 relates the two legs and hypotenuse of a right triangle.",
     "keywords": [
       "pythagorean",
       "right-triangle"
@@ -190,18 +190,18 @@
     "source": "https://www.mathsisfun.com/pythagoras.html"
   },
   {
-    "seedId": "e772fe48-5de5-4bfd-be38-282bc08bf756",
+    "seedId": "9b2333bc-7f5e-4930-b7ed-5e7a92ed9e92",
     "category": "science",
     "navigationKeyword1": "geometry",
     "navigationKeyword2": "triangles",
-    "question": "3-4-5 triangle is?",
-    "correctAnswer": "Right (Pythagorean triple)",
+    "question": "What kind of triangle has side lengths 3, 4, and 5?",
+    "correctAnswer": "A right triangle",
     "incorrectAnswers": [
-      "Acute",
-      "Obtuse",
-      "Degenerate"
+      "An obtuse triangle",
+      "An equilateral triangle",
+      "A degenerate triangle"
     ],
-    "explanation": "9+16=25.",
+    "explanation": "Because 3^2 + 4^2 = 5^2, the side lengths form a Pythagorean triple and determine a right triangle.",
     "keywords": [
       "pythagorean-triple",
       "triangle"
@@ -209,18 +209,18 @@
     "source": "https://www.mathsisfun.com/numbers/pythagorean-triples.html"
   },
   {
-    "seedId": "cc5d4f2d-d760-41cb-90c6-029ea7968bf4",
+    "seedId": "710d50b8-0f7d-4acd-b256-7d97bd91af44",
     "category": "science",
     "navigationKeyword1": "geometry",
     "navigationKeyword2": "triangles",
-    "question": "Similar triangles AA?",
-    "correctAnswer": "Two angles equal implies similar",
+    "question": "What does the AA similarity criterion say?",
+    "correctAnswer": "If two angles match, the triangles are similar",
     "incorrectAnswers": [
-      "Need AAA for similarity wrong",
-      "Need equal sides",
-      "Never similar"
+      "If two angles match, the triangles are congruent",
+      "Equal side lengths are still required",
+      "Triangles can never be similar from angles alone"
     ],
-    "explanation": "Shape same, scale maybe different.",
+    "explanation": "Two equal angles force the third angle to match as well, which fixes the shape even if the size differs.",
     "keywords": [
       "similarity",
       "aa"

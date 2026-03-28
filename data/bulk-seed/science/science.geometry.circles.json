@@ -1,17 +1,17 @@
 [
   {
-    "seedId": "abbd8e91-68c8-431f-a840-56136be57444",
+    "seedId": "22a4a5f7-3645-473e-a00d-43b609082781",
     "category": "science",
     "navigationKeyword1": "geometry",
     "navigationKeyword2": "circles",
-    "question": "Circle area?",
-    "correctAnswer": "\u03c0r^2",
+    "question": "What is the area formula for a circle of radius r?",
+    "correctAnswer": "pi r^2",
     "incorrectAnswers": [
-      "2\u03c0r",
-      "\u03c0d",
+      "2pi r",
+      "pi d",
       "r^2"
     ],
-    "explanation": "Distinguish from circumference.",
+    "explanation": "Circle area scales with the square of the radius, so the formula is pi r^2.",
     "keywords": [
       "circle-area",
       "formula"
@@ -19,18 +19,18 @@
     "source": "https://www.mathsisfun.com/geometry/circle.html"
   },
   {
-    "seedId": "aee73e4f-8937-40ec-b5bb-fd8a0d07c226",
+    "seedId": "131023b4-6953-43ca-afff-dc6c0f281725",
     "category": "science",
     "navigationKeyword1": "geometry",
     "navigationKeyword2": "circles",
-    "question": "Circumference?",
-    "correctAnswer": "2\u03c0r = \u03c0d",
+    "question": "What is the circumference formula for a circle?",
+    "correctAnswer": "2pi r",
     "incorrectAnswers": [
-      "\u03c0r^2",
+      "pi r^2",
       "r^2",
       "2r"
     ],
-    "explanation": "Perimeter of circle.",
+    "explanation": "Circumference measures the distance around the circle, and equals 2pi times the radius.",
     "keywords": [
       "circumference",
       "circle"
@@ -38,18 +38,18 @@
     "source": "https://www.mathsisfun.com/geometry/circle.html"
   },
   {
-    "seedId": "e5815e27-3aac-43d4-9805-2ee76db9722e",
+    "seedId": "b0b542ec-a673-48e6-9958-2c0b3e168465",
     "category": "science",
     "navigationKeyword1": "geometry",
     "navigationKeyword2": "circles",
-    "question": "Arc length central \u03b8 radians?",
-    "correctAnswer": "s = r\u03b8",
+    "question": "If a central angle is measured in radians, what is the arc length formula?",
+    "correctAnswer": "s = r theta",
     "incorrectAnswers": [
-      "r/\u03b8",
-      "\u03b8/r",
-      "r^2 \u03b8"
+      "s = r/theta",
+      "s = r^2 theta",
+      "s = theta/r"
     ],
-    "explanation": "Proportional to angle.",
+    "explanation": "Radian measure is defined so that arc length equals radius times the angle in radians.",
     "keywords": [
       "arc-length",
       "circle"
@@ -57,18 +57,18 @@
     "source": "https://www.mathsisfun.com/geometry/circle.html"
   },
   {
-    "seedId": "1f5caaac-0c45-4f43-8ce8-f5ed500ec42f",
+    "seedId": "f030dd71-4c61-4193-9408-e1a320d49fa3",
     "category": "science",
     "navigationKeyword1": "geometry",
     "navigationKeyword2": "circles",
-    "question": "Sector area \u03b8 radians?",
-    "correctAnswer": "(1/2) r^2 \u03b8",
+    "question": "If a central angle is measured in radians, what is the sector area formula?",
+    "correctAnswer": "(1/2) r^2 theta",
     "incorrectAnswers": [
-      "r \u03b8",
-      "\u03c0 r^2",
-      "2\u03c0r"
+      "r theta",
+      "pi r^2",
+      "2pi r"
     ],
-    "explanation": "Fraction of full circle.",
+    "explanation": "A sector takes a fraction of the full circle, and that fraction leads to the formula one-half r squared times theta.",
     "keywords": [
       "sector",
       "circle"
@@ -76,18 +76,18 @@
     "source": "https://www.mathsisfun.com/geometry/circle.html"
   },
   {
-    "seedId": "27b75c99-3390-4900-8e8b-d360b44df39d",
+    "seedId": "d6fdaa54-2e81-4885-833d-0d61ef0a090f",
     "category": "science",
     "navigationKeyword1": "geometry",
     "navigationKeyword2": "circles",
-    "question": "Tangent to circle property?",
-    "correctAnswer": "Perpendicular to radius at point of tangency",
+    "question": "How is a tangent line related to the radius at the point of tangency?",
+    "correctAnswer": "It is perpendicular to the radius",
     "incorrectAnswers": [
-      "Parallel to radius",
-      "Through center always",
-      "Never meets circle"
+      "It is parallel to the radius",
+      "It always passes through the center",
+      "It never touches the circle"
     ],
-    "explanation": "Unique tangent line.",
+    "explanation": "A tangent line touches the circle at exactly one point, and at that point it makes a right angle with the radius.",
     "keywords": [
       "tangent",
       "circle"
@@ -95,18 +95,18 @@
     "source": "https://www.mathsisfun.com/geometry/circle-tangent.html"
   },
   {
-    "seedId": "de57c999-6db5-4520-a3fb-8b60f39b94b1",
+    "seedId": "a68bbbc9-b6da-4560-a6e7-85cd2a14937b",
     "category": "science",
     "navigationKeyword1": "geometry",
     "navigationKeyword2": "circles",
-    "question": "Two tangents from external point?",
-    "correctAnswer": "Tangent segments equal in length",
+    "question": "What is true about two tangent segments drawn from the same external point to a circle?",
+    "correctAnswer": "They have equal length",
     "incorrectAnswers": [
-      "Always unequal",
-      "Sum to diameter",
-      "Undefined"
+      "One is always twice the other",
+      "Their sum always equals the diameter",
+      "They are unrelated in length"
     ],
-    "explanation": "Power of a point case.",
+    "explanation": "Tangent segments from a common external point are congruent because each reaches the circle under the same tangent condition.",
     "keywords": [
       "tangent-segments",
       "circle"
@@ -114,18 +114,18 @@
     "source": "https://www.mathsisfun.com/geometry/circle-tangent.html"
   },
   {
-    "seedId": "db209478-64df-4ecc-b9da-64d297af8643",
+    "seedId": "8887154a-2306-400a-a2f3-4f0ecfa826a6",
     "category": "science",
     "navigationKeyword1": "geometry",
     "navigationKeyword2": "circles",
-    "question": "Inscribed angle on diameter?",
-    "correctAnswer": "Right angle",
+    "question": "What is the measure of an inscribed angle that subtends a diameter?",
+    "correctAnswer": "90 degrees",
     "incorrectAnswers": [
-      "Acute",
-      "Obtuse",
-      "0\u00b0"
+      "45 degrees",
+      "180 degrees",
+      "It varies without a rule"
     ],
-    "explanation": "Thales\u2019 theorem.",
+    "explanation": "An angle inscribed in a semicircle is a right angle, a result often called Thales's theorem.",
     "keywords": [
       "thales",
       "diameter"
@@ -133,18 +133,18 @@
     "source": "https://www.mathsisfun.com/geometry/theorem-thales.html"
   },
   {
-    "seedId": "26f473ef-1750-4f8d-bf91-710da59bab10",
+    "seedId": "8cb12bc3-7ebe-4845-95d3-793d2319b085",
     "category": "science",
     "navigationKeyword1": "geometry",
     "navigationKeyword2": "circles",
-    "question": "Chord perpendicular bisector passes through?",
-    "correctAnswer": "Center",
+    "question": "What point lies on the perpendicular bisector of every chord in a circle?",
+    "correctAnswer": "The center of the circle",
     "incorrectAnswers": [
-      "Tangent point",
-      "Always vertex",
-      "Never center"
+      "The tangent point",
+      "A point on the circumference only",
+      "No special point"
     ],
-    "explanation": "Locus property.",
+    "explanation": "Because the center is equidistant from the endpoints of any chord, it lies on that chord's perpendicular bisector.",
     "keywords": [
       "chord",
       "circle"
@@ -152,18 +152,18 @@
     "source": "https://www.mathsisfun.com/geometry/circle-theorems.html"
   },
   {
-    "seedId": "65a5fb6d-506f-422f-990f-a03eaef2fb0d",
+    "seedId": "15fae05a-eff3-4b02-ad44-40ab43d90d47",
     "category": "science",
     "navigationKeyword1": "geometry",
     "navigationKeyword2": "circles",
-    "question": "Equation circle center (h,k) radius r?",
-    "correctAnswer": "(x\u2212h)^2 + (y\u2212k)^2 = r^2",
+    "question": "What is the standard equation of a circle with center (h, k) and radius r?",
+    "correctAnswer": "(x-h)^2 + (y-k)^2 = r^2",
     "incorrectAnswers": [
-      "x^2 \u2212 y^2 = r^2",
+      "x^2 - y^2 = r^2",
       "y = mx + b",
       "x + y = r"
     ],
-    "explanation": "Standard form.",
+    "explanation": "The equation says every point on the circle is exactly r units from the center (h, k).",
     "keywords": [
       "circle-equation",
       "coordinates"
@@ -171,18 +171,18 @@
     "source": "https://www.mathsisfun.com/algebra/circle-equations.html"
   },
   {
-    "seedId": "0fbad4d3-1fbc-48b4-a92f-ab9374c119a2",
+    "seedId": "998b8cb3-7499-4822-99d8-16b82f310106",
     "category": "science",
     "navigationKeyword1": "geometry",
     "navigationKeyword2": "circles",
-    "question": "Concentric circles?",
-    "correctAnswer": "Same center different radii",
+    "question": "What are concentric circles?",
+    "correctAnswer": "Circles with the same center but different radii",
     "incorrectAnswers": [
-      "Same radius different centers",
-      "Tangent always",
-      "Always intersect twice"
+      "Circles with the same radius but different centers",
+      "Circles that must intersect twice",
+      "Circles that are always tangent"
     ],
-    "explanation": "Annulus between them.",
+    "explanation": "Concentric circles share one center point while keeping different sizes.",
     "keywords": [
       "concentric",
       "circle"
@@ -190,18 +190,18 @@
     "source": "https://www.mathsisfun.com/geometry/circle.html"
   },
   {
-    "seedId": "bd4c94f1-0a77-478c-ac4b-6dbeb13bb8c2",
+    "seedId": "590b0ee8-17fe-4a61-91c2-a983fe475bae",
     "category": "science",
     "navigationKeyword1": "geometry",
     "navigationKeyword2": "circles",
-    "question": "Pi (\u03c0) is ratio?",
-    "correctAnswer": "Circumference to diameter",
+    "question": "What ratio does pi represent for every circle?",
+    "correctAnswer": "Circumference divided by diameter",
     "incorrectAnswers": [
-      "Area to radius",
-      "Diameter to radius",
-      "Arc to angle always 1"
+      "Area divided by radius",
+      "Diameter divided by radius",
+      "Arc length divided by angle always"
     ],
-    "explanation": "Irrational constant.",
+    "explanation": "Pi is the constant ratio C/d, which is the same for all circles.",
     "keywords": [
       "pi",
       "definition"
@@ -209,18 +209,18 @@
     "source": "https://www.mathsisfun.com/numbers/pi.html"
   },
   {
-    "seedId": "46adb73b-e1ff-48b0-be94-7d5fa545ecf5",
+    "seedId": "1d46ba3a-693e-454a-b5a4-3df957106bd5",
     "category": "science",
     "navigationKeyword1": "geometry",
     "navigationKeyword2": "circles",
-    "question": "Sphere volume?",
-    "correctAnswer": "(4/3)\u03c0r^3",
+    "question": "What is the volume formula for a sphere of radius r?",
+    "correctAnswer": "(4/3) pi r^3",
     "incorrectAnswers": [
-      "4\u03c0r^2",
-      "2\u03c0r",
-      "\u03c0r^3"
+      "4pi r^2",
+      "2pi r",
+      "pi r^3"
     ],
-    "explanation": "Not surface area.",
+    "explanation": "Sphere volume depends on the cube of the radius, giving the formula four-thirds pi r cubed.",
     "keywords": [
       "sphere-volume",
       "3d"
