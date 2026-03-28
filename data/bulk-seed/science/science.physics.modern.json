@@ -1,0 +1,230 @@
+[
+  {
+    "seedId": "05328c99-1c37-47b5-bb99-731a7b869220",
+    "category": "science",
+    "navigationKeyword1": "physics",
+    "navigationKeyword2": "modern",
+    "question": "Photoelectric effect key insight (Einstein)?",
+    "correctAnswer": "Light quantized as photons E = hf",
+    "incorrectAnswers": [
+      "Intensity alone determines max KE always without threshold",
+      "Wave model explains threshold frequency fully",
+      "No electrons emitted ever"
+    ],
+    "explanation": "Explains cutoff frequency.",
+    "keywords": [
+      "photoelectric",
+      "photon"
+    ],
+    "source": "https://openstax.org/books/university-physics-volume-3/pages/6-2-photoelectric-effect"
+  },
+  {
+    "seedId": "6066adc3-d751-471b-a6ca-ac8cf169f620",
+    "category": "science",
+    "navigationKeyword1": "physics",
+    "navigationKeyword2": "modern",
+    "question": "de Broglie wavelength?",
+    "correctAnswer": "\u03bb = h/p",
+    "incorrectAnswers": [
+      "\u03bb = p/h",
+      "\u03bb = hp",
+      "\u03bb = hf"
+    ],
+    "explanation": "Matter waves.",
+    "keywords": [
+      "de-broglie",
+      "quantum"
+    ],
+    "source": "https://openstax.org/books/university-physics-volume-3/pages/6-3-wave-particle-duality"
+  },
+  {
+    "seedId": "7a9393ad-cc43-4488-b38a-f19596c00505",
+    "category": "science",
+    "navigationKeyword1": "physics",
+    "navigationKeyword2": "modern",
+    "question": "Heisenberg uncertainty (position-momentum)?",
+    "correctAnswer": "\u0394x \u0394p \u2273 \u210f/2",
+    "incorrectAnswers": [
+      "\u0394x \u0394p = 0",
+      "\u0394x \u0394p = 1",
+      "No relation"
+    ],
+    "explanation": "Fundamental limit.",
+    "keywords": [
+      "uncertainty",
+      "quantum"
+    ],
+    "source": "https://openstax.org/books/university-physics-volume-3/pages/7-2-heisenberg-uncertainty-principle"
+  },
+  {
+    "seedId": "52fdbed6-45e8-498b-a1f3-439d3d148a35",
+    "category": "science",
+    "navigationKeyword1": "physics",
+    "navigationKeyword2": "modern",
+    "question": "Bohr hydrogen energy levels?",
+    "correctAnswer": "En \u221d \u22121/n^2",
+    "incorrectAnswers": [
+      "En \u221d n^2",
+      "En linear in n",
+      "En always positive"
+    ],
+    "explanation": "Explains spectral lines.",
+    "keywords": [
+      "bohr-model",
+      "hydrogen"
+    ],
+    "source": "https://openstax.org/books/university-physics-volume-3/pages/6-4-bohrs-model-of-the-hydrogen-atom"
+  },
+  {
+    "seedId": "82fa7a9b-76b7-4966-830c-08483be1e16e",
+    "category": "science",
+    "navigationKeyword1": "physics",
+    "navigationKeyword2": "modern",
+    "question": "Radioactive decay law?",
+    "correctAnswer": "N(t) = N0 e^{-\u03bbt}",
+    "incorrectAnswers": [
+      "N linear",
+      "N increases",
+      "N constant"
+    ],
+    "explanation": "Half-life t1/2 = ln2/\u03bb.",
+    "keywords": [
+      "radioactive-decay",
+      "half-life"
+    ],
+    "source": "https://www.cdc.gov/nceh/radiation/emergency/pdf/isotopes.pdf"
+  },
+  {
+    "seedId": "c720a681-74d7-4b25-95df-499b4fe004ad",
+    "category": "science",
+    "navigationKeyword1": "physics",
+    "navigationKeyword2": "modern",
+    "question": "Nuclear binding energy trend?",
+    "correctAnswer": "Peak around iron/nickel region",
+    "incorrectAnswers": [
+      "Heaviest always most bound per nucleon",
+      "Lightest always most bound",
+      "No maximum"
+    ],
+    "explanation": "Explains fusion/fission energy.",
+    "keywords": [
+      "binding-energy",
+      "nuclear"
+    ],
+    "source": "https://openstax.org/books/university-physics-volume-3/pages/10-3-binding-energy"
+  },
+  {
+    "seedId": "c24eddf5-efa6-4280-8d49-4c7fe3b0428a",
+    "category": "science",
+    "navigationKeyword1": "physics",
+    "navigationKeyword2": "modern",
+    "question": "Special relativity time dilation?",
+    "correctAnswer": "Moving clocks run slower (inertial frames)",
+    "incorrectAnswers": [
+      "Always faster",
+      "Same always",
+      "Only sound clocks"
+    ],
+    "explanation": "\u0394t = \u03b3 \u0394t0.",
+    "keywords": [
+      "time-dilation",
+      "relativity"
+    ],
+    "source": "https://openstax.org/books/university-physics-volume-3/pages/5-3-time-dilation"
+  },
+  {
+    "seedId": "07992d93-8b52-4ef3-aaf9-eb74fc54e522",
+    "category": "science",
+    "navigationKeyword1": "physics",
+    "navigationKeyword2": "modern",
+    "question": "Length contraction?",
+    "correctAnswer": "Lengths along motion shorten by \u03b3",
+    "incorrectAnswers": [
+      "Lengthen by \u03b3",
+      "No effect",
+      "Only perpendicular"
+    ],
+    "explanation": "Simultaneity matters.",
+    "keywords": [
+      "length-contraction",
+      "relativity"
+    ],
+    "source": "https://openstax.org/books/university-physics-volume-3/pages/5-4-length-contraction"
+  },
+  {
+    "seedId": "d7e54490-0042-422e-8ef6-50241fefacf7",
+    "category": "science",
+    "navigationKeyword1": "physics",
+    "navigationKeyword2": "modern",
+    "question": "Mass\u2013energy equivalence?",
+    "correctAnswer": "E = mc^2",
+    "incorrectAnswers": [
+      "E = 1/2 mc^2",
+      "E = m/c^2",
+      "E = pc only always"
+    ],
+    "explanation": "Rest energy.",
+    "keywords": [
+      "emc2",
+      "relativity"
+    ],
+    "source": "https://openstax.org/books/university-physics-volume-3/pages/5-9-relativistic-energy"
+  },
+  {
+    "seedId": "8dece3f9-dfda-491b-aa2e-6221525fe478",
+    "category": "science",
+    "navigationKeyword1": "physics",
+    "navigationKeyword2": "modern",
+    "question": "Pauli exclusion principle?",
+    "correctAnswer": "Two identical fermions cannot occupy same quantum state",
+    "incorrectAnswers": [
+      "Bosons excluded",
+      "Applies to photons",
+      "No effect on atoms"
+    ],
+    "explanation": "Explains periodic table structure.",
+    "keywords": [
+      "pauli",
+      "quantum"
+    ],
+    "source": "https://openstax.org/books/university-physics-volume-3/pages/9-2-pauli-exclusion-principle"
+  },
+  {
+    "seedId": "bfb12988-8edb-48b1-8c25-c2dce5a47f01",
+    "category": "science",
+    "navigationKeyword1": "physics",
+    "navigationKeyword2": "modern",
+    "question": "Semiconductor doping n-type adds?",
+    "correctAnswer": "Donor electrons increase electron carriers",
+    "incorrectAnswers": [
+      "Holes only",
+      "Neutrons",
+      "No change in carriers"
+    ],
+    "explanation": "Phosphorus in silicon example.",
+    "keywords": [
+      "doping",
+      "semiconductor"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Semiconductor_doping"
+  },
+  {
+    "seedId": "970974b6-e13e-46a8-877c-b1a95a2ab61a",
+    "category": "science",
+    "navigationKeyword1": "physics",
+    "navigationKeyword2": "modern",
+    "question": "Standard Model includes (broadly)?",
+    "correctAnswer": "Quarks, leptons, gauge bosons, Higgs",
+    "incorrectAnswers": [
+      "Only protons",
+      "Only gravity particles confirmed",
+      "Only neutrons"
+    ],
+    "explanation": "Unifies EM, weak, strong (not gravity).",
+    "keywords": [
+      "standard-model",
+      "particles"
+    ],
+    "source": "https://home.cern/science/physics/standard-model"
+  }
+]

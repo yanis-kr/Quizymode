@@ -1,0 +1,230 @@
+[
+  {
+    "seedId": "b0ae8220-8547-424e-ad60-6b59f26ccbaa",
+    "category": "science",
+    "navigationKeyword1": "geometry",
+    "navigationKeyword2": "volume",
+    "question": "Prism volume?",
+    "correctAnswer": "Base area \u00d7 height",
+    "incorrectAnswers": [
+      "1/3 Bh",
+      "2\u03c0rh",
+      "Bh^2"
+    ],
+    "explanation": "Any cross-section parallel translates.",
+    "keywords": [
+      "prism",
+      "volume"
+    ],
+    "source": "https://www.mathsisfun.com/geometry/prism.html"
+  },
+  {
+    "seedId": "af15e2ab-ddbf-443f-92d2-6166df1ac141",
+    "category": "science",
+    "navigationKeyword1": "geometry",
+    "navigationKeyword2": "volume",
+    "question": "Pyramid/cone volume?",
+    "correctAnswer": "(1/3) base area \u00d7 height",
+    "incorrectAnswers": [
+      "Bh",
+      "1/2 Bh",
+      "\u03c0r^3"
+    ],
+    "explanation": "Calculus Cavalieri justification.",
+    "keywords": [
+      "pyramid",
+      "volume"
+    ],
+    "source": "https://www.mathsisfun.com/geometry/pyramid.html"
+  },
+  {
+    "seedId": "86318d12-e53d-46fe-aaf3-1667238dde26",
+    "category": "science",
+    "navigationKeyword1": "geometry",
+    "navigationKeyword2": "volume",
+    "question": "Rectangular box volume?",
+    "correctAnswer": "lwh",
+    "incorrectAnswers": [
+      "l + w + h",
+      "2(lw+lh+wh)",
+      "lw/h"
+    ],
+    "explanation": "Three dimensions multiply.",
+    "keywords": [
+      "box",
+      "volume"
+    ],
+    "source": "https://www.mathsisfun.com/geometry/cuboid.html"
+  },
+  {
+    "seedId": "b88cbc11-58de-4d18-acd3-7a5eae76fbfb",
+    "category": "science",
+    "navigationKeyword1": "geometry",
+    "navigationKeyword2": "volume",
+    "question": "Cylinder volume?",
+    "correctAnswer": "\u03c0r^2 h",
+    "incorrectAnswers": [
+      "2\u03c0rh",
+      "2\u03c0r^2 h",
+      "\u03c0rh"
+    ],
+    "explanation": "Base times height.",
+    "keywords": [
+      "cylinder",
+      "volume"
+    ],
+    "source": "https://www.mathsisfun.com/geometry/cylinder.html"
+  },
+  {
+    "seedId": "4c8b5873-2379-48bc-aaf8-745f080dc324",
+    "category": "science",
+    "navigationKeyword1": "geometry",
+    "navigationKeyword2": "volume",
+    "question": "Sphere volume?",
+    "correctAnswer": "(4/3)\u03c0r^3",
+    "incorrectAnswers": [
+      "4\u03c0r^2",
+      "\u03c0r^2",
+      "2\u03c0r"
+    ],
+    "explanation": "Archimedes result.",
+    "keywords": [
+      "sphere",
+      "volume"
+    ],
+    "source": "https://www.mathsisfun.com/geometry/sphere.html"
+  },
+  {
+    "seedId": "75eb6ce3-aed6-4c77-886d-ca3f7a4a099d",
+    "category": "science",
+    "navigationKeyword1": "geometry",
+    "navigationKeyword2": "volume",
+    "question": "Similar solids volume ratio?",
+    "correctAnswer": "Scale factor cubed",
+    "incorrectAnswers": [
+      "Squared",
+      "Linear",
+      "Same as area"
+    ],
+    "explanation": "k^3 volumes.",
+    "keywords": [
+      "similar-volume",
+      "ratio"
+    ],
+    "source": "https://www.mathsisfun.com/geometry/similar.html"
+  },
+  {
+    "seedId": "a3c2ba69-6891-46d7-b85f-11ced0f892f5",
+    "category": "science",
+    "navigationKeyword1": "geometry",
+    "navigationKeyword2": "volume",
+    "question": "Density from mass and volume?",
+    "correctAnswer": "\u03c1 = m/V",
+    "incorrectAnswers": [
+      "mV",
+      "V/m",
+      "m+V"
+    ],
+    "explanation": "Units mass per volume.",
+    "keywords": [
+      "density",
+      "physics"
+    ],
+    "source": "https://www.britannica.com/science/density"
+  },
+  {
+    "seedId": "fb51d02c-d93f-4cf9-9aaf-8bfa553e7db9",
+    "category": "science",
+    "navigationKeyword1": "geometry",
+    "navigationKeyword2": "volume",
+    "question": "Displacement method volume irregular solid?",
+    "correctAnswer": "Submerge; volume water rise = object volume",
+    "incorrectAnswers": [
+      "Weigh only",
+      "Measure perimeter",
+      "Always impossible"
+    ],
+    "explanation": "Archimedes principle link.",
+    "keywords": [
+      "displacement",
+      "measurement"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Archimedes%27_principle"
+  },
+  {
+    "seedId": "334e7a30-e814-4397-a06e-2debe8e81451",
+    "category": "science",
+    "navigationKeyword1": "geometry",
+    "navigationKeyword2": "volume",
+    "question": "Frustum of cone volume?",
+    "correctAnswer": "Involves h and both radii (formula)",
+    "incorrectAnswers": [
+      "Same as cylinder",
+      "\u03c0r^2 only",
+      "1/2 \u03c0r^2 h always"
+    ],
+    "explanation": "Truncated cone.",
+    "keywords": [
+      "frustum",
+      "volume"
+    ],
+    "source": "https://www.mathsisfun.com/geometry/frustum.html"
+  },
+  {
+    "seedId": "1101dbc9-afd5-4912-896f-d680c8496e2d",
+    "category": "science",
+    "navigationKeyword1": "geometry",
+    "navigationKeyword2": "volume",
+    "question": "Cavalieri\u2019s principle idea?",
+    "correctAnswer": "Same cross-sectional area at every height \u21d2 same volume",
+    "incorrectAnswers": [
+      "Never true",
+      "Only circles",
+      "Only 2D"
+    ],
+    "explanation": "Justifies prism formulas.",
+    "keywords": [
+      "cavalieri",
+      "volume"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Cavalieri%27s_principle"
+  },
+  {
+    "seedId": "60fc312b-0f78-488f-b294-24f752ea7ac7",
+    "category": "science",
+    "navigationKeyword1": "geometry",
+    "navigationKeyword2": "volume",
+    "question": "Unit cube volume?",
+    "correctAnswer": "1 cubic unit",
+    "incorrectAnswers": [
+      "1 square unit",
+      "3 units",
+      "0"
+    ],
+    "explanation": "Foundation of measurement.",
+    "keywords": [
+      "units",
+      "volume"
+    ],
+    "source": "https://www.mathsisfun.com/geometry/cuboid.html"
+  },
+  {
+    "seedId": "712151b8-0ff9-49c1-8e16-bd4956dd8c2e",
+    "category": "science",
+    "navigationKeyword1": "geometry",
+    "navigationKeyword2": "volume",
+    "question": "Liters to cm^3?",
+    "correctAnswer": "1 L = 1000 cm^3",
+    "incorrectAnswers": [
+      "1 L = 1 cm^3",
+      "100 L = 1 cm^3",
+      "1 L = 100 cm^3"
+    ],
+    "explanation": "SI convenience.",
+    "keywords": [
+      "metric",
+      "conversion"
+    ],
+    "source": "https://www.nist.gov/pml/weights-and-measures/metric-si/si-units"
+  }
+]

@@ -1,0 +1,1094 @@
+{
+  "geology": [
+    {
+      "question": "What are Earth\u2019s main compositional layers?",
+      "correctAnswer": "Crust, mantle, and core",
+      "incorrectAnswers": [
+        "Sky, sea, soil",
+        "Lithosphere only",
+        "Ozone, troposphere, mesosphere"
+      ],
+      "explanation": "Layering reflects density and composition changes.",
+      "keywords": [
+        "earth-layers",
+        "geology"
+      ],
+      "source": "https://www.usgs.gov/faqs/what-are-earths-layers"
+    },
+    {
+      "question": "What is plate tectonics?",
+      "correctAnswer": "Earth\u2019s lithosphere divided into moving plates",
+      "incorrectAnswers": [
+        "Static continents",
+        "Only vertical faults",
+        "Only moon tides"
+      ],
+      "explanation": "Explains earthquakes, volcanoes, and mountain building.",
+      "keywords": [
+        "plate-tectonics",
+        "geology"
+      ],
+      "source": "https://www.usgs.gov/programs/earthquake-hazards/tectonic-plates-earths-lithosphere"
+    },
+    {
+      "question": "What is a fault?",
+      "correctAnswer": "Fracture where rock masses move",
+      "incorrectAnswers": [
+        "A river delta",
+        "A cloud type",
+        "A soil horizon"
+      ],
+      "explanation": "Earthquakes occur on faults.",
+      "keywords": [
+        "faults",
+        "earthquakes"
+      ],
+      "source": "https://www.usgs.gov/faqs/what-fault-and-what-are-different-types"
+    },
+    {
+      "question": "What scale measures earthquake energy release?",
+      "correctAnswer": "Moment magnitude (successor to Richter for large events)",
+      "incorrectAnswers": [
+        "Beaufort scale",
+        "Saffir-Simpson",
+        "pH scale"
+      ],
+      "explanation": "Seismologists use magnitude scales based on wave energy.",
+      "keywords": [
+        "magnitude",
+        "seismology"
+      ],
+      "source": "https://www.usgs.gov/programs/earthquake-hazards/magnitude-types"
+    },
+    {
+      "question": "What is igneous rock?",
+      "correctAnswer": "Formed from cooled magma or lava",
+      "incorrectAnswers": [
+        "From compacted shells only",
+        "From heat/pressure on existing rock",
+        "From evaporation only"
+      ],
+      "explanation": "Basalt and granite are examples.",
+      "keywords": [
+        "igneous",
+        "rocks"
+      ],
+      "source": "https://www.usgs.gov/schools/rock-cycle"
+    },
+    {
+      "question": "What is sedimentary rock?",
+      "correctAnswer": "Formed from deposited and lithified sediments",
+      "incorrectAnswers": [
+        "From magma cooling",
+        "From pure metamorphism only",
+        "From lightning"
+      ],
+      "explanation": "Often preserves fossils.",
+      "keywords": [
+        "sedimentary",
+        "rocks"
+      ],
+      "source": "https://www.usgs.gov/schools/rock-cycle"
+    },
+    {
+      "question": "What is metamorphic rock?",
+      "correctAnswer": "Formed by heat and pressure transforming existing rock",
+      "incorrectAnswers": [
+        "From lava only",
+        "From wind only",
+        "From photosynthesis"
+      ],
+      "explanation": "Examples: marble, schist.",
+      "keywords": [
+        "metamorphic",
+        "rocks"
+      ],
+      "source": "https://www.usgs.gov/schools/rock-cycle"
+    },
+    {
+      "question": "What is the rock cycle?",
+      "correctAnswer": "Processes that transform rock types over time",
+      "incorrectAnswers": [
+        "Only igneous exists",
+        "Rocks never change",
+        "Only water cycle"
+      ],
+      "explanation": "Weathering, melting, and uplift link types.",
+      "keywords": [
+        "rock-cycle",
+        "geology"
+      ],
+      "source": "https://www.usgs.gov/schools/rock-cycle"
+    },
+    {
+      "question": "What is a mineral?",
+      "correctAnswer": "Naturally occurring inorganic solid with ordered structure",
+      "incorrectAnswers": [
+        "Any rock mixture",
+        "Only liquids",
+        "Only man-made glass"
+      ],
+      "explanation": "Definite composition ranges are typical.",
+      "keywords": [
+        "minerals",
+        "crystals"
+      ],
+      "source": "https://www.usgs.gov/special-topics/educational-resources/what-mineral"
+    },
+    {
+      "question": "What is erosion?",
+      "correctAnswer": "Removal and transport of Earth materials by agents like water and wind",
+      "incorrectAnswers": [
+        "Only melting",
+        "Only earthquakes",
+        "Only photosynthesis"
+      ],
+      "explanation": "Different from weathering alone.",
+      "keywords": [
+        "erosion",
+        "weathering"
+      ],
+      "source": "https://www.usgs.gov/special-topics/water-science-school/erosion-and-deposition"
+    },
+    {
+      "question": "What is fossil record?",
+      "correctAnswer": "Preserved remains/traces of past life in rock",
+      "incorrectAnswers": [
+        "Only dinosaur bones in museums",
+        "Modern DNA only",
+        "Cloud patterns"
+      ],
+      "explanation": "Used to reconstruct ancient environments.",
+      "keywords": [
+        "fossils",
+        "paleontology"
+      ],
+      "source": "https://www.nps.gov/subjects/fossils/what-is-a-fossil.htm"
+    },
+    {
+      "question": "What is a volcano?",
+      "correctAnswer": "Vent where magma reaches the surface",
+      "incorrectAnswers": [
+        "Only underwater caves",
+        "A type of glacier",
+        "A storm system"
+      ],
+      "explanation": "Can build mountains and islands.",
+      "keywords": [
+        "volcano",
+        "magma"
+      ],
+      "source": "https://www.usgs.gov/faqs/what-volcano"
+    }
+  ],
+  "weather": [
+    {
+      "question": "What is weather vs climate (one-line distinction)?",
+      "correctAnswer": "Weather is short-term; climate is long-term average pattern",
+      "incorrectAnswers": [
+        "Same thing",
+        "Climate is one day",
+        "Weather is 30 years"
+      ],
+      "explanation": "Climate statistics summarize weather over decades.",
+      "keywords": [
+        "weather",
+        "climate"
+      ],
+      "source": "https://www.noaa.gov/education/resource-collections/weather-atmosphere"
+    },
+    {
+      "question": "What is humidity?",
+      "correctAnswer": "Water vapor content in air",
+      "incorrectAnswers": [
+        "Wind speed only",
+        "Air pressure only",
+        "Cloud height only"
+      ],
+      "explanation": "Warm air can hold more moisture.",
+      "keywords": [
+        "humidity",
+        "atmosphere"
+      ],
+      "source": "https://www.weather.gov/jetstream/humidity"
+    },
+    {
+      "question": "What is dew point?",
+      "correctAnswer": "Temperature air must cool to for saturation",
+      "incorrectAnswers": [
+        "Temperature of raindrops",
+        "Wind chill",
+        "Heat index"
+      ],
+      "explanation": "Higher dew point feels more muggy.",
+      "keywords": [
+        "dew-point",
+        "moisture"
+      ],
+      "source": "https://www.weather.gov/arx/dewpoint_vs_humidity"
+    },
+    {
+      "question": "What is a front?",
+      "correctAnswer": "Boundary between air masses",
+      "incorrectAnswers": [
+        "Center of a hurricane only",
+        "Ocean current",
+        "Soil layer"
+      ],
+      "explanation": "Cold/warm fronts bring changing weather.",
+      "keywords": [
+        "fronts",
+        "air-masses"
+      ],
+      "source": "https://www.noaa.gov/jetstream/synoptic/air-masses-and-fronts"
+    },
+    {
+      "question": "What is barometric pressure?",
+      "correctAnswer": "Force from weight of air above",
+      "incorrectAnswers": [
+        "Water depth pressure",
+        "Earthquake magnitude",
+        "Soil fertility"
+      ],
+      "explanation": "Falling pressure often signals storms.",
+      "keywords": [
+        "pressure",
+        "atmosphere"
+      ],
+      "source": "https://www.weather.gov/jetstream/pressure"
+    },
+    {
+      "question": "What causes wind?",
+      "correctAnswer": "Pressure differences make air flow from high to low",
+      "incorrectAnswers": [
+        "Moon phases alone",
+        "Only ocean tides",
+        "Only lightning"
+      ],
+      "explanation": "Coriolis effect steers large-scale flow.",
+      "keywords": [
+        "wind",
+        "pressure-gradient"
+      ],
+      "source": "https://www.noaa.gov/jetstream/global/wind"
+    },
+    {
+      "question": "What is precipitation?",
+      "correctAnswer": "Water falling from clouds (rain, snow, etc.)",
+      "incorrectAnswers": [
+        "Only fog",
+        "Only humidity",
+        "Only evaporation"
+      ],
+      "explanation": "Requires condensation and growth of hydrometeors.",
+      "keywords": [
+        "precipitation",
+        "water-cycle"
+      ],
+      "source": "https://www.noaa.gov/education/resource-collections/water-cycle"
+    },
+    {
+      "question": "What is thunderstorm fuel?",
+      "correctAnswer": "Moist unstable air and lifting mechanism",
+      "incorrectAnswers": [
+        "Dry stable air",
+        "Clear skies only",
+        "High pressure only"
+      ],
+      "explanation": "Updrafts build tall cumulonimbus clouds.",
+      "keywords": [
+        "thunderstorms",
+        "convection"
+      ],
+      "source": "https://www.weather.gov/jetstream/tstorms"
+    },
+    {
+      "question": "What is tornado (basics)?",
+      "correctAnswer": "Violently rotating column of air touching ground",
+      "incorrectAnswers": [
+        "Only over oceans",
+        "Only winter storms",
+        "Only at equator"
+      ],
+      "explanation": "Often from supercell thunderstorms.",
+      "keywords": [
+        "tornado",
+        "severe-weather"
+      ],
+      "source": "https://www.nssl.noaa.gov/education/svrwx101/tornadoes/"
+    },
+    {
+      "question": "What is hurricane (basics)?",
+      "correctAnswer": "Tropical cyclone with organized thunderstorms and low center",
+      "incorrectAnswers": [
+        "Cold front snowstorm",
+        "Dust devil",
+        "Fair-weather cloud"
+      ],
+      "explanation": "Warm ocean waters fuel development.",
+      "keywords": [
+        "hurricane",
+        "tropical-cyclone"
+      ],
+      "source": "https://www.noaa.gov/education/resource-collections/hurricanes"
+    },
+    {
+      "question": "What is radar used for in weather?",
+      "correctAnswer": "Detect precipitation and storm motion",
+      "incorrectAnswers": [
+        "Measure earthquakes",
+        "Map fossils",
+        "Sample magma"
+      ],
+      "explanation": "Microwave pulses reflect off hydrometeors.",
+      "keywords": [
+        "radar",
+        "forecasting"
+      ],
+      "source": "https://www.weather.gov/jetstream/radar"
+    },
+    {
+      "question": "What is weather forecast uncertainty?",
+      "correctAnswer": "Small errors grow because the atmosphere is chaotic",
+      "incorrectAnswers": [
+        "Forecasts are exact forever",
+        "Models ignore physics",
+        "Satellites are unnecessary"
+      ],
+      "explanation": "Ensemble forecasts express uncertainty.",
+      "keywords": [
+        "chaos",
+        "forecasting"
+      ],
+      "source": "https://www.weather.gov/jetstream/model_chaos"
+    }
+  ],
+  "climate": [
+    {
+      "question": "What is climate normals?",
+      "correctAnswer": "Long-term averages and variability (often 30-year)",
+      "incorrectAnswers": [
+        "Yesterday\u2019s weather",
+        "One storm track",
+        "A single thermometer reading"
+      ],
+      "explanation": "WMO uses standard reference periods.",
+      "keywords": [
+        "climate-normals",
+        "averages"
+      ],
+      "source": "https://www.ncei.noaa.gov/access/monitoring/climate-normals/"
+    },
+    {
+      "question": "What is greenhouse effect (natural)?",
+      "correctAnswer": "Gases trap heat; warms Earth\u2019s surface",
+      "incorrectAnswers": [
+        "Stops all sunlight",
+        "Cools Earth instantly",
+        "Only human-made"
+      ],
+      "explanation": "Without it Earth would be much colder.",
+      "keywords": [
+        "greenhouse-effect",
+        "energy-balance"
+      ],
+      "source": "https://climate.nasa.gov/causes/"
+    },
+    {
+      "question": "What is El Ni\u00f1o (concept)?",
+      "correctAnswer": "Warm phase of ENSO affecting Pacific and global weather",
+      "incorrectAnswers": [
+        "A permanent ocean current",
+        "A type of glacier",
+        "A moon cycle"
+      ],
+      "explanation": "Trade wind changes alter sea surface temperatures.",
+      "keywords": [
+        "el-nino",
+        "enso"
+      ],
+      "source": "https://www.climate.gov/news-features/blogs/enso/what-el-ni\u00f1o-and-what-does-it-mean"
+    },
+    {
+      "question": "What is La Ni\u00f1a?",
+      "correctAnswer": "Cool phase of ENSO",
+      "incorrectAnswers": [
+        "Same as El Ni\u00f1o",
+        "A hurricane category",
+        "A drought law"
+      ],
+      "explanation": "Often opposite rainfall teleconnections.",
+      "keywords": [
+        "la-nina",
+        "enso"
+      ],
+      "source": "https://www.climate.gov/news-features/blogs/enso/what-la-ni\u00f1a-and-what-does-it-mean"
+    },
+    {
+      "question": "What is albedo?",
+      "correctAnswer": "Fraction of sunlight reflected",
+      "incorrectAnswers": [
+        "Heat content of ocean",
+        "Wind speed",
+        "Air pressure"
+      ],
+      "explanation": "Ice and clouds increase planetary albedo.",
+      "keywords": [
+        "albedo",
+        "radiation"
+      ],
+      "source": "https://climate.nasa.gov/news/2948/earths-albedo/"
+    },
+    {
+      "question": "What is sea level rise driver (major)?",
+      "correctAnswer": "Thermal expansion + land ice melt",
+      "incorrectAnswers": [
+        "Only boats displacing water",
+        "Only tides",
+        "Only earthquakes"
+      ],
+      "explanation": "Climate change increases ocean heat and ice loss.",
+      "keywords": [
+        "sea-level",
+        "climate-change"
+      ],
+      "source": "https://climate.nasa.gov/vital-signs/sea-level/"
+    },
+    {
+      "question": "What is IPCC?",
+      "correctAnswer": "Intergovernmental Panel on Climate Change assessments",
+      "incorrectAnswers": [
+        "A weather app",
+        "A hurricane name list",
+        "A mineral database"
+      ],
+      "explanation": "Synthesizes climate science for policymakers.",
+      "keywords": [
+        "ipcc",
+        "assessment"
+      ],
+      "source": "https://www.ipcc.ch/"
+    },
+    {
+      "question": "What is carbon footprint (basic idea)?",
+      "correctAnswer": "GHG emissions attributable to activities",
+      "incorrectAnswers": [
+        "Only CO in car exhaust",
+        "Only water use",
+        "Only plastic mass"
+      ],
+      "explanation": "Often expressed as CO2-equivalent.",
+      "keywords": [
+        "ghg",
+        "emissions"
+      ],
+      "source": "https://www.epa.gov/ghgemissions/understanding-global-warming-potentials"
+    },
+    {
+      "question": "What is feedback in climate (example)?",
+      "correctAnswer": "Ice melt lowers albedo causing more warming",
+      "incorrectAnswers": [
+        "Always stabilizing",
+        "Never exists",
+        "Only daily weather"
+      ],
+      "explanation": "Positive feedback amplifies change.",
+      "keywords": [
+        "feedback",
+        "albedo"
+      ],
+      "source": "https://climate.nasa.gov/evidence/"
+    },
+    {
+      "question": "What is proxy data in paleoclimate?",
+      "correctAnswer": "Indirect records like ice cores and tree rings",
+      "incorrectAnswers": [
+        "Only thermometers since 1800",
+        "Only radar",
+        "Only GPS speed"
+      ],
+      "explanation": "Extends climate knowledge before instruments.",
+      "keywords": [
+        "paleoclimate",
+        "proxies"
+      ],
+      "source": "https://www.climate.gov/maps-data/education/paleoclimatology-proxies"
+    },
+    {
+      "question": "What is urban heat island?",
+      "correctAnswer": "Cities warmer than surrounding rural areas",
+      "incorrectAnswers": [
+        "Cities cooler always",
+        "Only at night never",
+        "Only in winter never"
+      ],
+      "explanation": "Surfaces and waste heat alter local climate.",
+      "keywords": [
+        "uhi",
+        "cities"
+      ],
+      "source": "https://www.epa.gov/heatislands/learn-about-heat-islands"
+    },
+    {
+      "question": "What is mitigation vs adaptation?",
+      "correctAnswer": "Reduce causes vs cope with impacts",
+      "incorrectAnswers": [
+        "Same word",
+        "Only adaptation matters",
+        "Only mitigation is defined"
+      ],
+      "explanation": "Both are used in climate strategies.",
+      "keywords": [
+        "mitigation",
+        "adaptation"
+      ],
+      "source": "https://www.un.org/en/climatechange/science/key-findings#physical-science"
+    }
+  ],
+  "oceanography": [
+    {
+      "question": "What is salinity?",
+      "correctAnswer": "Dissolved salts concentration in seawater",
+      "incorrectAnswers": [
+        "Only temperature",
+        "Only wave height",
+        "Only fish count"
+      ],
+      "explanation": "Average seawater ~35 ppt in open ocean.",
+      "keywords": [
+        "salinity",
+        "seawater"
+      ],
+      "source": "https://oceanservice.noaa.gov/education/kits/pdfs/ocean_facts.pdf"
+    },
+    {
+      "question": "What drives surface ocean currents (major)?",
+      "correctAnswer": "Wind stress + Earth rotation",
+      "incorrectAnswers": [
+        "Only moon heat",
+        "Only earthquakes",
+        "Only evaporation"
+      ],
+      "explanation": "Gyres circulate water in basins.",
+      "keywords": [
+        "currents",
+        "wind"
+      ],
+      "source": "https://oceanservice.noaa.gov/education/kits/currents/"
+    },
+    {
+      "question": "What is thermohaline circulation idea?",
+      "correctAnswer": "Deep circulation driven by density (temperature + salinity)",
+      "incorrectAnswers": [
+        "Only surface waves",
+        "Only tides in lakes",
+        "Only coral growth"
+      ],
+      "explanation": "Connects global ocean basins.",
+      "keywords": [
+        "thermohaline",
+        "deep-ocean"
+      ],
+      "source": "https://oceanservice.noaa.gov/education/kits/currents/05conveyor2.html"
+    },
+    {
+      "question": "What causes tides (primary)?",
+      "correctAnswer": "Gravitational pull of Moon (and Sun) on Earth",
+      "incorrectAnswers": [
+        "Only wind",
+        "Only earthquakes",
+        "Only fish migration"
+      ],
+      "explanation": "Tidal bulges follow astronomical forcing.",
+      "keywords": [
+        "tides",
+        "moon"
+      ],
+      "source": "https://oceanservice.noaa.gov/education/kits/tides/"
+    },
+    {
+      "question": "What is a wave crest?",
+      "correctAnswer": "Highest point of a wave",
+      "incorrectAnswers": [
+        "Lowest point",
+        "Half wavelength",
+        "Seafloor trench"
+      ],
+      "explanation": "Opposite of trough.",
+      "keywords": [
+        "waves",
+        "ocean"
+      ],
+      "source": "https://oceanservice.noaa.gov/education/kits/waves/"
+    },
+    {
+      "question": "What is photosynthesis zone in ocean?",
+      "correctAnswer": "Sunlit euphotic zone where phytoplankton thrive",
+      "incorrectAnswers": [
+        "Hadal zone",
+        "Abyss with no light always productive",
+        "Only beaches"
+      ],
+      "explanation": "Light limits primary production depth.",
+      "keywords": [
+        "euphotic",
+        "phytoplankton"
+      ],
+      "source": "https://oceanservice.noaa.gov/facts/euphotic.html"
+    },
+    {
+      "question": "What is coral bleaching (cause)?",
+      "correctAnswer": "Stress (often heat) leads corals to expel symbiotic algae",
+      "incorrectAnswers": [
+        "Sharks eating coral",
+        "Salt disappearing",
+        "Tides stopping"
+      ],
+      "explanation": "Recovery depends on stress duration.",
+      "keywords": [
+        "coral",
+        "bleaching"
+      ],
+      "source": "https://oceanservice.noaa.gov/education/coral-reefs/coral-bleaching/"
+    },
+    {
+      "question": "What is upwelling?",
+      "correctAnswer": "Deep nutrient-rich water rises to surface",
+      "incorrectAnswers": [
+        "Water sinks only",
+        "Ice forms",
+        "Waves stop"
+      ],
+      "explanation": "Supports productive fisheries.",
+      "keywords": [
+        "upwelling",
+        "nutrients"
+      ],
+      "source": "https://oceanservice.noaa.gov/education/kits/currents/06upwelling.html"
+    },
+    {
+      "question": "What is SONAR used for in oceanography?",
+      "correctAnswer": "Mapping seafloor and water properties using sound",
+      "incorrectAnswers": [
+        "Measuring star brightness",
+        "Counting tree rings",
+        "Detecting earthquakes only"
+      ],
+      "explanation": "Sound propagates in water.",
+      "keywords": [
+        "sonar",
+        "mapping"
+      ],
+      "source": "https://oceanservice.noaa.gov/facts/sonar.html"
+    },
+    {
+      "question": "What is continental shelf?",
+      "correctAnswer": "Shallow submerged edge of continent",
+      "incorrectAnswers": [
+        "Deep trench",
+        "Mid-ocean ridge only",
+        "Beach dune"
+      ],
+      "explanation": "Often rich in marine life.",
+      "keywords": [
+        "continental-shelf",
+        "bathymetry"
+      ],
+      "source": "https://oceanservice.noaa.gov/facts/continental-shelf.html"
+    },
+    {
+      "question": "What is a mid-ocean ridge?",
+      "correctAnswer": "Undersea mountain chain where new crust forms",
+      "incorrectAnswers": [
+        "Subduction zone only",
+        "Coral reef",
+        "Estuary"
+      ],
+      "explanation": "Spreading centers create basaltic crust.",
+      "keywords": [
+        "mid-ocean-ridge",
+        "plate-tectonics"
+      ],
+      "source": "https://www.noaa.gov/explainers/mid-ocean-ridges"
+    },
+    {
+      "question": "What is estuary?",
+      "correctAnswer": "Where river meets sea; mixed salinity",
+      "incorrectAnswers": [
+        "Deep ocean trench",
+        "Desert playa",
+        "Alpine glacier"
+      ],
+      "explanation": "Important nurseries for species.",
+      "keywords": [
+        "estuary",
+        "brackish"
+      ],
+      "source": "https://oceanservice.noaa.gov/education/kits/estuaries/"
+    }
+  ],
+  "astronomy": [
+    {
+      "question": "In Earth\u2013space context, what is a satellite?",
+      "correctAnswer": "Object orbiting a planet",
+      "incorrectAnswers": [
+        "Only artificial",
+        "Only comets",
+        "Only asteroids"
+      ],
+      "explanation": "Moon is a natural satellite.",
+      "keywords": [
+        "satellite",
+        "orbit"
+      ],
+      "source": "https://science.nasa.gov/earth/"
+    },
+    {
+      "question": "What is a light-year?",
+      "correctAnswer": "Distance light travels in one year",
+      "incorrectAnswers": [
+        "Time unit",
+        "Mass unit",
+        "Speed of sound distance"
+      ],
+      "explanation": "Used for interstellar distances.",
+      "keywords": [
+        "light-year",
+        "distance"
+      ],
+      "source": "https://science.nasa.gov/universe/galaxies/"
+    },
+    {
+      "question": "What is the ecliptic?",
+      "correctAnswer": "Apparent path of the Sun on the celestial sphere",
+      "incorrectAnswers": [
+        "Moon\u2019s orbit pole",
+        "Earth\u2019s equator line in sky",
+        "Milky Way center always"
+      ],
+      "explanation": "Planets roughly follow the ecliptic plane.",
+      "keywords": [
+        "ecliptic",
+        "sky"
+      ],
+      "source": "https://science.nasa.gov/skywatching/"
+    },
+    {
+      "question": "What causes seasons on Earth?",
+      "correctAnswer": "Tilt of Earth\u2019s axis relative to orbit",
+      "incorrectAnswers": [
+        "Changing Earth-Sun distance alone",
+        "Solar flares",
+        "Moon phases"
+      ],
+      "explanation": "Axial tilt changes solar intensity per hemisphere.",
+      "keywords": [
+        "seasons",
+        "axial-tilt"
+      ],
+      "source": "https://science.nasa.gov/earth/"
+    },
+    {
+      "question": "What is a lunar phase?",
+      "correctAnswer": "Sun\u2013Earth\u2013Moon geometry changing illuminated fraction seen",
+      "incorrectAnswers": [
+        "Moon emits its own light phases",
+        "Clouds on Moon",
+        "Earth\u2019s shadow always"
+      ],
+      "explanation": "Phases repeat monthly.",
+      "keywords": [
+        "moon-phases",
+        "geometry"
+      ],
+      "source": "https://science.nasa.gov/moon/"
+    },
+    {
+      "question": "What is solar eclipse (basic)?",
+      "correctAnswer": "Moon blocks Sun from a viewer\u2019s location",
+      "incorrectAnswers": [
+        "Earth blocks Sun",
+        "Mars blocks Sun",
+        "Sun blocks Moon"
+      ],
+      "explanation": "Requires new moon near node alignment.",
+      "keywords": [
+        "solar-eclipse",
+        "moon"
+      ],
+      "source": "https://science.nasa.gov/eclipses/"
+    },
+    {
+      "question": "What is lunar eclipse (basic)?",
+      "correctAnswer": "Earth\u2019s shadow falls on the Moon",
+      "incorrectAnswers": [
+        "Moon blocks Earth",
+        "Sun blocks Moon",
+        "Only penumbra never"
+      ],
+      "explanation": "Occurs at full moon alignment.",
+      "keywords": [
+        "lunar-eclipse",
+        "moon"
+      ],
+      "source": "https://science.nasa.gov/eclipses/"
+    },
+    {
+      "question": "What is a meteor?",
+      "correctAnswer": "Bright streak from meteoroid burning in atmosphere",
+      "incorrectAnswers": [
+        "A slow satellite",
+        "An asteroid in space always",
+        "A comet tail on Earth"
+      ],
+      "explanation": "Called meteorite if survives to ground.",
+      "keywords": [
+        "meteor",
+        "atmosphere"
+      ],
+      "source": "https://science.nasa.gov/solar-system/meteors-meteorites/"
+    },
+    {
+      "question": "What is an exoplanet?",
+      "correctAnswer": "Planet outside our solar system",
+      "incorrectAnswers": [
+        "Only dwarf planets",
+        "Only moons",
+        "Only asteroids"
+      ],
+      "explanation": "Detected via transits, RV, imaging.",
+      "keywords": [
+        "exoplanets",
+        "detection"
+      ],
+      "source": "https://science.nasa.gov/exoplanets/"
+    },
+    {
+      "question": "What is habitable zone (informal)?",
+      "correctAnswer": "Region where liquid water could exist on a rocky planet",
+      "incorrectAnswers": [
+        "Where life is proven",
+        "Inside the Sun",
+        "Only on moons of Pluto"
+      ],
+      "explanation": "Depends on star luminosity and atmosphere.",
+      "keywords": [
+        "habitable-zone",
+        "exoplanets"
+      ],
+      "source": "https://science.nasa.gov/exoplanets/"
+    },
+    {
+      "question": "What is Doppler shift for stars?",
+      "correctAnswer": "Motion changes observed wavelengths",
+      "incorrectAnswers": [
+        "Changes star color only permanently",
+        "Means stars rotate backwards",
+        "Only for sound in air"
+      ],
+      "explanation": "Redshift/blueshift indicates line-of-sight velocity.",
+      "keywords": [
+        "doppler",
+        "spectroscopy"
+      ],
+      "source": "https://science.nasa.gov/universe/galaxies/"
+    },
+    {
+      "question": "What is a constellation?",
+      "correctAnswer": "A named pattern of stars from Earth\u2019s viewpoint",
+      "incorrectAnswers": [
+        "A physical star cluster always",
+        "A galaxy always",
+        "A planet group"
+      ],
+      "explanation": "Patterns are cultural projections.",
+      "keywords": [
+        "constellations",
+        "sky"
+      ],
+      "source": "https://science.nasa.gov/skywatching/"
+    }
+  ],
+  "space": [
+    {
+      "question": "What is microgravity in orbit often called colloquially?",
+      "correctAnswer": "Weightlessness (actually free fall)",
+      "incorrectAnswers": [
+        "Zero gravity everywhere in universe",
+        "Anti-gravity field",
+        "Vacuum pressure pushing up"
+      ],
+      "explanation": "Orbit is continuous free fall around Earth.",
+      "keywords": [
+        "microgravity",
+        "iss"
+      ],
+      "source": "https://www.nasa.gov/humans-in-space/"
+    },
+    {
+      "question": "What is escape velocity idea?",
+      "correctAnswer": "Speed needed to break away without further propulsion",
+      "incorrectAnswers": [
+        "Speed to land",
+        "Speed of sound always",
+        "Orbital speed at ISS always"
+      ],
+      "explanation": "Depends on body mass and radius.",
+      "keywords": [
+        "escape-velocity",
+        "rockets"
+      ],
+      "source": "https://science.nasa.gov/learn/basics/"
+    },
+    {
+      "question": "What is geostationary orbit concept?",
+      "correctAnswer": "Orbit with period matching Earth\u2019s spin (uses equatorial plane)",
+      "incorrectAnswers": [
+        "Polar orbit",
+        "Escape trajectory",
+        "Suborbital hop"
+      ],
+      "explanation": "Useful for communications satellites.",
+      "keywords": [
+        "geostationary",
+        "orbit"
+      ],
+      "source": "https://www.nasa.gov/directorates/heo/scan/spectrum/space-communications-navigation/"
+    },
+    {
+      "question": "What is LEO?",
+      "correctAnswer": "Low Earth orbit, relatively close and common for satellites",
+      "incorrectAnswers": [
+        "Lagrange point beyond Pluto",
+        "Inside the core",
+        "Only on the Moon"
+      ],
+      "explanation": "ISS orbits in LEO.",
+      "keywords": [
+        "leo",
+        "satellites"
+      ],
+      "source": "https://www.nasa.gov/humans-in-space/"
+    },
+    {
+      "question": "What is Van Allen belts (basic)?",
+      "correctAnswer": "Zones of trapped charged particles around Earth",
+      "incorrectAnswers": [
+        "Ocean currents",
+        "Desert belts",
+        "Wind belts only"
+      ],
+      "explanation": "Important for radiation exposure planning.",
+      "keywords": [
+        "van-allen",
+        "radiation"
+      ],
+      "source": "https://science.nasa.gov/earth/"
+    },
+    {
+      "question": "What is space debris risk?",
+      "correctAnswer": "Collisions with tracked/untracked objects",
+      "incorrectAnswers": [
+        "No risk",
+        "Only inside ISS",
+        "Only on Mars"
+      ],
+      "explanation": "Shielding and maneuvering mitigate risk.",
+      "keywords": [
+        "debris",
+        "satellites"
+      ],
+      "source": "https://www.orbitaldebris.jsc.nasa.gov/"
+    },
+    {
+      "question": "What is re-entry heating?",
+      "correctAnswer": "Kinetic energy converts to heat in atmosphere",
+      "incorrectAnswers": [
+        "Sunlight only",
+        "Friction alone is the only explanation always",
+        "Cold plasma"
+      ],
+      "explanation": "Thermal protection systems are required.",
+      "keywords": [
+        "reentry",
+        "heat-shield"
+      ],
+      "source": "https://www.nasa.gov/humans-in-space/"
+    },
+    {
+      "question": "What is a space suit purpose?",
+      "correctAnswer": "Provide pressure, oxygen, temperature control",
+      "incorrectAnswers": [
+        "Block gravity",
+        "Create artificial mass",
+        "Replace bones"
+      ],
+      "explanation": "Protects astronauts in vacuum.",
+      "keywords": [
+        "spacesuit",
+        "eva"
+      ],
+      "source": "https://www.nasa.gov/humans-in-space/"
+    },
+    {
+      "question": "What is docking vs berthing?",
+      "correctAnswer": "Controlled mating of spacecraft (methods differ)",
+      "incorrectAnswers": [
+        "Same as landing on Earth",
+        "Only for airplanes",
+        "Only robotic on Mars"
+      ],
+      "explanation": "ISS logistics use both approaches.",
+      "keywords": [
+        "docking",
+        "iss"
+      ],
+      "source": "https://www.nasa.gov/international-space-station/"
+    },
+    {
+      "question": "What is RTG (space power, concept)?",
+      "correctAnswer": "Radioisotope thermoelectric generator for electricity/heat",
+      "incorrectAnswers": [
+        "Solar panel only",
+        "Chemical battery only",
+        "Wind turbine"
+      ],
+      "explanation": "Used far from Sun.",
+      "keywords": [
+        "rtg",
+        "power"
+      ],
+      "source": "https://science.nasa.gov/solar-system/"
+    },
+    {
+      "question": "What is regolith?",
+      "correctAnswer": "Loose surface layer on Moon/asteroids",
+      "incorrectAnswers": [
+        "Liquid lava",
+        "Earth\u2019s core metal",
+        "Ozone layer"
+      ],
+      "explanation": "Landing and sampling deal with regolith.",
+      "keywords": [
+        "regolith",
+        "moon"
+      ],
+      "source": "https://science.nasa.gov/moon/"
+    },
+    {
+      "question": "What is a launch window?",
+      "correctAnswer": "Time range when mission can launch to meet targets",
+      "incorrectAnswers": [
+        "Any time always",
+        "Only daytime",
+        "Only winter"
+      ],
+      "explanation": "Orbit geometry and lighting drive constraints.",
+      "keywords": [
+        "launch-window",
+        "mission-design"
+      ],
+      "source": "https://www.nasa.gov/humans-in-space/"
+    }
+  ]
+}

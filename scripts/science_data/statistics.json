@@ -1,0 +1,1094 @@
+{
+  "descriptive": [
+    {
+      "question": "Mean of data?",
+      "correctAnswer": "Sum divided by count",
+      "incorrectAnswers": [
+        "Middle value always",
+        "Most frequent always",
+        "Range"
+      ],
+      "explanation": "Sensitive to outliers.",
+      "keywords": [
+        "mean",
+        "average"
+      ],
+      "source": "https://openstax.org/books/introductory-statistics/pages/2-3-measures-of-the-center-of-the-data"
+    },
+    {
+      "question": "Median?",
+      "correctAnswer": "Middle value when sorted",
+      "incorrectAnswers": [
+        "Always equals mean",
+        "Most frequent",
+        "Smallest value"
+      ],
+      "explanation": "Robust to outliers.",
+      "keywords": [
+        "median",
+        "center"
+      ],
+      "source": "https://openstax.org/books/introductory-statistics/pages/2-3-measures-of-the-center-of-the-data"
+    },
+    {
+      "question": "Mode?",
+      "correctAnswer": "Most frequent value",
+      "incorrectAnswers": [
+        "Always unique",
+        "Always numeric average",
+        "Largest value"
+      ],
+      "explanation": "May be multimodal.",
+      "keywords": [
+        "mode",
+        "center"
+      ],
+      "source": "https://openstax.org/books/introductory-statistics/pages/2-3-measures-of-the-center-of-the-data"
+    },
+    {
+      "question": "Range?",
+      "correctAnswer": "Max \u2212 min",
+      "incorrectAnswers": [
+        "IQR",
+        "Std dev",
+        "Mean/median"
+      ],
+      "explanation": "Very sensitive to extremes.",
+      "keywords": [
+        "range",
+        "spread"
+      ],
+      "source": "https://openstax.org/books/introductory-statistics/pages/2-4-measures-of-the-location-of-the-data"
+    },
+    {
+      "question": "Variance (sample) uses divisor (common)?",
+      "correctAnswer": "n\u22121 for unbiased estimate (typical sample formula)",
+      "incorrectAnswers": [
+        "Always n",
+        "Always n+1",
+        "Always 1"
+      ],
+      "explanation": "Bessel\u2019s correction.",
+      "keywords": [
+        "variance",
+        "spread"
+      ],
+      "source": "https://openstax.org/books/introductory-statistics/pages/2-7-measures-of-the-spread-of-the-data"
+    },
+    {
+      "question": "Standard deviation interpretation?",
+      "correctAnswer": "Typical distance from mean (same units)",
+      "incorrectAnswers": [
+        "Squared units always",
+        "Always <0",
+        "Same as range always"
+      ],
+      "explanation": "Square root of variance.",
+      "keywords": [
+        "standard-deviation",
+        "spread"
+      ],
+      "source": "https://openstax.org/books/introductory-statistics/pages/2-7-measures-of-the-spread-of-the-data"
+    },
+    {
+      "question": "IQR?",
+      "correctAnswer": "Q3 \u2212 Q1",
+      "incorrectAnswers": [
+        "Max\u2212min",
+        "Mean\u2212median",
+        "Q1+Q3"
+      ],
+      "explanation": "Robust spread measure.",
+      "keywords": [
+        "iqr",
+        "quartiles"
+      ],
+      "source": "https://openstax.org/books/introductory-statistics/pages/2-4-measures-of-the-location-of-the-data"
+    },
+    {
+      "question": "Five-number summary?",
+      "correctAnswer": "Min, Q1, median, Q3, max",
+      "incorrectAnswers": [
+        "Mean, mode, sd",
+        "Only mean",
+        "Only histogram"
+      ],
+      "explanation": "Boxplot basis.",
+      "keywords": [
+        "five-number-summary",
+        "boxplot"
+      ],
+      "source": "https://openstax.org/books/introductory-statistics/pages/2-4-measures-of-the-location-of-the-data"
+    },
+    {
+      "question": "Skew right (positive) tail?",
+      "correctAnswer": "Longer tail to the right; mean often > median",
+      "incorrectAnswers": [
+        "Tail left",
+        "Symmetric always",
+        "Mean < median typically"
+      ],
+      "explanation": "Outliers on high end.",
+      "keywords": [
+        "skewness",
+        "shape"
+      ],
+      "source": "https://openstax.org/books/introductory-statistics/pages/2-5-box-plots"
+    },
+    {
+      "question": "z-score?",
+      "correctAnswer": "(x \u2212 \u03bc)/\u03c3 (population) or sample analog",
+      "incorrectAnswers": [
+        "x/\u03c3",
+        "\u03bc \u2212 x",
+        "x + \u03bc"
+      ],
+      "explanation": "Standardizes location.",
+      "keywords": [
+        "z-score",
+        "standardize"
+      ],
+      "source": "https://openstax.org/books/introductory-statistics/pages/6-1-the-standard-normal-distribution"
+    },
+    {
+      "question": "Empirical rule (normal) ~68%?",
+      "correctAnswer": "Within 1\u03c3 of mean",
+      "incorrectAnswers": [
+        "Within 2\u03c3 only",
+        "Within 0.5\u03c3",
+        "Outside 1\u03c3"
+      ],
+      "explanation": "95% ~2\u03c3, 99.7% ~3\u03c3.",
+      "keywords": [
+        "empirical-rule",
+        "normal"
+      ],
+      "source": "https://openstax.org/books/introductory-statistics/pages/6-1-the-standard-normal-distribution"
+    },
+    {
+      "question": "Coefficient of variation?",
+      "correctAnswer": "\u03c3/\u03bc (relative spread)",
+      "incorrectAnswers": [
+        "\u03bc/\u03c3",
+        "IQR/median always same",
+        "Range only"
+      ],
+      "explanation": "Compare variability across scales.",
+      "keywords": [
+        "cv",
+        "relative-spread"
+      ],
+      "source": "https://openstax.org/books/introductory-statistics/pages/2-7-measures-of-the-spread-of-the-data"
+    }
+  ],
+  "distributions": [
+    {
+      "question": "Normal distribution shape?",
+      "correctAnswer": "Symmetric bell curve",
+      "incorrectAnswers": [
+        "Right skew always",
+        "Uniform flat",
+        "Bimodal always"
+      ],
+      "explanation": "Defined by \u03bc, \u03c3.",
+      "keywords": [
+        "normal",
+        "distribution"
+      ],
+      "source": "https://openstax.org/books/introductory-statistics/pages/6-1-the-standard-normal-distribution"
+    },
+    {
+      "question": "Binomial is discrete for?",
+      "correctAnswer": "Counts of successes in n trials",
+      "incorrectAnswers": [
+        "Continuous heights",
+        "Normal always",
+        "Uniform continuous"
+      ],
+      "explanation": "Finite support 0..n.",
+      "keywords": [
+        "binomial",
+        "discrete"
+      ],
+      "source": "https://openstax.org/books/introductory-statistics/pages/4-3-the-binomial-distribution"
+    },
+    {
+      "question": "Poisson often models?",
+      "correctAnswer": "Event counts in fixed interval",
+      "incorrectAnswers": [
+        "Continuous time always normal",
+        "Only binomial",
+        "Uniform"
+      ],
+      "explanation": "Mean \u2248 variance property.",
+      "keywords": [
+        "poisson",
+        "counts"
+      ],
+      "source": "https://openstax.org/books/introductory-statistics/pages/4-6-the-poisson-distribution"
+    },
+    {
+      "question": "Uniform distribution property?",
+      "correctAnswer": "Constant density on interval",
+      "incorrectAnswers": [
+        "Bell-shaped",
+        "Always skewed",
+        "Unbounded support"
+      ],
+      "explanation": "Equal likelihood.",
+      "keywords": [
+        "uniform",
+        "continuous"
+      ],
+      "source": "https://openstax.org/books/introductory-statistics/pages/4-5-continuous-random-variables"
+    },
+    {
+      "question": "t-distribution vs normal (heavier tails)?",
+      "correctAnswer": "More probability in tails; depends on df",
+      "incorrectAnswers": [
+        "Identical always",
+        "No parameters",
+        "Only discrete"
+      ],
+      "explanation": "Used with small samples for mean inference.",
+      "keywords": [
+        "t-distribution",
+        "inference"
+      ],
+      "source": "https://openstax.org/books/introductory-statistics/pages/8-2-a-single-population-mean-using-the-student-t-distribution"
+    },
+    {
+      "question": "Chi-square distribution used for?",
+      "correctAnswer": "Variance tests, goodness-of-fit, independence tests",
+      "incorrectAnswers": [
+        "Only z-tests for means",
+        "Only regression slopes",
+        "Only Bayesian priors"
+      ],
+      "explanation": "Skewed nonnegative.",
+      "keywords": [
+        "chi-square",
+        "inference"
+      ],
+      "source": "https://openstax.org/books/introductory-statistics/pages/11-1-chi-square-goodness-of-fit-test"
+    },
+    {
+      "question": "Exponential distribution models?",
+      "correctAnswer": "Waiting time between Poisson events (memoryless)",
+      "incorrectAnswers": [
+        "Binomial counts",
+        "Normal errors",
+        "Uniform counts"
+      ],
+      "explanation": "Continuous waiting.",
+      "keywords": [
+        "exponential",
+        "waiting"
+      ],
+      "source": "https://openstax.org/books/introductory-statistics/pages/4-5-continuous-random-variables"
+    },
+    {
+      "question": "Central Limit Theorem idea?",
+      "correctAnswer": "Sample means approximately normal for large n (conditions)",
+      "incorrectAnswers": [
+        "Always normal for any n=2",
+        "Never normal",
+        "Only uniform populations"
+      ],
+      "explanation": "Enables inference.",
+      "keywords": [
+        "clt",
+        "sampling"
+      ],
+      "source": "https://openstax.org/books/introductory-statistics/pages/7-1-the-central-limit-theorem-for-sample-means-averages"
+    },
+    {
+      "question": "Skewness measure sign?",
+      "correctAnswer": "Positive for right skew",
+      "incorrectAnswers": [
+        "Always negative",
+        "Always zero",
+        "No meaning"
+      ],
+      "explanation": "Third moment based.",
+      "keywords": [
+        "skew",
+        "moments"
+      ],
+      "source": "https://en.wikipedia.org/wiki/Skewness"
+    },
+    {
+      "question": "Kurtosis (informal)?",
+      "correctAnswer": "Tail heaviness vs normal",
+      "incorrectAnswers": [
+        "Only center peak unrelated",
+        "Same as variance",
+        "Only for categorical"
+      ],
+      "explanation": "Excess kurtosis compares to normal.",
+      "keywords": [
+        "kurtosis",
+        "tails"
+      ],
+      "source": "https://en.wikipedia.org/wiki/Kurtosis"
+    },
+    {
+      "question": "CDF vs PDF?",
+      "correctAnswer": "CDF gives P(X\u2264x); PDF integrates to probabilities for continuous",
+      "incorrectAnswers": [
+        "Same function",
+        "PDF is probability at point",
+        "CDF only discrete"
+      ],
+      "explanation": "Fundamental distinction.",
+      "keywords": [
+        "cdf",
+        "pdf"
+      ],
+      "source": "https://openstax.org/books/introductory-statistics/pages/4-1-random-variables"
+    },
+    {
+      "question": "Lognormal (idea)?",
+      "correctAnswer": "Log of variable is normal",
+      "incorrectAnswers": [
+        "Log is uniform",
+        "Always negative",
+        "Same as exponential always"
+      ],
+      "explanation": "Models multiplicative processes.",
+      "keywords": [
+        "lognormal",
+        "modeling"
+      ],
+      "source": "https://en.wikipedia.org/wiki/Log-normal_distribution"
+    }
+  ],
+  "sampling": [
+    {
+      "question": "Simple random sample?",
+      "correctAnswer": "Each size-n subset equally likely",
+      "incorrectAnswers": [
+        "Convenience sample",
+        "Self-selected",
+        "Quota only"
+      ],
+      "explanation": "Gold standard ideal.",
+      "keywords": [
+        "srs",
+        "design"
+      ],
+      "source": "https://openstax.org/books/introductory-statistics/pages/1-2-data-sampling-and-variation-in-data-and-sampling"
+    },
+    {
+      "question": "Sampling frame?",
+      "correctAnswer": "List/source from which sample drawn",
+      "incorrectAnswers": [
+        "Population always infinite list",
+        "Only parameter",
+        "Only statistic"
+      ],
+      "explanation": "Mismatches cause bias.",
+      "keywords": [
+        "sampling-frame",
+        "bias"
+      ],
+      "source": "https://openstax.org/books/introductory-statistics/pages/1-2-data-sampling-and-variation-in-data-and-sampling"
+    },
+    {
+      "question": "Bias vs variability?",
+      "correctAnswer": "Bias systematic error; variability random spread",
+      "incorrectAnswers": [
+        "Same",
+        "Variability systematic",
+        "Bias random only"
+      ],
+      "explanation": "Ideal: low bias low variance.",
+      "keywords": [
+        "bias-variance",
+        "error"
+      ],
+      "source": "https://openstax.org/books/introductory-statistics/pages/1-2-data-sampling-and-variation-in-data-and-sampling"
+    },
+    {
+      "question": "Stratified sampling?",
+      "correctAnswer": "Divide strata; sample within each",
+      "incorrectAnswers": [
+        "Only convenience",
+        "Ignore subgroups",
+        "Only cluster outside strata"
+      ],
+      "explanation": "Improves precision for subgroup estimates.",
+      "keywords": [
+        "stratified",
+        "design"
+      ],
+      "source": "https://openstax.org/books/introductory-statistics/pages/1-2-data-sampling-and-variation-in-data-and-sampling"
+    },
+    {
+      "question": "Cluster sampling?",
+      "correctAnswer": "Sample groups (clusters) then all/some within",
+      "incorrectAnswers": [
+        "Same as stratified always",
+        "Only SRS",
+        "Always biased"
+      ],
+      "explanation": "Cost effective geographically.",
+      "keywords": [
+        "cluster",
+        "design"
+      ],
+      "source": "https://openstax.org/books/introductory-statistics/pages/1-2-data-sampling-and-variation-in-data-and-sampling"
+    },
+    {
+      "question": "Systematic sampling?",
+      "correctAnswer": "Every kth from ordered list",
+      "incorrectAnswers": [
+        "Random every time",
+        "Only stratified",
+        "Never used"
+      ],
+      "explanation": "Risk if periodicity matches.",
+      "keywords": [
+        "systematic",
+        "design"
+      ],
+      "source": "https://openstax.org/books/introductory-statistics/pages/1-2-data-sampling-and-variation-in-data-and-sampling"
+    },
+    {
+      "question": "Sampling distribution?",
+      "correctAnswer": "Distribution of a statistic across samples",
+      "incorrectAnswers": [
+        "Raw data histogram only",
+        "Prior in Bayes only",
+        "Population only"
+      ],
+      "explanation": "Standard error concept.",
+      "keywords": [
+        "sampling-distribution",
+        "statistics"
+      ],
+      "source": "https://openstax.org/books/introductory-statistics/pages/7-1-the-central-limit-theorem-for-sample-means-averages"
+    },
+    {
+      "question": "Standard error of mean?",
+      "correctAnswer": "\u03c3/\u221an (\u03c3 estimated by s)",
+      "incorrectAnswers": [
+        "\u03c3\u00d7n",
+        "\u03c3^2/n",
+        "IQR"
+      ],
+      "explanation": "Decreases with sqrt(n).",
+      "keywords": [
+        "standard-error",
+        "clt"
+      ],
+      "source": "https://openstax.org/books/introductory-statistics/pages/7-1-the-central-limit-theorem-for-sample-means-averages"
+    },
+    {
+      "question": "Nonresponse bias?",
+      "correctAnswer": "People who don\u2019t respond differ from those who do",
+      "incorrectAnswers": [
+        "Always fixes randomness",
+        "Never happens",
+        "Only experiments"
+      ],
+      "explanation": "Weights/imputation may help.",
+      "keywords": [
+        "nonresponse",
+        "bias"
+      ],
+      "source": "https://openstax.org/books/introductory-statistics/pages/1-2-data-sampling-and-variation-in-data-and-sampling"
+    },
+    {
+      "question": "Undercoverage?",
+      "correctAnswer": "Part of population less likely included",
+      "incorrectAnswers": [
+        "Always eliminated by big n",
+        "Only lab error",
+        "Same as margin of error"
+      ],
+      "explanation": "Frame issues.",
+      "keywords": [
+        "undercoverage",
+        "bias"
+      ],
+      "source": "https://openstax.org/books/introductory-statistics/pages/1-2-data-sampling-and-variation-in-data-and-sampling"
+    },
+    {
+      "question": "Margin of error (poll) relates to?",
+      "correctAnswer": "Random sampling uncertainty (not all error)",
+      "incorrectAnswers": [
+        "Total bias",
+        "Always \u00b10",
+        "Population size always dominates"
+      ],
+      "explanation": "Interpret carefully.",
+      "keywords": [
+        "margin-of-error",
+        "polling"
+      ],
+      "source": "https://www.pewresearch.org/our-methods/u-s-surveys/sampling/"
+    },
+    {
+      "question": "Bootstrap idea?",
+      "correctAnswer": "Resample data with replacement to estimate sampling variability",
+      "incorrectAnswers": [
+        "Always exact theory",
+        "Only Bayesian",
+        "Never used"
+      ],
+      "explanation": "Computer-intensive inference.",
+      "keywords": [
+        "bootstrap",
+        "resampling"
+      ],
+      "source": "https://en.wikipedia.org/wiki/Bootstrapping_(statistics)"
+    }
+  ],
+  "hypothesis": [
+    {
+      "question": "Null hypothesis H0?",
+      "correctAnswer": "Statement tested, often \u2018no effect\u2019",
+      "incorrectAnswers": [
+        "Research claim always",
+        "Always inequality",
+        "Proven true if not rejected"
+      ],
+      "explanation": "Not \u2018accepted\u2019\u2014fail to reject.",
+      "keywords": [
+        "null-hypothesis",
+        "testing"
+      ],
+      "source": "https://openstax.org/books/introductory-statistics/pages/9-2-outcomes-and-the-type-i-and-type-ii-errors"
+    },
+    {
+      "question": "Type I error?",
+      "correctAnswer": "Reject true H0 (false positive)",
+      "incorrectAnswers": [
+        "Fail reject false H0",
+        "Accept H0 true",
+        "Always 0"
+      ],
+      "explanation": "Controlled by \u03b1.",
+      "keywords": [
+        "type-i-error",
+        "alpha"
+      ],
+      "source": "https://openstax.org/books/introductory-statistics/pages/9-2-outcomes-and-the-type-i-and-type-ii-errors"
+    },
+    {
+      "question": "Type II error?",
+      "correctAnswer": "Fail to reject false H0 (false negative)",
+      "incorrectAnswers": [
+        "Reject true H0",
+        "Always reject",
+        "Same as p-value"
+      ],
+      "explanation": "Related to power.",
+      "keywords": [
+        "type-ii-error",
+        "beta"
+      ],
+      "source": "https://openstax.org/books/introductory-statistics/pages/9-2-outcomes-and-the-type-i-and-type-ii-errors"
+    },
+    {
+      "question": "Power?",
+      "correctAnswer": "1 \u2212 P(Type II) when alternative true",
+      "incorrectAnswers": [
+        "Same as \u03b1",
+        "Always 0.05",
+        "P(H0 true)"
+      ],
+      "explanation": "Depends on effect size, n, \u03b1.",
+      "keywords": [
+        "power",
+        "inference"
+      ],
+      "source": "https://openstax.org/books/introductory-statistics/pages/9-2-outcomes-and-the-type-i-and-type-ii-errors"
+    },
+    {
+      "question": "p-value is probability of?",
+      "correctAnswer": "Seeing data at least this extreme if H0 + model true",
+      "incorrectAnswers": [
+        "P(H0 true)",
+        "P(replicate)",
+        "P(effect size)"
+      ],
+      "explanation": "Common misinterpretation.",
+      "keywords": [
+        "p-value",
+        "interpretation"
+      ],
+      "source": "https://openstax.org/books/introductory-statistics/pages/9-3-distribution-needed-for-hypothesis-testing"
+    },
+    {
+      "question": "\u03b1 = 0.05 means?",
+      "correctAnswer": "Threshold for rejecting H0 if p \u2264 \u03b1 (convention)",
+      "incorrectAnswers": [
+        "Always correct decision rate",
+        "Effect size",
+        "Confidence level always 95% for all tests"
+      ],
+      "explanation": "Arbitrary tradition.",
+      "keywords": [
+        "alpha",
+        "significance"
+      ],
+      "source": "https://openstax.org/books/introductory-statistics/pages/9-2-outcomes-and-the-type-i-and-type-ii-errors"
+    },
+    {
+      "question": "Two-sided vs one-sided test?",
+      "correctAnswer": "Tail direction choice affects critical region",
+      "incorrectAnswers": [
+        "Always same p",
+        "Never matters",
+        "Only Bayesian"
+      ],
+      "explanation": "Justify by question.",
+      "keywords": [
+        "one-tailed",
+        "hypothesis"
+      ],
+      "source": "https://openstax.org/books/introductory-statistics/pages/9-3-distribution-needed-for-hypothesis-testing"
+    },
+    {
+      "question": "Confidence interval interpretation (frequentist)?",
+      "correctAnswer": "Method that captures parameter in X% of repeated samples",
+      "incorrectAnswers": [
+        "Probability parameter in this interval is X%",
+        "Always contains sample mean only",
+        "Same as p-value"
+      ],
+      "explanation": "Common subtle miswording.",
+      "keywords": [
+        "confidence-interval",
+        "interpretation"
+      ],
+      "source": "https://openstax.org/books/introductory-statistics/pages/8-1-a-single-population-mean-using-the-student-t-distribution"
+    },
+    {
+      "question": "t-test for one mean uses?",
+      "correctAnswer": "Standardized sample mean with t distribution",
+      "incorrectAnswers": [
+        "Chi-square always",
+        "z always even if \u03c3 unknown",
+        "F always"
+      ],
+      "explanation": "df = n\u22121 typical.",
+      "keywords": [
+        "t-test",
+        "mean"
+      ],
+      "source": "https://openstax.org/books/introductory-statistics/pages/8-2-a-single-population-mean-using-the-student-t-distribution"
+    },
+    {
+      "question": "Paired vs two-sample?",
+      "correctAnswer": "Same subjects twice vs independent groups",
+      "incorrectAnswers": [
+        "Always same",
+        "Paired always independent",
+        "Never use paired"
+      ],
+      "explanation": "Design choice.",
+      "keywords": [
+        "paired-t",
+        "design"
+      ],
+      "source": "https://openstax.org/books/introductory-statistics/pages/9-4-rare-events-the-key-to-hypothesis-testing"
+    },
+    {
+      "question": "ANOVA compares?",
+      "correctAnswer": "Means across multiple groups",
+      "incorrectAnswers": [
+        "Variances only",
+        "Two proportions only",
+        "Medians always nonparametric version same name caution"
+      ],
+      "explanation": "F-test omnibus.",
+      "keywords": [
+        "anova",
+        "means"
+      ],
+      "source": "https://openstax.org/books/introductory-statistics/pages/12-1-one-way-anova"
+    },
+    {
+      "question": "Post-hoc tests after ANOVA?",
+      "correctAnswer": "Control familywise error for pairwise comparisons",
+      "incorrectAnswers": [
+        "Always use raw t many times",
+        "Never needed",
+        "Same as \u03c7\u00b2"
+      ],
+      "explanation": "Tukey, Bonferroni, etc.",
+      "keywords": [
+        "post-hoc",
+        "multiple-comparisons"
+      ],
+      "source": "https://en.wikipedia.org/wiki/Post_hoc_analysis"
+    }
+  ],
+  "regression": [
+    {
+      "question": "Simple linear regression models?",
+      "correctAnswer": "E[Y|x] \u2248 \u03b20 + \u03b21 x",
+      "incorrectAnswers": [
+        "Exponential only",
+        "No error term",
+        "Only categorical x"
+      ],
+      "explanation": "Least squares estimates common.",
+      "keywords": [
+        "linear-regression",
+        "model"
+      ],
+      "source": "https://openstax.org/books/introductory-statistics/pages/13-1-linear-equations"
+    },
+    {
+      "question": "Slope interpretation?",
+      "correctAnswer": "Change in predicted Y per +1 in X",
+      "incorrectAnswers": [
+        "Percent change always",
+        "Correlation always",
+        "Intercept change"
+      ],
+      "explanation": "Holding model linear.",
+      "keywords": [
+        "slope",
+        "regression"
+      ],
+      "source": "https://openstax.org/books/introductory-statistics/pages/13-2-the-regression-equation"
+    },
+    {
+      "question": "R^2 in linear regression?",
+      "correctAnswer": "Fraction of variance explained (OLS)",
+      "incorrectAnswers": [
+        "Always causal strength",
+        "Always >1",
+        "Same as slope"
+      ],
+      "explanation": "Can inflate with many predictors.",
+      "keywords": [
+        "r-squared",
+        "fit"
+      ],
+      "source": "https://openstax.org/books/introductory-statistics/pages/13-3-testing-the-significance-of-the-correlation-coefficient"
+    },
+    {
+      "question": "Residual?",
+      "correctAnswer": "Observed \u2212 predicted",
+      "incorrectAnswers": [
+        "Predicted \u2212 observed always positive",
+        "Only SD",
+        "Mean always"
+      ],
+      "explanation": "Diagnostic plots.",
+      "keywords": [
+        "residual",
+        "diagnostics"
+      ],
+      "source": "https://openstax.org/books/introductory-statistics/pages/13-4-prediction"
+    },
+    {
+      "question": "Extrapolation risk?",
+      "correctAnswer": "Predict outside training X range unreliable",
+      "incorrectAnswers": [
+        "Always safe",
+        "Only polynomial",
+        "Never a problem"
+      ],
+      "explanation": "Model may not hold.",
+      "keywords": [
+        "extrapolation",
+        "prediction"
+      ],
+      "source": "https://openstax.org/books/introductory-statistics/pages/13-4-prediction"
+    },
+    {
+      "question": "Correlation vs regression?",
+      "correctAnswer": "Correlation standardized association; regression predicts/explains",
+      "incorrectAnswers": [
+        "Same number always",
+        "Never related",
+        "Only causation"
+      ],
+      "explanation": "r related to standardized slope.",
+      "keywords": [
+        "correlation",
+        "regression"
+      ],
+      "source": "https://openstax.org/books/introductory-statistics/pages/13-3-testing-the-significance-of-the-correlation-coefficient"
+    },
+    {
+      "question": "Homoscedasticity?",
+      "correctAnswer": "Residual variance constant across fitted values",
+      "incorrectAnswers": [
+        "Variance always zero",
+        "Only outliers",
+        "Never checked"
+      ],
+      "explanation": "Classic OLS assumption.",
+      "keywords": [
+        "homoscedasticity",
+        "assumptions"
+      ],
+      "source": "https://openstax.org/books/introductory-statistics/pages/13-5-outliers-and-influential-points"
+    },
+    {
+      "question": "Influential point?",
+      "correctAnswer": "Can strongly change fit (leverage + residual)",
+      "incorrectAnswers": [
+        "Always an outlier in Y only",
+        "Never exists",
+        "Same as high leverage always"
+      ],
+      "explanation": "Cook\u2019s distance etc.",
+      "keywords": [
+        "influential",
+        "diagnostics"
+      ],
+      "source": "https://openstax.org/books/introductory-statistics/pages/13-5-outliers-and-influential-points"
+    },
+    {
+      "question": "Multicollinearity issue?",
+      "correctAnswer": "Correlated predictors inflate variance of estimates",
+      "incorrectAnswers": [
+        "Always good",
+        "Only logistic",
+        "Removes residuals"
+      ],
+      "explanation": "VIF diagnostics.",
+      "keywords": [
+        "multicollinearity",
+        "regression"
+      ],
+      "source": "https://en.wikipedia.org/wiki/Multicollinearity"
+    },
+    {
+      "question": "Logistic regression outcome?",
+      "correctAnswer": "Binary or categorical probabilities",
+      "incorrectAnswers": [
+        "Always continuous normal",
+        "Always counts",
+        "No link function"
+      ],
+      "explanation": "Logit link.",
+      "keywords": [
+        "logistic",
+        "glm"
+      ],
+      "source": "https://en.wikipedia.org/wiki/Logistic_regression"
+    },
+    {
+      "question": "Overfitting?",
+      "correctAnswer": "Model fits noise; poor generalization",
+      "incorrectAnswers": [
+        "Always desirable",
+        "Only when R^2 low",
+        "Impossible in training"
+      ],
+      "explanation": "Regularization/cross-validation help.",
+      "keywords": [
+        "overfitting",
+        "ml"
+      ],
+      "source": "https://en.wikipedia.org/wiki/Overfitting"
+    },
+    {
+      "question": "Confounder?",
+      "correctAnswer": "Third variable affecting X and Y; distorts crude association",
+      "incorrectAnswers": [
+        "Always mediator",
+        "Cannot adjust",
+        "Same as collider always"
+      ],
+      "explanation": "Design and adjustment matter.",
+      "keywords": [
+        "confounding",
+        "causal"
+      ],
+      "source": "https://www.cdc.gov/evaluation/guide/concepts/index.html"
+    }
+  ],
+  "survey": [
+    {
+      "question": "Open-ended vs closed question tradeoff?",
+      "correctAnswer": "Rich detail vs coding difficulty",
+      "incorrectAnswers": [
+        "Closed always better",
+        "Open never used",
+        "Same analysis"
+      ],
+      "explanation": "Survey design choice.",
+      "keywords": [
+        "survey-questions",
+        "design"
+      ],
+      "source": "https://www.pewresearch.org/our-methods/u-s-surveys/sampling/"
+    },
+    {
+      "question": "Leading question problem?",
+      "correctAnswer": "Wording pushes respondents toward answer",
+      "incorrectAnswers": [
+        "Improves accuracy",
+        "Only online",
+        "Never happens"
+      ],
+      "explanation": "Neutral wording matters.",
+      "keywords": [
+        "leading-question",
+        "bias"
+      ],
+      "source": "https://en.wikipedia.org/wiki/Leading_question"
+    },
+    {
+      "question": "Likert scale?",
+      "correctAnswer": "Ordinal agreement ratings",
+      "incorrectAnswers": [
+        "Ratio scale",
+        "Nominal only",
+        "Continuous always"
+      ],
+      "explanation": "Analyze with care.",
+      "keywords": [
+        "likert",
+        "measurement"
+      ],
+      "source": "https://en.wikipedia.org/wiki/Likert_scale"
+    },
+    {
+      "question": "Response bias?",
+      "correctAnswer": "Systematic tendency to answer certain way",
+      "incorrectAnswers": [
+        "Random error only",
+        "Same as margin of error",
+        "Only sampling"
+      ],
+      "explanation": "Social desirability example.",
+      "keywords": [
+        "response-bias",
+        "surveys"
+      ],
+      "source": "https://en.wikipedia.org/wiki/Response_bias"
+    },
+    {
+      "question": "Coverage error in surveys?",
+      "correctAnswer": "Frame doesn\u2019t match target population",
+      "incorrectAnswers": [
+        "Same as sampling error",
+        "Only nonresponse",
+        "Always zero"
+      ],
+      "explanation": "Cell-only households historical example.",
+      "keywords": [
+        "coverage-error",
+        "polling"
+      ],
+      "source": "https://www.pewresearch.org/our-methods/u-s-surveys/sampling/"
+    },
+    {
+      "question": "Weighting adjusts?",
+      "correctAnswer": "Sample to match population demographics",
+      "incorrectAnswers": [
+        "Removes all bias always",
+        "Replaces random sampling",
+        "Only Bayesian"
+      ],
+      "explanation": "Reduces some nonresponse/coverage issues.",
+      "keywords": [
+        "weighting",
+        "polling"
+      ],
+      "source": "https://www.pewresearch.org/our-methods/u-s-surveys/sampling/"
+    },
+    {
+      "question": "Cognitive interview purpose?",
+      "correctAnswer": "Pretest question comprehension",
+      "incorrectAnswers": [
+        "Replace IRB",
+        "Compute p-values",
+        "Only translation"
+      ],
+      "explanation": "Improve instrument.",
+      "keywords": [
+        "pretesting",
+        "methods"
+      ],
+      "source": "https://en.wikipedia.org/wiki/Cognitive_interviewing"
+    },
+    {
+      "question": "Panel survey?",
+      "correctAnswer": "Same respondents repeatedly",
+      "incorrectAnswers": [
+        "Cross-sectional only",
+        "Census",
+        "Always biased"
+      ],
+      "explanation": "Trends vs cohort effects.",
+      "keywords": [
+        "panel",
+        "longitudinal"
+      ],
+      "source": "https://en.wikipedia.org/wiki/Panel_survey"
+    },
+    {
+      "question": "Double-barreled question flaw?",
+      "correctAnswer": "Asks two things at once",
+      "incorrectAnswers": [
+        "Improves clarity",
+        "Only open-ended",
+        "Statistically optimal"
+      ],
+      "explanation": "Split questions.",
+      "keywords": [
+        "double-barreled",
+        "wording"
+      ],
+      "source": "https://en.wikipedia.org/wiki/Double-barreled_question"
+    },
+    {
+      "question": "Random digit dialing?",
+      "correctAnswer": "Probability sample of phone numbers",
+      "incorrectAnswers": [
+        "Always quota",
+        "Always volunteer",
+        "Census"
+      ],
+      "explanation": "Declining with mobile patterns.",
+      "keywords": [
+        "rdd",
+        "sampling"
+      ],
+      "source": "https://www.pewresearch.org/our-methods/u-s-surveys/sampling/"
+    },
+    {
+      "question": "Margin of error applies to?",
+      "correctAnswer": "Random sampling variability of estimate",
+      "incorrectAnswers": [
+        "All bias sources",
+        "Individual responses",
+        "Always population mean exactly"
+      ],
+      "explanation": "Not \u2018everything wrong\u2019.",
+      "keywords": [
+        "margin-of-error",
+        "interpretation"
+      ],
+      "source": "https://www.pewresearch.org/our-methods/u-s-surveys/sampling/"
+    },
+    {
+      "question": "Pilot study?",
+      "correctAnswer": "Small run to debug instrument/flow",
+      "incorrectAnswers": [
+        "Replace main study",
+        "Always publishable alone",
+        "No ethics review"
+      ],
+      "explanation": "Improves quality.",
+      "keywords": [
+        "pilot",
+        "methods"
+      ],
+      "source": "https://en.wikipedia.org/wiki/Pilot_experiment"
+    }
+  ]
+}

@@ -1,0 +1,116 @@
+[
+  {
+    "category": "business",
+    "navigationKeyword1": "entrepreneurship",
+    "navigationKeyword2": "bootstrapping",
+    "question": "What does bootstrapping mean?",
+    "correctAnswer": "Funding growth primarily from revenue and founder resources rather than external equity.",
+    "incorrectAnswers": [
+      "Always borrowing unlimited sums with no repayment.",
+      "Only government grants.",
+      "Only selling the company."
+    ],
+    "explanation": "Bootstrapping emphasizes cash efficiency.",
+    "keywords": [
+      "bootstrapping",
+      "startups"
+    ],
+    "source": "https://www.investopedia.com/terms/b/bootstrap.asp",
+    "seedId": "21ec0177-826c-47e9-b3f5-96d608d6faf4"
+  },
+  {
+    "category": "business",
+    "navigationKeyword1": "entrepreneurship",
+    "navigationKeyword2": "bootstrapping",
+    "question": "Why is cash runway critical for bootstrapped companies?",
+    "correctAnswer": "Limited buffers mean timing of receivables and expenses can end the business.",
+    "incorrectAnswers": [
+      "Runway is irrelevant if you have a logo.",
+      "Cash never matters.",
+      "Profit is impossible."
+    ],
+    "explanation": "Weekly cash focus is common.",
+    "keywords": [
+      "cash-runway",
+      "finance"
+    ],
+    "source": "https://www.investopedia.com/terms/r/runway.asp",
+    "seedId": "b61e91fe-3cf3-46f6-97eb-8db9d429b17e"
+  },
+  {
+    "category": "business",
+    "navigationKeyword1": "entrepreneurship",
+    "navigationKeyword2": "bootstrapping",
+    "question": "What is customer-funded growth?",
+    "correctAnswer": "Customers pay before you scale costs, reducing external capital needs.",
+    "incorrectAnswers": [
+      "Customers never pay.",
+      "Only ads fund everything.",
+      "Only donations."
+    ],
+    "explanation": "Prepaid and deposits can extend runway.",
+    "keywords": [
+      "customer-funded",
+      "bootstrap"
+    ],
+    "source": "https://www.sba.gov/business-guide/manage-your-business/manage-your-finances",
+    "seedId": "088d3551-d8ff-4226-b72a-7124f95a62ac"
+  },
+  {
+    "category": "business",
+    "navigationKeyword1": "entrepreneurship",
+    "navigationKeyword2": "bootstrapping",
+    "question": "Why can relying on high-interest personal debt be risky?",
+    "correctAnswer": "Fixed repayments plus startup volatility can create personal financial distress.",
+    "incorrectAnswers": [
+      "Debt has no risks.",
+      "Interest rates never matter.",
+      "Banks always forgive loans."
+    ],
+    "explanation": "Separate personal and business finances where possible.",
+    "keywords": [
+      "personal-debt",
+      "risk"
+    ],
+    "source": "https://www.consumerfinance.gov/ask-cfpb/what-is-a-personal-loan-en-2117/",
+    "seedId": "c3a45785-eeb5-46f2-845e-75d88dde1220"
+  },
+  {
+    "category": "business",
+    "navigationKeyword1": "entrepreneurship",
+    "navigationKeyword2": "bootstrapping",
+    "question": "What non-dilutive option might founders explore (varies by program)?",
+    "correctAnswer": "Grants, competitions, or certain SBA loan programs\u2014each with eligibility rules.",
+    "incorrectAnswers": [
+      "Unlimited free equity from strangers.",
+      "Automatic IPO.",
+      "Tax evasion."
+    ],
+    "explanation": "Read official eligibility criteria carefully.",
+    "keywords": [
+      "grants",
+      "sba"
+    ],
+    "source": "https://www.sba.gov/funding-programs/grants",
+    "seedId": "52d85a13-12b0-4c6b-989a-6ecfb25a056d"
+  },
+  {
+    "category": "business",
+    "navigationKeyword1": "entrepreneurship",
+    "navigationKeyword2": "bootstrapping",
+    "question": "What is a lifestyle business (common usage)?",
+    "correctAnswer": "A business designed to support the owner\u2019s desired lifestyle rather than maximize venture-scale growth.",
+    "incorrectAnswers": [
+      "A scam.",
+      "Illegal in most states.",
+      "Requires VC funding."
+    ],
+    "explanation": "Ambition level is a choice, not a moral ranking.",
+    "keywords": [
+      "lifestyle-business",
+      "entrepreneurship"
+    ],
+    "source": "https://www.investopedia.com/terms/l/lifestyle-business.asp",
+    "seedId": "af01f50e-b71a-460b-9637-1834ddb814ce"
+  }
+]

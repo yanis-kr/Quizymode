@@ -1,0 +1,230 @@
+[
+  {
+    "seedId": "f380dea6-25bd-41ef-b72d-6e4582e8e9b7",
+    "category": "science",
+    "navigationKeyword1": "linear-algebra",
+    "navigationKeyword2": "vectors",
+    "question": "What is a vector in R^n?",
+    "correctAnswer": "An ordered list of n numbers",
+    "incorrectAnswers": [
+      "A single number only",
+      "A square matrix always",
+      "A random graph"
+    ],
+    "explanation": "Represents direction/magnitude in space.",
+    "keywords": [
+      "vectors",
+      "rn"
+    ],
+    "source": "https://openstax.org/books/linear-algebra/pages/1-1-vectors"
+  },
+  {
+    "seedId": "3e523b77-ff83-4939-93c0-384375a28299",
+    "category": "science",
+    "navigationKeyword1": "linear-algebra",
+    "navigationKeyword2": "vectors",
+    "question": "What is vector addition?",
+    "correctAnswer": "Add corresponding components",
+    "incorrectAnswers": [
+      "Multiply components",
+      "Swap components",
+      "Divide by determinant"
+    ],
+    "explanation": "Geometrically tip-to-tail.",
+    "keywords": [
+      "vector-addition",
+      "components"
+    ],
+    "source": "https://openstax.org/books/linear-algebra/pages/1-1-vectors"
+  },
+  {
+    "seedId": "a26dae1a-e915-4a9f-ad15-196cc06acd98",
+    "category": "science",
+    "navigationKeyword1": "linear-algebra",
+    "navigationKeyword2": "vectors",
+    "question": "What is scalar multiplication?",
+    "correctAnswer": "Multiply each component by scalar",
+    "incorrectAnswers": [
+      "Multiply lengths only",
+      "Rotate by 90\u00b0 always",
+      "Take dot product with itself only"
+    ],
+    "explanation": "Scales length and possibly reverses direction.",
+    "keywords": [
+      "scalar-multiple",
+      "geometry"
+    ],
+    "source": "https://openstax.org/books/linear-algebra/pages/1-1-vectors"
+  },
+  {
+    "seedId": "1a012f31-de84-4e99-a440-cdecb6aedd6d",
+    "category": "science",
+    "navigationKeyword1": "linear-algebra",
+    "navigationKeyword2": "vectors",
+    "question": "What is dot product u\u00b7v (algebraic)?",
+    "correctAnswer": "Sum of u_i v_i",
+    "incorrectAnswers": [
+      "Sum of u_i + v_i",
+      "Product of lengths always",
+      "Determinant of u and v"
+    ],
+    "explanation": "Relates to angle: u\u00b7v = ||u|| ||v|| cos\u03b8 in R^n.",
+    "keywords": [
+      "dot-product",
+      "geometry"
+    ],
+    "source": "https://openstax.org/books/linear-algebra/pages/1-2-dot-product"
+  },
+  {
+    "seedId": "670a1709-5f46-4ac9-8219-5dbd1988599b",
+    "category": "science",
+    "navigationKeyword1": "linear-algebra",
+    "navigationKeyword2": "vectors",
+    "question": "What does u\u00b7v = 0 mean for nonzero vectors in R^n?",
+    "correctAnswer": "They are perpendicular (orthogonal)",
+    "incorrectAnswers": [
+      "They are parallel",
+      "They are equal",
+      "They are linearly dependent always"
+    ],
+    "explanation": "Orthogonality generalizes right angles.",
+    "keywords": [
+      "orthogonal",
+      "dot-product"
+    ],
+    "source": "https://openstax.org/books/linear-algebra/pages/1-2-dot-product"
+  },
+  {
+    "seedId": "c975a920-b6a8-4615-b848-ae1447446f32",
+    "category": "science",
+    "navigationKeyword1": "linear-algebra",
+    "navigationKeyword2": "vectors",
+    "question": "What is cross product (R^3)?",
+    "correctAnswer": "Vector perpendicular to two given vectors (with magnitude area)",
+    "incorrectAnswers": [
+      "Scalar always",
+      "Only in R^2",
+      "Same as dot product"
+    ],
+    "explanation": "u \u00d7 v magnitude equals parallelogram area.",
+    "keywords": [
+      "cross-product",
+      "r3"
+    ],
+    "source": "https://openstax.org/books/calculus-volume-3/pages/2-4-the-cross-product"
+  },
+  {
+    "seedId": "2f30cd27-949e-41d5-8d82-4a555eb1d926",
+    "category": "science",
+    "navigationKeyword1": "linear-algebra",
+    "navigationKeyword2": "vectors",
+    "question": "What is norm ||v|| (Euclidean)?",
+    "correctAnswer": "sqrt(v\u00b7v)",
+    "incorrectAnswers": [
+      "v\u00b7v",
+      "sum(v)",
+      "det(v)"
+    ],
+    "explanation": "Measures length.",
+    "keywords": [
+      "norm",
+      "length"
+    ],
+    "source": "https://openstax.org/books/linear-algebra/pages/1-1-vectors"
+  },
+  {
+    "seedId": "34f16946-465a-4fb2-8561-8d72b8eaaa39",
+    "category": "science",
+    "navigationKeyword1": "linear-algebra",
+    "navigationKeyword2": "vectors",
+    "question": "What is unit vector?",
+    "correctAnswer": "Vector with norm 1",
+    "incorrectAnswers": [
+      "Zero vector",
+      "Any orthogonal vector",
+      "Any eigenvector"
+    ],
+    "explanation": "Normalize by dividing by norm.",
+    "keywords": [
+      "unit-vector",
+      "direction"
+    ],
+    "source": "https://openstax.org/books/linear-algebra/pages/1-1-vectors"
+  },
+  {
+    "seedId": "b1565dab-c4a8-4538-8b98-ba49c352dfd8",
+    "category": "science",
+    "navigationKeyword1": "linear-algebra",
+    "navigationKeyword2": "vectors",
+    "question": "What is linear combination?",
+    "correctAnswer": "Sum of scaled vectors",
+    "incorrectAnswers": [
+      "Product of vectors",
+      "Only one vector allowed",
+      "Matrix determinant"
+    ],
+    "explanation": "Spans are sets of all linear combinations.",
+    "keywords": [
+      "linear-combination",
+      "span"
+    ],
+    "source": "https://openstax.org/books/linear-algebra/pages/2-1-linear-combinations-and-span"
+  },
+  {
+    "seedId": "b2a3daef-5c86-48e7-b525-703e2dcedef6",
+    "category": "science",
+    "navigationKeyword1": "linear-algebra",
+    "navigationKeyword2": "vectors",
+    "question": "What is span of a set?",
+    "correctAnswer": "All linear combinations of those vectors",
+    "incorrectAnswers": [
+      "Only the zero vector",
+      "Only eigenvalues",
+      "Only orthogonal vectors"
+    ],
+    "explanation": "Subspace generated by set.",
+    "keywords": [
+      "span",
+      "subspace"
+    ],
+    "source": "https://openstax.org/books/linear-algebra/pages/2-1-linear-combinations-and-span"
+  },
+  {
+    "seedId": "abcca122-ce46-447a-a3db-4035d732dcb3",
+    "category": "science",
+    "navigationKeyword1": "linear-algebra",
+    "navigationKeyword2": "vectors",
+    "question": "What is linear independence?",
+    "correctAnswer": "No nontrivial combination gives 0",
+    "incorrectAnswers": [
+      "Always dependent in R^n",
+      "Means orthogonal",
+      "Means parallel"
+    ],
+    "explanation": "Independent set forms a basis for its span.",
+    "keywords": [
+      "independence",
+      "basis"
+    ],
+    "source": "https://openstax.org/books/linear-algebra/pages/2-2-linear-independence-and-basis"
+  },
+  {
+    "seedId": "b8be80ad-79e1-4129-abb6-1481c76cc8e3",
+    "category": "science",
+    "navigationKeyword1": "linear-algebra",
+    "navigationKeyword2": "vectors",
+    "question": "What is basis of a subspace?",
+    "correctAnswer": "Independent spanning set",
+    "incorrectAnswers": [
+      "Any spanning set",
+      "Any independent set not spanning",
+      "Always unique"
+    ],
+    "explanation": "Dimension is size of a basis.",
+    "keywords": [
+      "basis",
+      "dimension"
+    ],
+    "source": "https://openstax.org/books/linear-algebra/pages/2-2-linear-independence-and-basis"
+  }
+]

@@ -1,0 +1,1094 @@
+{
+  "cognition": [
+    {
+      "question": "Working memory (Baddeley model) includes?",
+      "correctAnswer": "Phonological loop, visuospatial sketchpad, central executive (classic components)",
+      "incorrectAnswers": [
+        "Only long-term store",
+        "Only sensory memory",
+        "Only implicit memory"
+      ],
+      "explanation": "Limited capacity active processing.",
+      "keywords": [
+        "working-memory",
+        "baddeley"
+      ],
+      "source": "https://plato.stanford.edu/entries/memory/"
+    },
+    {
+      "question": "Chunking helps memory by?",
+      "correctAnswer": "Increases effective capacity via meaningful units",
+      "incorrectAnswers": [
+        "Increases RAM physically",
+        "Eliminates forgetting",
+        "Removes need for attention"
+      ],
+      "explanation": "Expertise yields larger chunks.",
+      "keywords": [
+        "chunking",
+        "memory"
+      ],
+      "source": "https://www.simplypsychology.org/short-term-memory.html"
+    },
+    {
+      "question": "Stroop effect demonstrates?",
+      "correctAnswer": "Automatic reading interferes with color naming",
+      "incorrectAnswers": [
+        "No interference",
+        "Only motor",
+        "Only auditory"
+      ],
+      "explanation": "Selective attention limits.",
+      "keywords": [
+        "stroop",
+        "attention"
+      ],
+      "source": "https://en.wikipedia.org/wiki/Stroop_effect"
+    },
+    {
+      "question": "Dual-process theory (Kahneman style) contrasts?",
+      "correctAnswer": "Fast intuitive vs slower deliberative thinking",
+      "incorrectAnswers": [
+        "Only emotion vs logic labels oversimplified",
+        "Left vs right brain only",
+        "Sleep vs wake"
+      ],
+      "explanation": "Heuristics and biases program.",
+      "keywords": [
+        "system1-system2",
+        "thinking"
+      ],
+      "source": "https://en.wikipedia.org/wiki/Dual_process_theory"
+    },
+    {
+      "question": "Schemas are?",
+      "correctAnswer": "Mental frameworks organizing knowledge",
+      "incorrectAnswers": [
+        "Only reflex arcs",
+        "Synaptic weights only",
+        "Random noise"
+      ],
+      "explanation": "Influence perception and memory.",
+      "keywords": [
+        "schema",
+        "cognition"
+      ],
+      "source": "https://www.simplypsychology.org/schema.html"
+    },
+    {
+      "question": "Metacognition means?",
+      "correctAnswer": "Thinking about thinking",
+      "incorrectAnswers": [
+        "Only memory recall",
+        "Only perception",
+        "Unconscious only"
+      ],
+      "explanation": "Monitoring and control of cognition.",
+      "keywords": [
+        "metacognition",
+        "learning"
+      ],
+      "source": "https://en.wikipedia.org/wiki/Metacognition"
+    },
+    {
+      "question": "Encoding specificity principle?",
+      "correctAnswer": "Retrieval works best when context matches encoding",
+      "incorrectAnswers": [
+        "Context never matters",
+        "Only for music",
+        "Only for motor skills"
+      ],
+      "explanation": "State/context dependent memory.",
+      "keywords": [
+        "encoding-specificity",
+        "memory"
+      ],
+      "source": "https://en.wikipedia.org/wiki/Encoding_specificity_principle"
+    },
+    {
+      "question": "Proactive interference?",
+      "correctAnswer": "Old memories disrupt learning new similar info",
+      "incorrectAnswers": [
+        "New disrupts old only",
+        "No interference exists",
+        "Only sensory"
+      ],
+      "explanation": "Forward direction confusion.",
+      "keywords": [
+        "proactive-interference",
+        "memory"
+      ],
+      "source": "https://en.wikipedia.org/wiki/Interference_theory"
+    },
+    {
+      "question": "Retroactive interference?",
+      "correctAnswer": "New learning disrupts recall of old",
+      "incorrectAnswers": [
+        "Old disrupts new only",
+        "Only in children",
+        "Impossible"
+      ],
+      "explanation": "Backward direction confusion.",
+      "keywords": [
+        "retroactive-interference",
+        "memory"
+      ],
+      "source": "https://en.wikipedia.org/wiki/Interference_theory"
+    },
+    {
+      "question": "Executive function includes?",
+      "correctAnswer": "Planning, inhibition, cognitive flexibility",
+      "incorrectAnswers": [
+        "Only sensation",
+        "Only reflex",
+        "Only long-term storage"
+      ],
+      "explanation": "Frontal networks implicated.",
+      "keywords": [
+        "executive-function",
+        "frontal"
+      ],
+      "source": "https://www.apa.org/topics/executive-function"
+    },
+    {
+      "question": "Change blindness suggests?",
+      "correctAnswer": "Limited attention \u2018bottleneck\u2019 to full visual detail",
+      "incorrectAnswers": [
+        "Perfect visual memory",
+        "Unlimited parallel processing always",
+        "No attention needed"
+      ],
+      "explanation": "Gist vs detail tradeoff.",
+      "keywords": [
+        "change-blindness",
+        "attention"
+      ],
+      "source": "https://en.wikipedia.org/wiki/Change_blindness"
+    },
+    {
+      "question": "Cognitive load theory concern?",
+      "correctAnswer": "Extraneous load harms learning",
+      "incorrectAnswers": [
+        "More animations always help",
+        "Load never matters",
+        "Only motivation matters"
+      ],
+      "explanation": "Manage intrinsic/extraneous load.",
+      "keywords": [
+        "cognitive-load",
+        "education"
+      ],
+      "source": "https://en.wikipedia.org/wiki/Cognitive_load"
+    }
+  ],
+  "development": [
+    {
+      "question": "Piaget\u2019s sensorimotor stage emphasizes?",
+      "correctAnswer": "Senses and motor exploration",
+      "incorrectAnswers": [
+        "Abstract ethics",
+        "Formal logic exams",
+        "Identity vs role confusion"
+      ],
+      "explanation": "Birth to ~2 years roughly.",
+      "keywords": [
+        "piaget",
+        "sensorimotor"
+      ],
+      "source": "https://www.simplypsychology.org/piaget.html"
+    },
+    {
+      "question": "Object permanence develops in?",
+      "correctAnswer": "Sensorimotor stage",
+      "incorrectAnswers": [
+        "Preoperational always complete at birth",
+        "Formal operational",
+        "Never develops"
+      ],
+      "explanation": "Understanding objects exist unseen.",
+      "keywords": [
+        "object-permanence",
+        "development"
+      ],
+      "source": "https://www.simplypsychology.org/piaget.html"
+    },
+    {
+      "question": "Conservation tasks test?",
+      "correctAnswer": "Understanding quantity despite appearance change",
+      "incorrectAnswers": [
+        "Object permanence only",
+        "Attachment only",
+        "Moral reasoning"
+      ],
+      "explanation": "Preoperational struggles common.",
+      "keywords": [
+        "conservation",
+        "piaget"
+      ],
+      "source": "https://www.simplypsychology.org/piaget.html"
+    },
+    {
+      "question": "Vygotsky emphasized?",
+      "correctAnswer": "Social interaction and culture in learning",
+      "incorrectAnswers": [
+        "Purely individual maturation only",
+        "Only reinforcement",
+        "Only genetics"
+      ],
+      "explanation": "Zone of proximal development.",
+      "keywords": [
+        "vygotsky",
+        "zpd"
+      ],
+      "source": "https://www.simplypsychology.org/vygotsky.html"
+    },
+    {
+      "question": "Attachment (Bowlby/Ainsworth) strange situation measures?",
+      "correctAnswer": "Reunion responses to caregiver",
+      "incorrectAnswers": [
+        "IQ only",
+        "Language only",
+        "Motor milestones only"
+      ],
+      "explanation": "Secure vs insecure patterns.",
+      "keywords": [
+        "attachment",
+        "ainsworth"
+      ],
+      "source": "https://www.simplypsychology.org/attachment.html"
+    },
+    {
+      "question": "Erikson infancy crisis?",
+      "correctAnswer": "Trust vs mistrust",
+      "incorrectAnswers": [
+        "Identity vs role confusion",
+        "Integrity vs despair",
+        "Industry vs inferiority"
+      ],
+      "explanation": "First psychosocial stage.",
+      "keywords": [
+        "erikson",
+        "trust"
+      ],
+      "source": "https://www.simplypsychology.org/erik-erikson.html"
+    },
+    {
+      "question": "Adolescent identity exploration (Erikson)?",
+      "correctAnswer": "Identity vs role confusion",
+      "incorrectAnswers": [
+        "Trust vs mistrust",
+        "Autonomy vs shame",
+        "Generativity vs stagnation"
+      ],
+      "explanation": "Teen years focus.",
+      "keywords": [
+        "identity",
+        "adolescence"
+      ],
+      "source": "https://www.simplypsychology.org/erik-erikson.html"
+    },
+    {
+      "question": "Critical/sensitive periods mean?",
+      "correctAnswer": "Development especially influenced at certain times",
+      "incorrectAnswers": [
+        "Plasticity zero after 3",
+        "Only physical growth",
+        "No windows exist"
+      ],
+      "explanation": "Language acquisition example.",
+      "keywords": [
+        "sensitive-period",
+        "plasticity"
+      ],
+      "source": "https://www.apa.org/topics/development"
+    },
+    {
+      "question": "Teratogens are?",
+      "correctAnswer": "Environmental agents harming prenatal development",
+      "incorrectAnswers": [
+        "Always vitamins",
+        "Only postnatal",
+        "Beneficial always"
+      ],
+      "explanation": "Timing and dose matter.",
+      "keywords": [
+        "teratogen",
+        "prenatal"
+      ],
+      "source": "https://www.cdc.gov/ncbddd/fasd/alcohol-use.html"
+    },
+    {
+      "question": "Adolescent brain development note?",
+      "correctAnswer": "Prefrontal maturation continues into mid-20s",
+      "incorrectAnswers": [
+        "Fully mature at 10",
+        "Stops at 13",
+        "No change after birth"
+      ],
+      "explanation": "Risk-taking context.",
+      "keywords": [
+        "adolescent-brain",
+        "neuro"
+      ],
+      "source": "https://www.apa.org/topics/development"
+    },
+    {
+      "question": "Menopause (biopsychosocial) involves?",
+      "correctAnswer": "Hormonal shifts with varied psychological impacts",
+      "incorrectAnswers": [
+        "Only men",
+        "Only childhood",
+        "Uniform negative always"
+      ],
+      "explanation": "Individual differences large.",
+      "keywords": [
+        "menopause",
+        "adult-dev"
+      ],
+      "source": "https://www.nia.nih.gov/health/menopause-what-it"
+    },
+    {
+      "question": "Socioemotional selectivity (Carstensen) suggests?",
+      "correctAnswer": "Older adults prioritize emotionally meaningful goals",
+      "incorrectAnswers": [
+        "Always withdraw randomly",
+        "Ignore emotions",
+        "Same goals as teens always"
+      ],
+      "explanation": "Motivation shifts with time horizons.",
+      "keywords": [
+        "aging",
+        "emotion"
+      ],
+      "source": "https://en.wikipedia.org/wiki/Socioemotional_selectivity_theory"
+    }
+  ],
+  "behavior": [
+    {
+      "question": "Classical conditioning US/CS?",
+      "correctAnswer": "US unconditioned stimulus; CS conditioned stimulus",
+      "incorrectAnswers": [
+        "CS causes unlearned always",
+        "Same as operant",
+        "Only punishment"
+      ],
+      "explanation": "Pavlovian associations.",
+      "keywords": [
+        "classical-conditioning",
+        "pavlov"
+      ],
+      "source": "https://www.simplypsychology.org/classical-conditioning.html"
+    },
+    {
+      "question": "Extinction in classical conditioning?",
+      "correctAnswer": "CS no longer predicts US; CR weakens",
+      "incorrectAnswers": [
+        "CR becomes permanent",
+        "US removed from world",
+        "Always spontaneous recovery never"
+      ],
+      "explanation": "Not unlearning forever necessarily.",
+      "keywords": [
+        "extinction",
+        "learning"
+      ],
+      "source": "https://www.simplypsychology.org/classical-conditioning.html"
+    },
+    {
+      "question": "Operant conditioning shapes behavior via?",
+      "correctAnswer": "Consequences (reinforcement/punishment)",
+      "incorrectAnswers": [
+        "Only reflex pairing",
+        "Only genes",
+        "Only hormones"
+      ],
+      "explanation": "Skinner box paradigm.",
+      "keywords": [
+        "operant",
+        "skinner"
+      ],
+      "source": "https://www.simplypsychology.org/operant-conditioning.html"
+    },
+    {
+      "question": "Positive reinforcement?",
+      "correctAnswer": "Add desirable stimulus to increase behavior",
+      "incorrectAnswers": [
+        "Remove stimulus",
+        "Decrease behavior always",
+        "Only punishment"
+      ],
+      "explanation": "\u2018Positive\u2019 = add.",
+      "keywords": [
+        "positive-reinforcement",
+        "learning"
+      ],
+      "source": "https://www.simplypsychology.org/operant-conditioning.html"
+    },
+    {
+      "question": "Negative reinforcement?",
+      "correctAnswer": "Remove aversive stimulus to increase behavior",
+      "incorrectAnswers": [
+        "Add aversive",
+        "Decrease behavior",
+        "Same as punishment"
+      ],
+      "explanation": "Seatbelt buzzer stops when buckled.",
+      "keywords": [
+        "negative-reinforcement",
+        "learning"
+      ],
+      "source": "https://www.simplypsychology.org/operant-conditioning.html"
+    },
+    {
+      "question": "Punishment vs reinforcement?",
+      "correctAnswer": "Punishment decreases behavior; reinforcement increases",
+      "incorrectAnswers": [
+        "Same thing",
+        "Punishment always teaches best",
+        "Reinforcement decreases"
+      ],
+      "explanation": "Effect direction differs.",
+      "keywords": [
+        "punishment",
+        "behavior"
+      ],
+      "source": "https://www.simplypsychology.org/operant-conditioning.html"
+    },
+    {
+      "question": "Fixed ratio schedule?",
+      "correctAnswer": "Reinforce after set number of responses",
+      "incorrectAnswers": [
+        "Time-based only",
+        "Unpredictable always",
+        "Never ratio"
+      ],
+      "explanation": "Piecework pay example.",
+      "keywords": [
+        "schedules",
+        "operant"
+      ],
+      "source": "https://www.simplypsychology.org/operant-conditioning.html"
+    },
+    {
+      "question": "Variable interval?",
+      "correctAnswer": "Reinforce after unpredictable time",
+      "incorrectAnswers": [
+        "Fixed time always",
+        "After fixed count",
+        "Never used"
+      ],
+      "explanation": "Email checking example.",
+      "keywords": [
+        "variable-interval",
+        "schedules"
+      ],
+      "source": "https://www.simplypsychology.org/operant-conditioning.html"
+    },
+    {
+      "question": "Shaping uses?",
+      "correctAnswer": "Successive approximations toward target behavior",
+      "incorrectAnswers": [
+        "One full response only",
+        "Punishment chain",
+        "Extinction only"
+      ],
+      "explanation": "Animal training.",
+      "keywords": [
+        "shaping",
+        "learning"
+      ],
+      "source": "https://www.simplypsychology.org/operant-conditioning.html"
+    },
+    {
+      "question": "Habituation?",
+      "correctAnswer": "Decreased response to repeated harmless stimulus",
+      "incorrectAnswers": [
+        "Increased response",
+        "Only classical",
+        "Permanent sensitization always"
+      ],
+      "explanation": "Basic learning form.",
+      "keywords": [
+        "habituation",
+        "learning"
+      ],
+      "source": "https://en.wikipedia.org/wiki/Habituation"
+    },
+    {
+      "question": "Observational learning (Bandura) needs?",
+      "correctAnswer": "Attention, retention, reproduction, motivation",
+      "incorrectAnswers": [
+        "Only reinforcement to model",
+        "Only genetics",
+        "No cognitive factors"
+      ],
+      "explanation": "Bobo doll studies.",
+      "keywords": [
+        "observational-learning",
+        "bandura"
+      ],
+      "source": "https://www.simplypsychology.org/bandura.html"
+    },
+    {
+      "question": "Token economy is?",
+      "correctAnswer": "Operant system exchanging tokens for reinforcers",
+      "incorrectAnswers": [
+        "Classical only",
+        "Psychoanalysis",
+        "Only biofeedback"
+      ],
+      "explanation": "Clinical/ed settings.",
+      "keywords": [
+        "token-economy",
+        "behavior"
+      ],
+      "source": "https://en.wikipedia.org/wiki/Token_economy"
+    }
+  ],
+  "social": [
+    {
+      "question": "Fundamental attribution error?",
+      "correctAnswer": "Overemphasize dispositional causes for others\u2019 behavior",
+      "incorrectAnswers": [
+        "Overemphasize situations for others",
+        "Never happens",
+        "Only for self"
+      ],
+      "explanation": "Ignore situational factors.",
+      "keywords": [
+        "attribution",
+        "bias"
+      ],
+      "source": "https://en.wikipedia.org/wiki/Fundamental_attribution_error"
+    },
+    {
+      "question": "Cognitive dissonance?",
+      "correctAnswer": "Discomfort from inconsistent cognitions",
+      "incorrectAnswers": [
+        "Always rational",
+        "Only about memory",
+        "No motivation to reduce"
+      ],
+      "explanation": "May change attitudes to reduce.",
+      "keywords": [
+        "cognitive-dissonance",
+        "festinger"
+      ],
+      "source": "https://en.wikipedia.org/wiki/Cognitive_dissonance"
+    },
+    {
+      "question": "Conformity (Asch line studies)?",
+      "correctAnswer": "Group pressure can distort public judgments",
+      "incorrectAnswers": [
+        "Never occurs",
+        "Only online",
+        "Only with rewards"
+      ],
+      "explanation": "Normative/informational influence.",
+      "keywords": [
+        "conformity",
+        "asch"
+      ],
+      "source": "https://en.wikipedia.org/wiki/Asch_conformity_experiments"
+    },
+    {
+      "question": "Obedience (Milgram) highlighted?",
+      "correctAnswer": "Situational authority can elicit harmful compliance",
+      "incorrectAnswers": [
+        "People never obey",
+        "Only evil personalities",
+        "No ethical debate"
+      ],
+      "explanation": "Ethics of research debated.",
+      "keywords": [
+        "obedience",
+        "milgram"
+      ],
+      "source": "https://en.wikipedia.org/wiki/Milgram_experiment"
+    },
+    {
+      "question": "Social facilitation?",
+      "correctAnswer": "Presence of others can enhance dominant responses",
+      "incorrectAnswers": [
+        "Always impairs",
+        "Only for animals",
+        "Never studied"
+      ],
+      "explanation": "Easy tasks improve; hard may worsen.",
+      "keywords": [
+        "social-facilitation",
+        "performance"
+      ],
+      "source": "https://en.wikipedia.org/wiki/Social_facilitation"
+    },
+    {
+      "question": "Social loafing?",
+      "correctAnswer": "Individuals exert less effort in groups",
+      "incorrectAnswers": [
+        "Always more effort",
+        "Only dyads",
+        "Same as conformity"
+      ],
+      "explanation": "Free riding on group output.",
+      "keywords": [
+        "social-loafing",
+        "groups"
+      ],
+      "source": "https://en.wikipedia.org/wiki/Social_loafing"
+    },
+    {
+      "question": "Groupthink (Janis)?",
+      "correctAnswer": "Cohesive groups seek harmony over critical appraisal",
+      "incorrectAnswers": [
+        "Always optimal decisions",
+        "Only individuals",
+        "No risk"
+      ],
+      "explanation": "Symptoms: illusion of invulnerability.",
+      "keywords": [
+        "groupthink",
+        "decision"
+      ],
+      "source": "https://en.wikipedia.org/wiki/Groupthink"
+    },
+    {
+      "question": "Stereotype threat (Steele/Aronson)?",
+      "correctAnswer": "Fear of confirming negative stereotype can impair performance",
+      "incorrectAnswers": [
+        "Always improves performance",
+        "Only physical tasks",
+        "No research support"
+      ],
+      "explanation": "Context-dependent.",
+      "keywords": [
+        "stereotype-threat",
+        "performance"
+      ],
+      "source": "https://en.wikipedia.org/wiki/Stereotype_threat"
+    },
+    {
+      "question": "In-group bias?",
+      "correctAnswer": "Favor own group",
+      "incorrectAnswers": [
+        "Always fair",
+        "Only economic",
+        "Never automatic"
+      ],
+      "explanation": "Minimal group studies.",
+      "keywords": [
+        "ingroup",
+        "bias"
+      ],
+      "source": "https://en.wikipedia.org/wiki/In-group_bias"
+    },
+    {
+      "question": "Diffusion of responsibility?",
+      "correctAnswer": "Less individual help when others present",
+      "incorrectAnswers": [
+        "More help always",
+        "Only online",
+        "Only experts"
+      ],
+      "explanation": "Bystander effect component.",
+      "keywords": [
+        "bystander",
+        "helping"
+      ],
+      "source": "https://en.wikipedia.org/wiki/Diffusion_of_responsibility"
+    },
+    {
+      "question": "Foot-in-the-door technique?",
+      "correctAnswer": "Small request then larger",
+      "incorrectAnswers": [
+        "Door-in-face only",
+        "Only threats",
+        "Random"
+      ],
+      "explanation": "Commitment/consistency.",
+      "keywords": [
+        "compliance",
+        "persuasion"
+      ],
+      "source": "https://en.wikipedia.org/wiki/Foot-in-the-door_technique"
+    },
+    {
+      "question": "Altruism vs egoism debate?",
+      "correctAnswer": "Helping may be self-rewarding or genuinely other-oriented",
+      "incorrectAnswers": [
+        "Settled fully",
+        "Only cultural",
+        "No psychology study"
+      ],
+      "explanation": "Empathy-altruism hypothesis.",
+      "keywords": [
+        "altruism",
+        "prosocial"
+      ],
+      "source": "https://plato.stanford.edu/entries/altruism-biological/"
+    }
+  ],
+  "abnormal": [
+    {
+      "question": "DSM purpose?",
+      "correctAnswer": "Standardize diagnostic criteria for mental disorders",
+      "incorrectAnswers": [
+        "Replace therapy",
+        "Legal sentence always",
+        "Measure IQ only"
+      ],
+      "explanation": "Clinical communication tool.",
+      "keywords": [
+        "dsm",
+        "diagnosis"
+      ],
+      "source": "https://www.psychiatry.org/psychiatrists/practice/dsm"
+    },
+    {
+      "question": "Comorbidity means?",
+      "correctAnswer": "Co-occurring disorders",
+      "incorrectAnswers": [
+        "Only medical",
+        "Cured status",
+        "Opposite of chronic"
+      ],
+      "explanation": "Treatment planning complexity.",
+      "keywords": [
+        "comorbidity",
+        "clinical"
+      ],
+      "source": "https://www.nimh.nih.gov/health/topics/psychotherapies"
+    },
+    {
+      "question": "Major depressive disorder core feature?",
+      "correctAnswer": "Depressed mood or anhedonia (among criteria)",
+      "incorrectAnswers": [
+        "Mania required",
+        "Hallucinations required",
+        "Only anxiety"
+      ],
+      "explanation": "Cluster of symptoms over time.",
+      "keywords": [
+        "depression",
+        "mdd"
+      ],
+      "source": "https://www.nimh.nih.gov/health/topics/depression"
+    },
+    {
+      "question": "Manic episode hallmark?",
+      "correctAnswer": "Elevated/expansive mood or irritability with energy surge (criteria)",
+      "incorrectAnswers": [
+        "Only low energy",
+        "Only sleep need increase",
+        "No impulsivity"
+      ],
+      "explanation": "Bipolar spectrum context.",
+      "keywords": [
+        "mania",
+        "bipolar"
+      ],
+      "source": "https://www.nimh.nih.gov/health/topics/bipolar-disorder"
+    },
+    {
+      "question": "Generalized anxiety disorder pattern?",
+      "correctAnswer": "Excessive worry across domains, persistent",
+      "incorrectAnswers": [
+        "Single phobia only",
+        "Only panic attacks",
+        "Only during sleep"
+      ],
+      "explanation": "Physical tension often.",
+      "keywords": [
+        "gad",
+        "anxiety"
+      ],
+      "source": "https://www.nimh.nih.gov/health/topics/anxiety-disorders"
+    },
+    {
+      "question": "PTSD follows?",
+      "correctAnswer": "Trauma exposure with intrusion, avoidance, arousal changes (criteria)",
+      "incorrectAnswers": [
+        "Only childhood",
+        "Any stress equal",
+        "Only substance-induced"
+      ],
+      "explanation": "Not everyone exposed develops PTSD.",
+      "keywords": [
+        "ptsd",
+        "trauma"
+      ],
+      "source": "https://www.nimh.nih.gov/health/topics/post-traumatic-stress-disorder-ptsd"
+    },
+    {
+      "question": "Schizophrenia psychosis features may include?",
+      "correctAnswer": "Hallucinations/delusions/disorganized symptoms (varies)",
+      "incorrectAnswers": [
+        "Always split personality myth",
+        "Always high IQ",
+        "Only mood symptoms"
+      ],
+      "explanation": "Heterogeneous disorder.",
+      "keywords": [
+        "schizophrenia",
+        "psychosis"
+      ],
+      "source": "https://www.nimh.nih.gov/health/topics/schizophrenia"
+    },
+    {
+      "question": "OCD vs obsession compulsion?",
+      "correctAnswer": "Obsessions intrusive thoughts; compulsions behaviors/mental acts",
+      "incorrectAnswers": [
+        "Same as PTSD",
+        "Only hoarding never related",
+        "Only tics"
+      ],
+      "explanation": "Distress and time-consuming.",
+      "keywords": [
+        "ocd",
+        "anxiety"
+      ],
+      "source": "https://www.nimh.nih.gov/health/topics/obsessive-compulsive-disorder-ocd"
+    },
+    {
+      "question": "Personality disorder stability?",
+      "correctAnswer": "Enduring patterns across time/situations",
+      "incorrectAnswers": [
+        "Episodic like panic only",
+        "Only medical",
+        "Gone in weeks typically"
+      ],
+      "explanation": "Onset usually adolescence/early adult.",
+      "keywords": [
+        "personality-disorder",
+        "clinical"
+      ],
+      "source": "https://www.nimh.nih.gov/health/topics/personality-disorders"
+    },
+    {
+      "question": "Stigma impact?",
+      "correctAnswer": "Reduces help-seeking and support",
+      "incorrectAnswers": [
+        "Improves outcomes always",
+        "Only historical",
+        "No evidence"
+      ],
+      "explanation": "Public education goal.",
+      "keywords": [
+        "stigma",
+        "mental-health"
+      ],
+      "source": "https://www.cdc.gov/mentalhealth/learn/index.html"
+    },
+    {
+      "question": "CBT targets?",
+      "correctAnswer": "Thoughts, behaviors, skills for symptom change",
+      "incorrectAnswers": [
+        "Only unconscious conflicts",
+        "Only medication",
+        "No homework"
+      ],
+      "explanation": "Evidence-based for many disorders.",
+      "keywords": [
+        "cbt",
+        "therapy"
+      ],
+      "source": "https://www.apa.org/ptsd-guideline/patients-and-families/cognitive-behavioral"
+    },
+    {
+      "question": "Informed consent in therapy?",
+      "correctAnswer": "Clear explanation of risks/benefits/alternatives",
+      "incorrectAnswers": [
+        "Never needed",
+        "Only research",
+        "Verbal forbidden"
+      ],
+      "explanation": "Ethical standard.",
+      "keywords": [
+        "informed-consent",
+        "ethics"
+      ],
+      "source": "https://www.apa.org/ethics/code"
+    }
+  ],
+  "research": [
+    {
+      "question": "Independent variable?",
+      "correctAnswer": "Manipulated predictor",
+      "incorrectAnswers": [
+        "Outcome measured",
+        "Confound always",
+        "Control only"
+      ],
+      "explanation": "Cause direction in experiments.",
+      "keywords": [
+        "independent-variable",
+        "experiment"
+      ],
+      "source": "https://openstax.org/books/psychology-2e/pages/2-1-why-is-research-important"
+    },
+    {
+      "question": "Dependent variable?",
+      "correctAnswer": "Outcome measured",
+      "incorrectAnswers": [
+        "Manipulated",
+        "Held constant always",
+        "Irrelevant"
+      ],
+      "explanation": "Effect variable.",
+      "keywords": [
+        "dependent-variable",
+        "experiment"
+      ],
+      "source": "https://openstax.org/books/psychology-2e/pages/2-1-why-is-research-important"
+    },
+    {
+      "question": "Random assignment purpose?",
+      "correctAnswer": "Reduce confounds; support causal claims",
+      "incorrectAnswers": [
+        "Guarantee representativeness",
+        "Eliminate ethics",
+        "Replace consent"
+      ],
+      "explanation": "Balances unknown factors.",
+      "keywords": [
+        "random-assignment",
+        "causality"
+      ],
+      "source": "https://openstax.org/books/psychology-2e/pages/2-1-why-is-research-important"
+    },
+    {
+      "question": "Correlation coefficient range?",
+      "correctAnswer": "\u22121 to +1",
+      "incorrectAnswers": [
+        "0 to 1 only",
+        "Any real",
+        "0 to 100"
+      ],
+      "explanation": "Strength and direction.",
+      "keywords": [
+        "correlation",
+        "statistics"
+      ],
+      "source": "https://openstax.org/books/psychology-2e/pages/2-1-why-is-research-important"
+    },
+    {
+      "question": "Correlation implies causation?",
+      "correctAnswer": "No; third variables possible",
+      "incorrectAnswers": [
+        "Yes always",
+        "Only negative r",
+        "Only experiments never needed"
+      ],
+      "explanation": "Need design + theory.",
+      "keywords": [
+        "third-variable",
+        "causality"
+      ],
+      "source": "https://openstax.org/books/psychology-2e/pages/2-1-why-is-research-important"
+    },
+    {
+      "question": "Double-blind procedure?",
+      "correctAnswer": "Participant and experimenter unaware of condition",
+      "incorrectAnswers": [
+        "Only single blind",
+        "No blinding",
+        "Only statistics"
+      ],
+      "explanation": "Reduces expectancy effects.",
+      "keywords": [
+        "double-blind",
+        "controls"
+      ],
+      "source": "https://openstax.org/books/psychology-2e/pages/2-1-why-is-research-important"
+    },
+    {
+      "question": "Operational definition?",
+      "correctAnswer": "Precise measurable description of construct",
+      "incorrectAnswers": [
+        "Philosophical only",
+        "Secret definition",
+        "Only survey"
+      ],
+      "explanation": "Makes replication possible.",
+      "keywords": [
+        "operational-definition",
+        "methods"
+      ],
+      "source": "https://openstax.org/books/psychology-2e/pages/2-1-why-is-research-important"
+    },
+    {
+      "question": "IRB role?",
+      "correctAnswer": "Ethical review of human subjects research",
+      "incorrectAnswers": [
+        "Publish papers",
+        "Grade students",
+        "Collect taxes"
+      ],
+      "explanation": "Risk/benefit and consent.",
+      "keywords": [
+        "irb",
+        "ethics"
+      ],
+      "source": "https://www.hhs.gov/ohrp/regulations-and-policy/guidance/faq/institutional-review-boards/index.html"
+    },
+    {
+      "question": "Informed consent elements include?",
+      "correctAnswer": "Voluntary participation, disclosure, comprehension",
+      "incorrectAnswers": [
+        "Deception always required",
+        "No risks listed",
+        "Coercion fine"
+      ],
+      "explanation": "Cornerstone of ethics.",
+      "keywords": [
+        "consent",
+        "human-subjects"
+      ],
+      "source": "https://www.hhs.gov/ohrp/regulations-and-policy/guidance/faq/informed-consent/index.html"
+    },
+    {
+      "question": "Longitudinal vs cross-sectional?",
+      "correctAnswer": "Same people over time vs different cohorts at one time",
+      "incorrectAnswers": [
+        "Same thing",
+        "Only surveys",
+        "Only MRI"
+      ],
+      "explanation": "Age effects confounded in cross-sectional.",
+      "keywords": [
+        "longitudinal",
+        "design"
+      ],
+      "source": "https://openstax.org/books/psychology-2e/pages/2-1-why-is-research-important"
+    },
+    {
+      "question": "p-value misinterpretation?",
+      "correctAnswer": "Not P(H0 true) nor P(result real)",
+      "incorrectAnswers": [
+        "Probability null true",
+        "Probability replicate",
+        "Effect size"
+      ],
+      "explanation": "Under null + model, chance of test stat at least as extreme.",
+      "keywords": [
+        "p-value",
+        "statistics"
+      ],
+      "source": "https://en.wikipedia.org/wiki/P-value"
+    },
+    {
+      "question": "Effect size importance?",
+      "correctAnswer": "Magnitude of phenomenon beyond significance",
+      "incorrectAnswers": [
+        "Same as p",
+        "Only sample size",
+        "Irrelevant"
+      ],
+      "explanation": "Clinical/practical significance.",
+      "keywords": [
+        "effect-size",
+        "power"
+      ],
+      "source": "https://www.apa.org/research/practice/guidelines/statistics"
+    }
+  ]
+}

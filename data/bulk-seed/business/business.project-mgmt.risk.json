@@ -1,0 +1,116 @@
+[
+  {
+    "category": "business",
+    "navigationKeyword1": "project-mgmt",
+    "navigationKeyword2": "risk",
+    "question": "What is a risk register?",
+    "correctAnswer": "A living list of identified risks with scores, owners, and responses.",
+    "incorrectAnswers": [
+      "A list of completed tasks.",
+      "A payroll journal.",
+      "A customer NPS survey."
+    ],
+    "explanation": "Registers make risks discussable and actionable.",
+    "keywords": [
+      "risk-register",
+      "risk"
+    ],
+    "source": "https://www.pmi.org/learning/library/risk-register-7116",
+    "seedId": "d56d4215-a18d-4140-adf9-d94cbd3422a7"
+  },
+  {
+    "category": "business",
+    "navigationKeyword1": "project-mgmt",
+    "navigationKeyword2": "risk",
+    "question": "What are common risk response strategies?",
+    "correctAnswer": "Avoid, mitigate, transfer, accept (frameworks vary).",
+    "incorrectAnswers": [
+      "Ignore, hide, deny, forget.",
+      "Only insurance.",
+      "Only hiring."
+    ],
+    "explanation": "Choose responses based on cost and appetite.",
+    "keywords": [
+      "risk-response",
+      "risk"
+    ],
+    "source": "https://www.pmi.org/learning/library/risk-management-7117",
+    "seedId": "4eed136d-e9a6-4803-8bf0-3c3ee5dad508"
+  },
+  {
+    "category": "business",
+    "navigationKeyword1": "project-mgmt",
+    "navigationKeyword2": "risk",
+    "question": "What is a probability-impact matrix used for?",
+    "correctAnswer": "Prioritize risks by likelihood and consequence.",
+    "incorrectAnswers": [
+      "Schedule tasks.",
+      "Calculate payroll taxes.",
+      "Design logos."
+    ],
+    "explanation": "Prioritization focuses limited attention.",
+    "keywords": [
+      "risk-matrix",
+      "risk"
+    ],
+    "source": "https://www.pmi.org/learning/library/qualitative-risk-analysis-7119",
+    "seedId": "26fc3eac-d043-4633-a5bf-240a6c71cc20"
+  },
+  {
+    "category": "business",
+    "navigationKeyword1": "project-mgmt",
+    "navigationKeyword2": "risk",
+    "question": "What is the difference between a risk and an issue?",
+    "correctAnswer": "A risk may happen; an issue has happened and needs action now.",
+    "incorrectAnswers": [
+      "They are identical words.",
+      "Issues are only financial.",
+      "Risks are only positive."
+    ],
+    "explanation": "Issue management prevents surprise firefighting.",
+    "keywords": [
+      "issue-vs-risk",
+      "risk"
+    ],
+    "source": "https://www.pmi.org/learning/library/project-issue-management-7120",
+    "seedId": "2c93b99c-b624-4e2e-b216-8430b4b1d8dd"
+  },
+  {
+    "category": "business",
+    "navigationKeyword1": "project-mgmt",
+    "navigationKeyword2": "risk",
+    "question": "What is contingency reserve vs management reserve (PMI-style idea)?",
+    "correctAnswer": "Contingency addresses known unknowns in scope/time/cost; management reserve addresses unknown unknowns at higher authority.",
+    "incorrectAnswers": [
+      "Same pool of money always.",
+      "Neither exists.",
+      "Only marketing uses reserves."
+    ],
+    "explanation": "Reserves support realistic baselines.",
+    "keywords": [
+      "contingency-reserve",
+      "pm"
+    ],
+    "source": "https://www.pmi.org/learning/library/project-reserve-analysis-7121",
+    "seedId": "dd6e5914-286c-403f-8b59-ae8c2de9b0e0"
+  },
+  {
+    "category": "business",
+    "navigationKeyword1": "project-mgmt",
+    "navigationKeyword2": "risk",
+    "question": "Why focus risk management on the critical path?",
+    "correctAnswer": "Delays on critical work directly extend delivery; risk responses should protect schedule drivers.",
+    "incorrectAnswers": [
+      "Critical path has no risks.",
+      "Only non-critical tasks matter.",
+      "Risk is random."
+    ],
+    "explanation": "Align mitigation with schedule impact.",
+    "keywords": [
+      "critical-path-risk",
+      "schedule"
+    ],
+    "source": "https://www.pmi.org/learning/library/project-risk-management-7117",
+    "seedId": "a9a4f720-fa11-4bbc-8cc0-44513e92852d"
+  }
+]

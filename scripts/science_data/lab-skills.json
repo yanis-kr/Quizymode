@@ -1,0 +1,1094 @@
+{
+  "measurement": [
+    {
+      "question": "Why use SI units in science?",
+      "correctAnswer": "They provide a consistent international standard",
+      "incorrectAnswers": [
+        "They change daily",
+        "They forbid decimals",
+        "They are only US customary"
+      ],
+      "explanation": "SI base units anchor measurements.",
+      "keywords": [
+        "si-units",
+        "metrology"
+      ],
+      "source": "https://www.nist.gov/pml/weights-and-measures/metric-si/si-units"
+    },
+    {
+      "question": "What is precision vs accuracy (basic)?",
+      "correctAnswer": "Repeatability vs closeness to true value",
+      "incorrectAnswers": [
+        "Same word",
+        "Opposite of each other always",
+        "Only for mass"
+      ],
+      "explanation": "A precise measurement can still be inaccurate.",
+      "keywords": [
+        "precision",
+        "accuracy"
+      ],
+      "source": "https://www.nist.gov/pml/weights-and-measures/metric-si/si-units"
+    },
+    {
+      "question": "What is significant figures idea?",
+      "correctAnswer": "Digits that convey measurement reliability",
+      "incorrectAnswers": [
+        "All zeros never count",
+        "Only whole numbers",
+        "Unlimited digits always"
+      ],
+      "explanation": "Rules reflect instrument resolution.",
+      "keywords": [
+        "significant-figures",
+        "uncertainty"
+      ],
+      "source": "https://www.nist.gov/pml/weights-and-measures/metric-si/si-units"
+    },
+    {
+      "question": "What is random error?",
+      "correctAnswer": "Unpredictable scatter from many small sources",
+      "incorrectAnswers": [
+        "Always same direction",
+        "Same as bias",
+        "Cannot be reduced"
+      ],
+      "explanation": "Averaging may reduce impact.",
+      "keywords": [
+        "random-error",
+        "statistics"
+      ],
+      "source": "https://www.nist.gov/itl/sed-gsg/introduction-measurement"
+    },
+    {
+      "question": "What is systematic error?",
+      "correctAnswer": "Consistent bias in one direction",
+      "incorrectAnswers": [
+        "Averages to zero",
+        "Only imprecision",
+        "Only human mood"
+      ],
+      "explanation": "Calibration reduces systematic error.",
+      "keywords": [
+        "systematic-error",
+        "calibration"
+      ],
+      "source": "https://www.nist.gov/itl/sed-gsg/introduction-measurement"
+    },
+    {
+      "question": "What is calibration?",
+      "correctAnswer": "Adjust/compare instrument to a standard",
+      "incorrectAnswers": [
+        "Guesswork",
+        "Cleaning only",
+        "Deleting data"
+      ],
+      "explanation": "Traceability to standards matters.",
+      "keywords": [
+        "calibration",
+        "standards"
+      ],
+      "source": "https://www.nist.gov/pml/weights-and-measures/calibration-services"
+    },
+    {
+      "question": "What is meniscus reading?",
+      "correctAnswer": "Read liquid level at bottom of curve for water in glass",
+      "incorrectAnswers": [
+        "Top of curve always",
+        "Middle randomly",
+        "Ignore units"
+      ],
+      "explanation": "Parallax errors matter.",
+      "keywords": [
+        "meniscus",
+        "volume"
+      ],
+      "source": "https://www.nist.gov/pml/weights-and-measures/metric-si/si-units"
+    },
+    {
+      "question": "What is a graduated cylinder used for?",
+      "correctAnswer": "Measuring liquid volumes",
+      "incorrectAnswers": [
+        "Heating to high temps",
+        "Weighing mass directly",
+        "Centrifuging"
+      ],
+      "explanation": "Read at eye level.",
+      "keywords": [
+        "volume",
+        "glassware"
+      ],
+      "source": "https://www.flinnsci.com/lab-safety/"
+    },
+    {
+      "question": "What is burette used for?",
+      "correctAnswer": "Delivering precise titrant volumes",
+      "incorrectAnswers": [
+        "Weighing solids",
+        "Growing cultures",
+        "PCR"
+      ],
+      "explanation": "Common in titrations.",
+      "keywords": [
+        "burette",
+        "titration"
+      ],
+      "source": "https://www.flinnsci.com/lab-safety/"
+    },
+    {
+      "question": "What is analytical balance?",
+      "correctAnswer": "High-precision mass measurement",
+      "incorrectAnswers": [
+        "Measures light intensity",
+        "Measures pH",
+        "Measures voltage only"
+      ],
+      "explanation": "Use stable surface and draft shield.",
+      "keywords": [
+        "balance",
+        "mass"
+      ],
+      "source": "https://www.nist.gov/pml/weights-and-measures/laboratory-metrology"
+    },
+    {
+      "question": "What is thermometer calibration check?",
+      "correctAnswer": "Compare to known reference (ice water, boiling at known pressure)",
+      "incorrectAnswers": [
+        "Always trust sensation",
+        "Shake it",
+        "Color change"
+      ],
+      "explanation": "Understand limitations of liquid thermometers.",
+      "keywords": [
+        "temperature",
+        "calibration"
+      ],
+      "source": "https://www.nist.gov/pml/weights-and-measures/metric-si/si-units"
+    },
+    {
+      "question": "What is measurement uncertainty?",
+      "correctAnswer": "Range likely containing true value",
+      "incorrectAnswers": [
+        "Exact single number always",
+        "Same as mistake",
+        "Only for time"
+      ],
+      "explanation": "Report with measurements in formal labs.",
+      "keywords": [
+        "uncertainty",
+        "error-bars"
+      ],
+      "source": "https://www.nist.gov/itl/sed-gsg/introduction-measurement"
+    }
+  ],
+  "safety": [
+    {
+      "question": "Why read SDS before using a chemical?",
+      "correctAnswer": "It lists hazards and handling/emergency info",
+      "incorrectAnswers": [
+        "It is optional decoration",
+        "It lists recipes",
+        "It replaces goggles"
+      ],
+      "explanation": "Safety Data Sheets are key references.",
+      "keywords": [
+        "sds",
+        "hazards"
+      ],
+      "source": "https://www.osha.gov/sites/default/files/publications/OSHA3514.pdf"
+    },
+    {
+      "question": "When should you wear safety goggles?",
+      "correctAnswer": "Whenever splash or impact hazards exist",
+      "incorrectAnswers": [
+        "Only if instructor is watching",
+        "Never with liquids",
+        "Only for fire"
+      ],
+      "explanation": "Eye protection is basic PPE.",
+      "keywords": [
+        "ppe",
+        "goggles"
+      ],
+      "source": "https://www.osha.gov/eye-and-face-protection"
+    },
+    {
+      "question": "What is fume hood for?",
+      "correctAnswer": "Contain and exhaust hazardous vapors",
+      "incorrectAnswers": [
+        "Store food",
+        "Dry gloves",
+        "Warm samples socially"
+      ],
+      "explanation": "Work at proper sash height.",
+      "keywords": [
+        "fume-hood",
+        "ventilation"
+      ],
+      "source": "https://www.osha.gov/laboratories/chemical-hazards"
+    },
+    {
+      "question": "What should you do if chemical contacts skin?",
+      "correctAnswer": "Flush with water per protocol; seek help if serious",
+      "incorrectAnswers": [
+        "Ignore if mild",
+        "Apply neutralizing acid/base randomly",
+        "Wipe with paper only always"
+      ],
+      "explanation": "Follow posted emergency shower/eyewash use.",
+      "keywords": [
+        "chemical-safety",
+        "spill"
+      ],
+      "source": "https://www.osha.gov/laboratories/chemical-hazards"
+    },
+    {
+      "question": "Why no eating in lab?",
+      "correctAnswer": "Prevents ingestion contamination and distraction",
+      "incorrectAnswers": [
+        "Allowed if clean hands",
+        "Only banned for organic labs",
+        "Only for middle school"
+      ],
+      "explanation": "Food/drink don\u2019t belong near chemicals.",
+      "keywords": [
+        "lab-rules",
+        "contamination"
+      ],
+      "source": "https://www.osha.gov/laboratories/chemical-hazards"
+    },
+    {
+      "question": "How transport chemicals safely?",
+      "correctAnswer": "Use secondary containment and labeled containers",
+      "incorrectAnswers": [
+        "In open hands",
+        "In pockets",
+        "Unlabeled bottles"
+      ],
+      "explanation": "Spill trays help.",
+      "keywords": [
+        "transport",
+        "labeling"
+      ],
+      "source": "https://www.osha.gov/laboratories/chemical-hazards"
+    },
+    {
+      "question": "What is WHMIS/GHS pictogram purpose?",
+      "correctAnswer": "Quick hazard communication",
+      "incorrectAnswers": [
+        "Decoration",
+        "Marketing",
+        "Color preference"
+      ],
+      "explanation": "Understand flame, corrosion, health hazard symbols.",
+      "keywords": [
+        "ghs",
+        "labeling"
+      ],
+      "source": "https://www.osha.gov/hazard-communication"
+    },
+    {
+      "question": "What is biohazard precaution?",
+      "correctAnswer": "Assume unknowns are infectious; use barriers",
+      "incorrectAnswers": [
+        "Bare hands OK",
+        "Smell cultures to ID",
+        "Recycle sharps in trash"
+      ],
+      "explanation": "Sharps containers and autoclave protocols matter.",
+      "keywords": [
+        "biohazard",
+        "ppe"
+      ],
+      "source": "https://www.cdc.gov/labs/biosafety.html"
+    },
+    {
+      "question": "What is fire extinguisher PASS?",
+      "correctAnswer": "Pull, Aim, Squeeze, Sweep",
+      "incorrectAnswers": [
+        "Pour water on all fires",
+        "Run only",
+        "Open windows only"
+      ],
+      "explanation": "Match extinguisher type to fire class.",
+      "keywords": [
+        "fire-safety",
+        "extinguisher"
+      ],
+      "source": "https://www.osha.gov/fire-safety"
+    },
+    {
+      "question": "What is incompatible chemical storage rule?",
+      "correctAnswer": "Segregate oxidizers, acids, flammables appropriately",
+      "incorrectAnswers": [
+        "Mix everything to save space",
+        "Alphabetical only",
+        "By color only"
+      ],
+      "explanation": "Follow storage charts.",
+      "keywords": [
+        "storage",
+        "incompatibles"
+      ],
+      "source": "https://www.osha.gov/laboratories/chemical-hazards"
+    },
+    {
+      "question": "Why tie back long hair in lab?",
+      "correctAnswer": "Reduce fire and entanglement risk",
+      "incorrectAnswers": [
+        "Fashion rule only",
+        "Optional always",
+        "Only in kitchens"
+      ],
+      "explanation": "Loose hair is a hazard near burners.",
+      "keywords": [
+        "hair-tie",
+        "safety"
+      ],
+      "source": "https://www.osha.gov/laboratories/chemical-hazards"
+    },
+    {
+      "question": "What is emergency exit rule?",
+      "correctAnswer": "Know two exits and alarm locations",
+      "incorrectAnswers": [
+        "Ignore drills",
+        "Block doors",
+        "Hide chemicals in exit path"
+      ],
+      "explanation": "Preparedness saves lives.",
+      "keywords": [
+        "egress",
+        "safety"
+      ],
+      "source": "https://www.osha.gov/emergency-preparedness"
+    }
+  ],
+  "equipment": [
+    {
+      "question": "What is microscope objective?",
+      "correctAnswer": "Lens closest to specimen with magnification labeled",
+      "incorrectAnswers": [
+        "Eyepiece only",
+        "Mirror only",
+        "Stage clip"
+      ],
+      "explanation": "Rotate turret to change magnification.",
+      "keywords": [
+        "microscope",
+        "optics"
+      ],
+      "source": "https://www.nature.com/scitable/topicpage/light-microscopy-748/"
+    },
+    {
+      "question": "What is centrifuge safety?",
+      "correctAnswer": "Balance tubes; secure rotor; don\u2019t open spinning",
+      "incorrectAnswers": [
+        "Speed unbalanced OK",
+        "Open lid to cool",
+        "Use any tube material"
+      ],
+      "explanation": "Imbalance can damage instrument and injure.",
+      "keywords": [
+        "centrifuge",
+        "safety"
+      ],
+      "source": "https://www.cdc.gov/labs/biosafety.html"
+    },
+    {
+      "question": "What is pipette calibration idea?",
+      "correctAnswer": "Delivered volume must match nominal within tolerance",
+      "incorrectAnswers": [
+        "Never matters",
+        "Only for water never",
+        "Guess by eye"
+      ],
+      "explanation": "Periodic calibration checks.",
+      "keywords": [
+        "pipette",
+        "volume"
+      ],
+      "source": "https://www.nist.gov/pml/weights-and-measures/laboratory-metrology"
+    },
+    {
+      "question": "What is hot plate use note?",
+      "correctAnswer": "Not the same as stirrer always; watch overheating",
+      "incorrectAnswers": [
+        "Leave unattended overnight",
+        "Heat sealed closed containers",
+        "Use near flammable solvents without care"
+      ],
+      "explanation": "Use in fume hood when needed.",
+      "keywords": [
+        "hot-plate",
+        "heating"
+      ],
+      "source": "https://www.osha.gov/laboratories/chemical-hazards"
+    },
+    {
+      "question": "What is spectrophotometer measure?",
+      "correctAnswer": "Light absorption/transmission at wavelengths",
+      "incorrectAnswers": [
+        "Mass directly",
+        "pH directly always",
+        "Voltage of battery"
+      ],
+      "explanation": "Beer\u2013Lambert law relates absorbance to concentration.",
+      "keywords": [
+        "spectrophotometry",
+        "beer-lambert"
+      ],
+      "source": "https://www.nature.com/scitable/topicpage/spectrophotometry-596/"
+    },
+    {
+      "question": "What is PCR machine (thermal cycler)?",
+      "correctAnswer": "Cycles temperatures for DNA amplification",
+      "incorrectAnswers": [
+        "Measures weight",
+        "Counts cells visually",
+        "Cuts proteins"
+      ],
+      "explanation": "Denature, anneal, extend steps.",
+      "keywords": [
+        "pcr",
+        "thermal-cycler"
+      ],
+      "source": "https://www.genome.gov/genetics-glossary/Polymerase-chain-reaction"
+    },
+    {
+      "question": "What is gel electrophoresis?",
+      "correctAnswer": "Separate charged molecules by size in a gel under electric field",
+      "incorrectAnswers": [
+        "Measures absorbance of gas",
+        "Counts moles without current",
+        "Only for proteins never"
+      ],
+      "explanation": "DNA fragments migrate through matrix.",
+      "keywords": [
+        "gel",
+        "electrophoresis"
+      ],
+      "source": "https://www.genome.gov/genetics-glossary/Gel-electrophoresis"
+    },
+    {
+      "question": "What is autoclave?",
+      "correctAnswer": "Sterilize using high-pressure steam",
+      "incorrectAnswers": [
+        "Freeze samples",
+        "Dry glass only",
+        "Polish metal"
+      ],
+      "explanation": "Kills spores with heat + moisture.",
+      "keywords": [
+        "autoclave",
+        "sterilization"
+      ],
+      "source": "https://www.cdc.gov/infection-control/hcp/disinfection-and-sterilization/"
+    },
+    {
+      "question": "What is volumetric flask used for?",
+      "correctAnswer": "Prepare precise total volumes",
+      "incorrectAnswers": [
+        "Heat strongly",
+        "Weigh micrograms",
+        "Run reactions at high P"
+      ],
+      "explanation": "Fill to calibration line.",
+      "keywords": [
+        "volumetric-flask",
+        "solution-prep"
+      ],
+      "source": "https://www.flinnsci.com/lab-safety/"
+    },
+    {
+      "question": "What is beaker limitation?",
+      "correctAnswer": "Approximate volume markings",
+      "incorrectAnswers": [
+        "Highest precision",
+        "Primary standard",
+        "Legal metrology"
+      ],
+      "explanation": "Use graduated cylinder for better accuracy.",
+      "keywords": [
+        "beaker",
+        "glassware"
+      ],
+      "source": "https://www.flinnsci.com/lab-safety/"
+    },
+    {
+      "question": "What is pH meter?",
+      "correctAnswer": "Electrode-based pH measurement",
+      "incorrectAnswers": [
+        "Weighs moles",
+        "Counts photons only",
+        "Measures density"
+      ],
+      "explanation": "Calibrate with buffers.",
+      "keywords": [
+        "ph-meter",
+        "buffers"
+      ],
+      "source": "https://www.nist.gov/pml/weights-and-measures/laboratory-metrology"
+    },
+    {
+      "question": "What is incubator for?",
+      "correctAnswer": "Maintain temperature (and sometimes CO2) for cultures",
+      "incorrectAnswers": [
+        "Dry sterilize instruments",
+        "Freeze cells",
+        "Measure voltage"
+      ],
+      "explanation": "Biology labs grow microbes/cells.",
+      "keywords": [
+        "incubator",
+        "culture"
+      ],
+      "source": "https://www.cdc.gov/labs/biosafety.html"
+    }
+  ],
+  "graphs": [
+    {
+      "question": "What axis is independent variable usually?",
+      "correctAnswer": "x-axis",
+      "incorrectAnswers": [
+        "y-axis",
+        "Either always random",
+        "No axes"
+      ],
+      "explanation": "Convention: manipulated variable on x.",
+      "keywords": [
+        "graphing",
+        "variables"
+      ],
+      "source": "https://www.nist.gov/itl/sed-gsg/introduction-measurement"
+    },
+    {
+      "question": "What is a line of best fit?",
+      "correctAnswer": "Model summarizing trend in scatter data",
+      "incorrectAnswers": [
+        "Connect-the-dots always",
+        "Only bar charts",
+        "Only pie charts"
+      ],
+      "explanation": "Regression minimizes error criterion.",
+      "keywords": [
+        "regression",
+        "scatterplot"
+      ],
+      "source": "https://en.wikipedia.org/wiki/Curve_fitting"
+    },
+    {
+      "question": "Why include units on axes?",
+      "correctAnswer": "So the graph is interpretable",
+      "incorrectAnswers": [
+        "Optional",
+        "Only in titles",
+        "Only for fun"
+      ],
+      "explanation": "Dimensional meaning matters.",
+      "keywords": [
+        "units",
+        "graphing"
+      ],
+      "source": "https://www.nist.gov/pml/weights-and-measures/metric-si/si-units"
+    },
+    {
+      "question": "What is error bar?",
+      "correctAnswer": "Visualize uncertainty in measurements",
+      "incorrectAnswers": [
+        "Shows font size",
+        "Shows color preference",
+        "Shows sample brand"
+      ],
+      "explanation": "Can be SD, SE, or CI depending on caption.",
+      "keywords": [
+        "error-bars",
+        "uncertainty"
+      ],
+      "source": "https://www.nature.com/nature-portfolio/editorial-policies/reporting-standards-for-life-sciences"
+    },
+    {
+      "question": "What is interpolation vs extrapolation?",
+      "correctAnswer": "Within data range vs beyond",
+      "incorrectAnswers": [
+        "Same",
+        "Extrapolation always safer",
+        "Interpolation always impossible"
+      ],
+      "explanation": "Extrapolation risks model failure.",
+      "keywords": [
+        "extrapolation",
+        "modeling"
+      ],
+      "source": "https://en.wikipedia.org/wiki/Extrapolation"
+    },
+    {
+      "question": "What is log scale used for?",
+      "correctAnswer": "Display wide dynamic range",
+      "incorrectAnswers": [
+        "Make negative lengths",
+        "Remove units",
+        "Replace experiments"
+      ],
+      "explanation": "Common in biology/physics.",
+      "keywords": [
+        "log-scale",
+        "graphs"
+      ],
+      "source": "https://en.wikipedia.org/wiki/Logarithmic_scale"
+    },
+    {
+      "question": "What is bar chart best for?",
+      "correctAnswer": "Comparing categories",
+      "incorrectAnswers": [
+        "Continuous x with trend",
+        "Vector fields",
+        "Phase diagrams"
+      ],
+      "explanation": "Avoid misleading truncated axes.",
+      "keywords": [
+        "bar-chart",
+        "visualization"
+      ],
+      "source": "https://en.wikipedia.org/wiki/Bar_chart"
+    },
+    {
+      "question": "What is histogram?",
+      "correctAnswer": "Frequency distribution of continuous data in bins",
+      "incorrectAnswers": [
+        "Pie chart",
+        "Scatter plot",
+        "Contour plot"
+      ],
+      "explanation": "Bin width affects shape.",
+      "keywords": [
+        "histogram",
+        "distribution"
+      ],
+      "source": "https://en.wikipedia.org/wiki/Histogram"
+    },
+    {
+      "question": "What is slope on distance-time graph?",
+      "correctAnswer": "Speed",
+      "incorrectAnswers": [
+        "Acceleration always",
+        "Force",
+        "Mass"
+      ],
+      "explanation": "Derivative interpretation.",
+      "keywords": [
+        "slope",
+        "kinematics"
+      ],
+      "source": "https://www.khanacademy.org/science/physics/one-dimensional-motion"
+    },
+    {
+      "question": "What is area under velocity-time graph?",
+      "correctAnswer": "Displacement (with sign)",
+      "incorrectAnswers": [
+        "Speed always positive area confusion handled carefully",
+        "Jerk",
+        "Power"
+      ],
+      "explanation": "Integral interpretation.",
+      "keywords": [
+        "area",
+        "kinematics"
+      ],
+      "source": "https://www.khanacademy.org/science/physics/one-dimensional-motion"
+    },
+    {
+      "question": "What is calibration curve?",
+      "correctAnswer": "Relate instrument reading to known concentrations",
+      "incorrectAnswers": [
+        "Random dots",
+        "Only theoretical",
+        "Only for sound"
+      ],
+      "explanation": "Use standards to interpolate unknowns.",
+      "keywords": [
+        "calibration-curve",
+        "analytical"
+      ],
+      "source": "https://www.nist.gov/pml/weights-and-measures/laboratory-metrology"
+    },
+    {
+      "question": "What is digital vs analog data plotting?",
+      "correctAnswer": "Both need clear scales and metadata",
+      "incorrectAnswers": [
+        "Digital needs no labels",
+        "Analog forbidden",
+        "Only analog allowed"
+      ],
+      "explanation": "Document sampling rate if relevant.",
+      "keywords": [
+        "data",
+        "metadata"
+      ],
+      "source": "https://www.nist.gov/itl/sed-gsg/introduction-measurement"
+    }
+  ],
+  "reports": [
+    {
+      "question": "What is a lab notebook purpose?",
+      "correctAnswer": "Traceable record of methods and results",
+      "incorrectAnswers": [
+        "Personal diary unrelated",
+        "Marketing copy",
+        "Optional if memory good"
+      ],
+      "explanation": "Supports reproducibility.",
+      "keywords": [
+        "notebook",
+        "integrity"
+      ],
+      "source": "https://www.nih.gov/grants-policy/research-integrity-why-it-matters"
+    },
+    {
+      "question": "What should a methods section include?",
+      "correctAnswer": "What you did so another could repeat",
+      "incorrectAnswers": [
+        "Only results",
+        "Only opinions",
+        "Only references"
+      ],
+      "explanation": "Enough detail matters.",
+      "keywords": [
+        "methods",
+        "writing"
+      ],
+      "source": "https://www.nature.com/nature-portfolio/editorial-policies/reporting-standards-for-life-sciences"
+    },
+    {
+      "question": "What is hypothesis in lab report?",
+      "correctAnswer": "Testable prediction",
+      "incorrectAnswers": [
+        "Proven fact",
+        "Random quote",
+        "Definition copy"
+      ],
+      "explanation": "Connects to experiment design.",
+      "keywords": [
+        "hypothesis",
+        "scientific-method"
+      ],
+      "source": "https://undsci.berkeley.edu/article/whatsscience_04"
+    },
+    {
+      "question": "What is discussion vs results?",
+      "correctAnswer": "Interpretation vs raw findings presentation",
+      "incorrectAnswers": [
+        "Same section always",
+        "Discussion has no text",
+        "Results includes citations only"
+      ],
+      "explanation": "Discuss errors and implications.",
+      "keywords": [
+        "discussion",
+        "results"
+      ],
+      "source": "https://www.nature.com/nature-portfolio/editorial-policies/reporting-standards-for-life-sciences"
+    },
+    {
+      "question": "What is citation for?",
+      "correctAnswer": "Credit sources and allow verification",
+      "incorrectAnswers": [
+        "Decoration",
+        "Increase word count only",
+        "Avoid plagiarism only is side benefit"
+      ],
+      "explanation": "Academic integrity.",
+      "keywords": [
+        "citations",
+        "ethics"
+      ],
+      "source": "https://www.plagiarism.org/article/preventing-plagiarism-when-writing"
+    },
+    {
+      "question": "What is abstract?",
+      "correctAnswer": "Short summary of entire report",
+      "incorrectAnswers": [
+        "Full data tables",
+        "Only introduction",
+        "References list"
+      ],
+      "explanation": "Often written last.",
+      "keywords": [
+        "abstract",
+        "writing"
+      ],
+      "source": "https://www.nature.com/nature-portfolio/editorial-policies/reporting-standards-for-life-sciences"
+    },
+    {
+      "question": "What is conclusion?",
+      "correctAnswer": "What you learned supported by evidence",
+      "incorrectAnswers": [
+        "New untested claims",
+        "Ignore data",
+        "Repeat abstract verbatim"
+      ],
+      "explanation": "May include future work.",
+      "keywords": [
+        "conclusion",
+        "writing"
+      ],
+      "source": "https://undsci.berkeley.edu/article/whatsscience_04"
+    },
+    {
+      "question": "What is significant figures in reporting?",
+      "correctAnswer": "Match precision to measurement capability",
+      "incorrectAnswers": [
+        "Use 10 decimals always",
+        "Use 0 decimals always",
+        "Random"
+      ],
+      "explanation": "Honest representation.",
+      "keywords": [
+        "sig-figs",
+        "reporting"
+      ],
+      "source": "https://www.nist.gov/pml/weights-and-measures/metric-si/si-units"
+    },
+    {
+      "question": "What is appendix for?",
+      "correctAnswer": "Extra raw data or long derivations",
+      "incorrectAnswers": [
+        "Main argument",
+        "Replace methods",
+        "Jokes"
+      ],
+      "explanation": "Keeps main text readable.",
+      "keywords": [
+        "appendix",
+        "writing"
+      ],
+      "source": "https://www.nature.com/nature-portfolio/editorial-policies/reporting-standards-for-life-sciences"
+    },
+    {
+      "question": "What is plagiarism?",
+      "correctAnswer": "Present others\u2019 work as your own",
+      "incorrectAnswers": [
+        "Paraphrasing always OK without cite",
+        "Common knowledge always",
+        "Citation removes all responsibility"
+      ],
+      "explanation": "Quote and cite properly.",
+      "keywords": [
+        "plagiarism",
+        "ethics"
+      ],
+      "source": "https://www.plagiarism.org/article/preventing-plagiarism-when-writing"
+    },
+    {
+      "question": "What is peer review (concept)?",
+      "correctAnswer": "Independent experts evaluate manuscripts",
+      "incorrectAnswers": [
+        "Facebook likes",
+        "Teacher-only",
+        "Automatic grammar check only"
+      ],
+      "explanation": "Not perfect but improves quality.",
+      "keywords": [
+        "peer-review",
+        "science"
+      ],
+      "source": "https://undsci.berkeley.edu/article/whatsscience_04"
+    },
+    {
+      "question": "What is reproducibility crisis concern?",
+      "correctAnswer": "Some findings fail to replicate",
+      "incorrectAnswers": [
+        "Science never progresses",
+        "All papers false",
+        "Replication never done"
+      ],
+      "explanation": "Highlights methods and statistics rigor.",
+      "keywords": [
+        "reproducibility",
+        "open-science"
+      ],
+      "source": "https://www.nih.gov/research-training/rigor-reproducibility"
+    }
+  ],
+  "methods": [
+    {
+      "question": "What is control variable?",
+      "correctAnswer": "Held constant to isolate relationships",
+      "incorrectAnswers": [
+        "Changed freely",
+        "Same as dependent",
+        "Unmeasured always"
+      ],
+      "explanation": "Controls reduce confounding.",
+      "keywords": [
+        "controls",
+        "experimental-design"
+      ],
+      "source": "https://undsci.berkeley.edu/article/whatsscience_04"
+    },
+    {
+      "question": "What is independent variable?",
+      "correctAnswer": "Manipulated variable",
+      "incorrectAnswers": [
+        "Outcome measured",
+        "Control always",
+        "Constant always"
+      ],
+      "explanation": "Plotted on x in many cases.",
+      "keywords": [
+        "independent-variable",
+        "design"
+      ],
+      "source": "https://undsci.berkeley.edu/article/whatsscience_04"
+    },
+    {
+      "question": "What is dependent variable?",
+      "correctAnswer": "Measured outcome",
+      "incorrectAnswers": [
+        "Manipulated input",
+        "Ignored variable",
+        "Random noise only"
+      ],
+      "explanation": "Plotted on y in many cases.",
+      "keywords": [
+        "dependent-variable",
+        "design"
+      ],
+      "source": "https://undsci.berkeley.edu/article/whatsscience_04"
+    },
+    {
+      "question": "What is replication?",
+      "correctAnswer": "Repeat experiment to verify results",
+      "incorrectAnswers": [
+        "Never needed",
+        "Same as repetition in statistics always",
+        "Only for failures"
+      ],
+      "explanation": "Science relies on repeatability.",
+      "keywords": [
+        "replication",
+        "methods"
+      ],
+      "source": "https://www.nih.gov/research-training/rigor-reproducibility"
+    },
+    {
+      "question": "What is blinded experiment?",
+      "correctAnswer": "Participants/observers unaware of group assignment",
+      "incorrectAnswers": [
+        "Everyone knows arm",
+        "Only observational",
+        "Only theoretical"
+      ],
+      "explanation": "Reduces bias.",
+      "keywords": [
+        "blinding",
+        "bias"
+      ],
+      "source": "https://www.nature.com/nature-portfolio/editorial-policies/reporting-standards-for-life-sciences"
+    },
+    {
+      "question": "What is randomized assignment?",
+      "correctAnswer": "Randomly allocate subjects to groups",
+      "incorrectAnswers": [
+        "Always alphabetical",
+        "Self-selection always",
+        "By height only"
+      ],
+      "explanation": "Supports causal inference.",
+      "keywords": [
+        "randomization",
+        "causality"
+      ],
+      "source": "https://www.nature.com/nature-portfolio/editorial-policies/reporting-standards-for-life-sciences"
+    },
+    {
+      "question": "What is serial dilution?",
+      "correctAnswer": "Stepwise dilution to reach target concentration",
+      "incorrectAnswers": [
+        "Mix without calculation",
+        "Heat until dry",
+        "Only weight-based"
+      ],
+      "explanation": "Common in biology/biochemistry.",
+      "keywords": [
+        "dilution",
+        "solution-prep"
+      ],
+      "source": "https://www.flinnsci.com/lab-safety/"
+    },
+    {
+      "question": "What is aseptic technique?",
+      "correctAnswer": "Practices to reduce contamination in cultures",
+      "incorrectAnswers": [
+        "Work openly on bench without care",
+        "Use mouth pipetting",
+        "Ignore flame"
+      ],
+      "explanation": "Sterile field + sterile tools.",
+      "keywords": [
+        "aseptic",
+        "microbiology"
+      ],
+      "source": "https://www.cdc.gov/labs/biosafety.html"
+    },
+    {
+      "question": "What is titration endpoint?",
+      "correctAnswer": "Observed point stopping titration (indicator/color/pH)",
+      "incorrectAnswers": [
+        "Always pH 14",
+        "Always equivalence by eye without meaning",
+        "Random volume"
+      ],
+      "explanation": "Endpoint approximates equivalence point.",
+      "keywords": [
+        "titration",
+        "analytical"
+      ],
+      "source": "https://openstax.org/books/chemistry-2e/pages/14-7-acid-base-titrations"
+    },
+    {
+      "question": "What is standard solution?",
+      "correctAnswer": "Known concentration reference",
+      "incorrectAnswers": [
+        "Unknown concentration",
+        "Only solvent",
+        "Only gas"
+      ],
+      "explanation": "Used in calibration.",
+      "keywords": [
+        "standard",
+        "analytical"
+      ],
+      "source": "https://www.nist.gov/pml/weights-and-measures/laboratory-metrology"
+    },
+    {
+      "question": "What is negative control?",
+      "correctAnswer": "Expected not to show effect",
+      "incorrectAnswers": [
+        "Always positive",
+        "Always unknown",
+        "Same as treatment"
+      ],
+      "explanation": "Detects false positives.",
+      "keywords": [
+        "controls",
+        "assays"
+      ],
+      "source": "https://www.nature.com/nature-portfolio/editorial-policies/reporting-standards-for-life-sciences"
+    },
+    {
+      "question": "What is positive control?",
+      "correctAnswer": "Expected to show effect",
+      "incorrectAnswers": [
+        "Expected blank",
+        "Water only",
+        "No template PCR"
+      ],
+      "explanation": "Validates assay worked.",
+      "keywords": [
+        "positive-control",
+        "assays"
+      ],
+      "source": "https://www.nature.com/nature-portfolio/editorial-policies/reporting-standards-for-life-sciences"
+    }
+  ]
+}

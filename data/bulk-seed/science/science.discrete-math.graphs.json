@@ -1,0 +1,230 @@
+[
+  {
+    "seedId": "9c860921-c834-4083-8bbf-55e85be1e480",
+    "category": "science",
+    "navigationKeyword1": "discrete-math",
+    "navigationKeyword2": "graphs",
+    "question": "What is a graph (discrete math)?",
+    "correctAnswer": "Vertices and edges",
+    "incorrectAnswers": [
+      "Only trees",
+      "Only numbers",
+      "A function only"
+    ],
+    "explanation": "Models networks and relationships.",
+    "keywords": [
+      "graph",
+      "vertices"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Graph_(discrete_mathematics)"
+  },
+  {
+    "seedId": "32e132f9-e47c-49c5-9465-d77e04b83d09",
+    "category": "science",
+    "navigationKeyword1": "discrete-math",
+    "navigationKeyword2": "graphs",
+    "question": "What is degree of a vertex?",
+    "correctAnswer": "Number of incident edges",
+    "incorrectAnswers": [
+      "Number of vertices",
+      "Longest path",
+      "Number of colors"
+    ],
+    "explanation": "Loops may count twice depending on convention.",
+    "keywords": [
+      "degree",
+      "graph"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Degree_(graph_theory)"
+  },
+  {
+    "seedId": "4879c996-ef05-4add-bb8c-b1e676003941",
+    "category": "science",
+    "navigationKeyword1": "discrete-math",
+    "navigationKeyword2": "graphs",
+    "question": "What is a path?",
+    "correctAnswer": "Sequence of distinct vertices connected by edges",
+    "incorrectAnswers": [
+      "Any subset of vertices",
+      "A spanning tree always",
+      "A complete graph"
+    ],
+    "explanation": "Walks allow repeats; paths are stricter in many texts.",
+    "keywords": [
+      "path",
+      "walk"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Path_(graph_theory)"
+  },
+  {
+    "seedId": "8ff93e4b-9805-4c02-9bb6-1772e0b1d76e",
+    "category": "science",
+    "navigationKeyword1": "discrete-math",
+    "navigationKeyword2": "graphs",
+    "question": "What is a cycle?",
+    "correctAnswer": "Path that starts and ends at same vertex",
+    "incorrectAnswers": [
+      "Tree with n vertices",
+      "Graph with no edges",
+      "Bipartite always"
+    ],
+    "explanation": "Requires at least one edge in simple graphs.",
+    "keywords": [
+      "cycle",
+      "graph"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Cycle_graph"
+  },
+  {
+    "seedId": "1ef3d590-c37e-4c7e-9a4f-88e7db9c2ddd",
+    "category": "science",
+    "navigationKeyword1": "discrete-math",
+    "navigationKeyword2": "graphs",
+    "question": "What is a tree?",
+    "correctAnswer": "Connected acyclic graph",
+    "incorrectAnswers": [
+      "Any graph with a cycle",
+      "Complete graph",
+      "Only digraphs"
+    ],
+    "explanation": "n vertices implies n\u22121 edges for finite trees.",
+    "keywords": [
+      "tree",
+      "acyclic"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Tree_(graph_theory)"
+  },
+  {
+    "seedId": "7a586ef1-bd82-4b6c-802b-76b1b852eb14",
+    "category": "science",
+    "navigationKeyword1": "discrete-math",
+    "navigationKeyword2": "graphs",
+    "question": "What is a connected graph?",
+    "correctAnswer": "Path between every pair of vertices",
+    "incorrectAnswers": [
+      "No edges",
+      "Exactly two components",
+      "Has a cycle"
+    ],
+    "explanation": "One component.",
+    "keywords": [
+      "connected",
+      "graph"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Connectivity_(graph_theory)"
+  },
+  {
+    "seedId": "bd429cfe-2476-41eb-8854-56eebe3d5ad7",
+    "category": "science",
+    "navigationKeyword1": "discrete-math",
+    "navigationKeyword2": "graphs",
+    "question": "What is bipartite graph?",
+    "correctAnswer": "Vertices split into two sets with edges only across",
+    "incorrectAnswers": [
+      "No edges",
+      "Complete always",
+      "Only trees"
+    ],
+    "explanation": "No odd cycles in bipartite graphs.",
+    "keywords": [
+      "bipartite",
+      "graph"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Bipartite_graph"
+  },
+  {
+    "seedId": "f35bc68f-54dc-4f91-889c-e7d460ff6975",
+    "category": "science",
+    "navigationKeyword1": "discrete-math",
+    "navigationKeyword2": "graphs",
+    "question": "What is Eulerian trail idea?",
+    "correctAnswer": "Uses every edge exactly once",
+    "incorrectAnswers": [
+      "Uses every vertex once",
+      "Visits max degree vertex only",
+      "Requires Hamilton cycle"
+    ],
+    "explanation": "Famous bridges problem.",
+    "keywords": [
+      "eulerian",
+      "trail"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Eulerian_path"
+  },
+  {
+    "seedId": "0c47005f-1b80-4e04-99d0-e081a5efb0ca",
+    "category": "science",
+    "navigationKeyword1": "discrete-math",
+    "navigationKeyword2": "graphs",
+    "question": "What is Hamiltonian cycle idea?",
+    "correctAnswer": "Visits every vertex exactly once and returns",
+    "incorrectAnswers": [
+      "Uses every edge once",
+      "Only in trees",
+      "Impossible in any graph"
+    ],
+    "explanation": "Hard to decide in general.",
+    "keywords": [
+      "hamiltonian",
+      "cycle"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Hamiltonian_path"
+  },
+  {
+    "seedId": "22e32a3f-987e-43e2-ad3f-4480d8d7da9a",
+    "category": "science",
+    "navigationKeyword1": "discrete-math",
+    "navigationKeyword2": "graphs",
+    "question": "What is chromatic number?",
+    "correctAnswer": "Minimum colors to color vertices so adjacent differ",
+    "incorrectAnswers": [
+      "Maximum degree",
+      "Number of edges",
+      "Number of spanning trees"
+    ],
+    "explanation": "Graph coloring problem.",
+    "keywords": [
+      "chromatic-number",
+      "coloring"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Graph_coloring"
+  },
+  {
+    "seedId": "afa015a9-e39c-4496-a8bc-e07bd26e67cc",
+    "category": "science",
+    "navigationKeyword1": "discrete-math",
+    "navigationKeyword2": "graphs",
+    "question": "What is planar graph (idea)?",
+    "correctAnswer": "Can be drawn without edge crossings",
+    "incorrectAnswers": [
+      "Must be complete",
+      "Must be tree",
+      "Must be directed"
+    ],
+    "explanation": "Kuratowski\u2019s theorem characterizes forbidden minors.",
+    "keywords": [
+      "planar",
+      "graph"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Planar_graph"
+  },
+  {
+    "seedId": "eb92ded1-72b4-4df2-94f2-3d6fc134f8f5",
+    "category": "science",
+    "navigationKeyword1": "discrete-math",
+    "navigationKeyword2": "graphs",
+    "question": "What is adjacency matrix?",
+    "correctAnswer": "Matrix indicating edge presence between vertices",
+    "incorrectAnswers": [
+      "List of degrees",
+      "Incidence with faces",
+      "Laplacian always"
+    ],
+    "explanation": "Useful for computations.",
+    "keywords": [
+      "adjacency-matrix",
+      "graph"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Adjacency_matrix"
+  }
+]

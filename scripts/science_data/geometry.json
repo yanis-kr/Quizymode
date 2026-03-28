@@ -1,0 +1,1094 @@
+{
+  "angles": [
+    {
+      "question": "Complementary angles sum?",
+      "correctAnswer": "90\u00b0",
+      "incorrectAnswers": [
+        "180\u00b0",
+        "360\u00b0",
+        "45\u00b0"
+      ],
+      "explanation": "Two acute angles can complement.",
+      "keywords": [
+        "complementary",
+        "angles"
+      ],
+      "source": "https://www.mathsisfun.com/geometry/complementary-angles.html"
+    },
+    {
+      "question": "Supplementary angles sum?",
+      "correctAnswer": "180\u00b0",
+      "incorrectAnswers": [
+        "90\u00b0",
+        "360\u00b0",
+        "270\u00b0"
+      ],
+      "explanation": "Linear pair on straight line.",
+      "keywords": [
+        "supplementary",
+        "angles"
+      ],
+      "source": "https://www.mathsisfun.com/geometry/supplementary-angles.html"
+    },
+    {
+      "question": "Vertical angles?",
+      "correctAnswer": "Congruent",
+      "incorrectAnswers": [
+        "Supplementary always",
+        "Complementary always",
+        "Never equal"
+      ],
+      "explanation": "Opposite when two lines cross.",
+      "keywords": [
+        "vertical-angles",
+        "intersection"
+      ],
+      "source": "https://www.mathsisfun.com/geometry/vertical-angles.html"
+    },
+    {
+      "question": "Parallel lines + transversal: corresponding angles?",
+      "correctAnswer": "Congruent",
+      "incorrectAnswers": [
+        "Always supplementary",
+        "Never related",
+        "Sum 90"
+      ],
+      "explanation": "Same relative position.",
+      "keywords": [
+        "corresponding-angles",
+        "parallel"
+      ],
+      "source": "https://www.mathsisfun.com/geometry/parallel-lines.html"
+    },
+    {
+      "question": "Alternate interior angles (parallel lines)?",
+      "correctAnswer": "Congruent",
+      "incorrectAnswers": [
+        "Supplementary",
+        "Unrelated",
+        "Sum 180 always for any lines"
+      ],
+      "explanation": "Z-pattern.",
+      "keywords": [
+        "alternate-interior",
+        "parallel"
+      ],
+      "source": "https://www.mathsisfun.com/geometry/parallel-lines.html"
+    },
+    {
+      "question": "Triangle angle sum?",
+      "correctAnswer": "180\u00b0",
+      "incorrectAnswers": [
+        "360\u00b0",
+        "90\u00b0",
+        "270\u00b0"
+      ],
+      "explanation": "Euclidean plane.",
+      "keywords": [
+        "triangle-sum",
+        "angles"
+      ],
+      "source": "https://www.mathsisfun.com/proofangles.html"
+    },
+    {
+      "question": "Exterior angle theorem?",
+      "correctAnswer": "Exterior equals sum of remote interior angles",
+      "incorrectAnswers": [
+        "Equals adjacent interior only",
+        "Always 90",
+        "Equals 180"
+      ],
+      "explanation": "One extension side.",
+      "keywords": [
+        "exterior-angle",
+        "triangle"
+      ],
+      "source": "https://www.mathsisfun.com/geometry/exterior-angles.html"
+    },
+    {
+      "question": "Regular pentagon interior angle?",
+      "correctAnswer": "108\u00b0",
+      "incorrectAnswers": [
+        "120\u00b0",
+        "90\u00b0",
+        "72\u00b0"
+      ],
+      "explanation": "(n\u22122)180/n.",
+      "keywords": [
+        "polygon-angles",
+        "regular"
+      ],
+      "source": "https://www.mathsisfun.com/geometry/interior-angles-polygons.html"
+    },
+    {
+      "question": "Central angle vs inscribed subtending same arc?",
+      "correctAnswer": "Inscribed is half central (circle)",
+      "incorrectAnswers": [
+        "Equal always",
+        "Double central",
+        "Unrelated"
+      ],
+      "explanation": "On same arc.",
+      "keywords": [
+        "inscribed-angle",
+        "circle"
+      ],
+      "source": "https://www.mathsisfun.com/geometry/circle-theorems.html"
+    },
+    {
+      "question": "Parallel condition (corresponding congruent)?",
+      "correctAnswer": "Lines parallel if corresponding angles congruent (converse setup)",
+      "incorrectAnswers": [
+        "Always intersect",
+        "Never testable",
+        "Only in 3D"
+      ],
+      "explanation": "Proof ingredient.",
+      "keywords": [
+        "parallel-test",
+        "proof"
+      ],
+      "source": "https://www.mathsisfun.com/geometry/parallel-lines.html"
+    },
+    {
+      "question": "Radians in semicircle?",
+      "correctAnswer": "\u03c0",
+      "incorrectAnswers": [
+        "\u03c0/2",
+        "2\u03c0",
+        "1"
+      ],
+      "explanation": "Straight angle.",
+      "keywords": [
+        "radians",
+        "angles"
+      ],
+      "source": "https://www.mathsisfun.com/geometry/radians.html"
+    },
+    {
+      "question": "Angle bisector property (distance)?",
+      "correctAnswer": "Points on bisector equidistant from the two sides",
+      "incorrectAnswers": [
+        "Equidistant from vertices",
+        "Perpendicular to base always",
+        "No distance property"
+      ],
+      "explanation": "Perpendicular distance to rays.",
+      "keywords": [
+        "angle-bisector",
+        "locus"
+      ],
+      "source": "https://www.mathsisfun.com/geometry/bisect.html"
+    }
+  ],
+  "triangles": [
+    {
+      "question": "SSS congruence?",
+      "correctAnswer": "Three sides determine triangle up to congruence",
+      "incorrectAnswers": [
+        "Always similar not congruent",
+        "Never enough",
+        "Need angles only"
+      ],
+      "explanation": "Triangle congruence rule.",
+      "keywords": [
+        "sss",
+        "congruence"
+      ],
+      "source": "https://www.mathsisfun.com/geometry/triangles-congruent.html"
+    },
+    {
+      "question": "SAS congruence?",
+      "correctAnswer": "Two sides and included angle",
+      "incorrectAnswers": [
+        "SSA always",
+        "AAA",
+        "ASA wrong"
+      ],
+      "explanation": "Included angle matters.",
+      "keywords": [
+        "sas",
+        "congruence"
+      ],
+      "source": "https://www.mathsisfun.com/geometry/triangles-congruent.html"
+    },
+    {
+      "question": "ASA congruence?",
+      "correctAnswer": "Two angles and included side",
+      "incorrectAnswers": [
+        "AAA for congruence",
+        "SSA",
+        "SAS same"
+      ],
+      "explanation": "Determines shape+size.",
+      "keywords": [
+        "asa",
+        "congruence"
+      ],
+      "source": "https://www.mathsisfun.com/geometry/triangles-congruent.html"
+    },
+    {
+      "question": "Triangle inequality?",
+      "correctAnswer": "Any side < sum of other two",
+      "incorrectAnswers": [
+        "Any side > sum",
+        "Always equality",
+        "Only right triangles"
+      ],
+      "explanation": "Constructibility.",
+      "keywords": [
+        "triangle-inequality",
+        "sides"
+      ],
+      "source": "https://www.mathsisfun.com/geometry/triangle-inequality.html"
+    },
+    {
+      "question": "Midsegment theorem?",
+      "correctAnswer": "Segment joining midpoints parallel to third side and half as long",
+      "incorrectAnswers": [
+        "Equal to third side",
+        "Perpendicular",
+        "No relation"
+      ],
+      "explanation": "Useful in proofs.",
+      "keywords": [
+        "midsegment",
+        "triangle"
+      ],
+      "source": "https://www.mathsisfun.com/geometry/triangles.html"
+    },
+    {
+      "question": "Centroid is intersection of?",
+      "correctAnswer": "Medians",
+      "incorrectAnswers": [
+        "Altitudes",
+        "Angle bisectors",
+        "Perpendicular bisectors"
+      ],
+      "explanation": "Balances triangle (uniform density).",
+      "keywords": [
+        "centroid",
+        "medians"
+      ],
+      "source": "https://www.mathsisfun.com/geometry/triangle-centers.html"
+    },
+    {
+      "question": "Orthocenter is intersection of?",
+      "correctAnswer": "Altitudes",
+      "incorrectAnswers": [
+        "Medians",
+        "Bisectors of sides",
+        "Midsegments"
+      ],
+      "explanation": "May lie outside obtuse triangle.",
+      "keywords": [
+        "orthocenter",
+        "altitudes"
+      ],
+      "source": "https://www.mathsisfun.com/geometry/triangle-centers.html"
+    },
+    {
+      "question": "Circumcenter is intersection of?",
+      "correctAnswer": "Perpendicular bisectors of sides",
+      "incorrectAnswers": [
+        "Medians",
+        "Altitudes",
+        "Angle bisectors"
+      ],
+      "explanation": "Center of circumscribed circle.",
+      "keywords": [
+        "circumcenter",
+        "circle"
+      ],
+      "source": "https://www.mathsisfun.com/geometry/triangle-centers.html"
+    },
+    {
+      "question": "Incenter is intersection of?",
+      "correctAnswer": "Angle bisectors",
+      "incorrectAnswers": [
+        "Perpendicular bisectors",
+        "Altitudes",
+        "Medians"
+      ],
+      "explanation": "Center of inscribed circle.",
+      "keywords": [
+        "incenter",
+        "bisectors"
+      ],
+      "source": "https://www.mathsisfun.com/geometry/triangle-centers.html"
+    },
+    {
+      "question": "Pythagorean theorem applies to?",
+      "correctAnswer": "Right triangles",
+      "incorrectAnswers": [
+        "All triangles",
+        "Only equilateral",
+        "Only isosceles"
+      ],
+      "explanation": "a^2+b^2=c^2 for legs a,b hypotenuse c.",
+      "keywords": [
+        "pythagorean",
+        "right-triangle"
+      ],
+      "source": "https://www.mathsisfun.com/pythagoras.html"
+    },
+    {
+      "question": "3-4-5 triangle is?",
+      "correctAnswer": "Right (Pythagorean triple)",
+      "incorrectAnswers": [
+        "Acute",
+        "Obtuse",
+        "Degenerate"
+      ],
+      "explanation": "9+16=25.",
+      "keywords": [
+        "pythagorean-triple",
+        "triangle"
+      ],
+      "source": "https://www.mathsisfun.com/numbers/pythagorean-triples.html"
+    },
+    {
+      "question": "Similar triangles AA?",
+      "correctAnswer": "Two angles equal implies similar",
+      "incorrectAnswers": [
+        "Need AAA for similarity wrong",
+        "Need equal sides",
+        "Never similar"
+      ],
+      "explanation": "Shape same, scale maybe different.",
+      "keywords": [
+        "similarity",
+        "aa"
+      ],
+      "source": "https://www.mathsisfun.com/geometry/triangles-similar.html"
+    }
+  ],
+  "circles": [
+    {
+      "question": "Circle area?",
+      "correctAnswer": "\u03c0r^2",
+      "incorrectAnswers": [
+        "2\u03c0r",
+        "\u03c0d",
+        "r^2"
+      ],
+      "explanation": "Distinguish from circumference.",
+      "keywords": [
+        "circle-area",
+        "formula"
+      ],
+      "source": "https://www.mathsisfun.com/geometry/circle.html"
+    },
+    {
+      "question": "Circumference?",
+      "correctAnswer": "2\u03c0r = \u03c0d",
+      "incorrectAnswers": [
+        "\u03c0r^2",
+        "r^2",
+        "2r"
+      ],
+      "explanation": "Perimeter of circle.",
+      "keywords": [
+        "circumference",
+        "circle"
+      ],
+      "source": "https://www.mathsisfun.com/geometry/circle.html"
+    },
+    {
+      "question": "Arc length central \u03b8 radians?",
+      "correctAnswer": "s = r\u03b8",
+      "incorrectAnswers": [
+        "r/\u03b8",
+        "\u03b8/r",
+        "r^2 \u03b8"
+      ],
+      "explanation": "Proportional to angle.",
+      "keywords": [
+        "arc-length",
+        "circle"
+      ],
+      "source": "https://www.mathsisfun.com/geometry/circle.html"
+    },
+    {
+      "question": "Sector area \u03b8 radians?",
+      "correctAnswer": "(1/2) r^2 \u03b8",
+      "incorrectAnswers": [
+        "r \u03b8",
+        "\u03c0 r^2",
+        "2\u03c0r"
+      ],
+      "explanation": "Fraction of full circle.",
+      "keywords": [
+        "sector",
+        "circle"
+      ],
+      "source": "https://www.mathsisfun.com/geometry/circle.html"
+    },
+    {
+      "question": "Tangent to circle property?",
+      "correctAnswer": "Perpendicular to radius at point of tangency",
+      "incorrectAnswers": [
+        "Parallel to radius",
+        "Through center always",
+        "Never meets circle"
+      ],
+      "explanation": "Unique tangent line.",
+      "keywords": [
+        "tangent",
+        "circle"
+      ],
+      "source": "https://www.mathsisfun.com/geometry/circle-tangent.html"
+    },
+    {
+      "question": "Two tangents from external point?",
+      "correctAnswer": "Tangent segments equal in length",
+      "incorrectAnswers": [
+        "Always unequal",
+        "Sum to diameter",
+        "Undefined"
+      ],
+      "explanation": "Power of a point case.",
+      "keywords": [
+        "tangent-segments",
+        "circle"
+      ],
+      "source": "https://www.mathsisfun.com/geometry/circle-tangent.html"
+    },
+    {
+      "question": "Inscribed angle on diameter?",
+      "correctAnswer": "Right angle",
+      "incorrectAnswers": [
+        "Acute",
+        "Obtuse",
+        "0\u00b0"
+      ],
+      "explanation": "Thales\u2019 theorem.",
+      "keywords": [
+        "thales",
+        "diameter"
+      ],
+      "source": "https://www.mathsisfun.com/geometry/theorem-thales.html"
+    },
+    {
+      "question": "Chord perpendicular bisector passes through?",
+      "correctAnswer": "Center",
+      "incorrectAnswers": [
+        "Tangent point",
+        "Always vertex",
+        "Never center"
+      ],
+      "explanation": "Locus property.",
+      "keywords": [
+        "chord",
+        "circle"
+      ],
+      "source": "https://www.mathsisfun.com/geometry/circle-theorems.html"
+    },
+    {
+      "question": "Equation circle center (h,k) radius r?",
+      "correctAnswer": "(x\u2212h)^2 + (y\u2212k)^2 = r^2",
+      "incorrectAnswers": [
+        "x^2 \u2212 y^2 = r^2",
+        "y = mx + b",
+        "x + y = r"
+      ],
+      "explanation": "Standard form.",
+      "keywords": [
+        "circle-equation",
+        "coordinates"
+      ],
+      "source": "https://www.mathsisfun.com/algebra/circle-equations.html"
+    },
+    {
+      "question": "Concentric circles?",
+      "correctAnswer": "Same center different radii",
+      "incorrectAnswers": [
+        "Same radius different centers",
+        "Tangent always",
+        "Always intersect twice"
+      ],
+      "explanation": "Annulus between them.",
+      "keywords": [
+        "concentric",
+        "circle"
+      ],
+      "source": "https://www.mathsisfun.com/geometry/circle.html"
+    },
+    {
+      "question": "Pi (\u03c0) is ratio?",
+      "correctAnswer": "Circumference to diameter",
+      "incorrectAnswers": [
+        "Area to radius",
+        "Diameter to radius",
+        "Arc to angle always 1"
+      ],
+      "explanation": "Irrational constant.",
+      "keywords": [
+        "pi",
+        "definition"
+      ],
+      "source": "https://www.mathsisfun.com/numbers/pi.html"
+    },
+    {
+      "question": "Sphere volume?",
+      "correctAnswer": "(4/3)\u03c0r^3",
+      "incorrectAnswers": [
+        "4\u03c0r^2",
+        "2\u03c0r",
+        "\u03c0r^3"
+      ],
+      "explanation": "Not surface area.",
+      "keywords": [
+        "sphere-volume",
+        "3d"
+      ],
+      "source": "https://www.mathsisfun.com/geometry/sphere.html"
+    }
+  ],
+  "area": [
+    {
+      "question": "Parallelogram area?",
+      "correctAnswer": "base \u00d7 height",
+      "incorrectAnswers": [
+        "base \u00d7 side",
+        "base^2",
+        "1/2 bh"
+      ],
+      "explanation": "Height perpendicular to base.",
+      "keywords": [
+        "parallelogram",
+        "area"
+      ],
+      "source": "https://www.mathsisfun.com/geometry/parallelogram.html"
+    },
+    {
+      "question": "Trapezoid area?",
+      "correctAnswer": "(1/2)(b1 + b2)h",
+      "incorrectAnswers": [
+        "b1 b2",
+        "b1 + b2 + h",
+        "1/2 b1 b2"
+      ],
+      "explanation": "Average base times height.",
+      "keywords": [
+        "trapezoid",
+        "area"
+      ],
+      "source": "https://www.mathsisfun.com/geometry/trapezoid.html"
+    },
+    {
+      "question": "Rhombus area diagonals?",
+      "correctAnswer": "(1/2) d1 d2",
+      "incorrectAnswers": [
+        "d1 + d2",
+        "d1^2",
+        "d1 d2"
+      ],
+      "explanation": "From kite formula.",
+      "keywords": [
+        "rhombus",
+        "area"
+      ],
+      "source": "https://www.mathsisfun.com/geometry/rhombus.html"
+    },
+    {
+      "question": "Regular hexagon area (side s)?",
+      "correctAnswer": "(3\u221a3/2) s^2",
+      "incorrectAnswers": [
+        "6s",
+        "s^2",
+        "\u03c0 s^2"
+      ],
+      "explanation": "Six equilateral triangles.",
+      "keywords": [
+        "hexagon",
+        "area"
+      ],
+      "source": "https://www.mathsisfun.com/geometry/hexagon.html"
+    },
+    {
+      "question": "Circle ring (annulus) area?",
+      "correctAnswer": "\u03c0(R^2 \u2212 r^2)",
+      "incorrectAnswers": [
+        "\u03c0(R\u2212r)^2 always",
+        "2\u03c0R",
+        "\u03c0Rr"
+      ],
+      "explanation": "Difference of circles.",
+      "keywords": [
+        "annulus",
+        "area"
+      ],
+      "source": "https://www.mathsisfun.com/geometry/annulus.html"
+    },
+    {
+      "question": "Surface area of cylinder (including caps)?",
+      "correctAnswer": "2\u03c0r^2 + 2\u03c0rh",
+      "incorrectAnswers": [
+        "2\u03c0rh only",
+        "\u03c0r^2 h",
+        "4\u03c0r^2"
+      ],
+      "explanation": "Side + two circles.",
+      "keywords": [
+        "cylinder",
+        "surface-area"
+      ],
+      "source": "https://www.mathsisfun.com/geometry/cylinder.html"
+    },
+    {
+      "question": "Lateral surface cone (no base)?",
+      "correctAnswer": "\u03c0r\u2113 (\u2113 slant height)",
+      "incorrectAnswers": [
+        "\u03c0r^2",
+        "2\u03c0r",
+        "\u03c0\u2113"
+      ],
+      "explanation": "Unrolled sector.",
+      "keywords": [
+        "cone",
+        "lateral-area"
+      ],
+      "source": "https://www.mathsisfun.com/geometry/cone.html"
+    },
+    {
+      "question": "Shoelace formula (polygon area)?",
+      "correctAnswer": "1/2 |\u03a3 x_i y_{i+1} \u2212 x_{i+1} y_i|",
+      "incorrectAnswers": [
+        "Sum of sides",
+        "Heron only",
+        "\u03c0ab"
+      ],
+      "explanation": "Vertices ordered.",
+      "keywords": [
+        "shoelace",
+        "polygon"
+      ],
+      "source": "https://en.wikipedia.org/wiki/Shoelace_formula"
+    },
+    {
+      "question": "Similar figures area ratio?",
+      "correctAnswer": "Scale factor squared",
+      "incorrectAnswers": [
+        "Scale factor",
+        "Cubed",
+        "Same as length"
+      ],
+      "explanation": "k^2 for areas.",
+      "keywords": [
+        "similar-area",
+        "ratio"
+      ],
+      "source": "https://www.mathsisfun.com/geometry/triangles-similar.html"
+    },
+    {
+      "question": "Ellipse area \u03c0ab?",
+      "correctAnswer": "\u03c0 times semi-major \u00d7 semi-minor",
+      "incorrectAnswers": [
+        "\u03c0(a+b)",
+        "2\u03c0ab",
+        "\u03c0r^2 only"
+      ],
+      "explanation": "Not circumference simple.",
+      "keywords": [
+        "ellipse-area",
+        "conic"
+      ],
+      "source": "https://www.mathsisfun.com/geometry/ellipse.html"
+    },
+    {
+      "question": "Surface area sphere?",
+      "correctAnswer": "4\u03c0r^2",
+      "incorrectAnswers": [
+        "(4/3)\u03c0r^3",
+        "2\u03c0r",
+        "\u03c0r^2"
+      ],
+      "explanation": "Derivative of volume w.r.t. r (nice fact).",
+      "keywords": [
+        "sphere-surface",
+        "area"
+      ],
+      "source": "https://www.mathsisfun.com/geometry/sphere.html"
+    },
+    {
+      "question": "Composite area strategy?",
+      "correctAnswer": "Decompose into simple shapes and sum/subtract",
+      "incorrectAnswers": [
+        "Always one formula",
+        "Guess",
+        "Only integration"
+      ],
+      "explanation": "Common contest technique.",
+      "keywords": [
+        "composite",
+        "area"
+      ],
+      "source": "https://www.mathsisfun.com/geometry/area.html"
+    }
+  ],
+  "volume": [
+    {
+      "question": "Prism volume?",
+      "correctAnswer": "Base area \u00d7 height",
+      "incorrectAnswers": [
+        "1/3 Bh",
+        "2\u03c0rh",
+        "Bh^2"
+      ],
+      "explanation": "Any cross-section parallel translates.",
+      "keywords": [
+        "prism",
+        "volume"
+      ],
+      "source": "https://www.mathsisfun.com/geometry/prism.html"
+    },
+    {
+      "question": "Pyramid/cone volume?",
+      "correctAnswer": "(1/3) base area \u00d7 height",
+      "incorrectAnswers": [
+        "Bh",
+        "1/2 Bh",
+        "\u03c0r^3"
+      ],
+      "explanation": "Calculus Cavalieri justification.",
+      "keywords": [
+        "pyramid",
+        "volume"
+      ],
+      "source": "https://www.mathsisfun.com/geometry/pyramid.html"
+    },
+    {
+      "question": "Rectangular box volume?",
+      "correctAnswer": "lwh",
+      "incorrectAnswers": [
+        "l + w + h",
+        "2(lw+lh+wh)",
+        "lw/h"
+      ],
+      "explanation": "Three dimensions multiply.",
+      "keywords": [
+        "box",
+        "volume"
+      ],
+      "source": "https://www.mathsisfun.com/geometry/cuboid.html"
+    },
+    {
+      "question": "Cylinder volume?",
+      "correctAnswer": "\u03c0r^2 h",
+      "incorrectAnswers": [
+        "2\u03c0rh",
+        "2\u03c0r^2 h",
+        "\u03c0rh"
+      ],
+      "explanation": "Base times height.",
+      "keywords": [
+        "cylinder",
+        "volume"
+      ],
+      "source": "https://www.mathsisfun.com/geometry/cylinder.html"
+    },
+    {
+      "question": "Sphere volume?",
+      "correctAnswer": "(4/3)\u03c0r^3",
+      "incorrectAnswers": [
+        "4\u03c0r^2",
+        "\u03c0r^2",
+        "2\u03c0r"
+      ],
+      "explanation": "Archimedes result.",
+      "keywords": [
+        "sphere",
+        "volume"
+      ],
+      "source": "https://www.mathsisfun.com/geometry/sphere.html"
+    },
+    {
+      "question": "Similar solids volume ratio?",
+      "correctAnswer": "Scale factor cubed",
+      "incorrectAnswers": [
+        "Squared",
+        "Linear",
+        "Same as area"
+      ],
+      "explanation": "k^3 volumes.",
+      "keywords": [
+        "similar-volume",
+        "ratio"
+      ],
+      "source": "https://www.mathsisfun.com/geometry/similar.html"
+    },
+    {
+      "question": "Density from mass and volume?",
+      "correctAnswer": "\u03c1 = m/V",
+      "incorrectAnswers": [
+        "mV",
+        "V/m",
+        "m+V"
+      ],
+      "explanation": "Units mass per volume.",
+      "keywords": [
+        "density",
+        "physics"
+      ],
+      "source": "https://www.britannica.com/science/density"
+    },
+    {
+      "question": "Displacement method volume irregular solid?",
+      "correctAnswer": "Submerge; volume water rise = object volume",
+      "incorrectAnswers": [
+        "Weigh only",
+        "Measure perimeter",
+        "Always impossible"
+      ],
+      "explanation": "Archimedes principle link.",
+      "keywords": [
+        "displacement",
+        "measurement"
+      ],
+      "source": "https://en.wikipedia.org/wiki/Archimedes%27_principle"
+    },
+    {
+      "question": "Frustum of cone volume?",
+      "correctAnswer": "Involves h and both radii (formula)",
+      "incorrectAnswers": [
+        "Same as cylinder",
+        "\u03c0r^2 only",
+        "1/2 \u03c0r^2 h always"
+      ],
+      "explanation": "Truncated cone.",
+      "keywords": [
+        "frustum",
+        "volume"
+      ],
+      "source": "https://www.mathsisfun.com/geometry/frustum.html"
+    },
+    {
+      "question": "Cavalieri\u2019s principle idea?",
+      "correctAnswer": "Same cross-sectional area at every height \u21d2 same volume",
+      "incorrectAnswers": [
+        "Never true",
+        "Only circles",
+        "Only 2D"
+      ],
+      "explanation": "Justifies prism formulas.",
+      "keywords": [
+        "cavalieri",
+        "volume"
+      ],
+      "source": "https://en.wikipedia.org/wiki/Cavalieri%27s_principle"
+    },
+    {
+      "question": "Unit cube volume?",
+      "correctAnswer": "1 cubic unit",
+      "incorrectAnswers": [
+        "1 square unit",
+        "3 units",
+        "0"
+      ],
+      "explanation": "Foundation of measurement.",
+      "keywords": [
+        "units",
+        "volume"
+      ],
+      "source": "https://www.mathsisfun.com/geometry/cuboid.html"
+    },
+    {
+      "question": "Liters to cm^3?",
+      "correctAnswer": "1 L = 1000 cm^3",
+      "incorrectAnswers": [
+        "1 L = 1 cm^3",
+        "100 L = 1 cm^3",
+        "1 L = 100 cm^3"
+      ],
+      "explanation": "SI convenience.",
+      "keywords": [
+        "metric",
+        "conversion"
+      ],
+      "source": "https://www.nist.gov/pml/weights-and-measures/metric-si/si-units"
+    }
+  ],
+  "proofs": [
+    {
+      "question": "Two-column proof format?",
+      "correctAnswer": "Statements with reasons aligned",
+      "incorrectAnswers": [
+        "Only paragraphs",
+        "No reasons",
+        "Only algebra"
+      ],
+      "explanation": "Geometry class standard.",
+      "keywords": [
+        "two-column-proof",
+        "format"
+      ],
+      "source": "https://www.mathsisfun.com/proof.html"
+    },
+    {
+      "question": "Proof by contradiction strategy?",
+      "correctAnswer": "Assume opposite of claim; derive contradiction",
+      "incorrectAnswers": [
+        "Assume claim; done",
+        "Only measure",
+        "Draw picture only"
+      ],
+      "explanation": "Classic for \u221a2 irrational etc.",
+      "keywords": [
+        "contradiction",
+        "logic"
+      ],
+      "source": "https://en.wikipedia.org/wiki/Proof_by_contradiction"
+    },
+    {
+      "question": "Indirect proof in geometry?",
+      "correctAnswer": "Often contradiction or contrapositive style",
+      "incorrectAnswers": [
+        "Always coordinates",
+        "Never rigorous",
+        "Only calculus"
+      ],
+      "explanation": "Show impossible alternative.",
+      "keywords": [
+        "indirect-proof",
+        "geometry"
+      ],
+      "source": "https://www.mathsisfun.com/proof.html"
+    },
+    {
+      "question": "CPCTC means?",
+      "correctAnswer": "Corresponding parts of congruent triangles are congruent",
+      "incorrectAnswers": [
+        "Triangles always similar",
+        "Angles sum 360",
+        "Parallel lines"
+      ],
+      "explanation": "After congruence proof.",
+      "keywords": [
+        "cpctc",
+        "congruence"
+      ],
+      "source": "https://www.mathsisfun.com/geometry/triangles-congruent.html"
+    },
+    {
+      "question": "Transitive property of equality?",
+      "correctAnswer": "If a=b and b=c then a=c",
+      "incorrectAnswers": [
+        "If a=b then a=c always",
+        "Never used",
+        "Only inequalities"
+      ],
+      "explanation": "Algebra in proofs.",
+      "keywords": [
+        "transitive",
+        "equality"
+      ],
+      "source": "https://www.mathsisfun.com/definitions/transitive-property.html"
+    },
+    {
+      "question": "Substitution in proof?",
+      "correctAnswer": "Replace equal quantity in expression",
+      "incorrectAnswers": [
+        "Assume unequal",
+        "Only figures",
+        "Never valid"
+      ],
+      "explanation": "Fundamental.",
+      "keywords": [
+        "substitution",
+        "algebra"
+      ],
+      "source": "https://www.mathsisfun.com/definitions/substitution-property-of-equality.html"
+    },
+    {
+      "question": "Why proofs matter?",
+      "correctAnswer": "Guarantee truth from axioms/postulates",
+      "incorrectAnswers": [
+        "Replace intuition always wrongly",
+        "Only history",
+        "Never needed"
+      ],
+      "explanation": "Foundation of geometry.",
+      "keywords": [
+        "axiomatic",
+        "reasoning"
+      ],
+      "source": "https://plato.stanford.edu/entries/geometry-finitism/"
+    },
+    {
+      "question": "Auxiliary line role?",
+      "correctAnswer": "Add construction to reveal relationships",
+      "incorrectAnswers": [
+        "Always forbidden",
+        "Makes proof invalid",
+        "Only in 3D"
+      ],
+      "explanation": "Common strategy.",
+      "keywords": [
+        "auxiliary-line",
+        "proof"
+      ],
+      "source": "https://en.wikipedia.org/wiki/Auxiliary_line"
+    },
+    {
+      "question": "Proof angles parallel lines?",
+      "correctAnswer": "Use corresponding/alternate interior theorems",
+      "incorrectAnswers": [
+        "Assume conclusion",
+        "Measure only",
+        "No theorems"
+      ],
+      "explanation": "Logical chain.",
+      "keywords": [
+        "parallel-proof",
+        "reasoning"
+      ],
+      "source": "https://www.mathsisfun.com/geometry/parallel-lines.html"
+    },
+    {
+      "question": "Coordinate geometry proof?",
+      "correctAnswer": "Place figure to simplify algebra",
+      "incorrectAnswers": [
+        "Always illegal",
+        "Never simpler",
+        "Only synthetic allowed"
+      ],
+      "explanation": "Analytic geometry.",
+      "keywords": [
+        "coordinate-proof",
+        "analytic"
+      ],
+      "source": "https://www.mathsisfun.com/algebra/line-equation-coordinate.html"
+    },
+    {
+      "question": "Paragraph proof?",
+      "correctAnswer": "Narrative reasoning sentences",
+      "incorrectAnswers": [
+        "No sentences",
+        "Only symbols",
+        "Two-column only"
+      ],
+      "explanation": "Still must be logical.",
+      "keywords": [
+        "paragraph-proof",
+        "writing"
+      ],
+      "source": "https://www.mathsisfun.com/proof.html"
+    },
+    {
+      "question": "Diagram alone proves?",
+      "correctAnswer": "No; needs logical justification",
+      "incorrectAnswers": [
+        "Yes always",
+        "If drawn to scale",
+        "Only circles"
+      ],
+      "explanation": "Pictures assist, don\u2019t replace proof.",
+      "keywords": [
+        "diagram",
+        "rigor"
+      ],
+      "source": "https://www.mathsisfun.com/proof.html"
+    }
+  ]
+}

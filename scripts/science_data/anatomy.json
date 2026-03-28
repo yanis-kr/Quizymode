@@ -1,0 +1,730 @@
+{
+  "muscular": [
+    {
+      "question": "Which muscle type is usually under voluntary control?",
+      "correctAnswer": "Skeletal muscle",
+      "incorrectAnswers": [
+        "Smooth muscle",
+        "Cardiac muscle only",
+        "Cartilage"
+      ],
+      "explanation": "Skeletal muscles attach to bones and are used for voluntary movement.",
+      "keywords": [
+        "muscular",
+        "skeletal-muscle"
+      ],
+      "source": "https://openstax.org/books/anatomy-and-physiology-2e/pages/10-2-skeletal-muscle"
+    },
+    {
+      "question": "Where do skeletal muscles typically attach to bones?",
+      "correctAnswer": "Via tendons",
+      "incorrectAnswers": [
+        "Via ligaments",
+        "Via synovial fluid alone",
+        "Directly through marrow only"
+      ],
+      "explanation": "Tendons connect muscle to bone; ligaments mainly connect bone to bone.",
+      "keywords": [
+        "tendons",
+        "attachment"
+      ],
+      "source": "https://www.ncbi.nlm.nih.gov/books/NBK537656/"
+    },
+    {
+      "question": "What is the functional unit of contraction in skeletal muscle?",
+      "correctAnswer": "Sarcomere",
+      "incorrectAnswers": [
+        "Neuron",
+        "Sarcolemma only",
+        "Motor unit only"
+      ],
+      "explanation": "The sarcomere is the repeating contractile unit between Z lines in a myofibril.",
+      "keywords": [
+        "sarcomere",
+        "contraction"
+      ],
+      "source": "https://openstax.org/books/anatomy-and-physiology-2e/pages/10-2-skeletal-muscle"
+    },
+    {
+      "question": "Which proteins slide past each other during muscle contraction?",
+      "correctAnswer": "Actin and myosin",
+      "incorrectAnswers": [
+        "Collagen and elastin",
+        "Keratin and fibrin",
+        "Insulin and glucagon"
+      ],
+      "explanation": "Thin filaments (actin) and thick filaments (myosin) interact to shorten sarcomeres.",
+      "keywords": [
+        "actin",
+        "myosin"
+      ],
+      "source": "https://en.wikipedia.org/wiki/Muscle_contraction"
+    },
+    {
+      "question": "What is a motor unit?",
+      "correctAnswer": "One motor neuron plus the muscle fibers it innervates",
+      "incorrectAnswers": [
+        "Only the muscle fibers without a neuron",
+        "A tendon and its bone",
+        "A joint capsule"
+      ],
+      "explanation": "A motor unit is the smallest functional group controlled as a unit by one neuron.",
+      "keywords": [
+        "motor-unit",
+        "innervation"
+      ],
+      "source": "https://www.ncbi.nlm.nih.gov/books/NBK537656/"
+    },
+    {
+      "question": "Cardiac muscle is found primarily where?",
+      "correctAnswer": "The heart wall",
+      "incorrectAnswers": [
+        "The liver",
+        "The dermis",
+        "Cartilage plates"
+      ],
+      "explanation": "Cardiac muscle tissue makes up most of the heart\u2019s muscular wall.",
+      "keywords": [
+        "cardiac-muscle",
+        "heart"
+      ],
+      "source": "https://openstax.org/books/anatomy-and-physiology-2e/pages/4-4-muscle-tissue-and-motion"
+    },
+    {
+      "question": "Smooth muscle is commonly found in which location?",
+      "correctAnswer": "Walls of hollow organs like the digestive tract",
+      "incorrectAnswers": [
+        "Bone matrix",
+        "Tendons",
+        "The epidermis"
+      ],
+      "explanation": "Smooth muscle helps move food, blood, and other substances through internal tubes.",
+      "keywords": [
+        "smooth-muscle",
+        "viscera"
+      ],
+      "source": "https://openstax.org/books/anatomy-and-physiology-2e/pages/4-4-muscle-tissue-and-motion"
+    },
+    {
+      "question": "What change happens to muscle length in an isotonic contraction?",
+      "correctAnswer": "The muscle length changes while tension is relatively steady",
+      "incorrectAnswers": [
+        "Length stays fixed while tension changes",
+        "The muscle cannot produce force",
+        "Only tendons shorten"
+      ],
+      "explanation": "Isotonic contractions involve movement (concentric or eccentric) with changing length.",
+      "keywords": [
+        "isotonic",
+        "contraction-types"
+      ],
+      "source": "https://en.wikipedia.org/wiki/Muscle_contraction"
+    },
+    {
+      "question": "What change happens to muscle length in an isometric contraction?",
+      "correctAnswer": "The muscle length stays about the same while tension builds",
+      "incorrectAnswers": [
+        "The muscle lengthens freely with no tension",
+        "Only smooth muscle can be isometric",
+        "The joint must dislocate"
+      ],
+      "explanation": "Isometric means \u2018same length\u2019\u2014force is generated without much shortening.",
+      "keywords": [
+        "isometric",
+        "tension"
+      ],
+      "source": "https://en.wikipedia.org/wiki/Isometric_contraction"
+    },
+    {
+      "question": "What is the neuromuscular junction?",
+      "correctAnswer": "The synapse where a motor neuron meets a muscle fiber",
+      "incorrectAnswers": [
+        "A ligament crossing a joint",
+        "A heart valve",
+        "A bone growth plate"
+      ],
+      "explanation": "Acetylcholine release at the NMJ triggers muscle fiber action potentials.",
+      "keywords": [
+        "neuromuscular-junction",
+        "synapse"
+      ],
+      "source": "https://openstax.org/books/anatomy-and-physiology-2e/pages/10-3-muscle-fiber-contraction-and-relaxation"
+    },
+    {
+      "question": "Why do muscles often work in opposing pairs (agonist and antagonist)?",
+      "correctAnswer": "So movement can be controlled in both directions",
+      "incorrectAnswers": [
+        "To store extra ATP in tendons",
+        "To prevent nerves from firing",
+        "To eliminate the need for joints"
+      ],
+      "explanation": "Agonists create motion while antagonists stabilize and allow smooth reversal.",
+      "keywords": [
+        "agonist",
+        "antagonist"
+      ],
+      "source": "https://www.ncbi.nlm.nih.gov/books/NBK537656/"
+    },
+    {
+      "question": "What is muscle fatigue during sustained exercise often linked to?",
+      "correctAnswer": "Multiple factors like energy supply limits and metabolite buildup (context-dependent)",
+      "incorrectAnswers": [
+        "Muscles permanently stop making ATP forever",
+        "Tendons replace muscle fibers",
+        "Smooth muscle cannot fatigue"
+      ],
+      "explanation": "Fatigue is multifactorial; training, intensity, and fiber type all influence how quickly it appears.",
+      "keywords": [
+        "fatigue",
+        "exercise-physiology"
+      ],
+      "source": "https://www.ncbi.nlm.nih.gov/books/NBK54118/"
+    }
+  ],
+  "nervous": [
+    {
+      "question": "What are the two main divisions of the nervous system?",
+      "correctAnswer": "Central nervous system and peripheral nervous system",
+      "incorrectAnswers": [
+        "Somatic and autonomic only",
+        "Sympathetic and parasympathetic only",
+        "Cranial and spinal only"
+      ],
+      "explanation": "The CNS is brain and spinal cord; the PNS connects the CNS to the rest of the body.",
+      "keywords": [
+        "cns",
+        "pns"
+      ],
+      "source": "https://openstax.org/books/anatomy-and-physiology-2e/pages/12-1-basic-structure-and-function-of-the-nervous-system"
+    },
+    {
+      "question": "What cells transmit electrical signals in the nervous system?",
+      "correctAnswer": "Neurons",
+      "incorrectAnswers": [
+        "Osteocytes",
+        "Erythrocytes",
+        "Chondrocytes"
+      ],
+      "explanation": "Neurons are specialized for rapid signaling via action potentials and synapses.",
+      "keywords": [
+        "neurons",
+        "signaling"
+      ],
+      "source": "https://www.ninds.nih.gov/health-information/disorders/brain-basics"
+    },
+    {
+      "question": "What glial cells myelinate axons in the central nervous system?",
+      "correctAnswer": "Oligodendrocytes",
+      "incorrectAnswers": [
+        "Schwann cells",
+        "Astrocytes only",
+        "Microglia only"
+      ],
+      "explanation": "Oligodendrocytes wrap CNS axons with myelin; Schwann cells myelinate PNS axons.",
+      "keywords": [
+        "myelin",
+        "oligodendrocytes"
+      ],
+      "source": "https://openstax.org/books/anatomy-and-physiology-2e/pages/12-2-nervous-tissue"
+    },
+    {
+      "question": "What glial cells myelinate axons in the peripheral nervous system?",
+      "correctAnswer": "Schwann cells",
+      "incorrectAnswers": [
+        "Oligodendrocytes",
+        "Satellite cells only",
+        "Ependymal cells"
+      ],
+      "explanation": "Schwann cells form myelin around many PNS axons and help regeneration after injury.",
+      "keywords": [
+        "schwann-cells",
+        "pns"
+      ],
+      "source": "https://openstax.org/books/anatomy-and-physiology-2e/pages/12-2-nervous-tissue"
+    },
+    {
+      "question": "What is an action potential?",
+      "correctAnswer": "A rapid, all-or-nothing electrical impulse along an excitable membrane",
+      "incorrectAnswers": [
+        "A slow chemical drift with no voltage change",
+        "A permanent positive charge in all cells",
+        "Only a sensory illusion"
+      ],
+      "explanation": "Voltage-gated channels drive the stereotyped depolarization/repolarization sequence.",
+      "keywords": [
+        "action-potential",
+        "neuron"
+      ],
+      "source": "https://www.ncbi.nlm.nih.gov/books/NBK26875/"
+    },
+    {
+      "question": "What is the resting neuron\u2019s inside charge relative to outside (typical wording)?",
+      "correctAnswer": "More negative inside compared to outside",
+      "incorrectAnswers": [
+        "More positive inside",
+        "Exactly zero everywhere",
+        "Positive only at the dendrites"
+      ],
+      "explanation": "Resting potential reflects ion gradients and selective permeability (often around -70 mV).",
+      "keywords": [
+        "resting-potential",
+        "membrane"
+      ],
+      "source": "https://www.ncbi.nlm.nih.gov/books/NBK26875/"
+    },
+    {
+      "question": "What is a synapse?",
+      "correctAnswer": "A specialized junction where a neuron communicates with another cell",
+      "incorrectAnswers": [
+        "A bone-to-bone connector",
+        "A blood clotting plug",
+        "A muscle fiber bundle"
+      ],
+      "explanation": "Chemical synapses use neurotransmitters; electrical synapses use gap junctions.",
+      "keywords": [
+        "synapse",
+        "neurotransmitter"
+      ],
+      "source": "https://www.ninds.nih.gov/health-information/disorders/brain-basics"
+    },
+    {
+      "question": "Which division of the autonomic nervous system is often summarized as \u2018fight or flight\u2019?",
+      "correctAnswer": "Sympathetic",
+      "incorrectAnswers": [
+        "Parasympathetic",
+        "Somatic motor",
+        "Enteric only"
+      ],
+      "explanation": "Sympathetic activation mobilizes energy for stress and activity responses.",
+      "keywords": [
+        "sympathetic",
+        "autonomic"
+      ],
+      "source": "https://openstax.org/books/anatomy-and-physiology-2e/pages/15-1-divisions-of-the-autonomic-nervous-system"
+    },
+    {
+      "question": "Which division of the autonomic nervous system is often summarized as \u2018rest and digest\u2019?",
+      "correctAnswer": "Parasympathetic",
+      "incorrectAnswers": [
+        "Sympathetic",
+        "Somatic sensory",
+        "Spinal reflex only"
+      ],
+      "explanation": "Parasympathetic pathways generally promote conservation and digestion functions.",
+      "keywords": [
+        "parasympathetic",
+        "autonomic"
+      ],
+      "source": "https://openstax.org/books/anatomy-and-physiology-2e/pages/15-1-divisions-of-the-autonomic-nervous-system"
+    },
+    {
+      "question": "What does the blood-brain barrier mainly protect?",
+      "correctAnswer": "Brain tissue from many blood-borne substances",
+      "incorrectAnswers": [
+        "Bone marrow from infection",
+        "The retina from sound waves",
+        "Muscles from gravity"
+      ],
+      "explanation": "Tight junctions and supporting cells limit what can pass from blood into brain interstitial fluid.",
+      "keywords": [
+        "blood-brain-barrier",
+        "cns"
+      ],
+      "source": "https://www.ncbi.nlm.nih.gov/books/NBK557381/"
+    },
+    {
+      "question": "What is a reflex arc\u2019s basic purpose?",
+      "correctAnswer": "Produce a fast, automatic response to a stimulus",
+      "incorrectAnswers": [
+        "Store long-term memories",
+        "Secrete digestive enzymes",
+        "Build bone matrix"
+      ],
+      "explanation": "Reflexes bypass slow voluntary pathways to protect the body quickly.",
+      "keywords": [
+        "reflex",
+        "spinal-cord"
+      ],
+      "source": "https://openstax.org/books/anatomy-and-physiology-2e/pages/13-2-spinal-reflexes"
+    },
+    {
+      "question": "Which brain region is heavily involved in coordinating movement and balance?",
+      "correctAnswer": "Cerebellum",
+      "incorrectAnswers": [
+        "Occipital lobe",
+        "Medulla only for all balance",
+        "Corpus callosum"
+      ],
+      "explanation": "The cerebellum fine-tunes motor commands and helps maintain coordination.",
+      "keywords": [
+        "cerebellum",
+        "motor-control"
+      ],
+      "source": "https://www.ninds.nih.gov/health-information/disorders/brain-basics"
+    }
+  ],
+  "respiratory": [
+    {
+      "question": "What is the main job of the respiratory system in gas exchange?",
+      "correctAnswer": "Move oxygen into the blood and carbon dioxide out",
+      "incorrectAnswers": [
+        "Digest fats into glucose",
+        "Pump blood to muscles",
+        "Filter urine"
+      ],
+      "explanation": "Alveoli provide a thin surface where gases diffuse between air and blood.",
+      "keywords": [
+        "gas-exchange",
+        "respiration"
+      ],
+      "source": "https://www.lung.org/lung-health-diseases/how-lungs-work"
+    },
+    {
+      "question": "Where does most gas exchange between air and blood occur?",
+      "correctAnswer": "Alveoli in the lungs",
+      "incorrectAnswers": [
+        "Trachea only",
+        "Oral cavity",
+        "Esophagus"
+      ],
+      "explanation": "Alveoli have huge surface area and thin walls suited for diffusion.",
+      "keywords": [
+        "alveoli",
+        "lungs"
+      ],
+      "source": "https://openstax.org/books/anatomy-and-physiology-2e/pages/22-2-organs-and-structures-of-the-respiratory-system"
+    },
+    {
+      "question": "What muscle is the primary driver of quiet breathing inhalation?",
+      "correctAnswer": "The diaphragm",
+      "incorrectAnswers": [
+        "The biceps brachii",
+        "The masseter",
+        "The gastrocnemius"
+      ],
+      "explanation": "Diaphragm contraction increases thoracic volume, lowering pressure to draw air in.",
+      "keywords": [
+        "diaphragm",
+        "breathing"
+      ],
+      "source": "https://www.lung.org/lung-health-diseases/how-lungs-work"
+    },
+    {
+      "question": "What is the role of surfactant in the lungs?",
+      "correctAnswer": "Reduce surface tension to keep alveoli from collapsing",
+      "incorrectAnswers": [
+        "Speed up gas by heating air",
+        "Block oxygen entirely",
+        "Digest mucus into water"
+      ],
+      "explanation": "Surfactant lowers alveolar surface tension, improving compliance and stability.",
+      "keywords": [
+        "surfactant",
+        "alveoli"
+      ],
+      "source": "https://www.ncbi.nlm.nih.gov/books/NBK545183/"
+    },
+    {
+      "question": "What structure prevents food from entering the airway during swallowing?",
+      "correctAnswer": "The epiglottis",
+      "incorrectAnswers": [
+        "The uvula alone",
+        "The pleura",
+        "The bronchioles"
+      ],
+      "explanation": "The epiglottis helps route food toward the esophagus and away from the larynx.",
+      "keywords": [
+        "epiglottis",
+        "swallowing"
+      ],
+      "source": "https://openstax.org/books/anatomy-and-physiology-2e/pages/22-2-organs-and-structures-of-the-respiratory-system"
+    },
+    {
+      "question": "What is tidal volume?",
+      "correctAnswer": "The amount of air moved in or out during a normal quiet breath",
+      "incorrectAnswers": [
+        "Total lung capacity always",
+        "Only the air left after maximal exhale",
+        "Only dead space"
+      ],
+      "explanation": "Tidal volume is the routine in-and-out volume of a resting breath cycle.",
+      "keywords": [
+        "tidal-volume",
+        "spirometry"
+      ],
+      "source": "https://openstax.org/books/anatomy-and-physiology-2e/pages/22-3-the-process-of-breathing"
+    },
+    {
+      "question": "What does hemoglobin transport that is central to respiration?",
+      "correctAnswer": "Oxygen (and also contributes to carbon dioxide transport)",
+      "incorrectAnswers": [
+        "Insulin",
+        "Bile salts",
+        "Keratin"
+      ],
+      "explanation": "Hemoglobin binds oxygen in the lungs and releases it to tissues.",
+      "keywords": [
+        "hemoglobin",
+        "oxygen-transport"
+      ],
+      "source": "https://www.ncbi.nlm.nih.gov/books/NBK470303/"
+    },
+    {
+      "question": "Why is rapid, deep breathing common during hard exercise?",
+      "correctAnswer": "To remove more carbon dioxide and bring in more oxygen to meet metabolic demand",
+      "incorrectAnswers": [
+        "To stop the heart from beating",
+        "To cool the liver only",
+        "To replace bone calcium"
+      ],
+      "explanation": "Ventilation rises to match increased muscle oxygen use and CO2 production.",
+      "keywords": [
+        "exercise",
+        "ventilation"
+      ],
+      "source": "https://www.lung.org/lung-health-diseases/how-lungs-work"
+    },
+    {
+      "question": "What is anatomical dead space?",
+      "correctAnswer": "Airway regions where gas exchange does not occur (like parts of the conducting zone)",
+      "incorrectAnswers": [
+        "All alveoli combined",
+        "Blood plasma volume",
+        "The pleural cavity fluid only"
+      ],
+      "explanation": "Conducting airways move air but do not participate in diffusion like alveoli.",
+      "keywords": [
+        "dead-space",
+        "conducting-zone"
+      ],
+      "source": "https://openstax.org/books/anatomy-and-physiology-2e/pages/22-3-the-process-of-breathing"
+    },
+    {
+      "question": "What is the basic direction of airflow during inhalation?",
+      "correctAnswer": "Air flows from higher atmospheric pressure into lower pressure in the lungs",
+      "incorrectAnswers": [
+        "Air flows because lungs push air in without pressure change",
+        "Air moves from veins to alveoli directly",
+        "Oxygen diffuses from blood to atmosphere first"
+      ],
+      "explanation": "Lung expansion lowers alveolar pressure below atmospheric pressure, pulling air in.",
+      "keywords": [
+        "pressure-gradient",
+        "inhalation"
+      ],
+      "source": "https://openstax.org/books/anatomy-and-physiology-2e/pages/22-3-the-process-of-breathing"
+    },
+    {
+      "question": "Which blood vessels carry oxygen-rich blood from the lungs toward the left heart?",
+      "correctAnswer": "Pulmonary veins",
+      "incorrectAnswers": [
+        "Pulmonary arteries",
+        "Superior vena cava",
+        "Hepatic portal vein"
+      ],
+      "explanation": "After gas exchange, oxygenated blood returns to the left atrium via pulmonary veins.",
+      "keywords": [
+        "pulmonary-veins",
+        "circulation"
+      ],
+      "source": "https://openstax.org/books/anatomy-and-physiology-2e/pages/20-1-structure-and-function-of-the-cardiovascular-system"
+    },
+    {
+      "question": "What is a common effect of increased airway resistance?",
+      "correctAnswer": "Harder breathing and more work to move air",
+      "incorrectAnswers": [
+        "Faster alveolar gas exchange automatically",
+        "Lower need for hemoglobin",
+        "Higher surfactant production always"
+      ],
+      "explanation": "Narrowed airways increase resistance, so muscles must work harder to ventilate.",
+      "keywords": [
+        "airway-resistance",
+        "breathing-work"
+      ],
+      "source": "https://www.lung.org/lung-health-diseases/how-lungs-work"
+    }
+  ],
+  "skeletal": [
+    {
+      "question": "What mineral salt is a major hardening component of bone matrix?",
+      "correctAnswer": "Calcium phosphate (as part of hydroxyapatite)",
+      "incorrectAnswers": [
+        "Cellulose",
+        "Keratin only",
+        "Cholesterol crystals"
+      ],
+      "explanation": "Bone matrix includes mineral crystals that give compressive strength.",
+      "keywords": [
+        "bone-matrix",
+        "mineralization"
+      ],
+      "source": "https://openstax.org/books/anatomy-and-physiology-2e/pages/6-3-bone-structure"
+    },
+    {
+      "question": "What are the living bone-building cells called?",
+      "correctAnswer": "Osteoblasts",
+      "incorrectAnswers": [
+        "Osteoclasts",
+        "Chondrocytes",
+        "Neurons"
+      ],
+      "explanation": "Osteoblasts deposit new bone matrix; osteoclasts resorb bone.",
+      "keywords": [
+        "osteoblasts",
+        "bone-remodeling"
+      ],
+      "source": "https://openstax.org/books/anatomy-and-physiology-2e/pages/6-4-bone-development-and-growth"
+    },
+    {
+      "question": "What cells break down bone tissue during remodeling?",
+      "correctAnswer": "Osteoclasts",
+      "incorrectAnswers": [
+        "Osteoblasts",
+        "Fibroblasts only",
+        "Adipocytes"
+      ],
+      "explanation": "Osteoclasts resorb bone, helping reshape and maintain mineral balance.",
+      "keywords": [
+        "osteoclasts",
+        "remodeling"
+      ],
+      "source": "https://openstax.org/books/anatomy-and-physiology-2e/pages/6-4-bone-development-and-growth"
+    },
+    {
+      "question": "Long bones contain spongy bone mainly where?",
+      "correctAnswer": "Near the ends (epiphyses), with compact bone along the shaft",
+      "incorrectAnswers": [
+        "Only in the marrow cavity with no compact bone",
+        "Only on the outer skin",
+        "Only in tendons"
+      ],
+      "explanation": "Trabecular (spongy) bone is common at ends; compact bone strengthens the diaphysis.",
+      "keywords": [
+        "spongy-bone",
+        "compact-bone"
+      ],
+      "source": "https://openstax.org/books/anatomy-and-physiology-2e/pages/6-3-bone-structure"
+    },
+    {
+      "question": "What is articular cartilage?",
+      "correctAnswer": "Smooth cartilage covering bone ends at joints",
+      "incorrectAnswers": [
+        "Bone marrow",
+        "The periosteum inner layer only",
+        "Ligament core"
+      ],
+      "explanation": "Articular cartilage reduces friction and absorbs joint forces.",
+      "keywords": [
+        "articular-cartilage",
+        "joints"
+      ],
+      "source": "https://openstax.org/books/anatomy-and-physiology-2e/pages/9-1-classification-of-joints"
+    },
+    {
+      "question": "What connects bone to bone at a joint?",
+      "correctAnswer": "Ligaments",
+      "incorrectAnswers": [
+        "Tendons",
+        "Sarcomeres",
+        "Axons"
+      ],
+      "explanation": "Ligaments stabilize joints by linking bones together.",
+      "keywords": [
+        "ligaments",
+        "joint-stability"
+      ],
+      "source": "https://openstax.org/books/anatomy-and-physiology-2e/pages/9-1-classification-of-joints"
+    },
+    {
+      "question": "What type of joint is the elbow hinge best described as?",
+      "correctAnswer": "Synovial hinge joint",
+      "incorrectAnswers": [
+        "Fibrous suture",
+        "Cartilaginous symphysis only",
+        "Ball-and-socket always"
+      ],
+      "explanation": "The elbow behaves like a hinge, allowing flexion and extension in one plane.",
+      "keywords": [
+        "hinge-joint",
+        "synovial"
+      ],
+      "source": "https://openstax.org/books/anatomy-and-physiology-2e/pages/9-2-synovial-joints"
+    },
+    {
+      "question": "Where is red bone marrow important for blood cell formation?",
+      "correctAnswer": "In many bones (especially in axial skeleton and proximal long bones in adults)",
+      "incorrectAnswers": [
+        "Only in tendons",
+        "Only in cartilage with no vessels",
+        "Only in the epidermis"
+      ],
+      "explanation": "Hematopoiesis occurs in marrow niches; locations shift somewhat with age.",
+      "keywords": [
+        "bone-marrow",
+        "hematopoiesis"
+      ],
+      "source": "https://www.ncbi.nlm.nih.gov/books/NBK2639/"
+    },
+    {
+      "question": "What is a fracture?",
+      "correctAnswer": "A break in bone continuity",
+      "incorrectAnswers": [
+        "A torn ligament only",
+        "A joint infection only",
+        "Muscle shortening only"
+      ],
+      "explanation": "Fractures disrupt bone structure and require repair via remodeling.",
+      "keywords": [
+        "fracture",
+        "injury"
+      ],
+      "source": "https://www.ncbi.nlm.nih.gov/books/NBK441886/"
+    },
+    {
+      "question": "Why are long bones strong against bending along the shaft?",
+      "correctAnswer": "Compact bone in the diaphysis forms a rigid tube",
+      "incorrectAnswers": [
+        "Spongy bone fills the entire shaft uniformly",
+        "Cartilage replaces the shaft",
+        "Marrow provides tensile strength like rope"
+      ],
+      "explanation": "The hollow compact shaft balances strength and weight.",
+      "keywords": [
+        "diaphysis",
+        "mechanics"
+      ],
+      "source": "https://openstax.org/books/anatomy-and-physiology-2e/pages/6-3-bone-structure"
+    },
+    {
+      "question": "What is the epiphyseal plate associated with?",
+      "correctAnswer": "Longitudinal bone growth in children and adolescents",
+      "incorrectAnswers": [
+        "Tooth enamel formation",
+        "Muscle contraction speed",
+        "Nerve myelination speed"
+      ],
+      "explanation": "Growth plates are cartilage regions where bones lengthen until closure.",
+      "keywords": [
+        "growth-plate",
+        "development"
+      ],
+      "source": "https://openstax.org/books/anatomy-and-physiology-2e/pages/6-4-bone-development-and-growth"
+    },
+    {
+      "question": "Which division of the skeleton includes the skull and vertebral column?",
+      "correctAnswer": "Axial skeleton",
+      "incorrectAnswers": [
+        "Appendicular skeleton",
+        "Visceral skeleton only",
+        "Dermal skeleton only"
+      ],
+      "explanation": "The axial skeleton forms the central axis; limbs belong to the appendicular skeleton.",
+      "keywords": [
+        "axial-skeleton",
+        "appendicular-skeleton"
+      ],
+      "source": "https://openstax.org/books/anatomy-and-physiology-2e/pages/7-1-divisions-of-the-skeletal-system"
+    }
+  ]
+}

@@ -1,0 +1,116 @@
+[
+  {
+    "category": "business",
+    "navigationKeyword1": "operations",
+    "navigationKeyword2": "quality",
+    "question": "What is the practical difference between quality control (QC) and quality assurance (QA)?",
+    "correctAnswer": "QC focuses on detecting defects; QA focuses on preventing defects through systems and process design.",
+    "incorrectAnswers": [
+      "They are identical in every organization.",
+      "QA only means advertising.",
+      "QC replaces engineering."
+    ],
+    "explanation": "Both matter, but emphasis differs.",
+    "keywords": [
+      "qc-qa",
+      "quality"
+    ],
+    "source": "https://asq.org/quality-resources/quality-assurance-vs-control",
+    "seedId": "043fb5c2-7579-49bb-8c7a-ba7501622e9e"
+  },
+  {
+    "category": "business",
+    "navigationKeyword1": "operations",
+    "navigationKeyword2": "quality",
+    "question": "What is \u2018cost of poor quality\u2019?",
+    "correctAnswer": "Costs from defects, rework, warranty claims, and lost reputation.",
+    "incorrectAnswers": [
+      "Only marketing spend.",
+      "Only CEO salary.",
+      "Only office rent."
+    ],
+    "explanation": "COPQ motivates prevention investments.",
+    "keywords": [
+      "copq",
+      "quality"
+    ],
+    "source": "https://asq.org/quality-resources/cost-of-quality",
+    "seedId": "66b358a6-fc1b-403f-811e-c435eaeee304"
+  },
+  {
+    "category": "business",
+    "navigationKeyword1": "operations",
+    "navigationKeyword2": "quality",
+    "question": "What does statistical process control (SPC) monitor?",
+    "correctAnswer": "Process variation over time using control charts and rules.",
+    "incorrectAnswers": [
+      "Employee lunch preferences.",
+      "Stock tickers only.",
+      "Social media followers only."
+    ],
+    "explanation": "SPC distinguishes common vs special cause variation.",
+    "keywords": [
+      "spc",
+      "variation"
+    ],
+    "source": "https://www.nist.gov/itl/sed/topic-areas/statistical-process-control-spc",
+    "seedId": "de0167e5-d7ce-4caa-98b6-5df1ac2da394"
+  },
+  {
+    "category": "business",
+    "navigationKeyword1": "operations",
+    "navigationKeyword2": "quality",
+    "question": "Why distinguish customer requirements vs internal specifications?",
+    "correctAnswer": "Customers judge fitness for use; internal specs operationalize how you meet those needs.",
+    "incorrectAnswers": [
+      "They should always be unrelated.",
+      "Internal specs are never needed.",
+      "Customers never have requirements."
+    ],
+    "explanation": "Misalignment creates \u2018quality\u2019 that misses the market.",
+    "keywords": [
+      "requirements",
+      "specs"
+    ],
+    "source": "https://asq.org/quality-resources/voice-of-the-customer-voc",
+    "seedId": "36639065-de87-467c-89a5-38c7341d29cc"
+  },
+  {
+    "category": "business",
+    "navigationKeyword1": "operations",
+    "navigationKeyword2": "quality",
+    "question": "What is a defect in operations quality terms?",
+    "correctAnswer": "A failure to meet a requirement or specification.",
+    "incorrectAnswers": [
+      "Any employee mistake unrelated to output.",
+      "A synonym for innovation.",
+      "A positive KPI."
+    ],
+    "explanation": "Defect metrics drive improvement targets.",
+    "keywords": [
+      "defect",
+      "quality"
+    ],
+    "source": "https://asq.org/quality-resources/defect",
+    "seedId": "f60fcbb2-005d-4e02-acc6-c06d702a5c12"
+  },
+  {
+    "category": "business",
+    "navigationKeyword1": "operations",
+    "navigationKeyword2": "quality",
+    "question": "What is the ISO 9000 family broadly about?",
+    "correctAnswer": "Quality management systems and continuous improvement practices (standards-based).",
+    "incorrectAnswers": [
+      "Guaranteed product perfection.",
+      "A single software app.",
+      "Tax filing rules for individuals."
+    ],
+    "explanation": "Certification indicates a documented QMS, not \u2018zero defects\u2019.",
+    "keywords": [
+      "iso-9001",
+      "qms"
+    ],
+    "source": "https://www.iso.org/iso-9001-quality-management.html",
+    "seedId": "db8a70c9-add1-4b7a-9d3b-49cb280e74b9"
+  }
+]

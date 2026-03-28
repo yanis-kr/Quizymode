@@ -14,6 +14,41 @@ $CloudFrontDistributionId = "EH1DS9REH8KR5"
 $WebProjectPath = "src\Quizymode.Web"
 $BuildOutputPath = "$WebProjectPath\dist"
 
+function Test-CloudFrontSpaFallback {
+    param(
+        [string]$DistributionId
+    )
+
+    try {
+        $distributionConfig = aws cloudfront get-distribution-config --id $DistributionId 2>$null | ConvertFrom-Json
+        if (-not $distributionConfig) {
+            return $false
+        }
+
+        $customErrorResponses = $distributionConfig.DistributionConfig.CustomErrorResponses
+        if (-not $customErrorResponses -or $customErrorResponses.Quantity -lt 2) {
+            return $false
+        }
+
+        $requiredErrorCodes = @(403, 404)
+        foreach ($errorCode in $requiredErrorCodes) {
+            $matchingResponse = $customErrorResponses.Items | Where-Object {
+                $_.ErrorCode -eq $errorCode -and
+                $_.ResponsePagePath -eq "/index.html" -and
+                $_.ResponseCode -eq "200"
+            }
+
+            if (-not $matchingResponse) {
+                return $false
+            }
+        }
+
+        return $true
+    } catch {
+        return $false
+    }
+}
+
 Write-Host "=========================================" -ForegroundColor Cyan
 Write-Host "Quizymode Web Deployment Script" -ForegroundColor Cyan
 Write-Host "=========================================" -ForegroundColor Cyan
@@ -90,6 +125,16 @@ if (-not (Test-Path $BuildOutputPath)) {
 
 Write-Host ""
 Write-Host "Deploying to S3 bucket: $S3Bucket" -ForegroundColor Yellow
+
+if (Test-CloudFrontSpaFallback -DistributionId $CloudFrontDistributionId) {
+    Write-Host "CloudFront SPA fallback is configured for deep links (403/404 -> /index.html)" -ForegroundColor Green
+} else {
+    Write-Host "WARNING: CloudFront SPA fallback is not configured for deep links" -ForegroundColor Yellow
+    Write-Host "  Configure custom error responses on distribution $CloudFrontDistributionId:" -ForegroundColor Yellow
+    Write-Host "  - 403 -> /index.html (HTTP 200)" -ForegroundColor Yellow
+    Write-Host "  - 404 -> /index.html (HTTP 200)" -ForegroundColor Yellow
+    Write-Host "  Without this, refreshing /collections/... or other nested routes will return S3 AccessDenied." -ForegroundColor Yellow
+}
 
 # Sync files to S3
 try {

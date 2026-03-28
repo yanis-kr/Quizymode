@@ -1,0 +1,230 @@
+[
+  {
+    "seedId": "20a3642b-3d9c-41ce-84d3-e44487bc0c14",
+    "category": "science",
+    "navigationKeyword1": "earth-space",
+    "navigationKeyword2": "space",
+    "question": "What is microgravity in orbit often called colloquially?",
+    "correctAnswer": "Weightlessness (actually free fall)",
+    "incorrectAnswers": [
+      "Zero gravity everywhere in universe",
+      "Anti-gravity field",
+      "Vacuum pressure pushing up"
+    ],
+    "explanation": "Orbit is continuous free fall around Earth.",
+    "keywords": [
+      "microgravity",
+      "iss"
+    ],
+    "source": "https://www.nasa.gov/humans-in-space/"
+  },
+  {
+    "seedId": "8258559d-90d8-4aca-8c2c-a80b10a9028e",
+    "category": "science",
+    "navigationKeyword1": "earth-space",
+    "navigationKeyword2": "space",
+    "question": "What is escape velocity idea?",
+    "correctAnswer": "Speed needed to break away without further propulsion",
+    "incorrectAnswers": [
+      "Speed to land",
+      "Speed of sound always",
+      "Orbital speed at ISS always"
+    ],
+    "explanation": "Depends on body mass and radius.",
+    "keywords": [
+      "escape-velocity",
+      "rockets"
+    ],
+    "source": "https://science.nasa.gov/learn/basics/"
+  },
+  {
+    "seedId": "18621571-6f02-4b31-9db2-54e4e64eef9f",
+    "category": "science",
+    "navigationKeyword1": "earth-space",
+    "navigationKeyword2": "space",
+    "question": "What is geostationary orbit concept?",
+    "correctAnswer": "Orbit with period matching Earth\u2019s spin (uses equatorial plane)",
+    "incorrectAnswers": [
+      "Polar orbit",
+      "Escape trajectory",
+      "Suborbital hop"
+    ],
+    "explanation": "Useful for communications satellites.",
+    "keywords": [
+      "geostationary",
+      "orbit"
+    ],
+    "source": "https://www.nasa.gov/directorates/heo/scan/spectrum/space-communications-navigation/"
+  },
+  {
+    "seedId": "7174d575-ef54-4da6-a5d9-d4d1f43cfbdd",
+    "category": "science",
+    "navigationKeyword1": "earth-space",
+    "navigationKeyword2": "space",
+    "question": "What is LEO?",
+    "correctAnswer": "Low Earth orbit, relatively close and common for satellites",
+    "incorrectAnswers": [
+      "Lagrange point beyond Pluto",
+      "Inside the core",
+      "Only on the Moon"
+    ],
+    "explanation": "ISS orbits in LEO.",
+    "keywords": [
+      "leo",
+      "satellites"
+    ],
+    "source": "https://www.nasa.gov/humans-in-space/"
+  },
+  {
+    "seedId": "c26ce75c-61ab-45f8-b4d8-ab6136d3a791",
+    "category": "science",
+    "navigationKeyword1": "earth-space",
+    "navigationKeyword2": "space",
+    "question": "What is Van Allen belts (basic)?",
+    "correctAnswer": "Zones of trapped charged particles around Earth",
+    "incorrectAnswers": [
+      "Ocean currents",
+      "Desert belts",
+      "Wind belts only"
+    ],
+    "explanation": "Important for radiation exposure planning.",
+    "keywords": [
+      "van-allen",
+      "radiation"
+    ],
+    "source": "https://science.nasa.gov/earth/"
+  },
+  {
+    "seedId": "6dbd9109-c7ef-41f3-83fa-8d975a38d6b4",
+    "category": "science",
+    "navigationKeyword1": "earth-space",
+    "navigationKeyword2": "space",
+    "question": "What is space debris risk?",
+    "correctAnswer": "Collisions with tracked/untracked objects",
+    "incorrectAnswers": [
+      "No risk",
+      "Only inside ISS",
+      "Only on Mars"
+    ],
+    "explanation": "Shielding and maneuvering mitigate risk.",
+    "keywords": [
+      "debris",
+      "satellites"
+    ],
+    "source": "https://www.orbitaldebris.jsc.nasa.gov/"
+  },
+  {
+    "seedId": "d7f5ee2f-4f81-4ea4-bdfc-12170d89ebc1",
+    "category": "science",
+    "navigationKeyword1": "earth-space",
+    "navigationKeyword2": "space",
+    "question": "What is re-entry heating?",
+    "correctAnswer": "Kinetic energy converts to heat in atmosphere",
+    "incorrectAnswers": [
+      "Sunlight only",
+      "Friction alone is the only explanation always",
+      "Cold plasma"
+    ],
+    "explanation": "Thermal protection systems are required.",
+    "keywords": [
+      "reentry",
+      "heat-shield"
+    ],
+    "source": "https://www.nasa.gov/humans-in-space/"
+  },
+  {
+    "seedId": "ddfa40dd-619c-4444-89ef-78bf0b828d04",
+    "category": "science",
+    "navigationKeyword1": "earth-space",
+    "navigationKeyword2": "space",
+    "question": "What is a space suit purpose?",
+    "correctAnswer": "Provide pressure, oxygen, temperature control",
+    "incorrectAnswers": [
+      "Block gravity",
+      "Create artificial mass",
+      "Replace bones"
+    ],
+    "explanation": "Protects astronauts in vacuum.",
+    "keywords": [
+      "spacesuit",
+      "eva"
+    ],
+    "source": "https://www.nasa.gov/humans-in-space/"
+  },
+  {
+    "seedId": "67c45cc4-c38a-46b1-8433-9d04411c47b9",
+    "category": "science",
+    "navigationKeyword1": "earth-space",
+    "navigationKeyword2": "space",
+    "question": "What is docking vs berthing?",
+    "correctAnswer": "Controlled mating of spacecraft (methods differ)",
+    "incorrectAnswers": [
+      "Same as landing on Earth",
+      "Only for airplanes",
+      "Only robotic on Mars"
+    ],
+    "explanation": "ISS logistics use both approaches.",
+    "keywords": [
+      "docking",
+      "iss"
+    ],
+    "source": "https://www.nasa.gov/international-space-station/"
+  },
+  {
+    "seedId": "00736f13-fa90-4320-a90f-222a1b0636f5",
+    "category": "science",
+    "navigationKeyword1": "earth-space",
+    "navigationKeyword2": "space",
+    "question": "What is RTG (space power, concept)?",
+    "correctAnswer": "Radioisotope thermoelectric generator for electricity/heat",
+    "incorrectAnswers": [
+      "Solar panel only",
+      "Chemical battery only",
+      "Wind turbine"
+    ],
+    "explanation": "Used far from Sun.",
+    "keywords": [
+      "rtg",
+      "power"
+    ],
+    "source": "https://science.nasa.gov/solar-system/"
+  },
+  {
+    "seedId": "3ce9b9c7-9d40-4aaf-b005-211dc5777848",
+    "category": "science",
+    "navigationKeyword1": "earth-space",
+    "navigationKeyword2": "space",
+    "question": "What is regolith?",
+    "correctAnswer": "Loose surface layer on Moon/asteroids",
+    "incorrectAnswers": [
+      "Liquid lava",
+      "Earth\u2019s core metal",
+      "Ozone layer"
+    ],
+    "explanation": "Landing and sampling deal with regolith.",
+    "keywords": [
+      "regolith",
+      "moon"
+    ],
+    "source": "https://science.nasa.gov/moon/"
+  },
+  {
+    "seedId": "07c339ea-4208-4148-bdf7-f0fc0ede049b",
+    "category": "science",
+    "navigationKeyword1": "earth-space",
+    "navigationKeyword2": "space",
+    "question": "What is a launch window?",
+    "correctAnswer": "Time range when mission can launch to meet targets",
+    "incorrectAnswers": [
+      "Any time always",
+      "Only daytime",
+      "Only winter"
+    ],
+    "explanation": "Orbit geometry and lighting drive constraints.",
+    "keywords": [
+      "launch-window",
+      "mission-design"
+    ],
+    "source": "https://www.nasa.gov/humans-in-space/"
+  }
+]

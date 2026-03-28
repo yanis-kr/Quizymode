@@ -1,0 +1,230 @@
+[
+  {
+    "seedId": "8bb69c0f-0cef-4950-ac29-b4bd5524cdb1",
+    "category": "science",
+    "navigationKeyword1": "pre-algebra",
+    "navigationKeyword2": "expressions",
+    "question": "Simplify 5x + 2x?",
+    "correctAnswer": "7x",
+    "incorrectAnswers": [
+      "10x",
+      "7x^2",
+      "52x"
+    ],
+    "explanation": "Combine like terms.",
+    "keywords": [
+      "combine-like-terms",
+      "simplify"
+    ],
+    "source": "https://www.khanacademy.org/math/pre-algebra/pre-algebra-equations"
+  },
+  {
+    "seedId": "affbfd4a-792a-46bf-84ab-5bcf1e66b44c",
+    "category": "science",
+    "navigationKeyword1": "pre-algebra",
+    "navigationKeyword2": "expressions",
+    "question": "Distribute 3(x \u2212 4)?",
+    "correctAnswer": "3x \u2212 12",
+    "incorrectAnswers": [
+      "3x \u2212 4",
+      "x \u2212 12",
+      "3x + 12"
+    ],
+    "explanation": "Multiply each term inside.",
+    "keywords": [
+      "distributive",
+      "property"
+    ],
+    "source": "https://www.mathsisfun.com/algebra/distributive-law.html"
+  },
+  {
+    "seedId": "143d2af9-da15-4c01-bb8a-1898bc0caaab",
+    "category": "science",
+    "navigationKeyword1": "pre-algebra",
+    "navigationKeyword2": "expressions",
+    "question": "Factor 6x + 9?",
+    "correctAnswer": "3(2x + 3)",
+    "incorrectAnswers": [
+      "2(3x+9)",
+      "9(2x+1)",
+      "(6x)(9)"
+    ],
+    "explanation": "GCF 3.",
+    "keywords": [
+      "factoring-gcf",
+      "expressions"
+    ],
+    "source": "https://www.khanacademy.org/math/pre-algebra/pre-algebra-equations"
+  },
+  {
+    "seedId": "7011c232-7039-427c-ac52-3b16648cb0e9",
+    "category": "science",
+    "navigationKeyword1": "pre-algebra",
+    "navigationKeyword2": "expressions",
+    "question": "Evaluate \u22122^2 + 3?",
+    "correctAnswer": "\u22121",
+    "incorrectAnswers": [
+      "7",
+      "1",
+      "\u22127"
+    ],
+    "explanation": "Exponent first: \u22124 + 3 = \u22121.",
+    "keywords": [
+      "exponents",
+      "evaluate"
+    ],
+    "source": "https://www.mathsisfun.com/operation-order-pemdas.html"
+  },
+  {
+    "seedId": "2c316f1c-6931-4a74-a248-d240d0a910fb",
+    "category": "science",
+    "navigationKeyword1": "pre-algebra",
+    "navigationKeyword2": "expressions",
+    "question": "(2x)^2 when x=3?",
+    "correctAnswer": "36",
+    "incorrectAnswers": [
+      "12",
+      "18",
+      "24"
+    ],
+    "explanation": "6^2=36.",
+    "keywords": [
+      "powers",
+      "substitution"
+    ],
+    "source": "https://www.khanacademy.org/math/pre-algebra/pre-algebra-equations"
+  },
+  {
+    "seedId": "22595cb5-9109-43f7-8c1f-cf42e2d48f7e",
+    "category": "science",
+    "navigationKeyword1": "pre-algebra",
+    "navigationKeyword2": "expressions",
+    "question": "Translate product of x and y decreased by 5?",
+    "correctAnswer": "xy \u2212 5",
+    "incorrectAnswers": [
+      "x(y \u2212 5)",
+      "x + y \u2212 5",
+      "5 \u2212 xy"
+    ],
+    "explanation": "Multiply then subtract.",
+    "keywords": [
+      "translation",
+      "expressions"
+    ],
+    "source": "https://www.khanacademy.org/math/pre-algebra/pre-algebra-equations"
+  },
+  {
+    "seedId": "791ad05c-4f46-49a2-86dd-e067eaf6a4c2",
+    "category": "science",
+    "navigationKeyword1": "pre-algebra",
+    "navigationKeyword2": "expressions",
+    "question": "Simplify x^3 \u00b7 x^2?",
+    "correctAnswer": "x^5",
+    "incorrectAnswers": [
+      "x^6",
+      "x",
+      "2x^5"
+    ],
+    "explanation": "Add exponents same base.",
+    "keywords": [
+      "exponent-rules",
+      "algebra"
+    ],
+    "source": "https://www.mathsisfun.com/algebra/exponent-laws.html"
+  },
+  {
+    "seedId": "8375b136-6605-4961-8b8e-0ce8a3d20cbb",
+    "category": "science",
+    "navigationKeyword1": "pre-algebra",
+    "navigationKeyword2": "expressions",
+    "question": "(ab)^2?",
+    "correctAnswer": "a^2 b^2",
+    "incorrectAnswers": [
+      "ab^2",
+      "a^2 b",
+      "2ab"
+    ],
+    "explanation": "Distribute exponent.",
+    "keywords": [
+      "exponent-rules",
+      "multiply"
+    ],
+    "source": "https://www.mathsisfun.com/algebra/exponent-laws.html"
+  },
+  {
+    "seedId": "3120c10a-0838-4d5a-8268-90cb22e0479e",
+    "category": "science",
+    "navigationKeyword1": "pre-algebra",
+    "navigationKeyword2": "expressions",
+    "question": "Subtract (4x+1) \u2212 (2x\u22123)?",
+    "correctAnswer": "2x + 4",
+    "incorrectAnswers": [
+      "2x \u2212 2",
+      "6x \u2212 2",
+      "2x + 2"
+    ],
+    "explanation": "Distribute minus: 4x+1\u22122x+3.",
+    "keywords": [
+      "polynomial-subtract",
+      "expressions"
+    ],
+    "source": "https://www.khanacademy.org/math/pre-algebra/pre-algebra-equations"
+  },
+  {
+    "seedId": "f99b51e0-2bec-43ed-bdb3-119d070ea60a",
+    "category": "science",
+    "navigationKeyword1": "pre-algebra",
+    "navigationKeyword2": "expressions",
+    "question": "Reasonable check: if x\u224810, 2x+5\u2248?",
+    "correctAnswer": "25",
+    "incorrectAnswers": [
+      "15",
+      "100",
+      "7"
+    ],
+    "explanation": "Mental estimation.",
+    "keywords": [
+      "estimation",
+      "sanity-check"
+    ],
+    "source": "https://www.khanacademy.org/math/pre-algebra/pre-algebra-equations"
+  },
+  {
+    "seedId": "d6b75650-d100-4571-ba7f-0087851f7da9",
+    "category": "science",
+    "navigationKeyword1": "pre-algebra",
+    "navigationKeyword2": "expressions",
+    "question": "Term count in x^2 + 3x \u2212 1?",
+    "correctAnswer": "Three terms",
+    "incorrectAnswers": [
+      "Two",
+      "One",
+      "Four"
+    ],
+    "explanation": "Separated by +/\u2212.",
+    "keywords": [
+      "terms",
+      "polynomial"
+    ],
+    "source": "https://www.khanacademy.org/math/pre-algebra/pre-algebra-equations"
+  },
+  {
+    "seedId": "97a523ec-80f4-4a62-b77f-7448bc84f944",
+    "category": "science",
+    "navigationKeyword1": "pre-algebra",
+    "navigationKeyword2": "expressions",
+    "question": "Expression value cannot be found if?",
+    "correctAnswer": "Variable unknown and not given",
+    "incorrectAnswers": [
+      "Always can",
+      "Never can",
+      "Only if fraction"
+    ],
+    "explanation": "Need substitution or equation.",
+    "keywords": [
+      "evaluate",
+      "unknown"
+    ],
+    "source": "https://www.khanacademy.org/math/pre-algebra/pre-algebra-equations"
+  }
+]

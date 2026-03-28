@@ -1,0 +1,230 @@
+[
+  {
+    "seedId": "b774b37f-792b-4f6d-89f1-e6bc042e8782",
+    "category": "science",
+    "navigationKeyword1": "anatomy",
+    "navigationKeyword2": "respiratory",
+    "question": "What is the main job of the respiratory system in gas exchange?",
+    "correctAnswer": "Move oxygen into the blood and carbon dioxide out",
+    "incorrectAnswers": [
+      "Digest fats into glucose",
+      "Pump blood to muscles",
+      "Filter urine"
+    ],
+    "explanation": "Alveoli provide a thin surface where gases diffuse between air and blood.",
+    "keywords": [
+      "gas-exchange",
+      "respiration"
+    ],
+    "source": "https://www.lung.org/lung-health-diseases/how-lungs-work"
+  },
+  {
+    "seedId": "c0ca58b1-2a6d-4cb5-933e-75c3a7755bc0",
+    "category": "science",
+    "navigationKeyword1": "anatomy",
+    "navigationKeyword2": "respiratory",
+    "question": "Where does most gas exchange between air and blood occur?",
+    "correctAnswer": "Alveoli in the lungs",
+    "incorrectAnswers": [
+      "Trachea only",
+      "Oral cavity",
+      "Esophagus"
+    ],
+    "explanation": "Alveoli have huge surface area and thin walls suited for diffusion.",
+    "keywords": [
+      "alveoli",
+      "lungs"
+    ],
+    "source": "https://openstax.org/books/anatomy-and-physiology-2e/pages/22-2-organs-and-structures-of-the-respiratory-system"
+  },
+  {
+    "seedId": "641caa9a-305c-4159-9e27-ad05d83a87eb",
+    "category": "science",
+    "navigationKeyword1": "anatomy",
+    "navigationKeyword2": "respiratory",
+    "question": "What muscle is the primary driver of quiet breathing inhalation?",
+    "correctAnswer": "The diaphragm",
+    "incorrectAnswers": [
+      "The biceps brachii",
+      "The masseter",
+      "The gastrocnemius"
+    ],
+    "explanation": "Diaphragm contraction increases thoracic volume, lowering pressure to draw air in.",
+    "keywords": [
+      "diaphragm",
+      "breathing"
+    ],
+    "source": "https://www.lung.org/lung-health-diseases/how-lungs-work"
+  },
+  {
+    "seedId": "9a856b76-80be-46b1-86e4-9e8a1434add5",
+    "category": "science",
+    "navigationKeyword1": "anatomy",
+    "navigationKeyword2": "respiratory",
+    "question": "What is the role of surfactant in the lungs?",
+    "correctAnswer": "Reduce surface tension to keep alveoli from collapsing",
+    "incorrectAnswers": [
+      "Speed up gas by heating air",
+      "Block oxygen entirely",
+      "Digest mucus into water"
+    ],
+    "explanation": "Surfactant lowers alveolar surface tension, improving compliance and stability.",
+    "keywords": [
+      "surfactant",
+      "alveoli"
+    ],
+    "source": "https://www.ncbi.nlm.nih.gov/books/NBK545183/"
+  },
+  {
+    "seedId": "db3c94ca-34cc-445b-8f12-961f038c9fba",
+    "category": "science",
+    "navigationKeyword1": "anatomy",
+    "navigationKeyword2": "respiratory",
+    "question": "What structure prevents food from entering the airway during swallowing?",
+    "correctAnswer": "The epiglottis",
+    "incorrectAnswers": [
+      "The uvula alone",
+      "The pleura",
+      "The bronchioles"
+    ],
+    "explanation": "The epiglottis helps route food toward the esophagus and away from the larynx.",
+    "keywords": [
+      "epiglottis",
+      "swallowing"
+    ],
+    "source": "https://openstax.org/books/anatomy-and-physiology-2e/pages/22-2-organs-and-structures-of-the-respiratory-system"
+  },
+  {
+    "seedId": "99fd050d-14d2-4bfe-837d-db0959a007b7",
+    "category": "science",
+    "navigationKeyword1": "anatomy",
+    "navigationKeyword2": "respiratory",
+    "question": "What is tidal volume?",
+    "correctAnswer": "The amount of air moved in or out during a normal quiet breath",
+    "incorrectAnswers": [
+      "Total lung capacity always",
+      "Only the air left after maximal exhale",
+      "Only dead space"
+    ],
+    "explanation": "Tidal volume is the routine in-and-out volume of a resting breath cycle.",
+    "keywords": [
+      "tidal-volume",
+      "spirometry"
+    ],
+    "source": "https://openstax.org/books/anatomy-and-physiology-2e/pages/22-3-the-process-of-breathing"
+  },
+  {
+    "seedId": "f13ea443-990c-489e-8be7-908ecda76d07",
+    "category": "science",
+    "navigationKeyword1": "anatomy",
+    "navigationKeyword2": "respiratory",
+    "question": "What does hemoglobin transport that is central to respiration?",
+    "correctAnswer": "Oxygen (and also contributes to carbon dioxide transport)",
+    "incorrectAnswers": [
+      "Insulin",
+      "Bile salts",
+      "Keratin"
+    ],
+    "explanation": "Hemoglobin binds oxygen in the lungs and releases it to tissues.",
+    "keywords": [
+      "hemoglobin",
+      "oxygen-transport"
+    ],
+    "source": "https://www.ncbi.nlm.nih.gov/books/NBK470303/"
+  },
+  {
+    "seedId": "22221000-0915-48e2-b4f4-ec931855a8fa",
+    "category": "science",
+    "navigationKeyword1": "anatomy",
+    "navigationKeyword2": "respiratory",
+    "question": "Why is rapid, deep breathing common during hard exercise?",
+    "correctAnswer": "To remove more carbon dioxide and bring in more oxygen to meet metabolic demand",
+    "incorrectAnswers": [
+      "To stop the heart from beating",
+      "To cool the liver only",
+      "To replace bone calcium"
+    ],
+    "explanation": "Ventilation rises to match increased muscle oxygen use and CO2 production.",
+    "keywords": [
+      "exercise",
+      "ventilation"
+    ],
+    "source": "https://www.lung.org/lung-health-diseases/how-lungs-work"
+  },
+  {
+    "seedId": "ab51afe0-5527-4865-b1dc-c7ff8adc545c",
+    "category": "science",
+    "navigationKeyword1": "anatomy",
+    "navigationKeyword2": "respiratory",
+    "question": "What is anatomical dead space?",
+    "correctAnswer": "Airway regions where gas exchange does not occur (like parts of the conducting zone)",
+    "incorrectAnswers": [
+      "All alveoli combined",
+      "Blood plasma volume",
+      "The pleural cavity fluid only"
+    ],
+    "explanation": "Conducting airways move air but do not participate in diffusion like alveoli.",
+    "keywords": [
+      "dead-space",
+      "conducting-zone"
+    ],
+    "source": "https://openstax.org/books/anatomy-and-physiology-2e/pages/22-3-the-process-of-breathing"
+  },
+  {
+    "seedId": "ae430068-3cda-4117-90ff-76a3882ba882",
+    "category": "science",
+    "navigationKeyword1": "anatomy",
+    "navigationKeyword2": "respiratory",
+    "question": "What is the basic direction of airflow during inhalation?",
+    "correctAnswer": "Air flows from higher atmospheric pressure into lower pressure in the lungs",
+    "incorrectAnswers": [
+      "Air flows because lungs push air in without pressure change",
+      "Air moves from veins to alveoli directly",
+      "Oxygen diffuses from blood to atmosphere first"
+    ],
+    "explanation": "Lung expansion lowers alveolar pressure below atmospheric pressure, pulling air in.",
+    "keywords": [
+      "pressure-gradient",
+      "inhalation"
+    ],
+    "source": "https://openstax.org/books/anatomy-and-physiology-2e/pages/22-3-the-process-of-breathing"
+  },
+  {
+    "seedId": "b809ac20-bf0c-46c2-85db-7e2f8d45591e",
+    "category": "science",
+    "navigationKeyword1": "anatomy",
+    "navigationKeyword2": "respiratory",
+    "question": "Which blood vessels carry oxygen-rich blood from the lungs toward the left heart?",
+    "correctAnswer": "Pulmonary veins",
+    "incorrectAnswers": [
+      "Pulmonary arteries",
+      "Superior vena cava",
+      "Hepatic portal vein"
+    ],
+    "explanation": "After gas exchange, oxygenated blood returns to the left atrium via pulmonary veins.",
+    "keywords": [
+      "pulmonary-veins",
+      "circulation"
+    ],
+    "source": "https://openstax.org/books/anatomy-and-physiology-2e/pages/20-1-structure-and-function-of-the-cardiovascular-system"
+  },
+  {
+    "seedId": "4e810dda-7a2a-4428-a61c-d467a4a696d8",
+    "category": "science",
+    "navigationKeyword1": "anatomy",
+    "navigationKeyword2": "respiratory",
+    "question": "What is a common effect of increased airway resistance?",
+    "correctAnswer": "Harder breathing and more work to move air",
+    "incorrectAnswers": [
+      "Faster alveolar gas exchange automatically",
+      "Lower need for hemoglobin",
+      "Higher surfactant production always"
+    ],
+    "explanation": "Narrowed airways increase resistance, so muscles must work harder to ventilate.",
+    "keywords": [
+      "airway-resistance",
+      "breathing-work"
+    ],
+    "source": "https://www.lung.org/lung-health-diseases/how-lungs-work"
+  }
+]

@@ -1,0 +1,230 @@
+[
+  {
+    "seedId": "32b4d09e-a1db-423b-a12c-07a342ed6f33",
+    "category": "science",
+    "navigationKeyword1": "chemistry",
+    "navigationKeyword2": "atoms",
+    "question": "What are atoms composed of (subatomic particles)?",
+    "correctAnswer": "Protons, neutrons, and electrons",
+    "incorrectAnswers": [
+      "Only protons",
+      "Only electrons",
+      "Only neutrons"
+    ],
+    "explanation": "Nucleus contains protons and neutrons; electrons occupy outer regions.",
+    "keywords": [
+      "atoms",
+      "subatomic"
+    ],
+    "source": "https://openstax.org/books/chemistry-2e/pages/2-2-evolution-of-atomic-theory"
+  },
+  {
+    "seedId": "63ae0d8c-8b4e-4738-bfb8-5778495c6a1e",
+    "category": "science",
+    "navigationKeyword1": "chemistry",
+    "navigationKeyword2": "atoms",
+    "question": "What defines an element\u2019s identity?",
+    "correctAnswer": "Its number of protons (atomic number)",
+    "incorrectAnswers": [
+      "Number of neutrons only",
+      "Number of electrons only",
+      "Mass number only"
+    ],
+    "explanation": "Changing protons changes the element.",
+    "keywords": [
+      "atomic-number",
+      "elements"
+    ],
+    "source": "https://openstax.org/books/chemistry-2e/pages/2-3-atomic-structure-and-symbolism"
+  },
+  {
+    "seedId": "7c77b32d-49e4-428a-a90b-63d97ec81791",
+    "category": "science",
+    "navigationKeyword1": "chemistry",
+    "navigationKeyword2": "atoms",
+    "question": "What is an isotope?",
+    "correctAnswer": "Atoms of the same element with different neutron counts",
+    "incorrectAnswers": [
+      "Different proton counts",
+      "Different electron counts only",
+      "Ions only"
+    ],
+    "explanation": "Isotopes have same Z but different mass numbers.",
+    "keywords": [
+      "isotopes",
+      "neutrons"
+    ],
+    "source": "https://openstax.org/books/chemistry-2e/pages/2-3-atomic-structure-and-symbolism"
+  },
+  {
+    "seedId": "3a2396b5-4fd8-4654-8c8f-c35001d28ac0",
+    "category": "science",
+    "navigationKeyword1": "chemistry",
+    "navigationKeyword2": "atoms",
+    "question": "What is mass number A?",
+    "correctAnswer": "Protons plus neutrons in a nucleus",
+    "incorrectAnswers": [
+      "Protons minus electrons",
+      "Only electrons",
+      "Atomic number only"
+    ],
+    "explanation": "A = Z + N for a nuclide.",
+    "keywords": [
+      "mass-number",
+      "nucleus"
+    ],
+    "source": "https://openstax.org/books/chemistry-2e/pages/2-3-atomic-structure-and-symbolism"
+  },
+  {
+    "seedId": "68e7eb88-04b5-42cd-82e9-c38e22d59eae",
+    "category": "science",
+    "navigationKeyword1": "chemistry",
+    "navigationKeyword2": "atoms",
+    "question": "What is an ion?",
+    "correctAnswer": "Atom or molecule with net electric charge",
+    "incorrectAnswers": [
+      "Always neutral",
+      "Only metals",
+      "Only gases"
+    ],
+    "explanation": "Gain/loss of electrons forms cations/anions.",
+    "keywords": [
+      "ions",
+      "charge"
+    ],
+    "source": "https://openstax.org/books/chemistry-2e/pages/2-6-molecular-and-ionic-compounds"
+  },
+  {
+    "seedId": "b749d1c1-82af-4d06-8df2-873ce47ca6f1",
+    "category": "science",
+    "navigationKeyword1": "chemistry",
+    "navigationKeyword2": "atoms",
+    "question": "What is electron configuration?",
+    "correctAnswer": "Distribution of electrons among orbitals",
+    "incorrectAnswers": [
+      "Arrangement of neutrons",
+      "Crystal lattice packing",
+      "Boiling point trend"
+    ],
+    "explanation": "Aufbau rules build configurations.",
+    "keywords": [
+      "electron-configuration",
+      "orbitals"
+    ],
+    "source": "https://openstax.org/books/chemistry-2e/pages/6-4-electronic-structure-of-atoms-electron-configurations"
+  },
+  {
+    "seedId": "658a4566-2a71-4465-b3fd-5f582cdd0d2d",
+    "category": "science",
+    "navigationKeyword1": "chemistry",
+    "navigationKeyword2": "atoms",
+    "question": "What is valence electron?",
+    "correctAnswer": "Outermost electrons involved in bonding",
+    "incorrectAnswers": [
+      "Core electrons in inner shells",
+      "Neutrons in nucleus",
+      "Protons only"
+    ],
+    "explanation": "Valence electrons drive chemistry.",
+    "keywords": [
+      "valence",
+      "bonding"
+    ],
+    "source": "https://openstax.org/books/chemistry-2e/pages/7-3-lewis-symbols-and-structures"
+  },
+  {
+    "seedId": "554f9512-530d-4a98-abf8-06c4dbb1397f",
+    "category": "science",
+    "navigationKeyword1": "chemistry",
+    "navigationKeyword2": "atoms",
+    "question": "What is photoelectric effect significance?",
+    "correctAnswer": "Light quantization evidence (photon energy)",
+    "incorrectAnswers": [
+      "Disproved atoms",
+      "Showed nuclei are negative",
+      "Explained absolute zero"
+    ],
+    "explanation": "Einstein\u2019s explanation supports E = hf.",
+    "keywords": [
+      "photoelectric",
+      "quantum"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Photoelectric_effect"
+  },
+  {
+    "seedId": "b774788e-3d16-47fc-b785-fc891127c26d",
+    "category": "science",
+    "navigationKeyword1": "chemistry",
+    "navigationKeyword2": "atoms",
+    "question": "What is atomic mass unit scale based on?",
+    "correctAnswer": "Carbon-12 reference (by definition)",
+    "incorrectAnswers": [
+      "Hydrogen-1 only",
+      "Oxygen-16 only arbitrary",
+      "Iron-56 only"
+    ],
+    "explanation": "Relative atomic masses compare to a standard.",
+    "keywords": [
+      "atomic-mass",
+      "scale"
+    ],
+    "source": "https://openstax.org/books/chemistry-2e/pages/2-3-atomic-structure-and-symbolism"
+  },
+  {
+    "seedId": "52441327-f020-45e5-add8-7d6bc4baa41f",
+    "category": "science",
+    "navigationKeyword1": "chemistry",
+    "navigationKeyword2": "atoms",
+    "question": "What is periodic trend for atomic radius across a period?",
+    "correctAnswer": "Generally decreases left to right",
+    "incorrectAnswers": [
+      "Increases left to right",
+      "Stays constant",
+      "Oscillates randomly"
+    ],
+    "explanation": "Effective nuclear charge pulls electrons tighter.",
+    "keywords": [
+      "atomic-radius",
+      "trends"
+    ],
+    "source": "https://openstax.org/books/chemistry-2e/pages/6-5-periodic-variations-in-element-properties"
+  },
+  {
+    "seedId": "9ed8539f-9e68-47f8-ae5c-9a845f3663f6",
+    "category": "science",
+    "navigationKeyword1": "chemistry",
+    "navigationKeyword2": "atoms",
+    "question": "What is electronegativity trend?",
+    "correctAnswer": "Increases toward fluorine (top-right, excluding noble gases)",
+    "incorrectAnswers": [
+      "Increases toward francium",
+      "Constant for all elements",
+      "Decreases up a group"
+    ],
+    "explanation": "Electronegativity reflects attraction for bonding electrons.",
+    "keywords": [
+      "electronegativity",
+      "trends"
+    ],
+    "source": "https://openstax.org/books/chemistry-2e/pages/7-5-properties-of-covalent-bonds"
+  },
+  {
+    "seedId": "4ffbd129-a1ae-4a21-94be-03d880783204",
+    "category": "science",
+    "navigationKeyword1": "chemistry",
+    "navigationKeyword2": "atoms",
+    "question": "What is quantum number principal n?",
+    "correctAnswer": "Roughly shell/energy level",
+    "incorrectAnswers": [
+      "Spin only",
+      "Shape only",
+      "Magnetic orientation only"
+    ],
+    "explanation": "Higher n means higher average energy/distance.",
+    "keywords": [
+      "quantum-numbers",
+      "shells"
+    ],
+    "source": "https://openstax.org/books/chemistry-2e/pages/6-3-development-of-quantum-theory"
+  }
+]

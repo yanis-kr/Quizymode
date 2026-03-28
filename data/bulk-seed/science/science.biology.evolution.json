@@ -1,0 +1,230 @@
+[
+  {
+    "seedId": "7e7ad981-c292-4022-892e-3d10780f633f",
+    "category": "science",
+    "navigationKeyword1": "biology",
+    "navigationKeyword2": "evolution",
+    "question": "What did Darwin propose as a mechanism for evolution?",
+    "correctAnswer": "Natural selection",
+    "incorrectAnswers": [
+      "Lamarckian cutting of tails",
+      "Spontaneous generation",
+      "Genetic drift only"
+    ],
+    "explanation": "Variation, inheritance, and differential survival drive adaptation.",
+    "keywords": [
+      "natural-selection",
+      "darwin"
+    ],
+    "source": "https://evolution.berkeley.edu/evolibrary/article/evo_25"
+  },
+  {
+    "seedId": "1ab0055f-eff5-4321-8362-f3f8d5df268a",
+    "category": "science",
+    "navigationKeyword1": "biology",
+    "navigationKeyword2": "evolution",
+    "question": "What is fitness (evolutionary)?",
+    "correctAnswer": "Reproductive success, not gym strength",
+    "incorrectAnswers": [
+      "Longest lifespan always",
+      "Biggest body size",
+      "Fastest running always"
+    ],
+    "explanation": "Fitness is about passing alleles to the next generation.",
+    "keywords": [
+      "fitness",
+      "selection"
+    ],
+    "source": "https://evolution.berkeley.edu/evolibrary/article/evo_25"
+  },
+  {
+    "seedId": "eac1236a-609b-4b01-a419-0d0d662e1df5",
+    "category": "science",
+    "navigationKeyword1": "biology",
+    "navigationKeyword2": "evolution",
+    "question": "What is a fossil record used for?",
+    "correctAnswer": "Showing past life forms and transitions over geological time",
+    "incorrectAnswers": [
+      "Predicting tomorrow\u2019s weather",
+      "Measuring star distances",
+      "Sequencing proteins in vitro"
+    ],
+    "explanation": "Fossils provide historical evidence for evolutionary change.",
+    "keywords": [
+      "fossils",
+      "paleontology"
+    ],
+    "source": "https://evolution.berkeley.edu/evolibrary/article/evo_04"
+  },
+  {
+    "seedId": "52210fe2-3f64-4412-9987-ad0961f66a4c",
+    "category": "science",
+    "navigationKeyword1": "biology",
+    "navigationKeyword2": "evolution",
+    "question": "What is homology?",
+    "correctAnswer": "Similarity due to shared ancestry",
+    "incorrectAnswers": [
+      "Similarity due to chance",
+      "Similarity due to convergent evolution only",
+      "Identical mutations"
+    ],
+    "explanation": "Homologous structures may differ in function.",
+    "keywords": [
+      "homology",
+      "ancestry"
+    ],
+    "source": "https://evolution.berkeley.edu/evolibrary/article/evo_13"
+  },
+  {
+    "seedId": "bd399477-7d9e-4102-ac09-01ddd58cee1a",
+    "category": "science",
+    "navigationKeyword1": "biology",
+    "navigationKeyword2": "evolution",
+    "question": "What is convergent evolution?",
+    "correctAnswer": "Similar traits evolve independently in different lineages",
+    "incorrectAnswers": [
+      "Always homology",
+      "Always genetic drift",
+      "Always hybridization"
+    ],
+    "explanation": "Wings in birds and bats are a classic analogy example.",
+    "keywords": [
+      "convergence",
+      "analogy"
+    ],
+    "source": "https://evolution.berkeley.edu/evolibrary/article/evo_34"
+  },
+  {
+    "seedId": "a222758a-1b41-4283-93f0-bda3f427dc84",
+    "category": "science",
+    "navigationKeyword1": "biology",
+    "navigationKeyword2": "evolution",
+    "question": "What is speciation?",
+    "correctAnswer": "Formation of new species",
+    "incorrectAnswers": [
+      "Loss of all variation",
+      "Cloning individuals",
+      "Stopping mutations"
+    ],
+    "explanation": "Reproductive isolation often plays a key role.",
+    "keywords": [
+      "speciation",
+      "species"
+    ],
+    "source": "https://evolution.berkeley.edu/evolibrary/article/evo_21"
+  },
+  {
+    "seedId": "4fbf6d51-76e0-47d6-9c6f-13a078811f7a",
+    "category": "science",
+    "navigationKeyword1": "biology",
+    "navigationKeyword2": "evolution",
+    "question": "What is genetic drift?",
+    "correctAnswer": "Random allele frequency changes, especially in small populations",
+    "incorrectAnswers": [
+      "Always adaptive",
+      "Only mutation",
+      "Only gene flow"
+    ],
+    "explanation": "Drift can fix neutral alleles by chance.",
+    "keywords": [
+      "genetic-drift",
+      "population-genetics"
+    ],
+    "source": "https://evolution.berkeley.edu/evolibrary/article/evo_23"
+  },
+  {
+    "seedId": "3870ad4b-048e-4beb-9e9e-54c107e55832",
+    "category": "science",
+    "navigationKeyword1": "biology",
+    "navigationKeyword2": "evolution",
+    "question": "What is gene flow?",
+    "correctAnswer": "Movement of alleles between populations",
+    "incorrectAnswers": [
+      "Mutation only",
+      "Mitosis",
+      "Photosynthesis"
+    ],
+    "explanation": "Migration can introduce new alleles or homogenize populations.",
+    "keywords": [
+      "gene-flow",
+      "migration"
+    ],
+    "source": "https://evolution.berkeley.edu/evolibrary/article/evo_22"
+  },
+  {
+    "seedId": "78de1e75-dd3d-467e-b8ba-ef942c87d1d9",
+    "category": "science",
+    "navigationKeyword1": "biology",
+    "navigationKeyword2": "evolution",
+    "question": "What is adaptive radiation?",
+    "correctAnswer": "Rapid diversification into many niches",
+    "incorrectAnswers": [
+      "Instant extinction",
+      "Loss of all predators",
+      "Stopping evolution"
+    ],
+    "explanation": "Often follows ecological opportunity.",
+    "keywords": [
+      "adaptive-radiation",
+      "diversification"
+    ],
+    "source": "https://evolution.berkeley.edu/evolibrary/article/evo_35"
+  },
+  {
+    "seedId": "f4528185-5f75-43ef-a8aa-2e377ddef626",
+    "category": "science",
+    "navigationKeyword1": "biology",
+    "navigationKeyword2": "evolution",
+    "question": "What is the modern synthesis?",
+    "correctAnswer": "Integration of genetics with natural selection and population thinking",
+    "incorrectAnswers": [
+      "Only Darwin\u2019s original book",
+      "Only geology",
+      "Only embryology"
+    ],
+    "explanation": "It connects Mendelian inheritance to evolutionary change.",
+    "keywords": [
+      "modern-synthesis",
+      "genetics"
+    ],
+    "source": "https://evolution.berkeley.edu/evolibrary/article/evo_26"
+  },
+  {
+    "seedId": "5ae65c4d-8ac8-4cdb-a712-e0119259adec",
+    "category": "science",
+    "navigationKeyword1": "biology",
+    "navigationKeyword2": "evolution",
+    "question": "What is an evolutionary trade-off?",
+    "correctAnswer": "A benefit in one trait may cost another",
+    "incorrectAnswers": [
+      "All traits improve together always",
+      "Trade-offs never exist",
+      "Only in bacteria"
+    ],
+    "explanation": "Example: fast growth vs. strong defense.",
+    "keywords": [
+      "trade-offs",
+      "constraints"
+    ],
+    "source": "https://evolution.berkeley.edu/evolibrary/article/evo_25"
+  },
+  {
+    "seedId": "d8091c05-5bad-47ab-b8c9-ec15a0bc0a04",
+    "category": "science",
+    "navigationKeyword1": "biology",
+    "navigationKeyword2": "evolution",
+    "question": "Why is antibiotic resistance an evolution example?",
+    "correctAnswer": "Selection favors resistant bacteria when antibiotics are misused",
+    "incorrectAnswers": [
+      "Bacteria consciously choose resistance",
+      "Antibiotics create DNA from nothing",
+      "Resistance never spreads"
+    ],
+    "explanation": "Heritable variation + selection changes population frequencies.",
+    "keywords": [
+      "antibiotic-resistance",
+      "selection"
+    ],
+    "source": "https://www.cdc.gov/drug-resistance/about.html"
+  }
+]

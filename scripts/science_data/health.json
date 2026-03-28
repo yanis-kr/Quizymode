@@ -1,0 +1,1094 @@
+{
+  "nutrition": [
+    {
+      "question": "What are macronutrients?",
+      "correctAnswer": "Carbohydrates, proteins, and fats",
+      "incorrectAnswers": [
+        "Vitamins only",
+        "Minerals only",
+        "Water only"
+      ],
+      "explanation": "Provide calories and building blocks.",
+      "keywords": [
+        "macronutrients",
+        "diet"
+      ],
+      "source": "https://www.cdc.gov/nutrition/data-statistics/index.html"
+    },
+    {
+      "question": "What are micronutrients?",
+      "correctAnswer": "Vitamins and minerals needed in small amounts",
+      "incorrectAnswers": [
+        "Carbs and fats",
+        "Fiber only",
+        "Alcohol"
+      ],
+      "explanation": "Support metabolism and health.",
+      "keywords": [
+        "micronutrients",
+        "vitamins"
+      ],
+      "source": "https://www.cdc.gov/nutrition/data-statistics/index.html"
+    },
+    {
+      "question": "What is dietary fiber?",
+      "correctAnswer": "Indigestible carbohydrates beneficial for digestion",
+      "incorrectAnswers": [
+        "A type of protein",
+        "A saturated fat",
+        "A hormone"
+      ],
+      "explanation": "Associated with gut and cardiometabolic benefits.",
+      "keywords": [
+        "fiber",
+        "digestion"
+      ],
+      "source": "https://www.cdc.gov/nutrition/data-statistics/index.html"
+    },
+    {
+      "question": "What is hydration importance?",
+      "correctAnswer": "Water supports temperature regulation and metabolism",
+      "incorrectAnswers": [
+        "Only for athletes",
+        "Replaces food",
+        "Not needed daily"
+      ],
+      "explanation": "Dehydration impairs function.",
+      "keywords": [
+        "hydration",
+        "water"
+      ],
+      "source": "https://www.cdc.gov/healthywater/drinking/nutrition/index.html"
+    },
+    {
+      "question": "What is added sugar concern?",
+      "correctAnswer": "Contributes excess calories; linked to health risks when overconsumed",
+      "incorrectAnswers": [
+        "Required nutrient",
+        "Same as fiber",
+        "Cannot be measured"
+      ],
+      "explanation": "Guidelines suggest limits.",
+      "keywords": [
+        "added-sugar",
+        "diet"
+      ],
+      "source": "https://www.cdc.gov/healthyweight/healthy_eating/sugar.html"
+    },
+    {
+      "question": "What is sodium moderation about?",
+      "correctAnswer": "High intake can raise blood pressure risk in sensitive people",
+      "incorrectAnswers": [
+        "Sodium is unnecessary",
+        "More is always better",
+        "Only affects skin"
+      ],
+      "explanation": "Major source is processed foods.",
+      "keywords": [
+        "sodium",
+        "blood-pressure"
+      ],
+      "source": "https://www.cdc.gov/salt/index.html"
+    },
+    {
+      "question": "What is MyPlate concept?",
+      "correctAnswer": "Balanced plate with fruits, vegetables, grains, protein, dairy",
+      "incorrectAnswers": [
+        "Only meat",
+        "Only juice",
+        "Only supplements"
+      ],
+      "explanation": "Visual guide for portions.",
+      "keywords": [
+        "myplate",
+        "guidelines"
+      ],
+      "source": "https://www.myplate.gov/"
+    },
+    {
+      "question": "What is calorie?",
+      "correctAnswer": "Unit of energy from food",
+      "incorrectAnswers": [
+        "Vitamin type",
+        "Mineral ore",
+        "Blood cell"
+      ],
+      "explanation": "Energy balance affects weight.",
+      "keywords": [
+        "calories",
+        "energy-balance"
+      ],
+      "source": "https://www.cdc.gov/healthyweight/calories/index.html"
+    },
+    {
+      "question": "What is food allergy vs intolerance (rough)?",
+      "correctAnswer": "Allergy involves immune response; intolerance often enzyme issue",
+      "incorrectAnswers": [
+        "Same thing",
+        "Only psychological",
+        "Only bacterial"
+      ],
+      "explanation": "Management differs.",
+      "keywords": [
+        "allergy",
+        "intolerance"
+      ],
+      "source": "https://www.cdc.gov/foodallergy/index.html"
+    },
+    {
+      "question": "What is BMI (note)?",
+      "correctAnswer": "Screening weight-for-height; not direct body fat measure",
+      "incorrectAnswers": [
+        "Diagnostic of disease alone",
+        "Measures muscle exactly",
+        "Measures hydration"
+      ],
+      "explanation": "Use alongside other assessments.",
+      "keywords": [
+        "bmi",
+        "screening"
+      ],
+      "source": "https://www.cdc.gov/healthyweight/assessing/bmi/index.html"
+    },
+    {
+      "question": "What is foodborne illness prevention?",
+      "correctAnswer": "Cook, chill, clean, separate",
+      "incorrectAnswers": [
+        "Leave food warm hours",
+        "Wash chicken with soap",
+        "Ignore dates"
+      ],
+      "explanation": "Core food safety steps.",
+      "keywords": [
+        "food-safety",
+        "cdc"
+      ],
+      "source": "https://www.cdc.gov/foodsafety/"
+    },
+    {
+      "question": "What is whole grain?",
+      "correctAnswer": "Contains bran, germ, endosperm",
+      "incorrectAnswers": [
+        "Only white flour",
+        "Sugar syrup",
+        "Juice concentrate"
+      ],
+      "explanation": "More fiber and nutrients than refined.",
+      "keywords": [
+        "whole-grain",
+        "diet"
+      ],
+      "source": "https://www.myplate.gov/eat-healthy/grains"
+    }
+  ],
+  "disease": [
+    {
+      "question": "What is a pathogen?",
+      "correctAnswer": "Disease-causing agent",
+      "incorrectAnswers": [
+        "Vaccine",
+        "Antibody always",
+        "Vitamin"
+      ],
+      "explanation": "Bacteria, viruses, fungi, parasites.",
+      "keywords": [
+        "pathogen",
+        "infection"
+      ],
+      "source": "https://www.cdc.gov/infection-control/hcp/what-is-a-pathogen.html"
+    },
+    {
+      "question": "What is infectious vs noncommunicable (rough)?",
+      "correctAnswer": "Spread between people vs chronic conditions like heart disease",
+      "incorrectAnswers": [
+        "Same",
+        "Only genetic",
+        "Only mental"
+      ],
+      "explanation": "Public health strategies differ.",
+      "keywords": [
+        "ncd",
+        "infection"
+      ],
+      "source": "https://www.who.int/news-room/fact-sheets/detail/noncommunicable-diseases"
+    },
+    {
+      "question": "What is immunity?",
+      "correctAnswer": "Body\u2019s defense against pathogens",
+      "incorrectAnswers": [
+        "Only skin lotion",
+        "Only sleep",
+        "Only vitamins"
+      ],
+      "explanation": "Includes innate and adaptive arms.",
+      "keywords": [
+        "immunity",
+        "immune-system"
+      ],
+      "source": "https://www.niaid.nih.gov/research/immune-system-overview"
+    },
+    {
+      "question": "What is vaccine (basic)?",
+      "correctAnswer": "Trains immune system using safe components/attenuated/inactivated forms",
+      "incorrectAnswers": [
+        "Replaces antibiotics for bacteria always",
+        "Cures active infection always",
+        "Only for flu"
+      ],
+      "explanation": "Reduces severe disease risk.",
+      "keywords": [
+        "vaccine",
+        "immunization"
+      ],
+      "source": "https://www.cdc.gov/vaccines/basics/index.html"
+    },
+    {
+      "question": "What is antibiotic misuse harm?",
+      "correctAnswer": "Drives resistance; doesn\u2019t treat viruses",
+      "incorrectAnswers": [
+        "Always strengthens immunity",
+        "Safe to share pills",
+        "Works for colds caused by viruses"
+      ],
+      "explanation": "Use as prescribed.",
+      "keywords": [
+        "antibiotic-resistance",
+        "cdc"
+      ],
+      "source": "https://www.cdc.gov/antibiotic-use/index.html"
+    },
+    {
+      "question": "What is chronic disease example?",
+      "correctAnswer": "Heart disease, diabetes, COPD",
+      "incorrectAnswers": [
+        "Common cold",
+        "Food poisoning 1-day",
+        "Minor cut"
+      ],
+      "explanation": "Long-duration conditions.",
+      "keywords": [
+        "chronic-disease",
+        "public-health"
+      ],
+      "source": "https://www.cdc.gov/chronicdisease/index.htm"
+    },
+    {
+      "question": "What is inflammation (basic)?",
+      "correctAnswer": "Immune response to injury or infection",
+      "incorrectAnswers": [
+        "Always bad",
+        "Only allergy",
+        "Only cancer"
+      ],
+      "explanation": "Acute helps healing; chronic harmful.",
+      "keywords": [
+        "inflammation",
+        "immune"
+      ],
+      "source": "https://www.nih.gov/news-events/nih-research-matters/how-inflammation-occurs"
+    },
+    {
+      "question": "What is hypertension?",
+      "correctAnswer": "Persistently high blood pressure",
+      "incorrectAnswers": [
+        "Low blood pressure always",
+        "Heart rate always high",
+        "Blood sugar high"
+      ],
+      "explanation": "Major cardiovascular risk factor.",
+      "keywords": [
+        "hypertension",
+        "blood-pressure"
+      ],
+      "source": "https://www.cdc.gov/bloodpressure/index.htm"
+    },
+    {
+      "question": "What is diabetes (core issue)?",
+      "correctAnswer": "Problems regulating blood glucose (insulin-related)",
+      "incorrectAnswers": [
+        "Too much protein",
+        "Too little water only",
+        "Bone density only"
+      ],
+      "explanation": "Type 1 vs Type 2 differ in mechanism.",
+      "keywords": [
+        "diabetes",
+        "glucose"
+      ],
+      "source": "https://www.cdc.gov/diabetes/basics/diabetes.html"
+    },
+    {
+      "question": "What is cancer (very general)?",
+      "correctAnswer": "Uncontrolled abnormal cell growth",
+      "incorrectAnswers": [
+        "Always infectious between people",
+        "Single vitamin deficiency always",
+        "Broken bone"
+      ],
+      "explanation": "Many types and treatments.",
+      "keywords": [
+        "cancer",
+        "oncology"
+      ],
+      "source": "https://www.cancer.gov/about-cancer/understanding/what-is-cancer"
+    },
+    {
+      "question": "What is screening?",
+      "correctAnswer": "Test asymptomatic people to find disease early",
+      "incorrectAnswers": [
+        "Treatment plan",
+        "Surgery always",
+        "Pain relief only"
+      ],
+      "explanation": "Benefits/harms vary by test.",
+      "keywords": [
+        "screening",
+        "prevention"
+      ],
+      "source": "https://www.cdc.gov/chronicdisease/prevention/index.htm"
+    },
+    {
+      "question": "What is outbreak?",
+      "correctAnswer": "More cases than expected in an area",
+      "incorrectAnswers": [
+        "One case",
+        "Global pandemic always",
+        "Random noise"
+      ],
+      "explanation": "Investigation finds source and control measures.",
+      "keywords": [
+        "outbreak",
+        "epidemiology"
+      ],
+      "source": "https://www.cdc.gov/outbreaks/index.html"
+    }
+  ],
+  "public-health": [
+    {
+      "question": "What is epidemiology?",
+      "correctAnswer": "Study of disease distribution and determinants in populations",
+      "incorrectAnswers": [
+        "Study of insects only",
+        "Individual surgery technique",
+        "Drug branding"
+      ],
+      "explanation": "Uses rates and risk factors.",
+      "keywords": [
+        "epidemiology",
+        "population"
+      ],
+      "source": "https://www.cdc.gov/career/epidemiology/index.html"
+    },
+    {
+      "question": "What is herd immunity concept?",
+      "correctAnswer": "Enough immunity reduces pathogen spread indirectly",
+      "incorrectAnswers": [
+        "Only protects unvaccinated 100% always",
+        "Eliminates need for hygiene",
+        "Works without vaccines only always"
+      ],
+      "explanation": "Threshold depends on contagion.",
+      "keywords": [
+        "herd-immunity",
+        "vaccines"
+      ],
+      "source": "https://www.cdc.gov/vaccines/vac-gen/herd.htm"
+    },
+    {
+      "question": "What is quarantine/isolation difference (rough)?",
+      "correctAnswer": "Separate exposed vs separate infected (terms vary by jurisdiction)",
+      "incorrectAnswers": [
+        "Same word",
+        "Only for animals",
+        "Only historical"
+      ],
+      "explanation": "Nonpharmaceutical interventions.",
+      "keywords": [
+        "isolation",
+        "public-health"
+      ],
+      "source": "https://www.cdc.gov/quarantine/index.html"
+    },
+    {
+      "question": "What is contact tracing?",
+      "correctAnswer": "Identify and notify exposed people",
+      "incorrectAnswers": [
+        "Treat patients only",
+        "Build vaccines",
+        "Measure BMI"
+      ],
+      "explanation": "Interrupts transmission chains.",
+      "keywords": [
+        "contact-tracing",
+        "cdc"
+      ],
+      "source": "https://www.cdc.gov/coronavirus/2019-ncov/php/contact-tracing/index.html"
+    },
+    {
+      "question": "What is sanitation\u2019s role?",
+      "correctAnswer": "Safe water/waste reduces infectious disease",
+      "incorrectAnswers": [
+        "Only cosmetic",
+        "Only urban design",
+        "Only nutrition"
+      ],
+      "explanation": "Major public health advance historically.",
+      "keywords": [
+        "sanitation",
+        "water"
+      ],
+      "source": "https://www.who.int/news-room/fact-sheets/detail/sanitation"
+    },
+    {
+      "question": "What is health disparity?",
+      "correctAnswer": "Preventable differences in health outcomes across groups",
+      "incorrectAnswers": [
+        "Random noise only",
+        "Only genetics",
+        "Only personal choice"
+      ],
+      "explanation": "Social determinants matter.",
+      "keywords": [
+        "disparities",
+        "equity"
+      ],
+      "source": "https://www.cdc.gov/healthequity/index.html"
+    },
+    {
+      "question": "What is CDC (US)?",
+      "correctAnswer": "National public health agency",
+      "incorrectAnswers": [
+        "Military branch",
+        "Stock exchange",
+        "Weather service"
+      ],
+      "explanation": "Disease prevention and health promotion.",
+      "keywords": [
+        "cdc",
+        "agency"
+      ],
+      "source": "https://www.cdc.gov/about/"
+    },
+    {
+      "question": "What is WHO?",
+      "correctAnswer": "Global health agency within UN system",
+      "incorrectAnswers": [
+        "Trade organization",
+        "Space agency",
+        "Bank"
+      ],
+      "explanation": "Coordinates international responses.",
+      "keywords": [
+        "who",
+        "global-health"
+      ],
+      "source": "https://www.who.int/about"
+    },
+    {
+      "question": "What is vital statistics?",
+      "correctAnswer": "Births, deaths, marriages records for health planning",
+      "incorrectAnswers": [
+        "Sports scores",
+        "Stock prices",
+        "Soil maps"
+      ],
+      "explanation": "Used for mortality rates.",
+      "keywords": [
+        "vital-statistics",
+        "data"
+      ],
+      "source": "https://www.cdc.gov/nchs/index.htm"
+    },
+    {
+      "question": "What is harm reduction?",
+      "correctAnswer": "Reduce negative consequences when abstinence not immediate",
+      "incorrectAnswers": [
+        "Encourage risky use",
+        "Ignore safety",
+        "Only punishment"
+      ],
+      "explanation": "Examples: needle exchanges in some programs.",
+      "keywords": [
+        "harm-reduction",
+        "policy"
+      ],
+      "source": "https://www.cdc.gov/drugoverdose/"
+    },
+    {
+      "question": "What is tobacco control aim?",
+      "correctAnswer": "Reduce smoking-related disease burden",
+      "incorrectAnswers": [
+        "Increase youth initiation",
+        "Promote secondhand smoke",
+        "Ignore nicotine"
+      ],
+      "explanation": "Taxes, smoke-free laws, cessation support.",
+      "keywords": [
+        "tobacco",
+        "prevention"
+      ],
+      "source": "https://www.cdc.gov/tobacco/index.html"
+    },
+    {
+      "question": "What is air quality index?",
+      "correctAnswer": "Communicates daily pollution health risk",
+      "incorrectAnswers": [
+        "Measures calories",
+        "Measures blood sugar",
+        "Measures IQ"
+      ],
+      "explanation": "Guides sensitive groups.",
+      "keywords": [
+        "aqi",
+        "pollution"
+      ],
+      "source": "https://www.airnow.gov/aqi/aqi-basics/"
+    }
+  ],
+  "wellness": [
+    {
+      "question": "What is physical activity guideline idea?",
+      "correctAnswer": "Regular movement benefits heart, mood, and metabolism",
+      "incorrectAnswers": [
+        "Only elite sports count",
+        "Walking never counts",
+        "Only stretching"
+      ],
+      "explanation": "Moderate activity most days helps.",
+      "keywords": [
+        "exercise",
+        "wellness"
+      ],
+      "source": "https://www.cdc.gov/physicalactivity/basics/index.htm"
+    },
+    {
+      "question": "What is sleep importance?",
+      "correctAnswer": "Supports memory, immunity, and recovery",
+      "incorrectAnswers": [
+        "Only for babies",
+        "Waste of time",
+        "Replaced by caffeine"
+      ],
+      "explanation": "Chronic sleep loss harms health.",
+      "keywords": [
+        "sleep",
+        "health"
+      ],
+      "source": "https://www.cdc.gov/sleep/index.html"
+    },
+    {
+      "question": "What is stress (chronic) risk?",
+      "correctAnswer": "Linked to cardiovascular and mental health issues",
+      "incorrectAnswers": [
+        "Always harmless",
+        "Only psychological never physical",
+        "Only short bursts"
+      ],
+      "explanation": "Coping strategies matter.",
+      "keywords": [
+        "stress",
+        "mental-health"
+      ],
+      "source": "https://www.nimh.nih.gov/health/publications/stress"
+    },
+    {
+      "question": "What is mindfulness (broad)?",
+      "correctAnswer": "Paying attention on purpose to present moment",
+      "incorrectAnswers": [
+        "Avoiding all emotions",
+        "Sleep replacement",
+        "Drug use"
+      ],
+      "explanation": "Used in some stress-reduction programs.",
+      "keywords": [
+        "mindfulness",
+        "mental-health"
+      ],
+      "source": "https://www.nccih.nih.gov/health/meditation-and-mindfulness-what-you-need-to-know"
+    },
+    {
+      "question": "What is substance use disorder?",
+      "correctAnswer": "Problematic pattern leading to impairment",
+      "incorrectAnswers": [
+        "Same as casual use",
+        "Only illegal drugs",
+        "Only alcohol"
+      ],
+      "explanation": "Treatment includes behavioral and medical support.",
+      "keywords": [
+        "sud",
+        "addiction"
+      ],
+      "source": "https://www.samhsa.gov/find-help/disorders"
+    },
+    {
+      "question": "What is preventive care?",
+      "correctAnswer": "Services to prevent disease or catch it early",
+      "incorrectAnswers": [
+        "Only ER visits",
+        "Only surgery",
+        "Only cosmetics"
+      ],
+      "explanation": "Includes vaccines and screenings.",
+      "keywords": [
+        "prevention",
+        "primary-care"
+      ],
+      "source": "https://www.healthcare.gov/coverage/preventive-care-benefits/"
+    },
+    {
+      "question": "What is BMI screening note?",
+      "correctAnswer": "Tool with limitations; not sole health measure",
+      "incorrectAnswers": [
+        "Perfect fat measure",
+        "Useless always",
+        "Measures IQ"
+      ],
+      "explanation": "Athletes may have high muscle mass.",
+      "keywords": [
+        "bmi",
+        "wellness"
+      ],
+      "source": "https://www.cdc.gov/healthyweight/assessing/bmi/adult_bmi/index.html"
+    },
+    {
+      "question": "What is hydration for exercise?",
+      "correctAnswer": "Replace fluids lost in sweat",
+      "incorrectAnswers": [
+        "Only drink when thirsty after fainting",
+        "Avoid water",
+        "Only soda"
+      ],
+      "explanation": "Electrolytes matter in prolonged exertion.",
+      "keywords": [
+        "hydration",
+        "exercise"
+      ],
+      "source": "https://www.cdc.gov/healthywater/drinking/nutrition/index.html"
+    },
+    {
+      "question": "What is ergonomic idea?",
+      "correctAnswer": "Fit work to body to reduce strain",
+      "incorrectAnswers": [
+        "Work through pain always",
+        "Slouching is best",
+        "Ignore breaks"
+      ],
+      "explanation": "Helps prevent musculoskeletal issues.",
+      "keywords": [
+        "ergonomics",
+        "workplace"
+      ],
+      "source": "https://www.cdc.gov/niosh/topics/ergonomics/"
+    },
+    {
+      "question": "What is social connection health link?",
+      "correctAnswer": "Strong ties associated with better outcomes",
+      "incorrectAnswers": [
+        "Isolation never matters",
+        "Only online drama",
+        "Only genetics"
+      ],
+      "explanation": "Loneliness is a public health concern.",
+      "keywords": [
+        "loneliness",
+        "mental-health"
+      ],
+      "source": "https://www.cdc.gov/emotional-wellbeing/social-connectedness/index.htm"
+    },
+    {
+      "question": "What is dental hygiene basics?",
+      "correctAnswer": "Brush, floss, regular dental visits",
+      "incorrectAnswers": [
+        "Only mouthwash",
+        "Avoid fluoride always",
+        "Brush once a year"
+      ],
+      "explanation": "Prevents cavities and gum disease.",
+      "keywords": [
+        "oral-health",
+        "hygiene"
+      ],
+      "source": "https://www.cdc.gov/oralhealth/basics/index.html"
+    },
+    {
+      "question": "What is sun protection?",
+      "correctAnswer": "Reduce UV skin damage risk",
+      "incorrectAnswers": [
+        "Tanning beds are safe",
+        "SPF not needed on cloudy days always",
+        "Burns don\u2019t matter"
+      ],
+      "explanation": "Skin cancer prevention.",
+      "keywords": [
+        "sunscreen",
+        "uv"
+      ],
+      "source": "https://www.cdc.gov/cancer/skin/basic_info/sun-safety.htm"
+    }
+  ],
+  "medical-terms": [
+    {
+      "question": "What does acute mean?",
+      "correctAnswer": "Sudden onset, often short duration",
+      "incorrectAnswers": [
+        "Always mild",
+        "Always chronic",
+        "Always surgical"
+      ],
+      "explanation": "Contrast with chronic.",
+      "keywords": [
+        "acute",
+        "terminology"
+      ],
+      "source": "https://www.ncbi.nlm.nih.gov/books/NBK562258/"
+    },
+    {
+      "question": "What does chronic mean?",
+      "correctAnswer": "Long-lasting condition",
+      "incorrectAnswers": [
+        "Lasts hours only",
+        "Only infections",
+        "Only injuries"
+      ],
+      "explanation": "May need ongoing management.",
+      "keywords": [
+        "chronic",
+        "terminology"
+      ],
+      "source": "https://www.ncbi.nlm.nih.gov/books/NBK562258/"
+    },
+    {
+      "question": "What is benign vs malignant (tumor)?",
+      "correctAnswer": "Noncancerous vs cancerous",
+      "incorrectAnswers": [
+        "Both cancer",
+        "Both infections",
+        "Both fractures"
+      ],
+      "explanation": "Malignant can invade/spread.",
+      "keywords": [
+        "benign",
+        "malignant"
+      ],
+      "source": "https://www.cancer.gov/publications/dictionaries/cancer-terms/def/benign"
+    },
+    {
+      "question": "What is prognosis?",
+      "correctAnswer": "Expected course/outcome of disease",
+      "incorrectAnswers": [
+        "Diagnosis name only",
+        "Surgery technique",
+        "Insurance code only"
+      ],
+      "explanation": "Not certain, probabilistic.",
+      "keywords": [
+        "prognosis",
+        "terms"
+      ],
+      "source": "https://www.cancer.gov/publications/dictionaries/cancer-terms/def/prognosis"
+    },
+    {
+      "question": "What is differential diagnosis?",
+      "correctAnswer": "List of possible causes considered",
+      "incorrectAnswers": [
+        "Final diagnosis only",
+        "Treatment plan",
+        "Billing code"
+      ],
+      "explanation": "Narrowed by tests/exam.",
+      "keywords": [
+        "differential",
+        "diagnosis"
+      ],
+      "source": "https://www.ncbi.nlm.nih.gov/books/NBK562258/"
+    },
+    {
+      "question": "What is contraindication?",
+      "correctAnswer": "Reason to avoid a treatment",
+      "incorrectAnswers": [
+        "Reason to always use",
+        "Side effect synonym",
+        "Dosage"
+      ],
+      "explanation": "Safety consideration.",
+      "keywords": [
+        "contraindication",
+        "safety"
+      ],
+      "source": "https://www.fda.gov/drugs/drug-interactions-labeling/drug-interactions-what-you-should-know"
+    },
+    {
+      "question": "What is placebo?",
+      "correctAnswer": "Inactive substance used in trials",
+      "incorrectAnswers": [
+        "Always cures",
+        "Same as vaccine",
+        "Illegal drug"
+      ],
+      "explanation": "Controls expectation effects.",
+      "keywords": [
+        "placebo",
+        "trials"
+      ],
+      "source": "https://www.cancer.gov/publications/dictionaries/cancer-terms/def/placebo"
+    },
+    {
+      "question": "What is double-blind trial?",
+      "correctAnswer": "Participant and investigator unaware of assignment",
+      "incorrectAnswers": [
+        "Everyone knows arm",
+        "Only single arm",
+        "No ethics board"
+      ],
+      "explanation": "Reduces bias.",
+      "keywords": [
+        "clinical-trial",
+        "methods"
+      ],
+      "source": "https://www.cancer.gov/publications/dictionaries/cancer-terms/def/double-blind-study"
+    },
+    {
+      "question": "What is comorbidity?",
+      "correctAnswer": "Additional coexisting condition",
+      "incorrectAnswers": [
+        "Opposite of diagnosis",
+        "Only mental",
+        "Only cured"
+      ],
+      "explanation": "Affects treatment choice.",
+      "keywords": [
+        "comorbidity",
+        "terms"
+      ],
+      "source": "https://www.cdc.gov/nchs/data/nvss/comorbidity-related-to-covid19.htm"
+    },
+    {
+      "question": "What is remission?",
+      "correctAnswer": "Disease signs reduced/absent (not always cure)",
+      "incorrectAnswers": [
+        "Always cured",
+        "Always worse",
+        "Only for diabetes"
+      ],
+      "explanation": "Oncology uses carefully.",
+      "keywords": [
+        "remission",
+        "oncology"
+      ],
+      "source": "https://www.cancer.gov/publications/dictionaries/cancer-terms/def/remission"
+    },
+    {
+      "question": "What is biopsy?",
+      "correctAnswer": "Tissue sample for diagnosis",
+      "incorrectAnswers": [
+        "Blood pressure test",
+        "X-ray only",
+        "Vaccine"
+      ],
+      "explanation": "Pathology examines cells.",
+      "keywords": [
+        "biopsy",
+        "pathology"
+      ],
+      "source": "https://www.cancer.gov/publications/dictionaries/cancer-terms/def/biopsy"
+    },
+    {
+      "question": "What is generic drug?",
+      "correctAnswer": "Same active ingredient as brand, FDA-approved equivalent",
+      "incorrectAnswers": [
+        "Always weaker",
+        "No regulation",
+        "Different disease"
+      ],
+      "explanation": "Often lower cost.",
+      "keywords": [
+        "generic",
+        "fda"
+      ],
+      "source": "https://www.fda.gov/drugs/questions-answers/generic-drugs-questions-answers"
+    }
+  ],
+  "first-aid": [
+    {
+      "question": "What to do first for severe bleeding?",
+      "correctAnswer": "Apply firm pressure with clean cloth; elevate if possible",
+      "incorrectAnswers": [
+        "Remove clots repeatedly",
+        "Apply tourniquet always first",
+        "Wait without pressure"
+      ],
+      "explanation": "Call emergency services if severe.",
+      "keywords": [
+        "bleeding",
+        "first-aid"
+      ],
+      "source": "https://www.redcross.org/take-a-class/first-aid/performing-first-aid/first-aid-steps"
+    },
+    {
+      "question": "What is CPR purpose?",
+      "correctAnswer": "Maintain blood flow when heart stops",
+      "incorrectAnswers": [
+        "Treat minor cuts",
+        "Fix fractures",
+        "Stop nosebleeds only"
+      ],
+      "explanation": "Early CPR saves lives.",
+      "keywords": [
+        "cpr",
+        "emergency"
+      ],
+      "source": "https://www.heart.org/en/health-topics/cardiac-arrest/hands-only-cpr-resources"
+    },
+    {
+      "question": "What is Heimlich for?",
+      "correctAnswer": "Choking with airway obstruction",
+      "incorrectAnswers": [
+        "Heart attack",
+        "Stroke",
+        "Seizure"
+      ],
+      "explanation": "Back blows/abdominal thrusts per training protocols.",
+      "keywords": [
+        "choking",
+        "first-aid"
+      ],
+      "source": "https://www.redcross.org/take-a-class/first-aid/performing-first-aid/first-aid-steps"
+    },
+    {
+      "question": "What to do for suspected stroke (FAST idea)?",
+      "correctAnswer": "Call emergency services; note time; rapid care matters",
+      "incorrectAnswers": [
+        "Give aspirin always without evaluation",
+        "Let them sleep",
+        "Drive yourself only"
+      ],
+      "explanation": "Time-sensitive treatments exist.",
+      "keywords": [
+        "stroke",
+        "emergency"
+      ],
+      "source": "https://www.stroke.org/en/about-stroke/stroke-symptoms"
+    },
+    {
+      "question": "What is RICE for sprains (common mnemonic)?",
+      "correctAnswer": "Rest, Ice, Compression, Elevation",
+      "incorrectAnswers": [
+        "Run, Ignore, Continue, Extend",
+        "Heat always first",
+        "Massage hard"
+      ],
+      "explanation": "Early care reduces swelling.",
+      "keywords": [
+        "sprain",
+        "first-aid"
+      ],
+      "source": "https://medlineplus.gov/ency/patientinstructions/000493.htm"
+    },
+    {
+      "question": "What to do for minor burns?",
+      "correctAnswer": "Cool running water; don\u2019t pop blisters; cover cleanly",
+      "incorrectAnswers": [
+        "Apply butter",
+        "Pop blisters",
+        "Ignore large burns"
+      ],
+      "explanation": "Seek care for large/deep burns.",
+      "keywords": [
+        "burns",
+        "first-aid"
+      ],
+      "source": "https://www.mayoclinic.org/first-aid/first-aid-burns/basics/art-20056649"
+    },
+    {
+      "question": "What is anaphylaxis sign?",
+      "correctAnswer": "Swelling, hives, breathing difficulty\u2014emergency",
+      "incorrectAnswers": [
+        "Mild itch only",
+        "Only stomach pain always",
+        "Always slow"
+      ],
+      "explanation": "Epinephrine may be needed.",
+      "keywords": [
+        "anaphylaxis",
+        "allergy"
+      ],
+      "source": "https://www.aaaai.org/tools-for-the-public/conditions-library/allergies/anaphylaxis-overview"
+    },
+    {
+      "question": "What to do for heat exhaustion?",
+      "correctAnswer": "Move to cool place, fluids, loosen clothing",
+      "incorrectAnswers": [
+        "Keep exercising",
+        "Drink alcohol",
+        "Ignore symptoms"
+      ],
+      "explanation": "Can progress to heat stroke.",
+      "keywords": [
+        "heat-exhaustion",
+        "first-aid"
+      ],
+      "source": "https://www.cdc.gov/disasters/extremeheat/warning.html"
+    },
+    {
+      "question": "What is hypothermia concern?",
+      "correctAnswer": "Dangerously low body temperature",
+      "incorrectAnswers": [
+        "High fever",
+        "Sunburn",
+        "Dehydration only"
+      ],
+      "explanation": "Warm gradually; emergency if severe.",
+      "keywords": [
+        "hypothermia",
+        "first-aid"
+      ],
+      "source": "https://www.cdc.gov/disasters/winter/staysafe/hypothermia.html"
+    },
+    {
+      "question": "What is recovery position?",
+      "correctAnswer": "Place unconscious breathing person on side to protect airway",
+      "incorrectAnswers": [
+        "On back always",
+        "Face down always",
+        "Standing position"
+      ],
+      "explanation": "Helps prevent aspiration.",
+      "keywords": [
+        "recovery-position",
+        "first-aid"
+      ],
+      "source": "https://www.redcross.org/take-a-class/first-aid/performing-first-aid/first-aid-steps"
+    },
+    {
+      "question": "What is AED?",
+      "correctAnswer": "Device that can shock heart rhythm in cardiac arrest",
+      "incorrectAnswers": [
+        "Blood sugar tester",
+        "Thermometer",
+        "Inhaler"
+      ],
+      "explanation": "Use with CPR per training.",
+      "keywords": [
+        "aed",
+        "emergency"
+      ],
+      "source": "https://www.heart.org/en/health-topics/cardiac-arrest/hands-only-cpr-resources"
+    },
+    {
+      "question": "When to call poison control?",
+      "correctAnswer": "Suspected poisoning or overdose for guidance",
+      "incorrectAnswers": [
+        "Never",
+        "Only for animals",
+        "Only for food freshness"
+      ],
+      "explanation": "Have substance info ready.",
+      "keywords": [
+        "poison",
+        "emergency"
+      ],
+      "source": "https://www.poison.org/poison-help"
+    }
+  ]
+}

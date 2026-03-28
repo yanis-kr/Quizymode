@@ -1,0 +1,230 @@
+[
+  {
+    "seedId": "e08ab55b-82d3-401b-9ee2-f993a40cea72",
+    "category": "science",
+    "navigationKeyword1": "precalc",
+    "navigationKeyword2": "matrices",
+    "question": "2\u00d72 determinant?",
+    "correctAnswer": "ad \u2212 bc for [[a,b],[c,d]]",
+    "incorrectAnswers": [
+      "a+b+c+d",
+      "ad+bc",
+      "ac\u2212bd"
+    ],
+    "explanation": "Invertible iff nonzero.",
+    "keywords": [
+      "determinant",
+      "2x2"
+    ],
+    "source": "https://openstax.org/books/precalculus-2e/pages/9-7-solving-systems-with-inverses"
+  },
+  {
+    "seedId": "bbb94281-8bdb-4384-92cb-12eaa30fd9eb",
+    "category": "science",
+    "navigationKeyword1": "precalc",
+    "navigationKeyword2": "matrices",
+    "question": "Matrix addition requirement?",
+    "correctAnswer": "Same dimensions",
+    "incorrectAnswers": [
+      "Any sizes",
+      "Square only",
+      "Must multiply first"
+    ],
+    "explanation": "Elementwise.",
+    "keywords": [
+      "matrix-add",
+      "algebra"
+    ],
+    "source": "https://openstax.org/books/precalculus-2e/pages/9-5-matrices-and-matrix-operations"
+  },
+  {
+    "seedId": "0fea5416-c7b1-40e6-9269-b6a17f9d47f9",
+    "category": "science",
+    "navigationKeyword1": "precalc",
+    "navigationKeyword2": "matrices",
+    "question": "Scalar multiplication?",
+    "correctAnswer": "Multiply every entry by scalar",
+    "incorrectAnswers": [
+      "Only diagonal",
+      "Only first row",
+      "Determinant only"
+    ],
+    "explanation": "Linear operation.",
+    "keywords": [
+      "scalar-multiple",
+      "matrices"
+    ],
+    "source": "https://openstax.org/books/precalculus-2e/pages/9-5-matrices-and-matrix-operations"
+  },
+  {
+    "seedId": "ebcdc2c2-9a3e-46fb-a5ff-69cf11e98db9",
+    "category": "science",
+    "navigationKeyword1": "precalc",
+    "navigationKeyword2": "matrices",
+    "question": "When is AB defined?",
+    "correctAnswer": "Columns of A = rows of B",
+    "incorrectAnswers": [
+      "Always",
+      "Same size only",
+      "Never"
+    ],
+    "explanation": "(m\u00d7n)(n\u00d7p) \u2192 m\u00d7p.",
+    "keywords": [
+      "matrix-multiply",
+      "dimensions"
+    ],
+    "source": "https://openstax.org/books/precalculus-2e/pages/9-5-matrices-and-matrix-operations"
+  },
+  {
+    "seedId": "96f36af1-2cd8-454e-bf12-c7f4ce4dff28",
+    "category": "science",
+    "navigationKeyword1": "precalc",
+    "navigationKeyword2": "matrices",
+    "question": "Identity matrix property?",
+    "correctAnswer": "AI = IA = A for compatible A",
+    "incorrectAnswers": [
+      "A+I = 0",
+      "AI = 0",
+      "Never commutes"
+    ],
+    "explanation": "Ones on diagonal.",
+    "keywords": [
+      "identity-matrix",
+      "matrices"
+    ],
+    "source": "https://openstax.org/books/precalculus-2e/pages/9-7-solving-systems-with-inverses"
+  },
+  {
+    "seedId": "4d355fa2-79fc-4de8-b6d8-35a4eaaffe67",
+    "category": "science",
+    "navigationKeyword1": "precalc",
+    "navigationKeyword2": "matrices",
+    "question": "Inverse matrix?",
+    "correctAnswer": "A^{-1} with AA^{-1}=I",
+    "incorrectAnswers": [
+      "Always exists",
+      "Same as transpose",
+      "Only vectors"
+    ],
+    "explanation": "Square and det\u22600.",
+    "keywords": [
+      "matrix-inverse",
+      "solve"
+    ],
+    "source": "https://openstax.org/books/precalculus-2e/pages/9-7-solving-systems-with-inverses"
+  },
+  {
+    "seedId": "b083bf51-5a1e-48a2-83df-8f38913d4d1b",
+    "category": "science",
+    "navigationKeyword1": "precalc",
+    "navigationKeyword2": "matrices",
+    "question": "Solve Ax=b with inverse?",
+    "correctAnswer": "x = A^{-1}b if invertible",
+    "incorrectAnswers": [
+      "x = Ab",
+      "x = bA",
+      "x = A/b"
+    ],
+    "explanation": "Conceptual method.",
+    "keywords": [
+      "linear-systems",
+      "matrix"
+    ],
+    "source": "https://openstax.org/books/precalculus-2e/pages/9-7-solving-systems-with-inverses"
+  },
+  {
+    "seedId": "b3a147e2-b63c-4972-b051-2f93a3d7bdc6",
+    "category": "science",
+    "navigationKeyword1": "precalc",
+    "navigationKeyword2": "matrices",
+    "question": "Augmented matrix?",
+    "correctAnswer": "[A|b]",
+    "incorrectAnswers": [
+      "Only A",
+      "Only b",
+      "A^2"
+    ],
+    "explanation": "Row reduce for solutions.",
+    "keywords": [
+      "augmented",
+      "rref"
+    ],
+    "source": "https://openstax.org/books/precalculus-2e/pages/9-6-solving-systems-with-gaussian-elimination"
+  },
+  {
+    "seedId": "b10cfb60-5502-4850-ba23-966cdc5d43d4",
+    "category": "science",
+    "navigationKeyword1": "precalc",
+    "navigationKeyword2": "matrices",
+    "question": "Coefficient matrix?",
+    "correctAnswer": "Matrix of variable coefficients without constants",
+    "incorrectAnswers": [
+      "Includes RHS column inside",
+      "Only constants",
+      "Identity always"
+    ],
+    "explanation": "Ax=b structure.",
+    "keywords": [
+      "coefficient-matrix",
+      "systems"
+    ],
+    "source": "https://openstax.org/books/precalculus-2e/pages/9-6-solving-systems-with-gaussian-elimination"
+  },
+  {
+    "seedId": "e72558e9-5c00-49d7-88c6-46dea3b10138",
+    "category": "science",
+    "navigationKeyword1": "precalc",
+    "navigationKeyword2": "matrices",
+    "question": "Zero matrix property under addition?",
+    "correctAnswer": "Identity for matrix addition",
+    "incorrectAnswers": [
+      "Identity for multiply",
+      "No effect",
+      "Always invertible"
+    ],
+    "explanation": "A+0=A.",
+    "keywords": [
+      "zero-matrix",
+      "algebra"
+    ],
+    "source": "https://openstax.org/books/precalculus-2e/pages/9-5-matrices-and-matrix-operations"
+  },
+  {
+    "seedId": "47d04753-b9af-440f-ae8d-8bee3040e0b9",
+    "category": "science",
+    "navigationKeyword1": "precalc",
+    "navigationKeyword2": "matrices",
+    "question": "Transpose (A^T)ij?",
+    "correctAnswer": "Aji",
+    "incorrectAnswers": [
+      "Aij",
+      "\u2212Aij",
+      "1/Aij"
+    ],
+    "explanation": "Rows become columns.",
+    "keywords": [
+      "transpose",
+      "matrices"
+    ],
+    "source": "https://openstax.org/books/precalculus-2e/pages/9-5-matrices-and-matrix-operations"
+  },
+  {
+    "seedId": "12048e7d-a234-4654-9cb9-755182492d1d",
+    "category": "science",
+    "navigationKeyword1": "precalc",
+    "navigationKeyword2": "matrices",
+    "question": "Encoding networks with matrices?",
+    "correctAnswer": "Adjacency/weights in graphs",
+    "incorrectAnswers": [
+      "Impossible",
+      "Only calculus",
+      "Only 1\u00d71"
+    ],
+    "explanation": "Discrete math link.",
+    "keywords": [
+      "adjacency",
+      "graphs"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Adjacency_matrix"
+  }
+]

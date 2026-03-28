@@ -1,0 +1,230 @@
+[
+  {
+    "seedId": "32af9118-4258-4aad-a6b1-3cabe5586653",
+    "category": "science",
+    "navigationKeyword1": "astronomy",
+    "navigationKeyword2": "stars",
+    "question": "What powers most stars\u2019 long-term energy output?",
+    "correctAnswer": "Nuclear fusion in the core",
+    "incorrectAnswers": [
+      "Chemical burning like wood",
+      "Gravitational collapse only forever",
+      "Electric heating from lightning"
+    ],
+    "explanation": "Stars shine by fusing light nuclei under extreme temperature and pressure.",
+    "keywords": [
+      "fusion",
+      "stellar-energy"
+    ],
+    "source": "https://science.nasa.gov/universe/stars/"
+  },
+  {
+    "seedId": "966cdd91-584a-44c2-b9d2-71266bf22278",
+    "category": "science",
+    "navigationKeyword1": "astronomy",
+    "navigationKeyword2": "stars",
+    "question": "What is a main sequence star?",
+    "correctAnswer": "A star fusing hydrogen into helium in its core (stable phase)",
+    "incorrectAnswers": [
+      "A star that only reflects sunlight",
+      "A cooled planet",
+      "A black hole"
+    ],
+    "explanation": "Sun-like stars spend most of their lives on the main sequence.",
+    "keywords": [
+      "main-sequence",
+      "hr-diagram"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Main_sequence"
+  },
+  {
+    "seedId": "97d27e8e-dd2b-4115-89d7-2a33531c521d",
+    "category": "science",
+    "navigationKeyword1": "astronomy",
+    "navigationKeyword2": "stars",
+    "question": "What does a star\u2019s color roughly indicate?",
+    "correctAnswer": "Surface temperature (hotter tends toward blue-white)",
+    "incorrectAnswers": [
+      "Distance only",
+      "Mass only with no temperature link",
+      "Age only"
+    ],
+    "explanation": "Hotter surfaces emit more energetic light, shifting color.",
+    "keywords": [
+      "blackbody",
+      "color-temperature"
+    ],
+    "source": "https://science.nasa.gov/universe/stars/"
+  },
+  {
+    "seedId": "19c9860d-a575-4fce-8788-bac77243c7fc",
+    "category": "science",
+    "navigationKeyword1": "astronomy",
+    "navigationKeyword2": "stars",
+    "question": "What is a red giant?",
+    "correctAnswer": "A late-stage star that expanded after core hydrogen exhaustion",
+    "incorrectAnswers": [
+      "A young hot star",
+      "A planet with rings",
+      "A comet nucleus"
+    ],
+    "explanation": "Low- to intermediate-mass stars swell when evolving off the main sequence.",
+    "keywords": [
+      "red-giant",
+      "stellar-evolution"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Red_giant"
+  },
+  {
+    "seedId": "8cf742c8-2880-49b3-ac33-c2695499a379",
+    "category": "science",
+    "navigationKeyword1": "astronomy",
+    "navigationKeyword2": "stars",
+    "question": "What is a neutron star?",
+    "correctAnswer": "An extremely dense remnant after a massive star\u2019s core collapse",
+    "incorrectAnswers": [
+      "A normal star like the Sun",
+      "A gas giant",
+      "A brown dwarf"
+    ],
+    "explanation": "Neutron stars can form from supernova cores under extreme gravity.",
+    "keywords": [
+      "neutron-star",
+      "supernova"
+    ],
+    "source": "https://science.nasa.gov/universe/neutron-stars/"
+  },
+  {
+    "seedId": "5ca446e9-5f76-4750-ad4b-64e6095e61c2",
+    "category": "science",
+    "navigationKeyword1": "astronomy",
+    "navigationKeyword2": "stars",
+    "question": "What is a black hole?",
+    "correctAnswer": "A region where gravity is so strong that light cannot escape the event horizon",
+    "incorrectAnswers": [
+      "A hole in the galactic disk",
+      "An empty bubble of vacuum only",
+      "A cold planet"
+    ],
+    "explanation": "Black holes are predicted by general relativity with an event horizon.",
+    "keywords": [
+      "black-hole",
+      "event-horizon"
+    ],
+    "source": "https://science.nasa.gov/universe/black-holes/"
+  },
+  {
+    "seedId": "ee19f7b5-e2b3-473b-8a62-f84bdcbf1810",
+    "category": "science",
+    "navigationKeyword1": "astronomy",
+    "navigationKeyword2": "stars",
+    "question": "What is parallax used for in astronomy?",
+    "correctAnswer": "Estimating distances to nearby stars",
+    "incorrectAnswers": [
+      "Measuring a star\u2019s age exactly",
+      "Predicting eclipses only",
+      "Finding planet cores"
+    ],
+    "explanation": "Earth\u2019s orbit provides a baseline for triangulating stellar distances.",
+    "keywords": [
+      "parallax",
+      "distance"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Stellar_parallax"
+  },
+  {
+    "seedId": "8068769e-9082-480c-ad21-44d983489b4e",
+    "category": "science",
+    "navigationKeyword1": "astronomy",
+    "navigationKeyword2": "stars",
+    "question": "What is absolute magnitude related to?",
+    "correctAnswer": "Intrinsic brightness (compared at a standard distance)",
+    "incorrectAnswers": [
+      "How bright a star looks from Earth only",
+      "A star\u2019s color alone",
+      "A star\u2019s spin only"
+    ],
+    "explanation": "Apparent magnitude depends on distance; absolute magnitude standardizes comparison.",
+    "keywords": [
+      "magnitude",
+      "brightness"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Absolute_magnitude"
+  },
+  {
+    "seedId": "bd17ea27-ef13-4b0f-aa01-20c0a9cc8703",
+    "category": "science",
+    "navigationKeyword1": "astronomy",
+    "navigationKeyword2": "stars",
+    "question": "What is a spectroscope useful for with starlight?",
+    "correctAnswer": "Identifying chemical composition and motion via spectral lines",
+    "incorrectAnswers": [
+      "Measuring a star\u2019s exact size with a ruler",
+      "Blocking all wavelengths",
+      "Creating artificial gravity"
+    ],
+    "explanation": "Spectral lines reveal elements and Doppler shifts.",
+    "keywords": [
+      "spectroscopy",
+      "redshift"
+    ],
+    "source": "https://science.nasa.gov/spectrum/"
+  },
+  {
+    "seedId": "1138217c-a23a-41a2-987d-6392791dd09d",
+    "category": "science",
+    "navigationKeyword1": "astronomy",
+    "navigationKeyword2": "stars",
+    "question": "What is the Sun\u2019s general spectral class (common label)?",
+    "correctAnswer": "G-type main-sequence star (G dwarf)",
+    "incorrectAnswers": [
+      "O-type brown dwarf",
+      "M-type giant only",
+      "B-type white dwarf"
+    ],
+    "explanation": "The Sun is often called a G2V star.",
+    "keywords": [
+      "sun-type",
+      "spectral-class"
+    ],
+    "source": "https://science.nasa.gov/sun/"
+  },
+  {
+    "seedId": "fe136e3e-787b-4d3c-bac6-440c6f24b49b",
+    "category": "science",
+    "navigationKeyword1": "astronomy",
+    "navigationKeyword2": "stars",
+    "question": "What is a binary star system?",
+    "correctAnswer": "Two stars orbiting a common center of mass",
+    "incorrectAnswers": [
+      "A star with one planet",
+      "Two galaxies merging",
+      "A star and a comet"
+    ],
+    "explanation": "Many stars form bound pairs or multiples.",
+    "keywords": [
+      "binary-stars",
+      "orbits"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Binary_star"
+  },
+  {
+    "seedId": "4abe3778-d720-482f-b4c0-ace222a820ac",
+    "category": "science",
+    "navigationKeyword1": "astronomy",
+    "navigationKeyword2": "stars",
+    "question": "Why do stars twinkle as seen from Earth?",
+    "correctAnswer": "Earth\u2019s atmosphere bends starlight as turbulence changes",
+    "incorrectAnswers": [
+      "Stars pulse intrinsically every second",
+      "Stars are cubes",
+      "The Moon blocks them"
+    ],
+    "explanation": "Scintillation is an atmospheric effect for point sources.",
+    "keywords": [
+      "twinkle",
+      "seeing"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Astronomical_seeing"
+  }
+]

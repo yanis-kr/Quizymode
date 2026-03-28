@@ -1,0 +1,230 @@
+[
+  {
+    "seedId": "7f7f822b-0b53-4fb7-b9b3-b043f6f6720e",
+    "category": "science",
+    "navigationKeyword1": "geometry",
+    "navigationKeyword2": "proofs",
+    "question": "Two-column proof format?",
+    "correctAnswer": "Statements with reasons aligned",
+    "incorrectAnswers": [
+      "Only paragraphs",
+      "No reasons",
+      "Only algebra"
+    ],
+    "explanation": "Geometry class standard.",
+    "keywords": [
+      "two-column-proof",
+      "format"
+    ],
+    "source": "https://www.mathsisfun.com/proof.html"
+  },
+  {
+    "seedId": "5396a213-2906-4a67-88d6-5a113ebf8446",
+    "category": "science",
+    "navigationKeyword1": "geometry",
+    "navigationKeyword2": "proofs",
+    "question": "Proof by contradiction strategy?",
+    "correctAnswer": "Assume opposite of claim; derive contradiction",
+    "incorrectAnswers": [
+      "Assume claim; done",
+      "Only measure",
+      "Draw picture only"
+    ],
+    "explanation": "Classic for \u221a2 irrational etc.",
+    "keywords": [
+      "contradiction",
+      "logic"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Proof_by_contradiction"
+  },
+  {
+    "seedId": "979915a8-4343-4598-bbdc-2bf2bf81fdfd",
+    "category": "science",
+    "navigationKeyword1": "geometry",
+    "navigationKeyword2": "proofs",
+    "question": "Indirect proof in geometry?",
+    "correctAnswer": "Often contradiction or contrapositive style",
+    "incorrectAnswers": [
+      "Always coordinates",
+      "Never rigorous",
+      "Only calculus"
+    ],
+    "explanation": "Show impossible alternative.",
+    "keywords": [
+      "indirect-proof",
+      "geometry"
+    ],
+    "source": "https://www.mathsisfun.com/proof.html"
+  },
+  {
+    "seedId": "b852c041-9f93-47c8-b58f-40f4b671b492",
+    "category": "science",
+    "navigationKeyword1": "geometry",
+    "navigationKeyword2": "proofs",
+    "question": "CPCTC means?",
+    "correctAnswer": "Corresponding parts of congruent triangles are congruent",
+    "incorrectAnswers": [
+      "Triangles always similar",
+      "Angles sum 360",
+      "Parallel lines"
+    ],
+    "explanation": "After congruence proof.",
+    "keywords": [
+      "cpctc",
+      "congruence"
+    ],
+    "source": "https://www.mathsisfun.com/geometry/triangles-congruent.html"
+  },
+  {
+    "seedId": "1dd7de66-5930-403e-a705-b429b99622de",
+    "category": "science",
+    "navigationKeyword1": "geometry",
+    "navigationKeyword2": "proofs",
+    "question": "Transitive property of equality?",
+    "correctAnswer": "If a=b and b=c then a=c",
+    "incorrectAnswers": [
+      "If a=b then a=c always",
+      "Never used",
+      "Only inequalities"
+    ],
+    "explanation": "Algebra in proofs.",
+    "keywords": [
+      "transitive",
+      "equality"
+    ],
+    "source": "https://www.mathsisfun.com/definitions/transitive-property.html"
+  },
+  {
+    "seedId": "420750a4-992c-4525-989e-2cd59894b973",
+    "category": "science",
+    "navigationKeyword1": "geometry",
+    "navigationKeyword2": "proofs",
+    "question": "Substitution in proof?",
+    "correctAnswer": "Replace equal quantity in expression",
+    "incorrectAnswers": [
+      "Assume unequal",
+      "Only figures",
+      "Never valid"
+    ],
+    "explanation": "Fundamental.",
+    "keywords": [
+      "substitution",
+      "algebra"
+    ],
+    "source": "https://www.mathsisfun.com/definitions/substitution-property-of-equality.html"
+  },
+  {
+    "seedId": "115d2333-2227-4af7-bf6d-e1c1796045c9",
+    "category": "science",
+    "navigationKeyword1": "geometry",
+    "navigationKeyword2": "proofs",
+    "question": "Why proofs matter?",
+    "correctAnswer": "Guarantee truth from axioms/postulates",
+    "incorrectAnswers": [
+      "Replace intuition always wrongly",
+      "Only history",
+      "Never needed"
+    ],
+    "explanation": "Foundation of geometry.",
+    "keywords": [
+      "axiomatic",
+      "reasoning"
+    ],
+    "source": "https://plato.stanford.edu/entries/geometry-finitism/"
+  },
+  {
+    "seedId": "b4653ae0-786b-4437-a153-1e5b057e2695",
+    "category": "science",
+    "navigationKeyword1": "geometry",
+    "navigationKeyword2": "proofs",
+    "question": "Auxiliary line role?",
+    "correctAnswer": "Add construction to reveal relationships",
+    "incorrectAnswers": [
+      "Always forbidden",
+      "Makes proof invalid",
+      "Only in 3D"
+    ],
+    "explanation": "Common strategy.",
+    "keywords": [
+      "auxiliary-line",
+      "proof"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Auxiliary_line"
+  },
+  {
+    "seedId": "f249faac-5720-4dec-a284-d5e003ee1269",
+    "category": "science",
+    "navigationKeyword1": "geometry",
+    "navigationKeyword2": "proofs",
+    "question": "Proof angles parallel lines?",
+    "correctAnswer": "Use corresponding/alternate interior theorems",
+    "incorrectAnswers": [
+      "Assume conclusion",
+      "Measure only",
+      "No theorems"
+    ],
+    "explanation": "Logical chain.",
+    "keywords": [
+      "parallel-proof",
+      "reasoning"
+    ],
+    "source": "https://www.mathsisfun.com/geometry/parallel-lines.html"
+  },
+  {
+    "seedId": "0dc7fcd3-bc40-4a88-9273-109c3100fbf1",
+    "category": "science",
+    "navigationKeyword1": "geometry",
+    "navigationKeyword2": "proofs",
+    "question": "Coordinate geometry proof?",
+    "correctAnswer": "Place figure to simplify algebra",
+    "incorrectAnswers": [
+      "Always illegal",
+      "Never simpler",
+      "Only synthetic allowed"
+    ],
+    "explanation": "Analytic geometry.",
+    "keywords": [
+      "coordinate-proof",
+      "analytic"
+    ],
+    "source": "https://www.mathsisfun.com/algebra/line-equation-coordinate.html"
+  },
+  {
+    "seedId": "f41b4848-a417-4cd4-acfb-c89831cc7406",
+    "category": "science",
+    "navigationKeyword1": "geometry",
+    "navigationKeyword2": "proofs",
+    "question": "Paragraph proof?",
+    "correctAnswer": "Narrative reasoning sentences",
+    "incorrectAnswers": [
+      "No sentences",
+      "Only symbols",
+      "Two-column only"
+    ],
+    "explanation": "Still must be logical.",
+    "keywords": [
+      "paragraph-proof",
+      "writing"
+    ],
+    "source": "https://www.mathsisfun.com/proof.html"
+  },
+  {
+    "seedId": "078837cb-1303-40fe-b466-e3d711537fb5",
+    "category": "science",
+    "navigationKeyword1": "geometry",
+    "navigationKeyword2": "proofs",
+    "question": "Diagram alone proves?",
+    "correctAnswer": "No; needs logical justification",
+    "incorrectAnswers": [
+      "Yes always",
+      "If drawn to scale",
+      "Only circles"
+    ],
+    "explanation": "Pictures assist, don\u2019t replace proof.",
+    "keywords": [
+      "diagram",
+      "rigor"
+    ],
+    "source": "https://www.mathsisfun.com/proof.html"
+  }
+]

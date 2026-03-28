@@ -1,0 +1,230 @@
+[
+  {
+    "seedId": "293623c7-7fb4-42d6-9231-79242a744c32",
+    "category": "science",
+    "navigationKeyword1": "statistics",
+    "navigationKeyword2": "descriptive",
+    "question": "Mean of data?",
+    "correctAnswer": "Sum divided by count",
+    "incorrectAnswers": [
+      "Middle value always",
+      "Most frequent always",
+      "Range"
+    ],
+    "explanation": "Sensitive to outliers.",
+    "keywords": [
+      "mean",
+      "average"
+    ],
+    "source": "https://openstax.org/books/introductory-statistics/pages/2-3-measures-of-the-center-of-the-data"
+  },
+  {
+    "seedId": "57f44089-81ee-4213-9dab-13815ec7daa3",
+    "category": "science",
+    "navigationKeyword1": "statistics",
+    "navigationKeyword2": "descriptive",
+    "question": "Median?",
+    "correctAnswer": "Middle value when sorted",
+    "incorrectAnswers": [
+      "Always equals mean",
+      "Most frequent",
+      "Smallest value"
+    ],
+    "explanation": "Robust to outliers.",
+    "keywords": [
+      "median",
+      "center"
+    ],
+    "source": "https://openstax.org/books/introductory-statistics/pages/2-3-measures-of-the-center-of-the-data"
+  },
+  {
+    "seedId": "0d47ff1f-8fd1-452e-9581-c014a0ff1570",
+    "category": "science",
+    "navigationKeyword1": "statistics",
+    "navigationKeyword2": "descriptive",
+    "question": "Mode?",
+    "correctAnswer": "Most frequent value",
+    "incorrectAnswers": [
+      "Always unique",
+      "Always numeric average",
+      "Largest value"
+    ],
+    "explanation": "May be multimodal.",
+    "keywords": [
+      "mode",
+      "center"
+    ],
+    "source": "https://openstax.org/books/introductory-statistics/pages/2-3-measures-of-the-center-of-the-data"
+  },
+  {
+    "seedId": "1140bcf2-a2a0-4724-863b-16549c0ddfce",
+    "category": "science",
+    "navigationKeyword1": "statistics",
+    "navigationKeyword2": "descriptive",
+    "question": "Range?",
+    "correctAnswer": "Max \u2212 min",
+    "incorrectAnswers": [
+      "IQR",
+      "Std dev",
+      "Mean/median"
+    ],
+    "explanation": "Very sensitive to extremes.",
+    "keywords": [
+      "range",
+      "spread"
+    ],
+    "source": "https://openstax.org/books/introductory-statistics/pages/2-4-measures-of-the-location-of-the-data"
+  },
+  {
+    "seedId": "6648a041-5209-4b6f-a9be-e2af34eb1415",
+    "category": "science",
+    "navigationKeyword1": "statistics",
+    "navigationKeyword2": "descriptive",
+    "question": "Variance (sample) uses divisor (common)?",
+    "correctAnswer": "n\u22121 for unbiased estimate (typical sample formula)",
+    "incorrectAnswers": [
+      "Always n",
+      "Always n+1",
+      "Always 1"
+    ],
+    "explanation": "Bessel\u2019s correction.",
+    "keywords": [
+      "variance",
+      "spread"
+    ],
+    "source": "https://openstax.org/books/introductory-statistics/pages/2-7-measures-of-the-spread-of-the-data"
+  },
+  {
+    "seedId": "7e4751ae-1a9a-4ce9-92b9-c368ed3c3c28",
+    "category": "science",
+    "navigationKeyword1": "statistics",
+    "navigationKeyword2": "descriptive",
+    "question": "Standard deviation interpretation?",
+    "correctAnswer": "Typical distance from mean (same units)",
+    "incorrectAnswers": [
+      "Squared units always",
+      "Always <0",
+      "Same as range always"
+    ],
+    "explanation": "Square root of variance.",
+    "keywords": [
+      "standard-deviation",
+      "spread"
+    ],
+    "source": "https://openstax.org/books/introductory-statistics/pages/2-7-measures-of-the-spread-of-the-data"
+  },
+  {
+    "seedId": "735109fd-a5a1-461b-9c5e-bf318256d67c",
+    "category": "science",
+    "navigationKeyword1": "statistics",
+    "navigationKeyword2": "descriptive",
+    "question": "IQR?",
+    "correctAnswer": "Q3 \u2212 Q1",
+    "incorrectAnswers": [
+      "Max\u2212min",
+      "Mean\u2212median",
+      "Q1+Q3"
+    ],
+    "explanation": "Robust spread measure.",
+    "keywords": [
+      "iqr",
+      "quartiles"
+    ],
+    "source": "https://openstax.org/books/introductory-statistics/pages/2-4-measures-of-the-location-of-the-data"
+  },
+  {
+    "seedId": "3dcd8731-3360-4d6c-8901-00fbc94f2996",
+    "category": "science",
+    "navigationKeyword1": "statistics",
+    "navigationKeyword2": "descriptive",
+    "question": "Five-number summary?",
+    "correctAnswer": "Min, Q1, median, Q3, max",
+    "incorrectAnswers": [
+      "Mean, mode, sd",
+      "Only mean",
+      "Only histogram"
+    ],
+    "explanation": "Boxplot basis.",
+    "keywords": [
+      "five-number-summary",
+      "boxplot"
+    ],
+    "source": "https://openstax.org/books/introductory-statistics/pages/2-4-measures-of-the-location-of-the-data"
+  },
+  {
+    "seedId": "9bfa8c36-a277-49ad-a5f0-df978bc7fe7c",
+    "category": "science",
+    "navigationKeyword1": "statistics",
+    "navigationKeyword2": "descriptive",
+    "question": "Skew right (positive) tail?",
+    "correctAnswer": "Longer tail to the right; mean often > median",
+    "incorrectAnswers": [
+      "Tail left",
+      "Symmetric always",
+      "Mean < median typically"
+    ],
+    "explanation": "Outliers on high end.",
+    "keywords": [
+      "skewness",
+      "shape"
+    ],
+    "source": "https://openstax.org/books/introductory-statistics/pages/2-5-box-plots"
+  },
+  {
+    "seedId": "7b403731-706f-4fb5-810b-1959c1d61ee2",
+    "category": "science",
+    "navigationKeyword1": "statistics",
+    "navigationKeyword2": "descriptive",
+    "question": "z-score?",
+    "correctAnswer": "(x \u2212 \u03bc)/\u03c3 (population) or sample analog",
+    "incorrectAnswers": [
+      "x/\u03c3",
+      "\u03bc \u2212 x",
+      "x + \u03bc"
+    ],
+    "explanation": "Standardizes location.",
+    "keywords": [
+      "z-score",
+      "standardize"
+    ],
+    "source": "https://openstax.org/books/introductory-statistics/pages/6-1-the-standard-normal-distribution"
+  },
+  {
+    "seedId": "57350d15-b6da-4c1b-9c41-8a4464c6a433",
+    "category": "science",
+    "navigationKeyword1": "statistics",
+    "navigationKeyword2": "descriptive",
+    "question": "Empirical rule (normal) ~68%?",
+    "correctAnswer": "Within 1\u03c3 of mean",
+    "incorrectAnswers": [
+      "Within 2\u03c3 only",
+      "Within 0.5\u03c3",
+      "Outside 1\u03c3"
+    ],
+    "explanation": "95% ~2\u03c3, 99.7% ~3\u03c3.",
+    "keywords": [
+      "empirical-rule",
+      "normal"
+    ],
+    "source": "https://openstax.org/books/introductory-statistics/pages/6-1-the-standard-normal-distribution"
+  },
+  {
+    "seedId": "9b4e9088-6a01-4495-ab5b-1cb7ef96fd73",
+    "category": "science",
+    "navigationKeyword1": "statistics",
+    "navigationKeyword2": "descriptive",
+    "question": "Coefficient of variation?",
+    "correctAnswer": "\u03c3/\u03bc (relative spread)",
+    "incorrectAnswers": [
+      "\u03bc/\u03c3",
+      "IQR/median always same",
+      "Range only"
+    ],
+    "explanation": "Compare variability across scales.",
+    "keywords": [
+      "cv",
+      "relative-spread"
+    ],
+    "source": "https://openstax.org/books/introductory-statistics/pages/2-7-measures-of-the-spread-of-the-data"
+  }
+]

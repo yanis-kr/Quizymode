@@ -1,0 +1,230 @@
+[
+  {
+    "seedId": "e11db087-fac9-478f-84e7-194453e9bf55",
+    "category": "science",
+    "navigationKeyword1": "statistics",
+    "navigationKeyword2": "sampling",
+    "question": "Simple random sample?",
+    "correctAnswer": "Each size-n subset equally likely",
+    "incorrectAnswers": [
+      "Convenience sample",
+      "Self-selected",
+      "Quota only"
+    ],
+    "explanation": "Gold standard ideal.",
+    "keywords": [
+      "srs",
+      "design"
+    ],
+    "source": "https://openstax.org/books/introductory-statistics/pages/1-2-data-sampling-and-variation-in-data-and-sampling"
+  },
+  {
+    "seedId": "e1e91f89-25cc-48ba-b13b-b649347e5afd",
+    "category": "science",
+    "navigationKeyword1": "statistics",
+    "navigationKeyword2": "sampling",
+    "question": "Sampling frame?",
+    "correctAnswer": "List/source from which sample drawn",
+    "incorrectAnswers": [
+      "Population always infinite list",
+      "Only parameter",
+      "Only statistic"
+    ],
+    "explanation": "Mismatches cause bias.",
+    "keywords": [
+      "sampling-frame",
+      "bias"
+    ],
+    "source": "https://openstax.org/books/introductory-statistics/pages/1-2-data-sampling-and-variation-in-data-and-sampling"
+  },
+  {
+    "seedId": "a10f9181-4a10-4f6b-9d91-5d7b7e28ebf5",
+    "category": "science",
+    "navigationKeyword1": "statistics",
+    "navigationKeyword2": "sampling",
+    "question": "Bias vs variability?",
+    "correctAnswer": "Bias systematic error; variability random spread",
+    "incorrectAnswers": [
+      "Same",
+      "Variability systematic",
+      "Bias random only"
+    ],
+    "explanation": "Ideal: low bias low variance.",
+    "keywords": [
+      "bias-variance",
+      "error"
+    ],
+    "source": "https://openstax.org/books/introductory-statistics/pages/1-2-data-sampling-and-variation-in-data-and-sampling"
+  },
+  {
+    "seedId": "acc24175-bed7-474b-81b8-e2fc2b915d6a",
+    "category": "science",
+    "navigationKeyword1": "statistics",
+    "navigationKeyword2": "sampling",
+    "question": "Stratified sampling?",
+    "correctAnswer": "Divide strata; sample within each",
+    "incorrectAnswers": [
+      "Only convenience",
+      "Ignore subgroups",
+      "Only cluster outside strata"
+    ],
+    "explanation": "Improves precision for subgroup estimates.",
+    "keywords": [
+      "stratified",
+      "design"
+    ],
+    "source": "https://openstax.org/books/introductory-statistics/pages/1-2-data-sampling-and-variation-in-data-and-sampling"
+  },
+  {
+    "seedId": "37a7bb0a-1238-4fe0-b202-e16a2117efee",
+    "category": "science",
+    "navigationKeyword1": "statistics",
+    "navigationKeyword2": "sampling",
+    "question": "Cluster sampling?",
+    "correctAnswer": "Sample groups (clusters) then all/some within",
+    "incorrectAnswers": [
+      "Same as stratified always",
+      "Only SRS",
+      "Always biased"
+    ],
+    "explanation": "Cost effective geographically.",
+    "keywords": [
+      "cluster",
+      "design"
+    ],
+    "source": "https://openstax.org/books/introductory-statistics/pages/1-2-data-sampling-and-variation-in-data-and-sampling"
+  },
+  {
+    "seedId": "b7941c32-97b1-41c4-9d69-58f1da58b5cb",
+    "category": "science",
+    "navigationKeyword1": "statistics",
+    "navigationKeyword2": "sampling",
+    "question": "Systematic sampling?",
+    "correctAnswer": "Every kth from ordered list",
+    "incorrectAnswers": [
+      "Random every time",
+      "Only stratified",
+      "Never used"
+    ],
+    "explanation": "Risk if periodicity matches.",
+    "keywords": [
+      "systematic",
+      "design"
+    ],
+    "source": "https://openstax.org/books/introductory-statistics/pages/1-2-data-sampling-and-variation-in-data-and-sampling"
+  },
+  {
+    "seedId": "84bd7d8d-a37b-431e-914a-ac23d783a541",
+    "category": "science",
+    "navigationKeyword1": "statistics",
+    "navigationKeyword2": "sampling",
+    "question": "Sampling distribution?",
+    "correctAnswer": "Distribution of a statistic across samples",
+    "incorrectAnswers": [
+      "Raw data histogram only",
+      "Prior in Bayes only",
+      "Population only"
+    ],
+    "explanation": "Standard error concept.",
+    "keywords": [
+      "sampling-distribution",
+      "statistics"
+    ],
+    "source": "https://openstax.org/books/introductory-statistics/pages/7-1-the-central-limit-theorem-for-sample-means-averages"
+  },
+  {
+    "seedId": "22fbddad-ee5c-4736-a32d-ebb4e90f243d",
+    "category": "science",
+    "navigationKeyword1": "statistics",
+    "navigationKeyword2": "sampling",
+    "question": "Standard error of mean?",
+    "correctAnswer": "\u03c3/\u221an (\u03c3 estimated by s)",
+    "incorrectAnswers": [
+      "\u03c3\u00d7n",
+      "\u03c3^2/n",
+      "IQR"
+    ],
+    "explanation": "Decreases with sqrt(n).",
+    "keywords": [
+      "standard-error",
+      "clt"
+    ],
+    "source": "https://openstax.org/books/introductory-statistics/pages/7-1-the-central-limit-theorem-for-sample-means-averages"
+  },
+  {
+    "seedId": "c6f993ca-19c7-4d78-a95d-2236836002ee",
+    "category": "science",
+    "navigationKeyword1": "statistics",
+    "navigationKeyword2": "sampling",
+    "question": "Nonresponse bias?",
+    "correctAnswer": "People who don\u2019t respond differ from those who do",
+    "incorrectAnswers": [
+      "Always fixes randomness",
+      "Never happens",
+      "Only experiments"
+    ],
+    "explanation": "Weights/imputation may help.",
+    "keywords": [
+      "nonresponse",
+      "bias"
+    ],
+    "source": "https://openstax.org/books/introductory-statistics/pages/1-2-data-sampling-and-variation-in-data-and-sampling"
+  },
+  {
+    "seedId": "64b35189-ebce-4d99-9ff9-6b422007c7f8",
+    "category": "science",
+    "navigationKeyword1": "statistics",
+    "navigationKeyword2": "sampling",
+    "question": "Undercoverage?",
+    "correctAnswer": "Part of population less likely included",
+    "incorrectAnswers": [
+      "Always eliminated by big n",
+      "Only lab error",
+      "Same as margin of error"
+    ],
+    "explanation": "Frame issues.",
+    "keywords": [
+      "undercoverage",
+      "bias"
+    ],
+    "source": "https://openstax.org/books/introductory-statistics/pages/1-2-data-sampling-and-variation-in-data-and-sampling"
+  },
+  {
+    "seedId": "cb5eaa94-bf32-4ae7-a73f-98fd82fdeab9",
+    "category": "science",
+    "navigationKeyword1": "statistics",
+    "navigationKeyword2": "sampling",
+    "question": "Margin of error (poll) relates to?",
+    "correctAnswer": "Random sampling uncertainty (not all error)",
+    "incorrectAnswers": [
+      "Total bias",
+      "Always \u00b10",
+      "Population size always dominates"
+    ],
+    "explanation": "Interpret carefully.",
+    "keywords": [
+      "margin-of-error",
+      "polling"
+    ],
+    "source": "https://www.pewresearch.org/our-methods/u-s-surveys/sampling/"
+  },
+  {
+    "seedId": "30decbba-2ecf-47bc-be59-3d961e987d4d",
+    "category": "science",
+    "navigationKeyword1": "statistics",
+    "navigationKeyword2": "sampling",
+    "question": "Bootstrap idea?",
+    "correctAnswer": "Resample data with replacement to estimate sampling variability",
+    "incorrectAnswers": [
+      "Always exact theory",
+      "Only Bayesian",
+      "Never used"
+    ],
+    "explanation": "Computer-intensive inference.",
+    "keywords": [
+      "bootstrap",
+      "resampling"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Bootstrapping_(statistics)"
+  }
+]

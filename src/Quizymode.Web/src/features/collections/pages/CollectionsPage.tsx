@@ -136,13 +136,13 @@ function CollectionCard({
   const titleArea = (
     <>
       <h3 className="text-lg font-medium text-gray-900">{name}</h3>
-      <p className="mt-2 text-sm text-gray-500">
+      <p className="mt-2 text-sm text-gray-700">
         {itemCount} {itemCount === 1 ? "item" : "items"}
       </p>
       {createdBy && (
-        <p className="mt-1 text-xs text-gray-400">By {createdBy}</p>
+        <p className="mt-1 text-xs text-gray-600">By {createdBy}</p>
       )}
-      <p className="mt-1 text-sm text-gray-500">
+      <p className="mt-1 text-sm text-gray-700">
         Created {new Date(createdAt).toLocaleDateString()}
       </p>
     </>
@@ -180,7 +180,7 @@ function CollectionCard({
                 onEdit(id, { name, description: description ?? null, isPublic: isPublic ?? false });
               }}
               disabled={isEditPending}
-              className="p-2 text-gray-600 hover:text-indigo-600 hover:bg-indigo-50 rounded-md disabled:opacity-50"
+              className="p-2 text-gray-700 hover:text-indigo-700 hover:bg-indigo-50 rounded-md disabled:opacity-50"
               title="Edit collection"
             >
               <PencilSquareIcon className="h-5 w-5" />
@@ -197,7 +197,7 @@ function CollectionCard({
               className={`p-2 rounded-md disabled:opacity-50 ${
                 isActive
                   ? "text-indigo-600 bg-indigo-50"
-                  : "text-gray-400 hover:text-indigo-600 hover:bg-indigo-50"
+                  : "text-gray-600 hover:text-indigo-700 hover:bg-indigo-50"
               }`}
               title={isActive ? "Active collection" : "Set as active collection"}
             >
@@ -215,7 +215,7 @@ function CollectionCard({
                 e.stopPropagation();
                 onCopyLink(id, name, isPublic ?? false);
               }}
-              className="p-2 text-gray-400 hover:text-blue-600 hover:bg-blue-50 rounded-md"
+              className="p-2 text-gray-600 hover:text-blue-700 hover:bg-blue-50 rounded-md"
               title="Copy shared link"
             >
               <LinkIcon className="h-5 w-5" />
@@ -257,7 +257,7 @@ function CollectionCard({
                 onBookmark(id);
               }}
               disabled={isBookmarkPending}
-              className="p-2 text-gray-400 hover:text-amber-600 hover:bg-amber-50 rounded-md disabled:opacity-50"
+              className="p-2 text-gray-600 hover:text-amber-700 hover:bg-amber-50 rounded-md disabled:opacity-50"
               title="Bookmark collection"
             >
               <BookmarkIcon className="h-5 w-5" />
@@ -279,7 +279,7 @@ function CollectionCard({
               );
             })}
           </div>
-          <span className="text-xs text-gray-500">
+          <span className="text-xs text-gray-600">
             {ratingData?.averageStars != null
               ? `${ratingData.averageStars} (${ratingData.count})`
               : "No ratings yet"}
@@ -312,7 +312,7 @@ function CollectionCard({
               </button>
             ))}
           </div>
-          <span className="text-xs text-gray-500">
+          <span className="text-xs text-gray-600">
             {ratingData?.averageStars != null
               ? `${ratingData.averageStars} (${ratingData.count})`
               : "No ratings yet"}
@@ -632,7 +632,7 @@ const CollectionsPage = () => {
     <div className="px-4 py-6 sm:px-0">
       <div className="mb-6">
         <h1 className="text-3xl font-bold text-gray-900 mb-2">Collections</h1>
-        <p className="text-gray-600 text-sm">
+        <p className="max-w-3xl text-sm leading-6 text-gray-700">
           {isAuthenticated
             ? "Your collections, bookmarks, and discover public collections. You can also open a collection by ID."
             : "Browse public collections by topic or search. Sign in to manage your own collections and bookmarks. You can open a collection by ID."}
@@ -640,7 +640,7 @@ const CollectionsPage = () => {
       </div>
 
       <div className="flex flex-wrap items-center justify-between gap-4 mb-6">
-        <div className="flex rounded-lg border border-gray-200 overflow-hidden bg-white">
+        <div className="flex overflow-hidden rounded-lg border border-slate-300 bg-white shadow-sm">
           {(["mine", "bookmarked", "discover"] as const).map((tab) => {
             const locked = !isAuthenticated && (tab === "mine" || tab === "bookmarked");
             return (
@@ -652,10 +652,10 @@ const CollectionsPage = () => {
                 onClick={() => setTab(tab)}
                 className={`px-4 py-2 text-sm font-medium capitalize ${
                   activeTab === tab
-                    ? "bg-indigo-600 text-white"
+                    ? "bg-indigo-700 text-white"
                     : locked
-                      ? "bg-gray-50 text-gray-400 cursor-not-allowed"
-                      : "bg-white text-gray-700 hover:bg-gray-50"
+                      ? "bg-slate-100 text-slate-500 cursor-not-allowed"
+                      : "bg-white text-gray-800 hover:bg-slate-100"
                 }`}
               >
                 {tab === "mine" ? "Mine" : tab === "bookmarked" ? "Bookmarked" : "Discover"}
@@ -685,7 +685,7 @@ const CollectionsPage = () => {
           <div className="flex flex-wrap items-center gap-4">
             <div className="flex flex-wrap items-center gap-2">
               <div className="relative flex-1 min-w-[200px] max-w-md">
-                <MagnifyingGlassIcon className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-gray-400" />
+                <MagnifyingGlassIcon className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-gray-500" />
                 <input
                   type="search"
                   placeholder="Search public collections..."
@@ -724,9 +724,9 @@ const CollectionsPage = () => {
               </button>
             </div>
           </div>
-          <div className="flex flex-wrap items-end gap-3 p-3 bg-white border border-gray-200 rounded-lg">
+          <div className="flex flex-wrap items-end gap-3 rounded-lg border border-slate-300 bg-slate-50 p-3">
             <div>
-              <label htmlFor="discover-category" className="block text-xs font-medium text-gray-600 mb-1">
+              <label htmlFor="discover-category" className="mb-1 block text-xs font-medium text-gray-700">
                 Category
               </label>
               <select
@@ -749,7 +749,7 @@ const CollectionsPage = () => {
               </select>
             </div>
             <div>
-              <label htmlFor="discover-nav1" className="block text-xs font-medium text-gray-600 mb-1">
+              <label htmlFor="discover-nav1" className="mb-1 block text-xs font-medium text-gray-700">
                 Topic (L1)
               </label>
               <select
@@ -772,7 +772,7 @@ const CollectionsPage = () => {
               </select>
             </div>
             <div>
-              <label htmlFor="discover-nav2" className="block text-xs font-medium text-gray-600 mb-1">
+              <label htmlFor="discover-nav2" className="mb-1 block text-xs font-medium text-gray-700">
                 Subtopic (L2)
               </label>
               <select
@@ -794,7 +794,7 @@ const CollectionsPage = () => {
               </select>
             </div>
             <div className="flex-1 min-w-[180px] max-w-xs">
-              <label htmlFor="discover-tags" className="block text-xs font-medium text-gray-600 mb-1">
+              <label htmlFor="discover-tags" className="mb-1 block text-xs font-medium text-gray-700">
                 Item tags
               </label>
               <input
@@ -1016,7 +1016,7 @@ const CollectionsPage = () => {
           </div>
         ) : (
           <div className="text-center py-12">
-            <p className="text-gray-500">No collections yet. Create your first collection!</p>
+            <p className="text-gray-600">No collections yet. Create your first collection!</p>
           </div>
         )
       )}
@@ -1042,7 +1042,7 @@ const CollectionsPage = () => {
           </div>
         ) : (
           <div className="text-center py-12">
-            <p className="text-gray-500">No bookmarked collections. Use Discover to find and bookmark public collections.</p>
+            <p className="text-gray-600">No bookmarked collections. Use Discover to find and bookmark public collections.</p>
           </div>
         )
       )}
@@ -1053,7 +1053,7 @@ const CollectionsPage = () => {
             <LoadingSpinner />
           ) : discoverItems.length > 0 ? (
             <>
-              <p className="text-sm text-gray-500 mb-4">
+              <p className="mb-4 text-sm text-gray-700">
                 {discoverTotal} public collection{discoverTotal !== 1 ? "s" : ""} found. Make your collection public in its settings to appear here.
               </p>
               <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
@@ -1089,18 +1089,18 @@ const CollectionsPage = () => {
                     type="button"
                     disabled={discoverPage <= 1}
                     onClick={() => setDiscoverPage((p) => Math.max(1, p - 1))}
-                    className="px-3 py-2 border border-gray-300 rounded-md text-sm disabled:opacity-50"
+                    className="px-3 py-2 border border-gray-300 rounded-md text-sm text-gray-800 disabled:opacity-50"
                   >
                     Previous
                   </button>
-                  <span className="py-2 text-sm text-gray-600">
+                  <span className="py-2 text-sm text-gray-700">
                     Page {discoverPage} of {Math.ceil(discoverTotal / 12)}
                   </span>
                   <button
                     type="button"
                     disabled={discoverPage >= Math.ceil(discoverTotal / 12)}
                     onClick={() => setDiscoverPage((p) => p + 1)}
-                    className="px-3 py-2 border border-gray-300 rounded-md text-sm disabled:opacity-50"
+                    className="px-3 py-2 border border-gray-300 rounded-md text-sm text-gray-800 disabled:opacity-50"
                   >
                     Next
                   </button>
@@ -1109,7 +1109,7 @@ const CollectionsPage = () => {
             </>
           ) : (
             <div className="text-center py-12">
-              <p className="text-gray-500">
+              <p className="text-gray-600">
                 {discoverHasActiveFilters
                   ? "No public collections match your search or filters."
                   : "No public collections yet. Create a collection and make it public to share it."}

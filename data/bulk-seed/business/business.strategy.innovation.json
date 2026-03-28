@@ -1,0 +1,116 @@
+[
+  {
+    "category": "business",
+    "navigationKeyword1": "strategy",
+    "navigationKeyword2": "innovation",
+    "question": "What is a stage-gate process used for?",
+    "correctAnswer": "Structured phases with decision checkpoints to advance, pivot, or stop innovation projects.",
+    "incorrectAnswers": [
+      "Replace all meetings with chat emojis.",
+      "Guarantee every idea launches.",
+      "Eliminate documentation."
+    ],
+    "explanation": "Gates reduce wasted spend on weak concepts.",
+    "keywords": [
+      "stage-gate",
+      "innovation"
+    ],
+    "source": "https://www.investopedia.com/terms/s/stage-gate-process.asp",
+    "seedId": "64550794-1c0e-4f9a-b6a5-0e1bb69acfd9"
+  },
+  {
+    "category": "business",
+    "navigationKeyword1": "strategy",
+    "navigationKeyword2": "innovation",
+    "question": "What is open innovation?",
+    "correctAnswer": "Using external ideas and partners\u2014not only internal R&D\u2014to create value.",
+    "incorrectAnswers": [
+      "Never talk to customers.",
+      "Hide all patents forever.",
+      "Ban universities."
+    ],
+    "explanation": "Open innovation broadens solution sources.",
+    "keywords": [
+      "open-innovation",
+      "r-and-d"
+    ],
+    "source": "https://www.investopedia.com/terms/o/open-innovation.asp",
+    "seedId": "7fb8d03d-00ee-4166-87ac-f47687ebd9ea"
+  },
+  {
+    "category": "business",
+    "navigationKeyword1": "strategy",
+    "navigationKeyword2": "innovation",
+    "question": "What tradeoff does patenting involve?",
+    "correctAnswer": "Public disclosure of how an invention works in exchange for limited-time exclusive rights.",
+    "incorrectAnswers": [
+      "Unlimited secrecy with no filing.",
+      "Automatic global protection with no costs.",
+      "No legal framework."
+    ],
+    "explanation": "Patent strategy depends on competitive landscape.",
+    "keywords": [
+      "patents",
+      "ip"
+    ],
+    "source": "https://www.uspto.gov/patents/basics",
+    "seedId": "a3d035b7-38e7-46a2-bcea-8dc9c25a73b9"
+  },
+  {
+    "category": "business",
+    "navigationKeyword1": "strategy",
+    "navigationKeyword2": "innovation",
+    "question": "What are Technology Readiness Levels (TRLs) used to communicate?",
+    "correctAnswer": "How mature a technology is from concept to proven deployment.",
+    "incorrectAnswers": [
+      "Employee promotion levels.",
+      "Tax brackets.",
+      "Office desk sizes."
+    ],
+    "explanation": "TRLs help align R&D and product investment.",
+    "keywords": [
+      "trl",
+      "innovation"
+    ],
+    "source": "https://www.nasa.gov/directorates/heo/scan/engineering/technology/technology_readiness_level",
+    "seedId": "1bd5502f-733c-421c-962c-e97f3741b446"
+  },
+  {
+    "category": "business",
+    "navigationKeyword1": "strategy",
+    "navigationKeyword2": "innovation",
+    "question": "Why separate R&D discovery from commercialization?",
+    "correctAnswer": "Different skills, metrics, and risks\u2014premature scaling wastes money.",
+    "incorrectAnswers": [
+      "They must always be the same team with identical KPIs.",
+      "Commercialization never needs marketing.",
+      "R&D should never talk to customers."
+    ],
+    "explanation": "Ambidextrous organizations manage explore vs exploit.",
+    "keywords": [
+      "commercialization",
+      "innovation"
+    ],
+    "source": "https://hbr.org/2004/04/the-ambidextrous-organization",
+    "seedId": "008d4c99-0564-4e93-99d3-80b98a64d0f3"
+  },
+  {
+    "category": "business",
+    "navigationKeyword1": "strategy",
+    "navigationKeyword2": "innovation",
+    "question": "What does \u2018disruptive innovation\u2019 classically emphasize (per Christensen\u2019s framing)?",
+    "correctAnswer": "Entrants often start with simpler, cheaper offerings that improve over time and move upmarket.",
+    "incorrectAnswers": [
+      "Any startup with a trendy logo.",
+      "Any price increase.",
+      "Any merger announcement."
+    ],
+    "explanation": "\u2018Disruptive\u2019 is a specific pattern, not a buzzword for \u2018big change\u2019.",
+    "keywords": [
+      "disruptive-innovation",
+      "strategy"
+    ],
+    "source": "https://www.christenseninstitute.org/key-concepts/disruptive-innovation/",
+    "seedId": "b10d2cdd-51dc-4cc9-84b4-52018264ae04"
+  }
+]

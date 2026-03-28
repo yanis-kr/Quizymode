@@ -1,0 +1,230 @@
+[
+  {
+    "seedId": "d3a30c45-e101-49a6-83b7-bc6a9caa8d68",
+    "category": "science",
+    "navigationKeyword1": "discrete-math",
+    "navigationKeyword2": "logic",
+    "question": "What is a proposition?",
+    "correctAnswer": "A statement that is either true or false",
+    "incorrectAnswers": [
+      "A question",
+      "A variable only",
+      "A graph edge"
+    ],
+    "explanation": "Propositional logic builds from true/false statements.",
+    "keywords": [
+      "proposition",
+      "logic"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Proposition"
+  },
+  {
+    "seedId": "2503eb8e-72ce-4ed5-a560-ebe6af7c98b2",
+    "category": "science",
+    "navigationKeyword1": "discrete-math",
+    "navigationKeyword2": "logic",
+    "question": "What is negation \u00acp?",
+    "correctAnswer": "Not p",
+    "incorrectAnswers": [
+      "p and q",
+      "p or q",
+      "If p then q"
+    ],
+    "explanation": "Flips truth value.",
+    "keywords": [
+      "negation",
+      "logic"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Negation"
+  },
+  {
+    "seedId": "ee00c322-723b-4838-8a78-b6e7f92273b9",
+    "category": "science",
+    "navigationKeyword1": "discrete-math",
+    "navigationKeyword2": "logic",
+    "question": "What is conjunction p \u2227 q?",
+    "correctAnswer": "p AND q",
+    "incorrectAnswers": [
+      "p OR q",
+      "NOT p",
+      "p XOR q"
+    ],
+    "explanation": "True only when both are true.",
+    "keywords": [
+      "conjunction",
+      "and"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Logical_conjunction"
+  },
+  {
+    "seedId": "9e0fd9b4-02a5-4abd-9d64-892acb1aee82",
+    "category": "science",
+    "navigationKeyword1": "discrete-math",
+    "navigationKeyword2": "logic",
+    "question": "What is disjunction p \u2228 q (inclusive)?",
+    "correctAnswer": "p OR q (or both)",
+    "incorrectAnswers": [
+      "p AND q",
+      "NOT p",
+      "Always false"
+    ],
+    "explanation": "True if at least one operand is true.",
+    "keywords": [
+      "disjunction",
+      "or"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Logical_disjunction"
+  },
+  {
+    "seedId": "3ffd97c3-1e48-49fa-9a69-d978c3388550",
+    "category": "science",
+    "navigationKeyword1": "discrete-math",
+    "navigationKeyword2": "logic",
+    "question": "What is implication p \u2192 q?",
+    "correctAnswer": "If p then q",
+    "incorrectAnswers": [
+      "p if and only if q",
+      "p AND q",
+      "NOT q"
+    ],
+    "explanation": "False only when p true and q false.",
+    "keywords": [
+      "implication",
+      "conditional"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Material_conditional"
+  },
+  {
+    "seedId": "f8b23325-63af-4a26-a453-3ca0b7509817",
+    "category": "science",
+    "navigationKeyword1": "discrete-math",
+    "navigationKeyword2": "logic",
+    "question": "What is biconditional p \u2194 q?",
+    "correctAnswer": "p if and only if q",
+    "incorrectAnswers": [
+      "If p then q only",
+      "p OR q",
+      "NOT p"
+    ],
+    "explanation": "True when p and q share truth value.",
+    "keywords": [
+      "biconditional",
+      "iff"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Logical_biconditional"
+  },
+  {
+    "seedId": "0daf48f8-7356-4cd1-bbd9-45ed527c7ee6",
+    "category": "science",
+    "navigationKeyword1": "discrete-math",
+    "navigationKeyword2": "logic",
+    "question": "What is tautology?",
+    "correctAnswer": "Always true",
+    "incorrectAnswers": [
+      "Always false",
+      "Sometimes true",
+      "Not a statement"
+    ],
+    "explanation": "Example: p \u2228 \u00acp.",
+    "keywords": [
+      "tautology",
+      "truth"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Tautology_(logic)"
+  },
+  {
+    "seedId": "eae9f7a6-695d-4ecd-9916-4cd2ee56aeab",
+    "category": "science",
+    "navigationKeyword1": "discrete-math",
+    "navigationKeyword2": "logic",
+    "question": "What is contradiction?",
+    "correctAnswer": "Always false",
+    "incorrectAnswers": [
+      "Always true",
+      "Contingent",
+      "A graph"
+    ],
+    "explanation": "Example: p \u2227 \u00acp.",
+    "keywords": [
+      "contradiction",
+      "logic"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Contradiction"
+  },
+  {
+    "seedId": "09264b9e-5c05-48fc-9fcd-666a64e0e32c",
+    "category": "science",
+    "navigationKeyword1": "discrete-math",
+    "navigationKeyword2": "logic",
+    "question": "What are De Morgan\u2019s laws (roughly)?",
+    "correctAnswer": "\u00ac(p\u2227q) \u2261 \u00acp\u2228\u00acq and \u00ac(p\u2228q) \u2261 \u00acp\u2227\u00acq",
+    "incorrectAnswers": [
+      "\u00ac(p\u2227q) \u2261 \u00acp\u2227\u00acq",
+      "\u00ac(p\u2228q) \u2261 \u00acp\u2228\u00acq",
+      "\u00ac(p\u2192q) \u2261 p\u2192\u00acq"
+    ],
+    "explanation": "Negation distributes with swapping AND/OR.",
+    "keywords": [
+      "de-morgan",
+      "logic"
+    ],
+    "source": "https://en.wikipedia.org/wiki/De_Morgan%27s_laws"
+  },
+  {
+    "seedId": "089952ea-56a8-4cfa-b87b-7711b077b192",
+    "category": "science",
+    "navigationKeyword1": "discrete-math",
+    "navigationKeyword2": "logic",
+    "question": "What is predicate logic extension?",
+    "correctAnswer": "Quantifiers \u2200 and \u2203 over domains",
+    "incorrectAnswers": [
+      "Only truth tables for two atoms",
+      "Only graphs",
+      "Only arithmetic"
+    ],
+    "explanation": "Express statements like \u2018for all\u2019 and \u2018there exists\u2019.",
+    "keywords": [
+      "quantifiers",
+      "predicate"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Predicate_logic"
+  },
+  {
+    "seedId": "da3535b3-b5c7-4789-9e45-9bf790ce5a9e",
+    "category": "science",
+    "navigationKeyword1": "discrete-math",
+    "navigationKeyword2": "logic",
+    "question": "What is valid argument (logic)?",
+    "correctAnswer": "Truth of premises guarantees truth of conclusion",
+    "incorrectAnswers": [
+      "Popular opinion",
+      "Long argument",
+      "Random guess"
+    ],
+    "explanation": "Validity is structural, not about real-world truth of premises.",
+    "keywords": [
+      "validity",
+      "argument"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Validity_(logic)"
+  },
+  {
+    "seedId": "8951b95a-78d1-4459-9484-e5fe0f96ce05",
+    "category": "science",
+    "navigationKeyword1": "discrete-math",
+    "navigationKeyword2": "logic",
+    "question": "What is proof by contradiction?",
+    "correctAnswer": "Assume opposite and derive contradiction",
+    "incorrectAnswers": [
+      "Assume conclusion true",
+      "Test one example",
+      "Draw a Venn diagram only"
+    ],
+    "explanation": "Shows the original statement must hold.",
+    "keywords": [
+      "proof",
+      "contradiction"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Proof_by_contradiction"
+  }
+]

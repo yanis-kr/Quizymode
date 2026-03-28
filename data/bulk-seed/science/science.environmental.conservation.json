@@ -1,0 +1,230 @@
+[
+  {
+    "seedId": "a285d3eb-4c97-41e0-bd47-1ef7d5f5c006",
+    "category": "science",
+    "navigationKeyword1": "environmental",
+    "navigationKeyword2": "conservation",
+    "question": "What is biodiversity hotspot?",
+    "correctAnswer": "Region with high endemism and habitat loss",
+    "incorrectAnswers": [
+      "Any forest",
+      "Any city park",
+      "Any ocean"
+    ],
+    "explanation": "Prioritizes conservation investment.",
+    "keywords": [
+      "hotspot",
+      "conservation"
+    ],
+    "source": "https://www.cepf.net/our-work/biodiversity-hotspots/hotspots-defined"
+  },
+  {
+    "seedId": "41db3fe6-d6cf-45da-988e-c4a54c9a5f2c",
+    "category": "science",
+    "navigationKeyword1": "environmental",
+    "navigationKeyword2": "conservation",
+    "question": "What is protected area?",
+    "correctAnswer": "Legally managed region for nature conservation",
+    "incorrectAnswers": [
+      "Industrial zone",
+      "Shopping mall",
+      "Highway median only"
+    ],
+    "explanation": "Includes national parks and reserves.",
+    "keywords": [
+      "protected-areas",
+      "parks"
+    ],
+    "source": "https://www.iucn.org/theme/protected-areas"
+  },
+  {
+    "seedId": "3f8107ca-9529-4ce6-aab0-67e59c908d2e",
+    "category": "science",
+    "navigationKeyword1": "environmental",
+    "navigationKeyword2": "conservation",
+    "question": "What is sustainable yield?",
+    "correctAnswer": "Harvest rate that can continue without depleting stock",
+    "incorrectAnswers": [
+      "Maximum short-term catch always",
+      "Zero use",
+      "Random quota"
+    ],
+    "explanation": "Fisheries management concept.",
+    "keywords": [
+      "sustainable-yield",
+      "fisheries"
+    ],
+    "source": "https://www.fisheries.noaa.gov/national/sustainable-fisheries"
+  },
+  {
+    "seedId": "5de68348-c1ea-4e74-b732-e0d6094dc226",
+    "category": "science",
+    "navigationKeyword1": "environmental",
+    "navigationKeyword2": "conservation",
+    "question": "What is CITES (purpose)?",
+    "correctAnswer": "Regulate international trade in threatened species",
+    "incorrectAnswers": [
+      "Space treaty",
+      "Weather forecast",
+      "Vaccine approval"
+    ],
+    "explanation": "Lists species with trade controls.",
+    "keywords": [
+      "cites",
+      "wildlife-trade"
+    ],
+    "source": "https://www.cites.org/eng"
+  },
+  {
+    "seedId": "5711efb1-7416-43e7-91e2-eb7af84ba271",
+    "category": "science",
+    "navigationKeyword1": "environmental",
+    "navigationKeyword2": "conservation",
+    "question": "What is poaching?",
+    "correctAnswer": "Illegal hunting/capture of wildlife",
+    "incorrectAnswers": [
+      "Legal harvest with permits",
+      "Scientific tagging always",
+      "Aquaculture always"
+    ],
+    "explanation": "Threatens endangered species.",
+    "keywords": [
+      "poaching",
+      "wildlife"
+    ],
+    "source": "https://www.worldwildlife.org/threats/poaching"
+  },
+  {
+    "seedId": "7b5e4792-30f1-4eed-bfef-bd688dd007d5",
+    "category": "science",
+    "navigationKeyword1": "environmental",
+    "navigationKeyword2": "conservation",
+    "question": "What is habitat fragmentation?",
+    "correctAnswer": "Breaking habitat into smaller isolated patches",
+    "incorrectAnswers": [
+      "Joining habitats",
+      "Increasing patch size always",
+      "Only underwater"
+    ],
+    "explanation": "Reduces gene flow and survival.",
+    "keywords": [
+      "fragmentation",
+      "land-use"
+    ],
+    "source": "https://www.epa.gov/habitat-conservation"
+  },
+  {
+    "seedId": "958833e9-9770-4a8f-afa3-4d36019c521e",
+    "category": "science",
+    "navigationKeyword1": "environmental",
+    "navigationKeyword2": "conservation",
+    "question": "What is corridor (conservation)?",
+    "correctAnswer": "Linkage allowing species movement between patches",
+    "incorrectAnswers": [
+      "Shopping corridor",
+      "River dam",
+      "Parking lot"
+    ],
+    "explanation": "Mitigates fragmentation.",
+    "keywords": [
+      "wildlife-corridor",
+      "connectivity"
+    ],
+    "source": "https://www.fws.gov/story/2021-12/conserving-habitat-wildlife-corridors"
+  },
+  {
+    "seedId": "f28a177e-ba53-4847-ac5b-15234caf30c9",
+    "category": "science",
+    "navigationKeyword1": "environmental",
+    "navigationKeyword2": "conservation",
+    "question": "What is captive breeding?",
+    "correctAnswer": "Breeding endangered species in controlled settings for release",
+    "incorrectAnswers": [
+      "Hunting program",
+      "Logging plan",
+      "Mining reclamation only"
+    ],
+    "explanation": "Used when wild populations critically low.",
+    "keywords": [
+      "captive-breeding",
+      "recovery"
+    ],
+    "source": "https://www.fws.gov/program/endangered-species"
+  },
+  {
+    "seedId": "3910125d-8de4-4a0a-a2c0-6c674c948d1b",
+    "category": "science",
+    "navigationKeyword1": "environmental",
+    "navigationKeyword2": "conservation",
+    "question": "What is IUCN Red List?",
+    "correctAnswer": "Global assessment of extinction risk",
+    "incorrectAnswers": [
+      "Stock market index",
+      "Weather alert",
+      "Soil pH chart"
+    ],
+    "explanation": "Categories from LC to extinct.",
+    "keywords": [
+      "red-list",
+      "extinction"
+    ],
+    "source": "https://www.iucnredlist.org/"
+  },
+  {
+    "seedId": "e104e59b-fc68-4150-9421-7f3332e619f2",
+    "category": "science",
+    "navigationKeyword1": "environmental",
+    "navigationKeyword2": "conservation",
+    "question": "What is bycatch?",
+    "correctAnswer": "Unintended catch in fishing gear",
+    "incorrectAnswers": [
+      "Target catch only",
+      "Farm runoff",
+      "Oil spill"
+    ],
+    "explanation": "Threatens marine megafauna.",
+    "keywords": [
+      "bycatch",
+      "fisheries"
+    ],
+    "source": "https://www.fisheries.noaa.gov/national/bycatch/"
+  },
+  {
+    "seedId": "6f0ebf6b-a21d-4c48-9190-366dcae3b05d",
+    "category": "science",
+    "navigationKeyword1": "environmental",
+    "navigationKeyword2": "conservation",
+    "question": "What is rewilding?",
+    "correctAnswer": "Large-scale restoration toward self-sustaining ecosystems",
+    "incorrectAnswers": [
+      "Urban paving",
+      "Monoculture farming only",
+      "Dam building only"
+    ],
+    "explanation": "May reintroduce apex species.",
+    "keywords": [
+      "rewilding",
+      "restoration"
+    ],
+    "source": "https://www.nature.com/scitable/knowledge/library/rewilding-162"
+  },
+  {
+    "seedId": "fa43ac15-dee5-444b-a0ab-438ca51cdf0a",
+    "category": "science",
+    "navigationKeyword1": "environmental",
+    "navigationKeyword2": "conservation",
+    "question": "What is carbon offset (idea)?",
+    "correctAnswer": "Compensate emissions via projects reducing/removing CO2 elsewhere",
+    "incorrectAnswers": [
+      "Guarantees local air quality",
+      "Eliminates need for policy",
+      "Same as recycling plastic always"
+    ],
+    "explanation": "Quality varies; additionality matters.",
+    "keywords": [
+      "offsets",
+      "climate"
+    ],
+    "source": "https://www.epa.gov/ghgemissions/international-carbon-offsets"
+  }
+]

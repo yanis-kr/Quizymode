@@ -1,0 +1,230 @@
+[
+  {
+    "seedId": "048559bf-fccb-4bbb-b381-997126d0f523",
+    "category": "science",
+    "navigationKeyword1": "geometry",
+    "navigationKeyword2": "angles",
+    "question": "Complementary angles sum?",
+    "correctAnswer": "90\u00b0",
+    "incorrectAnswers": [
+      "180\u00b0",
+      "360\u00b0",
+      "45\u00b0"
+    ],
+    "explanation": "Two acute angles can complement.",
+    "keywords": [
+      "complementary",
+      "angles"
+    ],
+    "source": "https://www.mathsisfun.com/geometry/complementary-angles.html"
+  },
+  {
+    "seedId": "249c5895-695f-44c0-afd4-9a6549ed9f25",
+    "category": "science",
+    "navigationKeyword1": "geometry",
+    "navigationKeyword2": "angles",
+    "question": "Supplementary angles sum?",
+    "correctAnswer": "180\u00b0",
+    "incorrectAnswers": [
+      "90\u00b0",
+      "360\u00b0",
+      "270\u00b0"
+    ],
+    "explanation": "Linear pair on straight line.",
+    "keywords": [
+      "supplementary",
+      "angles"
+    ],
+    "source": "https://www.mathsisfun.com/geometry/supplementary-angles.html"
+  },
+  {
+    "seedId": "2d3b189e-edc9-4d9d-93df-3277f6926542",
+    "category": "science",
+    "navigationKeyword1": "geometry",
+    "navigationKeyword2": "angles",
+    "question": "Vertical angles?",
+    "correctAnswer": "Congruent",
+    "incorrectAnswers": [
+      "Supplementary always",
+      "Complementary always",
+      "Never equal"
+    ],
+    "explanation": "Opposite when two lines cross.",
+    "keywords": [
+      "vertical-angles",
+      "intersection"
+    ],
+    "source": "https://www.mathsisfun.com/geometry/vertical-angles.html"
+  },
+  {
+    "seedId": "7ad3b388-f810-489d-a65e-2cfbea8df84c",
+    "category": "science",
+    "navigationKeyword1": "geometry",
+    "navigationKeyword2": "angles",
+    "question": "Parallel lines + transversal: corresponding angles?",
+    "correctAnswer": "Congruent",
+    "incorrectAnswers": [
+      "Always supplementary",
+      "Never related",
+      "Sum 90"
+    ],
+    "explanation": "Same relative position.",
+    "keywords": [
+      "corresponding-angles",
+      "parallel"
+    ],
+    "source": "https://www.mathsisfun.com/geometry/parallel-lines.html"
+  },
+  {
+    "seedId": "3fe6aaac-9008-4314-9733-474d6fc72680",
+    "category": "science",
+    "navigationKeyword1": "geometry",
+    "navigationKeyword2": "angles",
+    "question": "Alternate interior angles (parallel lines)?",
+    "correctAnswer": "Congruent",
+    "incorrectAnswers": [
+      "Supplementary",
+      "Unrelated",
+      "Sum 180 always for any lines"
+    ],
+    "explanation": "Z-pattern.",
+    "keywords": [
+      "alternate-interior",
+      "parallel"
+    ],
+    "source": "https://www.mathsisfun.com/geometry/parallel-lines.html"
+  },
+  {
+    "seedId": "33ae5eaf-0a9c-4e55-b297-0bfcaf6448ab",
+    "category": "science",
+    "navigationKeyword1": "geometry",
+    "navigationKeyword2": "angles",
+    "question": "Triangle angle sum?",
+    "correctAnswer": "180\u00b0",
+    "incorrectAnswers": [
+      "360\u00b0",
+      "90\u00b0",
+      "270\u00b0"
+    ],
+    "explanation": "Euclidean plane.",
+    "keywords": [
+      "triangle-sum",
+      "angles"
+    ],
+    "source": "https://www.mathsisfun.com/proofangles.html"
+  },
+  {
+    "seedId": "cfa69ea3-62d3-4942-9cb5-db03ed4eaab7",
+    "category": "science",
+    "navigationKeyword1": "geometry",
+    "navigationKeyword2": "angles",
+    "question": "Exterior angle theorem?",
+    "correctAnswer": "Exterior equals sum of remote interior angles",
+    "incorrectAnswers": [
+      "Equals adjacent interior only",
+      "Always 90",
+      "Equals 180"
+    ],
+    "explanation": "One extension side.",
+    "keywords": [
+      "exterior-angle",
+      "triangle"
+    ],
+    "source": "https://www.mathsisfun.com/geometry/exterior-angles.html"
+  },
+  {
+    "seedId": "11290411-c1d8-4f69-8742-79e313c917bb",
+    "category": "science",
+    "navigationKeyword1": "geometry",
+    "navigationKeyword2": "angles",
+    "question": "Regular pentagon interior angle?",
+    "correctAnswer": "108\u00b0",
+    "incorrectAnswers": [
+      "120\u00b0",
+      "90\u00b0",
+      "72\u00b0"
+    ],
+    "explanation": "(n\u22122)180/n.",
+    "keywords": [
+      "polygon-angles",
+      "regular"
+    ],
+    "source": "https://www.mathsisfun.com/geometry/interior-angles-polygons.html"
+  },
+  {
+    "seedId": "d74b57fd-78c5-4106-b43c-3bab522d7aa3",
+    "category": "science",
+    "navigationKeyword1": "geometry",
+    "navigationKeyword2": "angles",
+    "question": "Central angle vs inscribed subtending same arc?",
+    "correctAnswer": "Inscribed is half central (circle)",
+    "incorrectAnswers": [
+      "Equal always",
+      "Double central",
+      "Unrelated"
+    ],
+    "explanation": "On same arc.",
+    "keywords": [
+      "inscribed-angle",
+      "circle"
+    ],
+    "source": "https://www.mathsisfun.com/geometry/circle-theorems.html"
+  },
+  {
+    "seedId": "d4a91100-afb6-4732-9357-130237b52737",
+    "category": "science",
+    "navigationKeyword1": "geometry",
+    "navigationKeyword2": "angles",
+    "question": "Parallel condition (corresponding congruent)?",
+    "correctAnswer": "Lines parallel if corresponding angles congruent (converse setup)",
+    "incorrectAnswers": [
+      "Always intersect",
+      "Never testable",
+      "Only in 3D"
+    ],
+    "explanation": "Proof ingredient.",
+    "keywords": [
+      "parallel-test",
+      "proof"
+    ],
+    "source": "https://www.mathsisfun.com/geometry/parallel-lines.html"
+  },
+  {
+    "seedId": "64d176ee-ed63-4358-bde4-ab29f243a850",
+    "category": "science",
+    "navigationKeyword1": "geometry",
+    "navigationKeyword2": "angles",
+    "question": "Radians in semicircle?",
+    "correctAnswer": "\u03c0",
+    "incorrectAnswers": [
+      "\u03c0/2",
+      "2\u03c0",
+      "1"
+    ],
+    "explanation": "Straight angle.",
+    "keywords": [
+      "radians",
+      "angles"
+    ],
+    "source": "https://www.mathsisfun.com/geometry/radians.html"
+  },
+  {
+    "seedId": "01484082-96b0-4750-ba85-4e35917ac152",
+    "category": "science",
+    "navigationKeyword1": "geometry",
+    "navigationKeyword2": "angles",
+    "question": "Angle bisector property (distance)?",
+    "correctAnswer": "Points on bisector equidistant from the two sides",
+    "incorrectAnswers": [
+      "Equidistant from vertices",
+      "Perpendicular to base always",
+      "No distance property"
+    ],
+    "explanation": "Perpendicular distance to rays.",
+    "keywords": [
+      "angle-bisector",
+      "locus"
+    ],
+    "source": "https://www.mathsisfun.com/geometry/bisect.html"
+  }
+]
