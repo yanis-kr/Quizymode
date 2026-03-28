@@ -70,6 +70,51 @@ interface AuditLogsResponse {
   totalPages: number;
 }
 
+export type PageViewVisitorType = "all" | "authenticated" | "anonymous";
+
+export interface PageViewAnalyticsSummary {
+  windowStartUtc: string;
+  windowEndUtc: string;
+  totalPageViews: number;
+  uniquePages: number;
+  uniqueSessions: number;
+  authenticatedPageViews: number;
+  anonymousPageViews: number;
+  authenticatedSessions: number;
+  anonymousSessions: number;
+}
+
+export interface TopPageAnalyticsResponse {
+  path: string;
+  totalViews: number;
+  uniqueSessions: number;
+  authenticatedViews: number;
+  anonymousViews: number;
+  lastVisitedUtc: string;
+}
+
+export interface RecentPageViewResponse {
+  id: string;
+  url: string;
+  path: string;
+  queryString: string;
+  sessionId: string;
+  ipAddress: string;
+  isAuthenticated: boolean;
+  userEmail: string | null;
+  createdUtc: string;
+}
+
+export interface PageViewAnalyticsResponse {
+  summary: PageViewAnalyticsSummary;
+  topPages: TopPageAnalyticsResponse[];
+  recentPageViews: RecentPageViewResponse[];
+  totalCount: number;
+  page: number;
+  pageSize: number;
+  totalPages: number;
+}
+
 export interface SeedSyncItemRequest {
   seedId: string;
   category: string;
@@ -172,7 +217,7 @@ export const adminApi = {
     return response.data;
   },
 
-    getAuditLogs: async (
+  getAuditLogs: async (
     actionTypes?: string[],
     page: number = 1,
     pageSize: number = 50
@@ -186,6 +231,32 @@ export const adminApi = {
     }
     const response = await apiClient.get<AuditLogsResponse>(
       "/admin/audit-logs",
+      { params }
+    );
+    return response.data;
+  },
+
+  getPageViewAnalytics: async (
+    days: number = 7,
+    visitorType: PageViewVisitorType = "all",
+    pathContains?: string,
+    page: number = 1,
+    pageSize: number = 25,
+    topPagesLimit: number = 10
+  ): Promise<PageViewAnalyticsResponse> => {
+    const params: Record<string, string | number> = {
+      days,
+      visitorType,
+      page,
+      pageSize,
+      topPagesLimit,
+    };
+    if (pathContains && pathContains.trim().length > 0) {
+      params.pathContains = pathContains.trim();
+    }
+
+    const response = await apiClient.get<PageViewAnalyticsResponse>(
+      "/admin/page-view-analytics",
       { params }
     );
     return response.data;

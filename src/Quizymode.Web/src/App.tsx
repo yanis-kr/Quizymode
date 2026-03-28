@@ -20,6 +20,7 @@ import AdminKeywordReviewPage from "./features/admin/pages/AdminKeywordReviewPag
 import AdminCategoriesPage from "./features/admin/pages/AdminCategoriesPage";
 import AdminUserSettingsPage from "./features/admin/pages/AdminUserSettingsPage";
 import AdminSeedSyncPage from "./features/admin/pages/AdminSeedSyncPage";
+import PageViewAnalyticsPage from "./features/admin/pages/PageViewAnalyticsPage";
 import BulkCreateItemsPage from "./features/items/pages/BulkCreateItemsPage";
 import AddItemsPage from "./features/items/pages/AddItemsPage";
 import UploadToCollectionPage from "./features/items/pages/UploadToCollectionPage";
@@ -30,10 +31,12 @@ import RoadmapPage from "./features/roadmap/pages/RoadmapPage";
 import FeedbackPage from "./features/feedback/pages/FeedbackPage";
 import StudyGuidePage from "./features/studyGuide/pages/StudyGuidePage";
 import StudyGuideImportPage from "./features/studyGuide/pages/StudyGuideImportPage";
+import PageViewTracker from "./features/analytics/PageViewTracker";
 
 function App() {
   return (
     <Layout>
+      <PageViewTracker />
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route
@@ -107,6 +110,7 @@ function App() {
         <Route path="/admin/categories" element={<AdminCategoriesPage />} />
         <Route path="/admin/user-settings" element={<AdminUserSettingsPage />} />
         <Route path="/admin/seed-sync" element={<AdminSeedSyncPage />} />
+        <Route path="/admin/page-views" element={<PageViewAnalyticsPage />} />
         <Route path="/about" element={<AboutPage />} />
         <Route path="/roadmap" element={<RoadmapPage />} />
         <Route path="/feedback" element={<FeedbackPage />} />

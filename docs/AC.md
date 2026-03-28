@@ -784,6 +784,24 @@ Feedback submissions are lightweight inbound messages from the SPA. They may be 
 
 ---
 
+### AC 5.3 Admin: usage analytics and page-hit reporting
+
+**Design:** SPA page-hit analytics are captured from client-side route changes so both anonymous and authenticated visits are recorded even when navigation happens without a full page reload. Each page-hit stores the app-relative URL (`path` plus optional query string), a client-generated session id, the resolved client IP, whether the visitor was authenticated at the time of the hit, and the current app user id when available. Admin reporting focuses on a practical operational view: headline totals, top pages grouped by path, traffic split by anonymous vs authenticated visitors, and a recent-hit table with session and IP detail.
+
+**API**
+
+- **AC 5.3.1** [Anyone] **Given** the SPA calls `POST /analytics/page-views` with a JSON body containing `path`, optional `queryString`, and `sessionId`, **when** the payload is valid, **then** the API stores a page-hit row for that URL, accepts both anonymous and authenticated callers, records the client IP from forwarded headers / remote address, and associates the hit with the current app user when available.
+- **AC 5.3.2** [Anyone] **Given** the SPA sends an invalid page-hit payload (for example missing or blank `sessionId`, blank `path`, a path that does not start with `/`, or an oversized URL component), **when** `POST /analytics/page-views` is processed, **then** the API returns **400 Bad Request** and does not create a page-hit row.
+- **AC 5.3.3** [Admin] **Given** I am an admin, **when** I call `GET /admin/page-view-analytics` with optional filters such as `days`, `visitorType`, `pathContains`, `page`, `pageSize`, and `topPagesLimit`, **then** the API returns 200 with: (1) summary totals for hits, unique pages, unique sessions, authenticated hits, anonymous hits, and the selected window; (2) a top-pages list grouped by path and ordered by most visited; and (3) a paged recent-hit list that includes full URL, session id, IP address, visitor type, timestamp, and user email when the hit is tied to an authenticated user.
+- **AC 5.3.4** [Admin] **Given** I call `GET /admin/page-view-analytics` with an unsupported `visitorType` or an invalid `days` value, **when** the request is processed, **then** the API returns **400 Bad Request** with a validation error and does not return a partial report.
+
+**UI**
+
+- **AC 5.3.5** [Anyone] **Given** I navigate within the SPA, **when** the route changes and the app is ready to evaluate the current auth state, **then** the frontend records the current page hit using a stable session id for the browser tab/session and avoids obvious duplicate sends caused by immediate remount/re-render behavior.
+- **AC 5.3.6** [Admin] **Given** I am on the Admin Dashboard, **when** I click **Usage Analytics**, **then** I am taken to an admin report page where I can change the time window, filter to authenticated or anonymous traffic, optionally filter by path text, and review summary cards, top pages, traffic mix, and recent URL hits with session ids and IP addresses.
+
+---
+
 ## 6. Study guides and import
 
 ### AC 6.1 Study guide CRUD and per-user size limit
