@@ -455,6 +455,7 @@ Categories are **public only** (there is no private category). Users navigate by
 - **AC 3.0.4** [Anyone] **Given** I am on the home page, **when** the hero section is shown, **then** I see a clear call to browse categories and a link to the public sample collection used as a starter/demo collection.
 - **AC 3.0.5** [Anyone] **Given** I am on the home page, **when** the category section loads, **then** I see a static grid of category boxes with image artwork and descriptions that are bundled with the frontend and do not depend on the database being available; clicking a category box opens `/categories/{categorySlug}`.
 - **AC 3.0.6** [Anyone] **Given** I am on the home page below the categories section, **when** I view featured content, **then** I see a horizontal carousel of six featured sets; each card links directly to a concrete category scope path (for example `/categories/exams/aws/saa-c03`) and can be opened without additional filtering steps.
+- **AC 3.0.7** [Anyone] **Given** I am anywhere in the SPA, **when** the shared page chrome is visible, **then** I see a footer with a **Categories Map** action and an **About** action; **About** opens `/about`.
 
 ---
 
@@ -605,6 +606,7 @@ On the Categories page (Sets view and List view), a **filter panel** lets the us
 **API**
 
 - **AC 3.10.1** [Anyone] **Given** the API is running, **when** I call `GET /taxonomy` (no auth required), **then** the response lists all taxonomy categories with nested L1 → L2 navigation slugs (and optional flat slug lists) sourced only from the in-memory registry, not from ad-hoc DB growth.
+- **AC 3.10.1a** [Anyone] **Given** I open **Categories Map** from the shared footer, **when** the taxonomy loads, **then** I see a tree built from `GET /taxonomy` with category → primary topic → subtopic nodes; any node that has children can be expanded or collapsed individually, the tree also has **Expand all** and **Collapse all** controls, and clicking any node opens the corresponding `/categories/...` scope.
 - **AC 3.10.2** [Authenticated] **Given** I create or update an item (single `POST /items`, `PUT /items/{id}`, `POST /items/bulk`, upload-to-collection, or study-guide finalize), **when** I supply a category name, **then** it must match a taxonomy category **and** exist already as a **public** row in `Categories`; the API does **not** create new global categories as a side effect of item ingress.
 - **AC 3.10.2a** [Admin] **Given** I call the repo-managed seed-sync endpoints (`POST /admin/seed-sync/preview` or `POST /admin/seed-sync/apply`), **when** an item payload supplies a category name, **then** it must match a taxonomy category **and** an existing public `Categories` row; seed sync does not create new public categories.
 - **AC 3.10.3** [Authenticated] **Given** I supply `navigationKeyword1` and `navigationKeyword2` on item ingress, **when** the pair is not a valid (L1, L2) path for that category in the taxonomy, **then** the request fails validation; bulk, import, and admin seed-sync flows do **not** auto-create missing `KeywordRelation` rows for navigation.

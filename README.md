@@ -202,6 +202,7 @@ For humans and AI agents:
 - Keep the root README short, current, and decision-oriented.
 - Keep generated contracts and operational detail in `docs/`.
 - Keep feature-local READMEs only when they provide focused local setup that would otherwise clutter the root README.
+- Treat [docs/AC.md](./docs/AC.md) as the source of truth for application behavior, and update it whenever code changes alter behavior or contract intent.
 
 That means you do **not** need many READMEs by default. One root README should stay canonical. Additional READMEs are only justified when they reduce ambiguity for a specific subproject.
 
