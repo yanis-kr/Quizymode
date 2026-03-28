@@ -51,7 +51,7 @@ import {
 
 type SortOption = "name" | "rating" | "count";
 
-const CATEGORIES_PER_PAGE = 30;
+const CATEGORIES_PER_PAGE = 12;
 const PAGE_SIZE_OPTIONS = [10, 25, 50, 100];
 
 const CategoriesPage = () => {
@@ -1266,8 +1266,18 @@ const CategoriesPage = () => {
         description="Browse all categories on Quizymode. Find flashcards and quizzes organized by topic."
         canonical="https://www.quizymode.com/categories"
       />
-      <div className="px-4 py-4 sm:px-0 xl:h-[calc(100vh-7rem)]">
-        <section className="rounded-[30px] border border-white/10 bg-white/95 p-4 shadow-2xl shadow-slate-950/20 backdrop-blur sm:p-5 xl:h-full">
+      <div className="space-y-4">
+        <div className="rounded-[24px] border border-slate-200/80 bg-white/90 px-5 py-4 shadow-sm shadow-slate-300/20">
+          <div className="text-[11px] font-semibold uppercase tracking-[0.18em] text-slate-500">
+            Browse
+          </div>
+          <h1 className="mt-1 text-2xl font-semibold text-slate-900">Categories</h1>
+          <p className="mt-1 text-sm leading-6 text-slate-700">
+            Browse the public question bank by category and jump into sets, flashcards, or quiz mode.
+          </p>
+        </div>
+
+        <section className="rounded-[24px] border border-slate-200/80 bg-white/95 p-4 shadow-2xl shadow-slate-950/20 backdrop-blur sm:p-5">
           <BucketGridView
             buckets={sortedAndPaginatedCategories.categories.map((cat) => ({
               id: cat.category,
@@ -1278,7 +1288,7 @@ const CategoriesPage = () => {
               backgroundImage: getCategoryThemeByName(cat.category).image,
               eyebrow: "Browse",
             }))}
-            columnsClassName="grid-cols-2 gap-3 md:grid-cols-3 xl:h-full xl:grid-cols-4"
+            columnsClassName="grid-cols-2 gap-2.5 md:grid-cols-3 xl:grid-cols-4"
             compact
             onOpenBucket={(bucket) =>
               navigateToSets(`/categories/${categoryNameToSlug(bucket.label)}`)

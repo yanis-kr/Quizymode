@@ -634,9 +634,9 @@ const CollectionsPage = () => {
   }
 
   return (
-    <div className="space-y-6">
-      <div className="rounded-[28px] border border-slate-200/80 bg-white/90 p-6 shadow-sm shadow-slate-300/20">
-        <h1 className="mb-2 text-3xl font-bold text-slate-900">Collections</h1>
+    <div className="space-y-4">
+      <div className="rounded-[24px] border border-slate-200/80 bg-white/90 px-5 py-4 shadow-sm shadow-slate-300/20">
+        <h1 className="mb-1 text-2xl font-semibold text-slate-900">Collections</h1>
         <p className="max-w-3xl text-sm leading-6 text-slate-700">
           {isAuthenticated
             ? "Your collections, bookmarks, and discover public collections. You can also open a collection by ID."
