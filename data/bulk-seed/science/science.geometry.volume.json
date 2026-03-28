@@ -1,17 +1,17 @@
 [
   {
-    "seedId": "b0ae8220-8547-424e-ad60-6b59f26ccbaa",
+    "seedId": "8d33b92d-4db8-4fb2-8445-183adc2fa1d2",
     "category": "science",
     "navigationKeyword1": "geometry",
     "navigationKeyword2": "volume",
-    "question": "Prism volume?",
-    "correctAnswer": "Base area \u00d7 height",
+    "question": "What is the volume formula for a prism?",
+    "correctAnswer": "Base area times height",
     "incorrectAnswers": [
-      "1/3 Bh",
-      "2\u03c0rh",
-      "Bh^2"
+      "(1/3) base area times height",
+      "2pi rh",
+      "Base area times height squared"
     ],
-    "explanation": "Any cross-section parallel translates.",
+    "explanation": "A prism keeps the same cross-sectional area all the way through, so volume is base area times height.",
     "keywords": [
       "prism",
       "volume"
@@ -19,18 +19,18 @@
     "source": "https://www.mathsisfun.com/geometry/prism.html"
   },
   {
-    "seedId": "af15e2ab-ddbf-443f-92d2-6166df1ac141",
+    "seedId": "690b5547-b060-4ad0-b141-3341c0f08b61",
     "category": "science",
     "navigationKeyword1": "geometry",
     "navigationKeyword2": "volume",
-    "question": "Pyramid/cone volume?",
-    "correctAnswer": "(1/3) base area \u00d7 height",
+    "question": "What is the volume formula for a pyramid or cone?",
+    "correctAnswer": "(1/3) base area times height",
     "incorrectAnswers": [
-      "Bh",
-      "1/2 Bh",
-      "\u03c0r^3"
+      "Base area times height",
+      "(1/2) base area times height",
+      "pi r^3"
     ],
-    "explanation": "Calculus Cavalieri justification.",
+    "explanation": "A pyramid or cone tapers to a point, so its volume is one-third of the matching prism or cylinder.",
     "keywords": [
       "pyramid",
       "volume"
@@ -38,18 +38,18 @@
     "source": "https://www.mathsisfun.com/geometry/pyramid.html"
   },
   {
-    "seedId": "86318d12-e53d-46fe-aaf3-1667238dde26",
+    "seedId": "788e9362-ac55-42dd-8c6a-76e040cad99b",
     "category": "science",
     "navigationKeyword1": "geometry",
     "navigationKeyword2": "volume",
-    "question": "Rectangular box volume?",
+    "question": "What is the volume formula for a rectangular prism with length l, width w, and height h?",
     "correctAnswer": "lwh",
     "incorrectAnswers": [
       "l + w + h",
-      "2(lw+lh+wh)",
+      "2(lw + lh + wh)",
       "lw/h"
     ],
-    "explanation": "Three dimensions multiply.",
+    "explanation": "Volume measures three-dimensional space, so the three dimensions multiply together.",
     "keywords": [
       "box",
       "volume"
@@ -57,18 +57,18 @@
     "source": "https://www.mathsisfun.com/geometry/cuboid.html"
   },
   {
-    "seedId": "b88cbc11-58de-4d18-acd3-7a5eae76fbfb",
+    "seedId": "8ad6e85c-0f14-4fbb-be0b-4adfdb5b50c7",
     "category": "science",
     "navigationKeyword1": "geometry",
     "navigationKeyword2": "volume",
-    "question": "Cylinder volume?",
-    "correctAnswer": "\u03c0r^2 h",
+    "question": "What is the volume formula for a cylinder?",
+    "correctAnswer": "pi r^2 h",
     "incorrectAnswers": [
-      "2\u03c0rh",
-      "2\u03c0r^2 h",
-      "\u03c0rh"
+      "2pi rh",
+      "2pi r^2 h",
+      "pi rh"
     ],
-    "explanation": "Base times height.",
+    "explanation": "A cylinder has a circular base, so its volume is base area pi r^2 multiplied by height h.",
     "keywords": [
       "cylinder",
       "volume"
@@ -76,18 +76,18 @@
     "source": "https://www.mathsisfun.com/geometry/cylinder.html"
   },
   {
-    "seedId": "4c8b5873-2379-48bc-aaf8-745f080dc324",
+    "seedId": "4acebe74-60b3-4f7e-93bf-2fb6f62aab26",
     "category": "science",
     "navigationKeyword1": "geometry",
     "navigationKeyword2": "volume",
-    "question": "Sphere volume?",
-    "correctAnswer": "(4/3)\u03c0r^3",
+    "question": "What is the volume formula for a sphere?",
+    "correctAnswer": "(4/3) pi r^3",
     "incorrectAnswers": [
-      "4\u03c0r^2",
-      "\u03c0r^2",
-      "2\u03c0r"
+      "4pi r^2",
+      "pi r^2",
+      "2pi r"
     ],
-    "explanation": "Archimedes result.",
+    "explanation": "Sphere volume depends on the cube of the radius, giving the formula four-thirds pi r cubed.",
     "keywords": [
       "sphere",
       "volume"
@@ -95,18 +95,18 @@
     "source": "https://www.mathsisfun.com/geometry/sphere.html"
   },
   {
-    "seedId": "75eb6ce3-aed6-4c77-886d-ca3f7a4a099d",
+    "seedId": "7bacd750-58f1-4ddd-ac44-87ccd2ffa052",
     "category": "science",
     "navigationKeyword1": "geometry",
     "navigationKeyword2": "volume",
-    "question": "Similar solids volume ratio?",
-    "correctAnswer": "Scale factor cubed",
+    "question": "If two solids are similar with scale factor k, how do their volumes compare?",
+    "correctAnswer": "The volume ratio is k^3",
     "incorrectAnswers": [
-      "Squared",
-      "Linear",
-      "Same as area"
+      "The volume ratio is k",
+      "The volume ratio is k^2",
+      "The volumes are always equal"
     ],
-    "explanation": "k^3 volumes.",
+    "explanation": "Volume depends on three dimensions, so scaling all lengths by k scales volume by k cubed.",
     "keywords": [
       "similar-volume",
       "ratio"
@@ -114,18 +114,18 @@
     "source": "https://www.mathsisfun.com/geometry/similar.html"
   },
   {
-    "seedId": "a3c2ba69-6891-46d7-b85f-11ced0f892f5",
+    "seedId": "03d3d22c-81fe-4092-82f1-ebd0ae083fae",
     "category": "science",
     "navigationKeyword1": "geometry",
     "navigationKeyword2": "volume",
-    "question": "Density from mass and volume?",
-    "correctAnswer": "\u03c1 = m/V",
+    "question": "What formula gives density in terms of mass and volume?",
+    "correctAnswer": "density = mass/volume",
     "incorrectAnswers": [
-      "mV",
-      "V/m",
-      "m+V"
+      "density = mass times volume",
+      "density = volume/mass",
+      "density = mass + volume"
     ],
-    "explanation": "Units mass per volume.",
+    "explanation": "Density compares how much mass is packed into each unit of volume.",
     "keywords": [
       "density",
       "physics"
@@ -133,18 +133,18 @@
     "source": "https://www.britannica.com/science/density"
   },
   {
-    "seedId": "fb51d02c-d93f-4cf9-9aaf-8bfa553e7db9",
+    "seedId": "d5c30841-ee90-4b38-88cd-8b9283d49c60",
     "category": "science",
     "navigationKeyword1": "geometry",
     "navigationKeyword2": "volume",
-    "question": "Displacement method volume irregular solid?",
-    "correctAnswer": "Submerge; volume water rise = object volume",
+    "question": "How can water displacement be used to find the volume of an irregular solid?",
+    "correctAnswer": "The object's volume equals the amount the water level rises",
     "incorrectAnswers": [
-      "Weigh only",
-      "Measure perimeter",
-      "Always impossible"
+      "The object's volume equals its perimeter",
+      "Only its mass is needed",
+      "Irregular solids cannot be measured this way"
     ],
-    "explanation": "Archimedes principle link.",
+    "explanation": "Submerging an object displaces a volume of water equal to the object's own volume.",
     "keywords": [
       "displacement",
       "measurement"
@@ -152,18 +152,18 @@
     "source": "https://en.wikipedia.org/wiki/Archimedes%27_principle"
   },
   {
-    "seedId": "334e7a30-e814-4397-a06e-2debe8e81451",
+    "seedId": "0887cc5f-444f-46c8-bc23-93435c9a386e",
     "category": "science",
     "navigationKeyword1": "geometry",
     "navigationKeyword2": "volume",
-    "question": "Frustum of cone volume?",
-    "correctAnswer": "Involves h and both radii (formula)",
+    "question": "What is a frustum?",
+    "correctAnswer": "A cone or pyramid with the top cut off by a plane parallel to the base",
     "incorrectAnswers": [
-      "Same as cylinder",
-      "\u03c0r^2 only",
-      "1/2 \u03c0r^2 h always"
+      "A full cylinder",
+      "A sphere sliced through the center",
+      "A triangle with one side removed"
     ],
-    "explanation": "Truncated cone.",
+    "explanation": "A frustum is a truncated solid, so its volume formula must account for both the larger and smaller parallel faces.",
     "keywords": [
       "frustum",
       "volume"
@@ -171,18 +171,18 @@
     "source": "https://www.mathsisfun.com/geometry/frustum.html"
   },
   {
-    "seedId": "1101dbc9-afd5-4912-896f-d680c8496e2d",
+    "seedId": "98c9256e-6483-439a-b7b7-d48d20f9bc17",
     "category": "science",
     "navigationKeyword1": "geometry",
     "navigationKeyword2": "volume",
-    "question": "Cavalieri\u2019s principle idea?",
-    "correctAnswer": "Same cross-sectional area at every height \u21d2 same volume",
+    "question": "What is the idea behind Cavalieri's principle?",
+    "correctAnswer": "Solids with equal cross-sectional area at every height have equal volume",
     "incorrectAnswers": [
-      "Never true",
-      "Only circles",
-      "Only 2D"
+      "Only spheres and cylinders can be compared",
+      "Equal surface area means equal volume",
+      "Volume depends only on base perimeter"
     ],
-    "explanation": "Justifies prism formulas.",
+    "explanation": "Cavalieri's principle compares slices at every height to justify equal-volume conclusions.",
     "keywords": [
       "cavalieri",
       "volume"
@@ -190,18 +190,18 @@
     "source": "https://en.wikipedia.org/wiki/Cavalieri%27s_principle"
   },
   {
-    "seedId": "60fc312b-0f78-488f-b294-24f752ea7ac7",
+    "seedId": "682af8ef-36ea-43eb-8df7-a68e3fe84980",
     "category": "science",
     "navigationKeyword1": "geometry",
     "navigationKeyword2": "volume",
-    "question": "Unit cube volume?",
+    "question": "What is the volume of a unit cube?",
     "correctAnswer": "1 cubic unit",
     "incorrectAnswers": [
       "1 square unit",
       "3 units",
-      "0"
+      "0 units"
     ],
-    "explanation": "Foundation of measurement.",
+    "explanation": "A unit cube is 1 unit by 1 unit by 1 unit, so its volume is 1 cubic unit.",
     "keywords": [
       "units",
       "volume"
@@ -209,18 +209,18 @@
     "source": "https://www.mathsisfun.com/geometry/cuboid.html"
   },
   {
-    "seedId": "712151b8-0ff9-49c1-8e16-bd4956dd8c2e",
+    "seedId": "b815ee17-f9d8-4b2a-84c2-3fe7296e10c5",
     "category": "science",
     "navigationKeyword1": "geometry",
     "navigationKeyword2": "volume",
-    "question": "Liters to cm^3?",
-    "correctAnswer": "1 L = 1000 cm^3",
+    "question": "How many cubic centimeters are in 1 liter?",
+    "correctAnswer": "1000 cubic centimeters",
     "incorrectAnswers": [
-      "1 L = 1 cm^3",
-      "100 L = 1 cm^3",
-      "1 L = 100 cm^3"
+      "1 cubic centimeter",
+      "100 cubic centimeters",
+      "10,000 cubic centimeters"
     ],
-    "explanation": "SI convenience.",
+    "explanation": "A liter is defined as 1000 cubic centimeters, which is also 1 cubic decimeter.",
     "keywords": [
       "metric",
       "conversion"

@@ -4,6 +4,7 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useQuery } from "@tanstack/react-query";
 import { useAuth } from "@/contexts/AuthContext";
 import { usersApi } from "@/api/users";
+import FeedbackDialog from "@/features/feedback/components/FeedbackDialog";
 import UserProfileModal from "./UserProfileModal";
 import CategoriesMapModal from "./CategoriesMapModal";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
@@ -18,6 +19,7 @@ const Layout = ({ children }: LayoutProps) => {
   const location = useLocation();
   const [showProfileModal, setShowProfileModal] = useState(false);
   const [showCategoriesMap, setShowCategoriesMap] = useState(false);
+  const [showFeedbackDialog, setShowFeedbackDialog] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   // Fetch user data when authenticated to get full profile info
@@ -138,12 +140,6 @@ const Layout = ({ children }: LayoutProps) => {
 
               {/* Desktop menu */}
               <div className="hidden sm:flex sm:items-center sm:gap-3">
-                <Link
-                  to="/about"
-                  className={desktopNavLinkClass(isPathActive("/about"))}
-                >
-                  About
-                </Link>
                 {isAuthenticated ? (
                   <div className="flex items-center space-x-4">
                     <button
@@ -200,13 +196,6 @@ const Layout = ({ children }: LayoutProps) => {
                 onClick={closeMobileMenu}
               >
                 Collections
-              </Link>
-              <Link
-                to="/about"
-                className={mobileNavLinkClass(isPathActive("/about"))}
-                onClick={closeMobileMenu}
-              >
-                About
               </Link>
               {isAuthenticated && (
                 <>
@@ -285,38 +274,49 @@ const Layout = ({ children }: LayoutProps) => {
         className={
           isHomePage
             ? "flex-1 py-0"
-            : "mx-auto flex-1 max-w-7xl py-6 sm:px-6 lg:px-8"
+            : "mx-auto flex-1 w-full max-w-7xl px-4 py-6 sm:px-6 lg:px-8"
         }
       >
-        {children}
+        {isHomePage ? (
+          children
+        ) : (
+          <div className="rounded-[32px] border border-white/45 bg-[linear-gradient(180deg,rgba(255,255,255,0.98)_0%,rgba(248,250,252,0.96)_100%)] p-4 text-slate-900 shadow-2xl shadow-slate-950/20 backdrop-blur sm:p-6 lg:p-8">
+            {children}
+          </div>
+        )}
       </main>
-      <footer className="px-4 pb-6 pt-2 sm:px-6 lg:px-8">
-        <div className="mx-auto max-w-7xl">
-          <div className="flex flex-col gap-4 rounded-[28px] border border-white/10 bg-slate-950/72 px-5 py-4 text-slate-100 shadow-xl shadow-slate-950/30 backdrop-blur sm:flex-row sm:items-center sm:justify-between">
-            <div>
-              <div className="text-[11px] font-semibold uppercase tracking-[0.22em] text-sky-300">
-                Browse Tools
-              </div>
-              <p className="mt-1 text-sm text-slate-300">
-                Open the full taxonomy tree or jump to the app overview from anywhere.
-              </p>
+      <footer className="mx-auto w-full max-w-7xl px-4 pb-6 pt-2 sm:px-6 lg:px-8">
+        <div className="flex flex-col gap-3 rounded-[24px] border border-white/10 bg-[linear-gradient(180deg,rgba(15,23,42,0.7)_0%,rgba(2,6,23,0.64)_100%)] px-4 py-3 text-slate-100 shadow-xl shadow-slate-950/20 backdrop-blur sm:flex-row sm:items-center sm:justify-between">
+          <div>
+            <div className="text-[11px] font-semibold uppercase tracking-[0.18em] text-slate-300">
+              Browse Tools
             </div>
+            <p className="mt-1 text-sm text-slate-300">
+              Open the full taxonomy tree or jump to the app overview from anywhere.
+            </p>
+          </div>
 
-            <div className="flex flex-wrap gap-2">
-              <button
-                type="button"
-                onClick={() => setShowCategoriesMap(true)}
-                className="inline-flex items-center justify-center rounded-full border border-sky-300/30 bg-sky-400/10 px-4 py-2 text-sm font-medium text-sky-100 transition hover:border-sky-200/50 hover:bg-sky-400/18 hover:text-white"
-              >
-                Categories Map
-              </button>
-              <Link
-                to="/about"
-                className="inline-flex items-center justify-center rounded-full border border-white/12 bg-white/10 px-4 py-2 text-sm font-medium text-slate-100 transition hover:bg-white/16 hover:text-white"
-              >
-                About
-              </Link>
-            </div>
+          <div className="flex flex-wrap gap-2">
+            <button
+              type="button"
+              onClick={() => setShowFeedbackDialog(true)}
+              className="inline-flex items-center justify-center rounded-md border border-white/12 bg-white/8 px-3.5 py-2 text-sm font-medium text-slate-100 transition hover:border-sky-300/35 hover:bg-white/12 hover:text-white"
+            >
+              Feedback
+            </button>
+            <button
+              type="button"
+              onClick={() => setShowCategoriesMap(true)}
+              className="inline-flex items-center justify-center rounded-md border border-white/12 bg-white/8 px-3.5 py-2 text-sm font-medium text-slate-100 transition hover:border-sky-300/35 hover:bg-white/12 hover:text-white"
+            >
+              Categories Map
+            </button>
+            <Link
+              to="/about"
+              className="inline-flex items-center justify-center rounded-md border border-white/12 bg-white/8 px-3.5 py-2 text-sm font-medium text-slate-100 transition hover:border-sky-300/35 hover:bg-white/12 hover:text-white"
+            >
+              About
+            </Link>
           </div>
         </div>
       </footer>
@@ -327,6 +327,11 @@ const Layout = ({ children }: LayoutProps) => {
       <CategoriesMapModal
         isOpen={showCategoriesMap}
         onClose={() => setShowCategoriesMap(false)}
+      />
+      <FeedbackDialog
+        isOpen={showFeedbackDialog}
+        onClose={() => setShowFeedbackDialog(false)}
+        defaultEmail={user?.email || email}
       />
     </div>
   );

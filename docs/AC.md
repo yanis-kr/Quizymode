@@ -455,7 +455,10 @@ Categories are **public only** (there is no private category). Users navigate by
 - **AC 3.0.4** [Anyone] **Given** I am on the home page, **when** the hero section is shown, **then** I see a clear call to browse categories and a link to the public sample collection used as a starter/demo collection.
 - **AC 3.0.5** [Anyone] **Given** I am on the home page, **when** the category section loads, **then** I see a static grid of category boxes with image artwork and descriptions that are bundled with the frontend and do not depend on the database being available; clicking a category box opens `/categories/{categorySlug}`.
 - **AC 3.0.6** [Anyone] **Given** I am on the home page below the categories section, **when** I view featured content, **then** I see a horizontal carousel of six featured sets; each card links directly to a concrete category scope path (for example `/categories/exams/aws/saa-c03`) and can be opened without additional filtering steps.
-- **AC 3.0.7** [Anyone] **Given** I am anywhere in the SPA, **when** the shared page chrome is visible, **then** I see a footer with a **Categories Map** action and an **About** action; **About** opens `/about`.
+- **AC 3.0.7** [Anyone] **Given** I am anywhere in the SPA, **when** the shared page chrome is visible, **then** I see a footer with a **Feedback** action, a **Categories Map** action, and an **About** action; **About** opens `/about`.
+- **AC 3.0.8** [Anyone] **Given** I activate the footer **Feedback** action, **when** the dialog opens, **then** I can choose among **Report issue**, **Ask for more items**, and **Provide feedback** inside a single shared feedback dialog rather than via three separate footer buttons.
+- **AC 3.0.9** [Anyone] **Given** the shared feedback dialog is open, **when** I view the form, **then** the current page URL is shown in a read-only field, email is optional, and the email field is pre-filled from the signed-in user's email when available but can be cleared for anonymous submission; the **Ask for more items** flow also shows an optional **Additional keywords** field.
+- **AC 3.0.10** [Anyone] **Given** I open `/feedback`, **when** the page loads, **then** I see three feedback entry cards for **Report an issue**, **Ask for more items**, and **Provide feedback**, and choosing any card opens the same shared feedback dialog with that type preselected.
 
 ---
 
@@ -720,6 +723,26 @@ User settings are key-value pairs stored per user (e.g. **PageSize** for default
 
 - **AC 4.7.7** [Authenticated] **Given** I am authenticated, **when** I open my profile or settings, **then** I can view and edit my default pagination (PageSize); changes are persisted via `PUT /users/settings` and used on subsequent visits and on pages that take the default (e.g. Categories list when the URL does not specify `pagesize`).
 - **AC 4.7.8** [Authenticated] **Given** I am on a page that uses default pagination (e.g. Categories list view), **when** the URL does not specify `pagesize`, **then** my saved PageSize setting is used; if the URL specifies `pagesize`, the URL value takes precedence for that page/session.
+
+---
+
+### AC 4.8 Feedback submissions
+
+Feedback submissions are lightweight inbound messages from the SPA. They may be sent by anonymous or authenticated users and are stored for later review.
+
+**API**
+
+- **AC 4.8.1** [Anyone] **Given** I call `POST /feedback` with a JSON body containing `type`, `currentUrl`, `details`, optional `email`, and optional `additionalKeywords`, **when** the payload is valid, **then** the API stores a feedback submission row and returns **201 Created** with the created submission payload.
+- **AC 4.8.2** [Anyone] **Given** I call `POST /feedback` with an invalid `type`, an invalid or relative `currentUrl`, missing `details`, or an invalid optional email, **when** the request is processed, **then** the API returns **400 Bad Request** and does not create a submission.
+- **AC 4.8.3** [Anonymous] **Given** I call `POST /feedback` anonymously, **when** the request succeeds, **then** the API accepts the submission without requiring authentication and stores no user id on the submission.
+- **AC 4.8.4** [Authenticated] **Given** I call `POST /feedback` while authenticated, **when** the request succeeds, **then** the API associates the submission with my current app user id when available.
+- **AC 4.8.5** [Anyone] **Given** I submit feedback of type **Provide feedback** or **Report issue**, **when** I include `additionalKeywords`, **then** the API ignores that field; only **Ask for more items** persists optional additional keywords.
+- **AC 4.8.6** [Anyone] **Given** too many feedback submissions are sent from the same authenticated identity or client IP within a short time window, **when** the endpoint limit is exceeded, **then** the API returns **429 Too Many Requests** and rejects the submission to reduce abuse.
+
+**UI**
+
+- **AC 4.8.7** [Anyone] **Given** I fill out the feedback dialog and click **Submit**, **when** the request succeeds, **then** the dialog shows a success state without redirecting me away from the current page.
+- **AC 4.8.8** [Anyone] **Given** feedback submission is temporarily blocked by the server rate limit, **when** I click **Submit**, **then** the UI shows an error explaining that I need to wait before trying again.
 
 ---
 

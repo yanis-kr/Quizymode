@@ -60,7 +60,7 @@ export function BucketGridView({
               <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(2,6,23,0.08)_0%,rgba(2,6,23,0.34)_42%,rgba(2,6,23,0.92)_100%)]" />
               <div
                 className={`relative flex flex-col justify-between text-white ${
-                  compact ? "min-h-[132px] p-4" : "min-h-[188px] p-5"
+                  compact ? "min-h-[112px] p-3.5" : "min-h-[188px] p-5"
                 }`}
               >
                 <div className="flex items-start justify-between gap-3">
@@ -88,12 +88,12 @@ export function BucketGridView({
 
                 <div className="space-y-2">
                   <div className="flex items-center gap-2">
-                    <h3 className={`font-semibold tracking-tight text-white ${compact ? "text-lg" : "text-xl"}`}>
+                    <h3 className={`font-semibold tracking-tight text-white ${compact ? "text-base" : "text-xl"}`}>
                       {bucket.label}
                     </h3>
                   </div>
                   {bucket.description ? (
-                    <p className={`max-w-lg text-slate-200 line-clamp-2 ${compact ? "text-xs leading-5" : "text-sm leading-6"}`}>
+                    <p className={`max-w-lg text-slate-200 line-clamp-2 ${compact ? "text-[11px] leading-4.5" : "text-sm leading-6"}`}>
                       {bucket.description}
                     </p>
                   ) : null}
