@@ -1307,6 +1307,42 @@
         }
       }
     },
+    "/feedback": {
+      "post": {
+        "tags": [
+          "Feedback"
+        ],
+        "summary": "Create a feedback submission",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Quizymode.Api.Features.Feedback.CreateFeedbackSubmission.Request"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "201": {
+            "description": "Created",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Quizymode.Api.Features.Feedback.CreateFeedbackSubmission.Response"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "429": {
+            "description": "Too Many Requests"
+          }
+        }
+      }
+    },
     "/comments": {
       "post": {
         "tags": [
@@ -4323,6 +4359,102 @@
           }
         }
       },
+      "Quizymode.Api.Features.Feedback.CreateFeedbackSubmission.Request": {
+        "required": [
+          "type",
+          "currentUrl",
+          "details"
+        ],
+        "type": "object",
+        "properties": {
+          "type": {
+            "$ref": "#/components/schemas/System.String"
+          },
+          "currentUrl": {
+            "$ref": "#/components/schemas/System.String"
+          },
+          "details": {
+            "$ref": "#/components/schemas/System.String"
+          },
+          "email": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/System.String"
+              }
+            ]
+          },
+          "additionalKeywords": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/System.String"
+              }
+            ]
+          }
+        }
+      },
+      "Quizymode.Api.Features.Feedback.CreateFeedbackSubmission.Response": {
+        "required": [
+          "id",
+          "type",
+          "currentUrl",
+          "details",
+          "createdAt"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "$ref": "#/components/schemas/System.String"
+          },
+          "type": {
+            "$ref": "#/components/schemas/System.String"
+          },
+          "currentUrl": {
+            "$ref": "#/components/schemas/System.String"
+          },
+          "details": {
+            "$ref": "#/components/schemas/System.String"
+          },
+          "email": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/System.String"
+              }
+            ]
+          },
+          "additionalKeywords": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/System.String"
+              }
+            ]
+          },
+          "userId": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/System.String"
+              }
+            ]
+          },
+          "createdAt": {
+            "$ref": "#/components/schemas/System.DateTime"
+          }
+        }
+      },
       "Quizymode.Api.Features.Items.Add.AddItem.KeywordRequest": {
         "required": [
           "name",
@@ -6809,6 +6941,9 @@
     },
     {
       "name": "Items"
+    },
+    {
+      "name": "Feedback"
     },
     {
       "name": "Comments"
