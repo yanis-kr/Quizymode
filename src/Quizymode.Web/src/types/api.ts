@@ -233,6 +233,27 @@ export interface CreateRequestRequest {
   description: string;
 }
 
+export type FeedbackType = "reportIssue" | "requestItems" | "generalFeedback";
+
+export interface CreateFeedbackSubmissionRequest {
+  type: FeedbackType;
+  currentUrl: string;
+  details: string;
+  email?: string | null;
+  additionalKeywords?: string | null;
+}
+
+export interface FeedbackSubmissionResponse {
+  id: string;
+  type: FeedbackType;
+  currentUrl: string;
+  details: string;
+  email: string | null;
+  additionalKeywords: string | null;
+  userId: string | null;
+  createdAt: string;
+}
+
 export interface BulkCreateItemsRequest {
   isPrivate: boolean;
   category: string;

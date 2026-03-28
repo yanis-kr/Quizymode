@@ -1,17 +1,17 @@
 [
   {
-    "seedId": "048559bf-fccb-4bbb-b381-997126d0f523",
+    "seedId": "2d2aa681-25b6-46bf-9d1a-80d7499e86ca",
     "category": "science",
     "navigationKeyword1": "geometry",
     "navigationKeyword2": "angles",
-    "question": "Complementary angles sum?",
-    "correctAnswer": "90\u00b0",
+    "question": "What is the sum of two complementary angles?",
+    "correctAnswer": "90 degrees",
     "incorrectAnswers": [
-      "180\u00b0",
-      "360\u00b0",
-      "45\u00b0"
+      "180 degrees",
+      "360 degrees",
+      "45 degrees"
     ],
-    "explanation": "Two acute angles can complement.",
+    "explanation": "Complementary angles add to a right angle, so their measures total 90 degrees.",
     "keywords": [
       "complementary",
       "angles"
@@ -19,18 +19,18 @@
     "source": "https://www.mathsisfun.com/geometry/complementary-angles.html"
   },
   {
-    "seedId": "249c5895-695f-44c0-afd4-9a6549ed9f25",
+    "seedId": "50c782df-e11c-4f3b-a4a8-b853c0962579",
     "category": "science",
     "navigationKeyword1": "geometry",
     "navigationKeyword2": "angles",
-    "question": "Supplementary angles sum?",
-    "correctAnswer": "180\u00b0",
+    "question": "What is the sum of two supplementary angles?",
+    "correctAnswer": "180 degrees",
     "incorrectAnswers": [
-      "90\u00b0",
-      "360\u00b0",
-      "270\u00b0"
+      "90 degrees",
+      "270 degrees",
+      "360 degrees"
     ],
-    "explanation": "Linear pair on straight line.",
+    "explanation": "Supplementary angles form a straight angle, so together they measure 180 degrees.",
     "keywords": [
       "supplementary",
       "angles"
@@ -38,18 +38,18 @@
     "source": "https://www.mathsisfun.com/geometry/supplementary-angles.html"
   },
   {
-    "seedId": "2d3b189e-edc9-4d9d-93df-3277f6926542",
+    "seedId": "2ab17b60-4fb4-42ed-875f-9a4d664319ad",
     "category": "science",
     "navigationKeyword1": "geometry",
     "navigationKeyword2": "angles",
-    "question": "Vertical angles?",
-    "correctAnswer": "Congruent",
+    "question": "When two lines intersect, what is true about vertical angles?",
+    "correctAnswer": "They are congruent",
     "incorrectAnswers": [
-      "Supplementary always",
-      "Complementary always",
-      "Never equal"
+      "They always add to 90 degrees",
+      "They are never equal",
+      "They are always adjacent"
     ],
-    "explanation": "Opposite when two lines cross.",
+    "explanation": "Vertical angles are opposite each other at an intersection, and opposite angles formed by intersecting lines have equal measure.",
     "keywords": [
       "vertical-angles",
       "intersection"
@@ -57,18 +57,18 @@
     "source": "https://www.mathsisfun.com/geometry/vertical-angles.html"
   },
   {
-    "seedId": "7ad3b388-f810-489d-a65e-2cfbea8df84c",
+    "seedId": "0da4b94c-7246-4e72-8136-ee04f17f9447",
     "category": "science",
     "navigationKeyword1": "geometry",
     "navigationKeyword2": "angles",
-    "question": "Parallel lines + transversal: corresponding angles?",
-    "correctAnswer": "Congruent",
+    "question": "If parallel lines are cut by a transversal, how are corresponding angles related?",
+    "correctAnswer": "They are congruent",
     "incorrectAnswers": [
-      "Always supplementary",
-      "Never related",
-      "Sum 90"
+      "They are always supplementary",
+      "They are unrelated",
+      "They always add to 90 degrees"
     ],
-    "explanation": "Same relative position.",
+    "explanation": "Corresponding angles occupy matching positions at the two intersections, and parallel lines make those matching angles equal.",
     "keywords": [
       "corresponding-angles",
       "parallel"
@@ -76,18 +76,18 @@
     "source": "https://www.mathsisfun.com/geometry/parallel-lines.html"
   },
   {
-    "seedId": "3fe6aaac-9008-4314-9733-474d6fc72680",
+    "seedId": "b4676f41-ebf2-47d6-b48e-1b88bd025428",
     "category": "science",
     "navigationKeyword1": "geometry",
     "navigationKeyword2": "angles",
-    "question": "Alternate interior angles (parallel lines)?",
-    "correctAnswer": "Congruent",
+    "question": "If parallel lines are cut by a transversal, how are alternate interior angles related?",
+    "correctAnswer": "They are congruent",
     "incorrectAnswers": [
-      "Supplementary",
-      "Unrelated",
-      "Sum 180 always for any lines"
+      "They are always supplementary",
+      "They are unrelated",
+      "They are equal only for perpendicular lines"
     ],
-    "explanation": "Z-pattern.",
+    "explanation": "Alternate interior angles lie between the parallel lines on opposite sides of the transversal, and they match in measure.",
     "keywords": [
       "alternate-interior",
       "parallel"
@@ -95,18 +95,18 @@
     "source": "https://www.mathsisfun.com/geometry/parallel-lines.html"
   },
   {
-    "seedId": "33ae5eaf-0a9c-4e55-b297-0bfcaf6448ab",
+    "seedId": "19ae40d0-cc23-43a9-be01-bdbec07bf05f",
     "category": "science",
     "navigationKeyword1": "geometry",
     "navigationKeyword2": "angles",
-    "question": "Triangle angle sum?",
-    "correctAnswer": "180\u00b0",
+    "question": "What is the sum of the interior angles of a triangle in Euclidean geometry?",
+    "correctAnswer": "180 degrees",
     "incorrectAnswers": [
-      "360\u00b0",
-      "90\u00b0",
-      "270\u00b0"
+      "90 degrees",
+      "270 degrees",
+      "360 degrees"
     ],
-    "explanation": "Euclidean plane.",
+    "explanation": "In the Euclidean plane, the three interior angles of any triangle always add to 180 degrees.",
     "keywords": [
       "triangle-sum",
       "angles"
@@ -114,18 +114,18 @@
     "source": "https://www.mathsisfun.com/proofangles.html"
   },
   {
-    "seedId": "cfa69ea3-62d3-4942-9cb5-db03ed4eaab7",
+    "seedId": "9256aa74-4a6d-460a-803d-c6e46d5197ea",
     "category": "science",
     "navigationKeyword1": "geometry",
     "navigationKeyword2": "angles",
-    "question": "Exterior angle theorem?",
-    "correctAnswer": "Exterior equals sum of remote interior angles",
+    "question": "What does the exterior angle theorem say for a triangle?",
+    "correctAnswer": "An exterior angle equals the sum of the two remote interior angles",
     "incorrectAnswers": [
-      "Equals adjacent interior only",
-      "Always 90",
-      "Equals 180"
+      "An exterior angle equals the adjacent interior angle",
+      "Every exterior angle is 90 degrees",
+      "Every exterior angle is 180 degrees"
     ],
-    "explanation": "One extension side.",
+    "explanation": "When one side of a triangle is extended, the exterior angle matches the sum of the two nonadjacent interior angles.",
     "keywords": [
       "exterior-angle",
       "triangle"
@@ -133,18 +133,18 @@
     "source": "https://www.mathsisfun.com/geometry/exterior-angles.html"
   },
   {
-    "seedId": "11290411-c1d8-4f69-8742-79e313c917bb",
+    "seedId": "81ebf3ed-2800-433e-ac6d-da0badec5921",
     "category": "science",
     "navigationKeyword1": "geometry",
     "navigationKeyword2": "angles",
-    "question": "Regular pentagon interior angle?",
-    "correctAnswer": "108\u00b0",
+    "question": "What is each interior angle of a regular pentagon?",
+    "correctAnswer": "108 degrees",
     "incorrectAnswers": [
-      "120\u00b0",
-      "90\u00b0",
-      "72\u00b0"
+      "72 degrees",
+      "90 degrees",
+      "120 degrees"
     ],
-    "explanation": "(n\u22122)180/n.",
+    "explanation": "For a regular n-gon, each interior angle is ((n-2) x 180)/n. Substituting n = 5 gives 108 degrees.",
     "keywords": [
       "polygon-angles",
       "regular"
@@ -152,18 +152,18 @@
     "source": "https://www.mathsisfun.com/geometry/interior-angles-polygons.html"
   },
   {
-    "seedId": "d74b57fd-78c5-4106-b43c-3bab522d7aa3",
+    "seedId": "8a6eea8a-9d06-44bd-81a8-374cd5b37c6d",
     "category": "science",
     "navigationKeyword1": "geometry",
     "navigationKeyword2": "angles",
-    "question": "Central angle vs inscribed subtending same arc?",
-    "correctAnswer": "Inscribed is half central (circle)",
+    "question": "If a central angle and an inscribed angle intercept the same arc, how are they related?",
+    "correctAnswer": "The inscribed angle is half the central angle",
     "incorrectAnswers": [
-      "Equal always",
-      "Double central",
-      "Unrelated"
+      "They are always equal",
+      "The inscribed angle is double the central angle",
+      "There is no fixed relationship"
     ],
-    "explanation": "On same arc.",
+    "explanation": "An inscribed angle subtending a given arc measures half of the central angle subtending that same arc.",
     "keywords": [
       "inscribed-angle",
       "circle"
@@ -171,18 +171,18 @@
     "source": "https://www.mathsisfun.com/geometry/circle-theorems.html"
   },
   {
-    "seedId": "d4a91100-afb6-4732-9357-130237b52737",
+    "seedId": "5b61d70c-c943-4c76-a01d-3bce83175ddc",
     "category": "science",
     "navigationKeyword1": "geometry",
     "navigationKeyword2": "angles",
-    "question": "Parallel condition (corresponding congruent)?",
-    "correctAnswer": "Lines parallel if corresponding angles congruent (converse setup)",
+    "question": "What converse angle fact can be used to prove two lines are parallel?",
+    "correctAnswer": "If corresponding angles are congruent, the lines are parallel",
     "incorrectAnswers": [
-      "Always intersect",
-      "Never testable",
-      "Only in 3D"
+      "If the lines intersect once, the lines are parallel",
+      "If one angle is acute, the lines are parallel",
+      "If the transversal is horizontal, the lines are parallel"
     ],
-    "explanation": "Proof ingredient.",
+    "explanation": "The converse of the corresponding angles theorem says equal corresponding angles imply the lines are parallel.",
     "keywords": [
       "parallel-test",
       "proof"
@@ -190,18 +190,18 @@
     "source": "https://www.mathsisfun.com/geometry/parallel-lines.html"
   },
   {
-    "seedId": "64d176ee-ed63-4358-bde4-ab29f243a850",
+    "seedId": "baaf09e0-16a5-49e6-b6bb-9b74f9699d7c",
     "category": "science",
     "navigationKeyword1": "geometry",
     "navigationKeyword2": "angles",
-    "question": "Radians in semicircle?",
-    "correctAnswer": "\u03c0",
+    "question": "How many radians are in a semicircle?",
+    "correctAnswer": "pi radians",
     "incorrectAnswers": [
-      "\u03c0/2",
-      "2\u03c0",
-      "1"
+      "pi/2 radians",
+      "2pi radians",
+      "1 radian"
     ],
-    "explanation": "Straight angle.",
+    "explanation": "A full circle is 2pi radians, so half of a circle is pi radians.",
     "keywords": [
       "radians",
       "angles"
@@ -209,18 +209,18 @@
     "source": "https://www.mathsisfun.com/geometry/radians.html"
   },
   {
-    "seedId": "01484082-96b0-4750-ba85-4e35917ac152",
+    "seedId": "d938b2cd-78fa-4fdd-ae98-aff05bbef112",
     "category": "science",
     "navigationKeyword1": "geometry",
     "navigationKeyword2": "angles",
-    "question": "Angle bisector property (distance)?",
-    "correctAnswer": "Points on bisector equidistant from the two sides",
+    "question": "What distance property describes points on an angle bisector?",
+    "correctAnswer": "They are equidistant from the two sides of the angle",
     "incorrectAnswers": [
-      "Equidistant from vertices",
-      "Perpendicular to base always",
-      "No distance property"
+      "They are equidistant from the vertices of all nearby triangles",
+      "They are always on a perpendicular bisector",
+      "They have no special distance property"
     ],
-    "explanation": "Perpendicular distance to rays.",
+    "explanation": "Any point on an angle bisector has equal perpendicular distance to each side of the angle.",
     "keywords": [
       "angle-bisector",
       "locus"

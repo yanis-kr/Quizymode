@@ -149,7 +149,7 @@ const CollectionDetailPage = () => {
   const collectionReturnUrl = collectionPath;
 
   return (
-    <div className="px-4 py-6 sm:px-0">
+    <div className="space-y-4">
       {allItems.length > 0 && (
         <ScopeSecondaryBar
           scopeType="collection"
@@ -162,36 +162,36 @@ const CollectionDetailPage = () => {
           }}
         />
       )}
-      <div className="flex flex-wrap items-center justify-between gap-4 mt-4 mb-4">
+      <div className="mt-4 flex flex-wrap items-center justify-between gap-4 rounded-[28px] border border-slate-200/80 bg-white/90 p-5 shadow-sm shadow-slate-300/20">
         <div className="min-w-0">
-          <div className="text-xs font-medium text-gray-500 uppercase tracking-wide">
+          <div className="text-xs font-semibold uppercase tracking-wide text-slate-500">
             Collection
           </div>
           <div className="flex flex-wrap items-baseline gap-2">
-            <div className="text-lg font-semibold text-gray-900 truncate max-w-xs sm:max-w-sm md:max-w-md">
+            <div className="max-w-xs truncate text-lg font-semibold text-slate-900 sm:max-w-sm md:max-w-md">
               {collectionData?.name ?? "Untitled collection"}
             </div>
             {collectionData?.description && collectionData.description.trim() !== "" && (
-              <div className="text-sm text-gray-500 truncate max-w-xs sm:max-w-sm md:max-w-lg">
+              <div className="max-w-xs truncate text-sm text-slate-600 sm:max-w-sm md:max-w-lg">
                 {collectionData.description}
               </div>
             )}
           </div>
         </div>
         <div className="flex flex-wrap items-center gap-4">
-          <div className="text-sm text-gray-600">
+          <div className="text-sm text-slate-600">
             {collectionData?.itemCount ?? totalCount} items
           </div>
           {allItems.length > 0 && (
             <div className="flex items-center gap-2">
-              <label className="text-sm text-gray-600">Per page:</label>
+              <label className="text-sm text-slate-600">Per page:</label>
               <select
                 value={pageSize}
                 onChange={(e) => {
                   setPageSize(parseInt(e.target.value, 10));
                   setItemsPage(1);
                 }}
-                className="rounded border-gray-300 text-sm"
+                className="rounded border-slate-300 bg-white text-sm text-slate-900"
               >
                 {PAGE_SIZE_OPTIONS.map((n) => (
                   <option key={n} value={n}>
@@ -204,17 +204,17 @@ const CollectionDetailPage = () => {
           <button
             type="button"
             onClick={() => setShowDetails(true)}
-            className="inline-flex items-center px-3 py-1.5 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-md hover:bg-gray-50"
+            className="inline-flex items-center rounded-md border border-slate-300 bg-white px-3 py-1.5 text-sm font-medium text-slate-700 hover:bg-slate-50"
           >
             Details
           </button>
         </div>
       </div>
       {isOwner && (
-        <div className="mb-4 p-4 bg-gray-50 rounded-lg flex flex-wrap items-center justify-between gap-2">
+        <div className="flex flex-wrap items-center justify-between gap-2 rounded-2xl border border-slate-200 bg-slate-50/90 p-4">
           <div className="flex items-center gap-2">
-            <span className="text-sm font-medium text-gray-700">Shared with others</span>
-            <span className="text-sm text-gray-500">(anyone with the link can view and quiz; collection also appears in Discover search)</span>
+            <span className="text-sm font-medium text-slate-700">Shared with others</span>
+            <span className="text-sm text-slate-600">(anyone with the link can view and quiz; collection also appears in Discover search)</span>
           </div>
           <button
             type="button"
@@ -242,8 +242,8 @@ const CollectionDetailPage = () => {
         </div>
       )}
       {isOwner && (
-        <div className="mb-4 p-4 bg-gray-50 rounded-lg">
-          <label className="block text-sm font-medium text-gray-700 mb-1">Description (optional, helps others find it)</label>
+        <div className="rounded-2xl border border-slate-200 bg-slate-50/90 p-4">
+          <label className="mb-1 block text-sm font-medium text-slate-700">Description (optional, helps others find it)</label>
           <textarea
             key={collectionData?.description ?? "empty"}
             defaultValue={collectionData?.description ?? ""}
@@ -254,26 +254,26 @@ const CollectionDetailPage = () => {
             }}
             placeholder="e.g. Biology chapter 5 practice set"
             rows={2}
-            className="w-full px-3 py-2 border border-gray-300 rounded-md text-sm"
+            className="w-full rounded-md border border-slate-300 bg-white px-3 py-2 text-sm text-slate-900"
           />
         </div>
       )}
       {isOwner && (
-        <div className="mb-4 p-4 bg-gray-50 rounded-lg space-y-3">
+        <div className="space-y-3 rounded-2xl border border-slate-200 bg-slate-50/90 p-4">
           <div className="flex flex-wrap items-center gap-3">
             <div className="flex items-center gap-2">
-              <BookmarkIcon className="h-5 w-5 text-gray-500 flex-shrink-0" />
-              <span className="text-sm font-medium text-gray-700">Bookmarked by</span>
+              <BookmarkIcon className="h-5 w-5 flex-shrink-0 text-slate-500" />
+              <span className="text-sm font-medium text-slate-700">Bookmarked by</span>
               {bookmarkedByData && (
-                <span className="text-xs text-gray-500">
+                <span className="text-xs text-slate-500">
                   {bookmarkedByData.bookmarkedBy.length} user
                   {bookmarkedByData.bookmarkedBy.length === 1 ? "" : "s"}
                 </span>
               )}
             </div>
           </div>
-          <div className="flex flex-wrap items-center gap-3 pt-1 border-t border-gray-200">
-            <span className="text-sm font-medium text-gray-700">Rating</span>
+          <div className="flex flex-wrap items-center gap-3 border-t border-slate-200 pt-1">
+            <span className="text-sm font-medium text-slate-700">Rating</span>
             <div className="flex items-center gap-1 flex-shrink-0">
               {[1, 2, 3, 4, 5].map((star) => (
                 <button
@@ -287,19 +287,19 @@ const CollectionDetailPage = () => {
                   {ratingData?.myStars != null && star <= ratingData.myStars ? (
                     <StarIconSolid className="h-5 w-5 text-amber-500" />
                   ) : (
-                    <StarIcon className="h-5 w-5 text-gray-400" />
+                    <StarIcon className="h-5 w-5 text-slate-400" />
                   )}
                 </button>
               ))}
             </div>
-            <span className="text-sm text-gray-500">
+            <span className="text-sm text-slate-600">
               {ratingData?.averageStars != null
                 ? `${ratingData.averageStars} (${ratingData.count} rating${ratingData.count === 1 ? "" : "s"})`
                 : "No ratings yet"}
             </span>
           </div>
           {bookmarkedByData && bookmarkedByData.bookmarkedBy.length > 0 ? (
-            <ul className="text-sm text-gray-600 space-y-1">
+            <ul className="space-y-1 text-sm text-slate-600">
               {bookmarkedByData.bookmarkedBy.map((b) => (
                 <li key={b.userId}>
                   {b.name ?? b.userId} · {new Date(b.bookmarkedAt).toLocaleDateString()}
@@ -307,7 +307,7 @@ const CollectionDetailPage = () => {
               ))}
             </ul>
           ) : (
-            <p className="text-sm text-gray-500">
+            <p className="text-sm text-slate-600">
               No one has bookmarked this collection yet.
             </p>
           )}
@@ -364,8 +364,8 @@ const CollectionDetailPage = () => {
       )}
 
       {paginatedItems.length === 0 ? (
-        <div className="text-center py-12">
-          <p className="text-gray-500">No items in this collection.</p>
+        <div className="rounded-[28px] border border-dashed border-slate-300 bg-slate-50/90 py-12 text-center">
+          <p className="text-slate-700">No items in this collection.</p>
         </div>
       ) : (
         <ItemListSection

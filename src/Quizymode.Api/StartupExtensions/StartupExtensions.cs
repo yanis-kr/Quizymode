@@ -14,6 +14,7 @@ internal static partial class StartupExtensions
         builder.AddHealthCheckServices();
         builder.AddCorsServices();
         builder.AddPostgreSqlServices();
+        builder.AddRateLimitingServices();
 
         // Configure forwarded headers for proxy scenarios (Cloudflare in production, Aspire in development)
         builder.Services.Configure<ForwardedHeadersOptions>(options =>
@@ -76,6 +77,7 @@ internal static partial class StartupExtensions
 
         // Authentication & Authorization
         app.UseAuthentication();
+        app.UseRateLimiter();
         app.UseAuthorization();
 
         // Upsert user record on authenticated requests
