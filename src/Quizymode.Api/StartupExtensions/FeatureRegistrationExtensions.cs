@@ -7,15 +7,16 @@ internal static class FeatureRegistrationExtensions
     public static WebApplicationBuilder AddFeatureRegistrations(this WebApplicationBuilder builder)
     {
         // Scan assembly for IFeatureRegistration implementations and register them
-        var featureRegistrationTypes = typeof(IFeatureRegistration).Assembly
+        List<Type> featureRegistrationTypes = typeof(IFeatureRegistration).Assembly
             .GetTypes()
             .Where(t => t.IsClass && 
                        !t.IsAbstract && 
                        t.GetInterfaces().Contains(typeof(IFeatureRegistration)))
+            .OrderBy(t => t.FullName, StringComparer.Ordinal)
             .ToList();
 
         // Execute each feature registration directly
-        foreach (var registrationType in featureRegistrationTypes)
+        foreach (Type registrationType in featureRegistrationTypes)
         {
             if (Activator.CreateInstance(registrationType) is IFeatureRegistration registration)
             {
@@ -29,14 +30,15 @@ internal static class FeatureRegistrationExtensions
     public static WebApplication MapFeatureEndpoints(this WebApplication app)
     {
         // Auto-discover and map all IEndpoint implementations
-        var endpointTypes = typeof(IEndpoint).Assembly
+        List<Type> endpointTypes = typeof(IEndpoint).Assembly
             .GetTypes()
             .Where(t => t.IsClass && 
                        !t.IsAbstract && 
                        t.GetInterfaces().Contains(typeof(IEndpoint)))
+            .OrderBy(t => t.FullName, StringComparer.Ordinal)
             .ToList();
 
-        foreach (var endpointType in endpointTypes)
+        foreach (Type endpointType in endpointTypes)
         {
             if (Activator.CreateInstance(endpointType) is IEndpoint endpoint)
             {
