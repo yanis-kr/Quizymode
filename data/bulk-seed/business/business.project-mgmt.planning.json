@@ -1,0 +1,116 @@
+[
+  {
+    "category": "business",
+    "navigationKeyword1": "project-mgmt",
+    "navigationKeyword2": "planning",
+    "question": "What is a Work Breakdown Structure (WBS)?",
+    "correctAnswer": "A hierarchical decomposition of project deliverables into manageable pieces.",
+    "incorrectAnswers": [
+      "A list of employee salaries.",
+      "A marketing hashtag strategy.",
+      "A customer refund policy."
+    ],
+    "explanation": "WBS clarifies scope and ownership.",
+    "keywords": [
+      "wbs",
+      "scope"
+    ],
+    "source": "https://www.pmi.org/learning/library/work-breakdown-structure-basics-7486",
+    "seedId": "776ae9cc-d383-409f-ba64-9a72bbc9a7b5"
+  },
+  {
+    "category": "business",
+    "navigationKeyword1": "project-mgmt",
+    "navigationKeyword2": "planning",
+    "question": "What is the critical path?",
+    "correctAnswer": "The longest sequence of dependent tasks that determines the shortest possible project duration.",
+    "incorrectAnswers": [
+      "Any task you like.",
+      "Tasks with zero risk.",
+      "Only procurement tasks."
+    ],
+    "explanation": "Slipping critical path tasks delays the project.",
+    "keywords": [
+      "critical-path",
+      "scheduling"
+    ],
+    "source": "https://www.pmi.org/learning/library/critical-path-method-scheduling-7123",
+    "seedId": "e7e919a3-a64e-445f-ba90-ca024dadb363"
+  },
+  {
+    "category": "business",
+    "navigationKeyword1": "project-mgmt",
+    "navigationKeyword2": "planning",
+    "question": "What does a finish-to-start dependency mean?",
+    "correctAnswer": "The successor cannot start until the predecessor finishes.",
+    "incorrectAnswers": [
+      "Both tasks must start simultaneously always.",
+      "Tasks cannot depend on each other.",
+      "Only weekends."
+    ],
+    "explanation": "Dependencies drive network scheduling.",
+    "keywords": [
+      "dependencies",
+      "schedule"
+    ],
+    "source": "https://www.pmi.org/learning/library/understanding-dependencies-7055",
+    "seedId": "971ba8b2-7084-48a0-a362-7ef1ce391eaa"
+  },
+  {
+    "category": "business",
+    "navigationKeyword1": "project-mgmt",
+    "navigationKeyword2": "planning",
+    "question": "What is a milestone?",
+    "correctAnswer": "A significant checkpoint with zero duration marking completion of key deliverables or decisions.",
+    "incorrectAnswers": [
+      "A two-week task always.",
+      "A budget line only.",
+      "A type of bug."
+    ],
+    "explanation": "Milestones communicate progress to stakeholders.",
+    "keywords": [
+      "milestone",
+      "planning"
+    ],
+    "source": "https://www.pmi.org/learning/library/project-milestones-7110",
+    "seedId": "45aa8838-bd9a-4858-9a3d-0e6687116993"
+  },
+  {
+    "category": "business",
+    "navigationKeyword1": "project-mgmt",
+    "navigationKeyword2": "planning",
+    "question": "What is scope creep?",
+    "correctAnswer": "Uncontrolled expansion of project scope without corresponding time/budget changes.",
+    "incorrectAnswers": [
+      "Planned change control.",
+      "A documented risk response.",
+      "A quality improvement always."
+    ],
+    "explanation": "Manage changes through a formal process.",
+    "keywords": [
+      "scope-creep",
+      "change-control"
+    ],
+    "source": "https://www.pmi.org/learning/library/scope-creep-7115",
+    "seedId": "432f3998-9ebc-40b9-ae7e-79f85fc5ff27"
+  },
+  {
+    "category": "business",
+    "navigationKeyword1": "project-mgmt",
+    "navigationKeyword2": "planning",
+    "question": "What is a schedule baseline?",
+    "correctAnswer": "The approved schedule used to measure performance and variances.",
+    "incorrectAnswers": [
+      "The first draft never updated.",
+      "Only actuals with no plan.",
+      "A marketing calendar."
+    ],
+    "explanation": "Baselines enable earned value and retrospectives.",
+    "keywords": [
+      "baseline",
+      "schedule"
+    ],
+    "source": "https://www.pmi.org/learning/library/project-baseline-7112",
+    "seedId": "af2d34fd-dde9-4ccd-a0ec-b47967218dbf"
+  }
+]

@@ -1,0 +1,116 @@
+[
+  {
+    "category": "tech",
+    "navigationKeyword1": "networking",
+    "navigationKeyword2": "tcp-ip",
+    "question": "What does TCP provide that UDP does not guarantee?",
+    "correctAnswer": "Reliable, ordered byte delivery between endpoints",
+    "incorrectAnswers": [
+      "Smaller packet headers always",
+      "Broadcast to every host on Earth",
+      "Guaranteed encryption without TLS"
+    ],
+    "explanation": "TCP retransmits lost segments and orders data; UDP is connectionless and best-effort.",
+    "keywords": [
+      "tcp-ip",
+      "tcp"
+    ],
+    "source": "https://www.rfc-editor.org/rfc/rfc9293",
+    "seedId": "b9e536be-72da-5b09-80a9-82f7a0a94a22"
+  },
+  {
+    "category": "tech",
+    "navigationKeyword1": "networking",
+    "navigationKeyword2": "tcp-ip",
+    "question": "What is the main role of the Internet Protocol (IP) in the TCP/IP stack?",
+    "correctAnswer": "Addressing and routing packets between hosts",
+    "incorrectAnswers": [
+      "Guaranteeing delivery on its own",
+      "Rendering web pages",
+      "Assigning Wi-Fi passwords"
+    ],
+    "explanation": "IP provides logical addresses and forwarding; reliability is handled by higher layers like TCP.",
+    "keywords": [
+      "tcp-ip",
+      "ip"
+    ],
+    "source": "https://www.rfc-editor.org/rfc/rfc791",
+    "seedId": "6a69c181-8009-5e60-a09d-7da56061db6e"
+  },
+  {
+    "category": "tech",
+    "navigationKeyword1": "networking",
+    "navigationKeyword2": "tcp-ip",
+    "question": "What is a subnet mask used for?",
+    "correctAnswer": "To determine which part of an IP address identifies the network",
+    "incorrectAnswers": [
+      "To encrypt email bodies",
+      "To set HTTP cache headers",
+      "To choose Wi-Fi channels only"
+    ],
+    "explanation": "Masking divides the address into network and host portions for local routing decisions.",
+    "keywords": [
+      "tcp-ip",
+      "subnet"
+    ],
+    "source": "https://www.cloudflare.com/learning/network-layer/what-is-a-subnet/",
+    "seedId": "34885c5e-3e7c-5120-9d90-a133ab54e7aa"
+  },
+  {
+    "category": "tech",
+    "navigationKeyword1": "networking",
+    "navigationKeyword2": "tcp-ip",
+    "question": "In the TCP three-way handshake, what is the second step from the server?",
+    "correctAnswer": "SYN-ACK",
+    "incorrectAnswers": [
+      "FIN-ACK",
+      "RST only",
+      "DHCP OFFER"
+    ],
+    "explanation": "The server acknowledges the client's SYN and sends its own SYN in the SYN-ACK segment.",
+    "keywords": [
+      "tcp-ip",
+      "handshake"
+    ],
+    "source": "https://developer.mozilla.org/en-US/docs/Glossary/TCP_handshake",
+    "seedId": "cbbb8cb3-ef4a-5011-96ac-8eb9a96da45c"
+  },
+  {
+    "category": "tech",
+    "navigationKeyword1": "networking",
+    "navigationKeyword2": "tcp-ip",
+    "question": "What does a port number identify on a host?",
+    "correctAnswer": "An endpoint for a specific application or service",
+    "incorrectAnswers": [
+      "The monitor refresh rate",
+      "A physical USB socket",
+      "A Wi-Fi SSID string"
+    ],
+    "explanation": "Ports multiplex many services on one IP address using 16-bit numbers.",
+    "keywords": [
+      "tcp-ip",
+      "ports"
+    ],
+    "source": "https://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.xhtml",
+    "seedId": "a0b6ac36-152f-5e13-ba56-045d66f52dec"
+  },
+  {
+    "category": "tech",
+    "navigationKeyword1": "networking",
+    "navigationKeyword2": "tcp-ip",
+    "question": "Why does IPv6 use a much larger address space than IPv4?",
+    "correctAnswer": "To support vastly more unique addresses globally",
+    "incorrectAnswers": [
+      "To make headers smaller than IPv4",
+      "To eliminate TCP entirely",
+      "To remove the need for DNS"
+    ],
+    "explanation": "128-bit IPv6 addresses ease exhaustion and hierarchical allocation compared with 32-bit IPv4.",
+    "keywords": [
+      "tcp-ip",
+      "ipv6"
+    ],
+    "source": "https://www.rfc-editor.org/rfc/rfc8200",
+    "seedId": "8833afe0-2074-5c15-a7b6-f5a4ec3a7c70"
+  }
+]

@@ -2,6 +2,8 @@
 
 This document explains how to configure AWS Cognito authentication for the Quizymode API and how to obtain bearer tokens for API calls.
 
+Important: the current Quizymode web app uses AWS Amplify user-pool APIs for sign-in and token refresh. The main app flow is JWT bearer auth backed by Cognito, but it is not currently using Cognito Hosted UI as its primary browser sign-in path, so the app is not running an OAuth PKCE redirect flow today. Hosted UI examples in this document are mainly for manual testing and troubleshooting.
+
 ## Configuration Overview
 
 The application is configured to use AWS Cognito User Pool for authentication and authorization. The following settings are used:

@@ -1,0 +1,122 @@
+[
+  {
+    "category": "business",
+    "navigationKeyword1": "management",
+    "navigationKeyword2": "leadership",
+    "question": "In most business contexts, what is the core difference between leadership and management?",
+    "correctAnswer": "Leadership focuses on direction and influence; management focuses on planning, organizing, and controlling to execute goals.",
+    "incorrectAnswers": [
+      "Leadership is only about budgets; management is only about inspiring people",
+      "Leadership is always automatic; management requires no coordination",
+      "They are identical terms used interchangeably in every organization"
+    ],
+    "explanation": "A common way to distinguish them is by purpose: leadership steers and motivates, while management structures and ensures execution.",
+    "keywords": [
+      "leadership",
+      "management",
+      "direction"
+    ],
+    "source": "https://www.mindtools.com/a4y7o2a/leadership-vs-management/",
+    "seedId": "e14b369c-36a8-538b-9211-b587ac4a59cf"
+  },
+  {
+    "category": "business",
+    "navigationKeyword1": "management",
+    "navigationKeyword2": "leadership",
+    "question": "What is a key idea behind transformational leadership?",
+    "correctAnswer": "Inspiring people by aligning goals and motivating them to exceed expectations.",
+    "incorrectAnswers": [
+      "Maximizing control by relying only on rules and punishments",
+      "Waiting for perfect conditions before setting any goals",
+      "Focusing only on short-term transactions with no development component"
+    ],
+    "explanation": "Transformational leadership emphasizes vision and motivation, often encouraging growth rather than only rewarding short-term performance.",
+    "keywords": [
+      "transformational-leadership",
+      "motivation",
+      "vision"
+    ],
+    "source": "https://hbr.org/",
+    "seedId": "73586248-6149-5824-9de8-12660ac7997f"
+  },
+  {
+    "category": "business",
+    "navigationKeyword1": "management",
+    "navigationKeyword2": "leadership",
+    "question": "What does situational leadership emphasize?",
+    "correctAnswer": "Adjusting leadership style to the followers’ readiness/competence for the task.",
+    "incorrectAnswers": [
+      "Using one leadership style regardless of team experience",
+      "Never changing approach once a project starts",
+      "Choosing style only based on organizational headcount"
+    ],
+    "explanation": "Situational leadership is about matching leadership behaviors to the needs of the task and the team’s capability.",
+    "keywords": [
+      "situational-leadership",
+      "readiness",
+      "style-match"
+    ],
+    "source": "https://www.mindtools.com/",
+    "seedId": "4129cbf6-0980-50ff-815d-470100e331c9"
+  },
+  {
+    "category": "business",
+    "navigationKeyword1": "management",
+    "navigationKeyword2": "leadership",
+    "question": "In leadership terms, what is emotional intelligence (EI) most associated with?",
+    "correctAnswer": "Recognizing and managing emotions in yourself and others to improve communication and decision-making.",
+    "incorrectAnswers": [
+      "Only performing better on technical tasks than peers",
+      "Never showing emotion in front of others",
+      "Making every decision without considering other people’s reactions"
+    ],
+    "explanation": "EI is often framed as awareness and regulation of emotions that supports relationships and effective influence.",
+    "keywords": [
+      "emotional-intelligence",
+      "communication",
+      "leadership-skill"
+    ],
+    "source": "https://hbr.org/",
+    "seedId": "7087d275-6059-5a70-9a89-5b971e9d7717"
+  },
+  {
+    "category": "business",
+    "navigationKeyword1": "management",
+    "navigationKeyword2": "leadership",
+    "question": "What does servant leadership primarily prioritize?",
+    "correctAnswer": "Serving others’ needs to help people grow and perform, rather than leading for personal power.",
+    "incorrectAnswers": [
+      "Leading only to maximize status and authority",
+      "Avoiding responsibility by delegating all tasks to others",
+      "Using strict hierarchies as the only way to motivate teams"
+    ],
+    "explanation": "Servant leadership is oriented around enabling team members and focusing on their development and outcomes.",
+    "keywords": [
+      "servant-leadership",
+      "team-growth",
+      "people-first"
+    ],
+    "source": "https://www.mindtools.com/",
+    "seedId": "1f366c73-fe79-52c3-b96c-ad1b1efebfb0"
+  },
+  {
+    "category": "business",
+    "navigationKeyword1": "management",
+    "navigationKeyword2": "leadership",
+    "question": "Which best describes a practical way leaders build trust?",
+    "correctAnswer": "Being consistent, transparent about decisions, and following through on commitments.",
+    "incorrectAnswers": [
+      "Changing plans frequently without explanation to keep people alert",
+      "Avoiding all feedback so no one can disagree",
+      "Making promises only when outcomes are certain"
+    ],
+    "explanation": "Trust is strengthened when people experience predictable behavior and reliable follow-through over time.",
+    "keywords": [
+      "trust",
+      "communication",
+      "accountability"
+    ],
+    "source": "https://hbr.org/",
+    "seedId": "c1d83b95-9708-58ea-a2a2-b238a02db3af"
+  }
+]

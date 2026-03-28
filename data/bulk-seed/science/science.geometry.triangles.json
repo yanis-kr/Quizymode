@@ -1,0 +1,230 @@
+[
+  {
+    "seedId": "069d91f9-39a1-44e2-803d-23f93c5df4f6",
+    "category": "science",
+    "navigationKeyword1": "geometry",
+    "navigationKeyword2": "triangles",
+    "question": "SSS congruence?",
+    "correctAnswer": "Three sides determine triangle up to congruence",
+    "incorrectAnswers": [
+      "Always similar not congruent",
+      "Never enough",
+      "Need angles only"
+    ],
+    "explanation": "Triangle congruence rule.",
+    "keywords": [
+      "sss",
+      "congruence"
+    ],
+    "source": "https://www.mathsisfun.com/geometry/triangles-congruent.html"
+  },
+  {
+    "seedId": "39239689-238d-49f3-a8b3-4cde6894867e",
+    "category": "science",
+    "navigationKeyword1": "geometry",
+    "navigationKeyword2": "triangles",
+    "question": "SAS congruence?",
+    "correctAnswer": "Two sides and included angle",
+    "incorrectAnswers": [
+      "SSA always",
+      "AAA",
+      "ASA wrong"
+    ],
+    "explanation": "Included angle matters.",
+    "keywords": [
+      "sas",
+      "congruence"
+    ],
+    "source": "https://www.mathsisfun.com/geometry/triangles-congruent.html"
+  },
+  {
+    "seedId": "0b4d0dd3-1a11-4113-95c9-23aa2ccb1d83",
+    "category": "science",
+    "navigationKeyword1": "geometry",
+    "navigationKeyword2": "triangles",
+    "question": "ASA congruence?",
+    "correctAnswer": "Two angles and included side",
+    "incorrectAnswers": [
+      "AAA for congruence",
+      "SSA",
+      "SAS same"
+    ],
+    "explanation": "Determines shape+size.",
+    "keywords": [
+      "asa",
+      "congruence"
+    ],
+    "source": "https://www.mathsisfun.com/geometry/triangles-congruent.html"
+  },
+  {
+    "seedId": "07933512-371e-4f57-bd73-e0e1ed79c6e8",
+    "category": "science",
+    "navigationKeyword1": "geometry",
+    "navigationKeyword2": "triangles",
+    "question": "Triangle inequality?",
+    "correctAnswer": "Any side < sum of other two",
+    "incorrectAnswers": [
+      "Any side > sum",
+      "Always equality",
+      "Only right triangles"
+    ],
+    "explanation": "Constructibility.",
+    "keywords": [
+      "triangle-inequality",
+      "sides"
+    ],
+    "source": "https://www.mathsisfun.com/geometry/triangle-inequality.html"
+  },
+  {
+    "seedId": "09e32763-c04e-4e21-8e7d-27a2d86f13e2",
+    "category": "science",
+    "navigationKeyword1": "geometry",
+    "navigationKeyword2": "triangles",
+    "question": "Midsegment theorem?",
+    "correctAnswer": "Segment joining midpoints parallel to third side and half as long",
+    "incorrectAnswers": [
+      "Equal to third side",
+      "Perpendicular",
+      "No relation"
+    ],
+    "explanation": "Useful in proofs.",
+    "keywords": [
+      "midsegment",
+      "triangle"
+    ],
+    "source": "https://www.mathsisfun.com/geometry/triangles.html"
+  },
+  {
+    "seedId": "bf2e7166-368f-42af-ba86-abc7241ff5d1",
+    "category": "science",
+    "navigationKeyword1": "geometry",
+    "navigationKeyword2": "triangles",
+    "question": "Centroid is intersection of?",
+    "correctAnswer": "Medians",
+    "incorrectAnswers": [
+      "Altitudes",
+      "Angle bisectors",
+      "Perpendicular bisectors"
+    ],
+    "explanation": "Balances triangle (uniform density).",
+    "keywords": [
+      "centroid",
+      "medians"
+    ],
+    "source": "https://www.mathsisfun.com/geometry/triangle-centers.html"
+  },
+  {
+    "seedId": "f85f9169-a565-417a-88f9-f6f17309f6c7",
+    "category": "science",
+    "navigationKeyword1": "geometry",
+    "navigationKeyword2": "triangles",
+    "question": "Orthocenter is intersection of?",
+    "correctAnswer": "Altitudes",
+    "incorrectAnswers": [
+      "Medians",
+      "Bisectors of sides",
+      "Midsegments"
+    ],
+    "explanation": "May lie outside obtuse triangle.",
+    "keywords": [
+      "orthocenter",
+      "altitudes"
+    ],
+    "source": "https://www.mathsisfun.com/geometry/triangle-centers.html"
+  },
+  {
+    "seedId": "0ec7e100-024a-462d-a94e-020d72c5d5fa",
+    "category": "science",
+    "navigationKeyword1": "geometry",
+    "navigationKeyword2": "triangles",
+    "question": "Circumcenter is intersection of?",
+    "correctAnswer": "Perpendicular bisectors of sides",
+    "incorrectAnswers": [
+      "Medians",
+      "Altitudes",
+      "Angle bisectors"
+    ],
+    "explanation": "Center of circumscribed circle.",
+    "keywords": [
+      "circumcenter",
+      "circle"
+    ],
+    "source": "https://www.mathsisfun.com/geometry/triangle-centers.html"
+  },
+  {
+    "seedId": "97d8963f-396b-4c25-8429-543f97eca9de",
+    "category": "science",
+    "navigationKeyword1": "geometry",
+    "navigationKeyword2": "triangles",
+    "question": "Incenter is intersection of?",
+    "correctAnswer": "Angle bisectors",
+    "incorrectAnswers": [
+      "Perpendicular bisectors",
+      "Altitudes",
+      "Medians"
+    ],
+    "explanation": "Center of inscribed circle.",
+    "keywords": [
+      "incenter",
+      "bisectors"
+    ],
+    "source": "https://www.mathsisfun.com/geometry/triangle-centers.html"
+  },
+  {
+    "seedId": "bda1d20a-6b03-4d23-9a71-0249df0cb98b",
+    "category": "science",
+    "navigationKeyword1": "geometry",
+    "navigationKeyword2": "triangles",
+    "question": "Pythagorean theorem applies to?",
+    "correctAnswer": "Right triangles",
+    "incorrectAnswers": [
+      "All triangles",
+      "Only equilateral",
+      "Only isosceles"
+    ],
+    "explanation": "a^2+b^2=c^2 for legs a,b hypotenuse c.",
+    "keywords": [
+      "pythagorean",
+      "right-triangle"
+    ],
+    "source": "https://www.mathsisfun.com/pythagoras.html"
+  },
+  {
+    "seedId": "e772fe48-5de5-4bfd-be38-282bc08bf756",
+    "category": "science",
+    "navigationKeyword1": "geometry",
+    "navigationKeyword2": "triangles",
+    "question": "3-4-5 triangle is?",
+    "correctAnswer": "Right (Pythagorean triple)",
+    "incorrectAnswers": [
+      "Acute",
+      "Obtuse",
+      "Degenerate"
+    ],
+    "explanation": "9+16=25.",
+    "keywords": [
+      "pythagorean-triple",
+      "triangle"
+    ],
+    "source": "https://www.mathsisfun.com/numbers/pythagorean-triples.html"
+  },
+  {
+    "seedId": "cc5d4f2d-d760-41cb-90c6-029ea7968bf4",
+    "category": "science",
+    "navigationKeyword1": "geometry",
+    "navigationKeyword2": "triangles",
+    "question": "Similar triangles AA?",
+    "correctAnswer": "Two angles equal implies similar",
+    "incorrectAnswers": [
+      "Need AAA for similarity wrong",
+      "Need equal sides",
+      "Never similar"
+    ],
+    "explanation": "Shape same, scale maybe different.",
+    "keywords": [
+      "similarity",
+      "aa"
+    ],
+    "source": "https://www.mathsisfun.com/geometry/triangles-similar.html"
+  }
+]

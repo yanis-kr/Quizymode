@@ -1,0 +1,1094 @@
+{
+  "motion": [
+    {
+      "question": "Newton\u2019s first law (inertia) states?",
+      "correctAnswer": "Object stays at rest or constant velocity unless net force acts",
+      "incorrectAnswers": [
+        "Force always equals mv",
+        "Acceleration without force is normal",
+        "Friction never exists"
+      ],
+      "explanation": "Zero net force \u21d2 no acceleration.",
+      "keywords": [
+        "newton-first",
+        "inertia"
+      ],
+      "source": "https://openstax.org/books/university-physics-volume-1/pages/5-2-newtons-first-law"
+    },
+    {
+      "question": "Newton\u2019s second law?",
+      "correctAnswer": "F = ma",
+      "incorrectAnswers": [
+        "F = mv",
+        "F = m/a",
+        "F = m + a"
+      ],
+      "explanation": "Net force and acceleration same direction.",
+      "keywords": [
+        "newton-second",
+        "f-ma"
+      ],
+      "source": "https://openstax.org/books/university-physics-volume-1/pages/5-3-newtons-second-law"
+    },
+    {
+      "question": "Newton\u2019s third law?",
+      "correctAnswer": "Forces come in equal-and-opposite pairs on two bodies",
+      "incorrectAnswers": [
+        "Same body two forces cancel always",
+        "Heavier object exerts larger force on lighter",
+        "Normal force never exists"
+      ],
+      "explanation": "Action-reaction act on different objects.",
+      "keywords": [
+        "newton-third",
+        "action-reaction"
+      ],
+      "source": "https://openstax.org/books/university-physics-volume-1/pages/5-4-newtons-third-law"
+    },
+    {
+      "question": "Kinematic equation without time: v^2 = ?",
+      "correctAnswer": "v0^2 + 2a(x \u2212 x0)",
+      "incorrectAnswers": [
+        "v0 + 2ax",
+        "v0^2 + ax",
+        "v0^2 \u2212 2a/x"
+      ],
+      "explanation": "Constant acceleration relations.",
+      "keywords": [
+        "kinematics",
+        "motion"
+      ],
+      "source": "https://openstax.org/books/university-physics-volume-1/pages/3-5-equations-of-motion"
+    },
+    {
+      "question": "Projectile horizontal velocity (ideal, no air)?",
+      "correctAnswer": "Constant (no horizontal acceleration)",
+      "incorrectAnswers": [
+        "Increases linearly",
+        "Zero always",
+        "Equals vertical always"
+      ],
+      "explanation": "Gravity affects vertical component.",
+      "keywords": [
+        "projectile",
+        "components"
+      ],
+      "source": "https://openstax.org/books/university-physics-volume-1/pages/4-3-projectile-motion"
+    },
+    {
+      "question": "Centripetal acceleration direction?",
+      "correctAnswer": "Toward center of circular path",
+      "incorrectAnswers": [
+        "Tangent forward",
+        "Outward centrifugal force on body in inertial frame",
+        "Zero in uniform circular motion"
+      ],
+      "explanation": "Speed constant can still accelerate if direction changes.",
+      "keywords": [
+        "centripetal",
+        "circular-motion"
+      ],
+      "source": "https://openstax.org/books/university-physics-volume-1/pages/6-2-centripetal-force"
+    },
+    {
+      "question": "Friction static vs kinetic typically?",
+      "correctAnswer": "Static friction can be larger than kinetic",
+      "incorrectAnswers": [
+        "Kinetic always larger",
+        "Always equal",
+        "Neither exists on ice"
+      ],
+      "explanation": "Breakaway peak often higher.",
+      "keywords": [
+        "friction",
+        "static"
+      ],
+      "source": "https://openstax.org/books/university-physics-volume-1/pages/6-1-solving-problems-with-newtons-laws"
+    },
+    {
+      "question": "Impulse-momentum theorem?",
+      "correctAnswer": "J = \u222bF dt = \u0394p",
+      "incorrectAnswers": [
+        "J = mv^2",
+        "J = F/x",
+        "J = \u0394KE only"
+      ],
+      "explanation": "Relates force over time to momentum change.",
+      "keywords": [
+        "impulse",
+        "momentum"
+      ],
+      "source": "https://openstax.org/books/university-physics-volume-1/pages/9-2-impulse-and-momentum"
+    },
+    {
+      "question": "Conservation of momentum (isolated system)?",
+      "correctAnswer": "Total momentum constant if net external force zero",
+      "incorrectAnswers": [
+        "Always conserved even with external force",
+        "Only for elastic collisions",
+        "Never conserved"
+      ],
+      "explanation": "Explosions and collisions analyzed with this.",
+      "keywords": [
+        "momentum",
+        "conservation"
+      ],
+      "source": "https://openstax.org/books/university-physics-volume-1/pages/9-3-conservation-of-linear-momentum"
+    },
+    {
+      "question": "Weight vs mass?",
+      "correctAnswer": "Weight is gravitational force; mass is inertia",
+      "incorrectAnswers": [
+        "Same units always",
+        "Mass changes on moon",
+        "Weight is scalar mass"
+      ],
+      "explanation": "W = mg near Earth.",
+      "keywords": [
+        "weight",
+        "mass"
+      ],
+      "source": "https://openstax.org/books/university-physics-volume-1/pages/5-4-mass-and-weight"
+    },
+    {
+      "question": "Free-body diagram purpose?",
+      "correctAnswer": "Isolate object and show all external forces",
+      "incorrectAnswers": [
+        "Show only velocity vectors",
+        "Show energy levels only",
+        "Replace Newton laws"
+      ],
+      "explanation": "Critical for \u03a3F analysis.",
+      "keywords": [
+        "free-body",
+        "forces"
+      ],
+      "source": "https://openstax.org/books/university-physics-volume-1/pages/5-7-drawing-free-body-diagrams"
+    },
+    {
+      "question": "Terminal velocity idea?",
+      "correctAnswer": "Drag equals weight so net force zero",
+      "incorrectAnswers": [
+        "Acceleration keeps increasing",
+        "Occurs only in vacuum",
+        "Always at t=0"
+      ],
+      "explanation": "Falling object reaches steady speed.",
+      "keywords": [
+        "terminal-velocity",
+        "drag"
+      ],
+      "source": "https://en.wikipedia.org/wiki/Terminal_velocity"
+    }
+  ],
+  "energy": [
+    {
+      "question": "Work by constant force along displacement?",
+      "correctAnswer": "W = F d cos\u03b8",
+      "incorrectAnswers": [
+        "W = F/d",
+        "W = F \u00d7 d always regardless of angle",
+        "W = mv"
+      ],
+      "explanation": "Only component parallel to displacement does work.",
+      "keywords": [
+        "work",
+        "energy"
+      ],
+      "source": "https://openstax.org/books/university-physics-volume-1/pages/7-2-work"
+    },
+    {
+      "question": "Kinetic energy?",
+      "correctAnswer": "KE = (1/2)mv^2",
+      "incorrectAnswers": [
+        "mv",
+        "mgh always",
+        "1/2 mv"
+      ],
+      "explanation": "Scalar; frame-dependent.",
+      "keywords": [
+        "kinetic-energy",
+        "mechanics"
+      ],
+      "source": "https://openstax.org/books/university-physics-volume-1/pages/7-3-kinetic-energy"
+    },
+    {
+      "question": "Gravitational PE near Earth (uniform g)?",
+      "correctAnswer": "U = mgh (reference dependent)",
+      "incorrectAnswers": [
+        "U = 1/2 kx^2",
+        "U = mv",
+        "U always absolute"
+      ],
+      "explanation": "Choose reference height.",
+      "keywords": [
+        "potential-energy",
+        "gravity"
+      ],
+      "source": "https://openstax.org/books/university-physics-volume-1/pages/7-4-potential-energy"
+    },
+    {
+      "question": "Work\u2013energy theorem?",
+      "correctAnswer": "W_net = \u0394KE",
+      "incorrectAnswers": [
+        "W = \u0394p",
+        "W = \u0394U only",
+        "W always 0"
+      ],
+      "explanation": "Connects forces to speed changes.",
+      "keywords": [
+        "work-energy",
+        "theorem"
+      ],
+      "source": "https://openstax.org/books/university-physics-volume-1/pages/7-5-work-energy-theorem"
+    },
+    {
+      "question": "Power?",
+      "correctAnswer": "P = dW/dt = F\u00b7v (instantaneous)",
+      "incorrectAnswers": [
+        "P = W + t",
+        "P = F/t only",
+        "P = mv^2"
+      ],
+      "explanation": "Rate of energy transfer.",
+      "keywords": [
+        "power",
+        "watts"
+      ],
+      "source": "https://openstax.org/books/university-physics-volume-1/pages/7-6-power"
+    },
+    {
+      "question": "Hooke\u2019s law (ideal spring)?",
+      "correctAnswer": "F = \u2212kx",
+      "incorrectAnswers": [
+        "F = kx^2",
+        "F = k/x",
+        "F = mg only"
+      ],
+      "explanation": "Restoring force toward equilibrium.",
+      "keywords": [
+        "hookes-law",
+        "springs"
+      ],
+      "source": "https://openstax.org/books/university-physics-volume-1/pages/7-7-energy-of-a-system"
+    },
+    {
+      "question": "Elastic PE in spring?",
+      "correctAnswer": "U = (1/2)kx^2",
+      "incorrectAnswers": [
+        "kx",
+        "1/2 mv^2",
+        "k/x"
+      ],
+      "explanation": "Stored in deformation.",
+      "keywords": [
+        "elastic-energy",
+        "springs"
+      ],
+      "source": "https://openstax.org/books/university-physics-volume-1/pages/7-7-energy-of-a-system"
+    },
+    {
+      "question": "Conservative force property?",
+      "correctAnswer": "Work independent of path; relates to potential",
+      "incorrectAnswers": [
+        "Always dissipative",
+        "Path-dependent always",
+        "Never has potential"
+      ],
+      "explanation": "Gravity and ideal spring examples.",
+      "keywords": [
+        "conservative-force",
+        "energy"
+      ],
+      "source": "https://openstax.org/books/university-physics-volume-1/pages/7-8-potential-energy-of-a-system"
+    },
+    {
+      "question": "Mechanical energy (ideal, only conservative)?",
+      "correctAnswer": "E = KE + U may be conserved",
+      "incorrectAnswers": [
+        "Always increases",
+        "Always zero",
+        "Never includes PE"
+      ],
+      "explanation": "Nonconservative forces add/remove energy.",
+      "keywords": [
+        "mechanical-energy",
+        "conservation"
+      ],
+      "source": "https://openstax.org/books/university-physics-volume-1/pages/7-9-energy-conservation"
+    },
+    {
+      "question": "Efficiency?",
+      "correctAnswer": "Useful output / input energy",
+      "incorrectAnswers": [
+        "Always 100%",
+        "Input/output reversed always",
+        "Same as power"
+      ],
+      "explanation": "Real machines lose heat.",
+      "keywords": [
+        "efficiency",
+        "energy"
+      ],
+      "source": "https://www.energy.gov/eere/renewable-energy"
+    },
+    {
+      "question": "Rotational KE?",
+      "correctAnswer": "KE_rot = (1/2)I\u03c9^2",
+      "incorrectAnswers": [
+        "I\u03c9",
+        "1/2 mv only",
+        "I/\u03c9"
+      ],
+      "explanation": "Analog of linear KE.",
+      "keywords": [
+        "rotation",
+        "inertia"
+      ],
+      "source": "https://openstax.org/books/university-physics-volume-1/pages/10-4-rotational-kinetic-energy"
+    },
+    {
+      "question": "Gravitational potential (two masses, general)?",
+      "correctAnswer": "U = \u2212G m1 m2 / r (zero at infinity convention)",
+      "incorrectAnswers": [
+        "U = mgh only always",
+        "U positive always",
+        "U = Gmm/r"
+      ],
+      "explanation": "Binding orbits.",
+      "keywords": [
+        "gravity",
+        "potential"
+      ],
+      "source": "https://openstax.org/books/university-physics-volume-1/pages/13-2-newtons-law-of-universal-gravitation"
+    }
+  ],
+  "waves": [
+    {
+      "question": "Wave speed on string (approx)?",
+      "correctAnswer": "v = \u221a(T/\u03bc)",
+      "incorrectAnswers": [
+        "v = T\u03bc",
+        "v = T + \u03bc",
+        "v = \u03bc/T"
+      ],
+      "explanation": "Tension and linear mass density.",
+      "keywords": [
+        "wave-speed",
+        "string"
+      ],
+      "source": "https://openstax.org/books/university-physics-volume-1/pages/16-4-wave-speed-on-a-stretched-string"
+    },
+    {
+      "question": "Relationship v, f, \u03bb?",
+      "correctAnswer": "v = f\u03bb",
+      "incorrectAnswers": [
+        "v = f/\u03bb",
+        "v = f + \u03bb",
+        "v = \u03bb/f"
+      ],
+      "explanation": "Applies to periodic waves.",
+      "keywords": [
+        "wavelength",
+        "frequency"
+      ],
+      "source": "https://openstax.org/books/university-physics-volume-1/pages/16-3-mathematics-of-waves"
+    },
+    {
+      "question": "Sound is what type of wave?",
+      "correctAnswer": "Longitudinal pressure wave",
+      "incorrectAnswers": [
+        "Transverse in air always",
+        "Electromagnetic",
+        "Static charge"
+      ],
+      "explanation": "Particle motion parallel to propagation in fluids.",
+      "keywords": [
+        "sound",
+        "longitudinal"
+      ],
+      "source": "https://openstax.org/books/university-physics-volume-1/pages/17-1-sound-waves"
+    },
+    {
+      "question": "Open-open pipe harmonics?",
+      "correctAnswer": "f_n = n v/(2L) for n=1,2,3\u2026",
+      "incorrectAnswers": [
+        "Only odd harmonics",
+        "f = v/L always",
+        "No harmonics"
+      ],
+      "explanation": "Both ends displacement antinodes (approx).",
+      "keywords": [
+        "standing-waves",
+        "pipes"
+      ],
+      "source": "https://openstax.org/books/university-physics-volume-1/pages/17-5-sources-of-musical-sound"
+    },
+    {
+      "question": "Doppler effect (source moving toward observer)?",
+      "correctAnswer": "Observed frequency increases",
+      "incorrectAnswers": [
+        "Always decreases",
+        "Unchanged always",
+        "Doubles always"
+      ],
+      "explanation": "Depends on relative motion and medium.",
+      "keywords": [
+        "doppler",
+        "sound"
+      ],
+      "source": "https://openstax.org/books/university-physics-volume-1/pages/17-7-the-doppler-effect"
+    },
+    {
+      "question": "EM wave in vacuum speed?",
+      "correctAnswer": "c \u2248 3\u00d710^8 m/s",
+      "incorrectAnswers": [
+        "340 m/s",
+        "1 m/s",
+        "Depends on frequency only in vacuum"
+      ],
+      "explanation": "All frequencies same speed in vacuum.",
+      "keywords": [
+        "light-speed",
+        "em"
+      ],
+      "source": "https://openstax.org/books/university-physics-volume-2/pages/16-1-maxwell-equations-and-electromagnetic-waves"
+    },
+    {
+      "question": "Index of refraction?",
+      "correctAnswer": "n = c/v",
+      "incorrectAnswers": [
+        "n = v/c",
+        "n = cv",
+        "n = f\u03bb"
+      ],
+      "explanation": "Light slower in medium.",
+      "keywords": [
+        "refraction",
+        "optics"
+      ],
+      "source": "https://openstax.org/books/university-physics-volume-2/pages/2-1-lights-path-reflection-and-refraction"
+    },
+    {
+      "question": "Snell\u2019s law?",
+      "correctAnswer": "n1 sin\u03b81 = n2 sin\u03b82",
+      "incorrectAnswers": [
+        "n1 \u03b81 = n2 \u03b82",
+        "sin n1 = sin n2",
+        "\u03b81 = \u03b82 always"
+      ],
+      "explanation": "At interface between media.",
+      "keywords": [
+        "snell",
+        "optics"
+      ],
+      "source": "https://openstax.org/books/university-physics-volume-2/pages/2-1-lights-path-reflection-and-refraction"
+    },
+    {
+      "question": "Constructive interference (two slits path difference)?",
+      "correctAnswer": "\u0394 = m\u03bb",
+      "incorrectAnswers": [
+        "\u0394 = (m+1/2)\u03bb",
+        "\u0394 = \u03bb/\u03c0",
+        "\u0394 always 0"
+      ],
+      "explanation": "Bright fringes in Young experiment.",
+      "keywords": [
+        "interference",
+        "optics"
+      ],
+      "source": "https://openstax.org/books/university-physics-volume-2/pages/3-2-youngs-double-slit-experiment"
+    },
+    {
+      "question": "Beats frequency?",
+      "correctAnswer": "f_beat = |f1 \u2212 f2|",
+      "incorrectAnswers": [
+        "f1 + f2",
+        "f1 f2",
+        "sqrt(f1 f2)"
+      ],
+      "explanation": "Amplitude modulation heard.",
+      "keywords": [
+        "beats",
+        "sound"
+      ],
+      "source": "https://openstax.org/books/university-physics-volume-1/pages/17-8-shock-waves"
+    },
+    {
+      "question": "Polarization applies to?",
+      "correctAnswer": "Transverse EM waves",
+      "incorrectAnswers": [
+        "Longitudinal sound in air",
+        "DC current",
+        "Static fields only"
+      ],
+      "explanation": "Oscillation direction filtered.",
+      "keywords": [
+        "polarization",
+        "light"
+      ],
+      "source": "https://openstax.org/books/university-physics-volume-2/pages/2-5-polarization"
+    },
+    {
+      "question": "Seismic P-waves are?",
+      "correctAnswer": "Longitudinal compressional",
+      "incorrectAnswers": [
+        "Transverse only",
+        "Electromagnetic",
+        "Fluid only cannot travel in solids"
+      ],
+      "explanation": "S-waves transverse.",
+      "keywords": [
+        "seismic",
+        "waves"
+      ],
+      "source": "https://en.wikipedia.org/wiki/P-wave"
+    }
+  ],
+  "electricity": [
+    {
+      "question": "Coulomb\u2019s law magnitude?",
+      "correctAnswer": "F = k |q1 q2|/r^2",
+      "incorrectAnswers": [
+        "F = k q1 q2 r",
+        "F = k/r",
+        "F = qvB"
+      ],
+      "explanation": "Inverse square like gravity.",
+      "keywords": [
+        "coulomb",
+        "electrostatics"
+      ],
+      "source": "https://openstax.org/books/university-physics-volume-2/pages/5-1-electric-charge"
+    },
+    {
+      "question": "Electric field definition?",
+      "correctAnswer": "E = F/q (test charge)",
+      "incorrectAnswers": [
+        "E = Fq",
+        "E = q/F",
+        "E = V only"
+      ],
+      "explanation": "Vector field.",
+      "keywords": [
+        "electric-field",
+        "definition"
+      ],
+      "source": "https://openstax.org/books/university-physics-volume-2/pages/5-5-calculating-electric-fields-of-charge-distributions"
+    },
+    {
+      "question": "Point charge field magnitude?",
+      "correctAnswer": "E = k|Q|/r^2",
+      "incorrectAnswers": [
+        "kQ/r",
+        "kQ r^2",
+        "k/Qr"
+      ],
+      "explanation": "Radial pattern.",
+      "keywords": [
+        "point-charge",
+        "field"
+      ],
+      "source": "https://openstax.org/books/university-physics-volume-2/pages/5-5-calculating-electric-fields-of-charge-distributions"
+    },
+    {
+      "question": "Gauss\u2019s law?",
+      "correctAnswer": "\u222e E\u00b7dA = Q_enc/\u03b50",
+      "incorrectAnswers": [
+        "E = Q only",
+        "No flux ever",
+        "E\u00b7A = Q r"
+      ],
+      "explanation": "Useful for high symmetry.",
+      "keywords": [
+        "gauss-law",
+        "flux"
+      ],
+      "source": "https://openstax.org/books/university-physics-volume-2/pages/6-2-explaining-gausss-law"
+    },
+    {
+      "question": "Electric potential difference?",
+      "correctAnswer": "\u0394V = \u0394U/q",
+      "incorrectAnswers": [
+        "\u0394V = q/\u0394U",
+        "\u0394V = Fd always without path",
+        "\u0394V = IR always for any device"
+      ],
+      "explanation": "Work per unit charge.",
+      "keywords": [
+        "voltage",
+        "potential"
+      ],
+      "source": "https://openstax.org/books/university-physics-volume-2/pages/7-1-electric-potential"
+    },
+    {
+      "question": "Capacitance definition?",
+      "correctAnswer": "C = Q/V",
+      "incorrectAnswers": [
+        "C = V/Q",
+        "C = QV",
+        "C = IR"
+      ],
+      "explanation": "Stores charge at given voltage.",
+      "keywords": [
+        "capacitor",
+        "capacitance"
+      ],
+      "source": "https://openstax.org/books/university-physics-volume-2/pages/8-1-capacitors-and-capacitance"
+    },
+    {
+      "question": "Energy stored in capacitor?",
+      "correctAnswer": "U = (1/2)CV^2",
+      "incorrectAnswers": [
+        "CV^2",
+        "C/V",
+        "1/2 Q/C"
+      ],
+      "explanation": "Also (1/2)Q^2/C.",
+      "keywords": [
+        "capacitor-energy",
+        "storage"
+      ],
+      "source": "https://openstax.org/books/university-physics-volume-2/pages/8-2-capacitors-in-series-and-in-parallel"
+    },
+    {
+      "question": "Ohm\u2019s law?",
+      "correctAnswer": "V = IR",
+      "incorrectAnswers": [
+        "I = VR",
+        "R = VI",
+        "V = I/R"
+      ],
+      "explanation": "For many ohmic materials.",
+      "keywords": [
+        "ohms-law",
+        "circuits"
+      ],
+      "source": "https://openstax.org/books/university-physics-volume-2/pages/10-2-resistors-in-series-and-parallel"
+    },
+    {
+      "question": "Resistors in series equivalent?",
+      "correctAnswer": "R_eq = R1 + R2 + \u2026",
+      "incorrectAnswers": [
+        "1/(R1+R2)",
+        "R1 R2",
+        "sqrt(R1 R2)"
+      ],
+      "explanation": "Same current through each.",
+      "keywords": [
+        "series",
+        "resistors"
+      ],
+      "source": "https://openstax.org/books/university-physics-volume-2/pages/10-2-resistors-in-series-and-parallel"
+    },
+    {
+      "question": "Resistors in parallel equivalent?",
+      "correctAnswer": "1/R_eq = 1/R1 + 1/R2 + \u2026",
+      "incorrectAnswers": [
+        "R1 + R2",
+        "R1 R2",
+        "R1/R2"
+      ],
+      "explanation": "Same voltage across each.",
+      "keywords": [
+        "parallel",
+        "resistors"
+      ],
+      "source": "https://openstax.org/books/university-physics-volume-2/pages/10-2-resistors-in-series-and-parallel"
+    },
+    {
+      "question": "Electric power?",
+      "correctAnswer": "P = IV = I^2R = V^2/R",
+      "incorrectAnswers": [
+        "P = I/R",
+        "P = V + I",
+        "P = IR^2"
+      ],
+      "explanation": "Dissipation in resistor.",
+      "keywords": [
+        "electric-power",
+        "circuits"
+      ],
+      "source": "https://openstax.org/books/university-physics-volume-2/pages/10-3-electrical-power"
+    },
+    {
+      "question": "RC time constant?",
+      "correctAnswer": "\u03c4 = RC",
+      "incorrectAnswers": [
+        "R/C",
+        "C/R",
+        "R + C"
+      ],
+      "explanation": "Charging/discharging scale.",
+      "keywords": [
+        "rc-circuit",
+        "time-constant"
+      ],
+      "source": "https://openstax.org/books/university-physics-volume-2/pages/10-5-rc-circuits"
+    }
+  ],
+  "magnetism": [
+    {
+      "question": "Lorentz force on charge?",
+      "correctAnswer": "F = q(E + v \u00d7 B)",
+      "incorrectAnswers": [
+        "F = qvE",
+        "F = B \u00d7 v",
+        "F = ma only"
+      ],
+      "explanation": "Electric and magnetic parts.",
+      "keywords": [
+        "lorentz-force",
+        "em"
+      ],
+      "source": "https://openstax.org/books/university-physics-volume-2/pages/11-4-magnetic-force-and-mass-spectrometer"
+    },
+    {
+      "question": "Force on straight current wire?",
+      "correctAnswer": "F = I L \u00d7 B",
+      "incorrectAnswers": [
+        "F = ILB always scalar",
+        "F = qvB only",
+        "F = 0 always"
+      ],
+      "explanation": "Length vector along current direction.",
+      "keywords": [
+        "wire-force",
+        "magnetism"
+      ],
+      "source": "https://openstax.org/books/university-physics-volume-2/pages/11-5-force-on-a-current-carrying-conductor"
+    },
+    {
+      "question": "Biot\u2013Savart / long straight wire B?",
+      "correctAnswer": "B \u221d I/r (direction by right-hand rule)",
+      "incorrectAnswers": [
+        "B independent of I",
+        "B zero always",
+        "B \u221d r"
+      ],
+      "explanation": "Circulating field lines around wire.",
+      "keywords": [
+        "biot-savart",
+        "field"
+      ],
+      "source": "https://openstax.org/books/university-physics-volume-2/pages/12-2-the-biot-savart-law"
+    },
+    {
+      "question": "Amp\u00e8re\u2019s law (long symmetry)?",
+      "correctAnswer": "\u222e B\u00b7dl = \u03bc0 I_enc",
+      "incorrectAnswers": [
+        "B = 0 always",
+        "B\u00b7dl = I",
+        "No enclosed current matters"
+      ],
+      "explanation": "Useful for cylinders/solenoids.",
+      "keywords": [
+        "ampere-law",
+        "symmetry"
+      ],
+      "source": "https://openstax.org/books/university-physics-volume-2/pages/12-5-amp\u00e8res-law"
+    },
+    {
+      "question": "Faraday\u2019s law?",
+      "correctAnswer": "EMF = \u2212 d\u03a6_B/dt",
+      "incorrectAnswers": [
+        "EMF = B only",
+        "EMF = IR always",
+        "No induction ever"
+      ],
+      "explanation": "Changing flux induces fields/currents.",
+      "keywords": [
+        "faraday",
+        "induction"
+      ],
+      "source": "https://openstax.org/books/university-physics-volume-2/pages/13-1-faradays-law"
+    },
+    {
+      "question": "Lenz\u2019s law direction?",
+      "correctAnswer": "Induced current opposes flux change",
+      "incorrectAnswers": [
+        "Always same direction as change",
+        "Random",
+        "Always zero"
+      ],
+      "explanation": "Conservation of energy implication.",
+      "keywords": [
+        "lenz",
+        "induction"
+      ],
+      "source": "https://openstax.org/books/university-physics-volume-2/pages/13-1-faradays-law"
+    },
+    {
+      "question": "Inductor EMF?",
+      "correctAnswer": "\u03b5 = \u2212L di/dt",
+      "incorrectAnswers": [
+        "\u03b5 = Li",
+        "\u03b5 = L/i",
+        "\u03b5 = i/L"
+      ],
+      "explanation": "Opposes current change.",
+      "keywords": [
+        "inductance",
+        "coil"
+      ],
+      "source": "https://openstax.org/books/university-physics-volume-2/pages/14-1-mutual-inductance"
+    },
+    {
+      "question": "Energy in inductor?",
+      "correctAnswer": "U = (1/2) L i^2",
+      "incorrectAnswers": [
+        "Li",
+        "L/i",
+        "1/2 Li^3"
+      ],
+      "explanation": "Magnetic field storage.",
+      "keywords": [
+        "inductor-energy",
+        "storage"
+      ],
+      "source": "https://openstax.org/books/university-physics-volume-2/pages/14-3-energy-in-a-magnetic-field"
+    },
+    {
+      "question": "Transformer ideal relation?",
+      "correctAnswer": "V2/V1 = N2/N1",
+      "incorrectAnswers": [
+        "V2 = V1 + N",
+        "V1 V2 = N1 N2",
+        "No relation"
+      ],
+      "explanation": "AC magnetic coupling.",
+      "keywords": [
+        "transformer",
+        "ac"
+      ],
+      "source": "https://openstax.org/books/university-physics-volume-2/pages/15-5-transformers"
+    },
+    {
+      "question": "Magnetic dipole in uniform B torque?",
+      "correctAnswer": "\u03c4 = \u03bc \u00d7 B",
+      "incorrectAnswers": [
+        "\u03c4 = \u03bcB scalar always",
+        "\u03c4 = 0 always",
+        "\u03c4 = I/B"
+      ],
+      "explanation": "Aligns dipole with field.",
+      "keywords": [
+        "dipole",
+        "torque"
+      ],
+      "source": "https://openstax.org/books/university-physics-volume-2/pages/11-7-magnetic-dipole-moment"
+    },
+    {
+      "question": "Earth\u2019s magnetic field use?",
+      "correctAnswer": "Navigation compass aligns with horizontal component",
+      "incorrectAnswers": [
+        "No field exists",
+        "Purely electric",
+        "Constant everywhere exactly"
+      ],
+      "explanation": "Declination/inclination vary.",
+      "keywords": [
+        "earth-field",
+        "compass"
+      ],
+      "source": "https://www.ngdc.noaa.gov/geomag/"
+    },
+    {
+      "question": "Hall effect (qualitative)?",
+      "correctAnswer": "Transverse voltage from charge carriers in B field",
+      "incorrectAnswers": [
+        "Never occurs",
+        "Only insulators",
+        "Same as photoelectric"
+      ],
+      "explanation": "Senses carrier sign/density.",
+      "keywords": [
+        "hall-effect",
+        "solid-state"
+      ],
+      "source": "https://en.wikipedia.org/wiki/Hall_effect"
+    }
+  ],
+  "modern": [
+    {
+      "question": "Photoelectric effect key insight (Einstein)?",
+      "correctAnswer": "Light quantized as photons E = hf",
+      "incorrectAnswers": [
+        "Intensity alone determines max KE always without threshold",
+        "Wave model explains threshold frequency fully",
+        "No electrons emitted ever"
+      ],
+      "explanation": "Explains cutoff frequency.",
+      "keywords": [
+        "photoelectric",
+        "photon"
+      ],
+      "source": "https://openstax.org/books/university-physics-volume-3/pages/6-2-photoelectric-effect"
+    },
+    {
+      "question": "de Broglie wavelength?",
+      "correctAnswer": "\u03bb = h/p",
+      "incorrectAnswers": [
+        "\u03bb = p/h",
+        "\u03bb = hp",
+        "\u03bb = hf"
+      ],
+      "explanation": "Matter waves.",
+      "keywords": [
+        "de-broglie",
+        "quantum"
+      ],
+      "source": "https://openstax.org/books/university-physics-volume-3/pages/6-3-wave-particle-duality"
+    },
+    {
+      "question": "Heisenberg uncertainty (position-momentum)?",
+      "correctAnswer": "\u0394x \u0394p \u2273 \u210f/2",
+      "incorrectAnswers": [
+        "\u0394x \u0394p = 0",
+        "\u0394x \u0394p = 1",
+        "No relation"
+      ],
+      "explanation": "Fundamental limit.",
+      "keywords": [
+        "uncertainty",
+        "quantum"
+      ],
+      "source": "https://openstax.org/books/university-physics-volume-3/pages/7-2-heisenberg-uncertainty-principle"
+    },
+    {
+      "question": "Bohr hydrogen energy levels?",
+      "correctAnswer": "En \u221d \u22121/n^2",
+      "incorrectAnswers": [
+        "En \u221d n^2",
+        "En linear in n",
+        "En always positive"
+      ],
+      "explanation": "Explains spectral lines.",
+      "keywords": [
+        "bohr-model",
+        "hydrogen"
+      ],
+      "source": "https://openstax.org/books/university-physics-volume-3/pages/6-4-bohrs-model-of-the-hydrogen-atom"
+    },
+    {
+      "question": "Radioactive decay law?",
+      "correctAnswer": "N(t) = N0 e^{-\u03bbt}",
+      "incorrectAnswers": [
+        "N linear",
+        "N increases",
+        "N constant"
+      ],
+      "explanation": "Half-life t1/2 = ln2/\u03bb.",
+      "keywords": [
+        "radioactive-decay",
+        "half-life"
+      ],
+      "source": "https://www.cdc.gov/nceh/radiation/emergency/pdf/isotopes.pdf"
+    },
+    {
+      "question": "Nuclear binding energy trend?",
+      "correctAnswer": "Peak around iron/nickel region",
+      "incorrectAnswers": [
+        "Heaviest always most bound per nucleon",
+        "Lightest always most bound",
+        "No maximum"
+      ],
+      "explanation": "Explains fusion/fission energy.",
+      "keywords": [
+        "binding-energy",
+        "nuclear"
+      ],
+      "source": "https://openstax.org/books/university-physics-volume-3/pages/10-3-binding-energy"
+    },
+    {
+      "question": "Special relativity time dilation?",
+      "correctAnswer": "Moving clocks run slower (inertial frames)",
+      "incorrectAnswers": [
+        "Always faster",
+        "Same always",
+        "Only sound clocks"
+      ],
+      "explanation": "\u0394t = \u03b3 \u0394t0.",
+      "keywords": [
+        "time-dilation",
+        "relativity"
+      ],
+      "source": "https://openstax.org/books/university-physics-volume-3/pages/5-3-time-dilation"
+    },
+    {
+      "question": "Length contraction?",
+      "correctAnswer": "Lengths along motion shorten by \u03b3",
+      "incorrectAnswers": [
+        "Lengthen by \u03b3",
+        "No effect",
+        "Only perpendicular"
+      ],
+      "explanation": "Simultaneity matters.",
+      "keywords": [
+        "length-contraction",
+        "relativity"
+      ],
+      "source": "https://openstax.org/books/university-physics-volume-3/pages/5-4-length-contraction"
+    },
+    {
+      "question": "Mass\u2013energy equivalence?",
+      "correctAnswer": "E = mc^2",
+      "incorrectAnswers": [
+        "E = 1/2 mc^2",
+        "E = m/c^2",
+        "E = pc only always"
+      ],
+      "explanation": "Rest energy.",
+      "keywords": [
+        "emc2",
+        "relativity"
+      ],
+      "source": "https://openstax.org/books/university-physics-volume-3/pages/5-9-relativistic-energy"
+    },
+    {
+      "question": "Pauli exclusion principle?",
+      "correctAnswer": "Two identical fermions cannot occupy same quantum state",
+      "incorrectAnswers": [
+        "Bosons excluded",
+        "Applies to photons",
+        "No effect on atoms"
+      ],
+      "explanation": "Explains periodic table structure.",
+      "keywords": [
+        "pauli",
+        "quantum"
+      ],
+      "source": "https://openstax.org/books/university-physics-volume-3/pages/9-2-pauli-exclusion-principle"
+    },
+    {
+      "question": "Semiconductor doping n-type adds?",
+      "correctAnswer": "Donor electrons increase electron carriers",
+      "incorrectAnswers": [
+        "Holes only",
+        "Neutrons",
+        "No change in carriers"
+      ],
+      "explanation": "Phosphorus in silicon example.",
+      "keywords": [
+        "doping",
+        "semiconductor"
+      ],
+      "source": "https://en.wikipedia.org/wiki/Semiconductor_doping"
+    },
+    {
+      "question": "Standard Model includes (broadly)?",
+      "correctAnswer": "Quarks, leptons, gauge bosons, Higgs",
+      "incorrectAnswers": [
+        "Only protons",
+        "Only gravity particles confirmed",
+        "Only neutrons"
+      ],
+      "explanation": "Unifies EM, weak, strong (not gravity).",
+      "keywords": [
+        "standard-model",
+        "particles"
+      ],
+      "source": "https://home.cern/science/physics/standard-model"
+    }
+  ]
+}

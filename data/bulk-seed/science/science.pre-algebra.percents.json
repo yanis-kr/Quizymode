@@ -1,0 +1,230 @@
+[
+  {
+    "seedId": "634fa836-fc22-48fc-a59f-342f3d4ed29b",
+    "category": "science",
+    "navigationKeyword1": "pre-algebra",
+    "navigationKeyword2": "percents",
+    "question": "What is 20% of 150?",
+    "correctAnswer": "30",
+    "incorrectAnswers": [
+      "20",
+      "120",
+      "7.5"
+    ],
+    "explanation": "0.20 \u00d7 150 = 30.",
+    "keywords": [
+      "percent-of",
+      "calculation"
+    ],
+    "source": "https://www.khanacademy.org/math/pre-algebra/pre-algebra-ratios-proportions"
+  },
+  {
+    "seedId": "35ce230c-31e0-4e67-ab2f-38485ef676ef",
+    "category": "science",
+    "navigationKeyword1": "pre-algebra",
+    "navigationKeyword2": "percents",
+    "question": "45 is what percent of 180?",
+    "correctAnswer": "25%",
+    "incorrectAnswers": [
+      "40%",
+      "20%",
+      "50%"
+    ],
+    "explanation": "45/180 = 0.25.",
+    "keywords": [
+      "percent-find",
+      "fraction"
+    ],
+    "source": "https://www.khanacademy.org/math/pre-algebra/pre-algebra-ratios-proportions"
+  },
+  {
+    "seedId": "5d5a5194-3047-4d08-939f-878eec3fd8e8",
+    "category": "science",
+    "navigationKeyword1": "pre-algebra",
+    "navigationKeyword2": "percents",
+    "question": "Percent increase from 50 to 80?",
+    "correctAnswer": "60%",
+    "incorrectAnswers": [
+      "30%",
+      "160%",
+      "62.5%"
+    ],
+    "explanation": "(80\u221250)/50 = 0.6.",
+    "keywords": [
+      "percent-change",
+      "increase"
+    ],
+    "source": "https://www.khanacademy.org/math/pre-algebra/pre-algebra-ratios-proportions"
+  },
+  {
+    "seedId": "5a09b419-bdba-4f69-936f-b3e7fc668631",
+    "category": "science",
+    "navigationKeyword1": "pre-algebra",
+    "navigationKeyword2": "percents",
+    "question": "Sale 25% off $80; pay?",
+    "correctAnswer": "$60",
+    "incorrectAnswers": [
+      "$55",
+      "$20",
+      "$75"
+    ],
+    "explanation": "80 \u00d7 0.75 = 60.",
+    "keywords": [
+      "discount",
+      "consumer"
+    ],
+    "source": "https://www.khanacademy.org/math/pre-algebra/pre-algebra-ratios-proportions"
+  },
+  {
+    "seedId": "d8ab73eb-cf1c-4bf5-b8e7-e17212ede68e",
+    "category": "science",
+    "navigationKeyword1": "pre-algebra",
+    "navigationKeyword2": "percents",
+    "question": "Tax 8% on $50?",
+    "correctAnswer": "$4 tax",
+    "incorrectAnswers": [
+      "$8",
+      "$0.40",
+      "$58 total only without asking"
+    ],
+    "explanation": "50 \u00d7 0.08 = 4.",
+    "keywords": [
+      "tax",
+      "percent"
+    ],
+    "source": "https://www.khanacademy.org/math/pre-algebra/pre-algebra-ratios-proportions"
+  },
+  {
+    "seedId": "97277ee3-9420-4d24-ba79-ecf33914c921",
+    "category": "science",
+    "navigationKeyword1": "pre-algebra",
+    "navigationKeyword2": "percents",
+    "question": "Simple interest $200 at 5% yearly for 3 years?",
+    "correctAnswer": "$30 interest",
+    "incorrectAnswers": [
+      "$10",
+      "$15",
+      "$300"
+    ],
+    "explanation": "I = Prt = 200\u00d70.05\u00d73.",
+    "keywords": [
+      "simple-interest",
+      "finance"
+    ],
+    "source": "https://www.khanacademy.org/economics-finance-domain/core-finance/interest-tutorial"
+  },
+  {
+    "seedId": "597780aa-2790-4937-a1b3-d3f6704810a2",
+    "category": "science",
+    "navigationKeyword1": "pre-algebra",
+    "navigationKeyword2": "percents",
+    "question": "Convert 0.125 to percent?",
+    "correctAnswer": "12.5%",
+    "incorrectAnswers": [
+      "125%",
+      "1.25%",
+      "0.125%"
+    ],
+    "explanation": "Multiply by 100%.",
+    "keywords": [
+      "decimal-percent",
+      "conversion"
+    ],
+    "source": "https://www.mathsisfun.com/converting-decimals-percents.html"
+  },
+  {
+    "seedId": "929e898c-8aea-4249-afcb-e3f74c8b42e6",
+    "category": "science",
+    "navigationKeyword1": "pre-algebra",
+    "navigationKeyword2": "percents",
+    "question": "Convert 3/5 to percent?",
+    "correctAnswer": "60%",
+    "incorrectAnswers": [
+      "30%",
+      "35%",
+      "80%"
+    ],
+    "explanation": "3 \u00f7 5 = 0.6.",
+    "keywords": [
+      "fraction-percent",
+      "conversion"
+    ],
+    "source": "https://www.mathsisfun.com/converting-fractions-percents.html"
+  },
+  {
+    "seedId": "684b2c99-1768-47cf-9a2c-cf15c2c08e5a",
+    "category": "science",
+    "navigationKeyword1": "pre-algebra",
+    "navigationKeyword2": "percents",
+    "question": "Percent decrease formula?",
+    "correctAnswer": "(old \u2212 new)/old \u00d7 100%",
+    "incorrectAnswers": [
+      "(new \u2212 old)/new always",
+      "old/new",
+      "new\u00d7old"
+    ],
+    "explanation": "Define baseline \u2018old\u2019.",
+    "keywords": [
+      "percent-decrease",
+      "change"
+    ],
+    "source": "https://www.khanacademy.org/math/pre-algebra/pre-algebra-ratios-proportions"
+  },
+  {
+    "seedId": "d428519b-d692-49c3-8b3b-c94e6efe2cc7",
+    "category": "science",
+    "navigationKeyword1": "pre-algebra",
+    "navigationKeyword2": "percents",
+    "question": "100 increased by 15% then decreased by 15%?",
+    "correctAnswer": "Not 100 (order matters; compound)",
+    "incorrectAnswers": [
+      "Always 100",
+      "115",
+      "85"
+    ],
+    "explanation": "1.15\u00d70.85\u00d7100 = 97.75.",
+    "keywords": [
+      "successive-percent",
+      "trap"
+    ],
+    "source": "https://www.mathsisfun.com/percentage-calculator.html"
+  },
+  {
+    "seedId": "a04e85d1-8a38-49d7-b9c2-dc90b72ffbbb",
+    "category": "science",
+    "navigationKeyword1": "pre-algebra",
+    "navigationKeyword2": "percents",
+    "question": "Tip 18% on $40?",
+    "correctAnswer": "$7.20",
+    "incorrectAnswers": [
+      "$4.50",
+      "$8.00",
+      "$0.72"
+    ],
+    "explanation": "40 \u00d7 0.18 = 7.2.",
+    "keywords": [
+      "tip",
+      "mental-math"
+    ],
+    "source": "https://www.khanacademy.org/math/pre-algebra/pre-algebra-ratios-proportions"
+  },
+  {
+    "seedId": "24edb0ac-0d39-46d4-afa6-52c42c9c1f87",
+    "category": "science",
+    "navigationKeyword1": "pre-algebra",
+    "navigationKeyword2": "percents",
+    "question": "Percent error (measurement)?",
+    "correctAnswer": "|approx \u2212 exact| / |exact| \u00d7 100%",
+    "incorrectAnswers": [
+      "approx/exact without abs",
+      "exact/approx",
+      "Always zero"
+    ],
+    "explanation": "Quantifies relative mistake.",
+    "keywords": [
+      "percent-error",
+      "measurement"
+    ],
+    "source": "https://www.mathsisfun.com/numbers/percentage-error.html"
+  }
+]

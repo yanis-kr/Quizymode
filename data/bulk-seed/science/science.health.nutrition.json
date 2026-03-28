@@ -1,0 +1,230 @@
+[
+  {
+    "seedId": "1bef8137-d873-411d-be37-794bd0525554",
+    "category": "science",
+    "navigationKeyword1": "health",
+    "navigationKeyword2": "nutrition",
+    "question": "What are macronutrients?",
+    "correctAnswer": "Carbohydrates, proteins, and fats",
+    "incorrectAnswers": [
+      "Vitamins only",
+      "Minerals only",
+      "Water only"
+    ],
+    "explanation": "Provide calories and building blocks.",
+    "keywords": [
+      "macronutrients",
+      "diet"
+    ],
+    "source": "https://www.cdc.gov/nutrition/data-statistics/index.html"
+  },
+  {
+    "seedId": "537e5904-658e-45f0-b2f7-9c0dabf105cc",
+    "category": "science",
+    "navigationKeyword1": "health",
+    "navigationKeyword2": "nutrition",
+    "question": "What are micronutrients?",
+    "correctAnswer": "Vitamins and minerals needed in small amounts",
+    "incorrectAnswers": [
+      "Carbs and fats",
+      "Fiber only",
+      "Alcohol"
+    ],
+    "explanation": "Support metabolism and health.",
+    "keywords": [
+      "micronutrients",
+      "vitamins"
+    ],
+    "source": "https://www.cdc.gov/nutrition/data-statistics/index.html"
+  },
+  {
+    "seedId": "1ae16e5b-de15-4799-89d5-eff68b40c5c3",
+    "category": "science",
+    "navigationKeyword1": "health",
+    "navigationKeyword2": "nutrition",
+    "question": "What is dietary fiber?",
+    "correctAnswer": "Indigestible carbohydrates beneficial for digestion",
+    "incorrectAnswers": [
+      "A type of protein",
+      "A saturated fat",
+      "A hormone"
+    ],
+    "explanation": "Associated with gut and cardiometabolic benefits.",
+    "keywords": [
+      "fiber",
+      "digestion"
+    ],
+    "source": "https://www.cdc.gov/nutrition/data-statistics/index.html"
+  },
+  {
+    "seedId": "4870dc89-c29a-46ae-bab5-193189afe722",
+    "category": "science",
+    "navigationKeyword1": "health",
+    "navigationKeyword2": "nutrition",
+    "question": "What is hydration importance?",
+    "correctAnswer": "Water supports temperature regulation and metabolism",
+    "incorrectAnswers": [
+      "Only for athletes",
+      "Replaces food",
+      "Not needed daily"
+    ],
+    "explanation": "Dehydration impairs function.",
+    "keywords": [
+      "hydration",
+      "water"
+    ],
+    "source": "https://www.cdc.gov/healthywater/drinking/nutrition/index.html"
+  },
+  {
+    "seedId": "2d3ae40f-50e0-40c1-81bb-613c835f8c81",
+    "category": "science",
+    "navigationKeyword1": "health",
+    "navigationKeyword2": "nutrition",
+    "question": "What is added sugar concern?",
+    "correctAnswer": "Contributes excess calories; linked to health risks when overconsumed",
+    "incorrectAnswers": [
+      "Required nutrient",
+      "Same as fiber",
+      "Cannot be measured"
+    ],
+    "explanation": "Guidelines suggest limits.",
+    "keywords": [
+      "added-sugar",
+      "diet"
+    ],
+    "source": "https://www.cdc.gov/healthyweight/healthy_eating/sugar.html"
+  },
+  {
+    "seedId": "01ad35da-0d44-4b5e-a79d-639401ad70ae",
+    "category": "science",
+    "navigationKeyword1": "health",
+    "navigationKeyword2": "nutrition",
+    "question": "What is sodium moderation about?",
+    "correctAnswer": "High intake can raise blood pressure risk in sensitive people",
+    "incorrectAnswers": [
+      "Sodium is unnecessary",
+      "More is always better",
+      "Only affects skin"
+    ],
+    "explanation": "Major source is processed foods.",
+    "keywords": [
+      "sodium",
+      "blood-pressure"
+    ],
+    "source": "https://www.cdc.gov/salt/index.html"
+  },
+  {
+    "seedId": "b63779e2-075c-4207-957e-605208484e8a",
+    "category": "science",
+    "navigationKeyword1": "health",
+    "navigationKeyword2": "nutrition",
+    "question": "What is MyPlate concept?",
+    "correctAnswer": "Balanced plate with fruits, vegetables, grains, protein, dairy",
+    "incorrectAnswers": [
+      "Only meat",
+      "Only juice",
+      "Only supplements"
+    ],
+    "explanation": "Visual guide for portions.",
+    "keywords": [
+      "myplate",
+      "guidelines"
+    ],
+    "source": "https://www.myplate.gov/"
+  },
+  {
+    "seedId": "fc049640-8a18-47f3-b2df-71bc36151fe0",
+    "category": "science",
+    "navigationKeyword1": "health",
+    "navigationKeyword2": "nutrition",
+    "question": "What is calorie?",
+    "correctAnswer": "Unit of energy from food",
+    "incorrectAnswers": [
+      "Vitamin type",
+      "Mineral ore",
+      "Blood cell"
+    ],
+    "explanation": "Energy balance affects weight.",
+    "keywords": [
+      "calories",
+      "energy-balance"
+    ],
+    "source": "https://www.cdc.gov/healthyweight/calories/index.html"
+  },
+  {
+    "seedId": "f8117680-f505-4bce-8e4b-061daff7748f",
+    "category": "science",
+    "navigationKeyword1": "health",
+    "navigationKeyword2": "nutrition",
+    "question": "What is food allergy vs intolerance (rough)?",
+    "correctAnswer": "Allergy involves immune response; intolerance often enzyme issue",
+    "incorrectAnswers": [
+      "Same thing",
+      "Only psychological",
+      "Only bacterial"
+    ],
+    "explanation": "Management differs.",
+    "keywords": [
+      "allergy",
+      "intolerance"
+    ],
+    "source": "https://www.cdc.gov/foodallergy/index.html"
+  },
+  {
+    "seedId": "5a0c26ed-8039-431b-9202-746d4df9969f",
+    "category": "science",
+    "navigationKeyword1": "health",
+    "navigationKeyword2": "nutrition",
+    "question": "What is BMI (note)?",
+    "correctAnswer": "Screening weight-for-height; not direct body fat measure",
+    "incorrectAnswers": [
+      "Diagnostic of disease alone",
+      "Measures muscle exactly",
+      "Measures hydration"
+    ],
+    "explanation": "Use alongside other assessments.",
+    "keywords": [
+      "bmi",
+      "screening"
+    ],
+    "source": "https://www.cdc.gov/healthyweight/assessing/bmi/index.html"
+  },
+  {
+    "seedId": "241df9f2-57b5-482f-b057-e07cd18bc5fd",
+    "category": "science",
+    "navigationKeyword1": "health",
+    "navigationKeyword2": "nutrition",
+    "question": "What is foodborne illness prevention?",
+    "correctAnswer": "Cook, chill, clean, separate",
+    "incorrectAnswers": [
+      "Leave food warm hours",
+      "Wash chicken with soap",
+      "Ignore dates"
+    ],
+    "explanation": "Core food safety steps.",
+    "keywords": [
+      "food-safety",
+      "cdc"
+    ],
+    "source": "https://www.cdc.gov/foodsafety/"
+  },
+  {
+    "seedId": "b81230d4-a186-48ba-9fa9-17cf537d22b0",
+    "category": "science",
+    "navigationKeyword1": "health",
+    "navigationKeyword2": "nutrition",
+    "question": "What is whole grain?",
+    "correctAnswer": "Contains bran, germ, endosperm",
+    "incorrectAnswers": [
+      "Only white flour",
+      "Sugar syrup",
+      "Juice concentrate"
+    ],
+    "explanation": "More fiber and nutrients than refined.",
+    "keywords": [
+      "whole-grain",
+      "diet"
+    ],
+    "source": "https://www.myplate.gov/eat-healthy/grains"
+  }
+]

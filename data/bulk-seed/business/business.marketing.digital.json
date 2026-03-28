@@ -1,0 +1,122 @@
+[
+  {
+    "category": "business",
+    "navigationKeyword1": "marketing",
+    "navigationKeyword2": "digital",
+    "question": "What does digital marketing primarily involve?",
+    "correctAnswer": "Using online channels to attract, engage, and convert customers.",
+    "incorrectAnswers": [
+      "Relying only on print ads with no digital tracking",
+      "Advertising only in-person to customers who cannot search online",
+      "Replacing all customer service with automated billing"
+    ],
+    "explanation": "Digital marketing focuses on online channels where you can reach audiences, measure performance, and optimize results.",
+    "keywords": [
+      "digital-marketing",
+      "online-channels",
+      "conversion"
+    ],
+    "source": "https://www.hubspot.com/marketing/digital-marketing",
+    "seedId": "c8c463b8-3e17-51db-b824-dcbee0085b7a"
+  },
+  {
+    "category": "business",
+    "navigationKeyword1": "marketing",
+    "navigationKeyword2": "digital",
+    "question": "What is “owned, earned, and paid media” describing?",
+    "correctAnswer": "Different ways a brand gains reach: what you control (owned), what others share (earned), and what you buy (paid).",
+    "incorrectAnswers": [
+      "Different types of product inventory categories",
+      "Different accounting categories for marketing spend",
+      "Only paid advertising categories with different budgets"
+    ],
+    "explanation": "This framework classifies media sources by control and how attention is gained, helping marketers plan channel mix.",
+    "keywords": [
+      "media-mix",
+      "owned-earned-paid",
+      "channel-strategy"
+    ],
+    "source": "https://www.hubspot.com/owned-earned-and-paid-media",
+    "seedId": "b41f225b-16d8-54ca-902b-8cf59f744e80"
+  },
+  {
+    "category": "business",
+    "navigationKeyword1": "marketing",
+    "navigationKeyword2": "digital",
+    "question": "What does a conversion funnel represent in digital marketing?",
+    "correctAnswer": "The steps from first interaction to a target action (like a signup or purchase).",
+    "incorrectAnswers": [
+      "The steps from manufacturing to delivery only",
+      "A guaranteed sequence where every visitor converts",
+      "The process of calculating taxes owed from online sales"
+    ],
+    "explanation": "Funnels help teams identify where users drop off so they can improve the experience and performance.",
+    "keywords": [
+      "conversion-funnel",
+      "conversion",
+      "funnel-optimization"
+    ],
+    "source": "https://www.investopedia.com/",
+    "seedId": "e5fa7e1f-c4e1-5bc3-8abd-87f06de25295"
+  },
+  {
+    "category": "business",
+    "navigationKeyword1": "marketing",
+    "navigationKeyword2": "digital",
+    "question": "Why do marketers use analytics in digital campaigns?",
+    "correctAnswer": "To measure behavior and outcomes, then improve targeting, messaging, and channel choices.",
+    "incorrectAnswers": [
+      "To remove the need for any experiments",
+      "To ensure every ad is equally effective by default",
+      "To avoid collecting any user data at all"
+    ],
+    "explanation": "Analytics turns campaign activity into measurable signals so teams can learn and optimize.",
+    "keywords": [
+      "analytics",
+      "optimization",
+      "measurement"
+    ],
+    "source": "https://moz.com/",
+    "seedId": "f5d480f3-6922-5990-af06-dad1a8f45e78"
+  },
+  {
+    "category": "business",
+    "navigationKeyword1": "marketing",
+    "navigationKeyword2": "digital",
+    "question": "What is attribution in marketing measurement?",
+    "correctAnswer": "The method of assigning credit to marketing touches that contribute to a conversion.",
+    "incorrectAnswers": [
+      "A tax rule for deciding how to expense advertising",
+      "A guarantee that one touch always causes conversions",
+      "A way to prevent customers from comparing offers"
+    ],
+    "explanation": "Attribution attempts to estimate which interactions influenced the final conversion.",
+    "keywords": [
+      "attribution",
+      "measurement",
+      "touchpoints"
+    ],
+    "source": "https://www.hubspot.com/",
+    "seedId": "6d074f4f-f9c2-5944-b54d-bd63da146fd7"
+  },
+  {
+    "category": "business",
+    "navigationKeyword1": "marketing",
+    "navigationKeyword2": "digital",
+    "question": "What is the practical purpose of A/B testing?",
+    "correctAnswer": "To compare two versions to learn which one performs better for a defined metric.",
+    "incorrectAnswers": [
+      "To select the version that looks best aesthetically only",
+      "To randomly change websites with no metric goal",
+      "To avoid learning by testing every option at once"
+    ],
+    "explanation": "A/B tests create evidence by comparing variants under controlled conditions and evaluating a metric like conversion rate.",
+    "keywords": [
+      "ab-testing",
+      "experimentation",
+      "conversion-rate"
+    ],
+    "source": "https://moz.com/learn/seo/ab-testing",
+    "seedId": "6ececd5f-40c0-5b82-bc50-3ab7328f72c4"
+  }
+]

@@ -1,0 +1,116 @@
+[
+  {
+    "category": "civics",
+    "navigationKeyword1": "media-civics",
+    "navigationKeyword2": "campaign-media",
+    "question": "What is a common transparency rule for political ads in many democracies?",
+    "correctAnswer": "disclose who paid for the ad and sometimes target audience details",
+    "incorrectAnswers": [
+      "ban all negative statements",
+      "require ads to be silent",
+      "forbid any online placement"
+    ],
+    "explanation": "Sponsorship disclosure helps voters see who is trying to persuade them.",
+    "keywords": [
+      "disclosure",
+      "political-ads"
+    ],
+    "source": "https://www.fec.gov/help-candidates-and-committees/advertising/",
+    "seedId": "d5648c38-bd0f-55d4-abc3-14d5c31ec461"
+  },
+  {
+    "category": "civics",
+    "navigationKeyword1": "media-civics",
+    "navigationKeyword2": "campaign-media",
+    "question": "Why do debates and interviews shape campaign coverage?",
+    "correctAnswer": "they give voters direct comparisons of candidates answering similar questions",
+    "incorrectAnswers": [
+      "they replace all voting",
+      "they are only entertainment with no civic role",
+      "they ban platforms from reporting"
+    ],
+    "explanation": "Side-by-side formats highlight policy and character under time pressure.",
+    "keywords": [
+      "debates",
+      "coverage"
+    ],
+    "source": "https://www.civiced.org/",
+    "seedId": "12d594c3-29e4-5bb7-807e-e9e4fc138c9d"
+  },
+  {
+    "category": "civics",
+    "navigationKeyword1": "media-civics",
+    "navigationKeyword2": "campaign-media",
+    "question": "What is an attack ad in campaign media terms?",
+    "correctAnswer": "a spot that criticizes an opponent’s record or character",
+    "incorrectAnswers": [
+      "any ad that lists a website",
+      "only nonpartisan voter guides",
+      "a weather forecast"
+    ],
+    "explanation": "Attack ads are common; voters weigh fairness, accuracy, and tone.",
+    "keywords": [
+      "attack-ads",
+      "campaigns"
+    ],
+    "source": "https://www.britannica.com/topic/political-advertising",
+    "seedId": "6c0acb40-c581-5925-91fb-c8fd15507127"
+  },
+  {
+    "category": "civics",
+    "navigationKeyword1": "media-civics",
+    "navigationKeyword2": "campaign-media",
+    "question": "What is microtargeting in digital campaign practice?",
+    "correctAnswer": "sending tailored messages to narrow groups based on data",
+    "incorrectAnswers": [
+      "mailing the same flyer to every household",
+      "only TV ads during cartoons",
+      "banning all online speech"
+    ],
+    "explanation": "Targeting can be efficient but raises questions about privacy and polarization.",
+    "keywords": [
+      "microtargeting",
+      "digital-ads"
+    ],
+    "source": "https://www.ftc.gov/business-guidance/advertising-marketing",
+    "seedId": "8ee1baba-dd64-5cc5-868c-9787a18dcfbc"
+  },
+  {
+    "category": "civics",
+    "navigationKeyword1": "media-civics",
+    "navigationKeyword2": "campaign-media",
+    "question": "Why do some systems set limits or transparency on campaign spending?",
+    "correctAnswer": "to reduce the risk that wealth alone decides election outcomes",
+    "incorrectAnswers": [
+      "to ban all fundraising",
+      "to make voting optional",
+      "to end all political parties"
+    ],
+    "explanation": "Disclosure and limits aim for fair competition and public confidence.",
+    "keywords": [
+      "campaign-finance",
+      "fairness"
+    ],
+    "source": "https://www.fec.gov/introduction-campaign-finance/how-to-research-public-records/",
+    "seedId": "373a495e-c33d-5df7-9a8c-5d51b8e6696b"
+  },
+  {
+    "category": "civics",
+    "navigationKeyword1": "media-civics",
+    "navigationKeyword2": "campaign-media",
+    "question": "What is earned media for a candidate?",
+    "correctAnswer": "free news coverage rather than paid advertising",
+    "incorrectAnswers": [
+      "salary paid to volunteers",
+      "only robocalls",
+      "ballots printed by donors"
+    ],
+    "explanation": "Stories, interviews, and debates can reach voters without buying airtime.",
+    "keywords": [
+      "earned-media",
+      "coverage"
+    ],
+    "source": "https://www.britannica.com/topic/political-campaign",
+    "seedId": "a6ee8cd6-8b4f-5eb4-9019-ec41b27e4896"
+  }
+]

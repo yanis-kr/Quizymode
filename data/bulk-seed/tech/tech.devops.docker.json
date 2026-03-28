@@ -1,0 +1,116 @@
+[
+  {
+    "category": "tech",
+    "navigationKeyword1": "devops",
+    "navigationKeyword2": "docker",
+    "question": "What is a Docker image composed of?",
+    "correctAnswer": "Read-only layers stacked on top of each other",
+    "incorrectAnswers": [
+      "A full guest operating system kernel per container",
+      "A single mutable file that grows forever",
+      "Only runtime memory snapshots"
+    ],
+    "explanation": "Images are layer stacks; containers add a thin writable layer on top.",
+    "keywords": [
+      "docker",
+      "containers"
+    ],
+    "source": "https://docs.docker.com/get-started/docker-concepts/building-images/understanding-image-layers/",
+    "seedId": "b3349f1b-49da-5318-b27d-b5807419ed08"
+  },
+  {
+    "category": "tech",
+    "navigationKeyword1": "devops",
+    "navigationKeyword2": "docker",
+    "question": "What does the Dockerfile `FROM` instruction set?",
+    "correctAnswer": "The starting image for the build",
+    "incorrectAnswers": [
+      "The TCP port exposed at runtime only",
+      "The Git branch to clone",
+      "The CPU limit for the container"
+    ],
+    "explanation": "`FROM` chooses the base layer; later instructions add more layers.",
+    "keywords": [
+      "docker",
+      "dockerfile"
+    ],
+    "source": "https://docs.docker.com/reference/dockerfile/#from",
+    "seedId": "90d673c2-8b7d-56ea-ad7c-eff9cc340521"
+  },
+  {
+    "category": "tech",
+    "navigationKeyword1": "devops",
+    "navigationKeyword2": "docker",
+    "question": "What is the OCI Image Specification mainly about?",
+    "correctAnswer": "A standard format for container images so tools can interoperate",
+    "incorrectAnswers": [
+      "A cloud billing API for Kubernetes",
+      "A language for writing systemd units",
+      "A TLS cipher suite list"
+    ],
+    "explanation": "OCI images let runtimes and registries share a common image model beyond one vendor.",
+    "keywords": [
+      "docker",
+      "oci"
+    ],
+    "source": "https://github.com/opencontainers/image-spec/blob/main/spec.md",
+    "seedId": "7579b28e-fd11-5754-86a8-7645e1d4cea2"
+  },
+  {
+    "category": "tech",
+    "navigationKeyword1": "devops",
+    "navigationKeyword2": "docker",
+    "question": "What is a Docker volume typically used for?",
+    "correctAnswer": "Persisting data outside the container writable layer",
+    "incorrectAnswers": [
+      "Storing the Dockerfile only",
+      "Replacing the need for a network",
+      "Compiling source without a base image"
+    ],
+    "explanation": "Volumes keep data durable and can be mounted into containers at runtime.",
+    "keywords": [
+      "docker",
+      "storage"
+    ],
+    "source": "https://docs.docker.com/storage/volumes/",
+    "seedId": "a32b3af7-28ca-53c1-9f42-24c6f7bd8126"
+  },
+  {
+    "category": "tech",
+    "navigationKeyword1": "devops",
+    "navigationKeyword2": "docker",
+    "question": "What does `docker build` use as build context?",
+    "correctAnswer": "Files sent to the daemon from the specified path or URL",
+    "incorrectAnswers": [
+      "Only files already inside running containers",
+      "Only layers cached on the internet",
+      "Only the Dockerfile with no other files"
+    ],
+    "explanation": "The context is the set of files available to COPY and ADD during build.",
+    "keywords": [
+      "docker",
+      "build"
+    ],
+    "source": "https://docs.docker.com/build/building/context/",
+    "seedId": "aa2943a9-0b4b-5125-a256-1667ad64c06e"
+  },
+  {
+    "category": "tech",
+    "navigationKeyword1": "devops",
+    "navigationKeyword2": "docker",
+    "question": "How do containers on the same Linux host usually relate to the host kernel?",
+    "correctAnswer": "They share the host kernel and isolate processes with namespaces and cgroups",
+    "incorrectAnswers": [
+      "Each container boots its own separate kernel",
+      "Containers cannot run on Linux hosts",
+      "They require a hypervisor for every process"
+    ],
+    "explanation": "Containers are not full VMs; they rely on OS-level isolation features.",
+    "keywords": [
+      "docker",
+      "linux"
+    ],
+    "source": "https://www.redhat.com/en/topics/containers/what-is-linux-container",
+    "seedId": "a7178a27-c4d5-572e-a43c-bc882e43dc1e"
+  }
+]

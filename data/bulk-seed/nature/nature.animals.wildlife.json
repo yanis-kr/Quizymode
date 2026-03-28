@@ -1,0 +1,116 @@
+[
+  {
+    "category": "nature",
+    "navigationKeyword1": "animals",
+    "navigationKeyword2": "wildlife",
+    "question": "Which animal is the largest living land animal?",
+    "correctAnswer": "African bush elephant",
+    "incorrectAnswers": [
+      "white rhinoceros",
+      "giraffe",
+      "hippopotamus"
+    ],
+    "explanation": "The African bush elephant is the largest land animal alive today.",
+    "keywords": [
+      "wildlife",
+      "nature-animals"
+    ],
+    "source": "https://www.nationalgeographic.com/animals/mammals/a/african-elephant.html",
+    "seedId": "b40dcd40-7b76-533f-834d-858ce2b7886e"
+  },
+  {
+    "category": "nature",
+    "navigationKeyword1": "animals",
+    "navigationKeyword2": "wildlife",
+    "question": "Which mammal is the fastest land animal over short distances?",
+    "correctAnswer": "cheetah",
+    "incorrectAnswers": [
+      "pronghorn",
+      "lion",
+      "greyhound"
+    ],
+    "explanation": "Cheetahs are built for explosive speed and are the fastest land animals.",
+    "keywords": [
+      "wildlife",
+      "nature-animals"
+    ],
+    "source": "https://www.britannica.com/animal/cheetah-mammal",
+    "seedId": "2dac62e4-ed32-50bb-bcdc-d566164eeff2"
+  },
+  {
+    "category": "nature",
+    "navigationKeyword1": "animals",
+    "navigationKeyword2": "wildlife",
+    "question": "Which group of mammals is capable of true powered flight?",
+    "correctAnswer": "bats",
+    "incorrectAnswers": [
+      "flying squirrels",
+      "colugos",
+      "sugar gliders"
+    ],
+    "explanation": "Bats are the only mammals that truly fly rather than glide.",
+    "keywords": [
+      "wildlife",
+      "nature-animals"
+    ],
+    "source": "https://www.smithsonianmag.com/science-nature/bats-evolution-history-180974610/",
+    "seedId": "af035724-9bcd-50c6-9897-ef3663163b23"
+  },
+  {
+    "category": "nature",
+    "navigationKeyword1": "animals",
+    "navigationKeyword2": "wildlife",
+    "question": "What plant makes up most of a giant panda's diet?",
+    "correctAnswer": "bamboo",
+    "incorrectAnswers": [
+      "eucalyptus",
+      "seagrass",
+      "fern fronds"
+    ],
+    "explanation": "Giant pandas spend much of their day eating bamboo.",
+    "keywords": [
+      "wildlife",
+      "nature-animals"
+    ],
+    "source": "https://nationalzoo.si.edu/animals/news/keep-national-zoos-pandas-satisfied-staff-prepare-endless-supply-bamboo",
+    "seedId": "001b8fce-1eb8-5835-8336-2f29fb5ce7fd"
+  },
+  {
+    "category": "nature",
+    "navigationKeyword1": "animals",
+    "navigationKeyword2": "wildlife",
+    "question": "Which animal is the tallest living land animal?",
+    "correctAnswer": "giraffe",
+    "incorrectAnswers": [
+      "African bush elephant",
+      "moose",
+      "camel"
+    ],
+    "explanation": "Giraffes are the tallest land animals, helped by their very long legs and necks.",
+    "keywords": [
+      "wildlife",
+      "nature-animals"
+    ],
+    "source": "https://www.nationalgeographic.com/animals/mammals/facts/giraffe",
+    "seedId": "cdd86109-cc2c-52a8-aa30-b1a0dc10bacd"
+  },
+  {
+    "category": "nature",
+    "navigationKeyword1": "animals",
+    "navigationKeyword2": "wildlife",
+    "question": "Which reptile is the world's largest living lizard?",
+    "correctAnswer": "Komodo dragon",
+    "incorrectAnswers": [
+      "marine iguana",
+      "Nile monitor",
+      "green anole"
+    ],
+    "explanation": "Komodo dragons are the largest living lizards and top predators on their islands.",
+    "keywords": [
+      "wildlife",
+      "nature-animals"
+    ],
+    "source": "https://www.nationalgeographic.com/animals/reptiles/facts/komodo-dragon",
+    "seedId": "42cc74e0-c428-5a67-afde-f17068f4c9aa"
+  }
+]

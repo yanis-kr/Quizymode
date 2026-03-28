@@ -60,7 +60,8 @@ internal static partial class StartupExtensions
             // Enable detailed exception pages in development for better debugging experience
             app.UseDeveloperExceptionPage();
             
-            app.MapOpenApi("/openapi/v1.json");
+            app.MapOpenApi("/openapi/{documentName}.json");
+            app.MapOpenApi("/openapi/{documentName}.yaml");
             app.UseSwaggerUI(c =>
             {
                 c.SwaggerEndpoint("/openapi/v1.json", "Quizymode API v1");

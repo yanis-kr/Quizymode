@@ -1,0 +1,122 @@
+[
+  {
+    "category": "business",
+    "navigationKeyword1": "finance",
+    "navigationKeyword2": "personal-finance",
+    "question": "In credit and savings, what is the main difference between APR and APY?",
+    "correctAnswer": "APY accounts for compounding; APR is the annual rate without showing the compounding effect.",
+    "incorrectAnswers": [
+      "APR accounts for compounding; APY is the annual rate without compounding.",
+      "APY only includes fees; APR excludes any compounding.",
+      "APR is the total yearly cost; APY is only the interest for one month."
+    ],
+    "explanation": "APY reflects how often interest compounds over a year, while APR is an annualized rate that doesn’t directly show the compounding schedule in its basic form.",
+    "keywords": [
+      "apr",
+      "apy",
+      "credit-cost"
+    ],
+    "source": "https://www.consumerfinance.gov/ask-cfpb/what-is-apr-and-how-is-it-different-from-apy-en-482/",
+    "seedId": "cdd1c600-c31e-5018-9b01-ec4e2bcbe53f"
+  },
+  {
+    "category": "business",
+    "navigationKeyword1": "finance",
+    "navigationKeyword2": "personal-finance",
+    "question": "How is credit utilization typically calculated for revolving credit cards?",
+    "correctAnswer": "Your current balance divided by your total credit limit.",
+    "incorrectAnswers": [
+      "Your balance divided by your monthly income.",
+      "Your total credit limit divided by your current balance.",
+      "Your balance divided by the number of cards you own."
+    ],
+    "explanation": "Credit utilization is usually expressed as the fraction of your available revolving credit that you’re using at a given time (balance ÷ credit limit).",
+    "keywords": [
+      "credit-scores",
+      "utilization",
+      "revolving-credit"
+    ],
+    "source": "https://www.investopedia.com/terms/c/credit-utilization-rate.asp",
+    "seedId": "084db4a2-06c8-57af-a4fc-9fe8a4a8167c"
+  },
+  {
+    "category": "business",
+    "navigationKeyword1": "finance",
+    "navigationKeyword2": "personal-finance",
+    "question": "Why does paying only the minimum on a credit card usually increase the total interest you pay?",
+    "correctAnswer": "Because a larger portion of each payment goes to interest, leaving the principal balance higher for longer.",
+    "incorrectAnswers": [
+      "Because the minimum payment eliminates interest charges going forward.",
+      "Because paying minimum automatically reduces your credit limit.",
+      "Because interest is only charged if you exceed your credit limit."
+    ],
+    "explanation": "With minimum payments, principal often comes down slowly, so interest continues to accrue on the remaining balance, increasing total cost.",
+    "keywords": [
+      "credit-cards",
+      "minimum-payment",
+      "interest"
+    ],
+    "source": "https://www.investor.gov/introduction-investing/investing-basics/investment-products/credit-cards",
+    "seedId": "dd4ca519-046f-5a42-9fe2-8943fe307048"
+  },
+  {
+    "category": "business",
+    "navigationKeyword1": "finance",
+    "navigationKeyword2": "personal-finance",
+    "question": "In a loan payment, what is the difference between principal and interest?",
+    "correctAnswer": "Principal is the amount you borrowed; interest is the charge for borrowing it.",
+    "incorrectAnswers": [
+      "Principal is the finance fee; interest is the amount you borrowed back.",
+      "Principal is always fixed in every payment; interest is always zero.",
+      "Principal is the credit limit; interest is the credit score impact."
+    ],
+    "explanation": "Principal is the underlying loan balance, while interest is the cost of using the borrowed money.",
+    "keywords": [
+      "loans",
+      "principal",
+      "interest"
+    ],
+    "source": "https://www.federalreserve.gov/consumerscommunities/learnmore/loans-and-debt.htm",
+    "seedId": "32c72d86-30ce-54fc-b7a2-01ae090d843b"
+  },
+  {
+    "category": "business",
+    "navigationKeyword1": "finance",
+    "navigationKeyword2": "personal-finance",
+    "question": "What is the practical purpose of an emergency fund?",
+    "correctAnswer": "To cover unexpected expenses without relying on high-interest debt.",
+    "incorrectAnswers": [
+      "To replace your retirement account every year.",
+      "To pay for planned purchases like vacations and furniture.",
+      "To earn profit from trading while you wait to spend."
+    ],
+    "explanation": "An emergency fund is meant to be readily available cash for surprises so you don’t have to borrow at the worst time or at very high rates.",
+    "keywords": [
+      "emergency-savings",
+      "cash-buffer",
+      "debt-prevention"
+    ],
+    "source": "https://www.nerdwallet.com/article/banking/emergency-fund",
+    "seedId": "909d2244-a940-5a62-88cd-5cb9b4d331c9"
+  },
+  {
+    "category": "business",
+    "navigationKeyword1": "finance",
+    "navigationKeyword2": "personal-finance",
+    "question": "In personal investing, what does diversification aim to do?",
+    "correctAnswer": "Reduce the impact of a single investment performing poorly on your overall portfolio.",
+    "incorrectAnswers": [
+      "Guarantee profits no matter what happens in markets.",
+      "Concentrate risk into fewer assets to increase returns.",
+      "Eliminate market risk entirely by investing in any one asset class."
+    ],
+    "explanation": "Diversification spreads exposure across different assets, so one poor outcome is less likely to dominate your results.",
+    "keywords": [
+      "diversification",
+      "portfolio-risk",
+      "investing-basics"
+    ],
+    "source": "https://www.investor.gov/introduction-investing/investing-basics/glossary/diversification",
+    "seedId": "d83a5cd3-8fe3-5c30-a961-e7358844d203"
+  }
+]

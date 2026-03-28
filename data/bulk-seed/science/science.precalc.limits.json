@@ -1,0 +1,230 @@
+[
+  {
+    "seedId": "f7041bcf-ed36-4e43-b916-08bcfb51647e",
+    "category": "science",
+    "navigationKeyword1": "precalc",
+    "navigationKeyword2": "limits",
+    "question": "Limit lim_{x\u2192a} f(x) = L means?",
+    "correctAnswer": "f(x) arbitrarily close to L when x near a",
+    "incorrectAnswers": [
+      "f(a) must equal L always",
+      "Only one-sided always",
+      "L must be integer"
+    ],
+    "explanation": "Value at a may differ or undefined.",
+    "keywords": [
+      "limit-definition",
+      "calculus"
+    ],
+    "source": "https://openstax.org/books/calculus-volume-1/pages/2-5-precise-definition-of-a-limit"
+  },
+  {
+    "seedId": "a51b4cb7-a971-4f4f-ba78-bcc9a24cbef6",
+    "category": "science",
+    "navigationKeyword1": "precalc",
+    "navigationKeyword2": "limits",
+    "question": "Limit may exist if?",
+    "correctAnswer": "Left and right limits equal",
+    "incorrectAnswers": [
+      "Always if f(a) defined",
+      "Never if discontinuous",
+      "Only polynomials"
+    ],
+    "explanation": "Removable discontinuity can still have limit.",
+    "keywords": [
+      "one-sided-limit",
+      "continuity"
+    ],
+    "source": "https://openstax.org/books/calculus-volume-1/pages/2-2-limit-of-a-function"
+  },
+  {
+    "seedId": "2f965510-219f-4f17-ad4b-6e5033bda36d",
+    "category": "science",
+    "navigationKeyword1": "precalc",
+    "navigationKeyword2": "limits",
+    "question": "lim_{x\u21920} sin x / x?",
+    "correctAnswer": "1",
+    "incorrectAnswers": [
+      "0",
+      "\u221e",
+      "\u22121"
+    ],
+    "explanation": "Fundamental trig limit.",
+    "keywords": [
+      "trig-limit",
+      "squeeze"
+    ],
+    "source": "https://openstax.org/books/calculus-volume-1/pages/2-3-limits-of-trigonometric-functions"
+  },
+  {
+    "seedId": "3cbc7886-05ca-4cf8-b78c-0b0f1a697f2c",
+    "category": "science",
+    "navigationKeyword1": "precalc",
+    "navigationKeyword2": "limits",
+    "question": "Vertical asymptote suggests?",
+    "correctAnswer": "Function grows unbounded near point",
+    "incorrectAnswers": [
+      "Horizontal line always",
+      "Limit always exists finite",
+      "Always removable"
+    ],
+    "explanation": "Rational zeros of denominator.",
+    "keywords": [
+      "vertical-asymptote",
+      "limits"
+    ],
+    "source": "https://openstax.org/books/calculus-volume-1/pages/2-2-limit-of-a-function"
+  },
+  {
+    "seedId": "2e25ead2-5bb8-4f11-945a-8566bb2fb2fe",
+    "category": "science",
+    "navigationKeyword1": "precalc",
+    "navigationKeyword2": "limits",
+    "question": "Horizontal asymptote rational function (deg top < deg bot)?",
+    "correctAnswer": "y = 0",
+    "incorrectAnswers": [
+      "No HA",
+      "y = 1 always",
+      "Same as oblique always"
+    ],
+    "explanation": "Compare degrees.",
+    "keywords": [
+      "horizontal-asymptote",
+      "rational"
+    ],
+    "source": "https://openstax.org/books/calculus-volume-1/pages/4-3-limits-at-infinity"
+  },
+  {
+    "seedId": "e5729d6f-5a3a-4d48-898d-e2798bbc273c",
+    "category": "science",
+    "navigationKeyword1": "precalc",
+    "navigationKeyword2": "limits",
+    "question": "Squeeze theorem idea?",
+    "correctAnswer": "Bound f between g and h with same limit",
+    "incorrectAnswers": [
+      "Multiply limits",
+      "Always use L\u2019H\u00f4pital",
+      "Only for series"
+    ],
+    "explanation": "Proves trig limits.",
+    "keywords": [
+      "squeeze-theorem",
+      "limits"
+    ],
+    "source": "https://openstax.org/books/calculus-volume-1/pages/2-3-limits-of-trigonometric-functions"
+  },
+  {
+    "seedId": "64ffdfb4-ec99-4596-ab21-96a2aeaec5eb",
+    "category": "science",
+    "navigationKeyword1": "precalc",
+    "navigationKeyword2": "limits",
+    "question": "Continuity at a requires?",
+    "correctAnswer": "lim f = f(a) and f(a) defined",
+    "incorrectAnswers": [
+      "Limit enough alone",
+      "Derivative exists",
+      "Only polynomials"
+    ],
+    "explanation": "Three-part check.",
+    "keywords": [
+      "continuity",
+      "limits"
+    ],
+    "source": "https://openstax.org/books/calculus-volume-1/pages/2-4-continuity"
+  },
+  {
+    "seedId": "378bb868-9a69-40da-bc71-fc27aa6b42b2",
+    "category": "science",
+    "navigationKeyword1": "precalc",
+    "navigationKeyword2": "limits",
+    "question": "Removable discontinuity?",
+    "correctAnswer": "Limit exists but \u2260 f(a) or f(a) undefined",
+    "incorrectAnswers": [
+      "Jump only",
+      "Infinite only",
+      "No limit"
+    ],
+    "explanation": "Can \u2018fill hole\u2019.",
+    "keywords": [
+      "removable",
+      "discontinuity"
+    ],
+    "source": "https://openstax.org/books/calculus-volume-1/pages/2-4-continuity"
+  },
+  {
+    "seedId": "e4b8bfe6-4fd7-4ca8-a3ee-aff66a560c3c",
+    "category": "science",
+    "navigationKeyword1": "precalc",
+    "navigationKeyword2": "limits",
+    "question": "lim_{x\u2192\u221e} (1 + 1/x)^x?",
+    "correctAnswer": "e",
+    "incorrectAnswers": [
+      "1",
+      "0",
+      "\u03c0"
+    ],
+    "explanation": "Defines Euler\u2019s number.",
+    "keywords": [
+      "e-limit",
+      "sequences"
+    ],
+    "source": "https://openstax.org/books/calculus-volume-1/pages/6-7-lhopitals-rule"
+  },
+  {
+    "seedId": "3a694e53-eab5-480d-a8fa-557b115f8cd2",
+    "category": "science",
+    "navigationKeyword1": "precalc",
+    "navigationKeyword2": "limits",
+    "question": "Indeterminate form 0/0 suggests?",
+    "correctAnswer": "Algebra or L\u2019H\u00f4pital later in calc",
+    "incorrectAnswers": [
+      "Always 0",
+      "Always 1",
+      "No techniques"
+    ],
+    "explanation": "Precalc: factor/rationalize.",
+    "keywords": [
+      "indeterminate",
+      "algebra"
+    ],
+    "source": "https://openstax.org/books/calculus-volume-1/pages/2-2-limit-of-a-function"
+  },
+  {
+    "seedId": "8a5d1a08-b391-48f5-9ece-56bd64915bcf",
+    "category": "science",
+    "navigationKeyword1": "precalc",
+    "navigationKeyword2": "limits",
+    "question": "Piecewise limit check?",
+    "correctAnswer": "Compare left/right at break",
+    "incorrectAnswers": [
+      "Only right",
+      "Only value at point",
+      "Never needed"
+    ],
+    "explanation": "Match branches.",
+    "keywords": [
+      "piecewise",
+      "limits"
+    ],
+    "source": "https://openstax.org/books/calculus-volume-1/pages/2-2-limit-of-a-function"
+  },
+  {
+    "seedId": "718fd00a-3591-4cea-9fd5-e650c29662d2",
+    "category": "science",
+    "navigationKeyword1": "precalc",
+    "navigationKeyword2": "limits",
+    "question": "End behavior of polynomial with positive leading degree?",
+    "correctAnswer": "Odd: opposite infinities; Even: same infinity",
+    "incorrectAnswers": [
+      "Always bounded",
+      "Always horizontal asymptote",
+      "Always oscillates"
+    ],
+    "explanation": "Sign of leading coefficient matters.",
+    "keywords": [
+      "end-behavior",
+      "polynomial"
+    ],
+    "source": "https://openstax.org/books/precalculus-2e/pages/3-3-composition-of-functions"
+  }
+]

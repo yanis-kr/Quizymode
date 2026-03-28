@@ -1,0 +1,230 @@
+[
+  {
+    "seedId": "1ebf1088-727b-41f9-a60f-0f3baee263ff",
+    "category": "science",
+    "navigationKeyword1": "probability",
+    "navigationKeyword2": "combinatorics",
+    "question": "n factorial n! meaning?",
+    "correctAnswer": "Product 1\u00b72\u00b7\u2026\u00b7n",
+    "incorrectAnswers": [
+      "Sum 1..n",
+      "2^n",
+      "n^2"
+    ],
+    "explanation": "0! = 1 by convention.",
+    "keywords": [
+      "factorial",
+      "counting"
+    ],
+    "source": "https://openstax.org/books/introductory-statistics/pages/3-3-two-basic-rules-of-probability"
+  },
+  {
+    "seedId": "9374f561-75d8-4cd2-bdb7-6c8f660299ff",
+    "category": "science",
+    "navigationKeyword1": "probability",
+    "navigationKeyword2": "combinatorics",
+    "question": "Permutations of n distinct objects?",
+    "correctAnswer": "n!",
+    "incorrectAnswers": [
+      "n^2",
+      "2^n",
+      "n(n\u22121)/2"
+    ],
+    "explanation": "Order matters, use all.",
+    "keywords": [
+      "permutation",
+      "counting"
+    ],
+    "source": "https://openstax.org/books/introductory-statistics/pages/3-3-two-basic-rules-of-probability"
+  },
+  {
+    "seedId": "1aebe307-9c34-458b-b8b5-fd68bc77547a",
+    "category": "science",
+    "navigationKeyword1": "probability",
+    "navigationKeyword2": "combinatorics",
+    "question": "Permutations choose r from n (order matters)?",
+    "correctAnswer": "n!/(n\u2212r)!",
+    "incorrectAnswers": [
+      "n choose r",
+      "n^r",
+      "r!"
+    ],
+    "explanation": "Arrangements of r distinct picks.",
+    "keywords": [
+      "permutation",
+      "partial"
+    ],
+    "source": "https://www.mathsisfun.com/combinatorics/combinations-permutations.html"
+  },
+  {
+    "seedId": "d77011bd-b656-4039-aa9d-a8b8d22d5eae",
+    "category": "science",
+    "navigationKeyword1": "probability",
+    "navigationKeyword2": "combinatorics",
+    "question": "Combinations \u2018n choose r\u2019?",
+    "correctAnswer": "n!/(r!(n\u2212r)!)",
+    "incorrectAnswers": [
+      "n!/r!",
+      "n^r",
+      "n\u2212r"
+    ],
+    "explanation": "Order doesn\u2019t matter.",
+    "keywords": [
+      "combinations",
+      "binomial"
+    ],
+    "source": "https://www.mathsisfun.com/combinatorics/combinations-permutations.html"
+  },
+  {
+    "seedId": "b7a3c98d-7363-439c-828d-203860e21ffa",
+    "category": "science",
+    "navigationKeyword1": "probability",
+    "navigationKeyword2": "combinatorics",
+    "question": "Pascal\u2019s triangle rows relate to?",
+    "correctAnswer": "Binomial coefficients",
+    "incorrectAnswers": [
+      "Fibonacci only",
+      "Prime list",
+      "Trig values"
+    ],
+    "explanation": "(a+b)^n expansion.",
+    "keywords": [
+      "pascal",
+      "binomial"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Pascal%27s_triangle"
+  },
+  {
+    "seedId": "3486399f-6459-4439-9991-0a36817c27d5",
+    "category": "science",
+    "navigationKeyword1": "probability",
+    "navigationKeyword2": "combinatorics",
+    "question": "Multiplication rule (sequential)?",
+    "correctAnswer": "Multiply choices at each stage",
+    "incorrectAnswers": [
+      "Always add",
+      "Always factorial",
+      "Always divide by 2"
+    ],
+    "explanation": "For independent choice counts.",
+    "keywords": [
+      "multiplication-rule",
+      "counting"
+    ],
+    "source": "https://openstax.org/books/introductory-statistics/pages/3-3-two-basic-rules-of-probability"
+  },
+  {
+    "seedId": "5cb7b099-29ae-43aa-93ec-77a2fbeee995",
+    "category": "science",
+    "navigationKeyword1": "probability",
+    "navigationKeyword2": "combinatorics",
+    "question": "Inclusion-exclusion (two sets) for counts?",
+    "correctAnswer": "|A\u222aB| = |A|+|B|\u2212|A\u2229B|",
+    "incorrectAnswers": [
+      "|A|+|B|",
+      "|A\u2229B|",
+      "|A\u2212B|"
+    ],
+    "explanation": "Avoid double counting.",
+    "keywords": [
+      "inclusion-exclusion",
+      "sets"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Inclusion%E2%80%93exclusion_principle"
+  },
+  {
+    "seedId": "3669e03a-f02e-4949-ab32-9cc1dbe19ed7",
+    "category": "science",
+    "navigationKeyword1": "probability",
+    "navigationKeyword2": "combinatorics",
+    "question": "Stars and bars (nonnegative integer solutions to x1+\u2026+xk=n)?",
+    "correctAnswer": "C(n+k\u22121, k\u22121) (standard stars-and-bars)",
+    "incorrectAnswers": [
+      "n^k",
+      "n!",
+      "2^n"
+    ],
+    "explanation": "Identical items into bins.",
+    "keywords": [
+      "stars-and-bars",
+      "counting"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Stars_and_bars_(combinatorics)"
+  },
+  {
+    "seedId": "a6e83f2c-46b9-4118-97c9-459b17ce1fd6",
+    "category": "science",
+    "navigationKeyword1": "probability",
+    "navigationKeyword2": "combinatorics",
+    "question": "Birthday problem surprise?",
+    "correctAnswer": "\u224823 people for >50% chance shared birthday (pairwise)",
+    "incorrectAnswers": [
+      "7 people",
+      "100 people",
+      "366 people for 50%"
+    ],
+    "explanation": "Many pairs; not \u2018your birthday\u2019.",
+    "keywords": [
+      "birthday-problem",
+      "paradox"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Birthday_problem"
+  },
+  {
+    "seedId": "391fd927-2b4d-4128-bd95-c881e718219c",
+    "category": "science",
+    "navigationKeyword1": "probability",
+    "navigationKeyword2": "combinatorics",
+    "question": "Derangement (rough idea)?",
+    "correctAnswer": "Permutation with no fixed points",
+    "incorrectAnswers": [
+      "All permutations",
+      "Only identity",
+      "Only cycles length 2"
+    ],
+    "explanation": "Counting with inclusion-exclusion.",
+    "keywords": [
+      "derangement",
+      "permutation"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Derangement"
+  },
+  {
+    "seedId": "2afef53a-41ed-4b17-8e34-38b26ddaff50",
+    "category": "science",
+    "navigationKeyword1": "probability",
+    "navigationKeyword2": "combinatorics",
+    "question": "Committee choose 3 from 10 (unordered)?",
+    "correctAnswer": "C(10,3) = 120",
+    "incorrectAnswers": [
+      "720",
+      "1000",
+      "30"
+    ],
+    "explanation": "10!/(3!7!).",
+    "keywords": [
+      "committee",
+      "combinations"
+    ],
+    "source": "https://www.mathsisfun.com/combinatorics/combinations-permutations.html"
+  },
+  {
+    "seedId": "f9e3d01a-158b-4a3b-865b-79daa1510c9d",
+    "category": "science",
+    "navigationKeyword1": "probability",
+    "navigationKeyword2": "combinatorics",
+    "question": "License plate with 3 letters then 3 digits (26 letters, 10 digits)?",
+    "correctAnswer": "26^3 \u00d7 10^3 (if repeats allowed)",
+    "incorrectAnswers": [
+      "26+10",
+      "26\u00d710",
+      "6^36"
+    ],
+    "explanation": "Sequential slots multiply.",
+    "keywords": [
+      "counting",
+      "slots"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Rule_of_product"
+  }
+]

@@ -1,0 +1,230 @@
+[
+  {
+    "seedId": "9eba86e3-eafb-4cca-995a-3cac70b79b2b",
+    "category": "science",
+    "navigationKeyword1": "calculus",
+    "navigationKeyword2": "integrals",
+    "question": "What does \u222b_a^b f(x) dx represent geometrically (when f\u22650)?",
+    "correctAnswer": "Area under y=f(x) from a to b",
+    "incorrectAnswers": [
+      "Slope of tangent",
+      "Average rate only",
+      "Arc length always"
+    ],
+    "explanation": "The definite integral accumulates signed area with sign for f below axis.",
+    "keywords": [
+      "definite-integral",
+      "area"
+    ],
+    "source": "https://openstax.org/books/calculus-volume-1/pages/5-2-the-definite-integral"
+  },
+  {
+    "seedId": "47916a84-7023-4b9b-934b-085385ab0714",
+    "category": "science",
+    "navigationKeyword1": "calculus",
+    "navigationKeyword2": "integrals",
+    "question": "What is an antiderivative of f?",
+    "correctAnswer": "F where F\u2032 = f",
+    "incorrectAnswers": [
+      "F where F = f",
+      "F where F\u2033 = f",
+      "F where F = 0"
+    ],
+    "explanation": "Antiderivatives differ by a constant.",
+    "keywords": [
+      "antiderivative",
+      "indefinite"
+    ],
+    "source": "https://openstax.org/books/calculus-volume-1/pages/5-1-approximating-areas"
+  },
+  {
+    "seedId": "ffb65137-683c-462f-b151-6e34c9cb9bd2",
+    "category": "science",
+    "navigationKeyword1": "calculus",
+    "navigationKeyword2": "integrals",
+    "question": "What is the Fundamental Theorem of Calculus (Part 1 idea)?",
+    "correctAnswer": "Derivative of an accumulation function recovers the integrand",
+    "incorrectAnswers": [
+      "Integrals always equal derivatives",
+      "Derivatives always equal integrals",
+      "Areas cannot relate to rates"
+    ],
+    "explanation": "Connects differentiation and integration.",
+    "keywords": [
+      "ftc",
+      "accumulation"
+    ],
+    "source": "https://openstax.org/books/calculus-volume-1/pages/5-4-the-fundamental-theorem-of-calculus"
+  },
+  {
+    "seedId": "e32072f1-ccd9-446c-94ee-72fa4c6bf770",
+    "category": "science",
+    "navigationKeyword1": "calculus",
+    "navigationKeyword2": "integrals",
+    "question": "What is u-substitution?",
+    "correctAnswer": "Reverse chain rule for integrals",
+    "incorrectAnswers": [
+      "Product rule for integrals",
+      "Quotient rule for integrals",
+      "Implicit integration only"
+    ],
+    "explanation": "Choose u to simplify \u222b f(g(x))g\u2032(x) dx.",
+    "keywords": [
+      "u-substitution",
+      "integration"
+    ],
+    "source": "https://openstax.org/books/calculus-volume-1/pages/5-5-substitution"
+  },
+  {
+    "seedId": "c3357573-8390-47d2-8035-496c7e33f1be",
+    "category": "science",
+    "navigationKeyword1": "calculus",
+    "navigationKeyword2": "integrals",
+    "question": "What is \u222b x^n dx for n\u2260\u22121?",
+    "correctAnswer": "x^(n+1)/(n+1) + C",
+    "incorrectAnswers": [
+      "x^n + C",
+      "n x^(n\u22121) + C",
+      "ln(x) + C"
+    ],
+    "explanation": "Power rule for integration with exception at \u22121.",
+    "keywords": [
+      "power-rule",
+      "integral"
+    ],
+    "source": "https://openstax.org/books/calculus-volume-1/pages/5-7-integrals-resulting-in-logarithmic-and-exponential-functions"
+  },
+  {
+    "seedId": "976ad06e-a534-401e-a5b1-61d539f40598",
+    "category": "science",
+    "navigationKeyword1": "calculus",
+    "navigationKeyword2": "integrals",
+    "question": "What is \u222b 1/x dx?",
+    "correctAnswer": "ln|x| + C",
+    "incorrectAnswers": [
+      "x^2/2 + C",
+      "e^x + C",
+      "tan(x) + C"
+    ],
+    "explanation": "Logarithm arises from reciprocal integration.",
+    "keywords": [
+      "log-integral",
+      "antiderivative"
+    ],
+    "source": "https://openstax.org/books/calculus-volume-1/pages/5-7-integrals-resulting-in-logarithmic-and-exponential-functions"
+  },
+  {
+    "seedId": "817e6d4c-a3f6-4077-9e95-8fcd37cd26c9",
+    "category": "science",
+    "navigationKeyword1": "calculus",
+    "navigationKeyword2": "integrals",
+    "question": "What is the average value of f on [a,b]?",
+    "correctAnswer": "(1/(b\u2212a)) \u222b_a^b f(x) dx",
+    "incorrectAnswers": [
+      "f((a+b)/2)",
+      "f\u2032(b)\u2212f\u2032(a)",
+      "\u222b f / f"
+    ],
+    "explanation": "Average value is integral divided by interval length.",
+    "keywords": [
+      "average-value",
+      "integral"
+    ],
+    "source": "https://openstax.org/books/calculus-volume-1/pages/5-4-the-fundamental-theorem-of-calculus"
+  },
+  {
+    "seedId": "7c41d696-f8fe-4952-b057-878f860923a2",
+    "category": "science",
+    "navigationKeyword1": "calculus",
+    "navigationKeyword2": "integrals",
+    "question": "What does integration by parts derive from?",
+    "correctAnswer": "Product rule for derivatives",
+    "incorrectAnswers": [
+      "Chain rule only",
+      "Quotient rule only",
+      "FTC only"
+    ],
+    "explanation": "\u222b u dv = uv \u2212 \u222b v du.",
+    "keywords": [
+      "integration-by-parts",
+      "product"
+    ],
+    "source": "https://openstax.org/books/calculus-volume-2/pages/3-1-integration-by-parts"
+  },
+  {
+    "seedId": "a63dd89d-dfba-4c86-ba5a-7e1e334cfc54",
+    "category": "science",
+    "navigationKeyword1": "calculus",
+    "navigationKeyword2": "integrals",
+    "question": "What is a Riemann sum?",
+    "correctAnswer": "Approximate area using rectangles",
+    "incorrectAnswers": [
+      "Exact derivative",
+      "Taylor series",
+      "Eigenvalues"
+    ],
+    "explanation": "Finer partitions improve approximation to the integral.",
+    "keywords": [
+      "riemann-sum",
+      "approximation"
+    ],
+    "source": "https://openstax.org/books/calculus-volume-1/pages/5-2-the-definite-integral"
+  },
+  {
+    "seedId": "000bd7fc-6848-4598-939d-cbbf326bffc0",
+    "category": "science",
+    "navigationKeyword1": "calculus",
+    "navigationKeyword2": "integrals",
+    "question": "What is improper integral?",
+    "correctAnswer": "Integral over infinite interval or unbounded integrand",
+    "incorrectAnswers": [
+      "Always finite",
+      "Only polynomials",
+      "Only circles"
+    ],
+    "explanation": "Use limits to define convergence.",
+    "keywords": [
+      "improper-integral",
+      "convergence"
+    ],
+    "source": "https://openstax.org/books/calculus-volume-2/pages/3-4-improper-integrals"
+  },
+  {
+    "seedId": "1329ea16-1ad9-48ef-ab1d-e105a7557751",
+    "category": "science",
+    "navigationKeyword1": "calculus",
+    "navigationKeyword2": "integrals",
+    "question": "What is net signed area?",
+    "correctAnswer": "Integral counts area below axis negatively",
+    "incorrectAnswers": [
+      "Always positive",
+      "Always zero",
+      "Ignores sign"
+    ],
+    "explanation": "\u222b can be negative if f is mostly negative.",
+    "keywords": [
+      "signed-area",
+      "integral"
+    ],
+    "source": "https://openstax.org/books/calculus-volume-1/pages/5-2-the-definite-integral"
+  },
+  {
+    "seedId": "55487a56-2efe-4165-9f80-929dcd862fd0",
+    "category": "science",
+    "navigationKeyword1": "calculus",
+    "navigationKeyword2": "integrals",
+    "question": "What is the definite integral\u2019s additivity on intervals?",
+    "correctAnswer": "\u222b_a^c = \u222b_a^b + \u222b_b^c",
+    "incorrectAnswers": [
+      "\u222b_a^c = \u222b_a^b \u2212 \u222b_b^c",
+      "\u222b_a^c = \u222b_a^b \u00d7 \u222b_b^c",
+      "Not additive"
+    ],
+    "explanation": "Integrals split over adjacent intervals.",
+    "keywords": [
+      "properties",
+      "integral"
+    ],
+    "source": "https://openstax.org/books/calculus-volume-1/pages/5-2-the-definite-integral"
+  }
+]

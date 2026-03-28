@@ -1,0 +1,122 @@
+[
+  {
+    "category": "business",
+    "navigationKeyword1": "economics",
+    "navigationKeyword2": "policy",
+    "question": "What is monetary policy mainly about?",
+    "correctAnswer": "Central bank actions intended to influence money and interest conditions to affect economic outcomes.",
+    "incorrectAnswers": [
+      "Setting a company’s transfer prices between divisions",
+      "Replacing all government tax rules with accounting rules",
+      "Guaranteeing a fixed exchange rate for all future years in every case"
+    ],
+    "explanation": "Monetary policy works through interest rates, money conditions, and related transmission mechanisms.",
+    "keywords": [
+      "monetary-policy",
+      "central-bank",
+      "interest-rates"
+    ],
+    "source": "https://www.federalreserve.gov/monetarypolicy.htm",
+    "seedId": "1babd5b0-9d67-5550-8b78-63585d531ca0"
+  },
+  {
+    "category": "business",
+    "navigationKeyword1": "economics",
+    "navigationKeyword2": "policy",
+    "question": "What is fiscal policy mainly about?",
+    "correctAnswer": "Government spending and taxation decisions that influence demand and economic activity.",
+    "incorrectAnswers": [
+      "Only changing interest rates for households",
+      "Only rewriting accounting standards for companies",
+      "Only issuing new shares for public companies"
+    ],
+    "explanation": "Fiscal policy adjusts the government’s role in spending and taxes, which can support or reduce economic demand.",
+    "keywords": [
+      "fiscal-policy",
+      "government-spending",
+      "taxation"
+    ],
+    "source": "https://www.oecd.org/",
+    "seedId": "3afc72bb-c181-5067-bec8-196f4e84cce2"
+  },
+  {
+    "category": "business",
+    "navigationKeyword1": "economics",
+    "navigationKeyword2": "policy",
+    "question": "What are automatic stabilizers?",
+    "correctAnswer": "Policy responses built into the system that operate without new legislation, helping reduce swings in income and employment.",
+    "incorrectAnswers": [
+      "Rules that require a new law every time unemployment rises by 0.1%",
+      "Spending cuts that happen automatically only in booms",
+      "Tax changes that never vary with the business cycle"
+    ],
+    "explanation": "Automatic stabilizers respond to economic conditions as they change, cushioning downturns and smoothing expansions.",
+    "keywords": [
+      "automatic-stabilizers",
+      "stabilization",
+      "business-cycle"
+    ],
+    "source": "https://www.imf.org/en/Topics",
+    "seedId": "1d471d52-d5f4-5660-8a52-544330a5d74c"
+  },
+  {
+    "category": "business",
+    "navigationKeyword1": "economics",
+    "navigationKeyword2": "policy",
+    "question": "In general, what does supply-side policy aim to improve?",
+    "correctAnswer": "The economy’s ability to produce by improving efficiency, productivity, or incentives.",
+    "incorrectAnswers": [
+      "Only boosting short-term demand using direct cash transfers",
+      "Ensuring every firm produces identical products",
+      "Guaranteeing that prices cannot change even if costs do"
+    ],
+    "explanation": "Supply-side efforts aim to raise potential output—what the economy can sustainably produce—by improving underlying conditions.",
+    "keywords": [
+      "supply-side",
+      "productivity",
+      "potential-output"
+    ],
+    "source": "https://www.worldbank.org/",
+    "seedId": "8036422b-3efa-5525-8e50-a48020acf6e2"
+  },
+  {
+    "category": "business",
+    "navigationKeyword1": "economics",
+    "navigationKeyword2": "policy",
+    "question": "Why can policymakers face tradeoffs between inflation and employment in the short run?",
+    "correctAnswer": "Policies that cool demand can reduce inflation but may lower employment or growth temporarily.",
+    "incorrectAnswers": [
+      "Because inflation is caused only by hiring more workers",
+      "Because employment is unrelated to demand conditions",
+      "Because inflation always rises when employment falls"
+    ],
+    "explanation": "In many models, tighter policy can reduce inflation by slowing demand, which can also weaken labor markets in the near term.",
+    "keywords": [
+      "tradeoffs",
+      "inflation",
+      "employment"
+    ],
+    "source": "https://www.investopedia.com/terms/t/tightmonetarypolicy.asp",
+    "seedId": "9456dbd3-e16d-5a5b-86a7-e581d374ea7f"
+  },
+  {
+    "category": "business",
+    "navigationKeyword1": "economics",
+    "navigationKeyword2": "policy",
+    "question": "What is a “policy target” in macro policy discussions?",
+    "correctAnswer": "A specific variable policymakers aim to influence or stabilize (like inflation or unemployment).",
+    "incorrectAnswers": [
+      "A guarantee that outcomes will always match forecasts perfectly",
+      "A financial statement that must be audited",
+      "A random number chosen without a goal"
+    ],
+    "explanation": "A target is the variable or set of variables that policy aims to steer, guiding the choices policymakers make.",
+    "keywords": [
+      "policy-target",
+      "objectives",
+      "macro-management"
+    ],
+    "source": "https://www.imf.org/en/Topics",
+    "seedId": "4cfcc873-d10a-53be-b49f-a738ae918aa4"
+  }
+]

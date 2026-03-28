@@ -1,0 +1,230 @@
+[
+  {
+    "seedId": "4ba223fa-a43f-47bc-a741-12c3ce1ef036",
+    "category": "science",
+    "navigationKeyword1": "health",
+    "navigationKeyword2": "public-health",
+    "question": "What is epidemiology?",
+    "correctAnswer": "Study of disease distribution and determinants in populations",
+    "incorrectAnswers": [
+      "Study of insects only",
+      "Individual surgery technique",
+      "Drug branding"
+    ],
+    "explanation": "Uses rates and risk factors.",
+    "keywords": [
+      "epidemiology",
+      "population"
+    ],
+    "source": "https://www.cdc.gov/career/epidemiology/index.html"
+  },
+  {
+    "seedId": "2f6d5c8b-0293-4085-a587-5ec348bc4f9a",
+    "category": "science",
+    "navigationKeyword1": "health",
+    "navigationKeyword2": "public-health",
+    "question": "What is herd immunity concept?",
+    "correctAnswer": "Enough immunity reduces pathogen spread indirectly",
+    "incorrectAnswers": [
+      "Only protects unvaccinated 100% always",
+      "Eliminates need for hygiene",
+      "Works without vaccines only always"
+    ],
+    "explanation": "Threshold depends on contagion.",
+    "keywords": [
+      "herd-immunity",
+      "vaccines"
+    ],
+    "source": "https://www.cdc.gov/vaccines/vac-gen/herd.htm"
+  },
+  {
+    "seedId": "bded002a-a7f9-44c2-8aeb-a15d6cb82ea7",
+    "category": "science",
+    "navigationKeyword1": "health",
+    "navigationKeyword2": "public-health",
+    "question": "What is quarantine/isolation difference (rough)?",
+    "correctAnswer": "Separate exposed vs separate infected (terms vary by jurisdiction)",
+    "incorrectAnswers": [
+      "Same word",
+      "Only for animals",
+      "Only historical"
+    ],
+    "explanation": "Nonpharmaceutical interventions.",
+    "keywords": [
+      "isolation",
+      "public-health"
+    ],
+    "source": "https://www.cdc.gov/quarantine/index.html"
+  },
+  {
+    "seedId": "319f862e-5425-4a82-9f84-687d154426c3",
+    "category": "science",
+    "navigationKeyword1": "health",
+    "navigationKeyword2": "public-health",
+    "question": "What is contact tracing?",
+    "correctAnswer": "Identify and notify exposed people",
+    "incorrectAnswers": [
+      "Treat patients only",
+      "Build vaccines",
+      "Measure BMI"
+    ],
+    "explanation": "Interrupts transmission chains.",
+    "keywords": [
+      "contact-tracing",
+      "cdc"
+    ],
+    "source": "https://www.cdc.gov/coronavirus/2019-ncov/php/contact-tracing/index.html"
+  },
+  {
+    "seedId": "968849ae-3276-4bed-b69e-98dc596694bb",
+    "category": "science",
+    "navigationKeyword1": "health",
+    "navigationKeyword2": "public-health",
+    "question": "What is sanitation\u2019s role?",
+    "correctAnswer": "Safe water/waste reduces infectious disease",
+    "incorrectAnswers": [
+      "Only cosmetic",
+      "Only urban design",
+      "Only nutrition"
+    ],
+    "explanation": "Major public health advance historically.",
+    "keywords": [
+      "sanitation",
+      "water"
+    ],
+    "source": "https://www.who.int/news-room/fact-sheets/detail/sanitation"
+  },
+  {
+    "seedId": "e12c5e52-13af-4b15-9e57-bca0155b98a1",
+    "category": "science",
+    "navigationKeyword1": "health",
+    "navigationKeyword2": "public-health",
+    "question": "What is health disparity?",
+    "correctAnswer": "Preventable differences in health outcomes across groups",
+    "incorrectAnswers": [
+      "Random noise only",
+      "Only genetics",
+      "Only personal choice"
+    ],
+    "explanation": "Social determinants matter.",
+    "keywords": [
+      "disparities",
+      "equity"
+    ],
+    "source": "https://www.cdc.gov/healthequity/index.html"
+  },
+  {
+    "seedId": "77a2b9cc-cfed-468a-b1ef-d0f6a202a59c",
+    "category": "science",
+    "navigationKeyword1": "health",
+    "navigationKeyword2": "public-health",
+    "question": "What is CDC (US)?",
+    "correctAnswer": "National public health agency",
+    "incorrectAnswers": [
+      "Military branch",
+      "Stock exchange",
+      "Weather service"
+    ],
+    "explanation": "Disease prevention and health promotion.",
+    "keywords": [
+      "cdc",
+      "agency"
+    ],
+    "source": "https://www.cdc.gov/about/"
+  },
+  {
+    "seedId": "d8090afc-0597-4196-bde4-c147605b3d0e",
+    "category": "science",
+    "navigationKeyword1": "health",
+    "navigationKeyword2": "public-health",
+    "question": "What is WHO?",
+    "correctAnswer": "Global health agency within UN system",
+    "incorrectAnswers": [
+      "Trade organization",
+      "Space agency",
+      "Bank"
+    ],
+    "explanation": "Coordinates international responses.",
+    "keywords": [
+      "who",
+      "global-health"
+    ],
+    "source": "https://www.who.int/about"
+  },
+  {
+    "seedId": "49fa40a1-43e6-467e-82ee-46e0852e6894",
+    "category": "science",
+    "navigationKeyword1": "health",
+    "navigationKeyword2": "public-health",
+    "question": "What is vital statistics?",
+    "correctAnswer": "Births, deaths, marriages records for health planning",
+    "incorrectAnswers": [
+      "Sports scores",
+      "Stock prices",
+      "Soil maps"
+    ],
+    "explanation": "Used for mortality rates.",
+    "keywords": [
+      "vital-statistics",
+      "data"
+    ],
+    "source": "https://www.cdc.gov/nchs/index.htm"
+  },
+  {
+    "seedId": "8fa84ba8-c2e3-4b96-b444-c641966f9e96",
+    "category": "science",
+    "navigationKeyword1": "health",
+    "navigationKeyword2": "public-health",
+    "question": "What is harm reduction?",
+    "correctAnswer": "Reduce negative consequences when abstinence not immediate",
+    "incorrectAnswers": [
+      "Encourage risky use",
+      "Ignore safety",
+      "Only punishment"
+    ],
+    "explanation": "Examples: needle exchanges in some programs.",
+    "keywords": [
+      "harm-reduction",
+      "policy"
+    ],
+    "source": "https://www.cdc.gov/drugoverdose/"
+  },
+  {
+    "seedId": "7fe3207b-1f02-439e-b724-055ed48d482c",
+    "category": "science",
+    "navigationKeyword1": "health",
+    "navigationKeyword2": "public-health",
+    "question": "What is tobacco control aim?",
+    "correctAnswer": "Reduce smoking-related disease burden",
+    "incorrectAnswers": [
+      "Increase youth initiation",
+      "Promote secondhand smoke",
+      "Ignore nicotine"
+    ],
+    "explanation": "Taxes, smoke-free laws, cessation support.",
+    "keywords": [
+      "tobacco",
+      "prevention"
+    ],
+    "source": "https://www.cdc.gov/tobacco/index.html"
+  },
+  {
+    "seedId": "077a2684-787b-42f1-a459-2f78559f8d22",
+    "category": "science",
+    "navigationKeyword1": "health",
+    "navigationKeyword2": "public-health",
+    "question": "What is air quality index?",
+    "correctAnswer": "Communicates daily pollution health risk",
+    "incorrectAnswers": [
+      "Measures calories",
+      "Measures blood sugar",
+      "Measures IQ"
+    ],
+    "explanation": "Guides sensitive groups.",
+    "keywords": [
+      "aqi",
+      "pollution"
+    ],
+    "source": "https://www.airnow.gov/aqi/aqi-basics/"
+  }
+]

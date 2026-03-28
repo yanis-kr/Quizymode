@@ -1,0 +1,230 @@
+[
+  {
+    "seedId": "118c7a29-cdad-4971-b1c3-827c7cfac62e",
+    "category": "science",
+    "navigationKeyword1": "nursing",
+    "navigationKeyword2": "pediatrics",
+    "question": "Why are pediatric doses often weight-based?",
+    "correctAnswer": "Drug handling and body size differ from adults",
+    "incorrectAnswers": [
+      "Same mg as adults always",
+      "Only by age in years",
+      "Only by height"
+    ],
+    "explanation": "mg/kg common; verify calculations.",
+    "keywords": [
+      "pediatric-dosing",
+      "weight"
+    ],
+    "source": "https://www.ncbi.nlm.nih.gov/books/NBK519507/"
+  },
+  {
+    "seedId": "9c958e56-562c-4099-a6e7-05e96df54872",
+    "category": "science",
+    "navigationKeyword1": "nursing",
+    "navigationKeyword2": "pediatrics",
+    "question": "Fontanelle bulging may suggest?",
+    "correctAnswer": "Increased intracranial pressure (among causes)",
+    "incorrectAnswers": [
+      "Normal feeding",
+      "Always dehydration",
+      "Always teething"
+    ],
+    "explanation": "Needs urgent assessment.",
+    "keywords": [
+      "fontanelle",
+      "neuro"
+    ],
+    "source": "https://www.ncbi.nlm.nih.gov/books/NBK519507/"
+  },
+  {
+    "seedId": "dc6ee048-439c-422a-9509-2659b9012395",
+    "category": "science",
+    "navigationKeyword1": "nursing",
+    "navigationKeyword2": "pediatrics",
+    "question": "Growth chart purpose?",
+    "correctAnswer": "Track height/weight/head vs percentiles over time",
+    "incorrectAnswers": [
+      "Single point diagnosis",
+      "Replace physical exam",
+      "Only for teens"
+    ],
+    "explanation": "Trends matter more than one value.",
+    "keywords": [
+      "growth-charts",
+      "development"
+    ],
+    "source": "https://www.cdc.gov/growthcharts/"
+  },
+  {
+    "seedId": "ebe298fc-a947-432a-b21d-5e6f5a4a7431",
+    "category": "science",
+    "navigationKeyword1": "nursing",
+    "navigationKeyword2": "pediatrics",
+    "question": "Why rear-facing car seat?",
+    "correctAnswer": "Better head/neck support for young children in crashes",
+    "incorrectAnswers": [
+      "Forward always safer",
+      "Lap belt only fine",
+      "Airbags help infants"
+    ],
+    "explanation": "Follow AAP/state law ages.",
+    "keywords": [
+      "car-seat",
+      "safety"
+    ],
+    "source": "https://www.cdc.gov/transportationsafety/child_passenger_safety/carseats.html"
+  },
+  {
+    "seedId": "d700958c-9281-4fae-b32c-54a37982cdb9",
+    "category": "science",
+    "navigationKeyword1": "nursing",
+    "navigationKeyword2": "pediatrics",
+    "question": "Febrile seizure parent education?",
+    "correctAnswer": "Protect from injury; time event; most are brief",
+    "incorrectAnswers": [
+      "Put objects in mouth",
+      "Ignore first seizure",
+      "Give aspirin always"
+    ],
+    "explanation": "Follow-up per provider; avoid fever myths.",
+    "keywords": [
+      "febrile-seizure",
+      "education"
+    ],
+    "source": "https://www.cdc.gov/epilepsy/about/types-of-seizures.htm"
+  },
+  {
+    "seedId": "74120387-3ba8-485b-8ed2-54874fc3b85c",
+    "category": "science",
+    "navigationKeyword1": "nursing",
+    "navigationKeyword2": "pediatrics",
+    "question": "Child pain assessment tools?",
+    "correctAnswer": "FLACC, Wong-Baker FACES (age-appropriate)",
+    "incorrectAnswers": [
+      "Only numeric 1\u201310 for all ages",
+      "Ignore parent report",
+      "Vitals only"
+    ],
+    "explanation": "Use developmentally appropriate scales.",
+    "keywords": [
+      "pain-peds",
+      "assessment"
+    ],
+    "source": "https://www.ncbi.nlm.nih.gov/books/NBK519507/"
+  },
+  {
+    "seedId": "a94cbce6-a235-4b9e-aeee-a5ee340a1225",
+    "category": "science",
+    "navigationKeyword1": "nursing",
+    "navigationKeyword2": "pediatrics",
+    "question": "Why avoid honey <12 months?",
+    "correctAnswer": "Botulism risk",
+    "incorrectAnswers": [
+      "Allergy to bees",
+      "Too much sugar only",
+      "No reason"
+    ],
+    "explanation": "Infant botulism prevention.",
+    "keywords": [
+      "honey",
+      "infant"
+    ],
+    "source": "https://www.cdc.gov/botulism/prevention.html"
+  },
+  {
+    "seedId": "3c780537-7408-44b6-843a-c0ca8e984e66",
+    "category": "science",
+    "navigationKeyword1": "nursing",
+    "navigationKeyword2": "pediatrics",
+    "question": "Immunization schedule is designed to?",
+    "correctAnswer": "Protect when vulnerable and before exposure",
+    "incorrectAnswers": [
+      "Delay all until school",
+      "One shot covers all",
+      "Optional for public health"
+    ],
+    "explanation": "Follow ACIP recommendations.",
+    "keywords": [
+      "immunization",
+      "prevention"
+    ],
+    "source": "https://www.cdc.gov/vaccines/hcp/imz-schedules/index.html"
+  },
+  {
+    "seedId": "c3acfe08-5f79-4692-9502-4391c583ce00",
+    "category": "science",
+    "navigationKeyword1": "nursing",
+    "navigationKeyword2": "pediatrics",
+    "question": "Toddler safety teaching?",
+    "correctAnswer": "Gates, poison control number, water supervision",
+    "incorrectAnswers": [
+      "Small toys always safe",
+      "Unsupervised bath okay",
+      "Medicines in candy jars"
+    ],
+    "explanation": "Development drives risks.",
+    "keywords": [
+      "injury-prevention",
+      "toddlers"
+    ],
+    "source": "https://www.cdc.gov/safechild/"
+  },
+  {
+    "seedId": "cad83186-2d39-4b73-a2d6-a1ad7553ed36",
+    "category": "science",
+    "navigationKeyword1": "nursing",
+    "navigationKeyword2": "pediatrics",
+    "question": "Adolescent confidentiality note?",
+    "correctAnswer": "Some care may be confidential per law (STI, mental health)",
+    "incorrectAnswers": [
+      "Parents must hear everything always",
+      "No consent ever",
+      "No laws apply"
+    ],
+    "explanation": "Know state regulations.",
+    "keywords": [
+      "adolescent",
+      "confidentiality"
+    ],
+    "source": "https://www.ncbi.nlm.nih.gov/books/NBK519507/"
+  },
+  {
+    "seedId": "4d6ab284-6306-4ca8-a68c-5abdfba9bc24",
+    "category": "science",
+    "navigationKeyword1": "nursing",
+    "navigationKeyword2": "pediatrics",
+    "question": "APGAR scores what at 1 and 5 minutes?",
+    "correctAnswer": "Quick newborn transition assessment",
+    "incorrectAnswers": [
+      "IQ test",
+      "Genetic screen",
+      "Hearing test only"
+    ],
+    "explanation": "Appearance, Pulse, Grimace, Activity, Respiration.",
+    "keywords": [
+      "apgar",
+      "newborn"
+    ],
+    "source": "https://www.ncbi.nlm.nih.gov/books/NBK519507/"
+  },
+  {
+    "seedId": "681d0d3e-5c34-42df-a991-8ff5c4f8cfe0",
+    "category": "science",
+    "navigationKeyword1": "nursing",
+    "navigationKeyword2": "pediatrics",
+    "question": "Dehydration in infant signs?",
+    "correctAnswer": "Sunken fontanelle, poor tears, decreased wet diapers",
+    "incorrectAnswers": [
+      "Excessive tears always",
+      "Rapid weight gain",
+      "Flushed always"
+    ],
+    "explanation": "Assess mucosa and perfusion.",
+    "keywords": [
+      "dehydration",
+      "peds"
+    ],
+    "source": "https://www.ncbi.nlm.nih.gov/books/NBK519507/"
+  }
+]

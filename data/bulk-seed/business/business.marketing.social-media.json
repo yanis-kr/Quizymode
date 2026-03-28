@@ -1,0 +1,122 @@
+[
+  {
+    "category": "business",
+    "navigationKeyword1": "marketing",
+    "navigationKeyword2": "social-media",
+    "question": "Which metric is most directly related to audience engagement on social media?",
+    "correctAnswer": "Interactions such as likes, comments, shares, and saves relative to reach or followers.",
+    "incorrectAnswers": [
+      "The company’s depreciation schedule",
+      "Only the total number of employees",
+      "The interest rate a bank charges for loans"
+    ],
+    "explanation": "Engagement metrics indicate how actively people interact with content, not just whether it was displayed.",
+    "keywords": [
+      "social-media",
+      "engagement",
+      "reach"
+    ],
+    "source": "https://www.hubspot.com/social-media-marketing",
+    "seedId": "47af1141-8f65-51ae-8392-3c73ceeb7ce1"
+  },
+  {
+    "category": "business",
+    "navigationKeyword1": "marketing",
+    "navigationKeyword2": "social-media",
+    "question": "What is the practical purpose of social listening?",
+    "correctAnswer": "Monitoring and analyzing what people say online to inform marketing and product decisions.",
+    "incorrectAnswers": [
+      "Replacing all customer support so issues never get handled",
+      "Ensuring posts are never adjusted after publishing",
+      "Collecting taxes owed from customer conversations"
+    ],
+    "explanation": "Social listening provides signals about sentiment, topics, and emerging concerns so teams can respond appropriately.",
+    "keywords": [
+      "social-listening",
+      "sentiment",
+      "insights"
+    ],
+    "source": "https://www.hubspot.com/",
+    "seedId": "828da427-bbf1-5e4e-a42e-e693a38792e8"
+  },
+  {
+    "category": "business",
+    "navigationKeyword1": "marketing",
+    "navigationKeyword2": "social-media",
+    "question": "In social media strategy, what does “community management” typically involve?",
+    "correctAnswer": "Responding to comments/messages and fostering healthy interactions around the brand.",
+    "incorrectAnswers": [
+      "Never replying to users to avoid mistakes",
+      "Deleting critical feedback automatically",
+      "Only updating the company’s chart of accounts"
+    ],
+    "explanation": "Community management helps maintain trust by turning audience interactions into responsive, constructive communication.",
+    "keywords": [
+      "community-management",
+      "engagement",
+      "trust"
+    ],
+    "source": "https://sproutsocial.com/insights/social-media-community-management/",
+    "seedId": "0c95f82b-a370-5924-8e6d-85c35dc390ce"
+  },
+  {
+    "category": "business",
+    "navigationKeyword1": "marketing",
+    "navigationKeyword2": "social-media",
+    "question": "What is a content cadence?",
+    "correctAnswer": "A planned schedule/frequency for when you publish content.",
+    "incorrectAnswers": [
+      "A guarantee that every post will get the same number of views",
+      "A legal rule that defines how users must be charged",
+      "A one-time announcement that ends the need for updates"
+    ],
+    "explanation": "Cadence supports consistency so audiences know what to expect and algorithms can learn what content performs.",
+    "keywords": [
+      "content-cadence",
+      "consistency",
+      "publishing"
+    ],
+    "source": "https://moz.com/",
+    "seedId": "6e4d846a-807a-505d-aea8-fe33b771811c"
+  },
+  {
+    "category": "business",
+    "navigationKeyword1": "marketing",
+    "navigationKeyword2": "social-media",
+    "question": "Why do marketers often use a content calendar for social media?",
+    "correctAnswer": "To coordinate themes, campaigns, and posting dates so efforts align with goals.",
+    "incorrectAnswers": [
+      "To avoid tracking any results after posting",
+      "To publish without planning and only react to random trends",
+      "To ensure the company cannot change messaging"
+    ],
+    "explanation": "A calendar helps teams plan ahead, reduce last-minute work, and align content to specific objectives.",
+    "keywords": [
+      "content-calendar",
+      "planning",
+      "campaigns"
+    ],
+    "source": "https://www.investopedia.com/",
+    "seedId": "8f4998ce-486d-52f2-9c21-414e40fd9dd0"
+  },
+  {
+    "category": "business",
+    "navigationKeyword1": "marketing",
+    "navigationKeyword2": "social-media",
+    "question": "What does “brand voice” mean in social media?",
+    "correctAnswer": "The consistent style, tone, and messaging patterns the brand uses in posts and replies.",
+    "incorrectAnswers": [
+      "The company’s physical delivery speed of items",
+      "The accounting method used to record ad spend",
+      "A random style change for every post to maximize confusion"
+    ],
+    "explanation": "Brand voice keeps messaging consistent, helping audiences recognize and trust the brand across channels.",
+    "keywords": [
+      "brand-voice",
+      "tone",
+      "consistency"
+    ],
+    "source": "https://www.hubspot.com/brand-voice",
+    "seedId": "5ae8b154-a900-5673-bf9a-653fb9fe398d"
+  }
+]

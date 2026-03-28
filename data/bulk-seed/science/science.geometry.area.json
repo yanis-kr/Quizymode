@@ -1,0 +1,230 @@
+[
+  {
+    "seedId": "73708596-5823-434e-affc-354e169be569",
+    "category": "science",
+    "navigationKeyword1": "geometry",
+    "navigationKeyword2": "area",
+    "question": "Parallelogram area?",
+    "correctAnswer": "base \u00d7 height",
+    "incorrectAnswers": [
+      "base \u00d7 side",
+      "base^2",
+      "1/2 bh"
+    ],
+    "explanation": "Height perpendicular to base.",
+    "keywords": [
+      "parallelogram",
+      "area"
+    ],
+    "source": "https://www.mathsisfun.com/geometry/parallelogram.html"
+  },
+  {
+    "seedId": "a0f89cef-651e-46db-a9a2-0fa0b99bcfa9",
+    "category": "science",
+    "navigationKeyword1": "geometry",
+    "navigationKeyword2": "area",
+    "question": "Trapezoid area?",
+    "correctAnswer": "(1/2)(b1 + b2)h",
+    "incorrectAnswers": [
+      "b1 b2",
+      "b1 + b2 + h",
+      "1/2 b1 b2"
+    ],
+    "explanation": "Average base times height.",
+    "keywords": [
+      "trapezoid",
+      "area"
+    ],
+    "source": "https://www.mathsisfun.com/geometry/trapezoid.html"
+  },
+  {
+    "seedId": "5ee50537-7318-4ffd-a6db-0f48bc8b794a",
+    "category": "science",
+    "navigationKeyword1": "geometry",
+    "navigationKeyword2": "area",
+    "question": "Rhombus area diagonals?",
+    "correctAnswer": "(1/2) d1 d2",
+    "incorrectAnswers": [
+      "d1 + d2",
+      "d1^2",
+      "d1 d2"
+    ],
+    "explanation": "From kite formula.",
+    "keywords": [
+      "rhombus",
+      "area"
+    ],
+    "source": "https://www.mathsisfun.com/geometry/rhombus.html"
+  },
+  {
+    "seedId": "49b8f53a-5e3e-489e-94cc-0dbf60cdfa18",
+    "category": "science",
+    "navigationKeyword1": "geometry",
+    "navigationKeyword2": "area",
+    "question": "Regular hexagon area (side s)?",
+    "correctAnswer": "(3\u221a3/2) s^2",
+    "incorrectAnswers": [
+      "6s",
+      "s^2",
+      "\u03c0 s^2"
+    ],
+    "explanation": "Six equilateral triangles.",
+    "keywords": [
+      "hexagon",
+      "area"
+    ],
+    "source": "https://www.mathsisfun.com/geometry/hexagon.html"
+  },
+  {
+    "seedId": "d1b43f16-483f-4b90-8f55-23c8cddea1d3",
+    "category": "science",
+    "navigationKeyword1": "geometry",
+    "navigationKeyword2": "area",
+    "question": "Circle ring (annulus) area?",
+    "correctAnswer": "\u03c0(R^2 \u2212 r^2)",
+    "incorrectAnswers": [
+      "\u03c0(R\u2212r)^2 always",
+      "2\u03c0R",
+      "\u03c0Rr"
+    ],
+    "explanation": "Difference of circles.",
+    "keywords": [
+      "annulus",
+      "area"
+    ],
+    "source": "https://www.mathsisfun.com/geometry/annulus.html"
+  },
+  {
+    "seedId": "88104f4b-73dc-4f8d-ae91-6357cee9bf83",
+    "category": "science",
+    "navigationKeyword1": "geometry",
+    "navigationKeyword2": "area",
+    "question": "Surface area of cylinder (including caps)?",
+    "correctAnswer": "2\u03c0r^2 + 2\u03c0rh",
+    "incorrectAnswers": [
+      "2\u03c0rh only",
+      "\u03c0r^2 h",
+      "4\u03c0r^2"
+    ],
+    "explanation": "Side + two circles.",
+    "keywords": [
+      "cylinder",
+      "surface-area"
+    ],
+    "source": "https://www.mathsisfun.com/geometry/cylinder.html"
+  },
+  {
+    "seedId": "5c26557f-14d8-415f-989f-db75d3122ace",
+    "category": "science",
+    "navigationKeyword1": "geometry",
+    "navigationKeyword2": "area",
+    "question": "Lateral surface cone (no base)?",
+    "correctAnswer": "\u03c0r\u2113 (\u2113 slant height)",
+    "incorrectAnswers": [
+      "\u03c0r^2",
+      "2\u03c0r",
+      "\u03c0\u2113"
+    ],
+    "explanation": "Unrolled sector.",
+    "keywords": [
+      "cone",
+      "lateral-area"
+    ],
+    "source": "https://www.mathsisfun.com/geometry/cone.html"
+  },
+  {
+    "seedId": "fc7a5811-f2c3-4d17-b04e-4a3e4d8c1ee6",
+    "category": "science",
+    "navigationKeyword1": "geometry",
+    "navigationKeyword2": "area",
+    "question": "Shoelace formula (polygon area)?",
+    "correctAnswer": "1/2 |\u03a3 x_i y_{i+1} \u2212 x_{i+1} y_i|",
+    "incorrectAnswers": [
+      "Sum of sides",
+      "Heron only",
+      "\u03c0ab"
+    ],
+    "explanation": "Vertices ordered.",
+    "keywords": [
+      "shoelace",
+      "polygon"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Shoelace_formula"
+  },
+  {
+    "seedId": "c1f59d1c-7315-4869-803f-28579d6356c2",
+    "category": "science",
+    "navigationKeyword1": "geometry",
+    "navigationKeyword2": "area",
+    "question": "Similar figures area ratio?",
+    "correctAnswer": "Scale factor squared",
+    "incorrectAnswers": [
+      "Scale factor",
+      "Cubed",
+      "Same as length"
+    ],
+    "explanation": "k^2 for areas.",
+    "keywords": [
+      "similar-area",
+      "ratio"
+    ],
+    "source": "https://www.mathsisfun.com/geometry/triangles-similar.html"
+  },
+  {
+    "seedId": "aeb6d2d8-e173-4b3f-9cc2-b0c6d5688c20",
+    "category": "science",
+    "navigationKeyword1": "geometry",
+    "navigationKeyword2": "area",
+    "question": "Ellipse area \u03c0ab?",
+    "correctAnswer": "\u03c0 times semi-major \u00d7 semi-minor",
+    "incorrectAnswers": [
+      "\u03c0(a+b)",
+      "2\u03c0ab",
+      "\u03c0r^2 only"
+    ],
+    "explanation": "Not circumference simple.",
+    "keywords": [
+      "ellipse-area",
+      "conic"
+    ],
+    "source": "https://www.mathsisfun.com/geometry/ellipse.html"
+  },
+  {
+    "seedId": "6cf36382-f1bd-4728-acad-84c6e15ce08b",
+    "category": "science",
+    "navigationKeyword1": "geometry",
+    "navigationKeyword2": "area",
+    "question": "Surface area sphere?",
+    "correctAnswer": "4\u03c0r^2",
+    "incorrectAnswers": [
+      "(4/3)\u03c0r^3",
+      "2\u03c0r",
+      "\u03c0r^2"
+    ],
+    "explanation": "Derivative of volume w.r.t. r (nice fact).",
+    "keywords": [
+      "sphere-surface",
+      "area"
+    ],
+    "source": "https://www.mathsisfun.com/geometry/sphere.html"
+  },
+  {
+    "seedId": "95899f00-543a-4659-8d23-9997ba168e23",
+    "category": "science",
+    "navigationKeyword1": "geometry",
+    "navigationKeyword2": "area",
+    "question": "Composite area strategy?",
+    "correctAnswer": "Decompose into simple shapes and sum/subtract",
+    "incorrectAnswers": [
+      "Always one formula",
+      "Guess",
+      "Only integration"
+    ],
+    "explanation": "Common contest technique.",
+    "keywords": [
+      "composite",
+      "area"
+    ],
+    "source": "https://www.mathsisfun.com/geometry/area.html"
+  }
+]

@@ -1,0 +1,122 @@
+[
+  {
+    "category": "business",
+    "navigationKeyword1": "marketing",
+    "navigationKeyword2": "content",
+    "question": "What is the core idea behind content marketing?",
+    "correctAnswer": "Create and share useful content to attract an audience and support conversions over time.",
+    "incorrectAnswers": [
+      "Only sending random sales emails with no value to the reader",
+      "Guaranteeing instant purchases after a single post",
+      "Avoiding any measurement so you never need to improve"
+    ],
+    "explanation": "Content marketing focuses on providing value, building trust, and guiding people toward action with relevant information.",
+    "keywords": [
+      "content-marketing",
+      "value",
+      "audience"
+    ],
+    "source": "https://www.hubspot.com/content-marketing",
+    "seedId": "c1fe7be2-ed7b-598b-b42c-db876a8e723b"
+  },
+  {
+    "category": "business",
+    "navigationKeyword1": "marketing",
+    "navigationKeyword2": "content",
+    "question": "What is an editorial calendar used for?",
+    "correctAnswer": "Planning what content will be published, when, and for which audience or goal.",
+    "incorrectAnswers": [
+      "Deciding payroll taxes without involving marketing",
+      "Writing only the headline after the article is already published",
+      "Replacing SEO research entirely with random topics"
+    ],
+    "explanation": "An editorial calendar creates consistency and alignment between content themes, timing, and marketing objectives.",
+    "keywords": [
+      "editorial-calendar",
+      "planning",
+      "consistency"
+    ],
+    "source": "https://www.hubspot.com/",
+    "seedId": "4bfcb7d6-7ef6-5630-847b-df982f0939fe"
+  },
+  {
+    "category": "business",
+    "navigationKeyword1": "marketing",
+    "navigationKeyword2": "content",
+    "question": "Why do marketers use calls to action (CTAs) in content?",
+    "correctAnswer": "To guide readers toward a next step that matches the content’s goal.",
+    "incorrectAnswers": [
+      "To avoid any measurable outcomes so results are never tracked",
+      "To make the article longer without changing purpose",
+      "To replace the need for product information"
+    ],
+    "explanation": "A CTA connects content to an objective, such as signing up, downloading, or contacting sales.",
+    "keywords": [
+      "ctas",
+      "conversion",
+      "user-journey"
+    ],
+    "source": "https://moz.com/",
+    "seedId": "b5251985-c96a-58c6-81ab-7d31988eb44a"
+  },
+  {
+    "category": "business",
+    "navigationKeyword1": "marketing",
+    "navigationKeyword2": "content",
+    "question": "What is content repurposing?",
+    "correctAnswer": "Reusing the same core idea across different formats or channels to reach more people.",
+    "incorrectAnswers": [
+      "Deleting old content to start from scratch every week",
+      "Changing the meaning of a message to match unrelated trending topics",
+      "Publishing without any distribution plan so no one sees it"
+    ],
+    "explanation": "Repurposing improves efficiency by turning one research-backed idea into multiple assets (e.g., blog post to video).",
+    "keywords": [
+      "repurposing",
+      "efficiency",
+      "distribution"
+    ],
+    "source": "https://www.hubspot.com/content-marketing",
+    "seedId": "bbd6562a-59e1-583d-a6c9-004ed22e4d3b"
+  },
+  {
+    "category": "business",
+    "navigationKeyword1": "marketing",
+    "navigationKeyword2": "content",
+    "question": "What does “content distribution” typically refer to?",
+    "correctAnswer": "How you promote and place content so the target audience can find and consume it.",
+    "incorrectAnswers": [
+      "How you calculate production budgets only",
+      "How you decide stock keeping units for inventory",
+      "The legal process for registering content copyrights"
+    ],
+    "explanation": "Distribution includes channels like social, email, search, and partnerships—so content reaches the intended readers.",
+    "keywords": [
+      "distribution",
+      "reach",
+      "channels"
+    ],
+    "source": "https://moz.com/learn/seo/content-marketing",
+    "seedId": "8b11f4a5-9e99-5f34-8ec0-861fc4a6038e"
+  },
+  {
+    "category": "business",
+    "navigationKeyword1": "marketing",
+    "navigationKeyword2": "content",
+    "question": "Which metric is most directly connected to how well content satisfies searchers?",
+    "correctAnswer": "Search engagement signals like click-through rate (CTR) and time-on-page (as a proxy).",
+    "incorrectAnswers": [
+      "The company’s quarterly payroll totals",
+      "The number of server racks in the hosting facility only",
+      "Whether the content is internally audited for accounting"
+    ],
+    "explanation": "When people click and engage, it often indicates that content matches the query intent more effectively than alternatives.",
+    "keywords": [
+      "engagement",
+      "ctr",
+      "intent"
+    ],
+    "source": "https://www.investopedia.com/",
+    "seedId": "32a68c92-b856-554a-9058-d3b1ceae54b9"
+  }
+]

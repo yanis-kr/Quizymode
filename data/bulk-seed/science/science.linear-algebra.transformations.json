@@ -1,0 +1,230 @@
+[
+  {
+    "seedId": "8fad35a2-9731-4e48-8914-3529e563e526",
+    "category": "science",
+    "navigationKeyword1": "linear-algebra",
+    "navigationKeyword2": "transformations",
+    "question": "What is linear transformation?",
+    "correctAnswer": "T(au+bv)=aT(u)+bT(v)",
+    "incorrectAnswers": [
+      "Always preserves lengths",
+      "Always nonlinear",
+      "Only translations"
+    ],
+    "explanation": "Translation is not linear unless using homogeneous coords.",
+    "keywords": [
+      "linear-map",
+      "transform"
+    ],
+    "source": "https://openstax.org/books/linear-algebra/pages/3-1-matrix-multiplication"
+  },
+  {
+    "seedId": "3f32a5a8-9fa1-470e-848a-d009e8bf1c5d",
+    "category": "science",
+    "navigationKeyword1": "linear-algebra",
+    "navigationKeyword2": "transformations",
+    "question": "What is rotation matrix in R^2?",
+    "correctAnswer": "[[cos\u03b8,-sin\u03b8],[sin\u03b8,cos\u03b8]]",
+    "incorrectAnswers": [
+      "[[1,0],[0,1]] always",
+      "[[0,1],[1,0]]",
+      "[[\u03b8,0],[0,\u03b8]]"
+    ],
+    "explanation": "Orthogonal with determinant 1.",
+    "keywords": [
+      "rotation",
+      "r2"
+    ],
+    "source": "https://openstax.org/books/linear-algebra/pages/4-1-linear-transformations"
+  },
+  {
+    "seedId": "98509a3f-05cb-4bf6-9e5c-0ed478aa4c89",
+    "category": "science",
+    "navigationKeyword1": "linear-algebra",
+    "navigationKeyword2": "transformations",
+    "question": "What is projection onto a line?",
+    "correctAnswer": "Component along unit direction u: (u\u00b7x)u",
+    "incorrectAnswers": [
+      "u \u00d7 x",
+      "x \u2212 u",
+      "det(u,x)"
+    ],
+    "explanation": "Idempotent linear map.",
+    "keywords": [
+      "projection",
+      "geometry"
+    ],
+    "source": "https://openstax.org/books/linear-algebra/pages/6-1-orthogonal-sets-and-projections"
+  },
+  {
+    "seedId": "ca0c960b-bb35-43de-8cc7-7d3a95e430dc",
+    "category": "science",
+    "navigationKeyword1": "linear-algebra",
+    "navigationKeyword2": "transformations",
+    "question": "What is reflection matrix (line in R^2)?",
+    "correctAnswer": "Related to Householder in higher dims; preserves lengths",
+    "incorrectAnswers": [
+      "Always shear",
+      "Always scaling",
+      "Nonlinear always"
+    ],
+    "explanation": "Determinant often \u22121.",
+    "keywords": [
+      "reflection",
+      "transform"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Householder_transformation"
+  },
+  {
+    "seedId": "b3c4ca55-2cf5-4a86-b474-3737dca1fa7b",
+    "category": "science",
+    "navigationKeyword1": "linear-algebra",
+    "navigationKeyword2": "transformations",
+    "question": "What is shear transformation?",
+    "correctAnswer": "Slides layers parallel to axis",
+    "incorrectAnswers": [
+      "Uniform scale",
+      "Rotation by 90 only",
+      "Projection to 0"
+    ],
+    "explanation": "Determinant often 1.",
+    "keywords": [
+      "shear",
+      "transform"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Shear_matrix"
+  },
+  {
+    "seedId": "edd6207a-e8e3-400d-a879-8dbee3034fb4",
+    "category": "science",
+    "navigationKeyword1": "linear-algebra",
+    "navigationKeyword2": "transformations",
+    "question": "What is composition of transforms?",
+    "correctAnswer": "Multiply matrices in application order (careful)",
+    "incorrectAnswers": [
+      "Add matrices always",
+      "Determinant adds",
+      "Eigenvalues multiply always without caution"
+    ],
+    "explanation": "If T then S, matrix may be ST or TS depending on convention.",
+    "keywords": [
+      "composition",
+      "matrices"
+    ],
+    "source": "https://openstax.org/books/linear-algebra/pages/3-1-matrix-multiplication"
+  },
+  {
+    "seedId": "0957b1e1-0bb5-4737-ab93-931f3e750ca8",
+    "category": "science",
+    "navigationKeyword1": "linear-algebra",
+    "navigationKeyword2": "transformations",
+    "question": "What is image (range) of linear map?",
+    "correctAnswer": "Set of outputs T(x)",
+    "incorrectAnswers": [
+      "Nullspace",
+      "Kernel only",
+      "Set of inputs"
+    ],
+    "explanation": "Column space for matrix maps.",
+    "keywords": [
+      "range",
+      "column-space"
+    ],
+    "source": "https://openstax.org/books/linear-algebra/pages/2-4-rank-and-nullity"
+  },
+  {
+    "seedId": "59f32680-fc15-46eb-8287-ea9f557adbdc",
+    "category": "science",
+    "navigationKeyword1": "linear-algebra",
+    "navigationKeyword2": "transformations",
+    "question": "What is kernel (nullspace)?",
+    "correctAnswer": "Inputs mapping to 0",
+    "incorrectAnswers": [
+      "Outputs only",
+      "Diagonal entries",
+      "Eigenvalues"
+    ],
+    "explanation": "Dimension is nullity.",
+    "keywords": [
+      "kernel",
+      "nullspace"
+    ],
+    "source": "https://openstax.org/books/linear-algebra/pages/2-4-rank-and-nullity"
+  },
+  {
+    "seedId": "81dd0975-4718-42f3-a808-36b915d0cf9b",
+    "category": "science",
+    "navigationKeyword1": "linear-algebra",
+    "navigationKeyword2": "transformations",
+    "question": "What is isomorphism?",
+    "correctAnswer": "Bijective linear map",
+    "incorrectAnswers": [
+      "Only between different dimensions",
+      "Always identity",
+      "Never exists"
+    ],
+    "explanation": "Vector spaces are structurally identical.",
+    "keywords": [
+      "isomorphism",
+      "dimension"
+    ],
+    "source": "https://openstax.org/books/linear-algebra/pages/2-2-linear-independence-and-basis"
+  },
+  {
+    "seedId": "c2da1de4-7964-48c9-9cb1-4be2f4874387",
+    "category": "science",
+    "navigationKeyword1": "linear-algebra",
+    "navigationKeyword2": "transformations",
+    "question": "What is change-of-basis matrix?",
+    "correctAnswer": "Converts coordinates between bases",
+    "incorrectAnswers": [
+      "Always orthogonal",
+      "Always diagonal",
+      "Always identity"
+    ],
+    "explanation": "Similarity transforms A\u2019 = P^{-1}AP.",
+    "keywords": [
+      "change-of-basis",
+      "similarity"
+    ],
+    "source": "https://openstax.org/books/linear-algebra/pages/5-2-diagonalization"
+  },
+  {
+    "seedId": "1152445b-309e-40de-bfa9-13bdfe68b5c3",
+    "category": "science",
+    "navigationKeyword1": "linear-algebra",
+    "navigationKeyword2": "transformations",
+    "question": "What is orthogonal projection onto subspace?",
+    "correctAnswer": "Closest point in subspace in Euclidean norm",
+    "incorrectAnswers": [
+      "Farthest point",
+      "Always outside subspace",
+      "Only nonlinear"
+    ],
+    "explanation": "Uses Gram\u2013Schmidt/QR conceptually.",
+    "keywords": [
+      "orthogonal-projection",
+      "least-squares"
+    ],
+    "source": "https://openstax.org/books/linear-algebra/pages/6-1-orthogonal-sets-and-projections"
+  },
+  {
+    "seedId": "8e4b202c-3e6a-4c91-b0f9-2b1fada88251",
+    "category": "science",
+    "navigationKeyword1": "linear-algebra",
+    "navigationKeyword2": "transformations",
+    "question": "What is rigid motion in R^n?",
+    "correctAnswer": "Preserves distances (isometry)",
+    "incorrectAnswers": [
+      "Always linear without translation",
+      "Always expands volume",
+      "Always shear"
+    ],
+    "explanation": "Compositions of rotations, reflections, translations.",
+    "keywords": [
+      "isometry",
+      "geometry"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Isometry"
+  }
+]

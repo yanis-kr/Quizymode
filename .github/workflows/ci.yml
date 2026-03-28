@@ -28,6 +28,10 @@ jobs:
       - name: Restore dependencies
         run: dotnet restore Quizymode.sln
 
+      - name: Verify OpenAPI artifact is in sync
+        shell: pwsh
+        run: ./scripts/verify-openapi.ps1 -Configuration Release
+
       - name: Run tests
         run: dotnet test Quizymode.sln --no-restore --verbosity normal
 

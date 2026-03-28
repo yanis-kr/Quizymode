@@ -1,0 +1,122 @@
+[
+  {
+    "category": "business",
+    "navigationKeyword1": "economics",
+    "navigationKeyword2": "micro",
+    "question": "What does microeconomics mainly study?",
+    "correctAnswer": "How individuals and firms make choices in specific markets.",
+    "incorrectAnswers": [
+      "Only how governments set currency values",
+      "Only broad measures like national GDP growth",
+      "How wars affect global inflation in every case"
+    ],
+    "explanation": "Microeconomics focuses on smaller units: consumer choices, firm decisions, and how particular markets function.",
+    "keywords": [
+      "microeconomics",
+      "markets",
+      "decision-making"
+    ],
+    "source": "https://www.investopedia.com/terms/m/microeconomics.asp",
+    "seedId": "f195c2ae-2cae-5a30-8a89-7abc2974de3c"
+  },
+  {
+    "category": "business",
+    "navigationKeyword1": "economics",
+    "navigationKeyword2": "micro",
+    "question": "In microeconomics, what is marginal analysis used for?",
+    "correctAnswer": "Deciding by comparing the benefit and cost of an incremental change.",
+    "incorrectAnswers": [
+      "Choosing based on total sunk costs that can’t change",
+      "Making decisions only from historical averages",
+      "Maximizing profit by ignoring small changes in inputs"
+    ],
+    "explanation": "Marginal analysis treats decisions as “what happens if we change just a little?”—helpful when tradeoffs are incremental.",
+    "keywords": [
+      "marginal-analysis",
+      "incremental-decisions",
+      "tradeoffs"
+    ],
+    "source": "https://www.oecd.org/",
+    "seedId": "2286273c-d0ed-5163-9681-9b5c37177130"
+  },
+  {
+    "category": "business",
+    "navigationKeyword1": "economics",
+    "navigationKeyword2": "micro",
+    "question": "What is the difference between “demand” and “quantity demanded”?",
+    "correctAnswer": "Demand is the full relationship/schedule; quantity demanded is a specific amount at a given price.",
+    "incorrectAnswers": [
+      "Demand is the amount sold in the past; quantity demanded is the amount sold next year",
+      "Demand always refers to supply; quantity demanded always refers to inflation",
+      "Demand is only for goods with price controls"
+    ],
+    "explanation": "In standard economics graphs, demand describes how quantity changes with price, while quantity demanded is the point value at a price.",
+    "keywords": [
+      "demand",
+      "quantity-demanded",
+      "price"
+    ],
+    "source": "https://www.investopedia.com/terms/d/demand.asp",
+    "seedId": "c22388a0-aa1f-5c3c-8c94-817ae5aadfe7"
+  },
+  {
+    "category": "business",
+    "navigationKeyword1": "economics",
+    "navigationKeyword2": "micro",
+    "question": "What does “opportunity cost” represent in microeconomics?",
+    "correctAnswer": "The value of the next-best alternative you give up when making a choice.",
+    "incorrectAnswers": [
+      "The total money you spent on all options you considered",
+      "The price you paid regardless of outcomes",
+      "The amount of taxes you may later recover"
+    ],
+    "explanation": "Opportunity cost captures the tradeoff of choosing one option over another—not just the direct cost you pay.",
+    "keywords": [
+      "opportunity-cost",
+      "tradeoff",
+      "micro-foundations"
+    ],
+    "source": "https://www.imf.org/en/Topics",
+    "seedId": "9adaf631-f5c0-5321-8d2d-7ffb2786b18a"
+  },
+  {
+    "category": "business",
+    "navigationKeyword1": "economics",
+    "navigationKeyword2": "micro",
+    "question": "How is market equilibrium best described?",
+    "correctAnswer": "A price/quantity where the quantity supplied matches the quantity demanded.",
+    "incorrectAnswers": [
+      "A point where demand can never change",
+      "A price set by accounting rules instead of buyers and sellers",
+      "A guaranteed outcome where every firm earns the same profit"
+    ],
+    "explanation": "Equilibrium is the point where plans for buying and selling align—supply equals demand.",
+    "keywords": [
+      "equilibrium",
+      "supply",
+      "demand"
+    ],
+    "source": "https://www.investopedia.com/terms/e/equilibrium.asp",
+    "seedId": "97c1fd15-e8f5-51e8-8038-83672efb7785"
+  },
+  {
+    "category": "business",
+    "navigationKeyword1": "economics",
+    "navigationKeyword2": "micro",
+    "question": "What does price elasticity of demand measure?",
+    "correctAnswer": "How responsive quantity demanded is to a change in price.",
+    "incorrectAnswers": [
+      "How responsive price is to a change in quantity supplied",
+      "How much sales revenue grows regardless of price changes",
+      "How quickly companies change their branding campaigns"
+    ],
+    "explanation": "Elasticity quantifies sensitivity: if price changes by a certain percent, how much does quantity demanded move?",
+    "keywords": [
+      "elasticity",
+      "demand-elasticity",
+      "responsiveness"
+    ],
+    "source": "https://www.oecd.org/",
+    "seedId": "ca1733e2-65de-5618-92fa-e63aea46257d"
+  }
+]

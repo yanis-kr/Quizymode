@@ -1,0 +1,116 @@
+[
+  {
+    "category": "tech",
+    "navigationKeyword1": "security",
+    "navigationKeyword2": "cryptography",
+    "question": "What is the main difference between symmetric and asymmetric encryption?",
+    "correctAnswer": "Symmetric uses one shared secret key; asymmetric uses a public/private key pair",
+    "incorrectAnswers": [
+      "Symmetric always uses RSA; asymmetric always uses AES",
+      "Only symmetric works over the internet",
+      "Asymmetric cannot encrypt data"
+    ],
+    "explanation": "Symmetric schemes are fast for bulk data, while asymmetric schemes solve key distribution and digital signatures with paired keys.",
+    "keywords": [
+      "security",
+      "encryption"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Symmetric-key_algorithm",
+    "seedId": "f7efdc15-e021-5fb0-a4f6-d8cf6e31a4b2"
+  },
+  {
+    "category": "tech",
+    "navigationKeyword1": "security",
+    "navigationKeyword2": "cryptography",
+    "question": "What is AES?",
+    "correctAnswer": "A NIST-standardized symmetric block cipher family widely used for bulk encryption",
+    "incorrectAnswers": [
+      "An asymmetric algorithm based on elliptic curves only",
+      "A firewall rule syntax",
+      "A video codec"
+    ],
+    "explanation": "AES operates on fixed block sizes with common key lengths and is the baseline for many protocols and disk encryption systems.",
+    "keywords": [
+      "security",
+      "aes"
+    ],
+    "source": "https://csrc.nist.gov/publications/detail/fips/197/final",
+    "seedId": "8c907d1c-3f90-532b-b8d1-a5186b775cf0"
+  },
+  {
+    "category": "tech",
+    "navigationKeyword1": "security",
+    "navigationKeyword2": "cryptography",
+    "question": "What is RSA commonly used for in modern protocols?",
+    "correctAnswer": "Key exchange, signatures, or wrapping symmetric keys rather than encrypting huge files directly",
+    "incorrectAnswers": [
+      "Replacing TLS entirely",
+      "Storing passwords as plaintext",
+      "Compressing databases"
+    ],
+    "explanation": "RSA operations are costly, so systems often encrypt a random symmetric key asymmetrically and stream data with AES.",
+    "keywords": [
+      "security",
+      "rsa"
+    ],
+    "source": "https://en.wikipedia.org/wiki/RSA_(cryptosystem)",
+    "seedId": "3459ded6-fb54-5d79-a28c-adebdc0067a1"
+  },
+  {
+    "category": "tech",
+    "navigationKeyword1": "security",
+    "navigationKeyword2": "cryptography",
+    "question": "What property should a cryptographic hash function provide?",
+    "correctAnswer": "Preimage resistance: hard to find an input that matches a given hash",
+    "incorrectAnswers": [
+      "Reversible decryption with the same key",
+      "Guaranteed collision for any two inputs",
+      "Infinite output length"
+    ],
+    "explanation": "Hashes fingerprint data; security relies on being one-way and collision-resistant for the bit length used.",
+    "keywords": [
+      "security",
+      "hashing"
+    ],
+    "source": "https://csrc.nist.gov/glossary/term/cryptographic-hash-function",
+    "seedId": "158c2325-0562-54ac-b727-6e4deb9f8a27"
+  },
+  {
+    "category": "tech",
+    "navigationKeyword1": "security",
+    "navigationKeyword2": "cryptography",
+    "question": "Why add a random salt when storing password hashes?",
+    "correctAnswer": "So identical passwords yield different hashes and rainbow tables become impractical",
+    "incorrectAnswers": [
+      "To make passwords shorter",
+      "To encrypt the salt with AES-GCM only",
+      "To remove the need for HTTPS"
+    ],
+    "explanation": "Per-password salts ensure attackers must crack each hash separately even when users pick the same password.",
+    "keywords": [
+      "security",
+      "password-storage"
+    ],
+    "source": "https://cheatsheetseries.owasp.org/cheatsheets/Password_Storage_Cheat_Sheet.html",
+    "seedId": "c2bcffef-4cf5-50b3-ad96-38e2a7f30fcd"
+  },
+  {
+    "category": "tech",
+    "navigationKeyword1": "security",
+    "navigationKeyword2": "cryptography",
+    "question": "In HTTPS, what protocol typically encrypts HTTP inside a TLS record layer?",
+    "correctAnswer": "TLS (Transport Layer Security)",
+    "incorrectAnswers": [
+      "FTP only",
+      "SMTP without STARTTLS",
+      "Raw UDP with no handshake"
+    ],
+    "explanation": "HTTPS is HTTP over TLS, providing channel confidentiality and integrity between browser and server.",
+    "keywords": [
+      "security",
+      "https"
+    ],
+    "source": "https://www.rfc-editor.org/rfc/rfc8446",
+    "seedId": "678ae30f-970b-53b6-977b-effb21ab0ad8"
+  }
+]

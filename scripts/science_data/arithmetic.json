@@ -1,0 +1,1094 @@
+{
+  "addition": [
+    {
+      "question": "What is 47 + 28?",
+      "correctAnswer": "75",
+      "incorrectAnswers": [
+        "65",
+        "85",
+        "72"
+      ],
+      "explanation": "47 + 28 = 75.",
+      "keywords": [
+        "addition",
+        "whole-numbers"
+      ],
+      "source": "https://www.khanacademy.org/math/arithmetic/arith-review-add-subtract"
+    },
+    {
+      "question": "Which property says a + b = b + a?",
+      "correctAnswer": "Commutative property of addition",
+      "incorrectAnswers": [
+        "Associative property",
+        "Distributive property",
+        "Identity property of multiplication"
+      ],
+      "explanation": "Commutativity swaps order without changing the sum.",
+      "keywords": [
+        "commutative",
+        "properties"
+      ],
+      "source": "https://www.mathsisfun.com/associative-commutative-distributive.html"
+    },
+    {
+      "question": "What is the additive identity?",
+      "correctAnswer": "0",
+      "incorrectAnswers": [
+        "1",
+        "-1",
+        "10"
+      ],
+      "explanation": "Adding 0 leaves a number unchanged.",
+      "keywords": [
+        "additive-identity",
+        "zero"
+      ],
+      "source": "https://www.mathsisfun.com/numbers/addition.html"
+    },
+    {
+      "question": "When adding 56 + 87, what do you do when ones digits sum to 10 or more?",
+      "correctAnswer": "Carry a 1 to the tens place",
+      "incorrectAnswers": [
+        "Drop the extra ones",
+        "Subtract 10 from the tens",
+        "Multiply the digits"
+      ],
+      "explanation": "Regrouping (carrying) moves a ten from the ones sum into the tens column.",
+      "keywords": [
+        "carrying",
+        "regrouping"
+      ],
+      "source": "https://openstax.org/books/prealgebra/pages/1-2-add-whole-numbers"
+    },
+    {
+      "question": "Estimate 198 + 305 by rounding to the nearest hundred first. What is a reasonable estimate?",
+      "correctAnswer": "About 500",
+      "incorrectAnswers": [
+        "About 400",
+        "About 600",
+        "About 800"
+      ],
+      "explanation": "198 \u2248 200 and 305 \u2248 300; 200 + 300 = 500.",
+      "keywords": [
+        "estimation",
+        "rounding"
+      ],
+      "source": "https://www.khanacademy.org/math/arithmetic/arith-review-add-subtract"
+    },
+    {
+      "question": "What is -3 + 8 on a number line?",
+      "correctAnswer": "5",
+      "incorrectAnswers": [
+        "-11",
+        "-5",
+        "11"
+      ],
+      "explanation": "Start at -3 and move 8 units to the right: you land at 5.",
+      "keywords": [
+        "integers",
+        "number-line"
+      ],
+      "source": "https://www.mathsisfun.com/positive-negative-integers.html"
+    },
+    {
+      "question": "What is 0.6 + 0.05?",
+      "correctAnswer": "0.65",
+      "incorrectAnswers": [
+        "0.11",
+        "0.56",
+        "1.1"
+      ],
+      "explanation": "Align decimals: 0.60 + 0.05 = 0.65.",
+      "keywords": [
+        "decimals",
+        "place-value"
+      ],
+      "source": "https://www.khanacademy.org/math/arithmetic/arith-decimals"
+    },
+    {
+      "question": "Why align place values when adding multi-digit numbers?",
+      "correctAnswer": "So you add ones to ones, tens to tens, and so on",
+      "incorrectAnswers": [
+        "So numbers look shorter",
+        "So addition becomes multiplication",
+        "So decimals disappear"
+      ],
+      "explanation": "Place-value alignment keeps each digit\u2019s meaning correct.",
+      "keywords": [
+        "place-value",
+        "columns"
+      ],
+      "source": "https://openstax.org/books/prealgebra/pages/1-2-add-whole-numbers"
+    },
+    {
+      "question": "What is the perimeter idea behind adding side lengths?",
+      "correctAnswer": "Perimeter is the sum of side lengths around a shape",
+      "incorrectAnswers": [
+        "Perimeter is always half the area",
+        "Perimeter is only for circles",
+        "Perimeter ignores sides"
+      ],
+      "explanation": "Adding lengths around a polygon gives its perimeter.",
+      "keywords": [
+        "perimeter",
+        "measurement"
+      ],
+      "source": "https://www.mathsisfun.com/geometry/perimeter.html"
+    },
+    {
+      "question": "If a + b = c, what is c \u2212 b?",
+      "correctAnswer": "a",
+      "incorrectAnswers": [
+        "b",
+        "c + b",
+        "a + b + c"
+      ],
+      "explanation": "Addition and subtraction undo each other: c \u2212 b = a.",
+      "keywords": [
+        "inverse",
+        "subtraction"
+      ],
+      "source": "https://www.mathsisfun.com/numbers/subtraction.html"
+    },
+    {
+      "question": "What is 999 + 1?",
+      "correctAnswer": "1000",
+      "incorrectAnswers": [
+        "990",
+        "1001",
+        "1099"
+      ],
+      "explanation": "999 + 1 crosses into the next thousand.",
+      "keywords": [
+        "regrouping",
+        "thousands"
+      ],
+      "source": "https://www.khanacademy.org/math/arithmetic/arith-review-add-subtract"
+    },
+    {
+      "question": "Which expression equals 25 + 25 + 25?",
+      "correctAnswer": "25 \u00d7 3",
+      "incorrectAnswers": [
+        "25 \u00f7 3",
+        "25 \u2212 3",
+        "25 + 3"
+      ],
+      "explanation": "Repeated addition can be written as multiplication.",
+      "keywords": [
+        "repeated-addition",
+        "multiplication-link"
+      ],
+      "source": "https://www.mathsisfun.com/definitions/repeated-addition.html"
+    }
+  ],
+  "subtraction": [
+    {
+      "question": "What is 82 \u2212 37?",
+      "correctAnswer": "45",
+      "incorrectAnswers": [
+        "55",
+        "35",
+        "49"
+      ],
+      "explanation": "82 \u2212 37 = 45.",
+      "keywords": [
+        "subtraction",
+        "whole-numbers"
+      ],
+      "source": "https://www.khanacademy.org/math/arithmetic/arith-review-add-subtract"
+    },
+    {
+      "question": "What does \u2018difference\u2019 mean in subtraction?",
+      "correctAnswer": "The result of subtracting one number from another",
+      "incorrectAnswers": [
+        "The sum of two numbers",
+        "The product of two numbers",
+        "A fraction numerator"
+      ],
+      "explanation": "Difference answers \u2018how far apart\u2019 the numbers are on the number line.",
+      "keywords": [
+        "difference",
+        "vocabulary"
+      ],
+      "source": "https://www.mathsisfun.com/numbers/subtraction.html"
+    },
+    {
+      "question": "Why might you regroup (borrow) in 503 \u2212 187?",
+      "correctAnswer": "Because some top digits are smaller than the bottom digits in a column",
+      "incorrectAnswers": [
+        "Because subtraction always requires borrowing",
+        "Because decimals forbid regrouping",
+        "Because you must multiply first"
+      ],
+      "explanation": "Borrowing moves value from a higher place into a lower place.",
+      "keywords": [
+        "borrowing",
+        "regrouping"
+      ],
+      "source": "https://openstax.org/books/prealgebra/pages/1-3-subtract-whole-numbers"
+    },
+    {
+      "question": "What is 10 \u2212 (\u22124)?",
+      "correctAnswer": "14",
+      "incorrectAnswers": [
+        "6",
+        "\u221214",
+        "\u22126"
+      ],
+      "explanation": "Subtracting a negative adds its opposite: 10 \u2212 (\u22124) = 10 + 4 = 14.",
+      "keywords": [
+        "integers",
+        "negatives"
+      ],
+      "source": "https://www.khanacademy.org/math/arithmetic/arith-review-negative-numbers"
+    },
+    {
+      "question": "If x \u2212 5 = 12, what is x?",
+      "correctAnswer": "17",
+      "incorrectAnswers": [
+        "7",
+        "8",
+        "60"
+      ],
+      "explanation": "Add 5 to both sides: x = 12 + 5 = 17.",
+      "keywords": [
+        "missing-number",
+        "inverse"
+      ],
+      "source": "https://www.mathsisfun.com/algebra/expressions.html"
+    },
+    {
+      "question": "What is 5.0 \u2212 0.75?",
+      "correctAnswer": "4.25",
+      "incorrectAnswers": [
+        "4.75",
+        "5.75",
+        "0.25"
+      ],
+      "explanation": "5.00 \u2212 0.75 = 4.25.",
+      "keywords": [
+        "decimals",
+        "borrowing"
+      ],
+      "source": "https://www.khanacademy.org/math/arithmetic/arith-decimals"
+    },
+    {
+      "question": "How is subtraction related to addition?",
+      "correctAnswer": "Subtraction is the inverse of addition",
+      "incorrectAnswers": [
+        "Subtraction doubles the number",
+        "Subtraction is commutative like addition always",
+        "Subtraction ignores place value"
+      ],
+      "explanation": "a \u2212 b = c means b + c = a (for numbers).",
+      "keywords": [
+        "inverse-operations",
+        "fact-families"
+      ],
+      "source": "https://www.mathsisfun.com/numbers/subtraction.html"
+    },
+    {
+      "question": "What is 1000 \u2212 1?",
+      "correctAnswer": "999",
+      "incorrectAnswers": [
+        "1001",
+        "990",
+        "899"
+      ],
+      "explanation": "Subtracting 1 from a power of ten drops the last digit by one.",
+      "keywords": [
+        "mental-math",
+        "place-value"
+      ],
+      "source": "https://www.khanacademy.org/math/arithmetic/arith-review-add-subtract"
+    },
+    {
+      "question": "If you start at 15 and move left 9 on a number line, where do you land?",
+      "correctAnswer": "6",
+      "incorrectAnswers": [
+        "24",
+        "\u22126",
+        "8"
+      ],
+      "explanation": "15 \u2212 9 = 6.",
+      "keywords": [
+        "number-line",
+        "take-away"
+      ],
+      "source": "https://www.mathsisfun.com/activity/subtract.html"
+    },
+    {
+      "question": "Which word problem matches 40 \u2212 12?",
+      "correctAnswer": "You have 40 and spend 12; how many are left?",
+      "incorrectAnswers": [
+        "You combine 40 and 12",
+        "You split 40 into 12 equal groups",
+        "You double 40"
+      ],
+      "explanation": "\u2018Take away\u2019 situations map to subtraction.",
+      "keywords": [
+        "word-problems",
+        "modeling"
+      ],
+      "source": "https://www.khanacademy.org/math/arithmetic/arith-review-add-subtract"
+    },
+    {
+      "question": "What is 0 \u2212 7?",
+      "correctAnswer": "\u22127",
+      "incorrectAnswers": [
+        "7",
+        "0",
+        "1"
+      ],
+      "explanation": "Starting at 0 and subtracting 7 moves 7 units left: \u22127.",
+      "keywords": [
+        "zero",
+        "integers"
+      ],
+      "source": "https://www.khanacademy.org/math/arithmetic/arith-review-negative-numbers"
+    },
+    {
+      "question": "Why can\u2019t you \u2018borrow\u2019 from an empty middle digit without planning?",
+      "correctAnswer": "You may need to regroup across multiple places first",
+      "incorrectAnswers": [
+        "Borrowing is never allowed",
+        "You should always divide instead",
+        "Decimals forbid middle digits"
+      ],
+      "explanation": "Sometimes you chain borrowing from a non-zero place farther left.",
+      "keywords": [
+        "regrouping",
+        "multi-digit"
+      ],
+      "source": "https://openstax.org/books/prealgebra/pages/1-3-subtract-whole-numbers"
+    }
+  ],
+  "multiplication": [
+    {
+      "question": "What is 6 \u00d7 7?",
+      "correctAnswer": "42",
+      "incorrectAnswers": [
+        "36",
+        "48",
+        "49"
+      ],
+      "explanation": "6 \u00d7 7 = 42.",
+      "keywords": [
+        "times-tables",
+        "factors"
+      ],
+      "source": "https://www.khanacademy.org/math/arithmetic/arith-review-multiply-divide"
+    },
+    {
+      "question": "Which property says (a \u00d7 b) \u00d7 c = a \u00d7 (b \u00d7 c)?",
+      "correctAnswer": "Associative property of multiplication",
+      "incorrectAnswers": [
+        "Commutative property of addition",
+        "Distributive property of division",
+        "Identity property of addition"
+      ],
+      "explanation": "Associativity groups factors differently without changing the product.",
+      "keywords": [
+        "associative",
+        "multiplication"
+      ],
+      "source": "https://www.mathsisfun.com/associative-commutative-distributive.html"
+    },
+    {
+      "question": "What is the multiplicative identity?",
+      "correctAnswer": "1",
+      "incorrectAnswers": [
+        "0",
+        "-1",
+        "10"
+      ],
+      "explanation": "Multiplying by 1 leaves a number unchanged.",
+      "keywords": [
+        "identity",
+        "multiplication"
+      ],
+      "source": "https://www.mathsisfun.com/numbers/multiplication.html"
+    },
+    {
+      "question": "What does 0 \u00d7 125 equal?",
+      "correctAnswer": "0",
+      "incorrectAnswers": [
+        "125",
+        "1",
+        "0.125"
+      ],
+      "explanation": "Zero times any quantity is zero.",
+      "keywords": [
+        "zero-property",
+        "multiplication"
+      ],
+      "source": "https://www.khanacademy.org/math/arithmetic/arith-review-multiply-divide"
+    },
+    {
+      "question": "What does the distributive property connect?",
+      "correctAnswer": "Multiplication and addition/subtraction across parentheses",
+      "incorrectAnswers": [
+        "Only division and subtraction",
+        "Only squaring and square roots",
+        "Angles and triangles"
+      ],
+      "explanation": "a(b + c) = ab + ac.",
+      "keywords": [
+        "distributive",
+        "factoring"
+      ],
+      "source": "https://www.mathsisfun.com/associative-commutative-distributive.html"
+    },
+    {
+      "question": "What is 12 \u00d7 30 mentally using place value?",
+      "correctAnswer": "360",
+      "incorrectAnswers": [
+        "120",
+        "90",
+        "3000"
+      ],
+      "explanation": "12 \u00d7 3 = 36, then multiply by 10: 360.",
+      "keywords": [
+        "mental-math",
+        "place-value"
+      ],
+      "source": "https://www.khanacademy.org/math/arithmetic/arith-review-multiply-divide"
+    },
+    {
+      "question": "What is the area of a 4 by 7 rectangle (in square units)?",
+      "correctAnswer": "28",
+      "incorrectAnswers": [
+        "11",
+        "22",
+        "32"
+      ],
+      "explanation": "Area = length \u00d7 width = 4 \u00d7 7 = 28.",
+      "keywords": [
+        "area",
+        "rectangle"
+      ],
+      "source": "https://www.mathsisfun.com/geometry/rectangle.html"
+    },
+    {
+      "question": "If 8 \u00d7 n = 56, what is n?",
+      "correctAnswer": "7",
+      "incorrectAnswers": [
+        "6",
+        "8",
+        "48"
+      ],
+      "explanation": "Divide: n = 56 \u00f7 8 = 7.",
+      "keywords": [
+        "unknown-factor",
+        "division-link"
+      ],
+      "source": "https://www.khanacademy.org/math/arithmetic/arith-review-multiply-divide"
+    },
+    {
+      "question": "What is (\u22123) \u00d7 4?",
+      "correctAnswer": "\u221212",
+      "incorrectAnswers": [
+        "12",
+        "\u22127",
+        "7"
+      ],
+      "explanation": "A negative times a positive is negative: \u221212.",
+      "keywords": [
+        "negative-numbers",
+        "sign-rules"
+      ],
+      "source": "https://www.khanacademy.org/math/arithmetic/arith-review-negative-numbers"
+    },
+    {
+      "question": "What is (\u22122) \u00d7 (\u22125)?",
+      "correctAnswer": "10",
+      "incorrectAnswers": [
+        "\u221210",
+        "7",
+        "\u22127"
+      ],
+      "explanation": "A negative times a negative is positive.",
+      "keywords": [
+        "sign-rules",
+        "integers"
+      ],
+      "source": "https://www.khanacademy.org/math/arithmetic/arith-review-negative-numbers"
+    },
+    {
+      "question": "What is 25 \u00d7 16 using doubling and halving?",
+      "correctAnswer": "400",
+      "incorrectAnswers": [
+        "200",
+        "300",
+        "420"
+      ],
+      "explanation": "One strategy: 25 \u00d7 16 = (25 \u00d7 8) \u00d7 2 = 200 \u00d7 2 = 400.",
+      "keywords": [
+        "factoring",
+        "mental-math"
+      ],
+      "source": "https://www.mathsisfun.com/numbers/multiplication-tips.html"
+    },
+    {
+      "question": "Why does multiplying by 10 shift digits left in base ten?",
+      "correctAnswer": "Each place becomes ten times larger",
+      "incorrectAnswers": [
+        "Digits lose meaning",
+        "It always adds a decimal",
+        "It divides by 10"
+      ],
+      "explanation": "Multiplying by 10 increases place value: 3.4 \u00d7 10 = 34.",
+      "keywords": [
+        "base-ten",
+        "place-value"
+      ],
+      "source": "https://www.khanacademy.org/math/arithmetic/arith-review-multiply-divide"
+    }
+  ],
+  "division": [
+    {
+      "question": "What is 84 \u00f7 7?",
+      "correctAnswer": "12",
+      "incorrectAnswers": [
+        "11",
+        "13",
+        "14"
+      ],
+      "explanation": "7 \u00d7 12 = 84.",
+      "keywords": [
+        "division",
+        "whole-numbers"
+      ],
+      "source": "https://www.khanacademy.org/math/arithmetic/arith-review-multiply-divide"
+    },
+    {
+      "question": "In 45 \u00f7 9 = 5, what is the dividend?",
+      "correctAnswer": "45",
+      "incorrectAnswers": [
+        "9",
+        "5",
+        "4"
+      ],
+      "explanation": "The dividend is what is being divided.",
+      "keywords": [
+        "dividend",
+        "vocabulary"
+      ],
+      "source": "https://www.mathsisfun.com/numbers/division.html"
+    },
+    {
+      "question": "What is division by zero?",
+      "correctAnswer": "Undefined (not a real number result)",
+      "incorrectAnswers": [
+        "Always zero",
+        "Always one",
+        "The same as the numerator"
+      ],
+      "explanation": "You cannot divide by zero in standard arithmetic.",
+      "keywords": [
+        "division-by-zero",
+        "undefined"
+      ],
+      "source": "https://en.wikipedia.org/wiki/Division_by_zero"
+    },
+    {
+      "question": "What is 0 \u00f7 9?",
+      "correctAnswer": "0",
+      "incorrectAnswers": [
+        "9",
+        "1",
+        "Undefined"
+      ],
+      "explanation": "Zero divided by a nonzero number is zero.",
+      "keywords": [
+        "zero",
+        "division"
+      ],
+      "source": "https://www.khanacademy.org/math/arithmetic/arith-review-multiply-divide"
+    },
+    {
+      "question": "If 132 \u00f7 12 = 11, what is 12 \u00d7 11?",
+      "correctAnswer": "132",
+      "incorrectAnswers": [
+        "144",
+        "120",
+        "122"
+      ],
+      "explanation": "Multiplication undoes division: quotient \u00d7 divisor = dividend.",
+      "keywords": [
+        "inverse",
+        "check"
+      ],
+      "source": "https://www.mathsisfun.com/numbers/division.html"
+    },
+    {
+      "question": "What is a remainder in whole-number division?",
+      "correctAnswer": "The leftover amount after forming equal whole groups",
+      "incorrectAnswers": [
+        "An extra divisor",
+        "A decimal always",
+        "The quotient"
+      ],
+      "explanation": "Example: 10 \u00f7 3 is 3 remainder 1.",
+      "keywords": [
+        "remainder",
+        "division"
+      ],
+      "source": "https://www.khanacademy.org/math/arithmetic/arith-review-multiply-divide"
+    },
+    {
+      "question": "What is 640 \u00f7 80?",
+      "correctAnswer": "8",
+      "incorrectAnswers": [
+        "80",
+        "10",
+        "64"
+      ],
+      "explanation": "Cancel a factor of 10: 64 \u00f7 8 = 8.",
+      "keywords": [
+        "mental-math",
+        "factors"
+      ],
+      "source": "https://www.khanacademy.org/math/arithmetic/arith-review-multiply-divide"
+    },
+    {
+      "question": "Which situation matches division: sharing equally?",
+      "correctAnswer": "Splitting a total into equal groups",
+      "incorrectAnswers": [
+        "Combining two totals",
+        "Finding a percent of change",
+        "Measuring temperature"
+      ],
+      "explanation": "Partition division models fair sharing.",
+      "keywords": [
+        "word-problems",
+        "partition"
+      ],
+      "source": "https://www.khanacademy.org/math/arithmetic/arith-review-multiply-divide"
+    },
+    {
+      "question": "What is (\u221224) \u00f7 6?",
+      "correctAnswer": "\u22124",
+      "incorrectAnswers": [
+        "4",
+        "\u221218",
+        "18"
+      ],
+      "explanation": "Negative divided by positive is negative.",
+      "keywords": [
+        "integers",
+        "sign-rules"
+      ],
+      "source": "https://www.khanacademy.org/math/arithmetic/arith-review-negative-numbers"
+    },
+    {
+      "question": "What is (\u221236) \u00f7 (\u22129)?",
+      "correctAnswer": "4",
+      "incorrectAnswers": [
+        "\u22124",
+        "9",
+        "\u221245"
+      ],
+      "explanation": "Negative divided by negative is positive.",
+      "keywords": [
+        "integers",
+        "sign-rules"
+      ],
+      "source": "https://www.khanacademy.org/math/arithmetic/arith-review-negative-numbers"
+    },
+    {
+      "question": "Why can long division fail to terminate for some fractions?",
+      "correctAnswer": "Because the decimal expansion may repeat (rational numbers)",
+      "incorrectAnswers": [
+        "Because division always stops at two decimals",
+        "Because fractions are never rational",
+        "Because decimals cannot represent rationals"
+      ],
+      "explanation": "Many rationals have repeating decimals; division reveals the pattern.",
+      "keywords": [
+        "decimals",
+        "rationals"
+      ],
+      "source": "https://www.mathsisfun.com/numbers/division.html"
+    },
+    {
+      "question": "If 17 \u00f7 5 = 3 R2, what mixed number matches?",
+      "correctAnswer": "3 and 2/5",
+      "incorrectAnswers": [
+        "3 and 5/2",
+        "2 and 3/5",
+        "5 and 2/3"
+      ],
+      "explanation": "Remainder over divisor becomes the fractional part.",
+      "keywords": [
+        "mixed-numbers",
+        "fractions"
+      ],
+      "source": "https://www.khanacademy.org/math/arithmetic/arith-review-fractions"
+    }
+  ],
+  "fractions": [
+    {
+      "question": "What does the denominator tell you?",
+      "correctAnswer": "How many equal parts make a whole",
+      "incorrectAnswers": [
+        "How many parts you have",
+        "How large the numerator is",
+        "The decimal point location"
+      ],
+      "explanation": "The denominator names the size of each equal slice.",
+      "keywords": [
+        "denominator",
+        "fraction-basics"
+      ],
+      "source": "https://www.khanacademy.org/math/arithmetic/fraction-arithmetic"
+    },
+    {
+      "question": "What does the numerator tell you?",
+      "correctAnswer": "How many parts you are counting",
+      "incorrectAnswers": [
+        "How many wholes exist always",
+        "The reciprocal always",
+        "The decimal expansion"
+      ],
+      "explanation": "Numerator counts selected equal parts.",
+      "keywords": [
+        "numerator",
+        "fraction-basics"
+      ],
+      "source": "https://www.khanacademy.org/math/arithmetic/fraction-arithmetic"
+    },
+    {
+      "question": "Which fraction is equivalent to 1/2?",
+      "correctAnswer": "2/4",
+      "incorrectAnswers": [
+        "1/3",
+        "3/4",
+        "2/3"
+      ],
+      "explanation": "Multiply top and bottom by 2: 2/4.",
+      "keywords": [
+        "equivalent-fractions",
+        "scaling"
+      ],
+      "source": "https://www.mathsisfun.com/fractions_equivalent.html"
+    },
+    {
+      "question": "What is 1/3 + 1/6 (same denominator after scaling)?",
+      "correctAnswer": "1/2",
+      "incorrectAnswers": [
+        "2/9",
+        "1/9",
+        "2/3"
+      ],
+      "explanation": "1/3 = 2/6; 2/6 + 1/6 = 3/6 = 1/2.",
+      "keywords": [
+        "common-denominator",
+        "add-fractions"
+      ],
+      "source": "https://www.khanacademy.org/math/arithmetic/fraction-arithmetic/arith-add-sub-fractions"
+    },
+    {
+      "question": "What is 3/4 \u00d7 2/5?",
+      "correctAnswer": "6/20 (which simplifies to 3/10)",
+      "incorrectAnswers": [
+        "5/8",
+        "6/9",
+        "5/9"
+      ],
+      "explanation": "Multiply numerators and denominators: 6/20 = 3/10.",
+      "keywords": [
+        "multiply-fractions",
+        "simplify"
+      ],
+      "source": "https://www.khanacademy.org/math/arithmetic/fraction-arithmetic/arith-mult-div-fractions"
+    },
+    {
+      "question": "What is the reciprocal of 4/7?",
+      "correctAnswer": "7/4",
+      "incorrectAnswers": [
+        "4/7",
+        "\u22124/7",
+        "11/7"
+      ],
+      "explanation": "Flip the fraction to get the reciprocal.",
+      "keywords": [
+        "reciprocal",
+        "division-fractions"
+      ],
+      "source": "https://www.mathsisfun.com/fractions_reciprocal.html"
+    },
+    {
+      "question": "Why do you need a common denominator to add 1/2 + 1/3?",
+      "correctAnswer": "Because you are adding same-sized parts",
+      "incorrectAnswers": [
+        "Because denominators must always be multiplied",
+        "Because fractions cannot be added",
+        "Because decimals are required"
+      ],
+      "explanation": "Common denominators align the \u2018slice size\u2019.",
+      "keywords": [
+        "common-denominator",
+        "addition"
+      ],
+      "source": "https://www.khanacademy.org/math/arithmetic/fraction-arithmetic/arith-add-sub-fractions"
+    },
+    {
+      "question": "What is 5/5 as a whole number?",
+      "correctAnswer": "1",
+      "incorrectAnswers": [
+        "0",
+        "5",
+        "25"
+      ],
+      "explanation": "A whole divided into five parts, taking all five, equals 1.",
+      "keywords": [
+        "unit-fraction",
+        "whole"
+      ],
+      "source": "https://www.mathsisfun.com/fractions.html"
+    },
+    {
+      "question": "Which is larger: 3/8 or 5/8?",
+      "correctAnswer": "5/8",
+      "incorrectAnswers": [
+        "3/8",
+        "They are equal",
+        "Cannot compare"
+      ],
+      "explanation": "Same denominator: larger numerator means larger fraction.",
+      "keywords": [
+        "compare-fractions",
+        "same-denominator"
+      ],
+      "source": "https://www.khanacademy.org/math/arithmetic/fraction-arithmetic/arith-compare-fractions"
+    },
+    {
+      "question": "What is 2 \u00f7 1/3 interpreted as \u2018how many thirds fit in 2\u2019?",
+      "correctAnswer": "6",
+      "incorrectAnswers": [
+        "2/3",
+        "3",
+        "1/6"
+      ],
+      "explanation": "Dividing by a fraction multiplies by its reciprocal: 2 \u00d7 3 = 6.",
+      "keywords": [
+        "divide-fractions",
+        "meaning"
+      ],
+      "source": "https://www.khanacademy.org/math/arithmetic/fraction-arithmetic/arith-div-fractions"
+    },
+    {
+      "question": "What is a simplified fraction?",
+      "correctAnswer": "A fraction with no common factor left in numerator and denominator (besides 1)",
+      "incorrectAnswers": [
+        "A fraction with denominator 10",
+        "A fraction larger than 1",
+        "A fraction with a negative denominator only"
+      ],
+      "explanation": "Simplifying divides out common factors.",
+      "keywords": [
+        "simplify",
+        "gcd"
+      ],
+      "source": "https://www.mathsisfun.com/simplifying-fractions.html"
+    },
+    {
+      "question": "What is 1/2 of 24?",
+      "correctAnswer": "12",
+      "incorrectAnswers": [
+        "48",
+        "22",
+        "14"
+      ],
+      "explanation": "\u2018Of\u2019 often means multiply: (1/2) \u00d7 24 = 12.",
+      "keywords": [
+        "fraction-of-a-whole",
+        "multiplication"
+      ],
+      "source": "https://www.khanacademy.org/math/arithmetic/fraction-arithmetic"
+    }
+  ],
+  "decimals": [
+    {
+      "question": "What is 0.3 + 0.07?",
+      "correctAnswer": "0.37",
+      "incorrectAnswers": [
+        "0.10",
+        "1.0",
+        "0.307"
+      ],
+      "explanation": "Align decimals: 0.30 + 0.07 = 0.37.",
+      "keywords": [
+        "add-decimals",
+        "place-value"
+      ],
+      "source": "https://www.khanacademy.org/math/arithmetic/arith-decimals"
+    },
+    {
+      "question": "What is 4.5 \u2212 0.25?",
+      "correctAnswer": "4.25",
+      "incorrectAnswers": [
+        "4.75",
+        "4.30",
+        "3.25"
+      ],
+      "explanation": "4.50 \u2212 0.25 = 4.25.",
+      "keywords": [
+        "subtract-decimals",
+        "borrowing"
+      ],
+      "source": "https://www.khanacademy.org/math/arithmetic/arith-decimals"
+    },
+    {
+      "question": "What is 0.6 \u00d7 0.2?",
+      "correctAnswer": "0.12",
+      "incorrectAnswers": [
+        "1.2",
+        "0.8",
+        "0.02"
+      ],
+      "explanation": "6 \u00d7 2 = 12; two decimal places total \u2192 0.12.",
+      "keywords": [
+        "multiply-decimals",
+        "place-value"
+      ],
+      "source": "https://www.khanacademy.org/math/arithmetic/arith-decimals"
+    },
+    {
+      "question": "What is 0.8 \u00f7 0.1?",
+      "correctAnswer": "8",
+      "incorrectAnswers": [
+        "0.8",
+        "80",
+        "0.08"
+      ],
+      "explanation": "Dividing by 0.1 is like multiplying by 10: 0.8 \u00f7 0.1 = 8.",
+      "keywords": [
+        "divide-decimals",
+        "powers-of-ten"
+      ],
+      "source": "https://www.khanacademy.org/math/arithmetic/arith-decimals"
+    },
+    {
+      "question": "Which decimal is equivalent to 1/4?",
+      "correctAnswer": "0.25",
+      "incorrectAnswers": [
+        "0.4",
+        "0.2",
+        "0.14"
+      ],
+      "explanation": "1 \u00f7 4 = 0.25.",
+      "keywords": [
+        "fraction-decimal",
+        "conversion"
+      ],
+      "source": "https://www.mathsisfun.com/converting-fractions-decimals.html"
+    },
+    {
+      "question": "Round 3.14159 to the nearest hundredth.",
+      "correctAnswer": "3.14",
+      "incorrectAnswers": [
+        "3.15",
+        "3.142",
+        "3.1"
+      ],
+      "explanation": "Hundredths place: look at thousandths (1), round down.",
+      "keywords": [
+        "rounding",
+        "decimals"
+      ],
+      "source": "https://www.khanacademy.org/math/arithmetic/arith-decimals"
+    },
+    {
+      "question": "Why can 0.999\u2026 equal 1 in the real numbers?",
+      "correctAnswer": "Because it is the limit of a geometric series summing to 1",
+      "incorrectAnswers": [
+        "Because rounding always makes it smaller",
+        "Because decimals cannot represent 1",
+        "Because it is less than every number below 1"
+      ],
+      "explanation": "The repeating decimal represents the same real number as 1.",
+      "keywords": [
+        "repeating-decimals",
+        "limits"
+      ],
+      "source": "https://en.wikipedia.org/wiki/0.999..."
+    },
+    {
+      "question": "What is the value of the digit 7 in 5.073?",
+      "correctAnswer": "7 hundredths (0.07)",
+      "incorrectAnswers": [
+        "7 tenths",
+        "7 thousandths",
+        "7 ones"
+      ],
+      "explanation": "The 7 is in the hundredths place.",
+      "keywords": [
+        "place-value",
+        "decimals"
+      ],
+      "source": "https://www.khanacademy.org/math/arithmetic/arith-decimals"
+    },
+    {
+      "question": "What is 2.35 \u00d7 10?",
+      "correctAnswer": "23.5",
+      "incorrectAnswers": [
+        "235",
+        "0.235",
+        "2.3500"
+      ],
+      "explanation": "Multiplying by 10 shifts the decimal one place right.",
+      "keywords": [
+        "powers-of-ten",
+        "shift"
+      ],
+      "source": "https://www.khanacademy.org/math/arithmetic/arith-decimals"
+    },
+    {
+      "question": "What is 6.2 \u00f7 100?",
+      "correctAnswer": "0.062",
+      "incorrectAnswers": [
+        "62",
+        "0.62",
+        "620"
+      ],
+      "explanation": "Dividing by 100 shifts the decimal two places left.",
+      "keywords": [
+        "powers-of-ten",
+        "shift"
+      ],
+      "source": "https://www.khanacademy.org/math/arithmetic/arith-decimals"
+    },
+    {
+      "question": "Which is greater: 0.7 or 0.69?",
+      "correctAnswer": "0.7",
+      "incorrectAnswers": [
+        "0.69",
+        "They are equal",
+        "Cannot tell"
+      ],
+      "explanation": "0.7 = 0.70, which is greater than 0.69.",
+      "keywords": [
+        "compare-decimals",
+        "place-value"
+      ],
+      "source": "https://www.khanacademy.org/math/arithmetic/arith-decimals"
+    },
+    {
+      "question": "What is a terminating decimal?",
+      "correctAnswer": "A decimal that ends after finitely many digits",
+      "incorrectAnswers": [
+        "A decimal that never repeats",
+        "A decimal that repeats forever",
+        "A fraction that cannot be written as a decimal"
+      ],
+      "explanation": "Terminating decimals correspond to denominators whose prime factors are 2 and/or 5 (after simplifying).",
+      "keywords": [
+        "terminating",
+        "rationals"
+      ],
+      "source": "https://www.mathsisfun.com/numbers/decimals.html"
+    }
+  ]
+}

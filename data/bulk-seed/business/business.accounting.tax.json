@@ -1,0 +1,122 @@
+[
+  {
+    "category": "business",
+    "navigationKeyword1": "accounting",
+    "navigationKeyword2": "tax",
+    "question": "What is the difference between a tax deduction and a tax credit?",
+    "correctAnswer": "Deductions reduce taxable income, while credits reduce the amount of tax you owe dollar-for-dollar.",
+    "incorrectAnswers": [
+      "Deductions reduce tax owed directly, while credits reduce taxable income.",
+      "Deductions increase tax refunds automatically with no limits.",
+      "Credits only apply to payroll taxes, not income taxes."
+    ],
+    "explanation": "Deductions affect the income base that’s taxed; credits reduce the final tax liability.",
+    "keywords": [
+      "tax-deductions",
+      "tax-credits",
+      "tax-basics"
+    ],
+    "source": "https://www.irs.gov/taxtopics/tc556",
+    "seedId": "35ea0187-2367-5792-9e0f-15302ced3415"
+  },
+  {
+    "category": "business",
+    "navigationKeyword1": "accounting",
+    "navigationKeyword2": "tax",
+    "question": "What is a “tax return” primarily used for?",
+    "correctAnswer": "Reporting income and calculating the tax liability to determine what is owed or refunded.",
+    "incorrectAnswers": [
+      "Keeping internal budgets for management decisions only",
+      "Submitting invoices to customers for payment",
+      "Approving accounting journal entries in the ledger"
+    ],
+    "explanation": "A tax return is the formal filing that reports required information and computes tax owed or a refund.",
+    "keywords": [
+      "tax-return",
+      "tax-liability",
+      "filing"
+    ],
+    "source": "https://www.irs.gov/filing",
+    "seedId": "9179f4d8-562a-54f1-a395-5b457b66940c"
+  },
+  {
+    "category": "business",
+    "navigationKeyword1": "accounting",
+    "navigationKeyword2": "tax",
+    "question": "What does “tax deferral” generally mean?",
+    "correctAnswer": "Delaying when income is taxed (or when deductions reduce tax) to a later year under certain rules.",
+    "incorrectAnswers": [
+      "Canceling the tax entirely so no tax is ever owed",
+      "Paying taxes earlier so you never pay interest later",
+      "Turning non-taxable income into taxable income automatically"
+    ],
+    "explanation": "Tax deferral shifts recognition to later, which can change cash flow timing and effective tax burden over time.",
+    "keywords": [
+      "tax-deferral",
+      "timing",
+      "cash-flow"
+    ],
+    "source": "https://www.oecd.org/tax/tax-policy/taxation-of-savings.htm",
+    "seedId": "f87bca88-6d9f-5086-b9f9-825c78e35816"
+  },
+  {
+    "category": "business",
+    "navigationKeyword1": "accounting",
+    "navigationKeyword2": "tax",
+    "question": "In general tax concepts, what is a “deductible expense”?",
+    "correctAnswer": "An expense that qualifies under tax rules to reduce taxable income (subject to limits and conditions).",
+    "incorrectAnswers": [
+      "Any expense that you personally feel was useful",
+      "Any expense regardless of documentation requirements",
+      "An expense that always increases taxable income"
+    ],
+    "explanation": "Deductible expenses reduce the tax base only if they meet applicable rules and documentation requirements.",
+    "keywords": [
+      "deductible",
+      "documentation",
+      "tax-base"
+    ],
+    "source": "https://www.investopedia.com/terms/d/deductibleexpense.asp",
+    "seedId": "af7bda41-4c2b-5ac7-8500-2729347caee5"
+  },
+  {
+    "category": "business",
+    "navigationKeyword1": "accounting",
+    "navigationKeyword2": "tax",
+    "question": "What is the difference between tax expense and tax payable?",
+    "correctAnswer": "Tax expense is the amount recognized in accounting for the period; tax payable is the amount owed to the tax authority (liability).",
+    "incorrectAnswers": [
+      "Tax payable is always zero unless you pay a penalty.",
+      "Tax expense is only what you paid in cash that month.",
+      "Tax payable refers to office rent payable to a landlord."
+    ],
+    "explanation": "Accounting recognition and cash payment timing can differ, so tax expense and the tax liability don’t always match exactly.",
+    "keywords": [
+      "tax-expense",
+      "tax-payable",
+      "liabilities"
+    ],
+    "source": "https://www.irs.gov/businesses/small-businesses-self-employed",
+    "seedId": "9d4e144e-7d02-5ef5-a294-1e100c7ac448"
+  },
+  {
+    "category": "business",
+    "navigationKeyword1": "accounting",
+    "navigationKeyword2": "tax",
+    "question": "What generally determines the tax treatment of capital gains?",
+    "correctAnswer": "How long the asset was held (holding period) and the applicable tax rules for the type of gain.",
+    "incorrectAnswers": [
+      "Only the number of hours you spent analyzing the trade",
+      "Whether the asset was bought with a credit card",
+      "Whether the stock is traded on the first trading day of the month"
+    ],
+    "explanation": "Many systems tax capital gains differently depending on holding period and other eligibility rules, affecting the rate and timing.",
+    "keywords": [
+      "capital-gains",
+      "holding-period",
+      "tax-rates"
+    ],
+    "source": "https://www.investopedia.com/terms/c/capital-gain-tax.asp",
+    "seedId": "2980012e-49b5-5cff-8293-d29d18108e18"
+  }
+]

@@ -1,0 +1,122 @@
+[
+  {
+    "category": "languages",
+    "navigationKeyword1": "english",
+    "navigationKeyword2": "reading",
+    "question": "What is the main idea of a paragraph?",
+    "correctAnswer": "The most important point the writer wants you to remember.",
+    "incorrectAnswers": [
+      "The first word in the paragraph",
+      "Every detail in the paragraph",
+      "Only the last sentence"
+    ],
+    "explanation": "The main idea is the central message, often supported by details and examples.",
+    "keywords": [
+      "main-idea",
+      "comprehension",
+      "english-reading"
+    ],
+    "source": "https://owl.purdue.edu/owl/general_writing/academic_writing/essay_writing/paragraphs_and_paragraphing.html",
+    "seedId": "d7008861-b58a-536b-afd0-28701a969711"
+  },
+  {
+    "category": "languages",
+    "navigationKeyword1": "english",
+    "navigationKeyword2": "reading",
+    "question": "When you skim a page, what are you mainly trying to do?",
+    "correctAnswer": "Get a quick overall sense without reading every word.",
+    "incorrectAnswers": [
+      "Memorize every sentence",
+      "Copy the text exactly",
+      "Ignore headings"
+    ],
+    "explanation": "Skimming means moving quickly to catch the topic, structure, and key points.",
+    "keywords": [
+      "skimming",
+      "reading-strategy",
+      "english-reading"
+    ],
+    "source": "https://www.britishcouncil.org/learnenglish/reading",
+    "seedId": "39e8dbf6-39b2-50f2-b7a2-49f9e64cd4fe"
+  },
+  {
+    "category": "languages",
+    "navigationKeyword1": "english",
+    "navigationKeyword2": "reading",
+    "question": "When you scan a timetable, what are you usually looking for?",
+    "correctAnswer": "One specific fact, like a time or a name.",
+    "incorrectAnswers": [
+      "The writer's hidden feelings",
+      "Every adjective in order",
+      "A full summary of the story"
+    ],
+    "explanation": "Scanning means searching quickly for a particular piece of information.",
+    "keywords": [
+      "scanning",
+      "reading-strategy",
+      "english-reading"
+    ],
+    "source": "https://www.merriam-webster.com/dictionary/scan",
+    "seedId": "cb987093-faf8-52b0-a8a6-6f2bda5d279a"
+  },
+  {
+    "category": "languages",
+    "navigationKeyword1": "english",
+    "navigationKeyword2": "reading",
+    "question": "If a fact is stated directly in the text, what kind of information is it?",
+    "correctAnswer": "explicit information",
+    "incorrectAnswers": [
+      "inferred information only",
+      "unrelated background",
+      "a grammar rule"
+    ],
+    "explanation": "Explicit information is written plainly in the text, not guessed from clues.",
+    "keywords": [
+      "explicit-meaning",
+      "evidence",
+      "english-reading"
+    ],
+    "source": "https://dictionary.cambridge.org/dictionary/english/explicit",
+    "seedId": "6f17509a-1733-5788-985f-dacddf993abf"
+  },
+  {
+    "category": "languages",
+    "navigationKeyword1": "english",
+    "navigationKeyword2": "reading",
+    "question": "When you guess a new word from nearby words, what skill are you using?",
+    "correctAnswer": "using context clues",
+    "incorrectAnswers": [
+      "using random guessing",
+      "skipping every new word",
+      "reading only the title"
+    ],
+    "explanation": "Context clues are the surrounding words and sentences that hint at meaning.",
+    "keywords": [
+      "context-clues",
+      "vocabulary",
+      "english-reading"
+    ],
+    "source": "https://www.merriam-webster.com/words-at-play/how-to-use-context-to-determine-word-meaning",
+    "seedId": "109b91b8-e2e2-5376-af90-67cad1fb369f"
+  },
+  {
+    "category": "languages",
+    "navigationKeyword1": "english",
+    "navigationKeyword2": "reading",
+    "question": "In many academic paragraphs, where does the topic sentence often appear?",
+    "correctAnswer": "Near the beginning of the paragraph.",
+    "incorrectAnswers": [
+      "Only in a footnote",
+      "Always in the middle of a sentence",
+      "Only after the conclusion"
+    ],
+    "explanation": "A topic sentence often starts the paragraph and states the paragraph's focus.",
+    "keywords": [
+      "topic-sentence",
+      "paragraph-structure",
+      "english-reading"
+    ],
+    "source": "https://writingcenter.unc.edu/tips-and-tools/paragraphs/",
+    "seedId": "c8789d2d-ae23-54d9-a628-ffaf27b20c00"
+  }
+]

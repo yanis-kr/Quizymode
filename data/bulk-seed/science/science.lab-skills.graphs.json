@@ -1,0 +1,230 @@
+[
+  {
+    "seedId": "4e5ca509-c782-4820-b26a-ded20471eda5",
+    "category": "science",
+    "navigationKeyword1": "lab-skills",
+    "navigationKeyword2": "graphs",
+    "question": "What axis is independent variable usually?",
+    "correctAnswer": "x-axis",
+    "incorrectAnswers": [
+      "y-axis",
+      "Either always random",
+      "No axes"
+    ],
+    "explanation": "Convention: manipulated variable on x.",
+    "keywords": [
+      "graphing",
+      "variables"
+    ],
+    "source": "https://www.nist.gov/itl/sed-gsg/introduction-measurement"
+  },
+  {
+    "seedId": "9f7cf444-4c09-42cb-a90d-09863b1cc3fb",
+    "category": "science",
+    "navigationKeyword1": "lab-skills",
+    "navigationKeyword2": "graphs",
+    "question": "What is a line of best fit?",
+    "correctAnswer": "Model summarizing trend in scatter data",
+    "incorrectAnswers": [
+      "Connect-the-dots always",
+      "Only bar charts",
+      "Only pie charts"
+    ],
+    "explanation": "Regression minimizes error criterion.",
+    "keywords": [
+      "regression",
+      "scatterplot"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Curve_fitting"
+  },
+  {
+    "seedId": "32c4d6c1-528d-47c5-b8c6-828d1a3e3d1e",
+    "category": "science",
+    "navigationKeyword1": "lab-skills",
+    "navigationKeyword2": "graphs",
+    "question": "Why include units on axes?",
+    "correctAnswer": "So the graph is interpretable",
+    "incorrectAnswers": [
+      "Optional",
+      "Only in titles",
+      "Only for fun"
+    ],
+    "explanation": "Dimensional meaning matters.",
+    "keywords": [
+      "units",
+      "graphing"
+    ],
+    "source": "https://www.nist.gov/pml/weights-and-measures/metric-si/si-units"
+  },
+  {
+    "seedId": "f09736a7-f669-4e40-8640-35ae56e32c8d",
+    "category": "science",
+    "navigationKeyword1": "lab-skills",
+    "navigationKeyword2": "graphs",
+    "question": "What is error bar?",
+    "correctAnswer": "Visualize uncertainty in measurements",
+    "incorrectAnswers": [
+      "Shows font size",
+      "Shows color preference",
+      "Shows sample brand"
+    ],
+    "explanation": "Can be SD, SE, or CI depending on caption.",
+    "keywords": [
+      "error-bars",
+      "uncertainty"
+    ],
+    "source": "https://www.nature.com/nature-portfolio/editorial-policies/reporting-standards-for-life-sciences"
+  },
+  {
+    "seedId": "4075cbe8-218f-4353-b0b7-56ecc2ad910e",
+    "category": "science",
+    "navigationKeyword1": "lab-skills",
+    "navigationKeyword2": "graphs",
+    "question": "What is interpolation vs extrapolation?",
+    "correctAnswer": "Within data range vs beyond",
+    "incorrectAnswers": [
+      "Same",
+      "Extrapolation always safer",
+      "Interpolation always impossible"
+    ],
+    "explanation": "Extrapolation risks model failure.",
+    "keywords": [
+      "extrapolation",
+      "modeling"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Extrapolation"
+  },
+  {
+    "seedId": "1fc40c0e-9d95-46b4-92a1-17e01bf59878",
+    "category": "science",
+    "navigationKeyword1": "lab-skills",
+    "navigationKeyword2": "graphs",
+    "question": "What is log scale used for?",
+    "correctAnswer": "Display wide dynamic range",
+    "incorrectAnswers": [
+      "Make negative lengths",
+      "Remove units",
+      "Replace experiments"
+    ],
+    "explanation": "Common in biology/physics.",
+    "keywords": [
+      "log-scale",
+      "graphs"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Logarithmic_scale"
+  },
+  {
+    "seedId": "8943e0c2-0f04-4ce3-a103-b799e779ae09",
+    "category": "science",
+    "navigationKeyword1": "lab-skills",
+    "navigationKeyword2": "graphs",
+    "question": "What is bar chart best for?",
+    "correctAnswer": "Comparing categories",
+    "incorrectAnswers": [
+      "Continuous x with trend",
+      "Vector fields",
+      "Phase diagrams"
+    ],
+    "explanation": "Avoid misleading truncated axes.",
+    "keywords": [
+      "bar-chart",
+      "visualization"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Bar_chart"
+  },
+  {
+    "seedId": "7dc66569-7c18-46d9-8f46-3cdbd1bc4970",
+    "category": "science",
+    "navigationKeyword1": "lab-skills",
+    "navigationKeyword2": "graphs",
+    "question": "What is histogram?",
+    "correctAnswer": "Frequency distribution of continuous data in bins",
+    "incorrectAnswers": [
+      "Pie chart",
+      "Scatter plot",
+      "Contour plot"
+    ],
+    "explanation": "Bin width affects shape.",
+    "keywords": [
+      "histogram",
+      "distribution"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Histogram"
+  },
+  {
+    "seedId": "c64ac33d-90a8-4359-967e-bc7727fa66c7",
+    "category": "science",
+    "navigationKeyword1": "lab-skills",
+    "navigationKeyword2": "graphs",
+    "question": "What is slope on distance-time graph?",
+    "correctAnswer": "Speed",
+    "incorrectAnswers": [
+      "Acceleration always",
+      "Force",
+      "Mass"
+    ],
+    "explanation": "Derivative interpretation.",
+    "keywords": [
+      "slope",
+      "kinematics"
+    ],
+    "source": "https://www.khanacademy.org/science/physics/one-dimensional-motion"
+  },
+  {
+    "seedId": "c2c3e177-f3ed-4347-a740-8773d64ac4a3",
+    "category": "science",
+    "navigationKeyword1": "lab-skills",
+    "navigationKeyword2": "graphs",
+    "question": "What is area under velocity-time graph?",
+    "correctAnswer": "Displacement (with sign)",
+    "incorrectAnswers": [
+      "Speed always positive area confusion handled carefully",
+      "Jerk",
+      "Power"
+    ],
+    "explanation": "Integral interpretation.",
+    "keywords": [
+      "area",
+      "kinematics"
+    ],
+    "source": "https://www.khanacademy.org/science/physics/one-dimensional-motion"
+  },
+  {
+    "seedId": "a262826b-5d16-42bc-80ed-a9aa08b79e10",
+    "category": "science",
+    "navigationKeyword1": "lab-skills",
+    "navigationKeyword2": "graphs",
+    "question": "What is calibration curve?",
+    "correctAnswer": "Relate instrument reading to known concentrations",
+    "incorrectAnswers": [
+      "Random dots",
+      "Only theoretical",
+      "Only for sound"
+    ],
+    "explanation": "Use standards to interpolate unknowns.",
+    "keywords": [
+      "calibration-curve",
+      "analytical"
+    ],
+    "source": "https://www.nist.gov/pml/weights-and-measures/laboratory-metrology"
+  },
+  {
+    "seedId": "e4c44bf4-8e36-4be3-9428-16be02f1eb43",
+    "category": "science",
+    "navigationKeyword1": "lab-skills",
+    "navigationKeyword2": "graphs",
+    "question": "What is digital vs analog data plotting?",
+    "correctAnswer": "Both need clear scales and metadata",
+    "incorrectAnswers": [
+      "Digital needs no labels",
+      "Analog forbidden",
+      "Only analog allowed"
+    ],
+    "explanation": "Document sampling rate if relevant.",
+    "keywords": [
+      "data",
+      "metadata"
+    ],
+    "source": "https://www.nist.gov/itl/sed-gsg/introduction-measurement"
+  }
+]

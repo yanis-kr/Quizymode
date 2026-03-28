@@ -1,0 +1,116 @@
+[
+  {
+    "category": "tech",
+    "navigationKeyword1": "networking",
+    "navigationKeyword2": "http",
+    "question": "What is the default TCP port for HTTPS?",
+    "correctAnswer": "443",
+    "incorrectAnswers": [
+      "80",
+      "25",
+      "53"
+    ],
+    "explanation": "Port 443 is the well-known port for HTTP over TLS in common deployments.",
+    "keywords": [
+      "http",
+      "https"
+    ],
+    "source": "https://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.xhtml",
+    "seedId": "8ae4b441-dfb2-5027-b59e-f828e5c926ff"
+  },
+  {
+    "category": "tech",
+    "navigationKeyword1": "networking",
+    "navigationKeyword2": "http",
+    "question": "Which HTTP method is usually used to retrieve a resource without a body?",
+    "correctAnswer": "GET",
+    "incorrectAnswers": [
+      "CONNECT",
+      "TRACE for uploads",
+      "PATCH for deletes"
+    ],
+    "explanation": "GET requests should be safe and idempotent when used as intended.",
+    "keywords": [
+      "http",
+      "methods"
+    ],
+    "source": "https://www.rfc-editor.org/rfc/rfc9110",
+    "seedId": "dd17c973-324d-5daa-8156-ddbc918f4a61"
+  },
+  {
+    "category": "tech",
+    "navigationKeyword1": "networking",
+    "navigationKeyword2": "http",
+    "question": "What does an HTTP 301 status code commonly mean?",
+    "correctAnswer": "Moved permanently to a new resource",
+    "incorrectAnswers": [
+      "Temporary server error",
+      "Unauthorized client",
+      "Payload too large"
+    ],
+    "explanation": "301 tells clients the URI has changed permanently.",
+    "keywords": [
+      "http",
+      "redirects"
+    ],
+    "source": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/301",
+    "seedId": "d3f1d14c-c71b-503d-9f40-6bfad0d64339"
+  },
+  {
+    "category": "tech",
+    "navigationKeyword1": "networking",
+    "navigationKeyword2": "http",
+    "question": "What does the Host header enable in HTTP/1.1?",
+    "correctAnswer": "Name-based virtual hosting on a shared IP address",
+    "incorrectAnswers": [
+      "Encrypting the entire TCP connection",
+      "Choosing Wi-Fi channels",
+      "Selecting DHCP pools"
+    ],
+    "explanation": "Servers route requests by hostname because many sites share one IP.",
+    "keywords": [
+      "http",
+      "host-header"
+    ],
+    "source": "https://www.rfc-editor.org/rfc/rfc9110",
+    "seedId": "af6acf13-186d-558a-9e6c-f58a65823f47"
+  },
+  {
+    "category": "tech",
+    "navigationKeyword1": "networking",
+    "navigationKeyword2": "http",
+    "question": "What is the main benefit of HTTP/2 multiplexing over HTTP/1.1?",
+    "correctAnswer": "Many requests share one TCP connection without head-of-line blocking",
+    "incorrectAnswers": [
+      "It removes the need for TLS",
+      "It uses UDP only",
+      "It disables caching"
+    ],
+    "explanation": "Streams and framing let multiple exchanges proceed in parallel.",
+    "keywords": [
+      "http",
+      "http2"
+    ],
+    "source": "https://www.rfc-editor.org/rfc/rfc9113",
+    "seedId": "80a3917b-fccb-5ae5-b033-00f83e52ff32"
+  },
+  {
+    "category": "tech",
+    "navigationKeyword1": "networking",
+    "navigationKeyword2": "http",
+    "question": "What does a `Cache-Control: no-store` directive tell caches?",
+    "correctAnswer": "Do not store the response in any cache",
+    "incorrectAnswers": [
+      "Store forever on disk only",
+      "Ignore DNS lookups",
+      "Disable gzip compression"
+    ],
+    "explanation": "no-store is used for sensitive data that must not linger in intermediaries.",
+    "keywords": [
+      "http",
+      "caching"
+    ],
+    "source": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Cache-Control",
+    "seedId": "34893b8b-753b-55a5-bf8a-298d4a1f64d3"
+  }
+]

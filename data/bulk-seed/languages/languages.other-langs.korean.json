@@ -1,0 +1,116 @@
+[
+  {
+    "category": "languages",
+    "navigationKeyword1": "other-langs",
+    "navigationKeyword2": "korean",
+    "question": "What does '안녕하세요' (annyeonghaseyo) mean?",
+    "correctAnswer": "hello (polite)",
+    "incorrectAnswers": [
+      "goodbye only",
+      "thank you",
+      "sorry"
+    ],
+    "explanation": "'Annyeonghaseyo' is a common polite greeting for learners.",
+    "keywords": [
+      "hello",
+      "korean-basics"
+    ],
+    "source": "https://ko.wiktionary.org/wiki/%EC%95%88%EB%85%95%ED%95%98%EC%84%B8%EC%9A%94",
+    "seedId": "a39e6de3-71dd-523e-a7a4-db0d2f1557fd"
+  },
+  {
+    "category": "languages",
+    "navigationKeyword1": "other-langs",
+    "navigationKeyword2": "korean",
+    "question": "What does '감사합니다' (gamsahamnida) mean?",
+    "correctAnswer": "thank you (polite)",
+    "incorrectAnswers": [
+      "please",
+      "excuse me",
+      "you are welcome"
+    ],
+    "explanation": "'Gamsahamnida' is a standard polite thank you.",
+    "keywords": [
+      "thank-you",
+      "korean-basics"
+    ],
+    "source": "https://www.wiktionary.org/wiki/%EA%B0%90%EC%82%AC%ED%95%A9%EB%8B%88%EB%8B%A4",
+    "seedId": "5fb35a72-d0d4-58c9-bb98-69f707f0659e"
+  },
+  {
+    "category": "languages",
+    "navigationKeyword1": "other-langs",
+    "navigationKeyword2": "korean",
+    "question": "What does '물' (mul) mean?",
+    "correctAnswer": "water",
+    "incorrectAnswers": [
+      "rice",
+      "milk",
+      "juice"
+    ],
+    "explanation": "'Mul' is the basic word for water.",
+    "keywords": [
+      "water",
+      "korean-basics"
+    ],
+    "source": "https://dictionary.cambridge.org/dictionary/english-korean/water",
+    "seedId": "b1085f17-2b04-58e8-9790-f3d147f15adc"
+  },
+  {
+    "category": "languages",
+    "navigationKeyword1": "other-langs",
+    "navigationKeyword2": "korean",
+    "question": "What does '네' (ne) often mean in a simple reply?",
+    "correctAnswer": "yes (polite)",
+    "incorrectAnswers": [
+      "no",
+      "maybe",
+      "please"
+    ],
+    "explanation": "'Ne' is a common polite yes in many situations.",
+    "keywords": [
+      "yes",
+      "korean-basics"
+    ],
+    "source": "https://dictionary.cambridge.org/dictionary/english-korean/yes",
+    "seedId": "8ae95dae-d096-5599-aaf7-46de2b84e838"
+  },
+  {
+    "category": "languages",
+    "navigationKeyword1": "other-langs",
+    "navigationKeyword2": "korean",
+    "question": "What does '아니요' (aniyo) mean?",
+    "correctAnswer": "no (polite)",
+    "incorrectAnswers": [
+      "yes",
+      "maybe",
+      "please"
+    ],
+    "explanation": "'Aniyo' is a common polite no for beginners.",
+    "keywords": [
+      "no",
+      "korean-basics"
+    ],
+    "source": "https://dictionary.cambridge.org/dictionary/english-korean/no",
+    "seedId": "6ed30113-d2b5-5e7e-a1cc-de9d9bf1a837"
+  },
+  {
+    "category": "languages",
+    "navigationKeyword1": "other-langs",
+    "navigationKeyword2": "korean",
+    "question": "What does '학교' (hakgyo) mean?",
+    "correctAnswer": "school",
+    "incorrectAnswers": [
+      "hospital",
+      "library",
+      "airport"
+    ],
+    "explanation": "'Hakgyo' is the everyday word for school.",
+    "keywords": [
+      "school",
+      "korean-basics"
+    ],
+    "source": "https://dictionary.cambridge.org/dictionary/english-korean/school",
+    "seedId": "914980b6-0b98-5618-ba93-c973f7fccaea"
+  }
+]

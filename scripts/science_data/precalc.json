@@ -1,0 +1,1094 @@
+{
+  "functions": [
+    {
+      "question": "What is domain of a function?",
+      "correctAnswer": "Set of valid inputs",
+      "incorrectAnswers": [
+        "Set of outputs",
+        "Only y-values",
+        "Always all reals"
+      ],
+      "explanation": "Denominator zeros, sqrt negatives excluded often.",
+      "keywords": [
+        "domain",
+        "functions"
+      ],
+      "source": "https://openstax.org/books/precalculus-2e/pages/3-2-domain-and-range"
+    },
+    {
+      "question": "What is range?",
+      "correctAnswer": "Set of possible outputs",
+      "incorrectAnswers": [
+        "Inputs only",
+        "Always integers",
+        "Same as domain always"
+      ],
+      "explanation": "May need calculus/critical points for full range.",
+      "keywords": [
+        "range",
+        "functions"
+      ],
+      "source": "https://openstax.org/books/precalculus-2e/pages/3-2-domain-and-range"
+    },
+    {
+      "question": "When is function even?",
+      "correctAnswer": "f(\u2212x) = f(x)",
+      "incorrectAnswers": [
+        "f(\u2212x) = \u2212f(x)",
+        "Always true",
+        "Never symmetric"
+      ],
+      "explanation": "Symmetric about y-axis.",
+      "keywords": [
+        "even-function",
+        "symmetry"
+      ],
+      "source": "https://openstax.org/books/precalculus-2e/pages/3-3-composition-of-functions"
+    },
+    {
+      "question": "When is function odd?",
+      "correctAnswer": "f(\u2212x) = \u2212f(x)",
+      "incorrectAnswers": [
+        "f(\u2212x) = f(x)",
+        "Always even",
+        "No tests"
+      ],
+      "explanation": "Symmetric about origin.",
+      "keywords": [
+        "odd-function",
+        "symmetry"
+      ],
+      "source": "https://openstax.org/books/precalculus-2e/pages/3-3-composition-of-functions"
+    },
+    {
+      "question": "Composition (f \u2218 g)(x)?",
+      "correctAnswer": "f(g(x))",
+      "incorrectAnswers": [
+        "g(f(x)) always",
+        "f(x)g(x)",
+        "f(x)+g(x)"
+      ],
+      "explanation": "Order matters.",
+      "keywords": [
+        "composition",
+        "functions"
+      ],
+      "source": "https://openstax.org/books/precalculus-2e/pages/3-3-composition-of-functions"
+    },
+    {
+      "question": "Inverse function property?",
+      "correctAnswer": "f(f^{-1}(x)) = x on appropriate domains",
+      "incorrectAnswers": [
+        "Always f^{-1}=f",
+        "Never exists",
+        "Same as reciprocal"
+      ],
+      "explanation": "One-to-one required.",
+      "keywords": [
+        "inverse",
+        "functions"
+      ],
+      "source": "https://openstax.org/books/precalculus-2e/pages/3-4-inverse-functions"
+    },
+    {
+      "question": "Horizontal line test?",
+      "correctAnswer": "If any horizontal line hits graph more than once, not one-to-one",
+      "incorrectAnswers": [
+        "Vertical line test for inverse",
+        "Always passes",
+        "Only for polynomials"
+      ],
+      "explanation": "Needed for invertibility.",
+      "keywords": [
+        "horizontal-line-test",
+        "one-to-one"
+      ],
+      "source": "https://openstax.org/books/precalculus-2e/pages/3-4-inverse-functions"
+    },
+    {
+      "question": "Transform y = a f(b(x\u2212h)) + k?",
+      "correctAnswer": "Stretch/compress, shift, reflect",
+      "incorrectAnswers": [
+        "Only shifts",
+        "Only stretches",
+        "h always changes period only"
+      ],
+      "explanation": "Track inside vs outside changes.",
+      "keywords": [
+        "transformations",
+        "graphs"
+      ],
+      "source": "https://openstax.org/books/precalculus-2e/pages/3-5-transformation-of-functions"
+    },
+    {
+      "question": "Piecewise function?",
+      "correctAnswer": "Different rules on different intervals",
+      "incorrectAnswers": [
+        "Always linear",
+        "Cannot graph",
+        "Same as piecemeal integration only"
+      ],
+      "explanation": "Watch boundary points.",
+      "keywords": [
+        "piecewise",
+        "functions"
+      ],
+      "source": "https://openstax.org/books/precalculus-2e/pages/3-1-functions-and-function-notation"
+    },
+    {
+      "question": "Average rate of change of f on [a,b]?",
+      "correctAnswer": "(f(b)\u2212f(a))/(b\u2212a)",
+      "incorrectAnswers": [
+        "f(b)+f(a)",
+        "f'(a)",
+        "f(b)/f(a)"
+      ],
+      "explanation": "Secant slope.",
+      "keywords": [
+        "average-rate",
+        "secant"
+      ],
+      "source": "https://openstax.org/books/precalculus-2e/pages/3-1-functions-and-function-notation"
+    },
+    {
+      "question": "Increasing on interval means?",
+      "correctAnswer": "If x1 < x2 then f(x1) < f(x2)",
+      "incorrectAnswers": [
+        "f(x1) > f(x2)",
+        "Derivative zero",
+        "Always constant"
+      ],
+      "explanation": "Strict increase definition.",
+      "keywords": [
+        "increasing",
+        "behavior"
+      ],
+      "source": "https://openstax.org/books/precalculus-2e/pages/3-1-functions-and-function-notation"
+    },
+    {
+      "question": "Absolute value |x| graph shape?",
+      "correctAnswer": "V-shape vertex at 0",
+      "incorrectAnswers": [
+        "Parabola only",
+        "Line only",
+        "Circle"
+      ],
+      "explanation": "Piecewise linear.",
+      "keywords": [
+        "absolute-value",
+        "graph"
+      ],
+      "source": "https://www.mathsisfun.com/numbers/absolute-value.html"
+    }
+  ],
+  "sequences": [
+    {
+      "question": "Arithmetic sequence nth term?",
+      "correctAnswer": "a_n = a1 + (n\u22121)d",
+      "incorrectAnswers": [
+        "a1 r^{n}",
+        "n^2 always",
+        "a1/d^n"
+      ],
+      "explanation": "Constant difference d.",
+      "keywords": [
+        "arithmetic-sequence",
+        "nth-term"
+      ],
+      "source": "https://openstax.org/books/precalculus-2e/pages/12-2-arithmetic-sequences"
+    },
+    {
+      "question": "Arithmetic series sum 1..n?",
+      "correctAnswer": "S_n = n/2 (a1 + a_n)",
+      "incorrectAnswers": [
+        "n a1",
+        "a_n^2",
+        "n^3"
+      ],
+      "explanation": "Gauss pairing idea.",
+      "keywords": [
+        "arithmetic-series",
+        "sum"
+      ],
+      "source": "https://openstax.org/books/precalculus-2e/pages/12-2-arithmetic-sequences"
+    },
+    {
+      "question": "Geometric sequence nth term?",
+      "correctAnswer": "a_n = a1 r^{n\u22121}",
+      "incorrectAnswers": [
+        "a1 + (n\u22121)r",
+        "a1 n^r",
+        "r/a1"
+      ],
+      "explanation": "Constant ratio r.",
+      "keywords": [
+        "geometric-sequence",
+        "ratio"
+      ],
+      "source": "https://openstax.org/books/precalculus-2e/pages/12-3-geometric-sequences"
+    },
+    {
+      "question": "Finite geometric sum (r\u22601)?",
+      "correctAnswer": "S_n = a1(1\u2212r^n)/(1\u2212r)",
+      "incorrectAnswers": [
+        "a1/(1\u2212r)",
+        "n a1",
+        "a1 r^n"
+      ],
+      "explanation": "Derivable by algebra trick.",
+      "keywords": [
+        "geometric-series",
+        "sum"
+      ],
+      "source": "https://openstax.org/books/precalculus-2e/pages/12-3-geometric-sequences"
+    },
+    {
+      "question": "Infinite geometric series converges when?",
+      "correctAnswer": "|r| < 1",
+      "incorrectAnswers": [
+        "|r| > 1 always",
+        "r = 1 always",
+        "Never converges"
+      ],
+      "explanation": "Sum a/(1\u2212r).",
+      "keywords": [
+        "infinite-series",
+        "convergence"
+      ],
+      "source": "https://openstax.org/books/precalculus-2e/pages/12-4-series-and-their-notations"
+    },
+    {
+      "question": "Recursive vs explicit?",
+      "correctAnswer": "Recursive uses prior terms; explicit uses n directly",
+      "incorrectAnswers": [
+        "Same thing",
+        "Recursive never exists",
+        "Explicit always shorter"
+      ],
+      "explanation": "Both valid.",
+      "keywords": [
+        "recursive",
+        "sequences"
+      ],
+      "source": "https://openstax.org/books/precalculus-2e/pages/12-1-sequences"
+    },
+    {
+      "question": "Fibonacci recursion?",
+      "correctAnswer": "F_n = F_{n\u22121} + F_{n\u22122}",
+      "incorrectAnswers": [
+        "F_n = 2F_{n\u22121}",
+        "F_n = n^2",
+        "F_n = n!"
+      ],
+      "explanation": "Classic example.",
+      "keywords": [
+        "fibonacci",
+        "recursion"
+      ],
+      "source": "https://en.wikipedia.org/wiki/Fibonacci_sequence"
+    },
+    {
+      "question": "Sigma notation \u03a3?",
+      "correctAnswer": "Summation over index",
+      "incorrectAnswers": [
+        "Product only",
+        "Integral always",
+        "Union of sets"
+      ],
+      "explanation": "\u2211_{k=1}^n a_k.",
+      "keywords": [
+        "sigma-notation",
+        "series"
+      ],
+      "source": "https://openstax.org/books/precalculus-2e/pages/12-4-series-and-their-notations"
+    },
+    {
+      "question": "What is a series?",
+      "correctAnswer": "Sum of sequence terms",
+      "incorrectAnswers": [
+        "List without adding",
+        "Only infinite",
+        "Only geometric"
+      ],
+      "explanation": "Partial sums matter.",
+      "keywords": [
+        "series",
+        "sequences"
+      ],
+      "source": "https://openstax.org/books/precalculus-2e/pages/12-4-series-and-their-notations"
+    },
+    {
+      "question": "Compound interest as sequence?",
+      "correctAnswer": "Geometric growth per period",
+      "incorrectAnswers": [
+        "Arithmetic always",
+        "Constant",
+        "Fibonacci"
+      ],
+      "explanation": "Discrete compounding steps.",
+      "keywords": [
+        "compound-interest",
+        "sequences"
+      ],
+      "source": "https://www.khanacademy.org/economics-finance-domain/core-finance/interest-tutorial"
+    },
+    {
+      "question": "Alternating series test idea?",
+      "correctAnswer": "Terms decrease to 0 with alternating signs (conditions)",
+      "incorrectAnswers": [
+        "Always diverges",
+        "Never needs decreasing",
+        "Only for positive terms"
+      ],
+      "explanation": "Calculus link preview.",
+      "keywords": [
+        "alternating-series",
+        "convergence"
+      ],
+      "source": "https://openstax.org/books/calculus-volume-2/pages/5-5-alternating-series"
+    },
+    {
+      "question": "Triangular numbers formula?",
+      "correctAnswer": "T_n = n(n+1)/2",
+      "incorrectAnswers": [
+        "n^2",
+        "2^n",
+        "n!"
+      ],
+      "explanation": "Sum 1+2+\u2026+n.",
+      "keywords": [
+        "triangular-numbers",
+        "sum"
+      ],
+      "source": "https://www.mathsisfun.com/algebra/triangular-numbers.html"
+    }
+  ],
+  "matrices": [
+    {
+      "question": "2\u00d72 determinant?",
+      "correctAnswer": "ad \u2212 bc for [[a,b],[c,d]]",
+      "incorrectAnswers": [
+        "a+b+c+d",
+        "ad+bc",
+        "ac\u2212bd"
+      ],
+      "explanation": "Invertible iff nonzero.",
+      "keywords": [
+        "determinant",
+        "2x2"
+      ],
+      "source": "https://openstax.org/books/precalculus-2e/pages/9-7-solving-systems-with-inverses"
+    },
+    {
+      "question": "Matrix addition requirement?",
+      "correctAnswer": "Same dimensions",
+      "incorrectAnswers": [
+        "Any sizes",
+        "Square only",
+        "Must multiply first"
+      ],
+      "explanation": "Elementwise.",
+      "keywords": [
+        "matrix-add",
+        "algebra"
+      ],
+      "source": "https://openstax.org/books/precalculus-2e/pages/9-5-matrices-and-matrix-operations"
+    },
+    {
+      "question": "Scalar multiplication?",
+      "correctAnswer": "Multiply every entry by scalar",
+      "incorrectAnswers": [
+        "Only diagonal",
+        "Only first row",
+        "Determinant only"
+      ],
+      "explanation": "Linear operation.",
+      "keywords": [
+        "scalar-multiple",
+        "matrices"
+      ],
+      "source": "https://openstax.org/books/precalculus-2e/pages/9-5-matrices-and-matrix-operations"
+    },
+    {
+      "question": "When is AB defined?",
+      "correctAnswer": "Columns of A = rows of B",
+      "incorrectAnswers": [
+        "Always",
+        "Same size only",
+        "Never"
+      ],
+      "explanation": "(m\u00d7n)(n\u00d7p) \u2192 m\u00d7p.",
+      "keywords": [
+        "matrix-multiply",
+        "dimensions"
+      ],
+      "source": "https://openstax.org/books/precalculus-2e/pages/9-5-matrices-and-matrix-operations"
+    },
+    {
+      "question": "Identity matrix property?",
+      "correctAnswer": "AI = IA = A for compatible A",
+      "incorrectAnswers": [
+        "A+I = 0",
+        "AI = 0",
+        "Never commutes"
+      ],
+      "explanation": "Ones on diagonal.",
+      "keywords": [
+        "identity-matrix",
+        "matrices"
+      ],
+      "source": "https://openstax.org/books/precalculus-2e/pages/9-7-solving-systems-with-inverses"
+    },
+    {
+      "question": "Inverse matrix?",
+      "correctAnswer": "A^{-1} with AA^{-1}=I",
+      "incorrectAnswers": [
+        "Always exists",
+        "Same as transpose",
+        "Only vectors"
+      ],
+      "explanation": "Square and det\u22600.",
+      "keywords": [
+        "matrix-inverse",
+        "solve"
+      ],
+      "source": "https://openstax.org/books/precalculus-2e/pages/9-7-solving-systems-with-inverses"
+    },
+    {
+      "question": "Solve Ax=b with inverse?",
+      "correctAnswer": "x = A^{-1}b if invertible",
+      "incorrectAnswers": [
+        "x = Ab",
+        "x = bA",
+        "x = A/b"
+      ],
+      "explanation": "Conceptual method.",
+      "keywords": [
+        "linear-systems",
+        "matrix"
+      ],
+      "source": "https://openstax.org/books/precalculus-2e/pages/9-7-solving-systems-with-inverses"
+    },
+    {
+      "question": "Augmented matrix?",
+      "correctAnswer": "[A|b]",
+      "incorrectAnswers": [
+        "Only A",
+        "Only b",
+        "A^2"
+      ],
+      "explanation": "Row reduce for solutions.",
+      "keywords": [
+        "augmented",
+        "rref"
+      ],
+      "source": "https://openstax.org/books/precalculus-2e/pages/9-6-solving-systems-with-gaussian-elimination"
+    },
+    {
+      "question": "Coefficient matrix?",
+      "correctAnswer": "Matrix of variable coefficients without constants",
+      "incorrectAnswers": [
+        "Includes RHS column inside",
+        "Only constants",
+        "Identity always"
+      ],
+      "explanation": "Ax=b structure.",
+      "keywords": [
+        "coefficient-matrix",
+        "systems"
+      ],
+      "source": "https://openstax.org/books/precalculus-2e/pages/9-6-solving-systems-with-gaussian-elimination"
+    },
+    {
+      "question": "Zero matrix property under addition?",
+      "correctAnswer": "Identity for matrix addition",
+      "incorrectAnswers": [
+        "Identity for multiply",
+        "No effect",
+        "Always invertible"
+      ],
+      "explanation": "A+0=A.",
+      "keywords": [
+        "zero-matrix",
+        "algebra"
+      ],
+      "source": "https://openstax.org/books/precalculus-2e/pages/9-5-matrices-and-matrix-operations"
+    },
+    {
+      "question": "Transpose (A^T)ij?",
+      "correctAnswer": "Aji",
+      "incorrectAnswers": [
+        "Aij",
+        "\u2212Aij",
+        "1/Aij"
+      ],
+      "explanation": "Rows become columns.",
+      "keywords": [
+        "transpose",
+        "matrices"
+      ],
+      "source": "https://openstax.org/books/precalculus-2e/pages/9-5-matrices-and-matrix-operations"
+    },
+    {
+      "question": "Encoding networks with matrices?",
+      "correctAnswer": "Adjacency/weights in graphs",
+      "incorrectAnswers": [
+        "Impossible",
+        "Only calculus",
+        "Only 1\u00d71"
+      ],
+      "explanation": "Discrete math link.",
+      "keywords": [
+        "adjacency",
+        "graphs"
+      ],
+      "source": "https://en.wikipedia.org/wiki/Adjacency_matrix"
+    }
+  ],
+  "vectors": [
+    {
+      "question": "Vector magnitude from components (2D)?",
+      "correctAnswer": "\u221a(x^2 + y^2)",
+      "incorrectAnswers": [
+        "x + y",
+        "|x|+|y| always",
+        "xy"
+      ],
+      "explanation": "Pythagorean theorem.",
+      "keywords": [
+        "magnitude",
+        "vectors"
+      ],
+      "source": "https://openstax.org/books/precalculus-2e/pages/8-4-vectors"
+    },
+    {
+      "question": "Vector addition geometrically?",
+      "correctAnswer": "Tip-to-tail or parallelogram",
+      "incorrectAnswers": [
+        "Multiply lengths",
+        "Only subtract",
+        "Always perpendicular"
+      ],
+      "explanation": "Component-wise algebraically.",
+      "keywords": [
+        "vector-add",
+        "geometry"
+      ],
+      "source": "https://openstax.org/books/precalculus-2e/pages/8-4-vectors"
+    },
+    {
+      "question": "Dot product u\u00b7v (2D)?",
+      "correctAnswer": "u1v1 + u2v2",
+      "incorrectAnswers": [
+        "u1v2 + u2v1",
+        "u\u00d7v",
+        "u/v"
+      ],
+      "explanation": "Related to angle.",
+      "keywords": [
+        "dot-product",
+        "vectors"
+      ],
+      "source": "https://openstax.org/books/precalculus-2e/pages/8-5-dot-product"
+    },
+    {
+      "question": "u\u00b7v = ||u|| ||v|| cos \u03b8 means?",
+      "correctAnswer": "Angle between vectors in R^n",
+      "incorrectAnswers": [
+        "Always 90\u00b0",
+        "Always 0",
+        "Undefined"
+      ],
+      "explanation": "Orthogonal if dot zero (nonzero vectors).",
+      "keywords": [
+        "angle",
+        "dot-product"
+      ],
+      "source": "https://openstax.org/books/precalculus-2e/pages/8-5-dot-product"
+    },
+    {
+      "question": "Scalar projection of u onto v?",
+      "correctAnswer": "(u\u00b7v) / ||v||",
+      "incorrectAnswers": [
+        "||u||",
+        "u\u00d7v",
+        "u+v"
+      ],
+      "explanation": "Signed length along v direction; vector proj scales unit v.",
+      "keywords": [
+        "projection",
+        "vectors"
+      ],
+      "source": "https://openstax.org/books/precalculus-2e/pages/8-5-dot-product"
+    },
+    {
+      "question": "Unit vector direction of v?",
+      "correctAnswer": "v / ||v||",
+      "incorrectAnswers": [
+        "v \u00d7 v",
+        "||v|| v",
+        "v^2"
+      ],
+      "explanation": "Normalize to length 1.",
+      "keywords": [
+        "unit-vector",
+        "direction"
+      ],
+      "source": "https://openstax.org/books/precalculus-2e/pages/8-4-vectors"
+    },
+    {
+      "question": "Force as vector?",
+      "correctAnswer": "Has magnitude and direction",
+      "incorrectAnswers": [
+        "Scalar only",
+        "Only positive",
+        "No components"
+      ],
+      "explanation": "Statics sums vector forces.",
+      "keywords": [
+        "force-vector",
+        "physics"
+      ],
+      "source": "https://openstax.org/books/precalculus-2e/pages/8-4-vectors"
+    },
+    {
+      "question": "Position vector?",
+      "correctAnswer": "From origin to point",
+      "incorrectAnswers": [
+        "Always zero",
+        "Only in 3D",
+        "Same as displacement always"
+      ],
+      "explanation": "Describes location.",
+      "keywords": [
+        "position",
+        "coordinates"
+      ],
+      "source": "https://openstax.org/books/precalculus-2e/pages/8-4-vectors"
+    },
+    {
+      "question": "Vector between points A and B?",
+      "correctAnswer": "B \u2212 A",
+      "incorrectAnswers": [
+        "A + B",
+        "A \u00d7 B",
+        "B/A"
+      ],
+      "explanation": "Displacement vector.",
+      "keywords": [
+        "displacement",
+        "vectors"
+      ],
+      "source": "https://openstax.org/books/precalculus-2e/pages/8-4-vectors"
+    },
+    {
+      "question": "3D cross product u\u00d7v?",
+      "correctAnswer": "Vector perpendicular to u and v",
+      "incorrectAnswers": [
+        "Scalar always",
+        "Same as dot",
+        "Always parallel to u"
+      ],
+      "explanation": "Magnitude ||u|| ||v|| sin \u03b8.",
+      "keywords": [
+        "cross-product",
+        "r3"
+      ],
+      "source": "https://openstax.org/books/calculus-volume-3/pages/2-4-the-cross-product"
+    },
+    {
+      "question": "Work as dot product?",
+      "correctAnswer": "W = F\u00b7d (constant force)",
+      "incorrectAnswers": [
+        "F \u00d7 d",
+        "F + d",
+        "Fd always scalar without cos"
+      ],
+      "explanation": "Component along displacement.",
+      "keywords": [
+        "work",
+        "dot-product"
+      ],
+      "source": "https://openstax.org/books/precalculus-2e/pages/8-5-dot-product"
+    },
+    {
+      "question": "Bearing vs component form?",
+      "correctAnswer": "Convert angle and magnitude to (x,y)",
+      "incorrectAnswers": [
+        "Cannot convert",
+        "Only polar graphs",
+        "Same as complex always"
+      ],
+      "explanation": "Use trig.",
+      "keywords": [
+        "components",
+        "trig"
+      ],
+      "source": "https://www.khanacademy.org/math/precalculus/vectors-precalc"
+    }
+  ],
+  "conics": [
+    {
+      "question": "Standard parabola y = ax^2 vertex?",
+      "correctAnswer": "(0,0) before shifts",
+      "incorrectAnswers": [
+        "Always (1,1)",
+        "No vertex",
+        "(a,0) always"
+      ],
+      "explanation": "Completing square finds vertex.",
+      "keywords": [
+        "parabola",
+        "conics"
+      ],
+      "source": "https://openstax.org/books/precalculus-2e/pages/10-3-the-parabola"
+    },
+    {
+      "question": "Parabola focus-directrix property?",
+      "correctAnswer": "Distance to focus equals distance to directrix",
+      "incorrectAnswers": [
+        "Sum of distances constant",
+        "Product constant",
+        "No geometric meaning"
+      ],
+      "explanation": "Defines parabola.",
+      "keywords": [
+        "focus",
+        "parabola"
+      ],
+      "source": "https://openstax.org/books/precalculus-2e/pages/10-3-the-parabola"
+    },
+    {
+      "question": "Ellipse sum of distances?",
+      "correctAnswer": "Constant to two foci",
+      "incorrectAnswers": [
+        "Difference constant",
+        "Product constant",
+        "One focus only"
+      ],
+      "explanation": "Orbits approximate ellipses.",
+      "keywords": [
+        "ellipse",
+        "foci"
+      ],
+      "source": "https://openstax.org/books/precalculus-2e/pages/10-1-the-ellipse"
+    },
+    {
+      "question": "Hyperbola difference of distances?",
+      "correctAnswer": "Constant to two foci",
+      "incorrectAnswers": [
+        "Sum constant",
+        "Equal radii",
+        "No asymptotes"
+      ],
+      "explanation": "Two branches.",
+      "keywords": [
+        "hyperbola",
+        "foci"
+      ],
+      "source": "https://openstax.org/books/precalculus-2e/pages/10-2-the-hyperbola"
+    },
+    {
+      "question": "Circle equation center (h,k)?",
+      "correctAnswer": "(x\u2212h)^2 + (y\u2212k)^2 = r^2",
+      "incorrectAnswers": [
+        "x^2 \u2212 y^2 = 1",
+        "y = mx + b",
+        "x/a + y/b = 1"
+      ],
+      "explanation": "Radius r.",
+      "keywords": [
+        "circle",
+        "conics"
+      ],
+      "source": "https://openstax.org/books/precalculus-2e/pages/8-1-the-ellipse"
+    },
+    {
+      "question": "Eccentricity e for ellipse?",
+      "correctAnswer": "0 < e < 1",
+      "incorrectAnswers": [
+        "e > 1",
+        "e = 0 always",
+        "e undefined"
+      ],
+      "explanation": "Circle limit e\u21920.",
+      "keywords": [
+        "eccentricity",
+        "ellipse"
+      ],
+      "source": "https://openstax.org/books/precalculus-2e/pages/10-1-the-ellipse"
+    },
+    {
+      "question": "Hyperbola asymptotes (centered standard)?",
+      "correctAnswer": "y = \u00b1(b/a)x (orientation dependent)",
+      "incorrectAnswers": [
+        "y = ax + b only",
+        "No asymptotes",
+        "Circles"
+      ],
+      "explanation": "Guide opening.",
+      "keywords": [
+        "asymptotes",
+        "hyperbola"
+      ],
+      "source": "https://openstax.org/books/precalculus-2e/pages/10-2-the-hyperbola"
+    },
+    {
+      "question": "Completing the square purpose?",
+      "correctAnswer": "Rewrite conic in standard form",
+      "incorrectAnswers": [
+        "Find derivative",
+        "Integrate",
+        "Solve only exponentials"
+      ],
+      "explanation": "Reveals center/radius.",
+      "keywords": [
+        "completing-square",
+        "algebra"
+      ],
+      "source": "https://www.mathsisfun.com/algebra/completing-square.html"
+    },
+    {
+      "question": "Discriminant B^2\u22124AC classifies?",
+      "correctAnswer": "General second-degree conic type (rotation)",
+      "incorrectAnswers": [
+        "Always parabola",
+        "Only linear",
+        "Always circle"
+      ],
+      "explanation": "Degenerate cases possible.",
+      "keywords": [
+        "discriminant",
+        "conics"
+      ],
+      "source": "https://openstax.org/books/precalculus-2e/pages/10-4-rotation-of-axes"
+    },
+    {
+      "question": "Reflective property of parabola?",
+      "correctAnswer": "Rays parallel to axis reflect through focus",
+      "incorrectAnswers": [
+        "Reflect to directrix only",
+        "No reflection",
+        "Scatter randomly"
+      ],
+      "explanation": "Satellite dishes.",
+      "keywords": [
+        "reflection",
+        "parabola"
+      ],
+      "source": "https://openstax.org/books/precalculus-2e/pages/10-3-the-parabola"
+    },
+    {
+      "question": "Parametric line?",
+      "correctAnswer": "r(t) = r0 + t v",
+      "incorrectAnswers": [
+        "r = t^2",
+        "r constant",
+        "Only polar"
+      ],
+      "explanation": "Position along direction v.",
+      "keywords": [
+        "parametric",
+        "lines"
+      ],
+      "source": "https://openstax.org/books/precalculus-2e/pages/8-7-parametric-equations"
+    },
+    {
+      "question": "Polar r = ed/(1+e cos \u03b8) form?",
+      "correctAnswer": "Conic section with eccentricity e",
+      "incorrectAnswers": [
+        "Always circle",
+        "Only hyperbola",
+        "No conics"
+      ],
+      "explanation": "Unified description.",
+      "keywords": [
+        "polar",
+        "conics"
+      ],
+      "source": "https://openstax.org/books/precalculus-2e/pages/8-8-polar-equations-of-conics"
+    }
+  ],
+  "limits": [
+    {
+      "question": "Limit lim_{x\u2192a} f(x) = L means?",
+      "correctAnswer": "f(x) arbitrarily close to L when x near a",
+      "incorrectAnswers": [
+        "f(a) must equal L always",
+        "Only one-sided always",
+        "L must be integer"
+      ],
+      "explanation": "Value at a may differ or undefined.",
+      "keywords": [
+        "limit-definition",
+        "calculus"
+      ],
+      "source": "https://openstax.org/books/calculus-volume-1/pages/2-5-precise-definition-of-a-limit"
+    },
+    {
+      "question": "Limit may exist if?",
+      "correctAnswer": "Left and right limits equal",
+      "incorrectAnswers": [
+        "Always if f(a) defined",
+        "Never if discontinuous",
+        "Only polynomials"
+      ],
+      "explanation": "Removable discontinuity can still have limit.",
+      "keywords": [
+        "one-sided-limit",
+        "continuity"
+      ],
+      "source": "https://openstax.org/books/calculus-volume-1/pages/2-2-limit-of-a-function"
+    },
+    {
+      "question": "lim_{x\u21920} sin x / x?",
+      "correctAnswer": "1",
+      "incorrectAnswers": [
+        "0",
+        "\u221e",
+        "\u22121"
+      ],
+      "explanation": "Fundamental trig limit.",
+      "keywords": [
+        "trig-limit",
+        "squeeze"
+      ],
+      "source": "https://openstax.org/books/calculus-volume-1/pages/2-3-limits-of-trigonometric-functions"
+    },
+    {
+      "question": "Vertical asymptote suggests?",
+      "correctAnswer": "Function grows unbounded near point",
+      "incorrectAnswers": [
+        "Horizontal line always",
+        "Limit always exists finite",
+        "Always removable"
+      ],
+      "explanation": "Rational zeros of denominator.",
+      "keywords": [
+        "vertical-asymptote",
+        "limits"
+      ],
+      "source": "https://openstax.org/books/calculus-volume-1/pages/2-2-limit-of-a-function"
+    },
+    {
+      "question": "Horizontal asymptote rational function (deg top < deg bot)?",
+      "correctAnswer": "y = 0",
+      "incorrectAnswers": [
+        "No HA",
+        "y = 1 always",
+        "Same as oblique always"
+      ],
+      "explanation": "Compare degrees.",
+      "keywords": [
+        "horizontal-asymptote",
+        "rational"
+      ],
+      "source": "https://openstax.org/books/calculus-volume-1/pages/4-3-limits-at-infinity"
+    },
+    {
+      "question": "Squeeze theorem idea?",
+      "correctAnswer": "Bound f between g and h with same limit",
+      "incorrectAnswers": [
+        "Multiply limits",
+        "Always use L\u2019H\u00f4pital",
+        "Only for series"
+      ],
+      "explanation": "Proves trig limits.",
+      "keywords": [
+        "squeeze-theorem",
+        "limits"
+      ],
+      "source": "https://openstax.org/books/calculus-volume-1/pages/2-3-limits-of-trigonometric-functions"
+    },
+    {
+      "question": "Continuity at a requires?",
+      "correctAnswer": "lim f = f(a) and f(a) defined",
+      "incorrectAnswers": [
+        "Limit enough alone",
+        "Derivative exists",
+        "Only polynomials"
+      ],
+      "explanation": "Three-part check.",
+      "keywords": [
+        "continuity",
+        "limits"
+      ],
+      "source": "https://openstax.org/books/calculus-volume-1/pages/2-4-continuity"
+    },
+    {
+      "question": "Removable discontinuity?",
+      "correctAnswer": "Limit exists but \u2260 f(a) or f(a) undefined",
+      "incorrectAnswers": [
+        "Jump only",
+        "Infinite only",
+        "No limit"
+      ],
+      "explanation": "Can \u2018fill hole\u2019.",
+      "keywords": [
+        "removable",
+        "discontinuity"
+      ],
+      "source": "https://openstax.org/books/calculus-volume-1/pages/2-4-continuity"
+    },
+    {
+      "question": "lim_{x\u2192\u221e} (1 + 1/x)^x?",
+      "correctAnswer": "e",
+      "incorrectAnswers": [
+        "1",
+        "0",
+        "\u03c0"
+      ],
+      "explanation": "Defines Euler\u2019s number.",
+      "keywords": [
+        "e-limit",
+        "sequences"
+      ],
+      "source": "https://openstax.org/books/calculus-volume-1/pages/6-7-lhopitals-rule"
+    },
+    {
+      "question": "Indeterminate form 0/0 suggests?",
+      "correctAnswer": "Algebra or L\u2019H\u00f4pital later in calc",
+      "incorrectAnswers": [
+        "Always 0",
+        "Always 1",
+        "No techniques"
+      ],
+      "explanation": "Precalc: factor/rationalize.",
+      "keywords": [
+        "indeterminate",
+        "algebra"
+      ],
+      "source": "https://openstax.org/books/calculus-volume-1/pages/2-2-limit-of-a-function"
+    },
+    {
+      "question": "Piecewise limit check?",
+      "correctAnswer": "Compare left/right at break",
+      "incorrectAnswers": [
+        "Only right",
+        "Only value at point",
+        "Never needed"
+      ],
+      "explanation": "Match branches.",
+      "keywords": [
+        "piecewise",
+        "limits"
+      ],
+      "source": "https://openstax.org/books/calculus-volume-1/pages/2-2-limit-of-a-function"
+    },
+    {
+      "question": "End behavior of polynomial with positive leading degree?",
+      "correctAnswer": "Odd: opposite infinities; Even: same infinity",
+      "incorrectAnswers": [
+        "Always bounded",
+        "Always horizontal asymptote",
+        "Always oscillates"
+      ],
+      "explanation": "Sign of leading coefficient matters.",
+      "keywords": [
+        "end-behavior",
+        "polynomial"
+      ],
+      "source": "https://openstax.org/books/precalculus-2e/pages/3-3-composition-of-functions"
+    }
+  ]
+}

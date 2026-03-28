@@ -1,0 +1,40 @@
+[
+  {
+    "category": "humanities",
+    "navigationKeyword1": "philosophy",
+    "navigationKeyword2": "metaphysics",
+    "question": "Metaphysics is the branch of philosophy most concerned with what?",
+    "correctAnswer": "the nature of reality",
+    "incorrectAnswers": [
+      "how to punctuate essays",
+      "how to memorize vocabulary",
+      "how to tune instruments"
+    ],
+    "explanation": "Metaphysics asks basic questions about being, identity, causation, and what exists.",
+    "keywords": [
+      "metaphysics",
+      "reality"
+    ],
+    "source": "https://www.britannica.com/topic/metaphysics",
+    "seedId": "a0a4ad98-949d-58f7-9e63-750726ab67b1"
+  },
+  {
+    "category": "humanities",
+    "navigationKeyword1": "philosophy",
+    "navigationKeyword2": "metaphysics",
+    "question": "A debate about whether free will is real belongs most directly to which field?",
+    "correctAnswer": "metaphysics",
+    "incorrectAnswers": [
+      "cartography",
+      "syntax",
+      "music notation"
+    ],
+    "explanation": "Free will debates ask what kind of beings we are and how causation and choice work.",
+    "keywords": [
+      "metaphysics",
+      "free-will"
+    ],
+    "source": "https://plato.stanford.edu/entries/freewill/",
+    "seedId": "eb799036-7bfd-51b7-94c0-f718bdbee9a4"
+  }
+]

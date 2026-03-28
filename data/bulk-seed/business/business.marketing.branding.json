@@ -1,0 +1,122 @@
+[
+  {
+    "category": "business",
+    "navigationKeyword1": "marketing",
+    "navigationKeyword2": "branding",
+    "question": "In marketing, what is the primary purpose of a brand?",
+    "correctAnswer": "To influence perceptions so customers understand what a company offers and what differentiates it.",
+    "incorrectAnswers": [
+      "To replace pricing entirely with discounts",
+      "To guarantee customer satisfaction with no effort from the company",
+      "To automatically prevent competitors from entering the market"
+    ],
+    "explanation": "A brand helps people interpret and remember an organization’s value, positioning, and consistency.",
+    "keywords": [
+      "branding",
+      "perception",
+      "differentiation"
+    ],
+    "source": "https://www.hubspot.com/brand",
+    "seedId": "c2e924e7-a5a4-528f-9946-ab6597435a7c"
+  },
+  {
+    "category": "business",
+    "navigationKeyword1": "marketing",
+    "navigationKeyword2": "branding",
+    "question": "What is brand equity, in practical terms?",
+    "correctAnswer": "The added value a brand gives to products or services because of recognition, trust, and associations.",
+    "incorrectAnswers": [
+      "A legal document that only covers trademarks",
+      "The current stock price of the company’s parent business",
+      "A guarantee that marketing spend will always increase demand"
+    ],
+    "explanation": "Brand equity reflects customer and market perceptions that can make demand, pricing, and loyalty more favorable.",
+    "keywords": [
+      "brand-equity",
+      "recognition",
+      "value"
+    ],
+    "source": "https://www.britannica.com/money/brand-equity",
+    "seedId": "c0004161-9c91-5a3d-86b4-c979c1aaffb2"
+  },
+  {
+    "category": "business",
+    "navigationKeyword1": "marketing",
+    "navigationKeyword2": "branding",
+    "question": "What does brand positioning describe?",
+    "correctAnswer": "How a brand is positioned in customers’ minds relative to alternatives.",
+    "incorrectAnswers": [
+      "The exact manufacturing process used to make the product",
+      "Only the company’s legal name and corporate structure",
+      "The monthly payroll schedule for marketing staff"
+    ],
+    "explanation": "Positioning explains what the brand stands for and why it is different from competitors in a clear customer-facing way.",
+    "keywords": [
+      "positioning",
+      "differentiation",
+      "brand-strategy"
+    ],
+    "source": "https://www.hubspot.com/marketing/brand-positioning",
+    "seedId": "3f80322e-290c-53e0-8a5c-59fb8c38b77d"
+  },
+  {
+    "category": "business",
+    "navigationKeyword1": "marketing",
+    "navigationKeyword2": "branding",
+    "question": "What is the difference between brand identity and brand image?",
+    "correctAnswer": "Identity is what the company intends to communicate; image is how customers perceive the brand.",
+    "incorrectAnswers": [
+      "Identity is only colors and fonts, while image is only the company’s mission statement",
+      "Identity and image always match exactly in every market",
+      "Identity is internal and image is legal, not customer-facing"
+    ],
+    "explanation": "Identity is the planned message and cues; image is the real perception shaped by experiences, messaging, and word of mouth.",
+    "keywords": [
+      "brand-identity",
+      "brand-image",
+      "customer-perception"
+    ],
+    "source": "https://moz.com/learn/seo/what-is-a-brand",
+    "seedId": "2496fce5-92fb-54fe-9fa9-d1ed0ec30e94"
+  },
+  {
+    "category": "business",
+    "navigationKeyword1": "marketing",
+    "navigationKeyword2": "branding",
+    "question": "What is a brand promise?",
+    "correctAnswer": "A clear statement of the value or experience customers can expect from the brand.",
+    "incorrectAnswers": [
+      "A list of all company job roles and responsibilities",
+      "A promise that every product feature is the cheapest in the market",
+      "A guarantee that returns will always be denied"
+    ],
+    "explanation": "A brand promise sets expectations, so the company must deliver consistently to build credibility.",
+    "keywords": [
+      "brand-promise",
+      "value",
+      "consistency"
+    ],
+    "source": "https://www.hubspot.com/marketing/brand-promise",
+    "seedId": "7c688009-5340-5543-8c5a-9e8410191421"
+  },
+  {
+    "category": "business",
+    "navigationKeyword1": "marketing",
+    "navigationKeyword2": "branding",
+    "question": "Why is a logo not the same thing as a brand?",
+    "correctAnswer": "A logo is a visual symbol; a brand includes meanings, associations, and customer experiences.",
+    "incorrectAnswers": [
+      "A logo is always irrelevant to marketing decisions",
+      "A logo legally defines company culture for all employees",
+      "A brand is only the colors used on a website"
+    ],
+    "explanation": "Brand is broader than a mark—customers form beliefs from many touchpoints, not just the visual identity.",
+    "keywords": [
+      "logo",
+      "brand-vs-logo",
+      "associations"
+    ],
+    "source": "https://www.hubspot.com/brand",
+    "seedId": "32413342-e513-5b32-bfd8-d3fc4ba36cb0"
+  }
+]

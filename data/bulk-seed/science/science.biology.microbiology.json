@@ -1,0 +1,230 @@
+[
+  {
+    "seedId": "d4e20a73-9a0b-4d98-9b57-a42be9685083",
+    "category": "science",
+    "navigationKeyword1": "biology",
+    "navigationKeyword2": "microbiology",
+    "question": "What are bacteria?",
+    "correctAnswer": "Prokaryotic single-celled organisms",
+    "incorrectAnswers": [
+      "Eukaryotes with nuclei",
+      "Viruses with metabolism",
+      "Multicellular fungi"
+    ],
+    "explanation": "Bacteria lack a membrane-bound nucleus.",
+    "keywords": [
+      "bacteria",
+      "prokaryotes"
+    ],
+    "source": "https://www.ncbi.nlm.nih.gov/books/NBK7636/"
+  },
+  {
+    "seedId": "261df15f-a370-4471-9173-3b41708cf87b",
+    "category": "science",
+    "navigationKeyword1": "biology",
+    "navigationKeyword2": "microbiology",
+    "question": "What are viruses?",
+    "correctAnswer": "Infectious particles needing a host cell to replicate",
+    "incorrectAnswers": [
+      "Free-living cells with ribosomes",
+      "Chloroplasts",
+      "Mitochondria"
+    ],
+    "explanation": "Viruses are not classified as cells.",
+    "keywords": [
+      "viruses",
+      "replication"
+    ],
+    "source": "https://www.niaid.nih.gov/diseases-conditions/viral-infections"
+  },
+  {
+    "seedId": "142d8103-046a-4790-be68-900f1585b4ae",
+    "category": "science",
+    "navigationKeyword1": "biology",
+    "navigationKeyword2": "microbiology",
+    "question": "What is a pathogen?",
+    "correctAnswer": "A disease-causing organism or agent",
+    "incorrectAnswers": [
+      "Always helpful microbe",
+      "Only a vitamin",
+      "Only a plant"
+    ],
+    "explanation": "Pathogens include bacteria, viruses, fungi, and parasites.",
+    "keywords": [
+      "pathogen",
+      "infection"
+    ],
+    "source": "https://www.cdc.gov/infection-control/hcp/what-is-a-pathogen.html"
+  },
+  {
+    "seedId": "53d927ff-4095-4e84-a779-d490325c8760",
+    "category": "science",
+    "navigationKeyword1": "biology",
+    "navigationKeyword2": "microbiology",
+    "question": "What is sterilization?",
+    "correctAnswer": "Destroying or removing all microbes",
+    "incorrectAnswers": [
+      "Washing hands only",
+      "Refrigeration",
+      "Using soap casually"
+    ],
+    "explanation": "Sterilization is stricter than disinfection.",
+    "keywords": [
+      "sterilization",
+      "microbes"
+    ],
+    "source": "https://www.cdc.gov/infection-control/hcp/disinfection-and-sterilization/"
+  },
+  {
+    "seedId": "9ffc1676-e81a-4766-979f-fffccf38f7ee",
+    "category": "science",
+    "navigationKeyword1": "biology",
+    "navigationKeyword2": "microbiology",
+    "question": "What is pasteurization?",
+    "correctAnswer": "Heat treatment to reduce pathogens in food/liquids",
+    "incorrectAnswers": [
+      "Freezing to kill all spores",
+      "Adding salt only",
+      "Irradiating wood"
+    ],
+    "explanation": "Pasteurization improves safety without full sterilization.",
+    "keywords": [
+      "pasteurization",
+      "food-safety"
+    ],
+    "source": "https://www.fda.gov/food/buy-store-serve-safe-food/what-you-need-know-about-pasteurization"
+  },
+  {
+    "seedId": "0a11c5ed-34ab-417b-b70c-35680146d7a7",
+    "category": "science",
+    "navigationKeyword1": "biology",
+    "navigationKeyword2": "microbiology",
+    "question": "What is an antibiotic (classic definition)?",
+    "correctAnswer": "A substance that kills or inhibits bacteria",
+    "incorrectAnswers": [
+      "Antiviral drug for all viruses",
+      "Antifungal for plants only",
+      "Pain reliever"
+    ],
+    "explanation": "Antibiotics target bacterial processes; misuse drives resistance.",
+    "keywords": [
+      "antibiotics",
+      "bacteria"
+    ],
+    "source": "https://www.cdc.gov/antibiotic-use/index.html"
+  },
+  {
+    "seedId": "c9f136aa-88a6-4e8e-b77c-7c5124b74905",
+    "category": "science",
+    "navigationKeyword1": "biology",
+    "navigationKeyword2": "microbiology",
+    "question": "What is a biofilm?",
+    "correctAnswer": "Communities of microbes embedded in a matrix on surfaces",
+    "incorrectAnswers": [
+      "Single floating planktonic cell always",
+      "A type of blood clot",
+      "A plant root hair"
+    ],
+    "explanation": "Biofilms increase survival and tolerance.",
+    "keywords": [
+      "biofilm",
+      "microbes"
+    ],
+    "source": "https://www.cdc.gov/hai/organisms/biofilm.html"
+  },
+  {
+    "seedId": "a47e70c6-506b-4ea0-a65f-0c86a729701e",
+    "category": "science",
+    "navigationKeyword1": "biology",
+    "navigationKeyword2": "microbiology",
+    "question": "What is Gram staining used for?",
+    "correctAnswer": "Classifying bacteria by cell wall properties",
+    "incorrectAnswers": [
+      "Counting viruses",
+      "Measuring pH of soil only",
+      "Staining human DNA in nucleus"
+    ],
+    "explanation": "Gram-positive vs Gram-negative guides antibiotic choice empirically.",
+    "keywords": [
+      "gram-stain",
+      "bacteria"
+    ],
+    "source": "https://www.ncbi.nlm.nih.gov/books/NBK8537/"
+  },
+  {
+    "seedId": "2feb296c-a225-492d-90cb-8b81381ef876",
+    "category": "science",
+    "navigationKeyword1": "biology",
+    "navigationKeyword2": "microbiology",
+    "question": "What are extremophiles?",
+    "correctAnswer": "Organisms thriving in extreme environments",
+    "incorrectAnswers": [
+      "Only viruses",
+      "Only humans",
+      "Only birds"
+    ],
+    "explanation": "Studied in archaea and bacteria.",
+    "keywords": [
+      "extremophiles",
+      "archaea"
+    ],
+    "source": "https://www.nature.com/scitable/topicpage/extremophiles-14191968/"
+  },
+  {
+    "seedId": "8e6e13af-8371-4b17-aa3b-e91be78be3a5",
+    "category": "science",
+    "navigationKeyword1": "biology",
+    "navigationKeyword2": "microbiology",
+    "question": "What is horizontal gene transfer?",
+    "correctAnswer": "Genetic material movement between organisms not parent-offspring",
+    "incorrectAnswers": [
+      "Only meiosis",
+      "Only fertilization",
+      "Only photosynthesis"
+    ],
+    "explanation": "Conjugation, transformation, transduction shuffle genes in bacteria.",
+    "keywords": [
+      "hgt",
+      "bacteria"
+    ],
+    "source": "https://www.nature.com/scitable/topicpage/horizontal-gene-transfer-14232950/"
+  },
+  {
+    "seedId": "7c2f9acb-c832-4244-a2de-bda738b436e1",
+    "category": "science",
+    "navigationKeyword1": "biology",
+    "navigationKeyword2": "microbiology",
+    "question": "What is a spore (microbiology context)?",
+    "correctAnswer": "A resistant dormant form some microbes form",
+    "incorrectAnswers": [
+      "A virus capsid only",
+      "A human egg",
+      "A plant seed always"
+    ],
+    "explanation": "Endospores help some bacteria survive harsh conditions.",
+    "keywords": [
+      "spores",
+      "survival"
+    ],
+    "source": "https://www.ncbi.nlm.nih.gov/books/NBK7694/"
+  },
+  {
+    "seedId": "ffe9c79f-b4c3-4d0e-bf3f-c13d64f630ef",
+    "category": "science",
+    "navigationKeyword1": "biology",
+    "navigationKeyword2": "microbiology",
+    "question": "Why is handwashing effective?",
+    "correctAnswer": "It removes and disrupts microbes on skin",
+    "incorrectAnswers": [
+      "It kills 100% of viruses instantly always",
+      "It replaces vaccines",
+      "It sterilizes skin"
+    ],
+    "explanation": "Soap and friction reduce microbial load.",
+    "keywords": [
+      "handwashing",
+      "hygiene"
+    ],
+    "source": "https://www.cdc.gov/handwashing/when-how-handwashing.html"
+  }
+]

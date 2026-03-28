@@ -1,0 +1,230 @@
+[
+  {
+    "seedId": "417bfb08-0e68-4e8b-a758-6f49bdee3819",
+    "category": "science",
+    "navigationKeyword1": "arithmetic",
+    "navigationKeyword2": "division",
+    "question": "What is 84 \u00f7 7?",
+    "correctAnswer": "12",
+    "incorrectAnswers": [
+      "11",
+      "13",
+      "14"
+    ],
+    "explanation": "7 \u00d7 12 = 84.",
+    "keywords": [
+      "division",
+      "whole-numbers"
+    ],
+    "source": "https://www.khanacademy.org/math/arithmetic/arith-review-multiply-divide"
+  },
+  {
+    "seedId": "726a5852-6150-4144-976e-6ab6afeea8ff",
+    "category": "science",
+    "navigationKeyword1": "arithmetic",
+    "navigationKeyword2": "division",
+    "question": "In 45 \u00f7 9 = 5, what is the dividend?",
+    "correctAnswer": "45",
+    "incorrectAnswers": [
+      "9",
+      "5",
+      "4"
+    ],
+    "explanation": "The dividend is what is being divided.",
+    "keywords": [
+      "dividend",
+      "vocabulary"
+    ],
+    "source": "https://www.mathsisfun.com/numbers/division.html"
+  },
+  {
+    "seedId": "24e23541-5155-4f9d-9a14-68eff48be22a",
+    "category": "science",
+    "navigationKeyword1": "arithmetic",
+    "navigationKeyword2": "division",
+    "question": "What is division by zero?",
+    "correctAnswer": "Undefined (not a real number result)",
+    "incorrectAnswers": [
+      "Always zero",
+      "Always one",
+      "The same as the numerator"
+    ],
+    "explanation": "You cannot divide by zero in standard arithmetic.",
+    "keywords": [
+      "division-by-zero",
+      "undefined"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Division_by_zero"
+  },
+  {
+    "seedId": "bf8a7b06-00f1-4def-819f-443568f17ee6",
+    "category": "science",
+    "navigationKeyword1": "arithmetic",
+    "navigationKeyword2": "division",
+    "question": "What is 0 \u00f7 9?",
+    "correctAnswer": "0",
+    "incorrectAnswers": [
+      "9",
+      "1",
+      "Undefined"
+    ],
+    "explanation": "Zero divided by a nonzero number is zero.",
+    "keywords": [
+      "zero",
+      "division"
+    ],
+    "source": "https://www.khanacademy.org/math/arithmetic/arith-review-multiply-divide"
+  },
+  {
+    "seedId": "6768eed5-8d0b-469d-8d78-ebc53b27c757",
+    "category": "science",
+    "navigationKeyword1": "arithmetic",
+    "navigationKeyword2": "division",
+    "question": "If 132 \u00f7 12 = 11, what is 12 \u00d7 11?",
+    "correctAnswer": "132",
+    "incorrectAnswers": [
+      "144",
+      "120",
+      "122"
+    ],
+    "explanation": "Multiplication undoes division: quotient \u00d7 divisor = dividend.",
+    "keywords": [
+      "inverse",
+      "check"
+    ],
+    "source": "https://www.mathsisfun.com/numbers/division.html"
+  },
+  {
+    "seedId": "af6eae0f-aa0c-4fe8-b6ba-2d5b320345ea",
+    "category": "science",
+    "navigationKeyword1": "arithmetic",
+    "navigationKeyword2": "division",
+    "question": "What is a remainder in whole-number division?",
+    "correctAnswer": "The leftover amount after forming equal whole groups",
+    "incorrectAnswers": [
+      "An extra divisor",
+      "A decimal always",
+      "The quotient"
+    ],
+    "explanation": "Example: 10 \u00f7 3 is 3 remainder 1.",
+    "keywords": [
+      "remainder",
+      "division"
+    ],
+    "source": "https://www.khanacademy.org/math/arithmetic/arith-review-multiply-divide"
+  },
+  {
+    "seedId": "8b67252f-01ff-4f6d-ae92-33b76936025a",
+    "category": "science",
+    "navigationKeyword1": "arithmetic",
+    "navigationKeyword2": "division",
+    "question": "What is 640 \u00f7 80?",
+    "correctAnswer": "8",
+    "incorrectAnswers": [
+      "80",
+      "10",
+      "64"
+    ],
+    "explanation": "Cancel a factor of 10: 64 \u00f7 8 = 8.",
+    "keywords": [
+      "mental-math",
+      "factors"
+    ],
+    "source": "https://www.khanacademy.org/math/arithmetic/arith-review-multiply-divide"
+  },
+  {
+    "seedId": "6488dce9-dff2-4b3f-8639-edc577c3c52e",
+    "category": "science",
+    "navigationKeyword1": "arithmetic",
+    "navigationKeyword2": "division",
+    "question": "Which situation matches division: sharing equally?",
+    "correctAnswer": "Splitting a total into equal groups",
+    "incorrectAnswers": [
+      "Combining two totals",
+      "Finding a percent of change",
+      "Measuring temperature"
+    ],
+    "explanation": "Partition division models fair sharing.",
+    "keywords": [
+      "word-problems",
+      "partition"
+    ],
+    "source": "https://www.khanacademy.org/math/arithmetic/arith-review-multiply-divide"
+  },
+  {
+    "seedId": "0582c47d-1c6f-4454-b68f-82b4e98844d9",
+    "category": "science",
+    "navigationKeyword1": "arithmetic",
+    "navigationKeyword2": "division",
+    "question": "What is (\u221224) \u00f7 6?",
+    "correctAnswer": "\u22124",
+    "incorrectAnswers": [
+      "4",
+      "\u221218",
+      "18"
+    ],
+    "explanation": "Negative divided by positive is negative.",
+    "keywords": [
+      "integers",
+      "sign-rules"
+    ],
+    "source": "https://www.khanacademy.org/math/arithmetic/arith-review-negative-numbers"
+  },
+  {
+    "seedId": "be7bf957-9b5a-400a-968d-0d9948e628da",
+    "category": "science",
+    "navigationKeyword1": "arithmetic",
+    "navigationKeyword2": "division",
+    "question": "What is (\u221236) \u00f7 (\u22129)?",
+    "correctAnswer": "4",
+    "incorrectAnswers": [
+      "\u22124",
+      "9",
+      "\u221245"
+    ],
+    "explanation": "Negative divided by negative is positive.",
+    "keywords": [
+      "integers",
+      "sign-rules"
+    ],
+    "source": "https://www.khanacademy.org/math/arithmetic/arith-review-negative-numbers"
+  },
+  {
+    "seedId": "ac1db93a-fbed-45c3-811d-3f51a9752af8",
+    "category": "science",
+    "navigationKeyword1": "arithmetic",
+    "navigationKeyword2": "division",
+    "question": "Why can long division fail to terminate for some fractions?",
+    "correctAnswer": "Because the decimal expansion may repeat (rational numbers)",
+    "incorrectAnswers": [
+      "Because division always stops at two decimals",
+      "Because fractions are never rational",
+      "Because decimals cannot represent rationals"
+    ],
+    "explanation": "Many rationals have repeating decimals; division reveals the pattern.",
+    "keywords": [
+      "decimals",
+      "rationals"
+    ],
+    "source": "https://www.mathsisfun.com/numbers/division.html"
+  },
+  {
+    "seedId": "46c83312-a715-4a94-bbe9-535b7ec7d952",
+    "category": "science",
+    "navigationKeyword1": "arithmetic",
+    "navigationKeyword2": "division",
+    "question": "If 17 \u00f7 5 = 3 R2, what mixed number matches?",
+    "correctAnswer": "3 and 2/5",
+    "incorrectAnswers": [
+      "3 and 5/2",
+      "2 and 3/5",
+      "5 and 2/3"
+    ],
+    "explanation": "Remainder over divisor becomes the fractional part.",
+    "keywords": [
+      "mixed-numbers",
+      "fractions"
+    ],
+    "source": "https://www.khanacademy.org/math/arithmetic/arith-review-fractions"
+  }
+]

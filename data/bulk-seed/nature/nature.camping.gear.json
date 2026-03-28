@@ -1,0 +1,116 @@
+[
+  {
+    "category": "nature",
+    "navigationKeyword1": "camping",
+    "navigationKeyword2": "gear",
+    "question": "Which Ten Essential category includes a map, compass, and GPS?",
+    "correctAnswer": "navigation",
+    "incorrectAnswers": [
+      "illumination",
+      "nutrition",
+      "repair kit"
+    ],
+    "explanation": "Navigation gear helps you plan your route and orient yourself outdoors.",
+    "keywords": [
+      "camping-gear",
+      "nature-outdoors"
+    ],
+    "source": "https://nps.gov/articles/10essentials.htm",
+    "seedId": "c674c7b5-8a86-5bc3-990b-53f72982a839"
+  },
+  {
+    "category": "nature",
+    "navigationKeyword1": "camping",
+    "navigationKeyword2": "gear",
+    "question": "What hands-free light is often preferred for camping and hiking at night?",
+    "correctAnswer": "headlamp",
+    "incorrectAnswers": [
+      "flare gun",
+      "laser pointer",
+      "signal mirror"
+    ],
+    "explanation": "A headlamp gives you light while keeping both hands free for camp tasks or trail travel.",
+    "keywords": [
+      "camping-gear",
+      "nature-outdoors"
+    ],
+    "source": "https://nps.gov/articles/10essentials.htm",
+    "seedId": "9a5a72b3-fb11-52c8-bdcf-07d422d5aba7"
+  },
+  {
+    "category": "nature",
+    "navigationKeyword1": "camping",
+    "navigationKeyword2": "gear",
+    "question": "Which essential category covers extra clothing such as a jacket, gloves, and rain shell?",
+    "correctAnswer": "insulation",
+    "incorrectAnswers": [
+      "hydration",
+      "repair kit",
+      "navigation"
+    ],
+    "explanation": "Insulation helps you stay safe when weather turns colder, wetter, or windier than expected.",
+    "keywords": [
+      "camping-gear",
+      "nature-outdoors"
+    ],
+    "source": "https://nps.gov/articles/10essentials.htm",
+    "seedId": "2dabbcdb-fc70-55c1-9bbf-b76e1e3215b1"
+  },
+  {
+    "category": "nature",
+    "navigationKeyword1": "camping",
+    "navigationKeyword2": "gear",
+    "question": "Which essential category includes water and a way to make more water safe?",
+    "correctAnswer": "hydration",
+    "incorrectAnswers": [
+      "illumination",
+      "fire",
+      "repair kit"
+    ],
+    "explanation": "Hydration includes carrying water and having treatment supplies if you need more.",
+    "keywords": [
+      "camping-gear",
+      "nature-outdoors"
+    ],
+    "source": "https://nps.gov/articles/10essentials.htm",
+    "seedId": "ce301a49-a137-5911-a7b7-66ac35ea7006"
+  },
+  {
+    "category": "nature",
+    "navigationKeyword1": "camping",
+    "navigationKeyword2": "gear",
+    "question": "What kind of kit should be tailored to your trip and medical needs?",
+    "correctAnswer": "first-aid kit",
+    "incorrectAnswers": [
+      "cook set",
+      "mess kit",
+      "camera kit"
+    ],
+    "explanation": "A first-aid kit is one of the core essentials and should match the trip and the group.",
+    "keywords": [
+      "camping-gear",
+      "nature-outdoors"
+    ],
+    "source": "https://nps.gov/articles/10essentials.htm",
+    "seedId": "15e0d893-b330-56e4-b122-5474152fb35a"
+  },
+  {
+    "category": "nature",
+    "navigationKeyword1": "camping",
+    "navigationKeyword2": "gear",
+    "question": "To reduce impact on the land, tents should be set up on what kind of surface when possible?",
+    "correctAnswer": "durable surfaces",
+    "incorrectAnswers": [
+      "newly cleared vegetation",
+      "fragile wildflowers",
+      "muddy stream banks"
+    ],
+    "explanation": "Camping on durable surfaces like established sites, rock, gravel, dry grass, or snow helps protect the landscape.",
+    "keywords": [
+      "camping-gear",
+      "nature-outdoors"
+    ],
+    "source": "https://www.fs.usda.gov/lei/no-trace-ethics.php",
+    "seedId": "974367e1-714d-5c32-882e-ccce145a7e4d"
+  }
+]

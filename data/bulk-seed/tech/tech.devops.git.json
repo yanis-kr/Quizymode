@@ -1,0 +1,116 @@
+[
+  {
+    "category": "tech",
+    "navigationKeyword1": "devops",
+    "navigationKeyword2": "git",
+    "question": "What does Git store for each commit besides the snapshot of files?",
+    "correctAnswer": "A pointer to its parent commit(s)",
+    "incorrectAnswers": [
+      "A copy of the remote URL",
+      "The diff from the empty tree only",
+      "Only file names without content"
+    ],
+    "explanation": "Each commit links to one or more parents, which is how Git builds history as a graph.",
+    "keywords": [
+      "git",
+      "version-control"
+    ],
+    "source": "https://git-scm.com/book/en/v2/Git-Internals-Git-Objects",
+    "seedId": "6adc9594-2b56-5e11-a8a6-1aacf560afbd"
+  },
+  {
+    "category": "tech",
+    "navigationKeyword1": "devops",
+    "navigationKeyword2": "git",
+    "question": "What is the purpose of the staging area (index) in Git?",
+    "correctAnswer": "To choose which changes go into the next commit",
+    "incorrectAnswers": [
+      "To run automated tests before push",
+      "To encrypt secrets in the repository",
+      "To host CI configuration only"
+    ],
+    "explanation": "You stage changes with add so the next commit records exactly what you selected.",
+    "keywords": [
+      "git",
+      "staging"
+    ],
+    "source": "https://git-scm.com/book/en/v2/Git-Basics-Recording-Changes-to-the-Repository",
+    "seedId": "c9a1f6b0-9b6f-52cc-8d43-d34f523eb513"
+  },
+  {
+    "category": "tech",
+    "navigationKeyword1": "devops",
+    "navigationKeyword2": "git",
+    "question": "In a typical workflow, what does `git pull` combine?",
+    "correctAnswer": "A fetch plus merging into the current branch",
+    "incorrectAnswers": [
+      "A fetch plus rebasing only",
+      "A clone plus submodule update",
+      "A push plus tag creation"
+    ],
+    "explanation": "`git pull` downloads updates and then integrates them, commonly by merge unless configured otherwise.",
+    "keywords": [
+      "git",
+      "pull"
+    ],
+    "source": "https://git-scm.com/docs/git-pull",
+    "seedId": "19dc12f0-a68a-51d3-b18e-58b37e57f69b"
+  },
+  {
+    "category": "tech",
+    "navigationKeyword1": "devops",
+    "navigationKeyword2": "git",
+    "question": "What does a merge conflict mean in Git?",
+    "correctAnswer": "Git cannot auto-merge overlapping edits and needs a human fix",
+    "incorrectAnswers": [
+      "The remote rejected your SSH key",
+      "Your branch name is invalid",
+      "You must delete the repository"
+    ],
+    "explanation": "Conflicts happen when the same region of a file changed differently on two histories.",
+    "keywords": [
+      "git",
+      "merge"
+    ],
+    "source": "https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/addressing-merge-conflicts/resolving-a-merge-conflict-using-the-command-line",
+    "seedId": "6fedbb93-65d8-53e3-957e-c855b1c8cdae"
+  },
+  {
+    "category": "tech",
+    "navigationKeyword1": "devops",
+    "navigationKeyword2": "git",
+    "question": "What is a lightweight tag in Git?",
+    "correctAnswer": "A name that points directly to a commit object",
+    "incorrectAnswers": [
+      "A tag that stores a full extra commit message object always",
+      "A branch that tracks a remote by default",
+      "A signed certificate for HTTPS remotes"
+    ],
+    "explanation": "Lightweight tags are simple refs to commits, unlike annotated tags which are separate objects with metadata.",
+    "keywords": [
+      "git",
+      "tags"
+    ],
+    "source": "https://git-scm.com/book/en/v2/Git-Basics-Tagging",
+    "seedId": "cfb32794-7123-57df-aafe-bab623209ff3"
+  },
+  {
+    "category": "tech",
+    "navigationKeyword1": "devops",
+    "navigationKeyword2": "git",
+    "question": "What does `git rebase` do to commits compared with merge for integrating work?",
+    "correctAnswer": "Replays commits on top of another base to linearize history",
+    "incorrectAnswers": [
+      "Deletes all commits on the branch permanently",
+      "Creates a second copy of every blob in the repo",
+      "Only updates remote-tracking refs without changing commits"
+    ],
+    "explanation": "Rebase moves or reapplies commits so the branch history reads as if it started from a newer point.",
+    "keywords": [
+      "git",
+      "rebase"
+    ],
+    "source": "https://www.atlassian.com/git/tutorials/merging-vs-rebasing",
+    "seedId": "9b6668cb-2bd1-50db-a8ed-3daf6ae1de43"
+  }
+]

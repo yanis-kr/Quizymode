@@ -1,0 +1,192 @@
+[
+  {
+    "category": "trivia",
+    "navigationKeyword1": "travel",
+    "navigationKeyword2": "hotels",
+    "question": "Who founded Hilton Hotels?",
+    "correctAnswer": "Conrad Hilton",
+    "incorrectAnswers": [
+      "J. Willard Marriott",
+      "Cesar Ritz",
+      "Kemmons Wilson"
+    ],
+    "explanation": "Hilton Hotels were founded by Conrad Hilton.",
+    "keywords": [
+      "hotels",
+      "travel-trivia"
+    ],
+    "source": "https://www.hilton.com/en/corporate/",
+    "seedId": "40728264-3565-5fa7-a887-042afa574f4e"
+  },
+  {
+    "category": "trivia",
+    "navigationKeyword1": "travel",
+    "navigationKeyword2": "hotels",
+    "question": "The first Holiday Inn opened in which city?",
+    "correctAnswer": "Memphis",
+    "incorrectAnswers": [
+      "Atlanta",
+      "Dallas",
+      "Orlando"
+    ],
+    "explanation": "The first Holiday Inn opened in Memphis.",
+    "keywords": [
+      "hotels",
+      "travel-trivia"
+    ],
+    "source": "https://www.ihg.com/content/us/en/about/brands/holiday-inn",
+    "seedId": "ec92c5fa-6fab-56fb-af7b-536ce1548b45"
+  },
+  {
+    "category": "trivia",
+    "navigationKeyword1": "travel",
+    "navigationKeyword2": "hotels",
+    "question": "Motel 6 got its name from what original room rate?",
+    "correctAnswer": "$6",
+    "incorrectAnswers": [
+      "$10",
+      "$4",
+      "$12"
+    ],
+    "explanation": "Motel 6 was named for its original six-dollar room rate.",
+    "keywords": [
+      "hotels",
+      "travel-trivia"
+    ],
+    "source": "https://www.motel6.com/en/home/about-us.html",
+    "seedId": "5e1da019-1678-5304-a3fc-542723bdc29a"
+  },
+  {
+    "category": "trivia",
+    "navigationKeyword1": "travel",
+    "navigationKeyword2": "hotels",
+    "question": "Burj Al Arab stands in which city?",
+    "correctAnswer": "Dubai",
+    "incorrectAnswers": [
+      "Doha",
+      "Abu Dhabi",
+      "Muscat"
+    ],
+    "explanation": "Burj Al Arab is in Dubai.",
+    "keywords": [
+      "hotels",
+      "travel-trivia"
+    ],
+    "source": "https://www.jumeirah.com/en/stay/dubai/burj-al-arab-jumeirah",
+    "seedId": "a7210d19-3944-55a0-abfc-b87c7463e66e"
+  },
+  {
+    "category": "trivia",
+    "navigationKeyword1": "travel",
+    "navigationKeyword2": "hotels",
+    "question": "Marina Bay Sands is in which country?",
+    "correctAnswer": "Singapore",
+    "incorrectAnswers": [
+      "Malaysia",
+      "Thailand",
+      "Indonesia"
+    ],
+    "explanation": "Marina Bay Sands is in Singapore.",
+    "keywords": [
+      "hotels",
+      "travel-trivia"
+    ],
+    "source": "https://www.marinabaysands.com/",
+    "seedId": "49d4d8e9-ff75-5d92-b019-e60653786853"
+  },
+  {
+    "category": "trivia",
+    "navigationKeyword1": "travel",
+    "navigationKeyword2": "hotels",
+    "question": "Caesars Palace is in which city?",
+    "correctAnswer": "Las Vegas",
+    "incorrectAnswers": [
+      "Atlantic City",
+      "Los Angeles",
+      "Phoenix"
+    ],
+    "explanation": "Caesars Palace is in Las Vegas.",
+    "keywords": [
+      "hotels",
+      "travel-trivia"
+    ],
+    "source": "https://www.caesars.com/caesars-palace",
+    "seedId": "19bfd899-42c2-55c5-89ab-91301d5bd85b"
+  },
+  {
+    "category": "trivia",
+    "navigationKeyword1": "travel",
+    "navigationKeyword2": "hotels",
+    "question": "The Savoy is in which city?",
+    "correctAnswer": "London",
+    "incorrectAnswers": [
+      "Paris",
+      "Dublin",
+      "Edinburgh"
+    ],
+    "explanation": "The Savoy is in London.",
+    "keywords": [
+      "hotels",
+      "travel-trivia"
+    ],
+    "source": "https://www.thesavoylondon.com/",
+    "seedId": "a975830f-2a37-59b2-9855-0951ed5ebbac"
+  },
+  {
+    "category": "trivia",
+    "navigationKeyword1": "travel",
+    "navigationKeyword2": "hotels",
+    "question": "Hotel del Coronado is in which California city?",
+    "correctAnswer": "Coronado",
+    "incorrectAnswers": [
+      "Santa Monica",
+      "Malibu",
+      "Monterey"
+    ],
+    "explanation": "Hotel del Coronado is in Coronado, California.",
+    "keywords": [
+      "hotels",
+      "travel-trivia"
+    ],
+    "source": "https://hoteldel.com/",
+    "seedId": "bee59853-17a6-5242-a7c9-78c145fcdb75"
+  },
+  {
+    "category": "trivia",
+    "navigationKeyword1": "travel",
+    "navigationKeyword2": "hotels",
+    "question": "The Plaza Hotel sits beside which New York park?",
+    "correctAnswer": "Central Park",
+    "incorrectAnswers": [
+      "Bryant Park",
+      "Prospect Park",
+      "Union Square"
+    ],
+    "explanation": "The Plaza Hotel stands beside Central Park.",
+    "keywords": [
+      "hotels",
+      "travel-trivia"
+    ],
+    "source": "https://www.theplazany.com/",
+    "seedId": "1ef04c07-d9be-5665-b133-a10aca255132"
+  },
+  {
+    "category": "trivia",
+    "navigationKeyword1": "travel",
+    "navigationKeyword2": "hotels",
+    "question": "Which luxury hotel brand uses a lion and crown logo?",
+    "correctAnswer": "The Ritz-Carlton",
+    "incorrectAnswers": [
+      "Hilton",
+      "Motel 6",
+      "Holiday Inn"
+    ],
+    "explanation": "The Ritz-Carlton brand uses a lion and crown logo.",
+    "keywords": [
+      "hotels",
+      "travel-trivia"
+    ],
+    "source": "https://www.ritzcarlton.com/",
+    "seedId": "7c8d7a0f-4db6-555a-a13b-a321bc05a570"
+  }
+]

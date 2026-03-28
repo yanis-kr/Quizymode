@@ -1,0 +1,243 @@
+[
+  {
+    "seedId": "7345435e-fb9d-4a4e-b326-b73b599c4287",
+    "category": "science",
+    "navigationKeyword1": "algebra",
+    "navigationKeyword2": "functions",
+    "question": "In a function, what is the input usually called?",
+    "correctAnswer": "the independent variable",
+    "incorrectAnswers": [
+      "the dependent variable",
+      "the output",
+      "the constant term"
+    ],
+    "explanation": "The input is often the independent variable (commonly x); the output depends on it.",
+    "keywords": [
+      "functions",
+      "independent-variable",
+      "input-output"
+    ],
+    "source": "https://openstax.org/books/college-algebra-2e/pages/3-1-functions-and-function-notation"
+  },
+  {
+    "seedId": "52aa7a32-f121-47ea-b562-9a6468c72819",
+    "category": "science",
+    "navigationKeyword1": "algebra",
+    "navigationKeyword2": "functions",
+    "question": "What does f(3) mean in function notation?",
+    "correctAnswer": "the output of the function when the input is 3",
+    "incorrectAnswers": [
+      "f multiplied by 3",
+      "the third function in a list",
+      "the inverse of f evaluated at 3"
+    ],
+    "explanation": "f(3) is read “f of 3” and means substitute 3 for the input variable to compute the output.",
+    "keywords": [
+      "function-notation",
+      "evaluate",
+      "input-output"
+    ],
+    "source": "https://www.khanacademy.org/math/algebra/x2f8bb11595b61c86:function-notation"
+  },
+  {
+    "seedId": "73bac953-aac1-4584-be1c-fb3abd26e7fe",
+    "category": "science",
+    "navigationKeyword1": "algebra",
+    "navigationKeyword2": "functions",
+    "question": "What is the domain of a function?",
+    "correctAnswer": "the set of allowable input values",
+    "incorrectAnswers": [
+      "the set of all possible outputs",
+      "the slope of the function",
+      "the point where the graph crosses the y-axis"
+    ],
+    "explanation": "The domain is the collection of inputs for which the function is defined.",
+    "keywords": [
+      "domain",
+      "functions",
+      "defined"
+    ],
+    "source": "https://www.mathsisfun.com/sets/domain-range-codomain.html"
+  },
+  {
+    "seedId": "623566a3-a58c-4738-9a71-7ce07680ac7e",
+    "category": "science",
+    "navigationKeyword1": "algebra",
+    "navigationKeyword2": "functions",
+    "question": "What is the range of a function?",
+    "correctAnswer": "the set of output values the function actually produces",
+    "incorrectAnswers": [
+      "the set of allowable input values",
+      "the set of all real numbers",
+      "the x-intercept values only"
+    ],
+    "explanation": "The range is the collection of outputs you get when you plug in every input from the domain.",
+    "keywords": [
+      "range",
+      "functions",
+      "outputs"
+    ],
+    "source": "https://openstax.org/books/college-algebra-2e/pages/3-1-functions-and-function-notation"
+  },
+  {
+    "seedId": "820cb7cb-443a-40c2-a537-b5f715df513c",
+    "category": "science",
+    "navigationKeyword1": "algebra",
+    "navigationKeyword2": "functions",
+    "question": "On a standard (x, y) graph of a function, which axis represents the input?",
+    "correctAnswer": "the x-axis",
+    "incorrectAnswers": [
+      "the y-axis",
+      "both axes equally",
+      "neither axis; inputs aren’t graphed"
+    ],
+    "explanation": "In the usual coordinate plane, x is the independent (input) variable and y is the dependent (output) variable.",
+    "keywords": [
+      "graph",
+      "x-axis",
+      "input-output"
+    ],
+    "source": "https://www.ck12.org/algebra/graphs-of-functions/lesson/Graphs-of-Functions-ALG/"
+  },
+  {
+    "seedId": "cb0013c2-8364-4dc0-adf1-f528d8af2c4f",
+    "category": "science",
+    "navigationKeyword1": "algebra",
+    "navigationKeyword2": "functions",
+    "question": "What does the vertical line test tell you about a graph?",
+    "correctAnswer": "whether it represents a function of x",
+    "incorrectAnswers": [
+      "whether it is a straight line",
+      "whether it has a y-intercept",
+      "whether it is symmetric about the y-axis"
+    ],
+    "explanation": "If any vertical line hits the graph more than once, a single x would map to multiple y-values, so it’s not a function of x.",
+    "keywords": [
+      "vertical-line-test",
+      "functions",
+      "graph"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Vertical_line_test"
+  },
+  {
+    "seedId": "ee993645-7a2f-4feb-b048-bf6fcbd5ac5e",
+    "category": "science",
+    "navigationKeyword1": "algebra",
+    "navigationKeyword2": "functions",
+    "question": "If f(x) = 2x − 5, what is f(0)?",
+    "correctAnswer": "−5",
+    "incorrectAnswers": [
+      "5",
+      "−10",
+      "0"
+    ],
+    "explanation": "Substitute x = 0: f(0) = 2·0 − 5 = −5.",
+    "keywords": [
+      "evaluate",
+      "linear-function",
+      "function-notation"
+    ],
+    "source": "https://www.khanacademy.org/math/algebra/x2f8bb11595b61c86:functions"
+  },
+  {
+    "seedId": "ba32c76a-24ff-4ad2-867f-4b1e26efc396",
+    "category": "science",
+    "navigationKeyword1": "algebra",
+    "navigationKeyword2": "functions",
+    "question": "What is the y-intercept of y = 3x + 2?",
+    "correctAnswer": "2",
+    "incorrectAnswers": [
+      "3",
+      "−2",
+      "1/3"
+    ],
+    "explanation": "The y-intercept is the value of y when x = 0. Here, y = 3·0 + 2 = 2.",
+    "keywords": [
+      "y-intercept",
+      "slope-intercept-form",
+      "linear-function"
+    ],
+    "source": "https://www.mathsisfun.com/equation_of_line.html"
+  },
+  {
+    "seedId": "d5c585e8-0696-4eaf-b537-4cca744e7632",
+    "category": "science",
+    "navigationKeyword1": "algebra",
+    "navigationKeyword2": "functions",
+    "question": "What does it mean if a function is \"increasing\" on an interval?",
+    "correctAnswer": "as x increases, f(x) increases on that interval",
+    "incorrectAnswers": [
+      "as x increases, f(x) stays constant",
+      "as x increases, f(x) decreases",
+      "as x increases, the domain becomes larger"
+    ],
+    "explanation": "On an interval where the function is increasing, larger inputs correspond to larger outputs.",
+    "keywords": [
+      "increasing",
+      "intervals",
+      "functions"
+    ],
+    "source": "https://openstax.org/books/college-algebra-2e/pages/3-2-domain-and-range"
+  },
+  {
+    "seedId": "b30e5ab1-aaa9-4c2a-aefa-89201817f13f",
+    "category": "science",
+    "navigationKeyword1": "algebra",
+    "navigationKeyword2": "functions",
+    "question": "What is one-to-one function?",
+    "correctAnswer": "a function where different inputs always give different outputs",
+    "incorrectAnswers": [
+      "a function where the domain equals the range",
+      "a function that is defined only at x = 1",
+      "a function that has exactly one zero"
+    ],
+    "explanation": "A one-to-one (injective) function never maps two different inputs to the same output.",
+    "keywords": [
+      "one-to-one",
+      "injective",
+      "functions"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Injective_function"
+  },
+  {
+    "seedId": "4b962f22-9007-41f4-979f-30b25144b62d",
+    "category": "science",
+    "navigationKeyword1": "algebra",
+    "navigationKeyword2": "functions",
+    "question": "Why does a function have at most one output for each input?",
+    "correctAnswer": "Because a function is defined as a rule that assigns exactly one output to each input in its domain",
+    "incorrectAnswers": [
+      "Because every function must be a straight line",
+      "Because outputs can’t be negative",
+      "Because domains can only contain integers"
+    ],
+    "explanation": "“One input → one output” is the defining feature of a function; otherwise it’s just a relation.",
+    "keywords": [
+      "definition",
+      "relation-vs-function",
+      "domain"
+    ],
+    "source": "https://openstax.org/books/college-algebra-2e/pages/3-1-functions-and-function-notation"
+  },
+  {
+    "seedId": "d2d5fa7c-5363-4df8-8b97-9e1013e77ae5",
+    "category": "science",
+    "navigationKeyword1": "algebra",
+    "navigationKeyword2": "functions",
+    "question": "If a function rule includes a denominator like f(x) = 1/(x − 2), what input value is not allowed?",
+    "correctAnswer": "x = 2",
+    "incorrectAnswers": [
+      "x = 0",
+      "x = −2",
+      "x = 1"
+    ],
+    "explanation": "The denominator can’t be 0. Here x − 2 = 0 happens at x = 2, so that value is excluded from the domain.",
+    "keywords": [
+      "domain",
+      "rational-function",
+      "division-by-zero"
+    ],
+    "source": "https://www.purplemath.com/modules/fcns.htm"
+  }
+]
+

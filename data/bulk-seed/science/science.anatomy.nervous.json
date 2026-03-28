@@ -1,0 +1,230 @@
+[
+  {
+    "seedId": "603fc682-50bf-4c56-9304-ac56533df1b0",
+    "category": "science",
+    "navigationKeyword1": "anatomy",
+    "navigationKeyword2": "nervous",
+    "question": "What are the two main divisions of the nervous system?",
+    "correctAnswer": "Central nervous system and peripheral nervous system",
+    "incorrectAnswers": [
+      "Somatic and autonomic only",
+      "Sympathetic and parasympathetic only",
+      "Cranial and spinal only"
+    ],
+    "explanation": "The CNS is brain and spinal cord; the PNS connects the CNS to the rest of the body.",
+    "keywords": [
+      "cns",
+      "pns"
+    ],
+    "source": "https://openstax.org/books/anatomy-and-physiology-2e/pages/12-1-basic-structure-and-function-of-the-nervous-system"
+  },
+  {
+    "seedId": "92fb7266-1e6f-4e31-9113-60e958f5ac62",
+    "category": "science",
+    "navigationKeyword1": "anatomy",
+    "navigationKeyword2": "nervous",
+    "question": "What cells transmit electrical signals in the nervous system?",
+    "correctAnswer": "Neurons",
+    "incorrectAnswers": [
+      "Osteocytes",
+      "Erythrocytes",
+      "Chondrocytes"
+    ],
+    "explanation": "Neurons are specialized for rapid signaling via action potentials and synapses.",
+    "keywords": [
+      "neurons",
+      "signaling"
+    ],
+    "source": "https://www.ninds.nih.gov/health-information/disorders/brain-basics"
+  },
+  {
+    "seedId": "9ec6ad79-70df-41d2-8029-34432b3ad226",
+    "category": "science",
+    "navigationKeyword1": "anatomy",
+    "navigationKeyword2": "nervous",
+    "question": "What glial cells myelinate axons in the central nervous system?",
+    "correctAnswer": "Oligodendrocytes",
+    "incorrectAnswers": [
+      "Schwann cells",
+      "Astrocytes only",
+      "Microglia only"
+    ],
+    "explanation": "Oligodendrocytes wrap CNS axons with myelin; Schwann cells myelinate PNS axons.",
+    "keywords": [
+      "myelin",
+      "oligodendrocytes"
+    ],
+    "source": "https://openstax.org/books/anatomy-and-physiology-2e/pages/12-2-nervous-tissue"
+  },
+  {
+    "seedId": "2e0553e4-2c80-4bd2-bc78-0d4e0da17bea",
+    "category": "science",
+    "navigationKeyword1": "anatomy",
+    "navigationKeyword2": "nervous",
+    "question": "What glial cells myelinate axons in the peripheral nervous system?",
+    "correctAnswer": "Schwann cells",
+    "incorrectAnswers": [
+      "Oligodendrocytes",
+      "Satellite cells only",
+      "Ependymal cells"
+    ],
+    "explanation": "Schwann cells form myelin around many PNS axons and help regeneration after injury.",
+    "keywords": [
+      "schwann-cells",
+      "pns"
+    ],
+    "source": "https://openstax.org/books/anatomy-and-physiology-2e/pages/12-2-nervous-tissue"
+  },
+  {
+    "seedId": "656598ae-e5fc-443f-b75f-08372b30aa2b",
+    "category": "science",
+    "navigationKeyword1": "anatomy",
+    "navigationKeyword2": "nervous",
+    "question": "What is an action potential?",
+    "correctAnswer": "A rapid, all-or-nothing electrical impulse along an excitable membrane",
+    "incorrectAnswers": [
+      "A slow chemical drift with no voltage change",
+      "A permanent positive charge in all cells",
+      "Only a sensory illusion"
+    ],
+    "explanation": "Voltage-gated channels drive the stereotyped depolarization/repolarization sequence.",
+    "keywords": [
+      "action-potential",
+      "neuron"
+    ],
+    "source": "https://www.ncbi.nlm.nih.gov/books/NBK26875/"
+  },
+  {
+    "seedId": "3033e2ac-8b2b-45ce-b20f-61da9d74a886",
+    "category": "science",
+    "navigationKeyword1": "anatomy",
+    "navigationKeyword2": "nervous",
+    "question": "What is the resting neuron\u2019s inside charge relative to outside (typical wording)?",
+    "correctAnswer": "More negative inside compared to outside",
+    "incorrectAnswers": [
+      "More positive inside",
+      "Exactly zero everywhere",
+      "Positive only at the dendrites"
+    ],
+    "explanation": "Resting potential reflects ion gradients and selective permeability (often around -70 mV).",
+    "keywords": [
+      "resting-potential",
+      "membrane"
+    ],
+    "source": "https://www.ncbi.nlm.nih.gov/books/NBK26875/"
+  },
+  {
+    "seedId": "6ff9ebb9-43ab-4caa-8c17-fe1c3aead7c6",
+    "category": "science",
+    "navigationKeyword1": "anatomy",
+    "navigationKeyword2": "nervous",
+    "question": "What is a synapse?",
+    "correctAnswer": "A specialized junction where a neuron communicates with another cell",
+    "incorrectAnswers": [
+      "A bone-to-bone connector",
+      "A blood clotting plug",
+      "A muscle fiber bundle"
+    ],
+    "explanation": "Chemical synapses use neurotransmitters; electrical synapses use gap junctions.",
+    "keywords": [
+      "synapse",
+      "neurotransmitter"
+    ],
+    "source": "https://www.ninds.nih.gov/health-information/disorders/brain-basics"
+  },
+  {
+    "seedId": "510f7ee2-bfce-4118-a7f9-8b4f2d054b31",
+    "category": "science",
+    "navigationKeyword1": "anatomy",
+    "navigationKeyword2": "nervous",
+    "question": "Which division of the autonomic nervous system is often summarized as \u2018fight or flight\u2019?",
+    "correctAnswer": "Sympathetic",
+    "incorrectAnswers": [
+      "Parasympathetic",
+      "Somatic motor",
+      "Enteric only"
+    ],
+    "explanation": "Sympathetic activation mobilizes energy for stress and activity responses.",
+    "keywords": [
+      "sympathetic",
+      "autonomic"
+    ],
+    "source": "https://openstax.org/books/anatomy-and-physiology-2e/pages/15-1-divisions-of-the-autonomic-nervous-system"
+  },
+  {
+    "seedId": "a03988ae-4e96-4f09-b8f7-e5fc318e1d9e",
+    "category": "science",
+    "navigationKeyword1": "anatomy",
+    "navigationKeyword2": "nervous",
+    "question": "Which division of the autonomic nervous system is often summarized as \u2018rest and digest\u2019?",
+    "correctAnswer": "Parasympathetic",
+    "incorrectAnswers": [
+      "Sympathetic",
+      "Somatic sensory",
+      "Spinal reflex only"
+    ],
+    "explanation": "Parasympathetic pathways generally promote conservation and digestion functions.",
+    "keywords": [
+      "parasympathetic",
+      "autonomic"
+    ],
+    "source": "https://openstax.org/books/anatomy-and-physiology-2e/pages/15-1-divisions-of-the-autonomic-nervous-system"
+  },
+  {
+    "seedId": "ae3d6f05-bade-49ff-b407-e3dd2020f4e4",
+    "category": "science",
+    "navigationKeyword1": "anatomy",
+    "navigationKeyword2": "nervous",
+    "question": "What does the blood-brain barrier mainly protect?",
+    "correctAnswer": "Brain tissue from many blood-borne substances",
+    "incorrectAnswers": [
+      "Bone marrow from infection",
+      "The retina from sound waves",
+      "Muscles from gravity"
+    ],
+    "explanation": "Tight junctions and supporting cells limit what can pass from blood into brain interstitial fluid.",
+    "keywords": [
+      "blood-brain-barrier",
+      "cns"
+    ],
+    "source": "https://www.ncbi.nlm.nih.gov/books/NBK557381/"
+  },
+  {
+    "seedId": "6f9b3210-f58f-4d22-9651-cc3739da6cf8",
+    "category": "science",
+    "navigationKeyword1": "anatomy",
+    "navigationKeyword2": "nervous",
+    "question": "What is a reflex arc\u2019s basic purpose?",
+    "correctAnswer": "Produce a fast, automatic response to a stimulus",
+    "incorrectAnswers": [
+      "Store long-term memories",
+      "Secrete digestive enzymes",
+      "Build bone matrix"
+    ],
+    "explanation": "Reflexes bypass slow voluntary pathways to protect the body quickly.",
+    "keywords": [
+      "reflex",
+      "spinal-cord"
+    ],
+    "source": "https://openstax.org/books/anatomy-and-physiology-2e/pages/13-2-spinal-reflexes"
+  },
+  {
+    "seedId": "fd264eee-7f3f-4fc8-845b-7be975856454",
+    "category": "science",
+    "navigationKeyword1": "anatomy",
+    "navigationKeyword2": "nervous",
+    "question": "Which brain region is heavily involved in coordinating movement and balance?",
+    "correctAnswer": "Cerebellum",
+    "incorrectAnswers": [
+      "Occipital lobe",
+      "Medulla only for all balance",
+      "Corpus callosum"
+    ],
+    "explanation": "The cerebellum fine-tunes motor commands and helps maintain coordination.",
+    "keywords": [
+      "cerebellum",
+      "motor-control"
+    ],
+    "source": "https://www.ninds.nih.gov/health-information/disorders/brain-basics"
+  }
+]

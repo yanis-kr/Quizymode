@@ -1,0 +1,230 @@
+[
+  {
+    "seedId": "96d26eb5-f3d6-4a8d-8e13-8882003d8677",
+    "category": "science",
+    "navigationKeyword1": "discrete-math",
+    "navigationKeyword2": "counting",
+    "question": "What is multiplication principle?",
+    "correctAnswer": "If A has m ways and B has n ways, pairs have m\u00d7n ways",
+    "incorrectAnswers": [
+      "Always m+n",
+      "Always m^n",
+      "Always n/m"
+    ],
+    "explanation": "Sequential independent choices multiply.",
+    "keywords": [
+      "counting",
+      "product-rule"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Rule_of_product"
+  },
+  {
+    "seedId": "bea9b3f0-3841-4c43-9bee-269c4ca28aad",
+    "category": "science",
+    "navigationKeyword1": "discrete-math",
+    "navigationKeyword2": "counting",
+    "question": "What is n!?",
+    "correctAnswer": "Product 1\u00d72\u00d7\u2026\u00d7n",
+    "incorrectAnswers": [
+      "Sum 1+\u2026+n",
+      "2^n",
+      "n^2"
+    ],
+    "explanation": "Counts permutations of n distinct objects.",
+    "keywords": [
+      "factorial",
+      "permutation"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Factorial"
+  },
+  {
+    "seedId": "cc5f6c30-a8b2-46a7-af06-7d6b4b4c9758",
+    "category": "science",
+    "navigationKeyword1": "discrete-math",
+    "navigationKeyword2": "counting",
+    "question": "How many permutations of n distinct objects?",
+    "correctAnswer": "n!",
+    "incorrectAnswers": [
+      "n^2",
+      "2^n",
+      "n(n\u22121)/2"
+    ],
+    "explanation": "All orderings.",
+    "keywords": [
+      "permutations",
+      "counting"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Permutation"
+  },
+  {
+    "seedId": "79730f8a-638d-4293-8fd5-87dda6c77713",
+    "category": "science",
+    "navigationKeyword1": "discrete-math",
+    "navigationKeyword2": "counting",
+    "question": "How many k-permutations from n distinct?",
+    "correctAnswer": "n!/(n\u2212k)!",
+    "incorrectAnswers": [
+      "n choose k",
+      "n^k",
+      "k^n"
+    ],
+    "explanation": "Order matters, no repeat.",
+    "keywords": [
+      "k-permutation",
+      "counting"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Permutation"
+  },
+  {
+    "seedId": "99e008b3-fc7a-4e13-922f-7ce42c16dd69",
+    "category": "science",
+    "navigationKeyword1": "discrete-math",
+    "navigationKeyword2": "counting",
+    "question": "What is binomial coefficient C(n,k)?",
+    "correctAnswer": "n!/(k!(n\u2212k)!)",
+    "incorrectAnswers": [
+      "n!/k!",
+      "n^k",
+      "k^n"
+    ],
+    "explanation": "Counts k-subsets from n.",
+    "keywords": [
+      "combinations",
+      "binomial"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Binomial_coefficient"
+  },
+  {
+    "seedId": "779993f2-dda5-44f3-832f-563d85ace329",
+    "category": "science",
+    "navigationKeyword1": "discrete-math",
+    "navigationKeyword2": "counting",
+    "question": "What does C(n,k) count?",
+    "correctAnswer": "Ways to choose k items from n without order",
+    "incorrectAnswers": [
+      "Ordered arrangements",
+      "Partitions of n",
+      "Spanning trees of Kn"
+    ],
+    "explanation": "Combination vs permutation.",
+    "keywords": [
+      "combinations",
+      "subset"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Combination"
+  },
+  {
+    "seedId": "3a29bf62-c56f-4b48-a52a-421e58b9d8a3",
+    "category": "science",
+    "navigationKeyword1": "discrete-math",
+    "navigationKeyword2": "counting",
+    "question": "What is pigeonhole principle?",
+    "correctAnswer": "If n+1 pigeons in n holes, some hole has \u22652",
+    "incorrectAnswers": [
+      "Always exactly one per hole",
+      "Requires infinity",
+      "Only for primes"
+    ],
+    "explanation": "Guarantees collisions.",
+    "keywords": [
+      "pigeonhole",
+      "counting"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Pigeonhole_principle"
+  },
+  {
+    "seedId": "fcb504c2-a935-453e-af5b-44fb081c6a0f",
+    "category": "science",
+    "navigationKeyword1": "discrete-math",
+    "navigationKeyword2": "counting",
+    "question": "How many subsets of an n-element set?",
+    "correctAnswer": "2^n",
+    "incorrectAnswers": [
+      "n^2",
+      "n!",
+      "2n"
+    ],
+    "explanation": "Includes empty set.",
+    "keywords": [
+      "subsets",
+      "power-set"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Power_set"
+  },
+  {
+    "seedId": "6dad7e95-43a6-4b07-8035-11b4e10050f4",
+    "category": "science",
+    "navigationKeyword1": "discrete-math",
+    "navigationKeyword2": "counting",
+    "question": "What is stars and bars (idea)?",
+    "correctAnswer": "Count nonnegative integer solutions to x1+\u2026+xk=n",
+    "incorrectAnswers": [
+      "Always n!",
+      "Always 2^n",
+      "Always n^k"
+    ],
+    "explanation": "Common \u2018identical balls into bins\u2019 model.",
+    "keywords": [
+      "stars-and-bars",
+      "combinatorics"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Stars_and_bars_(combinatorics)"
+  },
+  {
+    "seedId": "366f8745-4b03-41a2-b658-eaf6cb59a7d7",
+    "category": "science",
+    "navigationKeyword1": "discrete-math",
+    "navigationKeyword2": "counting",
+    "question": "What is inclusion-exclusion for three sets (pattern)?",
+    "correctAnswer": "Add singles, subtract pairwise, add triple",
+    "incorrectAnswers": [
+      "Only add sizes",
+      "Only multiply sizes",
+      "Subtract all singles"
+    ],
+    "explanation": "Generalizes to many sets.",
+    "keywords": [
+      "inclusion-exclusion",
+      "counting"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Inclusion%E2%80%93exclusion_principle"
+  },
+  {
+    "seedId": "61a5b626-31dc-4834-b6ab-a9e48a583964",
+    "category": "science",
+    "navigationKeyword1": "discrete-math",
+    "navigationKeyword2": "counting",
+    "question": "What is derangement (idea)?",
+    "correctAnswer": "Permutation with no fixed points",
+    "incorrectAnswers": [
+      "Permutation with all fixed points",
+      "Subset",
+      "Graph coloring"
+    ],
+    "explanation": "Classic counting problem.",
+    "keywords": [
+      "derangements",
+      "permutation"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Derangement"
+  },
+  {
+    "seedId": "7483eb26-ae1b-4b83-af7c-3908bdbd58cf",
+    "category": "science",
+    "navigationKeyword1": "discrete-math",
+    "navigationKeyword2": "counting",
+    "question": "What is bijection in counting?",
+    "correctAnswer": "If A bijects B, then |A|=|B|",
+    "incorrectAnswers": [
+      "If A injects B, sizes equal always",
+      "If A surjects B, sizes equal always",
+      "Bijection doubles size"
+    ],
+    "explanation": "Bijections preserve cardinality.",
+    "keywords": [
+      "bijection",
+      "counting"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Bijection"
+  }
+]

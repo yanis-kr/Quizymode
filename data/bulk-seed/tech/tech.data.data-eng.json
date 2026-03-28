@@ -1,0 +1,116 @@
+[
+  {
+    "category": "tech",
+    "navigationKeyword1": "data",
+    "navigationKeyword2": "data-eng",
+    "question": "In Apache Kafka, what is a topic?",
+    "correctAnswer": "A named category or feed of records stored in a log",
+    "incorrectAnswers": [
+      "A single CPU core",
+      "A SQL table index",
+      "A container image"
+    ],
+    "explanation": "Producers publish records to topics; consumers read from partitions of those topics.",
+    "keywords": [
+      "data-eng",
+      "kafka"
+    ],
+    "source": "https://kafka.apache.org/documentation/#intro_topics",
+    "seedId": "c915975e-0582-5c45-9f1b-4f5f49175323"
+  },
+  {
+    "category": "tech",
+    "navigationKeyword1": "data",
+    "navigationKeyword2": "data-eng",
+    "question": "What is a directed acyclic graph (DAG) in workflow orchestration?",
+    "correctAnswer": "Tasks as nodes with dependencies that cannot form cycles",
+    "incorrectAnswers": [
+      "A graph that must repeat every task daily",
+      "A random execution order",
+      "A database isolation level"
+    ],
+    "explanation": "DAGs express ordering: downstream tasks run after their upstream dependencies succeed.",
+    "keywords": [
+      "data-eng",
+      "orchestration"
+    ],
+    "source": "https://airflow.apache.org/docs/apache-airflow/stable/core-concepts/dags.html",
+    "seedId": "3c9d121e-85d7-5d6b-81aa-f33bee4c3d43"
+  },
+  {
+    "category": "tech",
+    "navigationKeyword1": "data",
+    "navigationKeyword2": "data-eng",
+    "question": "Why is idempotence important for data pipelines that may retry?",
+    "correctAnswer": "Running the same step twice does not duplicate or corrupt outcomes",
+    "incorrectAnswers": [
+      "It makes retries impossible",
+      "It removes the need for logs",
+      "It guarantees real-time latency"
+    ],
+    "explanation": "Networks and workers fail; idempotent writes keep replays safe.",
+    "keywords": [
+      "data-eng",
+      "reliability"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Idempotence",
+    "seedId": "85916a10-6e1c-541a-b823-7169b74dd4a7"
+  },
+  {
+    "category": "tech",
+    "navigationKeyword1": "data",
+    "navigationKeyword2": "data-eng",
+    "question": "What does change data capture (CDC) capture from databases?",
+    "correctAnswer": "Inserts, updates, and deletes as they happen for downstream systems",
+    "incorrectAnswers": [
+      "Only static yearly snapshots",
+      "Only index fragmentation",
+      "Only UI clicks"
+    ],
+    "explanation": "CDC streams row-level changes so warehouses and search indexes stay near real time.",
+    "keywords": [
+      "data-eng",
+      "cdc"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Change_data_capture",
+    "seedId": "270e782c-42c7-5063-a408-cd4eeed6ce2a"
+  },
+  {
+    "category": "tech",
+    "navigationKeyword1": "data",
+    "navigationKeyword2": "data-eng",
+    "question": "What is schema evolution in data pipelines?",
+    "correctAnswer": "Handling new, removed, or changed fields without breaking readers or writers",
+    "incorrectAnswers": [
+      "Deleting all historical data",
+      "Disabling compression",
+      "Removing primary keys"
+    ],
+    "explanation": "Formats like Avro or Protobuf define rules so producers and consumers can upgrade safely.",
+    "keywords": [
+      "data-eng",
+      "schema"
+    ],
+    "source": "https://avro.apache.org/docs/current/specification/",
+    "seedId": "83d968b1-5c65-51d0-8a9f-29c14e2159cd"
+  },
+  {
+    "category": "tech",
+    "navigationKeyword1": "data",
+    "navigationKeyword2": "data-eng",
+    "question": "What is a dead-letter queue used for in messaging systems?",
+    "correctAnswer": "Hold messages that failed processing so they can be inspected or retried",
+    "incorrectAnswers": [
+      "Store only successful acknowledgments",
+      "Replace the primary topic",
+      "Encrypt disks"
+    ],
+    "explanation": "Poison messages should not block the whole pipeline; DLQs isolate failures for triage.",
+    "keywords": [
+      "data-eng",
+      "messaging"
+    ],
+    "source": "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-dead-letter-queues.html",
+    "seedId": "656f9826-232f-583d-b8ed-3792065f7bdb"
+  }
+]

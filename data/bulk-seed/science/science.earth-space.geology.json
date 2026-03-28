@@ -1,0 +1,230 @@
+[
+  {
+    "seedId": "af9dc429-04ca-4cce-b917-85732ef16c8f",
+    "category": "science",
+    "navigationKeyword1": "earth-space",
+    "navigationKeyword2": "geology",
+    "question": "What are Earth\u2019s main compositional layers?",
+    "correctAnswer": "Crust, mantle, and core",
+    "incorrectAnswers": [
+      "Sky, sea, soil",
+      "Lithosphere only",
+      "Ozone, troposphere, mesosphere"
+    ],
+    "explanation": "Layering reflects density and composition changes.",
+    "keywords": [
+      "earth-layers",
+      "geology"
+    ],
+    "source": "https://www.usgs.gov/faqs/what-are-earths-layers"
+  },
+  {
+    "seedId": "890f594d-e1f4-4853-ace1-af3b7f4fe691",
+    "category": "science",
+    "navigationKeyword1": "earth-space",
+    "navigationKeyword2": "geology",
+    "question": "What is plate tectonics?",
+    "correctAnswer": "Earth\u2019s lithosphere divided into moving plates",
+    "incorrectAnswers": [
+      "Static continents",
+      "Only vertical faults",
+      "Only moon tides"
+    ],
+    "explanation": "Explains earthquakes, volcanoes, and mountain building.",
+    "keywords": [
+      "plate-tectonics",
+      "geology"
+    ],
+    "source": "https://www.usgs.gov/programs/earthquake-hazards/tectonic-plates-earths-lithosphere"
+  },
+  {
+    "seedId": "26e6f772-a2fa-401b-b23d-4785f5548223",
+    "category": "science",
+    "navigationKeyword1": "earth-space",
+    "navigationKeyword2": "geology",
+    "question": "What is a fault?",
+    "correctAnswer": "Fracture where rock masses move",
+    "incorrectAnswers": [
+      "A river delta",
+      "A cloud type",
+      "A soil horizon"
+    ],
+    "explanation": "Earthquakes occur on faults.",
+    "keywords": [
+      "faults",
+      "earthquakes"
+    ],
+    "source": "https://www.usgs.gov/faqs/what-fault-and-what-are-different-types"
+  },
+  {
+    "seedId": "08820cf5-7348-4d87-a25c-6761fd683de5",
+    "category": "science",
+    "navigationKeyword1": "earth-space",
+    "navigationKeyword2": "geology",
+    "question": "What scale measures earthquake energy release?",
+    "correctAnswer": "Moment magnitude (successor to Richter for large events)",
+    "incorrectAnswers": [
+      "Beaufort scale",
+      "Saffir-Simpson",
+      "pH scale"
+    ],
+    "explanation": "Seismologists use magnitude scales based on wave energy.",
+    "keywords": [
+      "magnitude",
+      "seismology"
+    ],
+    "source": "https://www.usgs.gov/programs/earthquake-hazards/magnitude-types"
+  },
+  {
+    "seedId": "91e17e9a-b19e-476d-bd94-6f75c8e7e22f",
+    "category": "science",
+    "navigationKeyword1": "earth-space",
+    "navigationKeyword2": "geology",
+    "question": "What is igneous rock?",
+    "correctAnswer": "Formed from cooled magma or lava",
+    "incorrectAnswers": [
+      "From compacted shells only",
+      "From heat/pressure on existing rock",
+      "From evaporation only"
+    ],
+    "explanation": "Basalt and granite are examples.",
+    "keywords": [
+      "igneous",
+      "rocks"
+    ],
+    "source": "https://www.usgs.gov/schools/rock-cycle"
+  },
+  {
+    "seedId": "d56158b9-fb89-4a25-9880-62beb9d9d8da",
+    "category": "science",
+    "navigationKeyword1": "earth-space",
+    "navigationKeyword2": "geology",
+    "question": "What is sedimentary rock?",
+    "correctAnswer": "Formed from deposited and lithified sediments",
+    "incorrectAnswers": [
+      "From magma cooling",
+      "From pure metamorphism only",
+      "From lightning"
+    ],
+    "explanation": "Often preserves fossils.",
+    "keywords": [
+      "sedimentary",
+      "rocks"
+    ],
+    "source": "https://www.usgs.gov/schools/rock-cycle"
+  },
+  {
+    "seedId": "a44ff47c-17d4-4c17-9a88-04ce72dac735",
+    "category": "science",
+    "navigationKeyword1": "earth-space",
+    "navigationKeyword2": "geology",
+    "question": "What is metamorphic rock?",
+    "correctAnswer": "Formed by heat and pressure transforming existing rock",
+    "incorrectAnswers": [
+      "From lava only",
+      "From wind only",
+      "From photosynthesis"
+    ],
+    "explanation": "Examples: marble, schist.",
+    "keywords": [
+      "metamorphic",
+      "rocks"
+    ],
+    "source": "https://www.usgs.gov/schools/rock-cycle"
+  },
+  {
+    "seedId": "9ccd4f9a-1555-4cce-8d1e-d4f83982be47",
+    "category": "science",
+    "navigationKeyword1": "earth-space",
+    "navigationKeyword2": "geology",
+    "question": "What is the rock cycle?",
+    "correctAnswer": "Processes that transform rock types over time",
+    "incorrectAnswers": [
+      "Only igneous exists",
+      "Rocks never change",
+      "Only water cycle"
+    ],
+    "explanation": "Weathering, melting, and uplift link types.",
+    "keywords": [
+      "rock-cycle",
+      "geology"
+    ],
+    "source": "https://www.usgs.gov/schools/rock-cycle"
+  },
+  {
+    "seedId": "97c1e728-f13e-4301-8d29-d59027dc1db0",
+    "category": "science",
+    "navigationKeyword1": "earth-space",
+    "navigationKeyword2": "geology",
+    "question": "What is a mineral?",
+    "correctAnswer": "Naturally occurring inorganic solid with ordered structure",
+    "incorrectAnswers": [
+      "Any rock mixture",
+      "Only liquids",
+      "Only man-made glass"
+    ],
+    "explanation": "Definite composition ranges are typical.",
+    "keywords": [
+      "minerals",
+      "crystals"
+    ],
+    "source": "https://www.usgs.gov/special-topics/educational-resources/what-mineral"
+  },
+  {
+    "seedId": "29907ae2-de50-4955-ac30-11fc52064025",
+    "category": "science",
+    "navigationKeyword1": "earth-space",
+    "navigationKeyword2": "geology",
+    "question": "What is erosion?",
+    "correctAnswer": "Removal and transport of Earth materials by agents like water and wind",
+    "incorrectAnswers": [
+      "Only melting",
+      "Only earthquakes",
+      "Only photosynthesis"
+    ],
+    "explanation": "Different from weathering alone.",
+    "keywords": [
+      "erosion",
+      "weathering"
+    ],
+    "source": "https://www.usgs.gov/special-topics/water-science-school/erosion-and-deposition"
+  },
+  {
+    "seedId": "ec24b2c1-6c61-45c4-b4ba-c7f77f608c72",
+    "category": "science",
+    "navigationKeyword1": "earth-space",
+    "navigationKeyword2": "geology",
+    "question": "What is fossil record?",
+    "correctAnswer": "Preserved remains/traces of past life in rock",
+    "incorrectAnswers": [
+      "Only dinosaur bones in museums",
+      "Modern DNA only",
+      "Cloud patterns"
+    ],
+    "explanation": "Used to reconstruct ancient environments.",
+    "keywords": [
+      "fossils",
+      "paleontology"
+    ],
+    "source": "https://www.nps.gov/subjects/fossils/what-is-a-fossil.htm"
+  },
+  {
+    "seedId": "dd66ade0-04f7-4024-aa1a-d6df7ad542ee",
+    "category": "science",
+    "navigationKeyword1": "earth-space",
+    "navigationKeyword2": "geology",
+    "question": "What is a volcano?",
+    "correctAnswer": "Vent where magma reaches the surface",
+    "incorrectAnswers": [
+      "Only underwater caves",
+      "A type of glacier",
+      "A storm system"
+    ],
+    "explanation": "Can build mountains and islands.",
+    "keywords": [
+      "volcano",
+      "magma"
+    ],
+    "source": "https://www.usgs.gov/faqs/what-volcano"
+  }
+]

@@ -1,0 +1,230 @@
+[
+  {
+    "seedId": "c0b926a8-8dd5-4294-b47e-d2137891e798",
+    "category": "science",
+    "navigationKeyword1": "probability",
+    "navigationKeyword2": "expected-value",
+    "question": "Fair die expected value?",
+    "correctAnswer": "3.5",
+    "incorrectAnswers": [
+      "3",
+      "4",
+      "2.5"
+    ],
+    "explanation": "Average of 1..6.",
+    "keywords": [
+      "expectation",
+      "discrete"
+    ],
+    "source": "https://openstax.org/books/introductory-statistics/pages/4-2-probability-distribution-for-a-discrete-random-variable"
+  },
+  {
+    "seedId": "0a414fe6-1e63-469f-8074-b52f3de46732",
+    "category": "science",
+    "navigationKeyword1": "probability",
+    "navigationKeyword2": "expected-value",
+    "question": "Lottery ticket EV often?",
+    "correctAnswer": "Negative (house edge)",
+    "incorrectAnswers": [
+      "Always positive",
+      "Always zero",
+      "Always 1"
+    ],
+    "explanation": "Rare jackpot still may not compensate cost.",
+    "keywords": [
+      "expected-value",
+      "decisions"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Expected_value"
+  },
+  {
+    "seedId": "77e0505b-c947-41aa-ad33-fab8530e6039",
+    "category": "science",
+    "navigationKeyword1": "probability",
+    "navigationKeyword2": "expected-value",
+    "question": "E[X+Y] if known expectations?",
+    "correctAnswer": "E[X]+E[Y] always (finite)",
+    "incorrectAnswers": [
+      "E[X]E[Y]",
+      "E[X]/E[Y]",
+      "max(E[X],E[Y])"
+    ],
+    "explanation": "Linearity doesn\u2019t need independence.",
+    "keywords": [
+      "linearity",
+      "expectation"
+    ],
+    "source": "https://openstax.org/books/introductory-statistics/pages/4-2-probability-distribution-for-a-discrete-random-variable"
+  },
+  {
+    "seedId": "3950c98e-b26e-4db5-9405-91077c91b707",
+    "category": "science",
+    "navigationKeyword1": "probability",
+    "navigationKeyword2": "expected-value",
+    "question": "If independent, E[XY]?",
+    "correctAnswer": "E[X]E[Y]",
+    "incorrectAnswers": [
+      "E[X]+E[Y]",
+      "Var(XY)",
+      "0"
+    ],
+    "explanation": "Covariance zero helps.",
+    "keywords": [
+      "independence",
+      "product"
+    ],
+    "source": "https://openstax.org/books/introductory-statistics/pages/4-2-probability-distribution-for-a-discrete-random-variable"
+  },
+  {
+    "seedId": "b86ca8df-b959-4653-ab7e-23d12ca6fae8",
+    "category": "science",
+    "navigationKeyword1": "probability",
+    "navigationKeyword2": "expected-value",
+    "question": "Variance under aX+b?",
+    "correctAnswer": "a^2 Var(X)",
+    "incorrectAnswers": [
+      "a Var(X)",
+      "Var(X)+b",
+      "a+b Var(X)"
+    ],
+    "explanation": "Shift doesn\u2019t change spread.",
+    "keywords": [
+      "variance-rules",
+      "scale"
+    ],
+    "source": "https://openstax.org/books/introductory-statistics/pages/4-2-probability-distribution-for-a-discrete-random-variable"
+  },
+  {
+    "seedId": "d6311c45-61ec-4576-9be7-f01f4a3928b3",
+    "category": "science",
+    "navigationKeyword1": "probability",
+    "navigationKeyword2": "expected-value",
+    "question": "Cov(X,Y) interpretation?",
+    "correctAnswer": "Linear association tendency (not scale-free)",
+    "incorrectAnswers": [
+      "Always causal",
+      "Same as P(X=Y)",
+      "Always nonnegative"
+    ],
+    "explanation": "Correlation standardizes.",
+    "keywords": [
+      "covariance",
+      "association"
+    ],
+    "source": "https://openstax.org/books/introductory-statistics/pages/10-3-the-correlation-coefficient-r"
+  },
+  {
+    "seedId": "bd768745-c2b1-459c-b876-1ec437835281",
+    "category": "science",
+    "navigationKeyword1": "probability",
+    "navigationKeyword2": "expected-value",
+    "question": "Tower property E[E[X|Y]]?",
+    "correctAnswer": "E[X]",
+    "incorrectAnswers": [
+      "E[Y]",
+      "0",
+      "Var(X)"
+    ],
+    "explanation": "Law of total expectation.",
+    "keywords": [
+      "law-total-expectation",
+      "conditional"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Law_of_total_expectation"
+  },
+  {
+    "seedId": "3b59f39e-440a-415e-a6f3-225d276369ca",
+    "category": "science",
+    "navigationKeyword1": "probability",
+    "navigationKeyword2": "expected-value",
+    "question": "St. Petersburg paradox theme?",
+    "correctAnswer": "Infinite expectation unrealistic without bank limits",
+    "incorrectAnswers": [
+      "Proves EV useless always",
+      "Only discrete",
+      "Only normal"
+    ],
+    "explanation": "Utility and truncation matter.",
+    "keywords": [
+      "st-petersburg",
+      "paradox"
+    ],
+    "source": "https://en.wikipedia.org/wiki/St._Petersburg_paradox"
+  },
+  {
+    "seedId": "c1098512-5c27-4074-beca-c735073cb92b",
+    "category": "science",
+    "navigationKeyword1": "probability",
+    "navigationKeyword2": "expected-value",
+    "question": "Insurance EV buyer side?",
+    "correctAnswer": "Often negative premium vs payout (company profits)",
+    "incorrectAnswers": [
+      "Always positive for buyer",
+      "Always zero",
+      "Never uses probability"
+    ],
+    "explanation": "Risk transfer has value beyond EV.",
+    "keywords": [
+      "insurance",
+      "utility"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Expected_value"
+  },
+  {
+    "seedId": "1373b97a-47a8-419d-ad83-3b7aa2008bf6",
+    "category": "science",
+    "navigationKeyword1": "probability",
+    "navigationKeyword2": "expected-value",
+    "question": "Decision under risk simple rule?",
+    "correctAnswer": "Compare expected utility/values",
+    "incorrectAnswers": [
+      "Always maximize max payoff",
+      "Ignore probabilities",
+      "Minimize always"
+    ],
+    "explanation": "Depends on risk aversion.",
+    "keywords": [
+      "decision-theory",
+      "ev"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Expected_utility_hypothesis"
+  },
+  {
+    "seedId": "4067e05a-a25d-4f85-ba76-754516fcb46f",
+    "category": "science",
+    "navigationKeyword1": "probability",
+    "navigationKeyword2": "expected-value",
+    "question": "Linearity for indicators?",
+    "correctAnswer": "Sum of indicators expectation is sum of P(indicator=1)",
+    "incorrectAnswers": [
+      "Product of expectations always",
+      "Always 1",
+      "Never linear"
+    ],
+    "explanation": "Useful counting proofs.",
+    "keywords": [
+      "indicator",
+      "linearity"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Indicator_function"
+  },
+  {
+    "seedId": "6890e2d4-ec4d-4776-b705-247ccf2719dd",
+    "category": "science",
+    "navigationKeyword1": "probability",
+    "navigationKeyword2": "expected-value",
+    "question": "Monte Carlo estimate?",
+    "correctAnswer": "Average of simulated draws approximates expectation",
+    "incorrectAnswers": [
+      "Always exact",
+      "Only for discrete",
+      "Never converges"
+    ],
+    "explanation": "LLN justification.",
+    "keywords": [
+      "monte-carlo",
+      "simulation"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Monte_Carlo_method"
+  }
+]

@@ -1,0 +1,230 @@
+[
+  {
+    "seedId": "b22284b6-0b87-4e81-b075-ace89bd44ceb",
+    "category": "science",
+    "navigationKeyword1": "nursing",
+    "navigationKeyword2": "med-surg",
+    "question": "Early sign of hypoxia may include?",
+    "correctAnswer": "Restlessness or confusion",
+    "incorrectAnswers": [
+      "Bradycardia always",
+      "Hypertension always",
+      "Warm dry skin always"
+    ],
+    "explanation": "CNS is sensitive to low oxygen.",
+    "keywords": [
+      "hypoxia",
+      "respiratory"
+    ],
+    "source": "https://www.ncbi.nlm.nih.gov/books/NBK482380/"
+  },
+  {
+    "seedId": "a3b4924c-148b-458d-8f44-a1c88d82ea61",
+    "category": "science",
+    "navigationKeyword1": "nursing",
+    "navigationKeyword2": "med-surg",
+    "question": "What position often helps dyspnea?",
+    "correctAnswer": "High Fowler\u2019s or upright",
+    "incorrectAnswers": [
+      "Trendelenburg for all",
+      "Prone always",
+      "Supine flat always"
+    ],
+    "explanation": "Gravity assists diaphragm excursion.",
+    "keywords": [
+      "dyspnea",
+      "positioning"
+    ],
+    "source": "https://www.ncbi.nlm.nih.gov/books/NBK482380/"
+  },
+  {
+    "seedId": "91c8d69a-0fb2-4f4f-9e0d-93dde00d9266",
+    "category": "science",
+    "navigationKeyword1": "nursing",
+    "navigationKeyword2": "med-surg",
+    "question": "What does DVT prevention include?",
+    "correctAnswer": "Early ambulation, SCDs, anticoagulation when ordered",
+    "incorrectAnswers": [
+      "Bed rest only",
+      "Massage calf clots",
+      "Stop all fluids"
+    ],
+    "explanation": "Mobility and prophylaxis reduce clot risk.",
+    "keywords": [
+      "dvt",
+      "prophylaxis"
+    ],
+    "source": "https://www.cdc.gov/ncbddd/dvt/facts.html"
+  },
+  {
+    "seedId": "6a4d7809-89cd-4081-9448-d5184436f751",
+    "category": "science",
+    "navigationKeyword1": "nursing",
+    "navigationKeyword2": "med-surg",
+    "question": "Post-op fever in first 24h often suggests?",
+    "correctAnswer": "Atelectasis or inflammatory response",
+    "incorrectAnswers": [
+      "Always wound infection",
+      "Always UTI",
+      "Never significant"
+    ],
+    "explanation": "Day-1 fever workup differs from later fever.",
+    "keywords": [
+      "postoperative",
+      "fever"
+    ],
+    "source": "https://www.ncbi.nlm.nih.gov/books/NBK482380/"
+  },
+  {
+    "seedId": "90014af9-f0fd-44ad-bb3e-827ce524d106",
+    "category": "science",
+    "navigationKeyword1": "nursing",
+    "navigationKeyword2": "med-surg",
+    "question": "What is orthostatic hypotension assessment?",
+    "correctAnswer": "Compare BP/HR lying vs standing",
+    "incorrectAnswers": [
+      "Only seated BP",
+      "Only diastolic",
+      "Skip if dizzy"
+    ],
+    "explanation": "Identifies volume depletion or autonomic issues.",
+    "keywords": [
+      "orthostatic",
+      "vitals"
+    ],
+    "source": "https://www.ncbi.nlm.nih.gov/books/NBK482380/"
+  },
+  {
+    "seedId": "45c089b4-9613-46a1-9c6c-200d72de9ae6",
+    "category": "science",
+    "navigationKeyword1": "nursing",
+    "navigationKeyword2": "med-surg",
+    "question": "Signs of fluid overload may include?",
+    "correctAnswer": "Crackles, edema, JVD, weight gain",
+    "incorrectAnswers": [
+      "Dry mucosa",
+      "Flat neck veins",
+      "Hypotension always"
+    ],
+    "explanation": "Heart failure picture overlaps.",
+    "keywords": [
+      "fluid-overload",
+      "assessment"
+    ],
+    "source": "https://www.ncbi.nlm.nih.gov/books/NBK482380/"
+  },
+  {
+    "seedId": "c5c9af81-0933-4b01-8cf2-1bac1fdcaa88",
+    "category": "science",
+    "navigationKeyword1": "nursing",
+    "navigationKeyword2": "med-surg",
+    "question": "What is neutropenic precaution focus?",
+    "correctAnswer": "Protect immunocompromised from infection",
+    "incorrectAnswers": [
+      "No hand washing",
+      "Raw flowers okay always",
+      "Isolate nurse only"
+    ],
+    "explanation": "Low microbial exposure; follow protocol.",
+    "keywords": [
+      "neutropenic",
+      "precautions"
+    ],
+    "source": "https://www.cdc.gov/infection-control/hcp/isolation-precautions/index.html"
+  },
+  {
+    "seedId": "63286bd1-5f48-4ce3-8ea2-621eddf60a67",
+    "category": "science",
+    "navigationKeyword1": "nursing",
+    "navigationKeyword2": "med-surg",
+    "question": "Diabetic foot teaching includes?",
+    "correctAnswer": "Daily inspection, proper footwear, glycemic control",
+    "incorrectAnswers": [
+      "Soak feet hours daily",
+      "Walk barefoot to toughen",
+      "Ignore small blisters"
+    ],
+    "explanation": "Prevents ulcers and amputation.",
+    "keywords": [
+      "diabetes",
+      "foot-care"
+    ],
+    "source": "https://www.cdc.gov/diabetes/managing/problems.html"
+  },
+  {
+    "seedId": "09f0a925-c78d-41b2-97e2-4f9c9ec215ae",
+    "category": "science",
+    "navigationKeyword1": "nursing",
+    "navigationKeyword2": "med-surg",
+    "question": "Chest tube nursing priority concept?",
+    "correctAnswer": "Maintain drainage system integrity; monitor for air leak",
+    "incorrectAnswers": [
+      "Clamp routinely for transport without orders",
+      "Milk strip tubes aggressively",
+      "Remove if bubbling"
+    ],
+    "explanation": "Follow orders for clamping; monitor function.",
+    "keywords": [
+      "chest-tube",
+      "thoracic"
+    ],
+    "source": "https://www.ncbi.nlm.nih.gov/books/NBK482380/"
+  },
+  {
+    "seedId": "aa3529b9-cf04-4c9f-abd4-3fa3e70b3dba",
+    "category": "science",
+    "navigationKeyword1": "nursing",
+    "navigationKeyword2": "med-surg",
+    "question": "What is ileus concern post-abdominal surgery?",
+    "correctAnswer": "Absent bowel sounds, distension, N/V",
+    "incorrectAnswers": [
+      "Immediate solid diet",
+      "Brisk diarrhea expected",
+      "No NG use ever"
+    ],
+    "explanation": "Bowel motility may be slow initially.",
+    "keywords": [
+      "ileus",
+      "gi"
+    ],
+    "source": "https://www.ncbi.nlm.nih.gov/books/NBK482380/"
+  },
+  {
+    "seedId": "ba5db375-a13f-4f57-bfe4-34f2b9398639",
+    "category": "science",
+    "navigationKeyword1": "nursing",
+    "navigationKeyword2": "med-surg",
+    "question": "Pressure injury prevention?",
+    "correctAnswer": "Turn schedule, skin checks, support surfaces",
+    "incorrectAnswers": [
+      "Massage bony prominences over redness",
+      "Ring cushions always best",
+      "Keep head of bed 90\u00b0 always"
+    ],
+    "explanation": "Reduce shear and moisture.",
+    "keywords": [
+      "pressure-injury",
+      "skin"
+    ],
+    "source": "https://www.cdc.gov/patientsafety/features/prevent-hospital-pressure-ulcers.html"
+  },
+  {
+    "seedId": "b6b39905-6b48-4ed5-aa75-c660c500d6bc",
+    "category": "science",
+    "navigationKeyword1": "nursing",
+    "navigationKeyword2": "med-surg",
+    "question": "Sepsis suspicion triggers?",
+    "correctAnswer": "SIRS criteria trends, lactate, source identification",
+    "incorrectAnswers": [
+      "Wait for fever only",
+      "Ignore tachycardia",
+      "Discharge if ambulatory"
+    ],
+    "explanation": "Early recognition and bundles save lives.",
+    "keywords": [
+      "sepsis",
+      "recognition"
+    ],
+    "source": "https://www.cdc.gov/sepsis/index.html"
+  }
+]

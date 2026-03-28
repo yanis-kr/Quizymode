@@ -1,0 +1,230 @@
+[
+  {
+    "seedId": "fe8d8229-beb8-4b56-9321-c2d4b7ec867b",
+    "category": "science",
+    "navigationKeyword1": "probability",
+    "navigationKeyword2": "basic",
+    "question": "Probability scale for event?",
+    "correctAnswer": "Between 0 and 1 inclusive",
+    "incorrectAnswers": [
+      "Only integers",
+      "Any real >1 allowed",
+      "Only percents >100"
+    ],
+    "explanation": "P=0 impossible; P=1 certain (ideal).",
+    "keywords": [
+      "probability-axioms",
+      "basics"
+    ],
+    "source": "https://openstax.org/books/introductory-statistics/pages/3-1-terminology"
+  },
+  {
+    "seedId": "93f8895d-fcd1-49ab-91fc-16823a6fd4c3",
+    "category": "science",
+    "navigationKeyword1": "probability",
+    "navigationKeyword2": "basic",
+    "question": "Sample space?",
+    "correctAnswer": "Set of all possible outcomes",
+    "incorrectAnswers": [
+      "Only favorable outcomes",
+      "Only events",
+      "Only means"
+    ],
+    "explanation": "One outcome per trial model.",
+    "keywords": [
+      "sample-space",
+      "outcomes"
+    ],
+    "source": "https://openstax.org/books/introductory-statistics/pages/3-1-terminology"
+  },
+  {
+    "seedId": "8e0eac97-2b0e-4655-b822-65eeee3a6228",
+    "category": "science",
+    "navigationKeyword1": "probability",
+    "navigationKeyword2": "basic",
+    "question": "Complement rule P(A')?",
+    "correctAnswer": "1 \u2212 P(A)",
+    "incorrectAnswers": [
+      "P(A)+1",
+      "P(A)^2",
+      "0"
+    ],
+    "explanation": "A or not A covers space.",
+    "keywords": [
+      "complement",
+      "rules"
+    ],
+    "source": "https://openstax.org/books/introductory-statistics/pages/3-2-basic-concepts-of-probability"
+  },
+  {
+    "seedId": "9bb80a59-c7cd-4c25-a0b4-5d3d02269155",
+    "category": "science",
+    "navigationKeyword1": "probability",
+    "navigationKeyword2": "basic",
+    "question": "Mutually exclusive events?",
+    "correctAnswer": "Cannot both occur",
+    "incorrectAnswers": [
+      "Always independent",
+      "Always same probability",
+      "Always exhaustive"
+    ],
+    "explanation": "P(A\u2229B)=0 for exclusive.",
+    "keywords": [
+      "mutually-exclusive",
+      "events"
+    ],
+    "source": "https://openstax.org/books/introductory-statistics/pages/3-2-basic-concepts-of-probability"
+  },
+  {
+    "seedId": "900040bd-160f-41a7-8624-0f7d21abb1b7",
+    "category": "science",
+    "navigationKeyword1": "probability",
+    "navigationKeyword2": "basic",
+    "question": "Addition rule (general)?",
+    "correctAnswer": "P(A\u222aB) = P(A)+P(B)\u2212P(A\u2229B)",
+    "incorrectAnswers": [
+      "P(A)+P(B) always",
+      "P(A)P(B)",
+      "P(A)\u2212P(B)"
+    ],
+    "explanation": "Subtract double count.",
+    "keywords": [
+      "addition-rule",
+      "union"
+    ],
+    "source": "https://openstax.org/books/introductory-statistics/pages/3-2-basic-concepts-of-probability"
+  },
+  {
+    "seedId": "cab51976-5e91-42ea-a400-9ea292b9c144",
+    "category": "science",
+    "navigationKeyword1": "probability",
+    "navigationKeyword2": "basic",
+    "question": "Fair die P(even)?",
+    "correctAnswer": "1/2",
+    "incorrectAnswers": [
+      "1/3",
+      "2/3",
+      "1/6"
+    ],
+    "explanation": "Three even faces of six.",
+    "keywords": [
+      "uniform",
+      "dice"
+    ],
+    "source": "https://openstax.org/books/introductory-statistics/pages/3-2-basic-concepts-of-probability"
+  },
+  {
+    "seedId": "b1ee0389-7563-4ab5-bcc7-df120740a640",
+    "category": "science",
+    "navigationKeyword1": "probability",
+    "navigationKeyword2": "basic",
+    "question": "Two fair coins P(at least one head)?",
+    "correctAnswer": "3/4",
+    "incorrectAnswers": [
+      "1/2",
+      "1",
+      "1/4"
+    ],
+    "explanation": "Only TT fails.",
+    "keywords": [
+      "coins",
+      "counting"
+    ],
+    "source": "https://openstax.org/books/introductory-statistics/pages/3-2-basic-concepts-of-probability"
+  },
+  {
+    "seedId": "75cb4480-8940-4348-9b55-313745b55dea",
+    "category": "science",
+    "navigationKeyword1": "probability",
+    "navigationKeyword2": "basic",
+    "question": "Law of Large Numbers (informal)?",
+    "correctAnswer": "Relative frequencies stabilize with many trials",
+    "incorrectAnswers": [
+      "Always exact after 10 trials",
+      "Means no randomness",
+      "Probabilities change each flip"
+    ],
+    "explanation": "Long-run interpretation.",
+    "keywords": [
+      "lln",
+      "frequency"
+    ],
+    "source": "https://openstax.org/books/introductory-statistics/pages/3-1-terminology"
+  },
+  {
+    "seedId": "92b90830-c003-459b-a4fc-e9f9a25e55fe",
+    "category": "science",
+    "navigationKeyword1": "probability",
+    "navigationKeyword2": "basic",
+    "question": "Empirical probability?",
+    "correctAnswer": "Relative frequency from data",
+    "incorrectAnswers": [
+      "Always theoretical",
+      "Always 0.5",
+      "Never uses data"
+    ],
+    "explanation": "Estimate from experiments.",
+    "keywords": [
+      "empirical",
+      "statistics"
+    ],
+    "source": "https://openstax.org/books/introductory-statistics/pages/3-1-terminology"
+  },
+  {
+    "seedId": "04ef8c24-608c-4ed0-bd6c-e6297480b556",
+    "category": "science",
+    "navigationKeyword1": "probability",
+    "navigationKeyword2": "basic",
+    "question": "If outcomes equally likely, P(A)?",
+    "correctAnswer": "|A| / |S|",
+    "incorrectAnswers": [
+      "|S| / |A|",
+      "1 \u2212 |A|",
+      "|A|+|S|"
+    ],
+    "explanation": "Classical probability.",
+    "keywords": [
+      "classical-probability",
+      "counting"
+    ],
+    "source": "https://openstax.org/books/introductory-statistics/pages/3-2-basic-concepts-of-probability"
+  },
+  {
+    "seedId": "e4fadd73-4c24-4a25-9397-22ab385a6eec",
+    "category": "science",
+    "navigationKeyword1": "probability",
+    "navigationKeyword2": "basic",
+    "question": "Odds vs probability (for event)?",
+    "correctAnswer": "Different: odds = p/(1\u2212p) (for odds in favor)",
+    "incorrectAnswers": [
+      "Always equal number",
+      "Odds always >1",
+      "No conversion"
+    ],
+    "explanation": "Communicate carefully.",
+    "keywords": [
+      "odds",
+      "probability"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Odds"
+  },
+  {
+    "seedId": "9e3e6518-4860-492b-8f86-7fe7e88bddee",
+    "category": "science",
+    "navigationKeyword1": "probability",
+    "navigationKeyword2": "basic",
+    "question": "Probability of empty event?",
+    "correctAnswer": "0",
+    "incorrectAnswers": [
+      "1",
+      "Undefined always",
+      "1/2"
+    ],
+    "explanation": "\u2205 never occurs.",
+    "keywords": [
+      "empty-set",
+      "axioms"
+    ],
+    "source": "https://openstax.org/books/introductory-statistics/pages/3-2-basic-concepts-of-probability"
+  }
+]

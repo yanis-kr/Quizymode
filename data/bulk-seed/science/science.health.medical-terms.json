@@ -1,0 +1,230 @@
+[
+  {
+    "seedId": "92fe5154-d2a6-4dcc-a197-828f2f3201e6",
+    "category": "science",
+    "navigationKeyword1": "health",
+    "navigationKeyword2": "medical-terms",
+    "question": "What does acute mean?",
+    "correctAnswer": "Sudden onset, often short duration",
+    "incorrectAnswers": [
+      "Always mild",
+      "Always chronic",
+      "Always surgical"
+    ],
+    "explanation": "Contrast with chronic.",
+    "keywords": [
+      "acute",
+      "terminology"
+    ],
+    "source": "https://www.ncbi.nlm.nih.gov/books/NBK562258/"
+  },
+  {
+    "seedId": "1fbe4c2a-9c8a-44b8-90fb-dd46959c3088",
+    "category": "science",
+    "navigationKeyword1": "health",
+    "navigationKeyword2": "medical-terms",
+    "question": "What does chronic mean?",
+    "correctAnswer": "Long-lasting condition",
+    "incorrectAnswers": [
+      "Lasts hours only",
+      "Only infections",
+      "Only injuries"
+    ],
+    "explanation": "May need ongoing management.",
+    "keywords": [
+      "chronic",
+      "terminology"
+    ],
+    "source": "https://www.ncbi.nlm.nih.gov/books/NBK562258/"
+  },
+  {
+    "seedId": "f998de44-ab08-4b38-aa29-9e7d041602c3",
+    "category": "science",
+    "navigationKeyword1": "health",
+    "navigationKeyword2": "medical-terms",
+    "question": "What is benign vs malignant (tumor)?",
+    "correctAnswer": "Noncancerous vs cancerous",
+    "incorrectAnswers": [
+      "Both cancer",
+      "Both infections",
+      "Both fractures"
+    ],
+    "explanation": "Malignant can invade/spread.",
+    "keywords": [
+      "benign",
+      "malignant"
+    ],
+    "source": "https://www.cancer.gov/publications/dictionaries/cancer-terms/def/benign"
+  },
+  {
+    "seedId": "62fd7e6e-8cf1-4c0d-b4a7-780c35997ba2",
+    "category": "science",
+    "navigationKeyword1": "health",
+    "navigationKeyword2": "medical-terms",
+    "question": "What is prognosis?",
+    "correctAnswer": "Expected course/outcome of disease",
+    "incorrectAnswers": [
+      "Diagnosis name only",
+      "Surgery technique",
+      "Insurance code only"
+    ],
+    "explanation": "Not certain, probabilistic.",
+    "keywords": [
+      "prognosis",
+      "terms"
+    ],
+    "source": "https://www.cancer.gov/publications/dictionaries/cancer-terms/def/prognosis"
+  },
+  {
+    "seedId": "b03aaeac-081b-4159-8dc8-8856e559aa77",
+    "category": "science",
+    "navigationKeyword1": "health",
+    "navigationKeyword2": "medical-terms",
+    "question": "What is differential diagnosis?",
+    "correctAnswer": "List of possible causes considered",
+    "incorrectAnswers": [
+      "Final diagnosis only",
+      "Treatment plan",
+      "Billing code"
+    ],
+    "explanation": "Narrowed by tests/exam.",
+    "keywords": [
+      "differential",
+      "diagnosis"
+    ],
+    "source": "https://www.ncbi.nlm.nih.gov/books/NBK562258/"
+  },
+  {
+    "seedId": "5fe2a081-5857-4d95-8e2e-7ee06c235244",
+    "category": "science",
+    "navigationKeyword1": "health",
+    "navigationKeyword2": "medical-terms",
+    "question": "What is contraindication?",
+    "correctAnswer": "Reason to avoid a treatment",
+    "incorrectAnswers": [
+      "Reason to always use",
+      "Side effect synonym",
+      "Dosage"
+    ],
+    "explanation": "Safety consideration.",
+    "keywords": [
+      "contraindication",
+      "safety"
+    ],
+    "source": "https://www.fda.gov/drugs/drug-interactions-labeling/drug-interactions-what-you-should-know"
+  },
+  {
+    "seedId": "bc45083b-395f-4c33-9b46-4012feddd720",
+    "category": "science",
+    "navigationKeyword1": "health",
+    "navigationKeyword2": "medical-terms",
+    "question": "What is placebo?",
+    "correctAnswer": "Inactive substance used in trials",
+    "incorrectAnswers": [
+      "Always cures",
+      "Same as vaccine",
+      "Illegal drug"
+    ],
+    "explanation": "Controls expectation effects.",
+    "keywords": [
+      "placebo",
+      "trials"
+    ],
+    "source": "https://www.cancer.gov/publications/dictionaries/cancer-terms/def/placebo"
+  },
+  {
+    "seedId": "dc4c45a6-c5ca-4b90-9b0d-5a835427790e",
+    "category": "science",
+    "navigationKeyword1": "health",
+    "navigationKeyword2": "medical-terms",
+    "question": "What is double-blind trial?",
+    "correctAnswer": "Participant and investigator unaware of assignment",
+    "incorrectAnswers": [
+      "Everyone knows arm",
+      "Only single arm",
+      "No ethics board"
+    ],
+    "explanation": "Reduces bias.",
+    "keywords": [
+      "clinical-trial",
+      "methods"
+    ],
+    "source": "https://www.cancer.gov/publications/dictionaries/cancer-terms/def/double-blind-study"
+  },
+  {
+    "seedId": "7a1dad42-8653-43ff-b99e-4068b53897c2",
+    "category": "science",
+    "navigationKeyword1": "health",
+    "navigationKeyword2": "medical-terms",
+    "question": "What is comorbidity?",
+    "correctAnswer": "Additional coexisting condition",
+    "incorrectAnswers": [
+      "Opposite of diagnosis",
+      "Only mental",
+      "Only cured"
+    ],
+    "explanation": "Affects treatment choice.",
+    "keywords": [
+      "comorbidity",
+      "terms"
+    ],
+    "source": "https://www.cdc.gov/nchs/data/nvss/comorbidity-related-to-covid19.htm"
+  },
+  {
+    "seedId": "b7a018e5-6a49-4f82-802c-2591048a6057",
+    "category": "science",
+    "navigationKeyword1": "health",
+    "navigationKeyword2": "medical-terms",
+    "question": "What is remission?",
+    "correctAnswer": "Disease signs reduced/absent (not always cure)",
+    "incorrectAnswers": [
+      "Always cured",
+      "Always worse",
+      "Only for diabetes"
+    ],
+    "explanation": "Oncology uses carefully.",
+    "keywords": [
+      "remission",
+      "oncology"
+    ],
+    "source": "https://www.cancer.gov/publications/dictionaries/cancer-terms/def/remission"
+  },
+  {
+    "seedId": "8175fbbb-8fb2-4f39-8588-9cc6d831f7a6",
+    "category": "science",
+    "navigationKeyword1": "health",
+    "navigationKeyword2": "medical-terms",
+    "question": "What is biopsy?",
+    "correctAnswer": "Tissue sample for diagnosis",
+    "incorrectAnswers": [
+      "Blood pressure test",
+      "X-ray only",
+      "Vaccine"
+    ],
+    "explanation": "Pathology examines cells.",
+    "keywords": [
+      "biopsy",
+      "pathology"
+    ],
+    "source": "https://www.cancer.gov/publications/dictionaries/cancer-terms/def/biopsy"
+  },
+  {
+    "seedId": "b68c5ec9-0f96-40e4-a135-64ca966762df",
+    "category": "science",
+    "navigationKeyword1": "health",
+    "navigationKeyword2": "medical-terms",
+    "question": "What is generic drug?",
+    "correctAnswer": "Same active ingredient as brand, FDA-approved equivalent",
+    "incorrectAnswers": [
+      "Always weaker",
+      "No regulation",
+      "Different disease"
+    ],
+    "explanation": "Often lower cost.",
+    "keywords": [
+      "generic",
+      "fda"
+    ],
+    "source": "https://www.fda.gov/drugs/questions-answers/generic-drugs-questions-answers"
+  }
+]

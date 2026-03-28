@@ -1,0 +1,116 @@
+[
+  {
+    "category": "tech",
+    "navigationKeyword1": "security",
+    "navigationKeyword2": "sec-basics",
+    "question": "In the classic CIA triad, what does “integrity” refer to?",
+    "correctAnswer": "Data is accurate and has not been tampered with",
+    "incorrectAnswers": [
+      "Data is hidden from everyone",
+      "Systems are always offline",
+      "Passwords never expire"
+    ],
+    "explanation": "Integrity means unauthorized changes are prevented or detected so information stays trustworthy.",
+    "keywords": [
+      "security",
+      "cia-triad"
+    ],
+    "source": "https://en.wikipedia.org/wiki/CIA_triad",
+    "seedId": "4ef9a8cc-8281-5705-a54e-203fdd79ca54"
+  },
+  {
+    "category": "tech",
+    "navigationKeyword1": "security",
+    "navigationKeyword2": "sec-basics",
+    "question": "What is the main idea of defense in depth?",
+    "correctAnswer": "Layer multiple independent controls so one failure does not defeat security",
+    "incorrectAnswers": [
+      "Rely on a single perfect firewall",
+      "Remove all logging to save disk",
+      "Give every user admin rights"
+    ],
+    "explanation": "Independent layers such as identity, network filtering, and endpoint controls reduce single points of failure.",
+    "keywords": [
+      "security",
+      "defense-in-depth"
+    ],
+    "source": "https://csrc.nist.gov/glossary/term/defense_in_depth",
+    "seedId": "effdf491-1747-5116-86b7-71a420cb8799"
+  },
+  {
+    "category": "tech",
+    "navigationKeyword1": "security",
+    "navigationKeyword2": "sec-basics",
+    "question": "What does the principle of least privilege require?",
+    "correctAnswer": "Grant users and processes only the minimum access needed for their job",
+    "incorrectAnswers": [
+      "Everyone gets administrator access by default",
+      "Disable all authentication",
+      "Share one password across teams"
+    ],
+    "explanation": "Limiting rights shrinks the damage radius if an account is stolen or software is compromised.",
+    "keywords": [
+      "security",
+      "least-privilege"
+    ],
+    "source": "https://csrc.nist.gov/glossary/term/least_privilege",
+    "seedId": "eeaee150-6046-5d17-b537-0ade3c2ecdb6"
+  },
+  {
+    "category": "tech",
+    "navigationKeyword1": "security",
+    "navigationKeyword2": "sec-basics",
+    "question": "What is phishing?",
+    "correctAnswer": "Tricking people into revealing secrets or running malware via deceptive messages",
+    "incorrectAnswers": [
+      "A type of hardware firewall brand",
+      "Encrypting disks with AES automatically",
+      "A backup rotation schedule"
+    ],
+    "explanation": "Phishing targets humans using urgency and impersonation, so technical controls must pair with user training.",
+    "keywords": [
+      "security",
+      "phishing"
+    ],
+    "source": "https://www.cisa.gov/news-events/news/avoiding-social-engineering-and-phishing-attacks",
+    "seedId": "d4ad705a-7f51-5d18-9c9f-1f84cecd711c"
+  },
+  {
+    "category": "tech",
+    "navigationKeyword1": "security",
+    "navigationKeyword2": "sec-basics",
+    "question": "Why is timely patching important for security?",
+    "correctAnswer": "It closes known vulnerabilities attackers can otherwise exploit at scale",
+    "incorrectAnswers": [
+      "It removes the need for passwords",
+      "It guarantees zero downtime",
+      "It deletes all user data"
+    ],
+    "explanation": "Public advisories and exploit code mean unpatched systems are easy targets for automated scanning.",
+    "keywords": [
+      "security",
+      "patching"
+    ],
+    "source": "https://csrc.nist.gov/publications/detail/sp/800-40/rev-4/final",
+    "seedId": "7108f7c2-c90a-5d49-9a36-1befda0fadef"
+  },
+  {
+    "category": "tech",
+    "navigationKeyword1": "security",
+    "navigationKeyword2": "sec-basics",
+    "question": "What is malware?",
+    "correctAnswer": "Software designed to harm, steal data, or gain unauthorized access",
+    "incorrectAnswers": [
+      "Only hardware that overheats",
+      "Any open-source license",
+      "A cloud billing invoice"
+    ],
+    "explanation": "Malware is a broad category including viruses, ransomware, and spyware that subverts normal system behavior.",
+    "keywords": [
+      "security",
+      "malware"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Malware",
+    "seedId": "212e4ac9-1a62-5ac6-9b5b-6c15b5984041"
+  }
+]

@@ -7,6 +7,11 @@ internal static partial class StartupExtensions
 {
     public static WebApplicationBuilder AddPostgreSqlServices(this WebApplicationBuilder builder)
     {
+        string commandLine = Environment.CommandLine;
+        bool isOpenApiGeneration =
+            commandLine.Contains("dotnet-getdocument", StringComparison.OrdinalIgnoreCase) ||
+            commandLine.Contains("GetDocument.Insider", StringComparison.OrdinalIgnoreCase);
+
         // Aspire automatically provides connection string as "quizymode" (the database name)
         // Falls back to appsettings.json connection string if not running in Aspire
         string connectionString = builder.Configuration.GetConnectionString("quizymode") 
@@ -30,8 +35,12 @@ internal static partial class StartupExtensions
             }
         });
 
-        // Register DatabaseSeederHostedService for seeding
-        builder.Services.AddHostedService<Services.DatabaseSeederHostedService>();
+        if (!isOpenApiGeneration)
+        {
+            // Register DatabaseSeederHostedService for normal app startup. Skip it when the
+            // OpenAPI build tool boots the app solely to emit the contract document.
+            builder.Services.AddHostedService<Services.DatabaseSeederHostedService>();
+        }
 
         return builder;
     }

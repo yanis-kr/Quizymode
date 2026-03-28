@@ -1,0 +1,116 @@
+[
+  {
+    "category": "tech",
+    "navigationKeyword1": "web-dev",
+    "navigationKeyword2": "api-design",
+    "question": "OpenAPI documents describe HTTP APIs using which structured formats?",
+    "correctAnswer": "YAML or JSON",
+    "incorrectAnswers": [
+      "Only protobuf `.proto` files",
+      "Only GraphQL SDL",
+      "Only Markdown tables"
+    ],
+    "explanation": "OpenAPI (formerly Swagger) schemas are data models machines and tools can read for docs and codegen.",
+    "keywords": [
+      "openapi",
+      "specs"
+    ],
+    "source": "https://spec.openapis.org/oas/latest.html",
+    "seedId": "1a4e67b6-cddd-5300-b3bb-fba17c2baf9c"
+  },
+  {
+    "category": "tech",
+    "navigationKeyword1": "web-dev",
+    "navigationKeyword2": "api-design",
+    "question": "HTTP `401 Unauthorized` is appropriate when authentication is missing or failed. `403 Forbidden` means what?",
+    "correctAnswer": "The server understood the request but refuses to authorize it",
+    "incorrectAnswers": [
+      "The client must switch to FTP",
+      "The response body must be empty",
+      "The request was never received"
+    ],
+    "explanation": "`403` indicates the identity may be known but the action is not allowed, unlike `401` which challenges credentials.",
+    "keywords": [
+      "http",
+      "status-codes"
+    ],
+    "source": "https://www.rfc-editor.org/rfc/rfc9110.html#name-403-forbidden",
+    "seedId": "6c18f924-d2f5-5de9-9dc7-4f7b18d5eed3"
+  },
+  {
+    "category": "tech",
+    "navigationKeyword1": "web-dev",
+    "navigationKeyword2": "api-design",
+    "question": "RESTful resource design usually models entities as nouns addressed by what?",
+    "correctAnswer": "URIs representing resources",
+    "incorrectAnswers": [
+      "Only SOAP action names",
+      "Only TCP port numbers",
+      "Only SQL table locks"
+    ],
+    "explanation": "Resources like `/orders/42` identify things; HTTP methods express operations on those resources.",
+    "keywords": [
+      "rest",
+      "resources"
+    ],
+    "source": "https://restfulapi.net/resource-naming/",
+    "seedId": "9f78663d-4631-51ef-9968-838e61418c39"
+  },
+  {
+    "category": "tech",
+    "navigationKeyword1": "web-dev",
+    "navigationKeyword2": "api-design",
+    "question": "HATEOAS means clients discover next actions through what embedded in responses?",
+    "correctAnswer": "Hypermedia links",
+    "incorrectAnswers": [
+      "Only hard-coded client URLs",
+      "Only UDP broadcast addresses",
+      "Only CSV column order"
+    ],
+    "explanation": "Hypermedia as the engine of application state keeps clients decoupled from server URL construction.",
+    "keywords": [
+      "rest",
+      "hateoas"
+    ],
+    "source": "https://restfulapi.net/hateoas/",
+    "seedId": "e98542ca-8281-54d6-a35d-2e4ab75a9b38"
+  },
+  {
+    "category": "tech",
+    "navigationKeyword1": "web-dev",
+    "navigationKeyword2": "api-design",
+    "question": "Placing `/v2/` in a URL path is a common pattern to signal what to API consumers?",
+    "correctAnswer": "A breaking API version",
+    "incorrectAnswers": [
+      "TLS certificate rotation",
+      "Database shard selection",
+      "CSS framework version"
+    ],
+    "explanation": "Path or header versioning lets old clients keep calling `/v1` while new features ship under `/v2`.",
+    "keywords": [
+      "versioning",
+      "apis"
+    ],
+    "source": "https://swagger.io/blog/api-design-best-practices-in-large-organizations/",
+    "seedId": "ef0498d9-2158-5f19-bb00-7ae875cec6d0"
+  },
+  {
+    "category": "tech",
+    "navigationKeyword1": "web-dev",
+    "navigationKeyword2": "api-design",
+    "question": "The `Idempotency-Key` header is commonly used to make retries safe for which HTTP methods?",
+    "correctAnswer": "Non-idempotent methods such as POST",
+    "incorrectAnswers": [
+      "Only GET",
+      "Only OPTIONS",
+      "Only TRACE"
+    ],
+    "explanation": "Servers can recognize duplicate POSTs when clients resend the same key after timeouts.",
+    "keywords": [
+      "idempotency",
+      "apis"
+    ],
+    "source": "https://datatracker.ietf.org/doc/draft-ietf-httpapi-idempotency-key-header/",
+    "seedId": "a791b7c6-cec0-5775-978b-5cf89b883fe9"
+  }
+]

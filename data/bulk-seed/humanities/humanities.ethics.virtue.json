@@ -1,0 +1,40 @@
+[
+  {
+    "category": "humanities",
+    "navigationKeyword1": "ethics",
+    "navigationKeyword2": "virtue",
+    "question": "Virtue ethics emphasizes what most strongly?",
+    "correctAnswer": "character and habits",
+    "incorrectAnswers": [
+      "camera movement",
+      "court procedure",
+      "ticket design"
+    ],
+    "explanation": "Virtue ethics asks what kind of person one should become, not only which rule to follow.",
+    "keywords": [
+      "virtue-ethics",
+      "character"
+    ],
+    "source": "https://www.britannica.com/topic/virtue-ethics",
+    "seedId": "9061b7bf-c6e4-54aa-8a43-15cd555715ae"
+  },
+  {
+    "category": "humanities",
+    "navigationKeyword1": "ethics",
+    "navigationKeyword2": "virtue",
+    "question": "In virtue ethics, courage is best described as what?",
+    "correctAnswer": "a character trait",
+    "incorrectAnswers": [
+      "a tax policy",
+      "a verse pattern",
+      "a paint pigment"
+    ],
+    "explanation": "Virtues are stable traits or excellences of character.",
+    "keywords": [
+      "virtue-ethics",
+      "courage"
+    ],
+    "source": "https://plato.stanford.edu/entries/ethics-virtue/",
+    "seedId": "2b2705f3-a345-5e06-a403-3aa6aa387078"
+  }
+]

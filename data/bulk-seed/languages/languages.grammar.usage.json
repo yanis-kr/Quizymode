@@ -1,0 +1,122 @@
+[
+  {
+    "category": "languages",
+    "navigationKeyword1": "grammar",
+    "navigationKeyword2": "usage",
+    "question": "Which sentence uses \"fewer\" for things you can count?",
+    "correctAnswer": "We need fewer eggs for this recipe.",
+    "incorrectAnswers": [
+      "We need less eggs for this recipe.",
+      "We need fewer sugar for this recipe.",
+      "We need fewer water for this recipe."
+    ],
+    "explanation": "Traditional usage pairs \"fewer\" with countable nouns like \"eggs.\"",
+    "keywords": [
+      "fewer-less",
+      "countable",
+      "usage"
+    ],
+    "source": "https://www.merriam-webster.com/words-at-play/fewer-vs-less-usage",
+    "seedId": "97523c5d-57d6-5996-832e-5a2665f5c975"
+  },
+  {
+    "category": "languages",
+    "navigationKeyword1": "grammar",
+    "navigationKeyword2": "usage",
+    "question": "Which word completes this sentence? \"She speaks English very ___.\"",
+    "correctAnswer": "well",
+    "incorrectAnswers": [
+      "good",
+      "nice",
+      "happy"
+    ],
+    "explanation": "Use the adverb \"well\" to describe how an action is done. \"Good\" is an adjective and does not fit after the verb here.",
+    "keywords": [
+      "good-well",
+      "adverbs",
+      "usage"
+    ],
+    "source": "https://learnenglish.britishcouncil.org/grammar/a1-a2-grammar/adjectives-and-adverbs",
+    "seedId": "dcff3f41-54e0-5a20-a24e-61af4febf1f3"
+  },
+  {
+    "category": "languages",
+    "navigationKeyword1": "grammar",
+    "navigationKeyword2": "usage",
+    "question": "Which sentence uses the possessive \"its\" correctly?",
+    "correctAnswer": "The company changed its name.",
+    "incorrectAnswers": [
+      "The company changed it's name.",
+      "The company changed its' name.",
+      "The company changed it name."
+    ],
+    "explanation": "Possessive \"its\" has no apostrophe; \"it's\" always means \"it is\" or \"it has.\"",
+    "keywords": [
+      "its-its",
+      "possessive",
+      "usage"
+    ],
+    "source": "https://owl.purdue.edu/owl/general_writing/grammar/its_versus_its/index.html",
+    "seedId": "3ffba844-0743-59a8-a400-5bfa235c641c"
+  },
+  {
+    "category": "languages",
+    "navigationKeyword1": "grammar",
+    "navigationKeyword2": "usage",
+    "question": "Which pair matches \"bring\" for movement toward the speaker's place?",
+    "correctAnswer": "Can you bring the chairs here?",
+    "incorrectAnswers": [
+      "Can you take the chairs here?",
+      "Can you carry the chairs nowhere?",
+      "Can you bring the chairs away only?"
+    ],
+    "explanation": "Many learners use \"bring\" for coming toward the speaker or destination and \"take\" for movement away.",
+    "keywords": [
+      "bring-take",
+      "direction",
+      "usage"
+    ],
+    "source": "https://dictionary.cambridge.org/grammar/british-grammar/bring-or-take-from-english-grammar-today",
+    "seedId": "6905195e-b1f7-5e8b-97b0-600e41d6b1f4"
+  },
+  {
+    "category": "languages",
+    "navigationKeyword1": "grammar",
+    "navigationKeyword2": "usage",
+    "question": "Which sentence uses \"listen\" with the right partner word?",
+    "correctAnswer": "Please listen to the instructions.",
+    "incorrectAnswers": [
+      "Please listen the instructions.",
+      "Please listen at the instructions.",
+      "Please listen on the instructions."
+    ],
+    "explanation": "The verb \"listen\" often needs \"to\" before the object in English.",
+    "keywords": [
+      "listen",
+      "prepositions",
+      "usage"
+    ],
+    "source": "https://learnenglish.britishcouncil.org/grammar/a1-a2-grammar/verbs-prepositions",
+    "seedId": "9da633f6-a320-58ef-a7e1-c3050ed7d84c"
+  },
+  {
+    "category": "languages",
+    "navigationKeyword1": "grammar",
+    "navigationKeyword2": "usage",
+    "question": "Which sentence uses \"say\" in a typical pattern?",
+    "correctAnswer": "What did she say?",
+    "incorrectAnswers": [
+      "What did she say me?",
+      "What did she tell to?",
+      "What did she tell about to you strictly?"
+    ],
+    "explanation": "\"Say\" often focuses on words without a required indirect object; \"tell\" more often needs a person as an object.",
+    "keywords": [
+      "say-tell",
+      "reporting-speech",
+      "usage"
+    ],
+    "source": "https://learnenglish.britishcouncil.org/grammar/a1-a2-grammar/say-or-tell",
+    "seedId": "671d1a89-5325-54d4-83d7-46eed870752a"
+  }
+]

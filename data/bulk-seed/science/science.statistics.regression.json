@@ -1,0 +1,230 @@
+[
+  {
+    "seedId": "aea52418-5fe7-4f05-a818-df506a468ff4",
+    "category": "science",
+    "navigationKeyword1": "statistics",
+    "navigationKeyword2": "regression",
+    "question": "Simple linear regression models?",
+    "correctAnswer": "E[Y|x] \u2248 \u03b20 + \u03b21 x",
+    "incorrectAnswers": [
+      "Exponential only",
+      "No error term",
+      "Only categorical x"
+    ],
+    "explanation": "Least squares estimates common.",
+    "keywords": [
+      "linear-regression",
+      "model"
+    ],
+    "source": "https://openstax.org/books/introductory-statistics/pages/13-1-linear-equations"
+  },
+  {
+    "seedId": "6ebb413a-7513-4a3e-ab8c-3ca11c861ae2",
+    "category": "science",
+    "navigationKeyword1": "statistics",
+    "navigationKeyword2": "regression",
+    "question": "Slope interpretation?",
+    "correctAnswer": "Change in predicted Y per +1 in X",
+    "incorrectAnswers": [
+      "Percent change always",
+      "Correlation always",
+      "Intercept change"
+    ],
+    "explanation": "Holding model linear.",
+    "keywords": [
+      "slope",
+      "regression"
+    ],
+    "source": "https://openstax.org/books/introductory-statistics/pages/13-2-the-regression-equation"
+  },
+  {
+    "seedId": "7d7df413-71f5-4549-bbee-79fd546f8a48",
+    "category": "science",
+    "navigationKeyword1": "statistics",
+    "navigationKeyword2": "regression",
+    "question": "R^2 in linear regression?",
+    "correctAnswer": "Fraction of variance explained (OLS)",
+    "incorrectAnswers": [
+      "Always causal strength",
+      "Always >1",
+      "Same as slope"
+    ],
+    "explanation": "Can inflate with many predictors.",
+    "keywords": [
+      "r-squared",
+      "fit"
+    ],
+    "source": "https://openstax.org/books/introductory-statistics/pages/13-3-testing-the-significance-of-the-correlation-coefficient"
+  },
+  {
+    "seedId": "5199de0a-bb02-41a5-9512-b57be764e4e1",
+    "category": "science",
+    "navigationKeyword1": "statistics",
+    "navigationKeyword2": "regression",
+    "question": "Residual?",
+    "correctAnswer": "Observed \u2212 predicted",
+    "incorrectAnswers": [
+      "Predicted \u2212 observed always positive",
+      "Only SD",
+      "Mean always"
+    ],
+    "explanation": "Diagnostic plots.",
+    "keywords": [
+      "residual",
+      "diagnostics"
+    ],
+    "source": "https://openstax.org/books/introductory-statistics/pages/13-4-prediction"
+  },
+  {
+    "seedId": "27dc4994-4244-4a1a-81e8-b9334ec7aaf0",
+    "category": "science",
+    "navigationKeyword1": "statistics",
+    "navigationKeyword2": "regression",
+    "question": "Extrapolation risk?",
+    "correctAnswer": "Predict outside training X range unreliable",
+    "incorrectAnswers": [
+      "Always safe",
+      "Only polynomial",
+      "Never a problem"
+    ],
+    "explanation": "Model may not hold.",
+    "keywords": [
+      "extrapolation",
+      "prediction"
+    ],
+    "source": "https://openstax.org/books/introductory-statistics/pages/13-4-prediction"
+  },
+  {
+    "seedId": "98a1ffee-72a0-4a76-b29d-cd5f1499fea4",
+    "category": "science",
+    "navigationKeyword1": "statistics",
+    "navigationKeyword2": "regression",
+    "question": "Correlation vs regression?",
+    "correctAnswer": "Correlation standardized association; regression predicts/explains",
+    "incorrectAnswers": [
+      "Same number always",
+      "Never related",
+      "Only causation"
+    ],
+    "explanation": "r related to standardized slope.",
+    "keywords": [
+      "correlation",
+      "regression"
+    ],
+    "source": "https://openstax.org/books/introductory-statistics/pages/13-3-testing-the-significance-of-the-correlation-coefficient"
+  },
+  {
+    "seedId": "5f63b02d-17b4-43b1-9c38-5fac0ea915c0",
+    "category": "science",
+    "navigationKeyword1": "statistics",
+    "navigationKeyword2": "regression",
+    "question": "Homoscedasticity?",
+    "correctAnswer": "Residual variance constant across fitted values",
+    "incorrectAnswers": [
+      "Variance always zero",
+      "Only outliers",
+      "Never checked"
+    ],
+    "explanation": "Classic OLS assumption.",
+    "keywords": [
+      "homoscedasticity",
+      "assumptions"
+    ],
+    "source": "https://openstax.org/books/introductory-statistics/pages/13-5-outliers-and-influential-points"
+  },
+  {
+    "seedId": "542e4bb5-1fe8-418c-9dea-75497986c3b7",
+    "category": "science",
+    "navigationKeyword1": "statistics",
+    "navigationKeyword2": "regression",
+    "question": "Influential point?",
+    "correctAnswer": "Can strongly change fit (leverage + residual)",
+    "incorrectAnswers": [
+      "Always an outlier in Y only",
+      "Never exists",
+      "Same as high leverage always"
+    ],
+    "explanation": "Cook\u2019s distance etc.",
+    "keywords": [
+      "influential",
+      "diagnostics"
+    ],
+    "source": "https://openstax.org/books/introductory-statistics/pages/13-5-outliers-and-influential-points"
+  },
+  {
+    "seedId": "aadb16b6-38ce-49c4-9ed4-9a06a48fcdcd",
+    "category": "science",
+    "navigationKeyword1": "statistics",
+    "navigationKeyword2": "regression",
+    "question": "Multicollinearity issue?",
+    "correctAnswer": "Correlated predictors inflate variance of estimates",
+    "incorrectAnswers": [
+      "Always good",
+      "Only logistic",
+      "Removes residuals"
+    ],
+    "explanation": "VIF diagnostics.",
+    "keywords": [
+      "multicollinearity",
+      "regression"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Multicollinearity"
+  },
+  {
+    "seedId": "2aeb13d5-dbbd-4520-95b6-de8eda6218d9",
+    "category": "science",
+    "navigationKeyword1": "statistics",
+    "navigationKeyword2": "regression",
+    "question": "Logistic regression outcome?",
+    "correctAnswer": "Binary or categorical probabilities",
+    "incorrectAnswers": [
+      "Always continuous normal",
+      "Always counts",
+      "No link function"
+    ],
+    "explanation": "Logit link.",
+    "keywords": [
+      "logistic",
+      "glm"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Logistic_regression"
+  },
+  {
+    "seedId": "2bfec8f0-9416-4446-9e82-66f65595b217",
+    "category": "science",
+    "navigationKeyword1": "statistics",
+    "navigationKeyword2": "regression",
+    "question": "Overfitting?",
+    "correctAnswer": "Model fits noise; poor generalization",
+    "incorrectAnswers": [
+      "Always desirable",
+      "Only when R^2 low",
+      "Impossible in training"
+    ],
+    "explanation": "Regularization/cross-validation help.",
+    "keywords": [
+      "overfitting",
+      "ml"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Overfitting"
+  },
+  {
+    "seedId": "ed8015e8-4bde-42ed-901c-583aee52b83b",
+    "category": "science",
+    "navigationKeyword1": "statistics",
+    "navigationKeyword2": "regression",
+    "question": "Confounder?",
+    "correctAnswer": "Third variable affecting X and Y; distorts crude association",
+    "incorrectAnswers": [
+      "Always mediator",
+      "Cannot adjust",
+      "Same as collider always"
+    ],
+    "explanation": "Design and adjustment matter.",
+    "keywords": [
+      "confounding",
+      "causal"
+    ],
+    "source": "https://www.cdc.gov/evaluation/guide/concepts/index.html"
+  }
+]

@@ -1,0 +1,1094 @@
+{
+  "sin-cos-tan": [
+    {
+      "question": "sin \u03b8 in right triangle?",
+      "correctAnswer": "opposite / hypotenuse",
+      "incorrectAnswers": [
+        "adjacent / hypotenuse",
+        "opposite / adjacent",
+        "hypotenuse / opposite"
+      ],
+      "explanation": "SOH.",
+      "keywords": [
+        "sine",
+        "right-triangle"
+      ],
+      "source": "https://openstax.org/books/precalculus-2e/pages/7-2-right-triangle-trigonometry"
+    },
+    {
+      "question": "cos \u03b8?",
+      "correctAnswer": "adjacent / hypotenuse",
+      "incorrectAnswers": [
+        "opposite / hypotenuse",
+        "1/sin always",
+        "tan/sin"
+      ],
+      "explanation": "CAH.",
+      "keywords": [
+        "cosine",
+        "right-triangle"
+      ],
+      "source": "https://openstax.org/books/precalculus-2e/pages/7-2-right-triangle-trigonometry"
+    },
+    {
+      "question": "tan \u03b8?",
+      "correctAnswer": "opposite / adjacent = sin/cos",
+      "incorrectAnswers": [
+        "adjacent/opposite",
+        "hypotenuse/adjacent",
+        "cos/sin always"
+      ],
+      "explanation": "TOA.",
+      "keywords": [
+        "tangent",
+        "right-triangle"
+      ],
+      "source": "https://openstax.org/books/precalculus-2e/pages/7-2-right-triangle-trigonometry"
+    },
+    {
+      "question": "sin^2 \u03b8 + cos^2 \u03b8?",
+      "correctAnswer": "1",
+      "incorrectAnswers": [
+        "0",
+        "2",
+        "tan \u03b8"
+      ],
+      "explanation": "Pythagorean identity.",
+      "keywords": [
+        "pythagorean-identity",
+        "trig"
+      ],
+      "source": "https://openstax.org/books/precalculus-2e/pages/7-2-right-triangle-trigonometry"
+    },
+    {
+      "question": "sec \u03b8?",
+      "correctAnswer": "1/cos \u03b8",
+      "incorrectAnswers": [
+        "1/sin",
+        "cos \u03b8",
+        "tan \u03b8"
+      ],
+      "explanation": "Reciprocal function.",
+      "keywords": [
+        "secant",
+        "reciprocal"
+      ],
+      "source": "https://openstax.org/books/precalculus-2e/pages/7-2-right-triangle-trigonometry"
+    },
+    {
+      "question": "cot \u03b8?",
+      "correctAnswer": "cos \u03b8 / sin \u03b8",
+      "incorrectAnswers": [
+        "sin/cos",
+        "1/sin",
+        "tan \u03b8"
+      ],
+      "explanation": "Reciprocal of tan.",
+      "keywords": [
+        "cotangent",
+        "reciprocal"
+      ],
+      "source": "https://openstax.org/books/precalculus-2e/pages/7-2-right-triangle-trigonometry"
+    },
+    {
+      "question": "sin(90\u00b0 \u2212 \u03b8)?",
+      "correctAnswer": "cos \u03b8",
+      "incorrectAnswers": [
+        "sin \u03b8",
+        "tan \u03b8",
+        "\u2212cos \u03b8"
+      ],
+      "explanation": "Co-function identity.",
+      "keywords": [
+        "cofunction",
+        "identities"
+      ],
+      "source": "https://openstax.org/books/precalculus-2e/pages/7-2-right-triangle-trigonometry"
+    },
+    {
+      "question": "tan \u03b8 undefined when?",
+      "correctAnswer": "cos \u03b8 = 0",
+      "incorrectAnswers": [
+        "sin \u03b8 = 0",
+        "Never",
+        "\u03b8 = 0 only"
+      ],
+      "explanation": "Vertical asymptotes in graph.",
+      "keywords": [
+        "domain",
+        "tangent"
+      ],
+      "source": "https://openstax.org/books/precalculus-2e/pages/7-4-the-other-trigonometric-functions"
+    },
+    {
+      "question": "Reference angle for 210\u00b0?",
+      "correctAnswer": "30\u00b0",
+      "incorrectAnswers": [
+        "60\u00b0",
+        "45\u00b0",
+        "210\u00b0"
+      ],
+      "explanation": "Third quadrant reference to x-axis.",
+      "keywords": [
+        "reference-angle",
+        "degrees"
+      ],
+      "source": "https://openstax.org/books/precalculus-2e/pages/7-2-right-triangle-trigonometry"
+    },
+    {
+      "question": "sin(\u2212\u03b8)?",
+      "correctAnswer": "\u2212sin \u03b8 (sin is odd)",
+      "incorrectAnswers": [
+        "sin \u03b8",
+        "cos \u03b8",
+        "tan \u03b8"
+      ],
+      "explanation": "Odd function property.",
+      "keywords": [
+        "odd-function",
+        "sine"
+      ],
+      "source": "https://openstax.org/books/precalculus-2e/pages/7-3-unit-circle-sine-and-cosine-functions"
+    },
+    {
+      "question": "cos(\u2212\u03b8)?",
+      "correctAnswer": "cos \u03b8 (cos is even)",
+      "incorrectAnswers": [
+        "\u2212cos \u03b8",
+        "sin \u03b8",
+        "tan \u03b8"
+      ],
+      "explanation": "Even function property.",
+      "keywords": [
+        "even-function",
+        "cosine"
+      ],
+      "source": "https://openstax.org/books/precalculus-2e/pages/7-3-unit-circle-sine-and-cosine-functions"
+    },
+    {
+      "question": "Exact sin 30\u00b0?",
+      "correctAnswer": "1/2",
+      "incorrectAnswers": [
+        "\u221a2/2",
+        "\u221a3/2",
+        "1"
+      ],
+      "explanation": "Special triangle.",
+      "keywords": [
+        "special-angles",
+        "sine"
+      ],
+      "source": "https://www.mathsisfun.com/sine-cosine-tangent.html"
+    }
+  ],
+  "unit-circle": [
+    {
+      "question": "Unit circle definition?",
+      "correctAnswer": "Circle radius 1 centered at origin",
+      "incorrectAnswers": [
+        "Radius 2",
+        "Only upper half",
+        "No coordinates"
+      ],
+      "explanation": "x^2+y^2=1.",
+      "keywords": [
+        "unit-circle",
+        "definition"
+      ],
+      "source": "https://openstax.org/books/precalculus-2e/pages/7-3-unit-circle-sine-and-cosine-functions"
+    },
+    {
+      "question": "On unit circle, cos \u03b8 and sin \u03b8 are?",
+      "correctAnswer": "x and y coordinates of point at angle \u03b8",
+      "incorrectAnswers": [
+        "r and \u03b8",
+        "tan and sec",
+        "hypotenuse and adjacent"
+      ],
+      "explanation": "From standard position.",
+      "keywords": [
+        "coordinates",
+        "unit-circle"
+      ],
+      "source": "https://openstax.org/books/precalculus-2e/pages/7-3-unit-circle-sine-and-cosine-functions"
+    },
+    {
+      "question": "Angle 0 rad on unit circle point?",
+      "correctAnswer": "(1, 0)",
+      "incorrectAnswers": [
+        "0,1",
+        "(0,0)",
+        "(\u22121,0)"
+      ],
+      "explanation": "cos=1, sin=0.",
+      "keywords": [
+        "radians",
+        "unit-circle"
+      ],
+      "source": "https://openstax.org/books/precalculus-2e/pages/7-3-unit-circle-sine-and-cosine-functions"
+    },
+    {
+      "question": "\u03c0/2 radians?",
+      "correctAnswer": "90\u00b0",
+      "incorrectAnswers": [
+        "45\u00b0",
+        "180\u00b0",
+        "60\u00b0"
+      ],
+      "explanation": "Conversion \u03c0 rad = 180\u00b0.",
+      "keywords": [
+        "radians",
+        "degrees"
+      ],
+      "source": "https://www.mathsisfun.com/geometry/radians.html"
+    },
+    {
+      "question": "Period of sin and cos?",
+      "correctAnswer": "2\u03c0 radians",
+      "incorrectAnswers": [
+        "\u03c0",
+        "1",
+        "4\u03c0"
+      ],
+      "explanation": "Repeats every full turn.",
+      "keywords": [
+        "period",
+        "sinusoid"
+      ],
+      "source": "https://openstax.org/books/precalculus-2e/pages/7-3-unit-circle-sine-and-cosine-functions"
+    },
+    {
+      "question": "Period of tan?",
+      "correctAnswer": "\u03c0 radians",
+      "incorrectAnswers": [
+        "2\u03c0",
+        "\u03c0/2",
+        "1"
+      ],
+      "explanation": "Asymptotes every half turn.",
+      "keywords": [
+        "tangent-period",
+        "unit-circle"
+      ],
+      "source": "https://openstax.org/books/precalculus-2e/pages/7-4-the-other-trigonometric-functions"
+    },
+    {
+      "question": "Pythagorean identity 1 + tan^2 \u03b8?",
+      "correctAnswer": "sec^2 \u03b8",
+      "incorrectAnswers": [
+        "csc^2 \u03b8",
+        "1",
+        "cos^2 \u03b8"
+      ],
+      "explanation": "Divide sin^2+cos^2=1 by cos^2.",
+      "keywords": [
+        "pythagorean",
+        "identities"
+      ],
+      "source": "https://openstax.org/books/precalculus-2e/pages/7-1-solving-trigonometric-equations-with-identities"
+    },
+    {
+      "question": "Arc length on circle radius r, angle \u03b8 rad?",
+      "correctAnswer": "s = r\u03b8",
+      "incorrectAnswers": [
+        "s = r/\u03b8",
+        "s = r^2 \u03b8",
+        "s = \u03b8/r"
+      ],
+      "explanation": "Radian definition motivation.",
+      "keywords": [
+        "arc-length",
+        "radians"
+      ],
+      "source": "https://openstax.org/books/precalculus-2e/pages/7-3-unit-circle-sine-and-cosine-functions"
+    },
+    {
+      "question": "Sector area (\u03b8 radians)?",
+      "correctAnswer": "(1/2) r^2 \u03b8",
+      "incorrectAnswers": [
+        "r \u03b8",
+        "\u03c0 r^2",
+        "2\u03c0r"
+      ],
+      "explanation": "Proportional to angle.",
+      "keywords": [
+        "sector-area",
+        "geometry"
+      ],
+      "source": "https://openstax.org/books/precalculus-2e/pages/7-3-unit-circle-sine-and-cosine-functions"
+    },
+    {
+      "question": "Quadrant signs for sin cos?",
+      "correctAnswer": "ASTC mnemonic (All, Sin, Tan, Cos positive by quadrant)",
+      "incorrectAnswers": [
+        "Always all positive",
+        "Sin always positive",
+        "Cos always positive"
+      ],
+      "explanation": "Know signs from coordinates.",
+      "keywords": [
+        "astc",
+        "signs"
+      ],
+      "source": "https://www.mathsisfun.com/algebra/trig-four-quadrants.html"
+    },
+    {
+      "question": "Coterminal angles?",
+      "correctAnswer": "Differ by full rotations 360\u00b0 or 2\u03c0",
+      "incorrectAnswers": [
+        "Always equal sine",
+        "Cannot share terminal side",
+        "Only acute"
+      ],
+      "explanation": "Same terminal side.",
+      "keywords": [
+        "coterminal",
+        "angles"
+      ],
+      "source": "https://openstax.org/books/precalculus-2e/pages/7-3-unit-circle-sine-and-cosine-functions"
+    },
+    {
+      "question": "Degrees to radians?",
+      "correctAnswer": "multiply by \u03c0/180",
+      "incorrectAnswers": [
+        "multiply by 180/\u03c0",
+        "multiply by 2\u03c0",
+        "divide by \u03c0"
+      ],
+      "explanation": "Radians = degrees \u00d7 \u03c0/180 (180/\u03c0 converts radians to degrees).",
+      "keywords": [
+        "conversion",
+        "radians"
+      ],
+      "source": "https://www.mathsisfun.com/geometry/radians.html"
+    }
+  ],
+  "identities": [
+    {
+      "question": "sin(a+b)?",
+      "correctAnswer": "sin a cos b + cos a sin b",
+      "incorrectAnswers": [
+        "sin a + sin b",
+        "cos(a+b)",
+        "sin a cos b only"
+      ],
+      "explanation": "Sum identity.",
+      "keywords": [
+        "sum-formula",
+        "sine"
+      ],
+      "source": "https://openstax.org/books/precalculus-2e/pages/7-2-sum-and-difference-identities"
+    },
+    {
+      "question": "cos(a+b)?",
+      "correctAnswer": "cos a cos b \u2212 sin a sin b",
+      "incorrectAnswers": [
+        "cos a + cos b",
+        "sin(a+b)",
+        "cos a sin b + sin a cos b"
+      ],
+      "explanation": "Watch minus sign.",
+      "keywords": [
+        "sum-formula",
+        "cosine"
+      ],
+      "source": "https://openstax.org/books/precalculus-2e/pages/7-2-sum-and-difference-identities"
+    },
+    {
+      "question": "sin(2\u03b8)?",
+      "correctAnswer": "2 sin \u03b8 cos \u03b8",
+      "incorrectAnswers": [
+        "sin^2 \u03b8",
+        "2 sin \u03b8",
+        "cos^2 \u03b8"
+      ],
+      "explanation": "Double-angle.",
+      "keywords": [
+        "double-angle",
+        "sine"
+      ],
+      "source": "https://openstax.org/books/precalculus-2e/pages/7-3-double-angle-half-angle-reduction-formulas"
+    },
+    {
+      "question": "cos(2\u03b8) form with cos only?",
+      "correctAnswer": "2 cos^2 \u03b8 \u2212 1",
+      "incorrectAnswers": [
+        "1 \u2212 2 sin \u03b8",
+        "cos^2 \u03b8",
+        "2 cos \u03b8"
+      ],
+      "explanation": "Multiple equivalent forms.",
+      "keywords": [
+        "double-angle",
+        "cosine"
+      ],
+      "source": "https://openstax.org/books/precalculus-2e/pages/7-3-double-angle-half-angle-reduction-formulas"
+    },
+    {
+      "question": "sin^2 \u03b8 half-angle?",
+      "correctAnswer": "(1 \u2212 cos 2\u03b8)/2",
+      "incorrectAnswers": [
+        "(1+cos2\u03b8)/2",
+        "sin 2\u03b8",
+        "1/2"
+      ],
+      "explanation": "Power-reducing.",
+      "keywords": [
+        "half-angle",
+        "power-reducing"
+      ],
+      "source": "https://openstax.org/books/precalculus-2e/pages/7-3-double-angle-half-angle-reduction-formulas"
+    },
+    {
+      "question": "tan(a+b)?",
+      "correctAnswer": "(tan a + tan b)/(1 \u2212 tan a tan b)",
+      "incorrectAnswers": [
+        "tan a + tan b",
+        "tan a tan b",
+        "tan(a\u2212b) always"
+      ],
+      "explanation": "Denominator can be zero.",
+      "keywords": [
+        "sum-formula",
+        "tangent"
+      ],
+      "source": "https://openstax.org/books/precalculus-2e/pages/7-2-sum-and-difference-identities"
+    },
+    {
+      "question": "Law of sines?",
+      "correctAnswer": "a/sin A = b/sin B = c/sin C",
+      "incorrectAnswers": [
+        "a^2 = b^2+c^2",
+        "a = b sin C",
+        "sin A = a"
+      ],
+      "explanation": "For any triangle.",
+      "keywords": [
+        "law-of-sines",
+        "triangle"
+      ],
+      "source": "https://openstax.org/books/precalculus-2e/pages/7-4-non-right-triangles-law-of-sines"
+    },
+    {
+      "question": "Law of cosines (find c)?",
+      "correctAnswer": "c^2 = a^2 + b^2 \u2212 2ab cos C",
+      "incorrectAnswers": [
+        "c^2 = a^2 + b^2",
+        "c = a + b",
+        "c^2 = 2ab cos C"
+      ],
+      "explanation": "Generalizes Pythagorean.",
+      "keywords": [
+        "law-of-cosines",
+        "triangle"
+      ],
+      "source": "https://openstax.org/books/precalculus-2e/pages/7-3-non-right-triangles-law-of-cosines"
+    },
+    {
+      "question": "sin^2 \u03b8 + cos^2 \u03b8 used to?",
+      "correctAnswer": "Derive other identities",
+      "incorrectAnswers": [
+        "Prove triangles right",
+        "Eliminate \u03b8 always",
+        "Compute determinants"
+      ],
+      "explanation": "Fundamental.",
+      "keywords": [
+        "identities",
+        "pythagorean"
+      ],
+      "source": "https://openstax.org/books/precalculus-2e/pages/7-1-solving-trigonometric-equations-with-identities"
+    },
+    {
+      "question": "sec^2 \u03b8 = ?",
+      "correctAnswer": "1 + tan^2 \u03b8",
+      "incorrectAnswers": [
+        "1 \u2212 tan^2 \u03b8",
+        "tan^2 \u03b8",
+        "sin^2 \u03b8"
+      ],
+      "explanation": "Pythagorean variant.",
+      "keywords": [
+        "secant",
+        "identities"
+      ],
+      "source": "https://openstax.org/books/precalculus-2e/pages/7-1-solving-trigonometric-equations-with-identities"
+    },
+    {
+      "question": "sin \u03b8 cos \u03b8 in double-angle?",
+      "correctAnswer": "(1/2) sin 2\u03b8",
+      "incorrectAnswers": [
+        "sin 2\u03b8",
+        "cos 2\u03b8",
+        "tan 2\u03b8"
+      ],
+      "explanation": "Useful integral identity.",
+      "keywords": [
+        "product-to-sum",
+        "identities"
+      ],
+      "source": "https://openstax.org/books/precalculus-2e/pages/7-3-double-angle-half-angle-reduction-formulas"
+    },
+    {
+      "question": "cos A cos B product-to-sum?",
+      "correctAnswer": "(1/2)[cos(A\u2212B)+cos(A+B)]",
+      "incorrectAnswers": [
+        "sin(A+B)",
+        "cos(A+B) only",
+        "cos A + cos B"
+      ],
+      "explanation": "Integrate products of sinusoids.",
+      "keywords": [
+        "product-to-sum",
+        "identities"
+      ],
+      "source": "https://openstax.org/books/precalculus-2e/pages/7-4-sum-to-product-and-product-to-sum-formulas"
+    }
+  ],
+  "graphs": [
+    {
+      "question": "Amplitude of y = A sin x?",
+      "correctAnswer": "|A|",
+      "incorrectAnswers": [
+        "A^2",
+        "2\u03c0",
+        "\u03c0"
+      ],
+      "explanation": "Half peak-to-trough for standard midline 0.",
+      "keywords": [
+        "amplitude",
+        "sinusoid"
+      ],
+      "source": "https://openstax.org/books/precalculus-2e/pages/7-5-graphs-of-the-sine-and-cosine-functions"
+    },
+    {
+      "question": "Period of y = sin(Bx)?",
+      "correctAnswer": "2\u03c0/|B|",
+      "incorrectAnswers": [
+        "2\u03c0B",
+        "\u03c0/B only always",
+        "B/2\u03c0"
+      ],
+      "explanation": "Horizontal stretch.",
+      "keywords": [
+        "period",
+        "transform"
+      ],
+      "source": "https://openstax.org/books/precalculus-2e/pages/7-5-graphs-of-the-sine-and-cosine-functions"
+    },
+    {
+      "question": "Phase shift y = sin(x \u2212 C)?",
+      "correctAnswer": "C units to the right",
+      "incorrectAnswers": [
+        "C left",
+        "No shift",
+        "2C right"
+      ],
+      "explanation": "Inside (x\u2212C).",
+      "keywords": [
+        "phase-shift",
+        "graph"
+      ],
+      "source": "https://openstax.org/books/precalculus-2e/pages/7-5-graphs-of-the-sine-and-cosine-functions"
+    },
+    {
+      "question": "Vertical shift D in y = D + A sin(Bx)?",
+      "correctAnswer": "Midline y = D",
+      "incorrectAnswers": [
+        "Amplitude",
+        "Period",
+        "Phase"
+      ],
+      "explanation": "Oscillation centers at D.",
+      "keywords": [
+        "midline",
+        "sinusoid"
+      ],
+      "source": "https://openstax.org/books/precalculus-2e/pages/7-5-graphs-of-the-sine-and-cosine-functions"
+    },
+    {
+      "question": "Cosine vs sine graph relation?",
+      "correctAnswer": "Cosine is sine shifted \u03c0/2",
+      "incorrectAnswers": [
+        "Identical",
+        "Reflection only",
+        "No relation"
+      ],
+      "explanation": "Phase difference.",
+      "keywords": [
+        "cosine-graph",
+        "phase"
+      ],
+      "source": "https://openstax.org/books/precalculus-2e/pages/7-5-graphs-of-the-sine-and-cosine-functions"
+    },
+    {
+      "question": "Tangent graph asymptotes?",
+      "correctAnswer": "Where cos x = 0",
+      "incorrectAnswers": [
+        "sin x = 0",
+        "Never",
+        "Every \u03c0/4"
+      ],
+      "explanation": "Vertical asymptotes.",
+      "keywords": [
+        "tangent-graph",
+        "asymptotes"
+      ],
+      "source": "https://openstax.org/books/precalculus-2e/pages/7-6-graphs-of-other-trigonometric-functions"
+    },
+    {
+      "question": "Inverse sin arcsin domain?",
+      "correctAnswer": "[\u22121, 1] (inputs); range principal [\u2212\u03c0/2, \u03c0/2]",
+      "incorrectAnswers": [
+        "All reals",
+        "[0,\u03c0]",
+        "Only positive"
+      ],
+      "explanation": "Restricted to function.",
+      "keywords": [
+        "arcsin",
+        "inverse-trig"
+      ],
+      "source": "https://openstax.org/books/precalculus-2e/pages/7-6-inverse-trigonometric-functions"
+    },
+    {
+      "question": "Inverse cos principal range?",
+      "correctAnswer": "[0, \u03c0]",
+      "incorrectAnswers": [
+        "[\u2212\u03c0/2, \u03c0/2]",
+        "[0,2\u03c0]",
+        "(0,1)"
+      ],
+      "explanation": "Arccos outputs.",
+      "keywords": [
+        "arccos",
+        "inverse-trig"
+      ],
+      "source": "https://openstax.org/books/precalculus-2e/pages/7-6-inverse-trigonometric-functions"
+    },
+    {
+      "question": "Inverse tan principal range?",
+      "correctAnswer": "(\u2212\u03c0/2, \u03c0/2)",
+      "incorrectAnswers": [
+        "[0,\u03c0]",
+        "All reals",
+        "(0,\u03c0)"
+      ],
+      "explanation": "Continuous branch.",
+      "keywords": [
+        "arctan",
+        "inverse-trig"
+      ],
+      "source": "https://openstax.org/books/precalculus-2e/pages/7-6-inverse-trigonometric-functions"
+    },
+    {
+      "question": "Simple harmonic motion model?",
+      "correctAnswer": "x(t) = A cos(\u03c9t + \u03c6) etc.",
+      "incorrectAnswers": [
+        "Linear only",
+        "Exponential only",
+        "Constant only"
+      ],
+      "explanation": "\u03c9 angular frequency.",
+      "keywords": [
+        "harmonic-motion",
+        "physics"
+      ],
+      "source": "https://openstax.org/books/university-physics-volume-1/pages/15-2-simple-harmonic-motion"
+    },
+    {
+      "question": "Fourier idea (informal)?",
+      "correctAnswer": "Build signals from sinusoids",
+      "incorrectAnswers": [
+        "Only polynomials",
+        "Only steps",
+        "Impossible"
+      ],
+      "explanation": "Spectrum analysis.",
+      "keywords": [
+        "fourier",
+        "signal"
+      ],
+      "source": "https://en.wikipedia.org/wiki/Fourier_analysis"
+    },
+    {
+      "question": "Graph y = sec x vertical asymptotes where?",
+      "correctAnswer": "cos x = 0",
+      "incorrectAnswers": [
+        "sin x = 0",
+        "tan x = 0",
+        "Never"
+      ],
+      "explanation": "Reciprocal of cos.",
+      "keywords": [
+        "secant-graph",
+        "asymptotes"
+      ],
+      "source": "https://openstax.org/books/precalculus-2e/pages/7-6-graphs-of-other-trigonometric-functions"
+    }
+  ],
+  "triangles": [
+    {
+      "question": "Solve right triangle given two sides?",
+      "correctAnswer": "Use Pythagorean theorem + trig ratios",
+      "incorrectAnswers": [
+        "Law of sines only",
+        "Cannot solve",
+        "Only unit circle"
+      ],
+      "explanation": "Pick appropriate ratio.",
+      "keywords": [
+        "right-triangle",
+        "solve"
+      ],
+      "source": "https://openstax.org/books/precalculus-2e/pages/7-2-right-triangle-trigonometry"
+    },
+    {
+      "question": "Angle of elevation?",
+      "correctAnswer": "Upward from horizontal to line of sight",
+      "incorrectAnswers": [
+        "Downward",
+        "From vertical",
+        "Always 90\u00b0"
+      ],
+      "explanation": "Word problems.",
+      "keywords": [
+        "angle-of-elevation",
+        "applications"
+      ],
+      "source": "https://www.mathsisfun.com/algebra/trig-solving-triangles.html"
+    },
+    {
+      "question": "Angle of depression?",
+      "correctAnswer": "Downward from horizontal",
+      "incorrectAnswers": [
+        "Upward",
+        "Measured from vertical",
+        "Same as elevation always"
+      ],
+      "explanation": "Often equal to elevation alternate interior.",
+      "keywords": [
+        "angle-of-depression",
+        "applications"
+      ],
+      "source": "https://www.mathsisfun.com/algebra/trig-solving-triangles.html"
+    },
+    {
+      "question": "Ambiguous case (SSA)?",
+      "correctAnswer": "May have 0, 1, or 2 triangles",
+      "incorrectAnswers": [
+        "Always one",
+        "Always two",
+        "Always none"
+      ],
+      "explanation": "Law of sines care.",
+      "keywords": [
+        "ambiguous-case",
+        "ssa"
+      ],
+      "source": "https://openstax.org/books/precalculus-2e/pages/7-4-non-right-triangles-law-of-sines"
+    },
+    {
+      "question": "Area with two sides and included angle?",
+      "correctAnswer": "(1/2) ab sin C",
+      "incorrectAnswers": [
+        "ab cos C",
+        "1/2 ab",
+        "abc/2"
+      ],
+      "explanation": "SAS formula.",
+      "keywords": [
+        "triangle-area",
+        "trig"
+      ],
+      "source": "https://openstax.org/books/precalculus-2e/pages/7-3-non-right-triangles-law-of-cosines"
+    },
+    {
+      "question": "Heron\u2019s formula needs?",
+      "correctAnswer": "Three side lengths",
+      "incorrectAnswers": [
+        "Two angles only",
+        "One side only",
+        "Unit circle only"
+      ],
+      "explanation": "Semi-perimeter s.",
+      "keywords": [
+        "heron",
+        "area"
+      ],
+      "source": "https://www.mathsisfun.com/geometry/herons-formula.html"
+    },
+    {
+      "question": "Navigation vector bearing problem uses?",
+      "correctAnswer": "Trig components and law of cosines/sines",
+      "incorrectAnswers": [
+        "Only arithmetic",
+        "No angles",
+        "Only calculus"
+      ],
+      "explanation": "Resultant displacement.",
+      "keywords": [
+        "navigation",
+        "vectors"
+      ],
+      "source": "https://www.khanacademy.org/math/precalculus/trig-equations"
+    },
+    {
+      "question": "Isosceles right triangle sides?",
+      "correctAnswer": "Legs equal; hypotenuse leg\u00d7\u221a2",
+      "incorrectAnswers": [
+        "Hypotenuse equals leg",
+        "30-60-90",
+        "No ratio"
+      ],
+      "explanation": "45-45-90.",
+      "keywords": [
+        "special-triangle",
+        "geometry"
+      ],
+      "source": "https://www.mathsisfun.com/geometry/triangles.html"
+    },
+    {
+      "question": "30-60-90 side ratios?",
+      "correctAnswer": "1 : \u221a3 : 2 (short leg opposite 30\u00b0)",
+      "incorrectAnswers": [
+        "1:1:\u221a2",
+        "3:4:5",
+        "1:2:3"
+      ],
+      "explanation": "Half equilateral.",
+      "keywords": [
+        "30-60-90",
+        "geometry"
+      ],
+      "source": "https://www.mathsisfun.com/geometry/triangles.html"
+    },
+    {
+      "question": "Circumradius R = ?",
+      "correctAnswer": "a/(2 sin A) (extended law of sines)",
+      "incorrectAnswers": [
+        "a sin A",
+        "a/2",
+        "abc"
+      ],
+      "explanation": "Relates sides and angles.",
+      "keywords": [
+        "circumradius",
+        "triangle"
+      ],
+      "source": "https://en.wikipedia.org/wiki/Law_of_sines"
+    },
+    {
+      "question": "Height from side b in any triangle?",
+      "correctAnswer": "h = a sin C (depending on labeling)",
+      "incorrectAnswers": [
+        "Always b/2",
+        "Always r",
+        "Cannot compute"
+      ],
+      "explanation": "Use SAS pieces.",
+      "keywords": [
+        "altitude",
+        "triangle"
+      ],
+      "source": "https://openstax.org/books/precalculus-2e/pages/7-3-non-right-triangles-law-of-cosines"
+    },
+    {
+      "question": "Trigonometry in circle geometry?",
+      "correctAnswer": "Chord length related to central angle and radius via trig",
+      "incorrectAnswers": [
+        "Never related",
+        "Only hypotenuse",
+        "Only Pythagorean triples"
+      ],
+      "explanation": "2r sin(\u03b8/2) for chord.",
+      "keywords": [
+        "chord",
+        "circle"
+      ],
+      "source": "https://en.wikipedia.org/wiki/Chord_(geometry)"
+    }
+  ],
+  "applications": [
+    {
+      "question": "Simple harmonic oscillator period T?",
+      "correctAnswer": "T = 2\u03c0\u221a(m/k) (spring-mass ideal)",
+      "incorrectAnswers": [
+        "T = 2\u03c0mk",
+        "T = \u221a(k/m) only",
+        "T independent of m"
+      ],
+      "explanation": "Stiffer k \u2192 shorter period.",
+      "keywords": [
+        "period",
+        "oscillator"
+      ],
+      "source": "https://openstax.org/books/university-physics-volume-1/pages/15-2-simple-harmonic-motion"
+    },
+    {
+      "question": "AC voltage v(t) = V0 sin(\u03c9t); \u03c9 is?",
+      "correctAnswer": "Angular frequency rad/s",
+      "incorrectAnswers": [
+        "Hz directly",
+        "Always degrees/s",
+        "Amplitude"
+      ],
+      "explanation": "f = \u03c9/(2\u03c0).",
+      "keywords": [
+        "angular-frequency",
+        "electronics"
+      ],
+      "source": "https://en.wikipedia.org/wiki/Angular_frequency"
+    },
+    {
+      "question": "Polar to rectangular?",
+      "correctAnswer": "x = r cos \u03b8, y = r sin \u03b8",
+      "incorrectAnswers": [
+        "x = r sin \u03b8",
+        "r = x+y",
+        "\u03b8 = xy"
+      ],
+      "explanation": "Coordinate change.",
+      "keywords": [
+        "polar",
+        "coordinates"
+      ],
+      "source": "https://openstax.org/books/precalculus-2e/pages/8-3-polar-coordinates"
+    },
+    {
+      "question": "Rectangular to polar r?",
+      "correctAnswer": "r = \u221a(x^2 + y^2)",
+      "incorrectAnswers": [
+        "x + y",
+        "xy",
+        "x^2 \u2212 y^2"
+      ],
+      "explanation": "Distance from origin.",
+      "keywords": [
+        "polar",
+        "conversion"
+      ],
+      "source": "https://openstax.org/books/precalculus-2e/pages/8-3-polar-coordinates"
+    },
+    {
+      "question": "Phasor (intro) represents?",
+      "correctAnswer": "Sinusoid amplitude and phase as complex vector",
+      "incorrectAnswers": [
+        "Only real scalars",
+        "Only digital bits",
+        "Only integrals"
+      ],
+      "explanation": "AC circuit analysis.",
+      "keywords": [
+        "phasor",
+        "ee"
+      ],
+      "source": "https://en.wikipedia.org/wiki/Phasor"
+    },
+    {
+      "question": "Sound wave model?",
+      "correctAnswer": "Pressure variation sinusoidal in time/space",
+      "incorrectAnswers": [
+        "Square always",
+        "Static",
+        "Only exponential"
+      ],
+      "explanation": "Frequency perceived as pitch.",
+      "keywords": [
+        "sound",
+        "waves"
+      ],
+      "source": "https://openstax.org/books/university-physics-volume-1/pages/17-1-sound-waves"
+    },
+    {
+      "question": "GPS triangulation uses?",
+      "correctAnswer": "Signal timing and geometry (conceptually)",
+      "incorrectAnswers": [
+        "Only barometers",
+        "Only compasses",
+        "No geometry"
+      ],
+      "explanation": "Multilateration.",
+      "keywords": [
+        "gps",
+        "navigation"
+      ],
+      "source": "https://www.gps.gov/systems/gps/"
+    },
+    {
+      "question": "Tide models often include?",
+      "correctAnswer": "Superposition of sinusoids with lunar/solar periods",
+      "incorrectAnswers": [
+        "Only linear trend",
+        "Constant height",
+        "Random only"
+      ],
+      "explanation": "Harmonic constituents.",
+      "keywords": [
+        "tides",
+        "modeling"
+      ],
+      "source": "https://en.wikipedia.org/wiki/Tidal_harmonic_analysis"
+    },
+    {
+      "question": "Sun elevation angle uses?",
+      "correctAnswer": "Trig with latitude/declination (spherical approximations)",
+      "incorrectAnswers": [
+        "No trig",
+        "Only statistics",
+        "Only chemistry"
+      ],
+      "explanation": "Solar panel/sundial math.",
+      "keywords": [
+        "solar-elevation",
+        "applications"
+      ],
+      "source": "https://en.wikipedia.org/wiki/Solar_zenith_angle"
+    },
+    {
+      "question": "Projectile range level ground (no air)?",
+      "correctAnswer": "R = v0^2 sin(2\u03b8)/g",
+      "incorrectAnswers": [
+        "v0/g",
+        "v0^2/g",
+        "sin \u03b8 /g"
+      ],
+      "explanation": "Max at \u03b8=45\u00b0 if launch/landing same height.",
+      "keywords": [
+        "projectile",
+        "range"
+      ],
+      "source": "https://openstax.org/books/university-physics-volume-1/pages/4-3-projectile-motion"
+    },
+    {
+      "question": "Rotation matrix cos/sin?",
+      "correctAnswer": "[[cos\u03b8, \u2212sin\u03b8],[sin\u03b8, cos\u03b8]]",
+      "incorrectAnswers": [
+        "[[sin,cos],[cos,sin]]",
+        "[[1,0],[0,1]]",
+        "[[\u03b8,0],[0,\u03b8]]"
+      ],
+      "explanation": "Linear algebra link.",
+      "keywords": [
+        "rotation",
+        "matrix"
+      ],
+      "source": "https://openstax.org/books/precalculus-2e/pages/8-7-rotation-of-axes"
+    },
+    {
+      "question": "Small-angle approx sin x \u2248 x for?",
+      "correctAnswer": "x near 0 radians",
+      "incorrectAnswers": [
+        "x near 90\u00b0",
+        "All x",
+        "Never"
+      ],
+      "explanation": "Taylor first term.",
+      "keywords": [
+        "small-angle",
+        "approximation"
+      ],
+      "source": "https://en.wikipedia.org/wiki/Small-angle_approximation"
+    }
+  ]
+}

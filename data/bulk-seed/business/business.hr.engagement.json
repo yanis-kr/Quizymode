@@ -1,0 +1,116 @@
+[
+  {
+    "category": "business",
+    "navigationKeyword1": "hr",
+    "navigationKeyword2": "engagement",
+    "question": "Why can manager quality heavily influence team engagement?",
+    "correctAnswer": "Managers shape clarity, feedback, recognition, and psychological safety day to day.",
+    "incorrectAnswers": [
+      "Managers never affect engagement.",
+      "Engagement is only genetic.",
+      "Managers only set Wi-Fi passwords."
+    ],
+    "explanation": "People leave managers, not only companies.",
+    "keywords": [
+      "manager-effect",
+      "engagement"
+    ],
+    "source": "https://www.gallup.com/workplace/236366/manager-employee-relationship.aspx",
+    "seedId": "8b1e92fe-3266-4290-bdf3-fbdf7657356b"
+  },
+  {
+    "category": "business",
+    "navigationKeyword1": "hr",
+    "navigationKeyword2": "engagement",
+    "question": "What is a pulse survey used for?",
+    "correctAnswer": "Frequent short checks on morale, change readiness, or specific topics.",
+    "incorrectAnswers": [
+      "Replace all performance ratings.",
+      "Annual tax filing.",
+      "Inventory counts."
+    ],
+    "explanation": "Pulse data must be acted on to build trust.",
+    "keywords": [
+      "pulse-survey",
+      "listening"
+    ],
+    "source": "https://www.shrm.org/resourcesandtools/hr-topics/employee-relations/pages/pulse-surveys.aspx",
+    "seedId": "5fd6b646-6340-447f-aa31-56315bd4e302"
+  },
+  {
+    "category": "business",
+    "navigationKeyword1": "hr",
+    "navigationKeyword2": "engagement",
+    "question": "What is employee engagement commonly distinguished from?",
+    "correctAnswer": "Satisfaction\u2014engagement includes willingness to exert discretionary effort toward goals.",
+    "incorrectAnswers": [
+      "Payroll processing.",
+      "Office rent.",
+      "SKU taxonomy."
+    ],
+    "explanation": "Satisfied employees may still disengage.",
+    "keywords": [
+      "engagement",
+      "satisfaction"
+    ],
+    "source": "https://www.shrm.org/resourcesandtools/hr-topics/employee-relations/pages/employee-engagement.aspx",
+    "seedId": "89ac5416-30a0-4a8f-bafa-a116a5c6caeb"
+  },
+  {
+    "category": "business",
+    "navigationKeyword1": "hr",
+    "navigationKeyword2": "engagement",
+    "question": "What workplace factors often contribute to burnout?",
+    "correctAnswer": "Unsustainable workload, lack of control, insufficient reward, breakdown of community, unfairness, values mismatch.",
+    "incorrectAnswers": [
+      "Only employee personality.",
+      "Only customer logos.",
+      "Only product color."
+    ],
+    "explanation": "Burnout is organizational, not only individual.",
+    "keywords": [
+      "burnout",
+      "well-being"
+    ],
+    "source": "https://www.who.int/news/item/28-05-2019-burn-out-an-occupational-phenomenon",
+    "seedId": "521692f1-1e65-4ba1-97c9-53816336b7d9"
+  },
+  {
+    "category": "business",
+    "navigationKeyword1": "hr",
+    "navigationKeyword2": "engagement",
+    "question": "Why does listening without action harm engagement programs?",
+    "correctAnswer": "Employees learn surveys are performative, eroding trust.",
+    "incorrectAnswers": [
+      "Employees love ignoring results.",
+      "Data should never be shared.",
+      "HR forbids follow-up."
+    ],
+    "explanation": "Close the loop with visible changes.",
+    "keywords": [
+      "action-planning",
+      "trust"
+    ],
+    "source": "https://hbr.org/2018/07/employee-surveys-are-still-one-of-the-best-ways-to-measure-engagement",
+    "seedId": "1eb49dda-350c-4dd9-9dd1-fe64839bf74f"
+  },
+  {
+    "category": "business",
+    "navigationKeyword1": "hr",
+    "navigationKeyword2": "engagement",
+    "question": "What is recognition\u2019s role in engagement?",
+    "correctAnswer": "Reinforces valued behaviors and helps people see impact beyond pay.",
+    "incorrectAnswers": [
+      "Recognition should be secret.",
+      "Only annual bonuses matter.",
+      "Praise is harmful."
+    ],
+    "explanation": "Timely specific recognition beats generic praise.",
+    "keywords": [
+      "recognition",
+      "engagement"
+    ],
+    "source": "https://www.shrm.org/resourcesandtools/hr-topics/employee-relations/pages/employee-recognition.aspx",
+    "seedId": "9aa01ac7-3a81-48ce-859b-3eb1b148a18a"
+  }
+]

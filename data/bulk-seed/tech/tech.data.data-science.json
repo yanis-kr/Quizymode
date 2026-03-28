@@ -1,0 +1,116 @@
+[
+  {
+    "category": "tech",
+    "navigationKeyword1": "data",
+    "navigationKeyword2": "data-science",
+    "question": "What is overfitting in supervised learning?",
+    "correctAnswer": "The model fits training noise and generalizes poorly to new data",
+    "incorrectAnswers": [
+      "The model is too simple to learn patterns",
+      "Training always stops early",
+      "The dataset is perfectly random"
+    ],
+    "explanation": "Too much capacity or too little data lets the model memorize quirks instead of stable patterns.",
+    "keywords": [
+      "data-science",
+      "overfitting"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Overfitting",
+    "seedId": "72c2bdff-06be-596d-9461-aa0c963ce28c"
+  },
+  {
+    "category": "tech",
+    "navigationKeyword1": "data",
+    "navigationKeyword2": "data-science",
+    "question": "Why is a held-out test set used after training?",
+    "correctAnswer": "Estimate performance on unseen data without tuning to those examples",
+    "incorrectAnswers": [
+      "Replace the need for any training data",
+      "Guarantee fairness",
+      "Speed up gradient descent"
+    ],
+    "explanation": "If you tune on the same data you report, scores are optimistically biased.",
+    "keywords": [
+      "data-science",
+      "evaluation"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Training,_validation,_and_test_data_sets",
+    "seedId": "ccae0629-8a43-5881-a1f8-aa836cd1c58d"
+  },
+  {
+    "category": "tech",
+    "navigationKeyword1": "data",
+    "navigationKeyword2": "data-science",
+    "question": "What does k-fold cross-validation do?",
+    "correctAnswer": "Splits data into k parts and rotates which part is validation while training on the rest",
+    "incorrectAnswers": [
+      "Trains k separate models that never share code",
+      "Deletes k percent of rows",
+      "Always uses the full set as test"
+    ],
+    "explanation": "Rotating folds gives a more stable estimate of error when data is limited.",
+    "keywords": [
+      "data-science",
+      "cross-validation"
+    ],
+    "source": "https://scikit-learn.org/stable/modules/cross_validation.html",
+    "seedId": "fcda1dcc-0b3f-5b35-8fe9-36d974e9c41f"
+  },
+  {
+    "category": "tech",
+    "navigationKeyword1": "data",
+    "navigationKeyword2": "data-science",
+    "question": "What does RMSE measure for regression predictions?",
+    "correctAnswer": "The square root of the average squared error between predicted and actual values",
+    "incorrectAnswers": [
+      "The fraction of wrong classes",
+      "The median absolute deviation only",
+      "The training loss at epoch one"
+    ],
+    "explanation": "RMSE penalizes large errors more than MAE because errors are squared before averaging.",
+    "keywords": [
+      "data-science",
+      "metrics"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Root-mean-square_deviation",
+    "seedId": "20b61667-27b1-5d50-b519-1e79192dd14e"
+  },
+  {
+    "category": "tech",
+    "navigationKeyword1": "data",
+    "navigationKeyword2": "data-science",
+    "question": "What is feature engineering?",
+    "correctAnswer": "Creating or transforming inputs so models can learn more easily",
+    "incorrectAnswers": [
+      "Removing all labels",
+      "Printing the confusion matrix",
+      "Disabling validation"
+    ],
+    "explanation": "Good features encode domain knowledge like ratios, dates, or interactions.",
+    "keywords": [
+      "data-science",
+      "features"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Feature_engineering",
+    "seedId": "46ada8d0-1bd2-568a-bbff-1a6e8d84c7e2"
+  },
+  {
+    "category": "tech",
+    "navigationKeyword1": "data",
+    "navigationKeyword2": "data-science",
+    "question": "In classification, what does a confusion matrix summarize?",
+    "correctAnswer": "Counts of predicted versus actual classes",
+    "incorrectAnswers": [
+      "Only the learning rate schedule",
+      "Network bandwidth",
+      "Disk seek time"
+    ],
+    "explanation": "The matrix shows true positives, false positives, and other cells for each class pair.",
+    "keywords": [
+      "data-science",
+      "classification"
+    ],
+    "source": "https://scikit-learn.org/stable/modules/model_evaluation.html#confusion-matrix",
+    "seedId": "6f66e7ec-10b5-58a3-a74f-f9bbc9cc4fab"
+  }
+]

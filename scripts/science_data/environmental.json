@@ -1,0 +1,1094 @@
+{
+  "ecosystems": [
+    {
+      "question": "What is an ecosystem service?",
+      "correctAnswer": "Benefit people get from ecosystems (clean water, pollination\u2026)",
+      "incorrectAnswers": [
+        "Only timber sales",
+        "Only GDP",
+        "Only urban transit"
+      ],
+      "explanation": "Includes regulating and cultural services.",
+      "keywords": [
+        "ecosystem-services",
+        "environment"
+      ],
+      "source": "https://www.epa.gov/enviroatlas/enviroatlas-benefit-category-ecosystem-services"
+    },
+    {
+      "question": "What is a food web\u2019s role?",
+      "correctAnswer": "Shows multiple feeding links and complexity",
+      "incorrectAnswers": [
+        "Shows one chain only",
+        "Ignores energy",
+        "Ignores species"
+      ],
+      "explanation": "Better than a single chain for stability analysis.",
+      "keywords": [
+        "food-web",
+        "trophic"
+      ],
+      "source": "https://www.epa.gov/nutrientpollution/sources-and-solutions-agriculture"
+    },
+    {
+      "question": "What is keystone species?",
+      "correctAnswer": "Disproportionately large effect on community structure",
+      "incorrectAnswers": [
+        "Always biggest population",
+        "Always a plant",
+        "Always a microbe"
+      ],
+      "explanation": "Removal can collapse diversity.",
+      "keywords": [
+        "keystone-species",
+        "ecology"
+      ],
+      "source": "https://www.fisheries.noaa.gov/national/habitat-conservation/what-keystone-species"
+    },
+    {
+      "question": "What is invasive species?",
+      "correctAnswer": "Non-native organism harming native ecosystems/economy",
+      "incorrectAnswers": [
+        "Native predator",
+        "Domestic pet always",
+        "Any migratory bird"
+      ],
+      "explanation": "Spread often human-assisted.",
+      "keywords": [
+        "invasive-species",
+        "biodiversity"
+      ],
+      "source": "https://www.invasivespeciesinfo.gov/"
+    },
+    {
+      "question": "What is carrying capacity in ecology?",
+      "correctAnswer": "Population limit supported by resources",
+      "incorrectAnswers": [
+        "Infinite growth",
+        "Only for humans never",
+        "Same as birth rate"
+      ],
+      "explanation": "Depends on habitat quality.",
+      "keywords": [
+        "carrying-capacity",
+        "population"
+      ],
+      "source": "https://www.epa.gov/enviroatlas/enviroatlas-benefit-category-ecosystem-services"
+    },
+    {
+      "question": "What is biomagnification?",
+      "correctAnswer": "Toxin concentration increases up food chain",
+      "incorrectAnswers": [
+        "Toxins disappear upward",
+        "Only affects plants",
+        "Only in freshwater words"
+      ],
+      "explanation": "Fat-soluble pollutants accumulate.",
+      "keywords": [
+        "biomagnification",
+        "toxins"
+      ],
+      "source": "https://www.epa.gov/sustainable-water-infrastructure/nutrient-pollution"
+    },
+    {
+      "question": "What is watershed?",
+      "correctAnswer": "Land draining to a common waterbody",
+      "incorrectAnswers": [
+        "Only ocean",
+        "Only desert",
+        "Only city blocks"
+      ],
+      "explanation": "Managing land protects downstream water.",
+      "keywords": [
+        "watershed",
+        "hydrology"
+      ],
+      "source": "https://www.epa.gov/watershedacademy/what-watershed"
+    },
+    {
+      "question": "What is wetland value?",
+      "correctAnswer": "Filtration, flood buffering, habitat",
+      "incorrectAnswers": [
+        "Only farmland",
+        "Only pavement",
+        "No value"
+      ],
+      "explanation": "Wetlands are ecologically critical.",
+      "keywords": [
+        "wetlands",
+        "habitat"
+      ],
+      "source": "https://www.epa.gov/wetlands"
+    },
+    {
+      "question": "What is coral reef ecosystem?",
+      "correctAnswer": "Diverse marine community built by corals",
+      "incorrectAnswers": [
+        "Freshwater lake",
+        "Tundra",
+        "Grassland"
+      ],
+      "explanation": "Threatened by warming and acidification.",
+      "keywords": [
+        "coral-reef",
+        "marine"
+      ],
+      "source": "https://oceanservice.noaa.gov/education/coral-reefs/"
+    },
+    {
+      "question": "What is deforestation impact?",
+      "correctAnswer": "Habitat loss and carbon release (among others)",
+      "incorrectAnswers": [
+        "Always increases rainfall locally always",
+        "No climate link",
+        "Only aesthetic"
+      ],
+      "explanation": "Forest loss alters carbon and water cycles.",
+      "keywords": [
+        "deforestation",
+        "carbon"
+      ],
+      "source": "https://www.epa.gov/ghgemissions/sources-greenhouse-gas-emissions"
+    },
+    {
+      "question": "What is restoration ecology?",
+      "correctAnswer": "Assisting recovery of degraded ecosystems",
+      "incorrectAnswers": [
+        "Only building dams",
+        "Only hunting",
+        "Only mining"
+      ],
+      "explanation": "Includes replanting and hydrology repair.",
+      "keywords": [
+        "restoration",
+        "conservation"
+      ],
+      "source": "https://www.epa.gov/habitat-conservation"
+    },
+    {
+      "question": "What is endemic species?",
+      "correctAnswer": "Found only in a particular region",
+      "incorrectAnswers": [
+        "Found everywhere",
+        "Only extinct",
+        "Only domesticated"
+      ],
+      "explanation": "Islands often have high endemism.",
+      "keywords": [
+        "endemic",
+        "biodiversity"
+      ],
+      "source": "https://www.iucn.org/resources/conservation-tools/iucn-red-list-threatened-species"
+    }
+  ],
+  "conservation": [
+    {
+      "question": "What is biodiversity hotspot?",
+      "correctAnswer": "Region with high endemism and habitat loss",
+      "incorrectAnswers": [
+        "Any forest",
+        "Any city park",
+        "Any ocean"
+      ],
+      "explanation": "Prioritizes conservation investment.",
+      "keywords": [
+        "hotspot",
+        "conservation"
+      ],
+      "source": "https://www.cepf.net/our-work/biodiversity-hotspots/hotspots-defined"
+    },
+    {
+      "question": "What is protected area?",
+      "correctAnswer": "Legally managed region for nature conservation",
+      "incorrectAnswers": [
+        "Industrial zone",
+        "Shopping mall",
+        "Highway median only"
+      ],
+      "explanation": "Includes national parks and reserves.",
+      "keywords": [
+        "protected-areas",
+        "parks"
+      ],
+      "source": "https://www.iucn.org/theme/protected-areas"
+    },
+    {
+      "question": "What is sustainable yield?",
+      "correctAnswer": "Harvest rate that can continue without depleting stock",
+      "incorrectAnswers": [
+        "Maximum short-term catch always",
+        "Zero use",
+        "Random quota"
+      ],
+      "explanation": "Fisheries management concept.",
+      "keywords": [
+        "sustainable-yield",
+        "fisheries"
+      ],
+      "source": "https://www.fisheries.noaa.gov/national/sustainable-fisheries"
+    },
+    {
+      "question": "What is CITES (purpose)?",
+      "correctAnswer": "Regulate international trade in threatened species",
+      "incorrectAnswers": [
+        "Space treaty",
+        "Weather forecast",
+        "Vaccine approval"
+      ],
+      "explanation": "Lists species with trade controls.",
+      "keywords": [
+        "cites",
+        "wildlife-trade"
+      ],
+      "source": "https://www.cites.org/eng"
+    },
+    {
+      "question": "What is poaching?",
+      "correctAnswer": "Illegal hunting/capture of wildlife",
+      "incorrectAnswers": [
+        "Legal harvest with permits",
+        "Scientific tagging always",
+        "Aquaculture always"
+      ],
+      "explanation": "Threatens endangered species.",
+      "keywords": [
+        "poaching",
+        "wildlife"
+      ],
+      "source": "https://www.worldwildlife.org/threats/poaching"
+    },
+    {
+      "question": "What is habitat fragmentation?",
+      "correctAnswer": "Breaking habitat into smaller isolated patches",
+      "incorrectAnswers": [
+        "Joining habitats",
+        "Increasing patch size always",
+        "Only underwater"
+      ],
+      "explanation": "Reduces gene flow and survival.",
+      "keywords": [
+        "fragmentation",
+        "land-use"
+      ],
+      "source": "https://www.epa.gov/habitat-conservation"
+    },
+    {
+      "question": "What is corridor (conservation)?",
+      "correctAnswer": "Linkage allowing species movement between patches",
+      "incorrectAnswers": [
+        "Shopping corridor",
+        "River dam",
+        "Parking lot"
+      ],
+      "explanation": "Mitigates fragmentation.",
+      "keywords": [
+        "wildlife-corridor",
+        "connectivity"
+      ],
+      "source": "https://www.fws.gov/story/2021-12/conserving-habitat-wildlife-corridors"
+    },
+    {
+      "question": "What is captive breeding?",
+      "correctAnswer": "Breeding endangered species in controlled settings for release",
+      "incorrectAnswers": [
+        "Hunting program",
+        "Logging plan",
+        "Mining reclamation only"
+      ],
+      "explanation": "Used when wild populations critically low.",
+      "keywords": [
+        "captive-breeding",
+        "recovery"
+      ],
+      "source": "https://www.fws.gov/program/endangered-species"
+    },
+    {
+      "question": "What is IUCN Red List?",
+      "correctAnswer": "Global assessment of extinction risk",
+      "incorrectAnswers": [
+        "Stock market index",
+        "Weather alert",
+        "Soil pH chart"
+      ],
+      "explanation": "Categories from LC to extinct.",
+      "keywords": [
+        "red-list",
+        "extinction"
+      ],
+      "source": "https://www.iucnredlist.org/"
+    },
+    {
+      "question": "What is bycatch?",
+      "correctAnswer": "Unintended catch in fishing gear",
+      "incorrectAnswers": [
+        "Target catch only",
+        "Farm runoff",
+        "Oil spill"
+      ],
+      "explanation": "Threatens marine megafauna.",
+      "keywords": [
+        "bycatch",
+        "fisheries"
+      ],
+      "source": "https://www.fisheries.noaa.gov/national/bycatch/"
+    },
+    {
+      "question": "What is rewilding?",
+      "correctAnswer": "Large-scale restoration toward self-sustaining ecosystems",
+      "incorrectAnswers": [
+        "Urban paving",
+        "Monoculture farming only",
+        "Dam building only"
+      ],
+      "explanation": "May reintroduce apex species.",
+      "keywords": [
+        "rewilding",
+        "restoration"
+      ],
+      "source": "https://www.nature.com/scitable/knowledge/library/rewilding-162"
+    },
+    {
+      "question": "What is carbon offset (idea)?",
+      "correctAnswer": "Compensate emissions via projects reducing/removing CO2 elsewhere",
+      "incorrectAnswers": [
+        "Guarantees local air quality",
+        "Eliminates need for policy",
+        "Same as recycling plastic always"
+      ],
+      "explanation": "Quality varies; additionality matters.",
+      "keywords": [
+        "offsets",
+        "climate"
+      ],
+      "source": "https://www.epa.gov/ghgemissions/international-carbon-offsets"
+    }
+  ],
+  "pollution": [
+    {
+      "question": "What is point source pollution?",
+      "correctAnswer": "Pollution from identifiable location (pipe, ditch)",
+      "incorrectAnswers": [
+        "Spread runoff from many small sources",
+        "Global wind only",
+        "Natural only"
+      ],
+      "explanation": "Easier to regulate than nonpoint.",
+      "keywords": [
+        "point-source",
+        "water-quality"
+      ],
+      "source": "https://www.epa.gov/npdes/national-pollutant-discharge-elimination-system-npdes"
+    },
+    {
+      "question": "What is nonpoint source pollution?",
+      "correctAnswer": "Diffuse runoff from many places",
+      "incorrectAnswers": [
+        "Single factory pipe",
+        "One oil spill point",
+        "Laboratory flask"
+      ],
+      "explanation": "Common in agriculture and cities.",
+      "keywords": [
+        "nonpoint-source",
+        "runoff"
+      ],
+      "source": "https://www.epa.gov/nps"
+    },
+    {
+      "question": "What is eutrophication?",
+      "correctAnswer": "Nutrient overload causing algal blooms and oxygen loss",
+      "incorrectAnswers": [
+        "Desertification",
+        "Ozone hole",
+        "Earthquake"
+      ],
+      "explanation": "Often nitrogen/phosphorus driven.",
+      "keywords": [
+        "eutrophication",
+        "nutrients"
+      ],
+      "source": "https://www.epa.gov/nutrientpollution"
+    },
+    {
+      "question": "What is PM2.5?",
+      "correctAnswer": "Fine particulate matter \u22642.5 micrometers",
+      "incorrectAnswers": [
+        "Only pollen grains",
+        "Only raindrops",
+        "Only CO2 gas"
+      ],
+      "explanation": "Penetrates deep into lungs.",
+      "keywords": [
+        "pm25",
+        "air-quality"
+      ],
+      "source": "https://www.epa.gov/pm-pollution"
+    },
+    {
+      "question": "What is ground-level ozone?",
+      "correctAnswer": "Secondary pollutant harmful to breathe",
+      "incorrectAnswers": [
+        "Protective ozone layer in stratosphere same as ground",
+        "Oxygen gas",
+        "Water vapor"
+      ],
+      "explanation": "Forms from NOx and VOCs in sunlight.",
+      "keywords": [
+        "ozone",
+        "smog"
+      ],
+      "source": "https://www.epa.gov/ground-level-ozone-pollution"
+    },
+    {
+      "question": "What is acid rain?",
+      "correctAnswer": "Deposition of acidic compounds harming ecosystems/materials",
+      "incorrectAnswers": [
+        "Pure distilled rain always",
+        "Only volcanic",
+        "Only ocean spray"
+      ],
+      "explanation": "SO2 and NOx are key precursors.",
+      "keywords": [
+        "acid-rain",
+        "deposition"
+      ],
+      "source": "https://www.epa.gov/acidrain"
+    },
+    {
+      "question": "What is Superfund (US)?",
+      "correctAnswer": "Program cleaning hazardous waste sites",
+      "incorrectAnswers": [
+        "Student loan fund",
+        "Highway toll program",
+        "Weather radar"
+      ],
+      "explanation": "CERCLA authorizes cleanup.",
+      "keywords": [
+        "superfund",
+        "hazwaste"
+      ],
+      "source": "https://www.epa.gov/superfund"
+    },
+    {
+      "question": "What is microplastics concern?",
+      "correctAnswer": "Small plastic particles persist and accumulate",
+      "incorrectAnswers": [
+        "Fully digestible always",
+        "Only in space",
+        "Only biodegradable always"
+      ],
+      "explanation": "Enters food webs.",
+      "keywords": [
+        "microplastics",
+        "pollution"
+      ],
+      "source": "https://www.noaa.gov/education/microplastics"
+    },
+    {
+      "question": "What is noise pollution effect?",
+      "correctAnswer": "Stress and hearing harm for humans/wildlife",
+      "incorrectAnswers": [
+        "Improves sleep always",
+        "No measurable effects",
+        "Only underwater never"
+      ],
+      "explanation": "Chronic noise disrupts behavior.",
+      "keywords": [
+        "noise",
+        "health"
+      ],
+      "source": "https://www.cdc.gov/nceh/hearing_loss/what_noises_cause_hearing_loss.html"
+    },
+    {
+      "question": "What is light pollution?",
+      "correctAnswer": "Excessive artificial light disrupting ecosystems and astronomy",
+      "incorrectAnswers": [
+        "Helps all wildlife always",
+        "Only indoor issue",
+        "Only lasers"
+      ],
+      "explanation": "Affects circadian rhythms.",
+      "keywords": [
+        "light-pollution",
+        "ecology"
+      ],
+      "source": "https://www.darksky.org/our-work/lighting/light-pollution/"
+    },
+    {
+      "question": "What is thermal pollution?",
+      "correctAnswer": "Heat discharged to water harming aquatic life",
+      "incorrectAnswers": [
+        "Cooling always helpful",
+        "Only air issue",
+        "Only soil issue"
+      ],
+      "explanation": "Power plants can warm receiving waters.",
+      "keywords": [
+        "thermal-pollution",
+        "water"
+      ],
+      "source": "https://www.epa.gov/eg/technical-resources-about-cooling-water-intakes"
+    },
+    {
+      "question": "What is brownfield?",
+      "correctAnswer": "Former industrial site with potential contamination",
+      "incorrectAnswers": [
+        "Pristine forest",
+        "National park",
+        "Wilderness"
+      ],
+      "explanation": "Redevelopment can revitalize cities.",
+      "keywords": [
+        "brownfield",
+        "land"
+      ],
+      "source": "https://www.epa.gov/brownfields"
+    }
+  ],
+  "energy": [
+    {
+      "question": "What is renewable energy?",
+      "correctAnswer": "Sources replenished on human timescales (sun, wind, hydro\u2026)",
+      "incorrectAnswers": [
+        "Coal",
+        "Oil",
+        "Natural gas"
+      ],
+      "explanation": "Intermittency and storage are design challenges.",
+      "keywords": [
+        "renewable",
+        "energy"
+      ],
+      "source": "https://www.energy.gov/eere/renewable-energy"
+    },
+    {
+      "question": "What is fossil fuel?",
+      "correctAnswer": "Energy from ancient organic matter (coal, oil, gas)",
+      "incorrectAnswers": [
+        "Fusion fuel",
+        "Tidal only",
+        "Geothermal only"
+      ],
+      "explanation": "Burning emits CO2.",
+      "keywords": [
+        "fossil-fuels",
+        "emissions"
+      ],
+      "source": "https://www.eia.gov/energyexplained/"
+    },
+    {
+      "question": "What is energy efficiency?",
+      "correctAnswer": "Use less energy for same service",
+      "incorrectAnswers": [
+        "Use more energy",
+        "Lower quality always",
+        "Only insulation never"
+      ],
+      "explanation": "Key climate strategy.",
+      "keywords": [
+        "efficiency",
+        "energy"
+      ],
+      "source": "https://www.energy.gov/eere/energy-efficiency"
+    },
+    {
+      "question": "What is grid (electric)?",
+      "correctAnswer": "System moving electricity from generation to consumers",
+      "incorrectAnswers": [
+        "Only batteries",
+        "Only gasoline network",
+        "Only water pipes"
+      ],
+      "explanation": "Includes transmission and distribution.",
+      "keywords": [
+        "grid",
+        "electricity"
+      ],
+      "source": "https://www.energy.gov/oe/activities/technology-development/grid-modernization"
+    },
+    {
+      "question": "What is capacity factor?",
+      "correctAnswer": "Actual output / maximum possible over time",
+      "incorrectAnswers": [
+        "Nameplate power only",
+        "Fuel carbon content",
+        "Voltage only"
+      ],
+      "explanation": "Wind/solar vary with resource.",
+      "keywords": [
+        "capacity-factor",
+        "power"
+      ],
+      "source": "https://www.eia.gov/todayinenergy/detail.php?id=39832"
+    },
+    {
+      "question": "What is LCOE (idea)?",
+      "correctAnswer": "Average cost per unit electricity over lifetime",
+      "incorrectAnswers": [
+        "Fuel octane",
+        "Engine torque",
+        "Battery mass only"
+      ],
+      "explanation": "Compares technologies approximately.",
+      "keywords": [
+        "lcoe",
+        "economics"
+      ],
+      "source": "https://www.eia.gov/outlooks/aeo/pdf/AEO2023_ReleasePresentation.pdf"
+    },
+    {
+      "question": "What is pumped hydro storage?",
+      "correctAnswer": "Pump water uphill to store energy; release to generate",
+      "incorrectAnswers": [
+        "Burn water",
+        "Freeze energy",
+        "Compress wood"
+      ],
+      "explanation": "Large-scale grid storage.",
+      "keywords": [
+        "storage",
+        "hydro"
+      ],
+      "source": "https://www.energy.gov/eere/water/pumped-storage-hydropower"
+    },
+    {
+      "question": "What is geothermal energy?",
+      "correctAnswer": "Heat from Earth used for electricity/heating",
+      "incorrectAnswers": [
+        "Only solar panels underground",
+        "Only coal seams",
+        "Only tides"
+      ],
+      "explanation": "Strongest in tectonic regions.",
+      "keywords": [
+        "geothermal",
+        "heat"
+      ],
+      "source": "https://www.energy.gov/eere/geothermal"
+    },
+    {
+      "question": "What is nuclear fission (power context)?",
+      "correctAnswer": "Splitting heavy nuclei releases energy",
+      "incorrectAnswers": [
+        "Fusion in power plants common",
+        "Chemical bond breaking only",
+        "Burning uranium like coal literally"
+      ],
+      "explanation": "Controlled chain reaction in reactors.",
+      "keywords": [
+        "nuclear",
+        "fission"
+      ],
+      "source": "https://www.energy.gov/ne/nuclear-reactor-technologies"
+    },
+    {
+      "question": "What is intermittency challenge for solar/wind?",
+      "correctAnswer": "Output varies with weather and time",
+      "incorrectAnswers": [
+        "Output is perfectly constant",
+        "No storage options exist",
+        "No forecasting exists"
+      ],
+      "explanation": "Grids balance supply/demand.",
+      "keywords": [
+        "intermittency",
+        "grid"
+      ],
+      "source": "https://www.energy.gov/eere/renewable-energy"
+    },
+    {
+      "question": "What is transmission loss?",
+      "correctAnswer": "Some energy lost as heat in power lines",
+      "incorrectAnswers": [
+        "Zero always",
+        "Gain energy",
+        "Only in batteries"
+      ],
+      "explanation": "Higher voltage transmission reduces relative losses.",
+      "keywords": [
+        "transmission",
+        "losses"
+      ],
+      "source": "https://www.eia.gov/energyexplained/electricity/delivery-to-consumers.php"
+    },
+    {
+      "question": "What is electrification (climate strategy)?",
+      "correctAnswer": "Shift end uses to electricity (often paired with clean power)",
+      "incorrectAnswers": [
+        "More coal stoves",
+        "More diesel indoors",
+        "Stop using motors"
+      ],
+      "explanation": "Depends on grid decarbonization.",
+      "keywords": [
+        "electrification",
+        "climate"
+      ],
+      "source": "https://www.epa.gov/ghgemissions/sources-greenhouse-gas-emissions"
+    }
+  ],
+  "climate": [
+    {
+      "question": "What is radiative forcing?",
+      "correctAnswer": "Change in Earth\u2019s energy balance due to a factor",
+      "incorrectAnswers": [
+        "Wind speed",
+        "Ocean salinity only",
+        "Soil pH only"
+      ],
+      "explanation": "Positive forcing tends to warm.",
+      "keywords": [
+        "forcing",
+        "energy-balance"
+      ],
+      "source": "https://www.ipcc.ch/report/ar6/wg1/"
+    },
+    {
+      "question": "What is climate sensitivity (rough idea)?",
+      "correctAnswer": "How much warming results from a CO2 doubling (equilibrium concept)",
+      "incorrectAnswers": [
+        "How fast cars drive",
+        "Hurricane category",
+        "Tide height only"
+      ],
+      "explanation": "Models and paleo evidence constrain estimates.",
+      "keywords": [
+        "sensitivity",
+        "models"
+      ],
+      "source": "https://climate.nasa.gov/evidence/"
+    },
+    {
+      "question": "What is attribution science?",
+      "correctAnswer": "Linking extreme events/climate trends to causes",
+      "incorrectAnswers": [
+        "Guessing",
+        "Only astrology",
+        "Only economics"
+      ],
+      "explanation": "Uses statistics and models.",
+      "keywords": [
+        "attribution",
+        "extremes"
+      ],
+      "source": "https://www.climate.gov/news-features/understanding-climate/climate-change-global-temperature"
+    },
+    {
+      "question": "What is ocean acidification?",
+      "correctAnswer": "CO2 uptake lowers seawater pH",
+      "incorrectAnswers": [
+        "Makes seawater strongly basic",
+        "Only affects boats",
+        "Only freshwater"
+      ],
+      "explanation": "Threatens calcifying organisms.",
+      "keywords": [
+        "acidification",
+        "ocean"
+      ],
+      "source": "https://www.noaa.gov/education/resource-collections/ocean-coastal-education/ocean-acidification"
+    },
+    {
+      "question": "What is cryosphere?",
+      "correctAnswer": "Frozen parts: ice sheets, glaciers, sea ice, permafrost",
+      "incorrectAnswers": [
+        "Only rain",
+        "Only deserts",
+        "Only grasslands"
+      ],
+      "explanation": "Melting affects sea level and albedo.",
+      "keywords": [
+        "cryosphere",
+        "ice"
+      ],
+      "source": "https://climate.nasa.gov/vital-signs/land-ice/"
+    },
+    {
+      "question": "What is permafrost thaw concern?",
+      "correctAnswer": "Releases carbon and methane; destabilizes ground",
+      "incorrectAnswers": [
+        "Always safe",
+        "Only cosmetic",
+        "Only helps farming always"
+      ],
+      "explanation": "Positive feedback risk.",
+      "keywords": [
+        "permafrost",
+        "methane"
+      ],
+      "source": "https://climate.nasa.gov/vital-signs/permafrost/"
+    },
+    {
+      "question": "What is COP (UNFCCC context)?",
+      "correctAnswer": "Conference of Parties climate negotiations",
+      "incorrectAnswers": [
+        "NASA mission",
+        "Oil cartel",
+        "Fish treaty"
+      ],
+      "explanation": "Country-level agreements.",
+      "keywords": [
+        "cop",
+        "policy"
+      ],
+      "source": "https://unfccc.int/process/bodies/supreme-bodies/conference-of-the-parties-cop"
+    },
+    {
+      "question": "What is nationally determined contribution?",
+      "correctAnswer": "Country climate pledge under Paris Agreement",
+      "incorrectAnswers": [
+        "A stock ticker",
+        "A hurricane name",
+        "A soil test"
+      ],
+      "explanation": "Collective ambition updated over time.",
+      "keywords": [
+        "ndc",
+        "paris-agreement"
+      ],
+      "source": "https://unfccc.int/process/the-paris-agreement/nationally-determined-contributions"
+    },
+    {
+      "question": "What is carbon budget?",
+      "correctAnswer": "Cumulative CO2 emissions compatible with warming limit",
+      "incorrectAnswers": [
+        "Daily calorie count",
+        "Household water bill",
+        "Car tire pressure"
+      ],
+      "explanation": "Links emissions to temperature targets.",
+      "keywords": [
+        "carbon-budget",
+        "emissions"
+      ],
+      "source": "https://www.ipcc.ch/report/ar6/wg1/"
+    },
+    {
+      "question": "What is climate model?",
+      "correctAnswer": "Equations simulating Earth system on computers",
+      "incorrectAnswers": [
+        "Single thermometer",
+        "One tree ring",
+        "Horoscope"
+      ],
+      "explanation": "Used for projections and attribution.",
+      "keywords": [
+        "climate-models",
+        "simulation"
+      ],
+      "source": "https://www.climate.gov/maps-data/education/climate-models-0"
+    },
+    {
+      "question": "What is scenario (SSP/RCP idea)?",
+      "correctAnswer": "Plausible future pathways of emissions and socioeconomics",
+      "incorrectAnswers": [
+        "Yesterday\u2019s weather",
+        "Stock price",
+        "Tide table only"
+      ],
+      "explanation": "Helps compare policy outcomes.",
+      "keywords": [
+        "scenarios",
+        "projections"
+      ],
+      "source": "https://www.ipcc.ch/report/ar6/wg1/"
+    },
+    {
+      "question": "What is loss and damage (climate policy term)?",
+      "correctAnswer": "Impacts beyond adaptation, especially in vulnerable nations",
+      "incorrectAnswers": [
+        "Profit margin",
+        "Insurance deductible only",
+        "Crop rotation"
+      ],
+      "explanation": "International finance discussions.",
+      "keywords": [
+        "loss-and-damage",
+        "justice"
+      ],
+      "source": "https://unfccc.int/topics/loss-and-damage-work-programme/introduction"
+    }
+  ],
+  "sustainability": [
+    {
+      "question": "What is sustainability (common definition)?",
+      "correctAnswer": "Meet present needs without compromising future generations",
+      "incorrectAnswers": [
+        "Maximize short-term profit only",
+        "Stop all development",
+        "Ignore environment"
+      ],
+      "explanation": "Balances environment, economy, society.",
+      "keywords": [
+        "sustainability",
+        "triple-bottom-line"
+      ],
+      "source": "https://www.un.org/en/academic-impact/sustainable-development-goals"
+    },
+    {
+      "question": "What are SDGs?",
+      "correctAnswer": "UN Sustainable Development Goals framework",
+      "incorrectAnswers": [
+        "Stock indices",
+        "Military ranks",
+        "DNA bases"
+      ],
+      "explanation": "17 goals with targets.",
+      "keywords": [
+        "sdgs",
+        "un"
+      ],
+      "source": "https://sdgs.un.org/goals"
+    },
+    {
+      "question": "What is circular economy?",
+      "correctAnswer": "Design to reduce waste by reuse/recycle loops",
+      "incorrectAnswers": [
+        "Linear take-make-waste only",
+        "Burn everything",
+        "Landfill-only strategy"
+      ],
+      "explanation": "Contrasts with linear economy.",
+      "keywords": [
+        "circular-economy",
+        "waste"
+      ],
+      "source": "https://www.epa.gov/sustainable-management-food/sustainable-management-food-basics"
+    },
+    {
+      "question": "What is life-cycle assessment?",
+      "correctAnswer": "Assess environmental impacts across product lifetime",
+      "incorrectAnswers": [
+        "Only manufacturing step",
+        "Only retail price",
+        "Only advertising"
+      ],
+      "explanation": "Craddle-to-grave or cradle-to-cradle.",
+      "keywords": [
+        "lca",
+        "footprint"
+      ],
+      "source": "https://www.epa.gov/research/life-cycle-assessment-lca-research"
+    },
+    {
+      "question": "What is water footprint?",
+      "correctAnswer": "Freshwater used to produce goods/services",
+      "incorrectAnswers": [
+        "Only drinking water",
+        "Only rainfall in deserts",
+        "Only bottled water"
+      ],
+      "explanation": "Includes blue/green/gray water concepts.",
+      "keywords": [
+        "water-footprint",
+        "resources"
+      ],
+      "source": "https://www.waterfootprint.org/en/water-footprint/what-is-water-footprint/"
+    },
+    {
+      "question": "What is sustainable agriculture?",
+      "correctAnswer": "Farming that protects soil/water and productivity",
+      "incorrectAnswers": [
+        "Always organic by definition",
+        "Always no-till only",
+        "Always monoculture"
+      ],
+      "explanation": "Practices reduce erosion and nutrient loss.",
+      "keywords": [
+        "sustainable-ag",
+        "soil"
+      ],
+      "source": "https://www.nrcs.usda.gov/conservation-basics/conservation-by-state/"
+    },
+    {
+      "question": "What is greenwashing?",
+      "correctAnswer": "Misleading environmental marketing",
+      "incorrectAnswers": [
+        "Honest certification",
+        "Peer review",
+        "Open data"
+      ],
+      "explanation": "Consumers should verify claims.",
+      "keywords": [
+        "greenwashing",
+        "ethics"
+      ],
+      "source": "https://www.ftc.gov/news-events/topics/truth-advertising-green-claims"
+    },
+    {
+      "question": "What is ESG?",
+      "correctAnswer": "Environmental, social, governance investing criteria",
+      "incorrectAnswers": [
+        "CPU benchmark",
+        "DNA sequencing method",
+        "Sports league"
+      ],
+      "explanation": "Used in corporate reporting.",
+      "keywords": [
+        "esg",
+        "finance"
+      ],
+      "source": "https://www.sec.gov/newsroom/speeches-statements/gensler-2022-07-27"
+    },
+    {
+      "question": "What is degrowth (idea)?",
+      "correctAnswer": "Reduce material throughput in rich economies for sustainability",
+      "incorrectAnswers": [
+        "Always means recession disaster",
+        "Unlimited growth always good",
+        "Only population control"
+      ],
+      "explanation": "Debated strategy; focuses on well-being.",
+      "keywords": [
+        "degrowth",
+        "economics"
+      ],
+      "source": "https://en.wikipedia.org/wiki/Degrowth"
+    },
+    {
+      "question": "What is environmental justice?",
+      "correctAnswer": "Fair treatment and meaningful involvement for all people",
+      "incorrectAnswers": [
+        "Only wildlife rights",
+        "Only city zoning aesthetics",
+        "Only international law"
+      ],
+      "explanation": "Pollution burdens often unequal.",
+      "keywords": [
+        "ej",
+        "justice"
+      ],
+      "source": "https://www.epa.gov/environmentaljustice"
+    },
+    {
+      "question": "What is cradle-to-cradle (concept)?",
+      "correctAnswer": "Design products for continuous material cycles",
+      "incorrectAnswers": [
+        "Single-use only",
+        "Landfill-first",
+        "No recycling"
+      ],
+      "explanation": "Aspirational circular design.",
+      "keywords": [
+        "design",
+        "materials"
+      ],
+      "source": "https://en.wikipedia.org/wiki/Cradle-to-cradle_design"
+    },
+    {
+      "question": "What is voluntary simplicity?",
+      "correctAnswer": "Lifestyle reducing consumption for values/well-being",
+      "incorrectAnswers": [
+        "Forced poverty",
+        "Hoarding",
+        "Luxury maximization"
+      ],
+      "explanation": "Behavioral sustainability lever.",
+      "keywords": [
+        "consumption",
+        "behavior"
+      ],
+      "source": "https://en.wikipedia.org/wiki/Voluntary_simplicity"
+    }
+  ]
+}

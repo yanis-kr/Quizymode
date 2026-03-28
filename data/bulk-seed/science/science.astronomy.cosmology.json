@@ -1,0 +1,230 @@
+[
+  {
+    "seedId": "f564b914-3499-490f-8386-53e5f9ff3fed",
+    "category": "science",
+    "navigationKeyword1": "astronomy",
+    "navigationKeyword2": "cosmology",
+    "question": "What does the Big Bang model describe?",
+    "correctAnswer": "The early hot, dense state and expansion of the observable universe",
+    "incorrectAnswers": [
+      "An explosion at a center point in space only",
+      "The formation of Earth",
+      "The Moon\u2019s capture"
+    ],
+    "explanation": "Cosmology models expansion from early conditions; it is not an explosion \u2018into\u2019 pre-existing space.",
+    "keywords": [
+      "big-bang",
+      "expansion"
+    ],
+    "source": "https://science.nasa.gov/universe/"
+  },
+  {
+    "seedId": "3eb7bc17-42e0-4afa-972e-089758650095",
+    "category": "science",
+    "navigationKeyword1": "astronomy",
+    "navigationKeyword2": "cosmology",
+    "question": "What is cosmic microwave background radiation?",
+    "correctAnswer": "Remnant glow from when the universe became transparent to light",
+    "incorrectAnswers": [
+      "Light from nearby stars only",
+      "Radar from planets",
+      "Gamma rays from trees"
+    ],
+    "explanation": "The CMB is a key observational pillar of hot early universe models.",
+    "keywords": [
+      "cmb",
+      "early-universe"
+    ],
+    "source": "https://science.nasa.gov/universe/cosmic-microwave-background/"
+  },
+  {
+    "seedId": "68ff2a49-850b-4720-a603-532a9aa6ad57",
+    "category": "science",
+    "navigationKeyword1": "astronomy",
+    "navigationKeyword2": "cosmology",
+    "question": "What is dark energy often invoked to explain?",
+    "correctAnswer": "Accelerating expansion of the universe",
+    "incorrectAnswers": [
+      "Why planets have rings",
+      "Why stars twinkle",
+      "Why comets melt"
+    ],
+    "explanation": "Late-time acceleration appears in distance\u2013redshift data.",
+    "keywords": [
+      "dark-energy",
+      "acceleration"
+    ],
+    "source": "https://science.nasa.gov/universe/dark-energy-dark-matter/"
+  },
+  {
+    "seedId": "6f195db6-2c32-407f-b539-741f2cd809db",
+    "category": "science",
+    "navigationKeyword1": "astronomy",
+    "navigationKeyword2": "cosmology",
+    "question": "What is dark matter inferred from?",
+    "correctAnswer": "Gravitational effects that exceed visible matter alone",
+    "incorrectAnswers": [
+      "Bright glowing clouds only",
+      "Sound in space",
+      "Solar flares on Earth"
+    ],
+    "explanation": "Galaxy dynamics and lensing suggest extra unseen mass.",
+    "keywords": [
+      "dark-matter",
+      "gravity"
+    ],
+    "source": "https://science.nasa.gov/universe/dark-energy-dark-matter/"
+  },
+  {
+    "seedId": "32c94f02-a8a5-48f4-ba67-a4c7facef57d",
+    "category": "science",
+    "navigationKeyword1": "astronomy",
+    "navigationKeyword2": "cosmology",
+    "question": "What is the observable universe?",
+    "correctAnswer": "The region from which light has had time to reach us",
+    "incorrectAnswers": [
+      "The entire universe with certainty",
+      "Only the solar system",
+      "Only Andromeda"
+    ],
+    "explanation": "Cosmic horizon limits what we can observe.",
+    "keywords": [
+      "observable-universe",
+      "horizon"
+    ],
+    "source": "https://science.nasa.gov/universe/"
+  },
+  {
+    "seedId": "c47bc2a4-3f52-415c-8df5-a732a42ce6f3",
+    "category": "science",
+    "navigationKeyword1": "astronomy",
+    "navigationKeyword2": "cosmology",
+    "question": "What is inflation (cosmology) broadly?",
+    "correctAnswer": "A proposed early rapid expansion episode",
+    "incorrectAnswers": [
+      "Stars inflating into giants",
+      "Balloons on Neptune",
+      "Moon drifting away only"
+    ],
+    "explanation": "Inflation addresses horizon and flatness puzzles in some models.",
+    "keywords": [
+      "inflation",
+      "early-universe"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Inflation_(cosmology)"
+  },
+  {
+    "seedId": "e7d45af2-1f84-482c-8107-ceccb462b2c6",
+    "category": "science",
+    "navigationKeyword1": "astronomy",
+    "navigationKeyword2": "cosmology",
+    "question": "What is nucleosynthesis in early universe context?",
+    "correctAnswer": "Formation of light nuclei like hydrogen and helium",
+    "incorrectAnswers": [
+      "Formation of iron in stars only today",
+      "Formation of DNA",
+      "Formation of black holes first"
+    ],
+    "explanation": "Primordial nucleosynthesis matches observed light-element abundances.",
+    "keywords": [
+      "nucleosynthesis",
+      "elements"
+    ],
+    "source": "https://science.nasa.gov/universe/"
+  },
+  {
+    "seedId": "4736aa55-fbdf-42b8-99d4-2474e5ccf1db",
+    "category": "science",
+    "navigationKeyword1": "astronomy",
+    "navigationKeyword2": "cosmology",
+    "question": "What does \u2018redshift z\u2019 measure in cosmology?",
+    "correctAnswer": "How much wavelengths have stretched relative to emission",
+    "incorrectAnswers": [
+      "A star\u2019s temperature in Celsius",
+      "A planet\u2019s density",
+      "A comet\u2019s tail length"
+    ],
+    "explanation": "Higher z corresponds to earlier cosmic times for distant sources.",
+    "keywords": [
+      "redshift",
+      "distance-scale"
+    ],
+    "source": "https://science.nasa.gov/universe/galaxies/"
+  },
+  {
+    "seedId": "cfcfc761-da77-41b6-8467-21caa39a53ec",
+    "category": "science",
+    "navigationKeyword1": "astronomy",
+    "navigationKeyword2": "cosmology",
+    "question": "What is the cosmological principle (approximation)?",
+    "correctAnswer": "The universe is roughly homogeneous and isotropic on large scales",
+    "incorrectAnswers": [
+      "Earth is the exact center",
+      "Galaxies line up in a grid",
+      "Stars are identical"
+    ],
+    "explanation": "Models simplify large-scale structure with statistical uniformity.",
+    "keywords": [
+      "homogeneity",
+      "isotropy"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Cosmological_principle"
+  },
+  {
+    "seedId": "7040c25c-4dcd-4acb-b2df-ee5b6864fd68",
+    "category": "science",
+    "navigationKeyword1": "astronomy",
+    "navigationKeyword2": "cosmology",
+    "question": "What is a light-year?",
+    "correctAnswer": "Distance light travels in one year",
+    "incorrectAnswers": [
+      "A time unit only",
+      "A mass unit",
+      "Earth\u2019s orbital radius"
+    ],
+    "explanation": "It is a distance, not a time.",
+    "keywords": [
+      "light-year",
+      "distance"
+    ],
+    "source": "https://science.nasa.gov/universe/galaxies/"
+  },
+  {
+    "seedId": "d5c7dd69-2e7f-40e4-9f62-9ddfb1268a23",
+    "category": "science",
+    "navigationKeyword1": "astronomy",
+    "navigationKeyword2": "cosmology",
+    "question": "What is spacetime in relativity?",
+    "correctAnswer": "A combined model where space and time form a four-dimensional geometry",
+    "incorrectAnswers": [
+      "Only space without time",
+      "Only clocks without space",
+      "A type of gas"
+    ],
+    "explanation": "Mass\u2013energy influences spacetime curvature.",
+    "keywords": [
+      "spacetime",
+      "relativity"
+    ],
+    "source": "https://science.nasa.gov/universe/black-holes/"
+  },
+  {
+    "seedId": "c3f4f0b5-a112-4b36-859e-a4a5207f7d51",
+    "category": "science",
+    "navigationKeyword1": "astronomy",
+    "navigationKeyword2": "cosmology",
+    "question": "Why can distant galaxies appear as they were long ago?",
+    "correctAnswer": "Light travel time means we see earlier epochs",
+    "incorrectAnswers": [
+      "Telescopes travel back in time",
+      "Galaxies age backward",
+      "Speed of light is infinite"
+    ],
+    "explanation": "Looking far away is looking back in time.",
+    "keywords": [
+      "lookback-time",
+      "observation"
+    ],
+    "source": "https://science.nasa.gov/universe/galaxies/"
+  }
+]

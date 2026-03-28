@@ -1,0 +1,230 @@
+[
+  {
+    "seedId": "64971688-62be-4f8b-9b9d-6f1e12fc38f4",
+    "category": "science",
+    "navigationKeyword1": "linear-algebra",
+    "navigationKeyword2": "systems",
+    "question": "What is Ax = b?",
+    "correctAnswer": "Matrix form of linear system",
+    "incorrectAnswers": [
+      "Eigenvalue equation always",
+      "Quadratic equation",
+      "Differential equation always"
+    ],
+    "explanation": "Solution set is an affine subspace if consistent.",
+    "keywords": [
+      "linear-systems",
+      "ax-b"
+    ],
+    "source": "https://openstax.org/books/linear-algebra/pages/1-3-gaussian-elimination"
+  },
+  {
+    "seedId": "999592f3-3faa-4f97-b4d0-ff5698c2d239",
+    "category": "science",
+    "navigationKeyword1": "linear-algebra",
+    "navigationKeyword2": "systems",
+    "question": "What does inconsistent system mean?",
+    "correctAnswer": "No solutions",
+    "incorrectAnswers": [
+      "Infinite solutions",
+      "Exactly two solutions",
+      "Unique always"
+    ],
+    "explanation": "RREF shows a contradictory row.",
+    "keywords": [
+      "inconsistent",
+      "solutions"
+    ],
+    "source": "https://openstax.org/books/linear-algebra/pages/1-3-gaussian-elimination"
+  },
+  {
+    "seedId": "30fb5b2b-c0ec-48b7-915a-3b8701abf536",
+    "category": "science",
+    "navigationKeyword1": "linear-algebra",
+    "navigationKeyword2": "systems",
+    "question": "What is homogeneous system Ax=0?",
+    "correctAnswer": "Right-hand side zero",
+    "incorrectAnswers": [
+      "b arbitrary",
+      "Only nonlinear",
+      "Only eigenproblem"
+    ],
+    "explanation": "Always has trivial solution x=0.",
+    "keywords": [
+      "homogeneous",
+      "nullspace"
+    ],
+    "source": "https://openstax.org/books/linear-algebra/pages/2-4-rank-and-nullity"
+  },
+  {
+    "seedId": "f01ad601-1272-485e-a4fe-6da606c927b9",
+    "category": "science",
+    "navigationKeyword1": "linear-algebra",
+    "navigationKeyword2": "systems",
+    "question": "What is particular + homogeneous solution structure?",
+    "correctAnswer": "General solution = particular + any nullspace vector",
+    "incorrectAnswers": [
+      "Only particular",
+      "Only homogeneous",
+      "Multiply particular by det"
+    ],
+    "explanation": "If Ax_p=b and Ax_h=0 then A(x_p+x_h)=b.",
+    "keywords": [
+      "solution-structure",
+      "nullspace"
+    ],
+    "source": "https://openstax.org/books/linear-algebra/pages/2-4-rank-and-nullity"
+  },
+  {
+    "seedId": "8061f7e9-9f15-4e34-b304-0c5d1271760a",
+    "category": "science",
+    "navigationKeyword1": "linear-algebra",
+    "navigationKeyword2": "systems",
+    "question": "What is Cramer\u2019s rule caveat?",
+    "correctAnswer": "Practical mainly for small n; uses determinants",
+    "incorrectAnswers": [
+      "Always fastest",
+      "Works for any large sparse system best",
+      "Never uses determinants"
+    ],
+    "explanation": "Theoretically useful.",
+    "keywords": [
+      "cramer",
+      "determinant"
+    ],
+    "source": "https://openstax.org/books/linear-algebra/pages/4-2-cramers-rule"
+  },
+  {
+    "seedId": "84d89b8b-3d4c-4d04-8ae4-380736e6d712",
+    "category": "science",
+    "navigationKeyword1": "linear-algebra",
+    "navigationKeyword2": "systems",
+    "question": "What is LU factorization idea?",
+    "correctAnswer": "Write A = LU for elimination",
+    "incorrectAnswers": [
+      "Always A=QR",
+      "Always diagonalize",
+      "Only for symmetric matrices"
+    ],
+    "explanation": "Used in solving multiple systems.",
+    "keywords": [
+      "lu",
+      "factorization"
+    ],
+    "source": "https://en.wikipedia.org/wiki/LU_decomposition"
+  },
+  {
+    "seedId": "6b93e8b1-08b6-44f7-b0fe-b0f6e5edefe1",
+    "category": "science",
+    "navigationKeyword1": "linear-algebra",
+    "navigationKeyword2": "systems",
+    "question": "What is least squares normal equations?",
+    "correctAnswer": "A^T A x = A^T b",
+    "incorrectAnswers": [
+      "A x = b always solvable",
+      "A^T x = b",
+      "x = A b"
+    ],
+    "explanation": "Minimizes ||Ax - b||_2.",
+    "keywords": [
+      "least-squares",
+      "regression"
+    ],
+    "source": "https://openstax.org/books/linear-algebra/pages/6-5-least-squares"
+  },
+  {
+    "seedId": "31b87ac4-d1fc-4017-8072-9f2c6f453378",
+    "category": "science",
+    "navigationKeyword1": "linear-algebra",
+    "navigationKeyword2": "systems",
+    "question": "What is pivot in elimination?",
+    "correctAnswer": "Leading entry used to eliminate below",
+    "incorrectAnswers": [
+      "Eigenvalue",
+      "Trace",
+      "Permutation only"
+    ],
+    "explanation": "Partial pivoting improves stability.",
+    "keywords": [
+      "pivoting",
+      "numerical"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Pivot_element"
+  },
+  {
+    "seedId": "efac161d-45b0-4227-9af8-78a19074e26d",
+    "category": "science",
+    "navigationKeyword1": "linear-algebra",
+    "navigationKeyword2": "systems",
+    "question": "What is ill-conditioned system?",
+    "correctAnswer": "Small input errors cause huge solution errors",
+    "incorrectAnswers": [
+      "Always easy",
+      "Always unique",
+      "Always consistent"
+    ],
+    "explanation": "Condition number quantifies.",
+    "keywords": [
+      "condition-number",
+      "numerical"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Condition_number"
+  },
+  {
+    "seedId": "4e7351d3-ed93-4f4c-a7f1-fd9354960b48",
+    "category": "science",
+    "navigationKeyword1": "linear-algebra",
+    "navigationKeyword2": "systems",
+    "question": "What is augmented matrix?",
+    "correctAnswer": "[A|b] for solving Ax=b",
+    "incorrectAnswers": [
+      "Only A",
+      "Only b",
+      "Only eigenvalues"
+    ],
+    "explanation": "Row operations preserve solution set.",
+    "keywords": [
+      "augmented-matrix",
+      "elimination"
+    ],
+    "source": "https://openstax.org/books/linear-algebra/pages/1-3-gaussian-elimination"
+  },
+  {
+    "seedId": "8319e1fe-d6ca-4bac-a4d9-55aa55f102f0",
+    "category": "science",
+    "navigationKeyword1": "linear-algebra",
+    "navigationKeyword2": "systems",
+    "question": "What is free variable?",
+    "correctAnswer": "Non-pivot columns in RREF parametrization",
+    "incorrectAnswers": [
+      "Always zero",
+      "Always unique",
+      "Same as pivot always"
+    ],
+    "explanation": "Expresses infinite solution families.",
+    "keywords": [
+      "free-variables",
+      "rref"
+    ],
+    "source": "https://openstax.org/books/linear-algebra/pages/1-3-gaussian-elimination"
+  },
+  {
+    "seedId": "2d470d1c-c07d-4660-9563-8e298d11d742",
+    "category": "science",
+    "navigationKeyword1": "linear-algebra",
+    "navigationKeyword2": "systems",
+    "question": "What is no solution vs many solutions in R^2 lines?",
+    "correctAnswer": "Parallel distinct vs coincident",
+    "incorrectAnswers": [
+      "Always one solution",
+      "Always infinite",
+      "Always none"
+    ],
+    "explanation": "Geometry matches algebra.",
+    "keywords": [
+      "geometry",
+      "systems"
+    ],
+    "source": "https://openstax.org/books/linear-algebra/pages/1-3-gaussian-elimination"
+  }
+]

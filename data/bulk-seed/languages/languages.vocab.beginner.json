@@ -1,0 +1,126 @@
+[
+  {
+    "category": "languages",
+    "navigationKeyword1": "vocab",
+    "navigationKeyword2": "beginner",
+    "question": "Which word names a place where people go when they are sick?",
+    "correctAnswer": "hospital",
+    "incorrectAnswers": [
+      "kitchen",
+      "library",
+      "stadium"
+    ],
+    "explanation": "A hospital is a place for medical care when someone is ill or hurt.",
+    "keywords": [
+      "hospital",
+      "health",
+      "places",
+      "beginner-words"
+    ],
+    "source": "https://dictionary.cambridge.org/dictionary/english/hospital",
+    "seedId": "417f04a3-c35e-583e-9372-6bfbde13ab22"
+  },
+  {
+    "category": "languages",
+    "navigationKeyword1": "vocab",
+    "navigationKeyword2": "beginner",
+    "question": "Which word means the opposite of \"hot\" for weather?",
+    "correctAnswer": "cold",
+    "incorrectAnswers": [
+      "warm",
+      "dry",
+      "loud"
+    ],
+    "explanation": "\"Cold\" is the simple opposite of \"hot\" when you talk about temperature.",
+    "keywords": [
+      "cold",
+      "weather",
+      "opposites",
+      "beginner-words"
+    ],
+    "source": "https://www.merriam-webster.com/dictionary/cold",
+    "seedId": "849cf6cb-00b5-5a35-9be0-a0a6563538fa"
+  },
+  {
+    "category": "languages",
+    "navigationKeyword1": "vocab",
+    "navigationKeyword2": "beginner",
+    "question": "Which word means a mother or father?",
+    "correctAnswer": "parent",
+    "incorrectAnswers": [
+      "cousin",
+      "neighbor",
+      "stranger"
+    ],
+    "explanation": "A parent is a mother or father of a child.",
+    "keywords": [
+      "parent",
+      "family",
+      "beginner-words"
+    ],
+    "source": "https://www.merriam-webster.com/dictionary/parent",
+    "seedId": "4b6b0fef-7e2c-5dde-a307-9dc93264c05b"
+  },
+  {
+    "category": "languages",
+    "navigationKeyword1": "vocab",
+    "navigationKeyword2": "beginner",
+    "question": "Which verb means to move on your feet at a slow speed?",
+    "correctAnswer": "walk",
+    "incorrectAnswers": [
+      "fly",
+      "swim",
+      "dig"
+    ],
+    "explanation": "To walk is to move step by step on foot, usually more slowly than running.",
+    "keywords": [
+      "walk",
+      "movement",
+      "verbs",
+      "beginner-words"
+    ],
+    "source": "https://dictionary.cambridge.org/dictionary/english/walk",
+    "seedId": "913039ab-501d-50de-babf-deac95613b0e"
+  },
+  {
+    "category": "languages",
+    "navigationKeyword1": "vocab",
+    "navigationKeyword2": "beginner",
+    "question": "Which word is a basic color like the sky on a clear day?",
+    "correctAnswer": "blue",
+    "incorrectAnswers": [
+      "circle",
+      "heavy",
+      "quickly"
+    ],
+    "explanation": "\"Blue\" is a common color name, not a shape, weight, or adverb.",
+    "keywords": [
+      "blue",
+      "colors",
+      "beginner-words"
+    ],
+    "source": "https://learnenglish.britishcouncil.org/vocabulary/a1-a2-vocabulary/colours",
+    "seedId": "82a51e11-4742-51f5-bed6-b52a41ce4e74"
+  },
+  {
+    "category": "languages",
+    "navigationKeyword1": "vocab",
+    "navigationKeyword2": "beginner",
+    "question": "Which word names something you read that has many pages?",
+    "correctAnswer": "book",
+    "incorrectAnswers": [
+      "spoon",
+      "cloud",
+      "minute"
+    ],
+    "explanation": "A book is a common object made of pages for reading.",
+    "keywords": [
+      "book",
+      "reading",
+      "objects",
+      "beginner-words"
+    ],
+    "source": "https://dictionary.cambridge.org/dictionary/english/book",
+    "seedId": "f1ef916f-41ea-5afd-84ac-602931d7ce24"
+  }
+]

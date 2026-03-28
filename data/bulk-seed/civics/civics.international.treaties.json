@@ -1,0 +1,116 @@
+[
+  {
+    "category": "civics",
+    "navigationKeyword1": "international",
+    "navigationKeyword2": "treaties",
+    "question": "In international law basics, what is a treaty?",
+    "correctAnswer": "a formal written agreement between states governed by international law",
+    "incorrectAnswers": [
+      "a private company’s internal memo",
+      "a city’s parking ticket policy",
+      "a one-day press statement with no legal force"
+    ],
+    "explanation": "Treaties are consent-based instruments that create mutual obligations among parties.",
+    "keywords": [
+      "treaty",
+      "international-law"
+    ],
+    "source": "https://legal.un.org/avl/ha/tbc/tbc.html",
+    "seedId": "3bbedf9f-4227-5d43-8e92-7242c6dae09f"
+  },
+  {
+    "category": "civics",
+    "navigationKeyword1": "international",
+    "navigationKeyword2": "treaties",
+    "question": "What is ratification in treaty practice?",
+    "correctAnswer": "a state’s formal step that binds it to a treaty after negotiation and signature",
+    "incorrectAnswers": [
+      "automatic law without any domestic step",
+      "a request to delete the treaty text",
+      "a temporary boycott of all trade"
+    ],
+    "explanation": "States follow their own constitutional rules to consent and be bound internationally.",
+    "keywords": [
+      "ratification",
+      "consent"
+    ],
+    "source": "https://www.state.gov/treaties/",
+    "seedId": "811b6663-a294-503c-8959-2cec8ac6edc8"
+  },
+  {
+    "category": "civics",
+    "navigationKeyword1": "international",
+    "navigationKeyword2": "treaties",
+    "question": "How does a bilateral treaty differ from a multilateral one?",
+    "correctAnswer": "bilateral involves two parties; multilateral involves many parties under one instrument",
+    "incorrectAnswers": [
+      "bilateral means no writing is allowed",
+      "multilateral applies only to sports leagues",
+      "both terms mean the same in every case"
+    ],
+    "explanation": "The number of parties shapes negotiation style and how widely rules spread.",
+    "keywords": [
+      "bilateral",
+      "multilateral"
+    ],
+    "source": "https://www.britannica.com/topic/treaty-international-relations",
+    "seedId": "39e13a73-82e9-5736-b963-081a3abc7f17"
+  },
+  {
+    "category": "civics",
+    "navigationKeyword1": "international",
+    "navigationKeyword2": "treaties",
+    "question": "What is the Vienna Convention on the Law of Treaties mainly about?",
+    "correctAnswer": "rules for how treaties are made, interpreted, and ended between states",
+    "incorrectAnswers": [
+      "how to run national elections",
+      "how to charter private banks only",
+      "how to abolish all international courts"
+    ],
+    "explanation": "It is a key framework text on treaty formation, interpretation, and invalidity grounds.",
+    "keywords": [
+      "vienna-convention",
+      "interpretation"
+    ],
+    "source": "https://legal.un.org/avl/ha/vclt/vclt.html",
+    "seedId": "a1958709-287b-5875-bc42-afd4847c4813"
+  },
+  {
+    "category": "civics",
+    "navigationKeyword1": "international",
+    "navigationKeyword2": "treaties",
+    "question": "Why do countries sometimes add reservations to a treaty?",
+    "correctAnswer": "to accept most of the treaty while excluding or changing specific legal effects",
+    "incorrectAnswers": [
+      "to cancel the treaty for all other states",
+      "to ban all future amendments",
+      "to remove the need for any signature"
+    ],
+    "explanation": "Reservations let states join with limits if the treaty allows and other parties accept.",
+    "keywords": [
+      "reservations",
+      "state-consent"
+    ],
+    "source": "https://legal.un.org/ilc/texts/instruments/english/conventions/9_1_1969.pdf",
+    "seedId": "388d7b92-41a7-5bba-b78c-832a9956927e"
+  },
+  {
+    "category": "civics",
+    "navigationKeyword1": "international",
+    "navigationKeyword2": "treaties",
+    "question": "What does it mean that treaty obligations run *pacta sunt servanda*?",
+    "correctAnswer": "agreements must be kept in good faith",
+    "incorrectAnswers": [
+      "treaties expire every 30 days",
+      "only verbal deals count",
+      "courts may never read treaty text"
+    ],
+    "explanation": "Good faith performance is a core idea supporting predictable relations between states.",
+    "keywords": [
+      "good-faith",
+      "compliance"
+    ],
+    "source": "https://legal.un.org/ilc/texts/instruments/english/conventions/9_1_1969.pdf",
+    "seedId": "ff031378-6187-5ab8-9bb6-516d8e74010e"
+  }
+]

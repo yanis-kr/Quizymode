@@ -1,0 +1,230 @@
+[
+  {
+    "seedId": "48d10397-d5e5-42ca-9748-ac9361d55470",
+    "category": "science",
+    "navigationKeyword1": "physics",
+    "navigationKeyword2": "energy",
+    "question": "Work by constant force along displacement?",
+    "correctAnswer": "W = F d cos\u03b8",
+    "incorrectAnswers": [
+      "W = F/d",
+      "W = F \u00d7 d always regardless of angle",
+      "W = mv"
+    ],
+    "explanation": "Only component parallel to displacement does work.",
+    "keywords": [
+      "work",
+      "energy"
+    ],
+    "source": "https://openstax.org/books/university-physics-volume-1/pages/7-2-work"
+  },
+  {
+    "seedId": "9d503560-ad84-4fab-870d-5eba08360454",
+    "category": "science",
+    "navigationKeyword1": "physics",
+    "navigationKeyword2": "energy",
+    "question": "Kinetic energy?",
+    "correctAnswer": "KE = (1/2)mv^2",
+    "incorrectAnswers": [
+      "mv",
+      "mgh always",
+      "1/2 mv"
+    ],
+    "explanation": "Scalar; frame-dependent.",
+    "keywords": [
+      "kinetic-energy",
+      "mechanics"
+    ],
+    "source": "https://openstax.org/books/university-physics-volume-1/pages/7-3-kinetic-energy"
+  },
+  {
+    "seedId": "cef0d5a6-1389-4200-9cbd-ec34636492cc",
+    "category": "science",
+    "navigationKeyword1": "physics",
+    "navigationKeyword2": "energy",
+    "question": "Gravitational PE near Earth (uniform g)?",
+    "correctAnswer": "U = mgh (reference dependent)",
+    "incorrectAnswers": [
+      "U = 1/2 kx^2",
+      "U = mv",
+      "U always absolute"
+    ],
+    "explanation": "Choose reference height.",
+    "keywords": [
+      "potential-energy",
+      "gravity"
+    ],
+    "source": "https://openstax.org/books/university-physics-volume-1/pages/7-4-potential-energy"
+  },
+  {
+    "seedId": "3380d756-2a16-4a44-bb1c-4d86c48c452b",
+    "category": "science",
+    "navigationKeyword1": "physics",
+    "navigationKeyword2": "energy",
+    "question": "Work\u2013energy theorem?",
+    "correctAnswer": "W_net = \u0394KE",
+    "incorrectAnswers": [
+      "W = \u0394p",
+      "W = \u0394U only",
+      "W always 0"
+    ],
+    "explanation": "Connects forces to speed changes.",
+    "keywords": [
+      "work-energy",
+      "theorem"
+    ],
+    "source": "https://openstax.org/books/university-physics-volume-1/pages/7-5-work-energy-theorem"
+  },
+  {
+    "seedId": "150d42ed-e1a8-43c2-9995-f1d88ca5441a",
+    "category": "science",
+    "navigationKeyword1": "physics",
+    "navigationKeyword2": "energy",
+    "question": "Power?",
+    "correctAnswer": "P = dW/dt = F\u00b7v (instantaneous)",
+    "incorrectAnswers": [
+      "P = W + t",
+      "P = F/t only",
+      "P = mv^2"
+    ],
+    "explanation": "Rate of energy transfer.",
+    "keywords": [
+      "power",
+      "watts"
+    ],
+    "source": "https://openstax.org/books/university-physics-volume-1/pages/7-6-power"
+  },
+  {
+    "seedId": "362dbcff-a6fb-41fd-9e05-bb2a12f60f78",
+    "category": "science",
+    "navigationKeyword1": "physics",
+    "navigationKeyword2": "energy",
+    "question": "Hooke\u2019s law (ideal spring)?",
+    "correctAnswer": "F = \u2212kx",
+    "incorrectAnswers": [
+      "F = kx^2",
+      "F = k/x",
+      "F = mg only"
+    ],
+    "explanation": "Restoring force toward equilibrium.",
+    "keywords": [
+      "hookes-law",
+      "springs"
+    ],
+    "source": "https://openstax.org/books/university-physics-volume-1/pages/7-7-energy-of-a-system"
+  },
+  {
+    "seedId": "85dc344c-8e0d-4806-8407-20cb8ba57d48",
+    "category": "science",
+    "navigationKeyword1": "physics",
+    "navigationKeyword2": "energy",
+    "question": "Elastic PE in spring?",
+    "correctAnswer": "U = (1/2)kx^2",
+    "incorrectAnswers": [
+      "kx",
+      "1/2 mv^2",
+      "k/x"
+    ],
+    "explanation": "Stored in deformation.",
+    "keywords": [
+      "elastic-energy",
+      "springs"
+    ],
+    "source": "https://openstax.org/books/university-physics-volume-1/pages/7-7-energy-of-a-system"
+  },
+  {
+    "seedId": "b5b53b7b-437d-4fb6-b129-b2e6392b5701",
+    "category": "science",
+    "navigationKeyword1": "physics",
+    "navigationKeyword2": "energy",
+    "question": "Conservative force property?",
+    "correctAnswer": "Work independent of path; relates to potential",
+    "incorrectAnswers": [
+      "Always dissipative",
+      "Path-dependent always",
+      "Never has potential"
+    ],
+    "explanation": "Gravity and ideal spring examples.",
+    "keywords": [
+      "conservative-force",
+      "energy"
+    ],
+    "source": "https://openstax.org/books/university-physics-volume-1/pages/7-8-potential-energy-of-a-system"
+  },
+  {
+    "seedId": "a773693b-7c49-4f1e-9f0d-f3bf2dfb8f9a",
+    "category": "science",
+    "navigationKeyword1": "physics",
+    "navigationKeyword2": "energy",
+    "question": "Mechanical energy (ideal, only conservative)?",
+    "correctAnswer": "E = KE + U may be conserved",
+    "incorrectAnswers": [
+      "Always increases",
+      "Always zero",
+      "Never includes PE"
+    ],
+    "explanation": "Nonconservative forces add/remove energy.",
+    "keywords": [
+      "mechanical-energy",
+      "conservation"
+    ],
+    "source": "https://openstax.org/books/university-physics-volume-1/pages/7-9-energy-conservation"
+  },
+  {
+    "seedId": "273701e8-73af-40e7-832e-f6a50ee8c726",
+    "category": "science",
+    "navigationKeyword1": "physics",
+    "navigationKeyword2": "energy",
+    "question": "Efficiency?",
+    "correctAnswer": "Useful output / input energy",
+    "incorrectAnswers": [
+      "Always 100%",
+      "Input/output reversed always",
+      "Same as power"
+    ],
+    "explanation": "Real machines lose heat.",
+    "keywords": [
+      "efficiency",
+      "energy"
+    ],
+    "source": "https://www.energy.gov/eere/renewable-energy"
+  },
+  {
+    "seedId": "da47f427-039e-40fc-9030-89d161c87168",
+    "category": "science",
+    "navigationKeyword1": "physics",
+    "navigationKeyword2": "energy",
+    "question": "Rotational KE?",
+    "correctAnswer": "KE_rot = (1/2)I\u03c9^2",
+    "incorrectAnswers": [
+      "I\u03c9",
+      "1/2 mv only",
+      "I/\u03c9"
+    ],
+    "explanation": "Analog of linear KE.",
+    "keywords": [
+      "rotation",
+      "inertia"
+    ],
+    "source": "https://openstax.org/books/university-physics-volume-1/pages/10-4-rotational-kinetic-energy"
+  },
+  {
+    "seedId": "8771d691-b4f0-4eec-b42d-a6fb41361110",
+    "category": "science",
+    "navigationKeyword1": "physics",
+    "navigationKeyword2": "energy",
+    "question": "Gravitational potential (two masses, general)?",
+    "correctAnswer": "U = \u2212G m1 m2 / r (zero at infinity convention)",
+    "incorrectAnswers": [
+      "U = mgh only always",
+      "U positive always",
+      "U = Gmm/r"
+    ],
+    "explanation": "Binding orbits.",
+    "keywords": [
+      "gravity",
+      "potential"
+    ],
+    "source": "https://openstax.org/books/university-physics-volume-1/pages/13-2-newtons-law-of-universal-gravitation"
+  }
+]

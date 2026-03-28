@@ -5,6 +5,7 @@ import { useQuery } from "@tanstack/react-query";
 import { useAuth } from "@/contexts/AuthContext";
 import { usersApi } from "@/api/users";
 import UserProfileModal from "./UserProfileModal";
+import CategoriesMapModal from "./CategoriesMapModal";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 
 interface LayoutProps {
@@ -16,6 +17,7 @@ const Layout = ({ children }: LayoutProps) => {
   const navigate = useNavigate();
   const location = useLocation();
   const [showProfileModal, setShowProfileModal] = useState(false);
+  const [showCategoriesMap, setShowCategoriesMap] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   // Fetch user data when authenticated to get full profile info
@@ -35,6 +37,7 @@ const Layout = ({ children }: LayoutProps) => {
 
   // Use user data from API if available, otherwise fall back to AuthContext values
   const displayName = user?.name || user?.email || username || email || "User";
+  const headerDisplayName = displayName.slice(0, 10);
   const userIsAdmin = user?.isAdmin ?? isAdmin;
   const role = userIsAdmin ? "Admin" : "User";
 
@@ -69,7 +72,7 @@ const Layout = ({ children }: LayoutProps) => {
     }`;
 
   return (
-    <div className="min-h-screen bg-[radial-gradient(circle_at_top,#1e3a8a_0%,#0f172a_34%,#020617_100%)]">
+    <div className="flex min-h-screen flex-col bg-[radial-gradient(circle_at_top,#1e3a8a_0%,#0f172a_34%,#020617_100%)]">
       <nav className="border-b border-slate-200/70 bg-white/95 shadow-sm backdrop-blur">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between h-16">
@@ -135,6 +138,12 @@ const Layout = ({ children }: LayoutProps) => {
 
               {/* Desktop menu */}
               <div className="hidden sm:flex sm:items-center sm:gap-3">
+                <Link
+                  to="/about"
+                  className={desktopNavLinkClass(isPathActive("/about"))}
+                >
+                  About
+                </Link>
                 {isAuthenticated ? (
                   <div className="flex items-center space-x-4">
                     <button
@@ -142,13 +151,8 @@ const Layout = ({ children }: LayoutProps) => {
                       className="text-right hover:bg-gray-50 px-2 py-1 rounded-md transition-colors"
                     >
                       <div className="text-sm font-medium text-gray-900">
-                        {displayName}
+                        {headerDisplayName}
                       </div>
-                      {user?.email && user.name && (
-                        <div className="text-xs text-gray-500">
-                          {user.email}
-                        </div>
-                      )}
                       <div className="text-xs text-gray-500">{role}</div>
                     </button>
                     <button
@@ -197,6 +201,13 @@ const Layout = ({ children }: LayoutProps) => {
               >
                 Collections
               </Link>
+              <Link
+                to="/about"
+                className={mobileNavLinkClass(isPathActive("/about"))}
+                onClick={closeMobileMenu}
+              >
+                About
+              </Link>
               {isAuthenticated && (
                 <>
                   <Link
@@ -223,11 +234,8 @@ const Layout = ({ children }: LayoutProps) => {
                 <>
                   <div className="px-4 mb-3">
                     <div className="text-base font-medium text-gray-900">
-                      {displayName}
+                      {headerDisplayName}
                     </div>
-                    {user?.email && user.name && (
-                      <div className="text-sm text-gray-500">{user.email}</div>
-                    )}
                     <div className="text-sm text-gray-500">{role}</div>
                   </div>
                   <div className="space-y-1">
@@ -276,15 +284,49 @@ const Layout = ({ children }: LayoutProps) => {
       <main
         className={
           isHomePage
-            ? "py-0"
-            : "max-w-7xl mx-auto py-6 sm:px-6 lg:px-8"
+            ? "flex-1 py-0"
+            : "mx-auto flex-1 max-w-7xl py-6 sm:px-6 lg:px-8"
         }
       >
         {children}
       </main>
+      <footer className="px-4 pb-6 pt-2 sm:px-6 lg:px-8">
+        <div className="mx-auto max-w-7xl">
+          <div className="flex flex-col gap-4 rounded-[28px] border border-white/10 bg-slate-950/72 px-5 py-4 text-slate-100 shadow-xl shadow-slate-950/30 backdrop-blur sm:flex-row sm:items-center sm:justify-between">
+            <div>
+              <div className="text-[11px] font-semibold uppercase tracking-[0.22em] text-sky-300">
+                Browse Tools
+              </div>
+              <p className="mt-1 text-sm text-slate-300">
+                Open the full taxonomy tree or jump to the app overview from anywhere.
+              </p>
+            </div>
+
+            <div className="flex flex-wrap gap-2">
+              <button
+                type="button"
+                onClick={() => setShowCategoriesMap(true)}
+                className="inline-flex items-center justify-center rounded-full border border-sky-300/30 bg-sky-400/10 px-4 py-2 text-sm font-medium text-sky-100 transition hover:border-sky-200/50 hover:bg-sky-400/18 hover:text-white"
+              >
+                Categories Map
+              </button>
+              <Link
+                to="/about"
+                className="inline-flex items-center justify-center rounded-full border border-white/12 bg-white/10 px-4 py-2 text-sm font-medium text-slate-100 transition hover:bg-white/16 hover:text-white"
+              >
+                About
+              </Link>
+            </div>
+          </div>
+        </div>
+      </footer>
       <UserProfileModal
         isOpen={showProfileModal}
         onClose={() => setShowProfileModal(false)}
+      />
+      <CategoriesMapModal
+        isOpen={showCategoriesMap}
+        onClose={() => setShowCategoriesMap(false)}
       />
     </div>
   );

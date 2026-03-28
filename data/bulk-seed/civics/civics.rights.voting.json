@@ -1,0 +1,116 @@
+[
+  {
+    "category": "civics",
+    "navigationKeyword1": "rights",
+    "navigationKeyword2": "voting",
+    "question": "Which amendment bans race-based denial of the right to vote?",
+    "correctAnswer": "the Fifteenth Amendment",
+    "incorrectAnswers": [
+      "the Twelfth Amendment",
+      "the Eighteenth Amendment",
+      "the Twenty-Seventh Amendment"
+    ],
+    "explanation": "The Fifteenth Amendment says the right to vote shall not be denied or abridged on account of race, color, or previous servitude.",
+    "keywords": [
+      "voting-rights",
+      "fifteenth-amendment"
+    ],
+    "source": "https://www.law.cornell.edu/constitution/amendmentxv",
+    "seedId": "42f45c40-7d10-5cf0-8556-a46321dbf052"
+  },
+  {
+    "category": "civics",
+    "navigationKeyword1": "rights",
+    "navigationKeyword2": "voting",
+    "question": "Which amendment extended the vote to women nationwide?",
+    "correctAnswer": "the Nineteenth Amendment",
+    "incorrectAnswers": [
+      "the Fourteenth Amendment",
+      "the Sixteenth Amendment",
+      "the Twenty-First Amendment"
+    ],
+    "explanation": "The Nineteenth Amendment prohibits denial of the vote on account of sex.",
+    "keywords": [
+      "voting-rights",
+      "nineteenth-amendment"
+    ],
+    "source": "https://www.law.cornell.edu/constitution/amendmentxix",
+    "seedId": "1c055209-9af4-5366-bf70-2e9b9bbc4bc3"
+  },
+  {
+    "category": "civics",
+    "navigationKeyword1": "rights",
+    "navigationKeyword2": "voting",
+    "question": "Which amendment sets the voting age at 18 for federal and state elections?",
+    "correctAnswer": "the Twenty-Sixth Amendment",
+    "incorrectAnswers": [
+      "the Thirteenth Amendment",
+      "the Twenty-Second Amendment",
+      "the Twenty-Fifth Amendment"
+    ],
+    "explanation": "The Twenty-Sixth Amendment guarantees citizens eighteen and older the right to vote and bars age discrimination for those 18 and up.",
+    "keywords": [
+      "voting-rights",
+      "twenty-sixth-amendment"
+    ],
+    "source": "https://www.archives.gov/founding-docs/amendments-11-27",
+    "seedId": "96e07bd1-be69-5881-b88f-ea0d64b6ffd5"
+  },
+  {
+    "category": "civics",
+    "navigationKeyword1": "rights",
+    "navigationKeyword2": "voting",
+    "question": "Which amendment ended poll taxes in federal elections?",
+    "correctAnswer": "the Twenty-Fourth Amendment",
+    "incorrectAnswers": [
+      "the Eleventh Amendment",
+      "the Seventeenth Amendment",
+      "the Twentieth Amendment"
+    ],
+    "explanation": "The Twenty-Fourth Amendment bars denial of the right to vote in federal elections for failure to pay any poll tax.",
+    "keywords": [
+      "voting-rights",
+      "poll-tax"
+    ],
+    "source": "https://constitution.congress.gov/constitution/amendment-24/",
+    "seedId": "e607297f-8b28-55e0-8cdf-94432ac18e2c"
+  },
+  {
+    "category": "civics",
+    "navigationKeyword1": "rights",
+    "navigationKeyword2": "voting",
+    "question": "What did Harper v. Virginia State Board of Elections say about wealth and voting?",
+    "correctAnswer": "wealth cannot be used to keep people from voting in state elections",
+    "incorrectAnswers": [
+      "poll taxes are always allowed",
+      "only landowners may vote",
+      "states may charge any fee"
+    ],
+    "explanation": "The Court extended poll-tax bans to state elections, tying voting rights to equal protection principles.",
+    "keywords": [
+      "voting-rights",
+      "equal-protection"
+    ],
+    "source": "https://www.law.cornell.edu/wex/harper_v._virginia_state_board_of_elections",
+    "seedId": "b212988d-34e6-5665-b390-d8f1ac44d6ef"
+  },
+  {
+    "category": "civics",
+    "navigationKeyword1": "rights",
+    "navigationKeyword2": "voting",
+    "question": "Under the Constitution, who chooses the times, places, and manner of congressional elections unless Congress acts?",
+    "correctAnswer": "state legislatures",
+    "incorrectAnswers": [
+      "the president alone",
+      "the Supreme Court",
+      "county sheriffs"
+    ],
+    "explanation": "Article I, Section 4 gives states the default power to regulate congressional election logistics, with congressional override.",
+    "keywords": [
+      "voting-rights",
+      "election-administration"
+    ],
+    "source": "https://constitution.congress.gov/constitution/article-1/",
+    "seedId": "8690283d-46c4-5dae-968b-b1b1abe40b53"
+  }
+]

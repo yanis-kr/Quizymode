@@ -1,0 +1,116 @@
+[
+  {
+    "category": "civics",
+    "navigationKeyword1": "law",
+    "navigationKeyword2": "civil",
+    "question": "In many civil lawsuits, which side usually has the burden to prove its claims?",
+    "correctAnswer": "the party bringing the suit",
+    "incorrectAnswers": [
+      "the judge",
+      "the jury before trial begins",
+      "the party being sued, always"
+    ],
+    "explanation": "The plaintiff—the party who files the case—typically must prove the elements of the claims asserted.",
+    "keywords": [
+      "civil-law",
+      "burden-of-proof"
+    ],
+    "source": "https://www.law.cornell.edu/wex/burden_of_proof",
+    "seedId": "6ff97b0e-5d8b-51b8-995c-983d926c3044"
+  },
+  {
+    "category": "civics",
+    "navigationKeyword1": "law",
+    "navigationKeyword2": "civil",
+    "question": "What is the common standard of proof in ordinary civil cases?",
+    "correctAnswer": "a preponderance of the evidence",
+    "incorrectAnswers": [
+      "proof beyond a reasonable doubt",
+      "proof beyond any doubt",
+      "proof by clear and convincing evidence in every case"
+    ],
+    "explanation": "Most civil claims use the preponderance standard, meaning it is more likely than not that the claim is true.",
+    "keywords": [
+      "civil-law",
+      "evidence-standard"
+    ],
+    "source": "https://www.uscourts.gov/about-federal-courts/types-federal-cases",
+    "seedId": "7993dce0-f74f-5b76-a001-b16a4c8477db"
+  },
+  {
+    "category": "civics",
+    "navigationKeyword1": "law",
+    "navigationKeyword2": "civil",
+    "question": "What is the usual name for the person who starts a civil lawsuit?",
+    "correctAnswer": "plaintiff",
+    "incorrectAnswers": [
+      "defendant",
+      "prosecutor",
+      "appellant only"
+    ],
+    "explanation": "The plaintiff is the party who files the complaint and seeks relief from the court.",
+    "keywords": [
+      "civil-law",
+      "court-roles"
+    ],
+    "source": "https://www.law.cornell.edu/wex/plaintiff",
+    "seedId": "3e962f8f-7e72-5d95-9e90-e9bc106e2f6b"
+  },
+  {
+    "category": "civics",
+    "navigationKeyword1": "law",
+    "navigationKeyword2": "civil",
+    "question": "Which kind of civil wrong often involves harm to a person or property outside of a contract dispute?",
+    "correctAnswer": "a tort",
+    "incorrectAnswers": [
+      "a felony",
+      "a treaty",
+      "an indictment"
+    ],
+    "explanation": "Torts cover many personal-injury and negligence claims that are not mainly about breaching a contract.",
+    "keywords": [
+      "civil-law",
+      "torts"
+    ],
+    "source": "https://www.law.cornell.edu/wex/tort",
+    "seedId": "01fee5c4-5405-5270-88a2-ffec866ec1af"
+  },
+  {
+    "category": "civics",
+    "navigationKeyword1": "law",
+    "navigationKeyword2": "civil",
+    "question": "What is a common remedy a civil court may order when money is at stake?",
+    "correctAnswer": "money damages",
+    "incorrectAnswers": [
+      "a criminal sentence",
+      "a grand jury indictment",
+      "a veto"
+    ],
+    "explanation": "Courts often award damages to compensate for loss or injury in civil disputes.",
+    "keywords": [
+      "civil-law",
+      "remedies"
+    ],
+    "source": "https://www.uscourts.gov/about-federal-courts/types-federal-cases",
+    "seedId": "53bd9ac7-22da-57d5-93ea-50d5bd3a5ed6"
+  },
+  {
+    "category": "civics",
+    "navigationKeyword1": "law",
+    "navigationKeyword2": "civil",
+    "question": "How does a contract dispute mainly differ from many tort cases?",
+    "correctAnswer": "it centers on an agreement between parties",
+    "incorrectAnswers": [
+      "it always requires a jury",
+      "it can never be filed in federal court",
+      "it never involves written documents"
+    ],
+    "explanation": "Contract cases focus on duties and breaches arising from voluntary agreements between parties.",
+    "keywords": [
+      "civil-law",
+      "contracts"
+    ],
+    "source": "https://www.law.cornell.edu/wex/contract",
+    "seedId": "2d6e26de-7bf2-5e80-92a6-5d1aac1136c4"
+  }
+]

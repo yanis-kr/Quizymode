@@ -1,0 +1,116 @@
+[
+  {
+    "category": "tech",
+    "navigationKeyword1": "devops",
+    "navigationKeyword2": "terraform",
+    "question": "What is Terraform primarily used to manage?",
+    "correctAnswer": "Infrastructure as declarative configuration",
+    "incorrectAnswers": [
+      "Only Java application bytecode",
+      "GPU shader programs exclusively",
+      "Email spam filters"
+    ],
+    "explanation": "You describe desired resources; Terraform plans and applies changes to reach that state.",
+    "keywords": [
+      "terraform",
+      "iac"
+    ],
+    "source": "https://developer.hashicorp.com/terraform/intro",
+    "seedId": "5bad61dc-e16f-5b03-97a1-b7b4999e299d"
+  },
+  {
+    "category": "tech",
+    "navigationKeyword1": "devops",
+    "navigationKeyword2": "terraform",
+    "question": "What does Terraform state track?",
+    "correctAnswer": "The mapping between configuration and real-world resources",
+    "incorrectAnswers": [
+      "Only Git commit hashes",
+      "User passwords in plain text always",
+      "Compiler intermediate files"
+    ],
+    "explanation": "State lets Terraform know what exists so plans can compute create, update, and destroy actions.",
+    "keywords": [
+      "terraform",
+      "state"
+    ],
+    "source": "https://developer.hashicorp.com/terraform/language/state",
+    "seedId": "e5a55c3b-ea3d-5e6a-afbb-4d390f305235"
+  },
+  {
+    "category": "tech",
+    "navigationKeyword1": "devops",
+    "navigationKeyword2": "terraform",
+    "question": "What language are `.tf` files usually written in?",
+    "correctAnswer": "HCL (HashiCorp Configuration Language)",
+    "incorrectAnswers": [
+      "YAML only",
+      "Pure SQL",
+      "Binary protobuf exclusively"
+    ],
+    "explanation": "HCL is structured for humans and machines and describes resources and providers.",
+    "keywords": [
+      "terraform",
+      "hcl"
+    ],
+    "source": "https://developer.hashicorp.com/terraform/language/syntax/configuration",
+    "seedId": "9b1db519-2165-5423-aa1f-2a11fb0ea041"
+  },
+  {
+    "category": "tech",
+    "navigationKeyword1": "devops",
+    "navigationKeyword2": "terraform",
+    "question": "What is a Terraform provider?",
+    "correctAnswer": "A plugin that implements resource types for a platform or API",
+    "incorrectAnswers": [
+      "A physical data center rack",
+      "A CI runner image only",
+      "A Kubernetes admission webhook only"
+    ],
+    "explanation": "Providers translate Terraform resources into cloud or SaaS API calls.",
+    "keywords": [
+      "terraform",
+      "providers"
+    ],
+    "source": "https://docs.aws.amazon.com/prescriptive-guidance/latest/terraform-aws-provider-best-practices/introduction.html",
+    "seedId": "80f65529-4f5f-56ed-b3fc-4ed855ed29fe"
+  },
+  {
+    "category": "tech",
+    "navigationKeyword1": "devops",
+    "navigationKeyword2": "terraform",
+    "question": "What does `terraform plan` show before changes?",
+    "correctAnswer": "The actions Terraform would take to match configuration",
+    "incorrectAnswers": [
+      "Only historical billing invoices",
+      "A list of Git branches",
+      "Kernel panic traces"
+    ],
+    "explanation": "Plan previews creates, updates, and destroys so operators can review risk.",
+    "keywords": [
+      "terraform",
+      "plan"
+    ],
+    "source": "https://developer.hashicorp.com/terraform/cli/commands/plan",
+    "seedId": "39298535-6793-513a-ae21-0ed673d2531c"
+  },
+  {
+    "category": "tech",
+    "navigationKeyword1": "devops",
+    "navigationKeyword2": "terraform",
+    "question": "What is a module in Terraform?",
+    "correctAnswer": "A reusable container for multiple resources with defined inputs and outputs",
+    "incorrectAnswers": [
+      "A single line comment only",
+      "A cloud region name",
+      "A Docker layer checksum"
+    ],
+    "explanation": "Modules help standardize patterns like a baseline network or database setup.",
+    "keywords": [
+      "terraform",
+      "modules"
+    ],
+    "source": "https://learn.microsoft.com/en-us/azure/developer/terraform/best-practices-module-development",
+    "seedId": "a2ac5b92-e6e3-530b-8a78-b7cf2be00815"
+  }
+]

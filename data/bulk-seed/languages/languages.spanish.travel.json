@@ -1,0 +1,122 @@
+[
+  {
+    "category": "languages",
+    "navigationKeyword1": "spanish",
+    "navigationKeyword2": "travel",
+    "question": "You want a single ticket for a train. Which short phrase asks for that?",
+    "correctAnswer": "Un billete sencillo, por favor.",
+    "incorrectAnswers": [
+      "Una mesa para dos, por favor.",
+      "La cuenta, por favor.",
+      "¿Dónde está el baño?"
+    ],
+    "explanation": "\"Billete\" (or \"boleto\" in many regions) with \"sencillo\" signals a one-way or single ticket in travel contexts.",
+    "keywords": [
+      "ticket",
+      "train",
+      "spanish-travel"
+    ],
+    "source": "https://dictionary.cambridge.org/dictionary/spanish-english/billete",
+    "seedId": "7439553c-093f-5a4f-b1d2-19d7d7fccd59"
+  },
+  {
+    "category": "languages",
+    "navigationKeyword1": "spanish",
+    "navigationKeyword2": "travel",
+    "question": "At the airport, which word usually means \"passport\"?",
+    "correctAnswer": "pasaporte",
+    "incorrectAnswers": [
+      "maleta",
+      "vuelo",
+      "puerta"
+    ],
+    "explanation": "\"Pasaporte\" is the standard word for passport.",
+    "keywords": [
+      "passport",
+      "airport",
+      "spanish-travel"
+    ],
+    "source": "https://www.collinsdictionary.com/dictionary/spanish-english/pasaporte",
+    "seedId": "e8da0e46-6ac6-5781-a597-693fcdade160"
+  },
+  {
+    "category": "languages",
+    "navigationKeyword1": "spanish",
+    "navigationKeyword2": "travel",
+    "question": "You need the main train station. Which word often means \"station\" in this context?",
+    "correctAnswer": "estación",
+    "incorrectAnswers": [
+      "calle",
+      "plaza",
+      "hotel"
+    ],
+    "explanation": "\"Estación\" is the common word for a station, including train stations.",
+    "keywords": [
+      "station",
+      "train",
+      "spanish-travel"
+    ],
+    "source": "https://dictionary.cambridge.org/dictionary/spanish-english/estaci%C3%B3n",
+    "seedId": "dc554c5d-37ee-53ed-bda1-e22e98750d92"
+  },
+  {
+    "category": "languages",
+    "navigationKeyword1": "spanish",
+    "navigationKeyword2": "travel",
+    "question": "Which phrase politely asks where the nearest bank is?",
+    "correctAnswer": "¿Dónde está el banco más cercano?",
+    "incorrectAnswers": [
+      "¿Cuánto cuesta?",
+      "¿Tiene menú en inglés?",
+      "Quisiera el menú del día."
+    ],
+    "explanation": "\"¿Dónde está...?\" asks where something is; \"banco\" means bank and \"cercano\" means nearby.",
+    "keywords": [
+      "bank",
+      "directions",
+      "spanish-travel"
+    ],
+    "source": "https://www.collinsdictionary.com/dictionary/spanish-english/banco",
+    "seedId": "86cb0a5f-2d80-5fc3-b99d-359b34718e1f"
+  },
+  {
+    "category": "languages",
+    "navigationKeyword1": "spanish",
+    "navigationKeyword2": "travel",
+    "question": "Which word means \"left\" when you give or follow directions?",
+    "correctAnswer": "izquierda",
+    "incorrectAnswers": [
+      "derecha",
+      "recto",
+      "cerca"
+    ],
+    "explanation": "\"Izquierda\" means left; \"a la izquierda\" is a common direction phrase.",
+    "keywords": [
+      "left",
+      "directions",
+      "spanish-travel"
+    ],
+    "source": "https://dictionary.cambridge.org/dictionary/spanish-english/izquierda",
+    "seedId": "941dd941-240a-5fed-b138-a2514d90e6fb"
+  },
+  {
+    "category": "languages",
+    "navigationKeyword1": "spanish",
+    "navigationKeyword2": "travel",
+    "question": "At a hotel front desk, which phrase asks if they have a free room?",
+    "correctAnswer": "¿Tienen una habitación libre?",
+    "incorrectAnswers": [
+      "¿A qué hora sale el vuelo?",
+      "Un café con leche, por favor.",
+      "¿Cuánto cuesta la entrada?"
+    ],
+    "explanation": "\"Habitación\" means room; \"libre\" or \"disponible\" often signals availability.",
+    "keywords": [
+      "hotel",
+      "room",
+      "spanish-travel"
+    ],
+    "source": "https://www.collinsdictionary.com/dictionary/spanish-english/habitaci%C3%B3n",
+    "seedId": "2aa61722-811b-5892-a03f-5b829a95c96c"
+  }
+]

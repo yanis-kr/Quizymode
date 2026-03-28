@@ -1,0 +1,1094 @@
+{
+  "basic": [
+    {
+      "question": "Probability scale for event?",
+      "correctAnswer": "Between 0 and 1 inclusive",
+      "incorrectAnswers": [
+        "Only integers",
+        "Any real >1 allowed",
+        "Only percents >100"
+      ],
+      "explanation": "P=0 impossible; P=1 certain (ideal).",
+      "keywords": [
+        "probability-axioms",
+        "basics"
+      ],
+      "source": "https://openstax.org/books/introductory-statistics/pages/3-1-terminology"
+    },
+    {
+      "question": "Sample space?",
+      "correctAnswer": "Set of all possible outcomes",
+      "incorrectAnswers": [
+        "Only favorable outcomes",
+        "Only events",
+        "Only means"
+      ],
+      "explanation": "One outcome per trial model.",
+      "keywords": [
+        "sample-space",
+        "outcomes"
+      ],
+      "source": "https://openstax.org/books/introductory-statistics/pages/3-1-terminology"
+    },
+    {
+      "question": "Complement rule P(A')?",
+      "correctAnswer": "1 \u2212 P(A)",
+      "incorrectAnswers": [
+        "P(A)+1",
+        "P(A)^2",
+        "0"
+      ],
+      "explanation": "A or not A covers space.",
+      "keywords": [
+        "complement",
+        "rules"
+      ],
+      "source": "https://openstax.org/books/introductory-statistics/pages/3-2-basic-concepts-of-probability"
+    },
+    {
+      "question": "Mutually exclusive events?",
+      "correctAnswer": "Cannot both occur",
+      "incorrectAnswers": [
+        "Always independent",
+        "Always same probability",
+        "Always exhaustive"
+      ],
+      "explanation": "P(A\u2229B)=0 for exclusive.",
+      "keywords": [
+        "mutually-exclusive",
+        "events"
+      ],
+      "source": "https://openstax.org/books/introductory-statistics/pages/3-2-basic-concepts-of-probability"
+    },
+    {
+      "question": "Addition rule (general)?",
+      "correctAnswer": "P(A\u222aB) = P(A)+P(B)\u2212P(A\u2229B)",
+      "incorrectAnswers": [
+        "P(A)+P(B) always",
+        "P(A)P(B)",
+        "P(A)\u2212P(B)"
+      ],
+      "explanation": "Subtract double count.",
+      "keywords": [
+        "addition-rule",
+        "union"
+      ],
+      "source": "https://openstax.org/books/introductory-statistics/pages/3-2-basic-concepts-of-probability"
+    },
+    {
+      "question": "Fair die P(even)?",
+      "correctAnswer": "1/2",
+      "incorrectAnswers": [
+        "1/3",
+        "2/3",
+        "1/6"
+      ],
+      "explanation": "Three even faces of six.",
+      "keywords": [
+        "uniform",
+        "dice"
+      ],
+      "source": "https://openstax.org/books/introductory-statistics/pages/3-2-basic-concepts-of-probability"
+    },
+    {
+      "question": "Two fair coins P(at least one head)?",
+      "correctAnswer": "3/4",
+      "incorrectAnswers": [
+        "1/2",
+        "1",
+        "1/4"
+      ],
+      "explanation": "Only TT fails.",
+      "keywords": [
+        "coins",
+        "counting"
+      ],
+      "source": "https://openstax.org/books/introductory-statistics/pages/3-2-basic-concepts-of-probability"
+    },
+    {
+      "question": "Law of Large Numbers (informal)?",
+      "correctAnswer": "Relative frequencies stabilize with many trials",
+      "incorrectAnswers": [
+        "Always exact after 10 trials",
+        "Means no randomness",
+        "Probabilities change each flip"
+      ],
+      "explanation": "Long-run interpretation.",
+      "keywords": [
+        "lln",
+        "frequency"
+      ],
+      "source": "https://openstax.org/books/introductory-statistics/pages/3-1-terminology"
+    },
+    {
+      "question": "Empirical probability?",
+      "correctAnswer": "Relative frequency from data",
+      "incorrectAnswers": [
+        "Always theoretical",
+        "Always 0.5",
+        "Never uses data"
+      ],
+      "explanation": "Estimate from experiments.",
+      "keywords": [
+        "empirical",
+        "statistics"
+      ],
+      "source": "https://openstax.org/books/introductory-statistics/pages/3-1-terminology"
+    },
+    {
+      "question": "If outcomes equally likely, P(A)?",
+      "correctAnswer": "|A| / |S|",
+      "incorrectAnswers": [
+        "|S| / |A|",
+        "1 \u2212 |A|",
+        "|A|+|S|"
+      ],
+      "explanation": "Classical probability.",
+      "keywords": [
+        "classical-probability",
+        "counting"
+      ],
+      "source": "https://openstax.org/books/introductory-statistics/pages/3-2-basic-concepts-of-probability"
+    },
+    {
+      "question": "Odds vs probability (for event)?",
+      "correctAnswer": "Different: odds = p/(1\u2212p) (for odds in favor)",
+      "incorrectAnswers": [
+        "Always equal number",
+        "Odds always >1",
+        "No conversion"
+      ],
+      "explanation": "Communicate carefully.",
+      "keywords": [
+        "odds",
+        "probability"
+      ],
+      "source": "https://en.wikipedia.org/wiki/Odds"
+    },
+    {
+      "question": "Probability of empty event?",
+      "correctAnswer": "0",
+      "incorrectAnswers": [
+        "1",
+        "Undefined always",
+        "1/2"
+      ],
+      "explanation": "\u2205 never occurs.",
+      "keywords": [
+        "empty-set",
+        "axioms"
+      ],
+      "source": "https://openstax.org/books/introductory-statistics/pages/3-2-basic-concepts-of-probability"
+    }
+  ],
+  "conditional": [
+    {
+      "question": "Conditional probability P(A|B)?",
+      "correctAnswer": "P(A\u2229B)/P(B) if P(B)>0",
+      "incorrectAnswers": [
+        "P(A)P(B)",
+        "P(A)/P(B)",
+        "P(B)/P(A)"
+      ],
+      "explanation": "Restrict sample space to B.",
+      "keywords": [
+        "conditional",
+        "definition"
+      ],
+      "source": "https://openstax.org/books/introductory-statistics/pages/3-4-conditional-probability"
+    },
+    {
+      "question": "Independent events criterion?",
+      "correctAnswer": "P(A\u2229B) = P(A)P(B) (when defined)",
+      "incorrectAnswers": [
+        "Always P(A|B)=P(B|A)",
+        "Never multiply",
+        "P(A\u2229B)=0"
+      ],
+      "explanation": "Knowledge of B doesn\u2019t change A.",
+      "keywords": [
+        "independence",
+        "probability"
+      ],
+      "source": "https://openstax.org/books/introductory-statistics/pages/3-4-conditional-probability"
+    },
+    {
+      "question": "P(A|B) vs P(B|A)?",
+      "correctAnswer": "Generally different (Bayes switches them)",
+      "incorrectAnswers": [
+        "Always equal",
+        "Always products",
+        "Always sums"
+      ],
+      "explanation": "Don\u2019t confuse conditioning direction.",
+      "keywords": [
+        "bayes",
+        "conditional"
+      ],
+      "source": "https://openstax.org/books/introductory-statistics/pages/3-5-bayes-theorem"
+    },
+    {
+      "question": "Bayes\u2019 theorem (simple form)?",
+      "correctAnswer": "P(A|B) = P(B|A)P(A)/P(B)",
+      "incorrectAnswers": [
+        "P(A)P(B)",
+        "P(B|A)/P(A)",
+        "P(A)+P(B)"
+      ],
+      "explanation": "Update prior with evidence.",
+      "keywords": [
+        "bayes-theorem",
+        "updating"
+      ],
+      "source": "https://openstax.org/books/introductory-statistics/pages/3-5-bayes-theorem"
+    },
+    {
+      "question": "Tree diagrams help?",
+      "correctAnswer": "Multiply along branches; add disjoint paths",
+      "incorrectAnswers": [
+        "Only for normal distribution",
+        "Replace all formulas",
+        "Never for conditional"
+      ],
+      "explanation": "Organize sequential probability.",
+      "keywords": [
+        "tree-diagram",
+        "probability"
+      ],
+      "source": "https://openstax.org/books/introductory-statistics/pages/3-4-conditional-probability"
+    },
+    {
+      "question": "Law of total probability idea?",
+      "correctAnswer": "Partition sample space; sum weighted conditionals",
+      "incorrectAnswers": [
+        "Always one partition",
+        "Only for dice",
+        "Same as Bayes always"
+      ],
+      "explanation": "P(A)=\u03a3 P(A|B_i)P(B_i).",
+      "keywords": [
+        "total-probability",
+        "partition"
+      ],
+      "source": "https://openstax.org/books/introductory-statistics/pages/3-5-bayes-theorem"
+    },
+    {
+      "question": "If independent, P(A|B)?",
+      "correctAnswer": "P(A) (when P(B)>0)",
+      "incorrectAnswers": [
+        "P(B)",
+        "0",
+        "1"
+      ],
+      "explanation": "Conditioning doesn\u2019t change probability.",
+      "keywords": [
+        "independence",
+        "conditional"
+      ],
+      "source": "https://openstax.org/books/introductory-statistics/pages/3-4-conditional-probability"
+    },
+    {
+      "question": "Screening test sensitivity relates to?",
+      "correctAnswer": "P(positive | disease)",
+      "incorrectAnswers": [
+        "P(disease | positive)",
+        "P(negative | disease)",
+        "P(disease)"
+      ],
+      "explanation": "True positive rate.",
+      "keywords": [
+        "sensitivity",
+        "diagnostics"
+      ],
+      "source": "https://www.cdc.gov/csels/dls/lab-quality/best-practices.html"
+    },
+    {
+      "question": "Specificity relates to?",
+      "correctAnswer": "P(negative | no disease)",
+      "incorrectAnswers": [
+        "P(positive | disease)",
+        "P(disease | negative)",
+        "P(positive)"
+      ],
+      "explanation": "True negative rate.",
+      "keywords": [
+        "specificity",
+        "diagnostics"
+      ],
+      "source": "https://www.cdc.gov/csels/dls/lab-quality/best-practices.html"
+    },
+    {
+      "question": "Base rate neglect mistake?",
+      "correctAnswer": "Ignoring P(disease) when interpreting positive test",
+      "incorrectAnswers": [
+        "Always trusting specificity only",
+        "Using tree diagrams",
+        "Applying Bayes correctly"
+      ],
+      "explanation": "Posterior depends on prevalence.",
+      "keywords": [
+        "base-rate",
+        "cognition"
+      ],
+      "source": "https://en.wikipedia.org/wiki/Base_rate_fallacy"
+    },
+    {
+      "question": "With replacement draws?",
+      "correctAnswer": "Independent across draws (ideal)",
+      "incorrectAnswers": [
+        "Always dependent",
+        "Never independent",
+        "Only coins"
+      ],
+      "explanation": "Jar model: same P each pick.",
+      "keywords": [
+        "replacement",
+        "independence"
+      ],
+      "source": "https://openstax.org/books/introductory-statistics/pages/3-4-conditional-probability"
+    },
+    {
+      "question": "Without replacement?",
+      "correctAnswer": "Typically dependent draws",
+      "incorrectAnswers": [
+        "Always independent",
+        "Same as with replacement always",
+        "Only for dice"
+      ],
+      "explanation": "Hypergeometric flavor.",
+      "keywords": [
+        "without-replacement",
+        "dependent"
+      ],
+      "source": "https://openstax.org/books/introductory-statistics/pages/3-4-conditional-probability"
+    }
+  ],
+  "combinatorics": [
+    {
+      "question": "n factorial n! meaning?",
+      "correctAnswer": "Product 1\u00b72\u00b7\u2026\u00b7n",
+      "incorrectAnswers": [
+        "Sum 1..n",
+        "2^n",
+        "n^2"
+      ],
+      "explanation": "0! = 1 by convention.",
+      "keywords": [
+        "factorial",
+        "counting"
+      ],
+      "source": "https://openstax.org/books/introductory-statistics/pages/3-3-two-basic-rules-of-probability"
+    },
+    {
+      "question": "Permutations of n distinct objects?",
+      "correctAnswer": "n!",
+      "incorrectAnswers": [
+        "n^2",
+        "2^n",
+        "n(n\u22121)/2"
+      ],
+      "explanation": "Order matters, use all.",
+      "keywords": [
+        "permutation",
+        "counting"
+      ],
+      "source": "https://openstax.org/books/introductory-statistics/pages/3-3-two-basic-rules-of-probability"
+    },
+    {
+      "question": "Permutations choose r from n (order matters)?",
+      "correctAnswer": "n!/(n\u2212r)!",
+      "incorrectAnswers": [
+        "n choose r",
+        "n^r",
+        "r!"
+      ],
+      "explanation": "Arrangements of r distinct picks.",
+      "keywords": [
+        "permutation",
+        "partial"
+      ],
+      "source": "https://www.mathsisfun.com/combinatorics/combinations-permutations.html"
+    },
+    {
+      "question": "Combinations \u2018n choose r\u2019?",
+      "correctAnswer": "n!/(r!(n\u2212r)!)",
+      "incorrectAnswers": [
+        "n!/r!",
+        "n^r",
+        "n\u2212r"
+      ],
+      "explanation": "Order doesn\u2019t matter.",
+      "keywords": [
+        "combinations",
+        "binomial"
+      ],
+      "source": "https://www.mathsisfun.com/combinatorics/combinations-permutations.html"
+    },
+    {
+      "question": "Pascal\u2019s triangle rows relate to?",
+      "correctAnswer": "Binomial coefficients",
+      "incorrectAnswers": [
+        "Fibonacci only",
+        "Prime list",
+        "Trig values"
+      ],
+      "explanation": "(a+b)^n expansion.",
+      "keywords": [
+        "pascal",
+        "binomial"
+      ],
+      "source": "https://en.wikipedia.org/wiki/Pascal%27s_triangle"
+    },
+    {
+      "question": "Multiplication rule (sequential)?",
+      "correctAnswer": "Multiply choices at each stage",
+      "incorrectAnswers": [
+        "Always add",
+        "Always factorial",
+        "Always divide by 2"
+      ],
+      "explanation": "For independent choice counts.",
+      "keywords": [
+        "multiplication-rule",
+        "counting"
+      ],
+      "source": "https://openstax.org/books/introductory-statistics/pages/3-3-two-basic-rules-of-probability"
+    },
+    {
+      "question": "Inclusion-exclusion (two sets) for counts?",
+      "correctAnswer": "|A\u222aB| = |A|+|B|\u2212|A\u2229B|",
+      "incorrectAnswers": [
+        "|A|+|B|",
+        "|A\u2229B|",
+        "|A\u2212B|"
+      ],
+      "explanation": "Avoid double counting.",
+      "keywords": [
+        "inclusion-exclusion",
+        "sets"
+      ],
+      "source": "https://en.wikipedia.org/wiki/Inclusion%E2%80%93exclusion_principle"
+    },
+    {
+      "question": "Stars and bars (nonnegative integer solutions to x1+\u2026+xk=n)?",
+      "correctAnswer": "C(n+k\u22121, k\u22121) (standard stars-and-bars)",
+      "incorrectAnswers": [
+        "n^k",
+        "n!",
+        "2^n"
+      ],
+      "explanation": "Identical items into bins.",
+      "keywords": [
+        "stars-and-bars",
+        "counting"
+      ],
+      "source": "https://en.wikipedia.org/wiki/Stars_and_bars_(combinatorics)"
+    },
+    {
+      "question": "Birthday problem surprise?",
+      "correctAnswer": "\u224823 people for >50% chance shared birthday (pairwise)",
+      "incorrectAnswers": [
+        "7 people",
+        "100 people",
+        "366 people for 50%"
+      ],
+      "explanation": "Many pairs; not \u2018your birthday\u2019.",
+      "keywords": [
+        "birthday-problem",
+        "paradox"
+      ],
+      "source": "https://en.wikipedia.org/wiki/Birthday_problem"
+    },
+    {
+      "question": "Derangement (rough idea)?",
+      "correctAnswer": "Permutation with no fixed points",
+      "incorrectAnswers": [
+        "All permutations",
+        "Only identity",
+        "Only cycles length 2"
+      ],
+      "explanation": "Counting with inclusion-exclusion.",
+      "keywords": [
+        "derangement",
+        "permutation"
+      ],
+      "source": "https://en.wikipedia.org/wiki/Derangement"
+    },
+    {
+      "question": "Committee choose 3 from 10 (unordered)?",
+      "correctAnswer": "C(10,3) = 120",
+      "incorrectAnswers": [
+        "720",
+        "1000",
+        "30"
+      ],
+      "explanation": "10!/(3!7!).",
+      "keywords": [
+        "committee",
+        "combinations"
+      ],
+      "source": "https://www.mathsisfun.com/combinatorics/combinations-permutations.html"
+    },
+    {
+      "question": "License plate with 3 letters then 3 digits (26 letters, 10 digits)?",
+      "correctAnswer": "26^3 \u00d7 10^3 (if repeats allowed)",
+      "incorrectAnswers": [
+        "26+10",
+        "26\u00d710",
+        "6^36"
+      ],
+      "explanation": "Sequential slots multiply.",
+      "keywords": [
+        "counting",
+        "slots"
+      ],
+      "source": "https://en.wikipedia.org/wiki/Rule_of_product"
+    }
+  ],
+  "random-vars": [
+    {
+      "question": "Discrete random variable?",
+      "correctAnswer": "Countable outcomes with probabilities",
+      "incorrectAnswers": [
+        "Always continuous",
+        "Always normal",
+        "Cannot sum to 1"
+      ],
+      "explanation": "PMF assigns probabilities.",
+      "keywords": [
+        "discrete-rv",
+        "pmf"
+      ],
+      "source": "https://openstax.org/books/introductory-statistics/pages/4-1-random-variables"
+    },
+    {
+      "question": "Continuous random variable?",
+      "correctAnswer": "Described by density; P(X=x)=0 for point",
+      "incorrectAnswers": [
+        "Always finite outcomes",
+        "PMF at points sums oddly",
+        "No integral"
+      ],
+      "explanation": "Intervals have positive probability.",
+      "keywords": [
+        "continuous-rv",
+        "pdf"
+      ],
+      "source": "https://openstax.org/books/introductory-statistics/pages/4-1-random-variables"
+    },
+    {
+      "question": "Expected value E[X] discrete?",
+      "correctAnswer": "\u03a3 x P(X=x)",
+      "incorrectAnswers": [
+        "\u03a3 x^2",
+        "\u03a0 x",
+        "max x"
+      ],
+      "explanation": "Weighted average of outcomes.",
+      "keywords": [
+        "expectation",
+        "mean"
+      ],
+      "source": "https://openstax.org/books/introductory-statistics/pages/4-2-probability-distribution-for-a-discrete-random-variable"
+    },
+    {
+      "question": "Variance Var(X)?",
+      "correctAnswer": "E[(X\u2212\u03bc)^2] = E[X^2]\u2212\u03bc^2",
+      "incorrectAnswers": [
+        "E[X]^2",
+        "sqrt(E[X])",
+        "E[X]/n always"
+      ],
+      "explanation": "Spread measure.",
+      "keywords": [
+        "variance",
+        "spread"
+      ],
+      "source": "https://openstax.org/books/introductory-statistics/pages/4-2-probability-distribution-for-a-discrete-random-variable"
+    },
+    {
+      "question": "Standard deviation?",
+      "correctAnswer": "sqrt(Var(X))",
+      "incorrectAnswers": [
+        "Var(X)^2",
+        "Var(X)/n",
+        "E[X]"
+      ],
+      "explanation": "Same units as X.",
+      "keywords": [
+        "standard-deviation",
+        "spread"
+      ],
+      "source": "https://openstax.org/books/introductory-statistics/pages/4-2-probability-distribution-for-a-discrete-random-variable"
+    },
+    {
+      "question": "Linear transform E[aX+b]?",
+      "correctAnswer": "a E[X] + b",
+      "incorrectAnswers": [
+        "a E[X]",
+        "E[X]+b only",
+        "a+b E[X]"
+      ],
+      "explanation": "Expectation is linear.",
+      "keywords": [
+        "linearity-expectation",
+        "rules"
+      ],
+      "source": "https://openstax.org/books/introductory-statistics/pages/4-2-probability-distribution-for-a-discrete-random-variable"
+    },
+    {
+      "question": "CDF F_X(x)?",
+      "correctAnswer": "P(X \u2264 x)",
+      "incorrectAnswers": [
+        "P(X = x)",
+        "P(X > x)",
+        "f_X(x)"
+      ],
+      "explanation": "Nondecreasing right-continuous.",
+      "keywords": [
+        "cdf",
+        "distribution"
+      ],
+      "source": "https://openstax.org/books/introductory-statistics/pages/4-1-random-variables"
+    },
+    {
+      "question": "Independent RVs joint factoring?",
+      "correctAnswer": "f_{X,Y}(x,y)=f_X(x)f_Y(y) (density/pmf sense)",
+      "incorrectAnswers": [
+        "Always sum",
+        "Always equal marginals",
+        "Never applies"
+      ],
+      "explanation": "Simplifies expectation products.",
+      "keywords": [
+        "independence",
+        "joint"
+      ],
+      "source": "https://openstax.org/books/introductory-statistics/pages/4-5-continuous-random-variables"
+    },
+    {
+      "question": "Bernoulli trial?",
+      "correctAnswer": "Single success/failure with fixed p",
+      "incorrectAnswers": [
+        "Always three outcomes",
+        "Normal always",
+        "Poisson always"
+      ],
+      "explanation": "Building block.",
+      "keywords": [
+        "bernoulli",
+        "trial"
+      ],
+      "source": "https://openstax.org/books/introductory-statistics/pages/4-3-the-binomial-distribution"
+    },
+    {
+      "question": "Geometric distribution models?",
+      "correctAnswer": "Trials until first success (version-dependent support)",
+      "incorrectAnswers": [
+        "Sum of normals",
+        "Uniform continuous always",
+        "Always finite support"
+      ],
+      "explanation": "Memoryless in standard version.",
+      "keywords": [
+        "geometric",
+        "waiting"
+      ],
+      "source": "https://openstax.org/books/introductory-statistics/pages/4-4-the-geometric-distribution"
+    },
+    {
+      "question": "Poisson models?",
+      "correctAnswer": "Rare events rate \u03bb per interval (counts)",
+      "incorrectAnswers": [
+        "Always binary",
+        "Always uniform",
+        "Always normal"
+      ],
+      "explanation": "Var\u2248mean for Poisson.",
+      "keywords": [
+        "poisson",
+        "counts"
+      ],
+      "source": "https://openstax.org/books/introductory-statistics/pages/4-6-the-poisson-distribution"
+    },
+    {
+      "question": "Uniform(0,1) mean?",
+      "correctAnswer": "1/2",
+      "incorrectAnswers": [
+        "1",
+        "0",
+        "1/4"
+      ],
+      "explanation": "Symmetric interval.",
+      "keywords": [
+        "uniform",
+        "expectation"
+      ],
+      "source": "https://openstax.org/books/introductory-statistics/pages/4-5-continuous-random-variables"
+    }
+  ],
+  "binomial": [
+    {
+      "question": "Binomial setting requirements?",
+      "correctAnswer": "Fixed n independent trials, two outcomes, constant p",
+      "incorrectAnswers": [
+        "Continuous time always",
+        "Changing p each trial without model",
+        "Unlimited outcomes always"
+      ],
+      "explanation": "Classic n choose k.",
+      "keywords": [
+        "binomial-setting",
+        "assumptions"
+      ],
+      "source": "https://openstax.org/books/introductory-statistics/pages/4-3-the-binomial-distribution"
+    },
+    {
+      "question": "Binomial PMF P(X=k)?",
+      "correctAnswer": "C(n,k) p^k (1\u2212p)^{n\u2212k}",
+      "incorrectAnswers": [
+        "p^n",
+        "n p",
+        "C(n,k) p^n"
+      ],
+      "explanation": "k successes in n trials.",
+      "keywords": [
+        "binomial-pmf",
+        "formula"
+      ],
+      "source": "https://openstax.org/books/introductory-statistics/pages/4-3-the-binomial-distribution"
+    },
+    {
+      "question": "Binomial mean?",
+      "correctAnswer": "np",
+      "incorrectAnswers": [
+        "n/p",
+        "p/n",
+        "n^2 p"
+      ],
+      "explanation": "Sum of n Bernoulli means.",
+      "keywords": [
+        "binomial-mean",
+        "expectation"
+      ],
+      "source": "https://openstax.org/books/introductory-statistics/pages/4-3-the-binomial-distribution"
+    },
+    {
+      "question": "Binomial variance?",
+      "correctAnswer": "np(1\u2212p)",
+      "incorrectAnswers": [
+        "np",
+        "n^2 p",
+        "p(1\u2212p)"
+      ],
+      "explanation": "Quadratic in p, max at p=0.5.",
+      "keywords": [
+        "binomial-variance",
+        "spread"
+      ],
+      "source": "https://openstax.org/books/introductory-statistics/pages/4-3-the-binomial-distribution"
+    },
+    {
+      "question": "n=1 binomial reduces to?",
+      "correctAnswer": "Bernoulli",
+      "incorrectAnswers": [
+        "Normal",
+        "Poisson",
+        "Geometric"
+      ],
+      "explanation": "Single trial.",
+      "keywords": [
+        "bernoulli",
+        "special-case"
+      ],
+      "source": "https://openstax.org/books/introductory-statistics/pages/4-3-the-binomial-distribution"
+    },
+    {
+      "question": "Fair coin 10 flips P(exactly 5 heads)?",
+      "correctAnswer": "C(10,5)/2^{10}",
+      "incorrectAnswers": [
+        "1/2",
+        "5/10",
+        "2^{-5}"
+      ],
+      "explanation": "Not 1/2.",
+      "keywords": [
+        "binomial-calc",
+        "coins"
+      ],
+      "source": "https://openstax.org/books/introductory-statistics/pages/4-3-the-binomial-distribution"
+    },
+    {
+      "question": "Normal approximation condition (rule of thumb)?",
+      "correctAnswer": "np and n(1\u2212p) both large enough",
+      "incorrectAnswers": [
+        "Always for n=2",
+        "Never valid",
+        "Only if p=0"
+      ],
+      "explanation": "Continuity correction optional.",
+      "keywords": [
+        "normal-approximation",
+        "binomial"
+      ],
+      "source": "https://openstax.org/books/introductory-statistics/pages/6-4-the-normal-approximation-to-the-binomial-distribution"
+    },
+    {
+      "question": "Why continuity correction?",
+      "correctAnswer": "Approximate discrete with continuous density",
+      "incorrectAnswers": [
+        "Makes answer always integer",
+        "Removes variance",
+        "Only cosmetic"
+      ],
+      "explanation": "Improves tail probabilities.",
+      "keywords": [
+        "continuity-correction",
+        "approximation"
+      ],
+      "source": "https://openstax.org/books/introductory-statistics/pages/6-4-the-normal-approximation-to-the-binomial-distribution"
+    },
+    {
+      "question": "MLE for p in binomial?",
+      "correctAnswer": "Sample proportion k/n",
+      "incorrectAnswers": [
+        "Always 1/2",
+        "1/n",
+        "k^2/n"
+      ],
+      "explanation": "Maximizes likelihood.",
+      "keywords": [
+        "mle",
+        "estimation"
+      ],
+      "source": "https://en.wikipedia.org/wiki/Binomial_distribution"
+    },
+    {
+      "question": "Binomial coefficient symmetry?",
+      "correctAnswer": "C(n,k)=C(n,n\u2212k)",
+      "incorrectAnswers": [
+        "C(n,k)=C(k,n)",
+        "Always 1",
+        "n^k"
+      ],
+      "explanation": "Choosing complements.",
+      "keywords": [
+        "symmetry",
+        "binomial"
+      ],
+      "source": "https://www.mathsisfun.com/combinatorics/combinations-permutations.html"
+    },
+    {
+      "question": "If trials not independent?",
+      "correctAnswer": "Binomial may be wrong; use other models",
+      "incorrectAnswers": [
+        "Still always binomial",
+        "Use uniform",
+        "Ignore dependence"
+      ],
+      "explanation": "Cluster sampling effects.",
+      "keywords": [
+        "dependence",
+        "model-check"
+      ],
+      "source": "https://openstax.org/books/introductory-statistics/pages/4-3-the-binomial-distribution"
+    },
+    {
+      "question": "Sign test connection (idea)?",
+      "correctAnswer": "Uses binomial under null for sign counts",
+      "incorrectAnswers": [
+        "Always t-test",
+        "Always ANOVA",
+        "Never binomial"
+      ],
+      "explanation": "Nonparametric flavor.",
+      "keywords": [
+        "sign-test",
+        "nonparametric"
+      ],
+      "source": "https://en.wikipedia.org/wiki/Sign_test"
+    }
+  ],
+  "expected-value": [
+    {
+      "question": "Fair die expected value?",
+      "correctAnswer": "3.5",
+      "incorrectAnswers": [
+        "3",
+        "4",
+        "2.5"
+      ],
+      "explanation": "Average of 1..6.",
+      "keywords": [
+        "expectation",
+        "discrete"
+      ],
+      "source": "https://openstax.org/books/introductory-statistics/pages/4-2-probability-distribution-for-a-discrete-random-variable"
+    },
+    {
+      "question": "Lottery ticket EV often?",
+      "correctAnswer": "Negative (house edge)",
+      "incorrectAnswers": [
+        "Always positive",
+        "Always zero",
+        "Always 1"
+      ],
+      "explanation": "Rare jackpot still may not compensate cost.",
+      "keywords": [
+        "expected-value",
+        "decisions"
+      ],
+      "source": "https://en.wikipedia.org/wiki/Expected_value"
+    },
+    {
+      "question": "E[X+Y] if known expectations?",
+      "correctAnswer": "E[X]+E[Y] always (finite)",
+      "incorrectAnswers": [
+        "E[X]E[Y]",
+        "E[X]/E[Y]",
+        "max(E[X],E[Y])"
+      ],
+      "explanation": "Linearity doesn\u2019t need independence.",
+      "keywords": [
+        "linearity",
+        "expectation"
+      ],
+      "source": "https://openstax.org/books/introductory-statistics/pages/4-2-probability-distribution-for-a-discrete-random-variable"
+    },
+    {
+      "question": "If independent, E[XY]?",
+      "correctAnswer": "E[X]E[Y]",
+      "incorrectAnswers": [
+        "E[X]+E[Y]",
+        "Var(XY)",
+        "0"
+      ],
+      "explanation": "Covariance zero helps.",
+      "keywords": [
+        "independence",
+        "product"
+      ],
+      "source": "https://openstax.org/books/introductory-statistics/pages/4-2-probability-distribution-for-a-discrete-random-variable"
+    },
+    {
+      "question": "Variance under aX+b?",
+      "correctAnswer": "a^2 Var(X)",
+      "incorrectAnswers": [
+        "a Var(X)",
+        "Var(X)+b",
+        "a+b Var(X)"
+      ],
+      "explanation": "Shift doesn\u2019t change spread.",
+      "keywords": [
+        "variance-rules",
+        "scale"
+      ],
+      "source": "https://openstax.org/books/introductory-statistics/pages/4-2-probability-distribution-for-a-discrete-random-variable"
+    },
+    {
+      "question": "Cov(X,Y) interpretation?",
+      "correctAnswer": "Linear association tendency (not scale-free)",
+      "incorrectAnswers": [
+        "Always causal",
+        "Same as P(X=Y)",
+        "Always nonnegative"
+      ],
+      "explanation": "Correlation standardizes.",
+      "keywords": [
+        "covariance",
+        "association"
+      ],
+      "source": "https://openstax.org/books/introductory-statistics/pages/10-3-the-correlation-coefficient-r"
+    },
+    {
+      "question": "Tower property E[E[X|Y]]?",
+      "correctAnswer": "E[X]",
+      "incorrectAnswers": [
+        "E[Y]",
+        "0",
+        "Var(X)"
+      ],
+      "explanation": "Law of total expectation.",
+      "keywords": [
+        "law-total-expectation",
+        "conditional"
+      ],
+      "source": "https://en.wikipedia.org/wiki/Law_of_total_expectation"
+    },
+    {
+      "question": "St. Petersburg paradox theme?",
+      "correctAnswer": "Infinite expectation unrealistic without bank limits",
+      "incorrectAnswers": [
+        "Proves EV useless always",
+        "Only discrete",
+        "Only normal"
+      ],
+      "explanation": "Utility and truncation matter.",
+      "keywords": [
+        "st-petersburg",
+        "paradox"
+      ],
+      "source": "https://en.wikipedia.org/wiki/St._Petersburg_paradox"
+    },
+    {
+      "question": "Insurance EV buyer side?",
+      "correctAnswer": "Often negative premium vs payout (company profits)",
+      "incorrectAnswers": [
+        "Always positive for buyer",
+        "Always zero",
+        "Never uses probability"
+      ],
+      "explanation": "Risk transfer has value beyond EV.",
+      "keywords": [
+        "insurance",
+        "utility"
+      ],
+      "source": "https://en.wikipedia.org/wiki/Expected_value"
+    },
+    {
+      "question": "Decision under risk simple rule?",
+      "correctAnswer": "Compare expected utility/values",
+      "incorrectAnswers": [
+        "Always maximize max payoff",
+        "Ignore probabilities",
+        "Minimize always"
+      ],
+      "explanation": "Depends on risk aversion.",
+      "keywords": [
+        "decision-theory",
+        "ev"
+      ],
+      "source": "https://en.wikipedia.org/wiki/Expected_utility_hypothesis"
+    },
+    {
+      "question": "Linearity for indicators?",
+      "correctAnswer": "Sum of indicators expectation is sum of P(indicator=1)",
+      "incorrectAnswers": [
+        "Product of expectations always",
+        "Always 1",
+        "Never linear"
+      ],
+      "explanation": "Useful counting proofs.",
+      "keywords": [
+        "indicator",
+        "linearity"
+      ],
+      "source": "https://en.wikipedia.org/wiki/Indicator_function"
+    },
+    {
+      "question": "Monte Carlo estimate?",
+      "correctAnswer": "Average of simulated draws approximates expectation",
+      "incorrectAnswers": [
+        "Always exact",
+        "Only for discrete",
+        "Never converges"
+      ],
+      "explanation": "LLN justification.",
+      "keywords": [
+        "monte-carlo",
+        "simulation"
+      ],
+      "source": "https://en.wikipedia.org/wiki/Monte_Carlo_method"
+    }
+  ]
+}

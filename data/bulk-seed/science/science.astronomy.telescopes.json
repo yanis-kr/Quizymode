@@ -1,0 +1,230 @@
+[
+  {
+    "seedId": "cbb373ca-2817-46b5-b377-ca7949a31478",
+    "category": "science",
+    "navigationKeyword1": "astronomy",
+    "navigationKeyword2": "telescopes",
+    "question": "What does a refracting telescope use to bend light?",
+    "correctAnswer": "Lenses",
+    "incorrectAnswers": [
+      "Mirrors only",
+      "Fiber optics only",
+      "Prisms only"
+    ],
+    "explanation": "Early telescopes used objective lenses; modern designs vary.",
+    "keywords": [
+      "refractor",
+      "lenses"
+    ],
+    "source": "https://science.nasa.gov/universe/how-do-telescopes-work/"
+  },
+  {
+    "seedId": "a8fe362b-dbf3-4b95-b7ac-fe79be869333",
+    "category": "science",
+    "navigationKeyword1": "astronomy",
+    "navigationKeyword2": "telescopes",
+    "question": "What do reflecting telescopes primarily use to collect light?",
+    "correctAnswer": "Mirrors",
+    "incorrectAnswers": [
+      "Lenses only",
+      "Metal foil",
+      "Water tanks"
+    ],
+    "explanation": "Large mirrors can be supported more easily than huge lenses.",
+    "keywords": [
+      "reflector",
+      "mirrors"
+    ],
+    "source": "https://science.nasa.gov/universe/how-do-telescopes-work/"
+  },
+  {
+    "seedId": "06d9640d-9f03-4f61-a827-9cf3b43d1393",
+    "category": "science",
+    "navigationKeyword1": "astronomy",
+    "navigationKeyword2": "telescopes",
+    "question": "Why are larger apertures desired?",
+    "correctAnswer": "They collect more light and improve resolution",
+    "incorrectAnswers": [
+      "They always eliminate atmosphere",
+      "They shrink images",
+      "They reduce magnification"
+    ],
+    "explanation": "Light gathering scales with area.",
+    "keywords": [
+      "aperture",
+      "resolution"
+    ],
+    "source": "https://science.nasa.gov/universe/how-do-telescopes-work/"
+  },
+  {
+    "seedId": "d8f82475-51b6-4168-a234-fef7cf973278",
+    "category": "science",
+    "navigationKeyword1": "astronomy",
+    "navigationKeyword2": "telescopes",
+    "question": "What is angular resolution?",
+    "correctAnswer": "Ability to distinguish small separations on the sky",
+    "incorrectAnswers": [
+      "Brightness of a star",
+      "Distance in light-years only",
+      "Rocket speed"
+    ],
+    "explanation": "Better resolution separates closer objects.",
+    "keywords": [
+      "resolution",
+      "diffraction"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Angular_resolution"
+  },
+  {
+    "seedId": "60969e95-2a7f-4362-83bf-6463ba42814d",
+    "category": "science",
+    "navigationKeyword1": "astronomy",
+    "navigationKeyword2": "telescopes",
+    "question": "What is adaptive optics used for?",
+    "correctAnswer": "Correcting atmospheric distortion in real time",
+    "incorrectAnswers": [
+      "Increasing rocket thrust",
+      "Cooling detectors with wind",
+      "Blocking all infrared"
+    ],
+    "explanation": "Ground telescopes can rival space seeing in some bands with AO.",
+    "keywords": [
+      "adaptive-optics",
+      "atmosphere"
+    ],
+    "source": "https://science.nasa.gov/universe/how-do-telescopes-work/"
+  },
+  {
+    "seedId": "e1948408-03b4-4949-b178-75f69fb61a05",
+    "category": "science",
+    "navigationKeyword1": "astronomy",
+    "navigationKeyword2": "telescopes",
+    "question": "Why are many observatories on high mountains?",
+    "correctAnswer": "Thinner, drier air reduces absorption and turbulence",
+    "incorrectAnswers": [
+      "Closer to stars",
+      "Stronger gravity",
+      "To avoid daylight"
+    ],
+    "explanation": "Site selection improves image quality.",
+    "keywords": [
+      "site-selection",
+      "seeing"
+    ],
+    "source": "https://science.nasa.gov/universe/how-do-telescopes-work/"
+  },
+  {
+    "seedId": "68aa623d-292c-46d1-90c7-406932100716",
+    "category": "science",
+    "navigationKeyword1": "astronomy",
+    "navigationKeyword2": "telescopes",
+    "question": "What is interferometry in astronomy?",
+    "correctAnswer": "Combining signals from separated telescopes to boost resolution",
+    "incorrectAnswers": [
+      "Taking one photo twice",
+      "Using only one mirror",
+      "Measuring rocket vibration"
+    ],
+    "explanation": "Very long baselines improve angular detail.",
+    "keywords": [
+      "interferometry",
+      "vlbi"
+    ],
+    "source": "https://science.nasa.gov/universe/how-do-telescopes-work/"
+  },
+  {
+    "seedId": "362770fd-9288-4ef7-86ec-98106449c2db",
+    "category": "science",
+    "navigationKeyword1": "astronomy",
+    "navigationKeyword2": "telescopes",
+    "question": "Why observe in radio wavelengths?",
+    "correctAnswer": "Some objects emit strongly in radio (and dust is transparent)",
+    "incorrectAnswers": [
+      "Radio waves don\u2019t exist in space",
+      "Stars emit no radio",
+      "Only planets emit radio"
+    ],
+    "explanation": "Radio astronomy reveals cold gas, pulsars, and AGN.",
+    "keywords": [
+      "radio-astronomy",
+      "wavelengths"
+    ],
+    "source": "https://science.nasa.gov/universe/how-do-telescopes-work/"
+  },
+  {
+    "seedId": "5072ca1f-a360-4ecf-a1ac-ca474e885a34",
+    "category": "science",
+    "navigationKeyword1": "astronomy",
+    "navigationKeyword2": "telescopes",
+    "question": "Why observe in infrared?",
+    "correctAnswer": "To see through dust and study cooler objects",
+    "incorrectAnswers": [
+      "Because infrared is harmful only",
+      "Because stars vanish",
+      "Because mirrors block visible light"
+    ],
+    "explanation": "JWST\u2019s infrared capabilities probe star formation and exoplanet atmospheres.",
+    "keywords": [
+      "infrared",
+      "jwst"
+    ],
+    "source": "https://science.nasa.gov/mission/webb/"
+  },
+  {
+    "seedId": "c036290e-e583-4d1c-80d2-65042b18a50f",
+    "category": "science",
+    "navigationKeyword1": "astronomy",
+    "navigationKeyword2": "telescopes",
+    "question": "What is chromatic aberration?",
+    "correctAnswer": "Lens dispersion makes colors focus at different points",
+    "incorrectAnswers": [
+      "Mirror cracking",
+      "Star twinkle in space",
+      "Satellite GPS error"
+    ],
+    "explanation": "Achromatic/apochromatic designs reduce this in refractors.",
+    "keywords": [
+      "chromatic-aberration",
+      "optics"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Chromatic_aberration"
+  },
+  {
+    "seedId": "4681137f-e260-4e1a-b7e1-cc1394d5f1b4",
+    "category": "science",
+    "navigationKeyword1": "astronomy",
+    "navigationKeyword2": "telescopes",
+    "question": "What is a CCD/CMOS sensor\u2019s role?",
+    "correctAnswer": "Detect photons and record images electronically",
+    "incorrectAnswers": [
+      "Create gravity",
+      "Generate rocket fuel",
+      "Steer the telescope mechanically alone"
+    ],
+    "explanation": "Modern astrophotography relies on digital detectors.",
+    "keywords": [
+      "ccd",
+      "detector"
+    ],
+    "source": "https://science.nasa.gov/universe/how-do-telescopes-work/"
+  },
+  {
+    "seedId": "a37143f6-5c60-4c5c-b968-64e6ad1dd740",
+    "category": "science",
+    "navigationKeyword1": "astronomy",
+    "navigationKeyword2": "telescopes",
+    "question": "What is a spectrograph on a telescope used for?",
+    "correctAnswer": "Spreading light into wavelengths to study composition and motion",
+    "incorrectAnswers": [
+      "Making wider fields only",
+      "Increasing rocket speed",
+      "Blocking starlight entirely"
+    ],
+    "explanation": "Spectroscopy is fundamental to astrophysics.",
+    "keywords": [
+      "spectrograph",
+      "spectroscopy"
+    ],
+    "source": "https://science.nasa.gov/universe/how-do-telescopes-work/"
+  }
+]

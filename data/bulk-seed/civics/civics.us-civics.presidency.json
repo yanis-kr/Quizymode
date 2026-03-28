@@ -1,0 +1,116 @@
+[
+  {
+    "category": "civics",
+    "navigationKeyword1": "us-civics",
+    "navigationKeyword2": "presidency",
+    "question": "To be eligible for the presidency, a person must be a natural-born citizen, at least 35 years old, and what else?",
+    "correctAnswer": "a resident of the United States for at least 14 years",
+    "incorrectAnswers": [
+      "a member of Congress for 8 years",
+      "born in Washington, D.C.",
+      "a licensed attorney"
+    ],
+    "explanation": "Article II sets citizenship, age, and residency requirements before someone may be elected president.",
+    "keywords": [
+      "presidential-qualifications",
+      "article-ii"
+    ],
+    "source": "https://constitution.congress.gov/constitution/article-2/",
+    "seedId": "de6d58ad-abce-5320-bf14-d5f1f7e91149"
+  },
+  {
+    "category": "civics",
+    "navigationKeyword1": "us-civics",
+    "navigationKeyword2": "presidency",
+    "question": "The Twenty-second Amendment limits a person elected president to how many terms?",
+    "correctAnswer": "two elected terms",
+    "incorrectAnswers": [
+      "one term only",
+      "three terms",
+      "unlimited terms if Congress approves"
+    ],
+    "explanation": "The amendment caps service for elected presidents, with special rules for succession mid-term.",
+    "keywords": [
+      "term-limits",
+      "twenty-second-amendment"
+    ],
+    "source": "https://constitution.congress.gov/constitution/amendment-22/",
+    "seedId": "7288df76-3a5e-5640-bf42-ae6d238f30a4"
+  },
+  {
+    "category": "civics",
+    "navigationKeyword1": "us-civics",
+    "navigationKeyword2": "presidency",
+    "question": "Commander in Chief of the armed forces is a power vested in whom?",
+    "correctAnswer": "the president",
+    "incorrectAnswers": [
+      "the Speaker of the House",
+      "the Chief Justice",
+      "the longest-serving senator"
+    ],
+    "explanation": "Article II makes the president the civilian head of the military, while Congress declares war and funds forces.",
+    "keywords": [
+      "commander-in-chief",
+      "military"
+    ],
+    "source": "https://www.whitehouse.gov/about-the-white-house/presidents/",
+    "seedId": "7107e799-9f18-543f-9338-45ae24558584"
+  },
+  {
+    "category": "civics",
+    "navigationKeyword1": "us-civics",
+    "navigationKeyword2": "presidency",
+    "question": "If the president disapproves a bill passed by Congress, what can happen next?",
+    "correctAnswer": "Congress may attempt to override the veto with a two-thirds vote in each chamber",
+    "incorrectAnswers": [
+      "the bill dies with no override option",
+      "the Supreme Court must rewrite it",
+      "only the Senate can reconsider"
+    ],
+    "explanation": "A veto returns the bill to Congress, which can pass it over the veto with supermajorities if it chooses.",
+    "keywords": [
+      "veto",
+      "legislative-process"
+    ],
+    "source": "https://www.congress.gov/about/legislative-process",
+    "seedId": "df84d873-87c9-599f-8bc6-c036375770ab"
+  },
+  {
+    "category": "civics",
+    "navigationKeyword1": "us-civics",
+    "navigationKeyword2": "presidency",
+    "question": "Treaties made by the United States require what for approval?",
+    "correctAnswer": "advice and consent of two-thirds of senators present",
+    "incorrectAnswers": [
+      "majority vote in the House",
+      "approval by state legislatures",
+      "signature of the Chief Justice"
+    ],
+    "explanation": "The Senate ratifies treaties under Article II; the House does not vote on treaties.",
+    "keywords": [
+      "treaties",
+      "senate"
+    ],
+    "source": "https://www.senate.gov/artandhistory/history/common/briefing/Treaties.htm",
+    "seedId": "2f3ae165-d1b7-57ff-92f7-68c8cbc8b3fd"
+  },
+  {
+    "category": "civics",
+    "navigationKeyword1": "us-civics",
+    "navigationKeyword2": "presidency",
+    "question": "Who succeeds the president if the office becomes vacant?",
+    "correctAnswer": "the vice president, then officials listed in federal succession statutes if needed",
+    "incorrectAnswers": [
+      "the Senate majority leader automatically",
+      "the Chief Justice",
+      "the most recent former president"
+    ],
+    "explanation": "The Twenty-fifth Amendment and succession law specify vice-presidential succession and further contingencies.",
+    "keywords": [
+      "succession",
+      "twenty-fifth-amendment"
+    ],
+    "source": "https://constitution.congress.gov/constitution/amendment-25/",
+    "seedId": "499542ab-95f2-5b9f-9977-f9858f6f5487"
+  }
+]

@@ -1,0 +1,116 @@
+[
+  {
+    "category": "civics",
+    "navigationKeyword1": "media-civics",
+    "navigationKeyword2": "misinformation",
+    "question": "In media civics, what is misinformation?",
+    "correctAnswer": "false or misleading information shared without necessarily intending to harm",
+    "incorrectAnswers": [
+      "only jokes that everyone knows are jokes",
+      "any true story you dislike",
+      "only information from books"
+    ],
+    "explanation": "Misinformation can spread by mistake; the focus is accuracy, not only motive.",
+    "keywords": [
+      "misinformation",
+      "definition"
+    ],
+    "source": "https://www.unesco.org/en/disinformation",
+    "seedId": "6c54253e-23d7-57e4-b5cf-2fb63630036e"
+  },
+  {
+    "category": "civics",
+    "navigationKeyword1": "media-civics",
+    "navigationKeyword2": "misinformation",
+    "question": "What is disinformation compared with misinformation?",
+    "correctAnswer": "false information spread deliberately to mislead people",
+    "incorrectAnswers": [
+      "any spelling error",
+      "only outdated maps",
+      "true facts that are boring"
+    ],
+    "explanation": "Disinformation adds intent to deceive, which matters for responses and policy.",
+    "keywords": [
+      "disinformation",
+      "intent"
+    ],
+    "source": "https://www.unesco.org/en/disinformation",
+    "seedId": "f9c62736-9592-56c1-be1e-8198c4403236"
+  },
+  {
+    "category": "civics",
+    "navigationKeyword1": "media-civics",
+    "navigationKeyword2": "misinformation",
+    "question": "Why does confirmation bias make false stories spread?",
+    "correctAnswer": "people more readily believe claims that match what they already think",
+    "incorrectAnswers": [
+      "because everyone reads every link fully",
+      "because charts never lie",
+      "because libraries ban fact-checks"
+    ],
+    "explanation": "Bias toward agreeing with prior views speeds sharing before careful checking.",
+    "keywords": [
+      "confirmation-bias",
+      "psychology"
+    ],
+    "source": "https://www.apa.org/topics/cognitive-bias",
+    "seedId": "6317fedd-f52b-5cd0-a7d6-dc36e982f21f"
+  },
+  {
+    "category": "civics",
+    "navigationKeyword1": "media-civics",
+    "navigationKeyword2": "misinformation",
+    "question": "What is one civic reason to pause before resharing a shocking headline?",
+    "correctAnswer": "outrage spreads faster than corrections, so quick shares amplify mistakes",
+    "incorrectAnswers": [
+      "headlines are always written by courts",
+      "sharing never affects anyone",
+      "only TV can be wrong"
+    ],
+    "explanation": "A short delay to verify can reduce harm from outdated or clipped context.",
+    "keywords": [
+      "sharing",
+      "viral"
+    ],
+    "source": "https://www.civiced.org/",
+    "seedId": "f7781307-65f0-5ced-a979-05c529f6b485"
+  },
+  {
+    "category": "civics",
+    "navigationKeyword1": "media-civics",
+    "navigationKeyword2": "misinformation",
+    "question": "What is a deepfake in simplified civic terms?",
+    "correctAnswer": "synthetic audio or video that can make people appear to say or do things they did not",
+    "incorrectAnswers": [
+      "any blurry photograph",
+      "only cartoon animation from the 1950s",
+      "official court transcripts"
+    ],
+    "explanation": "Synthetic media raises new verification needs because realism can fool viewers.",
+    "keywords": [
+      "deepfake",
+      "synthetic-media"
+    ],
+    "source": "https://www.fcc.gov/consumers/guides/media-literacy",
+    "seedId": "db13676e-89b7-5d97-96f9-dd05fad04e0f"
+  },
+  {
+    "category": "civics",
+    "navigationKeyword1": "media-civics",
+    "navigationKeyword2": "misinformation",
+    "question": "What is lateral reading when checking an online claim?",
+    "correctAnswer": "opening other tabs to learn about the site and claim before trusting the page",
+    "incorrectAnswers": [
+      "reading only the comments section",
+      "never leaving one website",
+      "copying the claim into one email"
+    ],
+    "explanation": "Leaving the page to check outside sources is a core fact-checking habit.",
+    "keywords": [
+      "lateral-reading",
+      "fact-check"
+    ],
+    "source": "https://www.usa.gov/media-literacy",
+    "seedId": "26fb0473-f76f-5204-a72b-0eb46ca504dc"
+  }
+]

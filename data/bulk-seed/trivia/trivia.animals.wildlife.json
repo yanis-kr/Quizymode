@@ -1,0 +1,192 @@
+[
+  {
+    "category": "trivia",
+    "navigationKeyword1": "animals",
+    "navigationKeyword2": "wildlife",
+    "question": "What is the largest land animal?",
+    "correctAnswer": "elephant",
+    "incorrectAnswers": [
+      "hippopotamus",
+      "rhinoceros",
+      "giraffe"
+    ],
+    "explanation": "Elephants are the largest land animals.",
+    "keywords": [
+      "wildlife",
+      "animal-trivia"
+    ],
+    "source": "https://www.britannica.com/animal/elephant-mammal",
+    "seedId": "ed4eb57d-a918-58d2-a213-19b94fd5e859"
+  },
+  {
+    "category": "trivia",
+    "navigationKeyword1": "animals",
+    "navigationKeyword2": "wildlife",
+    "question": "What is the fastest land animal?",
+    "correctAnswer": "cheetah",
+    "incorrectAnswers": [
+      "lion",
+      "greyhound",
+      "gazelle"
+    ],
+    "explanation": "The cheetah is the fastest land animal.",
+    "keywords": [
+      "wildlife",
+      "animal-trivia"
+    ],
+    "source": "https://www.britannica.com/animal/cheetah-mammal",
+    "seedId": "98c6c636-b9e4-5e83-b864-a9e484597230"
+  },
+  {
+    "category": "trivia",
+    "navigationKeyword1": "animals",
+    "navigationKeyword2": "wildlife",
+    "question": "What is the tallest living land animal?",
+    "correctAnswer": "giraffe",
+    "incorrectAnswers": [
+      "camel",
+      "elephant",
+      "moose"
+    ],
+    "explanation": "The giraffe is the tallest living land animal.",
+    "keywords": [
+      "wildlife",
+      "animal-trivia"
+    ],
+    "source": "https://www.britannica.com/animal/giraffe",
+    "seedId": "653a967a-86d2-59d1-88d9-312e895e8e81"
+  },
+  {
+    "category": "trivia",
+    "navigationKeyword1": "animals",
+    "navigationKeyword2": "wildlife",
+    "question": "Giant pandas eat mostly what plant?",
+    "correctAnswer": "bamboo",
+    "incorrectAnswers": [
+      "eucalyptus",
+      "fern",
+      "moss"
+    ],
+    "explanation": "Giant pandas eat mainly bamboo.",
+    "keywords": [
+      "wildlife",
+      "animal-trivia"
+    ],
+    "source": "https://www.britannica.com/animal/giant-panda",
+    "seedId": "164145dc-8a32-57cd-a0e7-a4fe86571c02"
+  },
+  {
+    "category": "trivia",
+    "navigationKeyword1": "animals",
+    "navigationKeyword2": "wildlife",
+    "question": "Kangaroos are native to which country?",
+    "correctAnswer": "Australia",
+    "incorrectAnswers": [
+      "South Africa",
+      "Brazil",
+      "Canada"
+    ],
+    "explanation": "Kangaroos are native to Australia.",
+    "keywords": [
+      "wildlife",
+      "animal-trivia"
+    ],
+    "source": "https://www.britannica.com/animal/kangaroo",
+    "seedId": "8e2fa67d-0d80-54a6-a2c6-74bb56a9a152"
+  },
+  {
+    "category": "trivia",
+    "navigationKeyword1": "animals",
+    "navigationKeyword2": "wildlife",
+    "question": "Wolves usually live and hunt in what social groups?",
+    "correctAnswer": "packs",
+    "incorrectAnswers": [
+      "pods",
+      "colonies",
+      "schools"
+    ],
+    "explanation": "Wolves usually live and hunt in packs.",
+    "keywords": [
+      "wildlife",
+      "animal-trivia"
+    ],
+    "source": "https://www.britannica.com/animal/wolf",
+    "seedId": "1922e9c4-122d-55dc-ae4e-d3b70ca38f6e"
+  },
+  {
+    "category": "trivia",
+    "navigationKeyword1": "animals",
+    "navigationKeyword2": "wildlife",
+    "question": "A zebra stripe pattern is unique to each what?",
+    "correctAnswer": "individual",
+    "incorrectAnswers": [
+      "species",
+      "herd",
+      "continent"
+    ],
+    "explanation": "Each zebra has its own stripe pattern.",
+    "keywords": [
+      "wildlife",
+      "animal-trivia"
+    ],
+    "source": "https://www.britannica.com/animal/zebra",
+    "seedId": "26dd4fa9-8a9f-5388-8ea4-788cd174b550"
+  },
+  {
+    "category": "trivia",
+    "navigationKeyword1": "animals",
+    "navigationKeyword2": "wildlife",
+    "question": "Which rodent is famous for building dams?",
+    "correctAnswer": "beaver",
+    "incorrectAnswers": [
+      "capybara",
+      "porcupine",
+      "marmot"
+    ],
+    "explanation": "Beavers are famous for building dams.",
+    "keywords": [
+      "wildlife",
+      "animal-trivia"
+    ],
+    "source": "https://www.britannica.com/animal/beaver",
+    "seedId": "fc12133b-15ef-5c0b-933f-8d4ff89bd3e1"
+  },
+  {
+    "category": "trivia",
+    "navigationKeyword1": "animals",
+    "navigationKeyword2": "wildlife",
+    "question": "Polar bears live in the Arctic, not which opposite polar region?",
+    "correctAnswer": "Antarctic",
+    "incorrectAnswers": [
+      "taiga",
+      "tundra",
+      "Pacific"
+    ],
+    "explanation": "Polar bears live in the Arctic, not the Antarctic.",
+    "keywords": [
+      "wildlife",
+      "animal-trivia"
+    ],
+    "source": "https://www.britannica.com/animal/polar-bear",
+    "seedId": "3c6ebc4f-a0e4-51d2-94ca-ad313d4c1c92"
+  },
+  {
+    "category": "trivia",
+    "navigationKeyword1": "animals",
+    "navigationKeyword2": "wildlife",
+    "question": "A rhinoceros horn is made mostly of what protein?",
+    "correctAnswer": "keratin",
+    "incorrectAnswers": [
+      "calcium",
+      "collagen",
+      "chitin"
+    ],
+    "explanation": "A rhinoceros horn is made mostly of keratin.",
+    "keywords": [
+      "wildlife",
+      "animal-trivia"
+    ],
+    "source": "https://www.britannica.com/animal/rhinoceros-mammal",
+    "seedId": "a204f3f5-319b-5ac5-ac66-9df900113f08"
+  }
+]

@@ -1,0 +1,122 @@
+[
+  {
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "conversation",
+    "question": "Which phrase is a common daytime greeting?",
+    "correctAnswer": "Bonjour.",
+    "incorrectAnswers": [
+      "Bonne nuit.",
+      "À bientôt.",
+      "Enchanté."
+    ],
+    "explanation": "\"Bonjour\" is the usual general greeting during the day.",
+    "keywords": [
+      "hello",
+      "greetings",
+      "french-conversation"
+    ],
+    "source": "https://dictionary.cambridge.org/dictionary/french-english/bonjour",
+    "seedId": "0e291354-43a9-5c67-9faf-a4de19c6d779"
+  },
+  {
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "conversation",
+    "question": "Which informal question asks \"How are you?\" to someone you call \"tu\"?",
+    "correctAnswer": "Comment ça va ?",
+    "incorrectAnswers": [
+      "Comment vous appelez-vous ?",
+      "D'où venez-vous ?",
+      "Quel âge avez-vous ?"
+    ],
+    "explanation": "\"Comment ça va ?\" is a very common informal check-in among friends.",
+    "keywords": [
+      "how-are-you",
+      "greetings",
+      "french-conversation"
+    ],
+    "source": "https://www.collinsdictionary.com/dictionary/french-english/comment",
+    "seedId": "f97ef742-a553-5eca-8bfd-47658386f5c3"
+  },
+  {
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "conversation",
+    "question": "Which phrase politely says \"Excuse me\" before you ask a stranger for help?",
+    "correctAnswer": "Excusez-moi.",
+    "incorrectAnswers": [
+      "Félicitations.",
+      "Bon appétit.",
+      "À demain."
+    ],
+    "explanation": "\"Excusez-moi\" is a polite way to get attention before a question.",
+    "keywords": [
+      "excuse-me",
+      "politeness",
+      "french-conversation"
+    ],
+    "source": "https://dictionary.cambridge.org/dictionary/french-english/excusez-moi",
+    "seedId": "4b436954-a416-5982-86fa-af9f8edb5b22"
+  },
+  {
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "conversation",
+    "question": "Which reply is a simple way to say \"Nice to meet you\" in a first meeting?",
+    "correctAnswer": "Enchanté.",
+    "incorrectAnswers": [
+      "À tout à l'heure.",
+      "Je suis désolé.",
+      "Je me dépêche."
+    ],
+    "explanation": "\"Enchanté\" (or \"Enchantée\" for feminine speakers) is a common polite phrase after introductions.",
+    "keywords": [
+      "nice-to-meet-you",
+      "introductions",
+      "french-conversation"
+    ],
+    "source": "https://www.collinsdictionary.com/dictionary/french-english/enchant%C3%A9",
+    "seedId": "d59e46cf-b0f9-5f5c-8f12-80b79fef2a03"
+  },
+  {
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "conversation",
+    "question": "Which phrase politely asks someone to repeat what they said?",
+    "correctAnswer": "Pouvez-vous répéter, s'il vous plaît ?",
+    "incorrectAnswers": [
+      "Je n'aime pas ça.",
+      "Je suis fatigué.",
+      "Il fait très froid."
+    ],
+    "explanation": "\"Répéter\" means to repeat; adding \"s'il vous plaît\" keeps the request polite.",
+    "keywords": [
+      "repeat",
+      "clarification",
+      "french-conversation"
+    ],
+    "source": "https://dictionary.cambridge.org/dictionary/french-english/r%C3%A9p%C3%A9ter",
+    "seedId": "b7fbd051-f786-5a6d-b1dd-c0778f3eafb6"
+  },
+  {
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "conversation",
+    "question": "Which phrase is a simple apology after a small mistake?",
+    "correctAnswer": "Pardon.",
+    "incorrectAnswers": [
+      "De rien.",
+      "Bien sûr.",
+      "Toutes mes félicitations."
+    ],
+    "explanation": "\"Pardon\" is a quick everyday apology for small mistakes.",
+    "keywords": [
+      "sorry",
+      "apology",
+      "french-conversation"
+    ],
+    "source": "https://www.collinsdictionary.com/dictionary/french-english/pardon",
+    "seedId": "357ae37b-d6f7-50cd-95d8-229cf9a6cc2b"
+  }
+]

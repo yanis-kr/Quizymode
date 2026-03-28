@@ -1,0 +1,1094 @@
+{
+  "solar-system": [
+    {
+      "question": "Which planet is third from the Sun?",
+      "correctAnswer": "Earth",
+      "incorrectAnswers": [
+        "Venus",
+        "Mars",
+        "Jupiter"
+      ],
+      "explanation": "Order from the Sun: Mercury, Venus, Earth, Mars\u2026",
+      "keywords": [
+        "solar-system",
+        "planets"
+      ],
+      "source": "https://science.nasa.gov/solar-system/"
+    },
+    {
+      "question": "What is the Sun mainly composed of?",
+      "correctAnswer": "Hydrogen and helium",
+      "incorrectAnswers": [
+        "Rock and iron",
+        "Water ice",
+        "Carbon dioxide only"
+      ],
+      "explanation": "The Sun is a star powered by fusion of light elements.",
+      "keywords": [
+        "sun",
+        "fusion"
+      ],
+      "source": "https://science.nasa.gov/sun/"
+    },
+    {
+      "question": "What is an astronomical unit (AU) often used to mean?",
+      "correctAnswer": "About Earth\u2013Sun average distance",
+      "incorrectAnswers": [
+        "Moon\u2013Earth distance",
+        "Sun\u2019s radius",
+        "Speed of light"
+      ],
+      "explanation": "1 AU is a convenient Earth-centered distance scale in the solar system.",
+      "keywords": [
+        "au",
+        "distance"
+      ],
+      "source": "https://en.wikipedia.org/wiki/Astronomical_unit"
+    },
+    {
+      "question": "What is the asteroid belt mostly between?",
+      "correctAnswer": "Mars and Jupiter",
+      "incorrectAnswers": [
+        "Earth and Mars",
+        "Jupiter and Saturn",
+        "Mercury and Venus"
+      ],
+      "explanation": "Many small rocky bodies orbit between Mars and Jupiter.",
+      "keywords": [
+        "asteroid-belt",
+        "orbits"
+      ],
+      "source": "https://science.nasa.gov/asteroids/"
+    },
+    {
+      "question": "What is a comet\u2019s icy tail generally pushed by?",
+      "correctAnswer": "Solar wind and radiation pressure",
+      "incorrectAnswers": [
+        "Earth\u2019s gravity only",
+        "Moonlight",
+        "Jupiter\u2019s rings"
+      ],
+      "explanation": "Comet tails point away from the Sun as material is blown outward.",
+      "keywords": [
+        "comets",
+        "solar-wind"
+      ],
+      "source": "https://science.nasa.gov/comets/"
+    },
+    {
+      "question": "Why do planets stay in orbit around the Sun?",
+      "correctAnswer": "Gravity provides the centripetal force for curved paths",
+      "incorrectAnswers": [
+        "Magnetism alone holds them",
+        "Friction with space air",
+        "Planets are weightless so no force"
+      ],
+      "explanation": "Newtonian gravity explains closed orbits when speed and distance balance.",
+      "keywords": [
+        "orbits",
+        "gravity"
+      ],
+      "source": "https://en.wikipedia.org/wiki/Orbit"
+    },
+    {
+      "question": "Which planet has the largest mass in the solar system?",
+      "correctAnswer": "Jupiter",
+      "incorrectAnswers": [
+        "Saturn",
+        "Neptune",
+        "Earth"
+      ],
+      "explanation": "Jupiter is the most massive planet.",
+      "keywords": [
+        "jupiter",
+        "mass"
+      ],
+      "source": "https://science.nasa.gov/jupiter/"
+    },
+    {
+      "question": "What is Pluto classified as today (common category)?",
+      "correctAnswer": "A dwarf planet",
+      "incorrectAnswers": [
+        "A moon of Neptune",
+        "An asteroid",
+        "A comet"
+      ],
+      "explanation": "Pluto is a dwarf planet in the Kuiper belt region.",
+      "keywords": [
+        "pluto",
+        "dwarf-planet"
+      ],
+      "source": "https://science.nasa.gov/pluto/"
+    },
+    {
+      "question": "What is the Kuiper belt?",
+      "correctAnswer": "A region of icy bodies beyond Neptune",
+      "incorrectAnswers": [
+        "Between Mars and Jupiter",
+        "Inside the Sun",
+        "Around Mercury"
+      ],
+      "explanation": "Many trans-Neptunian objects reside in the Kuiper belt.",
+      "keywords": [
+        "kuiper-belt",
+        "trans-neptunian"
+      ],
+      "source": "https://science.nasa.gov/kuiper-belt/"
+    },
+    {
+      "question": "What is the Oort cloud (conceptual)?",
+      "correctAnswer": "A distant spherical reservoir of cometary bodies",
+      "incorrectAnswers": [
+        "A ring inside Mercury\u2019s orbit",
+        "A storm on Jupiter",
+        "The Moon\u2019s dust tail"
+      ],
+      "explanation": "Long-period comets are often linked to distant icy reservoirs.",
+      "keywords": [
+        "oort-cloud",
+        "comets"
+      ],
+      "source": "https://science.nasa.gov/oort-cloud/"
+    },
+    {
+      "question": "Why does Venus appear very bright from Earth?",
+      "correctAnswer": "It is close to Earth and its clouds reflect lots of sunlight",
+      "incorrectAnswers": [
+        "It emits its own light like a star",
+        "It is the largest planet",
+        "It is always behind the Sun"
+      ],
+      "explanation": "Venus\u2019s thick clouds make it highly reflective (high albedo).",
+      "keywords": [
+        "venus",
+        "albedo"
+      ],
+      "source": "https://science.nasa.gov/venus/"
+    },
+    {
+      "question": "What is a \u2018year\u2019 on a planet?",
+      "correctAnswer": "One full orbit around the Sun",
+      "incorrectAnswers": [
+        "One full spin on its axis",
+        "One moon phase cycle always",
+        "One Earth day"
+      ],
+      "explanation": "Orbital period defines a planetary year.",
+      "keywords": [
+        "orbital-period",
+        "year"
+      ],
+      "source": "https://science.nasa.gov/solar-system/"
+    }
+  ],
+  "stars": [
+    {
+      "question": "What powers most stars\u2019 long-term energy output?",
+      "correctAnswer": "Nuclear fusion in the core",
+      "incorrectAnswers": [
+        "Chemical burning like wood",
+        "Gravitational collapse only forever",
+        "Electric heating from lightning"
+      ],
+      "explanation": "Stars shine by fusing light nuclei under extreme temperature and pressure.",
+      "keywords": [
+        "fusion",
+        "stellar-energy"
+      ],
+      "source": "https://science.nasa.gov/universe/stars/"
+    },
+    {
+      "question": "What is a main sequence star?",
+      "correctAnswer": "A star fusing hydrogen into helium in its core (stable phase)",
+      "incorrectAnswers": [
+        "A star that only reflects sunlight",
+        "A cooled planet",
+        "A black hole"
+      ],
+      "explanation": "Sun-like stars spend most of their lives on the main sequence.",
+      "keywords": [
+        "main-sequence",
+        "hr-diagram"
+      ],
+      "source": "https://en.wikipedia.org/wiki/Main_sequence"
+    },
+    {
+      "question": "What does a star\u2019s color roughly indicate?",
+      "correctAnswer": "Surface temperature (hotter tends toward blue-white)",
+      "incorrectAnswers": [
+        "Distance only",
+        "Mass only with no temperature link",
+        "Age only"
+      ],
+      "explanation": "Hotter surfaces emit more energetic light, shifting color.",
+      "keywords": [
+        "blackbody",
+        "color-temperature"
+      ],
+      "source": "https://science.nasa.gov/universe/stars/"
+    },
+    {
+      "question": "What is a red giant?",
+      "correctAnswer": "A late-stage star that expanded after core hydrogen exhaustion",
+      "incorrectAnswers": [
+        "A young hot star",
+        "A planet with rings",
+        "A comet nucleus"
+      ],
+      "explanation": "Low- to intermediate-mass stars swell when evolving off the main sequence.",
+      "keywords": [
+        "red-giant",
+        "stellar-evolution"
+      ],
+      "source": "https://en.wikipedia.org/wiki/Red_giant"
+    },
+    {
+      "question": "What is a neutron star?",
+      "correctAnswer": "An extremely dense remnant after a massive star\u2019s core collapse",
+      "incorrectAnswers": [
+        "A normal star like the Sun",
+        "A gas giant",
+        "A brown dwarf"
+      ],
+      "explanation": "Neutron stars can form from supernova cores under extreme gravity.",
+      "keywords": [
+        "neutron-star",
+        "supernova"
+      ],
+      "source": "https://science.nasa.gov/universe/neutron-stars/"
+    },
+    {
+      "question": "What is a black hole?",
+      "correctAnswer": "A region where gravity is so strong that light cannot escape the event horizon",
+      "incorrectAnswers": [
+        "A hole in the galactic disk",
+        "An empty bubble of vacuum only",
+        "A cold planet"
+      ],
+      "explanation": "Black holes are predicted by general relativity with an event horizon.",
+      "keywords": [
+        "black-hole",
+        "event-horizon"
+      ],
+      "source": "https://science.nasa.gov/universe/black-holes/"
+    },
+    {
+      "question": "What is parallax used for in astronomy?",
+      "correctAnswer": "Estimating distances to nearby stars",
+      "incorrectAnswers": [
+        "Measuring a star\u2019s age exactly",
+        "Predicting eclipses only",
+        "Finding planet cores"
+      ],
+      "explanation": "Earth\u2019s orbit provides a baseline for triangulating stellar distances.",
+      "keywords": [
+        "parallax",
+        "distance"
+      ],
+      "source": "https://en.wikipedia.org/wiki/Stellar_parallax"
+    },
+    {
+      "question": "What is absolute magnitude related to?",
+      "correctAnswer": "Intrinsic brightness (compared at a standard distance)",
+      "incorrectAnswers": [
+        "How bright a star looks from Earth only",
+        "A star\u2019s color alone",
+        "A star\u2019s spin only"
+      ],
+      "explanation": "Apparent magnitude depends on distance; absolute magnitude standardizes comparison.",
+      "keywords": [
+        "magnitude",
+        "brightness"
+      ],
+      "source": "https://en.wikipedia.org/wiki/Absolute_magnitude"
+    },
+    {
+      "question": "What is a spectroscope useful for with starlight?",
+      "correctAnswer": "Identifying chemical composition and motion via spectral lines",
+      "incorrectAnswers": [
+        "Measuring a star\u2019s exact size with a ruler",
+        "Blocking all wavelengths",
+        "Creating artificial gravity"
+      ],
+      "explanation": "Spectral lines reveal elements and Doppler shifts.",
+      "keywords": [
+        "spectroscopy",
+        "redshift"
+      ],
+      "source": "https://science.nasa.gov/spectrum/"
+    },
+    {
+      "question": "What is the Sun\u2019s general spectral class (common label)?",
+      "correctAnswer": "G-type main-sequence star (G dwarf)",
+      "incorrectAnswers": [
+        "O-type brown dwarf",
+        "M-type giant only",
+        "B-type white dwarf"
+      ],
+      "explanation": "The Sun is often called a G2V star.",
+      "keywords": [
+        "sun-type",
+        "spectral-class"
+      ],
+      "source": "https://science.nasa.gov/sun/"
+    },
+    {
+      "question": "What is a binary star system?",
+      "correctAnswer": "Two stars orbiting a common center of mass",
+      "incorrectAnswers": [
+        "A star with one planet",
+        "Two galaxies merging",
+        "A star and a comet"
+      ],
+      "explanation": "Many stars form bound pairs or multiples.",
+      "keywords": [
+        "binary-stars",
+        "orbits"
+      ],
+      "source": "https://en.wikipedia.org/wiki/Binary_star"
+    },
+    {
+      "question": "Why do stars twinkle as seen from Earth?",
+      "correctAnswer": "Earth\u2019s atmosphere bends starlight as turbulence changes",
+      "incorrectAnswers": [
+        "Stars pulse intrinsically every second",
+        "Stars are cubes",
+        "The Moon blocks them"
+      ],
+      "explanation": "Scintillation is an atmospheric effect for point sources.",
+      "keywords": [
+        "twinkle",
+        "seeing"
+      ],
+      "source": "https://en.wikipedia.org/wiki/Astronomical_seeing"
+    }
+  ],
+  "galaxies": [
+    {
+      "question": "What galaxy contains our solar system?",
+      "correctAnswer": "The Milky Way",
+      "incorrectAnswers": [
+        "Andromeda",
+        "Triangulum",
+        "Sombrero"
+      ],
+      "explanation": "We orbit within the Milky Way, a barred spiral galaxy.",
+      "keywords": [
+        "milky-way",
+        "galaxy"
+      ],
+      "source": "https://science.nasa.gov/universe/galaxies/"
+    },
+    {
+      "question": "What is the approximate shape of the Milky Way?",
+      "correctAnswer": "A barred spiral",
+      "incorrectAnswers": [
+        "Perfect sphere",
+        "Ring only",
+        "Cube"
+      ],
+      "explanation": "Observations indicate a bar in the central bulge and spiral arms.",
+      "keywords": [
+        "spiral",
+        "barred"
+      ],
+      "source": "https://science.nasa.gov/universe/galaxies/"
+    },
+    {
+      "question": "What is a galaxy mostly made of?",
+      "correctAnswer": "Stars, gas, dust, and dark matter (gravitationally)",
+      "incorrectAnswers": [
+        "Only solid rock",
+        "Only comets",
+        "Only empty vacuum"
+      ],
+      "explanation": "Galaxies are gravitationally bound systems with visible and dark components.",
+      "keywords": [
+        "dark-matter",
+        "components"
+      ],
+      "source": "https://science.nasa.gov/universe/galaxies/"
+    },
+    {
+      "question": "What is a quasar?",
+      "correctAnswer": "An extremely luminous active galactic nucleus",
+      "incorrectAnswers": [
+        "A nearby moon",
+        "A type of meteor",
+        "A small star cluster"
+      ],
+      "explanation": "Quasars are powered by accretion onto supermassive black holes.",
+      "keywords": [
+        "quasar",
+        "agn"
+      ],
+      "source": "https://science.nasa.gov/universe/galaxies/"
+    },
+    {
+      "question": "What is the Andromeda Galaxy relative to ours?",
+      "correctAnswer": "The nearest large spiral galaxy (on cosmic scales)",
+      "incorrectAnswers": [
+        "Inside the Milky Way",
+        "The farthest object known",
+        "A star in Orion"
+      ],
+      "explanation": "Andromeda (M31) is a major neighbor galaxy.",
+      "keywords": [
+        "andromeda",
+        "local-group"
+      ],
+      "source": "https://science.nasa.gov/missions/hubble/andromeda-galaxy/"
+    },
+    {
+      "question": "What is the Local Group?",
+      "correctAnswer": "A small cluster of galaxies including Milky Way and Andromeda",
+      "incorrectAnswers": [
+        "All galaxies in the universe",
+        "Only stars near the Sun",
+        "A belt of asteroids"
+      ],
+      "explanation": "The Local Group is our neighborhood galaxy cluster.",
+      "keywords": [
+        "local-group",
+        "cluster"
+      ],
+      "source": "https://en.wikipedia.org/wiki/Local_Group"
+    },
+    {
+      "question": "What does Hubble\u2019s law relate for galaxies?",
+      "correctAnswer": "Recession speed and distance (on large scales)",
+      "incorrectAnswers": [
+        "Star temperature and brightness only",
+        "Planet mass and rings",
+        "Comet tails and color"
+      ],
+      "explanation": "Greater distance correlates with higher recession velocity in expanding universe.",
+      "keywords": [
+        "hubble-law",
+        "expansion"
+      ],
+      "source": "https://science.nasa.gov/universe/galaxies/"
+    },
+    {
+      "question": "What is gravitational lensing?",
+      "correctAnswer": "Mass bends light paths, magnifying or distorting background sources",
+      "incorrectAnswers": [
+        "Lenses made of glass in space",
+        "Stars emitting laser beams",
+        "Black holes repelling light"
+      ],
+      "explanation": "General relativity predicts light deflection by mass.",
+      "keywords": [
+        "lensing",
+        "relativity"
+      ],
+      "source": "https://science.nasa.gov/universe/galaxies/"
+    },
+    {
+      "question": "What is a galaxy cluster?",
+      "correctAnswer": "Many galaxies bound together by gravity",
+      "incorrectAnswers": [
+        "One galaxy split in half",
+        "A star-forming nebula only",
+        "A planetary ring system"
+      ],
+      "explanation": "Clusters are the largest gravitationally bound structures of galaxies.",
+      "keywords": [
+        "cluster",
+        "large-scale-structure"
+      ],
+      "source": "https://science.nasa.gov/universe/galaxies/"
+    },
+    {
+      "question": "What is interstellar dust\u2019s effect on observations?",
+      "correctAnswer": "It can redden and block visible light (extinction)",
+      "incorrectAnswers": [
+        "It makes stars hotter",
+        "It removes gravity",
+        "It creates comet tails on Earth"
+      ],
+      "explanation": "Dust scatters and absorbs light, changing colors and brightness.",
+      "keywords": [
+        "extinction",
+        "dust"
+      ],
+      "source": "https://science.nasa.gov/universe/galaxies/"
+    },
+    {
+      "question": "What is a rotation curve used to infer in galaxies?",
+      "correctAnswer": "How mass is distributed (including dark matter hints)",
+      "incorrectAnswers": [
+        "Only the age of stars",
+        "Only comet orbits",
+        "Planet ring thickness"
+      ],
+      "explanation": "Flat rotation curves in spirals motivated dark matter models.",
+      "keywords": [
+        "rotation-curve",
+        "dark-matter"
+      ],
+      "source": "https://en.wikipedia.org/wiki/Galaxy_rotation_curve"
+    },
+    {
+      "question": "What is cosmic redshift?",
+      "correctAnswer": "Light wavelengths stretch as space expands",
+      "incorrectAnswers": [
+        "Stars turn blue over time",
+        "Galaxies shrink",
+        "Planets speed up randomly"
+      ],
+      "explanation": "Expansion increases observed wavelength for distant sources.",
+      "keywords": [
+        "redshift",
+        "expansion"
+      ],
+      "source": "https://science.nasa.gov/universe/galaxies/"
+    }
+  ],
+  "cosmology": [
+    {
+      "question": "What does the Big Bang model describe?",
+      "correctAnswer": "The early hot, dense state and expansion of the observable universe",
+      "incorrectAnswers": [
+        "An explosion at a center point in space only",
+        "The formation of Earth",
+        "The Moon\u2019s capture"
+      ],
+      "explanation": "Cosmology models expansion from early conditions; it is not an explosion \u2018into\u2019 pre-existing space.",
+      "keywords": [
+        "big-bang",
+        "expansion"
+      ],
+      "source": "https://science.nasa.gov/universe/"
+    },
+    {
+      "question": "What is cosmic microwave background radiation?",
+      "correctAnswer": "Remnant glow from when the universe became transparent to light",
+      "incorrectAnswers": [
+        "Light from nearby stars only",
+        "Radar from planets",
+        "Gamma rays from trees"
+      ],
+      "explanation": "The CMB is a key observational pillar of hot early universe models.",
+      "keywords": [
+        "cmb",
+        "early-universe"
+      ],
+      "source": "https://science.nasa.gov/universe/cosmic-microwave-background/"
+    },
+    {
+      "question": "What is dark energy often invoked to explain?",
+      "correctAnswer": "Accelerating expansion of the universe",
+      "incorrectAnswers": [
+        "Why planets have rings",
+        "Why stars twinkle",
+        "Why comets melt"
+      ],
+      "explanation": "Late-time acceleration appears in distance\u2013redshift data.",
+      "keywords": [
+        "dark-energy",
+        "acceleration"
+      ],
+      "source": "https://science.nasa.gov/universe/dark-energy-dark-matter/"
+    },
+    {
+      "question": "What is dark matter inferred from?",
+      "correctAnswer": "Gravitational effects that exceed visible matter alone",
+      "incorrectAnswers": [
+        "Bright glowing clouds only",
+        "Sound in space",
+        "Solar flares on Earth"
+      ],
+      "explanation": "Galaxy dynamics and lensing suggest extra unseen mass.",
+      "keywords": [
+        "dark-matter",
+        "gravity"
+      ],
+      "source": "https://science.nasa.gov/universe/dark-energy-dark-matter/"
+    },
+    {
+      "question": "What is the observable universe?",
+      "correctAnswer": "The region from which light has had time to reach us",
+      "incorrectAnswers": [
+        "The entire universe with certainty",
+        "Only the solar system",
+        "Only Andromeda"
+      ],
+      "explanation": "Cosmic horizon limits what we can observe.",
+      "keywords": [
+        "observable-universe",
+        "horizon"
+      ],
+      "source": "https://science.nasa.gov/universe/"
+    },
+    {
+      "question": "What is inflation (cosmology) broadly?",
+      "correctAnswer": "A proposed early rapid expansion episode",
+      "incorrectAnswers": [
+        "Stars inflating into giants",
+        "Balloons on Neptune",
+        "Moon drifting away only"
+      ],
+      "explanation": "Inflation addresses horizon and flatness puzzles in some models.",
+      "keywords": [
+        "inflation",
+        "early-universe"
+      ],
+      "source": "https://en.wikipedia.org/wiki/Inflation_(cosmology)"
+    },
+    {
+      "question": "What is nucleosynthesis in early universe context?",
+      "correctAnswer": "Formation of light nuclei like hydrogen and helium",
+      "incorrectAnswers": [
+        "Formation of iron in stars only today",
+        "Formation of DNA",
+        "Formation of black holes first"
+      ],
+      "explanation": "Primordial nucleosynthesis matches observed light-element abundances.",
+      "keywords": [
+        "nucleosynthesis",
+        "elements"
+      ],
+      "source": "https://science.nasa.gov/universe/"
+    },
+    {
+      "question": "What does \u2018redshift z\u2019 measure in cosmology?",
+      "correctAnswer": "How much wavelengths have stretched relative to emission",
+      "incorrectAnswers": [
+        "A star\u2019s temperature in Celsius",
+        "A planet\u2019s density",
+        "A comet\u2019s tail length"
+      ],
+      "explanation": "Higher z corresponds to earlier cosmic times for distant sources.",
+      "keywords": [
+        "redshift",
+        "distance-scale"
+      ],
+      "source": "https://science.nasa.gov/universe/galaxies/"
+    },
+    {
+      "question": "What is the cosmological principle (approximation)?",
+      "correctAnswer": "The universe is roughly homogeneous and isotropic on large scales",
+      "incorrectAnswers": [
+        "Earth is the exact center",
+        "Galaxies line up in a grid",
+        "Stars are identical"
+      ],
+      "explanation": "Models simplify large-scale structure with statistical uniformity.",
+      "keywords": [
+        "homogeneity",
+        "isotropy"
+      ],
+      "source": "https://en.wikipedia.org/wiki/Cosmological_principle"
+    },
+    {
+      "question": "What is a light-year?",
+      "correctAnswer": "Distance light travels in one year",
+      "incorrectAnswers": [
+        "A time unit only",
+        "A mass unit",
+        "Earth\u2019s orbital radius"
+      ],
+      "explanation": "It is a distance, not a time.",
+      "keywords": [
+        "light-year",
+        "distance"
+      ],
+      "source": "https://science.nasa.gov/universe/galaxies/"
+    },
+    {
+      "question": "What is spacetime in relativity?",
+      "correctAnswer": "A combined model where space and time form a four-dimensional geometry",
+      "incorrectAnswers": [
+        "Only space without time",
+        "Only clocks without space",
+        "A type of gas"
+      ],
+      "explanation": "Mass\u2013energy influences spacetime curvature.",
+      "keywords": [
+        "spacetime",
+        "relativity"
+      ],
+      "source": "https://science.nasa.gov/universe/black-holes/"
+    },
+    {
+      "question": "Why can distant galaxies appear as they were long ago?",
+      "correctAnswer": "Light travel time means we see earlier epochs",
+      "incorrectAnswers": [
+        "Telescopes travel back in time",
+        "Galaxies age backward",
+        "Speed of light is infinite"
+      ],
+      "explanation": "Looking far away is looking back in time.",
+      "keywords": [
+        "lookback-time",
+        "observation"
+      ],
+      "source": "https://science.nasa.gov/universe/galaxies/"
+    }
+  ],
+  "space-missions": [
+    {
+      "question": "What is low Earth orbit (LEO) used for?",
+      "correctAnswer": "Many satellites and crewed stations because it is accessible",
+      "incorrectAnswers": [
+        "Only interstellar probes",
+        "Only lunar landings",
+        "Only solar observations outside Earth orbit"
+      ],
+      "explanation": "LEO is relatively close and requires less energy than deep space.",
+      "keywords": [
+        "leo",
+        "orbit"
+      ],
+      "source": "https://www.nasa.gov/humans-in-space/"
+    },
+    {
+      "question": "Why do rockets need multiple stages?",
+      "correctAnswer": "To shed mass and improve efficiency as fuel is burned",
+      "incorrectAnswers": [
+        "To carry more passengers always",
+        "To reduce gravity",
+        "To avoid orbits"
+      ],
+      "explanation": "Staging drops empty tanks to accelerate payload better.",
+      "keywords": [
+        "rockets",
+        "staging"
+      ],
+      "source": "https://www.nasa.gov/humans-in-space/"
+    },
+    {
+      "question": "What is a Hohmann transfer (concept)?",
+      "correctAnswer": "An efficient orbital maneuver between two circular orbits",
+      "incorrectAnswers": [
+        "A random burn",
+        "A parachute drop",
+        "A comet capture"
+      ],
+      "explanation": "Uses two engine burns to change orbital energy.",
+      "keywords": [
+        "orbital-mechanics",
+        "transfer"
+      ],
+      "source": "https://en.wikipedia.org/wiki/Hohmann_transfer_orbit"
+    },
+    {
+      "question": "What is a rover mission\u2019s main advantage on Mars?",
+      "correctAnswer": "Mobility to study diverse rocks and terrain",
+      "incorrectAnswers": [
+        "It replaces all orbiters",
+        "It eliminates need for communication",
+        "It creates oxygen instantly"
+      ],
+      "explanation": "Rovers extend in-situ exploration beyond a single landing site.",
+      "keywords": [
+        "mars",
+        "rover"
+      ],
+      "source": "https://science.nasa.gov/mars/"
+    },
+    {
+      "question": "Why are planetary landings challenging?",
+      "correctAnswer": "Thin atmospheres, high speeds, and precise timing",
+      "incorrectAnswers": [
+        "Because planets have no gravity",
+        "Because space is hot",
+        "Because rockets cannot fire"
+      ],
+      "explanation": "Entry, descent, and landing must dissipate huge kinetic energy.",
+      "keywords": [
+        "edl",
+        "landing"
+      ],
+      "source": "https://science.nasa.gov/mars/"
+    },
+    {
+      "question": "What is a space telescope\u2019s advantage over many ground telescopes?",
+      "correctAnswer": "It avoids much atmospheric distortion and absorption",
+      "incorrectAnswers": [
+        "It is always closer to stars",
+        "It magnifies sound",
+        "It blocks all wavelengths"
+      ],
+      "explanation": "HST and JWST observe above (or beyond) atmospheric limits for many bands.",
+      "keywords": [
+        "space-telescope",
+        "jwst"
+      ],
+      "source": "https://science.nasa.gov/mission/webb/"
+    },
+    {
+      "question": "What is deep space communication delay caused by?",
+      "correctAnswer": "Finite speed of light over large distances",
+      "incorrectAnswers": [
+        "Satellite color",
+        "Solar flares only on Earth",
+        "Moon phases"
+      ],
+      "explanation": "Mars signals can take many minutes one way.",
+      "keywords": [
+        "light-speed",
+        "latency"
+      ],
+      "source": "https://www.nasa.gov/directorates/heo/scan/spectrum/space-communications-navigation/"
+    },
+    {
+      "question": "What is a gravity assist (flyby)?",
+      "correctAnswer": "Using a planet\u2019s gravity to change a spacecraft\u2019s speed and path",
+      "incorrectAnswers": [
+        "Landing without fuel",
+        "Stopping in space instantly",
+        "Creating wormholes"
+      ],
+      "explanation": "Pioneer/Voyager missions used planetary flybys.",
+      "keywords": [
+        "gravity-assist",
+        "flyby"
+      ],
+      "source": "https://science.nasa.gov/learn/basics/"
+    },
+    {
+      "question": "What is the International Space Station (ISS) mainly for?",
+      "correctAnswer": "Research and technology demonstration in microgravity",
+      "incorrectAnswers": [
+        "Mining asteroids",
+        "Generating Earth\u2019s weather",
+        "Replacing GPS"
+      ],
+      "explanation": "ISS supports long-duration human spaceflight science.",
+      "keywords": [
+        "iss",
+        "microgravity"
+      ],
+      "source": "https://www.nasa.gov/international-space-station/"
+    },
+    {
+      "question": "Why do astronauts appear weightless in orbit?",
+      "correctAnswer": "They are in free fall around Earth (microgravity environment)",
+      "incorrectAnswers": [
+        "There is no gravity in space",
+        "Earth\u2019s gravity ends at the atmosphere",
+        "Magnetic boots cancel weight"
+      ],
+      "explanation": "Orbit is continuous free fall with high tangential speed.",
+      "keywords": [
+        "microgravity",
+        "free-fall"
+      ],
+      "source": "https://www.nasa.gov/humans-in-space/"
+    },
+    {
+      "question": "What is sample return (mission goal)?",
+      "correctAnswer": "Bring physical samples back to Earth for lab analysis",
+      "incorrectAnswers": [
+        "Only take photos",
+        "Only map gravity",
+        "Only broadcast TV"
+      ],
+      "explanation": "Returned samples enable precise instruments on Earth.",
+      "keywords": [
+        "sample-return",
+        "planetary-science"
+      ],
+      "source": "https://science.nasa.gov/osiris-rex/"
+    },
+    {
+      "question": "What is planetary protection?",
+      "correctAnswer": "Policies to limit biological contamination between worlds",
+      "incorrectAnswers": [
+        "Protect astronauts from rain",
+        "Stop solar flares",
+        "Shield Wi-Fi"
+      ],
+      "explanation": "Prevents harmful forward/back contamination during exploration.",
+      "keywords": [
+        "planetary-protection",
+        "contamination"
+      ],
+      "source": "https://science.nasa.gov/planetary-protection/"
+    }
+  ],
+  "telescopes": [
+    {
+      "question": "What does a refracting telescope use to bend light?",
+      "correctAnswer": "Lenses",
+      "incorrectAnswers": [
+        "Mirrors only",
+        "Fiber optics only",
+        "Prisms only"
+      ],
+      "explanation": "Early telescopes used objective lenses; modern designs vary.",
+      "keywords": [
+        "refractor",
+        "lenses"
+      ],
+      "source": "https://science.nasa.gov/universe/how-do-telescopes-work/"
+    },
+    {
+      "question": "What do reflecting telescopes primarily use to collect light?",
+      "correctAnswer": "Mirrors",
+      "incorrectAnswers": [
+        "Lenses only",
+        "Metal foil",
+        "Water tanks"
+      ],
+      "explanation": "Large mirrors can be supported more easily than huge lenses.",
+      "keywords": [
+        "reflector",
+        "mirrors"
+      ],
+      "source": "https://science.nasa.gov/universe/how-do-telescopes-work/"
+    },
+    {
+      "question": "Why are larger apertures desired?",
+      "correctAnswer": "They collect more light and improve resolution",
+      "incorrectAnswers": [
+        "They always eliminate atmosphere",
+        "They shrink images",
+        "They reduce magnification"
+      ],
+      "explanation": "Light gathering scales with area.",
+      "keywords": [
+        "aperture",
+        "resolution"
+      ],
+      "source": "https://science.nasa.gov/universe/how-do-telescopes-work/"
+    },
+    {
+      "question": "What is angular resolution?",
+      "correctAnswer": "Ability to distinguish small separations on the sky",
+      "incorrectAnswers": [
+        "Brightness of a star",
+        "Distance in light-years only",
+        "Rocket speed"
+      ],
+      "explanation": "Better resolution separates closer objects.",
+      "keywords": [
+        "resolution",
+        "diffraction"
+      ],
+      "source": "https://en.wikipedia.org/wiki/Angular_resolution"
+    },
+    {
+      "question": "What is adaptive optics used for?",
+      "correctAnswer": "Correcting atmospheric distortion in real time",
+      "incorrectAnswers": [
+        "Increasing rocket thrust",
+        "Cooling detectors with wind",
+        "Blocking all infrared"
+      ],
+      "explanation": "Ground telescopes can rival space seeing in some bands with AO.",
+      "keywords": [
+        "adaptive-optics",
+        "atmosphere"
+      ],
+      "source": "https://science.nasa.gov/universe/how-do-telescopes-work/"
+    },
+    {
+      "question": "Why are many observatories on high mountains?",
+      "correctAnswer": "Thinner, drier air reduces absorption and turbulence",
+      "incorrectAnswers": [
+        "Closer to stars",
+        "Stronger gravity",
+        "To avoid daylight"
+      ],
+      "explanation": "Site selection improves image quality.",
+      "keywords": [
+        "site-selection",
+        "seeing"
+      ],
+      "source": "https://science.nasa.gov/universe/how-do-telescopes-work/"
+    },
+    {
+      "question": "What is interferometry in astronomy?",
+      "correctAnswer": "Combining signals from separated telescopes to boost resolution",
+      "incorrectAnswers": [
+        "Taking one photo twice",
+        "Using only one mirror",
+        "Measuring rocket vibration"
+      ],
+      "explanation": "Very long baselines improve angular detail.",
+      "keywords": [
+        "interferometry",
+        "vlbi"
+      ],
+      "source": "https://science.nasa.gov/universe/how-do-telescopes-work/"
+    },
+    {
+      "question": "Why observe in radio wavelengths?",
+      "correctAnswer": "Some objects emit strongly in radio (and dust is transparent)",
+      "incorrectAnswers": [
+        "Radio waves don\u2019t exist in space",
+        "Stars emit no radio",
+        "Only planets emit radio"
+      ],
+      "explanation": "Radio astronomy reveals cold gas, pulsars, and AGN.",
+      "keywords": [
+        "radio-astronomy",
+        "wavelengths"
+      ],
+      "source": "https://science.nasa.gov/universe/how-do-telescopes-work/"
+    },
+    {
+      "question": "Why observe in infrared?",
+      "correctAnswer": "To see through dust and study cooler objects",
+      "incorrectAnswers": [
+        "Because infrared is harmful only",
+        "Because stars vanish",
+        "Because mirrors block visible light"
+      ],
+      "explanation": "JWST\u2019s infrared capabilities probe star formation and exoplanet atmospheres.",
+      "keywords": [
+        "infrared",
+        "jwst"
+      ],
+      "source": "https://science.nasa.gov/mission/webb/"
+    },
+    {
+      "question": "What is chromatic aberration?",
+      "correctAnswer": "Lens dispersion makes colors focus at different points",
+      "incorrectAnswers": [
+        "Mirror cracking",
+        "Star twinkle in space",
+        "Satellite GPS error"
+      ],
+      "explanation": "Achromatic/apochromatic designs reduce this in refractors.",
+      "keywords": [
+        "chromatic-aberration",
+        "optics"
+      ],
+      "source": "https://en.wikipedia.org/wiki/Chromatic_aberration"
+    },
+    {
+      "question": "What is a CCD/CMOS sensor\u2019s role?",
+      "correctAnswer": "Detect photons and record images electronically",
+      "incorrectAnswers": [
+        "Create gravity",
+        "Generate rocket fuel",
+        "Steer the telescope mechanically alone"
+      ],
+      "explanation": "Modern astrophotography relies on digital detectors.",
+      "keywords": [
+        "ccd",
+        "detector"
+      ],
+      "source": "https://science.nasa.gov/universe/how-do-telescopes-work/"
+    },
+    {
+      "question": "What is a spectrograph on a telescope used for?",
+      "correctAnswer": "Spreading light into wavelengths to study composition and motion",
+      "incorrectAnswers": [
+        "Making wider fields only",
+        "Increasing rocket speed",
+        "Blocking starlight entirely"
+      ],
+      "explanation": "Spectroscopy is fundamental to astrophysics.",
+      "keywords": [
+        "spectrograph",
+        "spectroscopy"
+      ],
+      "source": "https://science.nasa.gov/universe/how-do-telescopes-work/"
+    }
+  ]
+}

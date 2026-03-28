@@ -1,0 +1,230 @@
+[
+  {
+    "seedId": "50a1e343-5662-410e-8e33-bfb9aac3a9f7",
+    "category": "science",
+    "navigationKeyword1": "chemistry",
+    "navigationKeyword2": "reactions",
+    "question": "What does a chemical equation balance?",
+    "correctAnswer": "Atoms of each element on both sides",
+    "incorrectAnswers": [
+      "Only charge",
+      "Only energy",
+      "Only volume"
+    ],
+    "explanation": "Mass is conserved in chemical reactions.",
+    "keywords": [
+      "stoichiometry",
+      "balancing"
+    ],
+    "source": "https://openstax.org/books/chemistry-2e/pages/4-1-writing-and-balancing-chemical-equations"
+  },
+  {
+    "seedId": "d1c0c70a-9d88-4673-9670-b96f039ebc18",
+    "category": "science",
+    "navigationKeyword1": "chemistry",
+    "navigationKeyword2": "reactions",
+    "question": "What is a synthesis reaction pattern?",
+    "correctAnswer": "A + B \u2192 AB",
+    "incorrectAnswers": [
+      "AB \u2192 A + B",
+      "A + BC \u2192 AC + B",
+      "A + B \u2192 C + D"
+    ],
+    "explanation": "Building a compound from simpler substances.",
+    "keywords": [
+      "synthesis",
+      "reactions"
+    ],
+    "source": "https://openstax.org/books/chemistry-2e/pages/4-2-classifying-chemical-reactions"
+  },
+  {
+    "seedId": "6c8e6458-dc43-4570-963d-cffc7693909a",
+    "category": "science",
+    "navigationKeyword1": "chemistry",
+    "navigationKeyword2": "reactions",
+    "question": "What is a decomposition pattern?",
+    "correctAnswer": "AB \u2192 A + B",
+    "incorrectAnswers": [
+      "A + B \u2192 AB",
+      "Single replacement",
+      "Combustion only"
+    ],
+    "explanation": "Breaking a compound apart.",
+    "keywords": [
+      "decomposition",
+      "reactions"
+    ],
+    "source": "https://openstax.org/books/chemistry-2e/pages/4-2-classifying-chemical-reactions"
+  },
+  {
+    "seedId": "503dc859-3829-470b-99d9-847083056334",
+    "category": "science",
+    "navigationKeyword1": "chemistry",
+    "navigationKeyword2": "reactions",
+    "question": "What is single replacement?",
+    "correctAnswer": "A + BC \u2192 AC + B",
+    "incorrectAnswers": [
+      "AB + CD \u2192 AD + CB",
+      "A + B \u2192 AB",
+      "AB \u2192 A + B"
+    ],
+    "explanation": "One element swaps into a compound.",
+    "keywords": [
+      "single-replacement",
+      "reactions"
+    ],
+    "source": "https://openstax.org/books/chemistry-2e/pages/4-2-classifying-chemical-reactions"
+  },
+  {
+    "seedId": "b75ff194-1e42-4050-ab55-791b83d58fdd",
+    "category": "science",
+    "navigationKeyword1": "chemistry",
+    "navigationKeyword2": "reactions",
+    "question": "What is double replacement?",
+    "correctAnswer": "AB + CD \u2192 AD + CB",
+    "incorrectAnswers": [
+      "A + BC \u2192 AC + B",
+      "A + B \u2192 AB",
+      "Only combustion"
+    ],
+    "explanation": "Ions exchange partners often in aqueous solutions.",
+    "keywords": [
+      "double-replacement",
+      "reactions"
+    ],
+    "source": "https://openstax.org/books/chemistry-2e/pages/4-2-classifying-chemical-reactions"
+  },
+  {
+    "seedId": "294b061b-5819-4c0d-98a4-7432b1febfab",
+    "category": "science",
+    "navigationKeyword1": "chemistry",
+    "navigationKeyword2": "reactions",
+    "question": "What is combustion of hydrocarbon typical products?",
+    "correctAnswer": "CO2 and H2O (complete)",
+    "incorrectAnswers": [
+      "Only CO",
+      "Only H2",
+      "Only C"
+    ],
+    "explanation": "Complete combustion oxidizes carbon and hydrogen fully.",
+    "keywords": [
+      "combustion",
+      "oxidation"
+    ],
+    "source": "https://openstax.org/books/chemistry-2e/pages/4-2-classifying-chemical-reactions"
+  },
+  {
+    "seedId": "d911bf87-24d2-454b-86a5-c7bcb3147c00",
+    "category": "science",
+    "navigationKeyword1": "chemistry",
+    "navigationKeyword2": "reactions",
+    "question": "What is a catalyst?",
+    "correctAnswer": "Speeds a reaction without being consumed overall",
+    "incorrectAnswers": [
+      "Consumed completely",
+      "Shifts equilibrium to products always",
+      "Stops reactions"
+    ],
+    "explanation": "Provides alternative pathway with lower activation energy.",
+    "keywords": [
+      "catalyst",
+      "kinetics"
+    ],
+    "source": "https://openstax.org/books/chemistry-2e/pages/12-7-catalysis"
+  },
+  {
+    "seedId": "372ee50e-76ed-4a5e-acfd-9d88e01f8de0",
+    "category": "science",
+    "navigationKeyword1": "chemistry",
+    "navigationKeyword2": "reactions",
+    "question": "What is activation energy?",
+    "correctAnswer": "Energy barrier to start a reaction",
+    "incorrectAnswers": [
+      "Energy released only",
+      "Final enthalpy only",
+      "Entropy only"
+    ],
+    "explanation": "Reactants must collide with enough energy.",
+    "keywords": [
+      "activation-energy",
+      "kinetics"
+    ],
+    "source": "https://openstax.org/books/chemistry-2e/pages/12-5-reaction-rates-and-rate-laws"
+  },
+  {
+    "seedId": "5f73c343-1c8c-4b00-9108-74f33009c632",
+    "category": "science",
+    "navigationKeyword1": "chemistry",
+    "navigationKeyword2": "reactions",
+    "question": "What is equilibrium (dynamic)?",
+    "correctAnswer": "Forward and reverse rates equal; concentrations stable",
+    "incorrectAnswers": [
+      "All reactions stop",
+      "Only products exist",
+      "Only reactants exist"
+    ],
+    "explanation": "Macroscopic constancy with ongoing molecular process.",
+    "keywords": [
+      "equilibrium",
+      "rates"
+    ],
+    "source": "https://openstax.org/books/chemistry-2e/pages/13-1-chemical-equilibria"
+  },
+  {
+    "seedId": "f4f9c5e6-113f-4886-bab1-e8bab1ef4b76",
+    "category": "science",
+    "navigationKeyword1": "chemistry",
+    "navigationKeyword2": "reactions",
+    "question": "What is Le Ch\u00e2telier\u2019s principle?",
+    "correctAnswer": "System shifts to counter applied stress",
+    "incorrectAnswers": [
+      "System ignores stress",
+      "Always makes more reactants",
+      "Always increases temperature"
+    ],
+    "explanation": "Change concentration, pressure, or temperature disturbs equilibrium.",
+    "keywords": [
+      "le-chatelier",
+      "equilibrium"
+    ],
+    "source": "https://openstax.org/books/chemistry-2e/pages/13-3-shifting-equilibria-le-chateliers-principle"
+  },
+  {
+    "seedId": "17e4407d-164d-486b-a8f9-f5827bf7b7cb",
+    "category": "science",
+    "navigationKeyword1": "chemistry",
+    "navigationKeyword2": "reactions",
+    "question": "What is oxidation (electron view)?",
+    "correctAnswer": "Loss of electrons",
+    "incorrectAnswers": [
+      "Gain of electrons",
+      "Gain of protons",
+      "No electron change"
+    ],
+    "explanation": "OIL RIG mnemonic: oxidation is loss.",
+    "keywords": [
+      "oxidation",
+      "redox"
+    ],
+    "source": "https://openstax.org/books/chemistry-2e/pages/16-1-redox-reactions"
+  },
+  {
+    "seedId": "4808c821-1a23-420f-8315-cb13fca932ed",
+    "category": "science",
+    "navigationKeyword1": "chemistry",
+    "navigationKeyword2": "reactions",
+    "question": "What is reduction (electron view)?",
+    "correctAnswer": "Gain of electrons",
+    "incorrectAnswers": [
+      "Loss of electrons",
+      "Loss of oxygen always",
+      "Increase oxidation always"
+    ],
+    "explanation": "Reduction is gain (OIL RIG).",
+    "keywords": [
+      "reduction",
+      "redox"
+    ],
+    "source": "https://openstax.org/books/chemistry-2e/pages/16-1-redox-reactions"
+  }
+]

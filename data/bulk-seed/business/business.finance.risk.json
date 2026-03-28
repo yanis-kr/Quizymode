@@ -1,0 +1,122 @@
+[
+  {
+    "category": "business",
+    "navigationKeyword1": "finance",
+    "navigationKeyword2": "risk",
+    "question": "What is diversification in risk management mainly trying to do?",
+    "correctAnswer": "Reduce the effect of one failing asset or factor on the overall portfolio.",
+    "incorrectAnswers": [
+      "Maximize exposure to the single biggest risk in your portfolio.",
+      "Ensure returns are fixed no matter what markets do.",
+      "Move all risk into a single asset so it can be managed more easily."
+    ],
+    "explanation": "Diversification spreads exposure across different assets, so one adverse outcome is less likely to dominate total results.",
+    "keywords": [
+      "diversification",
+      "risk-reduction",
+      "portfolio"
+    ],
+    "source": "https://www.investor.gov/introduction-investing/investing-basics/glossary/diversification",
+    "seedId": "57bf5a16-bf55-5d3b-b526-60b3cd506f4d"
+  },
+  {
+    "category": "business",
+    "navigationKeyword1": "finance",
+    "navigationKeyword2": "risk",
+    "question": "In finance, what does value at risk (VaR) generally describe?",
+    "correctAnswer": "A statistical estimate of the maximum loss over a given time horizon at a chosen confidence level.",
+    "incorrectAnswers": [
+      "The average expected return over the next quarter.",
+      "The guaranteed worst loss that must happen every time.",
+      "The total amount of capital a bank must hold to be fully safe."
+    ],
+    "explanation": "VaR is an estimate tied to a horizon and confidence level, not a guarantee that the loss can’t be worse.",
+    "keywords": [
+      "var",
+      "risk-metrics",
+      "confidence-level"
+    ],
+    "source": "https://www.bis.org/publ/bcbs54.pdf",
+    "seedId": "05ecc3c0-e77b-570a-b4fe-f81082731df4"
+  },
+  {
+    "category": "business",
+    "navigationKeyword1": "finance",
+    "navigationKeyword2": "risk",
+    "question": "What does standard deviation most commonly represent in a return series?",
+    "correctAnswer": "How spread out the returns are around an average (a measure of volatility).",
+    "incorrectAnswers": [
+      "The guaranteed minimum return you will always earn.",
+      "The total profit over the period in dollars.",
+      "The exact percentage chance that a loss must occur."
+    ],
+    "explanation": "Standard deviation measures volatility, which captures how much returns typically fluctuate.",
+    "keywords": [
+      "volatility",
+      "standard-deviation",
+      "statistics"
+    ],
+    "source": "https://www.investopedia.com/terms/s/standarddeviation.asp",
+    "seedId": "b929e330-b63d-5975-9269-5b2694069a5f"
+  },
+  {
+    "category": "business",
+    "navigationKeyword1": "finance",
+    "navigationKeyword2": "risk",
+    "question": "Which pairing best matches a common risk category with its core meaning?",
+    "correctAnswer": "Market risk: losses from changes in market prices or rates.",
+    "incorrectAnswers": [
+      "Credit risk: losses only from operational mistakes during processing.",
+      "Liquidity risk: losses only from accounting policy choices.",
+      "Operational risk: losses solely caused by interest-rate changes."
+    ],
+    "explanation": "Market risk is linked to movements in market prices and rates; the other choices describe different risk types.",
+    "keywords": [
+      "market-risk",
+      "credit-risk",
+      "liquidity-risk"
+    ],
+    "source": "https://www.federalreserve.gov/supervisionreg/topics/market-risk.htm",
+    "seedId": "d1e4433d-bce1-507b-a8ef-4a140a91b58a"
+  },
+  {
+    "category": "business",
+    "navigationKeyword1": "finance",
+    "navigationKeyword2": "risk",
+    "question": "What is liquidity risk, in plain terms?",
+    "correctAnswer": "The risk that you can’t meet short-term cash needs without major losses or borrowing at extreme rates.",
+    "incorrectAnswers": [
+      "The risk that your accounting numbers won’t balance at month-end.",
+      "The risk that a single investment turns out to be less popular.",
+      "The risk that a business model never grows."
+    ],
+    "explanation": "Liquidity risk is about access to cash and funding when it’s needed, not about long-term business strategy alone.",
+    "keywords": [
+      "liquidity-risk",
+      "cash-flow",
+      "funding"
+    ],
+    "source": "https://www.imf.org/en/Topics/liquidity-risk",
+    "seedId": "d8e3a6f3-81cc-5111-8f2f-ddbfe814804f"
+  },
+  {
+    "category": "business",
+    "navigationKeyword1": "finance",
+    "navigationKeyword2": "risk",
+    "question": "What’s the difference between risk and uncertainty in decision-making?",
+    "correctAnswer": "Risk has probabilities you can estimate; uncertainty means you don’t have reliable probability estimates.",
+    "incorrectAnswers": [
+      "Risk means you never lose money; uncertainty means you always lose money.",
+      "Risk and uncertainty are the same thing with different labels.",
+      "Uncertainty means probabilities are known with certainty."
+    ],
+    "explanation": "In common decision theory, risk is when outcomes can be described with probabilities, while uncertainty is when you can’t reliably assign probabilities.",
+    "keywords": [
+      "uncertainty",
+      "probabilities",
+      "decision-making"
+    ],
+    "source": "https://www.investopedia.com/terms/u/uncertainty.asp",
+    "seedId": "7a886bab-2007-599d-9357-f9f92502128b"
+  }
+]

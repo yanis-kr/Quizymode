@@ -1,0 +1,230 @@
+[
+  {
+    "seedId": "b3958ce1-4dbe-49a1-bad2-fa6a3b2e19ba",
+    "category": "science",
+    "navigationKeyword1": "astronomy",
+    "navigationKeyword2": "galaxies",
+    "question": "What galaxy contains our solar system?",
+    "correctAnswer": "The Milky Way",
+    "incorrectAnswers": [
+      "Andromeda",
+      "Triangulum",
+      "Sombrero"
+    ],
+    "explanation": "We orbit within the Milky Way, a barred spiral galaxy.",
+    "keywords": [
+      "milky-way",
+      "galaxy"
+    ],
+    "source": "https://science.nasa.gov/universe/galaxies/"
+  },
+  {
+    "seedId": "9ba77178-0457-46d7-9c87-6d4e578ea08a",
+    "category": "science",
+    "navigationKeyword1": "astronomy",
+    "navigationKeyword2": "galaxies",
+    "question": "What is the approximate shape of the Milky Way?",
+    "correctAnswer": "A barred spiral",
+    "incorrectAnswers": [
+      "Perfect sphere",
+      "Ring only",
+      "Cube"
+    ],
+    "explanation": "Observations indicate a bar in the central bulge and spiral arms.",
+    "keywords": [
+      "spiral",
+      "barred"
+    ],
+    "source": "https://science.nasa.gov/universe/galaxies/"
+  },
+  {
+    "seedId": "67073926-3db0-4e1f-ba9c-f0ad5ff1e6ce",
+    "category": "science",
+    "navigationKeyword1": "astronomy",
+    "navigationKeyword2": "galaxies",
+    "question": "What is a galaxy mostly made of?",
+    "correctAnswer": "Stars, gas, dust, and dark matter (gravitationally)",
+    "incorrectAnswers": [
+      "Only solid rock",
+      "Only comets",
+      "Only empty vacuum"
+    ],
+    "explanation": "Galaxies are gravitationally bound systems with visible and dark components.",
+    "keywords": [
+      "dark-matter",
+      "components"
+    ],
+    "source": "https://science.nasa.gov/universe/galaxies/"
+  },
+  {
+    "seedId": "cbe8d09b-4761-4fb9-bfb6-24d4cad7d239",
+    "category": "science",
+    "navigationKeyword1": "astronomy",
+    "navigationKeyword2": "galaxies",
+    "question": "What is a quasar?",
+    "correctAnswer": "An extremely luminous active galactic nucleus",
+    "incorrectAnswers": [
+      "A nearby moon",
+      "A type of meteor",
+      "A small star cluster"
+    ],
+    "explanation": "Quasars are powered by accretion onto supermassive black holes.",
+    "keywords": [
+      "quasar",
+      "agn"
+    ],
+    "source": "https://science.nasa.gov/universe/galaxies/"
+  },
+  {
+    "seedId": "5ccd015c-d301-4c0d-a5d6-888608ad0d0f",
+    "category": "science",
+    "navigationKeyword1": "astronomy",
+    "navigationKeyword2": "galaxies",
+    "question": "What is the Andromeda Galaxy relative to ours?",
+    "correctAnswer": "The nearest large spiral galaxy (on cosmic scales)",
+    "incorrectAnswers": [
+      "Inside the Milky Way",
+      "The farthest object known",
+      "A star in Orion"
+    ],
+    "explanation": "Andromeda (M31) is a major neighbor galaxy.",
+    "keywords": [
+      "andromeda",
+      "local-group"
+    ],
+    "source": "https://science.nasa.gov/missions/hubble/andromeda-galaxy/"
+  },
+  {
+    "seedId": "c17f112e-ae37-425f-b990-8c29c15ff42e",
+    "category": "science",
+    "navigationKeyword1": "astronomy",
+    "navigationKeyword2": "galaxies",
+    "question": "What is the Local Group?",
+    "correctAnswer": "A small cluster of galaxies including Milky Way and Andromeda",
+    "incorrectAnswers": [
+      "All galaxies in the universe",
+      "Only stars near the Sun",
+      "A belt of asteroids"
+    ],
+    "explanation": "The Local Group is our neighborhood galaxy cluster.",
+    "keywords": [
+      "local-group",
+      "cluster"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Local_Group"
+  },
+  {
+    "seedId": "34c9f055-ba0f-47e0-b915-7ba01be2731a",
+    "category": "science",
+    "navigationKeyword1": "astronomy",
+    "navigationKeyword2": "galaxies",
+    "question": "What does Hubble\u2019s law relate for galaxies?",
+    "correctAnswer": "Recession speed and distance (on large scales)",
+    "incorrectAnswers": [
+      "Star temperature and brightness only",
+      "Planet mass and rings",
+      "Comet tails and color"
+    ],
+    "explanation": "Greater distance correlates with higher recession velocity in expanding universe.",
+    "keywords": [
+      "hubble-law",
+      "expansion"
+    ],
+    "source": "https://science.nasa.gov/universe/galaxies/"
+  },
+  {
+    "seedId": "9f47f10e-b4e4-4ea5-8103-c89d9b1f1cdc",
+    "category": "science",
+    "navigationKeyword1": "astronomy",
+    "navigationKeyword2": "galaxies",
+    "question": "What is gravitational lensing?",
+    "correctAnswer": "Mass bends light paths, magnifying or distorting background sources",
+    "incorrectAnswers": [
+      "Lenses made of glass in space",
+      "Stars emitting laser beams",
+      "Black holes repelling light"
+    ],
+    "explanation": "General relativity predicts light deflection by mass.",
+    "keywords": [
+      "lensing",
+      "relativity"
+    ],
+    "source": "https://science.nasa.gov/universe/galaxies/"
+  },
+  {
+    "seedId": "bbec1989-566e-438e-a1d2-11e660ec5ddf",
+    "category": "science",
+    "navigationKeyword1": "astronomy",
+    "navigationKeyword2": "galaxies",
+    "question": "What is a galaxy cluster?",
+    "correctAnswer": "Many galaxies bound together by gravity",
+    "incorrectAnswers": [
+      "One galaxy split in half",
+      "A star-forming nebula only",
+      "A planetary ring system"
+    ],
+    "explanation": "Clusters are the largest gravitationally bound structures of galaxies.",
+    "keywords": [
+      "cluster",
+      "large-scale-structure"
+    ],
+    "source": "https://science.nasa.gov/universe/galaxies/"
+  },
+  {
+    "seedId": "01c48b9d-10b6-47cd-be80-827869dfcd0b",
+    "category": "science",
+    "navigationKeyword1": "astronomy",
+    "navigationKeyword2": "galaxies",
+    "question": "What is interstellar dust\u2019s effect on observations?",
+    "correctAnswer": "It can redden and block visible light (extinction)",
+    "incorrectAnswers": [
+      "It makes stars hotter",
+      "It removes gravity",
+      "It creates comet tails on Earth"
+    ],
+    "explanation": "Dust scatters and absorbs light, changing colors and brightness.",
+    "keywords": [
+      "extinction",
+      "dust"
+    ],
+    "source": "https://science.nasa.gov/universe/galaxies/"
+  },
+  {
+    "seedId": "e0cfb907-adbd-4546-8e9f-d12e640c8e06",
+    "category": "science",
+    "navigationKeyword1": "astronomy",
+    "navigationKeyword2": "galaxies",
+    "question": "What is a rotation curve used to infer in galaxies?",
+    "correctAnswer": "How mass is distributed (including dark matter hints)",
+    "incorrectAnswers": [
+      "Only the age of stars",
+      "Only comet orbits",
+      "Planet ring thickness"
+    ],
+    "explanation": "Flat rotation curves in spirals motivated dark matter models.",
+    "keywords": [
+      "rotation-curve",
+      "dark-matter"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Galaxy_rotation_curve"
+  },
+  {
+    "seedId": "2934f62c-fd86-42d9-82d3-4286ce9f0381",
+    "category": "science",
+    "navigationKeyword1": "astronomy",
+    "navigationKeyword2": "galaxies",
+    "question": "What is cosmic redshift?",
+    "correctAnswer": "Light wavelengths stretch as space expands",
+    "incorrectAnswers": [
+      "Stars turn blue over time",
+      "Galaxies shrink",
+      "Planets speed up randomly"
+    ],
+    "explanation": "Expansion increases observed wavelength for distant sources.",
+    "keywords": [
+      "redshift",
+      "expansion"
+    ],
+    "source": "https://science.nasa.gov/universe/galaxies/"
+  }
+]

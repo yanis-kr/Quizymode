@@ -1,0 +1,116 @@
+[
+  {
+    "category": "tech",
+    "navigationKeyword1": "data",
+    "navigationKeyword2": "visualization",
+    "question": "When are bar charts usually better than pie charts for comparing categories?",
+    "correctAnswer": "When you need accurate comparison of many similar magnitudes",
+    "incorrectAnswers": [
+      "When you have no axis labels",
+      "When categories exceed one hundred only",
+      "When data must stay secret"
+    ],
+    "explanation": "Human eyes judge length on a common scale more reliably than wedge angles and areas.",
+    "keywords": [
+      "visualization",
+      "charts"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Pie_chart#Criticism",
+    "seedId": "9f3465f5-13ba-5919-bf04-f86b3c8764e0"
+  },
+  {
+    "category": "tech",
+    "navigationKeyword1": "data",
+    "navigationKeyword2": "visualization",
+    "question": "What does a scatter plot emphasize between two numeric variables?",
+    "correctAnswer": "The joint relationship and spread of points",
+    "incorrectAnswers": [
+      "Exact cumulative totals",
+      "Hierarchical nesting",
+      "Packet routing paths"
+    ],
+    "explanation": "Each point pairs two measurements, revealing correlation, clusters, and outliers.",
+    "keywords": [
+      "visualization",
+      "scatter"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Scatter_plot",
+    "seedId": "4c9692d3-f78a-5f1a-b7d9-eb63ad9bba77"
+  },
+  {
+    "category": "tech",
+    "navigationKeyword1": "data",
+    "navigationKeyword2": "visualization",
+    "question": "Why do sequential color scales need care on maps and heatmaps?",
+    "correctAnswer": "Perceived brightness should match magnitude to avoid misleading readers",
+    "incorrectAnswers": [
+      "Color never affects interpretation",
+      "Rainbow scales are always neutral",
+      "Only fonts matter"
+    ],
+    "explanation": "Some palettes change hue and luminance unevenly, which can exaggerate small differences.",
+    "keywords": [
+      "visualization",
+      "color"
+    ],
+    "source": "https://colorbrewer2.org/learnmore/schemes.html",
+    "seedId": "6d979b18-30da-5ee2-bcb6-89b8e574fd6d"
+  },
+  {
+    "category": "tech",
+    "navigationKeyword1": "data",
+    "navigationKeyword2": "visualization",
+    "question": "What is the main purpose of a histogram?",
+    "correctAnswer": "Show the distribution of a numeric variable using bins",
+    "incorrectAnswers": [
+      "Show parts of a whole that must sum to one",
+      "Plot time on the y-axis only",
+      "List every raw row"
+    ],
+    "explanation": "Bin counts reveal shape, skew, and modes for continuous or granular data.",
+    "keywords": [
+      "visualization",
+      "histogram"
+    ],
+    "source": "https://matplotlib.org/stable/gallery/statistics/hist.html",
+    "seedId": "a4eb153f-1bde-5bf4-ac36-d281ec944849"
+  },
+  {
+    "category": "tech",
+    "navigationKeyword1": "data",
+    "navigationKeyword2": "visualization",
+    "question": "What does a line chart communicate well?",
+    "correctAnswer": "Trends and changes over an ordered axis such as time",
+    "incorrectAnswers": [
+      "Exact shares of a static total without a baseline",
+      "Hiding the axis entirely",
+      "Replacing tables for exact figures"
+    ],
+    "explanation": "Connecting ordered points highlights direction and volatility at a glance.",
+    "keywords": [
+      "visualization",
+      "line-chart"
+    ],
+    "source": "https://vega.github.io/vega-lite/docs/line.html",
+    "seedId": "69e204f8-6efb-5265-8b9a-de2a3f496b4c"
+  },
+  {
+    "category": "tech",
+    "navigationKeyword1": "data",
+    "navigationKeyword2": "visualization",
+    "question": "What is chartjunk?",
+    "correctAnswer": "Decorative visual elements that do not carry data",
+    "incorrectAnswers": [
+      "Any axis label",
+      "Any legend entry",
+      "Any gridline"
+    ],
+    "explanation": "Extra ornaments can distract from the message and distort perception.",
+    "keywords": [
+      "visualization",
+      "design"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Chartjunk",
+    "seedId": "87676ad5-314d-5207-ae46-3b269c31d8f7"
+  }
+]

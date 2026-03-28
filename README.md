@@ -1,351 +1,211 @@
 # Quizymode
 
-A full-stack quiz application built with ASP.NET Core 9 API and React frontend, following Vertical Slice Architecture principles and inspired by [Milan Jovanović's Clean Architecture template](https://www.milanjovanovic.tech/pragmatic-clean-architecture).
+Quizymode is a full-stack study and quiz application with a `.NET 10` API, a React frontend, AWS Cognito authentication, and PostgreSQL. It is optimized for category-driven study flows, personal collections, quiz mode, and AI-assisted content creation/import.
 
-## Overview
+Production shape:
 
-Quizymode is a comprehensive quiz application that allows users to create, manage, and study quiz items. The application consists of a RESTful API backend and a modern React web interface. It supports public and private items, categories, collections, ratings, comments, and advanced features like duplicate detection using SimHash algorithms.
+- Web app: S3 + CloudFront
+- API: AWS Lightsail container
+- Database: Supabase Postgres
+- Auth: AWS Cognito
+- DNS / edge proxy / TLS: Cloudflare
+- Observability: Grafana Cloud
+- Local orchestration: Aspire AppHost
 
 Visit [https://www.quizymode.com/](https://www.quizymode.com/) to use the application.
 
-### Key Features
+## What Matters Most
 
-**Core Functionality:**
-- **Quiz Item Management**: Create, read, update, and delete quiz items
-- **Bulk Operations**: Import multiple items at once via JSON or AI-generated prompts
-- **Duplicate Detection**: SimHash-based fuzzy matching to prevent duplicate questions
-- **Categories**: Organize items by category with public/private visibility controls
-- **Keywords**: Tag items with keywords for better organization and filtering
-- **Collections**: Group items into custom collections for focused study sessions
-- **Ratings & Comments**: Rate and comment on quiz items
-- **User Settings**: Configurable page size and user preferences
-- **Explore Mode**: Browse through quiz items in a study-friendly format
-- **Quiz Mode**: Test your knowledge with interactive quizzes
+- Study modes: category browsing, flashcards, and quiz flows
+- Collections: private, bookmarked, and discoverable public collections
+- Auth: Cognito-backed sign-in with JWT bearer auth enforced by the API
+- Admin tools: review board, audit logs, seed sync, keyword/category management
+- AI-assisted workflows: bulk item creation and study-guide import flows
 
-**Technical Features:**
-- **PostgreSQL**: Robust relational database with JSONB support for flexible data storage
-- **ASP.NET Core 9**: Modern, high-performance web API framework
-- **React 19 + TypeScript**: Modern frontend with Vite, React Query, and Tailwind CSS
-- **AWS Cognito**: User authentication and authorization
-- **.NET Aspire**: Containerized development environment with PostgreSQL and pgAdmin
-- **Admin Features**: Review board, audit logs, database monitoring
+## Stack
 
-## Tech Stack
+- Backend: `.NET 10`, ASP.NET Core Minimal APIs, EF Core, Dapper, PostgreSQL
+- Frontend: React 19, TypeScript, Vite, React Router, React Query, Tailwind CSS
+- Auth: AWS Cognito + AWS Amplify
+- Local dev: Aspire AppHost
+- Observability: OpenTelemetry + Grafana Cloud
 
-**Backend:**
-- **.NET 9.0** - Latest .NET runtime
-- **ASP.NET Core 9** - Web API framework
-- **Entity Framework Core 9** - ORM with PostgreSQL support
-- **Dapper** - High-performance data access for complex queries
-- **PostgreSQL** - Relational database with JSONB support
-- **.NET Aspire** - Cloud-ready application orchestration
-- **FluentValidation** - Input validation
-- **Serilog** - Structured logging with Grafana Loki integration
-- **AWS Cognito** - User authentication
+## Architecture
 
-**Frontend:**
-- **React 19** - UI framework
-- **TypeScript** - Type-safe JavaScript
-- **Vite** - Fast build tool and dev server
-- **React Router DOM** - Client-side routing
-- **TanStack React Query** - Server state management
-- **Tailwind CSS 4** - Utility-first CSS framework
-- **Axios** - HTTP client
-- **AWS Amplify** - Authentication integration
-- **Zod** - Schema validation
-- **React Hook Form** - Form handling
+- `src/Quizymode.Api`: main API using vertical-slice features
+- `src/Quizymode.Web`: React SPA
+- `src/Quizymode.Api.AppHost`: local Aspire orchestration
+- `tests/Quizymode.Api.Tests`: API tests
+- `docs/`: long-form docs, generated API contract, and operational references
 
-## Getting Started
+The root README is the canonical entry point. Detailed or fast-changing material belongs under `docs/`, and this file should link to those documents directly.
+
+## Local Development
 
 ### Prerequisites
 
-- .NET 9 SDK
-- Docker Desktop (for PostgreSQL container)
-- .NET Aspire workload (installed automatically)
+- `.NET SDK 10.0.x`
+- Docker Desktop
+- Node.js `20.19+` or `22.12+`
 
-### Running the Application
+### Run The App
 
-1. **Install EF Core Tools** (if not already installed):
-
-   ```bash
-   dotnet tool install --global dotnet-ef
-   ```
-
-2. **Start the AppHost** (starts API, PostgreSQL, and pgAdmin):
+1. Start Aspire AppHost:
 
    ```bash
    cd src/Quizymode.Api.AppHost
    dotnet run
    ```
 
-   This will start:
-
-   - **API**: `https://localhost:8080` (port 6000 is blocked by Chrome)
-   - **Aspire Dashboard**: Opens automatically at `https://localhost:5000`
-   - **pgAdmin**: Access via Aspire Dashboard
-
-3. **Start the Web UI** (in a separate terminal):
+2. Start the web app in a second terminal:
 
    ```bash
    cd src/Quizymode.Web
-   npm install  # First time only
+   npm install
    npm run dev
    ```
 
-   **Note:** Requires Node.js 20.19+ or 22.12+. Upgrade Node.js if you see version warnings.
+3. Local endpoints:
 
-   The Web UI will be available at `http://localhost:7000` (React/Vite dev server - **HTTP only, not HTTPS**)
+   - Web UI: `http://localhost:7000`
+   - API: `https://localhost:8080`
+   - Swagger UI: `https://localhost:8080/swagger`
+   - OpenAPI JSON: `https://localhost:8080/openapi/v1.json`
+   - OpenAPI YAML: `https://localhost:8080/openapi/v1.yaml`
+   - Aspire dashboard: `https://localhost:5000`
 
-4. **Access the Services**:
+In practice, local development is:
 
-   - **Web UI**: `http://localhost:7000` (run separately via `npm run dev`)
-   - **API**: `https://localhost:8080`
-   - **Aspire Dashboard**: Opens automatically at `https://localhost:5000`
-   - **pgAdmin**: Access via Aspire Dashboard
+- Aspire runs the API and local PostgreSQL-backed services.
+- The React app runs separately with `npm run dev`.
+- Cognito remains the identity provider in local development.
 
-5. **Database Setup**:
+### Database
 
-   - Migrations are applied automatically on startup
-   - Initial data is seeded from JSON files in `data/seed/`
+- PostgreSQL runs through Aspire in local development.
+- EF Core migrations are applied automatically on API startup.
+- Seed data is loaded from `data/seed/`.
 
-6. **Authentication for Local Development**
+## Authentication
 
-   The API uses **JWT Bearer tokens from AWS Cognito**. Swagger is configured with a `Bearer` security scheme and most write or user-specific endpoints require authentication.
+The current web app authentication model is:
 
-   1. Configure Cognito settings in `appsettings.Development.json` or user-secrets:
+- Frontend uses AWS Amplify Auth against a Cognito User Pool.
+- The app signs users in with Amplify user-pool APIs such as `signIn`, `signUp`, `confirmSignUp`, and `fetchAuthSession`.
+- The frontend stores Cognito-issued JWTs and sends them to the API as `Authorization: Bearer <token>`.
+- The API validates Cognito JWT bearer tokens and uses Cognito claims for user identity and admin-group checks.
 
-      ```json
-      "Authentication": {
-        "Cognito": {
-          "Authority": "https://cognito-idp.us-east-1.amazonaws.com/us-east-1_LiJbvT212",
-          "Audience": "<your_cognito_app_client_id>"
-        }
-      }
-      ```
+Important clarification: the current app code is **not** using Cognito Hosted UI as its primary sign-in flow, so the main web app auth flow is **not PKCE today**. The API is JWT-bearer based; the SPA currently uses direct Cognito user-pool operations rather than an OAuth redirect + PKCE flow.
 
-   2. Use the Cognito **Hosted UI** (or Amplify) for your user pool/client to sign in locally and obtain an ID or access token. After signing in, capture the JWT (for example from the callback URL fragment or browser dev tools).
+For environment setup details, see [docs/COGNITO_SETUP.md](./docs/COGNITO_SETUP.md).
 
-   3. In Swagger UI (development only):
+## Most Important API Endpoints
 
-      - Navigate to the API (for example `https://localhost:8080`).
-      - Open the Swagger UI and click the **Authorize** button.
-      - In the `Bearer` scheme, paste: `Bearer {your_jwt_here}` and confirm.
+This README intentionally lists only the highest-signal endpoints. The full contract lives in the generated OpenAPI document and in the acceptance criteria.
 
-   4. Alternatively, call the API via `curl` or a REST client:
+- `GET /categories`: category discovery
+- `GET /items`: item listing with filtering
+- `GET /items/{id}`: item detail
+- `POST /items` and `POST /items/bulk`: item creation
+- `GET /collections`, `GET /collections/{id}`, `POST /collections`: collection workflows
+- `GET /users/me`: current-user profile
+- `GET|PUT|DELETE /study-guides/current`: study-guide persistence
+- `POST /admin/seed-sync/preview` and `POST /admin/seed-sync/apply`: admin seed management
 
-      ```bash
-      curl -H "Authorization: Bearer {your_jwt_here}" https://localhost:8080/items
-      ```
+References:
 
-   Most write operations and user-specific endpoints require authentication:
-   - Creating/updating/deleting items (admin required for public items)
-   - Managing collections
-   - Adding ratings and comments
-   - Updating user settings
-   - Admin endpoints (review board, audit logs, etc.)
+- Generated OpenAPI 3 JSON: [docs/openapi/quizymode-api.json](./docs/openapi/quizymode-api.json)
+- Acceptance criteria: [docs/AC.md](./docs/AC.md)
 
-### API Endpoints
+## OpenAPI / OAS3
 
-**Items:**
-- `GET /items` - Get paginated list of quiz items (with filtering by category, keywords, collections, visibility)
-- `GET /items/{id}` - Get a specific quiz item
-- `GET /items/random` - Get random quiz items (optional category, count)
-- `POST /items` - Create a new quiz item
-- `POST /items/bulk` - Create multiple items at once
-- `PUT /items/{id}` - Update a quiz item
-- `DELETE /items/{id}` - Delete a quiz item
-- `PUT /items/{id}/visibility` - Set item visibility (admin only)
+The API now generates a checked-in OpenAPI artifact automatically during API builds.
 
-**Categories:**
-- `GET /categories` - Get all categories with item counts and average ratings
+- Generated artifact: [docs/openapi/quizymode-api.json](./docs/openapi/quizymode-api.json)
+- Runtime dev endpoints: `/openapi/v1.json` and `/openapi/v1.yaml`
+- Sync check script: [scripts/verify-openapi.ps1](./scripts/verify-openapi.ps1)
 
-**Collections:**
-- `GET /collections` - Get user's collections
-- `GET /collections/{id}` - Get a specific collection
-- `POST /collections` - Create a new collection
-- `PUT /collections/{id}` - Update a collection
-- `DELETE /collections/{id}` - Delete a collection
-- `POST /collections/{id}/items` - Add item to collection
-- `DELETE /collections/{id}/items/{itemId}` - Remove item from collection
+Notes:
 
-**Ratings:**
-- `GET /ratings` - Get ratings for items
-- `POST /ratings` - Add or update a rating
-
-**Comments:**
-- `GET /comments` - Get comments for items
-- `POST /comments` - Add a comment
-- `PUT /comments/{id}` - Update a comment
-- `DELETE /comments/{id}` - Delete a comment
-
-**Users:**
-- `GET /users/me` - Get current user information
-- `PUT /users/me` - Update user name
-- `GET /users/settings` - Get user settings
-- `PUT /users/settings` - Update user setting
-
-**Admin:**
-- `GET /admin/review-board` - Get items pending review
-- `POST /admin/items/{id}/approve` - Approve an item
-- `GET /admin/audit-logs` - Get audit logs
-- `GET /admin/database-size` - Get database size information
-
-## Project Structure
-
-```
-src/
-├── Quizymode.Api/              # Main API application
-│   ├── Features/                # Vertical Slice Architecture features
-│   │   ├── Items/              # Quiz items (CRUD, bulk, visibility)
-│   │   ├── Categories/         # Category management
-│   │   ├── Collections/        # Collection management
-│   │   ├── Ratings/            # Item ratings
-│   │   ├── Comments/           # Item comments
-│   │   ├── Users/              # User management
-│   │   ├── UserSettings/       # User preferences
-│   │   └── Admin/              # Admin features (review board, audit logs)
-│   ├── Shared/                  # Shared code
-│   │   ├── Kernel/             # Domain primitives (Result, Error, Entity)
-│   │   └── Models/             # Domain models
-│   ├── Data/                   # Data access layer
-│   │   ├── Configurations/     # EF Core entity configurations
-│   │   └── Migrations/         # Database migrations
-│   ├── Services/               # Application services
-│   │   ├── CategoryResolver/   # Category resolution and creation
-│   │   ├── SimHashService/     # Duplicate detection
-│   │   ├── UserContext/        # Authentication context
-│   │   └── AuditService/       # Audit logging
-│   └── StartupExtensions/      # Service registration and configuration
-├── Quizymode.Api.AppHost/      # Aspire orchestration project
-├── Quizymode.Api.ServiceDefaults/  # Shared Aspire service defaults
-└── Quizymode.Web/              # React frontend application
-    ├── src/
-    │   ├── features/           # Feature-based organization
-    │   │   ├── items/          # Item pages (list, create, edit, explore, quiz)
-    │   │   ├── categories/     # Category pages
-    │   │   ├── collections/    # Collection pages
-    │   │   ├── auth/           # Authentication pages
-    │   │   └── admin/          # Admin pages
-    │   ├── components/         # Reusable UI components
-    │   ├── api/                # API client
-    │   ├── contexts/           # React contexts (Auth)
-    │   └── hooks/              # Custom React hooks
-tests/
-└── Quizymode.Api.Tests/        # Unit and integration tests
-```
-
-## Development
-
-### Creating Migrations
-
-```bash
-cd src/Quizymode.Api
-dotnet ef migrations add MigrationName --output-dir Data/Migrations
-```
-
-### Applying Migrations
-
-Migrations are applied automatically on startup. To apply manually:
-
-```bash
-dotnet ef database update
-```
-
-### Running Tests
-
-```bash
-dotnet test
-```
+- Build-time generation is JSON-based.
+- Runtime YAML is available in development through ASP.NET Core OpenAPI endpoints.
+- CI verifies that the committed JSON artifact stays in sync with API changes.
 
 ## Deployment
 
-### Deploying Web Application to S3
+### Cloud Topology
 
-The web application can be deployed to AWS S3 using the provided PowerShell script.
+Current cloud responsibilities are split like this:
 
-**Prerequisites:**
+- `Cloudflare`: public DNS, TLS/proxying, and forwarded headers at the edge
+- `S3 + CloudFront`: static hosting and CDN for the React SPA
+- `AWS Cognito`: user pool, JWT issuance, and admin-group claims
+- `AWS Lightsail`: container hosting for the API
+- `Supabase`: managed PostgreSQL database
+- `Grafana Cloud`: traces, metrics, and logs
 
-- AWS CLI installed and configured
-- AWS credentials configured (via `aws configure` or environment variables)
-- Node.js installed (for building the web project)
+This section stays intentionally short. Detailed setup belongs in the linked docs.
 
-**Deploy to S3:**
+### Frontend
+
+The web app is deployed to S3 behind CloudFront. The deployment script is:
 
 ```powershell
 .\scripts\deploy-to-s3.ps1
 ```
 
-**Options:**
+Because the SPA uses `BrowserRouter`, CloudFront must rewrite deep-link misses back to `index.html`:
 
-- `-SkipBuild` - Skip building the web project (use existing build output)
-- `-SkipCloudFrontInvalidation` - Skip CloudFront cache invalidation
+- `403 -> /index.html` with HTTP `200`
+- `404 -> /index.html` with HTTP `200`
 
-**Examples:**
+Without that fallback, reloading non-root routes returns the S3 `AccessDenied` XML page.
 
-```powershell
-# Full deployment (build + deploy + invalidate cache)
-.\scripts\deploy-to-s3.ps1
+### Backend
 
-# Deploy without rebuilding
-.\scripts\deploy-to-s3.ps1 -SkipBuild
+- Local development: Aspire AppHost
+- Production hosting: AWS Lightsail container
 
-# Deploy without invalidating CloudFront cache
-.\scripts\deploy-to-s3.ps1 -SkipCloudFrontInvalidation
-```
+### Database
 
-The script will:
+- Local development: PostgreSQL provisioned through Aspire
+- Production: Supabase Postgres
 
-1. Verify AWS CLI installation and credentials
-2. Build the web project (unless `-SkipBuild` is specified)
-3. Sync files to S3 bucket `quizymode-web`
-4. Set appropriate cache headers (immutable for assets, no-cache for HTML)
-5. Invalidate CloudFront cache (unless `-SkipCloudFrontInvalidation` is specified)
+### Authentication
 
-**S3 Bucket Configuration:**
+- Identity provider: AWS Cognito
+- Frontend integration: AWS Amplify
+- API auth model: JWT Bearer
+- Main SPA auth flow today: direct Cognito user-pool operations, not Hosted UI PKCE
 
-- Bucket: `quizymode-web`
-- CloudFront Distribution: `EH1DS9REH8KR5`
-- The bucket policy restricts access to CloudFront only
+### Edge / DNS
 
-### Configuring Grafana Cloud Observability
+- Cloudflare sits in front of the public app/API endpoints.
+- The API is configured to respect forwarded headers for proxy scenarios.
 
-The application supports sending OpenTelemetry traces, metrics, and logs to Grafana Cloud.
+### Observability
 
-**Prerequisites:**
+Grafana Cloud setup is documented in [docs/GRAFANA_CLOUD_SETUP.md](./docs/GRAFANA_CLOUD_SETUP.md).
 
-- Grafana Cloud account (free tier available)
-- Grafana Cloud instance ID and API keys
+## Documentation Map
 
-**Configuration:**
+- [docs/AC.md](./docs/AC.md): canonical behavior and contract reference
+- [docs/openapi/README.md](./docs/openapi/README.md): generated API contract notes
+- [docs/COGNITO_SETUP.md](./docs/COGNITO_SETUP.md): Cognito setup details
+- [docs/GRAFANA_CLOUD_SETUP.md](./docs/GRAFANA_CLOUD_SETUP.md): observability setup
+- [docs/user-guide/README.md](./docs/user-guide/README.md): end-user guide
 
-See [GRAFANA_CLOUD_SETUP.md](GRAFANA_CLOUD_SETUP.md) for detailed instructions on:
+## README Policy
 
-- Setting up Grafana Cloud credentials
-- Configuring the application for development and production
-- Deploying to AWS Lightsail with Grafana Cloud integration
-- Verifying telemetry data in Grafana Cloud
+For humans and AI agents:
 
-**Quick Start:**
+- Keep the root README short, current, and decision-oriented.
+- Keep generated contracts and operational detail in `docs/`.
+- Keep feature-local READMEs only when they provide focused local setup that would otherwise clutter the root README.
+- Treat [docs/AC.md](./docs/AC.md) as the source of truth for application behavior, and update it whenever code changes alter behavior or contract intent.
 
-1. Get your Grafana Cloud credentials (Instance ID and API keys)
-2. Configure via environment variables or `appsettings.json`:
-   ```json
-   {
-     "GrafanaCloud": {
-       "Enabled": true,
-       "OtlpEndpoint": "https://otlp-gateway-prod-us-central-0.grafana.net/otlp",
-       "LokiEndpoint": "https://logs-prod-us-central-0.grafana.net/loki/api/v1/push",
-       "InstanceId": "YOUR_INSTANCE_ID",
-       "ApiKey": "YOUR_API_KEY"
-     }
-   }
-   ```
-3. Restart the application and verify data in Grafana Cloud
-
-## Documentation
-
-For detailed documentation, see the `docs/` folder (development documentation only, not included in distribution).
+That means you do **not** need many READMEs by default. One root README should stay canonical. Additional READMEs are only justified when they reduce ambiguity for a specific subproject.
 
 ## License
 
-MIT License - see [LICENSE.txt](LICENSE.txt) for details.
+MIT License. See [LICENSE.txt](./LICENSE.txt).

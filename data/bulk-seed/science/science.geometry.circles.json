@@ -1,0 +1,230 @@
+[
+  {
+    "seedId": "abbd8e91-68c8-431f-a840-56136be57444",
+    "category": "science",
+    "navigationKeyword1": "geometry",
+    "navigationKeyword2": "circles",
+    "question": "Circle area?",
+    "correctAnswer": "\u03c0r^2",
+    "incorrectAnswers": [
+      "2\u03c0r",
+      "\u03c0d",
+      "r^2"
+    ],
+    "explanation": "Distinguish from circumference.",
+    "keywords": [
+      "circle-area",
+      "formula"
+    ],
+    "source": "https://www.mathsisfun.com/geometry/circle.html"
+  },
+  {
+    "seedId": "aee73e4f-8937-40ec-b5bb-fd8a0d07c226",
+    "category": "science",
+    "navigationKeyword1": "geometry",
+    "navigationKeyword2": "circles",
+    "question": "Circumference?",
+    "correctAnswer": "2\u03c0r = \u03c0d",
+    "incorrectAnswers": [
+      "\u03c0r^2",
+      "r^2",
+      "2r"
+    ],
+    "explanation": "Perimeter of circle.",
+    "keywords": [
+      "circumference",
+      "circle"
+    ],
+    "source": "https://www.mathsisfun.com/geometry/circle.html"
+  },
+  {
+    "seedId": "e5815e27-3aac-43d4-9805-2ee76db9722e",
+    "category": "science",
+    "navigationKeyword1": "geometry",
+    "navigationKeyword2": "circles",
+    "question": "Arc length central \u03b8 radians?",
+    "correctAnswer": "s = r\u03b8",
+    "incorrectAnswers": [
+      "r/\u03b8",
+      "\u03b8/r",
+      "r^2 \u03b8"
+    ],
+    "explanation": "Proportional to angle.",
+    "keywords": [
+      "arc-length",
+      "circle"
+    ],
+    "source": "https://www.mathsisfun.com/geometry/circle.html"
+  },
+  {
+    "seedId": "1f5caaac-0c45-4f43-8ce8-f5ed500ec42f",
+    "category": "science",
+    "navigationKeyword1": "geometry",
+    "navigationKeyword2": "circles",
+    "question": "Sector area \u03b8 radians?",
+    "correctAnswer": "(1/2) r^2 \u03b8",
+    "incorrectAnswers": [
+      "r \u03b8",
+      "\u03c0 r^2",
+      "2\u03c0r"
+    ],
+    "explanation": "Fraction of full circle.",
+    "keywords": [
+      "sector",
+      "circle"
+    ],
+    "source": "https://www.mathsisfun.com/geometry/circle.html"
+  },
+  {
+    "seedId": "27b75c99-3390-4900-8e8b-d360b44df39d",
+    "category": "science",
+    "navigationKeyword1": "geometry",
+    "navigationKeyword2": "circles",
+    "question": "Tangent to circle property?",
+    "correctAnswer": "Perpendicular to radius at point of tangency",
+    "incorrectAnswers": [
+      "Parallel to radius",
+      "Through center always",
+      "Never meets circle"
+    ],
+    "explanation": "Unique tangent line.",
+    "keywords": [
+      "tangent",
+      "circle"
+    ],
+    "source": "https://www.mathsisfun.com/geometry/circle-tangent.html"
+  },
+  {
+    "seedId": "de57c999-6db5-4520-a3fb-8b60f39b94b1",
+    "category": "science",
+    "navigationKeyword1": "geometry",
+    "navigationKeyword2": "circles",
+    "question": "Two tangents from external point?",
+    "correctAnswer": "Tangent segments equal in length",
+    "incorrectAnswers": [
+      "Always unequal",
+      "Sum to diameter",
+      "Undefined"
+    ],
+    "explanation": "Power of a point case.",
+    "keywords": [
+      "tangent-segments",
+      "circle"
+    ],
+    "source": "https://www.mathsisfun.com/geometry/circle-tangent.html"
+  },
+  {
+    "seedId": "db209478-64df-4ecc-b9da-64d297af8643",
+    "category": "science",
+    "navigationKeyword1": "geometry",
+    "navigationKeyword2": "circles",
+    "question": "Inscribed angle on diameter?",
+    "correctAnswer": "Right angle",
+    "incorrectAnswers": [
+      "Acute",
+      "Obtuse",
+      "0\u00b0"
+    ],
+    "explanation": "Thales\u2019 theorem.",
+    "keywords": [
+      "thales",
+      "diameter"
+    ],
+    "source": "https://www.mathsisfun.com/geometry/theorem-thales.html"
+  },
+  {
+    "seedId": "26f473ef-1750-4f8d-bf91-710da59bab10",
+    "category": "science",
+    "navigationKeyword1": "geometry",
+    "navigationKeyword2": "circles",
+    "question": "Chord perpendicular bisector passes through?",
+    "correctAnswer": "Center",
+    "incorrectAnswers": [
+      "Tangent point",
+      "Always vertex",
+      "Never center"
+    ],
+    "explanation": "Locus property.",
+    "keywords": [
+      "chord",
+      "circle"
+    ],
+    "source": "https://www.mathsisfun.com/geometry/circle-theorems.html"
+  },
+  {
+    "seedId": "65a5fb6d-506f-422f-990f-a03eaef2fb0d",
+    "category": "science",
+    "navigationKeyword1": "geometry",
+    "navigationKeyword2": "circles",
+    "question": "Equation circle center (h,k) radius r?",
+    "correctAnswer": "(x\u2212h)^2 + (y\u2212k)^2 = r^2",
+    "incorrectAnswers": [
+      "x^2 \u2212 y^2 = r^2",
+      "y = mx + b",
+      "x + y = r"
+    ],
+    "explanation": "Standard form.",
+    "keywords": [
+      "circle-equation",
+      "coordinates"
+    ],
+    "source": "https://www.mathsisfun.com/algebra/circle-equations.html"
+  },
+  {
+    "seedId": "0fbad4d3-1fbc-48b4-a92f-ab9374c119a2",
+    "category": "science",
+    "navigationKeyword1": "geometry",
+    "navigationKeyword2": "circles",
+    "question": "Concentric circles?",
+    "correctAnswer": "Same center different radii",
+    "incorrectAnswers": [
+      "Same radius different centers",
+      "Tangent always",
+      "Always intersect twice"
+    ],
+    "explanation": "Annulus between them.",
+    "keywords": [
+      "concentric",
+      "circle"
+    ],
+    "source": "https://www.mathsisfun.com/geometry/circle.html"
+  },
+  {
+    "seedId": "bd4c94f1-0a77-478c-ac4b-6dbeb13bb8c2",
+    "category": "science",
+    "navigationKeyword1": "geometry",
+    "navigationKeyword2": "circles",
+    "question": "Pi (\u03c0) is ratio?",
+    "correctAnswer": "Circumference to diameter",
+    "incorrectAnswers": [
+      "Area to radius",
+      "Diameter to radius",
+      "Arc to angle always 1"
+    ],
+    "explanation": "Irrational constant.",
+    "keywords": [
+      "pi",
+      "definition"
+    ],
+    "source": "https://www.mathsisfun.com/numbers/pi.html"
+  },
+  {
+    "seedId": "46adb73b-e1ff-48b0-be94-7d5fa545ecf5",
+    "category": "science",
+    "navigationKeyword1": "geometry",
+    "navigationKeyword2": "circles",
+    "question": "Sphere volume?",
+    "correctAnswer": "(4/3)\u03c0r^3",
+    "incorrectAnswers": [
+      "4\u03c0r^2",
+      "2\u03c0r",
+      "\u03c0r^3"
+    ],
+    "explanation": "Not surface area.",
+    "keywords": [
+      "sphere-volume",
+      "3d"
+    ],
+    "source": "https://www.mathsisfun.com/geometry/sphere.html"
+  }
+]

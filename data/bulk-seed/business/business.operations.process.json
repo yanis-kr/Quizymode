@@ -1,0 +1,116 @@
+[
+  {
+    "category": "business",
+    "navigationKeyword1": "operations",
+    "navigationKeyword2": "process",
+    "question": "What does a SIPOC diagram typically map?",
+    "correctAnswer": "Suppliers, inputs, process steps, outputs, and customers for a workflow.",
+    "incorrectAnswers": [
+      "Only employee birthdays.",
+      "Only tax deductions.",
+      "Only social media hashtags."
+    ],
+    "explanation": "SIPOC gives a high-level shared picture before detailed mapping.",
+    "keywords": [
+      "sipoc",
+      "process-mapping"
+    ],
+    "source": "https://asq.org/quality-resources/sipoc",
+    "seedId": "27ebdfa8-8ae0-459f-9ae2-334b7a97533b"
+  },
+  {
+    "category": "business",
+    "navigationKeyword1": "operations",
+    "navigationKeyword2": "process",
+    "question": "What is a service level agreement (SLA) commonly used for?",
+    "correctAnswer": "Define measurable expectations (e.g., uptime, response time) between provider and customer.",
+    "incorrectAnswers": [
+      "Replace all contracts with verbal promises.",
+      "Ban customers from support.",
+      "Guarantee unlimited free labor forever."
+    ],
+    "explanation": "SLAs align operational delivery with commitments.",
+    "keywords": [
+      "sla",
+      "operations"
+    ],
+    "source": "https://www.atlassian.com/itsm/what-is-sla",
+    "seedId": "0af8ade5-0f3f-4ca2-8020-0fc1e6f5ea6b"
+  },
+  {
+    "category": "business",
+    "navigationKeyword1": "operations",
+    "navigationKeyword2": "process",
+    "question": "What is a process bottleneck?",
+    "correctAnswer": "A step where work piles up because capacity or throughput is constrained.",
+    "incorrectAnswers": [
+      "Any step with zero employees.",
+      "A marketing slogan.",
+      "A type of bank account."
+    ],
+    "explanation": "Bottlenecks limit end-to-end flow performance.",
+    "keywords": [
+      "bottleneck",
+      "throughput"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Bottleneck_(production)",
+    "seedId": "bf3e6e0e-e8c2-46b5-bd92-95f0cd855d86"
+  },
+  {
+    "category": "business",
+    "navigationKeyword1": "operations",
+    "navigationKeyword2": "process",
+    "question": "In continuous improvement, what does the PDCA cycle stand for?",
+    "correctAnswer": "Plan, Do, Check, Act (iterate using data).",
+    "incorrectAnswers": [
+      "Purchase, Delete, Cancel, Archive.",
+      "Promote, Delay, Complain, Avoid.",
+      "Print, Draft, Copy, Attach."
+    ],
+    "explanation": "PDCA structures disciplined experimentation.",
+    "keywords": [
+      "pdca",
+      "improvement"
+    ],
+    "source": "https://www.iso.org/standard/53271.html",
+    "seedId": "ecc3018f-edff-4227-89ab-18a5be6e3bca"
+  },
+  {
+    "category": "business",
+    "navigationKeyword1": "operations",
+    "navigationKeyword2": "process",
+    "question": "Why standardize work in operations?",
+    "correctAnswer": "Reduce variability, improve quality, and make training and improvement easier.",
+    "incorrectAnswers": [
+      "Ensure every employee improvises randomly.",
+      "Eliminate all documentation.",
+      "Prevent measurement."
+    ],
+    "explanation": "Standard work is a baseline for kaizen.",
+    "keywords": [
+      "standard-work",
+      "quality"
+    ],
+    "source": "https://www.lean.org/lexicon-terms/standard-work/",
+    "seedId": "f4e4136d-4648-43ac-9b51-98c546168370"
+  },
+  {
+    "category": "business",
+    "navigationKeyword1": "operations",
+    "navigationKeyword2": "process",
+    "question": "What is value stream mapping used for?",
+    "correctAnswer": "See material and information flow end-to-end to find waste and lead time drivers.",
+    "incorrectAnswers": [
+      "Design office holiday parties only.",
+      "Replace payroll systems automatically.",
+      "Write product ad copy."
+    ],
+    "explanation": "VSM connects steps to customer value and delays.",
+    "keywords": [
+      "value-stream",
+      "lean"
+    ],
+    "source": "https://www.lean.org/lexicon-terms/value-stream-mapping/",
+    "seedId": "cdad6bc9-3679-466a-96e6-898a033986be"
+  }
+]

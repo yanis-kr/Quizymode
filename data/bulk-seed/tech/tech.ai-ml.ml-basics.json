@@ -1,0 +1,116 @@
+[
+  {
+    "category": "tech",
+    "navigationKeyword1": "ai-ml",
+    "navigationKeyword2": "ml-basics",
+    "question": "In supervised learning, what kind of data does the algorithm use during training?",
+    "correctAnswer": "Input examples paired with known target outputs",
+    "incorrectAnswers": [
+      "Only inputs with no labels",
+      "Only outputs with no inputs",
+      "Random noise without structure"
+    ],
+    "explanation": "Supervised learning fits a mapping from inputs to outputs using labeled examples so errors can be measured against the targets.",
+    "keywords": [
+      "ai-ml",
+      "supervised-learning"
+    ],
+    "source": "https://scikit-learn.org/stable/supervised_learning.html",
+    "seedId": "ecd32b5e-8c3c-5b8f-b561-84e7a3713baf"
+  },
+  {
+    "category": "tech",
+    "navigationKeyword1": "ai-ml",
+    "navigationKeyword2": "ml-basics",
+    "question": "When a model overfits, what pattern do you usually see between training performance and test performance?",
+    "correctAnswer": "Strong training performance but weaker generalization to new data",
+    "incorrectAnswers": [
+      "Weak training and strong test performance",
+      "Identical training and test errors always",
+      "Both training and test error rise together in every case"
+    ],
+    "explanation": "Overfitting means the model fits training noise, so training metrics look good while performance on held-out data gets worse.",
+    "keywords": [
+      "ai-ml",
+      "overfitting"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Overfitting",
+    "seedId": "c1e5bb30-9c0a-57ae-890c-b498f79add7b"
+  },
+  {
+    "category": "tech",
+    "navigationKeyword1": "ai-ml",
+    "navigationKeyword2": "ml-basics",
+    "question": "Why is a separate test set held out and used only at the end?",
+    "correctAnswer": "To estimate generalization without tuning choices leaking into the estimate",
+    "incorrectAnswers": [
+      "To train the model faster",
+      "To store backup copies of weights",
+      "To replace the need for validation data"
+    ],
+    "explanation": "If you repeatedly adjust the model using the test scores, those scores stop being an unbiased read on generalization.",
+    "keywords": [
+      "ai-ml",
+      "evaluation"
+    ],
+    "source": "https://developers.google.com/machine-learning/glossary#test-set",
+    "seedId": "bd27d41e-cbf6-53db-9ec5-cd0c3bd58707"
+  },
+  {
+    "category": "tech",
+    "navigationKeyword1": "ai-ml",
+    "navigationKeyword2": "ml-basics",
+    "question": "In classification, what does cross-entropy loss compare?",
+    "correctAnswer": "Predicted probability distribution to the true class distribution",
+    "incorrectAnswers": [
+      "Only two scalar numbers with no probabilities",
+      "Feature vectors directly without labels",
+      "Training time to inference time"
+    ],
+    "explanation": "Cross-entropy measures how far predicted probabilities are from the target distribution, with lower values meaning better alignment.",
+    "keywords": [
+      "ai-ml",
+      "loss-functions"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Cross-entropy",
+    "seedId": "4dea7e61-8cbc-5c6d-a088-9ed993646d8b"
+  },
+  {
+    "category": "tech",
+    "navigationKeyword1": "ai-ml",
+    "navigationKeyword2": "ml-basics",
+    "question": "In the bias–variance view, what does high variance often suggest about the model?",
+    "correctAnswer": "It is sensitive to small changes in the training sample",
+    "incorrectAnswers": [
+      "It always predicts the majority class",
+      "It cannot fit the training data at all",
+      "It ignores all features"
+    ],
+    "explanation": "High variance means estimates swing when training data changes, which is typical of overly complex models relative to data size.",
+    "keywords": [
+      "ai-ml",
+      "bias-variance"
+    ],
+    "source": "https://scikit-learn.org/stable/auto_examples/model_selection/plot_underfitting_overfitting.html",
+    "seedId": "7a520f88-8de9-57ef-996e-2a1afc53f307"
+  },
+  {
+    "category": "tech",
+    "navigationKeyword1": "ai-ml",
+    "navigationKeyword2": "ml-basics",
+    "question": "What does k-fold cross-validation primarily help you estimate?",
+    "correctAnswer": "How well the model generalizes when data is limited",
+    "incorrectAnswers": [
+      "The exact runtime on production hardware",
+      "Whether the dataset has duplicate rows",
+      "The optimal number of CPU cores"
+    ],
+    "explanation": "K-fold rotates which fold is validation so performance is averaged across splits, giving a more stable estimate with small datasets.",
+    "keywords": [
+      "ai-ml",
+      "cross-validation"
+    ],
+    "source": "https://scikit-learn.org/stable/modules/cross_validation.html",
+    "seedId": "a9ef25de-dc2f-5135-b461-d86dad7cfced"
+  }
+]

@@ -1,0 +1,116 @@
+[
+  {
+    "category": "civics",
+    "navigationKeyword1": "international",
+    "navigationKeyword2": "un",
+    "question": "What are the four main purposes listed in the opening of the UN Charter?",
+    "correctAnswer": "keep peace, develop friendly relations, help solve problems cooperatively, and be a center for harmonizing actions",
+    "incorrectAnswers": [
+      "abolish all national armies on day one",
+      "run every election worldwide",
+      "replace local courts in every city"
+    ],
+    "explanation": "The Charter frames the organization around peace, cooperation, and coordinated problem-solving.",
+    "keywords": [
+      "un-charter",
+      "purposes"
+    ],
+    "source": "https://www.un.org/en/about-us/un-charter/chapter-1",
+    "seedId": "ddfd442b-c87f-5241-a58e-143d7a615b6b"
+  },
+  {
+    "category": "civics",
+    "navigationKeyword1": "international",
+    "navigationKeyword2": "un",
+    "question": "Which UN body includes all member countries with one vote per state in regular sessions?",
+    "correctAnswer": "the General Assembly",
+    "incorrectAnswers": [
+      "the Security Council only",
+      "the International Court of Justice bench alone",
+      "the Secretariat’s staff union"
+    ],
+    "explanation": "The General Assembly is the broad membership forum for debate and many kinds of resolutions.",
+    "keywords": [
+      "general-assembly",
+      "membership"
+    ],
+    "source": "https://www.un.org/en/ga/",
+    "seedId": "bb9f0410-fbe7-520a-86e7-cde9487d870b"
+  },
+  {
+    "category": "civics",
+    "navigationKeyword1": "international",
+    "navigationKeyword2": "un",
+    "question": "What is the Security Council’s special role under the Charter?",
+    "correctAnswer": "primary responsibility for international peace and security",
+    "incorrectAnswers": [
+      "hiring every national teacher",
+      "setting world tax rates",
+      "running all postal services"
+    ],
+    "explanation": "The Council can address threats, breaches of peace, and acts of aggression under Charter rules.",
+    "keywords": [
+      "security-council",
+      "peace"
+    ],
+    "source": "https://www.un.org/securitycouncil/",
+    "seedId": "f12fa533-c450-561b-bf53-4dfbb2c40ab9"
+  },
+  {
+    "category": "civics",
+    "navigationKeyword1": "international",
+    "navigationKeyword2": "un",
+    "question": "Who is the UN Secretary-General in institutional terms?",
+    "correctAnswer": "the chief administrative officer appointed by the General Assembly on the Security Council’s recommendation",
+    "incorrectAnswers": [
+      "the lifetime monarch of all members",
+      "the commander of every national army",
+      "the judge who decides all domestic trials"
+    ],
+    "explanation": "The Secretary-General runs the Secretariat and can help mediate, but is not a world president.",
+    "keywords": [
+      "secretariat",
+      "leadership"
+    ],
+    "source": "https://www.un.org/sg/en/content/sg/appointment-process",
+    "seedId": "24b52e3a-e7d9-518a-bee0-174a6ce2241d"
+  },
+  {
+    "category": "civics",
+    "navigationKeyword1": "international",
+    "navigationKeyword2": "un",
+    "question": "What is one major limit civic courses note about UN General Assembly resolutions?",
+    "correctAnswer": "many resolutions are not self-enforcing and depend on states to carry them out",
+    "incorrectAnswers": [
+      "they automatically replace national constitutions",
+      "they fund every local school directly",
+      "they cancel all national laws overnight"
+    ],
+    "explanation": "The UN mostly coordinates sovereign states; enforcement often needs national action and consent.",
+    "keywords": [
+      "soft-law",
+      "implementation"
+    ],
+    "source": "https://www.un.org/en/about-us/how-the-un-works",
+    "seedId": "03c9e940-cff0-5908-af19-e43444ed2dcf"
+  },
+  {
+    "category": "civics",
+    "navigationKeyword1": "international",
+    "navigationKeyword2": "un",
+    "question": "Which UN organ can settle legal disputes between states if they agree to its jurisdiction?",
+    "correctAnswer": "the International Court of Justice",
+    "incorrectAnswers": [
+      "the World Health Assembly alone",
+      "the UN postal service",
+      "the General Assembly’s budget office"
+    ],
+    "explanation": "The ICJ is the UN’s principal judicial organ for state-to-state cases under its statute.",
+    "keywords": [
+      "icj",
+      "dispute-settlement"
+    ],
+    "source": "https://www.icj-cij.org/en",
+    "seedId": "a28b48e8-81b9-5117-be75-266293315815"
+  }
+]

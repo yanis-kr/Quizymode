@@ -1,0 +1,116 @@
+[
+  {
+    "category": "nature",
+    "navigationKeyword1": "animals",
+    "navigationKeyword2": "birds",
+    "question": "Which bird is the largest living bird species?",
+    "correctAnswer": "ostrich",
+    "incorrectAnswers": [
+      "emu",
+      "cassowary",
+      "wandering albatross"
+    ],
+    "explanation": "The ostrich is the largest living bird and also cannot fly.",
+    "keywords": [
+      "birds",
+      "nature-animals"
+    ],
+    "source": "https://www.britannica.com/animal/ostrich",
+    "seedId": "fa1441dc-a0fc-534e-a725-44d91cc588ce"
+  },
+  {
+    "category": "nature",
+    "navigationKeyword1": "animals",
+    "navigationKeyword2": "birds",
+    "question": "Which birds can truly fly backward?",
+    "correctAnswer": "hummingbirds",
+    "incorrectAnswers": [
+      "swallows",
+      "kingfishers",
+      "swifts"
+    ],
+    "explanation": "Hummingbirds can hover and fly backward because of their unusual wing motion.",
+    "keywords": [
+      "birds",
+      "nature-animals"
+    ],
+    "source": "https://southwest.audubon.org/conservation/fun-facts-about-hummingbirds",
+    "seedId": "0bcff2da-8549-5c77-84f0-81ec6c339ace"
+  },
+  {
+    "category": "nature",
+    "navigationKeyword1": "animals",
+    "navigationKeyword2": "birds",
+    "question": "Penguins are native to which hemisphere?",
+    "correctAnswer": "Southern Hemisphere",
+    "incorrectAnswers": [
+      "Northern Hemisphere",
+      "both hemispheres equally",
+      "Arctic Hemisphere"
+    ],
+    "explanation": "Penguins are native to the Southern Hemisphere, though not all live in Antarctica.",
+    "keywords": [
+      "birds",
+      "nature-animals"
+    ],
+    "source": "https://www.britannica.com/animal/penguin",
+    "seedId": "780ff679-98e3-58ae-8e1c-61c2134eac30"
+  },
+  {
+    "category": "nature",
+    "navigationKeyword1": "animals",
+    "navigationKeyword2": "birds",
+    "question": "Which birds are famous for nearly silent flight when hunting?",
+    "correctAnswer": "owls",
+    "incorrectAnswers": [
+      "hawks",
+      "vultures",
+      "cranes"
+    ],
+    "explanation": "Owls have specialized feathers that reduce noise in flight.",
+    "keywords": [
+      "birds",
+      "nature-animals"
+    ],
+    "source": "https://www.audubon.org/magazine/silent-flight-of-owls-explained",
+    "seedId": "3df1af43-d4d5-5ed4-abfd-f9bc5d63f703"
+  },
+  {
+    "category": "nature",
+    "navigationKeyword1": "animals",
+    "navigationKeyword2": "birds",
+    "question": "Which bird of prey is famous for extreme speed during a dive?",
+    "correctAnswer": "peregrine falcon",
+    "incorrectAnswers": [
+      "bald eagle",
+      "osprey",
+      "harpy eagle"
+    ],
+    "explanation": "Peregrine falcons reach remarkable speeds when they dive at prey.",
+    "keywords": [
+      "birds",
+      "nature-animals"
+    ],
+    "source": "https://www.audubon.org/field-guide/bird/peregrine-falcon",
+    "seedId": "b15036a9-29d4-5f1f-ad1f-1ec91217c528"
+  },
+  {
+    "category": "nature",
+    "navigationKeyword1": "animals",
+    "navigationKeyword2": "birds",
+    "question": "Which seabird is famous for huge wings that let it glide for hours over the ocean?",
+    "correctAnswer": "albatross",
+    "incorrectAnswers": [
+      "pelican",
+      "cormorant",
+      "gannet"
+    ],
+    "explanation": "Albatrosses use their very long, narrow wings to soar efficiently over open water.",
+    "keywords": [
+      "birds",
+      "nature-animals"
+    ],
+    "source": "https://www.britannica.com/animal/albatross",
+    "seedId": "8f75ea1b-b264-5036-a0cf-7a40f87c9769"
+  }
+]

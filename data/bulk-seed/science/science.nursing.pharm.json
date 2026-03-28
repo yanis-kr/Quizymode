@@ -1,0 +1,230 @@
+[
+  {
+    "seedId": "69f50077-d154-4c21-b05c-18369dd75535",
+    "category": "science",
+    "navigationKeyword1": "nursing",
+    "navigationKeyword2": "pharm",
+    "question": "What does \u2018therapeutic index\u2019 suggest?",
+    "correctAnswer": "Narrow window between effective and toxic dose",
+    "incorrectAnswers": [
+      "Wider is always more dangerous",
+      "Only applies to OTC",
+      "Same as half-life"
+    ],
+    "explanation": "Digoxin, warfarin examples of monitoring.",
+    "keywords": [
+      "therapeutic-index",
+      "safety"
+    ],
+    "source": "https://www.ncbi.nlm.nih.gov/books/NBK519507/"
+  },
+  {
+    "seedId": "fb4e98e1-6a1b-4642-a6f4-c39e99f8d2c2",
+    "category": "science",
+    "navigationKeyword1": "nursing",
+    "navigationKeyword2": "pharm",
+    "question": "What is medication reconciliation?",
+    "correctAnswer": "Accurate list of meds across transitions",
+    "incorrectAnswers": [
+      "Only new prescriptions",
+      "Ignore herbals",
+      "Nurse-only task without patient"
+    ],
+    "explanation": "Prevents errors on admission/discharge.",
+    "keywords": [
+      "med-reconciliation",
+      "safety"
+    ],
+    "source": "https://www.ahrq.gov/patient-safety/settings/hospital/medication-reconciliation/index.html"
+  },
+  {
+    "seedId": "5600ed89-c85e-44bd-8282-8eb5ab7d8fff",
+    "category": "science",
+    "navigationKeyword1": "nursing",
+    "navigationKeyword2": "pharm",
+    "question": "Oral med with \u2018AC\u2019 often means?",
+    "correctAnswer": "Before meals",
+    "incorrectAnswers": [
+      "After meals",
+      "At bedtime",
+      "With antacid only"
+    ],
+    "explanation": "Latin abbreviations being phased out; clarify.",
+    "keywords": [
+      "med-abbreviations",
+      "timing"
+    ],
+    "source": "https://www.jointcommission.org/resources/patient-safety-topics/medication-abbreviations/"
+  },
+  {
+    "seedId": "027e5c7a-0b32-41d2-a6c5-f6922a32d2ee",
+    "category": "science",
+    "navigationKeyword1": "nursing",
+    "navigationKeyword2": "pharm",
+    "question": "Why check allergies before administration?",
+    "correctAnswer": "Prevent anaphylaxis and cross-reactivity",
+    "incorrectAnswers": [
+      "Only for IV drugs",
+      "Only first dose ever",
+      "Optional for generics"
+    ],
+    "explanation": "Every administration verify.",
+    "keywords": [
+      "allergies",
+      "safety"
+    ],
+    "source": "https://www.ncbi.nlm.nih.gov/books/NBK519507/"
+  },
+  {
+    "seedId": "d1158083-126c-4354-bbe8-7c1f67e4c2b5",
+    "category": "science",
+    "navigationKeyword1": "nursing",
+    "navigationKeyword2": "pharm",
+    "question": "What is peak-and-trough monitoring for?",
+    "correctAnswer": "Aminoglycosides and some drugs to avoid toxicity",
+    "incorrectAnswers": [
+      "All PO meds",
+      "Vitamins only",
+      "NSAIDs always"
+    ],
+    "explanation": "Guides dosing intervals.",
+    "keywords": [
+      "peak-trough",
+      "labs"
+    ],
+    "source": "https://www.ncbi.nlm.nih.gov/books/NBK519507/"
+  },
+  {
+    "seedId": "410c8fdc-ec96-4bc8-b9a8-7b96ca3bc7d4",
+    "category": "science",
+    "navigationKeyword1": "nursing",
+    "navigationKeyword2": "pharm",
+    "question": "Anticoagulant teaching includes?",
+    "correctAnswer": "Bleeding precautions, avoid NSAID stacking, lab if ordered",
+    "incorrectAnswers": [
+      "Stop reporting nosebleeds",
+      "Double dose if missed",
+      "No need to report falls"
+    ],
+    "explanation": "Warfarin vs DOAC education differs.",
+    "keywords": [
+      "anticoagulation",
+      "education"
+    ],
+    "source": "https://www.cdc.gov/heart-disease/prevention.htm"
+  },
+  {
+    "seedId": "ec1af83e-17c0-4393-abb3-ed6c3d3a5a76",
+    "category": "science",
+    "navigationKeyword1": "nursing",
+    "navigationKeyword2": "pharm",
+    "question": "Insulin storage general rule?",
+    "correctAnswer": "Unopened refrigerated; opened per product insert",
+    "incorrectAnswers": [
+      "Always freeze",
+      "Always warm in microwave",
+      "Mix all types freely"
+    ],
+    "explanation": "Follow manufacturer; rotate sites.",
+    "keywords": [
+      "insulin",
+      "storage"
+    ],
+    "source": "https://www.cdc.gov/diabetes/managing/managing-blood-sugar/insulin.html"
+  },
+  {
+    "seedId": "4d518b99-1641-4b8c-adcc-5504d9654ace",
+    "category": "science",
+    "navigationKeyword1": "nursing",
+    "navigationKeyword2": "pharm",
+    "question": "What is adverse drug reaction reporting?",
+    "correctAnswer": "Document and report per facility (and FDA MedWatch when appropriate)",
+    "incorrectAnswers": [
+      "Ignore if minor",
+      "Only physicians report",
+      "Stop charting"
+    ],
+    "explanation": "Pharmacovigilance improves safety.",
+    "keywords": [
+      "adverse-events",
+      "reporting"
+    ],
+    "source": "https://www.fda.gov/safety/medwatch-fda-safety-information-and-adverse-event-reporting-program"
+  },
+  {
+    "seedId": "b678d6ae-a0ce-4902-8d85-f1409628319d",
+    "category": "science",
+    "navigationKeyword1": "nursing",
+    "navigationKeyword2": "pharm",
+    "question": "Five rights of medication administration?",
+    "correctAnswer": "Right patient, drug, dose, route, time",
+    "incorrectAnswers": [
+      "Right color only",
+      "Right room number only",
+      "Right guess"
+    ],
+    "explanation": "Often expanded to include documentation, reason, response.",
+    "keywords": [
+      "five-rights",
+      "med-admin"
+    ],
+    "source": "https://www.ncbi.nlm.nih.gov/books/NBK519507/"
+  },
+  {
+    "seedId": "43578b6e-3fe2-456a-99cb-b20b003d7ad7",
+    "category": "science",
+    "navigationKeyword1": "nursing",
+    "navigationKeyword2": "pharm",
+    "question": "Why crush tablets cautiously?",
+    "correctAnswer": "Some are extended-release or enteric-coated",
+    "incorrectAnswers": [
+      "Always safe to crush",
+      "Crushing improves all absorption",
+      "Liquid never exists"
+    ],
+    "explanation": "Check pharmacist references.",
+    "keywords": [
+      "crushing-meds",
+      "formulation"
+    ],
+    "source": "https://www.ncbi.nlm.nih.gov/books/NBK519507/"
+  },
+  {
+    "seedId": "4c72f30b-a1f7-4840-a547-061eaf710166",
+    "category": "science",
+    "navigationKeyword1": "nursing",
+    "navigationKeyword2": "pharm",
+    "question": "Opioid respiratory depression antidote?",
+    "correctAnswer": "Naloxone (Narcan) per protocol",
+    "incorrectAnswers": [
+      "Insulin",
+      "Atropine for all",
+      "Epinephrine only"
+    ],
+    "explanation": "Monitor sedation and respirations.",
+    "keywords": [
+      "naloxone",
+      "opioids"
+    ],
+    "source": "https://www.cdc.gov/drugoverdose/featured-topics/naloxone.html"
+  },
+  {
+    "seedId": "156b5ae6-017f-4c4b-947e-ffb4720ed4a7",
+    "category": "science",
+    "navigationKeyword1": "nursing",
+    "navigationKeyword2": "pharm",
+    "question": "Herb\u2013drug interaction example concern?",
+    "correctAnswer": "St. John\u2019s wort with many CYP substrates",
+    "incorrectAnswers": [
+      "No interactions exist",
+      "Only with vitamins",
+      "Only IV drugs"
+    ],
+    "explanation": "Always ask about supplements.",
+    "keywords": [
+      "supplements",
+      "interactions"
+    ],
+    "source": "https://www.nccih.nih.gov/health/st-johns-wort-and-depression-in-depth"
+  }
+]

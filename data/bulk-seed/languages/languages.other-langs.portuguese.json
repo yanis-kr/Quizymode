@@ -1,0 +1,116 @@
+[
+  {
+    "category": "languages",
+    "navigationKeyword1": "other-langs",
+    "navigationKeyword2": "portuguese",
+    "question": "What does 'Olá' mean?",
+    "correctAnswer": "hello",
+    "incorrectAnswers": [
+      "goodbye",
+      "please",
+      "sorry"
+    ],
+    "explanation": "'Olá' is a common greeting similar to hello.",
+    "keywords": [
+      "hello",
+      "portuguese-basics"
+    ],
+    "source": "https://dictionary.cambridge.org/dictionary/portuguese-english/ola",
+    "seedId": "54c2f0ff-6b2a-5457-b02e-a1726fbab935"
+  },
+  {
+    "category": "languages",
+    "navigationKeyword1": "other-langs",
+    "navigationKeyword2": "portuguese",
+    "question": "If a woman says thank you, which form is common in Brazil: 'obrigado' or 'obrigada'?",
+    "correctAnswer": "obrigada",
+    "incorrectAnswers": [
+      "obrigado",
+      "both are always wrong",
+      "neither is used"
+    ],
+    "explanation": "Many speakers match 'obrigado/obrigada' to the speaker's gender in common polite usage.",
+    "keywords": [
+      "thank-you",
+      "portuguese-basics"
+    ],
+    "source": "https://dictionary.cambridge.org/dictionary/portuguese-english/obrigado",
+    "seedId": "1ec68af4-8e7e-5349-8785-f16cef1c0dbb"
+  },
+  {
+    "category": "languages",
+    "navigationKeyword1": "other-langs",
+    "navigationKeyword2": "portuguese",
+    "question": "What does 'água' mean?",
+    "correctAnswer": "water",
+    "incorrectAnswers": [
+      "bread",
+      "coffee",
+      "milk"
+    ],
+    "explanation": "'Água' means water, with a stress mark in standard spelling.",
+    "keywords": [
+      "water",
+      "portuguese-basics"
+    ],
+    "source": "https://www.priberam.pt/dlpo/agua",
+    "seedId": "646ec64c-e6f0-54a9-9a96-9e17ff2ba0b7"
+  },
+  {
+    "category": "languages",
+    "navigationKeyword1": "other-langs",
+    "navigationKeyword2": "portuguese",
+    "question": "What does 'não' mean?",
+    "correctAnswer": "no / not",
+    "incorrectAnswers": [
+      "yes",
+      "maybe",
+      "please"
+    ],
+    "explanation": "'Não' is the basic negation word, like no or not.",
+    "keywords": [
+      "no",
+      "portuguese-basics"
+    ],
+    "source": "https://dictionary.cambridge.org/dictionary/portuguese-english/nao",
+    "seedId": "b21100ff-8b5f-55a3-a42a-6b6fd84af4fc"
+  },
+  {
+    "category": "languages",
+    "navigationKeyword1": "other-langs",
+    "navigationKeyword2": "portuguese",
+    "question": "What does 'por favor' mean?",
+    "correctAnswer": "please",
+    "incorrectAnswers": [
+      "thank you",
+      "excuse me",
+      "welcome"
+    ],
+    "explanation": "'Por favor' is a polite way to say please in requests.",
+    "keywords": [
+      "please",
+      "portuguese-basics"
+    ],
+    "source": "https://dictionary.cambridge.org/dictionary/portuguese-english/por-favor",
+    "seedId": "9887d705-d380-5310-b099-aee13dbbd62b"
+  },
+  {
+    "category": "languages",
+    "navigationKeyword1": "other-langs",
+    "navigationKeyword2": "portuguese",
+    "question": "What does 'onde' mean in a simple question?",
+    "correctAnswer": "where",
+    "incorrectAnswers": [
+      "when",
+      "why",
+      "who"
+    ],
+    "explanation": "'Onde' asks where something is or where something happens.",
+    "keywords": [
+      "where",
+      "portuguese-basics"
+    ],
+    "source": "https://www.priberam.pt/dlpo/onde",
+    "seedId": "0d5d635f-7517-5bc1-a480-53c596611b6a"
+  }
+]

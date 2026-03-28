@@ -1,0 +1,116 @@
+[
+  {
+    "category": "civics",
+    "navigationKeyword1": "public-policy",
+    "navigationKeyword2": "environment",
+    "question": "Which federal agency implements major U.S. laws on clean air and clean water?",
+    "correctAnswer": "the Environmental Protection Agency",
+    "incorrectAnswers": [
+      "the Department of Agriculture",
+      "the Federal Communications Commission",
+      "the National Science Foundation"
+    ],
+    "explanation": "Congress assigns EPA to set and enforce regulations that carry out environmental statutes.",
+    "keywords": [
+      "epa",
+      "environmental-law"
+    ],
+    "source": "https://www.epa.gov/aboutepa/our-mission-and-what-we-do",
+    "seedId": "c6fa6bb8-5110-502d-b2f7-7a7eea26dd65"
+  },
+  {
+    "category": "civics",
+    "navigationKeyword1": "public-policy",
+    "navigationKeyword2": "environment",
+    "question": "What does the National Environmental Policy Act generally require for major federal actions?",
+    "correctAnswer": "environmental review and consideration of impacts before decisions",
+    "incorrectAnswers": [
+      "automatic approval of all projects",
+      "transfer of parks to private owners",
+      "a ban on all federal spending"
+    ],
+    "explanation": "NEPA requires federal agencies to analyze environmental effects of proposed actions and inform decision-making.",
+    "keywords": [
+      "nepa",
+      "environmental-review"
+    ],
+    "source": "https://www.epa.gov/nepa/national-environmental-policy-act-review-process",
+    "seedId": "02b2feb8-91d8-56d9-ba0f-c708e9cf0eff"
+  },
+  {
+    "category": "civics",
+    "navigationKeyword1": "public-policy",
+    "navigationKeyword2": "environment",
+    "question": "Under cooperative federalism in many pollution programs, what role do states often play?",
+    "correctAnswer": "issue permits and carry out day-to-day enforcement within federal standards",
+    "incorrectAnswers": [
+      "set all international climate treaties",
+      "abolish local zoning",
+      "control currency supply"
+    ],
+    "explanation": "Many environmental laws set federal floors while authorizing states to administer permits and compliance programs.",
+    "keywords": [
+      "cooperative-federalism",
+      "permits"
+    ],
+    "source": "https://www.epa.gov/laws-regulations/laws-and-executive-orders",
+    "seedId": "37bb8a79-3663-59b6-a37d-cfb209aa2b60"
+  },
+  {
+    "category": "civics",
+    "navigationKeyword1": "public-policy",
+    "navigationKeyword2": "environment",
+    "question": "Who owns and manages most national parks and national monuments in the federal system?",
+    "correctAnswer": "the Department of the Interior, mainly through the National Park Service",
+    "incorrectAnswers": [
+      "the Federal Reserve",
+      "state governors only",
+      "the Department of Defense exclusively"
+    ],
+    "explanation": "Interior oversees the National Park Service, which stewards many federal park units.",
+    "keywords": [
+      "national-parks",
+      "public-lands"
+    ],
+    "source": "https://www.nps.gov/aboutus/index.htm",
+    "seedId": "abc763a6-070c-5f72-8ffc-2529eb50056c"
+  },
+  {
+    "category": "civics",
+    "navigationKeyword1": "public-policy",
+    "navigationKeyword2": "environment",
+    "question": "What is a typical purpose of state environmental agencies?",
+    "correctAnswer": "implement state laws and federal-delegated programs such as air and water permits",
+    "incorrectAnswers": [
+      "confirm federal judges",
+      "coin money",
+      "command the National Guard overseas alone"
+    ],
+    "explanation": "States run environmental departments that permit facilities and enforce rules aligned with state and federal law.",
+    "keywords": [
+      "state-environment",
+      "permits"
+    ],
+    "source": "https://www.epa.gov/partnerships-and-program-management",
+    "seedId": "7ccc44af-0bec-5f00-aa7b-03212f972a98"
+  },
+  {
+    "category": "civics",
+    "navigationKeyword1": "public-policy",
+    "navigationKeyword2": "environment",
+    "question": "Endangered Species Act protections for listed species are primarily enforced by which federal services?",
+    "correctAnswer": "the Fish and Wildlife Service and the National Marine Fisheries Service",
+    "incorrectAnswers": [
+      "the Postal Service",
+      "the Smithsonian alone",
+      "the Federal Election Commission"
+    ],
+    "explanation": "Interior's Fish and Wildlife Service handles terrestrial species; NOAA Fisheries handles marine species.",
+    "keywords": [
+      "endangered-species",
+      "wildlife-law"
+    ],
+    "source": "https://www.fws.gov/law/endangered-species-act",
+    "seedId": "e882aa4d-f1ab-56d9-b366-c631b12eef35"
+  }
+]

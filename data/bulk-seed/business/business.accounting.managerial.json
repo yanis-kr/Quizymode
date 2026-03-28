@@ -1,0 +1,122 @@
+[
+  {
+    "category": "business",
+    "navigationKeyword1": "accounting",
+    "navigationKeyword2": "managerial",
+    "question": "What is the primary goal of managerial accounting?",
+    "correctAnswer": "Provide information to internal managers for planning, controlling, and decision-making.",
+    "incorrectAnswers": [
+      "Produce a single standardized report only for investors every year",
+      "Replace payroll with cost calculations",
+      "Determine the company’s legal tax rate directly"
+    ],
+    "explanation": "Managerial accounting focuses on internal use, helping managers choose actions and evaluate performance.",
+    "keywords": [
+      "managerial-accounting",
+      "planning",
+      "decision-making"
+    ],
+    "source": "https://www.imanet.org/",
+    "seedId": "2221b2c6-1b03-575a-9d24-1b737e6d5197"
+  },
+  {
+    "category": "business",
+    "navigationKeyword1": "accounting",
+    "navigationKeyword2": "managerial",
+    "question": "In cost analysis, what does “fixed cost” mean?",
+    "correctAnswer": "A cost that stays the same in total over a relevant range of activity, even if output changes.",
+    "incorrectAnswers": [
+      "A cost that always drops to zero when output falls",
+      "A cost that changes proportionally with output in every situation",
+      "A cost that depends only on how quickly invoices get paid"
+    ],
+    "explanation": "Fixed costs are total-cost stable within a relevant range; variable costs move as activity changes.",
+    "keywords": [
+      "fixed-costs",
+      "variable-costs",
+      "cost-behavior"
+    ],
+    "source": "https://www.investopedia.com/terms/f/fixedcost.asp",
+    "seedId": "5b5c1df3-3d5e-505d-aea0-86ad01ad93b1"
+  },
+  {
+    "category": "business",
+    "navigationKeyword1": "accounting",
+    "navigationKeyword2": "managerial",
+    "question": "What is a budget typically used for in managerial accounting?",
+    "correctAnswer": "A plan for expected results that can be compared against actual performance.",
+    "incorrectAnswers": [
+      "A contract that guarantees profits regardless of outcomes",
+      "A substitute for maintaining the general ledger",
+      "A way to avoid recording expenses until the audit is complete"
+    ],
+    "explanation": "Budgets translate goals into numbers, then variance analysis can show where results differ from expectations.",
+    "keywords": [
+      "budgets",
+      "planning",
+      "variance-analysis"
+    ],
+    "source": "https://www.aicpa-cima.com/Resources/Pages/What-is-management-accounting.aspx",
+    "seedId": "baf3a828-b309-5719-b560-0ff63cd11d41"
+  },
+  {
+    "category": "business",
+    "navigationKeyword1": "accounting",
+    "navigationKeyword2": "managerial",
+    "question": "What does contribution margin generally measure?",
+    "correctAnswer": "Revenue minus variable costs, showing how much contributes to covering fixed costs and profit.",
+    "incorrectAnswers": [
+      "Revenue minus all costs, including fixed costs",
+      "Profit minus tax, showing after-tax results only",
+      "Cash balance minus variable expenses paid in cash"
+    ],
+    "explanation": "Contribution margin isolates how much each unit/activity contributes after variable costs, which supports break-even and decision analysis.",
+    "keywords": [
+      "contribution-margin",
+      "variable-costs",
+      "break-even"
+    ],
+    "source": "https://corporatefinanceinstitute.com/resources/management/contribution-margin/",
+    "seedId": "82b2a2b4-a3b9-5918-bfc4-5c052f1ff6eb"
+  },
+  {
+    "category": "business",
+    "navigationKeyword1": "accounting",
+    "navigationKeyword2": "managerial",
+    "question": "Why do transfer prices matter in a multi-division company?",
+    "correctAnswer": "They affect how performance and internal “profit” are measured between divisions.",
+    "incorrectAnswers": [
+      "They eliminate the need for any internal reporting",
+      "They guarantee the company’s external stock price will rise",
+      "They determine payroll taxes automatically for all divisions"
+    ],
+    "explanation": "Transfer pricing influences incentives and performance metrics across divisions, so it affects internal decisions.",
+    "keywords": [
+      "transfer-pricing",
+      "divisions",
+      "incentives"
+    ],
+    "source": "https://www.investopedia.com/",
+    "seedId": "9119396c-faab-534d-8ab7-9c8e8eb7b0d9"
+  },
+  {
+    "category": "business",
+    "navigationKeyword1": "accounting",
+    "navigationKeyword2": "managerial",
+    "question": "What makes a cost “relevant” when comparing decision alternatives?",
+    "correctAnswer": "It differs between the alternatives and is expected to change based on the choice.",
+    "incorrectAnswers": [
+      "It is any cost the company has ever paid historically",
+      "It is always fixed cost, regardless of alternatives",
+      "It is only costs that appear on the bank statement"
+    ],
+    "explanation": "Relevant costs are future and differ across options; sunk costs that don’t change shouldn’t drive the decision.",
+    "keywords": [
+      "relevant-costs",
+      "sunk-costs",
+      "decision-analysis"
+    ],
+    "source": "https://corporatefinanceinstitute.com/",
+    "seedId": "5036f236-011c-5ba8-beab-160ec90750ae"
+  }
+]

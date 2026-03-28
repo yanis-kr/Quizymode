@@ -1,0 +1,40 @@
+[
+  {
+    "category": "humanities",
+    "navigationKeyword1": "culture",
+    "navigationKeyword2": "identity",
+    "question": "Cultural identity usually refers to what?",
+    "correctAnswer": "how people understand belonging through shared culture",
+    "incorrectAnswers": [
+      "a museum floor plan",
+      "a type of stage light",
+      "a synonym list"
+    ],
+    "explanation": "Identity can be shaped by language, tradition, memory, and community.",
+    "keywords": [
+      "culture-identity",
+      "belonging"
+    ],
+    "source": "https://www.britannica.com/topic/identity-sociology",
+    "seedId": "79233f72-d61d-5840-b083-cdba04206bf4"
+  },
+  {
+    "category": "humanities",
+    "navigationKeyword1": "culture",
+    "navigationKeyword2": "identity",
+    "question": "Why can identity be studied through stories, art, and ritual?",
+    "correctAnswer": "because culture expresses belonging in many forms",
+    "incorrectAnswers": [
+      "because identity uses no language",
+      "because only governments define people",
+      "because identity is only biological"
+    ],
+    "explanation": "Cultural identity appears in symbols, practices, and representation, not just in labels.",
+    "keywords": [
+      "culture-identity",
+      "representation"
+    ],
+    "source": "https://www.si.edu/spotlight/celebrating-culture",
+    "seedId": "b2a73ac9-cb0a-5486-8384-6f5530134397"
+  }
+]
