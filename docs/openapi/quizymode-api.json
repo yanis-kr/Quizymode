@@ -6675,7 +6675,9 @@
       "Quizymode.Api.Features.Taxonomy.GetTaxonomy.CategoryDto": {
         "required": [
           "slug",
+          "name",
           "description",
+          "itemCount",
           "groups",
           "allKeywordSlugs"
         ],
@@ -6684,8 +6686,21 @@
           "slug": {
             "$ref": "#/components/schemas/System.String"
           },
-          "description": {
+          "name": {
             "$ref": "#/components/schemas/System.String"
+          },
+          "description": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/System.String"
+              }
+            ]
+          },
+          "itemCount": {
+            "$ref": "#/components/schemas/System.Int32"
           },
           "groups": {
             "$ref": "#/components/schemas/System.Collections.Generic.IReadOnlyList`1[[Quizymode.Api.Features.Taxonomy.GetTaxonomy.L1Dto, Quizymode.Api, Version=2.0.0.0, Culture=neutral, PublicKeyToken=null]]"
@@ -6699,6 +6714,7 @@
         "required": [
           "slug",
           "description",
+          "itemCount",
           "keywords"
         ],
         "type": "object",
@@ -6716,6 +6732,9 @@
               }
             ]
           },
+          "itemCount": {
+            "$ref": "#/components/schemas/System.Int32"
+          },
           "keywords": {
             "$ref": "#/components/schemas/System.Collections.Generic.IReadOnlyList`1[[Quizymode.Api.Features.Taxonomy.GetTaxonomy.L2Dto, Quizymode.Api, Version=2.0.0.0, Culture=neutral, PublicKeyToken=null]]"
           }
@@ -6724,7 +6743,8 @@
       "Quizymode.Api.Features.Taxonomy.GetTaxonomy.L2Dto": {
         "required": [
           "slug",
-          "description"
+          "description",
+          "itemCount"
         ],
         "type": "object",
         "properties": {
@@ -6740,6 +6760,9 @@
                 "$ref": "#/components/schemas/System.String"
               }
             ]
+          },
+          "itemCount": {
+            "$ref": "#/components/schemas/System.Int32"
           }
         }
       },

@@ -91,18 +91,22 @@ describe("CreateItemPage", () => {
       categories: [
         {
           slug: "science",
+          name: "Science",
           description: "",
+          itemCount: 0,
           allKeywordSlugs: ["anatomy", "muscular", "arms", "physiology", "cells"],
           groups: [
             {
               slug: "anatomy",
               description: null,
-              keywords: [{ slug: "muscular", description: null }],
+              itemCount: 0,
+              keywords: [{ slug: "muscular", description: null, itemCount: 0 }],
             },
             {
               slug: "physiology",
               description: null,
-              keywords: [{ slug: "cells", description: null }],
+              itemCount: 0,
+              keywords: [{ slug: "cells", description: null, itemCount: 0 }],
             },
           ],
         },
