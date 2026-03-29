@@ -1,5 +1,5 @@
 import LegalMarkdownDocument from "@/features/legal/components/LegalMarkdownDocument";
-import termsOfServiceMarkdown from "../../../../../../docs/quizymode-terms-of-service.md?raw";
+import termsOfServiceMarkdown from "../../../../../../docs/legal/quizymode-terms-of-service.md?raw";
 
 const TermsOfServicePage = () => {
   return (

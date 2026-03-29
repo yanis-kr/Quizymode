@@ -1,5 +1,5 @@
 import LegalMarkdownDocument from "@/features/legal/components/LegalMarkdownDocument";
-import privacyPolicyMarkdown from "../../../../../../docs/quizymode-privacy-policy.md?raw";
+import privacyPolicyMarkdown from "../../../../../../docs/legal/quizymode-privacy-policy.md?raw";
 
 const PrivacyPolicyPage = () => {
   return (
