@@ -16,26 +16,26 @@
       "aviation",
       "surprising-facts"
     ],
-    "source": "seed: home sample collection"
+    "source": "https://skybrary.aero/sites/default/files/bookshelf/3679.pdf"
   },
   {
     "seedId": "4d7a4c4f-c4a4-48c2-8557-3ef47d5978e4",
     "category": "trivia",
     "navigationKeyword1": "general",
     "navigationKeyword2": "mixed",
-    "question": "What animal's fingerprints are so close to humans that they can confuse crime-scene analysis?",
+    "question": "Which animal is famous for having fingerprints very similar to humans'?",
     "correctAnswer": "Koalas",
     "incorrectAnswers": [
       "Chimpanzees",
       "Dogs",
       "Otters"
     ],
-    "explanation": "Koala fingerprints have ridge patterns so similar to human fingerprints that they have reportedly confused investigators.",
+    "explanation": "Koala fingerprints have ridge patterns so similar to human fingerprints that scientists describe them as remarkably human-like.",
     "keywords": [
       "animals",
       "weird"
     ],
-    "source": "seed: home sample collection"
+    "source": "https://www.mcgill.ca/oss/article/did-you-know/koalas-have-fingerprints-just-humans"
   },
   {
     "seedId": "b603bd31-44db-4341-9a6e-5c50791d46d6",
@@ -54,7 +54,7 @@
       "space",
       "planets"
     ],
-    "source": "seed: home sample collection"
+    "source": "https://science.nasa.gov/venus/venus-facts/"
   },
   {
     "seedId": "6659d909-8b63-476f-a47d-ee43a931d73f",
@@ -73,25 +73,25 @@
       "countries",
       "symbols"
     ],
-    "source": "seed: home sample collection"
+    "source": "https://www.scotland.org/inspiration/what-is-the-national-animal-of-scotland"
   },
   {
     "seedId": "d626da85-d629-4ae2-a9fd-9fccb6d09db0",
     "category": "trivia",
     "navigationKeyword1": "general",
     "navigationKeyword2": "mixed",
-    "question": "What everyday food never really spoils when stored properly?",
+    "question": "What everyday food is famous for having an exceptionally long shelf life when stored properly?",
     "correctAnswer": "Honey",
     "incorrectAnswers": [
       "Brown rice",
       "Milk chocolate",
       "Sea salt crackers"
     ],
-    "explanation": "Honey's low moisture and natural chemistry make it famously long-lasting, and edible ancient honey has even been found in tombs.",
+    "explanation": "Honey's low moisture and acidic chemistry make it famously long-lasting when stored properly, even though storage conditions can still affect quality.",
     "keywords": [
       "food",
       "fun-facts"
     ],
-    "source": "seed: home sample collection"
+    "source": "https://www.britannica.com/one-good-fact/what-food-never-goes-bad"
   }
 ]
