@@ -668,6 +668,7 @@ Authentication uses **email + password** with secure password hashing and short-
 
 - **AC 4.3.5** [Anonymous] **Given** I open the **Sign in** page, **when** I submit valid credentials, **then** the UI stores the received access token (and handles refresh token via secure cookie where applicable), updates the app state to "authenticated", and redirects me to the intended page (or home).
 - **AC 4.3.6** [Anonymous] **Given** I submit invalid credentials, **when** the API returns 401, **then** the UI shows a non-specific error message (e.g. "Invalid email or password") and does not reveal whether the email exists; no token is stored.
+- **AC 4.3.7** [Authenticated] **Given** I return to an authenticated-only SPA route after my session has expired or can no longer be refreshed, **when** the app re-checks auth state, **then** it clears local auth state and redirects me to the public home page instead of leaving me on an auth-only screen with an access-denied error.
 
 ### AC 4.4 Logout and token revocation
 
