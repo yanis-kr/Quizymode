@@ -1,6 +1,6 @@
 import { useState, useEffect, useMemo, useRef } from "react";
 import { useQuery } from "@tanstack/react-query";
-import { useNavigate, useSearchParams, useParams, Link } from "react-router-dom";
+import { useNavigate, useSearchParams, useParams, Link, useLocation } from "react-router-dom";
 import { categoriesApi } from "@/api/categories";
 import { keywordsApi } from "@/api/keywords";
 import { itemsApi } from "@/api/items";
@@ -81,6 +81,7 @@ const CategoriesPage = () => {
     pageSizeFromUrl !== 10 ? pageSizeFromUrl : userPageSize;
   const view = viewFromUrl === "items" ? "items" : "sets";
   const navigate = useNavigate();
+  const location = useLocation();
   // Scope filter state (synced from URL, applied on Apply)
   const filterTypeFromUrl = (searchParams.get("filterType") || "all") as ItemTypeFilterValue;
   const scopeSearchFromUrl = searchParams.get("search") || "";
@@ -172,6 +173,11 @@ const CategoriesPage = () => {
 
   const hasActiveScopeFilters =
     scopeFilterType !== "all" || scopeSearchText !== "" || scopeRatingMin !== null || scopeRatingMax !== null || scopeRatingIncludeUnrated || scopeRatingOnlyUnrated;
+  const itemDetailSearch = useMemo(() => {
+    const params = new URLSearchParams();
+    params.set("return", `${location.pathname}${location.search}`);
+    return `?${params.toString()}`;
+  }, [location.pathname, location.search]);
 
   const handleApplyFilter = () => {
     const path = buildCategoryPath(filterCategorySlug, filterKeywords);
@@ -999,7 +1005,7 @@ const CategoriesPage = () => {
                 renderActions={(item) => (
                   <>
                     <Link
-                      to={`/items/${item.id}`}
+                      to={`/items/${item.id}${itemDetailSearch}`}
                       className="inline-flex rounded-md p-2 text-indigo-600 hover:bg-indigo-50"
                       title="View item details"
                     >

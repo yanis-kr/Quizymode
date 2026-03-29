@@ -4,8 +4,6 @@ This document describes the application's behavior as **acceptance criteria** in
 
 Criteria are grouped by **feature** (e.g. AC 1.10 Bookmarking collections). Each feature is split into **API** (HTTP, status codes, payloads, authorization) and **UI** (labels, screens, user-visible behavior) so backend and frontend concerns stay separate while related behavior stays together. Sub-items are numbered **AC section.subsection.id** and always state the **Actor** (see below).
 
----
-
 ## Common API conventions
 
 Use these global contracts unless a specific AC explicitly defines a different behavior.
@@ -223,6 +221,7 @@ Terms used in this document with a specific meaning:
 
 - **AC 1.5.5** [Anyone] **Given** I have access to the collection (per API), **when** I open the collection in the UI and use List Items, Flashcards, or Quiz for that collection, **then** I see the collection **metadata** (collection name, description, owner name, date created) and the **list of items** returned by the API; when access is denied, I see an appropriate error. **URL examples:** List Items mode: **`/collections/{id}`**; Flashcards mode: **`/explore/collections/{id}`**; Quiz mode: **`/quiz/collections/{id}`**.
 - **AC 1.5.6** [Anyone] **Given** I am reviewing or using items within a collection in List Items, Flashcards, or Quiz modes, **when** the UI loads items for that collection, **then** it calls `GET /items?collectionId={id}` using the collection ID from the URL (not direct per-item lookups) so that private items and their private keywords included in that collection are visible per collection-scoped visibility rules.
+- **AC 1.5.7** [Anyone] **Given** I open an item's details screen from a collection List Items, Flashcards, or Quiz view, **when** I use the back control on the item-details screen, **then** I return to the same collection URL I came from (including the current item, current view, and query-string scope) so my place in the collection flow is preserved; for Quiz this includes restoring the current item's revealed / answered state when that session state is still available.
 
 ---
 
@@ -325,6 +324,7 @@ Terms used in this document with a specific meaning:
 **UI**
 
 - **AC 1.12.3** [Anyone] **Given** I am viewing a collection, **when** the page loads, **then** I see rating stats (count, average) per API; if authenticated, I can set or change my rating (1-5 stars) and the UI calls the API.
+- **AC 1.12.4** [Anonymous] **Given** I am viewing a collection rating UI that is read-only because I am not signed in (for example a Discover collection card or a collection study header), **when** I hover the stars, **then** I see a hint that signed-in users can rate the collection.
 
 ---
 
@@ -537,6 +537,8 @@ Categories are **public only** (there is no private category). Users navigate by
 
 ---
 
+- **AC 3.5.6** [Anyone] **Given** I open an item's details screen from category/global List Items mode, **when** I use the back control on the item-details screen, **then** I return to the same list URL I came from, including the current category path and active query-string filters.
+
 ### AC 3.6 Flashcards and Quiz by category/keywords
 
 **API**
@@ -552,6 +554,8 @@ Categories are **public only** (there is no private category). Users navigate by
 - **AC 3.6.5** [Anyone] **Given** I am in **Quiz** mode for a **category or global** scope (not a collection) and I change **Quiz size**, **when** the new size is applied, **then** the app requests a **new random set** of that many items for the current scope, clears in-session cached item lists used for quiz navigation, resets quiz progress for that run, and updates the URL so it no longer points at an item from the previous set unless that item is re-selected by the new load.
 
 ---
+
+- **AC 3.6.6** [Anyone] **Given** I open an item's details screen from category/global Flashcards or Quiz mode, **when** I use the back control on the item-details screen, **then** I return to the same Flashcards or Quiz URL I came from (including the current item and query-string scope); for Quiz this includes restoring the current item's revealed / answered state when that session state is still available.
 
 ### AC 3.7 Keyword descriptions (breadcrumb)
 

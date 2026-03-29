@@ -278,9 +278,13 @@ function CollectionCard({
               const avg = ratingData?.averageStars;
               const filled = avg != null && star <= Math.round(avg);
               return filled ? (
-                <StarIconSolid key={star} className="h-5 w-5 text-amber-500" />
+                <span key={star} className="p-0.5" title="Sign in to rate this collection.">
+                  <StarIconSolid className="h-5 w-5 text-amber-500" />
+                </span>
               ) : (
-                  <StarIcon key={star} className="h-5 w-5 text-slate-300" />
+                <span key={star} className="p-0.5" title="Sign in to rate this collection.">
+                  <StarIcon className="h-5 w-5 text-slate-300" />
+                </span>
               );
             })}
           </div>

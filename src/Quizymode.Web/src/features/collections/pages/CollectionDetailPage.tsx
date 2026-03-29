@@ -1,5 +1,5 @@
 import { useEffect, useState, useMemo } from "react";
-import { useParams, useNavigate, useSearchParams, Link } from "react-router-dom";
+import { useParams, useNavigate, useSearchParams, Link, useLocation } from "react-router-dom";
 import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
 import { collectionsApi } from "@/api/collections";
 import { useAuth } from "@/contexts/AuthContext";
@@ -24,6 +24,7 @@ const CollectionDetailPage = () => {
   const { isAuthenticated, userId } = useAuth();
   const queryClient = useQueryClient();
   const navigate = useNavigate();
+  const location = useLocation();
   const [manageCollectionsItemId, setManageCollectionsItemId] = useState<string | null>(null);
   const [itemsPage, setItemsPage] = useState(1);
   const [pageSize, setPageSize] = useState(25);
@@ -147,6 +148,11 @@ const CollectionDetailPage = () => {
 
   const collectionPath = id ? buildCollectionPath(id, collectionData?.name) : undefined;
   const collectionReturnUrl = collectionPath;
+  const itemDetailSearch = (() => {
+    const params = new URLSearchParams();
+    params.set("return", `${location.pathname}${location.search}`);
+    return `?${params.toString()}`;
+  })();
 
   return (
     <div className="space-y-4">
@@ -388,7 +394,7 @@ const CollectionDetailPage = () => {
             renderActions={(item) => (
               <>
                 <Link
-                  to={`/items/${item.id}`}
+                  to={`/items/${item.id}${itemDetailSearch}`}
                   className="p-2 text-indigo-600 hover:bg-indigo-50 rounded-md inline-flex"
                   title="View item details"
                 >

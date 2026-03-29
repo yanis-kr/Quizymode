@@ -3,7 +3,7 @@
  * ratings/comments, collection controls.
  */
 import type { ReactNode } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { ChevronLeftIcon, ChevronRightIcon, EyeIcon } from "@heroicons/react/24/outline";
 import type { ItemResponse } from "@/types/api";
 import ItemRatingsComments from "@/components/ItemRatingsComments";
@@ -71,6 +71,18 @@ export function StudyShell({
   footerContent,
   signUpPrompt,
 }: StudyShellProps) {
+  const location = useLocation();
+  const itemDetailHref = currentItem
+    ? (() => {
+        const params = new URLSearchParams();
+        params.set("return", `${location.pathname}${location.search}`);
+        if (navigationContext?.mode) {
+          params.set("returnMode", navigationContext.mode);
+        }
+        return `/items/${currentItem.id}?${params.toString()}`;
+      })()
+    : undefined;
+
   return (
     <div className="max-w-4xl mx-auto">
         {backContent}
@@ -85,7 +97,7 @@ export function StudyShell({
               </div>
               {currentItem && (
                 <Link
-                  to={`/items/${currentItem.id}`}
+                  to={itemDetailHref ?? `/items/${currentItem.id}`}
                   className="p-2 text-indigo-600 hover:bg-indigo-50 rounded-md"
                   title="View item details"
                 >
