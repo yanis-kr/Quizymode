@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import { useAuth } from "@/contexts/AuthContext";
 import { usersApi } from "@/api/users";
+import { queueSignUpPolicyAcceptances } from "@/features/legal/policyAcceptanceStorage";
 
 const SignUpPage = () => {
   const navigate = useNavigate();
@@ -64,7 +65,9 @@ const SignUpPage = () => {
         return;
       }
 
+      const acceptedAtUtc = new Date().toISOString();
       await signup(username, password, email);
+      queueSignUpPolicyAcceptances(email.trim(), acceptedAtUtc);
       setNeedsConfirmation(true);
     } catch (err: unknown) {
       setError(

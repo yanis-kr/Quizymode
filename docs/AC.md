@@ -706,6 +706,9 @@ Quizymode currently relies on the external identity provider for password, recov
 - **AC 4.6.2** [User] **Given** I sign in, sign up, confirm signup, or recover account access, **when** those flows require password or recovery handling, **then** the behavior is provided by the configured identity provider rather than by first-party Quizymode API endpoints.
 - **AC 4.6.3** [Anonymous] **Given** I am on the **Sign up** page, **when** I review or submit the form, **then** I can open the current **Terms of Service** and **Privacy Policy**, and the form does not continue unless I affirm them.
 - **AC 4.6.4** [Anyone] **Given** I am anywhere in the app, **when** I use the global footer, **then** I can open the **About**, **Feedback**, **Privacy Policy**, and **Terms of Service** pages.
+- **AC 4.6.5** [Authenticated] **Given** I call `POST /users/policy-acceptances` with one or more `{ policyType, policyVersion, acceptedAtUtc }` entries for the supported legal documents, **when** the request is valid, **then** the API records auditable acceptance rows for the current user with the submitted acceptance time plus the server-side recorded time; repeated submissions for the same `(user, policyType, policyVersion)` do not create duplicates.
+- **AC 4.6.6** [Anonymous] **Given** I am not authenticated, **when** I call `POST /users/policy-acceptances`, **then** the API returns **401 Unauthorized**.
+- **AC 4.6.7** [Anonymous -> Authenticated] **Given** I successfully submit sign-up with the legal acknowledgement checked, **when** I later complete an authenticated session on the same browser for that same email address, **then** the SPA sends the pending Terms of Service and Privacy Policy acceptance records to `POST /users/policy-acceptances` and clears the pending browser copy after the API confirms success.
 
 ---
 

@@ -16,6 +16,27 @@ export interface UpdateUserSettingResponse {
   updatedAt: string;
 }
 
+export interface PolicyAcceptanceItemRequest {
+  policyType: string;
+  policyVersion: string;
+  acceptedAtUtc: string;
+}
+
+export interface RecordPolicyAcceptancesRequest {
+  acceptances: PolicyAcceptanceItemRequest[];
+}
+
+export interface PolicyAcceptanceResponse {
+  policyType: string;
+  policyVersion: string;
+  acceptedAtUtc: string;
+  recordedAtUtc: string;
+}
+
+export interface RecordPolicyAcceptancesResponse {
+  acceptances: PolicyAcceptanceResponse[];
+}
+
 export const usersApi = {
   getCurrent: async (): Promise<UserResponse> => {
     const response = await apiClient.get<UserResponse>("/users/me");
@@ -42,6 +63,16 @@ export const usersApi = {
 
   updateSetting: async (data: UpdateUserSettingRequest): Promise<UpdateUserSettingResponse> => {
     const response = await apiClient.put<UpdateUserSettingResponse>("/users/settings", data);
+    return response.data;
+  },
+
+  recordPolicyAcceptances: async (
+    data: RecordPolicyAcceptancesRequest
+  ): Promise<RecordPolicyAcceptancesResponse> => {
+    const response = await apiClient.post<RecordPolicyAcceptancesResponse>(
+      "/users/policy-acceptances",
+      data
+    );
     return response.data;
   },
 };

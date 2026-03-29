@@ -32,6 +32,8 @@ public sealed class ApplicationDbContext : DbContext
 
     public DbSet<User> Users => Set<User>();
 
+    public DbSet<UserPolicyAcceptance> UserPolicyAcceptances => Set<UserPolicyAcceptance>();
+
     public DbSet<Audit> Audits => Set<Audit>();
 
     public DbSet<PageView> PageViews => Set<PageView>();

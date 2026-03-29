@@ -2913,6 +2913,43 @@
           }
         }
       }
+    },
+    "/users/policy-acceptances": {
+      "post": {
+        "tags": [
+          "Users"
+        ],
+        "summary": "Record policy acceptance(s) for the currently authenticated user",
+        "description": "Creates auditable acceptance records keyed by user, policy type, and policy version. Repeating the same acceptance is idempotent.",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Quizymode.Api.Features.Users.RecordPolicyAcceptances.Request"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Quizymode.Api.Features.Users.RecordPolicyAcceptances.Response"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "401": {
+            "description": "Unauthorized"
+          }
+        }
+      }
     }
   },
   "components": {
@@ -7327,6 +7364,70 @@
           }
         }
       },
+      "Quizymode.Api.Features.Users.RecordPolicyAcceptances.PolicyAcceptanceItem": {
+        "required": [
+          "policyType",
+          "policyVersion",
+          "acceptedAtUtc"
+        ],
+        "type": "object",
+        "properties": {
+          "policyType": {
+            "$ref": "#/components/schemas/System.String"
+          },
+          "policyVersion": {
+            "$ref": "#/components/schemas/System.String"
+          },
+          "acceptedAtUtc": {
+            "$ref": "#/components/schemas/System.DateTime"
+          }
+        }
+      },
+      "Quizymode.Api.Features.Users.RecordPolicyAcceptances.PolicyAcceptanceResponse": {
+        "required": [
+          "policyType",
+          "policyVersion",
+          "acceptedAtUtc",
+          "recordedAtUtc"
+        ],
+        "type": "object",
+        "properties": {
+          "policyType": {
+            "$ref": "#/components/schemas/System.String"
+          },
+          "policyVersion": {
+            "$ref": "#/components/schemas/System.String"
+          },
+          "acceptedAtUtc": {
+            "$ref": "#/components/schemas/System.DateTime"
+          },
+          "recordedAtUtc": {
+            "$ref": "#/components/schemas/System.DateTime"
+          }
+        }
+      },
+      "Quizymode.Api.Features.Users.RecordPolicyAcceptances.Request": {
+        "required": [
+          "acceptances"
+        ],
+        "type": "object",
+        "properties": {
+          "acceptances": {
+            "$ref": "#/components/schemas/System.Collections.Generic.IReadOnlyCollection`1[[Quizymode.Api.Features.Users.RecordPolicyAcceptances.PolicyAcceptanceItem, Quizymode.Api, Version=2.0.0.0, Culture=neutral, PublicKeyToken=null]]"
+          }
+        }
+      },
+      "Quizymode.Api.Features.Users.RecordPolicyAcceptances.Response": {
+        "required": [
+          "acceptances"
+        ],
+        "type": "object",
+        "properties": {
+          "acceptances": {
+            "$ref": "#/components/schemas/System.Collections.Generic.IReadOnlyCollection`1[[Quizymode.Api.Features.Users.RecordPolicyAcceptances.PolicyAcceptanceResponse, Quizymode.Api, Version=2.0.0.0, Culture=neutral, PublicKeyToken=null]]"
+          }
+        }
+      },
       "Quizymode.Api.Features.Users.UpdateUserName.Request": {
         "required": [
           "name"
@@ -7427,6 +7528,18 @@
         "type": "object",
         "additionalProperties": {
           "$ref": "#/components/schemas/System.String"
+        }
+      },
+      "System.Collections.Generic.IReadOnlyCollection`1[[Quizymode.Api.Features.Users.RecordPolicyAcceptances.PolicyAcceptanceItem, Quizymode.Api, Version=2.0.0.0, Culture=neutral, PublicKeyToken=null]]": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/Quizymode.Api.Features.Users.RecordPolicyAcceptances.PolicyAcceptanceItem"
+        }
+      },
+      "System.Collections.Generic.IReadOnlyCollection`1[[Quizymode.Api.Features.Users.RecordPolicyAcceptances.PolicyAcceptanceResponse, Quizymode.Api, Version=2.0.0.0, Culture=neutral, PublicKeyToken=null]]": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/Quizymode.Api.Features.Users.RecordPolicyAcceptances.PolicyAcceptanceResponse"
         }
       },
       "System.Collections.Generic.IReadOnlyList`1[[Quizymode.Api.Features.Taxonomy.GetTaxonomy.CategoryDto, Quizymode.Api, Version=2.0.0.0, Culture=neutral, PublicKeyToken=null]]": {
