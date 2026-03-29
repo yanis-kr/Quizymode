@@ -190,13 +190,14 @@ Each item must be a JSON object with this exact shape:
   "incorrectAnswers": ["Wrong 1", "Wrong 2", "Wrong 3"],
   "keywords": ["optional-extra-tag-1", "optional-extra-tag-2"],
   "explanation": "Short explanation (optional but recommended)",
-  "source": "Your assistant name"
+  "source": "https://example.com/reliable-reference"
 }
 
 Requirements:
 - Return a single JSON array of items: [ { ... }, { ... }, ... ].
 - Do NOT include any explanations, prose, comments, Markdown, or code fences. Output raw JSON only.
 - Every item must have: "category", non-empty "question", non-empty "correctAnswer", 1–5 "incorrectAnswers", optional "explanation" and "source".
+- If you include "source", it must be a direct URL to a reliable, verifiable source for that fact or question. Prefer official documentation, standards bodies, government/education sites, textbooks, or other authoritative references. Do not use the AI assistant name as the source.
 - Optional "keywords": up to 5 extra tags per item (letters, numbers, hyphens only; lowercase recommended). Suggest tags that help discovery (skills, subthemes, standards) for that specific question. Do not repeat the navigation topic path ("${navLine}") or the category name as tags; omit "keywords" or use [] if none.${reservedTagsHint}
 - All strings must be plain text (no HTML, no LaTeX).
 - Keep the questions varied and avoid near-duplicates.
