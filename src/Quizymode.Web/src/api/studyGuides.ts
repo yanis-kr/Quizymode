@@ -7,6 +7,7 @@ export interface StudyGuideResponse {
   sizeBytes: number;
   createdUtc: string;
   updatedUtc: string;
+  expiresAtUtc: string;
 }
 
 export interface UpsertStudyGuideRequest {
@@ -19,6 +20,7 @@ export interface UpsertStudyGuideResponse {
   title: string;
   sizeBytes: number;
   updatedUtc: string;
+  expiresAtUtc: string;
 }
 
 const DEFAULT_MAX_BYTES = 51_200; // 50 KB

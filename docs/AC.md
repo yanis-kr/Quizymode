@@ -831,15 +831,19 @@ Feedback submissions are lightweight inbound messages from the SPA. They may be 
 **API**
 
 - **AC 6.1.1** [Authenticated] **Given** I am authenticated and have no study guide yet, **when** I call `GET /study-guides/current`, **then** the API returns 404 Not Found (no guide exists); the body may be empty or ProblemDetails, and no study guide is created implicitly.
-- **AC 6.1.2** [Authenticated] **Given** I am authenticated, **when** I call `PUT /study-guides/current` with a JSON body `{ "title": "...", "contentText": "..." }` whose UTF-8 byte length is at most my **per-user study guide byte limit**, **then** the API upserts my single private study guide (creating it if missing, replacing it if it exists) and returns 200 with `id`, `title`, `sizeBytes`, and `updatedUtc`; `sizeBytes` equals the UTF-8 byte length of `contentText`.
+- **AC 6.1.2** [Authenticated] **Given** I am authenticated, **when** I call `PUT /study-guides/current` with a JSON body `{ "title": "...", "contentText": "..." }` whose UTF-8 byte length is at most my **per-user study guide byte limit**, **then** the API upserts my single private study guide (creating it if missing, replacing it if it exists) and returns 200 with `id`, `title`, `sizeBytes`, `updatedUtc`, and `expiresAtUtc`; `sizeBytes` equals the UTF-8 byte length of `contentText`, and `expiresAtUtc` is set to 14 days from the time of the save.
 - **AC 6.1.3** [Authenticated] **Given** I try to save a study guide whose `contentText` exceeds my **per-user study guide byte limit**, **when** I call `PUT /study-guides/current`, **then** the API returns 400 Bad Request with a validation error explaining that the limit was exceeded (including the maximum bytes and current size); the previous guide (if any) is left unchanged.
 - **AC 6.1.4** [Authenticated] **Given** I have a study guide, **when** I call `DELETE /study-guides/current`, **then** the API deletes my study guide (idempotent) and returns 204 No Content; subsequent `GET /study-guides/current` returns 404 until I create a new one.
 - **AC 6.1.5** [Anonymous] **Given** I am not authenticated, **when** I call any of `GET/PUT/DELETE /study-guides/current`, **then** the API returns 401 Unauthorized.
+- **AC 6.1.8** [Authenticated] **Given** I have a study guide, **when** I call `GET /study-guides/current`, **then** the response includes `expiresAtUtc` (ISO-8601 UTC) indicating when the guide will be automatically deleted.
+- **AC 6.1.9** [System] **Given** a study guide's `expiresAtUtc` is in the past, **when** the daily background cleanup runs, **then** the API deletes that study guide and all cascade-related import sessions, chunks, and results; the cleanup runs approximately every 24 hours and logs the number of records deleted.
+- **AC 6.1.10** [System] Saving (creating or updating) a study guide resets `expiresAtUtc` to 14 days from the save time, extending the retention window.
 
 **UI**
 
 - **AC 6.1.6** [Authenticated] **Given** I open the Study Guide screen, **when** the page loads, **then** I see a title input, a large text area for study guide text, preparation instructions, a byte counter and remaining bytes indicator, and Save/Delete/Cancel controls; the byte counter updates as I type, and the Save button is disabled when the content exceeds my effective study-guide limit (default **51,200 bytes / 50 KB**, unless overridden by `StudyGuideMaxBytes`).
 - **AC 6.1.7** [Authenticated] **Given** I have a saved study guide, **when** I visit the Study Guide screen, **then** the title and content area are pre-filled with my latest saved values, and clicking **Start import workflow** takes me to the import wizard at `/study-guide/import`.
+- **AC 6.1.11** [Authenticated] **Given** I open the Study Guide screen, **when** the page loads, **then** a persistent warning banner informs me that study guides are temporary storage and are automatically deleted 14 days after the last save; if a guide already exists, the banner also displays the exact expiry date and notes that saving again will reset the 14-day clock.
 
 ### AC 6.2 Study guide import session and chunking
 
