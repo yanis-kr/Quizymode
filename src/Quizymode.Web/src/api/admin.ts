@@ -115,6 +115,85 @@ export interface PageViewAnalyticsResponse {
   totalPages: number;
 }
 
+export type AdminUserActivityFilter =
+  | "all"
+  | "with-activity"
+  | "without-activity";
+
+export interface AdminUsersSummaryResponse {
+  activityWindowStartUtc: string;
+  activityWindowEndUtc: string;
+  totalRegisteredUsers: number;
+  filteredUsers: number;
+  usersWithActivityInWindow: number;
+  usersWithoutActivityInWindow: number;
+}
+
+export interface AdminUserOverviewResponse {
+  id: string;
+  name?: string | null;
+  email?: string | null;
+  createdAt: string;
+  lastLogin: string;
+  uniqueUrlsInWindow: number;
+  totalPageViewsInWindow: number;
+  lastOpenedUtc?: string | null;
+}
+
+export interface AdminUsersResponse {
+  summary: AdminUsersSummaryResponse;
+  users: AdminUserOverviewResponse[];
+  totalCount: number;
+  page: number;
+  pageSize: number;
+  totalPages: number;
+}
+
+export interface AdminUserActivitySummaryResponse {
+  windowStartUtc: string;
+  windowEndUtc: string;
+  totalViews: number;
+  uniqueUrls: number;
+  lastOpenedUtc?: string | null;
+}
+
+export interface AdminUserUrlHistoryResponse {
+  url: string;
+  path: string;
+  queryString: string;
+  openCount: number;
+  firstOpenedUtc: string;
+  lastOpenedUtc: string;
+}
+
+export interface AdminUserDetailResponse {
+  id: string;
+  name?: string | null;
+  email?: string | null;
+  createdAt: string;
+  lastLogin: string;
+}
+
+export interface AdminUserActivityResponse {
+  user: AdminUserDetailResponse;
+  summary: AdminUserActivitySummaryResponse;
+  urlHistory: AdminUserUrlHistoryResponse[];
+  totalCount: number;
+  page: number;
+  pageSize: number;
+  totalPages: number;
+}
+
+export interface AdminUserSettingsResponse {
+  settings: Record<string, string>;
+}
+
+export interface AdminUserSettingUpdateResponse {
+  key: string;
+  value: string;
+  updatedAt: string;
+}
+
 export interface SeedSyncItemRequest {
   seedId: string;
   category: string;
@@ -258,6 +337,73 @@ export const adminApi = {
     const response = await apiClient.get<PageViewAnalyticsResponse>(
       "/admin/page-view-analytics",
       { params }
+    );
+    return response.data;
+  },
+
+  getUsers: async (
+    search?: string,
+    activityDays: number = 30,
+    activityFilter: AdminUserActivityFilter = "all",
+    page: number = 1,
+    pageSize: number = 25
+  ): Promise<AdminUsersResponse> => {
+    const params: Record<string, string | number> = {
+      activityDays,
+      activityFilter,
+      page,
+      pageSize,
+    };
+    if (search && search.trim().length > 0) {
+      params.search = search.trim();
+    }
+
+    const response = await apiClient.get<AdminUsersResponse>("/admin/users", {
+      params,
+    });
+    return response.data;
+  },
+
+  getUserActivity: async (
+    userId: string,
+    days: number = 30,
+    urlContains?: string,
+    page: number = 1,
+    pageSize: number = 25
+  ): Promise<AdminUserActivityResponse> => {
+    const params: Record<string, string | number> = {
+      days,
+      page,
+      pageSize,
+    };
+    if (urlContains && urlContains.trim().length > 0) {
+      params.urlContains = urlContains.trim();
+    }
+
+    const response = await apiClient.get<AdminUserActivityResponse>(
+      `/admin/users/${userId}/page-view-history`,
+      { params }
+    );
+    return response.data;
+  },
+
+  getUserSettings: async (
+    userId: string
+  ): Promise<AdminUserSettingsResponse> => {
+    const response = await apiClient.get<AdminUserSettingsResponse>(
+      `/admin/users/${userId}/settings`
+    );
+    return response.data;
+  },
+
+  updateUserSetting: async (
+    userId: string,
+    key: string,
+    value: string
+  ): Promise<AdminUserSettingUpdateResponse> => {
+    const response = await apiClient.put<AdminUserSettingUpdateResponse>(
+      `/admin/users/${userId}/settings`,
+      { key, value }
     );
     return response.data;
   },
