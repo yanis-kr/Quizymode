@@ -730,6 +730,11 @@ User settings are key-value pairs stored per user (e.g. **PageSize** for default
 
 - **AC 4.7.7** [Authenticated] **Given** I am authenticated, **when** I open my profile or settings, **then** I can view and edit my default pagination (PageSize); changes are persisted via `PUT /users/settings` and used on subsequent visits and on pages that take the default (e.g. Categories list when the URL does not specify `pagesize`).
 - **AC 4.7.8** [Authenticated] **Given** I am on a page that uses default pagination (e.g. Categories list view), **when** the URL does not specify `pagesize`, **then** my saved PageSize setting is used; if the URL specifies `pagesize`, the URL value takes precedence for that page/session.
+- **AC 4.7.9** [Authenticated] **Given** I see the content-compliance warning on add/import flows, **when** I choose **don't show again**, **then** the app persists that preference in `PUT /users/settings` and hides the warning on subsequent visits for that user.
+
+**Content-compliance warning**
+
+- **AC 4.7.10** [Authenticated] **Given** I open item creation or import flows (for example Add Items, Create Item, Generate One AI Batch, Upload items to collection, or Study Guide prompt-set import), **when** I have not previously dismissed the warning, **then** the UI shows a warning reminding me not to upload infringing or unauthorized personal/confidential content, to review AI-generated content, and linking to the current Terms of Service and Privacy Policy.
 
 ---
 

@@ -57,7 +57,7 @@ If you use an external AI tool, you are responsible for:
 
 ## 8. Complaints, Takedowns, and Repeat Violations
 
-If you believe content on Quizymode infringes your rights or violates your privacy, contact us through the feedback page at `https://www.quizymode.com/feedback` or another contact method published on the service. Please include enough information for us to identify the material, review the claim, and contact you if needed.
+If you believe content on Quizymode infringes your rights or violates your privacy, contact us at `legal@quizymode.com` or through the feedback page at `https://www.quizymode.com/feedback`. Please include enough information for us to identify the material, review the claim, and contact you if needed.
 
 We may remove or restrict access to content, suspend features, or terminate accounts when we reasonably believe content or conduct violates these Terms, the law, or the rights of others. We may also terminate repeat infringers or repeat violators where appropriate.
 
@@ -96,4 +96,4 @@ We may update these Terms from time to time. When we do, we will update the effe
 
 ## 16. Contact
 
-For questions about these Terms or to report content issues, use the feedback page at `https://www.quizymode.com/feedback` or another contact method published on the service.
+For questions about these Terms or to report content issues, contact `legal@quizymode.com`.

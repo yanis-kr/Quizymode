@@ -18,6 +18,7 @@ import {
   parseKeywordsParam,
 } from "@/utils/addItemsScopeUrl";
 import { useExtraKeywordAutocompleteSource } from "@/hooks/useExtraKeywordAutocompleteSource";
+import ContentComplianceNotice from "@/features/legal/components/ContentComplianceNotice";
 
 const EXTRA_KEYWORD_AUTOCOMPLETE_LIMIT = 10;
 
@@ -194,6 +195,8 @@ const AddItemsPage = () => {
           category, navigation path, and extra keywords stay in the URL so each path starts with the
           same setup.
         </p>
+
+        <ContentComplianceNotice />
 
         <section className="rounded-lg border border-gray-200 bg-slate-50/80 p-4 sm:p-5 space-y-4 mb-8">
           <div>

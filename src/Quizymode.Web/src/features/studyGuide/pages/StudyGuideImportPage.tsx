@@ -19,6 +19,7 @@ import {
   parseKeywordsParam,
 } from "@/utils/addItemsScopeUrl";
 import { validateNavigationKeywordName } from "@/utils/navigationKeywordRules";
+import ContentComplianceNotice from "@/features/legal/components/ContentComplianceNotice";
 
 type Step = 1 | 2 | 3 | 4;
 
@@ -444,6 +445,8 @@ const StudyGuideImportPage = () => {
         Use your uploaded study guide to create a chosen number of prompt sets. Each prompt set asks
         AI for 10-15 new private items for the selected category, topic path, and extra keywords.
       </p>
+
+      <ContentComplianceNotice />
 
       {renderStepIndicator()}
 

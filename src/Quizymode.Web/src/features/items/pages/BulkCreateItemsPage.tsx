@@ -17,6 +17,7 @@ import {
 } from "@heroicons/react/24/outline";
 import { ItemTopicScopeFields } from "@/components/items/ItemTopicScopeFields";
 import { validateNavigationKeywordName } from "@/utils/navigationKeywordRules";
+import ContentComplianceNotice from "@/features/legal/components/ContentComplianceNotice";
 
 const MAX_PROMPT_QUESTIONS = 15;
 
@@ -403,6 +404,8 @@ Generate the JSON array only.`;
         <p className="text-gray-600 text-sm mb-6">
           Choose a category and topic path, generate a prompt for any AI assistant, paste the response, then review and save 10-15 new private items.
         </p>
+
+        <ContentComplianceNotice />
 
         {localError && (
           <div className="mb-4">

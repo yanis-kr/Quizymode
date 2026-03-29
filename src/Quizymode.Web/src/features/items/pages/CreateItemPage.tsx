@@ -12,6 +12,7 @@ import { validateNavigationKeywordName } from "@/utils/navigationKeywordRules";
 import { useExtraKeywordAutocompleteSource } from "@/hooks/useExtraKeywordAutocompleteSource";
 import { parseKeywordsParam } from "@/utils/addItemsScopeUrl";
 import LoadingSpinner from "@/components/LoadingSpinner";
+import ContentComplianceNotice from "@/features/legal/components/ContentComplianceNotice";
 
 interface ApiValidationError {
   errorMessage?: string;
@@ -311,6 +312,8 @@ const CreateItemPage = () => {
           optional explanation. Regular users can create private items; admins can create public
           items visible to everyone.
         </p>
+
+        <ContentComplianceNotice />
 
         <CreateItemEditor
           key={scopeKey}

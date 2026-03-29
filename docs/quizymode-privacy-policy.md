@@ -65,7 +65,7 @@ If you choose to paste content into an external AI tool, that provider handles t
 
 We retain information for as long as reasonably necessary to operate the service, maintain security, resolve disputes, enforce our terms, and comply with legal obligations.
 
-Because self-service account deletion is not currently available in the app, you may contact us through `https://www.quizymode.com/feedback` or another published contact method if you want to request review of a deletion request.
+Because self-service account deletion is not currently available in the app, you may contact us at `legal@quizymode.com` if you want to request review of a deletion request.
 
 ## 8. Your Choices and Rights
 
@@ -79,7 +79,7 @@ You can also:
 
 ## 9. Children's Privacy
 
-Quizymode is not intended for children under 13, and we do not knowingly collect personal information from children under 13. If you believe a child under 13 has provided personal information through the service, contact us through `https://www.quizymode.com/feedback`.
+Quizymode is not intended for children under 13, and we do not knowingly collect personal information from children under 13. If you believe a child under 13 has provided personal information through the service, contact us at `legal@quizymode.com`.
 
 ## 10. Security
 
@@ -95,4 +95,4 @@ We may update this Privacy Policy from time to time. When we do, we will update 
 
 ## 13. Contact
 
-For privacy questions, requests, or complaints, use the feedback page at `https://www.quizymode.com/feedback` or another contact method published on the service.
+For privacy questions, requests, or complaints, contact `legal@quizymode.com`.
