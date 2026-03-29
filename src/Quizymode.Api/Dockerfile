@@ -28,7 +28,9 @@ WORKDIR "/src/Quizymode.Api"
 # This stage is used to publish the service project to be copied to the final stage
 FROM build AS publish
 ARG BUILD_CONFIGURATION=Release
-RUN dotnet publish "./Quizymode.Api.csproj" -c $BUILD_CONFIGURATION -o /app/publish /p:UseAppHost=false
+ARG APP_VERSION=3.0.0
+ARG SOURCE_REVISION_ID=local
+RUN dotnet publish "./Quizymode.Api.csproj" -c $BUILD_CONFIGURATION -o /app/publish /p:UseAppHost=false /p:Version=$APP_VERSION /p:InformationalVersion=$APP_VERSION+$SOURCE_REVISION_ID /p:SourceRevisionId=$SOURCE_REVISION_ID
 
 # This stage is used in production or when running from VS in regular mode (Default when not using the Debug configuration)
 FROM base AS final
