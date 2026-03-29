@@ -15,7 +15,8 @@ public static class GetCurrentStudyGuide
         string ContentText,
         int SizeBytes,
         string CreatedUtc,
-        string UpdatedUtc);
+        string UpdatedUtc,
+        string ExpiresAtUtc);
 
     public sealed class Endpoint : IEndpoint
     {
@@ -70,7 +71,8 @@ public static class GetCurrentStudyGuide
                 guide.ContentText,
                 guide.SizeBytes,
                 guide.CreatedUtc.ToString("O"),
-                guide.UpdatedUtc.ToString("O"));
+                guide.UpdatedUtc.ToString("O"),
+                guide.ExpiresAtUtc.ToString("O"));
 
             return Result.Success<Response?>(response);
         }

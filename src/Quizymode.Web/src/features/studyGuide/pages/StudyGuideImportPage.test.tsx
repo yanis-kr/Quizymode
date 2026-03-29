@@ -70,6 +70,7 @@ describe("StudyGuideImportPage", () => {
       sizeBytes: 32,
       createdUtc: "2026-03-24T00:00:00Z",
       updatedUtc: "2026-03-24T00:00:00Z",
+      expiresAtUtc: "2026-04-07T00:00:00Z",
     });
 
     vi.mocked(categoriesApi.getAll).mockResolvedValue({

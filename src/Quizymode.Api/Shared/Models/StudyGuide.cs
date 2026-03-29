@@ -27,4 +27,9 @@ public sealed class StudyGuide
     public DateTime CreatedUtc { get; set; }
 
     public DateTime UpdatedUtc { get; set; }
+
+    /// <summary>
+    /// UTC timestamp after which this study guide will be automatically deleted (14 days after last save).
+    /// </summary>
+    public DateTime ExpiresAtUtc { get; set; }
 }

@@ -16,11 +16,14 @@ public static class UpsertCurrentStudyGuide
 
     public sealed record Request(string Title, string ContentText);
 
+    public const int ExpiryDays = 14;
+
     public sealed record Response(
         string Id,
         string Title,
         int SizeBytes,
-        string UpdatedUtc);
+        string UpdatedUtc,
+        string ExpiresAtUtc);
 
     public sealed class Validator : AbstractValidator<Request>
     {
@@ -127,19 +130,23 @@ public static class UpsertCurrentStudyGuide
 
             var now = DateTime.UtcNow;
 
+            DateTime expiresAt = now.AddDays(ExpiryDays);
+
             if (existing is not null)
             {
                 existing.Title = request.Title.Trim();
                 existing.ContentText = request.ContentText;
                 existing.SizeBytes = sizeBytes;
                 existing.UpdatedUtc = now;
+                existing.ExpiresAtUtc = expiresAt;
                 await db.SaveChangesAsync(cancellationToken);
 
                 return Result.Success(new Response(
                     existing.Id.ToString(),
                     existing.Title,
                     existing.SizeBytes,
-                    existing.UpdatedUtc.ToString("O")));
+                    existing.UpdatedUtc.ToString("O"),
+                    existing.ExpiresAtUtc.ToString("O")));
             }
 
             var guide = new StudyGuide
@@ -150,7 +157,8 @@ public static class UpsertCurrentStudyGuide
                 ContentText = request.ContentText,
                 SizeBytes = sizeBytes,
                 CreatedUtc = now,
-                UpdatedUtc = now
+                UpdatedUtc = now,
+                ExpiresAtUtc = expiresAt
             };
             db.StudyGuides.Add(guide);
             await db.SaveChangesAsync(cancellationToken);
@@ -159,7 +167,8 @@ public static class UpsertCurrentStudyGuide
                 guide.Id.ToString(),
                 guide.Title,
                 guide.SizeBytes,
-                guide.UpdatedUtc.ToString("O")));
+                guide.UpdatedUtc.ToString("O"),
+                guide.ExpiresAtUtc.ToString("O")));
         }
         catch (Exception ex)
         {

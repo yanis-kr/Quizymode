@@ -35,6 +35,9 @@ internal sealed class StudyGuideConfiguration : IEntityTypeConfiguration<StudyGu
         builder.Property(x => x.UpdatedUtc)
             .IsRequired();
 
+        builder.Property(x => x.ExpiresAtUtc)
+            .IsRequired();
+
         builder.HasIndex(x => x.UserId)
             .IsUnique();
     }

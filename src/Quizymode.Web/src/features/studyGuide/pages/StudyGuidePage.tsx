@@ -127,6 +127,18 @@ const StudyGuidePage = () => {
         Store your study guide text here (max {(effectiveMaxBytes / 1024).toFixed(1)} KB total). You can then use it to
         generate prompts and import items.
       </p>
+
+      <div className="mb-4 p-4 bg-yellow-50 border border-yellow-300 rounded-lg text-sm text-yellow-900">
+        <strong>Temporary storage only.</strong> Study guides are automatically deleted 14 days after the last save.
+        {guide?.expiresAtUtc && (
+          <span className="block mt-1">
+            This guide expires on{" "}
+            <strong>{new Date(guide.expiresAtUtc).toLocaleDateString(undefined, { dateStyle: "long" })}</strong>.
+            Saving again will reset the 14-day clock.
+          </span>
+        )}
+      </div>
+
       {location.search && (
         <p className="text-xs text-indigo-700 mb-4">
           Your selected category, topic path, and extra keywords will be kept when you continue to AI prompt sets.
