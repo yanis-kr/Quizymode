@@ -3,6 +3,7 @@ import {
   useContext,
   useState,
   useEffect,
+  useCallback,
   type ReactNode,
 } from "react";
 import {
@@ -12,7 +13,7 @@ import {
   signUp,
   confirmSignUp,
 } from "aws-amplify/auth";
-import { setTokens, clearTokens } from "@/utils/tokenStorage";
+import { hasToken, setTokens, clearTokens } from "@/utils/tokenStorage";
 import { authApi } from "@/api/auth";
 
 interface AuthContextType {
@@ -52,16 +53,16 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
   const [isAdmin, setIsAdmin] = useState(false);
 
   // Helper function to clear all auth state
-  const clearAuthState = () => {
+  const clearAuthState = useCallback(() => {
     setIsAuthenticated(false);
     setUserId(null);
     setUsername(null);
     setEmail(null);
     setIsAdmin(false);
     clearTokens();
-  };
+  }, []);
 
-  const refreshAuth = async () => {
+  const refreshAuth = useCallback(async () => {
     try {
       // Use forceRefresh to ensure we get fresh tokens if refresh token is available
       const session = await fetchAuthSession({ forceRefresh: false });
@@ -250,7 +251,7 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
     } finally {
       setIsLoading(false);
     }
-  };
+  }, [clearAuthState]);
 
   useEffect(() => {
     // Wrap in try-catch to prevent errors from breaking the app
@@ -258,7 +259,31 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
       console.error("Initial auth check failed:", error);
       setIsLoading(false);
     });
-  }, []);
+  }, [refreshAuth]);
+
+  useEffect(() => {
+    const refreshAuthWhenVisible = () => {
+      if (document.visibilityState === "hidden") {
+        return;
+      }
+
+      if (!isAuthenticated && !hasToken()) {
+        return;
+      }
+
+      refreshAuth().catch((error) => {
+        console.error("Foreground auth refresh failed:", error);
+      });
+    };
+
+    window.addEventListener("focus", refreshAuthWhenVisible);
+    document.addEventListener("visibilitychange", refreshAuthWhenVisible);
+
+    return () => {
+      window.removeEventListener("focus", refreshAuthWhenVisible);
+      document.removeEventListener("visibilitychange", refreshAuthWhenVisible);
+    };
+  }, [isAuthenticated, refreshAuth]);
 
   const login = async (username: string, password: string) => {
     try {

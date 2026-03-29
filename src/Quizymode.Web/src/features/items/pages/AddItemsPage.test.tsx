@@ -113,7 +113,9 @@ describe("AddItemsPage", () => {
       categories: [
         {
           slug: "science",
+          name: "Science",
           description: "",
+          itemCount: 0,
           allKeywordSlugs: ["anatomy", "muscular", "arms", "arteries"],
           groups: [],
         },

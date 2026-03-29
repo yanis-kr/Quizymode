@@ -20,6 +20,7 @@ import AdminKeywordReviewPage from "./features/admin/pages/AdminKeywordReviewPag
 import AdminCategoriesPage from "./features/admin/pages/AdminCategoriesPage";
 import AdminUserSettingsPage from "./features/admin/pages/AdminUserSettingsPage";
 import AdminSeedSyncPage from "./features/admin/pages/AdminSeedSyncPage";
+import PageViewAnalyticsPage from "./features/admin/pages/PageViewAnalyticsPage";
 import BulkCreateItemsPage from "./features/items/pages/BulkCreateItemsPage";
 import AddItemsPage from "./features/items/pages/AddItemsPage";
 import UploadToCollectionPage from "./features/items/pages/UploadToCollectionPage";
@@ -30,10 +31,13 @@ import RoadmapPage from "./features/roadmap/pages/RoadmapPage";
 import FeedbackPage from "./features/feedback/pages/FeedbackPage";
 import StudyGuidePage from "./features/studyGuide/pages/StudyGuidePage";
 import StudyGuideImportPage from "./features/studyGuide/pages/StudyGuideImportPage";
+import PageViewTracker from "./features/analytics/PageViewTracker";
+import RequireAuthRoute from "./components/RequireAuthRoute";
 
 function App() {
   return (
     <Layout>
+      <PageViewTracker />
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route
@@ -87,31 +91,36 @@ function App() {
         <Route path="/quiz/:category?" element={<QuizModePage />} />
         <Route path="/login" element={<LoginPage />} />
         <Route path="/signup" element={<SignUpPage />} />
-        <Route path="/items/add" element={<AddItemsPage />} />
-        <Route path="/items/bulk-create" element={<BulkCreateItemsPage />} />
-        <Route path="/items/upload" element={<UploadToCollectionPage />} />
-        <Route path="/add-new-item" element={<CreateItemPage />} />
-        <Route path="/items/create" element={<CreateItemPage />} />
-        <Route path="/items/:id/edit" element={<EditItemPage />} />
+        <Route element={<RequireAuthRoute />}>
+          <Route path="/items/add" element={<AddItemsPage />} />
+          <Route path="/items/bulk-create" element={<BulkCreateItemsPage />} />
+          <Route path="/items/upload" element={<UploadToCollectionPage />} />
+          <Route path="/add-new-item" element={<CreateItemPage />} />
+          <Route path="/items/create" element={<CreateItemPage />} />
+          <Route path="/items/:id/edit" element={<EditItemPage />} />
+          <Route path="/study-guide" element={<StudyGuidePage />} />
+          <Route path="/study-guide/import" element={<StudyGuideImportPage />} />
+        </Route>
         <Route path="/items/:id/comments" element={<ItemCommentsPage />} />
         <Route path="/items/:id" element={<ItemDetailPage />} />
         <Route path="/collections" element={<CollectionsPage />} />
         <Route path="/collections/:id/:slug" element={<CollectionDetailPage />} />
         <Route path="/collections/:id" element={<CollectionDetailPage />} />
-        <Route path="/admin" element={<AdminDashboardPage />} />
-        <Route path="/admin/review-board" element={<ReviewBoardPage />} />
-        <Route path="/admin/database-size" element={<DatabaseSizePage />} />
-        <Route path="/admin/audit-logs" element={<AuditLogsPage />} />
-        <Route path="/admin/keywords" element={<AdminKeywordsPage />} />
-        <Route path="/admin/keyword-review" element={<AdminKeywordReviewPage />} />
-        <Route path="/admin/categories" element={<AdminCategoriesPage />} />
-        <Route path="/admin/user-settings" element={<AdminUserSettingsPage />} />
-        <Route path="/admin/seed-sync" element={<AdminSeedSyncPage />} />
+        <Route element={<RequireAuthRoute requireAdmin />}>
+          <Route path="/admin" element={<AdminDashboardPage />} />
+          <Route path="/admin/review-board" element={<ReviewBoardPage />} />
+          <Route path="/admin/database-size" element={<DatabaseSizePage />} />
+          <Route path="/admin/audit-logs" element={<AuditLogsPage />} />
+          <Route path="/admin/keywords" element={<AdminKeywordsPage />} />
+          <Route path="/admin/keyword-review" element={<AdminKeywordReviewPage />} />
+          <Route path="/admin/categories" element={<AdminCategoriesPage />} />
+          <Route path="/admin/user-settings" element={<AdminUserSettingsPage />} />
+          <Route path="/admin/seed-sync" element={<AdminSeedSyncPage />} />
+          <Route path="/admin/page-views" element={<PageViewAnalyticsPage />} />
+        </Route>
         <Route path="/about" element={<AboutPage />} />
         <Route path="/roadmap" element={<RoadmapPage />} />
         <Route path="/feedback" element={<FeedbackPage />} />
-        <Route path="/study-guide" element={<StudyGuidePage />} />
-        <Route path="/study-guide/import" element={<StudyGuideImportPage />} />
       </Routes>
     </Layout>
   );

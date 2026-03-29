@@ -34,6 +34,8 @@ public sealed class ApplicationDbContext : DbContext
 
     public DbSet<Audit> Audits => Set<Audit>();
 
+    public DbSet<PageView> PageViews => Set<PageView>();
+
     public DbSet<Keyword> Keywords => Set<Keyword>();
 
     public DbSet<ItemKeyword> ItemKeywords => Set<ItemKeyword>();

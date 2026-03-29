@@ -11,9 +11,11 @@ Variables:
 - {category}=science
 - {prompt}=data/prompts/{category}.md
 - {folder}=data/bulk-seed/{category}
-- {progress}={folder}/_progress.md
-- {state}={folder}/_{category}_state.md
+- {progress}=generated/seed-progress/{category}/_progress.md
+- {state}=generated/seed-progress/{category}/_{category}_state.md
 ```
+
+The `{progress}` and `{state}` files are local continuity files. They live under `generated/seed-progress/`, which is ignored by git.
 
 Optional for narrower runs:
 
@@ -30,8 +32,8 @@ Variables:
 - {category}=trivia
 - {prompt}=data/prompts/{category}.md
 - {folder}=data/bulk-seed/{category}
-- {progress}={folder}/_progress.md
-- {state}={folder}/_{category}_state.md
+- {progress}=generated/seed-progress/{category}/_progress.md
+- {state}=generated/seed-progress/{category}/_{category}_state.md
 
 Read:
 - data/prompts/_master_prompt.md
@@ -143,8 +145,8 @@ Variables:
 - {category}=trivia
 - {prompt}=data/prompts/{category}.md
 - {folder}=data/bulk-seed/{category}
-- {progress}={folder}/_progress.md
-- {state}={folder}/_{category}_state.md
+- {progress}=generated/seed-progress/{category}/_progress.md
+- {state}=generated/seed-progress/{category}/_{category}_state.md
 
 Read:
 - data/prompts/_master_prompt.md

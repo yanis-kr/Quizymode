@@ -1,13 +1,15 @@
 # -*- coding: utf-8 -*-
-"""Rewrite data/bulk-seed/business/_progress.md from taxonomy and existing business.*.json files."""
+"""Rewrite the local business progress file from taxonomy and existing business.*.json files."""
 from __future__ import annotations
 
 import json
 from pathlib import Path
 
+from seed_progress_paths import ensure_category_progress_dir, progress_file_path
+
 ROOT = Path(__file__).resolve().parents[1]
 OUT = ROOT / "data" / "bulk-seed" / "business"
-PROGRESS = OUT / "_progress.md"
+PROGRESS = progress_file_path("business")
 TAXONOMY = ROOT / "docs" / "quizymode_taxonomy.yaml"
 
 SKIP_L1 = {"general", "mixed"}
@@ -54,6 +56,7 @@ def eligible_pairs() -> list[tuple[str, str]]:
 
 def main() -> None:
     OUT.mkdir(parents=True, exist_ok=True)
+    ensure_category_progress_dir("business")
 
     rows: list[tuple[str, int, str]] = []
     for path in sorted(OUT.glob("business.*.json")):

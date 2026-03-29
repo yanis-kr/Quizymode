@@ -1,13 +1,15 @@
 # -*- coding: utf-8 -*-
-"""Rewrite data/bulk-seed/science/_progress.md from taxonomy and existing science.*.json files."""
+"""Rewrite the local science progress file from taxonomy and existing science.*.json files."""
 from __future__ import annotations
 
 import json
 from pathlib import Path
 
+from seed_progress_paths import ensure_category_progress_dir, progress_file_path
+
 ROOT = Path(__file__).resolve().parents[1]
 OUT = ROOT / "data" / "bulk-seed" / "science"
-PROGRESS = OUT / "_progress.md"
+PROGRESS = progress_file_path("science")
 TAXONOMY = ROOT / "docs" / "quizymode_taxonomy.yaml"
 
 # Match `data/prompts/science.md` strict rule defaults.
@@ -56,6 +58,7 @@ def eligible_pairs() -> list[tuple[str, str]]:
 
 def main() -> None:
     OUT.mkdir(parents=True, exist_ok=True)
+    ensure_category_progress_dir("science")
 
     rows: list[tuple[str, int, str]] = []
     for path in sorted(OUT.glob("science.*.json")):

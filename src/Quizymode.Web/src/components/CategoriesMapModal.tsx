@@ -1,19 +1,20 @@
 import { useEffect, useMemo, useState } from "react";
-import { useQuery } from "@tanstack/react-query";
+import { useQueries, useQuery } from "@tanstack/react-query";
 import { Link } from "react-router-dom";
 import {
   ChevronDownIcon,
   ChevronRightIcon,
-  MapIcon,
   XMarkIcon,
 } from "@heroicons/react/24/outline";
 import { categoriesApi } from "@/api/categories";
+import { keywordsApi } from "@/api/keywords";
 import {
   taxonomyApi,
   type TaxonomyCategory,
   type TaxonomyL1,
   type TaxonomyL2,
 } from "@/api/taxonomy";
+import { categoryNameToSlug } from "@/utils/categorySlug";
 import LoadingSpinner from "./LoadingSpinner";
 import ErrorMessage from "./ErrorMessage";
 
@@ -26,36 +27,11 @@ type CategoriesMapNode = {
   id: string;
   kind: "category" | "group" | "keyword";
   label: string;
-  slug: string;
+  count: number | null;
   description: string | null;
   href: string;
   children: CategoriesMapNode[];
 };
-
-const CATEGORY_BADGE_CLASSES =
-  "border-sky-200 bg-sky-50 text-sky-700";
-const GROUP_BADGE_CLASSES =
-  "border-indigo-200 bg-indigo-50 text-indigo-700";
-const KEYWORD_BADGE_CLASSES =
-  "border-emerald-200 bg-emerald-50 text-emerald-700";
-
-function formatFallbackLabel(slug: string): string {
-  return slug
-    .split("-")
-    .filter(Boolean)
-    .map((segment) => {
-      if (/^[a-z]+[0-9-]*$/i.test(segment) && segment === segment.toUpperCase()) {
-        return segment;
-      }
-
-      if (/^[a-z]{2,}\d+$/i.test(segment)) {
-        return segment.toUpperCase();
-      }
-
-      return segment.charAt(0).toUpperCase() + segment.slice(1);
-    })
-    .join(" ");
-}
 
 function createKeywordNode(
   categorySlug: string,
@@ -66,7 +42,7 @@ function createKeywordNode(
     id: `${categorySlug}/${groupSlug}/${keyword.slug}`,
     kind: "keyword",
     label: keyword.slug,
-    slug: keyword.slug,
+    count: null,
     description: keyword.description,
     href: `/categories/${categorySlug}/${encodeURIComponent(groupSlug)}/${encodeURIComponent(keyword.slug)}`,
     children: [],
@@ -81,7 +57,7 @@ function createGroupNode(
     id: `${categorySlug}/${group.slug}`,
     kind: "group",
     label: group.slug,
-    slug: group.slug,
+    count: null,
     description: group.description,
     href: `/categories/${categorySlug}/${encodeURIComponent(group.slug)}`,
     children: group.keywords.map((keyword) =>
@@ -91,18 +67,18 @@ function createGroupNode(
 }
 
 function createCategoryNode(
-  category: TaxonomyCategory,
-  displayName: string | undefined,
-  description: string | null | undefined
+  category: TaxonomyCategory
 ): CategoriesMapNode {
   return {
     id: category.slug,
     kind: "category",
-    label: displayName ?? formatFallbackLabel(category.slug),
-    slug: category.slug,
-    description: description ?? category.description ?? null,
+    label: category.name,
+    count: null,
+    description: category.description ?? null,
     href: `/categories/${category.slug}`,
-    children: category.groups.map((group) => createGroupNode(category.slug, group)),
+    children: category.groups.map((group) =>
+      createGroupNode(category.slug, group)
+    ),
   };
 }
 
@@ -116,108 +92,93 @@ function collectExpandableNodeIds(nodes: CategoriesMapNode[]): string[] {
   });
 }
 
-function collectCategoryNodeIds(nodes: CategoriesMapNode[]): string[] {
-  return nodes.filter((node) => node.kind === "category").map((node) => node.id);
-}
-
 function TreeNode({
   node,
-  level,
   expandedNodeIds,
+  countOverrides,
   onToggle,
   onNavigate,
 }: {
   node: CategoriesMapNode;
-  level: number;
   expandedNodeIds: Set<string>;
+  countOverrides: Map<string, number>;
   onToggle: (nodeId: string) => void;
   onNavigate: () => void;
 }) {
   const hasChildren = node.children.length > 0;
   const isExpanded = hasChildren && expandedNodeIds.has(node.id);
-  const badgeClasses =
-    node.kind === "category"
-      ? CATEGORY_BADGE_CLASSES
-      : node.kind === "group"
-        ? GROUP_BADGE_CLASSES
-        : KEYWORD_BADGE_CLASSES;
-  const badgeLabel =
-    node.kind === "category"
-      ? "Category"
-      : node.kind === "group"
-        ? "Primary topic"
-        : "Subtopic";
+  const effectiveCount = countOverrides.get(node.id) ?? node.count;
 
   return (
-    <li>
-      <div className="rounded-[22px] border border-slate-200/80 bg-white/85 shadow-sm shadow-slate-300/20 backdrop-blur">
-        <div
-          className="flex items-start gap-3 p-3 sm:p-4"
-          style={{ paddingLeft: `${level * 1.25 + 0.75}rem` }}
-        >
+    <li className="space-y-0.5">
+      <div className="flex items-start gap-1.5 py-0.5">
+        <div className="mt-0.5 w-5 shrink-0">
           {hasChildren ? (
             <button
               type="button"
               onClick={() => onToggle(node.id)}
-              className="mt-0.5 inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-slate-200 bg-white text-slate-600 transition hover:border-sky-300 hover:text-sky-700"
+              className="inline-flex h-4 w-4 items-center justify-center text-slate-500 transition hover:text-sky-700"
               aria-label={`${isExpanded ? "Collapse" : "Expand"} ${node.label}`}
               aria-expanded={isExpanded}
             >
               {isExpanded ? (
-                <ChevronDownIcon className="h-4 w-4" aria-hidden />
+                <ChevronDownIcon className="h-3.5 w-3.5" aria-hidden />
               ) : (
-                <ChevronRightIcon className="h-4 w-4" aria-hidden />
+                <ChevronRightIcon className="h-3.5 w-3.5" aria-hidden />
               )}
             </button>
           ) : (
-            <div className="mt-0.5 flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-slate-200 bg-slate-50 text-slate-400">
-              <div className="h-2 w-2 rounded-full bg-current" />
-            </div>
+            <span className="block h-4 w-4 text-slate-300" aria-hidden>
+              .
+            </span>
           )}
-
-          <div className="min-w-0 flex-1">
-            <div className="flex flex-wrap items-center gap-2">
-              <Link
-                to={node.href}
-                onClick={onNavigate}
-                className="text-sm font-semibold text-slate-900 transition hover:text-sky-700 sm:text-base"
-              >
-                {node.label}
-              </Link>
-              <span
-                className={`inline-flex items-center rounded-full border px-2.5 py-0.5 text-[11px] font-semibold uppercase tracking-[0.16em] ${badgeClasses}`}
-              >
-                {badgeLabel}
-              </span>
-              <code className="rounded-full bg-slate-100 px-2 py-0.5 text-[11px] text-slate-600">
-                {node.slug}
-              </code>
-            </div>
-            {node.description && (
-              <p className="mt-1 text-sm leading-6 text-slate-600">
-                {node.description}
-              </p>
-            )}
-          </div>
         </div>
 
-        {isExpanded && (
-          <div className="pb-3">
-            <ul className="space-y-3">
-              {node.children.map((child) => (
-                <TreeNode
-                  key={child.id}
-                  node={child}
-                  level={level + 1}
-                  expandedNodeIds={expandedNodeIds}
-                  onToggle={onToggle}
-                  onNavigate={onNavigate}
-                />
-              ))}
-            </ul>
+        <div className="min-w-0 flex-1 text-sm leading-5">
+          <div className="flex flex-wrap items-center gap-x-2 gap-y-0.5">
+            <Link
+              to={node.href}
+              onClick={onNavigate}
+              className={`transition hover:text-sky-700 ${
+                node.kind === "category"
+                  ? "font-semibold text-slate-900"
+                  : "font-medium text-slate-800"
+              }`}
+            >
+              {node.label}
+            </Link>
+            {node.description ? (
+              <span className="min-w-0 text-xs text-slate-500">
+                / {node.description}
+              </span>
+            ) : null}
+            {effectiveCount != null ? (
+              <span
+                className="rounded bg-slate-200 px-1.5 py-0.5 text-xs font-semibold text-slate-800"
+                aria-label={`${effectiveCount} items`}
+                title={`${effectiveCount} items`}
+              >
+                {effectiveCount}
+              </span>
+            ) : null}
           </div>
-        )}
+        </div>
       </div>
+
+      {isExpanded && (
+        <ul className="ml-2 space-y-0.5 border-l border-slate-200 pl-2">
+          {node.children.map((child) => (
+            <TreeNode
+              key={child.id}
+              node={child}
+              expandedNodeIds={expandedNodeIds}
+              countOverrides={countOverrides}
+              onToggle={onToggle}
+              onNavigate={onNavigate}
+            />
+          ))}
+        </ul>
+      )}
     </li>
   );
 }
@@ -229,50 +190,140 @@ const CategoriesMapModal = ({
   const { data: taxonomyData, isLoading, error, refetch } = useQuery({
     queryKey: ["taxonomy"],
     queryFn: () => taxonomyApi.getAll(),
-    enabled: isOpen,
     staleTime: 24 * 60 * 60 * 1000,
   });
-
   const { data: categoriesData } = useQuery({
     queryKey: ["categories"],
     queryFn: () => categoriesApi.getAll(),
-    enabled: isOpen,
     staleTime: 5 * 60 * 1000,
   });
 
-  const categoryDisplayMap = useMemo(() => {
-    const map = new Map<string, { label: string; description: string | null }>();
+  const categoryDefinitions = useMemo(
+    () =>
+      (taxonomyData?.categories ?? []).map((category) => {
+        const matchedCategoryName =
+          (categoriesData?.categories ?? []).find(
+            (item) =>
+              categoryNameToSlug(item.category).toLowerCase() ===
+              category.slug.toLowerCase()
+          )?.category ?? category.name ?? null;
+
+        return {
+          category,
+          queryCategoryName: matchedCategoryName,
+        };
+      }),
+    [categoriesData?.categories, taxonomyData?.categories]
+  );
+
+  const nodes = useMemo(
+    () =>
+      categoryDefinitions.map(({ category, queryCategoryName }) =>
+        createCategoryNode({
+          ...category,
+          name: queryCategoryName ?? category.name,
+        })
+      ),
+    [categoryDefinitions]
+  );
+
+  const categoryCountOverrides = useMemo(() => {
+    const map = new Map<string, number>();
 
     for (const category of categoriesData?.categories ?? []) {
-      map.set(category.category.toLowerCase(), {
-        label: category.category,
-        description: category.description ?? category.shortDescription ?? null,
-      });
+      map.set(categoryNameToSlug(category.category), category.count);
     }
 
     return map;
   }, [categoriesData?.categories]);
 
-  const nodes = useMemo(
-    () =>
-      (taxonomyData?.categories ?? []).map((category) => {
-        const categoryDisplay = categoryDisplayMap.get(category.slug.toLowerCase());
+  const rank1Queries = useQueries({
+    queries: categoryDefinitions.map((definition) => ({
+      queryKey: [
+        "keywords",
+        "rank1",
+        definition.queryCategoryName ?? definition.category.slug,
+      ],
+      queryFn: () =>
+        keywordsApi.getNavigationKeywords(definition.queryCategoryName!, undefined),
+      enabled: isOpen && !!definition.queryCategoryName,
+      staleTime: 5 * 60 * 1000,
+    })),
+  });
 
-        return createCategoryNode(
-          category,
-          categoryDisplay?.label,
-          categoryDisplay?.description
-        );
-      }),
-    [categoryDisplayMap, taxonomyData?.categories]
+  const rank2Definitions = useMemo(
+    () =>
+      categoryDefinitions.flatMap((definition) =>
+        definition.queryCategoryName
+          ? definition.category.groups.map((group) => ({
+              categoryName: definition.queryCategoryName,
+              categorySlug: definition.category.slug,
+              groupSlug: group.slug,
+              keywords: group.keywords,
+            }))
+          : []
+      ),
+    [categoryDefinitions]
   );
+
+  const rank2Queries = useQueries({
+    queries: rank2Definitions.map((definition) => ({
+      queryKey: [
+        "keywords",
+        "rank2",
+        definition.categoryName,
+        definition.groupSlug,
+      ],
+      queryFn: () =>
+        keywordsApi.getNavigationKeywords(definition.categoryName, [
+          definition.groupSlug,
+        ]),
+      enabled: isOpen,
+      staleTime: 5 * 60 * 1000,
+    })),
+  });
+
+  const liveCountOverrides = useMemo(() => {
+    const map = new Map<string, number>(categoryCountOverrides);
+
+    categoryDefinitions.forEach((definition, index) => {
+      const rank1Data = rank1Queries[index]?.data;
+      for (const group of definition.category.groups) {
+        const match = rank1Data?.keywords?.find(
+          (keyword) => keyword.name.toLowerCase() === group.slug.toLowerCase()
+        );
+        if (match) {
+          map.set(`${definition.category.slug}/${group.slug}`, match.itemCount);
+        }
+      }
+    });
+
+    rank2Definitions.forEach((definition, index) => {
+      const rank2Data = rank2Queries[index]?.data;
+      for (const keyword of definition.keywords) {
+        const match = rank2Data?.keywords?.find(
+          (item) => item.name.toLowerCase() === keyword.slug.toLowerCase()
+        );
+        if (match) {
+          map.set(
+            `${definition.categorySlug}/${definition.groupSlug}/${keyword.slug}`,
+            match.itemCount
+          );
+        }
+      }
+    });
+
+    return map;
+  }, [
+    categoryCountOverrides,
+    rank1Queries,
+    rank2Definitions,
+    rank2Queries,
+    categoryDefinitions,
+  ]);
 
   const expandableNodeIds = useMemo(
     () => collectExpandableNodeIds(nodes),
-    [nodes]
-  );
-  const categoryNodeIds = useMemo(
-    () => collectCategoryNodeIds(nodes),
     [nodes]
   );
 
@@ -283,8 +334,8 @@ const CategoriesMapModal = ({
       return;
     }
 
-    setExpandedNodeIds(new Set(categoryNodeIds));
-  }, [categoryNodeIds, isOpen]);
+    setExpandedNodeIds(new Set());
+  }, [isOpen]);
 
   useEffect(() => {
     if (!isOpen) {
@@ -319,68 +370,45 @@ const CategoriesMapModal = ({
       aria-labelledby="categories-map-title"
     >
       <div
-        className="relative flex max-h-[min(92vh,60rem)] w-full max-w-5xl flex-col overflow-hidden rounded-[32px] border border-white/10 bg-[linear-gradient(180deg,rgba(248,250,252,0.98)_0%,rgba(239,246,255,0.98)_100%)] shadow-2xl shadow-slate-950/40"
+        className="relative flex max-h-[92vh] w-full max-w-4xl flex-col overflow-hidden rounded-2xl border border-slate-300 bg-slate-50 shadow-2xl shadow-slate-950/30"
         onClick={(event) => event.stopPropagation()}
       >
-        <div className="relative overflow-hidden border-b border-slate-200/80 bg-slate-950 px-6 py-6 text-white sm:px-8">
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(125,211,252,0.28)_0%,transparent_38%)]" />
-          <div className="absolute inset-0 bg-[linear-gradient(135deg,rgba(30,41,59,0.92)_0%,rgba(15,23,42,0.98)_100%)]" />
-
-          <div className="relative flex items-start justify-between gap-4">
-            <div className="max-w-3xl">
-              <div className="inline-flex items-center gap-2 rounded-full border border-sky-300/30 bg-sky-400/10 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.22em] text-sky-200">
-                <MapIcon className="h-4 w-4" aria-hidden />
-                Browse structure
-              </div>
-              <h2
-                id="categories-map-title"
-                className="mt-4 text-2xl font-semibold tracking-tight sm:text-3xl"
-              >
-                Categories map
-              </h2>
-              <p className="mt-2 max-w-2xl text-sm leading-6 text-slate-300 sm:text-base">
-                Open any category, primary topic, or subtopic directly from the
-                canonical taxonomy tree.
-              </p>
-            </div>
-
-            <button
-              type="button"
-              onClick={onClose}
-              className="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-white/12 bg-white/10 text-slate-200 transition hover:bg-white/16 hover:text-white"
-              aria-label="Close categories map"
-            >
-              <XMarkIcon className="h-5 w-5" aria-hidden />
-            </button>
-          </div>
-        </div>
-
-        <div className="flex flex-wrap items-center justify-between gap-3 border-b border-slate-200/80 bg-white/70 px-6 py-4 sm:px-8">
-          <p className="text-sm text-slate-600">
-            {nodes.length} categor{nodes.length === 1 ? "y" : "ies"} in the
-            current taxonomy.
-          </p>
-          <div className="flex flex-wrap gap-2">
+        <div className="flex items-center justify-between gap-3 border-b border-slate-200 bg-white px-4 py-3 sm:px-5">
+          <h2
+            id="categories-map-title"
+            className="text-base font-semibold text-slate-900"
+          >
+            Categories map
+          </h2>
+          <div className="flex items-center gap-2">
             <button
               type="button"
               onClick={() => setExpandedNodeIds(new Set(expandableNodeIds))}
-              className="rounded-full border border-slate-300 bg-white px-4 py-2 text-sm font-medium text-slate-700 transition hover:border-sky-300 hover:text-sky-700"
+              className="rounded border border-slate-300 bg-white px-2 py-1 text-xs text-slate-700"
             >
               Expand all
             </button>
             <button
               type="button"
               onClick={() => setExpandedNodeIds(new Set())}
-              className="rounded-full border border-slate-300 bg-white px-4 py-2 text-sm font-medium text-slate-700 transition hover:border-slate-400 hover:text-slate-900"
+              className="rounded border border-slate-300 bg-white px-2 py-1 text-xs text-slate-700"
             >
               Collapse all
+            </button>
+            <button
+              type="button"
+              onClick={onClose}
+              className="inline-flex h-8 w-8 items-center justify-center rounded border border-slate-300 bg-white text-slate-600"
+              aria-label="Close categories map"
+            >
+              <XMarkIcon className="h-4 w-4" aria-hidden />
             </button>
           </div>
         </div>
 
-        <div className="flex-1 overflow-y-auto px-6 py-6 sm:px-8">
+        <div className="flex-1 overflow-y-auto bg-white px-4 py-3 sm:px-5">
           {isLoading ? (
-            <div className="flex min-h-64 items-center justify-center">
+            <div className="flex min-h-40 items-center justify-center">
               <LoadingSpinner />
             </div>
           ) : error ? (
@@ -401,13 +429,13 @@ const CategoriesMapModal = ({
               </p>
             </div>
           ) : (
-            <ul className="space-y-4">
+            <ul className="space-y-1">
               {nodes.map((node) => (
                 <TreeNode
                   key={node.id}
                   node={node}
-                  level={0}
                   expandedNodeIds={expandedNodeIds}
+                  countOverrides={liveCountOverrides}
                   onToggle={(nodeId) => {
                     setExpandedNodeIds((previous) => {
                       const next = new Set(previous);

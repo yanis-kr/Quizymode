@@ -65,9 +65,9 @@ const AdminDashboardPage = () => {
           to="/admin/user-settings"
           className="bg-white shadow rounded-lg p-6 hover:shadow-lg transition-shadow cursor-pointer"
         >
-          <h3 className="text-lg font-medium text-gray-900 mb-2">User Settings</h3>
+          <h3 className="text-lg font-medium text-gray-900 mb-2">Users &amp; Activity</h3>
           <p className="text-sm text-gray-500">
-            Review and update per-user study guide size limits
+            Browse registered users, inspect URL history, and update study guide limits
           </p>
         </Link>
         <Link
@@ -77,6 +77,15 @@ const AdminDashboardPage = () => {
           <h3 className="text-lg font-medium text-gray-900 mb-2">Seed Sync</h3>
           <p className="text-sm text-gray-500">
             Preview and apply repo-managed seed manifests
+          </p>
+        </Link>
+        <Link
+          to="/admin/page-views"
+          className="bg-white shadow rounded-lg p-6 hover:shadow-lg transition-shadow cursor-pointer"
+        >
+          <h3 className="text-lg font-medium text-gray-900 mb-2">Usage Analytics</h3>
+          <p className="text-sm text-gray-500">
+            See top pages, visitor mix, sessions, and recent URL hits
           </p>
         </Link>
       </div>

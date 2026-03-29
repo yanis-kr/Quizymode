@@ -5,9 +5,11 @@ from __future__ import annotations
 import json
 from pathlib import Path
 
+from seed_progress_paths import category_progress_file, ensure_category_progress_dir
+
 ROOT = Path(__file__).resolve().parents[1]
 OUT = ROOT / "data" / "bulk-seed" / "trivia"
-PROGRESS = OUT / "_progress.md"
+PROGRESS = category_progress_file("trivia", "_progress.md")
 
 
 def mk(
@@ -148,6 +150,7 @@ def brands_companies() -> list[dict]:
 
 def main() -> None:
     OUT.mkdir(parents=True, exist_ok=True)
+    ensure_category_progress_dir("trivia")
     write_pair("brands", "companies", brands_companies())
     # Additional pairs appended in follow-up patches to this script.
 
