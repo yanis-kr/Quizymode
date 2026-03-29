@@ -5,9 +5,11 @@ from __future__ import annotations
 import json
 from pathlib import Path
 
+from seed_progress_paths import category_progress_file, ensure_category_progress_dir
+
 ROOT = Path(__file__).resolve().parents[1]
 OUT = ROOT / "data" / "bulk-seed" / "trivia"
-PROGRESS = OUT / "_progress.md"
+PROGRESS = category_progress_file("trivia", "_progress.md")
 
 
 def item(
@@ -275,6 +277,7 @@ def main() -> None:
         ("movies-tv", "awards", movies_tv_awards()),
         ("movies-tv", "movies", movies_tv_movies()),
     ]
+    ensure_category_progress_dir("trivia")
     notes: list[str] = []
     for l1, l2, items in pairs:
         write_file(l1, l2, items)

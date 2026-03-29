@@ -20,6 +20,7 @@ from datetime import datetime, timezone
 from pathlib import Path
 
 from saa_c03_keywords import SAA_C03_SEED_SOURCE, infer_saa_c03_keywords
+from seed_progress_paths import category_progress_file, ensure_category_progress_dir
 
 ROOT = Path(__file__).resolve().parents[1]
 EXTRACT_PATH = ROOT / "data" / "bulk-seed" / "exams" / "AWS_SAA_C03_extracted.txt"
@@ -216,7 +217,8 @@ def main() -> None:
             f"Wrote {out_path.name}: {len(items)} items (missing answers for: {missing or 'none'})"
         )
 
-    progress_path = OUT_DIR / "_saa_progress.md"
+    ensure_category_progress_dir("exams")
+    progress_path = category_progress_file("exams", "_saa_progress.md")
     total_written = sum(
         len(json.loads((OUT_DIR / f"exams.aws.saa-c03-p{idx + 2}.json").read_text(encoding="utf-8")))
         for idx in range(max_c)
