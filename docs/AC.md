@@ -704,6 +704,8 @@ Quizymode currently relies on the external identity provider for password, recov
 
 - **AC 4.6.1** [Anonymous] **Given** I am not signed in, **when** I visit the app, **then** I can access the implemented authentication screens for **Sign in** and **Sign up**.
 - **AC 4.6.2** [User] **Given** I sign in, sign up, confirm signup, or recover account access, **when** those flows require password or recovery handling, **then** the behavior is provided by the configured identity provider rather than by first-party Quizymode API endpoints.
+- **AC 4.6.3** [Anonymous] **Given** I am on the **Sign up** page, **when** I review or submit the form, **then** I can open the current **Terms of Service** and **Privacy Policy**, and the form does not continue unless I affirm them.
+- **AC 4.6.4** [Anyone] **Given** I am anywhere in the app, **when** I use the global footer, **then** I can open the **About**, **Feedback**, **Privacy Policy**, and **Terms of Service** pages.
 
 ---
 

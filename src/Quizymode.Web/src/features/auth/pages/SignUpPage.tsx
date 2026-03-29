@@ -11,6 +11,7 @@ const SignUpPage = () => {
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
   const [confirmationCode, setConfirmationCode] = useState("");
+  const [hasAcceptedLegal, setHasAcceptedLegal] = useState(false);
   const [error, setError] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const [needsConfirmation, setNeedsConfirmation] = useState(false);
@@ -32,6 +33,11 @@ const SignUpPage = () => {
 
     if (password.length < 8) {
       setError("Password must be at least 8 characters");
+      return;
+    }
+
+    if (!hasAcceptedLegal) {
+      setError("You must agree to the Terms of Service and acknowledge the Privacy Policy");
       return;
     }
 
@@ -217,6 +223,28 @@ const SignUpPage = () => {
                 placeholder="Confirm Password"
               />
             </div>
+          </div>
+
+          <div className="rounded-md border border-slate-200 bg-slate-50 p-3">
+            <label className="flex items-start gap-3 text-sm text-slate-700">
+              <input
+                type="checkbox"
+                checked={hasAcceptedLegal}
+                onChange={(e) => setHasAcceptedLegal(e.target.checked)}
+                className="mt-1 h-4 w-4 rounded border-slate-300 text-indigo-600 focus:ring-indigo-500"
+              />
+              <span>
+                I agree to the{" "}
+                <Link to="/terms" className="font-medium text-indigo-600 hover:text-indigo-500">
+                  Terms of Service
+                </Link>{" "}
+                and acknowledge the{" "}
+                <Link to="/privacy" className="font-medium text-indigo-600 hover:text-indigo-500">
+                  Privacy Policy
+                </Link>
+                .
+              </span>
+            </label>
           </div>
 
           <div>

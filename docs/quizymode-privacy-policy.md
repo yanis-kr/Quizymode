@@ -1,141 +1,98 @@
 # Privacy Policy
 
-**Quizymode — Effective Date: March 28, 2026**
+**Effective date:** March 29, 2026
 
----
+## 1. Overview
 
-## 1. Introduction
-
-This Privacy Policy explains how Quizymode ("we," "us," or "our") collects, uses, stores, and shares information when you use our service at https://www.quizymode.com. By using Quizymode, you agree to the practices described in this policy.
-
----
+This Privacy Policy explains how Quizymode collects, uses, stores, and shares information when you use `https://www.quizymode.com`.
 
 ## 2. Information We Collect
 
-We collect the following categories of information:
+We may collect the following categories of information:
 
-**Account Information**
-- Email address and password (managed through AWS Cognito)
-- Display name or username if provided
+- **Account information:** email address, username, display name, and account metadata. Password handling is managed by AWS Cognito; Quizymode does not directly store your plain-text password.
+- **Content you create or submit:** items, collections, study guides, comments, feedback submissions, and similar material you enter into the service.
+- **Usage and technical information:** page paths, query strings, session identifiers, authentication state, timestamps, and IP addresses associated with requests or page-view analytics.
+- **Browser-stored data:** authentication tokens stored in browser `localStorage`, and session-related data stored in browser `sessionStorage`, including page-view tracking markers and study-flow state.
 
-**Content You Create**
-- Quiz items, collections, study guides, and other content you create or import within the app
+## 3. How We Use Information
 
-**Usage Data**
-- Pages visited, features used, and actions taken within the app
-- Device type, browser type, and operating system
-- IP address and approximate geographic location
+We use information we collect to:
 
-**Authentication Tokens**
-- JSON Web Tokens (JWTs) issued by AWS Cognito are stored client-side and sent with API requests to authenticate you
+- operate, maintain, and secure the service;
+- authenticate users and manage accounts;
+- store and display user content according to the product's sharing and visibility features;
+- analyze app usage and improve product quality;
+- investigate abuse, fraud, security incidents, and policy violations; and
+- respond to support requests, feedback, takedown requests, or legal complaints.
 
----
+## 4. Visibility and Sharing
 
-## 3. How We Use Your Information
+Your visibility settings matter:
 
-We use the information we collect to:
+- public collections may be visible to other users and visitors;
+- public items may be visible and discoverable through the app; and
+- if you include private items inside a public collection, those items may be visible within that collection context even if they are not otherwise publicly discoverable in the app.
 
-- Provide, maintain, and improve the service
-- Authenticate your identity and manage your account
-- Respond to your requests and provide customer support
-- Send service-related communications (e.g., account verification, important updates)
-- Monitor for abuse, security issues, and violations of our Terms of Service
-- Analyze usage patterns to improve features and user experience
-- Process payments if you subscribe to a paid plan (via third-party payment processors)
+Please do not upload personal, confidential, or third-party content unless you have the right and lawful basis to do so.
 
----
+## 5. Service Providers and Sharing
 
-## 4. Third-Party Services We Use
+Quizymode uses third-party providers to operate the service, including:
 
-We rely on the following third-party providers to operate the service. Each has their own privacy practices:
+- **AWS Cognito** for authentication;
+- **AWS Lightsail** for API hosting;
+- **AWS S3 and CloudFront** for web hosting and delivery;
+- **Supabase** for managed PostgreSQL storage;
+- **Cloudflare** for DNS, TLS, and edge proxying; and
+- **Grafana Cloud** for logs, traces, metrics, and operational observability.
 
-- **AWS Cognito** — user authentication and identity management (Amazon Web Services)
-- **AWS Lightsail** — API hosting infrastructure (Amazon Web Services)
-- **AWS S3 + CloudFront** — static file hosting and content delivery (Amazon Web Services)
-- **Supabase** — managed PostgreSQL database for storing your content and account data
-- **Cloudflare** — DNS, TLS termination, and edge proxy
-- **Grafana Cloud** — application telemetry, logs, traces, and metrics (observability)
+We may disclose information:
 
-We do not sell your personal information to any third party.
+- to these providers as needed to operate the service;
+- when required by law, legal process, or a good-faith belief that disclosure is necessary to protect rights, safety, or the service; or
+- in connection with a reorganization, sale, financing, or transfer of all or part of the service or its assets.
 
----
+We do not sell personal information, and the current app does not use third-party advertising cookies.
 
-## 5. Data Retention
+## 6. AI-Assisted Workflows
 
-We retain your account information and content for as long as your account is active. If you request deletion of your account, we will delete or anonymize your personal data within a reasonable timeframe, except where retention is required by law or for legitimate business purposes (e.g., fraud prevention).
+Quizymode includes AI-assisted workflows that help you prepare prompts for third-party AI tools. In the current product, those workflows are manual copy/paste experiences. Quizymode does not automatically send your study guide or item content to a third-party generative AI provider from within the app.
 
----
+If you choose to paste content into an external AI tool, that provider handles the data you submit under its own terms and privacy practices.
 
-## 6. Cookies and Tracking
+## 7. Retention
 
-We may use cookies and similar technologies to maintain your session and remember your preferences. We do not currently use third-party advertising cookies or sell data to advertisers. You can control cookies through your browser settings, though disabling them may affect service functionality.
+We retain information for as long as reasonably necessary to operate the service, maintain security, resolve disputes, enforce our terms, and comply with legal obligations.
 
----
+Because self-service account deletion is not currently available in the app, you may contact us through `https://www.quizymode.com/feedback` or another published contact method if you want to request review of a deletion request.
 
-## 7. Your Rights
+## 8. Your Choices and Rights
 
-Depending on your location, you may have the following rights regarding your personal data:
+Depending on where you live, you may have rights to request access to, correction of, deletion of, or export of personal information we hold about you.
 
-- **Access** — request a copy of the personal data we hold about you
-- **Correction** — request correction of inaccurate data
-- **Deletion** — request deletion of your account and associated data
-- **Portability** — request your data in a portable format
-- **Objection** — object to certain types of processing
+You can also:
 
-To exercise any of these rights, contact us at legal@quizymode.com. We will respond within a reasonable timeframe and no later than required by applicable law.
+- manage whether certain content is kept private or shared through available product settings;
+- update your profile name through the app; and
+- edit or remove content you created using the product's available features.
 
----
+## 9. Children's Privacy
 
-## 8. Users in the European Economic Area (EEA) and UK
+Quizymode is not intended for children under 13, and we do not knowingly collect personal information from children under 13. If you believe a child under 13 has provided personal information through the service, contact us through `https://www.quizymode.com/feedback`.
 
-If you are located in the EEA or UK, we process your personal data under the General Data Protection Regulation (GDPR) or UK GDPR. Our legal bases for processing include:
+## 10. Security
 
-- **Contract performance** — to provide the service you signed up for
-- **Legitimate interests** — to improve the service, ensure security, and prevent abuse
-- **Consent** — where you have explicitly provided consent
+We use reasonable technical and organizational measures to protect information, but no method of storage or transmission over the internet is completely secure. We cannot guarantee absolute security.
 
-You have the right to lodge a complaint with your local data protection authority if you believe we have not handled your data appropriately.
+## 11. International Processing
 
----
+Quizymode and its service providers may process information in the United States and other countries. Those countries may have data-protection laws that are different from the laws where you live.
 
-## 9. Users in California (CCPA)
+## 12. Changes to This Policy
 
-If you are a California resident, you have the right to know what personal information we collect, the right to delete it, and the right to opt out of the sale of your personal information. We do not sell your personal information. To exercise your rights, contact us at legal@quizymode.com.
+We may update this Privacy Policy from time to time. When we do, we will update the effective date above. Your continued use of Quizymode after the updated policy takes effect means you acknowledge the revised policy.
 
----
+## 13. Contact
 
-## 10. Children's Privacy
-
-Quizymode is not directed at children under the age of 13. We do not knowingly collect personal information from children under 13. If we learn that we have collected information from a child under 13 without parental consent, we will delete it promptly. If you believe a child has provided us with personal information, contact us at legal@quizymode.com.
-
----
-
-## 11. Educational Content Disclaimer
-
-Quizymode stores and displays study content created by users or generated with AI assistance. We do not review, verify, or endorse the accuracy of any quiz items, flashcards, collections, or study materials available on the platform. We are not responsible for how users choose to use or act upon content accessed through the service.
-
-We collect and store this content solely to provide the service to you and do not use it to make inferences about your academic performance, intelligence, or professional competence.
-
----
-
-## 12. Data Security
-
-We implement reasonable technical and organizational measures to protect your information against unauthorized access, loss, or disclosure. These include encrypted data transmission (TLS), access controls, and monitoring. However, no method of transmission over the internet is 100% secure, and we cannot guarantee absolute security.
-
----
-
-## 13. International Transfers
-
-Your information may be transferred to and processed in countries other than your own, including the United States. By using the service, you consent to this transfer. We take steps to ensure that your data receives an adequate level of protection wherever it is processed.
-
----
-
-## 14. Changes to This Policy
-
-We may update this Privacy Policy from time to time. When we do, we will update the Effective Date at the top of this document. Continued use of the service after changes constitutes your acknowledgment of the updated policy. For significant changes, we will make reasonable efforts to notify you directly.
-
----
-
-## 15. Contact
-
-If you have questions, concerns, or requests related to this Privacy Policy, contact us at: legal@quizymode.com
+For privacy questions, requests, or complaints, use the feedback page at `https://www.quizymode.com/feedback` or another contact method published on the service.

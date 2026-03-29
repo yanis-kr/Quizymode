@@ -202,6 +202,8 @@ Grafana Cloud setup is documented in [docs/GRAFANA_CLOUD_SETUP.md](./docs/GRAFAN
 - [docs/openapi/README.md](./docs/openapi/README.md): generated API contract notes
 - [docs/COGNITO_SETUP.md](./docs/COGNITO_SETUP.md): Cognito setup details
 - [docs/GRAFANA_CLOUD_SETUP.md](./docs/GRAFANA_CLOUD_SETUP.md): observability setup
+- [docs/quizymode-privacy-policy.md](./docs/quizymode-privacy-policy.md): current privacy policy draft
+- [docs/quizymode-terms-of-service.md](./docs/quizymode-terms-of-service.md): current terms of service draft
 - [docs/user-guide/README.md](./docs/user-guide/README.md): end-user guide
 
 ## README Policy
