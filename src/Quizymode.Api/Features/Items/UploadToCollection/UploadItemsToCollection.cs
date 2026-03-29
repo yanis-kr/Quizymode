@@ -16,10 +16,7 @@ namespace Quizymode.Api.Features.Items.UploadToCollection;
 
 public static class UploadItemsToCollection
 {
-    /// <summary>
-    /// InputText is the raw upload content (e.g. JSON string) used to compute a hash for duplicate detection.
-    /// Category, Keyword1, Keyword2 define navigation; Keywords are additional default keywords for all items.
-    /// </summary>
+    /// <summary>InputText is the raw upload content (e.g. JSON string) used to compute a hash for duplicate detection. Category, Keyword1, Keyword2 define navigation; Keywords are additional default keywords for all items.</summary>
     public sealed record Request(
         string Category,
         string Keyword1,

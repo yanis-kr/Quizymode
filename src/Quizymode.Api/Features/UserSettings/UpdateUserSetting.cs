@@ -14,10 +14,7 @@ namespace Quizymode.Api.Features.UserSettings;
 /// </summary>
 public static class UpdateUserSetting
 {
-    /// <summary>
-    /// Request DTO for updating a user setting.
-    /// Contains the setting key and value to store.
-    /// </summary>
+    /// <summary>Request DTO for updating a user setting. Contains the setting key and value to store.</summary>
     public sealed record Request(string Key, string Value);
 
     /// <summary>

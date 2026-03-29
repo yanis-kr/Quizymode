@@ -34,7 +34,9 @@ public static class GetTaxonomy
 
     private sealed record CategoryCountRow(Guid CategoryId, int ItemCount);
 
-    private sealed record NavigationKeywordCountRow(Guid CategoryId, string KeywordSlug, int ItemCount);
+    private sealed record Rank1NavigationKeywordCountRow(Guid CategoryId, string Rank1Slug, int ItemCount);
+
+    private sealed record Rank2NavigationKeywordCountRow(Guid CategoryId, string Rank1Slug, string Rank2Slug, int ItemCount);
 
     public sealed class Endpoint : IEndpoint
     {
@@ -64,7 +66,7 @@ public static class GetTaxonomy
         }
     }
 
-    private static async Task<Response> BuildResponseAsync(
+    internal static async Task<Response> BuildResponseAsync(
         ITaxonomyRegistry registry,
         ApplicationDbContext db,
         IUserContext userContext,
@@ -135,14 +137,18 @@ public static class GetTaxonomy
                     group.Description,
                     visibleCategory is null
                         ? 0
-                        : GetNavigationKeywordCount(itemCountsByNavigationKey, visibleCategory.Id, group.Slug),
+                        : GetRank1NavigationKeywordCount(itemCountsByNavigationKey, visibleCategory.Id, group.Slug),
                     group.L2Leaves
                         .Select(leaf => new L2Dto(
                             leaf.Slug,
                             leaf.Description,
                             visibleCategory is null
                                 ? 0
-                                : GetNavigationKeywordCount(itemCountsByNavigationKey, visibleCategory.Id, leaf.Slug)))
+                                : GetRank2NavigationKeywordCount(
+                                    itemCountsByNavigationKey,
+                                    visibleCategory.Id,
+                                    group.Slug,
+                                    leaf.Slug)))
                         .ToList()))
                 .ToList();
 
@@ -214,57 +220,80 @@ public static class GetTaxonomy
             visibleItems = visibleItems.Where(item => !item.IsPrivate || item.CreatedBy == currentUserId);
         }
 
-        List<NavigationKeywordCountRow> nav1Counts = await visibleItems
+        List<Rank1NavigationKeywordCountRow> nav1Counts = await visibleItems
             .Where(item => item.NavigationKeywordId1.HasValue && item.NavigationKeyword1 != null)
             .GroupBy(item => new
             {
                 CategoryId = item.CategoryId!.Value,
-                KeywordSlug = item.NavigationKeyword1!.Name.ToLower()
+                Rank1Slug = item.NavigationKeyword1!.Name.ToLower()
             })
-            .Select(group => new NavigationKeywordCountRow(
+            .Select(group => new Rank1NavigationKeywordCountRow(
                 group.Key.CategoryId,
-                group.Key.KeywordSlug,
+                group.Key.Rank1Slug,
                 group.Count()))
             .ToListAsync(cancellationToken);
 
-        List<NavigationKeywordCountRow> nav2Counts = await visibleItems
-            .Where(item => item.NavigationKeywordId2.HasValue && item.NavigationKeyword2 != null)
+        List<Rank2NavigationKeywordCountRow> nav2Counts = await visibleItems
+            .Where(item => item.NavigationKeywordId1.HasValue
+                && item.NavigationKeyword1 != null
+                && item.NavigationKeywordId2.HasValue
+                && item.NavigationKeyword2 != null)
             .GroupBy(item => new
             {
                 CategoryId = item.CategoryId!.Value,
-                KeywordSlug = item.NavigationKeyword2!.Name.ToLower()
+                Rank1Slug = item.NavigationKeyword1!.Name.ToLower(),
+                Rank2Slug = item.NavigationKeyword2!.Name.ToLower()
             })
-            .Select(group => new NavigationKeywordCountRow(
+            .Select(group => new Rank2NavigationKeywordCountRow(
                 group.Key.CategoryId,
-                group.Key.KeywordSlug,
+                group.Key.Rank1Slug,
+                group.Key.Rank2Slug,
                 group.Count()))
             .ToListAsync(cancellationToken);
 
         Dictionary<string, int> counts = new(StringComparer.OrdinalIgnoreCase);
-        foreach (NavigationKeywordCountRow row in nav1Counts.Concat(nav2Counts))
+        foreach (Rank1NavigationKeywordCountRow row in nav1Counts)
         {
-            string key = BuildNavigationCountKey(row.CategoryId, row.KeywordSlug);
-            counts[key] = counts.TryGetValue(key, out int existingCount)
-                ? existingCount + row.ItemCount
-                : row.ItemCount;
+            counts[BuildRank1NavigationCountKey(row.CategoryId, row.Rank1Slug)] = row.ItemCount;
+        }
+
+        foreach (Rank2NavigationKeywordCountRow row in nav2Counts)
+        {
+            counts[BuildRank2NavigationCountKey(row.CategoryId, row.Rank1Slug, row.Rank2Slug)] = row.ItemCount;
         }
 
         return counts;
     }
 
-    private static int GetNavigationKeywordCount(
+    private static int GetRank1NavigationKeywordCount(
         IReadOnlyDictionary<string, int> counts,
         Guid categoryId,
-        string keywordSlug)
+        string rank1Slug)
     {
-        return counts.TryGetValue(BuildNavigationCountKey(categoryId, keywordSlug), out int count)
+        return counts.TryGetValue(BuildRank1NavigationCountKey(categoryId, rank1Slug), out int count)
             ? count
             : 0;
     }
 
-    private static string BuildNavigationCountKey(Guid categoryId, string keywordSlug)
+    private static int GetRank2NavigationKeywordCount(
+        IReadOnlyDictionary<string, int> counts,
+        Guid categoryId,
+        string rank1Slug,
+        string rank2Slug)
     {
-        return $"{categoryId:N}|{keywordSlug}".ToLowerInvariant();
+        return counts.TryGetValue(BuildRank2NavigationCountKey(categoryId, rank1Slug, rank2Slug), out int count)
+            ? count
+            : 0;
+    }
+
+    private static string BuildRank1NavigationCountKey(Guid categoryId, string rank1Slug)
+    {
+        return $"{categoryId:N}|r1|{rank1Slug}".ToLowerInvariant();
+    }
+
+    private static string BuildRank2NavigationCountKey(Guid categoryId, string rank1Slug, string rank2Slug)
+    {
+        return $"{categoryId:N}|r2|{rank1Slug}|{rank2Slug}".ToLowerInvariant();
     }
 
     private static string FormatFallbackLabel(string slug)
