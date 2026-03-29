@@ -26,4 +26,24 @@ public class StudyGuidePromptBuilderServiceTests
         prompt.Should().Contain("Default extra keywords already applied to every imported item: exam-prep");
         prompt.Should().Contain("Already generated questions");
     }
+
+    [Fact]
+    public void BuildChunkPrompt_AsksForReliableSourceUrlsInsteadOfAssistantName()
+    {
+        var service = new StudyGuidePromptBuilderService();
+
+        string prompt = service.BuildChunkPrompt(
+            0,
+            1,
+            "Networking Basics",
+            "TCP is a connection-oriented transport protocol.",
+            "tech",
+            new[] { "networking", "transport-layer" },
+            null,
+            null);
+
+        prompt.Should().Contain("\"source\": \"https://example.com/reliable-reference\"");
+        prompt.Should().Contain("direct URL to a reliable, verifiable source");
+        prompt.Should().Contain("Do not cite the AI assistant itself");
+    }
 }

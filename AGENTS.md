@@ -100,6 +100,8 @@ dotnet build src/Quizymode.Api/Quizymode.Api.csproj --configuration Release
 - Additional README files should be minimal and local in scope.
 - Keep long-lived operational or reference detail under `docs/`.
 - If code changes affect application behavior, keep `docs/AC.md` up to date in the same change.
+- The canonical app semantic version lives in `Directory.Build.props` as `QuizymodeVersion`. For every completed change set, bump it locally and choose the bump type intentionally: `PATCH` for fixes/internal polish without new capabilities, `MINOR` for backward-compatible features or noticeable user-visible improvements, and `MAJOR` for breaking changes or major contract/workflow shifts.
+- Keep `src/Quizymode.Web/package.json` and any surfaced version displays aligned with `QuizymodeVersion` when you bump the version.
 - After each completed change, include a short commit title suggestion in the final response.
 
 ## What Agents Should Optimize For

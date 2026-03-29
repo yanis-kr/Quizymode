@@ -22,6 +22,7 @@ import { StarIcon as StarIconSolid } from "@heroicons/react/24/solid";
 import { BookmarkIcon as BookmarkIconSolid, CheckCircleIcon as CheckCircleIconSolid } from "@heroicons/react/24/solid";
 import LoadingSpinner from "@/components/LoadingSpinner";
 import ErrorMessage from "@/components/ErrorMessage";
+import { SEO } from "@/components/SEO";
 import { buildCollectionPath, buildCollectionStudyPath } from "@/utils/collectionPath";
 import type {
   CollectionDiscoverItem,
@@ -638,49 +639,56 @@ const CollectionsPage = () => {
   }
 
   return (
-    <div className="space-y-4">
-      <div className="rounded-[24px] border border-slate-200/80 bg-white/90 px-5 py-4 shadow-sm shadow-slate-300/20">
-        <h1 className="mb-1 text-2xl font-semibold text-slate-900">Collections</h1>
-        <p className="max-w-3xl text-sm leading-6 text-slate-700">
-          {isAuthenticated
-            ? "Your collections, bookmarks, and discover public collections. You can also open a collection by ID."
-            : "Browse public collections by topic or search. Sign in to manage your own collections and bookmarks. You can open a collection by ID."}
-        </p>
-      </div>
-
-      <div className="flex flex-wrap items-center justify-between gap-4">
-        <div className="flex overflow-hidden rounded-xl border border-slate-300 bg-white shadow-sm">
-          {(["mine", "bookmarked", "discover"] as const).map((tab) => {
-            const locked = !isAuthenticated && (tab === "mine" || tab === "bookmarked");
-            return (
-              <button
-                key={tab}
-                type="button"
-                disabled={locked}
-                title={locked ? "Sign in to use this tab" : undefined}
-                onClick={() => setTab(tab)}
-                className={`px-4 py-2 text-sm font-medium capitalize ${
-                  activeTab === tab
-                    ? "bg-indigo-700 text-white"
-                    : locked
-                      ? "cursor-not-allowed bg-slate-100 text-slate-500"
-                      : "bg-white text-slate-800 hover:bg-slate-100"
-                }`}
-              >
-                {tab === "mine" ? "Mine" : tab === "bookmarked" ? "Bookmarked" : "Discover"}
-              </button>
-            );
-          })}
+    <>
+      <SEO
+        title={activeTab === "discover" ? "Collections" : activeTab === "bookmarked" ? "Bookmarked Collections" : "My Collections"}
+        description="Browse public study collections on Quizymode, open shared sets by topic, and switch into list, flashcard, or quiz modes."
+        canonical="https://www.quizymode.com/collections"
+        noindex={activeTab !== "discover"}
+      />
+      <div className="space-y-4">
+        <div className="rounded-[24px] border border-slate-200/80 bg-white/90 px-5 py-4 shadow-sm shadow-slate-300/20">
+          <h1 className="mb-1 text-2xl font-semibold text-slate-900">Collections</h1>
+          <p className="max-w-3xl text-sm leading-6 text-slate-700">
+            {isAuthenticated
+              ? "Your collections, bookmarks, and discover public collections. You can also open a collection by ID."
+              : "Browse public collections by topic or search. Sign in to manage your own collections and bookmarks. You can open a collection by ID."}
+          </p>
         </div>
-      {activeTab === "mine" && isAuthenticated && (
-        <button
-          onClick={() => setShowCreateModal(true)}
-          className="rounded-md bg-indigo-600 px-4 py-2 text-white hover:bg-indigo-700"
-        >
-          Create Collection
-        </button>
-      )}
-      </div>
+
+        <div className="flex flex-wrap items-center justify-between gap-4">
+          <div className="flex overflow-hidden rounded-xl border border-slate-300 bg-white shadow-sm">
+            {(["mine", "bookmarked", "discover"] as const).map((tab) => {
+              const locked = !isAuthenticated && (tab === "mine" || tab === "bookmarked");
+              return (
+                <button
+                  key={tab}
+                  type="button"
+                  disabled={locked}
+                  title={locked ? "Sign in to use this tab" : undefined}
+                  onClick={() => setTab(tab)}
+                  className={`px-4 py-2 text-sm font-medium capitalize ${
+                    activeTab === tab
+                      ? "bg-indigo-700 text-white"
+                      : locked
+                        ? "cursor-not-allowed bg-slate-100 text-slate-500"
+                        : "bg-white text-slate-800 hover:bg-slate-100"
+                  }`}
+                >
+                  {tab === "mine" ? "Mine" : tab === "bookmarked" ? "Bookmarked" : "Discover"}
+                </button>
+              );
+            })}
+          </div>
+          {activeTab === "mine" && isAuthenticated && (
+            <button
+              onClick={() => setShowCreateModal(true)}
+              className="rounded-md bg-indigo-600 px-4 py-2 text-white hover:bg-indigo-700"
+            >
+              Create Collection
+            </button>
+          )}
+        </div>
 
       {copyLinkWarning && (
         <div className="flex items-center justify-between gap-2 rounded-xl border border-amber-200 bg-amber-50 p-3 text-sm text-amber-900">
@@ -1127,7 +1135,8 @@ const CollectionsPage = () => {
           )}
         </>
       )}
-    </div>
+      </div>
+    </>
   );
 };
 

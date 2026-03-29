@@ -1,5 +1,10 @@
 import { SEO } from "@/components/SEO";
 
+const buildDateLabel = new Date(__BUILD_TIME__).toLocaleString(undefined, {
+  dateStyle: "medium",
+  timeStyle: "short",
+});
+
 const AboutPage = () => {
   return (
     <>
@@ -12,6 +17,34 @@ const AboutPage = () => {
         <h1 className="mb-6 text-4xl font-bold text-gray-900">
           About QuizyMode
         </h1>
+        <div className="mb-8 rounded-2xl border border-slate-200 bg-slate-50 px-5 py-4">
+          <h2 className="text-sm font-semibold uppercase tracking-[0.18em] text-slate-500">
+            Project Version
+          </h2>
+          <div className="mt-3 grid gap-3 sm:grid-cols-3">
+            <div>
+              <div className="text-xs font-medium uppercase tracking-[0.14em] text-slate-500">
+                Release
+              </div>
+              <p className="mt-1 text-lg font-semibold text-slate-900">{__APP_VERSION__}</p>
+            </div>
+            <div>
+              <div className="text-xs font-medium uppercase tracking-[0.14em] text-slate-500">
+                Build
+              </div>
+              <p className="mt-1 break-all text-lg font-semibold text-slate-900">{__BUILD_VERSION__}</p>
+            </div>
+            <div>
+              <div className="text-xs font-medium uppercase tracking-[0.14em] text-slate-500">
+                Built
+              </div>
+              <p className="mt-1 text-lg font-semibold text-slate-900">{buildDateLabel}</p>
+            </div>
+          </div>
+          <p className="mt-3 text-sm text-slate-600">
+            Build label: <span className="font-medium text-slate-800">{__BUILD_LABEL__}</span>
+          </p>
+        </div>
 
         <div className="prose prose-lg max-w-none">
           <p className="mb-6 text-lg leading-relaxed text-gray-700">

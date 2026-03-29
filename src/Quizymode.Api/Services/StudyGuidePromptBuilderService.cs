@@ -29,7 +29,7 @@ internal sealed class StudyGuidePromptBuilderService : IStudyGuidePromptBuilderS
           "correctAnswer": "Correct answer",
           "incorrectAnswers": ["Wrong 1", "Wrong 2", "Wrong 3"],
           "explanation": "Short explanation (optional but recommended)",
-          "source": "Study guide or section name",
+          "source": "https://example.com/reliable-reference",
           "keywords": ["optional", "extra", "tags"],
           "factualRisk": 0.2,
           "reviewComments": "Optional note about uncertainty or assumptions"
@@ -59,6 +59,7 @@ internal sealed class StudyGuidePromptBuilderService : IStudyGuidePromptBuilderS
         sb.AppendLine("- Keep the items grounded in the excerpt and avoid duplicating concepts across prompt sets.");
         sb.AppendLine("- Return ONLY a single JSON array of items. No markdown, no code fences, no commentary.");
         sb.AppendLine("- question and correctAnswer are required. incorrectAnswers must be an array with 1 to 4 items.");
+        sb.AppendLine("- If source is included, it must be a direct URL to a reliable, verifiable source. Prefer official docs, standards, government or education sites, textbooks, or other authoritative references. Do not cite the AI assistant itself.");
         sb.AppendLine("- Optional keywords are per-item extras only. Do not repeat the category, navigation path, or default extra keywords there.");
         sb.AppendLine("- factualRisk: number 0-1 (optional). reviewComments: string (optional).");
         sb.AppendLine();
@@ -98,6 +99,7 @@ internal sealed class StudyGuidePromptBuilderService : IStudyGuidePromptBuilderS
         sb.AppendLine("Below is a list of quiz items (questions) generated from multiple chunks of a study guide. Some may be duplicates or near-duplicates.");
         sb.AppendLine("Produce a single JSON array that merges duplicates: keep one best version of each unique concept, preserving the best explanation.");
         sb.AppendLine("Use the same JSON schema per item: question, correctAnswer, incorrectAnswers, explanation, source, keywords, factualRisk, reviewComments.");
+        sb.AppendLine("Preserve or improve source so each item keeps a direct URL to a reliable, verifiable source when available; do not use the AI assistant name as the source.");
         sb.AppendLine("Return ONLY the JSON array. No markdown, no code fences, no commentary.");
         sb.AppendLine();
         sb.AppendLine("Generated questions:");
