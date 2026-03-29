@@ -6423,7 +6423,7 @@
             "$ref": "#/components/schemas/System.String"
           }
         },
-        "description": "InputText is the raw upload content (e.g. JSON string) used to compute a hash for duplicate detection.\r\nCategory, Keyword1, Keyword2 define navigation; Keywords are additional default keywords for all items."
+        "description": "InputText is the raw upload content (e.g. JSON string) used to compute a hash for duplicate detection. Category, Keyword1, Keyword2 define navigation; Keywords are additional default keywords for all items."
       },
       "Quizymode.Api.Features.Items.UploadToCollection.UploadItemsToCollection.Response": {
         "required": [
@@ -7499,7 +7499,7 @@
             "$ref": "#/components/schemas/System.String"
           }
         },
-        "description": "Request DTO for updating a user setting.\r\nContains the setting key and value to store."
+        "description": "Request DTO for updating a user setting. Contains the setting key and value to store."
       },
       "Quizymode.Api.Features.UserSettings.UpdateUserSetting.Response": {
         "required": [
