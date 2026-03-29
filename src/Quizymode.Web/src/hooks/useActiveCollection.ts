@@ -9,7 +9,7 @@ const SETTING_KEY_ACTIVE_COLLECTION = "ActiveCollectionId";
 
 /**
  * Hook to get and set the user's active collection (persisted in user settings).
- * User always has an active collection: at signup the backend creates "Default Collection" and sets it active.
+ * User always has an active collection: at signup the backend creates a personalized default collection and sets it active.
  * When collections exist and no valid active is set, we set active to the first collection.
  */
 export const useActiveCollection = () => {

@@ -9,7 +9,6 @@ namespace Quizymode.Api.Features.Collections;
 
 public static class GetCollections
 {
-    private const string DefaultCollectionName = "Default Collection";
     public sealed record Response(List<CollectionResponse> Collections);
 
     public sealed record CollectionResponse(string Id, string Name, string? Description, DateTime CreatedAt, int ItemCount, bool IsPublic);
@@ -50,10 +49,10 @@ public static class GetCollections
     {
         try
         {
-            var subject = userContext.UserId!;
+            string userId = userContext.UserId!;
 
             var collections = await db.Collections
-                .Where(c => c.CreatedBy == subject)
+                .Where(c => c.CreatedBy == userId)
                 .OrderByDescending(c => c.CreatedAt)
                 .Select(c => new CollectionResponse(
                     c.Id.ToString(),
@@ -67,13 +66,21 @@ public static class GetCollections
             // Ensure user has at least one collection (Default) on first use (e.g. legacy users; new users get it at signup in UserUpsertMiddleware)
             if (collections.Count == 0)
             {
-                var defaultCollection = new Collection
+                string? displayName = null;
+                if (Guid.TryParse(userId, out Guid parsedUserId))
                 {
-                    Id = Guid.NewGuid(),
-                    Name = DefaultCollectionName,
-                    CreatedBy = subject,
-                    CreatedAt = DateTime.UtcNow
-                };
+                    var user = await db.Users
+                        .Where(u => u.Id == parsedUserId)
+                        .Select(u => new { u.Name, u.Subject })
+                        .FirstOrDefaultAsync(cancellationToken);
+
+                    if (user is not null && !string.Equals(user.Name, user.Subject, StringComparison.Ordinal))
+                    {
+                        displayName = user.Name;
+                    }
+                }
+
+                Collection defaultCollection = DefaultCollectionFactory.Create(userId, displayName);
                 db.Collections.Add(defaultCollection);
                 await db.SaveChangesAsync(cancellationToken);
                 collections = new List<CollectionResponse>

@@ -100,6 +100,7 @@ dotnet build src/Quizymode.Api/Quizymode.Api.csproj --configuration Release
 - Additional README files should be minimal and local in scope.
 - Keep long-lived operational or reference detail under `docs/`.
 - If code changes affect application behavior, keep `docs/AC.md` up to date in the same change.
+- After each completed change, include a short commit title suggestion in the final response.
 
 ## What Agents Should Optimize For
 
