@@ -1,0 +1,45 @@
+{
+  "schemaVersion": 1,
+  "seedSet": "core-public-items",
+  "deltaPreviewLimit": 200,
+  "items": [
+    {
+      "seedId": "5ea40ef0-cb4d-5e53-a26a-242c8f82922c",
+      "category": "humanities",
+      "navigationKeyword1": "literature",
+      "navigationKeyword2": "world",
+      "question": "A novel from Japan studied beside one from Nigeria is being approached as what?",
+      "correctAnswer": "world literature",
+      "incorrectAnswers": [
+        "local journalism",
+        "stagecraft",
+        "music theory"
+      ],
+      "explanation": "That comparison treats literature as something that moves across regions and traditions.",
+      "keywords": [
+        "world-literature",
+        "comparison"
+      ],
+      "source": "https://www.loc.gov/collections/world-digital-library/about-this-collection/"
+    },
+    {
+      "seedId": "a3c40c6f-a19a-5b0f-973b-71158e72889c",
+      "category": "humanities",
+      "navigationKeyword1": "literature",
+      "navigationKeyword2": "world",
+      "question": "What does world literature usually study?",
+      "correctAnswer": "works read across cultures and national traditions",
+      "incorrectAnswers": [
+        "only books written in one country",
+        "only ancient epics",
+        "only books translated into English"
+      ],
+      "explanation": "World literature looks at major works as they travel across languages, places, and traditions.",
+      "keywords": [
+        "world-literature",
+        "humanities-literature"
+      ],
+      "source": "https://www.britannica.com/art/literature"
+    }
+  ]
+}

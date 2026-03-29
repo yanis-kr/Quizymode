@@ -1,0 +1,1407 @@
+{
+  "schemaVersion": 1,
+  "seedSet": "core-public-items",
+  "deltaPreviewLimit": 200,
+  "items": [
+    {
+      "seedId": "e9827816-b18e-471d-97f3-8ed4b202f509",
+      "category": "exams",
+      "navigationKeyword1": "comptia",
+      "navigationKeyword2": "a-plus",
+      "question": "What does File History help protect in Windows?",
+      "correctAnswer": "Personal files and folders",
+      "incorrectAnswers": [
+        "Domain controller firmware",
+        "Printer toner levels",
+        "BIOS passwords only"
+      ],
+      "explanation": "File History backs up personal files and can restore previous versions.",
+      "keywords": [
+        "a-plus",
+        "pc-support",
+        "windows-tools"
+      ],
+      "source": "https://support.microsoft.com/en-us/windows/backup-and-restore-with-file-history-7bf065bf-f1ea-0a78-c1cf-7dcf51cc8bfc"
+    },
+    {
+      "seedId": "62da57b8-d0d8-48aa-8483-bd711bb31411",
+      "category": "exams",
+      "navigationKeyword1": "comptia",
+      "navigationKeyword2": "a-plus",
+      "question": "What does Safe Mode do in Windows troubleshooting?",
+      "correctAnswer": "Starts Windows with a minimal set of drivers and services",
+      "incorrectAnswers": [
+        "Encrypts the disk before startup",
+        "Resets all user passwords",
+        "Adds the device to a domain"
+      ],
+      "explanation": "Safe Mode starts Windows in a basic state using a limited set of files and drivers.",
+      "keywords": [
+        "a-plus",
+        "pc-support",
+        "troubleshooting"
+      ],
+      "source": "https://support.microsoft.com/en-us/windows/start-your-pc-in-safe-mode-in-windows-92c27cff-db89-8644-1ce4-b3e5e56fe234"
+    },
+    {
+      "seedId": "597fa7e4-eea2-4186-903f-74dc8beb629f",
+      "category": "exams",
+      "navigationKeyword1": "comptia",
+      "navigationKeyword2": "a-plus",
+      "question": "What does System Protection create in Windows?",
+      "correctAnswer": "Restore points",
+      "incorrectAnswers": [
+        "DNS records",
+        "Wi-Fi profiles",
+        "Driver certificates"
+      ],
+      "explanation": "System Protection creates and manages restore points for recovery.",
+      "keywords": [
+        "a-plus",
+        "pc-support",
+        "windows-tools"
+      ],
+      "source": "https://support.microsoft.com/en-us/windows/system-protection-e9126e6e-fa64-4f5f-874d-9db90e57645a"
+    },
+    {
+      "seedId": "26bf1e41-2e45-4e9d-bc1a-07df59e1491a",
+      "category": "exams",
+      "navigationKeyword1": "comptia",
+      "navigationKeyword2": "a-plus",
+      "question": "What is BitLocker used for in Windows?",
+      "correctAnswer": "Encrypting drives to protect data",
+      "incorrectAnswers": [
+        "Balancing web traffic",
+        "Assigning IP addresses",
+        "Creating DNS zones"
+      ],
+      "explanation": "BitLocker is a Windows security feature that protects data by encrypting drives.",
+      "keywords": [
+        "a-plus",
+        "pc-support",
+        "windows-tools"
+      ],
+      "source": "https://support.microsoft.com/en-us/windows/bitlocker-overview-44c0c61c-989d-4a69-8822-b95cd49b1bbf"
+    },
+    {
+      "seedId": "0196c045-ce54-4bb2-b942-eb522f11bcb9",
+      "category": "exams",
+      "navigationKeyword1": "comptia",
+      "navigationKeyword2": "a-plus",
+      "question": "What is CHKDSK used for?",
+      "correctAnswer": "Checking a disk and file system for errors",
+      "incorrectAnswers": [
+        "Updating BIOS firmware",
+        "Creating Wi-Fi profiles",
+        "Configuring Group Policy"
+      ],
+      "explanation": "CHKDSK examines a disk and file system and can repair certain errors.",
+      "keywords": [
+        "a-plus",
+        "pc-support",
+        "troubleshooting"
+      ],
+      "source": "https://learn.microsoft.com/en-us/windows-server/administration/windows-commands/chkdsk"
+    },
+    {
+      "seedId": "55f35da8-aa84-4e17-9cce-aab4dffad381",
+      "category": "exams",
+      "navigationKeyword1": "comptia",
+      "navigationKeyword2": "a-plus",
+      "question": "What is RAM in a typical PC?",
+      "correctAnswer": "Volatile memory used by the system for active workloads",
+      "incorrectAnswers": [
+        "Permanent firmware storage",
+        "A long-term backup device",
+        "A network routing protocol"
+      ],
+      "explanation": "RAM temporarily stores data needed by the CPU while the system is running.",
+      "keywords": [
+        "a-plus",
+        "pc-support",
+        "hardware"
+      ],
+      "source": "https://learn.microsoft.com/en-us/windows/client-management/client-tools/windows-memory-diagnostic"
+    },
+    {
+      "seedId": "b8cfd5be-4645-4d76-9a32-478b58e82f30",
+      "category": "exams",
+      "navigationKeyword1": "comptia",
+      "navigationKeyword2": "a-plus",
+      "question": "What kind of connection does Quick Assist use to help another Windows user?",
+      "correctAnswer": "A remote connection",
+      "incorrectAnswers": [
+        "A Bluetooth pairing only",
+        "A local USB connection",
+        "An HDMI passthrough"
+      ],
+      "explanation": "Quick Assist uses a remote connection so one user can help another user.",
+      "keywords": [
+        "a-plus",
+        "pc-support",
+        "windows-tools"
+      ],
+      "source": "https://support.microsoft.com/en-us/windows/solve-pc-problems-over-a-remote-connection-b077e31a-16f4-2529-1a47-21f6a9040bf3"
+    },
+    {
+      "seedId": "01da7e3a-74ab-4eec-a86b-50b3e950793c",
+      "category": "exams",
+      "navigationKeyword1": "comptia",
+      "navigationKeyword2": "a-plus",
+      "question": "Which Windows tool acts as a system monitor and startup manager?",
+      "correctAnswer": "Task Manager",
+      "incorrectAnswers": [
+        "Clipboard",
+        "Snipping Tool",
+        "Character Map"
+      ],
+      "explanation": "Task Manager provides insight into system performance and startup applications.",
+      "keywords": [
+        "a-plus",
+        "pc-support",
+        "windows-tools"
+      ],
+      "source": "https://support.microsoft.com/en-us/windows/system-configuration-tools-in-windows-f8a49657-b038-43b8-82d3-28bea0c5666b"
+    },
+    {
+      "seedId": "bb070db5-a51c-452e-91a1-d6fd1e03bcfb",
+      "category": "exams",
+      "navigationKeyword1": "comptia",
+      "navigationKeyword2": "a-plus",
+      "question": "Which Windows tool is used to manage hardware devices?",
+      "correctAnswer": "Device Manager",
+      "incorrectAnswers": [
+        "Paint",
+        "Calculator",
+        "Notepad"
+      ],
+      "explanation": "Device Manager is the built-in Windows tool for viewing and managing hardware devices.",
+      "keywords": [
+        "a-plus",
+        "pc-support",
+        "windows-tools"
+      ],
+      "source": "https://support.microsoft.com/en-us/windows/open-device-manager-a7f2db46-faaf-24f0-8b7b-9e4a6032fc8c"
+    },
+    {
+      "seedId": "02de5d16-77fd-4d26-b5d0-029a0b9c39c3",
+      "category": "exams",
+      "navigationKeyword1": "comptia",
+      "navigationKeyword2": "a-plus",
+      "question": "Which antivirus product comes built in to Windows 10 and Windows 11?",
+      "correctAnswer": "Microsoft Defender Antivirus",
+      "incorrectAnswers": [
+        "Cisco Secure Firewall",
+        "Cloud Armor",
+        "BitLocker"
+      ],
+      "explanation": "Microsoft Defender Antivirus is built into Windows 10 and Windows 11.",
+      "keywords": [
+        "a-plus",
+        "pc-support",
+        "windows-tools"
+      ],
+      "source": "https://support.microsoft.com/en-us/windows/antivirus-and-antimalware-software-faq-31f2a46e-fad6-b713-45cf-b9db579973e6"
+    },
+    {
+      "seedId": "69465bf0-f1e1-427e-a921-1169cc94a192",
+      "category": "exams",
+      "navigationKeyword1": "comptia",
+      "navigationKeyword2": "cloud-plus",
+      "question": "What does autoscaling do in a cloud environment?",
+      "correctAnswer": "Adjusts available capacity based on demand or policy",
+      "incorrectAnswers": [
+        "Encrypts storage volumes",
+        "Assigns VLANs to routers",
+        "Converts object storage to block storage"
+      ],
+      "explanation": "Autoscaling automatically changes capacity to meet workload demand.",
+      "keywords": [
+        "cloud-plus",
+        "cloud-ops",
+        "comptia"
+      ],
+      "source": "https://docs.aws.amazon.com/autoscaling/ec2/userguide/what-is-amazon-ec2-auto-scaling.html"
+    },
+    {
+      "seedId": "32a371a9-7059-4ca4-a20f-e4021f168465",
+      "category": "exams",
+      "navigationKeyword1": "comptia",
+      "navigationKeyword2": "cloud-plus",
+      "question": "What does container orchestration help manage?",
+      "correctAnswer": "Deployment, scaling, and lifecycle management of containers",
+      "incorrectAnswers": [
+        "Physical cabling layouts",
+        "Only user account passwords",
+        "PDF versioning"
+      ],
+      "explanation": "Container orchestration platforms automate deployment, scaling, and management of containerized workloads.",
+      "keywords": [
+        "cloud-plus",
+        "cloud-ops",
+        "comptia"
+      ],
+      "source": "https://kubernetes.io/docs/concepts/overview/what-is-kubernetes/"
+    },
+    {
+      "seedId": "ccf74caf-d9ac-4e69-b28d-eeb22f9b615c",
+      "category": "exams",
+      "navigationKeyword1": "comptia",
+      "navigationKeyword2": "cloud-plus",
+      "question": "What does hybrid cloud mean?",
+      "correctAnswer": "Using a mix of on-premises or private resources together with public cloud services",
+      "incorrectAnswers": [
+        "Using only one public cloud region",
+        "Running applications without virtualization",
+        "Using cloud services without networking"
+      ],
+      "explanation": "Hybrid cloud combines different environments such as on-premises systems and public cloud services.",
+      "keywords": [
+        "cloud-plus",
+        "cloud-ops",
+        "comptia"
+      ],
+      "source": "https://learn.microsoft.com/en-us/azure/architecture/guide/architecture-styles/hybrid"
+    },
+    {
+      "seedId": "d0040170-9458-4f48-803a-49ff893c1e3a",
+      "category": "exams",
+      "navigationKeyword1": "comptia",
+      "navigationKeyword2": "cloud-plus",
+      "question": "What is ISO 27001?",
+      "correctAnswer": "A standard for information security management systems",
+      "incorrectAnswers": [
+        "A routing protocol",
+        "A hypervisor feature",
+        "A Linux file system"
+      ],
+      "explanation": "ISO/IEC 27001 is a widely used standard for information security management systems.",
+      "keywords": [
+        "cloud-plus",
+        "cloud-ops",
+        "comptia"
+      ],
+      "source": "https://www.iso.org/isoiec-27001-information-security.html"
+    },
+    {
+      "seedId": "5b1a8f91-e898-4582-b38f-10328b446848",
+      "category": "exams",
+      "navigationKeyword1": "comptia",
+      "navigationKeyword2": "cloud-plus",
+      "question": "What is a snapshot commonly used for in cloud operations?",
+      "correctAnswer": "Capturing a point-in-time copy of data or storage state",
+      "incorrectAnswers": [
+        "Replacing IAM policies",
+        "Blocking DDoS attacks by itself",
+        "Publishing DNS records"
+      ],
+      "explanation": "Snapshots capture a point-in-time copy that can support backup or recovery workflows.",
+      "keywords": [
+        "cloud-plus",
+        "cloud-ops",
+        "comptia"
+      ],
+      "source": "https://learn.microsoft.com/en-us/azure/virtual-machines/snapshot-copy-managed-disk"
+    },
+    {
+      "seedId": "a07e14ff-6ae3-43ec-b804-8de48be1ec92",
+      "category": "exams",
+      "navigationKeyword1": "comptia",
+      "navigationKeyword2": "cloud-plus",
+      "question": "What is high availability designed to reduce?",
+      "correctAnswer": "Service downtime from component or system failures",
+      "incorrectAnswers": [
+        "Network bandwidth only",
+        "Password complexity",
+        "The need for monitoring"
+      ],
+      "explanation": "High availability architectures aim to keep services running even when components fail.",
+      "keywords": [
+        "cloud-plus",
+        "cloud-ops",
+        "comptia"
+      ],
+      "source": "https://docs.aws.amazon.com/wellarchitected/latest/reliability-pillar/welcome.html"
+    },
+    {
+      "seedId": "f351ba87-3620-42ce-97f7-ab3926d8e84e",
+      "category": "exams",
+      "navigationKeyword1": "comptia",
+      "navigationKeyword2": "cloud-plus",
+      "question": "What is infrastructure as code (IaC)?",
+      "correctAnswer": "Managing and provisioning infrastructure through machine-readable definitions",
+      "incorrectAnswers": [
+        "Writing end-user spreadsheets",
+        "Replacing all APIs with manual tickets",
+        "A method for cooling data centers"
+      ],
+      "explanation": "IaC manages infrastructure using code and declarative definitions instead of manual changes.",
+      "keywords": [
+        "cloud-plus",
+        "cloud-ops",
+        "comptia"
+      ],
+      "source": "https://developer.hashicorp.com/terraform/intro"
+    },
+    {
+      "seedId": "9ca6f64c-4d9b-4d3a-9ed0-335f181b6456",
+      "category": "exams",
+      "navigationKeyword1": "comptia",
+      "navigationKeyword2": "cloud-plus",
+      "question": "What is multi-cloud?",
+      "correctAnswer": "Using services from more than one cloud provider",
+      "incorrectAnswers": [
+        "Using multiple VLANs in one data center",
+        "Running several VMs on one host",
+        "Using only one provider across regions"
+      ],
+      "explanation": "Multi-cloud refers to consuming cloud services from more than one provider.",
+      "keywords": [
+        "cloud-plus",
+        "cloud-ops",
+        "comptia"
+      ],
+      "source": "https://learn.microsoft.com/en-us/azure/architecture/guide/multicloud/overview"
+    },
+    {
+      "seedId": "ab5535df-5fa7-44e4-8b3f-1efbe9e6a902",
+      "category": "exams",
+      "navigationKeyword1": "comptia",
+      "navigationKeyword2": "cloud-plus",
+      "question": "Which storage type is typically accessed over a network as discrete objects rather than blocks?",
+      "correctAnswer": "Object storage",
+      "incorrectAnswers": [
+        "Block storage only",
+        "L1 cache",
+        "Swap memory"
+      ],
+      "explanation": "Object storage manages data as objects rather than fixed blocks or hierarchical files.",
+      "keywords": [
+        "cloud-plus",
+        "cloud-ops",
+        "comptia"
+      ],
+      "source": "https://docs.aws.amazon.com/AmazonS3/latest/userguide/Welcome.html"
+    },
+    {
+      "seedId": "ad334119-5fc8-4dc5-9372-853d3ff4c755",
+      "category": "exams",
+      "navigationKeyword1": "comptia",
+      "navigationKeyword2": "cloud-plus",
+      "question": "Why is cost tagging useful in cloud billing management?",
+      "correctAnswer": "It helps attribute spending to projects, teams, or environments",
+      "incorrectAnswers": [
+        "It encrypts virtual networks",
+        "It creates backups automatically",
+        "It replaces identity management"
+      ],
+      "explanation": "Tags are commonly used to organize and track cloud spend by resource ownership or purpose.",
+      "keywords": [
+        "cloud-plus",
+        "cloud-ops",
+        "comptia"
+      ],
+      "source": "https://learn.microsoft.com/en-us/azure/cost-management-billing/costs/enable-tag-inheritance"
+    },
+    {
+      "seedId": "94753554-737f-44f4-b6d2-885c3b1e67f0",
+      "category": "exams",
+      "navigationKeyword1": "comptia",
+      "navigationKeyword2": "cysa-plus",
+      "question": "What does log ingestion mean in a SOC context?",
+      "correctAnswer": "Bringing event and log data into a monitoring platform for analysis",
+      "incorrectAnswers": [
+        "Deleting logs after 24 hours",
+        "Printing logs for signatures",
+        "Hashing passwords for users"
+      ],
+      "explanation": "Log ingestion refers to collecting and loading log data into a platform such as a SIEM.",
+      "keywords": [
+        "cysa-plus",
+        "soc-analyst",
+        "comptia"
+      ],
+      "source": "https://learn.microsoft.com/en-us/azure/sentinel/connect-data-sources"
+    },
+    {
+      "seedId": "cf3624ca-d6f5-4422-af38-a5ea9380f817",
+      "category": "exams",
+      "navigationKeyword1": "comptia",
+      "navigationKeyword2": "cysa-plus",
+      "question": "What is Wireshark primarily used for?",
+      "correctAnswer": "Capturing and analyzing network traffic",
+      "incorrectAnswers": [
+        "Editing registry keys",
+        "Provisioning VLANs",
+        "Creating disk images"
+      ],
+      "explanation": "Wireshark is a packet analyzer used to inspect captured network traffic.",
+      "keywords": [
+        "cysa-plus",
+        "soc-analyst",
+        "comptia"
+      ],
+      "source": "https://www.wireshark.org/docs/wsug_html_chunked/ChCapCapturingSection.html"
+    },
+    {
+      "seedId": "72a0b5fe-fdbd-4083-ab96-eae12dd484a7",
+      "category": "exams",
+      "navigationKeyword1": "comptia",
+      "navigationKeyword2": "cysa-plus",
+      "question": "What is an indicator of compromise?",
+      "correctAnswer": "A piece of evidence suggesting potential malicious activity",
+      "incorrectAnswers": [
+        "A completed software license renewal",
+        "A failed backup job only",
+        "A mandatory BIOS update"
+      ],
+      "explanation": "IOCs are artifacts or evidence that can indicate possible compromise.",
+      "keywords": [
+        "cysa-plus",
+        "soc-analyst",
+        "comptia"
+      ],
+      "source": "https://www.cisa.gov/news-events/news/understanding-indicators-compromise"
+    },
+    {
+      "seedId": "d0d78d61-0996-489f-8c03-20b05bac87c9",
+      "category": "exams",
+      "navigationKeyword1": "comptia",
+      "navigationKeyword2": "cysa-plus",
+      "question": "What is the difference between a true positive and a false positive?",
+      "correctAnswer": "A true positive is a correctly detected threat, while a false positive is a benign event flagged as malicious",
+      "incorrectAnswers": [
+        "A true positive is always low severity",
+        "A false positive means a confirmed breach",
+        "There is no difference"
+      ],
+      "explanation": "Detection tuning aims to maximize true positives and reduce false positives.",
+      "keywords": [
+        "cysa-plus",
+        "soc-analyst",
+        "comptia"
+      ],
+      "source": "https://learn.microsoft.com/en-us/azure/sentinel/false-positives"
+    },
+    {
+      "seedId": "638833ce-e249-4dcf-952a-06a581fadc67",
+      "category": "exams",
+      "navigationKeyword1": "comptia",
+      "navigationKeyword2": "cysa-plus",
+      "question": "What is the main function of a SIEM?",
+      "correctAnswer": "Aggregating and correlating security events from many sources",
+      "incorrectAnswers": [
+        "Defragmenting disks",
+        "Providing DHCP leases",
+        "Formatting log files for printers"
+      ],
+      "explanation": "SIEM tools centralize and correlate events to support monitoring and investigations.",
+      "keywords": [
+        "cysa-plus",
+        "soc-analyst",
+        "comptia"
+      ],
+      "source": "https://learn.microsoft.com/en-us/azure/sentinel/overview"
+    },
+    {
+      "seedId": "d4ee09e6-d2d3-48d7-8c41-024c272229eb",
+      "category": "exams",
+      "navigationKeyword1": "comptia",
+      "navigationKeyword2": "cysa-plus",
+      "question": "What is the purpose of a malware sandbox?",
+      "correctAnswer": "To observe suspicious code in an isolated environment",
+      "incorrectAnswers": [
+        "To replace EDR agents",
+        "To assign static routes",
+        "To store DNS zones"
+      ],
+      "explanation": "Sandboxes let defenders analyze suspicious files or code safely in isolation.",
+      "keywords": [
+        "cysa-plus",
+        "soc-analyst",
+        "comptia"
+      ],
+      "source": "https://learn.microsoft.com/en-us/defender-office-365/safe-attachments-about"
+    },
+    {
+      "seedId": "f9ff07d4-e55e-4d3c-8a44-732f1c635889",
+      "category": "exams",
+      "navigationKeyword1": "comptia",
+      "navigationKeyword2": "cysa-plus",
+      "question": "What is the value of an incident response playbook?",
+      "correctAnswer": "It standardizes response steps for a known type of incident",
+      "incorrectAnswers": [
+        "It disables endpoint logging",
+        "It guarantees zero false positives",
+        "It replaces backups"
+      ],
+      "explanation": "Playbooks help teams respond consistently and quickly to recurring incident types.",
+      "keywords": [
+        "cysa-plus",
+        "soc-analyst",
+        "comptia"
+      ],
+      "source": "https://learn.microsoft.com/en-us/azure/sentinel/automation/playbook-triggers-actions"
+    },
+    {
+      "seedId": "a25a0dc3-2a32-41c7-bf66-e2dc9d875e38",
+      "category": "exams",
+      "navigationKeyword1": "comptia",
+      "navigationKeyword2": "cysa-plus",
+      "question": "What is threat hunting?",
+      "correctAnswer": "Proactively searching for signs of malicious activity not yet confirmed by alerts",
+      "incorrectAnswers": [
+        "Waiting for users to report issues",
+        "Building VLAN trunks",
+        "Encrypting backup tapes"
+      ],
+      "explanation": "Threat hunting is a proactive search for suspicious behavior or compromise indicators.",
+      "keywords": [
+        "cysa-plus",
+        "soc-analyst",
+        "comptia"
+      ],
+      "source": "https://www.cisa.gov/news-events/news/understanding-indicators-compromise"
+    },
+    {
+      "seedId": "c34856e3-f035-4e88-8864-1e1b3e640b48",
+      "category": "exams",
+      "navigationKeyword1": "comptia",
+      "navigationKeyword2": "cysa-plus",
+      "question": "Why is PowerShell useful to analysts and defenders?",
+      "correctAnswer": "It can automate administrative and investigative tasks on Windows systems",
+      "incorrectAnswers": [
+        "It replaces all endpoint logs",
+        "It routes internet traffic",
+        "It is a packet encapsulation protocol"
+      ],
+      "explanation": "PowerShell is commonly used to automate and script operational tasks on Windows.",
+      "keywords": [
+        "cysa-plus",
+        "soc-analyst",
+        "comptia"
+      ],
+      "source": "https://learn.microsoft.com/en-us/powershell/scripting/overview"
+    },
+    {
+      "seedId": "44b7c437-70d7-4fe3-8f48-ea918cfb8d15",
+      "category": "exams",
+      "navigationKeyword1": "comptia",
+      "navigationKeyword2": "cysa-plus",
+      "question": "Why is least privilege important in security operations?",
+      "correctAnswer": "It limits the damage that can occur if an account or system is misused",
+      "incorrectAnswers": [
+        "It removes the need for MFA",
+        "It prevents all phishing",
+        "It replaces network segmentation"
+      ],
+      "explanation": "Limiting privileges reduces the blast radius of misuse or compromise.",
+      "keywords": [
+        "cysa-plus",
+        "soc-analyst",
+        "comptia"
+      ],
+      "source": "https://csrc.nist.gov/glossary/term/least_privilege"
+    },
+    {
+      "seedId": "ec2ecaaf-e752-4930-8421-3517ad434e7f",
+      "category": "exams",
+      "navigationKeyword1": "comptia",
+      "navigationKeyword2": "general-comptia",
+      "question": "What experience does CompTIA recommend before taking Security+?",
+      "correctAnswer": "CompTIA Network+ and two years in a security or systems administrator role",
+      "incorrectAnswers": [
+        "No prior experience",
+        "Five years as a cloud architect",
+        "Only CompTIA A+"
+      ],
+      "explanation": "CompTIA recommends Network+ plus two years of relevant security or systems administration experience.",
+      "keywords": [
+        "security-plus",
+        "general-comptia",
+        "test-prep"
+      ],
+      "source": "https://www.comptia.org/en-us/certifications/security/"
+    },
+    {
+      "seedId": "2e8215c1-39e6-499f-af46-33010e023a25",
+      "category": "exams",
+      "navigationKeyword1": "comptia",
+      "navigationKeyword2": "general-comptia",
+      "question": "What is the exam series code for Cloud+ V4?",
+      "correctAnswer": "CV0-004",
+      "incorrectAnswers": [
+        "CV0-003",
+        "SY0-701",
+        "CS0-003"
+      ],
+      "explanation": "CompTIA lists CV0-004 as the Cloud+ V4 exam series code.",
+      "keywords": [
+        "cloud-plus",
+        "general-comptia",
+        "test-prep"
+      ],
+      "source": "https://www.comptia.org/en-us/certifications/cloud/"
+    },
+    {
+      "seedId": "c1219ad6-2a2f-4638-8a37-e22ae044fbd4",
+      "category": "exams",
+      "navigationKeyword1": "comptia",
+      "navigationKeyword2": "general-comptia",
+      "question": "What is the exam series code for CompTIA A+ Core 1 V15?",
+      "correctAnswer": "220-1201",
+      "incorrectAnswers": [
+        "220-1101",
+        "N10-009",
+        "SY0-701"
+      ],
+      "explanation": "CompTIA lists 220-1201 as the Core 1 exam series code for A+ V15.",
+      "keywords": [
+        "a-plus",
+        "general-comptia",
+        "test-prep"
+      ],
+      "source": "https://www.comptia.org/en-us/certifications/a/core-1-v15/"
+    },
+    {
+      "seedId": "1126bdda-2024-4201-8324-f70637a1a6f3",
+      "category": "exams",
+      "navigationKeyword1": "comptia",
+      "navigationKeyword2": "general-comptia",
+      "question": "What is the exam series code for CompTIA Security+ V7?",
+      "correctAnswer": "SY0-701",
+      "incorrectAnswers": [
+        "CS0-003",
+        "CV0-004",
+        "XK0-006"
+      ],
+      "explanation": "CompTIA lists SY0-701 as the Security+ V7 exam series code.",
+      "keywords": [
+        "security-plus",
+        "general-comptia",
+        "test-prep"
+      ],
+      "source": "https://www.comptia.org/en-us/certifications/security/"
+    },
+    {
+      "seedId": "81861278-d746-48e9-b353-a2f719f7456b",
+      "category": "exams",
+      "navigationKeyword1": "comptia",
+      "navigationKeyword2": "general-comptia",
+      "question": "What is the exam series code for CySA+ V3?",
+      "correctAnswer": "CS0-003",
+      "incorrectAnswers": [
+        "SY0-701",
+        "CV0-004",
+        "XK0-006"
+      ],
+      "explanation": "CompTIA lists CS0-003 as the CySA+ V3 exam series code.",
+      "keywords": [
+        "cysa-plus",
+        "general-comptia",
+        "test-prep"
+      ],
+      "source": "https://www.comptia.org/en-us/certifications/cybersecurity-analyst/"
+    },
+    {
+      "seedId": "9140c46c-23cd-434d-a3dc-aaf42d1a0ae2",
+      "category": "exams",
+      "navigationKeyword1": "comptia",
+      "navigationKeyword2": "general-comptia",
+      "question": "What is the exam series code for Linux+ V8?",
+      "correctAnswer": "XK0-006",
+      "incorrectAnswers": [
+        "XK0-005",
+        "CV0-004",
+        "CS0-003"
+      ],
+      "explanation": "CompTIA lists XK0-006 as the Linux+ V8 exam series code.",
+      "keywords": [
+        "linux-plus",
+        "general-comptia",
+        "test-prep"
+      ],
+      "source": "https://www.comptia.org/en-us/certifications/linux/v8/"
+    },
+    {
+      "seedId": "71c699c8-576c-41e6-b0cc-03ebb2e529ec",
+      "category": "exams",
+      "navigationKeyword1": "comptia",
+      "navigationKeyword2": "general-comptia",
+      "question": "What is the exam series code for the current CompTIA Network+ exam?",
+      "correctAnswer": "N10-009",
+      "incorrectAnswers": [
+        "220-1201",
+        "SY0-701",
+        "XK0-005"
+      ],
+      "explanation": "CompTIA lists N10-009 as the exam series code for Network+ V9.",
+      "keywords": [
+        "network-plus",
+        "general-comptia",
+        "test-prep"
+      ],
+      "source": "https://www.comptia.org/en-us/certifications/network/"
+    },
+    {
+      "seedId": "c3178cec-c282-4ebd-bc9e-83bedb1ba1fd",
+      "category": "exams",
+      "navigationKeyword1": "comptia",
+      "navigationKeyword2": "general-comptia",
+      "question": "What is the passing score for CySA+?",
+      "correctAnswer": "750",
+      "incorrectAnswers": [
+        "700",
+        "720",
+        "800"
+      ],
+      "explanation": "The CySA+ passing score is 750 on a 100-900 scale.",
+      "keywords": [
+        "cysa-plus",
+        "general-comptia",
+        "test-prep"
+      ],
+      "source": "https://www.comptia.org/en-us/certifications/cybersecurity-analyst/"
+    },
+    {
+      "seedId": "4764d840-7b9b-4415-9d5d-863ffd95ad72",
+      "category": "exams",
+      "navigationKeyword1": "comptia",
+      "navigationKeyword2": "general-comptia",
+      "question": "What is the passing score for Linux+ V8?",
+      "correctAnswer": "720",
+      "incorrectAnswers": [
+        "700",
+        "750",
+        "800"
+      ],
+      "explanation": "The Linux+ V8 passing score is 720 on a 100-900 scale.",
+      "keywords": [
+        "linux-plus",
+        "general-comptia",
+        "test-prep"
+      ],
+      "source": "https://www.comptia.org/en-us/certifications/linux/v8/"
+    },
+    {
+      "seedId": "b60e6802-7f7f-4f1e-850b-d5fc1747b95b",
+      "category": "exams",
+      "navigationKeyword1": "comptia",
+      "navigationKeyword2": "general-comptia",
+      "question": "What is the passing score for Security+?",
+      "correctAnswer": "750",
+      "incorrectAnswers": [
+        "720",
+        "700",
+        "800"
+      ],
+      "explanation": "The Security+ passing score is 750 on a 100-900 scale.",
+      "keywords": [
+        "security-plus",
+        "general-comptia",
+        "test-prep"
+      ],
+      "source": "https://www.comptia.org/en-us/certifications/security/"
+    },
+    {
+      "seedId": "676e2a68-d2ab-4a65-acd6-7b0491e71807",
+      "category": "exams",
+      "navigationKeyword1": "comptia",
+      "navigationKeyword2": "linux-plus",
+      "question": "What does SSH provide on a Linux server?",
+      "correctAnswer": "Encrypted remote shell access",
+      "incorrectAnswers": [
+        "Disk compression",
+        "Static route summarization",
+        "Directory replication only"
+      ],
+      "explanation": "SSH provides secure remote access and command execution.",
+      "keywords": [
+        "linux-plus",
+        "linux-admin",
+        "comptia"
+      ],
+      "source": "https://www.rfc-editor.org/rfc/rfc4251"
+    },
+    {
+      "seedId": "6d2a4c80-2b14-46a3-b85c-c3a61a48fe74",
+      "category": "exams",
+      "navigationKeyword1": "comptia",
+      "navigationKeyword2": "linux-plus",
+      "question": "What does `chmod` change?",
+      "correctAnswer": "File or directory permissions",
+      "incorrectAnswers": [
+        "The kernel version",
+        "The package repository",
+        "The DNS resolver only"
+      ],
+      "explanation": "`chmod` changes access permissions on files and directories.",
+      "keywords": [
+        "linux-plus",
+        "linux-admin",
+        "comptia"
+      ],
+      "source": "https://man7.org/linux/man-pages/man1/chmod.1.html"
+    },
+    {
+      "seedId": "e0f5edcc-d44d-4dd3-bf9d-685fab5699a4",
+      "category": "exams",
+      "navigationKeyword1": "comptia",
+      "navigationKeyword2": "linux-plus",
+      "question": "What does the `ls` command do in Linux?",
+      "correctAnswer": "Lists directory contents",
+      "incorrectAnswers": [
+        "Stops a service",
+        "Changes file ownership",
+        "Encrypts a partition"
+      ],
+      "explanation": "The `ls` command displays files and directories.",
+      "keywords": [
+        "linux-plus",
+        "linux-admin",
+        "comptia"
+      ],
+      "source": "https://man7.org/linux/man-pages/man1/ls.1.html"
+    },
+    {
+      "seedId": "e937aea9-673c-4643-b98a-7dc91ecf75aa",
+      "category": "exams",
+      "navigationKeyword1": "comptia",
+      "navigationKeyword2": "linux-plus",
+      "question": "What is LVM primarily used for?",
+      "correctAnswer": "Flexible logical volume management on top of physical storage",
+      "incorrectAnswers": [
+        "Routing network packets",
+        "Translating IP addresses",
+        "Managing SSL certificates"
+      ],
+      "explanation": "LVM lets administrators create, resize, and manage logical storage volumes flexibly.",
+      "keywords": [
+        "linux-plus",
+        "linux-admin",
+        "comptia"
+      ],
+      "source": "https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/9/html/configuring_and_managing_logical_volumes/index"
+    },
+    {
+      "seedId": "31755928-4a67-43b0-9920-bebfa4fc6396",
+      "category": "exams",
+      "navigationKeyword1": "comptia",
+      "navigationKeyword2": "linux-plus",
+      "question": "What is `grep` commonly used for?",
+      "correctAnswer": "Searching text for lines that match a pattern",
+      "incorrectAnswers": [
+        "Mounting storage volumes",
+        "Starting containers",
+        "Adding users to groups"
+      ],
+      "explanation": "`grep` searches input for patterns and prints matching lines.",
+      "keywords": [
+        "linux-plus",
+        "linux-admin",
+        "comptia"
+      ],
+      "source": "https://man7.org/linux/man-pages/man1/grep.1.html"
+    },
+    {
+      "seedId": "cdd29b83-7bbc-4921-a6ca-46bf5bda16f7",
+      "category": "exams",
+      "navigationKeyword1": "comptia",
+      "navigationKeyword2": "linux-plus",
+      "question": "What is `journalctl` used for?",
+      "correctAnswer": "Viewing and querying logs from the systemd journal",
+      "incorrectAnswers": [
+        "Changing file permissions",
+        "Managing DNS zones",
+        "Configuring RAID arrays"
+      ],
+      "explanation": "`journalctl` reads systemd journal logs.",
+      "keywords": [
+        "linux-plus",
+        "linux-admin",
+        "comptia"
+      ],
+      "source": "https://www.freedesktop.org/software/systemd/man/journalctl.html"
+    },
+    {
+      "seedId": "3910be49-c532-45e0-a722-dad3d3193605",
+      "category": "exams",
+      "navigationKeyword1": "comptia",
+      "navigationKeyword2": "linux-plus",
+      "question": "What is `systemctl` used for on a systemd-based Linux system?",
+      "correctAnswer": "Managing services and system units",
+      "incorrectAnswers": [
+        "Editing kernel source code",
+        "Creating VLAN trunks",
+        "Formatting cloud buckets"
+      ],
+      "explanation": "`systemctl` is the primary command-line tool for controlling systemd services and units.",
+      "keywords": [
+        "linux-plus",
+        "linux-admin",
+        "comptia"
+      ],
+      "source": "https://www.freedesktop.org/software/systemd/man/systemctl.html"
+    },
+    {
+      "seedId": "351a40ba-4817-415d-ad3b-9e975a183570",
+      "category": "exams",
+      "navigationKeyword1": "comptia",
+      "navigationKeyword2": "linux-plus",
+      "question": "What is nftables used for?",
+      "correctAnswer": "Packet filtering and firewall rules",
+      "incorrectAnswers": [
+        "Package signing only",
+        "Container image building",
+        "Kernel panic analysis"
+      ],
+      "explanation": "nftables is a Linux packet filtering and classification framework.",
+      "keywords": [
+        "linux-plus",
+        "linux-admin",
+        "comptia"
+      ],
+      "source": "https://wiki.nftables.org/wiki-nftables/index.php/Main_Page"
+    },
+    {
+      "seedId": "675b30ff-f5a4-4bcf-a73c-007a00dd9e8a",
+      "category": "exams",
+      "navigationKeyword1": "comptia",
+      "navigationKeyword2": "linux-plus",
+      "question": "What is the purpose of the `tar` utility?",
+      "correctAnswer": "Creating and extracting archives",
+      "incorrectAnswers": [
+        "Managing firewall zones",
+        "Restarting systemd units",
+        "Inspecting block devices"
+      ],
+      "explanation": "`tar` is used to package files into archives and extract them later.",
+      "keywords": [
+        "linux-plus",
+        "linux-admin",
+        "comptia"
+      ],
+      "source": "https://www.gnu.org/software/tar/manual/tar.html"
+    },
+    {
+      "seedId": "876ea4af-9237-43a4-8090-514059ea5300",
+      "category": "exams",
+      "navigationKeyword1": "comptia",
+      "navigationKeyword2": "linux-plus",
+      "question": "Why is Python commonly useful in Linux administration?",
+      "correctAnswer": "It can automate repetitive operational tasks and scripts",
+      "incorrectAnswers": [
+        "It replaces the kernel scheduler",
+        "It mounts file systems automatically without commands",
+        "It is required to use SSH"
+      ],
+      "explanation": "Python is commonly used to automate system administration tasks.",
+      "keywords": [
+        "linux-plus",
+        "linux-admin",
+        "comptia"
+      ],
+      "source": "https://docs.python.org/3/tutorial/"
+    },
+    {
+      "seedId": "b92a2531-7294-4d2c-a01f-76622c191854",
+      "category": "exams",
+      "navigationKeyword1": "comptia",
+      "navigationKeyword2": "network-plus",
+      "question": "What does NAT do?",
+      "correctAnswer": "Translates private IP addresses to a public IP address",
+      "incorrectAnswers": [
+        "Encrypts an entire disk",
+        "Creates restore points",
+        "Indexes documents for search"
+      ],
+      "explanation": "NAT translates internal private addresses before packets are sent to an external network.",
+      "keywords": [
+        "network-plus",
+        "network-fundamentals",
+        "protocols"
+      ],
+      "source": "https://www.cisco.com/c/en/us/products/routers/network-address-translation.html"
+    },
+    {
+      "seedId": "479e51ab-fd7f-448f-93f5-383ac6ec4e08",
+      "category": "exams",
+      "navigationKeyword1": "comptia",
+      "navigationKeyword2": "network-plus",
+      "question": "What does a router examine to forward an IP packet?",
+      "correctAnswer": "The destination IP address",
+      "incorrectAnswers": [
+        "The destination MAC address only",
+        "The monitor refresh rate",
+        "The SSD model number"
+      ],
+      "explanation": "Routers use the packet's destination IP address and routing table information to forward traffic.",
+      "keywords": [
+        "network-plus",
+        "network-fundamentals",
+        "protocols"
+      ],
+      "source": "https://www.cisco.com/c/en/us/solutions/small-business/resource-center/networking/how-does-a-router-work.html"
+    },
+    {
+      "seedId": "8b638d80-815e-4fa3-96b0-c4893bfe6100",
+      "category": "exams",
+      "navigationKeyword1": "comptia",
+      "navigationKeyword2": "network-plus",
+      "question": "What does a subnet mask help a host determine?",
+      "correctAnswer": "Which part of an IPv4 address identifies the network versus the host",
+      "incorrectAnswers": [
+        "The device's MAC vendor",
+        "The DHCP lease time only",
+        "The switch spanning-tree priority"
+      ],
+      "explanation": "Subnet masks identify the network portion and host portion of an IPv4 address.",
+      "keywords": [
+        "network-plus",
+        "ip-addressing",
+        "protocols"
+      ],
+      "source": "https://www.rfc-editor.org/rfc/rfc950"
+    },
+    {
+      "seedId": "4c65833b-c4b7-4da7-8256-d4913eb77cf1",
+      "category": "exams",
+      "navigationKeyword1": "comptia",
+      "navigationKeyword2": "network-plus",
+      "question": "What does a switch use to make forwarding decisions inside a LAN?",
+      "correctAnswer": "The destination MAC address",
+      "incorrectAnswers": [
+        "The BIOS serial number",
+        "The CPU temperature",
+        "The user password"
+      ],
+      "explanation": "A switch inspects the destination MAC address in a frame to decide where to forward it.",
+      "keywords": [
+        "network-plus",
+        "network-fundamentals",
+        "protocols"
+      ],
+      "source": "https://www.cisco.com/c/en/us/products/switches/what-is-network-switching.html"
+    },
+    {
+      "seedId": "888fd598-4a1b-49a0-9757-15cbcb91eb5d",
+      "category": "exams",
+      "navigationKeyword1": "comptia",
+      "navigationKeyword2": "network-plus",
+      "question": "What is the role of DNS?",
+      "correctAnswer": "Resolving host names to IP addresses",
+      "incorrectAnswers": [
+        "Assigning MAC addresses",
+        "Encrypting packets",
+        "Providing PoE power"
+      ],
+      "explanation": "DNS translates names into resource records such as IP addresses so clients can find services.",
+      "keywords": [
+        "network-plus",
+        "dns",
+        "protocols"
+      ],
+      "source": "https://www.rfc-editor.org/rfc/rfc1034"
+    },
+    {
+      "seedId": "5c0fff41-507f-4f95-8429-a114db4915b3",
+      "category": "exams",
+      "navigationKeyword1": "comptia",
+      "navigationKeyword2": "network-plus",
+      "question": "Which OSI layer is responsible for routing?",
+      "correctAnswer": "Network layer",
+      "incorrectAnswers": [
+        "Physical layer",
+        "Session layer",
+        "Presentation layer"
+      ],
+      "explanation": "The network layer handles logical addressing and routing between networks.",
+      "keywords": [
+        "network-plus",
+        "network-fundamentals",
+        "protocols"
+      ],
+      "source": "https://www.comptia.org/en-us/certifications/network/"
+    },
+    {
+      "seedId": "f508d1e9-cd82-47a1-a8e8-7670ca22016e",
+      "category": "exams",
+      "navigationKeyword1": "comptia",
+      "navigationKeyword2": "network-plus",
+      "question": "Which protocol automatically allocates network addresses and configuration parameters to clients?",
+      "correctAnswer": "DHCP",
+      "incorrectAnswers": [
+        "SSH",
+        "NAT",
+        "SNMP"
+      ],
+      "explanation": "DHCP allocates network addresses and delivers configuration parameters to clients.",
+      "keywords": [
+        "network-plus",
+        "network-fundamentals",
+        "protocols"
+      ],
+      "source": "https://www.rfc-editor.org/rfc/rfc2131"
+    },
+    {
+      "seedId": "630e4483-5db7-48f7-8209-bad01fd44d42",
+      "category": "exams",
+      "navigationKeyword1": "comptia",
+      "navigationKeyword2": "network-plus",
+      "question": "Which protocol is commonly used for secure remote access?",
+      "correctAnswer": "SSH",
+      "incorrectAnswers": [
+        "Telnet",
+        "FTP",
+        "DNS"
+      ],
+      "explanation": "SSH is a secure remote login protocol used for encrypted administrative access.",
+      "keywords": [
+        "network-plus",
+        "network-fundamentals",
+        "protocols"
+      ],
+      "source": "https://www.rfc-editor.org/rfc/rfc4251"
+    },
+    {
+      "seedId": "b460d79c-bf5a-4802-840d-54c31e09d180",
+      "category": "exams",
+      "navigationKeyword1": "comptia",
+      "navigationKeyword2": "network-plus",
+      "question": "Which traffic type sends one sender's traffic to many receivers that have joined a group?",
+      "correctAnswer": "Multicast",
+      "incorrectAnswers": [
+        "Unicast",
+        "Loopback",
+        "APIPA"
+      ],
+      "explanation": "Multicast sends traffic to a group of interested receivers rather than everyone or a single host.",
+      "keywords": [
+        "network-plus",
+        "network-fundamentals",
+        "protocols"
+      ],
+      "source": "https://www.comptia.org/en-us/certifications/network/"
+    },
+    {
+      "seedId": "47c24bb9-f68d-4bbf-9b08-41ddc220fb69",
+      "category": "exams",
+      "navigationKeyword1": "comptia",
+      "navigationKeyword2": "network-plus",
+      "question": "Which transport protocol is connection-oriented and designed for reliable delivery?",
+      "correctAnswer": "TCP",
+      "incorrectAnswers": [
+        "UDP",
+        "ARP",
+        "ICMP"
+      ],
+      "explanation": "TCP provides connection-oriented, reliable byte-stream delivery.",
+      "keywords": [
+        "network-plus",
+        "tcp-ip",
+        "protocols"
+      ],
+      "source": "https://www.rfc-editor.org/rfc/rfc9293"
+    },
+    {
+      "seedId": "92164033-f548-4dfa-8292-db573efedb4f",
+      "category": "exams",
+      "navigationKeyword1": "comptia",
+      "navigationKeyword2": "security-plus",
+      "question": "In security, what does the CIA triad stand for?",
+      "correctAnswer": "Confidentiality, integrity, and availability",
+      "incorrectAnswers": [
+        "Control, isolation, and auditing",
+        "Confidentiality, identity, and access",
+        "Centralization, inspection, and automation"
+      ],
+      "explanation": "The CIA triad refers to confidentiality, integrity, and availability.",
+      "keywords": [
+        "security-plus",
+        "security-fundamentals",
+        "comptia"
+      ],
+      "source": "https://csrc.nist.gov/glossary/term/cia_triad"
+    },
+    {
+      "seedId": "338bcebc-0d10-4800-9b8f-a437d906d416",
+      "category": "exams",
+      "navigationKeyword1": "comptia",
+      "navigationKeyword2": "security-plus",
+      "question": "What does AAA stand for in access control?",
+      "correctAnswer": "Authentication, authorization, and accounting",
+      "incorrectAnswers": [
+        "Availability, analysis, and alerting",
+        "Authentication, auditing, and assurance",
+        "Authorization, anonymity, and access"
+      ],
+      "explanation": "AAA commonly refers to authentication, authorization, and accounting.",
+      "keywords": [
+        "security-plus",
+        "security-fundamentals",
+        "comptia"
+      ],
+      "source": "https://csrc.nist.gov/glossary/term/authentication"
+    },
+    {
+      "seedId": "ed27814d-c3cd-4777-9e38-07e00a25475d",
+      "category": "exams",
+      "navigationKeyword1": "comptia",
+      "navigationKeyword2": "security-plus",
+      "question": "What does a firewall primarily do?",
+      "correctAnswer": "Filters network traffic based on defined rules",
+      "incorrectAnswers": [
+        "Backs up operating systems",
+        "Creates user passwords",
+        "Maps host names to IPs"
+      ],
+      "explanation": "Firewalls enforce traffic control policies between network zones.",
+      "keywords": [
+        "security-plus",
+        "firewall",
+        "comptia"
+      ],
+      "source": "https://csrc.nist.gov/glossary/term/firewall"
+    },
+    {
+      "seedId": "de9efb86-cb3f-4bb2-8349-90afd3910294",
+      "category": "exams",
+      "navigationKeyword1": "comptia",
+      "navigationKeyword2": "security-plus",
+      "question": "What is PKI used for?",
+      "correctAnswer": "Managing digital certificates and public-key trust relationships",
+      "incorrectAnswers": [
+        "Assigning IP addresses to endpoints",
+        "Balancing web traffic",
+        "Creating VLAN tags"
+      ],
+      "explanation": "PKI supports trust through digital certificates and public-key cryptography.",
+      "keywords": [
+        "security-plus",
+        "pki",
+        "comptia"
+      ],
+      "source": "https://csrc.nist.gov/glossary/term/public_key_infrastructure"
+    },
+    {
+      "seedId": "af0414af-fdba-4308-9ca9-01b823af2337",
+      "category": "exams",
+      "navigationKeyword1": "comptia",
+      "navigationKeyword2": "security-plus",
+      "question": "What is a zero-trust approach based on?",
+      "correctAnswer": "Never assuming trust by default and continuously verifying access requests",
+      "incorrectAnswers": [
+        "Allowing all internal traffic automatically",
+        "Trusting devices after one successful login forever",
+        "Using only perimeter firewalls"
+      ],
+      "explanation": "Zero trust is based on the idea that no user or device should be implicitly trusted.",
+      "keywords": [
+        "security-plus",
+        "zero-trust",
+        "comptia"
+      ],
+      "source": "https://csrc.nist.gov/publications/detail/sp/800-207/final"
+    },
+    {
+      "seedId": "8ec51c95-cd8a-4fd1-98ec-b22f5358a840",
+      "category": "exams",
+      "navigationKeyword1": "comptia",
+      "navigationKeyword2": "security-plus",
+      "question": "What is multi-factor authentication?",
+      "correctAnswer": "Using two or more different authentication factors to verify identity",
+      "incorrectAnswers": [
+        "Using two passwords only",
+        "Using one long password",
+        "Signing in from two devices at once"
+      ],
+      "explanation": "MFA requires more than one factor, such as something you know and something you have.",
+      "keywords": [
+        "security-plus",
+        "mfa",
+        "comptia"
+      ],
+      "source": "https://csrc.nist.gov/glossary/term/mfa"
+    },
+    {
+      "seedId": "c9d109c3-c0a5-459a-add3-908e02470371",
+      "category": "exams",
+      "navigationKeyword1": "comptia",
+      "navigationKeyword2": "security-plus",
+      "question": "What is social engineering in a security context?",
+      "correctAnswer": "Manipulating people into revealing information or performing unsafe actions",
+      "incorrectAnswers": [
+        "Automating patch deployment",
+        "Encrypting email attachments",
+        "Compressing log files"
+      ],
+      "explanation": "Social engineering targets human behavior to gain unauthorized access or information.",
+      "keywords": [
+        "security-plus",
+        "social-engineering",
+        "comptia"
+      ],
+      "source": "https://www.cisa.gov/news-events/news/avoiding-social-engineering-and-phishing-attacks"
+    },
+    {
+      "seedId": "fd87fe97-65bc-4a70-8bd2-d915cc1791fc",
+      "category": "exams",
+      "navigationKeyword1": "comptia",
+      "navigationKeyword2": "security-plus",
+      "question": "What is the purpose of a VPN?",
+      "correctAnswer": "To create a protected connection over an untrusted network",
+      "incorrectAnswers": [
+        "To replace endpoint backups",
+        "To rotate SIEM logs",
+        "To assign VLAN IDs"
+      ],
+      "explanation": "VPNs create protected tunnels for traffic over networks such as the internet.",
+      "keywords": [
+        "security-plus",
+        "vpn",
+        "comptia"
+      ],
+      "source": "https://csrc.nist.gov/glossary/term/virtual_private_network"
+    },
+    {
+      "seedId": "3ff082bc-d906-4f60-9d36-44d59e0e3e11",
+      "category": "exams",
+      "navigationKeyword1": "comptia",
+      "navigationKeyword2": "security-plus",
+      "question": "What is the purpose of least privilege?",
+      "correctAnswer": "To limit access rights to only what is necessary for a task",
+      "incorrectAnswers": [
+        "To grant all admins domain-wide rights",
+        "To remove all audit logging",
+        "To allow shared administrator accounts"
+      ],
+      "explanation": "Least privilege reduces exposure by minimizing access permissions.",
+      "keywords": [
+        "security-plus",
+        "least-privilege",
+        "comptia"
+      ],
+      "source": "https://csrc.nist.gov/glossary/term/least_privilege"
+    },
+    {
+      "seedId": "693e1a23-b8d1-46ec-be3f-17e38ac37309",
+      "category": "exams",
+      "navigationKeyword1": "comptia",
+      "navigationKeyword2": "security-plus",
+      "question": "Why is patch management important?",
+      "correctAnswer": "It helps reduce exposure to known vulnerabilities",
+      "incorrectAnswers": [
+        "It increases password length automatically",
+        "It assigns static IP addresses",
+        "It replaces encryption keys every login"
+      ],
+      "explanation": "Timely patching helps close known security gaps in software and systems.",
+      "keywords": [
+        "security-plus",
+        "patching",
+        "comptia"
+      ],
+      "source": "https://www.cisa.gov/stopransomware/ransomware-guide#Patch"
+    }
+  ]
+}

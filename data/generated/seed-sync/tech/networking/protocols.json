@@ -1,0 +1,121 @@
+{
+  "schemaVersion": 1,
+  "seedSet": "core-public-items",
+  "deltaPreviewLimit": 200,
+  "items": [
+    {
+      "seedId": "6c794221-a16d-531e-ad0f-b9b49f9c9c32",
+      "category": "tech",
+      "navigationKeyword1": "networking",
+      "navigationKeyword2": "protocols",
+      "question": "In the common seven-layer OSI model, which layer typically handles routing between networks?",
+      "correctAnswer": "Layer 3 (network)",
+      "incorrectAnswers": [
+        "Layer 2 (data link)",
+        "Layer 7 (application) only",
+        "Layer 1 (physical) only"
+      ],
+      "explanation": "Layer 3 deals with logical addressing and forwarding across internetworks.",
+      "keywords": [
+        "protocols",
+        "osi"
+      ],
+      "source": "https://www.cloudflare.com/learning/ddos/glossary/open-systems-interconnection-model-osi/"
+    },
+    {
+      "seedId": "f95e62e9-6679-5d49-bc23-ed5d34672c30",
+      "category": "tech",
+      "navigationKeyword1": "networking",
+      "navigationKeyword2": "protocols",
+      "question": "What does ARP map on an IPv4 local network?",
+      "correctAnswer": "An IPv4 address to a link-layer address (MAC)",
+      "incorrectAnswers": [
+        "A domain name to a mail exchanger",
+        "A TCP port to a process name",
+        "A file path to a URL"
+      ],
+      "explanation": "Hosts use ARP to discover neighbors on the same broadcast domain.",
+      "keywords": [
+        "protocols",
+        "arp"
+      ],
+      "source": "https://developer.mozilla.org/en-US/docs/Glossary/ARP"
+    },
+    {
+      "seedId": "11294304-3797-5a9a-94c2-a51f5736c0b1",
+      "category": "tech",
+      "navigationKeyword1": "networking",
+      "navigationKeyword2": "protocols",
+      "question": "What does DHCP assign to a client in typical IPv4 networks?",
+      "correctAnswer": "An address lease plus options like gateway and DNS servers",
+      "incorrectAnswers": [
+        "Only a MAC address",
+        "A static route across the Internet",
+        "A TLS certificate chain"
+      ],
+      "explanation": "DHCP automates address configuration and can supply many network parameters.",
+      "keywords": [
+        "protocols",
+        "dhcp"
+      ],
+      "source": "https://www.rfc-editor.org/rfc/rfc2131"
+    },
+    {
+      "seedId": "60cb0ff9-e66d-5da7-aa18-25a7d10ab91c",
+      "category": "tech",
+      "navigationKeyword1": "networking",
+      "navigationKeyword2": "protocols",
+      "question": "What does ICMP primarily carry?",
+      "correctAnswer": "Control and diagnostic messages for IP",
+      "incorrectAnswers": [
+        "Streaming video payloads",
+        "Email message bodies",
+        "Database rows"
+      ],
+      "explanation": "ICMP reports errors like unreachable networks and supports tools like ping.",
+      "keywords": [
+        "protocols",
+        "icmp"
+      ],
+      "source": "https://www.rfc-editor.org/rfc/rfc792"
+    },
+    {
+      "seedId": "7ce6ae84-24db-5c16-a5d2-abfb9330ff64",
+      "category": "tech",
+      "navigationKeyword1": "networking",
+      "navigationKeyword2": "protocols",
+      "question": "What does NAT translate at a boundary router?",
+      "correctAnswer": "IP addresses (and often ports) between private and public space",
+      "incorrectAnswers": [
+        "HTTP headers only",
+        "DNS TTL values only",
+        "Wi-Fi SSIDs"
+      ],
+      "explanation": "NAT allows many internal hosts to share a smaller set of public addresses.",
+      "keywords": [
+        "protocols",
+        "nat"
+      ],
+      "source": "https://developer.mozilla.org/en-US/docs/Glossary/NAT"
+    },
+    {
+      "seedId": "8134b90f-f6d8-5996-bf39-e412fc816aca",
+      "category": "tech",
+      "navigationKeyword1": "networking",
+      "navigationKeyword2": "protocols",
+      "question": "What does TLS sit above in the TCP/IP stack?",
+      "correctAnswer": "A reliable transport like TCP (or sometimes UDP with DTLS)",
+      "incorrectAnswers": [
+        "Only raw Ethernet frames without IP",
+        "Only ICMP echo requests",
+        "Only ARP packets"
+      ],
+      "explanation": "TLS secures application data by establishing a cryptographic session over transport.",
+      "keywords": [
+        "protocols",
+        "tls"
+      ],
+      "source": "https://www.rfc-editor.org/rfc/rfc8446"
+    }
+  ]
+}

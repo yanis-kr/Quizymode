@@ -1,0 +1,227 @@
+{
+  "schemaVersion": 1,
+  "seedSet": "core-public-items",
+  "deltaPreviewLimit": 200,
+  "items": [
+    {
+      "seedId": "22eb08ba-8076-415e-94f7-8be3eb648478",
+      "category": "geography",
+      "navigationKeyword1": "countries",
+      "navigationKeyword2": "largest",
+      "question": "By area, which country is the largest in the world?",
+      "correctAnswer": "Russia",
+      "incorrectAnswers": [
+        "Canada",
+        "China",
+        "the United States"
+      ],
+      "explanation": "Russia spans Eastern Europe and northern Asia and has the largest national territory by area.",
+      "keywords": [
+        "largest",
+        "country-size",
+        "area"
+      ],
+      "source": "https://www.britannica.com/place/Russia"
+    },
+    {
+      "seedId": "b73b8d0e-f152-40cc-9023-e557ac05eeb0",
+      "category": "geography",
+      "navigationKeyword1": "countries",
+      "navigationKeyword2": "largest",
+      "question": "Which African country has the largest area?",
+      "correctAnswer": "Algeria",
+      "incorrectAnswers": [
+        "Democratic Republic of the Congo",
+        "Sudan",
+        "Libya"
+      ],
+      "explanation": "Algeria is the largest country by area in Africa, mostly covered by the Sahara and Atlas-related landscapes.",
+      "keywords": [
+        "largest",
+        "country-size",
+        "africa"
+      ],
+      "source": "https://www.britannica.com/place/Algeria"
+    },
+    {
+      "seedId": "7b8aac46-e533-469c-b0b2-1f0d9b350c68",
+      "category": "geography",
+      "navigationKeyword1": "countries",
+      "navigationKeyword2": "largest",
+      "question": "Which Central Asian country is the world\u2019s largest landlocked state by area?",
+      "correctAnswer": "Kazakhstan",
+      "incorrectAnswers": [
+        "Mongolia",
+        "Chad",
+        "Niger"
+      ],
+      "explanation": "Kazakhstan\u2019s steppe and desert expanses give it the greatest area of any landlocked country.",
+      "keywords": [
+        "largest",
+        "country-size",
+        "landlocked"
+      ],
+      "source": "https://www.britannica.com/place/Kazakhstan"
+    },
+    {
+      "seedId": "8f7e93e1-e3db-48a7-9b7a-db783e764e71",
+      "category": "geography",
+      "navigationKeyword1": "countries",
+      "navigationKeyword2": "largest",
+      "question": "Which South American country has the largest area?",
+      "correctAnswer": "Brazil",
+      "incorrectAnswers": [
+        "Argentina",
+        "Peru",
+        "Colombia"
+      ],
+      "explanation": "Brazil covers roughly half of South America\u2019s land area, far more than any other country on the continent.",
+      "keywords": [
+        "largest",
+        "country-size",
+        "south-america"
+      ],
+      "source": "https://www.britannica.com/place/Brazil"
+    },
+    {
+      "seedId": "9c11282e-e2a5-4eba-a9b0-45b5dc27d651",
+      "category": "geography",
+      "navigationKeyword1": "countries",
+      "navigationKeyword2": "largest",
+      "question": "Which Southeast Asian archipelagic country has by far the largest area?",
+      "correctAnswer": "Indonesia",
+      "incorrectAnswers": [
+        "Malaysia",
+        "Philippines",
+        "Thailand"
+      ],
+      "explanation": "Indonesia\u2019s thousands of islands span a huge east\u2013west reach, giving it the greatest area in Southeast Asia.",
+      "keywords": [
+        "largest",
+        "country-size",
+        "southeast-asia"
+      ],
+      "source": "https://www.britannica.com/place/Indonesia"
+    },
+    {
+      "seedId": "a9ada082-ca9f-46dc-b142-a08fcea22ce0",
+      "category": "geography",
+      "navigationKeyword1": "countries",
+      "navigationKeyword2": "largest",
+      "question": "Which country has the largest area in East Asia?",
+      "correctAnswer": "China",
+      "incorrectAnswers": [
+        "Japan",
+        "South Korea",
+        "Vietnam"
+      ],
+      "explanation": "China is far larger in territory than its East Asian neighbors.",
+      "keywords": [
+        "largest",
+        "country-size",
+        "asia"
+      ],
+      "source": "https://www.britannica.com/place/China"
+    },
+    {
+      "seedId": "410ea2d0-3e38-45e7-acce-d767e77ea37b",
+      "category": "geography",
+      "navigationKeyword1": "countries",
+      "navigationKeyword2": "largest",
+      "question": "Which country is both a continent and one of the world\u2019s largest states by area?",
+      "correctAnswer": "Australia",
+      "incorrectAnswers": [
+        "New Zealand",
+        "India",
+        "Argentina"
+      ],
+      "explanation": "Australia occupies the continental landmass called Australia, making it one of Earth\u2019s largest countries.",
+      "keywords": [
+        "largest",
+        "country-size",
+        "oceania"
+      ],
+      "source": "https://www.britannica.com/place/Australia"
+    },
+    {
+      "seedId": "bd1b1bfa-6fd6-4ec6-a045-44f66eeb76fc",
+      "category": "geography",
+      "navigationKeyword1": "countries",
+      "navigationKeyword2": "largest",
+      "question": "Which country is the largest in the Middle East by area?",
+      "correctAnswer": "Saudi Arabia",
+      "incorrectAnswers": [
+        "Iran",
+        "Egypt",
+        "Turkey"
+      ],
+      "explanation": "Saudi Arabia occupies most of the Arabian Peninsula and is the largest Middle Eastern state by territory.",
+      "keywords": [
+        "largest",
+        "country-size",
+        "middle-east"
+      ],
+      "source": "https://www.britannica.com/place/Saudi-Arabia"
+    },
+    {
+      "seedId": "429b4949-8257-4e99-b868-0e41a6df2644",
+      "category": "geography",
+      "navigationKeyword1": "countries",
+      "navigationKeyword2": "largest",
+      "question": "Which country is the second largest in South America by area?",
+      "correctAnswer": "Argentina",
+      "incorrectAnswers": [
+        "Peru",
+        "Colombia",
+        "Bolivia"
+      ],
+      "explanation": "After Brazil, Argentina has the next-largest national territory in South America.",
+      "keywords": [
+        "largest",
+        "country-size",
+        "south-america"
+      ],
+      "source": "https://www.britannica.com/place/Argentina"
+    },
+    {
+      "seedId": "c9f4eff6-9b62-4105-8abb-b1639322fee0",
+      "category": "geography",
+      "navigationKeyword1": "countries",
+      "navigationKeyword2": "largest",
+      "question": "Which country is the second largest in the world by area?",
+      "correctAnswer": "Canada",
+      "incorrectAnswers": [
+        "China",
+        "Brazil",
+        "Australia"
+      ],
+      "explanation": "Canada\u2019s vast northern territories make it the second-largest country by total area after Russia.",
+      "keywords": [
+        "largest",
+        "country-size",
+        "area"
+      ],
+      "source": "https://www.britannica.com/place/Canada"
+    },
+    {
+      "seedId": "ecad2cc5-d2d0-4d2f-ac92-36993b5e55ea",
+      "category": "geography",
+      "navigationKeyword1": "countries",
+      "navigationKeyword2": "largest",
+      "question": "Which is the largest country in South Asia by area?",
+      "correctAnswer": "India",
+      "incorrectAnswers": [
+        "Pakistan",
+        "Bangladesh",
+        "Nepal"
+      ],
+      "explanation": "India\u2019s territory is the largest among the countries commonly grouped in South Asia.",
+      "keywords": [
+        "largest",
+        "country-size",
+        "south-asia"
+      ],
+      "source": "https://www.britannica.com/place/India"
+    }
+  ]
+}

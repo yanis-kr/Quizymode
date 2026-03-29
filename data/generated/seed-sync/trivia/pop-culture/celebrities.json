@@ -1,0 +1,197 @@
+{
+  "schemaVersion": 1,
+  "seedSet": "core-public-items",
+  "deltaPreviewLimit": 200,
+  "items": [
+    {
+      "seedId": "39e1b0cc-4338-556a-a137-ebbb765c2857",
+      "category": "trivia",
+      "navigationKeyword1": "pop-culture",
+      "navigationKeyword2": "celebrities",
+      "question": "Celebrity status depends on widespread public what?",
+      "correctAnswer": "recognition",
+      "incorrectAnswers": [
+        "anonymity",
+        "obscurity",
+        "privacy"
+      ],
+      "explanation": "Celebrities are widely recognized figures.",
+      "keywords": [
+        "fame",
+        "media"
+      ],
+      "source": "https://www.britannica.com/topic/celebrity"
+    },
+    {
+      "seedId": "052f3ad9-158b-5134-9bbe-498a59a19c80",
+      "category": "trivia",
+      "navigationKeyword1": "pop-culture",
+      "navigationKeyword2": "celebrities",
+      "question": "Charlie Chaplin became a silent-film star through what performance style?",
+      "correctAnswer": "physical comedy",
+      "incorrectAnswers": [
+        "dramatic monologues",
+        "vocal performances",
+        "stunt driving"
+      ],
+      "explanation": "Chaplin used physical comedy.",
+      "keywords": [
+        "silent-film",
+        "comedy"
+      ],
+      "source": "https://www.britannica.com/biography/Charlie-Chaplin"
+    },
+    {
+      "seedId": "0c9f3b30-2eca-5b1b-82bf-abda40fa9284",
+      "category": "trivia",
+      "navigationKeyword1": "pop-culture",
+      "navigationKeyword2": "celebrities",
+      "question": "David Bowie became known for shifting personas and what genre innovation?",
+      "correctAnswer": "glam rock",
+      "incorrectAnswers": [
+        "baroque opera only",
+        "sea shanties",
+        "gregorian chant"
+      ],
+      "explanation": "Bowie helped pioneer glam rock.",
+      "keywords": [
+        "bowie",
+        "glam"
+      ],
+      "source": "https://www.britannica.com/biography/David-Bowie"
+    },
+    {
+      "seedId": "786b6850-0dec-5bae-8596-650d1339959b",
+      "category": "trivia",
+      "navigationKeyword1": "pop-culture",
+      "navigationKeyword2": "celebrities",
+      "question": "Dwayne Johnson had what athletic career before acting?",
+      "correctAnswer": "professional wrestling",
+      "incorrectAnswers": [
+        "Olympic fencing",
+        "NFL referee",
+        "curling"
+      ],
+      "explanation": "Johnson was a WWE star before acting.",
+      "keywords": [
+        "the-rock",
+        "wrestling"
+      ],
+      "source": "https://www.britannica.com/biography/Dwayne-Johnson"
+    },
+    {
+      "seedId": "ae063f34-f718-57df-8c8f-c5457d2082bd",
+      "category": "trivia",
+      "navigationKeyword1": "pop-culture",
+      "navigationKeyword2": "celebrities",
+      "question": "Fred Astaire is most often paired on film with which dance partner?",
+      "correctAnswer": "Ginger Rogers",
+      "incorrectAnswers": [
+        "Gene Kelly only",
+        "Cyd Charisse only",
+        "Eleanor Powell only"
+      ],
+      "explanation": "Astaire frequently paired onscreen with Ginger Rogers.",
+      "keywords": [
+        "astaire",
+        "dance"
+      ],
+      "source": "https://www.britannica.com/biography/Fred-Astaire"
+    },
+    {
+      "seedId": "9e88efb0-bc58-55c4-8706-f30f24bd889c",
+      "category": "trivia",
+      "navigationKeyword1": "pop-culture",
+      "navigationKeyword2": "celebrities",
+      "question": "Kim Kardashian's fame was amplified most by what media mix?",
+      "correctAnswer": "reality television and social media",
+      "incorrectAnswers": [
+        "tabloid coverage alone",
+        "sports radio only",
+        "newspaper classifieds"
+      ],
+      "explanation": "Kardashian fame grew via reality TV and social media.",
+      "keywords": [
+        "reality-tv",
+        "influencers"
+      ],
+      "source": "https://www.britannica.com/biography/Kim-Kardashian"
+    },
+    {
+      "seedId": "e46f4acd-7273-50c8-ae0b-f5d246a46dbb",
+      "category": "trivia",
+      "navigationKeyword1": "pop-culture",
+      "navigationKeyword2": "celebrities",
+      "question": "Madonna is known for pop stardom and reinvention across which decades?",
+      "correctAnswer": "1980s onward",
+      "incorrectAnswers": [
+        "1790s",
+        "1850s",
+        "1920s only"
+      ],
+      "explanation": "Madonna\u2019s pop career spans from the 1980s.",
+      "keywords": [
+        "madonna",
+        "pop"
+      ],
+      "source": "https://www.britannica.com/biography/Madonna-American-singer-and-actress"
+    },
+    {
+      "seedId": "b171a9b6-2e6f-5d81-94a6-e0f101393a9e",
+      "category": "trivia",
+      "navigationKeyword1": "pop-culture",
+      "navigationKeyword2": "celebrities",
+      "question": "Oprah Winfrey is most associated with which daytime TV format?",
+      "correctAnswer": "talk show",
+      "incorrectAnswers": [
+        "late-night sketch",
+        "morning weather",
+        "midnight horror"
+      ],
+      "explanation": "Oprah hosted an influential talk show.",
+      "keywords": [
+        "oprah",
+        "television"
+      ],
+      "source": "https://www.britannica.com/biography/Oprah-Winfrey"
+    },
+    {
+      "seedId": "cb96245d-fafe-585e-9bda-bbeffbba849a",
+      "category": "trivia",
+      "navigationKeyword1": "pop-culture",
+      "navigationKeyword2": "celebrities",
+      "question": "Paparazzi are photographers who pursue whom?",
+      "correctAnswer": "public figures",
+      "incorrectAnswers": [
+        "wildlife only",
+        "social media",
+        "physical comedy"
+      ],
+      "explanation": "Paparazzi follow celebrities.",
+      "keywords": [
+        "paparazzi",
+        "media"
+      ],
+      "source": "https://www.britannica.com/topic/paparazzi"
+    },
+    {
+      "seedId": "95ca65e1-6405-5eaa-bc13-2fa00dd44dca",
+      "category": "trivia",
+      "navigationKeyword1": "pop-culture",
+      "navigationKeyword2": "celebrities",
+      "question": "Prince was known for blending funk, rock, and what?",
+      "correctAnswer": "pop sensibilities",
+      "incorrectAnswers": [
+        "polka exclusively",
+        "barbershop only",
+        "marching band only"
+      ],
+      "explanation": "Prince fused funk, rock, and pop.",
+      "keywords": [
+        "prince",
+        "funk"
+      ],
+      "source": "https://www.britannica.com/biography/Prince-American-singer-songwriter-and-instrumentalist"
+    }
+  ]
+}

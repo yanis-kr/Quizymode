@@ -1,0 +1,1327 @@
+{
+  "schemaVersion": 1,
+  "seedSet": "core-public-items",
+  "deltaPreviewLimit": 200,
+  "items": [
+    {
+      "seedId": "98244ab0-7c90-4f6a-8907-719173433fe3",
+      "category": "geography",
+      "navigationKeyword1": "regions",
+      "navigationKeyword2": "balkans",
+      "question": "Britannica gives the Balkans an approximate area of how many square miles?",
+      "correctAnswer": "About 257,400 square miles (666,700 square km)",
+      "incorrectAnswers": [
+        "About 2 million square miles",
+        "Under 10,000 square miles",
+        "Roughly equal to Antarctica"
+      ],
+      "explanation": "Britannica\u2019s Balkans article cites an area of about 257,400 square miles (666,700 square km).",
+      "keywords": [
+        "balkans",
+        "area",
+        "statistics"
+      ],
+      "source": "https://www.britannica.com/place/Balkans"
+    },
+    {
+      "seedId": "689f7681-6f85-4c0d-8cc9-8a29bc46e1fc",
+      "category": "geography",
+      "navigationKeyword1": "regions",
+      "navigationKeyword2": "balkans",
+      "question": "South Slavs form majorities in Bulgaria, Serbia, Bosnia and Herzegovina, Croatia, Slovenia, North Macedonia, and which other Balkan state?",
+      "correctAnswer": "Montenegro",
+      "incorrectAnswers": [
+        "Portugal",
+        "Ireland",
+        "Estonia"
+      ],
+      "explanation": "Britannica lists South Slavic majorities across those Balkan countries including Montenegro.",
+      "keywords": [
+        "balkans",
+        "south-slavs",
+        "ethnicity"
+      ],
+      "source": "https://www.britannica.com/place/Balkans"
+    },
+    {
+      "seedId": "424eb2bc-9d4c-487b-8789-79d46f0635f1",
+      "category": "geography",
+      "navigationKeyword1": "regions",
+      "navigationKeyword2": "balkans",
+      "question": "Southern and coastal Balkan areas are described as having which climate type?",
+      "correctAnswer": "Mediterranean, with hot dry summers and mild rainy winters",
+      "incorrectAnswers": [
+        "Polar ice-cap climate",
+        "Year-round monsoon deluge everywhere",
+        "Hyper-arid with no winter rain"
+      ],
+      "explanation": "Britannica contrasts central European climates in northern and central Balkans with Mediterranean climates along southern and coastal strips.",
+      "keywords": [
+        "balkans",
+        "mediterranean-climate",
+        "weather"
+      ],
+      "source": "https://www.britannica.com/place/Balkans"
+    },
+    {
+      "seedId": "32369728-6bb7-4331-b58a-3587c900779a",
+      "category": "geography",
+      "navigationKeyword1": "regions",
+      "navigationKeyword2": "balkans",
+      "question": "The Balkan Peninsula is described as which peninsular position among Europe\u2019s three great southern peninsulas?",
+      "correctAnswer": "The easternmost",
+      "incorrectAnswers": [
+        "The westernmost",
+        "The northernmost of Scandinavia",
+        "The only peninsula without coasts"
+      ],
+      "explanation": "Britannica calls the Balkans the easternmost of Europe\u2019s three major southern peninsulas.",
+      "keywords": [
+        "balkans",
+        "peninsula",
+        "europe"
+      ],
+      "source": "https://www.britannica.com/place/Balkans"
+    },
+    {
+      "seedId": "3e3c52d8-38f3-4392-8a5a-743b2e82a319",
+      "category": "geography",
+      "navigationKeyword1": "regions",
+      "navigationKeyword2": "balkans",
+      "question": "The word Balkan comes from Turkish and means what?",
+      "correctAnswer": "Mountain",
+      "incorrectAnswers": [
+        "River delta",
+        "Desert",
+        "Island chain"
+      ],
+      "explanation": "Britannica explains \u201cBalkan\u201d is Turkish for \u201cmountain,\u201d reflecting the peninsula\u2019s rugged terrain.",
+      "keywords": [
+        "balkans",
+        "etymology",
+        "mountains"
+      ],
+      "source": "https://www.britannica.com/place/Balkans"
+    },
+    {
+      "seedId": "8eeb3027-026a-488c-bdeb-6a1cc08478dd",
+      "category": "geography",
+      "navigationKeyword1": "regions",
+      "navigationKeyword2": "balkans",
+      "question": "The \u201cWestern Balkans\u201d label in policy usage usually includes Albania and which other states?",
+      "correctAnswer": "Croatia, Bosnia and Herzegovina, Kosovo, North Macedonia, and Serbia",
+      "incorrectAnswers": [
+        "Only Iceland and Greenland",
+        "Japan and Korea",
+        "Canada and Mexico"
+      ],
+      "explanation": "Britannica notes \u201cWestern Balkans\u201d commonly comprises Albania, Croatia, Bosnia and Herzegovina, Kosovo, North Macedonia, and Serbia.",
+      "keywords": [
+        "balkans",
+        "western-balkans",
+        "political-geography"
+      ],
+      "source": "https://www.britannica.com/place/Balkans"
+    },
+    {
+      "seedId": "77794e60-14bd-40bc-8f7d-8d3608b90b0b",
+      "category": "geography",
+      "navigationKeyword1": "regions",
+      "navigationKeyword2": "balkans",
+      "question": "Which east\u2013west mountain range crosses Bulgaria on the Balkan Peninsula?",
+      "correctAnswer": "The Balkan Mountains",
+      "incorrectAnswers": [
+        "The Rockies",
+        "The Andes",
+        "The Urals"
+      ],
+      "explanation": "Britannica identifies the Balkan Mountains running east-west across Bulgaria as a major range of the peninsula.",
+      "keywords": [
+        "balkans",
+        "balkan-mountains",
+        "bulgaria"
+      ],
+      "source": "https://www.britannica.com/place/Balkans"
+    },
+    {
+      "seedId": "3707e896-eb76-4345-ae8e-1686bb10ee5a",
+      "category": "geography",
+      "navigationKeyword1": "regions",
+      "navigationKeyword2": "balkans",
+      "question": "Which mountain range runs down the Adriatic coast toward Albania?",
+      "correctAnswer": "The Dinaric Alps",
+      "incorrectAnswers": [
+        "The Himalayas",
+        "The Appalachians",
+        "The Atlas Mountains"
+      ],
+      "explanation": "Britannica describes the Dinaric range extending along the Adriatic coast toward Albania.",
+      "keywords": [
+        "balkans",
+        "dinaric-alps",
+        "relief"
+      ],
+      "source": "https://www.britannica.com/place/Balkans"
+    },
+    {
+      "seedId": "3b3210b3-e74e-41a3-89f5-fc5f34462c99",
+      "category": "geography",
+      "navigationKeyword1": "regions",
+      "navigationKeyword2": "balkans",
+      "question": "Which river valley does Britannica highlight as an exception to scarce arable land in mountainous Balkan terrain?",
+      "correctAnswer": "The Danube River valley",
+      "incorrectAnswers": [
+        "The Amazon floodplain",
+        "The Nile delta only",
+        "The Mackenzie River basin"
+      ],
+      "explanation": "Britannica cites the Danube, Sava, and Vardar valleys among areas with comparatively good arable land in the Balkans.",
+      "keywords": [
+        "balkans",
+        "danube",
+        "rivers"
+      ],
+      "source": "https://www.britannica.com/place/Balkans"
+    },
+    {
+      "seedId": "7904bd2e-59e4-47c2-904e-62482ff754ed",
+      "category": "geography",
+      "navigationKeyword1": "regions",
+      "navigationKeyword2": "balkans",
+      "question": "Which sea lies along the eastern side of the Balkan Peninsula?",
+      "correctAnswer": "The Black Sea",
+      "incorrectAnswers": [
+        "The Caspian Sea only",
+        "The Aral Sea",
+        "The Dead Sea"
+      ],
+      "explanation": "Britannica notes the Black Sea washes the Balkans on the east.",
+      "keywords": [
+        "balkans",
+        "black-sea",
+        "coasts"
+      ],
+      "source": "https://www.britannica.com/place/Balkans"
+    },
+    {
+      "seedId": "a651d794-62de-48a7-9f77-dd202d577709",
+      "category": "geography",
+      "navigationKeyword1": "regions",
+      "navigationKeyword2": "balkans",
+      "question": "Which sea washes the western coast of the Balkan Peninsula?",
+      "correctAnswer": "The Adriatic Sea",
+      "incorrectAnswers": [
+        "The Red Sea",
+        "The Yellow Sea",
+        "The Labrador Sea"
+      ],
+      "explanation": "Britannica states the Balkans are bordered on the west by the Adriatic Sea.",
+      "keywords": [
+        "balkans",
+        "adriatic",
+        "coasts"
+      ],
+      "source": "https://www.britannica.com/place/Balkans"
+    },
+    {
+      "seedId": "67753457-0203-4b21-9817-cdd5d0e183e0",
+      "category": "geography",
+      "navigationKeyword1": "regions",
+      "navigationKeyword2": "caribbean",
+      "question": "About how large is the Caribbean Sea in area?",
+      "correctAnswer": "Roughly 1,063,000 square miles (2,753,000 square km)",
+      "incorrectAnswers": [
+        "About 10,000 square miles total",
+        "Larger than all Pacific waters",
+        "Under 50,000 square km"
+      ],
+      "explanation": "Britannica gives the Caribbean Sea\u2019s extent as about 1,063,000 square miles (2,753,000 square km).",
+      "keywords": [
+        "caribbean",
+        "area",
+        "caribbean-sea"
+      ],
+      "source": "https://www.britannica.com/place/Caribbean-Sea"
+    },
+    {
+      "seedId": "c501232e-06a2-4f4f-b8bf-9c7b33dae405",
+      "category": "geography",
+      "navigationKeyword1": "regions",
+      "navigationKeyword2": "caribbean",
+      "question": "Caribbean climate is generally described as what, with strong local variation by elevation and winds?",
+      "correctAnswer": "Tropical",
+      "incorrectAnswers": [
+        "Polar tundra everywhere",
+        "Dry steppe only",
+        "Alpine glacier climate throughout"
+      ],
+      "explanation": "Britannica summarizes Caribbean climate as generally tropical with large local differences tied to mountains, currents, and trade winds.",
+      "keywords": [
+        "caribbean",
+        "climate",
+        "tropical"
+      ],
+      "source": "https://www.britannica.com/place/Caribbean-Sea"
+    },
+    {
+      "seedId": "338800fc-726a-47fc-9f7f-143d3d7c4307",
+      "category": "geography",
+      "navigationKeyword1": "regions",
+      "navigationKeyword2": "caribbean",
+      "question": "Most Caribbean hurricanes form in the eastern Atlantic near which island group before tracking westward?",
+      "correctAnswer": "The Cape Verde Islands",
+      "incorrectAnswers": [
+        "The Azores only",
+        "The Maldives",
+        "The Solomon Islands"
+      ],
+      "explanation": "Britannica states many hurricanes form near the Cape Verde Islands and follow trade-wind paths into the Caribbean and Gulf of Mexico.",
+      "keywords": [
+        "caribbean",
+        "hurricanes",
+        "cape-verde"
+      ],
+      "source": "https://www.britannica.com/place/Caribbean-Sea"
+    },
+    {
+      "seedId": "fc2d7e0d-b82b-4c0e-bded-4c4b1d519e92",
+      "category": "geography",
+      "navigationKeyword1": "regions",
+      "navigationKeyword2": "caribbean",
+      "question": "North Atlantic deep water enters the Caribbean beneath which passage between Cuba and Hispaniola?",
+      "correctAnswer": "The Windward Passage",
+      "incorrectAnswers": [
+        "The Strait of Gibraltar",
+        "The Bering Strait",
+        "The English Channel"
+      ],
+      "explanation": "Britannica notes North Atlantic deep water flows into the Caribbean under the Windward Passage between Cuba and Hispaniola.",
+      "keywords": [
+        "caribbean",
+        "hydrology",
+        "windward-passage"
+      ],
+      "source": "https://www.britannica.com/place/Caribbean-Sea"
+    },
+    {
+      "seedId": "708af992-0609-4c6b-8caf-bacfe468f8c1",
+      "category": "geography",
+      "navigationKeyword1": "regions",
+      "navigationKeyword2": "caribbean",
+      "question": "Surface water leaving the Caribbean into the Gulf of Mexico is forced mainly through which channel?",
+      "correctAnswer": "The Yucat\u00e1n Channel",
+      "incorrectAnswers": [
+        "The Mozambique Channel",
+        "The Kattegat",
+        "The Taiwan Strait"
+      ],
+      "explanation": "Britannica explains trade winds push Caribbean surface water through the narrow Yucat\u00e1n Channel into the Gulf of Mexico.",
+      "keywords": [
+        "caribbean",
+        "yucatan-channel",
+        "currents"
+      ],
+      "source": "https://www.britannica.com/place/Caribbean-Sea"
+    },
+    {
+      "seedId": "cebe849d-daf7-497e-9250-dabe76dbed87",
+      "category": "geography",
+      "navigationKeyword1": "regions",
+      "navigationKeyword2": "caribbean",
+      "question": "The Caribbean Sea is a suboceanic basin of which ocean?",
+      "correctAnswer": "The western Atlantic Ocean",
+      "incorrectAnswers": [
+        "The Indian Ocean",
+        "The Arctic Ocean only",
+        "The Southern Ocean around Antarctica"
+      ],
+      "explanation": "Britannica defines the Caribbean Sea as a basin of the western Atlantic Ocean between roughly 9\u00b0\u201322\u00b0 N latitude.",
+      "keywords": [
+        "caribbean",
+        "caribbean-sea",
+        "atlantic"
+      ],
+      "source": "https://www.britannica.com/place/Caribbean-Sea"
+    },
+    {
+      "seedId": "92fb1e93-4c6d-4d04-a8ee-543b82b66d52",
+      "category": "geography",
+      "navigationKeyword1": "regions",
+      "navigationKeyword2": "caribbean",
+      "question": "The Caribbean Sea together with the Gulf of Mexico forms what larger oceanographic unit?",
+      "correctAnswer": "The Central American Sea",
+      "incorrectAnswers": [
+        "The Southern Ocean",
+        "The Mediterranean Basin",
+        "The Sea of Okhotsk"
+      ],
+      "explanation": "Britannica notes the preferred oceanographic label pairs the Caribbean with the Gulf of Mexico as the Central American Sea.",
+      "keywords": [
+        "caribbean",
+        "oceanography",
+        "gulf-of-mexico"
+      ],
+      "source": "https://www.britannica.com/place/Caribbean-Sea"
+    },
+    {
+      "seedId": "a3f5e744-c7a5-496c-9faa-c3c2e27912e3",
+      "category": "geography",
+      "navigationKeyword1": "regions",
+      "navigationKeyword2": "caribbean",
+      "question": "The Caribbean\u2019s greatest known depth, the Cayman Trench (Bartlett Deep), lies between which two land areas?",
+      "correctAnswer": "Cuba and Jamaica",
+      "incorrectAnswers": [
+        "Japan and Korea",
+        "Spain and Morocco",
+        "Britain and Ireland"
+      ],
+      "explanation": "Britannica locates the Cayman Trench between Cuba and Jamaica at roughly 25,216 feet (7,686 m) below sea level.",
+      "keywords": [
+        "caribbean",
+        "cayman-trench",
+        "bathymetry"
+      ],
+      "source": "https://www.britannica.com/place/Caribbean-Sea"
+    },
+    {
+      "seedId": "a0adba96-fbe7-4ba3-bf7e-f49a40301fce",
+      "category": "geography",
+      "navigationKeyword1": "regions",
+      "navigationKeyword2": "caribbean",
+      "question": "The eastern boundary of the Caribbean Sea is marked by which arc of islands running toward Trinidad?",
+      "correctAnswer": "The Lesser Antilles",
+      "incorrectAnswers": [
+        "The Japanese archipelago",
+        "The British Isles",
+        "The Malay Archipelago only"
+      ],
+      "explanation": "Britannica places the Lesser Antilles chain along the Caribbean\u2019s eastern margin from the Virgin Islands toward Trinidad.",
+      "keywords": [
+        "caribbean",
+        "lesser-antilles",
+        "island-arc"
+      ],
+      "source": "https://www.britannica.com/place/Caribbean-Sea"
+    },
+    {
+      "seedId": "b4d6ffb5-dcba-4c38-b7fc-d92778f66369",
+      "category": "geography",
+      "navigationKeyword1": "regions",
+      "navigationKeyword2": "caribbean",
+      "question": "Which island group forms the northern boundary of the Caribbean Sea alongside Cuba, Hispaniola, Jamaica, and Puerto Rico?",
+      "correctAnswer": "The Greater Antilles",
+      "incorrectAnswers": [
+        "The Aleutian Islands",
+        "The Falkland Islands",
+        "The Kuril Islands"
+      ],
+      "explanation": "Britannica states the Caribbean is bounded on the north by the Greater Antilles islands including Cuba, Hispaniola, Jamaica, and Puerto Rico.",
+      "keywords": [
+        "caribbean",
+        "greater-antilles",
+        "islands"
+      ],
+      "source": "https://www.britannica.com/place/Caribbean-Sea"
+    },
+    {
+      "seedId": "2c745086-9b66-43e1-9e57-39b92b86f585",
+      "category": "geography",
+      "navigationKeyword1": "regions",
+      "navigationKeyword2": "caribbean",
+      "question": "Within the Caribbean Sea itself, which nation\u2019s island is described as the largest among many interior islands?",
+      "correctAnswer": "Jamaica",
+      "incorrectAnswers": [
+        "Iceland",
+        "Madagascar",
+        "Newfoundland"
+      ],
+      "explanation": "Britannica notes that within the Caribbean\u2019s boundaries, Jamaica south of Cuba is the largest of numerous islands.",
+      "keywords": [
+        "caribbean",
+        "jamaica",
+        "islands"
+      ],
+      "source": "https://www.britannica.com/place/Caribbean-Sea"
+    },
+    {
+      "seedId": "9664ef78-6655-4d2a-8681-df35c6edf591",
+      "category": "geography",
+      "navigationKeyword1": "regions",
+      "navigationKeyword2": "middle-east",
+      "question": "Egypt is frequently grouped with the Middle East in part because it borders which sea to the northeast?",
+      "correctAnswer": "The Mediterranean Sea",
+      "incorrectAnswers": [
+        "The Baltic Sea",
+        "The Coral Sea",
+        "The Sea of Japan"
+      ],
+      "explanation": "Britannica commonly includes Egypt in Middle East lists; Egypt\u2019s northeastern coast lies on the Mediterranean.",
+      "keywords": [
+        "middle-east",
+        "egypt",
+        "mediterranean"
+      ],
+      "source": "https://www.britannica.com/place/Middle-East"
+    },
+    {
+      "seedId": "f6628e31-ab49-4ae7-9f3f-0b63facc8dc6",
+      "category": "geography",
+      "navigationKeyword1": "regions",
+      "navigationKeyword2": "middle-east",
+      "question": "Iraq is typically listed with which other subregion\u2019s countries in Britannica\u2019s Middle East country survey?",
+      "correctAnswer": "The Levant and Arabian Peninsula groupings",
+      "incorrectAnswers": [
+        "Only South American Andean states",
+        "Pacific island chains exclusively",
+        "Central American isthmus states only"
+      ],
+      "explanation": "Britannica\u2019s Middle East overview groups Iraq with Levantine and Arabian Peninsula states in typical definitions.",
+      "keywords": [
+        "middle-east",
+        "iraq",
+        "levant"
+      ],
+      "source": "https://www.britannica.com/place/Middle-East"
+    },
+    {
+      "seedId": "2d4513da-20e7-4d0b-9ad0-7a582d15fc68",
+      "category": "geography",
+      "navigationKeyword1": "regions",
+      "navigationKeyword2": "middle-east",
+      "question": "Large parts of the Middle East are described as what broad land-cover type, alongside varied climates in inhabited zones?",
+      "correctAnswer": "Desert",
+      "incorrectAnswers": [
+        "Ice sheet",
+        "Tropical rainforest everywhere",
+        "Tundra coast to coast"
+      ],
+      "explanation": "Britannica notes large Middle Eastern areas are desert while inhabited parts span a wide range of climates and landforms.",
+      "keywords": [
+        "middle-east",
+        "desert",
+        "landforms"
+      ],
+      "source": "https://www.britannica.com/place/Middle-East"
+    },
+    {
+      "seedId": "468dda46-42a2-4122-a7fa-212ba14a5937",
+      "category": "geography",
+      "navigationKeyword1": "regions",
+      "navigationKeyword2": "middle-east",
+      "question": "Religiously, the Middle East is often described as having a diverse Muslim majority alongside what other sizable faith communities?",
+      "correctAnswer": "Christian and Jewish populations",
+      "incorrectAnswers": [
+        "Only one uniform tradition",
+        "No religious diversity",
+        "Exclusively Buddhist majorities"
+      ],
+      "explanation": "Britannica characterizes the region as culturally diverse with a Muslim majority plus sizable Christian and Jewish populations.",
+      "keywords": [
+        "middle-east",
+        "religion",
+        "culture"
+      ],
+      "source": "https://www.britannica.com/place/Middle-East"
+    },
+    {
+      "seedId": "17f8ddab-c16d-4e37-aeaa-c860b20226bc",
+      "category": "geography",
+      "navigationKeyword1": "regions",
+      "navigationKeyword2": "middle-east",
+      "question": "The Middle East is generally considered part of which continent, with some definitions also including African areas?",
+      "correctAnswer": "Asia",
+      "incorrectAnswers": [
+        "South America",
+        "Antarctica",
+        "Australia only"
+      ],
+      "explanation": "Britannica states the Middle East is generally considered part of Asia, while conceptions such as MENA can include North African areas.",
+      "keywords": [
+        "middle-east",
+        "continents",
+        "definitions"
+      ],
+      "source": "https://www.britannica.com/place/Middle-East"
+    },
+    {
+      "seedId": "006e7c76-5757-481f-8c89-bd5e9f7db389",
+      "category": "geography",
+      "navigationKeyword1": "regions",
+      "navigationKeyword2": "middle-east",
+      "question": "The Middle East lies between which two broad world regions in common textbook geography?",
+      "correctAnswer": "Europe and South Asia",
+      "incorrectAnswers": [
+        "North America and Australia",
+        "East Africa and Antarctica",
+        "Scandinavia and the Caribbean"
+      ],
+      "explanation": "Britannica describes the Middle East as a region between Europe and South Asia.",
+      "keywords": [
+        "middle-east",
+        "location",
+        "world-regions"
+      ],
+      "source": "https://www.britannica.com/place/Middle-East"
+    },
+    {
+      "seedId": "4287fb34-b53d-43c1-bbae-7ad628b2eafe",
+      "category": "geography",
+      "navigationKeyword1": "regions",
+      "navigationKeyword2": "middle-east",
+      "question": "Turkey (T\u00fcrkiye) and Iran are often included in Middle East definitions as what kind of states?",
+      "correctAnswer": "Large regional countries at the intersection of several subregions",
+      "incorrectAnswers": [
+        "Island microstates in the Pacific",
+        "Landlocked solely in southern Africa",
+        "Nordic Council members"
+      ],
+      "explanation": "Britannica lists Turkey (T\u00fcrkiye) and Iran among countries very often included in Middle East coverage.",
+      "keywords": [
+        "middle-east",
+        "turkey",
+        "iran"
+      ],
+      "source": "https://www.britannica.com/place/Middle-East"
+    },
+    {
+      "seedId": "8ce7c922-53b3-48d2-8a72-49ff3e6eaa00",
+      "category": "geography",
+      "navigationKeyword1": "regions",
+      "navigationKeyword2": "middle-east",
+      "question": "What does the acronym MENA stand for?",
+      "correctAnswer": "Middle East and North Africa",
+      "incorrectAnswers": [
+        "Mediterranean Europe and North Asia",
+        "Middle Europe and North America",
+        "Mountain Environments of Northern Africa"
+      ],
+      "explanation": "Britannica defines MENA as Middle East and North Africa, clarifying when North Africa is grouped with Middle East discussions.",
+      "keywords": [
+        "middle-east",
+        "mena",
+        "terminology"
+      ],
+      "source": "https://www.britannica.com/place/Middle-East"
+    },
+    {
+      "seedId": "2dd94cb6-e7f1-4c73-87d0-dcef7d2a18ad",
+      "category": "geography",
+      "navigationKeyword1": "regions",
+      "navigationKeyword2": "middle-east",
+      "question": "Which empire\u2019s collapse does Britannica cite as a major factor in the modern Middle East\u2019s geopolitical transformation?",
+      "correctAnswer": "The Ottoman Empire",
+      "incorrectAnswers": [
+        "The Inca Empire",
+        "The Mongol Empire only in isolation",
+        "The Holy Roman Empire in 1648 only"
+      ],
+      "explanation": "Britannica links profound 20th- and 21st-century changes partly to the destabilizing collapse of the Ottoman Empire.",
+      "keywords": [
+        "middle-east",
+        "ottoman-empire",
+        "history"
+      ],
+      "source": "https://www.britannica.com/place/Middle-East"
+    },
+    {
+      "seedId": "ee2168ec-5d7b-4dc8-8668-e3ee66431f71",
+      "category": "geography",
+      "navigationKeyword1": "regions",
+      "navigationKeyword2": "middle-east",
+      "question": "Which gulf region is often linked to large petroleum reserves discussed in Middle East geography?",
+      "correctAnswer": "The Persian Gulf",
+      "incorrectAnswers": [
+        "The Gulf of Bothnia",
+        "The Gulf of Carpentaria",
+        "Hudson Bay"
+      ],
+      "explanation": "Britannica ties modern Middle East development partly to vast oil reserves in the Persian Gulf region.",
+      "keywords": [
+        "middle-east",
+        "persian-gulf",
+        "resources"
+      ],
+      "source": "https://www.britannica.com/place/Middle-East"
+    },
+    {
+      "seedId": "cb7d7232-08a9-4c1c-be8c-30f1db49bce6",
+      "category": "geography",
+      "navigationKeyword1": "regions",
+      "navigationKeyword2": "middle-east",
+      "question": "Which subregions of Southwest Asia does Britannica cite as commonly included in the Middle East?",
+      "correctAnswer": "The Arabian Peninsula and the Levant",
+      "incorrectAnswers": [
+        "Only the British Isles",
+        "The Andes and Patagonia",
+        "Siberia and Kamchatka"
+      ],
+      "explanation": "Britannica notes the Middle East typically encompasses Southwest Asia, especially the Arabian Peninsula and the Levant.",
+      "keywords": [
+        "middle-east",
+        "levant",
+        "arabian-peninsula"
+      ],
+      "source": "https://www.britannica.com/place/Middle-East"
+    },
+    {
+      "seedId": "d6ea3fe2-93b4-4c63-ae2f-8f58fd2228a7",
+      "category": "geography",
+      "navigationKeyword1": "regions",
+      "navigationKeyword2": "sahel",
+      "question": "A severe drought beginning in 1968 led the Sahara to advance southward by about how far by 1973 in places?",
+      "correctAnswer": "Up to about 60 miles (100 km)",
+      "incorrectAnswers": [
+        "Less than one mile total",
+        "More than 2,000 miles uniformly",
+        "The desert retreated hundreds of miles north"
+      ],
+      "explanation": "Britannica reports that by 1973 sections of the Sahara had advanced south up to roughly 60 miles during the early-1970s drought crisis.",
+      "keywords": [
+        "sahel",
+        "drought",
+        "sahara"
+      ],
+      "source": "https://www.britannica.com/place/Sahel"
+    },
+    {
+      "seedId": "a11a6cd7-9d12-45d8-8c9a-a2a25ad1be34",
+      "category": "geography",
+      "navigationKeyword1": "regions",
+      "navigationKeyword2": "sahel",
+      "question": "Acacia and which distinctive African tree appear among Sahel woody vegetation?",
+      "correctAnswer": "Baobab",
+      "incorrectAnswers": [
+        "Giant sequoia",
+        "Banyan only in tundra",
+        "Olive orchards on ice shelves"
+      ],
+      "explanation": "Britannica lists acacia and baobab among thorny shrubs and trees in Sahel landscapes.",
+      "keywords": [
+        "sahel",
+        "vegetation",
+        "baobab"
+      ],
+      "source": "https://www.britannica.com/place/Sahel"
+    },
+    {
+      "seedId": "eed2141d-d70d-472a-9366-3ec6de2c1b5f",
+      "category": "geography",
+      "navigationKeyword1": "regions",
+      "navigationKeyword2": "sahel",
+      "question": "Average annual rainfall in much of the Sahel is about how much, concentrated in a short wet season?",
+      "correctAnswer": "Roughly 4\u20138 inches (100\u2013200 mm)",
+      "incorrectAnswers": [
+        "Over 200 inches yearly",
+        "Zero measurable rain",
+        "Exactly 50 inches every month"
+      ],
+      "explanation": "Britannica reports Sahel rain averages about 4\u20138 inches yearly, mostly in June\u2013August.",
+      "keywords": [
+        "sahel",
+        "rainfall",
+        "climate"
+      ],
+      "source": "https://www.britannica.com/place/Sahel"
+    },
+    {
+      "seedId": "e6c29645-1fae-4169-9087-6fc5afb75cea",
+      "category": "geography",
+      "navigationKeyword1": "regions",
+      "navigationKeyword2": "sahel",
+      "question": "Livestock important to the Sahel include camels, cattle, sheep, and what other draft animal?",
+      "correctAnswer": "Pack oxen",
+      "incorrectAnswers": [
+        "Reindeer herds only",
+        "Bison on the Great Plains",
+        "Emus"
+      ],
+      "explanation": "Britannica lists camel, pack ox, and grazing cattle and sheep among Sahel livestock using natural pasture and shrubs.",
+      "keywords": [
+        "sahel",
+        "pastoralism",
+        "livestock"
+      ],
+      "source": "https://www.britannica.com/place/Sahel"
+    },
+    {
+      "seedId": "84a8ebb9-8011-4398-9e22-a9d378d1ca48",
+      "category": "geography",
+      "navigationKeyword1": "regions",
+      "navigationKeyword2": "sahel",
+      "question": "Millet and which legume crop are cited as modest Sahel crops where rainfall allows?",
+      "correctAnswer": "Peanuts (groundnuts)",
+      "incorrectAnswers": [
+        "Rice paddies everywhere at high latitude",
+        "Banana plantations on ice caps",
+        "Coffee as the only crop"
+      ],
+      "explanation": "Britannica mentions millet and peanuts as crops that can be raised in many Sahel areas.",
+      "keywords": [
+        "sahel",
+        "agriculture",
+        "millet"
+      ],
+      "source": "https://www.britannica.com/place/Sahel"
+    },
+    {
+      "seedId": "0ea8fb0d-c57d-499b-96c0-de5b72b2691d",
+      "category": "geography",
+      "navigationKeyword1": "regions",
+      "navigationKeyword2": "sahel",
+      "question": "Northern Africa also applies the name Sahel to coastal hill bands in Algeria and steppe plains in which other Maghreb country?",
+      "correctAnswer": "Tunisia",
+      "incorrectAnswers": [
+        "Iceland",
+        "New Zealand",
+        "Japan"
+      ],
+      "explanation": "Britannica notes in northern Africa \u201cSahel\u201d can mean Algerian coastal hills or Tunisia\u2019s eastern coastal steppe.",
+      "keywords": [
+        "sahel",
+        "algeria",
+        "tunisia"
+      ],
+      "source": "https://www.britannica.com/place/Sahel"
+    },
+    {
+      "seedId": "b0d23d5e-60bc-4feb-abc9-4aab3d7bf314",
+      "category": "geography",
+      "navigationKeyword1": "regions",
+      "navigationKeyword2": "sahel",
+      "question": "Overgrazing and clearing trees for fuel helped drive which environmental problem in the late 20th-century Sahel?",
+      "correctAnswer": "Soil erosion and desertification",
+      "incorrectAnswers": [
+        "Permanent glaciation",
+        "Coral bleaching in alpine lakes",
+        "Tropical rainforest expansion everywhere"
+      ],
+      "explanation": "Britannica links growing populations, firewood collection, and overstocking to soil erosion and desertification across the Sahel.",
+      "keywords": [
+        "sahel",
+        "desertification",
+        "environment"
+      ],
+      "source": "https://www.britannica.com/place/Sahel"
+    },
+    {
+      "seedId": "5c295b91-791f-4b59-8f02-72ca9387c5fe",
+      "category": "geography",
+      "navigationKeyword1": "regions",
+      "navigationKeyword2": "sahel",
+      "question": "The Sahel extends eastward from Senegal toward which large northeast African country?",
+      "correctAnswer": "Sudan",
+      "incorrectAnswers": [
+        "Chile",
+        "Mongolia",
+        "Norway"
+      ],
+      "explanation": "Britannica traces the Sahel from Senegal eastward across several states into Sudan.",
+      "keywords": [
+        "sahel",
+        "extent",
+        "africa"
+      ],
+      "source": "https://www.britannica.com/place/Sahel"
+    },
+    {
+      "seedId": "1f44f7e7-0d5d-431d-897d-4c7d04fd0790",
+      "category": "geography",
+      "navigationKeyword1": "regions",
+      "navigationKeyword2": "sahel",
+      "question": "The Sahel forms a transitional zone between the Sahara to the north and what belt to the south?",
+      "correctAnswer": "Humid savannas",
+      "incorrectAnswers": [
+        "Polar tundra",
+        "Alpine glaciers",
+        "Boreal taiga"
+      ],
+      "explanation": "Britannica describes the Sahel as transitional between the arid Sahara and the belt of humid savannas farther south.",
+      "keywords": [
+        "sahel",
+        "sahara",
+        "savanna"
+      ],
+      "source": "https://www.britannica.com/place/Sahel"
+    },
+    {
+      "seedId": "9ef48c0f-c582-419a-88c2-12ea32747e18",
+      "category": "geography",
+      "navigationKeyword1": "regions",
+      "navigationKeyword2": "sahel",
+      "question": "The Sahel\u2019s terrain is chiefly described as what vegetation type with little continuous forest cover?",
+      "correctAnswer": "Savanna",
+      "incorrectAnswers": [
+        "Dense tropical jungle wall-to-wall",
+        "Coral reef",
+        "Urban concrete exclusively"
+      ],
+      "explanation": "Britannica characterizes the Sahel as chiefly savanna with scattered cover and risk of merging into desert under pressure.",
+      "keywords": [
+        "sahel",
+        "savanna",
+        "land-cover"
+      ],
+      "source": "https://www.britannica.com/place/Sahel"
+    },
+    {
+      "seedId": "fbfb76b6-ba50-491e-83ee-f4a98150e8af",
+      "category": "geography",
+      "navigationKeyword1": "regions",
+      "navigationKeyword2": "sahel",
+      "question": "Which two major West African rivers provide floodwater pasturage in parts of the Sahel?",
+      "correctAnswer": "The Niger and S\u00e9n\u00e9gal rivers",
+      "incorrectAnswers": [
+        "The Amazon and Orinoco",
+        "The Rhine and Danube",
+        "The Yangtze and Mekong"
+      ],
+      "explanation": "Britannica notes wide Sahel pasturage zones are watered by flooding along the Niger and S\u00e9n\u00e9gal rivers.",
+      "keywords": [
+        "sahel",
+        "niger-river",
+        "senegal-river"
+      ],
+      "source": "https://www.britannica.com/place/Sahel"
+    },
+    {
+      "seedId": "cabf68e2-292f-4690-9b12-9c041f3f9d2b",
+      "category": "geography",
+      "navigationKeyword1": "regions",
+      "navigationKeyword2": "scandinavia",
+      "question": "Finland is generally considered part of Scandinavia or instead grouped mainly with what broader label?",
+      "correctAnswer": "Generally not part of core Scandinavia; often grouped with Nordic (Norden) countries",
+      "incorrectAnswers": [
+        "Always identical to the Iberian states",
+        "Officially part of the Balkans",
+        "Legally merged with Greenland only"
+      ],
+      "explanation": "Britannica notes Finland is generally not considered part of Scandinavia, though some include it on geologic or economic grounds; Nordic/Norden groups add Finland, Iceland, and others.",
+      "keywords": [
+        "scandinavia",
+        "finland",
+        "nordic"
+      ],
+      "source": "https://www.britannica.com/place/Scandinavia"
+    },
+    {
+      "seedId": "78343b0d-8c64-426b-9f70-11dc8c5bbfe7",
+      "category": "geography",
+      "navigationKeyword1": "regions",
+      "navigationKeyword2": "scandinavia",
+      "question": "High life expectancy and high literacy are listed among distinguishing traits of which regional grouping?",
+      "correctAnswer": "Norden (Denmark, Finland, Iceland, Norway, Sweden)",
+      "incorrectAnswers": [
+        "The Persian Gulf microstates only",
+        "Interior Sahara encampments uniformly",
+        "Remote Pacific atolls exclusively"
+      ],
+      "explanation": "Britannica notes Norden countries share long life expectancies and high literacy among other affinities.",
+      "keywords": [
+        "scandinavia",
+        "demographics",
+        "norden"
+      ],
+      "source": "https://www.britannica.com/place/Scandinavia"
+    },
+    {
+      "seedId": "fc09dcc4-2a94-495c-9b4b-d9a5313d09c6",
+      "category": "geography",
+      "navigationKeyword1": "regions",
+      "navigationKeyword2": "scandinavia",
+      "question": "Historically, what alternate Latin name did Scandinavia bear?",
+      "correctAnswer": "Scandia",
+      "incorrectAnswers": [
+        "Hibernia",
+        "Cathay",
+        "Lusitania"
+      ],
+      "explanation": "Britannica notes Scandinavia was historically called Scandia.",
+      "keywords": [
+        "scandinavia",
+        "history",
+        "names"
+      ],
+      "source": "https://www.britannica.com/place/Scandinavia"
+    },
+    {
+      "seedId": "0f0ec262-a685-4c06-a283-25f385653103",
+      "category": "geography",
+      "navigationKeyword1": "regions",
+      "navigationKeyword2": "scandinavia",
+      "question": "Iceland is often added to Nordic groupings because its language is related to those of Norway and where else?",
+      "correctAnswer": "Sweden (and Denmark) within the North Germanic family",
+      "incorrectAnswers": [
+        "Japan",
+        "Madagascar",
+        "Ethiopia"
+      ],
+      "explanation": "Britannica includes Iceland (and the Faroes) among areas whose North Germanic languages relate to Norwegian and Swedish.",
+      "keywords": [
+        "scandinavia",
+        "iceland",
+        "languages"
+      ],
+      "source": "https://www.britannica.com/place/Scandinavia"
+    },
+    {
+      "seedId": "0462de81-86e4-4e2a-b597-9d0b52585c3a",
+      "category": "geography",
+      "navigationKeyword1": "regions",
+      "navigationKeyword2": "scandinavia",
+      "question": "Nordic countries are described as distinct from the rest of continental Europe partly because northern areas are what?",
+      "correctAnswer": "Thinly populated",
+      "incorrectAnswers": [
+        "Entirely uninhabited",
+        "Denser than every tropical megacity",
+        "Without any coastlines"
+      ],
+      "explanation": "Britannica highlights thinly populated northern regions as one Nordic characteristic setting the area apart.",
+      "keywords": [
+        "scandinavia",
+        "population",
+        "nordic"
+      ],
+      "source": "https://www.britannica.com/place/Scandinavia"
+    },
+    {
+      "seedId": "c54bd97b-98e0-4cf9-b426-a12c5cd8f73b",
+      "category": "geography",
+      "navigationKeyword1": "regions",
+      "navigationKeyword2": "scandinavia",
+      "question": "Norway and Sweden together occupy which European peninsula?",
+      "correctAnswer": "The Scandinavian Peninsula",
+      "incorrectAnswers": [
+        "The Iberian Peninsula",
+        "The Balkan Peninsula",
+        "The Indochinese Peninsula"
+      ],
+      "explanation": "Britannica identifies Norway and Sweden as the two countries on the Scandinavian Peninsula.",
+      "keywords": [
+        "scandinavia",
+        "scandinavian-peninsula",
+        "norway"
+      ],
+      "source": "https://www.britannica.com/place/Scandinavia"
+    },
+    {
+      "seedId": "738840d9-3c40-4da2-9f88-e6f62f85f597",
+      "category": "geography",
+      "navigationKeyword1": "regions",
+      "navigationKeyword2": "scandinavia",
+      "question": "Scandinavia is generally held to include Norway, Sweden, and which third kingdom?",
+      "correctAnswer": "Denmark",
+      "incorrectAnswers": [
+        "Poland",
+        "Portugal",
+        "Switzerland"
+      ],
+      "explanation": "Britannica states Scandinavia usually comprises Norway and Sweden on the Scandinavian Peninsula plus Denmark.",
+      "keywords": [
+        "scandinavia",
+        "northern-europe",
+        "denmark"
+      ],
+      "source": "https://www.britannica.com/place/Scandinavia"
+    },
+    {
+      "seedId": "9a5da685-7a2d-4d79-bec3-49c40b2d7d5f",
+      "category": "geography",
+      "navigationKeyword1": "regions",
+      "navigationKeyword2": "scandinavia",
+      "question": "Scandinavia lies in which part of Europe?",
+      "correctAnswer": "Northern Europe",
+      "incorrectAnswers": [
+        "Central Africa",
+        "Southern South America",
+        "Interior Antarctica"
+      ],
+      "explanation": "Britannica places Scandinavia in northern Europe.",
+      "keywords": [
+        "scandinavia",
+        "location",
+        "europe"
+      ],
+      "source": "https://www.britannica.com/place/Scandinavia"
+    },
+    {
+      "seedId": "66d2bac2-223d-4a2d-a45a-c1d016de9f13",
+      "category": "geography",
+      "navigationKeyword1": "regions",
+      "navigationKeyword2": "scandinavia",
+      "question": "The term Norden typically refers to which five states?",
+      "correctAnswer": "Denmark, Finland, Iceland, Norway, and Sweden",
+      "incorrectAnswers": [
+        "Spain, Italy, Greece, Malta, Cyprus",
+        "Brazil, Argentina, Chile, Peru, Uruguay",
+        "Kenya, Uganda, Rwanda, Burundi, Tanzania"
+      ],
+      "explanation": "Britannica defines Norden as Denmark, Finland, Iceland, Norway, and Sweden\u2014a broader Northern European grouping than core Scandinavia.",
+      "keywords": [
+        "scandinavia",
+        "norden",
+        "nordic-countries"
+      ],
+      "source": "https://www.britannica.com/place/Scandinavia"
+    },
+    {
+      "seedId": "537cb8ac-cc1c-4c17-9866-22d84d3ecbe1",
+      "category": "geography",
+      "navigationKeyword1": "regions",
+      "navigationKeyword2": "scandinavia",
+      "question": "What shared language family links Norway, Sweden, Denmark, Iceland, and Faroese speech in Nordic discussions?",
+      "correctAnswer": "North Germanic (Scandinavian) languages",
+      "incorrectAnswers": [
+        "Semitic languages only",
+        "Sino-Tibetan languages",
+        "Bantu languages"
+      ],
+      "explanation": "Britannica ties Nordic affinities partly to North Germanic languages spoken from Norway and Sweden through Denmark, Iceland, and the Faroes.",
+      "keywords": [
+        "scandinavia",
+        "languages",
+        "germanic"
+      ],
+      "source": "https://www.britannica.com/place/Scandinavia"
+    },
+    {
+      "seedId": "7b86ff48-ff22-4126-852e-3c82c74a7be4",
+      "category": "geography",
+      "navigationKeyword1": "regions",
+      "navigationKeyword2": "scandinavia",
+      "question": "Which resource does Britannica cite as relatively abundant for Nordic countries alongside fisheries?",
+      "correctAnswer": "Fish resources of the sea",
+      "incorrectAnswers": [
+        "Tropical hardwood forests only",
+        "No marine resources",
+        "Oil exclusively on landlocked plateaus"
+      ],
+      "explanation": "Britannica lists, among Nordic traits, a relative wealth of fish resources along with other regional characteristics.",
+      "keywords": [
+        "scandinavia",
+        "fisheries",
+        "resources"
+      ],
+      "source": "https://www.britannica.com/place/Scandinavia"
+    },
+    {
+      "seedId": "9d3e2e44-991e-4e5c-9793-0dcf9ae38091",
+      "category": "geography",
+      "navigationKeyword1": "regions",
+      "navigationKeyword2": "southeast-asia",
+      "question": "Besides Indonesia and the Philippines, which sultanate on Borneo is cited among insular Southeast Asian nations?",
+      "correctAnswer": "Brunei",
+      "incorrectAnswers": [
+        "Luxembourg",
+        "Liechtenstein",
+        "Andorra"
+      ],
+      "explanation": "Britannica names Brunei on Borneo alongside Indonesia and the Philippines as insular Southeast Asia.",
+      "keywords": [
+        "southeast-asia",
+        "brunei",
+        "borneo"
+      ],
+      "source": "https://www.britannica.com/place/Southeast-Asia"
+    },
+    {
+      "seedId": "fed7ed3a-22fa-4e43-8abc-836b816a148b",
+      "category": "geography",
+      "navigationKeyword1": "regions",
+      "navigationKeyword2": "southeast-asia",
+      "question": "Chinese and Japanese historical names for Southeast Asia translated as what English sea label?",
+      "correctAnswer": "South Seas",
+      "incorrectAnswers": [
+        "North Pole seas",
+        "Inland Dead Sea",
+        "Caspian only"
+      ],
+      "explanation": "Britannica notes Chinese Nanyang and Japanese Nan\u2019y\u014d mean \u201cSouth Seas,\u201d early names for the region.",
+      "keywords": [
+        "southeast-asia",
+        "history",
+        "names"
+      ],
+      "source": "https://www.britannica.com/place/Southeast-Asia"
+    },
+    {
+      "seedId": "102b1779-45e1-46c7-a979-87fdf372cc23",
+      "category": "geography",
+      "navigationKeyword1": "regions",
+      "navigationKeyword2": "southeast-asia",
+      "question": "Mainland Southeast Asia includes Cambodia, Laos, Myanmar, Thailand, Vietnam, and which city-state at the Malay Peninsula\u2019s tip?",
+      "correctAnswer": "Singapore",
+      "incorrectAnswers": [
+        "Vatican City",
+        "Monaco",
+        "San Marino"
+      ],
+      "explanation": "Britannica lists Singapore with the mainland states at the southern tip of the Malay Peninsula.",
+      "keywords": [
+        "southeast-asia",
+        "singapore",
+        "mainland"
+      ],
+      "source": "https://www.britannica.com/place/Southeast-Asia"
+    },
+    {
+      "seedId": "34c6dfd1-c5b1-416e-ab62-2cbe6ff30541",
+      "category": "geography",
+      "navigationKeyword1": "regions",
+      "navigationKeyword2": "southeast-asia",
+      "question": "Malaysia spans territory on the Malay Peninsula and on which large island shared with other nations?",
+      "correctAnswer": "Borneo",
+      "incorrectAnswers": [
+        "Greenland exclusively",
+        "Madagascar only",
+        "Sri Lanka only"
+      ],
+      "explanation": "Britannica notes Malaysia has a western portion on the Malay Peninsula and an eastern part on Borneo.",
+      "keywords": [
+        "southeast-asia",
+        "malaysia",
+        "borneo"
+      ],
+      "source": "https://www.britannica.com/place/Southeast-Asia"
+    },
+    {
+      "seedId": "111233f1-c7fc-4fbb-9a8d-9a95ac29cf67",
+      "category": "geography",
+      "navigationKeyword1": "regions",
+      "navigationKeyword2": "southeast-asia",
+      "question": "Mount Hkakabo on the Myanmar\u2013China border is cited as the highest peak of where?",
+      "correctAnswer": "Mainland Southeast Asia",
+      "incorrectAnswers": [
+        "Western Europe",
+        "The Appalachian Mountains",
+        "The Andes of Chile only"
+      ],
+      "explanation": "Britannica gives Mount Hkakabo, on Myanmar\u2019s border with China, as mainland Southeast Asia\u2019s highest summit at 19,295 feet (5,881 m).",
+      "keywords": [
+        "southeast-asia",
+        "hkakabo",
+        "myanmar"
+      ],
+      "source": "https://www.britannica.com/place/Southeast-Asia"
+    },
+    {
+      "seedId": "778836fb-05fb-4d63-9008-41e76b64cae7",
+      "category": "geography",
+      "navigationKeyword1": "regions",
+      "navigationKeyword2": "southeast-asia",
+      "question": "Southeast Asia consists of mainland and which other major geographic portion?",
+      "correctAnswer": "Insular (archipelagic) Southeast Asia",
+      "incorrectAnswers": [
+        "Only polar ice shelves",
+        "Interior Antarctica",
+        "The Canadian Shield"
+      ],
+      "explanation": "Britannica divides Southeast Asia into mainland and insular portions, the latter a string of archipelagoes south and east of the mainland.",
+      "keywords": [
+        "southeast-asia",
+        "mainland",
+        "archipelago"
+      ],
+      "source": "https://www.britannica.com/place/Southeast-Asia"
+    },
+    {
+      "seedId": "fbf47af9-c95c-42b0-af40-e4b0e3651305",
+      "category": "geography",
+      "navigationKeyword1": "regions",
+      "navigationKeyword2": "southeast-asia",
+      "question": "Southeast Asia lies east of the Indian subcontinent and south of which large country?",
+      "correctAnswer": "China",
+      "incorrectAnswers": [
+        "Brazil",
+        "Canada",
+        "South Africa"
+      ],
+      "explanation": "Britannica places Southeast Asia east of the Indian subcontinent and south of China.",
+      "keywords": [
+        "southeast-asia",
+        "location",
+        "asia"
+      ],
+      "source": "https://www.britannica.com/place/Southeast-Asia"
+    },
+    {
+      "seedId": "42238ba9-66f1-46f0-81b0-6ed6bf25eddf",
+      "category": "geography",
+      "navigationKeyword1": "regions",
+      "navigationKeyword2": "southeast-asia",
+      "question": "Southeast Asia sits astride strategic sea passages linking East Asia to which other broad world area?",
+      "correctAnswer": "The Middle Eastern\u2013Mediterranean world",
+      "incorrectAnswers": [
+        "Only the Arctic Ocean fisheries",
+        "Interior Siberian rail dead-ends",
+        "The Amazon basin"
+      ],
+      "explanation": "Britannica highlights Southeast Asia\u2019s position on sea routes between East Asia and the Middle Eastern\u2013Mediterranean sphere.",
+      "keywords": [
+        "southeast-asia",
+        "shipping",
+        "trade-routes"
+      ],
+      "source": "https://www.britannica.com/place/Southeast-Asia"
+    },
+    {
+      "seedId": "b1f2bdfe-573e-4a50-9961-73a26ca0c8f6",
+      "category": "geography",
+      "navigationKeyword1": "regions",
+      "navigationKeyword2": "southeast-asia",
+      "question": "Southeast Asia\u2019s climate zones fall within which broad Earth belts?",
+      "correctAnswer": "Tropical and subtropical zones",
+      "incorrectAnswers": [
+        "Polar climates only",
+        "Dry ice-cap everywhere",
+        "Mediterranean only with no monsoon"
+      ],
+      "explanation": "Britannica states all of Southeast Asia lies in tropical and subtropical climatic zones with widespread monsoonal seasons.",
+      "keywords": [
+        "southeast-asia",
+        "climate",
+        "tropical"
+      ],
+      "source": "https://www.britannica.com/place/Southeast-Asia"
+    },
+    {
+      "seedId": "7c51fb00-979e-4a25-9b9f-d2efa95507c3",
+      "category": "geography",
+      "navigationKeyword1": "regions",
+      "navigationKeyword2": "southeast-asia",
+      "question": "Which peninsula projects south from the mainland and is structurally part of it yet culturally bridges to the islands?",
+      "correctAnswer": "The Malay Peninsula",
+      "incorrectAnswers": [
+        "The Arabian Peninsula",
+        "The Korean Peninsula only",
+        "The Florida Peninsula"
+      ],
+      "explanation": "Britannica describes the Malay Peninsula extending south from the mainland as a structural bridge to insular Southeast Asia.",
+      "keywords": [
+        "southeast-asia",
+        "malay-peninsula",
+        "mainland"
+      ],
+      "source": "https://www.britannica.com/place/Southeast-Asia"
+    },
+    {
+      "seedId": "53e72c7c-0234-4fbb-8ce1-a1af2e4ac684",
+      "category": "geography",
+      "navigationKeyword1": "regions",
+      "navigationKeyword2": "southeast-asia",
+      "question": "Which three major tectonic plates converge beneath Southeast Asia?",
+      "correctAnswer": "Eurasian, Indian-Australian, and Pacific plates",
+      "incorrectAnswers": [
+        "North American, African, and Antarctic plates only",
+        "Solely the Somali Plate",
+        "No plates converge there"
+      ],
+      "explanation": "Britannica attributes Southeast Asia\u2019s rugged relief to convergence of the Eurasian, Indian-Australian, and Pacific plates.",
+      "keywords": [
+        "southeast-asia",
+        "tectonics",
+        "plates"
+      ],
+      "source": "https://www.britannica.com/place/Southeast-Asia"
+    }
+  ]
+}

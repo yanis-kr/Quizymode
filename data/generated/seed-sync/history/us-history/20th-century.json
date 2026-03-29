@@ -1,0 +1,247 @@
+{
+  "schemaVersion": 1,
+  "seedSet": "core-public-items",
+  "deltaPreviewLimit": 200,
+  "items": [
+    {
+      "seedId": "bbb04937-69ed-43fb-b565-6e568e487848",
+      "category": "history",
+      "navigationKeyword1": "us-history",
+      "navigationKeyword2": "20th-century",
+      "question": "Congress adopted the Nineteenth Amendment in 1919, guaranteeing women\u2019s suffrage based on whose decades of activism?",
+      "correctAnswer": "Suffragists such as Susan B. Anthony, Elizabeth Cady Stanton, and later Alice Paul (among many)",
+      "incorrectAnswers": [
+        "The Anti-Saloon League alone",
+        "The Populist Party alone",
+        "The Federal Reserve Board"
+      ],
+      "explanation": "Ratification in 1920 capped a long state-level and federal campaign for voting equality.",
+      "keywords": [
+        "20th-century",
+        "suffrage",
+        "amendment"
+      ],
+      "source": "https://www.britannica.com/topic/Nineteenth-Amendment-United-States-Constitution"
+    },
+    {
+      "seedId": "fe320813-05a9-410b-a0be-ec3fc513d27e",
+      "category": "history",
+      "navigationKeyword1": "us-history",
+      "navigationKeyword2": "20th-century",
+      "question": "Franklin Roosevelt\u2019s first-term programs\u2014relief, recovery, and reform\u2014were collectively nicknamed what?",
+      "correctAnswer": "The New Deal",
+      "incorrectAnswers": [
+        "The Square Deal",
+        "The Fair Deal",
+        "The Great Society"
+      ],
+      "explanation": "Agencies like the CCC, WPA, and SEC expanded federal economic intervention.",
+      "keywords": [
+        "20th-century",
+        "new-deal",
+        "fdr"
+      ],
+      "source": "https://www.britannica.com/event/New-Deal"
+    },
+    {
+      "seedId": "50bc01b3-6af7-4a43-8145-b6eb11f735f5",
+      "category": "history",
+      "navigationKeyword1": "us-history",
+      "navigationKeyword2": "20th-century",
+      "question": "Japan\u2019s December 7, 1941, attack on which U.S. naval base brought America fully into World War II?",
+      "correctAnswer": "Pearl Harbor, Hawaii",
+      "incorrectAnswers": [
+        "San Diego",
+        "Guam only",
+        "Manila Bay"
+      ],
+      "explanation": "Congress declared war on Japan the next day; Germany and Italy soon declared war on the United States.",
+      "keywords": [
+        "20th-century",
+        "world-war-ii",
+        "pearl-harbor"
+      ],
+      "source": "https://www.britannica.com/event/Pearl-Harbor-attack"
+    },
+    {
+      "seedId": "ba351c6f-6e01-4edc-b40e-3daaedfb4864",
+      "category": "history",
+      "navigationKeyword1": "us-history",
+      "navigationKeyword2": "20th-century",
+      "question": "NATO allies led by the United States reversed Iraq\u2019s 1990 annexation of Kuwait in which short war?",
+      "correctAnswer": "The Persian Gulf War (Operation Desert Storm)",
+      "incorrectAnswers": [
+        "The Iraq War (2003)",
+        "The Six-Day War",
+        "The Falklands War"
+      ],
+      "explanation": "George H.W. Bush assembled a UN-backed coalition that expelled Iraqi forces in early 1991.",
+      "keywords": [
+        "20th-century",
+        "gulf-war",
+        "bush"
+      ],
+      "source": "https://www.britannica.com/event/Persian-Gulf-War"
+    },
+    {
+      "seedId": "99bcdfeb-1d2f-44fc-a8d5-ebe4ef27c559",
+      "category": "history",
+      "navigationKeyword1": "us-history",
+      "navigationKeyword2": "20th-century",
+      "question": "Neil Armstrong and Buzz Aldrin walked on the Moon in July 1969 during which NASA mission?",
+      "correctAnswer": "Apollo 11",
+      "incorrectAnswers": [
+        "Apollo 8",
+        "Apollo 13",
+        "Gemini 4"
+      ],
+      "explanation": "The landing fulfilled Kennedy\u2019s pledge to reach the Moon before decade\u2019s end.",
+      "keywords": [
+        "20th-century",
+        "space",
+        "apollo"
+      ],
+      "source": "https://www.britannica.com/event/Apollo-11-mission"
+    },
+    {
+      "seedId": "1edc1212-b648-423d-b88f-177d2493e2aa",
+      "category": "history",
+      "navigationKeyword1": "us-history",
+      "navigationKeyword2": "20th-century",
+      "question": "Richard Nixon resigned the presidency in 1974 amid fallout from which political scandal?",
+      "correctAnswer": "Watergate",
+      "incorrectAnswers": [
+        "Teapot Dome",
+        "Iran-Contra",
+        "Whitewater"
+      ],
+      "explanation": "Tape recordings and cover-up convictions showed obstruction of justice tied to a 1972 burglary.",
+      "keywords": [
+        "20th-century",
+        "nixon",
+        "watergate"
+      ],
+      "source": "https://www.britannica.com/event/Watergate-Scandal"
+    },
+    {
+      "seedId": "ecc604c2-2533-4dae-90e2-0829f1737bdc",
+      "category": "history",
+      "navigationKeyword1": "us-history",
+      "navigationKeyword2": "20th-century",
+      "question": "The 1929 stock market crash on Wall Street helped trigger which decade-long economic crisis?",
+      "correctAnswer": "The Great Depression",
+      "incorrectAnswers": [
+        "The Long Depression",
+        "The Panic of 1893",
+        "The Stagflation of the 1970s"
+      ],
+      "explanation": "Bank failures, unemployment, and deflation reshaped American politics until World War II mobilization.",
+      "keywords": [
+        "20th-century",
+        "depression",
+        "economy"
+      ],
+      "source": "https://www.britannica.com/event/Great-Depression"
+    },
+    {
+      "seedId": "6fde55f3-9e1f-4276-a7c8-29688fc25137",
+      "category": "history",
+      "navigationKeyword1": "us-history",
+      "navigationKeyword2": "20th-century",
+      "question": "The 1954 Supreme Court decision Brown v. Board of Education of Topeka overturned which \u201cseparate but equal\u201d precedent?",
+      "correctAnswer": "Plessy v. Ferguson (1896)",
+      "incorrectAnswers": [
+        "Dred Scott v. Sandford",
+        "Marbury v. Madison",
+        "Lochner v. New York"
+      ],
+      "explanation": "The unanimous ruling held that segregated public schools violated the Equal Protection Clause.",
+      "keywords": [
+        "20th-century",
+        "civil-rights",
+        "education"
+      ],
+      "source": "https://www.britannica.com/event/Brown-v-Board-of-Education-of-Topeka"
+    },
+    {
+      "seedId": "4867cd32-856e-41b7-b17c-62ebee9bbfa2",
+      "category": "history",
+      "navigationKeyword1": "us-history",
+      "navigationKeyword2": "20th-century",
+      "question": "The 1965 Immigration and Nationality Act abolished national-origin quotas modeled on which 1920s-era system?",
+      "correctAnswer": "The quota system established in the Immigration Act of 1924 (Johnson-Reed)",
+      "incorrectAnswers": [
+        "The Chinese Exclusion Act alone",
+        "The Gentleman\u2019s Agreement",
+        "The Bracero Program"
+      ],
+      "explanation": "The 1965 law prioritized family reunification and skills, transforming America\u2019s immigrant demographics.",
+      "keywords": [
+        "20th-century",
+        "immigration",
+        "1965"
+      ],
+      "source": "https://www.britannica.com/topic/Immigration-Act-United-States-1965"
+    },
+    {
+      "seedId": "324cf81c-c2b0-4c23-b308-7bc67c6e071f",
+      "category": "history",
+      "navigationKeyword1": "us-history",
+      "navigationKeyword2": "20th-century",
+      "question": "The Civil Rights Act of 1964 outlawed discrimination in public accommodations and employment based on race, color, religion, sex, and what?",
+      "correctAnswer": "National origin",
+      "incorrectAnswers": [
+        "Political party",
+        "Age",
+        "Disability (added in later statutes)"
+      ],
+      "explanation": "Lyndon Johnson signed the bill after a Senate filibuster was broken, reshaping federal equality law.",
+      "keywords": [
+        "20th-century",
+        "civil-rights",
+        "1964"
+      ],
+      "source": "https://www.britannica.com/event/Civil-Rights-Act-United-States-1964"
+    },
+    {
+      "seedId": "7fbafaff-1fb5-49ab-851f-6c71a3d52a12",
+      "category": "history",
+      "navigationKeyword1": "us-history",
+      "navigationKeyword2": "20th-century",
+      "question": "The U.S. and USSR narrowly avoided nuclear war in October 1962 over Soviet missiles placed in which Caribbean country?",
+      "correctAnswer": "Cuba",
+      "incorrectAnswers": [
+        "Nicaragua",
+        "Dominican Republic",
+        "Haiti"
+      ],
+      "explanation": "Kennedy\u2019s quarantine and secret diplomacy led Khrushchev to withdraw the missiles.",
+      "keywords": [
+        "20th-century",
+        "cold-war",
+        "kennedy"
+      ],
+      "source": "https://www.britannica.com/event/Cuban-missile-crisis"
+    },
+    {
+      "seedId": "d67bdb7a-189c-46b8-9c53-1336efa27ca0",
+      "category": "history",
+      "navigationKeyword1": "us-history",
+      "navigationKeyword2": "20th-century",
+      "question": "The U.S. declared war on Germany in 1917 after controversies over submarine warfare and which diplomatic proposal?",
+      "correctAnswer": "The Zimmermann Telegram (proposed German-Mexican alliance against the U.S.)",
+      "incorrectAnswers": [
+        "The Hay-Pauncefote Treaty",
+        "The Gentlemen\u2019s Agreement",
+        "The Rush-Bagot Agreement"
+      ],
+      "explanation": "Public outrage over the telegram and continued sinkings pushed Wilson toward belligerency.",
+      "keywords": [
+        "20th-century",
+        "world-war-i",
+        "wilson"
+      ],
+      "source": "https://www.britannica.com/event/Zimmermann-Telegram"
+    }
+  ]
+}

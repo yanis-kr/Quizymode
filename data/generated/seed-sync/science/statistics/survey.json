@@ -1,0 +1,235 @@
+{
+  "schemaVersion": 1,
+  "seedSet": "core-public-items",
+  "deltaPreviewLimit": 200,
+  "items": [
+    {
+      "seedId": "9ebdf765-4a59-4593-a8c5-d5beede255eb",
+      "category": "science",
+      "navigationKeyword1": "statistics",
+      "navigationKeyword2": "survey",
+      "question": "Cognitive interview purpose?",
+      "correctAnswer": "Pretest question comprehension",
+      "incorrectAnswers": [
+        "Replace IRB",
+        "Compute p-values",
+        "Only translation"
+      ],
+      "explanation": "Improve instrument.",
+      "keywords": [
+        "pretesting",
+        "methods"
+      ],
+      "source": "https://en.wikipedia.org/wiki/Cognitive_interviewing"
+    },
+    {
+      "seedId": "9208cae9-e23e-4072-9e10-154f5836fdf8",
+      "category": "science",
+      "navigationKeyword1": "statistics",
+      "navigationKeyword2": "survey",
+      "question": "Coverage error in surveys?",
+      "correctAnswer": "Frame doesn\u2019t match target population",
+      "incorrectAnswers": [
+        "Same as sampling error",
+        "Only nonresponse",
+        "Always zero"
+      ],
+      "explanation": "Cell-only households historical example.",
+      "keywords": [
+        "coverage-error",
+        "polling"
+      ],
+      "source": "https://www.pewresearch.org/our-methods/u-s-surveys/sampling/"
+    },
+    {
+      "seedId": "0d41c02a-b8cb-4c0d-bf91-d5f6c30446a5",
+      "category": "science",
+      "navigationKeyword1": "statistics",
+      "navigationKeyword2": "survey",
+      "question": "Double-barreled question flaw?",
+      "correctAnswer": "Asks two things at once",
+      "incorrectAnswers": [
+        "Improves clarity",
+        "Only open-ended",
+        "Statistically optimal"
+      ],
+      "explanation": "Split questions.",
+      "keywords": [
+        "double-barreled",
+        "wording"
+      ],
+      "source": "https://en.wikipedia.org/wiki/Double-barreled_question"
+    },
+    {
+      "seedId": "1bc6ca22-7a13-4ce6-95cc-1fc45e2e3eca",
+      "category": "science",
+      "navigationKeyword1": "statistics",
+      "navigationKeyword2": "survey",
+      "question": "Leading question problem?",
+      "correctAnswer": "Wording pushes respondents toward answer",
+      "incorrectAnswers": [
+        "Improves accuracy",
+        "Only online",
+        "Never happens"
+      ],
+      "explanation": "Neutral wording matters.",
+      "keywords": [
+        "leading-question",
+        "bias"
+      ],
+      "source": "https://en.wikipedia.org/wiki/Leading_question"
+    },
+    {
+      "seedId": "3b7069a7-5d53-4138-a83e-9662dfd42d98",
+      "category": "science",
+      "navigationKeyword1": "statistics",
+      "navigationKeyword2": "survey",
+      "question": "Likert scale?",
+      "correctAnswer": "Ordinal agreement ratings",
+      "incorrectAnswers": [
+        "Ratio scale",
+        "Nominal only",
+        "Continuous always"
+      ],
+      "explanation": "Analyze with care.",
+      "keywords": [
+        "likert",
+        "measurement"
+      ],
+      "source": "https://en.wikipedia.org/wiki/Likert_scale"
+    },
+    {
+      "seedId": "64bf466a-ab45-4548-a177-70004bbf41bc",
+      "category": "science",
+      "navigationKeyword1": "statistics",
+      "navigationKeyword2": "survey",
+      "question": "Margin of error applies to?",
+      "correctAnswer": "Random sampling variability of estimate",
+      "incorrectAnswers": [
+        "All bias sources",
+        "Individual responses",
+        "Always population mean exactly"
+      ],
+      "explanation": "Not \u2018everything wrong\u2019.",
+      "keywords": [
+        "margin-of-error",
+        "interpretation"
+      ],
+      "source": "https://www.pewresearch.org/our-methods/u-s-surveys/sampling/"
+    },
+    {
+      "seedId": "1399f7cf-a285-4e1e-b72d-247ba5a499f8",
+      "category": "science",
+      "navigationKeyword1": "statistics",
+      "navigationKeyword2": "survey",
+      "question": "Open-ended vs closed question tradeoff?",
+      "correctAnswer": "Rich detail vs coding difficulty",
+      "incorrectAnswers": [
+        "Closed always better",
+        "Open never used",
+        "Same analysis"
+      ],
+      "explanation": "Survey design choice.",
+      "keywords": [
+        "survey-questions",
+        "design"
+      ],
+      "source": "https://www.pewresearch.org/our-methods/u-s-surveys/sampling/"
+    },
+    {
+      "seedId": "807bfa16-594b-47f7-a69a-565208d88655",
+      "category": "science",
+      "navigationKeyword1": "statistics",
+      "navigationKeyword2": "survey",
+      "question": "Panel survey?",
+      "correctAnswer": "Same respondents repeatedly",
+      "incorrectAnswers": [
+        "Cross-sectional only",
+        "Census",
+        "Always biased"
+      ],
+      "explanation": "Trends vs cohort effects.",
+      "keywords": [
+        "panel",
+        "longitudinal"
+      ],
+      "source": "https://en.wikipedia.org/wiki/Panel_survey"
+    },
+    {
+      "seedId": "c5f4aec1-cb20-431b-b1f8-7c92da4fd2fc",
+      "category": "science",
+      "navigationKeyword1": "statistics",
+      "navigationKeyword2": "survey",
+      "question": "Pilot study?",
+      "correctAnswer": "Small run to debug instrument/flow",
+      "incorrectAnswers": [
+        "Replace main study",
+        "Always publishable alone",
+        "No ethics review"
+      ],
+      "explanation": "Improves quality.",
+      "keywords": [
+        "pilot",
+        "methods"
+      ],
+      "source": "https://en.wikipedia.org/wiki/Pilot_experiment"
+    },
+    {
+      "seedId": "999edac0-6b4b-45c7-9487-a41fa2cd6d24",
+      "category": "science",
+      "navigationKeyword1": "statistics",
+      "navigationKeyword2": "survey",
+      "question": "Random digit dialing?",
+      "correctAnswer": "Probability sample of phone numbers",
+      "incorrectAnswers": [
+        "Always quota",
+        "Always volunteer",
+        "Census"
+      ],
+      "explanation": "Declining with mobile patterns.",
+      "keywords": [
+        "rdd",
+        "sampling"
+      ],
+      "source": "https://www.pewresearch.org/our-methods/u-s-surveys/sampling/"
+    },
+    {
+      "seedId": "e73640b9-f679-43ed-8c36-8f25bf5d9bc6",
+      "category": "science",
+      "navigationKeyword1": "statistics",
+      "navigationKeyword2": "survey",
+      "question": "Response bias?",
+      "correctAnswer": "Systematic tendency to answer certain way",
+      "incorrectAnswers": [
+        "Random error only",
+        "Same as margin of error",
+        "Only sampling"
+      ],
+      "explanation": "Social desirability example.",
+      "keywords": [
+        "response-bias",
+        "surveys"
+      ],
+      "source": "https://en.wikipedia.org/wiki/Response_bias"
+    },
+    {
+      "seedId": "2827b819-a117-49cc-a18f-1457d10993ff",
+      "category": "science",
+      "navigationKeyword1": "statistics",
+      "navigationKeyword2": "survey",
+      "question": "Weighting adjusts?",
+      "correctAnswer": "Sample to match population demographics",
+      "incorrectAnswers": [
+        "Removes all bias always",
+        "Replaces random sampling",
+        "Only Bayesian"
+      ],
+      "explanation": "Reduces some nonresponse/coverage issues.",
+      "keywords": [
+        "weighting",
+        "polling"
+      ],
+      "source": "https://www.pewresearch.org/our-methods/u-s-surveys/sampling/"
+    }
+  ]
+}

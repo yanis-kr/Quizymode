@@ -1,0 +1,235 @@
+{
+  "schemaVersion": 1,
+  "seedSet": "core-public-items",
+  "deltaPreviewLimit": 200,
+  "items": [
+    {
+      "seedId": "ff488dd2-2b85-42c0-ab9a-de301aa295b3",
+      "category": "science",
+      "navigationKeyword1": "precalc",
+      "navigationKeyword2": "vectors",
+      "question": "3D cross product u\u00d7v?",
+      "correctAnswer": "Vector perpendicular to u and v",
+      "incorrectAnswers": [
+        "Scalar always",
+        "Same as dot",
+        "Always parallel to u"
+      ],
+      "explanation": "Magnitude ||u|| ||v|| sin \u03b8.",
+      "keywords": [
+        "cross-product",
+        "r3"
+      ],
+      "source": "https://openstax.org/books/calculus-volume-3/pages/2-4-the-cross-product"
+    },
+    {
+      "seedId": "9cdb9dd9-8bb5-4d39-8986-79cea88ed512",
+      "category": "science",
+      "navigationKeyword1": "precalc",
+      "navigationKeyword2": "vectors",
+      "question": "Bearing vs component form?",
+      "correctAnswer": "Convert angle and magnitude to (x,y)",
+      "incorrectAnswers": [
+        "Cannot convert",
+        "Only polar graphs",
+        "Same as complex always"
+      ],
+      "explanation": "Use trig.",
+      "keywords": [
+        "components",
+        "trig"
+      ],
+      "source": "https://www.khanacademy.org/math/precalculus/vectors-precalc"
+    },
+    {
+      "seedId": "81a452ac-bb83-49ce-8cc1-c8090839490e",
+      "category": "science",
+      "navigationKeyword1": "precalc",
+      "navigationKeyword2": "vectors",
+      "question": "Dot product u\u00b7v (2D)?",
+      "correctAnswer": "u1v1 + u2v2",
+      "incorrectAnswers": [
+        "u1v2 + u2v1",
+        "u\u00d7v",
+        "u/v"
+      ],
+      "explanation": "Related to angle.",
+      "keywords": [
+        "dot-product",
+        "vectors"
+      ],
+      "source": "https://openstax.org/books/precalculus-2e/pages/8-5-dot-product"
+    },
+    {
+      "seedId": "f90b440a-cebc-4b98-811d-4a25e886dbdc",
+      "category": "science",
+      "navigationKeyword1": "precalc",
+      "navigationKeyword2": "vectors",
+      "question": "Force as vector?",
+      "correctAnswer": "Has magnitude and direction",
+      "incorrectAnswers": [
+        "Scalar only",
+        "Only positive",
+        "No components"
+      ],
+      "explanation": "Statics sums vector forces.",
+      "keywords": [
+        "force-vector",
+        "physics"
+      ],
+      "source": "https://openstax.org/books/precalculus-2e/pages/8-4-vectors"
+    },
+    {
+      "seedId": "83d67e0c-8b94-4671-b232-e9abbcf5afea",
+      "category": "science",
+      "navigationKeyword1": "precalc",
+      "navigationKeyword2": "vectors",
+      "question": "Position vector?",
+      "correctAnswer": "From origin to point",
+      "incorrectAnswers": [
+        "Always zero",
+        "Only in 3D",
+        "Same as displacement always"
+      ],
+      "explanation": "Describes location.",
+      "keywords": [
+        "position",
+        "coordinates"
+      ],
+      "source": "https://openstax.org/books/precalculus-2e/pages/8-4-vectors"
+    },
+    {
+      "seedId": "b33b91ce-8314-4f80-a17f-5a4374e462fe",
+      "category": "science",
+      "navigationKeyword1": "precalc",
+      "navigationKeyword2": "vectors",
+      "question": "Scalar projection of u onto v?",
+      "correctAnswer": "(u\u00b7v) / ||v||",
+      "incorrectAnswers": [
+        "||u||",
+        "u\u00d7v",
+        "u+v"
+      ],
+      "explanation": "Signed length along v direction; vector proj scales unit v.",
+      "keywords": [
+        "projection",
+        "vectors"
+      ],
+      "source": "https://openstax.org/books/precalculus-2e/pages/8-5-dot-product"
+    },
+    {
+      "seedId": "e5d6ebe5-a89f-4425-8988-1823dd32ae80",
+      "category": "science",
+      "navigationKeyword1": "precalc",
+      "navigationKeyword2": "vectors",
+      "question": "Unit vector direction of v?",
+      "correctAnswer": "v / ||v||",
+      "incorrectAnswers": [
+        "v \u00d7 v",
+        "||v|| v",
+        "v^2"
+      ],
+      "explanation": "Normalize to length 1.",
+      "keywords": [
+        "unit-vector",
+        "direction"
+      ],
+      "source": "https://openstax.org/books/precalculus-2e/pages/8-4-vectors"
+    },
+    {
+      "seedId": "14bfe2b4-5e36-4f98-bce3-519ede0f5e7f",
+      "category": "science",
+      "navigationKeyword1": "precalc",
+      "navigationKeyword2": "vectors",
+      "question": "Vector addition geometrically?",
+      "correctAnswer": "Tip-to-tail or parallelogram",
+      "incorrectAnswers": [
+        "Multiply lengths",
+        "Only subtract",
+        "Always perpendicular"
+      ],
+      "explanation": "Component-wise algebraically.",
+      "keywords": [
+        "vector-add",
+        "geometry"
+      ],
+      "source": "https://openstax.org/books/precalculus-2e/pages/8-4-vectors"
+    },
+    {
+      "seedId": "a4f1f6c1-af15-4398-b4ef-743c08a5fe70",
+      "category": "science",
+      "navigationKeyword1": "precalc",
+      "navigationKeyword2": "vectors",
+      "question": "Vector between points A and B?",
+      "correctAnswer": "B \u2212 A",
+      "incorrectAnswers": [
+        "A + B",
+        "A \u00d7 B",
+        "B/A"
+      ],
+      "explanation": "Displacement vector.",
+      "keywords": [
+        "displacement",
+        "vectors"
+      ],
+      "source": "https://openstax.org/books/precalculus-2e/pages/8-4-vectors"
+    },
+    {
+      "seedId": "ed62d86f-8410-4aa0-92cf-239f3703863f",
+      "category": "science",
+      "navigationKeyword1": "precalc",
+      "navigationKeyword2": "vectors",
+      "question": "Vector magnitude from components (2D)?",
+      "correctAnswer": "\u221a(x^2 + y^2)",
+      "incorrectAnswers": [
+        "x + y",
+        "|x|+|y| always",
+        "xy"
+      ],
+      "explanation": "Pythagorean theorem.",
+      "keywords": [
+        "magnitude",
+        "vectors"
+      ],
+      "source": "https://openstax.org/books/precalculus-2e/pages/8-4-vectors"
+    },
+    {
+      "seedId": "1f81edf9-0d2b-4480-a99f-8ca0ef78e893",
+      "category": "science",
+      "navigationKeyword1": "precalc",
+      "navigationKeyword2": "vectors",
+      "question": "Work as dot product?",
+      "correctAnswer": "W = F\u00b7d (constant force)",
+      "incorrectAnswers": [
+        "F \u00d7 d",
+        "F + d",
+        "Fd always scalar without cos"
+      ],
+      "explanation": "Component along displacement.",
+      "keywords": [
+        "work",
+        "dot-product"
+      ],
+      "source": "https://openstax.org/books/precalculus-2e/pages/8-5-dot-product"
+    },
+    {
+      "seedId": "545d2ded-bf15-40ff-83a8-071e7c8a59fa",
+      "category": "science",
+      "navigationKeyword1": "precalc",
+      "navigationKeyword2": "vectors",
+      "question": "u\u00b7v = ||u|| ||v|| cos \u03b8 means?",
+      "correctAnswer": "Angle between vectors in R^n",
+      "incorrectAnswers": [
+        "Always 90\u00b0",
+        "Always 0",
+        "Undefined"
+      ],
+      "explanation": "Orthogonal if dot zero (nonzero vectors).",
+      "keywords": [
+        "angle",
+        "dot-product"
+      ],
+      "source": "https://openstax.org/books/precalculus-2e/pages/8-5-dot-product"
+    }
+  ]
+}

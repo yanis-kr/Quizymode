@@ -1,0 +1,45 @@
+{
+  "schemaVersion": 1,
+  "seedSet": "core-public-items",
+  "deltaPreviewLimit": 200,
+  "items": [
+    {
+      "seedId": "da491e72-41b2-5248-a701-0d8d7083b74b",
+      "category": "humanities",
+      "navigationKeyword1": "visual-art",
+      "navigationKeyword2": "color",
+      "question": "Red, orange, and yellow are often grouped as what kind of colors?",
+      "correctAnswer": "warm colors",
+      "incorrectAnswers": [
+        "silent colors",
+        "neutral verbs",
+        "cool colors"
+      ],
+      "explanation": "These colors are often associated with warmth and visual energy.",
+      "keywords": [
+        "visual-art-color",
+        "warm-colors"
+      ],
+      "source": "https://www.tate.org.uk/art/art-terms/c/colour"
+    },
+    {
+      "seedId": "16ba2085-bfff-5504-b52b-64d446e4d811",
+      "category": "humanities",
+      "navigationKeyword1": "visual-art",
+      "navigationKeyword2": "color",
+      "question": "Which colors are complementary on the traditional color wheel?",
+      "correctAnswer": "colors opposite each other",
+      "incorrectAnswers": [
+        "colors next to each other only",
+        "colors from the same tube only",
+        "colors used only in sculpture"
+      ],
+      "explanation": "Complementary colors sit opposite each other and create strong contrast.",
+      "keywords": [
+        "visual-art-color",
+        "complementary-colors"
+      ],
+      "source": "https://www.britannica.com/art/color"
+    }
+  ]
+}

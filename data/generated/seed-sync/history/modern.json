@@ -1,0 +1,1447 @@
+{
+  "schemaVersion": 1,
+  "seedSet": "core-public-items",
+  "deltaPreviewLimit": 200,
+  "items": [
+    {
+      "seedId": "c729383c-77cd-431f-a5dd-6b10034da606",
+      "category": "history",
+      "navigationKeyword1": "modern",
+      "navigationKeyword2": "cold-war",
+      "question": "Harry Truman\u2019s 1947 pledge to support \u201cfree peoples\u201d resisting subjugation is known as what doctrine?",
+      "correctAnswer": "The Truman Doctrine",
+      "incorrectAnswers": [
+        "The Eisenhower Doctrine",
+        "The Nixon Doctrine",
+        "The Carter Doctrine"
+      ],
+      "explanation": "Congress backed aid to Greece and Turkey, framing containment of communism as a global U.S. responsibility.",
+      "keywords": [
+        "cold-war",
+        "truman",
+        "containment"
+      ],
+      "source": "https://www.britannica.com/event/Truman-Doctrine"
+    },
+    {
+      "seedId": "d8f98670-723e-4394-965a-23719dac8cb7",
+      "category": "history",
+      "navigationKeyword1": "modern",
+      "navigationKeyword2": "cold-war",
+      "question": "Imre Nagy\u2019s government was overthrown when Soviet forces invaded Budapest during which 1956 uprising?",
+      "correctAnswer": "The Hungarian Revolution",
+      "incorrectAnswers": [
+        "The Pozna\u0144 riots",
+        "The Solidarity crisis",
+        "The Velvet Revolution"
+      ],
+      "explanation": "Hungarian workers and students demanded neutrality and multiparty rule until Red Army divisions restored communist control.",
+      "keywords": [
+        "cold-war",
+        "hungary",
+        "1956"
+      ],
+      "source": "https://www.britannica.com/event/Hungarian-Revolution"
+    },
+    {
+      "seedId": "68c16310-764c-4a6b-8a31-d90775695e3a",
+      "category": "history",
+      "navigationKeyword1": "modern",
+      "navigationKeyword2": "cold-war",
+      "question": "NATO\u2019s founding treaty was signed in 1949 by the United States, Canada, and most states in which region?",
+      "correctAnswer": "Western Europe",
+      "incorrectAnswers": [
+        "Latin America",
+        "Sub-Saharan Africa",
+        "The Middle East exclusively"
+      ],
+      "explanation": "The North Atlantic Treaty Organization committed members to collective defense against armed attack.",
+      "keywords": [
+        "cold-war",
+        "nato",
+        "alliance"
+      ],
+      "source": "https://www.britannica.com/event/North-Atlantic-Treaty"
+    },
+    {
+      "seedId": "ac24085a-9dbb-4afb-aeb2-12c820c622f3",
+      "category": "history",
+      "navigationKeyword1": "modern",
+      "navigationKeyword2": "cold-war",
+      "question": "Richard Nixon and Mao Zedong\u2019s 1972 Shanghai Communiqu\u00e9 opened a strategic rapprochement between the United States and which state?",
+      "correctAnswer": "The People\u2019s Republic of China",
+      "incorrectAnswers": [
+        "North Vietnam",
+        "Cuba",
+        "Albania"
+      ],
+      "explanation": "Both sides sought leverage against the Soviet Union while managing the Taiwan issue ambiguously.",
+      "keywords": [
+        "cold-war",
+        "china",
+        "diplomacy"
+      ],
+      "source": "https://www.britannica.com/event/Shanghai-Communiqu\u00e9"
+    },
+    {
+      "seedId": "5ca9313a-a1d4-442b-a4fa-35071ac23a70",
+      "category": "history",
+      "navigationKeyword1": "modern",
+      "navigationKeyword2": "cold-war",
+      "question": "Ronald Reagan\u2019s 1987 Berlin speech challenged Mikhail Gorbachev to \u201ctear down\u201d which dividing structure?",
+      "correctAnswer": "The Berlin Wall",
+      "incorrectAnswers": [
+        "The Maginot Line",
+        "The Great Wall of China",
+        "The Iron Curtain border fences in Austria"
+      ],
+      "explanation": "The wall\u2019s fall in 1989 symbolized the collapse of communist control in eastern Europe.",
+      "keywords": [
+        "cold-war",
+        "berlin",
+        "reagan"
+      ],
+      "source": "https://www.britannica.com/topic/Berlin-Wall"
+    },
+    {
+      "seedId": "6d5d5987-9960-4924-9f9d-51632df26b73",
+      "category": "history",
+      "navigationKeyword1": "modern",
+      "navigationKeyword2": "cold-war",
+      "question": "Soviet-led Warsaw Pact troops crushed the 1968 Prague Spring reform movement in which country?",
+      "correctAnswer": "Czechoslovakia",
+      "incorrectAnswers": [
+        "Hungary",
+        "Poland",
+        "Romania"
+      ],
+      "explanation": "Alexander Dub\u010dek\u2019s \u201csocialism with a human face\u201d ended when tanks occupied Prague and ousted the reformers.",
+      "keywords": [
+        "cold-war",
+        "czechoslovakia",
+        "prague-spring"
+      ],
+      "source": "https://www.britannica.com/event/Prague-Spring"
+    },
+    {
+      "seedId": "3352ffda-42fc-4841-b6dd-f4e993653f4b",
+      "category": "history",
+      "navigationKeyword1": "modern",
+      "navigationKeyword2": "cold-war",
+      "question": "The 1948\u201349 Allied airlift supplied West Berlin after which power blockaded land routes into the city?",
+      "correctAnswer": "The Soviet Union",
+      "incorrectAnswers": [
+        "France",
+        "Poland",
+        "Yugoslavia"
+      ],
+      "explanation": "Stalin\u2019s blockade failed as British and American planes ferried food and fuel around the clock.",
+      "keywords": [
+        "cold-war",
+        "berlin",
+        "blockade"
+      ],
+      "source": "https://www.britannica.com/event/Berlin-blockade-and-airlift"
+    },
+    {
+      "seedId": "424a3408-747d-421f-aafc-88386b5bb0f0",
+      "category": "history",
+      "navigationKeyword1": "modern",
+      "navigationKeyword2": "cold-war",
+      "question": "The 1962 Cuban missile crisis pitted the United States against which Soviet premier over nuclear missiles in Cuba?",
+      "correctAnswer": "Nikita Khrushchev",
+      "incorrectAnswers": [
+        "Joseph Stalin",
+        "Leonid Brezhnev",
+        "Mikhail Gorbachev"
+      ],
+      "explanation": "Secret Soviet deployments triggered a naval quarantine and brought the superpowers to the brink of nuclear war.",
+      "keywords": [
+        "cold-war",
+        "cuba",
+        "nuclear"
+      ],
+      "source": "https://www.britannica.com/event/Cuban-missile-crisis"
+    },
+    {
+      "seedId": "d3c52584-547c-4a8a-b7c2-92f4921da300",
+      "category": "history",
+      "navigationKeyword1": "modern",
+      "navigationKeyword2": "cold-war",
+      "question": "The Korean War (1950\u201353) ended with an armistice that left which peninsula divided near the 38th parallel?",
+      "correctAnswer": "Korea",
+      "incorrectAnswers": [
+        "Vietnam",
+        "Cyprus",
+        "Germany"
+      ],
+      "explanation": "UN forces led by the United States fought Chinese and North Korean troops to a stalemate along the DMZ.",
+      "keywords": [
+        "cold-war",
+        "korea",
+        "conflict"
+      ],
+      "source": "https://www.britannica.com/event/Korean-War"
+    },
+    {
+      "seedId": "feb0e826-e871-417d-bd8e-1f20892537cc",
+      "category": "history",
+      "navigationKeyword1": "modern",
+      "navigationKeyword2": "cold-war",
+      "question": "The USSR\u2019s October 1957 launch of which satellite shocked American assumptions about missile and space leadership?",
+      "correctAnswer": "Sputnik 1",
+      "incorrectAnswers": [
+        "Explorer 1",
+        "Vostok 1",
+        "Luna 2"
+      ],
+      "explanation": "Sputnik\u2019s beeping signal spurred U.S. science education reforms and accelerated the space race.",
+      "keywords": [
+        "cold-war",
+        "space-race",
+        "soviet-union"
+      ],
+      "source": "https://www.britannica.com/technology/Sputnik"
+    },
+    {
+      "seedId": "49eaeca6-05ca-49d4-a90b-96d684425537",
+      "category": "history",
+      "navigationKeyword1": "modern",
+      "navigationKeyword2": "cold-war",
+      "question": "The Warsaw Pact (1955) united the USSR and its satellite armies chiefly to counter which Western alliance?",
+      "correctAnswer": "NATO",
+      "incorrectAnswers": [
+        "SEATO",
+        "CENTO",
+        "The ANZUS Pact"
+      ],
+      "explanation": "East-bloc leaders treated NATO\u2019s rearmament of West Germany as a threat requiring a formal military bloc.",
+      "keywords": [
+        "cold-war",
+        "warsaw-pact",
+        "eastern-europe"
+      ],
+      "source": "https://www.britannica.com/event/Warsaw-Pact"
+    },
+    {
+      "seedId": "086adca7-69df-4bae-89d5-96de41e40cf1",
+      "category": "history",
+      "navigationKeyword1": "modern",
+      "navigationKeyword2": "cold-war",
+      "question": "Winston Churchill\u2019s 1946 Fulton, Missouri, speech famously said an \u201ciron curtain\u201d had descended across which continent?",
+      "correctAnswer": "Europe",
+      "incorrectAnswers": [
+        "Asia",
+        "Africa",
+        "South America"
+      ],
+      "explanation": "Churchill warned that Soviet-dominated eastern Europe was sealed off from free contact with the West.",
+      "keywords": [
+        "cold-war",
+        "churchill",
+        "soviet-union"
+      ],
+      "source": "https://www.britannica.com/biography/Winston-Churchill"
+    },
+    {
+      "seedId": "114fc312-8e07-4a77-a6bc-2a110e30546b",
+      "category": "history",
+      "navigationKeyword1": "modern",
+      "navigationKeyword2": "decolonization",
+      "question": "British India was partitioned in August 1947 into the dominions of India and which Muslim-majority state?",
+      "correctAnswer": "Pakistan",
+      "incorrectAnswers": [
+        "Bangladesh",
+        "Ceylon",
+        "Burma"
+      ],
+      "explanation": "Mountbatten\u2019s rushed timeline and communal violence accompanied independence for both new governments.",
+      "keywords": [
+        "decolonization",
+        "india",
+        "partition"
+      ],
+      "source": "https://www.britannica.com/place/India/Partition"
+    },
+    {
+      "seedId": "ba6b6ab1-e138-4e6c-84ba-736a7d7f13e0",
+      "category": "history",
+      "navigationKeyword1": "modern",
+      "navigationKeyword2": "decolonization",
+      "question": "Kwame Nkrumah\u2019s 1957 Gold Coast independence created the first sub-Saharan African state to leave colonial rule under which name?",
+      "correctAnswer": "Ghana",
+      "incorrectAnswers": [
+        "Nigeria",
+        "Kenya",
+        "Senegal"
+      ],
+      "explanation": "Ghana\u2019s example encouraged rapid decolonization across British and French West Africa.",
+      "keywords": [
+        "decolonization",
+        "ghana",
+        "africa"
+      ],
+      "source": "https://www.britannica.com/place/Ghana/History"
+    },
+    {
+      "seedId": "0eab0a9b-670c-4556-a3da-b0be697f7c0b",
+      "category": "history",
+      "navigationKeyword1": "modern",
+      "navigationKeyword2": "decolonization",
+      "question": "Patrice Lumumba\u2019s brief premiership and assassination marked the chaotic birth of which central African republic in 1960?",
+      "correctAnswer": "The Democratic Republic of the Congo (Congo-L\u00e9opoldville)",
+      "incorrectAnswers": [
+        "Angola",
+        "Zimbabwe",
+        "Somalia"
+      ],
+      "explanation": "Belgium\u2019s hurried withdrawal and Cold War meddling plunged the resource-rich Congo into crisis.",
+      "keywords": [
+        "decolonization",
+        "congo",
+        "belgium"
+      ],
+      "source": "https://www.britannica.com/biography/Patrice-Lumumba"
+    },
+    {
+      "seedId": "1bd76a88-0f89-4805-9007-257cedbd0709",
+      "category": "history",
+      "navigationKeyword1": "modern",
+      "navigationKeyword2": "decolonization",
+      "question": "Sukarno and Hatta proclaimed independence in 1945 from which European colonial power in Southeast Asia?",
+      "correctAnswer": "The Netherlands",
+      "incorrectAnswers": [
+        "Portugal",
+        "Belgium",
+        "Spain"
+      ],
+      "explanation": "A four-year independence war followed before the Dutch recognized Indonesian sovereignty in 1949.",
+      "keywords": [
+        "decolonization",
+        "indonesia",
+        "netherlands"
+      ],
+      "source": "https://www.britannica.com/place/Indonesia"
+    },
+    {
+      "seedId": "95079802-dfb1-4fdd-b503-a727cfead072",
+      "category": "history",
+      "navigationKeyword1": "modern",
+      "navigationKeyword2": "decolonization",
+      "question": "The 1954 Battle of Dien Bien Phu ended French rule in which Southeast Asian colony?",
+      "correctAnswer": "Vietnam (French Indochina)",
+      "incorrectAnswers": [
+        "Malaya",
+        "Laos alone",
+        "Cambodia alone"
+      ],
+      "explanation": "Viet Minh forces under Vo Nguyen Giap forced surrender, leading to Geneva partition talks.",
+      "keywords": [
+        "decolonization",
+        "vietnam",
+        "france"
+      ],
+      "source": "https://www.britannica.com/event/Battle-of-Dien-Bien-Phu"
+    },
+    {
+      "seedId": "c72ed121-f835-4e2d-b4bd-34e9b939451e",
+      "category": "history",
+      "navigationKeyword1": "modern",
+      "navigationKeyword2": "decolonization",
+      "question": "The 1956 Suez Crisis saw Egypt nationalize a canal previously controlled by British and which other imperial partner?",
+      "correctAnswer": "France",
+      "incorrectAnswers": [
+        "Italy",
+        "Spain",
+        "Belgium"
+      ],
+      "explanation": "Anglo-French-Israeli intervention collapsed under U.S. financial pressure and Soviet threats.",
+      "keywords": [
+        "decolonization",
+        "egypt",
+        "suez"
+      ],
+      "source": "https://www.britannica.com/event/Suez-Crisis"
+    },
+    {
+      "seedId": "f89e816d-6d54-459c-a9a4-2a0d1a663ef9",
+      "category": "history",
+      "navigationKeyword1": "modern",
+      "navigationKeyword2": "decolonization",
+      "question": "The 1971 Bangladesh Liberation War split which former united Muslim state in South Asia?",
+      "correctAnswer": "Pakistan (East Pakistan became Bangladesh)",
+      "incorrectAnswers": [
+        "India",
+        "Afghanistan",
+        "Iran"
+      ],
+      "explanation": "Indian intervention and Bengali nationalist forces defeated West Pakistani armies after a brutal crackdown.",
+      "keywords": [
+        "decolonization",
+        "bangladesh",
+        "pakistan"
+      ],
+      "source": "https://www.britannica.com/event/Bangladesh-Liberation-War"
+    },
+    {
+      "seedId": "3205c176-8ea2-44ab-83d6-021259dc4d74",
+      "category": "history",
+      "navigationKeyword1": "modern",
+      "navigationKeyword2": "decolonization",
+      "question": "The 1975 Carnation Revolution in Lisbon triggered rapid independence for Portugal\u2019s colonies in Africa and which Asian territory?",
+      "correctAnswer": "East Timor (Timor-Leste)",
+      "incorrectAnswers": [
+        "Macau (returned later to China)",
+        "Goa",
+        "Brazil"
+      ],
+      "explanation": "Junior officers toppled the Estado Novo regime, ending its costly colonial wars in Angola, Mozambique, and Guinea-Bissau.",
+      "keywords": [
+        "decolonization",
+        "portugal",
+        "africa"
+      ],
+      "source": "https://www.britannica.com/place/Portugal/The-Carnation-Revolution"
+    },
+    {
+      "seedId": "69ae6d74-6ca5-4323-84c3-70a699e48351",
+      "category": "history",
+      "navigationKeyword1": "modern",
+      "navigationKeyword2": "decolonization",
+      "question": "The 1990 Namibian independence agreement ended South African administration mandated by which defunct League of Nations system?",
+      "correctAnswer": "The mandate/trusteeship over former German South West Africa",
+      "incorrectAnswers": [
+        "A UN protectorate over Rhodesia",
+        "A Franco-British codominium",
+        "Portuguese assimilation status"
+      ],
+      "explanation": "Cuban-South African battles in Angola\u2019s linked conflict preceded SWAPO\u2019s electoral victory.",
+      "keywords": [
+        "decolonization",
+        "namibia",
+        "south-africa"
+      ],
+      "source": "https://www.britannica.com/place/Namibia/History"
+    },
+    {
+      "seedId": "9cf2ab3e-927b-44e2-8ae9-c6afdbf3ab26",
+      "category": "history",
+      "navigationKeyword1": "modern",
+      "navigationKeyword2": "decolonization",
+      "question": "The 1994 first all-race elections in South Africa seated which former political prisoner as president?",
+      "correctAnswer": "Nelson Mandela",
+      "incorrectAnswers": [
+        "Steve Biko",
+        "Robert Sobukwe",
+        "Albert Luthuli"
+      ],
+      "explanation": "The ANC\u2019s victory dismantled apartheid parliamentary rule negotiated in the early 1990s.",
+      "keywords": [
+        "decolonization",
+        "south-africa",
+        "apartheid"
+      ],
+      "source": "https://www.britannica.com/biography/Nelson-Mandela"
+    },
+    {
+      "seedId": "342fe47a-6a6f-44f9-9030-bd112e2ab663",
+      "category": "history",
+      "navigationKeyword1": "modern",
+      "navigationKeyword2": "decolonization",
+      "question": "The Algerian War (1954\u201362) ended French control of a colony separated from France by which sea?",
+      "correctAnswer": "The Mediterranean Sea",
+      "incorrectAnswers": [
+        "The Red Sea",
+        "The Baltic Sea",
+        "The Caribbean Sea"
+      ],
+      "explanation": "FLN guerrillas and metropolitan protests compelled Charles de Gaulle to accept Algerian independence.",
+      "keywords": [
+        "decolonization",
+        "algeria",
+        "france"
+      ],
+      "source": "https://www.britannica.com/event/Algerian-War"
+    },
+    {
+      "seedId": "7e3edca1-b31d-44fa-a2d0-d1c728be261c",
+      "category": "history",
+      "navigationKeyword1": "modern",
+      "navigationKeyword2": "decolonization",
+      "question": "The Mau Mau uprising targeted British settlers and loyalists in which East African colony granted independence in 1963?",
+      "correctAnswer": "Kenya",
+      "incorrectAnswers": [
+        "Uganda",
+        "Tanganyika",
+        "Zambia"
+      ],
+      "explanation": "Emergency rule, detention camps, and land grievances accelerated demands for majority rule.",
+      "keywords": [
+        "decolonization",
+        "kenya",
+        "britain"
+      ],
+      "source": "https://www.britannica.com/event/Mau-Mau"
+    },
+    {
+      "seedId": "dfabd154-2aae-4803-b366-9c865103c2d9",
+      "category": "history",
+      "navigationKeyword1": "modern",
+      "navigationKeyword2": "globalization",
+      "question": "ARPANET packet switching experiments in the late 1960s foreshadowed which public information network?",
+      "correctAnswer": "The Internet",
+      "incorrectAnswers": [
+        "Minitel",
+        "Telex",
+        "Telegraph cables exclusively"
+      ],
+      "explanation": "U.S. research funding linked university computers, later opening to commercial TCP/IP backbones worldwide.",
+      "keywords": [
+        "globalization",
+        "internet",
+        "technology"
+      ],
+      "source": "https://www.britannica.com/technology/ARPANET"
+    },
+    {
+      "seedId": "4620b2bd-4296-4861-8d69-0c9bc2b847af",
+      "category": "history",
+      "navigationKeyword1": "modern",
+      "navigationKeyword2": "globalization",
+      "question": "Canada, Mexico, and the United States implemented tariff cuts through which 1994 trade agreement?",
+      "correctAnswer": "The North American Free Trade Agreement (NAFTA)",
+      "incorrectAnswers": [
+        "The Trans-Pacific Partnership alone",
+        "The Canada\u2013U.S. Auto Pact only",
+        "Mercosur"
+      ],
+      "explanation": "NAFTA created a continental supply chain especially in autos, agriculture, and energy.",
+      "keywords": [
+        "globalization",
+        "nafta",
+        "trade"
+      ],
+      "source": "https://www.britannica.com/event/North-American-Free-Trade-Agreement"
+    },
+    {
+      "seedId": "1832e212-8f75-47cb-8d96-6cfc0a34e7f5",
+      "category": "history",
+      "navigationKeyword1": "modern",
+      "navigationKeyword2": "globalization",
+      "question": "China\u2019s 2001 accession to which institution signaled deeper integration into global manufacturing chains?",
+      "correctAnswer": "The World Trade Organization",
+      "incorrectAnswers": [
+        "The Warsaw Pact",
+        "Comecon",
+        "The Non-Aligned Movement"
+      ],
+      "explanation": "WTO membership locked in market-access reforms that accelerated China\u2019s export-led growth.",
+      "keywords": [
+        "globalization",
+        "china",
+        "trade"
+      ],
+      "source": "https://www.britannica.com/biography/Jiang-Zemin"
+    },
+    {
+      "seedId": "76b2c4ce-7129-4e8e-b8d3-b18ae43c20da",
+      "category": "history",
+      "navigationKeyword1": "modern",
+      "navigationKeyword2": "globalization",
+      "question": "Guest-worker programs in postwar Western Europe linked labor migration to reconstruction in Germany and which other country?",
+      "correctAnswer": "France",
+      "incorrectAnswers": [
+        "Iceland",
+        "Nepal",
+        "New Zealand"
+      ],
+      "explanation": "Recruited workers from southern Europe, Turkey, and North Africa reshaped European demography and culture.",
+      "keywords": [
+        "globalization",
+        "migration",
+        "europe"
+      ],
+      "source": "https://www.britannica.com/topic/guest-worker"
+    },
+    {
+      "seedId": "e0bac226-4893-4177-91a6-52ebdbd06673",
+      "category": "history",
+      "navigationKeyword1": "modern",
+      "navigationKeyword2": "globalization",
+      "question": "Malcolm McLean\u2019s standardized metal boxes revolutionized shipping in the 1950s\u201360s under what name?",
+      "correctAnswer": "Containerization (intermodal freight containers)",
+      "incorrectAnswers": [
+        "Clipper packet trade",
+        "Zeppelin cargo",
+        "Canal narrowboat pallets"
+      ],
+      "explanation": "Containers slashed loading costs and knit together Asian manufacturing with Western consumer markets.",
+      "keywords": [
+        "globalization",
+        "shipping",
+        "trade"
+      ],
+      "source": "https://www.britannica.com/technology/container-ship"
+    },
+    {
+      "seedId": "c406913a-4ea8-4551-af16-c950f31f9ede",
+      "category": "history",
+      "navigationKeyword1": "modern",
+      "navigationKeyword2": "globalization",
+      "question": "The 1944 Bretton Woods Conference created the IMF and laid plans for which postwar trade and currency order?",
+      "correctAnswer": "A U.S.-anchored monetary system with fixed exchange rates linked to the dollar and gold",
+      "incorrectAnswers": [
+        "A single world central bank issuing a global currency",
+        "A purely silver-based Latin Monetary Union",
+        "A barter clearing union without credit"
+      ],
+      "explanation": "Bretton Woods institutions promoted reconstruction, currency convertibility, and regulated capital flows.",
+      "keywords": [
+        "globalization",
+        "bretton-woods",
+        "economy"
+      ],
+      "source": "https://www.britannica.com/event/Bretton-Woods-Conference"
+    },
+    {
+      "seedId": "838de0e1-7303-40c2-b666-16b7153f1648",
+      "category": "history",
+      "navigationKeyword1": "modern",
+      "navigationKeyword2": "globalization",
+      "question": "The 1957 Treaty of Rome launched the European Economic Community among six states led by France and which neighbor?",
+      "correctAnswer": "West Germany",
+      "incorrectAnswers": [
+        "Spain",
+        "Poland",
+        "Norway"
+      ],
+      "explanation": "The EEC\u2019s common external tariff and agricultural policy were early building blocks of European integration.",
+      "keywords": [
+        "globalization",
+        "europe",
+        "eec"
+      ],
+      "source": "https://www.britannica.com/event/Treaty-of-Rome"
+    },
+    {
+      "seedId": "7ec5e26c-8185-4729-b8de-75fd163806e0",
+      "category": "history",
+      "navigationKeyword1": "modern",
+      "navigationKeyword2": "globalization",
+      "question": "The 1970s rise of offshore manufacturing by firms headquartered in rich countries exemplified what pattern?",
+      "correctAnswer": "Global outsourcing within transnational corporate supply chains",
+      "incorrectAnswers": [
+        "Autarky in every OECD state",
+        "Wholesale nationalization of all foreign assets",
+        "The end of maritime trade"
+      ],
+      "explanation": "Brands separated design and marketing from low-wage assembly, accelerating Pacific Rim industrialization.",
+      "keywords": [
+        "globalization",
+        "business",
+        "economy"
+      ],
+      "source": "https://www.britannica.com/topic/multinational-corporation"
+    },
+    {
+      "seedId": "ded551fd-3efa-4418-9b24-41477ada7d43",
+      "category": "history",
+      "navigationKeyword1": "modern",
+      "navigationKeyword2": "globalization",
+      "question": "The 1993 Maastricht Treaty committed European Community members to adopt what shared project by the decade\u2019s end?",
+      "correctAnswer": "Economic and monetary union (including the euro)",
+      "incorrectAnswers": [
+        "A single European army replacing NATO",
+        "Mandatory Schengen membership for the UK",
+        "Dissolution of all national parliaments"
+      ],
+      "explanation": "Maastricht renamed the bloc the European Union and deepened political and monetary integration.",
+      "keywords": [
+        "globalization",
+        "european-union",
+        "maastricht"
+      ],
+      "source": "https://www.britannica.com/event/Maastricht-Treaty"
+    },
+    {
+      "seedId": "56ba2f1a-b2b5-48d6-887b-c4c4cecba799",
+      "category": "history",
+      "navigationKeyword1": "modern",
+      "navigationKeyword2": "globalization",
+      "question": "The 1997 Kyoto Protocol attempted coordinated cuts in emissions of which class of pollutants?",
+      "correctAnswer": "Greenhouse gases",
+      "incorrectAnswers": [
+        "CFCs only (Montreal Protocol scope)",
+        "Sulfur dioxide only",
+        "Radioactive iodine"
+      ],
+      "explanation": "Kyoto linked industrialized states\u2019 carbon targets, foreshadowing later Paris Agreement diplomacy.",
+      "keywords": [
+        "globalization",
+        "climate",
+        "diplomacy"
+      ],
+      "source": "https://www.britannica.com/event/Kyoto-Protocol"
+    },
+    {
+      "seedId": "d49a3ce2-c72b-4343-a605-397e420a0cc7",
+      "category": "history",
+      "navigationKeyword1": "modern",
+      "navigationKeyword2": "globalization",
+      "question": "The 2015 Paris Agreement gathered pledges under the UN framework on which planetary challenge?",
+      "correctAnswer": "Climate change mitigation and adaptation",
+      "incorrectAnswers": [
+        "Nuclear nonproliferation",
+        "Deep-sea mining royalties",
+        "Antarctic territorial claims"
+      ],
+      "explanation": "National determined contributions replaced Kyoto\u2019s rigid rich-country-only targets with broader participation.",
+      "keywords": [
+        "globalization",
+        "climate",
+        "paris-agreement"
+      ],
+      "source": "https://www.britannica.com/event/Paris-Agreement-climate"
+    },
+    {
+      "seedId": "60512bb2-618a-4d36-89a9-ca30996f30c2",
+      "category": "history",
+      "navigationKeyword1": "modern",
+      "navigationKeyword2": "globalization",
+      "question": "The General Agreement on Tariffs and Trade (1947) was the main predecessor of which 1995 rules-based trade body?",
+      "correctAnswer": "The World Trade Organization (WTO)",
+      "incorrectAnswers": [
+        "The International Labour Organization",
+        "OPEC",
+        "The Bank for International Settlements"
+      ],
+      "explanation": "Successive GATT rounds cut tariffs before members created the WTO to enforce dispute settlement.",
+      "keywords": [
+        "globalization",
+        "trade",
+        "wto"
+      ],
+      "source": "https://www.britannica.com/topic/World-Trade-Organization"
+    },
+    {
+      "seedId": "4656009e-24c2-4e8b-9041-923c57143a12",
+      "category": "history",
+      "navigationKeyword1": "modern",
+      "navigationKeyword2": "imperialism",
+      "question": "Britain bought the Egyptian ruler\u2019s shares in 1875 in which waterway vital to empire and Indian trade?",
+      "correctAnswer": "The Suez Canal",
+      "incorrectAnswers": [
+        "The Panama Canal",
+        "The Kiel Canal",
+        "The Corinth Canal"
+      ],
+      "explanation": "Disraeli\u2019s purchase deepened British financial and strategic stakes in Egypt before the 1882 occupation.",
+      "keywords": [
+        "imperialism",
+        "egypt",
+        "canal"
+      ],
+      "source": "https://www.britannica.com/topic/Suez-Canal"
+    },
+    {
+      "seedId": "614d7624-6cb3-4c23-9e19-55a220d75c09",
+      "category": "history",
+      "navigationKeyword1": "modern",
+      "navigationKeyword2": "imperialism",
+      "question": "Britain\u2019s forced opening of Chinese ports through the Treaty of Nanjing (1842) followed which mid-19th-century conflict?",
+      "correctAnswer": "The First Opium War",
+      "incorrectAnswers": [
+        "The Taiping Rebellion",
+        "The Boxer Rebellion",
+        "The Sino-Japanese War of 1894\u201395"
+      ],
+      "explanation": "British gunboats backed demands for trade access after disputes over opium imports and diplomatic equality.",
+      "keywords": [
+        "imperialism",
+        "china",
+        "britain"
+      ],
+      "source": "https://www.britannica.com/topic/Opium-Wars"
+    },
+    {
+      "seedId": "c58f72f4-070f-4a4b-a95e-703819b388fb",
+      "category": "history",
+      "navigationKeyword1": "modern",
+      "navigationKeyword2": "imperialism",
+      "question": "France consolidated control of Indochina after capturing which northern Vietnamese river delta city in 1883?",
+      "correctAnswer": "Hanoi",
+      "incorrectAnswers": [
+        "Bangkok",
+        "Rangoon",
+        "Singapore"
+      ],
+      "explanation": "French gunboat diplomacy in Tonkin extended protectorate rule that eventually formed French Indochina.",
+      "keywords": [
+        "imperialism",
+        "france",
+        "vietnam"
+      ],
+      "source": "https://www.britannica.com/place/Vietnam/French-colonial-rule"
+    },
+    {
+      "seedId": "205b21d4-9801-4831-8f5f-64c2ec6cc6ac",
+      "category": "history",
+      "navigationKeyword1": "modern",
+      "navigationKeyword2": "imperialism",
+      "question": "Leopold II of Belgium\u2019s personal rule over the Congo Free State became notorious for brutal rubber extraction until which year\u2019s Belgian takeover?",
+      "correctAnswer": "1908",
+      "incorrectAnswers": [
+        "1848",
+        "1871",
+        "1919"
+      ],
+      "explanation": "International outrage over atrocities pressured Belgium to annex the Congo as a formal colony.",
+      "keywords": [
+        "imperialism",
+        "belgium",
+        "congo"
+      ],
+      "source": "https://www.britannica.com/place/Congo-Free-State"
+    },
+    {
+      "seedId": "5d61c739-5b1c-4b74-a010-24bf84612975",
+      "category": "history",
+      "navigationKeyword1": "modern",
+      "navigationKeyword2": "imperialism",
+      "question": "Otto von Bismarck hosted the 1884\u201385 conference in Berlin chiefly to regulate European claims where?",
+      "correctAnswer": "Africa (West and Central African spheres of influence)",
+      "incorrectAnswers": [
+        "The Balkans",
+        "The South Pacific only",
+        "Antarctica"
+      ],
+      "explanation": "The Berlin West Africa Conference set rules for \u201ceffective occupation\u201d and recognized King Leopold II\u2019s Congo claims.",
+      "keywords": [
+        "imperialism",
+        "berlin-conference",
+        "africa"
+      ],
+      "source": "https://www.britannica.com/event/Berlin-West-Africa-Conference"
+    },
+    {
+      "seedId": "799352f3-b17f-4c83-a26d-ee47a867358d",
+      "category": "history",
+      "navigationKeyword1": "modern",
+      "navigationKeyword2": "imperialism",
+      "question": "Rudyard Kipling\u2019s 1899 poem urging Americans to shoulder a \u201cburden\u201d toward colonized peoples reflected which ideology?",
+      "correctAnswer": "Imperialist \u201ccivilizing mission\u201d rhetoric (often summarized as the \u201cwhite man\u2019s burden\u201d)",
+      "incorrectAnswers": [
+        "Isolationism",
+        "Nonalignment",
+        "Manchester liberal free-trade pacifism"
+      ],
+      "explanation": "The poem captured how empires justified expansion as moral uplift rather than mere conquest.",
+      "keywords": [
+        "imperialism",
+        "literature",
+        "ideology"
+      ],
+      "source": "https://www.britannica.com/biography/Rudyard-Kipling"
+    },
+    {
+      "seedId": "64885672-bcfb-4ecc-a7d9-ee293f205ede",
+      "category": "history",
+      "navigationKeyword1": "modern",
+      "navigationKeyword2": "imperialism",
+      "question": "Sepoys of the East India Company mutinied in 1857, an uprising often called what in Indian nationalist memory?",
+      "correctAnswer": "The Indian Mutiny (also called India\u2019s First War of Independence)",
+      "incorrectAnswers": [
+        "The Khilafat Movement",
+        "The Quit India Movement",
+        "The Bardoli Satyagraha"
+      ],
+      "explanation": "The revolt shook Company rule and led to the Crown\u2019s direct administration of India from 1858.",
+      "keywords": [
+        "imperialism",
+        "india",
+        "mutiny"
+      ],
+      "source": "https://www.britannica.com/event/Indian-Rebellion-of-1857"
+    },
+    {
+      "seedId": "b0043840-d8d9-40fe-aed3-ab287c645fb8",
+      "category": "history",
+      "navigationKeyword1": "modern",
+      "navigationKeyword2": "imperialism",
+      "question": "The 1896 Battle of Adwa saw Ethiopia defeat which European kingdom\u2019s invasion, preserving independence until 1935?",
+      "correctAnswer": "Italy",
+      "incorrectAnswers": [
+        "Portugal",
+        "Belgium",
+        "Spain"
+      ],
+      "explanation": "Emperor Menilek II\u2019s victory became a powerful symbol of African resistance to partition.",
+      "keywords": [
+        "imperialism",
+        "ethiopia",
+        "italy"
+      ],
+      "source": "https://www.britannica.com/event/Battle-of-Adwa"
+    },
+    {
+      "seedId": "ba170de9-941d-483f-b428-0decc89a2738",
+      "category": "history",
+      "navigationKeyword1": "modern",
+      "navigationKeyword2": "imperialism",
+      "question": "The 1898 Fashoda incident nearly brought Britain and France to war over the upper reaches of which African river?",
+      "correctAnswer": "The Nile",
+      "incorrectAnswers": [
+        "The Congo",
+        "The Niger",
+        "The Zambezi"
+      ],
+      "explanation": "French Marchand\u2019s encounter with Kitchener\u2019s forces in Sudan highlighted imperial rivalry in northeast Africa.",
+      "keywords": [
+        "imperialism",
+        "sudan",
+        "diplomacy"
+      ],
+      "source": "https://www.britannica.com/event/Fashoda-Incident"
+    },
+    {
+      "seedId": "8399a7e4-ba1a-4523-bb9a-f0d68c7472db",
+      "category": "history",
+      "navigationKeyword1": "modern",
+      "navigationKeyword2": "imperialism",
+      "question": "The Yihetuan movement\u2019s 1900 siege of the Beijing legations provoked an eight-nation expedition during which crisis?",
+      "correctAnswer": "The Boxer Rebellion",
+      "incorrectAnswers": [
+        "The White Lotus Rebellion",
+        "The Nian Rebellion",
+        "The Warlord Era"
+      ],
+      "explanation": "Anti-foreign Boxers attacked missionaries and diplomats, prompting massive foreign intervention in north China.",
+      "keywords": [
+        "imperialism",
+        "china",
+        "qing"
+      ],
+      "source": "https://www.britannica.com/event/Boxer-Rebellion"
+    },
+    {
+      "seedId": "64fb805a-238f-4804-a02e-39caecaad6bd",
+      "category": "history",
+      "navigationKeyword1": "modern",
+      "navigationKeyword2": "imperialism",
+      "question": "The late-19th-century rush by European powers to annex most of Africa is commonly called what?",
+      "correctAnswer": "The Scramble for Africa",
+      "incorrectAnswers": [
+        "The Meiji Restoration",
+        "The Concert of Europe",
+        "The Columbian Exchange"
+      ],
+      "explanation": "By 1914 nearly all of Africa was under European rule except for Ethiopia and Liberia.",
+      "keywords": [
+        "imperialism",
+        "africa",
+        "colonialism"
+      ],
+      "source": "https://www.britannica.com/event/Scramble-for-Africa"
+    },
+    {
+      "seedId": "e5a3a1ee-ddf1-4c9e-9870-11b44ea0bbda",
+      "category": "history",
+      "navigationKeyword1": "modern",
+      "navigationKeyword2": "imperialism",
+      "question": "Which British-born financier promoted settler expansion and mining interests across southern Africa in the 1890s?",
+      "correctAnswer": "Cecil Rhodes",
+      "incorrectAnswers": [
+        "David Livingstone",
+        "Henry Morton Stanley",
+        "Samuel Baker"
+      ],
+      "explanation": "Rhodes used chartered companies and politics to enlarge British influence from Cape to Cairo ambitions.",
+      "keywords": [
+        "imperialism",
+        "africa",
+        "britain"
+      ],
+      "source": "https://www.britannica.com/biography/Cecil-Rhodes"
+    },
+    {
+      "seedId": "09700c49-f7d8-4dcc-b360-a00efcdfe97c",
+      "category": "history",
+      "navigationKeyword1": "modern",
+      "navigationKeyword2": "industrial",
+      "question": "Britain\u2019s 1833 Factory Act chiefly targeted abusive working conditions for which vulnerable mill employees?",
+      "correctAnswer": "Children",
+      "incorrectAnswers": [
+        "Only adult men over 60",
+        "Only agricultural laborers",
+        "Only domestic servants"
+      ],
+      "explanation": "Parliament began regulating child hours and education in textile mills, reflecting mounting reform pressure.",
+      "keywords": [
+        "industrial",
+        "labor",
+        "reform"
+      ],
+      "source": "https://www.britannica.com/event/Factory-Act-United-Kingdom-1833"
+    },
+    {
+      "seedId": "a8a04e53-5aa9-4308-afb9-600d11ac1af7",
+      "category": "history",
+      "navigationKeyword1": "modern",
+      "navigationKeyword2": "industrial",
+      "question": "British workers who smashed mechanized looms in the 1810s protested under which collective name?",
+      "correctAnswer": "Luddites",
+      "incorrectAnswers": [
+        "Chartists",
+        "Levellers",
+        "Sans-culottes"
+      ],
+      "explanation": "Luddite actions targeted machines they blamed for job loss and falling wages, not abstract opposition to all technology.",
+      "keywords": [
+        "industrial",
+        "labor",
+        "protest"
+      ],
+      "source": "https://www.britannica.com/topic/Luddite"
+    },
+    {
+      "seedId": "ba7959b5-b93e-40d8-a271-6f39c037a779",
+      "category": "history",
+      "navigationKeyword1": "modern",
+      "navigationKeyword2": "industrial",
+      "question": "Eli Whitney\u2019s cotton gin (1793) intensified plantation demand for enslaved labor in which U.S. region?",
+      "correctAnswer": "The American South",
+      "incorrectAnswers": [
+        "New England only",
+        "The Pacific Northwest",
+        "The Great Lakes frontier only"
+      ],
+      "explanation": "Mechanical separation of cotton fiber from seed made short-staple cotton wildly profitable and expanded slavery\u2019s footprint.",
+      "keywords": [
+        "industrial",
+        "cotton",
+        "united-states"
+      ],
+      "source": "https://www.britannica.com/biography/Eli-Whitney"
+    },
+    {
+      "seedId": "67b8fca2-07c3-4e4a-b0e9-4864603d625b",
+      "category": "history",
+      "navigationKeyword1": "modern",
+      "navigationKeyword2": "industrial",
+      "question": "George Stephenson\u2019s Rocket (1829) helped establish which form of land transport for bulk goods and passengers?",
+      "correctAnswer": "Steam railways",
+      "incorrectAnswers": [
+        "Canal barges alone",
+        "Horse-drawn omnibuses",
+        "Electric streetcars"
+      ],
+      "explanation": "Rail networks linked coalfields, ports, and cities, shrinking time and cost for moving raw materials and finished goods.",
+      "keywords": [
+        "industrial",
+        "railways",
+        "transport"
+      ],
+      "source": "https://www.britannica.com/biography/George-Stephenson"
+    },
+    {
+      "seedId": "046bc39e-01d8-45d1-bfa9-886a8a085675",
+      "category": "history",
+      "navigationKeyword1": "modern",
+      "navigationKeyword2": "industrial",
+      "question": "Henry Bessemer\u2019s 1856 process slashed the cost of producing which structural metal essential to rails and skyscrapers?",
+      "correctAnswer": "Steel",
+      "incorrectAnswers": [
+        "Bronze",
+        "Cast iron alone",
+        "Aluminum"
+      ],
+      "explanation": "Cheap steel underpinned the second Industrial Revolution\u2019s bridges, ships, and armaments.",
+      "keywords": [
+        "industrial",
+        "steel",
+        "metallurgy"
+      ],
+      "source": "https://www.britannica.com/biography/Henry-Bessemer"
+    },
+    {
+      "seedId": "0f92b13c-4064-4663-907e-49b3bb477ce9",
+      "category": "history",
+      "navigationKeyword1": "modern",
+      "navigationKeyword2": "industrial",
+      "question": "Historians usually place the first Industrial Revolution\u2019s core period in Britain between about which centuries?",
+      "correctAnswer": "The mid-18th to early 19th century (about 1760\u20131830)",
+      "incorrectAnswers": [
+        "The 13th to 14th centuries",
+        "The 1920s to 1950s only",
+        "The late Roman Empire"
+      ],
+      "explanation": "Mechanized textile production, coal-fueled steam power, and the factory system spread from Britain before reaching other regions.",
+      "keywords": [
+        "industrial",
+        "britain",
+        "industrial-revolution"
+      ],
+      "source": "https://www.britannica.com/event/Industrial-Revolution"
+    },
+    {
+      "seedId": "8112f2ad-6ab8-4bd1-982f-e38bb93db850",
+      "category": "history",
+      "navigationKeyword1": "modern",
+      "navigationKeyword2": "industrial",
+      "question": "James Hargreaves\u2019s spinning jenny (c. 1764) helped revolutionize which industry central to Britain\u2019s factory boom?",
+      "correctAnswer": "Cotton textile manufacturing",
+      "incorrectAnswers": [
+        "Shipbuilding",
+        "Printing",
+        "Winemaking"
+      ],
+      "explanation": "Mechanized spinning raised yarn output and shifted textile work from cottages to early factories.",
+      "keywords": [
+        "industrial",
+        "textiles",
+        "invention"
+      ],
+      "source": "https://www.britannica.com/biography/James-Hargreaves"
+    },
+    {
+      "seedId": "2bb3cc8e-7028-4a60-84e9-e609a10dd557",
+      "category": "history",
+      "navigationKeyword1": "modern",
+      "navigationKeyword2": "industrial",
+      "question": "James Watt is best known for improvements to which prime mover that powered factories, mills, and locomotives?",
+      "correctAnswer": "The steam engine",
+      "incorrectAnswers": [
+        "The water frame alone",
+        "The internal-combustion engine",
+        "The electric dynamo"
+      ],
+      "explanation": "Watt\u2019s separate condenser and other refinements made steam engines far more efficient than earlier Newcomen types.",
+      "keywords": [
+        "industrial",
+        "steam",
+        "invention"
+      ],
+      "source": "https://www.britannica.com/biography/James-Watt"
+    },
+    {
+      "seedId": "863aa53e-6f97-4ddf-a236-3ae0f8f65371",
+      "category": "history",
+      "navigationKeyword1": "modern",
+      "navigationKeyword2": "industrial",
+      "question": "Rapid factory growth turned which English city into a byword for early industrial urban crowding and cotton mills?",
+      "correctAnswer": "Manchester",
+      "incorrectAnswers": [
+        "Bath",
+        "Canterbury",
+        "Salisbury"
+      ],
+      "explanation": "Manchester\u2019s mills drew rural laborers into dense neighborhoods, inspiring observers from Engels to Dickens.",
+      "keywords": [
+        "industrial",
+        "urbanization",
+        "england"
+      ],
+      "source": "https://www.britannica.com/place/Manchester-England"
+    },
+    {
+      "seedId": "78815257-4619-477c-9053-0e76c6860e39",
+      "category": "history",
+      "navigationKeyword1": "modern",
+      "navigationKeyword2": "industrial",
+      "question": "Richard Arkwright\u2019s water-powered mills made him a leading promoter of which new labor organization?",
+      "correctAnswer": "The factory system",
+      "incorrectAnswers": [
+        "The domestic putting-out system alone",
+        "Feudal corv\u00e9e labor",
+        "Plantation gang labor exclusively"
+      ],
+      "explanation": "Arkwright concentrated workers under one roof with machine discipline, a hallmark of industrial capitalism.",
+      "keywords": [
+        "industrial",
+        "factory",
+        "britain"
+      ],
+      "source": "https://www.britannica.com/biography/Richard-Arkwright"
+    },
+    {
+      "seedId": "4a25e322-454b-4133-bea5-18c4343a58db",
+      "category": "history",
+      "navigationKeyword1": "modern",
+      "navigationKeyword2": "industrial",
+      "question": "Samuel Morse helped popularize which communication technology that synchronized markets and military orders across continents?",
+      "correctAnswer": "The electric telegraph",
+      "incorrectAnswers": [
+        "The semaphore tower network alone",
+        "The wireless radio",
+        "The pneumatic post"
+      ],
+      "explanation": "Telegraph wires carried Morse code messages near the speed of light, revolutionizing news and railroad dispatching.",
+      "keywords": [
+        "industrial",
+        "telegraph",
+        "communication"
+      ],
+      "source": "https://www.britannica.com/biography/Samuel-F-B-Morse"
+    },
+    {
+      "seedId": "621391d0-911f-4c8b-946f-84d462fb8774",
+      "category": "history",
+      "navigationKeyword1": "modern",
+      "navigationKeyword2": "industrial",
+      "question": "The Crystal Palace exhibition in London (1851) showcased British manufacturing might during which queen\u2019s reign?",
+      "correctAnswer": "Queen Victoria",
+      "incorrectAnswers": [
+        "Queen Elizabeth I",
+        "Queen Anne",
+        "Queen Mary I"
+      ],
+      "explanation": "The Great Exhibition celebrated industrial design and free trade optimism at the height of Britain\u2019s workshop-of-the-world role.",
+      "keywords": [
+        "industrial",
+        "britain",
+        "exhibition"
+      ],
+      "source": "https://www.britannica.com/topic/Great-Exhibition-of-1851"
+    },
+    {
+      "seedId": "fa903b13-2b4e-49a8-9807-10dfcb5a1be5",
+      "category": "history",
+      "navigationKeyword1": "modern",
+      "navigationKeyword2": "nationalism",
+      "question": "Count Camillo di Cavour\u2019s diplomacy and Piedmont\u2019s wars helped unify which peninsula under the House of Savoy?",
+      "correctAnswer": "Italy",
+      "incorrectAnswers": [
+        "Spain",
+        "Greece",
+        "Norway"
+      ],
+      "explanation": "Cavour allied with France against Austria, then exploited Garibaldi\u2019s conquests to forge a centralized kingdom.",
+      "keywords": [
+        "nationalism",
+        "italy",
+        "risorgimento"
+      ],
+      "source": "https://www.britannica.com/biography/Camillo-Benso-count-di-Cavour"
+    },
+    {
+      "seedId": "fd8e9f0a-1cf7-40b1-999f-9d52b4fe40ce",
+      "category": "history",
+      "navigationKeyword1": "modern",
+      "navigationKeyword2": "nationalism",
+      "question": "Gavrilo Princip\u2019s assassination of Archduke Franz Ferdinand expressed which ideology tied to south Slav unification?",
+      "correctAnswer": "Serbian nationalism (Yugoslav unification currents)",
+      "incorrectAnswers": [
+        "Irish republicanism",
+        "Polish Legions\u2019 federalism",
+        "Magyar supremacism"
+      ],
+      "explanation": "Bosnian Serb nationalists hoped to free Slavic lands from Habsburg rule, triggering the July Crisis.",
+      "keywords": [
+        "nationalism",
+        "balkans",
+        "world-war-i"
+      ],
+      "source": "https://www.britannica.com/biography/Gavrilo-Princip"
+    },
+    {
+      "seedId": "6a1453d4-473b-4257-8baf-6c0615fa029d",
+      "category": "history",
+      "navigationKeyword1": "modern",
+      "navigationKeyword2": "nationalism",
+      "question": "Giuseppe Garibaldi\u2019s \u201cRedshirts\u201d famously seized which kingdom in 1860 as a step toward Italian unification?",
+      "correctAnswer": "The Kingdom of the Two Sicilies",
+      "incorrectAnswers": [
+        "The Papal States alone in 1860",
+        "Lombardy before 1859",
+        "Sardinia before 1848"
+      ],
+      "explanation": "Garibaldi landed in Sicily and crossed to the mainland, handing his gains to Victor Emmanuel II\u2019s cause.",
+      "keywords": [
+        "nationalism",
+        "italy",
+        "garibaldi"
+      ],
+      "source": "https://www.britannica.com/biography/Giuseppe-Garibaldi"
+    },
+    {
+      "seedId": "ec929465-92a5-4c9a-af9f-fc4c873d7054",
+      "category": "history",
+      "navigationKeyword1": "modern",
+      "navigationKeyword2": "nationalism",
+      "question": "Mustafa Kemal\u2019s armies defeated foreign occupation forces to found which secular republic from Anatolian resistance?",
+      "correctAnswer": "The Republic of Turkey",
+      "incorrectAnswers": [
+        "The Kingdom of Iraq",
+        "The Syrian Federation",
+        "The Kingdom of Hejaz"
+      ],
+      "explanation": "The Turkish War of Independence overturned the S\u00e8vres settlement and led to the 1923 Lausanne recognition.",
+      "keywords": [
+        "nationalism",
+        "turkey",
+        "kemalism"
+      ],
+      "source": "https://www.britannica.com/biography/Mustafa-Kemal-Ataturk"
+    },
+    {
+      "seedId": "93ad2e8a-d4d7-4cff-af6b-80796d5fe36e",
+      "category": "history",
+      "navigationKeyword1": "modern",
+      "navigationKeyword2": "nationalism",
+      "question": "Otto von Bismarck engineered wars against Denmark, Austria, and France to achieve what in 1871?",
+      "correctAnswer": "Proclamation of the German Empire at Versailles",
+      "incorrectAnswers": [
+        "Dissolution of the Zollverein",
+        "Austrian annexation of Bavaria",
+        "The Holy Roman Empire\u2019s restoration"
+      ],
+      "explanation": "Prussian-led victories overcame particularism and placed Wilhelm I on a new imperial German throne.",
+      "keywords": [
+        "nationalism",
+        "germany",
+        "bismarck"
+      ],
+      "source": "https://www.britannica.com/biography/Otto-von-Bismarck"
+    },
+    {
+      "seedId": "c6117b7d-bb31-457e-9937-b6566827f621",
+      "category": "history",
+      "navigationKeyword1": "modern",
+      "navigationKeyword2": "nationalism",
+      "question": "Pan-Slavic congresses and Russian patronage of fellow Slavs heightened tensions with which multiethnic neighbor before 1914?",
+      "correctAnswer": "Austria-Hungary",
+      "incorrectAnswers": [
+        "Sweden-Norway",
+        "Portugal",
+        "Switzerland"
+      ],
+      "explanation": "Habsburg rule over Bosnian Slavs clashed with Serbian and Russian Pan-Slav aspirations.",
+      "keywords": [
+        "nationalism",
+        "pan-slavism",
+        "balkans"
+      ],
+      "source": "https://www.britannica.com/topic/Pan-Slavism"
+    },
+    {
+      "seedId": "9196da5e-e1c0-452d-ac2e-ede4c6a65c14",
+      "category": "history",
+      "navigationKeyword1": "modern",
+      "navigationKeyword2": "nationalism",
+      "question": "The 1821\u201332 Greek War of Independence broke away from which empire\u2019s rule with great-power intervention?",
+      "correctAnswer": "The Ottoman Empire",
+      "incorrectAnswers": [
+        "The Russian Empire",
+        "The Austrian Empire",
+        "The Persian Empire"
+      ],
+      "explanation": "Philhellenic sentiment and naval battles like Navarino aided Greek statehood amid Ottoman decline.",
+      "keywords": [
+        "nationalism",
+        "greece",
+        "balkans"
+      ],
+      "source": "https://www.britannica.com/event/Greek-War-of-Independence"
+    },
+    {
+      "seedId": "4d92fff2-fabe-4be1-8f52-c50144c78eab",
+      "category": "history",
+      "navigationKeyword1": "modern",
+      "navigationKeyword2": "nationalism",
+      "question": "The 1908 Young Turk Revolution forced reforms from which sultan\u2019s government in Istanbul?",
+      "correctAnswer": "Abd\u00fclhamid II",
+      "incorrectAnswers": [
+        "Mehmed VI",
+        "Selim III",
+        "Mahmud II"
+      ],
+      "explanation": "Officers and liberals restored the 1876 constitution, reshaping late Ottoman politics before World War I.",
+      "keywords": [
+        "nationalism",
+        "ottomans",
+        "young-turks"
+      ],
+      "source": "https://www.britannica.com/topic/Young-Turk-Revolution"
+    },
+    {
+      "seedId": "33b8c668-f3ad-4018-bee4-5cc44010fcca",
+      "category": "history",
+      "navigationKeyword1": "modern",
+      "navigationKeyword2": "nationalism",
+      "question": "The 1916 Easter Rising in Dublin targeted rule from which foreign capital?",
+      "correctAnswer": "London (British rule)",
+      "incorrectAnswers": [
+        "Paris",
+        "Berlin",
+        "Rome"
+      ],
+      "explanation": "Republicans seized central Dublin to proclaim independence, deepening the struggle for Irish nationhood.",
+      "keywords": [
+        "nationalism",
+        "ireland",
+        "britain"
+      ],
+      "source": "https://www.britannica.com/event/Easter-Rising"
+    },
+    {
+      "seedId": "2f93331f-d89c-4159-8a4f-695e00de3b47",
+      "category": "history",
+      "navigationKeyword1": "modern",
+      "navigationKeyword2": "nationalism",
+      "question": "The Meiji Restoration (1868) recentralized power under the emperor in which Asian archipelago state?",
+      "correctAnswer": "Japan",
+      "incorrectAnswers": [
+        "Korea",
+        "Thailand",
+        "Indonesia"
+      ],
+      "explanation": "Nationalist modernization abolished feudal domains and built institutions strong enough to resist colonization.",
+      "keywords": [
+        "nationalism",
+        "japan",
+        "meiji"
+      ],
+      "source": "https://www.britannica.com/event/Meiji-Restoration"
+    },
+    {
+      "seedId": "ab4391b5-8f53-42c6-bd9c-7474414af183",
+      "category": "history",
+      "navigationKeyword1": "modern",
+      "navigationKeyword2": "nationalism",
+      "question": "The liberal and national upheavals that swept Europe in 1848 are often nicknamed after which season metaphor?",
+      "correctAnswer": "The Springtime of the Peoples (Spring of Nations)",
+      "incorrectAnswers": [
+        "The Autumn of Autocrats",
+        "The Winter of Discontent",
+        "The Long March"
+      ],
+      "explanation": "Revolutionaries demanded constitutions, suffrage, and nation-states from Paris to Budapest.",
+      "keywords": [
+        "nationalism",
+        "europe",
+        "1848"
+      ],
+      "source": "https://www.britannica.com/event/Revolutions-of-1848"
+    },
+    {
+      "seedId": "e62816b7-c86b-4708-bf8b-992e0544ddc5",
+      "category": "history",
+      "navigationKeyword1": "modern",
+      "navigationKeyword2": "nationalism",
+      "question": "Theodore Herzl\u2019s Der Judenstaat (1896) helped launch which political movement for a Jewish national home?",
+      "correctAnswer": "Zionism",
+      "incorrectAnswers": [
+        "Bundism alone",
+        "Ottomanism",
+        "Pan-Slavism"
+      ],
+      "explanation": "Zionist congresses organized diaspora support for settlement in Ottoman Palestine under international diplomacy.",
+      "keywords": [
+        "nationalism",
+        "zionism",
+        "judaism"
+      ],
+      "source": "https://www.britannica.com/biography/Theodor-Herzl"
+    }
+  ]
+}

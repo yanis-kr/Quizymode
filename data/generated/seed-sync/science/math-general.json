@@ -1,0 +1,463 @@
+{
+  "schemaVersion": 1,
+  "seedSet": "core-public-items",
+  "deltaPreviewLimit": 200,
+  "items": [
+    {
+      "seedId": "39ccc82a-1b0b-437e-8866-d798b127d483",
+      "category": "science",
+      "navigationKeyword1": "math-general",
+      "navigationKeyword2": "formulas",
+      "question": "What is Pythagorean theorem?",
+      "correctAnswer": "a^2 + b^2 = c^2 for right triangle legs a,b hypotenuse c",
+      "incorrectAnswers": [
+        "a+b=c",
+        "a^2=b^2+c^2 always",
+        "c=a+b"
+      ],
+      "explanation": "Applies only to right triangles.",
+      "keywords": [
+        "pythagorean",
+        "geometry"
+      ],
+      "source": "https://www.mathsisfun.com/pythagoras.html"
+    },
+    {
+      "seedId": "d1986ae2-c566-4785-b5cc-bd67e09889ea",
+      "category": "science",
+      "navigationKeyword1": "math-general",
+      "navigationKeyword2": "formulas",
+      "question": "What is area of circle?",
+      "correctAnswer": "\u03c0r^2",
+      "incorrectAnswers": [
+        "2\u03c0r",
+        "\u03c0d",
+        "2r^2"
+      ],
+      "explanation": "Radius vs diameter matters.",
+      "keywords": [
+        "circle",
+        "area"
+      ],
+      "source": "https://www.mathsisfun.com/geometry/circle.html"
+    },
+    {
+      "seedId": "5ec83eb7-a2fa-45dc-a1e5-154ff4170173",
+      "category": "science",
+      "navigationKeyword1": "math-general",
+      "navigationKeyword2": "formulas",
+      "question": "What is area of triangle?",
+      "correctAnswer": "(1/2) base \u00d7 height",
+      "incorrectAnswers": [
+        "base \u00d7 height",
+        "base + height",
+        "base^2"
+      ],
+      "explanation": "Height must be perpendicular to base.",
+      "keywords": [
+        "triangle-area",
+        "geometry"
+      ],
+      "source": "https://www.mathsisfun.com/geometry/triangles.html"
+    },
+    {
+      "seedId": "357ae720-610a-40fa-a11f-84253421e5d9",
+      "category": "science",
+      "navigationKeyword1": "math-general",
+      "navigationKeyword2": "formulas",
+      "question": "What is circumference of circle?",
+      "correctAnswer": "2\u03c0r",
+      "incorrectAnswers": [
+        "\u03c0r",
+        "\u03c0r^2",
+        "2r"
+      ],
+      "explanation": "Don\u2019t confuse with area.",
+      "keywords": [
+        "circle",
+        "circumference"
+      ],
+      "source": "https://www.mathsisfun.com/geometry/circle.html"
+    },
+    {
+      "seedId": "f270ef24-f6d0-49fc-b177-bfb79f3b3102",
+      "category": "science",
+      "navigationKeyword1": "math-general",
+      "navigationKeyword2": "formulas",
+      "question": "What is compound interest growth factor per period?",
+      "correctAnswer": "(1 + r/n)^{nt} for compounding n times per year",
+      "incorrectAnswers": [
+        "1+rt always",
+        "e^{rt} always",
+        "r^t"
+      ],
+      "explanation": "Continuous compounding uses e^{rt}.",
+      "keywords": [
+        "compound-interest",
+        "finance"
+      ],
+      "source": "https://www.khanacademy.org/economics-finance-domain/core-finance/interest-tutorial"
+    },
+    {
+      "seedId": "115c8580-ff89-4abb-8ac6-3083455fbf5a",
+      "category": "science",
+      "navigationKeyword1": "math-general",
+      "navigationKeyword2": "formulas",
+      "question": "What is distance formula in plane?",
+      "correctAnswer": "\u221a((x2\u2212x1)^2 + (y2\u2212y1)^2)",
+      "incorrectAnswers": [
+        "|x2\u2212x1|+|y2\u2212y1| always",
+        "(x2\u2212x1)(y2\u2212y1)",
+        "x2+y2"
+      ],
+      "explanation": "Comes from Pythagorean theorem.",
+      "keywords": [
+        "distance",
+        "coordinate-geometry"
+      ],
+      "source": "https://www.mathsisfun.com/algebra/distance-2-points.html"
+    },
+    {
+      "seedId": "b7a0898e-3b9c-48f4-a1fd-87e6f46dcd13",
+      "category": "science",
+      "navigationKeyword1": "math-general",
+      "navigationKeyword2": "formulas",
+      "question": "What is midpoint formula?",
+      "correctAnswer": "Average coordinates",
+      "incorrectAnswers": [
+        "Sum coordinates",
+        "Difference coordinates",
+        "Product coordinates"
+      ],
+      "explanation": "((x1+x2)/2,(y1+y2)/2).",
+      "keywords": [
+        "midpoint",
+        "geometry"
+      ],
+      "source": "https://www.mathsisfun.com/algebra/midpoint.html"
+    },
+    {
+      "seedId": "11616b29-32a7-4082-9f3f-c1895b1c5f88",
+      "category": "science",
+      "navigationKeyword1": "math-general",
+      "navigationKeyword2": "formulas",
+      "question": "What is point-slope form?",
+      "correctAnswer": "y \u2212 y0 = m(x \u2212 x0)",
+      "incorrectAnswers": [
+        "y = mx",
+        "y = x^2",
+        "y = 1/x"
+      ],
+      "explanation": "Useful when you know a point and slope.",
+      "keywords": [
+        "point-slope",
+        "lines"
+      ],
+      "source": "https://www.mathsisfun.com/equation_of_line.html"
+    },
+    {
+      "seedId": "23bac670-c5f3-43bd-9928-887d1ff28b1a",
+      "category": "science",
+      "navigationKeyword1": "math-general",
+      "navigationKeyword2": "formulas",
+      "question": "What is quadratic formula for ax^2+bx+c=0?",
+      "correctAnswer": "x = (\u2212b \u00b1 \u221a(b^2\u22124ac)) / (2a)",
+      "incorrectAnswers": [
+        "x = \u2212b/a",
+        "x = c/b",
+        "x = \u221a(a+b)"
+      ],
+      "explanation": "Discriminant b^2\u22124ac classifies roots.",
+      "keywords": [
+        "quadratic-formula",
+        "algebra"
+      ],
+      "source": "https://www.mathsisfun.com/quadratic-equation-solver.html"
+    },
+    {
+      "seedId": "566ea7dc-36b7-4cc8-8ba7-89cc5efd0000",
+      "category": "science",
+      "navigationKeyword1": "math-general",
+      "navigationKeyword2": "formulas",
+      "question": "What is simple interest model?",
+      "correctAnswer": "I = Prt",
+      "incorrectAnswers": [
+        "A = Pe^{rt}",
+        "I = P+r+t",
+        "I=P/r"
+      ],
+      "explanation": "Linear in time (simple interest).",
+      "keywords": [
+        "interest",
+        "finance"
+      ],
+      "source": "https://www.khanacademy.org/economics-finance-domain/core-finance/interest-tutorial"
+    },
+    {
+      "seedId": "b115289f-8c1f-45ac-b9e4-52ea5e36c6e3",
+      "category": "science",
+      "navigationKeyword1": "math-general",
+      "navigationKeyword2": "formulas",
+      "question": "What is slope-intercept form?",
+      "correctAnswer": "y = mx + b",
+      "incorrectAnswers": [
+        "y = mx^2 + b",
+        "ax + by = 0 always",
+        "y = b/x"
+      ],
+      "explanation": "m slope, b y-intercept.",
+      "keywords": [
+        "slope-intercept",
+        "lines"
+      ],
+      "source": "https://www.mathsisfun.com/equation_of_line.html"
+    },
+    {
+      "seedId": "6fbaeb36-4368-46d1-8ce5-0b2021bc01bf",
+      "category": "science",
+      "navigationKeyword1": "math-general",
+      "navigationKeyword2": "formulas",
+      "question": "What is vertex of parabola y=ax^2+bx+c x-coordinate?",
+      "correctAnswer": "\u2212b/(2a)",
+      "incorrectAnswers": [
+        "b/(2a)",
+        "\u2212c/b",
+        "a/b"
+      ],
+      "explanation": "Location of max/min for a\u22600.",
+      "keywords": [
+        "vertex",
+        "quadratic"
+      ],
+      "source": "https://www.khanacademy.org/math/algebra/quadratics"
+    },
+    {
+      "seedId": "f7882bc5-c0b5-42ca-b8dc-35ca6142df46",
+      "category": "science",
+      "navigationKeyword1": "math-general",
+      "navigationKeyword2": "word-problems",
+      "question": "How to check a word-problem answer?",
+      "correctAnswer": "Plug back into original conditions with units",
+      "incorrectAnswers": [
+        "Only check if positive",
+        "Never check",
+        "Replace variables with 0"
+      ],
+      "explanation": "Sanity-check magnitude.",
+      "keywords": [
+        "verification",
+        "problem-solving"
+      ],
+      "source": "https://www.mathsisfun.com/algebra/word-problems-solving.html"
+    },
+    {
+      "seedId": "0a5a5807-171c-491d-859a-bf5f86071362",
+      "category": "science",
+      "navigationKeyword1": "math-general",
+      "navigationKeyword2": "word-problems",
+      "question": "If a problem mixes units, what should you do first?",
+      "correctAnswer": "Convert to consistent units",
+      "incorrectAnswers": [
+        "Ignore units",
+        "Average units",
+        "Multiply units randomly"
+      ],
+      "explanation": "Dimensional consistency catches errors.",
+      "keywords": [
+        "units",
+        "conversion"
+      ],
+      "source": "https://www.nist.gov/pml/weights-and-measures/metric-si/si-units"
+    },
+    {
+      "seedId": "ff0b0340-8cac-443c-ac2b-7cdff21b271d",
+      "category": "science",
+      "navigationKeyword1": "math-general",
+      "navigationKeyword2": "word-problems",
+      "question": "If two investments sum to a total, what equation structure appears?",
+      "correctAnswer": "x + y = total (plus interest equations)",
+      "incorrectAnswers": [
+        "x \u00d7 y = total always",
+        "x \u2212 y = total always",
+        "x^2 = total"
+      ],
+      "explanation": "Systems often model mixtures/investments.",
+      "keywords": [
+        "systems",
+        "finance-math"
+      ],
+      "source": "https://www.khanacademy.org/math/algebra/x2f8bb11595b61c86:systems-of-equations"
+    },
+    {
+      "seedId": "2a71f8c4-cfdc-4f63-b5b6-1d112155cf92",
+      "category": "science",
+      "navigationKeyword1": "math-general",
+      "navigationKeyword2": "word-problems",
+      "question": "If \u2018per\u2019 appears (miles per hour), what operation often links distance and time?",
+      "correctAnswer": "Multiply rate by time for distance (when consistent units)",
+      "incorrectAnswers": [
+        "Always add",
+        "Always divide rate by distance",
+        "Square the time"
+      ],
+      "explanation": "d = rt is a common model.",
+      "keywords": [
+        "rate-time-distance",
+        "modeling"
+      ],
+      "source": "https://www.mathsisfun.com/measure/us-standard-units.html"
+    },
+    {
+      "seedId": "f9c473ad-881f-4734-9b6c-82f87c3ae455",
+      "category": "science",
+      "navigationKeyword1": "math-general",
+      "navigationKeyword2": "word-problems",
+      "question": "What does \u2018at least\u2019 translate to?",
+      "correctAnswer": "Greater than or equal (\u2265)",
+      "incorrectAnswers": [
+        "Strictly greater (>)",
+        "Equal only",
+        "Less than"
+      ],
+      "explanation": "Inequalities model constraints.",
+      "keywords": [
+        "inequality-translation",
+        "word-problems"
+      ],
+      "source": "https://www.mathsisfun.com/algebra/inequalities.html"
+    },
+    {
+      "seedId": "eb5e0b6b-fb84-4bba-a3f4-56a106b2ce94",
+      "category": "science",
+      "navigationKeyword1": "math-general",
+      "navigationKeyword2": "word-problems",
+      "question": "What does \u2018at most\u2019 translate to?",
+      "correctAnswer": "Less than or equal (\u2264)",
+      "incorrectAnswers": [
+        "Strictly less (<)",
+        "Equal only",
+        "Greater than"
+      ],
+      "explanation": "Watch inclusive endpoints.",
+      "keywords": [
+        "inequality-translation",
+        "word-problems"
+      ],
+      "source": "https://www.mathsisfun.com/algebra/inequalities.html"
+    },
+    {
+      "seedId": "5a294cae-57f2-4be2-88bf-c0776087d1ef",
+      "category": "science",
+      "navigationKeyword1": "math-general",
+      "navigationKeyword2": "word-problems",
+      "question": "What does \u2018of\u2019 often mean in fraction contexts?",
+      "correctAnswer": "Multiply",
+      "incorrectAnswers": [
+        "Add",
+        "Divide only",
+        "Subtract"
+      ],
+      "explanation": "\u20181/3 of x\u2019 means (1/3)\u00b7x.",
+      "keywords": [
+        "fraction-language",
+        "translation"
+      ],
+      "source": "https://www.khanacademy.org/math/arithmetic/fraction-arithmetic"
+    },
+    {
+      "seedId": "5e7d3063-5083-4412-b473-ec5367a7ca11",
+      "category": "science",
+      "navigationKeyword1": "math-general",
+      "navigationKeyword2": "word-problems",
+      "question": "What is a classic \u2018work rate\u2019 idea?",
+      "correctAnswer": "Combined rate is sum of individual rates (when independent)",
+      "incorrectAnswers": [
+        "Always multiply rates",
+        "Always subtract",
+        "Rates don\u2019t add"
+      ],
+      "explanation": "1/t combined from 1/t1 + 1/t2 in parallel-work models.",
+      "keywords": [
+        "work-rate",
+        "fractions"
+      ],
+      "source": "https://www.khanacademy.org/math/algebra-home/alg-rational-expr-eq-func"
+    },
+    {
+      "seedId": "33028de5-525a-4184-9ad2-9694cdc9c366",
+      "category": "science",
+      "navigationKeyword1": "math-general",
+      "navigationKeyword2": "word-problems",
+      "question": "What is a common percent change formula?",
+      "correctAnswer": "(new \u2212 old)/old \u00d7 100%",
+      "incorrectAnswers": [
+        "new+old",
+        "new\u00d7old",
+        "old/new"
+      ],
+      "explanation": "Clarify what \u2018old\u2019 refers to.",
+      "keywords": [
+        "percent-change",
+        "word-problems"
+      ],
+      "source": "https://www.khanacademy.org/math/pre-algebra/pre-algebra-ratios-proportions"
+    },
+    {
+      "seedId": "01d09917-e796-4b82-a042-6394143ea6ff",
+      "category": "science",
+      "navigationKeyword1": "math-general",
+      "navigationKeyword2": "word-problems",
+      "question": "What is diagram usefulness?",
+      "correctAnswer": "Sketch clarifies geometry or processes",
+      "incorrectAnswers": [
+        "Always optional",
+        "Forbidden",
+        "Replaces algebra"
+      ],
+      "explanation": "Number lines and sketches reduce errors.",
+      "keywords": [
+        "diagrams",
+        "problem-solving"
+      ],
+      "source": "https://www.khanacademy.org/math/cc-seventh-grade-math/cc-7th-algebra"
+    },
+    {
+      "seedId": "7f40edab-289a-4376-b637-4337c5f57279",
+      "category": "science",
+      "navigationKeyword1": "math-general",
+      "navigationKeyword2": "word-problems",
+      "question": "What is rounding in applied answers?",
+      "correctAnswer": "Match precision to context",
+      "incorrectAnswers": [
+        "Always 10 decimals",
+        "Always integers",
+        "Never round"
+      ],
+      "explanation": "Don\u2019t imply false precision.",
+      "keywords": [
+        "rounding",
+        "applications"
+      ],
+      "source": "https://www.nist.gov/pml/weights-and-measures/metric-si/si-units"
+    },
+    {
+      "seedId": "6ce8563f-e3f2-48ce-a68c-521caca26261",
+      "category": "science",
+      "navigationKeyword1": "math-general",
+      "navigationKeyword2": "word-problems",
+      "question": "What is the first step in many word problems?",
+      "correctAnswer": "Define variables and translate words to equations",
+      "incorrectAnswers": [
+        "Guess the answer",
+        "Draw random graph",
+        "Skip units"
+      ],
+      "explanation": "Clear definitions prevent mistakes.",
+      "keywords": [
+        "modeling",
+        "word-problems"
+      ],
+      "source": "https://www.khanacademy.org/math/cc-seventh-grade-math/cc-7th-algebra"
+    }
+  ]
+}

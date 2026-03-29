@@ -1,0 +1,197 @@
+{
+  "schemaVersion": 1,
+  "seedSet": "core-public-items",
+  "deltaPreviewLimit": 200,
+  "items": [
+    {
+      "seedId": "05ce4553-ea25-5570-afa9-1a992af93878",
+      "category": "trivia",
+      "navigationKeyword1": "music",
+      "navigationKeyword2": "genres",
+      "question": "Blues to roots in which community\u2019s folk traditions?",
+      "correctAnswer": "African American",
+      "incorrectAnswers": [
+        "Inuit",
+        "Maasai pastoral",
+        "Sami joik only"
+      ],
+      "explanation": "Blues grew from African American traditions.",
+      "keywords": [
+        "blues",
+        "history"
+      ],
+      "source": "https://www.britannica.com/art/blues-music"
+    },
+    {
+      "seedId": "ce6d5ea5-c116-5dad-824b-f8870b2d4737",
+      "category": "trivia",
+      "navigationKeyword1": "music",
+      "navigationKeyword2": "genres",
+      "question": "Electronic dance music to beats produced largely with what?",
+      "correctAnswer": "synthesizers and drum machines",
+      "incorrectAnswers": [
+        "lutes",
+        "harpsichords only",
+        "glass harmonicas only"
+      ],
+      "explanation": "EDM relies on electronic instruments.",
+      "keywords": [
+        "edm",
+        "electronic"
+      ],
+      "source": "https://www.britannica.com/art/electronic-dance-music"
+    },
+    {
+      "seedId": "a9c9d083-d64b-5e1f-ab75-710291963713",
+      "category": "trivia",
+      "navigationKeyword1": "music",
+      "navigationKeyword2": "genres",
+      "question": "Folk music as transmitted often how?",
+      "correctAnswer": "orally across generations",
+      "incorrectAnswers": [
+        "encrypted binaries",
+        "graffiti",
+        "orchestra"
+      ],
+      "explanation": "Folk music passes through oral tradition.",
+      "keywords": [
+        "folk",
+        "tradition"
+      ],
+      "source": "https://www.britannica.com/art/folk-music"
+    },
+    {
+      "seedId": "cc6349d7-459c-5d86-b438-82650f4ea6b8",
+      "category": "trivia",
+      "navigationKeyword1": "music",
+      "navigationKeyword2": "genres",
+      "question": "Gospel music to Christian worship traditions especially in which country\u2019s churches?",
+      "correctAnswer": "United States",
+      "incorrectAnswers": [
+        "Japan",
+        "Iran",
+        "Mongolia"
+      ],
+      "explanation": "Gospel is rooted in U.S. church music.",
+      "keywords": [
+        "gospel",
+        "worship"
+      ],
+      "source": "https://www.britannica.com/art/gospel-music"
+    },
+    {
+      "seedId": "b01d0a51-1300-5bbd-8063-e9b4fb165e2a",
+      "category": "trivia",
+      "navigationKeyword1": "music",
+      "navigationKeyword2": "genres",
+      "question": "Heavy metal to amplified distortion and what?",
+      "correctAnswer": "powerful drumming",
+      "incorrectAnswers": [
+        "lute strumming",
+        "harps only",
+        "whistling"
+      ],
+      "explanation": "Metal uses loud distorted guitars and heavy drums.",
+      "keywords": [
+        "metal",
+        "rock"
+      ],
+      "source": "https://www.britannica.com/art/heavy-metal-music"
+    },
+    {
+      "seedId": "6f22704b-aa66-5fd8-93a5-79cafc01a4d1",
+      "category": "trivia",
+      "navigationKeyword1": "music",
+      "navigationKeyword2": "genres",
+      "question": "Hip-hop with MCing, DJing, breaking, and what art?",
+      "correctAnswer": "graffiti",
+      "incorrectAnswers": [
+        "origami",
+        "pottery",
+        "glassblowing"
+      ],
+      "explanation": "Hip-hop culture includes graffiti.",
+      "keywords": [
+        "hip-hop",
+        "culture"
+      ],
+      "source": "https://www.britannica.com/art/hip-hop-music"
+    },
+    {
+      "seedId": "9cfece48-350c-5962-9f22-87f1768eee3e",
+      "category": "trivia",
+      "navigationKeyword1": "music",
+      "navigationKeyword2": "genres",
+      "question": "Jazz as music characterized partly by what rhythmic feel?",
+      "correctAnswer": "swing and improvisation",
+      "incorrectAnswers": [
+        "strict unison clapping",
+        "metronome-only performance",
+        "random silence"
+      ],
+      "explanation": "Jazz emphasizes swing and improvisation.",
+      "keywords": [
+        "jazz",
+        "rhythm"
+      ],
+      "source": "https://www.britannica.com/art/jazz-music"
+    },
+    {
+      "seedId": "8541fd76-c040-5271-8ada-6ba1e05b2100",
+      "category": "trivia",
+      "navigationKeyword1": "music",
+      "navigationKeyword2": "genres",
+      "question": "Punk rock with raw sound and what attitude?",
+      "correctAnswer": "DIY rebellion",
+      "incorrectAnswers": [
+        "baroque ornament",
+        "silent film cues",
+        "oral tradition"
+      ],
+      "explanation": "Punk emphasizes DIY ethos.",
+      "keywords": [
+        "punk",
+        "rock"
+      ],
+      "source": "https://www.britannica.com/art/punk-rock"
+    },
+    {
+      "seedId": "24a3eb25-ec2c-5f5a-8526-07a17eaca8f5",
+      "category": "trivia",
+      "navigationKeyword1": "music",
+      "navigationKeyword2": "genres",
+      "question": "Symphonies as large works for what ensemble?",
+      "correctAnswer": "orchestra",
+      "incorrectAnswers": [
+        "string quartet only",
+        "solo kazoo",
+        "marching snare only"
+      ],
+      "explanation": "Symphonies are orchestral compositions.",
+      "keywords": [
+        "symphony",
+        "classical"
+      ],
+      "source": "https://www.britannica.com/art/symphony-music"
+    },
+    {
+      "seedId": "3a5172d1-81a7-5467-97e5-f56deb04887f",
+      "category": "trivia",
+      "navigationKeyword1": "music",
+      "navigationKeyword2": "genres",
+      "question": "Which island nation\u2019s culture is most closely associated with reggae strongly?",
+      "correctAnswer": "Jamaica",
+      "incorrectAnswers": [
+        "Iceland",
+        "Madagascar",
+        "Japan"
+      ],
+      "explanation": "Reggae is Jamaican in origin.",
+      "keywords": [
+        "reggae",
+        "caribbean"
+      ],
+      "source": "https://www.britannica.com/art/reggae-music"
+    }
+  ]
+}

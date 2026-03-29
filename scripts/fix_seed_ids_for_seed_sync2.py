@@ -17,7 +17,7 @@ DEFAULT_CATEGORIES = [
 ]
 
 ROOT = Path(__file__).resolve().parents[1]
-SOURCE_ROOT = ROOT / "data" / "bulk-seed"
+SOURCE_ROOT = ROOT / "data" / "seed-source" / "items"
 REFERENCE_MANIFEST = ROOT / "data" / "generated" / "core-public-items.seed-sync.json"
 SEED_SYNC2_NAMESPACE = uuid.UUID("7f0f7d7a-5c7a-4f75-8d48-9a9de4db1a21")
 

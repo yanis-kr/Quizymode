@@ -1,0 +1,45 @@
+{
+  "schemaVersion": 1,
+  "seedSet": "core-public-items",
+  "deltaPreviewLimit": 200,
+  "items": [
+    {
+      "seedId": "6379dc7e-4b07-5af6-8a44-1eaccf232af4",
+      "category": "humanities",
+      "navigationKeyword1": "religion-myth",
+      "navigationKeyword2": "hinduism",
+      "question": "What does dharma often refer to in Hindu thought?",
+      "correctAnswer": "duty, order, and right conduct",
+      "incorrectAnswers": [
+        "a kind of temple bell",
+        "a desert wind",
+        "a chariot race"
+      ],
+      "explanation": "Dharma often points to moral duty and the order that guides life and society.",
+      "keywords": [
+        "hinduism",
+        "dharma"
+      ],
+      "source": "https://www.britannica.com/topic/dharma-religious-concept"
+    },
+    {
+      "seedId": "839aa3e5-d5d7-5fd3-a13d-a38935b9fb70",
+      "category": "humanities",
+      "navigationKeyword1": "religion-myth",
+      "navigationKeyword2": "hinduism",
+      "question": "What is karma generally about?",
+      "correctAnswer": "the moral effect of actions",
+      "incorrectAnswers": [
+        "the shape of a shrine",
+        "the timing of a harvest",
+        "the color of a robe"
+      ],
+      "explanation": "Karma connects actions with consequences in present or future existence.",
+      "keywords": [
+        "hinduism",
+        "karma"
+      ],
+      "source": "https://www.bbc.co.uk/religion/religions/hinduism/"
+    }
+  ]
+}

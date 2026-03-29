@@ -1,0 +1,107 @@
+{
+  "schemaVersion": 1,
+  "seedSet": "core-public-items",
+  "deltaPreviewLimit": 200,
+  "items": [
+    {
+      "seedId": "7fbd7153-171e-403c-9ed4-d21c6a4188af",
+      "category": "exams",
+      "navigationKeyword1": "ap",
+      "navigationKeyword2": "us-history",
+      "question": "The New Deal was primarily a response to what event?",
+      "correctAnswer": "The Great Depression",
+      "incorrectAnswers": [
+        "The Civil War",
+        "World War I",
+        "The War of 1812"
+      ],
+      "explanation": "Franklin D. Roosevelt's New Deal targeted the economic crisis of the 1930s.",
+      "keywords": [
+        "ap-us-history",
+        "great-depression",
+        "history"
+      ],
+      "source": "https://openstax.org/details/books/us-history"
+    },
+    {
+      "seedId": "6db238ad-0d84-473d-8218-965cb8324150",
+      "category": "exams",
+      "navigationKeyword1": "ap",
+      "navigationKeyword2": "us-history",
+      "question": "What was the main goal of the U.S. policy of containment during the Cold War?",
+      "correctAnswer": "To limit the spread of communism",
+      "incorrectAnswers": [
+        "To expand the British Empire",
+        "To abolish NATO",
+        "To end all foreign trade"
+      ],
+      "explanation": "Containment aimed to prevent Soviet influence from expanding.",
+      "keywords": [
+        "ap-us-history",
+        "cold-war",
+        "history"
+      ],
+      "source": "https://openstax.org/details/books/us-history"
+    },
+    {
+      "seedId": "6541bc2f-39ac-474c-a317-5e431310b264",
+      "category": "exams",
+      "navigationKeyword1": "ap",
+      "navigationKeyword2": "us-history",
+      "question": "Which amendment granted birthright citizenship and equal protection under the law?",
+      "correctAnswer": "The Fourteenth Amendment",
+      "incorrectAnswers": [
+        "The First Amendment",
+        "The Tenth Amendment",
+        "The Nineteenth Amendment"
+      ],
+      "explanation": "The Fourteenth Amendment was a major Reconstruction amendment.",
+      "keywords": [
+        "ap-us-history",
+        "reconstruction",
+        "history"
+      ],
+      "source": "https://openstax.org/details/books/us-history"
+    },
+    {
+      "seedId": "1eaffa4d-02ba-4007-b145-429265754069",
+      "category": "exams",
+      "navigationKeyword1": "ap",
+      "navigationKeyword2": "us-history",
+      "question": "Which compromise admitted Missouri as a slave state and Maine as a free state?",
+      "correctAnswer": "The Missouri Compromise",
+      "incorrectAnswers": [
+        "The Compromise of 1850",
+        "The Great Compromise",
+        "The Kansas-Nebraska Act"
+      ],
+      "explanation": "The Missouri Compromise temporarily balanced free and slave states in Congress.",
+      "keywords": [
+        "ap-us-history",
+        "antebellum",
+        "history"
+      ],
+      "source": "https://openstax.org/details/books/us-history"
+    },
+    {
+      "seedId": "fef679a6-f389-4144-98d0-38d3ae178ebb",
+      "category": "exams",
+      "navigationKeyword1": "ap",
+      "navigationKeyword2": "us-history",
+      "question": "Why did Parliament pass the Stamp Act in 1765?",
+      "correctAnswer": "To raise revenue from the colonies after the French and Indian War",
+      "incorrectAnswers": [
+        "To end slavery in the colonies",
+        "To fund western railroads",
+        "To create a national bank"
+      ],
+      "explanation": "Britain sought colonial revenue to help pay war debts and imperial costs.",
+      "keywords": [
+        "ap-us-history",
+        "colonial-america",
+        "history"
+      ],
+      "source": "https://openstax.org/details/books/us-history"
+    }
+  ]
+}

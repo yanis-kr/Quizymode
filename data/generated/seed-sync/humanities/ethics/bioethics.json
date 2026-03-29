@@ -1,0 +1,45 @@
+{
+  "schemaVersion": 1,
+  "seedSet": "core-public-items",
+  "deltaPreviewLimit": 200,
+  "items": [
+    {
+      "seedId": "06a74628-f95c-5238-82e9-8bfaeff597bc",
+      "category": "humanities",
+      "navigationKeyword1": "ethics",
+      "navigationKeyword2": "bioethics",
+      "question": "A debate about informed consent in medical research belongs to what field?",
+      "correctAnswer": "bioethics",
+      "incorrectAnswers": [
+        "cartography",
+        "grammar",
+        "sculpture"
+      ],
+      "explanation": "That question concerns ethics in medicine and research involving people.",
+      "keywords": [
+        "bioethics",
+        "consent"
+      ],
+      "source": "https://bioethicsarchive.georgetown.edu/"
+    },
+    {
+      "seedId": "e53258b2-c679-5f11-95fa-e99a3bc63b81",
+      "category": "humanities",
+      "navigationKeyword1": "ethics",
+      "navigationKeyword2": "bioethics",
+      "question": "Bioethics studies moral questions in which area?",
+      "correctAnswer": "medicine and life sciences",
+      "incorrectAnswers": [
+        "only museum architecture",
+        "only opera staging",
+        "only tax law"
+      ],
+      "explanation": "Bioethics addresses moral issues raised by medicine, health care, and biological research.",
+      "keywords": [
+        "bioethics",
+        "medicine"
+      ],
+      "source": "https://www.britannica.com/topic/bioethics"
+    }
+  ]
+}

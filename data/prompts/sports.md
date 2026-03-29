@@ -13,7 +13,7 @@ Task:
 
 Create or continue seed files for the `sports` category in:
 
-- `data/bulk-seed/sports`
+- `data/seed-source/items/sports`
 
 Filename format:
 

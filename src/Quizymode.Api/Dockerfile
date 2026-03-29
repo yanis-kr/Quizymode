@@ -22,7 +22,7 @@ COPY src/Quizymode.Api/. ./Quizymode.Api/
 COPY src/Quizymode.Api.ServiceDefaults/. ./Quizymode.Api.ServiceDefaults/
 COPY src/Quizymode.Taxonomy/. ./Quizymode.Taxonomy/
 COPY docs /docs
-COPY data /data
+COPY data/seed-dev /data/seed-dev
 WORKDIR "/src/Quizymode.Api"
 
 # This stage is used to publish the service project to be copied to the final stage
@@ -34,6 +34,5 @@ RUN dotnet publish "./Quizymode.Api.csproj" -c $BUILD_CONFIGURATION -o /app/publ
 FROM base AS final
 WORKDIR /app
 COPY --from=publish /app/publish .
-COPY data ./data
-ENV APP_SEED__PATH=data/seed/minimal
+ENV APP_SEED__PATH=data/seed-dev
 ENTRYPOINT ["dotnet", "Quizymode.Api.dll"]

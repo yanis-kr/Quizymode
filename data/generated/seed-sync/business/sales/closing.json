@@ -1,0 +1,121 @@
+{
+  "schemaVersion": 1,
+  "seedSet": "core-public-items",
+  "deltaPreviewLimit": 200,
+  "items": [
+    {
+      "seedId": "e5137cf7-e590-4594-9a17-4a6c78213759",
+      "category": "business",
+      "navigationKeyword1": "sales",
+      "navigationKeyword2": "closing",
+      "question": "What does a mutual action plan (MAP) try to align?",
+      "correctAnswer": "Buyer and seller on dates, owners, and deliverables needed to reach a decision.",
+      "incorrectAnswers": [
+        "Only the seller\u2019s internal vacation schedule.",
+        "Only marketing campaign colors.",
+        "Only competitor pricing without customer input."
+      ],
+      "explanation": "MAPs reduce \u2018surprise\u2019 stalls late in cycles.",
+      "keywords": [
+        "mutual-action-plan",
+        "closing"
+      ],
+      "source": "https://www.gong.io/blog/mutual-action-plan"
+    },
+    {
+      "seedId": "a990cd21-8754-495f-bf9d-6881957ecb2e",
+      "category": "business",
+      "navigationKeyword1": "sales",
+      "navigationKeyword2": "closing",
+      "question": "What is a common risk of an overly \u2018assumptive\u2019 close?",
+      "correctAnswer": "It can feel pushy and erode trust if the buyer is not actually ready.",
+      "incorrectAnswers": [
+        "It always increases trust with no downsides.",
+        "It is illegal in all regulated industries.",
+        "It prevents any future upsell."
+      ],
+      "explanation": "Closing techniques should match buyer readiness and ethics.",
+      "keywords": [
+        "assumptive-close",
+        "trust"
+      ],
+      "source": "https://blog.hubspot.com/sales/closing-techniques"
+    },
+    {
+      "seedId": "81e4e174-e019-4184-b43c-e1d4df898f2a",
+      "category": "business",
+      "navigationKeyword1": "sales",
+      "navigationKeyword2": "closing",
+      "question": "What is a \u2018trial close\u2019?",
+      "correctAnswer": "A check-for-understanding question that gauges readiness without demanding a final signature.",
+      "incorrectAnswers": [
+        "A demand for immediate payment before any conversation.",
+        "A legal filing in court.",
+        "A refund policy."
+      ],
+      "explanation": "Trial closes surface concerns early.",
+      "keywords": [
+        "trial-close",
+        "sales-skills"
+      ],
+      "source": "https://www.salesforce.com/blog/sales-closing-techniques/"
+    },
+    {
+      "seedId": "8d08cdbe-8aa7-48d0-8461-1d781d49102f",
+      "category": "business",
+      "navigationKeyword1": "sales",
+      "navigationKeyword2": "closing",
+      "question": "What is the better practice when a buyer raises an objection?",
+      "correctAnswer": "Clarify, validate the concern, and address it with evidence or revised terms when possible.",
+      "incorrectAnswers": [
+        "Ignore objections to avoid appearing weak.",
+        "Immediately end the meeting.",
+        "Argue louder until the buyer agrees."
+      ],
+      "explanation": "Objections often contain useful information about risk and decision criteria.",
+      "keywords": [
+        "objections",
+        "sales-process"
+      ],
+      "source": "https://www.gong.io/blog/sales-objections"
+    },
+    {
+      "seedId": "cfac5fc4-32b1-4c7c-9df6-b3c8a0c0ae20",
+      "category": "business",
+      "navigationKeyword1": "sales",
+      "navigationKeyword2": "closing",
+      "question": "Why do enterprise deals often slow near the end?",
+      "correctAnswer": "Procurement, security review, legal redlines, and stakeholder alignment take time.",
+      "incorrectAnswers": [
+        "Because closing is always a single two-minute step.",
+        "Because discounts remove paperwork.",
+        "Because CRMs block approvals."
+      ],
+      "explanation": "Closing is a process, especially in B2B.",
+      "keywords": [
+        "enterprise-sales",
+        "procurement"
+      ],
+      "source": "https://www.investopedia.com/terms/e/enterprise-sales.asp"
+    },
+    {
+      "seedId": "7001ac49-0f97-4b84-9e7f-aa3bb886795e",
+      "category": "business",
+      "navigationKeyword1": "sales",
+      "navigationKeyword2": "closing",
+      "question": "Why is scheduling a clear next step at the end of a sales meeting important?",
+      "correctAnswer": "It reduces ambiguity, maintains momentum, and sets accountability.",
+      "incorrectAnswers": [
+        "Because buyers prefer indefinite waiting with no follow-up.",
+        "Because calendars are irrelevant to complex deals.",
+        "Because next steps should always be decided only by legal."
+      ],
+      "explanation": "Momentum is a common predictor of progression.",
+      "keywords": [
+        "next-steps",
+        "discipline"
+      ],
+      "source": "https://www.salesforce.com/blog/sales-follow-up/"
+    }
+  ]
+}

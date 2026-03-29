@@ -1,0 +1,121 @@
+{
+  "schemaVersion": 1,
+  "seedSet": "core-public-items",
+  "deltaPreviewLimit": 200,
+  "items": [
+    {
+      "seedId": "d2aff646-6a7e-5a9c-a6a1-e59fdf49e7db",
+      "category": "civics",
+      "navigationKeyword1": "government",
+      "navigationKeyword2": "branches",
+      "question": "How many branches does the U.S. federal government have?",
+      "correctAnswer": "three",
+      "incorrectAnswers": [
+        "two",
+        "four",
+        "five"
+      ],
+      "explanation": "The Constitution divides the federal government into three branches.",
+      "keywords": [
+        "government-branches",
+        "civics-structure"
+      ],
+      "source": "https://www.usa.gov/branches-of-government"
+    },
+    {
+      "seedId": "efe94106-63c1-50f9-9116-ab5aea49460e",
+      "category": "civics",
+      "navigationKeyword1": "government",
+      "navigationKeyword2": "branches",
+      "question": "What is a core job of the judicial branch?",
+      "correctAnswer": "to decide cases under the law and Constitution",
+      "incorrectAnswers": [
+        "to negotiate treaties",
+        "to collect federal taxes",
+        "to appoint cabinet secretaries"
+      ],
+      "explanation": "Federal courts resolve cases and determine whether laws fit the Constitution.",
+      "keywords": [
+        "government-branches",
+        "civics-structure"
+      ],
+      "source": "https://www.uscourts.gov/about-federal-courts/court-role-and-structure"
+    },
+    {
+      "seedId": "82d5a3b5-54be-579b-accf-35c5926defe1",
+      "category": "civics",
+      "navigationKeyword1": "government",
+      "navigationKeyword2": "branches",
+      "question": "What is the main job of the legislative branch?",
+      "correctAnswer": "to make laws",
+      "incorrectAnswers": [
+        "to command the military",
+        "to decide court cases",
+        "to print money alone"
+      ],
+      "explanation": "The legislative branch writes and passes laws through Congress.",
+      "keywords": [
+        "government-branches",
+        "civics-structure"
+      ],
+      "source": "https://www.usa.gov/branches-of-government"
+    },
+    {
+      "seedId": "3ef99078-7b31-54dd-bc75-72ed583d91fb",
+      "category": "civics",
+      "navigationKeyword1": "government",
+      "navigationKeyword2": "branches",
+      "question": "Which branch includes Congress?",
+      "correctAnswer": "legislative branch",
+      "incorrectAnswers": [
+        "executive branch",
+        "judicial branch",
+        "administrative branch"
+      ],
+      "explanation": "Congress is the lawmaking body in the legislative branch.",
+      "keywords": [
+        "government-branches",
+        "civics-structure"
+      ],
+      "source": "https://www.senate.gov/about/"
+    },
+    {
+      "seedId": "aa508a63-e3d6-5117-9bab-0b31371547f1",
+      "category": "civics",
+      "navigationKeyword1": "government",
+      "navigationKeyword2": "branches",
+      "question": "Which branch includes the Supreme Court and other federal courts?",
+      "correctAnswer": "judicial branch",
+      "incorrectAnswers": [
+        "legislative branch",
+        "executive branch",
+        "cabinet branch"
+      ],
+      "explanation": "The judicial branch includes the Supreme Court and the federal court system.",
+      "keywords": [
+        "government-branches",
+        "civics-structure"
+      ],
+      "source": "https://www.uscourts.gov/about-federal-courts/court-role-and-structure"
+    },
+    {
+      "seedId": "a2b37eff-8634-5fff-9571-53432499ac17",
+      "category": "civics",
+      "navigationKeyword1": "government",
+      "navigationKeyword2": "branches",
+      "question": "Which branch is headed by the president?",
+      "correctAnswer": "executive branch",
+      "incorrectAnswers": [
+        "legislative branch",
+        "judicial branch",
+        "election branch"
+      ],
+      "explanation": "The president leads the executive branch, which carries out federal law.",
+      "keywords": [
+        "government-branches",
+        "civics-structure"
+      ],
+      "source": "https://whitehouse.gov/government/executive-branch/"
+    }
+  ]
+}

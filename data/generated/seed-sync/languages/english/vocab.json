@@ -1,0 +1,127 @@
+{
+  "schemaVersion": 1,
+  "seedSet": "core-public-items",
+  "deltaPreviewLimit": 200,
+  "items": [
+    {
+      "seedId": "99bd38bc-0fe4-525c-9059-7909ac59633c",
+      "category": "languages",
+      "navigationKeyword1": "english",
+      "navigationKeyword2": "vocab",
+      "question": "Which spelling shows location or place?",
+      "correctAnswer": "there",
+      "incorrectAnswers": [
+        "their",
+        "they're",
+        "thorough"
+      ],
+      "explanation": "There points to a place. Their shows possession. They're is short for they are.",
+      "keywords": [
+        "homophones",
+        "spelling",
+        "english-vocab"
+      ],
+      "source": "https://dictionary.cambridge.org/dictionary/english/there"
+    },
+    {
+      "seedId": "14cdddd0-3e29-5712-9d46-076fc1a1b14b",
+      "category": "languages",
+      "navigationKeyword1": "english",
+      "navigationKeyword2": "vocab",
+      "question": "Which word fits countable nouns when you compare smaller amounts?",
+      "correctAnswer": "fewer",
+      "incorrectAnswers": [
+        "less",
+        "little",
+        "amount"
+      ],
+      "explanation": "Fewer goes with countable nouns (fewer books). Less often goes with uncountable amounts (less water).",
+      "keywords": [
+        "fewer-less",
+        "countable-nouns",
+        "english-vocab"
+      ],
+      "source": "https://www.merriam-webster.com/words-at-play/fewer-vs-less"
+    },
+    {
+      "seedId": "58f03878-28f9-543a-9a08-b0098ad3fa40",
+      "category": "languages",
+      "navigationKeyword1": "english",
+      "navigationKeyword2": "vocab",
+      "question": "Which word matches completing or matching something?",
+      "correctAnswer": "complementary",
+      "incorrectAnswers": [
+        "complimentary",
+        "comprehensive",
+        "competitive"
+      ],
+      "explanation": "Complementary means completing a pair or set. Complimentary can mean free or praising.",
+      "keywords": [
+        "complementary-complimentary",
+        "word-meaning",
+        "english-vocab"
+      ],
+      "source": "https://www.merriam-webster.com/dictionary/complementary"
+    },
+    {
+      "seedId": "26b67dd0-a72f-5794-9958-8df3b6fc149c",
+      "category": "languages",
+      "navigationKeyword1": "english",
+      "navigationKeyword2": "vocab",
+      "question": "Which word names paper and pens for writing?",
+      "correctAnswer": "stationery",
+      "incorrectAnswers": [
+        "stationary",
+        "statuary",
+        "sanitary"
+      ],
+      "explanation": "Stationery (with an e) means writing materials. Stationary (with an a) means not moving.",
+      "keywords": [
+        "stationary-stationery",
+        "spelling",
+        "english-vocab"
+      ],
+      "source": "https://www.merriam-webster.com/words-at-play/stationary-or-stationery"
+    },
+    {
+      "seedId": "5026f986-867f-5632-9975-ec39af8c9b9d",
+      "category": "languages",
+      "navigationKeyword1": "english",
+      "navigationKeyword2": "vocab",
+      "question": "Which word usually means a basic rule or belief?",
+      "correctAnswer": "principle",
+      "incorrectAnswers": [
+        "principal",
+        "precinct",
+        "priority"
+      ],
+      "explanation": "Principle is a rule or standard. Principal can mean the head of a school or main.",
+      "keywords": [
+        "principle-principal",
+        "spelling",
+        "english-vocab"
+      ],
+      "source": "https://www.britannica.com/dictionary/principle"
+    },
+    {
+      "seedId": "85e24d02-824d-531b-b28a-8bca0c39aec8",
+      "category": "languages",
+      "navigationKeyword1": "english",
+      "navigationKeyword2": "vocab",
+      "question": "Which word usually works as a verb meaning to influence?",
+      "correctAnswer": "affect",
+      "incorrectAnswers": [
+        "effect",
+        "accept",
+        "except"
+      ],
+      "explanation": "Affect is commonly a verb meaning to act on or influence. Effect is more often a noun meaning a result.",
+      "keywords": [
+        "affect-effect",
+        "word-choice",
+        "english-vocab"
+      ],
+      "source": "https://www.merriam-webster.com/words-at-play/affect-vs-effect-difference"
+    }
+  ]
+}

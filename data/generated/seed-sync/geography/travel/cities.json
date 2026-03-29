@@ -1,0 +1,227 @@
+{
+  "schemaVersion": 1,
+  "seedSet": "core-public-items",
+  "deltaPreviewLimit": 200,
+  "items": [
+    {
+      "seedId": "dba33442-21ae-4ee6-bc2d-599a5ac08ddc",
+      "category": "geography",
+      "navigationKeyword1": "travel",
+      "navigationKeyword2": "cities",
+      "question": "Buenos Aires faces which broad estuary on Argentina\u2019s coast?",
+      "correctAnswer": "The R\u00edo de la Plata",
+      "incorrectAnswers": [
+        "The Amazon estuary",
+        "The Baltic Sea",
+        "The Persian Gulf"
+      ],
+      "explanation": "Britannica places Buenos Aires on the southern shore of the R\u00edo de la Plata estuary.",
+      "keywords": [
+        "cities",
+        "buenos-aires",
+        "rio-de-la-plata"
+      ],
+      "source": "https://www.britannica.com/place/Buenos-Aires"
+    },
+    {
+      "seedId": "0e8b2e10-b0ea-49d0-90d4-90948e16fb8f",
+      "category": "geography",
+      "navigationKeyword1": "travel",
+      "navigationKeyword2": "cities",
+      "question": "Cairo stands near the head of which major African river\u2019s delta?",
+      "correctAnswer": "The Nile River",
+      "incorrectAnswers": [
+        "The Congo River",
+        "The Niger River",
+        "The Zambezi River"
+      ],
+      "explanation": "Britannica situates Cairo just north of the Nile\u2019s transition into its delta on the North African desert edge.",
+      "keywords": [
+        "cities",
+        "cairo",
+        "nile"
+      ],
+      "source": "https://www.britannica.com/place/Cairo"
+    },
+    {
+      "seedId": "a7bb5a84-49e7-4f34-b3b2-f0920b23e6c1",
+      "category": "geography",
+      "navigationKeyword1": "travel",
+      "navigationKeyword2": "cities",
+      "question": "Dubai is one of the seven emirates of which country?",
+      "correctAnswer": "The United Arab Emirates",
+      "incorrectAnswers": [
+        "Saudi Arabia",
+        "Qatar",
+        "Kuwait"
+      ],
+      "explanation": "Britannica describes Dubai as a leading emirate within the United Arab Emirates federation on the Persian Gulf coast.",
+      "keywords": [
+        "cities",
+        "dubai",
+        "uae"
+      ],
+      "source": "https://www.britannica.com/place/Dubai-United-Arab-Emirates"
+    },
+    {
+      "seedId": "ceaf7da6-11b1-4a32-b084-e65400661b9f",
+      "category": "geography",
+      "navigationKeyword1": "travel",
+      "navigationKeyword2": "cities",
+      "question": "Istanbul straddles Europe and Asia across which strait?",
+      "correctAnswer": "The Bosporus",
+      "incorrectAnswers": [
+        "The Strait of Gibraltar",
+        "The Strait of Malacca",
+        "The Bering Strait"
+      ],
+      "explanation": "Britannica notes Istanbul bridges Asia and Europe where the Bosporus links the Black Sea to the Sea of Marmara.",
+      "keywords": [
+        "cities",
+        "istanbul",
+        "bosporus"
+      ],
+      "source": "https://www.britannica.com/place/Istanbul"
+    },
+    {
+      "seedId": "cdb97fc0-ae06-4477-969e-2a4acc62775b",
+      "category": "geography",
+      "navigationKeyword1": "travel",
+      "navigationKeyword2": "cities",
+      "question": "Johannesburg is the largest city of which country?",
+      "correctAnswer": "South Africa",
+      "incorrectAnswers": [
+        "Nigeria",
+        "Kenya",
+        "Brazil"
+      ],
+      "explanation": "Britannica describes Johannesburg as South Africa\u2019s major industrial and financial metropolis on the Witwatersrand.",
+      "keywords": [
+        "cities",
+        "johannesburg",
+        "south-africa"
+      ],
+      "source": "https://www.britannica.com/place/Johannesburg-South-Africa"
+    },
+    {
+      "seedId": "e864a35f-ebdd-4931-9820-931d6a99f6df",
+      "category": "geography",
+      "navigationKeyword1": "travel",
+      "navigationKeyword2": "cities",
+      "question": "Mexico City lies in which high inland basin that once held several large lakes?",
+      "correctAnswer": "The Valley of Mexico (also called the Mesa Central)",
+      "incorrectAnswers": [
+        "The Amazon basin",
+        "The Ganges plain",
+        "The Great Rift Valley"
+      ],
+      "explanation": "Britannica situates Mexico City in the Valley of Mexico, an extension of the southern Mexican Plateau also known as the Mesa Central.",
+      "keywords": [
+        "cities",
+        "mexico-city",
+        "altiplano"
+      ],
+      "source": "https://www.britannica.com/place/Mexico-City"
+    },
+    {
+      "seedId": "e8f5c44b-a210-4765-b00a-ba398083cfa6",
+      "category": "geography",
+      "navigationKeyword1": "travel",
+      "navigationKeyword2": "cities",
+      "question": "Moscow sits on which river in western Russia?",
+      "correctAnswer": "The Moskva River",
+      "incorrectAnswers": [
+        "The Volga River",
+        "The Lena River",
+        "The Ob River"
+      ],
+      "explanation": "Britannica states Moscow lies on the Moskva River west of the Volga\u2019s headwaters.",
+      "keywords": [
+        "cities",
+        "moscow",
+        "moskva-river"
+      ],
+      "source": "https://www.britannica.com/place/Moscow"
+    },
+    {
+      "seedId": "28aaaf56-bea7-4bb3-959f-cf25718277ce",
+      "category": "geography",
+      "navigationKeyword1": "travel",
+      "navigationKeyword2": "cities",
+      "question": "Singapore sits at the southern end of which peninsula?",
+      "correctAnswer": "The Malay Peninsula",
+      "incorrectAnswers": [
+        "The Iberian Peninsula",
+        "The Korean Peninsula",
+        "The Florida Peninsula"
+      ],
+      "explanation": "Britannica locates the city-state of Singapore near the southern tip of the Malay Peninsula.",
+      "keywords": [
+        "cities",
+        "singapore",
+        "malay-peninsula"
+      ],
+      "source": "https://www.britannica.com/place/Singapore"
+    },
+    {
+      "seedId": "837b8916-1a9f-4f11-ace2-e9ec139a63a0",
+      "category": "geography",
+      "navigationKeyword1": "travel",
+      "navigationKeyword2": "cities",
+      "question": "Sydney is the capital of which Australian state?",
+      "correctAnswer": "New South Wales",
+      "incorrectAnswers": [
+        "Victoria",
+        "Queensland",
+        "Western Australia"
+      ],
+      "explanation": "Britannica identifies Sydney as the capital of New South Wales on Australia\u2019s southeastern coast.",
+      "keywords": [
+        "cities",
+        "sydney",
+        "new-south-wales"
+      ],
+      "source": "https://www.britannica.com/place/Sydney-New-South-Wales"
+    },
+    {
+      "seedId": "5a78b3f2-6a98-4b98-90d2-2f778226581f",
+      "category": "geography",
+      "navigationKeyword1": "travel",
+      "navigationKeyword2": "cities",
+      "question": "Tokyo is located on which Japanese island?",
+      "correctAnswer": "Honshu",
+      "incorrectAnswers": [
+        "Hokkaido",
+        "Kyushu",
+        "Shikoku"
+      ],
+      "explanation": "Britannica places Tokyo on the Pacific coast of eastern Honshu, Japan\u2019s largest island.",
+      "keywords": [
+        "cities",
+        "tokyo",
+        "honshu"
+      ],
+      "source": "https://www.britannica.com/place/Tokyo"
+    },
+    {
+      "seedId": "fdf57619-0854-47d8-b92b-0e8a74c15ea8",
+      "category": "geography",
+      "navigationKeyword1": "travel",
+      "navigationKeyword2": "cities",
+      "question": "Which river runs through London?",
+      "correctAnswer": "The River Thames",
+      "incorrectAnswers": [
+        "The Seine",
+        "The Danube",
+        "The Tiber"
+      ],
+      "explanation": "Britannica describes London as stretching along both banks of the Thames in southeastern England.",
+      "keywords": [
+        "cities",
+        "london",
+        "thames"
+      ],
+      "source": "https://www.britannica.com/place/London"
+    }
+  ]
+}

@@ -1,0 +1,121 @@
+{
+  "schemaVersion": 1,
+  "seedSet": "core-public-items",
+  "deltaPreviewLimit": 200,
+  "items": [
+    {
+      "seedId": "1f6273de-ce9c-527d-8e6b-415821301622",
+      "category": "tech",
+      "navigationKeyword1": "ai-ml",
+      "navigationKeyword2": "computer-vision",
+      "question": "Compared with classification only, what does object detection add?",
+      "correctAnswer": "Bounding boxes and class labels for multiple objects in one image",
+      "incorrectAnswers": [
+        "Only a single label with no locations",
+        "Only resizing the image to 1\u00d71 pixels",
+        "Only changing the color balance"
+      ],
+      "explanation": "Detection localizes instances so systems can count and track objects, not just name the scene.",
+      "keywords": [
+        "ai-ml",
+        "object-detection"
+      ],
+      "source": "https://arxiv.org/abs/1504.08083"
+    },
+    {
+      "seedId": "833239f7-bd0a-5183-b79a-e447c6fcaa2a",
+      "category": "tech",
+      "navigationKeyword1": "ai-ml",
+      "navigationKeyword2": "computer-vision",
+      "question": "For a standard RGB image tensor, what do the three channels usually represent?",
+      "correctAnswer": "Red, green, and blue intensity values per pixel",
+      "incorrectAnswers": [
+        "Past, present, and future time steps",
+        "Three different languages",
+        "Three separate loss functions"
+      ],
+      "explanation": "Color images stack per-channel intensities so the network can learn color-dependent patterns.",
+      "keywords": [
+        "ai-ml",
+        "images"
+      ],
+      "source": "https://en.wikipedia.org/wiki/RGB_color_model"
+    },
+    {
+      "seedId": "b79d2020-16db-596b-a2df-b04ea425a3f1",
+      "category": "tech",
+      "navigationKeyword1": "ai-ml",
+      "navigationKeyword2": "computer-vision",
+      "question": "What does Intersection over Union measure between two boxes?",
+      "correctAnswer": "Overlap between predicted and ground-truth regions divided by their union area",
+      "incorrectAnswers": [
+        "Only the width of the wider box",
+        "The sum of all pixel intensities",
+        "The frame rate of the camera"
+      ],
+      "explanation": "IoU is a standard overlap score for comparing localization quality in detection and segmentation tasks.",
+      "keywords": [
+        "ai-ml",
+        "iou"
+      ],
+      "source": "https://en.wikipedia.org/wiki/Jaccard_index"
+    },
+    {
+      "seedId": "9af96330-d129-5236-b110-42ece0730b08",
+      "category": "tech",
+      "navigationKeyword1": "ai-ml",
+      "navigationKeyword2": "computer-vision",
+      "question": "What does transfer learning in vision usually mean?",
+      "correctAnswer": "Start from weights trained on a large dataset and fine-tune on a smaller target task",
+      "incorrectAnswers": [
+        "Train only from random noise",
+        "Copy pixels without any neural network",
+        "Disable gradients entirely"
+      ],
+      "explanation": "Pretrained features capture generic edges and textures, so fine-tuning needs less labeled data than training from scratch.",
+      "keywords": [
+        "ai-ml",
+        "transfer-learning"
+      ],
+      "source": "https://pytorch.org/tutorials/beginner/transfer_learning_tutorial.html"
+    },
+    {
+      "seedId": "26208512-6fa6-50fa-94ea-95315916cd7d",
+      "category": "tech",
+      "navigationKeyword1": "ai-ml",
+      "navigationKeyword2": "computer-vision",
+      "question": "What is the main output of a single-label image classification model?",
+      "correctAnswer": "A predicted class label for the whole image",
+      "incorrectAnswers": [
+        "A 3D mesh of the scene",
+        "The camera serial number",
+        "A list of every pixel\u2019s exact color name"
+      ],
+      "explanation": "Classification assigns one or more categories to describe the dominant content of the image.",
+      "keywords": [
+        "ai-ml",
+        "classification"
+      ],
+      "source": "https://en.wikipedia.org/wiki/Computer_vision"
+    },
+    {
+      "seedId": "889b4621-b727-5bd3-80be-7bd8100fdbb8",
+      "category": "tech",
+      "navigationKeyword1": "ai-ml",
+      "navigationKeyword2": "computer-vision",
+      "question": "Why is data augmentation (random crops, flips, color jitter) used during training?",
+      "correctAnswer": "To simulate variation so the model generalizes beyond the exact training pixels",
+      "incorrectAnswers": [
+        "To delete half the dataset permanently",
+        "To convert labels into images",
+        "To reduce RAM to zero"
+      ],
+      "explanation": "Augmentations increase effective diversity without new labels, which reduces overfitting on limited photos.",
+      "keywords": [
+        "ai-ml",
+        "augmentation"
+      ],
+      "source": "https://www.tensorflow.org/tutorials/images/data_augmentation"
+    }
+  ]
+}

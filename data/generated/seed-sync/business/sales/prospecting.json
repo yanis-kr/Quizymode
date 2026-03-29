@@ -1,0 +1,121 @@
+{
+  "schemaVersion": 1,
+  "seedSet": "core-public-items",
+  "deltaPreviewLimit": 200,
+  "items": [
+    {
+      "seedId": "74255872-f0d7-4441-9224-635e78358da8",
+      "category": "business",
+      "navigationKeyword1": "sales",
+      "navigationKeyword2": "prospecting",
+      "question": "In outbound prospecting, what is a common purpose of a first-touch message?",
+      "correctAnswer": "Earn permission to continue a conversation by showing relevance and credibility.",
+      "incorrectAnswers": [
+        "Close the deal in the first email.",
+        "Send the longest possible product brochure.",
+        "Avoid mentioning why you are reaching out."
+      ],
+      "explanation": "Early touches aim for engagement, not instant closure.",
+      "keywords": [
+        "outbound",
+        "messaging"
+      ],
+      "source": "https://www.salesforce.com/blog/outbound-sales/"
+    },
+    {
+      "seedId": "393674f7-f2e6-4226-ab72-56089fae6b7c",
+      "category": "business",
+      "navigationKeyword1": "sales",
+      "navigationKeyword2": "prospecting",
+      "question": "Under U.S. CAN-SPAM basics for commercial email, what must you typically include?",
+      "correctAnswer": "A clear way to opt out of future messages and truthful header/identity information.",
+      "incorrectAnswers": [
+        "A requirement that recipients reply with their Social Security number.",
+        "Permission to hide who the message is from.",
+        "A ban on all unsubscribe links."
+      ],
+      "explanation": "CAN-SPAM sets baseline requirements for commercial email.",
+      "keywords": [
+        "can-spam",
+        "compliance"
+      ],
+      "source": "https://www.ftc.gov/business-guidance/resources/can-spam-act-compliance-guide-business"
+    },
+    {
+      "seedId": "b9b4abb0-47a4-4260-8f82-23f6394982dc",
+      "category": "business",
+      "navigationKeyword1": "sales",
+      "navigationKeyword2": "prospecting",
+      "question": "What is a discovery call primarily meant to accomplish?",
+      "correctAnswer": "Understand the prospect\u2019s situation, priorities, and buying process\u2014not just pitch features.",
+      "incorrectAnswers": [
+        "Replace the need for any follow-up meetings.",
+        "Read every slide deck verbatim without asking questions.",
+        "Immediately demand a purchase order."
+      ],
+      "explanation": "Good discovery clarifies fit and next steps.",
+      "keywords": [
+        "discovery",
+        "sales-process"
+      ],
+      "source": "https://www.gong.io/blog/discovery-call"
+    },
+    {
+      "seedId": "967da758-6348-4a38-b117-531dddfc5e42",
+      "category": "business",
+      "navigationKeyword1": "sales",
+      "navigationKeyword2": "prospecting",
+      "question": "What is an Ideal Customer Profile (ICP) used for in sales?",
+      "correctAnswer": "A structured description of the accounts most likely to buy and succeed with your offer.",
+      "incorrectAnswers": [
+        "A list of every company that has ever visited your website.",
+        "A guarantee that a prospect will purchase within 30 days.",
+        "The same thing as a closed-won opportunity in a CRM."
+      ],
+      "explanation": "ICP focuses outbound effort and messaging on best-fit segments.",
+      "keywords": [
+        "icp",
+        "segmentation"
+      ],
+      "source": "https://blog.hubspot.com/sales/ideal-customer-profile"
+    },
+    {
+      "seedId": "5126119c-8f6d-4dc7-bbb5-a0e99bcc6a8a",
+      "category": "business",
+      "navigationKeyword1": "sales",
+      "navigationKeyword2": "prospecting",
+      "question": "What is the practical difference between a \u2018lead\u2019 and a \u2018qualified opportunity\u2019?",
+      "correctAnswer": "A lead is an early-stage interest; a qualified opportunity usually has confirmed fit, need, and a plausible path to purchase.",
+      "incorrectAnswers": [
+        "They are identical terms in every CRM.",
+        "An opportunity is always colder than a lead.",
+        "A lead must already include a signed contract."
+      ],
+      "explanation": "Definitions vary slightly by company, but qualification is the key gap.",
+      "keywords": [
+        "lead",
+        "qualification"
+      ],
+      "source": "https://www.investopedia.com/terms/l/lead.asp"
+    },
+    {
+      "seedId": "30bdb0bc-68be-4925-9fb8-6fab51cf0291",
+      "category": "business",
+      "navigationKeyword1": "sales",
+      "navigationKeyword2": "prospecting",
+      "question": "Why do sales teams track \u2018trigger events\u2019 (e.g., leadership change, funding, expansion)?",
+      "correctAnswer": "They can signal timing when problems, budgets, and openness to change align.",
+      "incorrectAnswers": [
+        "They guarantee a prospect has unlimited budget.",
+        "They mean procurement is never involved.",
+        "They remove the need for qualification."
+      ],
+      "explanation": "Triggers inform timing and relevance, not certainty.",
+      "keywords": [
+        "trigger-events",
+        "timing"
+      ],
+      "source": "https://www.salesforce.com/blog/sales-triggers/"
+    }
+  ]
+}

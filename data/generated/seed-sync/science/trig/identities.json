@@ -1,0 +1,235 @@
+{
+  "schemaVersion": 1,
+  "seedSet": "core-public-items",
+  "deltaPreviewLimit": 200,
+  "items": [
+    {
+      "seedId": "e1eb5e35-a530-4087-8b82-c6415f05df93",
+      "category": "science",
+      "navigationKeyword1": "trig",
+      "navigationKeyword2": "identities",
+      "question": "Law of cosines (find c)?",
+      "correctAnswer": "c^2 = a^2 + b^2 \u2212 2ab cos C",
+      "incorrectAnswers": [
+        "c^2 = a^2 + b^2",
+        "c = a + b",
+        "c^2 = 2ab cos C"
+      ],
+      "explanation": "Generalizes Pythagorean.",
+      "keywords": [
+        "law-of-cosines",
+        "triangle"
+      ],
+      "source": "https://openstax.org/books/precalculus-2e/pages/7-3-non-right-triangles-law-of-cosines"
+    },
+    {
+      "seedId": "c7271ed7-bc4a-4e57-b8e0-2ff591310bfd",
+      "category": "science",
+      "navigationKeyword1": "trig",
+      "navigationKeyword2": "identities",
+      "question": "Law of sines?",
+      "correctAnswer": "a/sin A = b/sin B = c/sin C",
+      "incorrectAnswers": [
+        "a^2 = b^2+c^2",
+        "a = b sin C",
+        "sin A = a"
+      ],
+      "explanation": "For any triangle.",
+      "keywords": [
+        "law-of-sines",
+        "triangle"
+      ],
+      "source": "https://openstax.org/books/precalculus-2e/pages/7-4-non-right-triangles-law-of-sines"
+    },
+    {
+      "seedId": "4d1d7d66-fdf6-488d-9cb7-e0187a256d35",
+      "category": "science",
+      "navigationKeyword1": "trig",
+      "navigationKeyword2": "identities",
+      "question": "cos A cos B product-to-sum?",
+      "correctAnswer": "(1/2)[cos(A\u2212B)+cos(A+B)]",
+      "incorrectAnswers": [
+        "sin(A+B)",
+        "cos(A+B) only",
+        "cos A + cos B"
+      ],
+      "explanation": "Integrate products of sinusoids.",
+      "keywords": [
+        "product-to-sum",
+        "identities"
+      ],
+      "source": "https://openstax.org/books/precalculus-2e/pages/7-4-sum-to-product-and-product-to-sum-formulas"
+    },
+    {
+      "seedId": "e79445c4-8d9b-4f54-9d64-e57a39138c61",
+      "category": "science",
+      "navigationKeyword1": "trig",
+      "navigationKeyword2": "identities",
+      "question": "cos(2\u03b8) form with cos only?",
+      "correctAnswer": "2 cos^2 \u03b8 \u2212 1",
+      "incorrectAnswers": [
+        "1 \u2212 2 sin \u03b8",
+        "cos^2 \u03b8",
+        "2 cos \u03b8"
+      ],
+      "explanation": "Multiple equivalent forms.",
+      "keywords": [
+        "double-angle",
+        "cosine"
+      ],
+      "source": "https://openstax.org/books/precalculus-2e/pages/7-3-double-angle-half-angle-reduction-formulas"
+    },
+    {
+      "seedId": "cc616ff1-d878-4344-95c4-886f0c7ad557",
+      "category": "science",
+      "navigationKeyword1": "trig",
+      "navigationKeyword2": "identities",
+      "question": "cos(a+b)?",
+      "correctAnswer": "cos a cos b \u2212 sin a sin b",
+      "incorrectAnswers": [
+        "cos a + cos b",
+        "sin(a+b)",
+        "cos a sin b + sin a cos b"
+      ],
+      "explanation": "Watch minus sign.",
+      "keywords": [
+        "sum-formula",
+        "cosine"
+      ],
+      "source": "https://openstax.org/books/precalculus-2e/pages/7-2-sum-and-difference-identities"
+    },
+    {
+      "seedId": "b700bbde-15e1-4595-81a7-a74f7746ec33",
+      "category": "science",
+      "navigationKeyword1": "trig",
+      "navigationKeyword2": "identities",
+      "question": "sec^2 \u03b8 = ?",
+      "correctAnswer": "1 + tan^2 \u03b8",
+      "incorrectAnswers": [
+        "1 \u2212 tan^2 \u03b8",
+        "tan^2 \u03b8",
+        "sin^2 \u03b8"
+      ],
+      "explanation": "Pythagorean variant.",
+      "keywords": [
+        "secant",
+        "identities"
+      ],
+      "source": "https://openstax.org/books/precalculus-2e/pages/7-1-solving-trigonometric-equations-with-identities"
+    },
+    {
+      "seedId": "f6ccfe15-950e-427e-b5b5-50e4e21f293f",
+      "category": "science",
+      "navigationKeyword1": "trig",
+      "navigationKeyword2": "identities",
+      "question": "sin \u03b8 cos \u03b8 in double-angle?",
+      "correctAnswer": "(1/2) sin 2\u03b8",
+      "incorrectAnswers": [
+        "sin 2\u03b8",
+        "cos 2\u03b8",
+        "tan 2\u03b8"
+      ],
+      "explanation": "Useful integral identity.",
+      "keywords": [
+        "product-to-sum",
+        "identities"
+      ],
+      "source": "https://openstax.org/books/precalculus-2e/pages/7-3-double-angle-half-angle-reduction-formulas"
+    },
+    {
+      "seedId": "97a3d25e-97c3-4fbb-b292-7db2d68bb68e",
+      "category": "science",
+      "navigationKeyword1": "trig",
+      "navigationKeyword2": "identities",
+      "question": "sin(2\u03b8)?",
+      "correctAnswer": "2 sin \u03b8 cos \u03b8",
+      "incorrectAnswers": [
+        "sin^2 \u03b8",
+        "2 sin \u03b8",
+        "cos^2 \u03b8"
+      ],
+      "explanation": "Double-angle.",
+      "keywords": [
+        "double-angle",
+        "sine"
+      ],
+      "source": "https://openstax.org/books/precalculus-2e/pages/7-3-double-angle-half-angle-reduction-formulas"
+    },
+    {
+      "seedId": "cc61add1-8855-4c5a-b9f4-a434968a2d05",
+      "category": "science",
+      "navigationKeyword1": "trig",
+      "navigationKeyword2": "identities",
+      "question": "sin(a+b)?",
+      "correctAnswer": "sin a cos b + cos a sin b",
+      "incorrectAnswers": [
+        "sin a + sin b",
+        "cos(a+b)",
+        "sin a cos b only"
+      ],
+      "explanation": "Sum identity.",
+      "keywords": [
+        "sum-formula",
+        "sine"
+      ],
+      "source": "https://openstax.org/books/precalculus-2e/pages/7-2-sum-and-difference-identities"
+    },
+    {
+      "seedId": "af443317-3ef9-4b97-8dd7-4e60968bceed",
+      "category": "science",
+      "navigationKeyword1": "trig",
+      "navigationKeyword2": "identities",
+      "question": "sin^2 \u03b8 + cos^2 \u03b8 used to?",
+      "correctAnswer": "Derive other identities",
+      "incorrectAnswers": [
+        "Prove triangles right",
+        "Eliminate \u03b8 always",
+        "Compute determinants"
+      ],
+      "explanation": "Fundamental.",
+      "keywords": [
+        "identities",
+        "pythagorean"
+      ],
+      "source": "https://openstax.org/books/precalculus-2e/pages/7-1-solving-trigonometric-equations-with-identities"
+    },
+    {
+      "seedId": "a768f31f-4a03-4cb5-90cc-4894e236fd32",
+      "category": "science",
+      "navigationKeyword1": "trig",
+      "navigationKeyword2": "identities",
+      "question": "sin^2 \u03b8 half-angle?",
+      "correctAnswer": "(1 \u2212 cos 2\u03b8)/2",
+      "incorrectAnswers": [
+        "(1+cos2\u03b8)/2",
+        "sin 2\u03b8",
+        "1/2"
+      ],
+      "explanation": "Power-reducing.",
+      "keywords": [
+        "half-angle",
+        "power-reducing"
+      ],
+      "source": "https://openstax.org/books/precalculus-2e/pages/7-3-double-angle-half-angle-reduction-formulas"
+    },
+    {
+      "seedId": "4077ab4b-da37-47c1-85cd-cad735ba175f",
+      "category": "science",
+      "navigationKeyword1": "trig",
+      "navigationKeyword2": "identities",
+      "question": "tan(a+b)?",
+      "correctAnswer": "(tan a + tan b)/(1 \u2212 tan a tan b)",
+      "incorrectAnswers": [
+        "tan a + tan b",
+        "tan a tan b",
+        "tan(a\u2212b) always"
+      ],
+      "explanation": "Denominator can be zero.",
+      "keywords": [
+        "sum-formula",
+        "tangent"
+      ],
+      "source": "https://openstax.org/books/precalculus-2e/pages/7-2-sum-and-difference-identities"
+    }
+  ]
+}

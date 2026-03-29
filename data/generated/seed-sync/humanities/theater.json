@@ -1,0 +1,235 @@
+{
+  "schemaVersion": 1,
+  "seedSet": "core-public-items",
+  "deltaPreviewLimit": 200,
+  "items": [
+    {
+      "seedId": "ad943d56-fa65-5419-a029-1093a86f15e0",
+      "category": "humanities",
+      "navigationKeyword1": "theater",
+      "navigationKeyword2": "actors",
+      "question": "What is an actor's main job in theater?",
+      "correctAnswer": "to perform a character for an audience",
+      "incorrectAnswers": [
+        "to tune the lights",
+        "to build the scenery alone",
+        "to print the posters"
+      ],
+      "explanation": "Actors bring characters to life through voice, movement, and interpretation.",
+      "keywords": [
+        "theater-actors",
+        "performance"
+      ],
+      "source": "https://www.britannica.com/art/acting"
+    },
+    {
+      "seedId": "f3de5640-31c7-5a70-a589-8a86ddb1005c",
+      "category": "humanities",
+      "navigationKeyword1": "theater",
+      "navigationKeyword2": "actors",
+      "question": "Why are stage actors trained in voice and movement?",
+      "correctAnswer": "so they can communicate clearly to a live audience",
+      "incorrectAnswers": [
+        "so they can paint scenery faster",
+        "so they can design the tickets",
+        "so they can replace the orchestra"
+      ],
+      "explanation": "Live performance depends on clear physical and vocal expression.",
+      "keywords": [
+        "theater-actors",
+        "stagecraft"
+      ],
+      "source": "https://www.nationaltheatre.org.uk/discover-more"
+    },
+    {
+      "seedId": "9a1afb15-05c2-5800-9034-7b8ac7792a87",
+      "category": "humanities",
+      "navigationKeyword1": "theater",
+      "navigationKeyword2": "drama",
+      "question": "In theater, drama usually centers on what?",
+      "correctAnswer": "conflict expressed through action and dialogue",
+      "incorrectAnswers": [
+        "paint mixing",
+        "museum storage",
+        "silent sculpture"
+      ],
+      "explanation": "Drama develops tension through characters, choices, and conflict.",
+      "keywords": [
+        "theater-drama",
+        "conflict"
+      ],
+      "source": "https://www.britannica.com/art/drama-literature"
+    },
+    {
+      "seedId": "8758d025-a5ac-5c24-b6be-8f72ab00799f",
+      "category": "humanities",
+      "navigationKeyword1": "theater",
+      "navigationKeyword2": "drama",
+      "question": "Why does dialogue matter so much in drama?",
+      "correctAnswer": "it reveals relationships, motives, and conflict",
+      "incorrectAnswers": [
+        "it replaces costumes",
+        "it tunes the orchestra",
+        "it hangs the scenery"
+      ],
+      "explanation": "In theater, dialogue carries much of the story, emotion, and conflict.",
+      "keywords": [
+        "theater-drama",
+        "dialogue"
+      ],
+      "source": "https://www.nationaltheatre.org.uk/discover-more"
+    },
+    {
+      "seedId": "8caac659-6783-5d73-91e5-9180e83cf38d",
+      "category": "humanities",
+      "navigationKeyword1": "theater",
+      "navigationKeyword2": "history",
+      "question": "Ancient Greek theater is especially important because it helped shape what later tradition?",
+      "correctAnswer": "Western drama",
+      "incorrectAnswers": [
+        "oil painting",
+        "architecture only",
+        "sacred music only"
+      ],
+      "explanation": "Ancient Greek theater strongly influenced later forms of Western drama and performance.",
+      "keywords": [
+        "theater-history",
+        "greece"
+      ],
+      "source": "https://www.britannica.com/art/Western-theatre"
+    },
+    {
+      "seedId": "33a2a7eb-4706-59c5-808a-d9f4db897baf",
+      "category": "humanities",
+      "navigationKeyword1": "theater",
+      "navigationKeyword2": "history",
+      "question": "Why is theater history often studied by period?",
+      "correctAnswer": "forms, staging, and audience expectations change over time",
+      "incorrectAnswers": [
+        "actors stop using language",
+        "all plays become the same",
+        "theater ignores culture"
+      ],
+      "explanation": "Theater history tracks how styles and practices shift across eras and cultures.",
+      "keywords": [
+        "theater-history",
+        "periods"
+      ],
+      "source": "https://www.loc.gov/collections/plays-and-musicals/"
+    },
+    {
+      "seedId": "751f3ef2-79eb-5608-bbc0-8d61d264ed0b",
+      "category": "humanities",
+      "navigationKeyword1": "theater",
+      "navigationKeyword2": "musicals",
+      "question": "In a musical, what does a song often do besides sound pleasant?",
+      "correctAnswer": "advance character or story",
+      "incorrectAnswers": [
+        "replace the stage crew",
+        "print the program",
+        "change the ticket price"
+      ],
+      "explanation": "Songs in musicals often reveal emotion, conflict, or turning points.",
+      "keywords": [
+        "musicals",
+        "storytelling"
+      ],
+      "source": "https://www.loc.gov/collections/american-variety-stage/"
+    },
+    {
+      "seedId": "549c44fd-4024-5812-b1e4-289cfc34250f",
+      "category": "humanities",
+      "navigationKeyword1": "theater",
+      "navigationKeyword2": "musicals",
+      "question": "What makes a musical different from a straight play?",
+      "correctAnswer": "songs are built into the storytelling",
+      "incorrectAnswers": [
+        "it has no actors",
+        "it cannot use dialogue",
+        "it must be silent"
+      ],
+      "explanation": "Musicals combine dialogue, music, lyrics, and staging as part of the narrative.",
+      "keywords": [
+        "musicals",
+        "theater"
+      ],
+      "source": "https://www.britannica.com/art/musical"
+    },
+    {
+      "seedId": "4f9754df-16d3-5906-9249-480841510c2e",
+      "category": "humanities",
+      "navigationKeyword1": "theater",
+      "navigationKeyword2": "plays",
+      "question": "A play is mainly written to be what?",
+      "correctAnswer": "performed on stage",
+      "incorrectAnswers": [
+        "hung in a gallery",
+        "read as a legal statute",
+        "stored as a blueprint"
+      ],
+      "explanation": "Plays are dramatic works built for performance through actors and staging.",
+      "keywords": [
+        "theater",
+        "plays"
+      ],
+      "source": "https://www.britannica.com/art/play-dramatic-literature"
+    },
+    {
+      "seedId": "d7186c7a-061e-5caa-8911-d47d2c6b4253",
+      "category": "humanities",
+      "navigationKeyword1": "theater",
+      "navigationKeyword2": "plays",
+      "question": "What is a scene in a play?",
+      "correctAnswer": "a smaller dramatic unit within an act",
+      "incorrectAnswers": [
+        "a printed footnote",
+        "a ticket stub",
+        "a musical scale"
+      ],
+      "explanation": "Scenes divide the action into manageable segments within the larger structure of the play.",
+      "keywords": [
+        "theater",
+        "scene"
+      ],
+      "source": "https://www.loc.gov/collections/plays-and-musicals/"
+    },
+    {
+      "seedId": "e97fe646-3ab4-5d57-98a5-f1c41e59e75c",
+      "category": "humanities",
+      "navigationKeyword1": "theater",
+      "navigationKeyword2": "stagecraft",
+      "question": "What can lighting do in a play besides help people see?",
+      "correctAnswer": "shape mood and guide attention",
+      "incorrectAnswers": [
+        "rewrite the script",
+        "replace the actors",
+        "serve refreshments"
+      ],
+      "explanation": "Lighting can help create atmosphere and direct the audience's focus.",
+      "keywords": [
+        "stagecraft",
+        "lighting"
+      ],
+      "source": "https://www.vam.ac.uk/articles/an-introduction-to-theatre-design"
+    },
+    {
+      "seedId": "8f5441f1-05cb-511e-8154-4a4b5a688d83",
+      "category": "humanities",
+      "navigationKeyword1": "theater",
+      "navigationKeyword2": "stagecraft",
+      "question": "What does stagecraft include?",
+      "correctAnswer": "the practical work of sets, lights, costumes, and sound",
+      "incorrectAnswers": [
+        "only book reviews",
+        "only ticket sales",
+        "only audience applause"
+      ],
+      "explanation": "Stagecraft covers the technical and design side of theatrical production.",
+      "keywords": [
+        "stagecraft",
+        "theater"
+      ],
+      "source": "https://www.britannica.com/art/stagecraft"
+    }
+  ]
+}

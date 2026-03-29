@@ -1,0 +1,121 @@
+{
+  "schemaVersion": 1,
+  "seedSet": "core-public-items",
+  "deltaPreviewLimit": 200,
+  "items": [
+    {
+      "seedId": "8f4f4de5-dbaf-5023-baca-dbe5ab088cd7",
+      "category": "tech",
+      "navigationKeyword1": "security",
+      "navigationKeyword2": "iam",
+      "question": "In OAuth 2.0, what does an access token typically authorize?",
+      "correctAnswer": "A client to call specific APIs on behalf of a resource owner",
+      "incorrectAnswers": [
+        "Physical building entry without badges",
+        "Kernel memory allocation forever",
+        "DNS root zone edits"
+      ],
+      "explanation": "OAuth separates consent and delegation so users can grant limited API access without sharing primary passwords.",
+      "keywords": [
+        "security",
+        "oauth"
+      ],
+      "source": "https://www.rfc-editor.org/rfc/rfc6749"
+    },
+    {
+      "seedId": "91354160-18c4-52de-888d-427f174ab1ee",
+      "category": "tech",
+      "navigationKeyword1": "security",
+      "navigationKeyword2": "iam",
+      "question": "What does multi-factor authentication add beyond a password?",
+      "correctAnswer": "At least one extra factor such as a device or biometric proof",
+      "incorrectAnswers": [
+        "A longer desktop wallpaper",
+        "More RAM for the browser",
+        "Automatic admin rights"
+      ],
+      "explanation": "MFA combines categories like something you know with something you have, reducing account takeover from stolen passwords.",
+      "keywords": [
+        "security",
+        "mfa"
+      ],
+      "source": "https://csrc.nist.gov/glossary/term/multi-factor-authentication"
+    },
+    {
+      "seedId": "dab4d576-7da5-59ae-b796-df8af1e86531",
+      "category": "tech",
+      "navigationKeyword1": "security",
+      "navigationKeyword2": "iam",
+      "question": "What does role-based access control (RBAC) assign permissions to?",
+      "correctAnswer": "Roles that users inherit instead of ad hoc rights per user",
+      "incorrectAnswers": [
+        "Only individual IP packets",
+        "GPU shader programs only",
+        "Database row checksums"
+      ],
+      "explanation": "Grouping privileges in roles keeps policy manageable and supports least privilege at scale.",
+      "keywords": [
+        "security",
+        "rbac"
+      ],
+      "source": "https://csrc.nist.gov/glossary/term/role-based-access-control"
+    },
+    {
+      "seedId": "3fe33e5c-abf6-5562-a939-bd65515073d2",
+      "category": "tech",
+      "navigationKeyword1": "security",
+      "navigationKeyword2": "iam",
+      "question": "What is SAML commonly used for?",
+      "correctAnswer": "Browser SSO using XML assertions between an identity provider and a service provider",
+      "incorrectAnswers": [
+        "Low-level packet routing on switches",
+        "Compiling Java to native code",
+        "JPEG image compression"
+      ],
+      "explanation": "SAML exchanges signed assertions so users sign in once at an IdP and gain access to federated applications.",
+      "keywords": [
+        "security",
+        "saml"
+      ],
+      "source": "https://en.wikipedia/wiki/Security_Assertion_Markup_Language"
+    },
+    {
+      "seedId": "6bc18f9c-4820-5463-be2d-42aca92753a5",
+      "category": "tech",
+      "navigationKeyword1": "security",
+      "navigationKeyword2": "iam",
+      "question": "What is the difference between authentication and authorization?",
+      "correctAnswer": "Authentication proves identity; authorization decides what that identity may do",
+      "incorrectAnswers": [
+        "They are identical terms",
+        "Authorization proves identity; authentication decides actions",
+        "Both refer only to disk encryption"
+      ],
+      "explanation": "You first establish who someone is, then apply policy rules about allowed resources and operations.",
+      "keywords": [
+        "security",
+        "authn-authz"
+      ],
+      "source": "https://cheatsheetseries.owasp.org/cheatsheets/Authentication_Cheat_Sheet.html"
+    },
+    {
+      "seedId": "a88a0f62-1c0d-5028-a7e6-923405e8eb2f",
+      "category": "tech",
+      "navigationKeyword1": "security",
+      "navigationKeyword2": "iam",
+      "question": "What problem does single sign-on (SSO) mainly reduce for users?",
+      "correctAnswer": "Repeated password prompts across related applications",
+      "incorrectAnswers": [
+        "The need for any authentication",
+        "Network latency to Mars",
+        "Disk fragmentation"
+      ],
+      "explanation": "SSO centralizes authentication so downstream apps trust a session established by the identity provider.",
+      "keywords": [
+        "security",
+        "sso"
+      ],
+      "source": "https://en.wikipedia.org/wiki/Single_sign-on"
+    }
+  ]
+}

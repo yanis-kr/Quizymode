@@ -1,0 +1,227 @@
+{
+  "schemaVersion": 1,
+  "seedSet": "core-public-items",
+  "deltaPreviewLimit": 200,
+  "items": [
+    {
+      "seedId": "87442254-e0f2-4693-8b5c-a6bde4a00849",
+      "category": "geography",
+      "navigationKeyword1": "maps",
+      "navigationKeyword2": "coordinates",
+      "question": "Cartography is best described as what?",
+      "correctAnswer": "the art and science of making maps and charts",
+      "incorrectAnswers": [
+        "only computer 3D modeling",
+        "the study of ocean trenches only",
+        "weather radar interpretation only"
+      ],
+      "explanation": "Britannica defines cartography as the art and science of making maps and charts.",
+      "keywords": [
+        "coordinates",
+        "cartography",
+        "definitions"
+      ],
+      "source": "https://www.britannica.com/science/map"
+    },
+    {
+      "seedId": "cc653b25-519d-44a5-b358-711755300992",
+      "category": "geography",
+      "navigationKeyword1": "maps",
+      "navigationKeyword2": "coordinates",
+      "question": "East and west are traditionally tied to which daily Sun events?",
+      "correctAnswer": "sunrise and sunset directions",
+      "incorrectAnswers": [
+        "solar noon only",
+        "midnight zenith",
+        "equinox shadows only"
+      ],
+      "explanation": "Britannica states east and west align with sunrise and sunset directions in traditional reckoning.",
+      "keywords": [
+        "coordinates",
+        "cardinal-directions",
+        "sun"
+      ],
+      "source": "https://www.britannica.com/technology/navigation-technology"
+    },
+    {
+      "seedId": "4e4b99e4-d3d7-43a7-8759-8ecda54f36a6",
+      "category": "geography",
+      "navigationKeyword1": "maps",
+      "navigationKeyword2": "coordinates",
+      "question": "From the equator toward the poles, does one degree of latitude stay about the same distance on the ground?",
+      "correctAnswer": "Yes, latitude degrees stay fairly constant in ground distance.",
+      "incorrectAnswers": [
+        "No, latitude degrees shrink to zero at the tropics.",
+        "No, latitude degrees only apply over oceans.",
+        "No, they double in length every 10\u00b0 toward the poles."
+      ],
+      "explanation": "USGS notes that a degree, minute, or second of latitude remains fairly constant from the equator to the poles.",
+      "keywords": [
+        "coordinates",
+        "latitude",
+        "usgs"
+      ],
+      "source": "https://www.usgs.gov/faqs/how-much-distance-does-degree-minute-and-second-cover-your-maps"
+    },
+    {
+      "seedId": "a0383da7-39eb-42d4-85a5-69815c92871a",
+      "category": "geography",
+      "navigationKeyword1": "maps",
+      "navigationKeyword2": "coordinates",
+      "question": "Globes are maps represented on the surface of what shape?",
+      "correctAnswer": "a sphere",
+      "incorrectAnswers": [
+        "a cube",
+        "a flat cone only",
+        "a cylinder with no poles"
+      ],
+      "explanation": "Britannica defines globes as maps drawn on a spherical surface.",
+      "keywords": [
+        "coordinates",
+        "globe",
+        "maps"
+      ],
+      "source": "https://www.britannica.com/science/map"
+    },
+    {
+      "seedId": "b2c9ece3-afa5-4732-8878-5fe9921ce3c4",
+      "category": "geography",
+      "navigationKeyword1": "maps",
+      "navigationKeyword2": "coordinates",
+      "question": "How many UTM zones span the globe in the system described by USGS?",
+      "correctAnswer": "60",
+      "incorrectAnswers": [
+        "12",
+        "24",
+        "36"
+      ],
+      "explanation": "USGS states the UTM system consists of 60 zones, each 6 degrees of longitude wide.",
+      "keywords": [
+        "coordinates",
+        "utm",
+        "zones"
+      ],
+      "source": "https://www.usgs.gov/faqs/what-does-term-utm-mean-utm-better-or-more-accurate-latitudelongitude"
+    },
+    {
+      "seedId": "10320dc9-caa7-478b-a527-53e219ca8db7",
+      "category": "geography",
+      "navigationKeyword1": "maps",
+      "navigationKeyword2": "coordinates",
+      "question": "In the Northern Hemisphere, Polaris helps navigators estimate which direction?",
+      "correctAnswer": "north",
+      "incorrectAnswers": [
+        "east only",
+        "directly toward the equator",
+        "the direction of sunset year-round"
+      ],
+      "explanation": "Britannica notes Northern Hemisphere navigators used the Pole Star\u2019s apparent rotation for orientation.",
+      "keywords": [
+        "coordinates",
+        "celestial-navigation",
+        "north"
+      ],
+      "source": "https://www.britannica.com/technology/navigation-technology"
+    },
+    {
+      "seedId": "a0993a21-837c-49e4-9e41-ce61e928f51e",
+      "category": "geography",
+      "navigationKeyword1": "maps",
+      "navigationKeyword2": "coordinates",
+      "question": "Lines showing parallels of latitude and meridians of longitude on a map are often called what?",
+      "correctAnswer": "a graticule",
+      "incorrectAnswers": [
+        "an isobar",
+        "a contour stack",
+        "a rhumb folio"
+      ],
+      "explanation": "USGS refers to the latitude/longitude graticule when discussing datum shifts on maps.",
+      "keywords": [
+        "coordinates",
+        "graticule",
+        "mapping"
+      ],
+      "source": "https://www.usgs.gov/faqs/how-large-north-american-datum-1927-nad-27-nad-83-shift"
+    },
+    {
+      "seedId": "2b23514d-ecfa-42a5-ab3c-655892011147",
+      "category": "geography",
+      "navigationKeyword1": "maps",
+      "navigationKeyword2": "coordinates",
+      "question": "Reliable sea charts became more systematic with the advent of which paired tools?",
+      "correctAnswer": "the magnetic compass and methods for determining latitude and longitude",
+      "incorrectAnswers": [
+        "radar altimeters and lidar alone",
+        "sonar-only depth finders",
+        "barcodes on paper charts"
+      ],
+      "explanation": "Britannica\u2019s navigation survey ties dependable sea charts to the magnetic compass and latitude/longitude determination.",
+      "keywords": [
+        "coordinates",
+        "navigation",
+        "history"
+      ],
+      "source": "https://www.britannica.com/technology/navigation-technology"
+    },
+    {
+      "seedId": "34cc17cb-fbbb-4d96-aa87-168639fe0134",
+      "category": "geography",
+      "navigationKeyword1": "maps",
+      "navigationKeyword2": "coordinates",
+      "question": "UTM zones are numbered 1\u201360 beginning at which longitude, according to USGS?",
+      "correctAnswer": "180 degrees longitude, increasing eastward",
+      "incorrectAnswers": [
+        "0\u00b0 at Greenwich, increasing westward only",
+        "the International Date Line only on water",
+        "the prime meridian, alternating north and south"
+      ],
+      "explanation": "USGS says UTM zones begin at 180\u00b0 longitude and increase to the east.",
+      "keywords": [
+        "coordinates",
+        "utm",
+        "longitude"
+      ],
+      "source": "https://www.usgs.gov/faqs/what-does-term-utm-mean-utm-better-or-more-accurate-latitudelongitude"
+    },
+    {
+      "seedId": "dc02437d-ea12-4541-a163-fbd835d6ec97",
+      "category": "geography",
+      "navigationKeyword1": "maps",
+      "navigationKeyword2": "coordinates",
+      "question": "What does the acronym UTM stand for in mapping?",
+      "correctAnswer": "Universal Transverse Mercator",
+      "incorrectAnswers": [
+        "United Terrain Model",
+        "Uniform Temperature Map",
+        "Universal Time Meridian"
+      ],
+      "explanation": "USGS defines UTM as Universal Transverse Mercator, a plane coordinate grid based on the Transverse Mercator projection.",
+      "keywords": [
+        "coordinates",
+        "utm",
+        "grids"
+      ],
+      "source": "https://www.usgs.gov/faqs/what-does-term-utm-mean-utm-better-or-more-accurate-latitudelongitude"
+    },
+    {
+      "seedId": "4d7b97aa-0894-4cb6-9fe1-c4faa50125db",
+      "category": "geography",
+      "navigationKeyword1": "maps",
+      "navigationKeyword2": "coordinates",
+      "question": "Why does one degree of longitude cover less ground distance near the poles than near the equator?",
+      "correctAnswer": "Meridians converge toward the poles.",
+      "incorrectAnswers": [
+        "Gravity compresses longitude at high latitudes.",
+        "Longitude is only measured underwater.",
+        "The equator uses a different mile definition."
+      ],
+      "explanation": "USGS explains that longitude distance varies greatly near the poles because meridians converge.",
+      "keywords": [
+        "coordinates",
+        "longitude",
+        "meridians"
+      ],
+      "source": "https://www.usgs.gov/faqs/how-much-distance-does-degree-minute-and-second-cover-your-maps"
+    }
+  ]
+}

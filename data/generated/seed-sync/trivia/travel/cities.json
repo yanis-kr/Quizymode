@@ -1,0 +1,197 @@
+{
+  "schemaVersion": 1,
+  "seedSet": "core-public-items",
+  "deltaPreviewLimit": 200,
+  "items": [
+    {
+      "seedId": "a51282ce-4b39-5bb7-8fb2-42396b6d9c6c",
+      "category": "trivia",
+      "navigationKeyword1": "travel",
+      "navigationKeyword2": "cities",
+      "question": "Big Ben stands in which city?",
+      "correctAnswer": "London",
+      "incorrectAnswers": [
+        "Manchester",
+        "Liverpool",
+        "Birmingham"
+      ],
+      "explanation": "Big Ben stands in London.",
+      "keywords": [
+        "cities",
+        "travel-trivia"
+      ],
+      "source": "https://www.britannica.com/place/London"
+    },
+    {
+      "seedId": "95de1e8a-4f4c-5d0d-8512-5c090d2240e5",
+      "category": "trivia",
+      "navigationKeyword1": "travel",
+      "navigationKeyword2": "cities",
+      "question": "The Taj Mahal is in which city?",
+      "correctAnswer": "Agra",
+      "incorrectAnswers": [
+        "Jaipur",
+        "Delhi",
+        "Mumbai"
+      ],
+      "explanation": "The Taj Mahal is in Agra.",
+      "keywords": [
+        "cities",
+        "travel-trivia"
+      ],
+      "source": "https://www.britannica.com/place/Agra"
+    },
+    {
+      "seedId": "b6c1962d-7889-57ee-9151-99fd0000e6c7",
+      "category": "trivia",
+      "navigationKeyword1": "travel",
+      "navigationKeyword2": "cities",
+      "question": "Victoria Harbour is in which city?",
+      "correctAnswer": "Hong Kong",
+      "incorrectAnswers": [
+        "Singapore",
+        "Shanghai",
+        "Busan"
+      ],
+      "explanation": "Victoria Harbour is in Hong Kong.",
+      "keywords": [
+        "cities",
+        "travel-trivia"
+      ],
+      "source": "https://www.britannica.com/place/Hong-Kong"
+    },
+    {
+      "seedId": "8ad317db-5e6a-515f-97c4-ffe94c6121db",
+      "category": "trivia",
+      "navigationKeyword1": "travel",
+      "navigationKeyword2": "cities",
+      "question": "What river runs through Paris?",
+      "correctAnswer": "Seine",
+      "incorrectAnswers": [
+        "Thames",
+        "Danube",
+        "Tiber"
+      ],
+      "explanation": "Paris is built on the Seine River.",
+      "keywords": [
+        "cities",
+        "travel-trivia"
+      ],
+      "source": "https://www.britannica.com/place/Paris"
+    },
+    {
+      "seedId": "71ae264f-266d-5aa5-91cb-4aa8e3b566a4",
+      "category": "trivia",
+      "navigationKeyword1": "travel",
+      "navigationKeyword2": "cities",
+      "question": "Which city is famous for canals and gondolas?",
+      "correctAnswer": "Venice",
+      "incorrectAnswers": [
+        "Naples",
+        "Lisbon",
+        "Athens"
+      ],
+      "explanation": "Venice is famous for its canals and gondolas.",
+      "keywords": [
+        "cities",
+        "travel-trivia"
+      ],
+      "source": "https://www.britannica.com/place/Venice"
+    },
+    {
+      "seedId": "5c6fd600-2feb-55c5-9a3b-673e6f5e7f06",
+      "category": "trivia",
+      "navigationKeyword1": "travel",
+      "navigationKeyword2": "cities",
+      "question": "Which city is famous for the Golden Gate Bridge and Alcatraz Island?",
+      "correctAnswer": "San Francisco",
+      "incorrectAnswers": [
+        "Seattle",
+        "Los Angeles",
+        "San Diego"
+      ],
+      "explanation": "San Francisco is known for both the Golden Gate Bridge and Alcatraz.",
+      "keywords": [
+        "cities",
+        "travel-trivia"
+      ],
+      "source": "https://www.britannica.com/place/San-Francisco-California"
+    },
+    {
+      "seedId": "cc4e205a-2211-5c3a-a912-fc87115ededf",
+      "category": "trivia",
+      "navigationKeyword1": "travel",
+      "navigationKeyword2": "cities",
+      "question": "Which city is home to the Colosseum?",
+      "correctAnswer": "Rome",
+      "incorrectAnswers": [
+        "Athens",
+        "Milan",
+        "Florence"
+      ],
+      "explanation": "The Colosseum is in Rome.",
+      "keywords": [
+        "cities",
+        "travel-trivia"
+      ],
+      "source": "https://www.britannica.com/place/Rome"
+    },
+    {
+      "seedId": "647dd93a-57b5-51b0-b169-232e3344098c",
+      "category": "trivia",
+      "navigationKeyword1": "travel",
+      "navigationKeyword2": "cities",
+      "question": "Which city sits at the foot of Table Mountain?",
+      "correctAnswer": "Cape Town",
+      "incorrectAnswers": [
+        "Nairobi",
+        "Casablanca",
+        "Durban"
+      ],
+      "explanation": "Cape Town sits at the foot of Table Mountain.",
+      "keywords": [
+        "cities",
+        "travel-trivia"
+      ],
+      "source": "https://www.britannica.com/place/Cape-Town"
+    },
+    {
+      "seedId": "826bee2f-f573-592c-a772-185e4520b68e",
+      "category": "trivia",
+      "navigationKeyword1": "travel",
+      "navigationKeyword2": "cities",
+      "question": "Which city spans both Europe and Asia across the Bosporus?",
+      "correctAnswer": "Istanbul",
+      "incorrectAnswers": [
+        "Athens",
+        "Cairo",
+        "Baku"
+      ],
+      "explanation": "Istanbul spans both Europe and Asia across the Bosporus.",
+      "keywords": [
+        "cities",
+        "travel-trivia"
+      ],
+      "source": "https://www.britannica.com/place/Istanbul"
+    },
+    {
+      "seedId": "0d0a4c75-cabf-5f00-8791-6a16cd973143",
+      "category": "trivia",
+      "navigationKeyword1": "travel",
+      "navigationKeyword2": "cities",
+      "question": "Which city-state is also a country?",
+      "correctAnswer": "Singapore",
+      "incorrectAnswers": [
+        "Monaco",
+        "Doha",
+        "Macau"
+      ],
+      "explanation": "Singapore is both a city and a sovereign country.",
+      "keywords": [
+        "cities",
+        "travel-trivia"
+      ],
+      "source": "https://www.britannica.com/place/Singapore"
+    }
+  ]
+}

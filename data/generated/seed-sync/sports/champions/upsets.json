@@ -1,0 +1,207 @@
+{
+  "schemaVersion": 1,
+  "seedSet": "core-public-items",
+  "deltaPreviewLimit": 200,
+  "items": [
+    {
+      "seedId": "143067bd-e784-5dc7-9208-ee3611df2701",
+      "category": "sports",
+      "navigationKeyword1": "champions",
+      "navigationKeyword2": "upsets",
+      "question": "Which 16-seed became the first to beat a 1-seed in the men's NCAA tournament in 2018?",
+      "correctAnswer": "UMBC",
+      "incorrectAnswers": [
+        "VCU",
+        "Butler",
+        "George Mason"
+      ],
+      "explanation": "UMBC beat Virginia in the tournament's first 16-over-1 upset.",
+      "keywords": [
+        "champions",
+        "upsets",
+        "ncaa"
+      ],
+      "source": "https://www.ncaa.com/"
+    },
+    {
+      "seedId": "e5af809d-9694-5079-b6a9-0600675c403f",
+      "category": "sports",
+      "navigationKeyword1": "champions",
+      "navigationKeyword2": "upsets",
+      "question": "Which English club shocked the Premier League by winning the 2015-16 title?",
+      "correctAnswer": "Leicester City",
+      "incorrectAnswers": [
+        "Tottenham Hotspur",
+        "Arsenal",
+        "Liverpool"
+      ],
+      "explanation": "Leicester's title run remains one of the greatest football upsets.",
+      "keywords": [
+        "champions",
+        "upsets",
+        "leicester"
+      ],
+      "source": "https://www.britannica.com/topic/Leicester-City"
+    },
+    {
+      "seedId": "364dcb4d-68f6-57a9-9822-e80dc499d899",
+      "category": "sports",
+      "navigationKeyword1": "champions",
+      "navigationKeyword2": "upsets",
+      "question": "Which NFL team ruined the Patriots' 18-0 season in Super Bowl XLII?",
+      "correctAnswer": "New York Giants",
+      "incorrectAnswers": [
+        "Indianapolis Colts",
+        "Pittsburgh Steelers",
+        "Green Bay Packers"
+      ],
+      "explanation": "The Giants upset New England and denied a perfect season.",
+      "keywords": [
+        "champions",
+        "upsets",
+        "super-bowl"
+      ],
+      "source": "https://operations.nfl.com/learn-the-game/nfl-basics/"
+    },
+    {
+      "seedId": "08a70f35-95d0-5050-aae3-2418d6ed574b",
+      "category": "sports",
+      "navigationKeyword1": "champions",
+      "navigationKeyword2": "upsets",
+      "question": "Which baseball team came back from 0-3 in the 2004 ALCS against the Yankees?",
+      "correctAnswer": "Boston Red Sox",
+      "incorrectAnswers": [
+        "St. Louis Cardinals",
+        "Cleveland Indians",
+        "Houston Astros"
+      ],
+      "explanation": "Boston completed one of the greatest postseason comebacks in baseball history.",
+      "keywords": [
+        "champions",
+        "upsets",
+        "red-sox"
+      ],
+      "source": "https://www.mlb.com/history"
+    },
+    {
+      "seedId": "53673a9a-b1f7-5279-925b-1648a076ef50",
+      "category": "sports",
+      "navigationKeyword1": "champions",
+      "navigationKeyword2": "upsets",
+      "question": "Which boxer knocked out Mike Tyson in Tokyo in 1990?",
+      "correctAnswer": "Buster Douglas",
+      "incorrectAnswers": [
+        "Evander Holyfield",
+        "Lennox Lewis",
+        "Larry Holmes"
+      ],
+      "explanation": "Douglas' victory over Tyson is one of boxing's biggest surprises.",
+      "keywords": [
+        "champions",
+        "upsets",
+        "boxing"
+      ],
+      "source": "https://www.britannica.com/biography/Buster-Douglas"
+    },
+    {
+      "seedId": "b327b4df-a1a4-5317-87c3-d721032db522",
+      "category": "sports",
+      "navigationKeyword1": "champions",
+      "navigationKeyword2": "upsets",
+      "question": "Which club came back from 3-0 down at halftime to beat AC Milan in the 2005 Champions League final?",
+      "correctAnswer": "Liverpool",
+      "incorrectAnswers": [
+        "Chelsea",
+        "Barcelona",
+        "Manchester United"
+      ],
+      "explanation": "Liverpool's comeback in Istanbul is one of soccer's iconic shocks.",
+      "keywords": [
+        "champions",
+        "upsets",
+        "istanbul"
+      ],
+      "source": "https://www.uefa.com/uefachampionsleague/history/"
+    },
+    {
+      "seedId": "9e753ef1-fdbc-503a-afb3-8e2a3cfaad75",
+      "category": "sports",
+      "navigationKeyword1": "champions",
+      "navigationKeyword2": "upsets",
+      "question": "Which country beat Brazil 2-1 in the 1950 World Cup's decisive Maracana match?",
+      "correctAnswer": "Uruguay",
+      "incorrectAnswers": [
+        "Argentina",
+        "Spain",
+        "Italy"
+      ],
+      "explanation": "Uruguay's win in Rio became known as the Maracanazo.",
+      "keywords": [
+        "champions",
+        "upsets",
+        "maracanazo"
+      ],
+      "source": "https://www.britannica.com/sports/World-Cup-football"
+    },
+    {
+      "seedId": "8782cf93-986d-5701-b7b9-e918cf60ff82",
+      "category": "sports",
+      "navigationKeyword1": "champions",
+      "navigationKeyword2": "upsets",
+      "question": "Which fighter upset Ronda Rousey with a head-kick knockout in 2015?",
+      "correctAnswer": "Holly Holm",
+      "incorrectAnswers": [
+        "Amanda Nunes",
+        "Miesha Tate",
+        "Cris Cyborg"
+      ],
+      "explanation": "Holm's win over Rousey changed the UFC women's bantamweight division.",
+      "keywords": [
+        "champions",
+        "upsets",
+        "ufc"
+      ],
+      "source": "https://www.ufc.com/"
+    },
+    {
+      "seedId": "f7db1d09-93ef-599c-9125-707afc000332",
+      "category": "sports",
+      "navigationKeyword1": "champions",
+      "navigationKeyword2": "upsets",
+      "question": "Which nation won UEFA Euro 2004 despite entering as a major outsider?",
+      "correctAnswer": "Greece",
+      "incorrectAnswers": [
+        "Portugal",
+        "Netherlands",
+        "Czech Republic"
+      ],
+      "explanation": "Greece stunned Europe by winning Euro 2004.",
+      "keywords": [
+        "champions",
+        "upsets",
+        "euro-2004"
+      ],
+      "source": "https://www.uefa.com/uefaeuro/history/"
+    },
+    {
+      "seedId": "7a65d03d-bf30-5544-8e68-c0577b57f411",
+      "category": "sports",
+      "navigationKeyword1": "champions",
+      "navigationKeyword2": "upsets",
+      "question": "Which underdog nation beat the Soviet Union in the 1980 Miracle on Ice hockey game?",
+      "correctAnswer": "United States",
+      "incorrectAnswers": [
+        "Canada",
+        "Sweden",
+        "Finland"
+      ],
+      "explanation": "The U.S. upset the Soviets at Lake Placid in one of sport's most famous shocks.",
+      "keywords": [
+        "champions",
+        "upsets",
+        "miracle-on-ice"
+      ],
+      "source": "https://www.britannica.com/sports/Olympic-Games"
+    }
+  ]
+}

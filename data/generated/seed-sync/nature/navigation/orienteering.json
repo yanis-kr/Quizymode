@@ -1,0 +1,121 @@
+{
+  "schemaVersion": 1,
+  "seedSet": "core-public-items",
+  "deltaPreviewLimit": 200,
+  "items": [
+    {
+      "seedId": "1e70b564-66ac-5703-a105-11c11ee9bd7b",
+      "category": "nature",
+      "navigationKeyword1": "navigation",
+      "navigationKeyword2": "orienteering",
+      "question": "In orienteering, is the route between checkpoints usually marked for you?",
+      "correctAnswer": "no",
+      "incorrectAnswers": [
+        "yes, with ropes",
+        "yes, with painted arrows",
+        "yes, by a guide walking ahead"
+      ],
+      "explanation": "Competitors choose their own route between checkpoints rather than following a marked path.",
+      "keywords": [
+        "orienteering",
+        "nature-navigation"
+      ],
+      "source": "https://www.rei.com/learn/expert-advice/orienteering-basics.html"
+    },
+    {
+      "seedId": "120ec74f-7b1c-5a2a-9e1a-dea5727028f8",
+      "category": "nature",
+      "navigationKeyword1": "navigation",
+      "navigationKeyword2": "orienteering",
+      "question": "What color are the checkpoint flags commonly used in orienteering?",
+      "correctAnswer": "orange and white",
+      "incorrectAnswers": [
+        "red and black",
+        "blue and yellow",
+        "green and white"
+      ],
+      "explanation": "Orienteering controls are commonly marked with orange-and-white flags so participants can identify them in the terrain.",
+      "keywords": [
+        "orienteering",
+        "nature-navigation"
+      ],
+      "source": "https://troopleader.scouting.org/program-features/orienteering/information/"
+    },
+    {
+      "seedId": "42277405-ad47-50c9-8428-733d8e19a844",
+      "category": "nature",
+      "navigationKeyword1": "navigation",
+      "navigationKeyword2": "orienteering",
+      "question": "What do you do at each control point in an orienteering event?",
+      "correctAnswer": "record that you found it by punching or electronically checking in",
+      "incorrectAnswers": [
+        "light a signal fire",
+        "leave a note for the next runner",
+        "swap maps with another participant"
+      ],
+      "explanation": "At each control, you prove you found the correct location by punching or electronically registering there.",
+      "keywords": [
+        "orienteering",
+        "nature-navigation"
+      ],
+      "source": "https://troopleader.scouting.org/program-features/orienteering/information/"
+    },
+    {
+      "seedId": "a779abc6-3f4e-5e5a-824c-2c379e6ae06e",
+      "category": "nature",
+      "navigationKeyword1": "navigation",
+      "navigationKeyword2": "orienteering",
+      "question": "What is orienteering?",
+      "correctAnswer": "a navigation sport using a map and compass",
+      "incorrectAnswers": [
+        "a type of rock climbing",
+        "a shelter-building contest",
+        "a paddling race with no map"
+      ],
+      "explanation": "Orienteering is a timed navigation activity where you find checkpoints using map skills.",
+      "keywords": [
+        "orienteering",
+        "nature-navigation"
+      ],
+      "source": "https://orienteeringusa.org/explore/what-is-orienteering/"
+    },
+    {
+      "seedId": "e9b900b9-c5eb-57a8-810b-a15d0d6cb110",
+      "category": "nature",
+      "navigationKeyword1": "navigation",
+      "navigationKeyword2": "orienteering",
+      "question": "What map symbol usually marks the finish in orienteering?",
+      "correctAnswer": "a double circle",
+      "incorrectAnswers": [
+        "a black X",
+        "a triangle",
+        "a shaded square"
+      ],
+      "explanation": "The finish is typically shown with a double circle on an orienteering map.",
+      "keywords": [
+        "orienteering",
+        "nature-navigation"
+      ],
+      "source": "https://orienteeringusa.org/explore/how-to-orienteer/"
+    },
+    {
+      "seedId": "e4434aae-88d1-52f3-be2a-a94238840466",
+      "category": "nature",
+      "navigationKeyword1": "navigation",
+      "navigationKeyword2": "orienteering",
+      "question": "What map symbol usually marks the start of an orienteering course?",
+      "correctAnswer": "a triangle",
+      "incorrectAnswers": [
+        "a square",
+        "a star",
+        "a dashed line"
+      ],
+      "explanation": "Orienteering maps commonly use a triangle for the start, circles for controls, and a double circle for the finish.",
+      "keywords": [
+        "orienteering",
+        "nature-navigation"
+      ],
+      "source": "https://orienteeringusa.org/explore/how-to-orienteer/"
+    }
+  ]
+}

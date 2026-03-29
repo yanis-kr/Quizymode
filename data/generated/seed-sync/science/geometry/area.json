@@ -1,0 +1,235 @@
+{
+  "schemaVersion": 1,
+  "seedSet": "core-public-items",
+  "deltaPreviewLimit": 200,
+  "items": [
+    {
+      "seedId": "245eb378-04fc-4989-a8e8-859687bc2fc8",
+      "category": "science",
+      "navigationKeyword1": "geometry",
+      "navigationKeyword2": "area",
+      "question": "If two figures are similar with scale factor k, how do their areas compare?",
+      "correctAnswer": "The area ratio is k^2",
+      "incorrectAnswers": [
+        "The area ratio is k",
+        "The area ratio is k^3",
+        "The areas are always equal"
+      ],
+      "explanation": "Area depends on two dimensions, so scaling all lengths by k scales area by k squared.",
+      "keywords": [
+        "similar-area",
+        "ratio"
+      ],
+      "source": "https://www.mathsisfun.com/geometry/triangles-similar.html"
+    },
+    {
+      "seedId": "d761b65f-906b-4f53-a83d-2e720842aa20",
+      "category": "science",
+      "navigationKeyword1": "geometry",
+      "navigationKeyword2": "area",
+      "question": "What does the shoelace formula compute?",
+      "correctAnswer": "The area of a polygon from its ordered vertex coordinates",
+      "incorrectAnswers": [
+        "The perimeter of any polygon",
+        "The area of a circle",
+        "The slope of a line"
+      ],
+      "explanation": "The shoelace formula uses ordered coordinate pairs to compute polygon area without subdividing it first.",
+      "keywords": [
+        "shoelace",
+        "polygon"
+      ],
+      "source": "https://en.wikipedia.org/wiki/Shoelace_formula"
+    },
+    {
+      "seedId": "d80e63f1-8e4d-4726-8ca9-989036066ebb",
+      "category": "science",
+      "navigationKeyword1": "geometry",
+      "navigationKeyword2": "area",
+      "question": "What is a reliable strategy for finding the area of a composite figure?",
+      "correctAnswer": "Break it into simpler shapes and add or subtract their areas",
+      "incorrectAnswers": [
+        "Use one universal formula for every figure",
+        "Estimate without measuring",
+        "Multiply all visible lengths together"
+      ],
+      "explanation": "Composite figures are usually solved by decomposing them into rectangles, triangles, circles, or other familiar shapes.",
+      "keywords": [
+        "composite",
+        "area"
+      ],
+      "source": "https://www.mathsisfun.com/geometry/area.html"
+    },
+    {
+      "seedId": "ae5be2d2-1610-4e99-9930-fa68c925d7c9",
+      "category": "science",
+      "navigationKeyword1": "geometry",
+      "navigationKeyword2": "area",
+      "question": "What is the area formula for a parallelogram?",
+      "correctAnswer": "base times height",
+      "incorrectAnswers": [
+        "base times side length",
+        "base squared",
+        "(1/2) base times height"
+      ],
+      "explanation": "For a parallelogram, area is the base multiplied by the perpendicular height.",
+      "keywords": [
+        "parallelogram",
+        "area"
+      ],
+      "source": "https://www.mathsisfun.com/geometry/parallelogram.html"
+    },
+    {
+      "seedId": "8d61a4f4-2294-435b-953d-c2155add5047",
+      "category": "science",
+      "navigationKeyword1": "geometry",
+      "navigationKeyword2": "area",
+      "question": "What is the area formula for a rhombus using diagonals d1 and d2?",
+      "correctAnswer": "(1/2) d1 d2",
+      "incorrectAnswers": [
+        "d1 + d2",
+        "d1 d2",
+        "d1^2 + d2^2"
+      ],
+      "explanation": "The diagonals split a rhombus into four right triangles, leading to one-half the product of the diagonals.",
+      "keywords": [
+        "rhombus",
+        "area"
+      ],
+      "source": "https://www.mathsisfun.com/geometry/rhombus.html"
+    },
+    {
+      "seedId": "62a38adf-5566-4f18-9476-512465308125",
+      "category": "science",
+      "navigationKeyword1": "geometry",
+      "navigationKeyword2": "area",
+      "question": "What is the area formula for a trapezoid with bases b1 and b2 and height h?",
+      "correctAnswer": "(1/2)(b1 + b2)h",
+      "incorrectAnswers": [
+        "b1 times b2",
+        "b1 + b2 + h",
+        "(1/2) b1 b2"
+      ],
+      "explanation": "A trapezoid's area equals the average of the two parallel bases times the height.",
+      "keywords": [
+        "trapezoid",
+        "area"
+      ],
+      "source": "https://www.mathsisfun.com/geometry/trapezoid.html"
+    },
+    {
+      "seedId": "00fc0a15-c246-4072-98cd-fabe6b06eba9",
+      "category": "science",
+      "navigationKeyword1": "geometry",
+      "navigationKeyword2": "area",
+      "question": "What is the area formula for an annulus with outer radius R and inner radius r?",
+      "correctAnswer": "pi(R^2 - r^2)",
+      "incorrectAnswers": [
+        "pi(R-r)^2",
+        "2piR",
+        "piRr"
+      ],
+      "explanation": "An annulus is the outer circle with the inner circle removed, so its area is the difference of the two circle areas.",
+      "keywords": [
+        "annulus",
+        "area"
+      ],
+      "source": "https://www.mathsisfun.com/geometry/annulus.html"
+    },
+    {
+      "seedId": "32efe226-35a1-442b-8ba8-f8984d4fe08a",
+      "category": "science",
+      "navigationKeyword1": "geometry",
+      "navigationKeyword2": "area",
+      "question": "What is the area formula for an ellipse with semi-axes a and b?",
+      "correctAnswer": "piab",
+      "incorrectAnswers": [
+        "pi(a+b)",
+        "2piab",
+        "pia^2"
+      ],
+      "explanation": "Ellipse area is pi times the semi-major axis times the semi-minor axis.",
+      "keywords": [
+        "ellipse-area",
+        "conic"
+      ],
+      "source": "https://www.mathsisfun.com/geometry/ellipse.html"
+    },
+    {
+      "seedId": "ff5db894-471a-47ec-9c52-4f567b612a38",
+      "category": "science",
+      "navigationKeyword1": "geometry",
+      "navigationKeyword2": "area",
+      "question": "What is the area of a regular hexagon with side length s?",
+      "correctAnswer": "(3sqrt(3)/2) s^2",
+      "incorrectAnswers": [
+        "6s",
+        "s^2",
+        "pi s^2"
+      ],
+      "explanation": "A regular hexagon can be divided into six equilateral triangles, giving the formula (3sqrt(3)/2) s^2.",
+      "keywords": [
+        "hexagon",
+        "area"
+      ],
+      "source": "https://www.mathsisfun.com/geometry/hexagon.html"
+    },
+    {
+      "seedId": "8541e47f-aaa8-48ec-b300-78bab7bdc644",
+      "category": "science",
+      "navigationKeyword1": "geometry",
+      "navigationKeyword2": "area",
+      "question": "What is the lateral surface area of a cone with radius r and slant height l?",
+      "correctAnswer": "pi r l",
+      "incorrectAnswers": [
+        "pi r^2",
+        "2pi r",
+        "pi l"
+      ],
+      "explanation": "The curved side of a cone unwraps into a sector, which leads to the formula pi r l.",
+      "keywords": [
+        "cone",
+        "lateral-area"
+      ],
+      "source": "https://www.mathsisfun.com/geometry/cone.html"
+    },
+    {
+      "seedId": "19bdf97d-a1c2-48b8-a539-3682355c9a84",
+      "category": "science",
+      "navigationKeyword1": "geometry",
+      "navigationKeyword2": "area",
+      "question": "What is the surface area of a sphere with radius r?",
+      "correctAnswer": "4pi r^2",
+      "incorrectAnswers": [
+        "(4/3)pi r^3",
+        "2pi r",
+        "pi r^2"
+      ],
+      "explanation": "Sphere surface area depends on the square of the radius and is given by 4pi r^2.",
+      "keywords": [
+        "sphere-surface",
+        "area"
+      ],
+      "source": "https://www.mathsisfun.com/geometry/sphere.html"
+    },
+    {
+      "seedId": "b9b3d303-0bba-49a0-afc4-870e3e266261",
+      "category": "science",
+      "navigationKeyword1": "geometry",
+      "navigationKeyword2": "area",
+      "question": "What is the total surface area of a cylinder, including both circular bases?",
+      "correctAnswer": "2pi r^2 + 2pi rh",
+      "incorrectAnswers": [
+        "2pi rh only",
+        "pi r^2 h",
+        "4pi r^2 only"
+      ],
+      "explanation": "A cylinder's surface area is the area of two circles plus the rectangle that wraps around the side.",
+      "keywords": [
+        "cylinder",
+        "surface-area"
+      ],
+      "source": "https://www.mathsisfun.com/geometry/cylinder.html"
+    }
+  ]
+}

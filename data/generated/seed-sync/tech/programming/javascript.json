@@ -1,0 +1,121 @@
+{
+  "schemaVersion": 1,
+  "seedSet": "core-public-items",
+  "deltaPreviewLimit": 200,
+  "items": [
+    {
+      "seedId": "e1f0511b-d73a-5361-b355-535525c65099",
+      "category": "tech",
+      "navigationKeyword1": "programming",
+      "navigationKeyword2": "javascript",
+      "question": "Compared with `var`, `let` and `const` use which kind of scoping?",
+      "correctAnswer": "Block scoping",
+      "incorrectAnswers": [
+        "Function scoping only",
+        "Global scoping only",
+        "File scoping"
+      ],
+      "explanation": "`let` and `const` are confined to `{}` blocks, which avoids common loop and temporal issues with `var`.",
+      "keywords": [
+        "javascript",
+        "variables"
+      ],
+      "source": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/let"
+    },
+    {
+      "seedId": "4861a7ff-0113-5e99-bca3-b3e4523c9310",
+      "category": "tech",
+      "navigationKeyword1": "programming",
+      "navigationKeyword2": "javascript",
+      "question": "ECMA-262 is the standard commonly known as what?",
+      "correctAnswer": "ECMAScript",
+      "incorrectAnswers": [
+        "TypeScript",
+        "WebAssembly",
+        "CommonJS"
+      ],
+      "explanation": "ECMA-262 defines ECMAScript, the standardized core language that JavaScript implementations follow.",
+      "keywords": [
+        "javascript",
+        "standards"
+      ],
+      "source": "https://www.ecma-international.org/publications-and-standards/standards/ecma-262/"
+    },
+    {
+      "seedId": "39fc69bf-e54e-5736-b434-b8000d5253fd",
+      "category": "tech",
+      "navigationKeyword1": "programming",
+      "navigationKeyword2": "javascript",
+      "question": "In browsers, what coordinates the call stack, task queue, and rendering after work completes?",
+      "correctAnswer": "The event loop",
+      "incorrectAnswers": [
+        "The parser generator",
+        "The regex engine",
+        "The module bundler"
+      ],
+      "explanation": "The event loop runs JavaScript on one main thread and schedules callbacks and rendering turns.",
+      "keywords": [
+        "javascript",
+        "runtime"
+      ],
+      "source": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Event_loop"
+    },
+    {
+      "seedId": "eb86f889-a978-5fe3-9f72-a9226d3ce4bc",
+      "category": "tech",
+      "navigationKeyword1": "programming",
+      "navigationKeyword2": "javascript",
+      "question": "Strict equality (`===`) differs from loose equality (`==`) mainly because `===` does not do what?",
+      "correctAnswer": "Type coercion",
+      "incorrectAnswers": [
+        "Short-circuit evaluation",
+        "Property lookup",
+        "Garbage collection"
+      ],
+      "explanation": "`===` compares both type and value without the implicit conversions that `==` may apply.",
+      "keywords": [
+        "javascript",
+        "operators"
+      ],
+      "source": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Strict_equality"
+    },
+    {
+      "seedId": "0f181763-a8a2-5e2e-b4ac-5527cb122f2a",
+      "category": "tech",
+      "navigationKeyword1": "programming",
+      "navigationKeyword2": "javascript",
+      "question": "What does a `Promise` represent?",
+      "correctAnswer": "A value that may be available now or in the future",
+      "incorrectAnswers": [
+        "A synchronous iterator only",
+        "A web worker only",
+        "A CSS selector"
+      ],
+      "explanation": "Promises model asynchronous completion: settled states carry a value or a reason for failure.",
+      "keywords": [
+        "javascript",
+        "async"
+      ],
+      "source": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise"
+    },
+    {
+      "seedId": "74d504dd-6590-557f-baf8-402ccb95995c",
+      "category": "tech",
+      "navigationKeyword1": "programming",
+      "navigationKeyword2": "javascript",
+      "question": "What is the term for a function that retains access to variables from its surrounding lexical scope?",
+      "correctAnswer": "A closure",
+      "incorrectAnswers": [
+        "A prototype",
+        "A decorator",
+        "A thunk"
+      ],
+      "explanation": "Closures bundle a function with the environment where it was created, so inner functions can read outer variables.",
+      "keywords": [
+        "javascript",
+        "functions"
+      ],
+      "source": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Closures"
+    }
+  ]
+}

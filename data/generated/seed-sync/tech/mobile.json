@@ -1,0 +1,577 @@
+{
+  "schemaVersion": 1,
+  "seedSet": "core-public-items",
+  "deltaPreviewLimit": 200,
+  "items": [
+    {
+      "seedId": "3131372c-a8d8-50e6-abe9-aba3a5c6faf2",
+      "category": "tech",
+      "navigationKeyword1": "mobile",
+      "navigationKeyword2": "android",
+      "question": "What does the Android manifest declare about an app?",
+      "correctAnswer": "Components, permissions, and essential metadata",
+      "incorrectAnswers": [
+        "Only the app icon pixel data",
+        "Kernel module source code",
+        "User passwords"
+      ],
+      "explanation": "AndroidManifest.xml registers components and required capabilities for the system.",
+      "keywords": [
+        "android",
+        "manifest"
+      ],
+      "source": "https://developer.android.com/guide/topics/manifest/manifest-intro"
+    },
+    {
+      "seedId": "a6c177df-3868-5691-a919-386ca628e86e",
+      "category": "tech",
+      "navigationKeyword1": "mobile",
+      "navigationKeyword2": "android",
+      "question": "What file format packages Android apps for distribution?",
+      "correctAnswer": "APK or Android App Bundle (AAB) depending on delivery",
+      "incorrectAnswers": [
+        "IPA only",
+        "MSIX only",
+        "DEB only"
+      ],
+      "explanation": "APKs install directly; Play often uses AAB to generate optimized APKs per device.",
+      "keywords": [
+        "android",
+        "packaging"
+      ],
+      "source": "https://developer.android.com/guide/app-bundle"
+    },
+    {
+      "seedId": "d8a79bec-ebbb-50ce-8d3b-550a2a9a5701",
+      "category": "tech",
+      "navigationKeyword1": "mobile",
+      "navigationKeyword2": "android",
+      "question": "What is a Service in Android when long work must run without a foreground UI?",
+      "correctAnswer": "A component for background work, with rules for foreground services when user-visible",
+      "incorrectAnswers": [
+        "A synonym for SQLite only",
+        "A GPU shader program",
+        "A Bluetooth antenna driver only"
+      ],
+      "explanation": "Services run app logic in the background; Android restricts background starts for battery and privacy.",
+      "keywords": [
+        "android",
+        "services"
+      ],
+      "source": "https://source.android.com/docs/core/background"
+    },
+    {
+      "seedId": "fbacfd8f-ecb0-5641-be47-ce4b7a56fd1c",
+      "category": "tech",
+      "navigationKeyword1": "mobile",
+      "navigationKeyword2": "android",
+      "question": "What is an Android Activity primarily responsible for?",
+      "correctAnswer": "A single focused thing the user can do, with a UI window",
+      "incorrectAnswers": [
+        "Only background sync without any UI",
+        "The entire Linux kernel on the device",
+        "A database table schema only"
+      ],
+      "explanation": "Activities are app components that host screens and participate in the task back stack.",
+      "keywords": [
+        "android",
+        "activity"
+      ],
+      "source": "https://developer.android.com/guide/components/activities/intro-activities"
+    },
+    {
+      "seedId": "5bb8d66f-25f1-5800-99f0-5c479e3a0804",
+      "category": "tech",
+      "navigationKeyword1": "mobile",
+      "navigationKeyword2": "android",
+      "question": "What is an Intent used for between Android components?",
+      "correctAnswer": "Messaging that requests an action or delivers data",
+      "incorrectAnswers": [
+        "Encrypting the entire filesystem",
+        "Compiling Kotlin to machine code only",
+        "Measuring battery voltage directly"
+      ],
+      "explanation": "Intents start activities, services, or deliver broadcasts depending on type.",
+      "keywords": [
+        "android",
+        "intents"
+      ],
+      "source": "https://developer.android.com/guide/components/intents-filters"
+    },
+    {
+      "seedId": "531b7e13-2d8d-5ee4-bb21-f24af8f75bf9",
+      "category": "tech",
+      "navigationKeyword1": "mobile",
+      "navigationKeyword2": "android",
+      "question": "What is the recommended language for new Android development alongside Java?",
+      "correctAnswer": "Kotlin",
+      "incorrectAnswers": [
+        "COBOL",
+        "Objective-C",
+        "Swift"
+      ],
+      "explanation": "Kotlin is the modern default for Android APIs and tooling support.",
+      "keywords": [
+        "android",
+        "kotlin"
+      ],
+      "source": "https://kotlinlang.org/docs/android-overview.html"
+    },
+    {
+      "seedId": "02bcdb45-2050-5cdd-9dd1-e44484602d2c",
+      "category": "tech",
+      "navigationKeyword1": "mobile",
+      "navigationKeyword2": "flutter",
+      "question": "In Flutter, what is everything on screen made of?",
+      "correctAnswer": "Widgets",
+      "incorrectAnswers": [
+        "Storyboards only",
+        "XIB files only",
+        "HTML templates only"
+      ],
+      "explanation": "Flutter composes immutable widgets to describe UI; the framework reconciles changes efficiently.",
+      "keywords": [
+        "flutter",
+        "widgets"
+      ],
+      "source": "https://docs.flutter.dev/ui"
+    },
+    {
+      "seedId": "6f4fa07b-4ee2-5062-8685-00480f0f2cde",
+      "category": "tech",
+      "navigationKeyword1": "mobile",
+      "navigationKeyword2": "flutter",
+      "question": "What does Flutter use to render graphics instead of the platform's native widgets?",
+      "correctAnswer": "Its own rendering engine (Skia/Impeller) drawing pixels",
+      "incorrectAnswers": [
+        "Only WebView for every control",
+        "Only Win32 GDI",
+        "Only PostScript printers"
+      ],
+      "explanation": "Flutter paints with its engine for consistent cross-platform visuals and performance.",
+      "keywords": [
+        "flutter",
+        "rendering"
+      ],
+      "source": "https://docs.flutter.dev/resources/inside-flutter"
+    },
+    {
+      "seedId": "f6b0bf04-3143-5ee0-b634-8c3aad50434c",
+      "category": "tech",
+      "navigationKeyword1": "mobile",
+      "navigationKeyword2": "flutter",
+      "question": "What does hot reload help developers do during development?",
+      "correctAnswer": "Apply code changes to a running app without losing state when possible",
+      "incorrectAnswers": [
+        "Ship to production without testing",
+        "Replace the OS kernel",
+        "Disable all animations permanently"
+      ],
+      "explanation": "Hot reload injects updates quickly so UI tweaks iterate faster than full restarts.",
+      "keywords": [
+        "flutter",
+        "hot-reload"
+      ],
+      "source": "https://docs.flutter.dev/tools/hot-reload"
+    },
+    {
+      "seedId": "de13122c-88fb-513f-aa66-e563f2136219",
+      "category": "tech",
+      "navigationKeyword1": "mobile",
+      "navigationKeyword2": "flutter",
+      "question": "What is a `Future` in Dart?",
+      "correctAnswer": "A value or error that completes asynchronously",
+      "incorrectAnswers": [
+        "A database table name",
+        "A GPU texture format only",
+        "A compile-time macro only"
+      ],
+      "explanation": "Futures model async work; Flutter code often awaits I/O and animations.",
+      "keywords": [
+        "flutter",
+        "async"
+      ],
+      "source": "https://dart.dev/libraries/async/futures-and-error-handling"
+    },
+    {
+      "seedId": "ee6d6c92-7344-5a14-96b4-3b3127864790",
+      "category": "tech",
+      "navigationKeyword1": "mobile",
+      "navigationKeyword2": "flutter",
+      "question": "What is the `BuildContext` used for in Flutter widget code?",
+      "correctAnswer": "Locating theme, media queries, and ancestor widgets in the tree",
+      "incorrectAnswers": [
+        "Storing user passwords",
+        "Compiling Dart to Java bytecode",
+        "Measuring GPS altitude"
+      ],
+      "explanation": "Context ties a widget to its position so it can look up inherited widgets and navigation.",
+      "keywords": [
+        "flutter",
+        "build-context"
+      ],
+      "source": "https://github.com/flutter/flutter/blob/master/packages/flutter/lib/src/widgets/framework.dart"
+    },
+    {
+      "seedId": "15e189c2-f4ec-5ec1-a383-83166c1e9f33",
+      "category": "tech",
+      "navigationKeyword1": "mobile",
+      "navigationKeyword2": "flutter",
+      "question": "What language do you write Flutter app code in?",
+      "correctAnswer": "Dart",
+      "incorrectAnswers": [
+        "Kotlin only",
+        "Swift only",
+        "Rust only"
+      ],
+      "explanation": "Flutter uses Dart for UI, logic, and plugins with strong tooling support.",
+      "keywords": [
+        "flutter",
+        "dart"
+      ],
+      "source": "https://docs.flutter.dev/resources/faq#what-language-is-flutter-written-in"
+    },
+    {
+      "seedId": "a04f04d0-00ff-594c-8c4c-1de1dc2f3593",
+      "category": "tech",
+      "navigationKeyword1": "mobile",
+      "navigationKeyword2": "ios",
+      "question": "In SwiftUI, what protocol describes a screen or reusable piece of UI?",
+      "correctAnswer": "View",
+      "incorrectAnswers": [
+        "NSWindow only",
+        "UITableView only",
+        "CGContext only"
+      ],
+      "explanation": "SwiftUI builds interfaces from `View` structs composed into a hierarchy.",
+      "keywords": [
+        "ios",
+        "swiftui"
+      ],
+      "source": "https://developer.apple.com/documentation/swiftui/view"
+    },
+    {
+      "seedId": "96bc8e4f-8a55-5d47-8184-9ae12519531f",
+      "category": "tech",
+      "navigationKeyword1": "mobile",
+      "navigationKeyword2": "ios",
+      "question": "What is Auto Layout used for in iOS interfaces?",
+      "correctAnswer": "Rules that position views across sizes and orientations",
+      "incorrectAnswers": [
+        "Encrypting network traffic only",
+        "Compiling assets into APKs",
+        "Managing Linux iptables"
+      ],
+      "explanation": "Constraints and stacks define flexible layouts that adapt to devices.",
+      "keywords": [
+        "ios",
+        "layout"
+      ],
+      "source": "https://developer.apple.com/library/archive/documentation/UserExperience/Conceptual/AutolayoutPG/"
+    },
+    {
+      "seedId": "c7a5780d-9bbf-5a4b-983f-0e34a9a23f2d",
+      "category": "tech",
+      "navigationKeyword1": "mobile",
+      "navigationKeyword2": "ios",
+      "question": "What is Combine in Apple platforms?",
+      "correctAnswer": "A framework for asynchronous events with publishers and subscribers",
+      "incorrectAnswers": [
+        "A ZIP compression tool only",
+        "A Core Audio sampler",
+        "A Metal shader compiler"
+      ],
+      "explanation": "Combine models streams of values for reactive-style handling alongside Swift concurrency.",
+      "keywords": [
+        "ios",
+        "combine"
+      ],
+      "source": "https://developer.apple.com/documentation/combine"
+    },
+    {
+      "seedId": "e67c66d3-53e6-50f2-968e-0ca413c4991b",
+      "category": "tech",
+      "navigationKeyword1": "mobile",
+      "navigationKeyword2": "ios",
+      "question": "What is a UIViewController mainly responsible for in UIKit?",
+      "correctAnswer": "Managing a view hierarchy and responding to user interaction for one screen",
+      "incorrectAnswers": [
+        "Compiling Swift to LLVM IR only",
+        "Hosting the Linux kernel",
+        "Storing iCloud passwords only"
+      ],
+      "explanation": "View controllers coordinate views, layout, and lifecycle events for a screen.",
+      "keywords": [
+        "ios",
+        "uikit"
+      ],
+      "source": "https://developer.apple.com/documentation/uikit/uiviewcontroller"
+    },
+    {
+      "seedId": "1b0a62fe-dfa6-519d-8023-43f270dd952a",
+      "category": "tech",
+      "navigationKeyword1": "mobile",
+      "navigationKeyword2": "ios",
+      "question": "What is an iOS app sandbox mainly meant to limit?",
+      "correctAnswer": "Access other apps' data and system resources without permission",
+      "incorrectAnswers": [
+        "CPU clock speed",
+        "Screen pixel density",
+        "Wi-Fi radio existence"
+      ],
+      "explanation": "Sandboxing isolates app storage and capabilities unless entitlements allow more.",
+      "keywords": [
+        "ios",
+        "security"
+      ],
+      "source": "https://owasp.org/www-project-mobile-security-testing-guide/"
+    },
+    {
+      "seedId": "d4eb5418-1137-57bc-811b-16d5078ec1ee",
+      "category": "tech",
+      "navigationKeyword1": "mobile",
+      "navigationKeyword2": "ios",
+      "question": "What language did Swift primarily replace for new Apple platform code?",
+      "correctAnswer": "Objective-C",
+      "incorrectAnswers": [
+        "Java",
+        "COBOL",
+        "Fortran"
+      ],
+      "explanation": "Swift is the modern language for iOS, macOS, and related platforms, interoperating with Objective-C.",
+      "keywords": [
+        "ios",
+        "swift"
+      ],
+      "source": "https://docs.swift.org/swift-book/documentation/the-swift-programming-language/"
+    },
+    {
+      "seedId": "94474bf8-4e4d-5d13-945f-a9f0d8ea289f",
+      "category": "tech",
+      "navigationKeyword1": "mobile",
+      "navigationKeyword2": "mobile-ui",
+      "question": "What does Material Design provide for Android and other platforms?",
+      "correctAnswer": "A system of components, motion, and theming guidance",
+      "incorrectAnswers": [
+        "A kernel scheduler algorithm",
+        "A SQL dialect",
+        "A blockchain consensus protocol"
+      ],
+      "explanation": "Material defines patterns for buttons, navigation, and adaptive layouts across devices.",
+      "keywords": [
+        "mobile-ui",
+        "material"
+      ],
+      "source": "https://m3.material.io/foundations/overview/introduction"
+    },
+    {
+      "seedId": "eb7ba039-5775-51fa-9f9a-5dd46858d261",
+      "category": "tech",
+      "navigationKeyword1": "mobile",
+      "navigationKeyword2": "mobile-ui",
+      "question": "What is progressive disclosure in mobile UX?",
+      "correctAnswer": "Showing advanced options only when needed to reduce overload",
+      "incorrectAnswers": [
+        "Downloading images one pixel per second",
+        "Disabling HTTPS",
+        "Using only uppercase text"
+      ],
+      "explanation": "Layering complexity keeps first screens simple on small displays.",
+      "keywords": [
+        "mobile-ui",
+        "ux"
+      ],
+      "source": "https://www.nngroup.com/articles/progressive-disclosure/"
+    },
+    {
+      "seedId": "2b102d62-40d9-51b7-8ad5-01537dee08df",
+      "category": "tech",
+      "navigationKeyword1": "mobile",
+      "navigationKeyword2": "mobile-ui",
+      "question": "What is safe area layout mainly handling on modern phones?",
+      "correctAnswer": "Insets for notches, status bars, and home indicators",
+      "incorrectAnswers": [
+        "GPU fan curves",
+        "Database connection pooling",
+        "DNS caching TTLs"
+      ],
+      "explanation": "Safe areas keep primary content away from system UI and hardware cutouts.",
+      "keywords": [
+        "mobile-ui",
+        "safe-area"
+      ],
+      "source": "https://developer.apple.com/documentation/uikit/uiview/positioning-content-relative-to-the-safe-area"
+    },
+    {
+      "seedId": "42fc2046-8105-5583-aec2-a3ca2021abd1",
+      "category": "tech",
+      "navigationKeyword1": "mobile",
+      "navigationKeyword2": "mobile-ui",
+      "question": "What problem does a bottom navigation pattern solve?",
+      "correctAnswer": "Thumb-friendly access to a few primary destinations",
+      "incorrectAnswers": [
+        "Cooling the processor",
+        "Encrypting SQLite at rest",
+        "Rendering 3D meshes"
+      ],
+      "explanation": "Placing key actions near the bottom suits one-handed phone use.",
+      "keywords": [
+        "mobile-ui",
+        "navigation"
+      ],
+      "source": "https://m3.material.io/components/navigation-bar/overview"
+    },
+    {
+      "seedId": "96ee2666-3846-5843-acd3-d4e60eb52f7f",
+      "category": "tech",
+      "navigationKeyword1": "mobile",
+      "navigationKeyword2": "mobile-ui",
+      "question": "Why do mobile guidelines recommend larger touch targets than precise mouse clicks?",
+      "correctAnswer": "Fingers are less precise and need comfortable hit areas",
+      "incorrectAnswers": [
+        "Because screens have fewer pixels than desktops",
+        "Because Wi-Fi requires bigger buttons",
+        "Because fonts must be monospace"
+      ],
+      "explanation": "Minimum target sizes reduce mis-taps and improve accessibility on small screens.",
+      "keywords": [
+        "mobile-ui",
+        "touch-targets"
+      ],
+      "source": "https://developer.apple.com/design/human-interface-guidelines/accessibility"
+    },
+    {
+      "seedId": "3ebc08ad-721e-5a24-a18c-db5aea05f3ec",
+      "category": "tech",
+      "navigationKeyword1": "mobile",
+      "navigationKeyword2": "mobile-ui",
+      "question": "Why support dynamic type or font scaling on mobile?",
+      "correctAnswer": "So users with low vision can read comfortably",
+      "incorrectAnswers": [
+        "To increase ad impressions",
+        "To speed up CPU clocks",
+        "To reduce battery size"
+      ],
+      "explanation": "Respecting user text size settings is a core accessibility practice.",
+      "keywords": [
+        "mobile-ui",
+        "accessibility"
+      ],
+      "source": "https://developer.android.com/guide/topics/ui/accessibility"
+    },
+    {
+      "seedId": "431a81c0-f1a1-5d6c-826b-1e0d0d6dd011",
+      "category": "tech",
+      "navigationKeyword1": "mobile",
+      "navigationKeyword2": "react-native",
+      "question": "What bundler does React Native commonly use in development?",
+      "correctAnswer": "Metro",
+      "incorrectAnswers": [
+        "Webpack only",
+        "Gradle only",
+        "Make only"
+      ],
+      "explanation": "Metro bundles JavaScript for React Native with fast incremental builds.",
+      "keywords": [
+        "react-native",
+        "metro"
+      ],
+      "source": "https://metrobundler.dev/docs/getting-started"
+    },
+    {
+      "seedId": "eb0c344d-1516-5bef-bdee-2dd82d3884cd",
+      "category": "tech",
+      "navigationKeyword1": "mobile",
+      "navigationKeyword2": "react-native",
+      "question": "What does JSX describe in a React Native component file?",
+      "correctAnswer": "A tree of native-backed components using JavaScript syntax",
+      "incorrectAnswers": [
+        "Binary Metal shader bytecode",
+        "Gradle dependency locks only",
+        "AndroidManifest XML only"
+      ],
+      "explanation": "JSX compiles to `React.createElement` calls that map to native views.",
+      "keywords": [
+        "react-native",
+        "jsx"
+      ],
+      "source": "https://react.dev/learn/writing-markup-with-jsx"
+    },
+    {
+      "seedId": "e019347d-3fc0-5227-8e53-4237253a6863",
+      "category": "tech",
+      "navigationKeyword1": "mobile",
+      "navigationKeyword2": "react-native",
+      "question": "What is Fast Refresh intended to do during development?",
+      "correctAnswer": "Reload components while preserving state when edits are safe",
+      "incorrectAnswers": [
+        "Delete all app data on every save",
+        "Skip TypeScript checking",
+        "Disable the debugger"
+      ],
+      "explanation": "Fast Refresh updates the running bundle quickly after source changes.",
+      "keywords": [
+        "react-native",
+        "fast-refresh"
+      ],
+      "source": "https://reactnative.dev/docs/fast-refresh"
+    },
+    {
+      "seedId": "5ca2532e-a682-5b6f-8dcc-f75dd1ddf72f",
+      "category": "tech",
+      "navigationKeyword1": "mobile",
+      "navigationKeyword2": "react-native",
+      "question": "What is Hermes in the React Native ecosystem?",
+      "correctAnswer": "A JavaScript engine optimized for mobile startup and memory",
+      "incorrectAnswers": [
+        "A Bluetooth pairing protocol",
+        "An iOS-only layout engine",
+        "A SQL query planner"
+      ],
+      "explanation": "Hermes can improve time-to-interactive and bundle characteristics on Android and iOS.",
+      "keywords": [
+        "react-native",
+        "hermes"
+      ],
+      "source": "https://reactnative.dev/docs/hermes"
+    },
+    {
+      "seedId": "bb4a5829-814d-5e76-833f-2318eb8e800c",
+      "category": "tech",
+      "navigationKeyword1": "mobile",
+      "navigationKeyword2": "react-native",
+      "question": "What is React Native's bridge mainly for?",
+      "correctAnswer": "Letting JavaScript interact with native modules asynchronously",
+      "incorrectAnswers": [
+        "Replacing TCP/IP in the OS",
+        "Storing SQLite rows only",
+        "Rendering PDFs server-side only"
+      ],
+      "explanation": "The bridge serializes calls between JS and native code so UI and APIs can integrate safely.",
+      "keywords": [
+        "react-native",
+        "bridge"
+      ],
+      "source": "https://reactnative.dev/docs/communication-ios"
+    },
+    {
+      "seedId": "56a7d133-ad97-5704-9ff6-d1528554c2ad",
+      "category": "tech",
+      "navigationKeyword1": "mobile",
+      "navigationKeyword2": "react-native",
+      "question": "Why are native modules used in React Native apps?",
+      "correctAnswer": "To access platform APIs and performance-sensitive code not covered by core JS",
+      "incorrectAnswers": [
+        "To remove JavaScript entirely",
+        "To disable networking",
+        "To avoid any UI rendering"
+      ],
+      "explanation": "Native modules expose sensors, camera, and OS features through a defined interface.",
+      "keywords": [
+        "react-native",
+        "native-modules"
+      ],
+      "source": "https://reactnative.dev/docs/native-modules-intro"
+    }
+  ]
+}

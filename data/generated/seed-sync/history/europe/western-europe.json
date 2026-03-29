@@ -1,0 +1,247 @@
+{
+  "schemaVersion": 1,
+  "seedSet": "core-public-items",
+  "deltaPreviewLimit": 200,
+  "items": [
+    {
+      "seedId": "1d2afb81-d34d-473d-be9b-eeabe8bdb6c0",
+      "category": "history",
+      "navigationKeyword1": "europe",
+      "navigationKeyword2": "western-europe",
+      "question": "Francisco Franco\u2019s Nationalists won which 1936\u201339 conflict with Republican defenders of the Second Spanish Republic?",
+      "correctAnswer": "The Spanish Civil War",
+      "incorrectAnswers": [
+        "The Carlist Wars",
+        "The Rif War",
+        "The Peninsular War"
+      ],
+      "explanation": "Franco\u2019s dictatorship endured until 1975, isolating Spain early in the Cold War.",
+      "keywords": [
+        "western-europe",
+        "spain",
+        "civil-war"
+      ],
+      "source": "https://www.britannica.com/event/Spanish-Civil-War"
+    },
+    {
+      "seedId": "edb910b5-8287-4d4d-a513-48bcb459e39e",
+      "category": "history",
+      "navigationKeyword1": "europe",
+      "navigationKeyword2": "western-europe",
+      "question": "Germany\u2019s Schlieffen Plan aimed to knock out France quickly by invading through which neutral kingdom?",
+      "correctAnswer": "Belgium",
+      "incorrectAnswers": [
+        "Switzerland",
+        "Luxembourg only",
+        "Denmark"
+      ],
+      "explanation": "The violation of Belgian neutrality brought Britain into World War I in August 1914.",
+      "keywords": [
+        "western-europe",
+        "world-war-i",
+        "belgium"
+      ],
+      "source": "https://www.britannica.com/event/World-War-I"
+    },
+    {
+      "seedId": "18e91473-ca09-4797-a968-bda1799f8cb5",
+      "category": "history",
+      "navigationKeyword1": "europe",
+      "navigationKeyword2": "western-europe",
+      "question": "Giuseppe Garibaldi\u2019s Redshirts helped unify which peninsula with Piedmont\u2019s monarchy?",
+      "correctAnswer": "Italy",
+      "incorrectAnswers": [
+        "Iberia",
+        "Scandinavia",
+        "The Balkans"
+      ],
+      "explanation": "Expeditions in Sicily and Naples complemented Cavour\u2019s diplomacy with France against Austria.",
+      "keywords": [
+        "western-europe",
+        "italy",
+        "risorgimento"
+      ],
+      "source": "https://www.britannica.com/biography/Giuseppe-Garibaldi"
+    },
+    {
+      "seedId": "cdb67d3b-0359-4054-8bae-60464bcd0a5e",
+      "category": "history",
+      "navigationKeyword1": "europe",
+      "navigationKeyword2": "western-europe",
+      "question": "Pope Leo III crowned which Frankish king emperor in Rome on Christmas Day 800?",
+      "correctAnswer": "Charlemagne (Charles the Great)",
+      "incorrectAnswers": [
+        "Clovis",
+        "Justinian",
+        "Otto I"
+      ],
+      "explanation": "The coronation revived imperial title in the West and foreshadowed the Holy Roman Empire.",
+      "keywords": [
+        "western-europe",
+        "charlemagne",
+        "carolingian"
+      ],
+      "source": "https://www.britannica.com/biography/Charlemagne"
+    },
+    {
+      "seedId": "d0ac6b10-2aa9-4642-954e-de58ba96949e",
+      "category": "history",
+      "navigationKeyword1": "europe",
+      "navigationKeyword2": "western-europe",
+      "question": "The 1713\u201314 Peace of Utrecht ended which war and shifted Spain\u2019s European possessions?",
+      "correctAnswer": "The War of the Spanish Succession",
+      "incorrectAnswers": [
+        "The Thirty Years\u2019 War",
+        "The Nine Years\u2019 War alone",
+        "The Peninsular War"
+      ],
+      "explanation": "Utrecht recognized Bourbon rule in Spain while partitioning Spanish Netherlands and Italian claims.",
+      "keywords": [
+        "western-europe",
+        "utrecht",
+        "spain"
+      ],
+      "source": "https://www.britannica.com/event/Peace-of-Utrecht"
+    },
+    {
+      "seedId": "1e23b25b-f398-482a-8c82-3c299d8b496c",
+      "category": "history",
+      "navigationKeyword1": "europe",
+      "navigationKeyword2": "western-europe",
+      "question": "The 1957 Treaty of Rome founded the European Economic Community among six states centered on France, West Germany, and where?",
+      "correctAnswer": "Italy, Belgium, the Netherlands, and Luxembourg",
+      "incorrectAnswers": [
+        "Spain and Portugal",
+        "Britain and Ireland",
+        "Greece and Turkey"
+      ],
+      "explanation": "The EEC\u2019s common external tariff began today\u2019s European Union institutional lineage.",
+      "keywords": [
+        "western-europe",
+        "eec",
+        "integration"
+      ],
+      "source": "https://www.britannica.com/event/Treaty-of-Rome"
+    },
+    {
+      "seedId": "8967464a-f8f0-4e84-a87a-ab6cb71790cc",
+      "category": "history",
+      "navigationKeyword1": "europe",
+      "navigationKeyword2": "western-europe",
+      "question": "The Congress of Vienna (1814\u201315) redrew Europe after the defeat of whom?",
+      "correctAnswer": "Napoleon Bonaparte",
+      "incorrectAnswers": [
+        "Louis XIV",
+        "Philip II",
+        "Frederick the Great"
+      ],
+      "explanation": "Metternich\u2019s system sought legitimacy, buffer states, and containment of French and revolutionary power.",
+      "keywords": [
+        "western-europe",
+        "vienna",
+        "congress"
+      ],
+      "source": "https://www.britannica.com/event/Congress-of-Vienna"
+    },
+    {
+      "seedId": "a0c8815f-a994-4782-a439-ce5b870c61db",
+      "category": "history",
+      "navigationKeyword1": "europe",
+      "navigationKeyword2": "western-europe",
+      "question": "The Dutch Republic won independence recognition from Spain after which long revolt?",
+      "correctAnswer": "The Eighty Years\u2019 War (Dutch Revolt)",
+      "incorrectAnswers": [
+        "The Franco-Dutch War",
+        "The Belgian Revolution of 1830",
+        "The Schmalkaldic War"
+      ],
+      "explanation": "Merchant oligarchies in Holland and Zeeland built a global trading empire out of Calvinist resistance.",
+      "keywords": [
+        "western-europe",
+        "netherlands",
+        "dutch-revolt"
+      ],
+      "source": "https://www.britannica.com/event/Eighty-Years-War"
+    },
+    {
+      "seedId": "4c531459-4829-40a8-992c-a53db33d11c1",
+      "category": "history",
+      "navigationKeyword1": "europe",
+      "navigationKeyword2": "western-europe",
+      "question": "The Hundred Years\u2019 War chiefly pitted the kingdoms of England and which country?",
+      "correctAnswer": "France",
+      "incorrectAnswers": [
+        "Spain",
+        "Holy Roman Empire",
+        "Scotland"
+      ],
+      "explanation": "Dynastic claims to the French throne and feudal obligations fueled intermittent conflict from 1337 to 1453.",
+      "keywords": [
+        "western-europe",
+        "hundred-years-war",
+        "france"
+      ],
+      "source": "https://www.britannica.com/event/Hundred-Years-War"
+    },
+    {
+      "seedId": "0498d8b3-b5fb-43bb-a152-6bf4debe26f2",
+      "category": "history",
+      "navigationKeyword1": "europe",
+      "navigationKeyword2": "western-europe",
+      "question": "The Medici family patronized Brunelleschi and Michelangelo as rulers of which Italian city-state?",
+      "correctAnswer": "Florence",
+      "incorrectAnswers": [
+        "Venice",
+        "Milan",
+        "Naples"
+      ],
+      "explanation": "Medici banking wealth underwrote Renaissance art and humanist scholarship.",
+      "keywords": [
+        "western-europe",
+        "renaissance",
+        "florence"
+      ],
+      "source": "https://www.britannica.com/topic/Medici-family"
+    },
+    {
+      "seedId": "cf0fce2b-77c6-4c0f-84dd-f86bf1d64ef7",
+      "category": "history",
+      "navigationKeyword1": "europe",
+      "navigationKeyword2": "western-europe",
+      "question": "The Schengen Agreement (1985) began open borders among several states on the river bordering which founding trio?",
+      "correctAnswer": "France, Germany, and the Benelux countries (signed near Schengen, Luxembourg)",
+      "incorrectAnswers": [
+        "Britain, Ireland, Iceland",
+        "Spain, Portugal, Morocco",
+        "Poland, Czechoslovakia, Hungary"
+      ],
+      "explanation": "Schengen later expanded into the EU\u2019s passport-free travel zone.",
+      "keywords": [
+        "western-europe",
+        "schengen",
+        "eu"
+      ],
+      "source": "https://www.britannica.com/topic/Schengen-Agreement"
+    },
+    {
+      "seedId": "84914c89-c07c-4496-be1b-2a8a9a42e431",
+      "category": "history",
+      "navigationKeyword1": "europe",
+      "navigationKeyword2": "western-europe",
+      "question": "Viking longships raided monasteries and traded as far as Constantinople from homelands in which region?",
+      "correctAnswer": "Scandinavia (Norway, Denmark, Sweden)",
+      "incorrectAnswers": [
+        "The Alps",
+        "The Caucasus",
+        "Anatolia"
+      ],
+      "explanation": "Norse settlement shaped Normandy, Iceland, and Kievan trade routes.",
+      "keywords": [
+        "western-europe",
+        "vikings",
+        "scandinavia"
+      ],
+      "source": "https://www.britannica.com/topic/Viking-people"
+    }
+  ]
+}

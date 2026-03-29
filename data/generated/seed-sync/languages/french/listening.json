@@ -1,0 +1,127 @@
+{
+  "schemaVersion": 1,
+  "seedSet": "core-public-items",
+  "deltaPreviewLimit": 200,
+  "items": [
+    {
+      "seedId": "944d170a-99f1-5515-9c16-c889b080f07f",
+      "category": "languages",
+      "navigationKeyword1": "french",
+      "navigationKeyword2": "listening",
+      "question": "In \"librairie,\" which syllable carries the main stress in typical French rhythm?",
+      "correctAnswer": "the last syllable",
+      "incorrectAnswers": [
+        "the first syllable",
+        "the second syllable",
+        "all syllables equally"
+      ],
+      "explanation": "French stress usually falls on the final syllable of a word group or word, so the last syllable of \"librairie\" gets the clearest stress.",
+      "keywords": [
+        "stress",
+        "rhythm",
+        "french-listening"
+      ],
+      "source": "https://www.collinsdictionary.com/dictionary/french-english/librairie"
+    },
+    {
+      "seedId": "02eccb79-4453-59e6-85ed-2028900573b8",
+      "category": "languages",
+      "navigationKeyword1": "french",
+      "navigationKeyword2": "listening",
+      "question": "What often signals a yes-no question when the words stay the same as a statement?",
+      "correctAnswer": "rising intonation at the end",
+      "incorrectAnswers": [
+        "a new verb tense only",
+        "moving the subject to the end",
+        "always adding a new noun"
+      ],
+      "explanation": "Spoken French often marks questions with intonation, so listeners must notice the rise at the end.",
+      "keywords": [
+        "intonation",
+        "questions",
+        "french-listening"
+      ],
+      "source": "https://www.lawlessfrench.com/grammar/questions/"
+    },
+    {
+      "seedId": "6491353e-17b9-51f4-bab3-320886c22c49",
+      "category": "languages",
+      "navigationKeyword1": "french",
+      "navigationKeyword2": "listening",
+      "question": "Which final consonant is usually silent in \"Paris\" in everyday French?",
+      "correctAnswer": "s",
+      "incorrectAnswers": [
+        "r",
+        "i",
+        "p"
+      ],
+      "explanation": "Many final consonants are silent in French, including the \"s\" in \"Paris\" in typical pronunciation.",
+      "keywords": [
+        "silent-letters",
+        "pronunciation",
+        "french-listening"
+      ],
+      "source": "https://dictionary.cambridge.org/dictionary/french-english/paris"
+    },
+    {
+      "seedId": "4c70bd31-784f-5184-82da-cee64816f245",
+      "category": "languages",
+      "navigationKeyword1": "french",
+      "navigationKeyword2": "listening",
+      "question": "Which letters are often linked in speech in \"les amis\"?",
+      "correctAnswer": "The -s on \"les\" links to the next vowel sound.",
+      "incorrectAnswers": [
+        "No letters ever link in French.",
+        "Only consonants at the end of verbs link.",
+        "Linking never happens before a vowel."
+      ],
+      "explanation": "French liaison connects a normally silent consonant to a following vowel sound, so you hear a /z/ between \"les\" and \"amis\".",
+      "keywords": [
+        "liaison",
+        "pronunciation",
+        "french-listening"
+      ],
+      "source": "https://www.lawlessfrench.com/pronunciation/liaisons/"
+    },
+    {
+      "seedId": "23764a6a-70bf-5024-9d62-3ae90ebf20f2",
+      "category": "languages",
+      "navigationKeyword1": "french",
+      "navigationKeyword2": "listening",
+      "question": "Which pair differs clearly for most learners because \"u\" and \"ou\" are different vowels?",
+      "correctAnswer": "tu and tout",
+      "incorrectAnswers": [
+        "pas and pas",
+        "oui and oui",
+        "merci and merci"
+      ],
+      "explanation": "French \"u\" and \"ou\" are different rounded vowels; mixing them is a common listening and speaking mistake for beginners.",
+      "keywords": [
+        "minimal-pairs",
+        "vowels",
+        "french-listening"
+      ],
+      "source": "https://dictionary.cambridge.org/dictionary/french-english/tu"
+    },
+    {
+      "seedId": "37ec3a93-9b37-5b4e-ae23-0548f3f4b43b",
+      "category": "languages",
+      "navigationKeyword1": "french",
+      "navigationKeyword2": "listening",
+      "question": "Which pair is a common listening challenge because the vowels sound close for many learners?",
+      "correctAnswer": "dessus and dessous",
+      "incorrectAnswers": [
+        "table and chaise",
+        "lune and soleil",
+        "fen\u00eatre and porte"
+      ],
+      "explanation": "\"Dessus\" (above) and \"dessous\" (below) sound similar at first; the final consonant sound helps tell them apart with practice.",
+      "keywords": [
+        "minimal-pairs",
+        "pronunciation",
+        "french-listening"
+      ],
+      "source": "https://dictionary.cambridge.org/dictionary/french-english/dessous"
+    }
+  ]
+}

@@ -1,4 +1,4 @@
-import { useParams, useNavigate } from "react-router-dom";
+import { useParams, useNavigate, useSearchParams } from "react-router-dom";
 import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
 import { itemsApi } from "@/api/items";
 import { useAuth } from "@/contexts/AuthContext";
@@ -18,8 +18,23 @@ import { buildCategoryPath, categoryNameToSlug } from "@/utils/categorySlug";
 const ItemDetailPage = () => {
   const { id } = useParams<{ id: string }>();
   const navigate = useNavigate();
+  const [searchParams] = useSearchParams();
   const queryClient = useQueryClient();
   const { isAuthenticated, userId, isAdmin } = useAuth();
+  const returnUrl = searchParams.get("return");
+  const returnMode = searchParams.get("returnMode");
+  const safeReturnUrl =
+    returnUrl && returnUrl.startsWith("/") ? returnUrl : null;
+  const inferredReturnMode =
+    returnMode ??
+    (safeReturnUrl?.startsWith("/quiz") ? "quiz" : undefined) ??
+    (safeReturnUrl?.startsWith("/explore") ? "explore" : undefined);
+  const returnLabel =
+    inferredReturnMode === "quiz"
+      ? "Back to Quiz"
+      : inferredReturnMode === "explore"
+        ? "Back to Explore"
+        : "Back";
 
   const {
     data: item,
@@ -54,13 +69,24 @@ const ItemDetailPage = () => {
           message="Failed to load item. It may not exist or you may not have access."
           onRetry={() => refetch()}
         />
-        <Link
-          to="/categories"
-          className="mt-4 inline-flex items-center text-indigo-600 hover:text-indigo-800"
-        >
-          <ArrowLeftIcon className="h-4 w-4 mr-1" />
-          Back to Categories
-        </Link>
+        {safeReturnUrl ? (
+          <button
+            type="button"
+            onClick={() => navigate(safeReturnUrl)}
+            className="mt-4 inline-flex items-center text-indigo-600 hover:text-indigo-800"
+          >
+            <ArrowLeftIcon className="h-4 w-4 mr-1" />
+            {returnLabel}
+          </button>
+        ) : (
+          <Link
+            to="/categories"
+            className="mt-4 inline-flex items-center text-indigo-600 hover:text-indigo-800"
+          >
+            <ArrowLeftIcon className="h-4 w-4 mr-1" />
+            Back to Categories
+          </Link>
+        )}
       </div>
     );
   }
@@ -78,7 +104,16 @@ const ItemDetailPage = () => {
     <div className="px-4 py-6 sm:px-0">
       <div className="max-w-3xl mx-auto">
         <div className="mb-4 flex items-center justify-between flex-wrap gap-2">
-          {navBreadcrumb ? (
+          {safeReturnUrl ? (
+            <button
+              type="button"
+              onClick={() => navigate(safeReturnUrl)}
+              className="inline-flex items-center text-sm font-medium text-gray-600 hover:text-indigo-600"
+            >
+              <ArrowLeftIcon className="h-4 w-4 mr-1" />
+              {returnLabel}
+            </button>
+          ) : navBreadcrumb ? (
             <nav className="flex items-center gap-1 text-sm text-gray-600 flex-wrap">
               <Link to="/categories" className="text-indigo-600 hover:text-indigo-800">
                 Categories

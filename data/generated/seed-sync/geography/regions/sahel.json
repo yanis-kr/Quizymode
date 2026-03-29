@@ -1,0 +1,227 @@
+{
+  "schemaVersion": 1,
+  "seedSet": "core-public-items",
+  "deltaPreviewLimit": 200,
+  "items": [
+    {
+      "seedId": "d6ea3fe2-93b4-4c63-ae2f-8f58fd2228a7",
+      "category": "geography",
+      "navigationKeyword1": "regions",
+      "navigationKeyword2": "sahel",
+      "question": "A severe drought beginning in 1968 led the Sahara to advance southward by about how far by 1973 in places?",
+      "correctAnswer": "Up to about 60 miles (100 km)",
+      "incorrectAnswers": [
+        "Less than one mile total",
+        "More than 2,000 miles uniformly",
+        "The desert retreated hundreds of miles north"
+      ],
+      "explanation": "Britannica reports that by 1973 sections of the Sahara had advanced south up to roughly 60 miles during the early-1970s drought crisis.",
+      "keywords": [
+        "sahel",
+        "drought",
+        "sahara"
+      ],
+      "source": "https://www.britannica.com/place/Sahel"
+    },
+    {
+      "seedId": "a11a6cd7-9d12-45d8-8c9a-a2a25ad1be34",
+      "category": "geography",
+      "navigationKeyword1": "regions",
+      "navigationKeyword2": "sahel",
+      "question": "Acacia and which distinctive African tree appear among Sahel woody vegetation?",
+      "correctAnswer": "Baobab",
+      "incorrectAnswers": [
+        "Giant sequoia",
+        "Banyan only in tundra",
+        "Olive orchards on ice shelves"
+      ],
+      "explanation": "Britannica lists acacia and baobab among thorny shrubs and trees in Sahel landscapes.",
+      "keywords": [
+        "sahel",
+        "vegetation",
+        "baobab"
+      ],
+      "source": "https://www.britannica.com/place/Sahel"
+    },
+    {
+      "seedId": "eed2141d-d70d-472a-9366-3ec6de2c1b5f",
+      "category": "geography",
+      "navigationKeyword1": "regions",
+      "navigationKeyword2": "sahel",
+      "question": "Average annual rainfall in much of the Sahel is about how much, concentrated in a short wet season?",
+      "correctAnswer": "Roughly 4\u20138 inches (100\u2013200 mm)",
+      "incorrectAnswers": [
+        "Over 200 inches yearly",
+        "Zero measurable rain",
+        "Exactly 50 inches every month"
+      ],
+      "explanation": "Britannica reports Sahel rain averages about 4\u20138 inches yearly, mostly in June\u2013August.",
+      "keywords": [
+        "sahel",
+        "rainfall",
+        "climate"
+      ],
+      "source": "https://www.britannica.com/place/Sahel"
+    },
+    {
+      "seedId": "e6c29645-1fae-4169-9087-6fc5afb75cea",
+      "category": "geography",
+      "navigationKeyword1": "regions",
+      "navigationKeyword2": "sahel",
+      "question": "Livestock important to the Sahel include camels, cattle, sheep, and what other draft animal?",
+      "correctAnswer": "Pack oxen",
+      "incorrectAnswers": [
+        "Reindeer herds only",
+        "Bison on the Great Plains",
+        "Emus"
+      ],
+      "explanation": "Britannica lists camel, pack ox, and grazing cattle and sheep among Sahel livestock using natural pasture and shrubs.",
+      "keywords": [
+        "sahel",
+        "pastoralism",
+        "livestock"
+      ],
+      "source": "https://www.britannica.com/place/Sahel"
+    },
+    {
+      "seedId": "84a8ebb9-8011-4398-9e22-a9d378d1ca48",
+      "category": "geography",
+      "navigationKeyword1": "regions",
+      "navigationKeyword2": "sahel",
+      "question": "Millet and which legume crop are cited as modest Sahel crops where rainfall allows?",
+      "correctAnswer": "Peanuts (groundnuts)",
+      "incorrectAnswers": [
+        "Rice paddies everywhere at high latitude",
+        "Banana plantations on ice caps",
+        "Coffee as the only crop"
+      ],
+      "explanation": "Britannica mentions millet and peanuts as crops that can be raised in many Sahel areas.",
+      "keywords": [
+        "sahel",
+        "agriculture",
+        "millet"
+      ],
+      "source": "https://www.britannica.com/place/Sahel"
+    },
+    {
+      "seedId": "0ea8fb0d-c57d-499b-96c0-de5b72b2691d",
+      "category": "geography",
+      "navigationKeyword1": "regions",
+      "navigationKeyword2": "sahel",
+      "question": "Northern Africa also applies the name Sahel to coastal hill bands in Algeria and steppe plains in which other Maghreb country?",
+      "correctAnswer": "Tunisia",
+      "incorrectAnswers": [
+        "Iceland",
+        "New Zealand",
+        "Japan"
+      ],
+      "explanation": "Britannica notes in northern Africa \u201cSahel\u201d can mean Algerian coastal hills or Tunisia\u2019s eastern coastal steppe.",
+      "keywords": [
+        "sahel",
+        "algeria",
+        "tunisia"
+      ],
+      "source": "https://www.britannica.com/place/Sahel"
+    },
+    {
+      "seedId": "b0d23d5e-60bc-4feb-abc9-4aab3d7bf314",
+      "category": "geography",
+      "navigationKeyword1": "regions",
+      "navigationKeyword2": "sahel",
+      "question": "Overgrazing and clearing trees for fuel helped drive which environmental problem in the late 20th-century Sahel?",
+      "correctAnswer": "Soil erosion and desertification",
+      "incorrectAnswers": [
+        "Permanent glaciation",
+        "Coral bleaching in alpine lakes",
+        "Tropical rainforest expansion everywhere"
+      ],
+      "explanation": "Britannica links growing populations, firewood collection, and overstocking to soil erosion and desertification across the Sahel.",
+      "keywords": [
+        "sahel",
+        "desertification",
+        "environment"
+      ],
+      "source": "https://www.britannica.com/place/Sahel"
+    },
+    {
+      "seedId": "5c295b91-791f-4b59-8f02-72ca9387c5fe",
+      "category": "geography",
+      "navigationKeyword1": "regions",
+      "navigationKeyword2": "sahel",
+      "question": "The Sahel extends eastward from Senegal toward which large northeast African country?",
+      "correctAnswer": "Sudan",
+      "incorrectAnswers": [
+        "Chile",
+        "Mongolia",
+        "Norway"
+      ],
+      "explanation": "Britannica traces the Sahel from Senegal eastward across several states into Sudan.",
+      "keywords": [
+        "sahel",
+        "extent",
+        "africa"
+      ],
+      "source": "https://www.britannica.com/place/Sahel"
+    },
+    {
+      "seedId": "1f44f7e7-0d5d-431d-897d-4c7d04fd0790",
+      "category": "geography",
+      "navigationKeyword1": "regions",
+      "navigationKeyword2": "sahel",
+      "question": "The Sahel forms a transitional zone between the Sahara to the north and what belt to the south?",
+      "correctAnswer": "Humid savannas",
+      "incorrectAnswers": [
+        "Polar tundra",
+        "Alpine glaciers",
+        "Boreal taiga"
+      ],
+      "explanation": "Britannica describes the Sahel as transitional between the arid Sahara and the belt of humid savannas farther south.",
+      "keywords": [
+        "sahel",
+        "sahara",
+        "savanna"
+      ],
+      "source": "https://www.britannica.com/place/Sahel"
+    },
+    {
+      "seedId": "9ef48c0f-c582-419a-88c2-12ea32747e18",
+      "category": "geography",
+      "navigationKeyword1": "regions",
+      "navigationKeyword2": "sahel",
+      "question": "The Sahel\u2019s terrain is chiefly described as what vegetation type with little continuous forest cover?",
+      "correctAnswer": "Savanna",
+      "incorrectAnswers": [
+        "Dense tropical jungle wall-to-wall",
+        "Coral reef",
+        "Urban concrete exclusively"
+      ],
+      "explanation": "Britannica characterizes the Sahel as chiefly savanna with scattered cover and risk of merging into desert under pressure.",
+      "keywords": [
+        "sahel",
+        "savanna",
+        "land-cover"
+      ],
+      "source": "https://www.britannica.com/place/Sahel"
+    },
+    {
+      "seedId": "fbfb76b6-ba50-491e-83ee-f4a98150e8af",
+      "category": "geography",
+      "navigationKeyword1": "regions",
+      "navigationKeyword2": "sahel",
+      "question": "Which two major West African rivers provide floodwater pasturage in parts of the Sahel?",
+      "correctAnswer": "The Niger and S\u00e9n\u00e9gal rivers",
+      "incorrectAnswers": [
+        "The Amazon and Orinoco",
+        "The Rhine and Danube",
+        "The Yangtze and Mekong"
+      ],
+      "explanation": "Britannica notes wide Sahel pasturage zones are watered by flooding along the Niger and S\u00e9n\u00e9gal rivers.",
+      "keywords": [
+        "sahel",
+        "niger-river",
+        "senegal-river"
+      ],
+      "source": "https://www.britannica.com/place/Sahel"
+    }
+  ]
+}

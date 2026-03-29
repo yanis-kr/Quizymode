@@ -1,0 +1,805 @@
+{
+  "schemaVersion": 1,
+  "seedSet": "core-public-items",
+  "deltaPreviewLimit": 200,
+  "items": [
+    {
+      "seedId": "2a138c36-261a-5b2a-bdaa-b3a7d71af35f",
+      "category": "tech",
+      "navigationKeyword1": "databases",
+      "navigationKeyword2": "indexing",
+      "question": "For a composite index on `(a, b, c)`, which lookup pattern can typically use the index prefix rule efficiently?",
+      "correctAnswer": "equality filters on `a` (and optionally `b`, then `c` in order)",
+      "incorrectAnswers": [
+        "only filters on `c` alone",
+        "only sorting by `c` without `a`",
+        "random OR conditions across unrelated columns"
+      ],
+      "explanation": "Composite B-tree indexes are ordered left-to-left, so leading columns must constrain access for the index to be selective.",
+      "keywords": [
+        "indexing",
+        "composite"
+      ],
+      "source": "https://dev.mysql.com/doc/refman/8.0/en/multiple-column-indexes.html"
+    },
+    {
+      "seedId": "78f9ae6a-1297-58c5-8c10-df3d877dcfea",
+      "category": "tech",
+      "navigationKeyword1": "databases",
+      "navigationKeyword2": "indexing",
+      "question": "What does a `UNIQUE` index enforce on the indexed columns?",
+      "correctAnswer": "no two rows may share the same indexed values (with NULL handling rules per system)",
+      "incorrectAnswers": [
+        "rows may duplicate freely",
+        "only one row may exist in the table",
+        "values must be sequential integers"
+      ],
+      "explanation": "Unique indexes protect business keys and speed lookups while preventing duplicates.",
+      "keywords": [
+        "indexing",
+        "unique"
+      ],
+      "source": "https://www.sqlite.org/lang_createindex.html"
+    },
+    {
+      "seedId": "0d438ece-9b7f-51af-ab18-3f0793ee7e34",
+      "category": "tech",
+      "navigationKeyword1": "databases",
+      "navigationKeyword2": "indexing",
+      "question": "What is a covering index?",
+      "correctAnswer": "an index that contains all columns needed to satisfy a query without hitting the base table",
+      "incorrectAnswers": [
+        "an index that hides data from security audits",
+        "an index larger than the table",
+        "an index that only works on weekends"
+      ],
+      "explanation": "When an index includes the projected columns, the engine can answer the query from the index alone.",
+      "keywords": [
+        "indexing",
+        "covering"
+      ],
+      "source": "https://learn.microsoft.com/en-us/sql/relational-databases/indexes/create-indexes-with-included-columns"
+    },
+    {
+      "seedId": "b03dccc3-8099-58c5-997a-86e71b2f2aaf",
+      "category": "tech",
+      "navigationKeyword1": "databases",
+      "navigationKeyword2": "indexing",
+      "question": "What is one purpose of a full-text index compared with a typical B-tree on text columns?",
+      "correctAnswer": "efficient token-based search and ranking over natural language",
+      "incorrectAnswers": [
+        "guaranteeing encryption at rest",
+        "storing rows in JSON only",
+        "replacing foreign keys"
+      ],
+      "explanation": "Full-text engines tokenize and index words for contains queries, not just exact string matches.",
+      "keywords": [
+        "indexing",
+        "full-text"
+      ],
+      "source": "https://www.postgresql.org/docs/current/textsearch.html"
+    },
+    {
+      "seedId": "7eaac253-08f5-5808-8de1-2069e57819ba",
+      "category": "tech",
+      "navigationKeyword1": "databases",
+      "navigationKeyword2": "indexing",
+      "question": "What tree structure is the default for many relational secondary indexes?",
+      "correctAnswer": "B-tree (or a B-tree variant)",
+      "incorrectAnswers": [
+        "purely linked lists with no branching",
+        "a single global hash map for all tables",
+        "binary trees with height always two"
+      ],
+      "explanation": "B-trees keep data sorted and support efficient range scans and lookups with balanced depth.",
+      "keywords": [
+        "indexing",
+        "b-tree"
+      ],
+      "source": "https://www.postgresql.org/docs/current/indexes-types.html"
+    },
+    {
+      "seedId": "85398c0a-7d4f-53dd-b584-2f982b8c8d41",
+      "category": "tech",
+      "navigationKeyword1": "databases",
+      "navigationKeyword2": "indexing",
+      "question": "Why can adding many indexes hurt write performance?",
+      "correctAnswer": "each insert, update, or delete must maintain every affected index",
+      "incorrectAnswers": [
+        "indexes disable the transaction log",
+        "indexes force full table scans",
+        "indexes double network latency automatically"
+      ],
+      "explanation": "Indexes speed reads but add maintenance work and storage overhead on every change to covered columns.",
+      "keywords": [
+        "indexing",
+        "tradeoffs"
+      ],
+      "source": "https://dev.mysql.com/doc/refman/8.0/en/optimization-indexes.html"
+    },
+    {
+      "seedId": "6e042537-0be0-5a1f-89d6-578318f3fc5b",
+      "category": "tech",
+      "navigationKeyword1": "databases",
+      "navigationKeyword2": "modeling",
+      "question": "How is a many-to-many relationship usually modeled in relational tables?",
+      "correctAnswer": "a junction (bridge) table with foreign keys to both sides",
+      "incorrectAnswers": [
+        "an unlimited number of primary keys on one table",
+        "only JSON arrays without tables",
+        "duplicate rows in both tables without keys"
+      ],
+      "explanation": "A junction table stores pairs of keys, letting each side relate to many rows on the other side.",
+      "keywords": [
+        "modeling",
+        "relationships"
+      ],
+      "source": "https://learn.microsoft.com/en-us/sql/relational-databases/tables/create-foreign-key-relationships"
+    },
+    {
+      "seedId": "fd209474-db81-5bd1-a2c6-1182add1f7f5",
+      "category": "tech",
+      "navigationKeyword1": "databases",
+      "navigationKeyword2": "modeling",
+      "question": "In ER modeling, what does a relationship connect?",
+      "correctAnswer": "entities (often tables) that participate in an association",
+      "incorrectAnswers": [
+        "only indexes to files",
+        "only stored procedures to triggers",
+        "only users to passwords"
+      ],
+      "explanation": "Entity-relationship diagrams express which things exist and how they link, guiding table and key design.",
+      "keywords": [
+        "modeling",
+        "er"
+      ],
+      "source": "https://www.ibm.com/topics/entity-relationship-diagram"
+    },
+    {
+      "seedId": "3803b96f-a11c-5480-8c49-e7f152973c0e",
+      "category": "tech",
+      "navigationKeyword1": "databases",
+      "navigationKeyword2": "modeling",
+      "question": "What is a common goal of normalization in relational design?",
+      "correctAnswer": "reduce redundant data and update anomalies by splitting facts into appropriate tables",
+      "incorrectAnswers": [
+        "make every table one column wide",
+        "remove all indexes for speed",
+        "store images only in primary keys"
+      ],
+      "explanation": "Normalization organizes attributes so each fact lives in one logical place, easing consistency.",
+      "keywords": [
+        "modeling",
+        "normalization"
+      ],
+      "source": "https://learn.microsoft.com/en-us/office/troubleshoot/access/database-normalization-description"
+    },
+    {
+      "seedId": "ba5e7289-96e0-5c55-b7ef-e52e821432f2",
+      "category": "tech",
+      "navigationKeyword1": "databases",
+      "navigationKeyword2": "modeling",
+      "question": "What is a foreign key meant to represent?",
+      "correctAnswer": "a reference from a child row to a parent row\u2019s key",
+      "incorrectAnswers": [
+        "a backup copy of the database",
+        "a temporary cache key",
+        "an encryption passphrase"
+      ],
+      "explanation": "Foreign keys model associations and let the database enforce valid references between tables.",
+      "keywords": [
+        "modeling",
+        "foreign-keys"
+      ],
+      "source": "https://www.postgresql.org/docs/current/ddl-constraints.html#DDL-CONSTRAINTS-FOREIGN-KEYS"
+    },
+    {
+      "seedId": "1b74f5a5-4314-5438-b0c8-af845e7139ec",
+      "category": "tech",
+      "navigationKeyword1": "databases",
+      "navigationKeyword2": "modeling",
+      "question": "What is a surrogate key?",
+      "correctAnswer": "an artificial identifier (often an integer) used instead of a natural business key",
+      "incorrectAnswers": [
+        "a key smuggled from another database",
+        "a password column",
+        "a duplicate primary key"
+      ],
+      "explanation": "Surrogate keys stabilize joins when natural keys change length or meaning over time.",
+      "keywords": [
+        "modeling",
+        "keys"
+      ],
+      "source": "https://dev.mysql.com/doc/refman/8.0/en/glossary.html#glos_surrogate"
+    },
+    {
+      "seedId": "3c286fbd-7f36-536f-acdc-26a537742203",
+      "category": "tech",
+      "navigationKeyword1": "databases",
+      "navigationKeyword2": "modeling",
+      "question": "What tradeoff does denormalization intentionally accept?",
+      "correctAnswer": "some duplicated data to speed reads or simplify queries",
+      "incorrectAnswers": [
+        "stronger automatic encryption",
+        "eliminating all primary keys",
+        "disabling backups"
+      ],
+      "explanation": "Denormalization copies or merges facts to reduce joins at the cost of harder updates and consistency checks.",
+      "keywords": [
+        "modeling",
+        "denormalization"
+      ],
+      "source": "https://learn.microsoft.com/en-us/azure/architecture/guide/data/data-partitioning#denormalization"
+    },
+    {
+      "seedId": "db23f2d8-c1d3-5c5d-bcfe-6038f46810a5",
+      "category": "tech",
+      "navigationKeyword1": "databases",
+      "navigationKeyword2": "mysql",
+      "question": "What do `FOREIGN KEY` constraints enforce between related InnoDB tables?",
+      "correctAnswer": "referential integrity between parent and child rows",
+      "incorrectAnswers": [
+        "identical primary keys in every table",
+        "automatic sharding across servers",
+        "read-only child tables"
+      ],
+      "explanation": "Foreign keys ensure child rows reference existing parent keys and can restrict deletes or updates that would break links.",
+      "keywords": [
+        "mysql",
+        "constraints"
+      ],
+      "source": "https://dev.mysql.com/doc/refman/8.0/en/create-table-foreign-keys.html"
+    },
+    {
+      "seedId": "4dd46e14-8b48-57b4-8ad3-2a53e4e0ffa1",
+      "category": "tech",
+      "navigationKeyword1": "databases",
+      "navigationKeyword2": "mysql",
+      "question": "What does `AUTO_INCREMENT` do on an integer primary key column?",
+      "correctAnswer": "generates the next sequential value automatically on insert when omitted",
+      "incorrectAnswers": [
+        "randomizes keys for security",
+        "prevents any manual inserts",
+        "duplicates the previous row"
+      ],
+      "explanation": "Auto-increment supplies monotonic new key values for inserts that do not specify the column.",
+      "keywords": [
+        "mysql",
+        "keys"
+      ],
+      "source": "https://dev.mysql.com/doc/refman/8.0/en/example-auto-increment.html"
+    },
+    {
+      "seedId": "ac329146-1ec7-5bbb-b991-fbaf8644e49c",
+      "category": "tech",
+      "navigationKeyword1": "databases",
+      "navigationKeyword2": "mysql",
+      "question": "What is the default storage engine for new tables in modern MySQL (InnoDB-focused releases)?",
+      "correctAnswer": "InnoDB",
+      "incorrectAnswers": [
+        "MyISAM",
+        "MEMORY",
+        "CSV"
+      ],
+      "explanation": "InnoDB is the default engine and provides transactions, foreign keys, and crash recovery features expected for most applications.",
+      "keywords": [
+        "mysql",
+        "storage-engine"
+      ],
+      "source": "https://dev.mysql.com/doc/refman/8.0/en/storage-engines.html"
+    },
+    {
+      "seedId": "643465c3-4815-5b2c-a370-6e02fe630487",
+      "category": "tech",
+      "navigationKeyword1": "databases",
+      "navigationKeyword2": "mysql",
+      "question": "What is the purpose of the binary log in many MySQL deployments?",
+      "correctAnswer": "record data-change events for replication and point-in-time recovery",
+      "incorrectAnswers": [
+        "store the InnoDB buffer pool",
+        "cache query results for clients",
+        "replace the need for backups"
+      ],
+      "explanation": "The binary log captures events that replicas can apply and that can be replayed for recovery workflows.",
+      "keywords": [
+        "mysql",
+        "replication"
+      ],
+      "source": "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.MySQL.html"
+    },
+    {
+      "seedId": "c3e6e1d0-ed7c-5b11-af4e-0faa978079f6",
+      "category": "tech",
+      "navigationKeyword1": "databases",
+      "navigationKeyword2": "mysql",
+      "question": "Which character set is commonly recommended for full Unicode support including emoji in MySQL?",
+      "correctAnswer": "`utf8mb4`",
+      "incorrectAnswers": [
+        "`latin1`",
+        "`utf8` (legacy 3-byte utf8)",
+        "`ascii`"
+      ],
+      "explanation": "`utf8mb4` is the full UTF-8 encoding in MySQL and supports four-byte characters, unlike the older `utf8` alias.",
+      "keywords": [
+        "mysql",
+        "charset"
+      ],
+      "source": "https://dev.mysql.com/doc/refman/8.0/en/charset-unicode-utf8mb4.html"
+    },
+    {
+      "seedId": "8fc163f7-ab04-58ee-9984-0eb84ae02a37",
+      "category": "tech",
+      "navigationKeyword1": "databases",
+      "navigationKeyword2": "mysql",
+      "question": "Which index type is the default for `InnoDB` secondary indexes?",
+      "correctAnswer": "B-tree",
+      "incorrectAnswers": [
+        "hash only",
+        "bitmap",
+        "R-tree only"
+      ],
+      "explanation": "InnoDB stores indexes in B-tree structures, which suit common range and equality lookups.",
+      "keywords": [
+        "mysql",
+        "indexing"
+      ],
+      "source": "https://dev.mysql.com/doc/refman/8.0/en/innodb-index-types.html"
+    },
+    {
+      "seedId": "9c1e9677-9f35-5959-bdd1-e99725b4c668",
+      "category": "tech",
+      "navigationKeyword1": "databases",
+      "navigationKeyword2": "nosql",
+      "question": "In the CAP framing, what tradeoff is often highlighted for partition-tolerant distributed systems?",
+      "correctAnswer": "consistency versus availability under network partitions",
+      "incorrectAnswers": [
+        "CPU versus monitor size",
+        "encryption versus compression",
+        "SQL versus HTML"
+      ],
+      "explanation": "When a network splits nodes, designs must choose how strict consistency is versus continued availability of reads and writes.",
+      "keywords": [
+        "nosql",
+        "distributed-systems"
+      ],
+      "source": "https://www.ibm.com/cloud/learn/cap-theorem"
+    },
+    {
+      "seedId": "c0ff5578-2d27-5efb-bfbc-7a93405d5e36",
+      "category": "tech",
+      "navigationKeyword1": "databases",
+      "navigationKeyword2": "nosql",
+      "question": "What does DynamoDB call the two attributes that form the primary key in the common single-table partition key pattern?",
+      "correctAnswer": "partition key (and optionally sort key)",
+      "incorrectAnswers": [
+        "only a foreign key",
+        "clustered index and leaf page",
+        "shard UUID and checksum"
+      ],
+      "explanation": "DynamoDB items are identified by a partition key for distribution and an optional sort key for ordering within a partition.",
+      "keywords": [
+        "nosql",
+        "dynamodb"
+      ],
+      "source": "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.CoreComponents.html"
+    },
+    {
+      "seedId": "0d55f2ed-8d3b-544a-a0cc-aa5e720561a1",
+      "category": "tech",
+      "navigationKeyword1": "databases",
+      "navigationKeyword2": "nosql",
+      "question": "What does a document database typically store as the unit of data?",
+      "correctAnswer": "self-contained documents, often JSON-like objects with nested fields",
+      "incorrectAnswers": [
+        "only fixed-width flat files",
+        "only one global key-value map with no structure",
+        "only graph edges without nodes"
+      ],
+      "explanation": "Document models group related fields in one record, which maps well to application objects and flexible schemas.",
+      "keywords": [
+        "nosql",
+        "documents"
+      ],
+      "source": "https://www.mongodb.com/docs/manual/core/document/"
+    },
+    {
+      "seedId": "2e793664-1c4c-502f-928c-c60431d2d54a",
+      "category": "tech",
+      "navigationKeyword1": "databases",
+      "navigationKeyword2": "nosql",
+      "question": "What is a defining trait of a key-value store?",
+      "correctAnswer": "data is accessed by a key to retrieve an associated value",
+      "incorrectAnswers": [
+        "every query must join five tables",
+        "values must always be relational tables",
+        "keys are limited to integers only"
+      ],
+      "explanation": "Key-value systems optimize simple get/put patterns and often power caches and session stores.",
+      "keywords": [
+        "nosql",
+        "key-value"
+      ],
+      "source": "https://redis.io/docs/latest/develop/data-types/"
+    },
+    {
+      "seedId": "dee98e2f-3f68-55bc-ad39-a56e255a0149",
+      "category": "tech",
+      "navigationKeyword1": "databases",
+      "navigationKeyword2": "nosql",
+      "question": "What kind of workload are graph databases especially aimed at?",
+      "correctAnswer": "queries that follow relationships between entities efficiently",
+      "incorrectAnswers": [
+        "storing only numeric time series",
+        "replacing DNS for the internet",
+        "bulk loading CSV files only"
+      ],
+      "explanation": "Graph stores optimize traversals and pattern matching across connected data compared with modeling graphs purely in tables.",
+      "keywords": [
+        "nosql",
+        "graphs"
+      ],
+      "source": "https://neo4j.com/docs/getting-started/appendix/graphdb-concepts/"
+    },
+    {
+      "seedId": "fe78edc2-38cc-5a8c-bcfa-1de5539d2770",
+      "category": "tech",
+      "navigationKeyword1": "databases",
+      "navigationKeyword2": "nosql",
+      "question": "Why might an eventually consistent read see stale data briefly?",
+      "correctAnswer": "replicas may lag while updates propagate",
+      "incorrectAnswers": [
+        "because SQL is disabled",
+        "because indexes are illegal",
+        "because the database rolls back every write"
+      ],
+      "explanation": "Many distributed stores return success before every replica reflects the latest write, so readers might observe older values until convergence.",
+      "keywords": [
+        "nosql",
+        "consistency"
+      ],
+      "source": "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.ReadConsistency.html"
+    },
+    {
+      "seedId": "bd9279a9-b2b4-5efd-9b26-7ebfd91e8dea",
+      "category": "tech",
+      "navigationKeyword1": "databases",
+      "navigationKeyword2": "postgres",
+      "question": "Before changes are considered durable, PostgreSQL writes them where first?",
+      "correctAnswer": "the write-ahead log (WAL)",
+      "incorrectAnswers": [
+        "only the shared buffer cache",
+        "temporary files in `/tmp`",
+        "client application memory"
+      ],
+      "explanation": "WAL records changes before they are applied to data files so the system can recover after a crash.",
+      "keywords": [
+        "postgres",
+        "wal"
+      ],
+      "source": "https://www.postgresql.org/docs/current/wal.html"
+    },
+    {
+      "seedId": "30b97cb1-e2e1-52cd-a779-a297a1dbf0bc",
+      "category": "tech",
+      "navigationKeyword1": "databases",
+      "navigationKeyword2": "postgres",
+      "question": "How does PostgreSQL generally handle concurrent readers and writers on the same rows?",
+      "correctAnswer": "Multiversion concurrency control (MVCC) keeps row versions so reads and writes can overlap",
+      "incorrectAnswers": [
+        "Readers always block all writers",
+        "Writers always block all readers",
+        "Only one session may access a table at a time"
+      ],
+      "explanation": "MVCC stores snapshots of row versions so queries can read a consistent view without blocking writers in the typical case.",
+      "keywords": [
+        "postgres",
+        "concurrency"
+      ],
+      "source": "https://www.postgresql.org/docs/current/mvcc.html"
+    },
+    {
+      "seedId": "7cdac3b4-b219-5d98-a16a-9abdd8f8c988",
+      "category": "tech",
+      "navigationKeyword1": "databases",
+      "navigationKeyword2": "postgres",
+      "question": "In PostgreSQL, what does the `SERIALIZABLE` isolation level aim to prevent?",
+      "correctAnswer": "anomalies that could make concurrent transactions behave unlike a serial one-at-a-time order",
+      "incorrectAnswers": [
+        "all disk I/O until commit",
+        "any use of indexes",
+        "queries from using `ORDER BY`"
+      ],
+      "explanation": "Serializable isolation provides the strongest transaction guarantees by detecting conflicts that would break serial equivalence.",
+      "keywords": [
+        "postgres",
+        "isolation"
+      ],
+      "source": "https://www.postgresql.org/docs/current/transaction-iso.html"
+    },
+    {
+      "seedId": "d0547a84-1f11-5992-8ce6-af189d4287c1",
+      "category": "tech",
+      "navigationKeyword1": "databases",
+      "navigationKeyword2": "postgres",
+      "question": "What does `VACUUM` primarily help with in PostgreSQL?",
+      "correctAnswer": "reclaiming space from dead row versions left by updates and deletes",
+      "incorrectAnswers": [
+        "encrypting tables at rest",
+        "rebuilding all indexes nightly",
+        "forcing immediate replication to replicas"
+      ],
+      "explanation": "Updates and deletes leave old row versions; vacuuming cleans them up and helps avoid transaction ID wraparound issues.",
+      "keywords": [
+        "postgres",
+        "maintenance"
+      ],
+      "source": "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Appendix.PostgreSQL.CommonDBATasks.html"
+    },
+    {
+      "seedId": "c6a051de-f1f4-5a93-b0b3-a86004c1f5f3",
+      "category": "tech",
+      "navigationKeyword1": "databases",
+      "navigationKeyword2": "postgres",
+      "question": "What does a `PRIMARY KEY` constraint create automatically in PostgreSQL?",
+      "correctAnswer": "a unique B-tree index on the key columns",
+      "incorrectAnswers": [
+        "a full table copy on disk",
+        "a foreign key to every other table",
+        "a sequence for every column"
+      ],
+      "explanation": "PostgreSQL enforces primary keys with a unique index, which also supports fast lookups by key values.",
+      "keywords": [
+        "postgres",
+        "indexes"
+      ],
+      "source": "https://www.postgresql.org/docs/current/ddl-constraints.html#DDL-CONSTRAINTS-PRIMARY-KEYS"
+    },
+    {
+      "seedId": "7f4014c1-86bf-5763-956f-3dee5f1bd426",
+      "category": "tech",
+      "navigationKeyword1": "databases",
+      "navigationKeyword2": "postgres",
+      "question": "What is a practical difference between `json` and `jsonb` storage in PostgreSQL?",
+      "correctAnswer": "`jsonb` stores a decomposed binary form optimized for processing and indexing",
+      "incorrectAnswers": [
+        "`json` cannot be queried",
+        "`jsonb` cannot be indexed",
+        "they are identical types"
+      ],
+      "explanation": "`jsonb` is stored in a binary format that supports indexing and often faster operations than plain `json` text.",
+      "keywords": [
+        "postgres",
+        "json"
+      ],
+      "source": "https://cloud.google.com/sql/docs/postgres/data-types"
+    },
+    {
+      "seedId": "45977380-b87f-55f0-9984-f2581ef437ff",
+      "category": "tech",
+      "navigationKeyword1": "databases",
+      "navigationKeyword2": "sql",
+      "question": "First normal form (1NF) typically requires that each column at each row contains what?",
+      "correctAnswer": "a single atomic (indivisible) value for that attribute",
+      "incorrectAnswers": [
+        "only numeric values",
+        "only values under 255 characters",
+        "only values indexed by the primary key"
+      ],
+      "explanation": "1NF avoids repeating groups and requires atomic values so each attribute holds one value from its domain.",
+      "keywords": [
+        "sql",
+        "normalization"
+      ],
+      "source": "https://www.ibm.com/topics/database-normalization"
+    },
+    {
+      "seedId": "0c32ad26-dc0a-551a-a94d-6d40ea210e84",
+      "category": "tech",
+      "navigationKeyword1": "databases",
+      "navigationKeyword2": "sql",
+      "question": "How does a `LEFT OUTER JOIN` differ from an `INNER JOIN`?",
+      "correctAnswer": "It keeps unmatched left-table rows and fills the other side with NULLs",
+      "incorrectAnswers": [
+        "It only returns matching rows from both sides",
+        "It removes duplicate keys automatically",
+        "It is faster because it skips NULLs"
+      ],
+      "explanation": "An outer join preserves rows from the preserved side even when there is no match, using NULLs for missing columns.",
+      "keywords": [
+        "sql",
+        "joins"
+      ],
+      "source": "https://sqlite.org/lang_select.html#join_op"
+    },
+    {
+      "seedId": "b23c8d1e-5cf8-584b-a6b4-adedffeb7105",
+      "category": "tech",
+      "navigationKeyword1": "databases",
+      "navigationKeyword2": "sql",
+      "question": "In standard SQL, why can `WHERE` not filter on an aggregate like `COUNT(*)`?",
+      "correctAnswer": "`WHERE` runs before grouping, so aggregates are not available yet",
+      "incorrectAnswers": [
+        "`WHERE` cannot compare numbers",
+        "aggregates are forbidden in SQL",
+        "`WHERE` only works on indexed columns"
+      ],
+      "explanation": "Row filters apply before `GROUP BY`, while aggregates are computed during grouping; use `HAVING` to filter grouped results.",
+      "keywords": [
+        "sql",
+        "query-basics"
+      ],
+      "source": "https://www.postgresql.org/docs/current/sql-select.html"
+    },
+    {
+      "seedId": "f733dfa1-ba0f-5d91-b018-fbc930911837",
+      "category": "tech",
+      "navigationKeyword1": "databases",
+      "navigationKeyword2": "sql",
+      "question": "In the ACID acronym for transactions, what does the \"A\" stand for?",
+      "correctAnswer": "Atomicity",
+      "incorrectAnswers": [
+        "Availability",
+        "Authentication",
+        "Allocation"
+      ],
+      "explanation": "Atomicity means a transaction\u2019s changes succeed or fail together; there is no partial commit of a failed unit of work.",
+      "keywords": [
+        "sql",
+        "transactions"
+      ],
+      "source": "https://www.postgresql.org/docs/current/transaction-iso.html"
+    },
+    {
+      "seedId": "5ba6dc18-61c0-5c45-b809-8370b8a984dc",
+      "category": "tech",
+      "navigationKeyword1": "databases",
+      "navigationKeyword2": "sql",
+      "question": "What does a `PRIMARY KEY` constraint guarantee for the key columns?",
+      "correctAnswer": "uniqueness and disallowing NULLs in those columns",
+      "incorrectAnswers": [
+        "only an index hint, not enforced",
+        "uniqueness but NULLs are allowed",
+        "fast writes without uniqueness"
+      ],
+      "explanation": "A primary key uniquely identifies rows and requires non-null values in the key columns.",
+      "keywords": [
+        "sql",
+        "constraints"
+      ],
+      "source": "https://learn.microsoft.com/en-us/sql/relational-databases/tables/create-primary-keys"
+    },
+    {
+      "seedId": "d26b3f41-0924-5ce5-bc72-787ea65914cd",
+      "category": "tech",
+      "navigationKeyword1": "databases",
+      "navigationKeyword2": "sql",
+      "question": "What is the correct way to test for a missing SQL value in a column?",
+      "correctAnswer": "`IS NULL`",
+      "incorrectAnswers": [
+        "`= NULL`",
+        "`== NULL`",
+        "`NULL = NULL`"
+      ],
+      "explanation": "In SQL, comparisons to `NULL` yield unknown; you must use `IS NULL` or `IS NOT NULL` to test for missing values.",
+      "keywords": [
+        "sql",
+        "null-handling"
+      ],
+      "source": "https://dev.mysql.com/doc/refman/8.0/en/working-with-null.html"
+    },
+    {
+      "seedId": "a02c6c31-e35b-5855-b2c4-16c322795ea2",
+      "category": "tech",
+      "navigationKeyword1": "databases",
+      "navigationKeyword2": "sql-server",
+      "question": "For Unicode text, which family of types stores UTF-16 data in SQL Server?",
+      "correctAnswer": "`NCHAR` and `NVARCHAR`",
+      "incorrectAnswers": [
+        "`CHAR` and `VARCHAR`",
+        "`TEXT` only",
+        "`BINARY` and `VARBINARY`"
+      ],
+      "explanation": "`N`-prefixed types store Unicode using UTF-16 encoding; plain `CHAR`/`VARCHAR` use single-byte encodings.",
+      "keywords": [
+        "sql-server",
+        "unicode"
+      ],
+      "source": "https://learn.microsoft.com/en-us/sql/t-sql/data-types/nchar-and-nvarchar-transact-sql"
+    },
+    {
+      "seedId": "0054cfe3-782b-5856-90b2-1c467e117f2b",
+      "category": "tech",
+      "navigationKeyword1": "databases",
+      "navigationKeyword2": "sql-server",
+      "question": "How many clustered indexes can a typical SQL Server table have?",
+      "correctAnswer": "at most one",
+      "incorrectAnswers": [
+        "one per column",
+        "unlimited",
+        "exactly two"
+      ],
+      "explanation": "The clustered index defines the table\u2019s row order; SQL Server allows only one clustered index per table.",
+      "keywords": [
+        "sql-server",
+        "indexes"
+      ],
+      "source": "https://learn.microsoft.com/en-us/sql/relational-databases/indexes/clustered-and-nonclustered-indexes-described"
+    },
+    {
+      "seedId": "050ade24-11bb-56ac-9d02-47a0f5c62536",
+      "category": "tech",
+      "navigationKeyword1": "databases",
+      "navigationKeyword2": "sql-server",
+      "question": "What does `SNAPSHOT` transaction isolation use to present a consistent view of data?",
+      "correctAnswer": "row versions stored in `tempdb`",
+      "incorrectAnswers": [
+        "blocking every writer with exclusive locks",
+        "copying the whole database to RAM",
+        "disabling all indexes for the session"
+      ],
+      "explanation": "Snapshot isolation reads from versions of rows captured when the transaction started, reducing blocking compared to some lock-heavy modes.",
+      "keywords": [
+        "sql-server",
+        "isolation"
+      ],
+      "source": "https://learn.microsoft.com/en-us/sql/t-sql/statements/set-transaction-isolation-level-transact-sql"
+    },
+    {
+      "seedId": "c95a242e-9db1-5979-a872-37b75fa195bf",
+      "category": "tech",
+      "navigationKeyword1": "databases",
+      "navigationKeyword2": "sql-server",
+      "question": "What does an `IDENTITY` column provide on an integer column?",
+      "correctAnswer": "automatic numeric values on inserts according to seed and increment",
+      "incorrectAnswers": [
+        "encryption of the column",
+        "a guaranteed globally unique UUID",
+        "read-only computed values"
+      ],
+      "explanation": "Identity columns generate incrementing values for surrogate keys unless you override behavior with special settings.",
+      "keywords": [
+        "sql-server",
+        "identity"
+      ],
+      "source": "https://learn.microsoft.com/en-us/sql/t-sql/statements/create-table-transact-sql-identity-property"
+    },
+    {
+      "seedId": "ca0c4de4-77d3-51d6-a6d0-c5d6dc4633b8",
+      "category": "tech",
+      "navigationKeyword1": "databases",
+      "navigationKeyword2": "sql-server",
+      "question": "What is T-SQL in the Microsoft SQL Server ecosystem?",
+      "correctAnswer": "SQL Server\u2019s SQL dialect with procedural and server-side extensions",
+      "incorrectAnswers": [
+        "a separate NoSQL language",
+        "only a client GUI tool",
+        "a network protocol for ODBC"
+      ],
+      "explanation": "Transact-SQL extends standard SQL with stored procedures, control flow, and SQL Server\u2013specific features.",
+      "keywords": [
+        "sql-server",
+        "tsql"
+      ],
+      "source": "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_SQLServer.html"
+    },
+    {
+      "seedId": "c9694e69-0c27-5227-b69e-84ce1274bfa4",
+      "category": "tech",
+      "navigationKeyword1": "databases",
+      "navigationKeyword2": "sql-server",
+      "question": "What recovery model choice affects how much work the transaction log can reuse versus retain for log backups?",
+      "correctAnswer": "the database recovery model (for example simple vs full)",
+      "incorrectAnswers": [
+        "only the edition (Express vs Enterprise)",
+        "the client driver (ODBC vs JDBC)",
+        "the Windows page file size"
+      ],
+      "explanation": "Recovery models control logging behavior such as whether log backups are required to truncate the log for point-in-time recovery.",
+      "keywords": [
+        "sql-server",
+        "recovery"
+      ],
+      "source": "https://learn.microsoft.com/en-us/sql/relational-databases/backup-restore/recovery-models-sql-server"
+    }
+  ]
+}

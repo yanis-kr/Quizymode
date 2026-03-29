@@ -1,0 +1,1207 @@
+{
+  "schemaVersion": 1,
+  "seedSet": "core-public-items",
+  "deltaPreviewLimit": 200,
+  "items": [
+    {
+      "seedId": "241fafaf-a9d8-5a28-be40-9b72f8b6ef92",
+      "category": "sports",
+      "navigationKeyword1": "basketball",
+      "navigationKeyword2": "champions",
+      "question": "Which NBA franchise holds the most championships after the 2024 Finals?",
+      "correctAnswer": "Boston Celtics",
+      "incorrectAnswers": [
+        "Los Angeles Lakers",
+        "Chicago Bulls",
+        "Golden State Warriors"
+      ],
+      "explanation": "Boston moved ahead with its 2024 title.",
+      "keywords": [
+        "basketball",
+        "champions",
+        "most-titles"
+      ],
+      "source": "https://www.nba.com/history"
+    },
+    {
+      "seedId": "18320364-6685-5732-a2bf-5f9c047d59aa",
+      "category": "sports",
+      "navigationKeyword1": "basketball",
+      "navigationKeyword2": "champions",
+      "question": "Which franchise won four straight WNBA titles from 1997 through 2000?",
+      "correctAnswer": "Houston Comets",
+      "incorrectAnswers": [
+        "Seattle Storm",
+        "Minnesota Lynx",
+        "Phoenix Mercury"
+      ],
+      "explanation": "The Comets dominated the league's earliest years.",
+      "keywords": [
+        "basketball",
+        "champions",
+        "dynasty"
+      ],
+      "source": "https://www.wnba.com/history"
+    },
+    {
+      "seedId": "1bd366d1-1879-5af3-95d9-634c870745a6",
+      "category": "sports",
+      "navigationKeyword1": "basketball",
+      "navigationKeyword2": "champions",
+      "question": "Which franchise won the 2016 NBA Finals after overcoming a 3-1 series deficit?",
+      "correctAnswer": "Cleveland Cavaliers",
+      "incorrectAnswers": [
+        "Golden State Warriors",
+        "San Antonio Spurs",
+        "Miami Heat"
+      ],
+      "explanation": "Cleveland came back against Golden State in the 2016 Finals.",
+      "keywords": [
+        "basketball",
+        "champions",
+        "cavaliers"
+      ],
+      "source": "https://www.nba.com/history"
+    },
+    {
+      "seedId": "63f232c3-2bd8-518a-a288-5db01d765462",
+      "category": "sports",
+      "navigationKeyword1": "basketball",
+      "navigationKeyword2": "champions",
+      "question": "Which franchise won the 2022 and 2023 WNBA championships?",
+      "correctAnswer": "Las Vegas Aces",
+      "incorrectAnswers": [
+        "New York Liberty",
+        "Chicago Sky",
+        "Seattle Storm"
+      ],
+      "explanation": "Las Vegas repeated before New York won in 2024.",
+      "keywords": [
+        "basketball",
+        "champions",
+        "aces"
+      ],
+      "source": "https://www.wnba.com/history"
+    },
+    {
+      "seedId": "a02c92de-c3fb-5518-a77d-5ba3e9bd21e0",
+      "category": "sports",
+      "navigationKeyword1": "basketball",
+      "navigationKeyword2": "champions",
+      "question": "Which team completed a 72-win regular season and won the 1996 NBA championship?",
+      "correctAnswer": "Chicago Bulls",
+      "incorrectAnswers": [
+        "Los Angeles Lakers",
+        "Houston Rockets",
+        "Seattle SuperSonics"
+      ],
+      "explanation": "The 1995-96 Bulls capped a historic season with the title.",
+      "keywords": [
+        "basketball",
+        "champions",
+        "bulls"
+      ],
+      "source": "https://www.nba.com/history"
+    },
+    {
+      "seedId": "3fcac013-8222-572d-8173-23647d2288ac",
+      "category": "sports",
+      "navigationKeyword1": "basketball",
+      "navigationKeyword2": "champions",
+      "question": "Which team won the 2020 NBA title inside the Orlando bubble?",
+      "correctAnswer": "Los Angeles Lakers",
+      "incorrectAnswers": [
+        "Miami Heat",
+        "Boston Celtics",
+        "Denver Nuggets"
+      ],
+      "explanation": "The Lakers beat Miami in the 2020 Finals.",
+      "keywords": [
+        "basketball",
+        "champions",
+        "bubble"
+      ],
+      "source": "https://www.nba.com/history"
+    },
+    {
+      "seedId": "ef4b04fa-f3d7-5366-ae75-79013ca2a70c",
+      "category": "sports",
+      "navigationKeyword1": "basketball",
+      "navigationKeyword2": "champions",
+      "question": "Which team won the 2023 NBA Finals?",
+      "correctAnswer": "Denver Nuggets",
+      "incorrectAnswers": [
+        "Miami Heat",
+        "Boston Celtics",
+        "Phoenix Suns"
+      ],
+      "explanation": "Denver beat Miami for the franchise's first NBA title.",
+      "keywords": [
+        "basketball",
+        "champions",
+        "2023"
+      ],
+      "source": "https://www.nba.com/history"
+    },
+    {
+      "seedId": "f83fb8a5-b1af-5cce-b6e9-72fd16fd008c",
+      "category": "sports",
+      "navigationKeyword1": "basketball",
+      "navigationKeyword2": "champions",
+      "question": "Which team won the first WNBA title in 1997?",
+      "correctAnswer": "Houston Comets",
+      "incorrectAnswers": [
+        "New York Liberty",
+        "Phoenix Mercury",
+        "Los Angeles Sparks"
+      ],
+      "explanation": "Houston launched the league's first dynasty with the inaugural title.",
+      "keywords": [
+        "basketball",
+        "champions",
+        "wnba"
+      ],
+      "source": "https://www.wnba.com/history"
+    },
+    {
+      "seedId": "4c9e1847-77de-55fe-8d85-64af30ce8e93",
+      "category": "sports",
+      "navigationKeyword1": "basketball",
+      "navigationKeyword2": "champions",
+      "question": "Who won the 2024 NBA Finals?",
+      "correctAnswer": "Boston Celtics",
+      "incorrectAnswers": [
+        "Dallas Mavericks",
+        "Denver Nuggets",
+        "Miami Heat"
+      ],
+      "explanation": "Boston defeated Dallas to win the 2024 title.",
+      "keywords": [
+        "basketball",
+        "champions",
+        "2024"
+      ],
+      "source": "https://www.nba.com/history"
+    },
+    {
+      "seedId": "39d6443b-6a68-57b5-93cf-97aa7dc40468",
+      "category": "sports",
+      "navigationKeyword1": "basketball",
+      "navigationKeyword2": "champions",
+      "question": "Who won the 2024 WNBA Finals?",
+      "correctAnswer": "New York Liberty",
+      "incorrectAnswers": [
+        "Minnesota Lynx",
+        "Las Vegas Aces",
+        "Seattle Storm"
+      ],
+      "explanation": "New York beat Minnesota to claim the 2024 championship.",
+      "keywords": [
+        "basketball",
+        "champions",
+        "liberty"
+      ],
+      "source": "https://www.wnba.com/history"
+    },
+    {
+      "seedId": "a653416e-4096-5bb2-9f3c-78cd111b33cc",
+      "category": "sports",
+      "navigationKeyword1": "basketball",
+      "navigationKeyword2": "nba",
+      "question": "How many quarters are played in an NBA game?",
+      "correctAnswer": "Four",
+      "incorrectAnswers": [
+        "Two",
+        "Three",
+        "Six"
+      ],
+      "explanation": "The NBA uses four quarters per game.",
+      "keywords": [
+        "basketball",
+        "nba",
+        "quarters"
+      ],
+      "source": "https://official.nba.com/rule-no-5-scoring-and-timing/"
+    },
+    {
+      "seedId": "eb5f4691-b24a-541e-a3bf-f3f9c1fbe851",
+      "category": "sports",
+      "navigationKeyword1": "basketball",
+      "navigationKeyword2": "nba",
+      "question": "How many teams play in the NBA as of the 2025-26 season?",
+      "correctAnswer": "30",
+      "incorrectAnswers": [
+        "28",
+        "32",
+        "34"
+      ],
+      "explanation": "The NBA has 30 franchises divided between two conferences.",
+      "keywords": [
+        "basketball",
+        "nba",
+        "teams"
+      ],
+      "source": "https://www.nba.com/history"
+    },
+    {
+      "seedId": "a8395b9b-634d-52d1-82ce-712e7a0d6a28",
+      "category": "sports",
+      "navigationKeyword1": "basketball",
+      "navigationKeyword2": "nba",
+      "question": "What does NBA stand for?",
+      "correctAnswer": "National Basketball Association",
+      "incorrectAnswers": [
+        "National Ball Association",
+        "North Basketball Alliance",
+        "National Basket Athletics"
+      ],
+      "explanation": "NBA is short for National Basketball Association.",
+      "keywords": [
+        "basketball",
+        "nba",
+        "league"
+      ],
+      "source": "https://www.nba.com/history"
+    },
+    {
+      "seedId": "1503b68a-f2e2-5486-a321-621f94cfc855",
+      "category": "sports",
+      "navigationKeyword1": "basketball",
+      "navigationKeyword2": "nba",
+      "question": "What is the standard length of an NBA game?",
+      "correctAnswer": "48 minutes",
+      "incorrectAnswers": [
+        "40 minutes",
+        "60 minutes",
+        "50 minutes"
+      ],
+      "explanation": "An NBA game has four 12-minute quarters.",
+      "keywords": [
+        "basketball",
+        "nba",
+        "game-length"
+      ],
+      "source": "https://official.nba.com/rule-no-5-scoring-and-timing/"
+    },
+    {
+      "seedId": "d54ef653-4f1b-5905-be89-a494fc25d4fd",
+      "category": "sports",
+      "navigationKeyword1": "basketball",
+      "navigationKeyword2": "nba",
+      "question": "Which city is home to the Lakers franchise?",
+      "correctAnswer": "Los Angeles",
+      "incorrectAnswers": [
+        "Chicago",
+        "Miami",
+        "Houston"
+      ],
+      "explanation": "The Lakers have been based in Los Angeles since moving from Minneapolis.",
+      "keywords": [
+        "basketball",
+        "nba",
+        "lakers"
+      ],
+      "source": "https://www.nba.com/history"
+    },
+    {
+      "seedId": "11c38885-0431-58e5-a4ae-54fb419738a2",
+      "category": "sports",
+      "navigationKeyword1": "basketball",
+      "navigationKeyword2": "nba",
+      "question": "Which former ABA team later built a dynasty around Tim Duncan?",
+      "correctAnswer": "San Antonio Spurs",
+      "incorrectAnswers": [
+        "Seattle SuperSonics",
+        "Milwaukee Bucks",
+        "Boston Celtics"
+      ],
+      "explanation": "The Spurs came from the ABA and later won multiple NBA titles.",
+      "keywords": [
+        "basketball",
+        "nba",
+        "spurs"
+      ],
+      "source": "https://www.nba.com/history"
+    },
+    {
+      "seedId": "96f735de-22ac-5e05-bbe0-7faed362c16a",
+      "category": "sports",
+      "navigationKeyword1": "basketball",
+      "navigationKeyword2": "nba",
+      "question": "Which team is famous for playing at Madison Square Garden?",
+      "correctAnswer": "New York Knicks",
+      "incorrectAnswers": [
+        "Brooklyn Nets",
+        "Boston Celtics",
+        "Chicago Bulls"
+      ],
+      "explanation": "Madison Square Garden is the Knicks' home arena.",
+      "keywords": [
+        "basketball",
+        "nba",
+        "knicks"
+      ],
+      "source": "https://www.nba.com/history"
+    },
+    {
+      "seedId": "302f2254-2514-5de9-9c08-3392c9202142",
+      "category": "sports",
+      "navigationKeyword1": "basketball",
+      "navigationKeyword2": "nba",
+      "question": "Which team won the 2024 NBA Finals?",
+      "correctAnswer": "Boston Celtics",
+      "incorrectAnswers": [
+        "Dallas Mavericks",
+        "Denver Nuggets",
+        "Miami Heat"
+      ],
+      "explanation": "Boston won the 2024 Finals over Dallas.",
+      "keywords": [
+        "basketball",
+        "nba",
+        "finals"
+      ],
+      "source": "https://www.nba.com/history"
+    },
+    {
+      "seedId": "047eef05-0dbd-5181-a9b0-c0f76379e460",
+      "category": "sports",
+      "navigationKeyword1": "basketball",
+      "navigationKeyword2": "nba",
+      "question": "Which trophy is awarded to the NBA Finals winner?",
+      "correctAnswer": "Larry O'Brien Championship Trophy",
+      "incorrectAnswers": [
+        "Vince Lombardi Trophy",
+        "Stanley Cup",
+        "Commissioner's Trophy"
+      ],
+      "explanation": "The NBA champion receives the Larry O'Brien Trophy.",
+      "keywords": [
+        "basketball",
+        "nba",
+        "trophy"
+      ],
+      "source": "https://www.nba.com/history"
+    },
+    {
+      "seedId": "b8ee73cb-cd72-570a-9234-17ba4820e622",
+      "category": "sports",
+      "navigationKeyword1": "basketball",
+      "navigationKeyword2": "nba",
+      "question": "Which two conferences make up the NBA?",
+      "correctAnswer": "Eastern and Western",
+      "incorrectAnswers": [
+        "Northern and Southern",
+        "Atlantic and Pacific",
+        "American and National"
+      ],
+      "explanation": "The NBA is split into Eastern and Western Conferences.",
+      "keywords": [
+        "basketball",
+        "nba",
+        "conferences"
+      ],
+      "source": "https://www.nba.com/history"
+    },
+    {
+      "seedId": "c7ade1b9-ef93-5331-bbe8-c533e661c5c4",
+      "category": "sports",
+      "navigationKeyword1": "basketball",
+      "navigationKeyword2": "players",
+      "question": "Which Boston Celtics forward became known as Larry Legend?",
+      "correctAnswer": "Larry Bird",
+      "incorrectAnswers": [
+        "Kevin McHale",
+        "Paul Pierce",
+        "John Havlicek"
+      ],
+      "explanation": "Larry Bird was the face of the Celtics in the 1980s.",
+      "keywords": [
+        "basketball",
+        "players",
+        "larry-bird"
+      ],
+      "source": "https://www.britannica.com/biography/Larry-Bird"
+    },
+    {
+      "seedId": "fa33ac9b-e75c-5b55-aa6f-b1f836dd2d09",
+      "category": "sports",
+      "navigationKeyword1": "basketball",
+      "navigationKeyword2": "players",
+      "question": "Which Hall of Fame center was famous for the skyhook?",
+      "correctAnswer": "Kareem Abdul-Jabbar",
+      "incorrectAnswers": [
+        "Shaquille O'Neal",
+        "Hakeem Olajuwon",
+        "Wilt Chamberlain"
+      ],
+      "explanation": "Kareem's skyhook became one of basketball's signature shots.",
+      "keywords": [
+        "basketball",
+        "players",
+        "kareem"
+      ],
+      "source": "https://www.britannica.com/biography/Kareem-Abdul-Jabbar"
+    },
+    {
+      "seedId": "12907df4-4678-5548-960e-349cc5f5446f",
+      "category": "sports",
+      "navigationKeyword1": "basketball",
+      "navigationKeyword2": "players",
+      "question": "Which Las Vegas Aces star won back-to-back WNBA MVP awards in 2022 and 2023?",
+      "correctAnswer": "A'ja Wilson",
+      "incorrectAnswers": [
+        "Chelsea Gray",
+        "Sabrina Ionescu",
+        "Brittney Griner"
+      ],
+      "explanation": "Wilson became the centerpiece of the Aces' title run.",
+      "keywords": [
+        "basketball",
+        "players",
+        "aja-wilson"
+      ],
+      "source": "https://www.wnba.com/history"
+    },
+    {
+      "seedId": "681e17d6-b18d-5979-b9dd-7afeb279c123",
+      "category": "sports",
+      "navigationKeyword1": "basketball",
+      "navigationKeyword2": "players",
+      "question": "Which Los Angeles Lakers guard was nicknamed Magic?",
+      "correctAnswer": "Magic Johnson",
+      "incorrectAnswers": [
+        "Jerry West",
+        "Kobe Bryant",
+        "Steve Nash"
+      ],
+      "explanation": "Magic Johnson led the Lakers' Showtime era.",
+      "keywords": [
+        "basketball",
+        "players",
+        "magic-johnson"
+      ],
+      "source": "https://www.britannica.com/biography/Magic-Johnson"
+    },
+    {
+      "seedId": "7573bb2a-9b28-5cc4-9f28-644e0ab5f9fd",
+      "category": "sports",
+      "navigationKeyword1": "basketball",
+      "navigationKeyword2": "players",
+      "question": "Which Los Angeles Lakers star scored 81 points in a 2006 NBA game?",
+      "correctAnswer": "Kobe Bryant",
+      "incorrectAnswers": [
+        "Michael Jordan",
+        "Allen Iverson",
+        "James Harden"
+      ],
+      "explanation": "Bryant's 81-point game is the second-highest single-game total in NBA history.",
+      "keywords": [
+        "basketball",
+        "players",
+        "kobe-bryant"
+      ],
+      "source": "https://www.britannica.com/biography/Kobe-Bryant"
+    },
+    {
+      "seedId": "c4ea606c-88a0-5c2a-bbbd-d24d7deeeffe",
+      "category": "sports",
+      "navigationKeyword1": "basketball",
+      "navigationKeyword2": "players",
+      "question": "Which WNBA and UConn star became the face of the Seattle Storm and later the New York Liberty?",
+      "correctAnswer": "Breanna Stewart",
+      "incorrectAnswers": [
+        "Diana Taurasi",
+        "Maya Moore",
+        "A'ja Wilson"
+      ],
+      "explanation": "Stewart won titles and MVP honors in the WNBA.",
+      "keywords": [
+        "basketball",
+        "players",
+        "breanna-stewart"
+      ],
+      "source": "https://www.britannica.com/biography/Breanna-Stewart"
+    },
+    {
+      "seedId": "954fdc96-eeb8-5018-81bd-79f038f8e462",
+      "category": "sports",
+      "navigationKeyword1": "basketball",
+      "navigationKeyword2": "players",
+      "question": "Which center won titles with the Lakers and was famous for power and broken backboards earlier in his career?",
+      "correctAnswer": "Shaquille O'Neal",
+      "incorrectAnswers": [
+        "David Robinson",
+        "Patrick Ewing",
+        "Alonzo Mourning"
+      ],
+      "explanation": "O'Neal was one of the most dominant centers in league history.",
+      "keywords": [
+        "basketball",
+        "players",
+        "shaquille-oneal"
+      ],
+      "source": "https://www.britannica.com/biography/Shaquille-ONeal"
+    },
+    {
+      "seedId": "074f7bab-1b7d-52bb-8cb7-88d9e3685883",
+      "category": "sports",
+      "navigationKeyword1": "basketball",
+      "navigationKeyword2": "players",
+      "question": "Which player became the NBA's all-time leading scorer?",
+      "correctAnswer": "LeBron James",
+      "incorrectAnswers": [
+        "Kareem Abdul-Jabbar",
+        "Karl Malone",
+        "Kobe Bryant"
+      ],
+      "explanation": "LeBron James passed Kareem Abdul-Jabbar for the career scoring lead.",
+      "keywords": [
+        "basketball",
+        "players",
+        "lebron-james"
+      ],
+      "source": "https://www.nba.com/history"
+    },
+    {
+      "seedId": "50407d94-fc1a-51a1-9780-c1696e4e30e9",
+      "category": "sports",
+      "navigationKeyword1": "basketball",
+      "navigationKeyword2": "players",
+      "question": "Which player won six NBA championships with the Chicago Bulls in the 1990s?",
+      "correctAnswer": "Michael Jordan",
+      "incorrectAnswers": [
+        "Kobe Bryant",
+        "LeBron James",
+        "Magic Johnson"
+      ],
+      "explanation": "Jordan led the Bulls to two three-peats in the 1990s.",
+      "keywords": [
+        "basketball",
+        "players",
+        "michael-jordan"
+      ],
+      "source": "https://www.britannica.com/biography/Michael-Jordan"
+    },
+    {
+      "seedId": "52ae8c1a-5f61-56c9-8df0-a1c4b9eabb90",
+      "category": "sports",
+      "navigationKeyword1": "basketball",
+      "navigationKeyword2": "players",
+      "question": "Which point guard is most associated with the Golden State Warriors' three-point revolution?",
+      "correctAnswer": "Stephen Curry",
+      "incorrectAnswers": [
+        "Chris Paul",
+        "Damian Lillard",
+        "Klay Thompson"
+      ],
+      "explanation": "Curry changed offensive basketball with elite long-range shooting.",
+      "keywords": [
+        "basketball",
+        "players",
+        "stephen-curry"
+      ],
+      "source": "https://www.britannica.com/biography/Stephen-Curry"
+    },
+    {
+      "seedId": "ef9fb587-1bfd-5d7f-955a-2b9ffa28b1a2",
+      "category": "sports",
+      "navigationKeyword1": "basketball",
+      "navigationKeyword2": "positions",
+      "question": "What role describes a bench player who often sparks the second unit's scoring?",
+      "correctAnswer": "Sixth man",
+      "incorrectAnswers": [
+        "Point center",
+        "Water carrier",
+        "Captain only"
+      ],
+      "explanation": "The sixth man is a major reserve who often closes games too.",
+      "keywords": [
+        "basketball",
+        "positions",
+        "sixth-man"
+      ],
+      "source": "https://www.britannica.com/sports/basketball"
+    },
+    {
+      "seedId": "cbaff35f-8c1a-58a5-a698-1a35b0b237bf",
+      "category": "sports",
+      "navigationKeyword1": "basketball",
+      "navigationKeyword2": "positions",
+      "question": "What term describes a guard who can play either backcourt spot?",
+      "correctAnswer": "Combo guard",
+      "incorrectAnswers": [
+        "Stretch five",
+        "Rim protector only",
+        "Swing tackle"
+      ],
+      "explanation": "A combo guard can function at point or shooting guard.",
+      "keywords": [
+        "basketball",
+        "positions",
+        "combo-guard"
+      ],
+      "source": "https://www.britannica.com/sports/basketball"
+    },
+    {
+      "seedId": "8105e826-d602-5071-bd42-c996d666765c",
+      "category": "sports",
+      "navigationKeyword1": "basketball",
+      "navigationKeyword2": "positions",
+      "question": "What term is often used for a center who can shoot from long range?",
+      "correctAnswer": "Stretch five",
+      "incorrectAnswers": [
+        "Post-only center",
+        "Slasher",
+        "Lockdown wing"
+      ],
+      "explanation": "A stretch five spaces the floor with perimeter shooting.",
+      "keywords": [
+        "basketball",
+        "positions",
+        "stretch-five"
+      ],
+      "source": "https://www.britannica.com/sports/basketball"
+    },
+    {
+      "seedId": "2f08e196-a3ed-5650-9df3-479e9d6f9fc0",
+      "category": "sports",
+      "navigationKeyword1": "basketball",
+      "navigationKeyword2": "positions",
+      "question": "Which player role is most associated with protecting the basket near the rim?",
+      "correctAnswer": "Rim protector",
+      "incorrectAnswers": [
+        "Shooter's coach",
+        "Scorekeeper",
+        "Point guard"
+      ],
+      "explanation": "Rim protectors deter shots at the basket, often from the center spot.",
+      "keywords": [
+        "basketball",
+        "positions",
+        "rim-protector"
+      ],
+      "source": "https://www.britannica.com/sports/basketball"
+    },
+    {
+      "seedId": "7410f63d-e810-59e9-8fb3-cf56c8de9842",
+      "category": "sports",
+      "navigationKeyword1": "basketball",
+      "navigationKeyword2": "positions",
+      "question": "Which position is often the team's primary perimeter scorer beside the point guard?",
+      "correctAnswer": "Shooting guard",
+      "incorrectAnswers": [
+        "Center",
+        "Power forward",
+        "Point center"
+      ],
+      "explanation": "Shooting guards are commonly backcourt scorers.",
+      "keywords": [
+        "basketball",
+        "positions",
+        "shooting-guard"
+      ],
+      "source": "https://www.britannica.com/sports/basketball"
+    },
+    {
+      "seedId": "e0af183e-2535-57bd-bae0-32f58095e605",
+      "category": "sports",
+      "navigationKeyword1": "basketball",
+      "navigationKeyword2": "positions",
+      "question": "Which position is usually the tallest traditional interior player?",
+      "correctAnswer": "Center",
+      "incorrectAnswers": [
+        "Point guard",
+        "Shooting guard",
+        "Small forward"
+      ],
+      "explanation": "Centers traditionally protect the rim and rebound inside.",
+      "keywords": [
+        "basketball",
+        "positions",
+        "center"
+      ],
+      "source": "https://www.britannica.com/sports/basketball"
+    },
+    {
+      "seedId": "6bb767fa-6def-5570-8a7f-21d57dd1297f",
+      "category": "sports",
+      "navigationKeyword1": "basketball",
+      "navigationKeyword2": "positions",
+      "question": "Which position often combines rebounding with midrange or interior scoring next to the center?",
+      "correctAnswer": "Power forward",
+      "incorrectAnswers": [
+        "Point guard",
+        "Shooting guard",
+        "Combo guard"
+      ],
+      "explanation": "Power forwards usually work near the basket and on the boards.",
+      "keywords": [
+        "basketball",
+        "positions",
+        "power-forward"
+      ],
+      "source": "https://www.britannica.com/sports/basketball"
+    },
+    {
+      "seedId": "c22d99d8-3e36-51b8-a5dc-3ac54cc6959e",
+      "category": "sports",
+      "navigationKeyword1": "basketball",
+      "navigationKeyword2": "positions",
+      "question": "Which position often serves as a versatile wing between the guards and the bigs?",
+      "correctAnswer": "Small forward",
+      "incorrectAnswers": [
+        "Center",
+        "Point guard",
+        "Bench coach"
+      ],
+      "explanation": "Small forwards often defend multiple positions and score from the wing.",
+      "keywords": [
+        "basketball",
+        "positions",
+        "small-forward"
+      ],
+      "source": "https://www.britannica.com/sports/basketball"
+    },
+    {
+      "seedId": "95d5bf86-7a4b-56cc-a698-f6d44710aafe",
+      "category": "sports",
+      "navigationKeyword1": "basketball",
+      "navigationKeyword2": "positions",
+      "question": "Which position usually brings the ball up the floor and starts the offense?",
+      "correctAnswer": "Point guard",
+      "incorrectAnswers": [
+        "Center",
+        "Power forward",
+        "Small forward"
+      ],
+      "explanation": "The point guard is typically the primary ball-handler.",
+      "keywords": [
+        "basketball",
+        "positions",
+        "point-guard"
+      ],
+      "source": "https://www.britannica.com/sports/basketball"
+    },
+    {
+      "seedId": "ec26c2d6-abe5-5e4c-a636-a9d513f912c3",
+      "category": "sports",
+      "navigationKeyword1": "basketball",
+      "navigationKeyword2": "positions",
+      "question": "Which role most directly refers to a wing defender trusted to guard top scorers?",
+      "correctAnswer": "Perimeter stopper",
+      "incorrectAnswers": [
+        "Point guard only",
+        "Bench big",
+        "Glass cleaner"
+      ],
+      "explanation": "A perimeter stopper is valued for on-ball defense against wings and guards.",
+      "keywords": [
+        "basketball",
+        "positions",
+        "defense"
+      ],
+      "source": "https://www.britannica.com/sports/basketball"
+    },
+    {
+      "seedId": "c079c6d8-7314-528d-b574-4e7da2eea351",
+      "category": "sports",
+      "navigationKeyword1": "basketball",
+      "navigationKeyword2": "rules",
+      "question": "How long is the NBA shot clock?",
+      "correctAnswer": "24 seconds",
+      "incorrectAnswers": [
+        "20 seconds",
+        "30 seconds",
+        "35 seconds"
+      ],
+      "explanation": "Teams have 24 seconds to attempt a shot in the NBA.",
+      "keywords": [
+        "basketball",
+        "rules",
+        "shot-clock"
+      ],
+      "source": "https://official.nba.com/rule-no-7-24-second-clock/"
+    },
+    {
+      "seedId": "5faf23d1-8899-5a73-823f-bfe35f950e34",
+      "category": "sports",
+      "navigationKeyword1": "basketball",
+      "navigationKeyword2": "rules",
+      "question": "How many personal fouls disqualify a player in an NBA game?",
+      "correctAnswer": "Six",
+      "incorrectAnswers": [
+        "Five",
+        "Seven",
+        "Eight"
+      ],
+      "explanation": "An NBA player fouls out after six personal fouls.",
+      "keywords": [
+        "basketball",
+        "rules",
+        "fouls"
+      ],
+      "source": "https://official.nba.com/rule-no-3-players-substitutes-and-coaches/"
+    },
+    {
+      "seedId": "914aa6b3-02d2-533c-8d03-e3de384cf0f5",
+      "category": "sports",
+      "navigationKeyword1": "basketball",
+      "navigationKeyword2": "rules",
+      "question": "How many players from one team are on the court during play?",
+      "correctAnswer": "Five",
+      "incorrectAnswers": [
+        "Four",
+        "Six",
+        "Seven"
+      ],
+      "explanation": "Basketball is played five-on-five in standard professional games.",
+      "keywords": [
+        "basketball",
+        "rules",
+        "players"
+      ],
+      "source": "https://www.britannica.com/sports/basketball"
+    },
+    {
+      "seedId": "488e1671-567f-5e79-8262-0e36781d8559",
+      "category": "sports",
+      "navigationKeyword1": "basketball",
+      "navigationKeyword2": "rules",
+      "question": "How many points is a shot worth from behind the three-point line?",
+      "correctAnswer": "Three points",
+      "incorrectAnswers": [
+        "One point",
+        "Two points",
+        "Four points"
+      ],
+      "explanation": "Shots made beyond the three-point arc count for three.",
+      "keywords": [
+        "basketball",
+        "rules",
+        "three-pointer"
+      ],
+      "source": "https://official.nba.com/rule-no-5-scoring-and-timing/"
+    },
+    {
+      "seedId": "254b0f1d-f9a6-5176-a236-0ce4983321ba",
+      "category": "sports",
+      "navigationKeyword1": "basketball",
+      "navigationKeyword2": "rules",
+      "question": "How many points is a standard free throw worth?",
+      "correctAnswer": "One point",
+      "incorrectAnswers": [
+        "Two points",
+        "Three points",
+        "Zero points"
+      ],
+      "explanation": "A successful free throw counts for one point.",
+      "keywords": [
+        "basketball",
+        "rules",
+        "free-throw"
+      ],
+      "source": "https://official.nba.com/rule-no-5-scoring-and-timing/"
+    },
+    {
+      "seedId": "9d4598e7-925f-5b48-a11c-92cd7f5276df",
+      "category": "sports",
+      "navigationKeyword1": "basketball",
+      "navigationKeyword2": "rules",
+      "question": "How many quarters are in a standard professional basketball game?",
+      "correctAnswer": "Four",
+      "incorrectAnswers": [
+        "Two",
+        "Three",
+        "Six"
+      ],
+      "explanation": "Professional basketball games are split into four quarters.",
+      "keywords": [
+        "basketball",
+        "rules",
+        "quarters"
+      ],
+      "source": "https://www.britannica.com/sports/basketball"
+    },
+    {
+      "seedId": "4758e33b-0a6b-5ac5-a888-78571bddf165",
+      "category": "sports",
+      "navigationKeyword1": "basketball",
+      "navigationKeyword2": "rules",
+      "question": "What happens when a defender illegally blocks a shot after it is descending toward the basket?",
+      "correctAnswer": "Goaltending is called",
+      "incorrectAnswers": [
+        "The basket counts as four points",
+        "The shooter is ejected",
+        "Play always continues"
+      ],
+      "explanation": "Goaltending protects legal scoring chances near the rim.",
+      "keywords": [
+        "basketball",
+        "rules",
+        "goaltending"
+      ],
+      "source": "https://official.nba.com/rule-no-11-basket-interference-goaltending/"
+    },
+    {
+      "seedId": "ac496903-0e80-56b4-bc54-3550b6922d09",
+      "category": "sports",
+      "navigationKeyword1": "basketball",
+      "navigationKeyword2": "rules",
+      "question": "What type of foul is called when an offensive player runs into a legally set defender?",
+      "correctAnswer": "Charging",
+      "incorrectAnswers": [
+        "Blocking",
+        "Technical",
+        "Flagrant"
+      ],
+      "explanation": "Charging is an offensive foul caused by illegal contact into a set defender.",
+      "keywords": [
+        "basketball",
+        "rules",
+        "charging"
+      ],
+      "source": "https://www.britannica.com/sports/basketball"
+    },
+    {
+      "seedId": "c29d273e-4ad8-5fcf-9454-402c0d21000a",
+      "category": "sports",
+      "navigationKeyword1": "basketball",
+      "navigationKeyword2": "rules",
+      "question": "What violation is called when a team fails to advance the ball over midcourt in time?",
+      "correctAnswer": "An 8-second violation",
+      "incorrectAnswers": [
+        "A 3-second violation",
+        "A lane violation",
+        "A goaltend"
+      ],
+      "explanation": "NBA teams must get the ball into the frontcourt within eight seconds.",
+      "keywords": [
+        "basketball",
+        "rules",
+        "backcourt"
+      ],
+      "source": "https://official.nba.com/rule-no-10-violations-and-penalties/"
+    },
+    {
+      "seedId": "b95c64dc-9969-58b0-9591-96829baebf38",
+      "category": "sports",
+      "navigationKeyword1": "basketball",
+      "navigationKeyword2": "rules",
+      "question": "What violation occurs when a player takes more than two steps without dribbling?",
+      "correctAnswer": "Traveling",
+      "incorrectAnswers": [
+        "Goaltending",
+        "Backcourt",
+        "Palming"
+      ],
+      "explanation": "Traveling penalizes illegal movement without a proper dribble.",
+      "keywords": [
+        "basketball",
+        "rules",
+        "traveling"
+      ],
+      "source": "https://www.britannica.com/sports/basketball"
+    },
+    {
+      "seedId": "f307fa97-c670-5e3c-ab94-f80a28414304",
+      "category": "sports",
+      "navigationKeyword1": "basketball",
+      "navigationKeyword2": "wnba",
+      "question": "How many minutes are in a regulation WNBA game?",
+      "correctAnswer": "40 minutes",
+      "incorrectAnswers": [
+        "48 minutes",
+        "32 minutes",
+        "50 minutes"
+      ],
+      "explanation": "WNBA games have four 10-minute quarters.",
+      "keywords": [
+        "basketball",
+        "wnba",
+        "game-length"
+      ],
+      "source": "https://www.wnba.com/history"
+    },
+    {
+      "seedId": "17e6530c-6416-5146-8cab-d446db984713",
+      "category": "sports",
+      "navigationKeyword1": "basketball",
+      "navigationKeyword2": "wnba",
+      "question": "What does WNBA stand for?",
+      "correctAnswer": "Women's National Basketball Association",
+      "incorrectAnswers": [
+        "World National Basketball Association",
+        "Women's North Basketball Association",
+        "Western National Basketball Association"
+      ],
+      "explanation": "WNBA is short for Women's National Basketball Association.",
+      "keywords": [
+        "basketball",
+        "wnba",
+        "league"
+      ],
+      "source": "https://www.wnba.com/history"
+    },
+    {
+      "seedId": "24ee5ba2-7f6b-5dae-ad3c-9fe6504506ad",
+      "category": "sports",
+      "navigationKeyword1": "basketball",
+      "navigationKeyword2": "wnba",
+      "question": "Which New York Liberty star won Finals MVP in 2024?",
+      "correctAnswer": "Jonquel Jones",
+      "incorrectAnswers": [
+        "Breanna Stewart",
+        "Sabrina Ionescu",
+        "Betnijah Laney-Hamilton"
+      ],
+      "explanation": "Jones earned the 2024 Finals MVP honor.",
+      "keywords": [
+        "basketball",
+        "wnba",
+        "finals-mvp"
+      ],
+      "source": "https://www.wnba.com/history"
+    },
+    {
+      "seedId": "47fb6a7f-2360-55fd-98fb-86eccb339b15",
+      "category": "sports",
+      "navigationKeyword1": "basketball",
+      "navigationKeyword2": "wnba",
+      "question": "Which Seattle Storm star retired as the WNBA's all-time assists leader?",
+      "correctAnswer": "Sue Bird",
+      "incorrectAnswers": [
+        "Becky Hammon",
+        "Chelsea Gray",
+        "Diana Taurasi"
+      ],
+      "explanation": "Sue Bird finished her career as the league leader in assists.",
+      "keywords": [
+        "basketball",
+        "wnba",
+        "sue-bird"
+      ],
+      "source": "https://www.britannica.com/biography/Sue-Bird"
+    },
+    {
+      "seedId": "083d7249-4195-5a4d-867d-e6e14a494836",
+      "category": "sports",
+      "navigationKeyword1": "basketball",
+      "navigationKeyword2": "wnba",
+      "question": "Which city is home to the Seattle Storm?",
+      "correctAnswer": "Seattle",
+      "incorrectAnswers": [
+        "Phoenix",
+        "Dallas",
+        "Atlanta"
+      ],
+      "explanation": "The Storm are based in Seattle, Washington.",
+      "keywords": [
+        "basketball",
+        "wnba",
+        "teams"
+      ],
+      "source": "https://www.wnba.com/history"
+    },
+    {
+      "seedId": "d22bec78-1cf3-5f2b-a0a9-aad0d381fd3d",
+      "category": "sports",
+      "navigationKeyword1": "basketball",
+      "navigationKeyword2": "wnba",
+      "question": "Which franchise won the 2022 and 2023 WNBA titles?",
+      "correctAnswer": "Las Vegas Aces",
+      "incorrectAnswers": [
+        "New York Liberty",
+        "Seattle Storm",
+        "Chicago Sky"
+      ],
+      "explanation": "Las Vegas repeated as champion in 2023 after winning in 2022.",
+      "keywords": [
+        "basketball",
+        "wnba",
+        "aces"
+      ],
+      "source": "https://www.wnba.com/history"
+    },
+    {
+      "seedId": "0dd64d60-e48d-5a57-9dd3-7c553776dc70",
+      "category": "sports",
+      "navigationKeyword1": "basketball",
+      "navigationKeyword2": "wnba",
+      "question": "Which player led the Phoenix Mercury to multiple WNBA titles and became one of the league's greatest scorers?",
+      "correctAnswer": "Diana Taurasi",
+      "incorrectAnswers": [
+        "Sue Bird",
+        "Tamika Catchings",
+        "Candace Parker"
+      ],
+      "explanation": "Taurasi became the signature scorer of the Mercury.",
+      "keywords": [
+        "basketball",
+        "wnba",
+        "diana-taurasi"
+      ],
+      "source": "https://www.britannica.com/biography/Diana-Taurasi"
+    },
+    {
+      "seedId": "5e4e667a-db09-55c7-83c3-30ae1cb24213",
+      "category": "sports",
+      "navigationKeyword1": "basketball",
+      "navigationKeyword2": "wnba",
+      "question": "Which player won WNBA championships with the Sparks, Sky, and Aces?",
+      "correctAnswer": "Candace Parker",
+      "incorrectAnswers": [
+        "Lisa Leslie",
+        "A'ja Wilson",
+        "Breanna Stewart"
+      ],
+      "explanation": "Candace Parker won titles with multiple franchises.",
+      "keywords": [
+        "basketball",
+        "wnba",
+        "candace-parker"
+      ],
+      "source": "https://www.britannica.com/biography/Candace-Parker"
+    },
+    {
+      "seedId": "b1d85076-a9cb-5430-951b-51da3ec6e077",
+      "category": "sports",
+      "navigationKeyword1": "basketball",
+      "navigationKeyword2": "wnba",
+      "question": "Which team was led by Maya Moore during four championship seasons in the 2010s?",
+      "correctAnswer": "Minnesota Lynx",
+      "incorrectAnswers": [
+        "Phoenix Mercury",
+        "New York Liberty",
+        "Indiana Fever"
+      ],
+      "explanation": "Minnesota built a dynasty around Maya Moore and other stars.",
+      "keywords": [
+        "basketball",
+        "wnba",
+        "lynx"
+      ],
+      "source": "https://www.wnba.com/history"
+    },
+    {
+      "seedId": "14201789-4ec9-5977-91d7-9d0990d74092",
+      "category": "sports",
+      "navigationKeyword1": "basketball",
+      "navigationKeyword2": "wnba",
+      "question": "Which team won the 2024 WNBA Finals?",
+      "correctAnswer": "New York Liberty",
+      "incorrectAnswers": [
+        "Minnesota Lynx",
+        "Las Vegas Aces",
+        "Seattle Storm"
+      ],
+      "explanation": "The Liberty won their first WNBA title in 2024.",
+      "keywords": [
+        "basketball",
+        "wnba",
+        "champions"
+      ],
+      "source": "https://www.wnba.com/history"
+    }
+  ]
+}

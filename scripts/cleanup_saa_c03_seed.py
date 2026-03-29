@@ -8,7 +8,7 @@ import re
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-EXAMS = ROOT / "data" / "bulk-seed" / "exams"
+EXAMS = ROOT / "data" / "seed-source" / "items" / "exams"
 GLOB = "exams.aws.saa-c03-p*.json"
 
 # Standard PDF footer and occasional OCR-broken variants (e.g. "--- Page&").

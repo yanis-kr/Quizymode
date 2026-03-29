@@ -1,0 +1,197 @@
+{
+  "schemaVersion": 1,
+  "seedSet": "core-public-items",
+  "deltaPreviewLimit": 200,
+  "items": [
+    {
+      "seedId": "084e1389-5a1d-5700-a43c-b660693b5ad8",
+      "category": "trivia",
+      "navigationKeyword1": "brands",
+      "navigationKeyword2": "history",
+      "question": "Apple purchased NeXT Software in which year?",
+      "correctAnswer": "1996",
+      "incorrectAnswers": [
+        "1985",
+        "2001",
+        "2010"
+      ],
+      "explanation": "Apple bought NeXT in 1996.",
+      "keywords": [
+        "tech",
+        "acquisitions"
+      ],
+      "source": "https://www.britannica.com/money/Apple-Inc"
+    },
+    {
+      "seedId": "7b27ca8b-2260-5288-965c-a45d77ec09aa",
+      "category": "trivia",
+      "navigationKeyword1": "brands",
+      "navigationKeyword2": "history",
+      "question": "Coca\u2011Cola history dates the first glass poured at Jacobs\u2019 Pharmacy to which date in 1886?",
+      "correctAnswer": "May 8, 1886",
+      "incorrectAnswers": [
+        "July 4, 1886",
+        "January 1, 1886",
+        "December 25, 1886"
+      ],
+      "explanation": "Coca\u2011Cola\u2019s official history specifies May 8, 1886.",
+      "keywords": [
+        "timeline",
+        "coca-cola"
+      ],
+      "source": "https://www.coca-colacompany.com/about-us/history"
+    },
+    {
+      "seedId": "bfc997d8-4827-5c1f-933d-64e2cc9f74b6",
+      "category": "trivia",
+      "navigationKeyword1": "brands",
+      "navigationKeyword2": "history",
+      "question": "Coca\u2011Cola history introduces Diet Coke in which year?",
+      "correctAnswer": "1982",
+      "incorrectAnswers": [
+        "1985",
+        "1971",
+        "1995"
+      ],
+      "explanation": "Diet Coke\u2019s introduction in 1982.",
+      "keywords": [
+        "brands",
+        "innovation"
+      ],
+      "source": "https://www.coca-colacompany.com/about-us/history"
+    },
+    {
+      "seedId": "20d596bb-7723-558a-a47f-be70ecace7a8",
+      "category": "trivia",
+      "navigationKeyword1": "brands",
+      "navigationKeyword2": "history",
+      "question": "Coca\u2011Cola history marks the return of Coca\u2011Cola Classic after New Coke in which year context?",
+      "correctAnswer": "1985",
+      "incorrectAnswers": [
+        "1990",
+        "1978",
+        "1999"
+      ],
+      "explanation": "The timeline discusses the 1985 New Coke change and the return of Coca\u2011Cola Classic weeks later.",
+      "keywords": [
+        "brands",
+        "turnaround"
+      ],
+      "source": "https://www.coca-colacompany.com/about-us/history"
+    },
+    {
+      "seedId": "1a32d849-3db7-5df2-9eff-0492c20c13e4",
+      "category": "trivia",
+      "navigationKeyword1": "brands",
+      "navigationKeyword2": "history",
+      "question": "Coca\u2011Cola history places incorporation of The Coca\u2011Cola Company as a Georgia corporation in which year?",
+      "correctAnswer": "1892",
+      "incorrectAnswers": [
+        "1886",
+        "1919",
+        "1904"
+      ],
+      "explanation": "1892 for incorporation in Georgia.",
+      "keywords": [
+        "timeline",
+        "coca-cola"
+      ],
+      "source": "https://www.coca-colacompany.com/about-us/history"
+    },
+    {
+      "seedId": "2f8a231c-e4f1-560e-a878-5a16671c5345",
+      "category": "trivia",
+      "navigationKeyword1": "brands",
+      "navigationKeyword2": "history",
+      "question": "Coca\u2011Cola history records bottling rights sold to Chattanooga businessmen in which year?",
+      "correctAnswer": "1899",
+      "incorrectAnswers": [
+        "1895",
+        "1915",
+        "1887"
+      ],
+      "explanation": "1899 for the bottling rights sale.",
+      "keywords": [
+        "bottling",
+        "coca-cola"
+      ],
+      "source": "https://www.coca-colacompany.com/about-us/history"
+    },
+    {
+      "seedId": "e87f2f6f-6a8b-535a-ab95-c45224ffbd6d",
+      "category": "trivia",
+      "navigationKeyword1": "brands",
+      "navigationKeyword2": "history",
+      "question": "IBM adopted its present name in what year?",
+      "correctAnswer": "1924",
+      "incorrectAnswers": [
+        "1911",
+        "1952",
+        "1933"
+      ],
+      "explanation": "IBM adopted its present name in 1924.",
+      "keywords": [
+        "enterprise",
+        "renaming"
+      ],
+      "source": "https://www.britannica.com/money/International-Business-Machines-Corporation"
+    },
+    {
+      "seedId": "d8a0d4a9-bd71-5000-a100-0f7e03d25fcd",
+      "category": "trivia",
+      "navigationKeyword1": "brands",
+      "navigationKeyword2": "history",
+      "question": "In what year was the IBM Personal Computer introduced?",
+      "correctAnswer": "1981",
+      "incorrectAnswers": [
+        "1977",
+        "1995",
+        "1991"
+      ],
+      "explanation": "1981 for the IBM PC introduction.",
+      "keywords": [
+        "pcs",
+        "ibm"
+      ],
+      "source": "https://www.britannica.com/money/International-Business-Machines-Corporation"
+    },
+    {
+      "seedId": "ae03ebff-72a5-55f9-9224-9c304c42448a",
+      "category": "trivia",
+      "navigationKeyword1": "brands",
+      "navigationKeyword2": "history",
+      "question": "McDonalds rapid franchising expansion under Ray Kroc took off in which decade?",
+      "correctAnswer": "1950s",
+      "incorrectAnswers": [
+        "1920s",
+        "1980s",
+        "2000s"
+      ],
+      "explanation": "McDonalds rapid franchising expansion took off in the 1950s under Ray Kroc.",
+      "keywords": [
+        "franchising",
+        "fast-food"
+      ],
+      "source": "https://www.britannica.com/money/McDonalds-Corporation"
+    },
+    {
+      "seedId": "ca2424cd-e435-56d3-bd1e-cc23d40e1f2c",
+      "category": "trivia",
+      "navigationKeyword1": "brands",
+      "navigationKeyword2": "history",
+      "question": "Ray Kroc bought the McDonald brothers out in what year?",
+      "correctAnswer": "1961",
+      "incorrectAnswers": [
+        "1955",
+        "1975",
+        "1948"
+      ],
+      "explanation": "Ray Kroc bought the McDonald brothers out in 1961.",
+      "keywords": [
+        "fast-food",
+        "history"
+      ],
+      "source": "https://www.britannica.com/money/McDonalds-Corporation"
+    }
+  ]
+}

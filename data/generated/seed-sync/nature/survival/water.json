@@ -1,0 +1,121 @@
+{
+  "schemaVersion": 1,
+  "seedSet": "core-public-items",
+  "deltaPreviewLimit": 200,
+  "items": [
+    {
+      "seedId": "c8a9c895-4830-5a26-aff3-bacb58a8dc66",
+      "category": "nature",
+      "navigationKeyword1": "survival",
+      "navigationKeyword2": "water",
+      "question": "At elevations above 6,500 feet, how long should water be boiled?",
+      "correctAnswer": "3 minutes",
+      "incorrectAnswers": [
+        "30 seconds",
+        "1 minute",
+        "10 minutes"
+      ],
+      "explanation": "Higher elevations lower boiling temperature, so the recommended boil time is longer.",
+      "keywords": [
+        "survival-water",
+        "nature-outdoors"
+      ],
+      "source": "https://www.cdc.gov/water-emergency/about/"
+    },
+    {
+      "seedId": "8166a535-6c31-5b69-b86c-c5d4b1f6ec6b",
+      "category": "nature",
+      "navigationKeyword1": "survival",
+      "navigationKeyword2": "water",
+      "question": "How much emergency water should you store per person per day as a basic rule?",
+      "correctAnswer": "at least one gallon",
+      "incorrectAnswers": [
+        "one cup",
+        "one pint",
+        "three gallons exactly"
+      ],
+      "explanation": "A common preparedness rule is at least one gallon per person per day for drinking and sanitation.",
+      "keywords": [
+        "survival-water",
+        "nature-outdoors"
+      ],
+      "source": "https://www.ready.gov/water"
+    },
+    {
+      "seedId": "00062c77-8bc1-5c38-a128-f2e09f83231a",
+      "category": "nature",
+      "navigationKeyword1": "survival",
+      "navigationKeyword2": "water",
+      "question": "Should clear-looking stream water be treated before drinking?",
+      "correctAnswer": "yes",
+      "incorrectAnswers": [
+        "no, if it looks clean",
+        "only in the afternoon",
+        "only if it tastes strange"
+      ],
+      "explanation": "Natural water can contain bacteria, viruses, or parasites even when it looks clear.",
+      "keywords": [
+        "survival-water",
+        "nature-outdoors"
+      ],
+      "source": "https://www.nps.gov/articles/2wayspurifywater.htm"
+    },
+    {
+      "seedId": "36e941de-b033-5669-9915-54552349ba2c",
+      "category": "nature",
+      "navigationKeyword1": "survival",
+      "navigationKeyword2": "water",
+      "question": "What is the safest basic way to disinfect water in an emergency?",
+      "correctAnswer": "bring it to a rolling boil",
+      "incorrectAnswers": [
+        "let it sit in the shade",
+        "mix it with salt",
+        "shake it hard for a minute"
+      ],
+      "explanation": "Boiling is one of the most reliable ways to kill disease-causing organisms in water.",
+      "keywords": [
+        "survival-water",
+        "nature-outdoors"
+      ],
+      "source": "https://www.cdc.gov/water-emergency/about/"
+    },
+    {
+      "seedId": "e5875e61-9ab6-5104-bc09-2d77a6f24e7e",
+      "category": "nature",
+      "navigationKeyword1": "survival",
+      "navigationKeyword2": "water",
+      "question": "When collecting backcountry water, what kind of source spot is usually better?",
+      "correctAnswer": "near the source and away from campsites or animal activity",
+      "incorrectAnswers": [
+        "the muddiest pool downstream",
+        "any puddle beside the trail",
+        "water right next to a busy campsite"
+      ],
+      "explanation": "Cleaner collection points are often higher up, nearer the source, and away from contamination.",
+      "keywords": [
+        "survival-water",
+        "nature-outdoors"
+      ],
+      "source": "https://www.nps.gov/articles/2wayspurifywater.htm"
+    },
+    {
+      "seedId": "e1ec8e41-b33b-50bc-b373-576f03ea13df",
+      "category": "nature",
+      "navigationKeyword1": "survival",
+      "navigationKeyword2": "water",
+      "question": "Why is filtration alone not always enough for backcountry water?",
+      "correctAnswer": "some viruses are too small for many filters",
+      "incorrectAnswers": [
+        "filters remove all oxygen",
+        "filters make water saltier",
+        "filters only work at night"
+      ],
+      "explanation": "Filters can remove many contaminants, but disinfection may still be needed because some viruses pass through.",
+      "keywords": [
+        "survival-water",
+        "nature-outdoors"
+      ],
+      "source": "https://www.nps.gov/articles/2wayspurifywater.htm"
+    }
+  ]
+}

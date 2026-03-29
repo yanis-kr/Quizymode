@@ -1,0 +1,121 @@
+{
+  "schemaVersion": 1,
+  "seedSet": "core-public-items",
+  "deltaPreviewLimit": 200,
+  "items": [
+    {
+      "seedId": "37f45c24-0b11-50ee-96d5-44e394f5bb0b",
+      "category": "civics",
+      "navigationKeyword1": "media-civics",
+      "navigationKeyword2": "debate",
+      "question": "What does a debate moderator typically do in formal civic debates?",
+      "correctAnswer": "enforce time limits, keep order, and ensure each side gets fair turns",
+      "incorrectAnswers": [
+        "argue one side\u2019s case",
+        "decide the election alone",
+        "write the final law"
+      ],
+      "explanation": "Moderators keep format fair so audiences can judge arguments, not personalities of hosts.",
+      "keywords": [
+        "moderator",
+        "format"
+      ],
+      "source": "https://www.britannica.com/topic/debate"
+    },
+    {
+      "seedId": "702dadb0-07c5-544a-a49e-3b79959b9bc5",
+      "category": "civics",
+      "navigationKeyword1": "media-civics",
+      "navigationKeyword2": "debate",
+      "question": "What is a fallacy in logic and debate education?",
+      "correctAnswer": "a persuasive mistake in reasoning that does not really support the conclusion",
+      "incorrectAnswers": [
+        "any long sentence",
+        "citing a dictionary",
+        "using a microphone"
+      ],
+      "explanation": "Spotting fallacies helps citizens judge speeches and ads more clearly.",
+      "keywords": [
+        "fallacy",
+        "logic"
+      ],
+      "source": "https://plato.stanford.edu/entries/fallacies/"
+    },
+    {
+      "seedId": "9ce39bac-1cc0-55a6-b557-6e460e206888",
+      "category": "civics",
+      "navigationKeyword1": "media-civics",
+      "navigationKeyword2": "debate",
+      "question": "What is a proposition in structured debate formats?",
+      "correctAnswer": "the statement that one team supports and another opposes",
+      "incorrectAnswers": [
+        "the name of the audience",
+        "a judge\u2019s private notes",
+        "the room temperature"
+      ],
+      "explanation": "Debaters clash over a clear resolution so arguments stay focused.",
+      "keywords": [
+        "proposition",
+        "resolution"
+      ],
+      "source": "https://www.civiced.org/"
+    },
+    {
+      "seedId": "ca0fa1ca-f244-5fdb-b772-5e57cfc653fd",
+      "category": "civics",
+      "navigationKeyword1": "media-civics",
+      "navigationKeyword2": "debate",
+      "question": "What is a town hall forum compared with a candidate-only debate?",
+      "correctAnswer": "voters often ask questions directly in a moderated public meeting",
+      "incorrectAnswers": [
+        "only judges may speak",
+        "no audience may attend",
+        "only foreign officials ask"
+      ],
+      "explanation": "Town halls bring citizen questions into the conversation alongside candidates.",
+      "keywords": [
+        "town-hall",
+        "public-forum"
+      ],
+      "source": "https://www.civiced.org/"
+    },
+    {
+      "seedId": "f0edbc9a-0d44-5fe0-a2d8-a400790541e9",
+      "category": "civics",
+      "navigationKeyword1": "media-civics",
+      "navigationKeyword2": "debate",
+      "question": "What is cross-examination in many debate rules?",
+      "correctAnswer": "a period where one side asks the other pointed questions under time limits",
+      "incorrectAnswers": [
+        "a private meeting without an audience",
+        "only opening statements",
+        "a vote by secret ballot"
+      ],
+      "explanation": "Cross-examination tests consistency and evidence in live exchange.",
+      "keywords": [
+        "cross-examination",
+        "evidence"
+      ],
+      "source": "https://www.britannica.com/topic/debate"
+    },
+    {
+      "seedId": "23ce55da-c02f-5765-b9e9-3fd81e0956c1",
+      "category": "civics",
+      "navigationKeyword1": "media-civics",
+      "navigationKeyword2": "debate",
+      "question": "Why do civic educators teach rebuttal skills?",
+      "correctAnswer": "to respond directly to opposing claims with reasons and evidence",
+      "incorrectAnswers": [
+        "to avoid ever listening",
+        "to speak only in slogans",
+        "to end discussion immediately"
+      ],
+      "explanation": "Rebuttal connects arguments so debate is a clash of reasons, not parallel speeches.",
+      "keywords": [
+        "rebuttal",
+        "argumentation"
+      ],
+      "source": "https://www.usa.gov/"
+    }
+  ]
+}

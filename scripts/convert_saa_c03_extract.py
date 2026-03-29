@@ -4,7 +4,7 @@ Parse AWS_SAA_C03_extracted.txt into exams.aws.saa-c03-p*.json bulk seed files.
 
 - Skips (Choose two) / (Choose three) items (not compatible with single-answer schema).
 - Enforces Quizymode limits: question <= 1000 chars, each answer <= 500 chars.
-- Reads answers from data/bulk-seed/exams/saa_c03_extract_answer_key.json
+- Reads answers from data/seed-source/items/exams/saa_c03_extract_answer_key.json
   { "1": "A", "2": "C", ... } (letters only, case-insensitive).
 
 Usage:
@@ -23,9 +23,9 @@ from saa_c03_keywords import SAA_C03_SEED_SOURCE, infer_saa_c03_keywords
 from seed_progress_paths import category_progress_file, ensure_category_progress_dir
 
 ROOT = Path(__file__).resolve().parents[1]
-EXTRACT_PATH = ROOT / "data" / "bulk-seed" / "exams" / "AWS_SAA_C03_extracted.txt"
-ANSWER_KEY_PATH = ROOT / "data" / "bulk-seed" / "exams" / "saa_c03_extract_answer_key.json"
-OUT_DIR = ROOT / "data" / "bulk-seed" / "exams"
+EXTRACT_PATH = ROOT / "data" / "seed-source" / "items" / "exams" / "AWS_SAA_C03_extracted.txt"
+ANSWER_KEY_PATH = ROOT / "data" / "seed-source" / "items" / "exams" / "saa_c03_extract_answer_key.json"
+OUT_DIR = ROOT / "data" / "seed-source" / "items" / "exams"
 
 QUESTION_START = re.compile(r"^Question #(\d+)\s+Topic\s+\d+\s*$")
 OPTION_START = re.compile(r"^([A-E])\.\s+(.*)$")
@@ -225,8 +225,8 @@ def main() -> None:
     )
     header = (
         "# SAA-C03 extract import progress\n\n"
-        f"- Source: `data/bulk-seed/exams/AWS_SAA_C03_extracted.txt`\n"
-        f"- Answer key: `data/bulk-seed/exams/saa_c03_extract_answer_key.json` "
+        f"- Source: `data/seed-source/items/exams/AWS_SAA_C03_extracted.txt`\n"
+        f"- Answer key: `data/seed-source/items/exams/saa_c03_extract_answer_key.json` "
         f"(from `scripts/build_saa_c03_answer_key_from_github.py`; "
         f"uses explanations in [77629296/aws-certified-solutions-architect-associate-saa-c03](https://github.com/77629296/aws-certified-solutions-architect-associate-saa-c03) plus small `OVERRIDES`)\n"
         f"- Base seed (short items): `exams.aws.saa-c03.json` (15 items)\n"

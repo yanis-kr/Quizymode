@@ -1,0 +1,121 @@
+{
+  "schemaVersion": 1,
+  "seedSet": "core-public-items",
+  "deltaPreviewLimit": 200,
+  "items": [
+    {
+      "seedId": "cfa2bcc0-e9cb-5e26-85e0-660ec1c9f958",
+      "category": "languages",
+      "navigationKeyword1": "travel",
+      "navigationKeyword2": "hotel",
+      "question": "At a hotel front desk, what does \"check-in\" usually mean?",
+      "correctAnswer": "Start your stay by registering and getting your room.",
+      "incorrectAnswers": [
+        "Leave the hotel and return the key.",
+        "Cancel the booking with no fee.",
+        "Order food only from the bar."
+      ],
+      "explanation": "Travelers use \"check-in\" for the moment the hotel confirms arrival and gives room access.",
+      "keywords": [
+        "travel",
+        "check-in"
+      ],
+      "source": "https://dictionary.cambridge.org/dictionary/english/check-in"
+    },
+    {
+      "seedId": "b39eab78-d29f-5d45-8413-74b568ba478b",
+      "category": "languages",
+      "navigationKeyword1": "travel",
+      "navigationKeyword2": "hotel",
+      "question": "If a hotel says \"no vacancy,\" what does it mean?",
+      "correctAnswer": "There are no free rooms to book right now.",
+      "incorrectAnswers": [
+        "The hotel is closed forever.",
+        "Only VIP guests may enter.",
+        "Rooms are free tonight."
+      ],
+      "explanation": "Travelers see \"no vacancy\" when every room is full for that night.",
+      "keywords": [
+        "travel",
+        "booking"
+      ],
+      "source": "https://dictionary.cambridge.org/dictionary/english/vacancy"
+    },
+    {
+      "seedId": "703a4632-7a28-5bcc-a76b-48d7314d0095",
+      "category": "languages",
+      "navigationKeyword1": "travel",
+      "navigationKeyword2": "hotel",
+      "question": "If you ask for a \"wake-up call,\" what service do you want?",
+      "correctAnswer": "A phone call at a set time to help you wake up.",
+      "incorrectAnswers": [
+        "A louder alarm clock in the shop.",
+        "A taxi to the airport only.",
+        "A free meal at midnight."
+      ],
+      "explanation": "Hotels offer wake-up calls so guests do not miss early plans.",
+      "keywords": [
+        "travel",
+        "wake-up"
+      ],
+      "source": "https://www.oxfordlearnersdictionaries.com/definition/english/wake-up-call"
+    },
+    {
+      "seedId": "d7d70df8-33b2-5b0b-b05e-4e27d9721c57",
+      "category": "languages",
+      "navigationKeyword1": "travel",
+      "navigationKeyword2": "hotel",
+      "question": "In many hotels, what is a \"key card\" usually used for?",
+      "correctAnswer": "Unlocking your room door and sometimes using the elevator.",
+      "incorrectAnswers": [
+        "Paying for flights online.",
+        "Buying food at any airport.",
+        "Printing a paper map only."
+      ],
+      "explanation": "A key card is a small plastic card that replaces a metal key in many hotels.",
+      "keywords": [
+        "travel",
+        "room-key"
+      ],
+      "source": "https://www.collinsdictionary.com/dictionary/english/key-card"
+    },
+    {
+      "seedId": "1750b69b-7cc7-5a02-9951-a830d2b903c2",
+      "category": "languages",
+      "navigationKeyword1": "travel",
+      "navigationKeyword2": "hotel",
+      "question": "What does \"check-out time\" usually tell you?",
+      "correctAnswer": "When you must leave the room and finish payment.",
+      "incorrectAnswers": [
+        "When breakfast starts.",
+        "When the pool opens.",
+        "When the city bus stops."
+      ],
+      "explanation": "Hotels post a check-out time so rooms can be cleaned for the next guest.",
+      "keywords": [
+        "travel",
+        "check-out"
+      ],
+      "source": "https://www.merriam-webster.com/dictionary/checkout"
+    },
+    {
+      "seedId": "e101af3a-ea14-54e1-ac03-95645c630d44",
+      "category": "languages",
+      "navigationKeyword1": "travel",
+      "navigationKeyword2": "hotel",
+      "question": "What does \"housekeeping\" most often mean in a hotel?",
+      "correctAnswer": "Staff who clean rooms and restock supplies.",
+      "incorrectAnswers": [
+        "Guards who watch the parking lot.",
+        "Chefs who cook only breakfast.",
+        "Drivers who meet every flight."
+      ],
+      "explanation": "Guests may call housekeeping if they need towels, cleaning, or room service trays removed.",
+      "keywords": [
+        "travel",
+        "cleaning"
+      ],
+      "source": "https://dictionary.cambridge.org/dictionary/english/housekeeping"
+    }
+  ]
+}

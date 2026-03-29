@@ -1,0 +1,227 @@
+{
+  "schemaVersion": 1,
+  "seedSet": "core-public-items",
+  "deltaPreviewLimit": 200,
+  "items": [
+    {
+      "seedId": "9d3e2e44-991e-4e5c-9793-0dcf9ae38091",
+      "category": "geography",
+      "navigationKeyword1": "regions",
+      "navigationKeyword2": "southeast-asia",
+      "question": "Besides Indonesia and the Philippines, which sultanate on Borneo is cited among insular Southeast Asian nations?",
+      "correctAnswer": "Brunei",
+      "incorrectAnswers": [
+        "Luxembourg",
+        "Liechtenstein",
+        "Andorra"
+      ],
+      "explanation": "Britannica names Brunei on Borneo alongside Indonesia and the Philippines as insular Southeast Asia.",
+      "keywords": [
+        "southeast-asia",
+        "brunei",
+        "borneo"
+      ],
+      "source": "https://www.britannica.com/place/Southeast-Asia"
+    },
+    {
+      "seedId": "fed7ed3a-22fa-4e43-8abc-836b816a148b",
+      "category": "geography",
+      "navigationKeyword1": "regions",
+      "navigationKeyword2": "southeast-asia",
+      "question": "Chinese and Japanese historical names for Southeast Asia translated as what English sea label?",
+      "correctAnswer": "South Seas",
+      "incorrectAnswers": [
+        "North Pole seas",
+        "Inland Dead Sea",
+        "Caspian only"
+      ],
+      "explanation": "Britannica notes Chinese Nanyang and Japanese Nan\u2019y\u014d mean \u201cSouth Seas,\u201d early names for the region.",
+      "keywords": [
+        "southeast-asia",
+        "history",
+        "names"
+      ],
+      "source": "https://www.britannica.com/place/Southeast-Asia"
+    },
+    {
+      "seedId": "102b1779-45e1-46c7-a979-87fdf372cc23",
+      "category": "geography",
+      "navigationKeyword1": "regions",
+      "navigationKeyword2": "southeast-asia",
+      "question": "Mainland Southeast Asia includes Cambodia, Laos, Myanmar, Thailand, Vietnam, and which city-state at the Malay Peninsula\u2019s tip?",
+      "correctAnswer": "Singapore",
+      "incorrectAnswers": [
+        "Vatican City",
+        "Monaco",
+        "San Marino"
+      ],
+      "explanation": "Britannica lists Singapore with the mainland states at the southern tip of the Malay Peninsula.",
+      "keywords": [
+        "southeast-asia",
+        "singapore",
+        "mainland"
+      ],
+      "source": "https://www.britannica.com/place/Southeast-Asia"
+    },
+    {
+      "seedId": "34c6dfd1-c5b1-416e-ab62-2cbe6ff30541",
+      "category": "geography",
+      "navigationKeyword1": "regions",
+      "navigationKeyword2": "southeast-asia",
+      "question": "Malaysia spans territory on the Malay Peninsula and on which large island shared with other nations?",
+      "correctAnswer": "Borneo",
+      "incorrectAnswers": [
+        "Greenland exclusively",
+        "Madagascar only",
+        "Sri Lanka only"
+      ],
+      "explanation": "Britannica notes Malaysia has a western portion on the Malay Peninsula and an eastern part on Borneo.",
+      "keywords": [
+        "southeast-asia",
+        "malaysia",
+        "borneo"
+      ],
+      "source": "https://www.britannica.com/place/Southeast-Asia"
+    },
+    {
+      "seedId": "111233f1-c7fc-4fbb-9a8d-9a95ac29cf67",
+      "category": "geography",
+      "navigationKeyword1": "regions",
+      "navigationKeyword2": "southeast-asia",
+      "question": "Mount Hkakabo on the Myanmar\u2013China border is cited as the highest peak of where?",
+      "correctAnswer": "Mainland Southeast Asia",
+      "incorrectAnswers": [
+        "Western Europe",
+        "The Appalachian Mountains",
+        "The Andes of Chile only"
+      ],
+      "explanation": "Britannica gives Mount Hkakabo, on Myanmar\u2019s border with China, as mainland Southeast Asia\u2019s highest summit at 19,295 feet (5,881 m).",
+      "keywords": [
+        "southeast-asia",
+        "hkakabo",
+        "myanmar"
+      ],
+      "source": "https://www.britannica.com/place/Southeast-Asia"
+    },
+    {
+      "seedId": "778836fb-05fb-4d63-9008-41e76b64cae7",
+      "category": "geography",
+      "navigationKeyword1": "regions",
+      "navigationKeyword2": "southeast-asia",
+      "question": "Southeast Asia consists of mainland and which other major geographic portion?",
+      "correctAnswer": "Insular (archipelagic) Southeast Asia",
+      "incorrectAnswers": [
+        "Only polar ice shelves",
+        "Interior Antarctica",
+        "The Canadian Shield"
+      ],
+      "explanation": "Britannica divides Southeast Asia into mainland and insular portions, the latter a string of archipelagoes south and east of the mainland.",
+      "keywords": [
+        "southeast-asia",
+        "mainland",
+        "archipelago"
+      ],
+      "source": "https://www.britannica.com/place/Southeast-Asia"
+    },
+    {
+      "seedId": "fbf47af9-c95c-42b0-af40-e4b0e3651305",
+      "category": "geography",
+      "navigationKeyword1": "regions",
+      "navigationKeyword2": "southeast-asia",
+      "question": "Southeast Asia lies east of the Indian subcontinent and south of which large country?",
+      "correctAnswer": "China",
+      "incorrectAnswers": [
+        "Brazil",
+        "Canada",
+        "South Africa"
+      ],
+      "explanation": "Britannica places Southeast Asia east of the Indian subcontinent and south of China.",
+      "keywords": [
+        "southeast-asia",
+        "location",
+        "asia"
+      ],
+      "source": "https://www.britannica.com/place/Southeast-Asia"
+    },
+    {
+      "seedId": "42238ba9-66f1-46f0-81b0-6ed6bf25eddf",
+      "category": "geography",
+      "navigationKeyword1": "regions",
+      "navigationKeyword2": "southeast-asia",
+      "question": "Southeast Asia sits astride strategic sea passages linking East Asia to which other broad world area?",
+      "correctAnswer": "The Middle Eastern\u2013Mediterranean world",
+      "incorrectAnswers": [
+        "Only the Arctic Ocean fisheries",
+        "Interior Siberian rail dead-ends",
+        "The Amazon basin"
+      ],
+      "explanation": "Britannica highlights Southeast Asia\u2019s position on sea routes between East Asia and the Middle Eastern\u2013Mediterranean sphere.",
+      "keywords": [
+        "southeast-asia",
+        "shipping",
+        "trade-routes"
+      ],
+      "source": "https://www.britannica.com/place/Southeast-Asia"
+    },
+    {
+      "seedId": "b1f2bdfe-573e-4a50-9961-73a26ca0c8f6",
+      "category": "geography",
+      "navigationKeyword1": "regions",
+      "navigationKeyword2": "southeast-asia",
+      "question": "Southeast Asia\u2019s climate zones fall within which broad Earth belts?",
+      "correctAnswer": "Tropical and subtropical zones",
+      "incorrectAnswers": [
+        "Polar climates only",
+        "Dry ice-cap everywhere",
+        "Mediterranean only with no monsoon"
+      ],
+      "explanation": "Britannica states all of Southeast Asia lies in tropical and subtropical climatic zones with widespread monsoonal seasons.",
+      "keywords": [
+        "southeast-asia",
+        "climate",
+        "tropical"
+      ],
+      "source": "https://www.britannica.com/place/Southeast-Asia"
+    },
+    {
+      "seedId": "7c51fb00-979e-4a25-9b9f-d2efa95507c3",
+      "category": "geography",
+      "navigationKeyword1": "regions",
+      "navigationKeyword2": "southeast-asia",
+      "question": "Which peninsula projects south from the mainland and is structurally part of it yet culturally bridges to the islands?",
+      "correctAnswer": "The Malay Peninsula",
+      "incorrectAnswers": [
+        "The Arabian Peninsula",
+        "The Korean Peninsula only",
+        "The Florida Peninsula"
+      ],
+      "explanation": "Britannica describes the Malay Peninsula extending south from the mainland as a structural bridge to insular Southeast Asia.",
+      "keywords": [
+        "southeast-asia",
+        "malay-peninsula",
+        "mainland"
+      ],
+      "source": "https://www.britannica.com/place/Southeast-Asia"
+    },
+    {
+      "seedId": "53e72c7c-0234-4fbb-8ce1-a1af2e4ac684",
+      "category": "geography",
+      "navigationKeyword1": "regions",
+      "navigationKeyword2": "southeast-asia",
+      "question": "Which three major tectonic plates converge beneath Southeast Asia?",
+      "correctAnswer": "Eurasian, Indian-Australian, and Pacific plates",
+      "incorrectAnswers": [
+        "North American, African, and Antarctic plates only",
+        "Solely the Somali Plate",
+        "No plates converge there"
+      ],
+      "explanation": "Britannica attributes Southeast Asia\u2019s rugged relief to convergence of the Eurasian, Indian-Australian, and Pacific plates.",
+      "keywords": [
+        "southeast-asia",
+        "tectonics",
+        "plates"
+      ],
+      "source": "https://www.britannica.com/place/Southeast-Asia"
+    }
+  ]
+}

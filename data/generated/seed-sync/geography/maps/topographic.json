@@ -1,0 +1,227 @@
+{
+  "schemaVersion": 1,
+  "seedSet": "core-public-items",
+  "deltaPreviewLimit": 200,
+  "items": [
+    {
+      "seedId": "8091b763-683e-4c0c-bb17-ee334b0e670d",
+      "category": "geography",
+      "navigationKeyword1": "maps",
+      "navigationKeyword2": "topographic",
+      "question": "A topographic map\u2019s level of detail is described as intermediate between a small-area plan and what?",
+      "correctAnswer": "a large regional chorographic map",
+      "incorrectAnswers": [
+        "a star atlas",
+        "a circuit schematic",
+        "a musical score"
+      ],
+      "explanation": "Britannica classifies topographic scale between plans and chorographic maps.",
+      "keywords": [
+        "topographic",
+        "map-types",
+        "scale"
+      ],
+      "source": "https://www.britannica.com/science/topographic-map"
+    },
+    {
+      "seedId": "f06d2030-c5c4-4044-9765-97a0b6a06af0",
+      "category": "geography",
+      "navigationKeyword1": "maps",
+      "navigationKeyword2": "topographic",
+      "question": "Besides relief, what major natural features do USGS topographic maps typically show?",
+      "correctAnswer": "hydrographic features such as rivers, streams, and lakes",
+      "incorrectAnswers": [
+        "only political polling districts",
+        "exclusively subway tunnels",
+        "satellite orbits"
+      ],
+      "explanation": "USGS lists rivers, streams, lakes, and other hydrography among standard topographic content.",
+      "keywords": [
+        "topographic",
+        "hydrography",
+        "features"
+      ],
+      "source": "https://www.usgs.gov/faqs/what-topographic-map"
+    },
+    {
+      "seedId": "0a5bdd77-3232-4683-a0f5-088848a2ef66",
+      "category": "geography",
+      "navigationKeyword1": "maps",
+      "navigationKeyword2": "topographic",
+      "question": "Contour lines connect points that share what property?",
+      "correctAnswer": "the same elevation above or below a reference surface (usually mean sea level)",
+      "incorrectAnswers": [
+        "the same population density",
+        "the same soil pH",
+        "the same magnetic field strength"
+      ],
+      "explanation": "USGS defines contours as lines joining equal elevation relative to a reference such as mean sea level.",
+      "keywords": [
+        "topographic",
+        "contours",
+        "elevation"
+      ],
+      "source": "https://www.usgs.gov/faqs/what-topographic-map"
+    },
+    {
+      "seedId": "e80feaf2-2943-4a75-9dd0-5ca7ac29bae8",
+      "category": "geography",
+      "navigationKeyword1": "maps",
+      "navigationKeyword2": "topographic",
+      "question": "Custom USGS-style topographic maps can be built with which USGS application?",
+      "correctAnswer": "topoBuilder (OnDemand Topos)",
+      "incorrectAnswers": [
+        "Excel TopoWizard",
+        "Photoshop ReliefPro",
+        "GarageBand Terrain"
+      ],
+      "explanation": "USGS describes OnDemand Topos via topoBuilder for customized USGS-style topographic maps.",
+      "keywords": [
+        "topographic",
+        "topobuilder",
+        "on-demand"
+      ],
+      "source": "https://www.usgs.gov/faqs/what-topographic-map"
+    },
+    {
+      "seedId": "108d6637-fa1d-4e96-b7c2-1f98141ed64d",
+      "category": "geography",
+      "navigationKeyword1": "maps",
+      "navigationKeyword2": "topographic",
+      "question": "Famous USGS 7.5-minute maps are also called what?",
+      "correctAnswer": "7.5-minute quadrangles",
+      "incorrectAnswers": [
+        "15-degree gores",
+        "hemisphere panels",
+        "global tiles"
+      ],
+      "explanation": "USGS refers to its 1:24,000 maps as 7.5-minute quadrangles.",
+      "keywords": [
+        "topographic",
+        "quadrangles",
+        "usgs"
+      ],
+      "source": "https://www.usgs.gov/faqs/how-do-i-find-download-or-order-topographic-maps"
+    },
+    {
+      "seedId": "a2c06de3-8d11-41b1-a0e9-26990e9afa72",
+      "category": "geography",
+      "navigationKeyword1": "maps",
+      "navigationKeyword2": "topographic",
+      "question": "Increasingly detailed bathymetric surveys help map which environment?",
+      "correctAnswer": "portions of the seafloor",
+      "incorrectAnswers": [
+        "the stratosphere only",
+        "urban Wi-Fi heatmaps only",
+        "lunar regolith exclusively"
+      ],
+      "explanation": "Britannica links improved bathymetry to detailed seafloor mapping.",
+      "keywords": [
+        "topographic",
+        "bathymetry",
+        "oceans"
+      ],
+      "source": "https://www.britannica.com/science/map"
+    },
+    {
+      "seedId": "c1364b11-745e-4187-84ee-90907c19abe4",
+      "category": "geography",
+      "navigationKeyword1": "maps",
+      "navigationKeyword2": "topographic",
+      "question": "Natural features on topographic maps include relief and hydrography; man-made features include roads and what?",
+      "correctAnswer": "railroads, canals, dams, bridges, and similar works",
+      "incorrectAnswers": [
+        "only national flags",
+        "satellite orbital paths",
+        "DNA sequences"
+      ],
+      "explanation": "Britannica lists roads, railroads, canals, dams, bridges, and tunnels among man-made features.",
+      "keywords": [
+        "topographic",
+        "cultural-features",
+        "infrastructure"
+      ],
+      "source": "https://www.britannica.com/science/topographic-map"
+    },
+    {
+      "seedId": "6175048c-a9e5-4e51-9822-a30ff6f44ecc",
+      "category": "geography",
+      "navigationKeyword1": "maps",
+      "navigationKeyword2": "topographic",
+      "question": "Topographic maps inventory terrain for activities such as land use and what other field?",
+      "correctAnswer": "land development planning",
+      "incorrectAnswers": [
+        "stock ticker analytics",
+        "fiber-optic music synthesis",
+        "deep-space probe docking"
+      ],
+      "explanation": "Britannica notes topographic maps support land inventory and development decisions.",
+      "keywords": [
+        "topographic",
+        "land-use",
+        "planning"
+      ],
+      "source": "https://www.britannica.com/science/map"
+    },
+    {
+      "seedId": "a88a3466-6c4b-46f0-b13d-f518b6ebfc75",
+      "category": "geography",
+      "navigationKeyword1": "maps",
+      "navigationKeyword2": "topographic",
+      "question": "Topographic maps record elevations relative to what common vertical reference?",
+      "correctAnswer": "sea level",
+      "incorrectAnswers": [
+        "the core\u2013mantle boundary",
+        "airport barometers only",
+        "tree canopy height only"
+      ],
+      "explanation": "Britannica states topographic maps record elevations above sea level among other details.",
+      "keywords": [
+        "topographic",
+        "elevation",
+        "sea-level"
+      ],
+      "source": "https://www.britannica.com/science/map"
+    },
+    {
+      "seedId": "f913a02c-63fb-4bd2-94e1-cf0511b7ec12",
+      "category": "geography",
+      "navigationKeyword1": "maps",
+      "navigationKeyword2": "topographic",
+      "question": "US Topo maps are published as digital documents most commonly at which scale?",
+      "correctAnswer": "1:24,000",
+      "incorrectAnswers": [
+        "1:1,000",
+        "1:250,000",
+        "1:5,000,000"
+      ],
+      "explanation": "USGS describes US Topo as the current 1:24,000-scale series.",
+      "keywords": [
+        "topographic",
+        "us-topo",
+        "scale"
+      ],
+      "source": "https://www.usgs.gov/faqs/what-topographic-map"
+    },
+    {
+      "seedId": "25abb42b-ed6a-4f87-9d27-93a979ffe048",
+      "category": "geography",
+      "navigationKeyword1": "maps",
+      "navigationKeyword2": "topographic",
+      "question": "What distinctive lines show land shape and height on a topographic map?",
+      "correctAnswer": "elevation contour lines",
+      "incorrectAnswers": [
+        "isobars only",
+        "time-zone stripes",
+        "plate boundary colors only"
+      ],
+      "explanation": "USGS says topographic maps use elevation contour lines to show Earth surface shape.",
+      "keywords": [
+        "topographic",
+        "contours",
+        "usgs"
+      ],
+      "source": "https://www.usgs.gov/faqs/what-topographic-map"
+    }
+  ]
+}

@@ -1,0 +1,235 @@
+{
+  "schemaVersion": 1,
+  "seedSet": "core-public-items",
+  "deltaPreviewLimit": 200,
+  "items": [
+    {
+      "seedId": "359ed54c-cec8-46a3-a2cb-2268b1418d20",
+      "category": "science",
+      "navigationKeyword1": "physics",
+      "navigationKeyword2": "electricity",
+      "question": "Capacitance definition?",
+      "correctAnswer": "C = Q/V",
+      "incorrectAnswers": [
+        "C = V/Q",
+        "C = QV",
+        "C = IR"
+      ],
+      "explanation": "Stores charge at given voltage.",
+      "keywords": [
+        "capacitor",
+        "capacitance"
+      ],
+      "source": "https://openstax.org/books/university-physics-volume-2/pages/8-1-capacitors-and-capacitance"
+    },
+    {
+      "seedId": "aeb783a3-80c1-4cad-9838-cd0c7e89e2ab",
+      "category": "science",
+      "navigationKeyword1": "physics",
+      "navigationKeyword2": "electricity",
+      "question": "Coulomb\u2019s law magnitude?",
+      "correctAnswer": "F = k |q1 q2|/r^2",
+      "incorrectAnswers": [
+        "F = k q1 q2 r",
+        "F = k/r",
+        "F = qvB"
+      ],
+      "explanation": "Inverse square like gravity.",
+      "keywords": [
+        "coulomb",
+        "electrostatics"
+      ],
+      "source": "https://openstax.org/books/university-physics-volume-2/pages/5-1-electric-charge"
+    },
+    {
+      "seedId": "244db7fe-11a5-4b28-965e-817e382f1f30",
+      "category": "science",
+      "navigationKeyword1": "physics",
+      "navigationKeyword2": "electricity",
+      "question": "Electric field definition?",
+      "correctAnswer": "E = F/q (test charge)",
+      "incorrectAnswers": [
+        "E = Fq",
+        "E = q/F",
+        "E = V only"
+      ],
+      "explanation": "Vector field.",
+      "keywords": [
+        "electric-field",
+        "definition"
+      ],
+      "source": "https://openstax.org/books/university-physics-volume-2/pages/5-5-calculating-electric-fields-of-charge-distributions"
+    },
+    {
+      "seedId": "960b2be8-ff22-451a-8cf3-2d4f880b2d3e",
+      "category": "science",
+      "navigationKeyword1": "physics",
+      "navigationKeyword2": "electricity",
+      "question": "Electric potential difference?",
+      "correctAnswer": "\u0394V = \u0394U/q",
+      "incorrectAnswers": [
+        "\u0394V = q/\u0394U",
+        "\u0394V = Fd always without path",
+        "\u0394V = IR always for any device"
+      ],
+      "explanation": "Work per unit charge.",
+      "keywords": [
+        "voltage",
+        "potential"
+      ],
+      "source": "https://openstax.org/books/university-physics-volume-2/pages/7-1-electric-potential"
+    },
+    {
+      "seedId": "4add2937-126a-4c2b-824f-6b731cb30c9c",
+      "category": "science",
+      "navigationKeyword1": "physics",
+      "navigationKeyword2": "electricity",
+      "question": "Electric power?",
+      "correctAnswer": "P = IV = I^2R = V^2/R",
+      "incorrectAnswers": [
+        "P = I/R",
+        "P = V + I",
+        "P = IR^2"
+      ],
+      "explanation": "Dissipation in resistor.",
+      "keywords": [
+        "electric-power",
+        "circuits"
+      ],
+      "source": "https://openstax.org/books/university-physics-volume-2/pages/10-3-electrical-power"
+    },
+    {
+      "seedId": "ad8473be-650b-40e1-b6cb-d393874252c4",
+      "category": "science",
+      "navigationKeyword1": "physics",
+      "navigationKeyword2": "electricity",
+      "question": "Energy stored in capacitor?",
+      "correctAnswer": "U = (1/2)CV^2",
+      "incorrectAnswers": [
+        "CV^2",
+        "C/V",
+        "1/2 Q/C"
+      ],
+      "explanation": "Also (1/2)Q^2/C.",
+      "keywords": [
+        "capacitor-energy",
+        "storage"
+      ],
+      "source": "https://openstax.org/books/university-physics-volume-2/pages/8-2-capacitors-in-series-and-in-parallel"
+    },
+    {
+      "seedId": "0fffc034-5885-47a1-8828-f09f6bb932b6",
+      "category": "science",
+      "navigationKeyword1": "physics",
+      "navigationKeyword2": "electricity",
+      "question": "Gauss\u2019s law?",
+      "correctAnswer": "\u222e E\u00b7dA = Q_enc/\u03b50",
+      "incorrectAnswers": [
+        "E = Q only",
+        "No flux ever",
+        "E\u00b7A = Q r"
+      ],
+      "explanation": "Useful for high symmetry.",
+      "keywords": [
+        "gauss-law",
+        "flux"
+      ],
+      "source": "https://openstax.org/books/university-physics-volume-2/pages/6-2-explaining-gausss-law"
+    },
+    {
+      "seedId": "48863e35-aad2-4eed-90cf-b9784b5f17b9",
+      "category": "science",
+      "navigationKeyword1": "physics",
+      "navigationKeyword2": "electricity",
+      "question": "Ohm\u2019s law?",
+      "correctAnswer": "V = IR",
+      "incorrectAnswers": [
+        "I = VR",
+        "R = VI",
+        "V = I/R"
+      ],
+      "explanation": "For many ohmic materials.",
+      "keywords": [
+        "ohms-law",
+        "circuits"
+      ],
+      "source": "https://openstax.org/books/university-physics-volume-2/pages/10-2-resistors-in-series-and-parallel"
+    },
+    {
+      "seedId": "51c551f3-e186-48f5-a56f-e70852996548",
+      "category": "science",
+      "navigationKeyword1": "physics",
+      "navigationKeyword2": "electricity",
+      "question": "Point charge field magnitude?",
+      "correctAnswer": "E = k|Q|/r^2",
+      "incorrectAnswers": [
+        "kQ/r",
+        "kQ r^2",
+        "k/Qr"
+      ],
+      "explanation": "Radial pattern.",
+      "keywords": [
+        "point-charge",
+        "field"
+      ],
+      "source": "https://openstax.org/books/university-physics-volume-2/pages/5-5-calculating-electric-fields-of-charge-distributions"
+    },
+    {
+      "seedId": "ca1b9cfc-3dfd-4e23-b250-fdb9015dbf5a",
+      "category": "science",
+      "navigationKeyword1": "physics",
+      "navigationKeyword2": "electricity",
+      "question": "RC time constant?",
+      "correctAnswer": "\u03c4 = RC",
+      "incorrectAnswers": [
+        "R/C",
+        "C/R",
+        "R + C"
+      ],
+      "explanation": "Charging/discharging scale.",
+      "keywords": [
+        "rc-circuit",
+        "time-constant"
+      ],
+      "source": "https://openstax.org/books/university-physics-volume-2/pages/10-5-rc-circuits"
+    },
+    {
+      "seedId": "9d579659-a0a2-42d4-a5c4-459fe7a34836",
+      "category": "science",
+      "navigationKeyword1": "physics",
+      "navigationKeyword2": "electricity",
+      "question": "Resistors in parallel equivalent?",
+      "correctAnswer": "1/R_eq = 1/R1 + 1/R2 + \u2026",
+      "incorrectAnswers": [
+        "R1 + R2",
+        "R1 R2",
+        "R1/R2"
+      ],
+      "explanation": "Same voltage across each.",
+      "keywords": [
+        "parallel",
+        "resistors"
+      ],
+      "source": "https://openstax.org/books/university-physics-volume-2/pages/10-2-resistors-in-series-and-parallel"
+    },
+    {
+      "seedId": "54a349d9-ee81-48b0-bec1-979d9e65c6a9",
+      "category": "science",
+      "navigationKeyword1": "physics",
+      "navigationKeyword2": "electricity",
+      "question": "Resistors in series equivalent?",
+      "correctAnswer": "R_eq = R1 + R2 + \u2026",
+      "incorrectAnswers": [
+        "1/(R1+R2)",
+        "R1 R2",
+        "sqrt(R1 R2)"
+      ],
+      "explanation": "Same current through each.",
+      "keywords": [
+        "series",
+        "resistors"
+      ],
+      "source": "https://openstax.org/books/university-physics-volume-2/pages/10-2-resistors-in-series-and-parallel"
+    }
+  ]
+}

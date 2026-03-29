@@ -1,0 +1,227 @@
+{
+  "schemaVersion": 1,
+  "seedSet": "core-public-items",
+  "deltaPreviewLimit": 200,
+  "items": [
+    {
+      "seedId": "bb1e149c-60a6-4a02-a601-5b3fe4a059d9",
+      "category": "geography",
+      "navigationKeyword1": "maps",
+      "navigationKeyword2": "gis",
+      "question": "Climate.gov\u2019s dataset gallery highlights GIS tools for exploring drought impacts through which federal hub?",
+      "correctAnswer": "Drought.gov (National Integrated Drought Information System)",
+      "incorrectAnswers": [
+        "IRS.gov",
+        "USPTO.gov",
+        "Recreation.gov only"
+      ],
+      "explanation": "NOAA Climate.gov links Drought.gov/NIDIS as a GIS-oriented drought information resource.",
+      "keywords": [
+        "gis",
+        "drought",
+        "noaa"
+      ],
+      "source": "https://www.climate.gov/maps-data/dataset/droughtgov-maps-graphs-and-more"
+    },
+    {
+      "seedId": "a5599c93-a5da-48d6-8f2a-35fa816a3708",
+      "category": "geography",
+      "navigationKeyword1": "maps",
+      "navigationKeyword2": "gis",
+      "question": "Does USGS recommend using standard US Topo PDFs as primary GIS input layers?",
+      "correctAnswer": "No; they are considered output products rather than ideal GIS inputs.",
+      "incorrectAnswers": [
+        "Yes, PDFs are always preferred source layers.",
+        "Yes, but only for Antarctica.",
+        "Yes, if printed in color."
+      ],
+      "explanation": "USGS states US Topo PDFs are outputs of GIS, not recommended as GIS import sources.",
+      "keywords": [
+        "gis",
+        "us-topo",
+        "workflow"
+      ],
+      "source": "https://www.usgs.gov/faqs/can-i-import-a-us-topo-map-my-geographic-information-system-gis"
+    },
+    {
+      "seedId": "6885dda8-04d2-4bcc-a5ff-d980ae4bdae7",
+      "category": "geography",
+      "navigationKeyword1": "maps",
+      "navigationKeyword2": "gis",
+      "question": "Emergency managers layer levees, hospitals, and flood depth grids in map software tied to real coordinates\u2014what is that kind of system called?",
+      "correctAnswer": "A geographic information system (GIS)",
+      "incorrectAnswers": [
+        "A flight simulator only",
+        "A spreadsheet with no map output",
+        "A social media hashtag tracker"
+      ],
+      "explanation": "USGS defines GIS as a computer system for analyzing and displaying geographically referenced data.",
+      "keywords": [
+        "gis",
+        "definitions",
+        "usgs"
+      ],
+      "source": "https://www.usgs.gov/faqs/what-geographic-information-system-gis"
+    },
+    {
+      "seedId": "aa8f3bbe-e8e1-4963-b9b5-c296817e413e",
+      "category": "geography",
+      "navigationKeyword1": "maps",
+      "navigationKeyword2": "gis",
+      "question": "Fields USGS lists as using GIS include earth sciences, biology, and what?",
+      "correctAnswer": "resource management",
+      "incorrectAnswers": [
+        "novelty candle making",
+        "symphony conducting",
+        "court stenography only"
+      ],
+      "explanation": "USGS mentions GIS applications in earth sciences, biology, resource management, and more.",
+      "keywords": [
+        "gis",
+        "applications",
+        "usgs"
+      ],
+      "source": "https://www.usgs.gov/faqs/what-geographic-information-system-gis"
+    },
+    {
+      "seedId": "2ba460e8-8775-4a7e-b24d-4844baf9b48a",
+      "category": "geography",
+      "navigationKeyword1": "maps",
+      "navigationKeyword2": "gis",
+      "question": "GIS analysis can trace pollutants downstream by combining farm locations with streams, elevation, and what?",
+      "correctAnswer": "rainfall",
+      "incorrectAnswers": [
+        "solar flares",
+        "radio playlists",
+        "tidal music charts"
+      ],
+      "explanation": "USGS gives an example linking fertilizer use, streams, elevation, and rainfall in GIS.",
+      "keywords": [
+        "gis",
+        "hydrology",
+        "pollution"
+      ],
+      "source": "https://www.usgs.gov/faqs/what-geographic-information-system-gis"
+    },
+    {
+      "seedId": "90fdcc5f-f15c-416a-8156-680a10c8bc33",
+      "category": "geography",
+      "navigationKeyword1": "maps",
+      "navigationKeyword2": "gis",
+      "question": "GIS data are tied to locations through what key property?",
+      "correctAnswer": "each record attaches to a unique location",
+      "incorrectAnswers": [
+        "random numbering without coordinates",
+        "alphabetical sorting only",
+        "color names only"
+      ],
+      "explanation": "USGS states GIS uses data attached to unique locations.",
+      "keywords": [
+        "gis",
+        "spatial-data",
+        "basics"
+      ],
+      "source": "https://www.usgs.gov/faqs/what-geographic-information-system-gis"
+    },
+    {
+      "seedId": "36739f12-4803-4157-9378-4b38a2a65a9a",
+      "category": "geography",
+      "navigationKeyword1": "maps",
+      "navigationKeyword2": "gis",
+      "question": "Modern US Topo maps are produced from GIS data sets and distributed mainly as what file type for general users?",
+      "correctAnswer": "PDF",
+      "incorrectAnswers": [
+        "only handwritten scrolls",
+        "MIDI sound files",
+        "encrypted ZIP without maps"
+      ],
+      "explanation": "USGS notes US Topo maps are GIS-derived products distributed as PDFs for non-specialist users.",
+      "keywords": [
+        "gis",
+        "us-topo",
+        "pdf"
+      ],
+      "source": "https://www.usgs.gov/faqs/can-i-import-a-us-topo-map-my-geographic-information-system-gis"
+    },
+    {
+      "seedId": "3d74bc27-39ef-40ec-8363-dac365e6bf9f",
+      "category": "geography",
+      "navigationKeyword1": "maps",
+      "navigationKeyword2": "gis",
+      "question": "NCEI\u2019s Map Viewer helps users find and download what broad categories of information?",
+      "correctAnswer": "climate and weather data",
+      "incorrectAnswers": [
+        "patent filings",
+        "movie box-office receipts",
+        "tax return PDFs"
+      ],
+      "explanation": "NOAA lists NCEI\u2019s Map Viewer for locating climate and weather datasets.",
+      "keywords": [
+        "gis",
+        "ncei",
+        "climate-data"
+      ],
+      "source": "https://www.climate.gov/maps-data/dataset/ncei-map-viewer-application-data-locator"
+    },
+    {
+      "seedId": "c8a4bd3f-c1f0-4a8d-836f-d54fd0cd52f2",
+      "category": "geography",
+      "navigationKeyword1": "maps",
+      "navigationKeyword2": "gis",
+      "question": "NOAA\u2019s GeoPlatform delivers maps and data through which widely used online GIS platform?",
+      "correctAnswer": "Esri\u2019s ArcGIS Online",
+      "incorrectAnswers": [
+        "Microsoft Paint",
+        "Adobe Audition",
+        "Notepad only"
+      ],
+      "explanation": "NOAA Climate.gov describes GeoPlatform as a GIS application using Esri\u2019s ArcGIS Online.",
+      "keywords": [
+        "gis",
+        "noaa",
+        "geoplatform"
+      ],
+      "source": "https://www.climate.gov/maps-data/dataset/noaas-geoplatform-geospatial-data-maps-apps"
+    },
+    {
+      "seedId": "b4cc2f16-d6ff-42c6-9838-a3df3864a7ec",
+      "category": "geography",
+      "navigationKeyword1": "maps",
+      "navigationKeyword2": "gis",
+      "question": "The National Map is described by USGS as underpinning which customized map product?",
+      "correctAnswer": "OnDemand Topos",
+      "incorrectAnswers": [
+        "vintage globes only",
+        "subway tile catalogs",
+        "paper phone books"
+      ],
+      "explanation": "USGS ties OnDemand Topos to the best data from The National Map.",
+      "keywords": [
+        "gis",
+        "national-map",
+        "usgs"
+      ],
+      "source": "https://www.usgs.gov/faqs/what-topographic-map"
+    },
+    {
+      "seedId": "6a37ee72-af05-40e1-94c5-1f4c8dc10e1d",
+      "category": "geography",
+      "navigationKeyword1": "maps",
+      "navigationKeyword2": "gis",
+      "question": "USGS gives an example of GIS combining slope, elevation, and rainfall to predict habitat for what?",
+      "correctAnswer": "a rare plant",
+      "incorrectAnswers": [
+        "hurricane names",
+        "stock tickers",
+        "radio frequencies"
+      ],
+      "explanation": "USGS illustrates GIS by mapping north-facing slopes, elevation, and rainfall for rare plant habitat.",
+      "keywords": [
+        "gis",
+        "habitat",
+        "analysis"
+      ],
+      "source": "https://www.usgs.gov/faqs/what-geographic-information-system-gis"
+    }
+  ]
+}

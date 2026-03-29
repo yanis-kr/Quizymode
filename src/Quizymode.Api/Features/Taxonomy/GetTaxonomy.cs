@@ -73,32 +73,26 @@ public static class GetTaxonomy
         string? currentUserId = userContext.UserId;
         bool isAuthenticated = userContext.IsAuthenticated && !string.IsNullOrEmpty(currentUserId);
 
-        IQueryable<VisibleCategoryRow> visibleCategoriesQuery = db.Categories
-            .AsNoTracking()
+        IQueryable<Category> visibleCategoryEntities = db.Categories.AsNoTracking();
+
+        if (!isAuthenticated || string.IsNullOrEmpty(currentUserId))
+        {
+            visibleCategoryEntities = visibleCategoryEntities.Where(category => !category.IsPrivate);
+        }
+        else
+        {
+            string safeCurrentUserId = currentUserId;
+            visibleCategoryEntities = visibleCategoryEntities
+                .Where(category => !category.IsPrivate || category.CreatedBy == safeCurrentUserId);
+        }
+
+        IQueryable<VisibleCategoryRow> visibleCategoriesQuery = visibleCategoryEntities
             .Select(category => new VisibleCategoryRow(
                 category.Id,
                 category.Name,
                 category.Description,
                 category.ShortDescription,
                 category.IsPrivate));
-
-        if (!isAuthenticated || string.IsNullOrEmpty(currentUserId))
-        {
-            visibleCategoriesQuery = visibleCategoriesQuery.Where(category => !category.IsPrivate);
-        }
-        else
-        {
-            string safeCurrentUserId = currentUserId;
-            visibleCategoriesQuery = db.Categories
-                .AsNoTracking()
-                .Where(category => !category.IsPrivate || category.CreatedBy == safeCurrentUserId)
-                .Select(category => new VisibleCategoryRow(
-                    category.Id,
-                    category.Name,
-                    category.Description,
-                    category.ShortDescription,
-                    category.IsPrivate));
-        }
 
         List<VisibleCategoryRow> visibleCategories = await visibleCategoriesQuery.ToListAsync(cancellationToken);
         List<Guid> visibleCategoryIds = visibleCategories.Select(category => category.Id).ToList();

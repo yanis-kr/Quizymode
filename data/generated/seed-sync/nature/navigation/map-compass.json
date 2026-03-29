@@ -1,0 +1,121 @@
+{
+  "schemaVersion": 1,
+  "seedSet": "core-public-items",
+  "deltaPreviewLimit": 200,
+  "items": [
+    {
+      "seedId": "1654d36f-8b01-58cf-8cae-c9c79db6c855",
+      "category": "nature",
+      "navigationKeyword1": "navigation",
+      "navigationKeyword2": "map-compass",
+      "question": "A compass needle points toward which north?",
+      "correctAnswer": "magnetic north",
+      "incorrectAnswers": [
+        "true north only",
+        "grid north only",
+        "solar north"
+      ],
+      "explanation": "A compass aligns with Earth's magnetic field, so it points to magnetic north.",
+      "keywords": [
+        "map-compass",
+        "nature-navigation"
+      ],
+      "source": "https://www.rei.com/learn/expert-advice/compass-declination.html"
+    },
+    {
+      "seedId": "76df96f2-8adf-5d86-82a0-eccb9418eae4",
+      "category": "nature",
+      "navigationKeyword1": "navigation",
+      "navigationKeyword2": "map-compass",
+      "question": "If contour lines are very close together, what does that usually mean?",
+      "correctAnswer": "the slope is steep",
+      "incorrectAnswers": [
+        "the area is flat",
+        "the ground is underwater",
+        "there is a road nearby"
+      ],
+      "explanation": "Closely spaced contour lines show elevation changing quickly over a short distance.",
+      "keywords": [
+        "map-compass",
+        "nature-navigation"
+      ],
+      "source": "https://www.nps.gov/teachers/classrooms/earths-features-interpreting-patterns-with-topographic-maps.htm"
+    },
+    {
+      "seedId": "5d4b2a07-a25b-55a2-a11d-282904822d4b",
+      "category": "nature",
+      "navigationKeyword1": "navigation",
+      "navigationKeyword2": "map-compass",
+      "question": "Topographic maps use contour lines mainly to show what?",
+      "correctAnswer": "terrain and elevation",
+      "incorrectAnswers": [
+        "cell phone coverage",
+        "wildlife migration routes",
+        "daily weather forecasts"
+      ],
+      "explanation": "Contour lines are one of the main ways topographic maps show the shape of the land.",
+      "keywords": [
+        "map-compass",
+        "nature-navigation"
+      ],
+      "source": "https://www.usgs.gov/programs/national-geospatial-program/topographic-maps"
+    },
+    {
+      "seedId": "1f845a1a-bdcd-5ced-b4eb-ecd138f5e4a4",
+      "category": "nature",
+      "navigationKeyword1": "navigation",
+      "navigationKeyword2": "map-compass",
+      "question": "What do contour lines on a topographic map connect?",
+      "correctAnswer": "points of equal elevation",
+      "incorrectAnswers": [
+        "the shortest trail to camp",
+        "areas with the same tree species",
+        "the windiest ridges"
+      ],
+      "explanation": "Contour lines join places at the same height above sea level.",
+      "keywords": [
+        "map-compass",
+        "nature-navigation"
+      ],
+      "source": "https://www.nps.gov/teachers/classrooms/earths-features-interpreting-patterns-with-topographic-maps.htm"
+    },
+    {
+      "seedId": "0ea6b877-dcd3-5484-8658-641888fe07e1",
+      "category": "nature",
+      "navigationKeyword1": "navigation",
+      "navigationKeyword2": "map-compass",
+      "question": "What is magnetic declination?",
+      "correctAnswer": "the difference between magnetic north and true north",
+      "incorrectAnswers": [
+        "the steepness of a slope",
+        "the speed of a current",
+        "the angle of the sun at noon"
+      ],
+      "explanation": "Declination is the angular difference between where a compass points and true north on the globe.",
+      "keywords": [
+        "map-compass",
+        "nature-navigation"
+      ],
+      "source": "https://www.rei.com/learn/expert-advice/compass-declination.html"
+    },
+    {
+      "seedId": "1374bf8f-2593-5584-b610-f44a4d50b74f",
+      "category": "nature",
+      "navigationKeyword1": "navigation",
+      "navigationKeyword2": "map-compass",
+      "question": "Where can you often find the local declination value when using a topographic map?",
+      "correctAnswer": "in the map legend or margin information",
+      "incorrectAnswers": [
+        "inside the compass housing",
+        "on every contour line",
+        "only on satellite imagery"
+      ],
+      "explanation": "Many topographic maps include declination information in their legend or margin notes.",
+      "keywords": [
+        "map-compass",
+        "nature-navigation"
+      ],
+      "source": "https://www.rei.com/learn/expert-advice/compass-declination.html"
+    }
+  ]
+}

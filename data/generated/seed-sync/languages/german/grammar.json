@@ -1,0 +1,121 @@
+{
+  "schemaVersion": 1,
+  "seedSet": "core-public-items",
+  "deltaPreviewLimit": 200,
+  "items": [
+    {
+      "seedId": "b0e2a71c-fd06-5b31-9373-46b2ddd53b52",
+      "category": "languages",
+      "navigationKeyword1": "german",
+      "navigationKeyword2": "grammar",
+      "question": "In a basic clause with a modal verb and an infinitive, where does the infinitive usually go?",
+      "correctAnswer": "at the end of the clause",
+      "incorrectAnswers": [
+        "right after the modal",
+        "before the subject",
+        "between the subject and the modal"
+      ],
+      "explanation": "The infinitive often sits at the end, for example 'Ich muss jetzt gehen.'",
+      "keywords": [
+        "modal-verbs",
+        "german-grammar"
+      ],
+      "source": "https://www.goethe.de/en/spr/englisch.html"
+    },
+    {
+      "seedId": "ed732fc3-5e21-5242-9091-b1b8e6ade848",
+      "category": "languages",
+      "navigationKeyword1": "german",
+      "navigationKeyword2": "grammar",
+      "question": "In a normal German statement, where does the main verb usually go?",
+      "correctAnswer": "second position",
+      "incorrectAnswers": [
+        "always at the end",
+        "always first",
+        "after the object phrase only"
+      ],
+      "explanation": "German main clauses often follow verb-second order: one element comes first, then the finite verb.",
+      "keywords": [
+        "word-order",
+        "german-grammar"
+      ],
+      "source": "https://dictionary.cambridge.org/grammar/british-grammar/german"
+    },
+    {
+      "seedId": "bd3ea9e9-1b55-57e9-82d2-eea153cd555e",
+      "category": "languages",
+      "navigationKeyword1": "german",
+      "navigationKeyword2": "grammar",
+      "question": "In a simple yes-or-no question, where does the verb usually go?",
+      "correctAnswer": "first",
+      "incorrectAnswers": [
+        "second",
+        "last",
+        "after the subject only"
+      ],
+      "explanation": "Yes-or-no questions often start with the verb, for example a form of 'sein' or 'haben'.",
+      "keywords": [
+        "questions",
+        "german-grammar"
+      ],
+      "source": "https://www.deutsch.info/en/grammar/"
+    },
+    {
+      "seedId": "68dc6b48-a620-52eb-81d7-b5c95b1792dc",
+      "category": "languages",
+      "navigationKeyword1": "german",
+      "navigationKeyword2": "grammar",
+      "question": "What is the usual first-person singular present form of 'sein' (to be)?",
+      "correctAnswer": "ich bin",
+      "incorrectAnswers": [
+        "ich bist",
+        "ich sind",
+        "ich war"
+      ],
+      "explanation": "'Ich bin' is the common present form meaning 'I am'.",
+      "keywords": [
+        "sein",
+        "german-grammar"
+      ],
+      "source": "https://www.duden.de/rechtschreibung/bin"
+    },
+    {
+      "seedId": "edd4458c-b863-5d77-829b-0a895be46d75",
+      "category": "languages",
+      "navigationKeyword1": "german",
+      "navigationKeyword2": "grammar",
+      "question": "Which article matches a singular masculine noun like 'Mann' in the nominative case?",
+      "correctAnswer": "der",
+      "incorrectAnswers": [
+        "die",
+        "das",
+        "den"
+      ],
+      "explanation": "Masculine singular nominative often uses 'der', as in 'der Mann'.",
+      "keywords": [
+        "articles",
+        "german-grammar"
+      ],
+      "source": "https://www.duden.de/sprachwissen/sprachratgeber/Der_die_oder_das"
+    },
+    {
+      "seedId": "478ed91b-0a99-51c0-85b0-4d7e571c2f87",
+      "category": "languages",
+      "navigationKeyword1": "german",
+      "navigationKeyword2": "grammar",
+      "question": "Which article matches a singular neuter noun like 'Kind' in the nominative case?",
+      "correctAnswer": "das",
+      "incorrectAnswers": [
+        "der",
+        "die",
+        "den"
+      ],
+      "explanation": "Neuter singular nominative often uses 'das', as in 'das Kind'.",
+      "keywords": [
+        "articles",
+        "german-grammar"
+      ],
+      "source": "https://dictionary.cambridge.org/dictionary/german-english/kind"
+    }
+  ]
+}

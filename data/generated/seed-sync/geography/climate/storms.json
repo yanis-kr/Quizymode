@@ -1,0 +1,207 @@
+{
+  "schemaVersion": 1,
+  "seedSet": "core-public-items",
+  "deltaPreviewLimit": 200,
+  "items": [
+    {
+      "seedId": "6db90f58-53b0-4ed9-afb2-2fe31eda5232",
+      "category": "geography",
+      "navigationKeyword1": "climate",
+      "navigationKeyword2": "storms",
+      "question": "A thunderstorm is classified as severe when it has hail at least how large, or wind gusts over 50 knots, or a tornado?",
+      "correctAnswer": "one inch or greater",
+      "incorrectAnswers": [
+        "one centimeter or greater",
+        "quarter inch or greater",
+        "three inches or greater"
+      ],
+      "explanation": "NSSL states a thunderstorm is \u201csevere\u201d when it contains hail one inch or greater, winds gusting over 50 knots (57.5 mph), or a tornado.",
+      "keywords": [
+        "storms",
+        "severe-thunderstorm",
+        "hail"
+      ],
+      "source": "https://www.nssl.noaa.gov/education/svrwx101/thunderstorms/"
+    },
+    {
+      "seedId": "9df3b199-cd94-4e49-b4b9-0cc7ff91f7ec",
+      "category": "geography",
+      "navigationKeyword1": "climate",
+      "navigationKeyword2": "storms",
+      "question": "Atlantic forecasters upgrade a tropical storm to a hurricane once sustained winds reach at least what speed?",
+      "correctAnswer": "74 mph (64 knots)",
+      "incorrectAnswers": [
+        "39 mph (34 knots)",
+        "110 mph (96 knots)",
+        "157 mph (137 knots)"
+      ],
+      "explanation": "NOAA\u2019s National Hurricane Center classifies a tropical cyclone with winds of 74 mph or higher as a hurricane in the Atlantic (typhoon in the western North Pacific).",
+      "keywords": [
+        "storms",
+        "hurricane-threshold",
+        "tropical-cyclone"
+      ],
+      "source": "https://www.nhc.noaa.gov/climo/"
+    },
+    {
+      "seedId": "21952c8f-8b49-400d-9647-ccb24173e061",
+      "category": "geography",
+      "navigationKeyword1": "climate",
+      "navigationKeyword2": "storms",
+      "question": "Forecasters boil thunderstorm formation down to three ingredients\u2014moisture, unstable air, and what third piece that actually starts the updraft?",
+      "correctAnswer": "a lifting mechanism (front, hills, daytime heating, etc.)",
+      "incorrectAnswers": [
+        "permanent high pressure that suppresses all clouds",
+        "moon phase and tide tables alone",
+        "only calm, sinking air everywhere"
+      ],
+      "explanation": "NSSL lists moisture, unstable rising air, and a lifting mechanism as the three ingredients needed for thunderstorm formation.",
+      "keywords": [
+        "storms",
+        "thunderstorm-formation",
+        "lifting-mechanism"
+      ],
+      "source": "https://www.nssl.noaa.gov/education/svrwx101/thunderstorms/"
+    },
+    {
+      "seedId": "04d0327f-318a-44a2-8e20-769e637fda86",
+      "category": "geography",
+      "navigationKeyword1": "climate",
+      "navigationKeyword2": "storms",
+      "question": "In the United States, the violent tornadoes that make headlines usually spin up under which kind of thunderstorm?",
+      "correctAnswer": "Supercells\u2014long-lived storms with a rotating updraft",
+      "incorrectAnswers": [
+        "Fair-weather cumulus on a blue-sky afternoon",
+        "Wide sheets of stratiform drizzle",
+        "Winter lake-effect snow bands only"
+      ],
+      "explanation": "NOAA\u2019s NSSL notes most strong tornadoes come from supercells, though tornadoes can occasionally form in other storm types.",
+      "keywords": [
+        "storms",
+        "supercell",
+        "tornado"
+      ],
+      "source": "https://www.nssl.noaa.gov/education/svrwx101/tornadoes/"
+    },
+    {
+      "seedId": "ae2ba599-17ec-434f-abb0-a0e47414add5",
+      "category": "geography",
+      "navigationKeyword1": "climate",
+      "navigationKeyword2": "storms",
+      "question": "On the Enhanced Fujita scale, EF5 surveys describe \u201cincredible\u201d damage\u2014well-built homes swept away and car-sized debris hurled roughly how far?",
+      "correctAnswer": "More than 100 meters (over a football field in length)",
+      "incorrectAnswers": [
+        "Only a few meters from the foundation",
+        "Never farther than the visible funnel width",
+        "Only straight upward, not outward"
+      ],
+      "explanation": "NSSL\u2019s EF-scale training examples include EF5-level indicators such as automobile-sized missiles thrown more than 100 meters, alongside destruction of well-anchored homes.",
+      "keywords": [
+        "storms",
+        "ef-scale",
+        "tornado-damage"
+      ],
+      "source": "https://www.nssl.noaa.gov/education/svrwx101/tornadoes/"
+    },
+    {
+      "seedId": "1aab8069-5db7-42e2-b03b-4410afbb6a45",
+      "category": "geography",
+      "navigationKeyword1": "climate",
+      "navigationKeyword2": "storms",
+      "question": "On the calendar, when is the peak of the Atlantic hurricane season?",
+      "correctAnswer": "September 10",
+      "incorrectAnswers": [
+        "July 4",
+        "November 1",
+        "May 15"
+      ],
+      "explanation": "NOAA\u2019s tropical cyclone climatology notes the Atlantic season\u2019s peak is September 10, with most activity between mid-August and mid-October.",
+      "keywords": [
+        "storms",
+        "atlantic-hurricane-peak",
+        "september"
+      ],
+      "source": "https://www.nhc.noaa.gov/climo/"
+    },
+    {
+      "seedId": "67fc44aa-927c-46d6-99aa-1abbf8b359bf",
+      "category": "geography",
+      "navigationKeyword1": "climate",
+      "navigationKeyword2": "storms",
+      "question": "Roughly how many thunderstorms occur in the United States each year?",
+      "correctAnswer": "about 100,000",
+      "incorrectAnswers": [
+        "about 10,000",
+        "about 1 million",
+        "about 5,000"
+      ],
+      "explanation": "NSSL reports about 100,000 thunderstorms each year in the U.S., with about 10% reaching severe levels; it also estimates roughly 16 million thunderstorms worldwide annually.",
+      "keywords": [
+        "storms",
+        "thunderstorm-frequency",
+        "united-states"
+      ],
+      "source": "https://www.nssl.noaa.gov/education/svrwx101/thunderstorms/"
+    },
+    {
+      "seedId": "3bd5d8c3-50c4-4388-954a-32a622547459",
+      "category": "geography",
+      "navigationKeyword1": "climate",
+      "navigationKeyword2": "storms",
+      "question": "Thunderstorms have which three stages in their life cycle?",
+      "correctAnswer": "developing, mature, and dissipating",
+      "incorrectAnswers": [
+        "seed, bloom, and harvest",
+        "stratus, altocumulus, and cirrus only",
+        "dawn, noon, and dusk"
+      ],
+      "explanation": "NSSL describes thunderstorm life stages as developing (towering cumulus), mature (updraft and downdraft with heavy weather), and dissipating.",
+      "keywords": [
+        "storms",
+        "thunderstorm-life-cycle",
+        "mature-stage"
+      ],
+      "source": "https://www.nssl.noaa.gov/education/svrwx101/thunderstorms/"
+    },
+    {
+      "seedId": "d14dbf90-dce4-436b-8555-ef6efa9a6c02",
+      "category": "geography",
+      "navigationKeyword1": "climate",
+      "navigationKeyword2": "storms",
+      "question": "When does the official Atlantic hurricane season run?",
+      "correctAnswer": "June 1 to November 30",
+      "incorrectAnswers": [
+        "April 1 to September 30",
+        "January 1 to March 31",
+        "Year-round with no official dates"
+      ],
+      "explanation": "The National Hurricane Center states the Atlantic hurricane season runs from June 1 through November 30 and includes the Atlantic Ocean, Caribbean Sea, and Gulf of America.",
+      "keywords": [
+        "storms",
+        "atlantic-hurricane-season",
+        "june-november"
+      ],
+      "source": "https://www.nhc.noaa.gov/climo/"
+    },
+    {
+      "seedId": "ecc78c3c-f685-4dce-b738-0985016958d8",
+      "category": "geography",
+      "navigationKeyword1": "climate",
+      "navigationKeyword2": "storms",
+      "question": "You hear thunder during a downpour but never spot a lightning flash\u2014what must still be happening in that storm?",
+      "correctAnswer": "Lightning (thunder is the sound produced by lightning heating the air)",
+      "incorrectAnswers": [
+        "Only harmless \u201cheat lightning\u201d with no real electricity",
+        "Static from nearby power lines only",
+        "Aurora-like glows in raindrops"
+      ],
+      "explanation": "NOAA\u2019s NSSL explains that thunder comes from lightning; if you hear thunder, lightning occurred even when clouds hide the flash.",
+      "keywords": [
+        "storms",
+        "lightning",
+        "thunder"
+      ],
+      "source": "https://www.nssl.noaa.gov/education/svrwx101/thunderstorms/"
+    }
+  ]
+}

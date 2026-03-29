@@ -1,0 +1,197 @@
+{
+  "schemaVersion": 1,
+  "seedSet": "core-public-items",
+  "deltaPreviewLimit": 200,
+  "items": [
+    {
+      "seedId": "8d2e19fb-4bdb-5789-9671-926e0b6c3c48",
+      "category": "trivia",
+      "navigationKeyword1": "famous-people",
+      "navigationKeyword2": "authors",
+      "question": "Charles Dickens is one of the best-known English novelists from which century?",
+      "correctAnswer": "19th century",
+      "incorrectAnswers": [
+        "12th century",
+        "22nd century",
+        "8th century"
+      ],
+      "explanation": "Charles Dickens is one of the best-known English novelists of the 19th century.",
+      "keywords": [
+        "victorian",
+        "novels"
+      ],
+      "source": "https://www.britannica.com/biography/Charles-Dickens"
+    },
+    {
+      "seedId": "8d305dcb-5d90-5626-b5d1-b0276ef2978d",
+      "category": "trivia",
+      "navigationKeyword1": "famous-people",
+      "navigationKeyword2": "authors",
+      "question": "Ernest Hemingway is strongly associated with what expatriate literary scene?",
+      "correctAnswer": "Paris in the 1920s",
+      "incorrectAnswers": [
+        "Victorian London",
+        "ancient Athens",
+        "medieval Florence"
+      ],
+      "explanation": "Hemingway is strongly associated with the expatriate literary scene in Paris in the 1920s.",
+      "keywords": [
+        "fiction",
+        "nobel"
+      ],
+      "source": "https://www.britannica.com/biography/Ernest-Hemingway"
+    },
+    {
+      "seedId": "dbb226fe-a479-5fbc-b9b7-93b7ca74b209",
+      "category": "trivia",
+      "navigationKeyword1": "famous-people",
+      "navigationKeyword2": "authors",
+      "question": "Homer as central to which ancient poetic tradition?",
+      "correctAnswer": "Greek epic poetry",
+      "incorrectAnswers": [
+        "Chinese Tang poetry",
+        "Sanskrit drama",
+        "Mayan codices"
+      ],
+      "explanation": "Homer is foundational for Greek epic.",
+      "keywords": [
+        "classics",
+        "epic"
+      ],
+      "source": "https://www.britannica.com/biography/Homer-Greek-poet"
+    },
+    {
+      "seedId": "58268f42-23a0-5410-ad76-20a3f3fe850a",
+      "category": "trivia",
+      "navigationKeyword1": "famous-people",
+      "navigationKeyword2": "authors",
+      "question": "Jane Austen with novels exploring manners and marriage in which country\u2019s society?",
+      "correctAnswer": "England",
+      "incorrectAnswers": [
+        "Japan",
+        "Brazil",
+        "Egypt"
+      ],
+      "explanation": "Austen\u2019s novels in English society.",
+      "keywords": [
+        "novels",
+        "regency"
+      ],
+      "source": "https://www.britannica.com/biography/Jane-Austen"
+    },
+    {
+      "seedId": "0b099c5b-4ade-5c63-9d4b-c47a399dcda8",
+      "category": "trivia",
+      "navigationKeyword1": "famous-people",
+      "navigationKeyword2": "authors",
+      "question": "Mark Twain to regional literature often set along which U.S. river?",
+      "correctAnswer": "Mississippi River",
+      "incorrectAnswers": [
+        "Hudson River",
+        "Colorado River",
+        "Potomac River"
+      ],
+      "explanation": "Twain is connected to Mississippi River settings.",
+      "keywords": [
+        "american-literature",
+        "humor"
+      ],
+      "source": "https://www.britannica.com/biography/Mark-Twain"
+    },
+    {
+      "seedId": "6413f4f2-e821-553b-93a2-a66893e6e87d",
+      "category": "trivia",
+      "navigationKeyword1": "famous-people",
+      "navigationKeyword2": "authors",
+      "question": "Maya Angelou to memoir and poetry rooted especially in which country\u2019s civil rights era?",
+      "correctAnswer": "United States",
+      "incorrectAnswers": [
+        "France",
+        "India",
+        "Australia"
+      ],
+      "explanation": "Angelou\u2019s work is tied to U.S. history and civil rights.",
+      "keywords": [
+        "memoir",
+        "poetry"
+      ],
+      "source": "https://www.britannica.com/biography/Maya-Angelou"
+    },
+    {
+      "seedId": "5b46500b-ad76-58b4-b1b8-68fe1ad090b0",
+      "category": "trivia",
+      "navigationKeyword1": "famous-people",
+      "navigationKeyword2": "authors",
+      "question": "Toni Morrison\u2019s Nobel Prize as recognizing achievements in what field?",
+      "correctAnswer": "literature",
+      "incorrectAnswers": [
+        "physics",
+        "peace",
+        "medicine"
+      ],
+      "explanation": "Morrison won the Nobel Prize in Literature.",
+      "keywords": [
+        "novels",
+        "nobel"
+      ],
+      "source": "https://www.britannica.com/biography/Toni-Morrison"
+    },
+    {
+      "seedId": "d5c60482-a791-53c2-881f-96d133677494",
+      "category": "trivia",
+      "navigationKeyword1": "famous-people",
+      "navigationKeyword2": "authors",
+      "question": "Which best-selling fantasy series is associated with J.K. Rowling?",
+      "correctAnswer": "Harry Potter",
+      "incorrectAnswers": [
+        "The Lord of the Rings",
+        "Narnia",
+        "Dune"
+      ],
+      "explanation": "Rowling is tied to the Harry Potter series.",
+      "keywords": [
+        "fantasy",
+        "novels"
+      ],
+      "source": "https://www.britannica.com/biography/J-K-Rowling"
+    },
+    {
+      "seedId": "58eb8731-ff3b-5106-a39e-faaa11a675ef",
+      "category": "trivia",
+      "navigationKeyword1": "famous-people",
+      "navigationKeyword2": "authors",
+      "question": "Which modernist literary movement context is associated with Virginia Woolf?",
+      "correctAnswer": "modernism",
+      "incorrectAnswers": [
+        "romanticism only",
+        "baroque only",
+        "futurism only"
+      ],
+      "explanation": "Woolf is a modernist writer.",
+      "keywords": [
+        "modernism",
+        "essays"
+      ],
+      "source": "https://www.britannica.com/biography/Virginia-Woolf"
+    },
+    {
+      "seedId": "410c5e34-78e4-5f0d-8adc-f0ff70db197e",
+      "category": "trivia",
+      "navigationKeyword1": "famous-people",
+      "navigationKeyword2": "authors",
+      "question": "William Shakespeare principally as a writer of what?",
+      "correctAnswer": "plays and poetry",
+      "incorrectAnswers": [
+        "novels only",
+        "operas only",
+        "newspapers only"
+      ],
+      "explanation": "Shakespeare\u2019s plays and poetry.",
+      "keywords": [
+        "literature",
+        "drama"
+      ],
+      "source": "https://www.britannica.com/biography/William-Shakespeare"
+    }
+  ]
+}

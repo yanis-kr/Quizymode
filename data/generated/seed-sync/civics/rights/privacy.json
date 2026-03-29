@@ -1,0 +1,121 @@
+{
+  "schemaVersion": 1,
+  "seedSet": "core-public-items",
+  "deltaPreviewLimit": 200,
+  "items": [
+    {
+      "seedId": "7ebdf92e-d7b3-5b3b-b8ae-aecbfef0a162",
+      "category": "civics",
+      "navigationKeyword1": "rights",
+      "navigationKeyword2": "privacy",
+      "question": "What does Katz emphasize about Fourth Amendment protection?",
+      "correctAnswer": "people not places\u2014reasonable expectations of privacy can matter",
+      "incorrectAnswers": [
+        "only buildings count",
+        "only written diaries are protected",
+        "privacy ends at the property line always"
+      ],
+      "explanation": "Fourth Amendment coverage depends on whether society recognizes a reasonable expectation of privacy in the situation.",
+      "keywords": [
+        "privacy",
+        "reasonable-expectation"
+      ],
+      "source": "https://www.law.cornell.edu/wex/katz_v._united_states"
+    },
+    {
+      "seedId": "33a3e996-99e2-525d-b1cf-c24825b3d37e",
+      "category": "civics",
+      "navigationKeyword1": "rights",
+      "navigationKeyword2": "privacy",
+      "question": "What is one limit on when government may demand blood alcohol tests without a warrant?",
+      "correctAnswer": "special rules apply when someone drives, with consequences for refusal",
+      "incorrectAnswers": [
+        "warrants are never needed for any medical test",
+        "consent is impossible in hospitals",
+        "the Fourth Amendment does not apply to roads"
+      ],
+      "explanation": "Driving laws can impose civil penalties for refusal while courts balance privacy and highway safety in testing rules.",
+      "keywords": [
+        "privacy",
+        "dui"
+      ],
+      "source": "https://www.law.cornell.edu/wex/birchfield_v._north_dakota"
+    },
+    {
+      "seedId": "79dc2a2d-2ba0-545b-a240-b36db3af26d2",
+      "category": "civics",
+      "navigationKeyword1": "rights",
+      "navigationKeyword2": "privacy",
+      "question": "What is usually required before police search a home, absent an emergency or consent?",
+      "correctAnswer": "a warrant based on probable cause",
+      "incorrectAnswers": [
+        "a simple hunch",
+        "approval from a mayor",
+        "a majority vote of neighbors"
+      ],
+      "explanation": "The warrant requirement, with probable cause particularized to the place and items, is the default rule for home searches.",
+      "keywords": [
+        "privacy",
+        "warrants"
+      ],
+      "source": "https://www.law.cornell.edu/wex/fourth_amendment"
+    },
+    {
+      "seedId": "c4cee347-46a5-55e6-b6d9-7810b5829d10",
+      "category": "civics",
+      "navigationKeyword1": "rights",
+      "navigationKeyword2": "privacy",
+      "question": "What standard do police often need to stop and frisk someone\u2019s outer clothing for weapons?",
+      "correctAnswer": "reasonable suspicion of criminal activity",
+      "incorrectAnswers": [
+        "proof beyond a reasonable doubt",
+        "a signed complaint from a victim",
+        "a warrant in every case"
+      ],
+      "explanation": "Terry stops require reasonable suspicion\u2014more than a hunch but less than probable cause for a full arrest in that setting.",
+      "keywords": [
+        "privacy",
+        "terry-stop"
+      ],
+      "source": "https://www.law.cornell.edu/wex/terry_v._ohio"
+    },
+    {
+      "seedId": "0d481a0f-f39e-56f1-bb9d-6c1e99eaac0a",
+      "category": "civics",
+      "navigationKeyword1": "rights",
+      "navigationKeyword2": "privacy",
+      "question": "Which amendment is the main source of protection against unreasonable searches and seizures?",
+      "correctAnswer": "the Fourth Amendment",
+      "incorrectAnswers": [
+        "the Third Amendment",
+        "the Seventh Amendment",
+        "the Ninth Amendment"
+      ],
+      "explanation": "The Fourth Amendment guards privacy in persons, houses, papers, and effects against unreasonable government searches.",
+      "keywords": [
+        "privacy",
+        "fourth-amendment"
+      ],
+      "source": "https://constitution.congress.gov/constitution/amendment-4/"
+    },
+    {
+      "seedId": "7b189c6c-4e09-55ee-aec5-cce5b9aae46c",
+      "category": "civics",
+      "navigationKeyword1": "rights",
+      "navigationKeyword2": "privacy",
+      "question": "Why is the exclusionary rule tied to the Fourth Amendment?",
+      "correctAnswer": "to deter unlawful searches by keeping some evidence out of trial",
+      "incorrectAnswers": [
+        "to reward defendants with money damages automatically",
+        "to shorten every trial",
+        "to ban all forensic science"
+      ],
+      "explanation": "Courts may suppress evidence obtained through violations so police have incentives to follow constitutional rules.",
+      "keywords": [
+        "privacy",
+        "exclusionary-rule"
+      ],
+      "source": "https://www.uscourts.gov/about-federal-courts/educational-resources/about-educational-outreach/activity-resources/facts-and-case-summary-mapp-v-ohio"
+    }
+  ]
+}

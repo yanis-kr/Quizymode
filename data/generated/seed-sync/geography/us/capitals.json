@@ -1,0 +1,227 @@
+{
+  "schemaVersion": 1,
+  "seedSet": "core-public-items",
+  "deltaPreviewLimit": 200,
+  "items": [
+    {
+      "seedId": "8d3721bd-3ee8-4768-8fa8-faea2951a90f",
+      "category": "geography",
+      "navigationKeyword1": "us",
+      "navigationKeyword2": "capitals",
+      "question": "What is the capital of Arizona?",
+      "correctAnswer": "Phoenix",
+      "incorrectAnswers": [
+        "Tucson",
+        "Mesa",
+        "Scottsdale"
+      ],
+      "explanation": "Phoenix in the Salt River Valley is Arizona\u2019s capital.",
+      "keywords": [
+        "arizona",
+        "state-capitals",
+        "southwest"
+      ],
+      "source": "https://www.britannica.com/place/Phoenix-Arizona"
+    },
+    {
+      "seedId": "676d7d9f-f896-4ee7-8b23-65d01c4f8abb",
+      "category": "geography",
+      "navigationKeyword1": "us",
+      "navigationKeyword2": "capitals",
+      "question": "What is the capital of California?",
+      "correctAnswer": "Sacramento",
+      "incorrectAnswers": [
+        "Los Angeles",
+        "San Francisco",
+        "San Diego"
+      ],
+      "explanation": "Sacramento in the Central Valley is California\u2019s state capital.",
+      "keywords": [
+        "california",
+        "state-capitals",
+        "west"
+      ],
+      "source": "https://www.britannica.com/place/Sacramento"
+    },
+    {
+      "seedId": "c6e284de-988d-4e99-a325-715823b81849",
+      "category": "geography",
+      "navigationKeyword1": "us",
+      "navigationKeyword2": "capitals",
+      "question": "What is the capital of Colorado?",
+      "correctAnswer": "Denver",
+      "incorrectAnswers": [
+        "Colorado Springs",
+        "Boulder",
+        "Fort Collins"
+      ],
+      "explanation": "Denver on the High Plains front range is Colorado\u2019s capital.",
+      "keywords": [
+        "colorado",
+        "state-capitals",
+        "mountain-west"
+      ],
+      "source": "https://www.britannica.com/place/Denver"
+    },
+    {
+      "seedId": "22a81fcb-2819-4be2-a630-2d9d70d190b2",
+      "category": "geography",
+      "navigationKeyword1": "us",
+      "navigationKeyword2": "capitals",
+      "question": "What is the capital of Florida?",
+      "correctAnswer": "Tallahassee",
+      "incorrectAnswers": [
+        "Miami",
+        "Tampa",
+        "Jacksonville"
+      ],
+      "explanation": "Tallahassee in the Florida Panhandle is the state capital.",
+      "keywords": [
+        "florida",
+        "state-capitals",
+        "south"
+      ],
+      "source": "https://www.britannica.com/place/Tallahassee"
+    },
+    {
+      "seedId": "63a2ed84-52c6-4472-a91a-cd9d992549de",
+      "category": "geography",
+      "navigationKeyword1": "us",
+      "navigationKeyword2": "capitals",
+      "question": "What is the capital of Georgia?",
+      "correctAnswer": "Atlanta",
+      "incorrectAnswers": [
+        "Savannah",
+        "Augusta",
+        "Columbus"
+      ],
+      "explanation": "Atlanta is Georgia\u2019s capital in the north of the state.",
+      "keywords": [
+        "georgia",
+        "state-capitals",
+        "south"
+      ],
+      "source": "https://www.britannica.com/place/Atlanta"
+    },
+    {
+      "seedId": "444bc914-7293-4080-9ed4-aa11416c0fde",
+      "category": "geography",
+      "navigationKeyword1": "us",
+      "navigationKeyword2": "capitals",
+      "question": "What is the capital of Hawaii?",
+      "correctAnswer": "Honolulu",
+      "incorrectAnswers": [
+        "Hilo",
+        "Kailua",
+        "Pearl City"
+      ],
+      "explanation": "Honolulu on Oahu is Hawaii\u2019s capital.",
+      "keywords": [
+        "hawaii",
+        "state-capitals",
+        "pacific"
+      ],
+      "source": "https://www.britannica.com/place/Honolulu"
+    },
+    {
+      "seedId": "02e0ac4e-369c-46c9-97d9-6b34fc407f59",
+      "category": "geography",
+      "navigationKeyword1": "us",
+      "navigationKeyword2": "capitals",
+      "question": "What is the capital of Idaho?",
+      "correctAnswer": "Boise",
+      "incorrectAnswers": [
+        "Nampa",
+        "Idaho Falls",
+        "Pocatello"
+      ],
+      "explanation": "Boise in southwestern Idaho is the state capital.",
+      "keywords": [
+        "idaho",
+        "state-capitals",
+        "mountain-west"
+      ],
+      "source": "https://www.britannica.com/place/Boise"
+    },
+    {
+      "seedId": "a88996ad-6095-446e-ab36-6e753de33aa2",
+      "category": "geography",
+      "navigationKeyword1": "us",
+      "navigationKeyword2": "capitals",
+      "question": "What is the capital of Massachusetts?",
+      "correctAnswer": "Boston",
+      "incorrectAnswers": [
+        "Worcester",
+        "Cambridge",
+        "Springfield"
+      ],
+      "explanation": "Boston is Massachusetts\u2019 capital and largest city.",
+      "keywords": [
+        "massachusetts",
+        "state-capitals",
+        "northeast"
+      ],
+      "source": "https://www.britannica.com/place/Boston"
+    },
+    {
+      "seedId": "655b051f-ad8a-4ee5-a72c-eafce2bcd6b6",
+      "category": "geography",
+      "navigationKeyword1": "us",
+      "navigationKeyword2": "capitals",
+      "question": "What is the capital of New York?",
+      "correctAnswer": "Albany",
+      "incorrectAnswers": [
+        "New York City",
+        "Buffalo",
+        "Rochester"
+      ],
+      "explanation": "Albany on the Hudson River is New York\u2019s capital.",
+      "keywords": [
+        "new-york",
+        "state-capitals",
+        "northeast"
+      ],
+      "source": "https://www.britannica.com/place/Albany-New-York"
+    },
+    {
+      "seedId": "e7270791-2089-427e-a107-21f53d586bed",
+      "category": "geography",
+      "navigationKeyword1": "us",
+      "navigationKeyword2": "capitals",
+      "question": "What is the capital of Ohio?",
+      "correctAnswer": "Columbus",
+      "incorrectAnswers": [
+        "Cleveland",
+        "Cincinnati",
+        "Toledo"
+      ],
+      "explanation": "Columbus near the center of Ohio is the state capital.",
+      "keywords": [
+        "ohio",
+        "state-capitals",
+        "midwest"
+      ],
+      "source": "https://www.britannica.com/place/Columbus-Ohio"
+    },
+    {
+      "seedId": "19b6ccaa-7280-44dc-9117-62fe34c2a7d7",
+      "category": "geography",
+      "navigationKeyword1": "us",
+      "navigationKeyword2": "capitals",
+      "question": "What is the capital of Texas?",
+      "correctAnswer": "Austin",
+      "incorrectAnswers": [
+        "Houston",
+        "Dallas",
+        "San Antonio"
+      ],
+      "explanation": "Austin in south-central Texas is the state capital.",
+      "keywords": [
+        "texas",
+        "state-capitals",
+        "south"
+      ],
+      "source": "https://www.britannica.com/place/Austin-Texas"
+    }
+  ]
+}

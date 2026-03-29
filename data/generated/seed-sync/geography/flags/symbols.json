@@ -1,0 +1,227 @@
+{
+  "schemaVersion": 1,
+  "seedSet": "core-public-items",
+  "deltaPreviewLimit": 200,
+  "items": [
+    {
+      "seedId": "6fd630e4-46fa-4cb6-b05a-3b57749c2667",
+      "category": "geography",
+      "navigationKeyword1": "flags",
+      "navigationKeyword2": "symbols",
+      "question": "A common nickname for the U.S. national flag highlighted by Britannica is what?",
+      "correctAnswer": "Stars and Stripes",
+      "incorrectAnswers": [
+        "Sun and Moon",
+        "Hammer and Sickle",
+        "Lion and Unicorn"
+      ],
+      "explanation": "Britannica lists nicknames including Stars and Stripes, Old Glory, and Star-Spangled Banner for the U.S. flag.",
+      "keywords": [
+        "symbols",
+        "united-states",
+        "nicknames"
+      ],
+      "source": "https://www.britannica.com/topic/flag-of-the-United-States-of-America"
+    },
+    {
+      "seedId": "4a9254eb-9295-49c2-aa40-9b519db022df",
+      "category": "geography",
+      "navigationKeyword1": "flags",
+      "navigationKeyword2": "symbols",
+      "question": "Canada\u2019s flag uses how many maple leaves in its central emblem?",
+      "correctAnswer": "One",
+      "incorrectAnswers": [
+        "Three",
+        "Seven",
+        "Twelve"
+      ],
+      "explanation": "Britannica notes the final 1964 design used a single maple leaf to give a distinctive, easily recognizable central symbol.",
+      "keywords": [
+        "symbols",
+        "canada",
+        "maple-leaf"
+      ],
+      "source": "https://www.britannica.com/topic/flag-of-Canada"
+    },
+    {
+      "seedId": "761d81cb-973b-4702-927b-107560e69de7",
+      "category": "geography",
+      "navigationKeyword1": "flags",
+      "navigationKeyword2": "symbols",
+      "question": "How many stars appear on the current United States national flag?",
+      "correctAnswer": "50",
+      "incorrectAnswers": [
+        "48",
+        "13",
+        "52"
+      ],
+      "explanation": "Britannica notes the U.S. flag has 50 white stars (since July 4, 1960) on the blue canton, one for each state.",
+      "keywords": [
+        "symbols",
+        "united-states",
+        "stars"
+      ],
+      "source": "https://www.britannica.com/topic/flag-of-the-United-States-of-America"
+    },
+    {
+      "seedId": "c1346542-2fa9-48be-90b1-96b5d272a2ff",
+      "category": "geography",
+      "navigationKeyword1": "flags",
+      "navigationKeyword2": "symbols",
+      "question": "Japan\u2019s flag centers what solar symbol?",
+      "correctAnswer": "A stylized sun disk",
+      "incorrectAnswers": [
+        "A crescent moon",
+        "A eight-rayed ship\u2019s wheel",
+        "A triangular pennant"
+      ],
+      "explanation": "Britannica states Japan\u2019s flag bears a central red disk representing a stylized sun, linked to traditions of the sun goddess and the \u201cLand of the Rising Sun.\u201d",
+      "keywords": [
+        "symbols",
+        "japan",
+        "sun"
+      ],
+      "source": "https://www.britannica.com/topic/flag-of-Japan"
+    },
+    {
+      "seedId": "537af07e-159f-4b67-9e82-69d3f812871a",
+      "category": "geography",
+      "navigationKeyword1": "flags",
+      "navigationKeyword2": "symbols",
+      "question": "The Swiss civil ensign for use at sea differs from the land flag mainly in what way?",
+      "correctAnswer": "It is rectangular instead of square",
+      "incorrectAnswers": [
+        "It replaces the cross with a ship\u2019s wheel",
+        "It adds a crown in each corner",
+        "It removes all red colour"
+      ],
+      "explanation": "Britannica explains the Swiss civil ensign adopted in 1941 differs from the square land flag only in rectangular proportions.",
+      "keywords": [
+        "symbols",
+        "switzerland",
+        "ensign"
+      ],
+      "source": "https://www.britannica.com/topic/flag-of-Switzerland"
+    },
+    {
+      "seedId": "876ad869-2ce0-48ae-ac33-d4477617f5f3",
+      "category": "geography",
+      "navigationKeyword1": "flags",
+      "navigationKeyword2": "symbols",
+      "question": "The Swiss national flag\u2019s primary heraldic symbol is what?",
+      "correctAnswer": "A white cross",
+      "incorrectAnswers": [
+        "A white crescent",
+        "A black eagle",
+        "A green pine tree"
+      ],
+      "explanation": "Britannica defines the Swiss flag as a white cross on a red field, rooted in medieval cross banners and cantonal tradition.",
+      "keywords": [
+        "symbols",
+        "switzerland",
+        "cross"
+      ],
+      "source": "https://www.britannica.com/topic/flag-of-Switzerland"
+    },
+    {
+      "seedId": "d034d8d4-e52b-4675-ad8d-db2b58347e1a",
+      "category": "geography",
+      "navigationKeyword1": "flags",
+      "navigationKeyword2": "symbols",
+      "question": "The U.S. flag\u2019s 13 stripes symbolize what?",
+      "correctAnswer": "The original 13 states",
+      "incorrectAnswers": [
+        "The federal cabinet departments",
+        "World War II theaters only",
+        "Original NATO members"
+      ],
+      "explanation": "Britannica states 13 alternating red and white stripes stand for the original 13 states, while stars represent states in the union.",
+      "keywords": [
+        "symbols",
+        "united-states",
+        "stripes"
+      ],
+      "source": "https://www.britannica.com/topic/flag-of-the-United-States-of-America"
+    },
+    {
+      "seedId": "12e8ec74-21ab-44d2-9010-840483f4db1a",
+      "category": "geography",
+      "navigationKeyword1": "flags",
+      "navigationKeyword2": "symbols",
+      "question": "The first U.S. Flag Resolution of June 14, 1777, specified stars white in a blue field representing what metaphor?",
+      "correctAnswer": "A new constellation",
+      "incorrectAnswers": [
+        "A compass rose",
+        "A harvest moon",
+        "A railroad timetable"
+      ],
+      "explanation": "Britannica quotes the 1777 resolution: thirteen stars, white in a blue field, representing a new constellation.",
+      "keywords": [
+        "symbols",
+        "united-states",
+        "revolution"
+      ],
+      "source": "https://www.britannica.com/topic/flag-of-the-United-States-of-America"
+    },
+    {
+      "seedId": "5f849a5f-9eab-4be2-8b03-c8191efd62f0",
+      "category": "geography",
+      "navigationKeyword1": "flags",
+      "navigationKeyword2": "symbols",
+      "question": "Under rules since 1818, when is a new star added to the U.S. flag after a state is admitted?",
+      "correctAnswer": "On the July 4 following the state\u2019s admission",
+      "incorrectAnswers": [
+        "The very next day after admission",
+        "Only once every decade",
+        "Only during a presidential inauguration"
+      ],
+      "explanation": "Britannica states Congress required new stars to be added on the July 4 following a state\u2019s admission, keeping stripes fixed at thirteen.",
+      "keywords": [
+        "symbols",
+        "united-states",
+        "stars"
+      ],
+      "source": "https://www.britannica.com/topic/flag-of-the-United-States-of-America"
+    },
+    {
+      "seedId": "c24dce41-dcec-4480-96a8-19884df12678",
+      "category": "geography",
+      "navigationKeyword1": "flags",
+      "navigationKeyword2": "symbols",
+      "question": "What plant symbol sits at the center of Canada\u2019s national flag?",
+      "correctAnswer": "A maple leaf",
+      "incorrectAnswers": [
+        "A beaver",
+        "A fleur-de-lis",
+        "A shamrock"
+      ],
+      "explanation": "Britannica describes Canada\u2019s flag as red-white-red with a large central red maple leaf.",
+      "keywords": [
+        "symbols",
+        "canada",
+        "maple-leaf"
+      ],
+      "source": "https://www.britannica.com/topic/flag-of-Canada"
+    },
+    {
+      "seedId": "38baa508-4477-45df-b400-dbd0f728156a",
+      "category": "geography",
+      "navigationKeyword1": "flags",
+      "navigationKeyword2": "symbols",
+      "question": "Where are the stars placed on the United States flag?",
+      "correctAnswer": "On a blue canton",
+      "incorrectAnswers": [
+        "Along the bottom stripe only",
+        "Inside a central red circle",
+        "Scattered randomly each week"
+      ],
+      "explanation": "Britannica describes the U.S. flag as white stars on a blue canton with a field of alternating stripes.",
+      "keywords": [
+        "symbols",
+        "united-states",
+        "canton"
+      ],
+      "source": "https://www.britannica.com/topic/flag-of-the-United-States-of-America"
+    }
+  ]
+}

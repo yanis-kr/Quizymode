@@ -1,0 +1,227 @@
+{
+  "schemaVersion": 1,
+  "seedSet": "core-public-items",
+  "deltaPreviewLimit": 200,
+  "items": [
+    {
+      "seedId": "9664ef78-6655-4d2a-8681-df35c6edf591",
+      "category": "geography",
+      "navigationKeyword1": "regions",
+      "navigationKeyword2": "middle-east",
+      "question": "Egypt is frequently grouped with the Middle East in part because it borders which sea to the northeast?",
+      "correctAnswer": "The Mediterranean Sea",
+      "incorrectAnswers": [
+        "The Baltic Sea",
+        "The Coral Sea",
+        "The Sea of Japan"
+      ],
+      "explanation": "Britannica commonly includes Egypt in Middle East lists; Egypt\u2019s northeastern coast lies on the Mediterranean.",
+      "keywords": [
+        "middle-east",
+        "egypt",
+        "mediterranean"
+      ],
+      "source": "https://www.britannica.com/place/Middle-East"
+    },
+    {
+      "seedId": "f6628e31-ab49-4ae7-9f3f-0b63facc8dc6",
+      "category": "geography",
+      "navigationKeyword1": "regions",
+      "navigationKeyword2": "middle-east",
+      "question": "Iraq is typically listed with which other subregion\u2019s countries in Britannica\u2019s Middle East country survey?",
+      "correctAnswer": "The Levant and Arabian Peninsula groupings",
+      "incorrectAnswers": [
+        "Only South American Andean states",
+        "Pacific island chains exclusively",
+        "Central American isthmus states only"
+      ],
+      "explanation": "Britannica\u2019s Middle East overview groups Iraq with Levantine and Arabian Peninsula states in typical definitions.",
+      "keywords": [
+        "middle-east",
+        "iraq",
+        "levant"
+      ],
+      "source": "https://www.britannica.com/place/Middle-East"
+    },
+    {
+      "seedId": "2d4513da-20e7-4d0b-9ad0-7a582d15fc68",
+      "category": "geography",
+      "navigationKeyword1": "regions",
+      "navigationKeyword2": "middle-east",
+      "question": "Large parts of the Middle East are described as what broad land-cover type, alongside varied climates in inhabited zones?",
+      "correctAnswer": "Desert",
+      "incorrectAnswers": [
+        "Ice sheet",
+        "Tropical rainforest everywhere",
+        "Tundra coast to coast"
+      ],
+      "explanation": "Britannica notes large Middle Eastern areas are desert while inhabited parts span a wide range of climates and landforms.",
+      "keywords": [
+        "middle-east",
+        "desert",
+        "landforms"
+      ],
+      "source": "https://www.britannica.com/place/Middle-East"
+    },
+    {
+      "seedId": "468dda46-42a2-4122-a7fa-212ba14a5937",
+      "category": "geography",
+      "navigationKeyword1": "regions",
+      "navigationKeyword2": "middle-east",
+      "question": "Religiously, the Middle East is often described as having a diverse Muslim majority alongside what other sizable faith communities?",
+      "correctAnswer": "Christian and Jewish populations",
+      "incorrectAnswers": [
+        "Only one uniform tradition",
+        "No religious diversity",
+        "Exclusively Buddhist majorities"
+      ],
+      "explanation": "Britannica characterizes the region as culturally diverse with a Muslim majority plus sizable Christian and Jewish populations.",
+      "keywords": [
+        "middle-east",
+        "religion",
+        "culture"
+      ],
+      "source": "https://www.britannica.com/place/Middle-East"
+    },
+    {
+      "seedId": "17f8ddab-c16d-4e37-aeaa-c860b20226bc",
+      "category": "geography",
+      "navigationKeyword1": "regions",
+      "navigationKeyword2": "middle-east",
+      "question": "The Middle East is generally considered part of which continent, with some definitions also including African areas?",
+      "correctAnswer": "Asia",
+      "incorrectAnswers": [
+        "South America",
+        "Antarctica",
+        "Australia only"
+      ],
+      "explanation": "Britannica states the Middle East is generally considered part of Asia, while conceptions such as MENA can include North African areas.",
+      "keywords": [
+        "middle-east",
+        "continents",
+        "definitions"
+      ],
+      "source": "https://www.britannica.com/place/Middle-East"
+    },
+    {
+      "seedId": "006e7c76-5757-481f-8c89-bd5e9f7db389",
+      "category": "geography",
+      "navigationKeyword1": "regions",
+      "navigationKeyword2": "middle-east",
+      "question": "The Middle East lies between which two broad world regions in common textbook geography?",
+      "correctAnswer": "Europe and South Asia",
+      "incorrectAnswers": [
+        "North America and Australia",
+        "East Africa and Antarctica",
+        "Scandinavia and the Caribbean"
+      ],
+      "explanation": "Britannica describes the Middle East as a region between Europe and South Asia.",
+      "keywords": [
+        "middle-east",
+        "location",
+        "world-regions"
+      ],
+      "source": "https://www.britannica.com/place/Middle-East"
+    },
+    {
+      "seedId": "4287fb34-b53d-43c1-bbae-7ad628b2eafe",
+      "category": "geography",
+      "navigationKeyword1": "regions",
+      "navigationKeyword2": "middle-east",
+      "question": "Turkey (T\u00fcrkiye) and Iran are often included in Middle East definitions as what kind of states?",
+      "correctAnswer": "Large regional countries at the intersection of several subregions",
+      "incorrectAnswers": [
+        "Island microstates in the Pacific",
+        "Landlocked solely in southern Africa",
+        "Nordic Council members"
+      ],
+      "explanation": "Britannica lists Turkey (T\u00fcrkiye) and Iran among countries very often included in Middle East coverage.",
+      "keywords": [
+        "middle-east",
+        "turkey",
+        "iran"
+      ],
+      "source": "https://www.britannica.com/place/Middle-East"
+    },
+    {
+      "seedId": "8ce7c922-53b3-48d2-8a72-49ff3e6eaa00",
+      "category": "geography",
+      "navigationKeyword1": "regions",
+      "navigationKeyword2": "middle-east",
+      "question": "What does the acronym MENA stand for?",
+      "correctAnswer": "Middle East and North Africa",
+      "incorrectAnswers": [
+        "Mediterranean Europe and North Asia",
+        "Middle Europe and North America",
+        "Mountain Environments of Northern Africa"
+      ],
+      "explanation": "Britannica defines MENA as Middle East and North Africa, clarifying when North Africa is grouped with Middle East discussions.",
+      "keywords": [
+        "middle-east",
+        "mena",
+        "terminology"
+      ],
+      "source": "https://www.britannica.com/place/Middle-East"
+    },
+    {
+      "seedId": "2dd94cb6-e7f1-4c73-87d0-dcef7d2a18ad",
+      "category": "geography",
+      "navigationKeyword1": "regions",
+      "navigationKeyword2": "middle-east",
+      "question": "Which empire\u2019s collapse does Britannica cite as a major factor in the modern Middle East\u2019s geopolitical transformation?",
+      "correctAnswer": "The Ottoman Empire",
+      "incorrectAnswers": [
+        "The Inca Empire",
+        "The Mongol Empire only in isolation",
+        "The Holy Roman Empire in 1648 only"
+      ],
+      "explanation": "Britannica links profound 20th- and 21st-century changes partly to the destabilizing collapse of the Ottoman Empire.",
+      "keywords": [
+        "middle-east",
+        "ottoman-empire",
+        "history"
+      ],
+      "source": "https://www.britannica.com/place/Middle-East"
+    },
+    {
+      "seedId": "ee2168ec-5d7b-4dc8-8668-e3ee66431f71",
+      "category": "geography",
+      "navigationKeyword1": "regions",
+      "navigationKeyword2": "middle-east",
+      "question": "Which gulf region is often linked to large petroleum reserves discussed in Middle East geography?",
+      "correctAnswer": "The Persian Gulf",
+      "incorrectAnswers": [
+        "The Gulf of Bothnia",
+        "The Gulf of Carpentaria",
+        "Hudson Bay"
+      ],
+      "explanation": "Britannica ties modern Middle East development partly to vast oil reserves in the Persian Gulf region.",
+      "keywords": [
+        "middle-east",
+        "persian-gulf",
+        "resources"
+      ],
+      "source": "https://www.britannica.com/place/Middle-East"
+    },
+    {
+      "seedId": "cb7d7232-08a9-4c1c-be8c-30f1db49bce6",
+      "category": "geography",
+      "navigationKeyword1": "regions",
+      "navigationKeyword2": "middle-east",
+      "question": "Which subregions of Southwest Asia does Britannica cite as commonly included in the Middle East?",
+      "correctAnswer": "The Arabian Peninsula and the Levant",
+      "incorrectAnswers": [
+        "Only the British Isles",
+        "The Andes and Patagonia",
+        "Siberia and Kamchatka"
+      ],
+      "explanation": "Britannica notes the Middle East typically encompasses Southwest Asia, especially the Arabian Peninsula and the Levant.",
+      "keywords": [
+        "middle-east",
+        "levant",
+        "arabian-peninsula"
+      ],
+      "source": "https://www.britannica.com/place/Middle-East"
+    }
+  ]
+}

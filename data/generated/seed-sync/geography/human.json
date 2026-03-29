@@ -1,0 +1,1327 @@
+{
+  "schemaVersion": 1,
+  "seedSet": "core-public-items",
+  "deltaPreviewLimit": 200,
+  "items": [
+    {
+      "seedId": "a4ea1792-6b14-4df3-9375-15a9c6887776",
+      "category": "geography",
+      "navigationKeyword1": "human",
+      "navigationKeyword2": "culture",
+      "question": "In which year did the World Heritage framework add a category for cultural landscapes?",
+      "correctAnswer": "1992",
+      "incorrectAnswers": [
+        "1978",
+        "1985",
+        "2002"
+      ],
+      "explanation": "The UNESCO convention timeline notes cultural landscapes were added in 1992.",
+      "keywords": [
+        "culture",
+        "cultural-heritage",
+        "landscapes"
+      ],
+      "source": "https://whc.unesco.org/en/convention/"
+    },
+    {
+      "seedId": "083fff42-48ef-4b1a-9ae4-df45cec1c501",
+      "category": "geography",
+      "navigationKeyword1": "human",
+      "navigationKeyword2": "culture",
+      "question": "Properties considered for the World Heritage List must demonstrate what kind of value?",
+      "correctAnswer": "outstanding universal value",
+      "incorrectAnswers": [
+        "maximum national GDP impact",
+        "strictly local folklore only",
+        "short-term tourism revenue alone"
+      ],
+      "explanation": "UNESCO\u2019s World Heritage Convention overview centers on outstanding universal value for listed properties.",
+      "keywords": [
+        "culture",
+        "cultural-heritage",
+        "criteria"
+      ],
+      "source": "https://whc.unesco.org/en/convention/"
+    },
+    {
+      "seedId": "6c7dc98d-4d31-48f7-b337-160b2f814ca1",
+      "category": "geography",
+      "navigationKeyword1": "human",
+      "navigationKeyword2": "culture",
+      "question": "Sustainable Development Goal target 11.4 calls for strengthened efforts to protect and safeguard what?",
+      "correctAnswer": "the world\u2019s cultural and natural heritage",
+      "incorrectAnswers": [
+        "exclusive economic zones",
+        "all transboundary river basins",
+        "every national currency union"
+      ],
+      "explanation": "UN SDG 11 targets list 11.4 on protecting cultural and natural heritage.",
+      "keywords": [
+        "culture",
+        "cultural-heritage",
+        "sdg-11"
+      ],
+      "source": "https://www.un.org/sustainabledevelopment/cities/"
+    },
+    {
+      "seedId": "a356f5b2-52af-40df-aac1-87a8760120e4",
+      "category": "geography",
+      "navigationKeyword1": "human",
+      "navigationKeyword2": "culture",
+      "question": "The Budapest Declaration on World Heritage, expanding strategic objectives, was adopted during which anniversary of the Convention?",
+      "correctAnswer": "the 30th anniversary",
+      "incorrectAnswers": [
+        "the 10th anniversary",
+        "the 20th anniversary",
+        "the 50th anniversary"
+      ],
+      "explanation": "UNESCO\u2019s convention timeline links the Budapest Declaration to the Convention\u2019s 30th anniversary in 2002.",
+      "keywords": [
+        "culture",
+        "cultural-heritage",
+        "world-heritage"
+      ],
+      "source": "https://whc.unesco.org/en/convention/"
+    },
+    {
+      "seedId": "435db6c2-334b-4344-ba57-f58475da9af7",
+      "category": "geography",
+      "navigationKeyword1": "human",
+      "navigationKeyword2": "culture",
+      "question": "The Nara Document on Authenticity, cited in UNESCO\u2019s World Heritage strategy timeline, was adopted in which year?",
+      "correctAnswer": "1994",
+      "incorrectAnswers": [
+        "1987",
+        "1999",
+        "2007"
+      ],
+      "explanation": "UNESCO\u2019s convention timeline associates the Nara Document with 1994 Global Strategy work.",
+      "keywords": [
+        "culture",
+        "cultural-heritage",
+        "authenticity"
+      ],
+      "source": "https://whc.unesco.org/en/convention/"
+    },
+    {
+      "seedId": "207f31b1-be1d-4bdb-b127-46827272b55f",
+      "category": "geography",
+      "navigationKeyword1": "human",
+      "navigationKeyword2": "culture",
+      "question": "The UNESCO World Heritage Convention linking nature conservation and cultural property protection was adopted in which year?",
+      "correctAnswer": "1972",
+      "incorrectAnswers": [
+        "1948",
+        "1987",
+        "2005"
+      ],
+      "explanation": "UNESCO\u2019s World Heritage Convention timeline dates adoption to 1972.",
+      "keywords": [
+        "culture",
+        "cultural-heritage",
+        "world-heritage"
+      ],
+      "source": "https://whc.unesco.org/en/convention/"
+    },
+    {
+      "seedId": "f69ad7da-711d-4a3c-bc53-7bcbc4ba8414",
+      "category": "geography",
+      "navigationKeyword1": "human",
+      "navigationKeyword2": "culture",
+      "question": "The World Heritage Convention was adopted by the UNESCO General Conference on which date in 1972?",
+      "correctAnswer": "16 November 1972",
+      "incorrectAnswers": [
+        "21 March 1972",
+        "1 July 1972",
+        "10 December 1972"
+      ],
+      "explanation": "UNESCO\u2019s convention timeline records adoption on 16 November 1972.",
+      "keywords": [
+        "culture",
+        "cultural-heritage",
+        "world-heritage"
+      ],
+      "source": "https://whc.unesco.org/en/convention/"
+    },
+    {
+      "seedId": "88c3f6a9-c586-45ff-9344-a63e71dd5e19",
+      "category": "geography",
+      "navigationKeyword1": "human",
+      "navigationKeyword2": "culture",
+      "question": "The approach widely known as cultural geography in the United States was especially associated with which geographer\u2019s Berkeley school?",
+      "correctAnswer": "Carl Sauer",
+      "incorrectAnswers": [
+        "Alexander von Humboldt",
+        "Halford Mackinder",
+        "Walter Christaller"
+      ],
+      "explanation": "Britannica ties U.S. cultural geography to Carl Sauer and the Berkeley school.",
+      "keywords": [
+        "culture",
+        "cultural-geography",
+        "history"
+      ],
+      "source": "https://www.britannica.com/science/cultural-geography"
+    },
+    {
+      "seedId": "2f0b72ee-ae80-4c4e-972a-eac28310b30a",
+      "category": "geography",
+      "navigationKeyword1": "human",
+      "navigationKeyword2": "culture",
+      "question": "Which famous Indonesian monument appears in UNESCO\u2019s World Heritage Convention page as an example of a major international safeguarding effort?",
+      "correctAnswer": "Borobudur Temple Compounds",
+      "incorrectAnswers": [
+        "Angkor Wat",
+        "Parthenon",
+        "Stonehenge"
+      ],
+      "explanation": "UNESCO\u2019s World Heritage Convention narrative highlights restoration work at Borobudur.",
+      "keywords": [
+        "culture",
+        "cultural-heritage",
+        "southeast-asia"
+      ],
+      "source": "https://whc.unesco.org/en/convention/"
+    },
+    {
+      "seedId": "6911c87a-2d95-4fcc-8cf5-fbff98bbbea6",
+      "category": "geography",
+      "navigationKeyword1": "human",
+      "navigationKeyword2": "culture",
+      "question": "Which site became among the first twelve inscribed on the World Heritage List in 1978?",
+      "correctAnswer": "Gal\u00e1pagos Islands (Ecuador)",
+      "incorrectAnswers": [
+        "Statue of Liberty",
+        "Great Wall of China",
+        "Historic Centre of Florence"
+      ],
+      "explanation": "UNESCO\u2019s convention timeline lists Ecuador\u2019s Gal\u00e1pagos Islands among the first inscriptions in 1978.",
+      "keywords": [
+        "culture",
+        "cultural-heritage",
+        "world-heritage-list"
+      ],
+      "source": "https://whc.unesco.org/en/convention/"
+    },
+    {
+      "seedId": "2ff56441-3314-4f7f-89bc-38d6bf5967c4",
+      "category": "geography",
+      "navigationKeyword1": "human",
+      "navigationKeyword2": "culture",
+      "question": "Which strategic objective\u2014the fifth \u201cC\u201d\u2014did the World Heritage Committee add in 2007?",
+      "correctAnswer": "Communities",
+      "incorrectAnswers": [
+        "Commerce",
+        "Cartography",
+        "Climate"
+      ],
+      "explanation": "UNESCO\u2019s World Heritage materials describe adding \u201cCommunities\u201d as the fifth \u201cC\u201d in 2007.",
+      "keywords": [
+        "culture",
+        "cultural-heritage",
+        "world-heritage"
+      ],
+      "source": "https://whc.unesco.org/en/convention/"
+    },
+    {
+      "seedId": "1e92c350-b93e-4ad3-bb13-43c26d541c6c",
+      "category": "geography",
+      "navigationKeyword1": "human",
+      "navigationKeyword2": "economy",
+      "question": "By the early 1980s, why did many countries want trade rules updated beyond the old GATT system?",
+      "correctAnswer": "world trade had become more complex and services trade was not covered by GATT rules",
+      "incorrectAnswers": [
+        "GATT banned all agricultural exports",
+        "the moon was declared a free-trade zone",
+        "currency was fixed to silver worldwide"
+      ],
+      "explanation": "WTO history text notes growing complexity and that services trade lay outside GATT rules, prompting reform.",
+      "keywords": [
+        "economy",
+        "trade",
+        "services"
+      ],
+      "source": "https://www.wto.org/english/thewto_e/whatis_e/tif_e/fact4_e.htm"
+    },
+    {
+      "seedId": "058f48a4-9a70-4de4-8262-cd84efec4508",
+      "category": "geography",
+      "navigationKeyword1": "human",
+      "navigationKeyword2": "economy",
+      "question": "Economic geography links patterns of trade closely with which transport-focused field?",
+      "correctAnswer": "transport geography",
+      "incorrectAnswers": [
+        "astronomy",
+        "paleobotany",
+        "seismology"
+      ],
+      "explanation": "Britannica ties economic geography to transport geography when discussing trade patterns.",
+      "keywords": [
+        "economy",
+        "economic-geography",
+        "trade"
+      ],
+      "source": "https://www.britannica.com/science/geography/Human-geography"
+    },
+    {
+      "seedId": "35c7d64b-97d8-425e-bedd-ccdd7b57e92e",
+      "category": "geography",
+      "navigationKeyword1": "human",
+      "navigationKeyword2": "economy",
+      "question": "Economic geography\u2019s traditional focus includes the distribution of what across regions?",
+      "correctAnswer": "productive activities",
+      "incorrectAnswers": [
+        "only annual rainfall",
+        "only tectonic plate boundaries",
+        "only time zones"
+      ],
+      "explanation": "Britannica\u2019s human geography survey says economic geography studies the distribution of productive activities.",
+      "keywords": [
+        "economy",
+        "economic-geography",
+        "human-geography"
+      ],
+      "source": "https://www.britannica.com/science/geography/Human-geography"
+    },
+    {
+      "seedId": "b2356d4e-19fe-4dd4-bfe3-449a0b8ed432",
+      "category": "geography",
+      "navigationKeyword1": "human",
+      "navigationKeyword2": "economy",
+      "question": "From 1948 to 1994, which agreement provided the core rules for much of world merchandise trade before the WTO?",
+      "correctAnswer": "GATT",
+      "incorrectAnswers": [
+        "NAFTA",
+        "CITES",
+        "Kyoto Protocol"
+      ],
+      "explanation": "The WTO\u2019s history overview explains that GATT governed much of world trade from 1948 until the WTO era.",
+      "keywords": [
+        "economy",
+        "trade",
+        "gatt"
+      ],
+      "source": "https://www.wto.org/english/thewto_e/whatis_e/tif_e/fact4_e.htm"
+    },
+    {
+      "seedId": "52a4b0f2-28d7-48e6-a624-021845ba5043",
+      "category": "geography",
+      "navigationKeyword1": "human",
+      "navigationKeyword2": "economy",
+      "question": "How many countries participated in the Tokyo Round of GATT negotiations, according to WTO\u2019s round summary?",
+      "correctAnswer": "102",
+      "incorrectAnswers": [
+        "23",
+        "45",
+        "62"
+      ],
+      "explanation": "The WTO\u2019s GATT rounds table lists 102 participating countries for the Tokyo Round.",
+      "keywords": [
+        "economy",
+        "trade",
+        "tokyo-round"
+      ],
+      "source": "https://www.wto.org/english/thewto_e/whatis_e/tif_e/fact4_e.htm"
+    },
+    {
+      "seedId": "1095561d-df6e-4ba4-9ed3-d07dab1d6b26",
+      "category": "geography",
+      "navigationKeyword1": "human",
+      "navigationKeyword2": "economy",
+      "question": "Paul Krugman was awarded the Nobel Memorial Prize in Economic Sciences partly for work in which spatial field?",
+      "correctAnswer": "economic geography",
+      "incorrectAnswers": [
+        "astrophysics",
+        "marine biology",
+        "cryptography"
+      ],
+      "explanation": "Britannica\u2019s Krugman article notes the prize recognized his economic geography and trade-pattern work.",
+      "keywords": [
+        "economy",
+        "economic-geography",
+        "trade-theory"
+      ],
+      "source": "https://www.britannica.com/money/Paul-Krugman"
+    },
+    {
+      "seedId": "718343ae-4dc9-4b9c-90fc-363e8e49ede0",
+      "category": "geography",
+      "navigationKeyword1": "human",
+      "navigationKeyword2": "economy",
+      "question": "The Uruguay Round of multilateral trade negotiations ran from 1986 to which end year?",
+      "correctAnswer": "1994",
+      "incorrectAnswers": [
+        "1979",
+        "1982",
+        "2001"
+      ],
+      "explanation": "WTO tables list the Uruguay Round as 1986\u20131994.",
+      "keywords": [
+        "economy",
+        "trade",
+        "uruguay-round"
+      ],
+      "source": "https://www.wto.org/english/thewto_e/whatis_e/tif_e/fact4_e.htm"
+    },
+    {
+      "seedId": "da2b4c7f-98f8-4203-9085-e00b5bbd4785",
+      "category": "geography",
+      "navigationKeyword1": "human",
+      "navigationKeyword2": "economy",
+      "question": "The World Trade Organization began operating on which date?",
+      "correctAnswer": "1 January 1995",
+      "incorrectAnswers": [
+        "30 October 1947",
+        "15 August 1971",
+        "1 January 2001"
+      ],
+      "explanation": "WTO introductory materials state the WTO was created on 1 January 1995.",
+      "keywords": [
+        "economy",
+        "trade",
+        "wto"
+      ],
+      "source": "https://www.wto.org/english/thewto_e/whatis_e/tif_e/fact4_e.htm"
+    },
+    {
+      "seedId": "d7a12344-4f0d-4bff-a673-9fbcc56901c1",
+      "category": "geography",
+      "navigationKeyword1": "human",
+      "navigationKeyword2": "economy",
+      "question": "Which branch examines the spatial patterns of retail, finance, and other service sectors?",
+      "correctAnswer": "the geography of services",
+      "incorrectAnswers": [
+        "physical oceanography",
+        "pedology",
+        "speleothem dating"
+      ],
+      "explanation": "Britannica includes the geography of services among traditional economic geography topics.",
+      "keywords": [
+        "economy",
+        "economic-geography",
+        "services"
+      ],
+      "source": "https://www.britannica.com/science/geography/Human-geography"
+    },
+    {
+      "seedId": "1ae76c99-03ca-41fa-ac7c-9b57dda45f6b",
+      "category": "geography",
+      "navigationKeyword1": "human",
+      "navigationKeyword2": "economy",
+      "question": "Which economic geography subdivision deals with farming systems and agricultural land use?",
+      "correctAnswer": "the geography of agriculture",
+      "incorrectAnswers": [
+        "urban climatology",
+        "hydrography",
+        "geomagnetism"
+      ],
+      "explanation": "Britannica lists the geography of agriculture among classic economic geography subdivisions.",
+      "keywords": [
+        "economy",
+        "economic-geography",
+        "agriculture"
+      ],
+      "source": "https://www.britannica.com/science/geography/Human-geography"
+    },
+    {
+      "seedId": "125e060c-2cc8-4919-a11f-bfb459f3bc53",
+      "category": "geography",
+      "navigationKeyword1": "human",
+      "navigationKeyword2": "economy",
+      "question": "Which subdivision focuses on factory location, industry clusters, and manufacturing patterns?",
+      "correctAnswer": "industrial geography",
+      "incorrectAnswers": [
+        "glaciology",
+        "speleology",
+        "volcanology"
+      ],
+      "explanation": "Britannica names industrial geography as a branch concerned with industrial activity patterns.",
+      "keywords": [
+        "economy",
+        "economic-geography",
+        "industry"
+      ],
+      "source": "https://www.britannica.com/science/geography/Human-geography"
+    },
+    {
+      "seedId": "932f1539-5bbc-4e70-8e0b-29ddb4874369",
+      "category": "geography",
+      "navigationKeyword1": "human",
+      "navigationKeyword2": "language",
+      "question": "According to a UN Mother Language Day page citing UNESCO, about how many languages are spoken or signed globally?",
+      "correctAnswer": "8,324",
+      "incorrectAnswers": [
+        "412",
+        "2,100",
+        "15,000"
+      ],
+      "explanation": "The UN observance page cites UNESCO\u2019s estimate of 8,324 spoken or signed languages.",
+      "keywords": [
+        "language",
+        "linguistic-diversity",
+        "statistics"
+      ],
+      "source": "https://www.un.org/en/observances/mother-language-day"
+    },
+    {
+      "seedId": "5ff7a0b6-7427-483c-8d47-b6cc03bb3610",
+      "category": "geography",
+      "navigationKeyword1": "human",
+      "navigationKeyword2": "language",
+      "question": "Complete mastery of two languages is commonly termed what?",
+      "correctAnswer": "bilingualism",
+      "incorrectAnswers": [
+        "monolingualism",
+        "diglossia only",
+        "orthography"
+      ],
+      "explanation": "Britannica defines bilingualism as complete mastery of two languages.",
+      "keywords": [
+        "language",
+        "language-contact",
+        "bilingualism"
+      ],
+      "source": "https://www.britannica.com/topic/language"
+    },
+    {
+      "seedId": "fb04f08f-44bf-4301-8f85-a304cd12fef5",
+      "category": "geography",
+      "navigationKeyword1": "human",
+      "navigationKeyword2": "language",
+      "question": "How many official languages does the United Nations use for meetings and documentation?",
+      "correctAnswer": "six",
+      "incorrectAnswers": [
+        "three",
+        "four",
+        "eight"
+      ],
+      "explanation": "The UN states there are six official languages: Arabic, Chinese, English, French, Russian, and Spanish.",
+      "keywords": [
+        "language",
+        "language-policy",
+        "united-nations"
+      ],
+      "source": "https://www.un.org/en/our-work/official-languages"
+    },
+    {
+      "seedId": "2910f6a0-30c5-406b-b05e-e0a510137e17",
+      "category": "geography",
+      "navigationKeyword1": "human",
+      "navigationKeyword2": "language",
+      "question": "International Mother Language Day is observed on which date?",
+      "correctAnswer": "21 February",
+      "incorrectAnswers": [
+        "8 September",
+        "21 May",
+        "30 September"
+      ],
+      "explanation": "UNESCO schedules International Mother Language Day on 21 February.",
+      "keywords": [
+        "language",
+        "linguistic-diversity",
+        "observances"
+      ],
+      "source": "https://www.unesco.org/en/days/mother-language"
+    },
+    {
+      "seedId": "bf88d178-4316-434a-8b5e-1fde3e2c839c",
+      "category": "geography",
+      "navigationKeyword1": "human",
+      "navigationKeyword2": "language",
+      "question": "International Mother Language Day was first proclaimed by which organization?",
+      "correctAnswer": "UNESCO",
+      "incorrectAnswers": [
+        "NATO",
+        "Interpol",
+        "OPEC"
+      ],
+      "explanation": "UNESCO\u2019s Mother Language Day page states UNESCO proclaimed the day, later welcomed by the UN General Assembly.",
+      "keywords": [
+        "language",
+        "linguistic-diversity",
+        "policy"
+      ],
+      "source": "https://www.unesco.org/en/days/mother-language"
+    },
+    {
+      "seedId": "9ab1c7f9-0557-4529-8fb3-a6336f42e3ed",
+      "category": "geography",
+      "navigationKeyword1": "human",
+      "navigationKeyword2": "language",
+      "question": "Mutually intelligible varieties that differ yet do not fully block understanding are often called what?",
+      "correctAnswer": "dialects of a language",
+      "incorrectAnswers": [
+        "separate species",
+        "currency unions",
+        "tectonic plates"
+      ],
+      "explanation": "Britannica explains that substantially different but partly intelligible systems are called dialects of a language.",
+      "keywords": [
+        "language",
+        "dialects",
+        "language-variation"
+      ],
+      "source": "https://www.britannica.com/topic/language"
+    },
+    {
+      "seedId": "0f7d5779-7871-418f-9c70-1e2116978624",
+      "category": "geography",
+      "navigationKeyword1": "human",
+      "navigationKeyword2": "language",
+      "question": "The idea to celebrate International Mother Language Day began as an initiative from which country?",
+      "correctAnswer": "Bangladesh",
+      "incorrectAnswers": [
+        "Canada",
+        "Japan",
+        "Norway"
+      ],
+      "explanation": "UNESCO notes the observance was Bangladesh\u2019s initiative.",
+      "keywords": [
+        "language",
+        "linguistic-diversity",
+        "history"
+      ],
+      "source": "https://www.unesco.org/en/days/mother-language"
+    },
+    {
+      "seedId": "4e5cef54-4259-47d3-91e3-bcf1ef376151",
+      "category": "geography",
+      "navigationKeyword1": "human",
+      "navigationKeyword2": "language",
+      "question": "The scientific study of language is known as what?",
+      "correctAnswer": "linguistics",
+      "incorrectAnswers": [
+        "cartography",
+        "demography",
+        "petrology"
+      ],
+      "explanation": "Britannica states the science of language is linguistics.",
+      "keywords": [
+        "language",
+        "linguistics",
+        "definitions"
+      ],
+      "source": "https://www.britannica.com/topic/language"
+    },
+    {
+      "seedId": "031a493b-069b-4361-bde2-b8ee0ded38bc",
+      "category": "geography",
+      "navigationKeyword1": "human",
+      "navigationKeyword2": "language",
+      "question": "UN Language Days include both English Language Day and Spanish Language Day on which shared date?",
+      "correctAnswer": "23 April",
+      "incorrectAnswers": [
+        "18 December",
+        "6 June",
+        "20 March"
+      ],
+      "explanation": "The UN official languages page schedules English and Spanish Language Days on 23 April.",
+      "keywords": [
+        "language",
+        "language-policy",
+        "observances"
+      ],
+      "source": "https://www.un.org/en/our-work/official-languages"
+    },
+    {
+      "seedId": "aa09a4d3-fa6f-4416-8cf8-4ca44abbe748",
+      "category": "geography",
+      "navigationKeyword1": "human",
+      "navigationKeyword2": "language",
+      "question": "What term describes the habits of expression of a single speaker?",
+      "correctAnswer": "idiolect",
+      "incorrectAnswers": [
+        "archipelago",
+        "watershed",
+        "meridian"
+      ],
+      "explanation": "Britannica introduces the term idiolect for one person\u2019s expressive habits.",
+      "keywords": [
+        "language",
+        "linguistics",
+        "terminology"
+      ],
+      "source": "https://www.britannica.com/topic/language"
+    },
+    {
+      "seedId": "7f413d94-887d-4aea-9aca-96128313a821",
+      "category": "geography",
+      "navigationKeyword1": "human",
+      "navigationKeyword2": "language",
+      "question": "Which of these is not one of the six official languages of the United Nations?",
+      "correctAnswer": "German",
+      "incorrectAnswers": [
+        "Arabic",
+        "Russian",
+        "Spanish"
+      ],
+      "explanation": "The UN lists Arabic, Chinese, English, French, Russian, and Spanish as its six official languages.",
+      "keywords": [
+        "language",
+        "language-policy",
+        "united-nations"
+      ],
+      "source": "https://www.un.org/en/our-work/official-languages"
+    },
+    {
+      "seedId": "593391e3-4fc8-47c7-8a03-477736b7b358",
+      "category": "geography",
+      "navigationKeyword1": "human",
+      "navigationKeyword2": "migration",
+      "question": "About what share of international migrants were female in 2024, per the UN overview?",
+      "correctAnswer": "48 per cent",
+      "incorrectAnswers": [
+        "33 per cent",
+        "55 per cent",
+        "62 per cent"
+      ],
+      "explanation": "The UN migration page reports female migrants as 48 per cent of the total in 2024.",
+      "keywords": [
+        "migration",
+        "demographics",
+        "gender"
+      ],
+      "source": "https://www.un.org/en/global-issues/migration"
+    },
+    {
+      "seedId": "8408ab46-838b-406d-9bc7-e82b3ed355bc",
+      "category": "geography",
+      "navigationKeyword1": "human",
+      "navigationKeyword2": "migration",
+      "question": "According to the UN\u2019s international migration overview, about how many international migrants were there worldwide in 2024?",
+      "correctAnswer": "304 million",
+      "incorrectAnswers": [
+        "120 million",
+        "210 million",
+        "410 million"
+      ],
+      "explanation": "UNDESA Population Division figures cited by the UN place the 2024 global migrant stock at about 304 million.",
+      "keywords": [
+        "migration",
+        "migrant-stock",
+        "united-nations"
+      ],
+      "source": "https://www.un.org/en/global-issues/migration"
+    },
+    {
+      "seedId": "dfe49f4f-9b1f-4b0b-b139-0548480af332",
+      "category": "geography",
+      "navigationKeyword1": "human",
+      "navigationKeyword2": "migration",
+      "question": "For UN statistics, who counts as an international migrant?",
+      "correctAnswer": "any person who has changed his or her country of residence",
+      "incorrectAnswers": [
+        "only refugees registered with UNHCR",
+        "only workers on multi-year visas",
+        "only people who naturalize abroad"
+      ],
+      "explanation": "The UN migration page defines an international migrant, for statistical purposes, as someone who changed country of residence.",
+      "keywords": [
+        "migration",
+        "definitions",
+        "statistics"
+      ],
+      "source": "https://www.un.org/en/global-issues/migration"
+    },
+    {
+      "seedId": "116da0a0-8d67-4600-a956-35c9693ba6c9",
+      "category": "geography",
+      "navigationKeyword1": "human",
+      "navigationKeyword2": "migration",
+      "question": "In which year did IOM enter into an agreement to become a United Nations\u2013related organization?",
+      "correctAnswer": "2016",
+      "incorrectAnswers": [
+        "2005",
+        "2011",
+        "2019"
+      ],
+      "explanation": "The UN migration page notes the 2016 agreement making IOM a related organization of the UN.",
+      "keywords": [
+        "migration",
+        "iom",
+        "united-nations"
+      ],
+      "source": "https://www.un.org/en/global-issues/migration"
+    },
+    {
+      "seedId": "07604b07-2582-4cc4-a396-fccf1719f086",
+      "category": "geography",
+      "navigationKeyword1": "human",
+      "navigationKeyword2": "migration",
+      "question": "International Migrants Day is observed on which date each year?",
+      "correctAnswer": "18 December",
+      "incorrectAnswers": [
+        "21 March",
+        "20 June",
+        "10 December"
+      ],
+      "explanation": "The UN proclaimed 18 December as International Migrants Day.",
+      "keywords": [
+        "migration",
+        "observances",
+        "united-nations"
+      ],
+      "source": "https://www.un.org/en/global-issues/migration"
+    },
+    {
+      "seedId": "684acdd7-813c-45ab-81e0-089f7d680b6f",
+      "category": "geography",
+      "navigationKeyword1": "human",
+      "navigationKeyword2": "migration",
+      "question": "International migrants made up about what share of the global population in 2024?",
+      "correctAnswer": "3.7 per cent",
+      "incorrectAnswers": [
+        "1.1 per cent",
+        "6.5 per cent",
+        "9.2 per cent"
+      ],
+      "explanation": "The UN migration page states migrants were about 3.7 per cent of the global population in 2024.",
+      "keywords": [
+        "migration",
+        "demographics",
+        "shares"
+      ],
+      "source": "https://www.un.org/en/global-issues/migration"
+    },
+    {
+      "seedId": "4a293e44-1ff8-4eb4-a6cc-692cfb605a05",
+      "category": "geography",
+      "navigationKeyword1": "human",
+      "navigationKeyword2": "migration",
+      "question": "The International Organization for Migration (IOM) was established in which year?",
+      "correctAnswer": "1951",
+      "incorrectAnswers": [
+        "1919",
+        "1967",
+        "1985"
+      ],
+      "explanation": "The UN migration overview states IOM was established in 1951.",
+      "keywords": [
+        "migration",
+        "iom",
+        "organizations"
+      ],
+      "source": "https://www.un.org/en/global-issues/migration"
+    },
+    {
+      "seedId": "87e91a2e-717d-4121-b589-23f919ac75dc",
+      "category": "geography",
+      "navigationKeyword1": "human",
+      "navigationKeyword2": "migration",
+      "question": "The intergovernmental conference that adopted the Global Compact for Migration was held in which city?",
+      "correctAnswer": "Marrakesh",
+      "incorrectAnswers": [
+        "New York",
+        "Geneva",
+        "Addis Ababa"
+      ],
+      "explanation": "The UN migration page places the adopting conference in Marrakesh, Morocco.",
+      "keywords": [
+        "migration",
+        "global-compact",
+        "diplomacy"
+      ],
+      "source": "https://www.un.org/en/global-issues/migration"
+    },
+    {
+      "seedId": "c78f79a6-eb90-485d-82f7-b2c1d687ef36",
+      "category": "geography",
+      "navigationKeyword1": "human",
+      "navigationKeyword2": "migration",
+      "question": "The same UN overview estimates about how many international migrants there were worldwide in 1990?",
+      "correctAnswer": "154 million",
+      "incorrectAnswers": [
+        "92 million",
+        "201 million",
+        "260 million"
+      ],
+      "explanation": "The UN migration page cites roughly 154 million international migrants in 1990.",
+      "keywords": [
+        "migration",
+        "trends",
+        "united-nations"
+      ],
+      "source": "https://www.un.org/en/global-issues/migration"
+    },
+    {
+      "seedId": "f5c745e2-b2a2-46a9-92c4-9394b53698ad",
+      "category": "geography",
+      "navigationKeyword1": "human",
+      "navigationKeyword2": "migration",
+      "question": "UN Member States adopted the Global Compact for Safe, Orderly and Regular Migration in which month and year?",
+      "correctAnswer": "December 2018",
+      "incorrectAnswers": [
+        "September 2015",
+        "July 2017",
+        "March 2020"
+      ],
+      "explanation": "The UN migration overview dates adoption of the Global Compact for Migration to December 2018.",
+      "keywords": [
+        "migration",
+        "global-compact",
+        "governance"
+      ],
+      "source": "https://www.un.org/en/global-issues/migration"
+    },
+    {
+      "seedId": "a51ee89e-c344-4427-af7c-583079344540",
+      "category": "geography",
+      "navigationKeyword1": "human",
+      "navigationKeyword2": "migration",
+      "question": "Which Sustainable Development Goal target explicitly calls for orderly, safe, regular, and responsible migration?",
+      "correctAnswer": "Target 10.7",
+      "incorrectAnswers": [
+        "Target 8.3",
+        "Target 11.2",
+        "Target 16.6"
+      ],
+      "explanation": "The UN migration page links SDG target 10.7 to well-managed migration policies.",
+      "keywords": [
+        "migration",
+        "sdgs",
+        "policy"
+      ],
+      "source": "https://www.un.org/en/global-issues/migration"
+    },
+    {
+      "seedId": "70c0276c-7a0c-4d62-8829-d3128a9cc0b4",
+      "category": "geography",
+      "navigationKeyword1": "human",
+      "navigationKeyword2": "population",
+      "question": "According to the United Nations World Population Prospects 2024, which country has the largest population?",
+      "correctAnswer": "India",
+      "incorrectAnswers": [
+        "China",
+        "United States",
+        "Indonesia"
+      ],
+      "explanation": "UN mid-2024 estimates rank India first globally in population size.",
+      "keywords": [
+        "population",
+        "un-estimates",
+        "south-asia"
+      ],
+      "source": "https://www.un.org/development/desa/pd/world-population-prospects-2024"
+    },
+    {
+      "seedId": "80fa0ec3-a709-4032-802b-54996159e70f",
+      "category": "geography",
+      "navigationKeyword1": "human",
+      "navigationKeyword2": "population",
+      "question": "On what date did the United Nations mark the world population reaching eight billion?",
+      "correctAnswer": "15 November 2022",
+      "incorrectAnswers": [
+        "1 January 2020",
+        "31 December 2021",
+        "20 March 2023"
+      ],
+      "explanation": "The UN observed the Day of Eight Billion on 15 November 2022.",
+      "keywords": [
+        "population",
+        "milestones",
+        "united-nations"
+      ],
+      "source": "https://www.un.org/en/dayof8billion"
+    },
+    {
+      "seedId": "3dd7b5a2-b278-404c-a1e1-59ec1f0bd1cc",
+      "category": "geography",
+      "navigationKeyword1": "human",
+      "navigationKeyword2": "population",
+      "question": "The U.S. Census Bureau nests nine census divisions inside how many census regions?",
+      "correctAnswer": "Four",
+      "incorrectAnswers": [
+        "Three",
+        "Five",
+        "Nine"
+      ],
+      "explanation": "Four census regions group the states for statistical summaries.",
+      "keywords": [
+        "population",
+        "census",
+        "united-states"
+      ],
+      "source": "https://www.census.gov/programs-surveys/popest/about/glossary/geo-terms.html"
+    },
+    {
+      "seedId": "738a4585-f848-4969-a540-0e66c811acd3",
+      "category": "geography",
+      "navigationKeyword1": "human",
+      "navigationKeyword2": "population",
+      "question": "Which African country has the largest population on the continent?",
+      "correctAnswer": "Nigeria",
+      "incorrectAnswers": [
+        "Ethiopia",
+        "Egypt",
+        "Democratic Republic of the Congo"
+      ],
+      "explanation": "Nigeria is the most populous country in Africa.",
+      "keywords": [
+        "population",
+        "africa",
+        "nigeria"
+      ],
+      "source": "https://www.britannica.com/place/Nigeria"
+    },
+    {
+      "seedId": "d0c6867e-6029-42e8-9a1e-e15278ce6684",
+      "category": "geography",
+      "navigationKeyword1": "human",
+      "navigationKeyword2": "population",
+      "question": "Which East Asian island country has a large population despite limited arable land?",
+      "correctAnswer": "Japan",
+      "incorrectAnswers": [
+        "Mongolia",
+        "Laos",
+        "Cambodia"
+      ],
+      "explanation": "Japan is densely settled on its coastal plains and major urban corridors.",
+      "keywords": [
+        "population",
+        "japan",
+        "east-asia"
+      ],
+      "source": "https://www.britannica.com/place/Japan"
+    },
+    {
+      "seedId": "c7c0ee57-bc5d-4873-899c-c58fb61db85f",
+      "category": "geography",
+      "navigationKeyword1": "human",
+      "navigationKeyword2": "population",
+      "question": "Which European Union member state has the largest population?",
+      "correctAnswer": "Germany",
+      "incorrectAnswers": [
+        "France",
+        "Italy",
+        "Spain"
+      ],
+      "explanation": "Germany is the most populous country in the European Union.",
+      "keywords": [
+        "population",
+        "european-union",
+        "germany"
+      ],
+      "source": "https://www.britannica.com/place/Germany"
+    },
+    {
+      "seedId": "2e8f718e-57f9-46e7-a0e2-8876fc990a73",
+      "category": "geography",
+      "navigationKeyword1": "human",
+      "navigationKeyword2": "population",
+      "question": "Which South American country is the continent\u2019s most populous?",
+      "correctAnswer": "Brazil",
+      "incorrectAnswers": [
+        "Argentina",
+        "Colombia",
+        "Peru"
+      ],
+      "explanation": "Brazil\u2019s population is larger than that of any other South American state.",
+      "keywords": [
+        "population",
+        "brazil",
+        "south-america"
+      ],
+      "source": "https://www.britannica.com/place/Brazil"
+    },
+    {
+      "seedId": "54d73bd4-1121-4bce-8816-39dbcf579547",
+      "category": "geography",
+      "navigationKeyword1": "human",
+      "navigationKeyword2": "population",
+      "question": "Which South Asian country has a very high population density on its fertile delta plains?",
+      "correctAnswer": "Bangladesh",
+      "incorrectAnswers": [
+        "Nepal",
+        "Bhutan",
+        "Sri Lanka"
+      ],
+      "explanation": "Bangladesh packs a large population into a compact riverine territory.",
+      "keywords": [
+        "population",
+        "density",
+        "south-asia"
+      ],
+      "source": "https://www.britannica.com/place/Bangladesh"
+    },
+    {
+      "seedId": "23950e8b-5f9c-485d-a614-48a0de841959",
+      "category": "geography",
+      "navigationKeyword1": "human",
+      "navigationKeyword2": "population",
+      "question": "Which Southeast Asian archipelago country is among the world\u2019s most populous states?",
+      "correctAnswer": "Indonesia",
+      "incorrectAnswers": [
+        "Malaysia",
+        "Philippines",
+        "Thailand"
+      ],
+      "explanation": "Indonesia ranks among the top countries globally in total population.",
+      "keywords": [
+        "population",
+        "indonesia",
+        "southeast-asia"
+      ],
+      "source": "https://www.britannica.com/place/Indonesia"
+    },
+    {
+      "seedId": "a1823944-d08b-4ad6-a674-bb021fc3e54a",
+      "category": "geography",
+      "navigationKeyword1": "human",
+      "navigationKeyword2": "population",
+      "question": "Which country in the Americas has the largest population?",
+      "correctAnswer": "United States",
+      "incorrectAnswers": [
+        "Brazil",
+        "Mexico",
+        "Canada"
+      ],
+      "explanation": "The United States exceeds any other American country in population.",
+      "keywords": [
+        "population",
+        "americas",
+        "united-states"
+      ],
+      "source": "https://www.britannica.com/place/United-States"
+    },
+    {
+      "seedId": "50f2acf6-d30d-4d8a-a166-6f7f56e6ac30",
+      "category": "geography",
+      "navigationKeyword1": "human",
+      "navigationKeyword2": "population",
+      "question": "Which country lies along the Indus Valley and is among the world\u2019s most populous states?",
+      "correctAnswer": "Pakistan",
+      "incorrectAnswers": [
+        "Afghanistan",
+        "Iran",
+        "Nepal"
+      ],
+      "explanation": "Pakistan is a densely peopled South Asian country draining the Indus system.",
+      "keywords": [
+        "population",
+        "pakistan",
+        "south-asia"
+      ],
+      "source": "https://www.britannica.com/place/Pakistan"
+    },
+    {
+      "seedId": "50bec985-e49b-4c97-a856-ff0dc74f3f7e",
+      "category": "geography",
+      "navigationKeyword1": "human",
+      "navigationKeyword2": "urbanization",
+      "question": "According to UN materials on SDG 11, about what percentage of people are expected to live in cities by 2050?",
+      "correctAnswer": "70 per cent",
+      "incorrectAnswers": [
+        "30 per cent",
+        "45 per cent",
+        "55 per cent"
+      ],
+      "explanation": "The UN SDG 11 page states that 70 per cent of people are expected to live in cities by 2050.",
+      "keywords": [
+        "urbanization",
+        "projections",
+        "sdg-11"
+      ],
+      "source": "https://www.un.org/sustainabledevelopment/cities/"
+    },
+    {
+      "seedId": "a3c2eb1c-b3a5-4005-b4f8-bbdf73519c38",
+      "category": "geography",
+      "navigationKeyword1": "human",
+      "navigationKeyword2": "urbanization",
+      "question": "By 2030, about how many people out of 10 worldwide are expected to live in urban areas?",
+      "correctAnswer": "6",
+      "incorrectAnswers": [
+        "3",
+        "4",
+        "5"
+      ],
+      "explanation": "The UN human settlements overview cites a projection of about six in ten people in urban areas by 2030.",
+      "keywords": [
+        "urbanization",
+        "projections",
+        "cities"
+      ],
+      "source": "https://www.un.org/en/global-issues/human-settlements"
+    },
+    {
+      "seedId": "7e4c380f-d35f-422a-8bbf-87b07a0a9211",
+      "category": "geography",
+      "navigationKeyword1": "human",
+      "navigationKeyword2": "urbanization",
+      "question": "By the early 21st century, more than half of the world\u2019s population lived where?",
+      "correctAnswer": "in urban centres",
+      "incorrectAnswers": [
+        "on small family farms",
+        "in national parks",
+        "along deep-sea fishing routes"
+      ],
+      "explanation": "Britannica notes that by the early 21st century more than half of humanity lived in urban centres.",
+      "keywords": [
+        "urbanization",
+        "population",
+        "trends"
+      ],
+      "source": "https://www.britannica.com/science/urbanization"
+    },
+    {
+      "seedId": "31fd1bad-e8cf-4a4d-9478-c3d9289e0656",
+      "category": "geography",
+      "navigationKeyword1": "human",
+      "navigationKeyword2": "urbanization",
+      "question": "In which year did world leaders adopt the New Urban Agenda at Habitat III?",
+      "correctAnswer": "2016",
+      "incorrectAnswers": [
+        "2000",
+        "2010",
+        "2020"
+      ],
+      "explanation": "The UN SDG cities page links the New Urban Agenda to the 2016 Habitat III conference.",
+      "keywords": [
+        "urbanization",
+        "new-urban-agenda",
+        "policy"
+      ],
+      "source": "https://www.un.org/sustainabledevelopment/cities/"
+    },
+    {
+      "seedId": "a6ade040-09de-4c14-a404-807c49feb5d7",
+      "category": "geography",
+      "navigationKeyword1": "human",
+      "navigationKeyword2": "urbanization",
+      "question": "In which year was UN-Habitat established?",
+      "correctAnswer": "1978",
+      "incorrectAnswers": [
+        "1945",
+        "1961",
+        "1992"
+      ],
+      "explanation": "The UN human settlements overview states UN-Habitat was established in 1978.",
+      "keywords": [
+        "urbanization",
+        "un-habitat",
+        "history"
+      ],
+      "source": "https://www.un.org/en/global-issues/human-settlements"
+    },
+    {
+      "seedId": "06c20266-a2a4-4f17-b492-22f4a5890502",
+      "category": "geography",
+      "navigationKeyword1": "human",
+      "navigationKeyword2": "urbanization",
+      "question": "The Habitat III conference, where the New Urban Agenda was adopted, was held in which city?",
+      "correctAnswer": "Quito",
+      "incorrectAnswers": [
+        "Nairobi",
+        "Geneva",
+        "Vienna"
+      ],
+      "explanation": "The UN SDG cities page states Habitat III took place in Quito, Ecuador, in October 2016.",
+      "keywords": [
+        "urbanization",
+        "new-urban-agenda",
+        "habitat-iii"
+      ],
+      "source": "https://www.un.org/sustainabledevelopment/cities/"
+    },
+    {
+      "seedId": "d3de1256-a8e9-4435-b825-acf786d978dd",
+      "category": "geography",
+      "navigationKeyword1": "human",
+      "navigationKeyword2": "urbanization",
+      "question": "The UN Sustainable Development Goal dedicated to inclusive, safe, resilient, and sustainable cities is Goal number?",
+      "correctAnswer": "11",
+      "incorrectAnswers": [
+        "7",
+        "9",
+        "15"
+      ],
+      "explanation": "SDG 11 is the cities and human settlements goal.",
+      "keywords": [
+        "urbanization",
+        "sdg-11",
+        "united-nations"
+      ],
+      "source": "https://www.un.org/sustainabledevelopment/cities/"
+    },
+    {
+      "seedId": "5f6a412a-2f29-49bb-97f8-49947970af2f",
+      "category": "geography",
+      "navigationKeyword1": "human",
+      "navigationKeyword2": "urbanization",
+      "question": "Urbanization is the process by which large numbers of people become permanently concentrated in relatively small areas, forming what?",
+      "correctAnswer": "cities",
+      "incorrectAnswers": [
+        "deserts",
+        "polar research stations",
+        "nomadic camps"
+      ],
+      "explanation": "Britannica defines urbanization as permanent concentration of people forming cities.",
+      "keywords": [
+        "urbanization",
+        "cities",
+        "definitions"
+      ],
+      "source": "https://www.britannica.com/science/urbanization"
+    },
+    {
+      "seedId": "9dcb0c21-a382-4f25-a963-ee24b4c2e919",
+      "category": "geography",
+      "navigationKeyword1": "human",
+      "navigationKeyword2": "urbanization",
+      "question": "Which United Nations programme promotes socially and environmentally sustainable towns and cities?",
+      "correctAnswer": "UN-Habitat",
+      "incorrectAnswers": [
+        "UNESCO",
+        "WHO",
+        "UNEP"
+      ],
+      "explanation": "UN-Habitat is the UN Human Settlements Programme focused on sustainable urbanization.",
+      "keywords": [
+        "urbanization",
+        "un-habitat",
+        "united-nations"
+      ],
+      "source": "https://www.un.org/en/global-issues/human-settlements"
+    },
+    {
+      "seedId": "3eea0fd7-740e-49a0-8d19-af8ef0496318",
+      "category": "geography",
+      "navigationKeyword1": "human",
+      "navigationKeyword2": "urbanization",
+      "question": "World Cities Day is observed on which calendar date?",
+      "correctAnswer": "31 October",
+      "incorrectAnswers": [
+        "1 January",
+        "22 April",
+        "5 June"
+      ],
+      "explanation": "The UN lists World Cities Day on 31 October.",
+      "keywords": [
+        "urbanization",
+        "world-cities-day",
+        "observances"
+      ],
+      "source": "https://www.un.org/en/global-issues/human-settlements"
+    },
+    {
+      "seedId": "ae4fb9c5-ca03-4a17-a6cc-92175ac61b6c",
+      "category": "geography",
+      "navigationKeyword1": "human",
+      "navigationKeyword2": "urbanization",
+      "question": "World Habitat Day is celebrated on which recurring weekday?",
+      "correctAnswer": "the first Monday of October",
+      "incorrectAnswers": [
+        "the last Friday of September",
+        "the second Tuesday of November",
+        "15 November every year"
+      ],
+      "explanation": "The UN human settlements page schedules World Habitat Day on the first Monday of October.",
+      "keywords": [
+        "urbanization",
+        "world-habitat-day",
+        "observances"
+      ],
+      "source": "https://www.un.org/en/global-issues/human-settlements"
+    }
+  ]
+}

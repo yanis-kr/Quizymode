@@ -1,0 +1,207 @@
+{
+  "schemaVersion": 1,
+  "seedSet": "core-public-items",
+  "deltaPreviewLimit": 200,
+  "items": [
+    {
+      "seedId": "634bde5c-affe-5edb-937d-82957a81fbb4",
+      "category": "sports",
+      "navigationKeyword1": "hockey",
+      "navigationKeyword2": "rules",
+      "question": "How many players from one team are usually on the ice in normal play, including the goalie?",
+      "correctAnswer": "Six",
+      "incorrectAnswers": [
+        "Five",
+        "Seven",
+        "Eight"
+      ],
+      "explanation": "A standard hockey team has five skaters and one goaltender on the ice.",
+      "keywords": [
+        "hockey",
+        "rules",
+        "players"
+      ],
+      "source": "https://www.britannica.com/sports/ice-hockey"
+    },
+    {
+      "seedId": "30432f26-9130-5907-bb6b-9573289c2f1e",
+      "category": "sports",
+      "navigationKeyword1": "hockey",
+      "navigationKeyword2": "rules",
+      "question": "How many regulation periods are in an NHL game?",
+      "correctAnswer": "Three",
+      "incorrectAnswers": [
+        "Two",
+        "Four",
+        "Five"
+      ],
+      "explanation": "An NHL game is divided into three periods.",
+      "keywords": [
+        "hockey",
+        "rules",
+        "periods"
+      ],
+      "source": "https://www.britannica.com/sports/ice-hockey"
+    },
+    {
+      "seedId": "f2c35fa4-8536-5cfa-9431-6565dc3303b8",
+      "category": "sports",
+      "navigationKeyword1": "hockey",
+      "navigationKeyword2": "rules",
+      "question": "What advantage does a team gain when the opponent takes a minor penalty?",
+      "correctAnswer": "A power play",
+      "incorrectAnswers": [
+        "A shootout",
+        "An automatic goal",
+        "Extra periods"
+      ],
+      "explanation": "A minor penalty usually gives the other team a temporary skater advantage.",
+      "keywords": [
+        "hockey",
+        "rules",
+        "power-play"
+      ],
+      "source": "https://www.britannica.com/sports/ice-hockey"
+    },
+    {
+      "seedId": "bf9033c3-cd45-5856-85fc-e3d7de0d1c0f",
+      "category": "sports",
+      "navigationKeyword1": "hockey",
+      "navigationKeyword2": "rules",
+      "question": "What is a hat trick in hockey?",
+      "correctAnswer": "Three goals by one player in a game",
+      "incorrectAnswers": [
+        "Three assists by one player",
+        "A shutout in three periods",
+        "Three team power-play goals"
+      ],
+      "explanation": "A hat trick means one player scores three goals in the same game.",
+      "keywords": [
+        "hockey",
+        "rules",
+        "hat-trick"
+      ],
+      "source": "https://www.britannica.com/sports/ice-hockey"
+    },
+    {
+      "seedId": "2fa2d0f4-319e-5592-97da-29fc258a548c",
+      "category": "sports",
+      "navigationKeyword1": "hockey",
+      "navigationKeyword2": "rules",
+      "question": "What is a shutout?",
+      "correctAnswer": "A game in which the goalie allows no goals",
+      "incorrectAnswers": [
+        "A game decided by shootout only",
+        "A scoreless tie after one period",
+        "A delayed penalty"
+      ],
+      "explanation": "A shutout is credited when a goalie or goalies allow no goals.",
+      "keywords": [
+        "hockey",
+        "rules",
+        "shutout"
+      ],
+      "source": "https://www.britannica.com/sports/ice-hockey"
+    },
+    {
+      "seedId": "fe14de38-2e35-56c2-bbc9-615a256ca426",
+      "category": "sports",
+      "navigationKeyword1": "hockey",
+      "navigationKeyword2": "rules",
+      "question": "What is it called when a team shoots the puck from behind center ice all the way past the opponent's goal line untouched?",
+      "correctAnswer": "Icing",
+      "incorrectAnswers": [
+        "Offside",
+        "Slashing",
+        "Tripping"
+      ],
+      "explanation": "Icing stops play when the puck is sent the length of the ice illegally.",
+      "keywords": [
+        "hockey",
+        "rules",
+        "icing"
+      ],
+      "source": "https://www.britannica.com/sports/ice-hockey"
+    },
+    {
+      "seedId": "1c9b9fbd-5eab-5319-a373-18d7e1740bf6",
+      "category": "sports",
+      "navigationKeyword1": "hockey",
+      "navigationKeyword2": "rules",
+      "question": "What is it called when an attacking player enters the offensive zone ahead of the puck?",
+      "correctAnswer": "Offside",
+      "incorrectAnswers": [
+        "Icing",
+        "Cross-checking",
+        "Hooking"
+      ],
+      "explanation": "Entering the zone before the puck creates an offside violation.",
+      "keywords": [
+        "hockey",
+        "rules",
+        "offside"
+      ],
+      "source": "https://www.britannica.com/sports/ice-hockey"
+    },
+    {
+      "seedId": "4047e6b2-d550-5e63-ac28-5046bbbfe27d",
+      "category": "sports",
+      "navigationKeyword1": "hockey",
+      "navigationKeyword2": "rules",
+      "question": "What is the usual length of a minor penalty?",
+      "correctAnswer": "Two minutes",
+      "incorrectAnswers": [
+        "One minute",
+        "Three minutes",
+        "Five minutes"
+      ],
+      "explanation": "Most standard minor penalties last two minutes.",
+      "keywords": [
+        "hockey",
+        "rules",
+        "minor-penalty"
+      ],
+      "source": "https://www.britannica.com/sports/ice-hockey"
+    },
+    {
+      "seedId": "df4ec49f-1c61-57fb-8b3a-087311cf6f17",
+      "category": "sports",
+      "navigationKeyword1": "hockey",
+      "navigationKeyword2": "rules",
+      "question": "What restarts play after most stoppages in hockey?",
+      "correctAnswer": "A faceoff",
+      "incorrectAnswers": [
+        "A kickoff",
+        "A jump ball",
+        "A throw-in"
+      ],
+      "explanation": "The official drops the puck for a faceoff after many stoppages.",
+      "keywords": [
+        "hockey",
+        "rules",
+        "faceoff"
+      ],
+      "source": "https://www.britannica.com/sports/ice-hockey"
+    },
+    {
+      "seedId": "58579228-085e-5bce-800c-ca7b87892c23",
+      "category": "sports",
+      "navigationKeyword1": "hockey",
+      "navigationKeyword2": "rules",
+      "question": "Which infraction involves using the stick to impede an opponent's progress?",
+      "correctAnswer": "Hooking",
+      "incorrectAnswers": [
+        "Offside",
+        "Icing",
+        "Faceoff violation"
+      ],
+      "explanation": "Hooking uses the stick to restrain or slow another player.",
+      "keywords": [
+        "hockey",
+        "rules",
+        "hooking"
+      ],
+      "source": "https://www.britannica.com/sports/ice-hockey"
+    }
+  ]
+}

@@ -1,0 +1,805 @@
+{
+  "schemaVersion": 1,
+  "seedSet": "core-public-items",
+  "deltaPreviewLimit": 200,
+  "items": [
+    {
+      "seedId": "27d0ce34-8614-5ece-92d8-204d13dd5667",
+      "category": "tech",
+      "navigationKeyword1": "devops",
+      "navigationKeyword2": "ci-cd",
+      "question": "In a typical CI pipeline, what is an artifact?",
+      "correctAnswer": "An output produced by a build step, such as a binary or package",
+      "incorrectAnswers": [
+        "A human approval email stored in git",
+        "The YAML comment header only",
+        "A failed unit test log exclusively"
+      ],
+      "explanation": "Artifacts are the build products later stages can test, scan, or deploy.",
+      "keywords": [
+        "ci-cd",
+        "pipeline"
+      ],
+      "source": "https://docs.gitlab.com/ee/ci/pipelines/pipeline_artifacts.html"
+    },
+    {
+      "seedId": "602b3e6a-7624-5af8-bc9f-745e691aea43",
+      "category": "tech",
+      "navigationKeyword1": "devops",
+      "navigationKeyword2": "ci-cd",
+      "question": "What does CD often refer to besides Continuous Delivery?",
+      "correctAnswer": "Continuous Deployment",
+      "incorrectAnswers": [
+        "Continuous Documentation",
+        "Continuous Debugging",
+        "Continuous Design"
+      ],
+      "explanation": "Teams use CD for delivery (always releasable) or deployment (automatic production releases), depending on risk policy.",
+      "keywords": [
+        "ci-cd",
+        "delivery"
+      ],
+      "source": "https://martinfowler.com/bliki/ContinuousDelivery.html"
+    },
+    {
+      "seedId": "60f7d5a9-de74-5d32-ba14-3306f96cd2b4",
+      "category": "tech",
+      "navigationKeyword1": "devops",
+      "navigationKeyword2": "ci-cd",
+      "question": "What does idempotent deployment scripts aim to mean?",
+      "correctAnswer": "Running them twice leaves the system in the same desired state",
+      "incorrectAnswers": [
+        "Each run must delete all servers first",
+        "They may only run on developer laptops",
+        "They never change configuration"
+      ],
+      "explanation": "Idempotent automation is safer to retry and easier to reconcile with drift.",
+      "keywords": [
+        "ci-cd",
+        "automation"
+      ],
+      "source": "https://www.jenkins.io/doc/book/pipeline/syntax/"
+    },
+    {
+      "seedId": "bceaae22-84af-5699-b523-5b3f698775fa",
+      "category": "tech",
+      "navigationKeyword1": "devops",
+      "navigationKeyword2": "ci-cd",
+      "question": "What is a common purpose of a deployment gate in CD?",
+      "correctAnswer": "Require checks or approvals before promoting to the next environment",
+      "incorrectAnswers": [
+        "Block all deployments permanently",
+        "Replace monitoring with manual logs only",
+        "Disable rollbacks automatically"
+      ],
+      "explanation": "Gates add policy between stages while keeping automation for promotion.",
+      "keywords": [
+        "ci-cd",
+        "deployment"
+      ],
+      "source": "https://learn.microsoft.com/en-us/azure/devops/pipelines/release/approvals-gates"
+    },
+    {
+      "seedId": "b45b6f52-f0e0-5e3d-a2d5-7da17a2772ad",
+      "category": "tech",
+      "navigationKeyword1": "devops",
+      "navigationKeyword2": "ci-cd",
+      "question": "What is the main goal of Continuous Integration (CI)?",
+      "correctAnswer": "Integrate changes frequently and verify them with automated checks",
+      "incorrectAnswers": [
+        "Deploy once a year with a manual checklist only",
+        "Replace version control with shared folders",
+        "Guarantee zero bugs in production"
+      ],
+      "explanation": "CI emphasizes frequent merges and automated builds/tests so issues surface early.",
+      "keywords": [
+        "ci-cd",
+        "continuous-integration"
+      ],
+      "source": "https://martinfowler.com/articles/continuousIntegration.html"
+    },
+    {
+      "seedId": "07fcd2ce-1af8-56c1-9400-9f2c3c5d62f5",
+      "category": "tech",
+      "navigationKeyword1": "devops",
+      "navigationKeyword2": "ci-cd",
+      "question": "Why do pipelines commonly run tests before building container images?",
+      "correctAnswer": "Fail fast on cheap checks before heavier packaging work",
+      "incorrectAnswers": [
+        "Because tests require a finished image to exist first",
+        "Because Docker forbids tests in CI",
+        "Because images cannot be cached"
+      ],
+      "explanation": "Ordering stages from quick feedback to slower steps saves time and compute.",
+      "keywords": [
+        "ci-cd",
+        "testing"
+      ],
+      "source": "https://docs.github.com/en/actions/learn-github-actions/understanding-github-actions"
+    },
+    {
+      "seedId": "a7178a27-c4d5-572e-a43c-bc882e43dc1e",
+      "category": "tech",
+      "navigationKeyword1": "devops",
+      "navigationKeyword2": "docker",
+      "question": "How do containers on the same Linux host usually relate to the host kernel?",
+      "correctAnswer": "They share the host kernel and isolate processes with namespaces and cgroups",
+      "incorrectAnswers": [
+        "Each container boots its own separate kernel",
+        "Containers cannot run on Linux hosts",
+        "They require a hypervisor for every process"
+      ],
+      "explanation": "Containers are not full VMs; they rely on OS-level isolation features.",
+      "keywords": [
+        "docker",
+        "linux"
+      ],
+      "source": "https://www.redhat.com/en/topics/containers/what-is-linux-container"
+    },
+    {
+      "seedId": "aa2943a9-0b4b-5125-a256-1667ad64c06e",
+      "category": "tech",
+      "navigationKeyword1": "devops",
+      "navigationKeyword2": "docker",
+      "question": "What does `docker build` use as build context?",
+      "correctAnswer": "Files sent to the daemon from the specified path or URL",
+      "incorrectAnswers": [
+        "Only files already inside running containers",
+        "Only layers cached on the internet",
+        "Only the Dockerfile with no other files"
+      ],
+      "explanation": "The context is the set of files available to COPY and ADD during build.",
+      "keywords": [
+        "docker",
+        "build"
+      ],
+      "source": "https://docs.docker.com/build/building/context/"
+    },
+    {
+      "seedId": "90d673c2-8b7d-56ea-ad7c-eff9cc340521",
+      "category": "tech",
+      "navigationKeyword1": "devops",
+      "navigationKeyword2": "docker",
+      "question": "What does the Dockerfile `FROM` instruction set?",
+      "correctAnswer": "The starting image for the build",
+      "incorrectAnswers": [
+        "The TCP port exposed at runtime only",
+        "The Git branch to clone",
+        "The CPU limit for the container"
+      ],
+      "explanation": "`FROM` chooses the base layer; later instructions add more layers.",
+      "keywords": [
+        "docker",
+        "dockerfile"
+      ],
+      "source": "https://docs.docker.com/reference/dockerfile/#from"
+    },
+    {
+      "seedId": "b3349f1b-49da-5318-b27d-b5807419ed08",
+      "category": "tech",
+      "navigationKeyword1": "devops",
+      "navigationKeyword2": "docker",
+      "question": "What is a Docker image composed of?",
+      "correctAnswer": "Read-only layers stacked on top of each other",
+      "incorrectAnswers": [
+        "A full guest operating system kernel per container",
+        "A single mutable file that grows forever",
+        "Only runtime memory snapshots"
+      ],
+      "explanation": "Images are layer stacks; containers add a thin writable layer on top.",
+      "keywords": [
+        "docker",
+        "containers"
+      ],
+      "source": "https://docs.docker.com/get-started/docker-concepts/building-images/understanding-image-layers/"
+    },
+    {
+      "seedId": "a32b3af7-28ca-53c1-9f42-24c6f7bd8126",
+      "category": "tech",
+      "navigationKeyword1": "devops",
+      "navigationKeyword2": "docker",
+      "question": "What is a Docker volume typically used for?",
+      "correctAnswer": "Persisting data outside the container writable layer",
+      "incorrectAnswers": [
+        "Storing the Dockerfile only",
+        "Replacing the need for a network",
+        "Compiling source without a base image"
+      ],
+      "explanation": "Volumes keep data durable and can be mounted into containers at runtime.",
+      "keywords": [
+        "docker",
+        "storage"
+      ],
+      "source": "https://docs.docker.com/storage/volumes/"
+    },
+    {
+      "seedId": "7579b28e-fd11-5754-86a8-7645e1d4cea2",
+      "category": "tech",
+      "navigationKeyword1": "devops",
+      "navigationKeyword2": "docker",
+      "question": "What is the OCI Image Specification mainly about?",
+      "correctAnswer": "A standard format for container images so tools can interoperate",
+      "incorrectAnswers": [
+        "A cloud billing API for Kubernetes",
+        "A language for writing systemd units",
+        "A TLS cipher suite list"
+      ],
+      "explanation": "OCI images let runtimes and registries share a common image model beyond one vendor.",
+      "keywords": [
+        "docker",
+        "oci"
+      ],
+      "source": "https://github.com/opencontainers/image-spec/blob/main/spec.md"
+    },
+    {
+      "seedId": "19dc12f0-a68a-51d3-b18e-58b37e57f69b",
+      "category": "tech",
+      "navigationKeyword1": "devops",
+      "navigationKeyword2": "git",
+      "question": "In a typical workflow, what does `git pull` combine?",
+      "correctAnswer": "A fetch plus merging into the current branch",
+      "incorrectAnswers": [
+        "A fetch plus rebasing only",
+        "A clone plus submodule update",
+        "A push plus tag creation"
+      ],
+      "explanation": "`git pull` downloads updates and then integrates them, commonly by merge unless configured otherwise.",
+      "keywords": [
+        "git",
+        "pull"
+      ],
+      "source": "https://git-scm.com/docs/git-pull"
+    },
+    {
+      "seedId": "6adc9594-2b56-5e11-a8a6-1aacf560afbd",
+      "category": "tech",
+      "navigationKeyword1": "devops",
+      "navigationKeyword2": "git",
+      "question": "What does Git store for each commit besides the snapshot of files?",
+      "correctAnswer": "A pointer to its parent commit(s)",
+      "incorrectAnswers": [
+        "A copy of the remote URL",
+        "The diff from the empty tree only",
+        "Only file names without content"
+      ],
+      "explanation": "Each commit links to one or more parents, which is how Git builds history as a graph.",
+      "keywords": [
+        "git",
+        "version-control"
+      ],
+      "source": "https://git-scm.com/book/en/v2/Git-Internals-Git-Objects"
+    },
+    {
+      "seedId": "9b6668cb-2bd1-50db-a8ed-3daf6ae1de43",
+      "category": "tech",
+      "navigationKeyword1": "devops",
+      "navigationKeyword2": "git",
+      "question": "What does `git rebase` do to commits compared with merge for integrating work?",
+      "correctAnswer": "Replays commits on top of another base to linearize history",
+      "incorrectAnswers": [
+        "Deletes all commits on the branch permanently",
+        "Creates a second copy of every blob in the repo",
+        "Only updates remote-tracking refs without changing commits"
+      ],
+      "explanation": "Rebase moves or reapplies commits so the branch history reads as if it started from a newer point.",
+      "keywords": [
+        "git",
+        "rebase"
+      ],
+      "source": "https://www.atlassian.com/git/tutorials/merging-vs-rebasing"
+    },
+    {
+      "seedId": "6fedbb93-65d8-53e3-957e-c855b1c8cdae",
+      "category": "tech",
+      "navigationKeyword1": "devops",
+      "navigationKeyword2": "git",
+      "question": "What does a merge conflict mean in Git?",
+      "correctAnswer": "Git cannot auto-merge overlapping edits and needs a human fix",
+      "incorrectAnswers": [
+        "The remote rejected your SSH key",
+        "Your branch name is invalid",
+        "You must delete the repository"
+      ],
+      "explanation": "Conflicts happen when the same region of a file changed differently on two histories.",
+      "keywords": [
+        "git",
+        "merge"
+      ],
+      "source": "https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/addressing-merge-conflicts/resolving-a-merge-conflict-using-the-command-line"
+    },
+    {
+      "seedId": "cfb32794-7123-57df-aafe-bab623209ff3",
+      "category": "tech",
+      "navigationKeyword1": "devops",
+      "navigationKeyword2": "git",
+      "question": "What is a lightweight tag in Git?",
+      "correctAnswer": "A name that points directly to a commit object",
+      "incorrectAnswers": [
+        "A tag that stores a full extra commit message object always",
+        "A branch that tracks a remote by default",
+        "A signed certificate for HTTPS remotes"
+      ],
+      "explanation": "Lightweight tags are simple refs to commits, unlike annotated tags which are separate objects with metadata.",
+      "keywords": [
+        "git",
+        "tags"
+      ],
+      "source": "https://git-scm.com/book/en/v2/Git-Basics-Tagging"
+    },
+    {
+      "seedId": "c9a1f6b0-9b6f-52cc-8d43-d34f523eb513",
+      "category": "tech",
+      "navigationKeyword1": "devops",
+      "navigationKeyword2": "git",
+      "question": "What is the purpose of the staging area (index) in Git?",
+      "correctAnswer": "To choose which changes go into the next commit",
+      "incorrectAnswers": [
+        "To run automated tests before push",
+        "To encrypt secrets in the repository",
+        "To host CI configuration only"
+      ],
+      "explanation": "You stage changes with add so the next commit records exactly what you selected.",
+      "keywords": [
+        "git",
+        "staging"
+      ],
+      "source": "https://git-scm.com/book/en/v2/Git-Basics-Recording-Changes-to-the-Repository"
+    },
+    {
+      "seedId": "b6763f49-b30a-5e07-a074-0c872a5fa7c0",
+      "category": "tech",
+      "navigationKeyword1": "devops",
+      "navigationKeyword2": "kubernetes",
+      "question": "What does a Deployment controller primarily manage?",
+      "correctAnswer": "ReplicaSets and rolling updates of Pod templates",
+      "incorrectAnswers": [
+        "Only TLS certificates for the cluster",
+        "DNS records for external users only",
+        "Physical rack placement"
+      ],
+      "explanation": "Deployments declare desired Pod state and roll forward or back safely.",
+      "keywords": [
+        "kubernetes",
+        "deployments"
+      ],
+      "source": "https://kubernetes.io/docs/concepts/workloads/controllers/deployment/"
+    },
+    {
+      "seedId": "12fd1cb8-d119-5e71-9eaf-1a0e8165c269",
+      "category": "tech",
+      "navigationKeyword1": "devops",
+      "navigationKeyword2": "kubernetes",
+      "question": "What does a liveness probe help Kubernetes decide?",
+      "correctAnswer": "Whether to restart a container that is stuck or deadlocked",
+      "incorrectAnswers": [
+        "Whether to scale the Deployment to zero",
+        "Whether to delete the entire node",
+        "Whether to upgrade the cluster version"
+      ],
+      "explanation": "Liveness probes detect when a process needs restarting even if ports are open.",
+      "keywords": [
+        "kubernetes",
+        "health"
+      ],
+      "source": "https://cloud.google.com/kubernetes-engine/docs/concepts/liveness-probes"
+    },
+    {
+      "seedId": "fc73b04f-9b31-554d-a409-ecdf6e9a93ea",
+      "category": "tech",
+      "navigationKeyword1": "devops",
+      "navigationKeyword2": "kubernetes",
+      "question": "What is a Namespace in Kubernetes mainly for?",
+      "correctAnswer": "Scoping names and resources within a cluster",
+      "incorrectAnswers": [
+        "Replacing the need for RBAC",
+        "Running without a control plane",
+        "Storing container layers"
+      ],
+      "explanation": "Namespaces help teams share a cluster with separation for objects and policies.",
+      "keywords": [
+        "kubernetes",
+        "namespaces"
+      ],
+      "source": "https://docs.redhat.com/en/documentation/openshift_container_platform/4.15/html/architecture/namespaces"
+    },
+    {
+      "seedId": "9b67240c-878a-5790-8e11-cd6336cc96f1",
+      "category": "tech",
+      "navigationKeyword1": "devops",
+      "navigationKeyword2": "kubernetes",
+      "question": "What is a Service used for in Kubernetes?",
+      "correctAnswer": "Stable networking and load balancing to a set of Pods",
+      "incorrectAnswers": [
+        "Storing container images in the cluster",
+        "Encrypting etcd by default",
+        "Compiling application source code"
+      ],
+      "explanation": "Services provide a consistent IP/DNS target while Pod IPs change.",
+      "keywords": [
+        "kubernetes",
+        "networking"
+      ],
+      "source": "https://kubernetes.io/docs/concepts/services-networking/service/"
+    },
+    {
+      "seedId": "2ed297ce-039b-5d74-9cff-9f83675680b4",
+      "category": "tech",
+      "navigationKeyword1": "devops",
+      "navigationKeyword2": "kubernetes",
+      "question": "What is the smallest deployable unit Kubernetes schedules onto nodes?",
+      "correctAnswer": "A Pod",
+      "incorrectAnswers": [
+        "A Container only",
+        "A Deployment only",
+        "A Service only"
+      ],
+      "explanation": "A Pod wraps one or more containers that share network and storage namespaces on a node.",
+      "keywords": [
+        "kubernetes",
+        "pods"
+      ],
+      "source": "https://kubernetes.io/docs/concepts/workloads/pods/"
+    },
+    {
+      "seedId": "8b656365-f237-50cb-880c-ddf67677cf36",
+      "category": "tech",
+      "navigationKeyword1": "devops",
+      "navigationKeyword2": "kubernetes",
+      "question": "Which component assigns Pods to Nodes?",
+      "correctAnswer": "kube-scheduler",
+      "incorrectAnswers": [
+        "kube-proxy only",
+        "etcd alone",
+        "containerd alone"
+      ],
+      "explanation": "The scheduler filters and scores feasible nodes, then binds the Pod.",
+      "keywords": [
+        "kubernetes",
+        "scheduling"
+      ],
+      "source": "https://kubernetes.io/docs/concepts/scheduling-eviction/kube-scheduler/"
+    },
+    {
+      "seedId": "284d617b-b111-50cf-8f44-b5ebd699f75e",
+      "category": "tech",
+      "navigationKeyword1": "devops",
+      "navigationKeyword2": "observability",
+      "question": "In distributed tracing, what does a span represent?",
+      "correctAnswer": "A single operation with timing inside a trace",
+      "incorrectAnswers": [
+        "The entire cluster configuration",
+        "A DNS A record only",
+        "A container image layer"
+      ],
+      "explanation": "Traces are trees of spans showing parent-child work across services.",
+      "keywords": [
+        "observability",
+        "tracing"
+      ],
+      "source": "https://opentelemetry.io/docs/concepts/signals/traces/"
+    },
+    {
+      "seedId": "bfd62c37-6a71-5dca-bc3a-25187579bc95",
+      "category": "tech",
+      "navigationKeyword1": "devops",
+      "navigationKeyword2": "observability",
+      "question": "What does OpenTelemetry aim to provide for observability?",
+      "correctAnswer": "Vendor-neutral APIs and SDKs to emit telemetry",
+      "incorrectAnswers": [
+        "A single cloud-only database for logs",
+        "A replacement for TCP/IP",
+        "A container runtime"
+      ],
+      "explanation": "OpenTelemetry standardizes how applications produce traces, metrics, and logs.",
+      "keywords": [
+        "observability",
+        "opentelemetry"
+      ],
+      "source": "https://opentelemetry.io/docs/what-is-opentelemetry/"
+    },
+    {
+      "seedId": "d75dd2bb-de30-55a9-9188-04d04fcba3af",
+      "category": "tech",
+      "navigationKeyword1": "devops",
+      "navigationKeyword2": "observability",
+      "question": "What is a Prometheus metric type that only goes up or resets to zero?",
+      "correctAnswer": "A counter",
+      "incorrectAnswers": [
+        "A gauge",
+        "A histogram bucket label only",
+        "A log line"
+      ],
+      "explanation": "Counters measure totals like requests served; gauges can go up and down.",
+      "keywords": [
+        "observability",
+        "metrics"
+      ],
+      "source": "https://prometheus.io/docs/concepts/metric_types/"
+    },
+    {
+      "seedId": "9150d8ab-87b4-5dfc-a01b-31e26711e142",
+      "category": "tech",
+      "navigationKeyword1": "devops",
+      "navigationKeyword2": "observability",
+      "question": "What is high-cardinality data in metrics?",
+      "correctAnswer": "Labels or dimensions with very many distinct values",
+      "incorrectAnswers": [
+        "Metrics stored only on weekends",
+        "Data that never changes",
+        "CPU usage above 100 percent"
+      ],
+      "explanation": "High cardinality can explode time series cost and query load if misused.",
+      "keywords": [
+        "observability",
+        "cardinality"
+      ],
+      "source": "https://prometheus.io/docs/practices/naming/#labels"
+    },
+    {
+      "seedId": "5e13ed97-1bf3-54d1-9f8d-24ade0116d0b",
+      "category": "tech",
+      "navigationKeyword1": "devops",
+      "navigationKeyword2": "observability",
+      "question": "What three signal types are commonly grouped as observability pillars alongside logs?",
+      "correctAnswer": "Metrics and traces",
+      "incorrectAnswers": [
+        "Packets and frames",
+        "Commits and branches",
+        "Pixels and shaders"
+      ],
+      "explanation": "Metrics summarize behavior over time; traces follow requests across services; logs capture discrete events.",
+      "keywords": [
+        "observability",
+        "signals"
+      ],
+      "source": "https://opentelemetry.io/docs/concepts/signals/"
+    },
+    {
+      "seedId": "d4906d55-5cf1-53c5-b7ae-9b3a0eae9343",
+      "category": "tech",
+      "navigationKeyword1": "devops",
+      "navigationKeyword2": "observability",
+      "question": "Why use structured logging instead of only free-form strings?",
+      "correctAnswer": "To make fields queryable and machine-parseable at scale",
+      "incorrectAnswers": [
+        "To remove the need for timestamps",
+        "To guarantee smaller binaries",
+        "To disable log levels"
+      ],
+      "explanation": "Key-value or JSON logs enable filtering and correlation in log systems.",
+      "keywords": [
+        "observability",
+        "logging"
+      ],
+      "source": "https://www.elastic.co/guide/en/ecs/current/ecs-base.html"
+    },
+    {
+      "seedId": "7af279c4-514b-5d4f-81a3-fad1223fd4d3",
+      "category": "tech",
+      "navigationKeyword1": "devops",
+      "navigationKeyword2": "sre",
+      "question": "What does an SLO primarily express?",
+      "correctAnswer": "A target level of service reliability for users",
+      "incorrectAnswers": [
+        "A legal contract penalty clause only",
+        "The cheapest hosting tier",
+        "Developer keyboard layout preferences"
+      ],
+      "explanation": "SLOs translate user expectations into measurable targets like availability or latency.",
+      "keywords": [
+        "sre",
+        "slo"
+      ],
+      "source": "https://sre.google/sre-book/service-level-objectives/"
+    },
+    {
+      "seedId": "7ae41919-8a70-58fe-91d9-dd4dbda67afc",
+      "category": "tech",
+      "navigationKeyword1": "devops",
+      "navigationKeyword2": "sre",
+      "question": "What is a postmortem after an incident mainly for?",
+      "correctAnswer": "Learning and improving systems without blaming individuals",
+      "incorrectAnswers": [
+        "Assigning personal fault in public",
+        "Deleting all logs from the event",
+        "Stopping production deploys forever"
+      ],
+      "explanation": "Blameless postmortems focus on fixes and prevention across the system.",
+      "keywords": [
+        "sre",
+        "postmortem"
+      ],
+      "source": "https://sre.google/sre-book/postmortem-culture/"
+    },
+    {
+      "seedId": "7540ffbd-a227-592a-8783-fbb96bd0bd14",
+      "category": "tech",
+      "navigationKeyword1": "devops",
+      "navigationKeyword2": "sre",
+      "question": "What is an SLA compared with an SLO?",
+      "correctAnswer": "An agreement with customers, often with consequences if missed",
+      "incorrectAnswers": [
+        "Exactly the same as an SLO with no differences",
+        "A private note only developers read",
+        "A synonym for unit tests"
+      ],
+      "explanation": "SLOs guide engineering; SLAs are external promises and may include credits or penalties.",
+      "keywords": [
+        "sre",
+        "sla"
+      ],
+      "source": "https://www.atlassian.com/incident-management/kpis/sla-vs-slo-vs-sli"
+    },
+    {
+      "seedId": "ce54cfd8-8f63-5a48-90b7-31b3e0075448",
+      "category": "tech",
+      "navigationKeyword1": "devops",
+      "navigationKeyword2": "sre",
+      "question": "What is an error budget in SRE practice?",
+      "correctAnswer": "The acceptable unreliability window implied by an SLO",
+      "incorrectAnswers": [
+        "The annual cloud invoice cap",
+        "The number of on-call engineers",
+        "The maximum lines of code allowed"
+      ],
+      "explanation": "If reliability is 99.9%, the error budget is the remaining 0.1% downtime or bad events you can spend on change.",
+      "keywords": [
+        "sre",
+        "error-budget"
+      ],
+      "source": "https://aws.amazon.com/builders-library/availability-metrics/"
+    },
+    {
+      "seedId": "a973b5a0-be8e-509e-9356-0148605cd26b",
+      "category": "tech",
+      "navigationKeyword1": "devops",
+      "navigationKeyword2": "sre",
+      "question": "What is toil in the SRE sense?",
+      "correctAnswer": "Manual, repetitive operational work that does not improve the service long term",
+      "incorrectAnswers": [
+        "Any kind of programming in Python",
+        "Traffic handled by a CDN",
+        "Automated rollbacks"
+      ],
+      "explanation": "SRE aims to eliminate toil through automation and better design.",
+      "keywords": [
+        "sre",
+        "toil"
+      ],
+      "source": "https://sre.google/sre-book/eliminating-toil/"
+    },
+    {
+      "seedId": "e4a3c66a-ad77-5432-a818-d9aefe7016b3",
+      "category": "tech",
+      "navigationKeyword1": "devops",
+      "navigationKeyword2": "sre",
+      "question": "Why pair monitoring with alerting in production systems?",
+      "correctAnswer": "To notify humans when measured signals need action",
+      "incorrectAnswers": [
+        "To replace logs entirely",
+        "To prevent any metric collection",
+        "To disable dashboards"
+      ],
+      "explanation": "Monitoring observes state; alerting turns threshold breaches into timely response.",
+      "keywords": [
+        "sre",
+        "alerting"
+      ],
+      "source": "https://sre.google/sre-book/monitoring-distributed-systems/"
+    },
+    {
+      "seedId": "e5a55c3b-ea3d-5e6a-afbb-4d390f305235",
+      "category": "tech",
+      "navigationKeyword1": "devops",
+      "navigationKeyword2": "terraform",
+      "question": "What does Terraform state track?",
+      "correctAnswer": "The mapping between configuration and real-world resources",
+      "incorrectAnswers": [
+        "Only Git commit hashes",
+        "User passwords in plain text always",
+        "Compiler intermediate files"
+      ],
+      "explanation": "State lets Terraform know what exists so plans can compute create, update, and destroy actions.",
+      "keywords": [
+        "terraform",
+        "state"
+      ],
+      "source": "https://developer.hashicorp.com/terraform/language/state"
+    },
+    {
+      "seedId": "39298535-6793-513a-ae21-0ed673d2531c",
+      "category": "tech",
+      "navigationKeyword1": "devops",
+      "navigationKeyword2": "terraform",
+      "question": "What does `terraform plan` show before changes?",
+      "correctAnswer": "The actions Terraform would take to match configuration",
+      "incorrectAnswers": [
+        "Only historical billing invoices",
+        "A list of Git branches",
+        "Kernel panic traces"
+      ],
+      "explanation": "Plan previews creates, updates, and destroys so operators can review risk.",
+      "keywords": [
+        "terraform",
+        "plan"
+      ],
+      "source": "https://developer.hashicorp.com/terraform/cli/commands/plan"
+    },
+    {
+      "seedId": "5bad61dc-e16f-5b03-97a1-b7b4999e299d",
+      "category": "tech",
+      "navigationKeyword1": "devops",
+      "navigationKeyword2": "terraform",
+      "question": "What is Terraform primarily used to manage?",
+      "correctAnswer": "Infrastructure as declarative configuration",
+      "incorrectAnswers": [
+        "Only Java application bytecode",
+        "GPU shader programs exclusively",
+        "Email spam filters"
+      ],
+      "explanation": "You describe desired resources; Terraform plans and applies changes to reach that state.",
+      "keywords": [
+        "terraform",
+        "iac"
+      ],
+      "source": "https://developer.hashicorp.com/terraform/intro"
+    },
+    {
+      "seedId": "80f65529-4f5f-56ed-b3fc-4ed855ed29fe",
+      "category": "tech",
+      "navigationKeyword1": "devops",
+      "navigationKeyword2": "terraform",
+      "question": "What is a Terraform provider?",
+      "correctAnswer": "A plugin that implements resource types for a platform or API",
+      "incorrectAnswers": [
+        "A physical data center rack",
+        "A CI runner image only",
+        "A Kubernetes admission webhook only"
+      ],
+      "explanation": "Providers translate Terraform resources into cloud or SaaS API calls.",
+      "keywords": [
+        "terraform",
+        "providers"
+      ],
+      "source": "https://docs.aws.amazon.com/prescriptive-guidance/latest/terraform-aws-provider-best-practices/introduction.html"
+    },
+    {
+      "seedId": "a2ac5b92-e6e3-530b-8a78-b7cf2be00815",
+      "category": "tech",
+      "navigationKeyword1": "devops",
+      "navigationKeyword2": "terraform",
+      "question": "What is a module in Terraform?",
+      "correctAnswer": "A reusable container for multiple resources with defined inputs and outputs",
+      "incorrectAnswers": [
+        "A single line comment only",
+        "A cloud region name",
+        "A Docker layer checksum"
+      ],
+      "explanation": "Modules help standardize patterns like a baseline network or database setup.",
+      "keywords": [
+        "terraform",
+        "modules"
+      ],
+      "source": "https://learn.microsoft.com/en-us/azure/developer/terraform/best-practices-module-development"
+    },
+    {
+      "seedId": "9b1db519-2165-5423-aa1f-2a11fb0ea041",
+      "category": "tech",
+      "navigationKeyword1": "devops",
+      "navigationKeyword2": "terraform",
+      "question": "What language are `.tf` files usually written in?",
+      "correctAnswer": "HCL (HashiCorp Configuration Language)",
+      "incorrectAnswers": [
+        "YAML only",
+        "Pure SQL",
+        "Binary protobuf exclusively"
+      ],
+      "explanation": "HCL is structured for humans and machines and describes resources and providers.",
+      "keywords": [
+        "terraform",
+        "hcl"
+      ],
+      "source": "https://developer.hashicorp.com/terraform/language/syntax/configuration"
+    }
+  ]
+}

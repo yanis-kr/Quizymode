@@ -13,7 +13,7 @@ Task:
 
 Create or continue seed files for the `geography` category in:
 
-- `data/bulk-seed/geography`
+- `data/seed-source/items/geography`
 
 Filename format:
 

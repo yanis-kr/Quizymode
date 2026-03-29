@@ -1,0 +1,121 @@
+{
+  "schemaVersion": 1,
+  "seedSet": "core-public-items",
+  "deltaPreviewLimit": 200,
+  "items": [
+    {
+      "seedId": "431a81c0-f1a1-5d6c-826b-1e0d0d6dd011",
+      "category": "tech",
+      "navigationKeyword1": "mobile",
+      "navigationKeyword2": "react-native",
+      "question": "What bundler does React Native commonly use in development?",
+      "correctAnswer": "Metro",
+      "incorrectAnswers": [
+        "Webpack only",
+        "Gradle only",
+        "Make only"
+      ],
+      "explanation": "Metro bundles JavaScript for React Native with fast incremental builds.",
+      "keywords": [
+        "react-native",
+        "metro"
+      ],
+      "source": "https://metrobundler.dev/docs/getting-started"
+    },
+    {
+      "seedId": "eb0c344d-1516-5bef-bdee-2dd82d3884cd",
+      "category": "tech",
+      "navigationKeyword1": "mobile",
+      "navigationKeyword2": "react-native",
+      "question": "What does JSX describe in a React Native component file?",
+      "correctAnswer": "A tree of native-backed components using JavaScript syntax",
+      "incorrectAnswers": [
+        "Binary Metal shader bytecode",
+        "Gradle dependency locks only",
+        "AndroidManifest XML only"
+      ],
+      "explanation": "JSX compiles to `React.createElement` calls that map to native views.",
+      "keywords": [
+        "react-native",
+        "jsx"
+      ],
+      "source": "https://react.dev/learn/writing-markup-with-jsx"
+    },
+    {
+      "seedId": "e019347d-3fc0-5227-8e53-4237253a6863",
+      "category": "tech",
+      "navigationKeyword1": "mobile",
+      "navigationKeyword2": "react-native",
+      "question": "What is Fast Refresh intended to do during development?",
+      "correctAnswer": "Reload components while preserving state when edits are safe",
+      "incorrectAnswers": [
+        "Delete all app data on every save",
+        "Skip TypeScript checking",
+        "Disable the debugger"
+      ],
+      "explanation": "Fast Refresh updates the running bundle quickly after source changes.",
+      "keywords": [
+        "react-native",
+        "fast-refresh"
+      ],
+      "source": "https://reactnative.dev/docs/fast-refresh"
+    },
+    {
+      "seedId": "5ca2532e-a682-5b6f-8dcc-f75dd1ddf72f",
+      "category": "tech",
+      "navigationKeyword1": "mobile",
+      "navigationKeyword2": "react-native",
+      "question": "What is Hermes in the React Native ecosystem?",
+      "correctAnswer": "A JavaScript engine optimized for mobile startup and memory",
+      "incorrectAnswers": [
+        "A Bluetooth pairing protocol",
+        "An iOS-only layout engine",
+        "A SQL query planner"
+      ],
+      "explanation": "Hermes can improve time-to-interactive and bundle characteristics on Android and iOS.",
+      "keywords": [
+        "react-native",
+        "hermes"
+      ],
+      "source": "https://reactnative.dev/docs/hermes"
+    },
+    {
+      "seedId": "bb4a5829-814d-5e76-833f-2318eb8e800c",
+      "category": "tech",
+      "navigationKeyword1": "mobile",
+      "navigationKeyword2": "react-native",
+      "question": "What is React Native's bridge mainly for?",
+      "correctAnswer": "Letting JavaScript interact with native modules asynchronously",
+      "incorrectAnswers": [
+        "Replacing TCP/IP in the OS",
+        "Storing SQLite rows only",
+        "Rendering PDFs server-side only"
+      ],
+      "explanation": "The bridge serializes calls between JS and native code so UI and APIs can integrate safely.",
+      "keywords": [
+        "react-native",
+        "bridge"
+      ],
+      "source": "https://reactnative.dev/docs/communication-ios"
+    },
+    {
+      "seedId": "56a7d133-ad97-5704-9ff6-d1528554c2ad",
+      "category": "tech",
+      "navigationKeyword1": "mobile",
+      "navigationKeyword2": "react-native",
+      "question": "Why are native modules used in React Native apps?",
+      "correctAnswer": "To access platform APIs and performance-sensitive code not covered by core JS",
+      "incorrectAnswers": [
+        "To remove JavaScript entirely",
+        "To disable networking",
+        "To avoid any UI rendering"
+      ],
+      "explanation": "Native modules expose sensors, camera, and OS features through a defined interface.",
+      "keywords": [
+        "react-native",
+        "native-modules"
+      ],
+      "source": "https://reactnative.dev/docs/native-modules-intro"
+    }
+  ]
+}

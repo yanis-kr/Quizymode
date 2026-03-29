@@ -1,0 +1,121 @@
+{
+  "schemaVersion": 1,
+  "seedSet": "core-public-items",
+  "deltaPreviewLimit": 200,
+  "items": [
+    {
+      "seedId": "2a138c36-261a-5b2a-bdaa-b3a7d71af35f",
+      "category": "tech",
+      "navigationKeyword1": "databases",
+      "navigationKeyword2": "indexing",
+      "question": "For a composite index on `(a, b, c)`, which lookup pattern can typically use the index prefix rule efficiently?",
+      "correctAnswer": "equality filters on `a` (and optionally `b`, then `c` in order)",
+      "incorrectAnswers": [
+        "only filters on `c` alone",
+        "only sorting by `c` without `a`",
+        "random OR conditions across unrelated columns"
+      ],
+      "explanation": "Composite B-tree indexes are ordered left-to-left, so leading columns must constrain access for the index to be selective.",
+      "keywords": [
+        "indexing",
+        "composite"
+      ],
+      "source": "https://dev.mysql.com/doc/refman/8.0/en/multiple-column-indexes.html"
+    },
+    {
+      "seedId": "78f9ae6a-1297-58c5-8c10-df3d877dcfea",
+      "category": "tech",
+      "navigationKeyword1": "databases",
+      "navigationKeyword2": "indexing",
+      "question": "What does a `UNIQUE` index enforce on the indexed columns?",
+      "correctAnswer": "no two rows may share the same indexed values (with NULL handling rules per system)",
+      "incorrectAnswers": [
+        "rows may duplicate freely",
+        "only one row may exist in the table",
+        "values must be sequential integers"
+      ],
+      "explanation": "Unique indexes protect business keys and speed lookups while preventing duplicates.",
+      "keywords": [
+        "indexing",
+        "unique"
+      ],
+      "source": "https://www.sqlite.org/lang_createindex.html"
+    },
+    {
+      "seedId": "0d438ece-9b7f-51af-ab18-3f0793ee7e34",
+      "category": "tech",
+      "navigationKeyword1": "databases",
+      "navigationKeyword2": "indexing",
+      "question": "What is a covering index?",
+      "correctAnswer": "an index that contains all columns needed to satisfy a query without hitting the base table",
+      "incorrectAnswers": [
+        "an index that hides data from security audits",
+        "an index larger than the table",
+        "an index that only works on weekends"
+      ],
+      "explanation": "When an index includes the projected columns, the engine can answer the query from the index alone.",
+      "keywords": [
+        "indexing",
+        "covering"
+      ],
+      "source": "https://learn.microsoft.com/en-us/sql/relational-databases/indexes/create-indexes-with-included-columns"
+    },
+    {
+      "seedId": "b03dccc3-8099-58c5-997a-86e71b2f2aaf",
+      "category": "tech",
+      "navigationKeyword1": "databases",
+      "navigationKeyword2": "indexing",
+      "question": "What is one purpose of a full-text index compared with a typical B-tree on text columns?",
+      "correctAnswer": "efficient token-based search and ranking over natural language",
+      "incorrectAnswers": [
+        "guaranteeing encryption at rest",
+        "storing rows in JSON only",
+        "replacing foreign keys"
+      ],
+      "explanation": "Full-text engines tokenize and index words for contains queries, not just exact string matches.",
+      "keywords": [
+        "indexing",
+        "full-text"
+      ],
+      "source": "https://www.postgresql.org/docs/current/textsearch.html"
+    },
+    {
+      "seedId": "7eaac253-08f5-5808-8de1-2069e57819ba",
+      "category": "tech",
+      "navigationKeyword1": "databases",
+      "navigationKeyword2": "indexing",
+      "question": "What tree structure is the default for many relational secondary indexes?",
+      "correctAnswer": "B-tree (or a B-tree variant)",
+      "incorrectAnswers": [
+        "purely linked lists with no branching",
+        "a single global hash map for all tables",
+        "binary trees with height always two"
+      ],
+      "explanation": "B-trees keep data sorted and support efficient range scans and lookups with balanced depth.",
+      "keywords": [
+        "indexing",
+        "b-tree"
+      ],
+      "source": "https://www.postgresql.org/docs/current/indexes-types.html"
+    },
+    {
+      "seedId": "85398c0a-7d4f-53dd-b584-2f982b8c8d41",
+      "category": "tech",
+      "navigationKeyword1": "databases",
+      "navigationKeyword2": "indexing",
+      "question": "Why can adding many indexes hurt write performance?",
+      "correctAnswer": "each insert, update, or delete must maintain every affected index",
+      "incorrectAnswers": [
+        "indexes disable the transaction log",
+        "indexes force full table scans",
+        "indexes double network latency automatically"
+      ],
+      "explanation": "Indexes speed reads but add maintenance work and storage overhead on every change to covered columns.",
+      "keywords": [
+        "indexing",
+        "tradeoffs"
+      ],
+      "source": "https://dev.mysql.com/doc/refman/8.0/en/optimization-indexes.html"
+    }
+  ]
+}

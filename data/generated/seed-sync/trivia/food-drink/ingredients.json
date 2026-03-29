@@ -1,0 +1,197 @@
+{
+  "schemaVersion": 1,
+  "seedSet": "core-public-items",
+  "deltaPreviewLimit": 200,
+  "items": [
+    {
+      "seedId": "6e94015e-2678-55f0-a7de-96474057a516",
+      "category": "trivia",
+      "navigationKeyword1": "food-drink",
+      "navigationKeyword2": "ingredients",
+      "question": "Baking soda is common name for which compound?",
+      "correctAnswer": "sodium bicarbonate",
+      "incorrectAnswers": [
+        "sodium chloride",
+        "calcium sulfate",
+        "magnesium oxide"
+      ],
+      "explanation": "Baking soda is sodium bicarbonate.",
+      "keywords": [
+        "baking",
+        "chemistry"
+      ],
+      "source": "https://www.britannica.com/science/sodium-bicarbonate"
+    },
+    {
+      "seedId": "6d077305-d845-5f6d-bcc0-b4400e8a470d",
+      "category": "trivia",
+      "navigationKeyword1": "food-drink",
+      "navigationKeyword2": "ingredients",
+      "question": "Capsaicin provides heat in which plant family\u2019s peppers?",
+      "correctAnswer": "nightshades (Solanaceae)",
+      "incorrectAnswers": [
+        "grasses",
+        "legumes",
+        "roses"
+      ],
+      "explanation": "Capsaicin is in chili peppers of Solanaceae.",
+      "keywords": [
+        "spices",
+        "peppers"
+      ],
+      "source": "https://www.britannica.com/science/capsaicin"
+    },
+    {
+      "seedId": "ef33f116-546e-5952-87aa-6a7650699306",
+      "category": "trivia",
+      "navigationKeyword1": "food-drink",
+      "navigationKeyword2": "ingredients",
+      "question": "Citric acid gives the sour taste to which fruit family?",
+      "correctAnswer": "citrus fruits",
+      "incorrectAnswers": [
+        "bananas",
+        "berries only",
+        "melons only"
+      ],
+      "explanation": "Citrus fruits contain citric acid.",
+      "keywords": [
+        "acidity",
+        "citrus"
+      ],
+      "source": "https://www.britannica.com/science/citric-acid"
+    },
+    {
+      "seedId": "f62e0a29-fa9f-50e1-a3c4-6e838d5bd7e0",
+      "category": "trivia",
+      "navigationKeyword1": "food-drink",
+      "navigationKeyword2": "ingredients",
+      "question": "Cornstarch thickens mainly because of what carbohydrate?",
+      "correctAnswer": "starch",
+      "incorrectAnswers": [
+        "cellulose only",
+        "chitin",
+        "pectin only"
+      ],
+      "explanation": "Cornstarch is starch used as thickener.",
+      "keywords": [
+        "thickeners",
+        "starch"
+      ],
+      "source": "https://www.britannica.com/science/starch"
+    },
+    {
+      "seedId": "93ce2568-a24b-5760-89ce-154d438977a8",
+      "category": "trivia",
+      "navigationKeyword1": "food-drink",
+      "navigationKeyword2": "ingredients",
+      "question": "Olive oil is extracted from which fruit?",
+      "correctAnswer": "olives",
+      "incorrectAnswers": [
+        "grapes",
+        "coconuts",
+        "almonds"
+      ],
+      "explanation": "Olive oil comes from olives.",
+      "keywords": [
+        "oils",
+        "mediterranean"
+      ],
+      "source": "https://www.britannica.com/plant/olive-plant"
+    },
+    {
+      "seedId": "03f0a5ae-4c75-539f-a8dc-8404f36bb1ed",
+      "category": "trivia",
+      "navigationKeyword1": "food-drink",
+      "navigationKeyword2": "ingredients",
+      "question": "Table salt is primarily which compound?",
+      "correctAnswer": "sodium chloride",
+      "incorrectAnswers": [
+        "sodium bicarbonate",
+        "calcium carbonate",
+        "potassium nitrate"
+      ],
+      "explanation": "Table salt is sodium chloride.",
+      "keywords": [
+        "salt",
+        "chemistry"
+      ],
+      "source": "https://www.britannica.com/science/salt-chemistry"
+    },
+    {
+      "seedId": "bf2b6671-5804-5a56-a55f-c67617ebafba",
+      "category": "trivia",
+      "navigationKeyword1": "food-drink",
+      "navigationKeyword2": "ingredients",
+      "question": "Vanilla flavoring comes from orchid pods of which plant genus?",
+      "correctAnswer": "Vanilla",
+      "incorrectAnswers": [
+        "Cinnamomum",
+        "Piper",
+        "Zingiber"
+      ],
+      "explanation": "Vanilla flavor comes from Vanilla orchid pods.",
+      "keywords": [
+        "vanilla",
+        "spices"
+      ],
+      "source": "https://www.britannica.com/plant/vanilla-plant"
+    },
+    {
+      "seedId": "0370f7f3-27f0-53ec-b77a-e8191875eb25",
+      "category": "trivia",
+      "navigationKeyword1": "food-drink",
+      "navigationKeyword2": "ingredients",
+      "question": "Which gas-releasing leavening action is associated with baking powder?",
+      "correctAnswer": "carbon dioxide",
+      "incorrectAnswers": [
+        "oxygen",
+        "hydrogen",
+        "chlorine"
+      ],
+      "explanation": "Baking powder releases CO\u2082 for leavening.",
+      "keywords": [
+        "baking",
+        "leavening"
+      ],
+      "source": "https://www.britannica.com/science/baking-powder"
+    },
+    {
+      "seedId": "952414d8-f431-53b7-b015-40f533c876ba",
+      "category": "trivia",
+      "navigationKeyword1": "food-drink",
+      "navigationKeyword2": "ingredients",
+      "question": "Which proteins forming gluten is most closely associated with wheat flour baking strength largely?",
+      "correctAnswer": "gliadin and glutenin",
+      "incorrectAnswers": [
+        "keratin and collagen",
+        "casein and whey",
+        "actin and myosin"
+      ],
+      "explanation": "Gluten comprises gliadin and glutenin.",
+      "keywords": [
+        "flour",
+        "gluten"
+      ],
+      "source": "https://www.britannica.com/science/gluten"
+    },
+    {
+      "seedId": "0d94d4bc-d4cc-508f-983d-2597e4ea02e3",
+      "category": "trivia",
+      "navigationKeyword1": "food-drink",
+      "navigationKeyword2": "ingredients",
+      "question": "Yeast bread rise fermentation produces alcohol and what gas?",
+      "correctAnswer": "carbon dioxide",
+      "incorrectAnswers": [
+        "neon",
+        "methane",
+        "argon"
+      ],
+      "explanation": "Yeast fermentation produces CO\u2082 in dough.",
+      "keywords": [
+        "bread",
+        "yeast"
+      ],
+      "source": "https://www.britannica.com/science/yeast"
+    }
+  ]
+}

@@ -1,0 +1,235 @@
+{
+  "schemaVersion": 1,
+  "seedSet": "core-public-items",
+  "deltaPreviewLimit": 200,
+  "items": [
+    {
+      "seedId": "9d39bb47-fb12-4fe4-9629-d849e1a4fff5",
+      "category": "science",
+      "navigationKeyword1": "anatomy",
+      "navigationKeyword2": "muscular",
+      "question": "Cardiac muscle is found primarily where?",
+      "correctAnswer": "The heart wall",
+      "incorrectAnswers": [
+        "The liver",
+        "The dermis",
+        "Cartilage plates"
+      ],
+      "explanation": "Cardiac muscle tissue makes up most of the heart\u2019s muscular wall.",
+      "keywords": [
+        "cardiac-muscle",
+        "heart"
+      ],
+      "source": "https://openstax.org/books/anatomy-and-physiology-2e/pages/4-4-muscle-tissue-and-motion"
+    },
+    {
+      "seedId": "d98d12e8-9ba3-49eb-b7c7-bc007b171450",
+      "category": "science",
+      "navigationKeyword1": "anatomy",
+      "navigationKeyword2": "muscular",
+      "question": "Smooth muscle is commonly found in which location?",
+      "correctAnswer": "Walls of hollow organs like the digestive tract",
+      "incorrectAnswers": [
+        "Bone matrix",
+        "Tendons",
+        "The epidermis"
+      ],
+      "explanation": "Smooth muscle helps move food, blood, and other substances through internal tubes.",
+      "keywords": [
+        "smooth-muscle",
+        "viscera"
+      ],
+      "source": "https://openstax.org/books/anatomy-and-physiology-2e/pages/4-4-muscle-tissue-and-motion"
+    },
+    {
+      "seedId": "d918d9ff-080a-45d9-9bc1-90e025040523",
+      "category": "science",
+      "navigationKeyword1": "anatomy",
+      "navigationKeyword2": "muscular",
+      "question": "What change happens to muscle length in an isometric contraction?",
+      "correctAnswer": "The muscle length stays about the same while tension builds",
+      "incorrectAnswers": [
+        "The muscle lengthens freely with no tension",
+        "Only smooth muscle can be isometric",
+        "The joint must dislocate"
+      ],
+      "explanation": "Isometric means \u2018same length\u2019\u2014force is generated without much shortening.",
+      "keywords": [
+        "isometric",
+        "tension"
+      ],
+      "source": "https://en.wikipedia.org/wiki/Isometric_contraction"
+    },
+    {
+      "seedId": "f3112952-5fbc-4ce6-9878-9d2fbb48b12e",
+      "category": "science",
+      "navigationKeyword1": "anatomy",
+      "navigationKeyword2": "muscular",
+      "question": "What change happens to muscle length in an isotonic contraction?",
+      "correctAnswer": "The muscle length changes while tension is relatively steady",
+      "incorrectAnswers": [
+        "Length stays fixed while tension changes",
+        "The muscle cannot produce force",
+        "Only tendons shorten"
+      ],
+      "explanation": "Isotonic contractions involve movement (concentric or eccentric) with changing length.",
+      "keywords": [
+        "isotonic",
+        "contraction-types"
+      ],
+      "source": "https://en.wikipedia.org/wiki/Muscle_contraction"
+    },
+    {
+      "seedId": "a3817f90-f22a-45f4-be0b-91fb77da7c6c",
+      "category": "science",
+      "navigationKeyword1": "anatomy",
+      "navigationKeyword2": "muscular",
+      "question": "What is a motor unit?",
+      "correctAnswer": "One motor neuron plus the muscle fibers it innervates",
+      "incorrectAnswers": [
+        "Only the muscle fibers without a neuron",
+        "A tendon and its bone",
+        "A joint capsule"
+      ],
+      "explanation": "A motor unit is the smallest functional group controlled as a unit by one neuron.",
+      "keywords": [
+        "motor-unit",
+        "innervation"
+      ],
+      "source": "https://www.ncbi.nlm.nih.gov/books/NBK537656/"
+    },
+    {
+      "seedId": "059040f5-42b5-4b2f-9fa1-52a47acd4730",
+      "category": "science",
+      "navigationKeyword1": "anatomy",
+      "navigationKeyword2": "muscular",
+      "question": "What is muscle fatigue during sustained exercise often linked to?",
+      "correctAnswer": "Multiple factors like energy supply limits and metabolite buildup (context-dependent)",
+      "incorrectAnswers": [
+        "Muscles permanently stop making ATP forever",
+        "Tendons replace muscle fibers",
+        "Smooth muscle cannot fatigue"
+      ],
+      "explanation": "Fatigue is multifactorial; training, intensity, and fiber type all influence how quickly it appears.",
+      "keywords": [
+        "fatigue",
+        "exercise-physiology"
+      ],
+      "source": "https://www.ncbi.nlm.nih.gov/books/NBK54118/"
+    },
+    {
+      "seedId": "df8667c1-a7f4-4c86-815f-96099b2b60ea",
+      "category": "science",
+      "navigationKeyword1": "anatomy",
+      "navigationKeyword2": "muscular",
+      "question": "What is the functional unit of contraction in skeletal muscle?",
+      "correctAnswer": "Sarcomere",
+      "incorrectAnswers": [
+        "Neuron",
+        "Sarcolemma only",
+        "Motor unit only"
+      ],
+      "explanation": "The sarcomere is the repeating contractile unit between Z lines in a myofibril.",
+      "keywords": [
+        "sarcomere",
+        "contraction"
+      ],
+      "source": "https://openstax.org/books/anatomy-and-physiology-2e/pages/10-2-skeletal-muscle"
+    },
+    {
+      "seedId": "a53f7688-36a2-40f6-8ade-29b94d9834c7",
+      "category": "science",
+      "navigationKeyword1": "anatomy",
+      "navigationKeyword2": "muscular",
+      "question": "What is the neuromuscular junction?",
+      "correctAnswer": "The synapse where a motor neuron meets a muscle fiber",
+      "incorrectAnswers": [
+        "A ligament crossing a joint",
+        "A heart valve",
+        "A bone growth plate"
+      ],
+      "explanation": "Acetylcholine release at the NMJ triggers muscle fiber action potentials.",
+      "keywords": [
+        "neuromuscular-junction",
+        "synapse"
+      ],
+      "source": "https://openstax.org/books/anatomy-and-physiology-2e/pages/10-3-muscle-fiber-contraction-and-relaxation"
+    },
+    {
+      "seedId": "f3b6c62b-6ceb-4d8b-a375-819aeac08e4a",
+      "category": "science",
+      "navigationKeyword1": "anatomy",
+      "navigationKeyword2": "muscular",
+      "question": "Where do skeletal muscles typically attach to bones?",
+      "correctAnswer": "Via tendons",
+      "incorrectAnswers": [
+        "Via ligaments",
+        "Via synovial fluid alone",
+        "Directly through marrow only"
+      ],
+      "explanation": "Tendons connect muscle to bone; ligaments mainly connect bone to bone.",
+      "keywords": [
+        "tendons",
+        "attachment"
+      ],
+      "source": "https://www.ncbi.nlm.nih.gov/books/NBK537656/"
+    },
+    {
+      "seedId": "7a39d086-4f01-4064-af3a-9129b9578266",
+      "category": "science",
+      "navigationKeyword1": "anatomy",
+      "navigationKeyword2": "muscular",
+      "question": "Which muscle type is usually under voluntary control?",
+      "correctAnswer": "Skeletal muscle",
+      "incorrectAnswers": [
+        "Smooth muscle",
+        "Cardiac muscle only",
+        "Cartilage"
+      ],
+      "explanation": "Skeletal muscles attach to bones and are used for voluntary movement.",
+      "keywords": [
+        "muscular",
+        "skeletal-muscle"
+      ],
+      "source": "https://openstax.org/books/anatomy-and-physiology-2e/pages/10-2-skeletal-muscle"
+    },
+    {
+      "seedId": "089fafd3-6163-447e-b321-6cfaef5844b7",
+      "category": "science",
+      "navigationKeyword1": "anatomy",
+      "navigationKeyword2": "muscular",
+      "question": "Which proteins slide past each other during muscle contraction?",
+      "correctAnswer": "Actin and myosin",
+      "incorrectAnswers": [
+        "Collagen and elastin",
+        "Keratin and fibrin",
+        "Insulin and glucagon"
+      ],
+      "explanation": "Thin filaments (actin) and thick filaments (myosin) interact to shorten sarcomeres.",
+      "keywords": [
+        "actin",
+        "myosin"
+      ],
+      "source": "https://en.wikipedia.org/wiki/Muscle_contraction"
+    },
+    {
+      "seedId": "443c349b-444b-4370-bbc7-1d90b13fa506",
+      "category": "science",
+      "navigationKeyword1": "anatomy",
+      "navigationKeyword2": "muscular",
+      "question": "Why do muscles often work in opposing pairs (agonist and antagonist)?",
+      "correctAnswer": "So movement can be controlled in both directions",
+      "incorrectAnswers": [
+        "To store extra ATP in tendons",
+        "To prevent nerves from firing",
+        "To eliminate the need for joints"
+      ],
+      "explanation": "Agonists create motion while antagonists stabilize and allow smooth reversal.",
+      "keywords": [
+        "agonist",
+        "antagonist"
+      ],
+      "source": "https://www.ncbi.nlm.nih.gov/books/NBK537656/"
+    }
+  ]
+}

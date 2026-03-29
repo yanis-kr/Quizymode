@@ -1,0 +1,121 @@
+{
+  "schemaVersion": 1,
+  "seedSet": "core-public-items",
+  "deltaPreviewLimit": 200,
+  "items": [
+    {
+      "seedId": "b770f250-b01e-5057-9f60-ed962d8d1117",
+      "category": "tech",
+      "navigationKeyword1": "cs-core",
+      "navigationKeyword2": "architecture",
+      "question": "In a simple five-stage RISC pipeline, what is the usual order after fetch?",
+      "correctAnswer": "Decode, execute, memory access, write-back",
+      "incorrectAnswers": [
+        "Encrypt, compress, transmit",
+        "Allocate heap, garbage collect, swap",
+        "DNS lookup, TLS, HTTP"
+      ],
+      "explanation": "Classic RISC pipelines decode instructions, execute ALU ops, touch memory if needed, then write results to registers.",
+      "keywords": [
+        "architecture",
+        "pipelining"
+      ],
+      "source": "https://en.wikipedia.org/wiki/Classic_RISC_pipeline"
+    },
+    {
+      "seedId": "b0261b82-f9b2-5b17-9872-bdb30c98eff9",
+      "category": "tech",
+      "navigationKeyword1": "cs-core",
+      "navigationKeyword2": "architecture",
+      "question": "In a von Neumann architecture, what do instructions and data share?",
+      "correctAnswer": "The same main memory and addressable space",
+      "incorrectAnswers": [
+        "Separate non-addressable caches only",
+        "Only registers",
+        "Only disk sectors"
+      ],
+      "explanation": "Programs and data live in one memory pool fetched over a common bus, which is the classic stored-program model.",
+      "keywords": [
+        "architecture",
+        "von-neumann"
+      ],
+      "source": "https://en.wikipedia.org/wiki/Von_Neumann_architecture"
+    },
+    {
+      "seedId": "6c6dab25-02e5-5441-b8a2-0a02dc075a88",
+      "category": "tech",
+      "navigationKeyword1": "cs-core",
+      "navigationKeyword2": "architecture",
+      "question": "What does an instruction pipeline mainly improve?",
+      "correctAnswer": "Instruction throughput by overlapping stages",
+      "incorrectAnswers": [
+        "Guaranteed branch prediction",
+        "Disk capacity",
+        "Network bandwidth"
+      ],
+      "explanation": "Pipelining lets later instructions start before earlier ones finish, raising throughput when hazards are managed.",
+      "keywords": [
+        "architecture",
+        "pipelining"
+      ],
+      "source": "https://en.wikipedia.org/wiki/Instruction_pipelining"
+    },
+    {
+      "seedId": "c8c82362-371c-532c-855c-27df7777178f",
+      "category": "tech",
+      "navigationKeyword1": "cs-core",
+      "navigationKeyword2": "architecture",
+      "question": "What does endianness describe?",
+      "correctAnswer": "The byte order of multibyte values in memory",
+      "incorrectAnswers": [
+        "Clock speed of the bus",
+        "Number of CPU cores",
+        "Wi-Fi channel width"
+      ],
+      "explanation": "Big-endian stores the most significant byte first; little-endian stores the least significant byte first.",
+      "keywords": [
+        "architecture",
+        "endianness"
+      ],
+      "source": "https://datatracker.ietf.org/doc/html/rfc1700"
+    },
+    {
+      "seedId": "29aaa54e-ac51-5d3e-9db4-d4c27cc529d6",
+      "category": "tech",
+      "navigationKeyword1": "cs-core",
+      "navigationKeyword2": "architecture",
+      "question": "What is a cache line in a CPU cache hierarchy?",
+      "correctAnswer": "The fixed-size block of memory transferred between cache and main memory",
+      "incorrectAnswers": [
+        "A single CPU register",
+        "The entire L3 cache",
+        "A network packet"
+      ],
+      "explanation": "Caches move data in aligned lines to exploit spatial locality and amortize transfers.",
+      "keywords": [
+        "architecture",
+        "cache"
+      ],
+      "source": "https://en.wikipedia.org/wiki/CPU_cache"
+    },
+    {
+      "seedId": "b9260d0d-6229-5b36-9b53-48bd93b6a012",
+      "category": "tech",
+      "navigationKeyword1": "cs-core",
+      "navigationKeyword2": "architecture",
+      "question": "What is the purpose of virtual memory translation lookaside buffers (TLBs)?",
+      "correctAnswer": "Cache recent virtual-to-physical page mappings",
+      "incorrectAnswers": [
+        "Store compiled machine code",
+        "Hold DNS records",
+        "Encrypt disk sectors"
+      ],
+      "explanation": "TLBs speed address translation by remembering recent page table entries.",
+      "keywords": [
+        "architecture",
+        "mmu"
+      ],
+      "source": "https://en.wikipedia.org/wiki/Translation_lookaside_buffer"
+    }
+  ]
+}

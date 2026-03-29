@@ -1,0 +1,207 @@
+{
+  "schemaVersion": 1,
+  "seedSet": "core-public-items",
+  "deltaPreviewLimit": 200,
+  "items": [
+    {
+      "seedId": "012d2a9c-0557-4db0-af7c-d11f239b5162",
+      "category": "exams",
+      "navigationKeyword1": "finance",
+      "navigationKeyword2": "general-finance",
+      "question": "How many Core sections are on the CPA Exam?",
+      "correctAnswer": "Three",
+      "incorrectAnswers": [
+        "Two",
+        "Four",
+        "Five"
+      ],
+      "explanation": "The AICPA lists three Core sections in the current CPA Exam model.",
+      "keywords": [
+        "cpa",
+        "general-finance",
+        "test-prep"
+      ],
+      "source": "https://www.aicpa-cima.com/professional-insights/article/navigating-cpa-evolutions-new-model-for-the-cpa-exam"
+    },
+    {
+      "seedId": "fff72205-3277-47ed-8e11-50e5e4414cc3",
+      "category": "exams",
+      "navigationKeyword1": "finance",
+      "navigationKeyword2": "general-finance",
+      "question": "How many exams must you pass to complete the FRM exam sequence?",
+      "correctAnswer": "Two",
+      "incorrectAnswers": [
+        "One",
+        "Three",
+        "Four"
+      ],
+      "explanation": "GARP says the FRM consists of two multiple-choice exams.",
+      "keywords": [
+        "frm",
+        "general-finance",
+        "test-prep"
+      ],
+      "source": "https://www.garp.org/frm/program-exams"
+    },
+    {
+      "seedId": "e6228542-51d3-467b-a06c-ed8e263ed955",
+      "category": "exams",
+      "navigationKeyword1": "finance",
+      "navigationKeyword2": "general-finance",
+      "question": "How many parts does the Special Enrollment Examination have?",
+      "correctAnswer": "Three",
+      "incorrectAnswers": [
+        "One",
+        "Two",
+        "Four"
+      ],
+      "explanation": "IRS Publication 5279 describes the SEE as a three-part exam.",
+      "keywords": [
+        "ea",
+        "general-finance",
+        "test-prep"
+      ],
+      "source": "https://www.irs.gov/pub/irs-pdf/p5279.pdf"
+    },
+    {
+      "seedId": "2fc6f5cd-3244-4da3-a4fb-68ae69a2cb90",
+      "category": "exams",
+      "navigationKeyword1": "finance",
+      "navigationKeyword2": "general-finance",
+      "question": "How many questions are on the CFA Level I exam?",
+      "correctAnswer": "180 multiple-choice questions",
+      "incorrectAnswers": [
+        "120 multiple-choice questions",
+        "180 essay questions",
+        "240 multiple-choice questions"
+      ],
+      "explanation": "CFA Institute lists 180 multiple-choice questions for Level I.",
+      "keywords": [
+        "cfa",
+        "general-finance",
+        "test-prep"
+      ],
+      "source": "https://www.cfainstitute.org/programs/cfa/exam/level-i"
+    },
+    {
+      "seedId": "b730fdba-6eee-45c7-80d9-1786a14f9b57",
+      "category": "exams",
+      "navigationKeyword1": "finance",
+      "navigationKeyword2": "general-finance",
+      "question": "What does the CFA Level I exam primarily test?",
+      "correctAnswer": "Knowledge of key terms, concepts, and formulas in the investment industry",
+      "incorrectAnswers": [
+        "Only portfolio management case studies",
+        "Only ethics essay writing",
+        "Only financial statement auditing"
+      ],
+      "explanation": "CFA Institute says Level I tests key terms, concepts, and formulas that underlie the investment industry.",
+      "keywords": [
+        "cfa",
+        "general-finance",
+        "test-prep"
+      ],
+      "source": "https://www.cfainstitute.org/programs/cfa/exam/level-i"
+    },
+    {
+      "seedId": "f238ffcc-c68c-427c-8b8a-5d2a137ae7ee",
+      "category": "exams",
+      "navigationKeyword1": "finance",
+      "navigationKeyword2": "general-finance",
+      "question": "What exam must most candidates pass to become an enrolled agent?",
+      "correctAnswer": "The Special Enrollment Examination",
+      "incorrectAnswers": [
+        "The Series 7 exam",
+        "The CFA Level I exam",
+        "The Uniform CPA Exam"
+      ],
+      "explanation": "IRS Publication 5279 says candidates become enrolled agents by passing the Special Enrollment Examination and then applying for enrollment.",
+      "keywords": [
+        "ea",
+        "general-finance",
+        "test-prep"
+      ],
+      "source": "https://www.irs.gov/pub/irs-pdf/p5279.pdf"
+    },
+    {
+      "seedId": "327463ae-77e7-422a-8a76-2d9000e2ceb7",
+      "category": "exams",
+      "navigationKeyword1": "finance",
+      "navigationKeyword2": "general-finance",
+      "question": "What minimum score is required to pass a CPA Exam section?",
+      "correctAnswer": "75",
+      "incorrectAnswers": [
+        "70",
+        "80",
+        "85"
+      ],
+      "explanation": "AICPA says a candidate must score at least 75 to pass a section.",
+      "keywords": [
+        "cpa",
+        "general-finance",
+        "test-prep"
+      ],
+      "source": "https://www.aicpa-cima.com/resources/article/learn-more-about-cpa-exam-scoring-and-pass-rates"
+    },
+    {
+      "seedId": "8dec277b-ce46-459a-833a-7fbcaf47eb47",
+      "category": "exams",
+      "navigationKeyword1": "finance",
+      "navigationKeyword2": "general-finance",
+      "question": "What must CFA candidates complete at each level to receive an exam result?",
+      "correctAnswer": "At least one Practical Skills Module",
+      "incorrectAnswers": [
+        "A group interview",
+        "Two extra mock exams",
+        "A research paper"
+      ],
+      "explanation": "CFA Institute requires one Practical Skills Module at each level to receive the exam result.",
+      "keywords": [
+        "cfa",
+        "general-finance",
+        "test-prep"
+      ],
+      "source": "https://www.cfainstitute.org/programs/cfa/practical-skills-modules"
+    },
+    {
+      "seedId": "f4822bf2-e81f-4402-ba64-ed218cb14849",
+      "category": "exams",
+      "navigationKeyword1": "finance",
+      "navigationKeyword2": "general-finance",
+      "question": "Which exam is a corequisite for the Series 7?",
+      "correctAnswer": "SIE",
+      "incorrectAnswers": [
+        "Series 63",
+        "Series 24",
+        "Series 66"
+      ],
+      "explanation": "FINRA states that the Securities Industry Essentials exam is a corequisite to Series 7.",
+      "keywords": [
+        "series-7",
+        "general-finance",
+        "test-prep"
+      ],
+      "source": "https://www.finra.org/registration-exams-ce/qualification-exams/series7"
+    },
+    {
+      "seedId": "d9b7aa38-9da1-4842-acb5-5c01168e843c",
+      "category": "exams",
+      "navigationKeyword1": "finance",
+      "navigationKeyword2": "general-finance",
+      "question": "Who must sponsor a candidate for the Series 7 exam?",
+      "correctAnswer": "A FINRA member firm or other applicable SRO member firm",
+      "incorrectAnswers": [
+        "Any public accounting firm",
+        "A state university",
+        "No sponsor is required"
+      ],
+      "explanation": "FINRA says candidates must be associated with and sponsored by a FINRA member firm or other applicable SRO member firm.",
+      "keywords": [
+        "series-7",
+        "general-finance",
+        "test-prep"
+      ],
+      "source": "https://www.finra.org/registration-exams-ce/qualification-exams/series7"
+    }
+  ]
+}

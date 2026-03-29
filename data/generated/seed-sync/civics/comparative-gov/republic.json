@@ -1,0 +1,121 @@
+{
+  "schemaVersion": 1,
+  "seedSet": "core-public-items",
+  "deltaPreviewLimit": 200,
+  "items": [
+    {
+      "seedId": "05388800-4e88-5706-b61e-5cfc8485fa23",
+      "category": "civics",
+      "navigationKeyword1": "comparative-gov",
+      "navigationKeyword2": "republic",
+      "question": "In civic terms, what defines a republic compared with a monarchy?",
+      "correctAnswer": "the head of state is not a hereditary monarch, usually an elected or representative office",
+      "incorrectAnswers": [
+        "there are no laws",
+        "only direct democracy may exist",
+        "courts cannot review any statute"
+      ],
+      "explanation": "Republics place sovereignty in the people and public offices rather than inherited crown rule.",
+      "keywords": [
+        "republic",
+        "head-of-state"
+      ],
+      "source": "https://www.usa.gov/branches-of-government"
+    },
+    {
+      "seedId": "a38ddf12-87b5-5c32-b599-5b927d6d56e6",
+      "category": "civics",
+      "navigationKeyword1": "comparative-gov",
+      "navigationKeyword2": "republic",
+      "question": "In many republics, what document sets the basic rules for how offices are filled and limited?",
+      "correctAnswer": "a constitution",
+      "incorrectAnswers": [
+        "a single press release",
+        "an annual sports schedule",
+        "private corporate bylaws only"
+      ],
+      "explanation": "Constitutions define terms, powers, and succession for public offices in a republic.",
+      "keywords": [
+        "constitution",
+        "rule-of-law"
+      ],
+      "source": "https://www.congress.gov/constitution-annotated/"
+    },
+    {
+      "seedId": "11b6d01d-bcba-5a8c-8bc2-68f24db9ea0f",
+      "category": "civics",
+      "navigationKeyword1": "comparative-gov",
+      "navigationKeyword2": "republic",
+      "question": "What is a federal republic?",
+      "correctAnswer": "a republic where power is divided between a national government and regional governments",
+      "incorrectAnswers": [
+        "a system with no written constitution",
+        "a country ruled only by city councils",
+        "a monarchy with no courts"
+      ],
+      "explanation": "Federalism layers elected governments; combined with republicanism it rejects unitary monarchy.",
+      "keywords": [
+        "federal-republic",
+        "federalism"
+      ],
+      "source": "https://www.loc.gov/rr/program/bib/ourdocs/Constitution.html"
+    },
+    {
+      "seedId": "1a6539bb-bbb7-59d2-bf9b-168540e4e8b5",
+      "category": "civics",
+      "navigationKeyword1": "comparative-gov",
+      "navigationKeyword2": "republic",
+      "question": "What is an aristocratic republic in historical comparative study?",
+      "correctAnswer": "a republic where a narrow elite held most political power",
+      "incorrectAnswers": [
+        "any country with a hereditary king",
+        "a system with no laws at all",
+        "rule only by foreign armies"
+      ],
+      "explanation": "Some early republics combined non-monarchy with limited suffrage and elite dominance.",
+      "keywords": [
+        "historical-republics",
+        "civics-history"
+      ],
+      "source": "https://www.britannica.com/topic/republic"
+    },
+    {
+      "seedId": "6c1aaae6-9616-557d-91be-7c1310ec348b",
+      "category": "civics",
+      "navigationKeyword1": "comparative-gov",
+      "navigationKeyword2": "republic",
+      "question": "Why can a country be both a republic and a democracy?",
+      "correctAnswer": "republic describes no hereditary ruler; democracy describes how people participate in rule",
+      "incorrectAnswers": [
+        "because the words always mean the same thing",
+        "because republics ban voting",
+        "because democracy requires a king"
+      ],
+      "explanation": "One label is about office structure; the other is about popular participation and rights.",
+      "keywords": [
+        "republic-democracy",
+        "civics-terms"
+      ],
+      "source": "https://www.britannica.com/topic/republic"
+    },
+    {
+      "seedId": "c70b02dd-205c-5a57-b061-6f9b6091d807",
+      "category": "civics",
+      "navigationKeyword1": "comparative-gov",
+      "navigationKeyword2": "republic",
+      "question": "Why do some republics elect a mostly ceremonial president while others give the president real power?",
+      "correctAnswer": "their constitutions divide roles differently between president, cabinet, and parliament",
+      "incorrectAnswers": [
+        "because ceremonial offices are always illegal",
+        "because republics never use written law",
+        "because courts pick every president"
+      ],
+      "explanation": "Design choices create parliamentary, presidential, or mixed republican systems.",
+      "keywords": [
+        "semi-presidential",
+        "institutions"
+      ],
+      "source": "https://www.oecd.org/governance/"
+    }
+  ]
+}

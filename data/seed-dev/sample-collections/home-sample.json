@@ -1,0 +1,19 @@
+{
+  "id": "8f9b8c14-8d30-4d94-9b20-4c7bb7f7f511",
+  "name": "Fun Trivia Facts",
+  "description": "A public five-item trivia sampler with surprising facts and easy conversation-starter questions.",
+  "itemSeedIds": [
+    "fdf0d78c-11a7-4e34-9ef5-c796f814f46a",
+    "4d7a4c4f-c4a4-48c2-8557-3ef47d5978e4",
+    "b603bd31-44db-4341-9a6e-5c50791d46d6",
+    "6659d909-8b63-476f-a47d-ee43a931d73f",
+    "d626da85-d629-4ae2-a9fd-9fccb6d09db0"
+  ],
+  "itemQuestions": [
+    "What color is the \"black box\" recorder on most commercial airplanes?",
+    "What animal's fingerprints are so close to humans that they can confuse crime-scene analysis?",
+    "Which planet has a day longer than its year?",
+    "What is the national animal of Scotland?",
+    "What everyday food never really spoils when stored properly?"
+  ]
+}

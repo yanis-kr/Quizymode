@@ -1,0 +1,45 @@
+{
+  "schemaVersion": 1,
+  "seedSet": "core-public-items",
+  "deltaPreviewLimit": 200,
+  "items": [
+    {
+      "seedId": "8ffc6715-cfbf-569b-9ec0-61a82e1ac1a1",
+      "category": "humanities",
+      "navigationKeyword1": "culture",
+      "navigationKeyword2": "rituals",
+      "question": "What is a ritual?",
+      "correctAnswer": "a repeated symbolic action with shared meaning",
+      "incorrectAnswers": [
+        "a random mistake",
+        "a one-page book review",
+        "a lens for a camera"
+      ],
+      "explanation": "Rituals are repeated acts that often carry social, cultural, or religious meaning.",
+      "keywords": [
+        "culture-rituals",
+        "ritual"
+      ],
+      "source": "https://www.britannica.com/topic/ritual"
+    },
+    {
+      "seedId": "0c9357b4-7c57-5718-9971-287dd20d79d4",
+      "category": "humanities",
+      "navigationKeyword1": "culture",
+      "navigationKeyword2": "rituals",
+      "question": "Why are rituals important in culture?",
+      "correctAnswer": "they mark meaning, memory, or transition",
+      "incorrectAnswers": [
+        "they remove all change",
+        "they exist only in ancient times",
+        "they can never be public"
+      ],
+      "explanation": "Rituals can help communities mark belonging, stages of life, or sacred meaning.",
+      "keywords": [
+        "culture-rituals",
+        "community"
+      ],
+      "source": "https://www.si.edu/spotlight/celebrating-culture"
+    }
+  ]
+}

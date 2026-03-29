@@ -1,0 +1,247 @@
+{
+  "schemaVersion": 1,
+  "seedSet": "core-public-items",
+  "deltaPreviewLimit": 200,
+  "items": [
+    {
+      "seedId": "df22acf8-7fac-487e-b665-c705fb0d9345",
+      "category": "history",
+      "navigationKeyword1": "europe",
+      "navigationKeyword2": "britain",
+      "question": "Clement Attlee\u2019s Labour government created the National Health Service and nationalized key industries in which postwar context?",
+      "correctAnswer": "Post\u2013World War II reconstruction and the cradle-to-grave welfare state",
+      "incorrectAnswers": [
+        "The Edwardian era",
+        "The Irish Famine",
+        "The South Sea Bubble"
+      ],
+      "explanation": "The 1945 landslide reflected voters\u2019 demand for social security after total war.",
+      "keywords": [
+        "britain",
+        "welfare-state",
+        "attlee"
+      ],
+      "source": "https://www.britannica.com/biography/Clement-Attlee"
+    },
+    {
+      "seedId": "3e48c6dd-cebc-411f-b5b8-d269d882492b",
+      "category": "history",
+      "navigationKeyword1": "europe",
+      "navigationKeyword2": "britain",
+      "question": "Elizabeth I\u2019s navy defeated the Spanish Armada in which year?",
+      "correctAnswer": "1588",
+      "incorrectAnswers": [
+        "1517",
+        "1649",
+        "1707"
+      ],
+      "explanation": "The victory bolstered Protestant England\u2019s prestige and checked Philip II\u2019s invasion plans.",
+      "keywords": [
+        "britain",
+        "armada",
+        "elizabeth-i"
+      ],
+      "source": "https://www.britannica.com/event/Spanish-Armada"
+    },
+    {
+      "seedId": "c34542b4-6198-4e60-a9e4-c7954d714cab",
+      "category": "history",
+      "navigationKeyword1": "europe",
+      "navigationKeyword2": "britain",
+      "question": "Henry VIII\u2019s break with Rome produced the Church of England largely so he could annul his marriage to whom?",
+      "correctAnswer": "Catherine of Aragon",
+      "incorrectAnswers": [
+        "Anne of Cleves",
+        "Catherine Howard",
+        "Jane Seymour"
+      ],
+      "explanation": "Parliament\u2019s Acts of Supremacy made the monarch head of the English church.",
+      "keywords": [
+        "britain",
+        "tudors",
+        "reformation"
+      ],
+      "source": "https://www.britannica.com/biography/Henry-VIII-king-of-England"
+    },
+    {
+      "seedId": "b1642a48-b441-4511-8ce1-3e38f42abbb6",
+      "category": "history",
+      "navigationKeyword1": "europe",
+      "navigationKeyword2": "britain",
+      "question": "King John sealed which 1215 charter that later symbolized limits on royal power?",
+      "correctAnswer": "Magna Carta",
+      "incorrectAnswers": [
+        "The Bill of Rights 1689",
+        "The Petition of Right",
+        "The Act of Supremacy"
+      ],
+      "explanation": "Barons forced guarantees on feudal law and consultation, seeds of constitutional tradition.",
+      "keywords": [
+        "britain",
+        "magna-carta",
+        "medieval"
+      ],
+      "source": "https://www.britannica.com/topic/Magna-Carta-English-charter"
+    },
+    {
+      "seedId": "7533f259-bc69-4dc0-99ea-24703cf1e1c6",
+      "category": "history",
+      "navigationKeyword1": "europe",
+      "navigationKeyword2": "britain",
+      "question": "Margaret Thatcher\u2019s governments privatized state industries and curbed union power during which era?",
+      "correctAnswer": "The 1980s (Thatcherism)",
+      "incorrectAnswers": [
+        "The 1950s consensus",
+        "The 1920s General Strike alone",
+        "The Glorious Revolution"
+      ],
+      "explanation": "Her monetarist policies and Falklands War victory reshaped British political economy.",
+      "keywords": [
+        "britain",
+        "thatcher",
+        "conservative"
+      ],
+      "source": "https://www.britannica.com/biography/Margaret-Thatcher"
+    },
+    {
+      "seedId": "d8f86742-99a5-4719-9d52-60cf7879d18f",
+      "category": "history",
+      "navigationKeyword1": "europe",
+      "navigationKeyword2": "britain",
+      "question": "Parliament tried and executed Charles I in 1649 after which series of civil wars?",
+      "correctAnswer": "The English Civil Wars",
+      "incorrectAnswers": [
+        "The Wars of the Roses",
+        "The Glorious Revolution",
+        "The Jacobite risings"
+      ],
+      "explanation": "The conflict pitted crown against Parliament and produced a short-lived republic under Cromwell.",
+      "keywords": [
+        "britain",
+        "civil-war",
+        "stuart"
+      ],
+      "source": "https://www.britannica.com/event/English-Civil-Wars"
+    },
+    {
+      "seedId": "d3704c8e-84ac-4834-885a-04186ca26e11",
+      "category": "history",
+      "navigationKeyword1": "europe",
+      "navigationKeyword2": "britain",
+      "question": "Queen Victoria\u2019s long reign (1837\u20131901) coincided with Britain\u2019s peak as which kind of global power?",
+      "correctAnswer": "The leading industrial empire and naval hegemon",
+      "incorrectAnswers": [
+        "A landlocked federation",
+        "A minor Baltic principality",
+        "A purely republican federation"
+      ],
+      "explanation": "Victorian Britain combined factory output, free-trade ideology, and worldwide imperial holdings.",
+      "keywords": [
+        "britain",
+        "victorian",
+        "empire"
+      ],
+      "source": "https://www.britannica.com/biography/Victoria-queen-of-United-Kingdom"
+    },
+    {
+      "seedId": "e4c50cd7-1148-45f9-8cbd-3d088ab84eaf",
+      "category": "history",
+      "navigationKeyword1": "europe",
+      "navigationKeyword2": "britain",
+      "question": "The 1707 Act of Union merged the English and Scottish parliaments into what state?",
+      "correctAnswer": "Great Britain",
+      "incorrectAnswers": [
+        "The United Kingdom of Great Britain and Ireland",
+        "The Commonwealth of England",
+        "The Angevin Empire"
+      ],
+      "explanation": "Shared crown became a single legislature, integrating Scotland into Britain\u2019s fiscal-military state.",
+      "keywords": [
+        "britain",
+        "scotland",
+        "union"
+      ],
+      "source": "https://www.britannica.com/event/Act-of-Union-England-and-Scotland-1707"
+    },
+    {
+      "seedId": "df02bfcf-346c-453f-aad8-e4de799e0017",
+      "category": "history",
+      "navigationKeyword1": "europe",
+      "navigationKeyword2": "britain",
+      "question": "The 1832 Reform Act expanded the electorate mainly by redistributing seats away from which type of boroughs?",
+      "correctAnswer": "Rotten and pocket boroughs (underpopulated constituencies)",
+      "incorrectAnswers": [
+        "Only colonial plantations",
+        "Scottish clan seats",
+        "Irish freeholds exclusively"
+      ],
+      "explanation": "Industrial cities gained representation, a first major step toward mass politics.",
+      "keywords": [
+        "britain",
+        "reform-act",
+        "parliament"
+      ],
+      "source": "https://www.britannica.com/event/Reform-Bill-United-Kingdom-1832"
+    },
+    {
+      "seedId": "ad469bc9-6908-41f2-9e40-2eedfc1ad3f0",
+      "category": "history",
+      "navigationKeyword1": "europe",
+      "navigationKeyword2": "britain",
+      "question": "Tony Blair\u2019s government devolved power to Scotland and Wales and intervened militarily alongside the U.S. in which 2003 war?",
+      "correctAnswer": "The Iraq War",
+      "incorrectAnswers": [
+        "The Korean War",
+        "The Falklands War",
+        "The Crimean War"
+      ],
+      "explanation": "Blair\u2019s \u2018Third Way\u2019 Labour also expanded the Human Rights Act framework domestically.",
+      "keywords": [
+        "britain",
+        "blair",
+        "iraq"
+      ],
+      "source": "https://www.britannica.com/biography/Tony-Blair"
+    },
+    {
+      "seedId": "16bf1383-b09d-455d-ae11-5f80014ce994",
+      "category": "history",
+      "navigationKeyword1": "europe",
+      "navigationKeyword2": "britain",
+      "question": "William the Conqueror\u2019s victory at Hastings in 1066 installed which ducal dynasty on England\u2019s throne?",
+      "correctAnswer": "The Norman (Norman French) dynasty",
+      "incorrectAnswers": [
+        "The Plantagenets",
+        "The Tudors",
+        "The Stuarts"
+      ],
+      "explanation": "The Conquest fused Anglo-Saxon and Norman institutions and reshaped English feudalism.",
+      "keywords": [
+        "britain",
+        "norman-conquest",
+        "1066"
+      ],
+      "source": "https://www.britannica.com/event/Battle-of-Hastings"
+    },
+    {
+      "seedId": "802b8bc2-c289-47d4-9c45-a6ae9d8cf7d4",
+      "category": "history",
+      "navigationKeyword1": "europe",
+      "navigationKeyword2": "britain",
+      "question": "Winston Churchill became prime minister in May 1940 as Britain faced invasion after the fall of where?",
+      "correctAnswer": "France (the German victory in the Battle of France)",
+      "incorrectAnswers": [
+        "Norway",
+        "Greece",
+        "Poland"
+      ],
+      "explanation": "His wartime speeches rallied the nation through the Battle of Britain and the Blitz.",
+      "keywords": [
+        "britain",
+        "churchill",
+        "world-war-ii"
+      ],
+      "source": "https://www.britannica.com/biography/Winston-Churchill"
+    }
+  ]
+}

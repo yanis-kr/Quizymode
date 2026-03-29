@@ -1,0 +1,235 @@
+{
+  "schemaVersion": 1,
+  "seedSet": "core-public-items",
+  "deltaPreviewLimit": 200,
+  "items": [
+    {
+      "seedId": "67745fe1-6262-4e13-a371-017d0b5eccd6",
+      "category": "science",
+      "navigationKeyword1": "lab-skills",
+      "navigationKeyword2": "methods",
+      "question": "What is aseptic technique?",
+      "correctAnswer": "Practices to reduce contamination in cultures",
+      "incorrectAnswers": [
+        "Work openly on bench without care",
+        "Use mouth pipetting",
+        "Ignore flame"
+      ],
+      "explanation": "Sterile field + sterile tools.",
+      "keywords": [
+        "aseptic",
+        "microbiology"
+      ],
+      "source": "https://www.cdc.gov/labs/biosafety.html"
+    },
+    {
+      "seedId": "a976a3ab-ddba-4275-b932-a0de5edf4bac",
+      "category": "science",
+      "navigationKeyword1": "lab-skills",
+      "navigationKeyword2": "methods",
+      "question": "What is blinded experiment?",
+      "correctAnswer": "Participants/observers unaware of group assignment",
+      "incorrectAnswers": [
+        "Everyone knows arm",
+        "Only observational",
+        "Only theoretical"
+      ],
+      "explanation": "Reduces bias.",
+      "keywords": [
+        "blinding",
+        "bias"
+      ],
+      "source": "https://www.nature.com/nature-portfolio/editorial-policies/reporting-standards-for-life-sciences"
+    },
+    {
+      "seedId": "66bb6ec1-f5f8-4b60-b9b8-15bf9f1ac049",
+      "category": "science",
+      "navigationKeyword1": "lab-skills",
+      "navigationKeyword2": "methods",
+      "question": "What is control variable?",
+      "correctAnswer": "Held constant to isolate relationships",
+      "incorrectAnswers": [
+        "Changed freely",
+        "Same as dependent",
+        "Unmeasured always"
+      ],
+      "explanation": "Controls reduce confounding.",
+      "keywords": [
+        "controls",
+        "experimental-design"
+      ],
+      "source": "https://undsci.berkeley.edu/article/whatsscience_04"
+    },
+    {
+      "seedId": "8b77b95f-b358-4f88-975e-46710421208a",
+      "category": "science",
+      "navigationKeyword1": "lab-skills",
+      "navigationKeyword2": "methods",
+      "question": "What is dependent variable?",
+      "correctAnswer": "Measured outcome",
+      "incorrectAnswers": [
+        "Manipulated input",
+        "Ignored variable",
+        "Random noise only"
+      ],
+      "explanation": "Plotted on y in many cases.",
+      "keywords": [
+        "dependent-variable",
+        "design"
+      ],
+      "source": "https://undsci.berkeley.edu/article/whatsscience_04"
+    },
+    {
+      "seedId": "1735f510-ab7a-496f-b437-21479a9d0762",
+      "category": "science",
+      "navigationKeyword1": "lab-skills",
+      "navigationKeyword2": "methods",
+      "question": "What is independent variable?",
+      "correctAnswer": "Manipulated variable",
+      "incorrectAnswers": [
+        "Outcome measured",
+        "Control always",
+        "Constant always"
+      ],
+      "explanation": "Plotted on x in many cases.",
+      "keywords": [
+        "independent-variable",
+        "design"
+      ],
+      "source": "https://undsci.berkeley.edu/article/whatsscience_04"
+    },
+    {
+      "seedId": "6458d5c8-568e-4979-b371-3590c680724b",
+      "category": "science",
+      "navigationKeyword1": "lab-skills",
+      "navigationKeyword2": "methods",
+      "question": "What is negative control?",
+      "correctAnswer": "Expected not to show effect",
+      "incorrectAnswers": [
+        "Always positive",
+        "Always unknown",
+        "Same as treatment"
+      ],
+      "explanation": "Detects false positives.",
+      "keywords": [
+        "controls",
+        "assays"
+      ],
+      "source": "https://www.nature.com/nature-portfolio/editorial-policies/reporting-standards-for-life-sciences"
+    },
+    {
+      "seedId": "54c75752-c66f-4cef-8d6c-b67b4d9284ba",
+      "category": "science",
+      "navigationKeyword1": "lab-skills",
+      "navigationKeyword2": "methods",
+      "question": "What is positive control?",
+      "correctAnswer": "Expected to show effect",
+      "incorrectAnswers": [
+        "Expected blank",
+        "Water only",
+        "No template PCR"
+      ],
+      "explanation": "Validates assay worked.",
+      "keywords": [
+        "positive-control",
+        "assays"
+      ],
+      "source": "https://www.nature.com/nature-portfolio/editorial-policies/reporting-standards-for-life-sciences"
+    },
+    {
+      "seedId": "f7e99618-0152-435c-95e0-d68b6a047dcd",
+      "category": "science",
+      "navigationKeyword1": "lab-skills",
+      "navigationKeyword2": "methods",
+      "question": "What is randomized assignment?",
+      "correctAnswer": "Randomly allocate subjects to groups",
+      "incorrectAnswers": [
+        "Always alphabetical",
+        "Self-selection always",
+        "By height only"
+      ],
+      "explanation": "Supports causal inference.",
+      "keywords": [
+        "randomization",
+        "causality"
+      ],
+      "source": "https://www.nature.com/nature-portfolio/editorial-policies/reporting-standards-for-life-sciences"
+    },
+    {
+      "seedId": "cff59754-d72e-4e06-8084-39b66c661163",
+      "category": "science",
+      "navigationKeyword1": "lab-skills",
+      "navigationKeyword2": "methods",
+      "question": "What is replication?",
+      "correctAnswer": "Repeat experiment to verify results",
+      "incorrectAnswers": [
+        "Never needed",
+        "Same as repetition in statistics always",
+        "Only for failures"
+      ],
+      "explanation": "Science relies on repeatability.",
+      "keywords": [
+        "replication",
+        "methods"
+      ],
+      "source": "https://www.nih.gov/research-training/rigor-reproducibility"
+    },
+    {
+      "seedId": "d46b30be-403f-444c-b20f-b071c7958bf2",
+      "category": "science",
+      "navigationKeyword1": "lab-skills",
+      "navigationKeyword2": "methods",
+      "question": "What is serial dilution?",
+      "correctAnswer": "Stepwise dilution to reach target concentration",
+      "incorrectAnswers": [
+        "Mix without calculation",
+        "Heat until dry",
+        "Only weight-based"
+      ],
+      "explanation": "Common in biology/biochemistry.",
+      "keywords": [
+        "dilution",
+        "solution-prep"
+      ],
+      "source": "https://www.flinnsci.com/lab-safety/"
+    },
+    {
+      "seedId": "a8fd53f9-f3df-44eb-bae2-ab35876930ea",
+      "category": "science",
+      "navigationKeyword1": "lab-skills",
+      "navigationKeyword2": "methods",
+      "question": "What is standard solution?",
+      "correctAnswer": "Known concentration reference",
+      "incorrectAnswers": [
+        "Unknown concentration",
+        "Only solvent",
+        "Only gas"
+      ],
+      "explanation": "Used in calibration.",
+      "keywords": [
+        "standard",
+        "analytical"
+      ],
+      "source": "https://www.nist.gov/pml/weights-and-measures/laboratory-metrology"
+    },
+    {
+      "seedId": "6e84e16b-2bed-473b-b2bc-2a9b83e18718",
+      "category": "science",
+      "navigationKeyword1": "lab-skills",
+      "navigationKeyword2": "methods",
+      "question": "What is titration endpoint?",
+      "correctAnswer": "Observed point stopping titration (indicator/color/pH)",
+      "incorrectAnswers": [
+        "Always pH 14",
+        "Always equivalence by eye without meaning",
+        "Random volume"
+      ],
+      "explanation": "Endpoint approximates equivalence point.",
+      "keywords": [
+        "titration",
+        "analytical"
+      ],
+      "source": "https://openstax.org/books/chemistry-2e/pages/14-7-acid-base-titrations"
+    }
+  ]
+}

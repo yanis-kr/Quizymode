@@ -1,0 +1,45 @@
+{
+  "schemaVersion": 1,
+  "seedSet": "core-public-items",
+  "deltaPreviewLimit": 200,
+  "items": [
+    {
+      "seedId": "6a41376f-d29a-5555-9fb2-6355e1989f66",
+      "category": "humanities",
+      "navigationKeyword1": "visual-art",
+      "navigationKeyword2": "sculpture",
+      "question": "What is a relief sculpture?",
+      "correctAnswer": "a sculpture that projects from a flat background",
+      "incorrectAnswers": [
+        "a sculpture made only of ice",
+        "a poem about a statue",
+        "a painting with no frame"
+      ],
+      "explanation": "Relief sculpture remains attached to a background surface while projecting outward.",
+      "keywords": [
+        "visual-art",
+        "relief"
+      ],
+      "source": "https://www.metmuseum.org/toah/hd/scur/hd_scur.htm"
+    },
+    {
+      "seedId": "5cb79aae-0f3b-5f14-b94e-885bf009645f",
+      "category": "humanities",
+      "navigationKeyword1": "visual-art",
+      "navigationKeyword2": "sculpture",
+      "question": "What makes sculpture different from most painting?",
+      "correctAnswer": "it is three-dimensional",
+      "incorrectAnswers": [
+        "it uses only blue colors",
+        "it must include words",
+        "it cannot represent people"
+      ],
+      "explanation": "Sculpture occupies physical space and is experienced as a three-dimensional form.",
+      "keywords": [
+        "visual-art",
+        "sculpture"
+      ],
+      "source": "https://www.britannica.com/art/sculpture"
+    }
+  ]
+}

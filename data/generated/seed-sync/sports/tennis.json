@@ -1,0 +1,1207 @@
+{
+  "schemaVersion": 1,
+  "seedSet": "core-public-items",
+  "deltaPreviewLimit": 200,
+  "items": [
+    {
+      "seedId": "b0e4d418-e828-5ad4-a1fa-d3b47e2c154c",
+      "category": "sports",
+      "navigationKeyword1": "tennis",
+      "navigationKeyword2": "champions",
+      "question": "Which woman won the 1988 Wimbledon singles title as part of her Golden Slam season?",
+      "correctAnswer": "Steffi Graf",
+      "incorrectAnswers": [
+        "Martina Navratilova",
+        "Chris Evert",
+        "Monica Seles"
+      ],
+      "explanation": "Graf won Wimbledon in the same season she completed the Golden Slam.",
+      "keywords": [
+        "tennis",
+        "champions",
+        "steffi-graf"
+      ],
+      "source": "https://www.wimbledon.com/en_GB/history/champions.html"
+    },
+    {
+      "seedId": "b60860bf-66cb-5762-94c3-2e6b9fb6ab92",
+      "category": "sports",
+      "navigationKeyword1": "tennis",
+      "navigationKeyword2": "champions",
+      "question": "Who won the 1999 US Open women's singles title at age 17?",
+      "correctAnswer": "Serena Williams",
+      "incorrectAnswers": [
+        "Martina Hingis",
+        "Venus Williams",
+        "Monica Seles"
+      ],
+      "explanation": "Serena won her first major singles title at the 1999 US Open.",
+      "keywords": [
+        "tennis",
+        "champions",
+        "serena-williams"
+      ],
+      "source": "https://www.usopen.org/en_US/visit/history/champions.html"
+    },
+    {
+      "seedId": "f118880d-f0af-558b-bd13-71a9a69449c3",
+      "category": "sports",
+      "navigationKeyword1": "tennis",
+      "navigationKeyword2": "champions",
+      "question": "Who won the 2008 Wimbledon men's singles title in the famous final against Roger Federer?",
+      "correctAnswer": "Rafael Nadal",
+      "incorrectAnswers": [
+        "Novak Djokovic",
+        "Andy Murray",
+        "Pete Sampras"
+      ],
+      "explanation": "Nadal won the 2008 Wimbledon final in one of tennis's most famous matches.",
+      "keywords": [
+        "tennis",
+        "champions",
+        "classic-finals"
+      ],
+      "source": "https://www.wimbledon.com/en_GB/history/champions.html"
+    },
+    {
+      "seedId": "8d82bfe2-fcfb-5445-8359-3acc612a2fde",
+      "category": "sports",
+      "navigationKeyword1": "tennis",
+      "navigationKeyword2": "champions",
+      "question": "Who won the 2015 US Open women's singles title?",
+      "correctAnswer": "Flavia Pennetta",
+      "incorrectAnswers": [
+        "Roberta Vinci",
+        "Serena Williams",
+        "Simona Halep"
+      ],
+      "explanation": "Pennetta beat Vinci in the 2015 US Open final.",
+      "keywords": [
+        "tennis",
+        "champions",
+        "women"
+      ],
+      "source": "https://www.usopen.org/en_US/visit/history/champions.html"
+    },
+    {
+      "seedId": "f1cb679b-fc71-56cb-9496-6856c2bbef4d",
+      "category": "sports",
+      "navigationKeyword1": "tennis",
+      "navigationKeyword2": "champions",
+      "question": "Who won the 2016 French Open men's singles title to complete a career Grand Slam?",
+      "correctAnswer": "Novak Djokovic",
+      "incorrectAnswers": [
+        "Andy Murray",
+        "Rafael Nadal",
+        "Stan Wawrinka"
+      ],
+      "explanation": "Djokovic won Roland Garros in 2016 to complete his career Grand Slam.",
+      "keywords": [
+        "tennis",
+        "champions",
+        "novak-djokovic"
+      ],
+      "source": "https://www.rolandgarros.com/en-us/palmares"
+    },
+    {
+      "seedId": "012d3ab5-5607-5f26-bdf3-1b4329a6f6ff",
+      "category": "sports",
+      "navigationKeyword1": "tennis",
+      "navigationKeyword2": "champions",
+      "question": "Who won the 2017 Australian Open men's singles final over Rafael Nadal?",
+      "correctAnswer": "Roger Federer",
+      "incorrectAnswers": [
+        "Novak Djokovic",
+        "Andy Murray",
+        "Stan Wawrinka"
+      ],
+      "explanation": "Federer returned from injury to win the 2017 Australian Open.",
+      "keywords": [
+        "tennis",
+        "champions",
+        "roger-federer"
+      ],
+      "source": "https://ausopen.com/history/honour-roll"
+    },
+    {
+      "seedId": "5965488b-9340-52a3-b03b-95d1e6be4096",
+      "category": "sports",
+      "navigationKeyword1": "tennis",
+      "navigationKeyword2": "champions",
+      "question": "Who won the 2022 Australian Open men's singles title after defeating Daniil Medvedev?",
+      "correctAnswer": "Rafael Nadal",
+      "incorrectAnswers": [
+        "Novak Djokovic",
+        "Carlos Alcaraz",
+        "Roger Federer"
+      ],
+      "explanation": "Nadal came back from two sets down to win the 2022 title.",
+      "keywords": [
+        "tennis",
+        "champions",
+        "australian-open"
+      ],
+      "source": "https://ausopen.com/history/honour-roll"
+    },
+    {
+      "seedId": "0c237aa8-830f-58f6-b0f0-749a8c419a94",
+      "category": "sports",
+      "navigationKeyword1": "tennis",
+      "navigationKeyword2": "champions",
+      "question": "Who won the 2023 US Open women's singles title?",
+      "correctAnswer": "Coco Gauff",
+      "incorrectAnswers": [
+        "Aryna Sabalenka",
+        "Iga Swiatek",
+        "Jessica Pegula"
+      ],
+      "explanation": "Gauff won her first major singles title at the 2023 US Open.",
+      "keywords": [
+        "tennis",
+        "champions",
+        "us-open"
+      ],
+      "source": "https://www.usopen.org/en_US/visit/history/champions.html"
+    },
+    {
+      "seedId": "72878ae9-55a2-5709-83da-7b9f047afaac",
+      "category": "sports",
+      "navigationKeyword1": "tennis",
+      "navigationKeyword2": "champions",
+      "question": "Who won the 2023 Wimbledon men's singles title?",
+      "correctAnswer": "Carlos Alcaraz",
+      "incorrectAnswers": [
+        "Novak Djokovic",
+        "Daniil Medvedev",
+        "Jannik Sinner"
+      ],
+      "explanation": "Alcaraz beat Djokovic in the 2023 Wimbledon final.",
+      "keywords": [
+        "tennis",
+        "champions",
+        "wimbledon"
+      ],
+      "source": "https://www.wimbledon.com/en_GB/history/champions.html"
+    },
+    {
+      "seedId": "7a8cf068-f2ad-51b5-b6e4-af6aee5d4042",
+      "category": "sports",
+      "navigationKeyword1": "tennis",
+      "navigationKeyword2": "champions",
+      "question": "Who won the 2024 French Open men's singles title?",
+      "correctAnswer": "Carlos Alcaraz",
+      "incorrectAnswers": [
+        "Alexander Zverev",
+        "Novak Djokovic",
+        "Casper Ruud"
+      ],
+      "explanation": "Alcaraz won his first Roland Garros singles crown in 2024.",
+      "keywords": [
+        "tennis",
+        "champions",
+        "roland-garros"
+      ],
+      "source": "https://www.rolandgarros.com/en-us/palmares"
+    },
+    {
+      "seedId": "849ba139-b7d9-5ee5-b5e6-e6d627fc773d",
+      "category": "sports",
+      "navigationKeyword1": "tennis",
+      "navigationKeyword2": "grand-slams",
+      "question": "How many singles majors make up the Grand Slam in tennis?",
+      "correctAnswer": "Four",
+      "incorrectAnswers": [
+        "Two",
+        "Three",
+        "Five"
+      ],
+      "explanation": "Tennis recognizes four major championships each year.",
+      "keywords": [
+        "tennis",
+        "grand-slams",
+        "majors"
+      ],
+      "source": "https://www.britannica.com/sports/tennis"
+    },
+    {
+      "seedId": "acc09145-13b6-5eef-85a9-c5242f18343b",
+      "category": "sports",
+      "navigationKeyword1": "tennis",
+      "navigationKeyword2": "grand-slams",
+      "question": "If a player wins all four majors in one calendar year, what has that player completed?",
+      "correctAnswer": "A calendar Grand Slam",
+      "incorrectAnswers": [
+        "A golden set",
+        "A Davis sweep",
+        "A masters slam"
+      ],
+      "explanation": "Winning the four majors in one year is called a calendar Grand Slam.",
+      "keywords": [
+        "tennis",
+        "grand-slams",
+        "calendar-grand-slam"
+      ],
+      "source": "https://www.britannica.com/sports/tennis"
+    },
+    {
+      "seedId": "97dc5dad-72df-5a27-9c78-16686f6eb605",
+      "category": "sports",
+      "navigationKeyword1": "tennis",
+      "navigationKeyword2": "grand-slams",
+      "question": "Which Grand Slam ends the tennis major season in New York?",
+      "correctAnswer": "US Open",
+      "incorrectAnswers": [
+        "Wimbledon",
+        "French Open",
+        "ATP Finals"
+      ],
+      "explanation": "The US Open is played late in the calendar year in New York.",
+      "keywords": [
+        "tennis",
+        "grand-slams",
+        "new-york"
+      ],
+      "source": "https://www.britannica.com/sports/US-Open-tennis"
+    },
+    {
+      "seedId": "62c7a92a-06f9-538b-857d-3f6b5da0e3c1",
+      "category": "sports",
+      "navigationKeyword1": "tennis",
+      "navigationKeyword2": "grand-slams",
+      "question": "Which Grand Slam is most associated with grass courts and all-white clothing traditions?",
+      "correctAnswer": "Wimbledon",
+      "incorrectAnswers": [
+        "Australian Open",
+        "French Open",
+        "US Open"
+      ],
+      "explanation": "Wimbledon is the traditional grass-court major with a white clothing rule.",
+      "keywords": [
+        "tennis",
+        "grand-slams",
+        "tradition"
+      ],
+      "source": "https://www.britannica.com/sports/Wimbledon-tennis"
+    },
+    {
+      "seedId": "f1a4d907-b933-5f23-9df0-a3322e42c676",
+      "category": "sports",
+      "navigationKeyword1": "tennis",
+      "navigationKeyword2": "grand-slams",
+      "question": "Which Grand Slam is played on clay at Roland Garros?",
+      "correctAnswer": "French Open",
+      "incorrectAnswers": [
+        "US Open",
+        "Australian Open",
+        "Wimbledon"
+      ],
+      "explanation": "The French Open is the only major played on clay.",
+      "keywords": [
+        "tennis",
+        "grand-slams",
+        "clay"
+      ],
+      "source": "https://www.britannica.com/sports/French-Open"
+    },
+    {
+      "seedId": "79428a6a-a6ab-5cfa-8f19-8bd5df2300fc",
+      "category": "sports",
+      "navigationKeyword1": "tennis",
+      "navigationKeyword2": "grand-slams",
+      "question": "Which Grand Slam is traditionally played in Melbourne?",
+      "correctAnswer": "Australian Open",
+      "incorrectAnswers": [
+        "French Open",
+        "Wimbledon",
+        "Davis Cup"
+      ],
+      "explanation": "The Australian Open is held each year in Melbourne.",
+      "keywords": [
+        "tennis",
+        "grand-slams",
+        "melbourne"
+      ],
+      "source": "https://www.britannica.com/sports/Australian-Open"
+    },
+    {
+      "seedId": "606c1179-6965-59f2-879c-52aaaade95e9",
+      "category": "sports",
+      "navigationKeyword1": "tennis",
+      "navigationKeyword2": "grand-slams",
+      "question": "Which Grand Slam is usually the first major played each year?",
+      "correctAnswer": "Australian Open",
+      "incorrectAnswers": [
+        "French Open",
+        "Wimbledon",
+        "US Open"
+      ],
+      "explanation": "The Australian Open opens the major season in January.",
+      "keywords": [
+        "tennis",
+        "grand-slams",
+        "calendar"
+      ],
+      "source": "https://www.britannica.com/sports/Australian-Open"
+    },
+    {
+      "seedId": "e74c5010-a8fa-5157-973e-02c795ee4e01",
+      "category": "sports",
+      "navigationKeyword1": "tennis",
+      "navigationKeyword2": "grand-slams",
+      "question": "Which Grand Slam tournament is played at Wimbledon?",
+      "correctAnswer": "The Championships, Wimbledon",
+      "incorrectAnswers": [
+        "US Open",
+        "Australian Open",
+        "Davis Cup"
+      ],
+      "explanation": "Wimbledon is the grass-court major staged in London.",
+      "keywords": [
+        "tennis",
+        "grand-slams",
+        "wimbledon"
+      ],
+      "source": "https://www.britannica.com/sports/Wimbledon-tennis"
+    },
+    {
+      "seedId": "86abd91d-3f85-5afa-927f-3e449ff37536",
+      "category": "sports",
+      "navigationKeyword1": "tennis",
+      "navigationKeyword2": "grand-slams",
+      "question": "Which major is the oldest tennis tournament in the world?",
+      "correctAnswer": "Wimbledon",
+      "incorrectAnswers": [
+        "US Open",
+        "Australian Open",
+        "French Open"
+      ],
+      "explanation": "Wimbledon began in 1877 and predates the other majors.",
+      "keywords": [
+        "tennis",
+        "grand-slams",
+        "history"
+      ],
+      "source": "https://www.britannica.com/sports/Wimbledon-tennis"
+    },
+    {
+      "seedId": "91668acb-b30c-57a6-8a85-94c03e98705e",
+      "category": "sports",
+      "navigationKeyword1": "tennis",
+      "navigationKeyword2": "grand-slams",
+      "question": "Which two Grand Slam tournaments are played on hard courts?",
+      "correctAnswer": "Australian Open and US Open",
+      "incorrectAnswers": [
+        "French Open and Wimbledon",
+        "Wimbledon and Australian Open",
+        "French Open and US Open"
+      ],
+      "explanation": "The Australian Open and US Open are the hard-court majors.",
+      "keywords": [
+        "tennis",
+        "grand-slams",
+        "hard-courts"
+      ],
+      "source": "https://www.britannica.com/sports/tennis"
+    },
+    {
+      "seedId": "7a16ef7f-5e26-53d3-a8e3-0ab1ef79c44a",
+      "category": "sports",
+      "navigationKeyword1": "tennis",
+      "navigationKeyword2": "players",
+      "question": "Which American became famous for a two-handed backhand and 18 major singles titles?",
+      "correctAnswer": "Chris Evert",
+      "incorrectAnswers": [
+        "Billie Jean King",
+        "Serena Williams",
+        "Venus Williams"
+      ],
+      "explanation": "Chris Evert was a baseline star with 18 singles majors.",
+      "keywords": [
+        "tennis",
+        "players",
+        "chris-evert"
+      ],
+      "source": "https://www.britannica.com/biography/Chris-Evert"
+    },
+    {
+      "seedId": "dd62fa3b-7a55-50e4-b066-edcb7b6b8052",
+      "category": "sports",
+      "navigationKeyword1": "tennis",
+      "navigationKeyword2": "players",
+      "question": "Which American completed a career Grand Slam and later won Olympic gold in singles in 1996?",
+      "correctAnswer": "Andre Agassi",
+      "incorrectAnswers": [
+        "Michael Chang",
+        "John McEnroe",
+        "Jimmy Connors"
+      ],
+      "explanation": "Agassi won all four majors and Olympic singles gold.",
+      "keywords": [
+        "tennis",
+        "players",
+        "andre-agassi"
+      ],
+      "source": "https://www.britannica.com/biography/Andre-Agassi"
+    },
+    {
+      "seedId": "a610cdb4-18e7-567e-82e1-8b402fdf2d6d",
+      "category": "sports",
+      "navigationKeyword1": "tennis",
+      "navigationKeyword2": "players",
+      "question": "Which American player helped lead the fight for equal prize money in tennis?",
+      "correctAnswer": "Billie Jean King",
+      "incorrectAnswers": [
+        "Chris Evert",
+        "Jennifer Capriati",
+        "Tracy Austin"
+      ],
+      "explanation": "Billie Jean King was central to women's tennis activism and equality efforts.",
+      "keywords": [
+        "tennis",
+        "players",
+        "billie-jean-king"
+      ],
+      "source": "https://www.britannica.com/biography/Billie-Jean-King"
+    },
+    {
+      "seedId": "92eb5c7b-02b3-5903-b9ed-90f5102d7ce8",
+      "category": "sports",
+      "navigationKeyword1": "tennis",
+      "navigationKeyword2": "players",
+      "question": "Which American player won 23 major singles titles in the Open Era?",
+      "correctAnswer": "Serena Williams",
+      "incorrectAnswers": [
+        "Venus Williams",
+        "Chris Evert",
+        "Lindsay Davenport"
+      ],
+      "explanation": "Serena Williams won 23 singles majors in the Open Era.",
+      "keywords": [
+        "tennis",
+        "players",
+        "serena-williams"
+      ],
+      "source": "https://www.britannica.com/biography/Serena-Williams"
+    },
+    {
+      "seedId": "1e7995b0-d2df-5c4e-a24c-ba367cfac8a9",
+      "category": "sports",
+      "navigationKeyword1": "tennis",
+      "navigationKeyword2": "players",
+      "question": "Which American won 14 major singles titles with a huge serve and volley game?",
+      "correctAnswer": "Pete Sampras",
+      "incorrectAnswers": [
+        "Andre Agassi",
+        "Jim Courier",
+        "Andy Roddick"
+      ],
+      "explanation": "Sampras built his success on a dominant serve and net game.",
+      "keywords": [
+        "tennis",
+        "players",
+        "pete-sampras"
+      ],
+      "source": "https://www.britannica.com/biography/Pete-Sampras"
+    },
+    {
+      "seedId": "0391adb5-f2c6-50cb-bdea-8cd0e240d55f",
+      "category": "sports",
+      "navigationKeyword1": "tennis",
+      "navigationKeyword2": "players",
+      "question": "Which Serbian player has spent a record number of weeks ranked world No. 1 in men's tennis?",
+      "correctAnswer": "Novak Djokovic",
+      "incorrectAnswers": [
+        "Roger Federer",
+        "Rafael Nadal",
+        "Andy Murray"
+      ],
+      "explanation": "Djokovic has spent more weeks at No. 1 than any other ATP player.",
+      "keywords": [
+        "tennis",
+        "players",
+        "novak-djokovic"
+      ],
+      "source": "https://www.britannica.com/biography/Novak-Djokovic"
+    },
+    {
+      "seedId": "c0353067-412c-5510-b677-f03bd52d896b",
+      "category": "sports",
+      "navigationKeyword1": "tennis",
+      "navigationKeyword2": "players",
+      "question": "Which Spanish left-hander became especially dominant at the French Open?",
+      "correctAnswer": "Rafael Nadal",
+      "incorrectAnswers": [
+        "Carlos Alcaraz",
+        "Juan Carlos Ferrero",
+        "David Ferrer"
+      ],
+      "explanation": "Nadal's clay-court success at Roland Garros is unmatched.",
+      "keywords": [
+        "tennis",
+        "players",
+        "rafael-nadal"
+      ],
+      "source": "https://www.britannica.com/biography/Rafael-Nadal"
+    },
+    {
+      "seedId": "cc9678a9-9b3a-502d-92aa-780c8d2064dd",
+      "category": "sports",
+      "navigationKeyword1": "tennis",
+      "navigationKeyword2": "players",
+      "question": "Which Swiss star won eight Wimbledon men's singles titles?",
+      "correctAnswer": "Roger Federer",
+      "incorrectAnswers": [
+        "Novak Djokovic",
+        "Rafael Nadal",
+        "Pete Sampras"
+      ],
+      "explanation": "Federer holds the men's record with eight Wimbledon singles titles.",
+      "keywords": [
+        "tennis",
+        "players",
+        "roger-federer"
+      ],
+      "source": "https://www.britannica.com/biography/Roger-Federer"
+    },
+    {
+      "seedId": "bbe5fb25-4041-5251-8fe5-02b1fed53621",
+      "category": "sports",
+      "navigationKeyword1": "tennis",
+      "navigationKeyword2": "players",
+      "question": "Which player completed the Calendar Golden Slam in 1988?",
+      "correctAnswer": "Steffi Graf",
+      "incorrectAnswers": [
+        "Serena Williams",
+        "Martina Navratilova",
+        "Monica Seles"
+      ],
+      "explanation": "Graf won all four majors and Olympic gold in 1988.",
+      "keywords": [
+        "tennis",
+        "players",
+        "steffi-graf"
+      ],
+      "source": "https://www.britannica.com/biography/Steffi-Graf"
+    },
+    {
+      "seedId": "05ecec0f-ea3e-5bc5-8799-9c17a01cd01a",
+      "category": "sports",
+      "navigationKeyword1": "tennis",
+      "navigationKeyword2": "players",
+      "question": "Which player was known as one of the greatest serve-and-volley champions in women's tennis?",
+      "correctAnswer": "Martina Navratilova",
+      "incorrectAnswers": [
+        "Steffi Graf",
+        "Arantxa Sanchez Vicario",
+        "Justine Henin"
+      ],
+      "explanation": "Navratilova's attacking style defined much of her success.",
+      "keywords": [
+        "tennis",
+        "players",
+        "martina-navratilova"
+      ],
+      "source": "https://www.britannica.com/biography/Martina-Navratilova"
+    },
+    {
+      "seedId": "707edfa6-11a7-5436-921c-6bd72c72d590",
+      "category": "sports",
+      "navigationKeyword1": "tennis",
+      "navigationKeyword2": "rankings",
+      "question": "ATP and WTA rankings are primarily based on what?",
+      "correctAnswer": "Ranking points earned in tournaments",
+      "incorrectAnswers": [
+        "Career win percentage only",
+        "Coach votes",
+        "Prize money only"
+      ],
+      "explanation": "Players are ranked by points collected from tournament results.",
+      "keywords": [
+        "tennis",
+        "rankings",
+        "points"
+      ],
+      "source": "https://www.atptour.com/en/rankings/rankings-faq"
+    },
+    {
+      "seedId": "028a0670-41d6-5350-935c-7a1a319439a2",
+      "category": "sports",
+      "navigationKeyword1": "tennis",
+      "navigationKeyword2": "rankings",
+      "question": "Do ATP and WTA rankings use separate systems or one combined list?",
+      "correctAnswer": "Separate systems",
+      "incorrectAnswers": [
+        "One shared list",
+        "Only national rankings",
+        "Only team rankings"
+      ],
+      "explanation": "Men's and women's professional tours publish separate rankings.",
+      "keywords": [
+        "tennis",
+        "rankings",
+        "tour-structure"
+      ],
+      "source": "https://www.britannica.com/sports/tennis"
+    },
+    {
+      "seedId": "18319a00-bccd-557c-a484-8365db9197c5",
+      "category": "sports",
+      "navigationKeyword1": "tennis",
+      "navigationKeyword2": "rankings",
+      "question": "If a player reaches No. 1 in the ATP rankings, what does that mean?",
+      "correctAnswer": "He currently has the most ATP ranking points",
+      "incorrectAnswers": [
+        "He has won every tournament that year",
+        "He is the defending Wimbledon champion only",
+        "He has the most career titles automatically"
+      ],
+      "explanation": "World No. 1 reflects the highest current ATP points total.",
+      "keywords": [
+        "tennis",
+        "rankings",
+        "no-1"
+      ],
+      "source": "https://www.atptour.com/en/rankings/rankings-faq"
+    },
+    {
+      "seedId": "1e4d99f0-4d71-5450-8c04-c86d876753db",
+      "category": "sports",
+      "navigationKeyword1": "tennis",
+      "navigationKeyword2": "rankings",
+      "question": "Over roughly what rolling period are ATP and WTA ranking points counted?",
+      "correctAnswer": "About 52 weeks",
+      "incorrectAnswers": [
+        "One month",
+        "Two years",
+        "A single season only"
+      ],
+      "explanation": "The rankings are based on a rolling 52-week system.",
+      "keywords": [
+        "tennis",
+        "rankings",
+        "52-weeks"
+      ],
+      "source": "https://www.atptour.com/en/rankings/rankings-faq"
+    },
+    {
+      "seedId": "8d3b09cf-21e4-5ce5-a142-e308a4a16f21",
+      "category": "sports",
+      "navigationKeyword1": "tennis",
+      "navigationKeyword2": "rankings",
+      "question": "What does being seeded in a tournament usually depend on?",
+      "correctAnswer": "A player's ranking",
+      "incorrectAnswers": [
+        "A random draw only",
+        "The color of the kit",
+        "Nationality alone"
+      ],
+      "explanation": "Seeds are generally assigned based on ranking to separate top players in the draw.",
+      "keywords": [
+        "tennis",
+        "rankings",
+        "seeding"
+      ],
+      "source": "https://www.britannica.com/sports/tennis"
+    },
+    {
+      "seedId": "876146fd-cf60-573f-8d80-d716da803a2a",
+      "category": "sports",
+      "navigationKeyword1": "tennis",
+      "navigationKeyword2": "rankings",
+      "question": "Which organization runs the main men's professional singles rankings?",
+      "correctAnswer": "ATP",
+      "incorrectAnswers": [
+        "ITF",
+        "USTA",
+        "USTF"
+      ],
+      "explanation": "The ATP maintains the men's professional tour rankings.",
+      "keywords": [
+        "tennis",
+        "rankings",
+        "atp"
+      ],
+      "source": "https://www.atptour.com/en/rankings/singles"
+    },
+    {
+      "seedId": "60cc3733-719d-57fb-b845-1237653e4e4d",
+      "category": "sports",
+      "navigationKeyword1": "tennis",
+      "navigationKeyword2": "rankings",
+      "question": "Which organization runs the main women's professional singles rankings?",
+      "correctAnswer": "WTA",
+      "incorrectAnswers": [
+        "ITF",
+        "USTA",
+        "ATP"
+      ],
+      "explanation": "The WTA publishes the women's professional rankings.",
+      "keywords": [
+        "tennis",
+        "rankings",
+        "wta"
+      ],
+      "source": "https://www.wtatennis.com/rankings/singles"
+    },
+    {
+      "seedId": "10e4b0cd-bbe7-5e45-83d8-b96f4bb7238b",
+      "category": "sports",
+      "navigationKeyword1": "tennis",
+      "navigationKeyword2": "rankings",
+      "question": "Which player finishes a week at No. 1 if that player has the most ranking points?",
+      "correctAnswer": "The player with the highest total points",
+      "incorrectAnswers": [
+        "The oldest player",
+        "The player with the most aces",
+        "The defending champion only"
+      ],
+      "explanation": "The rankings order players by total ranking points.",
+      "keywords": [
+        "tennis",
+        "rankings",
+        "world-no-1"
+      ],
+      "source": "https://www.atptour.com/en/rankings/rankings-faq"
+    },
+    {
+      "seedId": "a40b366a-1a4b-5590-b7cf-b1576c811baf",
+      "category": "sports",
+      "navigationKeyword1": "tennis",
+      "navigationKeyword2": "rankings",
+      "question": "Why does a player lose ranking points after failing to match last year's result in the same event?",
+      "correctAnswer": "Because the system replaces older results in a rolling cycle",
+      "incorrectAnswers": [
+        "Because points expire every month",
+        "Because only finals count",
+        "Because points depend on sponsorship"
+      ],
+      "explanation": "The rolling ranking system drops points from the previous year's events.",
+      "keywords": [
+        "tennis",
+        "rankings",
+        "rolling-system"
+      ],
+      "source": "https://www.atptour.com/en/rankings/rankings-faq"
+    },
+    {
+      "seedId": "5209c616-9d68-55d1-ad6f-48d0cc896384",
+      "category": "sports",
+      "navigationKeyword1": "tennis",
+      "navigationKeyword2": "rankings",
+      "question": "Winning a Grand Slam singles title usually gives how many ATP ranking points?",
+      "correctAnswer": "2000",
+      "incorrectAnswers": [
+        "1000",
+        "1500",
+        "2500"
+      ],
+      "explanation": "A Grand Slam title is the highest standard points award on the regular scale.",
+      "keywords": [
+        "tennis",
+        "rankings",
+        "grand-slam-points"
+      ],
+      "source": "https://www.atptour.com/en/rankings/rankings-faq"
+    },
+    {
+      "seedId": "f64a0567-bae3-522f-b9a0-74cf515b4d15",
+      "category": "sports",
+      "navigationKeyword1": "tennis",
+      "navigationKeyword2": "rules",
+      "question": "After deuce, what is the next point called for the player who wins it?",
+      "correctAnswer": "Advantage",
+      "incorrectAnswers": [
+        "Break point",
+        "Set point",
+        "Match point"
+      ],
+      "explanation": "A player who wins the point after deuce gains advantage.",
+      "keywords": [
+        "tennis",
+        "rules",
+        "advantage"
+      ],
+      "source": "https://www.itftennis.com/en/about-us/governance/rules-and-regulations/"
+    },
+    {
+      "seedId": "73a5d0a8-efc2-5728-b464-fe847d314693",
+      "category": "sports",
+      "navigationKeyword1": "tennis",
+      "navigationKeyword2": "rules",
+      "question": "How many chances does a player get to make a legal serve before losing the point for a double fault?",
+      "correctAnswer": "Two",
+      "incorrectAnswers": [
+        "One",
+        "Three",
+        "Unlimited"
+      ],
+      "explanation": "A server gets a first serve and a second serve chance.",
+      "keywords": [
+        "tennis",
+        "rules",
+        "serve"
+      ],
+      "source": "https://www.itftennis.com/en/about-us/governance/rules-and-regulations/"
+    },
+    {
+      "seedId": "5f351214-6c7b-5f9c-8e23-5867159949f6",
+      "category": "sports",
+      "navigationKeyword1": "tennis",
+      "navigationKeyword2": "rules",
+      "question": "How many games does a player usually need to win a set, with a margin of two?",
+      "correctAnswer": "Six games",
+      "incorrectAnswers": [
+        "Four games",
+        "Five games",
+        "Seven games"
+      ],
+      "explanation": "Most sets are won by taking six games with a two-game margin.",
+      "keywords": [
+        "tennis",
+        "rules",
+        "set"
+      ],
+      "source": "https://www.itftennis.com/en/about-us/governance/rules-and-regulations/"
+    },
+    {
+      "seedId": "f28b9cd7-41e7-5a08-9479-9078ba9cc551",
+      "category": "sports",
+      "navigationKeyword1": "tennis",
+      "navigationKeyword2": "rules",
+      "question": "How many points are needed to win a standard game if there is no deuce?",
+      "correctAnswer": "Four points",
+      "incorrectAnswers": [
+        "Three points",
+        "Five points",
+        "Six points"
+      ],
+      "explanation": "A player wins a game by taking points to 15, 30, 40, then game.",
+      "keywords": [
+        "tennis",
+        "rules",
+        "game"
+      ],
+      "source": "https://www.itftennis.com/en/about-us/governance/rules-and-regulations/"
+    },
+    {
+      "seedId": "1871f055-733e-5e82-be53-3833063cf48f",
+      "category": "sports",
+      "navigationKeyword1": "tennis",
+      "navigationKeyword2": "rules",
+      "question": "How many points does a player need to win a standard tie-break, with a two-point margin?",
+      "correctAnswer": "Seven",
+      "incorrectAnswers": [
+        "Five",
+        "Six",
+        "Eight"
+      ],
+      "explanation": "A standard tie-break is won at seven points, but by two.",
+      "keywords": [
+        "tennis",
+        "rules",
+        "tie-break"
+      ],
+      "source": "https://www.itftennis.com/en/about-us/governance/rules-and-regulations/"
+    },
+    {
+      "seedId": "906ba0c1-5938-579b-a8da-51672122e7b7",
+      "category": "sports",
+      "navigationKeyword1": "tennis",
+      "navigationKeyword2": "rules",
+      "question": "What happens if a served ball touches the net and still lands in the correct service box?",
+      "correctAnswer": "It is a let and the serve is replayed",
+      "incorrectAnswers": [
+        "The server loses the point",
+        "The returner gets the point",
+        "Play continues automatically"
+      ],
+      "explanation": "A legal serve touching the net is replayed as a let.",
+      "keywords": [
+        "tennis",
+        "rules",
+        "let"
+      ],
+      "source": "https://www.itftennis.com/en/about-us/governance/rules-and-regulations/"
+    },
+    {
+      "seedId": "70e714ad-72c2-5864-a837-a12e2fb03f46",
+      "category": "sports",
+      "navigationKeyword1": "tennis",
+      "navigationKeyword2": "rules",
+      "question": "What is it called when the receiving player wins the server's game?",
+      "correctAnswer": "A break of serve",
+      "incorrectAnswers": [
+        "A hold",
+        "A let",
+        "A walkover"
+      ],
+      "explanation": "Winning the opponent's service game is a break.",
+      "keywords": [
+        "tennis",
+        "rules",
+        "break"
+      ],
+      "source": "https://www.britannica.com/sports/tennis"
+    },
+    {
+      "seedId": "57821463-3e7f-5812-b80d-a37169d8f429",
+      "category": "sports",
+      "navigationKeyword1": "tennis",
+      "navigationKeyword2": "rules",
+      "question": "What score comes after 30 in a tennis game?",
+      "correctAnswer": "40",
+      "incorrectAnswers": [
+        "45",
+        "50",
+        "60"
+      ],
+      "explanation": "The standard sequence is love, 15, 30, 40.",
+      "keywords": [
+        "tennis",
+        "rules",
+        "point-sequence"
+      ],
+      "source": "https://www.itftennis.com/en/about-us/governance/rules-and-regulations/"
+    },
+    {
+      "seedId": "13e5de49-79ae-599a-9a80-984ed5d2abd2",
+      "category": "sports",
+      "navigationKeyword1": "tennis",
+      "navigationKeyword2": "rules",
+      "question": "What word is used for zero points in tennis scoring?",
+      "correctAnswer": "Love",
+      "incorrectAnswers": [
+        "Blank",
+        "Nil",
+        "Duck"
+      ],
+      "explanation": "Tennis uses the traditional term love for zero.",
+      "keywords": [
+        "tennis",
+        "rules",
+        "scoring"
+      ],
+      "source": "https://www.itftennis.com/en/about-us/governance/rules-and-regulations/"
+    },
+    {
+      "seedId": "df0d4b9d-f880-5b9c-a35e-e0e2b7360198",
+      "category": "sports",
+      "navigationKeyword1": "tennis",
+      "navigationKeyword2": "rules",
+      "question": "When both players reach 40 in a game, what is the score called?",
+      "correctAnswer": "Deuce",
+      "incorrectAnswers": [
+        "Tie-break",
+        "Advantage",
+        "Let"
+      ],
+      "explanation": "At 40-all, the game reaches deuce.",
+      "keywords": [
+        "tennis",
+        "rules",
+        "deuce"
+      ],
+      "source": "https://www.itftennis.com/en/about-us/governance/rules-and-regulations/"
+    },
+    {
+      "seedId": "a5b3821a-4ee4-5a74-a7d7-d939b9051c56",
+      "category": "sports",
+      "navigationKeyword1": "tennis",
+      "navigationKeyword2": "shots",
+      "question": "What is a stroke hit before the ball bounces, usually close to the net?",
+      "correctAnswer": "Volley",
+      "incorrectAnswers": [
+        "Lob",
+        "Slice",
+        "Drop shot"
+      ],
+      "explanation": "A volley is struck out of the air before the bounce.",
+      "keywords": [
+        "tennis",
+        "shots",
+        "volley"
+      ],
+      "source": "https://www.britannica.com/sports/tennis"
+    },
+    {
+      "seedId": "a767d5ab-700f-5f52-bbc4-cfb484a3bb0b",
+      "category": "sports",
+      "navigationKeyword1": "tennis",
+      "navigationKeyword2": "shots",
+      "question": "What is an ace in tennis?",
+      "correctAnswer": "A serve that lands in and is not touched by the receiver",
+      "incorrectAnswers": [
+        "A rally won with a lob",
+        "A return winner",
+        "A double fault"
+      ],
+      "explanation": "An ace is a clean service winner.",
+      "keywords": [
+        "tennis",
+        "shots",
+        "ace"
+      ],
+      "source": "https://www.itftennis.com/en/about-us/governance/rules-and-regulations/"
+    },
+    {
+      "seedId": "ad5048b0-925f-53c5-905d-8d3ea3c89304",
+      "category": "sports",
+      "navigationKeyword1": "tennis",
+      "navigationKeyword2": "shots",
+      "question": "What is the backhand?",
+      "correctAnswer": "A groundstroke hit on the side opposite the forehand",
+      "incorrectAnswers": [
+        "An overhead serve",
+        "A drop volley only",
+        "A net-cord shot"
+      ],
+      "explanation": "A backhand is struck on the non-forehand side.",
+      "keywords": [
+        "tennis",
+        "shots",
+        "backhand"
+      ],
+      "source": "https://www.britannica.com/sports/tennis"
+    },
+    {
+      "seedId": "f79d8289-24f8-5cea-a5b3-065c69761489",
+      "category": "sports",
+      "navigationKeyword1": "tennis",
+      "navigationKeyword2": "shots",
+      "question": "What is the forehand?",
+      "correctAnswer": "A groundstroke hit on the player's dominant side",
+      "incorrectAnswers": [
+        "A serve hit underhand only",
+        "A volley hit with both hands only",
+        "A shot that must bounce twice"
+      ],
+      "explanation": "A forehand is normally played from the player's natural side.",
+      "keywords": [
+        "tennis",
+        "shots",
+        "forehand"
+      ],
+      "source": "https://www.britannica.com/sports/tennis"
+    },
+    {
+      "seedId": "cedfbf2b-1edc-550d-816f-f8863de60a74",
+      "category": "sports",
+      "navigationKeyword1": "tennis",
+      "navigationKeyword2": "shots",
+      "question": "What kind of spin makes the ball dip and then jump higher after the bounce?",
+      "correctAnswer": "Topspin",
+      "incorrectAnswers": [
+        "Backspin only",
+        "Sidespin only",
+        "No spin"
+      ],
+      "explanation": "Topspin helps the ball drop into court and kick up after landing.",
+      "keywords": [
+        "tennis",
+        "shots",
+        "topspin"
+      ],
+      "source": "https://www.britannica.com/sports/tennis"
+    },
+    {
+      "seedId": "cfdb40a6-907c-585e-90c0-5051b3e6e0e9",
+      "category": "sports",
+      "navigationKeyword1": "tennis",
+      "navigationKeyword2": "shots",
+      "question": "What overhead attacking shot is often used to finish a point?",
+      "correctAnswer": "Smash",
+      "incorrectAnswers": [
+        "Drop shot",
+        "Chip",
+        "Block return"
+      ],
+      "explanation": "A smash is an overhead shot played aggressively.",
+      "keywords": [
+        "tennis",
+        "shots",
+        "smash"
+      ],
+      "source": "https://www.britannica.com/sports/tennis"
+    },
+    {
+      "seedId": "3454fc82-fd54-539d-b0bd-0677b6e10a37",
+      "category": "sports",
+      "navigationKeyword1": "tennis",
+      "navigationKeyword2": "shots",
+      "question": "What shot is played immediately after the ball bounces, often from a low position near the net?",
+      "correctAnswer": "Half-volley",
+      "incorrectAnswers": [
+        "Lob",
+        "Smash",
+        "Drop shot"
+      ],
+      "explanation": "A half-volley is struck right after the bounce.",
+      "keywords": [
+        "tennis",
+        "shots",
+        "half-volley"
+      ],
+      "source": "https://www.britannica.com/sports/tennis"
+    },
+    {
+      "seedId": "2bc357f4-a67c-50a1-95db-a35aedc93799",
+      "category": "sports",
+      "navigationKeyword1": "tennis",
+      "navigationKeyword2": "shots",
+      "question": "What shot sends the ball high over an opponent at the net?",
+      "correctAnswer": "Lob",
+      "incorrectAnswers": [
+        "Smash",
+        "Drive volley",
+        "Half-volley"
+      ],
+      "explanation": "A lob is used to pass an opponent positioned near the net.",
+      "keywords": [
+        "tennis",
+        "shots",
+        "lob"
+      ],
+      "source": "https://www.britannica.com/sports/tennis"
+    },
+    {
+      "seedId": "59e2e782-4399-5464-a10d-24d22b38eabc",
+      "category": "sports",
+      "navigationKeyword1": "tennis",
+      "navigationKeyword2": "shots",
+      "question": "What shot uses underspin so the ball stays lower after the bounce?",
+      "correctAnswer": "Slice",
+      "incorrectAnswers": [
+        "Topspin",
+        "Smash",
+        "Flat serve"
+      ],
+      "explanation": "A slice uses backspin or underspin to keep the bounce low.",
+      "keywords": [
+        "tennis",
+        "shots",
+        "slice"
+      ],
+      "source": "https://www.britannica.com/sports/tennis"
+    },
+    {
+      "seedId": "479b93c0-1c09-53d0-9946-2683672b433f",
+      "category": "sports",
+      "navigationKeyword1": "tennis",
+      "navigationKeyword2": "shots",
+      "question": "What soft shot is designed to land just over the net and die quickly?",
+      "correctAnswer": "Drop shot",
+      "incorrectAnswers": [
+        "Lob",
+        "Topspin drive",
+        "Kick serve"
+      ],
+      "explanation": "A drop shot uses touch to bring the opponent forward.",
+      "keywords": [
+        "tennis",
+        "shots",
+        "drop-shot"
+      ],
+      "source": "https://www.britannica.com/sports/tennis"
+    }
+  ]
+}

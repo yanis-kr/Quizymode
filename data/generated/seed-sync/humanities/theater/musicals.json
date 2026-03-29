@@ -1,0 +1,45 @@
+{
+  "schemaVersion": 1,
+  "seedSet": "core-public-items",
+  "deltaPreviewLimit": 200,
+  "items": [
+    {
+      "seedId": "751f3ef2-79eb-5608-bbc0-8d61d264ed0b",
+      "category": "humanities",
+      "navigationKeyword1": "theater",
+      "navigationKeyword2": "musicals",
+      "question": "In a musical, what does a song often do besides sound pleasant?",
+      "correctAnswer": "advance character or story",
+      "incorrectAnswers": [
+        "replace the stage crew",
+        "print the program",
+        "change the ticket price"
+      ],
+      "explanation": "Songs in musicals often reveal emotion, conflict, or turning points.",
+      "keywords": [
+        "musicals",
+        "storytelling"
+      ],
+      "source": "https://www.loc.gov/collections/american-variety-stage/"
+    },
+    {
+      "seedId": "549c44fd-4024-5812-b1e4-289cfc34250f",
+      "category": "humanities",
+      "navigationKeyword1": "theater",
+      "navigationKeyword2": "musicals",
+      "question": "What makes a musical different from a straight play?",
+      "correctAnswer": "songs are built into the storytelling",
+      "incorrectAnswers": [
+        "it has no actors",
+        "it cannot use dialogue",
+        "it must be silent"
+      ],
+      "explanation": "Musicals combine dialogue, music, lyrics, and staging as part of the narrative.",
+      "keywords": [
+        "musicals",
+        "theater"
+      ],
+      "source": "https://www.britannica.com/art/musical"
+    }
+  ]
+}

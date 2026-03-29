@@ -1,0 +1,1447 @@
+{
+  "schemaVersion": 1,
+  "seedSet": "core-public-items",
+  "deltaPreviewLimit": 200,
+  "items": [
+    {
+      "seedId": "0f953131-8f4d-4173-82a8-e72a68c675cd",
+      "category": "history",
+      "navigationKeyword1": "asia",
+      "navigationKeyword2": "china",
+      "question": "After Japan\u2019s 1945 surrender, renewed fighting between Nationalists and Communists ended in 1949 with whose mainland victory?",
+      "correctAnswer": "Mao Zedong\u2019s Chinese Communist Party",
+      "incorrectAnswers": [
+        "Chiang Kai-shek\u2019s permanent reconquest",
+        "The Manchukuo restoration",
+        "A coalition under the Dalai Lama"
+      ],
+      "explanation": "The People\u2019s Republic was proclaimed in Beijing while the Nationalists withdrew to Taiwan.",
+      "keywords": [
+        "china",
+        "civil-war",
+        "1949"
+      ],
+      "source": "https://www.britannica.com/event/Chinese-Civil-War"
+    },
+    {
+      "seedId": "e7fb9633-fcea-4300-aba2-d80e475dd6a6",
+      "category": "history",
+      "navigationKeyword1": "asia",
+      "navigationKeyword2": "china",
+      "question": "Chang\u2019an glittered as capital during which dynasty\u2019s golden age of poetry, Buddhism, and westward reach?",
+      "correctAnswer": "The Tang dynasty (618\u2013907 CE)",
+      "incorrectAnswers": [
+        "The Yuan dynasty only",
+        "The Shang dynasty",
+        "The Republic of China (1912)"
+      ],
+      "explanation": "Examination culture, cosmopolitan markets, and Taizong\u2019s expansion typified Tang power before late-rebellion decline.",
+      "keywords": [
+        "china",
+        "tang",
+        "chang-an"
+      ],
+      "source": "https://www.britannica.com/topic/Tang-dynasty"
+    },
+    {
+      "seedId": "aaff52a7-b36f-418d-a78d-457f266ee75e",
+      "category": "history",
+      "navigationKeyword1": "asia",
+      "navigationKeyword2": "china",
+      "question": "Han expansion and caravan traffic helped fix which overland trade corridor linking China to Central Asia and beyond?",
+      "correctAnswer": "The Silk Road",
+      "incorrectAnswers": [
+        "The Spice Route only by sea",
+        "The Amber Road",
+        "The Via Maris"
+      ],
+      "explanation": "Silk, horses, and ideas moved along oasis routes while states taxed and protected caravans.",
+      "keywords": [
+        "china",
+        "silk-road",
+        "trade"
+      ],
+      "source": "https://www.britannica.com/topic/Silk-Road-trade-route"
+    },
+    {
+      "seedId": "381bcc80-a47c-41fd-a595-ae161f197193",
+      "category": "history",
+      "navigationKeyword1": "asia",
+      "navigationKeyword2": "china",
+      "question": "Hong Xiuquan\u2019s Christian-inspired \u2018Heavenly Kingdom\u2019 sparked which catastrophic 1850s\u20131864 rebellion?",
+      "correctAnswer": "The Taiping Rebellion",
+      "incorrectAnswers": [
+        "The Nian Rebellion alone",
+        "The White Lotus uprising only",
+        "The Dungan revolts exclusively"
+      ],
+      "explanation": "It ravaged the Yangzi heartland and fatally weakened the Qing before Zeng Guofan\u2019s armies retook Nanjing.",
+      "keywords": [
+        "china",
+        "taiping",
+        "qing"
+      ],
+      "source": "https://www.britannica.com/event/Taiping-Rebellion"
+    },
+    {
+      "seedId": "528731fe-ca14-4ca3-87a0-4d3d51d50247",
+      "category": "history",
+      "navigationKeyword1": "asia",
+      "navigationKeyword2": "china",
+      "question": "In 221 BCE, which ruler proclaimed himself First Emperor after crushing rival Warring States?",
+      "correctAnswer": "Qin Shi Huang (Ying Zheng)",
+      "incorrectAnswers": [
+        "Han Wudi",
+        "Tang Taizong",
+        "Kublai Khan"
+      ],
+      "explanation": "His legalist centralization, standardization of script, and Great Wall links shaped all later Chinese imperial administration.",
+      "keywords": [
+        "china",
+        "qin",
+        "unification"
+      ],
+      "source": "https://www.britannica.com/biography/Qin-Shi-Huang"
+    },
+    {
+      "seedId": "72ca908b-6993-4453-bf91-20ebdad6bc28",
+      "category": "history",
+      "navigationKeyword1": "asia",
+      "navigationKeyword2": "china",
+      "question": "Qing efforts to halt British opium smuggling escalated into which mid-19th-century clashes that opened treaty ports?",
+      "correctAnswer": "The Opium Wars",
+      "incorrectAnswers": [
+        "The Boxer Rebellion alone",
+        "The Taiping wars only",
+        "The Sino-French War exclusively"
+      ],
+      "explanation": "Unequal treaties after British and Franco-British victories eroded Qing sovereignty and ceded Hong Kong Island.",
+      "keywords": [
+        "china",
+        "opium",
+        "qing"
+      ],
+      "source": "https://www.britannica.com/topic/Opium-Wars"
+    },
+    {
+      "seedId": "8819033b-860a-40fa-bab8-16f6479b3ab0",
+      "category": "history",
+      "navigationKeyword1": "asia",
+      "navigationKeyword2": "china",
+      "question": "Red Guards and \u2018struggle sessions\u2019 typified which Maoist campaign from 1966 aimed at renewing revolution?",
+      "correctAnswer": "The Cultural Revolution",
+      "incorrectAnswers": [
+        "The Great Leap Forward alone",
+        "The Hundred Flowers Movement only",
+        "The Four Modernizations"
+      ],
+      "explanation": "Schools shut, cadres purged, and cultural relics smashed until the army and later Deng-era reforms wound it down.",
+      "keywords": [
+        "china",
+        "cultural-revolution",
+        "mao"
+      ],
+      "source": "https://www.britannica.com/event/Cultural-Revolution"
+    },
+    {
+      "seedId": "c8c761a4-181e-4f15-ae1f-2f0ff720720c",
+      "category": "history",
+      "navigationKeyword1": "asia",
+      "navigationKeyword2": "china",
+      "question": "Successive northern dynasties linked frontier fortifications into the vast defensive system known today as what?",
+      "correctAnswer": "The Great Wall of China",
+      "incorrectAnswers": [
+        "The Grand Canal alone",
+        "The Long Wall of Korea",
+        "The Jade Gate barrier only"
+      ],
+      "explanation": "Although often associated with the Ming era visible today, wall-building began centuries earlier as a response to steppe raids.",
+      "keywords": [
+        "china",
+        "great-wall",
+        "frontier"
+      ],
+      "source": "https://www.britannica.com/topic/Great-Wall-of-China"
+    },
+    {
+      "seedId": "8fa61b2a-c32c-40e9-bf55-14a3da218565",
+      "category": "history",
+      "navigationKeyword1": "asia",
+      "navigationKeyword2": "china",
+      "question": "The Wuchang mutiny of October 10, 1911, helped trigger the collapse of which dynasty?",
+      "correctAnswer": "The Qing (Manchu) dynasty",
+      "incorrectAnswers": [
+        "The Ming dynasty",
+        "The Song dynasty",
+        "The Yuan dynasty only"
+      ],
+      "explanation": "Yuan Shikai and republicans negotiated the child emperor Puyi\u2019s abdication in 1912.",
+      "keywords": [
+        "china",
+        "1911",
+        "republic"
+      ],
+      "source": "https://www.britannica.com/event/Chinese-Revolution-1911-1912"
+    },
+    {
+      "seedId": "33273bdb-69a4-4b4f-92c4-f4c25c74f942",
+      "category": "history",
+      "navigationKeyword1": "asia",
+      "navigationKeyword2": "china",
+      "question": "The Yongle emperor sent which Muslim eunuch admiral on massive Indian Ocean expeditions early in the 1400s?",
+      "correctAnswer": "Zheng He",
+      "incorrectAnswers": [
+        "Koxinga (Zheng Chenggong)",
+        "Lin Zexu",
+        "Zeng Guofan"
+      ],
+      "explanation": "His treasure fleets displayed Ming prestige from Southeast Asia to the African coast before the state curbed oceanic ambition.",
+      "keywords": [
+        "china",
+        "ming",
+        "maritime"
+      ],
+      "source": "https://www.britannica.com/biography/Zheng-He"
+    },
+    {
+      "seedId": "bf15c135-8e46-4baa-a6e1-8728304473f6",
+      "category": "history",
+      "navigationKeyword1": "asia",
+      "navigationKeyword2": "china",
+      "question": "Which 1934\u201335 retreat cemented Mao Zedong\u2019s leadership as Communist armies escaped Jiangxi encirclement?",
+      "correctAnswer": "The Long March",
+      "incorrectAnswers": [
+        "The Northern Expedition",
+        "The Hundred Regiments Offensive",
+        "The Jiangxi Soviet purge only"
+      ],
+      "explanation": "The trek to Shaanxi preserved the Red Army cadre that would fight Japan and later the Nationalists.",
+      "keywords": [
+        "china",
+        "long-march",
+        "ccp"
+      ],
+      "source": "https://www.britannica.com/event/Long-March"
+    },
+    {
+      "seedId": "ff40b351-01b2-448e-8c1e-182b630a158b",
+      "category": "history",
+      "navigationKeyword1": "asia",
+      "navigationKeyword2": "china",
+      "question": "Which post-Mao leader opened special economic zones and declared \u2018to get rich is glorious\u2019 while reforming the command economy?",
+      "correctAnswer": "Deng Xiaoping",
+      "incorrectAnswers": [
+        "Hua Guofeng alone",
+        "Jiang Zemin in 1966",
+        "Lin Biao"
+      ],
+      "explanation": "Household responsibility in agriculture and foreign investment transformed China after 1978.",
+      "keywords": [
+        "china",
+        "reform",
+        "deng"
+      ],
+      "source": "https://www.britannica.com/biography/Deng-Xiaoping"
+    },
+    {
+      "seedId": "79ea1c17-044e-42fc-9f8d-30b56e08cd3c",
+      "category": "history",
+      "navigationKeyword1": "asia",
+      "navigationKeyword2": "india",
+      "question": "A 1991 balance-of-payments crisis pushed which finance minister\u2019s devaluation and license reforms?",
+      "correctAnswer": "Manmohan Singh",
+      "incorrectAnswers": [
+        "P. V. Narasimha Rao alone without a finance team",
+        "Yashwant Sinha in that cabinet",
+        "Pranab Mukherjee in 1991\u2019s opening budget"
+      ],
+      "explanation": "Liberalization dismantled parts of the Licence Raj and accelerated services-led growth.",
+      "keywords": [
+        "india",
+        "1991",
+        "liberalization"
+      ],
+      "source": "https://www.britannica.com/biography/Manmohan-Singh"
+    },
+    {
+      "seedId": "a8052e22-cce5-4e2d-ab34-5d31a1122b13",
+      "category": "history",
+      "navigationKeyword1": "asia",
+      "navigationKeyword2": "india",
+      "question": "As first prime minister, who steered nonalignment, Five-Year Plans, and integration of princely states?",
+      "correctAnswer": "Jawaharlal Nehru",
+      "incorrectAnswers": [
+        "Sardar Vallabhbhai Patel as premier",
+        "B. R. Ambedkar in that office",
+        "Lord Mountbatten continuing as PM"
+      ],
+      "explanation": "His Fabian socialism, secular constitution, and Panchsheel diplomacy framed early republican India.",
+      "keywords": [
+        "india",
+        "nehru",
+        "republic"
+      ],
+      "source": "https://www.britannica.com/biography/Jawaharlal-Nehru"
+    },
+    {
+      "seedId": "34eee8ad-d9ae-422a-8733-d92f99cbbbe7",
+      "category": "history",
+      "navigationKeyword1": "asia",
+      "navigationKeyword2": "india",
+      "question": "Babur\u2019s 1526 victory at Panipat launched which Muslim dynasty that built the Taj Mahal and ruled much of the subcontinent?",
+      "correctAnswer": "The Mughal dynasty",
+      "incorrectAnswers": [
+        "The Maurya Empire only",
+        "The Maratha confederacy at its founding",
+        "The Delhi Sultanate alone without successors"
+      ],
+      "explanation": "Akbar\u2019s inclusive policies and Shah Jahan\u2019s monuments marked its peak before Aurangzeb\u2019s long wars strained the realm.",
+      "keywords": [
+        "india",
+        "mughal",
+        "early-modern"
+      ],
+      "source": "https://www.britannica.com/topic/Mughal-dynasty"
+    },
+    {
+      "seedId": "96436bc7-0703-4b80-8454-00b212e7cd36",
+      "category": "history",
+      "navigationKeyword1": "asia",
+      "navigationKeyword2": "india",
+      "question": "From 1858 to 1947, direct rule from London over the subcontinent is known by what shorthand name?",
+      "correctAnswer": "The British Raj",
+      "incorrectAnswers": [
+        "The Mughal successor state",
+        "The Dutch East Indies administration",
+        "The French comptoirs only"
+      ],
+      "explanation": "Railways, census, and Anglo-Indian law codes reshaped economy and politics alongside nationalist organizing.",
+      "keywords": [
+        "india",
+        "raj",
+        "colonial"
+      ],
+      "source": "https://www.britannica.com/event/British-raj"
+    },
+    {
+      "seedId": "fd404920-88cc-43d1-b67a-e1f7da2e64e6",
+      "category": "history",
+      "navigationKeyword1": "asia",
+      "navigationKeyword2": "india",
+      "question": "Hindu nationalist mobilization around a disputed Ayodhya site culminated in mosque demolition and riots in which year?",
+      "correctAnswer": "1992",
+      "incorrectAnswers": [
+        "1984 exclusively",
+        "2002 at the Babri structure\u2019s first filing",
+        "1975 during the Emergency"
+      ],
+      "explanation": "Babri Masjid\u2019s destruction reshaped party politics and judicial timelines for decades afterward.",
+      "keywords": [
+        "india",
+        "ayodhya",
+        "1992"
+      ],
+      "source": "https://www.britannica.com/place/Babri-Masjid"
+    },
+    {
+      "seedId": "b225dde5-e1df-4995-b9f1-88414da469ba",
+      "category": "history",
+      "navigationKeyword1": "asia",
+      "navigationKeyword2": "india",
+      "question": "Mountbatten\u2019s hurried timetable in 1947 produced dominions of India and which Muslim-majority state?",
+      "correctAnswer": "Pakistan (east and west wings at partition)",
+      "incorrectAnswers": [
+        "Ceylon alone",
+        "Burma simultaneously under the same act",
+        "Nepal as a split principality"
+      ],
+      "explanation": "Mass migration and communal violence accompanied Radcliffe\u2019s border awards through Punjab and Bengal.",
+      "keywords": [
+        "india",
+        "partition",
+        "1947"
+      ],
+      "source": "https://www.britannica.com/event/Indian-independence"
+    },
+    {
+      "seedId": "adeef53e-0a05-498b-84ff-bc5bc9ed56d9",
+      "category": "history",
+      "navigationKeyword1": "asia",
+      "navigationKeyword2": "india",
+      "question": "Robert Clive\u2019s victory at which 1757 battle helped the East India Company dominate Bengal?",
+      "correctAnswer": "The Battle of Plassey",
+      "incorrectAnswers": [
+        "The Battle of Buxar alone at that date",
+        "The Third Battle of Panipat",
+        "The siege of Seringapatam"
+      ],
+      "explanation": "Company fiscal extraction and dual government in Bengal foreshadowed wider British paramountcy.",
+      "keywords": [
+        "india",
+        "plassey",
+        "company-rule"
+      ],
+      "source": "https://www.britannica.com/event/Battle-of-Plassey"
+    },
+    {
+      "seedId": "51981033-c347-4905-8729-b54deba2d6e9",
+      "category": "history",
+      "navigationKeyword1": "asia",
+      "navigationKeyword2": "india",
+      "question": "Sepoy anger over cartridges and Dalhousie\u2019s annexations exploded into which 1857\u201359 uprising?",
+      "correctAnswer": "The Indian Rebellion of 1857 (Sepoy Mutiny)",
+      "incorrectAnswers": [
+        "The Santal rebellion only",
+        "The Moplah revolt exclusively",
+        "The Quit India movement"
+      ],
+      "explanation": "After its suppression London abolished the Company and inaugurated Crown Raj under a viceroy.",
+      "keywords": [
+        "india",
+        "1857",
+        "british-raj"
+      ],
+      "source": "https://www.britannica.com/event/Indian-Rebellion-of-1857"
+    },
+    {
+      "seedId": "7f9371e0-d364-4133-8634-276f384e1cf2",
+      "category": "history",
+      "navigationKeyword1": "asia",
+      "navigationKeyword2": "india",
+      "question": "The Indian Army\u2019s December 1971 intervention in East Pakistan led to the birth of which new state?",
+      "correctAnswer": "Bangladesh",
+      "incorrectAnswers": [
+        "Sri Lanka",
+        "Myanmar",
+        "Nepal"
+      ],
+      "explanation": "Mukti Bahini guerrillas, refugee flows, and a swift two-front campaign forced Pakistani surrender in Dhaka.",
+      "keywords": [
+        "india",
+        "1971",
+        "bangladesh"
+      ],
+      "source": "https://www.britannica.com/event/1971-India-Pakistan-War"
+    },
+    {
+      "seedId": "ff5446de-60f6-4f49-ad1c-a4e59cc32e09",
+      "category": "history",
+      "navigationKeyword1": "asia",
+      "navigationKeyword2": "india",
+      "question": "Which BJP-led prime minister\u2019s 2016 demonetization abruptly voided most high-denomination rupee notes?",
+      "correctAnswer": "Narendra Modi",
+      "incorrectAnswers": [
+        "Atal Bihari Vajpayee in 2016",
+        "Manmohan Singh\u2019s second term",
+        "Rajnath Singh as premier"
+      ],
+      "explanation": "The cash swap aimed at black money and counterfeits but disrupted supply chains and credit in the informal sector.",
+      "keywords": [
+        "india",
+        "demonetization",
+        "modi"
+      ],
+      "source": "https://www.britannica.com/biography/Narendra-Modi"
+    },
+    {
+      "seedId": "f12809b3-d2fe-4336-80b9-e21892fe559d",
+      "category": "history",
+      "navigationKeyword1": "asia",
+      "navigationKeyword2": "india",
+      "question": "Which lawyer-led campaigns of noncooperation and salt protest made him the face of the Congress independence struggle?",
+      "correctAnswer": "Mohandas K. Gandhi",
+      "incorrectAnswers": [
+        "Subhas Chandra Bose alone in the 1920s",
+        "Bal Gangadhar Tilak only after 1930",
+        "Jawaharlal Nehru before any mass jailings"
+      ],
+      "explanation": "Ahimsa, swadeshi, and Hindu-Muslim unity efforts clashed with revolutionary currents and imperial repression.",
+      "keywords": [
+        "india",
+        "gandhi",
+        "nationalism"
+      ],
+      "source": "https://www.britannica.com/biography/Mahatma-Gandhi"
+    },
+    {
+      "seedId": "0384d2be-79e6-4ff0-b06f-f6c8b5397fd1",
+      "category": "history",
+      "navigationKeyword1": "asia",
+      "navigationKeyword2": "india",
+      "question": "Which prime minister\u2019s 1975\u201377 Emergency suspended civil liberties and jailed opposition leaders?",
+      "correctAnswer": "Indira Gandhi",
+      "incorrectAnswers": [
+        "Indira\u2019s mother-in-law alone",
+        "Lal Bahadur Shastri posthumously",
+        "Morarji Desai before 1977"
+      ],
+      "explanation": "Sterilization drives and press censorship discredited the Congress until the Janata interlude defeated her.",
+      "keywords": [
+        "india",
+        "emergency",
+        "indira-gandhi"
+      ],
+      "source": "https://www.britannica.com/biography/Indira-Gandhi"
+    },
+    {
+      "seedId": "ad617851-bc09-4e86-8394-1f8cc9e7c013",
+      "category": "history",
+      "navigationKeyword1": "asia",
+      "navigationKeyword2": "japan",
+      "question": "Admiral T\u014dg\u014d\u2019s Tsushima victory helped Japan defeat which European empire in the war of 1904\u201305?",
+      "correctAnswer": "Russia",
+      "incorrectAnswers": [
+        "France",
+        "Germany",
+        "Ottoman Turkey"
+      ],
+      "explanation": "The Portsmouth Treaty recognized Japanese primacy in Korea and leaseholds in southern Manchuria.",
+      "keywords": [
+        "japan",
+        "russo-japanese",
+        "meiji"
+      ],
+      "source": "https://www.britannica.com/event/Russo-Japanese-War"
+    },
+    {
+      "seedId": "13e85e4c-183b-437c-80cb-7ba002733119",
+      "category": "history",
+      "navigationKeyword1": "asia",
+      "navigationKeyword2": "japan",
+      "question": "After the capital moved to Heian-ky\u014d in 794, which family dominated the throne through regent marriages for much of the classical era?",
+      "correctAnswer": "The Fujiwara clan",
+      "incorrectAnswers": [
+        "The Tokugawa family",
+        "The Taira alone",
+        "The Yamato naval house"
+      ],
+      "explanation": "Courtier culture, waka poetry, and Murasaki Shikibu\u2019s Tale of Genji flourished under Fujiwara influence.",
+      "keywords": [
+        "japan",
+        "heian",
+        "fujiwara"
+      ],
+      "source": "https://www.britannica.com/event/Heian-period"
+    },
+    {
+      "seedId": "36c86861-f725-49e6-b232-317de9004217",
+      "category": "history",
+      "navigationKeyword1": "asia",
+      "navigationKeyword2": "japan",
+      "question": "Allied occupation authorities supervised which 1947 document that renounced war and created the Diet-centered state?",
+      "correctAnswer": "The Constitution of Japan (Showa Constitution)",
+      "incorrectAnswers": [
+        "The Meiji Constitution reissued unchanged",
+        "The San Francisco Peace Treaty text alone",
+        "The Five Charter Oath only"
+      ],
+      "explanation": "Article 9\u2019s pacifist clause and later reinterpretations remain central to Japanese security politics.",
+      "keywords": [
+        "japan",
+        "constitution",
+        "postwar"
+      ],
+      "source": "https://www.britannica.com/event/occupation-of-Japan"
+    },
+    {
+      "seedId": "e928179d-050f-4350-8600-2ca6a101b557",
+      "category": "history",
+      "navigationKeyword1": "asia",
+      "navigationKeyword2": "japan",
+      "question": "High-speed Shinkansen service from Tokyo to Osaka began ahead of which 1964 global festival hosted in the capital?",
+      "correctAnswer": "The Tokyo Summer Olympics",
+      "incorrectAnswers": [
+        "The Osaka Expo 1970 only",
+        "The Sapporo Winter Games of 1972",
+        "The Nagano Games of 1998"
+      ],
+      "explanation": "Ikeda\u2019s Income Doubling Plan and infrastructure spending symbolized Japan\u2019s high-growth era.",
+      "keywords": [
+        "japan",
+        "1964",
+        "economic-growth"
+      ],
+      "source": "https://www.britannica.com/event/Tokyo-1964-Olympic-Games"
+    },
+    {
+      "seedId": "46d95a48-7c36-4835-8da3-067899ec2f9f",
+      "category": "history",
+      "navigationKeyword1": "asia",
+      "navigationKeyword2": "japan",
+      "question": "Hiroshima and Nagasaki were destroyed in August 1945 by what new class of U.S. weapon?",
+      "correctAnswer": "Nuclear (atomic) bombs",
+      "incorrectAnswers": [
+        "Fuel-air explosives only",
+        "Chemical shells alone",
+        "Conventional firebombing without fission devices"
+      ],
+      "explanation": "Emperor Hirohito\u2019s broadcast accepting the Potsdam terms followed the Soviet entry and the second bomb.",
+      "keywords": [
+        "japan",
+        "1945",
+        "atomic-bomb"
+      ],
+      "source": "https://www.britannica.com/event/Atomic-bombings-of-Hiroshima-and-Nagasaki"
+    },
+    {
+      "seedId": "30afafef-9472-4ffc-b78d-8f7b405885f4",
+      "category": "history",
+      "navigationKeyword1": "asia",
+      "navigationKeyword2": "japan",
+      "question": "Japan\u2019s fragile banks and \u2018zombie firms\u2019 worsened when which 1997\u201398 regional meltdown spread from Thailand across East Asia?",
+      "correctAnswer": "The Asian financial crisis",
+      "incorrectAnswers": [
+        "The Latin American debt crisis only",
+        "The 2008 subprime mortgage collapse at its start",
+        "The European sovereign debt crisis of 2010"
+      ],
+      "explanation": "Currency crashes and IMF programs roiled neighbors; Japan\u2019s own asset-bubble hangover made the shock harder to absorb.",
+      "keywords": [
+        "japan",
+        "1997",
+        "financial-crisis"
+      ],
+      "source": "https://www.britannica.com/event/Asian-financial-crisis"
+    },
+    {
+      "seedId": "804253d1-299e-4125-b6b2-9ecb1e2d8480",
+      "category": "history",
+      "navigationKeyword1": "asia",
+      "navigationKeyword2": "japan",
+      "question": "Minamoto Yoritomo\u2019s 1192 appointment as shogun founded which warrior-led government based at Kamakura?",
+      "correctAnswer": "The Kamakura shogunate",
+      "incorrectAnswers": [
+        "The Meiji oligarchy",
+        "The Ashikaga bakufu at founding",
+        "The Satsuma-Ch\u014dsh\u016b alliance"
+      ],
+      "explanation": "It institutionalized dual rule: a cloistered emperor in Kyoto and military administration in the east.",
+      "keywords": [
+        "japan",
+        "kamakura",
+        "samurai"
+      ],
+      "source": "https://www.britannica.com/event/Kamakura-period"
+    },
+    {
+      "seedId": "4f6424ae-e66c-459e-add2-f5b3aa9bbfc9",
+      "category": "history",
+      "navigationKeyword1": "asia",
+      "navigationKeyword2": "japan",
+      "question": "The 1868 coup ending the Tokugawa shogunate is remembered as the restoration of direct rule under which emperor\u2019s reign name?",
+      "correctAnswer": "Meiji (Mutsuhito)",
+      "incorrectAnswers": [
+        "Taish\u014d alone at that date",
+        "K\u014dmei without change",
+        "Hirohito in 1868"
+      ],
+      "explanation": "Charter Oath reforms, conscription, and the Iwakura Mission rapidly modernized state and industry.",
+      "keywords": [
+        "japan",
+        "meiji",
+        "restoration"
+      ],
+      "source": "https://www.britannica.com/event/Meiji-Restoration"
+    },
+    {
+      "seedId": "b995b98e-c916-4c90-83cb-69fe550a0f76",
+      "category": "history",
+      "navigationKeyword1": "asia",
+      "navigationKeyword2": "japan",
+      "question": "The Marco Polo Bridge incident near Beijing in July 1937 escalated into which long war on the Chinese mainland?",
+      "correctAnswer": "The Second Sino-Japanese War",
+      "incorrectAnswers": [
+        "The First Sino-Japanese War only",
+        "The Boxer intervention alone",
+        "The Korean War"
+      ],
+      "explanation": "Japanese occupation, Nanjing\u2019s capture, and United Front resistance merged into the wider Pacific conflict after 1941.",
+      "keywords": [
+        "japan",
+        "china",
+        "1937"
+      ],
+      "source": "https://www.britannica.com/event/Second-Sino-Japanese-War"
+    },
+    {
+      "seedId": "893a2142-9df4-4e81-acf6-819ff3f54282",
+      "category": "history",
+      "navigationKeyword1": "asia",
+      "navigationKeyword2": "japan",
+      "question": "Tokugawa Ieyasu\u2019s victory at Sekigahara (1600) paved the way for over two centuries of rule from which city?",
+      "correctAnswer": "Edo (modern Tokyo)",
+      "incorrectAnswers": [
+        "Kyoto only",
+        "Nara exclusively",
+        "Osaka without alternate residence"
+      ],
+      "explanation": "Sankin-k\u014dtai alternate attendance and sakoku seclusion policies marked the Edo/Tokugawa age.",
+      "keywords": [
+        "japan",
+        "tokugawa",
+        "edo"
+      ],
+      "source": "https://www.britannica.com/event/Tokugawa-period"
+    },
+    {
+      "seedId": "ee443a3b-d006-4836-bfa9-cb7261619c17",
+      "category": "history",
+      "navigationKeyword1": "asia",
+      "navigationKeyword2": "japan",
+      "question": "Which December 1941 surprise strike drew the United States into World War II\u2019s Pacific theater?",
+      "correctAnswer": "The attack on Pearl Harbor",
+      "incorrectAnswers": [
+        "The bombing of Darwin only",
+        "The fall of Singapore first",
+        "Midway without prelude"
+      ],
+      "explanation": "Japanese carriers crippled battleships at Oahu while parallel offensives hit Malaya and the Philippines.",
+      "keywords": [
+        "japan",
+        "pearl-harbor",
+        "wwii"
+      ],
+      "source": "https://www.britannica.com/event/Pearl-Harbor-attack"
+    },
+    {
+      "seedId": "e8b3e91d-8d21-4fc9-9cec-f000d8b12b52",
+      "category": "history",
+      "navigationKeyword1": "asia",
+      "navigationKeyword2": "japan",
+      "question": "Which U.S. commodore\u2019s 1853\u201354 \u2018black ships\u2019 pressured Japan to end more than two centuries of limited foreign contact?",
+      "correctAnswer": "Matthew C. Perry",
+      "incorrectAnswers": [
+        "James Biddle only",
+        "William Seward",
+        "Commodore George Dewey"
+      ],
+      "explanation": "The Treaty of Kanagawa opened coaling ports and began the cascade ending the Tokugawa shogunate.",
+      "keywords": [
+        "japan",
+        "perry",
+        "opening"
+      ],
+      "source": "https://www.britannica.com/biography/Matthew-C-Perry"
+    },
+    {
+      "seedId": "7c8bda6f-2041-4360-bec0-df44e06a7027",
+      "category": "history",
+      "navigationKeyword1": "asia",
+      "navigationKeyword2": "korea",
+      "question": "2018 saw the first inter-Korean summit in Panmunjom between Moon Jae-in and which North Korean leader?",
+      "correctAnswer": "Kim Jong Un",
+      "incorrectAnswers": [
+        "Kim Jong Il posthumously",
+        "Kim Il Sung via medium",
+        "Hwang Jang-yop as head of state"
+      ],
+      "explanation": "Olympic diplomacy and a vague denuclearization pledge followed, though implementation stalled.",
+      "keywords": [
+        "korea",
+        "summit",
+        "2018"
+      ],
+      "source": "https://www.britannica.com/biography/Moon-Jae-In"
+    },
+    {
+      "seedId": "96a1b6aa-5a72-428f-b202-cfa47bfd2d18",
+      "category": "history",
+      "navigationKeyword1": "asia",
+      "navigationKeyword2": "korea",
+      "question": "At the end of World War II, Soviet and U.S. zones of occupation met roughly along which latitude line?",
+      "correctAnswer": "The 38th parallel",
+      "incorrectAnswers": [
+        "The Yalu River",
+        "The Demilitarized Zone of 1953 only",
+        "The Tropic of Cancer"
+      ],
+      "explanation": "Cold War rivalry hardened temporary lines into competing Korean states by 1948.",
+      "keywords": [
+        "korea",
+        "division",
+        "cold-war"
+      ],
+      "source": "https://www.britannica.com/place/38th-parallel"
+    },
+    {
+      "seedId": "74eaba24-4c0c-4ec5-a4ea-08cab9526ede",
+      "category": "history",
+      "navigationKeyword1": "asia",
+      "navigationKeyword2": "korea",
+      "question": "Before unification under Silla, the Korean peninsula was dominated by Kogury\u014f, Paekche, and which third kingdom?",
+      "correctAnswer": "Silla (with Kaya confederacies nearby)",
+      "incorrectAnswers": [
+        "Joseon at that era",
+        "Goryeo in the same centuries",
+        "Balhae alone as a trio member"
+      ],
+      "explanation": "Buddhist culture, horse armor, and Chinese tribute politics marked the Three Kingdoms period.",
+      "keywords": [
+        "korea",
+        "three-kingdoms",
+        "ancient"
+      ],
+      "source": "https://www.britannica.com/place/Korea/The-Three-Kingdoms-period"
+    },
+    {
+      "seedId": "0eab6545-c737-4f2b-b4b2-e694c0a5d87c",
+      "category": "history",
+      "navigationKeyword1": "asia",
+      "navigationKeyword2": "korea",
+      "question": "Chun Doo-hwan\u2019s paratroopers crushed which May 1980 southern city uprising that became a democracy movement symbol?",
+      "correctAnswer": "The Gwangju Uprising",
+      "incorrectAnswers": [
+        "The Busan student spring alone",
+        "The Seoul spring of 1987 only",
+        "The Jeju April 3 incident of the same month"
+      ],
+      "explanation": "Hundreds died as citizens armed themselves briefly before tanks retook the city; memory fueled the 1987 transition.",
+      "keywords": [
+        "korea",
+        "gwangju",
+        "1980"
+      ],
+      "source": "https://www.britannica.com/event/Gwangju-Uprising"
+    },
+    {
+      "seedId": "7239073d-46c9-49d9-b601-f131bfa4eda2",
+      "category": "history",
+      "navigationKeyword1": "asia",
+      "navigationKeyword2": "korea",
+      "question": "General Yi S\u014fng-gye\u2019s 1392 coup inaugurated which Confucian-bureaucratic dynasty lasting until 1910?",
+      "correctAnswer": "The Joseon (Chos\u014fn) dynasty",
+      "incorrectAnswers": [
+        "The Goryeo restoration",
+        "The Japanese shogunate in Seoul",
+        "The Yuan province of Liaoyang only"
+      ],
+      "explanation": "Hangul promulgation, yangban elites, and Hideyoshi\u2019s invasions shaped its later crises.",
+      "keywords": [
+        "korea",
+        "joseon",
+        "yi-dynasty"
+      ],
+      "source": "https://www.britannica.com/topic/Choson-dynasty"
+    },
+    {
+      "seedId": "ac3ea2e8-cfbe-41c6-b910-254cea945324",
+      "category": "history",
+      "navigationKeyword1": "asia",
+      "navigationKeyword2": "korea",
+      "question": "Japan formally annexed Korea as a colony after which 1905 agreement that stripped Seoul of diplomatic power?",
+      "correctAnswer": "The Japan\u2013Korea Treaty of 1905 (Eulsa Protectorate Treaty)",
+      "incorrectAnswers": [
+        "The Treaty of Shimonoseki alone",
+        "The Ganghwa Treaty of 1876 exclusively",
+        "The Portsmouth Treaty"
+      ],
+      "explanation": "It\u014d Hirobumi\u2019s residents-general rule paved the way to full annexation in 1910.",
+      "keywords": [
+        "korea",
+        "japan",
+        "colonial"
+      ],
+      "source": "https://www.britannica.com/place/Korea/Korea-under-Japanese-rule"
+    },
+    {
+      "seedId": "115665a8-3026-4301-8e11-779b03e59f58",
+      "category": "history",
+      "navigationKeyword1": "asia",
+      "navigationKeyword2": "korea",
+      "question": "Kim Dae-jung\u2019s 2000 Pyongyang summit with Kim Jong Il was dubbed which sunshine-themed policy?",
+      "correctAnswer": "The Sunshine Policy",
+      "incorrectAnswers": [
+        "The Hermit Kingdom Doctrine",
+        "The Northern Limit Line Accord of 1972",
+        "The Panmunjom Formula only"
+      ],
+      "explanation": "Family reunions and Kaes\u014fng industrial hopes briefly eased inter-Korean tension.",
+      "keywords": [
+        "korea",
+        "sunshine-policy",
+        "engagement"
+      ],
+      "source": "https://www.britannica.com/biography/Kim-Dae-Jung"
+    },
+    {
+      "seedId": "204f7f27-2285-4579-b82f-3cf449db4cae",
+      "category": "history",
+      "navigationKeyword1": "asia",
+      "navigationKeyword2": "korea",
+      "question": "Kim Il-Sung\u2019s June 1950 invasion aimed to reunify the peninsula under whose regime?",
+      "correctAnswer": "The Democratic People\u2019s Republic of Korea (North Korea)",
+      "incorrectAnswers": [
+        "The First Republic of Korea first",
+        "The United Nations trusteeship alone",
+        "Manchukuo restoration"
+      ],
+      "explanation": "Inchon, Chinese intervention, and stalemate along the pre-armistice line consumed three years of war.",
+      "keywords": [
+        "korea",
+        "korean-war",
+        "1950"
+      ],
+      "source": "https://www.britannica.com/event/Korean-War"
+    },
+    {
+      "seedId": "af8e5ca0-2db5-4e50-bb55-f6eb5ba6eea0",
+      "category": "history",
+      "navigationKeyword1": "asia",
+      "navigationKeyword2": "korea",
+      "question": "March 1, 1919, nationwide protests against Japanese rule are commemorated as what Korean holiday?",
+      "correctAnswer": "Samil (March First) Independence Movement Day",
+      "incorrectAnswers": [
+        "Hangul Day",
+        "Liberation Day (August 15) only",
+        "Kim Il-Sung\u2019s birthday"
+      ],
+      "explanation": "Paris Peace echoes and Wilsonian language inspired mass demonstrations brutally suppressed by gendarmes.",
+      "keywords": [
+        "korea",
+        "1919",
+        "independence"
+      ],
+      "source": "https://www.britannica.com/event/March-First-Movement"
+    },
+    {
+      "seedId": "2f06c279-fcbc-4315-8ac0-64d77cbed1a1",
+      "category": "history",
+      "navigationKeyword1": "asia",
+      "navigationKeyword2": "korea",
+      "question": "Park Chung-hee\u2019s 1961 coup launched export-led industrialization sometimes nicknamed after which river?",
+      "correctAnswer": "The Han River Miracle (South Korean development model)",
+      "incorrectAnswers": [
+        "The Taedong River program",
+        "The Yalu boom alone",
+        "The Nakdong nexus exclusively"
+      ],
+      "explanation": "Chaebols, U.S. security umbrellas, and compressed growth transformed an agrarian war-torn south.",
+      "keywords": [
+        "korea",
+        "park-chung-hee",
+        "development"
+      ],
+      "source": "https://www.britannica.com/biography/Park-Chung-Hee"
+    },
+    {
+      "seedId": "fc1901bd-fc3a-4b46-a715-b35f0c598d60",
+      "category": "history",
+      "navigationKeyword1": "asia",
+      "navigationKeyword2": "korea",
+      "question": "Roh Tae-woo\u2019s June 29, 1987, reform pledge followed massive protests demanding what change to the presidency?",
+      "correctAnswer": "Direct popular election of the president",
+      "incorrectAnswers": [
+        "Abolition of the National Assembly only",
+        "Immediate union with North Korea",
+        "Restoration of Syngman Rhee\u2019s constitution"
+      ],
+      "explanation": "The June Struggle pressured the ruling DJP to scrap indirect election schemes and draft a democratic constitution.",
+      "keywords": [
+        "korea",
+        "democratization",
+        "1987"
+      ],
+      "source": "https://www.britannica.com/biography/Roh-Tae-Woo"
+    },
+    {
+      "seedId": "0cabc006-a8df-4146-9d70-37509f7b23a3",
+      "category": "history",
+      "navigationKeyword1": "asia",
+      "navigationKeyword2": "korea",
+      "question": "Wang K\u014fn founded which dynasty in 918 whose name still labels the modern Korean alphabet\u2019s formal alias?",
+      "correctAnswer": "Goryeo (Kory\u014f)",
+      "incorrectAnswers": [
+        "Joseon immediately in 918",
+        "Balhae as southern successor",
+        "Silla restored universally"
+      ],
+      "explanation": "Celadon, Tripitaka printing blocks, and Mongol tributary status characterize the long Goryeo centuries.",
+      "keywords": [
+        "korea",
+        "goryeo",
+        "medieval"
+      ],
+      "source": "https://www.britannica.com/topic/Koryo-dynasty"
+    },
+    {
+      "seedId": "667928c0-4e6e-4dee-be37-fc28a7e59b8e",
+      "category": "history",
+      "navigationKeyword1": "asia",
+      "navigationKeyword2": "mongols",
+      "question": "Babur, a Timurid prince, carried Central Asian cavalry tactics into India and founded which dynasty in 1526?",
+      "correctAnswer": "The Mughal dynasty",
+      "incorrectAnswers": [
+        "The Safavid state in Delhi",
+        "The Ottoman line in Lahore",
+        "The Maratha confederacy"
+      ],
+      "explanation": "Panipat victories against Ibrahim Lod\u012b opened northern India to Turco-Mongol rule.",
+      "keywords": [
+        "mongols",
+        "babur",
+        "mughal"
+      ],
+      "source": "https://www.britannica.com/biography/Babur"
+    },
+    {
+      "seedId": "ffad897a-492a-4b03-aff9-2aa0adcd2b32",
+      "category": "history",
+      "navigationKeyword1": "asia",
+      "navigationKeyword2": "mongols",
+      "question": "Batu\u2019s armies founded which western khanate ruling Russian principalities from Sarai on the Volga?",
+      "correctAnswer": "The Golden Horde",
+      "incorrectAnswers": [
+        "The Il-khanate only",
+        "The Chagatai khanate in Russia",
+        "The Yuan dynasty capital at Sarai"
+      ],
+      "explanation": "It extracted tribute from Moscow and Vladimir until Timurid shocks and later Muscovite rise.",
+      "keywords": [
+        "mongols",
+        "golden-horde",
+        "russia"
+      ],
+      "source": "https://www.britannica.com/place/Golden-Horde"
+    },
+    {
+      "seedId": "19a29b9c-dd91-4083-994d-9e45efc1b32b",
+      "category": "history",
+      "navigationKeyword1": "asia",
+      "navigationKeyword2": "mongols",
+      "question": "Democratic protests in Ulaanbaatar\u2019s S\u00fckhbaatar Square helped end single-party rule in which revolutionary year?",
+      "correctAnswer": "1990",
+      "incorrectAnswers": [
+        "1976 during the Cultural Revolution spillover",
+        "2005 exclusively",
+        "1981 under Gorbachev only"
+      ],
+      "explanation": "A new constitution, multiparty elections, and market transition followed Soviet withdrawal of subsidies.",
+      "keywords": [
+        "mongols",
+        "democracy",
+        "1990"
+      ],
+      "source": "https://www.britannica.com/place/Mongolia/History"
+    },
+    {
+      "seedId": "de9f4d6a-159a-45ad-8530-5abe17369dae",
+      "category": "history",
+      "navigationKeyword1": "asia",
+      "navigationKeyword2": "mongols",
+      "question": "Kublai Khan completed the conquest of southern China and proclaimed which foreign dynasty over the Han heartland?",
+      "correctAnswer": "The Yuan dynasty",
+      "incorrectAnswers": [
+        "The Ming immediately in 1271",
+        "The Qing two centuries early",
+        "The Liao restoration"
+      ],
+      "explanation": "Four-class social hierarchy, paper currency experiments, and Marco Polo\u2019s travels color its image abroad.",
+      "keywords": [
+        "mongols",
+        "yuan",
+        "kublai"
+      ],
+      "source": "https://www.britannica.com/biography/Kublai-Khan"
+    },
+    {
+      "seedId": "26de84b0-6659-4afa-bd39-978d6f5be020",
+      "category": "history",
+      "navigationKeyword1": "asia",
+      "navigationKeyword2": "mongols",
+      "question": "Mamluk forces under Qutuz and Baybars stopped Mongol advance into Egypt at which 1260 battle near Nazareth?",
+      "correctAnswer": "\u02bfAyn J\u0101l\u016bt (Ain Jalut)",
+      "incorrectAnswers": [
+        "The Battle of K\u00f6se Da\u011f",
+        "The siege of Baghdad 1258",
+        "Lake Peipus"
+      ],
+      "explanation": "The defeat preserved Mamluk Syria and showed Mongol armies could lose to disciplined cavalry.",
+      "keywords": [
+        "mongols",
+        "mamluks",
+        "1260"
+      ],
+      "source": "https://www.britannica.com/event/Battle-of-Ayn-Jalut"
+    },
+    {
+      "seedId": "278064f1-a98e-44bb-b87f-d7ce78901a1f",
+      "category": "history",
+      "navigationKeyword1": "asia",
+      "navigationKeyword2": "mongols",
+      "question": "Outer Mongolia declared autonomy in 1911 as which Chinese imperial house collapsed?",
+      "correctAnswer": "The Qing dynasty",
+      "incorrectAnswers": [
+        "The Ming restoration",
+        "The Yuan revival",
+        "The Republic under Yuan Shikai only"
+      ],
+      "explanation": "Russian and later Soviet influence competed with Chinese republican claims until People\u2019s Revolution alignment.",
+      "keywords": [
+        "mongols",
+        "1911",
+        "independence"
+      ],
+      "source": "https://www.britannica.com/place/Mongolia/History"
+    },
+    {
+      "seedId": "04835752-1923-4e37-a963-97fab007132a",
+      "category": "history",
+      "navigationKeyword1": "asia",
+      "navigationKeyword2": "mongols",
+      "question": "Tem\u00fcjin took the title Chinggis (Genghis) Khan in 1206 after uniting which Inner Asian pastoral confederations?",
+      "correctAnswer": "The Mongol and Turkic steppe tribes of the Mongolian plateau",
+      "incorrectAnswers": [
+        "The Jurchen Jin court only",
+        "The Song dynasty armies",
+        "The Delhi Sultanate"
+      ],
+      "explanation": "Decimal military organization, nerge hunts, and yazak law codes underpinned conquests from China to Khw\u0101rezm.",
+      "keywords": [
+        "mongols",
+        "genghis-khan",
+        "unification"
+      ],
+      "source": "https://www.britannica.com/biography/Genghis-Khan"
+    },
+    {
+      "seedId": "2ccaefe8-ac6f-4bda-b1f3-763a1b5059f2",
+      "category": "history",
+      "navigationKeyword1": "asia",
+      "navigationKeyword2": "mongols",
+      "question": "Timur (Tamerlane) built a Timurid empire centered on which Silk Road oasis city in Transoxiana?",
+      "correctAnswer": "Samarkand",
+      "incorrectAnswers": [
+        "Baghdad as permanent capital",
+        "Beijing under Timur",
+        "Tabriz only without rebuilding"
+      ],
+      "explanation": "His pyramids of skulls outside Delhi and Ankara\u2019s 1402 field win against the Ottomans marked brutal ambition.",
+      "keywords": [
+        "mongols",
+        "timur",
+        "samarkand"
+      ],
+      "source": "https://www.britannica.com/biography/Timur"
+    },
+    {
+      "seedId": "4d32f71d-77ec-44a7-a99c-dc1f77f91ed1",
+      "category": "history",
+      "navigationKeyword1": "asia",
+      "navigationKeyword2": "mongols",
+      "question": "Two typhoon-season naval disasters against Japan in 1274 and 1281 entered legend as what \u2018divine\u2019 winds?",
+      "correctAnswer": "Kamikaze (divine winds)",
+      "incorrectAnswers": [
+        "The shamal only",
+        "The mistral off Kyushu",
+        "El Ni\u00f1o monsoons unrelated"
+      ],
+      "explanation": "Stone coastal walls, s\u014dbushi resistance, and fragile riverine logistics doomed Mongol amphibious plans.",
+      "keywords": [
+        "mongols",
+        "japan",
+        "invasion"
+      ],
+      "source": "https://www.britannica.com/biography/Kublai-Khan"
+    },
+    {
+      "seedId": "b3f4d14e-701f-4d8b-a130-9e3667332858",
+      "category": "history",
+      "navigationKeyword1": "asia",
+      "navigationKeyword2": "mongols",
+      "question": "Which Mongolian leader succeeded Choibalsan and anchored the Mongolian People\u2019s Republic in COMECON until 1984?",
+      "correctAnswer": "Yumjaagiin Tsedenbal",
+      "incorrectAnswers": [
+        "Damdin S\u00fckhbaatar in the 1980s",
+        "Punsalmaagiin Ochirbat in the 1930s",
+        "Genghis Khan in the 20th century"
+      ],
+      "explanation": "His long first secretary tenure followed Stalinist purges and leaned on Soviet subsidies for industry and livestock quotas.",
+      "keywords": [
+        "mongols",
+        "tsedenbal",
+        "cold-war"
+      ],
+      "source": "https://www.britannica.com/biography/Yumjaagiin-Tsedenbal"
+    },
+    {
+      "seedId": "4a9fd82b-e350-4f39-988e-4def98f8cb21",
+      "category": "history",
+      "navigationKeyword1": "asia",
+      "navigationKeyword2": "mongols",
+      "question": "Which khaganate dominated Mongolia itself from the 17th century under Buddhist theocracy until 1911?",
+      "correctAnswer": "Khalkha submission to the Qing (Manchu) court\u2019s league banners",
+      "incorrectAnswers": [
+        "The Yuan restoration under Kangxi",
+        "The Dzungar khanate without rivalry",
+        "The Russian zemstvo system"
+      ],
+      "explanation": "Jebsundamba Khutuktu authority and Qing military campaigns against Dzungars framed steppe politics.",
+      "keywords": [
+        "mongols",
+        "qing",
+        "mongolia"
+      ],
+      "source": "https://www.britannica.com/place/Mongolia/History"
+    },
+    {
+      "seedId": "3798f519-31fb-4e26-ba68-de96d4d34717",
+      "category": "history",
+      "navigationKeyword1": "asia",
+      "navigationKeyword2": "mongols",
+      "question": "\u00d6g\u00f6dei\u2019s election as great khan let Mongol armies resume westward strikes toward which Islamic heartland cities?",
+      "correctAnswer": "Central Asian and Iranian cities such as Bukhara, Samarkand, and Baghdad\u2019s approaches",
+      "incorrectAnswers": [
+        "Constantinople in 1206",
+        "Paris under Genghis personally",
+        "Cairo immediately in 1219"
+      ],
+      "explanation": "The Khw\u0101rezm-Sh\u0101h\u2019s execution of envoys triggered systematic campaigning across Transoxiana.",
+      "keywords": [
+        "mongols",
+        "ogedei",
+        "expansion"
+      ],
+      "source": "https://www.britannica.com/biography/Ogodei"
+    },
+    {
+      "seedId": "212653ac-5f89-47e8-8234-3003dcf87f6f",
+      "category": "history",
+      "navigationKeyword1": "asia",
+      "navigationKeyword2": "southeast-asia",
+      "question": "Aung San Suu Kyi\u2019s party won 2015 polls in which country emerging from long military junta rule?",
+      "correctAnswer": "Myanmar (Burma)",
+      "incorrectAnswers": [
+        "Thailand under absolute monarchy",
+        "Laos without elections",
+        "Cambodia in 2015 only"
+      ],
+      "explanation": "The NLD victory tested civil-military power-sharing under a military-drafted constitution.",
+      "keywords": [
+        "southeast-asia",
+        "myanmar",
+        "democracy"
+      ],
+      "source": "https://www.britannica.com/biography/Aung-San-Suu-Kyi"
+    },
+    {
+      "seedId": "d872f1d9-2883-4704-8212-3429a0a4e49d",
+      "category": "history",
+      "navigationKeyword1": "asia",
+      "navigationKeyword2": "southeast-asia",
+      "question": "East Timor voted for independence in 1999 after 24 years of occupation by which neighbor?",
+      "correctAnswer": "Indonesia",
+      "incorrectAnswers": [
+        "Australia",
+        "Portugal without withdrawal",
+        "Malaysia"
+      ],
+      "explanation": "A UN-supervised referendum and peacekeeping mission followed violent militia backlash.",
+      "keywords": [
+        "southeast-asia",
+        "east-timor",
+        "1999"
+      ],
+      "source": "https://www.britannica.com/place/East-Timor/History"
+    },
+    {
+      "seedId": "37cd78a5-c530-439b-bdbe-4f35e186088c",
+      "category": "history",
+      "navigationKeyword1": "asia",
+      "navigationKeyword2": "southeast-asia",
+      "question": "Foreign ministers meeting in Bangkok in 1967 founded which regional grouping of non-communist states?",
+      "correctAnswer": "ASEAN (Association of Southeast Asian Nations)",
+      "incorrectAnswers": [
+        "SEATO alone",
+        "APEC at that date",
+        "The Non-Aligned Movement secretariat"
+      ],
+      "explanation": "Original members Indonesia, Malaysia, Philippines, Singapore, and Thailand sought stability amid Cold War conflicts.",
+      "keywords": [
+        "southeast-asia",
+        "asean",
+        "1967"
+      ],
+      "source": "https://www.britannica.com/topic/ASEAN"
+    },
+    {
+      "seedId": "ffea94c5-872f-40ce-8a03-c272b4f25aa7",
+      "category": "history",
+      "navigationKeyword1": "asia",
+      "navigationKeyword2": "southeast-asia",
+      "question": "Ho Chi Minh\u2019s Viet Minh proclaimed independence in 1945 in which former imperial capital?",
+      "correctAnswer": "Hanoi",
+      "incorrectAnswers": [
+        "Saigon only in 1945",
+        "Hue without August events",
+        "Vientiane"
+      ],
+      "explanation": "French reoccupation and later American escalation grew from the First Indochina War\u2019s stalemate lines.",
+      "keywords": [
+        "southeast-asia",
+        "vietnam",
+        "1945"
+      ],
+      "source": "https://www.britannica.com/biography/Ho-Chi-Minh"
+    },
+    {
+      "seedId": "936014bf-3407-4785-ade2-999dd9652e97",
+      "category": "history",
+      "navigationKeyword1": "asia",
+      "navigationKeyword2": "southeast-asia",
+      "question": "Java\u2019s Majapahit court reached its zenith under which king and his chief minister Gajah Mada?",
+      "correctAnswer": "Hayam Wuruk",
+      "incorrectAnswers": [
+        "Jayakatwang of Kediri",
+        "Airlangga of Kahuripan",
+        "Suharto of Majapahit"
+      ],
+      "explanation": "The palapa oath and maritime claims projected influence through the Nusantara archipelago in the mid-14th century.",
+      "keywords": [
+        "southeast-asia",
+        "majapahit",
+        "java"
+      ],
+      "source": "https://www.britannica.com/place/Majapahit-empire"
+    },
+    {
+      "seedId": "c053bcbe-1168-47db-96c0-88ea87712432",
+      "category": "history",
+      "navigationKeyword1": "asia",
+      "navigationKeyword2": "southeast-asia",
+      "question": "Jos\u00e9 Rizal\u2019s execution in 1896 helped ignite which archipelagic revolt against Spain?",
+      "correctAnswer": "The Philippine Revolution",
+      "incorrectAnswers": [
+        "The Java War only",
+        "The Katipunan without wider context",
+        "The Cavite mutiny exclusively"
+      ],
+      "explanation": "Katipunan cells, ilustrado reformism, and U.S. intervention after 1898 reshaped independence timelines.",
+      "keywords": [
+        "southeast-asia",
+        "philippines",
+        "rizal"
+      ],
+      "source": "https://www.britannica.com/biography/Jose-Rizal"
+    },
+    {
+      "seedId": "d83c822f-9a97-4951-b29d-b89b591baaf4",
+      "category": "history",
+      "navigationKeyword1": "asia",
+      "navigationKeyword2": "southeast-asia",
+      "question": "Khmer Rouge troops seized Phnom Penh in 1975 under which radical Maoist leader\u2019s orders?",
+      "correctAnswer": "Pol Pot (Saloth Sar)",
+      "incorrectAnswers": [
+        "Lon Nol",
+        "Norodom Sihanouk in direct command",
+        "Hun Sen in 1975 leadership"
+      ],
+      "explanation": "Urban evacuation, forced labor, and genocide followed until Vietnamese intervention in 1979.",
+      "keywords": [
+        "southeast-asia",
+        "cambodia",
+        "khmer-rouge"
+      ],
+      "source": "https://www.britannica.com/biography/Pol-Pot"
+    },
+    {
+      "seedId": "2956feb9-a054-4ae7-a73b-eaf8c26e0a3e",
+      "category": "history",
+      "navigationKeyword1": "asia",
+      "navigationKeyword2": "southeast-asia",
+      "question": "Parameswara founded which entrep\u00f4t sultanate on the strait that later passed to Dutch VOC pressure?",
+      "correctAnswer": "Malacca (Melaka)",
+      "incorrectAnswers": [
+        "Aceh alone at founding",
+        "Brunei without straits role",
+        "Singapore under Raffles only"
+      ],
+      "explanation": "Islamic courts, monsoon trade, and Portuguese conquest in 1511 rerouted spice routes.",
+      "keywords": [
+        "southeast-asia",
+        "malacca",
+        "trade"
+      ],
+      "source": "https://www.britannica.com/place/Melaka-Malaysia"
+    },
+    {
+      "seedId": "c8817f43-68f3-44c6-8678-7f002b755c0f",
+      "category": "history",
+      "navigationKeyword1": "asia",
+      "navigationKeyword2": "southeast-asia",
+      "question": "Sukarno and Hatta declared independence from the Netherlands in August 1945 on which populous island?",
+      "correctAnswer": "Java",
+      "incorrectAnswers": [
+        "Sumatra alone for the proclamation",
+        "Bali exclusively",
+        "New Guinea"
+      ],
+      "explanation": "Four-year diplomacy and warfare followed before Dutch recognition of the United Republic in 1949.",
+      "keywords": [
+        "southeast-asia",
+        "indonesia",
+        "independence"
+      ],
+      "source": "https://www.britannica.com/biography/Sukarno"
+    },
+    {
+      "seedId": "cb72470d-b32e-44b7-85f5-0424792fb1e6",
+      "category": "history",
+      "navigationKeyword1": "asia",
+      "navigationKeyword2": "southeast-asia",
+      "question": "The Khmer capital of Angkor, famed for Angkor Wat, lay in the territory of which present-day state?",
+      "correctAnswer": "Cambodia",
+      "incorrectAnswers": [
+        "Vietnam only",
+        "Thailand exclusively",
+        "Laos without Khmer phases"
+      ],
+      "explanation": "Hydraulic works and god-king temples expressed imperial ambition until Ayutthaya\u2019s sack in 1431.",
+      "keywords": [
+        "southeast-asia",
+        "angkor",
+        "khmer"
+      ],
+      "source": "https://www.britannica.com/place/Angkor"
+    },
+    {
+      "seedId": "b57619b1-1595-42b4-870e-f390d9d3f2ab",
+      "category": "history",
+      "navigationKeyword1": "asia",
+      "navigationKeyword2": "southeast-asia",
+      "question": "Which Vietnamese Nguy\u1ec5n lords pushed southward, absorbing Champa and opening the Mekong frontier?",
+      "correctAnswer": "The Nguy\u1ec5n regime at Ph\u00fa Xu\u00e2n (Hu\u1ebf)",
+      "incorrectAnswers": [
+        "The Tr\u1ecbnh lords alone without rivalry",
+        "The L\u00ea dynasty without division",
+        "The Khmer Rouge"
+      ],
+      "explanation": "Nam ti\u1ebfn colonization eventually clashed with Siam over Cambodia\u2019s buffer status.",
+      "keywords": [
+        "southeast-asia",
+        "vietnam",
+        "nam-tien"
+      ],
+      "source": "https://www.britannica.com/place/Vietnam/Expansion-southward"
+    },
+    {
+      "seedId": "c91251f1-7e14-4433-b718-5466f1cc56f6",
+      "category": "history",
+      "navigationKeyword1": "asia",
+      "navigationKeyword2": "southeast-asia",
+      "question": "Which dictator\u2019s 1972 martial law and later People Power revolt framed late-20th-century Philippine politics?",
+      "correctAnswer": "Ferdinand Marcos",
+      "incorrectAnswers": [
+        "Manuel Quezon in the 1970s",
+        "Corazon Aquino before 1986 election",
+        "Emilio Aguinaldo\u2019s second term"
+      ],
+      "explanation": "Crony capitalism, IMF bailouts, and the 1986 EDSA uprising ended his two-decade rule.",
+      "keywords": [
+        "southeast-asia",
+        "philippines",
+        "marcos"
+      ],
+      "source": "https://www.britannica.com/biography/Ferdinand-E-Marcos"
+    }
+  ]
+}

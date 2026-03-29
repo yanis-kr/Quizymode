@@ -1,0 +1,247 @@
+{
+  "schemaVersion": 1,
+  "seedSet": "core-public-items",
+  "deltaPreviewLimit": 200,
+  "items": [
+    {
+      "seedId": "2beae730-9813-43af-827e-ca5a42f856d9",
+      "category": "history",
+      "navigationKeyword1": "early-modern",
+      "navigationKeyword2": "empires",
+      "question": "After 1492, which Iberian monarchy built a transatlantic empire whose silver flows reshaped global trade?",
+      "correctAnswer": "Spain (the Spanish monarchy)",
+      "incorrectAnswers": [
+        "Portugal alone",
+        "The Dutch Republic",
+        "Genoa"
+      ],
+      "explanation": "Spanish America\u2019s silver mines, especially Potos\u00ed, funded Habsburg wars and linked Europe to Pacific-Asian commerce.",
+      "keywords": [
+        "empires",
+        "spain",
+        "americas"
+      ],
+      "source": "https://www.britannica.com/place/Spain"
+    },
+    {
+      "seedId": "2bd8561a-6cd8-4c0a-a68b-e4abda22ee12",
+      "category": "history",
+      "navigationKeyword1": "early-modern",
+      "navigationKeyword2": "empires",
+      "question": "Charles V\u2019s composite monarchy linked Spain, the Low Countries, and Italian states to which Central European dynasty\u2019s imperial title?",
+      "correctAnswer": "The House of Habsburg (Holy Roman Emperor)",
+      "incorrectAnswers": [
+        "The House of Romanov",
+        "The House of Bourbon (French branch only)",
+        "The House of Hohenzollern"
+      ],
+      "explanation": "Charles V ruled an enormous Habsburg patrimony before dividing it between Spanish and Austrian lines.",
+      "keywords": [
+        "empires",
+        "habsburg",
+        "europe"
+      ],
+      "source": "https://www.britannica.com/biography/Charles-V-Holy-Roman-emperor"
+    },
+    {
+      "seedId": "07ec9722-cb17-43a7-bde4-43110b66e167",
+      "category": "history",
+      "navigationKeyword1": "early-modern",
+      "navigationKeyword2": "empires",
+      "question": "Gustavus Adolphus and the Treaty of Westphalia are associated with which Baltic power\u2019s seventeenth-century great-power status?",
+      "correctAnswer": "Sweden (the Swedish Empire)",
+      "incorrectAnswers": [
+        "Denmark-Norway",
+        "Prussia",
+        "Saxony"
+      ],
+      "explanation": "Swedish armies dominated northern wars until defeat at Poltava (1709) checked Swedish expansion.",
+      "keywords": [
+        "empires",
+        "sweden",
+        "baltic"
+      ],
+      "source": "https://www.britannica.com/biography/Gustavus-Adolphus-king-of-Sweden"
+    },
+    {
+      "seedId": "1016ebc3-fa8b-4758-aa5a-041152416a2f",
+      "category": "history",
+      "navigationKeyword1": "early-modern",
+      "navigationKeyword2": "empires",
+      "question": "Peter the Great\u2019s Baltic victories and new capital at St. Petersburg advanced which realm\u2019s status as a European great power?",
+      "correctAnswer": "The Russian Empire (Tsardom of Russia expanding into empire)",
+      "incorrectAnswers": [
+        "The Polish-Lithuanian Commonwealth",
+        "The Swedish Empire",
+        "The Habsburg Netherlands"
+      ],
+      "explanation": "Peter\u2019s reforms and the Great Northern War secured Russia\u2019s window on the Baltic and a modernizing army.",
+      "keywords": [
+        "empires",
+        "russia",
+        "peter-the-great"
+      ],
+      "source": "https://www.britannica.com/biography/Peter-I-emperor-of-Russia"
+    },
+    {
+      "seedId": "85a2e439-8ff5-4a44-9e20-9c23a6d2a352",
+      "category": "history",
+      "navigationKeyword1": "early-modern",
+      "navigationKeyword2": "empires",
+      "question": "Sh\u0101h Abb\u0101s I made Isfahan a showcase capital of which early modern Iranian dynasty rivaling the Ottomans?",
+      "correctAnswer": "The Safavid dynasty",
+      "incorrectAnswers": [
+        "The Qajar dynasty",
+        "The Sasanian dynasty",
+        "The Timurid dynasty"
+      ],
+      "explanation": "Safavid shahs enforced Twelver Shi\u02bfism as state religion and controlled Persian Gulf trade routes.",
+      "keywords": [
+        "empires",
+        "persia",
+        "safavid"
+      ],
+      "source": "https://www.britannica.com/place/Safavid-dynasty"
+    },
+    {
+      "seedId": "896df434-fd1e-479b-93ba-a6ff1a1e9634",
+      "category": "history",
+      "navigationKeyword1": "early-modern",
+      "navigationKeyword2": "empires",
+      "question": "Suleiman the Magnificent\u2019s reign is often treated as the classical apogee of which transcontinental Islamic empire?",
+      "correctAnswer": "The Ottoman Empire",
+      "incorrectAnswers": [
+        "The Safavid Empire",
+        "The Mughal Empire",
+        "The Mali Empire"
+      ],
+      "explanation": "Ottoman armies and navy projected power from Budapest to Baghdad while Istanbul remained a cosmopolitan capital.",
+      "keywords": [
+        "empires",
+        "ottomans",
+        "middle-east"
+      ],
+      "source": "https://www.britannica.com/biography/Suleyman-the-Magnificent"
+    },
+    {
+      "seedId": "6aeafe4c-3f1b-400d-820d-e355db41c895",
+      "category": "history",
+      "navigationKeyword1": "early-modern",
+      "navigationKeyword2": "empires",
+      "question": "The Polish-Lithuanian Commonwealth\u2019s elected monarchy and noble liberties typified which large early modern European composite state?",
+      "correctAnswer": "The Polish-Lithuanian Commonwealth (Rzeczpospolita)",
+      "incorrectAnswers": [
+        "The Kingdom of Hungary alone",
+        "The Kingdom of Bohemia alone",
+        "The Papal States"
+      ],
+      "explanation": "The union\u2019s liberum veto and regional diets made it distinctive among European land empires before partitions.",
+      "keywords": [
+        "empires",
+        "poland",
+        "lithuania"
+      ],
+      "source": "https://www.britannica.com/topic/liberum-veto"
+    },
+    {
+      "seedId": "944d3fae-9bd9-4424-8aa5-c322abf23b02",
+      "category": "history",
+      "navigationKeyword1": "early-modern",
+      "navigationKeyword2": "empires",
+      "question": "The Qing dynasty, founded by Manchu elites, succeeded which Chinese dynasty and ruled a vast multiethnic realm into the modern era?",
+      "correctAnswer": "The Ming dynasty",
+      "incorrectAnswers": [
+        "The Yuan dynasty",
+        "The Tang dynasty",
+        "The Song dynasty"
+      ],
+      "explanation": "Qing expansion incorporated Mongolia, Tibet, and Xinjiang while governing through a hybrid bureaucratic system.",
+      "keywords": [
+        "empires",
+        "china",
+        "qing"
+      ],
+      "source": "https://www.britannica.com/place/Qing-dynasty"
+    },
+    {
+      "seedId": "dd0184ac-fee1-47b5-b27d-20fed7cdc5b4",
+      "category": "history",
+      "navigationKeyword1": "early-modern",
+      "navigationKeyword2": "empires",
+      "question": "The VOC (Verenigde Oost-Indische Compagnie) was the chartered trading company of which republic\u2019s seventeenth-century empire?",
+      "correctAnswer": "The Dutch Republic (United Provinces)",
+      "incorrectAnswers": [
+        "The Holy Roman Empire",
+        "Poland-Lithuania",
+        "Denmark-Norway"
+      ],
+      "explanation": "The Dutch East India Company monopolized spice routes and governed territories from Batavia to Ceylon.",
+      "keywords": [
+        "empires",
+        "netherlands",
+        "trade"
+      ],
+      "source": "https://www.britannica.com/topic/Dutch-East-India-Company"
+    },
+    {
+      "seedId": "7165d49f-511c-42e6-9246-da45c5ab3b7b",
+      "category": "history",
+      "navigationKeyword1": "early-modern",
+      "navigationKeyword2": "empires",
+      "question": "Under rulers such as Akbar, which South Asian empire fused Persianate culture with Indian polities before European dominance?",
+      "correctAnswer": "The Mughal Empire",
+      "incorrectAnswers": [
+        "The Maratha Empire at its eighteenth-century peak",
+        "The Gupta Empire",
+        "The Khmer Empire"
+      ],
+      "explanation": "Mughal administration and patronage shaped art, architecture, and revenue systems across much of the subcontinent.",
+      "keywords": [
+        "empires",
+        "india",
+        "mughal"
+      ],
+      "source": "https://www.britannica.com/topic/Mughal-dynasty"
+    },
+    {
+      "seedId": "fd016ad7-e541-40b8-9b4b-34c91f4202d4",
+      "category": "history",
+      "navigationKeyword1": "early-modern",
+      "navigationKeyword2": "empires",
+      "question": "Vasco da Gama\u2019s 1498 arrival in India helped which kingdom secure a maritime trading empire in Asia and Africa?",
+      "correctAnswer": "Portugal",
+      "incorrectAnswers": [
+        "France",
+        "England",
+        "Sweden"
+      ],
+      "explanation": "Portuguese fort-factories and sea lanes connected Lisbon to Indian Ocean spice markets for centuries.",
+      "keywords": [
+        "empires",
+        "portugal",
+        "indian-ocean"
+      ],
+      "source": "https://www.britannica.com/place/Portugal/The-first-overseas-expansion"
+    },
+    {
+      "seedId": "7264ca12-aebc-4154-ba29-0d6b165847e0",
+      "category": "history",
+      "navigationKeyword1": "early-modern",
+      "navigationKeyword2": "empires",
+      "question": "Which English joint-stock company gradually moved from trade to rule in large parts of the Indian subcontinent?",
+      "correctAnswer": "The English East India Company",
+      "incorrectAnswers": [
+        "The Hudson\u2019s Bay Company",
+        "The Royal African Company",
+        "The Muscovy Company"
+      ],
+      "explanation": "Company armies and alliances after Plassey (1757) laid foundations for British colonial administration in India.",
+      "keywords": [
+        "empires",
+        "britain",
+        "india"
+      ],
+      "source": "https://www.britannica.com/topic/British-East-India-Company"
+    }
+  ]
+}

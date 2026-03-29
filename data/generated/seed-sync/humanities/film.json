@@ -1,0 +1,235 @@
+{
+  "schemaVersion": 1,
+  "seedSet": "core-public-items",
+  "deltaPreviewLimit": 200,
+  "items": [
+    {
+      "seedId": "c8854b3f-28df-5998-be4f-998f982c7765",
+      "category": "humanities",
+      "navigationKeyword1": "film",
+      "navigationKeyword2": "awards",
+      "question": "What does a major film award often recognize?",
+      "correctAnswer": "achievement in areas like acting, directing, or writing",
+      "incorrectAnswers": [
+        "museum admission",
+        "bookbinding skill",
+        "weather forecasting"
+      ],
+      "explanation": "Film awards usually honor notable work in filmmaking categories.",
+      "keywords": [
+        "film-awards",
+        "recognition"
+      ],
+      "source": "https://www.britannica.com/topic/Academy-Award"
+    },
+    {
+      "seedId": "a16b5129-234e-56b3-a9f6-e2f1ce9195e7",
+      "category": "humanities",
+      "navigationKeyword1": "film",
+      "navigationKeyword2": "awards",
+      "question": "Which organization presents the Academy Awards?",
+      "correctAnswer": "the Academy of Motion Picture Arts and Sciences",
+      "incorrectAnswers": [
+        "the Library of Congress",
+        "the United Nations",
+        "the National Gallery"
+      ],
+      "explanation": "The Academy Awards, or Oscars, are presented by AMPAS.",
+      "keywords": [
+        "film-awards",
+        "oscars"
+      ],
+      "source": "https://www.oscars.org/oscars"
+    },
+    {
+      "seedId": "7307eadf-6824-57ec-b1aa-42bd4865e857",
+      "category": "humanities",
+      "navigationKeyword1": "film",
+      "navigationKeyword2": "directors",
+      "question": "What does a film director mainly guide?",
+      "correctAnswer": "the artistic and dramatic shape of a film",
+      "incorrectAnswers": [
+        "the theater snack menu",
+        "the printing of tickets",
+        "the studio parking map"
+      ],
+      "explanation": "Directors help shape performance, camera choices, pacing, and overall interpretation.",
+      "keywords": [
+        "film-directors",
+        "direction"
+      ],
+      "source": "https://www.britannica.com/art/film-director"
+    },
+    {
+      "seedId": "e1460277-88fc-528a-8223-681501bd9a31",
+      "category": "humanities",
+      "navigationKeyword1": "film",
+      "navigationKeyword2": "directors",
+      "question": "Why are directors often studied in film history?",
+      "correctAnswer": "their style can shape how a film looks and feels",
+      "incorrectAnswers": [
+        "they invent every camera",
+        "they finance every movie alone",
+        "they write every film score"
+      ],
+      "explanation": "Directors are often linked to distinctive visual and storytelling choices.",
+      "keywords": [
+        "film-directors",
+        "style"
+      ],
+      "source": "https://www.bfi.org.uk/features/what-is-a-film-director"
+    },
+    {
+      "seedId": "c5590c19-c23b-5a0a-9650-1cf9267f25f5",
+      "category": "humanities",
+      "navigationKeyword1": "film",
+      "navigationKeyword2": "film-terms",
+      "question": "What is a close-up in film?",
+      "correctAnswer": "a shot framed tightly on a subject",
+      "incorrectAnswers": [
+        "a kind of soundtrack only",
+        "a theater curtain cue",
+        "a camera repair tool"
+      ],
+      "explanation": "A close-up brings the viewer near a face or object for emphasis.",
+      "keywords": [
+        "film-terms",
+        "close-up"
+      ],
+      "source": "https://www.britannica.com/art/close-up"
+    },
+    {
+      "seedId": "28d76d52-2b80-5278-8fc7-4f508eb78568",
+      "category": "humanities",
+      "navigationKeyword1": "film",
+      "navigationKeyword2": "film-terms",
+      "question": "What is a screenplay?",
+      "correctAnswer": "the written script for a film",
+      "incorrectAnswers": [
+        "the final poster design",
+        "a camera lens guide",
+        "a list of ticket sales"
+      ],
+      "explanation": "A screenplay lays out dialogue, scenes, and action for a movie.",
+      "keywords": [
+        "film-terms",
+        "screenplay"
+      ],
+      "source": "https://www.oscars.org/oscars/screenplays"
+    },
+    {
+      "seedId": "64524b9b-9001-5604-8839-be1423e9d3b2",
+      "category": "humanities",
+      "navigationKeyword1": "film",
+      "navigationKeyword2": "genres",
+      "question": "What is a film genre?",
+      "correctAnswer": "a category with shared story or style traits",
+      "incorrectAnswers": [
+        "a camera brand",
+        "a censor board",
+        "a ticket price"
+      ],
+      "explanation": "Genres group films by recurring conventions, moods, and structures.",
+      "keywords": [
+        "film-genres",
+        "cinema"
+      ],
+      "source": "https://www.britannica.com/art/motion-picture"
+    },
+    {
+      "seedId": "7def209b-da86-57ee-b96f-680def165de8",
+      "category": "humanities",
+      "navigationKeyword1": "film",
+      "navigationKeyword2": "genres",
+      "question": "Which genre is especially associated with suspense, fear, and tension?",
+      "correctAnswer": "horror",
+      "incorrectAnswers": [
+        "documentary",
+        "musical notation",
+        "still life"
+      ],
+      "explanation": "Horror films often aim to create fear, dread, or shock.",
+      "keywords": [
+        "film-genres",
+        "horror"
+      ],
+      "source": "https://www.bfi.org.uk/lists/100-horror-films-see-before-you-die"
+    },
+    {
+      "seedId": "75f6ea95-7637-5d12-b009-e976002d57fc",
+      "category": "humanities",
+      "navigationKeyword1": "film",
+      "navigationKeyword2": "history",
+      "question": "Silent films were made before what became standard in movies?",
+      "correctAnswer": "synchronized recorded dialogue",
+      "incorrectAnswers": [
+        "color pigments",
+        "indoor theaters",
+        "written scripts"
+      ],
+      "explanation": "Silent films predate the routine use of synchronized spoken sound in cinema.",
+      "keywords": [
+        "film-history",
+        "silent-film"
+      ],
+      "source": "https://www.britannica.com/art/silent-film"
+    },
+    {
+      "seedId": "a31fa4ed-7ddf-50b9-b0b2-61d1c3805281",
+      "category": "humanities",
+      "navigationKeyword1": "film",
+      "navigationKeyword2": "history",
+      "question": "What helped change film from a novelty into a major art and entertainment form?",
+      "correctAnswer": "the growth of longer storytelling and new technology",
+      "incorrectAnswers": [
+        "the end of libraries",
+        "the decline of photography",
+        "the loss of theaters"
+      ],
+      "explanation": "Film history includes technical and artistic changes that expanded what movies could do.",
+      "keywords": [
+        "film-history",
+        "cinema"
+      ],
+      "source": "https://www.bfi.org.uk/features/brief-history-cinema"
+    },
+    {
+      "seedId": "3e7f8c27-534e-56aa-bfbe-d4b5dafc3e77",
+      "category": "humanities",
+      "navigationKeyword1": "film",
+      "navigationKeyword2": "movies",
+      "question": "A feature film is usually longer than what kind of film?",
+      "correctAnswer": "a short film",
+      "incorrectAnswers": [
+        "a trilogy",
+        "a sequel",
+        "a soundtrack"
+      ],
+      "explanation": "Feature films are longer works, while short films are briefer in running time.",
+      "keywords": [
+        "movies",
+        "feature-film"
+      ],
+      "source": "https://www.britannica.com/art/motion-picture"
+    },
+    {
+      "seedId": "a985bae9-ff98-5f98-b356-56522a144fff",
+      "category": "humanities",
+      "navigationKeyword1": "film",
+      "navigationKeyword2": "movies",
+      "question": "Why are landmark movies often remembered?",
+      "correctAnswer": "they change style, storytelling, or cultural influence",
+      "incorrectAnswers": [
+        "they always make the most money",
+        "they never use actors",
+        "they are all black-and-white"
+      ],
+      "explanation": "Important films are often remembered because they reshape the medium or its impact.",
+      "keywords": [
+        "movies",
+        "film-history"
+      ],
+      "source": "https://www.loc.gov/programs/national-film-preservation-board/film-registry/"
+    }
+  ]
+}

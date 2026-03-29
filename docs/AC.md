@@ -4,8 +4,6 @@ This document describes the application's behavior as **acceptance criteria** in
 
 Criteria are grouped by **feature** (e.g. AC 1.10 Bookmarking collections). Each feature is split into **API** (HTTP, status codes, payloads, authorization) and **UI** (labels, screens, user-visible behavior) so backend and frontend concerns stay separate while related behavior stays together. Sub-items are numbered **AC section.subsection.id** and always state the **Actor** (see below).
 
----
-
 ## Common API conventions
 
 Use these global contracts unless a specific AC explicitly defines a different behavior.
@@ -114,7 +112,7 @@ Terms used in this document with a specific meaning:
 | **Bookmark** (collection) | Saving a collection to "my bookmarks" for quick access. Distinct from ownership; anyone with access to a public collection can bookmark it. |
 | **Breadcrumb** | A navigation trail showing the current path (e.g. **Categories** → category name → keyword(s)). Each segment is clickable and takes the user back to that level. On category pages, keyword segments may show descriptions as tooltips. Used to orient the user and allow quick navigation up the hierarchy. |
 | **Bucket** | In the Sets view (Categories), a clickable card/cell representing a keyword or category, showing name, item count, and optional description. Clicking navigates deeper or opens the item list. |
-| **Default collection** | The collection created automatically for a user (e.g. "Default Collection") when they have none; used as the initial active collection. |
+| **Default collection** | The collection created automatically for a user when they have none; when the user's display name is available it uses the first 3 characters for the name (for example `Abc's Collection` for `Abcdefgh`) and `<display name> default collection` as the description; otherwise it falls back to "Default Collection". Used as the initial active collection. |
 | **Discover** | The feature where anyone can search and browse **public** collections shared by others (IsPublic = true). Results can be narrowed by **text** (`q`) on collection name and description, and by **item taxonomy**: optional category, up to two **navigation** keyword names (L1/L2, matching item `NavigationKeywordId1` / `NavigationKeywordId2`), and optional **item tag** names (AND on `ItemKeywords`). |
 | **Item visibility** | Rules for which items a user sees outside a specific collection context: **Anonymous** — only non-private items; **Authenticated** — non-private items plus their own private items. Used when listing items by category/keywords or in APIs that filter by visibility (e.g. `GET /items` by category); collection-scoped visibility is defined separately. |
 | **Item-level keyword** | A keyword that is a tag on items but is **not** used as rank-1 or rank-2 in the **KeywordRelation** tree for that category. Can be used as a filter (e.g. in query params) to narrow the item list; does not drive the Sets hierarchy. |
@@ -160,8 +158,8 @@ Terms used in this document with a specific meaning:
 
 **API**
 
-- **AC 1.2.1** [Owner] **Given** I am authenticated, **when** my user record is created (e.g. first request after signup), **then** the backend may create a collection named "Default Collection" and set `ActiveCollectionId` in my user settings.
-- **AC 1.2.2** [Owner] **Given** I am authenticated and have no collections, **when** I call `GET /collections`, **then** the API creates a default collection named "Default Collection" and returns it (so I always have at least one).
+- **AC 1.2.1** [Owner] **Given** I am authenticated, **when** my user record is created (e.g. first request after signup), **then** the backend may create a default collection using the user's display name: name = first 3 characters + `'s Collection` (for example `Abc's Collection` for `Abcdefgh`) and description = `<display name> default collection`; if no display name is available it falls back to "Default Collection". The backend sets `ActiveCollectionId` in my user settings.
+- **AC 1.2.2** [Owner] **Given** I am authenticated and have no collections, **when** I call `GET /collections`, **then** the API creates and returns that same default collection shape (so I always have at least one).
 - **AC 1.2.3** [Anonymous] **Given** I am not authenticated, **when** I call `GET /collections`, **then** the API returns 401.
 
 **UI**
@@ -223,6 +221,7 @@ Terms used in this document with a specific meaning:
 
 - **AC 1.5.5** [Anyone] **Given** I have access to the collection (per API), **when** I open the collection in the UI and use List Items, Flashcards, or Quiz for that collection, **then** I see the collection **metadata** (collection name, description, owner name, date created) and the **list of items** returned by the API; when access is denied, I see an appropriate error. **URL examples:** List Items mode: **`/collections/{id}`**; Flashcards mode: **`/explore/collections/{id}`**; Quiz mode: **`/quiz/collections/{id}`**.
 - **AC 1.5.6** [Anyone] **Given** I am reviewing or using items within a collection in List Items, Flashcards, or Quiz modes, **when** the UI loads items for that collection, **then** it calls `GET /items?collectionId={id}` using the collection ID from the URL (not direct per-item lookups) so that private items and their private keywords included in that collection are visible per collection-scoped visibility rules.
+- **AC 1.5.7** [Anyone] **Given** I open an item's details screen from a collection List Items, Flashcards, or Quiz view, **when** I use the back control on the item-details screen, **then** I return to the same collection URL I came from (including the current item, current view, and query-string scope) so my place in the collection flow is preserved; for Quiz this includes restoring the current item's revealed / answered state when that session state is still available.
 
 ---
 
@@ -325,6 +324,7 @@ Terms used in this document with a specific meaning:
 **UI**
 
 - **AC 1.12.3** [Anyone] **Given** I am viewing a collection, **when** the page loads, **then** I see rating stats (count, average) per API; if authenticated, I can set or change my rating (1-5 stars) and the UI calls the API.
+- **AC 1.12.4** [Anonymous] **Given** I am viewing a collection rating UI that is read-only because I am not signed in (for example a Discover collection card or a collection study header), **when** I hover the stars, **then** I see a hint that signed-in users can rate the collection.
 
 ---
 
@@ -537,6 +537,8 @@ Categories are **public only** (there is no private category). Users navigate by
 
 ---
 
+- **AC 3.5.6** [Anyone] **Given** I open an item's details screen from category/global List Items mode, **when** I use the back control on the item-details screen, **then** I return to the same list URL I came from, including the current category path and active query-string filters.
+
 ### AC 3.6 Flashcards and Quiz by category/keywords
 
 **API**
@@ -552,6 +554,8 @@ Categories are **public only** (there is no private category). Users navigate by
 - **AC 3.6.5** [Anyone] **Given** I am in **Quiz** mode for a **category or global** scope (not a collection) and I change **Quiz size**, **when** the new size is applied, **then** the app requests a **new random set** of that many items for the current scope, clears in-session cached item lists used for quiz navigation, resets quiz progress for that run, and updates the URL so it no longer points at an item from the previous set unless that item is re-selected by the new load.
 
 ---
+
+- **AC 3.6.6** [Anyone] **Given** I open an item's details screen from category/global Flashcards or Quiz mode, **when** I use the back control on the item-details screen, **then** I return to the same Flashcards or Quiz URL I came from (including the current item and query-string scope); for Quiz this includes restoring the current item's revealed / answered state when that session state is still available.
 
 ### AC 3.7 Keyword descriptions (breadcrumb)
 
@@ -871,7 +875,7 @@ Feedback submissions are lightweight inbound messages from the SPA. They may be 
 ## Unclarities / questions for product owner
 
 - **Shareable link vs IsPublic**: Resolved — if a collection is **not** shared with others (IsPublic = false), only the owner can access it by ID or link. When **Shared with others** is on (IsPublic = true), anyone with the link (or who finds it by ID or via Discover) can view and quiz, and the collection appears in Discover. The UI uses the label **"Shared with others"** for this toggle. Users can search or enter a collection ID to open it (see AC 1.9.6).
-- **Default collection**: Resolved — at signup the backend creates "Default Collection" and sets it as the user's active collection. If a user has zero collections (e.g. legacy), the first `GET /collections` still creates "Default Collection".
+- **Default collection**: Resolved — at signup the backend creates a personalized default collection when the user's display name is available: name = first 3 characters + `'s Collection` and description = `<display name> default collection` (for example `Abc's Collection` / `Abcdefgh default collection`). If a user has zero collections (e.g. legacy), the first `GET /collections` creates the same shape. If no display name is available, it falls back to "Default Collection".
 - **Private keyword name collision**: When a public keyword and a private keyword share the same name/slug, navigation and item filtering resolve that name/slug to **one effective keyword** per scope: the **public** keyword is used when it exists; if no public keyword exists with that name/slug, the user's private keyword is used instead. This ensures a single, predictable path/keyword resolution when names collide.
 
 ---

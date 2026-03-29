@@ -1,0 +1,207 @@
+{
+  "schemaVersion": 1,
+  "seedSet": "core-public-items",
+  "deltaPreviewLimit": 200,
+  "items": [
+    {
+      "seedId": "ae2f5b5c-f626-4faf-bd07-7191d7e317cd",
+      "category": "exams",
+      "navigationKeyword1": "gcp",
+      "navigationKeyword2": "ace",
+      "question": "Which Google Cloud networking product includes Cloud DNS?",
+      "correctAnswer": "Google Cloud networking products",
+      "incorrectAnswers": [
+        "Google Workspace",
+        "Chronicle",
+        "Apigee only"
+      ],
+      "explanation": "Cloud DNS is part of Google Cloud's networking product portfolio.",
+      "keywords": [
+        "gcp-ace",
+        "google-cloud",
+        "cloud-services"
+      ],
+      "source": "https://cloud.google.com/products/networking/"
+    },
+    {
+      "seedId": "db7ccbaf-8fde-4752-a2c1-6288f8b5e6a8",
+      "category": "exams",
+      "navigationKeyword1": "gcp",
+      "navigationKeyword2": "ace",
+      "question": "Which Google Cloud service distributes traffic across backend services?",
+      "correctAnswer": "Cloud Load Balancing",
+      "incorrectAnswers": [
+        "Cloud Storage",
+        "Cloud SQL",
+        "Pub/Sub"
+      ],
+      "explanation": "Cloud Load Balancing distributes traffic to backend services and applications.",
+      "keywords": [
+        "gcp-ace",
+        "google-cloud",
+        "cloud-services"
+      ],
+      "source": "https://cloud.google.com/load-balancing"
+    },
+    {
+      "seedId": "c97bcaf0-3d24-4704-adb6-b1e80ec1f435",
+      "category": "exams",
+      "navigationKeyword1": "gcp",
+      "navigationKeyword2": "ace",
+      "question": "Which Google Cloud service is a managed relational database for MySQL, PostgreSQL, and SQL Server?",
+      "correctAnswer": "Cloud SQL",
+      "incorrectAnswers": [
+        "Cloud Storage",
+        "Pub/Sub",
+        "Cloud Armor"
+      ],
+      "explanation": "Cloud SQL is Google's managed relational database service.",
+      "keywords": [
+        "gcp-ace",
+        "google-cloud",
+        "cloud-services"
+      ],
+      "source": "https://cloud.google.com/sql"
+    },
+    {
+      "seedId": "5dae5ff9-54fa-4639-995a-decfe59440b8",
+      "category": "exams",
+      "navigationKeyword1": "gcp",
+      "navigationKeyword2": "ace",
+      "question": "Which Google Cloud service is the foundation for private networking?",
+      "correctAnswer": "Virtual Private Cloud (VPC)",
+      "incorrectAnswers": [
+        "Cloud Storage",
+        "BigQuery",
+        "Cloud SQL"
+      ],
+      "explanation": "VPC is the core private networking service in Google Cloud.",
+      "keywords": [
+        "gcp-ace",
+        "google-cloud",
+        "cloud-services"
+      ],
+      "source": "https://cloud.google.com/vpc"
+    },
+    {
+      "seedId": "a8b3437c-ab01-4bdc-9c2d-845f1201bdfc",
+      "category": "exams",
+      "navigationKeyword1": "gcp",
+      "navigationKeyword2": "ace",
+      "question": "Which Google Cloud service is used for object storage?",
+      "correctAnswer": "Cloud Storage",
+      "incorrectAnswers": [
+        "Cloud SQL",
+        "VPC",
+        "Cloud Monitoring"
+      ],
+      "explanation": "Cloud Storage is Google Cloud's object storage service.",
+      "keywords": [
+        "gcp-ace",
+        "google-cloud",
+        "cloud-services"
+      ],
+      "source": "https://cloud.google.com/storage"
+    },
+    {
+      "seedId": "060ac996-5f30-442b-893c-0f9fcb9828fa",
+      "category": "exams",
+      "navigationKeyword1": "gcp",
+      "navigationKeyword2": "ace",
+      "question": "Which Google Cloud service provides managed Kubernetes clusters?",
+      "correctAnswer": "Google Kubernetes Engine (GKE)",
+      "incorrectAnswers": [
+        "Cloud DNS",
+        "Cloud Monitoring",
+        "BigQuery"
+      ],
+      "explanation": "GKE is Google Cloud's managed Kubernetes service.",
+      "keywords": [
+        "gcp-ace",
+        "google-cloud",
+        "cloud-services"
+      ],
+      "source": "https://cloud.google.com/kubernetes-engine"
+    },
+    {
+      "seedId": "09db8dbf-f858-47ba-be39-e648dbf71a24",
+      "category": "exams",
+      "navigationKeyword1": "gcp",
+      "navigationKeyword2": "ace",
+      "question": "Which Google Cloud service provides messaging between systems and applications?",
+      "correctAnswer": "Pub/Sub",
+      "incorrectAnswers": [
+        "Cloud SQL",
+        "Cloud Storage",
+        "Cloud Armor"
+      ],
+      "explanation": "Pub/Sub is Google Cloud's messaging and event ingestion service.",
+      "keywords": [
+        "gcp-ace",
+        "google-cloud",
+        "cloud-services"
+      ],
+      "source": "https://cloud.google.com/pubsub"
+    },
+    {
+      "seedId": "3f69a7a6-2725-44f0-9775-22ca59b5c8e5",
+      "category": "exams",
+      "navigationKeyword1": "gcp",
+      "navigationKeyword2": "ace",
+      "question": "Which Google Cloud service provides virtual machines?",
+      "correctAnswer": "Compute Engine",
+      "incorrectAnswers": [
+        "Cloud Storage",
+        "Pub/Sub",
+        "BigQuery"
+      ],
+      "explanation": "Compute Engine provides virtual machines on Google Cloud infrastructure.",
+      "keywords": [
+        "gcp-ace",
+        "google-cloud",
+        "cloud-services"
+      ],
+      "source": "https://cloud.google.com/compute"
+    },
+    {
+      "seedId": "6c1d9261-6f26-4b3b-be69-ee18c4257899",
+      "category": "exams",
+      "navigationKeyword1": "gcp",
+      "navigationKeyword2": "ace",
+      "question": "Which Google Cloud service provides visibility into the performance and health of applications and infrastructure?",
+      "correctAnswer": "Cloud Monitoring",
+      "incorrectAnswers": [
+        "Cloud Storage",
+        "VPC",
+        "Cloud SQL"
+      ],
+      "explanation": "Cloud Monitoring provides dashboards, alerts, and observability for Google Cloud and other environments.",
+      "keywords": [
+        "gcp-ace",
+        "google-cloud",
+        "cloud-services"
+      ],
+      "source": "https://cloud.google.com/monitoring"
+    },
+    {
+      "seedId": "bfa480a4-a07d-443a-9ade-16e25844a59f",
+      "category": "exams",
+      "navigationKeyword1": "gcp",
+      "navigationKeyword2": "ace",
+      "question": "Which Google Cloud service runs containerized applications on a managed serverless platform?",
+      "correctAnswer": "Cloud Run",
+      "incorrectAnswers": [
+        "Cloud Storage",
+        "Cloud SQL",
+        "Bigtable"
+      ],
+      "explanation": "Cloud Run is a managed serverless platform for running containerized applications.",
+      "keywords": [
+        "gcp-ace",
+        "google-cloud",
+        "cloud-services"
+      ],
+      "source": "https://cloud.google.com/run"
+    }
+  ]
+}

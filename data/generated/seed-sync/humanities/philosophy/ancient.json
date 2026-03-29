@@ -1,0 +1,45 @@
+{
+  "schemaVersion": 1,
+  "seedSet": "core-public-items",
+  "deltaPreviewLimit": 200,
+  "items": [
+    {
+      "seedId": "78559705-7b5a-585b-8fda-64159defee43",
+      "category": "humanities",
+      "navigationKeyword1": "philosophy",
+      "navigationKeyword2": "ancient",
+      "question": "Which thinker is especially associated with asking probing questions in dialogue in ancient Athens?",
+      "correctAnswer": "Socrates",
+      "incorrectAnswers": [
+        "Descartes",
+        "Kant",
+        "Nietzsche"
+      ],
+      "explanation": "Socrates is famous for philosophical questioning and dialogue in classical Athens.",
+      "keywords": [
+        "ancient-philosophy",
+        "socrates"
+      ],
+      "source": "https://www.britannica.com/biography/Socrates"
+    },
+    {
+      "seedId": "b35e7548-eba5-5b77-9297-217bb422dfd9",
+      "category": "humanities",
+      "navigationKeyword1": "philosophy",
+      "navigationKeyword2": "ancient",
+      "question": "Who taught Alexander the Great and wrote on ethics, politics, and logic?",
+      "correctAnswer": "Aristotle",
+      "incorrectAnswers": [
+        "Hume",
+        "Voltaire",
+        "Sartre"
+      ],
+      "explanation": "Aristotle studied many subjects and became one of the central philosophers of the ancient world.",
+      "keywords": [
+        "ancient-philosophy",
+        "aristotle"
+      ],
+      "source": "https://plato.stanford.edu/entries/aristotle/"
+    }
+  ]
+}

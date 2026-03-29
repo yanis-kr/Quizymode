@@ -1,0 +1,121 @@
+{
+  "schemaVersion": 1,
+  "seedSet": "core-public-items",
+  "deltaPreviewLimit": 200,
+  "items": [
+    {
+      "seedId": "f47233b5-cfa9-5a44-be49-c83945bc1866",
+      "category": "languages",
+      "navigationKeyword1": "other-langs",
+      "navigationKeyword2": "japanese",
+      "question": "In a simple polite sentence, what does '\u3067\u3059' (desu) often do at the end?",
+      "correctAnswer": "marks a polite statement (like 'is' in many patterns)",
+      "incorrectAnswers": [
+        "makes every sentence a question",
+        "means only 'was'",
+        "removes politeness"
+      ],
+      "explanation": "'Desu' is a core polite copula ending for many beginner patterns.",
+      "keywords": [
+        "desu",
+        "japanese-basics"
+      ],
+      "source": "https://www.tofugu.com/japanese/polite-form-desu-masu/"
+    },
+    {
+      "seedId": "24b65b4c-c757-5e2d-b3ba-68b0694a5aa9",
+      "category": "languages",
+      "navigationKeyword1": "other-langs",
+      "navigationKeyword2": "japanese",
+      "question": "What does '\u3042\u308a\u304c\u3068\u3046' (arigatou) mean?",
+      "correctAnswer": "thank you",
+      "incorrectAnswers": [
+        "please",
+        "sorry",
+        "goodbye"
+      ],
+      "explanation": "'Arigatou' is a very common way to say thank you in casual speech.",
+      "keywords": [
+        "thank-you",
+        "japanese-basics"
+      ],
+      "source": "https://dictionary.cambridge.org/dictionary/english-japanese/thank-you"
+    },
+    {
+      "seedId": "645f01e3-f757-562e-b9b0-e71ba73c8f47",
+      "category": "languages",
+      "navigationKeyword1": "other-langs",
+      "navigationKeyword2": "japanese",
+      "question": "What does '\u3044\u3044\u3048' (iie) mean?",
+      "correctAnswer": "no",
+      "incorrectAnswers": [
+        "yes",
+        "maybe",
+        "please"
+      ],
+      "explanation": "'Iie' is a basic way to say no in polite speech.",
+      "keywords": [
+        "no",
+        "japanese-basics"
+      ],
+      "source": "https://dictionary.cambridge.org/dictionary/english-japanese/no"
+    },
+    {
+      "seedId": "eb3c0f71-0c60-5dd8-82a6-ab44563e2579",
+      "category": "languages",
+      "navigationKeyword1": "other-langs",
+      "navigationKeyword2": "japanese",
+      "question": "What does '\u3053\u3093\u306b\u3061\u306f' (konnichiwa) mean in the daytime?",
+      "correctAnswer": "hello / good afternoon (common greeting)",
+      "incorrectAnswers": [
+        "good night only",
+        "thank you",
+        "excuse me"
+      ],
+      "explanation": "'Konnichiwa' is a standard daytime greeting learners meet early.",
+      "keywords": [
+        "hello",
+        "japanese-basics"
+      ],
+      "source": "https://dictionary.cambridge.org/dictionary/english-japanese/hello"
+    },
+    {
+      "seedId": "6b62c4fc-8ee7-5634-926e-8a25b58995ea",
+      "category": "languages",
+      "navigationKeyword1": "other-langs",
+      "navigationKeyword2": "japanese",
+      "question": "What does '\u306f\u3044' (hai) often mean in a simple reply?",
+      "correctAnswer": "yes",
+      "incorrectAnswers": [
+        "no",
+        "maybe",
+        "please"
+      ],
+      "explanation": "'Hai' is a polite, common way to say yes.",
+      "keywords": [
+        "yes",
+        "japanese-basics"
+      ],
+      "source": "https://dictionary.cambridge.org/dictionary/english-japanese/yes"
+    },
+    {
+      "seedId": "299993ca-49bf-5da2-81e8-69cdf2c249d2",
+      "category": "languages",
+      "navigationKeyword1": "other-langs",
+      "navigationKeyword2": "japanese",
+      "question": "What does '\u6c34' (mizu) mean?",
+      "correctAnswer": "water",
+      "incorrectAnswers": [
+        "fire",
+        "rice",
+        "salt"
+      ],
+      "explanation": "The kanji '\u6c34' with reading 'mizu' means water in basic vocabulary.",
+      "keywords": [
+        "water",
+        "japanese-basics"
+      ],
+      "source": "https://jisho.org/word/%E6%B0%B4"
+    }
+  ]
+}

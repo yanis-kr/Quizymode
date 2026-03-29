@@ -1,0 +1,1147 @@
+{
+  "schemaVersion": 1,
+  "seedSet": "core-public-items",
+  "deltaPreviewLimit": 200,
+  "items": [
+    {
+      "seedId": "4a63f469-7bda-5877-9596-7d8be3342137",
+      "category": "trivia",
+      "navigationKeyword1": "animals",
+      "navigationKeyword2": "birds",
+      "question": "Emperor penguins breed during which Antarctic season?",
+      "correctAnswer": "winter",
+      "incorrectAnswers": [
+        "summer",
+        "spring",
+        "autumn"
+      ],
+      "explanation": "Emperor penguins breed during the Antarctic winter.",
+      "keywords": [
+        "birds",
+        "animal-trivia"
+      ],
+      "source": "https://www.britannica.com/animal/emperor-penguin"
+    },
+    {
+      "seedId": "bc4e6831-1c93-51b9-a822-fd987e171257",
+      "category": "trivia",
+      "navigationKeyword1": "animals",
+      "navigationKeyword2": "birds",
+      "question": "Penguins are native to which hemisphere?",
+      "correctAnswer": "Southern Hemisphere",
+      "incorrectAnswers": [
+        "Northern Hemisphere",
+        "both hemispheres equally",
+        "the Arctic Circle"
+      ],
+      "explanation": "Penguins are native to the Southern Hemisphere.",
+      "keywords": [
+        "birds",
+        "animal-trivia"
+      ],
+      "source": "https://www.britannica.com/animal/penguin"
+    },
+    {
+      "seedId": "1007df90-409c-560f-8754-f6400ba59d94",
+      "category": "trivia",
+      "navigationKeyword1": "animals",
+      "navigationKeyword2": "birds",
+      "question": "What is the largest living bird?",
+      "correctAnswer": "ostrich",
+      "incorrectAnswers": [
+        "emu",
+        "cassowary",
+        "albatross"
+      ],
+      "explanation": "The ostrich is the largest living bird.",
+      "keywords": [
+        "birds",
+        "animal-trivia"
+      ],
+      "source": "https://www.britannica.com/animal/ostrich"
+    },
+    {
+      "seedId": "c0414728-351b-5a9b-bc8b-f7cf89ff8b17",
+      "category": "trivia",
+      "navigationKeyword1": "animals",
+      "navigationKeyword2": "birds",
+      "question": "What is the national bird of the United States?",
+      "correctAnswer": "bald eagle",
+      "incorrectAnswers": [
+        "golden eagle",
+        "wild turkey",
+        "red-tailed hawk"
+      ],
+      "explanation": "The bald eagle is the national bird of the United States.",
+      "keywords": [
+        "birds",
+        "animal-trivia"
+      ],
+      "source": "https://www.britannica.com/animal/bald-eagle"
+    },
+    {
+      "seedId": "94d39254-ba73-5447-9681-bc1bbfac7ef3",
+      "category": "trivia",
+      "navigationKeyword1": "animals",
+      "navigationKeyword2": "birds",
+      "question": "Which bird can fly backward?",
+      "correctAnswer": "hummingbird",
+      "incorrectAnswers": [
+        "swallow",
+        "sparrow",
+        "falcon"
+      ],
+      "explanation": "Hummingbirds are the only birds that can truly fly backward.",
+      "keywords": [
+        "birds",
+        "animal-trivia"
+      ],
+      "source": "https://www.britannica.com/animal/hummingbird"
+    },
+    {
+      "seedId": "1fa4ae72-e86a-5e24-8c54-e10c94021ab0",
+      "category": "trivia",
+      "navigationKeyword1": "animals",
+      "navigationKeyword2": "birds",
+      "question": "Which bird gets its pink color largely from pigments in its diet?",
+      "correctAnswer": "flamingo",
+      "incorrectAnswers": [
+        "robin",
+        "peacock",
+        "canary"
+      ],
+      "explanation": "Flamingos get much of their pink color from pigments in their food.",
+      "keywords": [
+        "birds",
+        "animal-trivia"
+      ],
+      "source": "https://www.britannica.com/animal/flamingo-bird"
+    },
+    {
+      "seedId": "5432cb87-179c-53f4-a2be-c5f14ca6865d",
+      "category": "trivia",
+      "navigationKeyword1": "animals",
+      "navigationKeyword2": "birds",
+      "question": "Which bird is famous for the fastest hunting dive?",
+      "correctAnswer": "peregrine falcon",
+      "incorrectAnswers": [
+        "golden eagle",
+        "osprey",
+        "swift"
+      ],
+      "explanation": "The peregrine falcon is famous for its extremely fast dive.",
+      "keywords": [
+        "birds",
+        "animal-trivia"
+      ],
+      "source": "https://www.britannica.com/animal/peregrine-falcon"
+    },
+    {
+      "seedId": "90a6f1e9-9861-57ec-84cc-820f4afd4851",
+      "category": "trivia",
+      "navigationKeyword1": "animals",
+      "navigationKeyword2": "birds",
+      "question": "Which birds are especially known for mimicking human speech?",
+      "correctAnswer": "parrots",
+      "incorrectAnswers": [
+        "pelicans",
+        "herons",
+        "storks"
+      ],
+      "explanation": "Parrots are especially well known for vocal mimicry.",
+      "keywords": [
+        "birds",
+        "animal-trivia"
+      ],
+      "source": "https://www.britannica.com/animal/parrot"
+    },
+    {
+      "seedId": "81b18e93-9e4a-5872-9025-27a7013fcced",
+      "category": "trivia",
+      "navigationKeyword1": "animals",
+      "navigationKeyword2": "birds",
+      "question": "Which birds of prey are famous for forward-facing eyes and silent flight?",
+      "correctAnswer": "owls",
+      "incorrectAnswers": [
+        "eagles",
+        "vultures",
+        "ravens"
+      ],
+      "explanation": "Owls are known for forward-facing eyes and quiet flight.",
+      "keywords": [
+        "birds",
+        "animal-trivia"
+      ],
+      "source": "https://www.britannica.com/animal/owl"
+    },
+    {
+      "seedId": "a3424e48-1ef4-573f-bba2-5d0e93da6666",
+      "category": "trivia",
+      "navigationKeyword1": "animals",
+      "navigationKeyword2": "birds",
+      "question": "Which flightless bird is native to New Zealand?",
+      "correctAnswer": "kiwi",
+      "incorrectAnswers": [
+        "puffin",
+        "ibis",
+        "loon"
+      ],
+      "explanation": "The kiwi is a flightless bird native to New Zealand.",
+      "keywords": [
+        "birds",
+        "animal-trivia"
+      ],
+      "source": "https://www.britannica.com/animal/kiwi-bird"
+    },
+    {
+      "seedId": "66ed0980-2ce0-5e6c-8bd0-1bec24f4d07e",
+      "category": "trivia",
+      "navigationKeyword1": "animals",
+      "navigationKeyword2": "dinosaurs",
+      "question": "Ankylosaurus is famous for having what at the end of its tail?",
+      "correctAnswer": "a club",
+      "incorrectAnswers": [
+        "a sail",
+        "a fan",
+        "a horn"
+      ],
+      "explanation": "Ankylosaurus is known for the club at the end of its tail.",
+      "keywords": [
+        "dinosaurs",
+        "prehistoric-life"
+      ],
+      "source": "https://www.britannica.com/animal/Ankylosaurus"
+    },
+    {
+      "seedId": "e77b731e-a0c3-55a3-8fbc-052bf7f93f4b",
+      "category": "trivia",
+      "navigationKeyword1": "animals",
+      "navigationKeyword2": "dinosaurs",
+      "question": "Archaeopteryx is often described as an early link between dinosaurs and what modern animals?",
+      "correctAnswer": "birds",
+      "incorrectAnswers": [
+        "horses",
+        "whales",
+        "primates"
+      ],
+      "explanation": "Archaeopteryx is often described as linking dinosaurs and birds.",
+      "keywords": [
+        "dinosaurs",
+        "prehistoric-life"
+      ],
+      "source": "https://www.britannica.com/animal/Archaeopteryx"
+    },
+    {
+      "seedId": "3e09b177-9aa3-5d1d-8796-6af38c845e43",
+      "category": "trivia",
+      "navigationKeyword1": "animals",
+      "navigationKeyword2": "dinosaurs",
+      "question": "How many facial horns did Triceratops have?",
+      "correctAnswer": "three",
+      "incorrectAnswers": [
+        "two",
+        "four",
+        "five"
+      ],
+      "explanation": "Triceratops had three prominent facial horns.",
+      "keywords": [
+        "dinosaurs",
+        "prehistoric-life"
+      ],
+      "source": "https://www.britannica.com/animal/Triceratops"
+    },
+    {
+      "seedId": "81785b50-50b3-57f7-bd6e-c888aeafeafb",
+      "category": "trivia",
+      "navigationKeyword1": "animals",
+      "navigationKeyword2": "dinosaurs",
+      "question": "Long-necked plant-eaters like Diplodocus belong to what dinosaur group?",
+      "correctAnswer": "sauropods",
+      "incorrectAnswers": [
+        "ceratopsians",
+        "theropods",
+        "ankylosaurs"
+      ],
+      "explanation": "Diplodocus was a sauropod, the long-necked dinosaur group.",
+      "keywords": [
+        "dinosaurs",
+        "prehistoric-life"
+      ],
+      "source": "https://www.britannica.com/animal/sauropod"
+    },
+    {
+      "seedId": "4ce45198-511c-535e-90c8-c4910a5d09fa",
+      "category": "trivia",
+      "navigationKeyword1": "animals",
+      "navigationKeyword2": "dinosaurs",
+      "question": "Modern birds are generally accepted as descendants of what larger group?",
+      "correctAnswer": "dinosaurs",
+      "incorrectAnswers": [
+        "crocodilians",
+        "pterosaurs",
+        "early amphibians"
+      ],
+      "explanation": "Modern birds are generally accepted as descendants of dinosaurs.",
+      "keywords": [
+        "dinosaurs",
+        "prehistoric-life"
+      ],
+      "source": "https://www.britannica.com/animal/dinosaur"
+    },
+    {
+      "seedId": "ca905e3d-77e1-5257-b25f-3ceb7ff7e2cf",
+      "category": "trivia",
+      "navigationKeyword1": "animals",
+      "navigationKeyword2": "dinosaurs",
+      "question": "Stegosaurus is famous for the large plates along which part of its body?",
+      "correctAnswer": "back",
+      "incorrectAnswers": [
+        "tail",
+        "skull",
+        "belly"
+      ],
+      "explanation": "Stegosaurus is known for the large plates along its back.",
+      "keywords": [
+        "dinosaurs",
+        "prehistoric-life"
+      ],
+      "source": "https://www.britannica.com/animal/Stegosaurus"
+    },
+    {
+      "seedId": "c486cc7b-f49a-52aa-8b7b-419c27cb30d2",
+      "category": "trivia",
+      "navigationKeyword1": "animals",
+      "navigationKeyword2": "dinosaurs",
+      "question": "Tyrannosaurus is usually classified as what type of eater?",
+      "correctAnswer": "carnivore",
+      "incorrectAnswers": [
+        "herbivore",
+        "omnivore",
+        "filter feeder"
+      ],
+      "explanation": "Tyrannosaurus is usually classified as a carnivorous dinosaur.",
+      "keywords": [
+        "dinosaurs",
+        "prehistoric-life"
+      ],
+      "source": "https://www.britannica.com/animal/Tyrannosaurus"
+    },
+    {
+      "seedId": "51a74822-0f2b-5050-b165-ea78f2760c34",
+      "category": "trivia",
+      "navigationKeyword1": "animals",
+      "navigationKeyword2": "dinosaurs",
+      "question": "Velociraptor lived during which geologic period?",
+      "correctAnswer": "Cretaceous",
+      "incorrectAnswers": [
+        "Jurassic",
+        "Triassic",
+        "Permian"
+      ],
+      "explanation": "Velociraptor lived during the Cretaceous Period.",
+      "keywords": [
+        "dinosaurs",
+        "prehistoric-life"
+      ],
+      "source": "https://www.britannica.com/animal/Velociraptor"
+    },
+    {
+      "seedId": "50365bf1-ac8b-50e3-b442-796fbb945738",
+      "category": "trivia",
+      "navigationKeyword1": "animals",
+      "navigationKeyword2": "dinosaurs",
+      "question": "Which flying reptiles were close relatives of dinosaurs but not dinosaurs themselves?",
+      "correctAnswer": "pterosaurs",
+      "incorrectAnswers": [
+        "plesiosaurs",
+        "ichthyosaurs",
+        "mosasaurs"
+      ],
+      "explanation": "Pterosaurs were flying reptiles related to dinosaurs, not true dinosaurs.",
+      "keywords": [
+        "dinosaurs",
+        "prehistoric-life"
+      ],
+      "source": "https://www.britannica.com/animal/pterosaur"
+    },
+    {
+      "seedId": "ff89cef8-96d5-5ac4-a3ad-1af3953e8813",
+      "category": "trivia",
+      "navigationKeyword1": "animals",
+      "navigationKeyword2": "dinosaurs",
+      "question": "Which period came right before the Jurassic?",
+      "correctAnswer": "Triassic",
+      "incorrectAnswers": [
+        "Cretaceous",
+        "Permian",
+        "Devonian"
+      ],
+      "explanation": "The Triassic Period came before the Jurassic.",
+      "keywords": [
+        "dinosaurs",
+        "prehistoric-life"
+      ],
+      "source": "https://www.britannica.com/science/Jurassic-Period"
+    },
+    {
+      "seedId": "6565dfc5-ef17-5253-afae-8e0957a162b8",
+      "category": "trivia",
+      "navigationKeyword1": "animals",
+      "navigationKeyword2": "ocean",
+      "question": "A narwhal tusk is actually an elongated what?",
+      "correctAnswer": "tooth",
+      "incorrectAnswers": [
+        "horn",
+        "bone",
+        "fin spine"
+      ],
+      "explanation": "A narwhal tusk is an elongated tooth.",
+      "keywords": [
+        "ocean-life",
+        "animal-trivia"
+      ],
+      "source": "https://www.britannica.com/animal/narwhal"
+    },
+    {
+      "seedId": "7e6430a4-2e82-556f-bf6e-3e8b2a004235",
+      "category": "trivia",
+      "navigationKeyword1": "animals",
+      "navigationKeyword2": "ocean",
+      "question": "Coral reefs are built by colonies of what tiny animals?",
+      "correctAnswer": "coral polyps",
+      "incorrectAnswers": [
+        "krill",
+        "sponges",
+        "barnacles"
+      ],
+      "explanation": "Coral reefs are built by colonies of coral polyps.",
+      "keywords": [
+        "ocean-life",
+        "animal-trivia"
+      ],
+      "source": "https://www.britannica.com/science/coral-reef"
+    },
+    {
+      "seedId": "847221c2-22d5-5b6c-8c61-2c9cbeafe474",
+      "category": "trivia",
+      "navigationKeyword1": "animals",
+      "navigationKeyword2": "ocean",
+      "question": "Despite its name, a whale shark is what kind of animal?",
+      "correctAnswer": "shark",
+      "incorrectAnswers": [
+        "whale",
+        "ray",
+        "dolphin"
+      ],
+      "explanation": "A whale shark is a shark, not a whale.",
+      "keywords": [
+        "ocean-life",
+        "animal-trivia"
+      ],
+      "source": "https://www.britannica.com/animal/whale-shark"
+    },
+    {
+      "seedId": "bee59cc8-5597-52f3-899c-798a7e793557",
+      "category": "trivia",
+      "navigationKeyword1": "animals",
+      "navigationKeyword2": "ocean",
+      "question": "Dolphins breathe air through what opening on top of the head?",
+      "correctAnswer": "blowhole",
+      "incorrectAnswers": [
+        "gill slit",
+        "spiracle",
+        "snout pore"
+      ],
+      "explanation": "Dolphins breathe air through a blowhole.",
+      "keywords": [
+        "ocean-life",
+        "animal-trivia"
+      ],
+      "source": "https://www.britannica.com/animal/dolphin-mammal"
+    },
+    {
+      "seedId": "359f5599-5d86-59dd-8b02-9a9c86698a97",
+      "category": "trivia",
+      "navigationKeyword1": "animals",
+      "navigationKeyword2": "ocean",
+      "question": "How many arms does an octopus have?",
+      "correctAnswer": "eight",
+      "incorrectAnswers": [
+        "six",
+        "ten",
+        "twelve"
+      ],
+      "explanation": "An octopus has eight arms.",
+      "keywords": [
+        "ocean-life",
+        "animal-trivia"
+      ],
+      "source": "https://www.britannica.com/animal/octopus-mollusk"
+    },
+    {
+      "seedId": "595c1948-73cb-5b10-8a18-12d6d3bda686",
+      "category": "trivia",
+      "navigationKeyword1": "animals",
+      "navigationKeyword2": "ocean",
+      "question": "In seahorses, which parent carries the developing eggs?",
+      "correctAnswer": "male",
+      "incorrectAnswers": [
+        "female",
+        "both parents equally",
+        "neither parent"
+      ],
+      "explanation": "In seahorses, the male carries the developing eggs.",
+      "keywords": [
+        "ocean-life",
+        "animal-trivia"
+      ],
+      "source": "https://www.britannica.com/animal/sea-horse"
+    },
+    {
+      "seedId": "2118ce32-d886-5f4f-a0fb-0483c3f5369d",
+      "category": "trivia",
+      "navigationKeyword1": "animals",
+      "navigationKeyword2": "ocean",
+      "question": "Sea otters often wrap themselves in what while resting so they do not drift away?",
+      "correctAnswer": "kelp",
+      "incorrectAnswers": [
+        "coral",
+        "seagrass",
+        "rope sponge"
+      ],
+      "explanation": "Sea otters often wrap themselves in kelp while resting.",
+      "keywords": [
+        "ocean-life",
+        "animal-trivia"
+      ],
+      "source": "https://www.britannica.com/animal/sea-otter"
+    },
+    {
+      "seedId": "20ad9e7f-3fb7-5a98-86f3-790fd946f3b1",
+      "category": "trivia",
+      "navigationKeyword1": "animals",
+      "navigationKeyword2": "ocean",
+      "question": "What is the largest animal on Earth?",
+      "correctAnswer": "blue whale",
+      "incorrectAnswers": [
+        "whale shark",
+        "giant squid",
+        "elephant seal"
+      ],
+      "explanation": "The blue whale is the largest animal on Earth.",
+      "keywords": [
+        "ocean-life",
+        "animal-trivia"
+      ],
+      "source": "https://www.britannica.com/animal/blue-whale"
+    },
+    {
+      "seedId": "45dad931-c730-52a2-9c6b-a87b8806e056",
+      "category": "trivia",
+      "navigationKeyword1": "animals",
+      "navigationKeyword2": "ocean",
+      "question": "What ocean reptile comes ashore to lay its eggs?",
+      "correctAnswer": "sea turtle",
+      "incorrectAnswers": [
+        "manatee",
+        "dolphin",
+        "stingray"
+      ],
+      "explanation": "Sea turtles come ashore to lay eggs.",
+      "keywords": [
+        "ocean-life",
+        "animal-trivia"
+      ],
+      "source": "https://www.britannica.com/animal/sea-turtle"
+    },
+    {
+      "seedId": "fdf6239e-6773-5618-b7d0-efd7311e5223",
+      "category": "trivia",
+      "navigationKeyword1": "animals",
+      "navigationKeyword2": "ocean",
+      "question": "Which ocean animal is well known for squirting ink as a defense?",
+      "correctAnswer": "squid",
+      "incorrectAnswers": [
+        "sea star",
+        "lobster",
+        "manta ray"
+      ],
+      "explanation": "Squid are well known for squirting ink as a defense.",
+      "keywords": [
+        "ocean-life",
+        "animal-trivia"
+      ],
+      "source": "https://www.britannica.com/animal/squid"
+    },
+    {
+      "seedId": "e4dc3e5f-f30a-5931-ba26-9b2e84c2e0d7",
+      "category": "trivia",
+      "navigationKeyword1": "animals",
+      "navigationKeyword2": "pets",
+      "question": "Canaries were once used in mines to detect what danger?",
+      "correctAnswer": "poisonous gases",
+      "incorrectAnswers": [
+        "cave-ins",
+        "floodwater",
+        "sparks"
+      ],
+      "explanation": "Canaries were used in mines as early warning for poisonous gases.",
+      "keywords": [
+        "pets",
+        "animal-trivia"
+      ],
+      "source": "https://www.britannica.com/animal/canary"
+    },
+    {
+      "seedId": "a84cbd05-651f-5abe-a9c4-cb95410d470a",
+      "category": "trivia",
+      "navigationKeyword1": "animals",
+      "navigationKeyword2": "pets",
+      "question": "Cats are famous for making what vibrating sound?",
+      "correctAnswer": "purr",
+      "incorrectAnswers": [
+        "whistle",
+        "chirp",
+        "howl"
+      ],
+      "explanation": "Cats are famous for purring.",
+      "keywords": [
+        "pets",
+        "animal-trivia"
+      ],
+      "source": "https://www.britannica.com/animal/cat"
+    },
+    {
+      "seedId": "1f638c1a-0613-5509-9553-1fd8cde8cca7",
+      "category": "trivia",
+      "navigationKeyword1": "animals",
+      "navigationKeyword2": "pets",
+      "question": "Dogs are famous for having a powerful sense of what?",
+      "correctAnswer": "smell",
+      "incorrectAnswers": [
+        "night vision",
+        "balance",
+        "taste"
+      ],
+      "explanation": "Dogs are especially known for a strong sense of smell.",
+      "keywords": [
+        "pets",
+        "animal-trivia"
+      ],
+      "source": "https://www.britannica.com/animal/dog"
+    },
+    {
+      "seedId": "75ce420d-22ba-565d-abf1-64478e0ed787",
+      "category": "trivia",
+      "navigationKeyword1": "animals",
+      "navigationKeyword2": "pets",
+      "question": "Ferrets belong to the same family as what animals?",
+      "correctAnswer": "weasels",
+      "incorrectAnswers": [
+        "rabbits",
+        "hedgehogs",
+        "hamsters"
+      ],
+      "explanation": "Ferrets belong to the weasel family.",
+      "keywords": [
+        "pets",
+        "animal-trivia"
+      ],
+      "source": "https://www.britannica.com/animal/ferret"
+    },
+    {
+      "seedId": "50143ae8-c878-5f93-92c5-76869a83fc4e",
+      "category": "trivia",
+      "navigationKeyword1": "animals",
+      "navigationKeyword2": "pets",
+      "question": "Goldfish were first domesticated in which country?",
+      "correctAnswer": "China",
+      "incorrectAnswers": [
+        "Japan",
+        "Egypt",
+        "India"
+      ],
+      "explanation": "Goldfish were first domesticated in China.",
+      "keywords": [
+        "pets",
+        "animal-trivia"
+      ],
+      "source": "https://www.britannica.com/animal/goldfish"
+    },
+    {
+      "seedId": "443d4d28-1c11-5c9b-a63b-28601a699d83",
+      "category": "trivia",
+      "navigationKeyword1": "animals",
+      "navigationKeyword2": "pets",
+      "question": "Guinea pigs originally come from which continent?",
+      "correctAnswer": "South America",
+      "incorrectAnswers": [
+        "Asia",
+        "Europe",
+        "Africa"
+      ],
+      "explanation": "Guinea pigs originated in South America.",
+      "keywords": [
+        "pets",
+        "animal-trivia"
+      ],
+      "source": "https://www.britannica.com/animal/guinea-pig"
+    },
+    {
+      "seedId": "3142f8c9-ae18-51d1-8351-062a4a7c331c",
+      "category": "trivia",
+      "navigationKeyword1": "animals",
+      "navigationKeyword2": "pets",
+      "question": "Hamsters are known for expandable what?",
+      "correctAnswer": "cheek pouches",
+      "incorrectAnswers": [
+        "tail fins",
+        "ear tufts",
+        "back plates"
+      ],
+      "explanation": "Hamsters are known for their expandable cheek pouches.",
+      "keywords": [
+        "pets",
+        "animal-trivia"
+      ],
+      "source": "https://www.britannica.com/animal/hamster"
+    },
+    {
+      "seedId": "1cbeefe2-0095-5f20-a59c-aff3915a5805",
+      "category": "trivia",
+      "navigationKeyword1": "animals",
+      "navigationKeyword2": "pets",
+      "question": "Rabbits belong to which order of mammals?",
+      "correctAnswer": "Lagomorpha",
+      "incorrectAnswers": [
+        "Rodentia",
+        "Carnivora",
+        "Primates"
+      ],
+      "explanation": "Rabbits belong to the order Lagomorpha.",
+      "keywords": [
+        "pets",
+        "animal-trivia"
+      ],
+      "source": "https://www.britannica.com/animal/rabbit"
+    },
+    {
+      "seedId": "b17cbdab-c5b5-53a0-b8b1-00cece278975",
+      "category": "trivia",
+      "navigationKeyword1": "animals",
+      "navigationKeyword2": "pets",
+      "question": "What is a budgerigar commonly called in the United States?",
+      "correctAnswer": "parakeet",
+      "incorrectAnswers": [
+        "cockatiel",
+        "canary",
+        "finch"
+      ],
+      "explanation": "A budgerigar is commonly called a parakeet in the United States.",
+      "keywords": [
+        "pets",
+        "animal-trivia"
+      ],
+      "source": "https://www.britannica.com/animal/parakeet"
+    },
+    {
+      "seedId": "005c7658-0cbf-5799-b709-5c5c57de66e7",
+      "category": "trivia",
+      "navigationKeyword1": "animals",
+      "navigationKeyword2": "pets",
+      "question": "Which dog breed is famous for its spotted coat?",
+      "correctAnswer": "Dalmatian",
+      "incorrectAnswers": [
+        "beagle",
+        "collie",
+        "pug"
+      ],
+      "explanation": "The Dalmatian is famous for its spotted coat.",
+      "keywords": [
+        "pets",
+        "animal-trivia"
+      ],
+      "source": "https://www.britannica.com/animal/Dalmatian-dog"
+    },
+    {
+      "seedId": "0d7be823-5992-550d-a8f7-bcf80a02ac56",
+      "category": "trivia",
+      "navigationKeyword1": "animals",
+      "navigationKeyword2": "weird",
+      "question": "A Komodo dragon is the worlds largest what?",
+      "correctAnswer": "lizard",
+      "incorrectAnswers": [
+        "snake",
+        "frog",
+        "turtle"
+      ],
+      "explanation": "The Komodo dragon is the worlds largest lizard.",
+      "keywords": [
+        "weird-animals",
+        "animal-trivia"
+      ],
+      "source": "https://www.britannica.com/animal/komodo-dragon"
+    },
+    {
+      "seedId": "9a36ee0f-84ff-5a75-baee-20e10fe67f2c",
+      "category": "trivia",
+      "navigationKeyword1": "animals",
+      "navigationKeyword2": "weird",
+      "question": "Blobfish live in what kind of habitat?",
+      "correctAnswer": "deep ocean",
+      "incorrectAnswers": [
+        "desert caves",
+        "rainforest canopy",
+        "freshwater marshes"
+      ],
+      "explanation": "Blobfish live in the deep ocean.",
+      "keywords": [
+        "weird-animals",
+        "animal-trivia"
+      ],
+      "source": "https://www.britannica.com/animal/blobfish"
+    },
+    {
+      "seedId": "f1826a04-7562-5c48-bbb8-680224acb982",
+      "category": "trivia",
+      "navigationKeyword1": "animals",
+      "navigationKeyword2": "weird",
+      "question": "Echidnas and platypuses belong to what egg-laying mammal group?",
+      "correctAnswer": "monotremes",
+      "incorrectAnswers": [
+        "marsupials",
+        "rodents",
+        "primates"
+      ],
+      "explanation": "Echidnas and platypuses are monotremes.",
+      "keywords": [
+        "weird-animals",
+        "animal-trivia"
+      ],
+      "source": "https://www.britannica.com/animal/monotreme"
+    },
+    {
+      "seedId": "a6de52cb-7225-5b9c-970a-9ca6453dc7fc",
+      "category": "trivia",
+      "navigationKeyword1": "animals",
+      "navigationKeyword2": "weird",
+      "question": "Mantis shrimp are famous for having an extremely powerful what?",
+      "correctAnswer": "punch",
+      "incorrectAnswers": [
+        "bite",
+        "roar",
+        "tail slap"
+      ],
+      "explanation": "Mantis shrimp are famous for their powerful striking punch.",
+      "keywords": [
+        "weird-animals",
+        "animal-trivia"
+      ],
+      "source": "https://www.britannica.com/animal/mantis-shrimp"
+    },
+    {
+      "seedId": "f60251ec-3475-5234-b082-6d9bd533dc5b",
+      "category": "trivia",
+      "navigationKeyword1": "animals",
+      "navigationKeyword2": "weird",
+      "question": "The aye-aye is native to which island nation?",
+      "correctAnswer": "Madagascar",
+      "incorrectAnswers": [
+        "Iceland",
+        "New Zealand",
+        "Sri Lanka"
+      ],
+      "explanation": "The aye-aye is native to Madagascar.",
+      "keywords": [
+        "weird-animals",
+        "animal-trivia"
+      ],
+      "source": "https://www.britannica.com/animal/aye-aye"
+    },
+    {
+      "seedId": "ec0429f8-575d-5564-bc8c-fd3dfafe3822",
+      "category": "trivia",
+      "navigationKeyword1": "animals",
+      "navigationKeyword2": "weird",
+      "question": "What body parts can an axolotl famously regrow?",
+      "correctAnswer": "limbs",
+      "incorrectAnswers": [
+        "wings",
+        "horns",
+        "feathers"
+      ],
+      "explanation": "Axolotls are famous for regenerating lost limbs.",
+      "keywords": [
+        "weird-animals",
+        "animal-trivia"
+      ],
+      "source": "https://www.britannica.com/animal/axolotl"
+    },
+    {
+      "seedId": "d5802227-bf42-5cdb-9a7d-671cd0cff965",
+      "category": "trivia",
+      "navigationKeyword1": "animals",
+      "navigationKeyword2": "weird",
+      "question": "What nickname is commonly used for a tardigrade?",
+      "correctAnswer": "water bear",
+      "incorrectAnswers": [
+        "sand wolf",
+        "mud fox",
+        "stone rabbit"
+      ],
+      "explanation": "Tardigrades are commonly nicknamed water bears.",
+      "keywords": [
+        "weird-animals",
+        "animal-trivia"
+      ],
+      "source": "https://www.britannica.com/science/tardigrade"
+    },
+    {
+      "seedId": "efd8c2f4-f0da-5449-8a8a-d38b18b748da",
+      "category": "trivia",
+      "navigationKeyword1": "animals",
+      "navigationKeyword2": "weird",
+      "question": "What star-shaped feature gives the star-nosed mole its name?",
+      "correctAnswer": "nose",
+      "incorrectAnswers": [
+        "tail",
+        "foot",
+        "ear"
+      ],
+      "explanation": "The star-nosed mole is named for its star-shaped nose.",
+      "keywords": [
+        "weird-animals",
+        "animal-trivia"
+      ],
+      "source": "https://www.britannica.com/animal/star-nosed-mole"
+    },
+    {
+      "seedId": "5c6f4fb0-82ab-539f-b11c-e9a9bc12193b",
+      "category": "trivia",
+      "navigationKeyword1": "animals",
+      "navigationKeyword2": "weird",
+      "question": "What unusual thing does a platypus do for a mammal?",
+      "correctAnswer": "lays eggs",
+      "incorrectAnswers": [
+        "changes color",
+        "breathes through gills",
+        "glides with wings"
+      ],
+      "explanation": "A platypus is an egg-laying mammal.",
+      "keywords": [
+        "weird-animals",
+        "animal-trivia"
+      ],
+      "source": "https://www.britannica.com/animal/platypus"
+    },
+    {
+      "seedId": "9b7a0c79-ea4a-5d42-93cc-f8c7098c16f6",
+      "category": "trivia",
+      "navigationKeyword1": "animals",
+      "navigationKeyword2": "weird",
+      "question": "Which mammal is covered in scales?",
+      "correctAnswer": "pangolin",
+      "incorrectAnswers": [
+        "armadillo",
+        "tapir",
+        "otter"
+      ],
+      "explanation": "Pangolins are the only mammals covered in scales.",
+      "keywords": [
+        "weird-animals",
+        "animal-trivia"
+      ],
+      "source": "https://www.britannica.com/animal/pangolin"
+    },
+    {
+      "seedId": "a204f3f5-319b-5ac5-ac66-9df900113f08",
+      "category": "trivia",
+      "navigationKeyword1": "animals",
+      "navigationKeyword2": "wildlife",
+      "question": "A rhinoceros horn is made mostly of what protein?",
+      "correctAnswer": "keratin",
+      "incorrectAnswers": [
+        "calcium",
+        "collagen",
+        "chitin"
+      ],
+      "explanation": "A rhinoceros horn is made mostly of keratin.",
+      "keywords": [
+        "wildlife",
+        "animal-trivia"
+      ],
+      "source": "https://www.britannica.com/animal/rhinoceros-mammal"
+    },
+    {
+      "seedId": "26dd4fa9-8a9f-5388-8ea4-788cd174b550",
+      "category": "trivia",
+      "navigationKeyword1": "animals",
+      "navigationKeyword2": "wildlife",
+      "question": "A zebra stripe pattern is unique to each what?",
+      "correctAnswer": "individual",
+      "incorrectAnswers": [
+        "species",
+        "herd",
+        "continent"
+      ],
+      "explanation": "Each zebra has its own stripe pattern.",
+      "keywords": [
+        "wildlife",
+        "animal-trivia"
+      ],
+      "source": "https://www.britannica.com/animal/zebra"
+    },
+    {
+      "seedId": "164145dc-8a32-57cd-a0e7-a4fe86571c02",
+      "category": "trivia",
+      "navigationKeyword1": "animals",
+      "navigationKeyword2": "wildlife",
+      "question": "Giant pandas eat mostly what plant?",
+      "correctAnswer": "bamboo",
+      "incorrectAnswers": [
+        "eucalyptus",
+        "fern",
+        "moss"
+      ],
+      "explanation": "Giant pandas eat mainly bamboo.",
+      "keywords": [
+        "wildlife",
+        "animal-trivia"
+      ],
+      "source": "https://www.britannica.com/animal/giant-panda"
+    },
+    {
+      "seedId": "8e2fa67d-0d80-54a6-a2c6-74bb56a9a152",
+      "category": "trivia",
+      "navigationKeyword1": "animals",
+      "navigationKeyword2": "wildlife",
+      "question": "Kangaroos are native to which country?",
+      "correctAnswer": "Australia",
+      "incorrectAnswers": [
+        "South Africa",
+        "Brazil",
+        "Canada"
+      ],
+      "explanation": "Kangaroos are native to Australia.",
+      "keywords": [
+        "wildlife",
+        "animal-trivia"
+      ],
+      "source": "https://www.britannica.com/animal/kangaroo"
+    },
+    {
+      "seedId": "3c6ebc4f-a0e4-51d2-94ca-ad313d4c1c92",
+      "category": "trivia",
+      "navigationKeyword1": "animals",
+      "navigationKeyword2": "wildlife",
+      "question": "Polar bears live in the Arctic, not which opposite polar region?",
+      "correctAnswer": "Antarctic",
+      "incorrectAnswers": [
+        "taiga",
+        "tundra",
+        "Pacific"
+      ],
+      "explanation": "Polar bears live in the Arctic, not the Antarctic.",
+      "keywords": [
+        "wildlife",
+        "animal-trivia"
+      ],
+      "source": "https://www.britannica.com/animal/polar-bear"
+    },
+    {
+      "seedId": "98c6c636-b9e4-5e83-b864-a9e484597230",
+      "category": "trivia",
+      "navigationKeyword1": "animals",
+      "navigationKeyword2": "wildlife",
+      "question": "What is the fastest land animal?",
+      "correctAnswer": "cheetah",
+      "incorrectAnswers": [
+        "lion",
+        "greyhound",
+        "gazelle"
+      ],
+      "explanation": "The cheetah is the fastest land animal.",
+      "keywords": [
+        "wildlife",
+        "animal-trivia"
+      ],
+      "source": "https://www.britannica.com/animal/cheetah-mammal"
+    },
+    {
+      "seedId": "ed4eb57d-a918-58d2-a213-19b94fd5e859",
+      "category": "trivia",
+      "navigationKeyword1": "animals",
+      "navigationKeyword2": "wildlife",
+      "question": "What is the largest land animal?",
+      "correctAnswer": "elephant",
+      "incorrectAnswers": [
+        "hippopotamus",
+        "rhinoceros",
+        "giraffe"
+      ],
+      "explanation": "Elephants are the largest land animals.",
+      "keywords": [
+        "wildlife",
+        "animal-trivia"
+      ],
+      "source": "https://www.britannica.com/animal/elephant-mammal"
+    },
+    {
+      "seedId": "653a967a-86d2-59d1-88d9-312e895e8e81",
+      "category": "trivia",
+      "navigationKeyword1": "animals",
+      "navigationKeyword2": "wildlife",
+      "question": "What is the tallest living land animal?",
+      "correctAnswer": "giraffe",
+      "incorrectAnswers": [
+        "camel",
+        "elephant",
+        "moose"
+      ],
+      "explanation": "The giraffe is the tallest living land animal.",
+      "keywords": [
+        "wildlife",
+        "animal-trivia"
+      ],
+      "source": "https://www.britannica.com/animal/giraffe"
+    },
+    {
+      "seedId": "fc12133b-15ef-5c0b-933f-8d4ff89bd3e1",
+      "category": "trivia",
+      "navigationKeyword1": "animals",
+      "navigationKeyword2": "wildlife",
+      "question": "Which rodent is famous for building dams?",
+      "correctAnswer": "beaver",
+      "incorrectAnswers": [
+        "capybara",
+        "porcupine",
+        "marmot"
+      ],
+      "explanation": "Beavers are famous for building dams.",
+      "keywords": [
+        "wildlife",
+        "animal-trivia"
+      ],
+      "source": "https://www.britannica.com/animal/beaver"
+    },
+    {
+      "seedId": "1922e9c4-122d-55dc-ae4e-d3b70ca38f6e",
+      "category": "trivia",
+      "navigationKeyword1": "animals",
+      "navigationKeyword2": "wildlife",
+      "question": "Wolves usually live and hunt in what social groups?",
+      "correctAnswer": "packs",
+      "incorrectAnswers": [
+        "pods",
+        "colonies",
+        "schools"
+      ],
+      "explanation": "Wolves usually live and hunt in packs.",
+      "keywords": [
+        "wildlife",
+        "animal-trivia"
+      ],
+      "source": "https://www.britannica.com/animal/wolf"
+    }
+  ]
+}

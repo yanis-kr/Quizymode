@@ -1,0 +1,1207 @@
+{
+  "schemaVersion": 1,
+  "seedSet": "core-public-items",
+  "deltaPreviewLimit": 200,
+  "items": [
+    {
+      "seedId": "8c43d41d-5bef-5915-9297-1bf256607bfc",
+      "category": "sports",
+      "navigationKeyword1": "rules",
+      "navigationKeyword2": "equipment",
+      "question": "Which baseball equipment item protects the catcher from foul tips and pitches?",
+      "correctAnswer": "Mask",
+      "incorrectAnswers": [
+        "Batting tee",
+        "Rosin bag",
+        "Lineup card"
+      ],
+      "explanation": "Catchers wear a protective mask as part of their gear.",
+      "keywords": [
+        "rules",
+        "equipment",
+        "catcher-mask"
+      ],
+      "source": "https://www.mlb.com/glossary"
+    },
+    {
+      "seedId": "42d8123c-add3-5621-97a8-9ea9a13c1a7c",
+      "category": "sports",
+      "navigationKeyword1": "rules",
+      "navigationKeyword2": "equipment",
+      "question": "Which basketball equipment item sits 10 feet above the floor and defines the scoring target?",
+      "correctAnswer": "Basket rim and backboard",
+      "incorrectAnswers": [
+        "Shot clock horn",
+        "Jump circle",
+        "Bench chair"
+      ],
+      "explanation": "Teams score by sending the ball through the rim attached to the backboard.",
+      "keywords": [
+        "rules",
+        "equipment",
+        "basket"
+      ],
+      "source": "https://www.britannica.com/sports/basketball"
+    },
+    {
+      "seedId": "571bead0-cc4b-565c-bcd2-3dd7bfeec103",
+      "category": "sports",
+      "navigationKeyword1": "rules",
+      "navigationKeyword2": "equipment",
+      "question": "Which football equipment item is worn on the upper body for impact protection?",
+      "correctAnswer": "Shoulder pads",
+      "incorrectAnswers": [
+        "Skates",
+        "Face cage only",
+        "Arm sleeve"
+      ],
+      "explanation": "Shoulder pads help absorb contact in football.",
+      "keywords": [
+        "rules",
+        "equipment",
+        "shoulder-pads"
+      ],
+      "source": "https://operations.nfl.com/learn-the-game/nfl-basics/"
+    },
+    {
+      "seedId": "87463036-7da9-51d5-9286-c16a4958a06e",
+      "category": "sports",
+      "navigationKeyword1": "rules",
+      "navigationKeyword2": "equipment",
+      "question": "Which golf club is mainly used on the green?",
+      "correctAnswer": "Putter",
+      "incorrectAnswers": [
+        "Driver",
+        "Sand wedge",
+        "Hybrid"
+      ],
+      "explanation": "Putters are designed for short rolling strokes on the green.",
+      "keywords": [
+        "rules",
+        "equipment",
+        "putter"
+      ],
+      "source": "https://www.usga.org/content/usga/home-page/rules-hub.html"
+    },
+    {
+      "seedId": "cd98a4c6-8402-53ca-aad1-1c302c7756e3",
+      "category": "sports",
+      "navigationKeyword1": "rules",
+      "navigationKeyword2": "equipment",
+      "question": "Which golf item is used to raise the ball slightly off the ground for the opening shot on many holes?",
+      "correctAnswer": "Tee",
+      "incorrectAnswers": [
+        "Ball marker",
+        "Divot tool",
+        "Flagstick"
+      ],
+      "explanation": "Players may place the ball on a tee in the teeing area.",
+      "keywords": [
+        "rules",
+        "equipment",
+        "tee"
+      ],
+      "source": "https://www.usga.org/content/usga/home-page/rules-hub.html"
+    },
+    {
+      "seedId": "2d843371-546c-55d7-a15b-93eeae34343e",
+      "category": "sports",
+      "navigationKeyword1": "rules",
+      "navigationKeyword2": "equipment",
+      "question": "Which hockey item is used to strike the puck?",
+      "correctAnswer": "Stick",
+      "incorrectAnswers": [
+        "Bat",
+        "Racquet",
+        "Club"
+      ],
+      "explanation": "Players use a hockey stick to pass and shoot the puck.",
+      "keywords": [
+        "rules",
+        "equipment",
+        "stick"
+      ],
+      "source": "https://www.britannica.com/sports/ice-hockey"
+    },
+    {
+      "seedId": "2ecfb810-d447-594a-9eb2-242f22df0d6b",
+      "category": "sports",
+      "navigationKeyword1": "rules",
+      "navigationKeyword2": "equipment",
+      "question": "Which item in tennis divides the court and must be cleared on most shots?",
+      "correctAnswer": "Net",
+      "incorrectAnswers": [
+        "Backboard",
+        "Wall pad",
+        "Yellow card"
+      ],
+      "explanation": "The tennis net separates the two sides of the court.",
+      "keywords": [
+        "rules",
+        "equipment",
+        "net"
+      ],
+      "source": "https://www.britannica.com/sports"
+    },
+    {
+      "seedId": "f16b1589-40d2-56c9-af88-e3dbf75d967f",
+      "category": "sports",
+      "navigationKeyword1": "rules",
+      "navigationKeyword2": "equipment",
+      "question": "Which item marks the boundary line in baseball and fair territory decisions?",
+      "correctAnswer": "Foul line",
+      "incorrectAnswers": [
+        "Center circle",
+        "Blue line",
+        "End zone pylon"
+      ],
+      "explanation": "The foul lines define fair and foul territory from home plate outward.",
+      "keywords": [
+        "rules",
+        "equipment",
+        "field-lines"
+      ],
+      "source": "https://www.mlb.com/glossary"
+    },
+    {
+      "seedId": "3c90e120-93aa-529f-afd5-b6b3f717c3b2",
+      "category": "sports",
+      "navigationKeyword1": "rules",
+      "navigationKeyword2": "equipment",
+      "question": "Which piece of football equipment protects the player's head?",
+      "correctAnswer": "Helmet",
+      "incorrectAnswers": [
+        "Shin guard",
+        "Putter",
+        "Glove only"
+      ],
+      "explanation": "Helmets are required protective headgear in football.",
+      "keywords": [
+        "rules",
+        "equipment",
+        "helmet"
+      ],
+      "source": "https://operations.nfl.com/learn-the-game/nfl-basics/"
+    },
+    {
+      "seedId": "cbda7a4d-bb31-551c-b6f0-31f41f0fddeb",
+      "category": "sports",
+      "navigationKeyword1": "rules",
+      "navigationKeyword2": "equipment",
+      "question": "Which soccer equipment item must every outfield player wear under the socks in organized play?",
+      "correctAnswer": "Shin guards",
+      "incorrectAnswers": [
+        "Batting gloves",
+        "Elbow pads",
+        "Helmet visor"
+      ],
+      "explanation": "Shin guards are standard protective equipment in soccer.",
+      "keywords": [
+        "rules",
+        "equipment",
+        "shin-guards"
+      ],
+      "source": "https://www.theifab.com/laws/latest/"
+    },
+    {
+      "seedId": "61cf1af0-ae42-5cea-abbd-2267a356c56c",
+      "category": "sports",
+      "navigationKeyword1": "rules",
+      "navigationKeyword2": "formats",
+      "question": "What baseball format decides the World Series champion?",
+      "correctAnswer": "Best-of-seven series",
+      "incorrectAnswers": [
+        "Single game final",
+        "Best-of-three set",
+        "Round robin"
+      ],
+      "explanation": "The World Series is played as a best-of-seven series.",
+      "keywords": [
+        "rules",
+        "formats",
+        "world-series"
+      ],
+      "source": "https://www.mlb.com/history"
+    },
+    {
+      "seedId": "943f43ae-036d-5044-86a8-63b69a934a55",
+      "category": "sports",
+      "navigationKeyword1": "rules",
+      "navigationKeyword2": "formats",
+      "question": "What format compares golfers hole by hole rather than by total strokes?",
+      "correctAnswer": "Match play",
+      "incorrectAnswers": [
+        "Stroke play",
+        "Aggregate match set",
+        "Sudden-death only"
+      ],
+      "explanation": "Match play treats each hole as a separate contest.",
+      "keywords": [
+        "rules",
+        "formats",
+        "match-play"
+      ],
+      "source": "https://www.usga.org/content/usga/home-page/rules-hub.html"
+    },
+    {
+      "seedId": "cf3863aa-0892-5acc-afa2-d43582da39f3",
+      "category": "sports",
+      "navigationKeyword1": "rules",
+      "navigationKeyword2": "formats",
+      "question": "What format gives every team in a group the chance to play multiple opponents before elimination?",
+      "correctAnswer": "Round robin",
+      "incorrectAnswers": [
+        "Single elimination",
+        "Penalty shootout",
+        "Best-of-seven"
+      ],
+      "explanation": "Round-robin play guarantees multiple scheduled games.",
+      "keywords": [
+        "rules",
+        "formats",
+        "round-robin"
+      ],
+      "source": "https://www.britannica.com/sports"
+    },
+    {
+      "seedId": "936e9916-3c95-5596-8a54-4edcb07a1d87",
+      "category": "sports",
+      "navigationKeyword1": "rules",
+      "navigationKeyword2": "formats",
+      "question": "What format is most common in the FIFA World Cup knockout phase after the group stage?",
+      "correctAnswer": "Single elimination",
+      "incorrectAnswers": [
+        "Double elimination",
+        "Best-of-five series",
+        "Home-and-away league"
+      ],
+      "explanation": "Teams are eliminated after one loss in the knockout bracket.",
+      "keywords": [
+        "rules",
+        "formats",
+        "single-elimination"
+      ],
+      "source": "https://www.theifab.com/laws/latest/"
+    },
+    {
+      "seedId": "dd78bf5f-34db-5e81-a5ca-8594374e0997",
+      "category": "sports",
+      "navigationKeyword1": "rules",
+      "navigationKeyword2": "formats",
+      "question": "What format is the NCAA men's basketball tournament best known for?",
+      "correctAnswer": "Single elimination bracket",
+      "incorrectAnswers": [
+        "Best-of-seven series",
+        "Round robin group play",
+        "Home-and-away aggregate"
+      ],
+      "explanation": "March Madness is a straight knockout bracket.",
+      "keywords": [
+        "rules",
+        "formats",
+        "march-madness"
+      ],
+      "source": "https://www.britannica.com/sports/basketball"
+    },
+    {
+      "seedId": "3716de7b-5fd9-53bc-bde3-6fca9ae6407f",
+      "category": "sports",
+      "navigationKeyword1": "rules",
+      "navigationKeyword2": "formats",
+      "question": "What golf competition format compares players by total strokes over the entire round or tournament?",
+      "correctAnswer": "Stroke play",
+      "incorrectAnswers": [
+        "Match play",
+        "Round robin",
+        "Best-of-seven"
+      ],
+      "explanation": "Stroke play totals every shot across the event.",
+      "keywords": [
+        "rules",
+        "formats",
+        "stroke-play"
+      ],
+      "source": "https://www.usga.org/content/usga/home-page/rules-hub.html"
+    },
+    {
+      "seedId": "3c5224d6-1638-5686-9c06-b6f14b7b2460",
+      "category": "sports",
+      "navigationKeyword1": "rules",
+      "navigationKeyword2": "formats",
+      "question": "What overtime-deciding method is used in soccer knockout matches if teams remain tied after extra time in many competitions?",
+      "correctAnswer": "Penalty shootout",
+      "incorrectAnswers": [
+        "Golden point",
+        "Faceoff contest",
+        "Home-run derby"
+      ],
+      "explanation": "Penalty shootouts settle many tied soccer knockout matches.",
+      "keywords": [
+        "rules",
+        "formats",
+        "shootout"
+      ],
+      "source": "https://www.theifab.com/laws/latest/"
+    },
+    {
+      "seedId": "b03bb3c5-8dc6-581e-aea9-96b63aea9bdb",
+      "category": "sports",
+      "navigationKeyword1": "rules",
+      "navigationKeyword2": "formats",
+      "question": "What playoff entry format rewards teams for regular-season performance before the main bracket begins in some leagues?",
+      "correctAnswer": "Play-in tournament",
+      "incorrectAnswers": [
+        "Replay system",
+        "Leg format",
+        "Test match"
+      ],
+      "explanation": "A play-in tournament is used in some leagues to decide final playoff berths.",
+      "keywords": [
+        "rules",
+        "formats",
+        "play-in"
+      ],
+      "source": "https://www.nba.com/history"
+    },
+    {
+      "seedId": "075433ee-f0dd-5da3-870a-23aa47767bf9",
+      "category": "sports",
+      "navigationKeyword1": "rules",
+      "navigationKeyword2": "formats",
+      "question": "What playoff format pits two teams in a series of games where one must win four games to advance in the NBA Finals and Stanley Cup playoffs?",
+      "correctAnswer": "Best-of-seven series",
+      "incorrectAnswers": [
+        "Single elimination",
+        "Round robin",
+        "Aggregate goals"
+      ],
+      "explanation": "Many pro team sports use best-of-seven playoff series.",
+      "keywords": [
+        "rules",
+        "formats",
+        "series"
+      ],
+      "source": "https://www.nba.com/history"
+    },
+    {
+      "seedId": "2d1c7f40-e5fd-5954-b822-5931db00480a",
+      "category": "sports",
+      "navigationKeyword1": "rules",
+      "navigationKeyword2": "formats",
+      "question": "What tournament structure allows a team to lose once and still remain alive in the bracket?",
+      "correctAnswer": "Double elimination",
+      "incorrectAnswers": [
+        "Single elimination",
+        "Swiss league",
+        "Round robin"
+      ],
+      "explanation": "Double elimination gives each entrant two lives before exit.",
+      "keywords": [
+        "rules",
+        "formats",
+        "double-elimination"
+      ],
+      "source": "https://www.britannica.com/sports"
+    },
+    {
+      "seedId": "b7ed150f-ceb4-513c-8073-1fdea91ae257",
+      "category": "sports",
+      "navigationKeyword1": "rules",
+      "navigationKeyword2": "officials",
+      "question": "What are baseball officials commonly called?",
+      "correctAnswer": "Umpires",
+      "incorrectAnswers": [
+        "Referees",
+        "Linesmen",
+        "Stewards"
+      ],
+      "explanation": "Baseball games are officiated by umpires.",
+      "keywords": [
+        "rules",
+        "officials",
+        "baseball"
+      ],
+      "source": "https://www.mlb.com/glossary"
+    },
+    {
+      "seedId": "b36c7585-07f2-52dc-92e9-75eee7523d09",
+      "category": "sports",
+      "navigationKeyword1": "rules",
+      "navigationKeyword2": "officials",
+      "question": "What are the two sideline soccer assistants who help judge offsides and ball-out-of-play calls called?",
+      "correctAnswer": "Assistant referees",
+      "incorrectAnswers": [
+        "Ball judges",
+        "Base umpires",
+        "Scorers"
+      ],
+      "explanation": "Assistant referees work the touchlines with flags.",
+      "keywords": [
+        "rules",
+        "officials",
+        "assistant-referees"
+      ],
+      "source": "https://www.theifab.com/laws/latest/"
+    },
+    {
+      "seedId": "93cdba2b-4a20-559d-a2c8-253b43155a47",
+      "category": "sports",
+      "navigationKeyword1": "rules",
+      "navigationKeyword2": "officials",
+      "question": "What basketball officials are commonly called?",
+      "correctAnswer": "Referees",
+      "incorrectAnswers": [
+        "Umpires only",
+        "Touch judges",
+        "Keepers"
+      ],
+      "explanation": "Basketball games are supervised by referees.",
+      "keywords": [
+        "rules",
+        "officials",
+        "basketball"
+      ],
+      "source": "https://www.britannica.com/sports/basketball"
+    },
+    {
+      "seedId": "82c9c9c1-ef4f-5e47-8cee-444ab3fa0735",
+      "category": "sports",
+      "navigationKeyword1": "rules",
+      "navigationKeyword2": "officials",
+      "question": "What football official usually stands behind the offensive backfield and announces penalties on TV broadcasts?",
+      "correctAnswer": "Referee",
+      "incorrectAnswers": [
+        "Line judge",
+        "Back judge",
+        "Field judge"
+      ],
+      "explanation": "The referee is often the most visible football official.",
+      "keywords": [
+        "rules",
+        "officials",
+        "football"
+      ],
+      "source": "https://operations.nfl.com/learn-the-game/nfl-basics/"
+    },
+    {
+      "seedId": "50fa951c-fd44-594e-8701-8d5eef1c7b66",
+      "category": "sports",
+      "navigationKeyword1": "rules",
+      "navigationKeyword2": "officials",
+      "question": "What golf official may help administer the rules during a tournament round?",
+      "correctAnswer": "Rules official",
+      "incorrectAnswers": [
+        "Pitching coach",
+        "Goal judge",
+        "Touch judge"
+      ],
+      "explanation": "Golf events often have rules officials available for rulings.",
+      "keywords": [
+        "rules",
+        "officials",
+        "golf"
+      ],
+      "source": "https://www.usga.org/content/usga/home-page/rules-hub.html"
+    },
+    {
+      "seedId": "fde63af6-c0e6-575e-8e47-9ee13e89be52",
+      "category": "sports",
+      "navigationKeyword1": "rules",
+      "navigationKeyword2": "officials",
+      "question": "What hockey officials drop the puck for faceoffs and call many stoppages?",
+      "correctAnswer": "Referees and linesmen",
+      "incorrectAnswers": [
+        "Base umpires",
+        "Caddies",
+        "Marshals"
+      ],
+      "explanation": "Hockey uses referees and linesmen as on-ice officials.",
+      "keywords": [
+        "rules",
+        "officials",
+        "hockey"
+      ],
+      "source": "https://www.britannica.com/sports/ice-hockey"
+    },
+    {
+      "seedId": "d2f83970-cda6-5034-9907-7d4be3b5d688",
+      "category": "sports",
+      "navigationKeyword1": "rules",
+      "navigationKeyword2": "officials",
+      "question": "What is the lead rules enforcer in boxing called?",
+      "correctAnswer": "Referee",
+      "incorrectAnswers": [
+        "Linesman",
+        "Shot-clock operator",
+        "Caddie"
+      ],
+      "explanation": "The boxing referee controls the bout inside the ring.",
+      "keywords": [
+        "rules",
+        "officials",
+        "boxing"
+      ],
+      "source": "https://www.britannica.com/sports"
+    },
+    {
+      "seedId": "aff7daff-8233-53a3-a9da-9a23acc345df",
+      "category": "sports",
+      "navigationKeyword1": "rules",
+      "navigationKeyword2": "officials",
+      "question": "What is the main on-field rules authority called in soccer?",
+      "correctAnswer": "Referee",
+      "incorrectAnswers": [
+        "Umpire",
+        "Judge",
+        "Steward"
+      ],
+      "explanation": "The referee has primary authority to enforce the Laws of the Game.",
+      "keywords": [
+        "rules",
+        "officials",
+        "soccer"
+      ],
+      "source": "https://www.theifab.com/laws/latest/"
+    },
+    {
+      "seedId": "30319788-b5ac-50d9-87c5-9aab6271a5f6",
+      "category": "sports",
+      "navigationKeyword1": "rules",
+      "navigationKeyword2": "officials",
+      "question": "What is the official scorekeeper in baseball responsible for recording plays and errors called?",
+      "correctAnswer": "Official scorer",
+      "incorrectAnswers": [
+        "Head referee",
+        "Marshal",
+        "Caddie"
+      ],
+      "explanation": "Baseball has an official scorer distinct from the umpires.",
+      "keywords": [
+        "rules",
+        "officials",
+        "scorer"
+      ],
+      "source": "https://www.mlb.com/glossary"
+    },
+    {
+      "seedId": "921a2b28-787f-5964-98b3-75fa9790e2b5",
+      "category": "sports",
+      "navigationKeyword1": "rules",
+      "navigationKeyword2": "officials",
+      "question": "What is the video review official called in top-level soccer under modern laws?",
+      "correctAnswer": "VAR",
+      "incorrectAnswers": [
+        "DRO",
+        "TMO",
+        "Box judge"
+      ],
+      "explanation": "VAR stands for Video Assistant Referee.",
+      "keywords": [
+        "rules",
+        "officials",
+        "var"
+      ],
+      "source": "https://www.theifab.com/laws/latest/"
+    },
+    {
+      "seedId": "8a08974b-b8cf-5cff-8883-3d0efbec597d",
+      "category": "sports",
+      "navigationKeyword1": "rules",
+      "navigationKeyword2": "penalties",
+      "question": "What baseball infraction is called when the pitcher makes an illegal motion with runners on base?",
+      "correctAnswer": "Balk",
+      "incorrectAnswers": [
+        "Walk",
+        "Wild pitch",
+        "Hook"
+      ],
+      "explanation": "A balk can advance runners because of an illegal pitching motion.",
+      "keywords": [
+        "rules",
+        "penalties",
+        "balk"
+      ],
+      "source": "https://www.mlb.com/glossary"
+    },
+    {
+      "seedId": "1a5c7850-d629-51ab-a4d4-3d3111fd842d",
+      "category": "sports",
+      "navigationKeyword1": "rules",
+      "navigationKeyword2": "penalties",
+      "question": "What basketball foul is called when an offensive player crashes into a set defender?",
+      "correctAnswer": "Charging",
+      "incorrectAnswers": [
+        "Blocking",
+        "Traveling",
+        "Goaltending"
+      ],
+      "explanation": "Charging is an offensive foul.",
+      "keywords": [
+        "rules",
+        "penalties",
+        "basketball"
+      ],
+      "source": "https://www.britannica.com/sports/basketball"
+    },
+    {
+      "seedId": "704fc275-f024-5136-82b6-887e92342217",
+      "category": "sports",
+      "navigationKeyword1": "rules",
+      "navigationKeyword2": "penalties",
+      "question": "What is it called in hockey when a player uses the stick to impede an opponent?",
+      "correctAnswer": "Hooking",
+      "incorrectAnswers": [
+        "Icing",
+        "Offside",
+        "Faceoff violation"
+      ],
+      "explanation": "Hooking is a standard stick-infraction penalty.",
+      "keywords": [
+        "rules",
+        "penalties",
+        "hockey"
+      ],
+      "source": "https://www.britannica.com/sports/ice-hockey"
+    },
+    {
+      "seedId": "ab1e9d0d-70f0-5e57-89ea-9dddf1d1ed6c",
+      "category": "sports",
+      "navigationKeyword1": "rules",
+      "navigationKeyword2": "penalties",
+      "question": "What is it called in soccer when a defender unfairly trips an opponent?",
+      "correctAnswer": "A foul",
+      "incorrectAnswers": [
+        "An advantage call only",
+        "A hat trick",
+        "A throw-in"
+      ],
+      "explanation": "Tripping an opponent is a foul in soccer.",
+      "keywords": [
+        "rules",
+        "penalties",
+        "soccer"
+      ],
+      "source": "https://www.britannica.com/sports/football-soccer"
+    },
+    {
+      "seedId": "279091b1-6101-5dbe-92a9-e8ebae997cdf",
+      "category": "sports",
+      "navigationKeyword1": "rules",
+      "navigationKeyword2": "penalties",
+      "question": "What is it called when a baseball pitcher throws four balls outside the strike zone to one batter?",
+      "correctAnswer": "A walk",
+      "incorrectAnswers": [
+        "A balk",
+        "An out",
+        "A beanball"
+      ],
+      "explanation": "Four balls award the batter first base.",
+      "keywords": [
+        "rules",
+        "penalties",
+        "baseball"
+      ],
+      "source": "https://www.mlb.com/glossary"
+    },
+    {
+      "seedId": "59e9934d-eaba-50f3-a7ca-1e349b6e9cf8",
+      "category": "sports",
+      "navigationKeyword1": "rules",
+      "navigationKeyword2": "penalties",
+      "question": "What is the common boxing penalty for an illegal blow below the belt?",
+      "correctAnswer": "A foul warning or point deduction",
+      "incorrectAnswers": [
+        "An automatic knockout",
+        "A goal kick",
+        "A faceoff"
+      ],
+      "explanation": "Low blows are fouls and may lead to warnings or deductions.",
+      "keywords": [
+        "rules",
+        "penalties",
+        "boxing"
+      ],
+      "source": "https://www.britannica.com/sports"
+    },
+    {
+      "seedId": "b5f641d3-4977-5254-8718-1e9ac21a4dd1",
+      "category": "sports",
+      "navigationKeyword1": "rules",
+      "navigationKeyword2": "penalties",
+      "question": "What is the golf result when a ball finishes out of bounds and stroke-and-distance applies?",
+      "correctAnswer": "Penalty strokes are added",
+      "incorrectAnswers": [
+        "The player loses the hole automatically",
+        "The shot is replayed for free",
+        "The ball is always dropped without penalty"
+      ],
+      "explanation": "Many golf violations and certain ball locations add penalty strokes.",
+      "keywords": [
+        "rules",
+        "penalties",
+        "golf"
+      ],
+      "source": "https://www.usga.org/content/usga/home-page/rules-hub.html"
+    },
+    {
+      "seedId": "00e5ff17-463f-59d3-b11b-2500586d6d78",
+      "category": "sports",
+      "navigationKeyword1": "rules",
+      "navigationKeyword2": "penalties",
+      "question": "What is the penalty called when an offensive football player moves before the snap?",
+      "correctAnswer": "False start",
+      "incorrectAnswers": [
+        "Offside",
+        "Holding",
+        "Encroachment"
+      ],
+      "explanation": "A false start is a pre-snap offensive penalty.",
+      "keywords": [
+        "rules",
+        "penalties",
+        "football"
+      ],
+      "source": "https://operations.nfl.com/learn-the-game/nfl-basics/"
+    },
+    {
+      "seedId": "58f333b7-b871-5735-ab13-3b23f5531730",
+      "category": "sports",
+      "navigationKeyword1": "rules",
+      "navigationKeyword2": "penalties",
+      "question": "What is the rugby term for a serious offense that can send a player off permanently?",
+      "correctAnswer": "Red card",
+      "incorrectAnswers": [
+        "Icing",
+        "Technical foul",
+        "Timeout"
+      ],
+      "explanation": "A red card ejects the player from the match.",
+      "keywords": [
+        "rules",
+        "penalties",
+        "red-card"
+      ],
+      "source": "https://www.britannica.com/sports"
+    },
+    {
+      "seedId": "fedc8067-4fb1-562c-a90e-0e9e7c7dbd04",
+      "category": "sports",
+      "navigationKeyword1": "rules",
+      "navigationKeyword2": "penalties",
+      "question": "What is the soccer restart after a defending team commits a direct-free-kick foul inside its own penalty area?",
+      "correctAnswer": "Penalty kick",
+      "incorrectAnswers": [
+        "Corner kick",
+        "Dropped ball",
+        "Throw-in"
+      ],
+      "explanation": "A direct-free-kick foul inside the box becomes a penalty kick.",
+      "keywords": [
+        "rules",
+        "penalties",
+        "penalty-kick"
+      ],
+      "source": "https://www.britannica.com/sports/football-soccer"
+    },
+    {
+      "seedId": "7058d1e3-699d-5eff-9ce3-28f66c209538",
+      "category": "sports",
+      "navigationKeyword1": "rules",
+      "navigationKeyword2": "positions",
+      "question": "Which baseball position is numbered 2 in scorekeeping?",
+      "correctAnswer": "Catcher",
+      "incorrectAnswers": [
+        "Pitcher",
+        "First baseman",
+        "Second baseman"
+      ],
+      "explanation": "The catcher is position 2 in standard baseball scoring.",
+      "keywords": [
+        "rules",
+        "positions",
+        "catcher"
+      ],
+      "source": "https://www.mlb.com/glossary"
+    },
+    {
+      "seedId": "d7da387a-6d7c-5da8-b200-5608ea545c98",
+      "category": "sports",
+      "navigationKeyword1": "rules",
+      "navigationKeyword2": "positions",
+      "question": "Which baseball position is numbered 6 in scorekeeping?",
+      "correctAnswer": "Shortstop",
+      "incorrectAnswers": [
+        "Second baseman",
+        "Third baseman",
+        "Center fielder"
+      ],
+      "explanation": "The shortstop is position 6 in standard baseball notation.",
+      "keywords": [
+        "rules",
+        "positions",
+        "scorekeeping"
+      ],
+      "source": "https://www.mlb.com/glossary"
+    },
+    {
+      "seedId": "3b84c3f6-e4f3-5b49-a1d0-8dc3eb51e5c5",
+      "category": "sports",
+      "navigationKeyword1": "rules",
+      "navigationKeyword2": "positions",
+      "question": "Which basketball position is most associated with bringing the ball up court and organizing the offense?",
+      "correctAnswer": "Point guard",
+      "incorrectAnswers": [
+        "Center",
+        "Power forward",
+        "Small forward"
+      ],
+      "explanation": "Point guards usually initiate the offense.",
+      "keywords": [
+        "rules",
+        "positions",
+        "point-guard"
+      ],
+      "source": "https://www.britannica.com/sports/basketball"
+    },
+    {
+      "seedId": "19ada340-29ae-56f5-950c-159eae30492c",
+      "category": "sports",
+      "navigationKeyword1": "rules",
+      "navigationKeyword2": "positions",
+      "question": "Which basketball position traditionally protects the rim and plays nearest the basket?",
+      "correctAnswer": "Center",
+      "incorrectAnswers": [
+        "Point guard",
+        "Shooting guard",
+        "Small forward"
+      ],
+      "explanation": "Centers usually anchor the inside defense.",
+      "keywords": [
+        "rules",
+        "positions",
+        "center"
+      ],
+      "source": "https://www.britannica.com/sports/basketball"
+    },
+    {
+      "seedId": "7f08560c-278e-5512-b012-91483102dd44",
+      "category": "sports",
+      "navigationKeyword1": "rules",
+      "navigationKeyword2": "positions",
+      "question": "Which football position kicks field goals and extra points?",
+      "correctAnswer": "Kicker",
+      "incorrectAnswers": [
+        "Center",
+        "Cornerback",
+        "Wide receiver"
+      ],
+      "explanation": "The kicker handles placekicks in football.",
+      "keywords": [
+        "rules",
+        "positions",
+        "kicker"
+      ],
+      "source": "https://operations.nfl.com/learn-the-game/nfl-basics/"
+    },
+    {
+      "seedId": "76a9f9b0-f9cc-5535-81dc-c3880149ce4a",
+      "category": "sports",
+      "navigationKeyword1": "rules",
+      "navigationKeyword2": "positions",
+      "question": "Which football position typically throws the ball most often?",
+      "correctAnswer": "Quarterback",
+      "incorrectAnswers": [
+        "Guard",
+        "Safety",
+        "Punter"
+      ],
+      "explanation": "The quarterback directs the passing game.",
+      "keywords": [
+        "rules",
+        "positions",
+        "quarterback"
+      ],
+      "source": "https://operations.nfl.com/learn-the-game/nfl-basics/"
+    },
+    {
+      "seedId": "a2b83c85-deb2-5ec7-a2b9-850b4fae2e2f",
+      "category": "sports",
+      "navigationKeyword1": "rules",
+      "navigationKeyword2": "positions",
+      "question": "Which golf role is not a playing position but carries and manages clubs for the player?",
+      "correctAnswer": "Caddie",
+      "incorrectAnswers": [
+        "Referee",
+        "Captain",
+        "Striker"
+      ],
+      "explanation": "A caddie assists the golfer during the round.",
+      "keywords": [
+        "rules",
+        "positions",
+        "caddie"
+      ],
+      "source": "https://www.usga.org/content/usga/home-page/rules-hub.html"
+    },
+    {
+      "seedId": "9e756539-a9c6-5bf6-babd-2633b6e513b1",
+      "category": "sports",
+      "navigationKeyword1": "rules",
+      "navigationKeyword2": "positions",
+      "question": "Which hockey position defends the net with pads and a catcher glove?",
+      "correctAnswer": "Goaltender",
+      "incorrectAnswers": [
+        "Center",
+        "Winger",
+        "Defenseman"
+      ],
+      "explanation": "The goaltender's job is to stop shots.",
+      "keywords": [
+        "rules",
+        "positions",
+        "goaltender"
+      ],
+      "source": "https://www.britannica.com/sports/ice-hockey"
+    },
+    {
+      "seedId": "23ae97cc-3c33-5595-ae27-e8b45ea69a55",
+      "category": "sports",
+      "navigationKeyword1": "rules",
+      "navigationKeyword2": "positions",
+      "question": "Which soccer position is the only one allowed to handle the ball in open play inside the penalty area?",
+      "correctAnswer": "Goalkeeper",
+      "incorrectAnswers": [
+        "Center-back",
+        "Striker",
+        "Winger"
+      ],
+      "explanation": "The goalkeeper has special handling rights inside the team's own area.",
+      "keywords": [
+        "rules",
+        "positions",
+        "goalkeeper"
+      ],
+      "source": "https://www.britannica.com/sports/football-soccer"
+    },
+    {
+      "seedId": "511b4f73-f913-5ead-b094-9c1daf3ca622",
+      "category": "sports",
+      "navigationKeyword1": "rules",
+      "navigationKeyword2": "positions",
+      "question": "Which soccer role often shields the defense from central midfield?",
+      "correctAnswer": "Defensive midfielder",
+      "incorrectAnswers": [
+        "Goalkeeper",
+        "Target striker",
+        "Full-back"
+      ],
+      "explanation": "A defensive midfielder protects space in front of the back line.",
+      "keywords": [
+        "rules",
+        "positions",
+        "midfield"
+      ],
+      "source": "https://www.britannica.com/sports/football-soccer"
+    },
+    {
+      "seedId": "555379c6-cbd0-5780-847d-cca8e9b2e232",
+      "category": "sports",
+      "navigationKeyword1": "rules",
+      "navigationKeyword2": "scoring",
+      "question": "How many goals does a hat trick represent in hockey or soccer usage?",
+      "correctAnswer": "Three",
+      "incorrectAnswers": [
+        "Two",
+        "Four",
+        "Five"
+      ],
+      "explanation": "A hat trick means the same player scores three times.",
+      "keywords": [
+        "rules",
+        "scoring",
+        "hat-trick"
+      ],
+      "source": "https://www.britannica.com/sports/ice-hockey"
+    },
+    {
+      "seedId": "dc519707-22d4-5a3e-b864-89c931b235da",
+      "category": "sports",
+      "navigationKeyword1": "rules",
+      "navigationKeyword2": "scoring",
+      "question": "How many points does a successful free throw add in basketball?",
+      "correctAnswer": "One",
+      "incorrectAnswers": [
+        "Two",
+        "Three",
+        "Zero"
+      ],
+      "explanation": "A free throw is worth one point.",
+      "keywords": [
+        "rules",
+        "scoring",
+        "free-throw"
+      ],
+      "source": "https://www.britannica.com/sports/basketball"
+    },
+    {
+      "seedId": "21967d60-49ae-5883-83bb-c81870195f6d",
+      "category": "sports",
+      "navigationKeyword1": "rules",
+      "navigationKeyword2": "scoring",
+      "question": "How many points is a basket worth from inside the three-point line in basketball?",
+      "correctAnswer": "Two",
+      "incorrectAnswers": [
+        "One",
+        "Three",
+        "Four"
+      ],
+      "explanation": "Standard made field goals inside the arc are worth two points.",
+      "keywords": [
+        "rules",
+        "scoring",
+        "basketball"
+      ],
+      "source": "https://www.britannica.com/sports/basketball"
+    },
+    {
+      "seedId": "8ec8cd93-600a-54e2-a9bb-961a4f0e28be",
+      "category": "sports",
+      "navigationKeyword1": "rules",
+      "navigationKeyword2": "scoring",
+      "question": "How many points is a field goal worth in American football?",
+      "correctAnswer": "Three",
+      "incorrectAnswers": [
+        "One",
+        "Two",
+        "Six"
+      ],
+      "explanation": "A made field goal is worth three points.",
+      "keywords": [
+        "rules",
+        "scoring",
+        "field-goal"
+      ],
+      "source": "https://operations.nfl.com/learn-the-game/nfl-basics/"
+    },
+    {
+      "seedId": "87cab991-13d5-57de-b7a0-ea5f61e77698",
+      "category": "sports",
+      "navigationKeyword1": "rules",
+      "navigationKeyword2": "scoring",
+      "question": "How many points is a goal worth in soccer?",
+      "correctAnswer": "One",
+      "incorrectAnswers": [
+        "Two",
+        "Three",
+        "Six"
+      ],
+      "explanation": "Each goal counts as one score in soccer.",
+      "keywords": [
+        "rules",
+        "scoring",
+        "soccer"
+      ],
+      "source": "https://www.britannica.com/sports/football-soccer"
+    },
+    {
+      "seedId": "eff14735-745c-5344-b244-c328c5d91d49",
+      "category": "sports",
+      "navigationKeyword1": "rules",
+      "navigationKeyword2": "scoring",
+      "question": "How many points is a touchdown worth in American football before the try?",
+      "correctAnswer": "Six",
+      "incorrectAnswers": [
+        "Three",
+        "One",
+        "Seven"
+      ],
+      "explanation": "A touchdown scores six points before the extra-point attempt.",
+      "keywords": [
+        "rules",
+        "scoring",
+        "football"
+      ],
+      "source": "https://operations.nfl.com/learn-the-game/nfl-basics/"
+    },
+    {
+      "seedId": "41cfb3db-2c9c-5cee-a417-1d00d286ef76",
+      "category": "sports",
+      "navigationKeyword1": "rules",
+      "navigationKeyword2": "scoring",
+      "question": "How many runs does a solo home run add in baseball?",
+      "correctAnswer": "One",
+      "incorrectAnswers": [
+        "Two",
+        "Three",
+        "Four"
+      ],
+      "explanation": "A solo homer scores only the batter.",
+      "keywords": [
+        "rules",
+        "scoring",
+        "baseball"
+      ],
+      "source": "https://www.mlb.com/glossary"
+    },
+    {
+      "seedId": "5cd45ad7-81a0-57ac-a485-65727b6e74d8",
+      "category": "sports",
+      "navigationKeyword1": "rules",
+      "navigationKeyword2": "scoring",
+      "question": "What is it called when a tennis server wins a point with an untouched legal serve?",
+      "correctAnswer": "Ace",
+      "incorrectAnswers": [
+        "Deuce",
+        "Let",
+        "Break point"
+      ],
+      "explanation": "An ace is a clean service winner.",
+      "keywords": [
+        "rules",
+        "scoring",
+        "tennis"
+      ],
+      "source": "https://www.britannica.com/sports"
+    },
+    {
+      "seedId": "f5139dc8-0750-5dde-bb8b-1a57551cfc54",
+      "category": "sports",
+      "navigationKeyword1": "rules",
+      "navigationKeyword2": "scoring",
+      "question": "What score is called when a golfer uses exactly par on a hole?",
+      "correctAnswer": "Par",
+      "incorrectAnswers": [
+        "Birdie",
+        "Bogey",
+        "Eagle"
+      ],
+      "explanation": "Par is the expected number of strokes for the hole.",
+      "keywords": [
+        "rules",
+        "scoring",
+        "par"
+      ],
+      "source": "https://www.usga.org/content/usga/home-page/rules-hub.html"
+    },
+    {
+      "seedId": "53fa7821-47ef-5bf8-abf1-d2f31c24de78",
+      "category": "sports",
+      "navigationKeyword1": "rules",
+      "navigationKeyword2": "scoring",
+      "question": "What term is used for one stroke under par in golf?",
+      "correctAnswer": "Birdie",
+      "incorrectAnswers": [
+        "Bogey",
+        "Par",
+        "Double bogey"
+      ],
+      "explanation": "Golf uses birdie for one under par.",
+      "keywords": [
+        "rules",
+        "scoring",
+        "golf"
+      ],
+      "source": "https://www.usga.org/content/usga/home-page/rules-hub.html"
+    }
+  ]
+}

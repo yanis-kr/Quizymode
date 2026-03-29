@@ -53,4 +53,36 @@ describe("StudyShell", () => {
       screen.queryByRole("heading", { name: /Flashcards Mode/i })
     ).not.toBeInTheDocument();
   });
+
+  it("passes the current quiz URL to item details so the user can return to the same card", () => {
+    render(
+      <MemoryRouter initialEntries={["/quiz/collections/collection-1/sample+collection/item/item-1?keywords=space"]}>
+        <StudyShell
+          currentIndex={0}
+          totalCount={3}
+          onPrev={() => {}}
+          onNext={() => {}}
+          isPrevDisabled={true}
+          isNextDisabled={false}
+          currentItem={item}
+          navigationContext={{
+            mode: "quiz",
+            collectionId: "collection-1",
+            currentIndex: 0,
+            itemIds: ["item-1"],
+          }}
+          onOpenComments={() => {}}
+          onOpenManageCollections={() => {}}
+          isAuthenticated={false}
+        >
+          <div>Body</div>
+        </StudyShell>
+      </MemoryRouter>
+    );
+
+    expect(screen.getByTitle(/view item details/i)).toHaveAttribute(
+      "href",
+      "/items/item-1?return=%2Fquiz%2Fcollections%2Fcollection-1%2Fsample%2Bcollection%2Fitem%2Fitem-1%3Fkeywords%3Dspace&returnMode=quiz"
+    );
+  });
 });

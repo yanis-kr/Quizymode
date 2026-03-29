@@ -1,0 +1,207 @@
+{
+  "schemaVersion": 1,
+  "seedSet": "core-public-items",
+  "deltaPreviewLimit": 200,
+  "items": [
+    {
+      "seedId": "68ed67ca-b45c-5fc6-87b2-4cbfd87880d1",
+      "category": "sports",
+      "navigationKeyword1": "baseball",
+      "navigationKeyword2": "champions",
+      "question": "Which franchise won five straight World Series from 1949 through 1953?",
+      "correctAnswer": "New York Yankees",
+      "incorrectAnswers": [
+        "Brooklyn Dodgers",
+        "St. Louis Cardinals",
+        "Cleveland Indians"
+      ],
+      "explanation": "The Yankees dominated the early 1950s with five consecutive titles.",
+      "keywords": [
+        "baseball",
+        "champions",
+        "yankees"
+      ],
+      "source": "https://www.mlb.com/history"
+    },
+    {
+      "seedId": "60f11002-f3f8-5112-b400-01720ae2ca73",
+      "category": "sports",
+      "navigationKeyword1": "baseball",
+      "navigationKeyword2": "champions",
+      "question": "Which franchise won the 2004 World Series after coming back from 0-3 in the ALCS?",
+      "correctAnswer": "Boston Red Sox",
+      "incorrectAnswers": [
+        "New York Yankees",
+        "St. Louis Cardinals",
+        "Houston Astros"
+      ],
+      "explanation": "Boston ended its title drought in 2004.",
+      "keywords": [
+        "baseball",
+        "champions",
+        "red-sox"
+      ],
+      "source": "https://www.mlb.com/history"
+    },
+    {
+      "seedId": "e58dfa9e-3ca6-5cda-aacc-a71a7ea66c20",
+      "category": "sports",
+      "navigationKeyword1": "baseball",
+      "navigationKeyword2": "champions",
+      "question": "Which franchise won the 2017 World Series?",
+      "correctAnswer": "Houston Astros",
+      "incorrectAnswers": [
+        "Los Angeles Dodgers",
+        "New York Yankees",
+        "Chicago Cubs"
+      ],
+      "explanation": "Houston beat Los Angeles in the 2017 World Series.",
+      "keywords": [
+        "baseball",
+        "champions",
+        "astros"
+      ],
+      "source": "https://www.mlb.com/history"
+    },
+    {
+      "seedId": "eecccf07-1d58-596c-986d-d311345d659c",
+      "category": "sports",
+      "navigationKeyword1": "baseball",
+      "navigationKeyword2": "champions",
+      "question": "Which team won the 1991 World Series in seven games over Atlanta?",
+      "correctAnswer": "Minnesota Twins",
+      "incorrectAnswers": [
+        "Toronto Blue Jays",
+        "Pittsburgh Pirates",
+        "Oakland Athletics"
+      ],
+      "explanation": "Minnesota beat Atlanta in a classic seven-game series.",
+      "keywords": [
+        "baseball",
+        "champions",
+        "twins"
+      ],
+      "source": "https://www.mlb.com/history"
+    },
+    {
+      "seedId": "162ee614-86fa-594e-8a76-fc27b30384d0",
+      "category": "sports",
+      "navigationKeyword1": "baseball",
+      "navigationKeyword2": "champions",
+      "question": "Which team won the 2001 World Series after defeating the Yankees in seven games?",
+      "correctAnswer": "Arizona Diamondbacks",
+      "incorrectAnswers": [
+        "Seattle Mariners",
+        "St. Louis Cardinals",
+        "Cleveland Indians"
+      ],
+      "explanation": "Arizona won in just its fourth season as a franchise.",
+      "keywords": [
+        "baseball",
+        "champions",
+        "diamondbacks"
+      ],
+      "source": "https://www.mlb.com/history"
+    },
+    {
+      "seedId": "17731e94-20db-5d77-9f61-8d2082b2e7cc",
+      "category": "sports",
+      "navigationKeyword1": "baseball",
+      "navigationKeyword2": "champions",
+      "question": "Which team won the 2016 World Series after a 108-year drought?",
+      "correctAnswer": "Chicago Cubs",
+      "incorrectAnswers": [
+        "Cleveland Guardians",
+        "Boston Red Sox",
+        "St. Louis Cardinals"
+      ],
+      "explanation": "Chicago ended a famously long title drought in 2016.",
+      "keywords": [
+        "baseball",
+        "champions",
+        "cubs"
+      ],
+      "source": "https://www.mlb.com/history"
+    },
+    {
+      "seedId": "eb2f6ec6-f46d-57fe-82a4-a30f535218ff",
+      "category": "sports",
+      "navigationKeyword1": "baseball",
+      "navigationKeyword2": "champions",
+      "question": "Which team won the 2019 World Series?",
+      "correctAnswer": "Washington Nationals",
+      "incorrectAnswers": [
+        "Houston Astros",
+        "Los Angeles Dodgers",
+        "Atlanta Braves"
+      ],
+      "explanation": "Washington beat Houston in seven games.",
+      "keywords": [
+        "baseball",
+        "champions",
+        "nationals"
+      ],
+      "source": "https://www.mlb.com/history"
+    },
+    {
+      "seedId": "c8191590-a644-58b4-8d11-456247da3e8b",
+      "category": "sports",
+      "navigationKeyword1": "baseball",
+      "navigationKeyword2": "champions",
+      "question": "Which team won the 2021 World Series?",
+      "correctAnswer": "Atlanta Braves",
+      "incorrectAnswers": [
+        "Houston Astros",
+        "Los Angeles Dodgers",
+        "Boston Red Sox"
+      ],
+      "explanation": "Atlanta beat Houston to win the 2021 title.",
+      "keywords": [
+        "baseball",
+        "champions",
+        "braves"
+      ],
+      "source": "https://www.mlb.com/history"
+    },
+    {
+      "seedId": "6e3c7506-fd0c-5d17-b3af-86738a3858ee",
+      "category": "sports",
+      "navigationKeyword1": "baseball",
+      "navigationKeyword2": "champions",
+      "question": "Which team won the 2023 World Series?",
+      "correctAnswer": "Texas Rangers",
+      "incorrectAnswers": [
+        "Arizona Diamondbacks",
+        "Houston Astros",
+        "Atlanta Braves"
+      ],
+      "explanation": "Texas won the franchise's first World Series title in 2023.",
+      "keywords": [
+        "baseball",
+        "champions",
+        "rangers"
+      ],
+      "source": "https://www.mlb.com/history"
+    },
+    {
+      "seedId": "27fc1d4f-a460-5857-8aa1-75f39589f0cb",
+      "category": "sports",
+      "navigationKeyword1": "baseball",
+      "navigationKeyword2": "champions",
+      "question": "Who won the 2024 World Series?",
+      "correctAnswer": "Los Angeles Dodgers",
+      "incorrectAnswers": [
+        "New York Yankees",
+        "Texas Rangers",
+        "Houston Astros"
+      ],
+      "explanation": "Los Angeles beat New York to win the 2024 World Series.",
+      "keywords": [
+        "baseball",
+        "champions",
+        "dodgers"
+      ],
+      "source": "https://www.mlb.com/history"
+    }
+  ]
+}

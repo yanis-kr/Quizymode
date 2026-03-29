@@ -1,0 +1,121 @@
+{
+  "schemaVersion": 1,
+  "seedSet": "core-public-items",
+  "deltaPreviewLimit": 200,
+  "items": [
+    {
+      "seedId": "843347db-674a-59cc-8867-b5ddbad35dd3",
+      "category": "tech",
+      "navigationKeyword1": "cloud",
+      "navigationKeyword2": "aws",
+      "question": "In the shared responsibility model, what is generally the customer\u2019s responsibility for data in the cloud?",
+      "correctAnswer": "securing and classifying their data and managing access to it",
+      "incorrectAnswers": [
+        "physically destroying data center disks on request",
+        "cooling the building housing racks",
+        "manufacturing CPUs"
+      ],
+      "explanation": "AWS operates the cloud infrastructure; customers configure protections for their content, identities, and workloads.",
+      "keywords": [
+        "aws",
+        "security"
+      ],
+      "source": "https://aws.amazon.com/compliance/shared-responsibility-model/"
+    },
+    {
+      "seedId": "47e009b8-35e1-52eb-adfe-2343c6c52818",
+      "category": "tech",
+      "navigationKeyword1": "cloud",
+      "navigationKeyword2": "aws",
+      "question": "What does IAM control in AWS?",
+      "correctAnswer": "who is authenticated and what actions they are authorized to perform on resources",
+      "incorrectAnswers": [
+        "only billing alerts",
+        "only hardware procurement",
+        "only DNS record creation"
+      ],
+      "explanation": "Identity and Access Management defines principals, policies, and permissions for AWS API calls.",
+      "keywords": [
+        "aws",
+        "iam"
+      ],
+      "source": "https://docs.aws.amazon.com/IAM/latest/UserGuide/introduction.html"
+    },
+    {
+      "seedId": "14d470c5-476c-5463-a84b-7b147af590ff",
+      "category": "tech",
+      "navigationKeyword1": "cloud",
+      "navigationKeyword2": "aws",
+      "question": "What does horizontal scaling usually mean for an application tier?",
+      "correctAnswer": "adding more instances to handle load rather than only enlarging one machine",
+      "incorrectAnswers": [
+        "rotating logs vertically",
+        "compressing images only",
+        "reducing the number of Regions"
+      ],
+      "explanation": "Scaling out adds capacity by parallelizing work across more nodes, common in cloud elasticity patterns.",
+      "keywords": [
+        "aws",
+        "scaling"
+      ],
+      "source": "https://www.ibm.com/cloud/learn/scaling"
+    },
+    {
+      "seedId": "614c1bd4-cd17-5773-bc33-d1082ed56ce7",
+      "category": "tech",
+      "navigationKeyword1": "cloud",
+      "navigationKeyword2": "aws",
+      "question": "What is an Amazon VPC primarily used for?",
+      "correctAnswer": "a logically isolated virtual network where you define subnets, routing, and security controls",
+      "incorrectAnswers": [
+        "a managed email service",
+        "a desktop IDE",
+        "a single S3 bucket policy"
+      ],
+      "explanation": "A VPC lets you place resources like EC2 instances in a private network topology you control.",
+      "keywords": [
+        "aws",
+        "networking"
+      ],
+      "source": "https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html"
+    },
+    {
+      "seedId": "3a762937-c6c3-52fb-a3fc-af010104a71b",
+      "category": "tech",
+      "navigationKeyword1": "cloud",
+      "navigationKeyword2": "aws",
+      "question": "What is the relationship between an AWS Region and an Availability Zone?",
+      "correctAnswer": "a Region groups multiple isolated Availability Zones connected by low-latency links",
+      "incorrectAnswers": [
+        "an AZ contains many Regions worldwide",
+        "Regions and AZs are identical names",
+        "AZs exist only outside AWS"
+      ],
+      "explanation": "Regions are geographic areas; each has multiple AZs so workloads can stay resilient within a Region.",
+      "keywords": [
+        "aws",
+        "regions"
+      ],
+      "source": "https://docs.aws.amazon.com/global-infrastructure/latest/awsgsg/aws-global-infrastructure.html"
+    },
+    {
+      "seedId": "92aa18f5-0bab-5b2f-a8cb-72bbbb67e65c",
+      "category": "tech",
+      "navigationKeyword1": "cloud",
+      "navigationKeyword2": "aws",
+      "question": "What must be globally unique in Amazon S3 among all AWS accounts?",
+      "correctAnswer": "the bucket name (within the partition\u2019s namespace rules)",
+      "incorrectAnswers": [
+        "each object\u2019s size",
+        "the AWS account email address",
+        "the Region code string"
+      ],
+      "explanation": "S3 bucket names share a global namespace, so collisions are prevented by uniqueness requirements.",
+      "keywords": [
+        "aws",
+        "s3"
+      ],
+      "source": "https://docs.aws.amazon.com/AmazonS3/latest/userguide/bucketnamingrules.html"
+    }
+  ]
+}

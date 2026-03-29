@@ -1,0 +1,45 @@
+{
+  "schemaVersion": 1,
+  "seedSet": "core-public-items",
+  "deltaPreviewLimit": 200,
+  "items": [
+    {
+      "seedId": "840f1713-7056-51a7-86d8-6400a4877cd8",
+      "category": "humanities",
+      "navigationKeyword1": "art-history",
+      "navigationKeyword2": "movements",
+      "question": "An art movement is best understood as what?",
+      "correctAnswer": "a group tendency with shared ideas or styles",
+      "incorrectAnswers": [
+        "a museum elevator system",
+        "a legal code for artists",
+        "a single paint brand"
+      ],
+      "explanation": "Art movements group artists or works through recurring ideas, methods, or aims.",
+      "keywords": [
+        "art-history",
+        "movements"
+      ],
+      "source": "https://www.britannica.com/art/art-movement"
+    },
+    {
+      "seedId": "35de27e8-2057-5ceb-aea0-42a6493d394a",
+      "category": "humanities",
+      "navigationKeyword1": "art-history",
+      "navigationKeyword2": "movements",
+      "question": "Why do art historians use movement labels like Impressionism or Cubism?",
+      "correctAnswer": "to describe shared features across works and artists",
+      "incorrectAnswers": [
+        "to rank every artist permanently",
+        "to replace close looking",
+        "to avoid discussing history"
+      ],
+      "explanation": "Movement labels help organize patterns in style and historical context.",
+      "keywords": [
+        "art-history",
+        "styles"
+      ],
+      "source": "https://www.tate.org.uk/art/art-terms"
+    }
+  ]
+}

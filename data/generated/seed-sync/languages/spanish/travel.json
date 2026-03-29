@@ -1,0 +1,127 @@
+{
+  "schemaVersion": 1,
+  "seedSet": "core-public-items",
+  "deltaPreviewLimit": 200,
+  "items": [
+    {
+      "seedId": "2aa61722-811b-5892-a03f-5b829a95c96c",
+      "category": "languages",
+      "navigationKeyword1": "spanish",
+      "navigationKeyword2": "travel",
+      "question": "At a hotel front desk, which phrase asks if they have a free room?",
+      "correctAnswer": "\u00bfTienen una habitaci\u00f3n libre?",
+      "incorrectAnswers": [
+        "\u00bfA qu\u00e9 hora sale el vuelo?",
+        "Un caf\u00e9 con leche, por favor.",
+        "\u00bfCu\u00e1nto cuesta la entrada?"
+      ],
+      "explanation": "\"Habitaci\u00f3n\" means room; \"libre\" or \"disponible\" often signals availability.",
+      "keywords": [
+        "hotel",
+        "room",
+        "spanish-travel"
+      ],
+      "source": "https://www.collinsdictionary.com/dictionary/spanish-english/habitaci%C3%B3n"
+    },
+    {
+      "seedId": "e8da0e46-6ac6-5781-a597-693fcdade160",
+      "category": "languages",
+      "navigationKeyword1": "spanish",
+      "navigationKeyword2": "travel",
+      "question": "At the airport, which word usually means \"passport\"?",
+      "correctAnswer": "pasaporte",
+      "incorrectAnswers": [
+        "maleta",
+        "vuelo",
+        "puerta"
+      ],
+      "explanation": "\"Pasaporte\" is the standard word for passport.",
+      "keywords": [
+        "passport",
+        "airport",
+        "spanish-travel"
+      ],
+      "source": "https://www.collinsdictionary.com/dictionary/spanish-english/pasaporte"
+    },
+    {
+      "seedId": "86cb0a5f-2d80-5fc3-b99d-359b34718e1f",
+      "category": "languages",
+      "navigationKeyword1": "spanish",
+      "navigationKeyword2": "travel",
+      "question": "Which phrase politely asks where the nearest bank is?",
+      "correctAnswer": "\u00bfD\u00f3nde est\u00e1 el banco m\u00e1s cercano?",
+      "incorrectAnswers": [
+        "\u00bfCu\u00e1nto cuesta?",
+        "\u00bfTiene men\u00fa en ingl\u00e9s?",
+        "Quisiera el men\u00fa del d\u00eda."
+      ],
+      "explanation": "\"\u00bfD\u00f3nde est\u00e1...?\" asks where something is; \"banco\" means bank and \"cercano\" means nearby.",
+      "keywords": [
+        "bank",
+        "directions",
+        "spanish-travel"
+      ],
+      "source": "https://www.collinsdictionary.com/dictionary/spanish-english/banco"
+    },
+    {
+      "seedId": "941dd941-240a-5fed-b138-a2514d90e6fb",
+      "category": "languages",
+      "navigationKeyword1": "spanish",
+      "navigationKeyword2": "travel",
+      "question": "Which word means \"left\" when you give or follow directions?",
+      "correctAnswer": "izquierda",
+      "incorrectAnswers": [
+        "derecha",
+        "recto",
+        "cerca"
+      ],
+      "explanation": "\"Izquierda\" means left; \"a la izquierda\" is a common direction phrase.",
+      "keywords": [
+        "left",
+        "directions",
+        "spanish-travel"
+      ],
+      "source": "https://dictionary.cambridge.org/dictionary/spanish-english/izquierda"
+    },
+    {
+      "seedId": "dc554c5d-37ee-53ed-bda1-e22e98750d92",
+      "category": "languages",
+      "navigationKeyword1": "spanish",
+      "navigationKeyword2": "travel",
+      "question": "You need the main train station. Which word often means \"station\" in this context?",
+      "correctAnswer": "estaci\u00f3n",
+      "incorrectAnswers": [
+        "calle",
+        "plaza",
+        "hotel"
+      ],
+      "explanation": "\"Estaci\u00f3n\" is the common word for a station, including train stations.",
+      "keywords": [
+        "station",
+        "train",
+        "spanish-travel"
+      ],
+      "source": "https://dictionary.cambridge.org/dictionary/spanish-english/estaci%C3%B3n"
+    },
+    {
+      "seedId": "7439553c-093f-5a4f-b1d2-19d7d7fccd59",
+      "category": "languages",
+      "navigationKeyword1": "spanish",
+      "navigationKeyword2": "travel",
+      "question": "You want a single ticket for a train. Which short phrase asks for that?",
+      "correctAnswer": "Un billete sencillo, por favor.",
+      "incorrectAnswers": [
+        "Una mesa para dos, por favor.",
+        "La cuenta, por favor.",
+        "\u00bfD\u00f3nde est\u00e1 el ba\u00f1o?"
+      ],
+      "explanation": "\"Billete\" (or \"boleto\" in many regions) with \"sencillo\" signals a one-way or single ticket in travel contexts.",
+      "keywords": [
+        "ticket",
+        "train",
+        "spanish-travel"
+      ],
+      "source": "https://dictionary.cambridge.org/dictionary/spanish-english/billete"
+    }
+  ]
+}

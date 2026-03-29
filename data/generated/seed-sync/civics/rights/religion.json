@@ -1,0 +1,121 @@
+{
+  "schemaVersion": 1,
+  "seedSet": "core-public-items",
+  "deltaPreviewLimit": 200,
+  "items": [
+    {
+      "seedId": "7b746037-6e8d-563a-a662-e8a5ee11f6a5",
+      "category": "civics",
+      "navigationKeyword1": "rights",
+      "navigationKeyword2": "religion",
+      "question": "May states sometimes give secular benefits to religious institutions on the same terms as nonreligious ones?",
+      "correctAnswer": "yes, when programs are neutral and open to all qualified groups",
+      "incorrectAnswers": [
+        "no, religion may never receive any public benefit",
+        "yes, but only for one denomination",
+        "only if clergy run the program"
+      ],
+      "explanation": "Neutral aid programs that treat religious groups like similar secular groups have been upheld in several modern decisions.",
+      "keywords": [
+        "religion",
+        "public-benefits"
+      ],
+      "source": "https://www.uscourts.gov/about-federal-courts/educational-resources/about-educational-outreach/activity-resources/first-amendment-and-religion"
+    },
+    {
+      "seedId": "e9c70a33-c8e3-55a1-ae22-b5867879ad66",
+      "category": "civics",
+      "navigationKeyword1": "rights",
+      "navigationKeyword2": "religion",
+      "question": "What does the Establishment Clause generally limit?",
+      "correctAnswer": "government actions that establish or favor religion",
+      "incorrectAnswers": [
+        "private church membership rules",
+        "family holiday plans",
+        "foreign travel visas"
+      ],
+      "explanation": "The First Amendment bars laws respecting an establishment of religion, meaning government cannot set up an official church or favor faith in certain ways.",
+      "keywords": [
+        "religion",
+        "establishment-clause"
+      ],
+      "source": "https://constitution.congress.gov/constitution/amendment-1/"
+    },
+    {
+      "seedId": "797180d1-359f-5d3e-96bc-a15cbd9a6189",
+      "category": "civics",
+      "navigationKeyword1": "rights",
+      "navigationKeyword2": "religion",
+      "question": "What does the Free Exercise Clause protect?",
+      "correctAnswer": "the right to practice religion without undue government interference",
+      "incorrectAnswers": [
+        "the right to ignore all criminal laws",
+        "tax exemptions for every purchase",
+        "automatic public office"
+      ],
+      "explanation": "The clause shields religious exercise from burdens, though not every claim overrides neutral laws that apply to everyone.",
+      "keywords": [
+        "religion",
+        "free-exercise"
+      ],
+      "source": "https://www.law.cornell.edu/wex/free_exercise_clause"
+    },
+    {
+      "seedId": "e4404ec1-01a7-5481-8de8-c49da169e877",
+      "category": "civics",
+      "navigationKeyword1": "rights",
+      "navigationKeyword2": "religion",
+      "question": "What is one classic test courts have used for some laws touching religion?",
+      "correctAnswer": "whether the law has a secular purpose and does not advance or inhibit religion",
+      "incorrectAnswers": [
+        "whether most voters like the law",
+        "whether it raises revenue",
+        "whether it mentions a deity"
+      ],
+      "explanation": "Lemon-style analysis asked about secular purpose, primary effects, and excessive entanglement, though doctrine evolves by context.",
+      "keywords": [
+        "religion",
+        "constitutional-tests"
+      ],
+      "source": "https://www.law.cornell.edu/wex/lemon_test"
+    },
+    {
+      "seedId": "c9b7b3e1-f3f2-5c0c-8866-9941adfc97b3",
+      "category": "civics",
+      "navigationKeyword1": "rights",
+      "navigationKeyword2": "religion",
+      "question": "What must someone seeking a religious exemption often show about their belief?",
+      "correctAnswer": "that the belief is sincere, even if not mainstream",
+      "incorrectAnswers": [
+        "that a majority shares it",
+        "that it has existed for 500 years",
+        "that it is written in federal regulations"
+      ],
+      "explanation": "Protection focuses on sincere religious claims, not popularity or long pedigree, though not every claim wins against neutral laws.",
+      "keywords": [
+        "religion",
+        "exemptions"
+      ],
+      "source": "https://www.law.cornell.edu/wex/sherbert_v._verner"
+    },
+    {
+      "seedId": "aa84ae98-af70-5551-8da5-52938b70fcad",
+      "category": "civics",
+      "navigationKeyword1": "rights",
+      "navigationKeyword2": "religion",
+      "question": "Where are the religion clauses found in the Constitution?",
+      "correctAnswer": "the First Amendment",
+      "incorrectAnswers": [
+        "the Fourth Amendment",
+        "Article II",
+        "the Twenty-Sixth Amendment"
+      ],
+      "explanation": "The First Amendment begins with protections for religion and speech, assembly, and petition.",
+      "keywords": [
+        "religion",
+        "first-amendment"
+      ],
+      "source": "https://constitution.congress.gov/constitution/amendment-1/"
+    }
+  ]
+}

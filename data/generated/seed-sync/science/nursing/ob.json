@@ -1,0 +1,235 @@
+{
+  "schemaVersion": 1,
+  "seedSet": "core-public-items",
+  "deltaPreviewLimit": 200,
+  "items": [
+    {
+      "seedId": "88aa5343-a669-4828-9fa0-9cdd9493bd53",
+      "category": "science",
+      "navigationKeyword1": "nursing",
+      "navigationKeyword2": "ob",
+      "question": "Breastfeeding early benefit?",
+      "correctAnswer": "Colostrum, bonding, milk supply establishment",
+      "incorrectAnswers": [
+        "Delay until milk \u2018comes in\u2019 only",
+        "Formula always first day",
+        "No skin-to-skin"
+      ],
+      "explanation": "WHO supports early initiation.",
+      "keywords": [
+        "breastfeeding",
+        "lactation"
+      ],
+      "source": "https://www.cdc.gov/breastfeeding/index.html"
+    },
+    {
+      "seedId": "92e7a844-9cfe-46c8-9452-cb73374c3a8e",
+      "category": "science",
+      "navigationKeyword1": "nursing",
+      "navigationKeyword2": "ob",
+      "question": "Contraction frequency timing in labor assessment?",
+      "correctAnswer": "From start to start of contractions",
+      "incorrectAnswers": [
+        "Only peak intensity",
+        "Only duration",
+        "Every hour regardless"
+      ],
+      "explanation": "Pattern guides progression.",
+      "keywords": [
+        "contractions",
+        "labor"
+      ],
+      "source": "https://www.ncbi.nlm.nih.gov/books/NBK519507/"
+    },
+    {
+      "seedId": "a538c0ce-2487-4cd1-9f89-c39a9c117521",
+      "category": "science",
+      "navigationKeyword1": "nursing",
+      "navigationKeyword2": "ob",
+      "question": "Fetal heart rate category I broadly means?",
+      "correctAnswer": "Reassuring pattern",
+      "incorrectAnswers": [
+        "Always emergent",
+        "Ignore variability",
+        "Cord prolapse always"
+      ],
+      "explanation": "Interpretation uses full clinical context.",
+      "keywords": [
+        "fhr",
+        "fetal-monitoring"
+      ],
+      "source": "https://www.ncbi.nlm.nih.gov/books/NBK519507/"
+    },
+    {
+      "seedId": "77be087e-fd32-4e7f-81a8-28f13f55e580",
+      "category": "science",
+      "navigationKeyword1": "nursing",
+      "navigationKeyword2": "ob",
+      "question": "Group B strep screening purpose?",
+      "correctAnswer": "Intrapartum antibiotics to reduce neonatal sepsis",
+      "incorrectAnswers": [
+        "Treat all prenatally with oral pills only",
+        "Only if symptomatic",
+        "No protocol"
+      ],
+      "explanation": "Timing at labor.",
+      "keywords": [
+        "gbs",
+        "pregnancy"
+      ],
+      "source": "https://www.cdc.gov/groupbstrep/index.html"
+    },
+    {
+      "seedId": "2f5b3cb6-44e9-47fa-ac2b-ef4614a45ac1",
+      "category": "science",
+      "navigationKeyword1": "nursing",
+      "navigationKeyword2": "ob",
+      "question": "NICU family-centered care?",
+      "correctAnswer": "Include parents in care and decision support",
+      "incorrectAnswers": [
+        "Exclude parents for infection always",
+        "No skin contact ever",
+        "Only medical updates weekly"
+      ],
+      "explanation": "Evidence supports involvement.",
+      "keywords": [
+        "nicu",
+        "family"
+      ],
+      "source": "https://www.ncbi.nlm.nih.gov/books/NBK519507/"
+    },
+    {
+      "seedId": "ae36f854-8820-4be4-b594-b43841423739",
+      "category": "science",
+      "navigationKeyword1": "nursing",
+      "navigationKeyword2": "ob",
+      "question": "Postpartum hemorrhage definition often uses?",
+      "correctAnswer": "Blood loss >500 mL vaginal or >1000 mL cesarean (approximate criteria)",
+      "incorrectAnswers": [
+        "Any spotting",
+        "Only if BP normal",
+        "Only day 3"
+      ],
+      "explanation": "Early recognition and quantification matter.",
+      "keywords": [
+        "pph",
+        "hemorrhage"
+      ],
+      "source": "https://www.cdc.gov/reproductivehealth/maternal-mortality/pphemorrhage.htm"
+    },
+    {
+      "seedId": "25455f15-f076-4ae0-9fcc-148145afc7da",
+      "category": "science",
+      "navigationKeyword1": "nursing",
+      "navigationKeyword2": "ob",
+      "question": "Postpartum mood disorder screening?",
+      "correctAnswer": "EPDS or similar tools and follow-up",
+      "incorrectAnswers": [
+        "Ignore unless psychotic",
+        "Only at 6 weeks",
+        "Breastfeeding prevents all"
+      ],
+      "explanation": "Perinatal mental health matters.",
+      "keywords": [
+        "postpartum-depression",
+        "screening"
+      ],
+      "source": "https://www.cdc.gov/reproductivehealth/features/maternal-mental-health/index.html"
+    },
+    {
+      "seedId": "47b49f14-dca6-42aa-b179-887fd0962a3b",
+      "category": "science",
+      "navigationKeyword1": "nursing",
+      "navigationKeyword2": "ob",
+      "question": "Preeclampsia features include?",
+      "correctAnswer": "HTN + proteinuria or end-organ signs (definition evolves)",
+      "incorrectAnswers": [
+        "Hypotension always",
+        "Only third trimester never",
+        "Fever always"
+      ],
+      "explanation": "Assess per current guidelines.",
+      "keywords": [
+        "preeclampsia",
+        "hypertension"
+      ],
+      "source": "https://www.cdc.gov/bloodpressure/pregnancy.htm"
+    },
+    {
+      "seedId": "ff52ccc7-ebab-4d21-91ee-31e34ee2a029",
+      "category": "science",
+      "navigationKeyword1": "nursing",
+      "navigationKeyword2": "ob",
+      "question": "Rh incompatibility concern?",
+      "correctAnswer": "Sensitization affecting future pregnancies",
+      "incorrectAnswers": [
+        "Never happens",
+        "Only affects mother liver",
+        "Only if twins"
+      ],
+      "explanation": "RhIg (RhoGAM) per protocol.",
+      "keywords": [
+        "rh-factor",
+        "blood-type"
+      ],
+      "source": "https://www.cdc.gov/blood-safety/rho-d-immune-globulin.html"
+    },
+    {
+      "seedId": "1d3cdf2d-f2fb-4b08-b031-6cf00518b694",
+      "category": "science",
+      "navigationKeyword1": "nursing",
+      "navigationKeyword2": "ob",
+      "question": "What is fundal height used for?",
+      "correctAnswer": "Estimate gestational growth trend",
+      "incorrectAnswers": [
+        "Diagnose genetic disorders alone",
+        "Replace ultrasound always",
+        "Measure cervical dilation"
+      ],
+      "explanation": "Single values less meaningful than trend.",
+      "keywords": [
+        "fundal-height",
+        "prenatal"
+      ],
+      "source": "https://www.ncbi.nlm.nih.gov/books/NBK519507/"
+    },
+    {
+      "seedId": "1b5ffecd-6938-490d-9cc8-ba3d982c0c77",
+      "category": "science",
+      "navigationKeyword1": "nursing",
+      "navigationKeyword2": "ob",
+      "question": "What is lochia progression?",
+      "correctAnswer": "Rubra \u2192 serosa \u2192 alba over weeks",
+      "incorrectAnswers": [
+        "Always bright red 6 weeks",
+        "Stops day 1",
+        "Green then black"
+      ],
+      "explanation": "Educate normal vs concerning bleeding.",
+      "keywords": [
+        "lochia",
+        "postpartum"
+      ],
+      "source": "https://www.ncbi.nlm.nih.gov/books/NBK519507/"
+    },
+    {
+      "seedId": "3055b317-1223-4b9c-88c7-4496c18dae55",
+      "category": "science",
+      "navigationKeyword1": "nursing",
+      "navigationKeyword2": "ob",
+      "question": "Why left lateral tilt in late pregnancy supine?",
+      "correctAnswer": "Relieves aortocaval compression",
+      "incorrectAnswers": [
+        "Increases fetal heart rate always",
+        "Cosmetic only",
+        "Required for all patients"
+      ],
+      "explanation": "Improves venous return.",
+      "keywords": [
+        "supine-hypotension",
+        "position"
+      ],
+      "source": "https://www.ncbi.nlm.nih.gov/books/NBK519507/"
+    }
+  ]
+}

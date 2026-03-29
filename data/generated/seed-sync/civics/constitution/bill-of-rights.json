@@ -1,0 +1,121 @@
+{
+  "schemaVersion": 1,
+  "seedSet": "core-public-items",
+  "deltaPreviewLimit": 200,
+  "items": [
+    {
+      "seedId": "a7e936c4-738b-5def-813b-476adccbb939",
+      "category": "civics",
+      "navigationKeyword1": "constitution",
+      "navigationKeyword2": "bill-of-rights",
+      "question": "The First Amendment lists several freedoms together. Which set fits it best?",
+      "correctAnswer": "religion, speech, press, assembly, and petition",
+      "incorrectAnswers": [
+        "trial by jury, confrontation of witnesses, and compulsory process",
+        "quartering soldiers and security against general warrants",
+        "due process, double jeopardy, and protection against self-incrimination"
+      ],
+      "explanation": "The First Amendment protects belief and expression and the right to gather and ask government for redress.",
+      "keywords": [
+        "first-amendment",
+        "bill-of-rights"
+      ],
+      "source": "https://constitution.congress.gov/constitution/amendment-1/"
+    },
+    {
+      "seedId": "9f5040c0-3ab3-57ad-8dc4-a803acf937dd",
+      "category": "civics",
+      "navigationKeyword1": "constitution",
+      "navigationKeyword2": "bill-of-rights",
+      "question": "Which amendment bars government from forcing private homeowners to house soldiers in peacetime without lawful process?",
+      "correctAnswer": "the Third Amendment",
+      "incorrectAnswers": [
+        "the Second Amendment",
+        "the Fourth Amendment",
+        "the Fifth Amendment"
+      ],
+      "explanation": "The Third Amendment limits quartering soldiers in homes, reflecting colonial-era concerns about military intrusion.",
+      "keywords": [
+        "third-amendment",
+        "bill-of-rights"
+      ],
+      "source": "https://constitution.congress.gov/constitution/amendment-3/"
+    },
+    {
+      "seedId": "d36ee756-0c76-5121-8e9e-7fb1f98940dc",
+      "category": "civics",
+      "navigationKeyword1": "constitution",
+      "navigationKeyword2": "bill-of-rights",
+      "question": "Which amendment guarantees a speedy, public trial by an impartial jury in criminal prosecutions?",
+      "correctAnswer": "the Sixth Amendment",
+      "incorrectAnswers": [
+        "the Third Amendment",
+        "the Fifth Amendment",
+        "the Seventh Amendment"
+      ],
+      "explanation": "The Sixth Amendment spells out fair-trial protections such as a public trial, jury, and confrontation of witnesses.",
+      "keywords": [
+        "sixth-amendment",
+        "bill-of-rights"
+      ],
+      "source": "https://www.uscourts.gov/about-federal-courts/educational-resources/supreme-court-landmarks"
+    },
+    {
+      "seedId": "2429113d-b5ca-5eff-93aa-11791e7648ae",
+      "category": "civics",
+      "navigationKeyword1": "constitution",
+      "navigationKeyword2": "bill-of-rights",
+      "question": "Which amendment protects against being tried twice for the same offense after a lawful conviction or acquittal?",
+      "correctAnswer": "the Fifth Amendment",
+      "incorrectAnswers": [
+        "the Sixth Amendment",
+        "the Seventh Amendment",
+        "the Eighth Amendment"
+      ],
+      "explanation": "The Fifth Amendment includes protection against double jeopardy, along with due process and other safeguards.",
+      "keywords": [
+        "fifth-amendment",
+        "bill-of-rights"
+      ],
+      "source": "https://www.whitehouse.gov/our-government/the-constitution/"
+    },
+    {
+      "seedId": "2213cc88-4768-5647-bb54-100d120361b9",
+      "category": "civics",
+      "navigationKeyword1": "constitution",
+      "navigationKeyword2": "bill-of-rights",
+      "question": "Which amendment protects against unreasonable searches and seizures in ordinary criminal investigations?",
+      "correctAnswer": "the Fourth Amendment",
+      "incorrectAnswers": [
+        "the Second Amendment",
+        "the Sixth Amendment",
+        "the Eighth Amendment"
+      ],
+      "explanation": "The Fourth Amendment guards privacy in persons, houses, papers, and effects against unreasonable government intrusion.",
+      "keywords": [
+        "fourth-amendment",
+        "bill-of-rights"
+      ],
+      "source": "https://www.law.cornell.edu/constitution/fourth_amendment"
+    },
+    {
+      "seedId": "29e8a372-eaa7-5813-9dcf-dd41ca2501ae",
+      "category": "civics",
+      "navigationKeyword1": "constitution",
+      "navigationKeyword2": "bill-of-rights",
+      "question": "Which amendment reserves powers not delegated to the United States to the states or the people?",
+      "correctAnswer": "the Tenth Amendment",
+      "incorrectAnswers": [
+        "the Ninth Amendment",
+        "the Eighth Amendment",
+        "the Eleventh Amendment"
+      ],
+      "explanation": "The Tenth Amendment restates the division of authority: undelegated powers remain with states or the people.",
+      "keywords": [
+        "tenth-amendment",
+        "federalism"
+      ],
+      "source": "https://www.archives.gov/founding-docs/bill-of-rights-transcript"
+    }
+  ]
+}

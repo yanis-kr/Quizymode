@@ -1,0 +1,197 @@
+{
+  "schemaVersion": 1,
+  "seedSet": "core-public-items",
+  "deltaPreviewLimit": 200,
+  "items": [
+    {
+      "seedId": "49dbea1b-9bfa-5737-b75c-41c6fa8ede82",
+      "category": "trivia",
+      "navigationKeyword1": "pop-culture",
+      "navigationKeyword2": "viral",
+      "question": "Chewbacca Mom went viral while wearing a mask of which character?",
+      "correctAnswer": "Chewbacca",
+      "incorrectAnswers": [
+        "Darth Vader",
+        "Yoda",
+        "Stitch"
+      ],
+      "explanation": "Chewbacca Mom went viral while wearing a Chewbacca mask.",
+      "keywords": [
+        "viral-moments",
+        "pop-culture"
+      ],
+      "source": "https://knowyourmeme.com/memes/chewbacca-mom"
+    },
+    {
+      "seedId": "0c23952f-9c15-53c4-bc65-4dfeef1d6a04",
+      "category": "trivia",
+      "navigationKeyword1": "pop-culture",
+      "navigationKeyword2": "viral",
+      "question": "Corn Kid became famous for loving what food?",
+      "correctAnswer": "corn",
+      "incorrectAnswers": [
+        "pizza",
+        "broccoli",
+        "watermelon"
+      ],
+      "explanation": "Corn Kid became famous for his enthusiastic love of corn.",
+      "keywords": [
+        "viral-moments",
+        "pop-culture"
+      ],
+      "source": "https://knowyourmeme.com/memes/corn-kid"
+    },
+    {
+      "seedId": "499fe404-3054-592a-9d9d-6c2399db391a",
+      "category": "trivia",
+      "navigationKeyword1": "pop-culture",
+      "navigationKeyword2": "viral",
+      "question": "Damn Daniel first blew up on which video app?",
+      "correctAnswer": "Vine",
+      "incorrectAnswers": [
+        "TikTok",
+        "Snapchat",
+        "YouTube"
+      ],
+      "explanation": "Damn Daniel first went viral on Vine.",
+      "keywords": [
+        "viral-moments",
+        "pop-culture"
+      ],
+      "source": "https://knowyourmeme.com/memes/damn-daniel"
+    },
+    {
+      "seedId": "e05963a6-111b-52c5-b7a1-68cdef0eaa5e",
+      "category": "trivia",
+      "navigationKeyword1": "pop-culture",
+      "navigationKeyword2": "viral",
+      "question": "In Charlie Bit My Finger, what body part gets bitten?",
+      "correctAnswer": "finger",
+      "incorrectAnswers": [
+        "ear",
+        "toe",
+        "nose"
+      ],
+      "explanation": "The famous clip centers on a bitten finger.",
+      "keywords": [
+        "viral-moments",
+        "pop-culture"
+      ],
+      "source": "https://knowyourmeme.com/memes/charlie-bit-my-finger"
+    },
+    {
+      "seedId": "78505172-3704-54fb-8160-6c122c7f0783",
+      "category": "trivia",
+      "navigationKeyword1": "pop-culture",
+      "navigationKeyword2": "viral",
+      "question": "Leave Britney Alone was posted in defense of which singer?",
+      "correctAnswer": "Britney Spears",
+      "incorrectAnswers": [
+        "Christina Aguilera",
+        "Lady Gaga",
+        "Miley Cyrus"
+      ],
+      "explanation": "Leave Britney Alone defended Britney Spears.",
+      "keywords": [
+        "viral-moments",
+        "pop-culture"
+      ],
+      "source": "https://knowyourmeme.com/memes/leave-britney-alone"
+    },
+    {
+      "seedId": "f69471a6-94b9-5f83-93fb-26683e16650c",
+      "category": "trivia",
+      "navigationKeyword1": "pop-culture",
+      "navigationKeyword2": "viral",
+      "question": "Rebecca Blacks viral song was titled what?",
+      "correctAnswer": "Friday",
+      "incorrectAnswers": [
+        "Saturday Night",
+        "Weekend",
+        "School Day"
+      ],
+      "explanation": "Rebecca Black went viral with the song Friday.",
+      "keywords": [
+        "viral-moments",
+        "pop-culture"
+      ],
+      "source": "https://knowyourmeme.com/memes/rebecca-black-friday"
+    },
+    {
+      "seedId": "494f731d-f9e0-5ddd-a7d3-20bdf5b34ee2",
+      "category": "trivia",
+      "navigationKeyword1": "pop-culture",
+      "navigationKeyword2": "viral",
+      "question": "The Double Rainbow video centered on what natural sight?",
+      "correctAnswer": "double rainbow",
+      "incorrectAnswers": [
+        "solar eclipse",
+        "meteor shower",
+        "aurora"
+      ],
+      "explanation": "The viral video centered on a double rainbow.",
+      "keywords": [
+        "viral-moments",
+        "pop-culture"
+      ],
+      "source": "https://knowyourmeme.com/memes/double-rainbow"
+    },
+    {
+      "seedId": "05b9a6c8-3e40-5910-883e-09156dd9b4a1",
+      "category": "trivia",
+      "navigationKeyword1": "pop-culture",
+      "navigationKeyword2": "viral",
+      "question": "The Harlem Shake viral trend usually involved people suddenly doing what?",
+      "correctAnswer": "dancing",
+      "incorrectAnswers": [
+        "freezing in place",
+        "singing in harmony",
+        "telling jokes"
+      ],
+      "explanation": "The Harlem Shake trend involved sudden group dancing.",
+      "keywords": [
+        "viral-moments",
+        "pop-culture"
+      ],
+      "source": "https://knowyourmeme.com/memes/harlem-shake"
+    },
+    {
+      "seedId": "56ba3e36-65e4-5b06-8d6f-876cbe45c8ec",
+      "category": "trivia",
+      "navigationKeyword1": "pop-culture",
+      "navigationKeyword2": "viral",
+      "question": "The Ice Bucket Challenge raised awareness for what disease?",
+      "correctAnswer": "ALS",
+      "incorrectAnswers": [
+        "MS",
+        "Parkinson disease",
+        "polio"
+      ],
+      "explanation": "The Ice Bucket Challenge raised awareness for ALS.",
+      "keywords": [
+        "viral-moments",
+        "pop-culture"
+      ],
+      "source": "https://knowyourmeme.com/memes/ice-bucket-challenge"
+    },
+    {
+      "seedId": "05a42874-e3c4-5f83-adf1-0a6f8afdf52e",
+      "category": "trivia",
+      "navigationKeyword1": "pop-culture",
+      "navigationKeyword2": "viral",
+      "question": "Who released the viral hit Gangnam Style?",
+      "correctAnswer": "PSY",
+      "incorrectAnswers": [
+        "BTS",
+        "BIGBANG",
+        "G-Dragon"
+      ],
+      "explanation": "Gangnam Style was released by PSY.",
+      "keywords": [
+        "viral-moments",
+        "pop-culture"
+      ],
+      "source": "https://knowyourmeme.com/memes/gangnam-style"
+    }
+  ]
+}

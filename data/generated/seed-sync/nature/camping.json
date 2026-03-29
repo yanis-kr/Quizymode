@@ -1,0 +1,235 @@
+{
+  "schemaVersion": 1,
+  "seedSet": "core-public-items",
+  "deltaPreviewLimit": 200,
+  "items": [
+    {
+      "seedId": "974367e1-714d-5c32-882e-ccce145a7e4d",
+      "category": "nature",
+      "navigationKeyword1": "camping",
+      "navigationKeyword2": "gear",
+      "question": "To reduce impact on the land, tents should be set up on what kind of surface when possible?",
+      "correctAnswer": "durable surfaces",
+      "incorrectAnswers": [
+        "newly cleared vegetation",
+        "fragile wildflowers",
+        "muddy stream banks"
+      ],
+      "explanation": "Camping on durable surfaces like established sites, rock, gravel, dry grass, or snow helps protect the landscape.",
+      "keywords": [
+        "camping-gear",
+        "nature-outdoors"
+      ],
+      "source": "https://www.fs.usda.gov/lei/no-trace-ethics.php"
+    },
+    {
+      "seedId": "9a5a72b3-fb11-52c8-bdcf-07d422d5aba7",
+      "category": "nature",
+      "navigationKeyword1": "camping",
+      "navigationKeyword2": "gear",
+      "question": "What hands-free light is often preferred for camping and hiking at night?",
+      "correctAnswer": "headlamp",
+      "incorrectAnswers": [
+        "flare gun",
+        "laser pointer",
+        "signal mirror"
+      ],
+      "explanation": "A headlamp gives you light while keeping both hands free for camp tasks or trail travel.",
+      "keywords": [
+        "camping-gear",
+        "nature-outdoors"
+      ],
+      "source": "https://nps.gov/articles/10essentials.htm"
+    },
+    {
+      "seedId": "15e0d893-b330-56e4-b122-5474152fb35a",
+      "category": "nature",
+      "navigationKeyword1": "camping",
+      "navigationKeyword2": "gear",
+      "question": "What kind of kit should be tailored to your trip and medical needs?",
+      "correctAnswer": "first-aid kit",
+      "incorrectAnswers": [
+        "cook set",
+        "mess kit",
+        "camera kit"
+      ],
+      "explanation": "A first-aid kit is one of the core essentials and should match the trip and the group.",
+      "keywords": [
+        "camping-gear",
+        "nature-outdoors"
+      ],
+      "source": "https://nps.gov/articles/10essentials.htm"
+    },
+    {
+      "seedId": "c674c7b5-8a86-5bc3-990b-53f72982a839",
+      "category": "nature",
+      "navigationKeyword1": "camping",
+      "navigationKeyword2": "gear",
+      "question": "Which Ten Essential category includes a map, compass, and GPS?",
+      "correctAnswer": "navigation",
+      "incorrectAnswers": [
+        "illumination",
+        "nutrition",
+        "repair kit"
+      ],
+      "explanation": "Navigation gear helps you plan your route and orient yourself outdoors.",
+      "keywords": [
+        "camping-gear",
+        "nature-outdoors"
+      ],
+      "source": "https://nps.gov/articles/10essentials.htm"
+    },
+    {
+      "seedId": "2dabbcdb-fc70-55c1-9bbf-b76e1e3215b1",
+      "category": "nature",
+      "navigationKeyword1": "camping",
+      "navigationKeyword2": "gear",
+      "question": "Which essential category covers extra clothing such as a jacket, gloves, and rain shell?",
+      "correctAnswer": "insulation",
+      "incorrectAnswers": [
+        "hydration",
+        "repair kit",
+        "navigation"
+      ],
+      "explanation": "Insulation helps you stay safe when weather turns colder, wetter, or windier than expected.",
+      "keywords": [
+        "camping-gear",
+        "nature-outdoors"
+      ],
+      "source": "https://nps.gov/articles/10essentials.htm"
+    },
+    {
+      "seedId": "ce301a49-a137-5911-a7b7-66ac35ea7006",
+      "category": "nature",
+      "navigationKeyword1": "camping",
+      "navigationKeyword2": "gear",
+      "question": "Which essential category includes water and a way to make more water safe?",
+      "correctAnswer": "hydration",
+      "incorrectAnswers": [
+        "illumination",
+        "fire",
+        "repair kit"
+      ],
+      "explanation": "Hydration includes carrying water and having treatment supplies if you need more.",
+      "keywords": [
+        "camping-gear",
+        "nature-outdoors"
+      ],
+      "source": "https://nps.gov/articles/10essentials.htm"
+    },
+    {
+      "seedId": "0aef7993-a91c-5866-9b3a-c18189b85919",
+      "category": "nature",
+      "navigationKeyword1": "camping",
+      "navigationKeyword2": "safety",
+      "question": "In bear country, where should food and scented items be stored when a locker is provided?",
+      "correctAnswer": "in the bear-proof locker",
+      "incorrectAnswers": [
+        "inside the tent",
+        "under the picnic table",
+        "hanging from the tent pole"
+      ],
+      "explanation": "Food, trash, and scented items should go in approved bear-resistant storage, not in your tent.",
+      "keywords": [
+        "camping-safety",
+        "nature-outdoors"
+      ],
+      "source": "https://www.nps.gov/voya/planyourvisit/bears-and-food-storage.htm?fullweb=1"
+    },
+    {
+      "seedId": "8cc1b61a-82e9-54d4-806a-4e0a59c1bca3",
+      "category": "nature",
+      "navigationKeyword1": "camping",
+      "navigationKeyword2": "safety",
+      "question": "Is it safe to leave a campfire unattended for even a short time?",
+      "correctAnswer": "no",
+      "incorrectAnswers": [
+        "yes, if there are rocks around it",
+        "yes, if the flames are small",
+        "yes, if the wood is dry"
+      ],
+      "explanation": "Even a small unattended fire can escape and start a wildfire.",
+      "keywords": [
+        "camping-safety",
+        "nature-outdoors"
+      ],
+      "source": "https://www.nps.gov/grte/learn/nature/firesafety.htm"
+    },
+    {
+      "seedId": "44edca5d-0ce3-5fee-b7e8-2af1d3f81f6c",
+      "category": "nature",
+      "navigationKeyword1": "camping",
+      "navigationKeyword2": "safety",
+      "question": "What is one simple way to lower your chance of picking up ticks on a trail?",
+      "correctAnswer": "walk in the center of the trail",
+      "incorrectAnswers": [
+        "brush against tall grass",
+        "sit in leaf litter often",
+        "wear sandals in brush"
+      ],
+      "explanation": "Staying out of tall grass and brush reduces tick exposure.",
+      "keywords": [
+        "camping-safety",
+        "nature-outdoors"
+      ],
+      "source": "https://www.cdc.gov/ticks/prevention/index.html"
+    },
+    {
+      "seedId": "8ea520bf-7078-5570-868a-879096c3f484",
+      "category": "nature",
+      "navigationKeyword1": "camping",
+      "navigationKeyword2": "safety",
+      "question": "What kind of clothing can make ticks easier to spot?",
+      "correctAnswer": "light-colored clothing",
+      "incorrectAnswers": [
+        "dark wool clothing",
+        "camouflage clothing",
+        "reflective rain gear only"
+      ],
+      "explanation": "Light-colored clothing can help you notice ticks before they attach.",
+      "keywords": [
+        "camping-safety",
+        "nature-outdoors"
+      ],
+      "source": "https://wwwnc.cdc.gov/travel/page/diseases-spread-by-ticks"
+    },
+    {
+      "seedId": "9b83c9a8-d2ea-5dc9-aa7b-ab18852d3e0f",
+      "category": "nature",
+      "navigationKeyword1": "camping",
+      "navigationKeyword2": "safety",
+      "question": "What should you do to a campfire before leaving it?",
+      "correctAnswer": "drown it, stir it, and make sure it is cold",
+      "incorrectAnswers": [
+        "cover it with leaves",
+        "spread the coals apart and walk away",
+        "leave it to burn out on its own"
+      ],
+      "explanation": "A campfire is not out until the ashes and coals are fully soaked and cold to the touch.",
+      "keywords": [
+        "camping-safety",
+        "nature-outdoors"
+      ],
+      "source": "https://smokeybear.com/en/prevention-how-tos/campfire-safety/how-to-maintain-and-extinguish-your-campfire"
+    },
+    {
+      "seedId": "10e30b1b-e294-5846-88b4-a8bb4469f7f4",
+      "category": "nature",
+      "navigationKeyword1": "camping",
+      "navigationKeyword2": "safety",
+      "question": "Which kinds of items should be treated like food for bear storage?",
+      "correctAnswer": "any scented items, including toiletries and trash",
+      "incorrectAnswers": [
+        "only meat and fish",
+        "only packaged snacks",
+        "only items in glass jars"
+      ],
+      "explanation": "Bears are attracted by scent, so toiletries, drinks, and trash also need secure storage.",
+      "keywords": [
+        "camping-safety",
+        "nature-outdoors"
+      ],
+      "source": "https://nps.gov/yose/planyourvisit/bears.htm"
+    }
+  ]
+}

@@ -1,0 +1,207 @@
+{
+  "schemaVersion": 1,
+  "seedSet": "core-public-items",
+  "deltaPreviewLimit": 200,
+  "items": [
+    {
+      "seedId": "dc00cf1c-fadf-544e-b54c-9e8801ae8979",
+      "category": "sports",
+      "navigationKeyword1": "golf",
+      "navigationKeyword2": "players",
+      "question": "Which American won the 2024 Masters for his second green jacket?",
+      "correctAnswer": "Scottie Scheffler",
+      "incorrectAnswers": [
+        "Rory McIlroy",
+        "Jon Rahm",
+        "Collin Morikawa"
+      ],
+      "explanation": "Scheffler won the Masters again in 2024.",
+      "keywords": [
+        "golf",
+        "players",
+        "scheffler"
+      ],
+      "source": "https://www.masters.com/en_US/index.html"
+    },
+    {
+      "seedId": "8afbebe6-fbc6-5c3a-ab0a-c2568099414b",
+      "category": "sports",
+      "navigationKeyword1": "golf",
+      "navigationKeyword2": "players",
+      "question": "Which Northern Irish golfer completed the career Grand Slam by winning the Masters in 2025?",
+      "correctAnswer": "Rory McIlroy",
+      "incorrectAnswers": [
+        "Padraig Harrington",
+        "Darren Clarke",
+        "Graeme McDowell"
+      ],
+      "explanation": "McIlroy finally added the Masters to his major collection in 2025.",
+      "keywords": [
+        "golf",
+        "players",
+        "rory-mcilroy"
+      ],
+      "source": "https://www.britannica.com/biography/Rory-McIlroy"
+    },
+    {
+      "seedId": "a1842413-d428-5749-ac8e-7f32d7ffa397",
+      "category": "sports",
+      "navigationKeyword1": "golf",
+      "navigationKeyword2": "players",
+      "question": "Which South African golfer joined Nicklaus and Woods in the career Grand Slam club during the Masters era?",
+      "correctAnswer": "Gary Player",
+      "incorrectAnswers": [
+        "Ernie Els",
+        "Retief Goosen",
+        "Bobby Locke"
+      ],
+      "explanation": "Gary Player became one of the classic career Grand Slam winners.",
+      "keywords": [
+        "golf",
+        "players",
+        "gary-player"
+      ],
+      "source": "https://www.britannica.com/biography/Gary-Player"
+    },
+    {
+      "seedId": "108a3d22-a727-5325-9611-6c26c78257cd",
+      "category": "sports",
+      "navigationKeyword1": "golf",
+      "navigationKeyword2": "players",
+      "question": "Which Spanish golfer became famous for creativity around the greens and won two Masters titles?",
+      "correctAnswer": "Seve Ballesteros",
+      "incorrectAnswers": [
+        "Jose Maria Olazabal",
+        "Sergio Garcia",
+        "Jon Rahm"
+      ],
+      "explanation": "Ballesteros became one of Europe's most influential golf champions.",
+      "keywords": [
+        "golf",
+        "players",
+        "seve"
+      ],
+      "source": "https://www.britannica.com/biography/Seve-Ballesteros"
+    },
+    {
+      "seedId": "e7eafd2e-cae9-5812-9a7c-cf4479812185",
+      "category": "sports",
+      "navigationKeyword1": "golf",
+      "navigationKeyword2": "players",
+      "question": "Which golfer completed the Tiger Slam by holding all four majors at once across 2000 and 2001?",
+      "correctAnswer": "Tiger Woods",
+      "incorrectAnswers": [
+        "Phil Mickelson",
+        "Vijay Singh",
+        "Ernie Els"
+      ],
+      "explanation": "Woods held all four men's major titles at the same time, though not in one calendar year.",
+      "keywords": [
+        "golf",
+        "players",
+        "tiger-woods"
+      ],
+      "source": "https://www.britannica.com/biography/Tiger-Woods"
+    },
+    {
+      "seedId": "dd519aa5-a8fd-53b3-83cf-11464bdc9e0b",
+      "category": "sports",
+      "navigationKeyword1": "golf",
+      "navigationKeyword2": "players",
+      "question": "Which golfer was nicknamed The King and helped popularize televised golf in the 1960s?",
+      "correctAnswer": "Arnold Palmer",
+      "incorrectAnswers": [
+        "Jack Nicklaus",
+        "Tom Watson",
+        "Lee Trevino"
+      ],
+      "explanation": "Palmer's charisma made him one of golf's biggest stars.",
+      "keywords": [
+        "golf",
+        "players",
+        "arnold-palmer"
+      ],
+      "source": "https://www.britannica.com/biography/Arnold-Palmer"
+    },
+    {
+      "seedId": "3d42566b-bdde-534f-99a8-a8807cce9d5e",
+      "category": "sports",
+      "navigationKeyword1": "golf",
+      "navigationKeyword2": "players",
+      "question": "Which golfer won 18 men's major championships?",
+      "correctAnswer": "Jack Nicklaus",
+      "incorrectAnswers": [
+        "Tiger Woods",
+        "Arnold Palmer",
+        "Gary Player"
+      ],
+      "explanation": "Nicklaus leads men's golf in major titles.",
+      "keywords": [
+        "golf",
+        "players",
+        "jack-nicklaus"
+      ],
+      "source": "https://www.britannica.com/biography/Jack-Nicklaus"
+    },
+    {
+      "seedId": "dccd1ac5-8928-539f-81d4-2d50035345fe",
+      "category": "sports",
+      "navigationKeyword1": "golf",
+      "navigationKeyword2": "players",
+      "question": "Which golfer won The Open Championship in both 1975 and 1977 and later captained Europe in the Ryder Cup?",
+      "correctAnswer": "Tom Watson",
+      "incorrectAnswers": [
+        "Nick Faldo",
+        "Bernhard Langer",
+        "Lee Trevino"
+      ],
+      "explanation": "Watson was one of the dominant links players of his era.",
+      "keywords": [
+        "golf",
+        "players",
+        "tom-watson"
+      ],
+      "source": "https://www.britannica.com/biography/Tom-Watson"
+    },
+    {
+      "seedId": "8de456cf-a564-5ede-8881-3a31a0236122",
+      "category": "sports",
+      "navigationKeyword1": "golf",
+      "navigationKeyword2": "players",
+      "question": "Which golfer won the 2024 U.S. Open at Pinehurst No. 2?",
+      "correctAnswer": "Bryson DeChambeau",
+      "incorrectAnswers": [
+        "Rory McIlroy",
+        "Xander Schauffele",
+        "Brooks Koepka"
+      ],
+      "explanation": "DeChambeau captured the U.S. Open in 2024.",
+      "keywords": [
+        "golf",
+        "players",
+        "dechambeau"
+      ],
+      "source": "https://www.usopen.com/"
+    },
+    {
+      "seedId": "eab03410-fbda-584d-adb2-dfb3c20d9702",
+      "category": "sports",
+      "navigationKeyword1": "golf",
+      "navigationKeyword2": "players",
+      "question": "Which left-hander won the 2021 PGA Championship at age 50?",
+      "correctAnswer": "Phil Mickelson",
+      "incorrectAnswers": [
+        "Bubba Watson",
+        "Mike Weir",
+        "Brian Harman"
+      ],
+      "explanation": "Mickelson became the oldest men's major champion with that win.",
+      "keywords": [
+        "golf",
+        "players",
+        "phil-mickelson"
+      ],
+      "source": "https://www.britannica.com/biography/Phil-Mickelson"
+    }
+  ]
+}

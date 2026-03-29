@@ -1,0 +1,247 @@
+{
+  "schemaVersion": 1,
+  "seedSet": "core-public-items",
+  "deltaPreviewLimit": 200,
+  "items": [
+    {
+      "seedId": "114fc312-8e07-4a77-a6bc-2a110e30546b",
+      "category": "history",
+      "navigationKeyword1": "modern",
+      "navigationKeyword2": "decolonization",
+      "question": "British India was partitioned in August 1947 into the dominions of India and which Muslim-majority state?",
+      "correctAnswer": "Pakistan",
+      "incorrectAnswers": [
+        "Bangladesh",
+        "Ceylon",
+        "Burma"
+      ],
+      "explanation": "Mountbatten\u2019s rushed timeline and communal violence accompanied independence for both new governments.",
+      "keywords": [
+        "decolonization",
+        "india",
+        "partition"
+      ],
+      "source": "https://www.britannica.com/place/India/Partition"
+    },
+    {
+      "seedId": "ba6b6ab1-e138-4e6c-84ba-736a7d7f13e0",
+      "category": "history",
+      "navigationKeyword1": "modern",
+      "navigationKeyword2": "decolonization",
+      "question": "Kwame Nkrumah\u2019s 1957 Gold Coast independence created the first sub-Saharan African state to leave colonial rule under which name?",
+      "correctAnswer": "Ghana",
+      "incorrectAnswers": [
+        "Nigeria",
+        "Kenya",
+        "Senegal"
+      ],
+      "explanation": "Ghana\u2019s example encouraged rapid decolonization across British and French West Africa.",
+      "keywords": [
+        "decolonization",
+        "ghana",
+        "africa"
+      ],
+      "source": "https://www.britannica.com/place/Ghana/History"
+    },
+    {
+      "seedId": "0eab0a9b-670c-4556-a3da-b0be697f7c0b",
+      "category": "history",
+      "navigationKeyword1": "modern",
+      "navigationKeyword2": "decolonization",
+      "question": "Patrice Lumumba\u2019s brief premiership and assassination marked the chaotic birth of which central African republic in 1960?",
+      "correctAnswer": "The Democratic Republic of the Congo (Congo-L\u00e9opoldville)",
+      "incorrectAnswers": [
+        "Angola",
+        "Zimbabwe",
+        "Somalia"
+      ],
+      "explanation": "Belgium\u2019s hurried withdrawal and Cold War meddling plunged the resource-rich Congo into crisis.",
+      "keywords": [
+        "decolonization",
+        "congo",
+        "belgium"
+      ],
+      "source": "https://www.britannica.com/biography/Patrice-Lumumba"
+    },
+    {
+      "seedId": "1bd76a88-0f89-4805-9007-257cedbd0709",
+      "category": "history",
+      "navigationKeyword1": "modern",
+      "navigationKeyword2": "decolonization",
+      "question": "Sukarno and Hatta proclaimed independence in 1945 from which European colonial power in Southeast Asia?",
+      "correctAnswer": "The Netherlands",
+      "incorrectAnswers": [
+        "Portugal",
+        "Belgium",
+        "Spain"
+      ],
+      "explanation": "A four-year independence war followed before the Dutch recognized Indonesian sovereignty in 1949.",
+      "keywords": [
+        "decolonization",
+        "indonesia",
+        "netherlands"
+      ],
+      "source": "https://www.britannica.com/place/Indonesia"
+    },
+    {
+      "seedId": "95079802-dfb1-4fdd-b503-a727cfead072",
+      "category": "history",
+      "navigationKeyword1": "modern",
+      "navigationKeyword2": "decolonization",
+      "question": "The 1954 Battle of Dien Bien Phu ended French rule in which Southeast Asian colony?",
+      "correctAnswer": "Vietnam (French Indochina)",
+      "incorrectAnswers": [
+        "Malaya",
+        "Laos alone",
+        "Cambodia alone"
+      ],
+      "explanation": "Viet Minh forces under Vo Nguyen Giap forced surrender, leading to Geneva partition talks.",
+      "keywords": [
+        "decolonization",
+        "vietnam",
+        "france"
+      ],
+      "source": "https://www.britannica.com/event/Battle-of-Dien-Bien-Phu"
+    },
+    {
+      "seedId": "c72ed121-f835-4e2d-b4bd-34e9b939451e",
+      "category": "history",
+      "navigationKeyword1": "modern",
+      "navigationKeyword2": "decolonization",
+      "question": "The 1956 Suez Crisis saw Egypt nationalize a canal previously controlled by British and which other imperial partner?",
+      "correctAnswer": "France",
+      "incorrectAnswers": [
+        "Italy",
+        "Spain",
+        "Belgium"
+      ],
+      "explanation": "Anglo-French-Israeli intervention collapsed under U.S. financial pressure and Soviet threats.",
+      "keywords": [
+        "decolonization",
+        "egypt",
+        "suez"
+      ],
+      "source": "https://www.britannica.com/event/Suez-Crisis"
+    },
+    {
+      "seedId": "f89e816d-6d54-459c-a9a4-2a0d1a663ef9",
+      "category": "history",
+      "navigationKeyword1": "modern",
+      "navigationKeyword2": "decolonization",
+      "question": "The 1971 Bangladesh Liberation War split which former united Muslim state in South Asia?",
+      "correctAnswer": "Pakistan (East Pakistan became Bangladesh)",
+      "incorrectAnswers": [
+        "India",
+        "Afghanistan",
+        "Iran"
+      ],
+      "explanation": "Indian intervention and Bengali nationalist forces defeated West Pakistani armies after a brutal crackdown.",
+      "keywords": [
+        "decolonization",
+        "bangladesh",
+        "pakistan"
+      ],
+      "source": "https://www.britannica.com/event/Bangladesh-Liberation-War"
+    },
+    {
+      "seedId": "3205c176-8ea2-44ab-83d6-021259dc4d74",
+      "category": "history",
+      "navigationKeyword1": "modern",
+      "navigationKeyword2": "decolonization",
+      "question": "The 1975 Carnation Revolution in Lisbon triggered rapid independence for Portugal\u2019s colonies in Africa and which Asian territory?",
+      "correctAnswer": "East Timor (Timor-Leste)",
+      "incorrectAnswers": [
+        "Macau (returned later to China)",
+        "Goa",
+        "Brazil"
+      ],
+      "explanation": "Junior officers toppled the Estado Novo regime, ending its costly colonial wars in Angola, Mozambique, and Guinea-Bissau.",
+      "keywords": [
+        "decolonization",
+        "portugal",
+        "africa"
+      ],
+      "source": "https://www.britannica.com/place/Portugal/The-Carnation-Revolution"
+    },
+    {
+      "seedId": "69ae6d74-6ca5-4323-84c3-70a699e48351",
+      "category": "history",
+      "navigationKeyword1": "modern",
+      "navigationKeyword2": "decolonization",
+      "question": "The 1990 Namibian independence agreement ended South African administration mandated by which defunct League of Nations system?",
+      "correctAnswer": "The mandate/trusteeship over former German South West Africa",
+      "incorrectAnswers": [
+        "A UN protectorate over Rhodesia",
+        "A Franco-British codominium",
+        "Portuguese assimilation status"
+      ],
+      "explanation": "Cuban-South African battles in Angola\u2019s linked conflict preceded SWAPO\u2019s electoral victory.",
+      "keywords": [
+        "decolonization",
+        "namibia",
+        "south-africa"
+      ],
+      "source": "https://www.britannica.com/place/Namibia/History"
+    },
+    {
+      "seedId": "9cf2ab3e-927b-44e2-8ae9-c6afdbf3ab26",
+      "category": "history",
+      "navigationKeyword1": "modern",
+      "navigationKeyword2": "decolonization",
+      "question": "The 1994 first all-race elections in South Africa seated which former political prisoner as president?",
+      "correctAnswer": "Nelson Mandela",
+      "incorrectAnswers": [
+        "Steve Biko",
+        "Robert Sobukwe",
+        "Albert Luthuli"
+      ],
+      "explanation": "The ANC\u2019s victory dismantled apartheid parliamentary rule negotiated in the early 1990s.",
+      "keywords": [
+        "decolonization",
+        "south-africa",
+        "apartheid"
+      ],
+      "source": "https://www.britannica.com/biography/Nelson-Mandela"
+    },
+    {
+      "seedId": "342fe47a-6a6f-44f9-9030-bd112e2ab663",
+      "category": "history",
+      "navigationKeyword1": "modern",
+      "navigationKeyword2": "decolonization",
+      "question": "The Algerian War (1954\u201362) ended French control of a colony separated from France by which sea?",
+      "correctAnswer": "The Mediterranean Sea",
+      "incorrectAnswers": [
+        "The Red Sea",
+        "The Baltic Sea",
+        "The Caribbean Sea"
+      ],
+      "explanation": "FLN guerrillas and metropolitan protests compelled Charles de Gaulle to accept Algerian independence.",
+      "keywords": [
+        "decolonization",
+        "algeria",
+        "france"
+      ],
+      "source": "https://www.britannica.com/event/Algerian-War"
+    },
+    {
+      "seedId": "7e3edca1-b31d-44fa-a2d0-d1c728be261c",
+      "category": "history",
+      "navigationKeyword1": "modern",
+      "navigationKeyword2": "decolonization",
+      "question": "The Mau Mau uprising targeted British settlers and loyalists in which East African colony granted independence in 1963?",
+      "correctAnswer": "Kenya",
+      "incorrectAnswers": [
+        "Uganda",
+        "Tanganyika",
+        "Zambia"
+      ],
+      "explanation": "Emergency rule, detention camps, and land grievances accelerated demands for majority rule.",
+      "keywords": [
+        "decolonization",
+        "kenya",
+        "britain"
+      ],
+      "source": "https://www.britannica.com/event/Mau-Mau"
+    }
+  ]
+}

@@ -1,0 +1,121 @@
+{
+  "schemaVersion": 1,
+  "seedSet": "core-public-items",
+  "deltaPreviewLimit": 200,
+  "items": [
+    {
+      "seedId": "7dd660b7-bf19-4a0f-aa7f-20b22366ed54",
+      "category": "business",
+      "navigationKeyword1": "operations",
+      "navigationKeyword2": "inventory",
+      "question": "What are typical components of inventory carrying costs?",
+      "correctAnswer": "Storage, capital cost, insurance, obsolescence, and handling.",
+      "incorrectAnswers": [
+        "Only the sticker price paid to supplier.",
+        "Only travel expenses.",
+        "Only CEO bonuses."
+      ],
+      "explanation": "Carrying cost motivates lean inventory.",
+      "keywords": [
+        "carrying-cost",
+        "inventory"
+      ],
+      "source": "https://www.investopedia.com/terms/c/carryingcost.asp"
+    },
+    {
+      "seedId": "05064780-f17a-417b-9456-e5721f4559e7",
+      "category": "business",
+      "navigationKeyword1": "operations",
+      "navigationKeyword2": "inventory",
+      "question": "What does days inventory outstanding (DIO) indicate?",
+      "correctAnswer": "How long inventory sits on average before being sold or used.",
+      "incorrectAnswers": [
+        "How many employees work in HR.",
+        "Average customer age.",
+        "Annual ad spend."
+      ],
+      "explanation": "Lower DIO can mean faster turns (context matters).",
+      "keywords": [
+        "dio",
+        "inventory-turns"
+      ],
+      "source": "https://www.investopedia.com/terms/d/days-sales-inventory.asp"
+    },
+    {
+      "seedId": "add3e3f9-4dad-464e-8fdc-60d85b56a27f",
+      "category": "business",
+      "navigationKeyword1": "operations",
+      "navigationKeyword2": "inventory",
+      "question": "What is ABC analysis in inventory management?",
+      "correctAnswer": "Classify items by importance (often value/volume) to focus control effort.",
+      "incorrectAnswers": [
+        "Sort suppliers alphabetically only.",
+        "Measure only marketing leads.",
+        "Track only office supplies."
+      ],
+      "explanation": "A items often get tighter controls and forecasting.",
+      "keywords": [
+        "abc-analysis",
+        "inventory"
+      ],
+      "source": "https://www.investopedia.com/terms/a/abc-analysis.asp"
+    },
+    {
+      "seedId": "b4037df4-d068-4bbd-95da-1b134b570320",
+      "category": "business",
+      "navigationKeyword1": "operations",
+      "navigationKeyword2": "inventory",
+      "question": "What is inventory obsolescence risk?",
+      "correctAnswer": "Items lose value or become unsellable due to age, seasonality, or model changes.",
+      "incorrectAnswers": [
+        "Risk that customers buy too much.",
+        "Risk of hiring too fast.",
+        "Risk of paying taxes early."
+      ],
+      "explanation": "Obsolescence drives write-downs and clearance decisions.",
+      "keywords": [
+        "obsolescence",
+        "inventory"
+      ],
+      "source": "https://www.investopedia.com/terms/o/obsolescencerisk.asp"
+    },
+    {
+      "seedId": "70af7233-2cee-4e74-9458-a2f2c79113c5",
+      "category": "business",
+      "navigationKeyword1": "operations",
+      "navigationKeyword2": "inventory",
+      "question": "What is warehouse slotting about?",
+      "correctAnswer": "Placing SKUs in locations to reduce travel time and improve pick efficiency.",
+      "incorrectAnswers": [
+        "Random placement always.",
+        "Only painting warehouse walls.",
+        "Deleting pick lists."
+      ],
+      "explanation": "Slotting impacts labor productivity.",
+      "keywords": [
+        "slotting",
+        "logistics"
+      ],
+      "source": "https://www.inboundlogistics.com/articles/how-to-slot-your-warehouse-inventory/"
+    },
+    {
+      "seedId": "25a00950-1640-4b11-bfcd-ffd2625464c1",
+      "category": "business",
+      "navigationKeyword1": "operations",
+      "navigationKeyword2": "inventory",
+      "question": "Why use cycle counting instead of only annual physical counts?",
+      "correctAnswer": "Spread counts through the year to catch errors earlier and reduce shutdown disruption.",
+      "incorrectAnswers": [
+        "Because annual counts are illegal.",
+        "To avoid using any scanners.",
+        "To delete SKU data."
+      ],
+      "explanation": "Cycle counting improves record accuracy.",
+      "keywords": [
+        "cycle-count",
+        "warehouse"
+      ],
+      "source": "https://www.investopedia.com/terms/c/cycle-count.asp"
+    }
+  ]
+}

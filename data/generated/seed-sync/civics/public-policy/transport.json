@@ -1,0 +1,121 @@
+{
+  "schemaVersion": 1,
+  "seedSet": "core-public-items",
+  "deltaPreviewLimit": 200,
+  "items": [
+    {
+      "seedId": "89a75fc2-756b-5f17-99ea-5f8c1dbbeb9b",
+      "category": "civics",
+      "navigationKeyword1": "public-policy",
+      "navigationKeyword2": "transport",
+      "question": "Federal excise taxes on motor fuels mainly feed which dedicated fund for highways and related programs?",
+      "correctAnswer": "the Highway Trust Fund",
+      "incorrectAnswers": [
+        "the Social Security Trust Fund",
+        "the Federal Reserve surplus",
+        "the Smithsonian endowment"
+      ],
+      "explanation": "Gas and diesel taxes are credited to the Highway Trust Fund to support federal surface transportation spending.",
+      "keywords": [
+        "highway-trust-fund",
+        "fuel-tax"
+      ],
+      "source": "https://www.fhwa.dot.gov/infrastructure/gas_tax.cfm"
+    },
+    {
+      "seedId": "9a1f100d-99a5-50df-ad46-1c2f599b15d2",
+      "category": "civics",
+      "navigationKeyword1": "public-policy",
+      "navigationKeyword2": "transport",
+      "question": "Passenger rail policy and Amtrak oversight sit within which federal structure?",
+      "correctAnswer": "the Department of Transportation and congressional authorization statutes",
+      "incorrectAnswers": [
+        "the Federal Election Commission",
+        "the Smithsonian Institution",
+        "the National Archives"
+      ],
+      "explanation": "Intercity rail receives federal direction and funding through transportation law and DOT oversight.",
+      "keywords": [
+        "passenger-rail",
+        "federal-role"
+      ],
+      "source": "https://www.transportation.gov/rail"
+    },
+    {
+      "seedId": "7fce6204-97f6-55ab-b043-5b32e4b7794c",
+      "category": "civics",
+      "navigationKeyword1": "public-policy",
+      "navigationKeyword2": "transport",
+      "question": "The Federal Transit Administration mainly provides what to local transit operators?",
+      "correctAnswer": "formula and competitive grants for capital and sometimes operating needs",
+      "incorrectAnswers": [
+        "direct appointment of every bus driver",
+        "exclusive airline routes",
+        "unlimited toll exemptions"
+      ],
+      "explanation": "FTA channels federal aid to public transportation projects under statutory programs.",
+      "keywords": [
+        "public-transit",
+        "fta"
+      ],
+      "source": "https://www.transit.dot.gov/funding"
+    },
+    {
+      "seedId": "69e895fe-a9ec-569e-b9d6-961f1272a436",
+      "category": "civics",
+      "navigationKeyword1": "public-policy",
+      "navigationKeyword2": "transport",
+      "question": "Which federal agency regulates U.S. commercial aviation safety and air traffic systems?",
+      "correctAnswer": "the Federal Aviation Administration",
+      "incorrectAnswers": [
+        "the Environmental Protection Agency",
+        "the National Park Service",
+        "the Census Bureau"
+      ],
+      "explanation": "The FAA sets safety standards, certifies aircraft, and operates the national airspace system.",
+      "keywords": [
+        "faa",
+        "aviation"
+      ],
+      "source": "https://www.faa.gov/about/mission"
+    },
+    {
+      "seedId": "3e839014-fd5f-5e2f-9b4a-dcba055b0796",
+      "category": "civics",
+      "navigationKeyword1": "public-policy",
+      "navigationKeyword2": "transport",
+      "question": "Which federal department houses the Federal Highway Administration?",
+      "correctAnswer": "the Department of Transportation",
+      "incorrectAnswers": [
+        "the Department of Defense",
+        "the Department of the Interior",
+        "the Department of Commerce"
+      ],
+      "explanation": "USDOT oversees highways, transit, aviation, and other transportation modes through its modal agencies.",
+      "keywords": [
+        "usdot",
+        "highways"
+      ],
+      "source": "https://www.transportation.gov/mission/about-us"
+    },
+    {
+      "seedId": "8f13ced5-0521-51bf-8562-af0f7b967ffd",
+      "category": "civics",
+      "navigationKeyword1": "public-policy",
+      "navigationKeyword2": "transport",
+      "question": "Who owns and maintains most non-interstate roads in typical U.S. systems?",
+      "correctAnswer": "state and local governments",
+      "incorrectAnswers": [
+        "the United Nations",
+        "the Federal Reserve",
+        "the Supreme Court"
+      ],
+      "explanation": "States, counties, and cities maintain most road mileage; federal aid supplements major corridors.",
+      "keywords": [
+        "roads",
+        "state-local"
+      ],
+      "source": "https://www.fhwa.dot.gov/federal-aidessentials/catmod.cfm"
+    }
+  ]
+}

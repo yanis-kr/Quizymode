@@ -1,0 +1,227 @@
+{
+  "schemaVersion": 1,
+  "seedSet": "core-public-items",
+  "deltaPreviewLimit": 200,
+  "items": [
+    {
+      "seedId": "593391e3-4fc8-47c7-8a03-477736b7b358",
+      "category": "geography",
+      "navigationKeyword1": "human",
+      "navigationKeyword2": "migration",
+      "question": "About what share of international migrants were female in 2024, per the UN overview?",
+      "correctAnswer": "48 per cent",
+      "incorrectAnswers": [
+        "33 per cent",
+        "55 per cent",
+        "62 per cent"
+      ],
+      "explanation": "The UN migration page reports female migrants as 48 per cent of the total in 2024.",
+      "keywords": [
+        "migration",
+        "demographics",
+        "gender"
+      ],
+      "source": "https://www.un.org/en/global-issues/migration"
+    },
+    {
+      "seedId": "8408ab46-838b-406d-9bc7-e82b3ed355bc",
+      "category": "geography",
+      "navigationKeyword1": "human",
+      "navigationKeyword2": "migration",
+      "question": "According to the UN\u2019s international migration overview, about how many international migrants were there worldwide in 2024?",
+      "correctAnswer": "304 million",
+      "incorrectAnswers": [
+        "120 million",
+        "210 million",
+        "410 million"
+      ],
+      "explanation": "UNDESA Population Division figures cited by the UN place the 2024 global migrant stock at about 304 million.",
+      "keywords": [
+        "migration",
+        "migrant-stock",
+        "united-nations"
+      ],
+      "source": "https://www.un.org/en/global-issues/migration"
+    },
+    {
+      "seedId": "dfe49f4f-9b1f-4b0b-b139-0548480af332",
+      "category": "geography",
+      "navigationKeyword1": "human",
+      "navigationKeyword2": "migration",
+      "question": "For UN statistics, who counts as an international migrant?",
+      "correctAnswer": "any person who has changed his or her country of residence",
+      "incorrectAnswers": [
+        "only refugees registered with UNHCR",
+        "only workers on multi-year visas",
+        "only people who naturalize abroad"
+      ],
+      "explanation": "The UN migration page defines an international migrant, for statistical purposes, as someone who changed country of residence.",
+      "keywords": [
+        "migration",
+        "definitions",
+        "statistics"
+      ],
+      "source": "https://www.un.org/en/global-issues/migration"
+    },
+    {
+      "seedId": "116da0a0-8d67-4600-a956-35c9693ba6c9",
+      "category": "geography",
+      "navigationKeyword1": "human",
+      "navigationKeyword2": "migration",
+      "question": "In which year did IOM enter into an agreement to become a United Nations\u2013related organization?",
+      "correctAnswer": "2016",
+      "incorrectAnswers": [
+        "2005",
+        "2011",
+        "2019"
+      ],
+      "explanation": "The UN migration page notes the 2016 agreement making IOM a related organization of the UN.",
+      "keywords": [
+        "migration",
+        "iom",
+        "united-nations"
+      ],
+      "source": "https://www.un.org/en/global-issues/migration"
+    },
+    {
+      "seedId": "07604b07-2582-4cc4-a396-fccf1719f086",
+      "category": "geography",
+      "navigationKeyword1": "human",
+      "navigationKeyword2": "migration",
+      "question": "International Migrants Day is observed on which date each year?",
+      "correctAnswer": "18 December",
+      "incorrectAnswers": [
+        "21 March",
+        "20 June",
+        "10 December"
+      ],
+      "explanation": "The UN proclaimed 18 December as International Migrants Day.",
+      "keywords": [
+        "migration",
+        "observances",
+        "united-nations"
+      ],
+      "source": "https://www.un.org/en/global-issues/migration"
+    },
+    {
+      "seedId": "684acdd7-813c-45ab-81e0-089f7d680b6f",
+      "category": "geography",
+      "navigationKeyword1": "human",
+      "navigationKeyword2": "migration",
+      "question": "International migrants made up about what share of the global population in 2024?",
+      "correctAnswer": "3.7 per cent",
+      "incorrectAnswers": [
+        "1.1 per cent",
+        "6.5 per cent",
+        "9.2 per cent"
+      ],
+      "explanation": "The UN migration page states migrants were about 3.7 per cent of the global population in 2024.",
+      "keywords": [
+        "migration",
+        "demographics",
+        "shares"
+      ],
+      "source": "https://www.un.org/en/global-issues/migration"
+    },
+    {
+      "seedId": "4a293e44-1ff8-4eb4-a6cc-692cfb605a05",
+      "category": "geography",
+      "navigationKeyword1": "human",
+      "navigationKeyword2": "migration",
+      "question": "The International Organization for Migration (IOM) was established in which year?",
+      "correctAnswer": "1951",
+      "incorrectAnswers": [
+        "1919",
+        "1967",
+        "1985"
+      ],
+      "explanation": "The UN migration overview states IOM was established in 1951.",
+      "keywords": [
+        "migration",
+        "iom",
+        "organizations"
+      ],
+      "source": "https://www.un.org/en/global-issues/migration"
+    },
+    {
+      "seedId": "87e91a2e-717d-4121-b589-23f919ac75dc",
+      "category": "geography",
+      "navigationKeyword1": "human",
+      "navigationKeyword2": "migration",
+      "question": "The intergovernmental conference that adopted the Global Compact for Migration was held in which city?",
+      "correctAnswer": "Marrakesh",
+      "incorrectAnswers": [
+        "New York",
+        "Geneva",
+        "Addis Ababa"
+      ],
+      "explanation": "The UN migration page places the adopting conference in Marrakesh, Morocco.",
+      "keywords": [
+        "migration",
+        "global-compact",
+        "diplomacy"
+      ],
+      "source": "https://www.un.org/en/global-issues/migration"
+    },
+    {
+      "seedId": "c78f79a6-eb90-485d-82f7-b2c1d687ef36",
+      "category": "geography",
+      "navigationKeyword1": "human",
+      "navigationKeyword2": "migration",
+      "question": "The same UN overview estimates about how many international migrants there were worldwide in 1990?",
+      "correctAnswer": "154 million",
+      "incorrectAnswers": [
+        "92 million",
+        "201 million",
+        "260 million"
+      ],
+      "explanation": "The UN migration page cites roughly 154 million international migrants in 1990.",
+      "keywords": [
+        "migration",
+        "trends",
+        "united-nations"
+      ],
+      "source": "https://www.un.org/en/global-issues/migration"
+    },
+    {
+      "seedId": "f5c745e2-b2a2-46a9-92c4-9394b53698ad",
+      "category": "geography",
+      "navigationKeyword1": "human",
+      "navigationKeyword2": "migration",
+      "question": "UN Member States adopted the Global Compact for Safe, Orderly and Regular Migration in which month and year?",
+      "correctAnswer": "December 2018",
+      "incorrectAnswers": [
+        "September 2015",
+        "July 2017",
+        "March 2020"
+      ],
+      "explanation": "The UN migration overview dates adoption of the Global Compact for Migration to December 2018.",
+      "keywords": [
+        "migration",
+        "global-compact",
+        "governance"
+      ],
+      "source": "https://www.un.org/en/global-issues/migration"
+    },
+    {
+      "seedId": "a51ee89e-c344-4427-af7c-583079344540",
+      "category": "geography",
+      "navigationKeyword1": "human",
+      "navigationKeyword2": "migration",
+      "question": "Which Sustainable Development Goal target explicitly calls for orderly, safe, regular, and responsible migration?",
+      "correctAnswer": "Target 10.7",
+      "incorrectAnswers": [
+        "Target 8.3",
+        "Target 11.2",
+        "Target 16.6"
+      ],
+      "explanation": "The UN migration page links SDG target 10.7 to well-managed migration policies.",
+      "keywords": [
+        "migration",
+        "sdgs",
+        "policy"
+      ],
+      "source": "https://www.un.org/en/global-issues/migration"
+    }
+  ]
+}

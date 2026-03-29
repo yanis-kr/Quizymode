@@ -1,0 +1,207 @@
+{
+  "schemaVersion": 1,
+  "seedSet": "core-public-items",
+  "deltaPreviewLimit": 200,
+  "items": [
+    {
+      "seedId": "ef9fb587-1bfd-5d7f-955a-2b9ffa28b1a2",
+      "category": "sports",
+      "navigationKeyword1": "basketball",
+      "navigationKeyword2": "positions",
+      "question": "What role describes a bench player who often sparks the second unit's scoring?",
+      "correctAnswer": "Sixth man",
+      "incorrectAnswers": [
+        "Point center",
+        "Water carrier",
+        "Captain only"
+      ],
+      "explanation": "The sixth man is a major reserve who often closes games too.",
+      "keywords": [
+        "basketball",
+        "positions",
+        "sixth-man"
+      ],
+      "source": "https://www.britannica.com/sports/basketball"
+    },
+    {
+      "seedId": "cbaff35f-8c1a-58a5-a698-1a35b0b237bf",
+      "category": "sports",
+      "navigationKeyword1": "basketball",
+      "navigationKeyword2": "positions",
+      "question": "What term describes a guard who can play either backcourt spot?",
+      "correctAnswer": "Combo guard",
+      "incorrectAnswers": [
+        "Stretch five",
+        "Rim protector only",
+        "Swing tackle"
+      ],
+      "explanation": "A combo guard can function at point or shooting guard.",
+      "keywords": [
+        "basketball",
+        "positions",
+        "combo-guard"
+      ],
+      "source": "https://www.britannica.com/sports/basketball"
+    },
+    {
+      "seedId": "8105e826-d602-5071-bd42-c996d666765c",
+      "category": "sports",
+      "navigationKeyword1": "basketball",
+      "navigationKeyword2": "positions",
+      "question": "What term is often used for a center who can shoot from long range?",
+      "correctAnswer": "Stretch five",
+      "incorrectAnswers": [
+        "Post-only center",
+        "Slasher",
+        "Lockdown wing"
+      ],
+      "explanation": "A stretch five spaces the floor with perimeter shooting.",
+      "keywords": [
+        "basketball",
+        "positions",
+        "stretch-five"
+      ],
+      "source": "https://www.britannica.com/sports/basketball"
+    },
+    {
+      "seedId": "2f08e196-a3ed-5650-9df3-479e9d6f9fc0",
+      "category": "sports",
+      "navigationKeyword1": "basketball",
+      "navigationKeyword2": "positions",
+      "question": "Which player role is most associated with protecting the basket near the rim?",
+      "correctAnswer": "Rim protector",
+      "incorrectAnswers": [
+        "Shooter's coach",
+        "Scorekeeper",
+        "Point guard"
+      ],
+      "explanation": "Rim protectors deter shots at the basket, often from the center spot.",
+      "keywords": [
+        "basketball",
+        "positions",
+        "rim-protector"
+      ],
+      "source": "https://www.britannica.com/sports/basketball"
+    },
+    {
+      "seedId": "7410f63d-e810-59e9-8fb3-cf56c8de9842",
+      "category": "sports",
+      "navigationKeyword1": "basketball",
+      "navigationKeyword2": "positions",
+      "question": "Which position is often the team's primary perimeter scorer beside the point guard?",
+      "correctAnswer": "Shooting guard",
+      "incorrectAnswers": [
+        "Center",
+        "Power forward",
+        "Point center"
+      ],
+      "explanation": "Shooting guards are commonly backcourt scorers.",
+      "keywords": [
+        "basketball",
+        "positions",
+        "shooting-guard"
+      ],
+      "source": "https://www.britannica.com/sports/basketball"
+    },
+    {
+      "seedId": "e0af183e-2535-57bd-bae0-32f58095e605",
+      "category": "sports",
+      "navigationKeyword1": "basketball",
+      "navigationKeyword2": "positions",
+      "question": "Which position is usually the tallest traditional interior player?",
+      "correctAnswer": "Center",
+      "incorrectAnswers": [
+        "Point guard",
+        "Shooting guard",
+        "Small forward"
+      ],
+      "explanation": "Centers traditionally protect the rim and rebound inside.",
+      "keywords": [
+        "basketball",
+        "positions",
+        "center"
+      ],
+      "source": "https://www.britannica.com/sports/basketball"
+    },
+    {
+      "seedId": "6bb767fa-6def-5570-8a7f-21d57dd1297f",
+      "category": "sports",
+      "navigationKeyword1": "basketball",
+      "navigationKeyword2": "positions",
+      "question": "Which position often combines rebounding with midrange or interior scoring next to the center?",
+      "correctAnswer": "Power forward",
+      "incorrectAnswers": [
+        "Point guard",
+        "Shooting guard",
+        "Combo guard"
+      ],
+      "explanation": "Power forwards usually work near the basket and on the boards.",
+      "keywords": [
+        "basketball",
+        "positions",
+        "power-forward"
+      ],
+      "source": "https://www.britannica.com/sports/basketball"
+    },
+    {
+      "seedId": "c22d99d8-3e36-51b8-a5dc-3ac54cc6959e",
+      "category": "sports",
+      "navigationKeyword1": "basketball",
+      "navigationKeyword2": "positions",
+      "question": "Which position often serves as a versatile wing between the guards and the bigs?",
+      "correctAnswer": "Small forward",
+      "incorrectAnswers": [
+        "Center",
+        "Point guard",
+        "Bench coach"
+      ],
+      "explanation": "Small forwards often defend multiple positions and score from the wing.",
+      "keywords": [
+        "basketball",
+        "positions",
+        "small-forward"
+      ],
+      "source": "https://www.britannica.com/sports/basketball"
+    },
+    {
+      "seedId": "95d5bf86-7a4b-56cc-a698-f6d44710aafe",
+      "category": "sports",
+      "navigationKeyword1": "basketball",
+      "navigationKeyword2": "positions",
+      "question": "Which position usually brings the ball up the floor and starts the offense?",
+      "correctAnswer": "Point guard",
+      "incorrectAnswers": [
+        "Center",
+        "Power forward",
+        "Small forward"
+      ],
+      "explanation": "The point guard is typically the primary ball-handler.",
+      "keywords": [
+        "basketball",
+        "positions",
+        "point-guard"
+      ],
+      "source": "https://www.britannica.com/sports/basketball"
+    },
+    {
+      "seedId": "ec26c2d6-abe5-5e4c-a636-a9d513f912c3",
+      "category": "sports",
+      "navigationKeyword1": "basketball",
+      "navigationKeyword2": "positions",
+      "question": "Which role most directly refers to a wing defender trusted to guard top scorers?",
+      "correctAnswer": "Perimeter stopper",
+      "incorrectAnswers": [
+        "Point guard only",
+        "Bench big",
+        "Glass cleaner"
+      ],
+      "explanation": "A perimeter stopper is valued for on-ball defense against wings and guards.",
+      "keywords": [
+        "basketball",
+        "positions",
+        "defense"
+      ],
+      "source": "https://www.britannica.com/sports/basketball"
+    }
+  ]
+}

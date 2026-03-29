@@ -1,0 +1,127 @@
+{
+  "schemaVersion": 1,
+  "seedSet": "core-public-items",
+  "deltaPreviewLimit": 200,
+  "items": [
+    {
+      "seedId": "438a6aa3-e047-5f76-82c7-f76188907088",
+      "category": "languages",
+      "navigationKeyword1": "spanish",
+      "navigationKeyword2": "verbs",
+      "question": "For \"tener\" in the present, which form matches \"ellos\" (they)?",
+      "correctAnswer": "tienen",
+      "incorrectAnswers": [
+        "tengo",
+        "tienes",
+        "tenemos"
+      ],
+      "explanation": "\"Tener\" is irregular; the third-person plural present form is \"tienen\".",
+      "keywords": [
+        "to-have",
+        "present-tense",
+        "spanish-verbs"
+      ],
+      "source": "https://www.collinsdictionary.com/dictionary/spanish-english/tener"
+    },
+    {
+      "seedId": "25f7d57f-c2a1-5b2d-989e-3b4980b0ca7d",
+      "category": "languages",
+      "navigationKeyword1": "spanish",
+      "navigationKeyword2": "verbs",
+      "question": "In the present tense, which \"hacer\" form matches \"\u00e9l / ella\"?",
+      "correctAnswer": "hace",
+      "incorrectAnswers": [
+        "hago",
+        "haces",
+        "hacen"
+      ],
+      "explanation": "\"Hacer\" is irregular; the third-person singular present form is \"hace\".",
+      "keywords": [
+        "to-do",
+        "present-tense",
+        "spanish-verbs"
+      ],
+      "source": "https://dictionary.cambridge.org/dictionary/spanish-english/hacer"
+    },
+    {
+      "seedId": "73e2870a-22d6-5a86-8aff-bb8f21f28565",
+      "category": "languages",
+      "navigationKeyword1": "spanish",
+      "navigationKeyword2": "verbs",
+      "question": "What is the infinitive that means \"to eat\"?",
+      "correctAnswer": "comer",
+      "incorrectAnswers": [
+        "correr",
+        "beber",
+        "vivir"
+      ],
+      "explanation": "\"Comer\" is the infinitive for to eat.",
+      "keywords": [
+        "to-eat",
+        "infinitive",
+        "spanish-verbs"
+      ],
+      "source": "https://dictionary.cambridge.org/dictionary/spanish-english/comer"
+    },
+    {
+      "seedId": "0b313a47-5d42-5812-9c5e-31f7c8c78933",
+      "category": "languages",
+      "navigationKeyword1": "spanish",
+      "navigationKeyword2": "verbs",
+      "question": "Which form completes this line: \"Yo ___ de Madrid\" (I am from Madrid)?",
+      "correctAnswer": "soy",
+      "incorrectAnswers": [
+        "estoy",
+        "eres",
+        "somos"
+      ],
+      "explanation": "Origin uses \"ser\": \"yo soy de...\" means I am from.",
+      "keywords": [
+        "to-be",
+        "origin",
+        "spanish-verbs"
+      ],
+      "source": "https://dictionary.cambridge.org/dictionary/spanish-english/ser"
+    },
+    {
+      "seedId": "25169cf4-5394-568b-8e88-36b71035a9fd",
+      "category": "languages",
+      "navigationKeyword1": "spanish",
+      "navigationKeyword2": "verbs",
+      "question": "Which form is correct for \"nosotros\" with the verb \"beber\" in the present tense?",
+      "correctAnswer": "bebemos",
+      "incorrectAnswers": [
+        "beb\u00e9is",
+        "beben",
+        "bebo"
+      ],
+      "explanation": "Regular -er verbs take \"-emos\" for \"we\" in the present tense.",
+      "keywords": [
+        "present-tense",
+        "conjugation",
+        "spanish-verbs"
+      ],
+      "source": "https://www.spanishdict.com/guide/spanish-present-tense-forms"
+    },
+    {
+      "seedId": "7837d425-87ee-5f6d-a5ed-2d359fa5e767",
+      "category": "languages",
+      "navigationKeyword1": "spanish",
+      "navigationKeyword2": "verbs",
+      "question": "Which infinitive means \"to want\"?",
+      "correctAnswer": "querer",
+      "incorrectAnswers": [
+        "poder",
+        "deber",
+        "saber"
+      ],
+      "explanation": "\"Querer\" is the infinitive that commonly expresses wanting.",
+      "keywords": [
+        "to-want",
+        "infinitive",
+        "spanish-verbs"
+      ],
+      "source": "https://www.collinsdictionary.com/dictionary/spanish-english/querer"
+    }
+  ]
+}

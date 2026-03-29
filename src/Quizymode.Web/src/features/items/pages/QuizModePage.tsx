@@ -735,7 +735,11 @@ const QuizModePage = () => {
                 <span className="text-sm font-medium text-gray-700">Rating</span>
                 <div className="flex items-center gap-1">
                   {[1, 2, 3, 4, 5].map((star) => (
-                    <span key={star} className="p-0.5">
+                    <span
+                      key={star}
+                      className="p-0.5"
+                      title={!isAuthenticated ? "Sign in to rate this collection." : undefined}
+                    >
                       {ratingData.averageStars != null && star <= Math.round(ratingData.averageStars) ? (
                         <StarIconSolid className="h-4 w-4 text-amber-500" />
                       ) : (

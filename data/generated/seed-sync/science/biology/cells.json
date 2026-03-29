@@ -1,0 +1,235 @@
+{
+  "schemaVersion": 1,
+  "seedSet": "core-public-items",
+  "deltaPreviewLimit": 200,
+  "items": [
+    {
+      "seedId": "298b7c8d-9c53-4235-8d77-a2b3dc93b666",
+      "category": "science",
+      "navigationKeyword1": "biology",
+      "navigationKeyword2": "cells",
+      "question": "What is active transport?",
+      "correctAnswer": "Moving substances against their concentration gradient using energy",
+      "incorrectAnswers": [
+        "Always passive diffusion",
+        "Random leakage only",
+        "Only happens in dead cells"
+      ],
+      "explanation": "Pumps like Na/K-ATPase perform active transport.",
+      "keywords": [
+        "active-transport",
+        "pumps"
+      ],
+      "source": "https://openstax.org/books/biology-2e/pages/5-3-active-transport"
+    },
+    {
+      "seedId": "243545ec-e05d-42b5-9541-f01fd9614027",
+      "category": "science",
+      "navigationKeyword1": "biology",
+      "navigationKeyword2": "cells",
+      "question": "What is cytokinesis?",
+      "correctAnswer": "Division of the cytoplasm after nuclear division",
+      "incorrectAnswers": [
+        "DNA replication",
+        "Crossing over",
+        "Translation"
+      ],
+      "explanation": "Cytokinesis completes cell division into two cells.",
+      "keywords": [
+        "cytokinesis",
+        "cell-division"
+      ],
+      "source": "https://openstax.org/books/biology-2e/pages/11-2-the-cell-cycle"
+    },
+    {
+      "seedId": "f5da847d-c9eb-4dfd-8c74-e58efe125682",
+      "category": "science",
+      "navigationKeyword1": "biology",
+      "navigationKeyword2": "cells",
+      "question": "What is osmosis?",
+      "correctAnswer": "Water diffusion across a selectively permeable membrane",
+      "incorrectAnswers": [
+        "Active transport of sugar",
+        "Protein folding in ER",
+        "DNA recombination"
+      ],
+      "explanation": "Water moves toward higher solute concentration across membranes.",
+      "keywords": [
+        "osmosis",
+        "diffusion"
+      ],
+      "source": "https://openstax.org/books/biology-2e/pages/5-2-passive-transport"
+    },
+    {
+      "seedId": "0646cc30-5a23-461f-ba56-93819ac2342c",
+      "category": "science",
+      "navigationKeyword1": "biology",
+      "navigationKeyword2": "cells",
+      "question": "What is photosynthesis\u2019s primary sugar product (common teaching focus)?",
+      "correctAnswer": "Glucose (and other carbohydrates)",
+      "incorrectAnswers": [
+        "Amino acids only",
+        "DNA nucleotides",
+        "Ozone"
+      ],
+      "explanation": "Light energy converts CO2 and water into sugars and oxygen.",
+      "keywords": [
+        "photosynthesis",
+        "chloroplast"
+      ],
+      "source": "https://openstax.org/books/biology-2e/pages/8-1-overview-of-photosynthesis"
+    },
+    {
+      "seedId": "bf7330fc-dcb0-41d2-8cca-b07d8e44698f",
+      "category": "science",
+      "navigationKeyword1": "biology",
+      "navigationKeyword2": "cells",
+      "question": "What is the basic unit of life in many biology courses?",
+      "correctAnswer": "The cell",
+      "incorrectAnswers": [
+        "The atom",
+        "The tissue",
+        "The organ system"
+      ],
+      "explanation": "Cells are the smallest units performing life processes in organisms.",
+      "keywords": [
+        "cell-theory",
+        "cells"
+      ],
+      "source": "https://openstax.org/books/biology-2e/pages/3-1-the-study-of-cells"
+    },
+    {
+      "seedId": "04972583-48b1-45db-921c-71d894238332",
+      "category": "science",
+      "navigationKeyword1": "biology",
+      "navigationKeyword2": "cells",
+      "question": "What is the main role of ribosomes?",
+      "correctAnswer": "Protein synthesis",
+      "incorrectAnswers": [
+        "Lipid digestion only",
+        "ATP synthesis only",
+        "DNA replication only"
+      ],
+      "explanation": "Ribosomes translate mRNA into polypeptides.",
+      "keywords": [
+        "ribosomes",
+        "translation"
+      ],
+      "source": "https://www.nature.com/scitable/topicpage/ribosomes-14122259/"
+    },
+    {
+      "seedId": "31f0aed8-5886-4845-9651-93ebc40a020c",
+      "category": "science",
+      "navigationKeyword1": "biology",
+      "navigationKeyword2": "cells",
+      "question": "What is the plasma membrane mainly described as?",
+      "correctAnswer": "A phospholipid bilayer with embedded proteins",
+      "incorrectAnswers": [
+        "A solid wall of cellulose in animals",
+        "A single layer of DNA",
+        "A rigid metal sheet"
+      ],
+      "explanation": "The fluid mosaic model describes membrane structure.",
+      "keywords": [
+        "membrane",
+        "phospholipids"
+      ],
+      "source": "https://openstax.org/books/biology-2e/pages/5-1-components-and-structure"
+    },
+    {
+      "seedId": "6baff1bc-3651-4f30-b185-fc9f4bd1e1e2",
+      "category": "science",
+      "navigationKeyword1": "biology",
+      "navigationKeyword2": "cells",
+      "question": "What is the rough endoplasmic reticulum studded with?",
+      "correctAnswer": "Ribosomes",
+      "incorrectAnswers": [
+        "Lysosomes",
+        "Chromosomes",
+        "Cilia"
+      ],
+      "explanation": "RER makes many proteins destined for secretion or membranes.",
+      "keywords": [
+        "rer",
+        "ribosomes"
+      ],
+      "source": "https://openstax.org/books/biology-2e/pages/4-2-eukaryotic-cells"
+    },
+    {
+      "seedId": "f979df37-e478-4c86-b455-c4893a44d7d6",
+      "category": "science",
+      "navigationKeyword1": "biology",
+      "navigationKeyword2": "cells",
+      "question": "What membrane-bound organelle is often called the \u2018powerhouse\u2019 of the cell?",
+      "correctAnswer": "Mitochondrion",
+      "incorrectAnswers": [
+        "Ribosome",
+        "Golgi apparatus",
+        "Centriole"
+      ],
+      "explanation": "Mitochondria produce ATP through cellular respiration.",
+      "keywords": [
+        "mitochondria",
+        "atp"
+      ],
+      "source": "https://www.nature.com/scitable/topicpage/mitochondria-14053528/"
+    },
+    {
+      "seedId": "0f76651e-f5e2-41ff-813b-4debae6353dc",
+      "category": "science",
+      "navigationKeyword1": "biology",
+      "navigationKeyword2": "cells",
+      "question": "What organelle carries out photosynthesis in plant cells?",
+      "correctAnswer": "Chloroplast",
+      "incorrectAnswers": [
+        "Mitochondrion",
+        "Nucleolus",
+        "Centrosome"
+      ],
+      "explanation": "Chloroplasts contain chlorophyll and thylakoid membranes.",
+      "keywords": [
+        "chloroplast",
+        "plants"
+      ],
+      "source": "https://openstax.org/books/biology-2e/pages/4-2-eukaryotic-cells"
+    },
+    {
+      "seedId": "514539e0-fcb1-474b-8ab4-c034e47a02f1",
+      "category": "science",
+      "navigationKeyword1": "biology",
+      "navigationKeyword2": "cells",
+      "question": "What organelle contains DNA in eukaryotic cells besides mitochondria?",
+      "correctAnswer": "Nucleus",
+      "incorrectAnswers": [
+        "Lysosome",
+        "Peroxisome",
+        "Vacuole"
+      ],
+      "explanation": "The nucleus houses chromosomes and controls gene expression.",
+      "keywords": [
+        "nucleus",
+        "dna"
+      ],
+      "source": "https://openstax.org/books/biology-2e/pages/4-2-eukaryotic-cells"
+    },
+    {
+      "seedId": "7a503447-38ed-4854-b3ce-93c49d2bb713",
+      "category": "science",
+      "navigationKeyword1": "biology",
+      "navigationKeyword2": "cells",
+      "question": "What phase of mitosis aligns chromosomes at the metaphase plate?",
+      "correctAnswer": "Metaphase",
+      "incorrectAnswers": [
+        "Prophase",
+        "Anaphase",
+        "Telophase"
+      ],
+      "explanation": "Chromosomes line up centrally before sister chromatid separation.",
+      "keywords": [
+        "mitosis",
+        "metaphase"
+      ],
+      "source": "https://openstax.org/books/biology-2e/pages/11-2-the-cell-cycle"
+    }
+  ]
+}

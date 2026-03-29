@@ -1,0 +1,121 @@
+{
+  "schemaVersion": 1,
+  "seedSet": "core-public-items",
+  "deltaPreviewLimit": 200,
+  "items": [
+    {
+      "seedId": "8e1e8679-3b95-4de8-9929-4884e80d8b24",
+      "category": "business",
+      "navigationKeyword1": "project-mgmt",
+      "navigationKeyword2": "stakeholders",
+      "question": "In a RACI chart, what does \u2018A\u2019 (Accountable) mean?",
+      "correctAnswer": "The person ultimately answerable for correct completion (often one role).",
+      "incorrectAnswers": [
+        "Does all the work alone.",
+        "Must be consulted on every email.",
+        "Only observes."
+      ],
+      "explanation": "Accountable differs from responsible (doers).",
+      "keywords": [
+        "raci",
+        "stakeholders"
+      ],
+      "source": "https://www.pmi.org/learning/library/raci-matrix-7122"
+    },
+    {
+      "seedId": "fee5908f-cd47-4021-96b8-d0a3310e1f83",
+      "category": "business",
+      "navigationKeyword1": "project-mgmt",
+      "navigationKeyword2": "stakeholders",
+      "question": "What is a key skill when stakeholders conflict?",
+      "correctAnswer": "Facilitate tradeoffs with transparent criteria and escalate when decisions exceed team authority.",
+      "incorrectAnswers": [
+        "Pick favorites secretly.",
+        "Ignore the conflict.",
+        "Promise everything to everyone."
+      ],
+      "explanation": "Conflict resolution protects scope and trust.",
+      "keywords": [
+        "conflict",
+        "stakeholders"
+      ],
+      "source": "https://www.pmi.org/learning/library/conflict-management-7127"
+    },
+    {
+      "seedId": "619c8006-3a9e-4a9a-915d-a7790f931488",
+      "category": "business",
+      "navigationKeyword1": "project-mgmt",
+      "navigationKeyword2": "stakeholders",
+      "question": "What is a power/interest grid used for?",
+      "correctAnswer": "Tailor engagement: high power/high interest stakeholders need different treatment than low/low.",
+      "incorrectAnswers": [
+        "Set salaries.",
+        "Choose office plants.",
+        "Write code."
+      ],
+      "explanation": "Segmentation improves communication efficiency.",
+      "keywords": [
+        "power-interest-grid",
+        "stakeholders"
+      ],
+      "source": "https://www.pmi.org/learning/library/stakeholder-engagement-7124"
+    },
+    {
+      "seedId": "e82b86cf-131e-4c48-83da-8fbaefc77d3e",
+      "category": "business",
+      "navigationKeyword1": "project-mgmt",
+      "navigationKeyword2": "stakeholders",
+      "question": "What is a project sponsor\u2019s typical role?",
+      "correctAnswer": "Champion the project, secure resources, and resolve escalations outside the team\u2019s authority.",
+      "incorrectAnswers": [
+        "Write every line of code.",
+        "Replace the product owner always.",
+        "Avoid accountability."
+      ],
+      "explanation": "Sponsors unlock organizational blockers.",
+      "keywords": [
+        "sponsor",
+        "governance"
+      ],
+      "source": "https://www.pmi.org/learning/library/project-sponsor-7125"
+    },
+    {
+      "seedId": "a8595159-1175-4340-9ee1-838f8dd1ac59",
+      "category": "business",
+      "navigationKeyword1": "project-mgmt",
+      "navigationKeyword2": "stakeholders",
+      "question": "What is stakeholder analysis used for?",
+      "correctAnswer": "Identify who is impacted or influential and tailor engagement.",
+      "incorrectAnswers": [
+        "Replace communication entirely.",
+        "Eliminate sponsors.",
+        "Hide project status."
+      ],
+      "explanation": "Engagement plans reduce resistance.",
+      "keywords": [
+        "stakeholder-analysis",
+        "communication"
+      ],
+      "source": "https://www.pmi.org/learning/library/stakeholder-analysis-7123"
+    },
+    {
+      "seedId": "8ef71078-be22-49a9-9cb2-c3c08190a183",
+      "category": "business",
+      "navigationKeyword1": "project-mgmt",
+      "navigationKeyword2": "stakeholders",
+      "question": "Why create a communications plan?",
+      "correctAnswer": "Define who needs what information, when, and through which channel.",
+      "incorrectAnswers": [
+        "To send every detail to everyone daily.",
+        "To forbid updates.",
+        "To replace meetings with silence."
+      ],
+      "explanation": "Good comms reduce rework and rumors.",
+      "keywords": [
+        "communications-plan",
+        "stakeholders"
+      ],
+      "source": "https://www.pmi.org/learning/library/project-communications-management-7126"
+    }
+  ]
+}

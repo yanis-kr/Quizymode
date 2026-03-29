@@ -1,0 +1,97 @@
+[
+  {
+    "seedId": "fdf0d78c-11a7-4e34-9ef5-c796f814f46a",
+    "category": "trivia",
+    "navigationKeyword1": "general",
+    "navigationKeyword2": "mixed",
+    "question": "What color is the \"black box\" recorder on most commercial airplanes?",
+    "correctAnswer": "Bright orange",
+    "incorrectAnswers": [
+      "Black",
+      "Silver",
+      "Yellow"
+    ],
+    "explanation": "Flight recorders are painted bright orange so they are easier to locate after an accident.",
+    "keywords": [
+      "aviation",
+      "surprising-facts"
+    ],
+    "source": "https://skybrary.aero/sites/default/files/bookshelf/3679.pdf"
+  },
+  {
+    "seedId": "4d7a4c4f-c4a4-48c2-8557-3ef47d5978e4",
+    "category": "trivia",
+    "navigationKeyword1": "general",
+    "navigationKeyword2": "mixed",
+    "question": "Which animal is famous for having fingerprints very similar to humans'?",
+    "correctAnswer": "Koalas",
+    "incorrectAnswers": [
+      "Chimpanzees",
+      "Dogs",
+      "Otters"
+    ],
+    "explanation": "Koala fingerprints have ridge patterns so similar to human fingerprints that scientists describe them as remarkably human-like.",
+    "keywords": [
+      "animals",
+      "weird"
+    ],
+    "source": "https://www.mcgill.ca/oss/article/did-you-know/koalas-have-fingerprints-just-humans"
+  },
+  {
+    "seedId": "b603bd31-44db-4341-9a6e-5c50791d46d6",
+    "category": "trivia",
+    "navigationKeyword1": "general",
+    "navigationKeyword2": "mixed",
+    "question": "Which planet has a day longer than its year?",
+    "correctAnswer": "Venus",
+    "incorrectAnswers": [
+      "Mars",
+      "Mercury",
+      "Neptune"
+    ],
+    "explanation": "Venus rotates extremely slowly, so one full spin takes longer than one trip around the Sun.",
+    "keywords": [
+      "space",
+      "planets"
+    ],
+    "source": "https://science.nasa.gov/venus/venus-facts/"
+  },
+  {
+    "seedId": "6659d909-8b63-476f-a47d-ee43a931d73f",
+    "category": "trivia",
+    "navigationKeyword1": "general",
+    "navigationKeyword2": "mixed",
+    "question": "What is the national animal of Scotland?",
+    "correctAnswer": "The unicorn",
+    "incorrectAnswers": [
+      "The stag",
+      "The lion",
+      "The golden eagle"
+    ],
+    "explanation": "Scotland's national animal is the unicorn, chosen for its symbolism in Celtic mythology and heraldry.",
+    "keywords": [
+      "countries",
+      "symbols"
+    ],
+    "source": "https://www.scotland.org/inspiration/what-is-the-national-animal-of-scotland"
+  },
+  {
+    "seedId": "d626da85-d629-4ae2-a9fd-9fccb6d09db0",
+    "category": "trivia",
+    "navigationKeyword1": "general",
+    "navigationKeyword2": "mixed",
+    "question": "What everyday food is famous for having an exceptionally long shelf life when stored properly?",
+    "correctAnswer": "Honey",
+    "incorrectAnswers": [
+      "Brown rice",
+      "Milk chocolate",
+      "Sea salt crackers"
+    ],
+    "explanation": "Honey's low moisture and acidic chemistry make it famously long-lasting when stored properly, even though storage conditions can still affect quality.",
+    "keywords": [
+      "food",
+      "fun-facts"
+    ],
+    "source": "https://www.britannica.com/one-good-fact/what-food-never-goes-bad"
+  }
+]

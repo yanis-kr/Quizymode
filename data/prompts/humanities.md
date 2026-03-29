@@ -13,7 +13,7 @@ Task:
 
 Create or continue seed files for the `humanities` category in:
 
-- `data/bulk-seed/humanities`
+- `data/seed-source/items/humanities`
 
 Filename format:
 

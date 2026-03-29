@@ -1,0 +1,127 @@
+{
+  "schemaVersion": 1,
+  "seedSet": "core-public-items",
+  "deltaPreviewLimit": 200,
+  "items": [
+    {
+      "seedId": "f97ef742-a553-5eca-8bfd-47658386f5c3",
+      "category": "languages",
+      "navigationKeyword1": "french",
+      "navigationKeyword2": "conversation",
+      "question": "Which informal question asks \"How are you?\" to someone you call \"tu\"?",
+      "correctAnswer": "Comment \u00e7a va ?",
+      "incorrectAnswers": [
+        "Comment vous appelez-vous ?",
+        "D'o\u00f9 venez-vous ?",
+        "Quel \u00e2ge avez-vous ?"
+      ],
+      "explanation": "\"Comment \u00e7a va ?\" is a very common informal check-in among friends.",
+      "keywords": [
+        "how-are-you",
+        "greetings",
+        "french-conversation"
+      ],
+      "source": "https://www.collinsdictionary.com/dictionary/french-english/comment"
+    },
+    {
+      "seedId": "0e291354-43a9-5c67-9faf-a4de19c6d779",
+      "category": "languages",
+      "navigationKeyword1": "french",
+      "navigationKeyword2": "conversation",
+      "question": "Which phrase is a common daytime greeting?",
+      "correctAnswer": "Bonjour.",
+      "incorrectAnswers": [
+        "Bonne nuit.",
+        "\u00c0 bient\u00f4t.",
+        "Enchant\u00e9."
+      ],
+      "explanation": "\"Bonjour\" is the usual general greeting during the day.",
+      "keywords": [
+        "hello",
+        "greetings",
+        "french-conversation"
+      ],
+      "source": "https://dictionary.cambridge.org/dictionary/french-english/bonjour"
+    },
+    {
+      "seedId": "357ae37b-d6f7-50cd-95d8-229cf9a6cc2b",
+      "category": "languages",
+      "navigationKeyword1": "french",
+      "navigationKeyword2": "conversation",
+      "question": "Which phrase is a simple apology after a small mistake?",
+      "correctAnswer": "Pardon.",
+      "incorrectAnswers": [
+        "De rien.",
+        "Bien s\u00fbr.",
+        "Toutes mes f\u00e9licitations."
+      ],
+      "explanation": "\"Pardon\" is a quick everyday apology for small mistakes.",
+      "keywords": [
+        "sorry",
+        "apology",
+        "french-conversation"
+      ],
+      "source": "https://www.collinsdictionary.com/dictionary/french-english/pardon"
+    },
+    {
+      "seedId": "b7fbd051-f786-5a6d-b1dd-c0778f3eafb6",
+      "category": "languages",
+      "navigationKeyword1": "french",
+      "navigationKeyword2": "conversation",
+      "question": "Which phrase politely asks someone to repeat what they said?",
+      "correctAnswer": "Pouvez-vous r\u00e9p\u00e9ter, s'il vous pla\u00eet ?",
+      "incorrectAnswers": [
+        "Je n'aime pas \u00e7a.",
+        "Je suis fatigu\u00e9.",
+        "Il fait tr\u00e8s froid."
+      ],
+      "explanation": "\"R\u00e9p\u00e9ter\" means to repeat; adding \"s'il vous pla\u00eet\" keeps the request polite.",
+      "keywords": [
+        "repeat",
+        "clarification",
+        "french-conversation"
+      ],
+      "source": "https://dictionary.cambridge.org/dictionary/french-english/r%C3%A9p%C3%A9ter"
+    },
+    {
+      "seedId": "4b436954-a416-5982-86fa-af9f8edb5b22",
+      "category": "languages",
+      "navigationKeyword1": "french",
+      "navigationKeyword2": "conversation",
+      "question": "Which phrase politely says \"Excuse me\" before you ask a stranger for help?",
+      "correctAnswer": "Excusez-moi.",
+      "incorrectAnswers": [
+        "F\u00e9licitations.",
+        "Bon app\u00e9tit.",
+        "\u00c0 demain."
+      ],
+      "explanation": "\"Excusez-moi\" is a polite way to get attention before a question.",
+      "keywords": [
+        "excuse-me",
+        "politeness",
+        "french-conversation"
+      ],
+      "source": "https://dictionary.cambridge.org/dictionary/french-english/excusez-moi"
+    },
+    {
+      "seedId": "d59e46cf-b0f9-5f5c-8f12-80b79fef2a03",
+      "category": "languages",
+      "navigationKeyword1": "french",
+      "navigationKeyword2": "conversation",
+      "question": "Which reply is a simple way to say \"Nice to meet you\" in a first meeting?",
+      "correctAnswer": "Enchant\u00e9.",
+      "incorrectAnswers": [
+        "\u00c0 tout \u00e0 l'heure.",
+        "Je suis d\u00e9sol\u00e9.",
+        "Je me d\u00e9p\u00eache."
+      ],
+      "explanation": "\"Enchant\u00e9\" (or \"Enchant\u00e9e\" for feminine speakers) is a common polite phrase after introductions.",
+      "keywords": [
+        "nice-to-meet-you",
+        "introductions",
+        "french-conversation"
+      ],
+      "source": "https://www.collinsdictionary.com/dictionary/french-english/enchant%C3%A9"
+    }
+  ]
+}

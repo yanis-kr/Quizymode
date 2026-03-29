@@ -8,7 +8,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 BUNDLE = ROOT / "scripts" / "trivia_remaining_bundle.json"
-OUT = ROOT / "data" / "bulk-seed" / "trivia"
+OUT = ROOT / "data" / "seed-source" / "items" / "trivia"
 
 
 def main() -> None:

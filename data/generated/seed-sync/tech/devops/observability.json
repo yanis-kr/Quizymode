@@ -1,0 +1,121 @@
+{
+  "schemaVersion": 1,
+  "seedSet": "core-public-items",
+  "deltaPreviewLimit": 200,
+  "items": [
+    {
+      "seedId": "284d617b-b111-50cf-8f44-b5ebd699f75e",
+      "category": "tech",
+      "navigationKeyword1": "devops",
+      "navigationKeyword2": "observability",
+      "question": "In distributed tracing, what does a span represent?",
+      "correctAnswer": "A single operation with timing inside a trace",
+      "incorrectAnswers": [
+        "The entire cluster configuration",
+        "A DNS A record only",
+        "A container image layer"
+      ],
+      "explanation": "Traces are trees of spans showing parent-child work across services.",
+      "keywords": [
+        "observability",
+        "tracing"
+      ],
+      "source": "https://opentelemetry.io/docs/concepts/signals/traces/"
+    },
+    {
+      "seedId": "bfd62c37-6a71-5dca-bc3a-25187579bc95",
+      "category": "tech",
+      "navigationKeyword1": "devops",
+      "navigationKeyword2": "observability",
+      "question": "What does OpenTelemetry aim to provide for observability?",
+      "correctAnswer": "Vendor-neutral APIs and SDKs to emit telemetry",
+      "incorrectAnswers": [
+        "A single cloud-only database for logs",
+        "A replacement for TCP/IP",
+        "A container runtime"
+      ],
+      "explanation": "OpenTelemetry standardizes how applications produce traces, metrics, and logs.",
+      "keywords": [
+        "observability",
+        "opentelemetry"
+      ],
+      "source": "https://opentelemetry.io/docs/what-is-opentelemetry/"
+    },
+    {
+      "seedId": "d75dd2bb-de30-55a9-9188-04d04fcba3af",
+      "category": "tech",
+      "navigationKeyword1": "devops",
+      "navigationKeyword2": "observability",
+      "question": "What is a Prometheus metric type that only goes up or resets to zero?",
+      "correctAnswer": "A counter",
+      "incorrectAnswers": [
+        "A gauge",
+        "A histogram bucket label only",
+        "A log line"
+      ],
+      "explanation": "Counters measure totals like requests served; gauges can go up and down.",
+      "keywords": [
+        "observability",
+        "metrics"
+      ],
+      "source": "https://prometheus.io/docs/concepts/metric_types/"
+    },
+    {
+      "seedId": "9150d8ab-87b4-5dfc-a01b-31e26711e142",
+      "category": "tech",
+      "navigationKeyword1": "devops",
+      "navigationKeyword2": "observability",
+      "question": "What is high-cardinality data in metrics?",
+      "correctAnswer": "Labels or dimensions with very many distinct values",
+      "incorrectAnswers": [
+        "Metrics stored only on weekends",
+        "Data that never changes",
+        "CPU usage above 100 percent"
+      ],
+      "explanation": "High cardinality can explode time series cost and query load if misused.",
+      "keywords": [
+        "observability",
+        "cardinality"
+      ],
+      "source": "https://prometheus.io/docs/practices/naming/#labels"
+    },
+    {
+      "seedId": "5e13ed97-1bf3-54d1-9f8d-24ade0116d0b",
+      "category": "tech",
+      "navigationKeyword1": "devops",
+      "navigationKeyword2": "observability",
+      "question": "What three signal types are commonly grouped as observability pillars alongside logs?",
+      "correctAnswer": "Metrics and traces",
+      "incorrectAnswers": [
+        "Packets and frames",
+        "Commits and branches",
+        "Pixels and shaders"
+      ],
+      "explanation": "Metrics summarize behavior over time; traces follow requests across services; logs capture discrete events.",
+      "keywords": [
+        "observability",
+        "signals"
+      ],
+      "source": "https://opentelemetry.io/docs/concepts/signals/"
+    },
+    {
+      "seedId": "d4906d55-5cf1-53c5-b7ae-9b3a0eae9343",
+      "category": "tech",
+      "navigationKeyword1": "devops",
+      "navigationKeyword2": "observability",
+      "question": "Why use structured logging instead of only free-form strings?",
+      "correctAnswer": "To make fields queryable and machine-parseable at scale",
+      "incorrectAnswers": [
+        "To remove the need for timestamps",
+        "To guarantee smaller binaries",
+        "To disable log levels"
+      ],
+      "explanation": "Key-value or JSON logs enable filtering and correlation in log systems.",
+      "keywords": [
+        "observability",
+        "logging"
+      ],
+      "source": "https://www.elastic.co/guide/en/ecs/current/ecs-base.html"
+    }
+  ]
+}

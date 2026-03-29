@@ -1,0 +1,727 @@
+{
+  "schemaVersion": 1,
+  "seedSet": "core-public-items",
+  "deltaPreviewLimit": 200,
+  "items": [
+    {
+      "seedId": "87a8466b-8ac1-5f31-842d-aac49f352552",
+      "category": "business",
+      "navigationKeyword1": "management",
+      "navigationKeyword2": "change",
+      "question": "In common change frameworks, what does \u201creinforcing\u201d typically aim to do?",
+      "correctAnswer": "Make the new way of working stick by embedding it into processes, measures, or continued support.",
+      "incorrectAnswers": [
+        "Stop all feedback so the new behavior never needs adjustment",
+        "Remove accountability immediately after rollout",
+        "Ensure the old process returns as soon as momentum fades"
+      ],
+      "explanation": "Reinforcing is about sustaining change after rollout so the organization continues using the new behaviors.",
+      "keywords": [
+        "reinforcing",
+        "sustainability",
+        "process-embedding"
+      ],
+      "source": "https://www.mindtools.com/"
+    },
+    {
+      "seedId": "81fa7135-9ada-559f-a9cd-2c411434469e",
+      "category": "business",
+      "navigationKeyword1": "management",
+      "navigationKeyword2": "change",
+      "question": "What does a resistance to change problem usually reflect?",
+      "correctAnswer": "Uncertainty, loss fears, or misalignment between how the change will work and how people expect it.",
+      "incorrectAnswers": [
+        "Only a lack of available office chairs",
+        "A guarantee that the change will fail in every case",
+        "A sign that the team never learns or improves"
+      ],
+      "explanation": "Resistance is often about perceived risk or unclear impact, so good change management reduces uncertainty and explains support.",
+      "keywords": [
+        "resistance-to-change",
+        "uncertainty",
+        "adoption"
+      ],
+      "source": "https://www.mindtools.com/"
+    },
+    {
+      "seedId": "d1552c7e-5d30-5def-96a5-27bd08bb4d34",
+      "category": "business",
+      "navigationKeyword1": "management",
+      "navigationKeyword2": "change",
+      "question": "What does training during a change mainly help with?",
+      "correctAnswer": "Building competence in the new processes or tools so people can perform using the change.",
+      "incorrectAnswers": [
+        "Making employees forget the old method immediately",
+        "Ensuring there is no need for process updates afterward",
+        "Avoiding the need to define success measures"
+      ],
+      "explanation": "Training translates the change into practical skills and reduces operational mistakes during the transition.",
+      "keywords": [
+        "training",
+        "competence",
+        "transition"
+      ],
+      "source": "https://www.investopedia.com/"
+    },
+    {
+      "seedId": "8f76f608-4e35-5a9d-95cc-6198d3f518b5",
+      "category": "business",
+      "navigationKeyword1": "management",
+      "navigationKeyword2": "change",
+      "question": "What is a practical way to reduce risk when rolling out change?",
+      "correctAnswer": "Test or pilot the change with a limited group, then adjust before full rollout.",
+      "incorrectAnswers": [
+        "Roll out everything at once with no learning phase",
+        "Avoid any feedback so people don\u2019t complain",
+        "Skip training until employees ask for help"
+      ],
+      "explanation": "Pilots reduce uncertainty by generating evidence about what works and what needs adjustment.",
+      "keywords": [
+        "pilot",
+        "risk-mitigation",
+        "rollout"
+      ],
+      "source": "https://hbr.org/"
+    },
+    {
+      "seedId": "157e57d3-7303-59d4-8b0a-d03dcced9fc4",
+      "category": "business",
+      "navigationKeyword1": "management",
+      "navigationKeyword2": "change",
+      "question": "What is the main goal of change management?",
+      "correctAnswer": "Help people adopt a change successfully with planning, communication, and support.",
+      "incorrectAnswers": [
+        "Ensure every employee must agree instantly with no communication",
+        "Replace all training with a single announcement email",
+        "Guarantee that nothing disruptive will ever happen during the change"
+      ],
+      "explanation": "Change management focuses on the people side of change: preparing, communicating, and building adoption.",
+      "keywords": [
+        "change-management",
+        "adoption",
+        "communication"
+      ],
+      "source": "https://hbr.org/"
+    },
+    {
+      "seedId": "1362ea19-1a8b-57c7-b213-92186376e5a6",
+      "category": "business",
+      "navigationKeyword1": "management",
+      "navigationKeyword2": "change",
+      "question": "Why is communication important during an organizational change?",
+      "correctAnswer": "It clarifies what is changing, why it matters, and how people will be affected so adoption is possible.",
+      "incorrectAnswers": [
+        "It replaces the need for planning so teams can act randomly",
+        "It\u2019s only needed after the change is already complete",
+        "It guarantees that every employee will agree with the change"
+      ],
+      "explanation": "Effective communication reduces confusion and helps align expectations, which supports smoother implementation.",
+      "keywords": [
+        "change-communication",
+        "clarity",
+        "alignment"
+      ],
+      "source": "https://hbr.org/"
+    },
+    {
+      "seedId": "43231af8-3934-56a7-bfd9-773aa974a535",
+      "category": "business",
+      "navigationKeyword1": "management",
+      "navigationKeyword2": "culture",
+      "question": "How are values and norms related in many organizations?",
+      "correctAnswer": "Values are guiding beliefs; norms are expected behaviors that follow from those values.",
+      "incorrectAnswers": [
+        "Values are job descriptions; norms are budgeting rules",
+        "Norms are always secret while values are always public",
+        "They are unrelated concepts used for different accounting categories"
+      ],
+      "explanation": "Values shape what matters, and norms shape how people typically act on that\u2014both together form culture.",
+      "keywords": [
+        "values",
+        "norms",
+        "behavior"
+      ],
+      "source": "https://www.mindtools.com/"
+    },
+    {
+      "seedId": "d8a66b39-1516-503a-aca8-f9dc1968fde7",
+      "category": "business",
+      "navigationKeyword1": "management",
+      "navigationKeyword2": "culture",
+      "question": "How can culture affect day-to-day performance?",
+      "correctAnswer": "Culture influences communication, risk-taking, and how problems get reported and solved.",
+      "incorrectAnswers": [
+        "Culture affects performance only through office layout so people cannot collaborate effectively",
+        "Culture can never change decisions because it is always random",
+        "Culture changes performance only by changing tax rates"
+      ],
+      "explanation": "Because culture shapes behavior and decisions, it can improve or harm productivity, quality, and retention.",
+      "keywords": [
+        "performance",
+        "behavior",
+        "communication"
+      ],
+      "source": "https://www.mindtools.com/"
+    },
+    {
+      "seedId": "8c7420a6-ed55-59fb-8e4e-6bcf04ff6e61",
+      "category": "business",
+      "navigationKeyword1": "management",
+      "navigationKeyword2": "culture",
+      "question": "What does organizational culture generally describe?",
+      "correctAnswer": "Shared values, beliefs, and norms that influence how people behave and make decisions at work.",
+      "incorrectAnswers": [
+        "Only the company\u2019s logo and branding colors",
+        "Only salaries and job titles across departments",
+        "A fixed set of rules that never changes over time"
+      ],
+      "explanation": "Culture is the unwritten social system: what the organization rewards, tolerates, and expects.",
+      "keywords": [
+        "organizational-culture",
+        "values",
+        "norms"
+      ],
+      "source": "https://hbr.org/"
+    },
+    {
+      "seedId": "fdfd44ff-c260-52b5-a1e3-8e0ad3ca84eb",
+      "category": "business",
+      "navigationKeyword1": "management",
+      "navigationKeyword2": "culture",
+      "question": "What is a subculture in an organization?",
+      "correctAnswer": "A smaller group\u2019s shared norms and practices that differ somewhat from the organization-wide culture.",
+      "incorrectAnswers": [
+        "A legal requirement that applies to all employees equally",
+        "A department\u2019s org chart that never affects behavior",
+        "A mistake that occurs only when training is skipped once"
+      ],
+      "explanation": "Subcultures can form across teams or units because work types and incentives differ, even within the same company.",
+      "keywords": [
+        "subcultures",
+        "teams",
+        "norms"
+      ],
+      "source": "https://www.mindtools.com/"
+    },
+    {
+      "seedId": "eaaaa515-a644-51ff-a3e9-00ef558b24e8",
+      "category": "business",
+      "navigationKeyword1": "management",
+      "navigationKeyword2": "culture",
+      "question": "What is one practical approach to changing an organization\u2019s culture?",
+      "correctAnswer": "Align systems and daily practices (hiring, rewards, processes) with the desired behaviors and values.",
+      "incorrectAnswers": [
+        "Publish a new values poster and stop measuring behavior afterward",
+        "Avoid feedback so people do not become aware of inconsistencies",
+        "Rely on a slogan alone with no changes to processes"
+      ],
+      "explanation": "Sustainable culture change usually requires reinforcing mechanisms that make the desired behavior the easiest to follow.",
+      "keywords": [
+        "culture-change",
+        "systems-alignment",
+        "rewards"
+      ],
+      "source": "https://hbr.org/"
+    },
+    {
+      "seedId": "7cf33aa4-49f3-5d19-a8d9-2b3b488856b8",
+      "category": "business",
+      "navigationKeyword1": "management",
+      "navigationKeyword2": "culture",
+      "question": "What role do leaders usually play in shaping culture?",
+      "correctAnswer": "They reinforce culture through what they emphasize, reward, tolerate, and model in day-to-day decisions.",
+      "incorrectAnswers": [
+        "They shape culture only through hiring policies, with little day-to-day influence",
+        "They have no impact; culture is determined only by market demand",
+        "They can eliminate culture entirely by removing written procedures"
+      ],
+      "explanation": "Leaders influence culture by consistently modeling expectations and reinforcing what behaviors are rewarded or corrected.",
+      "keywords": [
+        "culture-shaping",
+        "leadership",
+        "reinforcement"
+      ],
+      "source": "https://hbr.org/"
+    },
+    {
+      "seedId": "0bc255ed-3619-582f-ad0f-5f002ef958ce",
+      "category": "business",
+      "navigationKeyword1": "management",
+      "navigationKeyword2": "decision-making",
+      "question": "In decision-making, what does \u201cbounded rationality\u201d suggest?",
+      "correctAnswer": "People make satisfactory decisions within limits of information and cognitive capacity, not perfect optimization.",
+      "incorrectAnswers": [
+        "People can always evaluate every option with perfect information",
+        "People never change their minds once they pick any option",
+        "All decisions ignore tradeoffs by definition"
+      ],
+      "explanation": "Bounded rationality highlights practical limits: we often use heuristics and search for good-enough choices.",
+      "keywords": [
+        "bounded-rationality",
+        "heuristics",
+        "limits"
+      ],
+      "source": "https://hbr.org/"
+    },
+    {
+      "seedId": "96a8ca62-1a50-5d07-9372-948f38c29947",
+      "category": "business",
+      "navigationKeyword1": "management",
+      "navigationKeyword2": "decision-making",
+      "question": "In organizations, why is it common to escalate certain decisions?",
+      "correctAnswer": "Because some decisions need higher authority when the impact, risk, or resources exceed local control.",
+      "incorrectAnswers": [
+        "Because escalation guarantees the decision will always be correct",
+        "Because local teams are never allowed to make choices",
+        "Because reporting is required even when there is no impact"
+      ],
+      "explanation": "Escalation aligns authority with decision impact, helping manage risk and ensure the right people decide.",
+      "keywords": [
+        "escalation",
+        "governance",
+        "risk-management"
+      ],
+      "source": "https://www.investopedia.com/"
+    },
+    {
+      "seedId": "513958f3-00da-5741-bd3e-7118d21406e2",
+      "category": "business",
+      "navigationKeyword1": "management",
+      "navigationKeyword2": "decision-making",
+      "question": "What does it generally mean to use decision criteria?",
+      "correctAnswer": "Set measurable or explicit factors you will judge options against before selecting.",
+      "incorrectAnswers": [
+        "Rely on random choice to reduce bias automatically",
+        "Judge options only after choosing based on which team prefers it most",
+        "Decide without any factors so all options look equally valid"
+      ],
+      "explanation": "Decision criteria help prevent inconsistent judgments and make tradeoffs explicit when comparing alternatives.",
+      "keywords": [
+        "decision-criteria",
+        "evaluation",
+        "consistency"
+      ],
+      "source": "https://hbr.org/"
+    },
+    {
+      "seedId": "506808f0-f673-5e52-bd3a-fc08645c8caf",
+      "category": "business",
+      "navigationKeyword1": "management",
+      "navigationKeyword2": "decision-making",
+      "question": "What is a common rational decision-making approach?",
+      "correctAnswer": "Define the problem, generate options, evaluate them, and choose the best alternative using criteria.",
+      "incorrectAnswers": [
+        "Pick the option that feels safest even without evidence",
+        "Wait until the outcome is guaranteed before deciding",
+        "Only decide after accounting closes at the end of the year"
+      ],
+      "explanation": "Rational models aim to structure decisions using clear criteria and systematic evaluation of alternatives.",
+      "keywords": [
+        "rational-decision-making",
+        "criteria",
+        "options"
+      ],
+      "source": "https://www.mindtools.com/"
+    },
+    {
+      "seedId": "4bdd7328-f591-5e41-adb8-3cf34363bbce",
+      "category": "business",
+      "navigationKeyword1": "management",
+      "navigationKeyword2": "decision-making",
+      "question": "What is a decision tree mainly used for?",
+      "correctAnswer": "Visualizing choices and possible outcomes to support decisions under uncertainty.",
+      "incorrectAnswers": [
+        "Rewriting company branding into a flow chart only",
+        "Tracking daily customer support tickets automatically",
+        "Replacing financial auditing requirements for every quarter"
+      ],
+      "explanation": "Decision trees map options and branching outcomes, helping compare expected values when uncertainty exists.",
+      "keywords": [
+        "decision-tree",
+        "uncertainty",
+        "expected-outcomes"
+      ],
+      "source": "https://www.mindtools.com/"
+    },
+    {
+      "seedId": "746b70bd-d907-551f-b27f-c8bbd8ce2005",
+      "category": "business",
+      "navigationKeyword1": "management",
+      "navigationKeyword2": "decision-making",
+      "question": "What is the purpose of a cost-benefit analysis?",
+      "correctAnswer": "Compare the expected benefits to the expected costs to decide whether an option is worthwhile.",
+      "incorrectAnswers": [
+        "Choose the option with the lowest cost regardless of benefits",
+        "Eliminate uncertainty by assuming every outcome happens exactly as planned",
+        "Replace accounting statements so no profit calculations are needed"
+      ],
+      "explanation": "Cost-benefit analysis is a way to structure tradeoffs by weighing expected advantages against expected drawbacks.",
+      "keywords": [
+        "cost-benefit-analysis",
+        "tradeoffs",
+        "expected-values"
+      ],
+      "source": "https://www.investopedia.com/"
+    },
+    {
+      "seedId": "7087d275-6059-5a70-9a89-5b971e9d7717",
+      "category": "business",
+      "navigationKeyword1": "management",
+      "navigationKeyword2": "leadership",
+      "question": "In leadership terms, what is emotional intelligence (EI) most associated with?",
+      "correctAnswer": "Recognizing and managing emotions in yourself and others to improve communication and decision-making.",
+      "incorrectAnswers": [
+        "Only performing better on technical tasks than peers",
+        "Never showing emotion in front of others",
+        "Making every decision without considering other people\u2019s reactions"
+      ],
+      "explanation": "EI is often framed as awareness and regulation of emotions that supports relationships and effective influence.",
+      "keywords": [
+        "emotional-intelligence",
+        "communication",
+        "leadership-skill"
+      ],
+      "source": "https://hbr.org/"
+    },
+    {
+      "seedId": "e14b369c-36a8-538b-9211-b587ac4a59cf",
+      "category": "business",
+      "navigationKeyword1": "management",
+      "navigationKeyword2": "leadership",
+      "question": "In most business contexts, what is the core difference between leadership and management?",
+      "correctAnswer": "Leadership focuses on direction and influence; management focuses on planning, organizing, and controlling to execute goals.",
+      "incorrectAnswers": [
+        "Leadership is only about budgets; management is only about inspiring people",
+        "Leadership is always automatic; management requires no coordination",
+        "They are identical terms used interchangeably in every organization"
+      ],
+      "explanation": "A common way to distinguish them is by purpose: leadership steers and motivates, while management structures and ensures execution.",
+      "keywords": [
+        "leadership",
+        "management",
+        "direction"
+      ],
+      "source": "https://www.mindtools.com/a4y7o2a/leadership-vs-management/"
+    },
+    {
+      "seedId": "1f366c73-fe79-52c3-b96c-ad1b1efebfb0",
+      "category": "business",
+      "navigationKeyword1": "management",
+      "navigationKeyword2": "leadership",
+      "question": "What does servant leadership primarily prioritize?",
+      "correctAnswer": "Serving others\u2019 needs to help people grow and perform, rather than leading for personal power.",
+      "incorrectAnswers": [
+        "Leading only to maximize status and authority",
+        "Avoiding responsibility by delegating all tasks to others",
+        "Using strict hierarchies as the only way to motivate teams"
+      ],
+      "explanation": "Servant leadership is oriented around enabling team members and focusing on their development and outcomes.",
+      "keywords": [
+        "servant-leadership",
+        "team-growth",
+        "people-first"
+      ],
+      "source": "https://www.mindtools.com/"
+    },
+    {
+      "seedId": "4129cbf6-0980-50ff-815d-470100e331c9",
+      "category": "business",
+      "navigationKeyword1": "management",
+      "navigationKeyword2": "leadership",
+      "question": "What does situational leadership emphasize?",
+      "correctAnswer": "Adjusting leadership style to the followers\u2019 readiness/competence for the task.",
+      "incorrectAnswers": [
+        "Using one leadership style regardless of team experience",
+        "Never changing approach once a project starts",
+        "Choosing style only based on organizational headcount"
+      ],
+      "explanation": "Situational leadership is about matching leadership behaviors to the needs of the task and the team\u2019s capability.",
+      "keywords": [
+        "situational-leadership",
+        "readiness",
+        "style-match"
+      ],
+      "source": "https://www.mindtools.com/"
+    },
+    {
+      "seedId": "73586248-6149-5824-9de8-12660ac7997f",
+      "category": "business",
+      "navigationKeyword1": "management",
+      "navigationKeyword2": "leadership",
+      "question": "What is a key idea behind transformational leadership?",
+      "correctAnswer": "Inspiring people by aligning goals and motivating them to exceed expectations.",
+      "incorrectAnswers": [
+        "Maximizing control by relying only on rules and punishments",
+        "Waiting for perfect conditions before setting any goals",
+        "Focusing only on short-term transactions with no development component"
+      ],
+      "explanation": "Transformational leadership emphasizes vision and motivation, often encouraging growth rather than only rewarding short-term performance.",
+      "keywords": [
+        "transformational-leadership",
+        "motivation",
+        "vision"
+      ],
+      "source": "https://hbr.org/"
+    },
+    {
+      "seedId": "c1d83b95-9708-58ea-a2a2-b238a02db3af",
+      "category": "business",
+      "navigationKeyword1": "management",
+      "navigationKeyword2": "leadership",
+      "question": "Which best describes a practical way leaders build trust?",
+      "correctAnswer": "Being consistent, transparent about decisions, and following through on commitments.",
+      "incorrectAnswers": [
+        "Changing plans frequently without explanation to keep people alert",
+        "Avoiding all feedback so no one can disagree",
+        "Making promises only when outcomes are certain"
+      ],
+      "explanation": "Trust is strengthened when people experience predictable behavior and reliable follow-through over time.",
+      "keywords": [
+        "trust",
+        "communication",
+        "accountability"
+      ],
+      "source": "https://hbr.org/"
+    },
+    {
+      "seedId": "448f396a-2d03-5bcb-a151-52e648277ef4",
+      "category": "business",
+      "navigationKeyword1": "management",
+      "navigationKeyword2": "operations",
+      "question": "In process improvement, what does a bottleneck generally mean?",
+      "correctAnswer": "The part of the process with the greatest constraint, limiting overall throughput.",
+      "incorrectAnswers": [
+        "The step that has the most documentation pages",
+        "The step with the highest employee salary",
+        "A step that never affects output because it happens in parallel"
+      ],
+      "explanation": "Bottlenecks control flow: improving other steps may not increase throughput until the constraint is addressed.",
+      "keywords": [
+        "bottleneck",
+        "throughput",
+        "constraints"
+      ],
+      "source": "https://www.mindtools.com/"
+    },
+    {
+      "seedId": "e0061053-2434-5bab-93af-01bef7be236b",
+      "category": "business",
+      "navigationKeyword1": "management",
+      "navigationKeyword2": "operations",
+      "question": "What does operations management primarily aim to do?",
+      "correctAnswer": "Plan, run, and improve the processes that produce and deliver goods or services.",
+      "incorrectAnswers": [
+        "Design brand slogans for marketing campaigns",
+        "Set long-term valuation assumptions for investors only",
+        "Decide employee social benefits without connecting to delivery"
+      ],
+      "explanation": "Operations management focuses on how work gets done: processes, capacity, quality, and delivery performance.",
+      "keywords": [
+        "operations-management",
+        "processes",
+        "delivery"
+      ],
+      "source": "https://www.investopedia.com/terms/o/operationsmanagement.asp"
+    },
+    {
+      "seedId": "0bbd9648-d17a-5903-8e37-b5017f9056f4",
+      "category": "business",
+      "navigationKeyword1": "management",
+      "navigationKeyword2": "operations",
+      "question": "What does standardization help with in operations?",
+      "correctAnswer": "Reducing variation so work is more consistent and quality is easier to maintain.",
+      "incorrectAnswers": [
+        "Making every task different so employees stay challenged",
+        "Replacing quality checks with assumptions",
+        "Ensuring every product is customized to order with no repeatable process"
+      ],
+      "explanation": "Standard work and consistent methods make results more repeatable and simplify training and quality control.",
+      "keywords": [
+        "standardization",
+        "quality",
+        "consistency"
+      ],
+      "source": "https://hbr.org/"
+    },
+    {
+      "seedId": "ddd308a8-d854-5b3f-8728-25b915ec4cba",
+      "category": "business",
+      "navigationKeyword1": "management",
+      "navigationKeyword2": "operations",
+      "question": "What is a capacity plan meant to address?",
+      "correctAnswer": "Whether the organization\u2019s ability to produce meets expected demand.",
+      "incorrectAnswers": [
+        "Only how the company writes revenue recognition policies",
+        "Whether every purchase order uses the same vendor invoice format",
+        "How to maximize discount rates in investment valuations"
+      ],
+      "explanation": "Capacity planning compares available capacity to demand forecasts so teams can prevent bottlenecks or underutilization.",
+      "keywords": [
+        "capacity-planning",
+        "demand",
+        "bottlenecks"
+      ],
+      "source": "https://www.mindtools.com/"
+    },
+    {
+      "seedId": "b3bcc6a4-5671-51df-9871-6c374b0d0017",
+      "category": "business",
+      "navigationKeyword1": "management",
+      "navigationKeyword2": "operations",
+      "question": "What is continuous improvement (in plain business terms)?",
+      "correctAnswer": "Ongoing efforts to find and remove inefficiencies or problems in processes over time.",
+      "incorrectAnswers": [
+        "One big change that happens once per decade and never repeats",
+        "A promise to keep costs fixed forever",
+        "A decision to stop measuring performance"
+      ],
+      "explanation": "Continuous improvement treats performance as something you manage actively, using feedback and incremental change.",
+      "keywords": [
+        "continuous-improvement",
+        "efficiency",
+        "process-feedback"
+      ],
+      "source": "https://hbr.org/"
+    },
+    {
+      "seedId": "871fde1b-d83f-593c-adb8-2cb2fc54e4aa",
+      "category": "business",
+      "navigationKeyword1": "management",
+      "navigationKeyword2": "operations",
+      "question": "Why do operations teams track cycle time?",
+      "correctAnswer": "To measure how long work takes end-to-end and identify where delays occur.",
+      "incorrectAnswers": [
+        "To measure how many marketing emails were sent",
+        "To calculate the corporate income tax rate",
+        "To guarantee the final product always sells at the highest price"
+      ],
+      "explanation": "Cycle time is a practical operational metric: shorter cycles often improve responsiveness and reduce work-in-process.",
+      "keywords": [
+        "cycle-time",
+        "workflow",
+        "speed"
+      ],
+      "source": "https://www.investopedia.com/"
+    },
+    {
+      "seedId": "8000c12a-70c8-540a-8608-f7f09eea0253",
+      "category": "business",
+      "navigationKeyword1": "management",
+      "navigationKeyword2": "productivity",
+      "question": "In operations measurement, how is cycle time different from throughput?",
+      "correctAnswer": "Cycle time is how long a unit takes end-to-end; throughput is how many units complete in a given period.",
+      "incorrectAnswers": [
+        "Cycle time counts completed units per hour; throughput measures delays",
+        "Throughput is only about employee headcount; cycle time is about budget size",
+        "They mean exactly the same thing with different words"
+      ],
+      "explanation": "Cycle time describes duration for work items, while throughput describes volume completed over time.",
+      "keywords": [
+        "cycle-time",
+        "throughput",
+        "metrics"
+      ],
+      "source": "https://hbr.org/"
+    },
+    {
+      "seedId": "907424d9-43a0-56ea-bc14-2671ffb42af7",
+      "category": "business",
+      "navigationKeyword1": "management",
+      "navigationKeyword2": "productivity",
+      "question": "What does labor productivity generally measure?",
+      "correctAnswer": "Output produced per unit of labor input.",
+      "incorrectAnswers": [
+        "Total profit divided by total labor cost only",
+        "The number of meetings held per week",
+        "How much cash the company has at the end of the month"
+      ],
+      "explanation": "Labor productivity focuses on how efficiently labor turns into output.",
+      "keywords": [
+        "productivity",
+        "labor-efficiency",
+        "output-per-labor"
+      ],
+      "source": "https://www.investopedia.com/terms/p/productivity.asp"
+    },
+    {
+      "seedId": "24c056dd-2c68-577d-b58a-38b68a33ce68",
+      "category": "business",
+      "navigationKeyword1": "management",
+      "navigationKeyword2": "productivity",
+      "question": "What does multifactor productivity (MFP) aim to capture?",
+      "correctAnswer": "Improvements in output that aren\u2019t explained solely by increases in labor or capital input.",
+      "incorrectAnswers": [
+        "Only changes in raw wages with no link to output",
+        "A measure that ignores all inputs by definition",
+        "The expected stock price growth next quarter"
+      ],
+      "explanation": "MFP is used to reflect how effectively the combination of inputs produces more output, including efficiency and technology effects.",
+      "keywords": [
+        "multifactor-productivity",
+        "efficiency",
+        "technology"
+      ],
+      "source": "https://www.oecd.org/"
+    },
+    {
+      "seedId": "be1ff3cd-afb8-58aa-88a8-c468eee2d8a3",
+      "category": "business",
+      "navigationKeyword1": "management",
+      "navigationKeyword2": "productivity",
+      "question": "What is the difference between efficiency and effectiveness in performance thinking?",
+      "correctAnswer": "Efficiency is using the fewest resources to achieve an output; effectiveness is achieving the intended results.",
+      "incorrectAnswers": [
+        "Efficiency is about doing the right thing; effectiveness is about using fewer people",
+        "They are the same metric under different names",
+        "Effectiveness always ignores outcomes and only cares about costs"
+      ],
+      "explanation": "A process can be efficient (low cost) but not effective if it doesn\u2019t achieve the desired outcome.",
+      "keywords": [
+        "efficiency",
+        "effectiveness",
+        "performance"
+      ],
+      "source": "https://www.mindtools.com/"
+    },
+    {
+      "seedId": "af7b00d4-6d92-52ac-9ecd-abc80f9c4a2e",
+      "category": "business",
+      "navigationKeyword1": "management",
+      "navigationKeyword2": "productivity",
+      "question": "Which is a process-change example that can improve productivity without automatically changing demand?",
+      "correctAnswer": "Eliminating handoff delays by redesigning the workflow so work moves more smoothly.",
+      "incorrectAnswers": [
+        "Increasing marketing spend without changing production flow",
+        "Raising prices without changing how work gets done internally",
+        "Waiting to see if competitors improve first"
+      ],
+      "explanation": "Productivity can improve when internal processes reduce delays and rework, even if demand stays the same.",
+      "keywords": [
+        "workflow",
+        "delays",
+        "productivity-improvement"
+      ],
+      "source": "https://www.investopedia.com/"
+    },
+    {
+      "seedId": "99549cc5-0283-56a6-b5f6-f9c8553838f4",
+      "category": "business",
+      "navigationKeyword1": "management",
+      "navigationKeyword2": "productivity",
+      "question": "Why do organizations often look for waste reduction when they want higher productivity?",
+      "correctAnswer": "Waste consumes resources without adding value, so removing it can improve output per resource.",
+      "incorrectAnswers": [
+        "Waste reduction is only about cutting staff, not process work",
+        "Waste never affects output because it happens outside the main workflow",
+        "Waste reduction makes quality worse so inspection is cheaper"
+      ],
+      "explanation": "Reducing non-value-added work and defects lowers resource use and frees capacity, which improves productivity.",
+      "keywords": [
+        "waste-reduction",
+        "value-add",
+        "improvement"
+      ],
+      "source": "https://hbr.org/"
+    }
+  ]
+}

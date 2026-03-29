@@ -1,0 +1,526 @@
+{
+  "schemaVersion": 1,
+  "seedSet": "core-public-items",
+  "deltaPreviewLimit": 200,
+  "items": [
+    {
+      "seedId": "065c3361-bbc0-44a8-9ed5-57734dc047ff",
+      "category": "exams",
+      "navigationKeyword1": "sat",
+      "navigationKeyword2": "general-sat",
+      "question": "How is the digital SAT organized within each section?",
+      "correctAnswer": "Each section has two modules",
+      "incorrectAnswers": [
+        "Each section has one long booklet",
+        "Each section has four modules",
+        "Only Math has modules"
+      ],
+      "explanation": "College Board says each SAT section is divided into two modules.",
+      "keywords": [
+        "sat-format",
+        "modules",
+        "test-prep"
+      ],
+      "source": "https://satsuite.collegeboard.org/digital/why-digital"
+    },
+    {
+      "seedId": "842440ec-8e64-41c5-8e89-d9004034971e",
+      "category": "exams",
+      "navigationKeyword1": "sat",
+      "navigationKeyword2": "general-sat",
+      "question": "How long does the current digital SAT take to complete?",
+      "correctAnswer": "About 2 hours and 14 minutes",
+      "incorrectAnswers": [
+        "90 minutes",
+        "3 hours",
+        "4 hours"
+      ],
+      "explanation": "College Board says the digital SAT takes 2 hours and 14 minutes.",
+      "keywords": [
+        "sat-format",
+        "timing",
+        "test-prep"
+      ],
+      "source": "https://satsuite.collegeboard.org/digital/digital-sat/what-to-expect"
+    },
+    {
+      "seedId": "67786ea4-d5a5-461b-bfea-e10eabb6e893",
+      "category": "exams",
+      "navigationKeyword1": "sat",
+      "navigationKeyword2": "general-sat",
+      "question": "Is there a break during the digital SAT?",
+      "correctAnswer": "Yes, there is a 10-minute break between sections",
+      "incorrectAnswers": [
+        "No break is provided",
+        "There are two 15-minute breaks",
+        "Only accommodations include breaks"
+      ],
+      "explanation": "College Board says students get a 10-minute break between the Reading and Writing section and the Math section.",
+      "keywords": [
+        "sat-format",
+        "break",
+        "test-prep"
+      ],
+      "source": "https://satsuite.collegeboard.org/digital/digital-sat/what-to-expect"
+    },
+    {
+      "seedId": "9bed28a9-0cb3-42c1-b4ad-09803ce9d1f6",
+      "category": "exams",
+      "navigationKeyword1": "sat",
+      "navigationKeyword2": "general-sat",
+      "question": "What are the two main sections on the digital SAT?",
+      "correctAnswer": "Reading and Writing, and Math",
+      "incorrectAnswers": [
+        "Reading and Science",
+        "Writing and History",
+        "Math and Essay"
+      ],
+      "explanation": "College Board says the digital SAT has two sections: Reading and Writing, and Math.",
+      "keywords": [
+        "sat-format",
+        "test-prep"
+      ],
+      "source": "https://satsuite.collegeboard.org/sat/whats-on-the-test"
+    },
+    {
+      "seedId": "92fbc6db-8f35-45ea-8e42-f61d8eeae485",
+      "category": "exams",
+      "navigationKeyword1": "sat",
+      "navigationKeyword2": "general-sat",
+      "question": "What does adaptive testing mean on the digital SAT?",
+      "correctAnswer": "Performance on the first module influences the difficulty of the second module",
+      "incorrectAnswers": [
+        "The test changes subjects based on your major",
+        "You can skip any question without penalty",
+        "The score adjusts only after college applications are submitted"
+      ],
+      "explanation": "College Board explains that the digital SAT uses a multistage adaptive design in which performance on the first module affects the second module.",
+      "keywords": [
+        "sat-format",
+        "adaptive-testing",
+        "test-prep"
+      ],
+      "source": "https://satsuite.collegeboard.org/digital/why-digital"
+    },
+    {
+      "seedId": "65f6f03e-dd88-4390-b2c5-4af8ffcd94aa",
+      "category": "exams",
+      "navigationKeyword1": "sat",
+      "navigationKeyword2": "math",
+      "question": "A circle has radius 3. What is its circumference in terms of pi?",
+      "correctAnswer": "6pi",
+      "incorrectAnswers": [
+        "3pi",
+        "9pi",
+        "18pi"
+      ],
+      "explanation": "Circumference equals 2pi r, so 2pi(3) = 6pi.",
+      "keywords": [
+        "sat-math",
+        "circles",
+        "geometry"
+      ],
+      "source": "https://satsuite.collegeboard.org/sat/practice-preparation"
+    },
+    {
+      "seedId": "76b94534-128b-422d-a26d-5a0f532719f5",
+      "category": "exams",
+      "navigationKeyword1": "sat",
+      "navigationKeyword2": "math",
+      "question": "A store reduces the price of a $60 backpack by 25%. What is the sale price?",
+      "correctAnswer": "$45",
+      "incorrectAnswers": [
+        "$35",
+        "$40",
+        "$50"
+      ],
+      "explanation": "Twenty-five percent of 60 is 15, and 60 minus 15 is 45.",
+      "keywords": [
+        "sat-math",
+        "percent",
+        "problem-solving"
+      ],
+      "source": "https://satsuite.collegeboard.org/sat/practice-preparation"
+    },
+    {
+      "seedId": "095a5820-7dde-41d9-bf64-276e7db176b2",
+      "category": "exams",
+      "navigationKeyword1": "sat",
+      "navigationKeyword2": "math",
+      "question": "If 3x + 5 = 20, what is the value of x?",
+      "correctAnswer": "5",
+      "incorrectAnswers": [
+        "3",
+        "4",
+        "6"
+      ],
+      "explanation": "Subtract 5 from both sides to get 3x = 15, then divide by 3.",
+      "keywords": [
+        "sat-math",
+        "linear-equations",
+        "algebra"
+      ],
+      "source": "https://satsuite.collegeboard.org/sat/practice-preparation"
+    },
+    {
+      "seedId": "309d45bc-54b1-4d75-8451-d0c510845d39",
+      "category": "exams",
+      "navigationKeyword1": "sat",
+      "navigationKeyword2": "math",
+      "question": "If 5 notebooks cost $12.50, what is the cost of 1 notebook?",
+      "correctAnswer": "$2.50",
+      "incorrectAnswers": [
+        "$2.00",
+        "$2.25",
+        "$3.00"
+      ],
+      "explanation": "Divide the total cost by the number of notebooks: 12.50 / 5 = 2.50.",
+      "keywords": [
+        "sat-math",
+        "ratios",
+        "problem-solving"
+      ],
+      "source": "https://satsuite.collegeboard.org/sat/practice-preparation"
+    },
+    {
+      "seedId": "9309938b-90a0-47f2-855c-d3926780a339",
+      "category": "exams",
+      "navigationKeyword1": "sat",
+      "navigationKeyword2": "math",
+      "question": "If f(x) = 2x + 1, what is f(4)?",
+      "correctAnswer": "9",
+      "incorrectAnswers": [
+        "7",
+        "8",
+        "10"
+      ],
+      "explanation": "Substitute 4 for x: 2(4) + 1 = 9.",
+      "keywords": [
+        "sat-math",
+        "functions",
+        "advanced-math"
+      ],
+      "source": "https://satsuite.collegeboard.org/sat/practice-preparation"
+    },
+    {
+      "seedId": "f0a924bb-f71a-4c83-9294-8f7aad70bcac",
+      "category": "exams",
+      "navigationKeyword1": "sat",
+      "navigationKeyword2": "math",
+      "question": "If x^2 = 49, which value could x be?",
+      "correctAnswer": "-7",
+      "incorrectAnswers": [
+        "14",
+        "21",
+        "49"
+      ],
+      "explanation": "Both 7 and -7 square to 49, so -7 is a valid value.",
+      "keywords": [
+        "sat-math",
+        "quadratics",
+        "advanced-math"
+      ],
+      "source": "https://satsuite.collegeboard.org/sat/practice-preparation"
+    },
+    {
+      "seedId": "f63e77d1-6f62-49eb-aa91-70c11d12deb8",
+      "category": "exams",
+      "navigationKeyword1": "sat",
+      "navigationKeyword2": "math",
+      "question": "The average of 8, 10, and y is 12. What is y?",
+      "correctAnswer": "18",
+      "incorrectAnswers": [
+        "14",
+        "16",
+        "20"
+      ],
+      "explanation": "If the average is 12, the total must be 36. Since 8 + 10 = 18, y = 18.",
+      "keywords": [
+        "sat-math",
+        "statistics",
+        "problem-solving"
+      ],
+      "source": "https://satsuite.collegeboard.org/sat/practice-preparation"
+    },
+    {
+      "seedId": "788cddf7-1567-4851-9680-59d76425b56a",
+      "category": "exams",
+      "navigationKeyword1": "sat",
+      "navigationKeyword2": "math",
+      "question": "The solution to the system y = x + 2 and y = 6 is what ordered pair?",
+      "correctAnswer": "(4, 6)",
+      "incorrectAnswers": [
+        "(6, 4)",
+        "(2, 6)",
+        "(4, 4)"
+      ],
+      "explanation": "Set x + 2 equal to 6 to get x = 4, then y = 6.",
+      "keywords": [
+        "sat-math",
+        "systems",
+        "algebra"
+      ],
+      "source": "https://satsuite.collegeboard.org/sat/practice-preparation"
+    },
+    {
+      "seedId": "bd4f9729-0935-4055-8416-e2b5dde3e8a5",
+      "category": "exams",
+      "navigationKeyword1": "sat",
+      "navigationKeyword2": "math",
+      "question": "What is the area of a rectangle with length 9 and width 4?",
+      "correctAnswer": "36",
+      "incorrectAnswers": [
+        "13",
+        "18",
+        "45"
+      ],
+      "explanation": "Area equals length times width: 9 x 4 = 36.",
+      "keywords": [
+        "sat-math",
+        "geometry",
+        "problem-solving"
+      ],
+      "source": "https://satsuite.collegeboard.org/sat/practice-preparation"
+    },
+    {
+      "seedId": "6f0a9dc6-dd0d-49ac-be60-48fd3ce599c4",
+      "category": "exams",
+      "navigationKeyword1": "sat",
+      "navigationKeyword2": "math",
+      "question": "What is the slope of the line through (2, 3) and (6, 11)?",
+      "correctAnswer": "2",
+      "incorrectAnswers": [
+        "1",
+        "3",
+        "4"
+      ],
+      "explanation": "Slope equals rise over run: (11 - 3) / (6 - 2) = 8 / 4 = 2.",
+      "keywords": [
+        "sat-math",
+        "slope",
+        "algebra"
+      ],
+      "source": "https://satsuite.collegeboard.org/sat/practice-preparation"
+    },
+    {
+      "seedId": "0fa78db1-d6f4-4cb9-b195-7990b49a654b",
+      "category": "exams",
+      "navigationKeyword1": "sat",
+      "navigationKeyword2": "vocab",
+      "question": "Because the directions were so ___, everyone knew exactly what to do.",
+      "correctAnswer": "explicit",
+      "incorrectAnswers": [
+        "ambiguous",
+        "casual",
+        "temporary"
+      ],
+      "explanation": "\"Explicit\" fits because clear directions remove confusion.",
+      "keywords": [
+        "sat-vocab",
+        "context-clues",
+        "word-meaning"
+      ],
+      "source": "https://satsuite.collegeboard.org/sat/practice-preparation"
+    },
+    {
+      "seedId": "47b122b9-5ab8-4ef9-8f89-ac2c8b8361e5",
+      "category": "exams",
+      "navigationKeyword1": "sat",
+      "navigationKeyword2": "vocab",
+      "question": "From the chart and paragraph, the reader can ___ that sales rose after the new ad campaign.",
+      "correctAnswer": "infer",
+      "incorrectAnswers": [
+        "ignore",
+        "delay",
+        "contradict"
+      ],
+      "explanation": "\"Infer\" means to reach a conclusion from evidence.",
+      "keywords": [
+        "sat-vocab",
+        "context-clues",
+        "word-meaning"
+      ],
+      "source": "https://satsuite.collegeboard.org/sat/practice-preparation"
+    },
+    {
+      "seedId": "5daeebd3-1b86-46b7-9070-52574a53e381",
+      "category": "exams",
+      "navigationKeyword1": "sat",
+      "navigationKeyword2": "vocab",
+      "question": "The editor asked for a more ___ summary, so Maya cut unnecessary details.",
+      "correctAnswer": "concise",
+      "incorrectAnswers": [
+        "ambiguous",
+        "lengthy",
+        "informal"
+      ],
+      "explanation": "\"Concise\" means brief and to the point.",
+      "keywords": [
+        "sat-vocab",
+        "context-clues",
+        "word-meaning"
+      ],
+      "source": "https://satsuite.collegeboard.org/sat/practice-preparation"
+    },
+    {
+      "seedId": "ea7edb06-595e-44fe-9d9b-2ae5865badc5",
+      "category": "exams",
+      "navigationKeyword1": "sat",
+      "navigationKeyword2": "vocab",
+      "question": "The scientist used multiple trials to ___ her claim with evidence.",
+      "correctAnswer": "corroborate",
+      "incorrectAnswers": [
+        "obscure",
+        "weaken",
+        "dismiss"
+      ],
+      "explanation": "\"Corroborate\" means to support with evidence.",
+      "keywords": [
+        "sat-vocab",
+        "context-clues",
+        "word-meaning"
+      ],
+      "source": "https://satsuite.collegeboard.org/sat/practice-preparation"
+    },
+    {
+      "seedId": "37059442-03ea-43cd-b29e-993edc517e49",
+      "category": "exams",
+      "navigationKeyword1": "sat",
+      "navigationKeyword2": "vocab",
+      "question": "The two reports seemed to conflict at first, but the researcher was able to ___ them into one clear conclusion.",
+      "correctAnswer": "synthesize",
+      "incorrectAnswers": [
+        "separate",
+        "erase",
+        "question"
+      ],
+      "explanation": "\"Synthesize\" means to combine parts into a coherent whole.",
+      "keywords": [
+        "sat-vocab",
+        "context-clues",
+        "word-meaning"
+      ],
+      "source": "https://satsuite.collegeboard.org/sat/practice-preparation"
+    },
+    {
+      "seedId": "f6a266e5-b0bd-43d6-a6de-721aa6ec376d",
+      "category": "exams",
+      "navigationKeyword1": "sat",
+      "navigationKeyword2": "vocab",
+      "question": "The witness gave an ___ answer that could be interpreted in two different ways.",
+      "correctAnswer": "ambiguous",
+      "incorrectAnswers": [
+        "explicit",
+        "analogous",
+        "precise"
+      ],
+      "explanation": "\"Ambiguous\" means open to more than one interpretation.",
+      "keywords": [
+        "sat-vocab",
+        "context-clues",
+        "word-meaning"
+      ],
+      "source": "https://satsuite.collegeboard.org/sat/practice-preparation"
+    },
+    {
+      "seedId": "c1e8419e-8479-44b7-8d50-6005fca75eaf",
+      "category": "exams",
+      "navigationKeyword1": "sat",
+      "navigationKeyword2": "writing",
+      "question": "Which sentence most concisely combines the ideas?",
+      "correctAnswer": "The lab was crowded, but the students finished on time.",
+      "incorrectAnswers": [
+        "The lab was crowded, and this was a fact, but the students finished on time.",
+        "The lab was crowded, but in spite of that fact the students were able to finish on time.",
+        "The lab was crowded, and the students, however, finished on time."
+      ],
+      "explanation": "The best SAT revision preserves meaning with the clearest wording.",
+      "keywords": [
+        "sat-writing",
+        "concision",
+        "grammar"
+      ],
+      "source": "https://satsuite.collegeboard.org/sat/practice-preparation"
+    },
+    {
+      "seedId": "c360a719-7114-4d33-bd67-b76ed27fa404",
+      "category": "exams",
+      "navigationKeyword1": "sat",
+      "navigationKeyword2": "writing",
+      "question": "Which sentence uses parallel structure?",
+      "correctAnswer": "The internship requires students to research, write, and revise.",
+      "incorrectAnswers": [
+        "The internship requires students to research, writing, and revision.",
+        "The internship requires researching, to write, and revision.",
+        "The internship requires students who research, writing, and revise."
+      ],
+      "explanation": "Parallel items should share the same grammatical form.",
+      "keywords": [
+        "sat-writing",
+        "parallel-structure",
+        "grammar"
+      ],
+      "source": "https://satsuite.collegeboard.org/sat/practice-preparation"
+    },
+    {
+      "seedId": "7dd3a981-cd92-447c-b235-a8c1d79c7625",
+      "category": "exams",
+      "navigationKeyword1": "sat",
+      "navigationKeyword2": "writing",
+      "question": "Which transition best completes the sentence: \"The sample size increased; ___, the results became more reliable\"?",
+      "correctAnswer": "therefore",
+      "incorrectAnswers": [
+        "however",
+        "meanwhile",
+        "for instance"
+      ],
+      "explanation": "\"Therefore\" correctly signals cause and effect.",
+      "keywords": [
+        "sat-writing",
+        "transitions",
+        "grammar"
+      ],
+      "source": "https://satsuite.collegeboard.org/sat/practice-preparation"
+    },
+    {
+      "seedId": "70771e28-191d-4474-97d5-0019e504e9d4",
+      "category": "exams",
+      "navigationKeyword1": "sat",
+      "navigationKeyword2": "writing",
+      "question": "Which version correctly fixes the sentence boundary error?",
+      "correctAnswer": "The report was finished, so the editor submitted it.",
+      "incorrectAnswers": [
+        "The report was finished, the editor submitted it.",
+        "The report was finished so, the editor submitted it.",
+        "The report was finished; so the editor submitted it."
+      ],
+      "explanation": "A comma plus coordinating conjunction correctly joins the clauses.",
+      "keywords": [
+        "sat-writing",
+        "boundaries",
+        "grammar"
+      ],
+      "source": "https://satsuite.collegeboard.org/sat/practice-preparation"
+    },
+    {
+      "seedId": "ff51385e-b907-4263-9250-323c34440ae2",
+      "category": "exams",
+      "navigationKeyword1": "sat",
+      "navigationKeyword2": "writing",
+      "question": "Which word choice is most appropriate for a formal SAT passage?",
+      "correctAnswer": "many",
+      "incorrectAnswers": [
+        "a bunch of",
+        "tons of",
+        "a whole lot of"
+      ],
+      "explanation": "SAT Writing favors precise, standard written English.",
+      "keywords": [
+        "sat-writing",
+        "word-choice",
+        "grammar"
+      ],
+      "source": "https://satsuite.collegeboard.org/sat/practice-preparation"
+    }
+  ]
+}

@@ -1,0 +1,247 @@
+{
+  "schemaVersion": 1,
+  "seedSet": "core-public-items",
+  "deltaPreviewLimit": 200,
+  "items": [
+    {
+      "seedId": "ad617851-bc09-4e86-8394-1f8cc9e7c013",
+      "category": "history",
+      "navigationKeyword1": "asia",
+      "navigationKeyword2": "japan",
+      "question": "Admiral T\u014dg\u014d\u2019s Tsushima victory helped Japan defeat which European empire in the war of 1904\u201305?",
+      "correctAnswer": "Russia",
+      "incorrectAnswers": [
+        "France",
+        "Germany",
+        "Ottoman Turkey"
+      ],
+      "explanation": "The Portsmouth Treaty recognized Japanese primacy in Korea and leaseholds in southern Manchuria.",
+      "keywords": [
+        "japan",
+        "russo-japanese",
+        "meiji"
+      ],
+      "source": "https://www.britannica.com/event/Russo-Japanese-War"
+    },
+    {
+      "seedId": "13e85e4c-183b-437c-80cb-7ba002733119",
+      "category": "history",
+      "navigationKeyword1": "asia",
+      "navigationKeyword2": "japan",
+      "question": "After the capital moved to Heian-ky\u014d in 794, which family dominated the throne through regent marriages for much of the classical era?",
+      "correctAnswer": "The Fujiwara clan",
+      "incorrectAnswers": [
+        "The Tokugawa family",
+        "The Taira alone",
+        "The Yamato naval house"
+      ],
+      "explanation": "Courtier culture, waka poetry, and Murasaki Shikibu\u2019s Tale of Genji flourished under Fujiwara influence.",
+      "keywords": [
+        "japan",
+        "heian",
+        "fujiwara"
+      ],
+      "source": "https://www.britannica.com/event/Heian-period"
+    },
+    {
+      "seedId": "36c86861-f725-49e6-b232-317de9004217",
+      "category": "history",
+      "navigationKeyword1": "asia",
+      "navigationKeyword2": "japan",
+      "question": "Allied occupation authorities supervised which 1947 document that renounced war and created the Diet-centered state?",
+      "correctAnswer": "The Constitution of Japan (Showa Constitution)",
+      "incorrectAnswers": [
+        "The Meiji Constitution reissued unchanged",
+        "The San Francisco Peace Treaty text alone",
+        "The Five Charter Oath only"
+      ],
+      "explanation": "Article 9\u2019s pacifist clause and later reinterpretations remain central to Japanese security politics.",
+      "keywords": [
+        "japan",
+        "constitution",
+        "postwar"
+      ],
+      "source": "https://www.britannica.com/event/occupation-of-Japan"
+    },
+    {
+      "seedId": "e928179d-050f-4350-8600-2ca6a101b557",
+      "category": "history",
+      "navigationKeyword1": "asia",
+      "navigationKeyword2": "japan",
+      "question": "High-speed Shinkansen service from Tokyo to Osaka began ahead of which 1964 global festival hosted in the capital?",
+      "correctAnswer": "The Tokyo Summer Olympics",
+      "incorrectAnswers": [
+        "The Osaka Expo 1970 only",
+        "The Sapporo Winter Games of 1972",
+        "The Nagano Games of 1998"
+      ],
+      "explanation": "Ikeda\u2019s Income Doubling Plan and infrastructure spending symbolized Japan\u2019s high-growth era.",
+      "keywords": [
+        "japan",
+        "1964",
+        "economic-growth"
+      ],
+      "source": "https://www.britannica.com/event/Tokyo-1964-Olympic-Games"
+    },
+    {
+      "seedId": "46d95a48-7c36-4835-8da3-067899ec2f9f",
+      "category": "history",
+      "navigationKeyword1": "asia",
+      "navigationKeyword2": "japan",
+      "question": "Hiroshima and Nagasaki were destroyed in August 1945 by what new class of U.S. weapon?",
+      "correctAnswer": "Nuclear (atomic) bombs",
+      "incorrectAnswers": [
+        "Fuel-air explosives only",
+        "Chemical shells alone",
+        "Conventional firebombing without fission devices"
+      ],
+      "explanation": "Emperor Hirohito\u2019s broadcast accepting the Potsdam terms followed the Soviet entry and the second bomb.",
+      "keywords": [
+        "japan",
+        "1945",
+        "atomic-bomb"
+      ],
+      "source": "https://www.britannica.com/event/Atomic-bombings-of-Hiroshima-and-Nagasaki"
+    },
+    {
+      "seedId": "30afafef-9472-4ffc-b78d-8f7b405885f4",
+      "category": "history",
+      "navigationKeyword1": "asia",
+      "navigationKeyword2": "japan",
+      "question": "Japan\u2019s fragile banks and \u2018zombie firms\u2019 worsened when which 1997\u201398 regional meltdown spread from Thailand across East Asia?",
+      "correctAnswer": "The Asian financial crisis",
+      "incorrectAnswers": [
+        "The Latin American debt crisis only",
+        "The 2008 subprime mortgage collapse at its start",
+        "The European sovereign debt crisis of 2010"
+      ],
+      "explanation": "Currency crashes and IMF programs roiled neighbors; Japan\u2019s own asset-bubble hangover made the shock harder to absorb.",
+      "keywords": [
+        "japan",
+        "1997",
+        "financial-crisis"
+      ],
+      "source": "https://www.britannica.com/event/Asian-financial-crisis"
+    },
+    {
+      "seedId": "804253d1-299e-4125-b6b2-9ecb1e2d8480",
+      "category": "history",
+      "navigationKeyword1": "asia",
+      "navigationKeyword2": "japan",
+      "question": "Minamoto Yoritomo\u2019s 1192 appointment as shogun founded which warrior-led government based at Kamakura?",
+      "correctAnswer": "The Kamakura shogunate",
+      "incorrectAnswers": [
+        "The Meiji oligarchy",
+        "The Ashikaga bakufu at founding",
+        "The Satsuma-Ch\u014dsh\u016b alliance"
+      ],
+      "explanation": "It institutionalized dual rule: a cloistered emperor in Kyoto and military administration in the east.",
+      "keywords": [
+        "japan",
+        "kamakura",
+        "samurai"
+      ],
+      "source": "https://www.britannica.com/event/Kamakura-period"
+    },
+    {
+      "seedId": "4f6424ae-e66c-459e-add2-f5b3aa9bbfc9",
+      "category": "history",
+      "navigationKeyword1": "asia",
+      "navigationKeyword2": "japan",
+      "question": "The 1868 coup ending the Tokugawa shogunate is remembered as the restoration of direct rule under which emperor\u2019s reign name?",
+      "correctAnswer": "Meiji (Mutsuhito)",
+      "incorrectAnswers": [
+        "Taish\u014d alone at that date",
+        "K\u014dmei without change",
+        "Hirohito in 1868"
+      ],
+      "explanation": "Charter Oath reforms, conscription, and the Iwakura Mission rapidly modernized state and industry.",
+      "keywords": [
+        "japan",
+        "meiji",
+        "restoration"
+      ],
+      "source": "https://www.britannica.com/event/Meiji-Restoration"
+    },
+    {
+      "seedId": "b995b98e-c916-4c90-83cb-69fe550a0f76",
+      "category": "history",
+      "navigationKeyword1": "asia",
+      "navigationKeyword2": "japan",
+      "question": "The Marco Polo Bridge incident near Beijing in July 1937 escalated into which long war on the Chinese mainland?",
+      "correctAnswer": "The Second Sino-Japanese War",
+      "incorrectAnswers": [
+        "The First Sino-Japanese War only",
+        "The Boxer intervention alone",
+        "The Korean War"
+      ],
+      "explanation": "Japanese occupation, Nanjing\u2019s capture, and United Front resistance merged into the wider Pacific conflict after 1941.",
+      "keywords": [
+        "japan",
+        "china",
+        "1937"
+      ],
+      "source": "https://www.britannica.com/event/Second-Sino-Japanese-War"
+    },
+    {
+      "seedId": "893a2142-9df4-4e81-acf6-819ff3f54282",
+      "category": "history",
+      "navigationKeyword1": "asia",
+      "navigationKeyword2": "japan",
+      "question": "Tokugawa Ieyasu\u2019s victory at Sekigahara (1600) paved the way for over two centuries of rule from which city?",
+      "correctAnswer": "Edo (modern Tokyo)",
+      "incorrectAnswers": [
+        "Kyoto only",
+        "Nara exclusively",
+        "Osaka without alternate residence"
+      ],
+      "explanation": "Sankin-k\u014dtai alternate attendance and sakoku seclusion policies marked the Edo/Tokugawa age.",
+      "keywords": [
+        "japan",
+        "tokugawa",
+        "edo"
+      ],
+      "source": "https://www.britannica.com/event/Tokugawa-period"
+    },
+    {
+      "seedId": "ee443a3b-d006-4836-bfa9-cb7261619c17",
+      "category": "history",
+      "navigationKeyword1": "asia",
+      "navigationKeyword2": "japan",
+      "question": "Which December 1941 surprise strike drew the United States into World War II\u2019s Pacific theater?",
+      "correctAnswer": "The attack on Pearl Harbor",
+      "incorrectAnswers": [
+        "The bombing of Darwin only",
+        "The fall of Singapore first",
+        "Midway without prelude"
+      ],
+      "explanation": "Japanese carriers crippled battleships at Oahu while parallel offensives hit Malaya and the Philippines.",
+      "keywords": [
+        "japan",
+        "pearl-harbor",
+        "wwii"
+      ],
+      "source": "https://www.britannica.com/event/Pearl-Harbor-attack"
+    },
+    {
+      "seedId": "e8b3e91d-8d21-4fc9-9cec-f000d8b12b52",
+      "category": "history",
+      "navigationKeyword1": "asia",
+      "navigationKeyword2": "japan",
+      "question": "Which U.S. commodore\u2019s 1853\u201354 \u2018black ships\u2019 pressured Japan to end more than two centuries of limited foreign contact?",
+      "correctAnswer": "Matthew C. Perry",
+      "incorrectAnswers": [
+        "James Biddle only",
+        "William Seward",
+        "Commodore George Dewey"
+      ],
+      "explanation": "The Treaty of Kanagawa opened coaling ports and began the cascade ending the Tokugawa shogunate.",
+      "keywords": [
+        "japan",
+        "perry",
+        "opening"
+      ],
+      "source": "https://www.britannica.com/biography/Matthew-C-Perry"
+    }
+  ]
+}

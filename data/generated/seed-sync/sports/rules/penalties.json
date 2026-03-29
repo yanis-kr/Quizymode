@@ -1,0 +1,207 @@
+{
+  "schemaVersion": 1,
+  "seedSet": "core-public-items",
+  "deltaPreviewLimit": 200,
+  "items": [
+    {
+      "seedId": "8a08974b-b8cf-5cff-8883-3d0efbec597d",
+      "category": "sports",
+      "navigationKeyword1": "rules",
+      "navigationKeyword2": "penalties",
+      "question": "What baseball infraction is called when the pitcher makes an illegal motion with runners on base?",
+      "correctAnswer": "Balk",
+      "incorrectAnswers": [
+        "Walk",
+        "Wild pitch",
+        "Hook"
+      ],
+      "explanation": "A balk can advance runners because of an illegal pitching motion.",
+      "keywords": [
+        "rules",
+        "penalties",
+        "balk"
+      ],
+      "source": "https://www.mlb.com/glossary"
+    },
+    {
+      "seedId": "1a5c7850-d629-51ab-a4d4-3d3111fd842d",
+      "category": "sports",
+      "navigationKeyword1": "rules",
+      "navigationKeyword2": "penalties",
+      "question": "What basketball foul is called when an offensive player crashes into a set defender?",
+      "correctAnswer": "Charging",
+      "incorrectAnswers": [
+        "Blocking",
+        "Traveling",
+        "Goaltending"
+      ],
+      "explanation": "Charging is an offensive foul.",
+      "keywords": [
+        "rules",
+        "penalties",
+        "basketball"
+      ],
+      "source": "https://www.britannica.com/sports/basketball"
+    },
+    {
+      "seedId": "704fc275-f024-5136-82b6-887e92342217",
+      "category": "sports",
+      "navigationKeyword1": "rules",
+      "navigationKeyword2": "penalties",
+      "question": "What is it called in hockey when a player uses the stick to impede an opponent?",
+      "correctAnswer": "Hooking",
+      "incorrectAnswers": [
+        "Icing",
+        "Offside",
+        "Faceoff violation"
+      ],
+      "explanation": "Hooking is a standard stick-infraction penalty.",
+      "keywords": [
+        "rules",
+        "penalties",
+        "hockey"
+      ],
+      "source": "https://www.britannica.com/sports/ice-hockey"
+    },
+    {
+      "seedId": "ab1e9d0d-70f0-5e57-89ea-9dddf1d1ed6c",
+      "category": "sports",
+      "navigationKeyword1": "rules",
+      "navigationKeyword2": "penalties",
+      "question": "What is it called in soccer when a defender unfairly trips an opponent?",
+      "correctAnswer": "A foul",
+      "incorrectAnswers": [
+        "An advantage call only",
+        "A hat trick",
+        "A throw-in"
+      ],
+      "explanation": "Tripping an opponent is a foul in soccer.",
+      "keywords": [
+        "rules",
+        "penalties",
+        "soccer"
+      ],
+      "source": "https://www.britannica.com/sports/football-soccer"
+    },
+    {
+      "seedId": "279091b1-6101-5dbe-92a9-e8ebae997cdf",
+      "category": "sports",
+      "navigationKeyword1": "rules",
+      "navigationKeyword2": "penalties",
+      "question": "What is it called when a baseball pitcher throws four balls outside the strike zone to one batter?",
+      "correctAnswer": "A walk",
+      "incorrectAnswers": [
+        "A balk",
+        "An out",
+        "A beanball"
+      ],
+      "explanation": "Four balls award the batter first base.",
+      "keywords": [
+        "rules",
+        "penalties",
+        "baseball"
+      ],
+      "source": "https://www.mlb.com/glossary"
+    },
+    {
+      "seedId": "59e9934d-eaba-50f3-a7ca-1e349b6e9cf8",
+      "category": "sports",
+      "navigationKeyword1": "rules",
+      "navigationKeyword2": "penalties",
+      "question": "What is the common boxing penalty for an illegal blow below the belt?",
+      "correctAnswer": "A foul warning or point deduction",
+      "incorrectAnswers": [
+        "An automatic knockout",
+        "A goal kick",
+        "A faceoff"
+      ],
+      "explanation": "Low blows are fouls and may lead to warnings or deductions.",
+      "keywords": [
+        "rules",
+        "penalties",
+        "boxing"
+      ],
+      "source": "https://www.britannica.com/sports"
+    },
+    {
+      "seedId": "b5f641d3-4977-5254-8718-1e9ac21a4dd1",
+      "category": "sports",
+      "navigationKeyword1": "rules",
+      "navigationKeyword2": "penalties",
+      "question": "What is the golf result when a ball finishes out of bounds and stroke-and-distance applies?",
+      "correctAnswer": "Penalty strokes are added",
+      "incorrectAnswers": [
+        "The player loses the hole automatically",
+        "The shot is replayed for free",
+        "The ball is always dropped without penalty"
+      ],
+      "explanation": "Many golf violations and certain ball locations add penalty strokes.",
+      "keywords": [
+        "rules",
+        "penalties",
+        "golf"
+      ],
+      "source": "https://www.usga.org/content/usga/home-page/rules-hub.html"
+    },
+    {
+      "seedId": "00e5ff17-463f-59d3-b11b-2500586d6d78",
+      "category": "sports",
+      "navigationKeyword1": "rules",
+      "navigationKeyword2": "penalties",
+      "question": "What is the penalty called when an offensive football player moves before the snap?",
+      "correctAnswer": "False start",
+      "incorrectAnswers": [
+        "Offside",
+        "Holding",
+        "Encroachment"
+      ],
+      "explanation": "A false start is a pre-snap offensive penalty.",
+      "keywords": [
+        "rules",
+        "penalties",
+        "football"
+      ],
+      "source": "https://operations.nfl.com/learn-the-game/nfl-basics/"
+    },
+    {
+      "seedId": "58f333b7-b871-5735-ab13-3b23f5531730",
+      "category": "sports",
+      "navigationKeyword1": "rules",
+      "navigationKeyword2": "penalties",
+      "question": "What is the rugby term for a serious offense that can send a player off permanently?",
+      "correctAnswer": "Red card",
+      "incorrectAnswers": [
+        "Icing",
+        "Technical foul",
+        "Timeout"
+      ],
+      "explanation": "A red card ejects the player from the match.",
+      "keywords": [
+        "rules",
+        "penalties",
+        "red-card"
+      ],
+      "source": "https://www.britannica.com/sports"
+    },
+    {
+      "seedId": "fedc8067-4fb1-562c-a90e-0e9e7c7dbd04",
+      "category": "sports",
+      "navigationKeyword1": "rules",
+      "navigationKeyword2": "penalties",
+      "question": "What is the soccer restart after a defending team commits a direct-free-kick foul inside its own penalty area?",
+      "correctAnswer": "Penalty kick",
+      "incorrectAnswers": [
+        "Corner kick",
+        "Dropped ball",
+        "Throw-in"
+      ],
+      "explanation": "A direct-free-kick foul inside the box becomes a penalty kick.",
+      "keywords": [
+        "rules",
+        "penalties",
+        "penalty-kick"
+      ],
+      "source": "https://www.britannica.com/sports/football-soccer"
+    }
+  ]
+}

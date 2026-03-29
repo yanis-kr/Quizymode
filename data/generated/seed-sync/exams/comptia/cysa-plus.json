@@ -1,0 +1,207 @@
+{
+  "schemaVersion": 1,
+  "seedSet": "core-public-items",
+  "deltaPreviewLimit": 200,
+  "items": [
+    {
+      "seedId": "94753554-737f-44f4-b6d2-885c3b1e67f0",
+      "category": "exams",
+      "navigationKeyword1": "comptia",
+      "navigationKeyword2": "cysa-plus",
+      "question": "What does log ingestion mean in a SOC context?",
+      "correctAnswer": "Bringing event and log data into a monitoring platform for analysis",
+      "incorrectAnswers": [
+        "Deleting logs after 24 hours",
+        "Printing logs for signatures",
+        "Hashing passwords for users"
+      ],
+      "explanation": "Log ingestion refers to collecting and loading log data into a platform such as a SIEM.",
+      "keywords": [
+        "cysa-plus",
+        "soc-analyst",
+        "comptia"
+      ],
+      "source": "https://learn.microsoft.com/en-us/azure/sentinel/connect-data-sources"
+    },
+    {
+      "seedId": "cf3624ca-d6f5-4422-af38-a5ea9380f817",
+      "category": "exams",
+      "navigationKeyword1": "comptia",
+      "navigationKeyword2": "cysa-plus",
+      "question": "What is Wireshark primarily used for?",
+      "correctAnswer": "Capturing and analyzing network traffic",
+      "incorrectAnswers": [
+        "Editing registry keys",
+        "Provisioning VLANs",
+        "Creating disk images"
+      ],
+      "explanation": "Wireshark is a packet analyzer used to inspect captured network traffic.",
+      "keywords": [
+        "cysa-plus",
+        "soc-analyst",
+        "comptia"
+      ],
+      "source": "https://www.wireshark.org/docs/wsug_html_chunked/ChCapCapturingSection.html"
+    },
+    {
+      "seedId": "72a0b5fe-fdbd-4083-ab96-eae12dd484a7",
+      "category": "exams",
+      "navigationKeyword1": "comptia",
+      "navigationKeyword2": "cysa-plus",
+      "question": "What is an indicator of compromise?",
+      "correctAnswer": "A piece of evidence suggesting potential malicious activity",
+      "incorrectAnswers": [
+        "A completed software license renewal",
+        "A failed backup job only",
+        "A mandatory BIOS update"
+      ],
+      "explanation": "IOCs are artifacts or evidence that can indicate possible compromise.",
+      "keywords": [
+        "cysa-plus",
+        "soc-analyst",
+        "comptia"
+      ],
+      "source": "https://www.cisa.gov/news-events/news/understanding-indicators-compromise"
+    },
+    {
+      "seedId": "d0d78d61-0996-489f-8c03-20b05bac87c9",
+      "category": "exams",
+      "navigationKeyword1": "comptia",
+      "navigationKeyword2": "cysa-plus",
+      "question": "What is the difference between a true positive and a false positive?",
+      "correctAnswer": "A true positive is a correctly detected threat, while a false positive is a benign event flagged as malicious",
+      "incorrectAnswers": [
+        "A true positive is always low severity",
+        "A false positive means a confirmed breach",
+        "There is no difference"
+      ],
+      "explanation": "Detection tuning aims to maximize true positives and reduce false positives.",
+      "keywords": [
+        "cysa-plus",
+        "soc-analyst",
+        "comptia"
+      ],
+      "source": "https://learn.microsoft.com/en-us/azure/sentinel/false-positives"
+    },
+    {
+      "seedId": "638833ce-e249-4dcf-952a-06a581fadc67",
+      "category": "exams",
+      "navigationKeyword1": "comptia",
+      "navigationKeyword2": "cysa-plus",
+      "question": "What is the main function of a SIEM?",
+      "correctAnswer": "Aggregating and correlating security events from many sources",
+      "incorrectAnswers": [
+        "Defragmenting disks",
+        "Providing DHCP leases",
+        "Formatting log files for printers"
+      ],
+      "explanation": "SIEM tools centralize and correlate events to support monitoring and investigations.",
+      "keywords": [
+        "cysa-plus",
+        "soc-analyst",
+        "comptia"
+      ],
+      "source": "https://learn.microsoft.com/en-us/azure/sentinel/overview"
+    },
+    {
+      "seedId": "d4ee09e6-d2d3-48d7-8c41-024c272229eb",
+      "category": "exams",
+      "navigationKeyword1": "comptia",
+      "navigationKeyword2": "cysa-plus",
+      "question": "What is the purpose of a malware sandbox?",
+      "correctAnswer": "To observe suspicious code in an isolated environment",
+      "incorrectAnswers": [
+        "To replace EDR agents",
+        "To assign static routes",
+        "To store DNS zones"
+      ],
+      "explanation": "Sandboxes let defenders analyze suspicious files or code safely in isolation.",
+      "keywords": [
+        "cysa-plus",
+        "soc-analyst",
+        "comptia"
+      ],
+      "source": "https://learn.microsoft.com/en-us/defender-office-365/safe-attachments-about"
+    },
+    {
+      "seedId": "f9ff07d4-e55e-4d3c-8a44-732f1c635889",
+      "category": "exams",
+      "navigationKeyword1": "comptia",
+      "navigationKeyword2": "cysa-plus",
+      "question": "What is the value of an incident response playbook?",
+      "correctAnswer": "It standardizes response steps for a known type of incident",
+      "incorrectAnswers": [
+        "It disables endpoint logging",
+        "It guarantees zero false positives",
+        "It replaces backups"
+      ],
+      "explanation": "Playbooks help teams respond consistently and quickly to recurring incident types.",
+      "keywords": [
+        "cysa-plus",
+        "soc-analyst",
+        "comptia"
+      ],
+      "source": "https://learn.microsoft.com/en-us/azure/sentinel/automation/playbook-triggers-actions"
+    },
+    {
+      "seedId": "a25a0dc3-2a32-41c7-bf66-e2dc9d875e38",
+      "category": "exams",
+      "navigationKeyword1": "comptia",
+      "navigationKeyword2": "cysa-plus",
+      "question": "What is threat hunting?",
+      "correctAnswer": "Proactively searching for signs of malicious activity not yet confirmed by alerts",
+      "incorrectAnswers": [
+        "Waiting for users to report issues",
+        "Building VLAN trunks",
+        "Encrypting backup tapes"
+      ],
+      "explanation": "Threat hunting is a proactive search for suspicious behavior or compromise indicators.",
+      "keywords": [
+        "cysa-plus",
+        "soc-analyst",
+        "comptia"
+      ],
+      "source": "https://www.cisa.gov/news-events/news/understanding-indicators-compromise"
+    },
+    {
+      "seedId": "c34856e3-f035-4e88-8864-1e1b3e640b48",
+      "category": "exams",
+      "navigationKeyword1": "comptia",
+      "navigationKeyword2": "cysa-plus",
+      "question": "Why is PowerShell useful to analysts and defenders?",
+      "correctAnswer": "It can automate administrative and investigative tasks on Windows systems",
+      "incorrectAnswers": [
+        "It replaces all endpoint logs",
+        "It routes internet traffic",
+        "It is a packet encapsulation protocol"
+      ],
+      "explanation": "PowerShell is commonly used to automate and script operational tasks on Windows.",
+      "keywords": [
+        "cysa-plus",
+        "soc-analyst",
+        "comptia"
+      ],
+      "source": "https://learn.microsoft.com/en-us/powershell/scripting/overview"
+    },
+    {
+      "seedId": "44b7c437-70d7-4fe3-8f48-ea918cfb8d15",
+      "category": "exams",
+      "navigationKeyword1": "comptia",
+      "navigationKeyword2": "cysa-plus",
+      "question": "Why is least privilege important in security operations?",
+      "correctAnswer": "It limits the damage that can occur if an account or system is misused",
+      "incorrectAnswers": [
+        "It removes the need for MFA",
+        "It prevents all phishing",
+        "It replaces network segmentation"
+      ],
+      "explanation": "Limiting privileges reduces the blast radius of misuse or compromise.",
+      "keywords": [
+        "cysa-plus",
+        "soc-analyst",
+        "comptia"
+      ],
+      "source": "https://csrc.nist.gov/glossary/term/least_privilege"
+    }
+  ]
+}

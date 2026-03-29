@@ -1,0 +1,197 @@
+{
+  "schemaVersion": 1,
+  "seedSet": "core-public-items",
+  "deltaPreviewLimit": 200,
+  "items": [
+    {
+      "seedId": "626c0554-e5bf-5c01-ada9-4003a6ac9f58",
+      "category": "trivia",
+      "navigationKeyword1": "games",
+      "navigationKeyword2": "series",
+      "question": "Animal Crossing emphasizes what pacing?",
+      "correctAnswer": "slow-paced town life",
+      "incorrectAnswers": [
+        "competitive esports",
+        "battle royale",
+        "speedrunning"
+      ],
+      "explanation": "Animal Crossing focuses on relaxed town life.",
+      "keywords": [
+        "animal-crossing",
+        "life-sim"
+      ],
+      "source": "https://www.britannica.com/topic/Animal-Crossing-electronic-game"
+    },
+    {
+      "seedId": "e47e984e-a947-5095-8d6b-45ea082c6b9f",
+      "category": "trivia",
+      "navigationKeyword1": "games",
+      "navigationKeyword2": "series",
+      "question": "Civilization series models what scale strategy?",
+      "correctAnswer": "turn-based empire building",
+      "incorrectAnswers": [
+        "real-time fighting only",
+        "rhythm timing only",
+        "tile-matching only"
+      ],
+      "explanation": "Civilization is turn-based empire strategy.",
+      "keywords": [
+        "civ",
+        "strategy"
+      ],
+      "source": "https://www.britannica.com/topic/Civilization-electronic-game"
+    },
+    {
+      "seedId": "c16877ec-893d-5f02-bb10-c80161fba398",
+      "category": "trivia",
+      "navigationKeyword1": "games",
+      "navigationKeyword2": "series",
+      "question": "Pok\u00e9mon to players collecting and battling what?",
+      "correctAnswer": "creatures called Pok\u00e9mon",
+      "incorrectAnswers": [
+        "spaceships",
+        "race cars",
+        "chess pieces"
+      ],
+      "explanation": "Pok\u00e9mon centers on creature collection battles.",
+      "keywords": [
+        "pokemon",
+        "rpg"
+      ],
+      "source": "https://www.britannica.com/topic/Pokemon-electronic-game"
+    },
+    {
+      "seedId": "90e6a738-fbe2-5c61-a7b9-56369cd06793",
+      "category": "trivia",
+      "navigationKeyword1": "games",
+      "navigationKeyword2": "series",
+      "question": "Sims series with simulating what?",
+      "correctAnswer": "daily life of characters",
+      "incorrectAnswers": [
+        "stock exchanges only",
+        "naval battles only",
+        "golf swings only"
+      ],
+      "explanation": "The Sims simulates life management.",
+      "keywords": [
+        "sims",
+        "simulation"
+      ],
+      "source": "https://www.britannica.com/topic/The-Sims"
+    },
+    {
+      "seedId": "8c6d552c-e550-58ca-8b53-f8c7b5fcf0da",
+      "category": "trivia",
+      "navigationKeyword1": "games",
+      "navigationKeyword2": "series",
+      "question": "The Legend of Zelda to recurring princess name what?",
+      "correctAnswer": "Zelda",
+      "incorrectAnswers": [
+        "Peach",
+        "Samus",
+        "Lara"
+      ],
+      "explanation": "Princess Zelda names the series.",
+      "keywords": [
+        "zelda",
+        "nintendo"
+      ],
+      "source": "https://www.britannica.com/topic/The-Legend-of-Zelda"
+    },
+    {
+      "seedId": "45a4b5f7-f0ba-5538-9141-0d3146197a64",
+      "category": "trivia",
+      "navigationKeyword1": "games",
+      "navigationKeyword2": "series",
+      "question": "Which country\u2019s RPG developer historically is most closely associated with Final Fantasy?",
+      "correctAnswer": "Japan",
+      "incorrectAnswers": [
+        "Canada",
+        "France",
+        "South Africa"
+      ],
+      "explanation": "Final Fantasy is a Japanese RPG series.",
+      "keywords": [
+        "final-fantasy",
+        "jrpg"
+      ],
+      "source": "https://www.britannica.com/topic/Final-Fantasy-electronic-game"
+    },
+    {
+      "seedId": "60e3ff09-dc50-5d70-9072-a77131fa3d09",
+      "category": "trivia",
+      "navigationKeyword1": "games",
+      "navigationKeyword2": "series",
+      "question": "Which genre blend is most closely associated with Resident Evil?",
+      "correctAnswer": "survival horror",
+      "incorrectAnswers": [
+        "sports management",
+        "puzzle-only",
+        "rhythm"
+      ],
+      "explanation": "Resident Evil is survival horror.",
+      "keywords": [
+        "resident-evil",
+        "horror"
+      ],
+      "source": "https://www.britannica.com/topic/Resident-Evil-electronic-game"
+    },
+    {
+      "seedId": "0f880834-3a17-51ee-ae05-be8ff7364a1a",
+      "category": "trivia",
+      "navigationKeyword1": "games",
+      "navigationKeyword2": "series",
+      "question": "Which genre is associated with Call of Duty?",
+      "correctAnswer": "first-person shooter",
+      "incorrectAnswers": [
+        "racing sim",
+        "rhythm",
+        "farming"
+      ],
+      "explanation": "Call of Duty is an FPS franchise.",
+      "keywords": [
+        "cod",
+        "fps"
+      ],
+      "source": "https://www.britannica.com/topic/Call-of-Duty-electronic-game"
+    },
+    {
+      "seedId": "c5588ed2-6ae2-5b1d-a93d-95472505ed0f",
+      "category": "trivia",
+      "navigationKeyword1": "games",
+      "navigationKeyword2": "series",
+      "question": "Which racing format is most closely associated with Mario Kart?",
+      "correctAnswer": "kart racing with items",
+      "incorrectAnswers": [
+        "open-world flight",
+        "submarine sim",
+        "chess clocks"
+      ],
+      "explanation": "Mario Kart is item-based kart racing.",
+      "keywords": [
+        "mario-kart",
+        "racing"
+      ],
+      "source": "https://www.britannica.com/topic/Mario-Kart"
+    },
+    {
+      "seedId": "22cbebc6-8fa6-5400-b2d8-93312f0fc6fe",
+      "category": "trivia",
+      "navigationKeyword1": "games",
+      "navigationKeyword2": "series",
+      "question": "Which sport is most closely associated with Madden NFL games?",
+      "correctAnswer": "American football",
+      "incorrectAnswers": [
+        "cricket",
+        "rugby union only",
+        "lacrosse"
+      ],
+      "explanation": "Madden simulates American football.",
+      "keywords": [
+        "madden",
+        "sports-games"
+      ],
+      "source": "https://www.britannica.com/topic/Madden-NFL"
+    }
+  ]
+}

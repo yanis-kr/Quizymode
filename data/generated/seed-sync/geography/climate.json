@@ -1,0 +1,1287 @@
+{
+  "schemaVersion": 1,
+  "seedSet": "core-public-items",
+  "deltaPreviewLimit": 200,
+  "items": [
+    {
+      "seedId": "6e5f7241-e96e-42d8-942e-b807e0de5eb9",
+      "category": "geography",
+      "navigationKeyword1": "climate",
+      "navigationKeyword2": "biomes",
+      "question": "A biome includes multiple biological what nested within it?",
+      "correctAnswer": "communities",
+      "incorrectAnswers": [
+        "isotherms only",
+        "currency blocks",
+        "fault scarps"
+      ],
+      "explanation": "Britannica describes biomes as containing various communities with shared forms and conditions.",
+      "keywords": [
+        "biomes",
+        "biome-structure",
+        "communities"
+      ],
+      "source": "https://www.britannica.com/science/biome"
+    },
+    {
+      "seedId": "e655b4ae-7d1d-441f-8c86-6f50deca4a59",
+      "category": "geography",
+      "navigationKeyword1": "climate",
+      "navigationKeyword2": "biomes",
+      "question": "Deciduous forests in North America, Europe, and Asia aren\u2019t identical twins, but ecologists lump them into one broader label\u2014what is that label?",
+      "correctAnswer": "The same biome type (e.g., temperate deciduous forest)",
+      "incorrectAnswers": [
+        "They must share one currency",
+        "They are always one political country",
+        "They cannot share any plant families"
+      ],
+      "explanation": "Britannica explains multiple regional biomes can belong to one biome type, such as temperate deciduous forest.",
+      "keywords": [
+        "biomes",
+        "biome-types",
+        "classification"
+      ],
+      "source": "https://www.britannica.com/science/biome"
+    },
+    {
+      "seedId": "0340c7ba-fb0a-4228-9ac7-6987842a22a3",
+      "category": "geography",
+      "navigationKeyword1": "climate",
+      "navigationKeyword2": "biomes",
+      "question": "Empirical climate classifications like K\u00f6ppen group places using measurable aspects of what system?",
+      "correctAnswer": "the climate system (temperature, precipitation, vegetation correlates)",
+      "incorrectAnswers": [
+        "sports league rankings",
+        "national GDP alone",
+        "river boat lengths"
+      ],
+      "explanation": "Britannica contrasts empirical schemes grouping climates by climate-system data with genetic cause-based schemes.",
+      "keywords": [
+        "biomes",
+        "classification",
+        "empirical"
+      ],
+      "source": "https://www.britannica.com/science/Koppen-climate-classification"
+    },
+    {
+      "seedId": "3c1a8cf9-234e-44b0-a039-e3bcf2861499",
+      "category": "geography",
+      "navigationKeyword1": "climate",
+      "navigationKeyword2": "biomes",
+      "question": "European literature often uses which phrase as an equivalent to the North American biome concept?",
+      "correctAnswer": "major life zone",
+      "incorrectAnswers": [
+        "exclusive economic zone",
+        "trade winds belt",
+        "polar front jet"
+      ],
+      "explanation": "Britannica notes \u201cmajor life zone\u201d is the European phrase parallel to biome.",
+      "keywords": [
+        "biomes",
+        "biome-terminology",
+        "europe"
+      ],
+      "source": "https://www.britannica.com/science/biome"
+    },
+    {
+      "seedId": "ca199719-84a1-4475-8946-7da364ff62c7",
+      "category": "geography",
+      "navigationKeyword1": "climate",
+      "navigationKeyword2": "biomes",
+      "question": "K\u00f6ppen designed climate boundaries to align closely with mapped zones of what?",
+      "correctAnswer": "vegetation (biomes)",
+      "incorrectAnswers": [
+        "time zones",
+        "political borders alone",
+        "Internet cable routes"
+      ],
+      "explanation": "Britannica states K\u00f6ppen matched climate limits to vegetation zones being mapped in his era.",
+      "keywords": [
+        "biomes",
+        "koppen",
+        "vegetation-zones"
+      ],
+      "source": "https://www.britannica.com/science/Koppen-climate-classification"
+    },
+    {
+      "seedId": "9423e8f4-82cf-47cf-9605-6db484c4a386",
+      "category": "geography",
+      "navigationKeyword1": "climate",
+      "navigationKeyword2": "biomes",
+      "question": "Swap hemispheres and you can still match places by the big ecological \u201cneighborhood\u201d they belong to\u2014tundra, savanna, rainforest, and so on. What is that scale of region called?",
+      "correctAnswer": "A biome",
+      "incorrectAnswers": [
+        "A postal code zone",
+        "A single weather front",
+        "A time zone"
+      ],
+      "explanation": "Britannica defines a biome as a major community with similar life forms and environmental conditions.",
+      "keywords": [
+        "biomes",
+        "biome-concept",
+        "ecology"
+      ],
+      "source": "https://www.britannica.com/science/biome"
+    },
+    {
+      "seedId": "0d6071f1-14e3-443c-a9f0-c50dc5bd2a63",
+      "category": "geography",
+      "navigationKeyword1": "climate",
+      "navigationKeyword2": "biomes",
+      "question": "Tropical seasonal forests and savannas often experience wet and dry periods tied to shifts of which belt?",
+      "correctAnswer": "the intertropical convergence zone",
+      "incorrectAnswers": [
+        "the polar vortex only",
+        "the Kuroshio Current exclusively",
+        "the doldrums fixed at one spot"
+      ],
+      "explanation": "Britannica links low-latitude wet/dry seasons to seasonal movement of the intertropical convergence zone.",
+      "keywords": [
+        "biomes",
+        "itcz",
+        "tropics"
+      ],
+      "source": "https://www.britannica.com/science/season"
+    },
+    {
+      "seedId": "5abb3cf0-be3c-441b-9497-2f8a1ccc8be5",
+      "category": "geography",
+      "navigationKeyword1": "climate",
+      "navigationKeyword2": "biomes",
+      "question": "Type B dry climates subdivide into arid (BW) and which moister subtype?",
+      "correctAnswer": "semiarid (BS)",
+      "incorrectAnswers": [
+        "polar (EF)",
+        "tundra (ET)",
+        "monsoon (Am)"
+      ],
+      "explanation": "Britannica divides K\u00f6ppen B climates into arid BW and semiarid BS subtypes.",
+      "keywords": [
+        "biomes",
+        "dry-climates",
+        "koppen"
+      ],
+      "source": "https://www.britannica.com/science/Koppen-climate-classification"
+    },
+    {
+      "seedId": "4e84f23d-0a45-498d-a4b4-0c31c89831fb",
+      "category": "geography",
+      "navigationKeyword1": "climate",
+      "navigationKeyword2": "biomes",
+      "question": "We talk a lot about rainforests and grasslands, but which single realm actually covers most of Earth\u2019s surface at biome scale?",
+      "correctAnswer": "The global ocean (marine biome)",
+      "incorrectAnswers": [
+        "Tropical rainforest alone",
+        "The Sahara Desert alone",
+        "All cities and farmland combined"
+      ],
+      "explanation": "Britannica\u2019s biome overview treats marine environments as a major biome category, and ocean area dwarfs any one land biome.",
+      "keywords": [
+        "biomes",
+        "marine-biome",
+        "ocean"
+      ],
+      "source": "https://www.britannica.com/science/biome"
+    },
+    {
+      "seedId": "dfe95481-86fb-4305-a99a-dbc94a611eac",
+      "category": "geography",
+      "navigationKeyword1": "climate",
+      "navigationKeyword2": "biomes",
+      "question": "Why do map legends say \u201cboreal forest\u201d or \u201cgrassland\u201d instead of naming the local mayor?",
+      "correctAnswer": "Biome names highlight the vegetation you expect to dominate the landscape",
+      "incorrectAnswers": [
+        "Vegetation is irrelevant to biome science",
+        "Biomes are named only for dominant rock type",
+        "Biomes follow national borders exactly"
+      ],
+      "explanation": "Britannica states biomes take names from dominant vegetation such as grassland or coniferous forest.",
+      "keywords": [
+        "biomes",
+        "biome-naming",
+        "vegetation"
+      ],
+      "source": "https://www.britannica.com/science/biome"
+    },
+    {
+      "seedId": "2bae537a-34f4-4cfa-81b6-16e2697f7465",
+      "category": "geography",
+      "navigationKeyword1": "climate",
+      "navigationKeyword2": "change",
+      "question": "A 2022 U.S. interagency sea level task force concluded that even on the lowest warming pathway, global mean sea level would rise at least how much above 2000 levels by 2100?",
+      "correctAnswer": "0.3 meters (about 1 foot)",
+      "incorrectAnswers": [
+        "0.03 meters",
+        "3 meters minimum everywhere",
+        "30 meters"
+      ],
+      "explanation": "NOAA Climate.gov summarizes the 2022 interagency report: even under the lowest greenhouse-gas pathway, global mean sea level would rise at least 0.3 m above 2000 levels by 2100.",
+      "keywords": [
+        "change",
+        "projections",
+        "sea-level"
+      ],
+      "source": "https://www.climate.gov/news-features/understanding-climate/climate-change-global-sea-level"
+    },
+    {
+      "seedId": "e7e3f594-a412-4bb1-99db-f933e633e843",
+      "category": "geography",
+      "navigationKeyword1": "climate",
+      "navigationKeyword2": "change",
+      "question": "Before the Industrial Revolution, atmospheric carbon dioxide was about what level or lower?",
+      "correctAnswer": "280 parts per million or less",
+      "incorrectAnswers": [
+        "420 parts per million",
+        "800 parts per million",
+        "100 parts per million"
+      ],
+      "explanation": "NOAA Climate.gov states pre-industrial atmospheric CO\u2082 was about 280 ppm or less, based on ice-core and other paleoclimate evidence.",
+      "keywords": [
+        "change",
+        "carbon-dioxide",
+        "pre-industrial"
+      ],
+      "source": "https://www.climate.gov/news-features/understanding-climate/climate-change-atmospheric-carbon-dioxide"
+    },
+    {
+      "seedId": "21561197-e00b-4890-bcdd-8f1d3399b5c2",
+      "category": "geography",
+      "navigationKeyword1": "climate",
+      "navigationKeyword2": "change",
+      "question": "Carbon dioxide is described as Earth\u2019s most important long-lived what kind of gas in NOAA\u2019s climate overview?",
+      "correctAnswer": "greenhouse gas",
+      "incorrectAnswers": [
+        "noble gas",
+        "inert shield gas with no heat effect",
+        "purely stratospheric ozone-depleter only"
+      ],
+      "explanation": "NOAA Climate.gov describes carbon dioxide as Earth\u2019s most important long-lived greenhouse gas because it absorbs heat radiated from the surface and rereleases it in all directions.",
+      "keywords": [
+        "change",
+        "carbon-dioxide",
+        "greenhouse-gas"
+      ],
+      "source": "https://www.climate.gov/news-features/understanding-climate/climate-change-atmospheric-carbon-dioxide"
+    },
+    {
+      "seedId": "d1fdc69e-3663-432c-a512-ce49a30c0c0c",
+      "category": "geography",
+      "navigationKeyword1": "climate",
+      "navigationKeyword2": "change",
+      "question": "Coastal towns aren\u2019t just watching ice melt\u2014warming seawater itself lifts the ocean. Besides meltwater from land ice, what is the other big driver of global mean sea-level rise?",
+      "correctAnswer": "Thermal expansion\u2014seawater swells as it absorbs heat",
+      "incorrectAnswers": [
+        "Tides permanently reversing all rivers",
+        "Cargo ships displacing extra water each year",
+        "New undersea volcanoes building seafloor only"
+      ],
+      "explanation": "NOAA Climate.gov stresses that global mean sea level rises both from meltwater added by warming glaciers and ice sheets and from seawater swelling as the ocean absorbs heat (thermal expansion).",
+      "keywords": [
+        "change",
+        "sea-level",
+        "causes"
+      ],
+      "source": "https://www.climate.gov/news-features/understanding-climate/climate-change-global-sea-level"
+    },
+    {
+      "seedId": "5becbbf6-9a2a-4b58-bde6-3676a6ef86c0",
+      "category": "geography",
+      "navigationKeyword1": "climate",
+      "navigationKeyword2": "change",
+      "question": "From 2006\u20132015, global mean sea level rose about how much per year on average?",
+      "correctAnswer": "0.14 inches (3.6 millimeters) per year",
+      "incorrectAnswers": [
+        "0.014 inches per year",
+        "1.4 inches per year",
+        "14 inches per year"
+      ],
+      "explanation": "NOAA Climate.gov notes the global mean ocean rose about 0.14 inches (3.6 mm) per year from 2006\u20132015, faster than the twentieth-century average it cites.",
+      "keywords": [
+        "change",
+        "sea-level",
+        "rate"
+      ],
+      "source": "https://www.climate.gov/news-features/understanding-climate/climate-change-global-sea-level"
+    },
+    {
+      "seedId": "646f45f6-f26d-4faf-b8ff-ad6d6b05898b",
+      "category": "geography",
+      "navigationKeyword1": "climate",
+      "navigationKeyword2": "change",
+      "question": "Higher coastal water levels worsen hazards from storm surge and also increase what kind of high-tide flooding?",
+      "correctAnswer": "nuisance flooding",
+      "incorrectAnswers": [
+        "polar mesospheric flooding",
+        "desert flash floods only inland",
+        "stratospheric lightning floods"
+      ],
+      "explanation": "NOAA Climate.gov explains higher background sea level lets storm surges push farther inland and makes high-tide \u201cnuisance flooding\u201d more frequent.",
+      "keywords": [
+        "change",
+        "coastal",
+        "flooding"
+      ],
+      "source": "https://www.climate.gov/news-features/understanding-climate/climate-change-global-sea-level"
+    },
+    {
+      "seedId": "0ce10a88-6c23-4029-a05b-1422e35168b2",
+      "category": "geography",
+      "navigationKeyword1": "climate",
+      "navigationKeyword2": "change",
+      "question": "NOAA reports carbon dioxide alone accounts for about what share of the total heating influence from human-produced greenhouse gases since 1990?",
+      "correctAnswer": "about 80 percent",
+      "incorrectAnswers": [
+        "about 8 percent",
+        "about 50 percent",
+        "about 99 percent"
+      ],
+      "explanation": "NOAA Climate.gov, citing NOAA Global Monitoring Laboratory analysis, states CO\u2082 is responsible for about 80% of the heating influence of human-produced greenhouse gases since 1990.",
+      "keywords": [
+        "change",
+        "radiative-forcing",
+        "carbon-dioxide"
+      ],
+      "source": "https://www.climate.gov/news-features/understanding-climate/climate-change-atmospheric-carbon-dioxide"
+    },
+    {
+      "seedId": "0b04d5bb-fd25-43d9-a679-4c73f80e752b",
+      "category": "geography",
+      "navigationKeyword1": "climate",
+      "navigationKeyword2": "change",
+      "question": "Scientists measure global sea level chiefly using tide gauges and what other method?",
+      "correctAnswer": "satellite radar altimeters",
+      "incorrectAnswers": [
+        "handheld anemometers only",
+        "tree-ring width charts only",
+        "balloon radiosondes over deserts only"
+      ],
+      "explanation": "NOAA Climate.gov describes tide gauges and satellite altimeters as the two main methods for measuring sea level.",
+      "keywords": [
+        "change",
+        "measurement",
+        "altimetry"
+      ],
+      "source": "https://www.climate.gov/news-features/understanding-climate/climate-change-global-sea-level"
+    },
+    {
+      "seedId": "110ee380-7f69-4437-9de2-fcb0059720e1",
+      "category": "geography",
+      "navigationKeyword1": "climate",
+      "navigationKeyword2": "change",
+      "question": "Since about 1880, global mean sea level has risen by roughly how much?",
+      "correctAnswer": "about 8\u20139 inches (21\u201324 centimeters)",
+      "incorrectAnswers": [
+        "less than one inch total",
+        "about 8\u20139 feet",
+        "about 80\u201390 inches"
+      ],
+      "explanation": "NOAA Climate.gov reports global mean sea level rose about 8\u20139 inches since 1880, mainly from glacier and ice sheet melt plus ocean thermal expansion.",
+      "keywords": [
+        "change",
+        "sea-level",
+        "observations"
+      ],
+      "source": "https://www.climate.gov/news-features/understanding-climate/climate-change-global-sea-level"
+    },
+    {
+      "seedId": "386114f8-10bb-4890-9cd6-2764cf6e7553",
+      "category": "geography",
+      "navigationKeyword1": "climate",
+      "navigationKeyword2": "change",
+      "question": "Since the start of the Industrial Revolution, average surface-ocean pH has declined from 8.21 to about what value?",
+      "correctAnswer": "8.10",
+      "incorrectAnswers": [
+        "7.00",
+        "9.50",
+        "6.21"
+      ],
+      "explanation": "NOAA Climate.gov reports ocean surface pH fell from 8.21 to 8.10 since industrialization as CO\u2082 dissolves and forms carbonic acid, a process called ocean acidification.",
+      "keywords": [
+        "change",
+        "ocean-acidification",
+        "ph"
+      ],
+      "source": "https://www.climate.gov/news-features/understanding-climate/climate-change-atmospheric-carbon-dioxide"
+    },
+    {
+      "seedId": "f11fedbc-4ba2-482d-980f-cf50bcc0b741",
+      "category": "geography",
+      "navigationKeyword1": "climate",
+      "navigationKeyword2": "change",
+      "question": "Why do local coastal sea level trends differ from the global average?",
+      "correctAnswer": "Local factors like land subsidence, currents, and post\u2013ice age land rebound alter relative sea level",
+      "incorrectAnswers": [
+        "The ocean is a single flat bathtub with identical rise everywhere always",
+        "Only latitude changes tide gauges, nothing else",
+        "Moon phase permanently fixes each harbor\u2019s level"
+      ],
+      "explanation": "NOAA Climate.gov notes past and future sea level at a coast can be more or less than the global average because of ground settling, currents, erosion, and glacial isostatic rebound.",
+      "keywords": [
+        "change",
+        "regional",
+        "sea-level"
+      ],
+      "source": "https://www.climate.gov/news-features/understanding-climate/climate-change-global-sea-level"
+    },
+    {
+      "seedId": "504038dd-46d4-4bc1-9132-e7efb87c4dbc",
+      "category": "geography",
+      "navigationKeyword1": "climate",
+      "navigationKeyword2": "seasons",
+      "question": "At equinoxes, day and night are approximately what length?",
+      "correctAnswer": "equal in length",
+      "incorrectAnswers": [
+        "always 18 hours daylight",
+        "always polar night",
+        "undefined globally"
+      ],
+      "explanation": "Britannica states equinox days and nights are equal in length.",
+      "keywords": [
+        "seasons",
+        "equinox",
+        "day-length"
+      ],
+      "source": "https://www.britannica.com/science/season"
+    },
+    {
+      "seedId": "1c106391-bf46-4d45-bd3c-8ee3810a4dc4",
+      "category": "geography",
+      "navigationKeyword1": "climate",
+      "navigationKeyword2": "seasons",
+      "question": "Earth\u2019s axis keeps a nearly fixed tilt of about how many degrees to the plane of its orbit?",
+      "correctAnswer": "about 66\u00b033\u2032",
+      "incorrectAnswers": [
+        "0\u00b0",
+        "45\u00b0",
+        "90\u00b0"
+      ],
+      "explanation": "Britannica notes Earth\u2019s axis keeps a nearly fixed tilt of about 66\u00b033\u2032 to the orbital plane as it orbits the Sun.",
+      "keywords": [
+        "seasons",
+        "axial-tilt",
+        "orbit"
+      ],
+      "source": "https://www.britannica.com/science/season"
+    },
+    {
+      "seedId": "b6fddae0-4c68-43b9-8263-278922c899c8",
+      "category": "geography",
+      "navigationKeyword1": "climate",
+      "navigationKeyword2": "seasons",
+      "question": "In mid-latitude belts of westerlies, daily weather is especially changeable because of what?",
+      "correctAnswer": "a steady progression of traveling highs and lows",
+      "incorrectAnswers": [
+        "permanent high pressure everywhere",
+        "lack of any jet streams",
+        "fixed desert anticyclones only"
+      ],
+      "explanation": "Britannica attributes mid-latitude variability to migrating pressure centers and fronts.",
+      "keywords": [
+        "seasons",
+        "midlatitudes",
+        "weather-systems"
+      ],
+      "source": "https://www.britannica.com/science/weather"
+    },
+    {
+      "seedId": "57504dd1-e633-4b10-babb-94299e90fda2",
+      "category": "geography",
+      "navigationKeyword1": "climate",
+      "navigationKeyword2": "seasons",
+      "question": "In the Northern Hemisphere, when is the day shortest and the night longest?",
+      "correctAnswer": "around the winter solstice (about December 21\u201322)",
+      "incorrectAnswers": [
+        "around the vernal equinox",
+        "around the summer solstice",
+        "on the autumnal equinox"
+      ],
+      "explanation": "Britannica places the shortest Northern Hemisphere day at the winter solstice near December 21\u201322.",
+      "keywords": [
+        "seasons",
+        "solstice",
+        "winter"
+      ],
+      "source": "https://www.britannica.com/science/season"
+    },
+    {
+      "seedId": "20f99c2e-1b6a-415a-b5d5-9e5294077e45",
+      "category": "geography",
+      "navigationKeyword1": "climate",
+      "navigationKeyword2": "seasons",
+      "question": "In the Southern Hemisphere, calendar summer and winter are what compared with the Northern Hemisphere?",
+      "correctAnswer": "reversed",
+      "incorrectAnswers": [
+        "identical months",
+        "offset by six weeks",
+        "nonexistent"
+      ],
+      "explanation": "Britannica notes Southern Hemisphere seasons reverse relative to the Northern Hemisphere.",
+      "keywords": [
+        "seasons",
+        "hemispheres",
+        "contrast"
+      ],
+      "source": "https://www.britannica.com/science/season"
+    },
+    {
+      "seedId": "6051b70b-0828-4d82-9fc1-0fd41edfcd22",
+      "category": "geography",
+      "navigationKeyword1": "climate",
+      "navigationKeyword2": "seasons",
+      "question": "India\u2019s classic cool dry, hot dry, and rainy periods are driven chiefly by what system?",
+      "correctAnswer": "the monsoon",
+      "incorrectAnswers": [
+        "the polar front only",
+        "Mediterranean mistral winds only",
+        "harmattan fronts over the Sahara alone"
+      ],
+      "explanation": "Britannica attributes India\u2019s marked seasonal rainfall alternation to the monsoon.",
+      "keywords": [
+        "seasons",
+        "monsoon",
+        "india"
+      ],
+      "source": "https://www.britannica.com/science/season"
+    },
+    {
+      "seedId": "f8490b1d-e138-4e11-8341-813d9b1dff76",
+      "category": "geography",
+      "navigationKeyword1": "climate",
+      "navigationKeyword2": "seasons",
+      "question": "NOAA\u2019s Climate.gov notes planting-zone maps use annual minimum temperatures from which reference periods?",
+      "correctAnswer": "periods such as 1971\u20132000 and 1981\u20132010 Climate Normals",
+      "incorrectAnswers": [
+        "single storm seasons only",
+        "pre-industrial ice-core weeks",
+        "one El Ni\u00f1o event"
+      ],
+      "explanation": "NOAA\u2019s maps overview cites planting zones based on multi-decade climate normal minimum temperatures.",
+      "keywords": [
+        "seasons",
+        "planting-zones",
+        "normals"
+      ],
+      "source": "https://www.climate.gov/maps-data"
+    },
+    {
+      "seedId": "e54d7786-7a98-49a8-baa4-aca8580f2654",
+      "category": "geography",
+      "navigationKeyword1": "climate",
+      "navigationKeyword2": "seasons",
+      "question": "Near the Equator, seasonal weather shifts are driven mainly by what?",
+      "correctAnswer": "alternating wet and dry periods linked to ITCZ movement",
+      "incorrectAnswers": [
+        "large annual temperature swings typical of Siberia",
+        "polar night cycles",
+        "lunar eclipses"
+      ],
+      "explanation": "Britannica explains low-latitude seasons follow moisture shifts as the intertropical convergence zone moves.",
+      "keywords": [
+        "seasons",
+        "tropics",
+        "wet-season"
+      ],
+      "source": "https://www.britannica.com/science/season"
+    },
+    {
+      "seedId": "58d3ebd2-f6a3-4bbd-9856-41f3fced9c8a",
+      "category": "geography",
+      "navigationKeyword1": "climate",
+      "navigationKeyword2": "seasons",
+      "question": "Outside the tropics and polar regions, Earth\u2019s annual temperature cycle mainly reflects changes in what?",
+      "correctAnswer": "Sun angle and day length through the year",
+      "incorrectAnswers": [
+        "lunar phases alone",
+        "tidal amplitude only",
+        "random atmospheric noise"
+      ],
+      "explanation": "Britannica ties mid-latitude seasonal temperature swings to varying solar angle and daylight duration.",
+      "keywords": [
+        "seasons",
+        "solar-geometry",
+        "midlatitudes"
+      ],
+      "source": "https://www.britannica.com/science/season"
+    },
+    {
+      "seedId": "ba65fde5-8907-4126-acc3-864a15a798c2",
+      "category": "geography",
+      "navigationKeyword1": "climate",
+      "navigationKeyword2": "seasons",
+      "question": "Polar latitudes experience seasons dominated by extremes of what factor?",
+      "correctAnswer": "continuous daylight or darkness through parts of the year",
+      "incorrectAnswers": [
+        "daily monsoon bursts",
+        "constant 12-hour days year-round",
+        "equatorial rainfall only"
+      ],
+      "explanation": "Britannica describes polar seasons as short summers with continuous light and long winters with continuous darkness or twilight.",
+      "keywords": [
+        "seasons",
+        "polar",
+        "daylight"
+      ],
+      "source": "https://www.britannica.com/science/season"
+    },
+    {
+      "seedId": "f043259d-d9b1-444b-bbbd-92220fba2d1f",
+      "category": "geography",
+      "navigationKeyword1": "climate",
+      "navigationKeyword2": "seasons",
+      "question": "Seasons are divisions of the year tied to consistent annual changes in what?",
+      "correctAnswer": "weather patterns",
+      "incorrectAnswers": [
+        "stock market quarters",
+        "lunar months only",
+        "time zones"
+      ],
+      "explanation": "Britannica defines seasons by consistent annual changes in weather.",
+      "keywords": [
+        "seasons",
+        "definitions",
+        "weather"
+      ],
+      "source": "https://www.britannica.com/science/season"
+    },
+    {
+      "seedId": "6db90f58-53b0-4ed9-afb2-2fe31eda5232",
+      "category": "geography",
+      "navigationKeyword1": "climate",
+      "navigationKeyword2": "storms",
+      "question": "A thunderstorm is classified as severe when it has hail at least how large, or wind gusts over 50 knots, or a tornado?",
+      "correctAnswer": "one inch or greater",
+      "incorrectAnswers": [
+        "one centimeter or greater",
+        "quarter inch or greater",
+        "three inches or greater"
+      ],
+      "explanation": "NSSL states a thunderstorm is \u201csevere\u201d when it contains hail one inch or greater, winds gusting over 50 knots (57.5 mph), or a tornado.",
+      "keywords": [
+        "storms",
+        "severe-thunderstorm",
+        "hail"
+      ],
+      "source": "https://www.nssl.noaa.gov/education/svrwx101/thunderstorms/"
+    },
+    {
+      "seedId": "9df3b199-cd94-4e49-b4b9-0cc7ff91f7ec",
+      "category": "geography",
+      "navigationKeyword1": "climate",
+      "navigationKeyword2": "storms",
+      "question": "Atlantic forecasters upgrade a tropical storm to a hurricane once sustained winds reach at least what speed?",
+      "correctAnswer": "74 mph (64 knots)",
+      "incorrectAnswers": [
+        "39 mph (34 knots)",
+        "110 mph (96 knots)",
+        "157 mph (137 knots)"
+      ],
+      "explanation": "NOAA\u2019s National Hurricane Center classifies a tropical cyclone with winds of 74 mph or higher as a hurricane in the Atlantic (typhoon in the western North Pacific).",
+      "keywords": [
+        "storms",
+        "hurricane-threshold",
+        "tropical-cyclone"
+      ],
+      "source": "https://www.nhc.noaa.gov/climo/"
+    },
+    {
+      "seedId": "21952c8f-8b49-400d-9647-ccb24173e061",
+      "category": "geography",
+      "navigationKeyword1": "climate",
+      "navigationKeyword2": "storms",
+      "question": "Forecasters boil thunderstorm formation down to three ingredients\u2014moisture, unstable air, and what third piece that actually starts the updraft?",
+      "correctAnswer": "a lifting mechanism (front, hills, daytime heating, etc.)",
+      "incorrectAnswers": [
+        "permanent high pressure that suppresses all clouds",
+        "moon phase and tide tables alone",
+        "only calm, sinking air everywhere"
+      ],
+      "explanation": "NSSL lists moisture, unstable rising air, and a lifting mechanism as the three ingredients needed for thunderstorm formation.",
+      "keywords": [
+        "storms",
+        "thunderstorm-formation",
+        "lifting-mechanism"
+      ],
+      "source": "https://www.nssl.noaa.gov/education/svrwx101/thunderstorms/"
+    },
+    {
+      "seedId": "04d0327f-318a-44a2-8e20-769e637fda86",
+      "category": "geography",
+      "navigationKeyword1": "climate",
+      "navigationKeyword2": "storms",
+      "question": "In the United States, the violent tornadoes that make headlines usually spin up under which kind of thunderstorm?",
+      "correctAnswer": "Supercells\u2014long-lived storms with a rotating updraft",
+      "incorrectAnswers": [
+        "Fair-weather cumulus on a blue-sky afternoon",
+        "Wide sheets of stratiform drizzle",
+        "Winter lake-effect snow bands only"
+      ],
+      "explanation": "NOAA\u2019s NSSL notes most strong tornadoes come from supercells, though tornadoes can occasionally form in other storm types.",
+      "keywords": [
+        "storms",
+        "supercell",
+        "tornado"
+      ],
+      "source": "https://www.nssl.noaa.gov/education/svrwx101/tornadoes/"
+    },
+    {
+      "seedId": "ae2ba599-17ec-434f-abb0-a0e47414add5",
+      "category": "geography",
+      "navigationKeyword1": "climate",
+      "navigationKeyword2": "storms",
+      "question": "On the Enhanced Fujita scale, EF5 surveys describe \u201cincredible\u201d damage\u2014well-built homes swept away and car-sized debris hurled roughly how far?",
+      "correctAnswer": "More than 100 meters (over a football field in length)",
+      "incorrectAnswers": [
+        "Only a few meters from the foundation",
+        "Never farther than the visible funnel width",
+        "Only straight upward, not outward"
+      ],
+      "explanation": "NSSL\u2019s EF-scale training examples include EF5-level indicators such as automobile-sized missiles thrown more than 100 meters, alongside destruction of well-anchored homes.",
+      "keywords": [
+        "storms",
+        "ef-scale",
+        "tornado-damage"
+      ],
+      "source": "https://www.nssl.noaa.gov/education/svrwx101/tornadoes/"
+    },
+    {
+      "seedId": "1aab8069-5db7-42e2-b03b-4410afbb6a45",
+      "category": "geography",
+      "navigationKeyword1": "climate",
+      "navigationKeyword2": "storms",
+      "question": "On the calendar, when is the peak of the Atlantic hurricane season?",
+      "correctAnswer": "September 10",
+      "incorrectAnswers": [
+        "July 4",
+        "November 1",
+        "May 15"
+      ],
+      "explanation": "NOAA\u2019s tropical cyclone climatology notes the Atlantic season\u2019s peak is September 10, with most activity between mid-August and mid-October.",
+      "keywords": [
+        "storms",
+        "atlantic-hurricane-peak",
+        "september"
+      ],
+      "source": "https://www.nhc.noaa.gov/climo/"
+    },
+    {
+      "seedId": "67fc44aa-927c-46d6-99aa-1abbf8b359bf",
+      "category": "geography",
+      "navigationKeyword1": "climate",
+      "navigationKeyword2": "storms",
+      "question": "Roughly how many thunderstorms occur in the United States each year?",
+      "correctAnswer": "about 100,000",
+      "incorrectAnswers": [
+        "about 10,000",
+        "about 1 million",
+        "about 5,000"
+      ],
+      "explanation": "NSSL reports about 100,000 thunderstorms each year in the U.S., with about 10% reaching severe levels; it also estimates roughly 16 million thunderstorms worldwide annually.",
+      "keywords": [
+        "storms",
+        "thunderstorm-frequency",
+        "united-states"
+      ],
+      "source": "https://www.nssl.noaa.gov/education/svrwx101/thunderstorms/"
+    },
+    {
+      "seedId": "3bd5d8c3-50c4-4388-954a-32a622547459",
+      "category": "geography",
+      "navigationKeyword1": "climate",
+      "navigationKeyword2": "storms",
+      "question": "Thunderstorms have which three stages in their life cycle?",
+      "correctAnswer": "developing, mature, and dissipating",
+      "incorrectAnswers": [
+        "seed, bloom, and harvest",
+        "stratus, altocumulus, and cirrus only",
+        "dawn, noon, and dusk"
+      ],
+      "explanation": "NSSL describes thunderstorm life stages as developing (towering cumulus), mature (updraft and downdraft with heavy weather), and dissipating.",
+      "keywords": [
+        "storms",
+        "thunderstorm-life-cycle",
+        "mature-stage"
+      ],
+      "source": "https://www.nssl.noaa.gov/education/svrwx101/thunderstorms/"
+    },
+    {
+      "seedId": "d14dbf90-dce4-436b-8555-ef6efa9a6c02",
+      "category": "geography",
+      "navigationKeyword1": "climate",
+      "navigationKeyword2": "storms",
+      "question": "When does the official Atlantic hurricane season run?",
+      "correctAnswer": "June 1 to November 30",
+      "incorrectAnswers": [
+        "April 1 to September 30",
+        "January 1 to March 31",
+        "Year-round with no official dates"
+      ],
+      "explanation": "The National Hurricane Center states the Atlantic hurricane season runs from June 1 through November 30 and includes the Atlantic Ocean, Caribbean Sea, and Gulf of America.",
+      "keywords": [
+        "storms",
+        "atlantic-hurricane-season",
+        "june-november"
+      ],
+      "source": "https://www.nhc.noaa.gov/climo/"
+    },
+    {
+      "seedId": "ecc78c3c-f685-4dce-b738-0985016958d8",
+      "category": "geography",
+      "navigationKeyword1": "climate",
+      "navigationKeyword2": "storms",
+      "question": "You hear thunder during a downpour but never spot a lightning flash\u2014what must still be happening in that storm?",
+      "correctAnswer": "Lightning (thunder is the sound produced by lightning heating the air)",
+      "incorrectAnswers": [
+        "Only harmless \u201cheat lightning\u201d with no real electricity",
+        "Static from nearby power lines only",
+        "Aurora-like glows in raindrops"
+      ],
+      "explanation": "NOAA\u2019s NSSL explains that thunder comes from lightning; if you hear thunder, lightning occurred even when clouds hide the flash.",
+      "keywords": [
+        "storms",
+        "lightning",
+        "thunder"
+      ],
+      "source": "https://www.nssl.noaa.gov/education/svrwx101/thunderstorms/"
+    },
+    {
+      "seedId": "37e7367b-3083-4ebf-8f72-0e40159b4c80",
+      "category": "geography",
+      "navigationKeyword1": "climate",
+      "navigationKeyword2": "weather",
+      "question": "Along the leading edge of a thunderstorm\u2019s cold outflow, the shallow boundary that can kick up dust and lift warmer air is often called what?",
+      "correctAnswer": "A gust front",
+      "incorrectAnswers": [
+        "The polar front jet only",
+        "A stationary sea breeze with no motion",
+        "The stratopause"
+      ],
+      "explanation": "NOAA/NSSL teaching materials describe gust fronts as boundaries where storm-cooled air spreads out and forces warmer air upward, often marking the storm\u2019s approach.",
+      "keywords": [
+        "weather",
+        "gust-front",
+        "thunderstorm-outflow"
+      ],
+      "source": "https://www.britannica.com/science/weather"
+    },
+    {
+      "seedId": "6fbd294c-db99-4a7f-a441-4b2935fd04fe",
+      "category": "geography",
+      "navigationKeyword1": "climate",
+      "navigationKeyword2": "weather",
+      "question": "Climate data users checking \u201cclimate normals\u201d for event planning are relying on statistics that summarize what?",
+      "correctAnswer": "expected longer-term conditions rather than a single day\u2019s weather",
+      "incorrectAnswers": [
+        "tomorrow\u2019s exact hourly forecast",
+        "real-time radar snapshots only",
+        "stock market volatility"
+      ],
+      "explanation": "NOAA\u2019s Climate Data Primer highlights climate normals for planning around typical conditions, not one-off weather.",
+      "keywords": [
+        "weather",
+        "climate-normals",
+        "planning"
+      ],
+      "source": "https://www.climate.gov/maps-data/climate-data-primer"
+    },
+    {
+      "seedId": "761c6252-ff28-417d-b466-7168a91f7c06",
+      "category": "geography",
+      "navigationKeyword1": "climate",
+      "navigationKeyword2": "weather",
+      "question": "Commercial jets cruise near the top of the layer where almost all rain, snow, and towering storm clouds live\u2014which layer is it?",
+      "correctAnswer": "The troposphere",
+      "incorrectAnswers": [
+        "The mesosphere",
+        "The thermosphere only",
+        "The exosphere"
+      ],
+      "explanation": "Britannica states most weather occurs in the troposphere, where clouds and precipitation form.",
+      "keywords": [
+        "weather",
+        "troposphere",
+        "atmosphere"
+      ],
+      "source": "https://www.britannica.com/science/weather"
+    },
+    {
+      "seedId": "c866bdd7-3c5e-410c-a0e6-869b87ca4bbe",
+      "category": "geography",
+      "navigationKeyword1": "climate",
+      "navigationKeyword2": "weather",
+      "question": "Elements shared by weather and climate descriptions include temperature, humidity, precipitation, pressure, and what?",
+      "correctAnswer": "wind",
+      "incorrectAnswers": [
+        "lunar phase only",
+        "stock indices",
+        "road tolls"
+      ],
+      "explanation": "Britannica lists temperature, humidity, precipitation, pressure, and wind among climate elements that appear as weather over short spans.",
+      "keywords": [
+        "weather",
+        "elements",
+        "atmosphere"
+      ],
+      "source": "https://www.britannica.com/science/climate-meteorology"
+    },
+    {
+      "seedId": "89e67343-bb18-4e08-a463-ca030589f213",
+      "category": "geography",
+      "navigationKeyword1": "climate",
+      "navigationKeyword2": "weather",
+      "question": "JetStream is run by which U.S. agency as an online weather school?",
+      "correctAnswer": "the National Weather Service (NOAA)",
+      "incorrectAnswers": [
+        "the Forest Service only",
+        "the Smithsonian Folklife Center",
+        "the Federal Reserve"
+      ],
+      "explanation": "NOAA describes JetStream as the National Weather Service online weather school.",
+      "keywords": [
+        "weather",
+        "noaa",
+        "nws"
+      ],
+      "source": "https://www.weather.gov/jetstream/global"
+    },
+    {
+      "seedId": "39c8679f-3b48-49ac-97f5-4b79c30392db",
+      "category": "geography",
+      "navigationKeyword1": "climate",
+      "navigationKeyword2": "weather",
+      "question": "Modern climate definitions should cite the years they refer to because climate is what?",
+      "correctAnswer": "time-dependent",
+      "incorrectAnswers": [
+        "fixed forever once measured",
+        "unrelated to weather data",
+        "only a single storm event"
+      ],
+      "explanation": "Britannica stresses climate is time-dependent, so climatic indexes need referenced periods.",
+      "keywords": [
+        "weather",
+        "climate",
+        "statistics"
+      ],
+      "source": "https://www.britannica.com/science/climate-meteorology"
+    },
+    {
+      "seedId": "df684aaa-5fc4-4766-be07-47485eb0cf02",
+      "category": "geography",
+      "navigationKeyword1": "climate",
+      "navigationKeyword2": "weather",
+      "question": "Published climate \u2018normals\u2019 for temperature and rainfall usually summarize observations over about how many years?",
+      "correctAnswer": "About 30 years",
+      "incorrectAnswers": [
+        "24 hours",
+        "6 months",
+        "500 years"
+      ],
+      "explanation": "Britannica notes climate synthesizes weather over long periods, commonly about 30 years.",
+      "keywords": [
+        "weather",
+        "climate-normals",
+        "30-year-average"
+      ],
+      "source": "https://www.britannica.com/science/weather"
+    },
+    {
+      "seedId": "472d38e6-d63f-492e-a7e1-627eb40135a8",
+      "category": "geography",
+      "navigationKeyword1": "climate",
+      "navigationKeyword2": "weather",
+      "question": "Since the 1980s, which space-based tools have greatly helped meteorologists track storms worldwide?",
+      "correctAnswer": "weather satellites",
+      "incorrectAnswers": [
+        "HAM radio only",
+        "hot-air balloons exclusively",
+        "seismic networks"
+      ],
+      "explanation": "Britannica credits weather satellites since the 1980s with tracking global storm systems.",
+      "keywords": [
+        "weather",
+        "satellites",
+        "monitoring"
+      ],
+      "source": "https://www.britannica.com/science/weather"
+    },
+    {
+      "seedId": "2d7c2229-05f1-47ca-8ff5-144f83c12aa4",
+      "category": "geography",
+      "navigationKeyword1": "climate",
+      "navigationKeyword2": "weather",
+      "question": "Tonight\u2019s forecast and next weekend\u2019s picnic odds are talking about conditions measured over what kind of timeframe?",
+      "correctAnswer": "Hours to days\u2014short-term weather, not long-term climate",
+      "incorrectAnswers": [
+        "The whole Phanerozoic eon",
+        "Exactly one 30-year climate normal, always",
+        "Geologic time scales of tens of millions of years"
+      ],
+      "explanation": "Britannica defines weather as the atmosphere\u2019s state at a place during a short period.",
+      "keywords": [
+        "weather",
+        "definitions",
+        "time-scale"
+      ],
+      "source": "https://www.britannica.com/science/weather"
+    },
+    {
+      "seedId": "a9e6c277-7c4f-40a0-a3d2-d2c140c874d8",
+      "category": "geography",
+      "navigationKeyword1": "climate",
+      "navigationKeyword2": "weather",
+      "question": "Von K\u00e1rm\u00e1n vortices in satellite images form when fluid flow is disturbed by what?",
+      "correctAnswer": "a stationary obstacle such as an island mountain range",
+      "incorrectAnswers": [
+        "only aircraft contrails",
+        "city street grids alone",
+        "submarine cables"
+      ],
+      "explanation": "NOAA\u2019s JetStream page explains von K\u00e1rm\u00e1n vortices where wind flows past isolated terrain.",
+      "keywords": [
+        "weather",
+        "vortices",
+        "clouds"
+      ],
+      "source": "https://www.weather.gov/jetstream/global"
+    },
+    {
+      "seedId": "689ea021-76d5-41ad-aff6-4a9583996365",
+      "category": "geography",
+      "navigationKeyword1": "climate",
+      "navigationKeyword2": "weather",
+      "question": "Weather forecasting today combines physics-based models with measured variables such as temperature and what?",
+      "correctAnswer": "wind speed",
+      "incorrectAnswers": [
+        "museum opening hours",
+        "zodiac signs",
+        "highway toll balances"
+      ],
+      "explanation": "Britannica notes computer forecasts merge models with observed temperatures, winds, and other data.",
+      "keywords": [
+        "weather",
+        "forecasting",
+        "models"
+      ],
+      "source": "https://www.britannica.com/science/weather"
+    },
+    {
+      "seedId": "325ccce2-b152-4d47-959b-de1c73d489f6",
+      "category": "geography",
+      "navigationKeyword1": "climate",
+      "navigationKeyword2": "zones",
+      "question": "Climate is the long-term summation of atmospheric elements that, over short periods, make up what?",
+      "correctAnswer": "weather",
+      "incorrectAnswers": [
+        "tides",
+        "earthquakes",
+        "volcanic lightning"
+      ],
+      "explanation": "Britannica defines climate as the long-term aggregate of elements that constitute weather.",
+      "keywords": [
+        "zones",
+        "climate",
+        "weather"
+      ],
+      "source": "https://www.britannica.com/science/climate-meteorology"
+    },
+    {
+      "seedId": "7693ecf8-c2e8-4690-90f6-fcdd2744605a",
+      "category": "geography",
+      "navigationKeyword1": "climate",
+      "navigationKeyword2": "zones",
+      "question": "Despite criticisms, which climate classification does Britannica call the most popular in use today?",
+      "correctAnswer": "the K\u00f6ppen system",
+      "incorrectAnswers": [
+        "the Beaufort scale",
+        "the Richter scale",
+        "the Mercalli scale"
+      ],
+      "explanation": "Britannica concludes K\u00f6ppen remains the most widely used climate classification.",
+      "keywords": [
+        "zones",
+        "koppen",
+        "classification"
+      ],
+      "source": "https://www.britannica.com/science/Koppen-climate-classification"
+    },
+    {
+      "seedId": "3066bd41-7f95-432f-8e0c-f0f8a483eb17",
+      "category": "geography",
+      "navigationKeyword1": "climate",
+      "navigationKeyword2": "zones",
+      "question": "Genetic climate classifications group climates mainly by what idea?",
+      "correctAnswer": "their causes, such as latitude and land versus ocean influences",
+      "incorrectAnswers": [
+        "random lottery of weather icons",
+        "alphabetical country names",
+        "GDP per capita"
+      ],
+      "explanation": "Britannica contrasts genetic classifications, based on causal factors, with empirical schemes like K\u00f6ppen.",
+      "keywords": [
+        "zones",
+        "classification",
+        "genetic"
+      ],
+      "source": "https://www.britannica.com/science/Koppen-climate-classification"
+    },
+    {
+      "seedId": "1a535fe4-d78e-4ae2-976e-2303765abc56",
+      "category": "geography",
+      "navigationKeyword1": "climate",
+      "navigationKeyword2": "zones",
+      "question": "In K\u00f6ppen\u2019s system, which major type is defined by dryness rather than temperature thresholds?",
+      "correctAnswer": "type B",
+      "incorrectAnswers": [
+        "type A",
+        "type C",
+        "type E"
+      ],
+      "explanation": "Britannica states type B climates are controlled by dryness; other major groups use temperature rules.",
+      "keywords": [
+        "zones",
+        "koppen",
+        "dry-climates"
+      ],
+      "source": "https://www.britannica.com/science/Koppen-climate-classification"
+    },
+    {
+      "seedId": "31fd37ad-f24d-4389-9b8c-204fb95c80f3",
+      "category": "geography",
+      "navigationKeyword1": "climate",
+      "navigationKeyword2": "zones",
+      "question": "K\u00f6ppen\u2019s empirical classification chiefly uses temperature, precipitation, and what natural correlate?",
+      "correctAnswer": "natural vegetation patterns",
+      "incorrectAnswers": [
+        "urban skyline height",
+        "road lane counts",
+        "shipping tonnage"
+      ],
+      "explanation": "Britannica notes K\u00f6ppen aimed to align climate boundaries with mapped vegetation zones (biomes).",
+      "keywords": [
+        "zones",
+        "koppen",
+        "vegetation"
+      ],
+      "source": "https://www.britannica.com/science/Koppen-climate-classification"
+    },
+    {
+      "seedId": "1d2a9a7d-c04e-4b97-9cef-3a7612fee395",
+      "category": "geography",
+      "navigationKeyword1": "climate",
+      "navigationKeyword2": "zones",
+      "question": "Many modern schemes add an H (highland) climate for elevations above about how many metres?",
+      "correctAnswer": "1,500 metres",
+      "incorrectAnswers": [
+        "50 metres",
+        "500 metres",
+        "8,000 metres"
+      ],
+      "explanation": "Britannica notes highland (H) categories often apply above roughly 1,500 m.",
+      "keywords": [
+        "zones",
+        "highland-climate",
+        "elevation"
+      ],
+      "source": "https://www.britannica.com/science/Koppen-climate-classification"
+    },
+    {
+      "seedId": "f206bc93-ed3e-4cb9-aa4a-edf81f969808",
+      "category": "geography",
+      "navigationKeyword1": "climate",
+      "navigationKeyword2": "zones",
+      "question": "NOAA\u2019s Climate.gov primer says farmers and ranchers monitor drought maps to judge whether the environment has enough of what for plants and animals?",
+      "correctAnswer": "water",
+      "incorrectAnswers": [
+        "gold",
+        "asphalt",
+        "neon"
+      ],
+      "explanation": "NOAA Climate.gov notes agricultural users track drought for adequate environmental water.",
+      "keywords": [
+        "zones",
+        "drought",
+        "water"
+      ],
+      "source": "https://www.climate.gov/maps-data/climate-data-primer"
+    },
+    {
+      "seedId": "96cd796e-854a-467f-ae1a-2da5b89a76cf",
+      "category": "geography",
+      "navigationKeyword1": "climate",
+      "navigationKeyword2": "zones",
+      "question": "The K\u00f6ppen climate classification divides terrestrial climates into how many major lettered types?",
+      "correctAnswer": "five (A, B, C, D, and E)",
+      "incorrectAnswers": [
+        "three",
+        "seven",
+        "twelve"
+      ],
+      "explanation": "Britannica lists five major K\u00f6ppen climate types represented by A\u2013E.",
+      "keywords": [
+        "zones",
+        "koppen",
+        "classification"
+      ],
+      "source": "https://www.britannica.com/science/Koppen-climate-classification"
+    },
+    {
+      "seedId": "b2eb326a-38e3-496a-9675-49320590d175",
+      "category": "geography",
+      "navigationKeyword1": "climate",
+      "navigationKeyword2": "zones",
+      "question": "Type A tropical climates are subdivided mainly by what precipitation pattern?",
+      "correctAnswer": "seasonality of rainfall",
+      "incorrectAnswers": [
+        "monthly thunder counts only",
+        "ocean salinity charts",
+        "wind-chill tables"
+      ],
+      "explanation": "Britannica states type A climates differentiate using seasonal precipitation characteristics.",
+      "keywords": [
+        "zones",
+        "tropical-climate",
+        "rainfall"
+      ],
+      "source": "https://www.britannica.com/science/Koppen-climate-classification"
+    },
+    {
+      "seedId": "b9c7ee0f-3db9-48fa-8242-6625fbe43eb4",
+      "category": "geography",
+      "navigationKeyword1": "climate",
+      "navigationKeyword2": "zones",
+      "question": "Type E polar climates subdivide into tundra (ET) and which other category?",
+      "correctAnswer": "snow/ice climates (EF)",
+      "incorrectAnswers": [
+        "desert (BW)",
+        "monsoon (Am)",
+        "steppe (BS)"
+      ],
+      "explanation": "Britannica separates type E into tundra ET and snow/ice EF climates.",
+      "keywords": [
+        "zones",
+        "polar-climate",
+        "koppen"
+      ],
+      "source": "https://www.britannica.com/science/Koppen-climate-classification"
+    },
+    {
+      "seedId": "4fbfd2e8-ad10-477e-96f5-061728e3303a",
+      "category": "geography",
+      "navigationKeyword1": "climate",
+      "navigationKeyword2": "zones",
+      "question": "Who introduced the mathematical K\u00f6ppen climate classification system?",
+      "correctAnswer": "Wladimir K\u00f6ppen",
+      "incorrectAnswers": [
+        "Alfred Wegener",
+        "Charles Darwin",
+        "James Hutton"
+      ],
+      "explanation": "Britannica credits German climatologist Wladimir K\u00f6ppen with the 1900 classification scheme.",
+      "keywords": [
+        "zones",
+        "koppen",
+        "history"
+      ],
+      "source": "https://www.britannica.com/science/Koppen-climate-classification"
+    }
+  ]
+}

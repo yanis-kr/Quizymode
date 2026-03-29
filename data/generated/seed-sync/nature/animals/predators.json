@@ -1,0 +1,121 @@
+{
+  "schemaVersion": 1,
+  "seedSet": "core-public-items",
+  "deltaPreviewLimit": 200,
+  "items": [
+    {
+      "seedId": "18e18a62-5a88-5c63-aa3e-5a197307d5b8",
+      "category": "nature",
+      "navigationKeyword1": "animals",
+      "navigationKeyword2": "predators",
+      "question": "Gray wolves usually live and hunt in what kind of social group?",
+      "correctAnswer": "pack",
+      "incorrectAnswers": [
+        "school",
+        "herd",
+        "swarm"
+      ],
+      "explanation": "Wolves are highly social animals that live in family-based packs.",
+      "keywords": [
+        "predators",
+        "nature-animals"
+      ],
+      "source": "https://www.nps.gov/yell/learn/nature/wolf.htm"
+    },
+    {
+      "seedId": "70b95838-c00a-5216-af61-fa4567837368",
+      "category": "nature",
+      "navigationKeyword1": "animals",
+      "navigationKeyword2": "predators",
+      "question": "What is the usual name for a social group of lions?",
+      "correctAnswer": "pride",
+      "incorrectAnswers": [
+        "pack",
+        "pod",
+        "colony"
+      ],
+      "explanation": "Lions are unusual among big cats because they commonly live in social groups called prides.",
+      "keywords": [
+        "predators",
+        "nature-animals"
+      ],
+      "source": "https://www.britannica.com/animal/lion/Introduction"
+    },
+    {
+      "seedId": "da04315e-d6f7-5b1a-bf76-f87cb63596ee",
+      "category": "nature",
+      "navigationKeyword1": "animals",
+      "navigationKeyword2": "predators",
+      "question": "Which Arctic predator depends heavily on sea ice to hunt seals?",
+      "correctAnswer": "polar bear",
+      "incorrectAnswers": [
+        "Arctic fox",
+        "wolverine",
+        "snowy owl"
+      ],
+      "explanation": "Polar bears rely on sea ice as a platform for reaching and hunting seals.",
+      "keywords": [
+        "predators",
+        "nature-animals"
+      ],
+      "source": "https://www.nationalgeographic.com/animals/article/polar-bears-algae-sea-ice-warming"
+    },
+    {
+      "seedId": "7fab2529-6d47-5fb3-bce0-28590b8a0b34",
+      "category": "nature",
+      "navigationKeyword1": "animals",
+      "navigationKeyword2": "predators",
+      "question": "Which big cat is especially known for hunting alone and dragging kills into trees?",
+      "correctAnswer": "leopard",
+      "incorrectAnswers": [
+        "lion",
+        "cheetah",
+        "snow leopard"
+      ],
+      "explanation": "Leopards are solitary ambush hunters and often stash prey in trees.",
+      "keywords": [
+        "predators",
+        "nature-animals"
+      ],
+      "source": "https://www.britannica.com/EBchecked/topic/336566/leopard"
+    },
+    {
+      "seedId": "6e1249dd-9076-5121-83a4-0776e6a21211",
+      "category": "nature",
+      "navigationKeyword1": "animals",
+      "navigationKeyword2": "predators",
+      "question": "Which bird of prey becomes one of the fastest animals on Earth during a hunting dive?",
+      "correctAnswer": "peregrine falcon",
+      "incorrectAnswers": [
+        "golden eagle",
+        "osprey",
+        "red-tailed hawk"
+      ],
+      "explanation": "Peregrine falcons reach extreme speeds when they dive, or stoop, at prey.",
+      "keywords": [
+        "predators",
+        "nature-animals"
+      ],
+      "source": "https://www.audubon.org/field-guide/bird/peregrine-falcon"
+    },
+    {
+      "seedId": "527d67cf-79c4-5302-99e7-6a49906b598b",
+      "category": "nature",
+      "navigationKeyword1": "animals",
+      "navigationKeyword2": "predators",
+      "question": "Which marine mammal is often described as the ocean's top predator?",
+      "correctAnswer": "killer whale",
+      "incorrectAnswers": [
+        "great white shark",
+        "leopard seal",
+        "sperm whale"
+      ],
+      "explanation": "Killer whales, also called orcas, are apex predators found in every ocean.",
+      "keywords": [
+        "predators",
+        "nature-animals"
+      ],
+      "source": "https://www.fisheries.noaa.gov/species/killer-whale"
+    }
+  ]
+}

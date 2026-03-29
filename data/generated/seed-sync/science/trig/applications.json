@@ -1,0 +1,235 @@
+{
+  "schemaVersion": 1,
+  "seedSet": "core-public-items",
+  "deltaPreviewLimit": 200,
+  "items": [
+    {
+      "seedId": "d1462f5e-4744-4125-a646-e58d0744c683",
+      "category": "science",
+      "navigationKeyword1": "trig",
+      "navigationKeyword2": "applications",
+      "question": "AC voltage v(t) = V0 sin(\u03c9t); \u03c9 is?",
+      "correctAnswer": "Angular frequency rad/s",
+      "incorrectAnswers": [
+        "Hz directly",
+        "Always degrees/s",
+        "Amplitude"
+      ],
+      "explanation": "f = \u03c9/(2\u03c0).",
+      "keywords": [
+        "angular-frequency",
+        "electronics"
+      ],
+      "source": "https://en.wikipedia.org/wiki/Angular_frequency"
+    },
+    {
+      "seedId": "9ab4f252-940f-433f-94ef-b663eaacb02a",
+      "category": "science",
+      "navigationKeyword1": "trig",
+      "navigationKeyword2": "applications",
+      "question": "GPS triangulation uses?",
+      "correctAnswer": "Signal timing and geometry (conceptually)",
+      "incorrectAnswers": [
+        "Only barometers",
+        "Only compasses",
+        "No geometry"
+      ],
+      "explanation": "Multilateration.",
+      "keywords": [
+        "gps",
+        "navigation"
+      ],
+      "source": "https://www.gps.gov/systems/gps/"
+    },
+    {
+      "seedId": "ea1264c3-68f4-435c-86f8-2b98ba8aa54d",
+      "category": "science",
+      "navigationKeyword1": "trig",
+      "navigationKeyword2": "applications",
+      "question": "Phasor (intro) represents?",
+      "correctAnswer": "Sinusoid amplitude and phase as complex vector",
+      "incorrectAnswers": [
+        "Only real scalars",
+        "Only digital bits",
+        "Only integrals"
+      ],
+      "explanation": "AC circuit analysis.",
+      "keywords": [
+        "phasor",
+        "ee"
+      ],
+      "source": "https://en.wikipedia.org/wiki/Phasor"
+    },
+    {
+      "seedId": "369d2358-2ad1-4fdf-beb1-ff82ee8a3718",
+      "category": "science",
+      "navigationKeyword1": "trig",
+      "navigationKeyword2": "applications",
+      "question": "Polar to rectangular?",
+      "correctAnswer": "x = r cos \u03b8, y = r sin \u03b8",
+      "incorrectAnswers": [
+        "x = r sin \u03b8",
+        "r = x+y",
+        "\u03b8 = xy"
+      ],
+      "explanation": "Coordinate change.",
+      "keywords": [
+        "polar",
+        "coordinates"
+      ],
+      "source": "https://openstax.org/books/precalculus-2e/pages/8-3-polar-coordinates"
+    },
+    {
+      "seedId": "43d12d27-f941-4752-af9b-aa0fcab16de4",
+      "category": "science",
+      "navigationKeyword1": "trig",
+      "navigationKeyword2": "applications",
+      "question": "Projectile range level ground (no air)?",
+      "correctAnswer": "R = v0^2 sin(2\u03b8)/g",
+      "incorrectAnswers": [
+        "v0/g",
+        "v0^2/g",
+        "sin \u03b8 /g"
+      ],
+      "explanation": "Max at \u03b8=45\u00b0 if launch/landing same height.",
+      "keywords": [
+        "projectile",
+        "range"
+      ],
+      "source": "https://openstax.org/books/university-physics-volume-1/pages/4-3-projectile-motion"
+    },
+    {
+      "seedId": "cf22ae9d-e9a6-4dd7-9383-5b033be0887b",
+      "category": "science",
+      "navigationKeyword1": "trig",
+      "navigationKeyword2": "applications",
+      "question": "Rectangular to polar r?",
+      "correctAnswer": "r = \u221a(x^2 + y^2)",
+      "incorrectAnswers": [
+        "x + y",
+        "xy",
+        "x^2 \u2212 y^2"
+      ],
+      "explanation": "Distance from origin.",
+      "keywords": [
+        "polar",
+        "conversion"
+      ],
+      "source": "https://openstax.org/books/precalculus-2e/pages/8-3-polar-coordinates"
+    },
+    {
+      "seedId": "cf944fb9-2d79-49b9-8f56-736151779a1b",
+      "category": "science",
+      "navigationKeyword1": "trig",
+      "navigationKeyword2": "applications",
+      "question": "Rotation matrix cos/sin?",
+      "correctAnswer": "[[cos\u03b8, \u2212sin\u03b8],[sin\u03b8, cos\u03b8]]",
+      "incorrectAnswers": [
+        "[[sin,cos],[cos,sin]]",
+        "[[1,0],[0,1]]",
+        "[[\u03b8,0],[0,\u03b8]]"
+      ],
+      "explanation": "Linear algebra link.",
+      "keywords": [
+        "rotation",
+        "matrix"
+      ],
+      "source": "https://openstax.org/books/precalculus-2e/pages/8-7-rotation-of-axes"
+    },
+    {
+      "seedId": "93559f14-3ff9-4779-a4c1-ce8e120ecb86",
+      "category": "science",
+      "navigationKeyword1": "trig",
+      "navigationKeyword2": "applications",
+      "question": "Simple harmonic oscillator period T?",
+      "correctAnswer": "T = 2\u03c0\u221a(m/k) (spring-mass ideal)",
+      "incorrectAnswers": [
+        "T = 2\u03c0mk",
+        "T = \u221a(k/m) only",
+        "T independent of m"
+      ],
+      "explanation": "Stiffer k \u2192 shorter period.",
+      "keywords": [
+        "period",
+        "oscillator"
+      ],
+      "source": "https://openstax.org/books/university-physics-volume-1/pages/15-2-simple-harmonic-motion"
+    },
+    {
+      "seedId": "08e4a237-9840-4ed3-ae7f-3f5c85e4fcfe",
+      "category": "science",
+      "navigationKeyword1": "trig",
+      "navigationKeyword2": "applications",
+      "question": "Small-angle approx sin x \u2248 x for?",
+      "correctAnswer": "x near 0 radians",
+      "incorrectAnswers": [
+        "x near 90\u00b0",
+        "All x",
+        "Never"
+      ],
+      "explanation": "Taylor first term.",
+      "keywords": [
+        "small-angle",
+        "approximation"
+      ],
+      "source": "https://en.wikipedia.org/wiki/Small-angle_approximation"
+    },
+    {
+      "seedId": "38055995-ccd3-444c-a720-7f94047c066a",
+      "category": "science",
+      "navigationKeyword1": "trig",
+      "navigationKeyword2": "applications",
+      "question": "Sound wave model?",
+      "correctAnswer": "Pressure variation sinusoidal in time/space",
+      "incorrectAnswers": [
+        "Square always",
+        "Static",
+        "Only exponential"
+      ],
+      "explanation": "Frequency perceived as pitch.",
+      "keywords": [
+        "sound",
+        "waves"
+      ],
+      "source": "https://openstax.org/books/university-physics-volume-1/pages/17-1-sound-waves"
+    },
+    {
+      "seedId": "ea07d635-3741-44ab-807d-4474e580227c",
+      "category": "science",
+      "navigationKeyword1": "trig",
+      "navigationKeyword2": "applications",
+      "question": "Sun elevation angle uses?",
+      "correctAnswer": "Trig with latitude/declination (spherical approximations)",
+      "incorrectAnswers": [
+        "No trig",
+        "Only statistics",
+        "Only chemistry"
+      ],
+      "explanation": "Solar panel/sundial math.",
+      "keywords": [
+        "solar-elevation",
+        "applications"
+      ],
+      "source": "https://en.wikipedia.org/wiki/Solar_zenith_angle"
+    },
+    {
+      "seedId": "398a938c-d476-4c16-9cd9-9f6b212d140f",
+      "category": "science",
+      "navigationKeyword1": "trig",
+      "navigationKeyword2": "applications",
+      "question": "Tide models often include?",
+      "correctAnswer": "Superposition of sinusoids with lunar/solar periods",
+      "incorrectAnswers": [
+        "Only linear trend",
+        "Constant height",
+        "Random only"
+      ],
+      "explanation": "Harmonic constituents.",
+      "keywords": [
+        "tides",
+        "modeling"
+      ],
+      "source": "https://en.wikipedia.org/wiki/Tidal_harmonic_analysis"
+    }
+  ]
+}

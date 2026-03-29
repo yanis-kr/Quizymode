@@ -1,0 +1,197 @@
+{
+  "schemaVersion": 1,
+  "seedSet": "core-public-items",
+  "deltaPreviewLimit": 200,
+  "items": [
+    {
+      "seedId": "0d7be823-5992-550d-a8f7-bcf80a02ac56",
+      "category": "trivia",
+      "navigationKeyword1": "animals",
+      "navigationKeyword2": "weird",
+      "question": "A Komodo dragon is the worlds largest what?",
+      "correctAnswer": "lizard",
+      "incorrectAnswers": [
+        "snake",
+        "frog",
+        "turtle"
+      ],
+      "explanation": "The Komodo dragon is the worlds largest lizard.",
+      "keywords": [
+        "weird-animals",
+        "animal-trivia"
+      ],
+      "source": "https://www.britannica.com/animal/komodo-dragon"
+    },
+    {
+      "seedId": "9a36ee0f-84ff-5a75-baee-20e10fe67f2c",
+      "category": "trivia",
+      "navigationKeyword1": "animals",
+      "navigationKeyword2": "weird",
+      "question": "Blobfish live in what kind of habitat?",
+      "correctAnswer": "deep ocean",
+      "incorrectAnswers": [
+        "desert caves",
+        "rainforest canopy",
+        "freshwater marshes"
+      ],
+      "explanation": "Blobfish live in the deep ocean.",
+      "keywords": [
+        "weird-animals",
+        "animal-trivia"
+      ],
+      "source": "https://www.britannica.com/animal/blobfish"
+    },
+    {
+      "seedId": "f1826a04-7562-5c48-bbb8-680224acb982",
+      "category": "trivia",
+      "navigationKeyword1": "animals",
+      "navigationKeyword2": "weird",
+      "question": "Echidnas and platypuses belong to what egg-laying mammal group?",
+      "correctAnswer": "monotremes",
+      "incorrectAnswers": [
+        "marsupials",
+        "rodents",
+        "primates"
+      ],
+      "explanation": "Echidnas and platypuses are monotremes.",
+      "keywords": [
+        "weird-animals",
+        "animal-trivia"
+      ],
+      "source": "https://www.britannica.com/animal/monotreme"
+    },
+    {
+      "seedId": "a6de52cb-7225-5b9c-970a-9ca6453dc7fc",
+      "category": "trivia",
+      "navigationKeyword1": "animals",
+      "navigationKeyword2": "weird",
+      "question": "Mantis shrimp are famous for having an extremely powerful what?",
+      "correctAnswer": "punch",
+      "incorrectAnswers": [
+        "bite",
+        "roar",
+        "tail slap"
+      ],
+      "explanation": "Mantis shrimp are famous for their powerful striking punch.",
+      "keywords": [
+        "weird-animals",
+        "animal-trivia"
+      ],
+      "source": "https://www.britannica.com/animal/mantis-shrimp"
+    },
+    {
+      "seedId": "f60251ec-3475-5234-b082-6d9bd533dc5b",
+      "category": "trivia",
+      "navigationKeyword1": "animals",
+      "navigationKeyword2": "weird",
+      "question": "The aye-aye is native to which island nation?",
+      "correctAnswer": "Madagascar",
+      "incorrectAnswers": [
+        "Iceland",
+        "New Zealand",
+        "Sri Lanka"
+      ],
+      "explanation": "The aye-aye is native to Madagascar.",
+      "keywords": [
+        "weird-animals",
+        "animal-trivia"
+      ],
+      "source": "https://www.britannica.com/animal/aye-aye"
+    },
+    {
+      "seedId": "ec0429f8-575d-5564-bc8c-fd3dfafe3822",
+      "category": "trivia",
+      "navigationKeyword1": "animals",
+      "navigationKeyword2": "weird",
+      "question": "What body parts can an axolotl famously regrow?",
+      "correctAnswer": "limbs",
+      "incorrectAnswers": [
+        "wings",
+        "horns",
+        "feathers"
+      ],
+      "explanation": "Axolotls are famous for regenerating lost limbs.",
+      "keywords": [
+        "weird-animals",
+        "animal-trivia"
+      ],
+      "source": "https://www.britannica.com/animal/axolotl"
+    },
+    {
+      "seedId": "d5802227-bf42-5cdb-9a7d-671cd0cff965",
+      "category": "trivia",
+      "navigationKeyword1": "animals",
+      "navigationKeyword2": "weird",
+      "question": "What nickname is commonly used for a tardigrade?",
+      "correctAnswer": "water bear",
+      "incorrectAnswers": [
+        "sand wolf",
+        "mud fox",
+        "stone rabbit"
+      ],
+      "explanation": "Tardigrades are commonly nicknamed water bears.",
+      "keywords": [
+        "weird-animals",
+        "animal-trivia"
+      ],
+      "source": "https://www.britannica.com/science/tardigrade"
+    },
+    {
+      "seedId": "efd8c2f4-f0da-5449-8a8a-d38b18b748da",
+      "category": "trivia",
+      "navigationKeyword1": "animals",
+      "navigationKeyword2": "weird",
+      "question": "What star-shaped feature gives the star-nosed mole its name?",
+      "correctAnswer": "nose",
+      "incorrectAnswers": [
+        "tail",
+        "foot",
+        "ear"
+      ],
+      "explanation": "The star-nosed mole is named for its star-shaped nose.",
+      "keywords": [
+        "weird-animals",
+        "animal-trivia"
+      ],
+      "source": "https://www.britannica.com/animal/star-nosed-mole"
+    },
+    {
+      "seedId": "5c6f4fb0-82ab-539f-b11c-e9a9bc12193b",
+      "category": "trivia",
+      "navigationKeyword1": "animals",
+      "navigationKeyword2": "weird",
+      "question": "What unusual thing does a platypus do for a mammal?",
+      "correctAnswer": "lays eggs",
+      "incorrectAnswers": [
+        "changes color",
+        "breathes through gills",
+        "glides with wings"
+      ],
+      "explanation": "A platypus is an egg-laying mammal.",
+      "keywords": [
+        "weird-animals",
+        "animal-trivia"
+      ],
+      "source": "https://www.britannica.com/animal/platypus"
+    },
+    {
+      "seedId": "9b7a0c79-ea4a-5d42-93cc-f8c7098c16f6",
+      "category": "trivia",
+      "navigationKeyword1": "animals",
+      "navigationKeyword2": "weird",
+      "question": "Which mammal is covered in scales?",
+      "correctAnswer": "pangolin",
+      "incorrectAnswers": [
+        "armadillo",
+        "tapir",
+        "otter"
+      ],
+      "explanation": "Pangolins are the only mammals covered in scales.",
+      "keywords": [
+        "weird-animals",
+        "animal-trivia"
+      ],
+      "source": "https://www.britannica.com/animal/pangolin"
+    }
+  ]
+}

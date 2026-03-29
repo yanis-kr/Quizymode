@@ -8,7 +8,7 @@ from pathlib import Path
 from seed_progress_paths import ensure_category_progress_dir, progress_file_path
 
 ROOT = Path(__file__).resolve().parents[1]
-OUT = ROOT / "data" / "bulk-seed" / "trivia"
+OUT = ROOT / "data" / "seed-source" / "items" / "trivia"
 PROGRESS = progress_file_path("trivia")
 TAXONOMY = ROOT / "docs" / "quizymode_taxonomy.yaml"
 
@@ -79,7 +79,7 @@ def main() -> None:
     remaining = sorted(eligible_set - existing_set)
 
     lines = [
-        "# trivia bulk-seed progress",
+        "# trivia seed-source progress",
         "",
         f"Eligible trivia L1/L2 pairs: **{len(eligible)}**",
         f"Existing trivia seed files: **{len(rows)}**",

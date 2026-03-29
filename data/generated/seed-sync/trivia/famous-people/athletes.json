@@ -1,0 +1,197 @@
+{
+  "schemaVersion": 1,
+  "seedSet": "core-public-items",
+  "deltaPreviewLimit": 200,
+  "items": [
+    {
+      "seedId": "5c3863a7-98a9-5706-ad1b-90fb1e4bbff8",
+      "category": "trivia",
+      "navigationKeyword1": "famous-people",
+      "navigationKeyword2": "athletes",
+      "question": "Babe Ruth to which sport?",
+      "correctAnswer": "baseball",
+      "incorrectAnswers": [
+        "football",
+        "tennis",
+        "golf"
+      ],
+      "explanation": "Ruth is a baseball player.",
+      "keywords": [
+        "mlb",
+        "baseball"
+      ],
+      "source": "https://www.britannica.com/biography/Babe-Ruth"
+    },
+    {
+      "seedId": "66a47762-bc55-555d-a166-fc84cdc33e35",
+      "category": "trivia",
+      "navigationKeyword1": "famous-people",
+      "navigationKeyword2": "athletes",
+      "question": "Jackie Robinson broke MLB\u2019s color line as a player for which team?",
+      "correctAnswer": "Brooklyn Dodgers",
+      "incorrectAnswers": [
+        "New York Yankees",
+        "Boston Red Sox",
+        "Chicago Cubs"
+      ],
+      "explanation": "Robinson is tied to the Brooklyn Dodgers.",
+      "keywords": [
+        "baseball",
+        "history"
+      ],
+      "source": "https://www.britannica.com/biography/Jackie-Robinson"
+    },
+    {
+      "seedId": "cb8762ea-0bf1-511f-8c02-7129fa1011a5",
+      "category": "trivia",
+      "navigationKeyword1": "famous-people",
+      "navigationKeyword2": "athletes",
+      "question": "Michael Jordan is most famous for which sport?",
+      "correctAnswer": "basketball",
+      "incorrectAnswers": [
+        "baseball",
+        "soccer",
+        "hockey"
+      ],
+      "explanation": "Michael Jordan is most famous for basketball.",
+      "keywords": [
+        "nba",
+        "basketball"
+      ],
+      "source": "https://www.britannica.com/biography/Michael-Jordan"
+    },
+    {
+      "seedId": "378c1081-46b0-50d0-bba9-0565487d9d01",
+      "category": "trivia",
+      "navigationKeyword1": "famous-people",
+      "navigationKeyword2": "athletes",
+      "question": "Usain Bolt\u2019s dominance in which track event category?",
+      "correctAnswer": "sprints",
+      "incorrectAnswers": [
+        "marathon",
+        "pole vault",
+        "hammer throw"
+      ],
+      "explanation": "Bolt\u2019s sprinting achievements.",
+      "keywords": [
+        "olympics",
+        "track"
+      ],
+      "source": "https://www.britannica.com/biography/Usain-Bolt"
+    },
+    {
+      "seedId": "a5fd8c32-e89d-5e72-92a6-450593645772",
+      "category": "trivia",
+      "navigationKeyword1": "famous-people",
+      "navigationKeyword2": "athletes",
+      "question": "Wayne Gretzky is most famous for which sport?",
+      "correctAnswer": "ice hockey",
+      "incorrectAnswers": [
+        "curling",
+        "speed skating",
+        "bobsled"
+      ],
+      "explanation": "Wayne Gretzky is most famous for ice hockey.",
+      "keywords": [
+        "nhl",
+        "hockey"
+      ],
+      "source": "https://www.britannica.com/biography/Wayne-Gretzky"
+    },
+    {
+      "seedId": "b600cba1-3a79-5df1-a103-43b6ff714308",
+      "category": "trivia",
+      "navigationKeyword1": "famous-people",
+      "navigationKeyword2": "athletes",
+      "question": "Which combat sport is most closely associated with Muhammad Ali?",
+      "correctAnswer": "boxing",
+      "incorrectAnswers": [
+        "wrestling",
+        "fencing",
+        "judo"
+      ],
+      "explanation": "Ali is a boxer.",
+      "keywords": [
+        "boxing",
+        "heavyweight"
+      ],
+      "source": "https://www.britannica.com/biography/Muhammad-Ali"
+    },
+    {
+      "seedId": "5dd672ae-c2ff-5d3d-841f-4014760bb2da",
+      "category": "trivia",
+      "navigationKeyword1": "famous-people",
+      "navigationKeyword2": "athletes",
+      "question": "Which sport is associated with Pel\u00e9?",
+      "correctAnswer": "soccer (association football)",
+      "incorrectAnswers": [
+        "rugby",
+        "cricket",
+        "field hockey"
+      ],
+      "explanation": "Pel\u00e9 is a football (soccer) star.",
+      "keywords": [
+        "soccer",
+        "world-cup"
+      ],
+      "source": "https://www.britannica.com/biography/Pele-Brazilian-athlete"
+    },
+    {
+      "seedId": "6a80f62a-a676-54ea-896f-a72404da9e62",
+      "category": "trivia",
+      "navigationKeyword1": "famous-people",
+      "navigationKeyword2": "athletes",
+      "question": "Which sport is associated with Serena Williams?",
+      "correctAnswer": "tennis",
+      "incorrectAnswers": [
+        "golf",
+        "swimming",
+        "gymnastics"
+      ],
+      "explanation": "Serena Williams is a tennis champion.",
+      "keywords": [
+        "tennis",
+        "grand-slam"
+      ],
+      "source": "https://www.britannica.com/biography/Serena-Williams"
+    },
+    {
+      "seedId": "5863a568-e7ab-547a-9808-5e11732f4f87",
+      "category": "trivia",
+      "navigationKeyword1": "famous-people",
+      "navigationKeyword2": "athletes",
+      "question": "Which sport is associated with Tiger Woods?",
+      "correctAnswer": "golf",
+      "incorrectAnswers": [
+        "tennis",
+        "auto racing",
+        "surfing"
+      ],
+      "explanation": "Woods is a golfer.",
+      "keywords": [
+        "golf",
+        "majors"
+      ],
+      "source": "https://www.britannica.com/biography/Tiger-Woods"
+    },
+    {
+      "seedId": "d450d066-31dd-592e-9e78-732f8d11ed96",
+      "category": "trivia",
+      "navigationKeyword1": "famous-people",
+      "navigationKeyword2": "athletes",
+      "question": "Which sport is most closely associated with Simone Biles?",
+      "correctAnswer": "gymnastics",
+      "incorrectAnswers": [
+        "figure skating",
+        "diving",
+        "ski jumping"
+      ],
+      "explanation": "Biles is a gymnast.",
+      "keywords": [
+        "olympics",
+        "gymnastics"
+      ],
+      "source": "https://www.britannica.com/biography/Simone-Biles"
+    }
+  ]
+}

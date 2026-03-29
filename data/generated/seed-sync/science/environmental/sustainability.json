@@ -1,0 +1,235 @@
+{
+  "schemaVersion": 1,
+  "seedSet": "core-public-items",
+  "deltaPreviewLimit": 200,
+  "items": [
+    {
+      "seedId": "368d2835-a66c-4d8a-8629-c14089bb0250",
+      "category": "science",
+      "navigationKeyword1": "environmental",
+      "navigationKeyword2": "sustainability",
+      "question": "What are SDGs?",
+      "correctAnswer": "UN Sustainable Development Goals framework",
+      "incorrectAnswers": [
+        "Stock indices",
+        "Military ranks",
+        "DNA bases"
+      ],
+      "explanation": "17 goals with targets.",
+      "keywords": [
+        "sdgs",
+        "un"
+      ],
+      "source": "https://sdgs.un.org/goals"
+    },
+    {
+      "seedId": "749d83d4-ca6d-40f4-a899-1eb8f67b1bb2",
+      "category": "science",
+      "navigationKeyword1": "environmental",
+      "navigationKeyword2": "sustainability",
+      "question": "What is ESG?",
+      "correctAnswer": "Environmental, social, governance investing criteria",
+      "incorrectAnswers": [
+        "CPU benchmark",
+        "DNA sequencing method",
+        "Sports league"
+      ],
+      "explanation": "Used in corporate reporting.",
+      "keywords": [
+        "esg",
+        "finance"
+      ],
+      "source": "https://www.sec.gov/newsroom/speeches-statements/gensler-2022-07-27"
+    },
+    {
+      "seedId": "730ed8b5-6378-4072-a682-5919fb39db62",
+      "category": "science",
+      "navigationKeyword1": "environmental",
+      "navigationKeyword2": "sustainability",
+      "question": "What is circular economy?",
+      "correctAnswer": "Design to reduce waste by reuse/recycle loops",
+      "incorrectAnswers": [
+        "Linear take-make-waste only",
+        "Burn everything",
+        "Landfill-only strategy"
+      ],
+      "explanation": "Contrasts with linear economy.",
+      "keywords": [
+        "circular-economy",
+        "waste"
+      ],
+      "source": "https://www.epa.gov/sustainable-management-food/sustainable-management-food-basics"
+    },
+    {
+      "seedId": "95aad26e-36ee-4213-a31d-2a2b3295b3a6",
+      "category": "science",
+      "navigationKeyword1": "environmental",
+      "navigationKeyword2": "sustainability",
+      "question": "What is cradle-to-cradle (concept)?",
+      "correctAnswer": "Design products for continuous material cycles",
+      "incorrectAnswers": [
+        "Single-use only",
+        "Landfill-first",
+        "No recycling"
+      ],
+      "explanation": "Aspirational circular design.",
+      "keywords": [
+        "design",
+        "materials"
+      ],
+      "source": "https://en.wikipedia.org/wiki/Cradle-to-cradle_design"
+    },
+    {
+      "seedId": "9b42eaeb-6fa4-418d-ad72-170742baad6f",
+      "category": "science",
+      "navigationKeyword1": "environmental",
+      "navigationKeyword2": "sustainability",
+      "question": "What is degrowth (idea)?",
+      "correctAnswer": "Reduce material throughput in rich economies for sustainability",
+      "incorrectAnswers": [
+        "Always means recession disaster",
+        "Unlimited growth always good",
+        "Only population control"
+      ],
+      "explanation": "Debated strategy; focuses on well-being.",
+      "keywords": [
+        "degrowth",
+        "economics"
+      ],
+      "source": "https://en.wikipedia.org/wiki/Degrowth"
+    },
+    {
+      "seedId": "b08c53dd-b070-4ba1-adc3-2abb9b8be00c",
+      "category": "science",
+      "navigationKeyword1": "environmental",
+      "navigationKeyword2": "sustainability",
+      "question": "What is environmental justice?",
+      "correctAnswer": "Fair treatment and meaningful involvement for all people",
+      "incorrectAnswers": [
+        "Only wildlife rights",
+        "Only city zoning aesthetics",
+        "Only international law"
+      ],
+      "explanation": "Pollution burdens often unequal.",
+      "keywords": [
+        "ej",
+        "justice"
+      ],
+      "source": "https://www.epa.gov/environmentaljustice"
+    },
+    {
+      "seedId": "588b4388-f03d-4f46-9205-57af5a6e9e1a",
+      "category": "science",
+      "navigationKeyword1": "environmental",
+      "navigationKeyword2": "sustainability",
+      "question": "What is greenwashing?",
+      "correctAnswer": "Misleading environmental marketing",
+      "incorrectAnswers": [
+        "Honest certification",
+        "Peer review",
+        "Open data"
+      ],
+      "explanation": "Consumers should verify claims.",
+      "keywords": [
+        "greenwashing",
+        "ethics"
+      ],
+      "source": "https://www.ftc.gov/news-events/topics/truth-advertising-green-claims"
+    },
+    {
+      "seedId": "b658d803-a4e9-4ab0-b7fa-b7d1e1587180",
+      "category": "science",
+      "navigationKeyword1": "environmental",
+      "navigationKeyword2": "sustainability",
+      "question": "What is life-cycle assessment?",
+      "correctAnswer": "Assess environmental impacts across product lifetime",
+      "incorrectAnswers": [
+        "Only manufacturing step",
+        "Only retail price",
+        "Only advertising"
+      ],
+      "explanation": "Craddle-to-grave or cradle-to-cradle.",
+      "keywords": [
+        "lca",
+        "footprint"
+      ],
+      "source": "https://www.epa.gov/research/life-cycle-assessment-lca-research"
+    },
+    {
+      "seedId": "731f95e8-4b1e-4170-907f-1b374c78542b",
+      "category": "science",
+      "navigationKeyword1": "environmental",
+      "navigationKeyword2": "sustainability",
+      "question": "What is sustainability (common definition)?",
+      "correctAnswer": "Meet present needs without compromising future generations",
+      "incorrectAnswers": [
+        "Maximize short-term profit only",
+        "Stop all development",
+        "Ignore environment"
+      ],
+      "explanation": "Balances environment, economy, society.",
+      "keywords": [
+        "sustainability",
+        "triple-bottom-line"
+      ],
+      "source": "https://www.un.org/en/academic-impact/sustainable-development-goals"
+    },
+    {
+      "seedId": "3fab16a6-d425-4916-98b1-86454ec3999e",
+      "category": "science",
+      "navigationKeyword1": "environmental",
+      "navigationKeyword2": "sustainability",
+      "question": "What is sustainable agriculture?",
+      "correctAnswer": "Farming that protects soil/water and productivity",
+      "incorrectAnswers": [
+        "Always organic by definition",
+        "Always no-till only",
+        "Always monoculture"
+      ],
+      "explanation": "Practices reduce erosion and nutrient loss.",
+      "keywords": [
+        "sustainable-ag",
+        "soil"
+      ],
+      "source": "https://www.nrcs.usda.gov/conservation-basics/conservation-by-state/"
+    },
+    {
+      "seedId": "13551484-32c4-4aa4-bd59-aa2110ec0c04",
+      "category": "science",
+      "navigationKeyword1": "environmental",
+      "navigationKeyword2": "sustainability",
+      "question": "What is voluntary simplicity?",
+      "correctAnswer": "Lifestyle reducing consumption for values/well-being",
+      "incorrectAnswers": [
+        "Forced poverty",
+        "Hoarding",
+        "Luxury maximization"
+      ],
+      "explanation": "Behavioral sustainability lever.",
+      "keywords": [
+        "consumption",
+        "behavior"
+      ],
+      "source": "https://en.wikipedia.org/wiki/Voluntary_simplicity"
+    },
+    {
+      "seedId": "096b4a03-79e8-4c71-92ee-a49c788796f7",
+      "category": "science",
+      "navigationKeyword1": "environmental",
+      "navigationKeyword2": "sustainability",
+      "question": "What is water footprint?",
+      "correctAnswer": "Freshwater used to produce goods/services",
+      "incorrectAnswers": [
+        "Only drinking water",
+        "Only rainfall in deserts",
+        "Only bottled water"
+      ],
+      "explanation": "Includes blue/green/gray water concepts.",
+      "keywords": [
+        "water-footprint",
+        "resources"
+      ],
+      "source": "https://www.waterfootprint.org/en/water-footprint/what-is-water-footprint/"
+    }
+  ]
+}

@@ -1,0 +1,121 @@
+{
+  "schemaVersion": 1,
+  "seedSet": "core-public-items",
+  "deltaPreviewLimit": 200,
+  "items": [
+    {
+      "seedId": "9798e593-64e2-563f-9c48-1c12dfd40574",
+      "category": "nature",
+      "navigationKeyword1": "navigation",
+      "navigationKeyword2": "gps",
+      "question": "Besides location, what kind of information can many GPS receivers provide?",
+      "correctAnswer": "heading and bearing",
+      "incorrectAnswers": [
+        "tree age and soil pH",
+        "wind chill and avalanche risk only",
+        "leaf species and water purity"
+      ],
+      "explanation": "Many outdoor GPS units can display heading, bearing, speed, distance-to-go, and related navigation data.",
+      "keywords": [
+        "gps",
+        "nature-navigation"
+      ],
+      "source": "https://www.gps.gov/outdoors-gps"
+    },
+    {
+      "seedId": "b77856f8-1358-5a70-9b2b-348586a1a49a",
+      "category": "nature",
+      "navigationKeyword1": "navigation",
+      "navigationKeyword2": "gps",
+      "question": "How does a GPS receiver estimate its distance from a satellite?",
+      "correctAnswer": "by measuring how long the signal takes to arrive",
+      "incorrectAnswers": [
+        "by reading air temperature",
+        "by comparing contour lines",
+        "by using cloud cover"
+      ],
+      "explanation": "GPS relies on timing signals from satellites and the relationship between distance, rate, and time.",
+      "keywords": [
+        "gps",
+        "nature-navigation"
+      ],
+      "source": "https://www.gps.gov/trilateration"
+    },
+    {
+      "seedId": "74bbca8f-4eb3-5a42-8636-ebf2b314c6ae",
+      "category": "nature",
+      "navigationKeyword1": "navigation",
+      "navigationKeyword2": "gps",
+      "question": "What does GPS trilateration use to figure out your position?",
+      "correctAnswer": "distances to satellites",
+      "incorrectAnswers": [
+        "wind speed",
+        "compass declination",
+        "barometric pressure only"
+      ],
+      "explanation": "GPS trilateration determines position from known satellite locations and your distance to them.",
+      "keywords": [
+        "gps",
+        "nature-navigation"
+      ],
+      "source": "https://www.gps.gov/trilateration"
+    },
+    {
+      "seedId": "87fa846e-8684-58db-9fea-58a7f67f106f",
+      "category": "nature",
+      "navigationKeyword1": "navigation",
+      "navigationKeyword2": "gps",
+      "question": "What is a waypoint on a GPS unit?",
+      "correctAnswer": "a saved location",
+      "incorrectAnswers": [
+        "a battery warning",
+        "a steep slope marker",
+        "a weather alert only"
+      ],
+      "explanation": "Waypoints let you save important locations so you can navigate back to them later.",
+      "keywords": [
+        "gps",
+        "nature-navigation"
+      ],
+      "source": "https://www.rei.com/learn/expert-advice/gps-receiver.html"
+    },
+    {
+      "seedId": "47d7740b-d344-5354-94cd-2133e59129df",
+      "category": "nature",
+      "navigationKeyword1": "navigation",
+      "navigationKeyword2": "gps",
+      "question": "What is one major outdoor advantage of storing waypoints on a GPS?",
+      "correctAnswer": "you can return to saved locations",
+      "incorrectAnswers": [
+        "it makes batteries last forever",
+        "it changes magnetic north",
+        "it removes the need for weather awareness"
+      ],
+      "explanation": "Waypoints help you relocate trailheads, camps, fishing spots, or other saved positions with precision.",
+      "keywords": [
+        "gps",
+        "nature-navigation"
+      ],
+      "source": "https://www.gps.gov/outdoors-gps"
+    },
+    {
+      "seedId": "8ecf524e-dd01-59f7-b63c-b85209debd42",
+      "category": "nature",
+      "navigationKeyword1": "navigation",
+      "navigationKeyword2": "gps",
+      "question": "Why is it wise to keep a backup navigation method even when carrying GPS?",
+      "correctAnswer": "GPS can be disrupted by interference or outages",
+      "incorrectAnswers": [
+        "GPS always points to true north",
+        "GPS cannot store routes",
+        "GPS works only in cities"
+      ],
+      "explanation": "Official guidance encourages backup navigation because GPS can be affected by jamming, interference, or service problems.",
+      "keywords": [
+        "gps",
+        "nature-navigation"
+      ],
+      "source": "https://archive.gps.gov/resilience/"
+    }
+  ]
+}

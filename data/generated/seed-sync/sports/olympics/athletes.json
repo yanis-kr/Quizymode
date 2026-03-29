@@ -1,0 +1,207 @@
+{
+  "schemaVersion": 1,
+  "seedSet": "core-public-items",
+  "deltaPreviewLimit": 200,
+  "items": [
+    {
+      "seedId": "c81d2f73-00d4-5487-8c41-110171f9f4db",
+      "category": "sports",
+      "navigationKeyword1": "olympics",
+      "navigationKeyword2": "athletes",
+      "question": "Which American gymnast won four gold medals at the 2016 Rio Olympics?",
+      "correctAnswer": "Simone Biles",
+      "incorrectAnswers": [
+        "Nadia Comaneci",
+        "Suni Lee",
+        "Aly Raisman"
+      ],
+      "explanation": "Biles dominated women's gymnastics in Rio.",
+      "keywords": [
+        "olympics",
+        "athletes",
+        "biles"
+      ],
+      "source": "https://olympics.com/en/olympic-games"
+    },
+    {
+      "seedId": "16bd8721-018e-5f9f-b49a-c3492b1eabc4",
+      "category": "sports",
+      "navigationKeyword1": "olympics",
+      "navigationKeyword2": "athletes",
+      "question": "Which American sprinter won four gold medals at the 1984 Los Angeles Olympics?",
+      "correctAnswer": "Carl Lewis",
+      "incorrectAnswers": [
+        "Michael Johnson",
+        "Maurice Greene",
+        "Michael Marsh"
+      ],
+      "explanation": "Lewis matched Jesse Owens' four-gold feat in Los Angeles.",
+      "keywords": [
+        "olympics",
+        "athletes",
+        "carl-lewis"
+      ],
+      "source": "https://www.britannica.com/biography/Carl-Lewis"
+    },
+    {
+      "seedId": "e6659179-fd21-5eda-b6da-905f1b555310",
+      "category": "sports",
+      "navigationKeyword1": "olympics",
+      "navigationKeyword2": "athletes",
+      "question": "Which American swimmer won eight gold medals at the 2008 Beijing Olympics?",
+      "correctAnswer": "Michael Phelps",
+      "incorrectAnswers": [
+        "Mark Spitz",
+        "Ryan Lochte",
+        "Caeleb Dressel"
+      ],
+      "explanation": "Phelps set the single-Games gold-medal record in Beijing.",
+      "keywords": [
+        "olympics",
+        "athletes",
+        "phelps"
+      ],
+      "source": "https://www.britannica.com/biography/Michael-Phelps"
+    },
+    {
+      "seedId": "45c33494-4715-5ace-aada-2ca8fcf478e6",
+      "category": "sports",
+      "navigationKeyword1": "olympics",
+      "navigationKeyword2": "athletes",
+      "question": "Which British distance star won 5,000m and 10,000m doubles at London 2012 and Rio 2016?",
+      "correctAnswer": "Mo Farah",
+      "incorrectAnswers": [
+        "Sebastian Coe",
+        "Steve Cram",
+        "David Rudisha"
+      ],
+      "explanation": "Farah completed consecutive Olympic distance doubles in 2012 and 2016.",
+      "keywords": [
+        "olympics",
+        "athletes",
+        "mo-farah"
+      ],
+      "source": "https://olympics.com/en/olympic-games"
+    },
+    {
+      "seedId": "042bf04e-38e5-52ce-8ea7-a04e3b885375",
+      "category": "sports",
+      "navigationKeyword1": "olympics",
+      "navigationKeyword2": "athletes",
+      "question": "Which Jamaican sprinter became famous for winning Olympic 100-meter titles with world-record speed?",
+      "correctAnswer": "Usain Bolt",
+      "incorrectAnswers": [
+        "Yohan Blake",
+        "Asafa Powell",
+        "Justin Gatlin"
+      ],
+      "explanation": "Bolt became the signature sprint star of the modern Olympics.",
+      "keywords": [
+        "olympics",
+        "athletes",
+        "bolt"
+      ],
+      "source": "https://www.britannica.com/biography/Usain-Bolt"
+    },
+    {
+      "seedId": "0a532bb5-1df6-5b07-b820-d9c8f97ed550",
+      "category": "sports",
+      "navigationKeyword1": "olympics",
+      "navigationKeyword2": "athletes",
+      "question": "Which Kenyan runner won Olympic marathons at Rio 2016 and Tokyo 2020?",
+      "correctAnswer": "Eliud Kipchoge",
+      "incorrectAnswers": [
+        "Wilson Kipsang",
+        "Geoffrey Kamworor",
+        "Samuel Wanjiru"
+      ],
+      "explanation": "Kipchoge won back-to-back Olympic marathon gold medals.",
+      "keywords": [
+        "olympics",
+        "athletes",
+        "marathon"
+      ],
+      "source": "https://olympics.com/en/olympic-games"
+    },
+    {
+      "seedId": "320ca551-13d7-592c-b3cc-4026cb766c5d",
+      "category": "sports",
+      "navigationKeyword1": "olympics",
+      "navigationKeyword2": "athletes",
+      "question": "Which Norwegian cross-country skier won three gold medals at the 2022 Beijing Winter Olympics?",
+      "correctAnswer": "Therese Johaug",
+      "incorrectAnswers": [
+        "Johannes Klaebo",
+        "Frida Karlsson",
+        "Iivo Niskanen"
+      ],
+      "explanation": "Johaug was one of the standout athletes of Beijing 2022.",
+      "keywords": [
+        "olympics",
+        "athletes",
+        "winter"
+      ],
+      "source": "https://olympics.com/en/olympic-games"
+    },
+    {
+      "seedId": "203c67ad-bc26-5a58-af03-09b9d8787f95",
+      "category": "sports",
+      "navigationKeyword1": "olympics",
+      "navigationKeyword2": "athletes",
+      "question": "Which Romanian rower holds a record number of Olympic medals for her sport?",
+      "correctAnswer": "Elisabeta Lipa",
+      "incorrectAnswers": [
+        "Katerina Emmons",
+        "Birgit Fischer",
+        "Valentina Vezzali"
+      ],
+      "explanation": "Lipa became one of the most decorated rowers in Olympic history.",
+      "keywords": [
+        "olympics",
+        "athletes",
+        "lipa"
+      ],
+      "source": "https://olympics.com/en/olympic-games"
+    },
+    {
+      "seedId": "91db6194-2622-5f3d-b11a-0d5f1fcf3133",
+      "category": "sports",
+      "navigationKeyword1": "olympics",
+      "navigationKeyword2": "athletes",
+      "question": "Which Soviet gymnast famously scored the first perfect 10 in Olympic gymnastics?",
+      "correctAnswer": "Nadia Comaneci",
+      "incorrectAnswers": [
+        "Olga Korbut",
+        "Larisa Latynina",
+        "Simone Biles"
+      ],
+      "explanation": "Comaneci's perfect 10 came at Montreal 1976.",
+      "keywords": [
+        "olympics",
+        "athletes",
+        "comaneci"
+      ],
+      "source": "https://www.britannica.com/biography/Nadia-Comaneci"
+    },
+    {
+      "seedId": "80164b29-b5ec-52f8-a155-b2a8b28f937c",
+      "category": "sports",
+      "navigationKeyword1": "olympics",
+      "navigationKeyword2": "athletes",
+      "question": "Which U.S. track star won four gold medals at the 1936 Berlin Olympics?",
+      "correctAnswer": "Jesse Owens",
+      "incorrectAnswers": [
+        "Carl Lewis",
+        "Bob Beamon",
+        "Jim Thorpe"
+      ],
+      "explanation": "Owens' performance in Berlin became one of Olympic history's defining moments.",
+      "keywords": [
+        "olympics",
+        "athletes",
+        "owens"
+      ],
+      "source": "https://www.britannica.com/biography/Jesse-Owens"
+    }
+  ]
+}

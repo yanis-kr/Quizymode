@@ -1,0 +1,197 @@
+{
+  "schemaVersion": 1,
+  "seedSet": "core-public-items",
+  "deltaPreviewLimit": 200,
+  "items": [
+    {
+      "seedId": "b8d213ae-cd00-5a4d-aba5-ee21b5baf337",
+      "category": "trivia",
+      "navigationKeyword1": "internet",
+      "navigationKeyword2": "websites",
+      "question": "A CDN improves website speed by moving content closer to whom?",
+      "correctAnswer": "end users",
+      "incorrectAnswers": [
+        "software developers",
+        "data cables",
+        "search engines"
+      ],
+      "explanation": "Content delivery networks speed up sites by caching content closer to end users.",
+      "keywords": [
+        "websites",
+        "web-history"
+      ],
+      "source": "https://www.britannica.com/technology/content-delivery-network"
+    },
+    {
+      "seedId": "14de8176-87cb-5b71-aaaa-28b477322c3a",
+      "category": "trivia",
+      "navigationKeyword1": "internet",
+      "navigationKeyword2": "websites",
+      "question": "A landing page is usually built for a specific marketing what?",
+      "correctAnswer": "campaign",
+      "incorrectAnswers": [
+        "keyboard layout",
+        "spreadsheet formula",
+        "operating system update"
+      ],
+      "explanation": "Landing pages are usually designed around a specific marketing campaign.",
+      "keywords": [
+        "websites",
+        "web-history"
+      ],
+      "source": "https://www.britannica.com/topic/landing-page"
+    },
+    {
+      "seedId": "d5c249a4-0891-531e-993c-e2893f1f794b",
+      "category": "trivia",
+      "navigationKeyword1": "internet",
+      "navigationKeyword2": "websites",
+      "question": "A paywall blocks access until a user does what?",
+      "correctAnswer": "pays or subscribes",
+      "incorrectAnswers": [
+        "changes browser tabs",
+        "resizes the window",
+        "downloads a font"
+      ],
+      "explanation": "A paywall restricts access until payment or subscription is provided.",
+      "keywords": [
+        "websites",
+        "web-history"
+      ],
+      "source": "https://www.britannica.com/topic/paywall"
+    },
+    {
+      "seedId": "2defcc3b-dc28-53ee-934e-734a864fbfbb",
+      "category": "trivia",
+      "navigationKeyword1": "internet",
+      "navigationKeyword2": "websites",
+      "question": "Blogs are known for publishing dated what?",
+      "correctAnswer": "posts or articles",
+      "incorrectAnswers": [
+        "blueprints",
+        "tax returns",
+        "circuit boards"
+      ],
+      "explanation": "Blogs typically publish dated posts or articles.",
+      "keywords": [
+        "websites",
+        "web-history"
+      ],
+      "source": "https://www.britannica.com/technology/blog"
+    },
+    {
+      "seedId": "0e1b9340-c76e-552d-94e6-762a3dbcdca4",
+      "category": "trivia",
+      "navigationKeyword1": "internet",
+      "navigationKeyword2": "websites",
+      "question": "Internet forums are centered on threaded what?",
+      "correctAnswer": "discussions",
+      "incorrectAnswers": [
+        "downloads",
+        "thumbnails",
+        "toolbars"
+      ],
+      "explanation": "Forums organize conversations as threaded discussions.",
+      "keywords": [
+        "websites",
+        "web-history"
+      ],
+      "source": "https://www.britannica.com/technology/Internet-forum"
+    },
+    {
+      "seedId": "7e143bc0-d842-5b26-857b-5bb8306e752f",
+      "category": "trivia",
+      "navigationKeyword1": "internet",
+      "navigationKeyword2": "websites",
+      "question": "The early World Wide Web was built around linking documents with what?",
+      "correctAnswer": "hypertext",
+      "incorrectAnswers": [
+        "microfilm",
+        "fax pages",
+        "audio tape"
+      ],
+      "explanation": "Tim Berners-Lee's early World Wide Web project was built around hypertext links between documents.",
+      "keywords": [
+        "websites",
+        "web-history"
+      ],
+      "source": "https://www.w3.org/History/19921103-hypertext/hypertext/WWW/TheProject.html"
+    },
+    {
+      "seedId": "c619fc17-3d9c-56cb-9fc8-20161ebf9590",
+      "category": "trivia",
+      "navigationKeyword1": "internet",
+      "navigationKeyword2": "websites",
+      "question": "What do e-commerce sites primarily sell online?",
+      "correctAnswer": "goods or services",
+      "incorrectAnswers": [
+        "bus schedules only",
+        "weather forecasts only",
+        "printer drivers only"
+      ],
+      "explanation": "E-commerce sites are built to sell goods or services online.",
+      "keywords": [
+        "websites",
+        "web-history"
+      ],
+      "source": "https://www.britannica.com/technology/e-commerce"
+    },
+    {
+      "seedId": "fd6a230a-cb72-578f-b499-d98e23b32a41",
+      "category": "trivia",
+      "navigationKeyword1": "internet",
+      "navigationKeyword2": "websites",
+      "question": "Which organization publishes RFC documents such as RFC 7230?",
+      "correctAnswer": "RFC Editor",
+      "incorrectAnswers": [
+        "W3C",
+        "UNESCO",
+        "Mozilla Foundation"
+      ],
+      "explanation": "RFC documents are published through the RFC Editor.",
+      "keywords": [
+        "websites",
+        "web-history"
+      ],
+      "source": "https://www.rfc-editor.org/rfc/rfc7230"
+    },
+    {
+      "seedId": "467baceb-2ee7-55dc-8edb-b11143fee085",
+      "category": "trivia",
+      "navigationKeyword1": "internet",
+      "navigationKeyword2": "websites",
+      "question": "Which standards body publishes HTML recommendations?",
+      "correctAnswer": "W3C",
+      "incorrectAnswers": [
+        "IETF",
+        "ICANN",
+        "IEEE"
+      ],
+      "explanation": "HTML recommendations are published by the World Wide Web Consortium, or W3C.",
+      "keywords": [
+        "websites",
+        "web-history"
+      ],
+      "source": "https://www.w3.org/TR/html52/"
+    },
+    {
+      "seedId": "d21b0736-5bb0-537a-9b1d-6cd107847edc",
+      "category": "trivia",
+      "navigationKeyword1": "internet",
+      "navigationKeyword2": "websites",
+      "question": "Wikipedia is best described as what kind of site?",
+      "correctAnswer": "a volunteer-edited online encyclopedia",
+      "incorrectAnswers": [
+        "an online stock exchange",
+        "a restaurant guide only",
+        "a cloud gaming service"
+      ],
+      "explanation": "Wikipedia is an online encyclopedia edited by volunteers.",
+      "keywords": [
+        "websites",
+        "web-history"
+      ],
+      "source": "https://www.britannica.com/topic/Wikipedia"
+    }
+  ]
+}

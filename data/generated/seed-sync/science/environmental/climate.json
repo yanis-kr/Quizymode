@@ -1,0 +1,235 @@
+{
+  "schemaVersion": 1,
+  "seedSet": "core-public-items",
+  "deltaPreviewLimit": 200,
+  "items": [
+    {
+      "seedId": "f0edb34e-c832-41b7-8aeb-d358242a271b",
+      "category": "science",
+      "navigationKeyword1": "environmental",
+      "navigationKeyword2": "climate",
+      "question": "What is COP (UNFCCC context)?",
+      "correctAnswer": "Conference of Parties climate negotiations",
+      "incorrectAnswers": [
+        "NASA mission",
+        "Oil cartel",
+        "Fish treaty"
+      ],
+      "explanation": "Country-level agreements.",
+      "keywords": [
+        "cop",
+        "policy"
+      ],
+      "source": "https://unfccc.int/process/bodies/supreme-bodies/conference-of-the-parties-cop"
+    },
+    {
+      "seedId": "25e40924-f81d-4ed9-828c-fb3434cb61eb",
+      "category": "science",
+      "navigationKeyword1": "environmental",
+      "navigationKeyword2": "climate",
+      "question": "What is attribution science?",
+      "correctAnswer": "Linking extreme events/climate trends to causes",
+      "incorrectAnswers": [
+        "Guessing",
+        "Only astrology",
+        "Only economics"
+      ],
+      "explanation": "Uses statistics and models.",
+      "keywords": [
+        "attribution",
+        "extremes"
+      ],
+      "source": "https://www.climate.gov/news-features/understanding-climate/climate-change-global-temperature"
+    },
+    {
+      "seedId": "61f9c251-b606-4360-88c3-34624c8bb987",
+      "category": "science",
+      "navigationKeyword1": "environmental",
+      "navigationKeyword2": "climate",
+      "question": "What is carbon budget?",
+      "correctAnswer": "Cumulative CO2 emissions compatible with warming limit",
+      "incorrectAnswers": [
+        "Daily calorie count",
+        "Household water bill",
+        "Car tire pressure"
+      ],
+      "explanation": "Links emissions to temperature targets.",
+      "keywords": [
+        "carbon-budget",
+        "emissions"
+      ],
+      "source": "https://www.ipcc.ch/report/ar6/wg1/"
+    },
+    {
+      "seedId": "67a53cd9-2ab4-40b8-9c29-b6584d86f734",
+      "category": "science",
+      "navigationKeyword1": "environmental",
+      "navigationKeyword2": "climate",
+      "question": "What is climate model?",
+      "correctAnswer": "Equations simulating Earth system on computers",
+      "incorrectAnswers": [
+        "Single thermometer",
+        "One tree ring",
+        "Horoscope"
+      ],
+      "explanation": "Used for projections and attribution.",
+      "keywords": [
+        "climate-models",
+        "simulation"
+      ],
+      "source": "https://www.climate.gov/maps-data/education/climate-models-0"
+    },
+    {
+      "seedId": "70d82ac4-7929-4a89-a818-0b508f3b55d6",
+      "category": "science",
+      "navigationKeyword1": "environmental",
+      "navigationKeyword2": "climate",
+      "question": "What is climate sensitivity (rough idea)?",
+      "correctAnswer": "How much warming results from a CO2 doubling (equilibrium concept)",
+      "incorrectAnswers": [
+        "How fast cars drive",
+        "Hurricane category",
+        "Tide height only"
+      ],
+      "explanation": "Models and paleo evidence constrain estimates.",
+      "keywords": [
+        "sensitivity",
+        "models"
+      ],
+      "source": "https://climate.nasa.gov/evidence/"
+    },
+    {
+      "seedId": "e3f29cb4-9bdc-40f4-b233-c58b5790023e",
+      "category": "science",
+      "navigationKeyword1": "environmental",
+      "navigationKeyword2": "climate",
+      "question": "What is cryosphere?",
+      "correctAnswer": "Frozen parts: ice sheets, glaciers, sea ice, permafrost",
+      "incorrectAnswers": [
+        "Only rain",
+        "Only deserts",
+        "Only grasslands"
+      ],
+      "explanation": "Melting affects sea level and albedo.",
+      "keywords": [
+        "cryosphere",
+        "ice"
+      ],
+      "source": "https://climate.nasa.gov/vital-signs/land-ice/"
+    },
+    {
+      "seedId": "4de57e8a-2ed8-4f77-ace9-38edb87c8181",
+      "category": "science",
+      "navigationKeyword1": "environmental",
+      "navigationKeyword2": "climate",
+      "question": "What is loss and damage (climate policy term)?",
+      "correctAnswer": "Impacts beyond adaptation, especially in vulnerable nations",
+      "incorrectAnswers": [
+        "Profit margin",
+        "Insurance deductible only",
+        "Crop rotation"
+      ],
+      "explanation": "International finance discussions.",
+      "keywords": [
+        "loss-and-damage",
+        "justice"
+      ],
+      "source": "https://unfccc.int/topics/loss-and-damage-work-programme/introduction"
+    },
+    {
+      "seedId": "7777e217-ba98-458a-8e5d-902414d1481c",
+      "category": "science",
+      "navigationKeyword1": "environmental",
+      "navigationKeyword2": "climate",
+      "question": "What is nationally determined contribution?",
+      "correctAnswer": "Country climate pledge under Paris Agreement",
+      "incorrectAnswers": [
+        "A stock ticker",
+        "A hurricane name",
+        "A soil test"
+      ],
+      "explanation": "Collective ambition updated over time.",
+      "keywords": [
+        "ndc",
+        "paris-agreement"
+      ],
+      "source": "https://unfccc.int/process/the-paris-agreement/nationally-determined-contributions"
+    },
+    {
+      "seedId": "75ea54c5-4705-47b0-8a56-3b900a3499cd",
+      "category": "science",
+      "navigationKeyword1": "environmental",
+      "navigationKeyword2": "climate",
+      "question": "What is ocean acidification?",
+      "correctAnswer": "CO2 uptake lowers seawater pH",
+      "incorrectAnswers": [
+        "Makes seawater strongly basic",
+        "Only affects boats",
+        "Only freshwater"
+      ],
+      "explanation": "Threatens calcifying organisms.",
+      "keywords": [
+        "acidification",
+        "ocean"
+      ],
+      "source": "https://www.noaa.gov/education/resource-collections/ocean-coastal-education/ocean-acidification"
+    },
+    {
+      "seedId": "795072c8-944e-454b-b5aa-28157fe1f73a",
+      "category": "science",
+      "navigationKeyword1": "environmental",
+      "navigationKeyword2": "climate",
+      "question": "What is permafrost thaw concern?",
+      "correctAnswer": "Releases carbon and methane; destabilizes ground",
+      "incorrectAnswers": [
+        "Always safe",
+        "Only cosmetic",
+        "Only helps farming always"
+      ],
+      "explanation": "Positive feedback risk.",
+      "keywords": [
+        "permafrost",
+        "methane"
+      ],
+      "source": "https://climate.nasa.gov/vital-signs/permafrost/"
+    },
+    {
+      "seedId": "11b62e18-692f-47cd-b8c4-b2caa92574fb",
+      "category": "science",
+      "navigationKeyword1": "environmental",
+      "navigationKeyword2": "climate",
+      "question": "What is radiative forcing?",
+      "correctAnswer": "Change in Earth\u2019s energy balance due to a factor",
+      "incorrectAnswers": [
+        "Wind speed",
+        "Ocean salinity only",
+        "Soil pH only"
+      ],
+      "explanation": "Positive forcing tends to warm.",
+      "keywords": [
+        "forcing",
+        "energy-balance"
+      ],
+      "source": "https://www.ipcc.ch/report/ar6/wg1/"
+    },
+    {
+      "seedId": "4ddfa340-66de-49ca-88c3-566ff70f914a",
+      "category": "science",
+      "navigationKeyword1": "environmental",
+      "navigationKeyword2": "climate",
+      "question": "What is scenario (SSP/RCP idea)?",
+      "correctAnswer": "Plausible future pathways of emissions and socioeconomics",
+      "incorrectAnswers": [
+        "Yesterday\u2019s weather",
+        "Stock price",
+        "Tide table only"
+      ],
+      "explanation": "Helps compare policy outcomes.",
+      "keywords": [
+        "scenarios",
+        "projections"
+      ],
+      "source": "https://www.ipcc.ch/report/ar6/wg1/"
+    }
+  ]
+}

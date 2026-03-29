@@ -8,7 +8,7 @@ from pathlib import Path
 from typing import Any
 
 ROOT = Path(__file__).resolve().parents[1]
-OUT = ROOT / "data" / "bulk-seed" / "business"
+OUT = ROOT / "data" / "seed-source" / "items" / "business"
 
 # (question, correct, (w1,w2,w3), explanation, kw1, kw2, source)
 T = tuple[str, str, tuple[str, str, str], str, str, str, str]

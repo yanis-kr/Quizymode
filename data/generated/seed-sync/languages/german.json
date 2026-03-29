@@ -1,0 +1,691 @@
+{
+  "schemaVersion": 1,
+  "seedSet": "core-public-items",
+  "deltaPreviewLimit": 200,
+  "items": [
+    {
+      "seedId": "61f25255-299c-5f18-817f-b4cd86608e0b",
+      "category": "languages",
+      "navigationKeyword1": "german",
+      "navigationKeyword2": "cases",
+      "question": "After the preposition 'mit' (with), which case is usually required?",
+      "correctAnswer": "dative",
+      "incorrectAnswers": [
+        "accusative",
+        "genitive",
+        "nominative"
+      ],
+      "explanation": "'Mit' is commonly paired with the dative, for example 'mit dem Freund'.",
+      "keywords": [
+        "dative",
+        "german-cases"
+      ],
+      "source": "https://www.duden.de/sprachwissen/sprachratgeber/Prpositionen_mit_Akkusativ_und_Dativ"
+    },
+    {
+      "seedId": "f2a52097-d0b7-53cb-8b9f-76a57f83d4c5",
+      "category": "languages",
+      "navigationKeyword1": "german",
+      "navigationKeyword2": "cases",
+      "question": "For a singular masculine noun as direct object, which article often replaces 'der'?",
+      "correctAnswer": "den",
+      "incorrectAnswers": [
+        "dem",
+        "des",
+        "das"
+      ],
+      "explanation": "Masculine accusative often uses 'den', as in 'Ich sehe den Mann.'",
+      "keywords": [
+        "accusative",
+        "german-cases"
+      ],
+      "source": "https://dictionary.cambridge.org/dictionary/german-english/den"
+    },
+    {
+      "seedId": "b219e346-efda-53f1-bab7-c967f6f67603",
+      "category": "languages",
+      "navigationKeyword1": "german",
+      "navigationKeyword2": "cases",
+      "question": "For feminine singular nouns in accusative, which article is common?",
+      "correctAnswer": "die",
+      "incorrectAnswers": [
+        "der",
+        "das",
+        "den"
+      ],
+      "explanation": "Feminine singular accusative often stays 'die', as in 'Ich sehe die Frau.'",
+      "keywords": [
+        "accusative",
+        "german-cases"
+      ],
+      "source": "https://www.goethe.de/en/spr/englisch.html"
+    },
+    {
+      "seedId": "a7c6fda0-fbfb-5168-adec-a43f463b0e5a",
+      "category": "languages",
+      "navigationKeyword1": "german",
+      "navigationKeyword2": "cases",
+      "question": "Which case often marks a direct object after many common verbs like 'sehen'?",
+      "correctAnswer": "accusative",
+      "incorrectAnswers": [
+        "only dative",
+        "only genitive",
+        "only nominative"
+      ],
+      "explanation": "Many verbs take a direct object in the accusative, for example 'Ich sehe den Hund.'",
+      "keywords": [
+        "accusative",
+        "german-cases"
+      ],
+      "source": "https://www.deutsch.info/en/grammar/"
+    },
+    {
+      "seedId": "fde1093b-7df8-572c-99d0-9605e5d9a4b4",
+      "category": "languages",
+      "navigationKeyword1": "german",
+      "navigationKeyword2": "cases",
+      "question": "Which case often marks the subject of a basic sentence?",
+      "correctAnswer": "nominative",
+      "incorrectAnswers": [
+        "accusative only for subjects",
+        "dative for every subject",
+        "genitive for every subject"
+      ],
+      "explanation": "The subject is often in the nominative case, for example 'Der Mann liest.'",
+      "keywords": [
+        "nominative",
+        "german-cases"
+      ],
+      "source": "https://dictionary.cambridge.org/grammar/british-grammar/german"
+    },
+    {
+      "seedId": "f13a5936-104b-5f97-9d24-6a46211212ae",
+      "category": "languages",
+      "navigationKeyword1": "german",
+      "navigationKeyword2": "cases",
+      "question": "Which case often shows possession with words like 'des Mannes' in more formal German?",
+      "correctAnswer": "genitive",
+      "incorrectAnswers": [
+        "only accusative",
+        "only dative",
+        "only nominative"
+      ],
+      "explanation": "The genitive can mark possession, for example 'das Buch des Mannes'.",
+      "keywords": [
+        "genitive",
+        "german-cases"
+      ],
+      "source": "https://dictionary.cambridge.org/grammar/british-grammar/german"
+    },
+    {
+      "seedId": "ddad2eac-b470-5882-8b8b-9e4c495e0d4c",
+      "category": "languages",
+      "navigationKeyword1": "german",
+      "navigationKeyword2": "conversation",
+      "question": "What does 'Auf Wiedersehen' mean?",
+      "correctAnswer": "goodbye (formal)",
+      "incorrectAnswers": [
+        "nice to meet you",
+        "see you tomorrow",
+        "you are welcome"
+      ],
+      "explanation": "'Auf Wiedersehen' is a polite goodbye, often in more formal settings.",
+      "keywords": [
+        "goodbye",
+        "german-conversation"
+      ],
+      "source": "https://www.duden.de/rechtschreibung/Wiedersehen"
+    },
+    {
+      "seedId": "a3d7658d-a838-593f-83c0-43e25a121d50",
+      "category": "languages",
+      "navigationKeyword1": "german",
+      "navigationKeyword2": "conversation",
+      "question": "What does 'Guten Tag' mean?",
+      "correctAnswer": "good day / hello (daytime)",
+      "incorrectAnswers": [
+        "good evening only",
+        "good night",
+        "happy new year"
+      ],
+      "explanation": "'Guten Tag' is a standard daytime greeting in many regions.",
+      "keywords": [
+        "hello",
+        "german-conversation"
+      ],
+      "source": "https://www.deutsch.info/en/vocabulary/"
+    },
+    {
+      "seedId": "dd84f480-a33d-5b2c-b891-a8f81b20e836",
+      "category": "languages",
+      "navigationKeyword1": "german",
+      "navigationKeyword2": "conversation",
+      "question": "What does 'Ja' mean?",
+      "correctAnswer": "yes",
+      "incorrectAnswers": [
+        "no",
+        "maybe",
+        "please"
+      ],
+      "explanation": "'Ja' is the basic word for yes.",
+      "keywords": [
+        "yes",
+        "german-conversation"
+      ],
+      "source": "https://dictionary.cambridge.org/dictionary/german-english/ja"
+    },
+    {
+      "seedId": "de9395bb-5db7-51fb-a447-622cf0097430",
+      "category": "languages",
+      "navigationKeyword1": "german",
+      "navigationKeyword2": "conversation",
+      "question": "What does 'Nein' mean?",
+      "correctAnswer": "no",
+      "incorrectAnswers": [
+        "yes",
+        "maybe",
+        "please"
+      ],
+      "explanation": "'Nein' is the basic word for no.",
+      "keywords": [
+        "no",
+        "german-conversation"
+      ],
+      "source": "https://dictionary.cambridge.org/dictionary/german-english/nein"
+    },
+    {
+      "seedId": "acd52b78-5822-556c-a849-aec27b67eeca",
+      "category": "languages",
+      "navigationKeyword1": "german",
+      "navigationKeyword2": "conversation",
+      "question": "What is a common informal way to ask 'How are you?'",
+      "correctAnswer": "Wie geht's?",
+      "incorrectAnswers": [
+        "Wo kommst du her?",
+        "Wie viel kostet das?",
+        "Was ist dein Beruf?"
+      ],
+      "explanation": "'Wie geht's?' is a very common short question about how someone is doing.",
+      "keywords": [
+        "how-are-you",
+        "german-conversation"
+      ],
+      "source": "https://dictionary.cambridge.org/dictionary/german-english/gehen"
+    },
+    {
+      "seedId": "8e5c9de2-42df-5892-ac17-23544f44da37",
+      "category": "languages",
+      "navigationKeyword1": "german",
+      "navigationKeyword2": "conversation",
+      "question": "When you meet someone formally, which polite pronoun often replaces 'du'?",
+      "correctAnswer": "Sie",
+      "incorrectAnswers": [
+        "ihr",
+        "man",
+        "es"
+      ],
+      "explanation": "'Sie' with a capital S is the polite you for adults you do not call 'du'.",
+      "keywords": [
+        "formal-you",
+        "german-conversation"
+      ],
+      "source": "https://www.goethe.de/en/spr/englisch.html"
+    },
+    {
+      "seedId": "b0e2a71c-fd06-5b31-9373-46b2ddd53b52",
+      "category": "languages",
+      "navigationKeyword1": "german",
+      "navigationKeyword2": "grammar",
+      "question": "In a basic clause with a modal verb and an infinitive, where does the infinitive usually go?",
+      "correctAnswer": "at the end of the clause",
+      "incorrectAnswers": [
+        "right after the modal",
+        "before the subject",
+        "between the subject and the modal"
+      ],
+      "explanation": "The infinitive often sits at the end, for example 'Ich muss jetzt gehen.'",
+      "keywords": [
+        "modal-verbs",
+        "german-grammar"
+      ],
+      "source": "https://www.goethe.de/en/spr/englisch.html"
+    },
+    {
+      "seedId": "ed732fc3-5e21-5242-9091-b1b8e6ade848",
+      "category": "languages",
+      "navigationKeyword1": "german",
+      "navigationKeyword2": "grammar",
+      "question": "In a normal German statement, where does the main verb usually go?",
+      "correctAnswer": "second position",
+      "incorrectAnswers": [
+        "always at the end",
+        "always first",
+        "after the object phrase only"
+      ],
+      "explanation": "German main clauses often follow verb-second order: one element comes first, then the finite verb.",
+      "keywords": [
+        "word-order",
+        "german-grammar"
+      ],
+      "source": "https://dictionary.cambridge.org/grammar/british-grammar/german"
+    },
+    {
+      "seedId": "bd3ea9e9-1b55-57e9-82d2-eea153cd555e",
+      "category": "languages",
+      "navigationKeyword1": "german",
+      "navigationKeyword2": "grammar",
+      "question": "In a simple yes-or-no question, where does the verb usually go?",
+      "correctAnswer": "first",
+      "incorrectAnswers": [
+        "second",
+        "last",
+        "after the subject only"
+      ],
+      "explanation": "Yes-or-no questions often start with the verb, for example a form of 'sein' or 'haben'.",
+      "keywords": [
+        "questions",
+        "german-grammar"
+      ],
+      "source": "https://www.deutsch.info/en/grammar/"
+    },
+    {
+      "seedId": "68dc6b48-a620-52eb-81d7-b5c95b1792dc",
+      "category": "languages",
+      "navigationKeyword1": "german",
+      "navigationKeyword2": "grammar",
+      "question": "What is the usual first-person singular present form of 'sein' (to be)?",
+      "correctAnswer": "ich bin",
+      "incorrectAnswers": [
+        "ich bist",
+        "ich sind",
+        "ich war"
+      ],
+      "explanation": "'Ich bin' is the common present form meaning 'I am'.",
+      "keywords": [
+        "sein",
+        "german-grammar"
+      ],
+      "source": "https://www.duden.de/rechtschreibung/bin"
+    },
+    {
+      "seedId": "edd4458c-b863-5d77-829b-0a895be46d75",
+      "category": "languages",
+      "navigationKeyword1": "german",
+      "navigationKeyword2": "grammar",
+      "question": "Which article matches a singular masculine noun like 'Mann' in the nominative case?",
+      "correctAnswer": "der",
+      "incorrectAnswers": [
+        "die",
+        "das",
+        "den"
+      ],
+      "explanation": "Masculine singular nominative often uses 'der', as in 'der Mann'.",
+      "keywords": [
+        "articles",
+        "german-grammar"
+      ],
+      "source": "https://www.duden.de/sprachwissen/sprachratgeber/Der_die_oder_das"
+    },
+    {
+      "seedId": "478ed91b-0a99-51c0-85b0-4d7e571c2f87",
+      "category": "languages",
+      "navigationKeyword1": "german",
+      "navigationKeyword2": "grammar",
+      "question": "Which article matches a singular neuter noun like 'Kind' in the nominative case?",
+      "correctAnswer": "das",
+      "incorrectAnswers": [
+        "der",
+        "die",
+        "den"
+      ],
+      "explanation": "Neuter singular nominative often uses 'das', as in 'das Kind'.",
+      "keywords": [
+        "articles",
+        "german-grammar"
+      ],
+      "source": "https://dictionary.cambridge.org/dictionary/german-english/kind"
+    },
+    {
+      "seedId": "92ea6551-d595-53a4-bbae-b63f23acaaeb",
+      "category": "languages",
+      "navigationKeyword1": "german",
+      "navigationKeyword2": "listening",
+      "question": "'Bett' and 'Beet' differ by vowel length. What does 'Bett' mean?",
+      "correctAnswer": "a bed for sleeping",
+      "incorrectAnswers": [
+        "a garden plot (that is closer to 'Beet')",
+        "a boat",
+        "a book"
+      ],
+      "explanation": "Long and short vowels can change meaning; 'Bett' is the everyday word for a sleeping bed.",
+      "keywords": [
+        "minimal-pair",
+        "german-listening"
+      ],
+      "source": "https://dictionary.cambridge.org/dictionary/german-english/bett"
+    },
+    {
+      "seedId": "f82b8691-4c0d-5631-9eb4-21fcc5b8519d",
+      "category": "languages",
+      "navigationKeyword1": "german",
+      "navigationKeyword2": "listening",
+      "question": "At the ends of words like 'Tag' and 'Abend', how do many German consonants often sound?",
+      "correctAnswer": "voiceless (like t or p) in many accents",
+      "incorrectAnswers": [
+        "always like English z",
+        "always silent",
+        "always doubled"
+      ],
+      "explanation": "Final devoicing is common, so 'Tag' may sound closer to 'tak' for learners listening for spelling sounds.",
+      "keywords": [
+        "pronunciation",
+        "german-listening"
+      ],
+      "source": "https://dictionary.cambridge.org/grammar/british-grammar/german"
+    },
+    {
+      "seedId": "0eeb9ecc-e8d6-56c3-abb1-86ce4d49b008",
+      "category": "languages",
+      "navigationKeyword1": "german",
+      "navigationKeyword2": "listening",
+      "question": "In many German compound nouns, which syllable is often stressed?",
+      "correctAnswer": "the first part",
+      "incorrectAnswers": [
+        "always the last syllable",
+        "always the middle syllable",
+        "stress is random"
+      ],
+      "explanation": "German compounds often carry main stress on the first element, which helps you parse long words when listening.",
+      "keywords": [
+        "stress",
+        "german-listening"
+      ],
+      "source": "https://www.goethe.de/en/spr/englisch.html"
+    },
+    {
+      "seedId": "bbb2e295-a371-53fa-a3d0-96d4b618f686",
+      "category": "languages",
+      "navigationKeyword1": "german",
+      "navigationKeyword2": "listening",
+      "question": "The polite 'Sie' (you) and 'sie' (they) can sound the same. What usually tells them apart?",
+      "correctAnswer": "context and verb forms",
+      "incorrectAnswers": [
+        "they always sound different",
+        "spelling in speech",
+        "only the speaker's mood"
+      ],
+      "explanation": "They are homophones in many contexts, so listeners rely on meaning and verb agreement.",
+      "keywords": [
+        "homophones",
+        "german-listening"
+      ],
+      "source": "https://www.deutsch.info/en/pronunciation/"
+    },
+    {
+      "seedId": "c55d4d67-31fb-5a29-8e63-4121bae378da",
+      "category": "languages",
+      "navigationKeyword1": "german",
+      "navigationKeyword2": "listening",
+      "question": "What does 'dreizehn' mean when you hear a number?",
+      "correctAnswer": "13",
+      "incorrectAnswers": [
+        "30",
+        "3",
+        "23"
+      ],
+      "explanation": "'Dreizehn' builds 'drei' plus 'zehn', meaning thirteen.",
+      "keywords": [
+        "numbers",
+        "german-listening"
+      ],
+      "source": "https://dictionary.cambridge.org/dictionary/german-english/dreizehn"
+    },
+    {
+      "seedId": "23581dde-bab1-50ca-8591-b6b89c4a6aa0",
+      "category": "languages",
+      "navigationKeyword1": "german",
+      "navigationKeyword2": "listening",
+      "question": "Why can separable verbs be tricky in spoken German?",
+      "correctAnswer": "the prefix may be heard at the end of the clause",
+      "incorrectAnswers": [
+        "they never split in speech",
+        "the verb is always silent",
+        "prefixes are never used"
+      ],
+      "explanation": "In main clauses, the spoken line may end with a separable prefix, for example 'Ich stehe fr\u00fch auf.'",
+      "keywords": [
+        "separable-verbs",
+        "german-listening"
+      ],
+      "source": "https://www.duden.de/sprachwissen/sprachratgeber/Trennbare_und_untrennbare_Verben"
+    },
+    {
+      "seedId": "0b7e3583-b395-515a-91ea-f8bffab9390b",
+      "category": "languages",
+      "navigationKeyword1": "german",
+      "navigationKeyword2": "travel",
+      "question": "What does 'Entschuldigung' often mean in a busy place?",
+      "correctAnswer": "excuse me / sorry",
+      "incorrectAnswers": [
+        "welcome",
+        "congratulations",
+        "closed"
+      ],
+      "explanation": "'Entschuldigung' is useful to get attention politely or to apologize briefly.",
+      "keywords": [
+        "excuse-me",
+        "german-travel"
+      ],
+      "source": "https://www.goethe.de/en/spr/englisch.html"
+    },
+    {
+      "seedId": "084739ce-56e9-5cc2-8909-6eb6fc877475",
+      "category": "languages",
+      "navigationKeyword1": "german",
+      "navigationKeyword2": "travel",
+      "question": "What does 'Wo ist ...?' mean?",
+      "correctAnswer": "Where is ...?",
+      "incorrectAnswers": [
+        "What time is ...?",
+        "How much is ...?",
+        "Do you have ...?"
+      ],
+      "explanation": "'Wo' asks where something is, so 'Wo ist ...?' means 'Where is ...?'",
+      "keywords": [
+        "where",
+        "german-travel"
+      ],
+      "source": "https://www.deutsch.info/en/vocabulary/"
+    },
+    {
+      "seedId": "3039b187-c56f-50ea-bf5f-6f76a74c1ba0",
+      "category": "languages",
+      "navigationKeyword1": "german",
+      "navigationKeyword2": "travel",
+      "question": "What does 'der Anschluss' often mean when you change trains?",
+      "correctAnswer": "the connection (transfer)",
+      "incorrectAnswers": [
+        "the ticket price",
+        "the restaurant car",
+        "the exit only"
+      ],
+      "explanation": "'Anschluss' can mean a connecting train or transfer in travel speech.",
+      "keywords": [
+        "connection",
+        "german-travel"
+      ],
+      "source": "https://dictionary.cambridge.org/dictionary/german-english/anschluss"
+    },
+    {
+      "seedId": "bb1cca9f-bddf-542f-86f6-9fe8f99e4384",
+      "category": "languages",
+      "navigationKeyword1": "german",
+      "navigationKeyword2": "travel",
+      "question": "What does 'der Bahnhof' mean?",
+      "correctAnswer": "the train station",
+      "incorrectAnswers": [
+        "the airport",
+        "the bus stop",
+        "the ticket office only"
+      ],
+      "explanation": "'Bahnhof' is the common word for a train station.",
+      "keywords": [
+        "train-station",
+        "german-travel"
+      ],
+      "source": "https://dictionary.cambridge.org/dictionary/german-english/bahnhof"
+    },
+    {
+      "seedId": "867da244-f446-55c8-9a0d-0abdfb99e020",
+      "category": "languages",
+      "navigationKeyword1": "german",
+      "navigationKeyword2": "travel",
+      "question": "What does 'die Abfahrt' often mean on a timetable?",
+      "correctAnswer": "the departure",
+      "incorrectAnswers": [
+        "the arrival",
+        "the delay only",
+        "the platform change only"
+      ],
+      "explanation": "'Abfahrt' refers to departure, often seen on schedules and signs.",
+      "keywords": [
+        "departure",
+        "german-travel"
+      ],
+      "source": "https://dictionary.cambridge.org/dictionary/german-english/abfahrt"
+    },
+    {
+      "seedId": "2d37932b-645c-5cad-85ed-1a2798bc8f11",
+      "category": "languages",
+      "navigationKeyword1": "german",
+      "navigationKeyword2": "travel",
+      "question": "What does 'die Fahrkarte' usually mean?",
+      "correctAnswer": "the ticket (for travel)",
+      "incorrectAnswers": [
+        "the passport",
+        "the suitcase",
+        "the seat number"
+      ],
+      "explanation": "'Fahrkarte' is a common word for a travel ticket, especially on trains and similar transport.",
+      "keywords": [
+        "ticket",
+        "german-travel"
+      ],
+      "source": "https://www.duden.de/rechtschreibung/Fahrkarte"
+    },
+    {
+      "seedId": "bbe2dfa6-9f5a-5d3c-b96e-043d975f3e0a",
+      "category": "languages",
+      "navigationKeyword1": "german",
+      "navigationKeyword2": "vocab",
+      "question": "What does 'Bitte' often mean when someone offers you something?",
+      "correctAnswer": "please (or here you go)",
+      "incorrectAnswers": [
+        "sorry",
+        "maybe",
+        "stop"
+      ],
+      "explanation": "'Bitte' is very common for please, and it can also soften offers and replies.",
+      "keywords": [
+        "please",
+        "german-vocab"
+      ],
+      "source": "https://www.goethe.de/en/spr/englisch.html"
+    },
+    {
+      "seedId": "b8f71e98-55fc-569d-88f0-e000b824fc19",
+      "category": "languages",
+      "navigationKeyword1": "german",
+      "navigationKeyword2": "vocab",
+      "question": "What does 'Danke' mean?",
+      "correctAnswer": "thank you",
+      "incorrectAnswers": [
+        "please",
+        "hello",
+        "goodbye"
+      ],
+      "explanation": "'Danke' is a short, common way to say thank you.",
+      "keywords": [
+        "thank-you",
+        "german-vocab"
+      ],
+      "source": "https://dictionary.cambridge.org/dictionary/german-english/danke"
+    },
+    {
+      "seedId": "50814660-a41c-5d91-b615-d05aaa48c6a7",
+      "category": "languages",
+      "navigationKeyword1": "german",
+      "navigationKeyword2": "vocab",
+      "question": "What does 'Guten Morgen' mean?",
+      "correctAnswer": "good morning",
+      "incorrectAnswers": [
+        "good night",
+        "see you soon",
+        "happy birthday"
+      ],
+      "explanation": "'Guten Morgen' is a standard morning greeting.",
+      "keywords": [
+        "good-morning",
+        "german-vocab"
+      ],
+      "source": "https://www.deutsch.info/en/vocabulary/"
+    },
+    {
+      "seedId": "cb906c89-af9c-5de2-95a6-6ee71ffbe5b3",
+      "category": "languages",
+      "navigationKeyword1": "german",
+      "navigationKeyword2": "vocab",
+      "question": "What does 'das Brot' mean?",
+      "correctAnswer": "the bread",
+      "incorrectAnswers": [
+        "the butter",
+        "the cheese",
+        "the soup"
+      ],
+      "explanation": "'Brot' means bread, often used with 'das' as in 'das Brot'.",
+      "keywords": [
+        "bread",
+        "german-vocab"
+      ],
+      "source": "https://www.duden.de/rechtschreibung/Brot"
+    },
+    {
+      "seedId": "aca0a51d-0338-5a2a-ae0a-e400c0a74612",
+      "category": "languages",
+      "navigationKeyword1": "german",
+      "navigationKeyword2": "vocab",
+      "question": "What does 'das Wasser' mean?",
+      "correctAnswer": "the water",
+      "incorrectAnswers": [
+        "the bread",
+        "the milk",
+        "the air"
+      ],
+      "explanation": "'Wasser' means water, and 'das' is the neuter article for that noun.",
+      "keywords": [
+        "water",
+        "german-vocab"
+      ],
+      "source": "https://dictionary.cambridge.org/dictionary/german-english/wasser"
+    },
+    {
+      "seedId": "989d86aa-ee71-51a4-80c3-777af521e1d8",
+      "category": "languages",
+      "navigationKeyword1": "german",
+      "navigationKeyword2": "vocab",
+      "question": "What does 'die Familie' mean?",
+      "correctAnswer": "the family",
+      "incorrectAnswers": [
+        "the friend",
+        "the neighbor",
+        "the teacher"
+      ],
+      "explanation": "'Familie' means family, as in 'die Familie'.",
+      "keywords": [
+        "family",
+        "german-vocab"
+      ],
+      "source": "https://dictionary.cambridge.org/dictionary/german-english/familie"
+    }
+  ]
+}

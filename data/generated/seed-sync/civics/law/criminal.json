@@ -1,0 +1,121 @@
+{
+  "schemaVersion": 1,
+  "seedSet": "core-public-items",
+  "deltaPreviewLimit": 200,
+  "items": [
+    {
+      "seedId": "b6be7a05-70d2-51ac-8228-ef0cb6c45b52",
+      "category": "civics",
+      "navigationKeyword1": "law",
+      "navigationKeyword2": "criminal",
+      "question": "In a typical criminal trial, who must prove the defendant guilty?",
+      "correctAnswer": "the prosecution",
+      "incorrectAnswers": [
+        "the defendant",
+        "the judge",
+        "the jury alone"
+      ],
+      "explanation": "The prosecution carries the burden of proving each element of the charged crime.",
+      "keywords": [
+        "criminal-law",
+        "burden-of-proof"
+      ],
+      "source": "https://www.law.cornell.edu/wex/burden_of_proof"
+    },
+    {
+      "seedId": "7f73b79e-54ce-51a6-9c21-690cba618efc",
+      "category": "civics",
+      "navigationKeyword1": "law",
+      "navigationKeyword2": "criminal",
+      "question": "In the federal system, what is the usual role of a grand jury in felony cases?",
+      "correctAnswer": "to decide whether there is enough evidence to charge someone",
+      "incorrectAnswers": [
+        "to decide guilt or innocence at trial",
+        "to choose the sentence if there is a conviction",
+        "to hear appeals from trial courts"
+      ],
+      "explanation": "A grand jury reviews evidence and can return an indictment when it finds probable cause.",
+      "keywords": [
+        "criminal-law",
+        "grand-jury"
+      ],
+      "source": "https://www.uscourts.gov/about-federal-courts/types-cases"
+    },
+    {
+      "seedId": "c16afda5-4d66-5a90-a053-1df2d5cd64dc",
+      "category": "civics",
+      "navigationKeyword1": "law",
+      "navigationKeyword2": "criminal",
+      "question": "What is one common way to describe a less serious criminal offense compared with a felony?",
+      "correctAnswer": "a misdemeanor",
+      "incorrectAnswers": [
+        "a tort",
+        "an appeal",
+        "a deposition"
+      ],
+      "explanation": "Misdemeanors are typically less serious crimes than felonies and often carry lighter penalties.",
+      "keywords": [
+        "criminal-law",
+        "felony-misdemeanor"
+      ],
+      "source": "https://www.law.cornell.edu/wex/misdemeanor"
+    },
+    {
+      "seedId": "b513c81b-df77-507e-ba1d-cf6c862498ca",
+      "category": "civics",
+      "navigationKeyword1": "law",
+      "navigationKeyword2": "criminal",
+      "question": "What standard of proof is usually required to convict someone in a criminal case?",
+      "correctAnswer": "proof beyond a reasonable doubt",
+      "incorrectAnswers": [
+        "proof by a preponderance of the evidence",
+        "clear and convincing evidence",
+        "proof by the greater weight of the evidence"
+      ],
+      "explanation": "Criminal conviction requires proof beyond a reasonable doubt, a high bar meant to protect the accused.",
+      "keywords": [
+        "criminal-law",
+        "reasonable-doubt"
+      ],
+      "source": "https://www.uscourts.gov/about-federal-courts/types-federal-cases"
+    },
+    {
+      "seedId": "8e7083f1-ee71-5486-a560-4bc0cc4d1f4c",
+      "category": "civics",
+      "navigationKeyword1": "law",
+      "navigationKeyword2": "criminal",
+      "question": "Which amendment guarantees the right to counsel for defendants in federal criminal prosecutions?",
+      "correctAnswer": "the Sixth Amendment",
+      "incorrectAnswers": [
+        "the Fifth Amendment",
+        "the Seventh Amendment",
+        "the Ninth Amendment"
+      ],
+      "explanation": "The Sixth Amendment includes the right to assistance of counsel for the accused in criminal prosecutions.",
+      "keywords": [
+        "criminal-law",
+        "right-to-counsel"
+      ],
+      "source": "https://constitution.congress.gov/constitution/amendment-6/"
+    },
+    {
+      "seedId": "58a155d5-2f19-5674-b49e-32c74971a8bb",
+      "category": "civics",
+      "navigationKeyword1": "law",
+      "navigationKeyword2": "criminal",
+      "question": "Which amendment is most closely tied to protection against double jeopardy in federal prosecutions?",
+      "correctAnswer": "the Fifth Amendment",
+      "incorrectAnswers": [
+        "the Fourth Amendment",
+        "the Sixth Amendment",
+        "the Eighth Amendment"
+      ],
+      "explanation": "The Fifth Amendment includes protection against being tried twice for the same offense in the same jurisdiction.",
+      "keywords": [
+        "criminal-law",
+        "constitutional-rights"
+      ],
+      "source": "https://constitution.congress.gov/constitution/amendment-5/"
+    }
+  ]
+}

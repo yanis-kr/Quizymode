@@ -1,0 +1,121 @@
+{
+  "schemaVersion": 1,
+  "seedSet": "core-public-items",
+  "deltaPreviewLimit": 200,
+  "items": [
+    {
+      "seedId": "db260636-518d-5b27-852c-0ff9d9d7925d",
+      "category": "tech",
+      "navigationKeyword1": "networking",
+      "navigationKeyword2": "routing",
+      "question": "What does a router use to choose the best path among multiple known routes?",
+      "correctAnswer": "Longest prefix match against the destination address",
+      "incorrectAnswers": [
+        "Shortest hostname alphabetically",
+        "Random selection per packet",
+        "The oldest route by calendar date"
+      ],
+      "explanation": "IP routers pick the most specific matching prefix in the forwarding table.",
+      "keywords": [
+        "routing",
+        "forwarding"
+      ],
+      "source": "https://www.rfc-editor.org/rfc/rfc1812"
+    },
+    {
+      "seedId": "db8969c8-57c3-5e4c-a33b-481254984de7",
+      "category": "tech",
+      "navigationKeyword1": "networking",
+      "navigationKeyword2": "routing",
+      "question": "What does administrative distance roughly represent in Cisco-style routing?",
+      "correctAnswer": "Preference among routing sources when multiple protocols agree",
+      "incorrectAnswers": [
+        "Physical cable length in meters",
+        "CPU temperature of the router",
+        "Wi-Fi channel width"
+      ],
+      "explanation": "Lower administrative distance means a more trusted route source for the same prefix.",
+      "keywords": [
+        "routing",
+        "admin-distance"
+      ],
+      "source": "https://www.cisco.com/c/en/us/support/docs/ip/border-gateway-protocol-bgp/15986-admin-distance.html"
+    },
+    {
+      "seedId": "8640a227-ab2d-5297-b89b-8cd5d4a1c952",
+      "category": "tech",
+      "navigationKeyword1": "networking",
+      "navigationKeyword2": "routing",
+      "question": "What is BGP mainly used for on the Internet?",
+      "correctAnswer": "Exchanging reachability between autonomous systems",
+      "incorrectAnswers": [
+        "Link-layer collision avoidance on Wi-Fi",
+        "TLS certificate issuance",
+        "DHCP address leasing"
+      ],
+      "explanation": "BGP is the inter-domain routing protocol between networks run by different organizations.",
+      "keywords": [
+        "routing",
+        "bgp"
+      ],
+      "source": "https://www.rfc-editor.org/rfc/rfc4271"
+    },
+    {
+      "seedId": "d13f5601-32a7-544b-9079-b0f21313c47e",
+      "category": "tech",
+      "navigationKeyword1": "networking",
+      "navigationKeyword2": "routing",
+      "question": "What is a default route used for?",
+      "correctAnswer": "Forwarding traffic when no more specific prefix matches",
+      "incorrectAnswers": [
+        "Blocking all inbound packets",
+        "Encrypting payloads with AES automatically",
+        "Assigning MAC addresses"
+      ],
+      "explanation": "The default route (often 0.0.0.0/0) sends unmatched traffic toward an upstream gateway.",
+      "keywords": [
+        "routing",
+        "default-route"
+      ],
+      "source": "https://www.cisco.com/c/en/us/support/docs/ip/border-gateway-protocol-bgp/13789-3.html"
+    },
+    {
+      "seedId": "70ea4d49-a546-5c41-98cb-8c661485e25e",
+      "category": "tech",
+      "navigationKeyword1": "networking",
+      "navigationKeyword2": "routing",
+      "question": "What is a hop in routed packet delivery?",
+      "correctAnswer": "One layer-3 forwarding step through a router toward the destination",
+      "incorrectAnswers": [
+        "A single Wi-Fi association frame",
+        "A DNS query only",
+        "A GPU draw call"
+      ],
+      "explanation": "Traceroute counts routers along the path as hops.",
+      "keywords": [
+        "routing",
+        "hops"
+      ],
+      "source": "https://www.cloudflare.com/learning/network-layer/what-is-a-router/"
+    },
+    {
+      "seedId": "d9d071f9-fe31-5edf-9438-db88dd1dc7d5",
+      "category": "tech",
+      "navigationKeyword1": "networking",
+      "navigationKeyword2": "routing",
+      "question": "Why do networks summarize routes?",
+      "correctAnswer": "To shrink tables and reduce update traffic while keeping reachability",
+      "incorrectAnswers": [
+        "To make packets larger",
+        "To disable encryption",
+        "To remove the need for IP addresses"
+      ],
+      "explanation": "Aggregation trades detail for scalability in large internetworks.",
+      "keywords": [
+        "routing",
+        "aggregation"
+      ],
+      "source": "https://www.juniper.net/documentation/us/en/software/junos/routing-policy/bgp/topics/topic-map/route-aggregation.html"
+    }
+  ]
+}

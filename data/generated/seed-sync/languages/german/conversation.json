@@ -1,0 +1,121 @@
+{
+  "schemaVersion": 1,
+  "seedSet": "core-public-items",
+  "deltaPreviewLimit": 200,
+  "items": [
+    {
+      "seedId": "ddad2eac-b470-5882-8b8b-9e4c495e0d4c",
+      "category": "languages",
+      "navigationKeyword1": "german",
+      "navigationKeyword2": "conversation",
+      "question": "What does 'Auf Wiedersehen' mean?",
+      "correctAnswer": "goodbye (formal)",
+      "incorrectAnswers": [
+        "nice to meet you",
+        "see you tomorrow",
+        "you are welcome"
+      ],
+      "explanation": "'Auf Wiedersehen' is a polite goodbye, often in more formal settings.",
+      "keywords": [
+        "goodbye",
+        "german-conversation"
+      ],
+      "source": "https://www.duden.de/rechtschreibung/Wiedersehen"
+    },
+    {
+      "seedId": "a3d7658d-a838-593f-83c0-43e25a121d50",
+      "category": "languages",
+      "navigationKeyword1": "german",
+      "navigationKeyword2": "conversation",
+      "question": "What does 'Guten Tag' mean?",
+      "correctAnswer": "good day / hello (daytime)",
+      "incorrectAnswers": [
+        "good evening only",
+        "good night",
+        "happy new year"
+      ],
+      "explanation": "'Guten Tag' is a standard daytime greeting in many regions.",
+      "keywords": [
+        "hello",
+        "german-conversation"
+      ],
+      "source": "https://www.deutsch.info/en/vocabulary/"
+    },
+    {
+      "seedId": "dd84f480-a33d-5b2c-b891-a8f81b20e836",
+      "category": "languages",
+      "navigationKeyword1": "german",
+      "navigationKeyword2": "conversation",
+      "question": "What does 'Ja' mean?",
+      "correctAnswer": "yes",
+      "incorrectAnswers": [
+        "no",
+        "maybe",
+        "please"
+      ],
+      "explanation": "'Ja' is the basic word for yes.",
+      "keywords": [
+        "yes",
+        "german-conversation"
+      ],
+      "source": "https://dictionary.cambridge.org/dictionary/german-english/ja"
+    },
+    {
+      "seedId": "de9395bb-5db7-51fb-a447-622cf0097430",
+      "category": "languages",
+      "navigationKeyword1": "german",
+      "navigationKeyword2": "conversation",
+      "question": "What does 'Nein' mean?",
+      "correctAnswer": "no",
+      "incorrectAnswers": [
+        "yes",
+        "maybe",
+        "please"
+      ],
+      "explanation": "'Nein' is the basic word for no.",
+      "keywords": [
+        "no",
+        "german-conversation"
+      ],
+      "source": "https://dictionary.cambridge.org/dictionary/german-english/nein"
+    },
+    {
+      "seedId": "acd52b78-5822-556c-a849-aec27b67eeca",
+      "category": "languages",
+      "navigationKeyword1": "german",
+      "navigationKeyword2": "conversation",
+      "question": "What is a common informal way to ask 'How are you?'",
+      "correctAnswer": "Wie geht's?",
+      "incorrectAnswers": [
+        "Wo kommst du her?",
+        "Wie viel kostet das?",
+        "Was ist dein Beruf?"
+      ],
+      "explanation": "'Wie geht's?' is a very common short question about how someone is doing.",
+      "keywords": [
+        "how-are-you",
+        "german-conversation"
+      ],
+      "source": "https://dictionary.cambridge.org/dictionary/german-english/gehen"
+    },
+    {
+      "seedId": "8e5c9de2-42df-5892-ac17-23544f44da37",
+      "category": "languages",
+      "navigationKeyword1": "german",
+      "navigationKeyword2": "conversation",
+      "question": "When you meet someone formally, which polite pronoun often replaces 'du'?",
+      "correctAnswer": "Sie",
+      "incorrectAnswers": [
+        "ihr",
+        "man",
+        "es"
+      ],
+      "explanation": "'Sie' with a capital S is the polite you for adults you do not call 'du'.",
+      "keywords": [
+        "formal-you",
+        "german-conversation"
+      ],
+      "source": "https://www.goethe.de/en/spr/englisch.html"
+    }
+  ]
+}

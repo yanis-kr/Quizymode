@@ -1,0 +1,121 @@
+{
+  "schemaVersion": 1,
+  "seedSet": "core-public-items",
+  "deltaPreviewLimit": 200,
+  "items": [
+    {
+      "seedId": "281b517e-51fb-58bb-b64b-a6be65cdc44b",
+      "category": "civics",
+      "navigationKeyword1": "international",
+      "navigationKeyword2": "human-rights",
+      "question": "What does non-discrimination require in human-rights teaching?",
+      "correctAnswer": "equal protection of rights without bias on forbidden grounds such as race, sex, or religion",
+      "incorrectAnswers": [
+        "treating every situation identically even when needs differ",
+        "banning all religious belief",
+        "ending all courts"
+      ],
+      "explanation": "States must address unjustified unequal treatment while sometimes allowing reasonable measures.",
+      "keywords": [
+        "non-discrimination",
+        "equality"
+      ],
+      "source": "https://www.un.org/en/about-us/universal-declaration-of-human-rights"
+    },
+    {
+      "seedId": "941e5310-1337-5b0e-8e08-588e318e8c20",
+      "category": "civics",
+      "navigationKeyword1": "international",
+      "navigationKeyword2": "human-rights",
+      "question": "What is a human-rights treaty body?",
+      "correctAnswer": "an expert committee that monitors how states implement a specific treaty",
+      "incorrectAnswers": [
+        "a local school board",
+        "a private stock exchange",
+        "a military alliance only"
+      ],
+      "explanation": "Committees review reports and may issue guidance on compliance with treaty duties.",
+      "keywords": [
+        "treaty-bodies",
+        "monitoring"
+      ],
+      "source": "https://www.ohchr.org/en/treaty-bodies"
+    },
+    {
+      "seedId": "cca56af5-a3c9-5cb1-9854-0ebe3e110272",
+      "category": "civics",
+      "navigationKeyword1": "international",
+      "navigationKeyword2": "human-rights",
+      "question": "What is the usual civic distinction between civil-political rights and economic-social rights?",
+      "correctAnswer": "civil-political rights focus on liberty and participation; economic-social rights focus on basic needs and dignity",
+      "incorrectAnswers": [
+        "only one group is listed in any treaty",
+        "economic rights never appear in UN texts",
+        "civil rights apply only to corporations"
+      ],
+      "explanation": "International law often groups freedoms like speech with fair trials, and work or health with social protection.",
+      "keywords": [
+        "rights-types",
+        "covenants"
+      ],
+      "source": "https://www.ohchr.org/en/what-are-human-rights"
+    },
+    {
+      "seedId": "6280fecc-66a7-5855-9938-c2c84e431efc",
+      "category": "civics",
+      "navigationKeyword1": "international",
+      "navigationKeyword2": "human-rights",
+      "question": "What is universal jurisdiction in simplified civic terms?",
+      "correctAnswer": "some serious crimes can be tried in a country even with no direct link, under limited legal rules",
+      "incorrectAnswers": [
+        "any court may hear any parking ticket worldwide",
+        "only monarchs may prosecute",
+        "international law bans all trials"
+      ],
+      "explanation": "Certain grave offenses may trigger cooperation and prosecution across borders where law allows.",
+      "keywords": [
+        "universal-jurisdiction",
+        "accountability"
+      ],
+      "source": "https://www.britannica.com/topic/universal-jurisdiction"
+    },
+    {
+      "seedId": "45ae69e1-abd7-5389-a656-ea729ee49ee0",
+      "category": "civics",
+      "navigationKeyword1": "international",
+      "navigationKeyword2": "human-rights",
+      "question": "When was the Universal Declaration of Human Rights adopted?",
+      "correctAnswer": "1948",
+      "incorrectAnswers": [
+        "1776",
+        "1919",
+        "1969"
+      ],
+      "explanation": "The General Assembly adopted the UDHR on December 10, 1948, as a common standard.",
+      "keywords": [
+        "udhr",
+        "history"
+      ],
+      "source": "https://www.un.org/en/about-us/universal-declaration-of-human-rights"
+    },
+    {
+      "seedId": "67552d33-6fdb-5a32-a8d5-0de281a82fe4",
+      "category": "civics",
+      "navigationKeyword1": "international",
+      "navigationKeyword2": "human-rights",
+      "question": "Why is the prohibition of torture treated as a firm rule in international norms?",
+      "correctAnswer": "it is widely accepted that torture cannot be justified as lawful policy",
+      "incorrectAnswers": [
+        "because torture is encouraged in all emergencies",
+        "because courts never review detention",
+        "because asylum never exists"
+      ],
+      "explanation": "Core protections reject torture even when states face security pressures.",
+      "keywords": [
+        "torture",
+        "jus-cogens"
+      ],
+      "source": "https://www.ohchr.org/en/instruments-mechanisms/instruments/convention-against-torture-and-other-cruel-inhuman-or-degrading-treatment-or-punishment"
+    }
+  ]
+}

@@ -1,0 +1,207 @@
+{
+  "schemaVersion": 1,
+  "seedSet": "core-public-items",
+  "deltaPreviewLimit": 200,
+  "items": [
+    {
+      "seedId": "6ae185f4-80a7-407d-8a41-f14d693e2416",
+      "category": "exams",
+      "navigationKeyword1": "finance",
+      "navigationKeyword2": "cpa",
+      "question": "A company can have high revenue but low net income when:",
+      "correctAnswer": "Expenses, interest, or taxes consume much of the revenue",
+      "incorrectAnswers": [
+        "Revenue automatically equals profit",
+        "Liabilities are excluded from the income statement",
+        "Cash balances determine net income directly"
+      ],
+      "explanation": "This follows directly from Investor.gov's definitions: revenue is gross income from sales, while net income is what remains after expenses and taxes are deducted.",
+      "keywords": [
+        "cpa",
+        "accounting",
+        "income-statement"
+      ],
+      "source": "https://www.investor.gov/index.php/introduction-investing/investing-basics/glossary/net-income"
+    },
+    {
+      "seedId": "9cb899e6-335d-4209-96e8-63512cedfce4",
+      "category": "exams",
+      "navigationKeyword1": "finance",
+      "navigationKeyword2": "cpa",
+      "question": "For an investment company, what does net asset value equal?",
+      "correctAnswer": "Total assets minus total liabilities",
+      "incorrectAnswers": [
+        "Revenue minus operating expenses",
+        "Interest income minus taxes",
+        "Cash plus receivables"
+      ],
+      "explanation": "Investor.gov defines net asset value as total assets minus total liabilities.",
+      "keywords": [
+        "cpa",
+        "accounting",
+        "net-asset-value"
+      ],
+      "source": "https://www.investor.gov/introduction-investing/investing-basics/glossary/net-asset-value"
+    },
+    {
+      "seedId": "e2552e42-4f87-4c0d-ab82-5f652fa8958d",
+      "category": "exams",
+      "navigationKeyword1": "finance",
+      "navigationKeyword2": "cpa",
+      "question": "How is earnings per share calculated?",
+      "correctAnswer": "Net profit divided by the number of common shares",
+      "incorrectAnswers": [
+        "Revenue divided by liabilities",
+        "Cash flow divided by equity",
+        "Market price divided by book value"
+      ],
+      "explanation": "Investor.gov defines earnings per share as a public company's net profit divided by its common shares.",
+      "keywords": [
+        "cpa",
+        "financial-reporting",
+        "earnings-per-share"
+      ],
+      "source": "https://www.investor.gov/introduction-investing/investing-basics/glossary/earnings-share"
+    },
+    {
+      "seedId": "4c44bfaf-2cff-490a-b0f6-3040d49760bd",
+      "category": "exams",
+      "navigationKeyword1": "finance",
+      "navigationKeyword2": "cpa",
+      "question": "What does a company's P/E ratio use in the denominator?",
+      "correctAnswer": "Earnings per share",
+      "incorrectAnswers": [
+        "Revenue per employee",
+        "Operating cash flow",
+        "Book value per share"
+      ],
+      "explanation": "Investor.gov says the P/E ratio equals current stock price divided by earnings per share.",
+      "keywords": [
+        "cpa",
+        "financial-analysis",
+        "pe-ratio"
+      ],
+      "source": "https://www.investor.gov/introduction-investing/investing-basics/glossary/price-earnings-pe-ratio"
+    },
+    {
+      "seedId": "d2b67338-3130-41f9-9d9c-76ae7b74538d",
+      "category": "exams",
+      "navigationKeyword1": "finance",
+      "navigationKeyword2": "cpa",
+      "question": "What does cash represent in basic financial terms?",
+      "correctAnswer": "Money that can be used to pay for goods or services",
+      "incorrectAnswers": [
+        "Only money held in certificates of deposit",
+        "Only currency stored in a safe",
+        "Any long-term intangible asset"
+      ],
+      "explanation": "Investor.gov defines cash as money that can be used to pay for goods or services.",
+      "keywords": [
+        "cpa",
+        "accounting",
+        "cash"
+      ],
+      "source": "https://www.investor.gov/introduction-investing/investing-basics/glossary/cash"
+    },
+    {
+      "seedId": "e89fb857-f7c7-4194-bb3b-5c65b8870268",
+      "category": "exams",
+      "navigationKeyword1": "finance",
+      "navigationKeyword2": "cpa",
+      "question": "What does net income represent?",
+      "correctAnswer": "Profit after all expenses and taxes are deducted from revenue",
+      "incorrectAnswers": [
+        "Cash collected from customers only",
+        "Total assets minus liabilities",
+        "A company's market capitalization"
+      ],
+      "explanation": "Investor.gov defines net income as profit earned after all expenses and taxes have been deducted from revenue.",
+      "keywords": [
+        "cpa",
+        "accounting",
+        "net-income"
+      ],
+      "source": "https://www.investor.gov/index.php/introduction-investing/investing-basics/glossary/net-income"
+    },
+    {
+      "seedId": "61c901d2-e5e4-4663-a74d-efe5caf2217a",
+      "category": "exams",
+      "navigationKeyword1": "finance",
+      "navigationKeyword2": "cpa",
+      "question": "What does revenue measure for a company?",
+      "correctAnswer": "Gross income generated from selling goods or services",
+      "incorrectAnswers": [
+        "Cash left after paying dividends",
+        "Net assets after liabilities",
+        "Interest expense recognized in a period"
+      ],
+      "explanation": "Investor.gov defines revenue as the total amount of money, or gross income, generated by a company from selling its goods and services.",
+      "keywords": [
+        "cpa",
+        "accounting",
+        "revenue"
+      ],
+      "source": "https://www.investor.gov/index.php/introduction-investing/investing-basics/glossary/revenue"
+    },
+    {
+      "seedId": "38831a9e-a8b5-4b6e-8b75-2a5bfbfe2b64",
+      "category": "exams",
+      "navigationKeyword1": "finance",
+      "navigationKeyword2": "cpa",
+      "question": "Which item is a liability?",
+      "correctAnswer": "A mortgage or bond payable",
+      "incorrectAnswers": [
+        "Common stock issued to investors",
+        "Inventory held for sale",
+        "Cash collected from customers"
+      ],
+      "explanation": "Investor.gov describes liability or debt as an amount owed for borrowed funds, including loans, notes, bonds, and mortgages.",
+      "keywords": [
+        "cpa",
+        "accounting",
+        "liabilities"
+      ],
+      "source": "https://www.investor.gov/index.php/introduction-investing/investing-basics/glossary/liabilitydebt"
+    },
+    {
+      "seedId": "1d2a08a8-7e1b-4bb4-a58e-735136076310",
+      "category": "exams",
+      "navigationKeyword1": "finance",
+      "navigationKeyword2": "cpa",
+      "question": "Which item is an asset?",
+      "correctAnswer": "Cash in the company's bank account",
+      "incorrectAnswers": [
+        "A note payable owed to a lender",
+        "Interest owed on a loan",
+        "An unpaid tax liability"
+      ],
+      "explanation": "Investor.gov defines an asset as any tangible or intangible item that has value in an exchange, including a bank account.",
+      "keywords": [
+        "cpa",
+        "accounting",
+        "assets"
+      ],
+      "source": "https://www.investor.gov/introduction-investing/investing-basics/glossary/asset"
+    },
+    {
+      "seedId": "5e37f603-09eb-47be-8c2a-322e0198e1a7",
+      "category": "exams",
+      "navigationKeyword1": "finance",
+      "navigationKeyword2": "cpa",
+      "question": "Which statement about corporate bonds is correct?",
+      "correctAnswer": "They are debt obligations and do not give the holder ownership in the company",
+      "incorrectAnswers": [
+        "They always convert into common stock automatically",
+        "They represent direct equity ownership",
+        "They eliminate default risk for investors"
+      ],
+      "explanation": "Investor.gov explains that corporate bonds are debt obligations of the issuer and do not provide an ownership interest like stock.",
+      "keywords": [
+        "cpa",
+        "financial-reporting",
+        "corporate-bonds"
+      ],
+      "source": "https://www.investor.gov/additional-resources/general-resources/glossary/bonds-corporate"
+    }
+  ]
+}

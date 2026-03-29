@@ -1,0 +1,127 @@
+{
+  "schemaVersion": 1,
+  "seedSet": "core-public-items",
+  "deltaPreviewLimit": 200,
+  "items": [
+    {
+      "seedId": "6e789987-50ac-5161-8556-c016ae7147cb",
+      "category": "business",
+      "navigationKeyword1": "accounting",
+      "navigationKeyword2": "ratios",
+      "question": "In a simple profitability comparison, what does net profit margin measure?",
+      "correctAnswer": "Net profit as a percentage of revenue.",
+      "incorrectAnswers": [
+        "Operating profit divided by total assets",
+        "Revenue divided by total liabilities",
+        "Gross profit divided by current liabilities"
+      ],
+      "explanation": "Net profit margin summarizes how much of each dollar of revenue becomes net profit after all expenses (and taxes where applicable).",
+      "keywords": [
+        "net-profit-margin",
+        "profitability",
+        "revenue"
+      ],
+      "source": "https://www.investopedia.com/terms/n/netprofitmargin.asp"
+    },
+    {
+      "seedId": "87882204-bb46-5f18-9e04-3cc3f9b18735",
+      "category": "business",
+      "navigationKeyword1": "accounting",
+      "navigationKeyword2": "ratios",
+      "question": "What does a debt-to-equity ratio generally relate?",
+      "correctAnswer": "Total debt compared with shareholders\u2019 equity.",
+      "incorrectAnswers": [
+        "Revenue compared with operating cash flow",
+        "Inventory compared with gross profit",
+        "Market price of shares compared with book value per share"
+      ],
+      "explanation": "Debt-to-equity is a leverage ratio that compares financing from creditors to financing from owners.",
+      "keywords": [
+        "debt-to-equity",
+        "leverage",
+        "capital-structure"
+      ],
+      "source": "https://corporatefinanceinstitute.com/resources/financial-accounting/debt-equity-ratio/"
+    },
+    {
+      "seedId": "7940d497-7f64-56b7-9155-21db0f630d3f",
+      "category": "business",
+      "navigationKeyword1": "accounting",
+      "navigationKeyword2": "ratios",
+      "question": "What does return on equity (ROE) primarily reflect?",
+      "correctAnswer": "How effectively shareholders\u2019 equity generates net profit.",
+      "incorrectAnswers": [
+        "How quickly inventory is sold in days only",
+        "How much interest the company pays on loans",
+        "Whether asset values always rise every year"
+      ],
+      "explanation": "ROE is a profitability measure that ties net income to the equity base owned by shareholders.",
+      "keywords": [
+        "roe",
+        "profitability",
+        "shareholders-equity"
+      ],
+      "source": "https://www.investopedia.com/terms/r/returnonequity.asp"
+    },
+    {
+      "seedId": "a6f0d912-b9d6-543d-a392-73a938e1b555",
+      "category": "business",
+      "navigationKeyword1": "accounting",
+      "navigationKeyword2": "ratios",
+      "question": "What does the current ratio typically help assess?",
+      "correctAnswer": "A company\u2019s ability to cover short-term obligations using current assets.",
+      "incorrectAnswers": [
+        "How quickly the company will pay all long-term debt tomorrow",
+        "Whether the company is profitable only because of taxes",
+        "How much cash is on hand compared with total inventory cost"
+      ],
+      "explanation": "Current ratio compares current assets to current liabilities to gauge short-term liquidity.",
+      "keywords": [
+        "current-ratio",
+        "liquidity",
+        "short-term-debt"
+      ],
+      "source": "https://www.investopedia.com/terms/c/currentratio.asp"
+    },
+    {
+      "seedId": "13ed2d21-1730-5e08-a144-4bb90f7d4dc9",
+      "category": "business",
+      "navigationKeyword1": "accounting",
+      "navigationKeyword2": "ratios",
+      "question": "What is gross margin commonly intended to measure?",
+      "correctAnswer": "Profitability after direct costs of producing goods/services, before operating expenses.",
+      "incorrectAnswers": [
+        "Profit after all interest and taxes are already removed",
+        "The return on equity calculated using only net cash flows",
+        "How much a company pays in wages as a share of sales"
+      ],
+      "explanation": "Gross margin focuses on what remains after covering direct production costs, providing a view of core product/service profitability.",
+      "keywords": [
+        "gross-margin",
+        "profitability",
+        "direct-costs"
+      ],
+      "source": "https://corporatefinanceinstitute.com/resources/financial-modeling/gross-margin/"
+    },
+    {
+      "seedId": "9d5cd71a-f5b7-56f0-b11a-f39e341c4061",
+      "category": "business",
+      "navigationKeyword1": "accounting",
+      "navigationKeyword2": "ratios",
+      "question": "What is inventory turnover meant to indicate?",
+      "correctAnswer": "How efficiently a company converts inventory into sales over a period.",
+      "incorrectAnswers": [
+        "How long it takes to pay the electricity bill",
+        "The percentage of inventory that is guaranteed to be sold at full price",
+        "How often the company changes leadership roles"
+      ],
+      "explanation": "Inventory turnover relates cost of goods sold to average inventory, providing an efficiency view of inventory management.",
+      "keywords": [
+        "inventory-turnover",
+        "efficiency",
+        "inventory-management"
+      ],
+      "source": "https://corporatefinanceinstitute.com/resources/valuation/inventory-turnover/"
+    }
+  ]
+}

@@ -1,0 +1,45 @@
+{
+  "schemaVersion": 1,
+  "seedSet": "core-public-items",
+  "deltaPreviewLimit": 200,
+  "items": [
+    {
+      "seedId": "9819ff5f-db3a-5b62-adad-535b4af44104",
+      "category": "humanities",
+      "navigationKeyword1": "visual-art",
+      "navigationKeyword2": "techniques",
+      "question": "What does perspective help create in painting?",
+      "correctAnswer": "a sense of depth",
+      "incorrectAnswers": [
+        "a louder sound",
+        "a faster tempo",
+        "a stronger perfume"
+      ],
+      "explanation": "Perspective gives a flat surface the appearance of spatial depth.",
+      "keywords": [
+        "visual-art-techniques",
+        "perspective"
+      ],
+      "source": "https://www.britannica.com/art/perspective-art"
+    },
+    {
+      "seedId": "6634d4a4-3129-50ad-9b5f-60c9706ac527",
+      "category": "humanities",
+      "navigationKeyword1": "visual-art",
+      "navigationKeyword2": "techniques",
+      "question": "What is chiaroscuro?",
+      "correctAnswer": "the use of strong light and dark contrast",
+      "incorrectAnswers": [
+        "a way of tuning a piano",
+        "a kind of marble",
+        "a myth about the moon"
+      ],
+      "explanation": "Chiaroscuro uses contrast between light and shadow to shape form and drama.",
+      "keywords": [
+        "visual-art-techniques",
+        "chiaroscuro"
+      ],
+      "source": "https://www.nationalgallery.org.uk/paintings/glossary/chiaroscuro"
+    }
+  ]
+}

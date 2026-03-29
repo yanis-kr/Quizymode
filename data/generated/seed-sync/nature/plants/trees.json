@@ -1,0 +1,121 @@
+{
+  "schemaVersion": 1,
+  "seedSet": "core-public-items",
+  "deltaPreviewLimit": 200,
+  "items": [
+    {
+      "seedId": "3f33c106-e802-5b45-9054-a58e07ddc6c9",
+      "category": "nature",
+      "navigationKeyword1": "plants",
+      "navigationKeyword2": "trees",
+      "question": "Acorns are the nuts of which kind of tree?",
+      "correctAnswer": "oak",
+      "incorrectAnswers": [
+        "maple",
+        "elm",
+        "spruce"
+      ],
+      "explanation": "Acorns are produced by oak trees and are important food for many animals.",
+      "keywords": [
+        "trees",
+        "nature-plants"
+      ],
+      "source": "https://www.fpl.fs.usda.gov/documnts/usda/amwood/247oak.pdf"
+    },
+    {
+      "seedId": "1d43a6da-bfe3-50a6-8e48-8b43f829c757",
+      "category": "nature",
+      "navigationKeyword1": "plants",
+      "navigationKeyword2": "trees",
+      "question": "Mangroves are especially adapted to live along what kind of coast?",
+      "correctAnswer": "salty or brackish coasts",
+      "incorrectAnswers": [
+        "frozen inland lakes",
+        "dry mountain ridges",
+        "desert dunes"
+      ],
+      "explanation": "Mangroves are salt-tolerant trees that thrive along tidal coasts and estuaries.",
+      "keywords": [
+        "trees",
+        "nature-plants"
+      ],
+      "source": "https://www.britannica.com/plant/mangrove"
+    },
+    {
+      "seedId": "f522f92a-45e9-52e4-aee4-f116e096a869",
+      "category": "nature",
+      "navigationKeyword1": "plants",
+      "navigationKeyword2": "trees",
+      "question": "Most conifers produce their seeds in what structure?",
+      "correctAnswer": "cones",
+      "incorrectAnswers": [
+        "pods",
+        "berries",
+        "tubers"
+      ],
+      "explanation": "Conifers are gymnosperms that usually bear their seeds in cones.",
+      "keywords": [
+        "trees",
+        "nature-plants"
+      ],
+      "source": "https://www.britannica.com/plant/conifer/Strobili"
+    },
+    {
+      "seedId": "1c7aa3b7-43b4-54eb-a317-b26114e6d39b",
+      "category": "nature",
+      "navigationKeyword1": "plants",
+      "navigationKeyword2": "trees",
+      "question": "What do deciduous trees do each year?",
+      "correctAnswer": "shed all their leaves",
+      "incorrectAnswers": [
+        "keep needles year-round",
+        "flower only once",
+        "grow only in wetlands"
+      ],
+      "explanation": "Deciduous trees are defined by shedding their leaves annually.",
+      "keywords": [
+        "trees",
+        "nature-plants"
+      ],
+      "source": "https://www.arborday.org/trees/treeguide/glossary.cfm"
+    },
+    {
+      "seedId": "aaf6577d-3443-5674-bb70-5808ed89d18d",
+      "category": "nature",
+      "navigationKeyword1": "plants",
+      "navigationKeyword2": "trees",
+      "question": "Which North American tree is known for white bark that peels in thin papery layers?",
+      "correctAnswer": "paper birch",
+      "incorrectAnswers": [
+        "quaking aspen",
+        "sycamore",
+        "cottonwood"
+      ],
+      "explanation": "Paper birch has distinctive peeling bark that was historically used for canoes and roofing.",
+      "keywords": [
+        "trees",
+        "nature-plants"
+      ],
+      "source": "https://www.britannica.com/plant/paper-birch/additional-info"
+    },
+    {
+      "seedId": "b2d4f3f8-5d89-5497-be53-ab048133d845",
+      "category": "nature",
+      "navigationKeyword1": "plants",
+      "navigationKeyword2": "trees",
+      "question": "Which tree is the classic commercial source of maple syrup?",
+      "correctAnswer": "sugar maple",
+      "incorrectAnswers": [
+        "silver birch",
+        "American beech",
+        "eastern hemlock"
+      ],
+      "explanation": "Sugar maple sap is the traditional source used to make maple syrup.",
+      "keywords": [
+        "trees",
+        "nature-plants"
+      ],
+      "source": "https://www.britannica.com/plant/sugar-maple"
+    }
+  ]
+}

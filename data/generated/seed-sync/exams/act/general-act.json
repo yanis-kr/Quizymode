@@ -1,0 +1,106 @@
+{
+  "schemaVersion": 1,
+  "seedSet": "core-public-items",
+  "deltaPreviewLimit": 200,
+  "items": [
+    {
+      "seedId": "663af368-5f7b-4c9a-9b5a-7bbccd519b45",
+      "category": "exams",
+      "navigationKeyword1": "act",
+      "navigationKeyword2": "general-act",
+      "question": "Does the ACT science score count toward the current Composite score?",
+      "correctAnswer": "No",
+      "incorrectAnswers": [
+        "Yes",
+        "Only on paper tests",
+        "Only for superscores"
+      ],
+      "explanation": "ACT now calculates the Composite score from the required sections rather than including science.",
+      "keywords": [
+        "act-format",
+        "composite-score",
+        "test-prep"
+      ],
+      "source": "https://www.act.org/content/dam/act/unsecured/documents/R2519-Design-Framework-for-the-ACT-Enhancements-2026-02.pdf"
+    },
+    {
+      "seedId": "44d4bcdd-2de0-4afa-b0b0-b22182f6bdc2",
+      "category": "exams",
+      "navigationKeyword1": "act",
+      "navigationKeyword2": "general-act",
+      "question": "How many questions are on the ACT English section?",
+      "correctAnswer": "50",
+      "incorrectAnswers": [
+        "45",
+        "60",
+        "75"
+      ],
+      "explanation": "ACT lists 50 questions for English, with 40 scored questions on the enhanced blueprint.",
+      "keywords": [
+        "act-format",
+        "english-section",
+        "test-prep"
+      ],
+      "source": "https://www.act.org/content/act/en/products-and-services/the-act/test-preparation/act-exam-sections-and-structure.html"
+    },
+    {
+      "seedId": "ce146148-0fd2-4917-94b9-7bc0db86a635",
+      "category": "exams",
+      "navigationKeyword1": "act",
+      "navigationKeyword2": "general-act",
+      "question": "How much time is allotted for the ACT Reading section?",
+      "correctAnswer": "40 minutes",
+      "incorrectAnswers": [
+        "32 minutes",
+        "35 minutes",
+        "50 minutes"
+      ],
+      "explanation": "ACT lists 40 minutes for the Reading section.",
+      "keywords": [
+        "act-format",
+        "reading-section",
+        "test-prep"
+      ],
+      "source": "https://www.act.org/content/act/en/products-and-services/the-act/test-preparation/act-exam-sections-and-structure.html"
+    },
+    {
+      "seedId": "9371361f-c2cc-4c7f-beb6-5d3b2ab15558",
+      "category": "exams",
+      "navigationKeyword1": "act",
+      "navigationKeyword2": "general-act",
+      "question": "Is the science section optional on the current ACT?",
+      "correctAnswer": "Yes",
+      "incorrectAnswers": [
+        "No",
+        "Only for paper testing",
+        "Only for school-day testing"
+      ],
+      "explanation": "ACT says science is optional on the enhanced ACT.",
+      "keywords": [
+        "act-format",
+        "science-optional",
+        "test-prep"
+      ],
+      "source": "https://www.act.org/content/act/en/products-and-services/the-act/test-changes/enhancements.html"
+    },
+    {
+      "seedId": "11e1f5c3-7106-4d1f-ac6b-01f72c8b4c42",
+      "category": "exams",
+      "navigationKeyword1": "act",
+      "navigationKeyword2": "general-act",
+      "question": "Which sections are required on the current ACT?",
+      "correctAnswer": "English, mathematics, and reading",
+      "incorrectAnswers": [
+        "English, mathematics, reading, and science",
+        "English and mathematics only",
+        "Reading, science, and writing"
+      ],
+      "explanation": "ACT lists English, mathematics, and reading as the required sections, with science and writing optional.",
+      "keywords": [
+        "act-format",
+        "test-prep"
+      ],
+      "source": "https://www.act.org/content/act/en/products-and-services/the-act/test-preparation/act-exam-sections-and-structure.html"
+    }
+  ]
+}

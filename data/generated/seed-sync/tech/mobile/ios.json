@@ -1,0 +1,121 @@
+{
+  "schemaVersion": 1,
+  "seedSet": "core-public-items",
+  "deltaPreviewLimit": 200,
+  "items": [
+    {
+      "seedId": "a04f04d0-00ff-594c-8c4c-1de1dc2f3593",
+      "category": "tech",
+      "navigationKeyword1": "mobile",
+      "navigationKeyword2": "ios",
+      "question": "In SwiftUI, what protocol describes a screen or reusable piece of UI?",
+      "correctAnswer": "View",
+      "incorrectAnswers": [
+        "NSWindow only",
+        "UITableView only",
+        "CGContext only"
+      ],
+      "explanation": "SwiftUI builds interfaces from `View` structs composed into a hierarchy.",
+      "keywords": [
+        "ios",
+        "swiftui"
+      ],
+      "source": "https://developer.apple.com/documentation/swiftui/view"
+    },
+    {
+      "seedId": "96bc8e4f-8a55-5d47-8184-9ae12519531f",
+      "category": "tech",
+      "navigationKeyword1": "mobile",
+      "navigationKeyword2": "ios",
+      "question": "What is Auto Layout used for in iOS interfaces?",
+      "correctAnswer": "Rules that position views across sizes and orientations",
+      "incorrectAnswers": [
+        "Encrypting network traffic only",
+        "Compiling assets into APKs",
+        "Managing Linux iptables"
+      ],
+      "explanation": "Constraints and stacks define flexible layouts that adapt to devices.",
+      "keywords": [
+        "ios",
+        "layout"
+      ],
+      "source": "https://developer.apple.com/library/archive/documentation/UserExperience/Conceptual/AutolayoutPG/"
+    },
+    {
+      "seedId": "c7a5780d-9bbf-5a4b-983f-0e34a9a23f2d",
+      "category": "tech",
+      "navigationKeyword1": "mobile",
+      "navigationKeyword2": "ios",
+      "question": "What is Combine in Apple platforms?",
+      "correctAnswer": "A framework for asynchronous events with publishers and subscribers",
+      "incorrectAnswers": [
+        "A ZIP compression tool only",
+        "A Core Audio sampler",
+        "A Metal shader compiler"
+      ],
+      "explanation": "Combine models streams of values for reactive-style handling alongside Swift concurrency.",
+      "keywords": [
+        "ios",
+        "combine"
+      ],
+      "source": "https://developer.apple.com/documentation/combine"
+    },
+    {
+      "seedId": "e67c66d3-53e6-50f2-968e-0ca413c4991b",
+      "category": "tech",
+      "navigationKeyword1": "mobile",
+      "navigationKeyword2": "ios",
+      "question": "What is a UIViewController mainly responsible for in UIKit?",
+      "correctAnswer": "Managing a view hierarchy and responding to user interaction for one screen",
+      "incorrectAnswers": [
+        "Compiling Swift to LLVM IR only",
+        "Hosting the Linux kernel",
+        "Storing iCloud passwords only"
+      ],
+      "explanation": "View controllers coordinate views, layout, and lifecycle events for a screen.",
+      "keywords": [
+        "ios",
+        "uikit"
+      ],
+      "source": "https://developer.apple.com/documentation/uikit/uiviewcontroller"
+    },
+    {
+      "seedId": "1b0a62fe-dfa6-519d-8023-43f270dd952a",
+      "category": "tech",
+      "navigationKeyword1": "mobile",
+      "navigationKeyword2": "ios",
+      "question": "What is an iOS app sandbox mainly meant to limit?",
+      "correctAnswer": "Access other apps' data and system resources without permission",
+      "incorrectAnswers": [
+        "CPU clock speed",
+        "Screen pixel density",
+        "Wi-Fi radio existence"
+      ],
+      "explanation": "Sandboxing isolates app storage and capabilities unless entitlements allow more.",
+      "keywords": [
+        "ios",
+        "security"
+      ],
+      "source": "https://owasp.org/www-project-mobile-security-testing-guide/"
+    },
+    {
+      "seedId": "d4eb5418-1137-57bc-811b-16d5078ec1ee",
+      "category": "tech",
+      "navigationKeyword1": "mobile",
+      "navigationKeyword2": "ios",
+      "question": "What language did Swift primarily replace for new Apple platform code?",
+      "correctAnswer": "Objective-C",
+      "incorrectAnswers": [
+        "Java",
+        "COBOL",
+        "Fortran"
+      ],
+      "explanation": "Swift is the modern language for iOS, macOS, and related platforms, interoperating with Objective-C.",
+      "keywords": [
+        "ios",
+        "swift"
+      ],
+      "source": "https://docs.swift.org/swift-book/documentation/the-swift-programming-language/"
+    }
+  ]
+}

@@ -1,0 +1,127 @@
+{
+  "schemaVersion": 1,
+  "seedSet": "core-public-items",
+  "deltaPreviewLimit": 200,
+  "items": [
+    {
+      "seedId": "62693a7f-becb-586f-8ca1-cb800aae2bd3",
+      "category": "business",
+      "navigationKeyword1": "accounting",
+      "navigationKeyword2": "audit",
+      "question": "How does a review engagement typically differ from a full audit?",
+      "correctAnswer": "A review provides limited assurance based mainly on inquiry and analytical procedures, not extensive testing.",
+      "incorrectAnswers": [
+        "A review is identical to an audit in assurance level",
+        "A review involves mandatory forensic examination of every transaction",
+        "A review is only used for tax filings, not financial statements"
+      ],
+      "explanation": "Reviews are generally narrower than audits, so the assurance level is lower because the procedures are less extensive.",
+      "keywords": [
+        "review-engagement",
+        "assurance-level",
+        "analytical-procedures"
+      ],
+      "source": "https://www.pcaobus.org/"
+    },
+    {
+      "seedId": "9a251eb4-b039-53e4-ae6a-013d608ca236",
+      "category": "business",
+      "navigationKeyword1": "accounting",
+      "navigationKeyword2": "audit",
+      "question": "In an audit, what is the role of internal controls?",
+      "correctAnswer": "They are part of what the auditor considers to understand how misstatements could occur.",
+      "incorrectAnswers": [
+        "They replace the need for audit testing entirely",
+        "They determine the correct tax rate for the company",
+        "They are only reviewed after the audit report is issued"
+      ],
+      "explanation": "Auditors consider internal control design and operation because they influence where and how misstatements might happen.",
+      "keywords": [
+        "internal-controls",
+        "audit-planning",
+        "risk-assessment"
+      ],
+      "source": "https://www.sec.gov/"
+    },
+    {
+      "seedId": "8139a641-a4ec-5ffe-831f-a3394238dc9f",
+      "category": "business",
+      "navigationKeyword1": "accounting",
+      "navigationKeyword2": "audit",
+      "question": "In basic audit terminology, what is audit sampling?",
+      "correctAnswer": "Using a subset of items to test and draw conclusions about the larger population.",
+      "incorrectAnswers": [
+        "Randomly selecting employees for interviews without records",
+        "Examining only one transaction and ignoring the rest always",
+        "Choosing samples based only on what is easiest to access"
+      ],
+      "explanation": "Sampling lets auditors reach a conclusion efficiently by testing representative items from the relevant population.",
+      "keywords": [
+        "audit-sampling",
+        "population",
+        "evidence"
+      ],
+      "source": "https://www.investopedia.com/terms/a/auditsampling.asp"
+    },
+    {
+      "seedId": "c86fbd74-95c3-5bcc-9d41-511485d7516a",
+      "category": "business",
+      "navigationKeyword1": "accounting",
+      "navigationKeyword2": "audit",
+      "question": "What does \u201cmateriality\u201d refer to in auditing?",
+      "correctAnswer": "The relative importance of a misstatement; misstatements are considered material if they could influence users\u2019 decisions.",
+      "incorrectAnswers": [
+        "How physically large the document pages are",
+        "How long the company has been operating",
+        "Any error is always material no matter the size"
+      ],
+      "explanation": "Materiality is a concept used to judge whether misstatements are significant enough to affect economic decisions.",
+      "keywords": [
+        "materiality",
+        "audit-judgment",
+        "users-decisions"
+      ],
+      "source": "https://www.pcaobus.org/"
+    },
+    {
+      "seedId": "b91dc596-5f85-5cec-9ded-a00e3f5634aa",
+      "category": "business",
+      "navigationKeyword1": "accounting",
+      "navigationKeyword2": "audit",
+      "question": "What is the difference between an audit opinion and management\u2019s responsibility?",
+      "correctAnswer": "Management is responsible for preparing the statements; the auditor evaluates and reports on whether statements are fairly presented.",
+      "incorrectAnswers": [
+        "Management gives the auditor opinion; the auditor prepares the financial statements",
+        "The auditor is responsible for all accounting estimates and disclosures",
+        "There is no separate responsibility; both are identical by definition"
+      ],
+      "explanation": "Audit reports separate roles: management prepares, and the auditor provides an independent opinion based on audit work.",
+      "keywords": [
+        "audit-report",
+        "responsibilities",
+        "independence"
+      ],
+      "source": "https://www.aicpa-cima.com/"
+    },
+    {
+      "seedId": "b196db2d-2015-5454-81a1-f1c2c1b2a33f",
+      "category": "business",
+      "navigationKeyword1": "accounting",
+      "navigationKeyword2": "audit",
+      "question": "What is the main objective of a financial statement audit?",
+      "correctAnswer": "To obtain reasonable assurance that the financial statements are free of material misstatement.",
+      "incorrectAnswers": [
+        "To guarantee that fraud never occurred",
+        "To prepare the financial statements for management",
+        "To approve prices in contracts customers sign"
+      ],
+      "explanation": "Audits provide a high but not absolute level of assurance about whether statements have material misstatements.",
+      "keywords": [
+        "audit",
+        "assurance",
+        "misstatement"
+      ],
+      "source": "https://www.pcaobus.org/oversight/standards/auditing-standards"
+    }
+  ]
+}

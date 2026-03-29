@@ -1,0 +1,247 @@
+{
+  "schemaVersion": 1,
+  "seedSet": "core-public-items",
+  "deltaPreviewLimit": 200,
+  "items": [
+    {
+      "seedId": "8aed035c-d591-4e5b-8f53-ad01898a7ab4",
+      "category": "exams",
+      "navigationKeyword1": "aws",
+      "navigationKeyword2": "dva-c02",
+      "question": "Which AWS database service offers single-digit millisecond performance at any scale?",
+      "correctAnswer": "Amazon DynamoDB",
+      "incorrectAnswers": [
+        "Amazon EFS",
+        "Amazon Route 53",
+        "AWS CodeBuild"
+      ],
+      "explanation": "Amazon DynamoDB is a fully managed NoSQL database built for single-digit millisecond performance.",
+      "keywords": [
+        "aws-dva-c02",
+        "aws-development",
+        "aws-services"
+      ],
+      "source": "https://aws.amazon.com/dynamodb/"
+    },
+    {
+      "seedId": "26c6ea53-e76c-48b4-8ca0-19b1d7c636f3",
+      "category": "exams",
+      "navigationKeyword1": "aws",
+      "navigationKeyword2": "dva-c02",
+      "question": "Which AWS service automates code deployment while helping maintain application uptime?",
+      "correctAnswer": "AWS CodeDeploy",
+      "incorrectAnswers": [
+        "AWS CodeBuild",
+        "Amazon CloudWatch",
+        "Amazon DynamoDB"
+      ],
+      "explanation": "AWS CodeDeploy automates deployments and supports rollout and rollback behavior.",
+      "keywords": [
+        "aws-dva-c02",
+        "aws-development",
+        "aws-services"
+      ],
+      "source": "https://aws.amazon.com/codedeploy/"
+    },
+    {
+      "seedId": "e91780bf-4b32-4362-b013-a1a141f75f74",
+      "category": "exams",
+      "navigationKeyword1": "aws",
+      "navigationKeyword2": "dva-c02",
+      "question": "Which AWS service builds and tests code with automatic scaling?",
+      "correctAnswer": "AWS CodeBuild",
+      "incorrectAnswers": [
+        "AWS CodeDeploy",
+        "Amazon EventBridge",
+        "Amazon S3"
+      ],
+      "explanation": "AWS CodeBuild runs builds and tests without requiring you to manage build servers.",
+      "keywords": [
+        "aws-dva-c02",
+        "aws-development",
+        "aws-services"
+      ],
+      "source": "https://aws.amazon.com/codebuild/"
+    },
+    {
+      "seedId": "f3db9073-1b9f-4999-864d-ffa3fe1264f0",
+      "category": "exams",
+      "navigationKeyword1": "aws",
+      "navigationKeyword2": "dva-c02",
+      "question": "Which AWS service centrally manages the lifecycle of secrets?",
+      "correctAnswer": "AWS Secrets Manager",
+      "incorrectAnswers": [
+        "Amazon CloudWatch",
+        "Amazon Route 53",
+        "AWS Shield"
+      ],
+      "explanation": "AWS Secrets Manager is used to centrally manage and protect secrets.",
+      "keywords": [
+        "aws-dva-c02",
+        "aws-development",
+        "aws-services"
+      ],
+      "source": "https://aws.amazon.com/secrets-manager/"
+    },
+    {
+      "seedId": "8a98790a-8f14-4a5a-a8aa-dc20bc2be570",
+      "category": "exams",
+      "navigationKeyword1": "aws",
+      "navigationKeyword2": "dva-c02",
+      "question": "Which AWS service helps build event-driven applications across AWS, existing systems, and SaaS apps?",
+      "correctAnswer": "Amazon EventBridge",
+      "incorrectAnswers": [
+        "Amazon EFS",
+        "Amazon EBS",
+        "AWS CodeBuild"
+      ],
+      "explanation": "Amazon EventBridge is AWS's event-driven integration service.",
+      "keywords": [
+        "aws-dva-c02",
+        "aws-development",
+        "aws-services"
+      ],
+      "source": "https://aws.amazon.com/eventbridge/"
+    },
+    {
+      "seedId": "239bbb5a-0fdc-46e2-a054-0536f180a1e9",
+      "category": "exams",
+      "navigationKeyword1": "aws",
+      "navigationKeyword2": "dva-c02",
+      "question": "Which AWS service is a fully managed Pub/Sub service?",
+      "correctAnswer": "Amazon SNS",
+      "incorrectAnswers": [
+        "Amazon SQS",
+        "Amazon EBS",
+        "Amazon Route 53"
+      ],
+      "explanation": "Amazon SNS is AWS's fully managed publish/subscribe messaging service.",
+      "keywords": [
+        "aws-dva-c02",
+        "aws-development",
+        "aws-services"
+      ],
+      "source": "https://aws.amazon.com/sns/"
+    },
+    {
+      "seedId": "389eac9b-0738-4e0a-a7a0-0d5d33d1087c",
+      "category": "exams",
+      "navigationKeyword1": "aws",
+      "navigationKeyword2": "dva-c02",
+      "question": "Which AWS service is used to create, publish, and secure APIs?",
+      "correctAnswer": "Amazon API Gateway",
+      "incorrectAnswers": [
+        "Amazon SQS",
+        "AWS CloudFormation",
+        "Amazon EFS"
+      ],
+      "explanation": "Amazon API Gateway is the managed AWS service for creating and securing APIs.",
+      "keywords": [
+        "aws-dva-c02",
+        "aws-development",
+        "aws-services"
+      ],
+      "source": "https://aws.amazon.com/api-gateway/"
+    },
+    {
+      "seedId": "6608d11b-9524-46ec-850a-9c2b5bb6f65f",
+      "category": "exams",
+      "navigationKeyword1": "aws",
+      "navigationKeyword2": "dva-c02",
+      "question": "Which AWS service is used to decouple application components with queues?",
+      "correctAnswer": "Amazon SQS",
+      "incorrectAnswers": [
+        "Amazon CloudWatch",
+        "Amazon Aurora",
+        "AWS CodeDeploy"
+      ],
+      "explanation": "Amazon SQS provides queues that decouple and connect distributed application components.",
+      "keywords": [
+        "aws-dva-c02",
+        "aws-development",
+        "aws-services"
+      ],
+      "source": "https://aws.amazon.com/sqs/"
+    },
+    {
+      "seedId": "e5578ee5-f34c-4dc1-aaf9-94ae1759cd5f",
+      "category": "exams",
+      "navigationKeyword1": "aws",
+      "navigationKeyword2": "dva-c02",
+      "question": "Which AWS service lets developers run code without managing servers?",
+      "correctAnswer": "AWS Lambda",
+      "incorrectAnswers": [
+        "Amazon EC2",
+        "Amazon EBS",
+        "Amazon Route 53"
+      ],
+      "explanation": "AWS Lambda runs code while AWS handles the underlying infrastructure.",
+      "keywords": [
+        "aws-dva-c02",
+        "aws-development",
+        "aws-services"
+      ],
+      "source": "https://aws.amazon.com/lambda/"
+    },
+    {
+      "seedId": "da5d494c-6c70-4521-9ac0-2e569e07d180",
+      "category": "exams",
+      "navigationKeyword1": "aws",
+      "navigationKeyword2": "dva-c02",
+      "question": "Which AWS service orchestrates distributed applications with visual workflows?",
+      "correctAnswer": "AWS Step Functions",
+      "incorrectAnswers": [
+        "Amazon CloudFront",
+        "AWS CodeBuild",
+        "Amazon EBS"
+      ],
+      "explanation": "AWS Step Functions builds and orchestrates distributed applications with visual workflows.",
+      "keywords": [
+        "aws-dva-c02",
+        "aws-development",
+        "aws-services"
+      ],
+      "source": "https://aws.amazon.com/step-functions/"
+    },
+    {
+      "seedId": "43a1c4ce-d7e3-4880-ac6a-ed6961563575",
+      "category": "exams",
+      "navigationKeyword1": "aws",
+      "navigationKeyword2": "dva-c02",
+      "question": "Which AWS service provides metrics, logs, and alarms for applications and infrastructure?",
+      "correctAnswer": "Amazon CloudWatch",
+      "incorrectAnswers": [
+        "Amazon SNS",
+        "Amazon Aurora",
+        "AWS CodeDeploy"
+      ],
+      "explanation": "Amazon CloudWatch provides observability data such as metrics, logs, and alarms.",
+      "keywords": [
+        "aws-dva-c02",
+        "aws-development",
+        "aws-services"
+      ],
+      "source": "https://aws.amazon.com/cloudwatch/"
+    },
+    {
+      "seedId": "b36c65cd-5e71-4deb-88e9-c5a70fd0c37d",
+      "category": "exams",
+      "navigationKeyword1": "aws",
+      "navigationKeyword2": "dva-c02",
+      "question": "Which AWS service securely manages identities and access to AWS resources?",
+      "correctAnswer": "AWS Identity and Access Management (IAM)",
+      "incorrectAnswers": [
+        "Amazon EventBridge",
+        "AWS Step Functions",
+        "Amazon SQS"
+      ],
+      "explanation": "IAM is AWS's service for managing identities, permissions, and access.",
+      "keywords": [
+        "aws-dva-c02",
+        "aws-development",
+        "aws-services"
+      ],
+      "source": "https://aws.amazon.com/iam/"
+    }
+  ]
+}

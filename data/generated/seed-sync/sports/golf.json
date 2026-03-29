@@ -1,0 +1,1207 @@
+{
+  "schemaVersion": 1,
+  "seedSet": "core-public-items",
+  "deltaPreviewLimit": 200,
+  "items": [
+    {
+      "seedId": "91b80fc1-0176-57a4-a9cf-3226db6a835e",
+      "category": "sports",
+      "navigationKeyword1": "golf",
+      "navigationKeyword2": "champions",
+      "question": "Which golfer won the 2000 U.S. Open by a record 15 strokes?",
+      "correctAnswer": "Tiger Woods",
+      "incorrectAnswers": [
+        "Ernie Els",
+        "Vijay Singh",
+        "Phil Mickelson"
+      ],
+      "explanation": "Woods dominated Pebble Beach in 2000.",
+      "keywords": [
+        "golf",
+        "champions",
+        "record-margin"
+      ],
+      "source": "https://www.usopen.com/"
+    },
+    {
+      "seedId": "27fe852a-92df-5c5a-ae88-25111e5b9053",
+      "category": "sports",
+      "navigationKeyword1": "golf",
+      "navigationKeyword2": "champions",
+      "question": "Which golfer won the 2023 Masters Tournament?",
+      "correctAnswer": "Jon Rahm",
+      "incorrectAnswers": [
+        "Brooks Koepka",
+        "Scottie Scheffler",
+        "Rory McIlroy"
+      ],
+      "explanation": "Rahm won the green jacket in 2023.",
+      "keywords": [
+        "golf",
+        "champions",
+        "rahm"
+      ],
+      "source": "https://www.masters.com/en_US/index.html"
+    },
+    {
+      "seedId": "3dda18f2-7f06-5a05-a5bf-7616ac1f8876",
+      "category": "sports",
+      "navigationKeyword1": "golf",
+      "navigationKeyword2": "champions",
+      "question": "Which golfer won the Masters in 2019 after an 11-year major drought?",
+      "correctAnswer": "Tiger Woods",
+      "incorrectAnswers": [
+        "Phil Mickelson",
+        "Brooks Koepka",
+        "Dustin Johnson"
+      ],
+      "explanation": "Woods' 2019 Masters win was one of the sport's biggest comeback stories.",
+      "keywords": [
+        "golf",
+        "champions",
+        "tiger"
+      ],
+      "source": "https://www.masters.com/en_US/index.html"
+    },
+    {
+      "seedId": "30d6b399-0e9b-561c-9336-a9fbb7f8a31a",
+      "category": "sports",
+      "navigationKeyword1": "golf",
+      "navigationKeyword2": "champions",
+      "question": "Who won The Open Championship in 2019 at Royal Portrush?",
+      "correctAnswer": "Shane Lowry",
+      "incorrectAnswers": [
+        "Rory McIlroy",
+        "Tommy Fleetwood",
+        "Brooks Koepka"
+      ],
+      "explanation": "Lowry won on the island of Ireland at Royal Portrush.",
+      "keywords": [
+        "golf",
+        "champions",
+        "lowry"
+      ],
+      "source": "https://www.theopen.com/"
+    },
+    {
+      "seedId": "6873e78f-bbde-502b-a1bf-52209b573f75",
+      "category": "sports",
+      "navigationKeyword1": "golf",
+      "navigationKeyword2": "champions",
+      "question": "Who won The Open Championship in 2024?",
+      "correctAnswer": "Xander Schauffele",
+      "incorrectAnswers": [
+        "Rory McIlroy",
+        "Shane Lowry",
+        "Justin Rose"
+      ],
+      "explanation": "Schauffele added The Open to his 2024 major haul.",
+      "keywords": [
+        "golf",
+        "champions",
+        "open"
+      ],
+      "source": "https://www.theopen.com/"
+    },
+    {
+      "seedId": "f5c3a261-e9ec-556d-b3cc-ecde47bd76af",
+      "category": "sports",
+      "navigationKeyword1": "golf",
+      "navigationKeyword2": "champions",
+      "question": "Who won the 2021 PGA Championship at age 50?",
+      "correctAnswer": "Phil Mickelson",
+      "incorrectAnswers": [
+        "Brooks Koepka",
+        "Louis Oosthuizen",
+        "Jordan Spieth"
+      ],
+      "explanation": "Mickelson became the oldest men's major winner with that title.",
+      "keywords": [
+        "golf",
+        "champions",
+        "mickelson"
+      ],
+      "source": "https://www.pgachampionship.com/"
+    },
+    {
+      "seedId": "40107c71-ccd6-59ac-bc39-3c213b47ca61",
+      "category": "sports",
+      "navigationKeyword1": "golf",
+      "navigationKeyword2": "champions",
+      "question": "Who won the 2024 Masters Tournament?",
+      "correctAnswer": "Scottie Scheffler",
+      "incorrectAnswers": [
+        "Rory McIlroy",
+        "Collin Morikawa",
+        "Ludvig Aberg"
+      ],
+      "explanation": "Scheffler earned his second Masters title in 2024.",
+      "keywords": [
+        "golf",
+        "champions",
+        "scheffler"
+      ],
+      "source": "https://www.masters.com/en_US/index.html"
+    },
+    {
+      "seedId": "173a6b6f-6a81-5401-81c6-bc75f3f73e33",
+      "category": "sports",
+      "navigationKeyword1": "golf",
+      "navigationKeyword2": "champions",
+      "question": "Who won the 2024 PGA Championship?",
+      "correctAnswer": "Xander Schauffele",
+      "incorrectAnswers": [
+        "Brooks Koepka",
+        "Scottie Scheffler",
+        "Viktor Hovland"
+      ],
+      "explanation": "Schauffele won his first major at the 2024 PGA Championship.",
+      "keywords": [
+        "golf",
+        "champions",
+        "pga"
+      ],
+      "source": "https://www.pgachampionship.com/"
+    },
+    {
+      "seedId": "12ab5b91-ff6b-5865-93d7-eeb0ac400438",
+      "category": "sports",
+      "navigationKeyword1": "golf",
+      "navigationKeyword2": "champions",
+      "question": "Who won the 2024 U.S. Open?",
+      "correctAnswer": "Bryson DeChambeau",
+      "incorrectAnswers": [
+        "Rory McIlroy",
+        "Tony Finau",
+        "Tommy Fleetwood"
+      ],
+      "explanation": "DeChambeau won the U.S. Open at Pinehurst No. 2.",
+      "keywords": [
+        "golf",
+        "champions",
+        "us-open"
+      ],
+      "source": "https://www.usopen.com/"
+    },
+    {
+      "seedId": "77f8ecff-87da-58e6-98d9-8e07f5d61ed2",
+      "category": "sports",
+      "navigationKeyword1": "golf",
+      "navigationKeyword2": "champions",
+      "question": "Who won the 2025 Masters Tournament?",
+      "correctAnswer": "Rory McIlroy",
+      "incorrectAnswers": [
+        "Scottie Scheffler",
+        "Ludvig Aberg",
+        "Bryson DeChambeau"
+      ],
+      "explanation": "McIlroy won the 2025 Masters to complete the career Grand Slam.",
+      "keywords": [
+        "golf",
+        "champions",
+        "masters"
+      ],
+      "source": "https://www.masters.com/en_US/index.html"
+    },
+    {
+      "seedId": "af6fd573-f38e-5064-8f24-f18ee1da3d85",
+      "category": "sports",
+      "navigationKeyword1": "golf",
+      "navigationKeyword2": "courses",
+      "question": "Which California course overlooks the Pacific and is famous for the par-3 seventh hole?",
+      "correctAnswer": "Pebble Beach",
+      "incorrectAnswers": [
+        "Torrey Pines",
+        "Spyglass Hill",
+        "Riviera"
+      ],
+      "explanation": "Pebble Beach is one of golf's most scenic and famous venues.",
+      "keywords": [
+        "golf",
+        "courses",
+        "pebble-beach"
+      ],
+      "source": "https://www.britannica.com/sports/golf"
+    },
+    {
+      "seedId": "2add7071-9b6b-5d98-b534-dad1a791e08c",
+      "category": "sports",
+      "navigationKeyword1": "golf",
+      "navigationKeyword2": "courses",
+      "question": "Which English course in Southport has hosted multiple Open Championships and is called Royal Birkdale?",
+      "correctAnswer": "Royal Birkdale",
+      "incorrectAnswers": [
+        "Royal Liverpool",
+        "Royal Troon",
+        "St George's"
+      ],
+      "explanation": "Royal Birkdale is one of the regular Open rota courses.",
+      "keywords": [
+        "golf",
+        "courses",
+        "royal-birkdale"
+      ],
+      "source": "https://www.britannica.com/sports/golf"
+    },
+    {
+      "seedId": "b0cfaa96-bb48-5f9c-b8c4-efaa6fd0227a",
+      "category": "sports",
+      "navigationKeyword1": "golf",
+      "navigationKeyword2": "courses",
+      "question": "Which Kentucky course hosted the 2024 PGA Championship?",
+      "correctAnswer": "Valhalla",
+      "incorrectAnswers": [
+        "Whistling Straits",
+        "Hazeltine",
+        "Quail Hollow"
+      ],
+      "explanation": "Valhalla Golf Club was the site of the 2024 PGA Championship.",
+      "keywords": [
+        "golf",
+        "courses",
+        "valhalla"
+      ],
+      "source": "https://www.pgachampionship.com/"
+    },
+    {
+      "seedId": "bc8383e3-8fc1-5605-85d8-1e7c48fc00d8",
+      "category": "sports",
+      "navigationKeyword1": "golf",
+      "navigationKeyword2": "courses",
+      "question": "Which Long Island course hosted the 2018 U.S. Open and 2026 Ryder Cup?",
+      "correctAnswer": "Shinnecock Hills",
+      "incorrectAnswers": [
+        "Bethpage Black",
+        "Winged Foot",
+        "Pine Valley"
+      ],
+      "explanation": "Shinnecock Hills is one of the oldest golf clubs in the United States.",
+      "keywords": [
+        "golf",
+        "courses",
+        "shinnecock"
+      ],
+      "source": "https://www.britannica.com/sports/golf"
+    },
+    {
+      "seedId": "5cae6d8b-1ee6-573a-ac08-52e4373d6363",
+      "category": "sports",
+      "navigationKeyword1": "golf",
+      "navigationKeyword2": "courses",
+      "question": "Which New York public course hosted the 2002 and 2009 U.S. Opens and the 2019 PGA Championship?",
+      "correctAnswer": "Bethpage Black",
+      "incorrectAnswers": [
+        "Winged Foot",
+        "Oak Hill",
+        "Shinnecock Hills"
+      ],
+      "explanation": "Bethpage Black became famous as a tough public major venue.",
+      "keywords": [
+        "golf",
+        "courses",
+        "bethpage"
+      ],
+      "source": "https://www.britannica.com/sports/golf"
+    },
+    {
+      "seedId": "6ef6168f-4b64-56bb-9aff-0b1c5d31c3ed",
+      "category": "sports",
+      "navigationKeyword1": "golf",
+      "navigationKeyword2": "courses",
+      "question": "Which North Carolina course hosted the 2024 U.S. Open?",
+      "correctAnswer": "Pinehurst No. 2",
+      "incorrectAnswers": [
+        "Oakmont",
+        "Shinnecock Hills",
+        "Winged Foot"
+      ],
+      "explanation": "Pinehurst No. 2 hosted the 2024 U.S. Open.",
+      "keywords": [
+        "golf",
+        "courses",
+        "pinehurst"
+      ],
+      "source": "https://www.usopen.com/"
+    },
+    {
+      "seedId": "52c50226-ff78-58e5-a033-a40996d27ba8",
+      "category": "sports",
+      "navigationKeyword1": "golf",
+      "navigationKeyword2": "courses",
+      "question": "Which Pennsylvania course is famous for extremely difficult U.S. Open setups and church pew bunkers?",
+      "correctAnswer": "Oakmont",
+      "incorrectAnswers": [
+        "Oak Hill",
+        "Merion",
+        "Baltusrol"
+      ],
+      "explanation": "Oakmont is one of the hardest classic U.S. Open courses.",
+      "keywords": [
+        "golf",
+        "courses",
+        "oakmont"
+      ],
+      "source": "https://www.britannica.com/sports/golf"
+    },
+    {
+      "seedId": "d0520970-ff9b-5d4d-88ef-8cf6c8af82f7",
+      "category": "sports",
+      "navigationKeyword1": "golf",
+      "navigationKeyword2": "courses",
+      "question": "Which Scottish course hosted The Open in 2024?",
+      "correctAnswer": "Royal Troon",
+      "incorrectAnswers": [
+        "Muirfield",
+        "St Andrews",
+        "Carnoustie"
+      ],
+      "explanation": "Royal Troon was the 2024 Open Championship venue.",
+      "keywords": [
+        "golf",
+        "courses",
+        "royal-troon"
+      ],
+      "source": "https://www.theopen.com/"
+    },
+    {
+      "seedId": "cc2674ab-869b-589d-9fa3-33411ef03589",
+      "category": "sports",
+      "navigationKeyword1": "golf",
+      "navigationKeyword2": "courses",
+      "question": "Which Scottish links is often called the Home of Golf?",
+      "correctAnswer": "St Andrews",
+      "incorrectAnswers": [
+        "Royal Troon",
+        "Carnoustie",
+        "Muirfield"
+      ],
+      "explanation": "St Andrews is commonly known as the Home of Golf.",
+      "keywords": [
+        "golf",
+        "courses",
+        "st-andrews"
+      ],
+      "source": "https://www.britannica.com/sports/golf"
+    },
+    {
+      "seedId": "25890faf-1f17-5ae7-9694-c4124d2f5b52",
+      "category": "sports",
+      "navigationKeyword1": "golf",
+      "navigationKeyword2": "courses",
+      "question": "Which course hosts the Masters every year?",
+      "correctAnswer": "Augusta National",
+      "incorrectAnswers": [
+        "Pebble Beach",
+        "St Andrews",
+        "Pinehurst No. 2"
+      ],
+      "explanation": "The Masters is always played at Augusta National Golf Club.",
+      "keywords": [
+        "golf",
+        "courses",
+        "augusta"
+      ],
+      "source": "https://www.masters.com/en_US/index.html"
+    },
+    {
+      "seedId": "e2662445-e47e-54b9-8275-be2b2d4db827",
+      "category": "sports",
+      "navigationKeyword1": "golf",
+      "navigationKeyword2": "equipment",
+      "question": "What accessory do many players wear on the lead hand to improve grip?",
+      "correctAnswer": "Golf glove",
+      "incorrectAnswers": [
+        "Wristwatch",
+        "Elbow pad",
+        "Helmet"
+      ],
+      "explanation": "A glove can improve grip and reduce friction.",
+      "keywords": [
+        "golf",
+        "equipment",
+        "glove"
+      ],
+      "source": "https://www.britannica.com/sports/golf"
+    },
+    {
+      "seedId": "27507296-64cb-5f82-92f4-2e83e28fd0ee",
+      "category": "sports",
+      "navigationKeyword1": "golf",
+      "navigationKeyword2": "equipment",
+      "question": "What carries a player's clubs around the course?",
+      "correctAnswer": "Golf bag",
+      "incorrectAnswers": [
+        "Club towel",
+        "Locker",
+        "Flagstick"
+      ],
+      "explanation": "Clubs are stored and transported in a golf bag.",
+      "keywords": [
+        "golf",
+        "equipment",
+        "bag"
+      ],
+      "source": "https://www.britannica.com/sports/golf"
+    },
+    {
+      "seedId": "9af6474a-28c0-563e-a859-2ad918ca6d3c",
+      "category": "sports",
+      "navigationKeyword1": "golf",
+      "navigationKeyword2": "equipment",
+      "question": "What is the flexible shafted implement used to strike the ball called?",
+      "correctAnswer": "A club",
+      "incorrectAnswers": [
+        "A mallet only",
+        "A net",
+        "A racket"
+      ],
+      "explanation": "Golf is played by striking the ball with clubs.",
+      "keywords": [
+        "golf",
+        "equipment",
+        "club"
+      ],
+      "source": "https://www.britannica.com/sports/golf"
+    },
+    {
+      "seedId": "50334a93-c39c-5315-99d2-d21cc972c5f4",
+      "category": "sports",
+      "navigationKeyword1": "golf",
+      "navigationKeyword2": "equipment",
+      "question": "What item is used to mark the position of a ball on the green before lifting it?",
+      "correctAnswer": "Ball marker",
+      "incorrectAnswers": [
+        "Glove",
+        "Tee box",
+        "Rangefinder"
+      ],
+      "explanation": "Players use a marker before lifting the ball on the putting green.",
+      "keywords": [
+        "golf",
+        "equipment",
+        "ball-marker"
+      ],
+      "source": "https://www.usga.org/content/usga/home-page/rules-hub.html"
+    },
+    {
+      "seedId": "fc92548b-4c2d-57b9-93f4-2ee884138af4",
+      "category": "sports",
+      "navigationKeyword1": "golf",
+      "navigationKeyword2": "equipment",
+      "question": "What small peg lifts the ball for the opening shot on many holes?",
+      "correctAnswer": "Tee",
+      "incorrectAnswers": [
+        "Ball marker",
+        "Divot tool",
+        "Flagstick"
+      ],
+      "explanation": "Players may place the ball on a tee in the teeing area.",
+      "keywords": [
+        "golf",
+        "equipment",
+        "tee"
+      ],
+      "source": "https://www.usga.org/content/usga/home-page/rules-hub.html"
+    },
+    {
+      "seedId": "98ad1bc4-a1b9-59b4-b261-191202bc6127",
+      "category": "sports",
+      "navigationKeyword1": "golf",
+      "navigationKeyword2": "equipment",
+      "question": "What tool is commonly used to repair pitch marks on the green?",
+      "correctAnswer": "Divot tool",
+      "incorrectAnswers": [
+        "Ball washer",
+        "Scorecard holder",
+        "Range rope"
+      ],
+      "explanation": "A divot or repair tool helps fix ball marks on the green.",
+      "keywords": [
+        "golf",
+        "equipment",
+        "repair"
+      ],
+      "source": "https://www.usga.org/content/usga/home-page/rules-hub.html"
+    },
+    {
+      "seedId": "4a36abfe-5a65-5277-bff5-5c84691a7f80",
+      "category": "sports",
+      "navigationKeyword1": "golf",
+      "navigationKeyword2": "equipment",
+      "question": "Which club is designed mainly for use on the green?",
+      "correctAnswer": "Putter",
+      "incorrectAnswers": [
+        "Driver",
+        "Hybrid",
+        "Sand wedge"
+      ],
+      "explanation": "Putters are built for rolling the ball on the green.",
+      "keywords": [
+        "golf",
+        "equipment",
+        "putter"
+      ],
+      "source": "https://www.usga.org/content/usga/home-page/rules-hub.html"
+    },
+    {
+      "seedId": "b2a6e533-8127-5b27-865f-57ffc992a7f1",
+      "category": "sports",
+      "navigationKeyword1": "golf",
+      "navigationKeyword2": "equipment",
+      "question": "Which club is specially designed to help play shots from bunkers?",
+      "correctAnswer": "Sand wedge",
+      "incorrectAnswers": [
+        "Driver",
+        "Putter",
+        "3-wood"
+      ],
+      "explanation": "The sand wedge has loft and bounce suited to bunker shots.",
+      "keywords": [
+        "golf",
+        "equipment",
+        "sand-wedge"
+      ],
+      "source": "https://www.usga.org/content/usga/home-page/rules-hub.html"
+    },
+    {
+      "seedId": "9193a3b6-09fa-5577-a2ff-5715a7b36a45",
+      "category": "sports",
+      "navigationKeyword1": "golf",
+      "navigationKeyword2": "equipment",
+      "question": "Which club is usually used for the longest tee shots on par 4s and par 5s?",
+      "correctAnswer": "Driver",
+      "incorrectAnswers": [
+        "Putter",
+        "Wedge",
+        "7-iron"
+      ],
+      "explanation": "The driver is designed for maximum distance from the tee.",
+      "keywords": [
+        "golf",
+        "equipment",
+        "driver"
+      ],
+      "source": "https://www.usga.org/content/usga/home-page/rules-hub.html"
+    },
+    {
+      "seedId": "ef647834-c862-5eeb-b23d-fe06c88ee5d6",
+      "category": "sports",
+      "navigationKeyword1": "golf",
+      "navigationKeyword2": "equipment",
+      "question": "Which type of club blends qualities of irons and fairway woods?",
+      "correctAnswer": "Hybrid",
+      "incorrectAnswers": [
+        "Putter",
+        "Wedge",
+        "Pencil iron"
+      ],
+      "explanation": "Hybrids are designed to be easier to hit than long irons for many players.",
+      "keywords": [
+        "golf",
+        "equipment",
+        "hybrid"
+      ],
+      "source": "https://www.usga.org/content/usga/home-page/rules-hub.html"
+    },
+    {
+      "seedId": "a736c3b4-b654-5439-9657-e681546a6e3f",
+      "category": "sports",
+      "navigationKeyword1": "golf",
+      "navigationKeyword2": "majors",
+      "question": "How many men's major championships are recognized in professional golf?",
+      "correctAnswer": "Four",
+      "incorrectAnswers": [
+        "Three",
+        "Five",
+        "Six"
+      ],
+      "explanation": "Men's professional golf recognizes four majors.",
+      "keywords": [
+        "golf",
+        "majors",
+        "count"
+      ],
+      "source": "https://www.britannica.com/sports/golf"
+    },
+    {
+      "seedId": "7278fc8a-da42-5837-bfe5-32d20f4137dc",
+      "category": "sports",
+      "navigationKeyword1": "golf",
+      "navigationKeyword2": "majors",
+      "question": "What clothing item is awarded to the Masters champion?",
+      "correctAnswer": "A green jacket",
+      "incorrectAnswers": [
+        "A yellow jersey",
+        "A silver blazer",
+        "A red tie"
+      ],
+      "explanation": "Masters winners receive the famous green jacket.",
+      "keywords": [
+        "golf",
+        "majors",
+        "green-jacket"
+      ],
+      "source": "https://www.masters.com/en_US/index.html"
+    },
+    {
+      "seedId": "a76afbd6-b189-5476-8f54-7e39090f205f",
+      "category": "sports",
+      "navigationKeyword1": "golf",
+      "navigationKeyword2": "majors",
+      "question": "Which major completed Rory McIlroy's career Grand Slam in 2025?",
+      "correctAnswer": "The Masters",
+      "incorrectAnswers": [
+        "U.S. Open",
+        "The Open Championship",
+        "PGA Championship"
+      ],
+      "explanation": "McIlroy completed the career Grand Slam by winning the Masters in 2025.",
+      "keywords": [
+        "golf",
+        "majors",
+        "career-grand-slam"
+      ],
+      "source": "https://www.masters.com/en_US/index.html"
+    },
+    {
+      "seedId": "8d17d445-0d09-51be-9192-10da78ee4869",
+      "category": "sports",
+      "navigationKeyword1": "golf",
+      "navigationKeyword2": "majors",
+      "question": "Which major is organized by the USGA and often features punishing course setups?",
+      "correctAnswer": "U.S. Open",
+      "incorrectAnswers": [
+        "The Masters",
+        "PGA Championship",
+        "The Players Championship"
+      ],
+      "explanation": "The USGA runs the U.S. Open.",
+      "keywords": [
+        "golf",
+        "majors",
+        "us-open"
+      ],
+      "source": "https://www.usopen.com/"
+    },
+    {
+      "seedId": "c7788d80-647c-5647-a08a-a4b1204b0488",
+      "category": "sports",
+      "navigationKeyword1": "golf",
+      "navigationKeyword2": "majors",
+      "question": "Which major is played at Augusta National each April?",
+      "correctAnswer": "The Masters",
+      "incorrectAnswers": [
+        "U.S. Open",
+        "The Open Championship",
+        "PGA Championship"
+      ],
+      "explanation": "The Masters is the annual major held at Augusta National.",
+      "keywords": [
+        "golf",
+        "majors",
+        "masters"
+      ],
+      "source": "https://www.masters.com/en_US/index.html"
+    },
+    {
+      "seedId": "0e5da4b1-0e18-568f-8478-aa7b005d6d44",
+      "category": "sports",
+      "navigationKeyword1": "golf",
+      "navigationKeyword2": "majors",
+      "question": "Which major is played on a different course each year but always at Augusta National?",
+      "correctAnswer": "The Masters",
+      "incorrectAnswers": [
+        "U.S. Open",
+        "Open Championship",
+        "PGA Championship"
+      ],
+      "explanation": "The Masters is unique because it always returns to Augusta National.",
+      "keywords": [
+        "golf",
+        "majors",
+        "augusta"
+      ],
+      "source": "https://www.masters.com/en_US/index.html"
+    },
+    {
+      "seedId": "fae3efd4-274c-5e58-a8ed-3993693ab255",
+      "category": "sports",
+      "navigationKeyword1": "golf",
+      "navigationKeyword2": "majors",
+      "question": "Which major is run by the PGA of America?",
+      "correctAnswer": "PGA Championship",
+      "incorrectAnswers": [
+        "U.S. Open",
+        "The Open Championship",
+        "The Masters"
+      ],
+      "explanation": "The PGA Championship is organized by the PGA of America.",
+      "keywords": [
+        "golf",
+        "majors",
+        "pga-championship"
+      ],
+      "source": "https://www.pgachampionship.com/"
+    },
+    {
+      "seedId": "e5ae85b6-f3e6-5624-a3ef-e8b1a595f3e2",
+      "category": "sports",
+      "navigationKeyword1": "golf",
+      "navigationKeyword2": "majors",
+      "question": "Which major is the oldest of the four men's majors?",
+      "correctAnswer": "The Open Championship",
+      "incorrectAnswers": [
+        "The Masters",
+        "U.S. Open",
+        "PGA Championship"
+      ],
+      "explanation": "The Open began in the 19th century and is the oldest major.",
+      "keywords": [
+        "golf",
+        "majors",
+        "open-championship"
+      ],
+      "source": "https://www.theopen.com/"
+    },
+    {
+      "seedId": "98dbf65f-d348-594e-9e4b-16b5e3d3b310",
+      "category": "sports",
+      "navigationKeyword1": "golf",
+      "navigationKeyword2": "majors",
+      "question": "Which major is traditionally played on links courses in the United Kingdom?",
+      "correctAnswer": "The Open Championship",
+      "incorrectAnswers": [
+        "The Masters",
+        "U.S. Open",
+        "PGA Championship"
+      ],
+      "explanation": "The Open is the major most associated with links golf.",
+      "keywords": [
+        "golf",
+        "majors",
+        "links"
+      ],
+      "source": "https://www.theopen.com/"
+    },
+    {
+      "seedId": "c4ba74c1-47fa-535a-bf70-cbe3fde6676f",
+      "category": "sports",
+      "navigationKeyword1": "golf",
+      "navigationKeyword2": "majors",
+      "question": "Which major is usually considered the national championship of golf in the United States?",
+      "correctAnswer": "U.S. Open",
+      "incorrectAnswers": [
+        "The Masters",
+        "PGA Championship",
+        "The Open Championship"
+      ],
+      "explanation": "The U.S. Open is the USGA's national open championship.",
+      "keywords": [
+        "golf",
+        "majors",
+        "national-championship"
+      ],
+      "source": "https://www.usopen.com/"
+    },
+    {
+      "seedId": "dc00cf1c-fadf-544e-b54c-9e8801ae8979",
+      "category": "sports",
+      "navigationKeyword1": "golf",
+      "navigationKeyword2": "players",
+      "question": "Which American won the 2024 Masters for his second green jacket?",
+      "correctAnswer": "Scottie Scheffler",
+      "incorrectAnswers": [
+        "Rory McIlroy",
+        "Jon Rahm",
+        "Collin Morikawa"
+      ],
+      "explanation": "Scheffler won the Masters again in 2024.",
+      "keywords": [
+        "golf",
+        "players",
+        "scheffler"
+      ],
+      "source": "https://www.masters.com/en_US/index.html"
+    },
+    {
+      "seedId": "8afbebe6-fbc6-5c3a-ab0a-c2568099414b",
+      "category": "sports",
+      "navigationKeyword1": "golf",
+      "navigationKeyword2": "players",
+      "question": "Which Northern Irish golfer completed the career Grand Slam by winning the Masters in 2025?",
+      "correctAnswer": "Rory McIlroy",
+      "incorrectAnswers": [
+        "Padraig Harrington",
+        "Darren Clarke",
+        "Graeme McDowell"
+      ],
+      "explanation": "McIlroy finally added the Masters to his major collection in 2025.",
+      "keywords": [
+        "golf",
+        "players",
+        "rory-mcilroy"
+      ],
+      "source": "https://www.britannica.com/biography/Rory-McIlroy"
+    },
+    {
+      "seedId": "a1842413-d428-5749-ac8e-7f32d7ffa397",
+      "category": "sports",
+      "navigationKeyword1": "golf",
+      "navigationKeyword2": "players",
+      "question": "Which South African golfer joined Nicklaus and Woods in the career Grand Slam club during the Masters era?",
+      "correctAnswer": "Gary Player",
+      "incorrectAnswers": [
+        "Ernie Els",
+        "Retief Goosen",
+        "Bobby Locke"
+      ],
+      "explanation": "Gary Player became one of the classic career Grand Slam winners.",
+      "keywords": [
+        "golf",
+        "players",
+        "gary-player"
+      ],
+      "source": "https://www.britannica.com/biography/Gary-Player"
+    },
+    {
+      "seedId": "108a3d22-a727-5325-9611-6c26c78257cd",
+      "category": "sports",
+      "navigationKeyword1": "golf",
+      "navigationKeyword2": "players",
+      "question": "Which Spanish golfer became famous for creativity around the greens and won two Masters titles?",
+      "correctAnswer": "Seve Ballesteros",
+      "incorrectAnswers": [
+        "Jose Maria Olazabal",
+        "Sergio Garcia",
+        "Jon Rahm"
+      ],
+      "explanation": "Ballesteros became one of Europe's most influential golf champions.",
+      "keywords": [
+        "golf",
+        "players",
+        "seve"
+      ],
+      "source": "https://www.britannica.com/biography/Seve-Ballesteros"
+    },
+    {
+      "seedId": "e7eafd2e-cae9-5812-9a7c-cf4479812185",
+      "category": "sports",
+      "navigationKeyword1": "golf",
+      "navigationKeyword2": "players",
+      "question": "Which golfer completed the Tiger Slam by holding all four majors at once across 2000 and 2001?",
+      "correctAnswer": "Tiger Woods",
+      "incorrectAnswers": [
+        "Phil Mickelson",
+        "Vijay Singh",
+        "Ernie Els"
+      ],
+      "explanation": "Woods held all four men's major titles at the same time, though not in one calendar year.",
+      "keywords": [
+        "golf",
+        "players",
+        "tiger-woods"
+      ],
+      "source": "https://www.britannica.com/biography/Tiger-Woods"
+    },
+    {
+      "seedId": "dd519aa5-a8fd-53b3-83cf-11464bdc9e0b",
+      "category": "sports",
+      "navigationKeyword1": "golf",
+      "navigationKeyword2": "players",
+      "question": "Which golfer was nicknamed The King and helped popularize televised golf in the 1960s?",
+      "correctAnswer": "Arnold Palmer",
+      "incorrectAnswers": [
+        "Jack Nicklaus",
+        "Tom Watson",
+        "Lee Trevino"
+      ],
+      "explanation": "Palmer's charisma made him one of golf's biggest stars.",
+      "keywords": [
+        "golf",
+        "players",
+        "arnold-palmer"
+      ],
+      "source": "https://www.britannica.com/biography/Arnold-Palmer"
+    },
+    {
+      "seedId": "3d42566b-bdde-534f-99a8-a8807cce9d5e",
+      "category": "sports",
+      "navigationKeyword1": "golf",
+      "navigationKeyword2": "players",
+      "question": "Which golfer won 18 men's major championships?",
+      "correctAnswer": "Jack Nicklaus",
+      "incorrectAnswers": [
+        "Tiger Woods",
+        "Arnold Palmer",
+        "Gary Player"
+      ],
+      "explanation": "Nicklaus leads men's golf in major titles.",
+      "keywords": [
+        "golf",
+        "players",
+        "jack-nicklaus"
+      ],
+      "source": "https://www.britannica.com/biography/Jack-Nicklaus"
+    },
+    {
+      "seedId": "dccd1ac5-8928-539f-81d4-2d50035345fe",
+      "category": "sports",
+      "navigationKeyword1": "golf",
+      "navigationKeyword2": "players",
+      "question": "Which golfer won The Open Championship in both 1975 and 1977 and later captained Europe in the Ryder Cup?",
+      "correctAnswer": "Tom Watson",
+      "incorrectAnswers": [
+        "Nick Faldo",
+        "Bernhard Langer",
+        "Lee Trevino"
+      ],
+      "explanation": "Watson was one of the dominant links players of his era.",
+      "keywords": [
+        "golf",
+        "players",
+        "tom-watson"
+      ],
+      "source": "https://www.britannica.com/biography/Tom-Watson"
+    },
+    {
+      "seedId": "8de456cf-a564-5ede-8881-3a31a0236122",
+      "category": "sports",
+      "navigationKeyword1": "golf",
+      "navigationKeyword2": "players",
+      "question": "Which golfer won the 2024 U.S. Open at Pinehurst No. 2?",
+      "correctAnswer": "Bryson DeChambeau",
+      "incorrectAnswers": [
+        "Rory McIlroy",
+        "Xander Schauffele",
+        "Brooks Koepka"
+      ],
+      "explanation": "DeChambeau captured the U.S. Open in 2024.",
+      "keywords": [
+        "golf",
+        "players",
+        "dechambeau"
+      ],
+      "source": "https://www.usopen.com/"
+    },
+    {
+      "seedId": "eab03410-fbda-584d-adb2-dfb3c20d9702",
+      "category": "sports",
+      "navigationKeyword1": "golf",
+      "navigationKeyword2": "players",
+      "question": "Which left-hander won the 2021 PGA Championship at age 50?",
+      "correctAnswer": "Phil Mickelson",
+      "incorrectAnswers": [
+        "Bubba Watson",
+        "Mike Weir",
+        "Brian Harman"
+      ],
+      "explanation": "Mickelson became the oldest men's major champion with that win.",
+      "keywords": [
+        "golf",
+        "players",
+        "phil-mickelson"
+      ],
+      "source": "https://www.britannica.com/biography/Phil-Mickelson"
+    },
+    {
+      "seedId": "0437e155-893f-5bf4-8694-51c311be0b60",
+      "category": "sports",
+      "navigationKeyword1": "golf",
+      "navigationKeyword2": "rules",
+      "question": "In stroke play, what wins the competition?",
+      "correctAnswer": "The lowest total score",
+      "incorrectAnswers": [
+        "The most birdies only",
+        "The fewest putts only",
+        "The longest drive"
+      ],
+      "explanation": "Stroke play is decided by total strokes over the round or tournament.",
+      "keywords": [
+        "golf",
+        "rules",
+        "stroke-play"
+      ],
+      "source": "https://www.usga.org/content/usga/home-page/rules-hub.html"
+    },
+    {
+      "seedId": "ff1daa64-a9eb-533f-b656-6c5ae650a57f",
+      "category": "sports",
+      "navigationKeyword1": "golf",
+      "navigationKeyword2": "rules",
+      "question": "What area is the closely mown target area around the hole called?",
+      "correctAnswer": "The green",
+      "incorrectAnswers": [
+        "The teeing area",
+        "The rough",
+        "The penalty area"
+      ],
+      "explanation": "Players finish each hole on the green.",
+      "keywords": [
+        "golf",
+        "rules",
+        "green"
+      ],
+      "source": "https://www.usga.org/content/usga/home-page/rules-hub.html"
+    },
+    {
+      "seedId": "32ad0ea2-43c3-528e-a1cd-c3aab4aa36a9",
+      "category": "sports",
+      "navigationKeyword1": "golf",
+      "navigationKeyword2": "rules",
+      "question": "What is a hole-in-one?",
+      "correctAnswer": "A tee shot holed in one stroke",
+      "incorrectAnswers": [
+        "A double eagle on a par 5",
+        "A one-putt after a drive",
+        "A conceded putt"
+      ],
+      "explanation": "A hole-in-one means the ball goes in from the tee in one shot.",
+      "keywords": [
+        "golf",
+        "rules",
+        "ace"
+      ],
+      "source": "https://www.usga.org/content/usga/home-page/rules-hub.html"
+    },
+    {
+      "seedId": "847a9a1f-9b87-5d92-9dda-1caa620de856",
+      "category": "sports",
+      "navigationKeyword1": "golf",
+      "navigationKeyword2": "rules",
+      "question": "What is match play decided by?",
+      "correctAnswer": "Holes won rather than total strokes",
+      "incorrectAnswers": [
+        "Total strokes only",
+        "Longest drive",
+        "Putting average"
+      ],
+      "explanation": "Match play scores each hole as a separate contest.",
+      "keywords": [
+        "golf",
+        "rules",
+        "match-play"
+      ],
+      "source": "https://www.usga.org/content/usga/home-page/rules-hub.html"
+    },
+    {
+      "seedId": "b843093b-028d-5821-9c4a-df1abd304808",
+      "category": "sports",
+      "navigationKeyword1": "golf",
+      "navigationKeyword2": "rules",
+      "question": "What is the term for a water or red/yellow-marked area that carries special relief rules?",
+      "correctAnswer": "Penalty area",
+      "incorrectAnswers": [
+        "Bunker",
+        "Out of bounds",
+        "Practice ground"
+      ],
+      "explanation": "The rules use the term penalty area for certain marked hazards.",
+      "keywords": [
+        "golf",
+        "rules",
+        "penalty-area"
+      ],
+      "source": "https://www.usga.org/content/usga/home-page/rules-hub.html"
+    },
+    {
+      "seedId": "99089f59-4812-5a28-bae3-a672b2bb1f7a",
+      "category": "sports",
+      "navigationKeyword1": "golf",
+      "navigationKeyword2": "rules",
+      "question": "What is the usual score called when a player takes exactly the expected number of strokes on a hole?",
+      "correctAnswer": "Par",
+      "incorrectAnswers": [
+        "Bogey",
+        "Birdie",
+        "Ace"
+      ],
+      "explanation": "Par is the target score set for a hole.",
+      "keywords": [
+        "golf",
+        "rules",
+        "par"
+      ],
+      "source": "https://www.usga.org/content/usga/home-page/rules-hub.html"
+    },
+    {
+      "seedId": "e22f6306-2e85-5d2d-a1e1-d6d25d191118",
+      "category": "sports",
+      "navigationKeyword1": "golf",
+      "navigationKeyword2": "rules",
+      "question": "What sandy area near a green or fairway is designed as a hazard called?",
+      "correctAnswer": "Bunker",
+      "incorrectAnswers": [
+        "Penalty area",
+        "Apron",
+        "Tee box"
+      ],
+      "explanation": "Bunkers are prepared sandy areas with their own rules.",
+      "keywords": [
+        "golf",
+        "rules",
+        "bunker"
+      ],
+      "source": "https://www.usga.org/content/usga/home-page/rules-hub.html"
+    },
+    {
+      "seedId": "be5211d3-eb80-5a12-9c13-a4ce689a4db6",
+      "category": "sports",
+      "navigationKeyword1": "golf",
+      "navigationKeyword2": "rules",
+      "question": "What score is one stroke over par on a hole called?",
+      "correctAnswer": "Bogey",
+      "incorrectAnswers": [
+        "Birdie",
+        "Eagle",
+        "Albatross"
+      ],
+      "explanation": "A bogey is one over par on a hole.",
+      "keywords": [
+        "golf",
+        "rules",
+        "bogey"
+      ],
+      "source": "https://www.usga.org/content/usga/home-page/rules-hub.html"
+    },
+    {
+      "seedId": "26266a1b-bdf5-5070-8319-49366b805f92",
+      "category": "sports",
+      "navigationKeyword1": "golf",
+      "navigationKeyword2": "rules",
+      "question": "What score is one stroke under par on a hole called?",
+      "correctAnswer": "Birdie",
+      "incorrectAnswers": [
+        "Bogey",
+        "Eagle",
+        "Par save"
+      ],
+      "explanation": "A birdie is one under par on a single hole.",
+      "keywords": [
+        "golf",
+        "rules",
+        "birdie"
+      ],
+      "source": "https://www.usga.org/content/usga/home-page/rules-hub.html"
+    },
+    {
+      "seedId": "e4dd8c37-0228-54f6-bc6e-2f50149c355a",
+      "category": "sports",
+      "navigationKeyword1": "golf",
+      "navigationKeyword2": "rules",
+      "question": "What score is two strokes under par on a hole called?",
+      "correctAnswer": "Eagle",
+      "incorrectAnswers": [
+        "Birdie",
+        "Double bogey",
+        "Par"
+      ],
+      "explanation": "An eagle is two under par on a hole.",
+      "keywords": [
+        "golf",
+        "rules",
+        "eagle"
+      ],
+      "source": "https://www.usga.org/content/usga/home-page/rules-hub.html"
+    }
+  ]
+}

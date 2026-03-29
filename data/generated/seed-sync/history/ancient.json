@@ -1,0 +1,1447 @@
+{
+  "schemaVersion": 1,
+  "seedSet": "core-public-items",
+  "deltaPreviewLimit": 200,
+  "items": [
+    {
+      "seedId": "7576164d-595f-4609-991f-a809a20d632b",
+      "category": "history",
+      "navigationKeyword1": "ancient",
+      "navigationKeyword2": "china",
+      "question": "After Qin collapse, which long-lasting imperial house is credited with consolidating bureaucracy, expanding territory, and opening western contacts including envoys like Zhang Qian?",
+      "correctAnswer": "The Han dynasty",
+      "incorrectAnswers": [
+        "The Xia dynasty",
+        "The Sui dynasty",
+        "The Liao dynasty"
+      ],
+      "explanation": "The Han succeeded the Qin and shaped institutions and expansion that defined classical imperial China for centuries.",
+      "keywords": [
+        "ancient-china",
+        "han",
+        "empire"
+      ],
+      "source": "https://www.britannica.com/topic/Han-dynasty"
+    },
+    {
+      "seedId": "635e1d42-6c4f-48ad-b984-e1c48aae5644",
+      "category": "history",
+      "navigationKeyword1": "ancient",
+      "navigationKeyword2": "china",
+      "question": "Archaeologists read royal divination records scratched on ox scapulas and turtle plastron pieces from which Bronze Age dynasty?",
+      "correctAnswer": "The Shang dynasty",
+      "incorrectAnswers": [
+        "The Han dynasty",
+        "The Tang dynasty",
+        "The Ming dynasty"
+      ],
+      "explanation": "Oracle-bone inscriptions are a hallmark of Shang court practice and are among China\u2019s earliest surviving Chinese writing.",
+      "keywords": [
+        "ancient-china",
+        "shang",
+        "writing"
+      ],
+      "source": "https://www.britannica.com/place/Shang-dynasty"
+    },
+    {
+      "seedId": "ddd2d062-1dca-4b56-9673-9e6370147e19",
+      "category": "history",
+      "navigationKeyword1": "ancient",
+      "navigationKeyword2": "china",
+      "question": "Before Qin unification, which era name describes centuries when large Chinese states fought for survival and supremacy?",
+      "correctAnswer": "The Warring States period",
+      "incorrectAnswers": [
+        "The Five Dynasties period",
+        "The Era of Princes (Japan)",
+        "The Time of Troubles (Russia)"
+      ],
+      "explanation": "The Warring States period was the final phase of Eastern Zhou disunity that ended with Qin conquest.",
+      "keywords": [
+        "ancient-china",
+        "zhou",
+        "warfare"
+      ],
+      "source": "https://www.britannica.com/event/Warring-States"
+    },
+    {
+      "seedId": "eec20a0d-bf4e-4864-8095-514462a50f54",
+      "category": "history",
+      "navigationKeyword1": "ancient",
+      "navigationKeyword2": "china",
+      "question": "Before the Warring States free-for-all, which era covers centuries when Zhou kings still held ritual precedence while powerful regional lords fought for hegemony?",
+      "correctAnswer": "The Spring and Autumn period",
+      "incorrectAnswers": [
+        "The Three Kingdoms period",
+        "The Northern and Southern dynasties",
+        "The Five Dynasties period"
+      ],
+      "explanation": "The Spring and Autumn period (Chunqiu) preceded the Warring States and is named after a chronicle tradition associated with Lu.",
+      "keywords": [
+        "ancient-china",
+        "zhou",
+        "chronology"
+      ],
+      "source": "https://www.britannica.com/event/Spring-and-Autumn-Period"
+    },
+    {
+      "seedId": "c98aa8d0-babf-4a00-9b82-36c9f391cbfe",
+      "category": "history",
+      "navigationKeyword1": "ancient",
+      "navigationKeyword2": "china",
+      "question": "Bronze dings and gu vessels used in ancestral rites are characteristic material culture of which pre-imperial and early imperial Chinese world?",
+      "correctAnswer": "Shang and Zhou China",
+      "incorrectAnswers": [
+        "Yuan porcelain workshops",
+        "Ming blue-and-white kilns only",
+        "Qing jade courts only"
+      ],
+      "explanation": "Ritual bronzes are iconic artifacts of Shang and Zhou elite religion and political display.",
+      "keywords": [
+        "ancient-china",
+        "bronze-age",
+        "ritual"
+      ],
+      "source": "https://www.britannica.com/art/Chinese-bronzes/Introduction"
+    },
+    {
+      "seedId": "17ae8076-72a7-4e5c-917b-8bd285cd1470",
+      "category": "history",
+      "navigationKeyword1": "ancient",
+      "navigationKeyword2": "china",
+      "question": "In 221 BCE, which ruler proclaimed himself emperor after defeating rival states and unifying much of the Chinese heartland?",
+      "correctAnswer": "Qin Shi Huang (Ying Zheng)",
+      "incorrectAnswers": [
+        "Liu Bang",
+        "Wu Zhao",
+        "Kublai Khan"
+      ],
+      "explanation": "The king of Qin completed the conquest of rival Warring States and took the title First Emperor (Shihuangdi).",
+      "keywords": [
+        "ancient-china",
+        "qin",
+        "unification"
+      ],
+      "source": "https://www.britannica.com/biography/Shihuangdi"
+    },
+    {
+      "seedId": "10b3fc16-edce-440f-8329-283ff0ea9f5f",
+      "category": "history",
+      "navigationKeyword1": "ancient",
+      "navigationKeyword2": "china",
+      "question": "Near the First Emperor\u2019s tomb outside Xi\u2019an, excavations revealed thousands of life-sized clay soldiers forming which famous burial army?",
+      "correctAnswer": "The Terracotta Army",
+      "incorrectAnswers": [
+        "The Forbidden Guard regiment",
+        "The Ming spirit road statues",
+        "The Tang tomb figurines of Xian"
+      ],
+      "explanation": "The terracotta warriors and horses were buried in pits associated with the tomb complex of China\u2019s first emperor.",
+      "keywords": [
+        "ancient-china",
+        "qin",
+        "archaeology"
+      ],
+      "source": "https://www.britannica.com/topic/terra-cotta-army"
+    },
+    {
+      "seedId": "53ac9a44-80f0-459d-9e8f-699331064ec2",
+      "category": "history",
+      "navigationKeyword1": "ancient",
+      "navigationKeyword2": "china",
+      "question": "Qin ministers often cited which harsh philosophy of laws and state power that contrasted with Confucian moral persuasion?",
+      "correctAnswer": "Legalism",
+      "incorrectAnswers": [
+        "Daoism",
+        "Neo-Confucianism",
+        "Chan Buddhism"
+      ],
+      "explanation": "Legalist thinkers emphasized strict laws, rewards, and punishments to strengthen the ruler\u2019s state.",
+      "keywords": [
+        "ancient-china",
+        "qin",
+        "philosophy"
+      ],
+      "source": "https://www.britannica.com/topic/Legalism"
+    },
+    {
+      "seedId": "7f1e7111-c802-439c-933c-a22780a3ce3e",
+      "category": "history",
+      "navigationKeyword1": "ancient",
+      "navigationKeyword2": "china",
+      "question": "Travelers today walk ramparts in northern China promoted as a unified defensive system largely associated with which dynasty\u2019s consolidation efforts?",
+      "correctAnswer": "The Qin dynasty",
+      "incorrectAnswers": [
+        "The Song dynasty alone",
+        "The Qing dynasty alone",
+        "The Republic of China in 1912"
+      ],
+      "explanation": "Earlier northern walls existed, but the Qin state famously linked and extended fortifications into a more integrated northern barrier.",
+      "keywords": [
+        "ancient-china",
+        "qin",
+        "great-wall"
+      ],
+      "source": "https://www.britannica.com/place/Great-Wall-of-China"
+    },
+    {
+      "seedId": "d0ef67dd-d75d-4902-bfce-9078642cb245",
+      "category": "history",
+      "navigationKeyword1": "ancient",
+      "navigationKeyword2": "china",
+      "question": "Western Han court records praise which explorer\u2019s missions westward for opening diplomatic and trade routes across Central Asia?",
+      "correctAnswer": "Zhang Qian",
+      "incorrectAnswers": [
+        "Xuanzang",
+        "Zheng He",
+        "Marco Polo"
+      ],
+      "explanation": "Zhang Qian\u2019s embassies under Emperor Wudi are traditionally tied to expanding Han contacts toward Ferghana and beyond.",
+      "keywords": [
+        "ancient-china",
+        "han",
+        "silk-road"
+      ],
+      "source": "https://www.britannica.com/biography/Zhang-Qian"
+    },
+    {
+      "seedId": "cc1687e4-23f3-445f-9106-83851c8d49ae",
+      "category": "history",
+      "navigationKeyword1": "ancient",
+      "navigationKeyword2": "china",
+      "question": "Which Spring and Autumn thinker\u2019s teachings on ethics, family roles, and good government later became a core state ideology?",
+      "correctAnswer": "Confucius",
+      "incorrectAnswers": [
+        "Laozi",
+        "Mozi",
+        "Han Feizi"
+      ],
+      "explanation": "Confucius (Kong Fuzi) shaped a moral and political tradition that deeply influenced East Asian governance and education.",
+      "keywords": [
+        "ancient-china",
+        "philosophy",
+        "confucianism"
+      ],
+      "source": "https://www.britannica.com/biography/Confucius"
+    },
+    {
+      "seedId": "f3405e90-dcb9-4e48-b461-b6778a4cf2b4",
+      "category": "history",
+      "navigationKeyword1": "ancient",
+      "navigationKeyword2": "china",
+      "question": "Zhou rulers justified overthrowing the Shang by claiming which idea that Heaven withdrew mandate from unjust kings?",
+      "correctAnswer": "The Mandate of Heaven",
+      "incorrectAnswers": [
+        "The Iron Law of Oligarchy",
+        "The divine right of kings (European formula)",
+        "The Pax Sinica"
+      ],
+      "explanation": "The Mandate of Heaven explained dynastic change as moral approval or withdrawal of Heaven\u2019s support.",
+      "keywords": [
+        "ancient-china",
+        "zhou",
+        "political-thought"
+      ],
+      "source": "https://www.britannica.com/topic/tianming"
+    },
+    {
+      "seedId": "19013ab8-fc10-441a-b2dd-6ba8ed23d6a1",
+      "category": "history",
+      "navigationKeyword1": "ancient",
+      "navigationKeyword2": "egypt",
+      "question": "A French officer finds a inscribed slab at Rosetta in 1799: scholars later used its parallel Greek text to unlock which Egyptian writing system?",
+      "correctAnswer": "Hieroglyphs",
+      "incorrectAnswers": [
+        "Cuneiform",
+        "Linear B",
+        "Phoenician script"
+      ],
+      "explanation": "The Rosetta Stone carried the same decree in Greek, demotic Egyptian, and hieroglyphic Egyptian, enabling decipherment of hieroglyphs.",
+      "keywords": [
+        "ancient-egypt",
+        "hieroglyphs",
+        "rosetta-stone"
+      ],
+      "source": "https://www.britannica.com/topic/Rosetta-Stone"
+    },
+    {
+      "seedId": "2cb0a1b4-6650-4a2f-9b71-b80c25a7833a",
+      "category": "history",
+      "navigationKeyword1": "ancient",
+      "navigationKeyword2": "egypt",
+      "question": "A visitor sailing upriver from the Mediterranean toward Nubia moves into the region Egyptians called what?",
+      "correctAnswer": "Upper Egypt",
+      "incorrectAnswers": [
+        "Lower Egypt",
+        "Middle Egypt",
+        "The Eastern Desert"
+      ],
+      "explanation": "Because the Nile flows north, Upper Egypt is the southern upriver zone and Lower Egypt is the northern delta area.",
+      "keywords": [
+        "ancient-egypt",
+        "nile",
+        "geography"
+      ],
+      "source": "https://www.britannica.com/place/ancient-Egypt"
+    },
+    {
+      "seedId": "cd7b5a2a-cfe3-4a0d-af28-94c732f3d68e",
+      "category": "history",
+      "navigationKeyword1": "ancient",
+      "navigationKeyword2": "egypt",
+      "question": "At Giza, the largest pyramid of the classic Old Kingdom complex is most closely associated with which ruler?",
+      "correctAnswer": "Khufu",
+      "incorrectAnswers": [
+        "Ramesses II",
+        "Akhenaten",
+        "Thutmose III"
+      ],
+      "explanation": "The Great Pyramid of Giza is traditionally credited to the 4th-dynasty pharaoh Khufu (Cheops).",
+      "keywords": [
+        "ancient-egypt",
+        "pyramids",
+        "old-kingdom"
+      ],
+      "source": "https://www.britannica.com/biography/Khufu"
+    },
+    {
+      "seedId": "ab7dd61a-8451-49f8-abae-7def019339a0",
+      "category": "history",
+      "navigationKeyword1": "ancient",
+      "navigationKeyword2": "egypt",
+      "question": "Cleopatra VII, who dealt with Rome\u2019s late republic and early principate, belonged to which dynasty founded after Alexander\u2019s conquests?",
+      "correctAnswer": "Ptolemaic dynasty",
+      "incorrectAnswers": [
+        "18th dynasty",
+        "Saitic dynasty",
+        "Hyksos rulers"
+      ],
+      "explanation": "The Ptolemies were a Macedonian Greek dynasty that ruled Egypt from the death of Alexander until Rome\u2019s annexation.",
+      "keywords": [
+        "ancient-egypt",
+        "ptolemaic",
+        "hellenistic"
+      ],
+      "source": "https://www.britannica.com/biography/Cleopatra-queen-of-Egypt"
+    },
+    {
+      "seedId": "7c1714bd-1549-4b86-b3e8-f44b2c49e3e3",
+      "category": "history",
+      "navigationKeyword1": "ancient",
+      "navigationKeyword2": "egypt",
+      "question": "During much of the Old Kingdom, which city near the apex of the Nile Delta served as a political and ritual center linked to pyramid-building kings?",
+      "correctAnswer": "Memphis",
+      "incorrectAnswers": [
+        "Alexandria",
+        "Thebes",
+        "Avaris"
+      ],
+      "explanation": "Memphis, near modern Mit Rahina, was a major capital and administrative center especially associated with the Old Kingdom.",
+      "keywords": [
+        "ancient-egypt",
+        "old-kingdom",
+        "capitals"
+      ],
+      "source": "https://www.britannica.com/place/Memphis-ancient-city-Egypt"
+    },
+    {
+      "seedId": "9b4e86a2-4ed7-4c3f-99b6-2115bb1f113d",
+      "category": "history",
+      "navigationKeyword1": "ancient",
+      "navigationKeyword2": "egypt",
+      "question": "Howard Carter\u2019s 1922 discovery drew worldwide attention to which burial valley on the west bank at Thebes?",
+      "correctAnswer": "Valley of the Kings",
+      "incorrectAnswers": [
+        "Valley of the Queens",
+        "Siwa Oasis",
+        "Wadi Hammamat"
+      ],
+      "explanation": "Tutankhamun\u2019s largely intact tomb was found in the Valley of the Kings, a New Kingdom royal cemetery.",
+      "keywords": [
+        "ancient-egypt",
+        "new-kingdom",
+        "tombs"
+      ],
+      "source": "https://www.britannica.com/place/Valley-of-the-Kings"
+    },
+    {
+      "seedId": "5fb0862d-2ada-4840-8574-37fa2dea310f",
+      "category": "history",
+      "navigationKeyword1": "ancient",
+      "navigationKeyword2": "egypt",
+      "question": "Official letters, accounts, and everyday records in later periods were often written in which cursive Egyptian script rather than carved hieroglyphs?",
+      "correctAnswer": "Demotic",
+      "incorrectAnswers": [
+        "Latin cursive",
+        "Aramaic",
+        "Greek uncial"
+      ],
+      "explanation": "Demotic was a cursive form of Egyptian used widely for handwriting and administration, alongside hieroglyphs for monumental texts.",
+      "keywords": [
+        "ancient-egypt",
+        "writing",
+        "demotic"
+      ],
+      "source": "https://www.britannica.com/topic/demotic-script"
+    },
+    {
+      "seedId": "72e74a00-9406-4b87-9bb7-0c27aa397084",
+      "category": "history",
+      "navigationKeyword1": "ancient",
+      "navigationKeyword2": "egypt",
+      "question": "Scribes in temple workshops pressed reed pens onto which plant-based sheets that gave the English language its word for a book-like scroll?",
+      "correctAnswer": "Papyrus",
+      "incorrectAnswers": [
+        "Silk",
+        "Bamboo slips",
+        "Parchment"
+      ],
+      "explanation": "Papyrus, made from the pith of the papyrus plant, was Egypt\u2019s characteristic writing support for millennia.",
+      "keywords": [
+        "ancient-egypt",
+        "writing",
+        "papyrus"
+      ],
+      "source": "https://www.britannica.com/topic/papyrus-writing-material"
+    },
+    {
+      "seedId": "da259e63-9029-4de6-ba71-779961fd1cbe",
+      "category": "history",
+      "navigationKeyword1": "ancient",
+      "navigationKeyword2": "egypt",
+      "question": "Standing by the Giza plateau beside the pyramids, you are next to a colossal statue with a lion\u2019s body and a human head known as what?",
+      "correctAnswer": "The Great Sphinx",
+      "incorrectAnswers": [
+        "The Colossi of Memnon",
+        "The Serapeum bull",
+        "The seated scribe"
+      ],
+      "explanation": "The Great Sphinx of Giza is a limestone monument with a lion\u2019s body and, traditionally, a king\u2019s face near the pyramid complex.",
+      "keywords": [
+        "ancient-egypt",
+        "giza",
+        "monuments"
+      ],
+      "source": "https://www.britannica.com/topic/Great-Sphinx"
+    },
+    {
+      "seedId": "40cd88af-6809-4820-9118-c9e8d74c1ab8",
+      "category": "history",
+      "navigationKeyword1": "ancient",
+      "navigationKeyword2": "egypt",
+      "question": "Which Egyptian funerary tradition compiled spells and illustrations on papyrus to guide the deceased through judgment and the afterlife?",
+      "correctAnswer": "The Book of the Dead",
+      "incorrectAnswers": [
+        "The Epic of Gilgamesh",
+        "The Iliad",
+        "The Mahabharata"
+      ],
+      "explanation": "The Book of the Dead is a well-known modern name for New Kingdom collections of spells illustrated on papyri for the deceased.",
+      "keywords": [
+        "ancient-egypt",
+        "religion",
+        "afterlife"
+      ],
+      "source": "https://www.britannica.com/topic/Book-of-the-Dead-ancient-Egyptian-text"
+    },
+    {
+      "seedId": "f177f7a1-396c-4f00-871f-1625e6021c48",
+      "category": "history",
+      "navigationKeyword1": "ancient",
+      "navigationKeyword2": "egypt",
+      "question": "Which female pharaoh of the 18th dynasty is famous for a terraced mortuary temple at Deir el-Bahri?",
+      "correctAnswer": "Hatshepsut",
+      "incorrectAnswers": [
+        "Nefertiti",
+        "Cleopatra VII",
+        "Tiye"
+      ],
+      "explanation": "Hatshepsut ruled as pharaoh and commissioned a major temple complex at Deir el-Bahri.",
+      "keywords": [
+        "ancient-egypt",
+        "new-kingdom",
+        "pharaohs"
+      ],
+      "source": "https://www.britannica.com/biography/Hatshepsut"
+    },
+    {
+      "seedId": "d675d3d2-0b83-48f0-bb2a-2e9609b4026b",
+      "category": "history",
+      "navigationKeyword1": "ancient",
+      "navigationKeyword2": "egypt",
+      "question": "You are farming wheat along the Nile before modern dams: which river\u2019s annual floodplain made that intensive agriculture possible?",
+      "correctAnswer": "The Nile",
+      "incorrectAnswers": [
+        "The Tigris",
+        "The Indus",
+        "The Danube"
+      ],
+      "explanation": "Ancient Egyptian agriculture depended on the Nile\u2019s predictable flooding and the fertile silt it deposited.",
+      "keywords": [
+        "ancient-egypt",
+        "nile",
+        "agriculture"
+      ],
+      "source": "https://www.britannica.com/place/ancient-Egypt"
+    },
+    {
+      "seedId": "93254c87-b3db-4ee6-9733-466c4be099a7",
+      "category": "history",
+      "navigationKeyword1": "ancient",
+      "navigationKeyword2": "greece",
+      "question": "After the Persian Wars, Athens organized allies around Delos for mutual defense in which alliance that later became an Athenian empire?",
+      "correctAnswer": "The Delian League",
+      "incorrectAnswers": [
+        "The Achaean League",
+        "The Latin League",
+        "The Hanseatic League"
+      ],
+      "explanation": "The Delian League began as a coalition against Persia but increasingly reflected Athenian hegemony.",
+      "keywords": [
+        "ancient-greece",
+        "athens",
+        "empire"
+      ],
+      "source": "https://www.britannica.com/topic/Delian-League"
+    },
+    {
+      "seedId": "ee17ca18-2e0a-4d6e-ae9f-e115e040276f",
+      "category": "history",
+      "navigationKeyword1": "ancient",
+      "navigationKeyword2": "greece",
+      "question": "Citizens gathering on the Pnyx to debate war and tribute are taking part in which city\u2019s classical democratic assembly?",
+      "correctAnswer": "Athens",
+      "incorrectAnswers": [
+        "Sparta",
+        "Corinth",
+        "Thebes"
+      ],
+      "explanation": "Classical Athenian democracy centered on institutions like the Assembly (Ecclesia), where citizens voted on major policy.",
+      "keywords": [
+        "ancient-greece",
+        "athens",
+        "democracy"
+      ],
+      "source": "https://www.britannica.com/topic/Athenian-democracy"
+    },
+    {
+      "seedId": "8a4ac746-5d72-4407-a074-5e28805ae5ab",
+      "category": "history",
+      "navigationKeyword1": "ancient",
+      "navigationKeyword2": "greece",
+      "question": "Every four years, panhellenic athletic festivals honoring Zeus drew competitors to which sanctuary in Elis?",
+      "correctAnswer": "Olympia",
+      "incorrectAnswers": [
+        "Delphi",
+        "Nemea",
+        "Corinth"
+      ],
+      "explanation": "The ancient Olympic Games were held at Olympia in honor of Zeus.",
+      "keywords": [
+        "ancient-greece",
+        "olympia",
+        "religion"
+      ],
+      "source": "https://www.britannica.com/sports/ancient-Olympic-Games"
+    },
+    {
+      "seedId": "255f37db-4367-44d3-84eb-ed425a05eeeb",
+      "category": "history",
+      "navigationKeyword1": "ancient",
+      "navigationKeyword2": "greece",
+      "question": "Heavy infantry fighting shoulder-to-shoulder behind overlapping shields in a rectangular formation typifies which Greek soldier type?",
+      "correctAnswer": "Hoplite",
+      "incorrectAnswers": [
+        "Peltast",
+        "Cataphract",
+        "Velite"
+      ],
+      "explanation": "Hoplites were citizen-soldiers who fought in the phalanx with spear, shield, and bronze armor.",
+      "keywords": [
+        "ancient-greece",
+        "warfare",
+        "hoplites"
+      ],
+      "source": "https://www.britannica.com/topic/hoplite"
+    },
+    {
+      "seedId": "048a4e7a-19f8-4836-adef-3145ea34adb8",
+      "category": "history",
+      "navigationKeyword1": "ancient",
+      "navigationKeyword2": "greece",
+      "question": "In 399 BCE, which philosopher was tried and executed in Athens on charges including corrupting the youth?",
+      "correctAnswer": "Socrates",
+      "incorrectAnswers": [
+        "Epicurus",
+        "Zeno of Citium",
+        "Diogenes of Sinope"
+      ],
+      "explanation": "Socrates was condemned by an Athenian jury and died by drinking hemlock.",
+      "keywords": [
+        "ancient-greece",
+        "athens",
+        "philosophy"
+      ],
+      "source": "https://www.britannica.com/biography/Socrates"
+    },
+    {
+      "seedId": "f39c5658-b7f9-44cf-b8ae-507183cad96a",
+      "category": "history",
+      "navigationKeyword1": "ancient",
+      "navigationKeyword2": "greece",
+      "question": "In 480 BCE, a small Greek force led by Leonidas briefly held a narrow pass against Xerxes\u2019 army at which site in northern Greece?",
+      "correctAnswer": "Thermopylae",
+      "incorrectAnswers": [
+        "Marathon",
+        "Chaeronea",
+        "Actium"
+      ],
+      "explanation": "The Battle of Thermopylae is the famous holding action in the pass leading from Thessaly into central Greece.",
+      "keywords": [
+        "ancient-greece",
+        "persian-wars",
+        "sparta"
+      ],
+      "source": "https://www.britannica.com/event/Battle-of-Thermopylae-Greek-history"
+    },
+    {
+      "seedId": "e50b8ea8-df3a-4f18-8bac-ce4258fa1205",
+      "category": "history",
+      "navigationKeyword1": "ancient",
+      "navigationKeyword2": "greece",
+      "question": "In 490 BCE, Athenian and Plataean hoplites repelled a Persian landing in northeast Attica at which battle?",
+      "correctAnswer": "Marathon",
+      "incorrectAnswers": [
+        "Salamis",
+        "Plataea",
+        "Issus"
+      ],
+      "explanation": "The Battle of Marathon is the famous early Persian Wars clash on the Attic plain near Marathon.",
+      "keywords": [
+        "ancient-greece",
+        "persian-wars",
+        "hoplites"
+      ],
+      "source": "https://www.britannica.com/event/Battle-of-Marathon"
+    },
+    {
+      "seedId": "8984fb18-ef4a-4b44-b9d5-972e94ae2b16",
+      "category": "history",
+      "navigationKeyword1": "ancient",
+      "navigationKeyword2": "greece",
+      "question": "Students still read the Iliad and the Odyssey, epic poems traditionally ascribed to which archaic poet?",
+      "correctAnswer": "Homer",
+      "incorrectAnswers": [
+        "Hesiod",
+        "Sappho",
+        "Pindar"
+      ],
+      "explanation": "Ancient tradition attributes the Iliad and Odyssey to Homer, a foundational figure of Greek literature.",
+      "keywords": [
+        "ancient-greece",
+        "literature",
+        "epic"
+      ],
+      "source": "https://www.britannica.com/biography/Homer-Greek-poet"
+    },
+    {
+      "seedId": "df9f3262-c621-4ae1-ac13-989a811fc7e0",
+      "category": "history",
+      "navigationKeyword1": "ancient",
+      "navigationKeyword2": "greece",
+      "question": "Which follower of Socrates founded the Academy in Athens and wrote dialogues featuring his teacher?",
+      "correctAnswer": "Plato",
+      "incorrectAnswers": [
+        "Aristotle",
+        "Democritus",
+        "Protagoras"
+      ],
+      "explanation": "Plato founded the Academy and preserved Socrates\u2019 memory in philosophical dialogues.",
+      "keywords": [
+        "ancient-greece",
+        "philosophy",
+        "athens"
+      ],
+      "source": "https://www.britannica.com/biography/Plato"
+    },
+    {
+      "seedId": "caaf133f-9879-4fc2-9813-227224704454",
+      "category": "history",
+      "navigationKeyword1": "ancient",
+      "navigationKeyword2": "greece",
+      "question": "Which kingdom north of Greece, ruled by Philip II and then his son, ended classical Greek independence and spread Greek culture across Persia\u2019s former empire?",
+      "correctAnswer": "Macedon",
+      "incorrectAnswers": [
+        "Epirus",
+        "Thrace",
+        "Bithynia"
+      ],
+      "explanation": "Macedon under Philip II and Alexander the Great conquered Greece\u2019s poleis and built a vast Hellenistic empire.",
+      "keywords": [
+        "ancient-greece",
+        "macedon",
+        "alexander"
+      ],
+      "source": "https://www.britannica.com/biography/Alexander-the-Great"
+    },
+    {
+      "seedId": "6a87ebe2-9080-4ec8-af50-b909b9c68be4",
+      "category": "history",
+      "navigationKeyword1": "ancient",
+      "navigationKeyword2": "greece",
+      "question": "Which limestone temple dominates the Athenian Acropolis and was built in the Periclean era as a shrine to Athena?",
+      "correctAnswer": "The Parthenon",
+      "incorrectAnswers": [
+        "The Pantheon",
+        "The Temple of Jupiter Optimus",
+        "The Mausoleum at Halicarnassus"
+      ],
+      "explanation": "The Parthenon on the Acropolis is Athens\u2019 iconic temple to Athena Parthenos.",
+      "keywords": [
+        "ancient-greece",
+        "athens",
+        "architecture"
+      ],
+      "source": "https://www.britannica.com/topic/Parthenon"
+    },
+    {
+      "seedId": "619fbd6f-9911-4c55-9f9b-9c00abc805d2",
+      "category": "history",
+      "navigationKeyword1": "ancient",
+      "navigationKeyword2": "greece",
+      "question": "Which long conflict pitted Athens and its empire against Sparta and the Peloponnesian League in the 5th century BCE?",
+      "correctAnswer": "The Peloponnesian War",
+      "incorrectAnswers": [
+        "The Punic Wars",
+        "The Social War (Rome)",
+        "The Gallic Wars"
+      ],
+      "explanation": "Thucydides\u2019 subject is the Peloponnesian War, the great struggle between Athens and Sparta.",
+      "keywords": [
+        "ancient-greece",
+        "athens",
+        "sparta"
+      ],
+      "source": "https://www.britannica.com/event/Peloponnesian-War"
+    },
+    {
+      "seedId": "c6d7dbee-7f1a-455c-bbeb-233ab453f39e",
+      "category": "history",
+      "navigationKeyword1": "ancient",
+      "navigationKeyword2": "india",
+      "question": "A guidebook lists the Indus civilization\u2019s two largest urban centers, first identified at digs in Punjab and Sindh in the 1920s. Which pair fits?",
+      "correctAnswer": "Harappa and Mohenjo-daro",
+      "incorrectAnswers": [
+        "Pataliputra and Taxila",
+        "Varanasi and Madurai",
+        "Lothal and Dholavira only"
+      ],
+      "explanation": "Harappa and Mohenjo-daro are the two largest known cities of the Indus civilization.",
+      "keywords": [
+        "ancient-india",
+        "indus-valley",
+        "urbanism"
+      ],
+      "source": "https://www.britannica.com/topic/Indus-civilization"
+    },
+    {
+      "seedId": "5d4f83ec-aaa5-4297-97d0-aed26ce5944a",
+      "category": "history",
+      "navigationKeyword1": "ancient",
+      "navigationKeyword2": "india",
+      "question": "After Alexander\u2019s death, which adventurer from Magadha overthrew the Nandas and began a dynasty centered at Pataliputra?",
+      "correctAnswer": "Chandragupta (Maurya)",
+      "incorrectAnswers": [
+        "Kanishka",
+        "Harsha",
+        "Rajendra Chola I"
+      ],
+      "explanation": "Chandragupta Maurya founded the Mauryan dynasty and unified much of northern India under one rule.",
+      "keywords": [
+        "ancient-india",
+        "maurya",
+        "magadha"
+      ],
+      "source": "https://www.britannica.com/biography/Chandragupta"
+    },
+    {
+      "seedId": "a95b6003-f989-4c34-954e-b51a8f08d88a",
+      "category": "history",
+      "navigationKeyword1": "ancient",
+      "navigationKeyword2": "india",
+      "question": "Excavators at Mohenjo-daro highlight a watertight tank with steps, usually called what, as evidence of large-scale civic planning?",
+      "correctAnswer": "The Great Bath",
+      "incorrectAnswers": [
+        "The Grand Reservoir of Taxila",
+        "The Ganges ritual tank at Varanasi",
+        "Ashoka\u2019s bathing pavilion"
+      ],
+      "explanation": "Mohenjo-daro\u2019s Great Bath is a famous public structure within the Indus city\u2019s raised citadel area.",
+      "keywords": [
+        "ancient-india",
+        "indus-valley",
+        "architecture"
+      ],
+      "source": "https://www.britannica.com/place/Mohenjo-daro"
+    },
+    {
+      "seedId": "48c964ba-e517-4f16-8c65-f70ab633f06b",
+      "category": "history",
+      "navigationKeyword1": "ancient",
+      "navigationKeyword2": "india",
+      "question": "From the early 4th to late 6th century CE, which northern Indian house presided over an empire often linked to Sanskrit literature and Gupta-era art?",
+      "correctAnswer": "The Gupta dynasty",
+      "incorrectAnswers": [
+        "The Maurya dynasty",
+        "The Mughal dynasty",
+        "The Pallava dynasty"
+      ],
+      "explanation": "The Guptas ruled much of northern India and are traditionally associated with a flourishing of classical Sanskrit culture.",
+      "keywords": [
+        "ancient-india",
+        "gupta",
+        "classical"
+      ],
+      "source": "https://www.britannica.com/topic/Gupta-dynasty"
+    },
+    {
+      "seedId": "4b318f93-74a0-41cf-9033-66cb9739e896",
+      "category": "history",
+      "navigationKeyword1": "ancient",
+      "navigationKeyword2": "india",
+      "question": "How did Ashoka most widely publish laws and moral teachings so officials and travelers could read them across his empire?",
+      "correctAnswer": "The rock and pillar edicts",
+      "incorrectAnswers": [
+        "The Lumbini birth records only",
+        "The Allahabad prashasti of Samudra Gupta",
+        "The Girnar Rudradaman inscription alone"
+      ],
+      "explanation": "Ashoka broadcast policy and teachings through rock edicts and pillar edicts across his realm.",
+      "keywords": [
+        "ancient-india",
+        "maurya",
+        "inscriptions"
+      ],
+      "source": "https://www.britannica.com/topic/rock-edicts"
+    },
+    {
+      "seedId": "7b77568e-f5b3-4b69-ba04-99bbfb94116c",
+      "category": "history",
+      "navigationKeyword1": "ancient",
+      "navigationKeyword2": "india",
+      "question": "In 326 BCE, Macedonian troops crossed the monsoon-swollen Hydaspes (Jhelum) to fight which Indian king\u2019s war elephants?",
+      "correctAnswer": "Porus (Paurava)",
+      "incorrectAnswers": [
+        "Chandragupta Maurya",
+        "Ashoka",
+        "Samudra Gupta"
+      ],
+      "explanation": "The Battle of the Hydaspes pitted Alexander the Great against King Porus along the Jhelum River.",
+      "keywords": [
+        "ancient-india",
+        "alexander",
+        "punjab"
+      ],
+      "source": "https://www.britannica.com/event/Battle-of-the-Hydaspes"
+    },
+    {
+      "seedId": "73e37460-a056-4cc2-855a-08385f068c78",
+      "category": "history",
+      "navigationKeyword1": "ancient",
+      "navigationKeyword2": "india",
+      "question": "In the Ganges basin around the 6th\u20135th centuries BCE, which teacher\u2019s followers spread a new monastic path centered on the Four Noble Truths?",
+      "correctAnswer": "The Buddha (Siddhartha Gautama)",
+      "incorrectAnswers": [
+        "Mahavira",
+        "Adi Shankara",
+        "Basava"
+      ],
+      "explanation": "The historical Buddha taught the dharma that became Buddhism, emerging alongside other \u015brama\u1e47a movements in northern India.",
+      "keywords": [
+        "ancient-india",
+        "buddhism",
+        "magadha"
+      ],
+      "source": "https://www.britannica.com/biography/Buddha-founder-of-Buddhism"
+    },
+    {
+      "seedId": "3014d339-8704-4d43-a9e3-370321646b22",
+      "category": "history",
+      "navigationKeyword1": "ancient",
+      "navigationKeyword2": "india",
+      "question": "Mauryan ministers studied statecraft in a Sanskrit treatise on taxation, spies, and war traditionally linked to Chanakya (Kautilya) called what?",
+      "correctAnswer": "The Arthashastra",
+      "incorrectAnswers": [
+        "The Manusmriti",
+        "The Ramayana",
+        "The Mahabharata"
+      ],
+      "explanation": "The Arthashastra is the celebrated Indian manual of politics and political economy attributed to Kautilya.",
+      "keywords": [
+        "ancient-india",
+        "maurya",
+        "governance"
+      ],
+      "source": "https://www.britannica.com/topic/Artha-shastra"
+    },
+    {
+      "seedId": "ac8984ce-2ec2-4f8a-95a6-ab6d02990747",
+      "category": "history",
+      "navigationKeyword1": "ancient",
+      "navigationKeyword2": "india",
+      "question": "Pilgrims circumambulate a hemispherical monument housing relics that became the characteristic commemorative form of early Indian Buddhism\u2014what is it called?",
+      "correctAnswer": "A stupa",
+      "incorrectAnswers": [
+        "A ziggurat",
+        "A Roman triumphal arch",
+        "A Greek tholos"
+      ],
+      "explanation": "Stupas originated in India as earthen mounds enshrining relics of the Buddha and other revered figures.",
+      "keywords": [
+        "ancient-india",
+        "buddhism",
+        "architecture"
+      ],
+      "source": "https://www.britannica.com/topic/stupa"
+    },
+    {
+      "seedId": "adc64a40-6728-4b62-84c1-a8cc3c702688",
+      "category": "history",
+      "navigationKeyword1": "ancient",
+      "navigationKeyword2": "india",
+      "question": "Priests memorizing hymns for fire sacrifices drew on which corpus of texts that gives the Vedic religion its name?",
+      "correctAnswer": "The Vedas",
+      "incorrectAnswers": [
+        "The Tripitaka",
+        "The Quran",
+        "The Avesta"
+      ],
+      "explanation": "Vedic religion is named for the Vedas, hymns and ritual formulas composed in archaic Sanskrit and transmitted orally.",
+      "keywords": [
+        "ancient-india",
+        "vedic-period",
+        "religion"
+      ],
+      "source": "https://www.britannica.com/topic/Vedic-religion"
+    },
+    {
+      "seedId": "5a05dad3-1850-4d55-927e-d42f2f0e2c61",
+      "category": "history",
+      "navigationKeyword1": "ancient",
+      "navigationKeyword2": "india",
+      "question": "Remorse after the bloody conquest of Kalinga led which Mauryan ruler to promote dharma and sponsor Buddhist missions?",
+      "correctAnswer": "Ashoka",
+      "incorrectAnswers": [
+        "Bindusara",
+        "Pushyamitra Shunga",
+        "Kanishka"
+      ],
+      "explanation": "Ashoka\u2019s inscriptions state that suffering in the Kalinga war moved him to renounce further aggressive conquest and embrace Buddhist ethics.",
+      "keywords": [
+        "ancient-india",
+        "maurya",
+        "buddhism"
+      ],
+      "source": "https://www.britannica.com/biography/Ashoka"
+    },
+    {
+      "seedId": "3076a108-cb14-4340-b973-5e05e8e116bd",
+      "category": "history",
+      "navigationKeyword1": "ancient",
+      "navigationKeyword2": "india",
+      "question": "Which empire lasting roughly 321\u2013185 BCE is described as the first to bring most of the Indian subcontinent under a single administration?",
+      "correctAnswer": "The Mauryan Empire",
+      "incorrectAnswers": [
+        "The Gupta Empire",
+        "The Kushan Empire",
+        "The Chola Empire"
+      ],
+      "explanation": "The Mauryan state, expanding from the Ganges heartland, was ancient India\u2019s first empire of subcontinental scale.",
+      "keywords": [
+        "ancient-india",
+        "maurya",
+        "empire"
+      ],
+      "source": "https://www.britannica.com/place/Mauryan-Empire"
+    },
+    {
+      "seedId": "8132d047-98c1-4d64-b1b5-d9de7fc7005d",
+      "category": "history",
+      "navigationKeyword1": "ancient",
+      "navigationKeyword2": "mesopotamia",
+      "question": "A basalt stele from Susa preserves laws in Akkadian forming a major law collection named after which Babylonian king?",
+      "correctAnswer": "Hammurabi",
+      "incorrectAnswers": [
+        "Sargon of Akkad",
+        "Ashurbanipal",
+        "Cyrus the Great"
+      ],
+      "explanation": "The Code of Hammurabi is the well-known law collection inscribed on a monumental stele.",
+      "keywords": [
+        "mesopotamia",
+        "babylon",
+        "law"
+      ],
+      "source": "https://www.britannica.com/topic/Code-of-Hammurabi"
+    },
+    {
+      "seedId": "61b8baf8-1b0e-4c95-9c95-a533fe08881d",
+      "category": "history",
+      "navigationKeyword1": "ancient",
+      "navigationKeyword2": "mesopotamia",
+      "question": "A merchant sailing down the Euphrates toward the Persian Gulf could reach which ancient seaport that traded with Dilmun and the Gulf?",
+      "correctAnswer": "Ur",
+      "incorrectAnswers": [
+        "Miletus",
+        "Tyre",
+        "Massalia"
+      ],
+      "explanation": "Ur lay near the Euphrates\u2019 former course toward the Gulf and was a major Sumerian center of trade and cult.",
+      "keywords": [
+        "mesopotamia",
+        "sumer",
+        "trade"
+      ],
+      "source": "https://www.britannica.com/place/Ur-ancient-city-Iraq"
+    },
+    {
+      "seedId": "ccc50cfb-b328-427c-8725-628af94fd79f",
+      "category": "history",
+      "navigationKeyword1": "ancient",
+      "navigationKeyword2": "mesopotamia",
+      "question": "Clay tablets from Nineveh preserve a long Akkadian poem about a king of Uruk and his friend Enkidu. What is that poem called today?",
+      "correctAnswer": "The Epic of Gilgamesh",
+      "incorrectAnswers": [
+        "The Iliad",
+        "The Aeneid",
+        "The Ramayana"
+      ],
+      "explanation": "The Epic of Gilgamesh is Mesopotamia\u2019s most famous literary work, known from multiple versions on cuneiform tablets.",
+      "keywords": [
+        "mesopotamia",
+        "literature",
+        "sumer"
+      ],
+      "source": "https://www.britannica.com/topic/Epic-of-Gilgamesh"
+    },
+    {
+      "seedId": "94592001-f102-4f41-9bf7-8ae01eaad6b0",
+      "category": "history",
+      "navigationKeyword1": "ancient",
+      "navigationKeyword2": "mesopotamia",
+      "question": "Farmers between the Tigris and Euphrates relied on river-fed irrigation in which historical region whose Greek name means \u201cbetween rivers\u201d?",
+      "correctAnswer": "Mesopotamia",
+      "incorrectAnswers": [
+        "Nubia",
+        "the Deccan",
+        "the Po Valley"
+      ],
+      "explanation": "Mesopotamia is the alluvial heartland of Iraq and adjacent areas watered chiefly by the Tigris and Euphrates.",
+      "keywords": [
+        "mesopotamia",
+        "rivers",
+        "agriculture"
+      ],
+      "source": "https://www.britannica.com/place/Mesopotamia-historical-region-Asia"
+    },
+    {
+      "seedId": "b2c02746-1fa9-4407-b471-4f7f6a4c0903",
+      "category": "history",
+      "navigationKeyword1": "ancient",
+      "navigationKeyword2": "mesopotamia",
+      "question": "Priests in Uruk track barley loans on clay: this everyday record-keeping helped push which region to the world\u2019s earliest known writing systems?",
+      "correctAnswer": "Southern Mesopotamia (Sumer)",
+      "incorrectAnswers": [
+        "The Yellow River valley in the Shang era only",
+        "Mycenaean Greece",
+        "The Indus Valley alone"
+      ],
+      "explanation": "Administrative needs in Sumer\u2019s temple economies are tied to the emergence of proto-writing and cuneiform.",
+      "keywords": [
+        "mesopotamia",
+        "sumer",
+        "writing"
+      ],
+      "source": "https://www.britannica.com/place/Sumer"
+    },
+    {
+      "seedId": "e5f9735d-b662-478d-a3c0-ce3cd160dc6a",
+      "category": "history",
+      "navigationKeyword1": "ancient",
+      "navigationKeyword2": "mesopotamia",
+      "question": "Royal lion hunts carved in stone palace reliefs typify which Mesopotamian empire centered on cities such as Nineveh and Assur?",
+      "correctAnswer": "The Assyrian Empire",
+      "incorrectAnswers": [
+        "The Maurya Empire",
+        "The Han Empire",
+        "The Minoan thalassocracy"
+      ],
+      "explanation": "Assyrian kings celebrated power through palace art and campaigns across the Near East.",
+      "keywords": [
+        "mesopotamia",
+        "assyria",
+        "empire"
+      ],
+      "source": "https://www.britannica.com/place/Assyria"
+    },
+    {
+      "seedId": "e9cdc65e-a85d-431b-86c9-967f52042a6e",
+      "category": "history",
+      "navigationKeyword1": "ancient",
+      "navigationKeyword2": "mesopotamia",
+      "question": "Which Neo-Babylonian king rebuilt Babylon on a grand scale and is associated in biblical tradition with the Judahite exile?",
+      "correctAnswer": "Nebuchadnezzar II",
+      "incorrectAnswers": [
+        "Nabopolassar",
+        "Cyrus the Great",
+        "Darius I"
+      ],
+      "explanation": "Nebuchadnezzar II presided over Babylon\u2019s monumental rebuilding and its dominance in the Levant.",
+      "keywords": [
+        "mesopotamia",
+        "babylon",
+        "neo-babylonian"
+      ],
+      "source": "https://www.britannica.com/biography/Nebuchadrezzar-II"
+    },
+    {
+      "seedId": "fc3b423a-f6d2-4ce4-bde2-a7d8f8c21af4",
+      "category": "history",
+      "navigationKeyword1": "ancient",
+      "navigationKeyword2": "mesopotamia",
+      "question": "Which conqueror from Akkad is remembered for forging one of the world\u2019s first large territorial empires in the late third millennium BCE?",
+      "correctAnswer": "Sargon of Akkad",
+      "incorrectAnswers": [
+        "Hammurabi",
+        "Nebuchadnezzar II",
+        "Xerxes I"
+      ],
+      "explanation": "Sargon of Akkad united city-states under a new imperial center and left a lasting legend in Mesopotamian memory.",
+      "keywords": [
+        "mesopotamia",
+        "empire",
+        "akkad"
+      ],
+      "source": "https://www.britannica.com/biography/Sargon-of-Akkad"
+    },
+    {
+      "seedId": "11defcdb-7b6c-4524-a8c4-9e3041e39d2a",
+      "category": "history",
+      "navigationKeyword1": "ancient",
+      "navigationKeyword2": "mesopotamia",
+      "question": "Which great library of clay tablets, assembled for an Assyrian king at Nineveh, preserved thousands of cuneiform texts including omens and literature?",
+      "correctAnswer": "Ashurbanipal\u2019s library",
+      "incorrectAnswers": [
+        "The Library of Alexandria",
+        "The Villa of the Papyri",
+        "The House of Wisdom (Baghdad)"
+      ],
+      "explanation": "Ashurbanipal\u2019s royal library at Nineveh is a key archaeological source for Mesopotamian literature and scholarship.",
+      "keywords": [
+        "mesopotamia",
+        "assyria",
+        "libraries"
+      ],
+      "source": "https://www.britannica.com/biography/Ashurbanipal"
+    },
+    {
+      "seedId": "ceaae695-2f40-4354-8ec4-db428a4962fc",
+      "category": "history",
+      "navigationKeyword1": "ancient",
+      "navigationKeyword2": "mesopotamia",
+      "question": "Which southern Mesopotamian city, linked to writing\u2019s early development and epic tradition, gives its name to an important late prehistoric horizon?",
+      "correctAnswer": "Uruk",
+      "incorrectAnswers": [
+        "Persepolis",
+        "Knossos",
+        "Carthage"
+      ],
+      "explanation": "Uruk was a major Sumerian center whose scale and material culture mark the Uruk period of urban growth.",
+      "keywords": [
+        "mesopotamia",
+        "sumer",
+        "cities"
+      ],
+      "source": "https://www.britannica.com/place/Uruk-ancient-city-Iraq"
+    },
+    {
+      "seedId": "ea08cf0d-b753-4e63-b515-fac07e856170",
+      "category": "history",
+      "navigationKeyword1": "ancient",
+      "navigationKeyword2": "mesopotamia",
+      "question": "Which stepped temple tower, built of sun-dried brick, is the characteristic religious monument of many Mesopotamian cities?",
+      "correctAnswer": "A ziggurat",
+      "incorrectAnswers": [
+        "A pyramid with smooth casing stones only",
+        "A Greek tholos",
+        "A Roman basilica"
+      ],
+      "explanation": "Ziggurats were massive staged platforms that supported shrines and visually dominated city skylines.",
+      "keywords": [
+        "mesopotamia",
+        "religion",
+        "architecture"
+      ],
+      "source": "https://www.britannica.com/topic/ziggurat"
+    },
+    {
+      "seedId": "4f20a7f3-ae5e-4433-b294-9f6be8f08ec3",
+      "category": "history",
+      "navigationKeyword1": "ancient",
+      "navigationKeyword2": "mesopotamia",
+      "question": "You are pressing a reed stylus into wet clay: which wedge-shaped writing system spread from Sumer across much of the ancient Near East?",
+      "correctAnswer": "Cuneiform",
+      "incorrectAnswers": [
+        "Hieroglyphs",
+        "Linear B",
+        "Phoenician letters"
+      ],
+      "explanation": "Cuneiform (\u201cwedge-shaped\u201d) writing was impressed on clay tablets and was used for several languages over millennia.",
+      "keywords": [
+        "mesopotamia",
+        "cuneiform",
+        "writing"
+      ],
+      "source": "https://www.britannica.com/topic/cuneiform"
+    },
+    {
+      "seedId": "5f6e0961-1074-4c92-a16b-64f71bdb7cf4",
+      "category": "history",
+      "navigationKeyword1": "ancient",
+      "navigationKeyword2": "rome",
+      "question": "After Actium, which adoptive heir of Caesar consolidated power and is considered Rome\u2019s first emperor under the principate?",
+      "correctAnswer": "Augustus",
+      "incorrectAnswers": [
+        "Tiberius",
+        "Nero",
+        "Trajan"
+      ],
+      "explanation": "Octavian, later titled Augustus, transformed the defeated republic into the Roman Empire\u2019s monarchy in all but name.",
+      "keywords": [
+        "ancient-rome",
+        "augustus",
+        "empire"
+      ],
+      "source": "https://www.britannica.com/biography/Augustus-Roman-emperor"
+    },
+    {
+      "seedId": "f52fc76b-0530-4c78-b46c-c8a9cfc24c58",
+      "category": "history",
+      "navigationKeyword1": "ancient",
+      "navigationKeyword2": "rome",
+      "question": "Brutus and Cassius led the conspiracy that assassinated Caesar on which Roman calendar date in 44 BCE?",
+      "correctAnswer": "The Ides of March (15 March)",
+      "incorrectAnswers": [
+        "The Kalends of April",
+        "The Nones of February",
+        "The Ides of June"
+      ],
+      "explanation": "Ancient sources date Caesar\u2019s murder to the Ides of March, 15 March 44 BCE.",
+      "keywords": [
+        "ancient-rome",
+        "caesar",
+        "republic"
+      ],
+      "source": "https://www.britannica.com/biography/Julius-Caesar-Roman-ruler"
+    },
+    {
+      "seedId": "3da2989b-a3cd-468b-bcf1-936e60a238a5",
+      "category": "history",
+      "navigationKeyword1": "ancient",
+      "navigationKeyword2": "rome",
+      "question": "Concrete vaults and a grand portico mark which temple in Rome rebuilt under Hadrian and dedicated to all gods?",
+      "correctAnswer": "The Pantheon",
+      "incorrectAnswers": [
+        "The Temple of Jupiter Optimus Maximus",
+        "The Temple of Vesta",
+        "The Basilica of Maxentius"
+      ],
+      "explanation": "The Pantheon\u2019s surviving rotunda is a famous monument to Roman engineering and imperial religious display.",
+      "keywords": [
+        "ancient-rome",
+        "architecture",
+        "religion"
+      ],
+      "source": "https://www.britannica.com/topic/Pantheon-building-Rome-Italy"
+    },
+    {
+      "seedId": "3aff0eee-120f-48c4-8c64-37cc1e373fd6",
+      "category": "history",
+      "navigationKeyword1": "ancient",
+      "navigationKeyword2": "rome",
+      "question": "During the Second Punic War, which Carthaginian general took war elephants over the Alps into Italy?",
+      "correctAnswer": "Hannibal",
+      "incorrectAnswers": [
+        "Hasdrubal Barca",
+        "Scipio Africanus",
+        "Pyrrhus of Epirus"
+      ],
+      "explanation": "Hannibal\u2019s Alpine invasion brought Carthaginian armies deep into Italy and threatened Rome itself.",
+      "keywords": [
+        "ancient-rome",
+        "punic-wars",
+        "hannibal"
+      ],
+      "source": "https://www.britannica.com/biography/Hannibal-Carthaginian-general"
+    },
+    {
+      "seedId": "d2d0275d-e4c5-4374-9cfa-c01dc136b909",
+      "category": "history",
+      "navigationKeyword1": "ancient",
+      "navigationKeyword2": "rome",
+      "question": "Early republican Romans inscribed fundamental statutes on bronze tablets displayed in the Forum in which foundational law code of 451\u2013450 BCE?",
+      "correctAnswer": "The Twelve Tables",
+      "incorrectAnswers": [
+        "The Corpus Juris Civilis",
+        "The Laws of the Twelve Olympians",
+        "The Justinian Code"
+      ],
+      "explanation": "The Twelve Tables were Rome\u2019s earliest published body of law, a milestone toward written legal rules.",
+      "keywords": [
+        "ancient-rome",
+        "law",
+        "republic"
+      ],
+      "source": "https://www.britannica.com/topic/Twelve-Tables"
+    },
+    {
+      "seedId": "1b0c2ce4-d9c4-4b60-9693-197cd9217dea",
+      "category": "history",
+      "navigationKeyword1": "ancient",
+      "navigationKeyword2": "rome",
+      "question": "In January 49 BCE, Julius Caesar famously violated senatorial orders by leading his army across which northern Italian river?",
+      "correctAnswer": "The Rubicon",
+      "incorrectAnswers": [
+        "The Tiber",
+        "The Po",
+        "The Arno"
+      ],
+      "explanation": "Caesar\u2019s crossing of the Rubicon began open civil war against the senatorial faction led by Pompey.",
+      "keywords": [
+        "ancient-rome",
+        "caesar",
+        "civil-war"
+      ],
+      "source": "https://www.britannica.com/biography/Julius-Caesar-Roman-ruler"
+    },
+    {
+      "seedId": "5c4e02e5-b34f-49cb-8b86-9cc270c3e381",
+      "category": "history",
+      "navigationKeyword1": "ancient",
+      "navigationKeyword2": "rome",
+      "question": "Republican Rome fought three major wars against which powerful city-state on the Gulf of Tunis?",
+      "correctAnswer": "Carthage",
+      "incorrectAnswers": [
+        "Syracuse",
+        "Massalia",
+        "Alexandria"
+      ],
+      "explanation": "The Punic Wars were Rome\u2019s long struggle against Carthage for western Mediterranean dominance.",
+      "keywords": [
+        "ancient-rome",
+        "punic-wars",
+        "republic"
+      ],
+      "source": "https://www.britannica.com/event/Punic-Wars"
+    },
+    {
+      "seedId": "6d049fa7-8702-414c-a107-ea97bffa5d89",
+      "category": "history",
+      "navigationKeyword1": "ancient",
+      "navigationKeyword2": "rome",
+      "question": "The abbreviation SPQR on Roman monuments and military gear identified the two sources from which the republic and empire claimed civic legitimacy. Which pair?",
+      "correctAnswer": "The Senate and the Roman people",
+      "incorrectAnswers": [
+        "The emperor and the Praetorian Guard alone",
+        "The consuls and the Senate, excluding the people",
+        "The army and the provincial governors"
+      ],
+      "explanation": "SPQR abbreviates Sen\u0101tus Populusque R\u014dm\u0101nus: public acts invoked both the deliberative senatorial order and the citizen body of Rome.",
+      "keywords": [
+        "ancient-rome",
+        "republic",
+        "symbols"
+      ],
+      "source": "https://www.britannica.com/place/ancient-Rome/The-Senate"
+    },
+    {
+      "seedId": "2418719e-9727-4da4-9dc5-6b9e5e066c8d",
+      "category": "history",
+      "navigationKeyword1": "ancient",
+      "navigationKeyword2": "rome",
+      "question": "Victorious general Pompey\u2019s stone theater complex in the Campus Martius helped fix gladiatorial shows where in the city?",
+      "correctAnswer": "Rome",
+      "incorrectAnswers": [
+        "Capua only",
+        "Ostia only",
+        "Pompeii only"
+      ],
+      "explanation": "Pompey\u2019s monumental theater in Rome was an early permanent venue associating elite politics with public games.",
+      "keywords": [
+        "ancient-rome",
+        "republic",
+        "games"
+      ],
+      "source": "https://www.britannica.com/place/Pompeys-Theatre"
+    },
+    {
+      "seedId": "a0c6fd12-9f04-445f-9659-1c162247f58f",
+      "category": "history",
+      "navigationKeyword1": "ancient",
+      "navigationKeyword2": "rome",
+      "question": "Visitors today line up outside an enormous oval amphitheater in Rome long called the Flavian Amphitheatre. What is its common English name?",
+      "correctAnswer": "The Colosseum",
+      "incorrectAnswers": [
+        "The Circus Maximus",
+        "The Pantheon",
+        "The Theatre of Pompey"
+      ],
+      "explanation": "The Colosseum is the huge Flavian-era amphitheater used for gladiatorial shows and public spectacles.",
+      "keywords": [
+        "ancient-rome",
+        "architecture",
+        "games"
+      ],
+      "source": "https://www.britannica.com/topic/Colosseum"
+    },
+    {
+      "seedId": "ce98fe2f-0eff-4775-aad9-882108c705d3",
+      "category": "history",
+      "navigationKeyword1": "ancient",
+      "navigationKeyword2": "rome",
+      "question": "Which legendary figure is said to have killed his brother and founded Rome on the Palatine Hill in traditional stories?",
+      "correctAnswer": "Romulus",
+      "incorrectAnswers": [
+        "Remus",
+        "Aeneas",
+        "Numa Pompilius"
+      ],
+      "explanation": "Roman myth credits Romulus with founding the city after a fatal quarrel with his twin Remus.",
+      "keywords": [
+        "ancient-rome",
+        "myth",
+        "origins"
+      ],
+      "source": "https://www.britannica.com/topic/Romulus-and-Remus"
+    },
+    {
+      "seedId": "f4149ac2-d850-4169-8938-1ded3e3ad58e",
+      "category": "history",
+      "navigationKeyword1": "ancient",
+      "navigationKeyword2": "rome",
+      "question": "Which magistracy, held briefly during emergencies, gave Cincinnatus legendary fame for returning promptly to his farm?",
+      "correctAnswer": "Dictator",
+      "incorrectAnswers": [
+        "Tribune of the plebs",
+        "Censor",
+        "Pontifex maximus"
+      ],
+      "explanation": "Roman dictators were temporary executives appointed for crises; Cincinnatus is the model of brief service.",
+      "keywords": [
+        "ancient-rome",
+        "republic",
+        "magistrates"
+      ],
+      "source": "https://www.britannica.com/biography/Lucius-Quinctius-Cincinnatus"
+    }
+  ]
+}

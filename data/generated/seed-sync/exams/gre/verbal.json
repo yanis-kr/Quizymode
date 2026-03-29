@@ -1,0 +1,107 @@
+{
+  "schemaVersion": 1,
+  "seedSet": "core-public-items",
+  "deltaPreviewLimit": 200,
+  "items": [
+    {
+      "seedId": "2c6641c5-b8b4-46e1-8691-4453783e7523",
+      "category": "exams",
+      "navigationKeyword1": "gre",
+      "navigationKeyword2": "verbal",
+      "question": "Although the speaker sounded ___, the evidence supporting her claim was weak.",
+      "correctAnswer": "confident",
+      "incorrectAnswers": [
+        "confused",
+        "silent",
+        "reluctant"
+      ],
+      "explanation": "The contrast word \"although\" suggests strong delivery despite weak evidence.",
+      "keywords": [
+        "gre-verbal",
+        "sentence-equivalence",
+        "verbal-reasoning"
+      ],
+      "source": "https://www.ets.org/pdfs/gre/gre-sample-questions.pdf"
+    },
+    {
+      "seedId": "a52d7829-a4ab-49aa-8a13-fb0d9af7a7e9",
+      "category": "exams",
+      "navigationKeyword1": "gre",
+      "navigationKeyword2": "verbal",
+      "question": "Because the memo was so ___, no one knew what action to take.",
+      "correctAnswer": "ambiguous",
+      "incorrectAnswers": [
+        "precise",
+        "practical",
+        "efficient"
+      ],
+      "explanation": "\"Ambiguous\" fits because an unclear memo would cause confusion.",
+      "keywords": [
+        "gre-verbal",
+        "text-completion",
+        "verbal-reasoning"
+      ],
+      "source": "https://www.ets.org/pdfs/gre/gre-sample-questions.pdf"
+    },
+    {
+      "seedId": "1faa4ac4-f2a4-4f6e-969c-5bbf665a3ce3",
+      "category": "exams",
+      "navigationKeyword1": "gre",
+      "navigationKeyword2": "verbal",
+      "question": "Despite early criticism, the book became highly ___ among scholars.",
+      "correctAnswer": "influential",
+      "incorrectAnswers": [
+        "obscure",
+        "careless",
+        "skeptical"
+      ],
+      "explanation": "The contrast implies that the book later gained major importance.",
+      "keywords": [
+        "gre-verbal",
+        "text-completion",
+        "verbal-reasoning"
+      ],
+      "source": "https://www.ets.org/pdfs/gre/gre-sample-questions.pdf"
+    },
+    {
+      "seedId": "5a405561-8b6f-4fc6-a0a9-eab8f988aef6",
+      "category": "exams",
+      "navigationKeyword1": "gre",
+      "navigationKeyword2": "verbal",
+      "question": "The committee praised the proposal for being practical rather than ___.",
+      "correctAnswer": "theoretical",
+      "incorrectAnswers": [
+        "useful",
+        "efficient",
+        "careful"
+      ],
+      "explanation": "\"Practical\" contrasts most naturally with \"theoretical.\"",
+      "keywords": [
+        "gre-verbal",
+        "sentence-equivalence",
+        "verbal-reasoning"
+      ],
+      "source": "https://www.ets.org/pdfs/gre/gre-sample-questions.pdf"
+    },
+    {
+      "seedId": "238b314a-8f33-4e30-80b8-a2b72ebedb6f",
+      "category": "exams",
+      "navigationKeyword1": "gre",
+      "navigationKeyword2": "verbal",
+      "question": "The scientist's explanation was so ___ that even beginners understood it.",
+      "correctAnswer": "clear",
+      "incorrectAnswers": [
+        "arcane",
+        "tentative",
+        "fragmented"
+      ],
+      "explanation": "If beginners understood it, the explanation must have been clear.",
+      "keywords": [
+        "gre-verbal",
+        "text-completion",
+        "verbal-reasoning"
+      ],
+      "source": "https://www.ets.org/pdfs/gre/gre-sample-questions.pdf"
+    }
+  ]
+}

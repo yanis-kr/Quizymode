@@ -1,0 +1,121 @@
+{
+  "schemaVersion": 1,
+  "seedSet": "core-public-items",
+  "deltaPreviewLimit": 200,
+  "items": [
+    {
+      "seedId": "f2178423-bdaf-52cf-b307-2a9533d6cca6",
+      "category": "civics",
+      "navigationKeyword1": "public-policy",
+      "navigationKeyword2": "housing",
+      "question": "Community Development Block Grants to localities mainly support what kinds of goals?",
+      "correctAnswer": "affordable housing, infrastructure, and economic development in lower-income areas",
+      "incorrectAnswers": [
+        "foreign military bases",
+        "national park entrance fees",
+        "Supreme Court salaries"
+      ],
+      "explanation": "CDBG provides flexible federal aid to states and localities for community development activities.",
+      "keywords": [
+        "cdbg",
+        "community-development"
+      ],
+      "source": "https://www.law.cornell.edu/uscode/text/42/chapter-69"
+    },
+    {
+      "seedId": "65775027-2488-5d12-b5d9-59a527ec21ba",
+      "category": "civics",
+      "navigationKeyword1": "public-policy",
+      "navigationKeyword2": "housing",
+      "question": "Public housing owned by local housing authorities is created under federal law but operated by whom?",
+      "correctAnswer": "local public housing agencies",
+      "incorrectAnswers": [
+        "the U.S. Senate",
+        "private banks only",
+        "the United Nations"
+      ],
+      "explanation": "Local PHAs manage federally assisted public housing stock under contracts and rules from HUD.",
+      "keywords": [
+        "public-housing",
+        "pha"
+      ],
+      "source": "https://www.hud.gov/program_offices/public_indian_housing/programs/ph"
+    },
+    {
+      "seedId": "2439c455-b0b7-511e-8bf2-3e6e83686bc9",
+      "category": "civics",
+      "navigationKeyword1": "public-policy",
+      "navigationKeyword2": "housing",
+      "question": "The federal Fair Housing Act broadly prohibits discrimination in housing based on what?",
+      "correctAnswer": "protected characteristics such as race, color, religion, sex, disability, familial status, and national origin",
+      "incorrectAnswers": [
+        "favorite sports teams",
+        "shoe size",
+        "personal credit score alone"
+      ],
+      "explanation": "Fair housing law bars discrimination in sales, rentals, and financing for covered grounds.",
+      "keywords": [
+        "fair-housing",
+        "civil-rights"
+      ],
+      "source": "https://www.justice.gov/crt/fair-housing-act-1"
+    },
+    {
+      "seedId": "e1a13d2d-1230-5eb7-9c3a-1a7069f7e4ad",
+      "category": "civics",
+      "navigationKeyword1": "public-policy",
+      "navigationKeyword2": "housing",
+      "question": "What does the federal Housing Choice Voucher program mainly help eligible households do?",
+      "correctAnswer": "rent private housing with subsidy paid to the landlord",
+      "incorrectAnswers": [
+        "buy stocks tax-free",
+        "receive free land patents",
+        "avoid all local building codes"
+      ],
+      "explanation": "Vouchers subsidize rent in qualifying private units; tenants still follow lease and program rules.",
+      "keywords": [
+        "section-8",
+        "rental-assistance"
+      ],
+      "source": "https://www.hud.gov/program_offices/public_indian_housing/programs/hcv"
+    },
+    {
+      "seedId": "9e58ec1c-7899-5ab7-a3d5-6cd4ae4b19f6",
+      "category": "civics",
+      "navigationKeyword1": "public-policy",
+      "navigationKeyword2": "housing",
+      "question": "Which cabinet department oversees most federal housing assistance and fair housing programs?",
+      "correctAnswer": "the Department of Housing and Urban Development",
+      "incorrectAnswers": [
+        "the Department of Education",
+        "the Department of the Treasury",
+        "the Department of State"
+      ],
+      "explanation": "HUD administers major rental assistance, community development grants, and fair housing enforcement partnerships.",
+      "keywords": [
+        "hud",
+        "housing-policy"
+      ],
+      "source": "https://www.hud.gov/about/hud-mission"
+    },
+    {
+      "seedId": "39c25544-9c17-5864-845c-ed3378a67998",
+      "category": "civics",
+      "navigationKeyword1": "public-policy",
+      "navigationKeyword2": "housing",
+      "question": "Who typically adopts zoning rules that separate residential, commercial, and industrial uses?",
+      "correctAnswer": "local governments",
+      "incorrectAnswers": [
+        "the World Bank",
+        "the U.S. Supreme Court as a zoning board",
+        "the Federal Reserve"
+      ],
+      "explanation": "Land use zoning is a municipal and county power exercised under state enabling laws.",
+      "keywords": [
+        "zoning",
+        "local-planning"
+      ],
+      "source": "https://www.planning.org/planning101/zoning/"
+    }
+  ]
+}

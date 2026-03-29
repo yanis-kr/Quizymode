@@ -1,0 +1,121 @@
+{
+  "schemaVersion": 1,
+  "seedSet": "core-public-items",
+  "deltaPreviewLimit": 200,
+  "items": [
+    {
+      "seedId": "3131372c-a8d8-50e6-abe9-aba3a5c6faf2",
+      "category": "tech",
+      "navigationKeyword1": "mobile",
+      "navigationKeyword2": "android",
+      "question": "What does the Android manifest declare about an app?",
+      "correctAnswer": "Components, permissions, and essential metadata",
+      "incorrectAnswers": [
+        "Only the app icon pixel data",
+        "Kernel module source code",
+        "User passwords"
+      ],
+      "explanation": "AndroidManifest.xml registers components and required capabilities for the system.",
+      "keywords": [
+        "android",
+        "manifest"
+      ],
+      "source": "https://developer.android.com/guide/topics/manifest/manifest-intro"
+    },
+    {
+      "seedId": "a6c177df-3868-5691-a919-386ca628e86e",
+      "category": "tech",
+      "navigationKeyword1": "mobile",
+      "navigationKeyword2": "android",
+      "question": "What file format packages Android apps for distribution?",
+      "correctAnswer": "APK or Android App Bundle (AAB) depending on delivery",
+      "incorrectAnswers": [
+        "IPA only",
+        "MSIX only",
+        "DEB only"
+      ],
+      "explanation": "APKs install directly; Play often uses AAB to generate optimized APKs per device.",
+      "keywords": [
+        "android",
+        "packaging"
+      ],
+      "source": "https://developer.android.com/guide/app-bundle"
+    },
+    {
+      "seedId": "d8a79bec-ebbb-50ce-8d3b-550a2a9a5701",
+      "category": "tech",
+      "navigationKeyword1": "mobile",
+      "navigationKeyword2": "android",
+      "question": "What is a Service in Android when long work must run without a foreground UI?",
+      "correctAnswer": "A component for background work, with rules for foreground services when user-visible",
+      "incorrectAnswers": [
+        "A synonym for SQLite only",
+        "A GPU shader program",
+        "A Bluetooth antenna driver only"
+      ],
+      "explanation": "Services run app logic in the background; Android restricts background starts for battery and privacy.",
+      "keywords": [
+        "android",
+        "services"
+      ],
+      "source": "https://source.android.com/docs/core/background"
+    },
+    {
+      "seedId": "fbacfd8f-ecb0-5641-be47-ce4b7a56fd1c",
+      "category": "tech",
+      "navigationKeyword1": "mobile",
+      "navigationKeyword2": "android",
+      "question": "What is an Android Activity primarily responsible for?",
+      "correctAnswer": "A single focused thing the user can do, with a UI window",
+      "incorrectAnswers": [
+        "Only background sync without any UI",
+        "The entire Linux kernel on the device",
+        "A database table schema only"
+      ],
+      "explanation": "Activities are app components that host screens and participate in the task back stack.",
+      "keywords": [
+        "android",
+        "activity"
+      ],
+      "source": "https://developer.android.com/guide/components/activities/intro-activities"
+    },
+    {
+      "seedId": "5bb8d66f-25f1-5800-99f0-5c479e3a0804",
+      "category": "tech",
+      "navigationKeyword1": "mobile",
+      "navigationKeyword2": "android",
+      "question": "What is an Intent used for between Android components?",
+      "correctAnswer": "Messaging that requests an action or delivers data",
+      "incorrectAnswers": [
+        "Encrypting the entire filesystem",
+        "Compiling Kotlin to machine code only",
+        "Measuring battery voltage directly"
+      ],
+      "explanation": "Intents start activities, services, or deliver broadcasts depending on type.",
+      "keywords": [
+        "android",
+        "intents"
+      ],
+      "source": "https://developer.android.com/guide/components/intents-filters"
+    },
+    {
+      "seedId": "531b7e13-2d8d-5ee4-bb21-f24af8f75bf9",
+      "category": "tech",
+      "navigationKeyword1": "mobile",
+      "navigationKeyword2": "android",
+      "question": "What is the recommended language for new Android development alongside Java?",
+      "correctAnswer": "Kotlin",
+      "incorrectAnswers": [
+        "COBOL",
+        "Objective-C",
+        "Swift"
+      ],
+      "explanation": "Kotlin is the modern default for Android APIs and tooling support.",
+      "keywords": [
+        "android",
+        "kotlin"
+      ],
+      "source": "https://kotlinlang.org/docs/android-overview.html"
+    }
+  ]
+}

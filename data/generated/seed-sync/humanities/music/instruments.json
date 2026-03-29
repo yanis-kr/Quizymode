@@ -1,0 +1,45 @@
+{
+  "schemaVersion": 1,
+  "seedSet": "core-public-items",
+  "deltaPreviewLimit": 200,
+  "items": [
+    {
+      "seedId": "08b2809c-beb2-5263-9754-27c49a85e57c",
+      "category": "humanities",
+      "navigationKeyword1": "music",
+      "navigationKeyword2": "instruments",
+      "question": "What usually produces the sound in a woodwind instrument?",
+      "correctAnswer": "air vibrating in the instrument",
+      "incorrectAnswers": [
+        "electrical current alone",
+        "struck strings",
+        "paint on a surface"
+      ],
+      "explanation": "Woodwinds make sound when air vibrates in a tube, sometimes with a reed.",
+      "keywords": [
+        "music-instruments",
+        "woodwind"
+      ],
+      "source": "https://www.metmuseum.org/toah/hd/muii/hd_muii.htm"
+    },
+    {
+      "seedId": "9b57f4f2-3656-5925-9fd6-e0d5d54842f5",
+      "category": "humanities",
+      "navigationKeyword1": "music",
+      "navigationKeyword2": "instruments",
+      "question": "Which family does the violin belong to?",
+      "correctAnswer": "string instruments",
+      "incorrectAnswers": [
+        "brass instruments",
+        "woodwinds",
+        "percussion only"
+      ],
+      "explanation": "The violin produces sound from vibrating strings.",
+      "keywords": [
+        "music-instruments",
+        "violin"
+      ],
+      "source": "https://www.britannica.com/art/violin"
+    }
+  ]
+}

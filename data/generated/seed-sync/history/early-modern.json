@@ -1,0 +1,1447 @@
+{
+  "schemaVersion": 1,
+  "seedSet": "core-public-items",
+  "deltaPreviewLimit": 200,
+  "items": [
+    {
+      "seedId": "2beae730-9813-43af-827e-ca5a42f856d9",
+      "category": "history",
+      "navigationKeyword1": "early-modern",
+      "navigationKeyword2": "empires",
+      "question": "After 1492, which Iberian monarchy built a transatlantic empire whose silver flows reshaped global trade?",
+      "correctAnswer": "Spain (the Spanish monarchy)",
+      "incorrectAnswers": [
+        "Portugal alone",
+        "The Dutch Republic",
+        "Genoa"
+      ],
+      "explanation": "Spanish America\u2019s silver mines, especially Potos\u00ed, funded Habsburg wars and linked Europe to Pacific-Asian commerce.",
+      "keywords": [
+        "empires",
+        "spain",
+        "americas"
+      ],
+      "source": "https://www.britannica.com/place/Spain"
+    },
+    {
+      "seedId": "2bd8561a-6cd8-4c0a-a68b-e4abda22ee12",
+      "category": "history",
+      "navigationKeyword1": "early-modern",
+      "navigationKeyword2": "empires",
+      "question": "Charles V\u2019s composite monarchy linked Spain, the Low Countries, and Italian states to which Central European dynasty\u2019s imperial title?",
+      "correctAnswer": "The House of Habsburg (Holy Roman Emperor)",
+      "incorrectAnswers": [
+        "The House of Romanov",
+        "The House of Bourbon (French branch only)",
+        "The House of Hohenzollern"
+      ],
+      "explanation": "Charles V ruled an enormous Habsburg patrimony before dividing it between Spanish and Austrian lines.",
+      "keywords": [
+        "empires",
+        "habsburg",
+        "europe"
+      ],
+      "source": "https://www.britannica.com/biography/Charles-V-Holy-Roman-emperor"
+    },
+    {
+      "seedId": "07ec9722-cb17-43a7-bde4-43110b66e167",
+      "category": "history",
+      "navigationKeyword1": "early-modern",
+      "navigationKeyword2": "empires",
+      "question": "Gustavus Adolphus and the Treaty of Westphalia are associated with which Baltic power\u2019s seventeenth-century great-power status?",
+      "correctAnswer": "Sweden (the Swedish Empire)",
+      "incorrectAnswers": [
+        "Denmark-Norway",
+        "Prussia",
+        "Saxony"
+      ],
+      "explanation": "Swedish armies dominated northern wars until defeat at Poltava (1709) checked Swedish expansion.",
+      "keywords": [
+        "empires",
+        "sweden",
+        "baltic"
+      ],
+      "source": "https://www.britannica.com/biography/Gustavus-Adolphus-king-of-Sweden"
+    },
+    {
+      "seedId": "1016ebc3-fa8b-4758-aa5a-041152416a2f",
+      "category": "history",
+      "navigationKeyword1": "early-modern",
+      "navigationKeyword2": "empires",
+      "question": "Peter the Great\u2019s Baltic victories and new capital at St. Petersburg advanced which realm\u2019s status as a European great power?",
+      "correctAnswer": "The Russian Empire (Tsardom of Russia expanding into empire)",
+      "incorrectAnswers": [
+        "The Polish-Lithuanian Commonwealth",
+        "The Swedish Empire",
+        "The Habsburg Netherlands"
+      ],
+      "explanation": "Peter\u2019s reforms and the Great Northern War secured Russia\u2019s window on the Baltic and a modernizing army.",
+      "keywords": [
+        "empires",
+        "russia",
+        "peter-the-great"
+      ],
+      "source": "https://www.britannica.com/biography/Peter-I-emperor-of-Russia"
+    },
+    {
+      "seedId": "85a2e439-8ff5-4a44-9e20-9c23a6d2a352",
+      "category": "history",
+      "navigationKeyword1": "early-modern",
+      "navigationKeyword2": "empires",
+      "question": "Sh\u0101h Abb\u0101s I made Isfahan a showcase capital of which early modern Iranian dynasty rivaling the Ottomans?",
+      "correctAnswer": "The Safavid dynasty",
+      "incorrectAnswers": [
+        "The Qajar dynasty",
+        "The Sasanian dynasty",
+        "The Timurid dynasty"
+      ],
+      "explanation": "Safavid shahs enforced Twelver Shi\u02bfism as state religion and controlled Persian Gulf trade routes.",
+      "keywords": [
+        "empires",
+        "persia",
+        "safavid"
+      ],
+      "source": "https://www.britannica.com/place/Safavid-dynasty"
+    },
+    {
+      "seedId": "896df434-fd1e-479b-93ba-a6ff1a1e9634",
+      "category": "history",
+      "navigationKeyword1": "early-modern",
+      "navigationKeyword2": "empires",
+      "question": "Suleiman the Magnificent\u2019s reign is often treated as the classical apogee of which transcontinental Islamic empire?",
+      "correctAnswer": "The Ottoman Empire",
+      "incorrectAnswers": [
+        "The Safavid Empire",
+        "The Mughal Empire",
+        "The Mali Empire"
+      ],
+      "explanation": "Ottoman armies and navy projected power from Budapest to Baghdad while Istanbul remained a cosmopolitan capital.",
+      "keywords": [
+        "empires",
+        "ottomans",
+        "middle-east"
+      ],
+      "source": "https://www.britannica.com/biography/Suleyman-the-Magnificent"
+    },
+    {
+      "seedId": "6aeafe4c-3f1b-400d-820d-e355db41c895",
+      "category": "history",
+      "navigationKeyword1": "early-modern",
+      "navigationKeyword2": "empires",
+      "question": "The Polish-Lithuanian Commonwealth\u2019s elected monarchy and noble liberties typified which large early modern European composite state?",
+      "correctAnswer": "The Polish-Lithuanian Commonwealth (Rzeczpospolita)",
+      "incorrectAnswers": [
+        "The Kingdom of Hungary alone",
+        "The Kingdom of Bohemia alone",
+        "The Papal States"
+      ],
+      "explanation": "The union\u2019s liberum veto and regional diets made it distinctive among European land empires before partitions.",
+      "keywords": [
+        "empires",
+        "poland",
+        "lithuania"
+      ],
+      "source": "https://www.britannica.com/topic/liberum-veto"
+    },
+    {
+      "seedId": "944d3fae-9bd9-4424-8aa5-c322abf23b02",
+      "category": "history",
+      "navigationKeyword1": "early-modern",
+      "navigationKeyword2": "empires",
+      "question": "The Qing dynasty, founded by Manchu elites, succeeded which Chinese dynasty and ruled a vast multiethnic realm into the modern era?",
+      "correctAnswer": "The Ming dynasty",
+      "incorrectAnswers": [
+        "The Yuan dynasty",
+        "The Tang dynasty",
+        "The Song dynasty"
+      ],
+      "explanation": "Qing expansion incorporated Mongolia, Tibet, and Xinjiang while governing through a hybrid bureaucratic system.",
+      "keywords": [
+        "empires",
+        "china",
+        "qing"
+      ],
+      "source": "https://www.britannica.com/place/Qing-dynasty"
+    },
+    {
+      "seedId": "dd0184ac-fee1-47b5-b27d-20fed7cdc5b4",
+      "category": "history",
+      "navigationKeyword1": "early-modern",
+      "navigationKeyword2": "empires",
+      "question": "The VOC (Verenigde Oost-Indische Compagnie) was the chartered trading company of which republic\u2019s seventeenth-century empire?",
+      "correctAnswer": "The Dutch Republic (United Provinces)",
+      "incorrectAnswers": [
+        "The Holy Roman Empire",
+        "Poland-Lithuania",
+        "Denmark-Norway"
+      ],
+      "explanation": "The Dutch East India Company monopolized spice routes and governed territories from Batavia to Ceylon.",
+      "keywords": [
+        "empires",
+        "netherlands",
+        "trade"
+      ],
+      "source": "https://www.britannica.com/topic/Dutch-East-India-Company"
+    },
+    {
+      "seedId": "7165d49f-511c-42e6-9246-da45c5ab3b7b",
+      "category": "history",
+      "navigationKeyword1": "early-modern",
+      "navigationKeyword2": "empires",
+      "question": "Under rulers such as Akbar, which South Asian empire fused Persianate culture with Indian polities before European dominance?",
+      "correctAnswer": "The Mughal Empire",
+      "incorrectAnswers": [
+        "The Maratha Empire at its eighteenth-century peak",
+        "The Gupta Empire",
+        "The Khmer Empire"
+      ],
+      "explanation": "Mughal administration and patronage shaped art, architecture, and revenue systems across much of the subcontinent.",
+      "keywords": [
+        "empires",
+        "india",
+        "mughal"
+      ],
+      "source": "https://www.britannica.com/topic/Mughal-dynasty"
+    },
+    {
+      "seedId": "fd016ad7-e541-40b8-9b4b-34c91f4202d4",
+      "category": "history",
+      "navigationKeyword1": "early-modern",
+      "navigationKeyword2": "empires",
+      "question": "Vasco da Gama\u2019s 1498 arrival in India helped which kingdom secure a maritime trading empire in Asia and Africa?",
+      "correctAnswer": "Portugal",
+      "incorrectAnswers": [
+        "France",
+        "England",
+        "Sweden"
+      ],
+      "explanation": "Portuguese fort-factories and sea lanes connected Lisbon to Indian Ocean spice markets for centuries.",
+      "keywords": [
+        "empires",
+        "portugal",
+        "indian-ocean"
+      ],
+      "source": "https://www.britannica.com/place/Portugal/The-first-overseas-expansion"
+    },
+    {
+      "seedId": "7264ca12-aebc-4154-ba29-0d6b165847e0",
+      "category": "history",
+      "navigationKeyword1": "early-modern",
+      "navigationKeyword2": "empires",
+      "question": "Which English joint-stock company gradually moved from trade to rule in large parts of the Indian subcontinent?",
+      "correctAnswer": "The English East India Company",
+      "incorrectAnswers": [
+        "The Hudson\u2019s Bay Company",
+        "The Royal African Company",
+        "The Muscovy Company"
+      ],
+      "explanation": "Company armies and alliances after Plassey (1757) laid foundations for British colonial administration in India.",
+      "keywords": [
+        "empires",
+        "britain",
+        "india"
+      ],
+      "source": "https://www.britannica.com/topic/British-East-India-Company"
+    },
+    {
+      "seedId": "e2f2b88c-36d1-44f5-96bf-397da633f7b1",
+      "category": "history",
+      "navigationKeyword1": "early-modern",
+      "navigationKeyword2": "enlightenment",
+      "question": "Adam Smith\u2019s 1776 inquiry into markets and labor division bore which short title?",
+      "correctAnswer": "The Wealth of Nations",
+      "incorrectAnswers": [
+        "The Theory of Moral Sentiments only",
+        "Das Kapital",
+        "The General Theory"
+      ],
+      "explanation": "Smith analyzed how specialization and competition generate national prosperity.",
+      "keywords": [
+        "enlightenment",
+        "economics",
+        "scotland"
+      ],
+      "source": "https://www.britannica.com/topic/The-Wealth-of-Nations"
+    },
+    {
+      "seedId": "978217a9-c320-4b92-9c03-42d051478717",
+      "category": "history",
+      "navigationKeyword1": "early-modern",
+      "navigationKeyword2": "enlightenment",
+      "question": "At the start of The Social Contract, what problem does Rousseau pose about human beings and political authority?",
+      "correctAnswer": "How people can remain free while living under laws and government they did not individually authorize",
+      "incorrectAnswers": [
+        "That sense experience cannot prove causation",
+        "That the greatest happiness should guide all legislation",
+        "That the king must be head of the national church"
+      ],
+      "explanation": "Rousseau opens by contrasting natural freedom with social constraint, then argues legitimate rule must rest on a collective agreement\u2014the general will\u2014rather than mere force.",
+      "keywords": [
+        "enlightenment",
+        "rousseau",
+        "political-thought"
+      ],
+      "source": "https://www.britannica.com/topic/The-Social-Contract-treatise-by-Rousseau"
+    },
+    {
+      "seedId": "88983ac7-336f-4543-9f1b-e55e2b4171ec",
+      "category": "history",
+      "navigationKeyword1": "early-modern",
+      "navigationKeyword2": "enlightenment",
+      "question": "Cesare Beccaria\u2019s On Crimes and Punishments influenced reform of which legal practice?",
+      "correctAnswer": "Criminal punishment (torture and capital severity)",
+      "incorrectAnswers": [
+        "Maritime insurance",
+        "Feudal entail",
+        "Canon law marriage only"
+      ],
+      "explanation": "Beccaria argued punishments should be proportional, certain, and public to deter crime.",
+      "keywords": [
+        "enlightenment",
+        "law",
+        "italy"
+      ],
+      "source": "https://www.britannica.com/topic/On-Crimes-and-Punishments"
+    },
+    {
+      "seedId": "637019a0-7749-48ab-8963-d8435a793195",
+      "category": "history",
+      "navigationKeyword1": "early-modern",
+      "navigationKeyword2": "enlightenment",
+      "question": "David Hume\u2019s empiricism questioned causation and miracles in works rooted in which city\u2019s intellectual circle?",
+      "correctAnswer": "Edinburgh",
+      "incorrectAnswers": [
+        "Paris",
+        "Vienna",
+        "St. Petersburg"
+      ],
+      "explanation": "Hume was a leading figure of the Scottish Enlightenment.",
+      "keywords": [
+        "enlightenment",
+        "hume",
+        "scotland"
+      ],
+      "source": "https://www.britannica.com/biography/David-Hume"
+    },
+    {
+      "seedId": "2ca50bf6-00f1-4a27-905c-3d73d949b604",
+      "category": "history",
+      "navigationKeyword1": "early-modern",
+      "navigationKeyword2": "enlightenment",
+      "question": "Denis Diderot co-edited the massive French compendium of arts and sciences known as what?",
+      "correctAnswer": "The Encyclop\u00e9die",
+      "incorrectAnswers": [
+        "The Principia Mathematica",
+        "The Wealth of Nations",
+        "The Federalist Papers"
+      ],
+      "explanation": "The Encyclop\u00e9die spread Enlightenment knowledge and skeptical inquiry across Europe.",
+      "keywords": [
+        "enlightenment",
+        "france",
+        "encyclopedia"
+      ],
+      "source": "https://www.britannica.com/topic/Encyclopedie"
+    },
+    {
+      "seedId": "9e93179a-742d-43cd-a3fb-2e86aa531aa0",
+      "category": "history",
+      "navigationKeyword1": "early-modern",
+      "navigationKeyword2": "enlightenment",
+      "question": "Frederick the Great\u2019s correspondence with which French philosophe illustrated enlightened absolutism?",
+      "correctAnswer": "Voltaire",
+      "incorrectAnswers": [
+        "Diderot",
+        "Rousseau",
+        "Montesquieu"
+      ],
+      "explanation": "Frederick cultivated Enlightenment thinkers while expanding Prussian military power.",
+      "keywords": [
+        "enlightenment",
+        "prussia",
+        "monarchy"
+      ],
+      "source": "https://www.britannica.com/biography/Frederick-the-Great-king-of-Prussia"
+    },
+    {
+      "seedId": "796106f1-62fa-4711-aaf9-a8dac54cfc45",
+      "category": "history",
+      "navigationKeyword1": "early-modern",
+      "navigationKeyword2": "enlightenment",
+      "question": "In his 1784 essay \u201cWhat Is Enlightenment?,\u201d what did Kant say people must use instead of deferring to guardians and authorities?",
+      "correctAnswer": "Their own reason and public exercise of understanding",
+      "incorrectAnswers": [
+        "Revelation alone as the test of truth",
+        "The ruler\u2019s will without public debate",
+        "Military honor as the highest virtue"
+      ],
+      "explanation": "Kant defined enlightenment as leaving self-imposed immaturity\u2014thinking for oneself in matters of religion, law, and knowledge\u2014while accepting constraints on private roles where needed for civil order.",
+      "keywords": [
+        "enlightenment",
+        "kant",
+        "germany"
+      ],
+      "source": "https://www.britannica.com/biography/Immanuel-kant"
+    },
+    {
+      "seedId": "575458b4-f8eb-4112-9dac-4bc8324384de",
+      "category": "history",
+      "navigationKeyword1": "early-modern",
+      "navigationKeyword2": "enlightenment",
+      "question": "John Locke argued that legitimate government rests on the consent of the governed in which 1690 work?",
+      "correctAnswer": "Two Treatises of Government",
+      "incorrectAnswers": [
+        "Leviathan",
+        "The Social Contract",
+        "The Spirit of the Laws"
+      ],
+      "explanation": "Locke\u2019s Second Treatise famously grounded authority in popular consent and natural rights.",
+      "keywords": [
+        "enlightenment",
+        "locke",
+        "political-thought"
+      ],
+      "source": "https://www.britannica.com/topic/Two-Treatises-of-Government"
+    },
+    {
+      "seedId": "cb22dba8-5d1b-4037-a68d-81aaf206e023",
+      "category": "history",
+      "navigationKeyword1": "early-modern",
+      "navigationKeyword2": "enlightenment",
+      "question": "Mary Wollstonecraft defended women\u2019s education and citizenship in which 1792 treatise?",
+      "correctAnswer": "A Vindication of the Rights of Woman",
+      "incorrectAnswers": [
+        "The Second Sex",
+        "The Feminine Mystique",
+        "The Subjection of Women"
+      ],
+      "explanation": "Wollstonecraft argued rational education was essential to women\u2019s liberty and social contribution.",
+      "keywords": [
+        "enlightenment",
+        "feminism",
+        "britain"
+      ],
+      "source": "https://www.britannica.com/topic/A-Vindication-of-the-Rights-of-Woman"
+    },
+    {
+      "seedId": "f66177e7-30f4-4c15-8830-15c057f6b8cc",
+      "category": "history",
+      "navigationKeyword1": "early-modern",
+      "navigationKeyword2": "enlightenment",
+      "question": "Montesquieu\u2019s comparative study urged dividing legislative, executive, and judicial powers in which book?",
+      "correctAnswer": "The Spirit of the Laws (De l\u2019esprit des lois)",
+      "incorrectAnswers": [
+        "The Prince",
+        "Second Treatise",
+        "Common Sense"
+      ],
+      "explanation": "Montesquieu analyzed how climates and institutions shape laws and championed checks on power.",
+      "keywords": [
+        "enlightenment",
+        "montesquieu",
+        "political-thought"
+      ],
+      "source": "https://www.britannica.com/topic/The-Spirit-of-the-Laws-work-by-Montesquieu"
+    },
+    {
+      "seedId": "e1d1ac5f-df01-421b-961c-41b47cb2c217",
+      "category": "history",
+      "navigationKeyword1": "early-modern",
+      "navigationKeyword2": "enlightenment",
+      "question": "The Declaration of Independence lists three unalienable rights. Besides life and liberty, which third right appears in the final text?",
+      "correctAnswer": "The pursuit of happiness",
+      "incorrectAnswers": [
+        "Property (Locke\u2019s formulation, not the adopted Declaration text)",
+        "The security of a standing army",
+        "Freedom of trade without representation"
+      ],
+      "explanation": "Jefferson\u2019s committee adapted natural-rights language: the published Declaration names life, liberty, and the pursuit of happiness as rights governments exist to secure.",
+      "keywords": [
+        "enlightenment",
+        "america",
+        "revolution"
+      ],
+      "source": "https://www.britannica.com/topic/Declaration-of-Independence-United-States"
+    },
+    {
+      "seedId": "b07582a8-cabe-4bb8-9c43-9abd00389c2a",
+      "category": "history",
+      "navigationKeyword1": "early-modern",
+      "navigationKeyword2": "enlightenment",
+      "question": "Voltaire\u2019s advocacy of tolerance and critique of clerical abuse appear in letters often titled after which English nation?",
+      "correctAnswer": "Letters on the English (Letters Concerning the English Nation)",
+      "incorrectAnswers": [
+        "Persian Letters",
+        "The German Ideology",
+        "Democracy in America"
+      ],
+      "explanation": "Voltaire praised English liberties and science as models for reform in France.",
+      "keywords": [
+        "enlightenment",
+        "voltaire",
+        "france"
+      ],
+      "source": "https://www.britannica.com/biography/Voltaire"
+    },
+    {
+      "seedId": "363526ad-a04c-4254-bf40-f5c57a5d8c8c",
+      "category": "history",
+      "navigationKeyword1": "early-modern",
+      "navigationKeyword2": "exploration",
+      "question": "Bartolomeu Dias\u2019s 1488 rounding of Africa\u2019s southern tip named that cape what?",
+      "correctAnswer": "Cape of Good Hope",
+      "incorrectAnswers": [
+        "Cape Horn",
+        "Cape Verde",
+        "Cape Finisterre"
+      ],
+      "explanation": "Dias showed sea passage to the Indian Ocean was possible around Africa\u2019s southern extremity.",
+      "keywords": [
+        "exploration",
+        "portugal",
+        "africa"
+      ],
+      "source": "https://www.britannica.com/biography/Bartolomeu-Dias"
+    },
+    {
+      "seedId": "bd61fd3e-23df-49f6-b2de-6ae2d8b9c800",
+      "category": "history",
+      "navigationKeyword1": "early-modern",
+      "navigationKeyword2": "exploration",
+      "question": "Columbus\u2019s first voyage under Spanish patronage reached Caribbean islands in which year?",
+      "correctAnswer": "1492",
+      "incorrectAnswers": [
+        "1488",
+        "1519",
+        "1588"
+      ],
+      "explanation": "1492 marks Columbus\u2019s initial Atlantic crossing sponsored by Ferdinand and Isabella.",
+      "keywords": [
+        "exploration",
+        "columbus",
+        "atlantic"
+      ],
+      "source": "https://www.britannica.com/biography/Christopher-Columbus"
+    },
+    {
+      "seedId": "1d5782d7-0ed3-4825-abd2-9b8cc011969c",
+      "category": "history",
+      "navigationKeyword1": "early-modern",
+      "navigationKeyword2": "exploration",
+      "question": "Ferdinand Magellan died in which archipelago where his crew continued the first circumnavigation?",
+      "correctAnswer": "The Philippines",
+      "incorrectAnswers": [
+        "The Azores",
+        "The Maldives",
+        "The Falklands"
+      ],
+      "explanation": "Magellan was killed at Mactan in 1521 while intervening in a local conflict.",
+      "keywords": [
+        "exploration",
+        "magellan",
+        "pacific"
+      ],
+      "source": "https://www.britannica.com/biography/Juan-Sebastian-del-Cano"
+    },
+    {
+      "seedId": "e7cbc464-a32a-4020-9c0f-482668673b7e",
+      "category": "history",
+      "navigationKeyword1": "early-modern",
+      "navigationKeyword2": "exploration",
+      "question": "Ferdinand Magellan\u2019s expedition, finished by Elcano, achieved what geographic first in 1522?",
+      "correctAnswer": "Circumnavigation of the globe",
+      "incorrectAnswers": [
+        "Discovery of Australia",
+        "Northwest Passage transit",
+        "First landing in Japan"
+      ],
+      "explanation": "Survivors of the Spanish voyage returned to Spain after sailing westward around the world.",
+      "keywords": [
+        "exploration",
+        "spain",
+        "pacific"
+      ],
+      "source": "https://www.britannica.com/biography/Ferdinand-Magellan"
+    },
+    {
+      "seedId": "6fe00eed-f32b-4a73-bf0c-5d263ad738fd",
+      "category": "history",
+      "navigationKeyword1": "early-modern",
+      "navigationKeyword2": "exploration",
+      "question": "John Cabot\u2019s English-sponsored voyages from Bristol sought a northwest route to which Asian economies?",
+      "correctAnswer": "The spice-producing lands of Asia",
+      "incorrectAnswers": [
+        "The gold mines of Zimbabwe",
+        "The silk roads only overland",
+        "Pacific Polynesia"
+      ],
+      "explanation": "Cabot explored North Atlantic coasts while seeking Asia for England\u2019s merchants.",
+      "keywords": [
+        "exploration",
+        "england",
+        "atlantic"
+      ],
+      "source": "https://www.britannica.com/biography/John-Cabot"
+    },
+    {
+      "seedId": "5f9aa0fc-70a7-46a2-af2b-ee36a0b0096f",
+      "category": "history",
+      "navigationKeyword1": "early-modern",
+      "navigationKeyword2": "exploration",
+      "question": "Martin Waldseem\u00fcller\u2019s 1507 map labeled the New World after which Florentine navigator\u2019s first name?",
+      "correctAnswer": "Amerigo Vespucci",
+      "incorrectAnswers": [
+        "Christopher Columbus",
+        "Ferdinand Magellan",
+        "John Cabot"
+      ],
+      "explanation": "Mapmakers derived the name \u201cAmerica\u201d from Amerigo Vespucci\u2019s published letters on transatlantic voyages.",
+      "keywords": [
+        "exploration",
+        "cartography",
+        "americas"
+      ],
+      "source": "https://www.britannica.com/biography/Amerigo-Vespucci"
+    },
+    {
+      "seedId": "3764b44a-805c-4799-b913-d97f49038965",
+      "category": "history",
+      "navigationKeyword1": "early-modern",
+      "navigationKeyword2": "exploration",
+      "question": "Pedro \u00c1lvares Cabral\u2019s 1500 landfall is often cited as the European discovery of which territory?",
+      "correctAnswer": "Brazil",
+      "incorrectAnswers": [
+        "Argentina",
+        "Florida",
+        "Labrador"
+      ],
+      "explanation": "Cabral\u2019s fleet reached the South American coast under Portuguese claims.",
+      "keywords": [
+        "exploration",
+        "portugal",
+        "brazil"
+      ],
+      "source": "https://www.britannica.com/biography/Pedro-Alvares-Cabral"
+    },
+    {
+      "seedId": "e8afe639-9d53-4215-a29a-c38757c43c75",
+      "category": "history",
+      "navigationKeyword1": "early-modern",
+      "navigationKeyword2": "exploration",
+      "question": "Pope Alexander VI\u2019s 1493 bull and the next year\u2019s treaty split non-Christian lands between Spain and which other crown?",
+      "correctAnswer": "Portugal",
+      "incorrectAnswers": [
+        "France",
+        "England",
+        "The Holy Roman Empire"
+      ],
+      "explanation": "The Treaty of Tordesillas adjusted a papal line of demarcation between Iberian Atlantic claims.",
+      "keywords": [
+        "exploration",
+        "iberia",
+        "treaty"
+      ],
+      "source": "https://www.britannica.com/event/Treaty-of-Tordesillas"
+    },
+    {
+      "seedId": "8fda5fa3-8a01-4d8b-8d16-08d393934ca9",
+      "category": "history",
+      "navigationKeyword1": "early-modern",
+      "navigationKeyword2": "exploration",
+      "question": "Spanish conquistadors seized the Aztec capital Tenochtitl\u00e1n under whose leadership?",
+      "correctAnswer": "Hern\u00e1n Cort\u00e9s",
+      "incorrectAnswers": [
+        "Francisco Pizarro",
+        "Vasco N\u00fa\u00f1ez de Balboa",
+        "Juan Ponce de Le\u00f3n"
+      ],
+      "explanation": "Cort\u00e9s allied with indigenous enemies of the Aztecs and captured Tenochtitl\u00e1n by 1521.",
+      "keywords": [
+        "exploration",
+        "spain",
+        "mesoamerica"
+      ],
+      "source": "https://www.britannica.com/biography/Hernan-Cortes-Spanish-conquistador"
+    },
+    {
+      "seedId": "85e346ec-3be1-49fc-b5c2-a36730f4af2c",
+      "category": "history",
+      "navigationKeyword1": "early-modern",
+      "navigationKeyword2": "exploration",
+      "question": "The exchange of crops, animals, and diseases across the Atlantic after 1492 is named for which explorer?",
+      "correctAnswer": "Columbus (Columbian Exchange)",
+      "incorrectAnswers": [
+        "Magellan",
+        "Cook",
+        "Da Gama"
+      ],
+      "explanation": "Historians use Columbian Exchange to describe biological transfers linking the hemispheres.",
+      "keywords": [
+        "exploration",
+        "environment",
+        "atlantic"
+      ],
+      "source": "https://www.britannica.com/science/Columbian-exchange"
+    },
+    {
+      "seedId": "289c1ffe-16c0-4fb5-8866-dc27d4bd7920",
+      "category": "history",
+      "navigationKeyword1": "early-modern",
+      "navigationKeyword2": "exploration",
+      "question": "Vasco da Gama\u2019s fleet rounded Africa and reached which Indian port in 1498?",
+      "correctAnswer": "Calicut (Kozhikode)",
+      "incorrectAnswers": [
+        "Goa (as first landfall)",
+        "Malacca",
+        "Hormuz"
+      ],
+      "explanation": "Da Gama\u2019s arrival at Calicut linked Portuguese sea power to Indian Ocean trade.",
+      "keywords": [
+        "exploration",
+        "portugal",
+        "india"
+      ],
+      "source": "https://www.britannica.com/biography/Vasco-da-Gama"
+    },
+    {
+      "seedId": "68cfec8b-9ac5-40b9-ba73-02fbf2c3a9a8",
+      "category": "history",
+      "navigationKeyword1": "early-modern",
+      "navigationKeyword2": "exploration",
+      "question": "Which Portuguese prince\u2019s court at Sagres systematically sponsored Atlantic voyages, mapping, and navigation studies that extended Portuguese reach along Africa in the 1400s?",
+      "correctAnswer": "Prince Henry of Portugal (often called \u201cthe Navigator\u201d in later tradition)",
+      "incorrectAnswers": [
+        "Henry the Lion, duke of Saxony and Bavaria",
+        "Henry the Fowler, East Frankish king",
+        "Henry the Impotent of Castile"
+      ],
+      "explanation": "Henry\u2019s patronage of seamen and cartographers helped open the African route that later explorers used to reach the Indian Ocean.",
+      "keywords": [
+        "exploration",
+        "portugal",
+        "africa"
+      ],
+      "source": "https://www.britannica.com/biography/Henry-the-Navigator"
+    },
+    {
+      "seedId": "5bd88a75-3318-4e1d-9169-ff0b7a0311f0",
+      "category": "history",
+      "navigationKeyword1": "early-modern",
+      "navigationKeyword2": "reformation",
+      "question": "At the Diet of Worms, which Holy Roman Emperor declared Luther an outlaw after he refused to recant?",
+      "correctAnswer": "Charles V",
+      "incorrectAnswers": [
+        "Maximilian I",
+        "Ferdinand I",
+        "Rudolf II"
+      ],
+      "explanation": "Charles V summoned Luther and issued the Edict of Worms condemning his teachings.",
+      "keywords": [
+        "reformation",
+        "luther",
+        "empire"
+      ],
+      "source": "https://www.britannica.com/event/Diet-of-Worms"
+    },
+    {
+      "seedId": "a93e54ba-ddcd-4aac-8cb3-9f5275b4f9c1",
+      "category": "history",
+      "navigationKeyword1": "early-modern",
+      "navigationKeyword2": "reformation",
+      "question": "Catholic bishops gathered at Trent for decades to define doctrine and reform discipline in response to Protestantism\u2014what is that council called?",
+      "correctAnswer": "The Council of Trent",
+      "incorrectAnswers": [
+        "The Council of Constance",
+        "The Council of Florence",
+        "Vatican Council I"
+      ],
+      "explanation": "Trent codified Catholic teaching on scripture, tradition, sacraments, and clerical life.",
+      "keywords": [
+        "reformation",
+        "catholic",
+        "council"
+      ],
+      "source": "https://www.britannica.com/event/Council-of-Trent"
+    },
+    {
+      "seedId": "ecca64f7-fd15-475e-970b-f0a78ec45029",
+      "category": "history",
+      "navigationKeyword1": "early-modern",
+      "navigationKeyword2": "reformation",
+      "question": "Henry VIII\u2019s 1534 English act declared him supreme head of which institution in his realms?",
+      "correctAnswer": "The Church of England",
+      "incorrectAnswers": [
+        "The Presbyterian Kirk",
+        "The Lutheran churches",
+        "The Roman Curia"
+      ],
+      "explanation": "The Act of Supremacy broke papal jurisdiction and made the crown head of the English church.",
+      "keywords": [
+        "reformation",
+        "england",
+        "henry-viii"
+      ],
+      "source": "https://www.britannica.com/biography/Henry-VIII-king-of-England"
+    },
+    {
+      "seedId": "09cf6a52-8a80-416d-adf6-736a93a9b4b9",
+      "category": "history",
+      "navigationKeyword1": "early-modern",
+      "navigationKeyword2": "reformation",
+      "question": "Ignatius of Loyola\u2019s society, founded vows and schools to advance Catholic renewal during the Counter-Reformation\u2014what is it?",
+      "correctAnswer": "The Society of Jesus (Jesuits)",
+      "incorrectAnswers": [
+        "The Franciscans",
+        "The Dominicans",
+        "The Carthusians"
+      ],
+      "explanation": "Jesuit colleges and missions became principal instruments of Catholic reform and expansion.",
+      "keywords": [
+        "reformation",
+        "catholic",
+        "jesuits"
+      ],
+      "source": "https://www.britannica.com/topic/Society-of-Jesus"
+    },
+    {
+      "seedId": "c8e64f06-d440-4eb8-b31b-60e20a2c7917",
+      "category": "history",
+      "navigationKeyword1": "early-modern",
+      "navigationKeyword2": "reformation",
+      "question": "John Calvin\u2019s ministry and academy made which Swiss city a hub of Reformed Protestantism?",
+      "correctAnswer": "Geneva",
+      "incorrectAnswers": [
+        "Z\u00fcrich",
+        "Basel",
+        "Bern"
+      ],
+      "explanation": "Calvin shaped Geneva into a model Reformed community whose influence spread across Europe.",
+      "keywords": [
+        "reformation",
+        "calvin",
+        "switzerland"
+      ],
+      "source": "https://www.britannica.com/biography/John-Calvin"
+    },
+    {
+      "seedId": "8fbacea0-99ce-4367-a40c-d10cebab0ae7",
+      "category": "history",
+      "navigationKeyword1": "early-modern",
+      "navigationKeyword2": "reformation",
+      "question": "John Knox studied with Calvin and carried Reformed Protestantism to which kingdom?",
+      "correctAnswer": "Scotland",
+      "incorrectAnswers": [
+        "Ireland",
+        "Poland",
+        "Sweden"
+      ],
+      "explanation": "Knox helped establish Presbyterian governance as Scotland\u2019s national church form.",
+      "keywords": [
+        "reformation",
+        "scotland",
+        "knox"
+      ],
+      "source": "https://www.britannica.com/biography/John-Knox"
+    },
+    {
+      "seedId": "b5463a61-011d-44d9-bc8f-9b7c45c38523",
+      "category": "history",
+      "navigationKeyword1": "early-modern",
+      "navigationKeyword2": "reformation",
+      "question": "Martin Luther reportedly nailed Ninety-five Theses to a Wittenberg church door in which year?",
+      "correctAnswer": "1517",
+      "incorrectAnswers": [
+        "1492",
+        "1555",
+        "1618"
+      ],
+      "explanation": "Luther\u2019s 1517 protest against indulgence preaching is the conventional starting date for the German Reformation.",
+      "keywords": [
+        "reformation",
+        "luther",
+        "germany"
+      ],
+      "source": "https://www.britannica.com/event/Reformation"
+    },
+    {
+      "seedId": "67f87a7a-1768-4aa5-98bb-dfaf6ad1a4b6",
+      "category": "history",
+      "navigationKeyword1": "early-modern",
+      "navigationKeyword2": "reformation",
+      "question": "Philip Melanchthon\u2019s Lutheran confession, presented to Charles V at Augsburg in 1530, is known by what name?",
+      "correctAnswer": "The Augsburg Confession",
+      "incorrectAnswers": [
+        "The Westminster Confession",
+        "The Belgic Confession",
+        "The Formula of Concord alone"
+      ],
+      "explanation": "The Augsburg Confession summarized Lutheran doctrine for imperial deliberation.",
+      "keywords": [
+        "reformation",
+        "lutheran",
+        "germany"
+      ],
+      "source": "https://www.britannica.com/topic/Augsburg-Confession"
+    },
+    {
+      "seedId": "666e0268-0fb5-4644-8e06-2624ae462114",
+      "category": "history",
+      "navigationKeyword1": "early-modern",
+      "navigationKeyword2": "reformation",
+      "question": "The 1555 Peace of Augsburg settled religious division in the Holy Roman Empire by tying each territory\u2019s official church to what?",
+      "correctAnswer": "The faith of its ruling prince (Lutheran or Catholic)",
+      "incorrectAnswers": [
+        "A popular vote in each village",
+        "The pope\u2019s appointment of every pastor",
+        "Uniform Calvinism across the empire"
+      ],
+      "explanation": "Princes could choose Lutheranism or Catholicism for their lands; subjects were expected to conform or relocate, embedding religion in territorial sovereignty.",
+      "keywords": [
+        "reformation",
+        "germany",
+        "peace"
+      ],
+      "source": "https://www.britannica.com/event/Peace-of-Augsburg"
+    },
+    {
+      "seedId": "0a81290e-0258-431e-837a-a036d4616ce5",
+      "category": "history",
+      "navigationKeyword1": "early-modern",
+      "navigationKeyword2": "reformation",
+      "question": "The 1598 Edict of Nantes granted limited toleration to Huguenots in which kingdom?",
+      "correctAnswer": "France",
+      "incorrectAnswers": [
+        "Spain",
+        "Portugal",
+        "England"
+      ],
+      "explanation": "Henry IV\u2019s edict ended France\u2019s religious civil wars with provisional rights for Protestants.",
+      "keywords": [
+        "reformation",
+        "france",
+        "toleration"
+      ],
+      "source": "https://www.britannica.com/topic/Edict-of-Nantes"
+    },
+    {
+      "seedId": "3f55c7b5-8cb4-4857-aab4-d4d1ece336d4",
+      "category": "history",
+      "navigationKeyword1": "early-modern",
+      "navigationKeyword2": "reformation",
+      "question": "Ulrich Zwingli\u2019s reforms began in which Swiss city\u2019s Grossm\u00fcnster, parallel to Luther\u2019s work?",
+      "correctAnswer": "Z\u00fcrich",
+      "incorrectAnswers": [
+        "Geneva",
+        "Lausanne",
+        "Fribourg"
+      ],
+      "explanation": "Zwingli led the Z\u00fcrich Reformation, an important early Swiss Protestant movement.",
+      "keywords": [
+        "reformation",
+        "zwingli",
+        "switzerland"
+      ],
+      "source": "https://www.britannica.com/biography/Huldrych-Zwingli"
+    },
+    {
+      "seedId": "0da1c3ab-ec10-419f-8dc7-057c02a4ed17",
+      "category": "history",
+      "navigationKeyword1": "early-modern",
+      "navigationKeyword2": "reformation",
+      "question": "Which radical wing rejected infant baptism and stressed adult believers\u2019 baptism, drawing persecution across Europe?",
+      "correctAnswer": "Anabaptists",
+      "incorrectAnswers": [
+        "Jesuits",
+        "Hussites",
+        "Waldensians only"
+      ],
+      "explanation": "Anabaptist communities formed alternative ecclesial models outside magisterial Protestant establishments.",
+      "keywords": [
+        "reformation",
+        "radical",
+        "baptism"
+      ],
+      "source": "https://www.britannica.com/topic/Anabaptist"
+    },
+    {
+      "seedId": "7ee86d4a-8d41-410c-a4ca-6d100da1b9db",
+      "category": "history",
+      "navigationKeyword1": "early-modern",
+      "navigationKeyword2": "renaissance",
+      "question": "Around 1450 in Mainz, which innovator\u2019s movable type helped multiply books across Europe?",
+      "correctAnswer": "Johannes Gutenberg",
+      "incorrectAnswers": [
+        "Aldus Manutius",
+        "William Caxton",
+        "Christophe Plantin"
+      ],
+      "explanation": "Gutenberg\u2019s printing press revolutionized the reproduction of texts and spread Renaissance ideas.",
+      "keywords": [
+        "renaissance",
+        "printing",
+        "germany"
+      ],
+      "source": "https://www.britannica.com/biography/Johannes-Gutenberg"
+    },
+    {
+      "seedId": "671a9739-af08-44f7-95b9-bd93ae4a3d0f",
+      "category": "history",
+      "navigationKeyword1": "early-modern",
+      "navigationKeyword2": "renaissance",
+      "question": "Filippo Brunelleschi engineered the vast brick dome of which Florentine cathedral begun in the 13th century?",
+      "correctAnswer": "Santa Maria del Fiore (the Duomo)",
+      "incorrectAnswers": [
+        "St. Peter\u2019s Basilica",
+        "Milan Cathedral",
+        "St. Mark\u2019s Basilica"
+      ],
+      "explanation": "Brunelleschi\u2019s dome for Florence\u2019s cathedral demonstrated Renaissance engineering and linear perspective study.",
+      "keywords": [
+        "renaissance",
+        "architecture",
+        "florence"
+      ],
+      "source": "https://www.britannica.com/biography/Filippo-Brunelleschi"
+    },
+    {
+      "seedId": "acff59e5-49f3-4f4b-9502-ed67e32668a1",
+      "category": "history",
+      "navigationKeyword1": "early-modern",
+      "navigationKeyword2": "renaissance",
+      "question": "Florence\u2019s politics and patronage under which banking family funded artists from Brunelleschi to Michelangelo?",
+      "correctAnswer": "The Medici family",
+      "incorrectAnswers": [
+        "The Visconti of Milan",
+        "The Este of Ferrara",
+        "The Sforza alone"
+      ],
+      "explanation": "Medici wealth and civic leadership made Florence a showcase of Renaissance art and learning.",
+      "keywords": [
+        "renaissance",
+        "florence",
+        "patronage"
+      ],
+      "source": "https://www.britannica.com/topic/Medici-family"
+    },
+    {
+      "seedId": "a89412ab-19d3-4582-9acf-7cf25940487e",
+      "category": "history",
+      "navigationKeyword1": "early-modern",
+      "navigationKeyword2": "renaissance",
+      "question": "Jan van Eyck\u2019s oil technique and symbolic detail typify which northern Renaissance panel tradition?",
+      "correctAnswer": "Early Netherlandish painting",
+      "incorrectAnswers": [
+        "Spanish Mannerism",
+        "Ottoman miniature",
+        "Qing literati scrolls"
+      ],
+      "explanation": "Flemish masters like van Eyck achieved luminous realism that rivaled Italian innovations.",
+      "keywords": [
+        "renaissance",
+        "flanders",
+        "painting"
+      ],
+      "source": "https://www.britannica.com/biography/Jan-van-Eyck"
+    },
+    {
+      "seedId": "333be658-6582-4a95-839c-353e0c166695",
+      "category": "history",
+      "navigationKeyword1": "early-modern",
+      "navigationKeyword2": "renaissance",
+      "question": "Leonardo\u2019s mural of Jesus\u2019 last meal with apostles decorates a Milanese refectory with which title?",
+      "correctAnswer": "The Last Supper",
+      "incorrectAnswers": [
+        "The School of Athens",
+        "The Sistine Chapel ceiling",
+        "The Arnolfini Portrait"
+      ],
+      "explanation": "Leonardo painted The Last Supper for Santa Maria delle Grazie, a high Renaissance masterpiece.",
+      "keywords": [
+        "renaissance",
+        "leonardo",
+        "italy"
+      ],
+      "source": "https://www.britannica.com/topic/Last-Supper-fresco-by-Leonardo-da-Vinci"
+    },
+    {
+      "seedId": "3ca0b9f0-45b4-49ae-8068-11940a56adea",
+      "category": "history",
+      "navigationKeyword1": "early-modern",
+      "navigationKeyword2": "renaissance",
+      "question": "Lorenzo Valla\u2019s philological work attacked the forged document granting papal temporal dominion called what?",
+      "correctAnswer": "The Donation of Constantine",
+      "incorrectAnswers": [
+        "The Dictatus Papae",
+        "The Unam Sanctam bull",
+        "The Clementine Decretals"
+      ],
+      "explanation": "Valla demonstrated the Donation of Constantine was spurious, a landmark of Renaissance textual criticism.",
+      "keywords": [
+        "renaissance",
+        "humanism",
+        "criticism"
+      ],
+      "source": "https://www.britannica.com/topic/Donation-of-Constantine-Roman-Catholicism"
+    },
+    {
+      "seedId": "4cdd1266-92bd-422d-85ef-96619231c48a",
+      "category": "history",
+      "navigationKeyword1": "early-modern",
+      "navigationKeyword2": "renaissance",
+      "question": "Michelangelo\u2019s ceiling frescoes for Julius II adorn which chapel in Vatican City?",
+      "correctAnswer": "The Sistine Chapel",
+      "incorrectAnswers": [
+        "The Pauline Chapel",
+        "St. Peter\u2019s nave",
+        "The Borgia Apartments"
+      ],
+      "explanation": "Michelangelo\u2019s Sistine ceiling is a defining monument of High Renaissance art.",
+      "keywords": [
+        "renaissance",
+        "michelangelo",
+        "rome"
+      ],
+      "source": "https://www.britannica.com/topic/Sistine-Chapel-ceiling"
+    },
+    {
+      "seedId": "8615405f-c21f-4cd4-8f08-1803ed955c8c",
+      "category": "history",
+      "navigationKeyword1": "early-modern",
+      "navigationKeyword2": "renaissance",
+      "question": "Niccol\u00f2 Machiavelli advised rulers on power and fortune in which short political treatise?",
+      "correctAnswer": "The Prince (Il Principe)",
+      "incorrectAnswers": [
+        "The Book of the Courtier",
+        "Utopia",
+        "Leviathan"
+      ],
+      "explanation": "The Prince is Machiavelli\u2019s famous analysis of pragmatic statecraft.",
+      "keywords": [
+        "renaissance",
+        "political-thought",
+        "florence"
+      ],
+      "source": "https://www.britannica.com/topic/The-Prince-treatise-by-Machiavelli"
+    },
+    {
+      "seedId": "2463a3d5-1d88-494a-afdc-375eda309db2",
+      "category": "history",
+      "navigationKeyword1": "early-modern",
+      "navigationKeyword2": "renaissance",
+      "question": "Raphael\u2019s fresco showing Plato and Aristotle amid philosophers fills a stanza in whose Vatican apartments?",
+      "correctAnswer": "Pope Julius II (Raphael Rooms)",
+      "incorrectAnswers": [
+        "Pope Alexander VI",
+        "Pope Urban VIII",
+        "Pope Innocent X"
+      ],
+      "explanation": "The School of Athens in the Stanza della Segnatura celebrates classical philosophy under papal patronage.",
+      "keywords": [
+        "renaissance",
+        "raphael",
+        "rome"
+      ],
+      "source": "https://www.britannica.com/topic/School-of-Athens-fresco-by-Raphael"
+    },
+    {
+      "seedId": "76f19384-9d9a-4b31-8c21-5fcc4e801e9b",
+      "category": "history",
+      "navigationKeyword1": "early-modern",
+      "navigationKeyword2": "renaissance",
+      "question": "Renaissance artists used converging lines toward a vanishing point in which pictorial technique?",
+      "correctAnswer": "Linear perspective",
+      "incorrectAnswers": [
+        "Pointillism",
+        "Tenebrism only",
+        "Anamorphic distortion only"
+      ],
+      "explanation": "Linear perspective, systematized by Brunelleschi and Alberti, created convincing spatial depth on flat panels.",
+      "keywords": [
+        "renaissance",
+        "art",
+        "perspective"
+      ],
+      "source": "https://www.britannica.com/art/linear-perspective"
+    },
+    {
+      "seedId": "8f11f58e-ce53-46ca-8812-f8efeb240ba9",
+      "category": "history",
+      "navigationKeyword1": "early-modern",
+      "navigationKeyword2": "renaissance",
+      "question": "Which Tuscan poet\u2019s recovery of classical texts and sonnets earned him the title \u201cfather of Humanism\u201d?",
+      "correctAnswer": "Petrarch (Francesco Petrarca)",
+      "incorrectAnswers": [
+        "Dante Alighieri",
+        "Giovanni Boccaccio",
+        "Ludovico Ariosto"
+      ],
+      "explanation": "Petrarch\u2019s scholarship and Latin letters helped spark the Italian Renaissance humanist movement.",
+      "keywords": [
+        "renaissance",
+        "humanism",
+        "italy"
+      ],
+      "source": "https://www.britannica.com/biography/Petrarch"
+    },
+    {
+      "seedId": "61543af1-4959-45ee-a599-ed0f59b617b5",
+      "category": "history",
+      "navigationKeyword1": "early-modern",
+      "navigationKeyword2": "renaissance",
+      "question": "Which Venetian printer popularized italic type and handy octavo editions of classics around 1500?",
+      "correctAnswer": "Aldus Manutius",
+      "incorrectAnswers": [
+        "Johann Fust",
+        "Antoine V\u00e9rard",
+        "Richard Pynson"
+      ],
+      "explanation": "Aldine Press editions spread humanist literature in portable formats across Europe.",
+      "keywords": [
+        "renaissance",
+        "printing",
+        "venice"
+      ],
+      "source": "https://www.britannica.com/biography/Aldus-Manutius"
+    },
+    {
+      "seedId": "a715216f-9155-439b-a2bc-92306fb57806",
+      "category": "history",
+      "navigationKeyword1": "early-modern",
+      "navigationKeyword2": "revolutions",
+      "question": "After defeat in the English Civil Wars, Charles I was executed in public outside which London building in 1649?",
+      "correctAnswer": "Banqueting House, Whitehall",
+      "incorrectAnswers": [
+        "The Tower of London",
+        "Westminster Abbey",
+        "St. Paul\u2019s Cathedral"
+      ],
+      "explanation": "The regicide of Charles I underscored Parliament\u2019s triumph over royal absolutism during the revolutionary decades.",
+      "keywords": [
+        "revolutions",
+        "england",
+        "civil-war"
+      ],
+      "source": "https://www.britannica.com/event/English-Civil-Wars"
+    },
+    {
+      "seedId": "4e0baab2-7c88-4af3-a3f9-f55a7685314a",
+      "category": "history",
+      "navigationKeyword1": "early-modern",
+      "navigationKeyword2": "revolutions",
+      "question": "American and French forces trapped Cornwallis\u2019s army at which 1781 siege that effectively ended major fighting in the Revolutionary War?",
+      "correctAnswer": "Yorktown",
+      "incorrectAnswers": [
+        "Saratoga",
+        "Trenton",
+        "Bunker Hill"
+      ],
+      "explanation": "The Franco-American victory at Yorktown compelled Britain to negotiate peace and recognize U.S. independence.",
+      "keywords": [
+        "revolutions",
+        "american-revolution",
+        "military"
+      ],
+      "source": "https://www.britannica.com/event/Siege-of-Yorktown"
+    },
+    {
+      "seedId": "1fd2f733-c1b0-4d7c-a3e1-6c0c5cd33290",
+      "category": "history",
+      "navigationKeyword1": "early-modern",
+      "navigationKeyword2": "revolutions",
+      "question": "Britain\u2019s Parliament passed which 1765 revenue measure that provoked colonial cries of \u201cno taxation without representation\u201d?",
+      "correctAnswer": "The Stamp Act",
+      "incorrectAnswers": [
+        "The Townshend Acts",
+        "The Sugar Act",
+        "The Intolerable Acts"
+      ],
+      "explanation": "Widespread colonial resistance to the Stamp Act foreshadowed the American Revolution\u2019s constitutional break.",
+      "keywords": [
+        "revolutions",
+        "american-revolution",
+        "taxation"
+      ],
+      "source": "https://www.britannica.com/event/Stamp-Act-Great-Britain-1765"
+    },
+    {
+      "seedId": "0cc14d27-7d2c-4686-8e98-699fb151ba10",
+      "category": "history",
+      "navigationKeyword1": "early-modern",
+      "navigationKeyword2": "revolutions",
+      "question": "Colonists protested the Tea Act by dumping East India Company tea into Boston Harbor during which 1773 incident?",
+      "correctAnswer": "The Boston Tea Party",
+      "incorrectAnswers": [
+        "The Boston Massacre",
+        "Shays\u2019 Rebellion",
+        "The Whiskey Rebellion"
+      ],
+      "explanation": "Parliament\u2019s harsh Coercive Acts followed the Tea Party, pushing the crisis toward open war.",
+      "keywords": [
+        "revolutions",
+        "american-revolution",
+        "protest"
+      ],
+      "source": "https://www.britannica.com/event/Boston-Tea-Party"
+    },
+    {
+      "seedId": "07653657-d56b-45fb-b91c-0a7ca367f9e2",
+      "category": "history",
+      "navigationKeyword1": "early-modern",
+      "navigationKeyword2": "revolutions",
+      "question": "In 1688\u201389, which Protestant stadholder accepted an invitation to invade England and replace James II in what became the \u201cGlorious Revolution\u201d?",
+      "correctAnswer": "William III of Orange (William of Orange)",
+      "incorrectAnswers": [
+        "Louis XIV of France",
+        "Philip II of Spain",
+        "Gustavus Adolphus of Sweden"
+      ],
+      "explanation": "William III landed in England with a Dutch force; James II fled, and Parliament offered the crown jointly to William and Mary.",
+      "keywords": [
+        "revolutions",
+        "england",
+        "1688"
+      ],
+      "source": "https://www.britannica.com/event/Glorious-Revolution"
+    },
+    {
+      "seedId": "433fc8fe-5881-49dc-9b7b-6ed1ecdb5e92",
+      "category": "history",
+      "navigationKeyword1": "early-modern",
+      "navigationKeyword2": "revolutions",
+      "question": "Members of France\u2019s Third Estate swore not to disband until they had given France a constitution in which June 1789 act?",
+      "correctAnswer": "The Tennis Court Oath",
+      "incorrectAnswers": [
+        "The Night of August 4",
+        "The Concordat of 1801",
+        "The Civil Constitution of the Clergy"
+      ],
+      "explanation": "The oath at Versailles marked the Third Estate\u2019s assertion of national sovereignty against royal privilege.",
+      "keywords": [
+        "revolutions",
+        "france",
+        "1789"
+      ],
+      "source": "https://www.britannica.com/event/Tennis-Court-Oath"
+    },
+    {
+      "seedId": "23670125-cd3a-44ab-af99-93fa5ea4967a",
+      "category": "history",
+      "navigationKeyword1": "early-modern",
+      "navigationKeyword2": "revolutions",
+      "question": "Parisians stormed which fortress-prison on July 14, 1789, a turning point of the French Revolution?",
+      "correctAnswer": "The Bastille",
+      "incorrectAnswers": [
+        "The Conciergerie",
+        "The Tuileries Palace",
+        "The Ch\u00e2teau d\u2019If"
+      ],
+      "explanation": "The fall of the Bastille symbolized the collapse of royal authority and is still commemorated in France.",
+      "keywords": [
+        "revolutions",
+        "france",
+        "1789"
+      ],
+      "source": "https://www.britannica.com/event/French-Revolution"
+    },
+    {
+      "seedId": "0acb7253-8245-44c4-b76d-04a74a35449a",
+      "category": "history",
+      "navigationKeyword1": "early-modern",
+      "navigationKeyword2": "revolutions",
+      "question": "The Continental Congress adopted a formal break with Britain on July 4 of which year?",
+      "correctAnswer": "1776",
+      "incorrectAnswers": [
+        "1765",
+        "1781",
+        "1789"
+      ],
+      "explanation": "The Declaration of Independence was adopted on July 4, 1776, announcing the American colonies\u2019 separation.",
+      "keywords": [
+        "revolutions",
+        "american-revolution",
+        "independence"
+      ],
+      "source": "https://www.britannica.com/event/American-Revolution"
+    },
+    {
+      "seedId": "71a3924c-5be6-4378-ae08-2ec455bdf9df",
+      "category": "history",
+      "navigationKeyword1": "early-modern",
+      "navigationKeyword2": "revolutions",
+      "question": "The Dutch Republic won recognition after which long conflict (1568\u20131648) against Habsburg Spain?",
+      "correctAnswer": "The Eighty Years\u2019 War (Dutch Revolt)",
+      "incorrectAnswers": [
+        "The Thirty Years\u2019 War alone",
+        "The War of the Spanish Succession",
+        "The Napoleonic Wars"
+      ],
+      "explanation": "The revolt of the Netherlands escalated into the Eighty Years\u2019 War and ended with Spanish acceptance of Dutch independence.",
+      "keywords": [
+        "revolutions",
+        "netherlands",
+        "independence"
+      ],
+      "source": "https://www.britannica.com/event/Eighty-Years-War"
+    },
+    {
+      "seedId": "9a3d53bf-e7a2-4d12-8b33-9f4f38296196",
+      "category": "history",
+      "navigationKeyword1": "early-modern",
+      "navigationKeyword2": "revolutions",
+      "question": "Which Venezuelan-born commander called \u201cthe Liberator\u201d helped win independence for much of northern South America?",
+      "correctAnswer": "Sim\u00f3n Bol\u00edvar",
+      "incorrectAnswers": [
+        "Bernardo O\u2019Higgins",
+        "Antonio Jos\u00e9 de Sucre",
+        "Agust\u00edn de Iturbide"
+      ],
+      "explanation": "Bol\u00edvar campaigned across Venezuela, Colombia, Ecuador, Peru, and Bolivia to break Spanish imperial control.",
+      "keywords": [
+        "revolutions",
+        "latin-america",
+        "independence"
+      ],
+      "source": "https://www.britannica.com/biography/Simon-Bolivar"
+    },
+    {
+      "seedId": "48ce71b5-3355-42f2-b49c-9ad590de0dd8",
+      "category": "history",
+      "navigationKeyword1": "early-modern",
+      "navigationKeyword2": "revolutions",
+      "question": "Which leader of the Haitian Revolution helped forge the world\u2019s first Black-led republic after French colonial rule?",
+      "correctAnswer": "Toussaint Louverture",
+      "incorrectAnswers": [
+        "Sim\u00f3n Bol\u00edvar",
+        "Jos\u00e9 de San Mart\u00edn",
+        "Miguel Hidalgo y Costilla"
+      ],
+      "explanation": "Toussaint\u2019s military and political leadership was central to the slave uprising that defeated French forces on the island.",
+      "keywords": [
+        "revolutions",
+        "haiti",
+        "caribbean"
+      ],
+      "source": "https://www.britannica.com/biography/Toussaint-Louverture"
+    },
+    {
+      "seedId": "001481d4-3908-4967-a7d5-b9f7a71c290f",
+      "category": "history",
+      "navigationKeyword1": "early-modern",
+      "navigationKeyword2": "revolutions",
+      "question": "Which radical phase of the French Revolution (1793\u201394) saw mass trials and the guillotine used against alleged enemies of the republic?",
+      "correctAnswer": "The Reign of Terror",
+      "incorrectAnswers": [
+        "The Directory",
+        "The Thermidorian Reaction",
+        "The Bourbon Restoration"
+      ],
+      "explanation": "The Committee of Public Safety, associated with Robespierre, directed emergency measures that cost thousands of lives.",
+      "keywords": [
+        "revolutions",
+        "france",
+        "terror"
+      ],
+      "source": "https://www.britannica.com/event/Reign-of-Terror"
+    }
+  ]
+}

@@ -1,0 +1,235 @@
+{
+  "schemaVersion": 1,
+  "seedSet": "core-public-items",
+  "deltaPreviewLimit": 200,
+  "items": [
+    {
+      "seedId": "af3d9d51-a214-4105-b29e-710c843883ce",
+      "category": "science",
+      "navigationKeyword1": "pre-algebra",
+      "navigationKeyword2": "integers",
+      "question": "(\u22122)(\u22126) = ?",
+      "correctAnswer": "12",
+      "incorrectAnswers": [
+        "\u221212",
+        "8",
+        "\u22128"
+      ],
+      "explanation": "Product of two negatives is positive.",
+      "keywords": [
+        "integer-multiply",
+        "sign-rules"
+      ],
+      "source": "https://www.mathsisfun.com/positive-negative-integers.html"
+    },
+    {
+      "seedId": "ab1cfcd7-9ba1-40aa-85b5-5eb9021e5315",
+      "category": "science",
+      "navigationKeyword1": "pre-algebra",
+      "navigationKeyword2": "integers",
+      "question": "(\u221224) \u00f7 6 = ?",
+      "correctAnswer": "\u22124",
+      "incorrectAnswers": [
+        "4",
+        "\u221218",
+        "18"
+      ],
+      "explanation": "Different signs \u2192 negative quotient.",
+      "keywords": [
+        "integer-division",
+        "sign-rules"
+      ],
+      "source": "https://www.khanacademy.org/math/arithmetic/arith-review-negative-numbers"
+    },
+    {
+      "seedId": "d11d105c-296d-4427-9faf-a32f76a5e6f6",
+      "category": "science",
+      "navigationKeyword1": "pre-algebra",
+      "navigationKeyword2": "integers",
+      "question": "8 \u2212 (\u22124) = ?",
+      "correctAnswer": "12",
+      "incorrectAnswers": [
+        "4",
+        "\u221212",
+        "32"
+      ],
+      "explanation": "Subtracting negative adds opposite.",
+      "keywords": [
+        "subtraction",
+        "negatives"
+      ],
+      "source": "https://www.khanacademy.org/math/arithmetic/arith-review-negative-numbers"
+    },
+    {
+      "seedId": "8f00dd94-eb32-4d0b-a383-afaf7fd2b5c4",
+      "category": "science",
+      "navigationKeyword1": "pre-algebra",
+      "navigationKeyword2": "integers",
+      "question": "Additive inverse of 5?",
+      "correctAnswer": "\u22125",
+      "incorrectAnswers": [
+        "5",
+        "1/5",
+        "0"
+      ],
+      "explanation": "Sum is zero.",
+      "keywords": [
+        "additive-inverse",
+        "integers"
+      ],
+      "source": "https://www.mathsisfun.com/numbers/addition.html"
+    },
+    {
+      "seedId": "a8b9545f-a4e2-47ba-a613-2994378eae1d",
+      "category": "science",
+      "navigationKeyword1": "pre-algebra",
+      "navigationKeyword2": "integers",
+      "question": "Even integer definition?",
+      "correctAnswer": "Divisible by 2",
+      "incorrectAnswers": [
+        "Ends in 5",
+        "Always negative",
+        "Prime always"
+      ],
+      "explanation": "\u2026, \u22122, 0, 2, 4, \u2026",
+      "keywords": [
+        "even",
+        "parity"
+      ],
+      "source": "https://www.mathsisfun.com/definitions/even-number.html"
+    },
+    {
+      "seedId": "18a21af4-01b7-4453-9995-55fc8b81fe18",
+      "category": "science",
+      "navigationKeyword1": "pre-algebra",
+      "navigationKeyword2": "integers",
+      "question": "Multiplying by zero?",
+      "correctAnswer": "Always 0",
+      "incorrectAnswers": [
+        "Always 1",
+        "Undefined",
+        "Same sign as other factor always"
+      ],
+      "explanation": "Zero product property anchor.",
+      "keywords": [
+        "zero-product",
+        "multiply"
+      ],
+      "source": "https://www.mathsisfun.com/numbers/multiplication.html"
+    },
+    {
+      "seedId": "33295d50-c2e1-4670-b2d0-e102386f8311",
+      "category": "science",
+      "navigationKeyword1": "pre-algebra",
+      "navigationKeyword2": "integers",
+      "question": "Odd integer?",
+      "correctAnswer": "Not divisible by 2",
+      "incorrectAnswers": [
+        "Divisible by 3 always",
+        "Always prime",
+        "Always negative"
+      ],
+      "explanation": "2k+1 form.",
+      "keywords": [
+        "odd",
+        "parity"
+      ],
+      "source": "https://www.mathsisfun.com/definitions/odd-number.html"
+    },
+    {
+      "seedId": "597104a7-bcc0-42ca-9059-2c25ba307dd3",
+      "category": "science",
+      "navigationKeyword1": "pre-algebra",
+      "navigationKeyword2": "integers",
+      "question": "Order from least: \u22121, \u22124, 2?",
+      "correctAnswer": "\u22124, \u22121, 2",
+      "incorrectAnswers": [
+        "2, \u22121, \u22124",
+        "\u22121, \u22124, 2",
+        "\u22124, 2, \u22121"
+      ],
+      "explanation": "Left is smaller on number line.",
+      "keywords": [
+        "ordering",
+        "integers"
+      ],
+      "source": "https://www.khanacademy.org/math/arithmetic/arith-review-negative-numbers"
+    },
+    {
+      "seedId": "4e856cf3-46a2-419a-abf9-dead59b031d3",
+      "category": "science",
+      "navigationKeyword1": "pre-algebra",
+      "navigationKeyword2": "integers",
+      "question": "Temperature drops 8\u00b0C from \u22123\u00b0C?",
+      "correctAnswer": "\u221211\u00b0C",
+      "incorrectAnswers": [
+        "5\u00b0C",
+        "11\u00b0C",
+        "\u22125\u00b0C"
+      ],
+      "explanation": "\u22123 \u2212 8 = \u221211.",
+      "keywords": [
+        "integer-apps",
+        "temperature"
+      ],
+      "source": "https://www.khanacademy.org/math/arithmetic/arith-review-negative-numbers"
+    },
+    {
+      "seedId": "790dbb30-5195-4cbb-8f5f-9305baf7d5fc",
+      "category": "science",
+      "navigationKeyword1": "pre-algebra",
+      "navigationKeyword2": "integers",
+      "question": "What is absolute value of \u22127?",
+      "correctAnswer": "7",
+      "incorrectAnswers": [
+        "\u22127",
+        "0",
+        "1/7"
+      ],
+      "explanation": "Distance from zero on number line.",
+      "keywords": [
+        "absolute-value",
+        "integers"
+      ],
+      "source": "https://www.mathsisfun.com/numbers/absolute-value.html"
+    },
+    {
+      "seedId": "c61d94b9-b780-4378-902c-bdab5cd3393b",
+      "category": "science",
+      "navigationKeyword1": "pre-algebra",
+      "navigationKeyword2": "integers",
+      "question": "Which is farther from 0: \u22129 or 6?",
+      "correctAnswer": "\u22129",
+      "incorrectAnswers": [
+        "6",
+        "Same",
+        "0"
+      ],
+      "explanation": "Compare absolute values.",
+      "keywords": [
+        "number-line",
+        "distance"
+      ],
+      "source": "https://www.mathsisfun.com/numbers/number-line.html"
+    },
+    {
+      "seedId": "137ee97e-3757-4890-b458-c641bfbf3cea",
+      "category": "science",
+      "navigationKeyword1": "pre-algebra",
+      "navigationKeyword2": "integers",
+      "question": "\u22123 + (\u22125) = ?",
+      "correctAnswer": "\u22128",
+      "incorrectAnswers": [
+        "8",
+        "2",
+        "\u22122"
+      ],
+      "explanation": "Adding negatives moves further left.",
+      "keywords": [
+        "integer-addition",
+        "negatives"
+      ],
+      "source": "https://www.khanacademy.org/math/arithmetic/arith-review-negative-numbers"
+    }
+  ]
+}

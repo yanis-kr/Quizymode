@@ -1,0 +1,235 @@
+{
+  "schemaVersion": 1,
+  "seedSet": "core-public-items",
+  "deltaPreviewLimit": 200,
+  "items": [
+    {
+      "seedId": "821e78bc-0b69-4a17-be6e-087f9ace0bc2",
+      "category": "science",
+      "navigationKeyword1": "linear-algebra",
+      "navigationKeyword2": "eigenvalues",
+      "question": "How to find eigenvalues (finite dim)?",
+      "correctAnswer": "Solve det(A \u2212 \u03bbI)=0",
+      "incorrectAnswers": [
+        "Solve Ax=b",
+        "Trace only",
+        "Rank only"
+      ],
+      "explanation": "Characteristic polynomial roots.",
+      "keywords": [
+        "characteristic-polynomial",
+        "determinant"
+      ],
+      "source": "https://openstax.org/books/linear-algebra/pages/5-1-eigenvalues-and-eigenvectors"
+    },
+    {
+      "seedId": "17a93a6d-436f-40c8-86de-ca72152ff282",
+      "category": "science",
+      "navigationKeyword1": "linear-algebra",
+      "navigationKeyword2": "eigenvalues",
+      "question": "What is Markov matrix steady state (stochastic)?",
+      "correctAnswer": "Eigenvector with eigenvalue 1 (under conditions)",
+      "incorrectAnswers": [
+        "Eigenvalue always 2",
+        "No eigenvalues",
+        "Only -1"
+      ],
+      "explanation": "PageRank-style models use eigenvectors.",
+      "keywords": [
+        "markov",
+        "eigen"
+      ],
+      "source": "https://en.wikipedia.org/wiki/Stochastic_matrix"
+    },
+    {
+      "seedId": "b8e507bd-88a8-4fed-9520-c6f3de808efd",
+      "category": "science",
+      "navigationKeyword1": "linear-algebra",
+      "navigationKeyword2": "eigenvalues",
+      "question": "What is PCA (linear algebra view)?",
+      "correctAnswer": "Eigenvectors of covariance matrix directions of max variance",
+      "incorrectAnswers": [
+        "Always k-means",
+        "Always neural network",
+        "Always random projection"
+      ],
+      "explanation": "Uses top eigenvectors.",
+      "keywords": [
+        "pca",
+        "svd"
+      ],
+      "source": "https://en.wikipedia.org/wiki/Principal_component_analysis"
+    },
+    {
+      "seedId": "cb47dac8-4d2c-41ae-a0f4-31e25a648e77",
+      "category": "science",
+      "navigationKeyword1": "linear-algebra",
+      "navigationKeyword2": "eigenvalues",
+      "question": "What is algebraic multiplicity?",
+      "correctAnswer": "Root multiplicity in characteristic polynomial",
+      "incorrectAnswers": [
+        "Dimension of eigenspace always equal",
+        "Trace",
+        "Determinant of v"
+      ],
+      "explanation": "Can exceed geometric multiplicity.",
+      "keywords": [
+        "algebraic-multiplicity",
+        "eigen"
+      ],
+      "source": "https://openstax.org/books/linear-algebra/pages/5-1-eigenvalues-and-eigenvectors"
+    },
+    {
+      "seedId": "214f366a-2a44-450e-bb31-a7327f8ad295",
+      "category": "science",
+      "navigationKeyword1": "linear-algebra",
+      "navigationKeyword2": "eigenvalues",
+      "question": "What is defective matrix?",
+      "correctAnswer": "Not enough eigenvectors to diagonalize",
+      "incorrectAnswers": [
+        "Always diagonalizable",
+        "Always symmetric",
+        "Always invertible"
+      ],
+      "explanation": "Jordan form generalizes.",
+      "keywords": [
+        "defective",
+        "jordan"
+      ],
+      "source": "https://en.wikipedia.org/wiki/Jordan_normal_form"
+    },
+    {
+      "seedId": "31d3c707-479a-48bc-8c76-f8a352bd074f",
+      "category": "science",
+      "navigationKeyword1": "linear-algebra",
+      "navigationKeyword2": "eigenvalues",
+      "question": "What is diagonalizable matrix?",
+      "correctAnswer": "A = PDP^{-1} with D diagonal",
+      "incorrectAnswers": [
+        "Always every matrix",
+        "Never symmetric",
+        "Only non-square"
+      ],
+      "explanation": "Requires enough independent eigenvectors.",
+      "keywords": [
+        "diagonalization",
+        "eigen"
+      ],
+      "source": "https://openstax.org/books/linear-algebra/pages/5-2-diagonalization"
+    },
+    {
+      "seedId": "d9da226c-aee8-4188-aa48-60f8364f52b3",
+      "category": "science",
+      "navigationKeyword1": "linear-algebra",
+      "navigationKeyword2": "eigenvalues",
+      "question": "What is eigenspace?",
+      "correctAnswer": "Nullspace of (A \u2212 \u03bbI)",
+      "incorrectAnswers": [
+        "Column space of A",
+        "Row space of A",
+        "Set of all matrices"
+      ],
+      "explanation": "Includes eigenvectors plus 0.",
+      "keywords": [
+        "eigenspace",
+        "nullspace"
+      ],
+      "source": "https://openstax.org/books/linear-algebra/pages/5-1-eigenvalues-and-eigenvectors"
+    },
+    {
+      "seedId": "b8ea412d-9660-402c-a0c7-e8e3d4fad8d8",
+      "category": "science",
+      "navigationKeyword1": "linear-algebra",
+      "navigationKeyword2": "eigenvalues",
+      "question": "What is eigenvector?",
+      "correctAnswer": "Nonzero v with Av = \u03bbv",
+      "incorrectAnswers": [
+        "Any vector",
+        "Only zero vector",
+        "Only basis vector"
+      ],
+      "explanation": "Represents invariant directions under A.",
+      "keywords": [
+        "eigenvector",
+        "eigenvalue"
+      ],
+      "source": "https://openstax.org/books/linear-algebra/pages/5-1-eigenvalues-and-eigenvectors"
+    },
+    {
+      "seedId": "d8a53f24-4452-45a7-9f64-139ca805834a",
+      "category": "science",
+      "navigationKeyword1": "linear-algebra",
+      "navigationKeyword2": "eigenvalues",
+      "question": "What is geometric multiplicity?",
+      "correctAnswer": "Dimension of eigenspace",
+      "incorrectAnswers": [
+        "Polynomial degree",
+        "Trace",
+        "Rank of A^T"
+      ],
+      "explanation": "May be less than algebraic for defective matrices.",
+      "keywords": [
+        "geometric-multiplicity",
+        "eigen"
+      ],
+      "source": "https://openstax.org/books/linear-algebra/pages/5-1-eigenvalues-and-eigenvectors"
+    },
+    {
+      "seedId": "a1b31a39-4a72-45e1-b3cd-45e0cdf47fbc",
+      "category": "science",
+      "navigationKeyword1": "linear-algebra",
+      "navigationKeyword2": "eigenvalues",
+      "question": "What is power iteration?",
+      "correctAnswer": "Approximate dominant eigenvector by repeated A^k v",
+      "incorrectAnswers": [
+        "Find smallest eigenvalue always",
+        "Solve Ax=b",
+        "Compute determinant"
+      ],
+      "explanation": "Used in large sparse settings.",
+      "keywords": [
+        "power-iteration",
+        "numerical"
+      ],
+      "source": "https://en.wikipedia.org/wiki/Power_iteration"
+    },
+    {
+      "seedId": "ba24fe2f-4890-4742-a58e-9dc231f5f633",
+      "category": "science",
+      "navigationKeyword1": "linear-algebra",
+      "navigationKeyword2": "eigenvalues",
+      "question": "What is singular value (idea)?",
+      "correctAnswer": "Generalizes eigenvalues for rectangular matrices",
+      "incorrectAnswers": [
+        "Only for vectors",
+        "Only for diagonal matrices",
+        "Same as pivots always"
+      ],
+      "explanation": "SVD: A = U\u03a3V^T.",
+      "keywords": [
+        "svd",
+        "matrix"
+      ],
+      "source": "https://en.wikipedia.org/wiki/Singular_value_decomposition"
+    },
+    {
+      "seedId": "56aba6ff-2548-4479-805d-0915d0ae12c9",
+      "category": "science",
+      "navigationKeyword1": "linear-algebra",
+      "navigationKeyword2": "eigenvalues",
+      "question": "What is spectral theorem (real symmetric)?",
+      "correctAnswer": "Orthogonally diagonalizable with real eigenvalues",
+      "incorrectAnswers": [
+        "False for symmetric",
+        "Only complex matrices",
+        "Requires triangular only"
+      ],
+      "explanation": "Enables PCA on covariance matrices.",
+      "keywords": [
+        "spectral-theorem",
+        "symmetric"
+      ],
+      "source": "https://openstax.org/books/linear-algebra/pages/5-3-the-spectral-theorem"
+    }
+  ]
+}

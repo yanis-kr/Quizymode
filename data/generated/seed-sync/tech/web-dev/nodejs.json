@@ -1,0 +1,121 @@
+{
+  "schemaVersion": 1,
+  "seedSet": "core-public-items",
+  "deltaPreviewLimit": 200,
+  "items": [
+    {
+      "seedId": "9b4c55ee-5483-56a6-89c0-ec7ba886e525",
+      "category": "tech",
+      "navigationKeyword1": "web-dev",
+      "navigationKeyword2": "nodejs",
+      "question": "Node's JavaScript runs a single main thread for the event loop; heavy CPU work should usually be moved where?",
+      "correctAnswer": "Worker threads, child processes, or native addons",
+      "incorrectAnswers": [
+        "Into more `console.log` calls",
+        "Into CSS files",
+        "Into DNS TXT records"
+      ],
+      "explanation": "Long synchronous JS blocks the event loop; workers and processes isolate CPU-bound tasks.",
+      "keywords": [
+        "nodejs",
+        "performance"
+      ],
+      "source": "https://nodejs.org/api/worker_threads.html"
+    },
+    {
+      "seedId": "e7b38330-2ae4-534d-95f2-9254dec7bc62",
+      "category": "tech",
+      "navigationKeyword1": "web-dev",
+      "navigationKeyword2": "nodejs",
+      "question": "Streams in Node process data as what instead of buffering entire files in memory?",
+      "correctAnswer": "Chunks over time",
+      "incorrectAnswers": [
+        "One giant string always",
+        "Only UDP datagrams",
+        "Only WebAssembly pages"
+      ],
+      "explanation": "Readable and writable streams pipe data piece by piece, which suits large files and network sockets.",
+      "keywords": [
+        "nodejs",
+        "streams"
+      ],
+      "source": "https://nodejs.org/api/stream.html"
+    },
+    {
+      "seedId": "4ae84eda-b594-5d19-a5bb-363e104f7c53",
+      "category": "tech",
+      "navigationKeyword1": "web-dev",
+      "navigationKeyword2": "nodejs",
+      "question": "The `dependencies` field in `package.json` lists packages needed when?",
+      "correctAnswer": "At runtime (and install time) for the application or library",
+      "incorrectAnswers": [
+        "Only during Git commits",
+        "Only on mobile devices",
+        "Only for documentation builds"
+      ],
+      "explanation": "`dependencies` are installed into `node_modules` and published consumers rely on them.",
+      "keywords": [
+        "nodejs",
+        "npm"
+      ],
+      "source": "https://docs.npmjs.com/cli/v10/configuring-npm/package-json#dependencies"
+    },
+    {
+      "seedId": "8c3065d9-a8b8-5f8f-bd5d-fc42124f36b7",
+      "category": "tech",
+      "navigationKeyword1": "web-dev",
+      "navigationKeyword2": "nodejs",
+      "question": "The historical `require()` function is part of which module system in Node?",
+      "correctAnswer": "CommonJS",
+      "incorrectAnswers": [
+        "AMD only",
+        "SystemJS only",
+        "Pure ESM without transpilation"
+      ],
+      "explanation": "`require`, `module.exports`, and `exports` implement CommonJS modules predating native ES modules.",
+      "keywords": [
+        "nodejs",
+        "modules"
+      ],
+      "source": "https://nodejs.org/api/modules.html#modules-commonjs-modules"
+    },
+    {
+      "seedId": "b298de6b-b485-55a5-9bee-072377f9415e",
+      "category": "tech",
+      "navigationKeyword1": "web-dev",
+      "navigationKeyword2": "nodejs",
+      "question": "Which JavaScript engine does Node.js embed to compile and run JavaScript?",
+      "correctAnswer": "V8",
+      "incorrectAnswers": [
+        "SpiderMonkey",
+        "ChakraCore only",
+        "Java bytecode interpreter"
+      ],
+      "explanation": "Node bundles Google's V8, the same engine family used by Chromium-based browsers.",
+      "keywords": [
+        "nodejs",
+        "runtime"
+      ],
+      "source": "https://nodejs.org/en/about"
+    },
+    {
+      "seedId": "661c4a31-49ce-5de7-ac98-7f7b95eeebc5",
+      "category": "tech",
+      "navigationKeyword1": "web-dev",
+      "navigationKeyword2": "nodejs",
+      "question": "libuv provides Node with cross-platform asynchronous I/O and what else for some work?",
+      "correctAnswer": "A thread pool for blocking operations",
+      "incorrectAnswers": [
+        "A SQL query planner",
+        "A CSS parser",
+        "A GPU shader compiler"
+      ],
+      "explanation": "libuv drives the event loop and can offload disk and DNS work to a small worker pool.",
+      "keywords": [
+        "nodejs",
+        "libuv"
+      ],
+      "source": "https://libuv.org/"
+    }
+  ]
+}

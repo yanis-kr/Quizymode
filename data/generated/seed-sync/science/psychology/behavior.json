@@ -1,0 +1,235 @@
+{
+  "schemaVersion": 1,
+  "seedSet": "core-public-items",
+  "deltaPreviewLimit": 200,
+  "items": [
+    {
+      "seedId": "e7795971-ba7c-4212-834f-ee00ba583e9e",
+      "category": "science",
+      "navigationKeyword1": "psychology",
+      "navigationKeyword2": "behavior",
+      "question": "Classical conditioning US/CS?",
+      "correctAnswer": "US unconditioned stimulus; CS conditioned stimulus",
+      "incorrectAnswers": [
+        "CS causes unlearned always",
+        "Same as operant",
+        "Only punishment"
+      ],
+      "explanation": "Pavlovian associations.",
+      "keywords": [
+        "classical-conditioning",
+        "pavlov"
+      ],
+      "source": "https://www.simplypsychology.org/classical-conditioning.html"
+    },
+    {
+      "seedId": "bb928a8b-be58-486c-b2d1-31884de1250f",
+      "category": "science",
+      "navigationKeyword1": "psychology",
+      "navigationKeyword2": "behavior",
+      "question": "Extinction in classical conditioning?",
+      "correctAnswer": "CS no longer predicts US; CR weakens",
+      "incorrectAnswers": [
+        "CR becomes permanent",
+        "US removed from world",
+        "Always spontaneous recovery never"
+      ],
+      "explanation": "Not unlearning forever necessarily.",
+      "keywords": [
+        "extinction",
+        "learning"
+      ],
+      "source": "https://www.simplypsychology.org/classical-conditioning.html"
+    },
+    {
+      "seedId": "1cb1dca6-30c4-4bc9-8a7d-4235dcc4beb4",
+      "category": "science",
+      "navigationKeyword1": "psychology",
+      "navigationKeyword2": "behavior",
+      "question": "Fixed ratio schedule?",
+      "correctAnswer": "Reinforce after set number of responses",
+      "incorrectAnswers": [
+        "Time-based only",
+        "Unpredictable always",
+        "Never ratio"
+      ],
+      "explanation": "Piecework pay example.",
+      "keywords": [
+        "schedules",
+        "operant"
+      ],
+      "source": "https://www.simplypsychology.org/operant-conditioning.html"
+    },
+    {
+      "seedId": "6eb0270d-8a1b-40f2-b06f-94f209a824ce",
+      "category": "science",
+      "navigationKeyword1": "psychology",
+      "navigationKeyword2": "behavior",
+      "question": "Habituation?",
+      "correctAnswer": "Decreased response to repeated harmless stimulus",
+      "incorrectAnswers": [
+        "Increased response",
+        "Only classical",
+        "Permanent sensitization always"
+      ],
+      "explanation": "Basic learning form.",
+      "keywords": [
+        "habituation",
+        "learning"
+      ],
+      "source": "https://en.wikipedia.org/wiki/Habituation"
+    },
+    {
+      "seedId": "31e8d435-8687-4ce9-ab13-70ff20278b3d",
+      "category": "science",
+      "navigationKeyword1": "psychology",
+      "navigationKeyword2": "behavior",
+      "question": "Negative reinforcement?",
+      "correctAnswer": "Remove aversive stimulus to increase behavior",
+      "incorrectAnswers": [
+        "Add aversive",
+        "Decrease behavior",
+        "Same as punishment"
+      ],
+      "explanation": "Seatbelt buzzer stops when buckled.",
+      "keywords": [
+        "negative-reinforcement",
+        "learning"
+      ],
+      "source": "https://www.simplypsychology.org/operant-conditioning.html"
+    },
+    {
+      "seedId": "4636ac34-1e04-490e-9435-193efec6fb14",
+      "category": "science",
+      "navigationKeyword1": "psychology",
+      "navigationKeyword2": "behavior",
+      "question": "Observational learning (Bandura) needs?",
+      "correctAnswer": "Attention, retention, reproduction, motivation",
+      "incorrectAnswers": [
+        "Only reinforcement to model",
+        "Only genetics",
+        "No cognitive factors"
+      ],
+      "explanation": "Bobo doll studies.",
+      "keywords": [
+        "observational-learning",
+        "bandura"
+      ],
+      "source": "https://www.simplypsychology.org/bandura.html"
+    },
+    {
+      "seedId": "1b6cdc44-34ef-4164-a88c-3e30eab432bf",
+      "category": "science",
+      "navigationKeyword1": "psychology",
+      "navigationKeyword2": "behavior",
+      "question": "Operant conditioning shapes behavior via?",
+      "correctAnswer": "Consequences (reinforcement/punishment)",
+      "incorrectAnswers": [
+        "Only reflex pairing",
+        "Only genes",
+        "Only hormones"
+      ],
+      "explanation": "Skinner box paradigm.",
+      "keywords": [
+        "operant",
+        "skinner"
+      ],
+      "source": "https://www.simplypsychology.org/operant-conditioning.html"
+    },
+    {
+      "seedId": "f6835cc2-7304-4696-bc4b-b3ad336e6452",
+      "category": "science",
+      "navigationKeyword1": "psychology",
+      "navigationKeyword2": "behavior",
+      "question": "Positive reinforcement?",
+      "correctAnswer": "Add desirable stimulus to increase behavior",
+      "incorrectAnswers": [
+        "Remove stimulus",
+        "Decrease behavior always",
+        "Only punishment"
+      ],
+      "explanation": "\u2018Positive\u2019 = add.",
+      "keywords": [
+        "positive-reinforcement",
+        "learning"
+      ],
+      "source": "https://www.simplypsychology.org/operant-conditioning.html"
+    },
+    {
+      "seedId": "5ad6a2e0-5ce7-4a64-be02-59bfcbd9489d",
+      "category": "science",
+      "navigationKeyword1": "psychology",
+      "navigationKeyword2": "behavior",
+      "question": "Punishment vs reinforcement?",
+      "correctAnswer": "Punishment decreases behavior; reinforcement increases",
+      "incorrectAnswers": [
+        "Same thing",
+        "Punishment always teaches best",
+        "Reinforcement decreases"
+      ],
+      "explanation": "Effect direction differs.",
+      "keywords": [
+        "punishment",
+        "behavior"
+      ],
+      "source": "https://www.simplypsychology.org/operant-conditioning.html"
+    },
+    {
+      "seedId": "c78ba1e9-710e-4747-82e8-f084f3dad095",
+      "category": "science",
+      "navigationKeyword1": "psychology",
+      "navigationKeyword2": "behavior",
+      "question": "Shaping uses?",
+      "correctAnswer": "Successive approximations toward target behavior",
+      "incorrectAnswers": [
+        "One full response only",
+        "Punishment chain",
+        "Extinction only"
+      ],
+      "explanation": "Animal training.",
+      "keywords": [
+        "shaping",
+        "learning"
+      ],
+      "source": "https://www.simplypsychology.org/operant-conditioning.html"
+    },
+    {
+      "seedId": "7c92e39e-0f8b-4c0a-9a2f-1599b0509811",
+      "category": "science",
+      "navigationKeyword1": "psychology",
+      "navigationKeyword2": "behavior",
+      "question": "Token economy is?",
+      "correctAnswer": "Operant system exchanging tokens for reinforcers",
+      "incorrectAnswers": [
+        "Classical only",
+        "Psychoanalysis",
+        "Only biofeedback"
+      ],
+      "explanation": "Clinical/ed settings.",
+      "keywords": [
+        "token-economy",
+        "behavior"
+      ],
+      "source": "https://en.wikipedia.org/wiki/Token_economy"
+    },
+    {
+      "seedId": "e292b56b-c2f8-4a54-955c-561623de3997",
+      "category": "science",
+      "navigationKeyword1": "psychology",
+      "navigationKeyword2": "behavior",
+      "question": "Variable interval?",
+      "correctAnswer": "Reinforce after unpredictable time",
+      "incorrectAnswers": [
+        "Fixed time always",
+        "After fixed count",
+        "Never used"
+      ],
+      "explanation": "Email checking example.",
+      "keywords": [
+        "variable-interval",
+        "schedules"
+      ],
+      "source": "https://www.simplypsychology.org/operant-conditioning.html"
+    }
+  ]
+}

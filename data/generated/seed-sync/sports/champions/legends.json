@@ -1,0 +1,207 @@
+{
+  "schemaVersion": 1,
+  "seedSet": "core-public-items",
+  "deltaPreviewLimit": 200,
+  "items": [
+    {
+      "seedId": "bb5aee57-8b94-56f6-9d81-1b624803d11c",
+      "category": "sports",
+      "navigationKeyword1": "champions",
+      "navigationKeyword2": "legends",
+      "question": "Which NFL quarterback won seven Super Bowls?",
+      "correctAnswer": "Tom Brady",
+      "incorrectAnswers": [
+        "Joe Montana",
+        "Peyton Manning",
+        "Patrick Mahomes"
+      ],
+      "explanation": "Brady's championship record defines his place in football history.",
+      "keywords": [
+        "champions",
+        "legends",
+        "brady"
+      ],
+      "source": "https://www.britannica.com/biography/Tom-Brady"
+    },
+    {
+      "seedId": "325b8fc6-effb-554c-a946-2ab7284c88bc",
+      "category": "sports",
+      "navigationKeyword1": "champions",
+      "navigationKeyword2": "legends",
+      "question": "Which baseball great was known as the Sultan of Swat?",
+      "correctAnswer": "Babe Ruth",
+      "incorrectAnswers": [
+        "Lou Gehrig",
+        "Joe DiMaggio",
+        "Ted Williams"
+      ],
+      "explanation": "Ruth became the first superstar slugger of the modern game.",
+      "keywords": [
+        "champions",
+        "legends",
+        "ruth"
+      ],
+      "source": "https://www.britannica.com/biography/Babe-Ruth"
+    },
+    {
+      "seedId": "bf8fa4ce-ae54-5707-81a1-8f3db378b0c6",
+      "category": "sports",
+      "navigationKeyword1": "champions",
+      "navigationKeyword2": "legends",
+      "question": "Which basketball legend won six NBA titles with the Chicago Bulls and became the face of the sport in the 1990s?",
+      "correctAnswer": "Michael Jordan",
+      "incorrectAnswers": [
+        "Magic Johnson",
+        "Kobe Bryant",
+        "Larry Bird"
+      ],
+      "explanation": "Jordan is one of the most recognized champions in sports history.",
+      "keywords": [
+        "champions",
+        "legends",
+        "jordan"
+      ],
+      "source": "https://www.nba.com/history"
+    },
+    {
+      "seedId": "0a509398-a450-50de-a1d7-63202388e9db",
+      "category": "sports",
+      "navigationKeyword1": "champions",
+      "navigationKeyword2": "legends",
+      "question": "Which boxer called himself The Greatest and won Olympic gold before becoming heavyweight champion?",
+      "correctAnswer": "Muhammad Ali",
+      "incorrectAnswers": [
+        "Mike Tyson",
+        "Joe Frazier",
+        "George Foreman"
+      ],
+      "explanation": "Ali became boxing's most famous champion and personality.",
+      "keywords": [
+        "champions",
+        "legends",
+        "ali"
+      ],
+      "source": "https://www.britannica.com/biography/Muhammad-Ali-boxer"
+    },
+    {
+      "seedId": "86887d99-7e8b-52a3-8b21-b0c7eb4f643c",
+      "category": "sports",
+      "navigationKeyword1": "champions",
+      "navigationKeyword2": "legends",
+      "question": "Which golfer won 18 men's majors and is known as the Golden Bear?",
+      "correctAnswer": "Jack Nicklaus",
+      "incorrectAnswers": [
+        "Tiger Woods",
+        "Arnold Palmer",
+        "Gary Player"
+      ],
+      "explanation": "Nicklaus remains the benchmark for men's major titles.",
+      "keywords": [
+        "champions",
+        "legends",
+        "nicklaus"
+      ],
+      "source": "https://www.britannica.com/biography/Jack-Nicklaus"
+    },
+    {
+      "seedId": "bfa69031-44b4-5b29-9e1e-bb3fa4228542",
+      "category": "sports",
+      "navigationKeyword1": "champions",
+      "navigationKeyword2": "legends",
+      "question": "Which hockey icon holds the NHL records for goals, assists, and points?",
+      "correctAnswer": "Wayne Gretzky",
+      "incorrectAnswers": [
+        "Mario Lemieux",
+        "Gordie Howe",
+        "Sidney Crosby"
+      ],
+      "explanation": "Gretzky's records are central to his legendary status.",
+      "keywords": [
+        "champions",
+        "legends",
+        "gretzky"
+      ],
+      "source": "https://www.britannica.com/sports/ice-hockey"
+    },
+    {
+      "seedId": "4f506068-d138-59c5-8aab-c48cf4854377",
+      "category": "sports",
+      "navigationKeyword1": "champions",
+      "navigationKeyword2": "legends",
+      "question": "Which soccer star won the 1986 World Cup and is often grouped with Pele and Messi in greatest-ever debates?",
+      "correctAnswer": "Diego Maradona",
+      "incorrectAnswers": [
+        "Zinedine Zidane",
+        "Cristiano Ronaldo",
+        "Ronaldinho"
+      ],
+      "explanation": "Maradona's peak made him one of football's defining legends.",
+      "keywords": [
+        "champions",
+        "legends",
+        "maradona"
+      ],
+      "source": "https://www.britannica.com/biography/Diego-Maradona"
+    },
+    {
+      "seedId": "9ec45b9c-e433-5519-bd45-6051d7276e8b",
+      "category": "sports",
+      "navigationKeyword1": "champions",
+      "navigationKeyword2": "legends",
+      "question": "Which sprinter became famous worldwide for Olympic and world titles in the 100m and 200m?",
+      "correctAnswer": "Usain Bolt",
+      "incorrectAnswers": [
+        "Yohan Blake",
+        "Justin Gatlin",
+        "Tyson Gay"
+      ],
+      "explanation": "Bolt's speed and personality made him a global sports legend.",
+      "keywords": [
+        "champions",
+        "legends",
+        "bolt"
+      ],
+      "source": "https://www.britannica.com/biography/Usain-Bolt"
+    },
+    {
+      "seedId": "c07624e4-ea88-5057-948d-f68a93e58de8",
+      "category": "sports",
+      "navigationKeyword1": "champions",
+      "navigationKeyword2": "legends",
+      "question": "Which swimmer became the most decorated Olympian ever?",
+      "correctAnswer": "Michael Phelps",
+      "incorrectAnswers": [
+        "Mark Spitz",
+        "Ian Thorpe",
+        "Caeleb Dressel"
+      ],
+      "explanation": "Phelps won more Olympic medals than any other athlete.",
+      "keywords": [
+        "champions",
+        "legends",
+        "phelps"
+      ],
+      "source": "https://www.britannica.com/biography/Michael-Phelps"
+    },
+    {
+      "seedId": "491ebd87-8fb3-558e-b3dc-f1c77ff67d9c",
+      "category": "sports",
+      "navigationKeyword1": "champions",
+      "navigationKeyword2": "legends",
+      "question": "Which tennis star won 23 Open Era singles majors and dominated multiple decades?",
+      "correctAnswer": "Serena Williams",
+      "incorrectAnswers": [
+        "Steffi Graf",
+        "Martina Navratilova",
+        "Venus Williams"
+      ],
+      "explanation": "Serena's longevity and major count made her a modern legend.",
+      "keywords": [
+        "champions",
+        "legends",
+        "serena"
+      ],
+      "source": "https://www.britannica.com/biography/Serena-Williams"
+    }
+  ]
+}

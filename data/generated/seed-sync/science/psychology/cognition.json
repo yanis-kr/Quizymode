@@ -1,0 +1,235 @@
+{
+  "schemaVersion": 1,
+  "seedSet": "core-public-items",
+  "deltaPreviewLimit": 200,
+  "items": [
+    {
+      "seedId": "3dba593f-ac8a-4a13-a287-8c70ece1c3fd",
+      "category": "science",
+      "navigationKeyword1": "psychology",
+      "navigationKeyword2": "cognition",
+      "question": "Change blindness suggests?",
+      "correctAnswer": "Limited attention \u2018bottleneck\u2019 to full visual detail",
+      "incorrectAnswers": [
+        "Perfect visual memory",
+        "Unlimited parallel processing always",
+        "No attention needed"
+      ],
+      "explanation": "Gist vs detail tradeoff.",
+      "keywords": [
+        "change-blindness",
+        "attention"
+      ],
+      "source": "https://en.wikipedia.org/wiki/Change_blindness"
+    },
+    {
+      "seedId": "58cdaad1-2f82-479f-8f07-3c9c06f44716",
+      "category": "science",
+      "navigationKeyword1": "psychology",
+      "navigationKeyword2": "cognition",
+      "question": "Chunking helps memory by?",
+      "correctAnswer": "Increases effective capacity via meaningful units",
+      "incorrectAnswers": [
+        "Increases RAM physically",
+        "Eliminates forgetting",
+        "Removes need for attention"
+      ],
+      "explanation": "Expertise yields larger chunks.",
+      "keywords": [
+        "chunking",
+        "memory"
+      ],
+      "source": "https://www.simplypsychology.org/short-term-memory.html"
+    },
+    {
+      "seedId": "c7735207-e9cc-4562-b80a-c2633ba1e6d5",
+      "category": "science",
+      "navigationKeyword1": "psychology",
+      "navigationKeyword2": "cognition",
+      "question": "Cognitive load theory concern?",
+      "correctAnswer": "Extraneous load harms learning",
+      "incorrectAnswers": [
+        "More animations always help",
+        "Load never matters",
+        "Only motivation matters"
+      ],
+      "explanation": "Manage intrinsic/extraneous load.",
+      "keywords": [
+        "cognitive-load",
+        "education"
+      ],
+      "source": "https://en.wikipedia.org/wiki/Cognitive_load"
+    },
+    {
+      "seedId": "fbbfce0d-2e96-4573-a9e9-35d40b75d717",
+      "category": "science",
+      "navigationKeyword1": "psychology",
+      "navigationKeyword2": "cognition",
+      "question": "Dual-process theory (Kahneman style) contrasts?",
+      "correctAnswer": "Fast intuitive vs slower deliberative thinking",
+      "incorrectAnswers": [
+        "Only emotion vs logic labels oversimplified",
+        "Left vs right brain only",
+        "Sleep vs wake"
+      ],
+      "explanation": "Heuristics and biases program.",
+      "keywords": [
+        "system1-system2",
+        "thinking"
+      ],
+      "source": "https://en.wikipedia.org/wiki/Dual_process_theory"
+    },
+    {
+      "seedId": "dce11744-dd6e-4c3a-944f-bceac820bf0a",
+      "category": "science",
+      "navigationKeyword1": "psychology",
+      "navigationKeyword2": "cognition",
+      "question": "Encoding specificity principle?",
+      "correctAnswer": "Retrieval works best when context matches encoding",
+      "incorrectAnswers": [
+        "Context never matters",
+        "Only for music",
+        "Only for motor skills"
+      ],
+      "explanation": "State/context dependent memory.",
+      "keywords": [
+        "encoding-specificity",
+        "memory"
+      ],
+      "source": "https://en.wikipedia.org/wiki/Encoding_specificity_principle"
+    },
+    {
+      "seedId": "9a211d8a-b764-4217-9f89-9896c4b63d4d",
+      "category": "science",
+      "navigationKeyword1": "psychology",
+      "navigationKeyword2": "cognition",
+      "question": "Executive function includes?",
+      "correctAnswer": "Planning, inhibition, cognitive flexibility",
+      "incorrectAnswers": [
+        "Only sensation",
+        "Only reflex",
+        "Only long-term storage"
+      ],
+      "explanation": "Frontal networks implicated.",
+      "keywords": [
+        "executive-function",
+        "frontal"
+      ],
+      "source": "https://www.apa.org/topics/executive-function"
+    },
+    {
+      "seedId": "86a58a26-a06b-4097-a605-e0e1bbd6d64f",
+      "category": "science",
+      "navigationKeyword1": "psychology",
+      "navigationKeyword2": "cognition",
+      "question": "Metacognition means?",
+      "correctAnswer": "Thinking about thinking",
+      "incorrectAnswers": [
+        "Only memory recall",
+        "Only perception",
+        "Unconscious only"
+      ],
+      "explanation": "Monitoring and control of cognition.",
+      "keywords": [
+        "metacognition",
+        "learning"
+      ],
+      "source": "https://en.wikipedia.org/wiki/Metacognition"
+    },
+    {
+      "seedId": "93099483-2c71-40dc-80bc-f2153ccb21c5",
+      "category": "science",
+      "navigationKeyword1": "psychology",
+      "navigationKeyword2": "cognition",
+      "question": "Proactive interference?",
+      "correctAnswer": "Old memories disrupt learning new similar info",
+      "incorrectAnswers": [
+        "New disrupts old only",
+        "No interference exists",
+        "Only sensory"
+      ],
+      "explanation": "Forward direction confusion.",
+      "keywords": [
+        "proactive-interference",
+        "memory"
+      ],
+      "source": "https://en.wikipedia.org/wiki/Interference_theory"
+    },
+    {
+      "seedId": "70d13c84-ce9b-4052-8bd9-a352e6b08673",
+      "category": "science",
+      "navigationKeyword1": "psychology",
+      "navigationKeyword2": "cognition",
+      "question": "Retroactive interference?",
+      "correctAnswer": "New learning disrupts recall of old",
+      "incorrectAnswers": [
+        "Old disrupts new only",
+        "Only in children",
+        "Impossible"
+      ],
+      "explanation": "Backward direction confusion.",
+      "keywords": [
+        "retroactive-interference",
+        "memory"
+      ],
+      "source": "https://en.wikipedia.org/wiki/Interference_theory"
+    },
+    {
+      "seedId": "e1ddbfa3-5176-402a-9969-3ee349cf4735",
+      "category": "science",
+      "navigationKeyword1": "psychology",
+      "navigationKeyword2": "cognition",
+      "question": "Schemas are?",
+      "correctAnswer": "Mental frameworks organizing knowledge",
+      "incorrectAnswers": [
+        "Only reflex arcs",
+        "Synaptic weights only",
+        "Random noise"
+      ],
+      "explanation": "Influence perception and memory.",
+      "keywords": [
+        "schema",
+        "cognition"
+      ],
+      "source": "https://www.simplypsychology.org/schema.html"
+    },
+    {
+      "seedId": "2b36c18f-8842-4eb4-9e23-f739d896acd3",
+      "category": "science",
+      "navigationKeyword1": "psychology",
+      "navigationKeyword2": "cognition",
+      "question": "Stroop effect demonstrates?",
+      "correctAnswer": "Automatic reading interferes with color naming",
+      "incorrectAnswers": [
+        "No interference",
+        "Only motor",
+        "Only auditory"
+      ],
+      "explanation": "Selective attention limits.",
+      "keywords": [
+        "stroop",
+        "attention"
+      ],
+      "source": "https://en.wikipedia.org/wiki/Stroop_effect"
+    },
+    {
+      "seedId": "4a995d4d-3082-4997-898d-5937bb3e9983",
+      "category": "science",
+      "navigationKeyword1": "psychology",
+      "navigationKeyword2": "cognition",
+      "question": "Working memory (Baddeley model) includes?",
+      "correctAnswer": "Phonological loop, visuospatial sketchpad, central executive (classic components)",
+      "incorrectAnswers": [
+        "Only long-term store",
+        "Only sensory memory",
+        "Only implicit memory"
+      ],
+      "explanation": "Limited capacity active processing.",
+      "keywords": [
+        "working-memory",
+        "baddeley"
+      ],
+      "source": "https://plato.stanford.edu/entries/memory/"
+    }
+  ]
+}
