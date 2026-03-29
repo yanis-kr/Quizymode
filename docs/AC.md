@@ -769,7 +769,7 @@ Feedback submissions are lightweight inbound messages from the SPA. They may be 
 
 ### AC 5.2 Admin: repo-managed seed sync for items
 
-**Design:** Admin seed sync imports a **source-controlled manifest** for one **seed set** at a time. The runtime API contract is one manifest payload per request; if the repo stores items in multiple taxonomy-scoped files, tooling must merge them into that manifest before preview/apply. Each incoming item has a stable `seedId`. Categories and navigation use taxonomy slugs (`category`, `navigationKeyword1`, `navigationKeyword2`), not database keyword IDs. Preview shows only the **delta** for an existing seed set and suppresses the full changed-item list on the **initial seed**. Apply upserts repo-managed public items by `seedId`, refreshes seed metadata, recreates missing DB rows from the manifest, and ensures extra keywords from the manifest exist as **public** keywords. Current behavior reports rows already in the DB but absent from the manifest via `missingFromPayloadCount`; it does **not** delete or retire them.
+**Design:** Admin seed sync imports a **source-controlled manifest** for one **seed set** at a time. The runtime API contract is one manifest payload per request; if the repo stores items in multiple taxonomy-scoped files, tooling must merge them into that manifest before preview/apply. Tooling may also emit **scoped manifests** for the same seed set, such as `category/l1/l2.json`, `category/l1.json`, `category.json`, and sharded `all-sync5k.json` / `all-sync10k.json` files, so admins can load a smaller subset without changing seed-set identity. Each incoming item has a stable `seedId`. Categories and navigation use taxonomy slugs (`category`, `navigationKeyword1`, `navigationKeyword2`), not database keyword IDs. Preview shows only the **delta** for an existing seed set and suppresses the full changed-item list on the **initial seed**. Apply upserts repo-managed public items by `seedId`, refreshes seed metadata, recreates missing DB rows from the manifest, and ensures extra keywords from the manifest exist as **public** keywords. Current behavior reports rows already in the DB but absent from the manifest via `missingFromPayloadCount`; it does **not** delete or retire them.
 
 **API**
 
@@ -785,6 +785,7 @@ Feedback submissions are lightweight inbound messages from the SPA. They may be 
 **UI**
 
 - **AC 5.2.9** [Admin] **Given** an admin UI is built on top of the seed-sync API, **when** it requests a preview for an existing seed set, **then** it should show only the returned delta rows and summary counts rather than rendering the full uploaded manifest; on an initial seed, it should rely on the summary counts and the suppressed-preview flag instead of trying to render the whole payload.
+- **AC 5.2.10** [Admin] **Given** the repo tooling emits scoped manifests for the same seed set, **when** I use the admin seed-sync screen, **then** I may load a leaf file (`category/l1/l2.json`), a combined `category/l1.json`, a combined `category.json`, or an `all-sync*.json` shard, and the UI should explain that `missingFromPayloadCount` is informational for rows outside the uploaded subset and that apply does not delete them.
 
 ---
 

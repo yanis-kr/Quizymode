@@ -356,6 +356,19 @@ const AdminSeedSyncPage = () => {
         apply the upsert. The API accepts one manifest payload per request.
       </p>
 
+      <div className="mb-6 rounded-lg border border-blue-200 bg-blue-50 px-4 py-3 text-sm text-blue-900">
+        Admin can load a leaf manifest such as{" "}
+        <span className="font-mono">category/l1/l2.json</span>, a combined{" "}
+        <span className="font-mono">category/l1.json</span>, a full{" "}
+        <span className="font-mono">category.json</span>, or global shards such as{" "}
+        <span className="font-mono">all-sync5k.json</span> and{" "}
+        <span className="font-mono">all-sync10k.json</span>. Scoped manifests are
+        valid partial sync inputs for the same seed set; rows outside the
+        uploaded file are reported in{" "}
+        <span className="font-mono">missingFromPayloadCount</span> and are not
+        deleted by apply.
+      </div>
+
       <div className="bg-white shadow rounded-lg p-6">
         <div className="grid grid-cols-1 gap-6 lg:grid-cols-[minmax(0,1fr)_240px]">
           <div>

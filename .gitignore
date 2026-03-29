@@ -371,3 +371,6 @@ pubtest/
 .env.*.local
 src/Quizymode.Api/appsettings.Development.json
 src/Quizymode.Api/appsettings.Development.json
+.local/seed-progress/
+/generated/
+/data/generated/

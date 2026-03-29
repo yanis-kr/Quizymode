@@ -1,13 +1,15 @@
 # -*- coding: utf-8 -*-
-"""Rewrite data/bulk-seed/trivia/_progress.md from taxonomy and existing trivia.*.json files."""
+"""Rewrite the local trivia progress file from taxonomy and existing trivia.*.json files."""
 from __future__ import annotations
 
 import json
 from pathlib import Path
 
+from seed_progress_paths import ensure_category_progress_dir, progress_file_path
+
 ROOT = Path(__file__).resolve().parents[1]
 OUT = ROOT / "data" / "bulk-seed" / "trivia"
-PROGRESS = OUT / "_progress.md"
+PROGRESS = progress_file_path("trivia")
 TAXONOMY = ROOT / "docs" / "quizymode_taxonomy.yaml"
 
 SKIP_L1 = {"general", "mixed"}
@@ -54,6 +56,8 @@ def eligible_pairs() -> list[tuple[str, str]]:
 
 
 def main() -> None:
+    ensure_category_progress_dir("trivia")
+
     rows: list[tuple[str, int, str]] = []
     for path in sorted(OUT.glob("trivia.*.json")):
         stem = path.stem.removeprefix("trivia.")
