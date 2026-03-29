@@ -836,6 +836,22 @@ const CategoriesPage = () => {
                 else if (mode === "explore") navigateToExplore(categoryName ? categoryNameToSlug(categoryName)! : "all", kw, scopeFilteredItems);
                 else if (mode === "quiz") navigateToQuiz(categoryName ? categoryNameToSlug(categoryName)! : "all", kw, scopeFilteredItems);
               }}
+              endSlot={
+                isAuthenticated && categoryName ? (
+                  <Link
+                    to={buildAddItemsPathWithParams(
+                      categoryName,
+                      pathKeywordsFromUrl,
+                      filterKeywordsFromQuery
+                    )}
+                    className="inline-flex shrink-0 items-center gap-1 rounded-md bg-green-600 px-3 py-1.5 text-sm font-medium text-white hover:bg-green-700"
+                    title="Add items for this category and navigation path"
+                  >
+                    <PlusIcon className="h-4 w-4" />
+                    Add
+                  </Link>
+                ) : null
+              }
             />
             <FilterSection
               showFilters={showFilters}

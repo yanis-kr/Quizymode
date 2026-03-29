@@ -618,31 +618,39 @@ const StudyGuideImportPage = () => {
                           {chunk.sizeBytes.toLocaleString()} bytes of study guide content
                         </div>
                       </div>
-                      <div className="flex gap-2">
-                        <button
-                          type="button"
-                          onClick={() => handleCopyPrompt(chunk.promptText)}
-                          className="px-3 py-1.5 text-xs font-medium text-indigo-600 bg-indigo-50 rounded-md hover:bg-indigo-100"
-                        >
-                          Copy prompt
-                        </button>
-                        <span
-                          className={`inline-flex items-center px-2 py-0.5 rounded text-xs font-medium ${
-                            status === "Valid"
-                              ? "bg-emerald-100 text-emerald-800"
-                              : status === "Invalid"
-                              ? "bg-red-100 text-red-800"
-                              : "bg-gray-100 text-gray-600"
-                          }`}
-                        >
-                          {status === "Valid"
-                            ? "Validated"
+                      <span
+                        className={`inline-flex items-center px-2 py-0.5 rounded text-xs font-medium ${
+                          status === "Valid"
+                            ? "bg-emerald-100 text-emerald-800"
                             : status === "Invalid"
-                            ? "Invalid"
-                            : "Not validated"}
-                        </span>
-                      </div>
+                            ? "bg-red-100 text-red-800"
+                            : "bg-gray-100 text-gray-600"
+                        }`}
+                      >
+                        {status === "Valid"
+                          ? "Validated"
+                          : status === "Invalid"
+                          ? "Invalid"
+                          : "Not validated"}
+                      </span>
                     </div>
+
+                    <div>
+                      <label className="block text-xs font-medium text-gray-700 mb-1">
+                        AI prompt — copy and paste into ChatGPT or another assistant
+                      </label>
+                      <div className="border border-gray-200 rounded-md p-2 bg-gray-50 max-h-48 overflow-auto text-xs font-mono whitespace-pre-wrap">
+                        {chunk.promptText}
+                      </div>
+                      <button
+                        type="button"
+                        onClick={() => handleCopyPrompt(chunk.promptText)}
+                        className="mt-2 px-3 py-1.5 text-xs font-medium text-indigo-600 bg-indigo-50 rounded-md hover:bg-indigo-100"
+                      >
+                        Copy prompt
+                      </button>
+                    </div>
+
                     <div>
                       <label className="block text-xs font-medium text-gray-700 mb-1">
                         Paste AI JSON response for this prompt set
