@@ -184,7 +184,10 @@ ${extraLine}
 
 Each item must be a JSON object with this exact shape:
 {
+  "seedId": "00000000-0000-0000-0000-000000000001",
   "category": "${category}",
+  "navigationKeyword1": "${primaryTopic.trim()}",
+  "navigationKeyword2": "${subtopic.trim()}",
   "question": "Question text?",
   "correctAnswer": "Correct answer",
   "incorrectAnswers": ["Wrong 1", "Wrong 2", "Wrong 3"],
@@ -196,7 +199,8 @@ Each item must be a JSON object with this exact shape:
 Requirements:
 - Return a single JSON array of items: [ { ... }, { ... }, ... ].
 - Do NOT include any explanations, prose, comments, Markdown, or code fences. Output raw JSON only.
-- Every item must have: "category", non-empty "question", non-empty "correctAnswer", 1–5 "incorrectAnswers", optional "explanation" and "source".
+- Every item must have: unique "seedId" (UUID), "category", exact "navigationKeyword1", exact "navigationKeyword2", non-empty "question", non-empty "correctAnswer", 1–5 "incorrectAnswers", optional "explanation" and "source".
+- Use "${primaryTopic.trim()}" for "navigationKeyword1" and "${subtopic.trim()}" for "navigationKeyword2" on every item. These are required seed-compatible fields and must not be moved into "keywords".
 - If you include "source", it must be a direct URL to a reliable, verifiable source for that fact or question. Prefer official documentation, standards bodies, government/education sites, textbooks, or other authoritative references. Do not use the AI assistant name as the source.
 - Optional "keywords": up to 5 extra tags per item (letters, numbers, hyphens only; lowercase recommended). Suggest tags that help discovery (skills, subthemes, standards) for that specific question. Do not repeat the navigation topic path ("${navLine}") or the category name as tags; omit "keywords" or use [] if none.${reservedTagsHint}
 - All strings must be plain text (no HTML, no LaTeX).
@@ -249,6 +253,14 @@ Generate the JSON array only.`;
         const o = parsed[i] as Record<string, unknown>;
         const itemCategory = (o.category ?? "").toString().trim();
         if (selectedCategory && itemCategory.toLowerCase() !== selectedCategory.toLowerCase()) {
+          continue;
+        }
+        const navigationKeyword1 = (o.navigationKeyword1 ?? "").toString().trim();
+        const navigationKeyword2 = (o.navigationKeyword2 ?? "").toString().trim();
+        if (navigationKeyword1 && navigationKeyword1.toLowerCase() !== primaryTopic.trim().toLowerCase()) {
+          continue;
+        }
+        if (navigationKeyword2 && navigationKeyword2.toLowerCase() !== subtopic.trim().toLowerCase()) {
           continue;
         }
         const question = (o.question ?? "").toString().trim();
