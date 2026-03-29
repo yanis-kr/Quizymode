@@ -303,10 +303,10 @@ const Layout = ({ children }: LayoutProps) => {
         <div className="flex flex-col gap-3 rounded-[24px] border border-white/10 bg-[linear-gradient(180deg,rgba(15,23,42,0.7)_0%,rgba(2,6,23,0.64)_100%)] px-4 py-3 text-slate-100 shadow-xl shadow-slate-950/20 backdrop-blur sm:flex-row sm:items-center sm:justify-between">
           <div>
             <div className="text-[11px] font-semibold uppercase tracking-[0.18em] text-slate-300">
-              Browse Tools
+              Browse, Support, and Legal
             </div>
             <p className="mt-1 text-sm text-slate-300">
-              Open the full taxonomy tree or jump to the app overview from anywhere.
+              Open the taxonomy, send feedback, or review the app policies from anywhere.
             </p>
           </div>
 
@@ -332,6 +332,18 @@ const Layout = ({ children }: LayoutProps) => {
               className="inline-flex items-center justify-center rounded-md border border-white/12 bg-white/8 px-3.5 py-2 text-sm font-medium text-slate-100 transition hover:border-sky-300/35 hover:bg-white/12 hover:text-white"
             >
               About
+            </Link>
+            <Link
+              to="/privacy"
+              className="inline-flex items-center justify-center rounded-md border border-white/12 bg-white/8 px-3.5 py-2 text-sm font-medium text-slate-100 transition hover:border-sky-300/35 hover:bg-white/12 hover:text-white"
+            >
+              Privacy
+            </Link>
+            <Link
+              to="/terms"
+              className="inline-flex items-center justify-center rounded-md border border-white/12 bg-white/8 px-3.5 py-2 text-sm font-medium text-slate-100 transition hover:border-sky-300/35 hover:bg-white/12 hover:text-white"
+            >
+              Terms
             </Link>
           </div>
         </div>

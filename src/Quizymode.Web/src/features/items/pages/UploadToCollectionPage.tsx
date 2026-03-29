@@ -6,6 +6,7 @@ import { itemsApi, type UploadToCollectionResponse } from "@/api/items";
 import { taxonomyApi } from "@/api/taxonomy";
 import ErrorMessage from "@/components/ErrorMessage";
 import { DocumentArrowUpIcon, ClipboardDocumentIcon } from "@heroicons/react/24/outline";
+import ContentComplianceNotice from "@/features/legal/components/ContentComplianceNotice";
 
 const EXAMPLE_PROMPT = (topic: string, uploadId: string) => `You are creating study flashcards for an app called Quizymode.
 
@@ -217,6 +218,8 @@ const UploadToCollectionPage = () => {
       <p className="text-gray-600 text-sm mb-6">
         Select category and keywords (required), then paste a JSON array of items or upload a JSON file. Items are added to a new collection. Duplicate uploads (same content) are rejected.
       </p>
+
+      <ContentComplianceNotice />
 
       <form onSubmit={handleSubmit} className="space-y-4">
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">

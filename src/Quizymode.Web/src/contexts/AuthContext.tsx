@@ -13,6 +13,11 @@ import {
   signUp,
   confirmSignUp,
 } from "aws-amplify/auth";
+import { usersApi } from "@/api/users";
+import {
+  clearPendingPolicyAcceptances,
+  getPendingPolicyAcceptancesForEmail,
+} from "@/features/legal/policyAcceptanceStorage";
 import { hasToken, setTokens, clearTokens } from "@/utils/tokenStorage";
 import { authApi } from "@/api/auth";
 
@@ -51,6 +56,28 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
   const [username, setUsername] = useState<string | null>(null);
   const [email, setEmail] = useState<string | null>(null);
   const [isAdmin, setIsAdmin] = useState(false);
+
+  const syncPendingPolicyAcceptances = useCallback(
+    async (resolvedEmail: string | null) => {
+      const pendingAcceptances = getPendingPolicyAcceptancesForEmail(
+        resolvedEmail
+      );
+
+      if (pendingAcceptances.length === 0) {
+        return;
+      }
+
+      try {
+        await usersApi.recordPolicyAcceptances({
+          acceptances: pendingAcceptances,
+        });
+        clearPendingPolicyAcceptances();
+      } catch (error) {
+        console.error("Failed to sync pending policy acceptances:", error);
+      }
+    },
+    []
+  );
 
   // Helper function to clear all auth state
   const clearAuthState = useCallback(() => {
@@ -97,7 +124,12 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
               setIsAuthenticated(true);
               setUserId(refreshedPayload.sub || null);
               setUsername(refreshedPayload["cognito:username"] || refreshedPayload.username || null);
-              setEmail(refreshedPayload.email || null);
+              let resolvedEmail =
+                refreshedPayload.email ||
+                refreshedPayload["cognito:username"] ||
+                refreshedPayload.username ||
+                null;
+              setEmail(resolvedEmail);
               
               // Extract groups and check admin status
               const extractGroups = (tokenPayload: any): string[] => {
@@ -121,8 +153,9 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
                   atob(idTokenValue.toString().split(".")[1])
                 );
                 
-                if (!refreshedPayload.email && idPayload.email) {
-                  setEmail(idPayload.email);
+                if (!resolvedEmail && idPayload.email) {
+                  resolvedEmail = idPayload.email;
+                  setEmail(resolvedEmail);
                 }
                 
                 if (!isUserAdmin) {
@@ -134,6 +167,7 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
               }
               
               setIsAdmin(isUserAdmin);
+              await syncPendingPolicyAcceptances(resolvedEmail);
               return;
             } else {
               // No tokens after refresh - clear auth state
@@ -151,7 +185,9 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
         setIsAuthenticated(true);
         setUserId(payload.sub || null);
         setUsername(payload["cognito:username"] || payload.username || null);
-        setEmail(payload.email || null);
+        let resolvedEmail =
+          payload.email || payload["cognito:username"] || payload.username || null;
+        setEmail(resolvedEmail);
 
         // Helper function to extract groups from a token payload
         const extractGroups = (tokenPayload: any): string[] => {
@@ -204,8 +240,9 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
                 const refreshedAccessToken = refreshedSession.tokens.accessToken?.toString() || token.toString();
                 setTokens(refreshedAccessToken, refreshedIdToken);
                 
-                if (!payload.email && refreshedIdPayload.email) {
-                  setEmail(refreshedIdPayload.email);
+                if (!resolvedEmail && refreshedIdPayload.email) {
+                  resolvedEmail = refreshedIdPayload.email;
+                  setEmail(resolvedEmail);
                 }
                 
                 if (!isUserAdmin) {
@@ -227,8 +264,9 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
             }
           } else {
             // Get email from idToken if not in accessToken
-            if (!payload.email && idPayload.email) {
-              setEmail(idPayload.email);
+            if (!resolvedEmail && idPayload.email) {
+              resolvedEmail = idPayload.email;
+              setEmail(resolvedEmail);
             }
 
             // Check for admin group in ID token if not found in access token
@@ -242,6 +280,7 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
         }
 
         setIsAdmin(isUserAdmin);
+        await syncPendingPolicyAcceptances(resolvedEmail);
       } else {
         clearAuthState();
       }
@@ -251,7 +290,7 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
     } finally {
       setIsLoading(false);
     }
-  }, [clearAuthState]);
+  }, [clearAuthState, syncPendingPolicyAcceptances]);
 
   useEffect(() => {
     // Wrap in try-catch to prevent errors from breaking the app

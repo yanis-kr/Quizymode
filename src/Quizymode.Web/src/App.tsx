@@ -31,6 +31,8 @@ import RoadmapPage from "./features/roadmap/pages/RoadmapPage";
 import FeedbackPage from "./features/feedback/pages/FeedbackPage";
 import StudyGuidePage from "./features/studyGuide/pages/StudyGuidePage";
 import StudyGuideImportPage from "./features/studyGuide/pages/StudyGuideImportPage";
+import PrivacyPolicyPage from "./features/legal/pages/PrivacyPolicyPage";
+import TermsOfServicePage from "./features/legal/pages/TermsOfServicePage";
 import PageViewTracker from "./features/analytics/PageViewTracker";
 import RequireAuthRoute from "./components/RequireAuthRoute";
 
@@ -121,6 +123,10 @@ function App() {
         <Route path="/about" element={<AboutPage />} />
         <Route path="/roadmap" element={<RoadmapPage />} />
         <Route path="/feedback" element={<FeedbackPage />} />
+        <Route path="/privacy" element={<PrivacyPolicyPage />} />
+        <Route path="/privacy-policy" element={<PrivacyPolicyPage />} />
+        <Route path="/terms" element={<TermsOfServicePage />} />
+        <Route path="/terms-of-service" element={<TermsOfServicePage />} />
       </Routes>
     </Layout>
   );
