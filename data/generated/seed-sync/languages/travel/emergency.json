@@ -1,0 +1,121 @@
+{
+  "schemaVersion": 1,
+  "seedSet": "core-public-items",
+  "deltaPreviewLimit": 200,
+  "items": [
+    {
+      "seedId": "6732d6bc-58d5-54eb-8ce2-c6507de0493f",
+      "category": "languages",
+      "navigationKeyword1": "travel",
+      "navigationKeyword2": "emergency",
+      "question": "If you ask for the \"nearest hospital,\" what are you looking for?",
+      "correctAnswer": "A place where doctors can treat serious illness or injury.",
+      "incorrectAnswers": [
+        "A shop that sells shoes.",
+        "A museum that closes early.",
+        "A bus stop only."
+      ],
+      "explanation": "\"Nearest\" helps when minutes matter and you do not know the city name.",
+      "keywords": [
+        "travel",
+        "hospital"
+      ],
+      "source": "https://dictionary.cambridge.org/dictionary/english/hospital"
+    },
+    {
+      "seedId": "55bbc7e2-38fa-5c46-ab91-3abcf53e2177",
+      "category": "languages",
+      "navigationKeyword1": "travel",
+      "navigationKeyword2": "emergency",
+      "question": "If you say \"I need a doctor,\" what kind of help are you asking for?",
+      "correctAnswer": "Medical help for illness or injury.",
+      "incorrectAnswers": [
+        "Help with buying a train ticket.",
+        "Help with hotel Wi-Fi.",
+        "Help with translating a menu."
+      ],
+      "explanation": "This simple phrase is useful when you must explain urgency to a stranger.",
+      "keywords": [
+        "travel",
+        "doctor"
+      ],
+      "source": "https://www.merriam-webster.com/dictionary/doctor"
+    },
+    {
+      "seedId": "a24754d7-6697-5817-807d-a4fc903807b5",
+      "category": "languages",
+      "navigationKeyword1": "travel",
+      "navigationKeyword2": "emergency",
+      "question": "If you shout \"Help!\" in English, what is the usual meaning?",
+      "correctAnswer": "You need urgent assistance from people nearby.",
+      "incorrectAnswers": [
+        "You want directions to a restaurant.",
+        "You are asking for a price discount.",
+        "You are greeting a friend."
+      ],
+      "explanation": "It is a short emergency word that many people recognize even in noisy places.",
+      "keywords": [
+        "travel",
+        "help"
+      ],
+      "source": "https://www.oxfordlearnersdictionaries.com/definition/english/help_1"
+    },
+    {
+      "seedId": "afc101df-6bef-535a-b8ee-8ed078fd2fc3",
+      "category": "languages",
+      "navigationKeyword1": "travel",
+      "navigationKeyword2": "emergency",
+      "question": "In many places, what number should you call for police, fire, or ambulance in an urgent emergency?",
+      "correctAnswer": "The local emergency number for that country (for example 112 in much of Europe).",
+      "incorrectAnswers": [
+        "The hotel front desk number only.",
+        "Any random phone number you find online.",
+        "The weather hotline."
+      ],
+      "explanation": "Travelers should learn the emergency number before they need it because it can differ by country.",
+      "keywords": [
+        "travel",
+        "emergency-number"
+      ],
+      "source": "https://europa.eu/youreurope/citizens/travel/security-and-emergency/emergency/index_en.htm"
+    },
+    {
+      "seedId": "a575ee4d-7aae-5d3b-b462-266eb1a62094",
+      "category": "languages",
+      "navigationKeyword1": "travel",
+      "navigationKeyword2": "emergency",
+      "question": "What does \"allergy\" mean in a medical emergency?",
+      "correctAnswer": "A bad reaction your body can have to certain foods, drugs, or bites.",
+      "incorrectAnswers": [
+        "A dislike of loud music.",
+        "A mild preference for cold weather.",
+        "A request for more water."
+      ],
+      "explanation": "Travelers should carry allergy words in the local language for doctors and pharmacies.",
+      "keywords": [
+        "travel",
+        "allergy"
+      ],
+      "source": "https://www.who.int/health-topics/allergy"
+    },
+    {
+      "seedId": "42d4c237-a4aa-502b-a820-8e70cee8918f",
+      "category": "languages",
+      "navigationKeyword1": "travel",
+      "navigationKeyword2": "emergency",
+      "question": "What does \"lost\" mean when you say \"I lost my passport\"?",
+      "correctAnswer": "You do not have it with you and you cannot find it.",
+      "incorrectAnswers": [
+        "You sold it to a friend.",
+        "You forgot your password only.",
+        "You arrived at the wrong airport gate."
+      ],
+      "explanation": "Embassies and police help travelers report a lost passport and plan next steps.",
+      "keywords": [
+        "travel",
+        "passport"
+      ],
+      "source": "https://www.travel.state.gov/content/travel/en/passports/have/lost-stolen.html"
+    }
+  ]
+}

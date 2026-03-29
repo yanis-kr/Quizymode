@@ -1,0 +1,1307 @@
+{
+  "schemaVersion": 1,
+  "seedSet": "core-public-items",
+  "deltaPreviewLimit": 200,
+  "items": [
+    {
+      "seedId": "57ddd9a3-c5dc-4b17-8003-287771a131b7",
+      "category": "geography",
+      "navigationKeyword1": "countries",
+      "navigationKeyword2": "borders",
+      "question": "Along much of the U.S. West, the 49th parallel north forms part of the boundary with which country?",
+      "correctAnswer": "Canada",
+      "incorrectAnswers": [
+        "Mexico",
+        "Russia",
+        "Cuba"
+      ],
+      "explanation": "The Canada\u2013United States border follows the 49th parallel across much of the West from Lake of the Woods to the Pacific coast.",
+      "keywords": [
+        "borders",
+        "north-america",
+        "latitude"
+      ],
+      "source": "https://www.britannica.com/place/Canada"
+    },
+    {
+      "seedId": "9e289893-d8ff-4091-85c8-f026b7c7c1f8",
+      "category": "geography",
+      "navigationKeyword1": "countries",
+      "navigationKeyword2": "borders",
+      "question": "Canada shares its longest international land boundary with which country?",
+      "correctAnswer": "The United States",
+      "incorrectAnswers": [
+        "Mexico",
+        "Greenland",
+        "Russia"
+      ],
+      "explanation": "The Canada\u2013United States border is the longest international land boundary between two countries.",
+      "keywords": [
+        "borders",
+        "north-america",
+        "canada"
+      ],
+      "source": "https://www.britannica.com/place/Canada"
+    },
+    {
+      "seedId": "b89e711b-697e-4e53-a454-f32382f40e6d",
+      "category": "geography",
+      "navigationKeyword1": "countries",
+      "navigationKeyword2": "borders",
+      "question": "Gibraltar\u2019s land frontier is with which country?",
+      "correctAnswer": "Spain",
+      "incorrectAnswers": [
+        "Portugal",
+        "Morocco",
+        "France"
+      ],
+      "explanation": "The British overseas territory of Gibraltar is attached to the Iberian Peninsula and borders Spain to the north.",
+      "keywords": [
+        "borders",
+        "europe",
+        "iberia"
+      ],
+      "source": "https://www.britannica.com/place/Gibraltar"
+    },
+    {
+      "seedId": "cd74c025-9e97-4db8-8620-0c1ad6c8cf93",
+      "category": "geography",
+      "navigationKeyword1": "countries",
+      "navigationKeyword2": "borders",
+      "question": "Lesotho is an enclave entirely surrounded by which country?",
+      "correctAnswer": "South Africa",
+      "incorrectAnswers": [
+        "Botswana",
+        "Zimbabwe",
+        "Namibia"
+      ],
+      "explanation": "Lesotho is landlocked and has a single neighbor: South Africa.",
+      "keywords": [
+        "borders",
+        "southern-africa",
+        "enclaves"
+      ],
+      "source": "https://www.britannica.com/place/Lesotho"
+    },
+    {
+      "seedId": "3bce8aa9-05ac-4ece-bddc-d66ef84a466c",
+      "category": "geography",
+      "navigationKeyword1": "countries",
+      "navigationKeyword2": "borders",
+      "question": "Nepal\u2019s land frontiers are shared with which two giant neighbors?",
+      "correctAnswer": "China and India",
+      "incorrectAnswers": [
+        "India and Bangladesh",
+        "China and Bhutan",
+        "Pakistan and India"
+      ],
+      "explanation": "Nepal is sandwiched between Tibet Autonomous Region of China to the north and India to the south, east, and west.",
+      "keywords": [
+        "borders",
+        "south-asia",
+        "himalayas"
+      ],
+      "source": "https://www.britannica.com/place/Nepal"
+    },
+    {
+      "seedId": "3ffb1cc5-a0c7-48ef-b131-1e89c29633e8",
+      "category": "geography",
+      "navigationKeyword1": "countries",
+      "navigationKeyword2": "borders",
+      "question": "Poland today shares land borders with how many neighboring countries?",
+      "correctAnswer": "Seven",
+      "incorrectAnswers": [
+        "Five",
+        "Six",
+        "Eight"
+      ],
+      "explanation": "Poland borders Germany, Czechia, Slovakia, Ukraine, Belarus, Lithuania, and Russia (Kaliningrad Oblast).",
+      "keywords": [
+        "borders",
+        "europe",
+        "poland"
+      ],
+      "source": "https://www.britannica.com/place/Poland"
+    },
+    {
+      "seedId": "df584db5-ba1b-4fb2-a125-9f02c4245a32",
+      "category": "geography",
+      "navigationKeyword1": "countries",
+      "navigationKeyword2": "borders",
+      "question": "San Marino is completely surrounded by the territory of which country?",
+      "correctAnswer": "Italy",
+      "incorrectAnswers": [
+        "Switzerland",
+        "France",
+        "Austria"
+      ],
+      "explanation": "San Marino is an enclave microstate lying entirely within Italy\u2019s Apennine landscape.",
+      "keywords": [
+        "borders",
+        "europe",
+        "enclaves"
+      ],
+      "source": "https://www.britannica.com/place/San-Marino"
+    },
+    {
+      "seedId": "ffaa5525-bec8-4398-b12e-0ab779e65046",
+      "category": "geography",
+      "navigationKeyword1": "countries",
+      "navigationKeyword2": "borders",
+      "question": "Which South American giant touches every other country on the continent except Chile and Ecuador?",
+      "correctAnswer": "Brazil",
+      "incorrectAnswers": [
+        "Argentina",
+        "Peru",
+        "Colombia"
+      ],
+      "explanation": "Brazil\u2019s enormous perimeter meets nearly every South American state, with Chile and Ecuador the notable exceptions.",
+      "keywords": [
+        "borders",
+        "south-america",
+        "brazil"
+      ],
+      "source": "https://www.britannica.com/place/Brazil"
+    },
+    {
+      "seedId": "cff3424e-c1e0-4881-9b2e-b687cba4e7f1",
+      "category": "geography",
+      "navigationKeyword1": "countries",
+      "navigationKeyword2": "borders",
+      "question": "Which narrow strait separates European Turkey from the Asian portion of Turkey?",
+      "correctAnswer": "The Bosporus",
+      "incorrectAnswers": [
+        "The Strait of Gibraltar",
+        "The Bab el-Mandeb",
+        "The Strait of Hormuz"
+      ],
+      "explanation": "The Bosporus links the Black Sea with the Sea of Marmara and forms part of the boundary between Europe and Asia within Turkey.",
+      "keywords": [
+        "borders",
+        "straits",
+        "turkey"
+      ],
+      "source": "https://www.britannica.com/place/Bosporus"
+    },
+    {
+      "seedId": "ee159387-80fc-4aee-9a42-4e9352779b42",
+      "category": "geography",
+      "navigationKeyword1": "countries",
+      "navigationKeyword2": "borders",
+      "question": "Which river forms much of the border between the United States and Mexico?",
+      "correctAnswer": "The Rio Grande (R\u00edo Bravo)",
+      "incorrectAnswers": [
+        "The Colorado River",
+        "The Mississippi River",
+        "The Columbia River"
+      ],
+      "explanation": "The Rio Grande defines long segments of the international boundary from the Chihuahuan desert eastward to the Gulf of Mexico.",
+      "keywords": [
+        "borders",
+        "rivers",
+        "north-america"
+      ],
+      "source": "https://www.britannica.com/place/Rio-Grande-river-United-States-Mexico"
+    },
+    {
+      "seedId": "f66eb40a-8050-425a-9463-42fd3f0c384b",
+      "category": "geography",
+      "navigationKeyword1": "countries",
+      "navigationKeyword2": "borders",
+      "question": "Which small principality lies in the Pyrenees between France and Spain?",
+      "correctAnswer": "Andorra",
+      "incorrectAnswers": [
+        "Monaco",
+        "San Marino",
+        "Liechtenstein"
+      ],
+      "explanation": "Andorra is wedged along the high crest of the eastern Pyrenees between its two larger neighbors.",
+      "keywords": [
+        "borders",
+        "europe",
+        "pyrenees"
+      ],
+      "source": "https://www.britannica.com/place/Andorra"
+    },
+    {
+      "seedId": "c9ce7a53-1920-436f-a929-b8251849add3",
+      "category": "geography",
+      "navigationKeyword1": "countries",
+      "navigationKeyword2": "islands",
+      "question": "The United Kingdom\u2019s core territory includes the island of Great Britain and part of which other island?",
+      "correctAnswer": "Ireland (Northern Ireland)",
+      "incorrectAnswers": [
+        "Iceland",
+        "Newfoundland",
+        "Sicily"
+      ],
+      "explanation": "The UK comprises Great Britain, northeastern Ireland, and many smaller islands.",
+      "keywords": [
+        "islands",
+        "island-nations",
+        "europe"
+      ],
+      "source": "https://www.britannica.com/place/United-Kingdom"
+    },
+    {
+      "seedId": "89541380-caf0-4c07-9354-fe1a96efabef",
+      "category": "geography",
+      "navigationKeyword1": "countries",
+      "navigationKeyword2": "islands",
+      "question": "Which Caribbean island country is the largest by area in the West Indies?",
+      "correctAnswer": "Cuba",
+      "incorrectAnswers": [
+        "Jamaica",
+        "the Dominican Republic",
+        "Puerto Rico"
+      ],
+      "explanation": "Cuba is the largest island state in the Caribbean region.",
+      "keywords": [
+        "islands",
+        "island-nations",
+        "caribbean"
+      ],
+      "source": "https://www.britannica.com/place/Cuba"
+    },
+    {
+      "seedId": "92384577-59ed-4139-b42a-308571af6787",
+      "category": "geography",
+      "navigationKeyword1": "countries",
+      "navigationKeyword2": "islands",
+      "question": "Which East Asian archipelago country includes Honshu, Kyushu, Shikoku, and Hokkaido?",
+      "correctAnswer": "Japan",
+      "incorrectAnswers": [
+        "Philippines",
+        "Indonesia",
+        "Taiwan"
+      ],
+      "explanation": "Japan is a volcanic island chain whose four largest islands are Honshu, Hokkaido, Kyushu, and Shikoku.",
+      "keywords": [
+        "islands",
+        "island-nations",
+        "east-asia"
+      ],
+      "source": "https://www.britannica.com/place/Japan"
+    },
+    {
+      "seedId": "291cf9f5-7c76-47b6-be34-bdf5ed64d48a",
+      "category": "geography",
+      "navigationKeyword1": "countries",
+      "navigationKeyword2": "islands",
+      "question": "Which Indian Ocean island country lies southeast of India?",
+      "correctAnswer": "Sri Lanka",
+      "incorrectAnswers": [
+        "Maldives",
+        "Mauritius",
+        "Seychelles"
+      ],
+      "explanation": "Sri Lanka occupies a large island off India\u2019s southeastern tip.",
+      "keywords": [
+        "islands",
+        "island-nations",
+        "south-asia"
+      ],
+      "source": "https://www.britannica.com/place/Sri-Lanka"
+    },
+    {
+      "seedId": "d6370043-2e31-4e2e-907e-1729a78dfca7",
+      "category": "geography",
+      "navigationKeyword1": "countries",
+      "navigationKeyword2": "islands",
+      "question": "Which Mediterranean island country lies south of Turkey?",
+      "correctAnswer": "Cyprus",
+      "incorrectAnswers": [
+        "Crete",
+        "Sicily",
+        "Rhodes"
+      ],
+      "explanation": "Cyprus is an independent island state in the eastern Mediterranean.",
+      "keywords": [
+        "islands",
+        "island-nations",
+        "mediterranean"
+      ],
+      "source": "https://www.britannica.com/place/Cyprus"
+    },
+    {
+      "seedId": "8f432807-ab75-4a6b-927b-940288fdcafb",
+      "category": "geography",
+      "navigationKeyword1": "countries",
+      "navigationKeyword2": "islands",
+      "question": "Which North Atlantic island country lies just south of the Arctic Circle between Greenland and Norway?",
+      "correctAnswer": "Iceland",
+      "incorrectAnswers": [
+        "Ireland",
+        "Faroe Islands",
+        "Svalbard"
+      ],
+      "explanation": "Iceland is a volcanic island state in the North Atlantic on the Mid-Atlantic Ridge.",
+      "keywords": [
+        "islands",
+        "island-nations",
+        "atlantic"
+      ],
+      "source": "https://www.britannica.com/place/Iceland"
+    },
+    {
+      "seedId": "cae058c2-d1d6-44d2-99b9-3e6b20a2631f",
+      "category": "geography",
+      "navigationKeyword1": "countries",
+      "navigationKeyword2": "islands",
+      "question": "Which Pacific country\u2019s two main islands are called Upolu and Savai\u02bbi?",
+      "correctAnswer": "Samoa",
+      "incorrectAnswers": [
+        "Tonga",
+        "Fiji",
+        "Vanuatu"
+      ],
+      "explanation": "Samoa is a Polynesian nation centered on the islands of Upolu and Savai\u02bbi.",
+      "keywords": [
+        "islands",
+        "island-nations",
+        "polynesia"
+      ],
+      "source": "https://www.britannica.com/place/Samoa"
+    },
+    {
+      "seedId": "a4ccc4e7-b66b-4564-9344-164a08e4ec8d",
+      "category": "geography",
+      "navigationKeyword1": "countries",
+      "navigationKeyword2": "islands",
+      "question": "Which archipelagic Southeast Asian country has about 7,000 islands and includes Luzon and Mindanao?",
+      "correctAnswer": "Philippines",
+      "incorrectAnswers": [
+        "Malaysia",
+        "Vietnam",
+        "Papua New Guinea"
+      ],
+      "explanation": "The Philippines is an island nation of the western Pacific centered on Luzon, Visayas, and Mindanao.",
+      "keywords": [
+        "islands",
+        "island-nations",
+        "southeast-asia"
+      ],
+      "source": "https://www.britannica.com/place/Philippines"
+    },
+    {
+      "seedId": "fa7cf7bb-3786-444c-af4d-5a8df0e62625",
+      "category": "geography",
+      "navigationKeyword1": "countries",
+      "navigationKeyword2": "islands",
+      "question": "Which country in the British Isles occupies most of the island of Ireland?",
+      "correctAnswer": "Ireland",
+      "incorrectAnswers": [
+        "Iceland",
+        "United Kingdom",
+        "France"
+      ],
+      "explanation": "The Republic of Ireland covers most of the island of Ireland, separate from Northern Ireland in the UK.",
+      "keywords": [
+        "islands",
+        "island-nations",
+        "europe"
+      ],
+      "source": "https://www.britannica.com/place/Ireland"
+    },
+    {
+      "seedId": "d92b8d98-50e8-48f6-bdba-c1fdc19188be",
+      "category": "geography",
+      "navigationKeyword1": "countries",
+      "navigationKeyword2": "islands",
+      "question": "Which eastern Caribbean country includes the main island of Saint Vincent and the northern Grenadines?",
+      "correctAnswer": "Saint Vincent and the Grenadines",
+      "incorrectAnswers": [
+        "Saint Lucia",
+        "Grenada",
+        "Barbados"
+      ],
+      "explanation": "Saint Vincent and the Grenadines is an independent multi-island state in the Lesser Antilles.",
+      "keywords": [
+        "islands",
+        "island-nations",
+        "caribbean"
+      ],
+      "source": "https://www.britannica.com/place/Saint-Vincent-and-the-Grenadines"
+    },
+    {
+      "seedId": "cf2966ec-df19-4dc9-8bb2-ed61420cae1c",
+      "category": "geography",
+      "navigationKeyword1": "countries",
+      "navigationKeyword2": "islands",
+      "question": "Which island nation off Africa\u2019s southeastern coast is the world\u2019s fourth-largest island?",
+      "correctAnswer": "Madagascar",
+      "incorrectAnswers": [
+        "Mauritius",
+        "Sri Lanka",
+        "Zanzibar"
+      ],
+      "explanation": "Madagascar is a single large island country in the Indian Ocean east of mainland Africa.",
+      "keywords": [
+        "islands",
+        "island-nations",
+        "africa"
+      ],
+      "source": "https://www.britannica.com/place/Madagascar"
+    },
+    {
+      "seedId": "319ddd95-e2aa-44fd-a8d1-dc38711f4b88",
+      "category": "geography",
+      "navigationKeyword1": "countries",
+      "navigationKeyword2": "landlocked",
+      "question": "Which Central European landlocked country\u2019s capital is Vienna?",
+      "correctAnswer": "Austria",
+      "incorrectAnswers": [
+        "Hungary",
+        "Slovakia",
+        "Czech Republic"
+      ],
+      "explanation": "Austria is a landlocked Alpine and Danubian country bordering several neighbors.",
+      "keywords": [
+        "landlocked",
+        "europe",
+        "austria"
+      ],
+      "source": "https://www.britannica.com/place/Austria"
+    },
+    {
+      "seedId": "8f8622e5-f0f6-4119-b47d-d0c375cfa9f9",
+      "category": "geography",
+      "navigationKeyword1": "countries",
+      "navigationKeyword2": "landlocked",
+      "question": "Which South American country lost its Pacific coastline in a 19th-century war and remains landlocked today?",
+      "correctAnswer": "Bolivia",
+      "incorrectAnswers": [
+        "Paraguay",
+        "Peru",
+        "Ecuador"
+      ],
+      "explanation": "Bolivia is landlocked in the Andean interior, having lost coastal territory to Chile in the War of the Pacific era.",
+      "keywords": [
+        "landlocked",
+        "south-america",
+        "bolivia"
+      ],
+      "source": "https://www.britannica.com/place/Bolivia"
+    },
+    {
+      "seedId": "af603d1e-c9f3-415b-a63e-af2d2438c30e",
+      "category": "geography",
+      "navigationKeyword1": "countries",
+      "navigationKeyword2": "landlocked",
+      "question": "Which country is the world\u2019s largest landlocked state by area?",
+      "correctAnswer": "Kazakhstan",
+      "incorrectAnswers": [
+        "Mongolia",
+        "Chad",
+        "Niger"
+      ],
+      "explanation": "Kazakhstan in Central Asia has the greatest territory of any country without a coastline.",
+      "keywords": [
+        "landlocked",
+        "central-asia",
+        "kazakhstan"
+      ],
+      "source": "https://www.britannica.com/place/Kazakhstan"
+    },
+    {
+      "seedId": "c76d7c6e-2efd-4b61-a4eb-558d1f3408d9",
+      "category": "geography",
+      "navigationKeyword1": "countries",
+      "navigationKeyword2": "landlocked",
+      "question": "Which doubly landlocked European country is entirely surrounded by other landlocked states?",
+      "correctAnswer": "Liechtenstein",
+      "incorrectAnswers": [
+        "Switzerland",
+        "Austria",
+        "Luxembourg"
+      ],
+      "explanation": "Liechtenstein borders only Switzerland and Austria, both of which are themselves landlocked.",
+      "keywords": [
+        "landlocked",
+        "europe",
+        "microstates"
+      ],
+      "source": "https://www.britannica.com/place/Liechtenstein"
+    },
+    {
+      "seedId": "07ce3276-4a80-40d6-9977-ecc530e1343b",
+      "category": "geography",
+      "navigationKeyword1": "countries",
+      "navigationKeyword2": "landlocked",
+      "question": "Which landlocked African country lies largely in the southern Sahara and Sahel transition belt?",
+      "correctAnswer": "Niger",
+      "incorrectAnswers": [
+        "Senegal",
+        "Ghana",
+        "Gabon"
+      ],
+      "explanation": "Niger is a vast landlocked Sahelian state without ocean frontage.",
+      "keywords": [
+        "landlocked",
+        "africa",
+        "sahel"
+      ],
+      "source": "https://www.britannica.com/place/Niger"
+    },
+    {
+      "seedId": "0ff298ae-a82b-4e7c-9472-b2a709f11bc0",
+      "category": "geography",
+      "navigationKeyword1": "countries",
+      "navigationKeyword2": "landlocked",
+      "question": "Which landlocked Central Asian country has its capital at Tashkent and includes Samarkand and Bukhara?",
+      "correctAnswer": "Uzbekistan",
+      "incorrectAnswers": [
+        "Turkmenistan",
+        "Kyrgyzstan",
+        "Tajikistan"
+      ],
+      "explanation": "Uzbekistan lies between the Syr Darya and Amu Darya basins and has no access to the open ocean.",
+      "keywords": [
+        "landlocked",
+        "central-asia",
+        "uzbekistan"
+      ],
+      "source": "https://www.britannica.com/place/Uzbekistan"
+    },
+    {
+      "seedId": "c2d3664e-d71c-458f-b10a-6c0769ef7988",
+      "category": "geography",
+      "navigationKeyword1": "countries",
+      "navigationKeyword2": "landlocked",
+      "question": "Which landlocked South American country lies between Brazil, Bolivia, and Argentina?",
+      "correctAnswer": "Paraguay",
+      "incorrectAnswers": [
+        "Uruguay",
+        "Chile",
+        "Guyana"
+      ],
+      "explanation": "Paraguay has no seacoast and sits in the heart of the southern interior of South America.",
+      "keywords": [
+        "landlocked",
+        "south-america",
+        "paraguay"
+      ],
+      "source": "https://www.britannica.com/place/Paraguay"
+    },
+    {
+      "seedId": "cc35063a-6fa1-4407-bc02-27978bf579f8",
+      "category": "geography",
+      "navigationKeyword1": "countries",
+      "navigationKeyword2": "landlocked",
+      "question": "Which landlocked country lies between Russia to the north and China to the south?",
+      "correctAnswer": "Mongolia",
+      "incorrectAnswers": [
+        "Nepal",
+        "Bhutan",
+        "Kyrgyzstan"
+      ],
+      "explanation": "Mongolia is an expansive landlocked plateau country bracketed by Russia and China.",
+      "keywords": [
+        "landlocked",
+        "east-asia",
+        "mongolia"
+      ],
+      "source": "https://www.britannica.com/place/Mongolia"
+    },
+    {
+      "seedId": "1f1b8fd1-6480-4450-8965-12c0e10d0192",
+      "category": "geography",
+      "navigationKeyword1": "countries",
+      "navigationKeyword2": "landlocked",
+      "question": "Which landlocked country sits high in the Himalayas between China and India?",
+      "correctAnswer": "Nepal",
+      "incorrectAnswers": [
+        "Bangladesh",
+        "Myanmar",
+        "Pakistan"
+      ],
+      "explanation": "Nepal is a mountainous landlocked state on the spine of the Himalayas.",
+      "keywords": [
+        "landlocked",
+        "south-asia",
+        "himalayas"
+      ],
+      "source": "https://www.britannica.com/place/Nepal"
+    },
+    {
+      "seedId": "657d36d7-6710-413f-aa5b-26bcac6c82bf",
+      "category": "geography",
+      "navigationKeyword1": "countries",
+      "navigationKeyword2": "landlocked",
+      "question": "Which landlocked nation in southern Africa includes the Okavango Delta region?",
+      "correctAnswer": "Botswana",
+      "incorrectAnswers": [
+        "Namibia",
+        "Mozambique",
+        "South Africa"
+      ],
+      "explanation": "Botswana is landlocked in the Kalahari basin and contains the inland Okavango Delta.",
+      "keywords": [
+        "landlocked",
+        "southern-africa",
+        "botswana"
+      ],
+      "source": "https://www.britannica.com/place/Botswana"
+    },
+    {
+      "seedId": "22eb08ba-8076-415e-94f7-8be3eb648478",
+      "category": "geography",
+      "navigationKeyword1": "countries",
+      "navigationKeyword2": "largest",
+      "question": "By area, which country is the largest in the world?",
+      "correctAnswer": "Russia",
+      "incorrectAnswers": [
+        "Canada",
+        "China",
+        "the United States"
+      ],
+      "explanation": "Russia spans Eastern Europe and northern Asia and has the largest national territory by area.",
+      "keywords": [
+        "largest",
+        "country-size",
+        "area"
+      ],
+      "source": "https://www.britannica.com/place/Russia"
+    },
+    {
+      "seedId": "b73b8d0e-f152-40cc-9023-e557ac05eeb0",
+      "category": "geography",
+      "navigationKeyword1": "countries",
+      "navigationKeyword2": "largest",
+      "question": "Which African country has the largest area?",
+      "correctAnswer": "Algeria",
+      "incorrectAnswers": [
+        "Democratic Republic of the Congo",
+        "Sudan",
+        "Libya"
+      ],
+      "explanation": "Algeria is the largest country by area in Africa, mostly covered by the Sahara and Atlas-related landscapes.",
+      "keywords": [
+        "largest",
+        "country-size",
+        "africa"
+      ],
+      "source": "https://www.britannica.com/place/Algeria"
+    },
+    {
+      "seedId": "7b8aac46-e533-469c-b0b2-1f0d9b350c68",
+      "category": "geography",
+      "navigationKeyword1": "countries",
+      "navigationKeyword2": "largest",
+      "question": "Which Central Asian country is the world\u2019s largest landlocked state by area?",
+      "correctAnswer": "Kazakhstan",
+      "incorrectAnswers": [
+        "Mongolia",
+        "Chad",
+        "Niger"
+      ],
+      "explanation": "Kazakhstan\u2019s steppe and desert expanses give it the greatest area of any landlocked country.",
+      "keywords": [
+        "largest",
+        "country-size",
+        "landlocked"
+      ],
+      "source": "https://www.britannica.com/place/Kazakhstan"
+    },
+    {
+      "seedId": "8f7e93e1-e3db-48a7-9b7a-db783e764e71",
+      "category": "geography",
+      "navigationKeyword1": "countries",
+      "navigationKeyword2": "largest",
+      "question": "Which South American country has the largest area?",
+      "correctAnswer": "Brazil",
+      "incorrectAnswers": [
+        "Argentina",
+        "Peru",
+        "Colombia"
+      ],
+      "explanation": "Brazil covers roughly half of South America\u2019s land area, far more than any other country on the continent.",
+      "keywords": [
+        "largest",
+        "country-size",
+        "south-america"
+      ],
+      "source": "https://www.britannica.com/place/Brazil"
+    },
+    {
+      "seedId": "9c11282e-e2a5-4eba-a9b0-45b5dc27d651",
+      "category": "geography",
+      "navigationKeyword1": "countries",
+      "navigationKeyword2": "largest",
+      "question": "Which Southeast Asian archipelagic country has by far the largest area?",
+      "correctAnswer": "Indonesia",
+      "incorrectAnswers": [
+        "Malaysia",
+        "Philippines",
+        "Thailand"
+      ],
+      "explanation": "Indonesia\u2019s thousands of islands span a huge east\u2013west reach, giving it the greatest area in Southeast Asia.",
+      "keywords": [
+        "largest",
+        "country-size",
+        "southeast-asia"
+      ],
+      "source": "https://www.britannica.com/place/Indonesia"
+    },
+    {
+      "seedId": "a9ada082-ca9f-46dc-b142-a08fcea22ce0",
+      "category": "geography",
+      "navigationKeyword1": "countries",
+      "navigationKeyword2": "largest",
+      "question": "Which country has the largest area in East Asia?",
+      "correctAnswer": "China",
+      "incorrectAnswers": [
+        "Japan",
+        "South Korea",
+        "Vietnam"
+      ],
+      "explanation": "China is far larger in territory than its East Asian neighbors.",
+      "keywords": [
+        "largest",
+        "country-size",
+        "asia"
+      ],
+      "source": "https://www.britannica.com/place/China"
+    },
+    {
+      "seedId": "410ea2d0-3e38-45e7-acce-d767e77ea37b",
+      "category": "geography",
+      "navigationKeyword1": "countries",
+      "navigationKeyword2": "largest",
+      "question": "Which country is both a continent and one of the world\u2019s largest states by area?",
+      "correctAnswer": "Australia",
+      "incorrectAnswers": [
+        "New Zealand",
+        "India",
+        "Argentina"
+      ],
+      "explanation": "Australia occupies the continental landmass called Australia, making it one of Earth\u2019s largest countries.",
+      "keywords": [
+        "largest",
+        "country-size",
+        "oceania"
+      ],
+      "source": "https://www.britannica.com/place/Australia"
+    },
+    {
+      "seedId": "bd1b1bfa-6fd6-4ec6-a045-44f66eeb76fc",
+      "category": "geography",
+      "navigationKeyword1": "countries",
+      "navigationKeyword2": "largest",
+      "question": "Which country is the largest in the Middle East by area?",
+      "correctAnswer": "Saudi Arabia",
+      "incorrectAnswers": [
+        "Iran",
+        "Egypt",
+        "Turkey"
+      ],
+      "explanation": "Saudi Arabia occupies most of the Arabian Peninsula and is the largest Middle Eastern state by territory.",
+      "keywords": [
+        "largest",
+        "country-size",
+        "middle-east"
+      ],
+      "source": "https://www.britannica.com/place/Saudi-Arabia"
+    },
+    {
+      "seedId": "429b4949-8257-4e99-b868-0e41a6df2644",
+      "category": "geography",
+      "navigationKeyword1": "countries",
+      "navigationKeyword2": "largest",
+      "question": "Which country is the second largest in South America by area?",
+      "correctAnswer": "Argentina",
+      "incorrectAnswers": [
+        "Peru",
+        "Colombia",
+        "Bolivia"
+      ],
+      "explanation": "After Brazil, Argentina has the next-largest national territory in South America.",
+      "keywords": [
+        "largest",
+        "country-size",
+        "south-america"
+      ],
+      "source": "https://www.britannica.com/place/Argentina"
+    },
+    {
+      "seedId": "c9f4eff6-9b62-4105-8abb-b1639322fee0",
+      "category": "geography",
+      "navigationKeyword1": "countries",
+      "navigationKeyword2": "largest",
+      "question": "Which country is the second largest in the world by area?",
+      "correctAnswer": "Canada",
+      "incorrectAnswers": [
+        "China",
+        "Brazil",
+        "Australia"
+      ],
+      "explanation": "Canada\u2019s vast northern territories make it the second-largest country by total area after Russia.",
+      "keywords": [
+        "largest",
+        "country-size",
+        "area"
+      ],
+      "source": "https://www.britannica.com/place/Canada"
+    },
+    {
+      "seedId": "ecad2cc5-d2d0-4d2f-ac92-36993b5e55ea",
+      "category": "geography",
+      "navigationKeyword1": "countries",
+      "navigationKeyword2": "largest",
+      "question": "Which is the largest country in South Asia by area?",
+      "correctAnswer": "India",
+      "incorrectAnswers": [
+        "Pakistan",
+        "Bangladesh",
+        "Nepal"
+      ],
+      "explanation": "India\u2019s territory is the largest among the countries commonly grouped in South Asia.",
+      "keywords": [
+        "largest",
+        "country-size",
+        "south-asia"
+      ],
+      "source": "https://www.britannica.com/place/India"
+    },
+    {
+      "seedId": "1dc3a1b2-6d53-4cfa-948c-df7ca5daa1af",
+      "category": "geography",
+      "navigationKeyword1": "countries",
+      "navigationKeyword2": "smallest",
+      "question": "Which Caribbean federation of two main islands is one of the smallest independent states in the Americas?",
+      "correctAnswer": "Saint Kitts and Nevis",
+      "incorrectAnswers": [
+        "Jamaica",
+        "Trinidad and Tobago",
+        "Barbados"
+      ],
+      "explanation": "Saint Kitts and Nevis combines two small islands into one of the least extensive countries in the Western Hemisphere.",
+      "keywords": [
+        "smallest",
+        "country-size",
+        "caribbean"
+      ],
+      "source": "https://www.britannica.com/place/Saint-Kitts-and-Nevis"
+    },
+    {
+      "seedId": "6feac9c0-dc2b-4ccd-a547-830a7811335c",
+      "category": "geography",
+      "navigationKeyword1": "countries",
+      "navigationKeyword2": "smallest",
+      "question": "Which Indian Ocean island nation is one of the smallest Asian countries by land area?",
+      "correctAnswer": "Maldives",
+      "incorrectAnswers": [
+        "Sri Lanka",
+        "Singapore",
+        "Brunei"
+      ],
+      "explanation": "The Maldives consists of many small low islands with a modest total land area.",
+      "keywords": [
+        "smallest",
+        "country-size",
+        "asia"
+      ],
+      "source": "https://www.britannica.com/place/Maldives"
+    },
+    {
+      "seedId": "055f09ea-49f1-4c51-9736-be530f5c85fe",
+      "category": "geography",
+      "navigationKeyword1": "countries",
+      "navigationKeyword2": "smallest",
+      "question": "Which Mediterranean island country lies south of Sicily?",
+      "correctAnswer": "Malta",
+      "incorrectAnswers": [
+        "Cyprus",
+        "Corsica",
+        "Sardinia"
+      ],
+      "explanation": "Malta is an independent archipelagic state with a small land area in the central Mediterranean.",
+      "keywords": [
+        "smallest",
+        "country-size",
+        "europe"
+      ],
+      "source": "https://www.britannica.com/place/Malta"
+    },
+    {
+      "seedId": "e27f37da-e04a-4d35-8718-ac2f394c9a5b",
+      "category": "geography",
+      "navigationKeyword1": "countries",
+      "navigationKeyword2": "smallest",
+      "question": "Which Pacific island republic is among the world\u2019s smallest countries by land area?",
+      "correctAnswer": "Nauru",
+      "incorrectAnswers": [
+        "Fiji",
+        "Samoa",
+        "Tonga"
+      ],
+      "explanation": "Nauru is a single small island nation with one of the smallest land areas of any independent state.",
+      "keywords": [
+        "smallest",
+        "country-size",
+        "oceania"
+      ],
+      "source": "https://www.britannica.com/place/Nauru"
+    },
+    {
+      "seedId": "0df2a3b9-edd8-449d-82d9-623e8a784713",
+      "category": "geography",
+      "navigationKeyword1": "countries",
+      "navigationKeyword2": "smallest",
+      "question": "Which Polynesian country northeast of Australia is made up of low coral atolls?",
+      "correctAnswer": "Tuvalu",
+      "incorrectAnswers": [
+        "Vanuatu",
+        "Kiribati",
+        "Marshall Islands"
+      ],
+      "explanation": "Tuvalu\u2019s nine coral islands give it a very small total land area spread across a wide ocean zone.",
+      "keywords": [
+        "smallest",
+        "country-size",
+        "oceania"
+      ],
+      "source": "https://www.britannica.com/place/Tuvalu"
+    },
+    {
+      "seedId": "6d819dcf-0110-47c3-90c1-543162705cb1",
+      "category": "geography",
+      "navigationKeyword1": "countries",
+      "navigationKeyword2": "smallest",
+      "question": "Which Pyrenean principality is landlocked between France and Spain?",
+      "correctAnswer": "Andorra",
+      "incorrectAnswers": [
+        "Portugal",
+        "Monaco",
+        "Luxembourg"
+      ],
+      "explanation": "Andorra is a small mountain country wedged along the France\u2013Spain border.",
+      "keywords": [
+        "smallest",
+        "country-size",
+        "europe"
+      ],
+      "source": "https://www.britannica.com/place/Andorra"
+    },
+    {
+      "seedId": "cadc28ef-0766-4b97-b9a1-d5166bbb03ab",
+      "category": "geography",
+      "navigationKeyword1": "countries",
+      "navigationKeyword2": "smallest",
+      "question": "Which doubly landlocked Alpine country lies between Switzerland and Austria?",
+      "correctAnswer": "Liechtenstein",
+      "incorrectAnswers": [
+        "Luxembourg",
+        "Andorra",
+        "Slovenia"
+      ],
+      "explanation": "Liechtenstein is a small principality in the Alps bordered only by Switzerland and Austria.",
+      "keywords": [
+        "smallest",
+        "country-size",
+        "europe"
+      ],
+      "source": "https://www.britannica.com/place/Liechtenstein"
+    },
+    {
+      "seedId": "6755ee43-e9e4-4e7c-b4f3-a1b007165185",
+      "category": "geography",
+      "navigationKeyword1": "countries",
+      "navigationKeyword2": "smallest",
+      "question": "Which independent city-state in Rome is the world\u2019s smallest country by area?",
+      "correctAnswer": "Vatican City",
+      "incorrectAnswers": [
+        "Monaco",
+        "San Marino",
+        "Liechtenstein"
+      ],
+      "explanation": "Vatican City is a sovereign enclave within Rome and is extremely small in land area.",
+      "keywords": [
+        "smallest",
+        "country-size",
+        "europe"
+      ],
+      "source": "https://www.britannica.com/place/Vatican-City"
+    },
+    {
+      "seedId": "8e8a3b6d-4ee3-4959-adfe-445620a85482",
+      "category": "geography",
+      "navigationKeyword1": "countries",
+      "navigationKeyword2": "smallest",
+      "question": "Which landlocked microstate is entirely surrounded by Italy?",
+      "correctAnswer": "San Marino",
+      "incorrectAnswers": [
+        "Vatican City",
+        "Andorra",
+        "Monaco"
+      ],
+      "explanation": "San Marino lies on Mount Titano\u2019s slopes entirely within Italian territory.",
+      "keywords": [
+        "smallest",
+        "country-size",
+        "europe"
+      ],
+      "source": "https://www.britannica.com/place/San-Marino"
+    },
+    {
+      "seedId": "1d18fc3f-91b6-4016-bf0a-dd9d1f62a3ad",
+      "category": "geography",
+      "navigationKeyword1": "countries",
+      "navigationKeyword2": "smallest",
+      "question": "Which tiny Mediterranean principality borders France and the sea?",
+      "correctAnswer": "Monaco",
+      "incorrectAnswers": [
+        "Malta",
+        "Andorra",
+        "Luxembourg"
+      ],
+      "explanation": "Monaco is a compact sovereign principality on the French Riviera.",
+      "keywords": [
+        "smallest",
+        "country-size",
+        "europe"
+      ],
+      "source": "https://www.britannica.com/place/Monaco"
+    },
+    {
+      "seedId": "5f9154f3-a999-46bc-951e-d5059bf52d7f",
+      "category": "geography",
+      "navigationKeyword1": "countries",
+      "navigationKeyword2": "smallest",
+      "question": "Which western Pacific island country\u2019s land area is spread across many atolls and islets?",
+      "correctAnswer": "Marshall Islands",
+      "incorrectAnswers": [
+        "Palau",
+        "Micronesia",
+        "Guam"
+      ],
+      "explanation": "The Marshall Islands is an independent island nation whose inhabited land totals are very small compared with its ocean domain.",
+      "keywords": [
+        "smallest",
+        "country-size",
+        "micronesia"
+      ],
+      "source": "https://www.britannica.com/place/Marshall-Islands"
+    },
+    {
+      "seedId": "0f8d9798-d3af-4d83-bf9b-61a86c2878c4",
+      "category": "geography",
+      "navigationKeyword1": "countries",
+      "navigationKeyword2": "sovereignty",
+      "question": "Eritrea became an internationally recognized sovereign state in 1993 after separating from which country?",
+      "correctAnswer": "Ethiopia",
+      "incorrectAnswers": [
+        "Sudan",
+        "Djibouti",
+        "Somalia"
+      ],
+      "explanation": "A 1993 referendum approved Eritrean independence from Ethiopia, ending decades of armed struggle.",
+      "keywords": [
+        "sovereignty",
+        "africa",
+        "eritrea"
+      ],
+      "source": "https://www.britannica.com/place/Eritrea"
+    },
+    {
+      "seedId": "f7abb8e4-6937-4b88-9f11-43de2e068ba0",
+      "category": "geography",
+      "navigationKeyword1": "countries",
+      "navigationKeyword2": "sovereignty",
+      "question": "In 2011, which new African state became widely recognized as independent from Sudan?",
+      "correctAnswer": "South Sudan",
+      "incorrectAnswers": [
+        "Eritrea",
+        "Somalia",
+        "Western Sahara"
+      ],
+      "explanation": "South Sudan voted for separation and was admitted to the United Nations as a sovereign member state in 2011.",
+      "keywords": [
+        "sovereignty",
+        "africa",
+        "statehood"
+      ],
+      "source": "https://www.britannica.com/place/South-Sudan"
+    },
+    {
+      "seedId": "1d6c4610-0163-41ca-bd0e-309704fa0e35",
+      "category": "geography",
+      "navigationKeyword1": "countries",
+      "navigationKeyword2": "sovereignty",
+      "question": "Montenegro regained full independent statehood in 2006 after separating from which country?",
+      "correctAnswer": "Serbia (the Serbia and Montenegro union)",
+      "incorrectAnswers": [
+        "Croatia",
+        "Bosnia and Herzegovina",
+        "North Macedonia"
+      ],
+      "explanation": "A 2006 independence referendum led Montenegro to leave the loose federation with Serbia and assume separate sovereignty.",
+      "keywords": [
+        "sovereignty",
+        "balkans",
+        "montenegro"
+      ],
+      "source": "https://www.britannica.com/place/Montenegro"
+    },
+    {
+      "seedId": "d566cd14-9a96-4532-95e2-6c40a8080d09",
+      "category": "geography",
+      "navigationKeyword1": "countries",
+      "navigationKeyword2": "sovereignty",
+      "question": "The Holy See participates in the United Nations General Assembly with what kind of status?",
+      "correctAnswer": "Permanent observer (not a UN member state)",
+      "incorrectAnswers": [
+        "Full member state",
+        "Special administrative region",
+        "Trust territory"
+      ],
+      "explanation": "The Holy See is a permanent observer at the UN General Assembly, not a full member state, while still exercising international personality.",
+      "keywords": [
+        "sovereignty",
+        "united-nations",
+        "vatican"
+      ],
+      "source": "https://www.un.org/en/about-us/non-member-states"
+    },
+    {
+      "seedId": "a0dc5d1a-f70e-4d7c-a2f3-1a75507c9fba",
+      "category": "geography",
+      "navigationKeyword1": "countries",
+      "navigationKeyword2": "sovereignty",
+      "question": "Timor-Leste (East Timor) became a sovereign UN member state in 2002 after earlier rule by which country?",
+      "correctAnswer": "Indonesia",
+      "incorrectAnswers": [
+        "Portugal only without Indonesian period",
+        "Australia",
+        "Malaysia"
+      ],
+      "explanation": "After Portuguese decolonization, East Timor was annexed by Indonesia before voting for independence and achieving UN membership.",
+      "keywords": [
+        "sovereignty",
+        "southeast-asia",
+        "timor-leste"
+      ],
+      "source": "https://www.britannica.com/place/East-Timor"
+    },
+    {
+      "seedId": "d2685aeb-00c6-4397-a975-6257c8c1c876",
+      "category": "geography",
+      "navigationKeyword1": "countries",
+      "navigationKeyword2": "sovereignty",
+      "question": "Under the UN Charter, member states are described as being equal in legal status in which way?",
+      "correctAnswer": "Sovereign equality",
+      "incorrectAnswers": [
+        "Colonial priority",
+        "Economic rank order",
+        "Population-weighted voting only"
+      ],
+      "explanation": "Article 2(1) of the UN Charter affirms the organization is based on the principle of the sovereign equality of all its members.",
+      "keywords": [
+        "sovereignty",
+        "international-law",
+        "united-nations"
+      ],
+      "source": "https://www.un.org/en/about-us/un-charter/chapter-1"
+    },
+    {
+      "seedId": "d31e39ce-4769-4ce0-a016-e814ccfb036f",
+      "category": "geography",
+      "navigationKeyword1": "countries",
+      "navigationKeyword2": "sovereignty",
+      "question": "What is the capital of the sovereign principality located between Switzerland and Austria?",
+      "correctAnswer": "Vaduz",
+      "incorrectAnswers": [
+        "Bern",
+        "Innsbruck",
+        "Zurich"
+      ],
+      "explanation": "Vaduz is the capital of Liechtenstein, a constitutional monarchy and fully independent European microstate.",
+      "keywords": [
+        "sovereignty",
+        "liechtenstein",
+        "europe"
+      ],
+      "source": "https://www.britannica.com/place/Liechtenstein"
+    },
+    {
+      "seedId": "67f0ee4d-6fea-4042-8c0e-777356ee8c39",
+      "category": "geography",
+      "navigationKeyword1": "countries",
+      "navigationKeyword2": "sovereignty",
+      "question": "When leaders insist \u201coutsiders can\u2019t dictate our laws here,\u201d international relations jargon calls that in-territory supreme authority what?",
+      "correctAnswer": "Sovereignty",
+      "incorrectAnswers": [
+        "A temporary mandate",
+        "A protectorate status",
+        "A trade condominium"
+      ],
+      "explanation": "Sovereignty is the recognized right of a state to exercise final authority within its borders and in international relations.",
+      "keywords": [
+        "sovereignty",
+        "political-geography",
+        "definitions"
+      ],
+      "source": "https://www.britannica.com/topic/sovereignty"
+    },
+    {
+      "seedId": "581e8d9e-ce4b-4dc2-8410-ccef08aa934e",
+      "category": "geography",
+      "navigationKeyword1": "countries",
+      "navigationKeyword2": "sovereignty",
+      "question": "Which Baltic republics restored independence following the 1991 Soviet coup\u2019s collapse?",
+      "correctAnswer": "Estonia, Latvia, and Lithuania",
+      "incorrectAnswers": [
+        "Poland, Czechia, and Slovakia",
+        "Ukraine, Belarus, and Moldova",
+        "Finland, Sweden, and Norway"
+      ],
+      "explanation": "The three Baltic states reaffirmed sovereignty they had lost in 1940 and were internationally recognized as independent countries in 1991.",
+      "keywords": [
+        "sovereignty",
+        "baltics",
+        "europe"
+      ],
+      "source": "https://www.britannica.com/place/Baltic-states"
+    },
+    {
+      "seedId": "913b91c2-e570-4b32-87cb-2501c914dcdb",
+      "category": "geography",
+      "navigationKeyword1": "countries",
+      "navigationKeyword2": "sovereignty",
+      "question": "Which Pacific island country gained independence from New Zealand in free association in 1962?",
+      "correctAnswer": "Samoa",
+      "incorrectAnswers": [
+        "Fiji",
+        "Tonga",
+        "Vanuatu"
+      ],
+      "explanation": "Western Samoa (now Samoa) became the first Pacific island country of the 20th century to regain independence from colonial administration.",
+      "keywords": [
+        "sovereignty",
+        "oceania",
+        "decolonization"
+      ],
+      "source": "https://www.britannica.com/place/Samoa"
+    },
+    {
+      "seedId": "62b1073d-600b-4681-9c50-40ca1dfe95d9",
+      "category": "geography",
+      "navigationKeyword1": "countries",
+      "navigationKeyword2": "sovereignty",
+      "question": "You can\u2019t seat \u201cCalifornia\u201d alone at the UN General Assembly, but you can seat the country that contains it\u2014because a country in that sense is what kind of unit?",
+      "correctAnswer": "A state (sovereign state) with territory, people, government, and treaty capacity",
+      "incorrectAnswers": [
+        "Only a province or county",
+        "Any city with a mayor",
+        "A regional trade bloc by default"
+      ],
+      "explanation": "The standard definition of a state in international law ties together territory, people, government, and recognition.",
+      "keywords": [
+        "sovereignty",
+        "definitions",
+        "political-geography"
+      ],
+      "source": "https://www.britannica.com/topic/state-sovereign-political-entity"
+    }
+  ]
+}

@@ -1,0 +1,121 @@
+{
+  "schemaVersion": 1,
+  "seedSet": "core-public-items",
+  "deltaPreviewLimit": 200,
+  "items": [
+    {
+      "seedId": "b304e53f-dfab-5d5d-8b64-abb5457b315a",
+      "category": "tech",
+      "navigationKeyword1": "cloud",
+      "navigationKeyword2": "kubernetes",
+      "question": "What does a Deployment controller primarily manage?",
+      "correctAnswer": "ReplicaSets and rolling updates of Pod templates",
+      "incorrectAnswers": [
+        "DNS root servers",
+        "TLS certificate transparency logs",
+        "physical rack power"
+      ],
+      "explanation": "Deployments declare desired Pod state and roll out changes with controlled revision history.",
+      "keywords": [
+        "kubernetes",
+        "deployments"
+      ],
+      "source": "https://kubernetes.io/docs/concepts/workloads/controllers/deployment/"
+    },
+    {
+      "seedId": "af1c7d0e-e776-5fe8-9e50-5096500025ed",
+      "category": "tech",
+      "navigationKeyword1": "cloud",
+      "navigationKeyword2": "kubernetes",
+      "question": "What does a Service provide for Pods?",
+      "correctAnswer": "a stable network endpoint and load balancing to backing Pods",
+      "incorrectAnswers": [
+        "permanent local disk on each laptop",
+        "a compiler for Java",
+        "SSH access to hardware"
+      ],
+      "explanation": "Services abstract ephemeral Pod IPs with cluster IP, DNS, and selectors to target healthy backends.",
+      "keywords": [
+        "kubernetes",
+        "networking"
+      ],
+      "source": "https://kubernetes.io/docs/concepts/services-networking/service/"
+    },
+    {
+      "seedId": "82ba0c3b-07fe-529f-ad06-0306ff92e185",
+      "category": "tech",
+      "navigationKeyword1": "cloud",
+      "navigationKeyword2": "kubernetes",
+      "question": "What does a readiness probe decide?",
+      "correctAnswer": "whether a Pod should receive traffic from Services yet",
+      "incorrectAnswers": [
+        "whether the cloud bill is paid",
+        "whether DNS exists globally",
+        "whether TLS 1.0 is enabled"
+      ],
+      "explanation": "Readiness gates traffic until dependencies are ready, while liveness handles unhealthy running containers.",
+      "keywords": [
+        "kubernetes",
+        "health"
+      ],
+      "source": "https://docs.redhat.com/en/documentation/openshift_container_platform/4.8/html/building_applications/application-health"
+    },
+    {
+      "seedId": "9e529b0b-ed35-574a-a6cb-cc2007902fae",
+      "category": "tech",
+      "navigationKeyword1": "cloud",
+      "navigationKeyword2": "kubernetes",
+      "question": "What is a Namespace used for in Kubernetes?",
+      "correctAnswer": "scoping names and access control for resources inside a cluster",
+      "incorrectAnswers": [
+        "replacing Linux user IDs",
+        "storing container images only",
+        "defining CPU manufacturing process"
+      ],
+      "explanation": "Namespaces partition objects like Deployments and Services to separate teams or environments.",
+      "keywords": [
+        "kubernetes",
+        "namespaces"
+      ],
+      "source": "https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/"
+    },
+    {
+      "seedId": "b0e3b106-7e43-528a-aa9c-816ed703de01",
+      "category": "tech",
+      "navigationKeyword1": "cloud",
+      "navigationKeyword2": "kubernetes",
+      "question": "What is the smallest deployable unit in Kubernetes?",
+      "correctAnswer": "a Pod",
+      "incorrectAnswers": [
+        "a Region",
+        "a Dockerfile layer",
+        "a Git branch"
+      ],
+      "explanation": "A Pod wraps one or more tightly coupled containers sharing network and storage namespaces on a node.",
+      "keywords": [
+        "kubernetes",
+        "pods"
+      ],
+      "source": "https://kubernetes.io/docs/concepts/workloads/pods/"
+    },
+    {
+      "seedId": "6875085b-845d-5042-bea8-70744a991026",
+      "category": "tech",
+      "navigationKeyword1": "cloud",
+      "navigationKeyword2": "kubernetes",
+      "question": "Where does the control plane store cluster state?",
+      "correctAnswer": "in etcd for Kubernetes",
+      "incorrectAnswers": [
+        "only in each Pod\u2019s RAM",
+        "in SMTP mailboxes",
+        "on the developer\u2019s phone"
+      ],
+      "explanation": "etcd is the consistent key-value store backing API objects and desired state for the cluster.",
+      "keywords": [
+        "kubernetes",
+        "control-plane"
+      ],
+      "source": "https://kubernetes.io/docs/concepts/overview/components/"
+    }
+  ]
+}

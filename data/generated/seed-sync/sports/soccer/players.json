@@ -1,0 +1,207 @@
+{
+  "schemaVersion": 1,
+  "seedSet": "core-public-items",
+  "deltaPreviewLimit": 200,
+  "items": [
+    {
+      "seedId": "001edae0-04c7-5d70-8668-5bf1e17f6f98",
+      "category": "sports",
+      "navigationKeyword1": "soccer",
+      "navigationKeyword2": "players",
+      "question": "Which Argentine playmaker scored the Hand of God goal in 1986?",
+      "correctAnswer": "Diego Maradona",
+      "incorrectAnswers": [
+        "Lionel Messi",
+        "Gabriel Batistuta",
+        "Juan Roman Riquelme"
+      ],
+      "explanation": "Maradona's quarterfinal against England made the phrase famous.",
+      "keywords": [
+        "soccer",
+        "players",
+        "diego-maradona"
+      ],
+      "source": "https://www.britannica.com/biography/Diego-Maradona"
+    },
+    {
+      "seedId": "8941ad7e-9b17-5d1b-ae48-17be98a6f53b",
+      "category": "sports",
+      "navigationKeyword1": "soccer",
+      "navigationKeyword2": "players",
+      "question": "Which Argentine star captained his country to the 2022 World Cup title?",
+      "correctAnswer": "Lionel Messi",
+      "incorrectAnswers": [
+        "Angel Di Maria",
+        "Diego Maradona",
+        "Javier Mascherano"
+      ],
+      "explanation": "Messi led Argentina to the 2022 title in Qatar.",
+      "keywords": [
+        "soccer",
+        "players",
+        "lionel-messi"
+      ],
+      "source": "https://www.britannica.com/biography/Lionel-Messi"
+    },
+    {
+      "seedId": "d5c75b56-a268-5da9-af1b-97acdd72b81e",
+      "category": "sports",
+      "navigationKeyword1": "soccer",
+      "navigationKeyword2": "players",
+      "question": "Which Brazilian forward won three FIFA World Cups as a player?",
+      "correctAnswer": "Pele",
+      "incorrectAnswers": [
+        "Ronaldo",
+        "Romario",
+        "Ronaldinho"
+      ],
+      "explanation": "Pele was part of Brazil's title teams in 1958, 1962, and 1970.",
+      "keywords": [
+        "soccer",
+        "players",
+        "pele"
+      ],
+      "source": "https://www.britannica.com/biography/Pele"
+    },
+    {
+      "seedId": "2e97f6ab-4b00-5dcb-8b2e-d661d66e4f54",
+      "category": "sports",
+      "navigationKeyword1": "soccer",
+      "navigationKeyword2": "players",
+      "question": "Which Dutch forward was nicknamed The Flying Dutchman and starred for Arsenal?",
+      "correctAnswer": "Dennis Bergkamp",
+      "incorrectAnswers": [
+        "Robin van Persie",
+        "Ruud Gullit",
+        "Patrick Kluivert"
+      ],
+      "explanation": "Bergkamp became one of Arsenal's most admired attackers.",
+      "keywords": [
+        "soccer",
+        "players",
+        "dennis-bergkamp"
+      ],
+      "source": "https://www.britannica.com/biography/Dennis-Bergkamp"
+    },
+    {
+      "seedId": "2f944a2c-cc80-5404-ba5c-47372ca94fbf",
+      "category": "sports",
+      "navigationKeyword1": "soccer",
+      "navigationKeyword2": "players",
+      "question": "Which French midfielder captained France to the 1998 World Cup title?",
+      "correctAnswer": "Didier Deschamps",
+      "incorrectAnswers": [
+        "Zinedine Zidane",
+        "Patrick Vieira",
+        "Laurent Blanc"
+      ],
+      "explanation": "Deschamps captained the host nation to the 1998 title.",
+      "keywords": [
+        "soccer",
+        "players",
+        "didier-deschamps"
+      ],
+      "source": "https://www.britannica.com/biography/Didier-Deschamps"
+    },
+    {
+      "seedId": "75ded807-28e8-547b-aecd-12b9d13cc81b",
+      "category": "sports",
+      "navigationKeyword1": "soccer",
+      "navigationKeyword2": "players",
+      "question": "Which French playmaker scored twice in the 1998 World Cup final?",
+      "correctAnswer": "Zinedine Zidane",
+      "incorrectAnswers": [
+        "Thierry Henry",
+        "David Trezeguet",
+        "Michel Platini"
+      ],
+      "explanation": "Zidane's two headed goals helped France beat Brazil.",
+      "keywords": [
+        "soccer",
+        "players",
+        "zinedine-zidane"
+      ],
+      "source": "https://www.britannica.com/biography/Zinedine-Zidane"
+    },
+    {
+      "seedId": "373f9422-d887-5f59-9c1f-10084addeaee",
+      "category": "sports",
+      "navigationKeyword1": "soccer",
+      "navigationKeyword2": "players",
+      "question": "Which Liberian striker won the Ballon d'Or in 1995?",
+      "correctAnswer": "George Weah",
+      "incorrectAnswers": [
+        "Samuel Eto'o",
+        "Didier Drogba",
+        "Abedi Pele"
+      ],
+      "explanation": "Weah remains the only African-born Ballon d'Or winner.",
+      "keywords": [
+        "soccer",
+        "players",
+        "george-weah"
+      ],
+      "source": "https://www.britannica.com/biography/George-Weah"
+    },
+    {
+      "seedId": "ffa821aa-186e-5980-9a70-697488a21f45",
+      "category": "sports",
+      "navigationKeyword1": "soccer",
+      "navigationKeyword2": "players",
+      "question": "Which Portuguese forward became famous for starring at Manchester United, Real Madrid, and Juventus?",
+      "correctAnswer": "Cristiano Ronaldo",
+      "incorrectAnswers": [
+        "Luis Figo",
+        "Eusebio",
+        "Bruno Fernandes"
+      ],
+      "explanation": "Ronaldo starred for top clubs in England, Spain, and Italy.",
+      "keywords": [
+        "soccer",
+        "players",
+        "cristiano-ronaldo"
+      ],
+      "source": "https://www.britannica.com/biography/Cristiano-Ronaldo"
+    },
+    {
+      "seedId": "cae52d47-5cf4-51ba-8b03-953b49a9fd39",
+      "category": "sports",
+      "navigationKeyword1": "soccer",
+      "navigationKeyword2": "players",
+      "question": "Which Spanish midfielder was central to Barcelona and Spain during the tiki-taka era?",
+      "correctAnswer": "Xavi",
+      "incorrectAnswers": [
+        "David Villa",
+        "Fernando Torres",
+        "Iker Casillas"
+      ],
+      "explanation": "Xavi was one of the defining passers of Spain's golden generation.",
+      "keywords": [
+        "soccer",
+        "players",
+        "xavi"
+      ],
+      "source": "https://www.britannica.com/biography/Xavi"
+    },
+    {
+      "seedId": "f53a5001-1ffc-5986-a894-d006fccc0425",
+      "category": "sports",
+      "navigationKeyword1": "soccer",
+      "navigationKeyword2": "players",
+      "question": "Which goalkeeper captained Spain to the 2010 World Cup title?",
+      "correctAnswer": "Iker Casillas",
+      "incorrectAnswers": [
+        "David de Gea",
+        "Sergio Ramos",
+        "Xabi Alonso"
+      ],
+      "explanation": "Casillas lifted Spain's first men's World Cup in 2010.",
+      "keywords": [
+        "soccer",
+        "players",
+        "iker-casillas"
+      ],
+      "source": "https://www.britannica.com/biography/Iker-Casillas"
+    }
+  ]
+}

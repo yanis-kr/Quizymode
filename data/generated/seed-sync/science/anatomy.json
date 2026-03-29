@@ -1,0 +1,1399 @@
+{
+  "schemaVersion": 1,
+  "seedSet": "core-public-items",
+  "deltaPreviewLimit": 200,
+  "items": [
+    {
+      "seedId": "876aa787-1996-4bc5-8b8a-a9832adc2c5c",
+      "category": "science",
+      "navigationKeyword1": "anatomy",
+      "navigationKeyword2": "cardio",
+      "question": "How does pulmonary circulation differ from systemic circulation?",
+      "correctAnswer": "Pulmonary circulation moves blood to and from the lungs; systemic moves blood to and from the body",
+      "incorrectAnswers": [
+        "Pulmonary circulation goes to the kidneys; systemic goes to the lungs",
+        "Pulmonary circulation is only for nutrients; systemic is only for oxygen",
+        "There is no difference; they are the same loop"
+      ],
+      "explanation": "Pulmonary circulation links the heart with the lungs, while systemic circulation supplies the rest of the body with blood.",
+      "keywords": [
+        "pulmonary",
+        "systemic",
+        "circulation-paths"
+      ],
+      "source": "https://teachmephysiology.com/cardiovascular-system/"
+    },
+    {
+      "seedId": "c4dc8455-af95-429d-88d6-668466ce17b9",
+      "category": "science",
+      "navigationKeyword1": "anatomy",
+      "navigationKeyword2": "cardio",
+      "question": "In general, which blood vessels carry blood away from the heart?",
+      "correctAnswer": "Arteries",
+      "incorrectAnswers": [
+        "Veins",
+        "Capillaries",
+        "Bronchi"
+      ],
+      "explanation": "Arteries transport blood away from the heart. (There are exceptions in pulmonary circulation, but the general rule is arteries away, veins back.)",
+      "keywords": [
+        "arteries",
+        "vessel-types",
+        "circulation"
+      ],
+      "source": "https://www.cdc.gov/heartdisease/"
+    },
+    {
+      "seedId": "d4ba25d7-f604-439e-9c01-cc3297177b71",
+      "category": "science",
+      "navigationKeyword1": "anatomy",
+      "navigationKeyword2": "cardio",
+      "question": "In one heartbeat, which phase is the heart muscle contracting?",
+      "correctAnswer": "Systole",
+      "incorrectAnswers": [
+        "Diastole",
+        "Oxygenation",
+        "Filtration"
+      ],
+      "explanation": "Systole is the contraction phase, when the ventricles push blood out. Diastole is the relaxation phase.",
+      "keywords": [
+        "systole",
+        "diastole",
+        "heartbeat"
+      ],
+      "source": "https://teachmephysiology.com/cardiovascular-system/"
+    },
+    {
+      "seedId": "2c05f867-7a2e-4b9c-8d04-5bc69cd99f7c",
+      "category": "science",
+      "navigationKeyword1": "anatomy",
+      "navigationKeyword2": "cardio",
+      "question": "What are capillaries best known for?",
+      "correctAnswer": "Exchanging materials between blood and body tissues",
+      "incorrectAnswers": [
+        "Sending air from the trachea",
+        "Blocking blood flow like a filter",
+        "Producing hormones"
+      ],
+      "explanation": "Capillaries are tiny vessels where oxygen, carbon dioxide, and nutrients move between blood and cells.",
+      "keywords": [
+        "capillaries",
+        "exchange",
+        "tissues"
+      ],
+      "source": "https://en.wikipedia.org/wiki/Capillary"
+    },
+    {
+      "seedId": "8c766aeb-eb03-4f9a-8437-f0b04df85b8a",
+      "category": "science",
+      "navigationKeyword1": "anatomy",
+      "navigationKeyword2": "cardio",
+      "question": "What does hemoglobin mainly do?",
+      "correctAnswer": "It binds oxygen so it can be transported in blood",
+      "incorrectAnswers": [
+        "It controls blood clotting by sticking to wounds",
+        "It fights infections directly by attacking viruses",
+        "It produces antibodies from scratch"
+      ],
+      "explanation": "Hemoglobin is the oxygen-carrying protein inside red blood cells; it helps move oxygen from lungs to tissues.",
+      "keywords": [
+        "hemoglobin",
+        "oxygen",
+        "transport"
+      ],
+      "source": "https://en.wikipedia.org/wiki/Hemoglobin"
+    },
+    {
+      "seedId": "86be4f1e-5308-4cd7-8c8e-d7d771872202",
+      "category": "science",
+      "navigationKeyword1": "anatomy",
+      "navigationKeyword2": "cardio",
+      "question": "What is the purpose of the heart\u2019s valves?",
+      "correctAnswer": "They help prevent backflow so blood flows one direction",
+      "incorrectAnswers": [
+        "They store extra blood for later",
+        "They mix oxygen and carbon dioxide",
+        "They create new red blood cells"
+      ],
+      "explanation": "Valves close to stop blood from moving backward, keeping the circulation in the right sequence.",
+      "keywords": [
+        "heart-valves",
+        "one-way-flow",
+        "backflow-prevention"
+      ],
+      "source": "https://www.nhlbi.nih.gov/health-topics/heart-valve-disease"
+    },
+    {
+      "seedId": "b4d76197-69ce-423b-ab31-3285ccbd660f",
+      "category": "science",
+      "navigationKeyword1": "anatomy",
+      "navigationKeyword2": "cardio",
+      "question": "Which blood vessels carry blood back toward the heart?",
+      "correctAnswer": "Veins",
+      "incorrectAnswers": [
+        "Arteries",
+        "Capillaries",
+        "Tendons"
+      ],
+      "explanation": "Veins return blood to the heart. They often have valves that help keep blood moving in the right direction.",
+      "keywords": [
+        "veins",
+        "return-to-heart",
+        "valves"
+      ],
+      "source": "https://www.heart.org/en/health-topics/heart-attack/about-heart-attack"
+    },
+    {
+      "seedId": "493d7fa0-7c59-4656-990e-588b4a95123d",
+      "category": "science",
+      "navigationKeyword1": "anatomy",
+      "navigationKeyword2": "cardio",
+      "question": "Which chambers of the heart do most of the pumping work?",
+      "correctAnswer": "The ventricles",
+      "incorrectAnswers": [
+        "The atria",
+        "The valves only",
+        "The septum alone"
+      ],
+      "explanation": "The ventricles are the lower chambers with thicker muscular walls that push blood out to the circulation.",
+      "keywords": [
+        "ventricles",
+        "heart-chambers",
+        "pumping"
+      ],
+      "source": "https://en.wikipedia.org/wiki/Ventricle"
+    },
+    {
+      "seedId": "a568cdc2-6532-4354-a94f-f5bd37df241f",
+      "category": "science",
+      "navigationKeyword1": "anatomy",
+      "navigationKeyword2": "cardio",
+      "question": "Which organ\u2019s main job in the cardiovascular system is to pump blood through the body?",
+      "correctAnswer": "The heart",
+      "incorrectAnswers": [
+        "The lungs",
+        "The kidneys",
+        "The liver"
+      ],
+      "explanation": "The heart is a muscular pump that drives blood flow through arteries, capillaries, and veins.",
+      "keywords": [
+        "heart",
+        "cardiovascular-system",
+        "pumping"
+      ],
+      "source": "https://www.nhlbi.nih.gov/health-topics/heart-facts"
+    },
+    {
+      "seedId": "9e788efa-6b64-4291-9fd7-06e3eca0b9a6",
+      "category": "science",
+      "navigationKeyword1": "anatomy",
+      "navigationKeyword2": "cardio",
+      "question": "Which side of the heart pumps blood to the lungs?",
+      "correctAnswer": "The right side",
+      "incorrectAnswers": [
+        "The left side",
+        "The top chambers only",
+        "Neither side; blood flows without a pump"
+      ],
+      "explanation": "In the normal pathway, the right side sends blood to the lungs so gases can be exchanged.",
+      "keywords": [
+        "right-heart",
+        "pulmonary-circuit",
+        "heart-pathway"
+      ],
+      "source": "https://www.heart.org/en/health-topics/heart-and-blood-vessels"
+    },
+    {
+      "seedId": "9c5a507d-8731-4668-b47b-aa7ff37e7a93",
+      "category": "science",
+      "navigationKeyword1": "anatomy",
+      "navigationKeyword2": "cardio",
+      "question": "Which type of blood cells is responsible for carrying oxygen in the bloodstream?",
+      "correctAnswer": "Red blood cells",
+      "incorrectAnswers": [
+        "White blood cells",
+        "Platelets",
+        "Plasma proteins"
+      ],
+      "explanation": "Red blood cells contain hemoglobin, which binds oxygen and transports it through the body.",
+      "keywords": [
+        "red-blood-cells",
+        "oxygen-transport",
+        "hemoglobin"
+      ],
+      "source": "https://www.cdc.gov/bloodsafety/what_blood_carries.html"
+    },
+    {
+      "seedId": "0038caf0-f08c-4ad8-b74d-1e89bf4476e2",
+      "category": "science",
+      "navigationKeyword1": "anatomy",
+      "navigationKeyword2": "cardio",
+      "question": "Why is blood pressure generally higher in arteries than in veins?",
+      "correctAnswer": "Because arteries are closer to the heart\u2019s pumping force and flow pressure drops as blood moves through the vessels",
+      "incorrectAnswers": [
+        "Because veins have thinner walls so pressure must be higher",
+        "Because arteries contain less blood",
+        "Because capillaries remove pressure instantly and stop flow"
+      ],
+      "explanation": "The heart creates pressure, and as blood travels and meets resistance in smaller vessels, pressure decreases toward the veins.",
+      "keywords": [
+        "blood-pressure",
+        "arteries-vs-veins",
+        "circulation"
+      ],
+      "source": "https://teachmephysiology.com/cardiovascular-system/blood-pressure/"
+    },
+    {
+      "seedId": "badaa5a2-2ed6-4f75-a6f0-ce1af24c54d3",
+      "category": "science",
+      "navigationKeyword1": "anatomy",
+      "navigationKeyword2": "digestive",
+      "question": "What is peristalsis?",
+      "correctAnswer": "Wave-like muscle contractions that move food through the digestive tract",
+      "incorrectAnswers": [
+        "A digestive enzyme that breaks down fats",
+        "The process of absorbing oxygen into blood",
+        "A type of white blood cell"
+      ],
+      "explanation": "Peristalsis is coordinated smooth-muscle movement that pushes and mixes food along the GI tract.",
+      "keywords": [
+        "peristalsis",
+        "smooth-muscle",
+        "gi-motility"
+      ],
+      "source": "https://en.wikipedia.org/wiki/Peristalsis"
+    },
+    {
+      "seedId": "9ccda417-a878-400b-aa6f-dc4db63a1472",
+      "category": "science",
+      "navigationKeyword1": "anatomy",
+      "navigationKeyword2": "digestive",
+      "question": "What is the duodenum?",
+      "correctAnswer": "The first part of the small intestine",
+      "incorrectAnswers": [
+        "The last part of the large intestine",
+        "A valve between the atrium and ventricle",
+        "A bone in the skull"
+      ],
+      "explanation": "The duodenum is the first segment of the small intestine, where chyme mixes with bile and pancreatic secretions.",
+      "keywords": [
+        "duodenum",
+        "small-intestine",
+        "digestion"
+      ],
+      "source": "https://en.wikipedia.org/wiki/Duodenum"
+    },
+    {
+      "seedId": "69056020-a47a-4451-847f-a506ee2a9cde",
+      "category": "science",
+      "navigationKeyword1": "anatomy",
+      "navigationKeyword2": "digestive",
+      "question": "What is the esophagus mainly responsible for?",
+      "correctAnswer": "Moving swallowed food from the mouth to the stomach",
+      "incorrectAnswers": [
+        "Absorbing most nutrients",
+        "Producing insulin",
+        "Filtering waste from blood"
+      ],
+      "explanation": "The esophagus is a muscular tube that transports food to the stomach, largely through peristalsis.",
+      "keywords": [
+        "esophagus",
+        "swallowing",
+        "transport"
+      ],
+      "source": "https://www.britannica.com/science/esophagus"
+    },
+    {
+      "seedId": "6430500b-7f48-45b0-8232-c350a864ee41",
+      "category": "science",
+      "navigationKeyword1": "anatomy",
+      "navigationKeyword2": "digestive",
+      "question": "What is the gallbladder\u2019s main digestive function?",
+      "correctAnswer": "Store and concentrate bile and release it into the small intestine",
+      "incorrectAnswers": [
+        "Produce stomach acid",
+        "Make digestive enzymes for protein",
+        "Absorb glucose into blood"
+      ],
+      "explanation": "The gallbladder stores bile made by the liver and releases it into the small intestine (duodenum) to help with fat digestion.",
+      "keywords": [
+        "gallbladder",
+        "bile-storage",
+        "duodenum"
+      ],
+      "source": "https://www.britannica.com/science/gallbladder"
+    },
+    {
+      "seedId": "ccd2c22c-4aff-4fcb-a64d-a1e2876b0ddb",
+      "category": "science",
+      "navigationKeyword1": "anatomy",
+      "navigationKeyword2": "digestive",
+      "question": "What is the main job of bile in digestion?",
+      "correctAnswer": "It helps emulsify fats so they can be digested more easily",
+      "incorrectAnswers": [
+        "It breaks down starch into sugars",
+        "It neutralizes stomach acid inside the stomach",
+        "It absorbs amino acids into the blood directly"
+      ],
+      "explanation": "Bile helps break large fat droplets into smaller ones (emulsification), increasing surface area for fat-digesting enzymes.",
+      "keywords": [
+        "bile",
+        "emulsification",
+        "fat-digestion"
+      ],
+      "source": "https://www.britannica.com/science/bile"
+    },
+    {
+      "seedId": "ba928caf-88f8-439e-875a-e9adaee1b747",
+      "category": "science",
+      "navigationKeyword1": "anatomy",
+      "navigationKeyword2": "digestive",
+      "question": "What is the main purpose of the digestive system?",
+      "correctAnswer": "To break food down and absorb nutrients",
+      "incorrectAnswers": [
+        "To pump blood through the body",
+        "To make oxygen from carbon dioxide",
+        "To control voluntary muscle movement"
+      ],
+      "explanation": "Digestion breaks food into smaller molecules that can be absorbed and used for energy, growth, and repair.",
+      "keywords": [
+        "digestion",
+        "nutrient-absorption",
+        "digestive-system"
+      ],
+      "source": "https://www.niddk.nih.gov/health-information/digestive-diseases/digestive-system-how-it-works"
+    },
+    {
+      "seedId": "dbe50359-f64f-4bc8-8029-d2f92176407c",
+      "category": "science",
+      "navigationKeyword1": "anatomy",
+      "navigationKeyword2": "digestive",
+      "question": "What is the main role of stomach acid (hydrochloric acid) during digestion?",
+      "correctAnswer": "It helps denature proteins and activates digestive enzymes",
+      "incorrectAnswers": [
+        "It absorbs most vitamins into the blood",
+        "It produces bile for fat digestion",
+        "It turns carbohydrates into fats"
+      ],
+      "explanation": "Stomach acid creates a low pH that helps unfold proteins and supports enzymes like pepsin that begin protein digestion.",
+      "keywords": [
+        "stomach-acid",
+        "protein-digestion",
+        "enzymes"
+      ],
+      "source": "https://openstax.org/books/anatomy-and-physiology-2e/pages/23-4-the-stomach"
+    },
+    {
+      "seedId": "1b5f23d6-8102-49d7-acf8-446dc949b33e",
+      "category": "science",
+      "navigationKeyword1": "anatomy",
+      "navigationKeyword2": "digestive",
+      "question": "What is the primary function of the large intestine (colon)?",
+      "correctAnswer": "Absorb water and form feces",
+      "incorrectAnswers": [
+        "Digest proteins using stomach acid",
+        "Absorb oxygen from air",
+        "Pump bile into the stomach"
+      ],
+      "explanation": "The colon absorbs water and electrolytes from the remaining material and helps compact it into feces.",
+      "keywords": [
+        "large-intestine",
+        "water-absorption",
+        "colon"
+      ],
+      "source": "https://openstax.org/books/anatomy-and-physiology-2e/pages/23-8-the-large-intestine"
+    },
+    {
+      "seedId": "5633895b-f158-403d-ac27-d8ce53dfb8a4",
+      "category": "science",
+      "navigationKeyword1": "anatomy",
+      "navigationKeyword2": "digestive",
+      "question": "What is the role of the liver in digestion?",
+      "correctAnswer": "It produces bile",
+      "incorrectAnswers": [
+        "It stores digestive enzymes for the stomach",
+        "It absorbs all nutrients directly from food",
+        "It produces saliva"
+      ],
+      "explanation": "The liver produces bile, which helps with fat digestion; the gallbladder stores and concentrates bile.",
+      "keywords": [
+        "liver",
+        "bile-production",
+        "fat-digestion"
+      ],
+      "source": "https://www.niddk.nih.gov/health-information/digestive-diseases/liver"
+    },
+    {
+      "seedId": "9b50937d-025c-4d44-8be4-68e118eeba27",
+      "category": "science",
+      "navigationKeyword1": "anatomy",
+      "navigationKeyword2": "digestive",
+      "question": "Where does most nutrient absorption happen in the digestive tract?",
+      "correctAnswer": "The small intestine",
+      "incorrectAnswers": [
+        "The esophagus",
+        "The stomach",
+        "The large intestine"
+      ],
+      "explanation": "The small intestine has a large surface area (including villi and microvilli) designed for absorbing nutrients into the bloodstream.",
+      "keywords": [
+        "small-intestine",
+        "absorption",
+        "villi"
+      ],
+      "source": "https://www.britannica.com/science/human-digestive-system"
+    },
+    {
+      "seedId": "06ceac2c-171d-495b-8934-d13cfbcae1b7",
+      "category": "science",
+      "navigationKeyword1": "anatomy",
+      "navigationKeyword2": "digestive",
+      "question": "Which organ produces most of the digestive enzymes that break down food in the small intestine?",
+      "correctAnswer": "The pancreas",
+      "incorrectAnswers": [
+        "The spleen",
+        "The gallbladder",
+        "The appendix"
+      ],
+      "explanation": "The pancreas secretes digestive enzymes (and bicarbonate) into the small intestine to help digest proteins, fats, and carbohydrates.",
+      "keywords": [
+        "pancreas",
+        "digestive-enzymes",
+        "small-intestine"
+      ],
+      "source": "https://www.niddk.nih.gov/health-information/digestive-diseases/pancreas-how-it-works"
+    },
+    {
+      "seedId": "f22549dc-13a9-426f-be54-b314cbd74ebf",
+      "category": "science",
+      "navigationKeyword1": "anatomy",
+      "navigationKeyword2": "digestive",
+      "question": "Why does the small intestine have folds, villi, and microvilli?",
+      "correctAnswer": "To increase surface area for absorption",
+      "incorrectAnswers": [
+        "To make stomach acid stronger",
+        "To slow down blood circulation",
+        "To prevent any mixing of food"
+      ],
+      "explanation": "These structures greatly expand the surface area, which increases the rate and amount of nutrient absorption.",
+      "keywords": [
+        "surface-area",
+        "villi",
+        "microvilli"
+      ],
+      "source": "https://openstax.org/books/anatomy-and-physiology-2e/pages/23-6-the-small-intestine"
+    },
+    {
+      "seedId": "9d39bb47-fb12-4fe4-9629-d849e1a4fff5",
+      "category": "science",
+      "navigationKeyword1": "anatomy",
+      "navigationKeyword2": "muscular",
+      "question": "Cardiac muscle is found primarily where?",
+      "correctAnswer": "The heart wall",
+      "incorrectAnswers": [
+        "The liver",
+        "The dermis",
+        "Cartilage plates"
+      ],
+      "explanation": "Cardiac muscle tissue makes up most of the heart\u2019s muscular wall.",
+      "keywords": [
+        "cardiac-muscle",
+        "heart"
+      ],
+      "source": "https://openstax.org/books/anatomy-and-physiology-2e/pages/4-4-muscle-tissue-and-motion"
+    },
+    {
+      "seedId": "d98d12e8-9ba3-49eb-b7c7-bc007b171450",
+      "category": "science",
+      "navigationKeyword1": "anatomy",
+      "navigationKeyword2": "muscular",
+      "question": "Smooth muscle is commonly found in which location?",
+      "correctAnswer": "Walls of hollow organs like the digestive tract",
+      "incorrectAnswers": [
+        "Bone matrix",
+        "Tendons",
+        "The epidermis"
+      ],
+      "explanation": "Smooth muscle helps move food, blood, and other substances through internal tubes.",
+      "keywords": [
+        "smooth-muscle",
+        "viscera"
+      ],
+      "source": "https://openstax.org/books/anatomy-and-physiology-2e/pages/4-4-muscle-tissue-and-motion"
+    },
+    {
+      "seedId": "d918d9ff-080a-45d9-9bc1-90e025040523",
+      "category": "science",
+      "navigationKeyword1": "anatomy",
+      "navigationKeyword2": "muscular",
+      "question": "What change happens to muscle length in an isometric contraction?",
+      "correctAnswer": "The muscle length stays about the same while tension builds",
+      "incorrectAnswers": [
+        "The muscle lengthens freely with no tension",
+        "Only smooth muscle can be isometric",
+        "The joint must dislocate"
+      ],
+      "explanation": "Isometric means \u2018same length\u2019\u2014force is generated without much shortening.",
+      "keywords": [
+        "isometric",
+        "tension"
+      ],
+      "source": "https://en.wikipedia.org/wiki/Isometric_contraction"
+    },
+    {
+      "seedId": "f3112952-5fbc-4ce6-9878-9d2fbb48b12e",
+      "category": "science",
+      "navigationKeyword1": "anatomy",
+      "navigationKeyword2": "muscular",
+      "question": "What change happens to muscle length in an isotonic contraction?",
+      "correctAnswer": "The muscle length changes while tension is relatively steady",
+      "incorrectAnswers": [
+        "Length stays fixed while tension changes",
+        "The muscle cannot produce force",
+        "Only tendons shorten"
+      ],
+      "explanation": "Isotonic contractions involve movement (concentric or eccentric) with changing length.",
+      "keywords": [
+        "isotonic",
+        "contraction-types"
+      ],
+      "source": "https://en.wikipedia.org/wiki/Muscle_contraction"
+    },
+    {
+      "seedId": "a3817f90-f22a-45f4-be0b-91fb77da7c6c",
+      "category": "science",
+      "navigationKeyword1": "anatomy",
+      "navigationKeyword2": "muscular",
+      "question": "What is a motor unit?",
+      "correctAnswer": "One motor neuron plus the muscle fibers it innervates",
+      "incorrectAnswers": [
+        "Only the muscle fibers without a neuron",
+        "A tendon and its bone",
+        "A joint capsule"
+      ],
+      "explanation": "A motor unit is the smallest functional group controlled as a unit by one neuron.",
+      "keywords": [
+        "motor-unit",
+        "innervation"
+      ],
+      "source": "https://www.ncbi.nlm.nih.gov/books/NBK537656/"
+    },
+    {
+      "seedId": "059040f5-42b5-4b2f-9fa1-52a47acd4730",
+      "category": "science",
+      "navigationKeyword1": "anatomy",
+      "navigationKeyword2": "muscular",
+      "question": "What is muscle fatigue during sustained exercise often linked to?",
+      "correctAnswer": "Multiple factors like energy supply limits and metabolite buildup (context-dependent)",
+      "incorrectAnswers": [
+        "Muscles permanently stop making ATP forever",
+        "Tendons replace muscle fibers",
+        "Smooth muscle cannot fatigue"
+      ],
+      "explanation": "Fatigue is multifactorial; training, intensity, and fiber type all influence how quickly it appears.",
+      "keywords": [
+        "fatigue",
+        "exercise-physiology"
+      ],
+      "source": "https://www.ncbi.nlm.nih.gov/books/NBK54118/"
+    },
+    {
+      "seedId": "df8667c1-a7f4-4c86-815f-96099b2b60ea",
+      "category": "science",
+      "navigationKeyword1": "anatomy",
+      "navigationKeyword2": "muscular",
+      "question": "What is the functional unit of contraction in skeletal muscle?",
+      "correctAnswer": "Sarcomere",
+      "incorrectAnswers": [
+        "Neuron",
+        "Sarcolemma only",
+        "Motor unit only"
+      ],
+      "explanation": "The sarcomere is the repeating contractile unit between Z lines in a myofibril.",
+      "keywords": [
+        "sarcomere",
+        "contraction"
+      ],
+      "source": "https://openstax.org/books/anatomy-and-physiology-2e/pages/10-2-skeletal-muscle"
+    },
+    {
+      "seedId": "a53f7688-36a2-40f6-8ade-29b94d9834c7",
+      "category": "science",
+      "navigationKeyword1": "anatomy",
+      "navigationKeyword2": "muscular",
+      "question": "What is the neuromuscular junction?",
+      "correctAnswer": "The synapse where a motor neuron meets a muscle fiber",
+      "incorrectAnswers": [
+        "A ligament crossing a joint",
+        "A heart valve",
+        "A bone growth plate"
+      ],
+      "explanation": "Acetylcholine release at the NMJ triggers muscle fiber action potentials.",
+      "keywords": [
+        "neuromuscular-junction",
+        "synapse"
+      ],
+      "source": "https://openstax.org/books/anatomy-and-physiology-2e/pages/10-3-muscle-fiber-contraction-and-relaxation"
+    },
+    {
+      "seedId": "f3b6c62b-6ceb-4d8b-a375-819aeac08e4a",
+      "category": "science",
+      "navigationKeyword1": "anatomy",
+      "navigationKeyword2": "muscular",
+      "question": "Where do skeletal muscles typically attach to bones?",
+      "correctAnswer": "Via tendons",
+      "incorrectAnswers": [
+        "Via ligaments",
+        "Via synovial fluid alone",
+        "Directly through marrow only"
+      ],
+      "explanation": "Tendons connect muscle to bone; ligaments mainly connect bone to bone.",
+      "keywords": [
+        "tendons",
+        "attachment"
+      ],
+      "source": "https://www.ncbi.nlm.nih.gov/books/NBK537656/"
+    },
+    {
+      "seedId": "7a39d086-4f01-4064-af3a-9129b9578266",
+      "category": "science",
+      "navigationKeyword1": "anatomy",
+      "navigationKeyword2": "muscular",
+      "question": "Which muscle type is usually under voluntary control?",
+      "correctAnswer": "Skeletal muscle",
+      "incorrectAnswers": [
+        "Smooth muscle",
+        "Cardiac muscle only",
+        "Cartilage"
+      ],
+      "explanation": "Skeletal muscles attach to bones and are used for voluntary movement.",
+      "keywords": [
+        "muscular",
+        "skeletal-muscle"
+      ],
+      "source": "https://openstax.org/books/anatomy-and-physiology-2e/pages/10-2-skeletal-muscle"
+    },
+    {
+      "seedId": "089fafd3-6163-447e-b321-6cfaef5844b7",
+      "category": "science",
+      "navigationKeyword1": "anatomy",
+      "navigationKeyword2": "muscular",
+      "question": "Which proteins slide past each other during muscle contraction?",
+      "correctAnswer": "Actin and myosin",
+      "incorrectAnswers": [
+        "Collagen and elastin",
+        "Keratin and fibrin",
+        "Insulin and glucagon"
+      ],
+      "explanation": "Thin filaments (actin) and thick filaments (myosin) interact to shorten sarcomeres.",
+      "keywords": [
+        "actin",
+        "myosin"
+      ],
+      "source": "https://en.wikipedia.org/wiki/Muscle_contraction"
+    },
+    {
+      "seedId": "443c349b-444b-4370-bbc7-1d90b13fa506",
+      "category": "science",
+      "navigationKeyword1": "anatomy",
+      "navigationKeyword2": "muscular",
+      "question": "Why do muscles often work in opposing pairs (agonist and antagonist)?",
+      "correctAnswer": "So movement can be controlled in both directions",
+      "incorrectAnswers": [
+        "To store extra ATP in tendons",
+        "To prevent nerves from firing",
+        "To eliminate the need for joints"
+      ],
+      "explanation": "Agonists create motion while antagonists stabilize and allow smooth reversal.",
+      "keywords": [
+        "agonist",
+        "antagonist"
+      ],
+      "source": "https://www.ncbi.nlm.nih.gov/books/NBK537656/"
+    },
+    {
+      "seedId": "603fc682-50bf-4c56-9304-ac56533df1b0",
+      "category": "science",
+      "navigationKeyword1": "anatomy",
+      "navigationKeyword2": "nervous",
+      "question": "What are the two main divisions of the nervous system?",
+      "correctAnswer": "Central nervous system and peripheral nervous system",
+      "incorrectAnswers": [
+        "Somatic and autonomic only",
+        "Sympathetic and parasympathetic only",
+        "Cranial and spinal only"
+      ],
+      "explanation": "The CNS is brain and spinal cord; the PNS connects the CNS to the rest of the body.",
+      "keywords": [
+        "cns",
+        "pns"
+      ],
+      "source": "https://openstax.org/books/anatomy-and-physiology-2e/pages/12-1-basic-structure-and-function-of-the-nervous-system"
+    },
+    {
+      "seedId": "92fb7266-1e6f-4e31-9113-60e958f5ac62",
+      "category": "science",
+      "navigationKeyword1": "anatomy",
+      "navigationKeyword2": "nervous",
+      "question": "What cells transmit electrical signals in the nervous system?",
+      "correctAnswer": "Neurons",
+      "incorrectAnswers": [
+        "Osteocytes",
+        "Erythrocytes",
+        "Chondrocytes"
+      ],
+      "explanation": "Neurons are specialized for rapid signaling via action potentials and synapses.",
+      "keywords": [
+        "neurons",
+        "signaling"
+      ],
+      "source": "https://www.ninds.nih.gov/health-information/disorders/brain-basics"
+    },
+    {
+      "seedId": "ae3d6f05-bade-49ff-b407-e3dd2020f4e4",
+      "category": "science",
+      "navigationKeyword1": "anatomy",
+      "navigationKeyword2": "nervous",
+      "question": "What does the blood-brain barrier mainly protect?",
+      "correctAnswer": "Brain tissue from many blood-borne substances",
+      "incorrectAnswers": [
+        "Bone marrow from infection",
+        "The retina from sound waves",
+        "Muscles from gravity"
+      ],
+      "explanation": "Tight junctions and supporting cells limit what can pass from blood into brain interstitial fluid.",
+      "keywords": [
+        "blood-brain-barrier",
+        "cns"
+      ],
+      "source": "https://www.ncbi.nlm.nih.gov/books/NBK557381/"
+    },
+    {
+      "seedId": "9ec6ad79-70df-41d2-8029-34432b3ad226",
+      "category": "science",
+      "navigationKeyword1": "anatomy",
+      "navigationKeyword2": "nervous",
+      "question": "What glial cells myelinate axons in the central nervous system?",
+      "correctAnswer": "Oligodendrocytes",
+      "incorrectAnswers": [
+        "Schwann cells",
+        "Astrocytes only",
+        "Microglia only"
+      ],
+      "explanation": "Oligodendrocytes wrap CNS axons with myelin; Schwann cells myelinate PNS axons.",
+      "keywords": [
+        "myelin",
+        "oligodendrocytes"
+      ],
+      "source": "https://openstax.org/books/anatomy-and-physiology-2e/pages/12-2-nervous-tissue"
+    },
+    {
+      "seedId": "2e0553e4-2c80-4bd2-bc78-0d4e0da17bea",
+      "category": "science",
+      "navigationKeyword1": "anatomy",
+      "navigationKeyword2": "nervous",
+      "question": "What glial cells myelinate axons in the peripheral nervous system?",
+      "correctAnswer": "Schwann cells",
+      "incorrectAnswers": [
+        "Oligodendrocytes",
+        "Satellite cells only",
+        "Ependymal cells"
+      ],
+      "explanation": "Schwann cells form myelin around many PNS axons and help regeneration after injury.",
+      "keywords": [
+        "schwann-cells",
+        "pns"
+      ],
+      "source": "https://openstax.org/books/anatomy-and-physiology-2e/pages/12-2-nervous-tissue"
+    },
+    {
+      "seedId": "6f9b3210-f58f-4d22-9651-cc3739da6cf8",
+      "category": "science",
+      "navigationKeyword1": "anatomy",
+      "navigationKeyword2": "nervous",
+      "question": "What is a reflex arc\u2019s basic purpose?",
+      "correctAnswer": "Produce a fast, automatic response to a stimulus",
+      "incorrectAnswers": [
+        "Store long-term memories",
+        "Secrete digestive enzymes",
+        "Build bone matrix"
+      ],
+      "explanation": "Reflexes bypass slow voluntary pathways to protect the body quickly.",
+      "keywords": [
+        "reflex",
+        "spinal-cord"
+      ],
+      "source": "https://openstax.org/books/anatomy-and-physiology-2e/pages/13-2-spinal-reflexes"
+    },
+    {
+      "seedId": "6ff9ebb9-43ab-4caa-8c17-fe1c3aead7c6",
+      "category": "science",
+      "navigationKeyword1": "anatomy",
+      "navigationKeyword2": "nervous",
+      "question": "What is a synapse?",
+      "correctAnswer": "A specialized junction where a neuron communicates with another cell",
+      "incorrectAnswers": [
+        "A bone-to-bone connector",
+        "A blood clotting plug",
+        "A muscle fiber bundle"
+      ],
+      "explanation": "Chemical synapses use neurotransmitters; electrical synapses use gap junctions.",
+      "keywords": [
+        "synapse",
+        "neurotransmitter"
+      ],
+      "source": "https://www.ninds.nih.gov/health-information/disorders/brain-basics"
+    },
+    {
+      "seedId": "656598ae-e5fc-443f-b75f-08372b30aa2b",
+      "category": "science",
+      "navigationKeyword1": "anatomy",
+      "navigationKeyword2": "nervous",
+      "question": "What is an action potential?",
+      "correctAnswer": "A rapid, all-or-nothing electrical impulse along an excitable membrane",
+      "incorrectAnswers": [
+        "A slow chemical drift with no voltage change",
+        "A permanent positive charge in all cells",
+        "Only a sensory illusion"
+      ],
+      "explanation": "Voltage-gated channels drive the stereotyped depolarization/repolarization sequence.",
+      "keywords": [
+        "action-potential",
+        "neuron"
+      ],
+      "source": "https://www.ncbi.nlm.nih.gov/books/NBK26875/"
+    },
+    {
+      "seedId": "3033e2ac-8b2b-45ce-b20f-61da9d74a886",
+      "category": "science",
+      "navigationKeyword1": "anatomy",
+      "navigationKeyword2": "nervous",
+      "question": "What is the resting neuron\u2019s inside charge relative to outside (typical wording)?",
+      "correctAnswer": "More negative inside compared to outside",
+      "incorrectAnswers": [
+        "More positive inside",
+        "Exactly zero everywhere",
+        "Positive only at the dendrites"
+      ],
+      "explanation": "Resting potential reflects ion gradients and selective permeability (often around -70 mV).",
+      "keywords": [
+        "resting-potential",
+        "membrane"
+      ],
+      "source": "https://www.ncbi.nlm.nih.gov/books/NBK26875/"
+    },
+    {
+      "seedId": "fd264eee-7f3f-4fc8-845b-7be975856454",
+      "category": "science",
+      "navigationKeyword1": "anatomy",
+      "navigationKeyword2": "nervous",
+      "question": "Which brain region is heavily involved in coordinating movement and balance?",
+      "correctAnswer": "Cerebellum",
+      "incorrectAnswers": [
+        "Occipital lobe",
+        "Medulla only for all balance",
+        "Corpus callosum"
+      ],
+      "explanation": "The cerebellum fine-tunes motor commands and helps maintain coordination.",
+      "keywords": [
+        "cerebellum",
+        "motor-control"
+      ],
+      "source": "https://www.ninds.nih.gov/health-information/disorders/brain-basics"
+    },
+    {
+      "seedId": "510f7ee2-bfce-4118-a7f9-8b4f2d054b31",
+      "category": "science",
+      "navigationKeyword1": "anatomy",
+      "navigationKeyword2": "nervous",
+      "question": "Which division of the autonomic nervous system is often summarized as \u2018fight or flight\u2019?",
+      "correctAnswer": "Sympathetic",
+      "incorrectAnswers": [
+        "Parasympathetic",
+        "Somatic motor",
+        "Enteric only"
+      ],
+      "explanation": "Sympathetic activation mobilizes energy for stress and activity responses.",
+      "keywords": [
+        "sympathetic",
+        "autonomic"
+      ],
+      "source": "https://openstax.org/books/anatomy-and-physiology-2e/pages/15-1-divisions-of-the-autonomic-nervous-system"
+    },
+    {
+      "seedId": "a03988ae-4e96-4f09-b8f7-e5fc318e1d9e",
+      "category": "science",
+      "navigationKeyword1": "anatomy",
+      "navigationKeyword2": "nervous",
+      "question": "Which division of the autonomic nervous system is often summarized as \u2018rest and digest\u2019?",
+      "correctAnswer": "Parasympathetic",
+      "incorrectAnswers": [
+        "Sympathetic",
+        "Somatic sensory",
+        "Spinal reflex only"
+      ],
+      "explanation": "Parasympathetic pathways generally promote conservation and digestion functions.",
+      "keywords": [
+        "parasympathetic",
+        "autonomic"
+      ],
+      "source": "https://openstax.org/books/anatomy-and-physiology-2e/pages/15-1-divisions-of-the-autonomic-nervous-system"
+    },
+    {
+      "seedId": "f13ea443-990c-489e-8be7-908ecda76d07",
+      "category": "science",
+      "navigationKeyword1": "anatomy",
+      "navigationKeyword2": "respiratory",
+      "question": "What does hemoglobin transport that is central to respiration?",
+      "correctAnswer": "Oxygen (and also contributes to carbon dioxide transport)",
+      "incorrectAnswers": [
+        "Insulin",
+        "Bile salts",
+        "Keratin"
+      ],
+      "explanation": "Hemoglobin binds oxygen in the lungs and releases it to tissues.",
+      "keywords": [
+        "hemoglobin",
+        "oxygen-transport"
+      ],
+      "source": "https://www.ncbi.nlm.nih.gov/books/NBK470303/"
+    },
+    {
+      "seedId": "4e810dda-7a2a-4428-a61c-d467a4a696d8",
+      "category": "science",
+      "navigationKeyword1": "anatomy",
+      "navigationKeyword2": "respiratory",
+      "question": "What is a common effect of increased airway resistance?",
+      "correctAnswer": "Harder breathing and more work to move air",
+      "incorrectAnswers": [
+        "Faster alveolar gas exchange automatically",
+        "Lower need for hemoglobin",
+        "Higher surfactant production always"
+      ],
+      "explanation": "Narrowed airways increase resistance, so muscles must work harder to ventilate.",
+      "keywords": [
+        "airway-resistance",
+        "breathing-work"
+      ],
+      "source": "https://www.lung.org/lung-health-diseases/how-lungs-work"
+    },
+    {
+      "seedId": "ab51afe0-5527-4865-b1dc-c7ff8adc545c",
+      "category": "science",
+      "navigationKeyword1": "anatomy",
+      "navigationKeyword2": "respiratory",
+      "question": "What is anatomical dead space?",
+      "correctAnswer": "Airway regions where gas exchange does not occur (like parts of the conducting zone)",
+      "incorrectAnswers": [
+        "All alveoli combined",
+        "Blood plasma volume",
+        "The pleural cavity fluid only"
+      ],
+      "explanation": "Conducting airways move air but do not participate in diffusion like alveoli.",
+      "keywords": [
+        "dead-space",
+        "conducting-zone"
+      ],
+      "source": "https://openstax.org/books/anatomy-and-physiology-2e/pages/22-3-the-process-of-breathing"
+    },
+    {
+      "seedId": "ae430068-3cda-4117-90ff-76a3882ba882",
+      "category": "science",
+      "navigationKeyword1": "anatomy",
+      "navigationKeyword2": "respiratory",
+      "question": "What is the basic direction of airflow during inhalation?",
+      "correctAnswer": "Air flows from higher atmospheric pressure into lower pressure in the lungs",
+      "incorrectAnswers": [
+        "Air flows because lungs push air in without pressure change",
+        "Air moves from veins to alveoli directly",
+        "Oxygen diffuses from blood to atmosphere first"
+      ],
+      "explanation": "Lung expansion lowers alveolar pressure below atmospheric pressure, pulling air in.",
+      "keywords": [
+        "pressure-gradient",
+        "inhalation"
+      ],
+      "source": "https://openstax.org/books/anatomy-and-physiology-2e/pages/22-3-the-process-of-breathing"
+    },
+    {
+      "seedId": "b774b37f-792b-4f6d-89f1-e6bc042e8782",
+      "category": "science",
+      "navigationKeyword1": "anatomy",
+      "navigationKeyword2": "respiratory",
+      "question": "What is the main job of the respiratory system in gas exchange?",
+      "correctAnswer": "Move oxygen into the blood and carbon dioxide out",
+      "incorrectAnswers": [
+        "Digest fats into glucose",
+        "Pump blood to muscles",
+        "Filter urine"
+      ],
+      "explanation": "Alveoli provide a thin surface where gases diffuse between air and blood.",
+      "keywords": [
+        "gas-exchange",
+        "respiration"
+      ],
+      "source": "https://www.lung.org/lung-health-diseases/how-lungs-work"
+    },
+    {
+      "seedId": "9a856b76-80be-46b1-86e4-9e8a1434add5",
+      "category": "science",
+      "navigationKeyword1": "anatomy",
+      "navigationKeyword2": "respiratory",
+      "question": "What is the role of surfactant in the lungs?",
+      "correctAnswer": "Reduce surface tension to keep alveoli from collapsing",
+      "incorrectAnswers": [
+        "Speed up gas by heating air",
+        "Block oxygen entirely",
+        "Digest mucus into water"
+      ],
+      "explanation": "Surfactant lowers alveolar surface tension, improving compliance and stability.",
+      "keywords": [
+        "surfactant",
+        "alveoli"
+      ],
+      "source": "https://www.ncbi.nlm.nih.gov/books/NBK545183/"
+    },
+    {
+      "seedId": "99fd050d-14d2-4bfe-837d-db0959a007b7",
+      "category": "science",
+      "navigationKeyword1": "anatomy",
+      "navigationKeyword2": "respiratory",
+      "question": "What is tidal volume?",
+      "correctAnswer": "The amount of air moved in or out during a normal quiet breath",
+      "incorrectAnswers": [
+        "Total lung capacity always",
+        "Only the air left after maximal exhale",
+        "Only dead space"
+      ],
+      "explanation": "Tidal volume is the routine in-and-out volume of a resting breath cycle.",
+      "keywords": [
+        "tidal-volume",
+        "spirometry"
+      ],
+      "source": "https://openstax.org/books/anatomy-and-physiology-2e/pages/22-3-the-process-of-breathing"
+    },
+    {
+      "seedId": "641caa9a-305c-4159-9e27-ad05d83a87eb",
+      "category": "science",
+      "navigationKeyword1": "anatomy",
+      "navigationKeyword2": "respiratory",
+      "question": "What muscle is the primary driver of quiet breathing inhalation?",
+      "correctAnswer": "The diaphragm",
+      "incorrectAnswers": [
+        "The biceps brachii",
+        "The masseter",
+        "The gastrocnemius"
+      ],
+      "explanation": "Diaphragm contraction increases thoracic volume, lowering pressure to draw air in.",
+      "keywords": [
+        "diaphragm",
+        "breathing"
+      ],
+      "source": "https://www.lung.org/lung-health-diseases/how-lungs-work"
+    },
+    {
+      "seedId": "db3c94ca-34cc-445b-8f12-961f038c9fba",
+      "category": "science",
+      "navigationKeyword1": "anatomy",
+      "navigationKeyword2": "respiratory",
+      "question": "What structure prevents food from entering the airway during swallowing?",
+      "correctAnswer": "The epiglottis",
+      "incorrectAnswers": [
+        "The uvula alone",
+        "The pleura",
+        "The bronchioles"
+      ],
+      "explanation": "The epiglottis helps route food toward the esophagus and away from the larynx.",
+      "keywords": [
+        "epiglottis",
+        "swallowing"
+      ],
+      "source": "https://openstax.org/books/anatomy-and-physiology-2e/pages/22-2-organs-and-structures-of-the-respiratory-system"
+    },
+    {
+      "seedId": "c0ca58b1-2a6d-4cb5-933e-75c3a7755bc0",
+      "category": "science",
+      "navigationKeyword1": "anatomy",
+      "navigationKeyword2": "respiratory",
+      "question": "Where does most gas exchange between air and blood occur?",
+      "correctAnswer": "Alveoli in the lungs",
+      "incorrectAnswers": [
+        "Trachea only",
+        "Oral cavity",
+        "Esophagus"
+      ],
+      "explanation": "Alveoli have huge surface area and thin walls suited for diffusion.",
+      "keywords": [
+        "alveoli",
+        "lungs"
+      ],
+      "source": "https://openstax.org/books/anatomy-and-physiology-2e/pages/22-2-organs-and-structures-of-the-respiratory-system"
+    },
+    {
+      "seedId": "b809ac20-bf0c-46c2-85db-7e2f8d45591e",
+      "category": "science",
+      "navigationKeyword1": "anatomy",
+      "navigationKeyword2": "respiratory",
+      "question": "Which blood vessels carry oxygen-rich blood from the lungs toward the left heart?",
+      "correctAnswer": "Pulmonary veins",
+      "incorrectAnswers": [
+        "Pulmonary arteries",
+        "Superior vena cava",
+        "Hepatic portal vein"
+      ],
+      "explanation": "After gas exchange, oxygenated blood returns to the left atrium via pulmonary veins.",
+      "keywords": [
+        "pulmonary-veins",
+        "circulation"
+      ],
+      "source": "https://openstax.org/books/anatomy-and-physiology-2e/pages/20-1-structure-and-function-of-the-cardiovascular-system"
+    },
+    {
+      "seedId": "22221000-0915-48e2-b4f4-ec931855a8fa",
+      "category": "science",
+      "navigationKeyword1": "anatomy",
+      "navigationKeyword2": "respiratory",
+      "question": "Why is rapid, deep breathing common during hard exercise?",
+      "correctAnswer": "To remove more carbon dioxide and bring in more oxygen to meet metabolic demand",
+      "incorrectAnswers": [
+        "To stop the heart from beating",
+        "To cool the liver only",
+        "To replace bone calcium"
+      ],
+      "explanation": "Ventilation rises to match increased muscle oxygen use and CO2 production.",
+      "keywords": [
+        "exercise",
+        "ventilation"
+      ],
+      "source": "https://www.lung.org/lung-health-diseases/how-lungs-work"
+    },
+    {
+      "seedId": "86c9900c-4f4f-445a-b8ae-f35f45568d65",
+      "category": "science",
+      "navigationKeyword1": "anatomy",
+      "navigationKeyword2": "skeletal",
+      "question": "Long bones contain spongy bone mainly where?",
+      "correctAnswer": "Near the ends (epiphyses), with compact bone along the shaft",
+      "incorrectAnswers": [
+        "Only in the marrow cavity with no compact bone",
+        "Only on the outer skin",
+        "Only in tendons"
+      ],
+      "explanation": "Trabecular (spongy) bone is common at ends; compact bone strengthens the diaphysis.",
+      "keywords": [
+        "spongy-bone",
+        "compact-bone"
+      ],
+      "source": "https://openstax.org/books/anatomy-and-physiology-2e/pages/6-3-bone-structure"
+    },
+    {
+      "seedId": "dfede957-aa8e-463a-b1d2-999054910fe5",
+      "category": "science",
+      "navigationKeyword1": "anatomy",
+      "navigationKeyword2": "skeletal",
+      "question": "What are the living bone-building cells called?",
+      "correctAnswer": "Osteoblasts",
+      "incorrectAnswers": [
+        "Osteoclasts",
+        "Chondrocytes",
+        "Neurons"
+      ],
+      "explanation": "Osteoblasts deposit new bone matrix; osteoclasts resorb bone.",
+      "keywords": [
+        "osteoblasts",
+        "bone-remodeling"
+      ],
+      "source": "https://openstax.org/books/anatomy-and-physiology-2e/pages/6-4-bone-development-and-growth"
+    },
+    {
+      "seedId": "21768d8c-7801-44c3-9d5a-54fa9a136812",
+      "category": "science",
+      "navigationKeyword1": "anatomy",
+      "navigationKeyword2": "skeletal",
+      "question": "What cells break down bone tissue during remodeling?",
+      "correctAnswer": "Osteoclasts",
+      "incorrectAnswers": [
+        "Osteoblasts",
+        "Fibroblasts only",
+        "Adipocytes"
+      ],
+      "explanation": "Osteoclasts resorb bone, helping reshape and maintain mineral balance.",
+      "keywords": [
+        "osteoclasts",
+        "remodeling"
+      ],
+      "source": "https://openstax.org/books/anatomy-and-physiology-2e/pages/6-4-bone-development-and-growth"
+    },
+    {
+      "seedId": "ab636a4d-61b6-465b-8cc4-372a31c251d7",
+      "category": "science",
+      "navigationKeyword1": "anatomy",
+      "navigationKeyword2": "skeletal",
+      "question": "What connects bone to bone at a joint?",
+      "correctAnswer": "Ligaments",
+      "incorrectAnswers": [
+        "Tendons",
+        "Sarcomeres",
+        "Axons"
+      ],
+      "explanation": "Ligaments stabilize joints by linking bones together.",
+      "keywords": [
+        "ligaments",
+        "joint-stability"
+      ],
+      "source": "https://openstax.org/books/anatomy-and-physiology-2e/pages/9-1-classification-of-joints"
+    },
+    {
+      "seedId": "39bd07ae-1773-4cf3-9c5f-e8f4e6140e2c",
+      "category": "science",
+      "navigationKeyword1": "anatomy",
+      "navigationKeyword2": "skeletal",
+      "question": "What is a fracture?",
+      "correctAnswer": "A break in bone continuity",
+      "incorrectAnswers": [
+        "A torn ligament only",
+        "A joint infection only",
+        "Muscle shortening only"
+      ],
+      "explanation": "Fractures disrupt bone structure and require repair via remodeling.",
+      "keywords": [
+        "fracture",
+        "injury"
+      ],
+      "source": "https://www.ncbi.nlm.nih.gov/books/NBK441886/"
+    },
+    {
+      "seedId": "1f778546-57f1-43e5-b1e6-c17ad9297149",
+      "category": "science",
+      "navigationKeyword1": "anatomy",
+      "navigationKeyword2": "skeletal",
+      "question": "What is articular cartilage?",
+      "correctAnswer": "Smooth cartilage covering bone ends at joints",
+      "incorrectAnswers": [
+        "Bone marrow",
+        "The periosteum inner layer only",
+        "Ligament core"
+      ],
+      "explanation": "Articular cartilage reduces friction and absorbs joint forces.",
+      "keywords": [
+        "articular-cartilage",
+        "joints"
+      ],
+      "source": "https://openstax.org/books/anatomy-and-physiology-2e/pages/9-1-classification-of-joints"
+    },
+    {
+      "seedId": "bc03ec4b-22e1-445f-9e44-bd4856319eff",
+      "category": "science",
+      "navigationKeyword1": "anatomy",
+      "navigationKeyword2": "skeletal",
+      "question": "What is the epiphyseal plate associated with?",
+      "correctAnswer": "Longitudinal bone growth in children and adolescents",
+      "incorrectAnswers": [
+        "Tooth enamel formation",
+        "Muscle contraction speed",
+        "Nerve myelination speed"
+      ],
+      "explanation": "Growth plates are cartilage regions where bones lengthen until closure.",
+      "keywords": [
+        "growth-plate",
+        "development"
+      ],
+      "source": "https://openstax.org/books/anatomy-and-physiology-2e/pages/6-4-bone-development-and-growth"
+    },
+    {
+      "seedId": "84184434-6419-4044-87b3-5d7815b7d56f",
+      "category": "science",
+      "navigationKeyword1": "anatomy",
+      "navigationKeyword2": "skeletal",
+      "question": "What mineral salt is a major hardening component of bone matrix?",
+      "correctAnswer": "Calcium phosphate (as part of hydroxyapatite)",
+      "incorrectAnswers": [
+        "Cellulose",
+        "Keratin only",
+        "Cholesterol crystals"
+      ],
+      "explanation": "Bone matrix includes mineral crystals that give compressive strength.",
+      "keywords": [
+        "bone-matrix",
+        "mineralization"
+      ],
+      "source": "https://openstax.org/books/anatomy-and-physiology-2e/pages/6-3-bone-structure"
+    },
+    {
+      "seedId": "962d24af-d8c8-4dc0-872e-c6ad82a4e0d4",
+      "category": "science",
+      "navigationKeyword1": "anatomy",
+      "navigationKeyword2": "skeletal",
+      "question": "What type of joint is the elbow hinge best described as?",
+      "correctAnswer": "Synovial hinge joint",
+      "incorrectAnswers": [
+        "Fibrous suture",
+        "Cartilaginous symphysis only",
+        "Ball-and-socket always"
+      ],
+      "explanation": "The elbow behaves like a hinge, allowing flexion and extension in one plane.",
+      "keywords": [
+        "hinge-joint",
+        "synovial"
+      ],
+      "source": "https://openstax.org/books/anatomy-and-physiology-2e/pages/9-2-synovial-joints"
+    },
+    {
+      "seedId": "99bc0c3a-532c-44d3-a7a8-f64c38081555",
+      "category": "science",
+      "navigationKeyword1": "anatomy",
+      "navigationKeyword2": "skeletal",
+      "question": "Where is red bone marrow important for blood cell formation?",
+      "correctAnswer": "In many bones (especially in axial skeleton and proximal long bones in adults)",
+      "incorrectAnswers": [
+        "Only in tendons",
+        "Only in cartilage with no vessels",
+        "Only in the epidermis"
+      ],
+      "explanation": "Hematopoiesis occurs in marrow niches; locations shift somewhat with age.",
+      "keywords": [
+        "bone-marrow",
+        "hematopoiesis"
+      ],
+      "source": "https://www.ncbi.nlm.nih.gov/books/NBK2639/"
+    },
+    {
+      "seedId": "816b1ecc-7da5-479d-8200-ef02c45b1769",
+      "category": "science",
+      "navigationKeyword1": "anatomy",
+      "navigationKeyword2": "skeletal",
+      "question": "Which division of the skeleton includes the skull and vertebral column?",
+      "correctAnswer": "Axial skeleton",
+      "incorrectAnswers": [
+        "Appendicular skeleton",
+        "Visceral skeleton only",
+        "Dermal skeleton only"
+      ],
+      "explanation": "The axial skeleton forms the central axis; limbs belong to the appendicular skeleton.",
+      "keywords": [
+        "axial-skeleton",
+        "appendicular-skeleton"
+      ],
+      "source": "https://openstax.org/books/anatomy-and-physiology-2e/pages/7-1-divisions-of-the-skeletal-system"
+    },
+    {
+      "seedId": "3ffea18e-a931-4f8a-a6ab-198274c060d6",
+      "category": "science",
+      "navigationKeyword1": "anatomy",
+      "navigationKeyword2": "skeletal",
+      "question": "Why are long bones strong against bending along the shaft?",
+      "correctAnswer": "Compact bone in the diaphysis forms a rigid tube",
+      "incorrectAnswers": [
+        "Spongy bone fills the entire shaft uniformly",
+        "Cartilage replaces the shaft",
+        "Marrow provides tensile strength like rope"
+      ],
+      "explanation": "The hollow compact shaft balances strength and weight.",
+      "keywords": [
+        "diaphysis",
+        "mechanics"
+      ],
+      "source": "https://openstax.org/books/anatomy-and-physiology-2e/pages/6-3-bone-structure"
+    }
+  ]
+}

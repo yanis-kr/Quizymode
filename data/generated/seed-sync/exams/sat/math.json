@@ -1,0 +1,207 @@
+{
+  "schemaVersion": 1,
+  "seedSet": "core-public-items",
+  "deltaPreviewLimit": 200,
+  "items": [
+    {
+      "seedId": "65f6f03e-dd88-4390-b2c5-4af8ffcd94aa",
+      "category": "exams",
+      "navigationKeyword1": "sat",
+      "navigationKeyword2": "math",
+      "question": "A circle has radius 3. What is its circumference in terms of pi?",
+      "correctAnswer": "6pi",
+      "incorrectAnswers": [
+        "3pi",
+        "9pi",
+        "18pi"
+      ],
+      "explanation": "Circumference equals 2pi r, so 2pi(3) = 6pi.",
+      "keywords": [
+        "sat-math",
+        "circles",
+        "geometry"
+      ],
+      "source": "https://satsuite.collegeboard.org/sat/practice-preparation"
+    },
+    {
+      "seedId": "76b94534-128b-422d-a26d-5a0f532719f5",
+      "category": "exams",
+      "navigationKeyword1": "sat",
+      "navigationKeyword2": "math",
+      "question": "A store reduces the price of a $60 backpack by 25%. What is the sale price?",
+      "correctAnswer": "$45",
+      "incorrectAnswers": [
+        "$35",
+        "$40",
+        "$50"
+      ],
+      "explanation": "Twenty-five percent of 60 is 15, and 60 minus 15 is 45.",
+      "keywords": [
+        "sat-math",
+        "percent",
+        "problem-solving"
+      ],
+      "source": "https://satsuite.collegeboard.org/sat/practice-preparation"
+    },
+    {
+      "seedId": "095a5820-7dde-41d9-bf64-276e7db176b2",
+      "category": "exams",
+      "navigationKeyword1": "sat",
+      "navigationKeyword2": "math",
+      "question": "If 3x + 5 = 20, what is the value of x?",
+      "correctAnswer": "5",
+      "incorrectAnswers": [
+        "3",
+        "4",
+        "6"
+      ],
+      "explanation": "Subtract 5 from both sides to get 3x = 15, then divide by 3.",
+      "keywords": [
+        "sat-math",
+        "linear-equations",
+        "algebra"
+      ],
+      "source": "https://satsuite.collegeboard.org/sat/practice-preparation"
+    },
+    {
+      "seedId": "309d45bc-54b1-4d75-8451-d0c510845d39",
+      "category": "exams",
+      "navigationKeyword1": "sat",
+      "navigationKeyword2": "math",
+      "question": "If 5 notebooks cost $12.50, what is the cost of 1 notebook?",
+      "correctAnswer": "$2.50",
+      "incorrectAnswers": [
+        "$2.00",
+        "$2.25",
+        "$3.00"
+      ],
+      "explanation": "Divide the total cost by the number of notebooks: 12.50 / 5 = 2.50.",
+      "keywords": [
+        "sat-math",
+        "ratios",
+        "problem-solving"
+      ],
+      "source": "https://satsuite.collegeboard.org/sat/practice-preparation"
+    },
+    {
+      "seedId": "9309938b-90a0-47f2-855c-d3926780a339",
+      "category": "exams",
+      "navigationKeyword1": "sat",
+      "navigationKeyword2": "math",
+      "question": "If f(x) = 2x + 1, what is f(4)?",
+      "correctAnswer": "9",
+      "incorrectAnswers": [
+        "7",
+        "8",
+        "10"
+      ],
+      "explanation": "Substitute 4 for x: 2(4) + 1 = 9.",
+      "keywords": [
+        "sat-math",
+        "functions",
+        "advanced-math"
+      ],
+      "source": "https://satsuite.collegeboard.org/sat/practice-preparation"
+    },
+    {
+      "seedId": "f0a924bb-f71a-4c83-9294-8f7aad70bcac",
+      "category": "exams",
+      "navigationKeyword1": "sat",
+      "navigationKeyword2": "math",
+      "question": "If x^2 = 49, which value could x be?",
+      "correctAnswer": "-7",
+      "incorrectAnswers": [
+        "14",
+        "21",
+        "49"
+      ],
+      "explanation": "Both 7 and -7 square to 49, so -7 is a valid value.",
+      "keywords": [
+        "sat-math",
+        "quadratics",
+        "advanced-math"
+      ],
+      "source": "https://satsuite.collegeboard.org/sat/practice-preparation"
+    },
+    {
+      "seedId": "f63e77d1-6f62-49eb-aa91-70c11d12deb8",
+      "category": "exams",
+      "navigationKeyword1": "sat",
+      "navigationKeyword2": "math",
+      "question": "The average of 8, 10, and y is 12. What is y?",
+      "correctAnswer": "18",
+      "incorrectAnswers": [
+        "14",
+        "16",
+        "20"
+      ],
+      "explanation": "If the average is 12, the total must be 36. Since 8 + 10 = 18, y = 18.",
+      "keywords": [
+        "sat-math",
+        "statistics",
+        "problem-solving"
+      ],
+      "source": "https://satsuite.collegeboard.org/sat/practice-preparation"
+    },
+    {
+      "seedId": "788cddf7-1567-4851-9680-59d76425b56a",
+      "category": "exams",
+      "navigationKeyword1": "sat",
+      "navigationKeyword2": "math",
+      "question": "The solution to the system y = x + 2 and y = 6 is what ordered pair?",
+      "correctAnswer": "(4, 6)",
+      "incorrectAnswers": [
+        "(6, 4)",
+        "(2, 6)",
+        "(4, 4)"
+      ],
+      "explanation": "Set x + 2 equal to 6 to get x = 4, then y = 6.",
+      "keywords": [
+        "sat-math",
+        "systems",
+        "algebra"
+      ],
+      "source": "https://satsuite.collegeboard.org/sat/practice-preparation"
+    },
+    {
+      "seedId": "bd4f9729-0935-4055-8416-e2b5dde3e8a5",
+      "category": "exams",
+      "navigationKeyword1": "sat",
+      "navigationKeyword2": "math",
+      "question": "What is the area of a rectangle with length 9 and width 4?",
+      "correctAnswer": "36",
+      "incorrectAnswers": [
+        "13",
+        "18",
+        "45"
+      ],
+      "explanation": "Area equals length times width: 9 x 4 = 36.",
+      "keywords": [
+        "sat-math",
+        "geometry",
+        "problem-solving"
+      ],
+      "source": "https://satsuite.collegeboard.org/sat/practice-preparation"
+    },
+    {
+      "seedId": "6f0a9dc6-dd0d-49ac-be60-48fd3ce599c4",
+      "category": "exams",
+      "navigationKeyword1": "sat",
+      "navigationKeyword2": "math",
+      "question": "What is the slope of the line through (2, 3) and (6, 11)?",
+      "correctAnswer": "2",
+      "incorrectAnswers": [
+        "1",
+        "3",
+        "4"
+      ],
+      "explanation": "Slope equals rise over run: (11 - 3) / (6 - 2) = 8 / 4 = 2.",
+      "keywords": [
+        "sat-math",
+        "slope",
+        "algebra"
+      ],
+      "source": "https://satsuite.collegeboard.org/sat/practice-preparation"
+    }
+  ]
+}

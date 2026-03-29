@@ -1,0 +1,45 @@
+{
+  "schemaVersion": 1,
+  "seedSet": "core-public-items",
+  "deltaPreviewLimit": 200,
+  "items": [
+    {
+      "seedId": "b2b320f6-ba38-54f9-b5c2-25cc5bc768e0",
+      "category": "humanities",
+      "navigationKeyword1": "religion-myth",
+      "navigationKeyword2": "greek-myth",
+      "question": "Athena is especially associated with what?",
+      "correctAnswer": "wisdom and strategy",
+      "incorrectAnswers": [
+        "the sea only",
+        "wine and theater only",
+        "the underworld only"
+      ],
+      "explanation": "Athena is linked with wisdom, skill, and strategic thought.",
+      "keywords": [
+        "greek-myth",
+        "athena"
+      ],
+      "source": "https://www.metmuseum.org/toah/hd/grlg/hd_grlg.htm"
+    },
+    {
+      "seedId": "c21fd48b-8fd4-525e-a585-ad6711785314",
+      "category": "humanities",
+      "navigationKeyword1": "religion-myth",
+      "navigationKeyword2": "greek-myth",
+      "question": "Who is the chief god in much of Greek mythology?",
+      "correctAnswer": "Zeus",
+      "incorrectAnswers": [
+        "Ares",
+        "Hermes",
+        "Hephaestus"
+      ],
+      "explanation": "Zeus is commonly presented as king of the gods in Greek myth.",
+      "keywords": [
+        "greek-myth",
+        "zeus"
+      ],
+      "source": "https://www.britannica.com/topic/Zeus"
+    }
+  ]
+}

@@ -1,0 +1,207 @@
+{
+  "schemaVersion": 1,
+  "seedSet": "core-public-items",
+  "deltaPreviewLimit": 200,
+  "items": [
+    {
+      "seedId": "a4ffc55b-14c8-465d-b140-54a7555a34fd",
+      "category": "exams",
+      "navigationKeyword1": "cisco",
+      "navigationKeyword2": "ccnp",
+      "question": "In a standard multiarea OSPF design, what is Area 0 used for?",
+      "correctAnswer": "The backbone area that connects other OSPF areas",
+      "incorrectAnswers": [
+        "A default NAT zone",
+        "A VLAN reserved for voice traffic",
+        "A DHCP failover scope"
+      ],
+      "explanation": "OSPF uses Area 0 as the backbone for interarea communication.",
+      "keywords": [
+        "ccnp",
+        "ospf",
+        "cisco"
+      ],
+      "source": "https://www.rfc-editor.org/rfc/rfc2328"
+    },
+    {
+      "seedId": "57e75419-5114-4f5f-beac-ccea0ea6be65",
+      "category": "exams",
+      "navigationKeyword1": "cisco",
+      "navigationKeyword2": "ccnp",
+      "question": "What does HSRP provide to hosts on a LAN?",
+      "correctAnswer": "First-hop gateway redundancy using a virtual IP and MAC",
+      "incorrectAnswers": [
+        "Automatic VLAN creation",
+        "DNS name resolution",
+        "Wireless roaming control"
+      ],
+      "explanation": "Cisco says HSRP provides first-hop redundancy by presenting a virtual router to hosts.",
+      "keywords": [
+        "ccnp",
+        "hsrp",
+        "cisco"
+      ],
+      "source": "https://www.cisco.com/en/US/docs/switches/metro/me3600x_3800x/trash/swhsrp.html"
+    },
+    {
+      "seedId": "321e3c76-6946-4e67-aaac-52b5febb1456",
+      "category": "exams",
+      "navigationKeyword1": "cisco",
+      "navigationKeyword2": "ccnp",
+      "question": "What does PAT enable in a NAT deployment?",
+      "correctAnswer": "Many internal hosts to share one public IP using port translation",
+      "incorrectAnswers": [
+        "One host to use many VLANs simultaneously",
+        "A switch to learn routes dynamically",
+        "A router to ignore ACLs"
+      ],
+      "explanation": "Cisco says PAT lets multiple hosts share a single public IP using address and port translation.",
+      "keywords": [
+        "ccnp",
+        "pat",
+        "cisco"
+      ],
+      "source": "https://www.cisco.com/c/en/us/products/routers/network-address-translation.html"
+    },
+    {
+      "seedId": "97341f49-adac-4914-975e-73cf6c9422f0",
+      "category": "exams",
+      "navigationKeyword1": "cisco",
+      "navigationKeyword2": "ccnp",
+      "question": "What does an OSPF passive interface do?",
+      "correctAnswer": "Advertises the connected network without sending OSPF hellos on that interface",
+      "incorrectAnswers": [
+        "Disables the routing table",
+        "Turns OSPF into BGP",
+        "Blocks all Layer 2 traffic"
+      ],
+      "explanation": "Cisco OSPF configuration guidance notes that passive interfaces advertise the network but do not form neighbors there.",
+      "keywords": [
+        "ccnp",
+        "ospf",
+        "cisco"
+      ],
+      "source": "https://www.cisco.com/en/US/docs/security/vpn5000/manager/reference/guide/ospf.html"
+    },
+    {
+      "seedId": "d373328c-b17b-4a12-9512-83252a9f4216",
+      "category": "exams",
+      "navigationKeyword1": "cisco",
+      "navigationKeyword2": "ccnp",
+      "question": "What is meant by a dual-stack network?",
+      "correctAnswer": "A network running both IPv4 and IPv6",
+      "incorrectAnswers": [
+        "A network with two DHCP servers only",
+        "A switch stack with two members",
+        "Two MPLS labels on every packet"
+      ],
+      "explanation": "Dual stack refers to concurrent operation of IPv4 and IPv6 in the same environment.",
+      "keywords": [
+        "ccnp",
+        "ipv6",
+        "cisco"
+      ],
+      "source": "https://www.rfc-editor.org/rfc/rfc4213"
+    },
+    {
+      "seedId": "bba4bb27-09da-4267-a42b-9eabf20531a7",
+      "category": "exams",
+      "navigationKeyword1": "cisco",
+      "navigationKeyword2": "ccnp",
+      "question": "What is the function of a BGP route reflector in iBGP?",
+      "correctAnswer": "It reduces the need for a full mesh of iBGP peerings",
+      "incorrectAnswers": [
+        "It replaces all eBGP peers",
+        "It performs NAT64 translation",
+        "It elects the HSRP active router"
+      ],
+      "explanation": "Route reflectors are used to scale iBGP by reducing the number of direct peerings required.",
+      "keywords": [
+        "ccnp",
+        "bgp",
+        "cisco"
+      ],
+      "source": "https://www.rfc-editor.org/rfc/rfc4456"
+    },
+    {
+      "seedId": "07b51044-be2e-4516-9b5a-d27213859520",
+      "category": "exams",
+      "navigationKeyword1": "cisco",
+      "navigationKeyword2": "ccnp",
+      "question": "What is the purpose of a VRF on a router or firewall?",
+      "correctAnswer": "To keep separate routing tables for different traffic domains",
+      "incorrectAnswers": [
+        "To compress packets before forwarding",
+        "To replace dynamic routing protocols",
+        "To convert Ethernet to fiber"
+      ],
+      "explanation": "Cisco explains that VRF allows multiple routing instances to coexist independently on the same device.",
+      "keywords": [
+        "ccnp",
+        "vrf",
+        "cisco"
+      ],
+      "source": "https://www.cisco.com/c/en/us/td/docs/net_mgmt/prime/network/3-8/reference/guide/vrf.html"
+    },
+    {
+      "seedId": "ad93eebe-0e59-4b3b-90b8-3284189d8163",
+      "category": "exams",
+      "navigationKeyword1": "cisco",
+      "navigationKeyword2": "ccnp",
+      "question": "What problem does spanning tree address in switched networks?",
+      "correctAnswer": "Layer 2 loops caused by redundant paths",
+      "incorrectAnswers": [
+        "IP fragmentation",
+        "Password reuse",
+        "DNS cache poisoning"
+      ],
+      "explanation": "Redundant switching paths can create loops; spanning tree prevents that by blocking selected paths.",
+      "keywords": [
+        "ccnp",
+        "stp",
+        "cisco"
+      ],
+      "source": "https://www.cisco.com/c/en/us/products/switches/what-is-network-switching.html"
+    },
+    {
+      "seedId": "09b0f365-aa20-4607-bb38-45c75b2626d5",
+      "category": "exams",
+      "navigationKeyword1": "cisco",
+      "navigationKeyword2": "ccnp",
+      "question": "What type of routing protocol is OSPF?",
+      "correctAnswer": "A link-state interior gateway protocol",
+      "incorrectAnswers": [
+        "A distance-vector exterior gateway protocol",
+        "A switching protocol",
+        "A transport protocol"
+      ],
+      "explanation": "Cisco describes OSPF as a link-state IGP commonly used in enterprise networks.",
+      "keywords": [
+        "ccnp",
+        "ospf",
+        "cisco"
+      ],
+      "source": "https://www.cisco.com/c/en/us/products/ios-nx-os-software/open-shortest-path-first-ospf/index.html"
+    },
+    {
+      "seedId": "2285d803-c742-4aae-a4a1-7815f0d6840f",
+      "category": "exams",
+      "navigationKeyword1": "cisco",
+      "navigationKeyword2": "ccnp",
+      "question": "Why is BGP AS_PATH useful for loop prevention?",
+      "correctAnswer": "A router can reject a route that already contains its own AS in the path",
+      "incorrectAnswers": [
+        "It encrypts the route advertisement",
+        "It replaces the next-hop attribute",
+        "It disables iBGP sessions"
+      ],
+      "explanation": "BGP uses the AS_PATH attribute to detect and avoid interdomain routing loops.",
+      "keywords": [
+        "ccnp",
+        "bgp",
+        "cisco"
+      ],
+      "source": "https://www.rfc-editor.org/rfc/rfc4271"
+    }
+  ]
+}

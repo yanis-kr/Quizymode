@@ -1,0 +1,121 @@
+{
+  "schemaVersion": 1,
+  "seedSet": "core-public-items",
+  "deltaPreviewLimit": 200,
+  "items": [
+    {
+      "seedId": "41cf3253-6f24-516d-a52f-75652391821a",
+      "category": "civics",
+      "navigationKeyword1": "government",
+      "navigationKeyword2": "bureaucracy",
+      "question": "How many executive departments does the White House describe as part of the executive branch Cabinet structure?",
+      "correctAnswer": "15",
+      "incorrectAnswers": [
+        "9",
+        "27",
+        "50"
+      ],
+      "explanation": "The president appoints the heads of 15 executive departments.",
+      "keywords": [
+        "bureaucracy",
+        "civics-government"
+      ],
+      "source": "https://whitehouse.gov/government/executive-branch/"
+    },
+    {
+      "seedId": "93f6fcb3-62b2-5419-b81d-cda375e74fc5",
+      "category": "civics",
+      "navigationKeyword1": "government",
+      "navigationKeyword2": "bureaucracy",
+      "question": "The heads of the main executive departments together are commonly called what?",
+      "correctAnswer": "the Cabinet",
+      "incorrectAnswers": [
+        "the judiciary",
+        "the caucus",
+        "the electoral college"
+      ],
+      "explanation": "The Cabinet is made up of the leaders of the major executive departments.",
+      "keywords": [
+        "bureaucracy",
+        "civics-government"
+      ],
+      "source": "https://whitehouse.gov/government/executive-branch/"
+    },
+    {
+      "seedId": "80ef091b-4e9a-5f83-b774-120cd8568465",
+      "category": "civics",
+      "navigationKeyword1": "government",
+      "navigationKeyword2": "bureaucracy",
+      "question": "What do federal agencies mainly do?",
+      "correctAnswer": "carry out and administer laws and programs",
+      "incorrectAnswers": [
+        "decide every court case",
+        "rewrite the Constitution",
+        "elect members of Congress"
+      ],
+      "explanation": "Agencies help implement laws and manage the daily work of government.",
+      "keywords": [
+        "bureaucracy",
+        "civics-government"
+      ],
+      "source": "https://whitehouse.gov/government/executive-branch/"
+    },
+    {
+      "seedId": "974419b7-6b93-5e1e-9a97-03dd27a964a9",
+      "category": "civics",
+      "navigationKeyword1": "government",
+      "navigationKeyword2": "bureaucracy",
+      "question": "What is an independent agency?",
+      "correctAnswer": "a federal agency outside the Cabinet departments",
+      "incorrectAnswers": [
+        "a private business hired by Congress",
+        "a state court with federal powers",
+        "a temporary campaign committee"
+      ],
+      "explanation": "Independent agencies are federal bodies that are not organized as Cabinet departments.",
+      "keywords": [
+        "bureaucracy",
+        "civics-government"
+      ],
+      "source": "https://www.usa.gov/agency-index"
+    },
+    {
+      "seedId": "6aaa59a9-075c-5a76-a2fa-ec2c028b6b62",
+      "category": "civics",
+      "navigationKeyword1": "government",
+      "navigationKeyword2": "bureaucracy",
+      "question": "What is one reason governments use agencies and departments?",
+      "correctAnswer": "to handle specialized work on a large scale",
+      "incorrectAnswers": [
+        "to replace all elected officials",
+        "to avoid all laws",
+        "to remove courts from government"
+      ],
+      "explanation": "Modern governments rely on specialized offices to manage complex programs and services.",
+      "keywords": [
+        "bureaucracy",
+        "civics-government"
+      ],
+      "source": "https://www.usa.gov/agencies"
+    },
+    {
+      "seedId": "618dff6b-b5d9-541e-a2fe-39793815801b",
+      "category": "civics",
+      "navigationKeyword1": "government",
+      "navigationKeyword2": "bureaucracy",
+      "question": "Which branch contains most federal agencies and departments?",
+      "correctAnswer": "the executive branch",
+      "incorrectAnswers": [
+        "the judicial branch",
+        "the legislative branch",
+        "state government only"
+      ],
+      "explanation": "Most agencies and departments sit within the executive branch and help enforce federal law.",
+      "keywords": [
+        "bureaucracy",
+        "civics-government"
+      ],
+      "source": "https://whitehouse.gov/government/executive-branch/"
+    }
+  ]
+}

@@ -13,7 +13,7 @@ Task:
 
 Create or continue seed files for the `business` category in:
 
-- `data/bulk-seed/business`
+- `data/seed-source/items/business`
 
 Filename format:
 

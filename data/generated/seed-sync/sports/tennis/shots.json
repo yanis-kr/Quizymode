@@ -1,0 +1,207 @@
+{
+  "schemaVersion": 1,
+  "seedSet": "core-public-items",
+  "deltaPreviewLimit": 200,
+  "items": [
+    {
+      "seedId": "a5b3821a-4ee4-5a74-a7d7-d939b9051c56",
+      "category": "sports",
+      "navigationKeyword1": "tennis",
+      "navigationKeyword2": "shots",
+      "question": "What is a stroke hit before the ball bounces, usually close to the net?",
+      "correctAnswer": "Volley",
+      "incorrectAnswers": [
+        "Lob",
+        "Slice",
+        "Drop shot"
+      ],
+      "explanation": "A volley is struck out of the air before the bounce.",
+      "keywords": [
+        "tennis",
+        "shots",
+        "volley"
+      ],
+      "source": "https://www.britannica.com/sports/tennis"
+    },
+    {
+      "seedId": "a767d5ab-700f-5f52-bbc4-cfb484a3bb0b",
+      "category": "sports",
+      "navigationKeyword1": "tennis",
+      "navigationKeyword2": "shots",
+      "question": "What is an ace in tennis?",
+      "correctAnswer": "A serve that lands in and is not touched by the receiver",
+      "incorrectAnswers": [
+        "A rally won with a lob",
+        "A return winner",
+        "A double fault"
+      ],
+      "explanation": "An ace is a clean service winner.",
+      "keywords": [
+        "tennis",
+        "shots",
+        "ace"
+      ],
+      "source": "https://www.itftennis.com/en/about-us/governance/rules-and-regulations/"
+    },
+    {
+      "seedId": "ad5048b0-925f-53c5-905d-8d3ea3c89304",
+      "category": "sports",
+      "navigationKeyword1": "tennis",
+      "navigationKeyword2": "shots",
+      "question": "What is the backhand?",
+      "correctAnswer": "A groundstroke hit on the side opposite the forehand",
+      "incorrectAnswers": [
+        "An overhead serve",
+        "A drop volley only",
+        "A net-cord shot"
+      ],
+      "explanation": "A backhand is struck on the non-forehand side.",
+      "keywords": [
+        "tennis",
+        "shots",
+        "backhand"
+      ],
+      "source": "https://www.britannica.com/sports/tennis"
+    },
+    {
+      "seedId": "f79d8289-24f8-5cea-a5b3-065c69761489",
+      "category": "sports",
+      "navigationKeyword1": "tennis",
+      "navigationKeyword2": "shots",
+      "question": "What is the forehand?",
+      "correctAnswer": "A groundstroke hit on the player's dominant side",
+      "incorrectAnswers": [
+        "A serve hit underhand only",
+        "A volley hit with both hands only",
+        "A shot that must bounce twice"
+      ],
+      "explanation": "A forehand is normally played from the player's natural side.",
+      "keywords": [
+        "tennis",
+        "shots",
+        "forehand"
+      ],
+      "source": "https://www.britannica.com/sports/tennis"
+    },
+    {
+      "seedId": "cedfbf2b-1edc-550d-816f-f8863de60a74",
+      "category": "sports",
+      "navigationKeyword1": "tennis",
+      "navigationKeyword2": "shots",
+      "question": "What kind of spin makes the ball dip and then jump higher after the bounce?",
+      "correctAnswer": "Topspin",
+      "incorrectAnswers": [
+        "Backspin only",
+        "Sidespin only",
+        "No spin"
+      ],
+      "explanation": "Topspin helps the ball drop into court and kick up after landing.",
+      "keywords": [
+        "tennis",
+        "shots",
+        "topspin"
+      ],
+      "source": "https://www.britannica.com/sports/tennis"
+    },
+    {
+      "seedId": "cfdb40a6-907c-585e-90c0-5051b3e6e0e9",
+      "category": "sports",
+      "navigationKeyword1": "tennis",
+      "navigationKeyword2": "shots",
+      "question": "What overhead attacking shot is often used to finish a point?",
+      "correctAnswer": "Smash",
+      "incorrectAnswers": [
+        "Drop shot",
+        "Chip",
+        "Block return"
+      ],
+      "explanation": "A smash is an overhead shot played aggressively.",
+      "keywords": [
+        "tennis",
+        "shots",
+        "smash"
+      ],
+      "source": "https://www.britannica.com/sports/tennis"
+    },
+    {
+      "seedId": "3454fc82-fd54-539d-b0bd-0677b6e10a37",
+      "category": "sports",
+      "navigationKeyword1": "tennis",
+      "navigationKeyword2": "shots",
+      "question": "What shot is played immediately after the ball bounces, often from a low position near the net?",
+      "correctAnswer": "Half-volley",
+      "incorrectAnswers": [
+        "Lob",
+        "Smash",
+        "Drop shot"
+      ],
+      "explanation": "A half-volley is struck right after the bounce.",
+      "keywords": [
+        "tennis",
+        "shots",
+        "half-volley"
+      ],
+      "source": "https://www.britannica.com/sports/tennis"
+    },
+    {
+      "seedId": "2bc357f4-a67c-50a1-95db-a35aedc93799",
+      "category": "sports",
+      "navigationKeyword1": "tennis",
+      "navigationKeyword2": "shots",
+      "question": "What shot sends the ball high over an opponent at the net?",
+      "correctAnswer": "Lob",
+      "incorrectAnswers": [
+        "Smash",
+        "Drive volley",
+        "Half-volley"
+      ],
+      "explanation": "A lob is used to pass an opponent positioned near the net.",
+      "keywords": [
+        "tennis",
+        "shots",
+        "lob"
+      ],
+      "source": "https://www.britannica.com/sports/tennis"
+    },
+    {
+      "seedId": "59e2e782-4399-5464-a10d-24d22b38eabc",
+      "category": "sports",
+      "navigationKeyword1": "tennis",
+      "navigationKeyword2": "shots",
+      "question": "What shot uses underspin so the ball stays lower after the bounce?",
+      "correctAnswer": "Slice",
+      "incorrectAnswers": [
+        "Topspin",
+        "Smash",
+        "Flat serve"
+      ],
+      "explanation": "A slice uses backspin or underspin to keep the bounce low.",
+      "keywords": [
+        "tennis",
+        "shots",
+        "slice"
+      ],
+      "source": "https://www.britannica.com/sports/tennis"
+    },
+    {
+      "seedId": "479b93c0-1c09-53d0-9946-2683672b433f",
+      "category": "sports",
+      "navigationKeyword1": "tennis",
+      "navigationKeyword2": "shots",
+      "question": "What soft shot is designed to land just over the net and die quickly?",
+      "correctAnswer": "Drop shot",
+      "incorrectAnswers": [
+        "Lob",
+        "Topspin drive",
+        "Kick serve"
+      ],
+      "explanation": "A drop shot uses touch to bring the opponent forward.",
+      "keywords": [
+        "tennis",
+        "shots",
+        "drop-shot"
+      ],
+      "source": "https://www.britannica.com/sports/tennis"
+    }
+  ]
+}

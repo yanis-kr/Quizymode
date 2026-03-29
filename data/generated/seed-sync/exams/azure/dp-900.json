@@ -1,0 +1,207 @@
+{
+  "schemaVersion": 1,
+  "seedSet": "core-public-items",
+  "deltaPreviewLimit": 200,
+  "items": [
+    {
+      "seedId": "c45d525b-91e8-40a2-9d49-1f6d7103f50e",
+      "category": "exams",
+      "navigationKeyword1": "azure",
+      "navigationKeyword2": "dp-900",
+      "question": "What kind of data does Azure Cosmos DB commonly store?",
+      "correctAnswer": "Semi-structured JSON data",
+      "incorrectAnswers": [
+        "Only DNS zone files",
+        "Only fixed-width binary logs",
+        "Only spreadsheet formulas"
+      ],
+      "explanation": "Azure Cosmos DB stores semi-structured JSON data and supports multiple operational data models.",
+      "keywords": [
+        "dp-900",
+        "azure-data",
+        "data-services"
+      ],
+      "source": "https://learn.microsoft.com/en-us/azure/cosmos-db/overview"
+    },
+    {
+      "seedId": "e0d06a14-1fcd-45d8-b1bd-234e2ced2ab3",
+      "category": "exams",
+      "navigationKeyword1": "azure",
+      "navigationKeyword2": "dp-900",
+      "question": "Which Azure data integration concept groups activities together for execution?",
+      "correctAnswer": "A pipeline",
+      "incorrectAnswers": [
+        "A vault",
+        "A scale set",
+        "A zone"
+      ],
+      "explanation": "In Azure Data Factory, a pipeline is a logical grouping of activities that perform a task together.",
+      "keywords": [
+        "dp-900",
+        "azure-data",
+        "data-services"
+      ],
+      "source": "https://learn.microsoft.com/en-us/azure/data-factory/introduction"
+    },
+    {
+      "seedId": "0de28316-89a2-4b05-9d54-783124b78168",
+      "category": "exams",
+      "navigationKeyword1": "azure",
+      "navigationKeyword2": "dp-900",
+      "question": "Which Azure product family includes Azure SQL Database?",
+      "correctAnswer": "Azure SQL",
+      "incorrectAnswers": [
+        "Azure Monitor",
+        "Azure Backup",
+        "Microsoft Entra ID"
+      ],
+      "explanation": "Azure SQL is the family of managed SQL products in Azure, including Azure SQL Database.",
+      "keywords": [
+        "dp-900",
+        "azure-data",
+        "data-services"
+      ],
+      "source": "https://learn.microsoft.com/en-us/azure/azure-sql/azure-sql-iaas-vs-paas-what-is-overview?view=azuresql-db"
+    },
+    {
+      "seedId": "d722ec33-9923-47cf-9587-f2c85e80b627",
+      "category": "exams",
+      "navigationKeyword1": "azure",
+      "navigationKeyword2": "dp-900",
+      "question": "Which Azure service is Microsoft's object storage solution for unstructured data?",
+      "correctAnswer": "Azure Blob Storage",
+      "incorrectAnswers": [
+        "Azure Virtual Network",
+        "Azure Load Balancer",
+        "Azure Key Vault"
+      ],
+      "explanation": "Azure Blob Storage is optimized for storing large amounts of unstructured data.",
+      "keywords": [
+        "dp-900",
+        "azure-data",
+        "data-services"
+      ],
+      "source": "https://learn.microsoft.com/en-us/azure/storage/blobs/storage-blobs-introduction"
+    },
+    {
+      "seedId": "84bab7ea-a828-41e1-8e24-18d60adcfddf",
+      "category": "exams",
+      "navigationKeyword1": "azure",
+      "navigationKeyword2": "dp-900",
+      "question": "Which Azure service is a fully managed NoSQL and vector database?",
+      "correctAnswer": "Azure Cosmos DB",
+      "incorrectAnswers": [
+        "Azure Backup",
+        "Azure Files",
+        "Azure Load Balancer"
+      ],
+      "explanation": "Azure Cosmos DB is Microsoft's fully managed NoSQL and vector database.",
+      "keywords": [
+        "dp-900",
+        "azure-data",
+        "data-services"
+      ],
+      "source": "https://learn.microsoft.com/en-us/azure/cosmos-db/overview"
+    },
+    {
+      "seedId": "014fc505-8aea-4cfa-b810-c8c4f754ccda",
+      "category": "exams",
+      "navigationKeyword1": "azure",
+      "navigationKeyword2": "dp-900",
+      "question": "Which Azure service is a unified analytics platform for data, analytics, and AI solutions?",
+      "correctAnswer": "Azure Databricks",
+      "incorrectAnswers": [
+        "Azure Backup",
+        "Azure Queue Storage",
+        "Azure Load Balancer"
+      ],
+      "explanation": "Azure Databricks is a unified, open analytics platform built for enterprise-scale data workloads.",
+      "keywords": [
+        "dp-900",
+        "azure-data",
+        "data-services"
+      ],
+      "source": "https://learn.microsoft.com/en-us/azure/databricks/introduction/"
+    },
+    {
+      "seedId": "be4f1f49-fc54-4fa9-82f0-4ad0ec97704b",
+      "category": "exams",
+      "navigationKeyword1": "azure",
+      "navigationKeyword2": "dp-900",
+      "question": "Which Azure service is an enterprise analytics service that accelerates time to insight?",
+      "correctAnswer": "Azure Synapse Analytics",
+      "incorrectAnswers": [
+        "Azure Key Vault",
+        "Azure Virtual Network",
+        "Azure Site Recovery"
+      ],
+      "explanation": "Azure Synapse Analytics combines data integration, enterprise data warehousing, and big data analytics.",
+      "keywords": [
+        "dp-900",
+        "azure-data",
+        "data-services"
+      ],
+      "source": "https://learn.microsoft.com/en-us/azure/synapse-analytics/overview-what-is"
+    },
+    {
+      "seedId": "7fe95d56-03df-49f2-a5d9-1a8be6b98024",
+      "category": "exams",
+      "navigationKeyword1": "azure",
+      "navigationKeyword2": "dp-900",
+      "question": "Which Azure service is used to create data-driven workflows for moving and transforming data?",
+      "correctAnswer": "Azure Data Factory",
+      "incorrectAnswers": [
+        "Azure Load Balancer",
+        "Azure Key Vault",
+        "Azure Files"
+      ],
+      "explanation": "Azure Data Factory is a cloud data integration service for ETL and data movement workflows.",
+      "keywords": [
+        "dp-900",
+        "azure-data",
+        "data-services"
+      ],
+      "source": "https://learn.microsoft.com/en-us/azure/data-factory/introduction"
+    },
+    {
+      "seedId": "b1970c3a-f87d-46e5-9489-4aec474bd457",
+      "category": "exams",
+      "navigationKeyword1": "azure",
+      "navigationKeyword2": "dp-900",
+      "question": "Which Azure service provides a scalable cloud-based solution for data lake storage?",
+      "correctAnswer": "Azure Data Lake Storage Gen2",
+      "incorrectAnswers": [
+        "Azure Load Balancer",
+        "Azure Site Recovery",
+        "Azure App Service"
+      ],
+      "explanation": "Azure Data Lake Storage Gen2 is designed for data lake storage in analytical workloads.",
+      "keywords": [
+        "dp-900",
+        "azure-data",
+        "data-services"
+      ],
+      "source": "https://learn.microsoft.com/en-us/training/modules/introduction-to-azure-data-lake-storage/"
+    },
+    {
+      "seedId": "7d39c92b-e155-4255-bf6e-99e2fed71dfa",
+      "category": "exams",
+      "navigationKeyword1": "azure",
+      "navigationKeyword2": "dp-900",
+      "question": "Which Microsoft product turns unrelated data sources into interactive insights and visualizations?",
+      "correctAnswer": "Power BI",
+      "incorrectAnswers": [
+        "Azure Files",
+        "Azure Site Recovery",
+        "Azure Firewall"
+      ],
+      "explanation": "Power BI connects to data sources, models data, and creates interactive reports and dashboards.",
+      "keywords": [
+        "dp-900",
+        "azure-data",
+        "data-services"
+      ],
+      "source": "https://learn.microsoft.com/en-us/power-bi/fundamentals/power-bi-overview"
+    }
+  ]
+}

@@ -1,0 +1,207 @@
+{
+  "schemaVersion": 1,
+  "seedSet": "core-public-items",
+  "deltaPreviewLimit": 200,
+  "items": [
+    {
+      "seedId": "0437e155-893f-5bf4-8694-51c311be0b60",
+      "category": "sports",
+      "navigationKeyword1": "golf",
+      "navigationKeyword2": "rules",
+      "question": "In stroke play, what wins the competition?",
+      "correctAnswer": "The lowest total score",
+      "incorrectAnswers": [
+        "The most birdies only",
+        "The fewest putts only",
+        "The longest drive"
+      ],
+      "explanation": "Stroke play is decided by total strokes over the round or tournament.",
+      "keywords": [
+        "golf",
+        "rules",
+        "stroke-play"
+      ],
+      "source": "https://www.usga.org/content/usga/home-page/rules-hub.html"
+    },
+    {
+      "seedId": "ff1daa64-a9eb-533f-b656-6c5ae650a57f",
+      "category": "sports",
+      "navigationKeyword1": "golf",
+      "navigationKeyword2": "rules",
+      "question": "What area is the closely mown target area around the hole called?",
+      "correctAnswer": "The green",
+      "incorrectAnswers": [
+        "The teeing area",
+        "The rough",
+        "The penalty area"
+      ],
+      "explanation": "Players finish each hole on the green.",
+      "keywords": [
+        "golf",
+        "rules",
+        "green"
+      ],
+      "source": "https://www.usga.org/content/usga/home-page/rules-hub.html"
+    },
+    {
+      "seedId": "32ad0ea2-43c3-528e-a1cd-c3aab4aa36a9",
+      "category": "sports",
+      "navigationKeyword1": "golf",
+      "navigationKeyword2": "rules",
+      "question": "What is a hole-in-one?",
+      "correctAnswer": "A tee shot holed in one stroke",
+      "incorrectAnswers": [
+        "A double eagle on a par 5",
+        "A one-putt after a drive",
+        "A conceded putt"
+      ],
+      "explanation": "A hole-in-one means the ball goes in from the tee in one shot.",
+      "keywords": [
+        "golf",
+        "rules",
+        "ace"
+      ],
+      "source": "https://www.usga.org/content/usga/home-page/rules-hub.html"
+    },
+    {
+      "seedId": "847a9a1f-9b87-5d92-9dda-1caa620de856",
+      "category": "sports",
+      "navigationKeyword1": "golf",
+      "navigationKeyword2": "rules",
+      "question": "What is match play decided by?",
+      "correctAnswer": "Holes won rather than total strokes",
+      "incorrectAnswers": [
+        "Total strokes only",
+        "Longest drive",
+        "Putting average"
+      ],
+      "explanation": "Match play scores each hole as a separate contest.",
+      "keywords": [
+        "golf",
+        "rules",
+        "match-play"
+      ],
+      "source": "https://www.usga.org/content/usga/home-page/rules-hub.html"
+    },
+    {
+      "seedId": "b843093b-028d-5821-9c4a-df1abd304808",
+      "category": "sports",
+      "navigationKeyword1": "golf",
+      "navigationKeyword2": "rules",
+      "question": "What is the term for a water or red/yellow-marked area that carries special relief rules?",
+      "correctAnswer": "Penalty area",
+      "incorrectAnswers": [
+        "Bunker",
+        "Out of bounds",
+        "Practice ground"
+      ],
+      "explanation": "The rules use the term penalty area for certain marked hazards.",
+      "keywords": [
+        "golf",
+        "rules",
+        "penalty-area"
+      ],
+      "source": "https://www.usga.org/content/usga/home-page/rules-hub.html"
+    },
+    {
+      "seedId": "99089f59-4812-5a28-bae3-a672b2bb1f7a",
+      "category": "sports",
+      "navigationKeyword1": "golf",
+      "navigationKeyword2": "rules",
+      "question": "What is the usual score called when a player takes exactly the expected number of strokes on a hole?",
+      "correctAnswer": "Par",
+      "incorrectAnswers": [
+        "Bogey",
+        "Birdie",
+        "Ace"
+      ],
+      "explanation": "Par is the target score set for a hole.",
+      "keywords": [
+        "golf",
+        "rules",
+        "par"
+      ],
+      "source": "https://www.usga.org/content/usga/home-page/rules-hub.html"
+    },
+    {
+      "seedId": "e22f6306-2e85-5d2d-a1e1-d6d25d191118",
+      "category": "sports",
+      "navigationKeyword1": "golf",
+      "navigationKeyword2": "rules",
+      "question": "What sandy area near a green or fairway is designed as a hazard called?",
+      "correctAnswer": "Bunker",
+      "incorrectAnswers": [
+        "Penalty area",
+        "Apron",
+        "Tee box"
+      ],
+      "explanation": "Bunkers are prepared sandy areas with their own rules.",
+      "keywords": [
+        "golf",
+        "rules",
+        "bunker"
+      ],
+      "source": "https://www.usga.org/content/usga/home-page/rules-hub.html"
+    },
+    {
+      "seedId": "be5211d3-eb80-5a12-9c13-a4ce689a4db6",
+      "category": "sports",
+      "navigationKeyword1": "golf",
+      "navigationKeyword2": "rules",
+      "question": "What score is one stroke over par on a hole called?",
+      "correctAnswer": "Bogey",
+      "incorrectAnswers": [
+        "Birdie",
+        "Eagle",
+        "Albatross"
+      ],
+      "explanation": "A bogey is one over par on a hole.",
+      "keywords": [
+        "golf",
+        "rules",
+        "bogey"
+      ],
+      "source": "https://www.usga.org/content/usga/home-page/rules-hub.html"
+    },
+    {
+      "seedId": "26266a1b-bdf5-5070-8319-49366b805f92",
+      "category": "sports",
+      "navigationKeyword1": "golf",
+      "navigationKeyword2": "rules",
+      "question": "What score is one stroke under par on a hole called?",
+      "correctAnswer": "Birdie",
+      "incorrectAnswers": [
+        "Bogey",
+        "Eagle",
+        "Par save"
+      ],
+      "explanation": "A birdie is one under par on a single hole.",
+      "keywords": [
+        "golf",
+        "rules",
+        "birdie"
+      ],
+      "source": "https://www.usga.org/content/usga/home-page/rules-hub.html"
+    },
+    {
+      "seedId": "e4dd8c37-0228-54f6-bc6e-2f50149c355a",
+      "category": "sports",
+      "navigationKeyword1": "golf",
+      "navigationKeyword2": "rules",
+      "question": "What score is two strokes under par on a hole called?",
+      "correctAnswer": "Eagle",
+      "incorrectAnswers": [
+        "Birdie",
+        "Double bogey",
+        "Par"
+      ],
+      "explanation": "An eagle is two under par on a hole.",
+      "keywords": [
+        "golf",
+        "rules",
+        "eagle"
+      ],
+      "source": "https://www.usga.org/content/usga/home-page/rules-hub.html"
+    }
+  ]
+}

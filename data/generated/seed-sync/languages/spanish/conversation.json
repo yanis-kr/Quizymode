@@ -1,0 +1,127 @@
+{
+  "schemaVersion": 1,
+  "seedSet": "core-public-items",
+  "deltaPreviewLimit": 200,
+  "items": [
+    {
+      "seedId": "68b75e50-d191-5834-893e-b71da0d5e9db",
+      "category": "languages",
+      "navigationKeyword1": "spanish",
+      "navigationKeyword2": "conversation",
+      "question": "Which phrase is a common morning greeting?",
+      "correctAnswer": "Buenos d\u00edas.",
+      "incorrectAnswers": [
+        "Buenas noches.",
+        "Hasta luego.",
+        "Mucho gusto."
+      ],
+      "explanation": "\"Buenos d\u00edas\" is the usual greeting for much of the morning and early day.",
+      "keywords": [
+        "good-morning",
+        "greetings",
+        "spanish-conversation"
+      ],
+      "source": "https://dictionary.cambridge.org/dictionary/spanish-english/buenos-d%C3%ADas"
+    },
+    {
+      "seedId": "ef4c248a-70b9-5ba5-8678-a22f122f3388",
+      "category": "languages",
+      "navigationKeyword1": "spanish",
+      "navigationKeyword2": "conversation",
+      "question": "Which phrase is a simple way to say \"I am sorry\" after a small mistake?",
+      "correctAnswer": "Lo siento.",
+      "incorrectAnswers": [
+        "De nada.",
+        "Por supuesto.",
+        "Felicitaciones."
+      ],
+      "explanation": "\"Lo siento\" is a common apology for small everyday mistakes.",
+      "keywords": [
+        "sorry",
+        "apology",
+        "spanish-conversation"
+      ],
+      "source": "https://dictionary.cambridge.org/dictionary/spanish-english/lo-siento"
+    },
+    {
+      "seedId": "0f6b0afa-799b-530d-93d0-a62f599a2c9d",
+      "category": "languages",
+      "navigationKeyword1": "spanish",
+      "navigationKeyword2": "conversation",
+      "question": "Which phrase means \"Excuse me\" when you need to get past someone politely?",
+      "correctAnswer": "Con permiso.",
+      "incorrectAnswers": [
+        "Encantado.",
+        "Feliz cumplea\u00f1os.",
+        "Buen provecho."
+      ],
+      "explanation": "\"Con permiso\" is a polite way to say excuse me in many passing situations.",
+      "keywords": [
+        "excuse-me",
+        "politeness",
+        "spanish-conversation"
+      ],
+      "source": "https://dictionary.cambridge.org/dictionary/spanish-english/con-permiso"
+    },
+    {
+      "seedId": "b477ac1a-cbe7-5509-95b2-27d017788263",
+      "category": "languages",
+      "navigationKeyword1": "spanish",
+      "navigationKeyword2": "conversation",
+      "question": "Which phrase politely asks someone to repeat what they said?",
+      "correctAnswer": "\u00bfPuede repetir, por favor?",
+      "incorrectAnswers": [
+        "No me gusta.",
+        "Estoy cansado.",
+        "Hace mucho calor."
+      ],
+      "explanation": "\"Repetir\" means to repeat; adding \"por favor\" keeps the request polite.",
+      "keywords": [
+        "repeat",
+        "clarification",
+        "spanish-conversation"
+      ],
+      "source": "https://www.spanishdict.com/translate/repetir"
+    },
+    {
+      "seedId": "958f636c-dff0-51ab-bc32-f4b8b3a54030",
+      "category": "languages",
+      "navigationKeyword1": "spanish",
+      "navigationKeyword2": "conversation",
+      "question": "Which question asks \"How are you?\" in an informal way?",
+      "correctAnswer": "\u00bfC\u00f3mo est\u00e1s?",
+      "incorrectAnswers": [
+        "\u00bfC\u00f3mo se llama usted?",
+        "\u00bfDe d\u00f3nde es?",
+        "\u00bfCu\u00e1ntos a\u00f1os tiene?"
+      ],
+      "explanation": "\"\u00bfC\u00f3mo est\u00e1s?\" uses the informal \"t\u00fa\" form to ask how someone is.",
+      "keywords": [
+        "how-are-you",
+        "greetings",
+        "spanish-conversation"
+      ],
+      "source": "https://www.collinsdictionary.com/dictionary/spanish-english/c%C3%B3mo-est%C3%A1s"
+    },
+    {
+      "seedId": "7f489bb0-777a-5d3b-9da0-2932a76e361b",
+      "category": "languages",
+      "navigationKeyword1": "spanish",
+      "navigationKeyword2": "conversation",
+      "question": "Which reply is a simple way to say \"Nice to meet you\" after an introduction?",
+      "correctAnswer": "Mucho gusto.",
+      "incorrectAnswers": [
+        "Hasta ma\u00f1ana.",
+        "Lo siento.",
+        "Tengo prisa."
+      ],
+      "explanation": "\"Mucho gusto\" is a standard polite phrase when you meet someone.",
+      "keywords": [
+        "nice-to-meet-you",
+        "introductions",
+        "spanish-conversation"
+      ],
+      "source": "https://www.collinsdictionary.com/dictionary/spanish-english/mucho-gusto"
+    }
+  ]
+}

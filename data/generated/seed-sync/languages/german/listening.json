@@ -1,0 +1,121 @@
+{
+  "schemaVersion": 1,
+  "seedSet": "core-public-items",
+  "deltaPreviewLimit": 200,
+  "items": [
+    {
+      "seedId": "92ea6551-d595-53a4-bbae-b63f23acaaeb",
+      "category": "languages",
+      "navigationKeyword1": "german",
+      "navigationKeyword2": "listening",
+      "question": "'Bett' and 'Beet' differ by vowel length. What does 'Bett' mean?",
+      "correctAnswer": "a bed for sleeping",
+      "incorrectAnswers": [
+        "a garden plot (that is closer to 'Beet')",
+        "a boat",
+        "a book"
+      ],
+      "explanation": "Long and short vowels can change meaning; 'Bett' is the everyday word for a sleeping bed.",
+      "keywords": [
+        "minimal-pair",
+        "german-listening"
+      ],
+      "source": "https://dictionary.cambridge.org/dictionary/german-english/bett"
+    },
+    {
+      "seedId": "f82b8691-4c0d-5631-9eb4-21fcc5b8519d",
+      "category": "languages",
+      "navigationKeyword1": "german",
+      "navigationKeyword2": "listening",
+      "question": "At the ends of words like 'Tag' and 'Abend', how do many German consonants often sound?",
+      "correctAnswer": "voiceless (like t or p) in many accents",
+      "incorrectAnswers": [
+        "always like English z",
+        "always silent",
+        "always doubled"
+      ],
+      "explanation": "Final devoicing is common, so 'Tag' may sound closer to 'tak' for learners listening for spelling sounds.",
+      "keywords": [
+        "pronunciation",
+        "german-listening"
+      ],
+      "source": "https://dictionary.cambridge.org/grammar/british-grammar/german"
+    },
+    {
+      "seedId": "0eeb9ecc-e8d6-56c3-abb1-86ce4d49b008",
+      "category": "languages",
+      "navigationKeyword1": "german",
+      "navigationKeyword2": "listening",
+      "question": "In many German compound nouns, which syllable is often stressed?",
+      "correctAnswer": "the first part",
+      "incorrectAnswers": [
+        "always the last syllable",
+        "always the middle syllable",
+        "stress is random"
+      ],
+      "explanation": "German compounds often carry main stress on the first element, which helps you parse long words when listening.",
+      "keywords": [
+        "stress",
+        "german-listening"
+      ],
+      "source": "https://www.goethe.de/en/spr/englisch.html"
+    },
+    {
+      "seedId": "bbb2e295-a371-53fa-a3d0-96d4b618f686",
+      "category": "languages",
+      "navigationKeyword1": "german",
+      "navigationKeyword2": "listening",
+      "question": "The polite 'Sie' (you) and 'sie' (they) can sound the same. What usually tells them apart?",
+      "correctAnswer": "context and verb forms",
+      "incorrectAnswers": [
+        "they always sound different",
+        "spelling in speech",
+        "only the speaker's mood"
+      ],
+      "explanation": "They are homophones in many contexts, so listeners rely on meaning and verb agreement.",
+      "keywords": [
+        "homophones",
+        "german-listening"
+      ],
+      "source": "https://www.deutsch.info/en/pronunciation/"
+    },
+    {
+      "seedId": "c55d4d67-31fb-5a29-8e63-4121bae378da",
+      "category": "languages",
+      "navigationKeyword1": "german",
+      "navigationKeyword2": "listening",
+      "question": "What does 'dreizehn' mean when you hear a number?",
+      "correctAnswer": "13",
+      "incorrectAnswers": [
+        "30",
+        "3",
+        "23"
+      ],
+      "explanation": "'Dreizehn' builds 'drei' plus 'zehn', meaning thirteen.",
+      "keywords": [
+        "numbers",
+        "german-listening"
+      ],
+      "source": "https://dictionary.cambridge.org/dictionary/german-english/dreizehn"
+    },
+    {
+      "seedId": "23581dde-bab1-50ca-8591-b6b89c4a6aa0",
+      "category": "languages",
+      "navigationKeyword1": "german",
+      "navigationKeyword2": "listening",
+      "question": "Why can separable verbs be tricky in spoken German?",
+      "correctAnswer": "the prefix may be heard at the end of the clause",
+      "incorrectAnswers": [
+        "they never split in speech",
+        "the verb is always silent",
+        "prefixes are never used"
+      ],
+      "explanation": "In main clauses, the spoken line may end with a separable prefix, for example 'Ich stehe fr\u00fch auf.'",
+      "keywords": [
+        "separable-verbs",
+        "german-listening"
+      ],
+      "source": "https://www.duden.de/sprachwissen/sprachratgeber/Trennbare_und_untrennbare_Verben"
+    }
+  ]
+}

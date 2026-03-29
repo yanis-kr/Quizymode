@@ -1,0 +1,121 @@
+{
+  "schemaVersion": 1,
+  "seedSet": "core-public-items",
+  "deltaPreviewLimit": 200,
+  "items": [
+    {
+      "seedId": "05b93417-76a9-566e-b58d-3b119f49303f",
+      "category": "tech",
+      "navigationKeyword1": "web-dev",
+      "navigationKeyword2": "react",
+      "question": "Data in React typically flows from parent components to children through what?",
+      "correctAnswer": "Props",
+      "incorrectAnswers": [
+        "Global variables only",
+        "CSS classes only",
+        "HTTP cookies only"
+      ],
+      "explanation": "Props are read-only inputs to child components; lifting state up shares data through the tree.",
+      "keywords": [
+        "react",
+        "props"
+      ],
+      "source": "https://developer.mozilla.org/en-US/docs/Learn/Tools_and_testing/Client-side_JavaScript_frameworks/React_getting_started"
+    },
+    {
+      "seedId": "708e0e00-e197-5f20-878a-7cc7bd7e70ed",
+      "category": "tech",
+      "navigationKeyword1": "web-dev",
+      "navigationKeyword2": "react",
+      "question": "React applies updates by comparing the new element tree with the previous one in a process called what?",
+      "correctAnswer": "Reconciliation",
+      "incorrectAnswers": [
+        "Hydration only",
+        "Minification",
+        "Tree shaking"
+      ],
+      "explanation": "The reconciler computes the smallest set of DOM changes instead of rewriting the whole tree blindly.",
+      "keywords": [
+        "react",
+        "rendering"
+      ],
+      "source": "https://react.dev/learn/render-and-commit"
+    },
+    {
+      "seedId": "cd7202c3-8add-5e08-8b74-667d08833aa6",
+      "category": "tech",
+      "navigationKeyword1": "web-dev",
+      "navigationKeyword2": "react",
+      "question": "Rules of Hooks require hooks to be called at the top level so that what stays consistent across renders?",
+      "correctAnswer": "The order hook state is associated with",
+      "incorrectAnswers": [
+        "The bundle file size",
+        "The CSS specificity",
+        "The TCP port"
+      ],
+      "explanation": "React relies on call order to match hook state; calling hooks inside loops or conditions breaks that mapping.",
+      "keywords": [
+        "react",
+        "hooks"
+      ],
+      "source": "https://react.dev/reference/rules/rules-of-hooks"
+    },
+    {
+      "seedId": "bbdb68de-4888-5e77-b3b7-f7df3d17375f",
+      "category": "tech",
+      "navigationKeyword1": "web-dev",
+      "navigationKeyword2": "react",
+      "question": "The React repository on GitHub is maintained under which organization?",
+      "correctAnswer": "facebook (Meta) as `facebook/react`",
+      "incorrectAnswers": [
+        "google/angular",
+        "vuejs/core",
+        "rust-lang/rust"
+      ],
+      "explanation": "The open-source React project lives under the `facebook` organization on GitHub alongside related packages.",
+      "keywords": [
+        "react",
+        "ecosystem"
+      ],
+      "source": "https://github.com/facebook/react"
+    },
+    {
+      "seedId": "dd6addc6-7bf8-594c-af86-07706fcfdf23",
+      "category": "tech",
+      "navigationKeyword1": "web-dev",
+      "navigationKeyword2": "react",
+      "question": "What does the `useState` hook return?",
+      "correctAnswer": "The current state value and a function to update it",
+      "incorrectAnswers": [
+        "Only a ref object",
+        "Only a memoized callback",
+        "Only a cleanup function"
+      ],
+      "explanation": "`const [state, setState] = useState(initial)` pairs readable state with an updater for re-renders.",
+      "keywords": [
+        "react",
+        "hooks"
+      ],
+      "source": "https://react.dev/reference/react/useState"
+    },
+    {
+      "seedId": "537c9566-86f2-5f4e-b4ed-60665832d456",
+      "category": "tech",
+      "navigationKeyword1": "web-dev",
+      "navigationKeyword2": "react",
+      "question": "Why should list items have stable `key` props?",
+      "correctAnswer": "So React can match elements across updates and preserve component state correctly",
+      "incorrectAnswers": [
+        "To satisfy HTML validators only",
+        "To improve CSS class names",
+        "To encrypt props"
+      ],
+      "explanation": "Keys identify siblings; wrong keys cause misplaced state and inefficient updates.",
+      "keywords": [
+        "react",
+        "lists"
+      ],
+      "source": "https://react.dev/learn/rendering-lists#keeping-list-items-in-order-with-key"
+    }
+  ]
+}

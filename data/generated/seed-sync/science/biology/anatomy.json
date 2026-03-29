@@ -1,0 +1,235 @@
+{
+  "schemaVersion": 1,
+  "seedSet": "core-public-items",
+  "deltaPreviewLimit": 200,
+  "items": [
+    {
+      "seedId": "f98d8e0a-1d52-4e2f-b528-97b4723993cc",
+      "category": "science",
+      "navigationKeyword1": "biology",
+      "navigationKeyword2": "anatomy",
+      "question": "In biology courses, anatomy often pairs with what complementary study?",
+      "correctAnswer": "Physiology",
+      "incorrectAnswers": [
+        "Genetics only",
+        "Ecology only",
+        "Geology"
+      ],
+      "explanation": "Anatomy is structure; physiology is function.",
+      "keywords": [
+        "anatomy",
+        "physiology"
+      ],
+      "source": "https://openstax.org/books/anatomy-and-physiology-2e/pages/1-1-overview-of-anatomy-and-physiology"
+    },
+    {
+      "seedId": "a7819859-1a14-4cdb-83cc-bf4902b450fc",
+      "category": "science",
+      "navigationKeyword1": "biology",
+      "navigationKeyword2": "anatomy",
+      "question": "What is a tissue?",
+      "correctAnswer": "A group of similar cells working together",
+      "incorrectAnswers": [
+        "A single cell only",
+        "An entire organ system",
+        "A bone only"
+      ],
+      "explanation": "Epithelial, connective, muscle, and nervous are basic tissue types.",
+      "keywords": [
+        "tissues",
+        "histology"
+      ],
+      "source": "https://openstax.org/books/anatomy-and-physiology-2e/pages/4-1-types-of-tissues"
+    },
+    {
+      "seedId": "3d54a20c-0809-43ad-a60e-eaa4e005b5cf",
+      "category": "science",
+      "navigationKeyword1": "biology",
+      "navigationKeyword2": "anatomy",
+      "question": "What is an organ system?",
+      "correctAnswer": "Organs cooperating for a major function",
+      "incorrectAnswers": [
+        "One neuron",
+        "One protein",
+        "One chromosome"
+      ],
+      "explanation": "Examples include digestive and cardiovascular systems.",
+      "keywords": [
+        "organ-systems",
+        "organization"
+      ],
+      "source": "https://openstax.org/books/anatomy-and-physiology-2e/pages/1-2-structural-organization-of-the-human-body"
+    },
+    {
+      "seedId": "c3656940-b7c2-40a0-8509-c4d1fe9a71f5",
+      "category": "science",
+      "navigationKeyword1": "biology",
+      "navigationKeyword2": "anatomy",
+      "question": "What is an organ?",
+      "correctAnswer": "Structures composed of multiple tissue types",
+      "incorrectAnswers": [
+        "Only one tissue type",
+        "Only extracellular fluid",
+        "Only DNA"
+      ],
+      "explanation": "Organs perform specific coordinated functions.",
+      "keywords": [
+        "organs",
+        "structure"
+      ],
+      "source": "https://openstax.org/books/anatomy-and-physiology-2e/pages/1-2-structural-organization-of-the-human-body"
+    },
+    {
+      "seedId": "3d1a2b0c-fbd6-4389-be76-1a5e933b8715",
+      "category": "science",
+      "navigationKeyword1": "biology",
+      "navigationKeyword2": "anatomy",
+      "question": "What is anterior in anatomical position?",
+      "correctAnswer": "Toward the front of the body",
+      "incorrectAnswers": [
+        "Toward the back",
+        "Toward the feet only",
+        "Toward the midline only"
+      ],
+      "explanation": "Directional terms standardize descriptions.",
+      "keywords": [
+        "anatomical-position",
+        "anterior"
+      ],
+      "source": "https://openstax.org/books/anatomy-and-physiology-2e/pages/1-4-medical-imaging"
+    },
+    {
+      "seedId": "db173a68-58d5-4740-919d-d8f58ab685f4",
+      "category": "science",
+      "navigationKeyword1": "biology",
+      "navigationKeyword2": "anatomy",
+      "question": "What is cartilage?",
+      "correctAnswer": "Flexible connective tissue",
+      "incorrectAnswers": [
+        "Hard mineral bone",
+        "Striated muscle tissue",
+        "Myelin sheath"
+      ],
+      "explanation": "Cartilage cushions joints and supports structures.",
+      "keywords": [
+        "cartilage",
+        "connective-tissue"
+      ],
+      "source": "https://openstax.org/books/anatomy-and-physiology-2e/pages/4-3-connective-tissue-supports-and-protects"
+    },
+    {
+      "seedId": "d10f7d27-122b-46b0-8042-b064be994c72",
+      "category": "science",
+      "navigationKeyword1": "biology",
+      "navigationKeyword2": "anatomy",
+      "question": "What is connective tissue\u2019s hallmark feature?",
+      "correctAnswer": "Extracellular matrix between cells",
+      "incorrectAnswers": [
+        "No matrix at all",
+        "Only action potentials",
+        "Only chlorophyll"
+      ],
+      "explanation": "Matrix includes fibers and ground substance.",
+      "keywords": [
+        "extracellular-matrix",
+        "connective-tissue"
+      ],
+      "source": "https://openstax.org/books/anatomy-and-physiology-2e/pages/4-3-connective-tissue-supports-and-protects"
+    },
+    {
+      "seedId": "176fa201-26ae-4aab-82b3-edf866de9147",
+      "category": "science",
+      "navigationKeyword1": "biology",
+      "navigationKeyword2": "anatomy",
+      "question": "What is distal?",
+      "correctAnswer": "Farther from the trunk or origin",
+      "incorrectAnswers": [
+        "Closer to the trunk",
+        "Toward the head",
+        "Toward the midline"
+      ],
+      "explanation": "Used for limb structures.",
+      "keywords": [
+        "distal",
+        "directional-terms"
+      ],
+      "source": "https://openstax.org/books/anatomy-and-physiology-2e/pages/1-4-medical-imaging"
+    },
+    {
+      "seedId": "bc5ea64b-4adf-470b-bbf3-5cde8654ff64",
+      "category": "science",
+      "navigationKeyword1": "biology",
+      "navigationKeyword2": "anatomy",
+      "question": "What is epithelial tissue specialized for?",
+      "correctAnswer": "Covering surfaces and lining cavities",
+      "incorrectAnswers": [
+        "Contracting bones",
+        "Transmitting action potentials",
+        "Storing fat only"
+      ],
+      "explanation": "Epithelia protect, absorb, and secrete.",
+      "keywords": [
+        "epithelium",
+        "tissues"
+      ],
+      "source": "https://openstax.org/books/anatomy-and-physiology-2e/pages/4-2-epithelial-tissue"
+    },
+    {
+      "seedId": "49acff14-e84a-418f-9959-365a66d881df",
+      "category": "science",
+      "navigationKeyword1": "biology",
+      "navigationKeyword2": "anatomy",
+      "question": "What is homeostasis?",
+      "correctAnswer": "Maintaining stable internal conditions",
+      "incorrectAnswers": [
+        "Always increasing temperature",
+        "Stopping metabolism",
+        "Eliminating feedback"
+      ],
+      "explanation": "Negative feedback often restores set points.",
+      "keywords": [
+        "homeostasis",
+        "feedback"
+      ],
+      "source": "https://openstax.org/books/anatomy-and-physiology-2e/pages/1-3-homeostasis"
+    },
+    {
+      "seedId": "86d79069-03d2-4ebe-a11e-c9752d93ace7",
+      "category": "science",
+      "navigationKeyword1": "biology",
+      "navigationKeyword2": "anatomy",
+      "question": "What is the cranial cavity?",
+      "correctAnswer": "Space housing the brain",
+      "incorrectAnswers": [
+        "Houses the heart",
+        "Houses the liver",
+        "Houses the stomach"
+      ],
+      "explanation": "The skull protects the brain within the cranial cavity.",
+      "keywords": [
+        "cranial",
+        "skull"
+      ],
+      "source": "https://openstax.org/books/anatomy-and-physiology-2e/pages/1-2-structural-organization-of-the-human-body"
+    },
+    {
+      "seedId": "87e6db77-447a-42db-99dd-4116afa749c4",
+      "category": "science",
+      "navigationKeyword1": "biology",
+      "navigationKeyword2": "anatomy",
+      "question": "What is the integumentary system\u2019s main organ?",
+      "correctAnswer": "Skin",
+      "incorrectAnswers": [
+        "Liver",
+        "Pancreas",
+        "Spleen"
+      ],
+      "explanation": "Skin protects, senses, and helps regulate temperature.",
+      "keywords": [
+        "skin",
+        "integumentary"
+      ],
+      "source": "https://openstax.org/books/anatomy-and-physiology-2e/pages/5-1-layers-of-the-skin"
+    }
+  ]
+}

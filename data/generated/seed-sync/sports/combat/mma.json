@@ -1,0 +1,207 @@
+{
+  "schemaVersion": 1,
+  "seedSet": "core-public-items",
+  "deltaPreviewLimit": 200,
+  "items": [
+    {
+      "seedId": "8f2a2d2c-1684-5f5f-b770-93188960e98f",
+      "category": "sports",
+      "navigationKeyword1": "combat",
+      "navigationKeyword2": "mma",
+      "question": "What does MMA stand for?",
+      "correctAnswer": "Mixed martial arts",
+      "incorrectAnswers": [
+        "Modern martial action",
+        "Mixed match athletics",
+        "Major martial association"
+      ],
+      "explanation": "MMA is short for mixed martial arts.",
+      "keywords": [
+        "combat",
+        "mma",
+        "name"
+      ],
+      "source": "https://www.britannica.com/sports/mixed-martial-arts"
+    },
+    {
+      "seedId": "487746a1-7313-5785-ba3a-7df9be9c728d",
+      "category": "sports",
+      "navigationKeyword1": "combat",
+      "navigationKeyword2": "mma",
+      "question": "What is it called when a fighter taps to stop a bout because of a hold or choke?",
+      "correctAnswer": "Submission",
+      "incorrectAnswers": [
+        "Split decision",
+        "Standing eight count",
+        "TKO by cut"
+      ],
+      "explanation": "A tap-out signals submission and ends the fight.",
+      "keywords": [
+        "combat",
+        "mma",
+        "submission"
+      ],
+      "source": "https://www.britannica.com/sports/mixed-martial-arts"
+    },
+    {
+      "seedId": "cd0dfb52-c93a-5994-9249-2f7a2cfe476e",
+      "category": "sports",
+      "navigationKeyword1": "combat",
+      "navigationKeyword2": "mma",
+      "question": "What is the ground position called when a fighter controls from behind with hooks in?",
+      "correctAnswer": "Back control",
+      "incorrectAnswers": [
+        "Half guard",
+        "Side control",
+        "North-south"
+      ],
+      "explanation": "Back control is one of the best positions for finishing fights.",
+      "keywords": [
+        "combat",
+        "mma",
+        "back-control"
+      ],
+      "source": "https://www.britannica.com/sports/mixed-martial-arts"
+    },
+    {
+      "seedId": "0ac85d74-826e-5df9-95a8-05749f141d02",
+      "category": "sports",
+      "navigationKeyword1": "combat",
+      "navigationKeyword2": "mma",
+      "question": "What is the standing tie-up range called in MMA?",
+      "correctAnswer": "Clinch",
+      "incorrectAnswers": [
+        "Mount",
+        "North-south",
+        "Back mount"
+      ],
+      "explanation": "The clinch is close-range grappling while standing.",
+      "keywords": [
+        "combat",
+        "mma",
+        "clinch"
+      ],
+      "source": "https://www.britannica.com/sports/mixed-martial-arts"
+    },
+    {
+      "seedId": "f9d0bcf6-d90c-507a-9967-c026c230980c",
+      "category": "sports",
+      "navigationKeyword1": "combat",
+      "navigationKeyword2": "mma",
+      "question": "What is the term for defending a takedown by throwing the legs back and hips down?",
+      "correctAnswer": "Sprawl",
+      "incorrectAnswers": [
+        "Granby",
+        "Clinch",
+        "Breakfall"
+      ],
+      "explanation": "A sprawl is a standard takedown defense.",
+      "keywords": [
+        "combat",
+        "mma",
+        "sprawl"
+      ],
+      "source": "https://www.britannica.com/sports/mixed-martial-arts"
+    },
+    {
+      "seedId": "2d24971f-a1a9-5f21-9403-dd8c927edf66",
+      "category": "sports",
+      "navigationKeyword1": "combat",
+      "navigationKeyword2": "mma",
+      "question": "Which combat sport combines striking and grappling from multiple disciplines?",
+      "correctAnswer": "Mixed martial arts",
+      "incorrectAnswers": [
+        "Boxing",
+        "Fencing",
+        "Sumo"
+      ],
+      "explanation": "MMA blends techniques from several combat systems.",
+      "keywords": [
+        "combat",
+        "mma",
+        "sport"
+      ],
+      "source": "https://www.britannica.com/sports/mixed-martial-arts"
+    },
+    {
+      "seedId": "eb00c94e-e3eb-55f0-92ae-1e2746c21599",
+      "category": "sports",
+      "navigationKeyword1": "combat",
+      "navigationKeyword2": "mma",
+      "question": "Which finish occurs when the referee stops the fight because a competitor cannot intelligently defend?",
+      "correctAnswer": "Technical knockout",
+      "incorrectAnswers": [
+        "Split draw",
+        "No contest",
+        "Major decision"
+      ],
+      "explanation": "The referee may stop the fight for unanswered damage or inability to defend.",
+      "keywords": [
+        "combat",
+        "mma",
+        "tko"
+      ],
+      "source": "https://www.britannica.com/sports/mixed-martial-arts"
+    },
+    {
+      "seedId": "7bec5b35-3ce9-5372-b862-8f19f9dc4199",
+      "category": "sports",
+      "navigationKeyword1": "combat",
+      "navigationKeyword2": "mma",
+      "question": "Which position places one fighter on top of the opponent's torso while straddling the body?",
+      "correctAnswer": "Mount",
+      "incorrectAnswers": [
+        "Guard pass",
+        "Clinch break",
+        "Sprawl only"
+      ],
+      "explanation": "Mount is one of the strongest dominant positions in MMA grappling.",
+      "keywords": [
+        "combat",
+        "mma",
+        "mount"
+      ],
+      "source": "https://www.britannica.com/sports/mixed-martial-arts"
+    },
+    {
+      "seedId": "1678a72b-0633-5ba1-b625-0350902aaa8a",
+      "category": "sports",
+      "navigationKeyword1": "combat",
+      "navigationKeyword2": "mma",
+      "question": "Which strike is delivered with the knee from close range?",
+      "correctAnswer": "Knee strike",
+      "incorrectAnswers": [
+        "Jab",
+        "Leg pick",
+        "Toe hold"
+      ],
+      "explanation": "Knees are common in close-range striking exchanges.",
+      "keywords": [
+        "combat",
+        "mma",
+        "knees"
+      ],
+      "source": "https://www.britannica.com/sports/mixed-martial-arts"
+    },
+    {
+      "seedId": "4e211943-63f9-52a6-bd7d-61ce86dbe3f2",
+      "category": "sports",
+      "navigationKeyword1": "combat",
+      "navigationKeyword2": "mma",
+      "question": "Which submission attack uses the legs to choke an opponent's neck and trapped arm?",
+      "correctAnswer": "Triangle choke",
+      "incorrectAnswers": [
+        "Kimura",
+        "Straight right",
+        "Cross-counter"
+      ],
+      "explanation": "The triangle choke is a classic guard submission.",
+      "keywords": [
+        "combat",
+        "mma",
+        "triangle-choke"
+      ],
+      "source": "https://www.britannica.com/sports/mixed-martial-arts"
+    }
+  ]
+}

@@ -1,0 +1,2629 @@
+{
+  "schemaVersion": 1,
+  "seedSet": "core-public-items",
+  "deltaPreviewLimit": 200,
+  "items": [
+    {
+      "seedId": "780ff679-98e3-58ae-8e1c-61c2134eac30",
+      "category": "nature",
+      "navigationKeyword1": "animals",
+      "navigationKeyword2": "birds",
+      "question": "Penguins are native to which hemisphere?",
+      "correctAnswer": "Southern Hemisphere",
+      "incorrectAnswers": [
+        "Northern Hemisphere",
+        "both hemispheres equally",
+        "Arctic Hemisphere"
+      ],
+      "explanation": "Penguins are native to the Southern Hemisphere, though not all live in Antarctica.",
+      "keywords": [
+        "birds",
+        "nature-animals"
+      ],
+      "source": "https://www.britannica.com/animal/penguin"
+    },
+    {
+      "seedId": "fa1441dc-a0fc-534e-a725-44d91cc588ce",
+      "category": "nature",
+      "navigationKeyword1": "animals",
+      "navigationKeyword2": "birds",
+      "question": "Which bird is the largest living bird species?",
+      "correctAnswer": "ostrich",
+      "incorrectAnswers": [
+        "emu",
+        "cassowary",
+        "wandering albatross"
+      ],
+      "explanation": "The ostrich is the largest living bird and also cannot fly.",
+      "keywords": [
+        "birds",
+        "nature-animals"
+      ],
+      "source": "https://www.britannica.com/animal/ostrich"
+    },
+    {
+      "seedId": "b15036a9-29d4-5f1f-ad1f-1ec91217c528",
+      "category": "nature",
+      "navigationKeyword1": "animals",
+      "navigationKeyword2": "birds",
+      "question": "Which bird of prey is famous for extreme speed during a dive?",
+      "correctAnswer": "peregrine falcon",
+      "incorrectAnswers": [
+        "bald eagle",
+        "osprey",
+        "harpy eagle"
+      ],
+      "explanation": "Peregrine falcons reach remarkable speeds when they dive at prey.",
+      "keywords": [
+        "birds",
+        "nature-animals"
+      ],
+      "source": "https://www.audubon.org/field-guide/bird/peregrine-falcon"
+    },
+    {
+      "seedId": "3df1af43-d4d5-5ed4-abfd-f9bc5d63f703",
+      "category": "nature",
+      "navigationKeyword1": "animals",
+      "navigationKeyword2": "birds",
+      "question": "Which birds are famous for nearly silent flight when hunting?",
+      "correctAnswer": "owls",
+      "incorrectAnswers": [
+        "hawks",
+        "vultures",
+        "cranes"
+      ],
+      "explanation": "Owls have specialized feathers that reduce noise in flight.",
+      "keywords": [
+        "birds",
+        "nature-animals"
+      ],
+      "source": "https://www.audubon.org/magazine/silent-flight-of-owls-explained"
+    },
+    {
+      "seedId": "0bcff2da-8549-5c77-84f0-81ec6c339ace",
+      "category": "nature",
+      "navigationKeyword1": "animals",
+      "navigationKeyword2": "birds",
+      "question": "Which birds can truly fly backward?",
+      "correctAnswer": "hummingbirds",
+      "incorrectAnswers": [
+        "swallows",
+        "kingfishers",
+        "swifts"
+      ],
+      "explanation": "Hummingbirds can hover and fly backward because of their unusual wing motion.",
+      "keywords": [
+        "birds",
+        "nature-animals"
+      ],
+      "source": "https://southwest.audubon.org/conservation/fun-facts-about-hummingbirds"
+    },
+    {
+      "seedId": "8f75ea1b-b264-5036-a0cf-7a40f87c9769",
+      "category": "nature",
+      "navigationKeyword1": "animals",
+      "navigationKeyword2": "birds",
+      "question": "Which seabird is famous for huge wings that let it glide for hours over the ocean?",
+      "correctAnswer": "albatross",
+      "incorrectAnswers": [
+        "pelican",
+        "cormorant",
+        "gannet"
+      ],
+      "explanation": "Albatrosses use their very long, narrow wings to soar efficiently over open water.",
+      "keywords": [
+        "birds",
+        "nature-animals"
+      ],
+      "source": "https://www.britannica.com/animal/albatross"
+    },
+    {
+      "seedId": "aea74d51-a3d7-5c36-ba68-112a00d3d507",
+      "category": "nature",
+      "navigationKeyword1": "animals",
+      "navigationKeyword2": "marine",
+      "question": "A narwhal's famous tusk is actually a modified what?",
+      "correctAnswer": "tooth",
+      "incorrectAnswers": [
+        "horn",
+        "bone spur",
+        "whisker"
+      ],
+      "explanation": "The narwhal tusk grows from a tooth, usually the left tooth in males.",
+      "keywords": [
+        "marine",
+        "nature-animals"
+      ],
+      "source": "https://www.fisheries.noaa.gov/species/narwhal/overview"
+    },
+    {
+      "seedId": "669c0325-36b2-5152-9026-2e7cb32270a7",
+      "category": "nature",
+      "navigationKeyword1": "animals",
+      "navigationKeyword2": "marine",
+      "question": "Are reef-building corals animals, plants, or fungi?",
+      "correctAnswer": "animals",
+      "incorrectAnswers": [
+        "plants",
+        "fungi",
+        "protists"
+      ],
+      "explanation": "Corals are marine invertebrate animals made of many tiny polyps.",
+      "keywords": [
+        "marine",
+        "nature-animals"
+      ],
+      "source": "https://www.britannica.com/animal/coral"
+    },
+    {
+      "seedId": "ce7c6299-5dbc-53a3-a4c2-ff035219455a",
+      "category": "nature",
+      "navigationKeyword1": "animals",
+      "navigationKeyword2": "marine",
+      "question": "How many hearts does an octopus have?",
+      "correctAnswer": "three",
+      "incorrectAnswers": [
+        "one",
+        "two",
+        "four"
+      ],
+      "explanation": "An octopus has one main heart and two branchial hearts that serve the gills.",
+      "keywords": [
+        "marine",
+        "nature-animals"
+      ],
+      "source": "https://www.britannica.com/science/How-Many-Hearts-Does-an-Octopus-Have"
+    },
+    {
+      "seedId": "1a1f543f-1faf-5adf-9351-72bdbcba2445",
+      "category": "nature",
+      "navigationKeyword1": "animals",
+      "navigationKeyword2": "marine",
+      "question": "What are dolphins classified as instead of fish?",
+      "correctAnswer": "mammals",
+      "incorrectAnswers": [
+        "reptiles",
+        "amphibians",
+        "cartilaginous fish"
+      ],
+      "explanation": "Dolphins breathe air, nurse their young, and are mammals rather than fish.",
+      "keywords": [
+        "marine",
+        "nature-animals"
+      ],
+      "source": "https://oceanservice.noaa.gov/facts/dolphin.html"
+    },
+    {
+      "seedId": "cccc1ec8-a2bf-5158-97b8-f6dcacf257bb",
+      "category": "nature",
+      "navigationKeyword1": "animals",
+      "navigationKeyword2": "marine",
+      "question": "Which animal is the largest known to have ever lived on Earth?",
+      "correctAnswer": "blue whale",
+      "incorrectAnswers": [
+        "whale shark",
+        "giant squid",
+        "megalodon"
+      ],
+      "explanation": "Blue whales are larger than any other known animal, living or extinct.",
+      "keywords": [
+        "marine",
+        "nature-animals"
+      ],
+      "source": "https://www.fisheries.noaa.gov/species/blue-whale"
+    },
+    {
+      "seedId": "430dc2db-dcdd-54ab-8418-ccbf24065b43",
+      "category": "nature",
+      "navigationKeyword1": "animals",
+      "navigationKeyword2": "marine",
+      "question": "Which marine mammal helps protect kelp forests by eating large numbers of sea urchins?",
+      "correctAnswer": "sea otter",
+      "incorrectAnswers": [
+        "harbor seal",
+        "manatee",
+        "walrus"
+      ],
+      "explanation": "Sea otters help kelp forests by keeping urchin populations from exploding.",
+      "keywords": [
+        "marine",
+        "nature-animals"
+      ],
+      "source": "https://www.montereybayaquarium.org/stories/-sea-otters-help-kelp-forests"
+    },
+    {
+      "seedId": "18e18a62-5a88-5c63-aa3e-5a197307d5b8",
+      "category": "nature",
+      "navigationKeyword1": "animals",
+      "navigationKeyword2": "predators",
+      "question": "Gray wolves usually live and hunt in what kind of social group?",
+      "correctAnswer": "pack",
+      "incorrectAnswers": [
+        "school",
+        "herd",
+        "swarm"
+      ],
+      "explanation": "Wolves are highly social animals that live in family-based packs.",
+      "keywords": [
+        "predators",
+        "nature-animals"
+      ],
+      "source": "https://www.nps.gov/yell/learn/nature/wolf.htm"
+    },
+    {
+      "seedId": "70b95838-c00a-5216-af61-fa4567837368",
+      "category": "nature",
+      "navigationKeyword1": "animals",
+      "navigationKeyword2": "predators",
+      "question": "What is the usual name for a social group of lions?",
+      "correctAnswer": "pride",
+      "incorrectAnswers": [
+        "pack",
+        "pod",
+        "colony"
+      ],
+      "explanation": "Lions are unusual among big cats because they commonly live in social groups called prides.",
+      "keywords": [
+        "predators",
+        "nature-animals"
+      ],
+      "source": "https://www.britannica.com/animal/lion/Introduction"
+    },
+    {
+      "seedId": "da04315e-d6f7-5b1a-bf76-f87cb63596ee",
+      "category": "nature",
+      "navigationKeyword1": "animals",
+      "navigationKeyword2": "predators",
+      "question": "Which Arctic predator depends heavily on sea ice to hunt seals?",
+      "correctAnswer": "polar bear",
+      "incorrectAnswers": [
+        "Arctic fox",
+        "wolverine",
+        "snowy owl"
+      ],
+      "explanation": "Polar bears rely on sea ice as a platform for reaching and hunting seals.",
+      "keywords": [
+        "predators",
+        "nature-animals"
+      ],
+      "source": "https://www.nationalgeographic.com/animals/article/polar-bears-algae-sea-ice-warming"
+    },
+    {
+      "seedId": "7fab2529-6d47-5fb3-bce0-28590b8a0b34",
+      "category": "nature",
+      "navigationKeyword1": "animals",
+      "navigationKeyword2": "predators",
+      "question": "Which big cat is especially known for hunting alone and dragging kills into trees?",
+      "correctAnswer": "leopard",
+      "incorrectAnswers": [
+        "lion",
+        "cheetah",
+        "snow leopard"
+      ],
+      "explanation": "Leopards are solitary ambush hunters and often stash prey in trees.",
+      "keywords": [
+        "predators",
+        "nature-animals"
+      ],
+      "source": "https://www.britannica.com/EBchecked/topic/336566/leopard"
+    },
+    {
+      "seedId": "6e1249dd-9076-5121-83a4-0776e6a21211",
+      "category": "nature",
+      "navigationKeyword1": "animals",
+      "navigationKeyword2": "predators",
+      "question": "Which bird of prey becomes one of the fastest animals on Earth during a hunting dive?",
+      "correctAnswer": "peregrine falcon",
+      "incorrectAnswers": [
+        "golden eagle",
+        "osprey",
+        "red-tailed hawk"
+      ],
+      "explanation": "Peregrine falcons reach extreme speeds when they dive, or stoop, at prey.",
+      "keywords": [
+        "predators",
+        "nature-animals"
+      ],
+      "source": "https://www.audubon.org/field-guide/bird/peregrine-falcon"
+    },
+    {
+      "seedId": "527d67cf-79c4-5302-99e7-6a49906b598b",
+      "category": "nature",
+      "navigationKeyword1": "animals",
+      "navigationKeyword2": "predators",
+      "question": "Which marine mammal is often described as the ocean's top predator?",
+      "correctAnswer": "killer whale",
+      "incorrectAnswers": [
+        "great white shark",
+        "leopard seal",
+        "sperm whale"
+      ],
+      "explanation": "Killer whales, also called orcas, are apex predators found in every ocean.",
+      "keywords": [
+        "predators",
+        "nature-animals"
+      ],
+      "source": "https://www.fisheries.noaa.gov/species/killer-whale"
+    },
+    {
+      "seedId": "001b8fce-1eb8-5835-8336-2f29fb5ce7fd",
+      "category": "nature",
+      "navigationKeyword1": "animals",
+      "navigationKeyword2": "wildlife",
+      "question": "What plant makes up most of a giant panda's diet?",
+      "correctAnswer": "bamboo",
+      "incorrectAnswers": [
+        "eucalyptus",
+        "seagrass",
+        "fern fronds"
+      ],
+      "explanation": "Giant pandas spend much of their day eating bamboo.",
+      "keywords": [
+        "wildlife",
+        "nature-animals"
+      ],
+      "source": "https://nationalzoo.si.edu/animals/news/keep-national-zoos-pandas-satisfied-staff-prepare-endless-supply-bamboo"
+    },
+    {
+      "seedId": "b40dcd40-7b76-533f-834d-858ce2b7886e",
+      "category": "nature",
+      "navigationKeyword1": "animals",
+      "navigationKeyword2": "wildlife",
+      "question": "Which animal is the largest living land animal?",
+      "correctAnswer": "African bush elephant",
+      "incorrectAnswers": [
+        "white rhinoceros",
+        "giraffe",
+        "hippopotamus"
+      ],
+      "explanation": "The African bush elephant is the largest land animal alive today.",
+      "keywords": [
+        "wildlife",
+        "nature-animals"
+      ],
+      "source": "https://www.nationalgeographic.com/animals/mammals/a/african-elephant.html"
+    },
+    {
+      "seedId": "cdd86109-cc2c-52a8-aa30-b1a0dc10bacd",
+      "category": "nature",
+      "navigationKeyword1": "animals",
+      "navigationKeyword2": "wildlife",
+      "question": "Which animal is the tallest living land animal?",
+      "correctAnswer": "giraffe",
+      "incorrectAnswers": [
+        "African bush elephant",
+        "moose",
+        "camel"
+      ],
+      "explanation": "Giraffes are the tallest land animals, helped by their very long legs and necks.",
+      "keywords": [
+        "wildlife",
+        "nature-animals"
+      ],
+      "source": "https://www.nationalgeographic.com/animals/mammals/facts/giraffe"
+    },
+    {
+      "seedId": "af035724-9bcd-50c6-9897-ef3663163b23",
+      "category": "nature",
+      "navigationKeyword1": "animals",
+      "navigationKeyword2": "wildlife",
+      "question": "Which group of mammals is capable of true powered flight?",
+      "correctAnswer": "bats",
+      "incorrectAnswers": [
+        "flying squirrels",
+        "colugos",
+        "sugar gliders"
+      ],
+      "explanation": "Bats are the only mammals that truly fly rather than glide.",
+      "keywords": [
+        "wildlife",
+        "nature-animals"
+      ],
+      "source": "https://www.smithsonianmag.com/science-nature/bats-evolution-history-180974610/"
+    },
+    {
+      "seedId": "2dac62e4-ed32-50bb-bcdc-d566164eeff2",
+      "category": "nature",
+      "navigationKeyword1": "animals",
+      "navigationKeyword2": "wildlife",
+      "question": "Which mammal is the fastest land animal over short distances?",
+      "correctAnswer": "cheetah",
+      "incorrectAnswers": [
+        "pronghorn",
+        "lion",
+        "greyhound"
+      ],
+      "explanation": "Cheetahs are built for explosive speed and are the fastest land animals.",
+      "keywords": [
+        "wildlife",
+        "nature-animals"
+      ],
+      "source": "https://www.britannica.com/animal/cheetah-mammal"
+    },
+    {
+      "seedId": "42cc74e0-c428-5a67-afde-f17068f4c9aa",
+      "category": "nature",
+      "navigationKeyword1": "animals",
+      "navigationKeyword2": "wildlife",
+      "question": "Which reptile is the world's largest living lizard?",
+      "correctAnswer": "Komodo dragon",
+      "incorrectAnswers": [
+        "marine iguana",
+        "Nile monitor",
+        "green anole"
+      ],
+      "explanation": "Komodo dragons are the largest living lizards and top predators on their islands.",
+      "keywords": [
+        "wildlife",
+        "nature-animals"
+      ],
+      "source": "https://www.nationalgeographic.com/animals/reptiles/facts/komodo-dragon"
+    },
+    {
+      "seedId": "974367e1-714d-5c32-882e-ccce145a7e4d",
+      "category": "nature",
+      "navigationKeyword1": "camping",
+      "navigationKeyword2": "gear",
+      "question": "To reduce impact on the land, tents should be set up on what kind of surface when possible?",
+      "correctAnswer": "durable surfaces",
+      "incorrectAnswers": [
+        "newly cleared vegetation",
+        "fragile wildflowers",
+        "muddy stream banks"
+      ],
+      "explanation": "Camping on durable surfaces like established sites, rock, gravel, dry grass, or snow helps protect the landscape.",
+      "keywords": [
+        "camping-gear",
+        "nature-outdoors"
+      ],
+      "source": "https://www.fs.usda.gov/lei/no-trace-ethics.php"
+    },
+    {
+      "seedId": "9a5a72b3-fb11-52c8-bdcf-07d422d5aba7",
+      "category": "nature",
+      "navigationKeyword1": "camping",
+      "navigationKeyword2": "gear",
+      "question": "What hands-free light is often preferred for camping and hiking at night?",
+      "correctAnswer": "headlamp",
+      "incorrectAnswers": [
+        "flare gun",
+        "laser pointer",
+        "signal mirror"
+      ],
+      "explanation": "A headlamp gives you light while keeping both hands free for camp tasks or trail travel.",
+      "keywords": [
+        "camping-gear",
+        "nature-outdoors"
+      ],
+      "source": "https://nps.gov/articles/10essentials.htm"
+    },
+    {
+      "seedId": "15e0d893-b330-56e4-b122-5474152fb35a",
+      "category": "nature",
+      "navigationKeyword1": "camping",
+      "navigationKeyword2": "gear",
+      "question": "What kind of kit should be tailored to your trip and medical needs?",
+      "correctAnswer": "first-aid kit",
+      "incorrectAnswers": [
+        "cook set",
+        "mess kit",
+        "camera kit"
+      ],
+      "explanation": "A first-aid kit is one of the core essentials and should match the trip and the group.",
+      "keywords": [
+        "camping-gear",
+        "nature-outdoors"
+      ],
+      "source": "https://nps.gov/articles/10essentials.htm"
+    },
+    {
+      "seedId": "c674c7b5-8a86-5bc3-990b-53f72982a839",
+      "category": "nature",
+      "navigationKeyword1": "camping",
+      "navigationKeyword2": "gear",
+      "question": "Which Ten Essential category includes a map, compass, and GPS?",
+      "correctAnswer": "navigation",
+      "incorrectAnswers": [
+        "illumination",
+        "nutrition",
+        "repair kit"
+      ],
+      "explanation": "Navigation gear helps you plan your route and orient yourself outdoors.",
+      "keywords": [
+        "camping-gear",
+        "nature-outdoors"
+      ],
+      "source": "https://nps.gov/articles/10essentials.htm"
+    },
+    {
+      "seedId": "2dabbcdb-fc70-55c1-9bbf-b76e1e3215b1",
+      "category": "nature",
+      "navigationKeyword1": "camping",
+      "navigationKeyword2": "gear",
+      "question": "Which essential category covers extra clothing such as a jacket, gloves, and rain shell?",
+      "correctAnswer": "insulation",
+      "incorrectAnswers": [
+        "hydration",
+        "repair kit",
+        "navigation"
+      ],
+      "explanation": "Insulation helps you stay safe when weather turns colder, wetter, or windier than expected.",
+      "keywords": [
+        "camping-gear",
+        "nature-outdoors"
+      ],
+      "source": "https://nps.gov/articles/10essentials.htm"
+    },
+    {
+      "seedId": "ce301a49-a137-5911-a7b7-66ac35ea7006",
+      "category": "nature",
+      "navigationKeyword1": "camping",
+      "navigationKeyword2": "gear",
+      "question": "Which essential category includes water and a way to make more water safe?",
+      "correctAnswer": "hydration",
+      "incorrectAnswers": [
+        "illumination",
+        "fire",
+        "repair kit"
+      ],
+      "explanation": "Hydration includes carrying water and having treatment supplies if you need more.",
+      "keywords": [
+        "camping-gear",
+        "nature-outdoors"
+      ],
+      "source": "https://nps.gov/articles/10essentials.htm"
+    },
+    {
+      "seedId": "0aef7993-a91c-5866-9b3a-c18189b85919",
+      "category": "nature",
+      "navigationKeyword1": "camping",
+      "navigationKeyword2": "safety",
+      "question": "In bear country, where should food and scented items be stored when a locker is provided?",
+      "correctAnswer": "in the bear-proof locker",
+      "incorrectAnswers": [
+        "inside the tent",
+        "under the picnic table",
+        "hanging from the tent pole"
+      ],
+      "explanation": "Food, trash, and scented items should go in approved bear-resistant storage, not in your tent.",
+      "keywords": [
+        "camping-safety",
+        "nature-outdoors"
+      ],
+      "source": "https://www.nps.gov/voya/planyourvisit/bears-and-food-storage.htm?fullweb=1"
+    },
+    {
+      "seedId": "8cc1b61a-82e9-54d4-806a-4e0a59c1bca3",
+      "category": "nature",
+      "navigationKeyword1": "camping",
+      "navigationKeyword2": "safety",
+      "question": "Is it safe to leave a campfire unattended for even a short time?",
+      "correctAnswer": "no",
+      "incorrectAnswers": [
+        "yes, if there are rocks around it",
+        "yes, if the flames are small",
+        "yes, if the wood is dry"
+      ],
+      "explanation": "Even a small unattended fire can escape and start a wildfire.",
+      "keywords": [
+        "camping-safety",
+        "nature-outdoors"
+      ],
+      "source": "https://www.nps.gov/grte/learn/nature/firesafety.htm"
+    },
+    {
+      "seedId": "44edca5d-0ce3-5fee-b7e8-2af1d3f81f6c",
+      "category": "nature",
+      "navigationKeyword1": "camping",
+      "navigationKeyword2": "safety",
+      "question": "What is one simple way to lower your chance of picking up ticks on a trail?",
+      "correctAnswer": "walk in the center of the trail",
+      "incorrectAnswers": [
+        "brush against tall grass",
+        "sit in leaf litter often",
+        "wear sandals in brush"
+      ],
+      "explanation": "Staying out of tall grass and brush reduces tick exposure.",
+      "keywords": [
+        "camping-safety",
+        "nature-outdoors"
+      ],
+      "source": "https://www.cdc.gov/ticks/prevention/index.html"
+    },
+    {
+      "seedId": "8ea520bf-7078-5570-868a-879096c3f484",
+      "category": "nature",
+      "navigationKeyword1": "camping",
+      "navigationKeyword2": "safety",
+      "question": "What kind of clothing can make ticks easier to spot?",
+      "correctAnswer": "light-colored clothing",
+      "incorrectAnswers": [
+        "dark wool clothing",
+        "camouflage clothing",
+        "reflective rain gear only"
+      ],
+      "explanation": "Light-colored clothing can help you notice ticks before they attach.",
+      "keywords": [
+        "camping-safety",
+        "nature-outdoors"
+      ],
+      "source": "https://wwwnc.cdc.gov/travel/page/diseases-spread-by-ticks"
+    },
+    {
+      "seedId": "9b83c9a8-d2ea-5dc9-aa7b-ab18852d3e0f",
+      "category": "nature",
+      "navigationKeyword1": "camping",
+      "navigationKeyword2": "safety",
+      "question": "What should you do to a campfire before leaving it?",
+      "correctAnswer": "drown it, stir it, and make sure it is cold",
+      "incorrectAnswers": [
+        "cover it with leaves",
+        "spread the coals apart and walk away",
+        "leave it to burn out on its own"
+      ],
+      "explanation": "A campfire is not out until the ashes and coals are fully soaked and cold to the touch.",
+      "keywords": [
+        "camping-safety",
+        "nature-outdoors"
+      ],
+      "source": "https://smokeybear.com/en/prevention-how-tos/campfire-safety/how-to-maintain-and-extinguish-your-campfire"
+    },
+    {
+      "seedId": "10e30b1b-e294-5846-88b4-a8bb4469f7f4",
+      "category": "nature",
+      "navigationKeyword1": "camping",
+      "navigationKeyword2": "safety",
+      "question": "Which kinds of items should be treated like food for bear storage?",
+      "correctAnswer": "any scented items, including toiletries and trash",
+      "incorrectAnswers": [
+        "only meat and fish",
+        "only packaged snacks",
+        "only items in glass jars"
+      ],
+      "explanation": "Bears are attracted by scent, so toiletries, drinks, and trash also need secure storage.",
+      "keywords": [
+        "camping-safety",
+        "nature-outdoors"
+      ],
+      "source": "https://nps.gov/yose/planyourvisit/bears.htm"
+    },
+    {
+      "seedId": "8461793d-e448-568f-affb-3f55dc1cca2b",
+      "category": "nature",
+      "navigationKeyword1": "ecosystems",
+      "navigationKeyword2": "forests",
+      "question": "The boreal forest is also commonly called what?",
+      "correctAnswer": "taiga",
+      "incorrectAnswers": [
+        "savanna",
+        "chaparral",
+        "tundra"
+      ],
+      "explanation": "The vast northern conifer forest is commonly known as the taiga.",
+      "keywords": [
+        "forests",
+        "nature-ecosystems"
+      ],
+      "source": "https://www.nationalgeographic.com/related/1aa6fa9b-4f57-3c34-9d2b-256ed1b088b2/boreal-forests"
+    },
+    {
+      "seedId": "0b150d8c-5df5-524b-9b1c-edb9f7c47a7b",
+      "category": "nature",
+      "navigationKeyword1": "ecosystems",
+      "navigationKeyword2": "forests",
+      "question": "What is the canopy in a forest?",
+      "correctAnswer": "the upper layer formed by treetops",
+      "incorrectAnswers": [
+        "the soil under the roots",
+        "the underground fungal network",
+        "a ring of shrubs around a clearing"
+      ],
+      "explanation": "The canopy is the highest continuous layer formed by the crowns of trees.",
+      "keywords": [
+        "forests",
+        "nature-ecosystems"
+      ],
+      "source": "https://www.britannica.com/science/canopy-forests"
+    },
+    {
+      "seedId": "f0e7d112-0cbe-526d-b854-c51ba7dbb0db",
+      "category": "nature",
+      "navigationKeyword1": "ecosystems",
+      "navigationKeyword2": "forests",
+      "question": "What is the understory in a forest?",
+      "correctAnswer": "the layer of shrubs and young trees below the canopy",
+      "incorrectAnswers": [
+        "the bedrock layer below the soil",
+        "the open sky above the trees",
+        "the stream channel through a forest"
+      ],
+      "explanation": "The understory sits below the canopy and often contains shrubs, saplings, and shade-tolerant plants.",
+      "keywords": [
+        "forests",
+        "nature-ecosystems"
+      ],
+      "source": "https://www.britannica.com/plant/understory"
+    },
+    {
+      "seedId": "e43e95ed-7111-50fa-bace-8be1464b0a94",
+      "category": "nature",
+      "navigationKeyword1": "ecosystems",
+      "navigationKeyword2": "forests",
+      "question": "What kind of trees dominate most taiga forests?",
+      "correctAnswer": "conifers",
+      "incorrectAnswers": [
+        "palms",
+        "cacti",
+        "mangroves"
+      ],
+      "explanation": "Taiga forests are dominated by cone-bearing, needle-leaved trees.",
+      "keywords": [
+        "forests",
+        "nature-ecosystems"
+      ],
+      "source": "https://www.britannica.com/science/coniferous-forest"
+    },
+    {
+      "seedId": "d86801a4-62d0-5be3-b2ca-70eeafe4e068",
+      "category": "nature",
+      "navigationKeyword1": "ecosystems",
+      "navigationKeyword2": "forests",
+      "question": "Where do most rainforest animals live?",
+      "correctAnswer": "in the canopy",
+      "incorrectAnswers": [
+        "buried in permafrost",
+        "on the bare forest floor",
+        "only inside tree trunks"
+      ],
+      "explanation": "Many rainforest animals live among the leaves and branches of the canopy where light and food are abundant.",
+      "keywords": [
+        "forests",
+        "nature-ecosystems"
+      ],
+      "source": "https://www.britannica.com/science/tropical-rainforest/Relationships-between-the-flora-and-fauna"
+    },
+    {
+      "seedId": "4b421c47-c5dc-5013-a438-355fbd0da534",
+      "category": "nature",
+      "navigationKeyword1": "ecosystems",
+      "navigationKeyword2": "forests",
+      "question": "Which forest type contains more species than any other ecosystem type?",
+      "correctAnswer": "tropical rainforest",
+      "incorrectAnswers": [
+        "taiga",
+        "temperate grassland",
+        "desert scrub"
+      ],
+      "explanation": "Tropical rainforests are the most species-rich ecosystems on Earth.",
+      "keywords": [
+        "forests",
+        "nature-ecosystems"
+      ],
+      "source": "https://www.britannica.com/science/tropical-rainforest/Biota"
+    },
+    {
+      "seedId": "8d3d1fb0-8ea4-5b70-ba87-da6805e82fec",
+      "category": "nature",
+      "navigationKeyword1": "ecosystems",
+      "navigationKeyword2": "oceans",
+      "question": "About what share of all marine species are found in or around coral reefs?",
+      "correctAnswer": "about one quarter",
+      "incorrectAnswers": [
+        "about one percent",
+        "about half",
+        "almost all of them"
+      ],
+      "explanation": "Coral reefs support roughly a quarter of marine species despite covering a small area of the ocean.",
+      "keywords": [
+        "oceans",
+        "nature-ecosystems"
+      ],
+      "source": "https://oceanservice.noaa.gov/facts/coral_species.html"
+    },
+    {
+      "seedId": "0b1c681d-5605-5f31-a471-e1c1c2e64994",
+      "category": "nature",
+      "navigationKeyword1": "ecosystems",
+      "navigationKeyword2": "oceans",
+      "question": "Kelp forests are often compared to what on land?",
+      "correctAnswer": "rainforests",
+      "incorrectAnswers": [
+        "deserts",
+        "prairies",
+        "glaciers"
+      ],
+      "explanation": "Kelp forests are sometimes called underwater rainforests because of their layered, productive habitat.",
+      "keywords": [
+        "oceans",
+        "nature-ecosystems"
+      ],
+      "source": "https://www.britannica.com/science/kelp-forest"
+    },
+    {
+      "seedId": "6af4418c-04cb-5b54-bdb9-3e436a402b35",
+      "category": "nature",
+      "navigationKeyword1": "ecosystems",
+      "navigationKeyword2": "oceans",
+      "question": "What microscopic organisms form the base of most marine food webs?",
+      "correctAnswer": "phytoplankton",
+      "incorrectAnswers": [
+        "coral polyps",
+        "sea stars",
+        "jellyfish"
+      ],
+      "explanation": "Phytoplankton are tiny photosynthetic organisms that support much of ocean life.",
+      "keywords": [
+        "oceans",
+        "nature-ecosystems"
+      ],
+      "source": "https://oceanservice.noaa.gov/facts/phyto.html"
+    },
+    {
+      "seedId": "8d05b66b-6bfd-5d98-9051-eb1c9b0e03bd",
+      "category": "nature",
+      "navigationKeyword1": "ecosystems",
+      "navigationKeyword2": "oceans",
+      "question": "What mixes in an estuary?",
+      "correctAnswer": "freshwater and saltwater",
+      "incorrectAnswers": [
+        "lava and seawater",
+        "snowmelt and desert sand",
+        "glacier ice and tree sap"
+      ],
+      "explanation": "An estuary is a coastal body of water where river freshwater mixes with ocean saltwater.",
+      "keywords": [
+        "oceans",
+        "nature-ecosystems"
+      ],
+      "source": "https://www.epa.gov/nep/basic-information-about-estuaries"
+    },
+    {
+      "seedId": "e7f8622b-2d25-5193-8ca6-9a4eea76467c",
+      "category": "nature",
+      "navigationKeyword1": "ecosystems",
+      "navigationKeyword2": "oceans",
+      "question": "What process brings cold, nutrient-rich deep water up toward the surface?",
+      "correctAnswer": "upwelling",
+      "incorrectAnswers": [
+        "evaporation",
+        "erosion",
+        "sedimentation"
+      ],
+      "explanation": "Upwelling moves deeper nutrient-rich water upward, helping feed productive marine ecosystems.",
+      "keywords": [
+        "oceans",
+        "nature-ecosystems"
+      ],
+      "source": "https://oceanexplorer.noaa.gov/facts/upwelling.html"
+    },
+    {
+      "seedId": "22be93c0-06e8-5fc8-a4a4-c6a988fe8809",
+      "category": "nature",
+      "navigationKeyword1": "ecosystems",
+      "navigationKeyword2": "oceans",
+      "question": "Why are estuaries often called the nurseries of the sea?",
+      "correctAnswer": "many marine animals grow there early in life",
+      "incorrectAnswers": [
+        "they are too salty for fish",
+        "they have no tides",
+        "they freeze all year"
+      ],
+      "explanation": "Estuaries provide sheltered, productive habitat where many fish and shellfish begin life.",
+      "keywords": [
+        "oceans",
+        "nature-ecosystems"
+      ],
+      "source": "https://www.fisheries.noaa.gov/longform/estuary-habitat"
+    },
+    {
+      "seedId": "ce24e46e-68f8-5aaf-b64c-74c8255adee5",
+      "category": "nature",
+      "navigationKeyword1": "ecosystems",
+      "navigationKeyword2": "tundra",
+      "question": "About how long is the Arctic tundra growing season?",
+      "correctAnswer": "about 50 to 60 days",
+      "incorrectAnswers": [
+        "about 3 days",
+        "about 6 months",
+        "all year long"
+      ],
+      "explanation": "The tundra growing season is very short, lasting only a few summer weeks.",
+      "keywords": [
+        "tundra",
+        "nature-ecosystems"
+      ],
+      "source": "https://environment.nationalgeographic.com/environment/habitats/tundra-profile"
+    },
+    {
+      "seedId": "e8a262be-63be-5cc2-814b-26b5dc24dba8",
+      "category": "nature",
+      "navigationKeyword1": "ecosystems",
+      "navigationKeyword2": "tundra",
+      "question": "Besides the Arctic, where is another major kind of tundra found?",
+      "correctAnswer": "on mountain tops",
+      "incorrectAnswers": [
+        "deep underground",
+        "in tropical coral reefs",
+        "only in river deltas"
+      ],
+      "explanation": "Tundra occurs in the Arctic and also at high elevations as alpine tundra.",
+      "keywords": [
+        "tundra",
+        "nature-ecosystems"
+      ],
+      "source": "https://environment.nationalgeographic.com/environment/habitats/tundra-profile"
+    },
+    {
+      "seedId": "54b74a87-2639-5782-9718-76b0be0ac2b6",
+      "category": "nature",
+      "navigationKeyword1": "ecosystems",
+      "navigationKeyword2": "tundra",
+      "question": "What is permafrost?",
+      "correctAnswer": "ground that stays frozen year-round",
+      "incorrectAnswers": [
+        "snow that falls every night",
+        "seasonal floodwater",
+        "bedrock under deserts"
+      ],
+      "explanation": "Permafrost is a subsurface layer of soil that remains frozen throughout the year.",
+      "keywords": [
+        "tundra",
+        "nature-ecosystems"
+      ],
+      "source": "https://www.usgs.gov/glossary/arctic-research-glossary"
+    },
+    {
+      "seedId": "66b3a9d9-7e34-59a3-a531-e333d7d76d26",
+      "category": "nature",
+      "navigationKeyword1": "ecosystems",
+      "navigationKeyword2": "tundra",
+      "question": "What kind of rainfall does tundra usually receive?",
+      "correctAnswer": "scant rainfall",
+      "incorrectAnswers": [
+        "heavy monsoon rain",
+        "constant tropical storms",
+        "daily thunderstorms"
+      ],
+      "explanation": "Tundra is cold and windy, and it also gets relatively little precipitation.",
+      "keywords": [
+        "tundra",
+        "nature-ecosystems"
+      ],
+      "source": "https://environment.nationalgeographic.com/environment/habitats/tundra-profile"
+    },
+    {
+      "seedId": "0322c973-362d-507e-9654-f9eb4762b239",
+      "category": "nature",
+      "navigationKeyword1": "ecosystems",
+      "navigationKeyword2": "tundra",
+      "question": "What major feature makes tundra landscapes different from forests?",
+      "correctAnswer": "they are largely treeless",
+      "incorrectAnswers": [
+        "they have year-round flowering plants",
+        "they have no wind",
+        "they are covered by tall jungle canopy"
+      ],
+      "explanation": "Tundra is a cold biome known for being largely treeless.",
+      "keywords": [
+        "tundra",
+        "nature-ecosystems"
+      ],
+      "source": "https://environment.nationalgeographic.com/environment/habitats/tundra-profile"
+    },
+    {
+      "seedId": "73b3059e-f0b7-507d-81c8-e7d50e32bb21",
+      "category": "nature",
+      "navigationKeyword1": "ecosystems",
+      "navigationKeyword2": "tundra",
+      "question": "Why do many tundra plants have shallow roots?",
+      "correctAnswer": "because permafrost lies close to the surface",
+      "incorrectAnswers": [
+        "because the soil is too dry for any roots",
+        "because there is too much shade",
+        "because they only grow in sand"
+      ],
+      "explanation": "Tundra plants often root shallowly because the permanently frozen layer limits deeper growth.",
+      "keywords": [
+        "tundra",
+        "nature-ecosystems"
+      ],
+      "source": "https://environment.nationalgeographic.com/environment/habitats/tundra-profile"
+    },
+    {
+      "seedId": "9798e593-64e2-563f-9c48-1c12dfd40574",
+      "category": "nature",
+      "navigationKeyword1": "navigation",
+      "navigationKeyword2": "gps",
+      "question": "Besides location, what kind of information can many GPS receivers provide?",
+      "correctAnswer": "heading and bearing",
+      "incorrectAnswers": [
+        "tree age and soil pH",
+        "wind chill and avalanche risk only",
+        "leaf species and water purity"
+      ],
+      "explanation": "Many outdoor GPS units can display heading, bearing, speed, distance-to-go, and related navigation data.",
+      "keywords": [
+        "gps",
+        "nature-navigation"
+      ],
+      "source": "https://www.gps.gov/outdoors-gps"
+    },
+    {
+      "seedId": "b77856f8-1358-5a70-9b2b-348586a1a49a",
+      "category": "nature",
+      "navigationKeyword1": "navigation",
+      "navigationKeyword2": "gps",
+      "question": "How does a GPS receiver estimate its distance from a satellite?",
+      "correctAnswer": "by measuring how long the signal takes to arrive",
+      "incorrectAnswers": [
+        "by reading air temperature",
+        "by comparing contour lines",
+        "by using cloud cover"
+      ],
+      "explanation": "GPS relies on timing signals from satellites and the relationship between distance, rate, and time.",
+      "keywords": [
+        "gps",
+        "nature-navigation"
+      ],
+      "source": "https://www.gps.gov/trilateration"
+    },
+    {
+      "seedId": "74bbca8f-4eb3-5a42-8636-ebf2b314c6ae",
+      "category": "nature",
+      "navigationKeyword1": "navigation",
+      "navigationKeyword2": "gps",
+      "question": "What does GPS trilateration use to figure out your position?",
+      "correctAnswer": "distances to satellites",
+      "incorrectAnswers": [
+        "wind speed",
+        "compass declination",
+        "barometric pressure only"
+      ],
+      "explanation": "GPS trilateration determines position from known satellite locations and your distance to them.",
+      "keywords": [
+        "gps",
+        "nature-navigation"
+      ],
+      "source": "https://www.gps.gov/trilateration"
+    },
+    {
+      "seedId": "87fa846e-8684-58db-9fea-58a7f67f106f",
+      "category": "nature",
+      "navigationKeyword1": "navigation",
+      "navigationKeyword2": "gps",
+      "question": "What is a waypoint on a GPS unit?",
+      "correctAnswer": "a saved location",
+      "incorrectAnswers": [
+        "a battery warning",
+        "a steep slope marker",
+        "a weather alert only"
+      ],
+      "explanation": "Waypoints let you save important locations so you can navigate back to them later.",
+      "keywords": [
+        "gps",
+        "nature-navigation"
+      ],
+      "source": "https://www.rei.com/learn/expert-advice/gps-receiver.html"
+    },
+    {
+      "seedId": "47d7740b-d344-5354-94cd-2133e59129df",
+      "category": "nature",
+      "navigationKeyword1": "navigation",
+      "navigationKeyword2": "gps",
+      "question": "What is one major outdoor advantage of storing waypoints on a GPS?",
+      "correctAnswer": "you can return to saved locations",
+      "incorrectAnswers": [
+        "it makes batteries last forever",
+        "it changes magnetic north",
+        "it removes the need for weather awareness"
+      ],
+      "explanation": "Waypoints help you relocate trailheads, camps, fishing spots, or other saved positions with precision.",
+      "keywords": [
+        "gps",
+        "nature-navigation"
+      ],
+      "source": "https://www.gps.gov/outdoors-gps"
+    },
+    {
+      "seedId": "8ecf524e-dd01-59f7-b63c-b85209debd42",
+      "category": "nature",
+      "navigationKeyword1": "navigation",
+      "navigationKeyword2": "gps",
+      "question": "Why is it wise to keep a backup navigation method even when carrying GPS?",
+      "correctAnswer": "GPS can be disrupted by interference or outages",
+      "incorrectAnswers": [
+        "GPS always points to true north",
+        "GPS cannot store routes",
+        "GPS works only in cities"
+      ],
+      "explanation": "Official guidance encourages backup navigation because GPS can be affected by jamming, interference, or service problems.",
+      "keywords": [
+        "gps",
+        "nature-navigation"
+      ],
+      "source": "https://archive.gps.gov/resilience/"
+    },
+    {
+      "seedId": "1654d36f-8b01-58cf-8cae-c9c79db6c855",
+      "category": "nature",
+      "navigationKeyword1": "navigation",
+      "navigationKeyword2": "map-compass",
+      "question": "A compass needle points toward which north?",
+      "correctAnswer": "magnetic north",
+      "incorrectAnswers": [
+        "true north only",
+        "grid north only",
+        "solar north"
+      ],
+      "explanation": "A compass aligns with Earth's magnetic field, so it points to magnetic north.",
+      "keywords": [
+        "map-compass",
+        "nature-navigation"
+      ],
+      "source": "https://www.rei.com/learn/expert-advice/compass-declination.html"
+    },
+    {
+      "seedId": "76df96f2-8adf-5d86-82a0-eccb9418eae4",
+      "category": "nature",
+      "navigationKeyword1": "navigation",
+      "navigationKeyword2": "map-compass",
+      "question": "If contour lines are very close together, what does that usually mean?",
+      "correctAnswer": "the slope is steep",
+      "incorrectAnswers": [
+        "the area is flat",
+        "the ground is underwater",
+        "there is a road nearby"
+      ],
+      "explanation": "Closely spaced contour lines show elevation changing quickly over a short distance.",
+      "keywords": [
+        "map-compass",
+        "nature-navigation"
+      ],
+      "source": "https://www.nps.gov/teachers/classrooms/earths-features-interpreting-patterns-with-topographic-maps.htm"
+    },
+    {
+      "seedId": "5d4b2a07-a25b-55a2-a11d-282904822d4b",
+      "category": "nature",
+      "navigationKeyword1": "navigation",
+      "navigationKeyword2": "map-compass",
+      "question": "Topographic maps use contour lines mainly to show what?",
+      "correctAnswer": "terrain and elevation",
+      "incorrectAnswers": [
+        "cell phone coverage",
+        "wildlife migration routes",
+        "daily weather forecasts"
+      ],
+      "explanation": "Contour lines are one of the main ways topographic maps show the shape of the land.",
+      "keywords": [
+        "map-compass",
+        "nature-navigation"
+      ],
+      "source": "https://www.usgs.gov/programs/national-geospatial-program/topographic-maps"
+    },
+    {
+      "seedId": "1f845a1a-bdcd-5ced-b4eb-ecd138f5e4a4",
+      "category": "nature",
+      "navigationKeyword1": "navigation",
+      "navigationKeyword2": "map-compass",
+      "question": "What do contour lines on a topographic map connect?",
+      "correctAnswer": "points of equal elevation",
+      "incorrectAnswers": [
+        "the shortest trail to camp",
+        "areas with the same tree species",
+        "the windiest ridges"
+      ],
+      "explanation": "Contour lines join places at the same height above sea level.",
+      "keywords": [
+        "map-compass",
+        "nature-navigation"
+      ],
+      "source": "https://www.nps.gov/teachers/classrooms/earths-features-interpreting-patterns-with-topographic-maps.htm"
+    },
+    {
+      "seedId": "0ea6b877-dcd3-5484-8658-641888fe07e1",
+      "category": "nature",
+      "navigationKeyword1": "navigation",
+      "navigationKeyword2": "map-compass",
+      "question": "What is magnetic declination?",
+      "correctAnswer": "the difference between magnetic north and true north",
+      "incorrectAnswers": [
+        "the steepness of a slope",
+        "the speed of a current",
+        "the angle of the sun at noon"
+      ],
+      "explanation": "Declination is the angular difference between where a compass points and true north on the globe.",
+      "keywords": [
+        "map-compass",
+        "nature-navigation"
+      ],
+      "source": "https://www.rei.com/learn/expert-advice/compass-declination.html"
+    },
+    {
+      "seedId": "1374bf8f-2593-5584-b610-f44a4d50b74f",
+      "category": "nature",
+      "navigationKeyword1": "navigation",
+      "navigationKeyword2": "map-compass",
+      "question": "Where can you often find the local declination value when using a topographic map?",
+      "correctAnswer": "in the map legend or margin information",
+      "incorrectAnswers": [
+        "inside the compass housing",
+        "on every contour line",
+        "only on satellite imagery"
+      ],
+      "explanation": "Many topographic maps include declination information in their legend or margin notes.",
+      "keywords": [
+        "map-compass",
+        "nature-navigation"
+      ],
+      "source": "https://www.rei.com/learn/expert-advice/compass-declination.html"
+    },
+    {
+      "seedId": "1e70b564-66ac-5703-a105-11c11ee9bd7b",
+      "category": "nature",
+      "navigationKeyword1": "navigation",
+      "navigationKeyword2": "orienteering",
+      "question": "In orienteering, is the route between checkpoints usually marked for you?",
+      "correctAnswer": "no",
+      "incorrectAnswers": [
+        "yes, with ropes",
+        "yes, with painted arrows",
+        "yes, by a guide walking ahead"
+      ],
+      "explanation": "Competitors choose their own route between checkpoints rather than following a marked path.",
+      "keywords": [
+        "orienteering",
+        "nature-navigation"
+      ],
+      "source": "https://www.rei.com/learn/expert-advice/orienteering-basics.html"
+    },
+    {
+      "seedId": "120ec74f-7b1c-5a2a-9e1a-dea5727028f8",
+      "category": "nature",
+      "navigationKeyword1": "navigation",
+      "navigationKeyword2": "orienteering",
+      "question": "What color are the checkpoint flags commonly used in orienteering?",
+      "correctAnswer": "orange and white",
+      "incorrectAnswers": [
+        "red and black",
+        "blue and yellow",
+        "green and white"
+      ],
+      "explanation": "Orienteering controls are commonly marked with orange-and-white flags so participants can identify them in the terrain.",
+      "keywords": [
+        "orienteering",
+        "nature-navigation"
+      ],
+      "source": "https://troopleader.scouting.org/program-features/orienteering/information/"
+    },
+    {
+      "seedId": "42277405-ad47-50c9-8428-733d8e19a844",
+      "category": "nature",
+      "navigationKeyword1": "navigation",
+      "navigationKeyword2": "orienteering",
+      "question": "What do you do at each control point in an orienteering event?",
+      "correctAnswer": "record that you found it by punching or electronically checking in",
+      "incorrectAnswers": [
+        "light a signal fire",
+        "leave a note for the next runner",
+        "swap maps with another participant"
+      ],
+      "explanation": "At each control, you prove you found the correct location by punching or electronically registering there.",
+      "keywords": [
+        "orienteering",
+        "nature-navigation"
+      ],
+      "source": "https://troopleader.scouting.org/program-features/orienteering/information/"
+    },
+    {
+      "seedId": "a779abc6-3f4e-5e5a-824c-2c379e6ae06e",
+      "category": "nature",
+      "navigationKeyword1": "navigation",
+      "navigationKeyword2": "orienteering",
+      "question": "What is orienteering?",
+      "correctAnswer": "a navigation sport using a map and compass",
+      "incorrectAnswers": [
+        "a type of rock climbing",
+        "a shelter-building contest",
+        "a paddling race with no map"
+      ],
+      "explanation": "Orienteering is a timed navigation activity where you find checkpoints using map skills.",
+      "keywords": [
+        "orienteering",
+        "nature-navigation"
+      ],
+      "source": "https://orienteeringusa.org/explore/what-is-orienteering/"
+    },
+    {
+      "seedId": "e9b900b9-c5eb-57a8-810b-a15d0d6cb110",
+      "category": "nature",
+      "navigationKeyword1": "navigation",
+      "navigationKeyword2": "orienteering",
+      "question": "What map symbol usually marks the finish in orienteering?",
+      "correctAnswer": "a double circle",
+      "incorrectAnswers": [
+        "a black X",
+        "a triangle",
+        "a shaded square"
+      ],
+      "explanation": "The finish is typically shown with a double circle on an orienteering map.",
+      "keywords": [
+        "orienteering",
+        "nature-navigation"
+      ],
+      "source": "https://orienteeringusa.org/explore/how-to-orienteer/"
+    },
+    {
+      "seedId": "e4434aae-88d1-52f3-be2a-a94238840466",
+      "category": "nature",
+      "navigationKeyword1": "navigation",
+      "navigationKeyword2": "orienteering",
+      "question": "What map symbol usually marks the start of an orienteering course?",
+      "correctAnswer": "a triangle",
+      "incorrectAnswers": [
+        "a square",
+        "a star",
+        "a dashed line"
+      ],
+      "explanation": "Orienteering maps commonly use a triangle for the start, circles for controls, and a double circle for the finish.",
+      "keywords": [
+        "orienteering",
+        "nature-navigation"
+      ],
+      "source": "https://orienteeringusa.org/explore/how-to-orienteer/"
+    },
+    {
+      "seedId": "ee722762-306a-5e87-845d-acf3acaaae9b",
+      "category": "nature",
+      "navigationKeyword1": "phenomena",
+      "navigationKeyword2": "aurora",
+      "question": "Auroras are usually strongest and most common near which part of Earth?",
+      "correctAnswer": "the magnetic poles",
+      "incorrectAnswers": [
+        "the equator",
+        "the tropics",
+        "the mid-ocean ridges"
+      ],
+      "explanation": "Auroral activity clusters around the polar regions because particles follow Earth's magnetic field there.",
+      "keywords": [
+        "aurora",
+        "nature-phenomena"
+      ],
+      "source": "https://www.swpc.noaa.gov/content/aurora-tutorial"
+    },
+    {
+      "seedId": "b43fc420-f1a5-53da-a967-9641b4b7f99d",
+      "category": "nature",
+      "navigationKeyword1": "phenomena",
+      "navigationKeyword2": "aurora",
+      "question": "What causes an aurora to glow?",
+      "correctAnswer": "charged particles striking Earth's upper atmosphere",
+      "incorrectAnswers": [
+        "moonlight reflecting off snow",
+        "volcanic ash catching sunlight",
+        "heat rising from the ground"
+      ],
+      "explanation": "Auroras form when energetic particles from space collide with gases high in Earth's atmosphere.",
+      "keywords": [
+        "aurora",
+        "nature-phenomena"
+      ],
+      "source": "https://www.swpc.noaa.gov/content/aurora-tutorial"
+    },
+    {
+      "seedId": "7da2ca40-2f9c-5113-bcbb-6fe8d82a33d8",
+      "category": "nature",
+      "navigationKeyword1": "phenomena",
+      "navigationKeyword2": "aurora",
+      "question": "What is the common name for the aurora borealis?",
+      "correctAnswer": "the northern lights",
+      "incorrectAnswers": [
+        "the midnight sun",
+        "the zodiacal glow",
+        "the polar halo"
+      ],
+      "explanation": "Aurora borealis is the northern-hemisphere aurora, commonly called the northern lights.",
+      "keywords": [
+        "aurora",
+        "nature-phenomena"
+      ],
+      "source": "https://science.nasa.gov/sun/auroras/"
+    },
+    {
+      "seedId": "a975adb5-9599-5bde-9323-f80a00b7ea27",
+      "category": "nature",
+      "navigationKeyword1": "phenomena",
+      "navigationKeyword2": "aurora",
+      "question": "What is the southern-hemisphere aurora called?",
+      "correctAnswer": "aurora australis",
+      "incorrectAnswers": [
+        "aurora equatorialis",
+        "aurora occidentalis",
+        "aurora meridiana"
+      ],
+      "explanation": "Aurora australis is the name for the southern lights.",
+      "keywords": [
+        "aurora",
+        "nature-phenomena"
+      ],
+      "source": "https://science.nasa.gov/sun/auroras/"
+    },
+    {
+      "seedId": "f4527898-201c-544b-a7a7-847f9d4fae09",
+      "category": "nature",
+      "navigationKeyword1": "phenomena",
+      "navigationKeyword2": "aurora",
+      "question": "What stream of particles from the Sun helps drive auroras?",
+      "correctAnswer": "solar wind",
+      "incorrectAnswers": [
+        "sunspots",
+        "sunlight alone",
+        "asteroid dust"
+      ],
+      "explanation": "Solar wind carries charged particles from the Sun that can trigger auroral displays at Earth.",
+      "keywords": [
+        "aurora",
+        "nature-phenomena"
+      ],
+      "source": "https://science.nasa.gov/sun/auroras/"
+    },
+    {
+      "seedId": "2af26343-de47-5b86-93ce-2eebce739eef",
+      "category": "nature",
+      "navigationKeyword1": "phenomena",
+      "navigationKeyword2": "aurora",
+      "question": "Which aurora color is most common?",
+      "correctAnswer": "green",
+      "incorrectAnswers": [
+        "orange",
+        "brown",
+        "pink"
+      ],
+      "explanation": "Green is the most common aurora color and is usually produced by excited oxygen.",
+      "keywords": [
+        "aurora",
+        "nature-phenomena"
+      ],
+      "source": "https://science.nasa.gov/sun/auroras/"
+    },
+    {
+      "seedId": "abe1efa4-5479-5d7f-aa8a-f2384c04e26e",
+      "category": "nature",
+      "navigationKeyword1": "phenomena",
+      "navigationKeyword2": "geology-events",
+      "question": "What basic force drives landslides downhill?",
+      "correctAnswer": "gravity",
+      "incorrectAnswers": [
+        "magnetism",
+        "sunlight",
+        "air pressure"
+      ],
+      "explanation": "Gravity is the force behind downslope movement in landslides.",
+      "keywords": [
+        "geology-events",
+        "nature-phenomena"
+      ],
+      "source": "https://www.usgs.gov/publications/landslides"
+    },
+    {
+      "seedId": "25c07b24-9b54-5bac-96dd-3c9b22e7e9a8",
+      "category": "nature",
+      "navigationKeyword1": "phenomena",
+      "navigationKeyword2": "geology-events",
+      "question": "What is molten rock called after it reaches Earth's surface?",
+      "correctAnswer": "lava",
+      "incorrectAnswers": [
+        "magma",
+        "basalt only",
+        "bedrock"
+      ],
+      "explanation": "Molten rock below ground is magma, and once it erupts at the surface it is called lava.",
+      "keywords": [
+        "geology-events",
+        "nature-phenomena"
+      ],
+      "source": "https://www.usgs.gov/natural-hazards/volcano-hazards/about-volcanoes"
+    },
+    {
+      "seedId": "e5359e2c-2dfc-50dd-9ef7-89bdc8f88907",
+      "category": "nature",
+      "navigationKeyword1": "phenomena",
+      "navigationKeyword2": "geology-events",
+      "question": "What is the earthquake focus, also called the hypocenter?",
+      "correctAnswer": "the point underground where the rupture begins",
+      "incorrectAnswers": [
+        "the top of the nearest mountain",
+        "the center of the tectonic plate",
+        "the point where aftershocks end"
+      ],
+      "explanation": "The focus or hypocenter is the underground starting point of an earthquake rupture.",
+      "keywords": [
+        "geology-events",
+        "nature-phenomena"
+      ],
+      "source": "https://www.usgs.gov/index.php/media/images/epicenter-hypocentergif"
+    },
+    {
+      "seedId": "a2bd2d62-4ad8-5f62-a16e-baa99a259c4b",
+      "category": "nature",
+      "navigationKeyword1": "phenomena",
+      "navigationKeyword2": "geology-events",
+      "question": "What is the epicenter of an earthquake?",
+      "correctAnswer": "the point on Earth's surface directly above the focus",
+      "incorrectAnswers": [
+        "the deepest part of the mantle",
+        "the line where two clouds meet",
+        "the strongest building nearby"
+      ],
+      "explanation": "The epicenter is the surface point located directly above where the rupture begins underground.",
+      "keywords": [
+        "geology-events",
+        "nature-phenomena"
+      ],
+      "source": "https://pubs.usgs.gov/gip/earthq1/how.html"
+    },
+    {
+      "seedId": "5b1ffeb9-68c8-5e59-baf5-26684e59bd31",
+      "category": "nature",
+      "navigationKeyword1": "phenomena",
+      "navigationKeyword2": "geology-events",
+      "question": "What powers a geyser eruption?",
+      "correctAnswer": "heated groundwater turning to steam under pressure",
+      "incorrectAnswers": [
+        "wind trapped in caves",
+        "tidal pull from the Moon",
+        "surface ice melting suddenly"
+      ],
+      "explanation": "Geysers erupt when hot groundwater and steam build pressure in a constricted underground system.",
+      "keywords": [
+        "geology-events",
+        "nature-phenomena"
+      ],
+      "source": "https://www.usgs.gov/publications/geysers"
+    },
+    {
+      "seedId": "4f59d323-8833-5dea-95f9-0e366b7f2cb7",
+      "category": "nature",
+      "navigationKeyword1": "phenomena",
+      "navigationKeyword2": "geology-events",
+      "question": "What usually starts the largest tsunamis?",
+      "correctAnswer": "sudden seafloor movement during an underwater earthquake",
+      "incorrectAnswers": [
+        "daily tides",
+        "steady ocean currents",
+        "rainfall over the ocean"
+      ],
+      "explanation": "Many tsunamis begin when an underwater earthquake suddenly lifts or drops the seafloor.",
+      "keywords": [
+        "geology-events",
+        "nature-phenomena"
+      ],
+      "source": "https://www.noaa.gov/jetstream/tsunamis/tsunami-generation-earthquakes"
+    },
+    {
+      "seedId": "ed3ee35a-a21f-5502-b3a2-40209cb77dae",
+      "category": "nature",
+      "navigationKeyword1": "phenomena",
+      "navigationKeyword2": "weather-events",
+      "question": "What causes the sound of thunder?",
+      "correctAnswer": "air rapidly heated by lightning",
+      "incorrectAnswers": [
+        "rain hitting rooftops",
+        "wind passing through trees",
+        "clouds rubbing together slowly"
+      ],
+      "explanation": "Lightning superheats the air, causing it to expand explosively and create thunder.",
+      "keywords": [
+        "weather-events",
+        "nature-phenomena"
+      ],
+      "source": "https://www.nssl.noaa.gov/education/svrwx101/lightning/"
+    },
+    {
+      "seedId": "f63ff0b4-9159-5c37-96df-fba48c1c6c74",
+      "category": "nature",
+      "navigationKeyword1": "phenomena",
+      "navigationKeyword2": "weather-events",
+      "question": "What helps hailstones grow inside a thunderstorm?",
+      "correctAnswer": "strong updrafts",
+      "incorrectAnswers": [
+        "fog near the ground",
+        "ocean tides",
+        "warm night air alone"
+      ],
+      "explanation": "Strong updrafts keep hail aloft long enough for layers of ice to build up.",
+      "keywords": [
+        "weather-events",
+        "nature-phenomena"
+      ],
+      "source": "https://www.noaa.gov/jetstream/hail"
+    },
+    {
+      "seedId": "1dcadc7d-1cbd-56b3-99a3-cb5cb03724ac",
+      "category": "nature",
+      "navigationKeyword1": "phenomena",
+      "navigationKeyword2": "weather-events",
+      "question": "What is the eye of a hurricane?",
+      "correctAnswer": "the relatively calm center",
+      "incorrectAnswers": [
+        "the rainiest outer band",
+        "the cold front behind the storm",
+        "the cloudless area far ahead of it"
+      ],
+      "explanation": "The eye is the hurricane's relatively calm center, surrounded by the intense eyewall.",
+      "keywords": [
+        "weather-events",
+        "nature-phenomena"
+      ],
+      "source": "https://www.weather.gov/glossary/index.php?word=EYE"
+    },
+    {
+      "seedId": "edc8c4dc-c1fd-5162-96ea-84816c3e3b30",
+      "category": "nature",
+      "navigationKeyword1": "phenomena",
+      "navigationKeyword2": "weather-events",
+      "question": "What is the safest response when a road is covered by floodwater?",
+      "correctAnswer": "turn around and find another route",
+      "incorrectAnswers": [
+        "speed up and cross quickly",
+        "stop in the middle to judge depth",
+        "follow the vehicle ahead"
+      ],
+      "explanation": "Flooded roads can hide strong current or washed-out pavement, so the safe choice is to turn around.",
+      "keywords": [
+        "weather-events",
+        "nature-phenomena"
+      ],
+      "source": "https://www.weather.gov/safety/flood-turn-around-dont-drown/"
+    },
+    {
+      "seedId": "9474f114-89a6-5cb1-a073-bacc47e4cac4",
+      "category": "nature",
+      "navigationKeyword1": "phenomena",
+      "navigationKeyword2": "weather-events",
+      "question": "What makes a blizzard more than just a snowfall?",
+      "correctAnswer": "strong winds with blowing snow and very low visibility",
+      "incorrectAnswers": [
+        "any snow at night",
+        "freezing rain only",
+        "warm winds after snow"
+      ],
+      "explanation": "A blizzard involves strong winds and blowing snow that reduce visibility severely.",
+      "keywords": [
+        "weather-events",
+        "nature-phenomena"
+      ],
+      "source": "https://www.nssl.noaa.gov/education/svrwx101/winter/faq/"
+    },
+    {
+      "seedId": "e31cd9ae-b12f-5fad-9bc1-fabd8f5f983e",
+      "category": "nature",
+      "navigationKeyword1": "phenomena",
+      "navigationKeyword2": "weather-events",
+      "question": "Which type of thunderstorm produces many of the strongest long-lived tornadoes?",
+      "correctAnswer": "supercell",
+      "incorrectAnswers": [
+        "sea breeze shower",
+        "stratus deck",
+        "lake fog bank"
+      ],
+      "explanation": "Supercells have a rotating updraft and are linked to many of the most powerful tornadoes.",
+      "keywords": [
+        "weather-events",
+        "nature-phenomena"
+      ],
+      "source": "https://www.weather.gov/glossary/index.php?word=supercell+thunderstorm"
+    },
+    {
+      "seedId": "ae932e1e-8377-5216-837d-e03ae3462237",
+      "category": "nature",
+      "navigationKeyword1": "plants",
+      "navigationKeyword2": "poisonous",
+      "question": "Does fluid from poison ivy blisters spread the rash to new places?",
+      "correctAnswer": "no",
+      "incorrectAnswers": [
+        "yes, always",
+        "only after the first day",
+        "only if the blisters burst outdoors"
+      ],
+      "explanation": "The rash comes from urushiol exposure, not from the fluid inside the blisters.",
+      "keywords": [
+        "poisonous-plants",
+        "nature-plants"
+      ],
+      "source": "https://www.cdc.gov/niosh/topics/plants/symptoms.html"
+    },
+    {
+      "seedId": "2100b74f-a904-54e4-81c9-dc6f1550d334",
+      "category": "nature",
+      "navigationKeyword1": "plants",
+      "navigationKeyword2": "poisonous",
+      "question": "Poison oak is most often recognized by leaves grouped in how many leaflets?",
+      "correctAnswer": "three",
+      "incorrectAnswers": [
+        "two",
+        "five",
+        "seven"
+      ],
+      "explanation": "Poison oak usually has three leaflets, which is why people say, 'Leaves of three, let it be.'",
+      "keywords": [
+        "poisonous-plants",
+        "nature-plants"
+      ],
+      "source": "https://ipm.ucanr.edu/pdf/pestnotes/pnpoisonoak.pdf"
+    },
+    {
+      "seedId": "3e8eae2f-d860-5026-b965-074db16d225d",
+      "category": "nature",
+      "navigationKeyword1": "plants",
+      "navigationKeyword2": "poisonous",
+      "question": "Poison sumac is most often found in what kind of place?",
+      "correctAnswer": "swampy wetlands",
+      "incorrectAnswers": [
+        "dry deserts",
+        "high alpine slopes",
+        "open grass prairies"
+      ],
+      "explanation": "Poison sumac typically grows in swampy, acidic wet areas rather than dry uplands.",
+      "keywords": [
+        "poisonous-plants",
+        "nature-plants"
+      ],
+      "source": "https://www.britannica.com/plant/poison-sumac"
+    },
+    {
+      "seedId": "71368201-da28-57d2-baf6-1bdeda8400b4",
+      "category": "nature",
+      "navigationKeyword1": "plants",
+      "navigationKeyword2": "poisonous",
+      "question": "What oil in poison ivy causes the itchy skin reaction?",
+      "correctAnswer": "urushiol",
+      "incorrectAnswers": [
+        "capsaicin",
+        "latex",
+        "menthol"
+      ],
+      "explanation": "Poison ivy contains urushiol, an oily compound that triggers contact dermatitis.",
+      "keywords": [
+        "poisonous-plants",
+        "nature-plants"
+      ],
+      "source": "https://www.britannica.com/science/urushiol"
+    },
+    {
+      "seedId": "824bf197-adb2-5e14-b57c-565d43eed0f4",
+      "category": "nature",
+      "navigationKeyword1": "plants",
+      "navigationKeyword2": "poisonous",
+      "question": "Which part of water hemlock is especially dangerous if eaten?",
+      "correctAnswer": "the roots",
+      "incorrectAnswers": [
+        "only the flowers",
+        "only the seeds",
+        "only the bark"
+      ],
+      "explanation": "Water hemlock is dangerous throughout, but the roots are especially toxic.",
+      "keywords": [
+        "poisonous-plants",
+        "nature-plants"
+      ],
+      "source": "https://www.britannica.com/plant/water-hemlock"
+    },
+    {
+      "seedId": "ad0c6505-0577-59ca-9003-dc8cf858e71b",
+      "category": "nature",
+      "navigationKeyword1": "plants",
+      "navigationKeyword2": "poisonous",
+      "question": "Why is burning poison ivy especially dangerous?",
+      "correctAnswer": "the irritating oil can be carried in smoke",
+      "incorrectAnswers": [
+        "it explodes when heated",
+        "it releases carbon monoxide only",
+        "it attracts biting insects"
+      ],
+      "explanation": "Smoke from burning poison ivy can carry urushiol and expose people without direct skin contact.",
+      "keywords": [
+        "poisonous-plants",
+        "nature-plants"
+      ],
+      "source": "https://www.cdc.gov/niosh/topics/plants/exposure.html"
+    },
+    {
+      "seedId": "3f33c106-e802-5b45-9054-a58e07ddc6c9",
+      "category": "nature",
+      "navigationKeyword1": "plants",
+      "navigationKeyword2": "trees",
+      "question": "Acorns are the nuts of which kind of tree?",
+      "correctAnswer": "oak",
+      "incorrectAnswers": [
+        "maple",
+        "elm",
+        "spruce"
+      ],
+      "explanation": "Acorns are produced by oak trees and are important food for many animals.",
+      "keywords": [
+        "trees",
+        "nature-plants"
+      ],
+      "source": "https://www.fpl.fs.usda.gov/documnts/usda/amwood/247oak.pdf"
+    },
+    {
+      "seedId": "1d43a6da-bfe3-50a6-8e48-8b43f829c757",
+      "category": "nature",
+      "navigationKeyword1": "plants",
+      "navigationKeyword2": "trees",
+      "question": "Mangroves are especially adapted to live along what kind of coast?",
+      "correctAnswer": "salty or brackish coasts",
+      "incorrectAnswers": [
+        "frozen inland lakes",
+        "dry mountain ridges",
+        "desert dunes"
+      ],
+      "explanation": "Mangroves are salt-tolerant trees that thrive along tidal coasts and estuaries.",
+      "keywords": [
+        "trees",
+        "nature-plants"
+      ],
+      "source": "https://www.britannica.com/plant/mangrove"
+    },
+    {
+      "seedId": "f522f92a-45e9-52e4-aee4-f116e096a869",
+      "category": "nature",
+      "navigationKeyword1": "plants",
+      "navigationKeyword2": "trees",
+      "question": "Most conifers produce their seeds in what structure?",
+      "correctAnswer": "cones",
+      "incorrectAnswers": [
+        "pods",
+        "berries",
+        "tubers"
+      ],
+      "explanation": "Conifers are gymnosperms that usually bear their seeds in cones.",
+      "keywords": [
+        "trees",
+        "nature-plants"
+      ],
+      "source": "https://www.britannica.com/plant/conifer/Strobili"
+    },
+    {
+      "seedId": "1c7aa3b7-43b4-54eb-a317-b26114e6d39b",
+      "category": "nature",
+      "navigationKeyword1": "plants",
+      "navigationKeyword2": "trees",
+      "question": "What do deciduous trees do each year?",
+      "correctAnswer": "shed all their leaves",
+      "incorrectAnswers": [
+        "keep needles year-round",
+        "flower only once",
+        "grow only in wetlands"
+      ],
+      "explanation": "Deciduous trees are defined by shedding their leaves annually.",
+      "keywords": [
+        "trees",
+        "nature-plants"
+      ],
+      "source": "https://www.arborday.org/trees/treeguide/glossary.cfm"
+    },
+    {
+      "seedId": "aaf6577d-3443-5674-bb70-5808ed89d18d",
+      "category": "nature",
+      "navigationKeyword1": "plants",
+      "navigationKeyword2": "trees",
+      "question": "Which North American tree is known for white bark that peels in thin papery layers?",
+      "correctAnswer": "paper birch",
+      "incorrectAnswers": [
+        "quaking aspen",
+        "sycamore",
+        "cottonwood"
+      ],
+      "explanation": "Paper birch has distinctive peeling bark that was historically used for canoes and roofing.",
+      "keywords": [
+        "trees",
+        "nature-plants"
+      ],
+      "source": "https://www.britannica.com/plant/paper-birch/additional-info"
+    },
+    {
+      "seedId": "b2d4f3f8-5d89-5497-be53-ab048133d845",
+      "category": "nature",
+      "navigationKeyword1": "plants",
+      "navigationKeyword2": "trees",
+      "question": "Which tree is the classic commercial source of maple syrup?",
+      "correctAnswer": "sugar maple",
+      "incorrectAnswers": [
+        "silver birch",
+        "American beech",
+        "eastern hemlock"
+      ],
+      "explanation": "Sugar maple sap is the traditional source used to make maple syrup.",
+      "keywords": [
+        "trees",
+        "nature-plants"
+      ],
+      "source": "https://www.britannica.com/plant/sugar-maple"
+    },
+    {
+      "seedId": "b669e4b1-f5de-521d-8d34-b285b79ff66c",
+      "category": "nature",
+      "navigationKeyword1": "plants",
+      "navigationKeyword2": "wild-edibles",
+      "question": "Morel mushrooms are most often associated with which season?",
+      "correctAnswer": "spring",
+      "incorrectAnswers": [
+        "winter",
+        "late summer",
+        "mid-autumn"
+      ],
+      "explanation": "True morels are prized edible mushrooms best known for appearing in spring.",
+      "keywords": [
+        "wild-edibles",
+        "nature-plants"
+      ],
+      "source": "https://www.britannica.com/science/morel"
+    },
+    {
+      "seedId": "d312f4cb-b798-5db8-822c-021b924eada4",
+      "category": "nature",
+      "navigationKeyword1": "plants",
+      "navigationKeyword2": "wild-edibles",
+      "question": "What distinctive smell does garlic mustard give off when crushed?",
+      "correctAnswer": "a garlicky smell",
+      "incorrectAnswers": [
+        "a minty smell",
+        "a citrus smell",
+        "no smell at all"
+      ],
+      "explanation": "Garlic mustard is named for the garlic-like scent released when its leaves are crushed.",
+      "keywords": [
+        "wild-edibles",
+        "nature-plants"
+      ],
+      "source": "https://www3.extension.umn.edu/node/21951"
+    },
+    {
+      "seedId": "183acc3c-5aa2-5c4a-9e12-d0578ac493df",
+      "category": "nature",
+      "navigationKeyword1": "plants",
+      "navigationKeyword2": "wild-edibles",
+      "question": "What is the safest rule before eating any wild plant or mushroom?",
+      "correctAnswer": "positively identify it without question",
+      "incorrectAnswers": [
+        "taste a tiny amount first",
+        "cook it to make it safe",
+        "eat only bright-colored ones"
+      ],
+      "explanation": "A wild food should never be eaten unless it can be identified with certainty.",
+      "keywords": [
+        "wild-edibles",
+        "nature-plants"
+      ],
+      "source": "https://www.nps.gov/pore/learn/nature/mushrooms.htm"
+    },
+    {
+      "seedId": "a8c6569c-9354-5eea-aecb-16e7bafbca44",
+      "category": "nature",
+      "navigationKeyword1": "plants",
+      "navigationKeyword2": "wild-edibles",
+      "question": "Which common lawn plant has edible leaves, flowers, and roots?",
+      "correctAnswer": "dandelion",
+      "incorrectAnswers": [
+        "foxglove",
+        "oleander",
+        "yew"
+      ],
+      "explanation": "Dandelions are widely known as edible plants, though they should only be gathered from clean, untreated areas.",
+      "keywords": [
+        "wild-edibles",
+        "nature-plants"
+      ],
+      "source": "https://extension.umn.edu/yard-and-garden-news/can-i-eat-weeds-my-backyard"
+    },
+    {
+      "seedId": "00558091-096a-5067-b8dd-b58b0585f6a5",
+      "category": "nature",
+      "navigationKeyword1": "plants",
+      "navigationKeyword2": "wild-edibles",
+      "question": "Which part of a cattail is noted as an edible source of pollen?",
+      "correctAnswer": "the male flower part",
+      "incorrectAnswers": [
+        "the fluffy brown seed head",
+        "the root hairs",
+        "the outer bark"
+      ],
+      "explanation": "Cattails have several edible uses, and the male flower portion is one source of edible pollen.",
+      "keywords": [
+        "wild-edibles",
+        "nature-plants"
+      ],
+      "source": "https://extension.umn.edu/natural-resources-news/wild-edibles-cattails"
+    },
+    {
+      "seedId": "10de54cd-687f-594d-ac2b-0a8af1d2cd80",
+      "category": "nature",
+      "navigationKeyword1": "plants",
+      "navigationKeyword2": "wild-edibles",
+      "question": "Why should wild edibles be avoided near roadsides or sprayed yards?",
+      "correctAnswer": "they may be contaminated by chemicals",
+      "incorrectAnswers": [
+        "they ripen too early",
+        "they lose all flavor",
+        "they always grow beside poisonous plants"
+      ],
+      "explanation": "Roadside or treated plants can pick up pesticides and other contaminants.",
+      "keywords": [
+        "wild-edibles",
+        "nature-plants"
+      ],
+      "source": "https://extension.umn.edu/yard-and-garden-news/can-i-eat-weeds-my-backyard"
+    },
+    {
+      "seedId": "a5cad5f8-937e-5914-a3bd-223a56830a8b",
+      "category": "nature",
+      "navigationKeyword1": "survival",
+      "navigationKeyword2": "fire",
+      "question": "Can a small, unattended campfire still start a wildfire?",
+      "correctAnswer": "yes",
+      "incorrectAnswers": [
+        "no, not if it is inside rocks",
+        "only in winter",
+        "only if it is larger than a grill"
+      ],
+      "explanation": "Even a small campfire can escape if wind or embers spread it.",
+      "keywords": [
+        "survival-fire",
+        "nature-outdoors"
+      ],
+      "source": "https://www.nps.gov/katm/learn/news/katm-fire-release-may2013.htm"
+    },
+    {
+      "seedId": "72ecc122-626d-59bf-80a3-add2672cf6ed",
+      "category": "nature",
+      "navigationKeyword1": "survival",
+      "navigationKeyword2": "fire",
+      "question": "How should you finish putting out a campfire before leaving?",
+      "correctAnswer": "make sure it is completely cold to the touch",
+      "incorrectAnswers": [
+        "cover it with dirt and leave while warm",
+        "leave when the flames disappear",
+        "walk away once the smoke thins out"
+      ],
+      "explanation": "A fire is not safely out until the ashes and coals are cold, not just flame-free.",
+      "keywords": [
+        "survival-fire",
+        "nature-outdoors"
+      ],
+      "source": "https://smokeybear.com/en/prevention-how-tos/campfire-safety/how-to-maintain-and-extinguish-your-campfire"
+    },
+    {
+      "seedId": "7a1f4440-2229-5b40-aee2-8cd0db6af638",
+      "category": "nature",
+      "navigationKeyword1": "survival",
+      "navigationKeyword2": "fire",
+      "question": "What kind of wood is usually recommended for a small campfire?",
+      "correctAnswer": "dead and downed wood",
+      "incorrectAnswers": [
+        "living branches",
+        "painted lumber",
+        "plastic-coated scrap"
+      ],
+      "explanation": "Using dead, downed wood reduces damage to living plants and is standard campfire guidance where fires are allowed.",
+      "keywords": [
+        "survival-fire",
+        "nature-outdoors"
+      ],
+      "source": "https://www.nps.gov/grte/learn/nature/firesafety.htm"
+    },
+    {
+      "seedId": "091f651f-ccbf-5b3d-9189-f8f12b374b00",
+      "category": "nature",
+      "navigationKeyword1": "survival",
+      "navigationKeyword2": "fire",
+      "question": "What simple phrase sums up proper campfire shutdown?",
+      "correctAnswer": "drown, stir, and feel for cold ashes",
+      "incorrectAnswers": [
+        "smother, sweep, and go",
+        "spread, spark, and leave",
+        "stack, stamp, and sleep"
+      ],
+      "explanation": "The safe routine is to soak the fire, stir the ashes, and confirm everything is cold.",
+      "keywords": [
+        "survival-fire",
+        "nature-outdoors"
+      ],
+      "source": "https://www.nps.gov/wrst/learn/news/stay-fire-wise-and-put-out-campfires.htm"
+    },
+    {
+      "seedId": "2d84e325-585f-52bf-8c38-e659cca78131",
+      "category": "nature",
+      "navigationKeyword1": "survival",
+      "navigationKeyword2": "fire",
+      "question": "What two things should be kept nearby before starting a campfire?",
+      "correctAnswer": "water and a shovel",
+      "incorrectAnswers": [
+        "a tarp and a lantern",
+        "a stove and a cooler",
+        "rope and a compass"
+      ],
+      "explanation": "Water and a shovel let you control and fully extinguish a fire if conditions change.",
+      "keywords": [
+        "survival-fire",
+        "nature-outdoors"
+      ],
+      "source": "https://www.nps.gov/brca/learn/nature/fire-safety.htm"
+    },
+    {
+      "seedId": "2d11ffc0-2759-560b-a9e2-e638c0388cdf",
+      "category": "nature",
+      "navigationKeyword1": "survival",
+      "navigationKeyword2": "fire",
+      "question": "Which Ten Essential category covers items like waterproof matches and fire starters?",
+      "correctAnswer": "fire",
+      "incorrectAnswers": [
+        "illumination",
+        "repair kit",
+        "nutrition"
+      ],
+      "explanation": "Fire-starting supplies are one of the core emergency-preparedness categories for outdoor travel.",
+      "keywords": [
+        "survival-fire",
+        "nature-outdoors"
+      ],
+      "source": "https://nps.gov/articles/10essentials.htm"
+    },
+    {
+      "seedId": "a1456ed6-4e1f-5b1d-b5b0-c6d131162fe7",
+      "category": "nature",
+      "navigationKeyword1": "survival",
+      "navigationKeyword2": "forest",
+      "question": "What is one of the best defenses against hypothermia in the woods?",
+      "correctAnswer": "stay dry and out of the wind",
+      "incorrectAnswers": [
+        "keep moving until you sweat heavily",
+        "drink cold water quickly",
+        "wear cotton next to the skin"
+      ],
+      "explanation": "Staying dry and sheltered from wind is one of the most important ways to prevent hypothermia.",
+      "keywords": [
+        "forest-survival",
+        "nature-outdoors"
+      ],
+      "source": "https://www.nps.gov/pore/planyourvisit/yoursafety_hypothermia.htm"
+    },
+    {
+      "seedId": "21df2022-be43-5d1a-8a5e-8017e4589631",
+      "category": "nature",
+      "navigationKeyword1": "survival",
+      "navigationKeyword2": "forest",
+      "question": "What is the point of dressing in layers in cold outdoor conditions?",
+      "correctAnswer": "to add or remove clothing as conditions change",
+      "incorrectAnswers": [
+        "to make walking quieter",
+        "to keep ticks from seeing you",
+        "to dry clothes faster in rain"
+      ],
+      "explanation": "Layering lets you regulate temperature and avoid getting chilled or soaked with sweat.",
+      "keywords": [
+        "forest-survival",
+        "nature-outdoors"
+      ],
+      "source": "https://www.nps.gov/wrst/planyourvisit/hypothermia.htm"
+    },
+    {
+      "seedId": "45ae10db-0445-51cf-b3f8-95b91a1c1826",
+      "category": "nature",
+      "navigationKeyword1": "survival",
+      "navigationKeyword2": "forest",
+      "question": "What simple item is recommended in a survival kit for signaling rescuers?",
+      "correctAnswer": "a whistle",
+      "incorrectAnswers": [
+        "a frying pan",
+        "a sleeping bag only",
+        "a deck of cards"
+      ],
+      "explanation": "A whistle is lightweight, easy to carry, and useful for signaling your location.",
+      "keywords": [
+        "forest-survival",
+        "nature-outdoors"
+      ],
+      "source": "https://www.redcross.org/take-a-class/resources/articles/survival-kit-buying-guide"
+    },
+    {
+      "seedId": "1c4207bd-9f29-52f9-8d62-b2859cc8749f",
+      "category": "nature",
+      "navigationKeyword1": "survival",
+      "navigationKeyword2": "forest",
+      "question": "What small item can be used as a signaling device in an emergency?",
+      "correctAnswer": "a pocket mirror",
+      "incorrectAnswers": [
+        "a pine cone",
+        "a tent stake",
+        "a spoon only"
+      ],
+      "explanation": "A small mirror can reflect light and help rescuers spot your position.",
+      "keywords": [
+        "forest-survival",
+        "nature-outdoors"
+      ],
+      "source": "https://www.fs.usda.gov/safety/outdoor/checklist.shtml"
+    },
+    {
+      "seedId": "a765cd9e-21e4-573c-95a6-3d3b03f213fb",
+      "category": "nature",
+      "navigationKeyword1": "survival",
+      "navigationKeyword2": "forest",
+      "question": "Why is cotton a poor clothing choice in cold, wet conditions?",
+      "correctAnswer": "it loses insulation when wet",
+      "incorrectAnswers": [
+        "it blocks all airflow",
+        "it attracts insects",
+        "it tears too easily in brush"
+      ],
+      "explanation": "Cotton performs poorly when wet, while wool and many synthetics keep insulating better.",
+      "keywords": [
+        "forest-survival",
+        "nature-outdoors"
+      ],
+      "source": "https://www.nps.gov/wrst/planyourvisit/hypothermia.htm"
+    },
+    {
+      "seedId": "706b397e-a387-5df5-a6d9-3ca1eed2e749",
+      "category": "nature",
+      "navigationKeyword1": "survival",
+      "navigationKeyword2": "forest",
+      "question": "Why should you add or remove layers before you get very sweaty or very cold?",
+      "correctAnswer": "to manage body temperature before it becomes a problem",
+      "incorrectAnswers": [
+        "to make your backpack lighter",
+        "to keep bears away",
+        "to improve compass accuracy"
+      ],
+      "explanation": "Adjusting layers early helps prevent overheating, sweating, and later chilling.",
+      "keywords": [
+        "forest-survival",
+        "nature-outdoors"
+      ],
+      "source": "https://www.nps.gov/wrst/planyourvisit/hypothermia.htm"
+    },
+    {
+      "seedId": "461086ce-d6bf-5e88-8808-6ee5f8c740be",
+      "category": "nature",
+      "navigationKeyword1": "survival",
+      "navigationKeyword2": "shelter",
+      "question": "How far from lakes and streams should camps usually be set up when possible?",
+      "correctAnswer": "about 200 feet away",
+      "incorrectAnswers": [
+        "right on the shoreline",
+        "about 20 feet away",
+        "as close as the tent rope allows"
+      ],
+      "explanation": "Camping away from water helps protect riparian areas and reduces impact on sensitive habitat.",
+      "keywords": [
+        "shelter",
+        "nature-outdoors"
+      ],
+      "source": "https://www.fs.usda.gov/lei/no-trace-ethics.php"
+    },
+    {
+      "seedId": "ea88a0b3-fcca-57e3-86f3-0254ec5ed1c5",
+      "category": "nature",
+      "navigationKeyword1": "survival",
+      "navigationKeyword2": "shelter",
+      "question": "What does Leave No Trace mean by 'good campsites are found, not made'?",
+      "correctAnswer": "use an existing suitable site instead of building a new one",
+      "incorrectAnswers": [
+        "dig a trench around every tent",
+        "clear all branches from a fresh area",
+        "always camp directly on riverbanks"
+      ],
+      "explanation": "Using already durable or established sites reduces damage to vegetation and soil.",
+      "keywords": [
+        "shelter",
+        "nature-outdoors"
+      ],
+      "source": "https://www.fs.usda.gov/lei/no-trace-ethics.php"
+    },
+    {
+      "seedId": "b6ad4af5-2e6c-5cbc-b961-e2eff2fdb0f0",
+      "category": "nature",
+      "navigationKeyword1": "survival",
+      "navigationKeyword2": "shelter",
+      "question": "When cold rain threatens, when should you put on rainwear or warm layers?",
+      "correctAnswer": "before you become soaked or chilled",
+      "incorrectAnswers": [
+        "only after you start shivering hard",
+        "once the sun comes back out",
+        "only at bedtime"
+      ],
+      "explanation": "Getting protective layers on early is much easier than recovering after you are already wet and cold.",
+      "keywords": [
+        "shelter",
+        "nature-outdoors"
+      ],
+      "source": "https://www.nps.gov/glba/planyourvisit/hypothermia.htm"
+    },
+    {
+      "seedId": "323e4ed8-2752-50e3-a55c-0310e7fed152",
+      "category": "nature",
+      "navigationKeyword1": "survival",
+      "navigationKeyword2": "shelter",
+      "question": "Which Ten Essential category includes items like a tent, tarp, or bivy?",
+      "correctAnswer": "emergency shelter",
+      "incorrectAnswers": [
+        "illumination",
+        "repair kit",
+        "nutrition"
+      ],
+      "explanation": "Emergency shelter gear helps protect you if weather, injury, or delay keeps you out longer than planned.",
+      "keywords": [
+        "shelter",
+        "nature-outdoors"
+      ],
+      "source": "https://nps.gov/articles/10essentials.htm"
+    },
+    {
+      "seedId": "b5194ae0-6746-57b1-bec7-a1bdc3ad438f",
+      "category": "nature",
+      "navigationKeyword1": "survival",
+      "navigationKeyword2": "shelter",
+      "question": "Which of these counts as a durable surface for camping?",
+      "correctAnswer": "rock or gravel",
+      "incorrectAnswers": [
+        "fragile moss bed",
+        "new wildflower patch",
+        "streamside mud"
+      ],
+      "explanation": "Durable surfaces such as rock, gravel, dry grasses, snow, or established sites are better choices for shelter setup.",
+      "keywords": [
+        "shelter",
+        "nature-outdoors"
+      ],
+      "source": "https://www.fs.usda.gov/lei/no-trace-ethics.php"
+    },
+    {
+      "seedId": "673a7507-8200-5f37-83cf-0da069dcdb60",
+      "category": "nature",
+      "navigationKeyword1": "survival",
+      "navigationKeyword2": "shelter",
+      "question": "Why is staying dry so important when trying to stay warm outdoors?",
+      "correctAnswer": "wetness greatly increases heat loss",
+      "incorrectAnswers": [
+        "it makes maps unreadable",
+        "it reduces oxygen levels",
+        "it prevents fire from giving warmth"
+      ],
+      "explanation": "Wet clothing and wind make it much easier for your body to lose heat and slide toward hypothermia.",
+      "keywords": [
+        "shelter",
+        "nature-outdoors"
+      ],
+      "source": "https://www.nps.gov/pore/planyourvisit/yoursafety_hypothermia.htm"
+    },
+    {
+      "seedId": "d547b3cc-5b68-5164-8595-ee924971a1c4",
+      "category": "nature",
+      "navigationKeyword1": "survival",
+      "navigationKeyword2": "tropical-island",
+      "question": "Do rip currents usually pull swimmers under the water?",
+      "correctAnswer": "no, they pull swimmers away from shore",
+      "incorrectAnswers": [
+        "yes, always straight down",
+        "yes, but only at night",
+        "only during full moons"
+      ],
+      "explanation": "Rip currents are dangerous because they move water away from shore, not because they drag swimmers downward.",
+      "keywords": [
+        "tropical-island-survival",
+        "nature-outdoors"
+      ],
+      "source": "https://www.weather.gov/safety/ripcurrent-faqs"
+    },
+    {
+      "seedId": "b2645cfb-d7ba-5367-ad85-6cb118f3cb01",
+      "category": "nature",
+      "navigationKeyword1": "survival",
+      "navigationKeyword2": "tropical-island",
+      "question": "If a rip current pulls you away from shore, what is the best escape move?",
+      "correctAnswer": "swim parallel to the shore",
+      "incorrectAnswers": [
+        "swim straight against the current",
+        "dive under the current",
+        "float face-down until it stops"
+      ],
+      "explanation": "Swimming parallel to shore helps you move out of the narrow current before heading back in.",
+      "keywords": [
+        "tropical-island-survival",
+        "nature-outdoors"
+      ],
+      "source": "https://www.weather.gov/safety/ripcurrent-surviving"
+    },
+    {
+      "seedId": "f0936ed0-e691-5b63-aee8-558fc274a255",
+      "category": "nature",
+      "navigationKeyword1": "survival",
+      "navigationKeyword2": "tropical-island",
+      "question": "If someone shows signs of heat exhaustion, where should they be moved first?",
+      "correctAnswer": "to a cooler or shaded place",
+      "incorrectAnswers": [
+        "into direct sun",
+        "into deeper sand",
+        "into ocean surf immediately"
+      ],
+      "explanation": "The first response is to get the person into a cooler environment and start cooling them down.",
+      "keywords": [
+        "tropical-island-survival",
+        "nature-outdoors"
+      ],
+      "source": "https://www.weather.gov/safety/heat-illness"
+    },
+    {
+      "seedId": "0e76c107-afbb-5643-ab50-6efe8a90563e",
+      "category": "nature",
+      "navigationKeyword1": "survival",
+      "navigationKeyword2": "tropical-island",
+      "question": "What do red beach warning flags generally mean for swimmers?",
+      "correctAnswer": "dangerous surf conditions, so stay out or use extreme caution",
+      "incorrectAnswers": [
+        "water is especially warm",
+        "lifeguards are on break",
+        "the tide is at its lowest point"
+      ],
+      "explanation": "Red flags warn of hazardous surf and stronger rip current danger.",
+      "keywords": [
+        "tropical-island-survival",
+        "nature-outdoors"
+      ],
+      "source": "https://www.weather.gov/safety/ripcurrent-toolkit"
+    },
+    {
+      "seedId": "e2e1672b-8a25-5d98-a3bd-f701ba36297d",
+      "category": "nature",
+      "navigationKeyword1": "survival",
+      "navigationKeyword2": "tropical-island",
+      "question": "What is one of the best ways to lower heat risk in hot tropical conditions?",
+      "correctAnswer": "drink plenty of fluids",
+      "incorrectAnswers": [
+        "avoid all shade",
+        "wear heavy dark clothing",
+        "save water until symptoms start"
+      ],
+      "explanation": "Hot conditions increase dehydration risk, so steady fluid intake is important.",
+      "keywords": [
+        "tropical-island-survival",
+        "nature-outdoors"
+      ],
+      "source": "https://www.ready.gov/heat"
+    },
+    {
+      "seedId": "63fad5d0-cf72-5b69-9147-ab7755f3e354",
+      "category": "nature",
+      "navigationKeyword1": "survival",
+      "navigationKeyword2": "tropical-island",
+      "question": "What kind of clothing helps in extreme heat and strong sun?",
+      "correctAnswer": "loose, lightweight, light-colored clothing",
+      "incorrectAnswers": [
+        "thick black wool layers",
+        "plastic rain gear only",
+        "heavy denim with no hat"
+      ],
+      "explanation": "Loose, light-colored clothing and sun protection help your body handle heat better.",
+      "keywords": [
+        "tropical-island-survival",
+        "nature-outdoors"
+      ],
+      "source": "https://www.ready.gov/heat"
+    },
+    {
+      "seedId": "c8a9c895-4830-5a26-aff3-bacb58a8dc66",
+      "category": "nature",
+      "navigationKeyword1": "survival",
+      "navigationKeyword2": "water",
+      "question": "At elevations above 6,500 feet, how long should water be boiled?",
+      "correctAnswer": "3 minutes",
+      "incorrectAnswers": [
+        "30 seconds",
+        "1 minute",
+        "10 minutes"
+      ],
+      "explanation": "Higher elevations lower boiling temperature, so the recommended boil time is longer.",
+      "keywords": [
+        "survival-water",
+        "nature-outdoors"
+      ],
+      "source": "https://www.cdc.gov/water-emergency/about/"
+    },
+    {
+      "seedId": "8166a535-6c31-5b69-b86c-c5d4b1f6ec6b",
+      "category": "nature",
+      "navigationKeyword1": "survival",
+      "navigationKeyword2": "water",
+      "question": "How much emergency water should you store per person per day as a basic rule?",
+      "correctAnswer": "at least one gallon",
+      "incorrectAnswers": [
+        "one cup",
+        "one pint",
+        "three gallons exactly"
+      ],
+      "explanation": "A common preparedness rule is at least one gallon per person per day for drinking and sanitation.",
+      "keywords": [
+        "survival-water",
+        "nature-outdoors"
+      ],
+      "source": "https://www.ready.gov/water"
+    },
+    {
+      "seedId": "00062c77-8bc1-5c38-a128-f2e09f83231a",
+      "category": "nature",
+      "navigationKeyword1": "survival",
+      "navigationKeyword2": "water",
+      "question": "Should clear-looking stream water be treated before drinking?",
+      "correctAnswer": "yes",
+      "incorrectAnswers": [
+        "no, if it looks clean",
+        "only in the afternoon",
+        "only if it tastes strange"
+      ],
+      "explanation": "Natural water can contain bacteria, viruses, or parasites even when it looks clear.",
+      "keywords": [
+        "survival-water",
+        "nature-outdoors"
+      ],
+      "source": "https://www.nps.gov/articles/2wayspurifywater.htm"
+    },
+    {
+      "seedId": "36e941de-b033-5669-9915-54552349ba2c",
+      "category": "nature",
+      "navigationKeyword1": "survival",
+      "navigationKeyword2": "water",
+      "question": "What is the safest basic way to disinfect water in an emergency?",
+      "correctAnswer": "bring it to a rolling boil",
+      "incorrectAnswers": [
+        "let it sit in the shade",
+        "mix it with salt",
+        "shake it hard for a minute"
+      ],
+      "explanation": "Boiling is one of the most reliable ways to kill disease-causing organisms in water.",
+      "keywords": [
+        "survival-water",
+        "nature-outdoors"
+      ],
+      "source": "https://www.cdc.gov/water-emergency/about/"
+    },
+    {
+      "seedId": "e5875e61-9ab6-5104-bc09-2d77a6f24e7e",
+      "category": "nature",
+      "navigationKeyword1": "survival",
+      "navigationKeyword2": "water",
+      "question": "When collecting backcountry water, what kind of source spot is usually better?",
+      "correctAnswer": "near the source and away from campsites or animal activity",
+      "incorrectAnswers": [
+        "the muddiest pool downstream",
+        "any puddle beside the trail",
+        "water right next to a busy campsite"
+      ],
+      "explanation": "Cleaner collection points are often higher up, nearer the source, and away from contamination.",
+      "keywords": [
+        "survival-water",
+        "nature-outdoors"
+      ],
+      "source": "https://www.nps.gov/articles/2wayspurifywater.htm"
+    },
+    {
+      "seedId": "e1ec8e41-b33b-50bc-b373-576f03ea13df",
+      "category": "nature",
+      "navigationKeyword1": "survival",
+      "navigationKeyword2": "water",
+      "question": "Why is filtration alone not always enough for backcountry water?",
+      "correctAnswer": "some viruses are too small for many filters",
+      "incorrectAnswers": [
+        "filters remove all oxygen",
+        "filters make water saltier",
+        "filters only work at night"
+      ],
+      "explanation": "Filters can remove many contaminants, but disinfection may still be needed because some viruses pass through.",
+      "keywords": [
+        "survival-water",
+        "nature-outdoors"
+      ],
+      "source": "https://www.nps.gov/articles/2wayspurifywater.htm"
+    }
+  ]
+}

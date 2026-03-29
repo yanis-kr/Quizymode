@@ -1,0 +1,197 @@
+{
+  "schemaVersion": 1,
+  "seedSet": "core-public-items",
+  "deltaPreviewLimit": 200,
+  "items": [
+    {
+      "seedId": "258f2b35-ac03-57c3-9829-839ad8eab32b",
+      "category": "trivia",
+      "navigationKeyword1": "food-drink",
+      "navigationKeyword2": "restaurants",
+      "question": "Brasserie belongs to an informal restaurant tradition from which country?",
+      "correctAnswer": "France",
+      "incorrectAnswers": [
+        "Thailand",
+        "Kenya",
+        "Iceland"
+      ],
+      "explanation": "Brasseries are French-influenced.",
+      "keywords": [
+        "brasserie",
+        "french-food"
+      ],
+      "source": "https://www.britannica.com/topic/brasserie"
+    },
+    {
+      "seedId": "8e8fb4bb-ed1f-54dc-89d2-21316f6170b4",
+      "category": "trivia",
+      "navigationKeyword1": "food-drink",
+      "navigationKeyword2": "restaurants",
+      "question": "Diners are known for casual American meals often served at what?",
+      "correctAnswer": "a counter or booths",
+      "incorrectAnswers": [
+        "tasting counters only",
+        "buffet steam tables only",
+        "open kitchens only"
+      ],
+      "explanation": "Diners feature counter and booth service.",
+      "keywords": [
+        "diners",
+        "american-food"
+      ],
+      "source": "https://www.britannica.com/topic/diner-restaurant"
+    },
+    {
+      "seedId": "fbd44cab-af6e-5a9d-9d5f-c9c321637ad3",
+      "category": "trivia",
+      "navigationKeyword1": "food-drink",
+      "navigationKeyword2": "restaurants",
+      "question": "Food trucks operate from what kind of vehicle?",
+      "correctAnswer": "vehicles",
+      "incorrectAnswers": [
+        "boats",
+        "trains only",
+        "airplanes only"
+      ],
+      "explanation": "Food trucks operate from vehicles.",
+      "keywords": [
+        "street-food",
+        "vendors"
+      ],
+      "source": "https://www.britannica.com/topic/food-truck"
+    },
+    {
+      "seedId": "d96aa32d-3bc1-5a4f-9ca1-ab3b1b71dc5e",
+      "category": "trivia",
+      "navigationKeyword1": "food-drink",
+      "navigationKeyword2": "restaurants",
+      "question": "McDonalds is best known for what service style?",
+      "correctAnswer": "fast food",
+      "incorrectAnswers": [
+        "fine dining",
+        "buffet-only",
+        "pop-up tasting menus"
+      ],
+      "explanation": "McDonalds is best known as a fast-food chain.",
+      "keywords": [
+        "fast-food",
+        "chains"
+      ],
+      "source": "https://www.britannica.com/money/McDonalds-Corporation"
+    },
+    {
+      "seedId": "9d1d4e42-8961-5d40-b817-94c6973be9b8",
+      "category": "trivia",
+      "navigationKeyword1": "food-drink",
+      "navigationKeyword2": "restaurants",
+      "question": "Pizza restaurant industry are built around Italian-origin dishes baked on what kind of base?",
+      "correctAnswer": "yeast-leavened dough",
+      "incorrectAnswers": [
+        "rice paper",
+        "tortilla only",
+        "puff pastry only"
+      ],
+      "explanation": "Pizza uses yeasted dough.",
+      "keywords": [
+        "pizza",
+        "italian-food"
+      ],
+      "source": "https://www.britannica.com/topic/pizza"
+    },
+    {
+      "seedId": "a713d299-6ed6-5a1e-8c18-765170876b51",
+      "category": "trivia",
+      "navigationKeyword1": "food-drink",
+      "navigationKeyword2": "restaurants",
+      "question": "Ray Kroc\u2019s McDonald\u2019s expansion to franchising in which country first?",
+      "correctAnswer": "United States",
+      "incorrectAnswers": [
+        "Japan",
+        "France",
+        "Brazil"
+      ],
+      "explanation": "Franchise growth began strongly in the U.S.",
+      "keywords": [
+        "franchising",
+        "mcdonalds"
+      ],
+      "source": "https://www.britannica.com/money/McDonalds-Corporation"
+    },
+    {
+      "seedId": "57771731-c148-59c5-b0d7-f5495419fe33",
+      "category": "trivia",
+      "navigationKeyword1": "food-drink",
+      "navigationKeyword2": "restaurants",
+      "question": "Starbucks with selling primarily what beverage category?",
+      "correctAnswer": "coffee",
+      "incorrectAnswers": [
+        "sushi",
+        "pizza",
+        "barbecue"
+      ],
+      "explanation": "Starbucks is a coffeehouse chain.",
+      "keywords": [
+        "coffee",
+        "chains"
+      ],
+      "source": "https://www.britannica.com/money/Starbucks-Corporation"
+    },
+    {
+      "seedId": "4317ea6a-039d-5a30-8b01-7e82edde0980",
+      "category": "trivia",
+      "navigationKeyword1": "food-drink",
+      "navigationKeyword2": "restaurants",
+      "question": "Subway sells made-to-order what?",
+      "correctAnswer": "sandwiches",
+      "incorrectAnswers": [
+        "paella",
+        "pho only",
+        "sashimi only"
+      ],
+      "explanation": "Subway is known for sandwiches.",
+      "keywords": [
+        "sandwiches",
+        "chains"
+      ],
+      "source": "https://www.britannica.com/money/Subway-Partners-LLC"
+    },
+    {
+      "seedId": "28f74610-2337-588b-ac01-5b65fe34cd91",
+      "category": "trivia",
+      "navigationKeyword1": "food-drink",
+      "navigationKeyword2": "restaurants",
+      "question": "Taquerias as specializing in which cuisine\u2019s tacos?",
+      "correctAnswer": "Mexican",
+      "incorrectAnswers": [
+        "Japanese",
+        "Ethiopian",
+        "Swedish"
+      ],
+      "explanation": "Taquerias focus on Mexican tacos.",
+      "keywords": [
+        "tacos",
+        "mexican-food"
+      ],
+      "source": "https://www.britannica.com/topic/taco"
+    },
+    {
+      "seedId": "e092221d-da22-5873-b002-02100450f377",
+      "category": "trivia",
+      "navigationKeyword1": "food-drink",
+      "navigationKeyword2": "restaurants",
+      "question": "Which country\u2019s culinary tradition is most closely associated with sushi restaurants?",
+      "correctAnswer": "Japan",
+      "incorrectAnswers": [
+        "Italy",
+        "Morocco",
+        "Greece"
+      ],
+      "explanation": "Sushi is Japanese.",
+      "keywords": [
+        "sushi",
+        "japanese-food"
+      ],
+      "source": "https://www.britannica.com/topic/sushi"
+    }
+  ]
+}

@@ -1,0 +1,247 @@
+{
+  "schemaVersion": 1,
+  "seedSet": "core-public-items",
+  "deltaPreviewLimit": 200,
+  "items": [
+    {
+      "seedId": "4656009e-24c2-4e8b-9041-923c57143a12",
+      "category": "history",
+      "navigationKeyword1": "modern",
+      "navigationKeyword2": "imperialism",
+      "question": "Britain bought the Egyptian ruler\u2019s shares in 1875 in which waterway vital to empire and Indian trade?",
+      "correctAnswer": "The Suez Canal",
+      "incorrectAnswers": [
+        "The Panama Canal",
+        "The Kiel Canal",
+        "The Corinth Canal"
+      ],
+      "explanation": "Disraeli\u2019s purchase deepened British financial and strategic stakes in Egypt before the 1882 occupation.",
+      "keywords": [
+        "imperialism",
+        "egypt",
+        "canal"
+      ],
+      "source": "https://www.britannica.com/topic/Suez-Canal"
+    },
+    {
+      "seedId": "614d7624-6cb3-4c23-9e19-55a220d75c09",
+      "category": "history",
+      "navigationKeyword1": "modern",
+      "navigationKeyword2": "imperialism",
+      "question": "Britain\u2019s forced opening of Chinese ports through the Treaty of Nanjing (1842) followed which mid-19th-century conflict?",
+      "correctAnswer": "The First Opium War",
+      "incorrectAnswers": [
+        "The Taiping Rebellion",
+        "The Boxer Rebellion",
+        "The Sino-Japanese War of 1894\u201395"
+      ],
+      "explanation": "British gunboats backed demands for trade access after disputes over opium imports and diplomatic equality.",
+      "keywords": [
+        "imperialism",
+        "china",
+        "britain"
+      ],
+      "source": "https://www.britannica.com/topic/Opium-Wars"
+    },
+    {
+      "seedId": "c58f72f4-070f-4a4b-a95e-703819b388fb",
+      "category": "history",
+      "navigationKeyword1": "modern",
+      "navigationKeyword2": "imperialism",
+      "question": "France consolidated control of Indochina after capturing which northern Vietnamese river delta city in 1883?",
+      "correctAnswer": "Hanoi",
+      "incorrectAnswers": [
+        "Bangkok",
+        "Rangoon",
+        "Singapore"
+      ],
+      "explanation": "French gunboat diplomacy in Tonkin extended protectorate rule that eventually formed French Indochina.",
+      "keywords": [
+        "imperialism",
+        "france",
+        "vietnam"
+      ],
+      "source": "https://www.britannica.com/place/Vietnam/French-colonial-rule"
+    },
+    {
+      "seedId": "205b21d4-9801-4831-8f5f-64c2ec6cc6ac",
+      "category": "history",
+      "navigationKeyword1": "modern",
+      "navigationKeyword2": "imperialism",
+      "question": "Leopold II of Belgium\u2019s personal rule over the Congo Free State became notorious for brutal rubber extraction until which year\u2019s Belgian takeover?",
+      "correctAnswer": "1908",
+      "incorrectAnswers": [
+        "1848",
+        "1871",
+        "1919"
+      ],
+      "explanation": "International outrage over atrocities pressured Belgium to annex the Congo as a formal colony.",
+      "keywords": [
+        "imperialism",
+        "belgium",
+        "congo"
+      ],
+      "source": "https://www.britannica.com/place/Congo-Free-State"
+    },
+    {
+      "seedId": "5d61c739-5b1c-4b74-a010-24bf84612975",
+      "category": "history",
+      "navigationKeyword1": "modern",
+      "navigationKeyword2": "imperialism",
+      "question": "Otto von Bismarck hosted the 1884\u201385 conference in Berlin chiefly to regulate European claims where?",
+      "correctAnswer": "Africa (West and Central African spheres of influence)",
+      "incorrectAnswers": [
+        "The Balkans",
+        "The South Pacific only",
+        "Antarctica"
+      ],
+      "explanation": "The Berlin West Africa Conference set rules for \u201ceffective occupation\u201d and recognized King Leopold II\u2019s Congo claims.",
+      "keywords": [
+        "imperialism",
+        "berlin-conference",
+        "africa"
+      ],
+      "source": "https://www.britannica.com/event/Berlin-West-Africa-Conference"
+    },
+    {
+      "seedId": "799352f3-b17f-4c83-a26d-ee47a867358d",
+      "category": "history",
+      "navigationKeyword1": "modern",
+      "navigationKeyword2": "imperialism",
+      "question": "Rudyard Kipling\u2019s 1899 poem urging Americans to shoulder a \u201cburden\u201d toward colonized peoples reflected which ideology?",
+      "correctAnswer": "Imperialist \u201ccivilizing mission\u201d rhetoric (often summarized as the \u201cwhite man\u2019s burden\u201d)",
+      "incorrectAnswers": [
+        "Isolationism",
+        "Nonalignment",
+        "Manchester liberal free-trade pacifism"
+      ],
+      "explanation": "The poem captured how empires justified expansion as moral uplift rather than mere conquest.",
+      "keywords": [
+        "imperialism",
+        "literature",
+        "ideology"
+      ],
+      "source": "https://www.britannica.com/biography/Rudyard-Kipling"
+    },
+    {
+      "seedId": "64885672-bcfb-4ecc-a7d9-ee293f205ede",
+      "category": "history",
+      "navigationKeyword1": "modern",
+      "navigationKeyword2": "imperialism",
+      "question": "Sepoys of the East India Company mutinied in 1857, an uprising often called what in Indian nationalist memory?",
+      "correctAnswer": "The Indian Mutiny (also called India\u2019s First War of Independence)",
+      "incorrectAnswers": [
+        "The Khilafat Movement",
+        "The Quit India Movement",
+        "The Bardoli Satyagraha"
+      ],
+      "explanation": "The revolt shook Company rule and led to the Crown\u2019s direct administration of India from 1858.",
+      "keywords": [
+        "imperialism",
+        "india",
+        "mutiny"
+      ],
+      "source": "https://www.britannica.com/event/Indian-Rebellion-of-1857"
+    },
+    {
+      "seedId": "b0043840-d8d9-40fe-aed3-ab287c645fb8",
+      "category": "history",
+      "navigationKeyword1": "modern",
+      "navigationKeyword2": "imperialism",
+      "question": "The 1896 Battle of Adwa saw Ethiopia defeat which European kingdom\u2019s invasion, preserving independence until 1935?",
+      "correctAnswer": "Italy",
+      "incorrectAnswers": [
+        "Portugal",
+        "Belgium",
+        "Spain"
+      ],
+      "explanation": "Emperor Menilek II\u2019s victory became a powerful symbol of African resistance to partition.",
+      "keywords": [
+        "imperialism",
+        "ethiopia",
+        "italy"
+      ],
+      "source": "https://www.britannica.com/event/Battle-of-Adwa"
+    },
+    {
+      "seedId": "ba170de9-941d-483f-b428-0decc89a2738",
+      "category": "history",
+      "navigationKeyword1": "modern",
+      "navigationKeyword2": "imperialism",
+      "question": "The 1898 Fashoda incident nearly brought Britain and France to war over the upper reaches of which African river?",
+      "correctAnswer": "The Nile",
+      "incorrectAnswers": [
+        "The Congo",
+        "The Niger",
+        "The Zambezi"
+      ],
+      "explanation": "French Marchand\u2019s encounter with Kitchener\u2019s forces in Sudan highlighted imperial rivalry in northeast Africa.",
+      "keywords": [
+        "imperialism",
+        "sudan",
+        "diplomacy"
+      ],
+      "source": "https://www.britannica.com/event/Fashoda-Incident"
+    },
+    {
+      "seedId": "8399a7e4-ba1a-4523-bb9a-f0d68c7472db",
+      "category": "history",
+      "navigationKeyword1": "modern",
+      "navigationKeyword2": "imperialism",
+      "question": "The Yihetuan movement\u2019s 1900 siege of the Beijing legations provoked an eight-nation expedition during which crisis?",
+      "correctAnswer": "The Boxer Rebellion",
+      "incorrectAnswers": [
+        "The White Lotus Rebellion",
+        "The Nian Rebellion",
+        "The Warlord Era"
+      ],
+      "explanation": "Anti-foreign Boxers attacked missionaries and diplomats, prompting massive foreign intervention in north China.",
+      "keywords": [
+        "imperialism",
+        "china",
+        "qing"
+      ],
+      "source": "https://www.britannica.com/event/Boxer-Rebellion"
+    },
+    {
+      "seedId": "64fb805a-238f-4804-a02e-39caecaad6bd",
+      "category": "history",
+      "navigationKeyword1": "modern",
+      "navigationKeyword2": "imperialism",
+      "question": "The late-19th-century rush by European powers to annex most of Africa is commonly called what?",
+      "correctAnswer": "The Scramble for Africa",
+      "incorrectAnswers": [
+        "The Meiji Restoration",
+        "The Concert of Europe",
+        "The Columbian Exchange"
+      ],
+      "explanation": "By 1914 nearly all of Africa was under European rule except for Ethiopia and Liberia.",
+      "keywords": [
+        "imperialism",
+        "africa",
+        "colonialism"
+      ],
+      "source": "https://www.britannica.com/event/Scramble-for-Africa"
+    },
+    {
+      "seedId": "e5a3a1ee-ddf1-4c9e-9870-11b44ea0bbda",
+      "category": "history",
+      "navigationKeyword1": "modern",
+      "navigationKeyword2": "imperialism",
+      "question": "Which British-born financier promoted settler expansion and mining interests across southern Africa in the 1890s?",
+      "correctAnswer": "Cecil Rhodes",
+      "incorrectAnswers": [
+        "David Livingstone",
+        "Henry Morton Stanley",
+        "Samuel Baker"
+      ],
+      "explanation": "Rhodes used chartered companies and politics to enlarge British influence from Cape to Cairo ambitions.",
+      "keywords": [
+        "imperialism",
+        "africa",
+        "britain"
+      ],
+      "source": "https://www.britannica.com/biography/Cecil-Rhodes"
+    }
+  ]
+}

@@ -1,0 +1,235 @@
+{
+  "schemaVersion": 1,
+  "seedSet": "core-public-items",
+  "deltaPreviewLimit": 200,
+  "items": [
+    {
+      "seedId": "39ad9d3e-e958-50a1-a7ad-8a90d23aa2ce",
+      "category": "humanities",
+      "navigationKeyword1": "culture",
+      "navigationKeyword2": "global",
+      "question": "What does global culture usually describe?",
+      "correctAnswer": "cultural exchange across regions and nations",
+      "incorrectAnswers": [
+        "only one uniform world tradition",
+        "only ancient empires",
+        "only museum artifacts"
+      ],
+      "explanation": "Global culture refers to circulation, exchange, and interaction across borders.",
+      "keywords": [
+        "global-culture",
+        "exchange"
+      ],
+      "source": "https://www.britannica.com/topic/globalization"
+    },
+    {
+      "seedId": "9f87cd67-50b7-52dc-95c4-5d407fe6a4af",
+      "category": "humanities",
+      "navigationKeyword1": "culture",
+      "navigationKeyword2": "global",
+      "question": "Why do people study both local and global culture together?",
+      "correctAnswer": "because traditions can spread while keeping local meaning",
+      "incorrectAnswers": [
+        "because all cultures become identical",
+        "because local culture disappears instantly",
+        "because geography no longer matters"
+      ],
+      "explanation": "Cultural forms can travel widely but still be adapted in local ways.",
+      "keywords": [
+        "global-culture",
+        "local-global"
+      ],
+      "source": "https://en.unesco.org/themes/intercultural-dialogue"
+    },
+    {
+      "seedId": "79233f72-d61d-5840-b083-cdba04206bf4",
+      "category": "humanities",
+      "navigationKeyword1": "culture",
+      "navigationKeyword2": "identity",
+      "question": "Cultural identity usually refers to what?",
+      "correctAnswer": "how people understand belonging through shared culture",
+      "incorrectAnswers": [
+        "a museum floor plan",
+        "a type of stage light",
+        "a synonym list"
+      ],
+      "explanation": "Identity can be shaped by language, tradition, memory, and community.",
+      "keywords": [
+        "culture-identity",
+        "belonging"
+      ],
+      "source": "https://www.britannica.com/topic/identity-sociology"
+    },
+    {
+      "seedId": "b2a73ac9-cb0a-5486-8384-6f5530134397",
+      "category": "humanities",
+      "navigationKeyword1": "culture",
+      "navigationKeyword2": "identity",
+      "question": "Why can identity be studied through stories, art, and ritual?",
+      "correctAnswer": "because culture expresses belonging in many forms",
+      "incorrectAnswers": [
+        "because identity uses no language",
+        "because only governments define people",
+        "because identity is only biological"
+      ],
+      "explanation": "Cultural identity appears in symbols, practices, and representation, not just in labels.",
+      "keywords": [
+        "culture-identity",
+        "representation"
+      ],
+      "source": "https://www.si.edu/spotlight/celebrating-culture"
+    },
+    {
+      "seedId": "dfc80f5e-67e3-5ada-9ff1-88c308c06231",
+      "category": "humanities",
+      "navigationKeyword1": "culture",
+      "navigationKeyword2": "media",
+      "question": "Cultural media includes what kinds of things?",
+      "correctAnswer": "forms that carry stories, images, and ideas",
+      "incorrectAnswers": [
+        "only stone tools",
+        "only weather maps",
+        "only train schedules"
+      ],
+      "explanation": "Media are ways cultures circulate messages and representation through text, sound, and image.",
+      "keywords": [
+        "culture-media",
+        "representation"
+      ],
+      "source": "https://www.britannica.com/topic/mass-media"
+    },
+    {
+      "seedId": "cd9d6afe-349e-5982-992c-dc7ed7d5d447",
+      "category": "humanities",
+      "navigationKeyword1": "culture",
+      "navigationKeyword2": "media",
+      "question": "Why do scholars study media in culture?",
+      "correctAnswer": "media shape how people imagine events, groups, and values",
+      "incorrectAnswers": [
+        "media never affect beliefs",
+        "media replace language",
+        "media exist only in museums"
+      ],
+      "explanation": "Media influence how people see identity, community, and public life.",
+      "keywords": [
+        "culture-media",
+        "influence"
+      ],
+      "source": "https://www.loc.gov/programs/radio-preservation-task-force/about-this-program/"
+    },
+    {
+      "seedId": "8ffc6715-cfbf-569b-9ec0-61a82e1ac1a1",
+      "category": "humanities",
+      "navigationKeyword1": "culture",
+      "navigationKeyword2": "rituals",
+      "question": "What is a ritual?",
+      "correctAnswer": "a repeated symbolic action with shared meaning",
+      "incorrectAnswers": [
+        "a random mistake",
+        "a one-page book review",
+        "a lens for a camera"
+      ],
+      "explanation": "Rituals are repeated acts that often carry social, cultural, or religious meaning.",
+      "keywords": [
+        "culture-rituals",
+        "ritual"
+      ],
+      "source": "https://www.britannica.com/topic/ritual"
+    },
+    {
+      "seedId": "0c9357b4-7c57-5718-9971-287dd20d79d4",
+      "category": "humanities",
+      "navigationKeyword1": "culture",
+      "navigationKeyword2": "rituals",
+      "question": "Why are rituals important in culture?",
+      "correctAnswer": "they mark meaning, memory, or transition",
+      "incorrectAnswers": [
+        "they remove all change",
+        "they exist only in ancient times",
+        "they can never be public"
+      ],
+      "explanation": "Rituals can help communities mark belonging, stages of life, or sacred meaning.",
+      "keywords": [
+        "culture-rituals",
+        "community"
+      ],
+      "source": "https://www.si.edu/spotlight/celebrating-culture"
+    },
+    {
+      "seedId": "6c3b5690-383f-55d1-a5a0-621dfba12754",
+      "category": "humanities",
+      "navigationKeyword1": "culture",
+      "navigationKeyword2": "symbols",
+      "question": "What does a cultural symbol do?",
+      "correctAnswer": "it carries shared meaning beyond its literal form",
+      "incorrectAnswers": [
+        "it tunes an instrument",
+        "it prints a book",
+        "it frames a painting"
+      ],
+      "explanation": "Symbols stand for ideas, values, or identities recognized by a community.",
+      "keywords": [
+        "culture",
+        "symbols"
+      ],
+      "source": "https://www.britannica.com/topic/symbol"
+    },
+    {
+      "seedId": "84f42d9a-2c56-54b4-9741-b5f697530577",
+      "category": "humanities",
+      "navigationKeyword1": "culture",
+      "navigationKeyword2": "symbols",
+      "question": "Why can the same symbol mean different things in different cultures?",
+      "correctAnswer": "meaning depends on cultural context",
+      "incorrectAnswers": [
+        "symbols never change",
+        "all cultures use one system",
+        "meaning comes only from color"
+      ],
+      "explanation": "Symbols work through shared interpretation, and that interpretation varies across communities.",
+      "keywords": [
+        "culture",
+        "context"
+      ],
+      "source": "https://www.si.edu/spotlight/celebrating-culture"
+    },
+    {
+      "seedId": "05fd88ee-6380-5792-a321-0d13e4f2cb21",
+      "category": "humanities",
+      "navigationKeyword1": "culture",
+      "navigationKeyword2": "traditions",
+      "question": "What is a tradition?",
+      "correctAnswer": "a practice or custom passed over time",
+      "incorrectAnswers": [
+        "a one-time accident",
+        "a weather report",
+        "a tax invoice"
+      ],
+      "explanation": "Traditions are repeated cultural practices handed down across generations or groups.",
+      "keywords": [
+        "culture",
+        "traditions"
+      ],
+      "source": "https://www.britannica.com/topic/tradition"
+    },
+    {
+      "seedId": "f229d8d1-1e62-5ffb-90c0-ec91c6376ee7",
+      "category": "humanities",
+      "navigationKeyword1": "culture",
+      "navigationKeyword2": "traditions",
+      "question": "Why do traditions matter in culture?",
+      "correctAnswer": "they help preserve shared memory and identity",
+      "incorrectAnswers": [
+        "they replace all change",
+        "they ban creativity",
+        "they remove local differences"
+      ],
+      "explanation": "Traditions help communities carry meanings and practices from one generation to the next.",
+      "keywords": [
+        "culture",
+        "shared-memory"
+      ],
+      "source": "https://www.smithsonianmag.com/arts-culture/"
+    }
+  ]
+}

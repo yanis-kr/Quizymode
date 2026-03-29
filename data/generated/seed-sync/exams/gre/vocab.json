@@ -1,0 +1,127 @@
+{
+  "schemaVersion": 1,
+  "seedSet": "core-public-items",
+  "deltaPreviewLimit": 200,
+  "items": [
+    {
+      "seedId": "677ca383-d9bf-4f08-a85c-ea8901f4e7bb",
+      "category": "exams",
+      "navigationKeyword1": "gre",
+      "navigationKeyword2": "vocab",
+      "question": "Because the policy was only temporary, its effects were ___ rather than lasting.",
+      "correctAnswer": "ephemeral",
+      "incorrectAnswers": [
+        "enduring",
+        "rigid",
+        "implicit"
+      ],
+      "explanation": "\"Ephemeral\" means lasting a very short time.",
+      "keywords": [
+        "gre-vocab",
+        "context-clues",
+        "verbal-reasoning"
+      ],
+      "source": "https://www.ets.org/pdfs/gre/gre-sample-questions.pdf"
+    },
+    {
+      "seedId": "1d93d4cd-0f09-4ec9-904b-6877e40e5814",
+      "category": "exams",
+      "navigationKeyword1": "gre",
+      "navigationKeyword2": "vocab",
+      "question": "Rather than proposing an ideal theory, the committee chose a ___ solution it could implement immediately.",
+      "correctAnswer": "pragmatic",
+      "incorrectAnswers": [
+        "ornate",
+        "equivocal",
+        "obsolete"
+      ],
+      "explanation": "\"Pragmatic\" refers to a practical, results-oriented approach.",
+      "keywords": [
+        "gre-vocab",
+        "context-clues",
+        "verbal-reasoning"
+      ],
+      "source": "https://www.ets.org/pdfs/gre/gre-sample-questions.pdf"
+    },
+    {
+      "seedId": "6b36fd29-8416-441b-9f75-c7270f82021c",
+      "category": "exams",
+      "navigationKeyword1": "gre",
+      "navigationKeyword2": "vocab",
+      "question": "Smartphones are so ___ in daily life that many people forget how new they are.",
+      "correctAnswer": "ubiquitous",
+      "incorrectAnswers": [
+        "scarce",
+        "obsolete",
+        "tentative"
+      ],
+      "explanation": "\"Ubiquitous\" means present everywhere.",
+      "keywords": [
+        "gre-vocab",
+        "context-clues",
+        "verbal-reasoning"
+      ],
+      "source": "https://www.ets.org/pdfs/gre/gre-sample-questions.pdf"
+    },
+    {
+      "seedId": "58185ff5-bf91-4a7b-bab1-6aec9016a214",
+      "category": "exams",
+      "navigationKeyword1": "gre",
+      "navigationKeyword2": "vocab",
+      "question": "The design of the building was intentionally ___, with no extra decoration at all.",
+      "correctAnswer": "austere",
+      "incorrectAnswers": [
+        "ornate",
+        "flexible",
+        "fragmented"
+      ],
+      "explanation": "\"Austere\" can mean plain and without ornament.",
+      "keywords": [
+        "gre-vocab",
+        "context-clues",
+        "verbal-reasoning"
+      ],
+      "source": "https://www.ets.org/pdfs/gre/gre-sample-questions.pdf"
+    },
+    {
+      "seedId": "fd2cecd7-365d-45a8-9e80-39b6bf0d4b23",
+      "category": "exams",
+      "navigationKeyword1": "gre",
+      "navigationKeyword2": "vocab",
+      "question": "The lecture was so ___ that only specialists in the field could follow it easily.",
+      "correctAnswer": "esoteric",
+      "incorrectAnswers": [
+        "accessible",
+        "brief",
+        "conclusive"
+      ],
+      "explanation": "\"Esoteric\" describes material understood by only a small group.",
+      "keywords": [
+        "gre-vocab",
+        "context-clues",
+        "verbal-reasoning"
+      ],
+      "source": "https://www.ets.org/pdfs/gre/gre-sample-questions.pdf"
+    },
+    {
+      "seedId": "a6090d75-f32a-42f1-bfe0-d77e4a7a114b",
+      "category": "exams",
+      "navigationKeyword1": "gre",
+      "navigationKeyword2": "vocab",
+      "question": "The mayor's answer was so ___ that reporters could not tell what position she actually held.",
+      "correctAnswer": "equivocal",
+      "incorrectAnswers": [
+        "direct",
+        "transparent",
+        "systematic"
+      ],
+      "explanation": "\"Equivocal\" means open to more than one interpretation, often in a misleading way.",
+      "keywords": [
+        "gre-vocab",
+        "context-clues",
+        "verbal-reasoning"
+      ],
+      "source": "https://www.ets.org/pdfs/gre/gre-sample-questions.pdf"
+    }
+  ]
+}

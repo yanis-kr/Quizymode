@@ -1,0 +1,197 @@
+{
+  "schemaVersion": 1,
+  "seedSet": "core-public-items",
+  "deltaPreviewLimit": 200,
+  "items": [
+    {
+      "seedId": "5204b5cf-4de9-5b9b-8eec-f4c1d8bdd507",
+      "category": "trivia",
+      "navigationKeyword1": "music",
+      "navigationKeyword2": "lyrics",
+      "question": "A ballad is a narrative song that tells what?",
+      "correctAnswer": "a story",
+      "incorrectAnswers": [
+        "a romance",
+        "a legend",
+        "a journey"
+      ],
+      "explanation": "Ballads tell stories.",
+      "keywords": [
+        "ballad",
+        "narrative"
+      ],
+      "source": "https://www.britannica.com/art/ballad-music"
+    },
+    {
+      "seedId": "b3d329e5-f7d9-5eca-a267-5e5c60834ff1",
+      "category": "trivia",
+      "navigationKeyword1": "music",
+      "navigationKeyword2": "lyrics",
+      "question": "A libretto is the text sung in what kinds of works?",
+      "correctAnswer": "operas and musicals",
+      "incorrectAnswers": [
+        "symphonies without voices",
+        "string quartets",
+        "percussion solos"
+      ],
+      "explanation": "Librettos are opera/musical texts.",
+      "keywords": [
+        "opera",
+        "text"
+      ],
+      "source": "https://www.britannica.com/art/libretto"
+    },
+    {
+      "seedId": "4a4568d3-725e-50b3-8bee-923279f66a1e",
+      "category": "trivia",
+      "navigationKeyword1": "music",
+      "navigationKeyword2": "lyrics",
+      "question": "At the 95th Academy Awards, the Original Song winner\u2019s music was by whom (Naatu Naatu)?",
+      "correctAnswer": "M.M. Keeravaani",
+      "incorrectAnswers": [
+        "John Williams",
+        "Lady Gaga",
+        "Diane Warren"
+      ],
+      "explanation": "M.M. Keeravaani wrote the music for Naatu Naatu.",
+      "keywords": [
+        "oscars",
+        "credits"
+      ],
+      "source": "https://www.oscars.org/oscars/ceremonies/2023"
+    },
+    {
+      "seedId": "92a1eeec-978f-5c78-9db4-1e7ef97698ab",
+      "category": "trivia",
+      "navigationKeyword1": "music",
+      "navigationKeyword2": "lyrics",
+      "question": "Hymn texts are typically sung in what settings?",
+      "correctAnswer": "worship services",
+      "incorrectAnswers": [
+        "concert halls",
+        "schools",
+        "festival grounds"
+      ],
+      "explanation": "Hymns are sung in worship.",
+      "keywords": [
+        "hymns",
+        "worship"
+      ],
+      "source": "https://www.britannica.com/art/hymn-music"
+    },
+    {
+      "seedId": "24dbd870-b78b-5c4f-b2d7-0102fc7a21b7",
+      "category": "trivia",
+      "navigationKeyword1": "music",
+      "navigationKeyword2": "lyrics",
+      "question": "In a song, a refrain is a repeated what?",
+      "correctAnswer": "chorus sections",
+      "incorrectAnswers": [
+        "verse lines",
+        "melodic phrases",
+        "hook lyrics"
+      ],
+      "explanation": "Refrains repeat chorus-like material.",
+      "keywords": [
+        "refrain",
+        "song-form"
+      ],
+      "source": "https://www.britannica.com/art/refrain-music"
+    },
+    {
+      "seedId": "19ef4a5b-11f4-595a-8ceb-67bdc2b6e8c3",
+      "category": "trivia",
+      "navigationKeyword1": "music",
+      "navigationKeyword2": "lyrics",
+      "question": "Limericks are not song lyrics, but they share what element with many lyrics?",
+      "correctAnswer": "rhyme",
+      "incorrectAnswers": [
+        "meter",
+        "narrative voice",
+        "repetition"
+      ],
+      "explanation": "Limericks rely on rhyme pattern.",
+      "keywords": [
+        "verse",
+        "rhyme"
+      ],
+      "source": "https://www.britannica.com/literature/limerick"
+    },
+    {
+      "seedId": "c113e3e7-cf8e-5f13-9a74-b59448724a3a",
+      "category": "trivia",
+      "navigationKeyword1": "music",
+      "navigationKeyword2": "lyrics",
+      "question": "National anthems are ceremonial songs expressing what?",
+      "correctAnswer": "national identity",
+      "incorrectAnswers": [
+        "religious devotion",
+        "regional pride",
+        "romantic love"
+      ],
+      "explanation": "Anthems express national identity.",
+      "keywords": [
+        "anthems",
+        "ceremony"
+      ],
+      "source": "https://www.britannica.com/topic/national-anthem"
+    },
+    {
+      "seedId": "38d119b8-c10a-5953-b93d-188adaa01730",
+      "category": "trivia",
+      "navigationKeyword1": "music",
+      "navigationKeyword2": "lyrics",
+      "question": "Rap vocals are built around rhythmic spoken delivery over what?",
+      "correctAnswer": "beats",
+      "incorrectAnswers": [
+        "pipe organ only",
+        "choir-only drones",
+        "silence"
+      ],
+      "explanation": "Rap is rhythmic speech on beats.",
+      "keywords": [
+        "rap",
+        "hip-hop"
+      ],
+      "source": "https://www.britannica.com/art/rap-music"
+    },
+    {
+      "seedId": "996809a2-8667-5bff-8758-2a4f5a5eadd1",
+      "category": "trivia",
+      "navigationKeyword1": "music",
+      "navigationKeyword2": "lyrics",
+      "question": "Scat singing uses wordless what?",
+      "correctAnswer": "improvised syllables",
+      "incorrectAnswers": [
+        "chorus lines",
+        "beats",
+        "rhyme"
+      ],
+      "explanation": "Scat uses improvised nonsense syllables.",
+      "keywords": [
+        "jazz",
+        "vocals"
+      ],
+      "source": "https://www.britannica.com/art/scat-singing"
+    },
+    {
+      "seedId": "daae1c72-6c8b-5e90-b3c0-e769b501c4aa",
+      "category": "trivia",
+      "navigationKeyword1": "music",
+      "navigationKeyword2": "lyrics",
+      "question": "Sea shanties were work songs aboard what?",
+      "correctAnswer": "ships",
+      "incorrectAnswers": [
+        "trains",
+        "airplanes in flight",
+        "subways only"
+      ],
+      "explanation": "Shanties coordinated ship labor.",
+      "keywords": [
+        "shanties",
+        "folk"
+      ],
+      "source": "https://www.britannica.com/art/sea-shanty"
+    }
+  ]
+}

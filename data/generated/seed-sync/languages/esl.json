@@ -1,0 +1,727 @@
+{
+  "schemaVersion": 1,
+  "seedSet": "core-public-items",
+  "deltaPreviewLimit": 200,
+  "items": [
+    {
+      "seedId": "79bc15bf-e56d-501a-8c0b-f79640cc3b0e",
+      "category": "languages",
+      "navigationKeyword1": "esl",
+      "navigationKeyword2": "beginner",
+      "question": "Which phrase is a simple, polite greeting in English?",
+      "correctAnswer": "Hello.",
+      "incorrectAnswers": [
+        "Table.",
+        "Tomorrow.",
+        "Because."
+      ],
+      "explanation": "Hello is a common greeting when you meet someone.",
+      "keywords": [
+        "hello",
+        "greeting",
+        "esl-beginner"
+      ],
+      "source": "https://dictionary.cambridge.org/dictionary/english/hello"
+    },
+    {
+      "seedId": "aa54f089-743f-5fae-ab75-db6bdfec3195",
+      "category": "languages",
+      "navigationKeyword1": "esl",
+      "navigationKeyword2": "beginner",
+      "question": "Which question asks for someone's name?",
+      "correctAnswer": "What is your name?",
+      "incorrectAnswers": [
+        "Where is the door?",
+        "How old is the building?",
+        "What time is lunch?"
+      ],
+      "explanation": "What is your name? is the usual way to ask for a person's name.",
+      "keywords": [
+        "name",
+        "questions",
+        "esl-beginner"
+      ],
+      "source": "https://dictionary.cambridge.org/dictionary/english/name"
+    },
+    {
+      "seedId": "95d43b50-7b2a-58f0-bdf1-fcc83b31657d",
+      "category": "languages",
+      "navigationKeyword1": "esl",
+      "navigationKeyword2": "beginner",
+      "question": "Which verb form fits I: I ___ a student.",
+      "correctAnswer": "am",
+      "incorrectAnswers": [
+        "is",
+        "are",
+        "be"
+      ],
+      "explanation": "With I, English uses am in present simple: I am.",
+      "keywords": [
+        "be-verb",
+        "present-simple",
+        "esl-beginner"
+      ],
+      "source": "https://learnenglish.britishcouncil.org/grammar/a1-a2-grammar/present-simple"
+    },
+    {
+      "seedId": "0033297c-cd7f-5394-9491-2b3b7034e31b",
+      "category": "languages",
+      "navigationKeyword1": "esl",
+      "navigationKeyword2": "beginner",
+      "question": "Which word means the opposite of night?",
+      "correctAnswer": "day",
+      "incorrectAnswers": [
+        "road",
+        "paper",
+        "color"
+      ],
+      "explanation": "Day is the time when the sun is up; night is dark.",
+      "keywords": [
+        "day",
+        "time-words",
+        "esl-beginner"
+      ],
+      "source": "https://dictionary.cambridge.org/dictionary/english/day"
+    },
+    {
+      "seedId": "de3cc0c5-9f3c-5583-9ea3-435461b4bdd3",
+      "category": "languages",
+      "navigationKeyword1": "esl",
+      "navigationKeyword2": "beginner",
+      "question": "Which word means you feel thankful to someone?",
+      "correctAnswer": "Thank you.",
+      "incorrectAnswers": [
+        "Maybe.",
+        "Behind.",
+        "Heavy."
+      ],
+      "explanation": "Thank you shows gratitude after help or a gift.",
+      "keywords": [
+        "thank-you",
+        "gratitude",
+        "esl-beginner"
+      ],
+      "source": "https://dictionary.cambridge.org/dictionary/english/thank-you"
+    },
+    {
+      "seedId": "4e08bef1-056f-5f39-b616-7dc9c901b62f",
+      "category": "languages",
+      "navigationKeyword1": "esl",
+      "navigationKeyword2": "beginner",
+      "question": "Which word names clear liquid you drink?",
+      "correctAnswer": "water",
+      "incorrectAnswers": [
+        "chair",
+        "music",
+        "window"
+      ],
+      "explanation": "Water is the common word for the basic drink humans need.",
+      "keywords": [
+        "water",
+        "food-drink",
+        "esl-beginner"
+      ],
+      "source": "https://www.merriam-webster.com/dictionary/water"
+    },
+    {
+      "seedId": "f282dfdb-d943-5358-9a91-cab8b8e6ff7f",
+      "category": "languages",
+      "navigationKeyword1": "esl",
+      "navigationKeyword2": "grammar",
+      "question": "Which form is correct in present simple for we?",
+      "correctAnswer": "We work here.",
+      "incorrectAnswers": [
+        "We works here.",
+        "We working here.",
+        "We be work here."
+      ],
+      "explanation": "With we, present simple uses the base verb without -s: we work.",
+      "keywords": [
+        "present-simple",
+        "subject-verb",
+        "esl-grammar"
+      ],
+      "source": "https://dictionary.cambridge.org/grammar/british-grammar/present-simple"
+    },
+    {
+      "seedId": "f9b039b9-5578-5b14-aafd-227e3d9fa394",
+      "category": "languages",
+      "navigationKeyword1": "esl",
+      "navigationKeyword2": "grammar",
+      "question": "Which preposition fits time on a clock: ___ 3 o'clock?",
+      "correctAnswer": "at",
+      "incorrectAnswers": [
+        "on",
+        "in",
+        "by"
+      ],
+      "explanation": "English often uses at with clock times, like at 3 o'clock.",
+      "keywords": [
+        "prepositions",
+        "time",
+        "esl-grammar"
+      ],
+      "source": "https://www.merriam-webster.com/dictionary/at"
+    },
+    {
+      "seedId": "073448f9-c03f-53a5-8607-b1091470c54d",
+      "category": "languages",
+      "navigationKeyword1": "esl",
+      "navigationKeyword2": "grammar",
+      "question": "Which question has standard word order?",
+      "correctAnswer": "Do you speak English?",
+      "incorrectAnswers": [
+        "You do speak English?",
+        "Speak you English?",
+        "English you speak?"
+      ],
+      "explanation": "Yes/no questions with most verbs use do/does before the subject: Do you...?",
+      "keywords": [
+        "questions",
+        "do-support",
+        "esl-grammar"
+      ],
+      "source": "https://dictionary.cambridge.org/grammar/british-grammar/questions-does-do-did"
+    },
+    {
+      "seedId": "25e349f2-89cd-5599-a181-ea8b773368f0",
+      "category": "languages",
+      "navigationKeyword1": "esl",
+      "navigationKeyword2": "grammar",
+      "question": "Which sentence uses a correctly?",
+      "correctAnswer": "I need a pen.",
+      "incorrectAnswers": [
+        "I need an pen.",
+        "I need pen.",
+        "I need the pen always."
+      ],
+      "explanation": "Use a before consonant sounds; pen starts with /p/, so a pen is standard.",
+      "keywords": [
+        "articles",
+        "a-an",
+        "esl-grammar"
+      ],
+      "source": "https://www.merriam-webster.com/words-at-play/is-it-a-or-an"
+    },
+    {
+      "seedId": "c80d9999-c06c-5068-b88c-274a3a1912bd",
+      "category": "languages",
+      "navigationKeyword1": "esl",
+      "navigationKeyword2": "grammar",
+      "question": "Which sentence uses the past of go?",
+      "correctAnswer": "Yesterday I went to school.",
+      "incorrectAnswers": [
+        "Yesterday I goed to school.",
+        "Yesterday I go to school.",
+        "Yesterday I going to school."
+      ],
+      "explanation": "Go is irregular; the past form is went, not goed.",
+      "keywords": [
+        "past-simple",
+        "irregular-verbs",
+        "esl-grammar"
+      ],
+      "source": "https://www.merriam-webster.com/dictionary/went"
+    },
+    {
+      "seedId": "257c6fef-6bdb-543d-bd7b-4878b43e8863",
+      "category": "languages",
+      "navigationKeyword1": "esl",
+      "navigationKeyword2": "grammar",
+      "question": "Which word completes the negative: She ___ not like coffee.",
+      "correctAnswer": "does",
+      "incorrectAnswers": [
+        "do",
+        "is",
+        "have"
+      ],
+      "explanation": "In present simple negatives, she takes does not (doesn't) before the base verb.",
+      "keywords": [
+        "negatives",
+        "present-simple",
+        "esl-grammar"
+      ],
+      "source": "https://dictionary.cambridge.org/grammar/british-grammar/negation"
+    },
+    {
+      "seedId": "c9b8a29d-5230-5f6b-bafe-818e7ede2e29",
+      "category": "languages",
+      "navigationKeyword1": "esl",
+      "navigationKeyword2": "listening",
+      "question": "If a speaker says \"Could you...\", what kind of function is common?",
+      "correctAnswer": "a polite request",
+      "incorrectAnswers": [
+        "a weather report",
+        "a math proof",
+        "a command to leave"
+      ],
+      "explanation": "Could you is often used to ask for help politely.",
+      "keywords": [
+        "requests",
+        "politeness",
+        "esl-listening"
+      ],
+      "source": "https://www.merriam-webster.com/dictionary/could"
+    },
+    {
+      "seedId": "733ee0ba-4e73-5bbb-90c1-a779ff20fbba",
+      "category": "languages",
+      "navigationKeyword1": "esl",
+      "navigationKeyword2": "listening",
+      "question": "If audio gives a phone number, what kind of listening is that?",
+      "correctAnswer": "listening for specific information",
+      "incorrectAnswers": [
+        "listening only for jokes",
+        "ignoring numbers",
+        "guessing the speaker's hometown"
+      ],
+      "explanation": "You scan the audio for exact details like digits.",
+      "keywords": [
+        "detail",
+        "numbers",
+        "esl-listening"
+      ],
+      "source": "https://www.merriam-webster.com/dictionary/listen"
+    },
+    {
+      "seedId": "3c699e7c-c462-557e-8ede-c0d6252725fb",
+      "category": "languages",
+      "navigationKeyword1": "esl",
+      "navigationKeyword2": "listening",
+      "question": "What helps listeners follow a longer talk?",
+      "correctAnswer": "Signal words like first, next, and finally.",
+      "incorrectAnswers": [
+        "Random silence only.",
+        "Ignoring order words.",
+        "Avoiding all transitions."
+      ],
+      "explanation": "Order words show how ideas connect, which helps listening comprehension.",
+      "keywords": [
+        "discourse-markers",
+        "organization",
+        "esl-listening"
+      ],
+      "source": "https://dictionary.cambridge.org/grammar/british-grammar/discourse-markers"
+    },
+    {
+      "seedId": "65140d00-1395-501a-9dee-494500618b55",
+      "category": "languages",
+      "navigationKeyword1": "esl",
+      "navigationKeyword2": "listening",
+      "question": "When you listen for the main topic, what are you trying to catch first?",
+      "correctAnswer": "The big idea, not every small word.",
+      "incorrectAnswers": [
+        "Every spelling in your head.",
+        "Only the speaker's age.",
+        "The color of the room."
+      ],
+      "explanation": "Listening for gist means focusing on overall meaning before details.",
+      "keywords": [
+        "gist",
+        "listening-skills",
+        "esl-listening"
+      ],
+      "source": "https://www.britishcouncil.org/learnenglish/listening"
+    },
+    {
+      "seedId": "60509bcc-8bf0-5f67-a15b-c6b799e3d24b",
+      "category": "languages",
+      "navigationKeyword1": "esl",
+      "navigationKeyword2": "listening",
+      "question": "Which pair differs mainly by one sound: ship and sheep?",
+      "correctAnswer": "The vowel sound in the middle.",
+      "incorrectAnswers": [
+        "The letter h",
+        "The final p",
+        "The number of syllables"
+      ],
+      "explanation": "Ship and sheep are a classic minimal pair for the short /\u026a/ and long /i\u02d0/ vowels.",
+      "keywords": [
+        "minimal-pairs",
+        "vowel-sounds",
+        "esl-listening"
+      ],
+      "source": "https://dictionary.cambridge.org/pronunciation/english/ship"
+    },
+    {
+      "seedId": "2989e400-f0ad-59b9-bd15-b4b554933826",
+      "category": "languages",
+      "navigationKeyword1": "esl",
+      "navigationKeyword2": "listening",
+      "question": "Why do many learners watch short clips with subtitles at first?",
+      "correctAnswer": "To connect sounds with written words.",
+      "incorrectAnswers": [
+        "To remove all listening.",
+        "To avoid English audio.",
+        "To read only silently forever."
+      ],
+      "explanation": "Subtitles can support listening by linking what you hear to what you see.",
+      "keywords": [
+        "subtitles",
+        "listening-practice",
+        "esl-listening"
+      ],
+      "source": "https://dictionary.cambridge.org/dictionary/english/subtitle"
+    },
+    {
+      "seedId": "60f74b62-69a7-5230-b409-e7c73b7649af",
+      "category": "languages",
+      "navigationKeyword1": "esl",
+      "navigationKeyword2": "reading",
+      "question": "Before you read, what can a title help you predict?",
+      "correctAnswer": "The topic of the text.",
+      "incorrectAnswers": [
+        "The writer's shoe size.",
+        "Every word you will read.",
+        "The price of the book only."
+      ],
+      "explanation": "A title usually signals the main topic so you know what to expect.",
+      "keywords": [
+        "title",
+        "prediction",
+        "esl-reading"
+      ],
+      "source": "https://dictionary.cambridge.org/dictionary/english/title"
+    },
+    {
+      "seedId": "44e4db4d-2158-5d04-8216-e9da66f2ae97",
+      "category": "languages",
+      "navigationKeyword1": "esl",
+      "navigationKeyword2": "reading",
+      "question": "If a text has photos near the words, what can photos help you do?",
+      "correctAnswer": "Guess meanings and follow the topic.",
+      "incorrectAnswers": [
+        "Ignore all new words.",
+        "Skip the first paragraph.",
+        "Replace reading aloud."
+      ],
+      "explanation": "Pictures give context clues that support understanding.",
+      "keywords": [
+        "context-clues",
+        "pictures",
+        "esl-reading"
+      ],
+      "source": "https://www.britishcouncil.org/learnenglish/reading"
+    },
+    {
+      "seedId": "76c60086-5ced-52f3-8c00-0c6f3500f4f1",
+      "category": "languages",
+      "navigationKeyword1": "esl",
+      "navigationKeyword2": "reading",
+      "question": "If a word is new, what is a safe first step?",
+      "correctAnswer": "Look at the nearby words for hints.",
+      "incorrectAnswers": [
+        "Delete the sentence.",
+        "Guess only from one letter.",
+        "Stop reading completely."
+      ],
+      "explanation": "Context clues in the same sentence often help you understand a new word.",
+      "keywords": [
+        "context-clues",
+        "vocabulary",
+        "esl-reading"
+      ],
+      "source": "https://www.merriam-webster.com/words-at-play/how-to-use-context-to-determine-word-meaning"
+    },
+    {
+      "seedId": "42097bd4-6905-5fc3-be47-b64a4b4ab36d",
+      "category": "languages",
+      "navigationKeyword1": "esl",
+      "navigationKeyword2": "reading",
+      "question": "If you underline the topic sentence, what idea does it usually express?",
+      "correctAnswer": "The paragraph's main point.",
+      "incorrectAnswers": [
+        "A random detail only.",
+        "The author's birth year.",
+        "The page number."
+      ],
+      "explanation": "The topic sentence states the paragraph's focus.",
+      "keywords": [
+        "topic-sentence",
+        "paragraphs",
+        "esl-reading"
+      ],
+      "source": "https://writingcenter.unc.edu/tips-and-tools/paragraphs/"
+    },
+    {
+      "seedId": "ed654a09-8d67-5b5f-92b9-a6edc072f9e3",
+      "category": "languages",
+      "navigationKeyword1": "esl",
+      "navigationKeyword2": "reading",
+      "question": "When you get a long writing assignment, what is a good first step?",
+      "correctAnswer": "Read the whole prompt from beginning to end once.",
+      "incorrectAnswers": [
+        "Write the conclusion first.",
+        "Skip to the due date only.",
+        "Ignore the task words."
+      ],
+      "explanation": "Reading the full prompt first gives you the overall goal before you plan your answer.",
+      "keywords": [
+        "instructions",
+        "prompts",
+        "esl-reading"
+      ],
+      "source": "https://owl.purdue.edu/owl/general_writing/common_writing_assignments/understanding_writing_assignments.html"
+    },
+    {
+      "seedId": "3fc2c9c6-9ec2-5812-b2df-570721bcea26",
+      "category": "languages",
+      "navigationKeyword1": "esl",
+      "navigationKeyword2": "reading",
+      "question": "When you look for a bus time in a schedule, what skill is that?",
+      "correctAnswer": "scanning for a specific detail",
+      "incorrectAnswers": [
+        "memorizing the whole page",
+        "writing new times",
+        "ignoring numbers"
+      ],
+      "explanation": "Scanning means searching quickly for one fact, like a departure time.",
+      "keywords": [
+        "scanning",
+        "schedules",
+        "esl-reading"
+      ],
+      "source": "https://www.merriam-webster.com/dictionary/scan"
+    },
+    {
+      "seedId": "849de3a9-a062-5641-bab1-405c71c62c48",
+      "category": "languages",
+      "navigationKeyword1": "esl",
+      "navigationKeyword2": "speaking",
+      "question": "If you did not hear a question, what is a polite fix?",
+      "correctAnswer": "Sorry, could you repeat that?",
+      "incorrectAnswers": [
+        "Say nothing and walk away.",
+        "Answer with a random word.",
+        "Talk louder without listening."
+      ],
+      "explanation": "Asking for repetition is normal and polite in conversation.",
+      "keywords": [
+        "clarification",
+        "conversation",
+        "esl-speaking"
+      ],
+      "source": "https://dictionary.cambridge.org/dictionary/english/repeat"
+    },
+    {
+      "seedId": "56ada017-1a2c-55cd-85e3-8941901cc3bb",
+      "category": "languages",
+      "navigationKeyword1": "esl",
+      "navigationKeyword2": "speaking",
+      "question": "If you need a moment to think, which filler is neutral and common?",
+      "correctAnswer": "Well...",
+      "incorrectAnswers": [
+        "Never use any pause words.",
+        "Shout stop.",
+        "Change the topic instantly."
+      ],
+      "explanation": "Short fillers like well can signal thinking time without being rude.",
+      "keywords": [
+        "fillers",
+        "fluency",
+        "esl-speaking"
+      ],
+      "source": "https://dictionary.cambridge.org/dictionary/english/well_2"
+    },
+    {
+      "seedId": "4e87310e-31a2-54a6-a0f1-5eb08d45c2b5",
+      "category": "languages",
+      "navigationKeyword1": "esl",
+      "navigationKeyword2": "speaking",
+      "question": "In a short phone call, what is a clear opening?",
+      "correctAnswer": "Hello, this is Ana.",
+      "incorrectAnswers": [
+        "Hang up first.",
+        "Only read numbers.",
+        "Say the alphabet."
+      ],
+      "explanation": "Saying hello and your name helps the listener know who is calling.",
+      "keywords": [
+        "telephone",
+        "greeting",
+        "esl-speaking"
+      ],
+      "source": "https://www.merriam-webster.com/dictionary/hello"
+    },
+    {
+      "seedId": "1d893cdc-043b-525d-b788-c903a0017b16",
+      "category": "languages",
+      "navigationKeyword1": "esl",
+      "navigationKeyword2": "speaking",
+      "question": "What does clear speech usually need from word stress?",
+      "correctAnswer": "Stress the important syllable in each content word.",
+      "incorrectAnswers": [
+        "Stress every syllable equally always.",
+        "Never stress verbs.",
+        "Only stress the last word in a paragraph."
+      ],
+      "explanation": "English listeners rely on stress patterns to recognize words quickly.",
+      "keywords": [
+        "word-stress",
+        "pronunciation",
+        "esl-speaking"
+      ],
+      "source": "https://dictionary.cambridge.org/grammar/british-grammar/word-stress"
+    },
+    {
+      "seedId": "27506ebf-72f7-565e-bc0d-1bae0f377a58",
+      "category": "languages",
+      "navigationKeyword1": "esl",
+      "navigationKeyword2": "speaking",
+      "question": "When you agree politely, which phrase is common in everyday English?",
+      "correctAnswer": "That sounds good.",
+      "incorrectAnswers": [
+        "That sounds impossible always.",
+        "That sounds illegal.",
+        "That sounds purple."
+      ],
+      "explanation": "That sounds good is a natural way to show agreement with a plan.",
+      "keywords": [
+        "agreement",
+        "conversation",
+        "esl-speaking"
+      ],
+      "source": "https://www.merriam-webster.com/dictionary/sound"
+    },
+    {
+      "seedId": "65e17c83-1e6d-501f-805b-bf98c1eec2b4",
+      "category": "languages",
+      "navigationKeyword1": "esl",
+      "navigationKeyword2": "speaking",
+      "question": "Which intonation pattern is typical for a yes/no question in English?",
+      "correctAnswer": "Rising intonation at the end.",
+      "incorrectAnswers": [
+        "Always flat tone",
+        "Always falling at the end",
+        "Whisper only"
+      ],
+      "explanation": "Many English yes/no questions rise in pitch near the end.",
+      "keywords": [
+        "intonation",
+        "questions",
+        "esl-speaking"
+      ],
+      "source": "https://learnenglish.britishcouncil.org/pronunciation"
+    },
+    {
+      "seedId": "732fd744-fe30-5479-9e6f-d07430319e08",
+      "category": "languages",
+      "navigationKeyword1": "esl",
+      "navigationKeyword2": "vocab",
+      "question": "Which word means a mother or father?",
+      "correctAnswer": "parent",
+      "incorrectAnswers": [
+        "season",
+        "island",
+        "ticket"
+      ],
+      "explanation": "A parent is a mother or father of a child.",
+      "keywords": [
+        "parent",
+        "family",
+        "esl-vocab"
+      ],
+      "source": "https://dictionary.cambridge.org/dictionary/english/parent"
+    },
+    {
+      "seedId": "d5acf4be-1d11-5c39-a2fd-2df543374d41",
+      "category": "languages",
+      "navigationKeyword1": "esl",
+      "navigationKeyword2": "vocab",
+      "question": "Which word means a place where people learn together?",
+      "correctAnswer": "school",
+      "incorrectAnswers": [
+        "spoon",
+        "weather",
+        "bridge"
+      ],
+      "explanation": "A school is a place for teaching and learning.",
+      "keywords": [
+        "school",
+        "education",
+        "esl-vocab"
+      ],
+      "source": "https://www.merriam-webster.com/dictionary/school"
+    },
+    {
+      "seedId": "9a7adeb9-945f-5e30-abbd-3397218d610f",
+      "category": "languages",
+      "navigationKeyword1": "esl",
+      "navigationKeyword2": "vocab",
+      "question": "Which word means feeling worry or fear about something?",
+      "correctAnswer": "afraid",
+      "incorrectAnswers": [
+        "wooden",
+        "public",
+        "silver"
+      ],
+      "explanation": "Afraid means frightened or worried about possible harm.",
+      "keywords": [
+        "afraid",
+        "feelings",
+        "esl-vocab"
+      ],
+      "source": "https://dictionary.cambridge.org/dictionary/english/afraid"
+    },
+    {
+      "seedId": "6b270c30-1e30-541c-a607-a99d801f1d09",
+      "category": "languages",
+      "navigationKeyword1": "esl",
+      "navigationKeyword2": "vocab",
+      "question": "Which word means not expensive?",
+      "correctAnswer": "cheap",
+      "incorrectAnswers": [
+        "heavy",
+        "narrow",
+        "silent"
+      ],
+      "explanation": "Cheap means low in price.",
+      "keywords": [
+        "cheap",
+        "shopping",
+        "esl-vocab"
+      ],
+      "source": "https://www.merriam-webster.com/dictionary/cheap"
+    },
+    {
+      "seedId": "c2de41b3-d713-5aa5-a1b3-e8e2e04f16d2",
+      "category": "languages",
+      "navigationKeyword1": "esl",
+      "navigationKeyword2": "vocab",
+      "question": "Which word means the meal you eat in the middle of the day?",
+      "correctAnswer": "lunch",
+      "incorrectAnswers": [
+        "blanket",
+        "ticket",
+        "village"
+      ],
+      "explanation": "Lunch is the usual name for a midday meal.",
+      "keywords": [
+        "lunch",
+        "food",
+        "esl-vocab"
+      ],
+      "source": "https://dictionary.cambridge.org/dictionary/english/lunch"
+    },
+    {
+      "seedId": "c71730a4-826b-5841-9fee-c77dda1f1541",
+      "category": "languages",
+      "navigationKeyword1": "esl",
+      "navigationKeyword2": "vocab",
+      "question": "Which word means the room where food is cooked?",
+      "correctAnswer": "kitchen",
+      "incorrectAnswers": [
+        "ocean",
+        "holiday",
+        "guitar"
+      ],
+      "explanation": "The kitchen is the room used for cooking.",
+      "keywords": [
+        "kitchen",
+        "home",
+        "esl-vocab"
+      ],
+      "source": "https://www.merriam-webster.com/dictionary/kitchen"
+    }
+  ]
+}

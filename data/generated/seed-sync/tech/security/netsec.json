@@ -1,0 +1,121 @@
+{
+  "schemaVersion": 1,
+  "seedSet": "core-public-items",
+  "deltaPreviewLimit": 200,
+  "items": [
+    {
+      "seedId": "18da1c47-2efb-5b0e-8f90-2d8547e77b70",
+      "category": "tech",
+      "navigationKeyword1": "security",
+      "navigationKeyword2": "netsec",
+      "question": "What does DNS primarily map?",
+      "correctAnswer": "Human-readable hostnames to IP addresses used for routing",
+      "incorrectAnswers": [
+        "MAC addresses to postal mail",
+        "User passwords to JPEG files",
+        "CPU model names to RAM speed"
+      ],
+      "explanation": "Resolvers query the DNS hierarchy so clients can connect to services without memorizing numeric addresses.",
+      "keywords": [
+        "security",
+        "dns"
+      ],
+      "source": "https://www.ietf.org/rfc/rfc1035.txt"
+    },
+    {
+      "seedId": "ba740e69-666b-549b-a71b-839d8f75deff",
+      "category": "tech",
+      "navigationKeyword1": "security",
+      "navigationKeyword2": "netsec",
+      "question": "What does TLS primarily provide for data on the wire?",
+      "correctAnswer": "Confidentiality and integrity between endpoints using negotiated encryption",
+      "incorrectAnswers": [
+        "Guaranteed virus removal on endpoints",
+        "Automatic database backups",
+        "Infinite bandwidth"
+      ],
+      "explanation": "TLS authenticates peers when certificates are used properly and protects traffic from eavesdropping and tampering in transit.",
+      "keywords": [
+        "security",
+        "tls"
+      ],
+      "source": "https://en.wikipedia.org/wiki/Transport_Layer_Security"
+    },
+    {
+      "seedId": "14977682-15b5-5db5-9047-0e468e6e6bf0",
+      "category": "tech",
+      "navigationKeyword1": "security",
+      "navigationKeyword2": "netsec",
+      "question": "What does a VPN tunnel typically protect?",
+      "correctAnswer": "Packets between your device and the VPN endpoint from local network snooping",
+      "incorrectAnswers": [
+        "Physical keyboard keystrokes from wear",
+        "The monitor refresh rate",
+        "CPU silicon manufacturing defects"
+      ],
+      "explanation": "VPNs encapsulate traffic so untrusted networks see encrypted tunnels rather than plaintext application data.",
+      "keywords": [
+        "security",
+        "vpn"
+      ],
+      "source": "https://en.wikipedia.org/wiki/Virtual_private_network"
+    },
+    {
+      "seedId": "066e7699-6fd9-59a4-9995-b72000d55cb1",
+      "category": "tech",
+      "navigationKeyword1": "security",
+      "navigationKeyword2": "netsec",
+      "question": "What is a common goal of a DDoS attack?",
+      "correctAnswer": "Overload services or links so legitimate users cannot reach them",
+      "incorrectAnswers": [
+        "Increase password strength requirements",
+        "Improve database normalization",
+        "Reduce TLS certificate size"
+      ],
+      "explanation": "Distributed floods exhaust capacity or state tables, causing outages even when individual packets look superficially valid.",
+      "keywords": [
+        "security",
+        "ddos"
+      ],
+      "source": "https://www.cloudflare.com/learning/ddos/what-is-a-ddos-attack/"
+    },
+    {
+      "seedId": "b954e93b-212d-5cc5-a0e2-bcba0ddb86e1",
+      "category": "tech",
+      "navigationKeyword1": "security",
+      "navigationKeyword2": "netsec",
+      "question": "What is the primary job of a network firewall?",
+      "correctAnswer": "Allow or deny traffic between zones based on policy rules",
+      "incorrectAnswers": [
+        "Compile source code to binaries",
+        "Train neural networks",
+        "Format hard drives automatically"
+      ],
+      "explanation": "Firewalls enforce least access at network boundaries by filtering ports, addresses, and application-layer signals.",
+      "keywords": [
+        "security",
+        "firewall"
+      ],
+      "source": "https://www.cloudflare.com/learning/security/what-is-a-firewall/"
+    },
+    {
+      "seedId": "551eec78-cefc-5d6c-9488-4d8d7c4cc7c6",
+      "category": "tech",
+      "navigationKeyword1": "security",
+      "navigationKeyword2": "netsec",
+      "question": "What is the usual difference between an IDS and an IPS?",
+      "correctAnswer": "IDS detects suspicious traffic while IPS can actively block it inline",
+      "incorrectAnswers": [
+        "IDS only runs on smartphones",
+        "IPS cannot see IP packets",
+        "They are identical terms with no difference"
+      ],
+      "explanation": "Detection alerts operators, whereas prevention places enforcement in the traffic path to drop or reset connections.",
+      "keywords": [
+        "security",
+        "ids-ips"
+      ],
+      "source": "https://en.wikipedia.org/wiki/Intrusion_detection_system"
+    }
+  ]
+}

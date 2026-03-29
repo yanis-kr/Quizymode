@@ -1,0 +1,207 @@
+{
+  "schemaVersion": 1,
+  "seedSet": "core-public-items",
+  "deltaPreviewLimit": 200,
+  "items": [
+    {
+      "seedId": "be1ddc56-1444-541f-8b81-8ee4e9b44ff9",
+      "category": "sports",
+      "navigationKeyword1": "combat",
+      "navigationKeyword2": "weight-classes",
+      "question": "What process requires fighters to hit a contracted weight before the bout is made official?",
+      "correctAnswer": "Weigh-in",
+      "incorrectAnswers": [
+        "Faceoff",
+        "Open scoring",
+        "Corners check"
+      ],
+      "explanation": "Fighters officially weigh in before competing.",
+      "keywords": [
+        "combat",
+        "weight-classes",
+        "weigh-in"
+      ],
+      "source": "https://www.britannica.com/sports/mixed-martial-arts"
+    },
+    {
+      "seedId": "ccc22df7-99ad-58b8-8e9a-50ee51cfaf4d",
+      "category": "sports",
+      "navigationKeyword1": "combat",
+      "navigationKeyword2": "weight-classes",
+      "question": "Which UFC men's division is below lightweight at 145 pounds?",
+      "correctAnswer": "Featherweight",
+      "incorrectAnswers": [
+        "Middleweight",
+        "Welterweight",
+        "Heavyweight"
+      ],
+      "explanation": "Featherweight is one step lighter than lightweight in UFC men's divisions.",
+      "keywords": [
+        "combat",
+        "weight-classes",
+        "featherweight"
+      ],
+      "source": "https://www.ufc.com/"
+    },
+    {
+      "seedId": "9d972627-b319-5d6d-a934-5f8c240c11c6",
+      "category": "sports",
+      "navigationKeyword1": "combat",
+      "navigationKeyword2": "weight-classes",
+      "question": "Which boxing division sits between light heavyweight and heavyweight?",
+      "correctAnswer": "Cruiserweight",
+      "incorrectAnswers": [
+        "Welterweight",
+        "Bantamweight",
+        "Flyweight"
+      ],
+      "explanation": "Cruiserweight bridges the gap between light heavyweight and heavyweight.",
+      "keywords": [
+        "combat",
+        "weight-classes",
+        "cruiserweight"
+      ],
+      "source": "https://www.britannica.com/sports/boxing"
+    },
+    {
+      "seedId": "18f77993-2164-55ec-bd28-c4caaff4eacf",
+      "category": "sports",
+      "navigationKeyword1": "combat",
+      "navigationKeyword2": "weight-classes",
+      "question": "Which division generally includes the biggest fighters without an upper limit in major combat sports?",
+      "correctAnswer": "Heavyweight",
+      "incorrectAnswers": [
+        "Welterweight",
+        "Flyweight",
+        "Bantamweight"
+      ],
+      "explanation": "Heavyweight is the top unlimited or least-restricted class.",
+      "keywords": [
+        "combat",
+        "weight-classes",
+        "heavyweight"
+      ],
+      "source": "https://www.britannica.com/sports/boxing"
+    },
+    {
+      "seedId": "866ba9a0-4e32-51a1-b0e8-6cfb002b96a6",
+      "category": "sports",
+      "navigationKeyword1": "combat",
+      "navigationKeyword2": "weight-classes",
+      "question": "Which division is above lightweight and below welterweight in boxing and MMA naming?",
+      "correctAnswer": "Super lightweight or junior welterweight in boxing",
+      "incorrectAnswers": [
+        "Middleweight",
+        "Flyweight",
+        "Heavyweight"
+      ],
+      "explanation": "Combat sports often use intermediate divisions around lightweight and welterweight.",
+      "keywords": [
+        "combat",
+        "weight-classes",
+        "boxing"
+      ],
+      "source": "https://www.britannica.com/sports/boxing"
+    },
+    {
+      "seedId": "16bbce88-4bc5-512f-8650-041ef21507b5",
+      "category": "sports",
+      "navigationKeyword1": "combat",
+      "navigationKeyword2": "weight-classes",
+      "question": "Which division is lighter than featherweight but heavier than flyweight in common MMA naming?",
+      "correctAnswer": "Bantamweight",
+      "incorrectAnswers": [
+        "Middleweight",
+        "Cruiserweight",
+        "Heavyweight"
+      ],
+      "explanation": "Bantamweight sits between flyweight and featherweight in MMA.",
+      "keywords": [
+        "combat",
+        "weight-classes",
+        "bantamweight"
+      ],
+      "source": "https://www.ufc.com/"
+    },
+    {
+      "seedId": "691b7e78-d997-52b9-af6a-10dd59d91796",
+      "category": "sports",
+      "navigationKeyword1": "combat",
+      "navigationKeyword2": "weight-classes",
+      "question": "Which division sits between welterweight and middleweight in UFC?",
+      "correctAnswer": "There is no division between them in UFC",
+      "incorrectAnswers": [
+        "Light middleweight",
+        "Cruiserweight",
+        "Featherweight"
+      ],
+      "explanation": "UFC goes directly from welterweight to middleweight.",
+      "keywords": [
+        "combat",
+        "weight-classes",
+        "ufc-divisions"
+      ],
+      "source": "https://www.ufc.com/"
+    },
+    {
+      "seedId": "57c49991-a1f4-57b8-9a63-3d499c974914",
+      "category": "sports",
+      "navigationKeyword1": "combat",
+      "navigationKeyword2": "weight-classes",
+      "question": "Which men's UFC division is contested at 170 pounds?",
+      "correctAnswer": "Welterweight",
+      "incorrectAnswers": [
+        "Lightweight",
+        "Middleweight",
+        "Bantamweight"
+      ],
+      "explanation": "Welterweight in UFC is the 170-pound division.",
+      "keywords": [
+        "combat",
+        "weight-classes",
+        "welterweight"
+      ],
+      "source": "https://www.ufc.com/"
+    },
+    {
+      "seedId": "c957c3db-fcc7-58e0-bc75-0fa4555a5291",
+      "category": "sports",
+      "navigationKeyword1": "combat",
+      "navigationKeyword2": "weight-classes",
+      "question": "Which men's UFC division is contested at 185 pounds?",
+      "correctAnswer": "Middleweight",
+      "incorrectAnswers": [
+        "Welterweight",
+        "Light heavyweight",
+        "Featherweight"
+      ],
+      "explanation": "Middleweight in UFC is the 185-pound division.",
+      "keywords": [
+        "combat",
+        "weight-classes",
+        "middleweight"
+      ],
+      "source": "https://www.ufc.com/"
+    },
+    {
+      "seedId": "3fd21332-1c51-504c-a633-f014feef1624",
+      "category": "sports",
+      "navigationKeyword1": "combat",
+      "navigationKeyword2": "weight-classes",
+      "question": "Why do combat sports use weight classes?",
+      "correctAnswer": "To match fighters of roughly similar size",
+      "incorrectAnswers": [
+        "To increase ring size",
+        "To determine glove color",
+        "To shorten rounds"
+      ],
+      "explanation": "Weight classes are meant to improve fairness and safety.",
+      "keywords": [
+        "combat",
+        "weight-classes",
+        "purpose"
+      ],
+      "source": "https://www.britannica.com/sports/boxing"
+    }
+  ]
+}

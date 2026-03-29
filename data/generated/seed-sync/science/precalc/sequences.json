@@ -1,0 +1,235 @@
+{
+  "schemaVersion": 1,
+  "seedSet": "core-public-items",
+  "deltaPreviewLimit": 200,
+  "items": [
+    {
+      "seedId": "ab242cdd-3bae-4f2c-aa57-fb66d7c681b4",
+      "category": "science",
+      "navigationKeyword1": "precalc",
+      "navigationKeyword2": "sequences",
+      "question": "Alternating series test idea?",
+      "correctAnswer": "Terms decrease to 0 with alternating signs (conditions)",
+      "incorrectAnswers": [
+        "Always diverges",
+        "Never needs decreasing",
+        "Only for positive terms"
+      ],
+      "explanation": "Calculus link preview.",
+      "keywords": [
+        "alternating-series",
+        "convergence"
+      ],
+      "source": "https://openstax.org/books/calculus-volume-2/pages/5-5-alternating-series"
+    },
+    {
+      "seedId": "9cf31b9e-9489-4fa7-a147-fc694266ebcc",
+      "category": "science",
+      "navigationKeyword1": "precalc",
+      "navigationKeyword2": "sequences",
+      "question": "Arithmetic sequence nth term?",
+      "correctAnswer": "a_n = a1 + (n\u22121)d",
+      "incorrectAnswers": [
+        "a1 r^{n}",
+        "n^2 always",
+        "a1/d^n"
+      ],
+      "explanation": "Constant difference d.",
+      "keywords": [
+        "arithmetic-sequence",
+        "nth-term"
+      ],
+      "source": "https://openstax.org/books/precalculus-2e/pages/12-2-arithmetic-sequences"
+    },
+    {
+      "seedId": "0ec4f51c-5ad4-422f-b106-17d3f4bbb225",
+      "category": "science",
+      "navigationKeyword1": "precalc",
+      "navigationKeyword2": "sequences",
+      "question": "Arithmetic series sum 1..n?",
+      "correctAnswer": "S_n = n/2 (a1 + a_n)",
+      "incorrectAnswers": [
+        "n a1",
+        "a_n^2",
+        "n^3"
+      ],
+      "explanation": "Gauss pairing idea.",
+      "keywords": [
+        "arithmetic-series",
+        "sum"
+      ],
+      "source": "https://openstax.org/books/precalculus-2e/pages/12-2-arithmetic-sequences"
+    },
+    {
+      "seedId": "82daa428-b938-491b-8da7-17adbbf20d3b",
+      "category": "science",
+      "navigationKeyword1": "precalc",
+      "navigationKeyword2": "sequences",
+      "question": "Compound interest as sequence?",
+      "correctAnswer": "Geometric growth per period",
+      "incorrectAnswers": [
+        "Arithmetic always",
+        "Constant",
+        "Fibonacci"
+      ],
+      "explanation": "Discrete compounding steps.",
+      "keywords": [
+        "compound-interest",
+        "sequences"
+      ],
+      "source": "https://www.khanacademy.org/economics-finance-domain/core-finance/interest-tutorial"
+    },
+    {
+      "seedId": "9f88b015-0e44-4093-a1ca-c53b47b9fb05",
+      "category": "science",
+      "navigationKeyword1": "precalc",
+      "navigationKeyword2": "sequences",
+      "question": "Fibonacci recursion?",
+      "correctAnswer": "F_n = F_{n\u22121} + F_{n\u22122}",
+      "incorrectAnswers": [
+        "F_n = 2F_{n\u22121}",
+        "F_n = n^2",
+        "F_n = n!"
+      ],
+      "explanation": "Classic example.",
+      "keywords": [
+        "fibonacci",
+        "recursion"
+      ],
+      "source": "https://en.wikipedia.org/wiki/Fibonacci_sequence"
+    },
+    {
+      "seedId": "fc72c038-49b7-490e-b3ec-a0c985b3c98e",
+      "category": "science",
+      "navigationKeyword1": "precalc",
+      "navigationKeyword2": "sequences",
+      "question": "Finite geometric sum (r\u22601)?",
+      "correctAnswer": "S_n = a1(1\u2212r^n)/(1\u2212r)",
+      "incorrectAnswers": [
+        "a1/(1\u2212r)",
+        "n a1",
+        "a1 r^n"
+      ],
+      "explanation": "Derivable by algebra trick.",
+      "keywords": [
+        "geometric-series",
+        "sum"
+      ],
+      "source": "https://openstax.org/books/precalculus-2e/pages/12-3-geometric-sequences"
+    },
+    {
+      "seedId": "f5e51138-0bb7-47e0-bde8-f3766dad387f",
+      "category": "science",
+      "navigationKeyword1": "precalc",
+      "navigationKeyword2": "sequences",
+      "question": "Geometric sequence nth term?",
+      "correctAnswer": "a_n = a1 r^{n\u22121}",
+      "incorrectAnswers": [
+        "a1 + (n\u22121)r",
+        "a1 n^r",
+        "r/a1"
+      ],
+      "explanation": "Constant ratio r.",
+      "keywords": [
+        "geometric-sequence",
+        "ratio"
+      ],
+      "source": "https://openstax.org/books/precalculus-2e/pages/12-3-geometric-sequences"
+    },
+    {
+      "seedId": "7f0a47cc-aac5-4250-aae6-fe9332c4f442",
+      "category": "science",
+      "navigationKeyword1": "precalc",
+      "navigationKeyword2": "sequences",
+      "question": "Infinite geometric series converges when?",
+      "correctAnswer": "|r| < 1",
+      "incorrectAnswers": [
+        "|r| > 1 always",
+        "r = 1 always",
+        "Never converges"
+      ],
+      "explanation": "Sum a/(1\u2212r).",
+      "keywords": [
+        "infinite-series",
+        "convergence"
+      ],
+      "source": "https://openstax.org/books/precalculus-2e/pages/12-4-series-and-their-notations"
+    },
+    {
+      "seedId": "a84d0e60-6275-4830-94bb-8657eb148614",
+      "category": "science",
+      "navigationKeyword1": "precalc",
+      "navigationKeyword2": "sequences",
+      "question": "Recursive vs explicit?",
+      "correctAnswer": "Recursive uses prior terms; explicit uses n directly",
+      "incorrectAnswers": [
+        "Same thing",
+        "Recursive never exists",
+        "Explicit always shorter"
+      ],
+      "explanation": "Both valid.",
+      "keywords": [
+        "recursive",
+        "sequences"
+      ],
+      "source": "https://openstax.org/books/precalculus-2e/pages/12-1-sequences"
+    },
+    {
+      "seedId": "b5a09917-1faa-4a91-a7d7-e11dcbe7fc29",
+      "category": "science",
+      "navigationKeyword1": "precalc",
+      "navigationKeyword2": "sequences",
+      "question": "Sigma notation \u03a3?",
+      "correctAnswer": "Summation over index",
+      "incorrectAnswers": [
+        "Product only",
+        "Integral always",
+        "Union of sets"
+      ],
+      "explanation": "\u2211_{k=1}^n a_k.",
+      "keywords": [
+        "sigma-notation",
+        "series"
+      ],
+      "source": "https://openstax.org/books/precalculus-2e/pages/12-4-series-and-their-notations"
+    },
+    {
+      "seedId": "7017bcca-483f-4cca-a7f1-804199af8b47",
+      "category": "science",
+      "navigationKeyword1": "precalc",
+      "navigationKeyword2": "sequences",
+      "question": "Triangular numbers formula?",
+      "correctAnswer": "T_n = n(n+1)/2",
+      "incorrectAnswers": [
+        "n^2",
+        "2^n",
+        "n!"
+      ],
+      "explanation": "Sum 1+2+\u2026+n.",
+      "keywords": [
+        "triangular-numbers",
+        "sum"
+      ],
+      "source": "https://www.mathsisfun.com/algebra/triangular-numbers.html"
+    },
+    {
+      "seedId": "d6cc4d32-c947-4ab9-962c-02a32f0fb458",
+      "category": "science",
+      "navigationKeyword1": "precalc",
+      "navigationKeyword2": "sequences",
+      "question": "What is a series?",
+      "correctAnswer": "Sum of sequence terms",
+      "incorrectAnswers": [
+        "List without adding",
+        "Only infinite",
+        "Only geometric"
+      ],
+      "explanation": "Partial sums matter.",
+      "keywords": [
+        "series",
+        "sequences"
+      ],
+      "source": "https://openstax.org/books/precalculus-2e/pages/12-4-series-and-their-notations"
+    }
+  ]
+}

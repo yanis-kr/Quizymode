@@ -1,0 +1,247 @@
+{
+  "schemaVersion": 1,
+  "seedSet": "core-public-items",
+  "deltaPreviewLimit": 200,
+  "items": [
+    {
+      "seedId": "fa903b13-2b4e-49a8-9807-10dfcb5a1be5",
+      "category": "history",
+      "navigationKeyword1": "modern",
+      "navigationKeyword2": "nationalism",
+      "question": "Count Camillo di Cavour\u2019s diplomacy and Piedmont\u2019s wars helped unify which peninsula under the House of Savoy?",
+      "correctAnswer": "Italy",
+      "incorrectAnswers": [
+        "Spain",
+        "Greece",
+        "Norway"
+      ],
+      "explanation": "Cavour allied with France against Austria, then exploited Garibaldi\u2019s conquests to forge a centralized kingdom.",
+      "keywords": [
+        "nationalism",
+        "italy",
+        "risorgimento"
+      ],
+      "source": "https://www.britannica.com/biography/Camillo-Benso-count-di-Cavour"
+    },
+    {
+      "seedId": "fd8e9f0a-1cf7-40b1-999f-9d52b4fe40ce",
+      "category": "history",
+      "navigationKeyword1": "modern",
+      "navigationKeyword2": "nationalism",
+      "question": "Gavrilo Princip\u2019s assassination of Archduke Franz Ferdinand expressed which ideology tied to south Slav unification?",
+      "correctAnswer": "Serbian nationalism (Yugoslav unification currents)",
+      "incorrectAnswers": [
+        "Irish republicanism",
+        "Polish Legions\u2019 federalism",
+        "Magyar supremacism"
+      ],
+      "explanation": "Bosnian Serb nationalists hoped to free Slavic lands from Habsburg rule, triggering the July Crisis.",
+      "keywords": [
+        "nationalism",
+        "balkans",
+        "world-war-i"
+      ],
+      "source": "https://www.britannica.com/biography/Gavrilo-Princip"
+    },
+    {
+      "seedId": "6a1453d4-473b-4257-8baf-6c0615fa029d",
+      "category": "history",
+      "navigationKeyword1": "modern",
+      "navigationKeyword2": "nationalism",
+      "question": "Giuseppe Garibaldi\u2019s \u201cRedshirts\u201d famously seized which kingdom in 1860 as a step toward Italian unification?",
+      "correctAnswer": "The Kingdom of the Two Sicilies",
+      "incorrectAnswers": [
+        "The Papal States alone in 1860",
+        "Lombardy before 1859",
+        "Sardinia before 1848"
+      ],
+      "explanation": "Garibaldi landed in Sicily and crossed to the mainland, handing his gains to Victor Emmanuel II\u2019s cause.",
+      "keywords": [
+        "nationalism",
+        "italy",
+        "garibaldi"
+      ],
+      "source": "https://www.britannica.com/biography/Giuseppe-Garibaldi"
+    },
+    {
+      "seedId": "ec929465-92a5-4c9a-af9f-fc4c873d7054",
+      "category": "history",
+      "navigationKeyword1": "modern",
+      "navigationKeyword2": "nationalism",
+      "question": "Mustafa Kemal\u2019s armies defeated foreign occupation forces to found which secular republic from Anatolian resistance?",
+      "correctAnswer": "The Republic of Turkey",
+      "incorrectAnswers": [
+        "The Kingdom of Iraq",
+        "The Syrian Federation",
+        "The Kingdom of Hejaz"
+      ],
+      "explanation": "The Turkish War of Independence overturned the S\u00e8vres settlement and led to the 1923 Lausanne recognition.",
+      "keywords": [
+        "nationalism",
+        "turkey",
+        "kemalism"
+      ],
+      "source": "https://www.britannica.com/biography/Mustafa-Kemal-Ataturk"
+    },
+    {
+      "seedId": "93ad2e8a-d4d7-4cff-af6b-80796d5fe36e",
+      "category": "history",
+      "navigationKeyword1": "modern",
+      "navigationKeyword2": "nationalism",
+      "question": "Otto von Bismarck engineered wars against Denmark, Austria, and France to achieve what in 1871?",
+      "correctAnswer": "Proclamation of the German Empire at Versailles",
+      "incorrectAnswers": [
+        "Dissolution of the Zollverein",
+        "Austrian annexation of Bavaria",
+        "The Holy Roman Empire\u2019s restoration"
+      ],
+      "explanation": "Prussian-led victories overcame particularism and placed Wilhelm I on a new imperial German throne.",
+      "keywords": [
+        "nationalism",
+        "germany",
+        "bismarck"
+      ],
+      "source": "https://www.britannica.com/biography/Otto-von-Bismarck"
+    },
+    {
+      "seedId": "c6117b7d-bb31-457e-9937-b6566827f621",
+      "category": "history",
+      "navigationKeyword1": "modern",
+      "navigationKeyword2": "nationalism",
+      "question": "Pan-Slavic congresses and Russian patronage of fellow Slavs heightened tensions with which multiethnic neighbor before 1914?",
+      "correctAnswer": "Austria-Hungary",
+      "incorrectAnswers": [
+        "Sweden-Norway",
+        "Portugal",
+        "Switzerland"
+      ],
+      "explanation": "Habsburg rule over Bosnian Slavs clashed with Serbian and Russian Pan-Slav aspirations.",
+      "keywords": [
+        "nationalism",
+        "pan-slavism",
+        "balkans"
+      ],
+      "source": "https://www.britannica.com/topic/Pan-Slavism"
+    },
+    {
+      "seedId": "9196da5e-e1c0-452d-ac2e-ede4c6a65c14",
+      "category": "history",
+      "navigationKeyword1": "modern",
+      "navigationKeyword2": "nationalism",
+      "question": "The 1821\u201332 Greek War of Independence broke away from which empire\u2019s rule with great-power intervention?",
+      "correctAnswer": "The Ottoman Empire",
+      "incorrectAnswers": [
+        "The Russian Empire",
+        "The Austrian Empire",
+        "The Persian Empire"
+      ],
+      "explanation": "Philhellenic sentiment and naval battles like Navarino aided Greek statehood amid Ottoman decline.",
+      "keywords": [
+        "nationalism",
+        "greece",
+        "balkans"
+      ],
+      "source": "https://www.britannica.com/event/Greek-War-of-Independence"
+    },
+    {
+      "seedId": "4d92fff2-fabe-4be1-8f52-c50144c78eab",
+      "category": "history",
+      "navigationKeyword1": "modern",
+      "navigationKeyword2": "nationalism",
+      "question": "The 1908 Young Turk Revolution forced reforms from which sultan\u2019s government in Istanbul?",
+      "correctAnswer": "Abd\u00fclhamid II",
+      "incorrectAnswers": [
+        "Mehmed VI",
+        "Selim III",
+        "Mahmud II"
+      ],
+      "explanation": "Officers and liberals restored the 1876 constitution, reshaping late Ottoman politics before World War I.",
+      "keywords": [
+        "nationalism",
+        "ottomans",
+        "young-turks"
+      ],
+      "source": "https://www.britannica.com/topic/Young-Turk-Revolution"
+    },
+    {
+      "seedId": "33b8c668-f3ad-4018-bee4-5cc44010fcca",
+      "category": "history",
+      "navigationKeyword1": "modern",
+      "navigationKeyword2": "nationalism",
+      "question": "The 1916 Easter Rising in Dublin targeted rule from which foreign capital?",
+      "correctAnswer": "London (British rule)",
+      "incorrectAnswers": [
+        "Paris",
+        "Berlin",
+        "Rome"
+      ],
+      "explanation": "Republicans seized central Dublin to proclaim independence, deepening the struggle for Irish nationhood.",
+      "keywords": [
+        "nationalism",
+        "ireland",
+        "britain"
+      ],
+      "source": "https://www.britannica.com/event/Easter-Rising"
+    },
+    {
+      "seedId": "2f93331f-d89c-4159-8a4f-695e00de3b47",
+      "category": "history",
+      "navigationKeyword1": "modern",
+      "navigationKeyword2": "nationalism",
+      "question": "The Meiji Restoration (1868) recentralized power under the emperor in which Asian archipelago state?",
+      "correctAnswer": "Japan",
+      "incorrectAnswers": [
+        "Korea",
+        "Thailand",
+        "Indonesia"
+      ],
+      "explanation": "Nationalist modernization abolished feudal domains and built institutions strong enough to resist colonization.",
+      "keywords": [
+        "nationalism",
+        "japan",
+        "meiji"
+      ],
+      "source": "https://www.britannica.com/event/Meiji-Restoration"
+    },
+    {
+      "seedId": "ab4391b5-8f53-42c6-bd9c-7474414af183",
+      "category": "history",
+      "navigationKeyword1": "modern",
+      "navigationKeyword2": "nationalism",
+      "question": "The liberal and national upheavals that swept Europe in 1848 are often nicknamed after which season metaphor?",
+      "correctAnswer": "The Springtime of the Peoples (Spring of Nations)",
+      "incorrectAnswers": [
+        "The Autumn of Autocrats",
+        "The Winter of Discontent",
+        "The Long March"
+      ],
+      "explanation": "Revolutionaries demanded constitutions, suffrage, and nation-states from Paris to Budapest.",
+      "keywords": [
+        "nationalism",
+        "europe",
+        "1848"
+      ],
+      "source": "https://www.britannica.com/event/Revolutions-of-1848"
+    },
+    {
+      "seedId": "e62816b7-c86b-4708-bf8b-992e0544ddc5",
+      "category": "history",
+      "navigationKeyword1": "modern",
+      "navigationKeyword2": "nationalism",
+      "question": "Theodore Herzl\u2019s Der Judenstaat (1896) helped launch which political movement for a Jewish national home?",
+      "correctAnswer": "Zionism",
+      "incorrectAnswers": [
+        "Bundism alone",
+        "Ottomanism",
+        "Pan-Slavism"
+      ],
+      "explanation": "Zionist congresses organized diaspora support for settlement in Ottoman Palestine under international diplomacy.",
+      "keywords": [
+        "nationalism",
+        "zionism",
+        "judaism"
+      ],
+      "source": "https://www.britannica.com/biography/Theodor-Herzl"
+    }
+  ]
+}

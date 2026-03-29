@@ -1,0 +1,121 @@
+{
+  "schemaVersion": 1,
+  "seedSet": "core-public-items",
+  "deltaPreviewLimit": 200,
+  "items": [
+    {
+      "seedId": "659cc223-61ca-40f1-b923-3781c040d8bd",
+      "category": "business",
+      "navigationKeyword1": "hr",
+      "navigationKeyword2": "training",
+      "question": "What does the 70-20-10 model commonly suggest about learning?",
+      "correctAnswer": "Most learning happens through experience, coaching, and formal training\u2014not only classes.",
+      "incorrectAnswers": [
+        "100% should be classroom-only.",
+        "0% should involve managers.",
+        "Training never works."
+      ],
+      "explanation": "Blended learning mirrors how adults develop skills.",
+      "keywords": [
+        "70-20-10",
+        "learning"
+      ],
+      "source": "https://www.trainingindustry.com/wiki/entries/70-20-10-model/"
+    },
+    {
+      "seedId": "ad50a8bd-f092-4ad8-bbcb-01053131a6a7",
+      "category": "business",
+      "navigationKeyword1": "hr",
+      "navigationKeyword2": "training",
+      "question": "What is Kirkpatrick Level 4 focused on?",
+      "correctAnswer": "Business results and impact from training (after reaction, learning, behavior).",
+      "incorrectAnswers": [
+        "Smiley-face satisfaction only.",
+        "Only whether slides looked pretty.",
+        "Only number of donuts served."
+      ],
+      "explanation": "Impact evaluation is hardest but most valuable.",
+      "keywords": [
+        "kirkpatrick",
+        "evaluation"
+      ],
+      "source": "https://www.kirkpatrickpartners.com/the-kirkpatrick-model/"
+    },
+    {
+      "seedId": "421055e6-d7ba-4037-8553-dbb7ff80c16d",
+      "category": "business",
+      "navigationKeyword1": "hr",
+      "navigationKeyword2": "training",
+      "question": "What is onboarding primarily for?",
+      "correctAnswer": "Accelerate productivity and engagement by clarifying role, tools, culture, and expectations early.",
+      "incorrectAnswers": [
+        "Replace employment contracts.",
+        "Eliminate payroll.",
+        "Avoid introductions."
+      ],
+      "explanation": "Strong onboarding reduces early turnover.",
+      "keywords": [
+        "onboarding",
+        "hr"
+      ],
+      "source": "https://www.shrm.org/resourcesandtools/hr-topics/talent-acquisition/pages/onboarding-guide.aspx"
+    },
+    {
+      "seedId": "106dbb88-b00f-4969-94c4-23c512158005",
+      "category": "business",
+      "navigationKeyword1": "hr",
+      "navigationKeyword2": "training",
+      "question": "What should a training needs assessment establish?",
+      "correctAnswer": "Skill gaps, audience, and business outcomes before designing content.",
+      "incorrectAnswers": [
+        "Only the lunch menu.",
+        "Only font sizes.",
+        "Only office lease end date."
+      ],
+      "explanation": "Needs analysis prevents irrelevant training spend.",
+      "keywords": [
+        "needs-assessment",
+        "l-and-d"
+      ],
+      "source": "https://www.shrm.org/resourcesandtools/hr-topics/organizational-and-employee-development/pages/needs-assessment.aspx"
+    },
+    {
+      "seedId": "64d615fe-486d-4390-97eb-0c6ea5b58818",
+      "category": "business",
+      "navigationKeyword1": "hr",
+      "navigationKeyword2": "training",
+      "question": "Why is certification not the same as competence?",
+      "correctAnswer": "Certification shows completion of a standard; competence requires demonstrated performance in context.",
+      "incorrectAnswers": [
+        "They are always identical.",
+        "Competence is illegal.",
+        "Certification guarantees mastery in every situation."
+      ],
+      "explanation": "Assess on-the-job outcomes, not only credentials.",
+      "keywords": [
+        "competence",
+        "credentials"
+      ],
+      "source": "https://www.shrm.org/resourcesandtools/hr-topics/organizational-and-employee-development/pages/certifications.aspx"
+    },
+    {
+      "seedId": "165eac0d-f82b-47d6-9c97-1a4648d57699",
+      "category": "business",
+      "navigationKeyword1": "hr",
+      "navigationKeyword2": "training",
+      "question": "Why is training ROI hard to measure?",
+      "correctAnswer": "Outcomes depend on many variables beyond the course itself.",
+      "incorrectAnswers": [
+        "ROI is always exactly 10%.",
+        "Training never affects behavior.",
+        "ROI equals seat time."
+      ],
+      "explanation": "Use aligned metrics and control for context.",
+      "keywords": [
+        "training-roi",
+        "metrics"
+      ],
+      "source": "https://www.shrm.org/resourcesandtools/hr-topics/organizational-and-employee-development/pages/measuring-roi.aspx"
+    }
+  ]
+}

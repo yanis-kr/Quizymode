@@ -1,0 +1,121 @@
+{
+  "schemaVersion": 1,
+  "seedSet": "core-public-items",
+  "deltaPreviewLimit": 200,
+  "items": [
+    {
+      "seedId": "10aa5f61-e411-40b3-ac4f-3dd092a669d2",
+      "category": "business",
+      "navigationKeyword1": "hr",
+      "navigationKeyword2": "recruiting",
+      "question": "What does time-to-fill measure?",
+      "correctAnswer": "How long it takes to fill a role from opening to acceptance (definitions vary by company).",
+      "incorrectAnswers": [
+        "Average employee age.",
+        "Annual revenue.",
+        "Number of coffee machines."
+      ],
+      "explanation": "Speed metrics should be balanced with quality and diversity goals.",
+      "keywords": [
+        "time-to-fill",
+        "recruiting"
+      ],
+      "source": "https://www.shrm.org/resourcesandtools/hr-topics/talent-acquisition/pages/time-to-fill.aspx"
+    },
+    {
+      "seedId": "e828b718-fe71-4085-9617-483a712f14ab",
+      "category": "business",
+      "navigationKeyword1": "hr",
+      "navigationKeyword2": "recruiting",
+      "question": "What is employer branding?",
+      "correctAnswer": "How candidates and employees perceive you as a place to work\u2014shaping attraction and retention.",
+      "incorrectAnswers": [
+        "Only the color of the office carpet.",
+        "A tax deduction category.",
+        "Only customer advertising."
+      ],
+      "explanation": "Brand influences who applies and accepts offers.",
+      "keywords": [
+        "employer-brand",
+        "talent"
+      ],
+      "source": "https://www.shrm.org/resourcesandtools/hr-topics/talent-acquisition/pages/what-is-employer-branding.aspx"
+    },
+    {
+      "seedId": "d8c4ee7f-1ec5-4387-adad-064192395591",
+      "category": "business",
+      "navigationKeyword1": "hr",
+      "navigationKeyword2": "recruiting",
+      "question": "What is sourcing in recruiting?",
+      "correctAnswer": "Proactively identifying and engaging potential candidates\u2014not only posting jobs.",
+      "incorrectAnswers": [
+        "Writing the annual report.",
+        "Approving invoices.",
+        "Managing DNS records."
+      ],
+      "explanation": "Sourcing expands the candidate pool beyond applicants only.",
+      "keywords": [
+        "sourcing",
+        "talent-acquisition"
+      ],
+      "source": "https://www.shrm.org/resourcesandtools/hr-topics/talent-acquisition/pages/sourcing-candidates.aspx"
+    },
+    {
+      "seedId": "71907da6-237f-4e71-8894-b8b692eaf27c",
+      "category": "business",
+      "navigationKeyword1": "hr",
+      "navigationKeyword2": "recruiting",
+      "question": "Why is compliance important in hiring (e.g., EEO basics in the U.S.)?",
+      "correctAnswer": "Laws and policies aim to prevent discrimination and promote fair consideration.",
+      "incorrectAnswers": [
+        "Compliance means hire only friends.",
+        "Compliance bans job descriptions.",
+        "Compliance removes interviews."
+      ],
+      "explanation": "Train teams on lawful, job-related criteria.",
+      "keywords": [
+        "eeo",
+        "compliance"
+      ],
+      "source": "https://www.eeoc.gov/youth/employment-discrimination-0"
+    },
+    {
+      "seedId": "35e7bee5-f93f-4290-93fe-8a4d5d23d45c",
+      "category": "business",
+      "navigationKeyword1": "hr",
+      "navigationKeyword2": "recruiting",
+      "question": "Why track offer acceptance rate?",
+      "correctAnswer": "It signals competitiveness of compensation, speed, and candidate experience.",
+      "incorrectAnswers": [
+        "It replaces interviews.",
+        "It measures warehouse throughput.",
+        "It is unrelated to hiring."
+      ],
+      "explanation": "Low acceptance may indicate misaligned offers or process drag.",
+      "keywords": [
+        "offer-acceptance",
+        "recruiting"
+      ],
+      "source": "https://www.shrm.org/resourcesandtools/hr-topics/talent-acquisition/pages/job-offer-statistics.aspx"
+    },
+    {
+      "seedId": "f3d08bb6-8bbd-4517-95f6-d83941fa17b2",
+      "category": "business",
+      "navigationKeyword1": "hr",
+      "navigationKeyword2": "recruiting",
+      "question": "Why use structured interviews?",
+      "correctAnswer": "Consistent questions and scoring reduce bias and improve validity versus purely casual chats.",
+      "incorrectAnswers": [
+        "To ask different random questions for each candidate.",
+        "To avoid job-related criteria.",
+        "To shorten interviews to 30 seconds."
+      ],
+      "explanation": "Structure improves fairness and hiring quality.",
+      "keywords": [
+        "structured-interview",
+        "hiring"
+      ],
+      "source": "https://www.shrm.org/resourcesandtools/tools-and-samples/hiring/structured-interviews"
+    }
+  ]
+}

@@ -1,0 +1,1447 @@
+{
+  "schemaVersion": 1,
+  "seedSet": "core-public-items",
+  "deltaPreviewLimit": 200,
+  "items": [
+    {
+      "seedId": "df22acf8-7fac-487e-b665-c705fb0d9345",
+      "category": "history",
+      "navigationKeyword1": "europe",
+      "navigationKeyword2": "britain",
+      "question": "Clement Attlee\u2019s Labour government created the National Health Service and nationalized key industries in which postwar context?",
+      "correctAnswer": "Post\u2013World War II reconstruction and the cradle-to-grave welfare state",
+      "incorrectAnswers": [
+        "The Edwardian era",
+        "The Irish Famine",
+        "The South Sea Bubble"
+      ],
+      "explanation": "The 1945 landslide reflected voters\u2019 demand for social security after total war.",
+      "keywords": [
+        "britain",
+        "welfare-state",
+        "attlee"
+      ],
+      "source": "https://www.britannica.com/biography/Clement-Attlee"
+    },
+    {
+      "seedId": "3e48c6dd-cebc-411f-b5b8-d269d882492b",
+      "category": "history",
+      "navigationKeyword1": "europe",
+      "navigationKeyword2": "britain",
+      "question": "Elizabeth I\u2019s navy defeated the Spanish Armada in which year?",
+      "correctAnswer": "1588",
+      "incorrectAnswers": [
+        "1517",
+        "1649",
+        "1707"
+      ],
+      "explanation": "The victory bolstered Protestant England\u2019s prestige and checked Philip II\u2019s invasion plans.",
+      "keywords": [
+        "britain",
+        "armada",
+        "elizabeth-i"
+      ],
+      "source": "https://www.britannica.com/event/Spanish-Armada"
+    },
+    {
+      "seedId": "c34542b4-6198-4e60-a9e4-c7954d714cab",
+      "category": "history",
+      "navigationKeyword1": "europe",
+      "navigationKeyword2": "britain",
+      "question": "Henry VIII\u2019s break with Rome produced the Church of England largely so he could annul his marriage to whom?",
+      "correctAnswer": "Catherine of Aragon",
+      "incorrectAnswers": [
+        "Anne of Cleves",
+        "Catherine Howard",
+        "Jane Seymour"
+      ],
+      "explanation": "Parliament\u2019s Acts of Supremacy made the monarch head of the English church.",
+      "keywords": [
+        "britain",
+        "tudors",
+        "reformation"
+      ],
+      "source": "https://www.britannica.com/biography/Henry-VIII-king-of-England"
+    },
+    {
+      "seedId": "b1642a48-b441-4511-8ce1-3e38f42abbb6",
+      "category": "history",
+      "navigationKeyword1": "europe",
+      "navigationKeyword2": "britain",
+      "question": "King John sealed which 1215 charter that later symbolized limits on royal power?",
+      "correctAnswer": "Magna Carta",
+      "incorrectAnswers": [
+        "The Bill of Rights 1689",
+        "The Petition of Right",
+        "The Act of Supremacy"
+      ],
+      "explanation": "Barons forced guarantees on feudal law and consultation, seeds of constitutional tradition.",
+      "keywords": [
+        "britain",
+        "magna-carta",
+        "medieval"
+      ],
+      "source": "https://www.britannica.com/topic/Magna-Carta-English-charter"
+    },
+    {
+      "seedId": "7533f259-bc69-4dc0-99ea-24703cf1e1c6",
+      "category": "history",
+      "navigationKeyword1": "europe",
+      "navigationKeyword2": "britain",
+      "question": "Margaret Thatcher\u2019s governments privatized state industries and curbed union power during which era?",
+      "correctAnswer": "The 1980s (Thatcherism)",
+      "incorrectAnswers": [
+        "The 1950s consensus",
+        "The 1920s General Strike alone",
+        "The Glorious Revolution"
+      ],
+      "explanation": "Her monetarist policies and Falklands War victory reshaped British political economy.",
+      "keywords": [
+        "britain",
+        "thatcher",
+        "conservative"
+      ],
+      "source": "https://www.britannica.com/biography/Margaret-Thatcher"
+    },
+    {
+      "seedId": "d8f86742-99a5-4719-9d52-60cf7879d18f",
+      "category": "history",
+      "navigationKeyword1": "europe",
+      "navigationKeyword2": "britain",
+      "question": "Parliament tried and executed Charles I in 1649 after which series of civil wars?",
+      "correctAnswer": "The English Civil Wars",
+      "incorrectAnswers": [
+        "The Wars of the Roses",
+        "The Glorious Revolution",
+        "The Jacobite risings"
+      ],
+      "explanation": "The conflict pitted crown against Parliament and produced a short-lived republic under Cromwell.",
+      "keywords": [
+        "britain",
+        "civil-war",
+        "stuart"
+      ],
+      "source": "https://www.britannica.com/event/English-Civil-Wars"
+    },
+    {
+      "seedId": "d3704c8e-84ac-4834-885a-04186ca26e11",
+      "category": "history",
+      "navigationKeyword1": "europe",
+      "navigationKeyword2": "britain",
+      "question": "Queen Victoria\u2019s long reign (1837\u20131901) coincided with Britain\u2019s peak as which kind of global power?",
+      "correctAnswer": "The leading industrial empire and naval hegemon",
+      "incorrectAnswers": [
+        "A landlocked federation",
+        "A minor Baltic principality",
+        "A purely republican federation"
+      ],
+      "explanation": "Victorian Britain combined factory output, free-trade ideology, and worldwide imperial holdings.",
+      "keywords": [
+        "britain",
+        "victorian",
+        "empire"
+      ],
+      "source": "https://www.britannica.com/biography/Victoria-queen-of-United-Kingdom"
+    },
+    {
+      "seedId": "e4c50cd7-1148-45f9-8cbd-3d088ab84eaf",
+      "category": "history",
+      "navigationKeyword1": "europe",
+      "navigationKeyword2": "britain",
+      "question": "The 1707 Act of Union merged the English and Scottish parliaments into what state?",
+      "correctAnswer": "Great Britain",
+      "incorrectAnswers": [
+        "The United Kingdom of Great Britain and Ireland",
+        "The Commonwealth of England",
+        "The Angevin Empire"
+      ],
+      "explanation": "Shared crown became a single legislature, integrating Scotland into Britain\u2019s fiscal-military state.",
+      "keywords": [
+        "britain",
+        "scotland",
+        "union"
+      ],
+      "source": "https://www.britannica.com/event/Act-of-Union-England-and-Scotland-1707"
+    },
+    {
+      "seedId": "df02bfcf-346c-453f-aad8-e4de799e0017",
+      "category": "history",
+      "navigationKeyword1": "europe",
+      "navigationKeyword2": "britain",
+      "question": "The 1832 Reform Act expanded the electorate mainly by redistributing seats away from which type of boroughs?",
+      "correctAnswer": "Rotten and pocket boroughs (underpopulated constituencies)",
+      "incorrectAnswers": [
+        "Only colonial plantations",
+        "Scottish clan seats",
+        "Irish freeholds exclusively"
+      ],
+      "explanation": "Industrial cities gained representation, a first major step toward mass politics.",
+      "keywords": [
+        "britain",
+        "reform-act",
+        "parliament"
+      ],
+      "source": "https://www.britannica.com/event/Reform-Bill-United-Kingdom-1832"
+    },
+    {
+      "seedId": "ad469bc9-6908-41f2-9e40-2eedfc1ad3f0",
+      "category": "history",
+      "navigationKeyword1": "europe",
+      "navigationKeyword2": "britain",
+      "question": "Tony Blair\u2019s government devolved power to Scotland and Wales and intervened militarily alongside the U.S. in which 2003 war?",
+      "correctAnswer": "The Iraq War",
+      "incorrectAnswers": [
+        "The Korean War",
+        "The Falklands War",
+        "The Crimean War"
+      ],
+      "explanation": "Blair\u2019s \u2018Third Way\u2019 Labour also expanded the Human Rights Act framework domestically.",
+      "keywords": [
+        "britain",
+        "blair",
+        "iraq"
+      ],
+      "source": "https://www.britannica.com/biography/Tony-Blair"
+    },
+    {
+      "seedId": "16bf1383-b09d-455d-ae11-5f80014ce994",
+      "category": "history",
+      "navigationKeyword1": "europe",
+      "navigationKeyword2": "britain",
+      "question": "William the Conqueror\u2019s victory at Hastings in 1066 installed which ducal dynasty on England\u2019s throne?",
+      "correctAnswer": "The Norman (Norman French) dynasty",
+      "incorrectAnswers": [
+        "The Plantagenets",
+        "The Tudors",
+        "The Stuarts"
+      ],
+      "explanation": "The Conquest fused Anglo-Saxon and Norman institutions and reshaped English feudalism.",
+      "keywords": [
+        "britain",
+        "norman-conquest",
+        "1066"
+      ],
+      "source": "https://www.britannica.com/event/Battle-of-Hastings"
+    },
+    {
+      "seedId": "802b8bc2-c289-47d4-9c45-a6ae9d8cf7d4",
+      "category": "history",
+      "navigationKeyword1": "europe",
+      "navigationKeyword2": "britain",
+      "question": "Winston Churchill became prime minister in May 1940 as Britain faced invasion after the fall of where?",
+      "correctAnswer": "France (the German victory in the Battle of France)",
+      "incorrectAnswers": [
+        "Norway",
+        "Greece",
+        "Poland"
+      ],
+      "explanation": "His wartime speeches rallied the nation through the Battle of Britain and the Blitz.",
+      "keywords": [
+        "britain",
+        "churchill",
+        "world-war-ii"
+      ],
+      "source": "https://www.britannica.com/biography/Winston-Churchill"
+    },
+    {
+      "seedId": "b340dd00-6011-43a5-93d3-69d7f4d773e9",
+      "category": "history",
+      "navigationKeyword1": "europe",
+      "navigationKeyword2": "eastern-europe",
+      "question": "Alexander Dub\u010dek\u2019s reform program of \u201csocialism with a human face\u201d was crushed in which 1968 invasion?",
+      "correctAnswer": "The Warsaw Pact invasion of Czechoslovakia",
+      "incorrectAnswers": [
+        "The Soviet invasion of Finland",
+        "The East German uprising of 1953",
+        "The Polish December 1970 riots"
+      ],
+      "explanation": "Prague Spring liberalization ended as tanks occupied Prague and ousted reform leaders.",
+      "keywords": [
+        "eastern-europe",
+        "czechoslovakia",
+        "prague-spring"
+      ],
+      "source": "https://www.britannica.com/event/Prague-Spring"
+    },
+    {
+      "seedId": "c7c9927d-b00f-4e6b-86dc-1d9ac923b372",
+      "category": "history",
+      "navigationKeyword1": "europe",
+      "navigationKeyword2": "eastern-europe",
+      "question": "Bulgaria gained autonomy after the 1877\u201378 Russo-Turkish War, later revised at which European diplomatic congress?",
+      "correctAnswer": "The Congress of Berlin (1878)",
+      "incorrectAnswers": [
+        "The Congress of Vienna",
+        "The Treaty of Brest-Litovsk",
+        "Yalta Conference"
+      ],
+      "explanation": "Bismarck chaired adjustments that limited a Greater Bulgaria and returned Macedonia to Ottoman rule.",
+      "keywords": [
+        "eastern-europe",
+        "bulgaria",
+        "berlin-congress"
+      ],
+      "source": "https://www.britannica.com/event/Congress-of-Berlin"
+    },
+    {
+      "seedId": "31a88ac6-bdcd-4a7d-9302-a6cdd7941888",
+      "category": "history",
+      "navigationKeyword1": "europe",
+      "navigationKeyword2": "eastern-europe",
+      "question": "Czechoslovakia split peacefully into the Czech Republic and Slovakia on January 1 of which year?",
+      "correctAnswer": "1993",
+      "incorrectAnswers": [
+        "1989",
+        "1991",
+        "2004"
+      ],
+      "explanation": "Parliamentary votes executed the \u2018Velvet Divorce\u2019 without the violence seen in Yugoslavia.",
+      "keywords": [
+        "eastern-europe",
+        "czechoslovakia",
+        "velvet-divorce"
+      ],
+      "source": "https://www.britannica.com/topic/Velvet-Divorce"
+    },
+    {
+      "seedId": "1dacc0a9-ca5f-4b2d-8cff-5fa271def512",
+      "category": "history",
+      "navigationKeyword1": "europe",
+      "navigationKeyword2": "eastern-europe",
+      "question": "Imre Nagy\u2019s government fell when Soviet tanks crushed which 1956 anti-Stalinist uprising?",
+      "correctAnswer": "The Hungarian Revolution",
+      "incorrectAnswers": [
+        "The Prague Spring",
+        "Solidarity",
+        "The March Events in Albania"
+      ],
+      "explanation": "Hungarians demanded neutrality and multiparty rule before Red Army intervention restored communist control.",
+      "keywords": [
+        "eastern-europe",
+        "hungary",
+        "1956"
+      ],
+      "source": "https://www.britannica.com/event/Hungarian-Revolution"
+    },
+    {
+      "seedId": "90792fd0-354f-42ac-80ed-ba04d530eced",
+      "category": "history",
+      "navigationKeyword1": "europe",
+      "navigationKeyword2": "eastern-europe",
+      "question": "Lech Wa\u0142\u0119sa helped lead which Polish trade union that challenged communist rule in 1980?",
+      "correctAnswer": "Solidarity (Solidarno\u015b\u0107)",
+      "incorrectAnswers": [
+        "Free German Youth",
+        "COMECON",
+        "The Writers\u2019 Union alone"
+      ],
+      "explanation": "Gda\u0144sk shipyard strikes forced recognition of an independent union, a pivotal crack in the Eastern Bloc.",
+      "keywords": [
+        "eastern-europe",
+        "poland",
+        "solidarity"
+      ],
+      "source": "https://www.britannica.com/topic/Solidarity-Polish-trade-union"
+    },
+    {
+      "seedId": "88805809-dff5-474c-84f2-79225c39f2d9",
+      "category": "history",
+      "navigationKeyword1": "europe",
+      "navigationKeyword2": "eastern-europe",
+      "question": "Nicolae Ceau\u0219escu\u2019s dictatorship ended with his execution during which 1989 revolution?",
+      "correctAnswer": "The Romanian Revolution",
+      "incorrectAnswers": [
+        "The Velvet Revolution (Czechoslovakia)",
+        "The Singing Revolution (Baltics)",
+        "The Bulldozer Revolution (Serbia)"
+      ],
+      "explanation": "Protests in Timi\u0219oara spread to Bucharest as the army switched sides.",
+      "keywords": [
+        "eastern-europe",
+        "romania",
+        "1989"
+      ],
+      "source": "https://www.britannica.com/biography/Nicolae-Ceausescu"
+    },
+    {
+      "seedId": "f465e30a-2392-4509-83b2-9511eb8c1efa",
+      "category": "history",
+      "navigationKeyword1": "europe",
+      "navigationKeyword2": "eastern-europe",
+      "question": "On August 23, 1989, roughly two million people formed a human chain across Estonia, Latvia, and Lithuania to mark 50 years since which pact\u2019s secret protocols?",
+      "correctAnswer": "The German-Soviet Nonaggression Pact (Molotov-Ribbentrop Pact)",
+      "incorrectAnswers": [
+        "The Treaty of Versailles",
+        "The Yalta Agreement",
+        "The Helsinki Accords"
+      ],
+      "explanation": "The Baltic Way protest highlighted Soviet annexation of the republics in 1940 following the pact\u2019s spheres-of-influence deal.",
+      "keywords": [
+        "eastern-europe",
+        "baltic",
+        "1989"
+      ],
+      "source": "https://www.britannica.com/event/German-Soviet-Nonaggression-Pact"
+    },
+    {
+      "seedId": "ead324cb-29a4-417c-9e80-adc4416e1d21",
+      "category": "history",
+      "navigationKeyword1": "europe",
+      "navigationKeyword2": "eastern-europe",
+      "question": "The Battle of Kosovo (1389) pitted an Ottoman army against a Christian coalition led by which Serbian prince?",
+      "correctAnswer": "Lazar Hrebeljanovi\u0107 (Prince Lazar)",
+      "incorrectAnswers": [
+        "Skanderbeg",
+        "Stephen the Great",
+        "Jan Sobieski"
+      ],
+      "explanation": "The battle became a foundational myth in Serbian nationalism despite ambiguous military outcomes.",
+      "keywords": [
+        "eastern-europe",
+        "serbia",
+        "ottomans"
+      ],
+      "source": "https://www.britannica.com/event/Battle-of-Kosovo"
+    },
+    {
+      "seedId": "6020a71e-fed2-474a-903f-529180e1e720",
+      "category": "history",
+      "navigationKeyword1": "europe",
+      "navigationKeyword2": "eastern-europe",
+      "question": "The Crimean War (1853\u201356) pitted Russia against an alliance including Britain, France, and which Muslim empire?",
+      "correctAnswer": "The Ottoman Empire",
+      "incorrectAnswers": [
+        "Persia",
+        "Morocco",
+        "Egypt under Muhammad Ali as independent belligerent"
+      ],
+      "explanation": "The war highlighted Eastern Question rivalries and led to modest Ottoman reforms.",
+      "keywords": [
+        "eastern-europe",
+        "crimean-war",
+        "black-sea"
+      ],
+      "source": "https://www.britannica.com/event/Crimean-War"
+    },
+    {
+      "seedId": "4655462c-a430-4f75-9431-bf9579508f70",
+      "category": "history",
+      "navigationKeyword1": "europe",
+      "navigationKeyword2": "eastern-europe",
+      "question": "The Dayton Accords (1995) ended the deadliest fighting in the breakup of which multiethnic federation?",
+      "correctAnswer": "Yugoslavia",
+      "incorrectAnswers": [
+        "Czechoslovakia",
+        "The Soviet Union",
+        "Austria-Hungary"
+      ],
+      "explanation": "Bosnia\u2019s war drew in UN, NATO, and regional actors before the U.S.-brokered agreement.",
+      "keywords": [
+        "eastern-europe",
+        "bosnia",
+        "dayton"
+      ],
+      "source": "https://www.britannica.com/event/Dayton-Accords"
+    },
+    {
+      "seedId": "252cded5-fff7-4340-b63d-884884bdf6df",
+      "category": "history",
+      "navigationKeyword1": "europe",
+      "navigationKeyword2": "eastern-europe",
+      "question": "The Kingdom of Serbs, Croats, and Slovenes (later Yugoslavia) emerged from the collapse of which empires after 1918?",
+      "correctAnswer": "Austria-Hungary and the Ottoman Empire (among other wartime changes)",
+      "incorrectAnswers": [
+        "The Russian Empire only",
+        "The Spanish Empire",
+        "The Mughal Empire"
+      ],
+      "explanation": "South Slav unification under a Serbian dynasty fused diverse nations within one state.",
+      "keywords": [
+        "eastern-europe",
+        "yugoslavia",
+        "world-war-i"
+      ],
+      "source": "https://www.britannica.com/place/Yugoslavia"
+    },
+    {
+      "seedId": "2ab57c3c-1dae-4fb8-ba37-2d7a63437317",
+      "category": "history",
+      "navigationKeyword1": "europe",
+      "navigationKeyword2": "eastern-europe",
+      "question": "The Partitions of the late 18th century erased which dual monarchy from Europe\u2019s map until 1918?",
+      "correctAnswer": "Poland-Lithuania (the Polish-Lithuanian Commonwealth)",
+      "incorrectAnswers": [
+        "Bohemia",
+        "Hungary alone",
+        "Wallachia"
+      ],
+      "explanation": "Russia, Prussia, and Austria carved up the commonwealth, shaping Eastern Europe\u2019s imperial borders.",
+      "keywords": [
+        "eastern-europe",
+        "poland",
+        "partitions"
+      ],
+      "source": "https://www.britannica.com/event/Partitions-of-Poland"
+    },
+    {
+      "seedId": "f913d8e4-6001-4b11-b9fc-8bda60f22c90",
+      "category": "history",
+      "navigationKeyword1": "europe",
+      "navigationKeyword2": "france",
+      "question": "Alfred Dreyfus\u2019s wrongful conviction for espionage exposed antisemitism and divided France during which scandal?",
+      "correctAnswer": "The Dreyfus Affair",
+      "incorrectAnswers": [
+        "The Panama Scandal",
+        "The Stavisky Affair",
+        "The XYZ Affair"
+      ],
+      "explanation": "\u00c9mile Zola\u2019s \u201cJ\u2019accuse\u2026!\u201d mobilized intellectuals for Dreyfus\u2019s eventual exoneration.",
+      "keywords": [
+        "france",
+        "dreyfus",
+        "third-republic"
+      ],
+      "source": "https://www.britannica.com/event/Dreyfus-affair"
+    },
+    {
+      "seedId": "1ad72cf8-6764-47d5-b89f-fe8beb8ba27a",
+      "category": "history",
+      "navigationKeyword1": "europe",
+      "navigationKeyword2": "france",
+      "question": "Charles de Gaulle led the Free French against occupation and later founded which postwar political order?",
+      "correctAnswer": "The Fifth Republic (1958 constitution)",
+      "incorrectAnswers": [
+        "The Second Empire",
+        "The Paris Commune",
+        "The Directory"
+      ],
+      "explanation": "De Gaulle strengthened presidential power and withdrew from NATO\u2019s integrated military command in 1966.",
+      "keywords": [
+        "france",
+        "de-gaulle",
+        "fifth-republic"
+      ],
+      "source": "https://www.britannica.com/biography/Charles-de-Gaulle"
+    },
+    {
+      "seedId": "5a4b5b99-18fa-44b9-adcc-60425bfd02ad",
+      "category": "history",
+      "navigationKeyword1": "europe",
+      "navigationKeyword2": "france",
+      "question": "France\u2019s Algerian War ended in 1962 with independence for Algeria after which referendum?",
+      "correctAnswer": "The \u00c9vian Accords and subsequent self-determination votes",
+      "incorrectAnswers": [
+        "The Treaty of Frankfurt",
+        "The Congress of Vienna",
+        "The Sykes-Picot Agreement"
+      ],
+      "explanation": "The conflict had toppled the Fourth Republic and brought de Gaulle back to power.",
+      "keywords": [
+        "france",
+        "algeria",
+        "decolonization"
+      ],
+      "source": "https://www.britannica.com/event/Algerian-War"
+    },
+    {
+      "seedId": "1993a234-1435-4d7a-bb38-9f07970f8b84",
+      "category": "history",
+      "navigationKeyword1": "europe",
+      "navigationKeyword2": "france",
+      "question": "Joan of Arc\u2019s relief of which city in 1429 became a turning point in the Hundred Years\u2019 War?",
+      "correctAnswer": "Orl\u00e9ans",
+      "incorrectAnswers": [
+        "Paris",
+        "Rouen",
+        "Calais"
+      ],
+      "explanation": "Her victories bolstered Charles VII\u2019s legitimacy before her capture and trial.",
+      "keywords": [
+        "france",
+        "joan-of-arc",
+        "hundred-years-war"
+      ],
+      "source": "https://www.britannica.com/biography/Saint-Joan-of-Arc"
+    },
+    {
+      "seedId": "39c720ac-3308-40a0-8d89-c5e32c5d87a5",
+      "category": "history",
+      "navigationKeyword1": "europe",
+      "navigationKeyword2": "france",
+      "question": "Louis XIV centralized absolutism from which palace complex outside Paris?",
+      "correctAnswer": "Versailles",
+      "incorrectAnswers": [
+        "Fontainebleau only",
+        "The Louvre as main court",
+        "Chambord"
+      ],
+      "explanation": "Nobles were housed at Versailles to keep them under royal surveillance and patronage.",
+      "keywords": [
+        "france",
+        "louis-xiv",
+        "versailles"
+      ],
+      "source": "https://www.britannica.com/biography/Louis-XIV-king-of-France"
+    },
+    {
+      "seedId": "bf887c7f-fa0c-4064-aa3b-1b0b6f2219b3",
+      "category": "history",
+      "navigationKeyword1": "europe",
+      "navigationKeyword2": "france",
+      "question": "Napoleon Bonaparte crowned himself emperor in 1804 after a coup that ended which republic?",
+      "correctAnswer": "The First French Republic",
+      "incorrectAnswers": [
+        "The July Monarchy",
+        "The Second Empire",
+        "The Directory alone without Consulate"
+      ],
+      "explanation": "His legal and administrative reforms, including the Napoleonic Code, outlasted his military empire.",
+      "keywords": [
+        "france",
+        "napoleon",
+        "empire"
+      ],
+      "source": "https://www.britannica.com/biography/Napoleon-I-emperor-of-the-French"
+    },
+    {
+      "seedId": "e902faad-c451-4309-b4c0-9d173c54bafb",
+      "category": "history",
+      "navigationKeyword1": "europe",
+      "navigationKeyword2": "france",
+      "question": "Student-worker protests in May 1968 challenged the conservatism of which French president\u2019s government?",
+      "correctAnswer": "Charles de Gaulle",
+      "incorrectAnswers": [
+        "Fran\u00e7ois Mitterrand",
+        "Georges Pompidou (prime minister in 1968)",
+        "Val\u00e9ry Giscard d\u2019Estaing"
+      ],
+      "explanation": "De Gaulle briefly disappeared to a French military base before rallying support in a snap election.",
+      "keywords": [
+        "france",
+        "1968",
+        "protests"
+      ],
+      "source": "https://www.britannica.com/event/events-of-May-1968-French-history"
+    },
+    {
+      "seedId": "e0c9f49e-3691-4178-88d1-a6827dc95db9",
+      "category": "history",
+      "navigationKeyword1": "europe",
+      "navigationKeyword2": "france",
+      "question": "The 1789 storming of which Paris fortress-prison symbolized the start of the French Revolution?",
+      "correctAnswer": "The Bastille",
+      "incorrectAnswers": [
+        "The Conciergerie",
+        "Les Invalides",
+        "The Tuileries"
+      ],
+      "explanation": "Parisians seized arms and gunpowder, forcing royal concessions to the National Assembly.",
+      "keywords": [
+        "france",
+        "revolution",
+        "1789"
+      ],
+      "source": "https://www.britannica.com/event/French-Revolution"
+    },
+    {
+      "seedId": "e0c4b109-1784-4554-b77e-f28025aa8d29",
+      "category": "history",
+      "navigationKeyword1": "europe",
+      "navigationKeyword2": "france",
+      "question": "The 1919 Paris Peace Conference produced the Treaty of Versailles, which blamed Germany for starting which war?",
+      "correctAnswer": "World War I",
+      "incorrectAnswers": [
+        "The Franco-Prussian War",
+        "The Crimean War",
+        "The Seven Years\u2019 War"
+      ],
+      "explanation": "French security concerns shaped harsh reparations and demilitarization clauses on Germany\u2019s western border.",
+      "keywords": [
+        "france",
+        "versailles",
+        "world-war-i"
+      ],
+      "source": "https://www.britannica.com/event/Treaty-of-Versailles"
+    },
+    {
+      "seedId": "b5673c1d-81ca-4b9e-9939-5d9d5ecf7107",
+      "category": "history",
+      "navigationKeyword1": "europe",
+      "navigationKeyword2": "france",
+      "question": "The Edict of Nantes (1598) temporarily ended France\u2019s wars of religion by granting toleration to whom?",
+      "correctAnswer": "French Protestants (Huguenots)",
+      "incorrectAnswers": [
+        "French Jews",
+        "Waldensians in Savoy only",
+        "Eastern Orthodox merchants"
+      ],
+      "explanation": "Louis XIV later revoked the edict, spurring Huguenot emigration.",
+      "keywords": [
+        "france",
+        "huguenots",
+        "religion"
+      ],
+      "source": "https://www.britannica.com/event/Edict-of-Nantes"
+    },
+    {
+      "seedId": "da8b8110-2499-4afa-b0fa-4af3078d0a48",
+      "category": "history",
+      "navigationKeyword1": "europe",
+      "navigationKeyword2": "france",
+      "question": "The Paris Commune briefly ruled the capital in 1871 after defeat in which war?",
+      "correctAnswer": "The Franco-Prussian War",
+      "incorrectAnswers": [
+        "The Crimean War",
+        "World War I",
+        "The Algerian War"
+      ],
+      "explanation": "Radical workers and National Guard units proclaimed a commune crushed by Versailles troops.",
+      "keywords": [
+        "france",
+        "commune",
+        "1871"
+      ],
+      "source": "https://www.britannica.com/event/Paris-Commune"
+    },
+    {
+      "seedId": "2b0ececf-8909-45a8-bb56-6a39cf5bce2a",
+      "category": "history",
+      "navigationKeyword1": "europe",
+      "navigationKeyword2": "france",
+      "question": "The Vichy regime collaborated with Nazi Germany after France\u2019s defeat in which campaign?",
+      "correctAnswer": "The Battle of France (1940)",
+      "incorrectAnswers": [
+        "The Nivelle Offensive",
+        "Dien Bien Phu",
+        "Sedan 1870 only"
+      ],
+      "explanation": "Marshal P\u00e9tain\u2019s government ruled the southern zone until Allied liberation.",
+      "keywords": [
+        "france",
+        "world-war-ii",
+        "vichy"
+      ],
+      "source": "https://www.britannica.com/place/Vichy-France"
+    },
+    {
+      "seedId": "3340dd4f-4d72-4ce7-88c2-275f353049f7",
+      "category": "history",
+      "navigationKeyword1": "europe",
+      "navigationKeyword2": "germany",
+      "question": "Adolf Hitler was appointed German chancellor in January 1933 by which president?",
+      "correctAnswer": "Paul von Hindenburg",
+      "incorrectAnswers": [
+        "Wilhelm II",
+        "Friedrich Ebert",
+        "Gustav Stresemann"
+      ],
+      "explanation": "The Reichstag fire and Enabling Act soon concentrated dictatorial power in Hitler\u2019s hands.",
+      "keywords": [
+        "germany",
+        "hitler",
+        "nazi"
+      ],
+      "source": "https://www.britannica.com/biography/Adolf-Hitler"
+    },
+    {
+      "seedId": "652e9f22-6a5f-4134-bc68-f766d98024ca",
+      "category": "history",
+      "navigationKeyword1": "europe",
+      "navigationKeyword2": "germany",
+      "question": "Angela Merkel, trained as a physicist, led Germany as chancellor from which conservative party?",
+      "correctAnswer": "The Christian Democratic Union (CDU)",
+      "incorrectAnswers": [
+        "The Social Democratic Party",
+        "The Free Democratic Party",
+        "The Greens"
+      ],
+      "explanation": "Her tenure included Eurozone crisis management and the 2015 refugee influx decision.",
+      "keywords": [
+        "germany",
+        "merkel",
+        "modern"
+      ],
+      "source": "https://www.britannica.com/biography/Angela-Merkel"
+    },
+    {
+      "seedId": "596bbc12-0de4-492f-bd32-8327409e7e6c",
+      "category": "history",
+      "navigationKeyword1": "europe",
+      "navigationKeyword2": "germany",
+      "question": "Frederick the Great\u2019s Prussia seized Silesia in the 1740s, provoking which series of wars?",
+      "correctAnswer": "The War of the Austrian Succession (and later Seven Years\u2019 War context)",
+      "incorrectAnswers": [
+        "The Franco-Prussian War",
+        "The Schleswig Wars",
+        "The Italian Wars"
+      ],
+      "explanation": "Prussian military and bureaucratic efficiency made it a great power under Hohenzollern kings.",
+      "keywords": [
+        "germany",
+        "prussia",
+        "frederick"
+      ],
+      "source": "https://www.britannica.com/biography/Frederick-II-king-of-Prussia"
+    },
+    {
+      "seedId": "f790750c-5c9d-4c77-b162-3ac78e29b42c",
+      "category": "history",
+      "navigationKeyword1": "europe",
+      "navigationKeyword2": "germany",
+      "question": "Germany\u2019s Weimar Republic (1919\u201333) took its name from the city where which post\u2013World War I constitution was drafted?",
+      "correctAnswer": "Weimar",
+      "incorrectAnswers": [
+        "Munich",
+        "Berlin",
+        "Frankfurt"
+      ],
+      "explanation": "Hyperinflation, political violence, and the Great Depression destabilized parliamentary democracy.",
+      "keywords": [
+        "germany",
+        "weimar",
+        "world-war-i"
+      ],
+      "source": "https://www.britannica.com/place/Weimar-Republic"
+    },
+    {
+      "seedId": "5f657ceb-6fed-453c-b3da-bbbc15a7ba65",
+      "category": "history",
+      "navigationKeyword1": "europe",
+      "navigationKeyword2": "germany",
+      "question": "Johannes Gutenberg\u2019s movable-type printing revolution began in which German city?",
+      "correctAnswer": "Mainz",
+      "incorrectAnswers": [
+        "Hamburg",
+        "Cologne",
+        "Munich"
+      ],
+      "explanation": "The printing press accelerated the spread of Reformation pamphlets and humanist texts.",
+      "keywords": [
+        "germany",
+        "gutenberg",
+        "printing"
+      ],
+      "source": "https://www.britannica.com/biography/Johannes-Gutenberg"
+    },
+    {
+      "seedId": "88234db3-81f8-44e2-86d5-2cf652d34cae",
+      "category": "history",
+      "navigationKeyword1": "europe",
+      "navigationKeyword2": "germany",
+      "question": "Karl Marx and Friedrich Engels published The Communist Manifesto in 1848 in which context?",
+      "correctAnswer": "The European revolutions of 1848",
+      "incorrectAnswers": [
+        "The Congress of Vienna",
+        "The Kulturkampf",
+        "The Spartacist uprising"
+      ],
+      "explanation": "The pamphlet\u2019s call\u2014\u201cWorkers of the world, unite!\u201d\u2014emerged from radical circles in Brussels and London.",
+      "keywords": [
+        "germany",
+        "marx",
+        "1848"
+      ],
+      "source": "https://www.britannica.com/biography/Karl-Marx"
+    },
+    {
+      "seedId": "174dfd55-7389-467e-9ef9-fa865874f3de",
+      "category": "history",
+      "navigationKeyword1": "europe",
+      "navigationKeyword2": "germany",
+      "question": "Konrad Adenauer anchored West Germany in NATO and European integration as first chancellor of which republic?",
+      "correctAnswer": "The Federal Republic of Germany (West Germany)",
+      "incorrectAnswers": [
+        "The Weimar Republic",
+        "The German Empire",
+        "East Germany"
+      ],
+      "explanation": "The \u2018economic miracle\u2019 and Western alliance defined his long chancellorship (1949\u201363).",
+      "keywords": [
+        "germany",
+        "adenauer",
+        "cold-war"
+      ],
+      "source": "https://www.britannica.com/biography/Konrad-Adenauer"
+    },
+    {
+      "seedId": "6b368f80-a013-4181-b3a9-899deee04fc4",
+      "category": "history",
+      "navigationKeyword1": "europe",
+      "navigationKeyword2": "germany",
+      "question": "Martin Luther\u2019s 1517 Ninety-five Theses protested indulgences in which German territory\u2019s church?",
+      "correctAnswer": "Saxony (Wittenberg in the Electorate of Saxony)",
+      "incorrectAnswers": [
+        "Bavaria only",
+        "Prussia",
+        "Hanover"
+      ],
+      "explanation": "Luther\u2019s critique sparked the Protestant Reformation across German principalities.",
+      "keywords": [
+        "germany",
+        "luther",
+        "reformation"
+      ],
+      "source": "https://www.britannica.com/biography/Martin-Luther"
+    },
+    {
+      "seedId": "727356d3-3353-4da9-970c-a0dd0498758c",
+      "category": "history",
+      "navigationKeyword1": "europe",
+      "navigationKeyword2": "germany",
+      "question": "Otto von Bismarck proclaimed the German Empire in 1871 in the Hall of Mirrors at which palace?",
+      "correctAnswer": "Versailles (near Paris)",
+      "incorrectAnswers": [
+        "Sch\u00f6nbrunn",
+        "Sans Souci",
+        "Nuremberg Castle"
+      ],
+      "explanation": "Victory over France completed German unification under Prussian leadership.",
+      "keywords": [
+        "germany",
+        "bismarck",
+        "unification"
+      ],
+      "source": "https://www.britannica.com/biography/Otto-von-Bismarck"
+    },
+    {
+      "seedId": "a71ed37b-93ad-48d8-b553-cf5345b11921",
+      "category": "history",
+      "navigationKeyword1": "europe",
+      "navigationKeyword2": "germany",
+      "question": "The 1938 Munich Agreement ceded the Sudetenland from Czechoslovakia to which country?",
+      "correctAnswer": "Nazi Germany",
+      "incorrectAnswers": [
+        "Poland",
+        "Hungary",
+        "Austria"
+      ],
+      "explanation": "Neville Chamberlain\u2019s \u2018peace for our time\u2019 failed to prevent Hitler\u2019s further expansion.",
+      "keywords": [
+        "germany",
+        "munich",
+        "appeasement"
+      ],
+      "source": "https://www.britannica.com/event/Munich-Agreement"
+    },
+    {
+      "seedId": "50de0a00-1f95-4e70-bf28-be444377580c",
+      "category": "history",
+      "navigationKeyword1": "europe",
+      "navigationKeyword2": "germany",
+      "question": "The Berlin Wall fell on November 9, 1989, amid protests in which socialist state?",
+      "correctAnswer": "East Germany (German Democratic Republic)",
+      "incorrectAnswers": [
+        "Czechoslovakia",
+        "Poland",
+        "Hungary"
+      ],
+      "explanation": "The opening of the Wall accelerated German reunification under the Federal Republic\u2019s constitution.",
+      "keywords": [
+        "germany",
+        "berlin-wall",
+        "cold-war"
+      ],
+      "source": "https://www.britannica.com/topic/Berlin-Wall"
+    },
+    {
+      "seedId": "9c34da39-cf68-42f0-845f-de02f11cc4c8",
+      "category": "history",
+      "navigationKeyword1": "europe",
+      "navigationKeyword2": "germany",
+      "question": "The Peace of Westphalia (1648) ended which devastating conflict fought largely in German lands?",
+      "correctAnswer": "The Thirty Years\u2019 War",
+      "incorrectAnswers": [
+        "The Seven Years\u2019 War",
+        "The Napoleonic Wars",
+        "The Schmalkaldic War alone"
+      ],
+      "explanation": "The treaties recognized Calvinism, weakened the emperor, and fragmented sovereignty in the Holy Roman Empire.",
+      "keywords": [
+        "germany",
+        "westphalia",
+        "thirty-years-war"
+      ],
+      "source": "https://www.britannica.com/event/Peace-of-Westphalia"
+    },
+    {
+      "seedId": "7bbc2736-0094-4582-82ae-0bd7d10a012d",
+      "category": "history",
+      "navigationKeyword1": "europe",
+      "navigationKeyword2": "russia",
+      "question": "Alexander II\u2019s 1861 Edict of Emancipation freed which laborers tied to noble estates?",
+      "correctAnswer": "Serfs",
+      "incorrectAnswers": [
+        "Industrial factory workers",
+        "Cossack hosts",
+        "State peasants only"
+      ],
+      "explanation": "The reform aimed to modernize the army and economy but sparked rural disruption.",
+      "keywords": [
+        "russia",
+        "emancipation",
+        "alexander-ii"
+      ],
+      "source": "https://www.britannica.com/biography/Alexander-II-emperor-of-Russia"
+    },
+    {
+      "seedId": "0ae8adbe-9be4-4a35-8861-7dc37e783b74",
+      "category": "history",
+      "navigationKeyword1": "europe",
+      "navigationKeyword2": "russia",
+      "question": "Catherine the Great\u2019s reign is associated with enlarging Russian power in Crimea, Ukraine, and which northern sea?",
+      "correctAnswer": "The Black Sea",
+      "incorrectAnswers": [
+        "The Mediterranean exclusively",
+        "The North Sea",
+        "The Caspian only"
+      ],
+      "explanation": "Enlightened absolutism and noble privileges marked her long eighteenth-century rule.",
+      "keywords": [
+        "russia",
+        "catherine-the-great",
+        "expansion"
+      ],
+      "source": "https://www.britannica.com/biography/Catherine-the-Great-empress-of-Russia"
+    },
+    {
+      "seedId": "9b3cbba8-4188-43bf-98d4-faed92d05d6a",
+      "category": "history",
+      "navigationKeyword1": "europe",
+      "navigationKeyword2": "russia",
+      "question": "Ivan IV (the Terrible) was first crowned tsar of which rising eastern European realm in 1547?",
+      "correctAnswer": "Russia (Muscovy as the Tsardom of Russia)",
+      "incorrectAnswers": [
+        "Poland-Lithuania",
+        "The Golden Horde",
+        "Byzantium"
+      ],
+      "explanation": "His oprichnina terror and expansion toward Kazan reshaped autocratic rule.",
+      "keywords": [
+        "russia",
+        "ivan-iv",
+        "tsar"
+      ],
+      "source": "https://www.britannica.com/biography/Ivan-IV-tsar-of-Russia"
+    },
+    {
+      "seedId": "1a6fa9a4-e0fa-465d-893c-18e3a4c397fd",
+      "category": "history",
+      "navigationKeyword1": "europe",
+      "navigationKeyword2": "russia",
+      "question": "Joseph Stalin\u2019s forced collectivization and five-year plans industrialized the USSR at the cost of which famine?",
+      "correctAnswer": "The Holodomor and wider Soviet famines of the early 1930s",
+      "incorrectAnswers": [
+        "The Irish Potato Famine",
+        "The Bengal Famine of 1943 only",
+        "The Ethiopian famine of 1984"
+      ],
+      "explanation": "Peasant resistance to dekulakization was crushed by state violence and grain requisitioning.",
+      "keywords": [
+        "russia",
+        "stalin",
+        "collectivization"
+      ],
+      "source": "https://www.britannica.com/biography/Joseph-Stalin"
+    },
+    {
+      "seedId": "ae417f72-ac0d-40f2-922d-db30fc6a2253",
+      "category": "history",
+      "navigationKeyword1": "europe",
+      "navigationKeyword2": "russia",
+      "question": "Mikhail Gorbachev\u2019s policies of glasnost and perestroika unintentionally hastened the end of which state?",
+      "correctAnswer": "The Soviet Union",
+      "incorrectAnswers": [
+        "The Russian Empire",
+        "The Polish-Lithuanian Commonwealth",
+        "Yugoslavia"
+      ],
+      "explanation": "The USSR dissolved in December 1991 after the August coup\u2019s failure and republic secessions.",
+      "keywords": [
+        "russia",
+        "gorbachev",
+        "soviet-union"
+      ],
+      "source": "https://www.britannica.com/biography/Mikhail-Gorbachev"
+    },
+    {
+      "seedId": "571f09f6-7b6c-4542-bf9a-e98f7926d5b5",
+      "category": "history",
+      "navigationKeyword1": "europe",
+      "navigationKeyword2": "russia",
+      "question": "Napoleon\u2019s 1812 invasion of Russia failed in part because of scorched-earth retreats and which climactic burning?",
+      "correctAnswer": "The burning of Moscow",
+      "incorrectAnswers": [
+        "The burning of Saint Petersburg",
+        "The siege of Sevastopol",
+        "The sack of Kazan"
+      ],
+      "explanation": "French logistics collapsed during the winter retreat from a devastated Moscow.",
+      "keywords": [
+        "russia",
+        "napoleon",
+        "1812"
+      ],
+      "source": "https://www.britannica.com/event/French-invasion-of-Russia"
+    },
+    {
+      "seedId": "ee7c6069-0e79-4245-8736-7493f1877069",
+      "category": "history",
+      "navigationKeyword1": "europe",
+      "navigationKeyword2": "russia",
+      "question": "Peter the Great founded Saint Petersburg as a \u2018window on the West\u2019 after gaining Baltic access in which war?",
+      "correctAnswer": "The Great Northern War",
+      "incorrectAnswers": [
+        "The Crimean War",
+        "World War I",
+        "The Russo-Japanese War"
+      ],
+      "explanation": "His reforms westernized the army, bureaucracy, and court dress while building a Baltic fleet.",
+      "keywords": [
+        "russia",
+        "peter-the-great",
+        "baltic"
+      ],
+      "source": "https://www.britannica.com/biography/Peter-I-emperor-of-Russia"
+    },
+    {
+      "seedId": "790876c3-b3a4-4cb7-ab59-b82c07d131d5",
+      "category": "history",
+      "navigationKeyword1": "europe",
+      "navigationKeyword2": "russia",
+      "question": "Russia\u2019s 1905 defeat at Tsushima followed a surprise attack by which non-European imperial navy?",
+      "correctAnswer": "Japan (the Imperial Japanese Navy)",
+      "incorrectAnswers": [
+        "The United States",
+        "China",
+        "Ottoman Turkey"
+      ],
+      "explanation": "The Russo-Japanese War triggered the 1905 Revolution and the October Manifesto.",
+      "keywords": [
+        "russia",
+        "russo-japanese-war",
+        "1905"
+      ],
+      "source": "https://www.britannica.com/event/Russo-Japanese-War"
+    },
+    {
+      "seedId": "cd0bc3c9-2ff5-443a-a654-662c0f327a58",
+      "category": "history",
+      "navigationKeyword1": "europe",
+      "navigationKeyword2": "russia",
+      "question": "The February Revolution of 1917 forced which tsar to abdicate?",
+      "correctAnswer": "Nicholas II",
+      "incorrectAnswers": [
+        "Alexander III",
+        "Peter III",
+        "Paul I"
+      ],
+      "explanation": "A Provisional Government replaced the monarchy until the Bolshevik seizure of power.",
+      "keywords": [
+        "russia",
+        "1917",
+        "february-revolution"
+      ],
+      "source": "https://www.britannica.com/event/February-Revolution-1917-Russia"
+    },
+    {
+      "seedId": "bd8c949a-62a5-4ecf-88e9-28e65be9f80e",
+      "category": "history",
+      "navigationKeyword1": "europe",
+      "navigationKeyword2": "russia",
+      "question": "The Romanov dynasty ended with the execution of Nicholas II\u2019s family in which city in 1918?",
+      "correctAnswer": "Yekaterinburg",
+      "incorrectAnswers": [
+        "Petrograd",
+        "Moscow",
+        "Tobolsk"
+      ],
+      "explanation": "Bolshevik guards shot the imperial family amid the Russian Civil War.",
+      "keywords": [
+        "russia",
+        "romanovs",
+        "1918"
+      ],
+      "source": "https://www.britannica.com/biography/Nicholas-II-tsar-of-Russia"
+    },
+    {
+      "seedId": "2f4d3c1e-1446-4bb2-b6fa-832e4fc22da3",
+      "category": "history",
+      "navigationKeyword1": "europe",
+      "navigationKeyword2": "russia",
+      "question": "Vladimir Lenin\u2019s Bolsheviks overthrew the Provisional Government in which 1917 uprising?",
+      "correctAnswer": "The October Revolution",
+      "incorrectAnswers": [
+        "The Decembrist revolt",
+        "The Kronstadt rebellion",
+        "The July Days"
+      ],
+      "explanation": "Sovnarkom rule led to civil war, Red Terror, and eventual USSR formation.",
+      "keywords": [
+        "russia",
+        "lenin",
+        "bolshevik"
+      ],
+      "source": "https://www.britannica.com/event/Russian-Revolution"
+    },
+    {
+      "seedId": "f7e3e05e-7368-4c01-9226-cd00f3a0cb1c",
+      "category": "history",
+      "navigationKeyword1": "europe",
+      "navigationKeyword2": "russia",
+      "question": "Vladimir Putin rose from the FSB to the presidency after Boris Yeltsin resigned on which eve?",
+      "correctAnswer": "New Year\u2019s Eve 1999 (December 31, 1999)",
+      "incorrectAnswers": [
+        "Victory Day 2000",
+        "Orthodox Christmas 1998",
+        "August 1991"
+      ],
+      "explanation": "Putin\u2019s long dominance reshaped post-Soviet Russian politics and foreign policy.",
+      "keywords": [
+        "russia",
+        "putin",
+        "yeltsin"
+      ],
+      "source": "https://www.britannica.com/biography/Vladimir-Putin"
+    },
+    {
+      "seedId": "1d2afb81-d34d-473d-be9b-eeabe8bdb6c0",
+      "category": "history",
+      "navigationKeyword1": "europe",
+      "navigationKeyword2": "western-europe",
+      "question": "Francisco Franco\u2019s Nationalists won which 1936\u201339 conflict with Republican defenders of the Second Spanish Republic?",
+      "correctAnswer": "The Spanish Civil War",
+      "incorrectAnswers": [
+        "The Carlist Wars",
+        "The Rif War",
+        "The Peninsular War"
+      ],
+      "explanation": "Franco\u2019s dictatorship endured until 1975, isolating Spain early in the Cold War.",
+      "keywords": [
+        "western-europe",
+        "spain",
+        "civil-war"
+      ],
+      "source": "https://www.britannica.com/event/Spanish-Civil-War"
+    },
+    {
+      "seedId": "edb910b5-8287-4d4d-a513-48bcb459e39e",
+      "category": "history",
+      "navigationKeyword1": "europe",
+      "navigationKeyword2": "western-europe",
+      "question": "Germany\u2019s Schlieffen Plan aimed to knock out France quickly by invading through which neutral kingdom?",
+      "correctAnswer": "Belgium",
+      "incorrectAnswers": [
+        "Switzerland",
+        "Luxembourg only",
+        "Denmark"
+      ],
+      "explanation": "The violation of Belgian neutrality brought Britain into World War I in August 1914.",
+      "keywords": [
+        "western-europe",
+        "world-war-i",
+        "belgium"
+      ],
+      "source": "https://www.britannica.com/event/World-War-I"
+    },
+    {
+      "seedId": "18e91473-ca09-4797-a968-bda1799f8cb5",
+      "category": "history",
+      "navigationKeyword1": "europe",
+      "navigationKeyword2": "western-europe",
+      "question": "Giuseppe Garibaldi\u2019s Redshirts helped unify which peninsula with Piedmont\u2019s monarchy?",
+      "correctAnswer": "Italy",
+      "incorrectAnswers": [
+        "Iberia",
+        "Scandinavia",
+        "The Balkans"
+      ],
+      "explanation": "Expeditions in Sicily and Naples complemented Cavour\u2019s diplomacy with France against Austria.",
+      "keywords": [
+        "western-europe",
+        "italy",
+        "risorgimento"
+      ],
+      "source": "https://www.britannica.com/biography/Giuseppe-Garibaldi"
+    },
+    {
+      "seedId": "cdb67d3b-0359-4054-8bae-60464bcd0a5e",
+      "category": "history",
+      "navigationKeyword1": "europe",
+      "navigationKeyword2": "western-europe",
+      "question": "Pope Leo III crowned which Frankish king emperor in Rome on Christmas Day 800?",
+      "correctAnswer": "Charlemagne (Charles the Great)",
+      "incorrectAnswers": [
+        "Clovis",
+        "Justinian",
+        "Otto I"
+      ],
+      "explanation": "The coronation revived imperial title in the West and foreshadowed the Holy Roman Empire.",
+      "keywords": [
+        "western-europe",
+        "charlemagne",
+        "carolingian"
+      ],
+      "source": "https://www.britannica.com/biography/Charlemagne"
+    },
+    {
+      "seedId": "d0ac6b10-2aa9-4642-954e-de58ba96949e",
+      "category": "history",
+      "navigationKeyword1": "europe",
+      "navigationKeyword2": "western-europe",
+      "question": "The 1713\u201314 Peace of Utrecht ended which war and shifted Spain\u2019s European possessions?",
+      "correctAnswer": "The War of the Spanish Succession",
+      "incorrectAnswers": [
+        "The Thirty Years\u2019 War",
+        "The Nine Years\u2019 War alone",
+        "The Peninsular War"
+      ],
+      "explanation": "Utrecht recognized Bourbon rule in Spain while partitioning Spanish Netherlands and Italian claims.",
+      "keywords": [
+        "western-europe",
+        "utrecht",
+        "spain"
+      ],
+      "source": "https://www.britannica.com/event/Peace-of-Utrecht"
+    },
+    {
+      "seedId": "1e23b25b-f398-482a-8c82-3c299d8b496c",
+      "category": "history",
+      "navigationKeyword1": "europe",
+      "navigationKeyword2": "western-europe",
+      "question": "The 1957 Treaty of Rome founded the European Economic Community among six states centered on France, West Germany, and where?",
+      "correctAnswer": "Italy, Belgium, the Netherlands, and Luxembourg",
+      "incorrectAnswers": [
+        "Spain and Portugal",
+        "Britain and Ireland",
+        "Greece and Turkey"
+      ],
+      "explanation": "The EEC\u2019s common external tariff began today\u2019s European Union institutional lineage.",
+      "keywords": [
+        "western-europe",
+        "eec",
+        "integration"
+      ],
+      "source": "https://www.britannica.com/event/Treaty-of-Rome"
+    },
+    {
+      "seedId": "8967464a-f8f0-4e84-a87a-ab6cb71790cc",
+      "category": "history",
+      "navigationKeyword1": "europe",
+      "navigationKeyword2": "western-europe",
+      "question": "The Congress of Vienna (1814\u201315) redrew Europe after the defeat of whom?",
+      "correctAnswer": "Napoleon Bonaparte",
+      "incorrectAnswers": [
+        "Louis XIV",
+        "Philip II",
+        "Frederick the Great"
+      ],
+      "explanation": "Metternich\u2019s system sought legitimacy, buffer states, and containment of French and revolutionary power.",
+      "keywords": [
+        "western-europe",
+        "vienna",
+        "congress"
+      ],
+      "source": "https://www.britannica.com/event/Congress-of-Vienna"
+    },
+    {
+      "seedId": "a0c8815f-a994-4782-a439-ce5b870c61db",
+      "category": "history",
+      "navigationKeyword1": "europe",
+      "navigationKeyword2": "western-europe",
+      "question": "The Dutch Republic won independence recognition from Spain after which long revolt?",
+      "correctAnswer": "The Eighty Years\u2019 War (Dutch Revolt)",
+      "incorrectAnswers": [
+        "The Franco-Dutch War",
+        "The Belgian Revolution of 1830",
+        "The Schmalkaldic War"
+      ],
+      "explanation": "Merchant oligarchies in Holland and Zeeland built a global trading empire out of Calvinist resistance.",
+      "keywords": [
+        "western-europe",
+        "netherlands",
+        "dutch-revolt"
+      ],
+      "source": "https://www.britannica.com/event/Eighty-Years-War"
+    },
+    {
+      "seedId": "4c531459-4829-40a8-992c-a53db33d11c1",
+      "category": "history",
+      "navigationKeyword1": "europe",
+      "navigationKeyword2": "western-europe",
+      "question": "The Hundred Years\u2019 War chiefly pitted the kingdoms of England and which country?",
+      "correctAnswer": "France",
+      "incorrectAnswers": [
+        "Spain",
+        "Holy Roman Empire",
+        "Scotland"
+      ],
+      "explanation": "Dynastic claims to the French throne and feudal obligations fueled intermittent conflict from 1337 to 1453.",
+      "keywords": [
+        "western-europe",
+        "hundred-years-war",
+        "france"
+      ],
+      "source": "https://www.britannica.com/event/Hundred-Years-War"
+    },
+    {
+      "seedId": "0498d8b3-b5fb-43bb-a152-6bf4debe26f2",
+      "category": "history",
+      "navigationKeyword1": "europe",
+      "navigationKeyword2": "western-europe",
+      "question": "The Medici family patronized Brunelleschi and Michelangelo as rulers of which Italian city-state?",
+      "correctAnswer": "Florence",
+      "incorrectAnswers": [
+        "Venice",
+        "Milan",
+        "Naples"
+      ],
+      "explanation": "Medici banking wealth underwrote Renaissance art and humanist scholarship.",
+      "keywords": [
+        "western-europe",
+        "renaissance",
+        "florence"
+      ],
+      "source": "https://www.britannica.com/topic/Medici-family"
+    },
+    {
+      "seedId": "cf0fce2b-77c6-4c0f-84dd-f86bf1d64ef7",
+      "category": "history",
+      "navigationKeyword1": "europe",
+      "navigationKeyword2": "western-europe",
+      "question": "The Schengen Agreement (1985) began open borders among several states on the river bordering which founding trio?",
+      "correctAnswer": "France, Germany, and the Benelux countries (signed near Schengen, Luxembourg)",
+      "incorrectAnswers": [
+        "Britain, Ireland, Iceland",
+        "Spain, Portugal, Morocco",
+        "Poland, Czechoslovakia, Hungary"
+      ],
+      "explanation": "Schengen later expanded into the EU\u2019s passport-free travel zone.",
+      "keywords": [
+        "western-europe",
+        "schengen",
+        "eu"
+      ],
+      "source": "https://www.britannica.com/topic/Schengen-Agreement"
+    },
+    {
+      "seedId": "84914c89-c07c-4496-be1b-2a8a9a42e431",
+      "category": "history",
+      "navigationKeyword1": "europe",
+      "navigationKeyword2": "western-europe",
+      "question": "Viking longships raided monasteries and traded as far as Constantinople from homelands in which region?",
+      "correctAnswer": "Scandinavia (Norway, Denmark, Sweden)",
+      "incorrectAnswers": [
+        "The Alps",
+        "The Caucasus",
+        "Anatolia"
+      ],
+      "explanation": "Norse settlement shaped Normandy, Iceland, and Kievan trade routes.",
+      "keywords": [
+        "western-europe",
+        "vikings",
+        "scandinavia"
+      ],
+      "source": "https://www.britannica.com/topic/Viking-people"
+    }
+  ]
+}

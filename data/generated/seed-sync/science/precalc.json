@@ -1,0 +1,1375 @@
+{
+  "schemaVersion": 1,
+  "seedSet": "core-public-items",
+  "deltaPreviewLimit": 200,
+  "items": [
+    {
+      "seedId": "8c1dad00-8a6b-4a59-8430-eafaf56aa9f9",
+      "category": "science",
+      "navigationKeyword1": "precalc",
+      "navigationKeyword2": "conics",
+      "question": "Circle equation center (h,k)?",
+      "correctAnswer": "(x\u2212h)^2 + (y\u2212k)^2 = r^2",
+      "incorrectAnswers": [
+        "x^2 \u2212 y^2 = 1",
+        "y = mx + b",
+        "x/a + y/b = 1"
+      ],
+      "explanation": "Radius r.",
+      "keywords": [
+        "circle",
+        "conics"
+      ],
+      "source": "https://openstax.org/books/precalculus-2e/pages/8-1-the-ellipse"
+    },
+    {
+      "seedId": "82e8bd4e-86f1-409f-80cd-cec085a1dad1",
+      "category": "science",
+      "navigationKeyword1": "precalc",
+      "navigationKeyword2": "conics",
+      "question": "Completing the square purpose?",
+      "correctAnswer": "Rewrite conic in standard form",
+      "incorrectAnswers": [
+        "Find derivative",
+        "Integrate",
+        "Solve only exponentials"
+      ],
+      "explanation": "Reveals center/radius.",
+      "keywords": [
+        "completing-square",
+        "algebra"
+      ],
+      "source": "https://www.mathsisfun.com/algebra/completing-square.html"
+    },
+    {
+      "seedId": "8465e614-d20e-4c69-a262-0cc7503714a4",
+      "category": "science",
+      "navigationKeyword1": "precalc",
+      "navigationKeyword2": "conics",
+      "question": "Discriminant B^2\u22124AC classifies?",
+      "correctAnswer": "General second-degree conic type (rotation)",
+      "incorrectAnswers": [
+        "Always parabola",
+        "Only linear",
+        "Always circle"
+      ],
+      "explanation": "Degenerate cases possible.",
+      "keywords": [
+        "discriminant",
+        "conics"
+      ],
+      "source": "https://openstax.org/books/precalculus-2e/pages/10-4-rotation-of-axes"
+    },
+    {
+      "seedId": "f053bf59-9975-4e1f-9a6a-c1364a45f1dc",
+      "category": "science",
+      "navigationKeyword1": "precalc",
+      "navigationKeyword2": "conics",
+      "question": "Eccentricity e for ellipse?",
+      "correctAnswer": "0 < e < 1",
+      "incorrectAnswers": [
+        "e > 1",
+        "e = 0 always",
+        "e undefined"
+      ],
+      "explanation": "Circle limit e\u21920.",
+      "keywords": [
+        "eccentricity",
+        "ellipse"
+      ],
+      "source": "https://openstax.org/books/precalculus-2e/pages/10-1-the-ellipse"
+    },
+    {
+      "seedId": "e43c77bc-7e2d-4e56-8113-765cc8ad6c7c",
+      "category": "science",
+      "navigationKeyword1": "precalc",
+      "navigationKeyword2": "conics",
+      "question": "Ellipse sum of distances?",
+      "correctAnswer": "Constant to two foci",
+      "incorrectAnswers": [
+        "Difference constant",
+        "Product constant",
+        "One focus only"
+      ],
+      "explanation": "Orbits approximate ellipses.",
+      "keywords": [
+        "ellipse",
+        "foci"
+      ],
+      "source": "https://openstax.org/books/precalculus-2e/pages/10-1-the-ellipse"
+    },
+    {
+      "seedId": "44fb5241-fce7-4b1a-b7fd-63a7d6940931",
+      "category": "science",
+      "navigationKeyword1": "precalc",
+      "navigationKeyword2": "conics",
+      "question": "Hyperbola asymptotes (centered standard)?",
+      "correctAnswer": "y = \u00b1(b/a)x (orientation dependent)",
+      "incorrectAnswers": [
+        "y = ax + b only",
+        "No asymptotes",
+        "Circles"
+      ],
+      "explanation": "Guide opening.",
+      "keywords": [
+        "asymptotes",
+        "hyperbola"
+      ],
+      "source": "https://openstax.org/books/precalculus-2e/pages/10-2-the-hyperbola"
+    },
+    {
+      "seedId": "3a957ea0-5fcd-4625-8001-f98e216f35bd",
+      "category": "science",
+      "navigationKeyword1": "precalc",
+      "navigationKeyword2": "conics",
+      "question": "Hyperbola difference of distances?",
+      "correctAnswer": "Constant to two foci",
+      "incorrectAnswers": [
+        "Sum constant",
+        "Equal radii",
+        "No asymptotes"
+      ],
+      "explanation": "Two branches.",
+      "keywords": [
+        "hyperbola",
+        "foci"
+      ],
+      "source": "https://openstax.org/books/precalculus-2e/pages/10-2-the-hyperbola"
+    },
+    {
+      "seedId": "2f56352f-9663-40cb-bb72-b53b5eae601d",
+      "category": "science",
+      "navigationKeyword1": "precalc",
+      "navigationKeyword2": "conics",
+      "question": "Parabola focus-directrix property?",
+      "correctAnswer": "Distance to focus equals distance to directrix",
+      "incorrectAnswers": [
+        "Sum of distances constant",
+        "Product constant",
+        "No geometric meaning"
+      ],
+      "explanation": "Defines parabola.",
+      "keywords": [
+        "focus",
+        "parabola"
+      ],
+      "source": "https://openstax.org/books/precalculus-2e/pages/10-3-the-parabola"
+    },
+    {
+      "seedId": "51768096-69ed-4f36-877b-a11dee5ee007",
+      "category": "science",
+      "navigationKeyword1": "precalc",
+      "navigationKeyword2": "conics",
+      "question": "Parametric line?",
+      "correctAnswer": "r(t) = r0 + t v",
+      "incorrectAnswers": [
+        "r = t^2",
+        "r constant",
+        "Only polar"
+      ],
+      "explanation": "Position along direction v.",
+      "keywords": [
+        "parametric",
+        "lines"
+      ],
+      "source": "https://openstax.org/books/precalculus-2e/pages/8-7-parametric-equations"
+    },
+    {
+      "seedId": "663a1a46-895a-46c1-9fee-40bb8e87bfed",
+      "category": "science",
+      "navigationKeyword1": "precalc",
+      "navigationKeyword2": "conics",
+      "question": "Polar r = ed/(1+e cos \u03b8) form?",
+      "correctAnswer": "Conic section with eccentricity e",
+      "incorrectAnswers": [
+        "Always circle",
+        "Only hyperbola",
+        "No conics"
+      ],
+      "explanation": "Unified description.",
+      "keywords": [
+        "polar",
+        "conics"
+      ],
+      "source": "https://openstax.org/books/precalculus-2e/pages/8-8-polar-equations-of-conics"
+    },
+    {
+      "seedId": "43bfec73-9ac3-4958-8d1e-7113fcc2c56f",
+      "category": "science",
+      "navigationKeyword1": "precalc",
+      "navigationKeyword2": "conics",
+      "question": "Reflective property of parabola?",
+      "correctAnswer": "Rays parallel to axis reflect through focus",
+      "incorrectAnswers": [
+        "Reflect to directrix only",
+        "No reflection",
+        "Scatter randomly"
+      ],
+      "explanation": "Satellite dishes.",
+      "keywords": [
+        "reflection",
+        "parabola"
+      ],
+      "source": "https://openstax.org/books/precalculus-2e/pages/10-3-the-parabola"
+    },
+    {
+      "seedId": "25a48632-f7cc-45c8-932f-17c61f405fc8",
+      "category": "science",
+      "navigationKeyword1": "precalc",
+      "navigationKeyword2": "conics",
+      "question": "Standard parabola y = ax^2 vertex?",
+      "correctAnswer": "(0,0) before shifts",
+      "incorrectAnswers": [
+        "Always (1,1)",
+        "No vertex",
+        "(a,0) always"
+      ],
+      "explanation": "Completing square finds vertex.",
+      "keywords": [
+        "parabola",
+        "conics"
+      ],
+      "source": "https://openstax.org/books/precalculus-2e/pages/10-3-the-parabola"
+    },
+    {
+      "seedId": "8b46b637-d842-4e7e-a8ed-f84d4943ac23",
+      "category": "science",
+      "navigationKeyword1": "precalc",
+      "navigationKeyword2": "functions",
+      "question": "Absolute value |x| graph shape?",
+      "correctAnswer": "V-shape vertex at 0",
+      "incorrectAnswers": [
+        "Parabola only",
+        "Line only",
+        "Circle"
+      ],
+      "explanation": "Piecewise linear.",
+      "keywords": [
+        "absolute-value",
+        "graph"
+      ],
+      "source": "https://www.mathsisfun.com/numbers/absolute-value.html"
+    },
+    {
+      "seedId": "f12e43af-9a68-4ec5-8598-48865f30afd5",
+      "category": "science",
+      "navigationKeyword1": "precalc",
+      "navigationKeyword2": "functions",
+      "question": "Average rate of change of f on [a,b]?",
+      "correctAnswer": "(f(b)\u2212f(a))/(b\u2212a)",
+      "incorrectAnswers": [
+        "f(b)+f(a)",
+        "f'(a)",
+        "f(b)/f(a)"
+      ],
+      "explanation": "Secant slope.",
+      "keywords": [
+        "average-rate",
+        "secant"
+      ],
+      "source": "https://openstax.org/books/precalculus-2e/pages/3-1-functions-and-function-notation"
+    },
+    {
+      "seedId": "e7ba48c6-3a2a-4e76-a3d9-b155126cddb7",
+      "category": "science",
+      "navigationKeyword1": "precalc",
+      "navigationKeyword2": "functions",
+      "question": "Composition (f \u2218 g)(x)?",
+      "correctAnswer": "f(g(x))",
+      "incorrectAnswers": [
+        "g(f(x)) always",
+        "f(x)g(x)",
+        "f(x)+g(x)"
+      ],
+      "explanation": "Order matters.",
+      "keywords": [
+        "composition",
+        "functions"
+      ],
+      "source": "https://openstax.org/books/precalculus-2e/pages/3-3-composition-of-functions"
+    },
+    {
+      "seedId": "2b1edb6d-62b9-4b46-830b-a98c8a8f9af9",
+      "category": "science",
+      "navigationKeyword1": "precalc",
+      "navigationKeyword2": "functions",
+      "question": "Horizontal line test?",
+      "correctAnswer": "If any horizontal line hits graph more than once, not one-to-one",
+      "incorrectAnswers": [
+        "Vertical line test for inverse",
+        "Always passes",
+        "Only for polynomials"
+      ],
+      "explanation": "Needed for invertibility.",
+      "keywords": [
+        "horizontal-line-test",
+        "one-to-one"
+      ],
+      "source": "https://openstax.org/books/precalculus-2e/pages/3-4-inverse-functions"
+    },
+    {
+      "seedId": "474d28c1-9345-4514-9ff9-073e593ca5e9",
+      "category": "science",
+      "navigationKeyword1": "precalc",
+      "navigationKeyword2": "functions",
+      "question": "Increasing on interval means?",
+      "correctAnswer": "If x1 < x2 then f(x1) < f(x2)",
+      "incorrectAnswers": [
+        "f(x1) > f(x2)",
+        "Derivative zero",
+        "Always constant"
+      ],
+      "explanation": "Strict increase definition.",
+      "keywords": [
+        "increasing",
+        "behavior"
+      ],
+      "source": "https://openstax.org/books/precalculus-2e/pages/3-1-functions-and-function-notation"
+    },
+    {
+      "seedId": "d1e11c7c-f3ba-492a-a6a0-97a736d8ba41",
+      "category": "science",
+      "navigationKeyword1": "precalc",
+      "navigationKeyword2": "functions",
+      "question": "Inverse function property?",
+      "correctAnswer": "f(f^{-1}(x)) = x on appropriate domains",
+      "incorrectAnswers": [
+        "Always f^{-1}=f",
+        "Never exists",
+        "Same as reciprocal"
+      ],
+      "explanation": "One-to-one required.",
+      "keywords": [
+        "inverse",
+        "functions"
+      ],
+      "source": "https://openstax.org/books/precalculus-2e/pages/3-4-inverse-functions"
+    },
+    {
+      "seedId": "f6df9842-e4b4-4bcf-859d-5b8b63dce1b3",
+      "category": "science",
+      "navigationKeyword1": "precalc",
+      "navigationKeyword2": "functions",
+      "question": "Piecewise function?",
+      "correctAnswer": "Different rules on different intervals",
+      "incorrectAnswers": [
+        "Always linear",
+        "Cannot graph",
+        "Same as piecemeal integration only"
+      ],
+      "explanation": "Watch boundary points.",
+      "keywords": [
+        "piecewise",
+        "functions"
+      ],
+      "source": "https://openstax.org/books/precalculus-2e/pages/3-1-functions-and-function-notation"
+    },
+    {
+      "seedId": "31b187a7-382e-4426-922c-0673adc44d8c",
+      "category": "science",
+      "navigationKeyword1": "precalc",
+      "navigationKeyword2": "functions",
+      "question": "Transform y = a f(b(x\u2212h)) + k?",
+      "correctAnswer": "Stretch/compress, shift, reflect",
+      "incorrectAnswers": [
+        "Only shifts",
+        "Only stretches",
+        "h always changes period only"
+      ],
+      "explanation": "Track inside vs outside changes.",
+      "keywords": [
+        "transformations",
+        "graphs"
+      ],
+      "source": "https://openstax.org/books/precalculus-2e/pages/3-5-transformation-of-functions"
+    },
+    {
+      "seedId": "ee3ac6fd-f63e-48b6-9a05-fb4045a80c7f",
+      "category": "science",
+      "navigationKeyword1": "precalc",
+      "navigationKeyword2": "functions",
+      "question": "What is domain of a function?",
+      "correctAnswer": "Set of valid inputs",
+      "incorrectAnswers": [
+        "Set of outputs",
+        "Only y-values",
+        "Always all reals"
+      ],
+      "explanation": "Denominator zeros, sqrt negatives excluded often.",
+      "keywords": [
+        "domain",
+        "functions"
+      ],
+      "source": "https://openstax.org/books/precalculus-2e/pages/3-2-domain-and-range"
+    },
+    {
+      "seedId": "0075609b-ff27-4167-907f-7b28cda61ff1",
+      "category": "science",
+      "navigationKeyword1": "precalc",
+      "navigationKeyword2": "functions",
+      "question": "What is range?",
+      "correctAnswer": "Set of possible outputs",
+      "incorrectAnswers": [
+        "Inputs only",
+        "Always integers",
+        "Same as domain always"
+      ],
+      "explanation": "May need calculus/critical points for full range.",
+      "keywords": [
+        "range",
+        "functions"
+      ],
+      "source": "https://openstax.org/books/precalculus-2e/pages/3-2-domain-and-range"
+    },
+    {
+      "seedId": "7e7858c7-903f-4136-8444-a51e12c6b8bf",
+      "category": "science",
+      "navigationKeyword1": "precalc",
+      "navigationKeyword2": "functions",
+      "question": "When is function even?",
+      "correctAnswer": "f(\u2212x) = f(x)",
+      "incorrectAnswers": [
+        "f(\u2212x) = \u2212f(x)",
+        "Always true",
+        "Never symmetric"
+      ],
+      "explanation": "Symmetric about y-axis.",
+      "keywords": [
+        "even-function",
+        "symmetry"
+      ],
+      "source": "https://openstax.org/books/precalculus-2e/pages/3-3-composition-of-functions"
+    },
+    {
+      "seedId": "f6034854-6073-4c23-b1e3-6d425cd4635c",
+      "category": "science",
+      "navigationKeyword1": "precalc",
+      "navigationKeyword2": "functions",
+      "question": "When is function odd?",
+      "correctAnswer": "f(\u2212x) = \u2212f(x)",
+      "incorrectAnswers": [
+        "f(\u2212x) = f(x)",
+        "Always even",
+        "No tests"
+      ],
+      "explanation": "Symmetric about origin.",
+      "keywords": [
+        "odd-function",
+        "symmetry"
+      ],
+      "source": "https://openstax.org/books/precalculus-2e/pages/3-3-composition-of-functions"
+    },
+    {
+      "seedId": "64ffdfb4-ec99-4596-ab21-96a2aeaec5eb",
+      "category": "science",
+      "navigationKeyword1": "precalc",
+      "navigationKeyword2": "limits",
+      "question": "Continuity at a requires?",
+      "correctAnswer": "lim f = f(a) and f(a) defined",
+      "incorrectAnswers": [
+        "Limit enough alone",
+        "Derivative exists",
+        "Only polynomials"
+      ],
+      "explanation": "Three-part check.",
+      "keywords": [
+        "continuity",
+        "limits"
+      ],
+      "source": "https://openstax.org/books/calculus-volume-1/pages/2-4-continuity"
+    },
+    {
+      "seedId": "718fd00a-3591-4cea-9fd5-e650c29662d2",
+      "category": "science",
+      "navigationKeyword1": "precalc",
+      "navigationKeyword2": "limits",
+      "question": "End behavior of polynomial with positive leading degree?",
+      "correctAnswer": "Odd: opposite infinities; Even: same infinity",
+      "incorrectAnswers": [
+        "Always bounded",
+        "Always horizontal asymptote",
+        "Always oscillates"
+      ],
+      "explanation": "Sign of leading coefficient matters.",
+      "keywords": [
+        "end-behavior",
+        "polynomial"
+      ],
+      "source": "https://openstax.org/books/precalculus-2e/pages/3-3-composition-of-functions"
+    },
+    {
+      "seedId": "2e25ead2-5bb8-4f11-945a-8566bb2fb2fe",
+      "category": "science",
+      "navigationKeyword1": "precalc",
+      "navigationKeyword2": "limits",
+      "question": "Horizontal asymptote rational function (deg top < deg bot)?",
+      "correctAnswer": "y = 0",
+      "incorrectAnswers": [
+        "No HA",
+        "y = 1 always",
+        "Same as oblique always"
+      ],
+      "explanation": "Compare degrees.",
+      "keywords": [
+        "horizontal-asymptote",
+        "rational"
+      ],
+      "source": "https://openstax.org/books/calculus-volume-1/pages/4-3-limits-at-infinity"
+    },
+    {
+      "seedId": "3a694e53-eab5-480d-a8fa-557b115f8cd2",
+      "category": "science",
+      "navigationKeyword1": "precalc",
+      "navigationKeyword2": "limits",
+      "question": "Indeterminate form 0/0 suggests?",
+      "correctAnswer": "Algebra or L\u2019H\u00f4pital later in calc",
+      "incorrectAnswers": [
+        "Always 0",
+        "Always 1",
+        "No techniques"
+      ],
+      "explanation": "Precalc: factor/rationalize.",
+      "keywords": [
+        "indeterminate",
+        "algebra"
+      ],
+      "source": "https://openstax.org/books/calculus-volume-1/pages/2-2-limit-of-a-function"
+    },
+    {
+      "seedId": "f7041bcf-ed36-4e43-b916-08bcfb51647e",
+      "category": "science",
+      "navigationKeyword1": "precalc",
+      "navigationKeyword2": "limits",
+      "question": "Limit lim_{x\u2192a} f(x) = L means?",
+      "correctAnswer": "f(x) arbitrarily close to L when x near a",
+      "incorrectAnswers": [
+        "f(a) must equal L always",
+        "Only one-sided always",
+        "L must be integer"
+      ],
+      "explanation": "Value at a may differ or undefined.",
+      "keywords": [
+        "limit-definition",
+        "calculus"
+      ],
+      "source": "https://openstax.org/books/calculus-volume-1/pages/2-5-precise-definition-of-a-limit"
+    },
+    {
+      "seedId": "a51b4cb7-a971-4f4f-ba78-bcc9a24cbef6",
+      "category": "science",
+      "navigationKeyword1": "precalc",
+      "navigationKeyword2": "limits",
+      "question": "Limit may exist if?",
+      "correctAnswer": "Left and right limits equal",
+      "incorrectAnswers": [
+        "Always if f(a) defined",
+        "Never if discontinuous",
+        "Only polynomials"
+      ],
+      "explanation": "Removable discontinuity can still have limit.",
+      "keywords": [
+        "one-sided-limit",
+        "continuity"
+      ],
+      "source": "https://openstax.org/books/calculus-volume-1/pages/2-2-limit-of-a-function"
+    },
+    {
+      "seedId": "8a5d1a08-b391-48f5-9ece-56bd64915bcf",
+      "category": "science",
+      "navigationKeyword1": "precalc",
+      "navigationKeyword2": "limits",
+      "question": "Piecewise limit check?",
+      "correctAnswer": "Compare left/right at break",
+      "incorrectAnswers": [
+        "Only right",
+        "Only value at point",
+        "Never needed"
+      ],
+      "explanation": "Match branches.",
+      "keywords": [
+        "piecewise",
+        "limits"
+      ],
+      "source": "https://openstax.org/books/calculus-volume-1/pages/2-2-limit-of-a-function"
+    },
+    {
+      "seedId": "378bb868-9a69-40da-bc71-fc27aa6b42b2",
+      "category": "science",
+      "navigationKeyword1": "precalc",
+      "navigationKeyword2": "limits",
+      "question": "Removable discontinuity?",
+      "correctAnswer": "Limit exists but \u2260 f(a) or f(a) undefined",
+      "incorrectAnswers": [
+        "Jump only",
+        "Infinite only",
+        "No limit"
+      ],
+      "explanation": "Can \u2018fill hole\u2019.",
+      "keywords": [
+        "removable",
+        "discontinuity"
+      ],
+      "source": "https://openstax.org/books/calculus-volume-1/pages/2-4-continuity"
+    },
+    {
+      "seedId": "e5729d6f-5a3a-4d48-898d-e2798bbc273c",
+      "category": "science",
+      "navigationKeyword1": "precalc",
+      "navigationKeyword2": "limits",
+      "question": "Squeeze theorem idea?",
+      "correctAnswer": "Bound f between g and h with same limit",
+      "incorrectAnswers": [
+        "Multiply limits",
+        "Always use L\u2019H\u00f4pital",
+        "Only for series"
+      ],
+      "explanation": "Proves trig limits.",
+      "keywords": [
+        "squeeze-theorem",
+        "limits"
+      ],
+      "source": "https://openstax.org/books/calculus-volume-1/pages/2-3-limits-of-trigonometric-functions"
+    },
+    {
+      "seedId": "3cbc7886-05ca-4cf8-b78c-0b0f1a697f2c",
+      "category": "science",
+      "navigationKeyword1": "precalc",
+      "navigationKeyword2": "limits",
+      "question": "Vertical asymptote suggests?",
+      "correctAnswer": "Function grows unbounded near point",
+      "incorrectAnswers": [
+        "Horizontal line always",
+        "Limit always exists finite",
+        "Always removable"
+      ],
+      "explanation": "Rational zeros of denominator.",
+      "keywords": [
+        "vertical-asymptote",
+        "limits"
+      ],
+      "source": "https://openstax.org/books/calculus-volume-1/pages/2-2-limit-of-a-function"
+    },
+    {
+      "seedId": "2f965510-219f-4f17-ad4b-6e5033bda36d",
+      "category": "science",
+      "navigationKeyword1": "precalc",
+      "navigationKeyword2": "limits",
+      "question": "lim_{x\u21920} sin x / x?",
+      "correctAnswer": "1",
+      "incorrectAnswers": [
+        "0",
+        "\u221e",
+        "\u22121"
+      ],
+      "explanation": "Fundamental trig limit.",
+      "keywords": [
+        "trig-limit",
+        "squeeze"
+      ],
+      "source": "https://openstax.org/books/calculus-volume-1/pages/2-3-limits-of-trigonometric-functions"
+    },
+    {
+      "seedId": "e4b8bfe6-4fd7-4ca8-a3ee-aff66a560c3c",
+      "category": "science",
+      "navigationKeyword1": "precalc",
+      "navigationKeyword2": "limits",
+      "question": "lim_{x\u2192\u221e} (1 + 1/x)^x?",
+      "correctAnswer": "e",
+      "incorrectAnswers": [
+        "1",
+        "0",
+        "\u03c0"
+      ],
+      "explanation": "Defines Euler\u2019s number.",
+      "keywords": [
+        "e-limit",
+        "sequences"
+      ],
+      "source": "https://openstax.org/books/calculus-volume-1/pages/6-7-lhopitals-rule"
+    },
+    {
+      "seedId": "e08ab55b-82d3-401b-9ee2-f993a40cea72",
+      "category": "science",
+      "navigationKeyword1": "precalc",
+      "navigationKeyword2": "matrices",
+      "question": "2\u00d72 determinant?",
+      "correctAnswer": "ad \u2212 bc for [[a,b],[c,d]]",
+      "incorrectAnswers": [
+        "a+b+c+d",
+        "ad+bc",
+        "ac\u2212bd"
+      ],
+      "explanation": "Invertible iff nonzero.",
+      "keywords": [
+        "determinant",
+        "2x2"
+      ],
+      "source": "https://openstax.org/books/precalculus-2e/pages/9-7-solving-systems-with-inverses"
+    },
+    {
+      "seedId": "b3a147e2-b63c-4972-b051-2f93a3d7bdc6",
+      "category": "science",
+      "navigationKeyword1": "precalc",
+      "navigationKeyword2": "matrices",
+      "question": "Augmented matrix?",
+      "correctAnswer": "[A|b]",
+      "incorrectAnswers": [
+        "Only A",
+        "Only b",
+        "A^2"
+      ],
+      "explanation": "Row reduce for solutions.",
+      "keywords": [
+        "augmented",
+        "rref"
+      ],
+      "source": "https://openstax.org/books/precalculus-2e/pages/9-6-solving-systems-with-gaussian-elimination"
+    },
+    {
+      "seedId": "b10cfb60-5502-4850-ba23-966cdc5d43d4",
+      "category": "science",
+      "navigationKeyword1": "precalc",
+      "navigationKeyword2": "matrices",
+      "question": "Coefficient matrix?",
+      "correctAnswer": "Matrix of variable coefficients without constants",
+      "incorrectAnswers": [
+        "Includes RHS column inside",
+        "Only constants",
+        "Identity always"
+      ],
+      "explanation": "Ax=b structure.",
+      "keywords": [
+        "coefficient-matrix",
+        "systems"
+      ],
+      "source": "https://openstax.org/books/precalculus-2e/pages/9-6-solving-systems-with-gaussian-elimination"
+    },
+    {
+      "seedId": "12048e7d-a234-4654-9cb9-755182492d1d",
+      "category": "science",
+      "navigationKeyword1": "precalc",
+      "navigationKeyword2": "matrices",
+      "question": "Encoding networks with matrices?",
+      "correctAnswer": "Adjacency/weights in graphs",
+      "incorrectAnswers": [
+        "Impossible",
+        "Only calculus",
+        "Only 1\u00d71"
+      ],
+      "explanation": "Discrete math link.",
+      "keywords": [
+        "adjacency",
+        "graphs"
+      ],
+      "source": "https://en.wikipedia.org/wiki/Adjacency_matrix"
+    },
+    {
+      "seedId": "96f36af1-2cd8-454e-bf12-c7f4ce4dff28",
+      "category": "science",
+      "navigationKeyword1": "precalc",
+      "navigationKeyword2": "matrices",
+      "question": "Identity matrix property?",
+      "correctAnswer": "AI = IA = A for compatible A",
+      "incorrectAnswers": [
+        "A+I = 0",
+        "AI = 0",
+        "Never commutes"
+      ],
+      "explanation": "Ones on diagonal.",
+      "keywords": [
+        "identity-matrix",
+        "matrices"
+      ],
+      "source": "https://openstax.org/books/precalculus-2e/pages/9-7-solving-systems-with-inverses"
+    },
+    {
+      "seedId": "4d355fa2-79fc-4de8-b6d8-35a4eaaffe67",
+      "category": "science",
+      "navigationKeyword1": "precalc",
+      "navigationKeyword2": "matrices",
+      "question": "Inverse matrix?",
+      "correctAnswer": "A^{-1} with AA^{-1}=I",
+      "incorrectAnswers": [
+        "Always exists",
+        "Same as transpose",
+        "Only vectors"
+      ],
+      "explanation": "Square and det\u22600.",
+      "keywords": [
+        "matrix-inverse",
+        "solve"
+      ],
+      "source": "https://openstax.org/books/precalculus-2e/pages/9-7-solving-systems-with-inverses"
+    },
+    {
+      "seedId": "bbb94281-8bdb-4384-92cb-12eaa30fd9eb",
+      "category": "science",
+      "navigationKeyword1": "precalc",
+      "navigationKeyword2": "matrices",
+      "question": "Matrix addition requirement?",
+      "correctAnswer": "Same dimensions",
+      "incorrectAnswers": [
+        "Any sizes",
+        "Square only",
+        "Must multiply first"
+      ],
+      "explanation": "Elementwise.",
+      "keywords": [
+        "matrix-add",
+        "algebra"
+      ],
+      "source": "https://openstax.org/books/precalculus-2e/pages/9-5-matrices-and-matrix-operations"
+    },
+    {
+      "seedId": "0fea5416-c7b1-40e6-9269-b6a17f9d47f9",
+      "category": "science",
+      "navigationKeyword1": "precalc",
+      "navigationKeyword2": "matrices",
+      "question": "Scalar multiplication?",
+      "correctAnswer": "Multiply every entry by scalar",
+      "incorrectAnswers": [
+        "Only diagonal",
+        "Only first row",
+        "Determinant only"
+      ],
+      "explanation": "Linear operation.",
+      "keywords": [
+        "scalar-multiple",
+        "matrices"
+      ],
+      "source": "https://openstax.org/books/precalculus-2e/pages/9-5-matrices-and-matrix-operations"
+    },
+    {
+      "seedId": "b083bf51-5a1e-48a2-83df-8f38913d4d1b",
+      "category": "science",
+      "navigationKeyword1": "precalc",
+      "navigationKeyword2": "matrices",
+      "question": "Solve Ax=b with inverse?",
+      "correctAnswer": "x = A^{-1}b if invertible",
+      "incorrectAnswers": [
+        "x = Ab",
+        "x = bA",
+        "x = A/b"
+      ],
+      "explanation": "Conceptual method.",
+      "keywords": [
+        "linear-systems",
+        "matrix"
+      ],
+      "source": "https://openstax.org/books/precalculus-2e/pages/9-7-solving-systems-with-inverses"
+    },
+    {
+      "seedId": "47d04753-b9af-440f-ae8d-8bee3040e0b9",
+      "category": "science",
+      "navigationKeyword1": "precalc",
+      "navigationKeyword2": "matrices",
+      "question": "Transpose (A^T)ij?",
+      "correctAnswer": "Aji",
+      "incorrectAnswers": [
+        "Aij",
+        "\u2212Aij",
+        "1/Aij"
+      ],
+      "explanation": "Rows become columns.",
+      "keywords": [
+        "transpose",
+        "matrices"
+      ],
+      "source": "https://openstax.org/books/precalculus-2e/pages/9-5-matrices-and-matrix-operations"
+    },
+    {
+      "seedId": "ebcdc2c2-9a3e-46fb-a5ff-69cf11e98db9",
+      "category": "science",
+      "navigationKeyword1": "precalc",
+      "navigationKeyword2": "matrices",
+      "question": "When is AB defined?",
+      "correctAnswer": "Columns of A = rows of B",
+      "incorrectAnswers": [
+        "Always",
+        "Same size only",
+        "Never"
+      ],
+      "explanation": "(m\u00d7n)(n\u00d7p) \u2192 m\u00d7p.",
+      "keywords": [
+        "matrix-multiply",
+        "dimensions"
+      ],
+      "source": "https://openstax.org/books/precalculus-2e/pages/9-5-matrices-and-matrix-operations"
+    },
+    {
+      "seedId": "e72558e9-5c00-49d7-88c6-46dea3b10138",
+      "category": "science",
+      "navigationKeyword1": "precalc",
+      "navigationKeyword2": "matrices",
+      "question": "Zero matrix property under addition?",
+      "correctAnswer": "Identity for matrix addition",
+      "incorrectAnswers": [
+        "Identity for multiply",
+        "No effect",
+        "Always invertible"
+      ],
+      "explanation": "A+0=A.",
+      "keywords": [
+        "zero-matrix",
+        "algebra"
+      ],
+      "source": "https://openstax.org/books/precalculus-2e/pages/9-5-matrices-and-matrix-operations"
+    },
+    {
+      "seedId": "ab242cdd-3bae-4f2c-aa57-fb66d7c681b4",
+      "category": "science",
+      "navigationKeyword1": "precalc",
+      "navigationKeyword2": "sequences",
+      "question": "Alternating series test idea?",
+      "correctAnswer": "Terms decrease to 0 with alternating signs (conditions)",
+      "incorrectAnswers": [
+        "Always diverges",
+        "Never needs decreasing",
+        "Only for positive terms"
+      ],
+      "explanation": "Calculus link preview.",
+      "keywords": [
+        "alternating-series",
+        "convergence"
+      ],
+      "source": "https://openstax.org/books/calculus-volume-2/pages/5-5-alternating-series"
+    },
+    {
+      "seedId": "9cf31b9e-9489-4fa7-a147-fc694266ebcc",
+      "category": "science",
+      "navigationKeyword1": "precalc",
+      "navigationKeyword2": "sequences",
+      "question": "Arithmetic sequence nth term?",
+      "correctAnswer": "a_n = a1 + (n\u22121)d",
+      "incorrectAnswers": [
+        "a1 r^{n}",
+        "n^2 always",
+        "a1/d^n"
+      ],
+      "explanation": "Constant difference d.",
+      "keywords": [
+        "arithmetic-sequence",
+        "nth-term"
+      ],
+      "source": "https://openstax.org/books/precalculus-2e/pages/12-2-arithmetic-sequences"
+    },
+    {
+      "seedId": "0ec4f51c-5ad4-422f-b106-17d3f4bbb225",
+      "category": "science",
+      "navigationKeyword1": "precalc",
+      "navigationKeyword2": "sequences",
+      "question": "Arithmetic series sum 1..n?",
+      "correctAnswer": "S_n = n/2 (a1 + a_n)",
+      "incorrectAnswers": [
+        "n a1",
+        "a_n^2",
+        "n^3"
+      ],
+      "explanation": "Gauss pairing idea.",
+      "keywords": [
+        "arithmetic-series",
+        "sum"
+      ],
+      "source": "https://openstax.org/books/precalculus-2e/pages/12-2-arithmetic-sequences"
+    },
+    {
+      "seedId": "82daa428-b938-491b-8da7-17adbbf20d3b",
+      "category": "science",
+      "navigationKeyword1": "precalc",
+      "navigationKeyword2": "sequences",
+      "question": "Compound interest as sequence?",
+      "correctAnswer": "Geometric growth per period",
+      "incorrectAnswers": [
+        "Arithmetic always",
+        "Constant",
+        "Fibonacci"
+      ],
+      "explanation": "Discrete compounding steps.",
+      "keywords": [
+        "compound-interest",
+        "sequences"
+      ],
+      "source": "https://www.khanacademy.org/economics-finance-domain/core-finance/interest-tutorial"
+    },
+    {
+      "seedId": "9f88b015-0e44-4093-a1ca-c53b47b9fb05",
+      "category": "science",
+      "navigationKeyword1": "precalc",
+      "navigationKeyword2": "sequences",
+      "question": "Fibonacci recursion?",
+      "correctAnswer": "F_n = F_{n\u22121} + F_{n\u22122}",
+      "incorrectAnswers": [
+        "F_n = 2F_{n\u22121}",
+        "F_n = n^2",
+        "F_n = n!"
+      ],
+      "explanation": "Classic example.",
+      "keywords": [
+        "fibonacci",
+        "recursion"
+      ],
+      "source": "https://en.wikipedia.org/wiki/Fibonacci_sequence"
+    },
+    {
+      "seedId": "fc72c038-49b7-490e-b3ec-a0c985b3c98e",
+      "category": "science",
+      "navigationKeyword1": "precalc",
+      "navigationKeyword2": "sequences",
+      "question": "Finite geometric sum (r\u22601)?",
+      "correctAnswer": "S_n = a1(1\u2212r^n)/(1\u2212r)",
+      "incorrectAnswers": [
+        "a1/(1\u2212r)",
+        "n a1",
+        "a1 r^n"
+      ],
+      "explanation": "Derivable by algebra trick.",
+      "keywords": [
+        "geometric-series",
+        "sum"
+      ],
+      "source": "https://openstax.org/books/precalculus-2e/pages/12-3-geometric-sequences"
+    },
+    {
+      "seedId": "f5e51138-0bb7-47e0-bde8-f3766dad387f",
+      "category": "science",
+      "navigationKeyword1": "precalc",
+      "navigationKeyword2": "sequences",
+      "question": "Geometric sequence nth term?",
+      "correctAnswer": "a_n = a1 r^{n\u22121}",
+      "incorrectAnswers": [
+        "a1 + (n\u22121)r",
+        "a1 n^r",
+        "r/a1"
+      ],
+      "explanation": "Constant ratio r.",
+      "keywords": [
+        "geometric-sequence",
+        "ratio"
+      ],
+      "source": "https://openstax.org/books/precalculus-2e/pages/12-3-geometric-sequences"
+    },
+    {
+      "seedId": "7f0a47cc-aac5-4250-aae6-fe9332c4f442",
+      "category": "science",
+      "navigationKeyword1": "precalc",
+      "navigationKeyword2": "sequences",
+      "question": "Infinite geometric series converges when?",
+      "correctAnswer": "|r| < 1",
+      "incorrectAnswers": [
+        "|r| > 1 always",
+        "r = 1 always",
+        "Never converges"
+      ],
+      "explanation": "Sum a/(1\u2212r).",
+      "keywords": [
+        "infinite-series",
+        "convergence"
+      ],
+      "source": "https://openstax.org/books/precalculus-2e/pages/12-4-series-and-their-notations"
+    },
+    {
+      "seedId": "a84d0e60-6275-4830-94bb-8657eb148614",
+      "category": "science",
+      "navigationKeyword1": "precalc",
+      "navigationKeyword2": "sequences",
+      "question": "Recursive vs explicit?",
+      "correctAnswer": "Recursive uses prior terms; explicit uses n directly",
+      "incorrectAnswers": [
+        "Same thing",
+        "Recursive never exists",
+        "Explicit always shorter"
+      ],
+      "explanation": "Both valid.",
+      "keywords": [
+        "recursive",
+        "sequences"
+      ],
+      "source": "https://openstax.org/books/precalculus-2e/pages/12-1-sequences"
+    },
+    {
+      "seedId": "b5a09917-1faa-4a91-a7d7-e11dcbe7fc29",
+      "category": "science",
+      "navigationKeyword1": "precalc",
+      "navigationKeyword2": "sequences",
+      "question": "Sigma notation \u03a3?",
+      "correctAnswer": "Summation over index",
+      "incorrectAnswers": [
+        "Product only",
+        "Integral always",
+        "Union of sets"
+      ],
+      "explanation": "\u2211_{k=1}^n a_k.",
+      "keywords": [
+        "sigma-notation",
+        "series"
+      ],
+      "source": "https://openstax.org/books/precalculus-2e/pages/12-4-series-and-their-notations"
+    },
+    {
+      "seedId": "7017bcca-483f-4cca-a7f1-804199af8b47",
+      "category": "science",
+      "navigationKeyword1": "precalc",
+      "navigationKeyword2": "sequences",
+      "question": "Triangular numbers formula?",
+      "correctAnswer": "T_n = n(n+1)/2",
+      "incorrectAnswers": [
+        "n^2",
+        "2^n",
+        "n!"
+      ],
+      "explanation": "Sum 1+2+\u2026+n.",
+      "keywords": [
+        "triangular-numbers",
+        "sum"
+      ],
+      "source": "https://www.mathsisfun.com/algebra/triangular-numbers.html"
+    },
+    {
+      "seedId": "d6cc4d32-c947-4ab9-962c-02a32f0fb458",
+      "category": "science",
+      "navigationKeyword1": "precalc",
+      "navigationKeyword2": "sequences",
+      "question": "What is a series?",
+      "correctAnswer": "Sum of sequence terms",
+      "incorrectAnswers": [
+        "List without adding",
+        "Only infinite",
+        "Only geometric"
+      ],
+      "explanation": "Partial sums matter.",
+      "keywords": [
+        "series",
+        "sequences"
+      ],
+      "source": "https://openstax.org/books/precalculus-2e/pages/12-4-series-and-their-notations"
+    },
+    {
+      "seedId": "ff488dd2-2b85-42c0-ab9a-de301aa295b3",
+      "category": "science",
+      "navigationKeyword1": "precalc",
+      "navigationKeyword2": "vectors",
+      "question": "3D cross product u\u00d7v?",
+      "correctAnswer": "Vector perpendicular to u and v",
+      "incorrectAnswers": [
+        "Scalar always",
+        "Same as dot",
+        "Always parallel to u"
+      ],
+      "explanation": "Magnitude ||u|| ||v|| sin \u03b8.",
+      "keywords": [
+        "cross-product",
+        "r3"
+      ],
+      "source": "https://openstax.org/books/calculus-volume-3/pages/2-4-the-cross-product"
+    },
+    {
+      "seedId": "9cdb9dd9-8bb5-4d39-8986-79cea88ed512",
+      "category": "science",
+      "navigationKeyword1": "precalc",
+      "navigationKeyword2": "vectors",
+      "question": "Bearing vs component form?",
+      "correctAnswer": "Convert angle and magnitude to (x,y)",
+      "incorrectAnswers": [
+        "Cannot convert",
+        "Only polar graphs",
+        "Same as complex always"
+      ],
+      "explanation": "Use trig.",
+      "keywords": [
+        "components",
+        "trig"
+      ],
+      "source": "https://www.khanacademy.org/math/precalculus/vectors-precalc"
+    },
+    {
+      "seedId": "81a452ac-bb83-49ce-8cc1-c8090839490e",
+      "category": "science",
+      "navigationKeyword1": "precalc",
+      "navigationKeyword2": "vectors",
+      "question": "Dot product u\u00b7v (2D)?",
+      "correctAnswer": "u1v1 + u2v2",
+      "incorrectAnswers": [
+        "u1v2 + u2v1",
+        "u\u00d7v",
+        "u/v"
+      ],
+      "explanation": "Related to angle.",
+      "keywords": [
+        "dot-product",
+        "vectors"
+      ],
+      "source": "https://openstax.org/books/precalculus-2e/pages/8-5-dot-product"
+    },
+    {
+      "seedId": "f90b440a-cebc-4b98-811d-4a25e886dbdc",
+      "category": "science",
+      "navigationKeyword1": "precalc",
+      "navigationKeyword2": "vectors",
+      "question": "Force as vector?",
+      "correctAnswer": "Has magnitude and direction",
+      "incorrectAnswers": [
+        "Scalar only",
+        "Only positive",
+        "No components"
+      ],
+      "explanation": "Statics sums vector forces.",
+      "keywords": [
+        "force-vector",
+        "physics"
+      ],
+      "source": "https://openstax.org/books/precalculus-2e/pages/8-4-vectors"
+    },
+    {
+      "seedId": "83d67e0c-8b94-4671-b232-e9abbcf5afea",
+      "category": "science",
+      "navigationKeyword1": "precalc",
+      "navigationKeyword2": "vectors",
+      "question": "Position vector?",
+      "correctAnswer": "From origin to point",
+      "incorrectAnswers": [
+        "Always zero",
+        "Only in 3D",
+        "Same as displacement always"
+      ],
+      "explanation": "Describes location.",
+      "keywords": [
+        "position",
+        "coordinates"
+      ],
+      "source": "https://openstax.org/books/precalculus-2e/pages/8-4-vectors"
+    },
+    {
+      "seedId": "b33b91ce-8314-4f80-a17f-5a4374e462fe",
+      "category": "science",
+      "navigationKeyword1": "precalc",
+      "navigationKeyword2": "vectors",
+      "question": "Scalar projection of u onto v?",
+      "correctAnswer": "(u\u00b7v) / ||v||",
+      "incorrectAnswers": [
+        "||u||",
+        "u\u00d7v",
+        "u+v"
+      ],
+      "explanation": "Signed length along v direction; vector proj scales unit v.",
+      "keywords": [
+        "projection",
+        "vectors"
+      ],
+      "source": "https://openstax.org/books/precalculus-2e/pages/8-5-dot-product"
+    },
+    {
+      "seedId": "e5d6ebe5-a89f-4425-8988-1823dd32ae80",
+      "category": "science",
+      "navigationKeyword1": "precalc",
+      "navigationKeyword2": "vectors",
+      "question": "Unit vector direction of v?",
+      "correctAnswer": "v / ||v||",
+      "incorrectAnswers": [
+        "v \u00d7 v",
+        "||v|| v",
+        "v^2"
+      ],
+      "explanation": "Normalize to length 1.",
+      "keywords": [
+        "unit-vector",
+        "direction"
+      ],
+      "source": "https://openstax.org/books/precalculus-2e/pages/8-4-vectors"
+    },
+    {
+      "seedId": "14bfe2b4-5e36-4f98-bce3-519ede0f5e7f",
+      "category": "science",
+      "navigationKeyword1": "precalc",
+      "navigationKeyword2": "vectors",
+      "question": "Vector addition geometrically?",
+      "correctAnswer": "Tip-to-tail or parallelogram",
+      "incorrectAnswers": [
+        "Multiply lengths",
+        "Only subtract",
+        "Always perpendicular"
+      ],
+      "explanation": "Component-wise algebraically.",
+      "keywords": [
+        "vector-add",
+        "geometry"
+      ],
+      "source": "https://openstax.org/books/precalculus-2e/pages/8-4-vectors"
+    },
+    {
+      "seedId": "a4f1f6c1-af15-4398-b4ef-743c08a5fe70",
+      "category": "science",
+      "navigationKeyword1": "precalc",
+      "navigationKeyword2": "vectors",
+      "question": "Vector between points A and B?",
+      "correctAnswer": "B \u2212 A",
+      "incorrectAnswers": [
+        "A + B",
+        "A \u00d7 B",
+        "B/A"
+      ],
+      "explanation": "Displacement vector.",
+      "keywords": [
+        "displacement",
+        "vectors"
+      ],
+      "source": "https://openstax.org/books/precalculus-2e/pages/8-4-vectors"
+    },
+    {
+      "seedId": "ed62d86f-8410-4aa0-92cf-239f3703863f",
+      "category": "science",
+      "navigationKeyword1": "precalc",
+      "navigationKeyword2": "vectors",
+      "question": "Vector magnitude from components (2D)?",
+      "correctAnswer": "\u221a(x^2 + y^2)",
+      "incorrectAnswers": [
+        "x + y",
+        "|x|+|y| always",
+        "xy"
+      ],
+      "explanation": "Pythagorean theorem.",
+      "keywords": [
+        "magnitude",
+        "vectors"
+      ],
+      "source": "https://openstax.org/books/precalculus-2e/pages/8-4-vectors"
+    },
+    {
+      "seedId": "1f81edf9-0d2b-4480-a99f-8ca0ef78e893",
+      "category": "science",
+      "navigationKeyword1": "precalc",
+      "navigationKeyword2": "vectors",
+      "question": "Work as dot product?",
+      "correctAnswer": "W = F\u00b7d (constant force)",
+      "incorrectAnswers": [
+        "F \u00d7 d",
+        "F + d",
+        "Fd always scalar without cos"
+      ],
+      "explanation": "Component along displacement.",
+      "keywords": [
+        "work",
+        "dot-product"
+      ],
+      "source": "https://openstax.org/books/precalculus-2e/pages/8-5-dot-product"
+    },
+    {
+      "seedId": "545d2ded-bf15-40ff-83a8-071e7c8a59fa",
+      "category": "science",
+      "navigationKeyword1": "precalc",
+      "navigationKeyword2": "vectors",
+      "question": "u\u00b7v = ||u|| ||v|| cos \u03b8 means?",
+      "correctAnswer": "Angle between vectors in R^n",
+      "incorrectAnswers": [
+        "Always 90\u00b0",
+        "Always 0",
+        "Undefined"
+      ],
+      "explanation": "Orthogonal if dot zero (nonzero vectors).",
+      "keywords": [
+        "angle",
+        "dot-product"
+      ],
+      "source": "https://openstax.org/books/precalculus-2e/pages/8-5-dot-product"
+    }
+  ]
+}

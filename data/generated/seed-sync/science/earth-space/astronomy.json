@@ -1,0 +1,235 @@
+{
+  "schemaVersion": 1,
+  "seedSet": "core-public-items",
+  "deltaPreviewLimit": 200,
+  "items": [
+    {
+      "seedId": "6c833b70-1ab5-4ea3-886b-7332d8c3ec02",
+      "category": "science",
+      "navigationKeyword1": "earth-space",
+      "navigationKeyword2": "astronomy",
+      "question": "In Earth\u2013space context, what is a satellite?",
+      "correctAnswer": "Object orbiting a planet",
+      "incorrectAnswers": [
+        "Only artificial",
+        "Only comets",
+        "Only asteroids"
+      ],
+      "explanation": "Moon is a natural satellite.",
+      "keywords": [
+        "satellite",
+        "orbit"
+      ],
+      "source": "https://science.nasa.gov/earth/"
+    },
+    {
+      "seedId": "b862eec7-b27a-4653-84e3-788859946d11",
+      "category": "science",
+      "navigationKeyword1": "earth-space",
+      "navigationKeyword2": "astronomy",
+      "question": "What causes seasons on Earth?",
+      "correctAnswer": "Tilt of Earth\u2019s axis relative to orbit",
+      "incorrectAnswers": [
+        "Changing Earth-Sun distance alone",
+        "Solar flares",
+        "Moon phases"
+      ],
+      "explanation": "Axial tilt changes solar intensity per hemisphere.",
+      "keywords": [
+        "seasons",
+        "axial-tilt"
+      ],
+      "source": "https://science.nasa.gov/earth/"
+    },
+    {
+      "seedId": "188eab23-685b-4454-8ccb-608adc223390",
+      "category": "science",
+      "navigationKeyword1": "earth-space",
+      "navigationKeyword2": "astronomy",
+      "question": "What is Doppler shift for stars?",
+      "correctAnswer": "Motion changes observed wavelengths",
+      "incorrectAnswers": [
+        "Changes star color only permanently",
+        "Means stars rotate backwards",
+        "Only for sound in air"
+      ],
+      "explanation": "Redshift/blueshift indicates line-of-sight velocity.",
+      "keywords": [
+        "doppler",
+        "spectroscopy"
+      ],
+      "source": "https://science.nasa.gov/universe/galaxies/"
+    },
+    {
+      "seedId": "1711f2c4-9579-4548-bf8f-dac9811e89e9",
+      "category": "science",
+      "navigationKeyword1": "earth-space",
+      "navigationKeyword2": "astronomy",
+      "question": "What is a constellation?",
+      "correctAnswer": "A named pattern of stars from Earth\u2019s viewpoint",
+      "incorrectAnswers": [
+        "A physical star cluster always",
+        "A galaxy always",
+        "A planet group"
+      ],
+      "explanation": "Patterns are cultural projections.",
+      "keywords": [
+        "constellations",
+        "sky"
+      ],
+      "source": "https://science.nasa.gov/skywatching/"
+    },
+    {
+      "seedId": "e7bd19b5-a79e-4004-890c-0e586aef7e7e",
+      "category": "science",
+      "navigationKeyword1": "earth-space",
+      "navigationKeyword2": "astronomy",
+      "question": "What is a light-year?",
+      "correctAnswer": "Distance light travels in one year",
+      "incorrectAnswers": [
+        "Time unit",
+        "Mass unit",
+        "Speed of sound distance"
+      ],
+      "explanation": "Used for interstellar distances.",
+      "keywords": [
+        "light-year",
+        "distance"
+      ],
+      "source": "https://science.nasa.gov/universe/galaxies/"
+    },
+    {
+      "seedId": "db155d64-964e-4087-b7d0-ff06af65c4a2",
+      "category": "science",
+      "navigationKeyword1": "earth-space",
+      "navigationKeyword2": "astronomy",
+      "question": "What is a lunar phase?",
+      "correctAnswer": "Sun\u2013Earth\u2013Moon geometry changing illuminated fraction seen",
+      "incorrectAnswers": [
+        "Moon emits its own light phases",
+        "Clouds on Moon",
+        "Earth\u2019s shadow always"
+      ],
+      "explanation": "Phases repeat monthly.",
+      "keywords": [
+        "moon-phases",
+        "geometry"
+      ],
+      "source": "https://science.nasa.gov/moon/"
+    },
+    {
+      "seedId": "04104764-e1b7-49c4-aa41-0398f522c444",
+      "category": "science",
+      "navigationKeyword1": "earth-space",
+      "navigationKeyword2": "astronomy",
+      "question": "What is a meteor?",
+      "correctAnswer": "Bright streak from meteoroid burning in atmosphere",
+      "incorrectAnswers": [
+        "A slow satellite",
+        "An asteroid in space always",
+        "A comet tail on Earth"
+      ],
+      "explanation": "Called meteorite if survives to ground.",
+      "keywords": [
+        "meteor",
+        "atmosphere"
+      ],
+      "source": "https://science.nasa.gov/solar-system/meteors-meteorites/"
+    },
+    {
+      "seedId": "83f22b69-06e4-44e8-aa4f-7b53e55703f8",
+      "category": "science",
+      "navigationKeyword1": "earth-space",
+      "navigationKeyword2": "astronomy",
+      "question": "What is an exoplanet?",
+      "correctAnswer": "Planet outside our solar system",
+      "incorrectAnswers": [
+        "Only dwarf planets",
+        "Only moons",
+        "Only asteroids"
+      ],
+      "explanation": "Detected via transits, RV, imaging.",
+      "keywords": [
+        "exoplanets",
+        "detection"
+      ],
+      "source": "https://science.nasa.gov/exoplanets/"
+    },
+    {
+      "seedId": "557ffd5c-bcdc-4b60-a264-56ee11b8fa38",
+      "category": "science",
+      "navigationKeyword1": "earth-space",
+      "navigationKeyword2": "astronomy",
+      "question": "What is habitable zone (informal)?",
+      "correctAnswer": "Region where liquid water could exist on a rocky planet",
+      "incorrectAnswers": [
+        "Where life is proven",
+        "Inside the Sun",
+        "Only on moons of Pluto"
+      ],
+      "explanation": "Depends on star luminosity and atmosphere.",
+      "keywords": [
+        "habitable-zone",
+        "exoplanets"
+      ],
+      "source": "https://science.nasa.gov/exoplanets/"
+    },
+    {
+      "seedId": "09424024-2e26-4818-849e-8ff51fa6445c",
+      "category": "science",
+      "navigationKeyword1": "earth-space",
+      "navigationKeyword2": "astronomy",
+      "question": "What is lunar eclipse (basic)?",
+      "correctAnswer": "Earth\u2019s shadow falls on the Moon",
+      "incorrectAnswers": [
+        "Moon blocks Earth",
+        "Sun blocks Moon",
+        "Only penumbra never"
+      ],
+      "explanation": "Occurs at full moon alignment.",
+      "keywords": [
+        "lunar-eclipse",
+        "moon"
+      ],
+      "source": "https://science.nasa.gov/eclipses/"
+    },
+    {
+      "seedId": "7443decd-b380-41df-88b1-2204869ba05d",
+      "category": "science",
+      "navigationKeyword1": "earth-space",
+      "navigationKeyword2": "astronomy",
+      "question": "What is solar eclipse (basic)?",
+      "correctAnswer": "Moon blocks Sun from a viewer\u2019s location",
+      "incorrectAnswers": [
+        "Earth blocks Sun",
+        "Mars blocks Sun",
+        "Sun blocks Moon"
+      ],
+      "explanation": "Requires new moon near node alignment.",
+      "keywords": [
+        "solar-eclipse",
+        "moon"
+      ],
+      "source": "https://science.nasa.gov/eclipses/"
+    },
+    {
+      "seedId": "9d2b07a7-fb9b-4032-871c-66911d634115",
+      "category": "science",
+      "navigationKeyword1": "earth-space",
+      "navigationKeyword2": "astronomy",
+      "question": "What is the ecliptic?",
+      "correctAnswer": "Apparent path of the Sun on the celestial sphere",
+      "incorrectAnswers": [
+        "Moon\u2019s orbit pole",
+        "Earth\u2019s equator line in sky",
+        "Milky Way center always"
+      ],
+      "explanation": "Planets roughly follow the ecliptic plane.",
+      "keywords": [
+        "ecliptic",
+        "sky"
+      ],
+      "source": "https://science.nasa.gov/skywatching/"
+    }
+  ]
+}

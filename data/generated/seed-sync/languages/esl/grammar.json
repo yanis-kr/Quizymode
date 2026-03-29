@@ -1,0 +1,127 @@
+{
+  "schemaVersion": 1,
+  "seedSet": "core-public-items",
+  "deltaPreviewLimit": 200,
+  "items": [
+    {
+      "seedId": "f282dfdb-d943-5358-9a91-cab8b8e6ff7f",
+      "category": "languages",
+      "navigationKeyword1": "esl",
+      "navigationKeyword2": "grammar",
+      "question": "Which form is correct in present simple for we?",
+      "correctAnswer": "We work here.",
+      "incorrectAnswers": [
+        "We works here.",
+        "We working here.",
+        "We be work here."
+      ],
+      "explanation": "With we, present simple uses the base verb without -s: we work.",
+      "keywords": [
+        "present-simple",
+        "subject-verb",
+        "esl-grammar"
+      ],
+      "source": "https://dictionary.cambridge.org/grammar/british-grammar/present-simple"
+    },
+    {
+      "seedId": "f9b039b9-5578-5b14-aafd-227e3d9fa394",
+      "category": "languages",
+      "navigationKeyword1": "esl",
+      "navigationKeyword2": "grammar",
+      "question": "Which preposition fits time on a clock: ___ 3 o'clock?",
+      "correctAnswer": "at",
+      "incorrectAnswers": [
+        "on",
+        "in",
+        "by"
+      ],
+      "explanation": "English often uses at with clock times, like at 3 o'clock.",
+      "keywords": [
+        "prepositions",
+        "time",
+        "esl-grammar"
+      ],
+      "source": "https://www.merriam-webster.com/dictionary/at"
+    },
+    {
+      "seedId": "073448f9-c03f-53a5-8607-b1091470c54d",
+      "category": "languages",
+      "navigationKeyword1": "esl",
+      "navigationKeyword2": "grammar",
+      "question": "Which question has standard word order?",
+      "correctAnswer": "Do you speak English?",
+      "incorrectAnswers": [
+        "You do speak English?",
+        "Speak you English?",
+        "English you speak?"
+      ],
+      "explanation": "Yes/no questions with most verbs use do/does before the subject: Do you...?",
+      "keywords": [
+        "questions",
+        "do-support",
+        "esl-grammar"
+      ],
+      "source": "https://dictionary.cambridge.org/grammar/british-grammar/questions-does-do-did"
+    },
+    {
+      "seedId": "25e349f2-89cd-5599-a181-ea8b773368f0",
+      "category": "languages",
+      "navigationKeyword1": "esl",
+      "navigationKeyword2": "grammar",
+      "question": "Which sentence uses a correctly?",
+      "correctAnswer": "I need a pen.",
+      "incorrectAnswers": [
+        "I need an pen.",
+        "I need pen.",
+        "I need the pen always."
+      ],
+      "explanation": "Use a before consonant sounds; pen starts with /p/, so a pen is standard.",
+      "keywords": [
+        "articles",
+        "a-an",
+        "esl-grammar"
+      ],
+      "source": "https://www.merriam-webster.com/words-at-play/is-it-a-or-an"
+    },
+    {
+      "seedId": "c80d9999-c06c-5068-b88c-274a3a1912bd",
+      "category": "languages",
+      "navigationKeyword1": "esl",
+      "navigationKeyword2": "grammar",
+      "question": "Which sentence uses the past of go?",
+      "correctAnswer": "Yesterday I went to school.",
+      "incorrectAnswers": [
+        "Yesterday I goed to school.",
+        "Yesterday I go to school.",
+        "Yesterday I going to school."
+      ],
+      "explanation": "Go is irregular; the past form is went, not goed.",
+      "keywords": [
+        "past-simple",
+        "irregular-verbs",
+        "esl-grammar"
+      ],
+      "source": "https://www.merriam-webster.com/dictionary/went"
+    },
+    {
+      "seedId": "257c6fef-6bdb-543d-bd7b-4878b43e8863",
+      "category": "languages",
+      "navigationKeyword1": "esl",
+      "navigationKeyword2": "grammar",
+      "question": "Which word completes the negative: She ___ not like coffee.",
+      "correctAnswer": "does",
+      "incorrectAnswers": [
+        "do",
+        "is",
+        "have"
+      ],
+      "explanation": "In present simple negatives, she takes does not (doesn't) before the base verb.",
+      "keywords": [
+        "negatives",
+        "present-simple",
+        "esl-grammar"
+      ],
+      "source": "https://dictionary.cambridge.org/grammar/british-grammar/negation"
+    }
+  ]
+}

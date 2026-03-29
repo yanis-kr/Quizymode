@@ -1,0 +1,1307 @@
+{
+  "schemaVersion": 1,
+  "seedSet": "core-public-items",
+  "deltaPreviewLimit": 200,
+  "items": [
+    {
+      "seedId": "a81d2a0d-16f8-46f3-ac04-b2a91d869c83",
+      "category": "geography",
+      "navigationKeyword1": "maps",
+      "navigationKeyword2": "compass",
+      "question": "Classical Mediterranean mariners labeled eight principal winds; what diagram recorded those directions?",
+      "correctAnswer": "the wind rose (rosa ventorum)",
+      "incorrectAnswers": [
+        "the Mercator tube",
+        "the anemometer wheel only",
+        "the rhumb line ledger"
+      ],
+      "explanation": "Britannica describes eight principal winds mapped on the classical wind rose.",
+      "keywords": [
+        "compass",
+        "wind-rose",
+        "directions"
+      ],
+      "source": "https://www.britannica.com/technology/navigation-technology"
+    },
+    {
+      "seedId": "b89c16b8-a959-4ad5-a7bc-564168013c20",
+      "category": "geography",
+      "navigationKeyword1": "maps",
+      "navigationKeyword2": "compass",
+      "question": "Early pilot books described routes using what kind of directional instructions?",
+      "correctAnswer": "wind directions between ports",
+      "incorrectAnswers": [
+        "GPS waypoints",
+        "magnetic anomaly grids",
+        "color codes for cargo"
+      ],
+      "explanation": "Britannica says periploi set courses between ports using wind directions.",
+      "keywords": [
+        "compass",
+        "pilot-books",
+        "winds"
+      ],
+      "source": "https://www.britannica.com/technology/navigation-technology"
+    },
+    {
+      "seedId": "032faa0e-0e75-46db-be5e-0e6cf16dcc20",
+      "category": "geography",
+      "navigationKeyword1": "maps",
+      "navigationKeyword2": "compass",
+      "question": "East and west are traditionally aligned with which Sun directions?",
+      "correctAnswer": "sunrise and sunset",
+      "incorrectAnswers": [
+        "solar midnight only",
+        "zenith at noon only",
+        "eclipse paths only"
+      ],
+      "explanation": "Britannica states east and west match sunrise and sunset directions in traditional reckoning.",
+      "keywords": [
+        "compass",
+        "cardinal-directions",
+        "sun"
+      ],
+      "source": "https://www.britannica.com/technology/navigation-technology"
+    },
+    {
+      "seedId": "7f161594-f5a7-45c6-8cf6-ee2bee965539",
+      "category": "geography",
+      "navigationKeyword1": "maps",
+      "navigationKeyword2": "compass",
+      "question": "JetStream is NOAA\u2019s online curriculum focused on teaching what topic?",
+      "correctAnswer": "weather and weather safety",
+      "incorrectAnswers": [
+        "marine mammal taxonomy",
+        "cryptocurrency mining",
+        "railroad scheduling"
+      ],
+      "explanation": "NOAA\u2019s JetStream site introduces itself as a school for weather and weather safety.",
+      "keywords": [
+        "compass",
+        "noaa",
+        "weather-education"
+      ],
+      "source": "https://www.weather.gov/jetstream/global"
+    },
+    {
+      "seedId": "0a50d883-025e-4aee-aff8-b5258447cfb5",
+      "category": "geography",
+      "navigationKeyword1": "maps",
+      "navigationKeyword2": "compass",
+      "question": "Modern civil air navigation heavily depends on instructions from whom?",
+      "correctAnswer": "ground-based air traffic controllers",
+      "incorrectAnswers": [
+        "ship captains only",
+        "highway patrol exclusively",
+        "amateur radio nets only"
+      ],
+      "explanation": "Britannica notes civil aviation follows paths assigned by ground-based controllers.",
+      "keywords": [
+        "compass",
+        "air-navigation",
+        "direction"
+      ],
+      "source": "https://www.britannica.com/technology/navigation-technology"
+    },
+    {
+      "seedId": "21b0e18f-b23a-4c60-9972-b1390c0217cd",
+      "category": "geography",
+      "navigationKeyword1": "maps",
+      "navigationKeyword2": "compass",
+      "question": "Navigation is fundamentally the science of directing a craft by finding position, course, and what else?",
+      "correctAnswer": "distance traveled",
+      "incorrectAnswers": [
+        "fuel brand only",
+        "crew birthdays",
+        "hull paint color"
+      ],
+      "explanation": "Britannica defines navigation as determining position, course, and distance traveled.",
+      "keywords": [
+        "compass",
+        "navigation",
+        "definitions"
+      ],
+      "source": "https://www.britannica.com/technology/navigation-technology"
+    },
+    {
+      "seedId": "b4d5086a-f66d-470f-812c-2dbfea2ad562",
+      "category": "geography",
+      "navigationKeyword1": "maps",
+      "navigationKeyword2": "compass",
+      "question": "North and south were historically estimated at midday using what solar cue?",
+      "correctAnswer": "shadow directions cast by the noon Sun",
+      "incorrectAnswers": [
+        "moon phase alone",
+        "tide height only",
+        "barometric pressure"
+      ],
+      "explanation": "Britannica notes north and south were found from noon shadow directions.",
+      "keywords": [
+        "compass",
+        "cardinal-directions",
+        "sun"
+      ],
+      "source": "https://www.britannica.com/technology/navigation-technology"
+    },
+    {
+      "seedId": "11072f13-9166-4297-801d-66bebfc0c554",
+      "category": "geography",
+      "navigationKeyword1": "maps",
+      "navigationKeyword2": "compass",
+      "question": "Portuguese expansion helped standardize a wind compass with how many points?",
+      "correctAnswer": "16 points",
+      "incorrectAnswers": [
+        "4 points only",
+        "64 points",
+        "100 points"
+      ],
+      "explanation": "Britannica records Portuguese navigators introducing a 16-point wind compass system.",
+      "keywords": [
+        "compass",
+        "wind-rose",
+        "age-of-discovery"
+      ],
+      "source": "https://www.britannica.com/technology/navigation-technology"
+    },
+    {
+      "seedId": "7d61b8c6-22f1-403b-86ca-2e780c552e08",
+      "category": "geography",
+      "navigationKeyword1": "maps",
+      "navigationKeyword2": "compass",
+      "question": "Reliable sea charts became common alongside which magnetic instrument and coordinate methods?",
+      "correctAnswer": "the magnetic compass and latitude/longitude determination",
+      "incorrectAnswers": [
+        "only radar from the 1940s",
+        "GPS phones in Roman times",
+        "barometers without charts"
+      ],
+      "explanation": "Britannica ties dependable sea charts to the magnetic compass and latitude/longitude fixes.",
+      "keywords": [
+        "compass",
+        "magnetic-compass",
+        "navigation"
+      ],
+      "source": "https://www.britannica.com/technology/navigation-technology"
+    },
+    {
+      "seedId": "148eb64c-2543-4c19-8fe4-655054d827c7",
+      "category": "geography",
+      "navigationKeyword1": "maps",
+      "navigationKeyword2": "compass",
+      "question": "The word navigation comes from Latin roots meaning roughly what?",
+      "correctAnswer": "ship and to drive",
+      "incorrectAnswers": [
+        "star and to measure",
+        "map and to fold",
+        "wind and to wait"
+      ],
+      "explanation": "Britannica derives navigation from Latin navis (\u201cship\u201d) and agere (\u201cto drive\u201d).",
+      "keywords": [
+        "compass",
+        "etymology",
+        "navigation"
+      ],
+      "source": "https://www.britannica.com/technology/navigation-technology"
+    },
+    {
+      "seedId": "5137d35c-8ef4-44b4-bad5-feab7f47ba3b",
+      "category": "geography",
+      "navigationKeyword1": "maps",
+      "navigationKeyword2": "compass",
+      "question": "Which star\u2019s apparent rotation has long helped Northern Hemisphere navigators sense direction?",
+      "correctAnswer": "Polaris (the Pole Star)",
+      "incorrectAnswers": [
+        "Sirius only",
+        "Betelgeuse only",
+        "the Sun at midnight"
+      ],
+      "explanation": "Britannica references apparent rotation around the Pole Star for northern navigators.",
+      "keywords": [
+        "compass",
+        "polaris",
+        "night-sky"
+      ],
+      "source": "https://www.britannica.com/technology/navigation-technology"
+    },
+    {
+      "seedId": "87442254-e0f2-4693-8b5c-a6bde4a00849",
+      "category": "geography",
+      "navigationKeyword1": "maps",
+      "navigationKeyword2": "coordinates",
+      "question": "Cartography is best described as what?",
+      "correctAnswer": "the art and science of making maps and charts",
+      "incorrectAnswers": [
+        "only computer 3D modeling",
+        "the study of ocean trenches only",
+        "weather radar interpretation only"
+      ],
+      "explanation": "Britannica defines cartography as the art and science of making maps and charts.",
+      "keywords": [
+        "coordinates",
+        "cartography",
+        "definitions"
+      ],
+      "source": "https://www.britannica.com/science/map"
+    },
+    {
+      "seedId": "cc653b25-519d-44a5-b358-711755300992",
+      "category": "geography",
+      "navigationKeyword1": "maps",
+      "navigationKeyword2": "coordinates",
+      "question": "East and west are traditionally tied to which daily Sun events?",
+      "correctAnswer": "sunrise and sunset directions",
+      "incorrectAnswers": [
+        "solar noon only",
+        "midnight zenith",
+        "equinox shadows only"
+      ],
+      "explanation": "Britannica states east and west align with sunrise and sunset directions in traditional reckoning.",
+      "keywords": [
+        "coordinates",
+        "cardinal-directions",
+        "sun"
+      ],
+      "source": "https://www.britannica.com/technology/navigation-technology"
+    },
+    {
+      "seedId": "4e4b99e4-d3d7-43a7-8759-8ecda54f36a6",
+      "category": "geography",
+      "navigationKeyword1": "maps",
+      "navigationKeyword2": "coordinates",
+      "question": "From the equator toward the poles, does one degree of latitude stay about the same distance on the ground?",
+      "correctAnswer": "Yes, latitude degrees stay fairly constant in ground distance.",
+      "incorrectAnswers": [
+        "No, latitude degrees shrink to zero at the tropics.",
+        "No, latitude degrees only apply over oceans.",
+        "No, they double in length every 10\u00b0 toward the poles."
+      ],
+      "explanation": "USGS notes that a degree, minute, or second of latitude remains fairly constant from the equator to the poles.",
+      "keywords": [
+        "coordinates",
+        "latitude",
+        "usgs"
+      ],
+      "source": "https://www.usgs.gov/faqs/how-much-distance-does-degree-minute-and-second-cover-your-maps"
+    },
+    {
+      "seedId": "a0383da7-39eb-42d4-85a5-69815c92871a",
+      "category": "geography",
+      "navigationKeyword1": "maps",
+      "navigationKeyword2": "coordinates",
+      "question": "Globes are maps represented on the surface of what shape?",
+      "correctAnswer": "a sphere",
+      "incorrectAnswers": [
+        "a cube",
+        "a flat cone only",
+        "a cylinder with no poles"
+      ],
+      "explanation": "Britannica defines globes as maps drawn on a spherical surface.",
+      "keywords": [
+        "coordinates",
+        "globe",
+        "maps"
+      ],
+      "source": "https://www.britannica.com/science/map"
+    },
+    {
+      "seedId": "b2c9ece3-afa5-4732-8878-5fe9921ce3c4",
+      "category": "geography",
+      "navigationKeyword1": "maps",
+      "navigationKeyword2": "coordinates",
+      "question": "How many UTM zones span the globe in the system described by USGS?",
+      "correctAnswer": "60",
+      "incorrectAnswers": [
+        "12",
+        "24",
+        "36"
+      ],
+      "explanation": "USGS states the UTM system consists of 60 zones, each 6 degrees of longitude wide.",
+      "keywords": [
+        "coordinates",
+        "utm",
+        "zones"
+      ],
+      "source": "https://www.usgs.gov/faqs/what-does-term-utm-mean-utm-better-or-more-accurate-latitudelongitude"
+    },
+    {
+      "seedId": "10320dc9-caa7-478b-a527-53e219ca8db7",
+      "category": "geography",
+      "navigationKeyword1": "maps",
+      "navigationKeyword2": "coordinates",
+      "question": "In the Northern Hemisphere, Polaris helps navigators estimate which direction?",
+      "correctAnswer": "north",
+      "incorrectAnswers": [
+        "east only",
+        "directly toward the equator",
+        "the direction of sunset year-round"
+      ],
+      "explanation": "Britannica notes Northern Hemisphere navigators used the Pole Star\u2019s apparent rotation for orientation.",
+      "keywords": [
+        "coordinates",
+        "celestial-navigation",
+        "north"
+      ],
+      "source": "https://www.britannica.com/technology/navigation-technology"
+    },
+    {
+      "seedId": "a0993a21-837c-49e4-9e41-ce61e928f51e",
+      "category": "geography",
+      "navigationKeyword1": "maps",
+      "navigationKeyword2": "coordinates",
+      "question": "Lines showing parallels of latitude and meridians of longitude on a map are often called what?",
+      "correctAnswer": "a graticule",
+      "incorrectAnswers": [
+        "an isobar",
+        "a contour stack",
+        "a rhumb folio"
+      ],
+      "explanation": "USGS refers to the latitude/longitude graticule when discussing datum shifts on maps.",
+      "keywords": [
+        "coordinates",
+        "graticule",
+        "mapping"
+      ],
+      "source": "https://www.usgs.gov/faqs/how-large-north-american-datum-1927-nad-27-nad-83-shift"
+    },
+    {
+      "seedId": "2b23514d-ecfa-42a5-ab3c-655892011147",
+      "category": "geography",
+      "navigationKeyword1": "maps",
+      "navigationKeyword2": "coordinates",
+      "question": "Reliable sea charts became more systematic with the advent of which paired tools?",
+      "correctAnswer": "the magnetic compass and methods for determining latitude and longitude",
+      "incorrectAnswers": [
+        "radar altimeters and lidar alone",
+        "sonar-only depth finders",
+        "barcodes on paper charts"
+      ],
+      "explanation": "Britannica\u2019s navigation survey ties dependable sea charts to the magnetic compass and latitude/longitude determination.",
+      "keywords": [
+        "coordinates",
+        "navigation",
+        "history"
+      ],
+      "source": "https://www.britannica.com/technology/navigation-technology"
+    },
+    {
+      "seedId": "34cc17cb-fbbb-4d96-aa87-168639fe0134",
+      "category": "geography",
+      "navigationKeyword1": "maps",
+      "navigationKeyword2": "coordinates",
+      "question": "UTM zones are numbered 1\u201360 beginning at which longitude, according to USGS?",
+      "correctAnswer": "180 degrees longitude, increasing eastward",
+      "incorrectAnswers": [
+        "0\u00b0 at Greenwich, increasing westward only",
+        "the International Date Line only on water",
+        "the prime meridian, alternating north and south"
+      ],
+      "explanation": "USGS says UTM zones begin at 180\u00b0 longitude and increase to the east.",
+      "keywords": [
+        "coordinates",
+        "utm",
+        "longitude"
+      ],
+      "source": "https://www.usgs.gov/faqs/what-does-term-utm-mean-utm-better-or-more-accurate-latitudelongitude"
+    },
+    {
+      "seedId": "dc02437d-ea12-4541-a163-fbd835d6ec97",
+      "category": "geography",
+      "navigationKeyword1": "maps",
+      "navigationKeyword2": "coordinates",
+      "question": "What does the acronym UTM stand for in mapping?",
+      "correctAnswer": "Universal Transverse Mercator",
+      "incorrectAnswers": [
+        "United Terrain Model",
+        "Uniform Temperature Map",
+        "Universal Time Meridian"
+      ],
+      "explanation": "USGS defines UTM as Universal Transverse Mercator, a plane coordinate grid based on the Transverse Mercator projection.",
+      "keywords": [
+        "coordinates",
+        "utm",
+        "grids"
+      ],
+      "source": "https://www.usgs.gov/faqs/what-does-term-utm-mean-utm-better-or-more-accurate-latitudelongitude"
+    },
+    {
+      "seedId": "4d7b97aa-0894-4cb6-9fe1-c4faa50125db",
+      "category": "geography",
+      "navigationKeyword1": "maps",
+      "navigationKeyword2": "coordinates",
+      "question": "Why does one degree of longitude cover less ground distance near the poles than near the equator?",
+      "correctAnswer": "Meridians converge toward the poles.",
+      "incorrectAnswers": [
+        "Gravity compresses longitude at high latitudes.",
+        "Longitude is only measured underwater.",
+        "The equator uses a different mile definition."
+      ],
+      "explanation": "USGS explains that longitude distance varies greatly near the poles because meridians converge.",
+      "keywords": [
+        "coordinates",
+        "longitude",
+        "meridians"
+      ],
+      "source": "https://www.usgs.gov/faqs/how-much-distance-does-degree-minute-and-second-cover-your-maps"
+    },
+    {
+      "seedId": "bb1e149c-60a6-4a02-a601-5b3fe4a059d9",
+      "category": "geography",
+      "navigationKeyword1": "maps",
+      "navigationKeyword2": "gis",
+      "question": "Climate.gov\u2019s dataset gallery highlights GIS tools for exploring drought impacts through which federal hub?",
+      "correctAnswer": "Drought.gov (National Integrated Drought Information System)",
+      "incorrectAnswers": [
+        "IRS.gov",
+        "USPTO.gov",
+        "Recreation.gov only"
+      ],
+      "explanation": "NOAA Climate.gov links Drought.gov/NIDIS as a GIS-oriented drought information resource.",
+      "keywords": [
+        "gis",
+        "drought",
+        "noaa"
+      ],
+      "source": "https://www.climate.gov/maps-data/dataset/droughtgov-maps-graphs-and-more"
+    },
+    {
+      "seedId": "a5599c93-a5da-48d6-8f2a-35fa816a3708",
+      "category": "geography",
+      "navigationKeyword1": "maps",
+      "navigationKeyword2": "gis",
+      "question": "Does USGS recommend using standard US Topo PDFs as primary GIS input layers?",
+      "correctAnswer": "No; they are considered output products rather than ideal GIS inputs.",
+      "incorrectAnswers": [
+        "Yes, PDFs are always preferred source layers.",
+        "Yes, but only for Antarctica.",
+        "Yes, if printed in color."
+      ],
+      "explanation": "USGS states US Topo PDFs are outputs of GIS, not recommended as GIS import sources.",
+      "keywords": [
+        "gis",
+        "us-topo",
+        "workflow"
+      ],
+      "source": "https://www.usgs.gov/faqs/can-i-import-a-us-topo-map-my-geographic-information-system-gis"
+    },
+    {
+      "seedId": "6885dda8-04d2-4bcc-a5ff-d980ae4bdae7",
+      "category": "geography",
+      "navigationKeyword1": "maps",
+      "navigationKeyword2": "gis",
+      "question": "Emergency managers layer levees, hospitals, and flood depth grids in map software tied to real coordinates\u2014what is that kind of system called?",
+      "correctAnswer": "A geographic information system (GIS)",
+      "incorrectAnswers": [
+        "A flight simulator only",
+        "A spreadsheet with no map output",
+        "A social media hashtag tracker"
+      ],
+      "explanation": "USGS defines GIS as a computer system for analyzing and displaying geographically referenced data.",
+      "keywords": [
+        "gis",
+        "definitions",
+        "usgs"
+      ],
+      "source": "https://www.usgs.gov/faqs/what-geographic-information-system-gis"
+    },
+    {
+      "seedId": "aa8f3bbe-e8e1-4963-b9b5-c296817e413e",
+      "category": "geography",
+      "navigationKeyword1": "maps",
+      "navigationKeyword2": "gis",
+      "question": "Fields USGS lists as using GIS include earth sciences, biology, and what?",
+      "correctAnswer": "resource management",
+      "incorrectAnswers": [
+        "novelty candle making",
+        "symphony conducting",
+        "court stenography only"
+      ],
+      "explanation": "USGS mentions GIS applications in earth sciences, biology, resource management, and more.",
+      "keywords": [
+        "gis",
+        "applications",
+        "usgs"
+      ],
+      "source": "https://www.usgs.gov/faqs/what-geographic-information-system-gis"
+    },
+    {
+      "seedId": "2ba460e8-8775-4a7e-b24d-4844baf9b48a",
+      "category": "geography",
+      "navigationKeyword1": "maps",
+      "navigationKeyword2": "gis",
+      "question": "GIS analysis can trace pollutants downstream by combining farm locations with streams, elevation, and what?",
+      "correctAnswer": "rainfall",
+      "incorrectAnswers": [
+        "solar flares",
+        "radio playlists",
+        "tidal music charts"
+      ],
+      "explanation": "USGS gives an example linking fertilizer use, streams, elevation, and rainfall in GIS.",
+      "keywords": [
+        "gis",
+        "hydrology",
+        "pollution"
+      ],
+      "source": "https://www.usgs.gov/faqs/what-geographic-information-system-gis"
+    },
+    {
+      "seedId": "90fdcc5f-f15c-416a-8156-680a10c8bc33",
+      "category": "geography",
+      "navigationKeyword1": "maps",
+      "navigationKeyword2": "gis",
+      "question": "GIS data are tied to locations through what key property?",
+      "correctAnswer": "each record attaches to a unique location",
+      "incorrectAnswers": [
+        "random numbering without coordinates",
+        "alphabetical sorting only",
+        "color names only"
+      ],
+      "explanation": "USGS states GIS uses data attached to unique locations.",
+      "keywords": [
+        "gis",
+        "spatial-data",
+        "basics"
+      ],
+      "source": "https://www.usgs.gov/faqs/what-geographic-information-system-gis"
+    },
+    {
+      "seedId": "36739f12-4803-4157-9378-4b38a2a65a9a",
+      "category": "geography",
+      "navigationKeyword1": "maps",
+      "navigationKeyword2": "gis",
+      "question": "Modern US Topo maps are produced from GIS data sets and distributed mainly as what file type for general users?",
+      "correctAnswer": "PDF",
+      "incorrectAnswers": [
+        "only handwritten scrolls",
+        "MIDI sound files",
+        "encrypted ZIP without maps"
+      ],
+      "explanation": "USGS notes US Topo maps are GIS-derived products distributed as PDFs for non-specialist users.",
+      "keywords": [
+        "gis",
+        "us-topo",
+        "pdf"
+      ],
+      "source": "https://www.usgs.gov/faqs/can-i-import-a-us-topo-map-my-geographic-information-system-gis"
+    },
+    {
+      "seedId": "3d74bc27-39ef-40ec-8363-dac365e6bf9f",
+      "category": "geography",
+      "navigationKeyword1": "maps",
+      "navigationKeyword2": "gis",
+      "question": "NCEI\u2019s Map Viewer helps users find and download what broad categories of information?",
+      "correctAnswer": "climate and weather data",
+      "incorrectAnswers": [
+        "patent filings",
+        "movie box-office receipts",
+        "tax return PDFs"
+      ],
+      "explanation": "NOAA lists NCEI\u2019s Map Viewer for locating climate and weather datasets.",
+      "keywords": [
+        "gis",
+        "ncei",
+        "climate-data"
+      ],
+      "source": "https://www.climate.gov/maps-data/dataset/ncei-map-viewer-application-data-locator"
+    },
+    {
+      "seedId": "c8a4bd3f-c1f0-4a8d-836f-d54fd0cd52f2",
+      "category": "geography",
+      "navigationKeyword1": "maps",
+      "navigationKeyword2": "gis",
+      "question": "NOAA\u2019s GeoPlatform delivers maps and data through which widely used online GIS platform?",
+      "correctAnswer": "Esri\u2019s ArcGIS Online",
+      "incorrectAnswers": [
+        "Microsoft Paint",
+        "Adobe Audition",
+        "Notepad only"
+      ],
+      "explanation": "NOAA Climate.gov describes GeoPlatform as a GIS application using Esri\u2019s ArcGIS Online.",
+      "keywords": [
+        "gis",
+        "noaa",
+        "geoplatform"
+      ],
+      "source": "https://www.climate.gov/maps-data/dataset/noaas-geoplatform-geospatial-data-maps-apps"
+    },
+    {
+      "seedId": "b4cc2f16-d6ff-42c6-9838-a3df3864a7ec",
+      "category": "geography",
+      "navigationKeyword1": "maps",
+      "navigationKeyword2": "gis",
+      "question": "The National Map is described by USGS as underpinning which customized map product?",
+      "correctAnswer": "OnDemand Topos",
+      "incorrectAnswers": [
+        "vintage globes only",
+        "subway tile catalogs",
+        "paper phone books"
+      ],
+      "explanation": "USGS ties OnDemand Topos to the best data from The National Map.",
+      "keywords": [
+        "gis",
+        "national-map",
+        "usgs"
+      ],
+      "source": "https://www.usgs.gov/faqs/what-topographic-map"
+    },
+    {
+      "seedId": "6a37ee72-af05-40e1-94c5-1f4c8dc10e1d",
+      "category": "geography",
+      "navigationKeyword1": "maps",
+      "navigationKeyword2": "gis",
+      "question": "USGS gives an example of GIS combining slope, elevation, and rainfall to predict habitat for what?",
+      "correctAnswer": "a rare plant",
+      "incorrectAnswers": [
+        "hurricane names",
+        "stock tickers",
+        "radio frequencies"
+      ],
+      "explanation": "USGS illustrates GIS by mapping north-facing slopes, elevation, and rainfall for rare plant habitat.",
+      "keywords": [
+        "gis",
+        "habitat",
+        "analysis"
+      ],
+      "source": "https://www.usgs.gov/faqs/what-geographic-information-system-gis"
+    },
+    {
+      "seedId": "d0b3b99d-8a67-47f3-ab96-e566946a7d84",
+      "category": "geography",
+      "navigationKeyword1": "maps",
+      "navigationKeyword2": "projection",
+      "question": "Can any flat map show every global geographic property perfectly at once?",
+      "correctAnswer": "No; every flat map misrepresents the Earth in some way.",
+      "incorrectAnswers": [
+        "Yes, if it uses satellite photos only.",
+        "Yes, equal-area maps never distort shapes.",
+        "Yes, digital screens remove projection error."
+      ],
+      "explanation": "USGS states no flat map can rival a globe; every flat map misrepresents the surface somehow.",
+      "keywords": [
+        "projection",
+        "distortion",
+        "globe"
+      ],
+      "source": "https://www.usgs.gov/faqs/how-are-different-map-projections-used"
+    },
+    {
+      "seedId": "aff489e8-47cc-4fd1-8cdf-f02f1857b55d",
+      "category": "geography",
+      "navigationKeyword1": "maps",
+      "navigationKeyword2": "projection",
+      "question": "Formal mapmaking requires projecting the spherical Earth onto what?",
+      "correctAnswer": "a map plane",
+      "incorrectAnswers": [
+        "a single point",
+        "a sound wave",
+        "a barograph trace"
+      ],
+      "explanation": "Britannica notes maps imply a formal method of projecting the sphere to a map plane.",
+      "keywords": [
+        "projection",
+        "cartography",
+        "basics"
+      ],
+      "source": "https://www.britannica.com/science/map"
+    },
+    {
+      "seedId": "ba91ac74-d2a5-4944-9013-ab9e4663beb1",
+      "category": "geography",
+      "navigationKeyword1": "maps",
+      "navigationKeyword2": "projection",
+      "question": "How wide is each UTM zone in degrees of longitude?",
+      "correctAnswer": "6 degrees",
+      "incorrectAnswers": [
+        "1 degree",
+        "10 degrees",
+        "15 degrees"
+      ],
+      "explanation": "USGS specifies each UTM zone spans 6\u00b0 of longitude.",
+      "keywords": [
+        "projection",
+        "utm",
+        "zones"
+      ],
+      "source": "https://www.usgs.gov/faqs/what-does-term-utm-mean-utm-better-or-more-accurate-latitudelongitude"
+    },
+    {
+      "seedId": "670485c3-de6b-44f4-b567-f06c8cd5ef89",
+      "category": "geography",
+      "navigationKeyword1": "maps",
+      "navigationKeyword2": "projection",
+      "question": "Hydrography today focuses especially on ocean depths and what other oceanic quantities?",
+      "correctAnswer": "current directions and intensities",
+      "incorrectAnswers": [
+        "volcanic lightning rates",
+        "urban bus frequencies",
+        "lunar soil chemistry"
+      ],
+      "explanation": "Britannica states modern hydrography emphasizes depths and current directions and intensities.",
+      "keywords": [
+        "projection",
+        "hydrography",
+        "oceans"
+      ],
+      "source": "https://www.britannica.com/science/map"
+    },
+    {
+      "seedId": "f319d5d7-422a-4288-9d37-554dc3debd0a",
+      "category": "geography",
+      "navigationKeyword1": "maps",
+      "navigationKeyword2": "projection",
+      "question": "Modern USGS topographic map products are derived primarily from what kind of underlying data?",
+      "correctAnswer": "GIS data sets",
+      "incorrectAnswers": [
+        "hand-painted parchment only",
+        "single-flight sketches",
+        "crowdsourced photos without control"
+      ],
+      "explanation": "USGS states modern US Topo maps are derived from GIS data sets.",
+      "keywords": [
+        "projection",
+        "gis",
+        "us-topo"
+      ],
+      "source": "https://www.usgs.gov/faqs/can-i-import-a-us-topo-map-my-geographic-information-system-gis"
+    },
+    {
+      "seedId": "d1790696-930a-4310-b696-35809abf61b8",
+      "category": "geography",
+      "navigationKeyword1": "maps",
+      "navigationKeyword2": "projection",
+      "question": "Portuguese explorers in the age of discovery helped replace which older wind-rose division with a finer system?",
+      "correctAnswer": "a 12-point wind rose used by some medieval navigators",
+      "incorrectAnswers": [
+        "a 32-point GPS grid",
+        "a 3-point monsoon dial",
+        "a 100-point compass app"
+      ],
+      "explanation": "Britannica notes Portuguese navigators moved from some 12-point roses to a 16-point system.",
+      "keywords": [
+        "projection",
+        "wind-rose",
+        "navigation"
+      ],
+      "source": "https://www.britannica.com/technology/navigation-technology"
+    },
+    {
+      "seedId": "db884294-e998-4317-9e55-a2524c4187d7",
+      "category": "geography",
+      "navigationKeyword1": "maps",
+      "navigationKeyword2": "projection",
+      "question": "The UTM coordinate grid is based on which projection family?",
+      "correctAnswer": "Transverse Mercator",
+      "incorrectAnswers": [
+        "Albers equal-area conic",
+        "Gnomonic",
+        "Van der Grinten only"
+      ],
+      "explanation": "USGS notes UTM is a plane grid based on the Transverse Mercator projection.",
+      "keywords": [
+        "projection",
+        "utm",
+        "mercator"
+      ],
+      "source": "https://www.usgs.gov/faqs/what-does-term-utm-mean-utm-better-or-more-accurate-latitudelongitude"
+    },
+    {
+      "seedId": "2a946ad3-b949-4f64-9ff5-6bceab0aeb5e",
+      "category": "geography",
+      "navigationKeyword1": "maps",
+      "navigationKeyword2": "projection",
+      "question": "The method used to show part of the spherical Earth on a flat map or screen is called what?",
+      "correctAnswer": "a map projection",
+      "incorrectAnswers": [
+        "a contour interval",
+        "a magnetic declination",
+        "an isobar"
+      ],
+      "explanation": "USGS defines a map projection as the method for portraying the spherical Earth on a flat surface.",
+      "keywords": [
+        "projection",
+        "maps",
+        "usgs"
+      ],
+      "source": "https://www.usgs.gov/faqs/how-are-different-map-projections-used"
+    },
+    {
+      "seedId": "08c413c6-7fa3-4430-9167-c24296639903",
+      "category": "geography",
+      "navigationKeyword1": "maps",
+      "navigationKeyword2": "projection",
+      "question": "Which US agency hosts the Map Viewer Application for locating climate and weather-related geospatial data?",
+      "correctAnswer": "NOAA National Centers for Environmental Information",
+      "incorrectAnswers": [
+        "NASA Artemis launch control",
+        "the Federal Reserve Board",
+        "the U.S. Mint"
+      ],
+      "explanation": "NOAA Climate.gov lists NCEI\u2019s Map Viewer Application for finding climate and weather data.",
+      "keywords": [
+        "projection",
+        "noaa",
+        "gis"
+      ],
+      "source": "https://www.climate.gov/maps-data/dataset/ncei-map-viewer-application-data-locator"
+    },
+    {
+      "seedId": "cd2b5f50-c1a8-4e48-85c9-b87fd04d55e9",
+      "category": "geography",
+      "navigationKeyword1": "maps",
+      "navigationKeyword2": "projection",
+      "question": "Which ancient monument in Athens is tied to an early eight-point wind rose used by mariners?",
+      "correctAnswer": "the Tower of the Winds",
+      "incorrectAnswers": [
+        "the Colosseum",
+        "Stonehenge",
+        "the Great Pyramid of Giza"
+      ],
+      "explanation": "Britannica links the octagonal Tower of the Winds to classical wind-direction mapping.",
+      "keywords": [
+        "projection",
+        "wind-rose",
+        "history"
+      ],
+      "source": "https://www.britannica.com/technology/navigation-technology"
+    },
+    {
+      "seedId": "eee45d92-207c-4755-b1b2-aec9126924fe",
+      "category": "geography",
+      "navigationKeyword1": "maps",
+      "navigationKeyword2": "projection",
+      "question": "Which representation does Britannica say can truly represent the entire Earth\u2019s surface without projection trade-offs?",
+      "correctAnswer": "a globe",
+      "incorrectAnswers": [
+        "any flat wall map",
+        "a Mercator phone screen alone",
+        "a single hemisphere cone"
+      ],
+      "explanation": "Britannica contrasts globes as spherical maps with flat maps that require projection choices.",
+      "keywords": [
+        "projection",
+        "globe",
+        "accuracy"
+      ],
+      "source": "https://www.britannica.com/science/map"
+    },
+    {
+      "seedId": "e4ac649d-fc99-4ff7-9d43-17c73e81248d",
+      "category": "geography",
+      "navigationKeyword1": "maps",
+      "navigationKeyword2": "scale",
+      "question": "A standard USGS 7.5-minute quadrangle topographic map is commonly printed at which scale?",
+      "correctAnswer": "1:24,000",
+      "incorrectAnswers": [
+        "1:1,000,000",
+        "1:100,000",
+        "1:500,000"
+      ],
+      "explanation": "USGS describes its well-known 7.5-minute maps as 1:24,000-scale topographic quadrangles; the current US Topo digital series uses the same 1:24,000 scale.",
+      "keywords": [
+        "scale",
+        "7-5-minute-quad",
+        "usgs"
+      ],
+      "source": "https://www.usgs.gov/faqs/how-do-i-find-download-or-order-topographic-maps"
+    },
+    {
+      "seedId": "8c55ebf7-9894-45a5-81fc-6b97a10f3abd",
+      "category": "geography",
+      "navigationKeyword1": "maps",
+      "navigationKeyword2": "scale",
+      "question": "Aeronautical charts are effectively small-scale topographic maps with what extra focus?",
+      "correctAnswer": "navigation aids visible from the air",
+      "incorrectAnswers": [
+        "deep-ocean salinity contours",
+        "subway tunnel ventilation",
+        "soil pH sampling grids"
+      ],
+      "explanation": "Britannica calls aeronautical charts small-scale topographic maps emphasizing air-navigation information.",
+      "keywords": [
+        "scale",
+        "aeronautical-charts",
+        "aviation"
+      ],
+      "source": "https://www.britannica.com/science/map"
+    },
+    {
+      "seedId": "43cc68f5-db2e-4dfd-abf6-3a802de31ee1",
+      "category": "geography",
+      "navigationKeyword1": "maps",
+      "navigationKeyword2": "scale",
+      "question": "Hikers love the phrase \u201cabout an inch on the page equals a mile on the trail\u201d\u2014that ratio is why a map is drawn to what?",
+      "correctAnswer": "A defined scale (proportion to the real world)",
+      "incorrectAnswers": [
+        "Pure freehand with no proportion",
+        "Musical tempo markings",
+        "Population rank ordering only"
+      ],
+      "explanation": "Britannica defines a map as a scaled graphic representation of features of an area.",
+      "keywords": [
+        "scale",
+        "map-basics",
+        "definitions"
+      ],
+      "source": "https://www.britannica.com/science/map"
+    },
+    {
+      "seedId": "9fd82424-7269-46f7-8ac3-4fd76f0de935",
+      "category": "geography",
+      "navigationKeyword1": "maps",
+      "navigationKeyword2": "scale",
+      "question": "In the United States, the term \u201ctopographic\u201d on national maps is often limited to scales of what order?",
+      "correctAnswer": "1:500,000 or larger (finer detail)",
+      "incorrectAnswers": [
+        "only 1:1 and smaller",
+        "only world wall maps",
+        "only marine charts"
+      ],
+      "explanation": "Britannica notes U.S. usage often limits \u201ctopographic\u201d to scales of 1:500,000 or larger.",
+      "keywords": [
+        "scale",
+        "topographic-map",
+        "united-states"
+      ],
+      "source": "https://www.britannica.com/science/topographic-map"
+    },
+    {
+      "seedId": "e0c109c6-1978-4ba2-82a6-ed08802e9e71",
+      "category": "geography",
+      "navigationKeyword1": "maps",
+      "navigationKeyword2": "scale",
+      "question": "Nautical charts are primarily designed to support what activity?",
+      "correctAnswer": "navigation in coastal and marine areas",
+      "incorrectAnswers": [
+        "underground mining lease sales only",
+        "airport baggage routing only",
+        "crop yield forecasting only"
+      ],
+      "explanation": "Britannica describes nautical charts as maps for coastal and marine navigation.",
+      "keywords": [
+        "scale",
+        "charts",
+        "navigation"
+      ],
+      "source": "https://www.britannica.com/science/map"
+    },
+    {
+      "seedId": "750a7117-ce50-4181-907a-799ce69ad6cd",
+      "category": "geography",
+      "navigationKeyword1": "maps",
+      "navigationKeyword2": "scale",
+      "question": "Since which year did USGS shift from hand-scribed historical topographics to regularly computer-generated US Topos?",
+      "correctAnswer": "2009",
+      "incorrectAnswers": [
+        "1972",
+        "1985",
+        "1999"
+      ],
+      "explanation": "USGS notes the transition to US Topo production from 2009 onward.",
+      "keywords": [
+        "scale",
+        "us-topo",
+        "history"
+      ],
+      "source": "https://www.usgs.gov/faqs/how-do-i-find-download-or-order-topographic-maps"
+    },
+    {
+      "seedId": "6956f360-c94f-4216-91c6-d1772b6e5ca1",
+      "category": "geography",
+      "navigationKeyword1": "maps",
+      "navigationKeyword2": "scale",
+      "question": "The Historical Topographic Map Collection covers USGS maps originally published on paper between which years?",
+      "correctAnswer": "1884\u20132006",
+      "incorrectAnswers": [
+        "1776\u20131865",
+        "2007\u20132020 only",
+        "1600\u20131750"
+      ],
+      "explanation": "USGS dates the scanned historical collection to maps published from 1884 through 2006.",
+      "keywords": [
+        "scale",
+        "historical-maps",
+        "usgs"
+      ],
+      "source": "https://www.usgs.gov/faqs/what-topographic-map"
+    },
+    {
+      "seedId": "33ec2c36-200b-4d70-8084-0754eb4477bb",
+      "category": "geography",
+      "navigationKeyword1": "maps",
+      "navigationKeyword2": "scale",
+      "question": "The U.S. Geological Survey has served as the primary civilian mapping agency of the United States since which year?",
+      "correctAnswer": "1879",
+      "incorrectAnswers": [
+        "1849",
+        "1906",
+        "1941"
+      ],
+      "explanation": "USGS states it has been the nation\u2019s primary civilian mapping agency since 1879.",
+      "keywords": [
+        "scale",
+        "usgs",
+        "history"
+      ],
+      "source": "https://www.usgs.gov/faqs/how-do-i-find-download-or-order-topographic-maps"
+    },
+    {
+      "seedId": "194372f7-8c13-4e4c-8b69-6b9040f7b324",
+      "category": "geography",
+      "navigationKeyword1": "maps",
+      "navigationKeyword2": "scale",
+      "question": "Topographic maps sit between small-area plans and what broader regional maps in level of detail?",
+      "correctAnswer": "chorographic (large regional) maps",
+      "incorrectAnswers": [
+        "star charts only",
+        "circuit diagrams",
+        "geologic cross sections only"
+      ],
+      "explanation": "Britannica places topographic maps between plans and chorographic maps by scale and detail.",
+      "keywords": [
+        "scale",
+        "topographic-map",
+        "classification"
+      ],
+      "source": "https://www.britannica.com/science/topographic-map"
+    },
+    {
+      "seedId": "b9ce9e5a-07b2-49fd-9d78-3c8a09ca4d0f",
+      "category": "geography",
+      "navigationKeyword1": "maps",
+      "navigationKeyword2": "scale",
+      "question": "USGS OnDemand Topos let users choose map scale and map center using which national data backbone?",
+      "correctAnswer": "The National Map",
+      "incorrectAnswers": [
+        "only hand-drawn sketches",
+        "exclusively 19th-century surveys",
+        "a single global DEM with no updates"
+      ],
+      "explanation": "USGS states OnDemand Topos use the best available data from The National Map.",
+      "keywords": [
+        "scale",
+        "national-map",
+        "usgs"
+      ],
+      "source": "https://www.usgs.gov/faqs/what-topographic-map"
+    },
+    {
+      "seedId": "8091b763-683e-4c0c-bb17-ee334b0e670d",
+      "category": "geography",
+      "navigationKeyword1": "maps",
+      "navigationKeyword2": "topographic",
+      "question": "A topographic map\u2019s level of detail is described as intermediate between a small-area plan and what?",
+      "correctAnswer": "a large regional chorographic map",
+      "incorrectAnswers": [
+        "a star atlas",
+        "a circuit schematic",
+        "a musical score"
+      ],
+      "explanation": "Britannica classifies topographic scale between plans and chorographic maps.",
+      "keywords": [
+        "topographic",
+        "map-types",
+        "scale"
+      ],
+      "source": "https://www.britannica.com/science/topographic-map"
+    },
+    {
+      "seedId": "f06d2030-c5c4-4044-9765-97a0b6a06af0",
+      "category": "geography",
+      "navigationKeyword1": "maps",
+      "navigationKeyword2": "topographic",
+      "question": "Besides relief, what major natural features do USGS topographic maps typically show?",
+      "correctAnswer": "hydrographic features such as rivers, streams, and lakes",
+      "incorrectAnswers": [
+        "only political polling districts",
+        "exclusively subway tunnels",
+        "satellite orbits"
+      ],
+      "explanation": "USGS lists rivers, streams, lakes, and other hydrography among standard topographic content.",
+      "keywords": [
+        "topographic",
+        "hydrography",
+        "features"
+      ],
+      "source": "https://www.usgs.gov/faqs/what-topographic-map"
+    },
+    {
+      "seedId": "0a5bdd77-3232-4683-a0f5-088848a2ef66",
+      "category": "geography",
+      "navigationKeyword1": "maps",
+      "navigationKeyword2": "topographic",
+      "question": "Contour lines connect points that share what property?",
+      "correctAnswer": "the same elevation above or below a reference surface (usually mean sea level)",
+      "incorrectAnswers": [
+        "the same population density",
+        "the same soil pH",
+        "the same magnetic field strength"
+      ],
+      "explanation": "USGS defines contours as lines joining equal elevation relative to a reference such as mean sea level.",
+      "keywords": [
+        "topographic",
+        "contours",
+        "elevation"
+      ],
+      "source": "https://www.usgs.gov/faqs/what-topographic-map"
+    },
+    {
+      "seedId": "e80feaf2-2943-4a75-9dd0-5ca7ac29bae8",
+      "category": "geography",
+      "navigationKeyword1": "maps",
+      "navigationKeyword2": "topographic",
+      "question": "Custom USGS-style topographic maps can be built with which USGS application?",
+      "correctAnswer": "topoBuilder (OnDemand Topos)",
+      "incorrectAnswers": [
+        "Excel TopoWizard",
+        "Photoshop ReliefPro",
+        "GarageBand Terrain"
+      ],
+      "explanation": "USGS describes OnDemand Topos via topoBuilder for customized USGS-style topographic maps.",
+      "keywords": [
+        "topographic",
+        "topobuilder",
+        "on-demand"
+      ],
+      "source": "https://www.usgs.gov/faqs/what-topographic-map"
+    },
+    {
+      "seedId": "108d6637-fa1d-4e96-b7c2-1f98141ed64d",
+      "category": "geography",
+      "navigationKeyword1": "maps",
+      "navigationKeyword2": "topographic",
+      "question": "Famous USGS 7.5-minute maps are also called what?",
+      "correctAnswer": "7.5-minute quadrangles",
+      "incorrectAnswers": [
+        "15-degree gores",
+        "hemisphere panels",
+        "global tiles"
+      ],
+      "explanation": "USGS refers to its 1:24,000 maps as 7.5-minute quadrangles.",
+      "keywords": [
+        "topographic",
+        "quadrangles",
+        "usgs"
+      ],
+      "source": "https://www.usgs.gov/faqs/how-do-i-find-download-or-order-topographic-maps"
+    },
+    {
+      "seedId": "a2c06de3-8d11-41b1-a0e9-26990e9afa72",
+      "category": "geography",
+      "navigationKeyword1": "maps",
+      "navigationKeyword2": "topographic",
+      "question": "Increasingly detailed bathymetric surveys help map which environment?",
+      "correctAnswer": "portions of the seafloor",
+      "incorrectAnswers": [
+        "the stratosphere only",
+        "urban Wi-Fi heatmaps only",
+        "lunar regolith exclusively"
+      ],
+      "explanation": "Britannica links improved bathymetry to detailed seafloor mapping.",
+      "keywords": [
+        "topographic",
+        "bathymetry",
+        "oceans"
+      ],
+      "source": "https://www.britannica.com/science/map"
+    },
+    {
+      "seedId": "c1364b11-745e-4187-84ee-90907c19abe4",
+      "category": "geography",
+      "navigationKeyword1": "maps",
+      "navigationKeyword2": "topographic",
+      "question": "Natural features on topographic maps include relief and hydrography; man-made features include roads and what?",
+      "correctAnswer": "railroads, canals, dams, bridges, and similar works",
+      "incorrectAnswers": [
+        "only national flags",
+        "satellite orbital paths",
+        "DNA sequences"
+      ],
+      "explanation": "Britannica lists roads, railroads, canals, dams, bridges, and tunnels among man-made features.",
+      "keywords": [
+        "topographic",
+        "cultural-features",
+        "infrastructure"
+      ],
+      "source": "https://www.britannica.com/science/topographic-map"
+    },
+    {
+      "seedId": "6175048c-a9e5-4e51-9822-a30ff6f44ecc",
+      "category": "geography",
+      "navigationKeyword1": "maps",
+      "navigationKeyword2": "topographic",
+      "question": "Topographic maps inventory terrain for activities such as land use and what other field?",
+      "correctAnswer": "land development planning",
+      "incorrectAnswers": [
+        "stock ticker analytics",
+        "fiber-optic music synthesis",
+        "deep-space probe docking"
+      ],
+      "explanation": "Britannica notes topographic maps support land inventory and development decisions.",
+      "keywords": [
+        "topographic",
+        "land-use",
+        "planning"
+      ],
+      "source": "https://www.britannica.com/science/map"
+    },
+    {
+      "seedId": "a88a3466-6c4b-46f0-b13d-f518b6ebfc75",
+      "category": "geography",
+      "navigationKeyword1": "maps",
+      "navigationKeyword2": "topographic",
+      "question": "Topographic maps record elevations relative to what common vertical reference?",
+      "correctAnswer": "sea level",
+      "incorrectAnswers": [
+        "the core\u2013mantle boundary",
+        "airport barometers only",
+        "tree canopy height only"
+      ],
+      "explanation": "Britannica states topographic maps record elevations above sea level among other details.",
+      "keywords": [
+        "topographic",
+        "elevation",
+        "sea-level"
+      ],
+      "source": "https://www.britannica.com/science/map"
+    },
+    {
+      "seedId": "f913a02c-63fb-4bd2-94e1-cf0511b7ec12",
+      "category": "geography",
+      "navigationKeyword1": "maps",
+      "navigationKeyword2": "topographic",
+      "question": "US Topo maps are published as digital documents most commonly at which scale?",
+      "correctAnswer": "1:24,000",
+      "incorrectAnswers": [
+        "1:1,000",
+        "1:250,000",
+        "1:5,000,000"
+      ],
+      "explanation": "USGS describes US Topo as the current 1:24,000-scale series.",
+      "keywords": [
+        "topographic",
+        "us-topo",
+        "scale"
+      ],
+      "source": "https://www.usgs.gov/faqs/what-topographic-map"
+    },
+    {
+      "seedId": "25abb42b-ed6a-4f87-9d27-93a979ffe048",
+      "category": "geography",
+      "navigationKeyword1": "maps",
+      "navigationKeyword2": "topographic",
+      "question": "What distinctive lines show land shape and height on a topographic map?",
+      "correctAnswer": "elevation contour lines",
+      "incorrectAnswers": [
+        "isobars only",
+        "time-zone stripes",
+        "plate boundary colors only"
+      ],
+      "explanation": "USGS says topographic maps use elevation contour lines to show Earth surface shape.",
+      "keywords": [
+        "topographic",
+        "contours",
+        "usgs"
+      ],
+      "source": "https://www.usgs.gov/faqs/what-topographic-map"
+    }
+  ]
+}

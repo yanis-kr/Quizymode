@@ -1,0 +1,207 @@
+{
+  "schemaVersion": 1,
+  "seedSet": "core-public-items",
+  "deltaPreviewLimit": 200,
+  "items": [
+    {
+      "seedId": "a736c3b4-b654-5439-9657-e681546a6e3f",
+      "category": "sports",
+      "navigationKeyword1": "golf",
+      "navigationKeyword2": "majors",
+      "question": "How many men's major championships are recognized in professional golf?",
+      "correctAnswer": "Four",
+      "incorrectAnswers": [
+        "Three",
+        "Five",
+        "Six"
+      ],
+      "explanation": "Men's professional golf recognizes four majors.",
+      "keywords": [
+        "golf",
+        "majors",
+        "count"
+      ],
+      "source": "https://www.britannica.com/sports/golf"
+    },
+    {
+      "seedId": "7278fc8a-da42-5837-bfe5-32d20f4137dc",
+      "category": "sports",
+      "navigationKeyword1": "golf",
+      "navigationKeyword2": "majors",
+      "question": "What clothing item is awarded to the Masters champion?",
+      "correctAnswer": "A green jacket",
+      "incorrectAnswers": [
+        "A yellow jersey",
+        "A silver blazer",
+        "A red tie"
+      ],
+      "explanation": "Masters winners receive the famous green jacket.",
+      "keywords": [
+        "golf",
+        "majors",
+        "green-jacket"
+      ],
+      "source": "https://www.masters.com/en_US/index.html"
+    },
+    {
+      "seedId": "a76afbd6-b189-5476-8f54-7e39090f205f",
+      "category": "sports",
+      "navigationKeyword1": "golf",
+      "navigationKeyword2": "majors",
+      "question": "Which major completed Rory McIlroy's career Grand Slam in 2025?",
+      "correctAnswer": "The Masters",
+      "incorrectAnswers": [
+        "U.S. Open",
+        "The Open Championship",
+        "PGA Championship"
+      ],
+      "explanation": "McIlroy completed the career Grand Slam by winning the Masters in 2025.",
+      "keywords": [
+        "golf",
+        "majors",
+        "career-grand-slam"
+      ],
+      "source": "https://www.masters.com/en_US/index.html"
+    },
+    {
+      "seedId": "8d17d445-0d09-51be-9192-10da78ee4869",
+      "category": "sports",
+      "navigationKeyword1": "golf",
+      "navigationKeyword2": "majors",
+      "question": "Which major is organized by the USGA and often features punishing course setups?",
+      "correctAnswer": "U.S. Open",
+      "incorrectAnswers": [
+        "The Masters",
+        "PGA Championship",
+        "The Players Championship"
+      ],
+      "explanation": "The USGA runs the U.S. Open.",
+      "keywords": [
+        "golf",
+        "majors",
+        "us-open"
+      ],
+      "source": "https://www.usopen.com/"
+    },
+    {
+      "seedId": "c7788d80-647c-5647-a08a-a4b1204b0488",
+      "category": "sports",
+      "navigationKeyword1": "golf",
+      "navigationKeyword2": "majors",
+      "question": "Which major is played at Augusta National each April?",
+      "correctAnswer": "The Masters",
+      "incorrectAnswers": [
+        "U.S. Open",
+        "The Open Championship",
+        "PGA Championship"
+      ],
+      "explanation": "The Masters is the annual major held at Augusta National.",
+      "keywords": [
+        "golf",
+        "majors",
+        "masters"
+      ],
+      "source": "https://www.masters.com/en_US/index.html"
+    },
+    {
+      "seedId": "0e5da4b1-0e18-568f-8478-aa7b005d6d44",
+      "category": "sports",
+      "navigationKeyword1": "golf",
+      "navigationKeyword2": "majors",
+      "question": "Which major is played on a different course each year but always at Augusta National?",
+      "correctAnswer": "The Masters",
+      "incorrectAnswers": [
+        "U.S. Open",
+        "Open Championship",
+        "PGA Championship"
+      ],
+      "explanation": "The Masters is unique because it always returns to Augusta National.",
+      "keywords": [
+        "golf",
+        "majors",
+        "augusta"
+      ],
+      "source": "https://www.masters.com/en_US/index.html"
+    },
+    {
+      "seedId": "fae3efd4-274c-5e58-a8ed-3993693ab255",
+      "category": "sports",
+      "navigationKeyword1": "golf",
+      "navigationKeyword2": "majors",
+      "question": "Which major is run by the PGA of America?",
+      "correctAnswer": "PGA Championship",
+      "incorrectAnswers": [
+        "U.S. Open",
+        "The Open Championship",
+        "The Masters"
+      ],
+      "explanation": "The PGA Championship is organized by the PGA of America.",
+      "keywords": [
+        "golf",
+        "majors",
+        "pga-championship"
+      ],
+      "source": "https://www.pgachampionship.com/"
+    },
+    {
+      "seedId": "e5ae85b6-f3e6-5624-a3ef-e8b1a595f3e2",
+      "category": "sports",
+      "navigationKeyword1": "golf",
+      "navigationKeyword2": "majors",
+      "question": "Which major is the oldest of the four men's majors?",
+      "correctAnswer": "The Open Championship",
+      "incorrectAnswers": [
+        "The Masters",
+        "U.S. Open",
+        "PGA Championship"
+      ],
+      "explanation": "The Open began in the 19th century and is the oldest major.",
+      "keywords": [
+        "golf",
+        "majors",
+        "open-championship"
+      ],
+      "source": "https://www.theopen.com/"
+    },
+    {
+      "seedId": "98dbf65f-d348-594e-9e4b-16b5e3d3b310",
+      "category": "sports",
+      "navigationKeyword1": "golf",
+      "navigationKeyword2": "majors",
+      "question": "Which major is traditionally played on links courses in the United Kingdom?",
+      "correctAnswer": "The Open Championship",
+      "incorrectAnswers": [
+        "The Masters",
+        "U.S. Open",
+        "PGA Championship"
+      ],
+      "explanation": "The Open is the major most associated with links golf.",
+      "keywords": [
+        "golf",
+        "majors",
+        "links"
+      ],
+      "source": "https://www.theopen.com/"
+    },
+    {
+      "seedId": "c4ba74c1-47fa-535a-bf70-cbe3fde6676f",
+      "category": "sports",
+      "navigationKeyword1": "golf",
+      "navigationKeyword2": "majors",
+      "question": "Which major is usually considered the national championship of golf in the United States?",
+      "correctAnswer": "U.S. Open",
+      "incorrectAnswers": [
+        "The Masters",
+        "PGA Championship",
+        "The Open Championship"
+      ],
+      "explanation": "The U.S. Open is the USGA's national open championship.",
+      "keywords": [
+        "golf",
+        "majors",
+        "national-championship"
+      ],
+      "source": "https://www.usopen.com/"
+    }
+  ]
+}

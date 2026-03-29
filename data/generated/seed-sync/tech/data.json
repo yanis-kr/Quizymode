@@ -1,0 +1,805 @@
+{
+  "schemaVersion": 1,
+  "seedSet": "core-public-items",
+  "deltaPreviewLimit": 200,
+  "items": [
+    {
+      "seedId": "881c6386-74db-5464-bcfb-2f1291cab4ee",
+      "category": "tech",
+      "navigationKeyword1": "data",
+      "navigationKeyword2": "analytics",
+      "question": "In a simple A/B test, what does the null hypothesis usually claim?",
+      "correctAnswer": "No difference between the variants on the measured outcome",
+      "incorrectAnswers": [
+        "Variant B always wins",
+        "The sample is infinite",
+        "Correlation implies causation"
+      ],
+      "explanation": "Tests start by assuming no effect, then check whether evidence makes that assumption unlikely.",
+      "keywords": [
+        "analytics",
+        "ab-testing"
+      ],
+      "source": "https://www.itl.nist.gov/div898/handbook/prc/section2/prc24.htm"
+    },
+    {
+      "seedId": "df5fe0cf-a4ca-52c6-b8ef-31f7897db32e",
+      "category": "tech",
+      "navigationKeyword1": "data",
+      "navigationKeyword2": "analytics",
+      "question": "What does a moving average smooth in a time series chart?",
+      "correctAnswer": "Short-term fluctuations so longer trends are easier to see",
+      "incorrectAnswers": [
+        "All seasonality perfectly",
+        "Missing values at random",
+        "Network latency"
+      ],
+      "explanation": "Averaging over a window reduces noise by blending neighboring points.",
+      "keywords": [
+        "analytics",
+        "time-series"
+      ],
+      "source": "https://www.itl.nist.gov/div898/handbook/pmc/section4/pmc4.htm"
+    },
+    {
+      "seedId": "92be598f-2e8d-5421-820e-a85eec505b22",
+      "category": "tech",
+      "navigationKeyword1": "data",
+      "navigationKeyword2": "analytics",
+      "question": "What does cohort analysis compare?",
+      "correctAnswer": "Groups that share a common starting time or trait across periods",
+      "incorrectAnswers": [
+        "Only two simultaneous snapshots with no time axis",
+        "Only geographic clusters",
+        "Only hardware metrics"
+      ],
+      "explanation": "Cohorts let you separate behavior by acquisition period or segment instead of blending everyone together.",
+      "keywords": [
+        "analytics",
+        "cohorts"
+      ],
+      "source": "https://en.wikipedia.org/wiki/Cohort_analysis"
+    },
+    {
+      "seedId": "fb584e90-1ce7-5b64-a4ec-1a3d44e57d08",
+      "category": "tech",
+      "navigationKeyword1": "data",
+      "navigationKeyword2": "analytics",
+      "question": "What does statistical significance usually mean in applied reporting?",
+      "correctAnswer": "The observed difference is unlikely under a chosen null model and threshold",
+      "incorrectAnswers": [
+        "The effect size is always large",
+        "The study has no bias",
+        "The result is permanently true"
+      ],
+      "explanation": "Significance is about evidence against a null under assumptions, not automatic importance or truth.",
+      "keywords": [
+        "analytics",
+        "statistics"
+      ],
+      "source": "https://en.wikipedia.org/wiki/Statistical_significance"
+    },
+    {
+      "seedId": "63d15a8f-42a5-560d-9c46-97a2730bdcac",
+      "category": "tech",
+      "navigationKeyword1": "data",
+      "navigationKeyword2": "analytics",
+      "question": "What is a KPI in analytics practice?",
+      "correctAnswer": "A measurable value that shows how well an objective is being met",
+      "incorrectAnswers": [
+        "Any database index",
+        "A random sample size",
+        "A network port number"
+      ],
+      "explanation": "Key performance indicators translate goals into numbers you can track over time.",
+      "keywords": [
+        "analytics",
+        "kpi"
+      ],
+      "source": "https://en.wikipedia.org/wiki/Performance_indicator"
+    },
+    {
+      "seedId": "04124e59-e589-504a-9f76-8107c6a97861",
+      "category": "tech",
+      "navigationKeyword1": "data",
+      "navigationKeyword2": "analytics",
+      "question": "What problem does sampling bias create?",
+      "correctAnswer": "Results that do not generalize because the sample misrepresents the population",
+      "incorrectAnswers": [
+        "Faster dashboards",
+        "Stronger encryption",
+        "Higher screen resolution"
+      ],
+      "explanation": "If who you measure is skewed, averages and rates can point the wrong way even with big numbers.",
+      "keywords": [
+        "analytics",
+        "bias"
+      ],
+      "source": "https://en.wikipedia.org/wiki/Sampling_bias"
+    },
+    {
+      "seedId": "1c12cffd-c727-5dff-91bf-ca452d5b19ea",
+      "category": "tech",
+      "navigationKeyword1": "data",
+      "navigationKeyword2": "bi-tools",
+      "question": "In dimensional modeling for BI, what does a fact table mainly store?",
+      "correctAnswer": "Measurable events with foreign keys to dimensions",
+      "incorrectAnswers": [
+        "Only reference lists of countries",
+        "Only user passwords",
+        "Only ETL logs"
+      ],
+      "explanation": "Facts hold numeric measures tied to dimension keys such as time, product, and customer.",
+      "keywords": [
+        "bi-tools",
+        "modeling"
+      ],
+      "source": "https://learn.microsoft.com/en-us/power-bi/guidance/star-schema"
+    },
+    {
+      "seedId": "44cbd196-7a41-5110-a5f0-5a140e6882b0",
+      "category": "tech",
+      "navigationKeyword1": "data",
+      "navigationKeyword2": "bi-tools",
+      "question": "What does row-level security aim to do in a BI deployment?",
+      "correctAnswer": "Restrict which rows each user or group can see in the same report",
+      "incorrectAnswers": [
+        "Encrypt the network cable",
+        "Remove all filters",
+        "Disable refresh schedules"
+      ],
+      "explanation": "RLS filters data at query time so shared dashboards stay compliant.",
+      "keywords": [
+        "bi-tools",
+        "security"
+      ],
+      "source": "https://learn.microsoft.com/en-us/power-bi/guidance/whitepaper-row-level-security"
+    },
+    {
+      "seedId": "c3a3b491-608b-52e5-a08e-2aa5d1191265",
+      "category": "tech",
+      "navigationKeyword1": "data",
+      "navigationKeyword2": "bi-tools",
+      "question": "What is a dimension table typically used for?",
+      "correctAnswer": "Descriptive attributes you filter or group by, such as product name or region",
+      "incorrectAnswers": [
+        "Raw clickstream bytes only",
+        "CPU scheduling priorities",
+        "TLS certificates"
+      ],
+      "explanation": "Dimensions answer who, what, where, and when around the facts.",
+      "keywords": [
+        "bi-tools",
+        "dimensions"
+      ],
+      "source": "https://help.tableau.com/current/pro/desktop/en-us/data_star.htm"
+    },
+    {
+      "seedId": "50aa84e3-6900-5ef6-a0ff-3904f89eba54",
+      "category": "tech",
+      "navigationKeyword1": "data",
+      "navigationKeyword2": "bi-tools",
+      "question": "What is a measure in BI tools like Power BI or Tableau?",
+      "correctAnswer": "An aggregated numeric quantity such as sum of sales or average price",
+      "incorrectAnswers": [
+        "A row-level string ID only",
+        "A visual theme color",
+        "A database file path"
+      ],
+      "explanation": "Measures aggregate facts, while dimensions slice those aggregates.",
+      "keywords": [
+        "bi-tools",
+        "measures"
+      ],
+      "source": "https://learn.microsoft.com/en-us/power-bi/transform-model/desktop-quickstart-learn-dax-basics"
+    },
+    {
+      "seedId": "57abbf69-b4d3-5fe3-b8ef-6fa9f8f17896",
+      "category": "tech",
+      "navigationKeyword1": "data",
+      "navigationKeyword2": "bi-tools",
+      "question": "What is a semantic model in enterprise BI?",
+      "correctAnswer": "A governed layer that defines tables, relationships, and business-friendly metrics",
+      "incorrectAnswers": [
+        "Only the raw CSV files",
+        "Only the operating system",
+        "Only a chart title"
+      ],
+      "explanation": "Semantic models centralize definitions so reports stay consistent.",
+      "keywords": [
+        "bi-tools",
+        "semantic-model"
+      ],
+      "source": "https://cloud.google.com/looker/docs/what-is-looker"
+    },
+    {
+      "seedId": "9e5a3fd8-8aa0-5889-8074-c3fab473d4da",
+      "category": "tech",
+      "navigationKeyword1": "data",
+      "navigationKeyword2": "bi-tools",
+      "question": "What is drill-down in interactive dashboards?",
+      "correctAnswer": "Move from a summary to finer detail along a hierarchy",
+      "incorrectAnswers": [
+        "Delete older data",
+        "Export only to paper",
+        "Increase screen brightness"
+      ],
+      "explanation": "Users start at region and open city or SKU detail without leaving the visual.",
+      "keywords": [
+        "bi-tools",
+        "interaction"
+      ],
+      "source": "https://help.tableau.com/current/pro/desktop/en-us/actions_drilldown.htm"
+    },
+    {
+      "seedId": "c915975e-0582-5c45-9f1b-4f5f49175323",
+      "category": "tech",
+      "navigationKeyword1": "data",
+      "navigationKeyword2": "data-eng",
+      "question": "In Apache Kafka, what is a topic?",
+      "correctAnswer": "A named category or feed of records stored in a log",
+      "incorrectAnswers": [
+        "A single CPU core",
+        "A SQL table index",
+        "A container image"
+      ],
+      "explanation": "Producers publish records to topics; consumers read from partitions of those topics.",
+      "keywords": [
+        "data-eng",
+        "kafka"
+      ],
+      "source": "https://kafka.apache.org/documentation/#intro_topics"
+    },
+    {
+      "seedId": "270e782c-42c7-5063-a408-cd4eeed6ce2a",
+      "category": "tech",
+      "navigationKeyword1": "data",
+      "navigationKeyword2": "data-eng",
+      "question": "What does change data capture (CDC) capture from databases?",
+      "correctAnswer": "Inserts, updates, and deletes as they happen for downstream systems",
+      "incorrectAnswers": [
+        "Only static yearly snapshots",
+        "Only index fragmentation",
+        "Only UI clicks"
+      ],
+      "explanation": "CDC streams row-level changes so warehouses and search indexes stay near real time.",
+      "keywords": [
+        "data-eng",
+        "cdc"
+      ],
+      "source": "https://en.wikipedia.org/wiki/Change_data_capture"
+    },
+    {
+      "seedId": "656f9826-232f-583d-b8ed-3792065f7bdb",
+      "category": "tech",
+      "navigationKeyword1": "data",
+      "navigationKeyword2": "data-eng",
+      "question": "What is a dead-letter queue used for in messaging systems?",
+      "correctAnswer": "Hold messages that failed processing so they can be inspected or retried",
+      "incorrectAnswers": [
+        "Store only successful acknowledgments",
+        "Replace the primary topic",
+        "Encrypt disks"
+      ],
+      "explanation": "Poison messages should not block the whole pipeline; DLQs isolate failures for triage.",
+      "keywords": [
+        "data-eng",
+        "messaging"
+      ],
+      "source": "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-dead-letter-queues.html"
+    },
+    {
+      "seedId": "3c9d121e-85d7-5d6b-81aa-f33bee4c3d43",
+      "category": "tech",
+      "navigationKeyword1": "data",
+      "navigationKeyword2": "data-eng",
+      "question": "What is a directed acyclic graph (DAG) in workflow orchestration?",
+      "correctAnswer": "Tasks as nodes with dependencies that cannot form cycles",
+      "incorrectAnswers": [
+        "A graph that must repeat every task daily",
+        "A random execution order",
+        "A database isolation level"
+      ],
+      "explanation": "DAGs express ordering: downstream tasks run after their upstream dependencies succeed.",
+      "keywords": [
+        "data-eng",
+        "orchestration"
+      ],
+      "source": "https://airflow.apache.org/docs/apache-airflow/stable/core-concepts/dags.html"
+    },
+    {
+      "seedId": "83d968b1-5c65-51d0-8a9f-29c14e2159cd",
+      "category": "tech",
+      "navigationKeyword1": "data",
+      "navigationKeyword2": "data-eng",
+      "question": "What is schema evolution in data pipelines?",
+      "correctAnswer": "Handling new, removed, or changed fields without breaking readers or writers",
+      "incorrectAnswers": [
+        "Deleting all historical data",
+        "Disabling compression",
+        "Removing primary keys"
+      ],
+      "explanation": "Formats like Avro or Protobuf define rules so producers and consumers can upgrade safely.",
+      "keywords": [
+        "data-eng",
+        "schema"
+      ],
+      "source": "https://avro.apache.org/docs/current/specification/"
+    },
+    {
+      "seedId": "85916a10-6e1c-541a-b823-7169b74dd4a7",
+      "category": "tech",
+      "navigationKeyword1": "data",
+      "navigationKeyword2": "data-eng",
+      "question": "Why is idempotence important for data pipelines that may retry?",
+      "correctAnswer": "Running the same step twice does not duplicate or corrupt outcomes",
+      "incorrectAnswers": [
+        "It makes retries impossible",
+        "It removes the need for logs",
+        "It guarantees real-time latency"
+      ],
+      "explanation": "Networks and workers fail; idempotent writes keep replays safe.",
+      "keywords": [
+        "data-eng",
+        "reliability"
+      ],
+      "source": "https://en.wikipedia.org/wiki/Idempotence"
+    },
+    {
+      "seedId": "6f66e7ec-10b5-58a3-a74f-f9bbc9cc4fab",
+      "category": "tech",
+      "navigationKeyword1": "data",
+      "navigationKeyword2": "data-science",
+      "question": "In classification, what does a confusion matrix summarize?",
+      "correctAnswer": "Counts of predicted versus actual classes",
+      "incorrectAnswers": [
+        "Only the learning rate schedule",
+        "Network bandwidth",
+        "Disk seek time"
+      ],
+      "explanation": "The matrix shows true positives, false positives, and other cells for each class pair.",
+      "keywords": [
+        "data-science",
+        "classification"
+      ],
+      "source": "https://scikit-learn.org/stable/modules/model_evaluation.html#confusion-matrix"
+    },
+    {
+      "seedId": "20b61667-27b1-5d50-b519-1e79192dd14e",
+      "category": "tech",
+      "navigationKeyword1": "data",
+      "navigationKeyword2": "data-science",
+      "question": "What does RMSE measure for regression predictions?",
+      "correctAnswer": "The square root of the average squared error between predicted and actual values",
+      "incorrectAnswers": [
+        "The fraction of wrong classes",
+        "The median absolute deviation only",
+        "The training loss at epoch one"
+      ],
+      "explanation": "RMSE penalizes large errors more than MAE because errors are squared before averaging.",
+      "keywords": [
+        "data-science",
+        "metrics"
+      ],
+      "source": "https://en.wikipedia.org/wiki/Root-mean-square_deviation"
+    },
+    {
+      "seedId": "fcda1dcc-0b3f-5b35-8fe9-36d974e9c41f",
+      "category": "tech",
+      "navigationKeyword1": "data",
+      "navigationKeyword2": "data-science",
+      "question": "What does k-fold cross-validation do?",
+      "correctAnswer": "Splits data into k parts and rotates which part is validation while training on the rest",
+      "incorrectAnswers": [
+        "Trains k separate models that never share code",
+        "Deletes k percent of rows",
+        "Always uses the full set as test"
+      ],
+      "explanation": "Rotating folds gives a more stable estimate of error when data is limited.",
+      "keywords": [
+        "data-science",
+        "cross-validation"
+      ],
+      "source": "https://scikit-learn.org/stable/modules/cross_validation.html"
+    },
+    {
+      "seedId": "46ada8d0-1bd2-568a-bbff-1a6e8d84c7e2",
+      "category": "tech",
+      "navigationKeyword1": "data",
+      "navigationKeyword2": "data-science",
+      "question": "What is feature engineering?",
+      "correctAnswer": "Creating or transforming inputs so models can learn more easily",
+      "incorrectAnswers": [
+        "Removing all labels",
+        "Printing the confusion matrix",
+        "Disabling validation"
+      ],
+      "explanation": "Good features encode domain knowledge like ratios, dates, or interactions.",
+      "keywords": [
+        "data-science",
+        "features"
+      ],
+      "source": "https://en.wikipedia.org/wiki/Feature_engineering"
+    },
+    {
+      "seedId": "72c2bdff-06be-596d-9461-aa0c963ce28c",
+      "category": "tech",
+      "navigationKeyword1": "data",
+      "navigationKeyword2": "data-science",
+      "question": "What is overfitting in supervised learning?",
+      "correctAnswer": "The model fits training noise and generalizes poorly to new data",
+      "incorrectAnswers": [
+        "The model is too simple to learn patterns",
+        "Training always stops early",
+        "The dataset is perfectly random"
+      ],
+      "explanation": "Too much capacity or too little data lets the model memorize quirks instead of stable patterns.",
+      "keywords": [
+        "data-science",
+        "overfitting"
+      ],
+      "source": "https://en.wikipedia.org/wiki/Overfitting"
+    },
+    {
+      "seedId": "ccae0629-8a43-5881-a1f8-aa836cd1c58d",
+      "category": "tech",
+      "navigationKeyword1": "data",
+      "navigationKeyword2": "data-science",
+      "question": "Why is a held-out test set used after training?",
+      "correctAnswer": "Estimate performance on unseen data without tuning to those examples",
+      "incorrectAnswers": [
+        "Replace the need for any training data",
+        "Guarantee fairness",
+        "Speed up gradient descent"
+      ],
+      "explanation": "If you tune on the same data you report, scores are optimistically biased.",
+      "keywords": [
+        "data-science",
+        "evaluation"
+      ],
+      "source": "https://en.wikipedia.org/wiki/Training,_validation,_and_test_data_sets"
+    },
+    {
+      "seedId": "566ec4c1-8540-5948-882d-7fb384f437aa",
+      "category": "tech",
+      "navigationKeyword1": "data",
+      "navigationKeyword2": "etl",
+      "question": "How does ELT differ from classic ETL?",
+      "correctAnswer": "Loads raw or lightly processed data first and transforms inside the target platform",
+      "incorrectAnswers": [
+        "It never touches a database",
+        "It forbids SQL",
+        "It only works on CSV"
+      ],
+      "explanation": "Warehouse engines handle heavy transforms after load, using their compute and SQL.",
+      "keywords": [
+        "etl",
+        "elt"
+      ],
+      "source": "https://www.snowflake.com/guides/what-etl/"
+    },
+    {
+      "seedId": "7e33b238-2b12-5b9e-b70e-82bc549e9cc2",
+      "category": "tech",
+      "navigationKeyword1": "data",
+      "navigationKeyword2": "etl",
+      "question": "What do the letters ETL stand for?",
+      "correctAnswer": "Extract, transform, load",
+      "incorrectAnswers": [
+        "Encode, transmit, log",
+        "Encrypt, tokenize, lock",
+        "Estimate, test, label"
+      ],
+      "explanation": "Data is pulled from sources, reshaped to rules, then written to a target such as a warehouse.",
+      "keywords": [
+        "etl",
+        "basics"
+      ],
+      "source": "https://en.wikipedia.org/wiki/Extract,_transform,_load"
+    },
+    {
+      "seedId": "221f15b5-7920-57df-87d0-547ed6d02311",
+      "category": "tech",
+      "navigationKeyword1": "data",
+      "navigationKeyword2": "etl",
+      "question": "What is a staging area in ETL pipelines?",
+      "correctAnswer": "An intermediate landing zone before data is cleaned and integrated",
+      "incorrectAnswers": [
+        "The final presentation database only",
+        "A backup tape",
+        "A mobile app cache"
+      ],
+      "explanation": "Staging lets you validate, deduplicate, and join without risking production targets.",
+      "keywords": [
+        "etl",
+        "staging"
+      ],
+      "source": "https://docs.aws.amazon.com/prescriptive-guidance/latest/large-migration-databases/staging-area.html"
+    },
+    {
+      "seedId": "b6c4cfb3-873d-5e9d-abde-aa6b6b16970b",
+      "category": "tech",
+      "navigationKeyword1": "data",
+      "navigationKeyword2": "etl",
+      "question": "What is data profiling in ETL design?",
+      "correctAnswer": "Analyzing source columns for types, nulls, ranges, and patterns before mapping",
+      "incorrectAnswers": [
+        "Printing marketing brochures",
+        "Profiling CPU fans",
+        "Encrypting backups only"
+      ],
+      "explanation": "Profiling surfaces surprises early so transforms and tests match reality.",
+      "keywords": [
+        "etl",
+        "quality"
+      ],
+      "source": "https://en.wikipedia.org/wiki/Data_profiling"
+    },
+    {
+      "seedId": "f6f70180-7b38-54d5-baf2-484e57c9a386",
+      "category": "tech",
+      "navigationKeyword1": "data",
+      "navigationKeyword2": "etl",
+      "question": "What is incremental loading?",
+      "correctAnswer": "Bringing only new or changed rows instead of full reloads each run",
+      "incorrectAnswers": [
+        "Deleting the warehouse nightly",
+        "Loading random samples",
+        "Disabling indexes forever"
+      ],
+      "explanation": "Watermarks or change tables keep runs faster and cheaper.",
+      "keywords": [
+        "etl",
+        "incremental"
+      ],
+      "source": "https://docs.getdbt.com/docs/build/incremental-models"
+    },
+    {
+      "seedId": "dd825c72-fad3-5da6-a50c-402845b0ef77",
+      "category": "tech",
+      "navigationKeyword1": "data",
+      "navigationKeyword2": "etl",
+      "question": "Why are idempotent ETL jobs preferred?",
+      "correctAnswer": "Re-running the job after a failure yields the same final state",
+      "incorrectAnswers": [
+        "They never log errors",
+        "They skip validation",
+        "They require manual SQL only"
+      ],
+      "explanation": "Retries are normal in distributed systems; idempotence prevents duplicate rows or partial corruption.",
+      "keywords": [
+        "etl",
+        "reliability"
+      ],
+      "source": "https://en.wikipedia.org/wiki/Idempotence"
+    },
+    {
+      "seedId": "69e204f8-6efb-5265-8b9a-de2a3f496b4c",
+      "category": "tech",
+      "navigationKeyword1": "data",
+      "navigationKeyword2": "visualization",
+      "question": "What does a line chart communicate well?",
+      "correctAnswer": "Trends and changes over an ordered axis such as time",
+      "incorrectAnswers": [
+        "Exact shares of a static total without a baseline",
+        "Hiding the axis entirely",
+        "Replacing tables for exact figures"
+      ],
+      "explanation": "Connecting ordered points highlights direction and volatility at a glance.",
+      "keywords": [
+        "visualization",
+        "line-chart"
+      ],
+      "source": "https://vega.github.io/vega-lite/docs/line.html"
+    },
+    {
+      "seedId": "4c9692d3-f78a-5f1a-b7d9-eb63ad9bba77",
+      "category": "tech",
+      "navigationKeyword1": "data",
+      "navigationKeyword2": "visualization",
+      "question": "What does a scatter plot emphasize between two numeric variables?",
+      "correctAnswer": "The joint relationship and spread of points",
+      "incorrectAnswers": [
+        "Exact cumulative totals",
+        "Hierarchical nesting",
+        "Packet routing paths"
+      ],
+      "explanation": "Each point pairs two measurements, revealing correlation, clusters, and outliers.",
+      "keywords": [
+        "visualization",
+        "scatter"
+      ],
+      "source": "https://en.wikipedia.org/wiki/Scatter_plot"
+    },
+    {
+      "seedId": "87676ad5-314d-5207-ae46-3b269c31d8f7",
+      "category": "tech",
+      "navigationKeyword1": "data",
+      "navigationKeyword2": "visualization",
+      "question": "What is chartjunk?",
+      "correctAnswer": "Decorative visual elements that do not carry data",
+      "incorrectAnswers": [
+        "Any axis label",
+        "Any legend entry",
+        "Any gridline"
+      ],
+      "explanation": "Extra ornaments can distract from the message and distort perception.",
+      "keywords": [
+        "visualization",
+        "design"
+      ],
+      "source": "https://en.wikipedia.org/wiki/Chartjunk"
+    },
+    {
+      "seedId": "a4eb153f-1bde-5bf4-ac36-d281ec944849",
+      "category": "tech",
+      "navigationKeyword1": "data",
+      "navigationKeyword2": "visualization",
+      "question": "What is the main purpose of a histogram?",
+      "correctAnswer": "Show the distribution of a numeric variable using bins",
+      "incorrectAnswers": [
+        "Show parts of a whole that must sum to one",
+        "Plot time on the y-axis only",
+        "List every raw row"
+      ],
+      "explanation": "Bin counts reveal shape, skew, and modes for continuous or granular data.",
+      "keywords": [
+        "visualization",
+        "histogram"
+      ],
+      "source": "https://matplotlib.org/stable/gallery/statistics/hist.html"
+    },
+    {
+      "seedId": "9f3465f5-13ba-5919-bf04-f86b3c8764e0",
+      "category": "tech",
+      "navigationKeyword1": "data",
+      "navigationKeyword2": "visualization",
+      "question": "When are bar charts usually better than pie charts for comparing categories?",
+      "correctAnswer": "When you need accurate comparison of many similar magnitudes",
+      "incorrectAnswers": [
+        "When you have no axis labels",
+        "When categories exceed one hundred only",
+        "When data must stay secret"
+      ],
+      "explanation": "Human eyes judge length on a common scale more reliably than wedge angles and areas.",
+      "keywords": [
+        "visualization",
+        "charts"
+      ],
+      "source": "https://en.wikipedia.org/wiki/Pie_chart#Criticism"
+    },
+    {
+      "seedId": "6d979b18-30da-5ee2-bcb6-89b8e574fd6d",
+      "category": "tech",
+      "navigationKeyword1": "data",
+      "navigationKeyword2": "visualization",
+      "question": "Why do sequential color scales need care on maps and heatmaps?",
+      "correctAnswer": "Perceived brightness should match magnitude to avoid misleading readers",
+      "incorrectAnswers": [
+        "Color never affects interpretation",
+        "Rainbow scales are always neutral",
+        "Only fonts matter"
+      ],
+      "explanation": "Some palettes change hue and luminance unevenly, which can exaggerate small differences.",
+      "keywords": [
+        "visualization",
+        "color"
+      ],
+      "source": "https://colorbrewer2.org/learnmore/schemes.html"
+    },
+    {
+      "seedId": "f7b95dfc-9d82-5ce6-ad4c-6ac189ecb4ca",
+      "category": "tech",
+      "navigationKeyword1": "data",
+      "navigationKeyword2": "warehousing",
+      "question": "What is a data warehouse bus architecture meant to coordinate?",
+      "correctAnswer": "Conformed dimensions shared across subject areas",
+      "incorrectAnswers": [
+        "Separate unrelated silos with no shared keys",
+        "Only application logs",
+        "Only streaming ingestion"
+      ],
+      "explanation": "Shared conformed dimensions let marts roll up consistently across the enterprise.",
+      "keywords": [
+        "warehousing",
+        "kimball"
+      ],
+      "source": "https://en.wikipedia.org/wiki/Conformed_dimension"
+    },
+    {
+      "seedId": "4c9f2aa6-caad-5265-8858-cf01817ad6d3",
+      "category": "tech",
+      "navigationKeyword1": "data",
+      "navigationKeyword2": "warehousing",
+      "question": "What is a slowly changing dimension (SCD) problem?",
+      "correctAnswer": "Dimension attributes change over time and history must be handled deliberately",
+      "incorrectAnswers": [
+        "Facts load instantly with no transforms",
+        "Disks spin slower over years",
+        "Queries must be single-table only"
+      ],
+      "explanation": "Policies like Type 1 overwrite, Type 2 add rows, or Type 3 keep limited history address changing attributes.",
+      "keywords": [
+        "warehousing",
+        "scd"
+      ],
+      "source": "https://en.wikipedia.org/wiki/Slowly_changing_dimension"
+    },
+    {
+      "seedId": "a9fee498-6480-52d0-bce8-f3c9ba7b3ca8",
+      "category": "tech",
+      "navigationKeyword1": "data",
+      "navigationKeyword2": "warehousing",
+      "question": "What is a snowflake schema compared to a star schema?",
+      "correctAnswer": "Dimensions are normalized into more tables to reduce redundancy",
+      "incorrectAnswers": [
+        "Facts are removed entirely",
+        "Only JSON storage is allowed",
+        "No joins are permitted"
+      ],
+      "explanation": "Snowflaking splits wide dimensions into hierarchies, trading simpler joins for less duplication.",
+      "keywords": [
+        "warehousing",
+        "modeling"
+      ],
+      "source": "https://en.wikipedia.org/wiki/Snowflake_schema"
+    },
+    {
+      "seedId": "a010d22c-151b-596c-9668-722744b56da6",
+      "category": "tech",
+      "navigationKeyword1": "data",
+      "navigationKeyword2": "warehousing",
+      "question": "What is an OLAP cube used for?",
+      "correctAnswer": "Multidimensional analysis with fast slice-and-dice on aggregates",
+      "incorrectAnswers": [
+        "Storing raw web server logs only",
+        "Replacing primary keys",
+        "Managing Kubernetes pods"
+      ],
+      "explanation": "Precomputed aggregates along hierarchies speed interactive BI queries.",
+      "keywords": [
+        "warehousing",
+        "olap"
+      ],
+      "source": "https://en.wikipedia.org/wiki/OLAP_cube"
+    },
+    {
+      "seedId": "19a8c545-0c3f-5e4c-a1e4-b9f29fc3c0fb",
+      "category": "tech",
+      "navigationKeyword1": "data",
+      "navigationKeyword2": "warehousing",
+      "question": "What is columnar storage often optimized for in analytics warehouses?",
+      "correctAnswer": "Scanning fewer columns on wide tables for aggregations",
+      "incorrectAnswers": [
+        "Single-row OLTP updates on every column",
+        "Storing video frames",
+        "Replacing SQL"
+      ],
+      "explanation": "Analytical queries touch a few measures and attributes, so reading columns separately saves I/O.",
+      "keywords": [
+        "warehousing",
+        "columnar"
+      ],
+      "source": "https://docs.snowflake.com/en/user-guide/intro-key-concepts"
+    },
+    {
+      "seedId": "afdba861-d6cb-5c1c-a046-05cef9d63dfb",
+      "category": "tech",
+      "navigationKeyword1": "data",
+      "navigationKeyword2": "warehousing",
+      "question": "What shape does a star schema use?",
+      "correctAnswer": "One fact table surrounded by dimension tables",
+      "incorrectAnswers": [
+        "Many fact tables only with no dimensions",
+        "A single denormalized flat file only",
+        "A pure key-value store"
+      ],
+      "explanation": "The fact holds measures; dimensions provide attributes for filtering and grouping.",
+      "keywords": [
+        "warehousing",
+        "star-schema"
+      ],
+      "source": "https://learn.microsoft.com/en-us/power-bi/guidance/star-schema"
+    }
+  ]
+}

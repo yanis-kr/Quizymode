@@ -1,0 +1,121 @@
+{
+  "schemaVersion": 1,
+  "seedSet": "core-public-items",
+  "deltaPreviewLimit": 200,
+  "items": [
+    {
+      "seedId": "a1f809a1-57b0-5155-981c-8e7847f2fba3",
+      "category": "civics",
+      "navigationKeyword1": "public-policy",
+      "navigationKeyword2": "healthcare",
+      "question": "Medicaid is chiefly funded and administered how in the United States?",
+      "correctAnswer": "jointly by the federal government and states, with state variation",
+      "incorrectAnswers": [
+        "only by counties",
+        "entirely by private insurers",
+        "only through block grants to cities"
+      ],
+      "explanation": "Medicaid is a federal-state partnership; states run programs within federal rules and share financing.",
+      "keywords": [
+        "medicaid",
+        "health-policy"
+      ],
+      "source": "https://www.medicaid.gov/medicaid/index.html"
+    },
+    {
+      "seedId": "554d6d6f-2ad4-57d9-9a00-4c079fb84c7e",
+      "category": "civics",
+      "navigationKeyword1": "public-policy",
+      "navigationKeyword2": "healthcare",
+      "question": "Under the traditional division of public health roles, what do local health departments often do first in outbreaks?",
+      "correctAnswer": "investigate cases, run clinics, and apply quarantine rules allowed by state law",
+      "incorrectAnswers": [
+        "declare war",
+        "confirm Supreme Court justices",
+        "set federal income tax brackets"
+      ],
+      "explanation": "Local public health agencies carry out surveillance and control measures under state public health law.",
+      "keywords": [
+        "public-health",
+        "local-government"
+      ],
+      "source": "https://www.cdc.gov/publichealthgateway/publichealthservices/local.html"
+    },
+    {
+      "seedId": "7dae3fa6-eaf7-54aa-a39b-36f0329e9815",
+      "category": "civics",
+      "navigationKeyword1": "public-policy",
+      "navigationKeyword2": "healthcare",
+      "question": "What does HIPAA's Privacy Rule mainly regulate?",
+      "correctAnswer": "use and disclosure of protected health information by covered entities",
+      "incorrectAnswers": [
+        "FDA approval of new drugs",
+        "Medicare payroll tax rates",
+        "medical school accreditation"
+      ],
+      "explanation": "HIPAA sets national standards for health information privacy and security for covered plans and providers.",
+      "keywords": [
+        "hipaa",
+        "health-privacy"
+      ],
+      "source": "https://www.hhs.gov/hipaa/for-professionals/privacy/index.html"
+    },
+    {
+      "seedId": "e1b00685-8f39-5b6f-af63-8e41fd47a985",
+      "category": "civics",
+      "navigationKeyword1": "public-policy",
+      "navigationKeyword2": "healthcare",
+      "question": "What is CHIP designed to cover?",
+      "correctAnswer": "health coverage for children in families with incomes too high for Medicaid but still limited",
+      "incorrectAnswers": [
+        "only veterans' hospitals",
+        "prescription drugs for all seniors",
+        "international emergency evacuations"
+      ],
+      "explanation": "CHIP targets uninsured children in working families who do not qualify for Medicaid under state rules.",
+      "keywords": [
+        "chip",
+        "childrens-health"
+      ],
+      "source": "https://www.medicaid.gov/chip/index.html"
+    },
+    {
+      "seedId": "dca0168e-37fd-5d4d-982c-07ee5d566733",
+      "category": "civics",
+      "navigationKeyword1": "public-policy",
+      "navigationKeyword2": "healthcare",
+      "question": "Which public program primarily provides health coverage to many older adults and some younger people with disabilities?",
+      "correctAnswer": "Medicare",
+      "incorrectAnswers": [
+        "Medicaid",
+        "CHIP",
+        "TRICARE"
+      ],
+      "explanation": "Medicare is the federal health insurance program mainly for people 65 and older and certain disabled individuals.",
+      "keywords": [
+        "medicare",
+        "health-policy"
+      ],
+      "source": "https://www.medicare.gov/basics/get-started-with-medicare"
+    },
+    {
+      "seedId": "8f89da5e-b8e4-5b88-85b2-4f0582a8fe3d",
+      "category": "civics",
+      "navigationKeyword1": "public-policy",
+      "navigationKeyword2": "healthcare",
+      "question": "Who licenses physicians and regulates professional practice standards in most U.S. systems?",
+      "correctAnswer": "state governments",
+      "incorrectAnswers": [
+        "the United Nations",
+        "the U.S. Supreme Court",
+        "the Federal Reserve"
+      ],
+      "explanation": "Medical licensure is a state function; boards set entry and discipline rules for practitioners.",
+      "keywords": [
+        "licensure",
+        "state-regulation"
+      ],
+      "source": "https://www.ncsl.org/health/state-medical-professional-licensing"
+    }
+  ]
+}

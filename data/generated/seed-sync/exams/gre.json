@@ -1,0 +1,426 @@
+{
+  "schemaVersion": 1,
+  "seedSet": "core-public-items",
+  "deltaPreviewLimit": 200,
+  "items": [
+    {
+      "seedId": "bfcbb052-2159-4469-8b6b-1b8c967e3cd3",
+      "category": "exams",
+      "navigationKeyword1": "gre",
+      "navigationKeyword2": "general-gre",
+      "question": "How long is each GRE Verbal or Quantitative section on the current General Test?",
+      "correctAnswer": "21 to 26 minutes depending on section type",
+      "incorrectAnswers": [
+        "10 minutes each",
+        "45 minutes each",
+        "60 minutes each"
+      ],
+      "explanation": "ETS lists shorter timing for the current GRE, with section lengths varying by Verbal and Quantitative section type.",
+      "keywords": [
+        "gre-format",
+        "timing",
+        "test-prep"
+      ],
+      "source": "https://www.ets.org/gre/test-takers/general-test/structure.html"
+    },
+    {
+      "seedId": "213cdd45-59f5-4708-bfc0-89f4f764e1d5",
+      "category": "exams",
+      "navigationKeyword1": "gre",
+      "navigationKeyword2": "general-gre",
+      "question": "How many tasks are in the current GRE Analytical Writing section?",
+      "correctAnswer": "One task",
+      "incorrectAnswers": [
+        "Two tasks",
+        "Three tasks",
+        "No writing tasks"
+      ],
+      "explanation": "ETS says the current GRE Analytical Writing section contains one 'Analyze an Issue' task.",
+      "keywords": [
+        "gre-format",
+        "analytical-writing",
+        "test-prep"
+      ],
+      "source": "https://www.ets.org/gre/test-takers/general-test/structure.html"
+    },
+    {
+      "seedId": "1372736a-3aaf-463e-a2c6-2697807fc3cf",
+      "category": "exams",
+      "navigationKeyword1": "gre",
+      "navigationKeyword2": "general-gre",
+      "question": "How much time is given for the current GRE Analytical Writing task?",
+      "correctAnswer": "30 minutes",
+      "incorrectAnswers": [
+        "20 minutes",
+        "45 minutes",
+        "60 minutes"
+      ],
+      "explanation": "ETS allots 30 minutes for the Analytical Writing section's single task.",
+      "keywords": [
+        "gre-format",
+        "analytical-writing",
+        "test-prep"
+      ],
+      "source": "https://www.ets.org/gre/test-takers/general-test/structure.html"
+    },
+    {
+      "seedId": "60b7cefd-df17-4fbc-9d1d-46926128767f",
+      "category": "exams",
+      "navigationKeyword1": "gre",
+      "navigationKeyword2": "general-gre",
+      "question": "Which GRE section includes reading comprehension, text completion, and sentence equivalence questions?",
+      "correctAnswer": "Verbal Reasoning",
+      "incorrectAnswers": [
+        "Quantitative Reasoning",
+        "Analytical Writing",
+        "Research Writing"
+      ],
+      "explanation": "ETS says the Verbal Reasoning section includes reading comprehension, text completion, and sentence equivalence.",
+      "keywords": [
+        "gre-format",
+        "verbal-reasoning",
+        "test-prep"
+      ],
+      "source": "https://www.ets.org/gre/test-takers/general-test/structure.html"
+    },
+    {
+      "seedId": "6d3f9cbb-379f-4577-ba91-36b338d45b8a",
+      "category": "exams",
+      "navigationKeyword1": "gre",
+      "navigationKeyword2": "general-gre",
+      "question": "Which section of the GRE measures your ability to analyze and evaluate written arguments?",
+      "correctAnswer": "Analytical Writing",
+      "incorrectAnswers": [
+        "Quantitative Reasoning",
+        "Verbal Reasoning",
+        "Experimental Research"
+      ],
+      "explanation": "ETS says the Analytical Writing section measures critical thinking and analytical writing skills, including analyzing arguments.",
+      "keywords": [
+        "gre-format",
+        "test-prep"
+      ],
+      "source": "https://www.ets.org/gre/test-takers/general-test/structure.html"
+    },
+    {
+      "seedId": "bddabd3d-4846-4cd9-865f-9d4b36600833",
+      "category": "exams",
+      "navigationKeyword1": "gre",
+      "navigationKeyword2": "quant",
+      "question": "If 25% of x is 15, what is x?",
+      "correctAnswer": "60",
+      "incorrectAnswers": [
+        "40",
+        "45",
+        "75"
+      ],
+      "explanation": "If 0.25x = 15, then x = 15 / 0.25 = 60.",
+      "keywords": [
+        "gre-quant",
+        "percent",
+        "quantitative-reasoning"
+      ],
+      "source": "https://www.ets.org/pdfs/gre/gre-sample-questions.pdf"
+    },
+    {
+      "seedId": "537fc3f8-71c2-487d-a13a-a11955493d7f",
+      "category": "exams",
+      "navigationKeyword1": "gre",
+      "navigationKeyword2": "quant",
+      "question": "If the ratio of two numbers is 3:7 and the larger number is 35, what is the smaller number?",
+      "correctAnswer": "15",
+      "incorrectAnswers": [
+        "12",
+        "18",
+        "20"
+      ],
+      "explanation": "If 7 parts equal 35, then 1 part is 5 and 3 parts equal 15.",
+      "keywords": [
+        "gre-quant",
+        "ratios",
+        "quantitative-reasoning"
+      ],
+      "source": "https://www.ets.org/pdfs/gre/gre-sample-questions.pdf"
+    },
+    {
+      "seedId": "c959fd81-e970-438b-90a5-ad15affb2dfb",
+      "category": "exams",
+      "navigationKeyword1": "gre",
+      "navigationKeyword2": "quant",
+      "question": "What is the area of a right triangle with legs 6 and 8?",
+      "correctAnswer": "24",
+      "incorrectAnswers": [
+        "14",
+        "28",
+        "48"
+      ],
+      "explanation": "Triangle area is one-half times base times height: 1/2 x 6 x 8 = 24.",
+      "keywords": [
+        "gre-quant",
+        "geometry",
+        "quantitative-reasoning"
+      ],
+      "source": "https://www.ets.org/pdfs/gre/gre-sample-questions.pdf"
+    },
+    {
+      "seedId": "6715642e-a031-4c97-96f2-50f3eae77296",
+      "category": "exams",
+      "navigationKeyword1": "gre",
+      "navigationKeyword2": "quant",
+      "question": "What is the average of 6, 8, 10, and 12?",
+      "correctAnswer": "9",
+      "incorrectAnswers": [
+        "8",
+        "10",
+        "11"
+      ],
+      "explanation": "The sum is 36, and 36 divided by 4 is 9.",
+      "keywords": [
+        "gre-quant",
+        "statistics",
+        "quantitative-reasoning"
+      ],
+      "source": "https://www.ets.org/pdfs/gre/gre-sample-questions.pdf"
+    },
+    {
+      "seedId": "94ab8d49-9ded-40f3-80d5-bdb46b257fc3",
+      "category": "exams",
+      "navigationKeyword1": "gre",
+      "navigationKeyword2": "quant",
+      "question": "What is the probability of rolling an even number on a fair six-sided die?",
+      "correctAnswer": "1/2",
+      "incorrectAnswers": [
+        "1/3",
+        "2/3",
+        "3/4"
+      ],
+      "explanation": "Three of the six outcomes are even, so the probability is 3/6 = 1/2.",
+      "keywords": [
+        "gre-quant",
+        "probability",
+        "quantitative-reasoning"
+      ],
+      "source": "https://www.ets.org/pdfs/gre/gre-sample-questions.pdf"
+    },
+    {
+      "seedId": "2c6641c5-b8b4-46e1-8691-4453783e7523",
+      "category": "exams",
+      "navigationKeyword1": "gre",
+      "navigationKeyword2": "verbal",
+      "question": "Although the speaker sounded ___, the evidence supporting her claim was weak.",
+      "correctAnswer": "confident",
+      "incorrectAnswers": [
+        "confused",
+        "silent",
+        "reluctant"
+      ],
+      "explanation": "The contrast word \"although\" suggests strong delivery despite weak evidence.",
+      "keywords": [
+        "gre-verbal",
+        "sentence-equivalence",
+        "verbal-reasoning"
+      ],
+      "source": "https://www.ets.org/pdfs/gre/gre-sample-questions.pdf"
+    },
+    {
+      "seedId": "a52d7829-a4ab-49aa-8a13-fb0d9af7a7e9",
+      "category": "exams",
+      "navigationKeyword1": "gre",
+      "navigationKeyword2": "verbal",
+      "question": "Because the memo was so ___, no one knew what action to take.",
+      "correctAnswer": "ambiguous",
+      "incorrectAnswers": [
+        "precise",
+        "practical",
+        "efficient"
+      ],
+      "explanation": "\"Ambiguous\" fits because an unclear memo would cause confusion.",
+      "keywords": [
+        "gre-verbal",
+        "text-completion",
+        "verbal-reasoning"
+      ],
+      "source": "https://www.ets.org/pdfs/gre/gre-sample-questions.pdf"
+    },
+    {
+      "seedId": "1faa4ac4-f2a4-4f6e-969c-5bbf665a3ce3",
+      "category": "exams",
+      "navigationKeyword1": "gre",
+      "navigationKeyword2": "verbal",
+      "question": "Despite early criticism, the book became highly ___ among scholars.",
+      "correctAnswer": "influential",
+      "incorrectAnswers": [
+        "obscure",
+        "careless",
+        "skeptical"
+      ],
+      "explanation": "The contrast implies that the book later gained major importance.",
+      "keywords": [
+        "gre-verbal",
+        "text-completion",
+        "verbal-reasoning"
+      ],
+      "source": "https://www.ets.org/pdfs/gre/gre-sample-questions.pdf"
+    },
+    {
+      "seedId": "5a405561-8b6f-4fc6-a0a9-eab8f988aef6",
+      "category": "exams",
+      "navigationKeyword1": "gre",
+      "navigationKeyword2": "verbal",
+      "question": "The committee praised the proposal for being practical rather than ___.",
+      "correctAnswer": "theoretical",
+      "incorrectAnswers": [
+        "useful",
+        "efficient",
+        "careful"
+      ],
+      "explanation": "\"Practical\" contrasts most naturally with \"theoretical.\"",
+      "keywords": [
+        "gre-verbal",
+        "sentence-equivalence",
+        "verbal-reasoning"
+      ],
+      "source": "https://www.ets.org/pdfs/gre/gre-sample-questions.pdf"
+    },
+    {
+      "seedId": "238b314a-8f33-4e30-80b8-a2b72ebedb6f",
+      "category": "exams",
+      "navigationKeyword1": "gre",
+      "navigationKeyword2": "verbal",
+      "question": "The scientist's explanation was so ___ that even beginners understood it.",
+      "correctAnswer": "clear",
+      "incorrectAnswers": [
+        "arcane",
+        "tentative",
+        "fragmented"
+      ],
+      "explanation": "If beginners understood it, the explanation must have been clear.",
+      "keywords": [
+        "gre-verbal",
+        "text-completion",
+        "verbal-reasoning"
+      ],
+      "source": "https://www.ets.org/pdfs/gre/gre-sample-questions.pdf"
+    },
+    {
+      "seedId": "677ca383-d9bf-4f08-a85c-ea8901f4e7bb",
+      "category": "exams",
+      "navigationKeyword1": "gre",
+      "navigationKeyword2": "vocab",
+      "question": "Because the policy was only temporary, its effects were ___ rather than lasting.",
+      "correctAnswer": "ephemeral",
+      "incorrectAnswers": [
+        "enduring",
+        "rigid",
+        "implicit"
+      ],
+      "explanation": "\"Ephemeral\" means lasting a very short time.",
+      "keywords": [
+        "gre-vocab",
+        "context-clues",
+        "verbal-reasoning"
+      ],
+      "source": "https://www.ets.org/pdfs/gre/gre-sample-questions.pdf"
+    },
+    {
+      "seedId": "1d93d4cd-0f09-4ec9-904b-6877e40e5814",
+      "category": "exams",
+      "navigationKeyword1": "gre",
+      "navigationKeyword2": "vocab",
+      "question": "Rather than proposing an ideal theory, the committee chose a ___ solution it could implement immediately.",
+      "correctAnswer": "pragmatic",
+      "incorrectAnswers": [
+        "ornate",
+        "equivocal",
+        "obsolete"
+      ],
+      "explanation": "\"Pragmatic\" refers to a practical, results-oriented approach.",
+      "keywords": [
+        "gre-vocab",
+        "context-clues",
+        "verbal-reasoning"
+      ],
+      "source": "https://www.ets.org/pdfs/gre/gre-sample-questions.pdf"
+    },
+    {
+      "seedId": "6b36fd29-8416-441b-9f75-c7270f82021c",
+      "category": "exams",
+      "navigationKeyword1": "gre",
+      "navigationKeyword2": "vocab",
+      "question": "Smartphones are so ___ in daily life that many people forget how new they are.",
+      "correctAnswer": "ubiquitous",
+      "incorrectAnswers": [
+        "scarce",
+        "obsolete",
+        "tentative"
+      ],
+      "explanation": "\"Ubiquitous\" means present everywhere.",
+      "keywords": [
+        "gre-vocab",
+        "context-clues",
+        "verbal-reasoning"
+      ],
+      "source": "https://www.ets.org/pdfs/gre/gre-sample-questions.pdf"
+    },
+    {
+      "seedId": "58185ff5-bf91-4a7b-bab1-6aec9016a214",
+      "category": "exams",
+      "navigationKeyword1": "gre",
+      "navigationKeyword2": "vocab",
+      "question": "The design of the building was intentionally ___, with no extra decoration at all.",
+      "correctAnswer": "austere",
+      "incorrectAnswers": [
+        "ornate",
+        "flexible",
+        "fragmented"
+      ],
+      "explanation": "\"Austere\" can mean plain and without ornament.",
+      "keywords": [
+        "gre-vocab",
+        "context-clues",
+        "verbal-reasoning"
+      ],
+      "source": "https://www.ets.org/pdfs/gre/gre-sample-questions.pdf"
+    },
+    {
+      "seedId": "fd2cecd7-365d-45a8-9e80-39b6bf0d4b23",
+      "category": "exams",
+      "navigationKeyword1": "gre",
+      "navigationKeyword2": "vocab",
+      "question": "The lecture was so ___ that only specialists in the field could follow it easily.",
+      "correctAnswer": "esoteric",
+      "incorrectAnswers": [
+        "accessible",
+        "brief",
+        "conclusive"
+      ],
+      "explanation": "\"Esoteric\" describes material understood by only a small group.",
+      "keywords": [
+        "gre-vocab",
+        "context-clues",
+        "verbal-reasoning"
+      ],
+      "source": "https://www.ets.org/pdfs/gre/gre-sample-questions.pdf"
+    },
+    {
+      "seedId": "a6090d75-f32a-42f1-bfe0-d77e4a7a114b",
+      "category": "exams",
+      "navigationKeyword1": "gre",
+      "navigationKeyword2": "vocab",
+      "question": "The mayor's answer was so ___ that reporters could not tell what position she actually held.",
+      "correctAnswer": "equivocal",
+      "incorrectAnswers": [
+        "direct",
+        "transparent",
+        "systematic"
+      ],
+      "explanation": "\"Equivocal\" means open to more than one interpretation, often in a misleading way.",
+      "keywords": [
+        "gre-vocab",
+        "context-clues",
+        "verbal-reasoning"
+      ],
+      "source": "https://www.ets.org/pdfs/gre/gre-sample-questions.pdf"
+    }
+  ]
+}

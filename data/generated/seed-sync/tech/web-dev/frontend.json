@@ -1,0 +1,121 @@
+{
+  "schemaVersion": 1,
+  "seedSet": "core-public-items",
+  "deltaPreviewLimit": 200,
+  "items": [
+    {
+      "seedId": "8a687479-1f11-5d94-8c1f-490eb650f0c3",
+      "category": "tech",
+      "navigationKeyword1": "web-dev",
+      "navigationKeyword2": "frontend",
+      "question": "ARIA attributes primarily expose extra semantics to what kind of software?",
+      "correctAnswer": "Assistive technologies such as screen readers",
+      "incorrectAnswers": [
+        "Search engine crawlers only",
+        "GPU drivers only",
+        "DNS resolvers"
+      ],
+      "explanation": "Accessible Rich Internet Applications markup bridges custom controls to accessibility APIs.",
+      "keywords": [
+        "a11y",
+        "aria"
+      ],
+      "source": "https://www.w3.org/WAI/standards-guidelines/aria/"
+    },
+    {
+      "seedId": "158a636e-e437-58c4-ad31-54e883799342",
+      "category": "tech",
+      "navigationKeyword1": "web-dev",
+      "navigationKeyword2": "frontend",
+      "question": "Content Security Policy (CSP) helps reduce which class of attacks by restricting resource loads?",
+      "correctAnswer": "Cross-site scripting (XSS)",
+      "incorrectAnswers": [
+        "DNS cache poisoning only",
+        "BGP hijacking only",
+        "Disk encryption failures"
+      ],
+      "explanation": "CSP whitelists script and resource sources so injected markup cannot easily run attacker-controlled code.",
+      "keywords": [
+        "browser",
+        "csp"
+      ],
+      "source": "https://web.dev/articles/csp"
+    },
+    {
+      "seedId": "d5e869e5-0a70-58f4-9dc2-15cb0552914e",
+      "category": "tech",
+      "navigationKeyword1": "web-dev",
+      "navigationKeyword2": "frontend",
+      "question": "Cross-Origin Resource Sharing (CORS) uses HTTP response headers to tell browsers what?",
+      "correctAnswer": "Whether other origins may read responses from this server",
+      "incorrectAnswers": [
+        "Which CSS file to load first",
+        "Which image format to prefer",
+        "Which TLS cipher to pick"
+      ],
+      "explanation": "CORS headers like `Access-Control-Allow-Origin` relax the same-origin read restriction for approved cross-origin requests.",
+      "keywords": [
+        "browser",
+        "cors"
+      ],
+      "source": "https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS"
+    },
+    {
+      "seedId": "190b60a5-d88b-5ebd-8f04-eade9ebdd095",
+      "category": "tech",
+      "navigationKeyword1": "web-dev",
+      "navigationKeyword2": "frontend",
+      "question": "The `loading=\"lazy\"` attribute delays loading for which elements until they are near the viewport?",
+      "correctAnswer": "Images and iframes",
+      "incorrectAnswers": [
+        "Only `<script>` tags",
+        "Only `<link rel=\"stylesheet\">`",
+        "Only WebSocket connections"
+      ],
+      "explanation": "Native lazy loading avoids downloading off-screen images and frames until users might see them.",
+      "keywords": [
+        "performance",
+        "images"
+      ],
+      "source": "https://html.spec.whatwg.org/multipage/urls-and-fetching.html#lazy-loading-attributes"
+    },
+    {
+      "seedId": "5076c121-5aee-5e25-a6ba-450552755c3a",
+      "category": "tech",
+      "navigationKeyword1": "web-dev",
+      "navigationKeyword2": "frontend",
+      "question": "The same-origin policy mainly limits scripts from reading responses from URLs with a different what?",
+      "correctAnswer": "Origin (scheme, host, and port)",
+      "incorrectAnswers": [
+        "File extension",
+        "HTTP method",
+        "Screen resolution"
+      ],
+      "explanation": "Browsers isolate sites by origin so one page cannot silently read another site's private responses.",
+      "keywords": [
+        "browser",
+        "security"
+      ],
+      "source": "https://developer.mozilla.org/en-US/docs/Web/Security/Same-origin_policy"
+    },
+    {
+      "seedId": "334a65ed-0c29-549d-85ad-7dc8e225858a",
+      "category": "tech",
+      "navigationKeyword1": "web-dev",
+      "navigationKeyword2": "frontend",
+      "question": "Which Web Storage API keeps data until the user or script clears it, with no built-in expiry?",
+      "correctAnswer": "`localStorage`",
+      "incorrectAnswers": [
+        "`sessionStorage`",
+        "`IndexedDB` transaction logs only",
+        "`Cache-Control` headers"
+      ],
+      "explanation": "`localStorage` is persistent per origin; `sessionStorage` is cleared when the tab session ends.",
+      "keywords": [
+        "browser",
+        "storage"
+      ],
+      "source": "https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage"
+    }
+  ]
+}

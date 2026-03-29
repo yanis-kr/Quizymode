@@ -1,0 +1,207 @@
+{
+  "schemaVersion": 1,
+  "seedSet": "core-public-items",
+  "deltaPreviewLimit": 200,
+  "items": [
+    {
+      "seedId": "07d3e1f2-7a21-5065-823b-9f31fd660a67",
+      "category": "sports",
+      "navigationKeyword1": "combat",
+      "navigationKeyword2": "champions",
+      "question": "Which Irish fighter became the first UFC athlete to hold two belts simultaneously?",
+      "correctAnswer": "Conor McGregor",
+      "incorrectAnswers": [
+        "Michael Bisping",
+        "Jose Aldo",
+        "Max Holloway"
+      ],
+      "explanation": "McGregor held the featherweight and lightweight belts at the same time.",
+      "keywords": [
+        "combat",
+        "champions",
+        "mcgregor"
+      ],
+      "source": "https://www.ufc.com/"
+    },
+    {
+      "seedId": "aa2905a7-e8f4-56e7-9a4f-a42e4bcda997",
+      "category": "sports",
+      "navigationKeyword1": "combat",
+      "navigationKeyword2": "champions",
+      "question": "Which UFC fighter became a two-division champion in bantamweight and featherweight and later defended both belts?",
+      "correctAnswer": "Amanda Nunes",
+      "incorrectAnswers": [
+        "Ronda Rousey",
+        "Valentina Shevchenko",
+        "Holly Holm"
+      ],
+      "explanation": "Nunes dominated two divisions and beat many champions.",
+      "keywords": [
+        "combat",
+        "champions",
+        "amanda-nunes"
+      ],
+      "source": "https://www.ufc.com/"
+    },
+    {
+      "seedId": "359f597a-7444-5944-8e4b-fdc7cccad40c",
+      "category": "sports",
+      "navigationKeyword1": "combat",
+      "navigationKeyword2": "champions",
+      "question": "Which UFC light heavyweight and heavyweight champion was long considered one of the sport's greatest talents?",
+      "correctAnswer": "Jon Jones",
+      "incorrectAnswers": [
+        "Daniel Cormier",
+        "Alex Pereira",
+        "Chuck Liddell"
+      ],
+      "explanation": "Jones held titles in two UFC divisions.",
+      "keywords": [
+        "combat",
+        "champions",
+        "jon-jones"
+      ],
+      "source": "https://www.ufc.com/"
+    },
+    {
+      "seedId": "9739e03e-a352-5406-adea-effab3ce3094",
+      "category": "sports",
+      "navigationKeyword1": "combat",
+      "navigationKeyword2": "champions",
+      "question": "Which UFC lightweight retired undefeated in 2020?",
+      "correctAnswer": "Khabib Nurmagomedov",
+      "incorrectAnswers": [
+        "Charles Oliveira",
+        "Justin Gaethje",
+        "Islam Makhachev"
+      ],
+      "explanation": "Khabib retired after defending the lightweight title in 2020.",
+      "keywords": [
+        "combat",
+        "champions",
+        "khabib"
+      ],
+      "source": "https://www.ufc.com/"
+    },
+    {
+      "seedId": "d230a376-4479-5754-a8e7-37b91aa3c122",
+      "category": "sports",
+      "navigationKeyword1": "combat",
+      "navigationKeyword2": "champions",
+      "question": "Which UFC middleweight champion held one of the longest title reigns in company history?",
+      "correctAnswer": "Anderson Silva",
+      "incorrectAnswers": [
+        "Israel Adesanya",
+        "Michael Bisping",
+        "Robert Whittaker"
+      ],
+      "explanation": "Silva dominated the middleweight division for years.",
+      "keywords": [
+        "combat",
+        "champions",
+        "anderson-silva"
+      ],
+      "source": "https://www.ufc.com/"
+    },
+    {
+      "seedId": "8b3831b8-124b-54d4-b16b-18c038dfb0dd",
+      "category": "sports",
+      "navigationKeyword1": "combat",
+      "navigationKeyword2": "champions",
+      "question": "Which boxer won the heavyweight title and later became known globally for the Rumble in the Jungle?",
+      "correctAnswer": "Muhammad Ali",
+      "incorrectAnswers": [
+        "Joe Frazier",
+        "George Foreman",
+        "Lennox Lewis"
+      ],
+      "explanation": "Ali became the sport's most famous heavyweight champion.",
+      "keywords": [
+        "combat",
+        "champions",
+        "ali"
+      ],
+      "source": "https://www.britannica.com/biography/Muhammad-Ali-boxer"
+    },
+    {
+      "seedId": "c53ff2a2-9558-5a36-aeaf-90a314c0f5fb",
+      "category": "sports",
+      "navigationKeyword1": "combat",
+      "navigationKeyword2": "champions",
+      "question": "Which boxer won titles in eight weight divisions and later became a senator in the Philippines?",
+      "correctAnswer": "Manny Pacquiao",
+      "incorrectAnswers": [
+        "Nonito Donaire",
+        "Floyd Mayweather Jr.",
+        "Juan Manuel Marquez"
+      ],
+      "explanation": "Pacquiao won championships across an extraordinary range of divisions.",
+      "keywords": [
+        "combat",
+        "champions",
+        "pacquiao"
+      ],
+      "source": "https://www.britannica.com/biography/Manny-Pacquiao"
+    },
+    {
+      "seedId": "6b6b14a6-21cc-53d4-b4cd-2b15edc46d22",
+      "category": "sports",
+      "navigationKeyword1": "combat",
+      "navigationKeyword2": "champions",
+      "question": "Which female judoka-turned-MMA star became the UFC's first women's bantamweight champion?",
+      "correctAnswer": "Ronda Rousey",
+      "incorrectAnswers": [
+        "Miesha Tate",
+        "Amanda Nunes",
+        "Holly Holm"
+      ],
+      "explanation": "Rousey helped launch the UFC's women's divisions into the mainstream.",
+      "keywords": [
+        "combat",
+        "champions",
+        "ronda-rousey"
+      ],
+      "source": "https://www.ufc.com/"
+    },
+    {
+      "seedId": "e3f15c38-0262-55c4-8978-375517613946",
+      "category": "sports",
+      "navigationKeyword1": "combat",
+      "navigationKeyword2": "champions",
+      "question": "Which heavyweight boxer was the undisputed world champion in the late 1980s before losing to Buster Douglas?",
+      "correctAnswer": "Mike Tyson",
+      "incorrectAnswers": [
+        "Larry Holmes",
+        "Evander Holyfield",
+        "Riddick Bowe"
+      ],
+      "explanation": "Tyson unified the heavyweight belts at a young age.",
+      "keywords": [
+        "combat",
+        "champions",
+        "tyson"
+      ],
+      "source": "https://www.britannica.com/biography/Mike-Tyson"
+    },
+    {
+      "seedId": "1a59511d-c775-5230-9e2d-fa2a840908b3",
+      "category": "sports",
+      "navigationKeyword1": "combat",
+      "navigationKeyword2": "champions",
+      "question": "Which undefeated heavyweight boxer retired with a 50-0 record?",
+      "correctAnswer": "Floyd Mayweather Jr.",
+      "incorrectAnswers": [
+        "Manny Pacquiao",
+        "Oscar De La Hoya",
+        "Canelo Alvarez"
+      ],
+      "explanation": "Mayweather retired with an undefeated professional record of 50 wins.",
+      "keywords": [
+        "combat",
+        "champions",
+        "mayweather"
+      ],
+      "source": "https://www.britannica.com/biography/Floyd-Mayweather-Jr"
+    }
+  ]
+}

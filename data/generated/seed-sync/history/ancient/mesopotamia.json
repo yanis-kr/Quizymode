@@ -1,0 +1,247 @@
+{
+  "schemaVersion": 1,
+  "seedSet": "core-public-items",
+  "deltaPreviewLimit": 200,
+  "items": [
+    {
+      "seedId": "8132d047-98c1-4d64-b1b5-d9de7fc7005d",
+      "category": "history",
+      "navigationKeyword1": "ancient",
+      "navigationKeyword2": "mesopotamia",
+      "question": "A basalt stele from Susa preserves laws in Akkadian forming a major law collection named after which Babylonian king?",
+      "correctAnswer": "Hammurabi",
+      "incorrectAnswers": [
+        "Sargon of Akkad",
+        "Ashurbanipal",
+        "Cyrus the Great"
+      ],
+      "explanation": "The Code of Hammurabi is the well-known law collection inscribed on a monumental stele.",
+      "keywords": [
+        "mesopotamia",
+        "babylon",
+        "law"
+      ],
+      "source": "https://www.britannica.com/topic/Code-of-Hammurabi"
+    },
+    {
+      "seedId": "61b8baf8-1b0e-4c95-9c95-a533fe08881d",
+      "category": "history",
+      "navigationKeyword1": "ancient",
+      "navigationKeyword2": "mesopotamia",
+      "question": "A merchant sailing down the Euphrates toward the Persian Gulf could reach which ancient seaport that traded with Dilmun and the Gulf?",
+      "correctAnswer": "Ur",
+      "incorrectAnswers": [
+        "Miletus",
+        "Tyre",
+        "Massalia"
+      ],
+      "explanation": "Ur lay near the Euphrates\u2019 former course toward the Gulf and was a major Sumerian center of trade and cult.",
+      "keywords": [
+        "mesopotamia",
+        "sumer",
+        "trade"
+      ],
+      "source": "https://www.britannica.com/place/Ur-ancient-city-Iraq"
+    },
+    {
+      "seedId": "ccc50cfb-b328-427c-8725-628af94fd79f",
+      "category": "history",
+      "navigationKeyword1": "ancient",
+      "navigationKeyword2": "mesopotamia",
+      "question": "Clay tablets from Nineveh preserve a long Akkadian poem about a king of Uruk and his friend Enkidu. What is that poem called today?",
+      "correctAnswer": "The Epic of Gilgamesh",
+      "incorrectAnswers": [
+        "The Iliad",
+        "The Aeneid",
+        "The Ramayana"
+      ],
+      "explanation": "The Epic of Gilgamesh is Mesopotamia\u2019s most famous literary work, known from multiple versions on cuneiform tablets.",
+      "keywords": [
+        "mesopotamia",
+        "literature",
+        "sumer"
+      ],
+      "source": "https://www.britannica.com/topic/Epic-of-Gilgamesh"
+    },
+    {
+      "seedId": "94592001-f102-4f41-9bf7-8ae01eaad6b0",
+      "category": "history",
+      "navigationKeyword1": "ancient",
+      "navigationKeyword2": "mesopotamia",
+      "question": "Farmers between the Tigris and Euphrates relied on river-fed irrigation in which historical region whose Greek name means \u201cbetween rivers\u201d?",
+      "correctAnswer": "Mesopotamia",
+      "incorrectAnswers": [
+        "Nubia",
+        "the Deccan",
+        "the Po Valley"
+      ],
+      "explanation": "Mesopotamia is the alluvial heartland of Iraq and adjacent areas watered chiefly by the Tigris and Euphrates.",
+      "keywords": [
+        "mesopotamia",
+        "rivers",
+        "agriculture"
+      ],
+      "source": "https://www.britannica.com/place/Mesopotamia-historical-region-Asia"
+    },
+    {
+      "seedId": "b2c02746-1fa9-4407-b471-4f7f6a4c0903",
+      "category": "history",
+      "navigationKeyword1": "ancient",
+      "navigationKeyword2": "mesopotamia",
+      "question": "Priests in Uruk track barley loans on clay: this everyday record-keeping helped push which region to the world\u2019s earliest known writing systems?",
+      "correctAnswer": "Southern Mesopotamia (Sumer)",
+      "incorrectAnswers": [
+        "The Yellow River valley in the Shang era only",
+        "Mycenaean Greece",
+        "The Indus Valley alone"
+      ],
+      "explanation": "Administrative needs in Sumer\u2019s temple economies are tied to the emergence of proto-writing and cuneiform.",
+      "keywords": [
+        "mesopotamia",
+        "sumer",
+        "writing"
+      ],
+      "source": "https://www.britannica.com/place/Sumer"
+    },
+    {
+      "seedId": "e5f9735d-b662-478d-a3c0-ce3cd160dc6a",
+      "category": "history",
+      "navigationKeyword1": "ancient",
+      "navigationKeyword2": "mesopotamia",
+      "question": "Royal lion hunts carved in stone palace reliefs typify which Mesopotamian empire centered on cities such as Nineveh and Assur?",
+      "correctAnswer": "The Assyrian Empire",
+      "incorrectAnswers": [
+        "The Maurya Empire",
+        "The Han Empire",
+        "The Minoan thalassocracy"
+      ],
+      "explanation": "Assyrian kings celebrated power through palace art and campaigns across the Near East.",
+      "keywords": [
+        "mesopotamia",
+        "assyria",
+        "empire"
+      ],
+      "source": "https://www.britannica.com/place/Assyria"
+    },
+    {
+      "seedId": "e9cdc65e-a85d-431b-86c9-967f52042a6e",
+      "category": "history",
+      "navigationKeyword1": "ancient",
+      "navigationKeyword2": "mesopotamia",
+      "question": "Which Neo-Babylonian king rebuilt Babylon on a grand scale and is associated in biblical tradition with the Judahite exile?",
+      "correctAnswer": "Nebuchadnezzar II",
+      "incorrectAnswers": [
+        "Nabopolassar",
+        "Cyrus the Great",
+        "Darius I"
+      ],
+      "explanation": "Nebuchadnezzar II presided over Babylon\u2019s monumental rebuilding and its dominance in the Levant.",
+      "keywords": [
+        "mesopotamia",
+        "babylon",
+        "neo-babylonian"
+      ],
+      "source": "https://www.britannica.com/biography/Nebuchadrezzar-II"
+    },
+    {
+      "seedId": "fc3b423a-f6d2-4ce4-bde2-a7d8f8c21af4",
+      "category": "history",
+      "navigationKeyword1": "ancient",
+      "navigationKeyword2": "mesopotamia",
+      "question": "Which conqueror from Akkad is remembered for forging one of the world\u2019s first large territorial empires in the late third millennium BCE?",
+      "correctAnswer": "Sargon of Akkad",
+      "incorrectAnswers": [
+        "Hammurabi",
+        "Nebuchadnezzar II",
+        "Xerxes I"
+      ],
+      "explanation": "Sargon of Akkad united city-states under a new imperial center and left a lasting legend in Mesopotamian memory.",
+      "keywords": [
+        "mesopotamia",
+        "empire",
+        "akkad"
+      ],
+      "source": "https://www.britannica.com/biography/Sargon-of-Akkad"
+    },
+    {
+      "seedId": "11defcdb-7b6c-4524-a8c4-9e3041e39d2a",
+      "category": "history",
+      "navigationKeyword1": "ancient",
+      "navigationKeyword2": "mesopotamia",
+      "question": "Which great library of clay tablets, assembled for an Assyrian king at Nineveh, preserved thousands of cuneiform texts including omens and literature?",
+      "correctAnswer": "Ashurbanipal\u2019s library",
+      "incorrectAnswers": [
+        "The Library of Alexandria",
+        "The Villa of the Papyri",
+        "The House of Wisdom (Baghdad)"
+      ],
+      "explanation": "Ashurbanipal\u2019s royal library at Nineveh is a key archaeological source for Mesopotamian literature and scholarship.",
+      "keywords": [
+        "mesopotamia",
+        "assyria",
+        "libraries"
+      ],
+      "source": "https://www.britannica.com/biography/Ashurbanipal"
+    },
+    {
+      "seedId": "ceaae695-2f40-4354-8ec4-db428a4962fc",
+      "category": "history",
+      "navigationKeyword1": "ancient",
+      "navigationKeyword2": "mesopotamia",
+      "question": "Which southern Mesopotamian city, linked to writing\u2019s early development and epic tradition, gives its name to an important late prehistoric horizon?",
+      "correctAnswer": "Uruk",
+      "incorrectAnswers": [
+        "Persepolis",
+        "Knossos",
+        "Carthage"
+      ],
+      "explanation": "Uruk was a major Sumerian center whose scale and material culture mark the Uruk period of urban growth.",
+      "keywords": [
+        "mesopotamia",
+        "sumer",
+        "cities"
+      ],
+      "source": "https://www.britannica.com/place/Uruk-ancient-city-Iraq"
+    },
+    {
+      "seedId": "ea08cf0d-b753-4e63-b515-fac07e856170",
+      "category": "history",
+      "navigationKeyword1": "ancient",
+      "navigationKeyword2": "mesopotamia",
+      "question": "Which stepped temple tower, built of sun-dried brick, is the characteristic religious monument of many Mesopotamian cities?",
+      "correctAnswer": "A ziggurat",
+      "incorrectAnswers": [
+        "A pyramid with smooth casing stones only",
+        "A Greek tholos",
+        "A Roman basilica"
+      ],
+      "explanation": "Ziggurats were massive staged platforms that supported shrines and visually dominated city skylines.",
+      "keywords": [
+        "mesopotamia",
+        "religion",
+        "architecture"
+      ],
+      "source": "https://www.britannica.com/topic/ziggurat"
+    },
+    {
+      "seedId": "4f20a7f3-ae5e-4433-b294-9f6be8f08ec3",
+      "category": "history",
+      "navigationKeyword1": "ancient",
+      "navigationKeyword2": "mesopotamia",
+      "question": "You are pressing a reed stylus into wet clay: which wedge-shaped writing system spread from Sumer across much of the ancient Near East?",
+      "correctAnswer": "Cuneiform",
+      "incorrectAnswers": [
+        "Hieroglyphs",
+        "Linear B",
+        "Phoenician letters"
+      ],
+      "explanation": "Cuneiform (\u201cwedge-shaped\u201d) writing was impressed on clay tablets and was used for several languages over millennia.",
+      "keywords": [
+        "mesopotamia",
+        "cuneiform",
+        "writing"
+      ],
+      "source": "https://www.britannica.com/topic/cuneiform"
+    }
+  ]
+}

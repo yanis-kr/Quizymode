@@ -1,0 +1,1207 @@
+{
+  "schemaVersion": 1,
+  "seedSet": "core-public-items",
+  "deltaPreviewLimit": 200,
+  "items": [
+    {
+      "seedId": "0a07e223-ebea-5e4f-b360-1be640b1e770",
+      "category": "sports",
+      "navigationKeyword1": "champions",
+      "navigationKeyword2": "athletes",
+      "question": "Which athlete won the 2024 Formula 1 drivers' championship?",
+      "correctAnswer": "Max Verstappen",
+      "incorrectAnswers": [
+        "Lewis Hamilton",
+        "Lando Norris",
+        "Charles Leclerc"
+      ],
+      "explanation": "Verstappen secured the 2024 F1 title.",
+      "keywords": [
+        "champions",
+        "athletes",
+        "verstappen"
+      ],
+      "source": "https://www.britannica.com/sports"
+    },
+    {
+      "seedId": "854cd378-29d5-506f-b6c1-0e33f5c48adc",
+      "category": "sports",
+      "navigationKeyword1": "champions",
+      "navigationKeyword2": "athletes",
+      "question": "Which athlete won the 2024 NBA Finals MVP award?",
+      "correctAnswer": "Jaylen Brown",
+      "incorrectAnswers": [
+        "Jayson Tatum",
+        "Luka Doncic",
+        "Jrue Holiday"
+      ],
+      "explanation": "Brown earned Finals MVP in Boston's 2024 title run.",
+      "keywords": [
+        "champions",
+        "athletes",
+        "jaylen-brown"
+      ],
+      "source": "https://www.nba.com/history"
+    },
+    {
+      "seedId": "206042df-67e5-5440-a3cf-7d884eeb0d8d",
+      "category": "sports",
+      "navigationKeyword1": "champions",
+      "navigationKeyword2": "athletes",
+      "question": "Which athlete won the 2024 Tour de France?",
+      "correctAnswer": "Tadej Pogacar",
+      "incorrectAnswers": [
+        "Jonas Vingegaard",
+        "Primoz Roglic",
+        "Remco Evenepoel"
+      ],
+      "explanation": "Pogacar won cycling's biggest stage race in 2024.",
+      "keywords": [
+        "champions",
+        "athletes",
+        "pogacar"
+      ],
+      "source": "https://www.britannica.com/sports"
+    },
+    {
+      "seedId": "9ed5e067-2106-557b-9e9d-d3421f0f88b7",
+      "category": "sports",
+      "navigationKeyword1": "champions",
+      "navigationKeyword2": "athletes",
+      "question": "Which athlete won the 2024 U.S. Open in golf?",
+      "correctAnswer": "Bryson DeChambeau",
+      "incorrectAnswers": [
+        "Rory McIlroy",
+        "Xander Schauffele",
+        "Brooks Koepka"
+      ],
+      "explanation": "DeChambeau captured the 2024 U.S. Open title.",
+      "keywords": [
+        "champions",
+        "athletes",
+        "dechambeau"
+      ],
+      "source": "https://www.usga.org/content/usga/home-page/rules-hub.html"
+    },
+    {
+      "seedId": "1a361c7f-ba56-52ec-9fd2-58d59a667e4e",
+      "category": "sports",
+      "navigationKeyword1": "champions",
+      "navigationKeyword2": "athletes",
+      "question": "Which athlete won the 2024 WNBA Finals MVP award?",
+      "correctAnswer": "Jonquel Jones",
+      "incorrectAnswers": [
+        "Breanna Stewart",
+        "Sabrina Ionescu",
+        "A'ja Wilson"
+      ],
+      "explanation": "Jones led New York to the 2024 WNBA title.",
+      "keywords": [
+        "champions",
+        "athletes",
+        "jonquel-jones"
+      ],
+      "source": "https://www.nba.com/history"
+    },
+    {
+      "seedId": "9aeff4a7-9ba8-5f1a-a5c8-9fcef5de509c",
+      "category": "sports",
+      "navigationKeyword1": "champions",
+      "navigationKeyword2": "athletes",
+      "question": "Which athlete won the 2024 Wimbledon men's singles title?",
+      "correctAnswer": "Carlos Alcaraz",
+      "incorrectAnswers": [
+        "Novak Djokovic",
+        "Daniil Medvedev",
+        "Jannik Sinner"
+      ],
+      "explanation": "Alcaraz repeated as Wimbledon champion in 2024.",
+      "keywords": [
+        "champions",
+        "athletes",
+        "alcaraz"
+      ],
+      "source": "https://www.britannica.com/sports"
+    },
+    {
+      "seedId": "8b027bac-e49b-5e23-976d-868cdb5ea85a",
+      "category": "sports",
+      "navigationKeyword1": "champions",
+      "navigationKeyword2": "athletes",
+      "question": "Which athlete won the 2025 Masters to complete the career Grand Slam?",
+      "correctAnswer": "Rory McIlroy",
+      "incorrectAnswers": [
+        "Scottie Scheffler",
+        "Jon Rahm",
+        "Tiger Woods"
+      ],
+      "explanation": "McIlroy joined the rare career Grand Slam club in 2025.",
+      "keywords": [
+        "champions",
+        "athletes",
+        "mcilroy"
+      ],
+      "source": "https://www.usga.org/content/usga/home-page/rules-hub.html"
+    },
+    {
+      "seedId": "89d5e504-72fb-5217-920c-792aaf8f1cc3",
+      "category": "sports",
+      "navigationKeyword1": "champions",
+      "navigationKeyword2": "athletes",
+      "question": "Which athlete won the UFC lightweight title after defeating Charles Oliveira in 2022 and still held it through much of 2024?",
+      "correctAnswer": "Islam Makhachev",
+      "incorrectAnswers": [
+        "Dustin Poirier",
+        "Justin Gaethje",
+        "Tony Ferguson"
+      ],
+      "explanation": "Makhachev became the UFC lightweight champion in 2022.",
+      "keywords": [
+        "champions",
+        "athletes",
+        "makhachev"
+      ],
+      "source": "https://www.ufc.com/"
+    },
+    {
+      "seedId": "3a9701fa-bf6a-5cc2-a785-ae0afaf6fef8",
+      "category": "sports",
+      "navigationKeyword1": "champions",
+      "navigationKeyword2": "athletes",
+      "question": "Which athlete won the men's marathon at the 2024 Paris Olympics?",
+      "correctAnswer": "Tamirat Tola",
+      "incorrectAnswers": [
+        "Eliud Kipchoge",
+        "Benson Kipruto",
+        "Kenenisa Bekele"
+      ],
+      "explanation": "Tola took Olympic marathon gold in Paris.",
+      "keywords": [
+        "champions",
+        "athletes",
+        "marathon"
+      ],
+      "source": "https://olympics.com/en/olympic-games"
+    },
+    {
+      "seedId": "170b7a58-3a2d-543c-b068-ea7e9f8bf552",
+      "category": "sports",
+      "navigationKeyword1": "champions",
+      "navigationKeyword2": "athletes",
+      "question": "Which athlete won the women's all-around gymnastics title at the 2024 Paris Olympics?",
+      "correctAnswer": "Simone Biles",
+      "incorrectAnswers": [
+        "Rebeca Andrade",
+        "Sunisa Lee",
+        "Shilese Jones"
+      ],
+      "explanation": "Biles reclaimed Olympic all-around gold in Paris.",
+      "keywords": [
+        "champions",
+        "athletes",
+        "biles"
+      ],
+      "source": "https://olympics.com/en/olympic-games"
+    },
+    {
+      "seedId": "e16911a3-7b4c-55d5-bf89-0251c3493f14",
+      "category": "sports",
+      "navigationKeyword1": "champions",
+      "navigationKeyword2": "dynasties",
+      "question": "Which MLB franchise won five straight World Series from 1949 to 1953?",
+      "correctAnswer": "New York Yankees",
+      "incorrectAnswers": [
+        "Brooklyn Dodgers",
+        "St. Louis Cardinals",
+        "Cleveland Indians"
+      ],
+      "explanation": "The Yankees dominated postwar baseball in the early 1950s.",
+      "keywords": [
+        "champions",
+        "dynasties",
+        "yankees"
+      ],
+      "source": "https://www.mlb.com/history"
+    },
+    {
+      "seedId": "63ef6127-1076-5152-a8f5-01dca880baa4",
+      "category": "sports",
+      "navigationKeyword1": "champions",
+      "navigationKeyword2": "dynasties",
+      "question": "Which NBA franchise won three titles in four years from 2000 through 2002 with Shaq and Kobe?",
+      "correctAnswer": "Los Angeles Lakers",
+      "incorrectAnswers": [
+        "San Antonio Spurs",
+        "Detroit Pistons",
+        "Miami Heat"
+      ],
+      "explanation": "The Lakers three-peated at the start of the 2000s.",
+      "keywords": [
+        "champions",
+        "dynasties",
+        "lakers"
+      ],
+      "source": "https://www.nba.com/history"
+    },
+    {
+      "seedId": "a63e1848-f4eb-5c6f-82bd-63f2c3c8be54",
+      "category": "sports",
+      "navigationKeyword1": "champions",
+      "navigationKeyword2": "dynasties",
+      "question": "Which NBA team reached five straight Finals from 2015 through 2019?",
+      "correctAnswer": "Golden State Warriors",
+      "incorrectAnswers": [
+        "Cleveland Cavaliers",
+        "Miami Heat",
+        "Boston Celtics"
+      ],
+      "explanation": "Golden State's run defined the late 2010s in the NBA.",
+      "keywords": [
+        "champions",
+        "dynasties",
+        "warriors"
+      ],
+      "source": "https://www.nba.com/history"
+    },
+    {
+      "seedId": "8ec5d5cc-28cd-571e-aed4-8ed3867fe258",
+      "category": "sports",
+      "navigationKeyword1": "champions",
+      "navigationKeyword2": "dynasties",
+      "question": "Which NBA team won six titles in the 1990s behind Michael Jordan?",
+      "correctAnswer": "Chicago Bulls",
+      "incorrectAnswers": [
+        "Boston Celtics",
+        "San Antonio Spurs",
+        "Los Angeles Lakers"
+      ],
+      "explanation": "The Bulls built one of the most famous dynasties in basketball history.",
+      "keywords": [
+        "champions",
+        "dynasties",
+        "bulls"
+      ],
+      "source": "https://www.nba.com/history"
+    },
+    {
+      "seedId": "bb53ee15-872d-5702-b11c-5728d31ded5d",
+      "category": "sports",
+      "navigationKeyword1": "champions",
+      "navigationKeyword2": "dynasties",
+      "question": "Which NFL franchise won six Super Bowls with Tom Brady and Bill Belichick?",
+      "correctAnswer": "New England Patriots",
+      "incorrectAnswers": [
+        "Green Bay Packers",
+        "Denver Broncos",
+        "Kansas City Chiefs"
+      ],
+      "explanation": "The Brady-Belichick era produced one of football's great dynasties.",
+      "keywords": [
+        "champions",
+        "dynasties",
+        "patriots"
+      ],
+      "source": "https://operations.nfl.com/learn-the-game/nfl-basics/"
+    },
+    {
+      "seedId": "324f8ae9-f5f6-51e5-8d98-977697497f0a",
+      "category": "sports",
+      "navigationKeyword1": "champions",
+      "navigationKeyword2": "dynasties",
+      "question": "Which NFL team won four Super Bowls in six seasons during the 1970s?",
+      "correctAnswer": "Pittsburgh Steelers",
+      "incorrectAnswers": [
+        "Dallas Cowboys",
+        "Miami Dolphins",
+        "San Francisco 49ers"
+      ],
+      "explanation": "Pittsburgh's Steel Curtain era defined the decade.",
+      "keywords": [
+        "champions",
+        "dynasties",
+        "steelers"
+      ],
+      "source": "https://operations.nfl.com/learn-the-game/nfl-basics/"
+    },
+    {
+      "seedId": "834de550-c95d-5ccd-ba95-7bcdc8fe4343",
+      "category": "sports",
+      "navigationKeyword1": "champions",
+      "navigationKeyword2": "dynasties",
+      "question": "Which NHL team won four consecutive Stanley Cups from 1980 to 1983?",
+      "correctAnswer": "New York Islanders",
+      "incorrectAnswers": [
+        "Edmonton Oilers",
+        "Montreal Canadiens",
+        "Philadelphia Flyers"
+      ],
+      "explanation": "The Islanders ruled the NHL in the early 1980s.",
+      "keywords": [
+        "champions",
+        "dynasties",
+        "islanders"
+      ],
+      "source": "https://www.nhl.com/info/stanley-cup-winners-complete-list"
+    },
+    {
+      "seedId": "309460b4-d4d8-5abc-a750-a151761f1bbf",
+      "category": "sports",
+      "navigationKeyword1": "champions",
+      "navigationKeyword2": "dynasties",
+      "question": "Which NHL team won four straight Stanley Cups from 1976 to 1979?",
+      "correctAnswer": "Montreal Canadiens",
+      "incorrectAnswers": [
+        "New York Islanders",
+        "Edmonton Oilers",
+        "Boston Bruins"
+      ],
+      "explanation": "Montreal's late-1970s run remains one of hockey's great dynasties.",
+      "keywords": [
+        "champions",
+        "dynasties",
+        "canadiens"
+      ],
+      "source": "https://www.nhl.com/info/stanley-cup-winners-complete-list"
+    },
+    {
+      "seedId": "c0887242-574b-5440-8411-78802e048dff",
+      "category": "sports",
+      "navigationKeyword1": "champions",
+      "navigationKeyword2": "dynasties",
+      "question": "Which WNBA team won four titles in seven seasons during the 2010s?",
+      "correctAnswer": "Minnesota Lynx",
+      "incorrectAnswers": [
+        "Seattle Storm",
+        "Phoenix Mercury",
+        "Las Vegas Aces"
+      ],
+      "explanation": "The Lynx anchored the decade with multiple championships.",
+      "keywords": [
+        "champions",
+        "dynasties",
+        "lynx"
+      ],
+      "source": "https://www.wnba.com/history"
+    },
+    {
+      "seedId": "bf8a2226-fbf1-5ddd-88e3-b4113e47b7f4",
+      "category": "sports",
+      "navigationKeyword1": "champions",
+      "navigationKeyword2": "dynasties",
+      "question": "Which college football program won national titles in 2009, 2011, and 2012 under Nick Saban?",
+      "correctAnswer": "Alabama",
+      "incorrectAnswers": [
+        "LSU",
+        "Clemson",
+        "Ohio State"
+      ],
+      "explanation": "Alabama's modern run under Saban became a defining dynasty.",
+      "keywords": [
+        "champions",
+        "dynasties",
+        "alabama"
+      ],
+      "source": "https://operations.nfl.com/learn-the-game/nfl-basics/"
+    },
+    {
+      "seedId": "bb5aee57-8b94-56f6-9d81-1b624803d11c",
+      "category": "sports",
+      "navigationKeyword1": "champions",
+      "navigationKeyword2": "legends",
+      "question": "Which NFL quarterback won seven Super Bowls?",
+      "correctAnswer": "Tom Brady",
+      "incorrectAnswers": [
+        "Joe Montana",
+        "Peyton Manning",
+        "Patrick Mahomes"
+      ],
+      "explanation": "Brady's championship record defines his place in football history.",
+      "keywords": [
+        "champions",
+        "legends",
+        "brady"
+      ],
+      "source": "https://www.britannica.com/biography/Tom-Brady"
+    },
+    {
+      "seedId": "325b8fc6-effb-554c-a946-2ab7284c88bc",
+      "category": "sports",
+      "navigationKeyword1": "champions",
+      "navigationKeyword2": "legends",
+      "question": "Which baseball great was known as the Sultan of Swat?",
+      "correctAnswer": "Babe Ruth",
+      "incorrectAnswers": [
+        "Lou Gehrig",
+        "Joe DiMaggio",
+        "Ted Williams"
+      ],
+      "explanation": "Ruth became the first superstar slugger of the modern game.",
+      "keywords": [
+        "champions",
+        "legends",
+        "ruth"
+      ],
+      "source": "https://www.britannica.com/biography/Babe-Ruth"
+    },
+    {
+      "seedId": "bf8fa4ce-ae54-5707-81a1-8f3db378b0c6",
+      "category": "sports",
+      "navigationKeyword1": "champions",
+      "navigationKeyword2": "legends",
+      "question": "Which basketball legend won six NBA titles with the Chicago Bulls and became the face of the sport in the 1990s?",
+      "correctAnswer": "Michael Jordan",
+      "incorrectAnswers": [
+        "Magic Johnson",
+        "Kobe Bryant",
+        "Larry Bird"
+      ],
+      "explanation": "Jordan is one of the most recognized champions in sports history.",
+      "keywords": [
+        "champions",
+        "legends",
+        "jordan"
+      ],
+      "source": "https://www.nba.com/history"
+    },
+    {
+      "seedId": "0a509398-a450-50de-a1d7-63202388e9db",
+      "category": "sports",
+      "navigationKeyword1": "champions",
+      "navigationKeyword2": "legends",
+      "question": "Which boxer called himself The Greatest and won Olympic gold before becoming heavyweight champion?",
+      "correctAnswer": "Muhammad Ali",
+      "incorrectAnswers": [
+        "Mike Tyson",
+        "Joe Frazier",
+        "George Foreman"
+      ],
+      "explanation": "Ali became boxing's most famous champion and personality.",
+      "keywords": [
+        "champions",
+        "legends",
+        "ali"
+      ],
+      "source": "https://www.britannica.com/biography/Muhammad-Ali-boxer"
+    },
+    {
+      "seedId": "86887d99-7e8b-52a3-8b21-b0c7eb4f643c",
+      "category": "sports",
+      "navigationKeyword1": "champions",
+      "navigationKeyword2": "legends",
+      "question": "Which golfer won 18 men's majors and is known as the Golden Bear?",
+      "correctAnswer": "Jack Nicklaus",
+      "incorrectAnswers": [
+        "Tiger Woods",
+        "Arnold Palmer",
+        "Gary Player"
+      ],
+      "explanation": "Nicklaus remains the benchmark for men's major titles.",
+      "keywords": [
+        "champions",
+        "legends",
+        "nicklaus"
+      ],
+      "source": "https://www.britannica.com/biography/Jack-Nicklaus"
+    },
+    {
+      "seedId": "bfa69031-44b4-5b29-9e1e-bb3fa4228542",
+      "category": "sports",
+      "navigationKeyword1": "champions",
+      "navigationKeyword2": "legends",
+      "question": "Which hockey icon holds the NHL records for goals, assists, and points?",
+      "correctAnswer": "Wayne Gretzky",
+      "incorrectAnswers": [
+        "Mario Lemieux",
+        "Gordie Howe",
+        "Sidney Crosby"
+      ],
+      "explanation": "Gretzky's records are central to his legendary status.",
+      "keywords": [
+        "champions",
+        "legends",
+        "gretzky"
+      ],
+      "source": "https://www.britannica.com/sports/ice-hockey"
+    },
+    {
+      "seedId": "4f506068-d138-59c5-8aab-c48cf4854377",
+      "category": "sports",
+      "navigationKeyword1": "champions",
+      "navigationKeyword2": "legends",
+      "question": "Which soccer star won the 1986 World Cup and is often grouped with Pele and Messi in greatest-ever debates?",
+      "correctAnswer": "Diego Maradona",
+      "incorrectAnswers": [
+        "Zinedine Zidane",
+        "Cristiano Ronaldo",
+        "Ronaldinho"
+      ],
+      "explanation": "Maradona's peak made him one of football's defining legends.",
+      "keywords": [
+        "champions",
+        "legends",
+        "maradona"
+      ],
+      "source": "https://www.britannica.com/biography/Diego-Maradona"
+    },
+    {
+      "seedId": "9ec45b9c-e433-5519-bd45-6051d7276e8b",
+      "category": "sports",
+      "navigationKeyword1": "champions",
+      "navigationKeyword2": "legends",
+      "question": "Which sprinter became famous worldwide for Olympic and world titles in the 100m and 200m?",
+      "correctAnswer": "Usain Bolt",
+      "incorrectAnswers": [
+        "Yohan Blake",
+        "Justin Gatlin",
+        "Tyson Gay"
+      ],
+      "explanation": "Bolt's speed and personality made him a global sports legend.",
+      "keywords": [
+        "champions",
+        "legends",
+        "bolt"
+      ],
+      "source": "https://www.britannica.com/biography/Usain-Bolt"
+    },
+    {
+      "seedId": "c07624e4-ea88-5057-948d-f68a93e58de8",
+      "category": "sports",
+      "navigationKeyword1": "champions",
+      "navigationKeyword2": "legends",
+      "question": "Which swimmer became the most decorated Olympian ever?",
+      "correctAnswer": "Michael Phelps",
+      "incorrectAnswers": [
+        "Mark Spitz",
+        "Ian Thorpe",
+        "Caeleb Dressel"
+      ],
+      "explanation": "Phelps won more Olympic medals than any other athlete.",
+      "keywords": [
+        "champions",
+        "legends",
+        "phelps"
+      ],
+      "source": "https://www.britannica.com/biography/Michael-Phelps"
+    },
+    {
+      "seedId": "491ebd87-8fb3-558e-b3dc-f1c77ff67d9c",
+      "category": "sports",
+      "navigationKeyword1": "champions",
+      "navigationKeyword2": "legends",
+      "question": "Which tennis star won 23 Open Era singles majors and dominated multiple decades?",
+      "correctAnswer": "Serena Williams",
+      "incorrectAnswers": [
+        "Steffi Graf",
+        "Martina Navratilova",
+        "Venus Williams"
+      ],
+      "explanation": "Serena's longevity and major count made her a modern legend.",
+      "keywords": [
+        "champions",
+        "legends",
+        "serena"
+      ],
+      "source": "https://www.britannica.com/biography/Serena-Williams"
+    },
+    {
+      "seedId": "d2d0453e-7eab-5d8e-89bc-33414439b7a7",
+      "category": "sports",
+      "navigationKeyword1": "champions",
+      "navigationKeyword2": "records",
+      "question": "Which MLB player holds the career home run record?",
+      "correctAnswer": "Barry Bonds",
+      "incorrectAnswers": [
+        "Hank Aaron",
+        "Babe Ruth",
+        "Alex Rodriguez"
+      ],
+      "explanation": "Bonds finished with the most career home runs in MLB history.",
+      "keywords": [
+        "champions",
+        "records",
+        "baseball"
+      ],
+      "source": "https://www.mlb.com/history"
+    },
+    {
+      "seedId": "999056c3-286a-57aa-8a35-6e8e9252fcb7",
+      "category": "sports",
+      "navigationKeyword1": "champions",
+      "navigationKeyword2": "records",
+      "question": "Which NBA player won six Finals MVP awards?",
+      "correctAnswer": "Michael Jordan",
+      "incorrectAnswers": [
+        "LeBron James",
+        "Magic Johnson",
+        "Tim Duncan"
+      ],
+      "explanation": "Jordan won Finals MVP in each of his six title runs with Chicago.",
+      "keywords": [
+        "champions",
+        "records",
+        "finals-mvp"
+      ],
+      "source": "https://www.nba.com/history"
+    },
+    {
+      "seedId": "6d8157b6-0ef9-59d1-972d-6c5cc4b01626",
+      "category": "sports",
+      "navigationKeyword1": "champions",
+      "navigationKeyword2": "records",
+      "question": "Which NFL quarterback won seven Super Bowls as a player?",
+      "correctAnswer": "Tom Brady",
+      "incorrectAnswers": [
+        "Joe Montana",
+        "Patrick Mahomes",
+        "Troy Aikman"
+      ],
+      "explanation": "Brady has more Super Bowl wins than any other player.",
+      "keywords": [
+        "champions",
+        "records",
+        "football"
+      ],
+      "source": "https://www.britannica.com/biography/Tom-Brady"
+    },
+    {
+      "seedId": "27a5f839-fb6b-501f-9b91-a1b8425eabff",
+      "category": "sports",
+      "navigationKeyword1": "champions",
+      "navigationKeyword2": "records",
+      "question": "Which boxer retired with a 50-0 professional record?",
+      "correctAnswer": "Floyd Mayweather Jr.",
+      "incorrectAnswers": [
+        "Manny Pacquiao",
+        "Oscar De La Hoya",
+        "Canelo Alvarez"
+      ],
+      "explanation": "Mayweather retired unbeaten at 50-0.",
+      "keywords": [
+        "champions",
+        "records",
+        "boxing"
+      ],
+      "source": "https://www.britannica.com/biography/Floyd-Mayweather-Jr"
+    },
+    {
+      "seedId": "f07fc975-8ba7-5aaa-a702-d60cbfa7e22f",
+      "category": "sports",
+      "navigationKeyword1": "champions",
+      "navigationKeyword2": "records",
+      "question": "Which country has won the most men's FIFA World Cups?",
+      "correctAnswer": "Brazil",
+      "incorrectAnswers": [
+        "Germany",
+        "Italy",
+        "Argentina"
+      ],
+      "explanation": "Brazil has won the men's World Cup more than any other nation.",
+      "keywords": [
+        "champions",
+        "records",
+        "world-cup"
+      ],
+      "source": "https://www.britannica.com/sports/World-Cup-football"
+    },
+    {
+      "seedId": "81a9ec6a-7a67-5a90-b316-1a6f9a9568ad",
+      "category": "sports",
+      "navigationKeyword1": "champions",
+      "navigationKeyword2": "records",
+      "question": "Which golfer won 18 men's major championships?",
+      "correctAnswer": "Jack Nicklaus",
+      "incorrectAnswers": [
+        "Tiger Woods",
+        "Gary Player",
+        "Arnold Palmer"
+      ],
+      "explanation": "Nicklaus still leads men's golf in major titles.",
+      "keywords": [
+        "champions",
+        "records",
+        "golf"
+      ],
+      "source": "https://www.britannica.com/biography/Jack-Nicklaus"
+    },
+    {
+      "seedId": "160f9e51-913c-5c73-94b7-8d782a58c661",
+      "category": "sports",
+      "navigationKeyword1": "champions",
+      "navigationKeyword2": "records",
+      "question": "Which player holds the NHL record for career points?",
+      "correctAnswer": "Wayne Gretzky",
+      "incorrectAnswers": [
+        "Mario Lemieux",
+        "Mark Messier",
+        "Jaromir Jagr"
+      ],
+      "explanation": "Gretzky leads the NHL all-time points list.",
+      "keywords": [
+        "champions",
+        "records",
+        "hockey"
+      ],
+      "source": "https://www.nhl.com/info/stanley-cup-winners-complete-list"
+    },
+    {
+      "seedId": "e2b3a427-fb36-589a-b9da-30200e9b74ee",
+      "category": "sports",
+      "navigationKeyword1": "champions",
+      "navigationKeyword2": "records",
+      "question": "Which swimmer has the most Olympic gold medals?",
+      "correctAnswer": "Michael Phelps",
+      "incorrectAnswers": [
+        "Mark Spitz",
+        "Katie Ledecky",
+        "Caeleb Dressel"
+      ],
+      "explanation": "Phelps leads Olympic history in gold medals.",
+      "keywords": [
+        "champions",
+        "records",
+        "olympics"
+      ],
+      "source": "https://olympics.com/en/olympic-games"
+    },
+    {
+      "seedId": "7ba4ea9e-5e9f-5d62-a87d-d85dcf24c84c",
+      "category": "sports",
+      "navigationKeyword1": "champions",
+      "navigationKeyword2": "records",
+      "question": "Which tennis player holds the men's record for weeks at world No. 1?",
+      "correctAnswer": "Novak Djokovic",
+      "incorrectAnswers": [
+        "Roger Federer",
+        "Rafael Nadal",
+        "Pete Sampras"
+      ],
+      "explanation": "Djokovic set the ATP record for weeks at No. 1.",
+      "keywords": [
+        "champions",
+        "records",
+        "tennis"
+      ],
+      "source": "https://www.atptour.com/en/rankings/rankings-faq"
+    },
+    {
+      "seedId": "0068c755-a165-55cf-81eb-4f02e2b73bff",
+      "category": "sports",
+      "navigationKeyword1": "champions",
+      "navigationKeyword2": "records",
+      "question": "Which women's tennis player won 23 Open Era singles majors?",
+      "correctAnswer": "Serena Williams",
+      "incorrectAnswers": [
+        "Steffi Graf",
+        "Martina Navratilova",
+        "Chris Evert"
+      ],
+      "explanation": "Serena leads the Open Era women's total with 23.",
+      "keywords": [
+        "champions",
+        "records",
+        "women"
+      ],
+      "source": "https://www.britannica.com/biography/Serena-Williams"
+    },
+    {
+      "seedId": "1d84ceda-9833-5154-9ef5-c72f4d4f4001",
+      "category": "sports",
+      "navigationKeyword1": "champions",
+      "navigationKeyword2": "teams",
+      "question": "Which MLB franchise won the 2024 World Series?",
+      "correctAnswer": "Los Angeles Dodgers",
+      "incorrectAnswers": [
+        "New York Yankees",
+        "Houston Astros",
+        "Texas Rangers"
+      ],
+      "explanation": "The Dodgers were baseball's 2024 champions.",
+      "keywords": [
+        "champions",
+        "teams",
+        "dodgers"
+      ],
+      "source": "https://www.mlb.com/glossary"
+    },
+    {
+      "seedId": "71b4ea84-cb23-5401-8830-cb19e3bb66e9",
+      "category": "sports",
+      "navigationKeyword1": "champions",
+      "navigationKeyword2": "teams",
+      "question": "Which NBA franchise won the 2024 championship?",
+      "correctAnswer": "Boston Celtics",
+      "incorrectAnswers": [
+        "Dallas Mavericks",
+        "Denver Nuggets",
+        "Miami Heat"
+      ],
+      "explanation": "Boston won the NBA title in 2024.",
+      "keywords": [
+        "champions",
+        "teams",
+        "celtics"
+      ],
+      "source": "https://www.nba.com/history"
+    },
+    {
+      "seedId": "5217b476-7ed8-5996-98d3-ec3f16927576",
+      "category": "sports",
+      "navigationKeyword1": "champions",
+      "navigationKeyword2": "teams",
+      "question": "Which NFL franchise won Super Bowl LVIII?",
+      "correctAnswer": "Kansas City Chiefs",
+      "incorrectAnswers": [
+        "San Francisco 49ers",
+        "Buffalo Bills",
+        "Baltimore Ravens"
+      ],
+      "explanation": "Kansas City won the 2023 season championship in February 2024.",
+      "keywords": [
+        "champions",
+        "teams",
+        "chiefs"
+      ],
+      "source": "https://operations.nfl.com/learn-the-game/nfl-basics/"
+    },
+    {
+      "seedId": "6df87c7b-ad64-5f9b-b7da-4bfdf43f9e09",
+      "category": "sports",
+      "navigationKeyword1": "champions",
+      "navigationKeyword2": "teams",
+      "question": "Which NHL team won the 2024 Stanley Cup?",
+      "correctAnswer": "Florida Panthers",
+      "incorrectAnswers": [
+        "Edmonton Oilers",
+        "Vegas Golden Knights",
+        "Colorado Avalanche"
+      ],
+      "explanation": "Florida captured the NHL title in 2024.",
+      "keywords": [
+        "champions",
+        "teams",
+        "panthers"
+      ],
+      "source": "https://www.britannica.com/sports/ice-hockey"
+    },
+    {
+      "seedId": "5e4ada91-d6ba-5b88-acee-7a39133cf670",
+      "category": "sports",
+      "navigationKeyword1": "champions",
+      "navigationKeyword2": "teams",
+      "question": "Which WNBA team won the 2024 title?",
+      "correctAnswer": "New York Liberty",
+      "incorrectAnswers": [
+        "Minnesota Lynx",
+        "Las Vegas Aces",
+        "Seattle Storm"
+      ],
+      "explanation": "The Liberty won their first WNBA championship in 2024.",
+      "keywords": [
+        "champions",
+        "teams",
+        "liberty"
+      ],
+      "source": "https://www.nba.com/history"
+    },
+    {
+      "seedId": "15febee9-c33c-5ea7-97d4-a4af2949bc50",
+      "category": "sports",
+      "navigationKeyword1": "champions",
+      "navigationKeyword2": "teams",
+      "question": "Which club won the 2024 UEFA Champions League?",
+      "correctAnswer": "Real Madrid",
+      "incorrectAnswers": [
+        "Borussia Dortmund",
+        "Manchester City",
+        "Bayern Munich"
+      ],
+      "explanation": "Real Madrid added another European title in 2024.",
+      "keywords": [
+        "champions",
+        "teams",
+        "real-madrid"
+      ],
+      "source": "https://www.britannica.com/sports/football-soccer"
+    },
+    {
+      "seedId": "378d11ab-e943-5dd8-ac5a-4949fc8f8291",
+      "category": "sports",
+      "navigationKeyword1": "champions",
+      "navigationKeyword2": "teams",
+      "question": "Which college football team won the 2023 season national championship?",
+      "correctAnswer": "Michigan",
+      "incorrectAnswers": [
+        "Washington",
+        "Georgia",
+        "Texas"
+      ],
+      "explanation": "Michigan finished the 2023 season as champion.",
+      "keywords": [
+        "champions",
+        "teams",
+        "michigan"
+      ],
+      "source": "https://operations.nfl.com/learn-the-game/nfl-basics/"
+    },
+    {
+      "seedId": "53d172cc-5727-5dfa-b554-ea1fc6d4f49b",
+      "category": "sports",
+      "navigationKeyword1": "champions",
+      "navigationKeyword2": "teams",
+      "question": "Which franchise won the 2023 Stanley Cup?",
+      "correctAnswer": "Vegas Golden Knights",
+      "incorrectAnswers": [
+        "Florida Panthers",
+        "Colorado Avalanche",
+        "Tampa Bay Lightning"
+      ],
+      "explanation": "Vegas won the NHL title in 2023.",
+      "keywords": [
+        "champions",
+        "teams",
+        "golden-knights"
+      ],
+      "source": "https://www.britannica.com/sports/ice-hockey"
+    },
+    {
+      "seedId": "83ed15b3-2212-5068-b8e6-fe927dcc38ae",
+      "category": "sports",
+      "navigationKeyword1": "champions",
+      "navigationKeyword2": "teams",
+      "question": "Which franchise won the 2023 World Series?",
+      "correctAnswer": "Texas Rangers",
+      "incorrectAnswers": [
+        "Arizona Diamondbacks",
+        "Atlanta Braves",
+        "Houston Astros"
+      ],
+      "explanation": "Texas won its first World Series in 2023.",
+      "keywords": [
+        "champions",
+        "teams",
+        "rangers"
+      ],
+      "source": "https://www.mlb.com/glossary"
+    },
+    {
+      "seedId": "9f2a27c5-2004-5f21-8478-2fa857da63fd",
+      "category": "sports",
+      "navigationKeyword1": "champions",
+      "navigationKeyword2": "teams",
+      "question": "Which soccer nation won the 2022 men's World Cup?",
+      "correctAnswer": "Argentina",
+      "incorrectAnswers": [
+        "France",
+        "Brazil",
+        "Croatia"
+      ],
+      "explanation": "Argentina won the world title in Qatar.",
+      "keywords": [
+        "champions",
+        "teams",
+        "argentina"
+      ],
+      "source": "https://www.britannica.com/sports/football-soccer"
+    },
+    {
+      "seedId": "143067bd-e784-5dc7-9208-ee3611df2701",
+      "category": "sports",
+      "navigationKeyword1": "champions",
+      "navigationKeyword2": "upsets",
+      "question": "Which 16-seed became the first to beat a 1-seed in the men's NCAA tournament in 2018?",
+      "correctAnswer": "UMBC",
+      "incorrectAnswers": [
+        "VCU",
+        "Butler",
+        "George Mason"
+      ],
+      "explanation": "UMBC beat Virginia in the tournament's first 16-over-1 upset.",
+      "keywords": [
+        "champions",
+        "upsets",
+        "ncaa"
+      ],
+      "source": "https://www.ncaa.com/"
+    },
+    {
+      "seedId": "e5af809d-9694-5079-b6a9-0600675c403f",
+      "category": "sports",
+      "navigationKeyword1": "champions",
+      "navigationKeyword2": "upsets",
+      "question": "Which English club shocked the Premier League by winning the 2015-16 title?",
+      "correctAnswer": "Leicester City",
+      "incorrectAnswers": [
+        "Tottenham Hotspur",
+        "Arsenal",
+        "Liverpool"
+      ],
+      "explanation": "Leicester's title run remains one of the greatest football upsets.",
+      "keywords": [
+        "champions",
+        "upsets",
+        "leicester"
+      ],
+      "source": "https://www.britannica.com/topic/Leicester-City"
+    },
+    {
+      "seedId": "364dcb4d-68f6-57a9-9822-e80dc499d899",
+      "category": "sports",
+      "navigationKeyword1": "champions",
+      "navigationKeyword2": "upsets",
+      "question": "Which NFL team ruined the Patriots' 18-0 season in Super Bowl XLII?",
+      "correctAnswer": "New York Giants",
+      "incorrectAnswers": [
+        "Indianapolis Colts",
+        "Pittsburgh Steelers",
+        "Green Bay Packers"
+      ],
+      "explanation": "The Giants upset New England and denied a perfect season.",
+      "keywords": [
+        "champions",
+        "upsets",
+        "super-bowl"
+      ],
+      "source": "https://operations.nfl.com/learn-the-game/nfl-basics/"
+    },
+    {
+      "seedId": "08a70f35-95d0-5050-aae3-2418d6ed574b",
+      "category": "sports",
+      "navigationKeyword1": "champions",
+      "navigationKeyword2": "upsets",
+      "question": "Which baseball team came back from 0-3 in the 2004 ALCS against the Yankees?",
+      "correctAnswer": "Boston Red Sox",
+      "incorrectAnswers": [
+        "St. Louis Cardinals",
+        "Cleveland Indians",
+        "Houston Astros"
+      ],
+      "explanation": "Boston completed one of the greatest postseason comebacks in baseball history.",
+      "keywords": [
+        "champions",
+        "upsets",
+        "red-sox"
+      ],
+      "source": "https://www.mlb.com/history"
+    },
+    {
+      "seedId": "53673a9a-b1f7-5279-925b-1648a076ef50",
+      "category": "sports",
+      "navigationKeyword1": "champions",
+      "navigationKeyword2": "upsets",
+      "question": "Which boxer knocked out Mike Tyson in Tokyo in 1990?",
+      "correctAnswer": "Buster Douglas",
+      "incorrectAnswers": [
+        "Evander Holyfield",
+        "Lennox Lewis",
+        "Larry Holmes"
+      ],
+      "explanation": "Douglas' victory over Tyson is one of boxing's biggest surprises.",
+      "keywords": [
+        "champions",
+        "upsets",
+        "boxing"
+      ],
+      "source": "https://www.britannica.com/biography/Buster-Douglas"
+    },
+    {
+      "seedId": "b327b4df-a1a4-5317-87c3-d721032db522",
+      "category": "sports",
+      "navigationKeyword1": "champions",
+      "navigationKeyword2": "upsets",
+      "question": "Which club came back from 3-0 down at halftime to beat AC Milan in the 2005 Champions League final?",
+      "correctAnswer": "Liverpool",
+      "incorrectAnswers": [
+        "Chelsea",
+        "Barcelona",
+        "Manchester United"
+      ],
+      "explanation": "Liverpool's comeback in Istanbul is one of soccer's iconic shocks.",
+      "keywords": [
+        "champions",
+        "upsets",
+        "istanbul"
+      ],
+      "source": "https://www.uefa.com/uefachampionsleague/history/"
+    },
+    {
+      "seedId": "9e753ef1-fdbc-503a-afb3-8e2a3cfaad75",
+      "category": "sports",
+      "navigationKeyword1": "champions",
+      "navigationKeyword2": "upsets",
+      "question": "Which country beat Brazil 2-1 in the 1950 World Cup's decisive Maracana match?",
+      "correctAnswer": "Uruguay",
+      "incorrectAnswers": [
+        "Argentina",
+        "Spain",
+        "Italy"
+      ],
+      "explanation": "Uruguay's win in Rio became known as the Maracanazo.",
+      "keywords": [
+        "champions",
+        "upsets",
+        "maracanazo"
+      ],
+      "source": "https://www.britannica.com/sports/World-Cup-football"
+    },
+    {
+      "seedId": "8782cf93-986d-5701-b7b9-e918cf60ff82",
+      "category": "sports",
+      "navigationKeyword1": "champions",
+      "navigationKeyword2": "upsets",
+      "question": "Which fighter upset Ronda Rousey with a head-kick knockout in 2015?",
+      "correctAnswer": "Holly Holm",
+      "incorrectAnswers": [
+        "Amanda Nunes",
+        "Miesha Tate",
+        "Cris Cyborg"
+      ],
+      "explanation": "Holm's win over Rousey changed the UFC women's bantamweight division.",
+      "keywords": [
+        "champions",
+        "upsets",
+        "ufc"
+      ],
+      "source": "https://www.ufc.com/"
+    },
+    {
+      "seedId": "f7db1d09-93ef-599c-9125-707afc000332",
+      "category": "sports",
+      "navigationKeyword1": "champions",
+      "navigationKeyword2": "upsets",
+      "question": "Which nation won UEFA Euro 2004 despite entering as a major outsider?",
+      "correctAnswer": "Greece",
+      "incorrectAnswers": [
+        "Portugal",
+        "Netherlands",
+        "Czech Republic"
+      ],
+      "explanation": "Greece stunned Europe by winning Euro 2004.",
+      "keywords": [
+        "champions",
+        "upsets",
+        "euro-2004"
+      ],
+      "source": "https://www.uefa.com/uefaeuro/history/"
+    },
+    {
+      "seedId": "7a65d03d-bf30-5544-8e68-c0577b57f411",
+      "category": "sports",
+      "navigationKeyword1": "champions",
+      "navigationKeyword2": "upsets",
+      "question": "Which underdog nation beat the Soviet Union in the 1980 Miracle on Ice hockey game?",
+      "correctAnswer": "United States",
+      "incorrectAnswers": [
+        "Canada",
+        "Sweden",
+        "Finland"
+      ],
+      "explanation": "The U.S. upset the Soviets at Lake Placid in one of sport's most famous shocks.",
+      "keywords": [
+        "champions",
+        "upsets",
+        "miracle-on-ice"
+      ],
+      "source": "https://www.britannica.com/sports/Olympic-Games"
+    }
+  ]
+}

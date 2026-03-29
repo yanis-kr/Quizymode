@@ -1,0 +1,691 @@
+{
+  "schemaVersion": 1,
+  "seedSet": "core-public-items",
+  "deltaPreviewLimit": 200,
+  "items": [
+    {
+      "seedId": "52c9be83-71e4-4956-9ac6-1f2871142201",
+      "category": "business",
+      "navigationKeyword1": "sales",
+      "navigationKeyword2": "b2b",
+      "question": "Compared with many B2C purchases, B2B buying often involves what?",
+      "correctAnswer": "Longer cycles, more stakeholders, and more formal evaluation and procurement steps.",
+      "incorrectAnswers": [
+        "Always a one-click checkout with no questions asked.",
+        "Never more than one decision-maker.",
+        "No contracts or approvals of any kind."
+      ],
+      "explanation": "Complexity rises with risk, spend, and organizational impact.",
+      "keywords": [
+        "b2b",
+        "buying-process"
+      ],
+      "source": "https://www.gartner.com/en/sales/insights/b2b-buying-journey"
+    },
+    {
+      "seedId": "02f04c77-2876-4375-8576-f3959988773c",
+      "category": "business",
+      "navigationKeyword1": "sales",
+      "navigationKeyword2": "b2b",
+      "question": "What is a buying committee?",
+      "correctAnswer": "A group of stakeholders (e.g., finance, IT, legal, users) who influence or approve a purchase.",
+      "incorrectAnswers": [
+        "Only the person who clicks \u2018pay\u2019 on a credit card.",
+        "A social club unrelated to purchasing.",
+        "A list of competitor vendors."
+      ],
+      "explanation": "Multi-threading across roles reduces single-thread risk.",
+      "keywords": [
+        "buying-committee",
+        "stakeholders"
+      ],
+      "source": "https://www.salesforce.com/resources/articles/b2b-buying-committee/"
+    },
+    {
+      "seedId": "2d40f638-ca05-4d5d-9b39-8a6800bfbbca",
+      "category": "business",
+      "navigationKeyword1": "sales",
+      "navigationKeyword2": "b2b",
+      "question": "What is a channel partner model?",
+      "correctAnswer": "Third parties (resellers, distributors) sell or implement a vendor\u2019s offering for a segment or region.",
+      "incorrectAnswers": [
+        "A model where customers never talk to vendors.",
+        "A guarantee that partners set final prices with no rules.",
+        "The same thing as payroll outsourcing always."
+      ],
+      "explanation": "Channels extend reach but require enablement and governance.",
+      "keywords": [
+        "channel",
+        "partners"
+      ],
+      "source": "https://www.investopedia.com/terms/d/distribution-channel.asp"
+    },
+    {
+      "seedId": "54cfbab3-ca35-44c6-94d2-81503686e89f",
+      "category": "business",
+      "navigationKeyword1": "sales",
+      "navigationKeyword2": "b2b",
+      "question": "What is a common difference between SMB and enterprise sales motions?",
+      "correctAnswer": "Enterprise motions often involve more stakeholders, security, and legal steps, with longer cycles.",
+      "incorrectAnswers": [
+        "Enterprise deals are always completed in one hour.",
+        "SMB customers never require contracts.",
+        "There is never any difference; it is random."
+      ],
+      "explanation": "Motion design should match customer complexity.",
+      "keywords": [
+        "enterprise",
+        "smb"
+      ],
+      "source": "https://www.salesforce.com/resources/articles/enterprise-sales/"
+    },
+    {
+      "seedId": "0e14c8bc-14ef-469f-a08a-96b20b689de5",
+      "category": "business",
+      "navigationKeyword1": "sales",
+      "navigationKeyword2": "b2b",
+      "question": "What is an RFP commonly used for?",
+      "correctAnswer": "Structured solicitation where buyers compare vendor proposals against requirements.",
+      "incorrectAnswers": [
+        "A personal thank-you note after a dinner.",
+        "A one-question customer survey about logos.",
+        "An internal-only employee performance review."
+      ],
+      "explanation": "RFPs formalize evaluation for larger purchases.",
+      "keywords": [
+        "rfp",
+        "procurement"
+      ],
+      "source": "https://www.investopedia.com/terms/r/request-for-proposal.asp"
+    },
+    {
+      "seedId": "425f0d7d-00e5-49f2-ba1c-e65f32973ac4",
+      "category": "business",
+      "navigationKeyword1": "sales",
+      "navigationKeyword2": "b2b",
+      "question": "Why do net payment terms (e.g., Net 30) matter in B2B cash management?",
+      "correctAnswer": "They affect when cash is received and can strain working capital if not planned.",
+      "incorrectAnswers": [
+        "They never affect cash timing.",
+        "They only apply to consumer gift cards.",
+        "They remove the need for invoicing."
+      ],
+      "explanation": "AR timing is core to liquidity planning.",
+      "keywords": [
+        "net-terms",
+        "working-capital"
+      ],
+      "source": "https://www.investopedia.com/terms/n/net30.asp"
+    },
+    {
+      "seedId": "e5137cf7-e590-4594-9a17-4a6c78213759",
+      "category": "business",
+      "navigationKeyword1": "sales",
+      "navigationKeyword2": "closing",
+      "question": "What does a mutual action plan (MAP) try to align?",
+      "correctAnswer": "Buyer and seller on dates, owners, and deliverables needed to reach a decision.",
+      "incorrectAnswers": [
+        "Only the seller\u2019s internal vacation schedule.",
+        "Only marketing campaign colors.",
+        "Only competitor pricing without customer input."
+      ],
+      "explanation": "MAPs reduce \u2018surprise\u2019 stalls late in cycles.",
+      "keywords": [
+        "mutual-action-plan",
+        "closing"
+      ],
+      "source": "https://www.gong.io/blog/mutual-action-plan"
+    },
+    {
+      "seedId": "a990cd21-8754-495f-bf9d-6881957ecb2e",
+      "category": "business",
+      "navigationKeyword1": "sales",
+      "navigationKeyword2": "closing",
+      "question": "What is a common risk of an overly \u2018assumptive\u2019 close?",
+      "correctAnswer": "It can feel pushy and erode trust if the buyer is not actually ready.",
+      "incorrectAnswers": [
+        "It always increases trust with no downsides.",
+        "It is illegal in all regulated industries.",
+        "It prevents any future upsell."
+      ],
+      "explanation": "Closing techniques should match buyer readiness and ethics.",
+      "keywords": [
+        "assumptive-close",
+        "trust"
+      ],
+      "source": "https://blog.hubspot.com/sales/closing-techniques"
+    },
+    {
+      "seedId": "81e4e174-e019-4184-b43c-e1d4df898f2a",
+      "category": "business",
+      "navigationKeyword1": "sales",
+      "navigationKeyword2": "closing",
+      "question": "What is a \u2018trial close\u2019?",
+      "correctAnswer": "A check-for-understanding question that gauges readiness without demanding a final signature.",
+      "incorrectAnswers": [
+        "A demand for immediate payment before any conversation.",
+        "A legal filing in court.",
+        "A refund policy."
+      ],
+      "explanation": "Trial closes surface concerns early.",
+      "keywords": [
+        "trial-close",
+        "sales-skills"
+      ],
+      "source": "https://www.salesforce.com/blog/sales-closing-techniques/"
+    },
+    {
+      "seedId": "8d08cdbe-8aa7-48d0-8461-1d781d49102f",
+      "category": "business",
+      "navigationKeyword1": "sales",
+      "navigationKeyword2": "closing",
+      "question": "What is the better practice when a buyer raises an objection?",
+      "correctAnswer": "Clarify, validate the concern, and address it with evidence or revised terms when possible.",
+      "incorrectAnswers": [
+        "Ignore objections to avoid appearing weak.",
+        "Immediately end the meeting.",
+        "Argue louder until the buyer agrees."
+      ],
+      "explanation": "Objections often contain useful information about risk and decision criteria.",
+      "keywords": [
+        "objections",
+        "sales-process"
+      ],
+      "source": "https://www.gong.io/blog/sales-objections"
+    },
+    {
+      "seedId": "cfac5fc4-32b1-4c7c-9df6-b3c8a0c0ae20",
+      "category": "business",
+      "navigationKeyword1": "sales",
+      "navigationKeyword2": "closing",
+      "question": "Why do enterprise deals often slow near the end?",
+      "correctAnswer": "Procurement, security review, legal redlines, and stakeholder alignment take time.",
+      "incorrectAnswers": [
+        "Because closing is always a single two-minute step.",
+        "Because discounts remove paperwork.",
+        "Because CRMs block approvals."
+      ],
+      "explanation": "Closing is a process, especially in B2B.",
+      "keywords": [
+        "enterprise-sales",
+        "procurement"
+      ],
+      "source": "https://www.investopedia.com/terms/e/enterprise-sales.asp"
+    },
+    {
+      "seedId": "7001ac49-0f97-4b84-9e7f-aa3bb886795e",
+      "category": "business",
+      "navigationKeyword1": "sales",
+      "navigationKeyword2": "closing",
+      "question": "Why is scheduling a clear next step at the end of a sales meeting important?",
+      "correctAnswer": "It reduces ambiguity, maintains momentum, and sets accountability.",
+      "incorrectAnswers": [
+        "Because buyers prefer indefinite waiting with no follow-up.",
+        "Because calendars are irrelevant to complex deals.",
+        "Because next steps should always be decided only by legal."
+      ],
+      "explanation": "Momentum is a common predictor of progression.",
+      "keywords": [
+        "next-steps",
+        "discipline"
+      ],
+      "source": "https://www.salesforce.com/blog/sales-follow-up/"
+    },
+    {
+      "seedId": "6127f5d6-f87c-493d-a1eb-091adf2af670",
+      "category": "business",
+      "navigationKeyword1": "sales",
+      "navigationKeyword2": "crm",
+      "question": "What is a CRM system primarily designed to support?",
+      "correctAnswer": "Managing customer relationships, pipeline, and interactions across the revenue team.",
+      "incorrectAnswers": [
+        "Replacing accounting ledgers entirely.",
+        "Hosting source code repositories.",
+        "Printing payroll checks only."
+      ],
+      "explanation": "CRMs centralize customer context for better coordination.",
+      "keywords": [
+        "crm",
+        "systems"
+      ],
+      "source": "https://www.salesforce.com/crm/what-is-crm/"
+    },
+    {
+      "seedId": "89ee0402-d143-4026-9e0e-7c0c7de62a38",
+      "category": "business",
+      "navigationKeyword1": "sales",
+      "navigationKeyword2": "crm",
+      "question": "What is a common benefit of integrating CRM with marketing automation?",
+      "correctAnswer": "Cleaner handoffs, shared visibility, and more consistent nurturing and scoring.",
+      "incorrectAnswers": [
+        "It guarantees identical passwords for all users.",
+        "It removes the need for any segmentation.",
+        "It prevents all customer communication."
+      ],
+      "explanation": "Integration aligns teams around the customer journey.",
+      "keywords": [
+        "integration",
+        "revops"
+      ],
+      "source": "https://blog.hubspot.com/marketing/crm-marketing-automation"
+    },
+    {
+      "seedId": "5574f334-68fa-4db0-9b82-32837fe77543",
+      "category": "business",
+      "navigationKeyword1": "sales",
+      "navigationKeyword2": "crm",
+      "question": "What is an opportunity owner in a CRM typically responsible for?",
+      "correctAnswer": "Driving the deal strategy, next steps, and forecast accuracy for that opportunity record.",
+      "incorrectAnswers": [
+        "Only resetting passwords for the whole company.",
+        "Only posting on personal social media.",
+        "Automatically approving every invoice in accounting."
+      ],
+      "explanation": "Ownership clarifies who moves the deal forward.",
+      "keywords": [
+        "opportunity-owner",
+        "crm"
+      ],
+      "source": "https://help.salesforce.com/s/articleView?id=sf.fo_opportunity_owner.htm"
+    },
+    {
+      "seedId": "202c9876-ba50-42c4-a3c8-a58e4ab6c3ba",
+      "category": "business",
+      "navigationKeyword1": "sales",
+      "navigationKeyword2": "crm",
+      "question": "What is lead scoring meant to do?",
+      "correctAnswer": "Prioritize follow-up by estimating which leads are more likely to convert.",
+      "incorrectAnswers": [
+        "Guarantee that high scores always purchase.",
+        "Replace salespeople with paper forms.",
+        "Remove marketing from the funnel entirely."
+      ],
+      "explanation": "Scoring is a prioritization tool, not a crystal ball.",
+      "keywords": [
+        "lead-scoring",
+        "marketing-sales"
+      ],
+      "source": "https://www.salesforce.com/products/guide/lead-scoring/"
+    },
+    {
+      "seedId": "279e18fc-93cd-4a50-85ef-d2ea772157e1",
+      "category": "business",
+      "navigationKeyword1": "sales",
+      "navigationKeyword2": "crm",
+      "question": "Why log sales activities (calls, emails, meetings) in a CRM?",
+      "correctAnswer": "Create accountability, enable coaching, and preserve context for handoffs.",
+      "incorrectAnswers": [
+        "Because logs are never read by anyone.",
+        "Because logging reduces revenue automatically.",
+        "Because CRMs forbid notes."
+      ],
+      "explanation": "Activity history improves forecasting and customer experience.",
+      "keywords": [
+        "activity-logging",
+        "crm"
+      ],
+      "source": "https://blog.hubspot.com/sales/crm-best-practices"
+    },
+    {
+      "seedId": "d9db5013-01d8-4200-9e14-3b6de1b3c751",
+      "category": "business",
+      "navigationKeyword1": "sales",
+      "navigationKeyword2": "crm",
+      "question": "Why should teams be careful about storing personal data in a CRM?",
+      "correctAnswer": "Privacy laws and company policy may limit collection, retention, and access.",
+      "incorrectAnswers": [
+        "Because privacy rules never apply to businesses.",
+        "Because CRMs cannot store any personal data at all.",
+        "Because GDPR only applies to paper mail."
+      ],
+      "explanation": "Treat CRM data as governed information, not a free-for-all.",
+      "keywords": [
+        "privacy",
+        "data-governance"
+      ],
+      "source": "https://www.ftc.gov/business-guidance/privacy-security"
+    },
+    {
+      "seedId": "dc9b4842-5776-4297-95e2-c6f558ac689c",
+      "category": "business",
+      "navigationKeyword1": "sales",
+      "navigationKeyword2": "negotiation",
+      "question": "In negotiation, what is a BATNA?",
+      "correctAnswer": "Your best alternative if you cannot reach an agreement in the current negotiation.",
+      "incorrectAnswers": [
+        "The lowest price the other party will ever accept, with certainty.",
+        "A legal requirement to accept the first offer.",
+        "The average competitor discount in your industry."
+      ],
+      "explanation": "Strong BATNAs improve walk-away discipline and outcomes.",
+      "keywords": [
+        "batna",
+        "negotiation"
+      ],
+      "source": "https://www.pon.harvard.edu/tag/batna/"
+    },
+    {
+      "seedId": "e4b4f553-91fb-4ea0-99ce-057d1f63f5af",
+      "category": "business",
+      "navigationKeyword1": "sales",
+      "navigationKeyword2": "negotiation",
+      "question": "What is a \u2018position\u2019 versus an \u2018interest\u2019 in negotiation language?",
+      "correctAnswer": "A position is a stated demand; an interest is the underlying need behind it.",
+      "incorrectAnswers": [
+        "They are always identical words meaning the same thing.",
+        "An interest is only a legal term for lawsuits.",
+        "A position is always secret and never spoken aloud."
+      ],
+      "explanation": "Separating interests opens trade-offs and creative options.",
+      "keywords": [
+        "interests",
+        "negotiation"
+      ],
+      "source": "https://www.pon.harvard.edu/daily/dealmaking-daily/deal-making-2-positions-and-interests/"
+    },
+    {
+      "seedId": "237e157d-c061-4b92-8651-b541152b8dc0",
+      "category": "business",
+      "navigationKeyword1": "sales",
+      "navigationKeyword2": "negotiation",
+      "question": "What is the Zone of Possible Agreement (ZOPA)?",
+      "correctAnswer": "The range where a deal could exist because both sides\u2019 acceptable outcomes overlap.",
+      "incorrectAnswers": [
+        "The list of every competitor\u2019s employees.",
+        "The period after a contract ends.",
+        "A government tax bracket."
+      ],
+      "explanation": "If ZOPA does not exist, agreement may be impossible without changing terms.",
+      "keywords": [
+        "zopa",
+        "negotiation"
+      ],
+      "source": "https://www.pon.harvard.edu/tag/zopa/"
+    },
+    {
+      "seedId": "4b1a715b-1c03-43fb-8add-a2508bf5a74a",
+      "category": "business",
+      "navigationKeyword1": "sales",
+      "navigationKeyword2": "negotiation",
+      "question": "When is walking away from a negotiation a rational option?",
+      "correctAnswer": "When outcomes would fall below your BATNA or create unacceptable risk.",
+      "incorrectAnswers": [
+        "Never\u2014salespeople must always accept the final offer.",
+        "Only if the other party is polite.",
+        "Only after automatic discounting to zero."
+      ],
+      "explanation": "Good negotiation includes disciplined exit criteria.",
+      "keywords": [
+        "walk-away",
+        "batna"
+      ],
+      "source": "https://www.pon.harvard.edu/daily/dealmaking-daily/when-should-you-walk-away-in-a-negotiation/"
+    },
+    {
+      "seedId": "8aed7c1b-247d-40e8-b22e-e13235453dfe",
+      "category": "business",
+      "navigationKeyword1": "sales",
+      "navigationKeyword2": "negotiation",
+      "question": "Why can the first anchor number in a negotiation matter?",
+      "correctAnswer": "It can strongly shape perceptions of what is \u2018reasonable\u2019 in later discussion.",
+      "incorrectAnswers": [
+        "It has no effect on human judgment.",
+        "It is illegal in business-to-business deals.",
+        "It only matters for consumer retail, never B2B."
+      ],
+      "explanation": "Anchoring is a well-documented cognitive bias relevant to pricing talks.",
+      "keywords": [
+        "anchoring",
+        "pricing-talks"
+      ],
+      "source": "https://www.investopedia.com/terms/a/anchoring.asp"
+    },
+    {
+      "seedId": "60ed70eb-95e2-4701-b187-82d35434c107",
+      "category": "business",
+      "navigationKeyword1": "sales",
+      "navigationKeyword2": "negotiation",
+      "question": "Why write down key commercial terms before celebrating a \u2018handshake\u2019 deal?",
+      "correctAnswer": "Memory and interpretation drift; written terms reduce disputes and scope creep.",
+      "incorrectAnswers": [
+        "Because verbal agreements are always unenforceable in every country.",
+        "Because contracts should never mention deliverables.",
+        "Because writing increases confusion on purpose."
+      ],
+      "explanation": "Clarity protects both sides as implementation begins.",
+      "keywords": [
+        "contract-terms",
+        "closing"
+      ],
+      "source": "https://www.investopedia.com/terms/c/contract.asp"
+    },
+    {
+      "seedId": "3665931e-af12-4e22-a38e-5fba388731b6",
+      "category": "business",
+      "navigationKeyword1": "sales",
+      "navigationKeyword2": "pipeline",
+      "question": "In forecasting, what is a common purpose of forecast categories like commit / best case / pipeline?",
+      "correctAnswer": "Communicate different levels of confidence in which deals will land in a period.",
+      "incorrectAnswers": [
+        "Replace the need for any customer conversations.",
+        "Ensure every deal is counted twice.",
+        "Guarantee 100% forecast precision."
+      ],
+      "explanation": "Categories align leadership on expected outcomes.",
+      "keywords": [
+        "forecast",
+        "categories"
+      ],
+      "source": "https://www.salesforce.com/resources/articles/sales-forecasting/"
+    },
+    {
+      "seedId": "8ecd6f31-026b-4037-8ee8-72c85bbdb264",
+      "category": "business",
+      "navigationKeyword1": "sales",
+      "navigationKeyword2": "pipeline",
+      "question": "What does \u2018pipeline coverage\u2019 commonly express?",
+      "correctAnswer": "How the total weighted (or raw) pipeline compares to a quota or target.",
+      "incorrectAnswers": [
+        "Only the number of phone calls made last week.",
+        "The company\u2019s total headcount in HR.",
+        "The exact tax rate for the quarter."
+      ],
+      "explanation": "Coverage helps assess whether there is enough opportunity volume to hit goals.",
+      "keywords": [
+        "pipeline-coverage",
+        "forecasting"
+      ],
+      "source": "https://www.investopedia.com/terms/p/pipeline.asp"
+    },
+    {
+      "seedId": "1d1d68ba-fc78-4c1f-ad4c-b8ed71343045",
+      "category": "business",
+      "navigationKeyword1": "sales",
+      "navigationKeyword2": "pipeline",
+      "question": "What is a sales pipeline best understood as?",
+      "correctAnswer": "A staged view of active opportunities moving from early interest toward close.",
+      "incorrectAnswers": [
+        "A list of every employee in the company.",
+        "A finance-only cash flow statement.",
+        "A marketing editorial calendar."
+      ],
+      "explanation": "Pipeline stages make revenue forecasting and coaching actionable.",
+      "keywords": [
+        "pipeline",
+        "crm"
+      ],
+      "source": "https://www.salesforce.com/resources/articles/sales-pipeline/"
+    },
+    {
+      "seedId": "fecad6db-495d-46f8-968e-3bbd43b81980",
+      "category": "business",
+      "navigationKeyword1": "sales",
+      "navigationKeyword2": "pipeline",
+      "question": "What is a \u2018stale\u2019 opportunity risk in pipeline management?",
+      "correctAnswer": "Deals sit too long without progress, often inflating forecasts and wasting effort.",
+      "incorrectAnswers": [
+        "Deals that close too quickly.",
+        "Opportunities that are always guaranteed wins.",
+        "Leads that unsubscribe from marketing emails."
+      ],
+      "explanation": "Age and next-step discipline reduce false optimism.",
+      "keywords": [
+        "stale-deals",
+        "forecasting"
+      ],
+      "source": "https://www.gong.io/blog/sales-pipeline-review"
+    },
+    {
+      "seedId": "2eec8888-7df9-4690-824f-a3ed73121def",
+      "category": "business",
+      "navigationKeyword1": "sales",
+      "navigationKeyword2": "pipeline",
+      "question": "Why is CRM data hygiene important for pipeline accuracy?",
+      "correctAnswer": "Stale fields and missing stages distort forecasts and hide real deal risk.",
+      "incorrectAnswers": [
+        "Because CRMs automatically delete all data weekly.",
+        "Because hygiene only matters for marketing, not sales.",
+        "Because forecasts should ignore closed dates entirely."
+      ],
+      "explanation": "Clean records improve accountability and reporting.",
+      "keywords": [
+        "crm",
+        "data-hygiene"
+      ],
+      "source": "https://www.salesforce.com/resources/articles/crm-data-quality/"
+    },
+    {
+      "seedId": "cb62d2e0-52b1-43e8-951e-f288a3f6a50f",
+      "category": "business",
+      "navigationKeyword1": "sales",
+      "navigationKeyword2": "pipeline",
+      "question": "Why measure conversion rates between pipeline stages?",
+      "correctAnswer": "To find where deals stall and where coaching, enablement, or process fixes help most.",
+      "incorrectAnswers": [
+        "Because conversion rates remove the need for quotas.",
+        "Because every stage should always convert at 100%.",
+        "Because pipeline stages are legally required to be identical across industries."
+      ],
+      "explanation": "Stage conversion highlights friction in the sales motion.",
+      "keywords": [
+        "conversion",
+        "metrics"
+      ],
+      "source": "https://blog.hubspot.com/sales/sales-pipeline-management"
+    },
+    {
+      "seedId": "74255872-f0d7-4441-9224-635e78358da8",
+      "category": "business",
+      "navigationKeyword1": "sales",
+      "navigationKeyword2": "prospecting",
+      "question": "In outbound prospecting, what is a common purpose of a first-touch message?",
+      "correctAnswer": "Earn permission to continue a conversation by showing relevance and credibility.",
+      "incorrectAnswers": [
+        "Close the deal in the first email.",
+        "Send the longest possible product brochure.",
+        "Avoid mentioning why you are reaching out."
+      ],
+      "explanation": "Early touches aim for engagement, not instant closure.",
+      "keywords": [
+        "outbound",
+        "messaging"
+      ],
+      "source": "https://www.salesforce.com/blog/outbound-sales/"
+    },
+    {
+      "seedId": "393674f7-f2e6-4226-ab72-56089fae6b7c",
+      "category": "business",
+      "navigationKeyword1": "sales",
+      "navigationKeyword2": "prospecting",
+      "question": "Under U.S. CAN-SPAM basics for commercial email, what must you typically include?",
+      "correctAnswer": "A clear way to opt out of future messages and truthful header/identity information.",
+      "incorrectAnswers": [
+        "A requirement that recipients reply with their Social Security number.",
+        "Permission to hide who the message is from.",
+        "A ban on all unsubscribe links."
+      ],
+      "explanation": "CAN-SPAM sets baseline requirements for commercial email.",
+      "keywords": [
+        "can-spam",
+        "compliance"
+      ],
+      "source": "https://www.ftc.gov/business-guidance/resources/can-spam-act-compliance-guide-business"
+    },
+    {
+      "seedId": "b9b4abb0-47a4-4260-8f82-23f6394982dc",
+      "category": "business",
+      "navigationKeyword1": "sales",
+      "navigationKeyword2": "prospecting",
+      "question": "What is a discovery call primarily meant to accomplish?",
+      "correctAnswer": "Understand the prospect\u2019s situation, priorities, and buying process\u2014not just pitch features.",
+      "incorrectAnswers": [
+        "Replace the need for any follow-up meetings.",
+        "Read every slide deck verbatim without asking questions.",
+        "Immediately demand a purchase order."
+      ],
+      "explanation": "Good discovery clarifies fit and next steps.",
+      "keywords": [
+        "discovery",
+        "sales-process"
+      ],
+      "source": "https://www.gong.io/blog/discovery-call"
+    },
+    {
+      "seedId": "967da758-6348-4a38-b117-531dddfc5e42",
+      "category": "business",
+      "navigationKeyword1": "sales",
+      "navigationKeyword2": "prospecting",
+      "question": "What is an Ideal Customer Profile (ICP) used for in sales?",
+      "correctAnswer": "A structured description of the accounts most likely to buy and succeed with your offer.",
+      "incorrectAnswers": [
+        "A list of every company that has ever visited your website.",
+        "A guarantee that a prospect will purchase within 30 days.",
+        "The same thing as a closed-won opportunity in a CRM."
+      ],
+      "explanation": "ICP focuses outbound effort and messaging on best-fit segments.",
+      "keywords": [
+        "icp",
+        "segmentation"
+      ],
+      "source": "https://blog.hubspot.com/sales/ideal-customer-profile"
+    },
+    {
+      "seedId": "5126119c-8f6d-4dc7-bbb5-a0e99bcc6a8a",
+      "category": "business",
+      "navigationKeyword1": "sales",
+      "navigationKeyword2": "prospecting",
+      "question": "What is the practical difference between a \u2018lead\u2019 and a \u2018qualified opportunity\u2019?",
+      "correctAnswer": "A lead is an early-stage interest; a qualified opportunity usually has confirmed fit, need, and a plausible path to purchase.",
+      "incorrectAnswers": [
+        "They are identical terms in every CRM.",
+        "An opportunity is always colder than a lead.",
+        "A lead must already include a signed contract."
+      ],
+      "explanation": "Definitions vary slightly by company, but qualification is the key gap.",
+      "keywords": [
+        "lead",
+        "qualification"
+      ],
+      "source": "https://www.investopedia.com/terms/l/lead.asp"
+    },
+    {
+      "seedId": "30bdb0bc-68be-4925-9fb8-6fab51cf0291",
+      "category": "business",
+      "navigationKeyword1": "sales",
+      "navigationKeyword2": "prospecting",
+      "question": "Why do sales teams track \u2018trigger events\u2019 (e.g., leadership change, funding, expansion)?",
+      "correctAnswer": "They can signal timing when problems, budgets, and openness to change align.",
+      "incorrectAnswers": [
+        "They guarantee a prospect has unlimited budget.",
+        "They mean procurement is never involved.",
+        "They remove the need for qualification."
+      ],
+      "explanation": "Triggers inform timing and relevance, not certainty.",
+      "keywords": [
+        "trigger-events",
+        "timing"
+      ],
+      "source": "https://www.salesforce.com/blog/sales-triggers/"
+    }
+  ]
+}

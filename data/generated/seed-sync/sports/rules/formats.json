@@ -1,0 +1,207 @@
+{
+  "schemaVersion": 1,
+  "seedSet": "core-public-items",
+  "deltaPreviewLimit": 200,
+  "items": [
+    {
+      "seedId": "61cf1af0-ae42-5cea-abbd-2267a356c56c",
+      "category": "sports",
+      "navigationKeyword1": "rules",
+      "navigationKeyword2": "formats",
+      "question": "What baseball format decides the World Series champion?",
+      "correctAnswer": "Best-of-seven series",
+      "incorrectAnswers": [
+        "Single game final",
+        "Best-of-three set",
+        "Round robin"
+      ],
+      "explanation": "The World Series is played as a best-of-seven series.",
+      "keywords": [
+        "rules",
+        "formats",
+        "world-series"
+      ],
+      "source": "https://www.mlb.com/history"
+    },
+    {
+      "seedId": "943f43ae-036d-5044-86a8-63b69a934a55",
+      "category": "sports",
+      "navigationKeyword1": "rules",
+      "navigationKeyword2": "formats",
+      "question": "What format compares golfers hole by hole rather than by total strokes?",
+      "correctAnswer": "Match play",
+      "incorrectAnswers": [
+        "Stroke play",
+        "Aggregate match set",
+        "Sudden-death only"
+      ],
+      "explanation": "Match play treats each hole as a separate contest.",
+      "keywords": [
+        "rules",
+        "formats",
+        "match-play"
+      ],
+      "source": "https://www.usga.org/content/usga/home-page/rules-hub.html"
+    },
+    {
+      "seedId": "cf3863aa-0892-5acc-afa2-d43582da39f3",
+      "category": "sports",
+      "navigationKeyword1": "rules",
+      "navigationKeyword2": "formats",
+      "question": "What format gives every team in a group the chance to play multiple opponents before elimination?",
+      "correctAnswer": "Round robin",
+      "incorrectAnswers": [
+        "Single elimination",
+        "Penalty shootout",
+        "Best-of-seven"
+      ],
+      "explanation": "Round-robin play guarantees multiple scheduled games.",
+      "keywords": [
+        "rules",
+        "formats",
+        "round-robin"
+      ],
+      "source": "https://www.britannica.com/sports"
+    },
+    {
+      "seedId": "936e9916-3c95-5596-8a54-4edcb07a1d87",
+      "category": "sports",
+      "navigationKeyword1": "rules",
+      "navigationKeyword2": "formats",
+      "question": "What format is most common in the FIFA World Cup knockout phase after the group stage?",
+      "correctAnswer": "Single elimination",
+      "incorrectAnswers": [
+        "Double elimination",
+        "Best-of-five series",
+        "Home-and-away league"
+      ],
+      "explanation": "Teams are eliminated after one loss in the knockout bracket.",
+      "keywords": [
+        "rules",
+        "formats",
+        "single-elimination"
+      ],
+      "source": "https://www.theifab.com/laws/latest/"
+    },
+    {
+      "seedId": "dd78bf5f-34db-5e81-a5ca-8594374e0997",
+      "category": "sports",
+      "navigationKeyword1": "rules",
+      "navigationKeyword2": "formats",
+      "question": "What format is the NCAA men's basketball tournament best known for?",
+      "correctAnswer": "Single elimination bracket",
+      "incorrectAnswers": [
+        "Best-of-seven series",
+        "Round robin group play",
+        "Home-and-away aggregate"
+      ],
+      "explanation": "March Madness is a straight knockout bracket.",
+      "keywords": [
+        "rules",
+        "formats",
+        "march-madness"
+      ],
+      "source": "https://www.britannica.com/sports/basketball"
+    },
+    {
+      "seedId": "3716de7b-5fd9-53bc-bde3-6fca9ae6407f",
+      "category": "sports",
+      "navigationKeyword1": "rules",
+      "navigationKeyword2": "formats",
+      "question": "What golf competition format compares players by total strokes over the entire round or tournament?",
+      "correctAnswer": "Stroke play",
+      "incorrectAnswers": [
+        "Match play",
+        "Round robin",
+        "Best-of-seven"
+      ],
+      "explanation": "Stroke play totals every shot across the event.",
+      "keywords": [
+        "rules",
+        "formats",
+        "stroke-play"
+      ],
+      "source": "https://www.usga.org/content/usga/home-page/rules-hub.html"
+    },
+    {
+      "seedId": "3c5224d6-1638-5686-9c06-b6f14b7b2460",
+      "category": "sports",
+      "navigationKeyword1": "rules",
+      "navigationKeyword2": "formats",
+      "question": "What overtime-deciding method is used in soccer knockout matches if teams remain tied after extra time in many competitions?",
+      "correctAnswer": "Penalty shootout",
+      "incorrectAnswers": [
+        "Golden point",
+        "Faceoff contest",
+        "Home-run derby"
+      ],
+      "explanation": "Penalty shootouts settle many tied soccer knockout matches.",
+      "keywords": [
+        "rules",
+        "formats",
+        "shootout"
+      ],
+      "source": "https://www.theifab.com/laws/latest/"
+    },
+    {
+      "seedId": "b03bb3c5-8dc6-581e-aea9-96b63aea9bdb",
+      "category": "sports",
+      "navigationKeyword1": "rules",
+      "navigationKeyword2": "formats",
+      "question": "What playoff entry format rewards teams for regular-season performance before the main bracket begins in some leagues?",
+      "correctAnswer": "Play-in tournament",
+      "incorrectAnswers": [
+        "Replay system",
+        "Leg format",
+        "Test match"
+      ],
+      "explanation": "A play-in tournament is used in some leagues to decide final playoff berths.",
+      "keywords": [
+        "rules",
+        "formats",
+        "play-in"
+      ],
+      "source": "https://www.nba.com/history"
+    },
+    {
+      "seedId": "075433ee-f0dd-5da3-870a-23aa47767bf9",
+      "category": "sports",
+      "navigationKeyword1": "rules",
+      "navigationKeyword2": "formats",
+      "question": "What playoff format pits two teams in a series of games where one must win four games to advance in the NBA Finals and Stanley Cup playoffs?",
+      "correctAnswer": "Best-of-seven series",
+      "incorrectAnswers": [
+        "Single elimination",
+        "Round robin",
+        "Aggregate goals"
+      ],
+      "explanation": "Many pro team sports use best-of-seven playoff series.",
+      "keywords": [
+        "rules",
+        "formats",
+        "series"
+      ],
+      "source": "https://www.nba.com/history"
+    },
+    {
+      "seedId": "2d1c7f40-e5fd-5954-b822-5931db00480a",
+      "category": "sports",
+      "navigationKeyword1": "rules",
+      "navigationKeyword2": "formats",
+      "question": "What tournament structure allows a team to lose once and still remain alive in the bracket?",
+      "correctAnswer": "Double elimination",
+      "incorrectAnswers": [
+        "Single elimination",
+        "Swiss league",
+        "Round robin"
+      ],
+      "explanation": "Double elimination gives each entrant two lives before exit.",
+      "keywords": [
+        "rules",
+        "formats",
+        "double-elimination"
+      ],
+      "source": "https://www.britannica.com/sports"
+    }
+  ]
+}

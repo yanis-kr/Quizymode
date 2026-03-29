@@ -1,0 +1,1375 @@
+{
+  "schemaVersion": 1,
+  "seedSet": "core-public-items",
+  "deltaPreviewLimit": 200,
+  "items": [
+    {
+      "seedId": "32b4d09e-a1db-423b-a12c-07a342ed6f33",
+      "category": "science",
+      "navigationKeyword1": "chemistry",
+      "navigationKeyword2": "atoms",
+      "question": "What are atoms composed of (subatomic particles)?",
+      "correctAnswer": "Protons, neutrons, and electrons",
+      "incorrectAnswers": [
+        "Only protons",
+        "Only electrons",
+        "Only neutrons"
+      ],
+      "explanation": "Nucleus contains protons and neutrons; electrons occupy outer regions.",
+      "keywords": [
+        "atoms",
+        "subatomic"
+      ],
+      "source": "https://openstax.org/books/chemistry-2e/pages/2-2-evolution-of-atomic-theory"
+    },
+    {
+      "seedId": "63ae0d8c-8b4e-4738-bfb8-5778495c6a1e",
+      "category": "science",
+      "navigationKeyword1": "chemistry",
+      "navigationKeyword2": "atoms",
+      "question": "What defines an element\u2019s identity?",
+      "correctAnswer": "Its number of protons (atomic number)",
+      "incorrectAnswers": [
+        "Number of neutrons only",
+        "Number of electrons only",
+        "Mass number only"
+      ],
+      "explanation": "Changing protons changes the element.",
+      "keywords": [
+        "atomic-number",
+        "elements"
+      ],
+      "source": "https://openstax.org/books/chemistry-2e/pages/2-3-atomic-structure-and-symbolism"
+    },
+    {
+      "seedId": "68e7eb88-04b5-42cd-82e9-c38e22d59eae",
+      "category": "science",
+      "navigationKeyword1": "chemistry",
+      "navigationKeyword2": "atoms",
+      "question": "What is an ion?",
+      "correctAnswer": "Atom or molecule with net electric charge",
+      "incorrectAnswers": [
+        "Always neutral",
+        "Only metals",
+        "Only gases"
+      ],
+      "explanation": "Gain/loss of electrons forms cations/anions.",
+      "keywords": [
+        "ions",
+        "charge"
+      ],
+      "source": "https://openstax.org/books/chemistry-2e/pages/2-6-molecular-and-ionic-compounds"
+    },
+    {
+      "seedId": "7c77b32d-49e4-428a-a90b-63d97ec81791",
+      "category": "science",
+      "navigationKeyword1": "chemistry",
+      "navigationKeyword2": "atoms",
+      "question": "What is an isotope?",
+      "correctAnswer": "Atoms of the same element with different neutron counts",
+      "incorrectAnswers": [
+        "Different proton counts",
+        "Different electron counts only",
+        "Ions only"
+      ],
+      "explanation": "Isotopes have same Z but different mass numbers.",
+      "keywords": [
+        "isotopes",
+        "neutrons"
+      ],
+      "source": "https://openstax.org/books/chemistry-2e/pages/2-3-atomic-structure-and-symbolism"
+    },
+    {
+      "seedId": "b774788e-3d16-47fc-b785-fc891127c26d",
+      "category": "science",
+      "navigationKeyword1": "chemistry",
+      "navigationKeyword2": "atoms",
+      "question": "What is atomic mass unit scale based on?",
+      "correctAnswer": "Carbon-12 reference (by definition)",
+      "incorrectAnswers": [
+        "Hydrogen-1 only",
+        "Oxygen-16 only arbitrary",
+        "Iron-56 only"
+      ],
+      "explanation": "Relative atomic masses compare to a standard.",
+      "keywords": [
+        "atomic-mass",
+        "scale"
+      ],
+      "source": "https://openstax.org/books/chemistry-2e/pages/2-3-atomic-structure-and-symbolism"
+    },
+    {
+      "seedId": "b749d1c1-82af-4d06-8df2-873ce47ca6f1",
+      "category": "science",
+      "navigationKeyword1": "chemistry",
+      "navigationKeyword2": "atoms",
+      "question": "What is electron configuration?",
+      "correctAnswer": "Distribution of electrons among orbitals",
+      "incorrectAnswers": [
+        "Arrangement of neutrons",
+        "Crystal lattice packing",
+        "Boiling point trend"
+      ],
+      "explanation": "Aufbau rules build configurations.",
+      "keywords": [
+        "electron-configuration",
+        "orbitals"
+      ],
+      "source": "https://openstax.org/books/chemistry-2e/pages/6-4-electronic-structure-of-atoms-electron-configurations"
+    },
+    {
+      "seedId": "9ed8539f-9e68-47f8-ae5c-9a845f3663f6",
+      "category": "science",
+      "navigationKeyword1": "chemistry",
+      "navigationKeyword2": "atoms",
+      "question": "What is electronegativity trend?",
+      "correctAnswer": "Increases toward fluorine (top-right, excluding noble gases)",
+      "incorrectAnswers": [
+        "Increases toward francium",
+        "Constant for all elements",
+        "Decreases up a group"
+      ],
+      "explanation": "Electronegativity reflects attraction for bonding electrons.",
+      "keywords": [
+        "electronegativity",
+        "trends"
+      ],
+      "source": "https://openstax.org/books/chemistry-2e/pages/7-5-properties-of-covalent-bonds"
+    },
+    {
+      "seedId": "3a2396b5-4fd8-4654-8c8f-c35001d28ac0",
+      "category": "science",
+      "navigationKeyword1": "chemistry",
+      "navigationKeyword2": "atoms",
+      "question": "What is mass number A?",
+      "correctAnswer": "Protons plus neutrons in a nucleus",
+      "incorrectAnswers": [
+        "Protons minus electrons",
+        "Only electrons",
+        "Atomic number only"
+      ],
+      "explanation": "A = Z + N for a nuclide.",
+      "keywords": [
+        "mass-number",
+        "nucleus"
+      ],
+      "source": "https://openstax.org/books/chemistry-2e/pages/2-3-atomic-structure-and-symbolism"
+    },
+    {
+      "seedId": "52441327-f020-45e5-add8-7d6bc4baa41f",
+      "category": "science",
+      "navigationKeyword1": "chemistry",
+      "navigationKeyword2": "atoms",
+      "question": "What is periodic trend for atomic radius across a period?",
+      "correctAnswer": "Generally decreases left to right",
+      "incorrectAnswers": [
+        "Increases left to right",
+        "Stays constant",
+        "Oscillates randomly"
+      ],
+      "explanation": "Effective nuclear charge pulls electrons tighter.",
+      "keywords": [
+        "atomic-radius",
+        "trends"
+      ],
+      "source": "https://openstax.org/books/chemistry-2e/pages/6-5-periodic-variations-in-element-properties"
+    },
+    {
+      "seedId": "554f9512-530d-4a98-abf8-06c4dbb1397f",
+      "category": "science",
+      "navigationKeyword1": "chemistry",
+      "navigationKeyword2": "atoms",
+      "question": "What is photoelectric effect significance?",
+      "correctAnswer": "Light quantization evidence (photon energy)",
+      "incorrectAnswers": [
+        "Disproved atoms",
+        "Showed nuclei are negative",
+        "Explained absolute zero"
+      ],
+      "explanation": "Einstein\u2019s explanation supports E = hf.",
+      "keywords": [
+        "photoelectric",
+        "quantum"
+      ],
+      "source": "https://en.wikipedia.org/wiki/Photoelectric_effect"
+    },
+    {
+      "seedId": "4ffbd129-a1ae-4a21-94be-03d880783204",
+      "category": "science",
+      "navigationKeyword1": "chemistry",
+      "navigationKeyword2": "atoms",
+      "question": "What is quantum number principal n?",
+      "correctAnswer": "Roughly shell/energy level",
+      "incorrectAnswers": [
+        "Spin only",
+        "Shape only",
+        "Magnetic orientation only"
+      ],
+      "explanation": "Higher n means higher average energy/distance.",
+      "keywords": [
+        "quantum-numbers",
+        "shells"
+      ],
+      "source": "https://openstax.org/books/chemistry-2e/pages/6-3-development-of-quantum-theory"
+    },
+    {
+      "seedId": "658a4566-2a71-4465-b3fd-5f582cdd0d2d",
+      "category": "science",
+      "navigationKeyword1": "chemistry",
+      "navigationKeyword2": "atoms",
+      "question": "What is valence electron?",
+      "correctAnswer": "Outermost electrons involved in bonding",
+      "incorrectAnswers": [
+        "Core electrons in inner shells",
+        "Neutrons in nucleus",
+        "Protons only"
+      ],
+      "explanation": "Valence electrons drive chemistry.",
+      "keywords": [
+        "valence",
+        "bonding"
+      ],
+      "source": "https://openstax.org/books/chemistry-2e/pages/7-3-lewis-symbols-and-structures"
+    },
+    {
+      "seedId": "aa847633-618a-4ace-83d2-3aa34048e739",
+      "category": "science",
+      "navigationKeyword1": "chemistry",
+      "navigationKeyword2": "bonding",
+      "question": "What is VSEPR theory about?",
+      "correctAnswer": "Predicting molecular shape from electron pair repulsion",
+      "incorrectAnswers": [
+        "Predicting reaction rates",
+        "Computing enthalpy",
+        "Measuring pH"
+      ],
+      "explanation": "Minimize repulsion between electron domains.",
+      "keywords": [
+        "vsepr",
+        "geometry"
+      ],
+      "source": "https://openstax.org/books/chemistry-2e/pages/7-6-molecular-structure-and-polarity"
+    },
+    {
+      "seedId": "61bfab2a-d043-45b5-8a7e-24f91c67b29d",
+      "category": "science",
+      "navigationKeyword1": "chemistry",
+      "navigationKeyword2": "bonding",
+      "question": "What is a Lewis structure?",
+      "correctAnswer": "Diagram showing valence electrons and bonds",
+      "incorrectAnswers": [
+        "Energy level diagram only",
+        "Crystal lattice only",
+        "Orbital box only"
+      ],
+      "explanation": "Dots and lines represent electrons and bonds.",
+      "keywords": [
+        "lewis-structure",
+        "valence"
+      ],
+      "source": "https://openstax.org/books/chemistry-2e/pages/7-3-lewis-symbols-and-structures"
+    },
+    {
+      "seedId": "aff07974-d356-4ffc-b1b6-a8015dd76f6e",
+      "category": "science",
+      "navigationKeyword1": "chemistry",
+      "navigationKeyword2": "bonding",
+      "question": "What is a covalent bond?",
+      "correctAnswer": "Sharing electron pairs between atoms",
+      "incorrectAnswers": [
+        "Transfer of all electrons",
+        "Only in salts",
+        "Only noble gases"
+      ],
+      "explanation": "Common between nonmetals.",
+      "keywords": [
+        "covalent",
+        "bonding"
+      ],
+      "source": "https://openstax.org/books/chemistry-2e/pages/7-2-covalent-bonding"
+    },
+    {
+      "seedId": "f3d48fbb-b2cc-4b56-8f2c-a73d6e8b6148",
+      "category": "science",
+      "navigationKeyword1": "chemistry",
+      "navigationKeyword2": "bonding",
+      "question": "What is a pi bond?",
+      "correctAnswer": "Side-by-side p orbital overlap above/below bond axis",
+      "incorrectAnswers": [
+        "Only in ionic compounds",
+        "Only \u03c3",
+        "No overlap"
+      ],
+      "explanation": "Double bonds include one \u03c3 and one \u03c0 (typical).",
+      "keywords": [
+        "pi-bond",
+        "orbitals"
+      ],
+      "source": "https://openstax.org/books/chemistry-2e/pages/8-3-multiple-bonds"
+    },
+    {
+      "seedId": "09f2de45-dab9-48e5-a3fc-37ec575e58ca",
+      "category": "science",
+      "navigationKeyword1": "chemistry",
+      "navigationKeyword2": "bonding",
+      "question": "What is a sigma bond?",
+      "correctAnswer": "End-to-end orbital overlap along the bond axis",
+      "incorrectAnswers": [
+        "Side-by-side \u03c0 overlap",
+        "Ionic lattice bond",
+        "Hydrogen bond"
+      ],
+      "explanation": "Single bonds are often \u03c3.",
+      "keywords": [
+        "sigma-bond",
+        "orbitals"
+      ],
+      "source": "https://openstax.org/books/chemistry-2e/pages/8-3-multiple-bonds"
+    },
+    {
+      "seedId": "c190397c-20db-4a40-bdae-099ae83f50df",
+      "category": "science",
+      "navigationKeyword1": "chemistry",
+      "navigationKeyword2": "bonding",
+      "question": "What is an ionic bond?",
+      "correctAnswer": "Electrostatic attraction between cations and anions",
+      "incorrectAnswers": [
+        "Sharing electrons equally",
+        "Metal metallic bond only",
+        "Hydrogen bond only"
+      ],
+      "explanation": "Forms between metals and nonmetals often.",
+      "keywords": [
+        "ionic",
+        "bonding"
+      ],
+      "source": "https://openstax.org/books/chemistry-2e/pages/7-2-covalent-bonding"
+    },
+    {
+      "seedId": "7dfbc7de-036a-44aa-ab50-a1a64f1ade96",
+      "category": "science",
+      "navigationKeyword1": "chemistry",
+      "navigationKeyword2": "bonding",
+      "question": "What is electronegativity difference used for?",
+      "correctAnswer": "Judging bond polarity (ionic vs polar covalent)",
+      "incorrectAnswers": [
+        "Finding atomic mass",
+        "Predicting color",
+        "Measuring pressure"
+      ],
+      "explanation": "Large \u0394EN suggests more ionic character.",
+      "keywords": [
+        "polarity",
+        "electronegativity"
+      ],
+      "source": "https://openstax.org/books/chemistry-2e/pages/7-5-properties-of-covalent-bonds"
+    },
+    {
+      "seedId": "a38ce169-4ed5-4e68-80fb-1215a3739cc6",
+      "category": "science",
+      "navigationKeyword1": "chemistry",
+      "navigationKeyword2": "bonding",
+      "question": "What is formal charge used for?",
+      "correctAnswer": "Choosing best Lewis resonance structures",
+      "incorrectAnswers": [
+        "Measuring mass",
+        "Finding pH",
+        "Computing entropy"
+      ],
+      "explanation": "Minimizes charge separation when plausible.",
+      "keywords": [
+        "formal-charge",
+        "lewis"
+      ],
+      "source": "https://openstax.org/books/chemistry-2e/pages/7-3-lewis-symbols-and-structures"
+    },
+    {
+      "seedId": "9fc60136-2ccb-4a60-ba23-66d62d90daa7",
+      "category": "science",
+      "navigationKeyword1": "chemistry",
+      "navigationKeyword2": "bonding",
+      "question": "What is hybridization (concept)?",
+      "correctAnswer": "Mixing atomic orbitals to explain observed bonding geometry",
+      "incorrectAnswers": [
+        "Removing electrons",
+        "Nuclear fusion",
+        "Only metallic bonding"
+      ],
+      "explanation": "sp, sp2, sp3 models match geometries.",
+      "keywords": [
+        "hybridization",
+        "orbitals"
+      ],
+      "source": "https://openstax.org/books/chemistry-2e/pages/8-2-hybrid-atomic-orbitals"
+    },
+    {
+      "seedId": "c4b731ac-410e-4e39-8eab-990e6fc09289",
+      "category": "science",
+      "navigationKeyword1": "chemistry",
+      "navigationKeyword2": "bonding",
+      "question": "What is hydrogen bond?",
+      "correctAnswer": "Strong dipole interaction involving H bonded to N, O, or F",
+      "incorrectAnswers": [
+        "True covalent bond like H2",
+        "Ionic attraction only",
+        "Covalent network bond"
+      ],
+      "explanation": "Important in water and biomolecules.",
+      "keywords": [
+        "hydrogen-bond",
+        "intermolecular"
+      ],
+      "source": "https://openstax.org/books/chemistry-2e/pages/10-2-properties-of-liquids"
+    },
+    {
+      "seedId": "b1fabaed-3cf2-4de4-9f22-3430da0bda2a",
+      "category": "science",
+      "navigationKeyword1": "chemistry",
+      "navigationKeyword2": "bonding",
+      "question": "What is metallic bonding?",
+      "correctAnswer": "Delocalized electrons among metal cations",
+      "incorrectAnswers": [
+        "Only shared pairs",
+        "Only ion pairs",
+        "Only hydrogen bonds"
+      ],
+      "explanation": "Explains conductivity and malleability.",
+      "keywords": [
+        "metallic-bonding",
+        "metals"
+      ],
+      "source": "https://openstax.org/books/chemistry-2e/pages/10-5-the-solid-state-of-matter"
+    },
+    {
+      "seedId": "d1a28097-f3e6-4add-aaf6-04779668e536",
+      "category": "science",
+      "navigationKeyword1": "chemistry",
+      "navigationKeyword2": "bonding",
+      "question": "What is resonance?",
+      "correctAnswer": "Multiple valid Lewis structures averaging electron distribution",
+      "incorrectAnswers": [
+        "Atoms vibrate only",
+        "Nuclear decay",
+        "Only ionic bonds"
+      ],
+      "explanation": "True bonding is a hybrid of resonance forms.",
+      "keywords": [
+        "resonance",
+        "lewis"
+      ],
+      "source": "https://openstax.org/books/chemistry-2e/pages/7-3-lewis-symbols-and-structures"
+    },
+    {
+      "seedId": "216fcc52-6555-47fb-9fa7-cffea1f4c87c",
+      "category": "science",
+      "navigationKeyword1": "chemistry",
+      "navigationKeyword2": "organic",
+      "question": "What distinguishes aldehyde vs ketone?",
+      "correctAnswer": "Carbonyl at chain end vs internal carbon",
+      "incorrectAnswers": [
+        "Different elements entirely",
+        "Only ring size",
+        "Only color"
+      ],
+      "explanation": "Aldehyde: RCHO; ketone: RCOR\u2019.",
+      "keywords": [
+        "aldehyde",
+        "ketone"
+      ],
+      "source": "https://openstax.org/books/chemistry-2e/pages/20-3-aldehydes-ketones-carboxylic-acids-and-esters"
+    },
+    {
+      "seedId": "7e16bc1d-e1db-49c4-9305-c997710a138a",
+      "category": "science",
+      "navigationKeyword1": "chemistry",
+      "navigationKeyword2": "organic",
+      "question": "What element is the backbone of most organic molecules?",
+      "correctAnswer": "Carbon",
+      "incorrectAnswers": [
+        "Silicon always",
+        "Iron",
+        "Neon"
+      ],
+      "explanation": "Carbon forms stable covalent frameworks.",
+      "keywords": [
+        "organic",
+        "carbon"
+      ],
+      "source": "https://openstax.org/books/chemistry-2e/pages/20-1-hydrocarbons"
+    },
+    {
+      "seedId": "953e4905-20f9-40f1-ba33-f5d326b95286",
+      "category": "science",
+      "navigationKeyword1": "chemistry",
+      "navigationKeyword2": "organic",
+      "question": "What is a carbonyl?",
+      "correctAnswer": "C=O group",
+      "incorrectAnswers": [
+        "C\u2013O\u2013C",
+        "C\u2013C triple",
+        "S\u2013H"
+      ],
+      "explanation": "Found in aldehydes and ketones.",
+      "keywords": [
+        "carbonyl",
+        "aldehyde"
+      ],
+      "source": "https://openstax.org/books/chemistry-2e/pages/20-3-aldehydes-ketones-carboxylic-acids-and-esters"
+    },
+    {
+      "seedId": "ac4740f4-c167-4ed4-a0c7-bf04e265ae1f",
+      "category": "science",
+      "navigationKeyword1": "chemistry",
+      "navigationKeyword2": "organic",
+      "question": "What is a functional group?",
+      "correctAnswer": "Atom grouping that determines characteristic reactions",
+      "incorrectAnswers": [
+        "Only single bonds",
+        "Only ions",
+        "Only metals"
+      ],
+      "explanation": "Examples: OH, COOH, NH2.",
+      "keywords": [
+        "functional-groups",
+        "reactivity"
+      ],
+      "source": "https://openstax.org/books/chemistry-2e/pages/20-2-alcohols-and-ethers"
+    },
+    {
+      "seedId": "eb1e04a5-277c-4258-83ce-57017a8fae52",
+      "category": "science",
+      "navigationKeyword1": "chemistry",
+      "navigationKeyword2": "organic",
+      "question": "What is a hydrocarbon?",
+      "correctAnswer": "Only carbon and hydrogen",
+      "incorrectAnswers": [
+        "Contains metals",
+        "Must contain oxygen",
+        "Must contain nitrogen"
+      ],
+      "explanation": "Alkanes, alkenes, alkynes are hydrocarbons.",
+      "keywords": [
+        "hydrocarbons",
+        "alkanes"
+      ],
+      "source": "https://openstax.org/books/chemistry-2e/pages/20-1-hydrocarbons"
+    },
+    {
+      "seedId": "18956332-e7aa-4293-a1a0-a771218f0684",
+      "category": "science",
+      "navigationKeyword1": "chemistry",
+      "navigationKeyword2": "organic",
+      "question": "What is amide linkage?",
+      "correctAnswer": "R\u2013CONH\u2013R\u2019",
+      "incorrectAnswers": [
+        "R\u2013COO\u2013R\u2019",
+        "R\u2013C\u2261C\u2013R\u2019",
+        "R\u2013SH"
+      ],
+      "explanation": "Common in proteins (peptide bonds).",
+      "keywords": [
+        "amide",
+        "peptide"
+      ],
+      "source": "https://openstax.org/books/chemistry-2e/pages/20-4-amines-and-amides"
+    },
+    {
+      "seedId": "037ef35d-3358-4499-bd9d-913dbb6c256e",
+      "category": "science",
+      "navigationKeyword1": "chemistry",
+      "navigationKeyword2": "organic",
+      "question": "What is an alcohol functional group?",
+      "correctAnswer": "\u2013OH on carbon",
+      "incorrectAnswers": [
+        "C=O",
+        "C\u2261N",
+        "\u2013NH3+"
+      ],
+      "explanation": "R\u2013OH is an alcohol.",
+      "keywords": [
+        "alcohol",
+        "hydroxyl"
+      ],
+      "source": "https://openstax.org/books/chemistry-2e/pages/20-2-alcohols-and-ethers"
+    },
+    {
+      "seedId": "0b831831-2ea3-4c37-bfe6-b3179fdf3e3f",
+      "category": "science",
+      "navigationKeyword1": "chemistry",
+      "navigationKeyword2": "organic",
+      "question": "What is an ester linkage?",
+      "correctAnswer": "R\u2013COO\u2013R\u2019",
+      "incorrectAnswers": [
+        "R\u2013CONH\u2013R\u2019",
+        "R\u2013S\u2013S\u2013R\u2019",
+        "R\u2013O\u2013R\u2019 only"
+      ],
+      "explanation": "Formed from carboxylic acid and alcohol.",
+      "keywords": [
+        "ester",
+        "condensation"
+      ],
+      "source": "https://openstax.org/books/chemistry-2e/pages/20-3-aldehydes-ketones-carboxylic-acids-and-esters"
+    },
+    {
+      "seedId": "dbe43f3d-c36e-4dce-bd2f-d216d22eb40c",
+      "category": "science",
+      "navigationKeyword1": "chemistry",
+      "navigationKeyword2": "organic",
+      "question": "What is benzene (concept)?",
+      "correctAnswer": "Aromatic ring with delocalized \u03c0 electrons",
+      "incorrectAnswers": [
+        "Saturated alkane chain",
+        "Linear alkyne",
+        "Ionic crystal"
+      ],
+      "explanation": "Exceptional stability due to resonance.",
+      "keywords": [
+        "aromatic",
+        "benzene"
+      ],
+      "source": "https://openstax.org/books/chemistry-2e/pages/20-1-hydrocarbons"
+    },
+    {
+      "seedId": "507d3dbb-880c-4fac-933d-862b3d30c98d",
+      "category": "science",
+      "navigationKeyword1": "chemistry",
+      "navigationKeyword2": "organic",
+      "question": "What is carboxylic acid group?",
+      "correctAnswer": "\u2013COOH",
+      "incorrectAnswers": [
+        "\u2013NH2",
+        "\u2013SH",
+        "\u2013PO4"
+      ],
+      "explanation": "Acidic proton on hydroxyl of carbonyl.",
+      "keywords": [
+        "carboxylic-acid",
+        "acidity"
+      ],
+      "source": "https://openstax.org/books/chemistry-2e/pages/20-3-aldehydes-ketones-carboxylic-acids-and-esters"
+    },
+    {
+      "seedId": "8495c0b6-6158-494a-9cff-a8d38b96579e",
+      "category": "science",
+      "navigationKeyword1": "chemistry",
+      "navigationKeyword2": "organic",
+      "question": "What is chirality?",
+      "correctAnswer": "Mirror images not superimposable (stereochemistry)",
+      "incorrectAnswers": [
+        "Always planar",
+        "Only metals",
+        "Only gases"
+      ],
+      "explanation": "Chiral centers have four different groups.",
+      "keywords": [
+        "chirality",
+        "stereochemistry"
+      ],
+      "source": "https://openstax.org/books/chemistry-2e/pages/20-5-chiral-molecules"
+    },
+    {
+      "seedId": "578ac1fb-2030-4f6a-a3df-24d2ee55fae4",
+      "category": "science",
+      "navigationKeyword1": "chemistry",
+      "navigationKeyword2": "organic",
+      "question": "What is polymerization?",
+      "correctAnswer": "Linking monomers into macromolecules",
+      "incorrectAnswers": [
+        "Breaking polymers",
+        "Only ions",
+        "Only distillation"
+      ],
+      "explanation": "Addition and condensation polymerization exist.",
+      "keywords": [
+        "polymers",
+        "macromolecules"
+      ],
+      "source": "https://openstax.org/books/chemistry-2e/pages/20-6-polymers"
+    },
+    {
+      "seedId": "35cde31c-de38-42c0-8a56-57ba50aab469",
+      "category": "science",
+      "navigationKeyword1": "chemistry",
+      "navigationKeyword2": "periodic-table",
+      "question": "How are elements generally arranged in the modern periodic table?",
+      "correctAnswer": "By increasing atomic number",
+      "incorrectAnswers": [
+        "By increasing neutron count",
+        "Alphabetically always",
+        "By density"
+      ],
+      "explanation": "Mendeleev\u2019s periodicity led to atomic number ordering.",
+      "keywords": [
+        "periodic-table",
+        "organization"
+      ],
+      "source": "https://openstax.org/books/chemistry-2e/pages/2-5-the-periodic-table"
+    },
+    {
+      "seedId": "b68d78d9-28f6-4298-9830-aabac2b83e5c",
+      "category": "science",
+      "navigationKeyword1": "chemistry",
+      "navigationKeyword2": "periodic-table",
+      "question": "What are alkali metals?",
+      "correctAnswer": "Group 1 (except H) reactive metals",
+      "incorrectAnswers": [
+        "Group 2",
+        "Group 18",
+        "Transition metals only"
+      ],
+      "explanation": "They readily lose one electron.",
+      "keywords": [
+        "alkali-metals",
+        "group-1"
+      ],
+      "source": "https://openstax.org/books/chemistry-2e/pages/2-5-the-periodic-table"
+    },
+    {
+      "seedId": "9ab4e99e-57a8-4d56-a1ca-782897b2f4c6",
+      "category": "science",
+      "navigationKeyword1": "chemistry",
+      "navigationKeyword2": "periodic-table",
+      "question": "What are groups (columns)?",
+      "correctAnswer": "Vertical columns; often similar valence electron counts",
+      "incorrectAnswers": [
+        "Random assortments",
+        "Only lanthanides",
+        "Only transition metals"
+      ],
+      "explanation": "Group number relates to valence patterns for main groups.",
+      "keywords": [
+        "groups",
+        "columns"
+      ],
+      "source": "https://openstax.org/books/chemistry-2e/pages/2-5-the-periodic-table"
+    },
+    {
+      "seedId": "ab86c10f-f233-4177-8481-c501af9fe4a8",
+      "category": "science",
+      "navigationKeyword1": "chemistry",
+      "navigationKeyword2": "periodic-table",
+      "question": "What are halogens?",
+      "correctAnswer": "Group 17 highly reactive nonmetals",
+      "incorrectAnswers": [
+        "Alkali metals",
+        "Alkaline earth metals",
+        "Noble gases"
+      ],
+      "explanation": "Halogens tend to gain one electron.",
+      "keywords": [
+        "halogens",
+        "group-17"
+      ],
+      "source": "https://openstax.org/books/chemistry-2e/pages/2-5-the-periodic-table"
+    },
+    {
+      "seedId": "70077125-d159-4f54-9286-7808fd1cd6df",
+      "category": "science",
+      "navigationKeyword1": "chemistry",
+      "navigationKeyword2": "periodic-table",
+      "question": "What are metalloids?",
+      "correctAnswer": "Elements with intermediate properties (e.g., Si)",
+      "incorrectAnswers": [
+        "Strong metals",
+        "Noble gases",
+        "Only halogens"
+      ],
+      "explanation": "Metalloids are semiconductors in tech.",
+      "keywords": [
+        "metalloids",
+        "semiconductors"
+      ],
+      "source": "https://openstax.org/books/chemistry-2e/pages/2-5-the-periodic-table"
+    },
+    {
+      "seedId": "f72c5c42-5180-49d8-8e81-32c0798960a1",
+      "category": "science",
+      "navigationKeyword1": "chemistry",
+      "navigationKeyword2": "periodic-table",
+      "question": "What are periods (rows)?",
+      "correctAnswer": "Horizontal rows; principal quantum number increases",
+      "incorrectAnswers": [
+        "Columns of similar charge",
+        "Only metals",
+        "Only gases"
+      ],
+      "explanation": "Period number relates to valence shell trends.",
+      "keywords": [
+        "periods",
+        "rows"
+      ],
+      "source": "https://openstax.org/books/chemistry-2e/pages/2-5-the-periodic-table"
+    },
+    {
+      "seedId": "0f5743c0-7211-41a8-b224-358bdf49f23b",
+      "category": "science",
+      "navigationKeyword1": "chemistry",
+      "navigationKeyword2": "periodic-table",
+      "question": "What characterizes noble gases?",
+      "correctAnswer": "Low reactivity due to filled valence shells",
+      "incorrectAnswers": [
+        "Highest reactivity",
+        "Always form +2 ions",
+        "Always metals"
+      ],
+      "explanation": "He, Ne, Ar\u2026 are largely inert under normal conditions.",
+      "keywords": [
+        "noble-gases",
+        "inert"
+      ],
+      "source": "https://openstax.org/books/chemistry-2e/pages/2-5-the-periodic-table"
+    },
+    {
+      "seedId": "6a97f107-9a92-4126-8f3a-9d03f1816ea9",
+      "category": "science",
+      "navigationKeyword1": "chemistry",
+      "navigationKeyword2": "periodic-table",
+      "question": "What is effective nuclear charge trend?",
+      "correctAnswer": "Increases across a period",
+      "incorrectAnswers": [
+        "Decreases across a period",
+        "Constant",
+        "Only changes in ions"
+      ],
+      "explanation": "More protons attract valence electrons more strongly.",
+      "keywords": [
+        "z-effective",
+        "trends"
+      ],
+      "source": "https://openstax.org/books/chemistry-2e/pages/6-5-periodic-variations-in-element-properties"
+    },
+    {
+      "seedId": "049a8815-20f7-43e4-a587-63014a26cbc6",
+      "category": "science",
+      "navigationKeyword1": "chemistry",
+      "navigationKeyword2": "periodic-table",
+      "question": "What is electron affinity (concept)?",
+      "correctAnswer": "Energy change when an electron is added to a neutral atom",
+      "incorrectAnswers": [
+        "Removing an electron",
+        "Melting a solid",
+        "Vaporizing a liquid"
+      ],
+      "explanation": "Trends help predict anion stability.",
+      "keywords": [
+        "electron-affinity",
+        "trends"
+      ],
+      "source": "https://openstax.org/books/chemistry-2e/pages/6-5-periodic-variations-in-element-properties"
+    },
+    {
+      "seedId": "643c82cd-e284-4424-affc-0f9181c3ffb2",
+      "category": "science",
+      "navigationKeyword1": "chemistry",
+      "navigationKeyword2": "periodic-table",
+      "question": "What is ionization energy?",
+      "correctAnswer": "Energy to remove an electron",
+      "incorrectAnswers": [
+        "Energy to add an electron",
+        "Bond energy always",
+        "Lattice energy always"
+      ],
+      "explanation": "Generally increases across a period.",
+      "keywords": [
+        "ionization-energy",
+        "trends"
+      ],
+      "source": "https://openstax.org/books/chemistry-2e/pages/6-5-periodic-variations-in-element-properties"
+    },
+    {
+      "seedId": "218bf543-c2ac-4c00-acf5-3002eaaf2abc",
+      "category": "science",
+      "navigationKeyword1": "chemistry",
+      "navigationKeyword2": "periodic-table",
+      "question": "Where are metals generally located?",
+      "correctAnswer": "Left and center",
+      "incorrectAnswers": [
+        "Top right corner",
+        "Far right noble gases excepted",
+        "Only bottom row"
+      ],
+      "explanation": "Metallic character decreases across a period.",
+      "keywords": [
+        "metals",
+        "classification"
+      ],
+      "source": "https://openstax.org/books/chemistry-2e/pages/2-5-the-periodic-table"
+    },
+    {
+      "seedId": "de0dd974-4337-4144-a3aa-d60e6d43ac4b",
+      "category": "science",
+      "navigationKeyword1": "chemistry",
+      "navigationKeyword2": "periodic-table",
+      "question": "Where are nonmetals generally located?",
+      "correctAnswer": "Upper right",
+      "incorrectAnswers": [
+        "Lower left",
+        "Center transition block only",
+        "Only f-block"
+      ],
+      "explanation": "Nonmetals tend to gain electrons.",
+      "keywords": [
+        "nonmetals",
+        "classification"
+      ],
+      "source": "https://openstax.org/books/chemistry-2e/pages/2-5-the-periodic-table"
+    },
+    {
+      "seedId": "50a1e343-5662-410e-8e33-bfb9aac3a9f7",
+      "category": "science",
+      "navigationKeyword1": "chemistry",
+      "navigationKeyword2": "reactions",
+      "question": "What does a chemical equation balance?",
+      "correctAnswer": "Atoms of each element on both sides",
+      "incorrectAnswers": [
+        "Only charge",
+        "Only energy",
+        "Only volume"
+      ],
+      "explanation": "Mass is conserved in chemical reactions.",
+      "keywords": [
+        "stoichiometry",
+        "balancing"
+      ],
+      "source": "https://openstax.org/books/chemistry-2e/pages/4-1-writing-and-balancing-chemical-equations"
+    },
+    {
+      "seedId": "f4f9c5e6-113f-4886-bab1-e8bab1ef4b76",
+      "category": "science",
+      "navigationKeyword1": "chemistry",
+      "navigationKeyword2": "reactions",
+      "question": "What is Le Ch\u00e2telier\u2019s principle?",
+      "correctAnswer": "System shifts to counter applied stress",
+      "incorrectAnswers": [
+        "System ignores stress",
+        "Always makes more reactants",
+        "Always increases temperature"
+      ],
+      "explanation": "Change concentration, pressure, or temperature disturbs equilibrium.",
+      "keywords": [
+        "le-chatelier",
+        "equilibrium"
+      ],
+      "source": "https://openstax.org/books/chemistry-2e/pages/13-3-shifting-equilibria-le-chateliers-principle"
+    },
+    {
+      "seedId": "d911bf87-24d2-454b-86a5-c7bcb3147c00",
+      "category": "science",
+      "navigationKeyword1": "chemistry",
+      "navigationKeyword2": "reactions",
+      "question": "What is a catalyst?",
+      "correctAnswer": "Speeds a reaction without being consumed overall",
+      "incorrectAnswers": [
+        "Consumed completely",
+        "Shifts equilibrium to products always",
+        "Stops reactions"
+      ],
+      "explanation": "Provides alternative pathway with lower activation energy.",
+      "keywords": [
+        "catalyst",
+        "kinetics"
+      ],
+      "source": "https://openstax.org/books/chemistry-2e/pages/12-7-catalysis"
+    },
+    {
+      "seedId": "6c8e6458-dc43-4570-963d-cffc7693909a",
+      "category": "science",
+      "navigationKeyword1": "chemistry",
+      "navigationKeyword2": "reactions",
+      "question": "What is a decomposition pattern?",
+      "correctAnswer": "AB \u2192 A + B",
+      "incorrectAnswers": [
+        "A + B \u2192 AB",
+        "Single replacement",
+        "Combustion only"
+      ],
+      "explanation": "Breaking a compound apart.",
+      "keywords": [
+        "decomposition",
+        "reactions"
+      ],
+      "source": "https://openstax.org/books/chemistry-2e/pages/4-2-classifying-chemical-reactions"
+    },
+    {
+      "seedId": "d1c0c70a-9d88-4673-9670-b96f039ebc18",
+      "category": "science",
+      "navigationKeyword1": "chemistry",
+      "navigationKeyword2": "reactions",
+      "question": "What is a synthesis reaction pattern?",
+      "correctAnswer": "A + B \u2192 AB",
+      "incorrectAnswers": [
+        "AB \u2192 A + B",
+        "A + BC \u2192 AC + B",
+        "A + B \u2192 C + D"
+      ],
+      "explanation": "Building a compound from simpler substances.",
+      "keywords": [
+        "synthesis",
+        "reactions"
+      ],
+      "source": "https://openstax.org/books/chemistry-2e/pages/4-2-classifying-chemical-reactions"
+    },
+    {
+      "seedId": "372ee50e-76ed-4a5e-acfd-9d88e01f8de0",
+      "category": "science",
+      "navigationKeyword1": "chemistry",
+      "navigationKeyword2": "reactions",
+      "question": "What is activation energy?",
+      "correctAnswer": "Energy barrier to start a reaction",
+      "incorrectAnswers": [
+        "Energy released only",
+        "Final enthalpy only",
+        "Entropy only"
+      ],
+      "explanation": "Reactants must collide with enough energy.",
+      "keywords": [
+        "activation-energy",
+        "kinetics"
+      ],
+      "source": "https://openstax.org/books/chemistry-2e/pages/12-5-reaction-rates-and-rate-laws"
+    },
+    {
+      "seedId": "294b061b-5819-4c0d-98a4-7432b1febfab",
+      "category": "science",
+      "navigationKeyword1": "chemistry",
+      "navigationKeyword2": "reactions",
+      "question": "What is combustion of hydrocarbon typical products?",
+      "correctAnswer": "CO2 and H2O (complete)",
+      "incorrectAnswers": [
+        "Only CO",
+        "Only H2",
+        "Only C"
+      ],
+      "explanation": "Complete combustion oxidizes carbon and hydrogen fully.",
+      "keywords": [
+        "combustion",
+        "oxidation"
+      ],
+      "source": "https://openstax.org/books/chemistry-2e/pages/4-2-classifying-chemical-reactions"
+    },
+    {
+      "seedId": "b75ff194-1e42-4050-ab55-791b83d58fdd",
+      "category": "science",
+      "navigationKeyword1": "chemistry",
+      "navigationKeyword2": "reactions",
+      "question": "What is double replacement?",
+      "correctAnswer": "AB + CD \u2192 AD + CB",
+      "incorrectAnswers": [
+        "A + BC \u2192 AC + B",
+        "A + B \u2192 AB",
+        "Only combustion"
+      ],
+      "explanation": "Ions exchange partners often in aqueous solutions.",
+      "keywords": [
+        "double-replacement",
+        "reactions"
+      ],
+      "source": "https://openstax.org/books/chemistry-2e/pages/4-2-classifying-chemical-reactions"
+    },
+    {
+      "seedId": "5f73c343-1c8c-4b00-9108-74f33009c632",
+      "category": "science",
+      "navigationKeyword1": "chemistry",
+      "navigationKeyword2": "reactions",
+      "question": "What is equilibrium (dynamic)?",
+      "correctAnswer": "Forward and reverse rates equal; concentrations stable",
+      "incorrectAnswers": [
+        "All reactions stop",
+        "Only products exist",
+        "Only reactants exist"
+      ],
+      "explanation": "Macroscopic constancy with ongoing molecular process.",
+      "keywords": [
+        "equilibrium",
+        "rates"
+      ],
+      "source": "https://openstax.org/books/chemistry-2e/pages/13-1-chemical-equilibria"
+    },
+    {
+      "seedId": "17e4407d-164d-486b-a8f9-f5827bf7b7cb",
+      "category": "science",
+      "navigationKeyword1": "chemistry",
+      "navigationKeyword2": "reactions",
+      "question": "What is oxidation (electron view)?",
+      "correctAnswer": "Loss of electrons",
+      "incorrectAnswers": [
+        "Gain of electrons",
+        "Gain of protons",
+        "No electron change"
+      ],
+      "explanation": "OIL RIG mnemonic: oxidation is loss.",
+      "keywords": [
+        "oxidation",
+        "redox"
+      ],
+      "source": "https://openstax.org/books/chemistry-2e/pages/16-1-redox-reactions"
+    },
+    {
+      "seedId": "4808c821-1a23-420f-8315-cb13fca932ed",
+      "category": "science",
+      "navigationKeyword1": "chemistry",
+      "navigationKeyword2": "reactions",
+      "question": "What is reduction (electron view)?",
+      "correctAnswer": "Gain of electrons",
+      "incorrectAnswers": [
+        "Loss of electrons",
+        "Loss of oxygen always",
+        "Increase oxidation always"
+      ],
+      "explanation": "Reduction is gain (OIL RIG).",
+      "keywords": [
+        "reduction",
+        "redox"
+      ],
+      "source": "https://openstax.org/books/chemistry-2e/pages/16-1-redox-reactions"
+    },
+    {
+      "seedId": "503dc859-3829-470b-99d9-847083056334",
+      "category": "science",
+      "navigationKeyword1": "chemistry",
+      "navigationKeyword2": "reactions",
+      "question": "What is single replacement?",
+      "correctAnswer": "A + BC \u2192 AC + B",
+      "incorrectAnswers": [
+        "AB + CD \u2192 AD + CB",
+        "A + B \u2192 AB",
+        "AB \u2192 A + B"
+      ],
+      "explanation": "One element swaps into a compound.",
+      "keywords": [
+        "single-replacement",
+        "reactions"
+      ],
+      "source": "https://openstax.org/books/chemistry-2e/pages/4-2-classifying-chemical-reactions"
+    },
+    {
+      "seedId": "f0c7941a-1e80-42c5-8305-2004e878c0da",
+      "category": "science",
+      "navigationKeyword1": "chemistry",
+      "navigationKeyword2": "stoichiometry",
+      "question": "How do you convert mass to moles?",
+      "correctAnswer": "Divide by molar mass",
+      "incorrectAnswers": [
+        "Multiply by molar mass",
+        "Add atomic numbers",
+        "Multiply by density only"
+      ],
+      "explanation": "Molar mass has units g/mol.",
+      "keywords": [
+        "molar-mass",
+        "conversion"
+      ],
+      "source": "https://openstax.org/books/chemistry-2e/pages/3-1-formula-mass-and-the-mole-concept"
+    },
+    {
+      "seedId": "07889c9f-15bc-49f3-8f7a-d7f930f76dfb",
+      "category": "science",
+      "navigationKeyword1": "chemistry",
+      "navigationKeyword2": "stoichiometry",
+      "question": "What are coefficients in a balanced equation?",
+      "correctAnswer": "Mole ratios for reactants/products",
+      "incorrectAnswers": [
+        "Atomic numbers",
+        "Oxidation states only",
+        "Temperatures"
+      ],
+      "explanation": "Use ratios to relate amounts.",
+      "keywords": [
+        "mole-ratio",
+        "stoichiometry"
+      ],
+      "source": "https://openstax.org/books/chemistry-2e/pages/4-1-writing-and-balancing-chemical-equations"
+    },
+    {
+      "seedId": "f6179f81-eae1-42d3-80be-1c02302fbf9d",
+      "category": "science",
+      "navigationKeyword1": "chemistry",
+      "navigationKeyword2": "stoichiometry",
+      "question": "What is a mole?",
+      "correctAnswer": "Avogadro\u2019s number (6.022\u00d710^23) of entities",
+      "incorrectAnswers": [
+        "A mass unit only",
+        "A volume always",
+        "A temperature"
+      ],
+      "explanation": "Moles link mass to particle count.",
+      "keywords": [
+        "mole",
+        "avogadro"
+      ],
+      "source": "https://openstax.org/books/chemistry-2e/pages/3-1-formula-mass-and-the-mole-concept"
+    },
+    {
+      "seedId": "b38f88b2-c09a-4880-bff4-0024c0d63b96",
+      "category": "science",
+      "navigationKeyword1": "chemistry",
+      "navigationKeyword2": "stoichiometry",
+      "question": "What is dilution equation M1V1 = M2V2 about?",
+      "correctAnswer": "Same moles spread into new volume",
+      "incorrectAnswers": [
+        "Changes molar mass",
+        "Adds catalyst moles",
+        "Measures temperature"
+      ],
+      "explanation": "Useful for preparing solutions.",
+      "keywords": [
+        "dilution",
+        "solutions"
+      ],
+      "source": "https://openstax.org/books/chemistry-2e/pages/3-4-other-units-for-solution-concentrations"
+    },
+    {
+      "seedId": "bdaeb9ae-aba7-4f30-a42e-719cc18ca8f1",
+      "category": "science",
+      "navigationKeyword1": "chemistry",
+      "navigationKeyword2": "stoichiometry",
+      "question": "What is empirical formula?",
+      "correctAnswer": "Simplest whole-number atom ratio",
+      "incorrectAnswers": [
+        "Molecular formula always",
+        "Structural formula",
+        "3D shape only"
+      ],
+      "explanation": "May differ from molecular formula.",
+      "keywords": [
+        "empirical-formula",
+        "composition"
+      ],
+      "source": "https://openstax.org/books/chemistry-2e/pages/3-2-empirical-and-molecular-formulas"
+    },
+    {
+      "seedId": "94a2ebf6-4349-4906-966a-61df0b049f70",
+      "category": "science",
+      "navigationKeyword1": "chemistry",
+      "navigationKeyword2": "stoichiometry",
+      "question": "What is gas stoichiometry at STP link?",
+      "correctAnswer": "1 mol ideal gas \u2248 22.4 L at STP (historical standard)",
+      "incorrectAnswers": [
+        "Always 1 L",
+        "Depends on color",
+        "Never uses moles"
+      ],
+      "explanation": "Converts between gas volume and moles in ideal cases.",
+      "keywords": [
+        "gas-laws",
+        "stoichiometry"
+      ],
+      "source": "https://openstax.org/books/chemistry-2e/pages/9-2-relating-pressure-volume-amount-and-temperature-the-ideal-gas-law"
+    },
+    {
+      "seedId": "9c545de9-13f3-451a-b9a3-b8ffe48c9036",
+      "category": "science",
+      "navigationKeyword1": "chemistry",
+      "navigationKeyword2": "stoichiometry",
+      "question": "What is limiting reactant?",
+      "correctAnswer": "Substance that runs out first and limits product",
+      "incorrectAnswers": [
+        "Substance in excess",
+        "Catalyst",
+        "Solvent only"
+      ],
+      "explanation": "Theoretical yield is based on limiting reactant.",
+      "keywords": [
+        "limiting-reactant",
+        "yield"
+      ],
+      "source": "https://openstax.org/books/chemistry-2e/pages/4-4-reaction-yields"
+    },
+    {
+      "seedId": "79e6bee7-8d45-4d59-b03d-9586d9a0e85e",
+      "category": "science",
+      "navigationKeyword1": "chemistry",
+      "navigationKeyword2": "stoichiometry",
+      "question": "What is molarity?",
+      "correctAnswer": "Moles of solute per liter of solution",
+      "incorrectAnswers": [
+        "Moles per kg solvent",
+        "Grams per liter only",
+        "Moles per gram"
+      ],
+      "explanation": "M = mol/L.",
+      "keywords": [
+        "molarity",
+        "concentration"
+      ],
+      "source": "https://openstax.org/books/chemistry-2e/pages/3-5-other-units-for-solution-concentrations"
+    },
+    {
+      "seedId": "f2b4723b-c9b9-4f87-8bc8-081d25639f64",
+      "category": "science",
+      "navigationKeyword1": "chemistry",
+      "navigationKeyword2": "stoichiometry",
+      "question": "What is molecular formula?",
+      "correctAnswer": "Actual atom counts per molecule",
+      "incorrectAnswers": [
+        "Simplest ratio only",
+        "Only percent mass",
+        "Only charge"
+      ],
+      "explanation": "May be multiple of empirical.",
+      "keywords": [
+        "molecular-formula",
+        "composition"
+      ],
+      "source": "https://openstax.org/books/chemistry-2e/pages/3-2-empirical-and-molecular-formulas"
+    },
+    {
+      "seedId": "69694891-271a-468f-a6b3-f586b3fa97a7",
+      "category": "science",
+      "navigationKeyword1": "chemistry",
+      "navigationKeyword2": "stoichiometry",
+      "question": "What is percent yield?",
+      "correctAnswer": "(actual/theoretical)\u00d7100%",
+      "incorrectAnswers": [
+        "theoretical/actual",
+        "mass/volume always",
+        "moles\u00d7volume"
+      ],
+      "explanation": "Measures practical efficiency.",
+      "keywords": [
+        "percent-yield",
+        "lab"
+      ],
+      "source": "https://openstax.org/books/chemistry-2e/pages/4-4-reaction-yields"
+    },
+    {
+      "seedId": "54389591-b97c-4a69-a11e-024f11cd37dd",
+      "category": "science",
+      "navigationKeyword1": "chemistry",
+      "navigationKeyword2": "stoichiometry",
+      "question": "What is theoretical yield?",
+      "correctAnswer": "Maximum product possible from stoichiometry",
+      "incorrectAnswers": [
+        "Actual yield",
+        "Percent error",
+        "Equilibrium constant"
+      ],
+      "explanation": "Assumes complete conversion of limiting reactant.",
+      "keywords": [
+        "theoretical-yield",
+        "stoichiometry"
+      ],
+      "source": "https://openstax.org/books/chemistry-2e/pages/4-4-reaction-yields"
+    },
+    {
+      "seedId": "98c00c14-c505-4c6e-9464-faee4f535414",
+      "category": "science",
+      "navigationKeyword1": "chemistry",
+      "navigationKeyword2": "stoichiometry",
+      "question": "What is titration used for?",
+      "correctAnswer": "Find unknown concentration via reaction stoichiometry",
+      "incorrectAnswers": [
+        "Measure density only",
+        "Find speed of light",
+        "Separate DNA only"
+      ],
+      "explanation": "Equivalence point matches mole stoichiometry.",
+      "keywords": [
+        "titration",
+        "analytical"
+      ],
+      "source": "https://openstax.org/books/chemistry-2e/pages/14-7-acid-base-titrations"
+    }
+  ]
+}

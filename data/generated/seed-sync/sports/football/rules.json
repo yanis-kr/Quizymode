@@ -1,0 +1,207 @@
+{
+  "schemaVersion": 1,
+  "seedSet": "core-public-items",
+  "deltaPreviewLimit": 200,
+  "items": [
+    {
+      "seedId": "39eeadef-c2cc-5950-a04e-cb23e3e90b78",
+      "category": "sports",
+      "navigationKeyword1": "football",
+      "navigationKeyword2": "rules",
+      "question": "How long is a regulation NFL game?",
+      "correctAnswer": "60 minutes",
+      "incorrectAnswers": [
+        "48 minutes",
+        "80 minutes",
+        "90 minutes"
+      ],
+      "explanation": "An NFL game has four 15-minute quarters.",
+      "keywords": [
+        "football",
+        "rules",
+        "game-length"
+      ],
+      "source": "https://operations.nfl.com/learn-the-game/nfl-basics/"
+    },
+    {
+      "seedId": "2fcbc27d-1150-545e-af06-514cd7affd4e",
+      "category": "sports",
+      "navigationKeyword1": "football",
+      "navigationKeyword2": "rules",
+      "question": "How many downs does an offense usually get to gain 10 yards?",
+      "correctAnswer": "Four",
+      "incorrectAnswers": [
+        "Three",
+        "Five",
+        "Two"
+      ],
+      "explanation": "The offense gets four downs to move the chains.",
+      "keywords": [
+        "football",
+        "rules",
+        "downs"
+      ],
+      "source": "https://operations.nfl.com/learn-the-game/nfl-basics/"
+    },
+    {
+      "seedId": "ee4373ba-98ff-5fb7-9d26-30431032c361",
+      "category": "sports",
+      "navigationKeyword1": "football",
+      "navigationKeyword2": "rules",
+      "question": "How many players from one team are on the field during a normal play?",
+      "correctAnswer": "11",
+      "incorrectAnswers": [
+        "10",
+        "12",
+        "9"
+      ],
+      "explanation": "Football is played 11-on-11.",
+      "keywords": [
+        "football",
+        "rules",
+        "players"
+      ],
+      "source": "https://operations.nfl.com/learn-the-game/nfl-basics/"
+    },
+    {
+      "seedId": "48ea3b81-258c-5523-b407-b248651a4b94",
+      "category": "sports",
+      "navigationKeyword1": "football",
+      "navigationKeyword2": "rules",
+      "question": "How many points is a field goal worth?",
+      "correctAnswer": "Three",
+      "incorrectAnswers": [
+        "One",
+        "Two",
+        "Six"
+      ],
+      "explanation": "A successful field goal adds three points.",
+      "keywords": [
+        "football",
+        "rules",
+        "field-goal"
+      ],
+      "source": "https://operations.nfl.com/learn-the-game/nfl-basics/"
+    },
+    {
+      "seedId": "5d636aef-e155-5291-868c-10f08ba2178f",
+      "category": "sports",
+      "navigationKeyword1": "football",
+      "navigationKeyword2": "rules",
+      "question": "How many points is a successful kick after a touchdown worth?",
+      "correctAnswer": "One",
+      "incorrectAnswers": [
+        "Two",
+        "Three",
+        "Zero"
+      ],
+      "explanation": "The kicked extra point adds one point.",
+      "keywords": [
+        "football",
+        "rules",
+        "extra-point"
+      ],
+      "source": "https://operations.nfl.com/learn-the-game/nfl-basics/"
+    },
+    {
+      "seedId": "4ed74501-9d7e-546c-8ea0-ba79a41c0ad1",
+      "category": "sports",
+      "navigationKeyword1": "football",
+      "navigationKeyword2": "rules",
+      "question": "How many points is a touchdown worth before the try?",
+      "correctAnswer": "Six",
+      "incorrectAnswers": [
+        "Three",
+        "One",
+        "Seven"
+      ],
+      "explanation": "A touchdown is worth six points before the conversion attempt.",
+      "keywords": [
+        "football",
+        "rules",
+        "touchdown"
+      ],
+      "source": "https://operations.nfl.com/learn-the-game/nfl-basics/"
+    },
+    {
+      "seedId": "777840a5-53ee-5e14-bdf2-7b1d339df939",
+      "category": "sports",
+      "navigationKeyword1": "football",
+      "navigationKeyword2": "rules",
+      "question": "What happens when a quarterback throws a pass caught by a defender?",
+      "correctAnswer": "It is an interception",
+      "incorrectAnswers": [
+        "It is a fumble",
+        "It is a safety",
+        "It is an automatic touchdown"
+      ],
+      "explanation": "A caught pass by the defense is an interception.",
+      "keywords": [
+        "football",
+        "rules",
+        "interception"
+      ],
+      "source": "https://operations.nfl.com/learn-the-game/nfl-basics/"
+    },
+    {
+      "seedId": "820b8ec6-74b5-591e-8ca9-7c1587773dea",
+      "category": "sports",
+      "navigationKeyword1": "football",
+      "navigationKeyword2": "rules",
+      "question": "What is a safety worth?",
+      "correctAnswer": "Two points",
+      "incorrectAnswers": [
+        "One point",
+        "Three points",
+        "Six points"
+      ],
+      "explanation": "A safety awards two points to the defense.",
+      "keywords": [
+        "football",
+        "rules",
+        "safety"
+      ],
+      "source": "https://operations.nfl.com/learn-the-game/nfl-basics/"
+    },
+    {
+      "seedId": "306ef2c1-2060-5a3b-8810-8592a7db8360",
+      "category": "sports",
+      "navigationKeyword1": "football",
+      "navigationKeyword2": "rules",
+      "question": "What is the line called that a team must reach to earn a new set of downs?",
+      "correctAnswer": "The line to gain",
+      "incorrectAnswers": [
+        "The neutral zone",
+        "The hash mark",
+        "The goal line"
+      ],
+      "explanation": "Gaining the required distance resets the downs.",
+      "keywords": [
+        "football",
+        "rules",
+        "first-down"
+      ],
+      "source": "https://operations.nfl.com/learn-the-game/nfl-basics/"
+    },
+    {
+      "seedId": "e5dc8ead-4967-544e-9126-fc1245d66940",
+      "category": "sports",
+      "navigationKeyword1": "football",
+      "navigationKeyword2": "rules",
+      "question": "What is the penalty called when an offensive player moves before the snap?",
+      "correctAnswer": "False start",
+      "incorrectAnswers": [
+        "Offside",
+        "Holding",
+        "Delay of game"
+      ],
+      "explanation": "A false start is an offensive pre-snap movement penalty.",
+      "keywords": [
+        "football",
+        "rules",
+        "false-start"
+      ],
+      "source": "https://operations.nfl.com/learn-the-game/nfl-basics/"
+    }
+  ]
+}

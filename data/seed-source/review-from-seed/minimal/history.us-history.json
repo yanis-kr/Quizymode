@@ -1,0 +1,39 @@
+[
+  {
+    "category": "history",
+    "question": "Which European nation founded the first permanent English settlement in North America at Jamestown?",
+    "correctAnswer": "England",
+    "incorrectAnswers": [
+      "Spain",
+      "France",
+      "Netherlands"
+    ],
+    "explanation": "Jamestown, founded in 1607, was an English settlement in Virginia.",
+    "keywords": [
+      "jamestown",
+      "settlement",
+      "virginia"
+    ],
+    "source": "initial seed",
+    "navigationKeyword1": "us-history",
+    "navigationKeyword2": "colonial",
+    "seedId": "3b8c25ba-3839-5a9c-8e10-70bc2bd1df50"
+  },
+  {
+    "category": "history",
+    "question": "In what year was Jamestown, the first permanent English settlement in North America, founded?",
+    "correctAnswer": "1607",
+    "incorrectAnswers": [
+      "1585",
+      "1620",
+      "1630"
+    ],
+    "explanation": "Jamestown was founded in 1607 by the Virginia Company.",
+    "keywords": [
+      "key-dates",
+      "dates"
+    ],
+    "source": "initial seed",
+    "seedId": "20ae3834-2c56-5fac-afd4-87aa853dcd6e"
+  }
+]

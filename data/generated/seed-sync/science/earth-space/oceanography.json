@@ -1,0 +1,235 @@
+{
+  "schemaVersion": 1,
+  "seedSet": "core-public-items",
+  "deltaPreviewLimit": 200,
+  "items": [
+    {
+      "seedId": "3c519745-ac17-474a-a4f5-3d1799810a61",
+      "category": "science",
+      "navigationKeyword1": "earth-space",
+      "navigationKeyword2": "oceanography",
+      "question": "What causes tides (primary)?",
+      "correctAnswer": "Gravitational pull of Moon (and Sun) on Earth",
+      "incorrectAnswers": [
+        "Only wind",
+        "Only earthquakes",
+        "Only fish migration"
+      ],
+      "explanation": "Tidal bulges follow astronomical forcing.",
+      "keywords": [
+        "tides",
+        "moon"
+      ],
+      "source": "https://oceanservice.noaa.gov/education/kits/tides/"
+    },
+    {
+      "seedId": "05afddb0-5b15-48cf-a807-bb6d9c3d87dd",
+      "category": "science",
+      "navigationKeyword1": "earth-space",
+      "navigationKeyword2": "oceanography",
+      "question": "What drives surface ocean currents (major)?",
+      "correctAnswer": "Wind stress + Earth rotation",
+      "incorrectAnswers": [
+        "Only moon heat",
+        "Only earthquakes",
+        "Only evaporation"
+      ],
+      "explanation": "Gyres circulate water in basins.",
+      "keywords": [
+        "currents",
+        "wind"
+      ],
+      "source": "https://oceanservice.noaa.gov/education/kits/currents/"
+    },
+    {
+      "seedId": "da0332e2-e70b-4813-87cc-fbde4faba441",
+      "category": "science",
+      "navigationKeyword1": "earth-space",
+      "navigationKeyword2": "oceanography",
+      "question": "What is SONAR used for in oceanography?",
+      "correctAnswer": "Mapping seafloor and water properties using sound",
+      "incorrectAnswers": [
+        "Measuring star brightness",
+        "Counting tree rings",
+        "Detecting earthquakes only"
+      ],
+      "explanation": "Sound propagates in water.",
+      "keywords": [
+        "sonar",
+        "mapping"
+      ],
+      "source": "https://oceanservice.noaa.gov/facts/sonar.html"
+    },
+    {
+      "seedId": "9a03c8c6-b2e4-4412-bb59-152370119eba",
+      "category": "science",
+      "navigationKeyword1": "earth-space",
+      "navigationKeyword2": "oceanography",
+      "question": "What is a mid-ocean ridge?",
+      "correctAnswer": "Undersea mountain chain where new crust forms",
+      "incorrectAnswers": [
+        "Subduction zone only",
+        "Coral reef",
+        "Estuary"
+      ],
+      "explanation": "Spreading centers create basaltic crust.",
+      "keywords": [
+        "mid-ocean-ridge",
+        "plate-tectonics"
+      ],
+      "source": "https://www.noaa.gov/explainers/mid-ocean-ridges"
+    },
+    {
+      "seedId": "2a915956-089c-4da3-95f3-86bd941433b5",
+      "category": "science",
+      "navigationKeyword1": "earth-space",
+      "navigationKeyword2": "oceanography",
+      "question": "What is a wave crest?",
+      "correctAnswer": "Highest point of a wave",
+      "incorrectAnswers": [
+        "Lowest point",
+        "Half wavelength",
+        "Seafloor trench"
+      ],
+      "explanation": "Opposite of trough.",
+      "keywords": [
+        "waves",
+        "ocean"
+      ],
+      "source": "https://oceanservice.noaa.gov/education/kits/waves/"
+    },
+    {
+      "seedId": "4cbf547d-6ab1-4509-8a62-27791b6691a6",
+      "category": "science",
+      "navigationKeyword1": "earth-space",
+      "navigationKeyword2": "oceanography",
+      "question": "What is continental shelf?",
+      "correctAnswer": "Shallow submerged edge of continent",
+      "incorrectAnswers": [
+        "Deep trench",
+        "Mid-ocean ridge only",
+        "Beach dune"
+      ],
+      "explanation": "Often rich in marine life.",
+      "keywords": [
+        "continental-shelf",
+        "bathymetry"
+      ],
+      "source": "https://oceanservice.noaa.gov/facts/continental-shelf.html"
+    },
+    {
+      "seedId": "f7259324-4281-4d00-a3e6-ee82bf2e7722",
+      "category": "science",
+      "navigationKeyword1": "earth-space",
+      "navigationKeyword2": "oceanography",
+      "question": "What is coral bleaching (cause)?",
+      "correctAnswer": "Stress (often heat) leads corals to expel symbiotic algae",
+      "incorrectAnswers": [
+        "Sharks eating coral",
+        "Salt disappearing",
+        "Tides stopping"
+      ],
+      "explanation": "Recovery depends on stress duration.",
+      "keywords": [
+        "coral",
+        "bleaching"
+      ],
+      "source": "https://oceanservice.noaa.gov/education/coral-reefs/coral-bleaching/"
+    },
+    {
+      "seedId": "7d21790a-fdd9-406a-a0e2-b904aea4db8c",
+      "category": "science",
+      "navigationKeyword1": "earth-space",
+      "navigationKeyword2": "oceanography",
+      "question": "What is estuary?",
+      "correctAnswer": "Where river meets sea; mixed salinity",
+      "incorrectAnswers": [
+        "Deep ocean trench",
+        "Desert playa",
+        "Alpine glacier"
+      ],
+      "explanation": "Important nurseries for species.",
+      "keywords": [
+        "estuary",
+        "brackish"
+      ],
+      "source": "https://oceanservice.noaa.gov/education/kits/estuaries/"
+    },
+    {
+      "seedId": "0f54fdaa-acf9-4d86-9013-7c8631bb9b25",
+      "category": "science",
+      "navigationKeyword1": "earth-space",
+      "navigationKeyword2": "oceanography",
+      "question": "What is photosynthesis zone in ocean?",
+      "correctAnswer": "Sunlit euphotic zone where phytoplankton thrive",
+      "incorrectAnswers": [
+        "Hadal zone",
+        "Abyss with no light always productive",
+        "Only beaches"
+      ],
+      "explanation": "Light limits primary production depth.",
+      "keywords": [
+        "euphotic",
+        "phytoplankton"
+      ],
+      "source": "https://oceanservice.noaa.gov/facts/euphotic.html"
+    },
+    {
+      "seedId": "a790eb46-148f-4c47-9d07-62cbf909bac8",
+      "category": "science",
+      "navigationKeyword1": "earth-space",
+      "navigationKeyword2": "oceanography",
+      "question": "What is salinity?",
+      "correctAnswer": "Dissolved salts concentration in seawater",
+      "incorrectAnswers": [
+        "Only temperature",
+        "Only wave height",
+        "Only fish count"
+      ],
+      "explanation": "Average seawater ~35 ppt in open ocean.",
+      "keywords": [
+        "salinity",
+        "seawater"
+      ],
+      "source": "https://oceanservice.noaa.gov/education/kits/pdfs/ocean_facts.pdf"
+    },
+    {
+      "seedId": "c588dd0e-c4e8-4d40-b5a0-3da6d8c8af42",
+      "category": "science",
+      "navigationKeyword1": "earth-space",
+      "navigationKeyword2": "oceanography",
+      "question": "What is thermohaline circulation idea?",
+      "correctAnswer": "Deep circulation driven by density (temperature + salinity)",
+      "incorrectAnswers": [
+        "Only surface waves",
+        "Only tides in lakes",
+        "Only coral growth"
+      ],
+      "explanation": "Connects global ocean basins.",
+      "keywords": [
+        "thermohaline",
+        "deep-ocean"
+      ],
+      "source": "https://oceanservice.noaa.gov/education/kits/currents/05conveyor2.html"
+    },
+    {
+      "seedId": "27f93e0d-f25d-4169-bc00-c3e1fa703b6c",
+      "category": "science",
+      "navigationKeyword1": "earth-space",
+      "navigationKeyword2": "oceanography",
+      "question": "What is upwelling?",
+      "correctAnswer": "Deep nutrient-rich water rises to surface",
+      "incorrectAnswers": [
+        "Water sinks only",
+        "Ice forms",
+        "Waves stop"
+      ],
+      "explanation": "Supports productive fisheries.",
+      "keywords": [
+        "upwelling",
+        "nutrients"
+      ],
+      "source": "https://oceanservice.noaa.gov/education/kits/currents/06upwelling.html"
+    }
+  ]
+}

@@ -1,0 +1,691 @@
+{
+  "schemaVersion": 1,
+  "seedSet": "core-public-items",
+  "deltaPreviewLimit": 200,
+  "items": [
+    {
+      "seedId": "5d1da774-ae1c-5993-b7a7-3da547c41c9e",
+      "category": "civics",
+      "navigationKeyword1": "elections",
+      "navigationKeyword2": "campaigns",
+      "question": "Broadcast stations must offer federal candidates the lowest unit rate for ads when what condition is met?",
+      "correctAnswer": "the ads run within a defined window before a primary or general election",
+      "incorrectAnswers": [
+        "the candidate buys only cable channels",
+        "the ads run only on weekends",
+        "the candidate has no party affiliation"
+      ],
+      "explanation": "FCC rules give qualified federal candidates discounted lowest rates during the statutory pre-election period.",
+      "keywords": [
+        "campaign-ads",
+        "broadcast-rules"
+      ],
+      "source": "https://www.fcc.gov/consumers/guides/broadcasting-political-ads"
+    },
+    {
+      "seedId": "dd4bb856-73c1-5541-a875-bcc6458a3924",
+      "category": "civics",
+      "navigationKeyword1": "elections",
+      "navigationKeyword2": "campaigns",
+      "question": "Federal law bars contributions to federal candidates or committees from whom?",
+      "correctAnswer": "foreign nationals who are not lawful permanent residents",
+      "incorrectAnswers": [
+        "only minors under 16",
+        "only federal employees",
+        "only nonprofit volunteers"
+      ],
+      "explanation": "Foreign nationals without green cards may not donate to federal campaigns; citizens and lawful permanent residents may be allowed to donate within limits.",
+      "keywords": [
+        "foreign-contributions",
+        "campaign-rules"
+      ],
+      "source": "https://www.fec.gov/help-candidates-and-committees/foreign-nationals/"
+    },
+    {
+      "seedId": "22e22aff-5393-5f4c-be54-ad3f4b05f97e",
+      "category": "civics",
+      "navigationKeyword1": "elections",
+      "navigationKeyword2": "campaigns",
+      "question": "Independent expenditures are spending that must be what, compared with a candidate's own campaign?",
+      "correctAnswer": "not coordinated with the candidate or campaign",
+      "incorrectAnswers": [
+        "paid only with public funds",
+        "limited to postage stamps",
+        "approved by the Senate Ethics Committee"
+      ],
+      "explanation": "Independent spending is supposed to be separate from a candidate's committee; coordination can change how rules apply.",
+      "keywords": [
+        "independent-expenditures",
+        "coordination"
+      ],
+      "source": "https://www.fec.gov/help-candidates-and-committees/making-independent-expenditures/"
+    },
+    {
+      "seedId": "f47058c1-3d72-53aa-9876-0b090306239e",
+      "category": "civics",
+      "navigationKeyword1": "elections",
+      "navigationKeyword2": "campaigns",
+      "question": "The Presidential Election Campaign Fund offers optional public grants for qualified general-election nominees if they agree to what?",
+      "correctAnswer": "limit spending to the grant amount and follow fund rules",
+      "incorrectAnswers": [
+        "accept no private donations of any kind ever",
+        "skip televised debates",
+        "withdraw from all state ballots"
+      ],
+      "explanation": "Public funding for general-election nominees is voluntary and comes with spending limits for those who accept it.",
+      "keywords": [
+        "public-financing",
+        "presidential-campaigns"
+      ],
+      "source": "https://www.fec.gov/introduction-campaign-finance/presidential-elections/public-funding-presidential-elections/"
+    },
+    {
+      "seedId": "0c776360-46e6-562c-95ac-9bdcb0706cea",
+      "category": "civics",
+      "navigationKeyword1": "elections",
+      "navigationKeyword2": "campaigns",
+      "question": "What must most federal candidate committees and party committees do with contributions they receive?",
+      "correctAnswer": "report them to the FEC on a public schedule",
+      "incorrectAnswers": [
+        "deposit them only in personal bank accounts",
+        "report them only to state courts",
+        "keep amounts secret until after the election"
+      ],
+      "explanation": "Disclosure laws require reporting so voters can see who funds federal campaigns.",
+      "keywords": [
+        "disclosure",
+        "reporting"
+      ],
+      "source": "https://www.fec.gov/help-candidates-and-committees/reporting/"
+    },
+    {
+      "seedId": "4659b825-85a1-5431-a26d-8713bfea5d98",
+      "category": "civics",
+      "navigationKeyword1": "elections",
+      "navigationKeyword2": "campaigns",
+      "question": "Which federal agency enforces limits and disclosure rules for money in federal elections?",
+      "correctAnswer": "the Federal Election Commission",
+      "incorrectAnswers": [
+        "the Federal Communications Commission",
+        "the Securities and Exchange Commission",
+        "the Internal Revenue Service"
+      ],
+      "explanation": "Congress created the FEC to administer and enforce the Federal Election Campaign Act for federal races.",
+      "keywords": [
+        "fec",
+        "campaign-finance"
+      ],
+      "source": "https://www.fec.gov/about/"
+    },
+    {
+      "seedId": "a374625d-3246-50fe-b441-b329a6a62879",
+      "category": "civics",
+      "navigationKeyword1": "elections",
+      "navigationKeyword2": "electoral-college",
+      "question": "After Chiafalo v. Washington (2020), may states penalize or remove presidential electors who break a pledge to vote a certain way?",
+      "correctAnswer": "Yes; states may enforce elector pledges.",
+      "incorrectAnswers": [
+        "No; electors are always unbound.",
+        "Only Congress may remove an elector.",
+        "Only the candidate may sue an elector."
+      ],
+      "explanation": "The Court held that states may bind electors and enforce those rules, reinforcing predictable slates.",
+      "keywords": [
+        "faithless-electors",
+        "supreme-court"
+      ],
+      "source": "https://www.law.cornell.edu/supremecourt/text/19-465"
+    },
+    {
+      "seedId": "b6246ee6-0bd6-5c9c-8ffb-ccacf8135b43",
+      "category": "civics",
+      "navigationKeyword1": "elections",
+      "navigationKeyword2": "electoral-college",
+      "question": "How many electoral votes are there in total today?",
+      "correctAnswer": "538",
+      "incorrectAnswers": [
+        "435",
+        "100",
+        "535"
+      ],
+      "explanation": "The total matches House seats plus Senate seats plus three electors for the District of Columbia.",
+      "keywords": [
+        "electoral-votes",
+        "538"
+      ],
+      "source": "https://www.archives.gov/electoral-college/allocation"
+    },
+    {
+      "seedId": "254cca8b-b3fe-592d-a964-e2247a10383b",
+      "category": "civics",
+      "navigationKeyword1": "elections",
+      "navigationKeyword2": "electoral-college",
+      "question": "If no presidential candidate wins a majority in the Electoral College, who chooses the president?",
+      "correctAnswer": "the House of Representatives, voting by state delegations",
+      "incorrectAnswers": [
+        "the Senate alone",
+        "the Supreme Court",
+        "the outgoing vice president"
+      ],
+      "explanation": "The 12th Amendment sends a failed Electoral College majority to the House, where each state delegation gets one vote.",
+      "keywords": [
+        "12th-amendment",
+        "contingent-election"
+      ],
+      "source": "https://www.archives.gov/founding-docs/amendments-11-27"
+    },
+    {
+      "seedId": "a1da1ce3-87cd-57ae-9d7d-895382bc5470",
+      "category": "civics",
+      "navigationKeyword1": "elections",
+      "navigationKeyword2": "electoral-college",
+      "question": "The 23rd Amendment gave the District of Columbia electoral votes equal to what?",
+      "correctAnswer": "the smallest state delegation in the Electoral College",
+      "incorrectAnswers": [
+        "half of California's electors",
+        "ten electors fixed forever",
+        "the same as Puerto Rico"
+      ],
+      "explanation": "D.C. receives electors equal to the least populous state's combined Senate and House delegation.",
+      "keywords": [
+        "23rd-amendment",
+        "district-of-columbia"
+      ],
+      "source": "https://www.archives.gov/founding-docs/amendments-11-27"
+    },
+    {
+      "seedId": "204442f7-f06b-503a-acca-3bc40c727009",
+      "category": "civics",
+      "navigationKeyword1": "elections",
+      "navigationKeyword2": "electoral-college",
+      "question": "What is the minimum number of electoral votes needed to win the presidency?",
+      "correctAnswer": "270",
+      "incorrectAnswers": [
+        "218",
+        "300",
+        "251"
+      ],
+      "explanation": "A majority of 538 electors is 270, the usual winning threshold.",
+      "keywords": [
+        "majority",
+        "president"
+      ],
+      "source": "https://www.usa.gov/electoral-college"
+    },
+    {
+      "seedId": "da382546-bde2-5ae6-ade8-7d87ac33d240",
+      "category": "civics",
+      "navigationKeyword1": "elections",
+      "navigationKeyword2": "electoral-college",
+      "question": "When does the Electoral College actually cast its votes for president and vice president?",
+      "correctAnswer": "on the Monday after the second Wednesday in December following the general election",
+      "incorrectAnswers": [
+        "on Election Day in November",
+        "on January 6 after the new Congress meets",
+        "on the president's Inauguration Day"
+      ],
+      "explanation": "Federal law sets the December meeting date; Congress later counts electoral votes in January.",
+      "keywords": [
+        "electoral-college-meeting",
+        "timeline"
+      ],
+      "source": "https://www.law.cornell.edu/uscode/text/3/7"
+    },
+    {
+      "seedId": "54bbda32-1f9d-55fe-be76-a2254a69887b",
+      "category": "civics",
+      "navigationKeyword1": "elections",
+      "navigationKeyword2": "parties",
+      "question": "Does the U.S. Constitution require a two-party system or name political parties?",
+      "correctAnswer": "No; parties are not named and no party system is required.",
+      "incorrectAnswers": [
+        "Yes; only two parties are allowed.",
+        "Yes; the Constitution lists the Democratic and Republican parties.",
+        "Yes; Congress must approve new parties each year."
+      ],
+      "explanation": "The Constitution is silent on parties; they grew from practice and organization, not constitutional mandate.",
+      "keywords": [
+        "political-parties",
+        "constitution"
+      ],
+      "source": "https://www.usa.gov/political-parties"
+    },
+    {
+      "seedId": "9490cd80-82e4-5d8b-b379-52098fc0818f",
+      "category": "civics",
+      "navigationKeyword1": "elections",
+      "navigationKeyword2": "parties",
+      "question": "George Washington warned in his Farewell Address that factions could sharpen conflict. What did he mean by \"factions\" in that context?",
+      "correctAnswer": "groups united by shared interests that can divide the public",
+      "incorrectAnswers": [
+        "only military alliances abroad",
+        "temporary census districts",
+        "federal bankruptcy courts"
+      ],
+      "explanation": "Washington used \"factions\" broadly for partisan or interest-based blocs that might pull citizens apart.",
+      "keywords": [
+        "washington",
+        "parties-history"
+      ],
+      "source": "https://www.senate.gov/artandhistory/history/common/generic/WashingtonFarewell.htm"
+    },
+    {
+      "seedId": "c7bcd184-b953-55bf-b351-65970c4418b8",
+      "category": "civics",
+      "navigationKeyword1": "elections",
+      "navigationKeyword2": "parties",
+      "question": "In many states, how voters enroll with a party for a primary election is decided by what kind of law?",
+      "correctAnswer": "state law",
+      "incorrectAnswers": [
+        "a single federal statute for all states",
+        "the president's executive order",
+        "the party's national chair alone"
+      ],
+      "explanation": "States set whether primaries are open, closed, or something in between, so party enrollment rules vary.",
+      "keywords": [
+        "primary-elections",
+        "party-affiliation"
+      ],
+      "source": "https://www.law.cornell.edu/wex/elections"
+    },
+    {
+      "seedId": "c6677d15-317c-50c6-91fa-2942393f54ed",
+      "category": "civics",
+      "navigationKeyword1": "elections",
+      "navigationKeyword2": "parties",
+      "question": "National party committees for president and Congress must register with which federal body and follow its reporting rules?",
+      "correctAnswer": "the Federal Election Commission",
+      "incorrectAnswers": [
+        "the Department of Justice",
+        "the Census Bureau",
+        "the Federal Trade Commission"
+      ],
+      "explanation": "The FEC administers federal campaign finance law, including registration and disclosure for party committees.",
+      "keywords": [
+        "fec",
+        "party-committees"
+      ],
+      "source": "https://www.fec.gov/help-candidates-and-committees/guides/party-committees/"
+    },
+    {
+      "seedId": "e813454e-ecbf-5309-a7e5-22d87fb37119",
+      "category": "civics",
+      "navigationKeyword1": "elections",
+      "navigationKeyword2": "parties",
+      "question": "What is a common hurdle for third-party and independent candidates trying to appear on a general-election ballot?",
+      "correctAnswer": "state rules for petitions, fees, or other ballot-access requirements",
+      "incorrectAnswers": [
+        "a national primary held by Congress",
+        "approval by the Electoral College",
+        "a vote of the Supreme Court"
+      ],
+      "explanation": "Ballot access is controlled mainly by state law, so requirements differ widely across states.",
+      "keywords": [
+        "ballot-access",
+        "third-parties"
+      ],
+      "source": "https://www.law.cornell.edu/wex/elections"
+    },
+    {
+      "seedId": "795ca3b6-1427-554e-b3f1-10c128bf1c3b",
+      "category": "civics",
+      "navigationKeyword1": "elections",
+      "navigationKeyword2": "parties",
+      "question": "What is one main function of a major party's national convention in a presidential election year?",
+      "correctAnswer": "formally nominating the party's presidential and vice-presidential candidates",
+      "incorrectAnswers": [
+        "certifying general-election results",
+        "choosing Electoral College electors after November",
+        "writing federal statutes"
+      ],
+      "explanation": "Conventions adopt rules and platforms and formally place the ticket before the fall campaign.",
+      "keywords": [
+        "national-conventions",
+        "nominations"
+      ],
+      "source": "https://www.usa.gov/presidential-election-process"
+    },
+    {
+      "seedId": "c0492443-3853-5398-a517-2806fb891c7e",
+      "category": "civics",
+      "navigationKeyword1": "elections",
+      "navigationKeyword2": "polling",
+      "question": "A poll's reported margin of error mainly reflects what kind of uncertainty?",
+      "correctAnswer": "random sampling error from surveying a sample instead of everyone",
+      "incorrectAnswers": [
+        "whether the pollster likes the results",
+        "how many ads a campaign bought",
+        "the exact Election Day weather"
+      ],
+      "explanation": "Margins of error describe how much a sample result might differ from the full population by chance.",
+      "keywords": [
+        "margin-of-error",
+        "sampling"
+      ],
+      "source": "https://www.aapor.org/education-resources/poll-faq/"
+    },
+    {
+      "seedId": "0778944d-d1d4-54fa-abb0-14083145d8bf",
+      "category": "civics",
+      "navigationKeyword1": "elections",
+      "navigationKeyword2": "polling",
+      "question": "A pre-election poll of \"likely voters\" tries to focus on whom?",
+      "correctAnswer": "people judged most likely to cast a ballot",
+      "incorrectAnswers": [
+        "only people who already voted by mail",
+        "only campaign donors",
+        "only elected officials"
+      ],
+      "explanation": "Likely-voter screens aim to match the electorate, not the entire adult population.",
+      "keywords": [
+        "likely-voters",
+        "turnout"
+      ],
+      "source": "https://www.aapor.org/education-resources/poll-faq/"
+    },
+    {
+      "seedId": "48f5383f-cba7-563c-9497-dd5dc285d93b",
+      "category": "civics",
+      "navigationKeyword1": "elections",
+      "navigationKeyword2": "polling",
+      "question": "What is an \"exit poll\"?",
+      "correctAnswer": "interviews with voters as they leave polling places or surveys soon after voting",
+      "incorrectAnswers": [
+        "a poll only of campaign staff",
+        "a vote count certified by Congress",
+        "a poll required by the Constitution"
+      ],
+      "explanation": "Exit polls capture voter choices and reasons right after people vote, subject to sampling limits.",
+      "keywords": [
+        "exit-poll",
+        "election-surveys"
+      ],
+      "source": "https://www.census.gov/programs-surveys/surveyhelp/glossary.html"
+    },
+    {
+      "seedId": "e0cd37b4-9cf2-586a-b04f-a8a1ca221a44",
+      "category": "civics",
+      "navigationKeyword1": "elections",
+      "navigationKeyword2": "polling",
+      "question": "When pollsters adjust raw results to match census-like traits such as age or education, what are they typically doing?",
+      "correctAnswer": "weighting the sample so it better reflects the population",
+      "incorrectAnswers": [
+        "throwing out answers they dislike",
+        "predicting Electoral College totals",
+        "replacing phone calls with guesses"
+      ],
+      "explanation": "Weighting corrects mismatches between who responded and the group the poll aims to describe.",
+      "keywords": [
+        "weighting",
+        "survey-adjustment"
+      ],
+      "source": "https://www.pewresearch.org/our-methods/"
+    },
+    {
+      "seedId": "868af83f-9cb7-5826-9fc8-4b05cbf4624b",
+      "category": "civics",
+      "navigationKeyword1": "elections",
+      "navigationKeyword2": "polling",
+      "question": "Why can a careful poll taken weeks before Election Day differ from the final result?",
+      "correctAnswer": "because opinions, turnout, and last-minute events can shift after the poll",
+      "incorrectAnswers": [
+        "because polls are illegal in most states",
+        "because ballots are counted before voting",
+        "because polls only survey foreign citizens"
+      ],
+      "explanation": "Polls measure attitudes at one time; campaigns, news, and turnout can change before votes are cast.",
+      "keywords": [
+        "poll-timing",
+        "election-forecasting"
+      ],
+      "source": "https://www.aapor.org/education-resources/poll-faq/"
+    },
+    {
+      "seedId": "b72be636-fa59-52b2-a094-fe74640e42be",
+      "category": "civics",
+      "navigationKeyword1": "elections",
+      "navigationKeyword2": "polling",
+      "question": "Why do reputable election polls use random sampling of the population they want to describe?",
+      "correctAnswer": "to give every eligible respondent a known chance of selection and reduce bias",
+      "incorrectAnswers": [
+        "to guarantee the poll matches the final vote exactly",
+        "to avoid asking any demographic questions",
+        "to replace voter registration laws"
+      ],
+      "explanation": "Probability sampling supports statistical inference; convenience samples are harder to generalize from.",
+      "keywords": [
+        "random-sample",
+        "survey-methods"
+      ],
+      "source": "https://www.pewresearch.org/our-methods/"
+    },
+    {
+      "seedId": "18b1ed6e-6aa1-5dab-b55e-2629d4543fe0",
+      "category": "civics",
+      "navigationKeyword1": "elections",
+      "navigationKeyword2": "primaries",
+      "question": "A nonpartisan primary can send the top vote-getters to the general election even if they share what trait?",
+      "correctAnswer": "the same party affiliation or no party label",
+      "incorrectAnswers": [
+        "the same home state only",
+        "the same age only",
+        "the same congressional district only"
+      ],
+      "explanation": "Some states use top-two or similar systems where the two leading finishers advance regardless of party.",
+      "keywords": [
+        "nonpartisan-primary",
+        "top-two"
+      ],
+      "source": "https://www.law.cornell.edu/wex/elections"
+    },
+    {
+      "seedId": "6666326a-eb5f-5e65-bfc6-59e42f754a8c",
+      "category": "civics",
+      "navigationKeyword1": "elections",
+      "navigationKeyword2": "primaries",
+      "question": "Compared with a typical primary election run by local officials, a caucus often differs how?",
+      "correctAnswer": "party members meet and follow party rules rather than only casting secret ballots statewide",
+      "incorrectAnswers": [
+        "it is always conducted entirely by mail",
+        "it is illegal in all states",
+        "it replaces the general election"
+      ],
+      "explanation": "Caucuses rely on party-run meetings and procedures, while primaries are usually state-run secret-ballot elections.",
+      "keywords": [
+        "caucus",
+        "primary"
+      ],
+      "source": "https://www.usa.gov/presidential-election-process"
+    },
+    {
+      "seedId": "757945a7-78da-5180-81dc-963250faad5a",
+      "category": "civics",
+      "navigationKeyword1": "elections",
+      "navigationKeyword2": "primaries",
+      "question": "Delegates chosen through primaries and caucuses mainly serve what purpose at the national party convention?",
+      "correctAnswer": "formally nominating the party's presidential candidate according to party rules",
+      "incorrectAnswers": [
+        "counting November popular votes",
+        "certifying Electoral College certificates",
+        "appointing federal judges"
+      ],
+      "explanation": "Delegates represent voter preferences under party rules and cast votes to nominate the ticket.",
+      "keywords": [
+        "delegates",
+        "national-convention"
+      ],
+      "source": "https://www.usa.gov/presidential-election-process"
+    },
+    {
+      "seedId": "6c4af343-9654-5151-a853-515a54f79846",
+      "category": "civics",
+      "navigationKeyword1": "elections",
+      "navigationKeyword2": "primaries",
+      "question": "In a closed primary, who is typically allowed to vote in a party's primary?",
+      "correctAnswer": "registered voters affiliated with that party",
+      "incorrectAnswers": [
+        "any registered voter regardless of party",
+        "only delegates chosen at caucuses",
+        "only members of Congress"
+      ],
+      "explanation": "Closed primaries limit participation to voters registered with the party holding the primary.",
+      "keywords": [
+        "closed-primary",
+        "party-rules"
+      ],
+      "source": "https://www.law.cornell.edu/wex/elections"
+    },
+    {
+      "seedId": "34e67c44-567b-5eef-b9c8-5e53bfd6658c",
+      "category": "civics",
+      "navigationKeyword1": "elections",
+      "navigationKeyword2": "primaries",
+      "question": "In an open primary, a voter generally may do what?",
+      "correctAnswer": "choose which party's primary ballot to use without being registered with that party",
+      "incorrectAnswers": [
+        "vote in every party's primary on the same day",
+        "vote only if unaffiliated with any party",
+        "skip registration entirely"
+      ],
+      "explanation": "Open primaries let voters pick a party ballot at the primary, though exact rules vary by state.",
+      "keywords": [
+        "open-primary",
+        "voter-choice"
+      ],
+      "source": "https://www.law.cornell.edu/wex/elections"
+    },
+    {
+      "seedId": "82a5a864-6a05-5242-9b8a-fd9621f78d1c",
+      "category": "civics",
+      "navigationKeyword1": "elections",
+      "navigationKeyword2": "primaries",
+      "question": "Who sets the dates and basic rules for presidential primaries and caucuses?",
+      "correctAnswer": "state law and party rules, within federal and party deadlines",
+      "incorrectAnswers": [
+        "only the president",
+        "a single national election board",
+        "the Electoral College"
+      ],
+      "explanation": "States and parties schedule contests, though parties also set delegate rules and window requirements.",
+      "keywords": [
+        "primary-calendar",
+        "state-law"
+      ],
+      "source": "https://www.usa.gov/presidential-election-process"
+    },
+    {
+      "seedId": "a667bb48-4280-550c-8df4-b2239ca29094",
+      "category": "civics",
+      "navigationKeyword1": "elections",
+      "navigationKeyword2": "voting",
+      "question": "In the United States, who generally runs voter registration and the details of how people cast ballots?",
+      "correctAnswer": "state and local governments",
+      "incorrectAnswers": [
+        "Congress alone",
+        "the Supreme Court",
+        "the Federal Election Commission"
+      ],
+      "explanation": "Election administration is handled mainly by states and localities, though federal law sets some nationwide rules.",
+      "keywords": [
+        "election-administration",
+        "federalism"
+      ],
+      "source": "https://www.usa.gov/election-offices"
+    },
+    {
+      "seedId": "66cd2d51-5109-599c-a38d-2eca1be8e839",
+      "category": "civics",
+      "navigationKeyword1": "elections",
+      "navigationKeyword2": "voting",
+      "question": "The 24th Amendment bans federal poll taxes in national elections. What did the Supreme Court later rule about state poll taxes in state elections?",
+      "correctAnswer": "they violate the Equal Protection Clause",
+      "incorrectAnswers": [
+        "they are required in every state",
+        "they are allowed only for local races",
+        "they are allowed if under five dollars"
+      ],
+      "explanation": "In Harper v. Virginia State Board of Elections (1966), the Court held state poll taxes unconstitutional under equal protection.",
+      "keywords": [
+        "poll-tax",
+        "24th-amendment"
+      ],
+      "source": "https://www.law.cornell.edu/supremecourt/text/383/663"
+    },
+    {
+      "seedId": "95c30b32-ca1d-51b8-9513-87f1f69835eb",
+      "category": "civics",
+      "navigationKeyword1": "elections",
+      "navigationKeyword2": "voting",
+      "question": "The National Voter Registration Act of 1993 is often called \"Motor Voter\" because it requires states to offer registration where?",
+      "correctAnswer": "when people apply for or renew a driver's license",
+      "incorrectAnswers": [
+        "only at post offices",
+        "only on Election Day",
+        "only through the IRS"
+      ],
+      "explanation": "The law links voter registration with motor vehicle offices and also sets mail and public-assistance registration options.",
+      "keywords": [
+        "voter-registration",
+        "motor-voter"
+      ],
+      "source": "https://www.justice.gov/crt/national-voter-registration-act-nvra"
+    },
+    {
+      "seedId": "b15deedf-94a5-5864-a5f4-3d8f978b849d",
+      "category": "civics",
+      "navigationKeyword1": "elections",
+      "navigationKeyword2": "voting",
+      "question": "The Voting Rights Act of 1965 aimed chiefly to stop racial discrimination in voting by doing what?",
+      "correctAnswer": "using federal oversight and legal tools against discriminatory practices",
+      "incorrectAnswers": [
+        "abolishing the Electoral College",
+        "creating a national ID card",
+        "setting a single Election Day for every state"
+      ],
+      "explanation": "The act targeted literacy tests, poll taxes, and similar barriers and authorized federal enforcement where discrimination persisted.",
+      "keywords": [
+        "voting-rights-act",
+        "civil-rights"
+      ],
+      "source": "https://www.justice.gov/crt/about-voting-section"
+    },
+    {
+      "seedId": "c08b3b42-db05-5659-90b9-25a29b2e609d",
+      "category": "civics",
+      "navigationKeyword1": "elections",
+      "navigationKeyword2": "voting",
+      "question": "Under the Help America Vote Act, first-time voters who register by mail may need to show ID when voting if what applies?",
+      "correctAnswer": "they have not previously voted in that jurisdiction",
+      "incorrectAnswers": [
+        "they are under age 30",
+        "they registered in person only",
+        "they vote by mail in every state"
+      ],
+      "explanation": "HAVA sets identification rules for certain first-time mail registrants; states may add other ID requirements within federal and state law.",
+      "keywords": [
+        "hava",
+        "voter-identification"
+      ],
+      "source": "https://www.law.cornell.edu/uscode/text/52/21083"
+    },
+    {
+      "seedId": "9e6f2ede-e7b5-5691-90b9-aa7c7f661cc7",
+      "category": "civics",
+      "navigationKeyword1": "elections",
+      "navigationKeyword2": "voting",
+      "question": "Which amendment set the minimum voting age at 18 for national, state, and local elections?",
+      "correctAnswer": "the 26th Amendment",
+      "incorrectAnswers": [
+        "the 19th Amendment",
+        "the 15th Amendment",
+        "the 24th Amendment"
+      ],
+      "explanation": "Ratified in 1971, the 26th Amendment guarantees citizens 18 and older the right to vote.",
+      "keywords": [
+        "voting-age",
+        "constitutional-amendments"
+      ],
+      "source": "https://www.archives.gov/founding-docs/amendments-11-27"
+    }
+  ]
+}

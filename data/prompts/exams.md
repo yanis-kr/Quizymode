@@ -13,7 +13,7 @@ Task:
 
 Create or continue seed files for the `exams` category in:
 
-- `data/bulk-seed/exams`
+- `data/seed-source/items/exams`
 
 Filename format:
 

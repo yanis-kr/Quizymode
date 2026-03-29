@@ -23,39 +23,9 @@ internal sealed class DatabaseSeederHostedService(
     IOptions<TaxonomyOptions> taxonomyOptions) : IHostedService
 {
     private static readonly Guid HomeSampleCollectionId = new("8f9b8c14-8d30-4d94-9b20-4c7bb7f7f511");
-    private static readonly HomeSampleTriviaItemSeed[] HomeSampleTriviaItems =
-    [
-        new(
-            "What color is the \"black box\" recorder on most commercial airplanes?",
-            "Bright orange",
-            ["Black", "Silver", "Yellow"],
-            "Flight recorders are painted bright orange so they are easier to locate after an accident.",
-            ["aviation", "surprising-facts"]),
-        new(
-            "What animal's fingerprints are so close to humans that they can confuse crime-scene analysis?",
-            "Koalas",
-            ["Chimpanzees", "Dogs", "Otters"],
-            "Koala fingerprints have ridge patterns so similar to human fingerprints that they have reportedly confused investigators.",
-            ["animals", "weird"]),
-        new(
-            "Which planet has a day longer than its year?",
-            "Venus",
-            ["Mars", "Mercury", "Neptune"],
-            "Venus rotates extremely slowly, so one full spin takes longer than one trip around the Sun.",
-            ["space", "planets"]),
-        new(
-            "What is the national animal of Scotland?",
-            "The unicorn",
-            ["The stag", "The lion", "The golden eagle"],
-            "Scotland's national animal is the unicorn, chosen for its symbolism in Celtic mythology and heraldry.",
-            ["countries", "symbols"]),
-        new(
-            "What everyday food never really spoils when stored properly?",
-            "Honey",
-            ["Brown rice", "Milk chocolate", "Sea salt crackers"],
-            "Honey's low moisture and natural chemistry make it famously long-lasting, and edible ancient honey has even been found in tombs.",
-            ["food", "fun-facts"]),
-    ];
+    private const string SeedItemsFolderName = "items";
+    private const string SampleCollectionsFolderName = "sample-collections";
+    private const string HomeSampleCollectionFileName = "home-sample.json";
 
     private readonly ILogger<DatabaseSeederHostedService> _logger = logger;
     private readonly IServiceProvider _serviceProvider = serviceProvider;
@@ -81,6 +51,12 @@ internal sealed class DatabaseSeederHostedService(
             // Seed categories and navigation keywords (always run, idempotent)
             await SeedCategoriesAndNavigationAsync(db, cancellationToken);
 
+            string? resolvedSeedRoot = null;
+            if (!string.IsNullOrWhiteSpace(_seedOptions.Path))
+            {
+                resolvedSeedRoot = ResolveSeedPath(_seedOptions.Path);
+            }
+
             // Seed items if empty
             bool hasItems = await db.Items.AnyAsync(cancellationToken);
             if (!hasItems)
@@ -93,20 +69,26 @@ internal sealed class DatabaseSeederHostedService(
                     return;
                 }
 
-                string? resolvedSeedPath = ResolveSeedPath(_seedOptions.Path);
-                if (resolvedSeedPath is null)
+                if (resolvedSeedRoot is null)
                 {
                     _logger.LogWarning("Seed path {SeedPath} does not exist. Skipping database seeding.", _seedOptions.Path);
                     return;
                 }
-                
-                _logger.LogInformation("Using seed path {SeedPath}", resolvedSeedPath);
+
+                string? resolvedItemsPath = ResolveSeedItemsPath(resolvedSeedRoot);
+                if (resolvedItemsPath is null)
+                {
+                    _logger.LogWarning("Seed items path does not exist under {SeedPath}. Skipping database seeding.", resolvedSeedRoot);
+                    return;
+                }
+
+                _logger.LogInformation("Using seed items path {SeedItemsPath}", resolvedItemsPath);
 
                 // Create a seeder user context (admin privileges)
                 SeederUserContext seederUserContext = new SeederUserContext();
 
-                // Load all JSON files from the minimal directory only
-                string[] allFiles = Directory.GetFiles(resolvedSeedPath, "*.json");
+                string[] allFiles = Directory.GetFiles(resolvedItemsPath, "*.json", SearchOption.AllDirectories);
+                Array.Sort(allFiles, StringComparer.OrdinalIgnoreCase);
 
                 int totalItemsProcessed = 0;
                 int totalItemsCreated = 0;
@@ -204,6 +186,12 @@ internal sealed class DatabaseSeederHostedService(
                         {
                             totalItemsProcessed += result.Value.TotalRequested;
                             totalItemsCreated += result.Value.CreatedCount;
+
+                            await ApplySeedIdsToCreatedItemsAsync(
+                                db,
+                                items,
+                                result.Value,
+                                cancellationToken);
                             
                             _logger.LogInformation(
                                 "Processed {FileName}: {Created} created, {Duplicates} duplicates, {Failed} failed",
@@ -257,6 +245,7 @@ internal sealed class DatabaseSeederHostedService(
                 itemCategoryResolver,
                 taxonomyRegistry,
                 auditService,
+                resolvedSeedRoot,
                 cancellationToken);
         }
         catch (Exception ex)
@@ -362,34 +351,29 @@ internal sealed class DatabaseSeederHostedService(
         ITaxonomyItemCategoryResolver itemCategoryResolver,
         ITaxonomyRegistry taxonomyRegistry,
         IAuditService auditService,
+        string? resolvedSeedRoot,
         CancellationToken cancellationToken)
     {
-        List<Guid> sampleItemIds = await EnsureHomeSampleTriviaItemsAsync(
-            db,
-            itemCategoryResolver,
-            taxonomyRegistry,
-            auditService,
+        HomeSampleCollectionSeedData seedData = await LoadHomeSampleCollectionSeedDataAsync(
+            resolvedSeedRoot,
             cancellationToken);
+        List<Guid> sampleItemIds = await ResolveHomeSampleItemIdsAsync(db, seedData, cancellationToken);
         if (sampleItemIds.Count == 0)
         {
             _logger.LogWarning("No public items available for the homepage sample collection. Skipping collection seed.");
             return;
         }
 
-        const string sampleCollectionName = "Fun Trivia Facts";
-        const string sampleCollectionDescription =
-            "A public five-item trivia sampler with surprising facts and easy conversation-starter questions.";
-
         Collection? collection = await db.Collections
-            .FirstOrDefaultAsync(c => c.Id == HomeSampleCollectionId, cancellationToken);
+            .FirstOrDefaultAsync(c => c.Id == seedData.Id, cancellationToken);
 
         if (collection is null)
         {
             collection = new Collection
             {
-                Id = HomeSampleCollectionId,
-                Name = sampleCollectionName,
-                Description = sampleCollectionDescription,
+                Id = seedData.Id,
+                Name = seedData.Name,
+                Description = seedData.Description,
                 CreatedBy = "seeder",
                 CreatedAt = DateTime.UtcNow,
                 IsPublic = true,
@@ -398,14 +382,14 @@ internal sealed class DatabaseSeederHostedService(
         }
         else
         {
-            collection.Name = sampleCollectionName;
-            collection.Description = sampleCollectionDescription;
+            collection.Name = seedData.Name;
+            collection.Description = seedData.Description;
             collection.IsPublic = true;
             collection.UpdatedAt = DateTime.UtcNow;
         }
 
         List<CollectionItem> existingLinks = await db.CollectionItems
-            .Where(ci => ci.CollectionId == HomeSampleCollectionId)
+            .Where(ci => ci.CollectionId == seedData.Id)
             .ToListAsync(cancellationToken);
 
         HashSet<Guid> desiredItemIds = sampleItemIds.ToHashSet();
@@ -426,7 +410,7 @@ internal sealed class DatabaseSeederHostedService(
             .Where(itemId => !existingItemIds.Contains(itemId))
             .Select(itemId => new CollectionItem
             {
-                CollectionId = HomeSampleCollectionId,
+                CollectionId = seedData.Id,
                 ItemId = itemId,
                 AddedAt = DateTime.UtcNow,
             })
@@ -441,67 +425,96 @@ internal sealed class DatabaseSeederHostedService(
 
         _logger.LogInformation(
             "Ensured homepage sample collection {CollectionId} with {ItemCount} items.",
-            HomeSampleCollectionId,
+            seedData.Id,
             sampleItemIds.Count);
     }
 
-    private async Task<List<Guid>> EnsureHomeSampleTriviaItemsAsync(
+    private async Task<List<Guid>> ResolveHomeSampleItemIdsAsync(
         ApplicationDbContext db,
-        ITaxonomyItemCategoryResolver itemCategoryResolver,
-        ITaxonomyRegistry taxonomyRegistry,
-        IAuditService auditService,
+        HomeSampleCollectionSeedData seedData,
         CancellationToken cancellationToken)
     {
-        AddItemsBulk.Request request = new(
-            IsPrivate: false,
-            Category: "trivia",
-            Keyword1: "general",
-            Keyword2: "mixed",
-            Keywords: [],
-            Items: HomeSampleTriviaItems
-                .Select(item => new AddItemsBulk.ItemRequest(
-                    Question: item.Question,
-                    CorrectAnswer: item.CorrectAnswer,
-                    IncorrectAnswers: item.IncorrectAnswers,
-                    Explanation: item.Explanation,
-                    Keywords: item.Keywords
-                        .Select(keyword => new AddItemsBulk.KeywordRequest(keyword, false))
-                        .ToList(),
-                    Source: "seed: home sample collection"))
-                .ToList());
-
-        Result<AddItemsBulk.Response> result = await AddItemsBulkHandler.HandleAsync(
-            request,
-            db,
-            _simHashService,
-            new SeederUserContext(),
-            itemCategoryResolver,
-            taxonomyRegistry,
-            auditService,
-            cancellationToken);
-
-        if (result.IsFailure)
-        {
-            _logger.LogWarning(
-                "Failed to seed homepage trivia items: {Error}",
-                result.Error?.Description ?? "Unknown error");
-        }
-
-        List<string> questions = HomeSampleTriviaItems
-            .Select(item => item.Question)
-            .ToList();
-
-        return await db.Items
+        IQueryable<Item> query = db.Items
             .AsNoTracking()
             .Where(i => !i.IsPrivate)
             .Where(i => i.CreatedBy == "seeder")
-            .Where(i => i.Category != null && i.Category.Name == "trivia")
-            .Where(i => i.NavigationKeyword1 != null && i.NavigationKeyword1.Name == "general")
-            .Where(i => i.NavigationKeyword2 != null && i.NavigationKeyword2.Name == "mixed")
-            .Where(i => questions.Contains(i.Question))
+            .Where(i => i.Category != null && i.Category.Name == "trivia");
+
+        if (seedData.ItemSeedIds.Count > 0)
+        {
+            query = query.Where(i => i.SeedId.HasValue && seedData.ItemSeedIds.Contains(i.SeedId.Value));
+        }
+        else if (seedData.ItemQuestions.Count > 0)
+        {
+            query = query.Where(i => seedData.ItemQuestions.Contains(i.Question));
+        }
+        else
+        {
+            return [];
+        }
+
+        List<Item> items = await query
             .OrderBy(i => i.CreatedAt)
-            .Select(i => i.Id)
             .ToListAsync(cancellationToken);
+
+        if (items.Count < seedData.ItemSeedIds.Count && seedData.ItemQuestions.Count > 0)
+        {
+            items = await db.Items
+                .AsNoTracking()
+                .Where(i => !i.IsPrivate)
+                .Where(i => i.CreatedBy == "seeder")
+                .Where(i => i.Category != null && i.Category.Name == "trivia")
+                .Where(i => seedData.ItemQuestions.Contains(i.Question))
+                .OrderBy(i => i.CreatedAt)
+                .ToListAsync(cancellationToken);
+        }
+
+        return items
+            .Select(i => i.Id)
+            .Distinct()
+            .ToList();
+    }
+
+    private async Task<HomeSampleCollectionSeedData> LoadHomeSampleCollectionSeedDataAsync(
+        string? resolvedSeedRoot,
+        CancellationToken cancellationToken)
+    {
+        string? collectionPath = ResolveHomeSampleCollectionPath(resolvedSeedRoot);
+        if (collectionPath is null)
+        {
+            return BuildFallbackHomeSampleCollectionSeedData();
+        }
+
+        string raw = await File.ReadAllTextAsync(collectionPath, cancellationToken);
+        HomeSampleCollectionSeedData? data = JsonSerializer.Deserialize<HomeSampleCollectionSeedData>(
+            raw,
+            new JsonSerializerOptions { PropertyNameCaseInsensitive = true });
+
+        if (data is null)
+        {
+            _logger.LogWarning("Home sample collection file {CollectionPath} was empty. Falling back to defaults.", collectionPath);
+            return BuildFallbackHomeSampleCollectionSeedData();
+        }
+
+        return data;
+    }
+
+    private static HomeSampleCollectionSeedData BuildFallbackHomeSampleCollectionSeedData()
+    {
+        return new HomeSampleCollectionSeedData
+        {
+            Id = HomeSampleCollectionId,
+            Name = "Fun Trivia Facts",
+            Description = "A public five-item trivia sampler with surprising facts and easy conversation-starter questions.",
+            ItemQuestions =
+            [
+                "What color is the \"black box\" recorder on most commercial airplanes?",
+                "What animal's fingerprints are so close to humans that they can confuse crime-scene analysis?",
+                "Which planet has a day longer than its year?",
+                "What is the national animal of Scotland?",
+                "What everyday food never really spoils when stored properly?"
+            ]
+        };
     }
 
     private async Task SeedCategoriesAndNavigationAsync(ApplicationDbContext db, CancellationToken cancellationToken)
@@ -544,11 +557,94 @@ internal sealed class DatabaseSeederHostedService(
 
         _logger.LogInformation("Taxonomy seed SQL applied.");
     }
+
+    private static string? ResolveSeedItemsPath(string resolvedSeedRoot)
+    {
+        string candidate = Path.Combine(resolvedSeedRoot, SeedItemsFolderName);
+        if (Directory.Exists(candidate))
+        {
+            return candidate;
+        }
+
+        return Directory.Exists(resolvedSeedRoot) ? resolvedSeedRoot : null;
+    }
+
+    private static string? ResolveHomeSampleCollectionPath(string? resolvedSeedRoot)
+    {
+        if (string.IsNullOrWhiteSpace(resolvedSeedRoot))
+        {
+            return null;
+        }
+
+        string candidate = Path.Combine(
+            resolvedSeedRoot,
+            SampleCollectionsFolderName,
+            HomeSampleCollectionFileName);
+
+        return File.Exists(candidate) ? candidate : null;
+    }
+
+    private async Task ApplySeedIdsToCreatedItemsAsync(
+        ApplicationDbContext db,
+        List<BulkItemSeedData> sourceItems,
+        AddItemsBulk.Response response,
+        CancellationToken cancellationToken)
+    {
+        if (response.CreatedItemIds is null || response.CreatedItemIds.Count == 0)
+        {
+            return;
+        }
+
+        List<Guid?> sourceSeedIds = sourceItems.Select(item => item.SeedId).ToList();
+        if (response.CreatedItemIds.Count != sourceSeedIds.Count)
+        {
+            _logger.LogWarning(
+                "Skipping seedId assignment because created item count {CreatedCount} did not match source item count {SourceCount}.",
+                response.CreatedItemIds.Count,
+                sourceSeedIds.Count);
+            return;
+        }
+
+        List<Item> createdItems = await db.Items
+            .Where(item => response.CreatedItemIds.Contains(item.Id))
+            .ToListAsync(cancellationToken);
+
+        Dictionary<Guid, Item> itemById = createdItems.ToDictionary(item => item.Id);
+        bool changed = false;
+
+        for (int index = 0; index < response.CreatedItemIds.Count; index++)
+        {
+            Guid? seedId = sourceSeedIds[index];
+            if (!seedId.HasValue)
+            {
+                continue;
+            }
+
+            if (!itemById.TryGetValue(response.CreatedItemIds[index], out Item? item))
+            {
+                continue;
+            }
+
+            if (item.SeedId == seedId.Value)
+            {
+                continue;
+            }
+
+            item.SeedId = seedId.Value;
+            changed = true;
+        }
+
+        if (changed)
+        {
+            await db.SaveChangesAsync(cancellationToken);
+        }
+    }
 }
 
 // Seed data model for JSON deserialization (bulk format)
 internal sealed class BulkItemSeedData
 {
+    public Guid? SeedId { get; set; }
     public string Category { get; set; } = string.Empty;
     public string Question { get; set; } = string.Empty;
     public string CorrectAnswer { get; set; } = string.Empty;
@@ -572,9 +668,12 @@ internal sealed class SeederUserContext : IUserContext
     public bool IsAdmin => true;
 }
 
-internal sealed record HomeSampleTriviaItemSeed(
-    string Question,
-    string CorrectAnswer,
-    List<string> IncorrectAnswers,
-    string Explanation,
-    List<string> Keywords);
+internal sealed class HomeSampleCollectionSeedData
+{
+    public Guid Id { get; set; } = new("8f9b8c14-8d30-4d94-9b20-4c7bb7f7f511");
+    public string Name { get; set; } = "Fun Trivia Facts";
+    public string Description { get; set; } =
+        "A public five-item trivia sampler with surprising facts and easy conversation-starter questions.";
+    public List<Guid> ItemSeedIds { get; set; } = [];
+    public List<string> ItemQuestions { get; set; } = [];
+}

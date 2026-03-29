@@ -1,0 +1,54 @@
+[
+  {
+    "category": "languages",
+    "question": "What does the French expression 'C'est la vie' mean?",
+    "correctAnswer": "That's life",
+    "incorrectAnswers": [
+      "That's wonderful",
+      "That's terrible",
+      "That's impossible"
+    ],
+    "explanation": "C'est la vie is used to express acceptance of life's circumstances, both good and bad.",
+    "keywords": [
+      "philosophy"
+    ],
+    "source": "initial seed",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "conversation",
+    "seedId": "cd256cdf-96cc-548a-a7af-a029d8c84dd5"
+  },
+  {
+    "category": "languages",
+    "question": "What does 'Bon appétit' mean in French?",
+    "correctAnswer": "Enjoy your meal",
+    "incorrectAnswers": [
+      "Good morning",
+      "Goodbye",
+      "Thank you"
+    ],
+    "explanation": "Bon appétit is said before a meal to wish someone a good appetite.",
+    "keywords": [
+      "food",
+      "courtesy"
+    ],
+    "source": "initial seed",
+    "seedId": "7452287a-a89c-5544-9acb-9507e87129e1"
+  },
+  {
+    "category": "languages",
+    "question": "What does the French expression 'Ça marche' mean?",
+    "correctAnswer": "That works / OK",
+    "incorrectAnswers": [
+      "That's broken",
+      "That's expensive",
+      "That's difficult"
+    ],
+    "explanation": "Ça marche is a casual way to say something is acceptable or will work.",
+    "keywords": [
+      "agreement",
+      "casual"
+    ],
+    "source": "initial seed",
+    "seedId": "ce0bf8ff-d5a8-5ab9-ae0a-51a8348db7e4"
+  }
+]

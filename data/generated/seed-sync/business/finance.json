@@ -1,0 +1,727 @@
+{
+  "schemaVersion": 1,
+  "seedSet": "core-public-items",
+  "deltaPreviewLimit": 200,
+  "items": [
+    {
+      "seedId": "5babed28-65f8-5a92-b4a6-57175907c742",
+      "category": "business",
+      "navigationKeyword1": "finance",
+      "navigationKeyword2": "banking",
+      "question": "In a typical amortizing loan, what happens over time to each fixed payment?",
+      "correctAnswer": "The interest portion generally goes down and the principal portion goes up as the balance is repaid.",
+      "incorrectAnswers": [
+        "The interest portion goes up because the balance grows.",
+        "Principal stays the same amount every month.",
+        "Interest is removed entirely after the first payment."
+      ],
+      "explanation": "Because interest is calculated on the remaining balance, early payments include more interest and later payments include more principal.",
+      "keywords": [
+        "amortization",
+        "loan-payments",
+        "principal-vs-interest"
+      ],
+      "source": "https://www.federalreserve.gov/consumerinfo/repay-loans.html"
+    },
+    {
+      "seedId": "5f6db95a-80fc-5114-a0dd-f0b531f89e33",
+      "category": "business",
+      "navigationKeyword1": "finance",
+      "navigationKeyword2": "banking",
+      "question": "What does an interest rate spread usually mean in banking?",
+      "correctAnswer": "The difference between what the bank earns on assets (like loans) and what it pays on liabilities (like deposits).",
+      "incorrectAnswers": [
+        "The difference between the bank\u2019s revenue and its net profit.",
+        "The difference between a loan\u2019s principal and its interest rate.",
+        "The difference between two currencies\u2019 exchange rates."
+      ],
+      "explanation": "Spreads help describe how much more the bank earns than it pays for funding, which matters for profitability.",
+      "keywords": [
+        "interest-rate-spread",
+        "bank-margins",
+        "profitability"
+      ],
+      "source": "https://www.investopedia.com/terms/i/interestratespread.asp"
+    },
+    {
+      "seedId": "dc2b621d-4dbf-59ae-99f1-7d212df37cb2",
+      "category": "business",
+      "navigationKeyword1": "finance",
+      "navigationKeyword2": "banking",
+      "question": "What is FDIC deposit insurance designed to protect?",
+      "correctAnswer": "Depositors against the failure of an insured bank, up to the FDIC coverage limit.",
+      "incorrectAnswers": [
+        "Stock prices of bank-owned companies.",
+        "Losses on investments like bond ETFs that are held at the brokerage level.",
+        "Your credit score if you miss loan payments."
+      ],
+      "explanation": "FDIC coverage applies to eligible deposits at an insured bank and is meant to reduce losses when the bank fails.",
+      "keywords": [
+        "fdic",
+        "bank-failure",
+        "deposit-insurance"
+      ],
+      "source": "https://www.fdic.gov/resources/deposit-insurance/"
+    },
+    {
+      "seedId": "1f961c5f-af9b-5b6d-b52c-5c99bf650a41",
+      "category": "business",
+      "navigationKeyword1": "finance",
+      "navigationKeyword2": "banking",
+      "question": "What is the common per-depositor FDIC coverage limit (for most accounts) at an insured bank?",
+      "correctAnswer": "Up to $250,000 per depositor, per insured bank.",
+      "incorrectAnswers": [
+        "Up to $25,000 per depositor, per insured bank.",
+        "Up to $1,000,000 per depositor across all banks.",
+        "Unlimited coverage as long as the bank is federally chartered."
+      ],
+      "explanation": "For most deposit accounts, FDIC\u2019s standard coverage limit is $250,000 per depositor per insured bank.",
+      "keywords": [
+        "fdic-limit",
+        "coverage",
+        "deposits"
+      ],
+      "source": "https://www.fdic.gov/resources/deposit-insurance/estimated-insurance-coverage/"
+    },
+    {
+      "seedId": "dd6686ae-4743-539b-aa88-e8086f9a71a9",
+      "category": "business",
+      "navigationKeyword1": "finance",
+      "navigationKeyword2": "banking",
+      "question": "What is the federal funds rate mainly about?",
+      "correctAnswer": "The interest rate banks charge each other for overnight loans of reserves.",
+      "incorrectAnswers": [
+        "The interest rate the federal government charges households for student loans.",
+        "The interest rate set for all credit cards in the U.S. regardless of the lender.",
+        "The inflation rate measured by the Consumer Price Index."
+      ],
+      "explanation": "The federal funds rate is tied to overnight lending among banks and reserve balances, which can influence other interest rates.",
+      "keywords": [
+        "federal-funds-rate",
+        "reserves",
+        "interest-rates"
+      ],
+      "source": "https://www.federalreserve.gov/monetarypolicy/fomc.htm"
+    },
+    {
+      "seedId": "89100d19-e8f0-56d5-be66-eb058b99325d",
+      "category": "business",
+      "navigationKeyword1": "finance",
+      "navigationKeyword2": "banking",
+      "question": "When a bank makes a new loan, what often happens to the money supply process (in simplified terms)?",
+      "correctAnswer": "The loan creates a deposit, which increases the bank-created deposit money in the system.",
+      "incorrectAnswers": [
+        "The bank must withdraw an equal amount of cash from the deposit accounts first, so deposits never rise.",
+        "The loan only changes the bank\u2019s stock price and leaves deposits unchanged.",
+        "The loan guarantees that inflation can\u2019t change because deposits are fixed."
+      ],
+      "explanation": "In a simplified view of banking, loans are funded by creating a deposit that can be used for payments, increasing deposit money.",
+      "keywords": [
+        "bank-lending",
+        "deposit-money",
+        "money-creation"
+      ],
+      "source": "https://www.federalreserve.gov/faqs/money_12845.htm"
+    },
+    {
+      "seedId": "05b2aba3-236a-5cfc-93d0-867747b00fd1",
+      "category": "business",
+      "navigationKeyword1": "finance",
+      "navigationKeyword2": "corporate-finance",
+      "question": "If a company raises new capital, what is a key tradeoff between issuing equity and taking on debt?",
+      "correctAnswer": "Debt adds fixed repayment and interest obligations, while equity typically dilutes existing shareholders but has no required interest or principal payments.",
+      "incorrectAnswers": [
+        "Debt always avoids dilution; equity always requires repayment with interest.",
+        "Equity guarantees higher cash flow stability; debt always removes bankruptcy risk.",
+        "Equity creates mandatory interest payments; debt converts ownership into shares automatically."
+      ],
+      "explanation": "Debt holders expect interest and principal payments, while equity holders share ownership upside and accept dilution rather than fixed repayment terms.",
+      "keywords": [
+        "capital-structure",
+        "debt-vs-equity",
+        "dilution"
+      ],
+      "source": "https://www.investopedia.com/terms/c/capitalstructure.asp"
+    },
+    {
+      "seedId": "3169c38d-0ae1-59b4-844f-d1e9c18a1263",
+      "category": "business",
+      "navigationKeyword1": "finance",
+      "navigationKeyword2": "corporate-finance",
+      "question": "In corporate finance, what does WACC stand for and what is it used for?",
+      "correctAnswer": "Weighted Average Cost of Capital; it\u2019s the discount rate used in discounted cash flow (DCF) style valuation.",
+      "incorrectAnswers": [
+        "Workforce Average Compensation Cost; it\u2019s used to discount inventory costs.",
+        "Weighted Annual Contract Charge; it\u2019s a fee charged for issuing bonds.",
+        "Whole-Asset Cash Cycle; it measures how quickly the firm collects receivables."
+      ],
+      "explanation": "WACC combines the cost of equity and the cost of debt into a single weighted rate that discount models use to value future cash flows.",
+      "keywords": [
+        "wacc",
+        "discount-rate",
+        "valuation"
+      ],
+      "source": "https://www.investopedia.com/terms/w/wacc.asp"
+    },
+    {
+      "seedId": "6e4db1f8-364c-5e23-88cf-81d27fa4c108",
+      "category": "business",
+      "navigationKeyword1": "finance",
+      "navigationKeyword2": "corporate-finance",
+      "question": "In valuation, what does a positive net present value (NPV) imply about an investment?",
+      "correctAnswer": "The investment\u2019s discounted future cash flows exceed the initial cost, suggesting value creation under the assumed discount rate.",
+      "incorrectAnswers": [
+        "The investment is guaranteed to produce profits regardless of future cash flows.",
+        "The investment\u2019s cash flows are equal to the initial cost exactly.",
+        "The discount rate is too high, so NPV must be negative by definition."
+      ],
+      "explanation": "NPV discounts expected cash flows and subtracts the initial outlay; if the result is positive, the discounted benefits outweigh discounted costs.",
+      "keywords": [
+        "npv",
+        "discounting",
+        "value-creation"
+      ],
+      "source": "https://corporatefinanceinstitute.com/resources/valuation/npv-net-present-value/"
+    },
+    {
+      "seedId": "7fd689a3-2c17-502e-9c97-712041e2ee04",
+      "category": "business",
+      "navigationKeyword1": "finance",
+      "navigationKeyword2": "corporate-finance",
+      "question": "What does free cash flow (FCF) generally represent?",
+      "correctAnswer": "Cash available after operating activities and after capital expenditures (capex).",
+      "incorrectAnswers": [
+        "Net income after dividends, before accounting for any capex.",
+        "Total cash inflows from financing only.",
+        "Book value of the firm\u2019s assets reported on the balance sheet."
+      ],
+      "explanation": "FCF is commonly defined as cash from operations minus capex, representing cash the business can use for debt paydown, dividends, or growth.",
+      "keywords": [
+        "free-cash-flow",
+        "fcf",
+        "capex"
+      ],
+      "source": "https://www.investopedia.com/terms/f/freecashflow.asp"
+    },
+    {
+      "seedId": "375277cb-dec0-594d-8b9b-91460963f0ff",
+      "category": "business",
+      "navigationKeyword1": "finance",
+      "navigationKeyword2": "corporate-finance",
+      "question": "What is EBITDA intended to capture (and what does it exclude)?",
+      "correctAnswer": "Earnings Before Interest, Taxes, Depreciation, and Amortization; it excludes the impact of financing, taxes, and certain non-cash accounting items.",
+      "incorrectAnswers": [
+        "Earnings After Interest, Taxes, Depreciation, and Amortization; it excludes nothing.",
+        "Earnings Before Interest and Taxes only; depreciation and amortization are included.",
+        "Earnings Before Cash Dividends only; it excludes interest and taxes differently."
+      ],
+      "explanation": "EBITDA is a performance metric designed to focus on operating results by removing interest, taxes, and depreciation/amortization effects.",
+      "keywords": [
+        "ebitda",
+        "metrics",
+        "operating-performance"
+      ],
+      "source": "https://corporatefinanceinstitute.com/resources/accounting/ebitda/"
+    },
+    {
+      "seedId": "4fd7441a-edd7-5b31-8ee4-9eb15919b782",
+      "category": "business",
+      "navigationKeyword1": "finance",
+      "navigationKeyword2": "corporate-finance",
+      "question": "What is an enterprise value (EV) typically trying to measure compared with market capitalization?",
+      "correctAnswer": "EV approximates the value of the firm\u2019s operations by reflecting both equity value and debt (adjusting for cash).",
+      "incorrectAnswers": [
+        "EV only equals the value of stock and never considers debt.",
+        "EV measures a firm\u2019s total payroll cost.",
+        "EV is the number of outstanding shares multiplied by the dividend per share only."
+      ],
+      "explanation": "EV is often used in multiples because it better represents the total value of the business than equity market cap alone.",
+      "keywords": [
+        "enterprise-value",
+        "multiples",
+        "valuation-basis"
+      ],
+      "source": "https://corporatefinanceinstitute.com/resources/valuation/enterprise-value-ev/"
+    },
+    {
+      "seedId": "c8d2521a-538b-50c2-a2c7-9e016d29b618",
+      "category": "business",
+      "navigationKeyword1": "finance",
+      "navigationKeyword2": "investing",
+      "question": "In portfolio terms, what is \u201crebalancing\u201d usually meant to fix?",
+      "correctAnswer": "That asset weights drift away from your intended mix over time.",
+      "incorrectAnswers": [
+        "It converts your investments into cash automatically at market peaks.",
+        "It prevents any price movement from happening.",
+        "It turns all holdings into insured deposits."
+      ],
+      "explanation": "Rebalancing restores the target allocation by buying what has become underweight and selling what has become overweight, based on your plan.",
+      "keywords": [
+        "rebalancing",
+        "asset-allocation",
+        "risk-control"
+      ],
+      "source": "https://www.finra.org/investors/investing-basics/portfolio-rebalancing"
+    },
+    {
+      "seedId": "df4228d8-2273-572c-9c67-f77951edf74f",
+      "category": "business",
+      "navigationKeyword1": "finance",
+      "navigationKeyword2": "investing",
+      "question": "What does an expected risk-return tradeoff generally mean?",
+      "correctAnswer": "Higher potential returns usually come with greater uncertainty or volatility.",
+      "incorrectAnswers": [
+        "Higher returns are always possible without any extra volatility.",
+        "Risk and return are unrelated in markets.",
+        "Lower-risk choices always provide the highest expected return."
+      ],
+      "explanation": "Many investors use the idea that chasing higher returns typically requires accepting more variability in outcomes.",
+      "keywords": [
+        "risk-return",
+        "volatility",
+        "expected-returns"
+      ],
+      "source": "https://www.investopedia.com/terms/r/riskreturntradeoff.asp"
+    },
+    {
+      "seedId": "a3ba5422-4258-5af9-a327-8d9db9785dae",
+      "category": "business",
+      "navigationKeyword1": "finance",
+      "navigationKeyword2": "investing",
+      "question": "What is an index fund designed to do?",
+      "correctAnswer": "Track the performance of a specific market index (or a close representation of it).",
+      "incorrectAnswers": [
+        "Act like an actively managed fund that targets a specific stock each week.",
+        "Guarantee a fixed return regardless of market moves.",
+        "Move your allocation each day to maximize short-term gains."
+      ],
+      "explanation": "Index funds are built to mirror an index\u2019s holdings and performance rather than trying to beat it through frequent trading.",
+      "keywords": [
+        "index-funds",
+        "passive-investing",
+        "indexing"
+      ],
+      "source": "https://www.sec.gov/investor/pubs/index-mutualfunds.html"
+    },
+    {
+      "seedId": "350da6d4-2951-547f-992b-b3f478edcd63",
+      "category": "business",
+      "navigationKeyword1": "finance",
+      "navigationKeyword2": "investing",
+      "question": "What is the difference between a bond\u2019s coupon rate and its yield?",
+      "correctAnswer": "The coupon rate is the bond\u2019s fixed interest rate on face value, while yield reflects the return based on the bond\u2019s current price.",
+      "incorrectAnswers": [
+        "The coupon rate and yield are always identical for every bond.",
+        "Coupon rate is the return today, and yield is the promised future rate on face value.",
+        "Yield ignores price entirely and only depends on face value."
+      ],
+      "explanation": "Coupon rate is set at issuance, but yield changes with the bond\u2019s price in the market.",
+      "keywords": [
+        "bond-yield",
+        "coupon-rate",
+        "fixed-income"
+      ],
+      "source": "https://www.sec.gov/education/capital-markets/bonds"
+    },
+    {
+      "seedId": "91e04231-c07b-5813-b139-745b9e2c4716",
+      "category": "business",
+      "navigationKeyword1": "finance",
+      "navigationKeyword2": "investing",
+      "question": "What is the main goal of diversification in investing?",
+      "correctAnswer": "To reduce the impact of one investment doing poorly on the overall portfolio.",
+      "incorrectAnswers": [
+        "To guarantee profits even if markets decline.",
+        "To eliminate all risk so returns cannot vary.",
+        "To concentrate your money into one asset to maximize upside."
+      ],
+      "explanation": "Diversification spreads risk across different assets so one underperformer is less likely to dominate results.",
+      "keywords": [
+        "diversification",
+        "risk",
+        "portfolio-management"
+      ],
+      "source": "https://www.investor.gov/introduction-investing/investing-basics/glossary/diversification"
+    },
+    {
+      "seedId": "4b3256fd-6cff-570f-80da-897552d3d4ea",
+      "category": "business",
+      "navigationKeyword1": "finance",
+      "navigationKeyword2": "investing",
+      "question": "Why do bonds\u2019 price usually move when interest rates move?",
+      "correctAnswer": "Because the present value of bond payments changes when the market discount rate changes.",
+      "incorrectAnswers": [
+        "Because bond prices are fixed and never respond to rates.",
+        "Because bond prices only react to stock market moves.",
+        "Because bond coupons are recalculated every day based on new rates."
+      ],
+      "explanation": "When rates rise, future bond cash flows are discounted more heavily, which tends to lower bond prices (and vice versa).",
+      "keywords": [
+        "bonds",
+        "interest-rates",
+        "price-risk"
+      ],
+      "source": "https://www.investopedia.com/terms/d/duration.asp"
+    },
+    {
+      "seedId": "084db4a2-06c8-57af-a4fc-9fe8a4a8167c",
+      "category": "business",
+      "navigationKeyword1": "finance",
+      "navigationKeyword2": "personal-finance",
+      "question": "How is credit utilization typically calculated for revolving credit cards?",
+      "correctAnswer": "Your current balance divided by your total credit limit.",
+      "incorrectAnswers": [
+        "Your balance divided by your monthly income.",
+        "Your total credit limit divided by your current balance.",
+        "Your balance divided by the number of cards you own."
+      ],
+      "explanation": "Credit utilization is usually expressed as the fraction of your available revolving credit that you\u2019re using at a given time (balance \u00f7 credit limit).",
+      "keywords": [
+        "credit-scores",
+        "utilization",
+        "revolving-credit"
+      ],
+      "source": "https://www.investopedia.com/terms/c/credit-utilization-rate.asp"
+    },
+    {
+      "seedId": "32c72d86-30ce-54fc-b7a2-01ae090d843b",
+      "category": "business",
+      "navigationKeyword1": "finance",
+      "navigationKeyword2": "personal-finance",
+      "question": "In a loan payment, what is the difference between principal and interest?",
+      "correctAnswer": "Principal is the amount you borrowed; interest is the charge for borrowing it.",
+      "incorrectAnswers": [
+        "Principal is the finance fee; interest is the amount you borrowed back.",
+        "Principal is always fixed in every payment; interest is always zero.",
+        "Principal is the credit limit; interest is the credit score impact."
+      ],
+      "explanation": "Principal is the underlying loan balance, while interest is the cost of using the borrowed money.",
+      "keywords": [
+        "loans",
+        "principal",
+        "interest"
+      ],
+      "source": "https://www.federalreserve.gov/consumerscommunities/learnmore/loans-and-debt.htm"
+    },
+    {
+      "seedId": "cdd1c600-c31e-5018-9b01-ec4e2bcbe53f",
+      "category": "business",
+      "navigationKeyword1": "finance",
+      "navigationKeyword2": "personal-finance",
+      "question": "In credit and savings, what is the main difference between APR and APY?",
+      "correctAnswer": "APY accounts for compounding; APR is the annual rate without showing the compounding effect.",
+      "incorrectAnswers": [
+        "APR accounts for compounding; APY is the annual rate without compounding.",
+        "APY only includes fees; APR excludes any compounding.",
+        "APR is the total yearly cost; APY is only the interest for one month."
+      ],
+      "explanation": "APY reflects how often interest compounds over a year, while APR is an annualized rate that doesn\u2019t directly show the compounding schedule in its basic form.",
+      "keywords": [
+        "apr",
+        "apy",
+        "credit-cost"
+      ],
+      "source": "https://www.consumerfinance.gov/ask-cfpb/what-is-apr-and-how-is-it-different-from-apy-en-482/"
+    },
+    {
+      "seedId": "d83a5cd3-8fe3-5c30-a961-e7358844d203",
+      "category": "business",
+      "navigationKeyword1": "finance",
+      "navigationKeyword2": "personal-finance",
+      "question": "In personal investing, what does diversification aim to do?",
+      "correctAnswer": "Reduce the impact of a single investment performing poorly on your overall portfolio.",
+      "incorrectAnswers": [
+        "Guarantee profits no matter what happens in markets.",
+        "Concentrate risk into fewer assets to increase returns.",
+        "Eliminate market risk entirely by investing in any one asset class."
+      ],
+      "explanation": "Diversification spreads exposure across different assets, so one poor outcome is less likely to dominate your results.",
+      "keywords": [
+        "diversification",
+        "portfolio-risk",
+        "investing-basics"
+      ],
+      "source": "https://www.investor.gov/introduction-investing/investing-basics/glossary/diversification"
+    },
+    {
+      "seedId": "909d2244-a940-5a62-88cd-5cb9b4d331c9",
+      "category": "business",
+      "navigationKeyword1": "finance",
+      "navigationKeyword2": "personal-finance",
+      "question": "What is the practical purpose of an emergency fund?",
+      "correctAnswer": "To cover unexpected expenses without relying on high-interest debt.",
+      "incorrectAnswers": [
+        "To replace your retirement account every year.",
+        "To pay for planned purchases like vacations and furniture.",
+        "To earn profit from trading while you wait to spend."
+      ],
+      "explanation": "An emergency fund is meant to be readily available cash for surprises so you don\u2019t have to borrow at the worst time or at very high rates.",
+      "keywords": [
+        "emergency-savings",
+        "cash-buffer",
+        "debt-prevention"
+      ],
+      "source": "https://www.nerdwallet.com/article/banking/emergency-fund"
+    },
+    {
+      "seedId": "dd4ca519-046f-5a42-9fe2-8943fe307048",
+      "category": "business",
+      "navigationKeyword1": "finance",
+      "navigationKeyword2": "personal-finance",
+      "question": "Why does paying only the minimum on a credit card usually increase the total interest you pay?",
+      "correctAnswer": "Because a larger portion of each payment goes to interest, leaving the principal balance higher for longer.",
+      "incorrectAnswers": [
+        "Because the minimum payment eliminates interest charges going forward.",
+        "Because paying minimum automatically reduces your credit limit.",
+        "Because interest is only charged if you exceed your credit limit."
+      ],
+      "explanation": "With minimum payments, principal often comes down slowly, so interest continues to accrue on the remaining balance, increasing total cost.",
+      "keywords": [
+        "credit-cards",
+        "minimum-payment",
+        "interest"
+      ],
+      "source": "https://www.investor.gov/introduction-investing/investing-basics/investment-products/credit-cards"
+    },
+    {
+      "seedId": "05ecc3c0-e77b-570a-b4fe-f81082731df4",
+      "category": "business",
+      "navigationKeyword1": "finance",
+      "navigationKeyword2": "risk",
+      "question": "In finance, what does value at risk (VaR) generally describe?",
+      "correctAnswer": "A statistical estimate of the maximum loss over a given time horizon at a chosen confidence level.",
+      "incorrectAnswers": [
+        "The average expected return over the next quarter.",
+        "The guaranteed worst loss that must happen every time.",
+        "The total amount of capital a bank must hold to be fully safe."
+      ],
+      "explanation": "VaR is an estimate tied to a horizon and confidence level, not a guarantee that the loss can\u2019t be worse.",
+      "keywords": [
+        "var",
+        "risk-metrics",
+        "confidence-level"
+      ],
+      "source": "https://www.bis.org/publ/bcbs54.pdf"
+    },
+    {
+      "seedId": "b929e330-b63d-5975-9269-5b2694069a5f",
+      "category": "business",
+      "navigationKeyword1": "finance",
+      "navigationKeyword2": "risk",
+      "question": "What does standard deviation most commonly represent in a return series?",
+      "correctAnswer": "How spread out the returns are around an average (a measure of volatility).",
+      "incorrectAnswers": [
+        "The guaranteed minimum return you will always earn.",
+        "The total profit over the period in dollars.",
+        "The exact percentage chance that a loss must occur."
+      ],
+      "explanation": "Standard deviation measures volatility, which captures how much returns typically fluctuate.",
+      "keywords": [
+        "volatility",
+        "standard-deviation",
+        "statistics"
+      ],
+      "source": "https://www.investopedia.com/terms/s/standarddeviation.asp"
+    },
+    {
+      "seedId": "57bf5a16-bf55-5d3b-b526-60b3cd506f4d",
+      "category": "business",
+      "navigationKeyword1": "finance",
+      "navigationKeyword2": "risk",
+      "question": "What is diversification in risk management mainly trying to do?",
+      "correctAnswer": "Reduce the effect of one failing asset or factor on the overall portfolio.",
+      "incorrectAnswers": [
+        "Maximize exposure to the single biggest risk in your portfolio.",
+        "Ensure returns are fixed no matter what markets do.",
+        "Move all risk into a single asset so it can be managed more easily."
+      ],
+      "explanation": "Diversification spreads exposure across different assets, so one adverse outcome is less likely to dominate total results.",
+      "keywords": [
+        "diversification",
+        "risk-reduction",
+        "portfolio"
+      ],
+      "source": "https://www.investor.gov/introduction-investing/investing-basics/glossary/diversification"
+    },
+    {
+      "seedId": "d8e3a6f3-81cc-5111-8f2f-ddbfe814804f",
+      "category": "business",
+      "navigationKeyword1": "finance",
+      "navigationKeyword2": "risk",
+      "question": "What is liquidity risk, in plain terms?",
+      "correctAnswer": "The risk that you can\u2019t meet short-term cash needs without major losses or borrowing at extreme rates.",
+      "incorrectAnswers": [
+        "The risk that your accounting numbers won\u2019t balance at month-end.",
+        "The risk that a single investment turns out to be less popular.",
+        "The risk that a business model never grows."
+      ],
+      "explanation": "Liquidity risk is about access to cash and funding when it\u2019s needed, not about long-term business strategy alone.",
+      "keywords": [
+        "liquidity-risk",
+        "cash-flow",
+        "funding"
+      ],
+      "source": "https://www.imf.org/en/Topics/liquidity-risk"
+    },
+    {
+      "seedId": "7a886bab-2007-599d-9357-f9f92502128b",
+      "category": "business",
+      "navigationKeyword1": "finance",
+      "navigationKeyword2": "risk",
+      "question": "What\u2019s the difference between risk and uncertainty in decision-making?",
+      "correctAnswer": "Risk has probabilities you can estimate; uncertainty means you don\u2019t have reliable probability estimates.",
+      "incorrectAnswers": [
+        "Risk means you never lose money; uncertainty means you always lose money.",
+        "Risk and uncertainty are the same thing with different labels.",
+        "Uncertainty means probabilities are known with certainty."
+      ],
+      "explanation": "In common decision theory, risk is when outcomes can be described with probabilities, while uncertainty is when you can\u2019t reliably assign probabilities.",
+      "keywords": [
+        "uncertainty",
+        "probabilities",
+        "decision-making"
+      ],
+      "source": "https://www.investopedia.com/terms/u/uncertainty.asp"
+    },
+    {
+      "seedId": "d1e4433d-bce1-507b-a8ef-4a140a91b58a",
+      "category": "business",
+      "navigationKeyword1": "finance",
+      "navigationKeyword2": "risk",
+      "question": "Which pairing best matches a common risk category with its core meaning?",
+      "correctAnswer": "Market risk: losses from changes in market prices or rates.",
+      "incorrectAnswers": [
+        "Credit risk: losses only from operational mistakes during processing.",
+        "Liquidity risk: losses only from accounting policy choices.",
+        "Operational risk: losses solely caused by interest-rate changes."
+      ],
+      "explanation": "Market risk is linked to movements in market prices and rates; the other choices describe different risk types.",
+      "keywords": [
+        "market-risk",
+        "credit-risk",
+        "liquidity-risk"
+      ],
+      "source": "https://www.federalreserve.gov/supervisionreg/topics/market-risk.htm"
+    },
+    {
+      "seedId": "588e16b2-4033-576c-a098-471de741ed81",
+      "category": "business",
+      "navigationKeyword1": "finance",
+      "navigationKeyword2": "valuation",
+      "question": "In discounted cash flow (DCF) models, what is the discount rate used for?",
+      "correctAnswer": "To convert future cash flows into present value using a required return (rate for time value and risk).",
+      "incorrectAnswers": [
+        "To remove inflation effects from past financial statements.",
+        "To change operating expenses into future revenues.",
+        "To ensure the model always produces exactly zero NPV."
+      ],
+      "explanation": "Discounting reflects the time value of money and the risk the model assumes, so cash received later is worth less today.",
+      "keywords": [
+        "dcf",
+        "discount-rate",
+        "present-value"
+      ],
+      "source": "https://corporatefinanceinstitute.com/resources/valuation/discounted-cash-flow-dcf/"
+    },
+    {
+      "seedId": "e9105e70-13d0-5b0b-911e-d15fb7331ef6",
+      "category": "business",
+      "navigationKeyword1": "finance",
+      "navigationKeyword2": "valuation",
+      "question": "In practice, what does EV/EBITDA aim to normalize when valuing firms?",
+      "correctAnswer": "It uses enterprise value and earnings before interest, taxes, depreciation, and amortization to reduce differences from capital structure and certain accounting choices.",
+      "incorrectAnswers": [
+        "It eliminates all differences in business models between companies.",
+        "It replaces earnings with sales so it only reflects revenue growth.",
+        "It forces every firm to be valued using the same cash-flow timing."
+      ],
+      "explanation": "EV/EBITDA is designed to compare firms using a measure that\u2019s less affected by financing and taxes than net income.",
+      "keywords": [
+        "ev",
+        "ebitda",
+        "enterprise-multiples"
+      ],
+      "source": "https://corporatefinanceinstitute.com/resources/valuation/ev-ebitda-multiple/"
+    },
+    {
+      "seedId": "ce8b74c6-500b-5b06-be8e-a69d1c6e49a6",
+      "category": "business",
+      "navigationKeyword1": "finance",
+      "navigationKeyword2": "valuation",
+      "question": "What does a P/E (price-to-earnings) ratio compare?",
+      "correctAnswer": "A company\u2019s current share price to its earnings (often per share).",
+      "incorrectAnswers": [
+        "A company\u2019s share price to its dividends only.",
+        "A company\u2019s earnings to its balance sheet assets directly.",
+        "A company\u2019s market value to its payroll expense."
+      ],
+      "explanation": "P/E relates market price to earnings, which is why it\u2019s often used as a quick relative valuation multiple.",
+      "keywords": [
+        "pe-ratio",
+        "multiples",
+        "relative-valuation"
+      ],
+      "source": "https://corporatefinanceinstitute.com/resources/valuation/price-earnings-ratio-pe/"
+    },
+    {
+      "seedId": "2e8f84c1-d6e8-573f-81d3-36c69a5c1573",
+      "category": "business",
+      "navigationKeyword1": "finance",
+      "navigationKeyword2": "valuation",
+      "question": "What does \u201cintrinsic value\u201d mean in business valuation?",
+      "correctAnswer": "An estimate of what something is worth based on fundamentals (like expected future cash flows), not just its current market price.",
+      "incorrectAnswers": [
+        "The same as the current market price with no assumptions involved.",
+        "The value accountants record on the balance sheet only.",
+        "A guaranteed number that will always match the market."
+      ],
+      "explanation": "Intrinsic value is a fundamental estimate that depends on assumptions, such as growth, risk, and cash-flow timing.",
+      "keywords": [
+        "intrinsic-value",
+        "fundamentals",
+        "valuation-methods"
+      ],
+      "source": "https://www.investopedia.com/terms/i/intrinsicvalue.asp"
+    },
+    {
+      "seedId": "437d223b-9724-511c-b270-eda0812fd2f9",
+      "category": "business",
+      "navigationKeyword1": "finance",
+      "navigationKeyword2": "valuation",
+      "question": "What\u2019s the basic idea behind using multiples (like P/E) versus DCF?",
+      "correctAnswer": "Multiples infer value by comparing to other assets using ratios, while DCF estimates value from projected cash flows discounted to today.",
+      "incorrectAnswers": [
+        "Multiples always rely on discounted cash flows, and DCF never does.",
+        "Multiples ignore the concept of required returns, while DCF can\u2019t use it.",
+        "DCF is only for bonds, and multiples are only for bank accounts."
+      ],
+      "explanation": "Multiples are relative valuation methods; DCF is intrinsic valuation grounded in projected cash flows and discounting.",
+      "keywords": [
+        "multiples",
+        "dcf",
+        "relative-vs-intrinsic"
+      ],
+      "source": "https://aswathdamodaran.blogspot.com/"
+    },
+    {
+      "seedId": "787522b9-4cff-5c62-9ed1-5831e4f2cf7e",
+      "category": "business",
+      "navigationKeyword1": "finance",
+      "navigationKeyword2": "valuation",
+      "question": "Why do valuation models often include a margin of safety idea?",
+      "correctAnswer": "To account for uncertainty in assumptions and reduce the risk of overpaying.",
+      "incorrectAnswers": [
+        "To remove uncertainty so assumptions no longer matter.",
+        "To guarantee profits even if the business declines.",
+        "To ensure the valuation exactly matches the market today."
+      ],
+      "explanation": "Because estimates are uncertain, a margin of safety tries to build in a buffer against errors or unexpected outcomes.",
+      "keywords": [
+        "margin-of-safety",
+        "assumption-risk",
+        "valuation-discipline"
+      ],
+      "source": "https://www.investopedia.com/terms/m/marginofsafety.asp"
+    }
+  ]
+}

@@ -1,0 +1,235 @@
+{
+  "schemaVersion": 1,
+  "seedSet": "core-public-items",
+  "deltaPreviewLimit": 200,
+  "items": [
+    {
+      "seedId": "d2a92562-87d9-48c2-86da-ae77712f98c0",
+      "category": "science",
+      "navigationKeyword1": "lab-skills",
+      "navigationKeyword2": "safety",
+      "question": "How transport chemicals safely?",
+      "correctAnswer": "Use secondary containment and labeled containers",
+      "incorrectAnswers": [
+        "In open hands",
+        "In pockets",
+        "Unlabeled bottles"
+      ],
+      "explanation": "Spill trays help.",
+      "keywords": [
+        "transport",
+        "labeling"
+      ],
+      "source": "https://www.osha.gov/laboratories/chemical-hazards"
+    },
+    {
+      "seedId": "2a589bb3-98fd-4b1b-82bc-5423c782924b",
+      "category": "science",
+      "navigationKeyword1": "lab-skills",
+      "navigationKeyword2": "safety",
+      "question": "What is WHMIS/GHS pictogram purpose?",
+      "correctAnswer": "Quick hazard communication",
+      "incorrectAnswers": [
+        "Decoration",
+        "Marketing",
+        "Color preference"
+      ],
+      "explanation": "Understand flame, corrosion, health hazard symbols.",
+      "keywords": [
+        "ghs",
+        "labeling"
+      ],
+      "source": "https://www.osha.gov/hazard-communication"
+    },
+    {
+      "seedId": "7ad0a702-cdba-4ac2-a246-1be16f23791b",
+      "category": "science",
+      "navigationKeyword1": "lab-skills",
+      "navigationKeyword2": "safety",
+      "question": "What is biohazard precaution?",
+      "correctAnswer": "Assume unknowns are infectious; use barriers",
+      "incorrectAnswers": [
+        "Bare hands OK",
+        "Smell cultures to ID",
+        "Recycle sharps in trash"
+      ],
+      "explanation": "Sharps containers and autoclave protocols matter.",
+      "keywords": [
+        "biohazard",
+        "ppe"
+      ],
+      "source": "https://www.cdc.gov/labs/biosafety.html"
+    },
+    {
+      "seedId": "7f5679ab-6e50-437b-aaa6-1a31d4c62a7c",
+      "category": "science",
+      "navigationKeyword1": "lab-skills",
+      "navigationKeyword2": "safety",
+      "question": "What is emergency exit rule?",
+      "correctAnswer": "Know two exits and alarm locations",
+      "incorrectAnswers": [
+        "Ignore drills",
+        "Block doors",
+        "Hide chemicals in exit path"
+      ],
+      "explanation": "Preparedness saves lives.",
+      "keywords": [
+        "egress",
+        "safety"
+      ],
+      "source": "https://www.osha.gov/emergency-preparedness"
+    },
+    {
+      "seedId": "9ab48196-e631-4fd9-acd9-ffed6260a9b9",
+      "category": "science",
+      "navigationKeyword1": "lab-skills",
+      "navigationKeyword2": "safety",
+      "question": "What is fire extinguisher PASS?",
+      "correctAnswer": "Pull, Aim, Squeeze, Sweep",
+      "incorrectAnswers": [
+        "Pour water on all fires",
+        "Run only",
+        "Open windows only"
+      ],
+      "explanation": "Match extinguisher type to fire class.",
+      "keywords": [
+        "fire-safety",
+        "extinguisher"
+      ],
+      "source": "https://www.osha.gov/fire-safety"
+    },
+    {
+      "seedId": "eaf0fa09-f98e-4fab-beeb-849342355379",
+      "category": "science",
+      "navigationKeyword1": "lab-skills",
+      "navigationKeyword2": "safety",
+      "question": "What is fume hood for?",
+      "correctAnswer": "Contain and exhaust hazardous vapors",
+      "incorrectAnswers": [
+        "Store food",
+        "Dry gloves",
+        "Warm samples socially"
+      ],
+      "explanation": "Work at proper sash height.",
+      "keywords": [
+        "fume-hood",
+        "ventilation"
+      ],
+      "source": "https://www.osha.gov/laboratories/chemical-hazards"
+    },
+    {
+      "seedId": "16245c21-83d2-4e9c-9bef-fdcf575cf91d",
+      "category": "science",
+      "navigationKeyword1": "lab-skills",
+      "navigationKeyword2": "safety",
+      "question": "What is incompatible chemical storage rule?",
+      "correctAnswer": "Segregate oxidizers, acids, flammables appropriately",
+      "incorrectAnswers": [
+        "Mix everything to save space",
+        "Alphabetical only",
+        "By color only"
+      ],
+      "explanation": "Follow storage charts.",
+      "keywords": [
+        "storage",
+        "incompatibles"
+      ],
+      "source": "https://www.osha.gov/laboratories/chemical-hazards"
+    },
+    {
+      "seedId": "eff85c6b-2670-457b-a6ff-9a045b8eeb82",
+      "category": "science",
+      "navigationKeyword1": "lab-skills",
+      "navigationKeyword2": "safety",
+      "question": "What should you do if chemical contacts skin?",
+      "correctAnswer": "Flush with water per protocol; seek help if serious",
+      "incorrectAnswers": [
+        "Ignore if mild",
+        "Apply neutralizing acid/base randomly",
+        "Wipe with paper only always"
+      ],
+      "explanation": "Follow posted emergency shower/eyewash use.",
+      "keywords": [
+        "chemical-safety",
+        "spill"
+      ],
+      "source": "https://www.osha.gov/laboratories/chemical-hazards"
+    },
+    {
+      "seedId": "e6dcb52c-8ef2-421a-8d0a-09e618ad9dbb",
+      "category": "science",
+      "navigationKeyword1": "lab-skills",
+      "navigationKeyword2": "safety",
+      "question": "When should you wear safety goggles?",
+      "correctAnswer": "Whenever splash or impact hazards exist",
+      "incorrectAnswers": [
+        "Only if instructor is watching",
+        "Never with liquids",
+        "Only for fire"
+      ],
+      "explanation": "Eye protection is basic PPE.",
+      "keywords": [
+        "ppe",
+        "goggles"
+      ],
+      "source": "https://www.osha.gov/eye-and-face-protection"
+    },
+    {
+      "seedId": "14dd7247-8442-438d-b017-1551aaa734aa",
+      "category": "science",
+      "navigationKeyword1": "lab-skills",
+      "navigationKeyword2": "safety",
+      "question": "Why no eating in lab?",
+      "correctAnswer": "Prevents ingestion contamination and distraction",
+      "incorrectAnswers": [
+        "Allowed if clean hands",
+        "Only banned for organic labs",
+        "Only for middle school"
+      ],
+      "explanation": "Food/drink don\u2019t belong near chemicals.",
+      "keywords": [
+        "lab-rules",
+        "contamination"
+      ],
+      "source": "https://www.osha.gov/laboratories/chemical-hazards"
+    },
+    {
+      "seedId": "c3874f71-cbf1-4747-8fcc-38e8d1b0df77",
+      "category": "science",
+      "navigationKeyword1": "lab-skills",
+      "navigationKeyword2": "safety",
+      "question": "Why read SDS before using a chemical?",
+      "correctAnswer": "It lists hazards and handling/emergency info",
+      "incorrectAnswers": [
+        "It is optional decoration",
+        "It lists recipes",
+        "It replaces goggles"
+      ],
+      "explanation": "Safety Data Sheets are key references.",
+      "keywords": [
+        "sds",
+        "hazards"
+      ],
+      "source": "https://www.osha.gov/sites/default/files/publications/OSHA3514.pdf"
+    },
+    {
+      "seedId": "1139bbb2-cdad-4ed1-8fe9-53efadb7481b",
+      "category": "science",
+      "navigationKeyword1": "lab-skills",
+      "navigationKeyword2": "safety",
+      "question": "Why tie back long hair in lab?",
+      "correctAnswer": "Reduce fire and entanglement risk",
+      "incorrectAnswers": [
+        "Fashion rule only",
+        "Optional always",
+        "Only in kitchens"
+      ],
+      "explanation": "Loose hair is a hazard near burners.",
+      "keywords": [
+        "hair-tie",
+        "safety"
+      ],
+      "source": "https://www.osha.gov/laboratories/chemical-hazards"
+    }
+  ]
+}

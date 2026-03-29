@@ -1,0 +1,121 @@
+{
+  "schemaVersion": 1,
+  "seedSet": "core-public-items",
+  "deltaPreviewLimit": 200,
+  "items": [
+    {
+      "seedId": "f7b95dfc-9d82-5ce6-ad4c-6ac189ecb4ca",
+      "category": "tech",
+      "navigationKeyword1": "data",
+      "navigationKeyword2": "warehousing",
+      "question": "What is a data warehouse bus architecture meant to coordinate?",
+      "correctAnswer": "Conformed dimensions shared across subject areas",
+      "incorrectAnswers": [
+        "Separate unrelated silos with no shared keys",
+        "Only application logs",
+        "Only streaming ingestion"
+      ],
+      "explanation": "Shared conformed dimensions let marts roll up consistently across the enterprise.",
+      "keywords": [
+        "warehousing",
+        "kimball"
+      ],
+      "source": "https://en.wikipedia.org/wiki/Conformed_dimension"
+    },
+    {
+      "seedId": "4c9f2aa6-caad-5265-8858-cf01817ad6d3",
+      "category": "tech",
+      "navigationKeyword1": "data",
+      "navigationKeyword2": "warehousing",
+      "question": "What is a slowly changing dimension (SCD) problem?",
+      "correctAnswer": "Dimension attributes change over time and history must be handled deliberately",
+      "incorrectAnswers": [
+        "Facts load instantly with no transforms",
+        "Disks spin slower over years",
+        "Queries must be single-table only"
+      ],
+      "explanation": "Policies like Type 1 overwrite, Type 2 add rows, or Type 3 keep limited history address changing attributes.",
+      "keywords": [
+        "warehousing",
+        "scd"
+      ],
+      "source": "https://en.wikipedia.org/wiki/Slowly_changing_dimension"
+    },
+    {
+      "seedId": "a9fee498-6480-52d0-bce8-f3c9ba7b3ca8",
+      "category": "tech",
+      "navigationKeyword1": "data",
+      "navigationKeyword2": "warehousing",
+      "question": "What is a snowflake schema compared to a star schema?",
+      "correctAnswer": "Dimensions are normalized into more tables to reduce redundancy",
+      "incorrectAnswers": [
+        "Facts are removed entirely",
+        "Only JSON storage is allowed",
+        "No joins are permitted"
+      ],
+      "explanation": "Snowflaking splits wide dimensions into hierarchies, trading simpler joins for less duplication.",
+      "keywords": [
+        "warehousing",
+        "modeling"
+      ],
+      "source": "https://en.wikipedia.org/wiki/Snowflake_schema"
+    },
+    {
+      "seedId": "a010d22c-151b-596c-9668-722744b56da6",
+      "category": "tech",
+      "navigationKeyword1": "data",
+      "navigationKeyword2": "warehousing",
+      "question": "What is an OLAP cube used for?",
+      "correctAnswer": "Multidimensional analysis with fast slice-and-dice on aggregates",
+      "incorrectAnswers": [
+        "Storing raw web server logs only",
+        "Replacing primary keys",
+        "Managing Kubernetes pods"
+      ],
+      "explanation": "Precomputed aggregates along hierarchies speed interactive BI queries.",
+      "keywords": [
+        "warehousing",
+        "olap"
+      ],
+      "source": "https://en.wikipedia.org/wiki/OLAP_cube"
+    },
+    {
+      "seedId": "19a8c545-0c3f-5e4c-a1e4-b9f29fc3c0fb",
+      "category": "tech",
+      "navigationKeyword1": "data",
+      "navigationKeyword2": "warehousing",
+      "question": "What is columnar storage often optimized for in analytics warehouses?",
+      "correctAnswer": "Scanning fewer columns on wide tables for aggregations",
+      "incorrectAnswers": [
+        "Single-row OLTP updates on every column",
+        "Storing video frames",
+        "Replacing SQL"
+      ],
+      "explanation": "Analytical queries touch a few measures and attributes, so reading columns separately saves I/O.",
+      "keywords": [
+        "warehousing",
+        "columnar"
+      ],
+      "source": "https://docs.snowflake.com/en/user-guide/intro-key-concepts"
+    },
+    {
+      "seedId": "afdba861-d6cb-5c1c-a046-05cef9d63dfb",
+      "category": "tech",
+      "navigationKeyword1": "data",
+      "navigationKeyword2": "warehousing",
+      "question": "What shape does a star schema use?",
+      "correctAnswer": "One fact table surrounded by dimension tables",
+      "incorrectAnswers": [
+        "Many fact tables only with no dimensions",
+        "A single denormalized flat file only",
+        "A pure key-value store"
+      ],
+      "explanation": "The fact holds measures; dimensions provide attributes for filtering and grouping.",
+      "keywords": [
+        "warehousing",
+        "star-schema"
+      ],
+      "source": "https://learn.microsoft.com/en-us/power-bi/guidance/star-schema"
+    }
+  ]
+}

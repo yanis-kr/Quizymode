@@ -1,0 +1,235 @@
+{
+  "schemaVersion": 1,
+  "seedSet": "core-public-items",
+  "deltaPreviewLimit": 200,
+  "items": [
+    {
+      "seedId": "c158f23a-efb0-5033-94e8-b3b708dd905a",
+      "category": "humanities",
+      "navigationKeyword1": "religion-myth",
+      "navigationKeyword2": "bible",
+      "question": "The Bible is best described as what?",
+      "correctAnswer": "a collection of sacred books",
+      "incorrectAnswers": [
+        "a single poem by one author",
+        "a Greek law code",
+        "a museum catalog"
+      ],
+      "explanation": "The Bible is a collection of texts that developed across long periods and traditions.",
+      "keywords": [
+        "bible",
+        "sacred-text"
+      ],
+      "source": "https://www.britannica.com/topic/Bible"
+    },
+    {
+      "seedId": "c466ab1b-5360-593b-8b0d-fa2d08d02924",
+      "category": "humanities",
+      "navigationKeyword1": "religion-myth",
+      "navigationKeyword2": "bible",
+      "question": "Which two major divisions make up the Christian Bible?",
+      "correctAnswer": "the Old Testament and the New Testament",
+      "incorrectAnswers": [
+        "the Iliad and the Odyssey",
+        "the Torah and the Vedas",
+        "the Upanishads and the Eddas"
+      ],
+      "explanation": "The Christian Bible is commonly organized into Old and New Testaments.",
+      "keywords": [
+        "bible",
+        "testaments"
+      ],
+      "source": "https://www.bibleodyssey.org/"
+    },
+    {
+      "seedId": "53dfd139-c7d6-56af-96fe-8ab325687afd",
+      "category": "humanities",
+      "navigationKeyword1": "religion-myth",
+      "navigationKeyword2": "buddhism",
+      "question": "What do the Four Noble Truths mainly address?",
+      "correctAnswer": "the nature of suffering and its end",
+      "incorrectAnswers": [
+        "the building of temples",
+        "the ranking of priests",
+        "the geography of India"
+      ],
+      "explanation": "The Four Noble Truths explain suffering and the path toward liberation.",
+      "keywords": [
+        "buddhism",
+        "four-noble-truths"
+      ],
+      "source": "https://www.britannica.com/topic/Four-Noble-Truths"
+    },
+    {
+      "seedId": "a18fa973-9eca-5c4a-8e2d-12c96dbfb7d5",
+      "category": "humanities",
+      "navigationKeyword1": "religion-myth",
+      "navigationKeyword2": "buddhism",
+      "question": "What is nirvana in Buddhism?",
+      "correctAnswer": "liberation from the cycle of suffering",
+      "incorrectAnswers": [
+        "a sacred river",
+        "a legal code",
+        "a mountain monastery"
+      ],
+      "explanation": "Nirvana is the state of release associated with the end of craving and suffering.",
+      "keywords": [
+        "buddhism",
+        "nirvana"
+      ],
+      "source": "https://www.bbc.co.uk/religion/religions/buddhism/"
+    },
+    {
+      "seedId": "b2b320f6-ba38-54f9-b5c2-25cc5bc768e0",
+      "category": "humanities",
+      "navigationKeyword1": "religion-myth",
+      "navigationKeyword2": "greek-myth",
+      "question": "Athena is especially associated with what?",
+      "correctAnswer": "wisdom and strategy",
+      "incorrectAnswers": [
+        "the sea only",
+        "wine and theater only",
+        "the underworld only"
+      ],
+      "explanation": "Athena is linked with wisdom, skill, and strategic thought.",
+      "keywords": [
+        "greek-myth",
+        "athena"
+      ],
+      "source": "https://www.metmuseum.org/toah/hd/grlg/hd_grlg.htm"
+    },
+    {
+      "seedId": "c21fd48b-8fd4-525e-a585-ad6711785314",
+      "category": "humanities",
+      "navigationKeyword1": "religion-myth",
+      "navigationKeyword2": "greek-myth",
+      "question": "Who is the chief god in much of Greek mythology?",
+      "correctAnswer": "Zeus",
+      "incorrectAnswers": [
+        "Ares",
+        "Hermes",
+        "Hephaestus"
+      ],
+      "explanation": "Zeus is commonly presented as king of the gods in Greek myth.",
+      "keywords": [
+        "greek-myth",
+        "zeus"
+      ],
+      "source": "https://www.britannica.com/topic/Zeus"
+    },
+    {
+      "seedId": "6379dc7e-4b07-5af6-8a44-1eaccf232af4",
+      "category": "humanities",
+      "navigationKeyword1": "religion-myth",
+      "navigationKeyword2": "hinduism",
+      "question": "What does dharma often refer to in Hindu thought?",
+      "correctAnswer": "duty, order, and right conduct",
+      "incorrectAnswers": [
+        "a kind of temple bell",
+        "a desert wind",
+        "a chariot race"
+      ],
+      "explanation": "Dharma often points to moral duty and the order that guides life and society.",
+      "keywords": [
+        "hinduism",
+        "dharma"
+      ],
+      "source": "https://www.britannica.com/topic/dharma-religious-concept"
+    },
+    {
+      "seedId": "839aa3e5-d5d7-5fd3-a13d-a38935b9fb70",
+      "category": "humanities",
+      "navigationKeyword1": "religion-myth",
+      "navigationKeyword2": "hinduism",
+      "question": "What is karma generally about?",
+      "correctAnswer": "the moral effect of actions",
+      "incorrectAnswers": [
+        "the shape of a shrine",
+        "the timing of a harvest",
+        "the color of a robe"
+      ],
+      "explanation": "Karma connects actions with consequences in present or future existence.",
+      "keywords": [
+        "hinduism",
+        "karma"
+      ],
+      "source": "https://www.bbc.co.uk/religion/religions/hinduism/"
+    },
+    {
+      "seedId": "a7711c9a-fcad-5b84-98b6-34ed9a1e83ce",
+      "category": "humanities",
+      "navigationKeyword1": "religion-myth",
+      "navigationKeyword2": "norse-myth",
+      "question": "What is Ragnarok in Norse myth?",
+      "correctAnswer": "a world-ending battle and renewal",
+      "incorrectAnswers": [
+        "a heroic wedding feast",
+        "a sacred mountain temple",
+        "a law book of kings"
+      ],
+      "explanation": "Ragnarok is the great destructive conflict tied to the end and renewal of the world.",
+      "keywords": [
+        "norse-myth",
+        "ragnarok"
+      ],
+      "source": "https://www.britishmuseum.org/blog/viking-myths-and-misconceptions"
+    },
+    {
+      "seedId": "a6c6f01d-4370-5778-aa22-4bd72d200ced",
+      "category": "humanities",
+      "navigationKeyword1": "religion-myth",
+      "navigationKeyword2": "norse-myth",
+      "question": "Who is the hammer-wielding god in Norse mythology?",
+      "correctAnswer": "Thor",
+      "incorrectAnswers": [
+        "Balder",
+        "Loki",
+        "Tyr"
+      ],
+      "explanation": "Thor is known for his hammer and his role as a powerful god of thunder.",
+      "keywords": [
+        "norse-myth",
+        "thor"
+      ],
+      "source": "https://www.britannica.com/topic/Thor-Norse-deity"
+    },
+    {
+      "seedId": "cffb6166-82da-5d55-a0ac-ed9bbd5e0479",
+      "category": "humanities",
+      "navigationKeyword1": "religion-myth",
+      "navigationKeyword2": "world-religions",
+      "question": "A pilgrimage is best described as what?",
+      "correctAnswer": "a journey with religious meaning",
+      "incorrectAnswers": [
+        "a type of musical scale",
+        "a law court appeal",
+        "a method of bookbinding"
+      ],
+      "explanation": "A pilgrimage is travel undertaken for sacred, devotional, or religious purposes.",
+      "keywords": [
+        "world-religions",
+        "pilgrimage"
+      ],
+      "source": "https://www.bbc.co.uk/religion/religions/"
+    },
+    {
+      "seedId": "5f2b0cc6-66c6-5aea-ac1d-5167bde4ecc0",
+      "category": "humanities",
+      "navigationKeyword1": "religion-myth",
+      "navigationKeyword2": "world-religions",
+      "question": "What do world religions usually include besides beliefs?",
+      "correctAnswer": "rituals, texts, and communities",
+      "incorrectAnswers": [
+        "only museum labels",
+        "only political parties",
+        "only weather calendars"
+      ],
+      "explanation": "Religions are lived traditions with beliefs, practices, stories, and communities.",
+      "keywords": [
+        "world-religions",
+        "religion"
+      ],
+      "source": "https://www.britannica.com/topic/religion"
+    }
+  ]
+}

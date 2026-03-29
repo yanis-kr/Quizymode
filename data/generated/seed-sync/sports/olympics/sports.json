@@ -1,0 +1,207 @@
+{
+  "schemaVersion": 1,
+  "seedSet": "core-public-items",
+  "deltaPreviewLimit": 200,
+  "items": [
+    {
+      "seedId": "7546bc46-917d-57e4-948e-350c67c2b01c",
+      "category": "sports",
+      "navigationKeyword1": "olympics",
+      "navigationKeyword2": "sports",
+      "question": "Which Summer Olympic combat sport includes throws, pins, and joint locks?",
+      "correctAnswer": "Judo",
+      "incorrectAnswers": [
+        "Boxing",
+        "Fencing",
+        "Taekwondo"
+      ],
+      "explanation": "Judo is the Olympic grappling sport derived from Japan.",
+      "keywords": [
+        "olympics",
+        "sports",
+        "judo"
+      ],
+      "source": "https://olympics.com/en/olympic-games"
+    },
+    {
+      "seedId": "1f02f991-dba5-565f-b8d8-7c02d5649a18",
+      "category": "sports",
+      "navigationKeyword1": "olympics",
+      "navigationKeyword2": "sports",
+      "question": "Which Summer Olympic racquet sport returned to the Games in 1988?",
+      "correctAnswer": "Tennis",
+      "incorrectAnswers": [
+        "Squash",
+        "Table tennis",
+        "Badminton"
+      ],
+      "explanation": "Tennis returned to the Olympic program in the late 20th century.",
+      "keywords": [
+        "olympics",
+        "sports",
+        "tennis"
+      ],
+      "source": "https://olympics.com/en/olympic-games"
+    },
+    {
+      "seedId": "3c04c695-4cc7-5504-aa46-ca2e1dc5c1cd",
+      "category": "sports",
+      "navigationKeyword1": "olympics",
+      "navigationKeyword2": "sports",
+      "question": "Which Summer Olympic sport includes the 100-meter dash and marathon?",
+      "correctAnswer": "Athletics",
+      "incorrectAnswers": [
+        "Cycling",
+        "Rowing",
+        "Gymnastics"
+      ],
+      "explanation": "Athletics is the Olympic umbrella for track and field events.",
+      "keywords": [
+        "olympics",
+        "sports",
+        "athletics"
+      ],
+      "source": "https://olympics.com/en/olympic-games"
+    },
+    {
+      "seedId": "18692e86-3485-5793-8574-00c686444eda",
+      "category": "sports",
+      "navigationKeyword1": "olympics",
+      "navigationKeyword2": "sports",
+      "question": "Which Summer Olympic team sport is played on a hard court with five players per side?",
+      "correctAnswer": "Basketball",
+      "incorrectAnswers": [
+        "Handball",
+        "Field hockey",
+        "Volleyball"
+      ],
+      "explanation": "Basketball has been a core Olympic team sport for decades.",
+      "keywords": [
+        "olympics",
+        "sports",
+        "basketball"
+      ],
+      "source": "https://olympics.com/en/olympic-games"
+    },
+    {
+      "seedId": "b6071ae0-1af2-5859-993c-32df338051fd",
+      "category": "sports",
+      "navigationKeyword1": "olympics",
+      "navigationKeyword2": "sports",
+      "question": "Which Winter Olympic sliding sport features face-first athletes on small sleds?",
+      "correctAnswer": "Skeleton",
+      "incorrectAnswers": [
+        "Luge",
+        "Bobsleigh",
+        "Curling"
+      ],
+      "explanation": "Skeleton racers go headfirst down the ice track.",
+      "keywords": [
+        "olympics",
+        "sports",
+        "skeleton"
+      ],
+      "source": "https://olympics.com/en/olympic-games"
+    },
+    {
+      "seedId": "2c62013c-b9c8-5f78-8f30-d278358aec41",
+      "category": "sports",
+      "navigationKeyword1": "olympics",
+      "navigationKeyword2": "sports",
+      "question": "Which Winter Olympic sport combines cross-country skiing and rifle shooting?",
+      "correctAnswer": "Biathlon",
+      "incorrectAnswers": [
+        "Nordic combined",
+        "Luge",
+        "Snowboard cross"
+      ],
+      "explanation": "Biathlon athletes ski and shoot in alternating segments.",
+      "keywords": [
+        "olympics",
+        "sports",
+        "biathlon"
+      ],
+      "source": "https://olympics.com/en/olympic-games"
+    },
+    {
+      "seedId": "56a0713e-9770-59cc-9956-671a048aecf4",
+      "category": "sports",
+      "navigationKeyword1": "olympics",
+      "navigationKeyword2": "sports",
+      "question": "Which Winter Olympic sport consists of downhill, giant slalom, slalom, and super-G disciplines?",
+      "correctAnswer": "Alpine skiing",
+      "incorrectAnswers": [
+        "Cross-country skiing",
+        "Freestyle skiing",
+        "Snowboarding"
+      ],
+      "explanation": "Alpine skiing includes the main downhill and turning events.",
+      "keywords": [
+        "olympics",
+        "sports",
+        "alpine-skiing"
+      ],
+      "source": "https://olympics.com/en/olympic-games"
+    },
+    {
+      "seedId": "00d6bbe0-e231-57d9-a635-7ebd3858252a",
+      "category": "sports",
+      "navigationKeyword1": "olympics",
+      "navigationKeyword2": "sports",
+      "question": "Which Winter Olympic sport features jumps and spins scored on artistic execution and technique?",
+      "correctAnswer": "Figure skating",
+      "incorrectAnswers": [
+        "Ice hockey",
+        "Luge",
+        "Bobsleigh"
+      ],
+      "explanation": "Figure skating blends technical elements and artistry.",
+      "keywords": [
+        "olympics",
+        "sports",
+        "figure-skating"
+      ],
+      "source": "https://olympics.com/en/olympic-games"
+    },
+    {
+      "seedId": "07079a39-70ae-5683-8d84-bc4baf8dadc4",
+      "category": "sports",
+      "navigationKeyword1": "olympics",
+      "navigationKeyword2": "sports",
+      "question": "Which Winter Olympic sport is played with stones and sweeping on ice?",
+      "correctAnswer": "Curling",
+      "incorrectAnswers": [
+        "Figure skating",
+        "Short track",
+        "Speed skating"
+      ],
+      "explanation": "Curling is the target sport played on ice with stones and brooms.",
+      "keywords": [
+        "olympics",
+        "sports",
+        "curling"
+      ],
+      "source": "https://olympics.com/en/olympic-games"
+    },
+    {
+      "seedId": "84cf66dc-03bf-551f-bba0-6cea9b5c9feb",
+      "category": "sports",
+      "navigationKeyword1": "olympics",
+      "navigationKeyword2": "sports",
+      "question": "Which endurance event combines swimming, cycling, and running in the Summer Olympics?",
+      "correctAnswer": "Triathlon",
+      "incorrectAnswers": [
+        "Decathlon",
+        "Pentathlon fencing",
+        "Biathlon"
+      ],
+      "explanation": "Triathlon is the three-discipline endurance race.",
+      "keywords": [
+        "olympics",
+        "sports",
+        "triathlon"
+      ],
+      "source": "https://olympics.com/en/olympic-games"
+    }
+  ]
+}

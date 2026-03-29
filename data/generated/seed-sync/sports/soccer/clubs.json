@@ -1,0 +1,207 @@
+{
+  "schemaVersion": 1,
+  "seedSet": "core-public-items",
+  "deltaPreviewLimit": 200,
+  "items": [
+    {
+      "seedId": "72543156-3bac-5fdd-91b1-e7adda40f4aa",
+      "category": "sports",
+      "navigationKeyword1": "soccer",
+      "navigationKeyword2": "clubs",
+      "question": "Which English club is based at Anfield?",
+      "correctAnswer": "Liverpool",
+      "incorrectAnswers": [
+        "Everton",
+        "Arsenal",
+        "Tottenham Hotspur"
+      ],
+      "explanation": "Anfield is Liverpool's historic home ground.",
+      "keywords": [
+        "soccer",
+        "clubs",
+        "liverpool"
+      ],
+      "source": "https://www.liverpoolfc.com/"
+    },
+    {
+      "seedId": "233d7e85-e8ad-51ea-b97a-8953f328e0ef",
+      "category": "sports",
+      "navigationKeyword1": "soccer",
+      "navigationKeyword2": "clubs",
+      "question": "Which German club is most associated with the Allianz Arena in Munich?",
+      "correctAnswer": "Bayern Munich",
+      "incorrectAnswers": [
+        "Borussia Dortmund",
+        "Bayer Leverkusen",
+        "RB Leipzig"
+      ],
+      "explanation": "Bayern Munich plays at the Allianz Arena.",
+      "keywords": [
+        "soccer",
+        "clubs",
+        "bayern-munich"
+      ],
+      "source": "https://fcbayern.com/en"
+    },
+    {
+      "seedId": "25152732-0e45-57b2-8d37-c168698e2162",
+      "category": "sports",
+      "navigationKeyword1": "soccer",
+      "navigationKeyword2": "clubs",
+      "question": "Which Italian club is widely known as Juventus?",
+      "correctAnswer": "Juventus FC",
+      "incorrectAnswers": [
+        "AC Milan",
+        "Inter Milan",
+        "Roma"
+      ],
+      "explanation": "Juventus is the Turin club often called simply Juventus.",
+      "keywords": [
+        "soccer",
+        "clubs",
+        "juventus"
+      ],
+      "source": "https://www.juventus.com/en/"
+    },
+    {
+      "seedId": "3813de9f-9106-5b34-a949-e5d22ac611de",
+      "category": "sports",
+      "navigationKeyword1": "soccer",
+      "navigationKeyword2": "clubs",
+      "question": "Which London club is associated with Stamford Bridge?",
+      "correctAnswer": "Chelsea",
+      "incorrectAnswers": [
+        "Arsenal",
+        "West Ham United",
+        "Crystal Palace"
+      ],
+      "explanation": "Stamford Bridge is Chelsea's home stadium.",
+      "keywords": [
+        "soccer",
+        "clubs",
+        "chelsea"
+      ],
+      "source": "https://www.chelseafc.com/"
+    },
+    {
+      "seedId": "aba9d447-f8ee-5df6-b477-5c8230688b38",
+      "category": "sports",
+      "navigationKeyword1": "soccer",
+      "navigationKeyword2": "clubs",
+      "question": "Which Milan club is nicknamed the Rossoneri?",
+      "correctAnswer": "AC Milan",
+      "incorrectAnswers": [
+        "Inter Milan",
+        "Juventus",
+        "Napoli"
+      ],
+      "explanation": "AC Milan's red-and-black colors explain the nickname Rossoneri.",
+      "keywords": [
+        "soccer",
+        "clubs",
+        "ac-milan"
+      ],
+      "source": "https://www.acmilan.com/en"
+    },
+    {
+      "seedId": "e3a6587a-5374-5b13-856e-96cbbedf2cdf",
+      "category": "sports",
+      "navigationKeyword1": "soccer",
+      "navigationKeyword2": "clubs",
+      "question": "Which North London club plays at Emirates Stadium?",
+      "correctAnswer": "Arsenal",
+      "incorrectAnswers": [
+        "Tottenham Hotspur",
+        "Chelsea",
+        "Fulham"
+      ],
+      "explanation": "Arsenal moved from Highbury to Emirates Stadium in 2006.",
+      "keywords": [
+        "soccer",
+        "clubs",
+        "arsenal"
+      ],
+      "source": "https://www.arsenal.com/"
+    },
+    {
+      "seedId": "4bbf943c-23de-5b22-b72c-0f52c002d203",
+      "category": "sports",
+      "navigationKeyword1": "soccer",
+      "navigationKeyword2": "clubs",
+      "question": "Which Spanish club is closely tied to Camp Nou?",
+      "correctAnswer": "FC Barcelona",
+      "incorrectAnswers": [
+        "Real Madrid",
+        "Valencia",
+        "Athletic Bilbao"
+      ],
+      "explanation": "Camp Nou is Barcelona's famous stadium.",
+      "keywords": [
+        "soccer",
+        "clubs",
+        "barcelona"
+      ],
+      "source": "https://www.fcbarcelona.com/"
+    },
+    {
+      "seedId": "2b3f4c0a-6a02-5719-93ba-1ca661277698",
+      "category": "sports",
+      "navigationKeyword1": "soccer",
+      "navigationKeyword2": "clubs",
+      "question": "Which Spanish club plays its home matches at the Santiago Bernabeu?",
+      "correctAnswer": "Real Madrid",
+      "incorrectAnswers": [
+        "Barcelona",
+        "Atletico Madrid",
+        "Sevilla"
+      ],
+      "explanation": "The Santiago Bernabeu is Real Madrid's home stadium.",
+      "keywords": [
+        "soccer",
+        "clubs",
+        "real-madrid"
+      ],
+      "source": "https://www.realmadrid.com/en-US"
+    },
+    {
+      "seedId": "85a5c645-1a6a-56ec-918c-be84f4ad8548",
+      "category": "sports",
+      "navigationKeyword1": "soccer",
+      "navigationKeyword2": "clubs",
+      "question": "Which club is based at Old Trafford?",
+      "correctAnswer": "Manchester United",
+      "incorrectAnswers": [
+        "Manchester City",
+        "Liverpool",
+        "Chelsea"
+      ],
+      "explanation": "Old Trafford is the home of Manchester United.",
+      "keywords": [
+        "soccer",
+        "clubs",
+        "manchester-united"
+      ],
+      "source": "https://www.manutd.com/"
+    },
+    {
+      "seedId": "9458e723-72d6-5cdc-a588-9c59bec2bac3",
+      "category": "sports",
+      "navigationKeyword1": "soccer",
+      "navigationKeyword2": "clubs",
+      "question": "Which club is known as Inter and shares San Siro with AC Milan?",
+      "correctAnswer": "Inter Milan",
+      "incorrectAnswers": [
+        "Napoli",
+        "Lazio",
+        "Roma"
+      ],
+      "explanation": "Inter Milan has long shared San Siro with AC Milan.",
+      "keywords": [
+        "soccer",
+        "clubs",
+        "inter-milan"
+      ],
+      "source": "https://www.inter.it/en"
+    }
+  ]
+}

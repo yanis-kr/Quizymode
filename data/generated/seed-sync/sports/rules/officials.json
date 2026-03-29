@@ -1,0 +1,207 @@
+{
+  "schemaVersion": 1,
+  "seedSet": "core-public-items",
+  "deltaPreviewLimit": 200,
+  "items": [
+    {
+      "seedId": "b7ed150f-ceb4-513c-8073-1fdea91ae257",
+      "category": "sports",
+      "navigationKeyword1": "rules",
+      "navigationKeyword2": "officials",
+      "question": "What are baseball officials commonly called?",
+      "correctAnswer": "Umpires",
+      "incorrectAnswers": [
+        "Referees",
+        "Linesmen",
+        "Stewards"
+      ],
+      "explanation": "Baseball games are officiated by umpires.",
+      "keywords": [
+        "rules",
+        "officials",
+        "baseball"
+      ],
+      "source": "https://www.mlb.com/glossary"
+    },
+    {
+      "seedId": "b36c7585-07f2-52dc-92e9-75eee7523d09",
+      "category": "sports",
+      "navigationKeyword1": "rules",
+      "navigationKeyword2": "officials",
+      "question": "What are the two sideline soccer assistants who help judge offsides and ball-out-of-play calls called?",
+      "correctAnswer": "Assistant referees",
+      "incorrectAnswers": [
+        "Ball judges",
+        "Base umpires",
+        "Scorers"
+      ],
+      "explanation": "Assistant referees work the touchlines with flags.",
+      "keywords": [
+        "rules",
+        "officials",
+        "assistant-referees"
+      ],
+      "source": "https://www.theifab.com/laws/latest/"
+    },
+    {
+      "seedId": "93cdba2b-4a20-559d-a2c8-253b43155a47",
+      "category": "sports",
+      "navigationKeyword1": "rules",
+      "navigationKeyword2": "officials",
+      "question": "What basketball officials are commonly called?",
+      "correctAnswer": "Referees",
+      "incorrectAnswers": [
+        "Umpires only",
+        "Touch judges",
+        "Keepers"
+      ],
+      "explanation": "Basketball games are supervised by referees.",
+      "keywords": [
+        "rules",
+        "officials",
+        "basketball"
+      ],
+      "source": "https://www.britannica.com/sports/basketball"
+    },
+    {
+      "seedId": "82c9c9c1-ef4f-5e47-8cee-444ab3fa0735",
+      "category": "sports",
+      "navigationKeyword1": "rules",
+      "navigationKeyword2": "officials",
+      "question": "What football official usually stands behind the offensive backfield and announces penalties on TV broadcasts?",
+      "correctAnswer": "Referee",
+      "incorrectAnswers": [
+        "Line judge",
+        "Back judge",
+        "Field judge"
+      ],
+      "explanation": "The referee is often the most visible football official.",
+      "keywords": [
+        "rules",
+        "officials",
+        "football"
+      ],
+      "source": "https://operations.nfl.com/learn-the-game/nfl-basics/"
+    },
+    {
+      "seedId": "50fa951c-fd44-594e-8701-8d5eef1c7b66",
+      "category": "sports",
+      "navigationKeyword1": "rules",
+      "navigationKeyword2": "officials",
+      "question": "What golf official may help administer the rules during a tournament round?",
+      "correctAnswer": "Rules official",
+      "incorrectAnswers": [
+        "Pitching coach",
+        "Goal judge",
+        "Touch judge"
+      ],
+      "explanation": "Golf events often have rules officials available for rulings.",
+      "keywords": [
+        "rules",
+        "officials",
+        "golf"
+      ],
+      "source": "https://www.usga.org/content/usga/home-page/rules-hub.html"
+    },
+    {
+      "seedId": "fde63af6-c0e6-575e-8e47-9ee13e89be52",
+      "category": "sports",
+      "navigationKeyword1": "rules",
+      "navigationKeyword2": "officials",
+      "question": "What hockey officials drop the puck for faceoffs and call many stoppages?",
+      "correctAnswer": "Referees and linesmen",
+      "incorrectAnswers": [
+        "Base umpires",
+        "Caddies",
+        "Marshals"
+      ],
+      "explanation": "Hockey uses referees and linesmen as on-ice officials.",
+      "keywords": [
+        "rules",
+        "officials",
+        "hockey"
+      ],
+      "source": "https://www.britannica.com/sports/ice-hockey"
+    },
+    {
+      "seedId": "d2f83970-cda6-5034-9907-7d4be3b5d688",
+      "category": "sports",
+      "navigationKeyword1": "rules",
+      "navigationKeyword2": "officials",
+      "question": "What is the lead rules enforcer in boxing called?",
+      "correctAnswer": "Referee",
+      "incorrectAnswers": [
+        "Linesman",
+        "Shot-clock operator",
+        "Caddie"
+      ],
+      "explanation": "The boxing referee controls the bout inside the ring.",
+      "keywords": [
+        "rules",
+        "officials",
+        "boxing"
+      ],
+      "source": "https://www.britannica.com/sports"
+    },
+    {
+      "seedId": "aff7daff-8233-53a3-a9da-9a23acc345df",
+      "category": "sports",
+      "navigationKeyword1": "rules",
+      "navigationKeyword2": "officials",
+      "question": "What is the main on-field rules authority called in soccer?",
+      "correctAnswer": "Referee",
+      "incorrectAnswers": [
+        "Umpire",
+        "Judge",
+        "Steward"
+      ],
+      "explanation": "The referee has primary authority to enforce the Laws of the Game.",
+      "keywords": [
+        "rules",
+        "officials",
+        "soccer"
+      ],
+      "source": "https://www.theifab.com/laws/latest/"
+    },
+    {
+      "seedId": "30319788-b5ac-50d9-87c5-9aab6271a5f6",
+      "category": "sports",
+      "navigationKeyword1": "rules",
+      "navigationKeyword2": "officials",
+      "question": "What is the official scorekeeper in baseball responsible for recording plays and errors called?",
+      "correctAnswer": "Official scorer",
+      "incorrectAnswers": [
+        "Head referee",
+        "Marshal",
+        "Caddie"
+      ],
+      "explanation": "Baseball has an official scorer distinct from the umpires.",
+      "keywords": [
+        "rules",
+        "officials",
+        "scorer"
+      ],
+      "source": "https://www.mlb.com/glossary"
+    },
+    {
+      "seedId": "921a2b28-787f-5964-98b3-75fa9790e2b5",
+      "category": "sports",
+      "navigationKeyword1": "rules",
+      "navigationKeyword2": "officials",
+      "question": "What is the video review official called in top-level soccer under modern laws?",
+      "correctAnswer": "VAR",
+      "incorrectAnswers": [
+        "DRO",
+        "TMO",
+        "Box judge"
+      ],
+      "explanation": "VAR stands for Video Assistant Referee.",
+      "keywords": [
+        "rules",
+        "officials",
+        "var"
+      ],
+      "source": "https://www.theifab.com/laws/latest/"
+    }
+  ]
+}

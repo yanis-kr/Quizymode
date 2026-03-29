@@ -1,0 +1,121 @@
+{
+  "schemaVersion": 1,
+  "seedSet": "core-public-items",
+  "deltaPreviewLimit": 200,
+  "items": [
+    {
+      "seedId": "8461793d-e448-568f-affb-3f55dc1cca2b",
+      "category": "nature",
+      "navigationKeyword1": "ecosystems",
+      "navigationKeyword2": "forests",
+      "question": "The boreal forest is also commonly called what?",
+      "correctAnswer": "taiga",
+      "incorrectAnswers": [
+        "savanna",
+        "chaparral",
+        "tundra"
+      ],
+      "explanation": "The vast northern conifer forest is commonly known as the taiga.",
+      "keywords": [
+        "forests",
+        "nature-ecosystems"
+      ],
+      "source": "https://www.nationalgeographic.com/related/1aa6fa9b-4f57-3c34-9d2b-256ed1b088b2/boreal-forests"
+    },
+    {
+      "seedId": "0b150d8c-5df5-524b-9b1c-edb9f7c47a7b",
+      "category": "nature",
+      "navigationKeyword1": "ecosystems",
+      "navigationKeyword2": "forests",
+      "question": "What is the canopy in a forest?",
+      "correctAnswer": "the upper layer formed by treetops",
+      "incorrectAnswers": [
+        "the soil under the roots",
+        "the underground fungal network",
+        "a ring of shrubs around a clearing"
+      ],
+      "explanation": "The canopy is the highest continuous layer formed by the crowns of trees.",
+      "keywords": [
+        "forests",
+        "nature-ecosystems"
+      ],
+      "source": "https://www.britannica.com/science/canopy-forests"
+    },
+    {
+      "seedId": "f0e7d112-0cbe-526d-b854-c51ba7dbb0db",
+      "category": "nature",
+      "navigationKeyword1": "ecosystems",
+      "navigationKeyword2": "forests",
+      "question": "What is the understory in a forest?",
+      "correctAnswer": "the layer of shrubs and young trees below the canopy",
+      "incorrectAnswers": [
+        "the bedrock layer below the soil",
+        "the open sky above the trees",
+        "the stream channel through a forest"
+      ],
+      "explanation": "The understory sits below the canopy and often contains shrubs, saplings, and shade-tolerant plants.",
+      "keywords": [
+        "forests",
+        "nature-ecosystems"
+      ],
+      "source": "https://www.britannica.com/plant/understory"
+    },
+    {
+      "seedId": "e43e95ed-7111-50fa-bace-8be1464b0a94",
+      "category": "nature",
+      "navigationKeyword1": "ecosystems",
+      "navigationKeyword2": "forests",
+      "question": "What kind of trees dominate most taiga forests?",
+      "correctAnswer": "conifers",
+      "incorrectAnswers": [
+        "palms",
+        "cacti",
+        "mangroves"
+      ],
+      "explanation": "Taiga forests are dominated by cone-bearing, needle-leaved trees.",
+      "keywords": [
+        "forests",
+        "nature-ecosystems"
+      ],
+      "source": "https://www.britannica.com/science/coniferous-forest"
+    },
+    {
+      "seedId": "d86801a4-62d0-5be3-b2ca-70eeafe4e068",
+      "category": "nature",
+      "navigationKeyword1": "ecosystems",
+      "navigationKeyword2": "forests",
+      "question": "Where do most rainforest animals live?",
+      "correctAnswer": "in the canopy",
+      "incorrectAnswers": [
+        "buried in permafrost",
+        "on the bare forest floor",
+        "only inside tree trunks"
+      ],
+      "explanation": "Many rainforest animals live among the leaves and branches of the canopy where light and food are abundant.",
+      "keywords": [
+        "forests",
+        "nature-ecosystems"
+      ],
+      "source": "https://www.britannica.com/science/tropical-rainforest/Relationships-between-the-flora-and-fauna"
+    },
+    {
+      "seedId": "4b421c47-c5dc-5013-a438-355fbd0da534",
+      "category": "nature",
+      "navigationKeyword1": "ecosystems",
+      "navigationKeyword2": "forests",
+      "question": "Which forest type contains more species than any other ecosystem type?",
+      "correctAnswer": "tropical rainforest",
+      "incorrectAnswers": [
+        "taiga",
+        "temperate grassland",
+        "desert scrub"
+      ],
+      "explanation": "Tropical rainforests are the most species-rich ecosystems on Earth.",
+      "keywords": [
+        "forests",
+        "nature-ecosystems"
+      ],
+      "source": "https://www.britannica.com/science/tropical-rainforest/Biota"
+    }
+  ]
+}

@@ -1,0 +1,1387 @@
+{
+  "schemaVersion": 1,
+  "seedSet": "core-public-items",
+  "deltaPreviewLimit": 200,
+  "items": [
+    {
+      "seedId": "c475e9ca-3b7c-4939-8548-b719238e89b8",
+      "category": "geography",
+      "navigationKeyword1": "world",
+      "navigationKeyword2": "africa",
+      "question": "After the Nile, which river is the second longest in Africa?",
+      "correctAnswer": "The Congo River",
+      "incorrectAnswers": [
+        "The Niger River",
+        "The Orange River",
+        "The Limpopo River"
+      ],
+      "explanation": "The Congo drains a vast equatorial basin in west-central Africa and is commonly ranked second in length on the continent after the Nile.",
+      "keywords": [
+        "africa",
+        "rivers",
+        "congo-basin"
+      ],
+      "source": "https://www.britannica.com/place/Congo-River"
+    },
+    {
+      "seedId": "2f0cb766-f328-4b88-b923-12860351b86d",
+      "category": "geography",
+      "navigationKeyword1": "world",
+      "navigationKeyword2": "africa",
+      "question": "By surface area, which lake is the largest on the African continent?",
+      "correctAnswer": "Lake Victoria",
+      "incorrectAnswers": [
+        "Lake Tanganyika",
+        "Lake Malawi (Nyasa)",
+        "Lake Chad"
+      ],
+      "explanation": "Lake Victoria, bordered by Uganda, Kenya, and Tanzania, is Africa\u2019s largest lake by surface area.",
+      "keywords": [
+        "africa",
+        "lakes",
+        "great-lakes"
+      ],
+      "source": "https://www.britannica.com/place/Lake-Victoria"
+    },
+    {
+      "seedId": "9a754608-a878-433f-9eac-fc23acfc02b3",
+      "category": "geography",
+      "navigationKeyword1": "world",
+      "navigationKeyword2": "africa",
+      "question": "Victoria Falls is formed by which major southern African river?",
+      "correctAnswer": "The Zambezi River",
+      "incorrectAnswers": [
+        "The Orange River",
+        "The Limpopo River",
+        "The Okavango River"
+      ],
+      "explanation": "Victoria Falls spans the Zambezi on the border between Zambia and Zimbabwe.",
+      "keywords": [
+        "africa",
+        "rivers",
+        "waterfalls"
+      ],
+      "source": "https://www.britannica.com/place/Victoria-Falls-waterfall-Zambia-Zimbabwe"
+    },
+    {
+      "seedId": "9fd1fadc-cc7a-4678-8562-ff1b1f62ed7a",
+      "category": "geography",
+      "navigationKeyword1": "world",
+      "navigationKeyword2": "africa",
+      "question": "Which broad embayment of the eastern Atlantic borders countries such as Nigeria and Ghana?",
+      "correctAnswer": "The Gulf of Guinea",
+      "incorrectAnswers": [
+        "The Gulf of Aden",
+        "The Gulf of Suez",
+        "The Gulf of Aqaba"
+      ],
+      "explanation": "The Gulf of Guinea is the large eastern bight of the Atlantic along Africa\u2019s west-central coast.",
+      "keywords": [
+        "africa",
+        "atlantic",
+        "west-africa"
+      ],
+      "source": "https://www.britannica.com/place/Gulf-of-Guinea"
+    },
+    {
+      "seedId": "6629c1ea-f279-4267-b55e-94175f89e514",
+      "category": "geography",
+      "navigationKeyword1": "world",
+      "navigationKeyword2": "africa",
+      "question": "Which free-standing volcanic massif is the highest peak in Africa?",
+      "correctAnswer": "Mount Kilimanjaro",
+      "incorrectAnswers": [
+        "Mount Kenya",
+        "Ras Dashen",
+        "Mount Stanley"
+      ],
+      "explanation": "Kilimanjaro rises in northeastern Tanzania and is commonly cited as Africa\u2019s tallest mountain.",
+      "keywords": [
+        "africa",
+        "mountains",
+        "east-africa"
+      ],
+      "source": "https://www.britannica.com/place/Mount-Kilimanjaro"
+    },
+    {
+      "seedId": "dd49eb78-9cfa-48ee-8006-9ca496b5e732",
+      "category": "geography",
+      "navigationKeyword1": "world",
+      "navigationKeyword2": "africa",
+      "question": "Which large semi-arid sandy savanna region covers much of Botswana and parts of surrounding countries?",
+      "correctAnswer": "The Kalahari Desert",
+      "incorrectAnswers": [
+        "The Sahara",
+        "The Namib Desert",
+        "The Danakil Desert"
+      ],
+      "explanation": "The Kalahari is a broad dry plateau and sand basin region in southern Africa, mainly in Botswana.",
+      "keywords": [
+        "africa",
+        "deserts",
+        "southern-africa"
+      ],
+      "source": "https://www.britannica.com/place/Kalahari-Desert"
+    },
+    {
+      "seedId": "b0865087-eb23-4ebb-a54a-b66caa1401c6",
+      "category": "geography",
+      "navigationKeyword1": "world",
+      "navigationKeyword2": "africa",
+      "question": "Which long rift lake is shared by Tanzania, the Democratic Republic of the Congo, Burundi, and Zambia?",
+      "correctAnswer": "Lake Tanganyika",
+      "incorrectAnswers": [
+        "Lake Malawi",
+        "Lake Turkana",
+        "Lake Albert"
+      ],
+      "explanation": "Lake Tanganyika lies in the western branch of the East African Rift and borders four countries along its shoreline.",
+      "keywords": [
+        "africa",
+        "lakes",
+        "great-lakes"
+      ],
+      "source": "https://www.britannica.com/place/Lake-Tanganyika"
+    },
+    {
+      "seedId": "b593226f-d86a-4172-a2af-4e9045770fb3",
+      "category": "geography",
+      "navigationKeyword1": "world",
+      "navigationKeyword2": "africa",
+      "question": "Which major trench-and-rift system runs north\u2013south through eastern Africa and is associated with deep lakes and high escarpments?",
+      "correctAnswer": "The Great Rift Valley",
+      "incorrectAnswers": [
+        "The Congo Basin",
+        "The Niger Delta",
+        "The Okavango Basin"
+      ],
+      "explanation": "The Great Rift Valley is part of a geologic rift system extending from the Middle East through eastern Africa.",
+      "keywords": [
+        "africa",
+        "rift-valley",
+        "physical-geography"
+      ],
+      "source": "https://www.britannica.com/place/Great-Rift-Valley"
+    },
+    {
+      "seedId": "ae0d095f-b1ba-4aaa-a065-a6a415857a32",
+      "category": "geography",
+      "navigationKeyword1": "world",
+      "navigationKeyword2": "africa",
+      "question": "Which mountain range runs across northwestern Africa and is especially prominent in Morocco and Algeria?",
+      "correctAnswer": "The Atlas Mountains",
+      "incorrectAnswers": [
+        "The Drakensberg",
+        "The Ethiopian Highlands",
+        "The Rwenzori Range"
+      ],
+      "explanation": "The Atlas system extends across the Maghreb region, separating the Mediterranean and Atlantic coasts from the Sahara.",
+      "keywords": [
+        "africa",
+        "mountain-ranges",
+        "north-africa"
+      ],
+      "source": "https://www.britannica.com/place/Atlas-Mountains"
+    },
+    {
+      "seedId": "a757e0d3-9941-4dc1-a17d-5d64bfc809b6",
+      "category": "geography",
+      "navigationKeyword1": "world",
+      "navigationKeyword2": "africa",
+      "question": "Which narrow sea lies between the northeastern African coast and the Arabian Peninsula?",
+      "correctAnswer": "The Red Sea",
+      "incorrectAnswers": [
+        "The Mediterranean Sea",
+        "The Arabian Sea",
+        "The Persian Gulf"
+      ],
+      "explanation": "The Red Sea is an inlet of the Indian Ocean between Africa and southwest Asia.",
+      "keywords": [
+        "africa",
+        "seas",
+        "northeast-africa"
+      ],
+      "source": "https://www.britannica.com/place/Red-Sea"
+    },
+    {
+      "seedId": "d3f7e57d-628e-48f2-8e55-873943a34e43",
+      "category": "geography",
+      "navigationKeyword1": "world",
+      "navigationKeyword2": "africa",
+      "question": "Which river is the longest on the African continent?",
+      "correctAnswer": "The Nile",
+      "incorrectAnswers": [
+        "The Congo River",
+        "The Niger River",
+        "The Zambezi River"
+      ],
+      "explanation": "The Nile flows north through northeastern Africa and is widely listed as Africa\u2019s longest river.",
+      "keywords": [
+        "africa",
+        "rivers",
+        "nile"
+      ],
+      "source": "https://www.britannica.com/place/Nile-River"
+    },
+    {
+      "seedId": "ac990596-89b1-421e-a04b-7f469272a0ab",
+      "category": "geography",
+      "navigationKeyword1": "world",
+      "navigationKeyword2": "africa",
+      "question": "Which vast desert covers much of northern Africa?",
+      "correctAnswer": "The Sahara",
+      "incorrectAnswers": [
+        "The Kalahari Desert",
+        "The Namib Desert",
+        "The Arabian Desert"
+      ],
+      "explanation": "The Sahara is an immense arid region stretching across North Africa from the Atlantic to the Red Sea.",
+      "keywords": [
+        "africa",
+        "deserts",
+        "north-africa"
+      ],
+      "source": "https://www.britannica.com/place/Sahara-desert-Africa"
+    },
+    {
+      "seedId": "2fa8f609-6ee9-4d34-abe8-29ce17718ae6",
+      "category": "geography",
+      "navigationKeyword1": "world",
+      "navigationKeyword2": "asia",
+      "question": "Lake Baikal, noted for great depth and freshwater volume, lies mainly in which country?",
+      "correctAnswer": "Russia",
+      "incorrectAnswers": [
+        "Kazakhstan",
+        "Mongolia",
+        "China"
+      ],
+      "explanation": "Lake Baikal is located in southern Siberia, Russia, and is Earth\u2019s deepest freshwater lake.",
+      "keywords": [
+        "asia",
+        "lakes",
+        "siberia"
+      ],
+      "source": "https://www.britannica.com/place/Lake-Baikal"
+    },
+    {
+      "seedId": "3aa0e4a1-2a63-484a-bc18-18a7ce9e8097",
+      "category": "geography",
+      "navigationKeyword1": "world",
+      "navigationKeyword2": "asia",
+      "question": "Which inland body of water is the world\u2019s largest lake by surface area?",
+      "correctAnswer": "The Caspian Sea",
+      "incorrectAnswers": [
+        "Lake Baikal",
+        "Lake Superior",
+        "The Aral Sea"
+      ],
+      "explanation": "Although called a sea, the Caspian is an endorheic lake and ranks as the largest lake by surface area.",
+      "keywords": [
+        "asia",
+        "lakes",
+        "central-asia"
+      ],
+      "source": "https://www.britannica.com/place/Caspian-Sea"
+    },
+    {
+      "seedId": "cdb4756b-220b-425f-ac8b-f726d5639c39",
+      "category": "geography",
+      "navigationKeyword1": "world",
+      "navigationKeyword2": "asia",
+      "question": "Which large bay lies northeast of the Indian Ocean and is bordered by India and Bangladesh to the west?",
+      "correctAnswer": "The Bay of Bengal",
+      "incorrectAnswers": [
+        "The Gulf of Thailand",
+        "The Persian Gulf",
+        "The Gulf of Aden"
+      ],
+      "explanation": "The Bay of Bengal is a northeastern arm of the Indian Ocean adjoining South and Southeast Asia.",
+      "keywords": [
+        "asia",
+        "seas",
+        "south-asia"
+      ],
+      "source": "https://www.britannica.com/place/Bay-of-Bengal"
+    },
+    {
+      "seedId": "01ea39e1-07fd-4a5e-a012-871e3fe8b432",
+      "category": "geography",
+      "navigationKeyword1": "world",
+      "navigationKeyword2": "asia",
+      "question": "Which large desert region lies mainly in southern Mongolia and northern China?",
+      "correctAnswer": "The Gobi Desert",
+      "incorrectAnswers": [
+        "The Thar Desert",
+        "The Arabian Desert",
+        "The Taklamakan Desert"
+      ],
+      "explanation": "The Gobi is a cold desert and scrubland region spanning parts of Mongolia and China.",
+      "keywords": [
+        "asia",
+        "deserts",
+        "physical-geography"
+      ],
+      "source": "https://www.britannica.com/place/Gobi"
+    },
+    {
+      "seedId": "fc8167f4-212c-42f1-8978-603168baabca",
+      "category": "geography",
+      "navigationKeyword1": "world",
+      "navigationKeyword2": "asia",
+      "question": "Which major mountain system separates the Indian subcontinent from the Tibetan Plateau?",
+      "correctAnswer": "The Himalayas",
+      "incorrectAnswers": [
+        "The Urals",
+        "The Caucasus Mountains",
+        "The Kunlun Mountains"
+      ],
+      "explanation": "The Himalayas form a high arc along the northern edge of the Indian subcontinent; the range includes Mount Everest on the Nepal\u2013China border.",
+      "keywords": [
+        "asia",
+        "mountain-ranges",
+        "himalayas"
+      ],
+      "source": "https://www.britannica.com/place/Himalayas-mountains-Asia"
+    },
+    {
+      "seedId": "6b673a62-fe07-46ac-9001-920447dba9bf",
+      "category": "geography",
+      "navigationKeyword1": "world",
+      "navigationKeyword2": "asia",
+      "question": "Which marginal sea of the western Pacific lies east of Vietnam and west of the Philippines?",
+      "correctAnswer": "The South China Sea",
+      "incorrectAnswers": [
+        "The Sea of Japan",
+        "The Arabian Sea",
+        "The Bay of Bengal"
+      ],
+      "explanation": "The South China Sea is part of the Pacific Ocean and borders several Southeast Asian states.",
+      "keywords": [
+        "asia",
+        "seas",
+        "southeast-asia"
+      ],
+      "source": "https://www.britannica.com/place/South-China-Sea"
+    },
+    {
+      "seedId": "176dd808-f419-4890-820a-8f61b1e2a986",
+      "category": "geography",
+      "navigationKeyword1": "world",
+      "navigationKeyword2": "asia",
+      "question": "Which peninsula is bordered by the Red Sea to the west and the Persian Gulf to the east?",
+      "correctAnswer": "The Arabian Peninsula",
+      "incorrectAnswers": [
+        "The Indochinese Peninsula",
+        "The Korean Peninsula",
+        "The Indian Peninsula"
+      ],
+      "explanation": "The Arabian Peninsula is a large subregion of Western Asia between the Red Sea and the Persian Gulf.",
+      "keywords": [
+        "asia",
+        "peninsulas",
+        "middle-east"
+      ],
+      "source": "https://www.britannica.com/place/Arabian-Peninsula"
+    },
+    {
+      "seedId": "740ec7d3-1d9f-49f7-a011-783cb88ada0e",
+      "category": "geography",
+      "navigationKeyword1": "world",
+      "navigationKeyword2": "asia",
+      "question": "Which river is the longest in China?",
+      "correctAnswer": "The Yangtze River (Chang Jiang)",
+      "incorrectAnswers": [
+        "The Yellow River (Huang He)",
+        "The Mekong River",
+        "The Ganges River"
+      ],
+      "explanation": "The Yangtze flows across central and eastern China and is commonly listed as China\u2019s longest river.",
+      "keywords": [
+        "asia",
+        "rivers",
+        "east-asia"
+      ],
+      "source": "https://www.britannica.com/place/Yangtze-River"
+    },
+    {
+      "seedId": "937027db-4851-40dc-9c9a-6070f18af604",
+      "category": "geography",
+      "navigationKeyword1": "world",
+      "navigationKeyword2": "asia",
+      "question": "Which river system historically defined the region called Mesopotamia?",
+      "correctAnswer": "The Tigris and Euphrates rivers",
+      "incorrectAnswers": [
+        "The Indus and Ganges rivers",
+        "The Amu Darya and Syr Darya",
+        "The Mekong and Red rivers"
+      ],
+      "explanation": "Mesopotamia (\u201cland between rivers\u201d) refers to the Tigris\u2013Euphrates valley in present-day Iraq and surroundings.",
+      "keywords": [
+        "asia",
+        "rivers",
+        "middle-east"
+      ],
+      "source": "https://www.britannica.com/place/Mesopotamia-historical-region-Asia"
+    },
+    {
+      "seedId": "1696d310-6f00-4c0b-b828-5251f67dc308",
+      "category": "geography",
+      "navigationKeyword1": "world",
+      "navigationKeyword2": "asia",
+      "question": "Which sea separates the Japanese archipelago from the east coast of mainland Asia?",
+      "correctAnswer": "The Sea of Japan",
+      "incorrectAnswers": [
+        "The Yellow Sea",
+        "The East China Sea",
+        "The Philippine Sea"
+      ],
+      "explanation": "The Sea of Japan lies between Japan and the east coast of the Asian continent.",
+      "keywords": [
+        "asia",
+        "seas",
+        "east-asia"
+      ],
+      "source": "https://www.britannica.com/place/Sea-of-Japan"
+    },
+    {
+      "seedId": "9eb535a9-9047-4c12-99d7-2e2e762f432c",
+      "category": "geography",
+      "navigationKeyword1": "world",
+      "navigationKeyword2": "asia",
+      "question": "Which strait connects the Pacific Ocean to the Indian Ocean between Sumatra and the Malay Peninsula?",
+      "correctAnswer": "Strait of Malacca",
+      "incorrectAnswers": [
+        "Strait of Hormuz",
+        "Bab el-Mandeb",
+        "Sunda Strait"
+      ],
+      "explanation": "The Strait of Malacca is a major shipping channel linking the Indian Ocean to the South China Sea and Pacific.",
+      "keywords": [
+        "asia",
+        "straits",
+        "southeast-asia"
+      ],
+      "source": "https://www.britannica.com/place/Strait-of-Malacca"
+    },
+    {
+      "seedId": "c81c223a-180a-442a-8950-3adb2b2e8527",
+      "category": "geography",
+      "navigationKeyword1": "world",
+      "navigationKeyword2": "europe",
+      "question": "Iceland\u2019s volcanism is closely associated with which plate boundary setting?",
+      "correctAnswer": "A divergent boundary along the Mid-Atlantic Ridge",
+      "incorrectAnswers": [
+        "A collision between the African and Indian plates",
+        "Subduction of the Pacific Plate under Asia",
+        "The San Andreas transform fault"
+      ],
+      "explanation": "Iceland straddles the divergent boundary where the North American and Eurasian plates move apart along the Mid-Atlantic Ridge.",
+      "keywords": [
+        "europe",
+        "tectonics",
+        "iceland"
+      ],
+      "source": "https://www.britannica.com/place/Iceland"
+    },
+    {
+      "seedId": "8ba67c15-ca11-4ffd-a569-8a98b01957db",
+      "category": "geography",
+      "navigationKeyword1": "world",
+      "navigationKeyword2": "europe",
+      "question": "Into which sea does the Danube River discharge?",
+      "correctAnswer": "The Black Sea",
+      "incorrectAnswers": [
+        "The Mediterranean Sea",
+        "The Baltic Sea",
+        "The Caspian Sea"
+      ],
+      "explanation": "The Danube\u2019s delta empties into the Black Sea after crossing much of Central and Eastern Europe.",
+      "keywords": [
+        "europe",
+        "rivers",
+        "black-sea"
+      ],
+      "source": "https://www.britannica.com/place/Danube-River"
+    },
+    {
+      "seedId": "8e63e41d-8000-42a2-83b0-dc2ca9503941",
+      "category": "geography",
+      "navigationKeyword1": "world",
+      "navigationKeyword2": "europe",
+      "question": "Which bay lies west of France and north of Spain?",
+      "correctAnswer": "The Bay of Biscay",
+      "incorrectAnswers": [
+        "The Gulf of Bothnia",
+        "The Gulf of Finland",
+        "The Adriatic Sea"
+      ],
+      "explanation": "The Bay of Biscay is part of the North Atlantic east of Spain and west of France.",
+      "keywords": [
+        "europe",
+        "atlantic",
+        "water-bodies"
+      ],
+      "source": "https://www.britannica.com/place/Bay-of-Biscay"
+    },
+    {
+      "seedId": "e419d60c-316c-4832-b8d4-b8a3ee5bdb66",
+      "category": "geography",
+      "navigationKeyword1": "world",
+      "navigationKeyword2": "europe",
+      "question": "Which major European range includes Mont Blanc, Western Europe\u2019s highest peak?",
+      "correctAnswer": "The Alps",
+      "incorrectAnswers": [
+        "The Pyrenees",
+        "The Apennines",
+        "The Dinaric Alps"
+      ],
+      "explanation": "Mont Blanc sits in the Alps on the France\u2013Italy border and is the tallest peak in Western Europe.",
+      "keywords": [
+        "europe",
+        "mountain-ranges",
+        "alps"
+      ],
+      "source": "https://www.britannica.com/place/Alps-mountains-Europe"
+    },
+    {
+      "seedId": "52494387-6064-4132-8dcd-6f250f8da689",
+      "category": "geography",
+      "navigationKeyword1": "world",
+      "navigationKeyword2": "europe",
+      "question": "Which mountain range forms a high natural border between France and Spain?",
+      "correctAnswer": "The Pyrenees",
+      "incorrectAnswers": [
+        "The Alps",
+        "The Apennines",
+        "The Carpathians"
+      ],
+      "explanation": "The Pyrenees stretch along the France\u2013Spain frontier, separating the Iberian Peninsula from the rest of Europe.",
+      "keywords": [
+        "europe",
+        "mountain-ranges",
+        "borders"
+      ],
+      "source": "https://www.britannica.com/place/Pyrenees"
+    },
+    {
+      "seedId": "6f9a3d4a-4463-4a78-a44c-600028c43ce2",
+      "category": "geography",
+      "navigationKeyword1": "world",
+      "navigationKeyword2": "europe",
+      "question": "Which mountain system is commonly used as part of the boundary between Europe and Asia?",
+      "correctAnswer": "The Ural Mountains",
+      "incorrectAnswers": [
+        "The Caucasus Mountains",
+        "The Alps",
+        "The Atlas Mountains"
+      ],
+      "explanation": "The Urals run roughly north\u2013south through Russia and are a standard geographic divider between Europe and Asia.",
+      "keywords": [
+        "europe",
+        "mountain-ranges",
+        "boundaries"
+      ],
+      "source": "https://www.britannica.com/place/Ural-Mountains"
+    },
+    {
+      "seedId": "7237e1d8-0c5a-4888-9204-3f05f9babaac",
+      "category": "geography",
+      "navigationKeyword1": "world",
+      "navigationKeyword2": "europe",
+      "question": "Which narrow sea separates southern England from northern France?",
+      "correctAnswer": "The English Channel",
+      "incorrectAnswers": [
+        "The Irish Sea",
+        "The North Sea",
+        "The Bay of Biscay"
+      ],
+      "explanation": "The English Channel lies between Great Britain and northwestern France and connects to the North Sea.",
+      "keywords": [
+        "europe",
+        "seas",
+        "northwest-europe"
+      ],
+      "source": "https://www.britannica.com/place/English-Channel"
+    },
+    {
+      "seedId": "20be43bf-f270-47f3-9632-36e67821b1a6",
+      "category": "geography",
+      "navigationKeyword1": "world",
+      "navigationKeyword2": "europe",
+      "question": "Which peninsula includes mainland Norway and Sweden?",
+      "correctAnswer": "The Scandinavian Peninsula",
+      "incorrectAnswers": [
+        "The Iberian Peninsula",
+        "The Balkan Peninsula",
+        "The Jutland Peninsula"
+      ],
+      "explanation": "Norway and Sweden occupy most of the Scandinavian Peninsula in northern Europe.",
+      "keywords": [
+        "europe",
+        "peninsulas",
+        "northern-europe"
+      ],
+      "source": "https://www.britannica.com/place/Scandinavian-Peninsula"
+    },
+    {
+      "seedId": "94226c67-a4b6-4c1a-9621-1e7a70998d44",
+      "category": "geography",
+      "navigationKeyword1": "world",
+      "navigationKeyword2": "europe",
+      "question": "Which river is widely cited as the longest river in Europe?",
+      "correctAnswer": "The Volga",
+      "incorrectAnswers": [
+        "The Danube",
+        "The Rhine",
+        "The Dnieper"
+      ],
+      "explanation": "The Volga flows mostly through Russia and is commonly listed as Europe\u2019s longest river by length.",
+      "keywords": [
+        "europe",
+        "rivers",
+        "physical-geography"
+      ],
+      "source": "https://www.britannica.com/place/Volga-River"
+    },
+    {
+      "seedId": "598a0064-6351-4a19-ae21-f75d9edad940",
+      "category": "geography",
+      "navigationKeyword1": "world",
+      "navigationKeyword2": "europe",
+      "question": "Which sea lies east of Sweden\u2019s Baltic coast?",
+      "correctAnswer": "The Baltic Sea",
+      "incorrectAnswers": [
+        "The North Sea",
+        "The Norwegian Sea",
+        "The Celtic Sea"
+      ],
+      "explanation": "Sweden\u2019s eastern seaboard fronts the Baltic Sea, which also borders several other northern European states.",
+      "keywords": [
+        "europe",
+        "seas",
+        "northern-europe"
+      ],
+      "source": "https://www.britannica.com/place/Baltic-Sea"
+    },
+    {
+      "seedId": "d5f03ae6-d888-4ebd-bf6c-4137e755eb2d",
+      "category": "geography",
+      "navigationKeyword1": "world",
+      "navigationKeyword2": "europe",
+      "question": "Which shallow arm of the Black Sea lies north of Crimea and connects to the main basin through the Kerch Strait?",
+      "correctAnswer": "The Sea of Azov",
+      "incorrectAnswers": [
+        "The Baltic Sea",
+        "The Adriatic Sea",
+        "The White Sea"
+      ],
+      "explanation": "The Sea of Azov is the small northern extension of the Black Sea linked by the Kerch Strait.",
+      "keywords": [
+        "europe",
+        "seas",
+        "sea-of-azov"
+      ],
+      "source": "https://www.britannica.com/place/Sea-of-Azov"
+    },
+    {
+      "seedId": "af098110-fe52-46ea-9108-515602ec0864",
+      "category": "geography",
+      "navigationKeyword1": "world",
+      "navigationKeyword2": "europe",
+      "question": "Which strait connects the Mediterranean Sea to the Atlantic Ocean?",
+      "correctAnswer": "Strait of Gibraltar",
+      "incorrectAnswers": [
+        "Bosporus",
+        "Strait of Dover",
+        "Strait of Messina"
+      ],
+      "explanation": "The Strait of Gibraltar lies between southern Spain and northern Morocco and links the Mediterranean with the Atlantic.",
+      "keywords": [
+        "europe",
+        "straits",
+        "water-bodies"
+      ],
+      "source": "https://www.britannica.com/place/Strait-of-Gibraltar"
+    },
+    {
+      "seedId": "af75f7f8-8e1a-45ad-98fa-564080a821aa",
+      "category": "geography",
+      "navigationKeyword1": "world",
+      "navigationKeyword2": "north-america",
+      "question": "By surface area, which of the Great Lakes is the largest?",
+      "correctAnswer": "Lake Superior",
+      "incorrectAnswers": [
+        "Lake Michigan",
+        "Lake Huron",
+        "Lake Ontario"
+      ],
+      "explanation": "Lake Superior is the largest Great Lake by surface area and holds the greatest volume of water among them.",
+      "keywords": [
+        "north-america",
+        "great-lakes",
+        "lakes"
+      ],
+      "source": "https://www.britannica.com/place/Lake-Superior"
+    },
+    {
+      "seedId": "fa075893-f950-4458-9115-00ac48a140db",
+      "category": "geography",
+      "navigationKeyword1": "world",
+      "navigationKeyword2": "north-america",
+      "question": "Greenland, the world\u2019s largest island, is part of which European kingdom?",
+      "correctAnswer": "Denmark",
+      "incorrectAnswers": [
+        "Canada",
+        "Norway",
+        "Iceland"
+      ],
+      "explanation": "Greenland is an autonomous territory within the Kingdom of Denmark and lies geographically between the Arctic and Atlantic oceans.",
+      "keywords": [
+        "north-america",
+        "arctic",
+        "greenland"
+      ],
+      "source": "https://www.britannica.com/place/Greenland"
+    },
+    {
+      "seedId": "ed371588-3abb-4fec-83ad-cf75e0ebcba8",
+      "category": "geography",
+      "navigationKeyword1": "world",
+      "navigationKeyword2": "north-america",
+      "question": "The Yucat\u00e1n Peninsula lies between the Gulf of Mexico and which other body of water?",
+      "correctAnswer": "The Caribbean Sea",
+      "incorrectAnswers": [
+        "The Pacific Ocean",
+        "The Gulf of California",
+        "The Adriatic Sea"
+      ],
+      "explanation": "The Yucat\u00e1n Peninsula projects northward between the Gulf of Mexico to the west and north and the Caribbean Sea to the east.",
+      "keywords": [
+        "north-america",
+        "peninsulas",
+        "caribbean"
+      ],
+      "source": "https://www.britannica.com/place/Yucatan-Peninsula"
+    },
+    {
+      "seedId": "f964bb5a-a51c-4371-85ac-e0ae4bed0a0a",
+      "category": "geography",
+      "navigationKeyword1": "world",
+      "navigationKeyword2": "north-america",
+      "question": "Which ancient mountain chain runs roughly parallel to the eastern coast of the United States?",
+      "correctAnswer": "The Appalachian Mountains",
+      "incorrectAnswers": [
+        "The Rocky Mountains",
+        "The Coast Ranges",
+        "The Brooks Range"
+      ],
+      "explanation": "The Appalachians form a long belt of mountains and ridges from eastern Canada into the southeastern United States.",
+      "keywords": [
+        "north-america",
+        "mountain-ranges",
+        "appalachians"
+      ],
+      "source": "https://www.britannica.com/place/Appalachian-Mountains"
+    },
+    {
+      "seedId": "ad31ffd4-519b-4ddc-b602-edd04cf32fb4",
+      "category": "geography",
+      "navigationKeyword1": "world",
+      "navigationKeyword2": "north-america",
+      "question": "Which group of interconnected freshwater lakes forms part of the international border between the United States and Canada?",
+      "correctAnswer": "The Great Lakes",
+      "incorrectAnswers": [
+        "The Great Salt Lake and its neighbors",
+        "The Finger Lakes",
+        "The Great Slave and Great Bear lakes"
+      ],
+      "explanation": "The five Great Lakes (Superior, Michigan, Huron, Erie, and Ontario) lie along or near the US\u2013Canada boundary in eastern North America.",
+      "keywords": [
+        "north-america",
+        "great-lakes",
+        "freshwater"
+      ],
+      "source": "https://www.britannica.com/place/Great-Lakes"
+    },
+    {
+      "seedId": "ac8ef724-d8a7-4e91-a2b1-e9f42f7cbfda",
+      "category": "geography",
+      "navigationKeyword1": "world",
+      "navigationKeyword2": "north-america",
+      "question": "Which gulf lies between the eastern coast of Mexico and the US Gulf Coast states?",
+      "correctAnswer": "The Gulf of Mexico",
+      "incorrectAnswers": [
+        "The Gulf of California",
+        "Hudson Bay",
+        "The Caribbean Sea"
+      ],
+      "explanation": "The Gulf of Mexico is a marginal sea of the Atlantic bordered by the southeastern United States, eastern Mexico, and Cuba.",
+      "keywords": [
+        "north-america",
+        "gulf",
+        "atlantic"
+      ],
+      "source": "https://www.britannica.com/place/Gulf-of-Mexico-Gulf-of-America"
+    },
+    {
+      "seedId": "719849a8-8fc9-4a76-afe1-d1388910a791",
+      "category": "geography",
+      "navigationKeyword1": "world",
+      "navigationKeyword2": "north-america",
+      "question": "Which large inland sea in northeastern Canada is linked to the Atlantic via Hudson Strait?",
+      "correctAnswer": "Hudson Bay",
+      "incorrectAnswers": [
+        "Baffin Bay",
+        "Labrador Sea",
+        "James Bay only"
+      ],
+      "explanation": "Hudson Bay is a huge body of water in central-northeastern Canada, opening to the Atlantic through Hudson Strait.",
+      "keywords": [
+        "north-america",
+        "arctic",
+        "canada"
+      ],
+      "source": "https://www.britannica.com/place/Hudson-Bay"
+    },
+    {
+      "seedId": "6f72763b-ec7b-43be-a098-a1b03019b384",
+      "category": "geography",
+      "navigationKeyword1": "world",
+      "navigationKeyword2": "north-america",
+      "question": "Which major mountain system extends from western Canada into the western United States and includes the Continental Divide in many areas?",
+      "correctAnswer": "The Rocky Mountains",
+      "incorrectAnswers": [
+        "The Appalachian Mountains",
+        "The Sierra Nevada",
+        "The Cascade Range"
+      ],
+      "explanation": "The Rockies form a broad cordillera along much of western North America, separating Pacific-bound drainage from interior drainage in many places.",
+      "keywords": [
+        "north-america",
+        "mountain-ranges",
+        "rockies"
+      ],
+      "source": "https://www.britannica.com/place/Rocky-Mountains"
+    },
+    {
+      "seedId": "6fd51d43-ae10-421e-ac55-bb1b31b07705",
+      "category": "geography",
+      "navigationKeyword1": "world",
+      "navigationKeyword2": "north-america",
+      "question": "Which major river empties into the Gulf of Mexico through a broad delta in southern Louisiana?",
+      "correctAnswer": "The Mississippi River",
+      "incorrectAnswers": [
+        "The Rio Grande",
+        "The Colorado River",
+        "The Columbia River"
+      ],
+      "explanation": "The Mississippi drains a vast central US watershed and reaches the Gulf of Mexico south of New Orleans.",
+      "keywords": [
+        "north-america",
+        "rivers",
+        "mississippi"
+      ],
+      "source": "https://www.britannica.com/place/Mississippi-River"
+    },
+    {
+      "seedId": "dfae3aae-482a-4c3e-a043-6471053e1c8b",
+      "category": "geography",
+      "navigationKeyword1": "world",
+      "navigationKeyword2": "north-america",
+      "question": "Which river system, draining northwestern Canada to the Arctic Ocean, is Canada\u2019s longest?",
+      "correctAnswer": "The Mackenzie River system",
+      "incorrectAnswers": [
+        "The St. Lawrence River",
+        "The Yukon River",
+        "The Nelson River"
+      ],
+      "explanation": "The Mackenzie system flows from the Rocky Mountain headwaters region northward to the Beaufort Sea and is Canada\u2019s longest river system.",
+      "keywords": [
+        "north-america",
+        "rivers",
+        "canada"
+      ],
+      "source": "https://www.britannica.com/place/Mackenzie-River"
+    },
+    {
+      "seedId": "c8ed51d5-b026-4010-b8bc-f1248f12844b",
+      "category": "geography",
+      "navigationKeyword1": "world",
+      "navigationKeyword2": "north-america",
+      "question": "Which strait separates northwestern Alaska from northeastern Russia at their closest approach?",
+      "correctAnswer": "The Bering Strait",
+      "incorrectAnswers": [
+        "The Davis Strait",
+        "The Strait of Belle Isle",
+        "The Strait of Georgia"
+      ],
+      "explanation": "The Bering Strait connects the Pacific Arctic with the Bering Sea and lies between the Chukotka Peninsula and the Seward Peninsula region of Alaska.",
+      "keywords": [
+        "north-america",
+        "straits",
+        "arctic"
+      ],
+      "source": "https://www.britannica.com/place/Bering-Strait"
+    },
+    {
+      "seedId": "56630e61-61de-47da-a23f-a2a1e1ae0fd4",
+      "category": "geography",
+      "navigationKeyword1": "world",
+      "navigationKeyword2": "north-america",
+      "question": "Which vast Precambrian shield region is centered on Hudson Bay and covers much of eastern and central Canada?",
+      "correctAnswer": "The Canadian Shield",
+      "incorrectAnswers": [
+        "The Colorado Plateau",
+        "The Basin and Range Province",
+        "The Piedmont Plateau"
+      ],
+      "explanation": "The Canadian Shield is a broad expanse of ancient crystalline rock underlying much of Canada and extending into Greenland.",
+      "keywords": [
+        "north-america",
+        "canada",
+        "geology"
+      ],
+      "source": "https://www.britannica.com/place/Canadian-Shield"
+    },
+    {
+      "seedId": "d16a15be-d739-4a18-931b-49de2e61a617",
+      "category": "geography",
+      "navigationKeyword1": "world",
+      "navigationKeyword2": "oceania",
+      "question": "Australia sits on its own major plate named for the continent\u2014what is that plate commonly called?",
+      "correctAnswer": "The Australian Plate",
+      "incorrectAnswers": [
+        "The Pacific Plate",
+        "The Nazca Plate",
+        "The Eurasian Plate"
+      ],
+      "explanation": "Australia lies mainly on the Australian Plate; some models merge it with India into an Indo-Australian Plate.",
+      "keywords": [
+        "oceania",
+        "plate-tectonics",
+        "australia"
+      ],
+      "source": "https://www.britannica.com/place/Pacific-Ocean"
+    },
+    {
+      "seedId": "d54977b9-af28-48a6-9793-8552d2923263",
+      "category": "geography",
+      "navigationKeyword1": "world",
+      "navigationKeyword2": "oceania",
+      "question": "Fiji\u2019s two largest islands, Viti Levu and Vanua Levu, lie in which ocean?",
+      "correctAnswer": "The Pacific Ocean",
+      "incorrectAnswers": [
+        "The Indian Ocean",
+        "The Atlantic Ocean",
+        "The Southern Ocean only"
+      ],
+      "explanation": "Fiji is an archipelagic country in Melanesia within the tropical southwestern Pacific Ocean.",
+      "keywords": [
+        "oceania",
+        "melanesia",
+        "fiji"
+      ],
+      "source": "https://www.britannica.com/place/Fiji-republic-Pacific-Ocean"
+    },
+    {
+      "seedId": "a11d037a-b580-4459-a6ea-7dd3b71d2363",
+      "category": "geography",
+      "navigationKeyword1": "world",
+      "navigationKeyword2": "oceania",
+      "question": "New Zealand\u2019s two main islands are the North Island and which other island?",
+      "correctAnswer": "The South Island",
+      "incorrectAnswers": [
+        "Tasmania",
+        "New Britain",
+        "Guadalcanal"
+      ],
+      "explanation": "New Zealand consists mainly of the North Island (Te Ika-a-M\u0101ui) and the larger South Island (Te Waipounamu).",
+      "keywords": [
+        "oceania",
+        "new-zealand",
+        "islands"
+      ],
+      "source": "https://www.britannica.com/place/New-Zealand"
+    },
+    {
+      "seedId": "89aa121b-a227-41dc-93cd-0fb5cd98bd95",
+      "category": "geography",
+      "navigationKeyword1": "world",
+      "navigationKeyword2": "oceania",
+      "question": "Which Australian island state lies south of Victoria across the Bass Strait?",
+      "correctAnswer": "Tasmania",
+      "incorrectAnswers": [
+        "Kangaroo Island",
+        "New Zealand",
+        "Norfolk Island"
+      ],
+      "explanation": "Tasmania is an island state of Australia separated from the mainland by Bass Strait.",
+      "keywords": [
+        "oceania",
+        "australia",
+        "islands"
+      ],
+      "source": "https://www.britannica.com/place/Tasmania"
+    },
+    {
+      "seedId": "79f7476c-4158-423d-800d-e3802abb6722",
+      "category": "geography",
+      "navigationKeyword1": "world",
+      "navigationKeyword2": "oceania",
+      "question": "Which French overseas collectivity includes Tahiti and other Society Islands in the South Pacific?",
+      "correctAnswer": "French Polynesia",
+      "incorrectAnswers": [
+        "New Caledonia",
+        "Wallis and Futuna",
+        "American Samoa"
+      ],
+      "explanation": "French Polynesia is an overseas collectivity of France centered on the Society Islands, including Tahiti.",
+      "keywords": [
+        "oceania",
+        "polynesia",
+        "france"
+      ],
+      "source": "https://www.britannica.com/place/French-Polynesia"
+    },
+    {
+      "seedId": "a2aff60b-5423-41bc-b288-4a3aca71e5a7",
+      "category": "geography",
+      "navigationKeyword1": "world",
+      "navigationKeyword2": "oceania",
+      "question": "Which Melanesian archipelago country lies west of Fiji and east of Australia?",
+      "correctAnswer": "Vanuatu",
+      "incorrectAnswers": [
+        "Samoa",
+        "Tonga",
+        "Palau"
+      ],
+      "explanation": "Vanuatu is a Y-shaped island chain in the southwestern Pacific, part of Melanesia.",
+      "keywords": [
+        "oceania",
+        "melanesia",
+        "archipelagos"
+      ],
+      "source": "https://www.britannica.com/place/Vanuatu"
+    },
+    {
+      "seedId": "3c2eab12-b2f2-4fdd-92af-e6e32a1632e1",
+      "category": "geography",
+      "navigationKeyword1": "world",
+      "navigationKeyword2": "oceania",
+      "question": "Which country occupies the continent of Australia?",
+      "correctAnswer": "Australia",
+      "incorrectAnswers": [
+        "New Zealand",
+        "Papua New Guinea",
+        "Fiji"
+      ],
+      "explanation": "The Commonwealth of Australia is the sovereign state that covers the Australian continental landmass.",
+      "keywords": [
+        "oceania",
+        "australia",
+        "continents"
+      ],
+      "source": "https://www.britannica.com/place/Australia"
+    },
+    {
+      "seedId": "edd4192f-ff94-44ed-a6c9-4c32faab117a",
+      "category": "geography",
+      "navigationKeyword1": "world",
+      "navigationKeyword2": "oceania",
+      "question": "Which independent country occupies the eastern half of the island of New Guinea?",
+      "correctAnswer": "Papua New Guinea",
+      "incorrectAnswers": [
+        "Indonesia",
+        "Solomon Islands",
+        "Vanuatu"
+      ],
+      "explanation": "Papua New Guinea lies on the eastern half of New Guinea; the western portion is part of Indonesia.",
+      "keywords": [
+        "oceania",
+        "melanesia",
+        "new-guinea"
+      ],
+      "source": "https://www.britannica.com/place/Papua-New-Guinea"
+    },
+    {
+      "seedId": "c780c3f6-6a9c-4238-8632-8b7b2d2bc5ec",
+      "category": "geography",
+      "navigationKeyword1": "world",
+      "navigationKeyword2": "oceania",
+      "question": "Which low-lying island country is spread across many atolls in the central Pacific?",
+      "correctAnswer": "Kiribati",
+      "incorrectAnswers": [
+        "Fiji",
+        "Samoa",
+        "Palau"
+      ],
+      "explanation": "Kiribati comprises numerous scattered atolls and reef islands straddling the equator in Micronesia and Polynesia.",
+      "keywords": [
+        "oceania",
+        "micronesia",
+        "atolls"
+      ],
+      "source": "https://www.britannica.com/place/Kiribati"
+    },
+    {
+      "seedId": "9c97821c-b2ca-4c69-b81e-5613e82b7bd0",
+      "category": "geography",
+      "navigationKeyword1": "world",
+      "navigationKeyword2": "oceania",
+      "question": "Which massive coral reef system lies off Queensland, northeastern Australia?",
+      "correctAnswer": "The Great Barrier Reef",
+      "incorrectAnswers": [
+        "The Mesoamerican Reef",
+        "The Florida Reef",
+        "Ningaloo Reef"
+      ],
+      "explanation": "The Great Barrier Reef is Earth\u2019s largest coral reef complex, paralleling Queensland\u2019s coast.",
+      "keywords": [
+        "oceania",
+        "coral-reefs",
+        "australia"
+      ],
+      "source": "https://www.britannica.com/place/Great-Barrier-Reef"
+    },
+    {
+      "seedId": "173abdbf-8ea2-4eac-ace2-afad21e288d6",
+      "category": "geography",
+      "navigationKeyword1": "world",
+      "navigationKeyword2": "oceania",
+      "question": "Which sea lies between Australia and New Zealand?",
+      "correctAnswer": "The Tasman Sea",
+      "incorrectAnswers": [
+        "The Coral Sea",
+        "The Timor Sea",
+        "The Arafura Sea"
+      ],
+      "explanation": "The Tasman Sea is a southwestern arm of the South Pacific separating Australia\u2019s east coast from New Zealand.",
+      "keywords": [
+        "oceania",
+        "seas",
+        "pacific"
+      ],
+      "source": "https://www.britannica.com/place/Tasman-Sea"
+    },
+    {
+      "seedId": "90f50568-69b1-468b-a816-d8e3b9a77884",
+      "category": "geography",
+      "navigationKeyword1": "world",
+      "navigationKeyword2": "south-america",
+      "question": "By area, which country is the largest in South America?",
+      "correctAnswer": "Brazil",
+      "incorrectAnswers": [
+        "Argentina",
+        "Peru",
+        "Colombia"
+      ],
+      "explanation": "Brazil occupies nearly half of the continent\u2019s land area, far exceeding any other South American state.",
+      "keywords": [
+        "south-america",
+        "brazil",
+        "country-size"
+      ],
+      "source": "https://www.britannica.com/place/Brazil"
+    },
+    {
+      "seedId": "669e0382-a68a-4875-9351-ac165a612e86",
+      "category": "geography",
+      "navigationKeyword1": "world",
+      "navigationKeyword2": "south-america",
+      "question": "Lake Titicaca, a large high-elevation lake, is shared by which two countries?",
+      "correctAnswer": "Peru and Bolivia",
+      "incorrectAnswers": [
+        "Argentina and Chile",
+        "Colombia and Ecuador",
+        "Brazil and Paraguay"
+      ],
+      "explanation": "Lake Titicaca sits on the Altiplano of the central Andes along the Peru\u2013Bolivia border.",
+      "keywords": [
+        "south-america",
+        "lakes",
+        "andes"
+      ],
+      "source": "https://www.britannica.com/place/Lake-Titicaca"
+    },
+    {
+      "seedId": "620b10f4-0164-4895-8e34-9cd7d500b3a8",
+      "category": "geography",
+      "navigationKeyword1": "world",
+      "navigationKeyword2": "south-america",
+      "question": "The spectacular Iguazu Falls are mainly on the border between which two countries?",
+      "correctAnswer": "Argentina and Brazil",
+      "incorrectAnswers": [
+        "Chile and Argentina",
+        "Peru and Bolivia",
+        "Colombia and Venezuela"
+      ],
+      "explanation": "Iguazu Falls span the Iguazu River on the Argentina\u2013Brazil frontier.",
+      "keywords": [
+        "south-america",
+        "waterfalls",
+        "rivers"
+      ],
+      "source": "https://www.britannica.com/place/Iguacu-Falls"
+    },
+    {
+      "seedId": "052a2443-585c-40a1-8e7a-ddc5af360ebe",
+      "category": "geography",
+      "navigationKeyword1": "world",
+      "navigationKeyword2": "south-america",
+      "question": "Which broad fertile plains cover much of eastern Argentina and Uruguay?",
+      "correctAnswer": "The Pampas",
+      "incorrectAnswers": [
+        "The Llanos",
+        "The Gran Chaco",
+        "The Caatinga"
+      ],
+      "explanation": "The Pampas are treeless grasslands that form one of South America\u2019s major pastoral and farming regions.",
+      "keywords": [
+        "south-america",
+        "plains",
+        "argentina"
+      ],
+      "source": "https://www.britannica.com/place/Pampas"
+    },
+    {
+      "seedId": "9855efb1-472e-4a21-ab0c-c5c6712a1ec9",
+      "category": "geography",
+      "navigationKeyword1": "world",
+      "navigationKeyword2": "south-america",
+      "question": "Which extremely arid coastal desert lies mainly in northern Chile?",
+      "correctAnswer": "The Atacama Desert",
+      "incorrectAnswers": [
+        "The Patagonian Desert",
+        "The Sechura Desert",
+        "The La Guajira Desert"
+      ],
+      "explanation": "The Atacama is one of the driest places on Earth and stretches along Chile\u2019s Pacific coast.",
+      "keywords": [
+        "south-america",
+        "deserts",
+        "chile"
+      ],
+      "source": "https://www.britannica.com/place/Atacama-Desert"
+    },
+    {
+      "seedId": "0229b0fc-6050-4c87-a280-98b650aa6459",
+      "category": "geography",
+      "navigationKeyword1": "world",
+      "navigationKeyword2": "south-america",
+      "question": "Which major South American river joins the Uruguay River to form the R\u00edo de la Plata estuary?",
+      "correctAnswer": "The Paran\u00e1 River",
+      "incorrectAnswers": [
+        "The Amazon River",
+        "The Orinoco River",
+        "The S\u00e3o Francisco River"
+      ],
+      "explanation": "The Paran\u00e1\u2013Uruguay system drains into the R\u00edo de la Plata, a large estuary opening to the Atlantic.",
+      "keywords": [
+        "south-america",
+        "rivers",
+        "rioplatense"
+      ],
+      "source": "https://www.britannica.com/place/Parana-River"
+    },
+    {
+      "seedId": "bbb7c5d9-95fb-4623-ae3d-c75532f81984",
+      "category": "geography",
+      "navigationKeyword1": "world",
+      "navigationKeyword2": "south-america",
+      "question": "Which major river drains the Llanos of Colombia and Venezuela into the Atlantic?",
+      "correctAnswer": "The Orinoco River",
+      "incorrectAnswers": [
+        "The Magdalena River",
+        "The Essequibo River",
+        "The Purus River"
+      ],
+      "explanation": "The Orinoco flows in a wide arc across northern South America and empties into the Atlantic near the delta region of Venezuela.",
+      "keywords": [
+        "south-america",
+        "rivers",
+        "venezuela"
+      ],
+      "source": "https://www.britannica.com/place/Orinoco-River"
+    },
+    {
+      "seedId": "38b97e6e-ad46-4f9f-9968-635633601a7d",
+      "category": "geography",
+      "navigationKeyword1": "world",
+      "navigationKeyword2": "south-america",
+      "question": "Which mountain chain runs along the western margin of South America?",
+      "correctAnswer": "The Andes",
+      "incorrectAnswers": [
+        "The Rockies",
+        "The Appalachians",
+        "The Atlas Mountains"
+      ],
+      "explanation": "The Andes form a continuous high cordillera from Venezuela southward along the Pacific side of the continent.",
+      "keywords": [
+        "south-america",
+        "mountain-ranges",
+        "andes"
+      ],
+      "source": "https://www.britannica.com/place/Andes-Mountains"
+    },
+    {
+      "seedId": "e4be0edb-1699-43ec-8dd5-8dc39f00396c",
+      "category": "geography",
+      "navigationKeyword1": "world",
+      "navigationKeyword2": "south-america",
+      "question": "Which narrow sea separates southern Argentina from the island of Tierra del Fuego?",
+      "correctAnswer": "The Strait of Magellan",
+      "incorrectAnswers": [
+        "The Drake Passage",
+        "The Bosporus",
+        "The Mozambique Channel"
+      ],
+      "explanation": "The Strait of Magellan cuts through southern Chile and provides a protected passage between the Atlantic and Pacific south of mainland South America.",
+      "keywords": [
+        "south-america",
+        "straits",
+        "chile"
+      ],
+      "source": "https://www.britannica.com/place/Strait-of-Magellan"
+    },
+    {
+      "seedId": "94d8fb9e-dbcc-49b1-a8fa-d17d9ebd041e",
+      "category": "geography",
+      "navigationKeyword1": "world",
+      "navigationKeyword2": "south-america",
+      "question": "Which river carries more water to the sea than any other river in the world?",
+      "correctAnswer": "The Amazon River",
+      "incorrectAnswers": [
+        "The Paran\u00e1 River",
+        "The Orinoco River",
+        "The Magdalena River"
+      ],
+      "explanation": "The Amazon drains the world\u2019s largest equatorial lowland basin and has the greatest discharge of any river system.",
+      "keywords": [
+        "south-america",
+        "rivers",
+        "amazon"
+      ],
+      "source": "https://www.britannica.com/place/Amazon-River"
+    },
+    {
+      "seedId": "1b0494f5-88e8-4715-bac9-7a39c37f8cb4",
+      "category": "geography",
+      "navigationKeyword1": "world",
+      "navigationKeyword2": "south-america",
+      "question": "Which windswept plateau and steppe region covers southern Argentina and Chile east of the Andes?",
+      "correctAnswer": "Patagonia",
+      "incorrectAnswers": [
+        "The Pampas",
+        "The Gran Chaco",
+        "The cerrado"
+      ],
+      "explanation": "Patagonia is the southern tableland region of Argentina and Chile, noted for cool, dry climates and strong winds.",
+      "keywords": [
+        "south-america",
+        "patagonia",
+        "climate"
+      ],
+      "source": "https://www.britannica.com/place/Patagonia"
+    }
+  ]
+}

@@ -1,0 +1,235 @@
+{
+  "schemaVersion": 1,
+  "seedSet": "core-public-items",
+  "deltaPreviewLimit": 200,
+  "items": [
+    {
+      "seedId": "dda000b8-cceb-4a44-ab32-d31a38510927",
+      "category": "science",
+      "navigationKeyword1": "pre-algebra",
+      "navigationKeyword2": "ratios",
+      "question": "Are 3/4 and 6/8 proportional?",
+      "correctAnswer": "Yes (equivalent fractions)",
+      "incorrectAnswers": [
+        "No",
+        "Only if added",
+        "Only decimals"
+      ],
+      "explanation": "Cross multiply equal.",
+      "keywords": [
+        "equivalent-fractions",
+        "proportion"
+      ],
+      "source": "https://www.mathsisfun.com/fractions_equivalent.html"
+    },
+    {
+      "seedId": "8f677066-2806-4c4a-b6d1-be3ab42dbf02",
+      "category": "science",
+      "navigationKeyword1": "pre-algebra",
+      "navigationKeyword2": "ratios",
+      "question": "Divide 60 in ratio 2:3?",
+      "correctAnswer": "24 and 36",
+      "incorrectAnswers": [
+        "20 and 40",
+        "30 and 30",
+        "12 and 48"
+      ],
+      "explanation": "2+3=5 parts; 60/5=12.",
+      "keywords": [
+        "partitive",
+        "ratio"
+      ],
+      "source": "https://www.mathsisfun.com/numbers/ratio.html"
+    },
+    {
+      "seedId": "3ad4c339-5d67-4fc7-b1bc-2d4efbd0962e",
+      "category": "science",
+      "navigationKeyword1": "pre-algebra",
+      "navigationKeyword2": "ratios",
+      "question": "Golden ratio mention (approx)?",
+      "correctAnswer": "\u22481.618 (classic definition \u03c6 = (1+\u221a5)/2)",
+      "incorrectAnswers": [
+        "\u22483.14",
+        "\u22482.718",
+        "\u22480.5"
+      ],
+      "explanation": "Appears in geometry/recursion.",
+      "keywords": [
+        "golden-ratio",
+        "constants"
+      ],
+      "source": "https://en.wikipedia.org/wiki/Golden_ratio"
+    },
+    {
+      "seedId": "9965cde7-f562-42b3-b78e-6f3139038b3f",
+      "category": "science",
+      "navigationKeyword1": "pre-algebra",
+      "navigationKeyword2": "ratios",
+      "question": "If a:b = 2:3 and a=10, find b?",
+      "correctAnswer": "15",
+      "incorrectAnswers": [
+        "12",
+        "9",
+        "8"
+      ],
+      "explanation": "10/2 = 5 scale; 3\u00d75=15.",
+      "keywords": [
+        "proportion",
+        "scale"
+      ],
+      "source": "https://www.khanacademy.org/math/pre-algebra/pre-algebra-ratios-proportions"
+    },
+    {
+      "seedId": "e83b0ed5-5677-4cc9-a632-33c92c68ad41",
+      "category": "science",
+      "navigationKeyword1": "pre-algebra",
+      "navigationKeyword2": "ratios",
+      "question": "If y/x constant, relation is?",
+      "correctAnswer": "Proportional",
+      "incorrectAnswers": [
+        "Additive only",
+        "Quadratic",
+        "No relation"
+      ],
+      "explanation": "y = kx through origin.",
+      "keywords": [
+        "proportionality",
+        "linear"
+      ],
+      "source": "https://www.khanacademy.org/math/pre-algebra/pre-algebra-ratios-proportions"
+    },
+    {
+      "seedId": "2a13ebb4-a56f-4986-80d0-69947f406344",
+      "category": "science",
+      "navigationKeyword1": "pre-algebra",
+      "navigationKeyword2": "ratios",
+      "question": "Map scale 1:100000 meaning?",
+      "correctAnswer": "1 unit map = 100000 real units",
+      "incorrectAnswers": [
+        "1 meter = 1 km always without context",
+        "Areas scaled 1:100000",
+        "Times faster"
+      ],
+      "explanation": "Read legend carefully.",
+      "keywords": [
+        "map-scale",
+        "ratio"
+      ],
+      "source": "https://www.usgs.gov/educational-resources/map-scale"
+    },
+    {
+      "seedId": "49f1db82-fb74-4186-8fc4-172d3e778a5d",
+      "category": "science",
+      "navigationKeyword1": "pre-algebra",
+      "navigationKeyword2": "ratios",
+      "question": "Odds (for) vs probability?",
+      "correctAnswer": "Different conventions; odds for = successes : failures",
+      "incorrectAnswers": [
+        "Same as percent always",
+        "Always >1",
+        "Never uses ratios"
+      ],
+      "explanation": "Convert carefully in stats.",
+      "keywords": [
+        "odds",
+        "probability-intro"
+      ],
+      "source": "https://en.wikipedia.org/wiki/Odds"
+    },
+    {
+      "seedId": "14b2e0b3-dcbd-4aac-be45-135a10de0c39",
+      "category": "science",
+      "navigationKeyword1": "pre-algebra",
+      "navigationKeyword2": "ratios",
+      "question": "Percent is ratio to?",
+      "correctAnswer": "100",
+      "incorrectAnswers": [
+        "1",
+        "10",
+        "1000"
+      ],
+      "explanation": "Per hundred.",
+      "keywords": [
+        "percent-meaning",
+        "ratio"
+      ],
+      "source": "https://www.khanacademy.org/math/pre-algebra/pre-algebra-ratios-proportions"
+    },
+    {
+      "seedId": "2c084a0a-6f36-43d7-8c5d-02af8d1a6258",
+      "category": "science",
+      "navigationKeyword1": "pre-algebra",
+      "navigationKeyword2": "ratios",
+      "question": "Ratio 6 to 9 simplified?",
+      "correctAnswer": "2:3",
+      "incorrectAnswers": [
+        "3:2",
+        "6:9",
+        "9:6"
+      ],
+      "explanation": "Divide both parts by GCD 3.",
+      "keywords": [
+        "ratio",
+        "simplify"
+      ],
+      "source": "https://www.khanacademy.org/math/pre-algebra/pre-algebra-ratios-proportions"
+    },
+    {
+      "seedId": "84910aaf-c2e1-4cb7-a76a-591d45d7524a",
+      "category": "science",
+      "navigationKeyword1": "pre-algebra",
+      "navigationKeyword2": "ratios",
+      "question": "Recipe doubles; 3 cups flour becomes?",
+      "correctAnswer": "6 cups",
+      "incorrectAnswers": [
+        "5 cups",
+        "1.5 cups",
+        "9 cups"
+      ],
+      "explanation": "Multiply all ingredients.",
+      "keywords": [
+        "scaling",
+        "cooking"
+      ],
+      "source": "https://www.khanacademy.org/math/pre-algebra/pre-algebra-ratios-proportions"
+    },
+    {
+      "seedId": "7fd82182-5ef6-45fb-8c82-ffb8a6a74d1e",
+      "category": "science",
+      "navigationKeyword1": "pre-algebra",
+      "navigationKeyword2": "ratios",
+      "question": "Scale drawing 1 inch : 5 feet; 2 inches represents?",
+      "correctAnswer": "10 feet",
+      "incorrectAnswers": [
+        "7 feet",
+        "2.5 feet",
+        "25 feet"
+      ],
+      "explanation": "Multiply scale factor.",
+      "keywords": [
+        "scale-drawing",
+        "geometry"
+      ],
+      "source": "https://www.khanacademy.org/math/pre-algebra/pre-algebra-ratios-proportions"
+    },
+    {
+      "seedId": "089667b2-564c-4e22-9ed7-570db45b65a7",
+      "category": "science",
+      "navigationKeyword1": "pre-algebra",
+      "navigationKeyword2": "ratios",
+      "question": "Unit rate: 240 miles in 4 hours?",
+      "correctAnswer": "60 mph",
+      "incorrectAnswers": [
+        "80 mph",
+        "120 mph",
+        "960 mph"
+      ],
+      "explanation": "Divide quantity by time.",
+      "keywords": [
+        "unit-rate",
+        "speed"
+      ],
+      "source": "https://www.khanacademy.org/math/pre-algebra/pre-algebra-ratios-proportions"
+    }
+  ]
+}

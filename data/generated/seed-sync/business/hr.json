@@ -1,0 +1,691 @@
+{
+  "schemaVersion": 1,
+  "seedSet": "core-public-items",
+  "deltaPreviewLimit": 200,
+  "items": [
+    {
+      "seedId": "5fd6b646-6340-447f-aa31-56315bd4e302",
+      "category": "business",
+      "navigationKeyword1": "hr",
+      "navigationKeyword2": "engagement",
+      "question": "What is a pulse survey used for?",
+      "correctAnswer": "Frequent short checks on morale, change readiness, or specific topics.",
+      "incorrectAnswers": [
+        "Replace all performance ratings.",
+        "Annual tax filing.",
+        "Inventory counts."
+      ],
+      "explanation": "Pulse data must be acted on to build trust.",
+      "keywords": [
+        "pulse-survey",
+        "listening"
+      ],
+      "source": "https://www.shrm.org/resourcesandtools/hr-topics/employee-relations/pages/pulse-surveys.aspx"
+    },
+    {
+      "seedId": "89ac5416-30a0-4a8f-bafa-a116a5c6caeb",
+      "category": "business",
+      "navigationKeyword1": "hr",
+      "navigationKeyword2": "engagement",
+      "question": "What is employee engagement commonly distinguished from?",
+      "correctAnswer": "Satisfaction\u2014engagement includes willingness to exert discretionary effort toward goals.",
+      "incorrectAnswers": [
+        "Payroll processing.",
+        "Office rent.",
+        "SKU taxonomy."
+      ],
+      "explanation": "Satisfied employees may still disengage.",
+      "keywords": [
+        "engagement",
+        "satisfaction"
+      ],
+      "source": "https://www.shrm.org/resourcesandtools/hr-topics/employee-relations/pages/employee-engagement.aspx"
+    },
+    {
+      "seedId": "9aa01ac7-3a81-48ce-859b-3eb1b148a18a",
+      "category": "business",
+      "navigationKeyword1": "hr",
+      "navigationKeyword2": "engagement",
+      "question": "What is recognition\u2019s role in engagement?",
+      "correctAnswer": "Reinforces valued behaviors and helps people see impact beyond pay.",
+      "incorrectAnswers": [
+        "Recognition should be secret.",
+        "Only annual bonuses matter.",
+        "Praise is harmful."
+      ],
+      "explanation": "Timely specific recognition beats generic praise.",
+      "keywords": [
+        "recognition",
+        "engagement"
+      ],
+      "source": "https://www.shrm.org/resourcesandtools/hr-topics/employee-relations/pages/employee-recognition.aspx"
+    },
+    {
+      "seedId": "521692f1-1e65-4ba1-97c9-53816336b7d9",
+      "category": "business",
+      "navigationKeyword1": "hr",
+      "navigationKeyword2": "engagement",
+      "question": "What workplace factors often contribute to burnout?",
+      "correctAnswer": "Unsustainable workload, lack of control, insufficient reward, breakdown of community, unfairness, values mismatch.",
+      "incorrectAnswers": [
+        "Only employee personality.",
+        "Only customer logos.",
+        "Only product color."
+      ],
+      "explanation": "Burnout is organizational, not only individual.",
+      "keywords": [
+        "burnout",
+        "well-being"
+      ],
+      "source": "https://www.who.int/news/item/28-05-2019-burn-out-an-occupational-phenomenon"
+    },
+    {
+      "seedId": "8b1e92fe-3266-4290-bdf3-fbdf7657356b",
+      "category": "business",
+      "navigationKeyword1": "hr",
+      "navigationKeyword2": "engagement",
+      "question": "Why can manager quality heavily influence team engagement?",
+      "correctAnswer": "Managers shape clarity, feedback, recognition, and psychological safety day to day.",
+      "incorrectAnswers": [
+        "Managers never affect engagement.",
+        "Engagement is only genetic.",
+        "Managers only set Wi-Fi passwords."
+      ],
+      "explanation": "People leave managers, not only companies.",
+      "keywords": [
+        "manager-effect",
+        "engagement"
+      ],
+      "source": "https://www.gallup.com/workplace/236366/manager-employee-relationship.aspx"
+    },
+    {
+      "seedId": "1eb49dda-350c-4dd9-9dd1-fe64839bf74f",
+      "category": "business",
+      "navigationKeyword1": "hr",
+      "navigationKeyword2": "engagement",
+      "question": "Why does listening without action harm engagement programs?",
+      "correctAnswer": "Employees learn surveys are performative, eroding trust.",
+      "incorrectAnswers": [
+        "Employees love ignoring results.",
+        "Data should never be shared.",
+        "HR forbids follow-up."
+      ],
+      "explanation": "Close the loop with visible changes.",
+      "keywords": [
+        "action-planning",
+        "trust"
+      ],
+      "source": "https://hbr.org/2018/07/employee-surveys-are-still-one-of-the-best-ways-to-measure-engagement"
+    },
+    {
+      "seedId": "daa8699a-497d-4913-ab6a-890d63f2d0ab",
+      "category": "business",
+      "navigationKeyword1": "hr",
+      "navigationKeyword2": "labor",
+      "question": "What do whistleblower protections aim to prevent?",
+      "correctAnswer": "Retaliation against workers who report certain legal violations in good faith.",
+      "incorrectAnswers": [
+        "All employee complaints about coffee.",
+        "Paying workers on time.",
+        "Annual office holiday parties."
+      ],
+      "explanation": "Programs vary by statute and jurisdiction.",
+      "keywords": [
+        "whistleblower",
+        "compliance"
+      ],
+      "source": "https://www.osha.gov/whistleblower"
+    },
+    {
+      "seedId": "8f27ee5c-034c-4789-8389-63fe7778dfdb",
+      "category": "business",
+      "navigationKeyword1": "hr",
+      "navigationKeyword2": "labor",
+      "question": "What does OSHA primarily focus on?",
+      "correctAnswer": "Safe and healthy working conditions for employees.",
+      "incorrectAnswers": [
+        "Corporate branding colors.",
+        "Product pricing.",
+        "Patent filings."
+      ],
+      "explanation": "Employers must comply with applicable safety standards.",
+      "keywords": [
+        "osha",
+        "safety"
+      ],
+      "source": "https://www.osha.gov/"
+    },
+    {
+      "seedId": "cf441bd2-d8bc-4f58-9016-a353aac64d47",
+      "category": "business",
+      "navigationKeyword1": "hr",
+      "navigationKeyword2": "labor",
+      "question": "What is a common IRS theme when classifying workers as employees vs independent contractors?",
+      "correctAnswer": "Behavioral/financial control and relationship type\u2014not only the label chosen.",
+      "incorrectAnswers": [
+        "Only the worker\u2019s hat color.",
+        "Whatever saves taxes illegally.",
+        "Only the company\u2019s preference."
+      ],
+      "explanation": "Misclassification creates liability\u2014use official guidance.",
+      "keywords": [
+        "misclassification",
+        "contractors"
+      ],
+      "source": "https://www.irs.gov/businesses/small-businesses-self-employed/independent-contractor-self-employed-or-employee"
+    },
+    {
+      "seedId": "b1ec9d1d-4ec8-4d24-9e19-4c84059b4191",
+      "category": "business",
+      "navigationKeyword1": "hr",
+      "navigationKeyword2": "labor",
+      "question": "What is at-will employment (common U.S. concept)?",
+      "correctAnswer": "Either employer or employee may end employment at any time for any lawful reason, with exceptions.",
+      "incorrectAnswers": [
+        "A lifetime employment guarantee.",
+        "Illegal in every state.",
+        "Only applies to CEOs."
+      ],
+      "explanation": "Exceptions include contracts, unions, and anti-discrimination protections.",
+      "keywords": [
+        "at-will",
+        "employment-law"
+      ],
+      "source": "https://www.nlrb.gov/about-nlrb/rights-we-protect/your-rights/employment-at-will"
+    },
+    {
+      "seedId": "6a20df85-ace2-4355-bd47-f79d141e70cd",
+      "category": "business",
+      "navigationKeyword1": "hr",
+      "navigationKeyword2": "labor",
+      "question": "What is collective bargaining?",
+      "correctAnswer": "Negotiation between an employer and a union representing employees about wages and conditions.",
+      "incorrectAnswers": [
+        "A solo performance review.",
+        "A marketing A/B test.",
+        "A tax audit."
+      ],
+      "explanation": "Labor law governs representation and unfair practices.",
+      "keywords": [
+        "collective-bargaining",
+        "unions"
+      ],
+      "source": "https://www.nlrb.gov/about-nlrb/rights-we-protect/your-rights/collective-bargaining"
+    },
+    {
+      "seedId": "2271c087-1526-4e64-92c4-82a49a6f3577",
+      "category": "business",
+      "navigationKeyword1": "hr",
+      "navigationKeyword2": "labor",
+      "question": "What is the NLRB broadly responsible for?",
+      "correctAnswer": "Enforcing private-sector labor law related to union rights and unfair labor practices (U.S.).",
+      "incorrectAnswers": [
+        "Setting federal interest rates.",
+        "Issuing passports.",
+        "Managing national parks."
+      ],
+      "explanation": "Labor relations have specialized agencies and rules.",
+      "keywords": [
+        "nlrb",
+        "labor-law"
+      ],
+      "source": "https://www.nlrb.gov/"
+    },
+    {
+      "seedId": "298d8449-c397-4bf4-8113-f746b4684ce0",
+      "category": "business",
+      "navigationKeyword1": "hr",
+      "navigationKeyword2": "pay-benefits",
+      "question": "Under U.S. FLSA basics, why does exempt vs non-exempt matter?",
+      "correctAnswer": "Non-exempt employees generally must receive overtime pay for hours over 40 in a workweek (rules apply).",
+      "incorrectAnswers": [
+        "It decides office desk size.",
+        "It is unrelated to overtime.",
+        "It only affects contractors globally."
+      ],
+      "explanation": "Classification has legal consequences\u2014verify with counsel.",
+      "keywords": [
+        "flsa",
+        "overtime"
+      ],
+      "source": "https://www.dol.gov/agencies/whd/overtime"
+    },
+    {
+      "seedId": "ce30e549-294d-491a-9ca8-59488186ca04",
+      "category": "business",
+      "navigationKeyword1": "hr",
+      "navigationKeyword2": "pay-benefits",
+      "question": "What is a clawback provision (executive comp context)?",
+      "correctAnswer": "A contractual term allowing recovery of compensation after misconduct or restatements.",
+      "incorrectAnswers": [
+        "A bonus guaranteed forever.",
+        "A cafeteria lunch coupon.",
+        "A paid vacation ban."
+      ],
+      "explanation": "Clawbacks align incentives with governance.",
+      "keywords": [
+        "clawback",
+        "governance"
+      ],
+      "source": "https://www.investopedia.com/terms/c/clawback.asp"
+    },
+    {
+      "seedId": "fbf2799f-8837-4f18-bc1a-14661eb8152d",
+      "category": "business",
+      "navigationKeyword1": "hr",
+      "navigationKeyword2": "pay-benefits",
+      "question": "What is a pay band?",
+      "correctAnswer": "A defined salary range for a role or level to support consistency and equity governance.",
+      "incorrectAnswers": [
+        "A fixed secret number for one person only.",
+        "A tax form.",
+        "A marketing funnel stage."
+      ],
+      "explanation": "Bands help manage internal equity and budgets.",
+      "keywords": [
+        "pay-bands",
+        "compensation"
+      ],
+      "source": "https://www.shrm.org/resourcesandtools/hr-topics/compensation/pages/salary-structures.aspx"
+    },
+    {
+      "seedId": "781d86da-e6f6-42ab-8c0b-2a05560b6c09",
+      "category": "business",
+      "navigationKeyword1": "hr",
+      "navigationKeyword2": "pay-benefits",
+      "question": "What is pay equity work trying to reduce?",
+      "correctAnswer": "Unexplained pay differences by gender, race, or other protected categories for similar work.",
+      "incorrectAnswers": [
+        "Pay everyone randomly.",
+        "Hide payroll from finance.",
+        "Eliminate performance reviews."
+      ],
+      "explanation": "Analytics and governance support fair pay programs.",
+      "keywords": [
+        "pay-equity",
+        "compensation"
+      ],
+      "source": "https://www.eeoc.gov/equal-paycompensation-discrimination"
+    },
+    {
+      "seedId": "66fe49fa-cbcb-4570-82b8-ad9b25d689e5",
+      "category": "business",
+      "navigationKeyword1": "hr",
+      "navigationKeyword2": "pay-benefits",
+      "question": "What is total compensation?",
+      "correctAnswer": "Cash pay plus benefits and perks valued as part of the employment deal.",
+      "incorrectAnswers": [
+        "Only base salary excluding everything else.",
+        "Only stock tickers.",
+        "Only office rent."
+      ],
+      "explanation": "Total rewards framing improves retention conversations.",
+      "keywords": [
+        "total-rewards",
+        "compensation"
+      ],
+      "source": "https://www.shrm.org/resourcesandtools/hr-topics/compensation/pages/total-rewards.aspx"
+    },
+    {
+      "seedId": "db110c8f-df8f-486e-94c0-59a8eb655c41",
+      "category": "business",
+      "navigationKeyword1": "hr",
+      "navigationKeyword2": "pay-benefits",
+      "question": "Why do benefits matter for retention?",
+      "correctAnswer": "Health, retirement, and flexibility strongly influence whether employees stay.",
+      "incorrectAnswers": [
+        "Benefits never affect decisions.",
+        "Only base pay matters always.",
+        "Benefits are illegal."
+      ],
+      "explanation": "Benefits are part of the employee value proposition.",
+      "keywords": [
+        "benefits",
+        "retention"
+      ],
+      "source": "https://www.shrm.org/resourcesandtools/hr-topics/benefits/pages/employee-benefits.aspx"
+    },
+    {
+      "seedId": "efd2facf-fed7-4efc-b227-7dedf373ae64",
+      "category": "business",
+      "navigationKeyword1": "hr",
+      "navigationKeyword2": "performance",
+      "question": "What does SMART commonly stand for in goal setting?",
+      "correctAnswer": "Specific, Measurable, Achievable, Relevant, Time-bound (variants exist).",
+      "incorrectAnswers": [
+        "Silent, Mysterious, Arbitrary, Random, Tired.",
+        "Single, Many, All, Right, True.",
+        "Sales, Marketing, Accounting, Risk, Tax."
+      ],
+      "explanation": "SMART clarifies expectations.",
+      "keywords": [
+        "smart-goals",
+        "performance"
+      ],
+      "source": "https://www.mindtools.com/a4hw00d/smart-goals"
+    },
+    {
+      "seedId": "cbbbf223-0169-4974-bee9-7dc2afe7b7fb",
+      "category": "business",
+      "navigationKeyword1": "hr",
+      "navigationKeyword2": "performance",
+      "question": "What is 360-degree feedback?",
+      "correctAnswer": "Input from peers, managers, direct reports, and sometimes customers about behaviors and impact.",
+      "incorrectAnswers": [
+        "Only self-rating.",
+        "Only annual stock price.",
+        "Only customer NPS."
+      ],
+      "explanation": "360s broaden perspective but need psychological safety.",
+      "keywords": [
+        "360-feedback",
+        "performance"
+      ],
+      "source": "https://www.shrm.org/resourcesandtools/hr-topics/performance-management/pages/360-degree-feedback.aspx"
+    },
+    {
+      "seedId": "549c0ec1-fb7c-4304-adc3-0a6ab87f252e",
+      "category": "business",
+      "navigationKeyword1": "hr",
+      "navigationKeyword2": "performance",
+      "question": "What is a performance improvement plan (PIP) typically intended to do?",
+      "correctAnswer": "Clarify gaps, expectations, support, and timeline to help an employee succeed\u2014or document fair decisions.",
+      "incorrectAnswers": [
+        "Guarantee termination on day one.",
+        "Replace all coaching.",
+        "Remove goals entirely."
+      ],
+      "explanation": "PIPs should be fair, specific, and documented.",
+      "keywords": [
+        "pip",
+        "performance"
+      ],
+      "source": "https://www.shrm.org/resourcesandtools/hr-topics/performance-management/pages/performance-improvement-plans.aspx"
+    },
+    {
+      "seedId": "6e933e9d-3522-40cc-a93f-9b393b53437d",
+      "category": "business",
+      "navigationKeyword1": "hr",
+      "navigationKeyword2": "performance",
+      "question": "What is continuous performance management?",
+      "correctAnswer": "Ongoing check-ins and feedback instead of only an annual review.",
+      "incorrectAnswers": [
+        "No feedback ever.",
+        "Only annual surprises.",
+        "Only customer surveys."
+      ],
+      "explanation": "Frequency improves coaching and agility.",
+      "keywords": [
+        "continuous-feedback",
+        "performance"
+      ],
+      "source": "https://www.shrm.org/resourcesandtools/hr-topics/performance-management/pages/continuous-performance-management.aspx"
+    },
+    {
+      "seedId": "356e3260-fca8-462c-a44e-b9bf53ac9f30",
+      "category": "business",
+      "navigationKeyword1": "hr",
+      "navigationKeyword2": "performance",
+      "question": "Why can forced ranking be controversial?",
+      "correctAnswer": "It can harm collaboration, diversity, and morale if quotas distort true performance differences.",
+      "incorrectAnswers": [
+        "It is universally loved with no downsides.",
+        "It removes all subjectivity perfectly.",
+        "It is required in every country."
+      ],
+      "explanation": "Many firms moved to continuous feedback models.",
+      "keywords": [
+        "forced-ranking",
+        "performance"
+      ],
+      "source": "https://hbr.org/2012/10/stop-demotivating-your-employees"
+    },
+    {
+      "seedId": "45eca37f-1924-4e5d-b053-dd2a1fdcafb6",
+      "category": "business",
+      "navigationKeyword1": "hr",
+      "navigationKeyword2": "performance",
+      "question": "Why do companies run rating calibration sessions?",
+      "correctAnswer": "Reduce inconsistency so similar performance gets similar ratings across managers.",
+      "incorrectAnswers": [
+        "Increase random ratings.",
+        "Hide criteria from leaders.",
+        "Eliminate managers."
+      ],
+      "explanation": "Calibration improves fairness perceptions.",
+      "keywords": [
+        "calibration",
+        "performance"
+      ],
+      "source": "https://www.shrm.org/resourcesandtools/hr-topics/performance-management/pages/performance-calibration.aspx"
+    },
+    {
+      "seedId": "10aa5f61-e411-40b3-ac4f-3dd092a669d2",
+      "category": "business",
+      "navigationKeyword1": "hr",
+      "navigationKeyword2": "recruiting",
+      "question": "What does time-to-fill measure?",
+      "correctAnswer": "How long it takes to fill a role from opening to acceptance (definitions vary by company).",
+      "incorrectAnswers": [
+        "Average employee age.",
+        "Annual revenue.",
+        "Number of coffee machines."
+      ],
+      "explanation": "Speed metrics should be balanced with quality and diversity goals.",
+      "keywords": [
+        "time-to-fill",
+        "recruiting"
+      ],
+      "source": "https://www.shrm.org/resourcesandtools/hr-topics/talent-acquisition/pages/time-to-fill.aspx"
+    },
+    {
+      "seedId": "e828b718-fe71-4085-9617-483a712f14ab",
+      "category": "business",
+      "navigationKeyword1": "hr",
+      "navigationKeyword2": "recruiting",
+      "question": "What is employer branding?",
+      "correctAnswer": "How candidates and employees perceive you as a place to work\u2014shaping attraction and retention.",
+      "incorrectAnswers": [
+        "Only the color of the office carpet.",
+        "A tax deduction category.",
+        "Only customer advertising."
+      ],
+      "explanation": "Brand influences who applies and accepts offers.",
+      "keywords": [
+        "employer-brand",
+        "talent"
+      ],
+      "source": "https://www.shrm.org/resourcesandtools/hr-topics/talent-acquisition/pages/what-is-employer-branding.aspx"
+    },
+    {
+      "seedId": "d8c4ee7f-1ec5-4387-adad-064192395591",
+      "category": "business",
+      "navigationKeyword1": "hr",
+      "navigationKeyword2": "recruiting",
+      "question": "What is sourcing in recruiting?",
+      "correctAnswer": "Proactively identifying and engaging potential candidates\u2014not only posting jobs.",
+      "incorrectAnswers": [
+        "Writing the annual report.",
+        "Approving invoices.",
+        "Managing DNS records."
+      ],
+      "explanation": "Sourcing expands the candidate pool beyond applicants only.",
+      "keywords": [
+        "sourcing",
+        "talent-acquisition"
+      ],
+      "source": "https://www.shrm.org/resourcesandtools/hr-topics/talent-acquisition/pages/sourcing-candidates.aspx"
+    },
+    {
+      "seedId": "71907da6-237f-4e71-8894-b8b692eaf27c",
+      "category": "business",
+      "navigationKeyword1": "hr",
+      "navigationKeyword2": "recruiting",
+      "question": "Why is compliance important in hiring (e.g., EEO basics in the U.S.)?",
+      "correctAnswer": "Laws and policies aim to prevent discrimination and promote fair consideration.",
+      "incorrectAnswers": [
+        "Compliance means hire only friends.",
+        "Compliance bans job descriptions.",
+        "Compliance removes interviews."
+      ],
+      "explanation": "Train teams on lawful, job-related criteria.",
+      "keywords": [
+        "eeo",
+        "compliance"
+      ],
+      "source": "https://www.eeoc.gov/youth/employment-discrimination-0"
+    },
+    {
+      "seedId": "35e7bee5-f93f-4290-93fe-8a4d5d23d45c",
+      "category": "business",
+      "navigationKeyword1": "hr",
+      "navigationKeyword2": "recruiting",
+      "question": "Why track offer acceptance rate?",
+      "correctAnswer": "It signals competitiveness of compensation, speed, and candidate experience.",
+      "incorrectAnswers": [
+        "It replaces interviews.",
+        "It measures warehouse throughput.",
+        "It is unrelated to hiring."
+      ],
+      "explanation": "Low acceptance may indicate misaligned offers or process drag.",
+      "keywords": [
+        "offer-acceptance",
+        "recruiting"
+      ],
+      "source": "https://www.shrm.org/resourcesandtools/hr-topics/talent-acquisition/pages/job-offer-statistics.aspx"
+    },
+    {
+      "seedId": "f3d08bb6-8bbd-4517-95f6-d83941fa17b2",
+      "category": "business",
+      "navigationKeyword1": "hr",
+      "navigationKeyword2": "recruiting",
+      "question": "Why use structured interviews?",
+      "correctAnswer": "Consistent questions and scoring reduce bias and improve validity versus purely casual chats.",
+      "incorrectAnswers": [
+        "To ask different random questions for each candidate.",
+        "To avoid job-related criteria.",
+        "To shorten interviews to 30 seconds."
+      ],
+      "explanation": "Structure improves fairness and hiring quality.",
+      "keywords": [
+        "structured-interview",
+        "hiring"
+      ],
+      "source": "https://www.shrm.org/resourcesandtools/tools-and-samples/hiring/structured-interviews"
+    },
+    {
+      "seedId": "659cc223-61ca-40f1-b923-3781c040d8bd",
+      "category": "business",
+      "navigationKeyword1": "hr",
+      "navigationKeyword2": "training",
+      "question": "What does the 70-20-10 model commonly suggest about learning?",
+      "correctAnswer": "Most learning happens through experience, coaching, and formal training\u2014not only classes.",
+      "incorrectAnswers": [
+        "100% should be classroom-only.",
+        "0% should involve managers.",
+        "Training never works."
+      ],
+      "explanation": "Blended learning mirrors how adults develop skills.",
+      "keywords": [
+        "70-20-10",
+        "learning"
+      ],
+      "source": "https://www.trainingindustry.com/wiki/entries/70-20-10-model/"
+    },
+    {
+      "seedId": "ad50a8bd-f092-4ad8-bbcb-01053131a6a7",
+      "category": "business",
+      "navigationKeyword1": "hr",
+      "navigationKeyword2": "training",
+      "question": "What is Kirkpatrick Level 4 focused on?",
+      "correctAnswer": "Business results and impact from training (after reaction, learning, behavior).",
+      "incorrectAnswers": [
+        "Smiley-face satisfaction only.",
+        "Only whether slides looked pretty.",
+        "Only number of donuts served."
+      ],
+      "explanation": "Impact evaluation is hardest but most valuable.",
+      "keywords": [
+        "kirkpatrick",
+        "evaluation"
+      ],
+      "source": "https://www.kirkpatrickpartners.com/the-kirkpatrick-model/"
+    },
+    {
+      "seedId": "421055e6-d7ba-4037-8553-dbb7ff80c16d",
+      "category": "business",
+      "navigationKeyword1": "hr",
+      "navigationKeyword2": "training",
+      "question": "What is onboarding primarily for?",
+      "correctAnswer": "Accelerate productivity and engagement by clarifying role, tools, culture, and expectations early.",
+      "incorrectAnswers": [
+        "Replace employment contracts.",
+        "Eliminate payroll.",
+        "Avoid introductions."
+      ],
+      "explanation": "Strong onboarding reduces early turnover.",
+      "keywords": [
+        "onboarding",
+        "hr"
+      ],
+      "source": "https://www.shrm.org/resourcesandtools/hr-topics/talent-acquisition/pages/onboarding-guide.aspx"
+    },
+    {
+      "seedId": "106dbb88-b00f-4969-94c4-23c512158005",
+      "category": "business",
+      "navigationKeyword1": "hr",
+      "navigationKeyword2": "training",
+      "question": "What should a training needs assessment establish?",
+      "correctAnswer": "Skill gaps, audience, and business outcomes before designing content.",
+      "incorrectAnswers": [
+        "Only the lunch menu.",
+        "Only font sizes.",
+        "Only office lease end date."
+      ],
+      "explanation": "Needs analysis prevents irrelevant training spend.",
+      "keywords": [
+        "needs-assessment",
+        "l-and-d"
+      ],
+      "source": "https://www.shrm.org/resourcesandtools/hr-topics/organizational-and-employee-development/pages/needs-assessment.aspx"
+    },
+    {
+      "seedId": "64d615fe-486d-4390-97eb-0c6ea5b58818",
+      "category": "business",
+      "navigationKeyword1": "hr",
+      "navigationKeyword2": "training",
+      "question": "Why is certification not the same as competence?",
+      "correctAnswer": "Certification shows completion of a standard; competence requires demonstrated performance in context.",
+      "incorrectAnswers": [
+        "They are always identical.",
+        "Competence is illegal.",
+        "Certification guarantees mastery in every situation."
+      ],
+      "explanation": "Assess on-the-job outcomes, not only credentials.",
+      "keywords": [
+        "competence",
+        "credentials"
+      ],
+      "source": "https://www.shrm.org/resourcesandtools/hr-topics/organizational-and-employee-development/pages/certifications.aspx"
+    },
+    {
+      "seedId": "165eac0d-f82b-47d6-9c97-1a4648d57699",
+      "category": "business",
+      "navigationKeyword1": "hr",
+      "navigationKeyword2": "training",
+      "question": "Why is training ROI hard to measure?",
+      "correctAnswer": "Outcomes depend on many variables beyond the course itself.",
+      "incorrectAnswers": [
+        "ROI is always exactly 10%.",
+        "Training never affects behavior.",
+        "ROI equals seat time."
+      ],
+      "explanation": "Use aligned metrics and control for context.",
+      "keywords": [
+        "training-roi",
+        "metrics"
+      ],
+      "source": "https://www.shrm.org/resourcesandtools/hr-topics/organizational-and-employee-development/pages/measuring-roi.aspx"
+    }
+  ]
+}

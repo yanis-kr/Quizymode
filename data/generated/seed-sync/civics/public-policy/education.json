@@ -1,0 +1,121 @@
+{
+  "schemaVersion": 1,
+  "seedSet": "core-public-items",
+  "deltaPreviewLimit": 200,
+  "items": [
+    {
+      "seedId": "3fcad9da-1b37-58b9-ba27-04c292139518",
+      "category": "civics",
+      "navigationKeyword1": "public-policy",
+      "navigationKeyword2": "education",
+      "question": "In the U.S. system, who is primarily responsible for operating public schools and setting most day-to-day education rules?",
+      "correctAnswer": "state and local governments",
+      "incorrectAnswers": [
+        "the United Nations",
+        "the federal courts alone",
+        "private accrediting boards only"
+      ],
+      "explanation": "States and local districts run public schools; the federal role is more limited and often tied to funding conditions.",
+      "keywords": [
+        "education-policy",
+        "federalism"
+      ],
+      "source": "https://www.usa.gov/state-local-governments"
+    },
+    {
+      "seedId": "2d12c865-631b-5c64-823b-6ea416897182",
+      "category": "civics",
+      "navigationKeyword1": "public-policy",
+      "navigationKeyword2": "education",
+      "question": "Under federal law, what must public schools provide to eligible students with disabilities?",
+      "correctAnswer": "a free appropriate public education tailored to the student's needs",
+      "incorrectAnswers": [
+        "only after-school tutoring",
+        "the same curriculum with no supports",
+        "placement in private schools without review"
+      ],
+      "explanation": "The Individuals with Disabilities Education Act requires appropriate services and an individualized plan for covered students.",
+      "keywords": [
+        "idea",
+        "special-education"
+      ],
+      "source": "https://www.law.cornell.edu/topn/individuals_with_disabilities_education_act"
+    },
+    {
+      "seedId": "84051f6b-be84-5e3f-a2bd-bf104e38904f",
+      "category": "civics",
+      "navigationKeyword1": "public-policy",
+      "navigationKeyword2": "education",
+      "question": "What does FERPA mainly protect in schools that receive federal funds?",
+      "correctAnswer": "privacy of student education records",
+      "incorrectAnswers": [
+        "teacher union membership lists",
+        "school building security cameras",
+        "state tax rates"
+      ],
+      "explanation": "FERPA limits disclosure of personally identifiable student records without consent or an allowed exception.",
+      "keywords": [
+        "ferpa",
+        "student-privacy"
+      ],
+      "source": "https://www2.ed.gov/policy/gen/guid/fpco/ferpa/index.html"
+    },
+    {
+      "seedId": "b3236411-ebc5-52bc-bb58-9b73961051b3",
+      "category": "civics",
+      "navigationKeyword1": "public-policy",
+      "navigationKeyword2": "education",
+      "question": "What is the main purpose of federal Title I education funds?",
+      "correctAnswer": "to help schools serving many students from low-income families",
+      "incorrectAnswers": [
+        "to pay for all teacher salaries nationwide",
+        "to set state graduation tests",
+        "to fund only private school tuition"
+      ],
+      "explanation": "Title I provides financial assistance aimed at improving achievement for disadvantaged students in high-poverty schools.",
+      "keywords": [
+        "title-i",
+        "education-policy"
+      ],
+      "source": "https://www2.ed.gov/programs/titleiparta/index.html"
+    },
+    {
+      "seedId": "a13592f2-f3f4-51c9-87d1-a2f2ec2f9031",
+      "category": "civics",
+      "navigationKeyword1": "public-policy",
+      "navigationKeyword2": "education",
+      "question": "Which level of government usually sets compulsory attendance ages and high school graduation requirements?",
+      "correctAnswer": "state government",
+      "incorrectAnswers": [
+        "city councils only",
+        "the federal executive branch alone",
+        "county courts"
+      ],
+      "explanation": "States define compulsory schooling laws and graduation standards; local districts implement them within that framework.",
+      "keywords": [
+        "compulsory-education",
+        "state-policy"
+      ],
+      "source": "https://www.ncsl.org/research/education/compulsory-education.aspx"
+    },
+    {
+      "seedId": "fa2c6bec-7f5d-5f10-a600-e2a0d63b3465",
+      "category": "civics",
+      "navigationKeyword1": "public-policy",
+      "navigationKeyword2": "education",
+      "question": "Who typically hires superintendents and approves local budgets in many U.S. school systems?",
+      "correctAnswer": "locally elected or appointed school boards",
+      "incorrectAnswers": [
+        "the U.S. House of Representatives",
+        "the president",
+        "state supreme courts"
+      ],
+      "explanation": "Local school boards are common governance bodies that oversee district leadership and budgets under state law.",
+      "keywords": [
+        "local-education",
+        "school-governance"
+      ],
+      "source": "https://www.ncsl.org/education/education-governance-and-accountability"
+    }
+  ]
+}

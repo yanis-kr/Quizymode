@@ -1,0 +1,121 @@
+{
+  "schemaVersion": 1,
+  "seedSet": "core-public-items",
+  "deltaPreviewLimit": 200,
+  "items": [
+    {
+      "seedId": "881c6386-74db-5464-bcfb-2f1291cab4ee",
+      "category": "tech",
+      "navigationKeyword1": "data",
+      "navigationKeyword2": "analytics",
+      "question": "In a simple A/B test, what does the null hypothesis usually claim?",
+      "correctAnswer": "No difference between the variants on the measured outcome",
+      "incorrectAnswers": [
+        "Variant B always wins",
+        "The sample is infinite",
+        "Correlation implies causation"
+      ],
+      "explanation": "Tests start by assuming no effect, then check whether evidence makes that assumption unlikely.",
+      "keywords": [
+        "analytics",
+        "ab-testing"
+      ],
+      "source": "https://www.itl.nist.gov/div898/handbook/prc/section2/prc24.htm"
+    },
+    {
+      "seedId": "df5fe0cf-a4ca-52c6-b8ef-31f7897db32e",
+      "category": "tech",
+      "navigationKeyword1": "data",
+      "navigationKeyword2": "analytics",
+      "question": "What does a moving average smooth in a time series chart?",
+      "correctAnswer": "Short-term fluctuations so longer trends are easier to see",
+      "incorrectAnswers": [
+        "All seasonality perfectly",
+        "Missing values at random",
+        "Network latency"
+      ],
+      "explanation": "Averaging over a window reduces noise by blending neighboring points.",
+      "keywords": [
+        "analytics",
+        "time-series"
+      ],
+      "source": "https://www.itl.nist.gov/div898/handbook/pmc/section4/pmc4.htm"
+    },
+    {
+      "seedId": "92be598f-2e8d-5421-820e-a85eec505b22",
+      "category": "tech",
+      "navigationKeyword1": "data",
+      "navigationKeyword2": "analytics",
+      "question": "What does cohort analysis compare?",
+      "correctAnswer": "Groups that share a common starting time or trait across periods",
+      "incorrectAnswers": [
+        "Only two simultaneous snapshots with no time axis",
+        "Only geographic clusters",
+        "Only hardware metrics"
+      ],
+      "explanation": "Cohorts let you separate behavior by acquisition period or segment instead of blending everyone together.",
+      "keywords": [
+        "analytics",
+        "cohorts"
+      ],
+      "source": "https://en.wikipedia.org/wiki/Cohort_analysis"
+    },
+    {
+      "seedId": "fb584e90-1ce7-5b64-a4ec-1a3d44e57d08",
+      "category": "tech",
+      "navigationKeyword1": "data",
+      "navigationKeyword2": "analytics",
+      "question": "What does statistical significance usually mean in applied reporting?",
+      "correctAnswer": "The observed difference is unlikely under a chosen null model and threshold",
+      "incorrectAnswers": [
+        "The effect size is always large",
+        "The study has no bias",
+        "The result is permanently true"
+      ],
+      "explanation": "Significance is about evidence against a null under assumptions, not automatic importance or truth.",
+      "keywords": [
+        "analytics",
+        "statistics"
+      ],
+      "source": "https://en.wikipedia.org/wiki/Statistical_significance"
+    },
+    {
+      "seedId": "63d15a8f-42a5-560d-9c46-97a2730bdcac",
+      "category": "tech",
+      "navigationKeyword1": "data",
+      "navigationKeyword2": "analytics",
+      "question": "What is a KPI in analytics practice?",
+      "correctAnswer": "A measurable value that shows how well an objective is being met",
+      "incorrectAnswers": [
+        "Any database index",
+        "A random sample size",
+        "A network port number"
+      ],
+      "explanation": "Key performance indicators translate goals into numbers you can track over time.",
+      "keywords": [
+        "analytics",
+        "kpi"
+      ],
+      "source": "https://en.wikipedia.org/wiki/Performance_indicator"
+    },
+    {
+      "seedId": "04124e59-e589-504a-9f76-8107c6a97861",
+      "category": "tech",
+      "navigationKeyword1": "data",
+      "navigationKeyword2": "analytics",
+      "question": "What problem does sampling bias create?",
+      "correctAnswer": "Results that do not generalize because the sample misrepresents the population",
+      "incorrectAnswers": [
+        "Faster dashboards",
+        "Stronger encryption",
+        "Higher screen resolution"
+      ],
+      "explanation": "If who you measure is skewed, averages and rates can point the wrong way even with big numbers.",
+      "keywords": [
+        "analytics",
+        "bias"
+      ],
+      "source": "https://en.wikipedia.org/wiki/Sampling_bias"
+    }
+  ]
+}

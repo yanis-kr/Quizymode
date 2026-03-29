@@ -1,0 +1,121 @@
+{
+  "schemaVersion": 1,
+  "seedSet": "core-public-items",
+  "deltaPreviewLimit": 200,
+  "items": [
+    {
+      "seedId": "530d682c-cec3-4ce4-bf14-e9a5bb1d747b",
+      "category": "business",
+      "navigationKeyword1": "entrepreneurship",
+      "navigationKeyword2": "founders",
+      "question": "Solo founder vs co-founder team tradeoff?",
+      "correctAnswer": "Solo moves decisions faster; teams bring complementary skills and resilience.",
+      "incorrectAnswers": [
+        "Solo is always better.",
+        "Teams always fail.",
+        "No tradeoffs exist."
+      ],
+      "explanation": "Choose based on skills gap and trust.",
+      "keywords": [
+        "solo-founder",
+        "teams"
+      ],
+      "source": "https://www.sba.gov/business-guide/plan-your-business"
+    },
+    {
+      "seedId": "e3f95eed-7dc1-44d3-9f37-7916bc06dcae",
+      "category": "business",
+      "navigationKeyword1": "entrepreneurship",
+      "navigationKeyword2": "founders",
+      "question": "What is vesting for founder shares intended to prevent?",
+      "correctAnswer": "A departing founder walking away with a full ownership stake without continued contribution.",
+      "incorrectAnswers": [
+        "All founders leaving day one with nothing.",
+        "Any employee ownership.",
+        "Paying taxes."
+      ],
+      "explanation": "Vesting aligns long-term commitment.",
+      "keywords": [
+        "vesting",
+        "cap-table"
+      ],
+      "source": "https://www.investopedia.com/terms/v/vesting.asp"
+    },
+    {
+      "seedId": "73d2d638-22ba-42f6-a850-678e1c7ec01f",
+      "category": "business",
+      "navigationKeyword1": "entrepreneurship",
+      "navigationKeyword2": "founders",
+      "question": "What realistic expectation should founders have about workload?",
+      "correctAnswer": "Early-stage work intensity is high; sustainable pacing reduces burnout and mistakes.",
+      "incorrectAnswers": [
+        "Hustle culture requires zero sleep forever.",
+        "Founders never work weekends.",
+        "Burnout is purely imaginary."
+      ],
+      "explanation": "Sustainable founders build durable companies.",
+      "keywords": [
+        "burnout",
+        "founders"
+      ],
+      "source": "https://www.sba.gov/business-guide/manage-your-business"
+    },
+    {
+      "seedId": "e80bba49-e203-4469-aedb-73f38554a692",
+      "category": "business",
+      "navigationKeyword1": "entrepreneurship",
+      "navigationKeyword2": "founders",
+      "question": "What topics often belong in a founder agreement?",
+      "correctAnswer": "Roles, decision rights, equity, IP assignment, departure scenarios, and dispute resolution.",
+      "incorrectAnswers": [
+        "Only lunch preferences.",
+        "Only social media handles.",
+        "Only furniture colors."
+      ],
+      "explanation": "Written agreements reduce ambiguity.",
+      "keywords": [
+        "founders-agreement",
+        "legal"
+      ],
+      "source": "https://www.sba.gov/business-guide/launch-your-business"
+    },
+    {
+      "seedId": "97774135-3305-40b0-8888-982032e76aa8",
+      "category": "business",
+      "navigationKeyword1": "entrepreneurship",
+      "navigationKeyword2": "founders",
+      "question": "Why do co-founders discuss equity split early?",
+      "correctAnswer": "Align incentives and reduce painful disputes when value appears.",
+      "incorrectAnswers": [
+        "Equity never matters.",
+        "Split should be secret forever.",
+        "Only lawyers may own equity."
+      ],
+      "explanation": "Document agreements and vesting.",
+      "keywords": [
+        "co-founders",
+        "equity"
+      ],
+      "source": "https://www.investopedia.com/terms/e/equity.asp"
+    },
+    {
+      "seedId": "1cfeee14-5e1c-4fa1-8324-cdcb277aeb7b",
+      "category": "business",
+      "navigationKeyword1": "entrepreneurship",
+      "navigationKeyword2": "founders",
+      "question": "Why might advisors receive small equity grants?",
+      "correctAnswer": "Compensate strategic guidance and network access with alignment\u2014typically small and vested.",
+      "incorrectAnswers": [
+        "Advisors must always get 50%.",
+        "Equity replaces all cash always.",
+        "Advisors cannot help."
+      ],
+      "explanation": "Use standard benchmarks and legal docs.",
+      "keywords": [
+        "advisors",
+        "equity"
+      ],
+      "source": "https://www.investopedia.com/terms/a/advisor.asp"
+    }
+  ]
+}

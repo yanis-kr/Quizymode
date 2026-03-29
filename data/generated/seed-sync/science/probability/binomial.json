@@ -1,0 +1,235 @@
+{
+  "schemaVersion": 1,
+  "seedSet": "core-public-items",
+  "deltaPreviewLimit": 200,
+  "items": [
+    {
+      "seedId": "c1ffb939-6f38-4161-aa13-2f7a74d80b3a",
+      "category": "science",
+      "navigationKeyword1": "probability",
+      "navigationKeyword2": "binomial",
+      "question": "Binomial PMF P(X=k)?",
+      "correctAnswer": "C(n,k) p^k (1\u2212p)^{n\u2212k}",
+      "incorrectAnswers": [
+        "p^n",
+        "n p",
+        "C(n,k) p^n"
+      ],
+      "explanation": "k successes in n trials.",
+      "keywords": [
+        "binomial-pmf",
+        "formula"
+      ],
+      "source": "https://openstax.org/books/introductory-statistics/pages/4-3-the-binomial-distribution"
+    },
+    {
+      "seedId": "ccdd565f-0b24-4b15-a370-20baf653a464",
+      "category": "science",
+      "navigationKeyword1": "probability",
+      "navigationKeyword2": "binomial",
+      "question": "Binomial coefficient symmetry?",
+      "correctAnswer": "C(n,k)=C(n,n\u2212k)",
+      "incorrectAnswers": [
+        "C(n,k)=C(k,n)",
+        "Always 1",
+        "n^k"
+      ],
+      "explanation": "Choosing complements.",
+      "keywords": [
+        "symmetry",
+        "binomial"
+      ],
+      "source": "https://www.mathsisfun.com/combinatorics/combinations-permutations.html"
+    },
+    {
+      "seedId": "5dce695a-6476-40ae-b19b-7edc79f2a465",
+      "category": "science",
+      "navigationKeyword1": "probability",
+      "navigationKeyword2": "binomial",
+      "question": "Binomial mean?",
+      "correctAnswer": "np",
+      "incorrectAnswers": [
+        "n/p",
+        "p/n",
+        "n^2 p"
+      ],
+      "explanation": "Sum of n Bernoulli means.",
+      "keywords": [
+        "binomial-mean",
+        "expectation"
+      ],
+      "source": "https://openstax.org/books/introductory-statistics/pages/4-3-the-binomial-distribution"
+    },
+    {
+      "seedId": "837fb888-b01d-445b-9a78-67caad4c2cc5",
+      "category": "science",
+      "navigationKeyword1": "probability",
+      "navigationKeyword2": "binomial",
+      "question": "Binomial setting requirements?",
+      "correctAnswer": "Fixed n independent trials, two outcomes, constant p",
+      "incorrectAnswers": [
+        "Continuous time always",
+        "Changing p each trial without model",
+        "Unlimited outcomes always"
+      ],
+      "explanation": "Classic n choose k.",
+      "keywords": [
+        "binomial-setting",
+        "assumptions"
+      ],
+      "source": "https://openstax.org/books/introductory-statistics/pages/4-3-the-binomial-distribution"
+    },
+    {
+      "seedId": "c9db8c53-7760-4fa2-b7b0-adf92f85811f",
+      "category": "science",
+      "navigationKeyword1": "probability",
+      "navigationKeyword2": "binomial",
+      "question": "Binomial variance?",
+      "correctAnswer": "np(1\u2212p)",
+      "incorrectAnswers": [
+        "np",
+        "n^2 p",
+        "p(1\u2212p)"
+      ],
+      "explanation": "Quadratic in p, max at p=0.5.",
+      "keywords": [
+        "binomial-variance",
+        "spread"
+      ],
+      "source": "https://openstax.org/books/introductory-statistics/pages/4-3-the-binomial-distribution"
+    },
+    {
+      "seedId": "949d9e5d-8827-40ba-8379-4f78f7989c3e",
+      "category": "science",
+      "navigationKeyword1": "probability",
+      "navigationKeyword2": "binomial",
+      "question": "Fair coin 10 flips P(exactly 5 heads)?",
+      "correctAnswer": "C(10,5)/2^{10}",
+      "incorrectAnswers": [
+        "1/2",
+        "5/10",
+        "2^{-5}"
+      ],
+      "explanation": "Not 1/2.",
+      "keywords": [
+        "binomial-calc",
+        "coins"
+      ],
+      "source": "https://openstax.org/books/introductory-statistics/pages/4-3-the-binomial-distribution"
+    },
+    {
+      "seedId": "20871a9a-c979-45cb-803d-8daa3af39bd7",
+      "category": "science",
+      "navigationKeyword1": "probability",
+      "navigationKeyword2": "binomial",
+      "question": "If trials not independent?",
+      "correctAnswer": "Binomial may be wrong; use other models",
+      "incorrectAnswers": [
+        "Still always binomial",
+        "Use uniform",
+        "Ignore dependence"
+      ],
+      "explanation": "Cluster sampling effects.",
+      "keywords": [
+        "dependence",
+        "model-check"
+      ],
+      "source": "https://openstax.org/books/introductory-statistics/pages/4-3-the-binomial-distribution"
+    },
+    {
+      "seedId": "84104c8b-e244-4b68-8220-441fbbedad6b",
+      "category": "science",
+      "navigationKeyword1": "probability",
+      "navigationKeyword2": "binomial",
+      "question": "MLE for p in binomial?",
+      "correctAnswer": "Sample proportion k/n",
+      "incorrectAnswers": [
+        "Always 1/2",
+        "1/n",
+        "k^2/n"
+      ],
+      "explanation": "Maximizes likelihood.",
+      "keywords": [
+        "mle",
+        "estimation"
+      ],
+      "source": "https://en.wikipedia.org/wiki/Binomial_distribution"
+    },
+    {
+      "seedId": "cf1971f8-bf78-4587-9fb9-719f80f97df5",
+      "category": "science",
+      "navigationKeyword1": "probability",
+      "navigationKeyword2": "binomial",
+      "question": "Normal approximation condition (rule of thumb)?",
+      "correctAnswer": "np and n(1\u2212p) both large enough",
+      "incorrectAnswers": [
+        "Always for n=2",
+        "Never valid",
+        "Only if p=0"
+      ],
+      "explanation": "Continuity correction optional.",
+      "keywords": [
+        "normal-approximation",
+        "binomial"
+      ],
+      "source": "https://openstax.org/books/introductory-statistics/pages/6-4-the-normal-approximation-to-the-binomial-distribution"
+    },
+    {
+      "seedId": "7a49104f-6b3b-4a0a-9a6d-32e06f1ac7cb",
+      "category": "science",
+      "navigationKeyword1": "probability",
+      "navigationKeyword2": "binomial",
+      "question": "Sign test connection (idea)?",
+      "correctAnswer": "Uses binomial under null for sign counts",
+      "incorrectAnswers": [
+        "Always t-test",
+        "Always ANOVA",
+        "Never binomial"
+      ],
+      "explanation": "Nonparametric flavor.",
+      "keywords": [
+        "sign-test",
+        "nonparametric"
+      ],
+      "source": "https://en.wikipedia.org/wiki/Sign_test"
+    },
+    {
+      "seedId": "7523a77f-f083-4387-8bee-98f4bd8ace8f",
+      "category": "science",
+      "navigationKeyword1": "probability",
+      "navigationKeyword2": "binomial",
+      "question": "Why continuity correction?",
+      "correctAnswer": "Approximate discrete with continuous density",
+      "incorrectAnswers": [
+        "Makes answer always integer",
+        "Removes variance",
+        "Only cosmetic"
+      ],
+      "explanation": "Improves tail probabilities.",
+      "keywords": [
+        "continuity-correction",
+        "approximation"
+      ],
+      "source": "https://openstax.org/books/introductory-statistics/pages/6-4-the-normal-approximation-to-the-binomial-distribution"
+    },
+    {
+      "seedId": "39e79e35-8279-45be-95ed-fe2da8e0db59",
+      "category": "science",
+      "navigationKeyword1": "probability",
+      "navigationKeyword2": "binomial",
+      "question": "n=1 binomial reduces to?",
+      "correctAnswer": "Bernoulli",
+      "incorrectAnswers": [
+        "Normal",
+        "Poisson",
+        "Geometric"
+      ],
+      "explanation": "Single trial.",
+      "keywords": [
+        "bernoulli",
+        "special-case"
+      ],
+      "source": "https://openstax.org/books/introductory-statistics/pages/4-3-the-binomial-distribution"
+    }
+  ]
+}

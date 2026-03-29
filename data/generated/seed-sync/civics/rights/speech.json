@@ -1,0 +1,121 @@
+{
+  "schemaVersion": 1,
+  "seedSet": "core-public-items",
+  "deltaPreviewLimit": 200,
+  "items": [
+    {
+      "seedId": "cfdbc3aa-b244-551f-a389-29a6ec23a738",
+      "category": "civics",
+      "navigationKeyword1": "rights",
+      "navigationKeyword2": "speech",
+      "question": "Does the First Amendment usually bind private social media companies about user posts?",
+      "correctAnswer": "no, because they are not government actors by default",
+      "incorrectAnswers": [
+        "yes, always",
+        "only on weekends",
+        "only for paid accounts"
+      ],
+      "explanation": "The First Amendment limits government action; private platforms set their own rules unless a special legal relationship exists.",
+      "keywords": [
+        "free-speech",
+        "private-actors"
+      ],
+      "source": "https://constitution.congress.gov/constitution/amendment-1/"
+    },
+    {
+      "seedId": "316346c3-3b3f-5231-9ce7-8dd321f57e50",
+      "category": "civics",
+      "navigationKeyword1": "rights",
+      "navigationKeyword2": "speech",
+      "question": "Freedom of speech is mainly shielded from federal limits by what?",
+      "correctAnswer": "the First Amendment",
+      "incorrectAnswers": [
+        "the Second Amendment",
+        "Article III",
+        "the Tenth Amendment"
+      ],
+      "explanation": "The First Amendment restrains Congress and, through later doctrine, many state and local actions affecting expression.",
+      "keywords": [
+        "free-speech",
+        "first-amendment"
+      ],
+      "source": "https://constitution.congress.gov/constitution/amendment-1/"
+    },
+    {
+      "seedId": "cdddbffd-cf44-52ca-b6b1-4bb650f9b6cc",
+      "category": "civics",
+      "navigationKeyword1": "rights",
+      "navigationKeyword2": "speech",
+      "question": "Through the Fourteenth Amendment, many First Amendment speech protections apply to whom?",
+      "correctAnswer": "state and local governments",
+      "incorrectAnswers": [
+        "only foreign governments",
+        "private employers in every case",
+        "only the president"
+      ],
+      "explanation": "Court doctrine incorporates key speech protections so states and localities cannot freely ignore them.",
+      "keywords": [
+        "free-speech",
+        "incorporation"
+      ],
+      "source": "https://www.law.cornell.edu/wex/first_amendment"
+    },
+    {
+      "seedId": "9170fd80-399f-5595-9e4a-f64ef02d44f1",
+      "category": "civics",
+      "navigationKeyword1": "rights",
+      "navigationKeyword2": "speech",
+      "question": "What is prior restraint in First Amendment law?",
+      "correctAnswer": "government blocking speech before it happens",
+      "incorrectAnswers": [
+        "a sentence after conviction",
+        "a civil damages award only",
+        "a jury selection rule"
+      ],
+      "explanation": "Prior restraints are official barriers to publication or expression in advance, and they face heavy constitutional skepticism.",
+      "keywords": [
+        "free-speech",
+        "prior-restraint"
+      ],
+      "source": "https://www.law.cornell.edu/wex/prior_restraint"
+    },
+    {
+      "seedId": "d5e8f922-ae7f-5447-b602-6d5c2ee58a05",
+      "category": "civics",
+      "navigationKeyword1": "rights",
+      "navigationKeyword2": "speech",
+      "question": "What kind of student speech does Tinker v. Des Moines generally protect in public schools?",
+      "correctAnswer": "silent symbolic expression that does not disrupt school work",
+      "incorrectAnswers": [
+        "speech that promotes illegal drug use in school",
+        "threats aimed at classmates",
+        "speech during a school newspaper that is not school sponsored"
+      ],
+      "explanation": "Public school students retain some speech rights, though schools may regulate disruption, safety, and certain categories of expression.",
+      "keywords": [
+        "free-speech",
+        "students"
+      ],
+      "source": "https://www.law.cornell.edu/wex/tinker_v._des_moines"
+    },
+    {
+      "seedId": "3ed2da90-3d00-5edd-a703-de8bbb77d043",
+      "category": "civics",
+      "navigationKeyword1": "rights",
+      "navigationKeyword2": "speech",
+      "question": "Why may the government sometimes regulate the time, place, and manner of speech in public spaces?",
+      "correctAnswer": "neutral rules can serve important interests without targeting ideas",
+      "incorrectAnswers": [
+        "because ideas may never be expressed outdoors",
+        "because only approved speakers may march",
+        "because permits are never required"
+      ],
+      "explanation": "Content-neutral time, place, and manner rules can stand if they leave open ample alternative channels and are narrowly drawn.",
+      "keywords": [
+        "free-speech",
+        "public-forum"
+      ],
+      "source": "https://www.law.cornell.edu/wex/time_place_and_manner_restrictions"
+    }
+  ]
+}

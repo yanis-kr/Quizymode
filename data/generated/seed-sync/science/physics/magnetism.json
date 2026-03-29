@@ -1,0 +1,235 @@
+{
+  "schemaVersion": 1,
+  "seedSet": "core-public-items",
+  "deltaPreviewLimit": 200,
+  "items": [
+    {
+      "seedId": "c79cef51-146f-4463-93a1-e41df2fbec1b",
+      "category": "science",
+      "navigationKeyword1": "physics",
+      "navigationKeyword2": "magnetism",
+      "question": "Amp\u00e8re\u2019s law (long symmetry)?",
+      "correctAnswer": "\u222e B\u00b7dl = \u03bc0 I_enc",
+      "incorrectAnswers": [
+        "B = 0 always",
+        "B\u00b7dl = I",
+        "No enclosed current matters"
+      ],
+      "explanation": "Useful for cylinders/solenoids.",
+      "keywords": [
+        "ampere-law",
+        "symmetry"
+      ],
+      "source": "https://openstax.org/books/university-physics-volume-2/pages/12-5-amp\u00e8res-law"
+    },
+    {
+      "seedId": "bbbdaa9b-4de0-47bf-a3f4-cbc7e533dc56",
+      "category": "science",
+      "navigationKeyword1": "physics",
+      "navigationKeyword2": "magnetism",
+      "question": "Biot\u2013Savart / long straight wire B?",
+      "correctAnswer": "B \u221d I/r (direction by right-hand rule)",
+      "incorrectAnswers": [
+        "B independent of I",
+        "B zero always",
+        "B \u221d r"
+      ],
+      "explanation": "Circulating field lines around wire.",
+      "keywords": [
+        "biot-savart",
+        "field"
+      ],
+      "source": "https://openstax.org/books/university-physics-volume-2/pages/12-2-the-biot-savart-law"
+    },
+    {
+      "seedId": "f7b006ec-bf9f-4c30-9c93-03d3456dec34",
+      "category": "science",
+      "navigationKeyword1": "physics",
+      "navigationKeyword2": "magnetism",
+      "question": "Earth\u2019s magnetic field use?",
+      "correctAnswer": "Navigation compass aligns with horizontal component",
+      "incorrectAnswers": [
+        "No field exists",
+        "Purely electric",
+        "Constant everywhere exactly"
+      ],
+      "explanation": "Declination/inclination vary.",
+      "keywords": [
+        "earth-field",
+        "compass"
+      ],
+      "source": "https://www.ngdc.noaa.gov/geomag/"
+    },
+    {
+      "seedId": "86bf6d2c-8829-48d0-b902-7ff3827c826a",
+      "category": "science",
+      "navigationKeyword1": "physics",
+      "navigationKeyword2": "magnetism",
+      "question": "Energy in inductor?",
+      "correctAnswer": "U = (1/2) L i^2",
+      "incorrectAnswers": [
+        "Li",
+        "L/i",
+        "1/2 Li^3"
+      ],
+      "explanation": "Magnetic field storage.",
+      "keywords": [
+        "inductor-energy",
+        "storage"
+      ],
+      "source": "https://openstax.org/books/university-physics-volume-2/pages/14-3-energy-in-a-magnetic-field"
+    },
+    {
+      "seedId": "1760815e-747a-495c-a27a-a9bc8be7a7b0",
+      "category": "science",
+      "navigationKeyword1": "physics",
+      "navigationKeyword2": "magnetism",
+      "question": "Faraday\u2019s law?",
+      "correctAnswer": "EMF = \u2212 d\u03a6_B/dt",
+      "incorrectAnswers": [
+        "EMF = B only",
+        "EMF = IR always",
+        "No induction ever"
+      ],
+      "explanation": "Changing flux induces fields/currents.",
+      "keywords": [
+        "faraday",
+        "induction"
+      ],
+      "source": "https://openstax.org/books/university-physics-volume-2/pages/13-1-faradays-law"
+    },
+    {
+      "seedId": "402b7941-eccb-4459-9ad2-a42c3663db90",
+      "category": "science",
+      "navigationKeyword1": "physics",
+      "navigationKeyword2": "magnetism",
+      "question": "Force on straight current wire?",
+      "correctAnswer": "F = I L \u00d7 B",
+      "incorrectAnswers": [
+        "F = ILB always scalar",
+        "F = qvB only",
+        "F = 0 always"
+      ],
+      "explanation": "Length vector along current direction.",
+      "keywords": [
+        "wire-force",
+        "magnetism"
+      ],
+      "source": "https://openstax.org/books/university-physics-volume-2/pages/11-5-force-on-a-current-carrying-conductor"
+    },
+    {
+      "seedId": "9ec823ff-8d25-4c3f-9e9c-4505358dca92",
+      "category": "science",
+      "navigationKeyword1": "physics",
+      "navigationKeyword2": "magnetism",
+      "question": "Hall effect (qualitative)?",
+      "correctAnswer": "Transverse voltage from charge carriers in B field",
+      "incorrectAnswers": [
+        "Never occurs",
+        "Only insulators",
+        "Same as photoelectric"
+      ],
+      "explanation": "Senses carrier sign/density.",
+      "keywords": [
+        "hall-effect",
+        "solid-state"
+      ],
+      "source": "https://en.wikipedia.org/wiki/Hall_effect"
+    },
+    {
+      "seedId": "617e28d4-7455-415d-b636-1f97eb35817d",
+      "category": "science",
+      "navigationKeyword1": "physics",
+      "navigationKeyword2": "magnetism",
+      "question": "Inductor EMF?",
+      "correctAnswer": "\u03b5 = \u2212L di/dt",
+      "incorrectAnswers": [
+        "\u03b5 = Li",
+        "\u03b5 = L/i",
+        "\u03b5 = i/L"
+      ],
+      "explanation": "Opposes current change.",
+      "keywords": [
+        "inductance",
+        "coil"
+      ],
+      "source": "https://openstax.org/books/university-physics-volume-2/pages/14-1-mutual-inductance"
+    },
+    {
+      "seedId": "231147b4-1ad7-42b2-8c63-906f3ae9019d",
+      "category": "science",
+      "navigationKeyword1": "physics",
+      "navigationKeyword2": "magnetism",
+      "question": "Lenz\u2019s law direction?",
+      "correctAnswer": "Induced current opposes flux change",
+      "incorrectAnswers": [
+        "Always same direction as change",
+        "Random",
+        "Always zero"
+      ],
+      "explanation": "Conservation of energy implication.",
+      "keywords": [
+        "lenz",
+        "induction"
+      ],
+      "source": "https://openstax.org/books/university-physics-volume-2/pages/13-1-faradays-law"
+    },
+    {
+      "seedId": "b416278c-dd22-4f8f-b30a-2a8481dbb1ab",
+      "category": "science",
+      "navigationKeyword1": "physics",
+      "navigationKeyword2": "magnetism",
+      "question": "Lorentz force on charge?",
+      "correctAnswer": "F = q(E + v \u00d7 B)",
+      "incorrectAnswers": [
+        "F = qvE",
+        "F = B \u00d7 v",
+        "F = ma only"
+      ],
+      "explanation": "Electric and magnetic parts.",
+      "keywords": [
+        "lorentz-force",
+        "em"
+      ],
+      "source": "https://openstax.org/books/university-physics-volume-2/pages/11-4-magnetic-force-and-mass-spectrometer"
+    },
+    {
+      "seedId": "8ab51d6c-bf81-47ff-97a6-cf61f981acf3",
+      "category": "science",
+      "navigationKeyword1": "physics",
+      "navigationKeyword2": "magnetism",
+      "question": "Magnetic dipole in uniform B torque?",
+      "correctAnswer": "\u03c4 = \u03bc \u00d7 B",
+      "incorrectAnswers": [
+        "\u03c4 = \u03bcB scalar always",
+        "\u03c4 = 0 always",
+        "\u03c4 = I/B"
+      ],
+      "explanation": "Aligns dipole with field.",
+      "keywords": [
+        "dipole",
+        "torque"
+      ],
+      "source": "https://openstax.org/books/university-physics-volume-2/pages/11-7-magnetic-dipole-moment"
+    },
+    {
+      "seedId": "7d26e7d8-b13a-4ba1-a61d-dc12143ce0d8",
+      "category": "science",
+      "navigationKeyword1": "physics",
+      "navigationKeyword2": "magnetism",
+      "question": "Transformer ideal relation?",
+      "correctAnswer": "V2/V1 = N2/N1",
+      "incorrectAnswers": [
+        "V2 = V1 + N",
+        "V1 V2 = N1 N2",
+        "No relation"
+      ],
+      "explanation": "AC magnetic coupling.",
+      "keywords": [
+        "transformer",
+        "ac"
+      ],
+      "source": "https://openstax.org/books/university-physics-volume-2/pages/15-5-transformers"
+    }
+  ]
+}

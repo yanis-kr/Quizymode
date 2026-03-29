@@ -1,0 +1,121 @@
+{
+  "schemaVersion": 1,
+  "seedSet": "core-public-items",
+  "deltaPreviewLimit": 200,
+  "items": [
+    {
+      "seedId": "298d8449-c397-4bf4-8113-f746b4684ce0",
+      "category": "business",
+      "navigationKeyword1": "hr",
+      "navigationKeyword2": "pay-benefits",
+      "question": "Under U.S. FLSA basics, why does exempt vs non-exempt matter?",
+      "correctAnswer": "Non-exempt employees generally must receive overtime pay for hours over 40 in a workweek (rules apply).",
+      "incorrectAnswers": [
+        "It decides office desk size.",
+        "It is unrelated to overtime.",
+        "It only affects contractors globally."
+      ],
+      "explanation": "Classification has legal consequences\u2014verify with counsel.",
+      "keywords": [
+        "flsa",
+        "overtime"
+      ],
+      "source": "https://www.dol.gov/agencies/whd/overtime"
+    },
+    {
+      "seedId": "ce30e549-294d-491a-9ca8-59488186ca04",
+      "category": "business",
+      "navigationKeyword1": "hr",
+      "navigationKeyword2": "pay-benefits",
+      "question": "What is a clawback provision (executive comp context)?",
+      "correctAnswer": "A contractual term allowing recovery of compensation after misconduct or restatements.",
+      "incorrectAnswers": [
+        "A bonus guaranteed forever.",
+        "A cafeteria lunch coupon.",
+        "A paid vacation ban."
+      ],
+      "explanation": "Clawbacks align incentives with governance.",
+      "keywords": [
+        "clawback",
+        "governance"
+      ],
+      "source": "https://www.investopedia.com/terms/c/clawback.asp"
+    },
+    {
+      "seedId": "fbf2799f-8837-4f18-bc1a-14661eb8152d",
+      "category": "business",
+      "navigationKeyword1": "hr",
+      "navigationKeyword2": "pay-benefits",
+      "question": "What is a pay band?",
+      "correctAnswer": "A defined salary range for a role or level to support consistency and equity governance.",
+      "incorrectAnswers": [
+        "A fixed secret number for one person only.",
+        "A tax form.",
+        "A marketing funnel stage."
+      ],
+      "explanation": "Bands help manage internal equity and budgets.",
+      "keywords": [
+        "pay-bands",
+        "compensation"
+      ],
+      "source": "https://www.shrm.org/resourcesandtools/hr-topics/compensation/pages/salary-structures.aspx"
+    },
+    {
+      "seedId": "781d86da-e6f6-42ab-8c0b-2a05560b6c09",
+      "category": "business",
+      "navigationKeyword1": "hr",
+      "navigationKeyword2": "pay-benefits",
+      "question": "What is pay equity work trying to reduce?",
+      "correctAnswer": "Unexplained pay differences by gender, race, or other protected categories for similar work.",
+      "incorrectAnswers": [
+        "Pay everyone randomly.",
+        "Hide payroll from finance.",
+        "Eliminate performance reviews."
+      ],
+      "explanation": "Analytics and governance support fair pay programs.",
+      "keywords": [
+        "pay-equity",
+        "compensation"
+      ],
+      "source": "https://www.eeoc.gov/equal-paycompensation-discrimination"
+    },
+    {
+      "seedId": "66fe49fa-cbcb-4570-82b8-ad9b25d689e5",
+      "category": "business",
+      "navigationKeyword1": "hr",
+      "navigationKeyword2": "pay-benefits",
+      "question": "What is total compensation?",
+      "correctAnswer": "Cash pay plus benefits and perks valued as part of the employment deal.",
+      "incorrectAnswers": [
+        "Only base salary excluding everything else.",
+        "Only stock tickers.",
+        "Only office rent."
+      ],
+      "explanation": "Total rewards framing improves retention conversations.",
+      "keywords": [
+        "total-rewards",
+        "compensation"
+      ],
+      "source": "https://www.shrm.org/resourcesandtools/hr-topics/compensation/pages/total-rewards.aspx"
+    },
+    {
+      "seedId": "db110c8f-df8f-486e-94c0-59a8eb655c41",
+      "category": "business",
+      "navigationKeyword1": "hr",
+      "navigationKeyword2": "pay-benefits",
+      "question": "Why do benefits matter for retention?",
+      "correctAnswer": "Health, retirement, and flexibility strongly influence whether employees stay.",
+      "incorrectAnswers": [
+        "Benefits never affect decisions.",
+        "Only base pay matters always.",
+        "Benefits are illegal."
+      ],
+      "explanation": "Benefits are part of the employee value proposition.",
+      "keywords": [
+        "benefits",
+        "retention"
+      ],
+      "source": "https://www.shrm.org/resourcesandtools/hr-topics/benefits/pages/employee-benefits.aspx"
+    }
+  ]
+}

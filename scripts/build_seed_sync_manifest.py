@@ -21,8 +21,8 @@ def parse_args() -> argparse.Namespace:
     )
     parser.add_argument(
         "--source-root",
-        default="data/bulk-seed",
-        help="Root directory containing seed JSON files. Default: data/bulk-seed",
+        default="data/seed-source/items",
+        help="Root directory containing seed JSON files. Default: data/seed-source/items",
     )
     parser.add_argument(
         "--seed-set",

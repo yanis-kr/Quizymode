@@ -1,0 +1,227 @@
+{
+  "schemaVersion": 1,
+  "seedSet": "core-public-items",
+  "deltaPreviewLimit": 200,
+  "items": [
+    {
+      "seedId": "57ddd9a3-c5dc-4b17-8003-287771a131b7",
+      "category": "geography",
+      "navigationKeyword1": "countries",
+      "navigationKeyword2": "borders",
+      "question": "Along much of the U.S. West, the 49th parallel north forms part of the boundary with which country?",
+      "correctAnswer": "Canada",
+      "incorrectAnswers": [
+        "Mexico",
+        "Russia",
+        "Cuba"
+      ],
+      "explanation": "The Canada\u2013United States border follows the 49th parallel across much of the West from Lake of the Woods to the Pacific coast.",
+      "keywords": [
+        "borders",
+        "north-america",
+        "latitude"
+      ],
+      "source": "https://www.britannica.com/place/Canada"
+    },
+    {
+      "seedId": "9e289893-d8ff-4091-85c8-f026b7c7c1f8",
+      "category": "geography",
+      "navigationKeyword1": "countries",
+      "navigationKeyword2": "borders",
+      "question": "Canada shares its longest international land boundary with which country?",
+      "correctAnswer": "The United States",
+      "incorrectAnswers": [
+        "Mexico",
+        "Greenland",
+        "Russia"
+      ],
+      "explanation": "The Canada\u2013United States border is the longest international land boundary between two countries.",
+      "keywords": [
+        "borders",
+        "north-america",
+        "canada"
+      ],
+      "source": "https://www.britannica.com/place/Canada"
+    },
+    {
+      "seedId": "b89e711b-697e-4e53-a454-f32382f40e6d",
+      "category": "geography",
+      "navigationKeyword1": "countries",
+      "navigationKeyword2": "borders",
+      "question": "Gibraltar\u2019s land frontier is with which country?",
+      "correctAnswer": "Spain",
+      "incorrectAnswers": [
+        "Portugal",
+        "Morocco",
+        "France"
+      ],
+      "explanation": "The British overseas territory of Gibraltar is attached to the Iberian Peninsula and borders Spain to the north.",
+      "keywords": [
+        "borders",
+        "europe",
+        "iberia"
+      ],
+      "source": "https://www.britannica.com/place/Gibraltar"
+    },
+    {
+      "seedId": "cd74c025-9e97-4db8-8620-0c1ad6c8cf93",
+      "category": "geography",
+      "navigationKeyword1": "countries",
+      "navigationKeyword2": "borders",
+      "question": "Lesotho is an enclave entirely surrounded by which country?",
+      "correctAnswer": "South Africa",
+      "incorrectAnswers": [
+        "Botswana",
+        "Zimbabwe",
+        "Namibia"
+      ],
+      "explanation": "Lesotho is landlocked and has a single neighbor: South Africa.",
+      "keywords": [
+        "borders",
+        "southern-africa",
+        "enclaves"
+      ],
+      "source": "https://www.britannica.com/place/Lesotho"
+    },
+    {
+      "seedId": "3bce8aa9-05ac-4ece-bddc-d66ef84a466c",
+      "category": "geography",
+      "navigationKeyword1": "countries",
+      "navigationKeyword2": "borders",
+      "question": "Nepal\u2019s land frontiers are shared with which two giant neighbors?",
+      "correctAnswer": "China and India",
+      "incorrectAnswers": [
+        "India and Bangladesh",
+        "China and Bhutan",
+        "Pakistan and India"
+      ],
+      "explanation": "Nepal is sandwiched between Tibet Autonomous Region of China to the north and India to the south, east, and west.",
+      "keywords": [
+        "borders",
+        "south-asia",
+        "himalayas"
+      ],
+      "source": "https://www.britannica.com/place/Nepal"
+    },
+    {
+      "seedId": "3ffb1cc5-a0c7-48ef-b131-1e89c29633e8",
+      "category": "geography",
+      "navigationKeyword1": "countries",
+      "navigationKeyword2": "borders",
+      "question": "Poland today shares land borders with how many neighboring countries?",
+      "correctAnswer": "Seven",
+      "incorrectAnswers": [
+        "Five",
+        "Six",
+        "Eight"
+      ],
+      "explanation": "Poland borders Germany, Czechia, Slovakia, Ukraine, Belarus, Lithuania, and Russia (Kaliningrad Oblast).",
+      "keywords": [
+        "borders",
+        "europe",
+        "poland"
+      ],
+      "source": "https://www.britannica.com/place/Poland"
+    },
+    {
+      "seedId": "df584db5-ba1b-4fb2-a125-9f02c4245a32",
+      "category": "geography",
+      "navigationKeyword1": "countries",
+      "navigationKeyword2": "borders",
+      "question": "San Marino is completely surrounded by the territory of which country?",
+      "correctAnswer": "Italy",
+      "incorrectAnswers": [
+        "Switzerland",
+        "France",
+        "Austria"
+      ],
+      "explanation": "San Marino is an enclave microstate lying entirely within Italy\u2019s Apennine landscape.",
+      "keywords": [
+        "borders",
+        "europe",
+        "enclaves"
+      ],
+      "source": "https://www.britannica.com/place/San-Marino"
+    },
+    {
+      "seedId": "ffaa5525-bec8-4398-b12e-0ab779e65046",
+      "category": "geography",
+      "navigationKeyword1": "countries",
+      "navigationKeyword2": "borders",
+      "question": "Which South American giant touches every other country on the continent except Chile and Ecuador?",
+      "correctAnswer": "Brazil",
+      "incorrectAnswers": [
+        "Argentina",
+        "Peru",
+        "Colombia"
+      ],
+      "explanation": "Brazil\u2019s enormous perimeter meets nearly every South American state, with Chile and Ecuador the notable exceptions.",
+      "keywords": [
+        "borders",
+        "south-america",
+        "brazil"
+      ],
+      "source": "https://www.britannica.com/place/Brazil"
+    },
+    {
+      "seedId": "cff3424e-c1e0-4881-9b2e-b687cba4e7f1",
+      "category": "geography",
+      "navigationKeyword1": "countries",
+      "navigationKeyword2": "borders",
+      "question": "Which narrow strait separates European Turkey from the Asian portion of Turkey?",
+      "correctAnswer": "The Bosporus",
+      "incorrectAnswers": [
+        "The Strait of Gibraltar",
+        "The Bab el-Mandeb",
+        "The Strait of Hormuz"
+      ],
+      "explanation": "The Bosporus links the Black Sea with the Sea of Marmara and forms part of the boundary between Europe and Asia within Turkey.",
+      "keywords": [
+        "borders",
+        "straits",
+        "turkey"
+      ],
+      "source": "https://www.britannica.com/place/Bosporus"
+    },
+    {
+      "seedId": "ee159387-80fc-4aee-9a42-4e9352779b42",
+      "category": "geography",
+      "navigationKeyword1": "countries",
+      "navigationKeyword2": "borders",
+      "question": "Which river forms much of the border between the United States and Mexico?",
+      "correctAnswer": "The Rio Grande (R\u00edo Bravo)",
+      "incorrectAnswers": [
+        "The Colorado River",
+        "The Mississippi River",
+        "The Columbia River"
+      ],
+      "explanation": "The Rio Grande defines long segments of the international boundary from the Chihuahuan desert eastward to the Gulf of Mexico.",
+      "keywords": [
+        "borders",
+        "rivers",
+        "north-america"
+      ],
+      "source": "https://www.britannica.com/place/Rio-Grande-river-United-States-Mexico"
+    },
+    {
+      "seedId": "f66eb40a-8050-425a-9463-42fd3f0c384b",
+      "category": "geography",
+      "navigationKeyword1": "countries",
+      "navigationKeyword2": "borders",
+      "question": "Which small principality lies in the Pyrenees between France and Spain?",
+      "correctAnswer": "Andorra",
+      "incorrectAnswers": [
+        "Monaco",
+        "San Marino",
+        "Liechtenstein"
+      ],
+      "explanation": "Andorra is wedged along the high crest of the eastern Pyrenees between its two larger neighbors.",
+      "keywords": [
+        "borders",
+        "europe",
+        "pyrenees"
+      ],
+      "source": "https://www.britannica.com/place/Andorra"
+    }
+  ]
+}

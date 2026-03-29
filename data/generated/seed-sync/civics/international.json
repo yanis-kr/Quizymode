@@ -1,0 +1,691 @@
+{
+  "schemaVersion": 1,
+  "seedSet": "core-public-items",
+  "deltaPreviewLimit": 200,
+  "items": [
+    {
+      "seedId": "2f360ff2-bc7c-52db-a152-22b7a8ae3096",
+      "category": "civics",
+      "navigationKeyword1": "international",
+      "navigationKeyword2": "conflict",
+      "question": "What are sanctions in international relations?",
+      "correctAnswer": "penalties such as trade or finance limits aimed at changing behavior or limiting harm",
+      "incorrectAnswers": [
+        "automatic declarations of war",
+        "private lawsuits only",
+        "grants of unlimited weapons"
+      ],
+      "explanation": "States or bodies use sanctions to signal disapproval and pressure targets within law.",
+      "keywords": [
+        "sanctions",
+        "pressure"
+      ],
+      "source": "https://www.state.gov/economic-sanctions-programs/"
+    },
+    {
+      "seedId": "59404de3-57b8-5136-8bb1-86f6fafe7726",
+      "category": "civics",
+      "navigationKeyword1": "international",
+      "navigationKeyword2": "conflict",
+      "question": "What does neutrality often mean for states not joining a war?",
+      "correctAnswer": "not favoring belligerents in ways that break the laws of neutrality",
+      "incorrectAnswers": [
+        "sending troops to fight on all sides",
+        "banning all trade with everyone",
+        "ending all diplomacy"
+      ],
+      "explanation": "Neutral states stay out of the fight but still follow duties under international rules.",
+      "keywords": [
+        "neutrality",
+        "international-law"
+      ],
+      "source": "https://www.icrc.org/en/war-and-law"
+    },
+    {
+      "seedId": "76ce0b9f-798a-5e91-a0a9-90127b019cc9",
+      "category": "civics",
+      "navigationKeyword1": "international",
+      "navigationKeyword2": "conflict",
+      "question": "What is a truth commission after internal conflict?",
+      "correctAnswer": "a temporary body that documents abuses and may recommend reforms or reparations",
+      "incorrectAnswers": [
+        "a permanent replacement for all courts",
+        "a military draft board",
+        "a trade tariff office"
+      ],
+      "explanation": "Truth commissions focus on facts and reconciliation, sometimes alongside criminal justice.",
+      "keywords": [
+        "transitional-justice",
+        "accountability"
+      ],
+      "source": "https://www.ohchr.org/"
+    },
+    {
+      "seedId": "17371243-3f96-5ae7-87a8-ed0e1926b85c",
+      "category": "civics",
+      "navigationKeyword1": "international",
+      "navigationKeyword2": "conflict",
+      "question": "What is mediation in ending armed conflict?",
+      "correctAnswer": "a third party helps adversaries negotiate without imposing a final decision",
+      "incorrectAnswers": [
+        "a court verdict that cannot be appealed",
+        "automatic annexation of territory",
+        "banning all future elections"
+      ],
+      "explanation": "Mediators clarify options and build trust so parties can agree to ceasefires or peace deals.",
+      "keywords": [
+        "mediation",
+        "peace"
+      ],
+      "source": "https://www.un.org/en/peace-and-security/"
+    },
+    {
+      "seedId": "b75c1bcb-055b-5d23-9e25-76f59c0771eb",
+      "category": "civics",
+      "navigationKeyword1": "international",
+      "navigationKeyword2": "conflict",
+      "question": "What is the UN\u2019s peacekeeping role in simplified civic terms?",
+      "correctAnswer": "deploy multinational missions with consent to stabilize areas and protect civilians within mandates",
+      "incorrectAnswers": [
+        "replace all national armies permanently",
+        "fight any war without rules",
+        "abolish host country laws"
+      ],
+      "explanation": "Peacekeepers operate under Security Council mandates and cooperation from parties.",
+      "keywords": [
+        "peacekeeping",
+        "un"
+      ],
+      "source": "https://peacekeeping.un.org/en"
+    },
+    {
+      "seedId": "3be3a362-2708-5441-886b-92eb1dd69db4",
+      "category": "civics",
+      "navigationKeyword1": "international",
+      "navigationKeyword2": "conflict",
+      "question": "Why do laws of war distinguish combatants from civilians?",
+      "correctAnswer": "to shield people not fighting from being targeted",
+      "incorrectAnswers": [
+        "to allow unlimited bombing of cities",
+        "to ban all medical care",
+        "to remove protections for medics"
+      ],
+      "explanation": "Humanitarian law tries to limit suffering by protecting noncombatants and certain objects.",
+      "keywords": [
+        "distinction",
+        "civilian-protection"
+      ],
+      "source": "https://www.icrc.org/en/doc/resources/documents/misc/summary-geneva-conventions.htm"
+    },
+    {
+      "seedId": "b91badcb-749c-5947-b55b-ff4bf8d246a6",
+      "category": "civics",
+      "navigationKeyword1": "international",
+      "navigationKeyword2": "diplomacy",
+      "question": "What do consulates focus on compared with embassies?",
+      "correctAnswer": "services for citizens abroad such as visas, passports, and emergency help",
+      "incorrectAnswers": [
+        "declaring war without government approval",
+        "abolishing host country laws",
+        "appointing host country judges"
+      ],
+      "explanation": "Consular posts protect nationals and facilitate lawful travel and trade contacts.",
+      "keywords": [
+        "consulate",
+        "services"
+      ],
+      "source": "https://www.state.gov/what-we-do/"
+    },
+    {
+      "seedId": "b9074a22-df75-5669-8a1e-98a9fc671f74",
+      "category": "civics",
+      "navigationKeyword1": "international",
+      "navigationKeyword2": "diplomacy",
+      "question": "What is a charg\u00e9 d\u2019affaires when no ambassador is present?",
+      "correctAnswer": "a senior diplomat who temporarily leads the mission",
+      "incorrectAnswers": [
+        "a local mayor who hosts parades",
+        "a military rank above general",
+        "a judge from the host supreme court"
+      ],
+      "explanation": "Missions need continuity; a charg\u00e9 fills the chief-of-mission role for a time.",
+      "keywords": [
+        "mission",
+        "representation"
+      ],
+      "source": "https://www.britannica.com/topic/diplomacy"
+    },
+    {
+      "seedId": "cd1f3195-8b9c-5f8f-a704-106c475d1e08",
+      "category": "civics",
+      "navigationKeyword1": "international",
+      "navigationKeyword2": "diplomacy",
+      "question": "What is diplomatic immunity meant to protect?",
+      "correctAnswer": "official diplomats from host country coercion so talks can continue",
+      "incorrectAnswers": [
+        "private citizens from all traffic laws worldwide",
+        "any tourist from paying taxes",
+        "military units from any accountability"
+      ],
+      "explanation": "Immunity shields official functions; it is not a license for unrelated private crime.",
+      "keywords": [
+        "diplomatic-immunity",
+        "vienna-convention"
+      ],
+      "source": "https://legal.un.org/ilc/texts/instruments/english/conventions/9_1_1961.pdf"
+    },
+    {
+      "seedId": "61beab56-3365-5986-8f12-0164e5ee0f95",
+      "category": "civics",
+      "navigationKeyword1": "international",
+      "navigationKeyword2": "diplomacy",
+      "question": "What is recognition in diplomatic practice?",
+      "correctAnswer": "a state\u2019s decision to treat another entity as a state or government for official relations",
+      "incorrectAnswers": [
+        "a prize for winning a sports match",
+        "automatic approval of every law the other passes",
+        "a ban on all future treaties"
+      ],
+      "explanation": "Recognition shapes who may exchange embassies and sign treaties as peers.",
+      "keywords": [
+        "recognition",
+        "statehood"
+      ],
+      "source": "https://www.icj-cij.org/"
+    },
+    {
+      "seedId": "5010d393-d922-5df2-bbe8-751995b5d22a",
+      "category": "civics",
+      "navigationKeyword1": "international",
+      "navigationKeyword2": "diplomacy",
+      "question": "What is the main job of an embassy headed by an ambassador?",
+      "correctAnswer": "represent its home country\u2019s government in the host country",
+      "incorrectAnswers": [
+        "run the host country\u2019s elections",
+        "command the host country\u2019s military",
+        "replace the host country\u2019s courts"
+      ],
+      "explanation": "Embassies handle official relations, passports, and policy communication under the sending state.",
+      "keywords": [
+        "embassy",
+        "ambassador"
+      ],
+      "source": "https://www.state.gov/diplomatic-missions/"
+    },
+    {
+      "seedId": "27b0b10f-5a41-514e-9a75-0d86f4ee7f80",
+      "category": "civics",
+      "navigationKeyword1": "international",
+      "navigationKeyword2": "diplomacy",
+      "question": "Why do states sometimes use back-channel or quiet talks?",
+      "correctAnswer": "to explore compromises before public positions harden or media pressure builds",
+      "incorrectAnswers": [
+        "to avoid any written records ever",
+        "to cancel all treaties automatically",
+        "to replace elected legislatures"
+      ],
+      "explanation": "Confidential contacts can reduce misunderstanding and test ideas without full spotlight.",
+      "keywords": [
+        "negotiation",
+        "dialogue"
+      ],
+      "source": "https://www.un.org/en/peace-and-security/"
+    },
+    {
+      "seedId": "281b517e-51fb-58bb-b64b-a6be65cdc44b",
+      "category": "civics",
+      "navigationKeyword1": "international",
+      "navigationKeyword2": "human-rights",
+      "question": "What does non-discrimination require in human-rights teaching?",
+      "correctAnswer": "equal protection of rights without bias on forbidden grounds such as race, sex, or religion",
+      "incorrectAnswers": [
+        "treating every situation identically even when needs differ",
+        "banning all religious belief",
+        "ending all courts"
+      ],
+      "explanation": "States must address unjustified unequal treatment while sometimes allowing reasonable measures.",
+      "keywords": [
+        "non-discrimination",
+        "equality"
+      ],
+      "source": "https://www.un.org/en/about-us/universal-declaration-of-human-rights"
+    },
+    {
+      "seedId": "941e5310-1337-5b0e-8e08-588e318e8c20",
+      "category": "civics",
+      "navigationKeyword1": "international",
+      "navigationKeyword2": "human-rights",
+      "question": "What is a human-rights treaty body?",
+      "correctAnswer": "an expert committee that monitors how states implement a specific treaty",
+      "incorrectAnswers": [
+        "a local school board",
+        "a private stock exchange",
+        "a military alliance only"
+      ],
+      "explanation": "Committees review reports and may issue guidance on compliance with treaty duties.",
+      "keywords": [
+        "treaty-bodies",
+        "monitoring"
+      ],
+      "source": "https://www.ohchr.org/en/treaty-bodies"
+    },
+    {
+      "seedId": "cca56af5-a3c9-5cb1-9854-0ebe3e110272",
+      "category": "civics",
+      "navigationKeyword1": "international",
+      "navigationKeyword2": "human-rights",
+      "question": "What is the usual civic distinction between civil-political rights and economic-social rights?",
+      "correctAnswer": "civil-political rights focus on liberty and participation; economic-social rights focus on basic needs and dignity",
+      "incorrectAnswers": [
+        "only one group is listed in any treaty",
+        "economic rights never appear in UN texts",
+        "civil rights apply only to corporations"
+      ],
+      "explanation": "International law often groups freedoms like speech with fair trials, and work or health with social protection.",
+      "keywords": [
+        "rights-types",
+        "covenants"
+      ],
+      "source": "https://www.ohchr.org/en/what-are-human-rights"
+    },
+    {
+      "seedId": "6280fecc-66a7-5855-9938-c2c84e431efc",
+      "category": "civics",
+      "navigationKeyword1": "international",
+      "navigationKeyword2": "human-rights",
+      "question": "What is universal jurisdiction in simplified civic terms?",
+      "correctAnswer": "some serious crimes can be tried in a country even with no direct link, under limited legal rules",
+      "incorrectAnswers": [
+        "any court may hear any parking ticket worldwide",
+        "only monarchs may prosecute",
+        "international law bans all trials"
+      ],
+      "explanation": "Certain grave offenses may trigger cooperation and prosecution across borders where law allows.",
+      "keywords": [
+        "universal-jurisdiction",
+        "accountability"
+      ],
+      "source": "https://www.britannica.com/topic/universal-jurisdiction"
+    },
+    {
+      "seedId": "45ae69e1-abd7-5389-a656-ea729ee49ee0",
+      "category": "civics",
+      "navigationKeyword1": "international",
+      "navigationKeyword2": "human-rights",
+      "question": "When was the Universal Declaration of Human Rights adopted?",
+      "correctAnswer": "1948",
+      "incorrectAnswers": [
+        "1776",
+        "1919",
+        "1969"
+      ],
+      "explanation": "The General Assembly adopted the UDHR on December 10, 1948, as a common standard.",
+      "keywords": [
+        "udhr",
+        "history"
+      ],
+      "source": "https://www.un.org/en/about-us/universal-declaration-of-human-rights"
+    },
+    {
+      "seedId": "67552d33-6fdb-5a32-a8d5-0de281a82fe4",
+      "category": "civics",
+      "navigationKeyword1": "international",
+      "navigationKeyword2": "human-rights",
+      "question": "Why is the prohibition of torture treated as a firm rule in international norms?",
+      "correctAnswer": "it is widely accepted that torture cannot be justified as lawful policy",
+      "incorrectAnswers": [
+        "because torture is encouraged in all emergencies",
+        "because courts never review detention",
+        "because asylum never exists"
+      ],
+      "explanation": "Core protections reject torture even when states face security pressures.",
+      "keywords": [
+        "torture",
+        "jus-cogens"
+      ],
+      "source": "https://www.ohchr.org/en/instruments-mechanisms/instruments/convention-against-torture-and-other-cruel-inhuman-or-degrading-treatment-or-punishment"
+    },
+    {
+      "seedId": "028758b4-e635-5008-b5eb-1b7edf7b542b",
+      "category": "civics",
+      "navigationKeyword1": "international",
+      "navigationKeyword2": "ngo",
+      "question": "How does an IGO differ from an NGO?",
+      "correctAnswer": "an IGO is created by states by treaty; an NGO is not a creature of governments alone",
+      "incorrectAnswers": [
+        "IGOs are always private charities",
+        "NGOs only sell products",
+        "both mean the same institution"
+      ],
+      "explanation": "Intergovernmental bodies like many UN agencies are state-based; NGOs are independent civil society.",
+      "keywords": [
+        "igo",
+        "civil-society"
+      ],
+      "source": "https://www.un.org/en/"
+    },
+    {
+      "seedId": "267dd006-fa34-5757-9e44-0aded238ba14",
+      "category": "civics",
+      "navigationKeyword1": "international",
+      "navigationKeyword2": "ngo",
+      "question": "What does NGO stand for in global civics?",
+      "correctAnswer": "non-governmental organization",
+      "incorrectAnswers": [
+        "national government office",
+        "non-growing organization",
+        "neutral global oversight"
+      ],
+      "explanation": "NGOs are private, not-for-profit groups that operate across issues without being a state agency.",
+      "keywords": [
+        "ngo",
+        "definition"
+      ],
+      "source": "https://www.un.org/en/partnerships/non-governmental-organizations"
+    },
+    {
+      "seedId": "f72e5adf-8062-5317-a1fb-dd12516ce86f",
+      "category": "civics",
+      "navigationKeyword1": "international",
+      "navigationKeyword2": "ngo",
+      "question": "What is a common civic role for humanitarian NGOs in crises?",
+      "correctAnswer": "deliver aid, shelter, and health services where they can reach people in need",
+      "incorrectAnswers": [
+        "declare war between countries",
+        "replace national constitutions",
+        "command all border troops"
+      ],
+      "explanation": "They fill gaps with consent and safety rules, complementing\u2014not replacing\u2014states.",
+      "keywords": [
+        "humanitarian-aid",
+        "relief"
+      ],
+      "source": "https://www.icrc.org/en/what-we-do"
+    },
+    {
+      "seedId": "53164ba1-ae13-5bac-9aa1-5d7af56ee8e0",
+      "category": "civics",
+      "navigationKeyword1": "international",
+      "navigationKeyword2": "ngo",
+      "question": "What is a typical watchdog NGO function in civic life?",
+      "correctAnswer": "monitor governments or companies and publish findings on rights or environmental issues",
+      "incorrectAnswers": [
+        "run national elections alone",
+        "issue passports",
+        "command police forces"
+      ],
+      "explanation": "Watchdog groups research and spotlight problems to push for reform or compliance.",
+      "keywords": [
+        "watchdog",
+        "advocacy"
+      ],
+      "source": "https://www.ohchr.org/"
+    },
+    {
+      "seedId": "4cc9cced-853c-5a47-a2e8-e97b9aeff9bc",
+      "category": "civics",
+      "navigationKeyword1": "international",
+      "navigationKeyword2": "ngo",
+      "question": "What is transparency often expected to show for a credible NGO?",
+      "correctAnswer": "how it spends money, who governs it, and how it measures results",
+      "incorrectAnswers": [
+        "that it has no staff",
+        "that it never publishes reports",
+        "that it avoids all audits"
+      ],
+      "explanation": "Donors and the public rely on clear governance to trust independent organizations.",
+      "keywords": [
+        "accountability",
+        "governance"
+      ],
+      "source": "https://www.oecd.org/dac/standards-for-civil-society-organisations.htm"
+    },
+    {
+      "seedId": "b37f653c-8a54-59b5-b5fd-66f0b0c26215",
+      "category": "civics",
+      "navigationKeyword1": "international",
+      "navigationKeyword2": "ngo",
+      "question": "Why do NGOs seek consultative status with the UN Economic and Social Council?",
+      "correctAnswer": "to participate in selected meetings and contribute expertise to global policy debates",
+      "incorrectAnswers": [
+        "to veto Security Council resolutions",
+        "to collect taxes from member states",
+        "to appoint the Secretary-General"
+      ],
+      "explanation": "Consultative status opens channels for advocacy and information, not sovereign power.",
+      "keywords": [
+        "ecosoc",
+        "advocacy"
+      ],
+      "source": "https://www.un.org/en/partnerships/non-governmental-organizations"
+    },
+    {
+      "seedId": "39e13a73-82e9-5736-b963-081a3abc7f17",
+      "category": "civics",
+      "navigationKeyword1": "international",
+      "navigationKeyword2": "treaties",
+      "question": "How does a bilateral treaty differ from a multilateral one?",
+      "correctAnswer": "bilateral involves two parties; multilateral involves many parties under one instrument",
+      "incorrectAnswers": [
+        "bilateral means no writing is allowed",
+        "multilateral applies only to sports leagues",
+        "both terms mean the same in every case"
+      ],
+      "explanation": "The number of parties shapes negotiation style and how widely rules spread.",
+      "keywords": [
+        "bilateral",
+        "multilateral"
+      ],
+      "source": "https://www.britannica.com/topic/treaty-international-relations"
+    },
+    {
+      "seedId": "3bbedf9f-4227-5d43-8e92-7242c6dae09f",
+      "category": "civics",
+      "navigationKeyword1": "international",
+      "navigationKeyword2": "treaties",
+      "question": "In international law basics, what is a treaty?",
+      "correctAnswer": "a formal written agreement between states governed by international law",
+      "incorrectAnswers": [
+        "a private company\u2019s internal memo",
+        "a city\u2019s parking ticket policy",
+        "a one-day press statement with no legal force"
+      ],
+      "explanation": "Treaties are consent-based instruments that create mutual obligations among parties.",
+      "keywords": [
+        "treaty",
+        "international-law"
+      ],
+      "source": "https://legal.un.org/avl/ha/tbc/tbc.html"
+    },
+    {
+      "seedId": "ff031378-6187-5ab8-9bb6-516d8e74010e",
+      "category": "civics",
+      "navigationKeyword1": "international",
+      "navigationKeyword2": "treaties",
+      "question": "What does it mean that treaty obligations run *pacta sunt servanda*?",
+      "correctAnswer": "agreements must be kept in good faith",
+      "incorrectAnswers": [
+        "treaties expire every 30 days",
+        "only verbal deals count",
+        "courts may never read treaty text"
+      ],
+      "explanation": "Good faith performance is a core idea supporting predictable relations between states.",
+      "keywords": [
+        "good-faith",
+        "compliance"
+      ],
+      "source": "https://legal.un.org/ilc/texts/instruments/english/conventions/9_1_1969.pdf"
+    },
+    {
+      "seedId": "811b6663-a294-503c-8959-2cec8ac6edc8",
+      "category": "civics",
+      "navigationKeyword1": "international",
+      "navigationKeyword2": "treaties",
+      "question": "What is ratification in treaty practice?",
+      "correctAnswer": "a state\u2019s formal step that binds it to a treaty after negotiation and signature",
+      "incorrectAnswers": [
+        "automatic law without any domestic step",
+        "a request to delete the treaty text",
+        "a temporary boycott of all trade"
+      ],
+      "explanation": "States follow their own constitutional rules to consent and be bound internationally.",
+      "keywords": [
+        "ratification",
+        "consent"
+      ],
+      "source": "https://www.state.gov/treaties/"
+    },
+    {
+      "seedId": "a1958709-287b-5875-bc42-afd4847c4813",
+      "category": "civics",
+      "navigationKeyword1": "international",
+      "navigationKeyword2": "treaties",
+      "question": "What is the Vienna Convention on the Law of Treaties mainly about?",
+      "correctAnswer": "rules for how treaties are made, interpreted, and ended between states",
+      "incorrectAnswers": [
+        "how to run national elections",
+        "how to charter private banks only",
+        "how to abolish all international courts"
+      ],
+      "explanation": "It is a key framework text on treaty formation, interpretation, and invalidity grounds.",
+      "keywords": [
+        "vienna-convention",
+        "interpretation"
+      ],
+      "source": "https://legal.un.org/avl/ha/vclt/vclt.html"
+    },
+    {
+      "seedId": "388d7b92-41a7-5bba-b78c-832a9956927e",
+      "category": "civics",
+      "navigationKeyword1": "international",
+      "navigationKeyword2": "treaties",
+      "question": "Why do countries sometimes add reservations to a treaty?",
+      "correctAnswer": "to accept most of the treaty while excluding or changing specific legal effects",
+      "incorrectAnswers": [
+        "to cancel the treaty for all other states",
+        "to ban all future amendments",
+        "to remove the need for any signature"
+      ],
+      "explanation": "Reservations let states join with limits if the treaty allows and other parties accept.",
+      "keywords": [
+        "reservations",
+        "state-consent"
+      ],
+      "source": "https://legal.un.org/ilc/texts/instruments/english/conventions/9_1_1969.pdf"
+    },
+    {
+      "seedId": "ddfd442b-c87f-5241-a58e-143d7a615b6b",
+      "category": "civics",
+      "navigationKeyword1": "international",
+      "navigationKeyword2": "un",
+      "question": "What are the four main purposes listed in the opening of the UN Charter?",
+      "correctAnswer": "keep peace, develop friendly relations, help solve problems cooperatively, and be a center for harmonizing actions",
+      "incorrectAnswers": [
+        "abolish all national armies on day one",
+        "run every election worldwide",
+        "replace local courts in every city"
+      ],
+      "explanation": "The Charter frames the organization around peace, cooperation, and coordinated problem-solving.",
+      "keywords": [
+        "un-charter",
+        "purposes"
+      ],
+      "source": "https://www.un.org/en/about-us/un-charter/chapter-1"
+    },
+    {
+      "seedId": "03c9e940-cff0-5908-af19-e43444ed2dcf",
+      "category": "civics",
+      "navigationKeyword1": "international",
+      "navigationKeyword2": "un",
+      "question": "What is one major limit civic courses note about UN General Assembly resolutions?",
+      "correctAnswer": "many resolutions are not self-enforcing and depend on states to carry them out",
+      "incorrectAnswers": [
+        "they automatically replace national constitutions",
+        "they fund every local school directly",
+        "they cancel all national laws overnight"
+      ],
+      "explanation": "The UN mostly coordinates sovereign states; enforcement often needs national action and consent.",
+      "keywords": [
+        "soft-law",
+        "implementation"
+      ],
+      "source": "https://www.un.org/en/about-us/how-the-un-works"
+    },
+    {
+      "seedId": "f12fa533-c450-561b-bf53-4dfbb2c40ab9",
+      "category": "civics",
+      "navigationKeyword1": "international",
+      "navigationKeyword2": "un",
+      "question": "What is the Security Council\u2019s special role under the Charter?",
+      "correctAnswer": "primary responsibility for international peace and security",
+      "incorrectAnswers": [
+        "hiring every national teacher",
+        "setting world tax rates",
+        "running all postal services"
+      ],
+      "explanation": "The Council can address threats, breaches of peace, and acts of aggression under Charter rules.",
+      "keywords": [
+        "security-council",
+        "peace"
+      ],
+      "source": "https://www.un.org/securitycouncil/"
+    },
+    {
+      "seedId": "bb9f0410-fbe7-520a-86e7-cde9487d870b",
+      "category": "civics",
+      "navigationKeyword1": "international",
+      "navigationKeyword2": "un",
+      "question": "Which UN body includes all member countries with one vote per state in regular sessions?",
+      "correctAnswer": "the General Assembly",
+      "incorrectAnswers": [
+        "the Security Council only",
+        "the International Court of Justice bench alone",
+        "the Secretariat\u2019s staff union"
+      ],
+      "explanation": "The General Assembly is the broad membership forum for debate and many kinds of resolutions.",
+      "keywords": [
+        "general-assembly",
+        "membership"
+      ],
+      "source": "https://www.un.org/en/ga/"
+    },
+    {
+      "seedId": "a28b48e8-81b9-5117-be75-266293315815",
+      "category": "civics",
+      "navigationKeyword1": "international",
+      "navigationKeyword2": "un",
+      "question": "Which UN organ can settle legal disputes between states if they agree to its jurisdiction?",
+      "correctAnswer": "the International Court of Justice",
+      "incorrectAnswers": [
+        "the World Health Assembly alone",
+        "the UN postal service",
+        "the General Assembly\u2019s budget office"
+      ],
+      "explanation": "The ICJ is the UN\u2019s principal judicial organ for state-to-state cases under its statute.",
+      "keywords": [
+        "icj",
+        "dispute-settlement"
+      ],
+      "source": "https://www.icj-cij.org/en"
+    },
+    {
+      "seedId": "24b52e3a-e7d9-518a-bee0-174a6ce2241d",
+      "category": "civics",
+      "navigationKeyword1": "international",
+      "navigationKeyword2": "un",
+      "question": "Who is the UN Secretary-General in institutional terms?",
+      "correctAnswer": "the chief administrative officer appointed by the General Assembly on the Security Council\u2019s recommendation",
+      "incorrectAnswers": [
+        "the lifetime monarch of all members",
+        "the commander of every national army",
+        "the judge who decides all domestic trials"
+      ],
+      "explanation": "The Secretary-General runs the Secretariat and can help mediate, but is not a world president.",
+      "keywords": [
+        "secretariat",
+        "leadership"
+      ],
+      "source": "https://www.un.org/sg/en/content/sg/appointment-process"
+    }
+  ]
+}

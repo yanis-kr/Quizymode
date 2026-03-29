@@ -1,0 +1,121 @@
+{
+  "schemaVersion": 1,
+  "seedSet": "core-public-items",
+  "deltaPreviewLimit": 200,
+  "items": [
+    {
+      "seedId": "4a3aaed1-ccec-5de5-808d-f9f33391dd34",
+      "category": "tech",
+      "navigationKeyword1": "web-dev",
+      "navigationKeyword2": "backend",
+      "question": "A load balancer in front of many application servers mainly improves what?",
+      "correctAnswer": "Distributing incoming requests and improving availability",
+      "incorrectAnswers": [
+        "Compiling JavaScript to machine code",
+        "Encrypting local disk partitions",
+        "Replacing DNS entirely"
+      ],
+      "explanation": "Load balancers spread traffic and can health-check backends so failures affect fewer users.",
+      "keywords": [
+        "backend",
+        "scaling"
+      ],
+      "source": "https://developer.mozilla.org/en-US/docs/Glossary/Load_balancer"
+    },
+    {
+      "seedId": "23ad38fa-ad2c-5e56-a8e6-aff181bafade",
+      "category": "tech",
+      "navigationKeyword1": "web-dev",
+      "navigationKeyword2": "backend",
+      "question": "HTTP GET is defined as safe and also expected to be what when repeated?",
+      "correctAnswer": "Idempotent",
+      "incorrectAnswers": [
+        "Always cached forever",
+        "Forbidden over TLS",
+        "Required to return JSON"
+      ],
+      "explanation": "Safe methods must not have side effects; idempotent methods yield the same effect when applied multiple times.",
+      "keywords": [
+        "http",
+        "methods"
+      ],
+      "source": "https://www.rfc-editor.org/rfc/rfc9110.html#name-safe-methods"
+    },
+    {
+      "seedId": "e94d9a21-66e8-57ed-be16-bb6ccc470105",
+      "category": "tech",
+      "navigationKeyword1": "web-dev",
+      "navigationKeyword2": "backend",
+      "question": "In Roy Fielding's REST constraints, each request from client to server must contain what the server needs to understand it, reflecting which property?",
+      "correctAnswer": "Statelessness",
+      "incorrectAnswers": [
+        "Stateful sessions on every TCP packet",
+        "Mandatory cookies on every DNS query",
+        "Sticky routing at the CDN only"
+      ],
+      "explanation": "Application state stays on the client; the server does not store client context between requests beyond resources.",
+      "keywords": [
+        "rest",
+        "architecture"
+      ],
+      "source": "https://www.ics.uci.edu/~fielding/pubs/dissertation/rest_arch_style.htm"
+    },
+    {
+      "seedId": "27ebd20b-53c2-5810-8626-329999c1750f",
+      "category": "tech",
+      "navigationKeyword1": "web-dev",
+      "navigationKeyword2": "backend",
+      "question": "Server-sent events deliver updates from server to browser over what kind of HTTP usage pattern?",
+      "correctAnswer": "A long-lived HTTP response that streams text events",
+      "incorrectAnswers": [
+        "UDP multicast only",
+        "FTP passive mode",
+        "ICMP echo replies"
+      ],
+      "explanation": "SSE keeps a single HTTP connection open while the server pushes `text/event-stream` messages to the client.",
+      "keywords": [
+        "http",
+        "sse"
+      ],
+      "source": "https://html.spec.whatwg.org/multipage/server-sent-events.html"
+    },
+    {
+      "seedId": "515033a0-4cc9-5c7b-a94d-9b944d5f708a",
+      "category": "tech",
+      "navigationKeyword1": "web-dev",
+      "navigationKeyword2": "backend",
+      "question": "Which HTTP status code signals that a request succeeded and a new resource was created?",
+      "correctAnswer": "201 Created",
+      "incorrectAnswers": [
+        "204 No Content",
+        "301 Moved Permanently",
+        "403 Forbidden"
+      ],
+      "explanation": "`201 Created` is used when a POST (or similar) yields a new resource, often with a `Location` header.",
+      "keywords": [
+        "http",
+        "status-codes"
+      ],
+      "source": "https://www.rfc-editor.org/rfc/rfc9110.html#name-201-created"
+    },
+    {
+      "seedId": "6de32dd0-7bbe-5c59-a9c8-a15e2ca53997",
+      "category": "tech",
+      "navigationKeyword1": "web-dev",
+      "navigationKeyword2": "backend",
+      "question": "Why is PUT often described as idempotent for REST APIs while POST may not be?",
+      "correctAnswer": "Repeating PUT with the same representation should leave the resource in the same state",
+      "incorrectAnswers": [
+        "PUT cannot update resources",
+        "POST always deletes data",
+        "PUT is only for file uploads"
+      ],
+      "explanation": "Idempotent methods are safe to retry; POST often creates new subresources where repeats create duplicates.",
+      "keywords": [
+        "rest",
+        "idempotency"
+      ],
+      "source": "https://restfulapi.net/idempotent-rest-apis/"
+    }
+  ]
+}

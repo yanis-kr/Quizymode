@@ -13,7 +13,7 @@ Task:
 
 Create or continue seed files for the `tech` category in:
 
-- `data/bulk-seed/tech`
+- `data/seed-source/items/tech`
 
 Filename format:
 

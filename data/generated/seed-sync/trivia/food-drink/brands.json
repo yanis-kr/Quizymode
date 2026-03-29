@@ -1,0 +1,197 @@
+{
+  "schemaVersion": 1,
+  "seedSet": "core-public-items",
+  "deltaPreviewLimit": 200,
+  "items": [
+    {
+      "seedId": "4d96bdcc-a1c8-5703-9058-fda32855ce1f",
+      "category": "trivia",
+      "navigationKeyword1": "food-drink",
+      "navigationKeyword2": "brands",
+      "question": "Coca\u2011Cola history dates first glass at Jacobs\u2019 Pharmacy to which year?",
+      "correctAnswer": "1886",
+      "incorrectAnswers": [
+        "1892",
+        "1915",
+        "1971"
+      ],
+      "explanation": "The official history places the first Coca\u2011Cola serving in 1886.",
+      "keywords": [
+        "beverages",
+        "timeline"
+      ],
+      "source": "https://www.coca-colacompany.com/about-us/history"
+    },
+    {
+      "seedId": "4750dee3-62c7-50c1-95c2-eea29d795121",
+      "category": "trivia",
+      "navigationKeyword1": "food-drink",
+      "navigationKeyword2": "brands",
+      "question": "Coca\u2011Cola history introduces Diet Coke in which year?",
+      "correctAnswer": "1982",
+      "incorrectAnswers": [
+        "1985",
+        "1963",
+        "2005"
+      ],
+      "explanation": "Diet Coke in 1982.",
+      "keywords": [
+        "beverages",
+        "diet"
+      ],
+      "source": "https://www.coca-colacompany.com/about-us/history"
+    },
+    {
+      "seedId": "e55df539-908b-521d-ac0c-e0cb6294ef31",
+      "category": "trivia",
+      "navigationKeyword1": "food-drink",
+      "navigationKeyword2": "brands",
+      "question": "Coca\u2011Cola history introduces Fanta Orange in Naples, Italy, in which year?",
+      "correctAnswer": "1955",
+      "incorrectAnswers": [
+        "1960",
+        "1945",
+        "1978"
+      ],
+      "explanation": "Fanta Orange introduced in Naples in 1955.",
+      "keywords": [
+        "beverages",
+        "brands"
+      ],
+      "source": "https://www.coca-colacompany.com/about-us/history"
+    },
+    {
+      "seedId": "6336642b-294c-5535-9fb1-94930eea9f0e",
+      "category": "trivia",
+      "navigationKeyword1": "food-drink",
+      "navigationKeyword2": "brands",
+      "question": "Coca\u2011Cola history lists TaB launch year as what?",
+      "correctAnswer": "1963",
+      "incorrectAnswers": [
+        "1982",
+        "1955",
+        "1971"
+      ],
+      "explanation": "TaB in 1963.",
+      "keywords": [
+        "beverages",
+        "history"
+      ],
+      "source": "https://www.coca-colacompany.com/about-us/history"
+    },
+    {
+      "seedId": "f709de63-1802-5fe1-b68f-d45985df10f5",
+      "category": "trivia",
+      "navigationKeyword1": "food-drink",
+      "navigationKeyword2": "brands",
+      "question": "Coca\u2011Cola history lists incorporation of The Coca\u2011Cola Company in Georgia in which year?",
+      "correctAnswer": "1892",
+      "incorrectAnswers": [
+        "1886",
+        "1904",
+        "1923"
+      ],
+      "explanation": "1892 incorporation.",
+      "keywords": [
+        "beverages",
+        "timeline"
+      ],
+      "source": "https://www.coca-colacompany.com/about-us/history"
+    },
+    {
+      "seedId": "f5f4a52b-7fc5-5d3a-a169-ccf6863c7bba",
+      "category": "trivia",
+      "navigationKeyword1": "food-drink",
+      "navigationKeyword2": "brands",
+      "question": "Coca\u2011Cola history marks contour bottle collaboration beginning in which year?",
+      "correctAnswer": "1915",
+      "incorrectAnswers": [
+        "1923",
+        "1899",
+        "1945"
+      ],
+      "explanation": "1915 contour bottle work.",
+      "keywords": [
+        "packaging",
+        "history"
+      ],
+      "source": "https://www.coca-colacompany.com/about-us/history"
+    },
+    {
+      "seedId": "3d27406c-63ca-5325-a1bb-3d0ba50eda4b",
+      "category": "trivia",
+      "navigationKeyword1": "food-drink",
+      "navigationKeyword2": "brands",
+      "question": "Coca\u2011Cola history notes Minute Maid acquisition in which year?",
+      "correctAnswer": "1960",
+      "incorrectAnswers": [
+        "1982",
+        "1990",
+        "2001"
+      ],
+      "explanation": "Minute Maid acquisition in 1960.",
+      "keywords": [
+        "juice",
+        "history"
+      ],
+      "source": "https://www.coca-colacompany.com/about-us/history"
+    },
+    {
+      "seedId": "1abb1585-41c1-5bb1-b163-d7fa7226ca62",
+      "category": "trivia",
+      "navigationKeyword1": "food-drink",
+      "navigationKeyword2": "brands",
+      "question": "Coca\u2011Cola history notes World of Coca\u2011Cola museum opening year in Atlanta as what?",
+      "correctAnswer": "1990",
+      "incorrectAnswers": [
+        "2007",
+        "1986",
+        "1978"
+      ],
+      "explanation": "The World of Coca-Cola museum opened in 1990.",
+      "keywords": [
+        "museum",
+        "atlanta"
+      ],
+      "source": "https://www.coca-colacompany.com/about-us/history"
+    },
+    {
+      "seedId": "884f75b1-bd9d-5d30-b9cd-3c71bbdc75e1",
+      "category": "trivia",
+      "navigationKeyword1": "food-drink",
+      "navigationKeyword2": "brands",
+      "question": "Coca\u2011Cola history records first bottling contract year in Chattanooga as what?",
+      "correctAnswer": "1899",
+      "incorrectAnswers": [
+        "1919",
+        "1887",
+        "1931"
+      ],
+      "explanation": "1899 bottling rights.",
+      "keywords": [
+        "bottling",
+        "timeline"
+      ],
+      "source": "https://www.coca-colacompany.com/about-us/history"
+    },
+    {
+      "seedId": "32cc6b8e-32aa-5414-8d55-25bc616f261a",
+      "category": "trivia",
+      "navigationKeyword1": "food-drink",
+      "navigationKeyword2": "brands",
+      "question": "Coca\u2011Cola history records steel 12-ounce cans introduced in which year?",
+      "correctAnswer": "1960",
+      "incorrectAnswers": [
+        "1982",
+        "1950",
+        "1979"
+      ],
+      "explanation": "Coca-Cola introduced steel 12-ounce cans in 1960.",
+      "keywords": [
+        "packaging",
+        "history"
+      ],
+      "source": "https://www.coca-colacompany.com/about-us/history"
+    }
+  ]
+}

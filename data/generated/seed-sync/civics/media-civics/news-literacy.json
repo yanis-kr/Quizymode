@@ -1,0 +1,121 @@
+{
+  "schemaVersion": 1,
+  "seedSet": "core-public-items",
+  "deltaPreviewLimit": 200,
+  "items": [
+    {
+      "seedId": "60288b19-8e30-500c-b4dc-ff35da895bd6",
+      "category": "civics",
+      "navigationKeyword1": "media-civics",
+      "navigationKeyword2": "news-literacy",
+      "question": "What does it usually mean if a story is labeled analysis or opinion?",
+      "correctAnswer": "it explains or argues a point and is not a straight news report of just the facts",
+      "incorrectAnswers": [
+        "it must be false",
+        "it has no author",
+        "it cannot cite any sources"
+      ],
+      "explanation": "Opinion and analysis pieces follow different standards than neutral hard news.",
+      "keywords": [
+        "opinion",
+        "news-genres"
+      ],
+      "source": "https://www.fcc.gov/consumers/guides/media-literacy"
+    },
+    {
+      "seedId": "f97870dd-1593-5f34-9889-590fef3863d3",
+      "category": "civics",
+      "navigationKeyword1": "media-civics",
+      "navigationKeyword2": "news-literacy",
+      "question": "What is a primary source in basic research literacy?",
+      "correctAnswer": "an original record close to the event, such as a law, dataset, or official transcript",
+      "incorrectAnswers": [
+        "always a summary written years later",
+        "only a social media meme",
+        "any opinion column"
+      ],
+      "explanation": "Primary sources are firsthand materials; secondary sources interpret them.",
+      "keywords": [
+        "primary-source",
+        "evidence"
+      ],
+      "source": "https://guides.loc.gov/primary-sources"
+    },
+    {
+      "seedId": "791302fe-1e60-52b0-8e15-9c203918e987",
+      "category": "civics",
+      "navigationKeyword1": "media-civics",
+      "navigationKeyword2": "news-literacy",
+      "question": "What is a red flag that a quote may be miscopied online?",
+      "correctAnswer": "you cannot find the same quote in a full transcript or reliable record of the speech",
+      "incorrectAnswers": [
+        "the quote uses quotation marks",
+        "the quote is shorter than a book",
+        "the quote appears in English"
+      ],
+      "explanation": "Misattributed quotes spread fast; checking original recordings or transcripts helps.",
+      "keywords": [
+        "misinformation",
+        "quotes"
+      ],
+      "source": "https://www.britannica.com/topic/journalism"
+    },
+    {
+      "seedId": "0d30a16f-8074-5cb6-8a6a-cb3f7d5842b3",
+      "category": "civics",
+      "navigationKeyword1": "media-civics",
+      "navigationKeyword2": "news-literacy",
+      "question": "What is native advertising or sponsored content in civic media terms?",
+      "correctAnswer": "paid material designed to look like surrounding editorial content",
+      "incorrectAnswers": [
+        "always illegal in every country",
+        "the same as a court transcript",
+        "only weather graphics"
+      ],
+      "explanation": "Readers should spot sponsorship labels so they know when a message is paid promotion.",
+      "keywords": [
+        "sponsored-content",
+        "transparency"
+      ],
+      "source": "https://www.ftc.gov/business-guidance/resources/native-advertising-guide-businesses"
+    },
+    {
+      "seedId": "f5f72665-07c2-538d-b392-0e89db04e541",
+      "category": "civics",
+      "navigationKeyword1": "media-civics",
+      "navigationKeyword2": "news-literacy",
+      "question": "Why does news literacy training ask you to notice the byline and dateline?",
+      "correctAnswer": "to see who reported the story and when it was published or updated",
+      "incorrectAnswers": [
+        "to guess the writer\u2019s favorite color",
+        "to find hidden coupons",
+        "to skip reading the headline"
+      ],
+      "explanation": "Author and date help you judge freshness, accountability, and whether follow-up occurred.",
+      "keywords": [
+        "byline",
+        "verification"
+      ],
+      "source": "https://www.civiced.org/"
+    },
+    {
+      "seedId": "c49d7e47-8d72-54a2-8247-3e4cce46f1b1",
+      "category": "civics",
+      "navigationKeyword1": "media-civics",
+      "navigationKeyword2": "news-literacy",
+      "question": "Why should readers check whether a dramatic claim appears in more than one independent outlet?",
+      "correctAnswer": "to see whether the story is confirmed rather than repeated from a single unverified origin",
+      "incorrectAnswers": [
+        "because every outlet always copies one blog",
+        "because second sources are never needed",
+        "because only video counts"
+      ],
+      "explanation": "Corroboration reduces the chance you are seeing a hoax or a one-off error.",
+      "keywords": [
+        "corroboration",
+        "verification"
+      ],
+      "source": "https://www.usa.gov/media-literacy"
+    }
+  ]
+}

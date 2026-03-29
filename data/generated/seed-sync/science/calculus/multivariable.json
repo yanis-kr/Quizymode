@@ -1,0 +1,235 @@
+{
+  "schemaVersion": 1,
+  "seedSet": "core-public-items",
+  "deltaPreviewLimit": 200,
+  "items": [
+    {
+      "seedId": "1f5b297b-5107-4a29-ae20-4f3933f5c7da",
+      "category": "science",
+      "navigationKeyword1": "calculus",
+      "navigationKeyword2": "multivariable",
+      "question": "What is Green\u2019s theorem (idea)?",
+      "correctAnswer": "Relates line integral around closed curve to double integral over interior",
+      "incorrectAnswers": [
+        "Relates surface to volume always",
+        "Only for spheres",
+        "Only in 1D"
+      ],
+      "explanation": "Connects circulation and curl in 2D.",
+      "keywords": [
+        "greens-theorem",
+        "flux"
+      ],
+      "source": "https://openstax.org/books/calculus-volume-3/pages/6-4-greens-theorem"
+    },
+    {
+      "seedId": "efdb1263-fe11-411d-ada6-96df4b338d95",
+      "category": "science",
+      "navigationKeyword1": "calculus",
+      "navigationKeyword2": "multivariable",
+      "question": "What is Jacobian determinant used for?",
+      "correctAnswer": "Area/volume element under coordinate change",
+      "incorrectAnswers": [
+        "Finding curl",
+        "Finding divergence only",
+        "Dot product only"
+      ],
+      "explanation": "Substitutions in multiple integrals need Jacobian factor.",
+      "keywords": [
+        "jacobian",
+        "change-of-variables"
+      ],
+      "source": "https://openstax.org/books/calculus-volume-3/pages/5-5-jacobian"
+    },
+    {
+      "seedId": "cd254247-a711-465b-b408-fc57fa28cf66",
+      "category": "science",
+      "navigationKeyword1": "calculus",
+      "navigationKeyword2": "multivariable",
+      "question": "What is Stokes\u2019 theorem (idea)?",
+      "correctAnswer": "Relates circulation around boundary to curl flux through surface",
+      "incorrectAnswers": [
+        "Only for constants",
+        "Relates area to perimeter in all dimensions",
+        "Eliminates partial derivatives"
+      ],
+      "explanation": "Generalizes Green\u2019s theorem.",
+      "keywords": [
+        "stokes-theorem",
+        "surface"
+      ],
+      "source": "https://openstax.org/books/calculus-volume-3/pages/6-7-stokes-theorem"
+    },
+    {
+      "seedId": "280b1bf5-b107-47d3-ba19-916c608c1e0c",
+      "category": "science",
+      "navigationKeyword1": "calculus",
+      "navigationKeyword2": "multivariable",
+      "question": "What is a double integral?",
+      "correctAnswer": "Integral over a 2D region",
+      "incorrectAnswers": [
+        "Derivative twice",
+        "Line integral always",
+        "Series sum"
+      ],
+      "explanation": "Computes volume under a surface z=f(x,y) when f\u22650.",
+      "keywords": [
+        "double-integral",
+        "multivariable"
+      ],
+      "source": "https://openstax.org/books/calculus-volume-3/pages/5-1-double-integrals-over-rectangular-regions"
+    },
+    {
+      "seedId": "54c8252c-eb96-4ac6-856e-aab0a6ecf370",
+      "category": "science",
+      "navigationKeyword1": "calculus",
+      "navigationKeyword2": "multivariable",
+      "question": "What is a line integral of a scalar field?",
+      "correctAnswer": "Integral along a curve with arc length element",
+      "incorrectAnswers": [
+        "Always zero",
+        "Always a surface integral",
+        "Derivative along normal only"
+      ],
+      "explanation": "Used for mass of a wire with density.",
+      "keywords": [
+        "line-integral",
+        "curve"
+      ],
+      "source": "https://openstax.org/books/calculus-volume-3/pages/6-2-line-integrals"
+    },
+    {
+      "seedId": "92ed9521-0dca-479e-91f7-1c5d00c34fcb",
+      "category": "science",
+      "navigationKeyword1": "calculus",
+      "navigationKeyword2": "multivariable",
+      "question": "What is a partial derivative?",
+      "correctAnswer": "Derivative holding other variables constant",
+      "incorrectAnswers": [
+        "Derivative with respect to all variables at once",
+        "Integral over a surface",
+        "Gradient of speed only"
+      ],
+      "explanation": "Measures sensitivity to one input.",
+      "keywords": [
+        "partial-derivative",
+        "multivariable"
+      ],
+      "source": "https://openstax.org/books/calculus-volume-3/pages/4-3-partial-derivatives"
+    },
+    {
+      "seedId": "b6598ac2-e72f-4434-a409-ddb048bdec69",
+      "category": "science",
+      "navigationKeyword1": "calculus",
+      "navigationKeyword2": "multivariable",
+      "question": "What is a triple integral?",
+      "correctAnswer": "Integral over a 3D region",
+      "incorrectAnswers": [
+        "Integral of a vector field",
+        "Partial derivative",
+        "Jacobian only"
+      ],
+      "explanation": "Used for volume and mass with density.",
+      "keywords": [
+        "triple-integral",
+        "volume"
+      ],
+      "source": "https://openstax.org/books/calculus-volume-3/pages/5-4-triple-integrals"
+    },
+    {
+      "seedId": "b2264f0b-7b7a-41b3-ae84-f97042074ca5",
+      "category": "science",
+      "navigationKeyword1": "calculus",
+      "navigationKeyword2": "multivariable",
+      "question": "What is a vector field?",
+      "correctAnswer": "Assigns a vector to each point in space",
+      "incorrectAnswers": [
+        "Assigns a scalar only",
+        "Only constant vectors",
+        "Only in 1D"
+      ],
+      "explanation": "Used for flow and force fields.",
+      "keywords": [
+        "vector-field",
+        "multivariable"
+      ],
+      "source": "https://openstax.org/books/calculus-volume-3/pages/6-1-vector-fields"
+    },
+    {
+      "seedId": "86712622-9e5b-47dc-8b9b-9e9c71134d6c",
+      "category": "science",
+      "navigationKeyword1": "calculus",
+      "navigationKeyword2": "multivariable",
+      "question": "What is curl (basic meaning)?",
+      "correctAnswer": "Measures local rotation of a vector field",
+      "incorrectAnswers": [
+        "Measures expansion",
+        "Measures potential energy",
+        "Measures volume"
+      ],
+      "explanation": "Important in fluid and EM contexts.",
+      "keywords": [
+        "curl",
+        "vector-calculus"
+      ],
+      "source": "https://openstax.org/books/calculus-volume-3/pages/6-4-divergence-and-curl"
+    },
+    {
+      "seedId": "61f042e4-dbb3-46b3-92a9-5ead6652a97a",
+      "category": "science",
+      "navigationKeyword1": "calculus",
+      "navigationKeyword2": "multivariable",
+      "question": "What is divergence (basic meaning)?",
+      "correctAnswer": "Measures net outflow of a vector field",
+      "incorrectAnswers": [
+        "Measures rotation",
+        "Measures arc length",
+        "Measures area only"
+      ],
+      "explanation": "Positive divergence suggests sources.",
+      "keywords": [
+        "divergence",
+        "vector-calculus"
+      ],
+      "source": "https://openstax.org/books/calculus-volume-3/pages/6-4-divergence-and-curl"
+    },
+    {
+      "seedId": "f0fe9beb-9b29-4d33-8973-ee9cdce2cd99",
+      "category": "science",
+      "navigationKeyword1": "calculus",
+      "navigationKeyword2": "multivariable",
+      "question": "What is divergence theorem (Gauss) idea?",
+      "correctAnswer": "Relates flux through closed surface to divergence volume integral",
+      "incorrectAnswers": [
+        "Relates curl to gradient",
+        "Only for lines",
+        "Only for triangles"
+      ],
+      "explanation": "Used in Maxwell\u2019s equations formulations.",
+      "keywords": [
+        "divergence-theorem",
+        "flux"
+      ],
+      "source": "https://openstax.org/books/calculus-volume-3/pages/6-8-the-divergence-theorem"
+    },
+    {
+      "seedId": "51bd9e04-7b00-452e-8a9c-9a34507155fe",
+      "category": "science",
+      "navigationKeyword1": "calculus",
+      "navigationKeyword2": "multivariable",
+      "question": "What is the gradient \u2207f?",
+      "correctAnswer": "Vector of partial derivatives",
+      "incorrectAnswers": [
+        "Scalar equal to f",
+        "Matrix of second derivatives",
+        "Curl of f"
+      ],
+      "explanation": "Points in direction of steepest ascent.",
+      "keywords": [
+        "gradient",
+        "vector-calculus"
+      ],
+      "source": "https://openstax.org/books/calculus-volume-3/pages/4-6-directional-derivatives-and-the-gradient"
+    }
+  ]
+}

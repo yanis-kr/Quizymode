@@ -1,0 +1,121 @@
+{
+  "schemaVersion": 1,
+  "seedSet": "core-public-items",
+  "deltaPreviewLimit": 200,
+  "items": [
+    {
+      "seedId": "0abc46fb-b674-572d-bb7b-032a06366fb6",
+      "category": "civics",
+      "navigationKeyword1": "constitution",
+      "navigationKeyword2": "preamble",
+      "question": "How does the written Constitution begin?",
+      "correctAnswer": "We the People of the United States",
+      "incorrectAnswers": [
+        "We the States of America",
+        "We the Representatives of the Union",
+        "In Congress assembled"
+      ],
+      "explanation": "The opening words identify the document as resting on popular authority: \u201cWe the People of the United States.\u201d",
+      "keywords": [
+        "preamble",
+        "constitution-text"
+      ],
+      "source": "https://constitution.congress.gov/constitution/"
+    },
+    {
+      "seedId": "7409469f-d108-5a66-84e8-bc710867c95c",
+      "category": "civics",
+      "navigationKeyword1": "constitution",
+      "navigationKeyword2": "preamble",
+      "question": "Including \u201cform a more perfect Union,\u201d how many stated purposes appear in the Preamble\u2019s \u201cin Order to\u201d list?",
+      "correctAnswer": "six",
+      "incorrectAnswers": [
+        "four",
+        "five",
+        "seven"
+      ],
+      "explanation": "The Preamble names six aims: Union, Justice, domestic Tranquility, common defence, general Welfare, and Blessings of Liberty for posterity.",
+      "keywords": [
+        "preamble",
+        "constitution-goals"
+      ],
+      "source": "https://www.whitehouse.gov/our-government/the-constitution/"
+    },
+    {
+      "seedId": "ada2b24d-bb1f-51db-b394-6a1dd4332342",
+      "category": "civics",
+      "navigationKeyword1": "constitution",
+      "navigationKeyword2": "preamble",
+      "question": "What does the Preamble do by itself under standard reading of the document?",
+      "correctAnswer": "It states broad purposes; it does not add separate legal powers on its own",
+      "incorrectAnswers": [
+        "It creates the three branches and lists their powers",
+        "It replaces Article I if Congress and the president disagree",
+        "It cancels state constitutions automatically"
+      ],
+      "explanation": "The Preamble introduces the Constitution and its goals; operative rules and powers appear in the Articles and later amendments.",
+      "keywords": [
+        "preamble",
+        "constitution-structure"
+      ],
+      "source": "https://www.archives.gov/founding-docs/constitution-transcript"
+    },
+    {
+      "seedId": "cb8eefd7-0f55-5f05-ac6e-049c7dd0a485",
+      "category": "civics",
+      "navigationKeyword1": "constitution",
+      "navigationKeyword2": "preamble",
+      "question": "What does the Preamble say is being \u201cordain[ed] and establish[ed]\u201d after listing those purposes?",
+      "correctAnswer": "this Constitution for the United States of America",
+      "incorrectAnswers": [
+        "the Articles of Confederation alone",
+        "a permanent league of sovereign states with no central law",
+        "only the Bill of Rights"
+      ],
+      "explanation": "The closing sentence frames the whole document: the people ordain and establish the Constitution itself.",
+      "keywords": [
+        "preamble",
+        "constitution-text"
+      ],
+      "source": "https://constitution.congress.gov/constitution/preamble/"
+    },
+    {
+      "seedId": "534f2213-6713-5a53-a8ee-e1f0bf895740",
+      "category": "civics",
+      "navigationKeyword1": "constitution",
+      "navigationKeyword2": "preamble",
+      "question": "Which phrase in the Preamble points to peace and order at home?",
+      "correctAnswer": "insure domestic Tranquility",
+      "incorrectAnswers": [
+        "provide for the common defence",
+        "establish Justice",
+        "form a more perfect Union"
+      ],
+      "explanation": "\u201cDomestic Tranquility\u201d refers to calm and orderly conditions within the country, as one of the stated aims.",
+      "keywords": [
+        "preamble",
+        "constitution-goals"
+      ],
+      "source": "https://www.usa.gov/branches-of-government"
+    },
+    {
+      "seedId": "8d70f502-5dba-5295-93c8-c96910f15c24",
+      "category": "civics",
+      "navigationKeyword1": "constitution",
+      "navigationKeyword2": "preamble",
+      "question": "Which stated purpose comes right after forming \u201ca more perfect Union\u201d?",
+      "correctAnswer": "establish Justice",
+      "incorrectAnswers": [
+        "provide for the common defence",
+        "promote the general Welfare",
+        "secure the Blessings of Liberty"
+      ],
+      "explanation": "The Preamble lists purposes in order; \u201cestablish Justice\u201d immediately follows the goal of a more perfect Union.",
+      "keywords": [
+        "preamble",
+        "constitution-goals"
+      ],
+      "source": "https://www.law.cornell.edu/constitution/preamble"
+    }
+  ]
+}

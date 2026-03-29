@@ -4,7 +4,7 @@ from pathlib import Path
 
 
 ROOT = Path(__file__).resolve().parents[1]
-LOCAL_PROGRESS_ROOT = ROOT / "generated" / "seed-progress"
+LOCAL_PROGRESS_ROOT = ROOT / "data" / "generated" / "seed-progress"
 
 
 def category_progress_dir(category: str) -> Path:

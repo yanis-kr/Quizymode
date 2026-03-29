@@ -1,0 +1,235 @@
+{
+  "schemaVersion": 1,
+  "seedSet": "core-public-items",
+  "deltaPreviewLimit": 200,
+  "items": [
+    {
+      "seedId": "6074d95c-f6a9-4060-91ff-d0ab76f8608c",
+      "category": "science",
+      "navigationKeyword1": "linear-algebra",
+      "navigationKeyword2": "matrices",
+      "question": "What is elementary row operation?",
+      "correctAnswer": "Swap rows, scale row, add multiple of row",
+      "incorrectAnswers": [
+        "Multiply matrices",
+        "Compute eigenvectors only",
+        "Change determinant always to 0"
+      ],
+      "explanation": "Used in Gaussian elimination.",
+      "keywords": [
+        "row-operations",
+        "elimination"
+      ],
+      "source": "https://openstax.org/books/linear-algebra/pages/1-3-gaussian-elimination"
+    },
+    {
+      "seedId": "298a4159-9a83-4290-8c01-1bc4833129f4",
+      "category": "science",
+      "navigationKeyword1": "linear-algebra",
+      "navigationKeyword2": "matrices",
+      "question": "What is identity matrix I?",
+      "correctAnswer": "Ones on diagonal, zeros elsewhere; AI = IA = A",
+      "incorrectAnswers": [
+        "All ones matrix",
+        "Zero matrix",
+        "Swap matrix"
+      ],
+      "explanation": "Acts like 1 for multiplication.",
+      "keywords": [
+        "identity-matrix",
+        "inverses"
+      ],
+      "source": "https://openstax.org/books/linear-algebra/pages/3-2-inverses-and-elementary-matrices"
+    },
+    {
+      "seedId": "45a80051-978b-4c38-9b96-4f7cbce08e5d",
+      "category": "science",
+      "navigationKeyword1": "linear-algebra",
+      "navigationKeyword2": "matrices",
+      "question": "What is matrix multiplication AB?",
+      "correctAnswer": "Rows of A dot columns of B",
+      "incorrectAnswers": [
+        "Elementwise product always",
+        "Add A+B always",
+        "Only for vectors"
+      ],
+      "explanation": "Inner dimensions must match.",
+      "keywords": [
+        "matrix-multiply",
+        "dimensions"
+      ],
+      "source": "https://openstax.org/books/linear-algebra/pages/3-1-matrix-multiplication"
+    },
+    {
+      "seedId": "beef2a32-ec36-49f4-8ad4-b99123203d82",
+      "category": "science",
+      "navigationKeyword1": "linear-algebra",
+      "navigationKeyword2": "matrices",
+      "question": "What is matrix representation of linear map?",
+      "correctAnswer": "A such that T(x)=Ax in chosen bases",
+      "incorrectAnswers": [
+        "Always a vector",
+        "Always scalar",
+        "Always permutation"
+      ],
+      "explanation": "Change of basis alters A.",
+      "keywords": [
+        "linear-map",
+        "representation"
+      ],
+      "source": "https://openstax.org/books/linear-algebra/pages/3-1-matrix-multiplication"
+    },
+    {
+      "seedId": "6bf140a6-bf29-4e70-a1c0-9b38614cc453",
+      "category": "science",
+      "navigationKeyword1": "linear-algebra",
+      "navigationKeyword2": "matrices",
+      "question": "What is orthogonal matrix?",
+      "correctAnswer": "Q^T Q = I (columns orthonormal)",
+      "incorrectAnswers": [
+        "Always diagonal",
+        "Always upper triangular",
+        "QQ=0"
+      ],
+      "explanation": "Preserves lengths: ||Qx||=||x||.",
+      "keywords": [
+        "orthogonal-matrix",
+        "rotation"
+      ],
+      "source": "https://openstax.org/books/linear-algebra/pages/6-1-orthogonal-sets-and-projections"
+    },
+    {
+      "seedId": "273bf1d9-8fca-4e6c-9636-fcc2f2cdb171",
+      "category": "science",
+      "navigationKeyword1": "linear-algebra",
+      "navigationKeyword2": "matrices",
+      "question": "What is positive semidefinite matrix (real symmetric)?",
+      "correctAnswer": "x^T A x \u2265 0 for all x",
+      "incorrectAnswers": [
+        "x^T A x < 0 always",
+        "Only nonsymmetric",
+        "Only rank 1"
+      ],
+      "explanation": "Covariance matrices are PSD.",
+      "keywords": [
+        "psd",
+        "quadratic-forms"
+      ],
+      "source": "https://en.wikipedia.org/wiki/Positive-definite_matrix"
+    },
+    {
+      "seedId": "12a3ca7c-6336-4256-9c3d-82ee068f5643",
+      "category": "science",
+      "navigationKeyword1": "linear-algebra",
+      "navigationKeyword2": "matrices",
+      "question": "What is rank?",
+      "correctAnswer": "Dimension of column space (row space)",
+      "incorrectAnswers": [
+        "Number of rows always",
+        "Number of columns always",
+        "Always full"
+      ],
+      "explanation": "Rank-nullity: rank + nullity = n for m\u00d7n.",
+      "keywords": [
+        "rank",
+        "dimension"
+      ],
+      "source": "https://openstax.org/books/linear-algebra/pages/2-4-rank-and-nullity"
+    },
+    {
+      "seedId": "b892e1fd-fd3d-4e3a-ac82-e3ff71407e72",
+      "category": "science",
+      "navigationKeyword1": "linear-algebra",
+      "navigationKeyword2": "matrices",
+      "question": "What is reduced row echelon form?",
+      "correctAnswer": "Canonical form from Gauss\u2013Jordan",
+      "incorrectAnswers": [
+        "Random triangular",
+        "Only for vectors",
+        "Only symmetric matrices"
+      ],
+      "explanation": "Useful for solving systems.",
+      "keywords": [
+        "rref",
+        "elimination"
+      ],
+      "source": "https://openstax.org/books/linear-algebra/pages/1-3-gaussian-elimination"
+    },
+    {
+      "seedId": "db7bccb8-5bde-471e-89d3-893da9b5ec42",
+      "category": "science",
+      "navigationKeyword1": "linear-algebra",
+      "navigationKeyword2": "matrices",
+      "question": "What is symmetric matrix?",
+      "correctAnswer": "A^T = A",
+      "incorrectAnswers": [
+        "A^T = -A",
+        "Always invertible",
+        "Always diagonal"
+      ],
+      "explanation": "Appears in quadratic forms.",
+      "keywords": [
+        "symmetric",
+        "matrices"
+      ],
+      "source": "https://openstax.org/books/linear-algebra/pages/3-3-transpose-and-symmetric-matrices"
+    },
+    {
+      "seedId": "27e992b3-a21d-47c0-b3fc-c28ac2f1703f",
+      "category": "science",
+      "navigationKeyword1": "linear-algebra",
+      "navigationKeyword2": "matrices",
+      "question": "What is trace?",
+      "correctAnswer": "Sum of diagonal entries",
+      "incorrectAnswers": [
+        "Product of eigenvalues always without caveats",
+        "Determinant",
+        "Rank"
+      ],
+      "explanation": "trace(AB)=trace(BA) under compatible sizes.",
+      "keywords": [
+        "trace",
+        "invariant"
+      ],
+      "source": "https://openstax.org/books/linear-algebra/pages/4-1-determinants"
+    },
+    {
+      "seedId": "b75659dd-8419-485a-94a8-be991eb6c668",
+      "category": "science",
+      "navigationKeyword1": "linear-algebra",
+      "navigationKeyword2": "matrices",
+      "question": "What is transpose A^T?",
+      "correctAnswer": "Flip rows and columns",
+      "incorrectAnswers": [
+        "Rotate 90\u00b0 in plane",
+        "Complex conjugate",
+        "Inverse always"
+      ],
+      "explanation": "(AB)^T = B^T A^T.",
+      "keywords": [
+        "transpose",
+        "matrices"
+      ],
+      "source": "https://openstax.org/books/linear-algebra/pages/3-3-transpose-and-symmetric-matrices"
+    },
+    {
+      "seedId": "dacf7e7c-a5b1-4e20-9b3b-36f500e84ecc",
+      "category": "science",
+      "navigationKeyword1": "linear-algebra",
+      "navigationKeyword2": "matrices",
+      "question": "When is square matrix invertible?",
+      "correctAnswer": "There exists A^{-1} with AA^{-1}=I",
+      "incorrectAnswers": [
+        "Always",
+        "Never if diagonal",
+        "Only if symmetric"
+      ],
+      "explanation": "Equivalent to nonzero determinant (for finite dims).",
+      "keywords": [
+        "invertible",
+        "determinant"
+      ],
+      "source": "https://openstax.org/books/linear-algebra/pages/3-2-inverses-and-elementary-matrices"
+    }
+  ]
+}

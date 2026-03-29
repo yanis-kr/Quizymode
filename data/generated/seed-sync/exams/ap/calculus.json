@@ -1,0 +1,107 @@
+{
+  "schemaVersion": 1,
+  "seedSet": "core-public-items",
+  "deltaPreviewLimit": 200,
+  "items": [
+    {
+      "seedId": "b81c22ac-3dbc-4a8b-8996-6b90e0146660",
+      "category": "exams",
+      "navigationKeyword1": "ap",
+      "navigationKeyword2": "calculus",
+      "question": "A function has a local maximum where its derivative changes in what way?",
+      "correctAnswer": "From positive to negative",
+      "incorrectAnswers": [
+        "From negative to positive",
+        "From zero to positive only",
+        "From undefined to constant"
+      ],
+      "explanation": "A sign change from positive to negative means the function goes from increasing to decreasing.",
+      "keywords": [
+        "ap-calculus",
+        "extrema",
+        "calculus"
+      ],
+      "source": "https://openstax.org/details/books/calculus-volume-1"
+    },
+    {
+      "seedId": "092299b3-43fa-4772-946a-17978bbe8c1c",
+      "category": "exams",
+      "navigationKeyword1": "ap",
+      "navigationKeyword2": "calculus",
+      "question": "If f'(x) is positive on an interval, what is true about f(x) there?",
+      "correctAnswer": "It is increasing",
+      "incorrectAnswers": [
+        "It is decreasing",
+        "It is constant",
+        "It must be negative"
+      ],
+      "explanation": "A positive derivative indicates the function is rising as x increases.",
+      "keywords": [
+        "ap-calculus",
+        "function-analysis",
+        "calculus"
+      ],
+      "source": "https://openstax.org/details/books/calculus-volume-1"
+    },
+    {
+      "seedId": "b2ec50dd-65ee-4a9f-8f95-9c0547b41c73",
+      "category": "exams",
+      "navigationKeyword1": "ap",
+      "navigationKeyword2": "calculus",
+      "question": "What does a definite integral of a rate function over an interval give?",
+      "correctAnswer": "Net change over the interval",
+      "incorrectAnswers": [
+        "A slope at one point",
+        "A horizontal asymptote",
+        "A local maximum only"
+      ],
+      "explanation": "Integrating a rate accumulates the change across the interval.",
+      "keywords": [
+        "ap-calculus",
+        "integrals",
+        "calculus"
+      ],
+      "source": "https://openstax.org/details/books/calculus-volume-1"
+    },
+    {
+      "seedId": "f553fac8-e70e-4b84-acd5-597df47821c9",
+      "category": "exams",
+      "navigationKeyword1": "ap",
+      "navigationKeyword2": "calculus",
+      "question": "What does the derivative of a function at a point represent?",
+      "correctAnswer": "The instantaneous rate of change",
+      "incorrectAnswers": [
+        "The average of all outputs",
+        "The total area under the curve",
+        "The y-intercept"
+      ],
+      "explanation": "A derivative measures how fast the function is changing at that point.",
+      "keywords": [
+        "ap-calculus",
+        "derivatives",
+        "calculus"
+      ],
+      "source": "https://openstax.org/details/books/calculus-volume-1"
+    },
+    {
+      "seedId": "1a2f7ec4-5556-4f5e-b435-6da5072efd6e",
+      "category": "exams",
+      "navigationKeyword1": "ap",
+      "navigationKeyword2": "calculus",
+      "question": "What is the derivative of x^3?",
+      "correctAnswer": "3x^2",
+      "incorrectAnswers": [
+        "x^2",
+        "3x",
+        "x^4"
+      ],
+      "explanation": "By the power rule, d/dx of x^3 is 3x^2.",
+      "keywords": [
+        "ap-calculus",
+        "power-rule",
+        "calculus"
+      ],
+      "source": "https://openstax.org/details/books/calculus-volume-1"
+    }
+  ]
+}

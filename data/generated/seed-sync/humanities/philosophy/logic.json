@@ -1,0 +1,45 @@
+{
+  "schemaVersion": 1,
+  "seedSet": "core-public-items",
+  "deltaPreviewLimit": 200,
+  "items": [
+    {
+      "seedId": "1dd04ae9-a67e-555b-9586-e208b2fcca25",
+      "category": "humanities",
+      "navigationKeyword1": "philosophy",
+      "navigationKeyword2": "logic",
+      "question": "In logic, what is a contradiction?",
+      "correctAnswer": "a statement that cannot be true as stated",
+      "incorrectAnswers": [
+        "a poem with rhyme",
+        "a story with two narrators",
+        "a question with one answer"
+      ],
+      "explanation": "A contradiction conflicts with itself and cannot hold as true in the same sense at the same time.",
+      "keywords": [
+        "philosophy-logic",
+        "contradiction"
+      ],
+      "source": "https://plato.stanford.edu/entries/logic-classical/"
+    },
+    {
+      "seedId": "144f57ec-8a66-5d66-9f70-ff7aebeaf542",
+      "category": "humanities",
+      "navigationKeyword1": "philosophy",
+      "navigationKeyword2": "logic",
+      "question": "What does logic study?",
+      "correctAnswer": "reasoning and argument structure",
+      "incorrectAnswers": [
+        "weather patterns",
+        "paint chemistry",
+        "ticket prices"
+      ],
+      "explanation": "Logic examines how arguments are formed and when conclusions follow from premises.",
+      "keywords": [
+        "philosophy-logic",
+        "reasoning"
+      ],
+      "source": "https://iep.utm.edu/logic/"
+    }
+  ]
+}

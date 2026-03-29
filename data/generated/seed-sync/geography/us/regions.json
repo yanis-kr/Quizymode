@@ -1,0 +1,227 @@
+{
+  "schemaVersion": 1,
+  "seedSet": "core-public-items",
+  "deltaPreviewLimit": 200,
+  "items": [
+    {
+      "seedId": "aee03234-6795-4020-81e2-475e92c0f0b0",
+      "category": "geography",
+      "navigationKeyword1": "us",
+      "navigationKeyword2": "regions",
+      "question": "Arizona, Colorado, Idaho, Montana, Nevada, New Mexico, Utah, and Wyoming are in which census division?",
+      "correctAnswer": "Mountain",
+      "incorrectAnswers": [
+        "Pacific",
+        "West North Central",
+        "South Atlantic"
+      ],
+      "explanation": "Those eight states make up the Mountain division in the West region.",
+      "keywords": [
+        "regions",
+        "census-divisions",
+        "mountain-west"
+      ],
+      "source": "https://www.census.gov/programs-surveys/popest/about/glossary/geo-terms.html"
+    },
+    {
+      "seedId": "f0fc54ce-570d-4c58-ba70-bf1ef693f15c",
+      "category": "geography",
+      "navigationKeyword1": "us",
+      "navigationKeyword2": "regions",
+      "question": "Arkansas, Louisiana, Oklahoma, and Texas are grouped in which census division?",
+      "correctAnswer": "West South Central",
+      "incorrectAnswers": [
+        "East South Central",
+        "South Atlantic",
+        "Mountain"
+      ],
+      "explanation": "Those four states form the West South Central division in the South region.",
+      "keywords": [
+        "regions",
+        "census-divisions",
+        "south"
+      ],
+      "source": "https://www.census.gov/programs-surveys/popest/about/glossary/geo-terms.html"
+    },
+    {
+      "seedId": "9a2b104e-f886-440e-aacf-f5617c1c2df3",
+      "category": "geography",
+      "navigationKeyword1": "us",
+      "navigationKeyword2": "regions",
+      "question": "How many census regions does the U.S. Census Bureau use for the states?",
+      "correctAnswer": "Four",
+      "incorrectAnswers": [
+        "Three",
+        "Five",
+        "Nine"
+      ],
+      "explanation": "The Census Bureau nests nine census divisions inside four census regions.",
+      "keywords": [
+        "regions",
+        "census-regions",
+        "united-states"
+      ],
+      "source": "https://www.census.gov/programs-surveys/popest/about/glossary/geo-terms.html"
+    },
+    {
+      "seedId": "ea90f191-a9ef-4d3b-a6ac-a71aed1f1d37",
+      "category": "geography",
+      "navigationKeyword1": "us",
+      "navigationKeyword2": "regions",
+      "question": "Illinois, Indiana, Michigan, Ohio, and Wisconsin form which census division?",
+      "correctAnswer": "East North Central",
+      "incorrectAnswers": [
+        "West North Central",
+        "Middle Atlantic",
+        "Mountain"
+      ],
+      "explanation": "Those states are the East North Central division in the Midwest region.",
+      "keywords": [
+        "regions",
+        "census-divisions",
+        "midwest"
+      ],
+      "source": "https://www.census.gov/programs-surveys/popest/about/glossary/geo-terms.html"
+    },
+    {
+      "seedId": "642142e8-2dde-444f-87f6-045c1ba092db",
+      "category": "geography",
+      "navigationKeyword1": "us",
+      "navigationKeyword2": "regions",
+      "question": "In Census Bureau geography, Alaska is placed in which division?",
+      "correctAnswer": "Pacific",
+      "incorrectAnswers": [
+        "Mountain",
+        "West North Central",
+        "New England"
+      ],
+      "explanation": "Alaska is in the Pacific division with California, Hawaii, Oregon, and Washington.",
+      "keywords": [
+        "regions",
+        "census-divisions",
+        "pacific"
+      ],
+      "source": "https://www.census.gov/programs-surveys/popest/about/glossary/geo-terms.html"
+    },
+    {
+      "seedId": "ced58f12-1757-432f-9db4-5d5c5073380e",
+      "category": "geography",
+      "navigationKeyword1": "us",
+      "navigationKeyword2": "regions",
+      "question": "In Census Bureau geography, which region includes California?",
+      "correctAnswer": "West",
+      "incorrectAnswers": [
+        "South",
+        "Midwest",
+        "Northeast"
+      ],
+      "explanation": "California is in the West region, Pacific division.",
+      "keywords": [
+        "regions",
+        "census-regions",
+        "west"
+      ],
+      "source": "https://www.census.gov/programs-surveys/popest/about/glossary/geo-terms.html"
+    },
+    {
+      "seedId": "260d0f20-93ee-4fdf-8021-3d1703c72d5d",
+      "category": "geography",
+      "navigationKeyword1": "us",
+      "navigationKeyword2": "regions",
+      "question": "Which census division groups Connecticut, Maine, Massachusetts, New Hampshire, Rhode Island, and Vermont?",
+      "correctAnswer": "New England",
+      "incorrectAnswers": [
+        "Middle Atlantic",
+        "East North Central",
+        "South Atlantic"
+      ],
+      "explanation": "Those six states form the New England division within the Northeast region.",
+      "keywords": [
+        "regions",
+        "census-divisions",
+        "new-england"
+      ],
+      "source": "https://www.census.gov/programs-surveys/popest/about/glossary/geo-terms.html"
+    },
+    {
+      "seedId": "2f40c3f5-3157-4c68-a8dc-447b62e1de09",
+      "category": "geography",
+      "navigationKeyword1": "us",
+      "navigationKeyword2": "regions",
+      "question": "Which census division includes New Jersey, New York, and Pennsylvania?",
+      "correctAnswer": "Middle Atlantic",
+      "incorrectAnswers": [
+        "New England",
+        "East North Central",
+        "Mountain"
+      ],
+      "explanation": "Those three states are the Middle Atlantic division of the Northeast region.",
+      "keywords": [
+        "regions",
+        "census-divisions",
+        "middle-atlantic"
+      ],
+      "source": "https://www.census.gov/programs-surveys/popest/about/glossary/geo-terms.html"
+    },
+    {
+      "seedId": "23fe44c5-b2f4-4e1c-8453-85e6941fa14a",
+      "category": "geography",
+      "navigationKeyword1": "us",
+      "navigationKeyword2": "regions",
+      "question": "Which census region includes New York?",
+      "correctAnswer": "Northeast",
+      "incorrectAnswers": [
+        "Midwest",
+        "South",
+        "West"
+      ],
+      "explanation": "New York is in the Northeast region, Middle Atlantic division.",
+      "keywords": [
+        "regions",
+        "census-regions",
+        "northeast"
+      ],
+      "source": "https://www.census.gov/programs-surveys/popest/about/glossary/geo-terms.html"
+    },
+    {
+      "seedId": "eb2d65ac-8956-4fe4-b91f-ea743f93eb7e",
+      "category": "geography",
+      "navigationKeyword1": "us",
+      "navigationKeyword2": "regions",
+      "question": "Which census region includes Ohio?",
+      "correctAnswer": "Midwest",
+      "incorrectAnswers": [
+        "Northeast",
+        "South",
+        "West"
+      ],
+      "explanation": "Ohio is in the Midwest region, East North Central division.",
+      "keywords": [
+        "regions",
+        "census-regions",
+        "midwest"
+      ],
+      "source": "https://www.census.gov/programs-surveys/popest/about/glossary/geo-terms.html"
+    },
+    {
+      "seedId": "6c5ccb4e-36d6-4d8e-b1ff-0b5a99d60a5d",
+      "category": "geography",
+      "navigationKeyword1": "us",
+      "navigationKeyword2": "regions",
+      "question": "Which census region includes Texas?",
+      "correctAnswer": "South",
+      "incorrectAnswers": [
+        "West",
+        "Midwest",
+        "Northeast"
+      ],
+      "explanation": "Texas is in the South region, West South Central division.",
+      "keywords": [
+        "regions",
+        "census-regions",
+        "south"
+      ],
+      "source": "https://www.census.gov/programs-surveys/popest/about/glossary/geo-terms.html"
+    }
+  ]
+}

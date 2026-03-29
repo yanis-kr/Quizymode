@@ -1,0 +1,207 @@
+{
+  "schemaVersion": 1,
+  "seedSet": "core-public-items",
+  "deltaPreviewLimit": 200,
+  "items": [
+    {
+      "seedId": "b92a2531-7294-4d2c-a01f-76622c191854",
+      "category": "exams",
+      "navigationKeyword1": "comptia",
+      "navigationKeyword2": "network-plus",
+      "question": "What does NAT do?",
+      "correctAnswer": "Translates private IP addresses to a public IP address",
+      "incorrectAnswers": [
+        "Encrypts an entire disk",
+        "Creates restore points",
+        "Indexes documents for search"
+      ],
+      "explanation": "NAT translates internal private addresses before packets are sent to an external network.",
+      "keywords": [
+        "network-plus",
+        "network-fundamentals",
+        "protocols"
+      ],
+      "source": "https://www.cisco.com/c/en/us/products/routers/network-address-translation.html"
+    },
+    {
+      "seedId": "479e51ab-fd7f-448f-93f5-383ac6ec4e08",
+      "category": "exams",
+      "navigationKeyword1": "comptia",
+      "navigationKeyword2": "network-plus",
+      "question": "What does a router examine to forward an IP packet?",
+      "correctAnswer": "The destination IP address",
+      "incorrectAnswers": [
+        "The destination MAC address only",
+        "The monitor refresh rate",
+        "The SSD model number"
+      ],
+      "explanation": "Routers use the packet's destination IP address and routing table information to forward traffic.",
+      "keywords": [
+        "network-plus",
+        "network-fundamentals",
+        "protocols"
+      ],
+      "source": "https://www.cisco.com/c/en/us/solutions/small-business/resource-center/networking/how-does-a-router-work.html"
+    },
+    {
+      "seedId": "8b638d80-815e-4fa3-96b0-c4893bfe6100",
+      "category": "exams",
+      "navigationKeyword1": "comptia",
+      "navigationKeyword2": "network-plus",
+      "question": "What does a subnet mask help a host determine?",
+      "correctAnswer": "Which part of an IPv4 address identifies the network versus the host",
+      "incorrectAnswers": [
+        "The device's MAC vendor",
+        "The DHCP lease time only",
+        "The switch spanning-tree priority"
+      ],
+      "explanation": "Subnet masks identify the network portion and host portion of an IPv4 address.",
+      "keywords": [
+        "network-plus",
+        "ip-addressing",
+        "protocols"
+      ],
+      "source": "https://www.rfc-editor.org/rfc/rfc950"
+    },
+    {
+      "seedId": "4c65833b-c4b7-4da7-8256-d4913eb77cf1",
+      "category": "exams",
+      "navigationKeyword1": "comptia",
+      "navigationKeyword2": "network-plus",
+      "question": "What does a switch use to make forwarding decisions inside a LAN?",
+      "correctAnswer": "The destination MAC address",
+      "incorrectAnswers": [
+        "The BIOS serial number",
+        "The CPU temperature",
+        "The user password"
+      ],
+      "explanation": "A switch inspects the destination MAC address in a frame to decide where to forward it.",
+      "keywords": [
+        "network-plus",
+        "network-fundamentals",
+        "protocols"
+      ],
+      "source": "https://www.cisco.com/c/en/us/products/switches/what-is-network-switching.html"
+    },
+    {
+      "seedId": "888fd598-4a1b-49a0-9757-15cbcb91eb5d",
+      "category": "exams",
+      "navigationKeyword1": "comptia",
+      "navigationKeyword2": "network-plus",
+      "question": "What is the role of DNS?",
+      "correctAnswer": "Resolving host names to IP addresses",
+      "incorrectAnswers": [
+        "Assigning MAC addresses",
+        "Encrypting packets",
+        "Providing PoE power"
+      ],
+      "explanation": "DNS translates names into resource records such as IP addresses so clients can find services.",
+      "keywords": [
+        "network-plus",
+        "dns",
+        "protocols"
+      ],
+      "source": "https://www.rfc-editor.org/rfc/rfc1034"
+    },
+    {
+      "seedId": "5c0fff41-507f-4f95-8429-a114db4915b3",
+      "category": "exams",
+      "navigationKeyword1": "comptia",
+      "navigationKeyword2": "network-plus",
+      "question": "Which OSI layer is responsible for routing?",
+      "correctAnswer": "Network layer",
+      "incorrectAnswers": [
+        "Physical layer",
+        "Session layer",
+        "Presentation layer"
+      ],
+      "explanation": "The network layer handles logical addressing and routing between networks.",
+      "keywords": [
+        "network-plus",
+        "network-fundamentals",
+        "protocols"
+      ],
+      "source": "https://www.comptia.org/en-us/certifications/network/"
+    },
+    {
+      "seedId": "f508d1e9-cd82-47a1-a8e8-7670ca22016e",
+      "category": "exams",
+      "navigationKeyword1": "comptia",
+      "navigationKeyword2": "network-plus",
+      "question": "Which protocol automatically allocates network addresses and configuration parameters to clients?",
+      "correctAnswer": "DHCP",
+      "incorrectAnswers": [
+        "SSH",
+        "NAT",
+        "SNMP"
+      ],
+      "explanation": "DHCP allocates network addresses and delivers configuration parameters to clients.",
+      "keywords": [
+        "network-plus",
+        "network-fundamentals",
+        "protocols"
+      ],
+      "source": "https://www.rfc-editor.org/rfc/rfc2131"
+    },
+    {
+      "seedId": "630e4483-5db7-48f7-8209-bad01fd44d42",
+      "category": "exams",
+      "navigationKeyword1": "comptia",
+      "navigationKeyword2": "network-plus",
+      "question": "Which protocol is commonly used for secure remote access?",
+      "correctAnswer": "SSH",
+      "incorrectAnswers": [
+        "Telnet",
+        "FTP",
+        "DNS"
+      ],
+      "explanation": "SSH is a secure remote login protocol used for encrypted administrative access.",
+      "keywords": [
+        "network-plus",
+        "network-fundamentals",
+        "protocols"
+      ],
+      "source": "https://www.rfc-editor.org/rfc/rfc4251"
+    },
+    {
+      "seedId": "b460d79c-bf5a-4802-840d-54c31e09d180",
+      "category": "exams",
+      "navigationKeyword1": "comptia",
+      "navigationKeyword2": "network-plus",
+      "question": "Which traffic type sends one sender's traffic to many receivers that have joined a group?",
+      "correctAnswer": "Multicast",
+      "incorrectAnswers": [
+        "Unicast",
+        "Loopback",
+        "APIPA"
+      ],
+      "explanation": "Multicast sends traffic to a group of interested receivers rather than everyone or a single host.",
+      "keywords": [
+        "network-plus",
+        "network-fundamentals",
+        "protocols"
+      ],
+      "source": "https://www.comptia.org/en-us/certifications/network/"
+    },
+    {
+      "seedId": "47c24bb9-f68d-4bbf-9b08-41ddc220fb69",
+      "category": "exams",
+      "navigationKeyword1": "comptia",
+      "navigationKeyword2": "network-plus",
+      "question": "Which transport protocol is connection-oriented and designed for reliable delivery?",
+      "correctAnswer": "TCP",
+      "incorrectAnswers": [
+        "UDP",
+        "ARP",
+        "ICMP"
+      ],
+      "explanation": "TCP provides connection-oriented, reliable byte-stream delivery.",
+      "keywords": [
+        "network-plus",
+        "tcp-ip",
+        "protocols"
+      ],
+      "source": "https://www.rfc-editor.org/rfc/rfc9293"
+    }
+  ]
+}

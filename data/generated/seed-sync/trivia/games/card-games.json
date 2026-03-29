@@ -1,0 +1,197 @@
+{
+  "schemaVersion": 1,
+  "seedSet": "core-public-items",
+  "deltaPreviewLimit": 200,
+  "items": [
+    {
+      "seedId": "cd6d54d4-078e-5994-86c5-cedc1a36d631",
+      "category": "trivia",
+      "navigationKeyword1": "games",
+      "navigationKeyword2": "card-games",
+      "question": "Blackjack to trying to reach a hand total near what without exceeding?",
+      "correctAnswer": "21",
+      "incorrectAnswers": [
+        "31",
+        "11",
+        "50"
+      ],
+      "explanation": "Blackjack targets a total near 21.",
+      "keywords": [
+        "blackjack",
+        "casino"
+      ],
+      "source": "https://www.britannica.com/topic/blackjack-card-game"
+    },
+    {
+      "seedId": "1267c61e-90dd-5863-b5bc-63b5728dbe90",
+      "category": "trivia",
+      "navigationKeyword1": "games",
+      "navigationKeyword2": "card-games",
+      "question": "Collectible card games involve deck-building from purchased what?",
+      "correctAnswer": "booster packs or expansions",
+      "incorrectAnswers": [
+        "chess clocks",
+        "dice cups",
+        "bingo balls"
+      ],
+      "explanation": "CCGs expand via booster packs.",
+      "keywords": [
+        "ccg",
+        "deck-building"
+      ],
+      "source": "https://www.britannica.com/topic/collectible-card-game"
+    },
+    {
+      "seedId": "f9691cfb-9a6b-50d9-8088-481acbd0b324",
+      "category": "trivia",
+      "navigationKeyword1": "games",
+      "navigationKeyword2": "card-games",
+      "question": "Hearts to avoiding taking which suit\u2019s tricks in common variants?",
+      "correctAnswer": "hearts",
+      "incorrectAnswers": [
+        "spades only",
+        "clubs only",
+        "diamonds only"
+      ],
+      "explanation": "Hearts penalizes taking hearts tricks.",
+      "keywords": [
+        "hearts",
+        "trick-taking"
+      ],
+      "source": "https://www.britannica.com/topic/hearts-card-game"
+    },
+    {
+      "seedId": "b1b90113-c873-546a-b9e3-71e4fd0e797d",
+      "category": "trivia",
+      "navigationKeyword1": "games",
+      "navigationKeyword2": "card-games",
+      "question": "Poker to betting on the strength of what?",
+      "correctAnswer": "a hand of cards",
+      "incorrectAnswers": [
+        "a dice roll only",
+        "a chess position",
+        "a board tile"
+      ],
+      "explanation": "Poker centers on card hand rankings.",
+      "keywords": [
+        "poker",
+        "betting"
+      ],
+      "source": "https://www.britannica.com/topic/poker-card-game"
+    },
+    {
+      "seedId": "d839823f-7672-51d1-91f3-be605b6f365d",
+      "category": "trivia",
+      "navigationKeyword1": "games",
+      "navigationKeyword2": "card-games",
+      "question": "Rummy as forming sets or runs of what?",
+      "correctAnswer": "cards",
+      "incorrectAnswers": [
+        "dice",
+        "tiles only",
+        "stones"
+      ],
+      "explanation": "Rummy melds cards into sets or runs.",
+      "keywords": [
+        "rummy",
+        "melds"
+      ],
+      "source": "https://www.britannica.com/topic/rummy-card-game"
+    },
+    {
+      "seedId": "5778356e-7644-5e1f-8f27-784b6dc59d9f",
+      "category": "trivia",
+      "navigationKeyword1": "games",
+      "navigationKeyword2": "card-games",
+      "question": "Solitaire to arranging cards where?",
+      "correctAnswer": "on a table or surface",
+      "incorrectAnswers": [
+        "in a sealed box",
+        "underwater",
+        "in midair"
+      ],
+      "explanation": "Solitaire is typically played on a table layout.",
+      "keywords": [
+        "solitaire",
+        "patience"
+      ],
+      "source": "https://www.britannica.com/topic/solitaire-card-game"
+    },
+    {
+      "seedId": "33cd2dd7-0f47-515e-95b4-af0ca41e641d",
+      "category": "trivia",
+      "navigationKeyword1": "games",
+      "navigationKeyword2": "card-games",
+      "question": "Standard playing-card decks in many games have how many suits?",
+      "correctAnswer": "four",
+      "incorrectAnswers": [
+        "two",
+        "six",
+        "eight"
+      ],
+      "explanation": "Standard decks commonly have four suits.",
+      "keywords": [
+        "cards",
+        "games"
+      ],
+      "source": "https://www.britannica.com/topic/playing-card"
+    },
+    {
+      "seedId": "3f75c5e5-69dc-58dd-99bc-99a33a604ee5",
+      "category": "trivia",
+      "navigationKeyword1": "games",
+      "navigationKeyword2": "card-games",
+      "question": "Tarot cards historically with games in Europe before what other use became prominent?",
+      "correctAnswer": "fortune-telling",
+      "incorrectAnswers": [
+        "computer storage",
+        "currency",
+        "postage"
+      ],
+      "explanation": "Tarot was used for games before divination popularity.",
+      "keywords": [
+        "tarot",
+        "history"
+      ],
+      "source": "https://www.britannica.com/topic/tarot-card-game"
+    },
+    {
+      "seedId": "24357aff-20bd-5080-8a0f-b093c4d888fc",
+      "category": "trivia",
+      "navigationKeyword1": "games",
+      "navigationKeyword2": "card-games",
+      "question": "UNO is specialized for matching what on cards?",
+      "correctAnswer": "color or number",
+      "incorrectAnswers": [
+        "only chess ranks",
+        "only dice pips",
+        "only letters"
+      ],
+      "explanation": "UNO matches color or number.",
+      "keywords": [
+        "uno",
+        "family-games"
+      ],
+      "source": "https://www.britannica.com/topic/Uno-card-game"
+    },
+    {
+      "seedId": "2f4da55e-4082-5126-b85c-a1aca684c0ee",
+      "category": "trivia",
+      "navigationKeyword1": "games",
+      "navigationKeyword2": "card-games",
+      "question": "Which partnership trick-taking structure is associated with bridge?",
+      "correctAnswer": "four players in two partnerships",
+      "incorrectAnswers": [
+        "solo only",
+        "three players only",
+        "six teams"
+      ],
+      "explanation": "Bridge is four players in two partnerships.",
+      "keywords": [
+        "bridge",
+        "tricks"
+      ],
+      "source": "https://www.britannica.com/topic/bridge-card-game"
+    }
+  ]
+}

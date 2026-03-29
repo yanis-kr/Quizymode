@@ -1,0 +1,235 @@
+{
+  "schemaVersion": 1,
+  "seedSet": "core-public-items",
+  "deltaPreviewLimit": 200,
+  "items": [
+    {
+      "seedId": "ec703629-467d-4bf2-9e9e-ce0df9a0f8a7",
+      "category": "science",
+      "navigationKeyword1": "probability",
+      "navigationKeyword2": "conditional",
+      "question": "Base rate neglect mistake?",
+      "correctAnswer": "Ignoring P(disease) when interpreting positive test",
+      "incorrectAnswers": [
+        "Always trusting specificity only",
+        "Using tree diagrams",
+        "Applying Bayes correctly"
+      ],
+      "explanation": "Posterior depends on prevalence.",
+      "keywords": [
+        "base-rate",
+        "cognition"
+      ],
+      "source": "https://en.wikipedia.org/wiki/Base_rate_fallacy"
+    },
+    {
+      "seedId": "daaf0bab-bea6-4245-85d5-1daf550a4287",
+      "category": "science",
+      "navigationKeyword1": "probability",
+      "navigationKeyword2": "conditional",
+      "question": "Bayes\u2019 theorem (simple form)?",
+      "correctAnswer": "P(A|B) = P(B|A)P(A)/P(B)",
+      "incorrectAnswers": [
+        "P(A)P(B)",
+        "P(B|A)/P(A)",
+        "P(A)+P(B)"
+      ],
+      "explanation": "Update prior with evidence.",
+      "keywords": [
+        "bayes-theorem",
+        "updating"
+      ],
+      "source": "https://openstax.org/books/introductory-statistics/pages/3-5-bayes-theorem"
+    },
+    {
+      "seedId": "5ca021aa-dbba-4395-9764-0f66cff0de8b",
+      "category": "science",
+      "navigationKeyword1": "probability",
+      "navigationKeyword2": "conditional",
+      "question": "Conditional probability P(A|B)?",
+      "correctAnswer": "P(A\u2229B)/P(B) if P(B)>0",
+      "incorrectAnswers": [
+        "P(A)P(B)",
+        "P(A)/P(B)",
+        "P(B)/P(A)"
+      ],
+      "explanation": "Restrict sample space to B.",
+      "keywords": [
+        "conditional",
+        "definition"
+      ],
+      "source": "https://openstax.org/books/introductory-statistics/pages/3-4-conditional-probability"
+    },
+    {
+      "seedId": "ccd3607e-ec77-485a-9787-45d7df9f53cc",
+      "category": "science",
+      "navigationKeyword1": "probability",
+      "navigationKeyword2": "conditional",
+      "question": "If independent, P(A|B)?",
+      "correctAnswer": "P(A) (when P(B)>0)",
+      "incorrectAnswers": [
+        "P(B)",
+        "0",
+        "1"
+      ],
+      "explanation": "Conditioning doesn\u2019t change probability.",
+      "keywords": [
+        "independence",
+        "conditional"
+      ],
+      "source": "https://openstax.org/books/introductory-statistics/pages/3-4-conditional-probability"
+    },
+    {
+      "seedId": "6c4c069f-90ba-4373-8a5e-731d362dc2dc",
+      "category": "science",
+      "navigationKeyword1": "probability",
+      "navigationKeyword2": "conditional",
+      "question": "Independent events criterion?",
+      "correctAnswer": "P(A\u2229B) = P(A)P(B) (when defined)",
+      "incorrectAnswers": [
+        "Always P(A|B)=P(B|A)",
+        "Never multiply",
+        "P(A\u2229B)=0"
+      ],
+      "explanation": "Knowledge of B doesn\u2019t change A.",
+      "keywords": [
+        "independence",
+        "probability"
+      ],
+      "source": "https://openstax.org/books/introductory-statistics/pages/3-4-conditional-probability"
+    },
+    {
+      "seedId": "d342e753-f193-4a2a-9894-79ccbfa307ad",
+      "category": "science",
+      "navigationKeyword1": "probability",
+      "navigationKeyword2": "conditional",
+      "question": "Law of total probability idea?",
+      "correctAnswer": "Partition sample space; sum weighted conditionals",
+      "incorrectAnswers": [
+        "Always one partition",
+        "Only for dice",
+        "Same as Bayes always"
+      ],
+      "explanation": "P(A)=\u03a3 P(A|B_i)P(B_i).",
+      "keywords": [
+        "total-probability",
+        "partition"
+      ],
+      "source": "https://openstax.org/books/introductory-statistics/pages/3-5-bayes-theorem"
+    },
+    {
+      "seedId": "77808d22-97fd-44af-bed4-e02b8881c8fa",
+      "category": "science",
+      "navigationKeyword1": "probability",
+      "navigationKeyword2": "conditional",
+      "question": "P(A|B) vs P(B|A)?",
+      "correctAnswer": "Generally different (Bayes switches them)",
+      "incorrectAnswers": [
+        "Always equal",
+        "Always products",
+        "Always sums"
+      ],
+      "explanation": "Don\u2019t confuse conditioning direction.",
+      "keywords": [
+        "bayes",
+        "conditional"
+      ],
+      "source": "https://openstax.org/books/introductory-statistics/pages/3-5-bayes-theorem"
+    },
+    {
+      "seedId": "fd0896d4-7ca8-4199-8d54-048c78eca50d",
+      "category": "science",
+      "navigationKeyword1": "probability",
+      "navigationKeyword2": "conditional",
+      "question": "Screening test sensitivity relates to?",
+      "correctAnswer": "P(positive | disease)",
+      "incorrectAnswers": [
+        "P(disease | positive)",
+        "P(negative | disease)",
+        "P(disease)"
+      ],
+      "explanation": "True positive rate.",
+      "keywords": [
+        "sensitivity",
+        "diagnostics"
+      ],
+      "source": "https://www.cdc.gov/csels/dls/lab-quality/best-practices.html"
+    },
+    {
+      "seedId": "681dd4b7-c260-4b9b-908b-5a99be806c50",
+      "category": "science",
+      "navigationKeyword1": "probability",
+      "navigationKeyword2": "conditional",
+      "question": "Specificity relates to?",
+      "correctAnswer": "P(negative | no disease)",
+      "incorrectAnswers": [
+        "P(positive | disease)",
+        "P(disease | negative)",
+        "P(positive)"
+      ],
+      "explanation": "True negative rate.",
+      "keywords": [
+        "specificity",
+        "diagnostics"
+      ],
+      "source": "https://www.cdc.gov/csels/dls/lab-quality/best-practices.html"
+    },
+    {
+      "seedId": "a5763715-4c39-4a7a-833f-2dc11f3ff48d",
+      "category": "science",
+      "navigationKeyword1": "probability",
+      "navigationKeyword2": "conditional",
+      "question": "Tree diagrams help?",
+      "correctAnswer": "Multiply along branches; add disjoint paths",
+      "incorrectAnswers": [
+        "Only for normal distribution",
+        "Replace all formulas",
+        "Never for conditional"
+      ],
+      "explanation": "Organize sequential probability.",
+      "keywords": [
+        "tree-diagram",
+        "probability"
+      ],
+      "source": "https://openstax.org/books/introductory-statistics/pages/3-4-conditional-probability"
+    },
+    {
+      "seedId": "fbfd1dd1-b45f-4ab6-a33d-4aad78b0b480",
+      "category": "science",
+      "navigationKeyword1": "probability",
+      "navigationKeyword2": "conditional",
+      "question": "With replacement draws?",
+      "correctAnswer": "Independent across draws (ideal)",
+      "incorrectAnswers": [
+        "Always dependent",
+        "Never independent",
+        "Only coins"
+      ],
+      "explanation": "Jar model: same P each pick.",
+      "keywords": [
+        "replacement",
+        "independence"
+      ],
+      "source": "https://openstax.org/books/introductory-statistics/pages/3-4-conditional-probability"
+    },
+    {
+      "seedId": "d1e0d734-84bc-4734-8f3f-9ec7b212da84",
+      "category": "science",
+      "navigationKeyword1": "probability",
+      "navigationKeyword2": "conditional",
+      "question": "Without replacement?",
+      "correctAnswer": "Typically dependent draws",
+      "incorrectAnswers": [
+        "Always independent",
+        "Same as with replacement always",
+        "Only for dice"
+      ],
+      "explanation": "Hypergeometric flavor.",
+      "keywords": [
+        "without-replacement",
+        "dependent"
+      ],
+      "source": "https://openstax.org/books/introductory-statistics/pages/3-4-conditional-probability"
+    }
+  ]
+}

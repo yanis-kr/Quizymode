@@ -13,7 +13,7 @@ Task:
 
 Create or continue seed files for the `trivia` category in:
 
-- `data/bulk-seed/trivia`
+- `data/seed-source/items/trivia`
 
 Filename format:
 

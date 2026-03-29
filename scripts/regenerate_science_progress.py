@@ -8,7 +8,7 @@ from pathlib import Path
 from seed_progress_paths import ensure_category_progress_dir, progress_file_path
 
 ROOT = Path(__file__).resolve().parents[1]
-OUT = ROOT / "data" / "bulk-seed" / "science"
+OUT = ROOT / "data" / "seed-source" / "items" / "science"
 PROGRESS = progress_file_path("science")
 TAXONOMY = ROOT / "docs" / "quizymode_taxonomy.yaml"
 
@@ -81,7 +81,7 @@ def main() -> None:
     remaining = sorted(eligible_set - existing_set)
 
     lines = [
-        "# science bulk-seed progress",
+        "# science seed-source progress",
         "",
         f"Eligible science L1/L2 pairs: **{len(eligible)}**",
         f"Existing science seed files: **{len(rows)}**",

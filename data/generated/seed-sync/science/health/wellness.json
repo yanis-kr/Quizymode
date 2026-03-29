@@ -1,0 +1,235 @@
+{
+  "schemaVersion": 1,
+  "seedSet": "core-public-items",
+  "deltaPreviewLimit": 200,
+  "items": [
+    {
+      "seedId": "9feb8900-c2d5-4489-8d46-6e8e1a6db9c4",
+      "category": "science",
+      "navigationKeyword1": "health",
+      "navigationKeyword2": "wellness",
+      "question": "What is BMI screening note?",
+      "correctAnswer": "Tool with limitations; not sole health measure",
+      "incorrectAnswers": [
+        "Perfect fat measure",
+        "Useless always",
+        "Measures IQ"
+      ],
+      "explanation": "Athletes may have high muscle mass.",
+      "keywords": [
+        "bmi",
+        "wellness"
+      ],
+      "source": "https://www.cdc.gov/healthyweight/assessing/bmi/adult_bmi/index.html"
+    },
+    {
+      "seedId": "65e07af5-b5f0-4e0b-ba61-de4ddb311a1d",
+      "category": "science",
+      "navigationKeyword1": "health",
+      "navigationKeyword2": "wellness",
+      "question": "What is dental hygiene basics?",
+      "correctAnswer": "Brush, floss, regular dental visits",
+      "incorrectAnswers": [
+        "Only mouthwash",
+        "Avoid fluoride always",
+        "Brush once a year"
+      ],
+      "explanation": "Prevents cavities and gum disease.",
+      "keywords": [
+        "oral-health",
+        "hygiene"
+      ],
+      "source": "https://www.cdc.gov/oralhealth/basics/index.html"
+    },
+    {
+      "seedId": "e5064d99-e820-4053-a515-315d3548f100",
+      "category": "science",
+      "navigationKeyword1": "health",
+      "navigationKeyword2": "wellness",
+      "question": "What is ergonomic idea?",
+      "correctAnswer": "Fit work to body to reduce strain",
+      "incorrectAnswers": [
+        "Work through pain always",
+        "Slouching is best",
+        "Ignore breaks"
+      ],
+      "explanation": "Helps prevent musculoskeletal issues.",
+      "keywords": [
+        "ergonomics",
+        "workplace"
+      ],
+      "source": "https://www.cdc.gov/niosh/topics/ergonomics/"
+    },
+    {
+      "seedId": "fe98e290-09dd-4051-8a81-fc271e5b9994",
+      "category": "science",
+      "navigationKeyword1": "health",
+      "navigationKeyword2": "wellness",
+      "question": "What is hydration for exercise?",
+      "correctAnswer": "Replace fluids lost in sweat",
+      "incorrectAnswers": [
+        "Only drink when thirsty after fainting",
+        "Avoid water",
+        "Only soda"
+      ],
+      "explanation": "Electrolytes matter in prolonged exertion.",
+      "keywords": [
+        "hydration",
+        "exercise"
+      ],
+      "source": "https://www.cdc.gov/healthywater/drinking/nutrition/index.html"
+    },
+    {
+      "seedId": "1c6384eb-bc76-4f6a-b63a-114b9ecf30cc",
+      "category": "science",
+      "navigationKeyword1": "health",
+      "navigationKeyword2": "wellness",
+      "question": "What is mindfulness (broad)?",
+      "correctAnswer": "Paying attention on purpose to present moment",
+      "incorrectAnswers": [
+        "Avoiding all emotions",
+        "Sleep replacement",
+        "Drug use"
+      ],
+      "explanation": "Used in some stress-reduction programs.",
+      "keywords": [
+        "mindfulness",
+        "mental-health"
+      ],
+      "source": "https://www.nccih.nih.gov/health/meditation-and-mindfulness-what-you-need-to-know"
+    },
+    {
+      "seedId": "0984b510-5878-4768-88fc-137c11223e26",
+      "category": "science",
+      "navigationKeyword1": "health",
+      "navigationKeyword2": "wellness",
+      "question": "What is physical activity guideline idea?",
+      "correctAnswer": "Regular movement benefits heart, mood, and metabolism",
+      "incorrectAnswers": [
+        "Only elite sports count",
+        "Walking never counts",
+        "Only stretching"
+      ],
+      "explanation": "Moderate activity most days helps.",
+      "keywords": [
+        "exercise",
+        "wellness"
+      ],
+      "source": "https://www.cdc.gov/physicalactivity/basics/index.htm"
+    },
+    {
+      "seedId": "1764e732-2fdf-4325-8f73-170a94ee59b5",
+      "category": "science",
+      "navigationKeyword1": "health",
+      "navigationKeyword2": "wellness",
+      "question": "What is preventive care?",
+      "correctAnswer": "Services to prevent disease or catch it early",
+      "incorrectAnswers": [
+        "Only ER visits",
+        "Only surgery",
+        "Only cosmetics"
+      ],
+      "explanation": "Includes vaccines and screenings.",
+      "keywords": [
+        "prevention",
+        "primary-care"
+      ],
+      "source": "https://www.healthcare.gov/coverage/preventive-care-benefits/"
+    },
+    {
+      "seedId": "fb32aa59-fd58-4676-9836-bf621b5da266",
+      "category": "science",
+      "navigationKeyword1": "health",
+      "navigationKeyword2": "wellness",
+      "question": "What is sleep importance?",
+      "correctAnswer": "Supports memory, immunity, and recovery",
+      "incorrectAnswers": [
+        "Only for babies",
+        "Waste of time",
+        "Replaced by caffeine"
+      ],
+      "explanation": "Chronic sleep loss harms health.",
+      "keywords": [
+        "sleep",
+        "health"
+      ],
+      "source": "https://www.cdc.gov/sleep/index.html"
+    },
+    {
+      "seedId": "c77ac812-1036-4f0d-9033-db36688c7d88",
+      "category": "science",
+      "navigationKeyword1": "health",
+      "navigationKeyword2": "wellness",
+      "question": "What is social connection health link?",
+      "correctAnswer": "Strong ties associated with better outcomes",
+      "incorrectAnswers": [
+        "Isolation never matters",
+        "Only online drama",
+        "Only genetics"
+      ],
+      "explanation": "Loneliness is a public health concern.",
+      "keywords": [
+        "loneliness",
+        "mental-health"
+      ],
+      "source": "https://www.cdc.gov/emotional-wellbeing/social-connectedness/index.htm"
+    },
+    {
+      "seedId": "7302fdd6-1b37-4be3-8212-0e7001f5541e",
+      "category": "science",
+      "navigationKeyword1": "health",
+      "navigationKeyword2": "wellness",
+      "question": "What is stress (chronic) risk?",
+      "correctAnswer": "Linked to cardiovascular and mental health issues",
+      "incorrectAnswers": [
+        "Always harmless",
+        "Only psychological never physical",
+        "Only short bursts"
+      ],
+      "explanation": "Coping strategies matter.",
+      "keywords": [
+        "stress",
+        "mental-health"
+      ],
+      "source": "https://www.nimh.nih.gov/health/publications/stress"
+    },
+    {
+      "seedId": "bb818843-35f0-47c4-8afa-b85c978340a3",
+      "category": "science",
+      "navigationKeyword1": "health",
+      "navigationKeyword2": "wellness",
+      "question": "What is substance use disorder?",
+      "correctAnswer": "Problematic pattern leading to impairment",
+      "incorrectAnswers": [
+        "Same as casual use",
+        "Only illegal drugs",
+        "Only alcohol"
+      ],
+      "explanation": "Treatment includes behavioral and medical support.",
+      "keywords": [
+        "sud",
+        "addiction"
+      ],
+      "source": "https://www.samhsa.gov/find-help/disorders"
+    },
+    {
+      "seedId": "d128cc10-d95c-43ce-9c24-a75f8a3e0791",
+      "category": "science",
+      "navigationKeyword1": "health",
+      "navigationKeyword2": "wellness",
+      "question": "What is sun protection?",
+      "correctAnswer": "Reduce UV skin damage risk",
+      "incorrectAnswers": [
+        "Tanning beds are safe",
+        "SPF not needed on cloudy days always",
+        "Burns don\u2019t matter"
+      ],
+      "explanation": "Skin cancer prevention.",
+      "keywords": [
+        "sunscreen",
+        "uv"
+      ],
+      "source": "https://www.cdc.gov/cancer/skin/basic_info/sun-safety.htm"
+    }
+  ]
+}

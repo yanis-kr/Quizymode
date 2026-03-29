@@ -1,0 +1,207 @@
+{
+  "schemaVersion": 1,
+  "seedSet": "core-public-items",
+  "deltaPreviewLimit": 200,
+  "items": [
+    {
+      "seedId": "e3cc859a-d6ed-5e6b-84a4-afe44df9fb67",
+      "category": "sports",
+      "navigationKeyword1": "baseball",
+      "navigationKeyword2": "players",
+      "question": "Which Red Sox legend was nicknamed The Splendid Splinter?",
+      "correctAnswer": "Ted Williams",
+      "incorrectAnswers": [
+        "Carl Yastrzemski",
+        "David Ortiz",
+        "Joe Cronin"
+      ],
+      "explanation": "Williams remains one of the greatest hitters in baseball history.",
+      "keywords": [
+        "baseball",
+        "players",
+        "ted-williams"
+      ],
+      "source": "https://www.britannica.com/biography/Ted-Williams"
+    },
+    {
+      "seedId": "1a66b549-187e-597a-85a2-bce214a75276",
+      "category": "sports",
+      "navigationKeyword1": "baseball",
+      "navigationKeyword2": "players",
+      "question": "Which Yankees closer is MLB's all-time saves leader?",
+      "correctAnswer": "Mariano Rivera",
+      "incorrectAnswers": [
+        "Trevor Hoffman",
+        "Dennis Eckersley",
+        "Rollie Fingers"
+      ],
+      "explanation": "Rivera finished with the most saves in MLB history.",
+      "keywords": [
+        "baseball",
+        "players",
+        "mariano-rivera"
+      ],
+      "source": "https://www.mlb.com/history"
+    },
+    {
+      "seedId": "03c9c8a9-e003-5dbd-b9c5-6839bcd7b22f",
+      "category": "sports",
+      "navigationKeyword1": "baseball",
+      "navigationKeyword2": "players",
+      "question": "Which Yankees iron man had a streak of 2,130 consecutive games played?",
+      "correctAnswer": "Lou Gehrig",
+      "incorrectAnswers": [
+        "Cal Ripken Jr.",
+        "Joe DiMaggio",
+        "Derek Jeter"
+      ],
+      "explanation": "Gehrig set the original famous consecutive-games mark.",
+      "keywords": [
+        "baseball",
+        "players",
+        "lou-gehrig"
+      ],
+      "source": "https://www.britannica.com/biography/Lou-Gehrig"
+    },
+    {
+      "seedId": "e60a1462-21e4-5f7f-bd62-b6f2e5639601",
+      "category": "sports",
+      "navigationKeyword1": "baseball",
+      "navigationKeyword2": "players",
+      "question": "Which Yankees slugger was nicknamed the Sultan of Swat?",
+      "correctAnswer": "Babe Ruth",
+      "incorrectAnswers": [
+        "Lou Gehrig",
+        "Joe DiMaggio",
+        "Mickey Mantle"
+      ],
+      "explanation": "Babe Ruth became baseball's first great home-run icon.",
+      "keywords": [
+        "baseball",
+        "players",
+        "babe-ruth"
+      ],
+      "source": "https://www.britannica.com/biography/Babe-Ruth"
+    },
+    {
+      "seedId": "3aa24b23-dcce-5506-adce-5198a99ec5f2",
+      "category": "sports",
+      "navigationKeyword1": "baseball",
+      "navigationKeyword2": "players",
+      "question": "Which center fielder is famous for The Catch in the 1954 World Series?",
+      "correctAnswer": "Willie Mays",
+      "incorrectAnswers": [
+        "Duke Snider",
+        "Mickey Mantle",
+        "Ken Griffey Jr."
+      ],
+      "explanation": "Mays made one of baseball's most famous defensive plays in the Polo Grounds.",
+      "keywords": [
+        "baseball",
+        "players",
+        "willie-mays"
+      ],
+      "source": "https://www.britannica.com/biography/Willie-Mays"
+    },
+    {
+      "seedId": "e6f6951a-22bd-5021-8b23-d439afa1f5f8",
+      "category": "sports",
+      "navigationKeyword1": "baseball",
+      "navigationKeyword2": "players",
+      "question": "Which outfielder hit .367 in 1941, the last .400-level full season in MLB?",
+      "correctAnswer": "Ted Williams",
+      "incorrectAnswers": [
+        "Joe DiMaggio",
+        "Ty Cobb",
+        "Stan Musial"
+      ],
+      "explanation": "Williams' 1941 average remains the last .400 benchmark in a full season.",
+      "keywords": [
+        "baseball",
+        "players",
+        "batting-average"
+      ],
+      "source": "https://www.britannica.com/biography/Ted-Williams"
+    },
+    {
+      "seedId": "5dc930e7-cab6-50f2-a1b5-4f68b9723c4d",
+      "category": "sports",
+      "navigationKeyword1": "baseball",
+      "navigationKeyword2": "players",
+      "question": "Which outfielder hit 755 career home runs before Barry Bonds passed him?",
+      "correctAnswer": "Hank Aaron",
+      "incorrectAnswers": [
+        "Babe Ruth",
+        "Willie Mays",
+        "Mickey Mantle"
+      ],
+      "explanation": "Aaron held the career home run record for decades.",
+      "keywords": [
+        "baseball",
+        "players",
+        "hank-aaron"
+      ],
+      "source": "https://www.britannica.com/biography/Hank-Aaron"
+    },
+    {
+      "seedId": "a5f4a1f9-0672-5e9d-aa0c-5d7a4f03f813",
+      "category": "sports",
+      "navigationKeyword1": "baseball",
+      "navigationKeyword2": "players",
+      "question": "Which player broke MLB's color barrier with the Brooklyn Dodgers in 1947?",
+      "correctAnswer": "Jackie Robinson",
+      "incorrectAnswers": [
+        "Satchel Paige",
+        "Willie Mays",
+        "Hank Aaron"
+      ],
+      "explanation": "Robinson's debut transformed Major League Baseball and American sports.",
+      "keywords": [
+        "baseball",
+        "players",
+        "jackie-robinson"
+      ],
+      "source": "https://www.britannica.com/biography/Jackie-Robinson"
+    },
+    {
+      "seedId": "79e77458-275c-5f5b-b018-b78fa4411b49",
+      "category": "sports",
+      "navigationKeyword1": "baseball",
+      "navigationKeyword2": "players",
+      "question": "Which shortstop spent his whole MLB career with the New York Yankees and later became team captain?",
+      "correctAnswer": "Derek Jeter",
+      "incorrectAnswers": [
+        "Alex Rodriguez",
+        "Nomar Garciaparra",
+        "Cal Ripken Jr."
+      ],
+      "explanation": "Jeter became the face of the Yankees in the late 1990s and 2000s.",
+      "keywords": [
+        "baseball",
+        "players",
+        "derek-jeter"
+      ],
+      "source": "https://www.britannica.com/biography/Derek-Jeter"
+    },
+    {
+      "seedId": "30b6e326-b00b-5ba5-a9bd-526ddbfc28cd",
+      "category": "sports",
+      "navigationKeyword1": "baseball",
+      "navigationKeyword2": "players",
+      "question": "Which two-way Japanese star won AL MVP awards while pitching and hitting for the Angels?",
+      "correctAnswer": "Shohei Ohtani",
+      "incorrectAnswers": [
+        "Ichiro Suzuki",
+        "Hideki Matsui",
+        "Yu Darvish"
+      ],
+      "explanation": "Ohtani revived the two-way superstar model in MLB.",
+      "keywords": [
+        "baseball",
+        "players",
+        "shohei-ohtani"
+      ],
+      "source": "https://www.britannica.com/biography/Shohei-Ohtani"
+    }
+  ]
+}

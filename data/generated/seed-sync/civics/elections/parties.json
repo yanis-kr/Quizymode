@@ -1,0 +1,121 @@
+{
+  "schemaVersion": 1,
+  "seedSet": "core-public-items",
+  "deltaPreviewLimit": 200,
+  "items": [
+    {
+      "seedId": "54bbda32-1f9d-55fe-be76-a2254a69887b",
+      "category": "civics",
+      "navigationKeyword1": "elections",
+      "navigationKeyword2": "parties",
+      "question": "Does the U.S. Constitution require a two-party system or name political parties?",
+      "correctAnswer": "No; parties are not named and no party system is required.",
+      "incorrectAnswers": [
+        "Yes; only two parties are allowed.",
+        "Yes; the Constitution lists the Democratic and Republican parties.",
+        "Yes; Congress must approve new parties each year."
+      ],
+      "explanation": "The Constitution is silent on parties; they grew from practice and organization, not constitutional mandate.",
+      "keywords": [
+        "political-parties",
+        "constitution"
+      ],
+      "source": "https://www.usa.gov/political-parties"
+    },
+    {
+      "seedId": "9490cd80-82e4-5d8b-b379-52098fc0818f",
+      "category": "civics",
+      "navigationKeyword1": "elections",
+      "navigationKeyword2": "parties",
+      "question": "George Washington warned in his Farewell Address that factions could sharpen conflict. What did he mean by \"factions\" in that context?",
+      "correctAnswer": "groups united by shared interests that can divide the public",
+      "incorrectAnswers": [
+        "only military alliances abroad",
+        "temporary census districts",
+        "federal bankruptcy courts"
+      ],
+      "explanation": "Washington used \"factions\" broadly for partisan or interest-based blocs that might pull citizens apart.",
+      "keywords": [
+        "washington",
+        "parties-history"
+      ],
+      "source": "https://www.senate.gov/artandhistory/history/common/generic/WashingtonFarewell.htm"
+    },
+    {
+      "seedId": "c7bcd184-b953-55bf-b351-65970c4418b8",
+      "category": "civics",
+      "navigationKeyword1": "elections",
+      "navigationKeyword2": "parties",
+      "question": "In many states, how voters enroll with a party for a primary election is decided by what kind of law?",
+      "correctAnswer": "state law",
+      "incorrectAnswers": [
+        "a single federal statute for all states",
+        "the president's executive order",
+        "the party's national chair alone"
+      ],
+      "explanation": "States set whether primaries are open, closed, or something in between, so party enrollment rules vary.",
+      "keywords": [
+        "primary-elections",
+        "party-affiliation"
+      ],
+      "source": "https://www.law.cornell.edu/wex/elections"
+    },
+    {
+      "seedId": "c6677d15-317c-50c6-91fa-2942393f54ed",
+      "category": "civics",
+      "navigationKeyword1": "elections",
+      "navigationKeyword2": "parties",
+      "question": "National party committees for president and Congress must register with which federal body and follow its reporting rules?",
+      "correctAnswer": "the Federal Election Commission",
+      "incorrectAnswers": [
+        "the Department of Justice",
+        "the Census Bureau",
+        "the Federal Trade Commission"
+      ],
+      "explanation": "The FEC administers federal campaign finance law, including registration and disclosure for party committees.",
+      "keywords": [
+        "fec",
+        "party-committees"
+      ],
+      "source": "https://www.fec.gov/help-candidates-and-committees/guides/party-committees/"
+    },
+    {
+      "seedId": "e813454e-ecbf-5309-a7e5-22d87fb37119",
+      "category": "civics",
+      "navigationKeyword1": "elections",
+      "navigationKeyword2": "parties",
+      "question": "What is a common hurdle for third-party and independent candidates trying to appear on a general-election ballot?",
+      "correctAnswer": "state rules for petitions, fees, or other ballot-access requirements",
+      "incorrectAnswers": [
+        "a national primary held by Congress",
+        "approval by the Electoral College",
+        "a vote of the Supreme Court"
+      ],
+      "explanation": "Ballot access is controlled mainly by state law, so requirements differ widely across states.",
+      "keywords": [
+        "ballot-access",
+        "third-parties"
+      ],
+      "source": "https://www.law.cornell.edu/wex/elections"
+    },
+    {
+      "seedId": "795ca3b6-1427-554e-b3f1-10c128bf1c3b",
+      "category": "civics",
+      "navigationKeyword1": "elections",
+      "navigationKeyword2": "parties",
+      "question": "What is one main function of a major party's national convention in a presidential election year?",
+      "correctAnswer": "formally nominating the party's presidential and vice-presidential candidates",
+      "incorrectAnswers": [
+        "certifying general-election results",
+        "choosing Electoral College electors after November",
+        "writing federal statutes"
+      ],
+      "explanation": "Conventions adopt rules and platforms and formally place the ticket before the fall campaign.",
+      "keywords": [
+        "national-conventions",
+        "nominations"
+      ],
+      "source": "https://www.usa.gov/presidential-election-process"
+    }
+  ]
+}

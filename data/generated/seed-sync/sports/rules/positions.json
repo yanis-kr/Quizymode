@@ -1,0 +1,207 @@
+{
+  "schemaVersion": 1,
+  "seedSet": "core-public-items",
+  "deltaPreviewLimit": 200,
+  "items": [
+    {
+      "seedId": "7058d1e3-699d-5eff-9ce3-28f66c209538",
+      "category": "sports",
+      "navigationKeyword1": "rules",
+      "navigationKeyword2": "positions",
+      "question": "Which baseball position is numbered 2 in scorekeeping?",
+      "correctAnswer": "Catcher",
+      "incorrectAnswers": [
+        "Pitcher",
+        "First baseman",
+        "Second baseman"
+      ],
+      "explanation": "The catcher is position 2 in standard baseball scoring.",
+      "keywords": [
+        "rules",
+        "positions",
+        "catcher"
+      ],
+      "source": "https://www.mlb.com/glossary"
+    },
+    {
+      "seedId": "d7da387a-6d7c-5da8-b200-5608ea545c98",
+      "category": "sports",
+      "navigationKeyword1": "rules",
+      "navigationKeyword2": "positions",
+      "question": "Which baseball position is numbered 6 in scorekeeping?",
+      "correctAnswer": "Shortstop",
+      "incorrectAnswers": [
+        "Second baseman",
+        "Third baseman",
+        "Center fielder"
+      ],
+      "explanation": "The shortstop is position 6 in standard baseball notation.",
+      "keywords": [
+        "rules",
+        "positions",
+        "scorekeeping"
+      ],
+      "source": "https://www.mlb.com/glossary"
+    },
+    {
+      "seedId": "3b84c3f6-e4f3-5b49-a1d0-8dc3eb51e5c5",
+      "category": "sports",
+      "navigationKeyword1": "rules",
+      "navigationKeyword2": "positions",
+      "question": "Which basketball position is most associated with bringing the ball up court and organizing the offense?",
+      "correctAnswer": "Point guard",
+      "incorrectAnswers": [
+        "Center",
+        "Power forward",
+        "Small forward"
+      ],
+      "explanation": "Point guards usually initiate the offense.",
+      "keywords": [
+        "rules",
+        "positions",
+        "point-guard"
+      ],
+      "source": "https://www.britannica.com/sports/basketball"
+    },
+    {
+      "seedId": "19ada340-29ae-56f5-950c-159eae30492c",
+      "category": "sports",
+      "navigationKeyword1": "rules",
+      "navigationKeyword2": "positions",
+      "question": "Which basketball position traditionally protects the rim and plays nearest the basket?",
+      "correctAnswer": "Center",
+      "incorrectAnswers": [
+        "Point guard",
+        "Shooting guard",
+        "Small forward"
+      ],
+      "explanation": "Centers usually anchor the inside defense.",
+      "keywords": [
+        "rules",
+        "positions",
+        "center"
+      ],
+      "source": "https://www.britannica.com/sports/basketball"
+    },
+    {
+      "seedId": "7f08560c-278e-5512-b012-91483102dd44",
+      "category": "sports",
+      "navigationKeyword1": "rules",
+      "navigationKeyword2": "positions",
+      "question": "Which football position kicks field goals and extra points?",
+      "correctAnswer": "Kicker",
+      "incorrectAnswers": [
+        "Center",
+        "Cornerback",
+        "Wide receiver"
+      ],
+      "explanation": "The kicker handles placekicks in football.",
+      "keywords": [
+        "rules",
+        "positions",
+        "kicker"
+      ],
+      "source": "https://operations.nfl.com/learn-the-game/nfl-basics/"
+    },
+    {
+      "seedId": "76a9f9b0-f9cc-5535-81dc-c3880149ce4a",
+      "category": "sports",
+      "navigationKeyword1": "rules",
+      "navigationKeyword2": "positions",
+      "question": "Which football position typically throws the ball most often?",
+      "correctAnswer": "Quarterback",
+      "incorrectAnswers": [
+        "Guard",
+        "Safety",
+        "Punter"
+      ],
+      "explanation": "The quarterback directs the passing game.",
+      "keywords": [
+        "rules",
+        "positions",
+        "quarterback"
+      ],
+      "source": "https://operations.nfl.com/learn-the-game/nfl-basics/"
+    },
+    {
+      "seedId": "a2b83c85-deb2-5ec7-a2b9-850b4fae2e2f",
+      "category": "sports",
+      "navigationKeyword1": "rules",
+      "navigationKeyword2": "positions",
+      "question": "Which golf role is not a playing position but carries and manages clubs for the player?",
+      "correctAnswer": "Caddie",
+      "incorrectAnswers": [
+        "Referee",
+        "Captain",
+        "Striker"
+      ],
+      "explanation": "A caddie assists the golfer during the round.",
+      "keywords": [
+        "rules",
+        "positions",
+        "caddie"
+      ],
+      "source": "https://www.usga.org/content/usga/home-page/rules-hub.html"
+    },
+    {
+      "seedId": "9e756539-a9c6-5bf6-babd-2633b6e513b1",
+      "category": "sports",
+      "navigationKeyword1": "rules",
+      "navigationKeyword2": "positions",
+      "question": "Which hockey position defends the net with pads and a catcher glove?",
+      "correctAnswer": "Goaltender",
+      "incorrectAnswers": [
+        "Center",
+        "Winger",
+        "Defenseman"
+      ],
+      "explanation": "The goaltender's job is to stop shots.",
+      "keywords": [
+        "rules",
+        "positions",
+        "goaltender"
+      ],
+      "source": "https://www.britannica.com/sports/ice-hockey"
+    },
+    {
+      "seedId": "23ae97cc-3c33-5595-ae27-e8b45ea69a55",
+      "category": "sports",
+      "navigationKeyword1": "rules",
+      "navigationKeyword2": "positions",
+      "question": "Which soccer position is the only one allowed to handle the ball in open play inside the penalty area?",
+      "correctAnswer": "Goalkeeper",
+      "incorrectAnswers": [
+        "Center-back",
+        "Striker",
+        "Winger"
+      ],
+      "explanation": "The goalkeeper has special handling rights inside the team's own area.",
+      "keywords": [
+        "rules",
+        "positions",
+        "goalkeeper"
+      ],
+      "source": "https://www.britannica.com/sports/football-soccer"
+    },
+    {
+      "seedId": "511b4f73-f913-5ead-b094-9c1daf3ca622",
+      "category": "sports",
+      "navigationKeyword1": "rules",
+      "navigationKeyword2": "positions",
+      "question": "Which soccer role often shields the defense from central midfield?",
+      "correctAnswer": "Defensive midfielder",
+      "incorrectAnswers": [
+        "Goalkeeper",
+        "Target striker",
+        "Full-back"
+      ],
+      "explanation": "A defensive midfielder protects space in front of the back line.",
+      "keywords": [
+        "rules",
+        "positions",
+        "midfield"
+      ],
+      "source": "https://www.britannica.com/sports/football-soccer"
+    }
+  ]
+}

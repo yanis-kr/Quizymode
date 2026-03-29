@@ -1,0 +1,235 @@
+{
+  "schemaVersion": 1,
+  "seedSet": "core-public-items",
+  "deltaPreviewLimit": 200,
+  "items": [
+    {
+      "seedId": "602f2e8c-f03f-479f-bc3a-ec88e7c621ee",
+      "category": "science",
+      "navigationKeyword1": "earth-space",
+      "navigationKeyword2": "weather",
+      "question": "What causes wind?",
+      "correctAnswer": "Pressure differences make air flow from high to low",
+      "incorrectAnswers": [
+        "Moon phases alone",
+        "Only ocean tides",
+        "Only lightning"
+      ],
+      "explanation": "Coriolis effect steers large-scale flow.",
+      "keywords": [
+        "wind",
+        "pressure-gradient"
+      ],
+      "source": "https://www.noaa.gov/jetstream/global/wind"
+    },
+    {
+      "seedId": "718d4d8a-7c98-45f4-b876-884d13acc48c",
+      "category": "science",
+      "navigationKeyword1": "earth-space",
+      "navigationKeyword2": "weather",
+      "question": "What is a front?",
+      "correctAnswer": "Boundary between air masses",
+      "incorrectAnswers": [
+        "Center of a hurricane only",
+        "Ocean current",
+        "Soil layer"
+      ],
+      "explanation": "Cold/warm fronts bring changing weather.",
+      "keywords": [
+        "fronts",
+        "air-masses"
+      ],
+      "source": "https://www.noaa.gov/jetstream/synoptic/air-masses-and-fronts"
+    },
+    {
+      "seedId": "b047e94b-b1ca-4326-bd31-4a634a2f2968",
+      "category": "science",
+      "navigationKeyword1": "earth-space",
+      "navigationKeyword2": "weather",
+      "question": "What is barometric pressure?",
+      "correctAnswer": "Force from weight of air above",
+      "incorrectAnswers": [
+        "Water depth pressure",
+        "Earthquake magnitude",
+        "Soil fertility"
+      ],
+      "explanation": "Falling pressure often signals storms.",
+      "keywords": [
+        "pressure",
+        "atmosphere"
+      ],
+      "source": "https://www.weather.gov/jetstream/pressure"
+    },
+    {
+      "seedId": "551801e2-b353-47cd-a12a-253271b66d44",
+      "category": "science",
+      "navigationKeyword1": "earth-space",
+      "navigationKeyword2": "weather",
+      "question": "What is dew point?",
+      "correctAnswer": "Temperature air must cool to for saturation",
+      "incorrectAnswers": [
+        "Temperature of raindrops",
+        "Wind chill",
+        "Heat index"
+      ],
+      "explanation": "Higher dew point feels more muggy.",
+      "keywords": [
+        "dew-point",
+        "moisture"
+      ],
+      "source": "https://www.weather.gov/arx/dewpoint_vs_humidity"
+    },
+    {
+      "seedId": "a7907959-2464-462c-bb50-3e37675c6550",
+      "category": "science",
+      "navigationKeyword1": "earth-space",
+      "navigationKeyword2": "weather",
+      "question": "What is humidity?",
+      "correctAnswer": "Water vapor content in air",
+      "incorrectAnswers": [
+        "Wind speed only",
+        "Air pressure only",
+        "Cloud height only"
+      ],
+      "explanation": "Warm air can hold more moisture.",
+      "keywords": [
+        "humidity",
+        "atmosphere"
+      ],
+      "source": "https://www.weather.gov/jetstream/humidity"
+    },
+    {
+      "seedId": "a50b345e-be53-41dc-950c-42670684f725",
+      "category": "science",
+      "navigationKeyword1": "earth-space",
+      "navigationKeyword2": "weather",
+      "question": "What is hurricane (basics)?",
+      "correctAnswer": "Tropical cyclone with organized thunderstorms and low center",
+      "incorrectAnswers": [
+        "Cold front snowstorm",
+        "Dust devil",
+        "Fair-weather cloud"
+      ],
+      "explanation": "Warm ocean waters fuel development.",
+      "keywords": [
+        "hurricane",
+        "tropical-cyclone"
+      ],
+      "source": "https://www.noaa.gov/education/resource-collections/hurricanes"
+    },
+    {
+      "seedId": "dd8ee278-940a-4cf4-9610-5ccf3e1c82d7",
+      "category": "science",
+      "navigationKeyword1": "earth-space",
+      "navigationKeyword2": "weather",
+      "question": "What is precipitation?",
+      "correctAnswer": "Water falling from clouds (rain, snow, etc.)",
+      "incorrectAnswers": [
+        "Only fog",
+        "Only humidity",
+        "Only evaporation"
+      ],
+      "explanation": "Requires condensation and growth of hydrometeors.",
+      "keywords": [
+        "precipitation",
+        "water-cycle"
+      ],
+      "source": "https://www.noaa.gov/education/resource-collections/water-cycle"
+    },
+    {
+      "seedId": "11b045a3-956b-47b6-83c7-c9c778742066",
+      "category": "science",
+      "navigationKeyword1": "earth-space",
+      "navigationKeyword2": "weather",
+      "question": "What is radar used for in weather?",
+      "correctAnswer": "Detect precipitation and storm motion",
+      "incorrectAnswers": [
+        "Measure earthquakes",
+        "Map fossils",
+        "Sample magma"
+      ],
+      "explanation": "Microwave pulses reflect off hydrometeors.",
+      "keywords": [
+        "radar",
+        "forecasting"
+      ],
+      "source": "https://www.weather.gov/jetstream/radar"
+    },
+    {
+      "seedId": "05bd6201-a640-4909-bd25-dacecf444bb5",
+      "category": "science",
+      "navigationKeyword1": "earth-space",
+      "navigationKeyword2": "weather",
+      "question": "What is thunderstorm fuel?",
+      "correctAnswer": "Moist unstable air and lifting mechanism",
+      "incorrectAnswers": [
+        "Dry stable air",
+        "Clear skies only",
+        "High pressure only"
+      ],
+      "explanation": "Updrafts build tall cumulonimbus clouds.",
+      "keywords": [
+        "thunderstorms",
+        "convection"
+      ],
+      "source": "https://www.weather.gov/jetstream/tstorms"
+    },
+    {
+      "seedId": "3754ecd5-6224-4915-a179-e339ceda846a",
+      "category": "science",
+      "navigationKeyword1": "earth-space",
+      "navigationKeyword2": "weather",
+      "question": "What is tornado (basics)?",
+      "correctAnswer": "Violently rotating column of air touching ground",
+      "incorrectAnswers": [
+        "Only over oceans",
+        "Only winter storms",
+        "Only at equator"
+      ],
+      "explanation": "Often from supercell thunderstorms.",
+      "keywords": [
+        "tornado",
+        "severe-weather"
+      ],
+      "source": "https://www.nssl.noaa.gov/education/svrwx101/tornadoes/"
+    },
+    {
+      "seedId": "72a0d928-48f8-45e3-a948-05659b5dbf54",
+      "category": "science",
+      "navigationKeyword1": "earth-space",
+      "navigationKeyword2": "weather",
+      "question": "What is weather forecast uncertainty?",
+      "correctAnswer": "Small errors grow because the atmosphere is chaotic",
+      "incorrectAnswers": [
+        "Forecasts are exact forever",
+        "Models ignore physics",
+        "Satellites are unnecessary"
+      ],
+      "explanation": "Ensemble forecasts express uncertainty.",
+      "keywords": [
+        "chaos",
+        "forecasting"
+      ],
+      "source": "https://www.weather.gov/jetstream/model_chaos"
+    },
+    {
+      "seedId": "cba3f73d-458f-4a45-9e9c-75eb12175620",
+      "category": "science",
+      "navigationKeyword1": "earth-space",
+      "navigationKeyword2": "weather",
+      "question": "What is weather vs climate (one-line distinction)?",
+      "correctAnswer": "Weather is short-term; climate is long-term average pattern",
+      "incorrectAnswers": [
+        "Same thing",
+        "Climate is one day",
+        "Weather is 30 years"
+      ],
+      "explanation": "Climate statistics summarize weather over decades.",
+      "keywords": [
+        "weather",
+        "climate"
+      ],
+      "source": "https://www.noaa.gov/education/resource-collections/weather-atmosphere"
+    }
+  ]
+}

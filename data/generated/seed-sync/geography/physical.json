@@ -1,0 +1,1327 @@
+{
+  "schemaVersion": 1,
+  "seedSet": "core-public-items",
+  "deltaPreviewLimit": 200,
+  "items": [
+    {
+      "seedId": "7191ef05-6034-4ad5-8848-7dac1e674cd9",
+      "category": "geography",
+      "navigationKeyword1": "physical",
+      "navigationKeyword2": "deserts",
+      "question": "Which Australian desert is the country\u2019s largest hot desert?",
+      "correctAnswer": "Great Victoria Desert",
+      "incorrectAnswers": [
+        "Great Sandy Desert",
+        "Simpson Desert",
+        "Tanami Desert"
+      ],
+      "explanation": "The Great Victoria Desert spans Western Australia and South Australia.",
+      "keywords": [
+        "deserts",
+        "australia",
+        "interior"
+      ],
+      "source": "https://www.britannica.com/place/Great-Victoria-Desert"
+    },
+    {
+      "seedId": "831b5532-99a0-4d13-ba00-8e5875044591",
+      "category": "geography",
+      "navigationKeyword1": "physical",
+      "navigationKeyword2": "deserts",
+      "question": "Which Namibian desert features tall dunes along the Atlantic coast?",
+      "correctAnswer": "Namib Desert",
+      "incorrectAnswers": [
+        "Kalahari Desert",
+        "Danakil Desert",
+        "Libyan Desert"
+      ],
+      "explanation": "The Namib is an ancient arid strip along Namibia\u2019s shoreline.",
+      "keywords": [
+        "deserts",
+        "namib",
+        "africa"
+      ],
+      "source": "https://www.britannica.com/place/Namib"
+    },
+    {
+      "seedId": "66ddfb88-9861-48d3-b329-464ff2f8db70",
+      "category": "geography",
+      "navigationKeyword1": "physical",
+      "navigationKeyword2": "deserts",
+      "question": "Which U.S. desert lies mainly in southeastern California and parts of Nevada and Arizona?",
+      "correctAnswer": "Mojave Desert",
+      "incorrectAnswers": [
+        "Sonoran Desert",
+        "Chihuahuan Desert",
+        "Great Basin Desert"
+      ],
+      "explanation": "The Mojave includes Death Valley and Joshua Tree National Park.",
+      "keywords": [
+        "deserts",
+        "mojave",
+        "southwest-us"
+      ],
+      "source": "https://www.britannica.com/place/Mojave-Desert"
+    },
+    {
+      "seedId": "0b5dd6a9-ec8f-47bb-8d9f-b350a0528fd1",
+      "category": "geography",
+      "navigationKeyword1": "physical",
+      "navigationKeyword2": "deserts",
+      "question": "Which coastal desert runs along northern Chile and southern Peru?",
+      "correctAnswer": "Atacama Desert",
+      "incorrectAnswers": [
+        "Patagonian Desert",
+        "Sechura Desert",
+        "Monte Desert"
+      ],
+      "explanation": "The Atacama is one of the driest places on Earth along South America\u2019s Pacific coast.",
+      "keywords": [
+        "deserts",
+        "atacama",
+        "south-america"
+      ],
+      "source": "https://www.britannica.com/place/Atacama-Desert"
+    },
+    {
+      "seedId": "7f9e5d1b-9239-44d5-b538-58cafbb37203",
+      "category": "geography",
+      "navigationKeyword1": "physical",
+      "navigationKeyword2": "deserts",
+      "question": "Which cold desert covers much of Antarctica?",
+      "correctAnswer": "Antarctica",
+      "incorrectAnswers": [
+        "Greenland",
+        "Siberia",
+        "Patagonia"
+      ],
+      "explanation": "Antarctica receives very little precipitation and behaves climatically as a polar desert.",
+      "keywords": [
+        "deserts",
+        "polar",
+        "antarctica"
+      ],
+      "source": "https://www.britannica.com/place/Antarctica"
+    },
+    {
+      "seedId": "345cb4bd-f4c0-4e56-bf86-119fc8133ecd",
+      "category": "geography",
+      "navigationKeyword1": "physical",
+      "navigationKeyword2": "deserts",
+      "question": "Which desert covers large parts of Mongolia and northern China?",
+      "correctAnswer": "Gobi Desert",
+      "incorrectAnswers": [
+        "Takla Makan Desert",
+        "Thar Desert",
+        "Karakum Desert"
+      ],
+      "explanation": "The Gobi is a cold winter desert and steppe region on the Mongolian Plateau.",
+      "keywords": [
+        "deserts",
+        "gobi",
+        "asia"
+      ],
+      "source": "https://www.britannica.com/place/Gobi-desert"
+    },
+    {
+      "seedId": "0d3118e4-c8da-4c23-82d0-d588251c3aed",
+      "category": "geography",
+      "navigationKeyword1": "physical",
+      "navigationKeyword2": "deserts",
+      "question": "Which desert is the largest hot desert on Earth?",
+      "correctAnswer": "Sahara",
+      "incorrectAnswers": [
+        "Arabian Desert",
+        "Gobi Desert",
+        "Kalahari Desert"
+      ],
+      "explanation": "The Sahara stretches across much of North Africa south of the Mediterranean.",
+      "keywords": [
+        "deserts",
+        "sahara",
+        "africa"
+      ],
+      "source": "https://www.britannica.com/place/Sahara-desert-Africa"
+    },
+    {
+      "seedId": "cce2d271-c339-4940-8d28-c7b721bd936a",
+      "category": "geography",
+      "navigationKeyword1": "physical",
+      "navigationKeyword2": "deserts",
+      "question": "Which desert lies along the India\u2013Pakistan border east of the Indus River?",
+      "correctAnswer": "Thar Desert",
+      "incorrectAnswers": [
+        "Dasht-e Margo",
+        "Kyzylkum Desert",
+        "Takla Makan Desert"
+      ],
+      "explanation": "The Thar is a sandy arid region in northwestern India and eastern Pakistan.",
+      "keywords": [
+        "deserts",
+        "thar",
+        "south-asia"
+      ],
+      "source": "https://www.britannica.com/place/Thar-Desert"
+    },
+    {
+      "seedId": "ba3fce9b-482c-4889-912e-c492320be933",
+      "category": "geography",
+      "navigationKeyword1": "physical",
+      "navigationKeyword2": "deserts",
+      "question": "Which desert occupies most of the Arabian Peninsula?",
+      "correctAnswer": "Arabian Desert",
+      "incorrectAnswers": [
+        "Syrian Desert",
+        "Negev Desert",
+        "Dasht-e Kavir"
+      ],
+      "explanation": "The Arabian Desert is a vast arid region between the Red Sea and the Persian Gulf.",
+      "keywords": [
+        "deserts",
+        "arabian",
+        "middle-east"
+      ],
+      "source": "https://www.britannica.com/place/Arabian-Desert"
+    },
+    {
+      "seedId": "2bf09273-d5dd-42a1-a4e0-705f9fad08e1",
+      "category": "geography",
+      "navigationKeyword1": "physical",
+      "navigationKeyword2": "deserts",
+      "question": "Which desert spans northwestern Mexico and the U.S. Southwest around the Gulf of California?",
+      "correctAnswer": "Sonoran Desert",
+      "incorrectAnswers": [
+        "Chihuahuan Desert",
+        "Painted Desert",
+        "Colorado Desert"
+      ],
+      "explanation": "The Sonoran Desert is known for saguaro cactus and summer monsoon rains.",
+      "keywords": [
+        "deserts",
+        "sonoran",
+        "north-america"
+      ],
+      "source": "https://www.britannica.com/place/Sonoran-Desert"
+    },
+    {
+      "seedId": "b36ce970-030e-4314-a184-1490e42d05ff",
+      "category": "geography",
+      "navigationKeyword1": "physical",
+      "navigationKeyword2": "deserts",
+      "question": "Which southern African desert lies mainly in Botswana?",
+      "correctAnswer": "Kalahari Desert",
+      "incorrectAnswers": [
+        "Namib Desert",
+        "Karakum Desert",
+        "Atacama Desert"
+      ],
+      "explanation": "The Kalahari is a sand-covered plateau basin covering much of Botswana.",
+      "keywords": [
+        "deserts",
+        "kalahari",
+        "africa"
+      ],
+      "source": "https://www.britannica.com/place/Kalahari-Desert"
+    },
+    {
+      "seedId": "26644350-ac1f-4b1b-bfc9-b92352593af3",
+      "category": "geography",
+      "navigationKeyword1": "physical",
+      "navigationKeyword2": "islands",
+      "question": "Which Indonesian island is home to roughly half of the country\u2019s people?",
+      "correctAnswer": "Java",
+      "incorrectAnswers": [
+        "Bali",
+        "Sumatra",
+        "Sulawesi"
+      ],
+      "explanation": "Java is one of the world\u2019s most densely populated large islands and anchors Indonesia\u2019s core cities.",
+      "keywords": [
+        "islands",
+        "java",
+        "indonesia"
+      ],
+      "source": "https://www.britannica.com/place/Java-island-Indonesia"
+    },
+    {
+      "seedId": "4b8ebbe8-c0c8-4391-aada-0812a3199f0e",
+      "category": "geography",
+      "navigationKeyword1": "physical",
+      "navigationKeyword2": "islands",
+      "question": "Which Indonesian island lies west of Java and is one of the world\u2019s largest islands?",
+      "correctAnswer": "Sumatra",
+      "incorrectAnswers": [
+        "Sulawesi",
+        "Flores",
+        "Lombok"
+      ],
+      "explanation": "Sumatra stretches along the equator at the eastern edge of the Indian Ocean.",
+      "keywords": [
+        "islands",
+        "sumatra",
+        "indonesia"
+      ],
+      "source": "https://www.britannica.com/place/Sumatra"
+    },
+    {
+      "seedId": "fa6e0a74-e51d-4c0e-b264-931c53906741",
+      "category": "geography",
+      "navigationKeyword1": "physical",
+      "navigationKeyword2": "islands",
+      "question": "Which Mediterranean island is Italy\u2019s largest region by land area?",
+      "correctAnswer": "Sicily",
+      "incorrectAnswers": [
+        "Sardinia",
+        "Corsica",
+        "Crete"
+      ],
+      "explanation": "Sicily lies off the toe of the Italian peninsula across the Strait of Messina.",
+      "keywords": [
+        "islands",
+        "sicily",
+        "mediterranean"
+      ],
+      "source": "https://www.britannica.com/place/Sicily"
+    },
+    {
+      "seedId": "4698ab33-2d70-4145-a384-9b1d207d9967",
+      "category": "geography",
+      "navigationKeyword1": "physical",
+      "navigationKeyword2": "islands",
+      "question": "Which is the largest island in Canada?",
+      "correctAnswer": "Baffin Island",
+      "incorrectAnswers": [
+        "Victoria Island",
+        "Ellesmere Island",
+        "Newfoundland"
+      ],
+      "explanation": "Baffin Island is part of Nunavut in the Canadian Arctic Archipelago.",
+      "keywords": [
+        "islands",
+        "baffin",
+        "arctic"
+      ],
+      "source": "https://www.britannica.com/place/Baffin-Island"
+    },
+    {
+      "seedId": "2be5a93c-252f-46af-aab8-319a4d2ad6ba",
+      "category": "geography",
+      "navigationKeyword1": "physical",
+      "navigationKeyword2": "islands",
+      "question": "Which island in Southeast Asia is shared by Brunei, Indonesia, and Malaysia?",
+      "correctAnswer": "Borneo",
+      "incorrectAnswers": [
+        "Java",
+        "Sumatra",
+        "Timor"
+      ],
+      "explanation": "Borneo lies at the center of Maritime Southeast Asia.",
+      "keywords": [
+        "islands",
+        "borneo",
+        "southeast-asia"
+      ],
+      "source": "https://www.britannica.com/place/Borneo"
+    },
+    {
+      "seedId": "f5e1040f-e5ad-44a9-8ee7-7c5344bada7d",
+      "category": "geography",
+      "navigationKeyword1": "physical",
+      "navigationKeyword2": "islands",
+      "question": "Which island includes the nations of England, Scotland, and Wales?",
+      "correctAnswer": "Great Britain",
+      "incorrectAnswers": [
+        "Ireland",
+        "Iceland",
+        "Sicily"
+      ],
+      "explanation": "Great Britain is the largest island of the British Isles.",
+      "keywords": [
+        "islands",
+        "great-britain",
+        "europe"
+      ],
+      "source": "https://www.britannica.com/place/Great-Britain-island-Europe"
+    },
+    {
+      "seedId": "bb31eda0-14ce-4661-9ba5-5599b081527a",
+      "category": "geography",
+      "navigationKeyword1": "physical",
+      "navigationKeyword2": "islands",
+      "question": "Which island is divided between Indonesia and Papua New Guinea?",
+      "correctAnswer": "New Guinea",
+      "incorrectAnswers": [
+        "Borneo",
+        "Sumatra",
+        "Sulawesi"
+      ],
+      "explanation": "New Guinea is the world\u2019s second-largest island and lies north of Australia.",
+      "keywords": [
+        "islands",
+        "new-guinea",
+        "pacific"
+      ],
+      "source": "https://www.britannica.com/place/New-Guinea"
+    },
+    {
+      "seedId": "ca3694e9-7b52-4d7b-980e-4996faa7d11d",
+      "category": "geography",
+      "navigationKeyword1": "physical",
+      "navigationKeyword2": "islands",
+      "question": "Which island is the largest and most populous in Japan?",
+      "correctAnswer": "Honshu",
+      "incorrectAnswers": [
+        "Hokkaido",
+        "Kyushu",
+        "Shikoku"
+      ],
+      "explanation": "Honshu hosts Tokyo, Osaka, and Kyoto along its Pacific side.",
+      "keywords": [
+        "islands",
+        "japan",
+        "honshu"
+      ],
+      "source": "https://www.britannica.com/place/Honshu"
+    },
+    {
+      "seedId": "6ec7bad8-fa7a-47e3-aaa7-6cdfa1e7b351",
+      "category": "geography",
+      "navigationKeyword1": "physical",
+      "navigationKeyword2": "islands",
+      "question": "Which island is the world\u2019s largest (excluding continental landmasses classified as continents)?",
+      "correctAnswer": "Greenland",
+      "incorrectAnswers": [
+        "New Guinea",
+        "Borneo",
+        "Madagascar"
+      ],
+      "explanation": "Greenland is a massive island between the Arctic and Atlantic oceans.",
+      "keywords": [
+        "islands",
+        "greenland",
+        "arctic"
+      ],
+      "source": "https://www.britannica.com/place/Greenland"
+    },
+    {
+      "seedId": "f52ef5d6-b937-42b2-9f12-7bd617e3ed7e",
+      "category": "geography",
+      "navigationKeyword1": "physical",
+      "navigationKeyword2": "islands",
+      "question": "Which island state lies south of the Australian mainland across Bass Strait?",
+      "correctAnswer": "Tasmania",
+      "incorrectAnswers": [
+        "New Zealand",
+        "Fiji",
+        "New Caledonia"
+      ],
+      "explanation": "Tasmania is an Australian state whose capital is Hobart.",
+      "keywords": [
+        "islands",
+        "tasmania",
+        "australia"
+      ],
+      "source": "https://www.britannica.com/place/Tasmania"
+    },
+    {
+      "seedId": "83a4c562-66e3-4053-a8e3-f765308464e2",
+      "category": "geography",
+      "navigationKeyword1": "physical",
+      "navigationKeyword2": "islands",
+      "question": "Which large island lies off the southeastern coast of Africa?",
+      "correctAnswer": "Madagascar",
+      "incorrectAnswers": [
+        "Zanzibar",
+        "Mauritius",
+        "R\u00e9union"
+      ],
+      "explanation": "Madagascar is the fourth-largest island and hosts unique wildlife.",
+      "keywords": [
+        "islands",
+        "madagascar",
+        "indian-ocean"
+      ],
+      "source": "https://www.britannica.com/place/Madagascar"
+    },
+    {
+      "seedId": "df9e2c50-c604-4003-b164-a7d6f56a06dc",
+      "category": "geography",
+      "navigationKeyword1": "physical",
+      "navigationKeyword2": "mountains",
+      "question": "Which Andean summit is the highest mountain outside Asia?",
+      "correctAnswer": "Aconcagua",
+      "incorrectAnswers": [
+        "Ojos del Salado",
+        "Mont Blanc",
+        "Denali"
+      ],
+      "explanation": "Aconcagua in Argentina exceeds all other peaks in the Americas.",
+      "keywords": [
+        "mountains",
+        "andes",
+        "south-america"
+      ],
+      "source": "https://www.britannica.com/place/Aconcagua"
+    },
+    {
+      "seedId": "7c81b103-fe12-4c61-9600-505300ca42e0",
+      "category": "geography",
+      "navigationKeyword1": "physical",
+      "navigationKeyword2": "mountains",
+      "question": "Which European range arcs across Switzerland, France, and northern Italy?",
+      "correctAnswer": "Alps",
+      "incorrectAnswers": [
+        "Pyrenees",
+        "Carpathians",
+        "Apennines"
+      ],
+      "explanation": "The Alps are Europe\u2019s great middle mountain system north of the Mediterranean.",
+      "keywords": [
+        "mountains",
+        "alps",
+        "europe"
+      ],
+      "source": "https://www.britannica.com/place/Alps"
+    },
+    {
+      "seedId": "37489f3e-c0a0-481a-9256-8dd0d0895a32",
+      "category": "geography",
+      "navigationKeyword1": "physical",
+      "navigationKeyword2": "mountains",
+      "question": "Which North African range lies between the Mediterranean and the Sahara?",
+      "correctAnswer": "Atlas Mountains",
+      "incorrectAnswers": [
+        "Ethiopian Highlands",
+        "Drakensberg",
+        "Tibesti Mountains"
+      ],
+      "explanation": "The Atlas stretches across Morocco, Algeria, and Tunisia.",
+      "keywords": [
+        "mountains",
+        "atlas",
+        "africa"
+      ],
+      "source": "https://www.britannica.com/place/Atlas-Mountains"
+    },
+    {
+      "seedId": "7af18d16-4ea0-4cd3-a592-b67f00c0037f",
+      "category": "geography",
+      "navigationKeyword1": "physical",
+      "navigationKeyword2": "mountains",
+      "question": "Which freestanding volcanic peak in Tanzania is Africa\u2019s highest mountain?",
+      "correctAnswer": "Kilimanjaro",
+      "incorrectAnswers": [
+        "Mount Kenya",
+        "Ras Dashen",
+        "Mount Stanley"
+      ],
+      "explanation": "Kilimanjaro rises from the East African plateau near the Kenyan border.",
+      "keywords": [
+        "mountains",
+        "kilimanjaro",
+        "africa"
+      ],
+      "source": "https://www.britannica.com/place/Kilimanjaro"
+    },
+    {
+      "seedId": "08a26172-b2d5-459d-9cd6-89d9167ccb05",
+      "category": "geography",
+      "navigationKeyword1": "physical",
+      "navigationKeyword2": "mountains",
+      "question": "Which massif is the highest in the Alps and Western Europe?",
+      "correctAnswer": "Mont Blanc",
+      "incorrectAnswers": [
+        "Matterhorn",
+        "Monte Rosa",
+        "Finsteraarhorn"
+      ],
+      "explanation": "Mont Blanc on the France\u2013Italy border is the Alps\u2019 culminating summit.",
+      "keywords": [
+        "mountains",
+        "alps",
+        "europe"
+      ],
+      "source": "https://www.britannica.com/place/Mont-Blanc-mountain-Europe"
+    },
+    {
+      "seedId": "d2caa379-f416-4ed3-a167-a10e5eb783f8",
+      "category": "geography",
+      "navigationKeyword1": "physical",
+      "navigationKeyword2": "mountains",
+      "question": "Which mountain is the second-highest on Earth after Everest?",
+      "correctAnswer": "K2",
+      "incorrectAnswers": [
+        "Kangchenjunga",
+        "Makalu",
+        "Cho Oyu"
+      ],
+      "explanation": "K2 in the Karakoram Range is the world\u2019s second-highest summit.",
+      "keywords": [
+        "mountains",
+        "karakoram",
+        "elevation"
+      ],
+      "source": "https://www.britannica.com/place/K2"
+    },
+    {
+      "seedId": "fd1be5a2-7d7c-4f37-9d29-f970fcb3cf6b",
+      "category": "geography",
+      "navigationKeyword1": "physical",
+      "navigationKeyword2": "mountains",
+      "question": "Which mountain range runs along the western edge of South America?",
+      "correctAnswer": "Andes Mountains",
+      "incorrectAnswers": [
+        "Rocky Mountains",
+        "Atlas Mountains",
+        "Drakensberg"
+      ],
+      "explanation": "The Andes form a continuous high cordillera from Venezuela to Chile.",
+      "keywords": [
+        "mountains",
+        "andes",
+        "south-america"
+      ],
+      "source": "https://www.britannica.com/place/Andes-Mountains"
+    },
+    {
+      "seedId": "08c56bc6-f586-4c82-95e8-5ec7157d3f34",
+      "category": "geography",
+      "navigationKeyword1": "physical",
+      "navigationKeyword2": "mountains",
+      "question": "Which peak is Earth\u2019s highest above sea level?",
+      "correctAnswer": "Mount Everest",
+      "incorrectAnswers": [
+        "K2",
+        "Kangchenjunga",
+        "Lhotse"
+      ],
+      "explanation": "Everest on the Nepal\u2013Tibet border reaches the highest surveyed elevation on Earth\u2019s surface.",
+      "keywords": [
+        "mountains",
+        "himalayas",
+        "elevation"
+      ],
+      "source": "https://www.britannica.com/place/Mount-Everest"
+    },
+    {
+      "seedId": "f35a7f1d-af5a-4672-baec-d020486a870f",
+      "category": "geography",
+      "navigationKeyword1": "physical",
+      "navigationKeyword2": "mountains",
+      "question": "Which range contains Mount Everest and many of the world\u2019s highest peaks?",
+      "correctAnswer": "Himalayas",
+      "incorrectAnswers": [
+        "Alps",
+        "Ural Mountains",
+        "Caucasus Mountains"
+      ],
+      "explanation": "The Himalayas stretch across South Asia north of the Indian subcontinent.",
+      "keywords": [
+        "mountains",
+        "himalayas",
+        "asia"
+      ],
+      "source": "https://www.britannica.com/place/Himalayas"
+    },
+    {
+      "seedId": "6e227ffe-0aa5-4b02-87b8-39583fb60a79",
+      "category": "geography",
+      "navigationKeyword1": "physical",
+      "navigationKeyword2": "mountains",
+      "question": "Which range forms a high barrier between France and Spain?",
+      "correctAnswer": "Pyrenees",
+      "incorrectAnswers": [
+        "Alps",
+        "Apennines",
+        "Carpathians"
+      ],
+      "explanation": "The Pyrenees stretch from the Bay of Biscay to the Mediterranean between Iberia and France.",
+      "keywords": [
+        "mountains",
+        "pyrenees",
+        "europe"
+      ],
+      "source": "https://www.britannica.com/place/Pyrenees"
+    },
+    {
+      "seedId": "6e6615bb-97c0-4c1e-aa5c-1e7b2a62734f",
+      "category": "geography",
+      "navigationKeyword1": "physical",
+      "navigationKeyword2": "mountains",
+      "question": "Which range forms part of the traditional boundary between Europe and Asia?",
+      "correctAnswer": "Ural Mountains",
+      "incorrectAnswers": [
+        "Caucasus Mountains",
+        "Carpathian Mountains",
+        "Scandes"
+      ],
+      "explanation": "The Urals run north\u2013south from the Arctic toward Kazakhstan.",
+      "keywords": [
+        "mountains",
+        "urals",
+        "europe-asia"
+      ],
+      "source": "https://www.britannica.com/place/Ural-Mountains"
+    },
+    {
+      "seedId": "82002ee6-2608-43fe-90c5-9d3557e6406b",
+      "category": "geography",
+      "navigationKeyword1": "physical",
+      "navigationKeyword2": "oceans",
+      "question": "In which ocean is the Mariana Trench, home to Challenger Deep?",
+      "correctAnswer": "Pacific Ocean",
+      "incorrectAnswers": [
+        "Atlantic Ocean",
+        "Indian Ocean",
+        "Arctic Ocean"
+      ],
+      "explanation": "The Mariana Trench lies east of the Mariana Islands in the western Pacific.",
+      "keywords": [
+        "oceans",
+        "trenches",
+        "pacific"
+      ],
+      "source": "https://www.britannica.com/place/Mariana-Trench"
+    },
+    {
+      "seedId": "fd4cafc2-f265-487f-aa1f-7eed4ba1c8bd",
+      "category": "geography",
+      "navigationKeyword1": "physical",
+      "navigationKeyword2": "oceans",
+      "question": "Modern geography often treats which circumpolar body of water encircling Antarctica as a distinct ocean alongside the Pacific, Atlantic, Indian, and Arctic?",
+      "correctAnswer": "The Southern Ocean",
+      "incorrectAnswers": [
+        "The Red Sea",
+        "The Caspian Sea",
+        "The Sargasso Sea only"
+      ],
+      "explanation": "Britannica and other references increasingly recognize a Southern Ocean ringing Antarctica; the Pacific remains the largest single basin by area.",
+      "keywords": [
+        "oceans",
+        "southern-ocean",
+        "antarctica"
+      ],
+      "source": "https://www.britannica.com/place/Pacific-Ocean"
+    },
+    {
+      "seedId": "70e6352c-0c31-41b9-9f1c-a6776437216f",
+      "category": "geography",
+      "navigationKeyword1": "physical",
+      "navigationKeyword2": "oceans",
+      "question": "Which gulf is the largest in the world by surface area?",
+      "correctAnswer": "Gulf of Mexico",
+      "incorrectAnswers": [
+        "Hudson Bay",
+        "Bay of Bengal",
+        "Persian Gulf"
+      ],
+      "explanation": "The Gulf of Mexico is a broad marginal sea of the Atlantic bordering the southeastern United States and eastern Mexico.",
+      "keywords": [
+        "oceans",
+        "gulfs",
+        "gulf-of-mexico"
+      ],
+      "source": "https://www.britannica.com/place/Gulf-of-Mexico-Gulf-of-America"
+    },
+    {
+      "seedId": "3337132a-a09f-48c0-8010-6587ca143855",
+      "category": "geography",
+      "navigationKeyword1": "physical",
+      "navigationKeyword2": "oceans",
+      "question": "Which marginal sea of the Atlantic separates southern Europe from North Africa?",
+      "correctAnswer": "Mediterranean Sea",
+      "incorrectAnswers": [
+        "Black Sea",
+        "Caspian Sea",
+        "Red Sea"
+      ],
+      "explanation": "The Mediterranean connects to the Atlantic through the Strait of Gibraltar.",
+      "keywords": [
+        "oceans",
+        "seas",
+        "mediterranean"
+      ],
+      "source": "https://www.britannica.com/place/Mediterranean-Sea"
+    },
+    {
+      "seedId": "4722c097-7ec0-47d9-8c59-fdb6ed0d65f7",
+      "category": "geography",
+      "navigationKeyword1": "physical",
+      "navigationKeyword2": "oceans",
+      "question": "Which ocean lies between the Americas to the west and Europe and Africa to the east?",
+      "correctAnswer": "Atlantic Ocean",
+      "incorrectAnswers": [
+        "Indian Ocean",
+        "Southern Ocean",
+        "Arctic Ocean"
+      ],
+      "explanation": "The Atlantic stretches in an S-shape between the New World and the Old World.",
+      "keywords": [
+        "oceans",
+        "atlantic",
+        "basin"
+      ],
+      "source": "https://www.britannica.com/place/Atlantic-Ocean"
+    },
+    {
+      "seedId": "32e24d55-539d-4868-a906-0e4c64b2a86e",
+      "category": "geography",
+      "navigationKeyword1": "physical",
+      "navigationKeyword2": "oceans",
+      "question": "Which ocean lies mainly south of Asia and between Africa and Australia?",
+      "correctAnswer": "Indian Ocean",
+      "incorrectAnswers": [
+        "Pacific Ocean",
+        "Southern Ocean",
+        "Red Sea"
+      ],
+      "explanation": "The Indian Ocean is bounded by Africa, Asia, Australia, and the Southern Ocean.",
+      "keywords": [
+        "oceans",
+        "indian-ocean",
+        "monsoon"
+      ],
+      "source": "https://www.britannica.com/place/Indian-Ocean"
+    },
+    {
+      "seedId": "56c00348-0495-4dc7-8535-5036e09adf7e",
+      "category": "geography",
+      "navigationKeyword1": "physical",
+      "navigationKeyword2": "oceans",
+      "question": "Which ocean surrounds the North Pole and is the smallest by area?",
+      "correctAnswer": "Arctic Ocean",
+      "incorrectAnswers": [
+        "Southern Ocean",
+        "Baltic Sea",
+        "Hudson Bay"
+      ],
+      "explanation": "The Arctic Ocean is the shallowest and smallest of the world oceans.",
+      "keywords": [
+        "oceans",
+        "arctic",
+        "polar"
+      ],
+      "source": "https://www.britannica.com/place/Arctic-Ocean"
+    },
+    {
+      "seedId": "aef03b7d-15f6-4152-a066-908df3c816e6",
+      "category": "geography",
+      "navigationKeyword1": "physical",
+      "navigationKeyword2": "oceans",
+      "question": "Which sea borders the northeastern coasts of Canada and Greenland and links to the Atlantic?",
+      "correctAnswer": "Labrador Sea",
+      "incorrectAnswers": [
+        "Bering Sea",
+        "Sea of Okhotsk",
+        "Tasman Sea"
+      ],
+      "explanation": "The Labrador Sea lies between Labrador and Greenland as part of the North Atlantic system.",
+      "keywords": [
+        "oceans",
+        "seas",
+        "labrador"
+      ],
+      "source": "https://www.britannica.com/place/Labrador-Sea"
+    },
+    {
+      "seedId": "276c495e-42c2-4ddd-a208-6d656807c03d",
+      "category": "geography",
+      "navigationKeyword1": "physical",
+      "navigationKeyword2": "oceans",
+      "question": "Which sea lies between the Arabian Peninsula and northeastern Africa?",
+      "correctAnswer": "Red Sea",
+      "incorrectAnswers": [
+        "Persian Gulf",
+        "Caspian Sea",
+        "Arabian Sea"
+      ],
+      "explanation": "The long narrow Red Sea connects to the Indian Ocean through the Gulf of Aden and Bab el-Mandeb.",
+      "keywords": [
+        "oceans",
+        "seas",
+        "red-sea"
+      ],
+      "source": "https://www.britannica.com/place/Red-Sea"
+    },
+    {
+      "seedId": "627ae88b-6d35-48b7-a04d-cecd66a18a2f",
+      "category": "geography",
+      "navigationKeyword1": "physical",
+      "navigationKeyword2": "oceans",
+      "question": "Which sea separates southern Europe from western Asia?",
+      "correctAnswer": "Aegean Sea",
+      "incorrectAnswers": [
+        "Adriatic Sea",
+        "Baltic Sea",
+        "North Sea"
+      ],
+      "explanation": "The Aegean lies between Greece and T\u00fcrkiye and opens into the Mediterranean.",
+      "keywords": [
+        "oceans",
+        "seas",
+        "aegean"
+      ],
+      "source": "https://www.britannica.com/place/Aegean-Sea"
+    },
+    {
+      "seedId": "6a3091b9-acd7-41c7-b9d7-fb5c6dab1b31",
+      "category": "geography",
+      "navigationKeyword1": "physical",
+      "navigationKeyword2": "oceans",
+      "question": "Which warm Atlantic current carries tropical water northward past eastern North America?",
+      "correctAnswer": "Gulf Stream",
+      "incorrectAnswers": [
+        "Canary Current",
+        "Labrador Current",
+        "Benguela Current"
+      ],
+      "explanation": "The Gulf Stream flows along the U.S. East Coast before heading toward the North Atlantic.",
+      "keywords": [
+        "oceans",
+        "currents",
+        "atlantic"
+      ],
+      "source": "https://www.britannica.com/place/Gulf-Stream"
+    },
+    {
+      "seedId": "6ce808a1-ab56-464d-9154-7ed030786b37",
+      "category": "geography",
+      "navigationKeyword1": "physical",
+      "navigationKeyword2": "plates",
+      "question": "Compared with oceanic lithosphere, how thick is typical continental lithosphere?",
+      "correctAnswer": "Thicker",
+      "incorrectAnswers": [
+        "Thinner",
+        "The same thickness",
+        "Absent"
+      ],
+      "explanation": "Continental crust is much thicker than oceanic crust, partly offsetting its lower density.",
+      "keywords": [
+        "plates",
+        "plate-tectonics",
+        "continental-crust"
+      ],
+      "source": "https://pubs.usgs.gov/gip/dynamic/tectonic.html"
+    },
+    {
+      "seedId": "5baac3af-a474-4632-9342-94c042536220",
+      "category": "geography",
+      "navigationKeyword1": "physical",
+      "navigationKeyword2": "plates",
+      "question": "Earth\u2019s brittle outer shell is broken into giant pieces that creep over hotter, softer mantle rock\u2014what are those moving pieces called?",
+      "correctAnswer": "Tectonic plates",
+      "incorrectAnswers": [
+        "Single unbroken crustal shells",
+        "Atmospheric jet streaks",
+        "Ocean currents only"
+      ],
+      "explanation": "Tectonic plates are irregular rock slabs composed of oceanic and continental lithosphere.",
+      "keywords": [
+        "plates",
+        "plate-tectonics",
+        "lithosphere"
+      ],
+      "source": "https://pubs.usgs.gov/gip/dynamic/tectonic.html"
+    },
+    {
+      "seedId": "21782158-fccc-4054-962c-bc03238fd087",
+      "category": "geography",
+      "navigationKeyword1": "physical",
+      "navigationKeyword2": "plates",
+      "question": "Off Oregon and Washington, which small oceanic plate is subducting beneath North America?",
+      "correctAnswer": "Juan de Fuca Plate",
+      "incorrectAnswers": [
+        "Pacific Plate",
+        "Cocos Plate",
+        "Philippine Sea Plate"
+      ],
+      "explanation": "The Juan de Fuca Plate is a remnant of the Farallon Plate subducting eastward beneath the continent.",
+      "keywords": [
+        "plates",
+        "plate-tectonics",
+        "cascadia"
+      ],
+      "source": "https://pubs.usgs.gov/gip/dynamic/tectonic.html"
+    },
+    {
+      "seedId": "125ff6f4-0c8b-4ffd-a791-d216e72a2d26",
+      "category": "geography",
+      "navigationKeyword1": "physical",
+      "navigationKeyword2": "plates",
+      "question": "Tectonic plates have been drifting on Earth\u2019s surface for roughly how long?",
+      "correctAnswer": "Since early in Earth\u2019s 4.6-billion-year history",
+      "incorrectAnswers": [
+        "Only the last million years",
+        "Only since the Ice Ages",
+        "Only since recorded history"
+      ],
+      "explanation": "USGS notes plates probably formed very early and have moved ever since.",
+      "keywords": [
+        "plates",
+        "plate-tectonics",
+        "geologic-time"
+      ],
+      "source": "https://pubs.usgs.gov/gip/dynamic/tectonic.html"
+    },
+    {
+      "seedId": "5eeaaa05-93fd-4c69-840d-8691b6e9f82a",
+      "category": "geography",
+      "navigationKeyword1": "physical",
+      "navigationKeyword2": "plates",
+      "question": "What process occurs when denser oceanic lithosphere sinks beneath another plate?",
+      "correctAnswer": "Subduction",
+      "incorrectAnswers": [
+        "Rifting",
+        "Obduction",
+        "Isostasy"
+      ],
+      "explanation": "Subduction consumes oceanic plates at convergent margins.",
+      "keywords": [
+        "plates",
+        "plate-tectonics",
+        "subduction"
+      ],
+      "source": "https://pubs.usgs.gov/gip/dynamic/tectonic.html"
+    },
+    {
+      "seedId": "a95d0948-c282-4661-919d-12be7bf2ff52",
+      "category": "geography",
+      "navigationKeyword1": "physical",
+      "navigationKeyword2": "plates",
+      "question": "Where is earthquake and volcanic activity mainly concentrated in the plate-tectonics model?",
+      "correctAnswer": "Near plate boundaries",
+      "incorrectAnswers": [
+        "Only at equatorial latitudes",
+        "Only under continents",
+        "Randomly across plate interiors"
+      ],
+      "explanation": "Most seismic and volcanic activity occurs close to the edges where plates interact.",
+      "keywords": [
+        "plates",
+        "plate-tectonics",
+        "earthquakes"
+      ],
+      "source": "https://pubs.usgs.gov/gip/dynamic/tectonic.html"
+    },
+    {
+      "seedId": "6aac405f-cd83-4a4c-846c-979d6a387ce9",
+      "category": "geography",
+      "navigationKeyword1": "physical",
+      "navigationKeyword2": "plates",
+      "question": "Which oceanic plate is named among the largest tectonic plates on Earth?",
+      "correctAnswer": "Pacific Plate",
+      "incorrectAnswers": [
+        "Juan de Fuca Plate",
+        "Cocos Plate",
+        "Nazca Plate"
+      ],
+      "explanation": "The Pacific Plate is one of the largest plates and underlies much of the Pacific basin.",
+      "keywords": [
+        "plates",
+        "plate-tectonics",
+        "pacific-plate"
+      ],
+      "source": "https://pubs.usgs.gov/gip/dynamic/tectonic.html"
+    },
+    {
+      "seedId": "21190091-c30e-45d1-92d8-8f948ea5d74c",
+      "category": "geography",
+      "navigationKeyword1": "physical",
+      "navigationKeyword2": "plates",
+      "question": "Which plate is named among the largest and includes much of Antarctica?",
+      "correctAnswer": "Antarctic Plate",
+      "incorrectAnswers": [
+        "Scotia Plate",
+        "Somali Plate",
+        "Caribbean Plate"
+      ],
+      "explanation": "The Antarctic Plate underlies Antarctica and surrounding Southern Ocean floor.",
+      "keywords": [
+        "plates",
+        "plate-tectonics",
+        "antarctic"
+      ],
+      "source": "https://pubs.usgs.gov/gip/dynamic/tectonic.html"
+    },
+    {
+      "seedId": "832b3c71-0963-43c2-9dae-ec6c6d3e7a47",
+      "category": "geography",
+      "navigationKeyword1": "physical",
+      "navigationKeyword2": "plates",
+      "question": "Which plate is named among the largest and includes much of North America?",
+      "correctAnswer": "North American Plate",
+      "incorrectAnswers": [
+        "South American Plate",
+        "Eurasian Plate",
+        "African Plate"
+      ],
+      "explanation": "The North American Plate carries the continent and adjacent Atlantic and Arctic ocean floor.",
+      "keywords": [
+        "plates",
+        "plate-tectonics",
+        "north-america"
+      ],
+      "source": "https://pubs.usgs.gov/gip/dynamic/tectonic.html"
+    },
+    {
+      "seedId": "06e01e6e-0fd7-49aa-8205-dde2da7b75ec",
+      "category": "geography",
+      "navigationKeyword1": "physical",
+      "navigationKeyword2": "plates",
+      "question": "Which type of crust is denser: oceanic crust or continental crust?",
+      "correctAnswer": "Oceanic crust",
+      "incorrectAnswers": [
+        "Continental crust",
+        "They are equal",
+        "Neither has crust"
+      ],
+      "explanation": "Oceanic crust is basaltic and denser than the granitic rocks typical of continents.",
+      "keywords": [
+        "plates",
+        "plate-tectonics",
+        "crust"
+      ],
+      "source": "https://pubs.usgs.gov/gip/dynamic/tectonic.html"
+    },
+    {
+      "seedId": "bb7f61b9-2367-49fe-890b-bc85760f2750",
+      "category": "geography",
+      "navigationKeyword1": "physical",
+      "navigationKeyword2": "plates",
+      "question": "Why do continents float higher than ocean basins despite being very massive?",
+      "correctAnswer": "Continental rocks are less dense than oceanic basalt",
+      "incorrectAnswers": [
+        "Continents are hollow",
+        "Ocean water pushes continents up",
+        "Gravity is weaker on land"
+      ],
+      "explanation": "Light granitic continental crust and its thick root buoy continents like iceberg tips.",
+      "keywords": [
+        "plates",
+        "plate-tectonics",
+        "buoyancy"
+      ],
+      "source": "https://pubs.usgs.gov/gip/dynamic/tectonic.html"
+    },
+    {
+      "seedId": "1a41213e-443e-4435-8796-a76832bcf32c",
+      "category": "geography",
+      "navigationKeyword1": "physical",
+      "navigationKeyword2": "rivers",
+      "question": "Which South American river has the largest discharge volume of any river in the world?",
+      "correctAnswer": "Amazon River",
+      "incorrectAnswers": [
+        "Orinoco River",
+        "Paran\u00e1 River",
+        "Magdalena River"
+      ],
+      "explanation": "The Amazon moves more water than any other river on Earth.",
+      "keywords": [
+        "rivers",
+        "amazon",
+        "south-america"
+      ],
+      "source": "https://www.britannica.com/place/Amazon-River"
+    },
+    {
+      "seedId": "750666f4-b9a8-4db0-9268-2040db2bf297",
+      "category": "geography",
+      "navigationKeyword1": "physical",
+      "navigationKeyword2": "rivers",
+      "question": "Which major north-flowing African river drains into the Mediterranean Sea?",
+      "correctAnswer": "Nile River",
+      "incorrectAnswers": [
+        "Congo River",
+        "Niger River",
+        "Zambezi River"
+      ],
+      "explanation": "The Nile crosses northeastern Africa and empties into a large delta in Egypt.",
+      "keywords": [
+        "rivers",
+        "africa",
+        "drainage"
+      ],
+      "source": "https://www.britannica.com/place/Nile-River"
+    },
+    {
+      "seedId": "f2a910bd-db3f-4340-81a0-d9d2b4b4f58d",
+      "category": "geography",
+      "navigationKeyword1": "physical",
+      "navigationKeyword2": "rivers",
+      "question": "Which river crosses the equator twice in central Africa?",
+      "correctAnswer": "Congo River",
+      "incorrectAnswers": [
+        "Niger River",
+        "Orange River",
+        "Limpopo River"
+      ],
+      "explanation": "The Congo loops through the Congo Basin and crosses the equator in two places.",
+      "keywords": [
+        "rivers",
+        "congo",
+        "africa"
+      ],
+      "source": "https://www.britannica.com/place/Congo-River"
+    },
+    {
+      "seedId": "4a09a58a-ea54-4d4b-8fda-7b739873e73a",
+      "category": "geography",
+      "navigationKeyword1": "physical",
+      "navigationKeyword2": "rivers",
+      "question": "Which river drains much of central Europe and enters the Black Sea?",
+      "correctAnswer": "Danube River",
+      "incorrectAnswers": [
+        "Dnieper River",
+        "Vistula River",
+        "Po River"
+      ],
+      "explanation": "The Danube passes through or borders multiple countries before its delta on the Black Sea.",
+      "keywords": [
+        "rivers",
+        "danube",
+        "europe"
+      ],
+      "source": "https://www.britannica.com/place/Danube-River"
+    },
+    {
+      "seedId": "ea0c2437-a18c-468a-9f21-69abb49671b5",
+      "category": "geography",
+      "navigationKeyword1": "physical",
+      "navigationKeyword2": "rivers",
+      "question": "Which river forms part of the border between the United States and Mexico?",
+      "correctAnswer": "Rio Grande",
+      "incorrectAnswers": [
+        "Colorado River",
+        "Gila River",
+        "Pecos River"
+      ],
+      "explanation": "The Rio Grande separates Texas from several Mexican states on its lower course.",
+      "keywords": [
+        "rivers",
+        "rio-grande",
+        "north-america"
+      ],
+      "source": "https://www.britannica.com/place/Rio-Grande-river-United-States-Mexico"
+    },
+    {
+      "seedId": "0f53268f-8b2e-4435-8fc0-3c23c375e87b",
+      "category": "geography",
+      "navigationKeyword1": "physical",
+      "navigationKeyword2": "rivers",
+      "question": "Which river is China\u2019s longest and reaches the East China Sea near Shanghai?",
+      "correctAnswer": "Yangtze River",
+      "incorrectAnswers": [
+        "Yellow River",
+        "Pearl River",
+        "Mekong River"
+      ],
+      "explanation": "The Yangtze crosses central and eastern China to the East China Sea.",
+      "keywords": [
+        "rivers",
+        "yangtze",
+        "asia"
+      ],
+      "source": "https://www.britannica.com/place/Yangtze-River"
+    },
+    {
+      "seedId": "cd41e2b9-1892-4948-af81-160b304a1c24",
+      "category": "geography",
+      "navigationKeyword1": "physical",
+      "navigationKeyword2": "rivers",
+      "question": "Which river is Russia\u2019s principal watercourse draining to the Caspian Sea?",
+      "correctAnswer": "Volga River",
+      "incorrectAnswers": [
+        "Don River",
+        "Dnieper River",
+        "Ob River"
+      ],
+      "explanation": "The Volga is Europe\u2019s longest river and ends in the Caspian.",
+      "keywords": [
+        "rivers",
+        "volga",
+        "europe"
+      ],
+      "source": "https://www.britannica.com/place/Volga-River"
+    },
+    {
+      "seedId": "500ebca3-cfcf-4ba8-8772-b14afec890a9",
+      "category": "geography",
+      "navigationKeyword1": "physical",
+      "navigationKeyword2": "rivers",
+      "question": "Which river is sacred to many Hindus and drains the southern Himalayas across northern India?",
+      "correctAnswer": "Ganges River",
+      "incorrectAnswers": [
+        "Indus River",
+        "Brahmaputra River",
+        "Godavari River"
+      ],
+      "explanation": "The Ganges flows southeast across the Gangetic Plain to the Bay of Bengal.",
+      "keywords": [
+        "rivers",
+        "ganges",
+        "south-asia"
+      ],
+      "source": "https://www.britannica.com/place/Ganges-River"
+    },
+    {
+      "seedId": "2a617c11-6256-4cd8-9487-91f91c18f4f4",
+      "category": "geography",
+      "navigationKeyword1": "physical",
+      "navigationKeyword2": "rivers",
+      "question": "Which river is the longest in Australia\u2019s Murray\u2013Darling basin?",
+      "correctAnswer": "Murray River",
+      "incorrectAnswers": [
+        "Darling River",
+        "Murrumbidgee River",
+        "Cooper Creek"
+      ],
+      "explanation": "The Murray drains southeastern Australia and reaches the Southern Ocean in South Australia.",
+      "keywords": [
+        "rivers",
+        "murray",
+        "australia"
+      ],
+      "source": "https://www.britannica.com/place/Murray-River"
+    },
+    {
+      "seedId": "c28653af-124a-49d5-a3bf-524e1bf40a26",
+      "category": "geography",
+      "navigationKeyword1": "physical",
+      "navigationKeyword2": "rivers",
+      "question": "Which river is the longest in Southeast Asia and flows through several countries before reaching Vietnam\u2019s delta?",
+      "correctAnswer": "Mekong River",
+      "incorrectAnswers": [
+        "Irrawaddy River",
+        "Chao Phraya River",
+        "Red River"
+      ],
+      "explanation": "The Mekong rises in the Tibetan Plateau region and crosses mainland Southeast Asia.",
+      "keywords": [
+        "rivers",
+        "mekong",
+        "southeast-asia"
+      ],
+      "source": "https://www.britannica.com/place/Mekong-River"
+    },
+    {
+      "seedId": "9200ea48-5981-4ca9-bca4-7e1c9be50a3f",
+      "category": "geography",
+      "navigationKeyword1": "physical",
+      "navigationKeyword2": "rivers",
+      "question": "Which river is the longest in western Europe that flows to the North Sea?",
+      "correctAnswer": "Rhine River",
+      "incorrectAnswers": [
+        "Seine River",
+        "Elbe River",
+        "Loire River"
+      ],
+      "explanation": "The Rhine rises in the Alps and reaches the North Sea through the Netherlands.",
+      "keywords": [
+        "rivers",
+        "rhine",
+        "europe"
+      ],
+      "source": "https://www.britannica.com/place/Rhine-River"
+    }
+  ]
+}

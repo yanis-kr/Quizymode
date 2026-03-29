@@ -1,0 +1,1147 @@
+{
+  "schemaVersion": 1,
+  "seedSet": "core-public-items",
+  "deltaPreviewLimit": 200,
+  "items": [
+    {
+      "seedId": "709891fe-af43-56d9-94d8-0a240775cc02",
+      "category": "trivia",
+      "navigationKeyword1": "brands",
+      "navigationKeyword2": "companies",
+      "question": "Google began as a project at which university?",
+      "correctAnswer": "Stanford University",
+      "incorrectAnswers": [
+        "MIT",
+        "Harvard University",
+        "UC Berkeley"
+      ],
+      "explanation": "Google began as a project at Stanford University.",
+      "keywords": [
+        "companies",
+        "brand-trivia"
+      ],
+      "source": "https://about.google/company-info/"
+    },
+    {
+      "seedId": "d8df3964-da07-57a5-8911-8ce8b72125b0",
+      "category": "trivia",
+      "navigationKeyword1": "brands",
+      "navigationKeyword2": "companies",
+      "question": "Instagram is part of which parent company?",
+      "correctAnswer": "Meta Platforms",
+      "incorrectAnswers": [
+        "Alphabet",
+        "Snap",
+        "ByteDance"
+      ],
+      "explanation": "Instagram is part of Meta Platforms.",
+      "keywords": [
+        "companies",
+        "brand-trivia"
+      ],
+      "source": "https://about.instagram.com/"
+    },
+    {
+      "seedId": "5222c6a3-4960-5f34-8c3a-19d9a803c2e0",
+      "category": "trivia",
+      "navigationKeyword1": "brands",
+      "navigationKeyword2": "companies",
+      "question": "LinkedIn is part of which company?",
+      "correctAnswer": "Microsoft",
+      "incorrectAnswers": [
+        "Oracle",
+        "Adobe",
+        "Salesforce"
+      ],
+      "explanation": "LinkedIn is part of Microsoft.",
+      "keywords": [
+        "companies",
+        "brand-trivia"
+      ],
+      "source": "https://news.linkedin.com/about-us"
+    },
+    {
+      "seedId": "524a1bd5-f11d-5472-9c33-2704131fc237",
+      "category": "trivia",
+      "navigationKeyword1": "brands",
+      "navigationKeyword2": "companies",
+      "question": "Nintendo was founded in which Japanese city?",
+      "correctAnswer": "Kyoto",
+      "incorrectAnswers": [
+        "Osaka",
+        "Tokyo",
+        "Sapporo"
+      ],
+      "explanation": "Nintendo was founded in Kyoto.",
+      "keywords": [
+        "companies",
+        "brand-trivia"
+      ],
+      "source": "https://www.nintendo.co.jp/corporate/en/outline/index.html"
+    },
+    {
+      "seedId": "e6705a49-5e27-5282-b6af-8595a5c6cf98",
+      "category": "trivia",
+      "navigationKeyword1": "brands",
+      "navigationKeyword2": "companies",
+      "question": "Pixar is owned by which company?",
+      "correctAnswer": "Disney",
+      "incorrectAnswers": [
+        "Warner Bros.",
+        "Universal",
+        "Sony"
+      ],
+      "explanation": "Pixar is owned by Disney.",
+      "keywords": [
+        "companies",
+        "brand-trivia"
+      ],
+      "source": "https://thewaltdisneycompany.com/disney-to-acquire-pixar/"
+    },
+    {
+      "seedId": "20c4c5d5-7531-5499-99d6-ab556b4d256a",
+      "category": "trivia",
+      "navigationKeyword1": "brands",
+      "navigationKeyword2": "companies",
+      "question": "Samsung was founded in which country?",
+      "correctAnswer": "South Korea",
+      "incorrectAnswers": [
+        "Japan",
+        "China",
+        "Taiwan"
+      ],
+      "explanation": "Samsung was founded in South Korea.",
+      "keywords": [
+        "companies",
+        "brand-trivia"
+      ],
+      "source": "https://www.samsung.com/us/about-us/our-business/"
+    },
+    {
+      "seedId": "f293db56-0ce5-50c7-97c9-c47ab3e78f90",
+      "category": "trivia",
+      "navigationKeyword1": "brands",
+      "navigationKeyword2": "companies",
+      "question": "Spotify was founded in which country?",
+      "correctAnswer": "Sweden",
+      "incorrectAnswers": [
+        "Norway",
+        "United Kingdom",
+        "Germany"
+      ],
+      "explanation": "Spotify was founded in Sweden.",
+      "keywords": [
+        "companies",
+        "brand-trivia"
+      ],
+      "source": "https://newsroom.spotify.com/company-info/"
+    },
+    {
+      "seedId": "73c5f56a-d36a-5291-8f88-27733b7e27aa",
+      "category": "trivia",
+      "navigationKeyword1": "brands",
+      "navigationKeyword2": "companies",
+      "question": "The LEGO Group began in which country?",
+      "correctAnswer": "Denmark",
+      "incorrectAnswers": [
+        "Sweden",
+        "Germany",
+        "Netherlands"
+      ],
+      "explanation": "The LEGO Group was founded in Denmark.",
+      "keywords": [
+        "companies",
+        "brand-trivia"
+      ],
+      "source": "https://www.lego.com/en-us/aboutus/lego-group/the-lego-group-history"
+    },
+    {
+      "seedId": "d6f1d544-fd3a-5011-a95d-20759afb0ebc",
+      "category": "trivia",
+      "navigationKeyword1": "brands",
+      "navigationKeyword2": "companies",
+      "question": "What was Nike originally called?",
+      "correctAnswer": "Blue Ribbon Sports",
+      "incorrectAnswers": [
+        "TrackTown Athletics",
+        "Northwest Running Co.",
+        "Victory Footwear"
+      ],
+      "explanation": "Nike was originally founded as Blue Ribbon Sports.",
+      "keywords": [
+        "companies",
+        "brand-trivia"
+      ],
+      "source": "https://about.nike.com/magazine/the-handshake-that-started-it-all"
+    },
+    {
+      "seedId": "7e3499b5-eabe-5a51-9bcf-1570a873bef1",
+      "category": "trivia",
+      "navigationKeyword1": "brands",
+      "navigationKeyword2": "companies",
+      "question": "Whole Foods Market was acquired by which company in 2017?",
+      "correctAnswer": "Amazon",
+      "incorrectAnswers": [
+        "Target",
+        "Walmart",
+        "Costco"
+      ],
+      "explanation": "Amazon announced its acquisition of Whole Foods Market in 2017.",
+      "keywords": [
+        "companies",
+        "brand-trivia"
+      ],
+      "source": "https://press.aboutamazon.com/2017/6/amazon-to-acquire-whole-foods-market"
+    },
+    {
+      "seedId": "084e1389-5a1d-5700-a43c-b660693b5ad8",
+      "category": "trivia",
+      "navigationKeyword1": "brands",
+      "navigationKeyword2": "history",
+      "question": "Apple purchased NeXT Software in which year?",
+      "correctAnswer": "1996",
+      "incorrectAnswers": [
+        "1985",
+        "2001",
+        "2010"
+      ],
+      "explanation": "Apple bought NeXT in 1996.",
+      "keywords": [
+        "tech",
+        "acquisitions"
+      ],
+      "source": "https://www.britannica.com/money/Apple-Inc"
+    },
+    {
+      "seedId": "7b27ca8b-2260-5288-965c-a45d77ec09aa",
+      "category": "trivia",
+      "navigationKeyword1": "brands",
+      "navigationKeyword2": "history",
+      "question": "Coca\u2011Cola history dates the first glass poured at Jacobs\u2019 Pharmacy to which date in 1886?",
+      "correctAnswer": "May 8, 1886",
+      "incorrectAnswers": [
+        "July 4, 1886",
+        "January 1, 1886",
+        "December 25, 1886"
+      ],
+      "explanation": "Coca\u2011Cola\u2019s official history specifies May 8, 1886.",
+      "keywords": [
+        "timeline",
+        "coca-cola"
+      ],
+      "source": "https://www.coca-colacompany.com/about-us/history"
+    },
+    {
+      "seedId": "bfc997d8-4827-5c1f-933d-64e2cc9f74b6",
+      "category": "trivia",
+      "navigationKeyword1": "brands",
+      "navigationKeyword2": "history",
+      "question": "Coca\u2011Cola history introduces Diet Coke in which year?",
+      "correctAnswer": "1982",
+      "incorrectAnswers": [
+        "1985",
+        "1971",
+        "1995"
+      ],
+      "explanation": "Diet Coke\u2019s introduction in 1982.",
+      "keywords": [
+        "brands",
+        "innovation"
+      ],
+      "source": "https://www.coca-colacompany.com/about-us/history"
+    },
+    {
+      "seedId": "20d596bb-7723-558a-a47f-be70ecace7a8",
+      "category": "trivia",
+      "navigationKeyword1": "brands",
+      "navigationKeyword2": "history",
+      "question": "Coca\u2011Cola history marks the return of Coca\u2011Cola Classic after New Coke in which year context?",
+      "correctAnswer": "1985",
+      "incorrectAnswers": [
+        "1990",
+        "1978",
+        "1999"
+      ],
+      "explanation": "The timeline discusses the 1985 New Coke change and the return of Coca\u2011Cola Classic weeks later.",
+      "keywords": [
+        "brands",
+        "turnaround"
+      ],
+      "source": "https://www.coca-colacompany.com/about-us/history"
+    },
+    {
+      "seedId": "1a32d849-3db7-5df2-9eff-0492c20c13e4",
+      "category": "trivia",
+      "navigationKeyword1": "brands",
+      "navigationKeyword2": "history",
+      "question": "Coca\u2011Cola history places incorporation of The Coca\u2011Cola Company as a Georgia corporation in which year?",
+      "correctAnswer": "1892",
+      "incorrectAnswers": [
+        "1886",
+        "1919",
+        "1904"
+      ],
+      "explanation": "1892 for incorporation in Georgia.",
+      "keywords": [
+        "timeline",
+        "coca-cola"
+      ],
+      "source": "https://www.coca-colacompany.com/about-us/history"
+    },
+    {
+      "seedId": "2f8a231c-e4f1-560e-a878-5a16671c5345",
+      "category": "trivia",
+      "navigationKeyword1": "brands",
+      "navigationKeyword2": "history",
+      "question": "Coca\u2011Cola history records bottling rights sold to Chattanooga businessmen in which year?",
+      "correctAnswer": "1899",
+      "incorrectAnswers": [
+        "1895",
+        "1915",
+        "1887"
+      ],
+      "explanation": "1899 for the bottling rights sale.",
+      "keywords": [
+        "bottling",
+        "coca-cola"
+      ],
+      "source": "https://www.coca-colacompany.com/about-us/history"
+    },
+    {
+      "seedId": "e87f2f6f-6a8b-535a-ab95-c45224ffbd6d",
+      "category": "trivia",
+      "navigationKeyword1": "brands",
+      "navigationKeyword2": "history",
+      "question": "IBM adopted its present name in what year?",
+      "correctAnswer": "1924",
+      "incorrectAnswers": [
+        "1911",
+        "1952",
+        "1933"
+      ],
+      "explanation": "IBM adopted its present name in 1924.",
+      "keywords": [
+        "enterprise",
+        "renaming"
+      ],
+      "source": "https://www.britannica.com/money/International-Business-Machines-Corporation"
+    },
+    {
+      "seedId": "d8a0d4a9-bd71-5000-a100-0f7e03d25fcd",
+      "category": "trivia",
+      "navigationKeyword1": "brands",
+      "navigationKeyword2": "history",
+      "question": "In what year was the IBM Personal Computer introduced?",
+      "correctAnswer": "1981",
+      "incorrectAnswers": [
+        "1977",
+        "1995",
+        "1991"
+      ],
+      "explanation": "1981 for the IBM PC introduction.",
+      "keywords": [
+        "pcs",
+        "ibm"
+      ],
+      "source": "https://www.britannica.com/money/International-Business-Machines-Corporation"
+    },
+    {
+      "seedId": "ae03ebff-72a5-55f9-9224-9c304c42448a",
+      "category": "trivia",
+      "navigationKeyword1": "brands",
+      "navigationKeyword2": "history",
+      "question": "McDonalds rapid franchising expansion under Ray Kroc took off in which decade?",
+      "correctAnswer": "1950s",
+      "incorrectAnswers": [
+        "1920s",
+        "1980s",
+        "2000s"
+      ],
+      "explanation": "McDonalds rapid franchising expansion took off in the 1950s under Ray Kroc.",
+      "keywords": [
+        "franchising",
+        "fast-food"
+      ],
+      "source": "https://www.britannica.com/money/McDonalds-Corporation"
+    },
+    {
+      "seedId": "ca2424cd-e435-56d3-bd1e-cc23d40e1f2c",
+      "category": "trivia",
+      "navigationKeyword1": "brands",
+      "navigationKeyword2": "history",
+      "question": "Ray Kroc bought the McDonald brothers out in what year?",
+      "correctAnswer": "1961",
+      "incorrectAnswers": [
+        "1955",
+        "1975",
+        "1948"
+      ],
+      "explanation": "Ray Kroc bought the McDonald brothers out in 1961.",
+      "keywords": [
+        "fast-food",
+        "history"
+      ],
+      "source": "https://www.britannica.com/money/McDonalds-Corporation"
+    },
+    {
+      "seedId": "ab2b9c62-b7ae-5ee1-81f1-8e703ff8d89f",
+      "category": "trivia",
+      "navigationKeyword1": "brands",
+      "navigationKeyword2": "logos",
+      "question": "Amazons name references which major South American river?",
+      "correctAnswer": "Amazon River",
+      "incorrectAnswers": [
+        "Nile",
+        "Mississippi",
+        "Danube"
+      ],
+      "explanation": "Amazons name references the Amazon River.",
+      "keywords": [
+        "naming",
+        "amazon"
+      ],
+      "source": "https://www.britannica.com/money/Amazoncom"
+    },
+    {
+      "seedId": "14cdd1b5-c3c5-5cce-b1c6-b92b60fae51d",
+      "category": "trivia",
+      "navigationKeyword1": "brands",
+      "navigationKeyword2": "logos",
+      "question": "Apple Inc.\u2019s brand mark is commonly known as what fruit silhouette?",
+      "correctAnswer": "Apple",
+      "incorrectAnswers": [
+        "Pear",
+        "Orange",
+        "Grape"
+      ],
+      "explanation": "Apple\u2019s consumer branding centers on an apple mark.",
+      "keywords": [
+        "branding",
+        "apple"
+      ],
+      "source": "https://www.britannica.com/money/Apple-Inc"
+    },
+    {
+      "seedId": "0686f4b7-6955-5724-a297-55f6455c2717",
+      "category": "trivia",
+      "navigationKeyword1": "brands",
+      "navigationKeyword2": "logos",
+      "question": "Coca\u2011Cola history notes Spencerian script logo was penned by which company role?",
+      "correctAnswer": "The Coca\u2011Cola Company accountant",
+      "incorrectAnswers": [
+        "A bottling partner",
+        "A newspaper editor",
+        "A chemist"
+      ],
+      "explanation": "Coca\u2011Cola\u2019s history states an accountant created the Spencerian script logo.",
+      "keywords": [
+        "logo",
+        "coca-cola"
+      ],
+      "source": "https://www.coca-colacompany.com/about-us/history"
+    },
+    {
+      "seedId": "91f6a9fe-7e45-56dc-9ac5-d063a766338a",
+      "category": "trivia",
+      "navigationKeyword1": "brands",
+      "navigationKeyword2": "logos",
+      "question": "Google\u2019s name is a play on which mathematical term?",
+      "correctAnswer": "googol",
+      "incorrectAnswers": [
+        "matrix",
+        "vector",
+        "tensor"
+      ],
+      "explanation": "Popular references tied to the company note the googol spelling inspiration.",
+      "keywords": [
+        "naming",
+        "tech"
+      ],
+      "source": "https://www.britannica.com/money/Google"
+    },
+    {
+      "seedId": "2de8b5e8-b88b-52c8-901e-99eecfdce23a",
+      "category": "trivia",
+      "navigationKeyword1": "brands",
+      "navigationKeyword2": "logos",
+      "question": "IBM\u2019s logo tradition is strongly associated with three letters standing for what full name?",
+      "correctAnswer": "International Business Machines",
+      "incorrectAnswers": [
+        "Integrated Business Machines",
+        "International Binary Machines",
+        "Intercontinental Business Machines"
+      ],
+      "explanation": "IBM stands for International Business Machines.",
+      "keywords": [
+        "abbreviation",
+        "ibm"
+      ],
+      "source": "https://www.britannica.com/money/International-Business-Machines-Corporation"
+    },
+    {
+      "seedId": "0403966a-4c35-5a31-a5a7-50ac8a478760",
+      "category": "trivia",
+      "navigationKeyword1": "brands",
+      "navigationKeyword2": "logos",
+      "question": "McDonald\u2019s branding is closely tied to golden what?",
+      "correctAnswer": "arches",
+      "incorrectAnswers": [
+        "stars",
+        "stripes",
+        "bells"
+      ],
+      "explanation": "McDonald\u2019s restaurant branding including its arches.",
+      "keywords": [
+        "branding",
+        "mcdonalds"
+      ],
+      "source": "https://www.britannica.com/money/McDonalds-Corporation"
+    },
+    {
+      "seedId": "b5db6e12-5891-5419-aa33-39283ffa0535",
+      "category": "trivia",
+      "navigationKeyword1": "brands",
+      "navigationKeyword2": "logos",
+      "question": "Microsoft\u2019s corporate identity is centered on its name referencing microcomputers and what?",
+      "correctAnswer": "software",
+      "incorrectAnswers": [
+        "hardware",
+        "chips",
+        "clouds"
+      ],
+      "explanation": "Microsoft combines microcomputer and software.",
+      "keywords": [
+        "naming",
+        "microsoft"
+      ],
+      "source": "https://www.britannica.com/money/Microsoft-Corporation"
+    },
+    {
+      "seedId": "a2d7893a-f227-5a50-b528-b8fdf7e42711",
+      "category": "trivia",
+      "navigationKeyword1": "brands",
+      "navigationKeyword2": "logos",
+      "question": "Nike\u2019s name to the Greek goddess of what domain?",
+      "correctAnswer": "victory",
+      "incorrectAnswers": [
+        "wisdom",
+        "the sea",
+        "the hunt"
+      ],
+      "explanation": "Nike refers to the Greek goddess of victory.",
+      "keywords": [
+        "naming",
+        "nike"
+      ],
+      "source": "https://www.britannica.com/money/Nike-Inc"
+    },
+    {
+      "seedId": "9caf7931-cee3-5ff9-8a61-806aa0816528",
+      "category": "trivia",
+      "navigationKeyword1": "brands",
+      "navigationKeyword2": "logos",
+      "question": "Samsungs name is commonly translated into what English phrase?",
+      "correctAnswer": "three stars",
+      "incorrectAnswers": [
+        "two rivers",
+        "one mountain",
+        "five waves"
+      ],
+      "explanation": "Samsung is commonly translated as three stars.",
+      "keywords": [
+        "naming",
+        "samsung"
+      ],
+      "source": "https://www.britannica.com/money/Samsung-Electronics"
+    },
+    {
+      "seedId": "e870b998-31d9-589d-8911-0be1d71e4c25",
+      "category": "trivia",
+      "navigationKeyword1": "brands",
+      "navigationKeyword2": "logos",
+      "question": "Which designer is associated with Nike\u2019s Swoosh logo design?",
+      "correctAnswer": "Carolyn Davidson",
+      "incorrectAnswers": [
+        "Paul Rand",
+        "Milton Glaser",
+        "Raymond Loewy"
+      ],
+      "explanation": "Carolyn Davidson created the Swoosh.",
+      "keywords": [
+        "logos",
+        "nike"
+      ],
+      "source": "https://www.britannica.com/money/Nike-Inc"
+    },
+    {
+      "seedId": "74fdb4f0-1936-5f34-af4c-65ab3bde3c2a",
+      "category": "trivia",
+      "navigationKeyword1": "brands",
+      "navigationKeyword2": "mascots",
+      "question": "Coca\u2011Cola history introduces popular polar bear characters in ads in which year?",
+      "correctAnswer": "1993",
+      "incorrectAnswers": [
+        "1982",
+        "2001",
+        "1971"
+      ],
+      "explanation": "Coca\u2011Cola\u2019s timeline notes polar bears introduced in a 1993 commercial.",
+      "keywords": [
+        "advertising",
+        "coca-cola"
+      ],
+      "source": "https://www.coca-colacompany.com/about-us/history"
+    },
+    {
+      "seedId": "ff07fd63-8338-5dda-978f-f9acbb8157d4",
+      "category": "trivia",
+      "navigationKeyword1": "brands",
+      "navigationKeyword2": "mascots",
+      "question": "Coca\u2011Cola history notes Santa illustrations by Sundblom ran annually through roughly which ending year?",
+      "correctAnswer": "1964",
+      "incorrectAnswers": [
+        "1975",
+        "1950",
+        "1988"
+      ],
+      "explanation": "Coca\u2011Cola\u2019s timeline states Sundblom painted Santa images from 1931 to 1964.",
+      "keywords": [
+        "advertising",
+        "coca-cola"
+      ],
+      "source": "https://www.coca-colacompany.com/about-us/history"
+    },
+    {
+      "seedId": "c6d3faef-ea18-500e-a886-9676b2d33b8c",
+      "category": "trivia",
+      "navigationKeyword1": "brands",
+      "navigationKeyword2": "mascots",
+      "question": "Coca\u2011Cola history ties modern Santa Claus imagery in ads to artist Haddon Sundblom starting in which year?",
+      "correctAnswer": "1931",
+      "incorrectAnswers": [
+        "1955",
+        "1920",
+        "1945"
+      ],
+      "explanation": "Coca\u2011Cola\u2019s timeline cites 1931 for Sundblom\u2019s first Santa illustration.",
+      "keywords": [
+        "advertising",
+        "coca-cola"
+      ],
+      "source": "https://www.coca-colacompany.com/about-us/history"
+    },
+    {
+      "seedId": "33fbe981-fd7e-5279-ada9-1f4f00ad6610",
+      "category": "trivia",
+      "navigationKeyword1": "brands",
+      "navigationKeyword2": "mascots",
+      "question": "Disney\u2019s corporate growth is closely tied to merchandising of characters starting with which early mouse?",
+      "correctAnswer": "Mickey Mouse",
+      "incorrectAnswers": [
+        "Donald Duck",
+        "Goofy",
+        "Pluto"
+      ],
+      "explanation": "Mickey Mouse anchors Disney\u2019s character merchandising history.",
+      "keywords": [
+        "disney",
+        "merchandise"
+      ],
+      "source": "https://www.britannica.com/money/The-Walt-Disney-Company"
+    },
+    {
+      "seedId": "33550611-c28a-50fe-a64a-632dd8d863be",
+      "category": "trivia",
+      "navigationKeyword1": "brands",
+      "navigationKeyword2": "mascots",
+      "question": "Kellogg Company used animated animal mascots heavily in promoting cereals to which audience?",
+      "correctAnswer": "children",
+      "incorrectAnswers": [
+        "only industrial buyers",
+        "only military rations",
+        "only hospitals"
+      ],
+      "explanation": "Kellogg\u2019s child-focused cereal marketing history.",
+      "keywords": [
+        "cereal",
+        "advertising"
+      ],
+      "source": "https://www.britannica.com/money/Kellogg-Company"
+    },
+    {
+      "seedId": "99f04880-c611-5ef9-87c1-9a243de709a2",
+      "category": "trivia",
+      "navigationKeyword1": "brands",
+      "navigationKeyword2": "mascots",
+      "question": "McDonald\u2019s Happy Meal packaging is aimed primarily at which customer group?",
+      "correctAnswer": "children",
+      "incorrectAnswers": [
+        "senior citizens only",
+        "wholesale distributors",
+        "airline crews"
+      ],
+      "explanation": "McDonald\u2019s child-oriented menu packaging like Happy Meals.",
+      "keywords": [
+        "fast-food",
+        "mcdonalds"
+      ],
+      "source": "https://www.britannica.com/money/McDonalds-Corporation"
+    },
+    {
+      "seedId": "09e4c9d2-c2a2-5f08-98d0-cb3654f5d6bc",
+      "category": "trivia",
+      "navigationKeyword1": "brands",
+      "navigationKeyword2": "mascots",
+      "question": "Michelin\u2019s Bibendum figure to early advertising for which product category?",
+      "correctAnswer": "tires",
+      "incorrectAnswers": [
+        "airplanes",
+        "watches",
+        "cameras"
+      ],
+      "explanation": "Bibendum is connected to Michelin tire advertising history.",
+      "keywords": [
+        "automotive",
+        "michelin"
+      ],
+      "source": "https://www.britannica.com/money/Michelin"
+    },
+    {
+      "seedId": "2dfda89d-7ec9-5a64-a5b5-b35eb090e886",
+      "category": "trivia",
+      "navigationKeyword1": "brands",
+      "navigationKeyword2": "mascots",
+      "question": "Mickey Mouse is what kind of character?",
+      "correctAnswer": "animated cartoon character",
+      "incorrectAnswers": [
+        "live-action puppet",
+        "comic-strip only",
+        "video-game sprite only"
+      ],
+      "explanation": "Mickey Mouse is an animated cartoon character.",
+      "keywords": [
+        "disney",
+        "characters"
+      ],
+      "source": "https://www.britannica.com/topic/Mickey-Mouse-cartoon-character"
+    },
+    {
+      "seedId": "d24f48de-a15b-56df-b6d7-5c58c7478de4",
+      "category": "trivia",
+      "navigationKeyword1": "brands",
+      "navigationKeyword2": "mascots",
+      "question": "Ronald McDonald was introduced in which decade?",
+      "correctAnswer": "1960s",
+      "incorrectAnswers": [
+        "1940s",
+        "1980s",
+        "2000s"
+      ],
+      "explanation": "Ronald McDonald was introduced in the 1960s.",
+      "keywords": [
+        "mascots",
+        "mcdonalds"
+      ],
+      "source": "https://www.britannica.com/money/McDonalds-Corporation"
+    },
+    {
+      "seedId": "ab4f6a00-0c24-5e3b-94ac-2f4830cd5fa3",
+      "category": "trivia",
+      "navigationKeyword1": "brands",
+      "navigationKeyword2": "mascots",
+      "question": "Tony the Tiger as an advertising figure tied to which company\u2019s cereals?",
+      "correctAnswer": "Kellogg Company",
+      "incorrectAnswers": [
+        "General Mills",
+        "Post",
+        "Quaker"
+      ],
+      "explanation": "Tony the Tiger is connected to Kellogg\u2019s Frosted Flakes advertising.",
+      "keywords": [
+        "cereal",
+        "kellogg"
+      ],
+      "source": "https://www.britannica.com/money/Kellogg-Company"
+    },
+    {
+      "seedId": "936f96cc-7cc2-56c7-b4a2-32c41c09af1d",
+      "category": "trivia",
+      "navigationKeyword1": "brands",
+      "navigationKeyword2": "products",
+      "question": "Adobe\u2019s creative software lineup is closely associated with which image-editing product name?",
+      "correctAnswer": "Photoshop",
+      "incorrectAnswers": [
+        "Excel",
+        "AutoCAD",
+        "Final Cut"
+      ],
+      "explanation": "Adobe is widely identified with Photoshop in creative workflows.",
+      "keywords": [
+        "software",
+        "adobe"
+      ],
+      "source": "https://www.britannica.com/money/Adobe-Inc"
+    },
+    {
+      "seedId": "8084c708-fca9-5279-98c7-a35fdb973fce",
+      "category": "trivia",
+      "navigationKeyword1": "brands",
+      "navigationKeyword2": "products",
+      "question": "Apple\u2019s 1976 debut computer product name was what?",
+      "correctAnswer": "Apple I",
+      "incorrectAnswers": [
+        "Macintosh",
+        "Lisa",
+        "iMac"
+      ],
+      "explanation": "The Apple I was Apple's first product unveiled in 1976.",
+      "keywords": [
+        "hardware",
+        "apple"
+      ],
+      "source": "https://www.britannica.com/money/Apple-Inc"
+    },
+    {
+      "seedId": "6104b937-c8e3-51b3-8ae0-8489db561873",
+      "category": "trivia",
+      "navigationKeyword1": "brands",
+      "navigationKeyword2": "products",
+      "question": "Coca\u2011Cola history lists TaB as the company\u2019s first what kind of drink in 1963?",
+      "correctAnswer": "diet drink",
+      "incorrectAnswers": [
+        "energy drink",
+        "juice drink",
+        "sparkling water"
+      ],
+      "explanation": "Coca\u2011Cola\u2019s timeline calls TaB the first diet drink from the company.",
+      "keywords": [
+        "beverages",
+        "coca-cola"
+      ],
+      "source": "https://www.coca-colacompany.com/about-us/history"
+    },
+    {
+      "seedId": "804b6526-85e5-5a8b-8dde-0c8d19ca807f",
+      "category": "trivia",
+      "navigationKeyword1": "brands",
+      "navigationKeyword2": "products",
+      "question": "Coca\u2011Cola history places introduction of the contour bottle design patent era in which year?",
+      "correctAnswer": "1915",
+      "incorrectAnswers": [
+        "1925",
+        "1900",
+        "1890"
+      ],
+      "explanation": "The contour bottle design effort dates to 1915.",
+      "keywords": [
+        "packaging",
+        "coca-cola"
+      ],
+      "source": "https://www.coca-colacompany.com/about-us/history"
+    },
+    {
+      "seedId": "f04a66cd-451d-5de7-998a-b6843f949662",
+      "category": "trivia",
+      "navigationKeyword1": "brands",
+      "navigationKeyword2": "products",
+      "question": "McDonald\u2019s is best known globally for which food format?",
+      "correctAnswer": "hamburgers and fast food",
+      "incorrectAnswers": [
+        "sushi",
+        "pizza only",
+        "steakhouses only"
+      ],
+      "explanation": "McDonald\u2019s is a hamburger fast-food chain.",
+      "keywords": [
+        "fast-food",
+        "mcdonalds"
+      ],
+      "source": "https://www.britannica.com/money/McDonalds-Corporation"
+    },
+    {
+      "seedId": "c69f5ecc-3e17-51d2-96d8-6fec173d003a",
+      "category": "trivia",
+      "navigationKeyword1": "brands",
+      "navigationKeyword2": "products",
+      "question": "Microsoft 365 includes Word, Excel, PowerPoint, and which email client?",
+      "correctAnswer": "Outlook",
+      "incorrectAnswers": [
+        "Thunderbird",
+        "Lotus Notes",
+        "Slack"
+      ],
+      "explanation": "Outlook is the email client included with Microsoft 365.",
+      "keywords": [
+        "software",
+        "microsoft"
+      ],
+      "source": "https://www.britannica.com/money/Microsoft-Corporation"
+    },
+    {
+      "seedId": "98c08def-1294-514e-9164-983515ad0201",
+      "category": "trivia",
+      "navigationKeyword1": "brands",
+      "navigationKeyword2": "products",
+      "question": "Nike is best known for what product category?",
+      "correctAnswer": "athletic footwear and apparel",
+      "incorrectAnswers": [
+        "home appliances",
+        "passenger aircraft",
+        "luxury watches"
+      ],
+      "explanation": "Nike is best known for athletic footwear and apparel.",
+      "keywords": [
+        "apparel",
+        "nike"
+      ],
+      "source": "https://www.britannica.com/money/Nike-Inc"
+    },
+    {
+      "seedId": "50eafa3e-3f78-5626-8666-6d367df45786",
+      "category": "trivia",
+      "navigationKeyword1": "brands",
+      "navigationKeyword2": "products",
+      "question": "Samsung is known for memory chips and what display product category?",
+      "correctAnswer": "televisions",
+      "incorrectAnswers": [
+        "railcars",
+        "aircraft",
+        "furniture"
+      ],
+      "explanation": "Televisions are one of Samsungs major electronics categories.",
+      "keywords": [
+        "electronics",
+        "samsung"
+      ],
+      "source": "https://www.britannica.com/money/Samsung-Electronics"
+    },
+    {
+      "seedId": "699fa5ff-27e3-5b3b-b390-9abf6f63a2ce",
+      "category": "trivia",
+      "navigationKeyword1": "brands",
+      "navigationKeyword2": "products",
+      "question": "What is Microsofts flagship cloud platform called?",
+      "correctAnswer": "Azure",
+      "incorrectAnswers": [
+        "AWS",
+        "GCP",
+        "Oracle Cloud"
+      ],
+      "explanation": "Microsofts flagship cloud platform is Azure.",
+      "keywords": [
+        "cloud",
+        "microsoft"
+      ],
+      "source": "https://www.britannica.com/money/Microsoft-Corporation"
+    },
+    {
+      "seedId": "e7100c3c-c51a-5a38-b812-f8ece91a126b",
+      "category": "trivia",
+      "navigationKeyword1": "brands",
+      "navigationKeyword2": "products",
+      "question": "What product line did IBM launch in 1981 as its first major personal computer?",
+      "correctAnswer": "IBM Personal Computer",
+      "incorrectAnswers": [
+        "System/360",
+        "AS/400",
+        "ThinkPad"
+      ],
+      "explanation": "IBM launched the IBM Personal Computer in 1981.",
+      "keywords": [
+        "hardware",
+        "ibm"
+      ],
+      "source": "https://www.britannica.com/money/International-Business-Machines-Corporation"
+    },
+    {
+      "seedId": "81063963-58d0-5442-9740-671f09510501",
+      "category": "trivia",
+      "navigationKeyword1": "brands",
+      "navigationKeyword2": "slogans",
+      "question": "Amazon\u2019s name evokes scale like which South American river?",
+      "correctAnswer": "Amazon River",
+      "incorrectAnswers": [
+        "Nile",
+        "Mississippi",
+        "Yangtze"
+      ],
+      "explanation": "Amazon's name references the Amazon River's scale.",
+      "keywords": [
+        "naming",
+        "amazon"
+      ],
+      "source": "https://www.britannica.com/money/Amazoncom"
+    },
+    {
+      "seedId": "cf630df0-36ed-56f1-ba6a-c6398462cc5b",
+      "category": "trivia",
+      "navigationKeyword1": "brands",
+      "navigationKeyword2": "slogans",
+      "question": "Coca\u2011Cola history highlights which 1971 campaign as an enduring global ad milestone?",
+      "correctAnswer": "I\u2019d Like to Buy the World a Coke",
+      "incorrectAnswers": [
+        "1984 Super Bowl only",
+        "1993 polar bears only",
+        "2009 Freestyle launch only"
+      ],
+      "explanation": "Coca\u2011Cola\u2019s history section highlights the 1971 Hilltop campaign.",
+      "keywords": [
+        "advertising",
+        "coca-cola"
+      ],
+      "source": "https://www.coca-colacompany.com/about-us/history"
+    },
+    {
+      "seedId": "217d545b-7e05-57f7-99d4-d97c02f374c8",
+      "category": "trivia",
+      "navigationKeyword1": "brands",
+      "navigationKeyword2": "slogans",
+      "question": "Coca\u2011Cola history notes the company appeared on the cover of Time in which year?",
+      "correctAnswer": "1950",
+      "incorrectAnswers": [
+        "1945",
+        "1960",
+        "1985"
+      ],
+      "explanation": "Coca\u2011Cola was on Time\u2019s cover in 1950.",
+      "keywords": [
+        "media",
+        "coca-cola"
+      ],
+      "source": "https://www.coca-colacompany.com/about-us/history"
+    },
+    {
+      "seedId": "b0b6831b-61a1-5493-ac3d-d28c342bc9df",
+      "category": "trivia",
+      "navigationKeyword1": "brands",
+      "navigationKeyword2": "slogans",
+      "question": "Coca\u2011Cola history notes the company first became an official FIFA World Cup sponsor in which year?",
+      "correctAnswer": "1978",
+      "incorrectAnswers": [
+        "1950",
+        "1994",
+        "2010"
+      ],
+      "explanation": "1978 as first FIFA World Cup sponsorship.",
+      "keywords": [
+        "sports-marketing",
+        "coca-cola"
+      ],
+      "source": "https://www.coca-colacompany.com/about-us/history"
+    },
+    {
+      "seedId": "81e73c77-8670-59a5-92b4-e37a84246990",
+      "category": "trivia",
+      "navigationKeyword1": "brands",
+      "navigationKeyword2": "slogans",
+      "question": "Coca\u2011Cola history places first national magazine advertising in which year?",
+      "correctAnswer": "1904",
+      "incorrectAnswers": [
+        "1886",
+        "1923",
+        "1971"
+      ],
+      "explanation": "Coca-Cola placed its first national magazine ads in 1904.",
+      "keywords": [
+        "advertising",
+        "coca-cola"
+      ],
+      "source": "https://www.coca-colacompany.com/about-us/history"
+    },
+    {
+      "seedId": "184abcdd-6887-5b18-acf3-8981b7d4b527",
+      "category": "trivia",
+      "navigationKeyword1": "brands",
+      "navigationKeyword2": "slogans",
+      "question": "Coca\u2011Cola history records \u201cCoke\u201d became a registered trademark in which year?",
+      "correctAnswer": "1945",
+      "incorrectAnswers": [
+        "1931",
+        "1955",
+        "1969"
+      ],
+      "explanation": "Coke was registered as a trademark in 1945.",
+      "keywords": [
+        "trademarks",
+        "coca-cola"
+      ],
+      "source": "https://www.coca-colacompany.com/about-us/history"
+    },
+    {
+      "seedId": "4d7b8e22-4f25-50aa-8dd7-cee9e59d0cbf",
+      "category": "trivia",
+      "navigationKeyword1": "brands",
+      "navigationKeyword2": "slogans",
+      "question": "Coca\u2011Cola history ties long Olympic Games marketing association to kiosks at which city\u2019s 1928 Games?",
+      "correctAnswer": "Amsterdam",
+      "incorrectAnswers": [
+        "Paris",
+        "Los Angeles",
+        "Berlin"
+      ],
+      "explanation": "Olympic kiosk presence starting in Amsterdam 1928.",
+      "keywords": [
+        "olympics",
+        "coca-cola"
+      ],
+      "source": "https://www.coca-colacompany.com/about-us/history"
+    },
+    {
+      "seedId": "b1b5618a-a8b3-51be-8aba-f8549acf80f0",
+      "category": "trivia",
+      "navigationKeyword1": "brands",
+      "navigationKeyword2": "slogans",
+      "question": "McDonald\u2019s global branding to quick service and what memorable English jingle phrase?",
+      "correctAnswer": "I\u2019m Lovin\u2019 It",
+      "incorrectAnswers": [
+        "Finger Lickin\u2019 Good",
+        "Eat Mor Chikin",
+        "Have It Your Way"
+      ],
+      "explanation": "McDonald\u2019s I\u2019m Lovin\u2019 It marketing.",
+      "keywords": [
+        "taglines",
+        "mcdonalds"
+      ],
+      "source": "https://www.britannica.com/money/McDonalds-Corporation"
+    },
+    {
+      "seedId": "7e6171f6-c2c0-55d5-b84d-80aea53104fc",
+      "category": "trivia",
+      "navigationKeyword1": "brands",
+      "navigationKeyword2": "slogans",
+      "question": "Nike spent heavily on athlete endorsements and ads featuring which three-word line?",
+      "correctAnswer": "Just Do It",
+      "incorrectAnswers": [
+        "Think Small",
+        "We Try Harder",
+        "Got Milk"
+      ],
+      "explanation": "Nike\u2019s Just Do It campaign history.",
+      "keywords": [
+        "taglines",
+        "nike"
+      ],
+      "source": "https://www.britannica.com/money/Nike-Inc"
+    },
+    {
+      "seedId": "442f1265-da7b-5faa-a366-1193947aa565",
+      "category": "trivia",
+      "navigationKeyword1": "brands",
+      "navigationKeyword2": "slogans",
+      "question": "Which two-word imperative slogan is most closely associated with Apple\u2019s late-1990s brand reboot ads?",
+      "correctAnswer": "Think Different",
+      "incorrectAnswers": [
+        "Just Do It",
+        "Expect More",
+        "Be More"
+      ],
+      "explanation": "Apple\u2019s comeback ads is tied to Think Different.",
+      "keywords": [
+        "advertising",
+        "apple"
+      ],
+      "source": "https://www.britannica.com/money/Apple-Inc"
+    }
+  ]
+}

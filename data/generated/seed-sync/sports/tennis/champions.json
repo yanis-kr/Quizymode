@@ -1,0 +1,207 @@
+{
+  "schemaVersion": 1,
+  "seedSet": "core-public-items",
+  "deltaPreviewLimit": 200,
+  "items": [
+    {
+      "seedId": "b0e4d418-e828-5ad4-a1fa-d3b47e2c154c",
+      "category": "sports",
+      "navigationKeyword1": "tennis",
+      "navigationKeyword2": "champions",
+      "question": "Which woman won the 1988 Wimbledon singles title as part of her Golden Slam season?",
+      "correctAnswer": "Steffi Graf",
+      "incorrectAnswers": [
+        "Martina Navratilova",
+        "Chris Evert",
+        "Monica Seles"
+      ],
+      "explanation": "Graf won Wimbledon in the same season she completed the Golden Slam.",
+      "keywords": [
+        "tennis",
+        "champions",
+        "steffi-graf"
+      ],
+      "source": "https://www.wimbledon.com/en_GB/history/champions.html"
+    },
+    {
+      "seedId": "b60860bf-66cb-5762-94c3-2e6b9fb6ab92",
+      "category": "sports",
+      "navigationKeyword1": "tennis",
+      "navigationKeyword2": "champions",
+      "question": "Who won the 1999 US Open women's singles title at age 17?",
+      "correctAnswer": "Serena Williams",
+      "incorrectAnswers": [
+        "Martina Hingis",
+        "Venus Williams",
+        "Monica Seles"
+      ],
+      "explanation": "Serena won her first major singles title at the 1999 US Open.",
+      "keywords": [
+        "tennis",
+        "champions",
+        "serena-williams"
+      ],
+      "source": "https://www.usopen.org/en_US/visit/history/champions.html"
+    },
+    {
+      "seedId": "f118880d-f0af-558b-bd13-71a9a69449c3",
+      "category": "sports",
+      "navigationKeyword1": "tennis",
+      "navigationKeyword2": "champions",
+      "question": "Who won the 2008 Wimbledon men's singles title in the famous final against Roger Federer?",
+      "correctAnswer": "Rafael Nadal",
+      "incorrectAnswers": [
+        "Novak Djokovic",
+        "Andy Murray",
+        "Pete Sampras"
+      ],
+      "explanation": "Nadal won the 2008 Wimbledon final in one of tennis's most famous matches.",
+      "keywords": [
+        "tennis",
+        "champions",
+        "classic-finals"
+      ],
+      "source": "https://www.wimbledon.com/en_GB/history/champions.html"
+    },
+    {
+      "seedId": "8d82bfe2-fcfb-5445-8359-3acc612a2fde",
+      "category": "sports",
+      "navigationKeyword1": "tennis",
+      "navigationKeyword2": "champions",
+      "question": "Who won the 2015 US Open women's singles title?",
+      "correctAnswer": "Flavia Pennetta",
+      "incorrectAnswers": [
+        "Roberta Vinci",
+        "Serena Williams",
+        "Simona Halep"
+      ],
+      "explanation": "Pennetta beat Vinci in the 2015 US Open final.",
+      "keywords": [
+        "tennis",
+        "champions",
+        "women"
+      ],
+      "source": "https://www.usopen.org/en_US/visit/history/champions.html"
+    },
+    {
+      "seedId": "f1cb679b-fc71-56cb-9496-6856c2bbef4d",
+      "category": "sports",
+      "navigationKeyword1": "tennis",
+      "navigationKeyword2": "champions",
+      "question": "Who won the 2016 French Open men's singles title to complete a career Grand Slam?",
+      "correctAnswer": "Novak Djokovic",
+      "incorrectAnswers": [
+        "Andy Murray",
+        "Rafael Nadal",
+        "Stan Wawrinka"
+      ],
+      "explanation": "Djokovic won Roland Garros in 2016 to complete his career Grand Slam.",
+      "keywords": [
+        "tennis",
+        "champions",
+        "novak-djokovic"
+      ],
+      "source": "https://www.rolandgarros.com/en-us/palmares"
+    },
+    {
+      "seedId": "012d3ab5-5607-5f26-bdf3-1b4329a6f6ff",
+      "category": "sports",
+      "navigationKeyword1": "tennis",
+      "navigationKeyword2": "champions",
+      "question": "Who won the 2017 Australian Open men's singles final over Rafael Nadal?",
+      "correctAnswer": "Roger Federer",
+      "incorrectAnswers": [
+        "Novak Djokovic",
+        "Andy Murray",
+        "Stan Wawrinka"
+      ],
+      "explanation": "Federer returned from injury to win the 2017 Australian Open.",
+      "keywords": [
+        "tennis",
+        "champions",
+        "roger-federer"
+      ],
+      "source": "https://ausopen.com/history/honour-roll"
+    },
+    {
+      "seedId": "5965488b-9340-52a3-b03b-95d1e6be4096",
+      "category": "sports",
+      "navigationKeyword1": "tennis",
+      "navigationKeyword2": "champions",
+      "question": "Who won the 2022 Australian Open men's singles title after defeating Daniil Medvedev?",
+      "correctAnswer": "Rafael Nadal",
+      "incorrectAnswers": [
+        "Novak Djokovic",
+        "Carlos Alcaraz",
+        "Roger Federer"
+      ],
+      "explanation": "Nadal came back from two sets down to win the 2022 title.",
+      "keywords": [
+        "tennis",
+        "champions",
+        "australian-open"
+      ],
+      "source": "https://ausopen.com/history/honour-roll"
+    },
+    {
+      "seedId": "0c237aa8-830f-58f6-b0f0-749a8c419a94",
+      "category": "sports",
+      "navigationKeyword1": "tennis",
+      "navigationKeyword2": "champions",
+      "question": "Who won the 2023 US Open women's singles title?",
+      "correctAnswer": "Coco Gauff",
+      "incorrectAnswers": [
+        "Aryna Sabalenka",
+        "Iga Swiatek",
+        "Jessica Pegula"
+      ],
+      "explanation": "Gauff won her first major singles title at the 2023 US Open.",
+      "keywords": [
+        "tennis",
+        "champions",
+        "us-open"
+      ],
+      "source": "https://www.usopen.org/en_US/visit/history/champions.html"
+    },
+    {
+      "seedId": "72878ae9-55a2-5709-83da-7b9f047afaac",
+      "category": "sports",
+      "navigationKeyword1": "tennis",
+      "navigationKeyword2": "champions",
+      "question": "Who won the 2023 Wimbledon men's singles title?",
+      "correctAnswer": "Carlos Alcaraz",
+      "incorrectAnswers": [
+        "Novak Djokovic",
+        "Daniil Medvedev",
+        "Jannik Sinner"
+      ],
+      "explanation": "Alcaraz beat Djokovic in the 2023 Wimbledon final.",
+      "keywords": [
+        "tennis",
+        "champions",
+        "wimbledon"
+      ],
+      "source": "https://www.wimbledon.com/en_GB/history/champions.html"
+    },
+    {
+      "seedId": "7a8cf068-f2ad-51b5-b6e4-af6aee5d4042",
+      "category": "sports",
+      "navigationKeyword1": "tennis",
+      "navigationKeyword2": "champions",
+      "question": "Who won the 2024 French Open men's singles title?",
+      "correctAnswer": "Carlos Alcaraz",
+      "incorrectAnswers": [
+        "Alexander Zverev",
+        "Novak Djokovic",
+        "Casper Ruud"
+      ],
+      "explanation": "Alcaraz won his first Roland Garros singles crown in 2024.",
+      "keywords": [
+        "tennis",
+        "champions",
+        "roland-garros"
+      ],
+      "source": "https://www.rolandgarros.com/en-us/palmares"
+    }
+  ]
+}

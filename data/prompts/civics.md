@@ -13,7 +13,7 @@ Task:
 
 Create or continue seed files for the `civics` category in:
 
-- `data/bulk-seed/civics`
+- `data/seed-source/items/civics`
 
 Filename format:
 

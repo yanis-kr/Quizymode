@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""Emit remaining trivia bulk-seed JSON files (44 pairs) with source-backed items."""
+"""Emit remaining trivia seed-source JSON files (44 pairs) with source-backed items."""
 from __future__ import annotations
 
 import json
@@ -8,7 +8,7 @@ from pathlib import Path
 from seed_progress_paths import category_progress_file, ensure_category_progress_dir
 
 ROOT = Path(__file__).resolve().parents[1]
-OUT = ROOT / "data" / "bulk-seed" / "trivia"
+OUT = ROOT / "data" / "seed-source" / "items" / "trivia"
 PROGRESS = category_progress_file("trivia", "_progress.md")
 
 

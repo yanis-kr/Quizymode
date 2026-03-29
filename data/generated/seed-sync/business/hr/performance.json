@@ -1,0 +1,121 @@
+{
+  "schemaVersion": 1,
+  "seedSet": "core-public-items",
+  "deltaPreviewLimit": 200,
+  "items": [
+    {
+      "seedId": "efd2facf-fed7-4efc-b227-7dedf373ae64",
+      "category": "business",
+      "navigationKeyword1": "hr",
+      "navigationKeyword2": "performance",
+      "question": "What does SMART commonly stand for in goal setting?",
+      "correctAnswer": "Specific, Measurable, Achievable, Relevant, Time-bound (variants exist).",
+      "incorrectAnswers": [
+        "Silent, Mysterious, Arbitrary, Random, Tired.",
+        "Single, Many, All, Right, True.",
+        "Sales, Marketing, Accounting, Risk, Tax."
+      ],
+      "explanation": "SMART clarifies expectations.",
+      "keywords": [
+        "smart-goals",
+        "performance"
+      ],
+      "source": "https://www.mindtools.com/a4hw00d/smart-goals"
+    },
+    {
+      "seedId": "cbbbf223-0169-4974-bee9-7dc2afe7b7fb",
+      "category": "business",
+      "navigationKeyword1": "hr",
+      "navigationKeyword2": "performance",
+      "question": "What is 360-degree feedback?",
+      "correctAnswer": "Input from peers, managers, direct reports, and sometimes customers about behaviors and impact.",
+      "incorrectAnswers": [
+        "Only self-rating.",
+        "Only annual stock price.",
+        "Only customer NPS."
+      ],
+      "explanation": "360s broaden perspective but need psychological safety.",
+      "keywords": [
+        "360-feedback",
+        "performance"
+      ],
+      "source": "https://www.shrm.org/resourcesandtools/hr-topics/performance-management/pages/360-degree-feedback.aspx"
+    },
+    {
+      "seedId": "549c0ec1-fb7c-4304-adc3-0a6ab87f252e",
+      "category": "business",
+      "navigationKeyword1": "hr",
+      "navigationKeyword2": "performance",
+      "question": "What is a performance improvement plan (PIP) typically intended to do?",
+      "correctAnswer": "Clarify gaps, expectations, support, and timeline to help an employee succeed\u2014or document fair decisions.",
+      "incorrectAnswers": [
+        "Guarantee termination on day one.",
+        "Replace all coaching.",
+        "Remove goals entirely."
+      ],
+      "explanation": "PIPs should be fair, specific, and documented.",
+      "keywords": [
+        "pip",
+        "performance"
+      ],
+      "source": "https://www.shrm.org/resourcesandtools/hr-topics/performance-management/pages/performance-improvement-plans.aspx"
+    },
+    {
+      "seedId": "6e933e9d-3522-40cc-a93f-9b393b53437d",
+      "category": "business",
+      "navigationKeyword1": "hr",
+      "navigationKeyword2": "performance",
+      "question": "What is continuous performance management?",
+      "correctAnswer": "Ongoing check-ins and feedback instead of only an annual review.",
+      "incorrectAnswers": [
+        "No feedback ever.",
+        "Only annual surprises.",
+        "Only customer surveys."
+      ],
+      "explanation": "Frequency improves coaching and agility.",
+      "keywords": [
+        "continuous-feedback",
+        "performance"
+      ],
+      "source": "https://www.shrm.org/resourcesandtools/hr-topics/performance-management/pages/continuous-performance-management.aspx"
+    },
+    {
+      "seedId": "356e3260-fca8-462c-a44e-b9bf53ac9f30",
+      "category": "business",
+      "navigationKeyword1": "hr",
+      "navigationKeyword2": "performance",
+      "question": "Why can forced ranking be controversial?",
+      "correctAnswer": "It can harm collaboration, diversity, and morale if quotas distort true performance differences.",
+      "incorrectAnswers": [
+        "It is universally loved with no downsides.",
+        "It removes all subjectivity perfectly.",
+        "It is required in every country."
+      ],
+      "explanation": "Many firms moved to continuous feedback models.",
+      "keywords": [
+        "forced-ranking",
+        "performance"
+      ],
+      "source": "https://hbr.org/2012/10/stop-demotivating-your-employees"
+    },
+    {
+      "seedId": "45eca37f-1924-4e5d-b053-dd2a1fdcafb6",
+      "category": "business",
+      "navigationKeyword1": "hr",
+      "navigationKeyword2": "performance",
+      "question": "Why do companies run rating calibration sessions?",
+      "correctAnswer": "Reduce inconsistency so similar performance gets similar ratings across managers.",
+      "incorrectAnswers": [
+        "Increase random ratings.",
+        "Hide criteria from leaders.",
+        "Eliminate managers."
+      ],
+      "explanation": "Calibration improves fairness perceptions.",
+      "keywords": [
+        "calibration",
+        "performance"
+      ],
+      "source": "https://www.shrm.org/resourcesandtools/hr-topics/performance-management/pages/performance-calibration.aspx"
+    }
+  ]
+}

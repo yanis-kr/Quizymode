@@ -1,0 +1,121 @@
+{
+  "schemaVersion": 1,
+  "seedSet": "core-public-items",
+  "deltaPreviewLimit": 200,
+  "items": [
+    {
+      "seedId": "566ec4c1-8540-5948-882d-7fb384f437aa",
+      "category": "tech",
+      "navigationKeyword1": "data",
+      "navigationKeyword2": "etl",
+      "question": "How does ELT differ from classic ETL?",
+      "correctAnswer": "Loads raw or lightly processed data first and transforms inside the target platform",
+      "incorrectAnswers": [
+        "It never touches a database",
+        "It forbids SQL",
+        "It only works on CSV"
+      ],
+      "explanation": "Warehouse engines handle heavy transforms after load, using their compute and SQL.",
+      "keywords": [
+        "etl",
+        "elt"
+      ],
+      "source": "https://www.snowflake.com/guides/what-etl/"
+    },
+    {
+      "seedId": "7e33b238-2b12-5b9e-b70e-82bc549e9cc2",
+      "category": "tech",
+      "navigationKeyword1": "data",
+      "navigationKeyword2": "etl",
+      "question": "What do the letters ETL stand for?",
+      "correctAnswer": "Extract, transform, load",
+      "incorrectAnswers": [
+        "Encode, transmit, log",
+        "Encrypt, tokenize, lock",
+        "Estimate, test, label"
+      ],
+      "explanation": "Data is pulled from sources, reshaped to rules, then written to a target such as a warehouse.",
+      "keywords": [
+        "etl",
+        "basics"
+      ],
+      "source": "https://en.wikipedia.org/wiki/Extract,_transform,_load"
+    },
+    {
+      "seedId": "221f15b5-7920-57df-87d0-547ed6d02311",
+      "category": "tech",
+      "navigationKeyword1": "data",
+      "navigationKeyword2": "etl",
+      "question": "What is a staging area in ETL pipelines?",
+      "correctAnswer": "An intermediate landing zone before data is cleaned and integrated",
+      "incorrectAnswers": [
+        "The final presentation database only",
+        "A backup tape",
+        "A mobile app cache"
+      ],
+      "explanation": "Staging lets you validate, deduplicate, and join without risking production targets.",
+      "keywords": [
+        "etl",
+        "staging"
+      ],
+      "source": "https://docs.aws.amazon.com/prescriptive-guidance/latest/large-migration-databases/staging-area.html"
+    },
+    {
+      "seedId": "b6c4cfb3-873d-5e9d-abde-aa6b6b16970b",
+      "category": "tech",
+      "navigationKeyword1": "data",
+      "navigationKeyword2": "etl",
+      "question": "What is data profiling in ETL design?",
+      "correctAnswer": "Analyzing source columns for types, nulls, ranges, and patterns before mapping",
+      "incorrectAnswers": [
+        "Printing marketing brochures",
+        "Profiling CPU fans",
+        "Encrypting backups only"
+      ],
+      "explanation": "Profiling surfaces surprises early so transforms and tests match reality.",
+      "keywords": [
+        "etl",
+        "quality"
+      ],
+      "source": "https://en.wikipedia.org/wiki/Data_profiling"
+    },
+    {
+      "seedId": "f6f70180-7b38-54d5-baf2-484e57c9a386",
+      "category": "tech",
+      "navigationKeyword1": "data",
+      "navigationKeyword2": "etl",
+      "question": "What is incremental loading?",
+      "correctAnswer": "Bringing only new or changed rows instead of full reloads each run",
+      "incorrectAnswers": [
+        "Deleting the warehouse nightly",
+        "Loading random samples",
+        "Disabling indexes forever"
+      ],
+      "explanation": "Watermarks or change tables keep runs faster and cheaper.",
+      "keywords": [
+        "etl",
+        "incremental"
+      ],
+      "source": "https://docs.getdbt.com/docs/build/incremental-models"
+    },
+    {
+      "seedId": "dd825c72-fad3-5da6-a50c-402845b0ef77",
+      "category": "tech",
+      "navigationKeyword1": "data",
+      "navigationKeyword2": "etl",
+      "question": "Why are idempotent ETL jobs preferred?",
+      "correctAnswer": "Re-running the job after a failure yields the same final state",
+      "incorrectAnswers": [
+        "They never log errors",
+        "They skip validation",
+        "They require manual SQL only"
+      ],
+      "explanation": "Retries are normal in distributed systems; idempotence prevents duplicate rows or partial corruption.",
+      "keywords": [
+        "etl",
+        "reliability"
+      ],
+      "source": "https://en.wikipedia.org/wiki/Idempotence"
+    }
+  ]
+}

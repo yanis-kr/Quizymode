@@ -1,0 +1,197 @@
+{
+  "schemaVersion": 1,
+  "seedSet": "core-public-items",
+  "deltaPreviewLimit": 200,
+  "items": [
+    {
+      "seedId": "ab2b9c62-b7ae-5ee1-81f1-8e703ff8d89f",
+      "category": "trivia",
+      "navigationKeyword1": "brands",
+      "navigationKeyword2": "logos",
+      "question": "Amazons name references which major South American river?",
+      "correctAnswer": "Amazon River",
+      "incorrectAnswers": [
+        "Nile",
+        "Mississippi",
+        "Danube"
+      ],
+      "explanation": "Amazons name references the Amazon River.",
+      "keywords": [
+        "naming",
+        "amazon"
+      ],
+      "source": "https://www.britannica.com/money/Amazoncom"
+    },
+    {
+      "seedId": "14cdd1b5-c3c5-5cce-b1c6-b92b60fae51d",
+      "category": "trivia",
+      "navigationKeyword1": "brands",
+      "navigationKeyword2": "logos",
+      "question": "Apple Inc.\u2019s brand mark is commonly known as what fruit silhouette?",
+      "correctAnswer": "Apple",
+      "incorrectAnswers": [
+        "Pear",
+        "Orange",
+        "Grape"
+      ],
+      "explanation": "Apple\u2019s consumer branding centers on an apple mark.",
+      "keywords": [
+        "branding",
+        "apple"
+      ],
+      "source": "https://www.britannica.com/money/Apple-Inc"
+    },
+    {
+      "seedId": "0686f4b7-6955-5724-a297-55f6455c2717",
+      "category": "trivia",
+      "navigationKeyword1": "brands",
+      "navigationKeyword2": "logos",
+      "question": "Coca\u2011Cola history notes Spencerian script logo was penned by which company role?",
+      "correctAnswer": "The Coca\u2011Cola Company accountant",
+      "incorrectAnswers": [
+        "A bottling partner",
+        "A newspaper editor",
+        "A chemist"
+      ],
+      "explanation": "Coca\u2011Cola\u2019s history states an accountant created the Spencerian script logo.",
+      "keywords": [
+        "logo",
+        "coca-cola"
+      ],
+      "source": "https://www.coca-colacompany.com/about-us/history"
+    },
+    {
+      "seedId": "91f6a9fe-7e45-56dc-9ac5-d063a766338a",
+      "category": "trivia",
+      "navigationKeyword1": "brands",
+      "navigationKeyword2": "logos",
+      "question": "Google\u2019s name is a play on which mathematical term?",
+      "correctAnswer": "googol",
+      "incorrectAnswers": [
+        "matrix",
+        "vector",
+        "tensor"
+      ],
+      "explanation": "Popular references tied to the company note the googol spelling inspiration.",
+      "keywords": [
+        "naming",
+        "tech"
+      ],
+      "source": "https://www.britannica.com/money/Google"
+    },
+    {
+      "seedId": "2de8b5e8-b88b-52c8-901e-99eecfdce23a",
+      "category": "trivia",
+      "navigationKeyword1": "brands",
+      "navigationKeyword2": "logos",
+      "question": "IBM\u2019s logo tradition is strongly associated with three letters standing for what full name?",
+      "correctAnswer": "International Business Machines",
+      "incorrectAnswers": [
+        "Integrated Business Machines",
+        "International Binary Machines",
+        "Intercontinental Business Machines"
+      ],
+      "explanation": "IBM stands for International Business Machines.",
+      "keywords": [
+        "abbreviation",
+        "ibm"
+      ],
+      "source": "https://www.britannica.com/money/International-Business-Machines-Corporation"
+    },
+    {
+      "seedId": "0403966a-4c35-5a31-a5a7-50ac8a478760",
+      "category": "trivia",
+      "navigationKeyword1": "brands",
+      "navigationKeyword2": "logos",
+      "question": "McDonald\u2019s branding is closely tied to golden what?",
+      "correctAnswer": "arches",
+      "incorrectAnswers": [
+        "stars",
+        "stripes",
+        "bells"
+      ],
+      "explanation": "McDonald\u2019s restaurant branding including its arches.",
+      "keywords": [
+        "branding",
+        "mcdonalds"
+      ],
+      "source": "https://www.britannica.com/money/McDonalds-Corporation"
+    },
+    {
+      "seedId": "b5db6e12-5891-5419-aa33-39283ffa0535",
+      "category": "trivia",
+      "navigationKeyword1": "brands",
+      "navigationKeyword2": "logos",
+      "question": "Microsoft\u2019s corporate identity is centered on its name referencing microcomputers and what?",
+      "correctAnswer": "software",
+      "incorrectAnswers": [
+        "hardware",
+        "chips",
+        "clouds"
+      ],
+      "explanation": "Microsoft combines microcomputer and software.",
+      "keywords": [
+        "naming",
+        "microsoft"
+      ],
+      "source": "https://www.britannica.com/money/Microsoft-Corporation"
+    },
+    {
+      "seedId": "a2d7893a-f227-5a50-b528-b8fdf7e42711",
+      "category": "trivia",
+      "navigationKeyword1": "brands",
+      "navigationKeyword2": "logos",
+      "question": "Nike\u2019s name to the Greek goddess of what domain?",
+      "correctAnswer": "victory",
+      "incorrectAnswers": [
+        "wisdom",
+        "the sea",
+        "the hunt"
+      ],
+      "explanation": "Nike refers to the Greek goddess of victory.",
+      "keywords": [
+        "naming",
+        "nike"
+      ],
+      "source": "https://www.britannica.com/money/Nike-Inc"
+    },
+    {
+      "seedId": "9caf7931-cee3-5ff9-8a61-806aa0816528",
+      "category": "trivia",
+      "navigationKeyword1": "brands",
+      "navigationKeyword2": "logos",
+      "question": "Samsungs name is commonly translated into what English phrase?",
+      "correctAnswer": "three stars",
+      "incorrectAnswers": [
+        "two rivers",
+        "one mountain",
+        "five waves"
+      ],
+      "explanation": "Samsung is commonly translated as three stars.",
+      "keywords": [
+        "naming",
+        "samsung"
+      ],
+      "source": "https://www.britannica.com/money/Samsung-Electronics"
+    },
+    {
+      "seedId": "e870b998-31d9-589d-8911-0be1d71e4c25",
+      "category": "trivia",
+      "navigationKeyword1": "brands",
+      "navigationKeyword2": "logos",
+      "question": "Which designer is associated with Nike\u2019s Swoosh logo design?",
+      "correctAnswer": "Carolyn Davidson",
+      "incorrectAnswers": [
+        "Paul Rand",
+        "Milton Glaser",
+        "Raymond Loewy"
+      ],
+      "explanation": "Carolyn Davidson created the Swoosh.",
+      "keywords": [
+        "logos",
+        "nike"
+      ],
+      "source": "https://www.britannica.com/money/Nike-Inc"
+    }
+  ]
+}

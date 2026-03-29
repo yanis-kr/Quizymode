@@ -1,0 +1,121 @@
+{
+  "schemaVersion": 1,
+  "seedSet": "core-public-items",
+  "deltaPreviewLimit": 200,
+  "items": [
+    {
+      "seedId": "8cd4c64d-f139-48dc-8fee-42a8bf11c374",
+      "category": "business",
+      "navigationKeyword1": "operations",
+      "navigationKeyword2": "supply-chain",
+      "question": "Just-in-time (JIT) inventory aims to reduce what?",
+      "correctAnswer": "Excess inventory and carrying costs by timing deliveries closer to use.",
+      "incorrectAnswers": [
+        "Customer satisfaction.",
+        "All supplier relationships.",
+        "Product quality always to zero."
+      ],
+      "explanation": "JIT increases coordination needs and supply risk if fragile.",
+      "keywords": [
+        "jit",
+        "inventory"
+      ],
+      "source": "https://www.investopedia.com/terms/j/jit.asp"
+    },
+    {
+      "seedId": "73d22236-8c26-4898-9708-7f526a9af35b",
+      "category": "business",
+      "navigationKeyword1": "operations",
+      "navigationKeyword2": "supply-chain",
+      "question": "What are Incoterms used for?",
+      "correctAnswer": "Standardize who pays for freight, insurance, and risk at points in international shipment.",
+      "incorrectAnswers": [
+        "Set employee vacation policies.",
+        "Define corporate tax rates.",
+        "Replace invoices."
+      ],
+      "explanation": "Incoterms clarify trade responsibilities.",
+      "keywords": [
+        "incoterms",
+        "trade"
+      ],
+      "source": "https://iccwbo.org/resources-for-business/incoterms-rules/"
+    },
+    {
+      "seedId": "c54ed05d-e87f-4700-a728-74cacf98fb0d",
+      "category": "business",
+      "navigationKeyword1": "operations",
+      "navigationKeyword2": "supply-chain",
+      "question": "What is dual sourcing intended to reduce?",
+      "correctAnswer": "Disruption risk from relying on a single supplier or region.",
+      "incorrectAnswers": [
+        "Product demand.",
+        "All logistics costs to zero.",
+        "Need for contracts."
+      ],
+      "explanation": "Resilience trades off against complexity.",
+      "keywords": [
+        "dual-sourcing",
+        "risk"
+      ],
+      "source": "https://hbr.org/2020/05/global-supply-chains-in-a-post-pandemic-world"
+    },
+    {
+      "seedId": "652ae371-a4bc-4bfb-8d07-c113ebc0b985",
+      "category": "business",
+      "navigationKeyword1": "operations",
+      "navigationKeyword2": "supply-chain",
+      "question": "What is supplier tiering used for?",
+      "correctAnswer": "Segment suppliers by risk and criticality to focus governance and collaboration.",
+      "incorrectAnswers": [
+        "Randomly shuffle vendors weekly.",
+        "Pay all suppliers identical amounts always.",
+        "Hide procurement data."
+      ],
+      "explanation": "Tiering supports risk-based management.",
+      "keywords": [
+        "suppliers",
+        "procurement"
+      ],
+      "source": "https://www.cips.org/knowledge/procurement-topics-and-skills/supplier-management"
+    },
+    {
+      "seedId": "911ada39-df0d-4477-9ad1-9ae46d091d28",
+      "category": "business",
+      "navigationKeyword1": "operations",
+      "navigationKeyword2": "supply-chain",
+      "question": "What is the bullwhip effect?",
+      "correctAnswer": "Small demand changes amplify upstream as orders become more volatile.",
+      "incorrectAnswers": [
+        "A pricing strategy for luxury goods.",
+        "A tax on imports only.",
+        "A type of warehouse robot."
+      ],
+      "explanation": "Information delays and batching worsen variability upstream.",
+      "keywords": [
+        "bullwhip-effect",
+        "supply-chain"
+      ],
+      "source": "https://www.investopedia.com/terms/b/bullwhip-effect.asp"
+    },
+    {
+      "seedId": "56ad3a8e-68a9-4502-9d22-d95236ff9232",
+      "category": "business",
+      "navigationKeyword1": "operations",
+      "navigationKeyword2": "supply-chain",
+      "question": "Why hold safety stock?",
+      "correctAnswer": "Buffer against demand variability and supplier lead time uncertainty.",
+      "incorrectAnswers": [
+        "Guarantee infinite warehouse space.",
+        "Eliminate the need for forecasts.",
+        "Replace quality control."
+      ],
+      "explanation": "Safety stock trades cost for service level.",
+      "keywords": [
+        "safety-stock",
+        "inventory"
+      ],
+      "source": "https://www.investopedia.com/terms/s/safety-stock.asp"
+    }
+  ]
+}

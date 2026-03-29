@@ -1,0 +1,235 @@
+{
+  "schemaVersion": 1,
+  "seedSet": "core-public-items",
+  "deltaPreviewLimit": 200,
+  "items": [
+    {
+      "seedId": "33421206-1d70-4a9d-bfb4-2678b1d6775f",
+      "category": "science",
+      "navigationKeyword1": "pre-algebra",
+      "navigationKeyword2": "variables",
+      "question": "Coefficient in 7x?",
+      "correctAnswer": "7",
+      "incorrectAnswers": [
+        "x",
+        "1",
+        "0"
+      ],
+      "explanation": "Multiplies the variable.",
+      "keywords": [
+        "coefficient",
+        "terms"
+      ],
+      "source": "https://www.mathsisfun.com/algebra/definitions.html"
+    },
+    {
+      "seedId": "271e52f7-1c32-4584-9030-a1383a6d36df",
+      "category": "science",
+      "navigationKeyword1": "pre-algebra",
+      "navigationKeyword2": "variables",
+      "question": "Constant term in 4x \u2212 9?",
+      "correctAnswer": "\u22129",
+      "incorrectAnswers": [
+        "4",
+        "x",
+        "0"
+      ],
+      "explanation": "No variable factor.",
+      "keywords": [
+        "constant-term",
+        "polynomial"
+      ],
+      "source": "https://www.khanacademy.org/math/pre-algebra/pre-algebra-equations"
+    },
+    {
+      "seedId": "efbb872b-9581-43fb-82a2-644cf2229b67",
+      "category": "science",
+      "navigationKeyword1": "pre-algebra",
+      "navigationKeyword2": "variables",
+      "question": "Expression vs equation?",
+      "correctAnswer": "Equation has equals sign",
+      "incorrectAnswers": [
+        "Same",
+        "Expression always has =",
+        "Equation never has ="
+      ],
+      "explanation": "3x+2 is expression; 3x+2=8 equation.",
+      "keywords": [
+        "expression",
+        "equation"
+      ],
+      "source": "https://www.khanacademy.org/math/pre-algebra/pre-algebra-equations"
+    },
+    {
+      "seedId": "c701a2d9-3c8d-49b2-bbaf-45bad131b538",
+      "category": "science",
+      "navigationKeyword1": "pre-algebra",
+      "navigationKeyword2": "variables",
+      "question": "Formula d = rt solved for t?",
+      "correctAnswer": "t = d/r (r\u22600)",
+      "incorrectAnswers": [
+        "t = dr",
+        "t = r/d",
+        "t = d + r"
+      ],
+      "explanation": "Divide distance by rate.",
+      "keywords": [
+        "literal-equations",
+        "formulas"
+      ],
+      "source": "https://www.khanacademy.org/math/pre-algebra/pre-algebra-equations"
+    },
+    {
+      "seedId": "62e9c07e-94b6-4733-ba82-1c6fa58e58f6",
+      "category": "science",
+      "navigationKeyword1": "pre-algebra",
+      "navigationKeyword2": "variables",
+      "question": "If x + 3 = 10, x = ?",
+      "correctAnswer": "7",
+      "incorrectAnswers": [
+        "13",
+        "3",
+        "30"
+      ],
+      "explanation": "Subtract 3.",
+      "keywords": [
+        "solve-linear",
+        "equations"
+      ],
+      "source": "https://www.khanacademy.org/math/pre-algebra/pre-algebra-equations"
+    },
+    {
+      "seedId": "5b81d73f-c558-455b-93e7-2f9a36dfd064",
+      "category": "science",
+      "navigationKeyword1": "pre-algebra",
+      "navigationKeyword2": "variables",
+      "question": "Inequality n < 5; which value invalid?",
+      "correctAnswer": "6",
+      "incorrectAnswers": [
+        "4",
+        "0",
+        "\u22121"
+      ],
+      "explanation": "6 is not less than 5.",
+      "keywords": [
+        "inequality-test",
+        "variables"
+      ],
+      "source": "https://www.mathsisfun.com/algebra/inequalities.html"
+    },
+    {
+      "seedId": "b275183c-30e0-4054-a556-64157bf05374",
+      "category": "science",
+      "navigationKeyword1": "pre-algebra",
+      "navigationKeyword2": "variables",
+      "question": "Isolate variable means?",
+      "correctAnswer": "Get variable alone on one side",
+      "incorrectAnswers": [
+        "Make largest",
+        "Cancel all constants only",
+        "Square both sides always"
+      ],
+      "explanation": "Use inverse operations.",
+      "keywords": [
+        "isolate",
+        "solving"
+      ],
+      "source": "https://www.khanacademy.org/math/pre-algebra/pre-algebra-equations"
+    },
+    {
+      "seedId": "7f7c3bd2-2961-4b77-9fdd-eaf3c9209aeb",
+      "category": "science",
+      "navigationKeyword1": "pre-algebra",
+      "navigationKeyword2": "variables",
+      "question": "Like terms?",
+      "correctAnswer": "Same variable powers match",
+      "incorrectAnswers": [
+        "Any terms with letters",
+        "Only constants",
+        "Different exponents ok"
+      ],
+      "explanation": "Combine coefficients only.",
+      "keywords": [
+        "like-terms",
+        "simplify"
+      ],
+      "source": "https://www.khanacademy.org/math/pre-algebra/pre-algebra-equations"
+    },
+    {
+      "seedId": "2344dc32-f865-45bf-9943-07517a9cb8ff",
+      "category": "science",
+      "navigationKeyword1": "pre-algebra",
+      "navigationKeyword2": "variables",
+      "question": "Perimeter of square side s?",
+      "correctAnswer": "4s",
+      "incorrectAnswers": [
+        "s^2",
+        "2s",
+        "s^4"
+      ],
+      "explanation": "Sum four sides.",
+      "keywords": [
+        "perimeter",
+        "geometry"
+      ],
+      "source": "https://www.mathsisfun.com/geometry/perimeter.html"
+    },
+    {
+      "seedId": "5beadd77-5714-4b7b-83cd-1bc5a47035bd",
+      "category": "science",
+      "navigationKeyword1": "pre-algebra",
+      "navigationKeyword2": "variables",
+      "question": "Substitute x=2 into 3x \u2212 1?",
+      "correctAnswer": "5",
+      "incorrectAnswers": [
+        "7",
+        "6",
+        "4"
+      ],
+      "explanation": "6\u22121=5.",
+      "keywords": [
+        "substitution",
+        "evaluate"
+      ],
+      "source": "https://www.khanacademy.org/math/pre-algebra/pre-algebra-equations"
+    },
+    {
+      "seedId": "2d415c65-f521-4ae3-91c1-5286a01ced41",
+      "category": "science",
+      "navigationKeyword1": "pre-algebra",
+      "navigationKeyword2": "variables",
+      "question": "Translate \u20185 more than twice a number\u2019 with variable x?",
+      "correctAnswer": "2x + 5",
+      "incorrectAnswers": [
+        "5x + 2",
+        "2(x+5)",
+        "x^2 + 5"
+      ],
+      "explanation": "Twice x then add 5.",
+      "keywords": [
+        "translation",
+        "expressions"
+      ],
+      "source": "https://www.khanacademy.org/math/pre-algebra/pre-algebra-equations"
+    },
+    {
+      "seedId": "339158cd-bbe0-4469-81f3-0fb2241fd9bf",
+      "category": "science",
+      "navigationKeyword1": "pre-algebra",
+      "navigationKeyword2": "variables",
+      "question": "Variable represents?",
+      "correctAnswer": "Unknown or changing quantity",
+      "incorrectAnswers": [
+        "Always 1",
+        "Always fixed secret",
+        "Only geometry"
+      ],
+      "explanation": "Letters stand for numbers.",
+      "keywords": [
+        "variable",
+        "algebra-intro"
+      ],
+      "source": "https://www.khanacademy.org/math/pre-algebra/pre-algebra-equations"
+    }
+  ]
+}

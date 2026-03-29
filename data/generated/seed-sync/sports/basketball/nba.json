@@ -1,0 +1,207 @@
+{
+  "schemaVersion": 1,
+  "seedSet": "core-public-items",
+  "deltaPreviewLimit": 200,
+  "items": [
+    {
+      "seedId": "a653416e-4096-5bb2-9f3c-78cd111b33cc",
+      "category": "sports",
+      "navigationKeyword1": "basketball",
+      "navigationKeyword2": "nba",
+      "question": "How many quarters are played in an NBA game?",
+      "correctAnswer": "Four",
+      "incorrectAnswers": [
+        "Two",
+        "Three",
+        "Six"
+      ],
+      "explanation": "The NBA uses four quarters per game.",
+      "keywords": [
+        "basketball",
+        "nba",
+        "quarters"
+      ],
+      "source": "https://official.nba.com/rule-no-5-scoring-and-timing/"
+    },
+    {
+      "seedId": "eb5f4691-b24a-541e-a3bf-f3f9c1fbe851",
+      "category": "sports",
+      "navigationKeyword1": "basketball",
+      "navigationKeyword2": "nba",
+      "question": "How many teams play in the NBA as of the 2025-26 season?",
+      "correctAnswer": "30",
+      "incorrectAnswers": [
+        "28",
+        "32",
+        "34"
+      ],
+      "explanation": "The NBA has 30 franchises divided between two conferences.",
+      "keywords": [
+        "basketball",
+        "nba",
+        "teams"
+      ],
+      "source": "https://www.nba.com/history"
+    },
+    {
+      "seedId": "a8395b9b-634d-52d1-82ce-712e7a0d6a28",
+      "category": "sports",
+      "navigationKeyword1": "basketball",
+      "navigationKeyword2": "nba",
+      "question": "What does NBA stand for?",
+      "correctAnswer": "National Basketball Association",
+      "incorrectAnswers": [
+        "National Ball Association",
+        "North Basketball Alliance",
+        "National Basket Athletics"
+      ],
+      "explanation": "NBA is short for National Basketball Association.",
+      "keywords": [
+        "basketball",
+        "nba",
+        "league"
+      ],
+      "source": "https://www.nba.com/history"
+    },
+    {
+      "seedId": "1503b68a-f2e2-5486-a321-621f94cfc855",
+      "category": "sports",
+      "navigationKeyword1": "basketball",
+      "navigationKeyword2": "nba",
+      "question": "What is the standard length of an NBA game?",
+      "correctAnswer": "48 minutes",
+      "incorrectAnswers": [
+        "40 minutes",
+        "60 minutes",
+        "50 minutes"
+      ],
+      "explanation": "An NBA game has four 12-minute quarters.",
+      "keywords": [
+        "basketball",
+        "nba",
+        "game-length"
+      ],
+      "source": "https://official.nba.com/rule-no-5-scoring-and-timing/"
+    },
+    {
+      "seedId": "d54ef653-4f1b-5905-be89-a494fc25d4fd",
+      "category": "sports",
+      "navigationKeyword1": "basketball",
+      "navigationKeyword2": "nba",
+      "question": "Which city is home to the Lakers franchise?",
+      "correctAnswer": "Los Angeles",
+      "incorrectAnswers": [
+        "Chicago",
+        "Miami",
+        "Houston"
+      ],
+      "explanation": "The Lakers have been based in Los Angeles since moving from Minneapolis.",
+      "keywords": [
+        "basketball",
+        "nba",
+        "lakers"
+      ],
+      "source": "https://www.nba.com/history"
+    },
+    {
+      "seedId": "11c38885-0431-58e5-a4ae-54fb419738a2",
+      "category": "sports",
+      "navigationKeyword1": "basketball",
+      "navigationKeyword2": "nba",
+      "question": "Which former ABA team later built a dynasty around Tim Duncan?",
+      "correctAnswer": "San Antonio Spurs",
+      "incorrectAnswers": [
+        "Seattle SuperSonics",
+        "Milwaukee Bucks",
+        "Boston Celtics"
+      ],
+      "explanation": "The Spurs came from the ABA and later won multiple NBA titles.",
+      "keywords": [
+        "basketball",
+        "nba",
+        "spurs"
+      ],
+      "source": "https://www.nba.com/history"
+    },
+    {
+      "seedId": "96f735de-22ac-5e05-bbe0-7faed362c16a",
+      "category": "sports",
+      "navigationKeyword1": "basketball",
+      "navigationKeyword2": "nba",
+      "question": "Which team is famous for playing at Madison Square Garden?",
+      "correctAnswer": "New York Knicks",
+      "incorrectAnswers": [
+        "Brooklyn Nets",
+        "Boston Celtics",
+        "Chicago Bulls"
+      ],
+      "explanation": "Madison Square Garden is the Knicks' home arena.",
+      "keywords": [
+        "basketball",
+        "nba",
+        "knicks"
+      ],
+      "source": "https://www.nba.com/history"
+    },
+    {
+      "seedId": "302f2254-2514-5de9-9c08-3392c9202142",
+      "category": "sports",
+      "navigationKeyword1": "basketball",
+      "navigationKeyword2": "nba",
+      "question": "Which team won the 2024 NBA Finals?",
+      "correctAnswer": "Boston Celtics",
+      "incorrectAnswers": [
+        "Dallas Mavericks",
+        "Denver Nuggets",
+        "Miami Heat"
+      ],
+      "explanation": "Boston won the 2024 Finals over Dallas.",
+      "keywords": [
+        "basketball",
+        "nba",
+        "finals"
+      ],
+      "source": "https://www.nba.com/history"
+    },
+    {
+      "seedId": "047eef05-0dbd-5181-a9b0-c0f76379e460",
+      "category": "sports",
+      "navigationKeyword1": "basketball",
+      "navigationKeyword2": "nba",
+      "question": "Which trophy is awarded to the NBA Finals winner?",
+      "correctAnswer": "Larry O'Brien Championship Trophy",
+      "incorrectAnswers": [
+        "Vince Lombardi Trophy",
+        "Stanley Cup",
+        "Commissioner's Trophy"
+      ],
+      "explanation": "The NBA champion receives the Larry O'Brien Trophy.",
+      "keywords": [
+        "basketball",
+        "nba",
+        "trophy"
+      ],
+      "source": "https://www.nba.com/history"
+    },
+    {
+      "seedId": "b8ee73cb-cd72-570a-9234-17ba4820e622",
+      "category": "sports",
+      "navigationKeyword1": "basketball",
+      "navigationKeyword2": "nba",
+      "question": "Which two conferences make up the NBA?",
+      "correctAnswer": "Eastern and Western",
+      "incorrectAnswers": [
+        "Northern and Southern",
+        "Atlantic and Pacific",
+        "American and National"
+      ],
+      "explanation": "The NBA is split into Eastern and Western Conferences.",
+      "keywords": [
+        "basketball",
+        "nba",
+        "conferences"
+      ],
+      "source": "https://www.nba.com/history"
+    }
+  ]
+}

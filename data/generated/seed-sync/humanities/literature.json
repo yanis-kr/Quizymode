@@ -1,0 +1,235 @@
+{
+  "schemaVersion": 1,
+  "seedSet": "core-public-items",
+  "deltaPreviewLimit": 200,
+  "items": [
+    {
+      "seedId": "7ada26f3-e8d0-5f13-a4ea-490a0b8140dc",
+      "category": "humanities",
+      "navigationKeyword1": "literature",
+      "navigationKeyword2": "authors",
+      "question": "What is a pseudonym?",
+      "correctAnswer": "a pen name",
+      "incorrectAnswers": [
+        "a book review",
+        "a poem stanza",
+        "a printing error"
+      ],
+      "explanation": "A pseudonym is an alternate name an author uses in place of a personal name.",
+      "keywords": [
+        "authors",
+        "pseudonym"
+      ],
+      "source": "https://www.britannica.com/topic/pseudonym"
+    },
+    {
+      "seedId": "b21d0dce-7444-5d08-a129-42a8007d5700",
+      "category": "humanities",
+      "navigationKeyword1": "literature",
+      "navigationKeyword2": "authors",
+      "question": "Why are authors often studied alongside their works?",
+      "correctAnswer": "their context can shape meaning and themes",
+      "incorrectAnswers": [
+        "they always explain every symbol directly",
+        "their books never change over time",
+        "they replace the narrator in every story"
+      ],
+      "explanation": "An author's era, background, and concerns can help readers understand a work more fully.",
+      "keywords": [
+        "authors",
+        "context"
+      ],
+      "source": "https://www.loc.gov/programs/authors/"
+    },
+    {
+      "seedId": "55d9485c-f9a5-5dff-9f6b-cae63031883e",
+      "category": "humanities",
+      "navigationKeyword1": "literature",
+      "navigationKeyword2": "drama",
+      "question": "Drama is most directly written to do what?",
+      "correctAnswer": "be performed",
+      "incorrectAnswers": [
+        "be solved like an equation",
+        "be stored in an archive box",
+        "be sung by a choir only"
+      ],
+      "explanation": "Drama is literature designed for performance through dialogue and action.",
+      "keywords": [
+        "drama",
+        "performance"
+      ],
+      "source": "https://www.britannica.com/art/drama-literature"
+    },
+    {
+      "seedId": "f6c524dd-b0ec-5546-b4d9-4ae6239867b5",
+      "category": "humanities",
+      "navigationKeyword1": "literature",
+      "navigationKeyword2": "drama",
+      "question": "What does stage dialogue mainly reveal in a play?",
+      "correctAnswer": "character and conflict",
+      "incorrectAnswers": [
+        "weather data",
+        "museum admission prices",
+        "library shelf numbers"
+      ],
+      "explanation": "In drama, dialogue helps show motives, relationships, and conflict.",
+      "keywords": [
+        "drama",
+        "dialogue"
+      ],
+      "source": "https://www.nationaltheatre.org.uk/discover-more"
+    },
+    {
+      "seedId": "017812be-befb-58ad-8384-7b5decdde937",
+      "category": "humanities",
+      "navigationKeyword1": "literature",
+      "navigationKeyword2": "literary-terms",
+      "question": "What is a metaphor?",
+      "correctAnswer": "a comparison that says one thing is another",
+      "incorrectAnswers": [
+        "a list of characters",
+        "a chapter heading",
+        "a factual footnote"
+      ],
+      "explanation": "A metaphor links two unlike things directly to create meaning or imagery.",
+      "keywords": [
+        "literary-terms",
+        "metaphor"
+      ],
+      "source": "https://www.poetryfoundation.org/learn/glossary-terms/metaphor"
+    },
+    {
+      "seedId": "d9326446-0f9b-548a-955c-e78fc1d7bf2c",
+      "category": "humanities",
+      "navigationKeyword1": "literature",
+      "navigationKeyword2": "literary-terms",
+      "question": "What is a theme in literature?",
+      "correctAnswer": "a central idea or underlying message",
+      "incorrectAnswers": [
+        "the typeface size",
+        "the author's mailing address",
+        "the order of page numbers"
+      ],
+      "explanation": "A theme is a major idea that a work explores across its details and events.",
+      "keywords": [
+        "literary-terms",
+        "theme"
+      ],
+      "source": "https://www.britannica.com/art/theme-literature"
+    },
+    {
+      "seedId": "92480b26-f925-52b3-868d-4f67eb08b602",
+      "category": "humanities",
+      "navigationKeyword1": "literature",
+      "navigationKeyword2": "novels",
+      "question": "A novel is usually what kind of work?",
+      "correctAnswer": "a long prose fiction narrative",
+      "incorrectAnswers": [
+        "a short lyric poem",
+        "a legal code",
+        "a musical score"
+      ],
+      "explanation": "Novels are extended prose narratives, usually with developed characters and plot.",
+      "keywords": [
+        "novels",
+        "fiction"
+      ],
+      "source": "https://www.britannica.com/art/novel"
+    },
+    {
+      "seedId": "3de0f25f-a210-59b0-aac5-c910088cdf8c",
+      "category": "humanities",
+      "navigationKeyword1": "literature",
+      "navigationKeyword2": "novels",
+      "question": "What is a narrator in a novel?",
+      "correctAnswer": "the voice that tells the story",
+      "incorrectAnswers": [
+        "the printer of the book",
+        "the first reader",
+        "the cover illustrator"
+      ],
+      "explanation": "The narrator is the perspective or voice through which the story is presented.",
+      "keywords": [
+        "novels",
+        "narrator"
+      ],
+      "source": "https://owl.purdue.edu/owl/subject_specific_writing/creative_writing/fiction_writing_basics/index.html"
+    },
+    {
+      "seedId": "f4fbb8b3-21b1-5eff-822d-bee1fc845635",
+      "category": "humanities",
+      "navigationKeyword1": "literature",
+      "navigationKeyword2": "poetry",
+      "question": "What does poetry often use more deliberately than plain prose?",
+      "correctAnswer": "rhythm and condensed language",
+      "incorrectAnswers": [
+        "database queries",
+        "legal footnotes",
+        "architectural plans"
+      ],
+      "explanation": "Poetry often depends on sound, rhythm, and compressed wording for effect.",
+      "keywords": [
+        "poetry",
+        "literature"
+      ],
+      "source": "https://www.britannica.com/art/poetry"
+    },
+    {
+      "seedId": "63977c90-361f-5008-a1e7-6f58997f364d",
+      "category": "humanities",
+      "navigationKeyword1": "literature",
+      "navigationKeyword2": "poetry",
+      "question": "What is a stanza in a poem?",
+      "correctAnswer": "a grouped set of lines",
+      "incorrectAnswers": [
+        "a stage direction",
+        "a chapter title",
+        "a footnote at the end"
+      ],
+      "explanation": "A stanza is a unit of lines that works somewhat like a paragraph in poetry.",
+      "keywords": [
+        "poetry",
+        "stanza"
+      ],
+      "source": "https://www.poetryfoundation.org/learn/glossary-terms/stanza"
+    },
+    {
+      "seedId": "5ea40ef0-cb4d-5e53-a26a-242c8f82922c",
+      "category": "humanities",
+      "navigationKeyword1": "literature",
+      "navigationKeyword2": "world",
+      "question": "A novel from Japan studied beside one from Nigeria is being approached as what?",
+      "correctAnswer": "world literature",
+      "incorrectAnswers": [
+        "local journalism",
+        "stagecraft",
+        "music theory"
+      ],
+      "explanation": "That comparison treats literature as something that moves across regions and traditions.",
+      "keywords": [
+        "world-literature",
+        "comparison"
+      ],
+      "source": "https://www.loc.gov/collections/world-digital-library/about-this-collection/"
+    },
+    {
+      "seedId": "a3c40c6f-a19a-5b0f-973b-71158e72889c",
+      "category": "humanities",
+      "navigationKeyword1": "literature",
+      "navigationKeyword2": "world",
+      "question": "What does world literature usually study?",
+      "correctAnswer": "works read across cultures and national traditions",
+      "incorrectAnswers": [
+        "only books written in one country",
+        "only ancient epics",
+        "only books translated into English"
+      ],
+      "explanation": "World literature looks at major works as they travel across languages, places, and traditions.",
+      "keywords": [
+        "world-literature",
+        "humanities-literature"
+      ],
+      "source": "https://www.britannica.com/art/literature"
+    }
+  ]
+}

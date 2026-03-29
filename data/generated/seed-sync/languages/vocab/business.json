@@ -1,0 +1,127 @@
+{
+  "schemaVersion": 1,
+  "seedSet": "core-public-items",
+  "deltaPreviewLimit": 200,
+  "items": [
+    {
+      "seedId": "a5d1bf73-9ebe-5b66-8dd7-824e78eea892",
+      "category": "languages",
+      "navigationKeyword1": "vocab",
+      "navigationKeyword2": "business",
+      "question": "Which word means a formal meeting to discuss shared work?",
+      "correctAnswer": "conference",
+      "incorrectAnswers": [
+        "sandwich",
+        "umbrella",
+        "pillow"
+      ],
+      "explanation": "A conference is a planned meeting, often with many people or groups.",
+      "keywords": [
+        "conference",
+        "meeting",
+        "work-words"
+      ],
+      "source": "https://dictionary.cambridge.org/dictionary/english/conference"
+    },
+    {
+      "seedId": "bf84ecdd-1c71-535b-a2d7-69917153b0ac",
+      "category": "languages",
+      "navigationKeyword1": "vocab",
+      "navigationKeyword2": "business",
+      "question": "Which word means a person who buys goods or services?",
+      "correctAnswer": "customer",
+      "incorrectAnswers": [
+        "hammer",
+        "blanket",
+        "teaspoon"
+      ],
+      "explanation": "A customer is someone who pays a business for a product or service.",
+      "keywords": [
+        "customer",
+        "buyer",
+        "work-words"
+      ],
+      "source": "https://learnenglish.britishcouncil.org/vocabulary/a2-vocabulary/shopping"
+    },
+    {
+      "seedId": "22108794-aa93-54dd-845d-a9afe73502b4",
+      "category": "languages",
+      "navigationKeyword1": "vocab",
+      "navigationKeyword2": "business",
+      "question": "Which word means a time limit for finishing work?",
+      "correctAnswer": "deadline",
+      "incorrectAnswers": [
+        "window",
+        "chair",
+        "keyboard"
+      ],
+      "explanation": "A deadline is the date or time when something must be done.",
+      "keywords": [
+        "deadline",
+        "time",
+        "work-words"
+      ],
+      "source": "https://www.merriam-webster.com/dictionary/deadline"
+    },
+    {
+      "seedId": "8fa30b56-1267-5cdc-ae2e-b7dbd4eecfd3",
+      "category": "languages",
+      "navigationKeyword1": "vocab",
+      "navigationKeyword2": "business",
+      "question": "Which word means a worker who answers to a manager?",
+      "correctAnswer": "employee",
+      "incorrectAnswers": [
+        "elevator",
+        "parking lot",
+        "notebook"
+      ],
+      "explanation": "An employee is a person paid to work for a company or person.",
+      "keywords": [
+        "employee",
+        "job",
+        "work-words"
+      ],
+      "source": "https://www.merriam-webster.com/dictionary/employee"
+    },
+    {
+      "seedId": "a1574450-2f5f-50d6-b4de-004d317a4fe8",
+      "category": "languages",
+      "navigationKeyword1": "vocab",
+      "navigationKeyword2": "business",
+      "question": "Which word means a written plan that shows income and spending?",
+      "correctAnswer": "budget",
+      "incorrectAnswers": [
+        "song",
+        "jacket",
+        "recipe"
+      ],
+      "explanation": "A budget is a plan that matches money coming in with planned costs.",
+      "keywords": [
+        "budget",
+        "planning",
+        "work-words"
+      ],
+      "source": "https://dictionary.cambridge.org/dictionary/english/budget"
+    },
+    {
+      "seedId": "a34d9d46-7fb5-542e-add5-93e179f7fe19",
+      "category": "languages",
+      "navigationKeyword1": "vocab",
+      "navigationKeyword2": "business",
+      "question": "Which word means money a company earns from sales?",
+      "correctAnswer": "revenue",
+      "incorrectAnswers": [
+        "lunch break",
+        "coffee machine",
+        "holiday card"
+      ],
+      "explanation": "Revenue is the money a business receives from its normal operations.",
+      "keywords": [
+        "revenue",
+        "money",
+        "work-words"
+      ],
+      "source": "https://dictionary.cambridge.org/dictionary/english/revenue"
+    }
+  ]
+}

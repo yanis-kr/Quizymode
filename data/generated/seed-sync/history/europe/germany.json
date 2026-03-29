@@ -1,0 +1,247 @@
+{
+  "schemaVersion": 1,
+  "seedSet": "core-public-items",
+  "deltaPreviewLimit": 200,
+  "items": [
+    {
+      "seedId": "3340dd4f-4d72-4ce7-88c2-275f353049f7",
+      "category": "history",
+      "navigationKeyword1": "europe",
+      "navigationKeyword2": "germany",
+      "question": "Adolf Hitler was appointed German chancellor in January 1933 by which president?",
+      "correctAnswer": "Paul von Hindenburg",
+      "incorrectAnswers": [
+        "Wilhelm II",
+        "Friedrich Ebert",
+        "Gustav Stresemann"
+      ],
+      "explanation": "The Reichstag fire and Enabling Act soon concentrated dictatorial power in Hitler\u2019s hands.",
+      "keywords": [
+        "germany",
+        "hitler",
+        "nazi"
+      ],
+      "source": "https://www.britannica.com/biography/Adolf-Hitler"
+    },
+    {
+      "seedId": "652e9f22-6a5f-4134-bc68-f766d98024ca",
+      "category": "history",
+      "navigationKeyword1": "europe",
+      "navigationKeyword2": "germany",
+      "question": "Angela Merkel, trained as a physicist, led Germany as chancellor from which conservative party?",
+      "correctAnswer": "The Christian Democratic Union (CDU)",
+      "incorrectAnswers": [
+        "The Social Democratic Party",
+        "The Free Democratic Party",
+        "The Greens"
+      ],
+      "explanation": "Her tenure included Eurozone crisis management and the 2015 refugee influx decision.",
+      "keywords": [
+        "germany",
+        "merkel",
+        "modern"
+      ],
+      "source": "https://www.britannica.com/biography/Angela-Merkel"
+    },
+    {
+      "seedId": "596bbc12-0de4-492f-bd32-8327409e7e6c",
+      "category": "history",
+      "navigationKeyword1": "europe",
+      "navigationKeyword2": "germany",
+      "question": "Frederick the Great\u2019s Prussia seized Silesia in the 1740s, provoking which series of wars?",
+      "correctAnswer": "The War of the Austrian Succession (and later Seven Years\u2019 War context)",
+      "incorrectAnswers": [
+        "The Franco-Prussian War",
+        "The Schleswig Wars",
+        "The Italian Wars"
+      ],
+      "explanation": "Prussian military and bureaucratic efficiency made it a great power under Hohenzollern kings.",
+      "keywords": [
+        "germany",
+        "prussia",
+        "frederick"
+      ],
+      "source": "https://www.britannica.com/biography/Frederick-II-king-of-Prussia"
+    },
+    {
+      "seedId": "f790750c-5c9d-4c77-b162-3ac78e29b42c",
+      "category": "history",
+      "navigationKeyword1": "europe",
+      "navigationKeyword2": "germany",
+      "question": "Germany\u2019s Weimar Republic (1919\u201333) took its name from the city where which post\u2013World War I constitution was drafted?",
+      "correctAnswer": "Weimar",
+      "incorrectAnswers": [
+        "Munich",
+        "Berlin",
+        "Frankfurt"
+      ],
+      "explanation": "Hyperinflation, political violence, and the Great Depression destabilized parliamentary democracy.",
+      "keywords": [
+        "germany",
+        "weimar",
+        "world-war-i"
+      ],
+      "source": "https://www.britannica.com/place/Weimar-Republic"
+    },
+    {
+      "seedId": "5f657ceb-6fed-453c-b3da-bbbc15a7ba65",
+      "category": "history",
+      "navigationKeyword1": "europe",
+      "navigationKeyword2": "germany",
+      "question": "Johannes Gutenberg\u2019s movable-type printing revolution began in which German city?",
+      "correctAnswer": "Mainz",
+      "incorrectAnswers": [
+        "Hamburg",
+        "Cologne",
+        "Munich"
+      ],
+      "explanation": "The printing press accelerated the spread of Reformation pamphlets and humanist texts.",
+      "keywords": [
+        "germany",
+        "gutenberg",
+        "printing"
+      ],
+      "source": "https://www.britannica.com/biography/Johannes-Gutenberg"
+    },
+    {
+      "seedId": "88234db3-81f8-44e2-86d5-2cf652d34cae",
+      "category": "history",
+      "navigationKeyword1": "europe",
+      "navigationKeyword2": "germany",
+      "question": "Karl Marx and Friedrich Engels published The Communist Manifesto in 1848 in which context?",
+      "correctAnswer": "The European revolutions of 1848",
+      "incorrectAnswers": [
+        "The Congress of Vienna",
+        "The Kulturkampf",
+        "The Spartacist uprising"
+      ],
+      "explanation": "The pamphlet\u2019s call\u2014\u201cWorkers of the world, unite!\u201d\u2014emerged from radical circles in Brussels and London.",
+      "keywords": [
+        "germany",
+        "marx",
+        "1848"
+      ],
+      "source": "https://www.britannica.com/biography/Karl-Marx"
+    },
+    {
+      "seedId": "174dfd55-7389-467e-9ef9-fa865874f3de",
+      "category": "history",
+      "navigationKeyword1": "europe",
+      "navigationKeyword2": "germany",
+      "question": "Konrad Adenauer anchored West Germany in NATO and European integration as first chancellor of which republic?",
+      "correctAnswer": "The Federal Republic of Germany (West Germany)",
+      "incorrectAnswers": [
+        "The Weimar Republic",
+        "The German Empire",
+        "East Germany"
+      ],
+      "explanation": "The \u2018economic miracle\u2019 and Western alliance defined his long chancellorship (1949\u201363).",
+      "keywords": [
+        "germany",
+        "adenauer",
+        "cold-war"
+      ],
+      "source": "https://www.britannica.com/biography/Konrad-Adenauer"
+    },
+    {
+      "seedId": "6b368f80-a013-4181-b3a9-899deee04fc4",
+      "category": "history",
+      "navigationKeyword1": "europe",
+      "navigationKeyword2": "germany",
+      "question": "Martin Luther\u2019s 1517 Ninety-five Theses protested indulgences in which German territory\u2019s church?",
+      "correctAnswer": "Saxony (Wittenberg in the Electorate of Saxony)",
+      "incorrectAnswers": [
+        "Bavaria only",
+        "Prussia",
+        "Hanover"
+      ],
+      "explanation": "Luther\u2019s critique sparked the Protestant Reformation across German principalities.",
+      "keywords": [
+        "germany",
+        "luther",
+        "reformation"
+      ],
+      "source": "https://www.britannica.com/biography/Martin-Luther"
+    },
+    {
+      "seedId": "727356d3-3353-4da9-970c-a0dd0498758c",
+      "category": "history",
+      "navigationKeyword1": "europe",
+      "navigationKeyword2": "germany",
+      "question": "Otto von Bismarck proclaimed the German Empire in 1871 in the Hall of Mirrors at which palace?",
+      "correctAnswer": "Versailles (near Paris)",
+      "incorrectAnswers": [
+        "Sch\u00f6nbrunn",
+        "Sans Souci",
+        "Nuremberg Castle"
+      ],
+      "explanation": "Victory over France completed German unification under Prussian leadership.",
+      "keywords": [
+        "germany",
+        "bismarck",
+        "unification"
+      ],
+      "source": "https://www.britannica.com/biography/Otto-von-Bismarck"
+    },
+    {
+      "seedId": "a71ed37b-93ad-48d8-b553-cf5345b11921",
+      "category": "history",
+      "navigationKeyword1": "europe",
+      "navigationKeyword2": "germany",
+      "question": "The 1938 Munich Agreement ceded the Sudetenland from Czechoslovakia to which country?",
+      "correctAnswer": "Nazi Germany",
+      "incorrectAnswers": [
+        "Poland",
+        "Hungary",
+        "Austria"
+      ],
+      "explanation": "Neville Chamberlain\u2019s \u2018peace for our time\u2019 failed to prevent Hitler\u2019s further expansion.",
+      "keywords": [
+        "germany",
+        "munich",
+        "appeasement"
+      ],
+      "source": "https://www.britannica.com/event/Munich-Agreement"
+    },
+    {
+      "seedId": "50de0a00-1f95-4e70-bf28-be444377580c",
+      "category": "history",
+      "navigationKeyword1": "europe",
+      "navigationKeyword2": "germany",
+      "question": "The Berlin Wall fell on November 9, 1989, amid protests in which socialist state?",
+      "correctAnswer": "East Germany (German Democratic Republic)",
+      "incorrectAnswers": [
+        "Czechoslovakia",
+        "Poland",
+        "Hungary"
+      ],
+      "explanation": "The opening of the Wall accelerated German reunification under the Federal Republic\u2019s constitution.",
+      "keywords": [
+        "germany",
+        "berlin-wall",
+        "cold-war"
+      ],
+      "source": "https://www.britannica.com/topic/Berlin-Wall"
+    },
+    {
+      "seedId": "9c34da39-cf68-42f0-845f-de02f11cc4c8",
+      "category": "history",
+      "navigationKeyword1": "europe",
+      "navigationKeyword2": "germany",
+      "question": "The Peace of Westphalia (1648) ended which devastating conflict fought largely in German lands?",
+      "correctAnswer": "The Thirty Years\u2019 War",
+      "incorrectAnswers": [
+        "The Seven Years\u2019 War",
+        "The Napoleonic Wars",
+        "The Schmalkaldic War alone"
+      ],
+      "explanation": "The treaties recognized Calvinism, weakened the emperor, and fragmented sovereignty in the Holy Roman Empire.",
+      "keywords": [
+        "germany",
+        "westphalia",
+        "thirty-years-war"
+      ],
+      "source": "https://www.britannica.com/event/Peace-of-Westphalia"
+    }
+  ]
+}

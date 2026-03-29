@@ -43,7 +43,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Include="..\..\data\seed\**\*.json" Link="data\seed\%(RecursiveDir)%(Filename)%(Extension)">
+    <None Include="..\..\data\seed-dev\**\*.json" Link="data\seed-dev\%(RecursiveDir)%(Filename)%(Extension)">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Include="..\..\docs\quizymode_taxonomy.yaml" Link="data\taxonomy\quizymode_taxonomy.yaml">

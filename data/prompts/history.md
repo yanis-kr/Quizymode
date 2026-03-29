@@ -13,7 +13,7 @@ Task:
 
 Create or continue seed files for the `history` category in:
 
-- `data/bulk-seed/history`
+- `data/seed-source/items/history`
 
 Filename format:
 

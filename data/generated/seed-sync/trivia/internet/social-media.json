@@ -1,0 +1,197 @@
+{
+  "schemaVersion": 1,
+  "seedSet": "core-public-items",
+  "deltaPreviewLimit": 200,
+  "items": [
+    {
+      "seedId": "c8ddaa0f-dc1f-542b-9c5d-28668b840f7c",
+      "category": "trivia",
+      "navigationKeyword1": "internet",
+      "navigationKeyword2": "social-media",
+      "question": "A Pinterest group board is a board with what?",
+      "correctAnswer": "collaborators",
+      "incorrectAnswers": [
+        "video ads",
+        "auto-replies",
+        "live captions"
+      ],
+      "explanation": "Pinterest says group boards are boards with collaborators.",
+      "keywords": [
+        "social-platforms",
+        "online-communities"
+      ],
+      "source": "https://help.pinterest.com/en/article/boards"
+    },
+    {
+      "seedId": "abc86051-dbf2-54f1-a662-582f1f0b8d73",
+      "category": "trivia",
+      "navigationKeyword1": "internet",
+      "navigationKeyword2": "social-media",
+      "question": "LinkedIn describes itself as the world's largest what?",
+      "correctAnswer": "professional network",
+      "incorrectAnswers": [
+        "job board",
+        "video streamer",
+        "chat room"
+      ],
+      "explanation": "LinkedIn calls itself the world's largest professional network.",
+      "keywords": [
+        "social-platforms",
+        "online-communities"
+      ],
+      "source": "https://about.linkedin.com/"
+    },
+    {
+      "seedId": "8273de0a-6935-57c1-ae3d-92bffde741e1",
+      "category": "trivia",
+      "navigationKeyword1": "internet",
+      "navigationKeyword2": "social-media",
+      "question": "On Reddit, topic-based smaller communities are called what?",
+      "correctAnswer": "subreddits",
+      "incorrectAnswers": [
+        "subnets",
+        "sidebars",
+        "storyboards"
+      ],
+      "explanation": "Reddit's official help pages call its smaller communities subreddits.",
+      "keywords": [
+        "social-platforms",
+        "online-communities"
+      ],
+      "source": "https://support.reddithelp.com/hc/en-us/articles/204533569-What-are-communities-or-subreddits"
+    },
+    {
+      "seedId": "1da56c19-cf2c-565c-bf00-a53dff3b50f1",
+      "category": "trivia",
+      "navigationKeyword1": "internet",
+      "navigationKeyword2": "social-media",
+      "question": "On what date did LinkedIn officially launch?",
+      "correctAnswer": "May 5, 2003",
+      "incorrectAnswers": [
+        "January 1, 2000",
+        "September 4, 1998",
+        "July 15, 2005"
+      ],
+      "explanation": "LinkedIn says it was officially launched on May 5, 2003.",
+      "keywords": [
+        "social-platforms",
+        "online-communities"
+      ],
+      "source": "https://about.linkedin.com/"
+    },
+    {
+      "seedId": "7d5027c6-18c7-5e9b-b447-aa869f3007d7",
+      "category": "trivia",
+      "navigationKeyword1": "internet",
+      "navigationKeyword2": "social-media",
+      "question": "Pinterest boards can be public or what hidden type?",
+      "correctAnswer": "secret",
+      "incorrectAnswers": [
+        "vanishing",
+        "silent",
+        "ghost"
+      ],
+      "explanation": "Pinterest says secret boards are visible only to you and invited collaborators.",
+      "keywords": [
+        "social-platforms",
+        "online-communities"
+      ],
+      "source": "https://help.pinterest.com/en/article/boards"
+    },
+    {
+      "seedId": "478bb74d-f37c-5cd2-bba6-36b65951e6de",
+      "category": "trivia",
+      "navigationKeyword1": "internet",
+      "navigationKeyword2": "social-media",
+      "question": "Pinterest uses what to save and organize Pins?",
+      "correctAnswer": "boards",
+      "incorrectAnswers": [
+        "folders",
+        "albums",
+        "threads"
+      ],
+      "explanation": "Pinterest says boards are the place to save and organize ideas.",
+      "keywords": [
+        "social-platforms",
+        "online-communities"
+      ],
+      "source": "https://help.pinterest.com/en/article/boards"
+    },
+    {
+      "seedId": "1e0c9df4-7aeb-58fe-bba5-1aab9b711e2d",
+      "category": "trivia",
+      "navigationKeyword1": "internet",
+      "navigationKeyword2": "social-media",
+      "question": "Reddit communities can be public, restricted, private, and what premium type?",
+      "correctAnswer": "premium-only",
+      "incorrectAnswers": [
+        "invite-only ads",
+        "sponsor-locked",
+        "staff-picked"
+      ],
+      "explanation": "Reddit lists premium-only as one of its community types.",
+      "keywords": [
+        "social-platforms",
+        "online-communities"
+      ],
+      "source": "https://support.reddithelp.com/hc/en-us/articles/204533569-What-are-communities-or-subreddits"
+    },
+    {
+      "seedId": "0f5ad998-f08e-5a8a-8d68-b446c37708fe",
+      "category": "trivia",
+      "navigationKeyword1": "internet",
+      "navigationKeyword2": "social-media",
+      "question": "Reddit says subreddits are created and moderated by whom?",
+      "correctAnswer": "redditors",
+      "incorrectAnswers": [
+        "admins only",
+        "algorithms",
+        "advertisers"
+      ],
+      "explanation": "Reddit says its communities are created and moderated by redditors.",
+      "keywords": [
+        "social-platforms",
+        "online-communities"
+      ],
+      "source": "https://support.reddithelp.com/hc/en-us/articles/204533569-What-are-communities-or-subreddits"
+    },
+    {
+      "seedId": "75a00146-21c2-5b27-8bae-cebe058ef1c7",
+      "category": "trivia",
+      "navigationKeyword1": "internet",
+      "navigationKeyword2": "social-media",
+      "question": "TikTok says it captures and presents moments that matter directly from what?",
+      "correctAnswer": "the mobile phone",
+      "incorrectAnswers": [
+        "the TV remote",
+        "the desktop tower",
+        "the game console"
+      ],
+      "explanation": "TikTok's mission statement says it presents creativity and moments directly from the mobile phone.",
+      "keywords": [
+        "social-platforms",
+        "online-communities"
+      ],
+      "source": "https://newsroom.tiktok.com/in-id/musical-ly-and"
+    },
+    {
+      "seedId": "359d6608-d3fb-5bf5-9b9e-349b244db685",
+      "category": "trivia",
+      "navigationKeyword1": "internet",
+      "navigationKeyword2": "social-media",
+      "question": "TikTok says it is a destination for what kind of videos?",
+      "correctAnswer": "short-form mobile videos",
+      "incorrectAnswers": [
+        "feature-length films",
+        "audio podcasts",
+        "photo slideshows only"
+      ],
+      "explanation": "TikTok describes itself as a destination for short-form mobile videos.",
+      "keywords": [
+        "social-platforms",
+        "online-communities"
+      ],
+      "source": "https://newsroom.tiktok.com/in-id/musical-ly-and"
+    }
+  ]
+}

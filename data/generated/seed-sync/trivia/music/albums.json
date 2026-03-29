@@ -1,0 +1,197 @@
+{
+  "schemaVersion": 1,
+  "seedSet": "core-public-items",
+  "deltaPreviewLimit": 200,
+  "items": [
+    {
+      "seedId": "a2394694-d736-5b50-9e83-d90aa2287d6b",
+      "category": "trivia",
+      "navigationKeyword1": "music",
+      "navigationKeyword2": "albums",
+      "question": "A concept album is built around a unified what across its tracks?",
+      "correctAnswer": "theme or story",
+      "incorrectAnswers": [
+        "random singles",
+        "unrelated jingles",
+        "white noise"
+      ],
+      "explanation": "Concept albums share a theme.",
+      "keywords": [
+        "concept-album",
+        "rock"
+      ],
+      "source": "https://www.britannica.com/topic/concept-album"
+    },
+    {
+      "seedId": "8b1e8fd4-953f-522a-9779-9d0fb5497b78",
+      "category": "trivia",
+      "navigationKeyword1": "music",
+      "navigationKeyword2": "albums",
+      "question": "A soundtrack usually collects music from what kind of media?",
+      "correctAnswer": "films or shows",
+      "incorrectAnswers": [
+        "cookbooks",
+        "sports rulebooks",
+        "recorded music"
+      ],
+      "explanation": "Soundtracks come from screen media.",
+      "keywords": [
+        "soundtrack",
+        "film-music"
+      ],
+      "source": "https://www.britannica.com/topic/soundtrack"
+    },
+    {
+      "seedId": "d37a7fdf-4e64-5ce1-94f1-da87ae07672b",
+      "category": "trivia",
+      "navigationKeyword1": "music",
+      "navigationKeyword2": "albums",
+      "question": "An EP is shorter than a full what?",
+      "correctAnswer": "albums",
+      "incorrectAnswers": [
+        "symphonies",
+        "operas",
+        "ballets"
+      ],
+      "explanation": "EPs are shorter than LPs.",
+      "keywords": [
+        "ep",
+        "releases"
+      ],
+      "source": "https://www.britannica.com/topic/extended-play"
+    },
+    {
+      "seedId": "e2ff6a42-d10f-55a0-9252-60e699a0628e",
+      "category": "trivia",
+      "navigationKeyword1": "music",
+      "navigationKeyword2": "albums",
+      "question": "Compilation albums usually collect what?",
+      "correctAnswer": "previously released tracks",
+      "incorrectAnswers": [
+        "live orchestras only",
+        "sheet music only",
+        "ringtones only"
+      ],
+      "explanation": "Compilations gather existing recordings.",
+      "keywords": [
+        "compilation",
+        "releases"
+      ],
+      "source": "https://www.britannica.com/topic/compilation-album"
+    },
+    {
+      "seedId": "b41465ca-5e46-588e-9e3b-841f390844a0",
+      "category": "trivia",
+      "navigationKeyword1": "music",
+      "navigationKeyword2": "albums",
+      "question": "Historically, a mixtape was a curated what on cassette?",
+      "correctAnswer": "song collections",
+      "incorrectAnswers": [
+        "software patches",
+        "radio towers",
+        "phone books"
+      ],
+      "explanation": "Mixtapes are curated song sets.",
+      "keywords": [
+        "mixtape",
+        "hip-hop"
+      ],
+      "source": "https://www.britannica.com/topic/mixtape"
+    },
+    {
+      "seedId": "354c88d4-fe2d-5373-8e92-698dba60fa4e",
+      "category": "trivia",
+      "navigationKeyword1": "music",
+      "navigationKeyword2": "albums",
+      "question": "Historically, an LP record used what playback format?",
+      "correctAnswer": "long-play vinyl album",
+      "incorrectAnswers": [
+        "8-track only",
+        "wax cylinder only",
+        "piano roll"
+      ],
+      "explanation": "LP denotes long-play vinyl albums.",
+      "keywords": [
+        "vinyl",
+        "history"
+      ],
+      "source": "https://www.britannica.com/technology/long-play-record"
+    },
+    {
+      "seedId": "0a4e8e38-3306-5c62-8e52-4e8cf076e970",
+      "category": "trivia",
+      "navigationKeyword1": "music",
+      "navigationKeyword2": "albums",
+      "question": "Live albums are recordings captured during what?",
+      "correctAnswer": "concerts",
+      "incorrectAnswers": [
+        "studio overdubs only",
+        "silent film scoring only",
+        "rehearsals only"
+      ],
+      "explanation": "Live albums capture performances.",
+      "keywords": [
+        "live-album",
+        "concerts"
+      ],
+      "source": "https://www.britannica.com/topic/live-album"
+    },
+    {
+      "seedId": "241fdf29-afb8-5b9f-b80f-e334b6826284",
+      "category": "trivia",
+      "navigationKeyword1": "music",
+      "navigationKeyword2": "albums",
+      "question": "Remastered albums are meant to improve what?",
+      "correctAnswer": "audio quality",
+      "incorrectAnswers": [
+        "cover weight",
+        "vinyl color",
+        "jewel case plastic"
+      ],
+      "explanation": "Remasters improve sound quality.",
+      "keywords": [
+        "remaster",
+        "audio"
+      ],
+      "source": "https://www.britannica.com/topic/remastering"
+    },
+    {
+      "seedId": "8da78b9a-03fd-5f3c-b97d-c94e7c63ea84",
+      "category": "trivia",
+      "navigationKeyword1": "music",
+      "navigationKeyword2": "albums",
+      "question": "Studio albums are recorded mainly where?",
+      "correctAnswer": "recording studios",
+      "incorrectAnswers": [
+        "sports arenas only",
+        "subways",
+        "forests only"
+      ],
+      "explanation": "Studio albums are made in studios.",
+      "keywords": [
+        "studio-album",
+        "production"
+      ],
+      "source": "https://www.britannica.com/topic/recording-studio"
+    },
+    {
+      "seedId": "d74f0ebd-c8db-5026-8392-5043bb4bdff1",
+      "category": "trivia",
+      "navigationKeyword1": "music",
+      "navigationKeyword2": "albums",
+      "question": "The Grammy Awards honor achievements in what industry?",
+      "correctAnswer": "recorded music",
+      "incorrectAnswers": [
+        "film editing",
+        "architecture",
+        "chemistry"
+      ],
+      "explanation": "Grammys honor recorded music.",
+      "keywords": [
+        "grammys",
+        "awards"
+      ],
+      "source": "https://www.britannica.com/art/Grammy-Awards"
+    }
+  ]
+}

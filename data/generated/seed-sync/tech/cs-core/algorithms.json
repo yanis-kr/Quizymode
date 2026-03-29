@@ -1,0 +1,121 @@
+{
+  "schemaVersion": 1,
+  "seedSet": "core-public-items",
+  "deltaPreviewLimit": 200,
+  "items": [
+    {
+      "seedId": "da86574b-9992-52c7-a881-b099a1610866",
+      "category": "tech",
+      "navigationKeyword1": "cs-core",
+      "navigationKeyword2": "algorithms",
+      "question": "In the common RAM model, what is the average-case time to look up a key in a well-implemented hash table?",
+      "correctAnswer": "O(1) average",
+      "incorrectAnswers": [
+        "O(log n)",
+        "O(n)",
+        "O(n log n)"
+      ],
+      "explanation": "With a good hash function and load factor control, buckets stay small, so expected probes stay constant.",
+      "keywords": [
+        "algorithms",
+        "hashing"
+      ],
+      "source": "https://en.wikipedia.org/wiki/Hash_table"
+    },
+    {
+      "seedId": "542ae7a2-2197-5f59-975c-9605f11a8367",
+      "category": "tech",
+      "navigationKeyword1": "cs-core",
+      "navigationKeyword2": "algorithms",
+      "question": "What abstract data structure does breadth-first search of a graph typically use for its frontier?",
+      "correctAnswer": "A queue",
+      "incorrectAnswers": [
+        "A stack",
+        "A priority queue",
+        "A set only"
+      ],
+      "explanation": "BFS visits nodes in layers, so it processes the oldest discovered node first, which matches FIFO queue behavior.",
+      "keywords": [
+        "algorithms",
+        "graphs"
+      ],
+      "source": "https://algs4.cs.princeton.edu/41graph/"
+    },
+    {
+      "seedId": "4ebb42f0-4d27-5c68-95c5-3ed5a3e8670a",
+      "category": "tech",
+      "navigationKeyword1": "cs-core",
+      "navigationKeyword2": "algorithms",
+      "question": "What is the average-case time complexity of randomized quicksort for n comparable items?",
+      "correctAnswer": "O(n log n)",
+      "incorrectAnswers": [
+        "O(n)",
+        "O(n^2)",
+        "O(log n)"
+      ],
+      "explanation": "Random pivot choices typically split work evenly, so the expected comparisons grow on the order of n log n.",
+      "keywords": [
+        "algorithms",
+        "sorting"
+      ],
+      "source": "https://xlinux.nist.gov/dads/HTML/quickSort.html"
+    },
+    {
+      "seedId": "75258c81-d464-5f57-bae8-3ede6c53d927",
+      "category": "tech",
+      "navigationKeyword1": "cs-core",
+      "navigationKeyword2": "algorithms",
+      "question": "What is the typical worst-case time complexity of merge sort for n comparable items?",
+      "correctAnswer": "O(n log n)",
+      "incorrectAnswers": [
+        "O(n)",
+        "O(n^2)",
+        "O(log n)"
+      ],
+      "explanation": "Merge sort divides the array and merges in linear time, so its worst-case runtime grows as n log n.",
+      "keywords": [
+        "algorithms",
+        "complexity"
+      ],
+      "source": "https://xlinux.nist.gov/dads/HTML/mergeSort.html"
+    },
+    {
+      "seedId": "d2a9e04f-2833-5daf-b3f5-16064d439490",
+      "category": "tech",
+      "navigationKeyword1": "cs-core",
+      "navigationKeyword2": "algorithms",
+      "question": "What precondition does classic binary search on an array assume about the elements?",
+      "correctAnswer": "They are sorted in the search order",
+      "incorrectAnswers": [
+        "They are unique",
+        "They are integers only",
+        "They fit in a hash table"
+      ],
+      "explanation": "Binary search repeatedly halves the range using the ordering rule, so the sequence must be sorted for the comparison to be valid.",
+      "keywords": [
+        "algorithms",
+        "search"
+      ],
+      "source": "https://en.wikipedia.org/wiki/Binary_search_algorithm"
+    },
+    {
+      "seedId": "ed3afc8c-948b-5d6d-941b-b1d13c7b4f79",
+      "category": "tech",
+      "navigationKeyword1": "cs-core",
+      "navigationKeyword2": "algorithms",
+      "question": "What problem does Dijkstra's algorithm solve on a weighted graph with nonnegative edge weights?",
+      "correctAnswer": "Single-source shortest paths",
+      "incorrectAnswers": [
+        "Minimum spanning tree",
+        "Maximum flow",
+        "Topological sorting"
+      ],
+      "explanation": "Dijkstra's method relaxes edges in order of increasing distance from the source, yielding shortest paths when weights are nonnegative.",
+      "keywords": [
+        "algorithms",
+        "graphs"
+      ],
+      "source": "https://en.wikipedia.org/wiki/Dijkstra%27s_algorithm"
+    }
+  ]
+}

@@ -1,0 +1,691 @@
+{
+  "schemaVersion": 1,
+  "seedSet": "core-public-items",
+  "deltaPreviewLimit": 200,
+  "items": [
+    {
+      "seedId": "de9b0023-3190-5dce-ae85-51ed6c13fabc",
+      "category": "tech",
+      "navigationKeyword1": "security",
+      "navigationKeyword2": "appsec",
+      "question": "What does a CSRF token primarily defend against?",
+      "correctAnswer": "Forged requests that reuse a victim\u2019s existing browser session",
+      "incorrectAnswers": [
+        "Brute-force guessing weak passwords",
+        "Physical theft of a laptop",
+        "Bit flips in RAM from cosmic rays"
+      ],
+      "explanation": "A secret token bound to the user session ensures state-changing actions were intended by the user on the real site.",
+      "keywords": [
+        "security",
+        "csrf"
+      ],
+      "source": "https://cheatsheetseries.owasp.org/cheatsheets/Cross-Site_Request_Forgery_Prevention_Cheat_Sheet.html"
+    },
+    {
+      "seedId": "9dadf130-ee44-52ba-b323-fbae3266fd36",
+      "category": "tech",
+      "navigationKeyword1": "security",
+      "navigationKeyword2": "appsec",
+      "question": "What is SQL injection?",
+      "correctAnswer": "Attacker-controlled input alters the structure of a database query",
+      "incorrectAnswers": [
+        "Encrypting SQL traffic with TLS only",
+        "Running the database on two CPUs",
+        "Indexing tables for faster reads"
+      ],
+      "explanation": "When user input is concatenated into SQL without binding, attackers can read or modify data beyond intended access.",
+      "keywords": [
+        "security",
+        "sql-injection"
+      ],
+      "source": "https://cheatsheetseries.owasp.org/cheatsheets/SQL_Injection_Prevention_Cheat_Sheet.html"
+    },
+    {
+      "seedId": "b6995d3e-b2ad-5366-99d2-e968e45f3335",
+      "category": "tech",
+      "navigationKeyword1": "security",
+      "navigationKeyword2": "appsec",
+      "question": "What is a security benefit of the Content-Security-Policy header?",
+      "correctAnswer": "It restricts which origins can execute scripts and load resources in the page",
+      "incorrectAnswers": [
+        "It replaces the need for HTTPS",
+        "It stores passwords in cookies in plain text",
+        "It disables all logging"
+      ],
+      "explanation": "CSP reduces XSS impact by default-deny rules for script sources and can block inline script abuse when configured strictly.",
+      "keywords": [
+        "security",
+        "csp"
+      ],
+      "source": "https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP"
+    },
+    {
+      "seedId": "51196fbc-feee-5de1-a008-f0b7e4e259b7",
+      "category": "tech",
+      "navigationKeyword1": "security",
+      "navigationKeyword2": "appsec",
+      "question": "What is cross-site scripting (XSS)?",
+      "correctAnswer": "Injecting scripts into pages other users view so code runs in their browser context",
+      "incorrectAnswers": [
+        "Encrypting traffic between two data centers",
+        "A RAID disk layout",
+        "A CPU branch predictor bug"
+      ],
+      "explanation": "If untrusted data becomes HTML or JavaScript without escaping, attackers can steal sessions or act as the victim.",
+      "keywords": [
+        "security",
+        "xss"
+      ],
+      "source": "https://developer.mozilla.org/en-US/docs/Glossary/Cross-site_scripting"
+    },
+    {
+      "seedId": "b8cd83d3-ff7a-56cf-88b8-3da12c38c79b",
+      "category": "tech",
+      "navigationKeyword1": "security",
+      "navigationKeyword2": "appsec",
+      "question": "What is the OWASP Top 10 list meant to highlight?",
+      "correctAnswer": "Common, high-impact web application security risks",
+      "incorrectAnswers": [
+        "The ten fastest programming languages",
+        "Official government tax rates",
+        "GPU benchmark scores"
+      ],
+      "explanation": "The OWASP Top 10 catalogs prevalent classes of flaws such as injection and broken access control so teams can prioritize defenses.",
+      "keywords": [
+        "security",
+        "owasp"
+      ],
+      "source": "https://owasp.org/www-project-top-ten/"
+    },
+    {
+      "seedId": "a2600460-c109-5c1f-b616-07f94bd6e1fa",
+      "category": "tech",
+      "navigationKeyword1": "security",
+      "navigationKeyword2": "appsec",
+      "question": "Why validate and sanitize input on the server even if the client also checks it?",
+      "correctAnswer": "Clients can be bypassed, so the server must enforce rules as the trust boundary",
+      "incorrectAnswers": [
+        "Because browsers cannot send HTTP",
+        "Because TLS removes all attacks",
+        "Because databases ignore SQL"
+      ],
+      "explanation": "Attackers can call APIs directly, so authoritative validation belongs where data enters trusted processing.",
+      "keywords": [
+        "security",
+        "input-validation"
+      ],
+      "source": "https://cwe.mitre.org/data/definitions/20.html"
+    },
+    {
+      "seedId": "678ae30f-970b-53b6-977b-effb21ab0ad8",
+      "category": "tech",
+      "navigationKeyword1": "security",
+      "navigationKeyword2": "cryptography",
+      "question": "In HTTPS, what protocol typically encrypts HTTP inside a TLS record layer?",
+      "correctAnswer": "TLS (Transport Layer Security)",
+      "incorrectAnswers": [
+        "FTP only",
+        "SMTP without STARTTLS",
+        "Raw UDP with no handshake"
+      ],
+      "explanation": "HTTPS is HTTP over TLS, providing channel confidentiality and integrity between browser and server.",
+      "keywords": [
+        "security",
+        "https"
+      ],
+      "source": "https://www.rfc-editor.org/rfc/rfc8446"
+    },
+    {
+      "seedId": "8c907d1c-3f90-532b-b8d1-a5186b775cf0",
+      "category": "tech",
+      "navigationKeyword1": "security",
+      "navigationKeyword2": "cryptography",
+      "question": "What is AES?",
+      "correctAnswer": "A NIST-standardized symmetric block cipher family widely used for bulk encryption",
+      "incorrectAnswers": [
+        "An asymmetric algorithm based on elliptic curves only",
+        "A firewall rule syntax",
+        "A video codec"
+      ],
+      "explanation": "AES operates on fixed block sizes with common key lengths and is the baseline for many protocols and disk encryption systems.",
+      "keywords": [
+        "security",
+        "aes"
+      ],
+      "source": "https://csrc.nist.gov/publications/detail/fips/197/final"
+    },
+    {
+      "seedId": "3459ded6-fb54-5d79-a28c-adebdc0067a1",
+      "category": "tech",
+      "navigationKeyword1": "security",
+      "navigationKeyword2": "cryptography",
+      "question": "What is RSA commonly used for in modern protocols?",
+      "correctAnswer": "Key exchange, signatures, or wrapping symmetric keys rather than encrypting huge files directly",
+      "incorrectAnswers": [
+        "Replacing TLS entirely",
+        "Storing passwords as plaintext",
+        "Compressing databases"
+      ],
+      "explanation": "RSA operations are costly, so systems often encrypt a random symmetric key asymmetrically and stream data with AES.",
+      "keywords": [
+        "security",
+        "rsa"
+      ],
+      "source": "https://en.wikipedia.org/wiki/RSA_(cryptosystem)"
+    },
+    {
+      "seedId": "f7efdc15-e021-5fb0-a4f6-d8cf6e31a4b2",
+      "category": "tech",
+      "navigationKeyword1": "security",
+      "navigationKeyword2": "cryptography",
+      "question": "What is the main difference between symmetric and asymmetric encryption?",
+      "correctAnswer": "Symmetric uses one shared secret key; asymmetric uses a public/private key pair",
+      "incorrectAnswers": [
+        "Symmetric always uses RSA; asymmetric always uses AES",
+        "Only symmetric works over the internet",
+        "Asymmetric cannot encrypt data"
+      ],
+      "explanation": "Symmetric schemes are fast for bulk data, while asymmetric schemes solve key distribution and digital signatures with paired keys.",
+      "keywords": [
+        "security",
+        "encryption"
+      ],
+      "source": "https://en.wikipedia.org/wiki/Symmetric-key_algorithm"
+    },
+    {
+      "seedId": "158c2325-0562-54ac-b727-6e4deb9f8a27",
+      "category": "tech",
+      "navigationKeyword1": "security",
+      "navigationKeyword2": "cryptography",
+      "question": "What property should a cryptographic hash function provide?",
+      "correctAnswer": "Preimage resistance: hard to find an input that matches a given hash",
+      "incorrectAnswers": [
+        "Reversible decryption with the same key",
+        "Guaranteed collision for any two inputs",
+        "Infinite output length"
+      ],
+      "explanation": "Hashes fingerprint data; security relies on being one-way and collision-resistant for the bit length used.",
+      "keywords": [
+        "security",
+        "hashing"
+      ],
+      "source": "https://csrc.nist.gov/glossary/term/cryptographic-hash-function"
+    },
+    {
+      "seedId": "c2bcffef-4cf5-50b3-ad96-38e2a7f30fcd",
+      "category": "tech",
+      "navigationKeyword1": "security",
+      "navigationKeyword2": "cryptography",
+      "question": "Why add a random salt when storing password hashes?",
+      "correctAnswer": "So identical passwords yield different hashes and rainbow tables become impractical",
+      "incorrectAnswers": [
+        "To make passwords shorter",
+        "To encrypt the salt with AES-GCM only",
+        "To remove the need for HTTPS"
+      ],
+      "explanation": "Per-password salts ensure attackers must crack each hash separately even when users pick the same password.",
+      "keywords": [
+        "security",
+        "password-storage"
+      ],
+      "source": "https://cheatsheetseries.owasp.org/cheatsheets/Password_Storage_Cheat_Sheet.html"
+    },
+    {
+      "seedId": "8f4f4de5-dbaf-5023-baca-dbe5ab088cd7",
+      "category": "tech",
+      "navigationKeyword1": "security",
+      "navigationKeyword2": "iam",
+      "question": "In OAuth 2.0, what does an access token typically authorize?",
+      "correctAnswer": "A client to call specific APIs on behalf of a resource owner",
+      "incorrectAnswers": [
+        "Physical building entry without badges",
+        "Kernel memory allocation forever",
+        "DNS root zone edits"
+      ],
+      "explanation": "OAuth separates consent and delegation so users can grant limited API access without sharing primary passwords.",
+      "keywords": [
+        "security",
+        "oauth"
+      ],
+      "source": "https://www.rfc-editor.org/rfc/rfc6749"
+    },
+    {
+      "seedId": "91354160-18c4-52de-888d-427f174ab1ee",
+      "category": "tech",
+      "navigationKeyword1": "security",
+      "navigationKeyword2": "iam",
+      "question": "What does multi-factor authentication add beyond a password?",
+      "correctAnswer": "At least one extra factor such as a device or biometric proof",
+      "incorrectAnswers": [
+        "A longer desktop wallpaper",
+        "More RAM for the browser",
+        "Automatic admin rights"
+      ],
+      "explanation": "MFA combines categories like something you know with something you have, reducing account takeover from stolen passwords.",
+      "keywords": [
+        "security",
+        "mfa"
+      ],
+      "source": "https://csrc.nist.gov/glossary/term/multi-factor-authentication"
+    },
+    {
+      "seedId": "dab4d576-7da5-59ae-b796-df8af1e86531",
+      "category": "tech",
+      "navigationKeyword1": "security",
+      "navigationKeyword2": "iam",
+      "question": "What does role-based access control (RBAC) assign permissions to?",
+      "correctAnswer": "Roles that users inherit instead of ad hoc rights per user",
+      "incorrectAnswers": [
+        "Only individual IP packets",
+        "GPU shader programs only",
+        "Database row checksums"
+      ],
+      "explanation": "Grouping privileges in roles keeps policy manageable and supports least privilege at scale.",
+      "keywords": [
+        "security",
+        "rbac"
+      ],
+      "source": "https://csrc.nist.gov/glossary/term/role-based-access-control"
+    },
+    {
+      "seedId": "3fe33e5c-abf6-5562-a939-bd65515073d2",
+      "category": "tech",
+      "navigationKeyword1": "security",
+      "navigationKeyword2": "iam",
+      "question": "What is SAML commonly used for?",
+      "correctAnswer": "Browser SSO using XML assertions between an identity provider and a service provider",
+      "incorrectAnswers": [
+        "Low-level packet routing on switches",
+        "Compiling Java to native code",
+        "JPEG image compression"
+      ],
+      "explanation": "SAML exchanges signed assertions so users sign in once at an IdP and gain access to federated applications.",
+      "keywords": [
+        "security",
+        "saml"
+      ],
+      "source": "https://en.wikipedia/wiki/Security_Assertion_Markup_Language"
+    },
+    {
+      "seedId": "6bc18f9c-4820-5463-be2d-42aca92753a5",
+      "category": "tech",
+      "navigationKeyword1": "security",
+      "navigationKeyword2": "iam",
+      "question": "What is the difference between authentication and authorization?",
+      "correctAnswer": "Authentication proves identity; authorization decides what that identity may do",
+      "incorrectAnswers": [
+        "They are identical terms",
+        "Authorization proves identity; authentication decides actions",
+        "Both refer only to disk encryption"
+      ],
+      "explanation": "You first establish who someone is, then apply policy rules about allowed resources and operations.",
+      "keywords": [
+        "security",
+        "authn-authz"
+      ],
+      "source": "https://cheatsheetseries.owasp.org/cheatsheets/Authentication_Cheat_Sheet.html"
+    },
+    {
+      "seedId": "a88a0f62-1c0d-5028-a7e6-923405e8eb2f",
+      "category": "tech",
+      "navigationKeyword1": "security",
+      "navigationKeyword2": "iam",
+      "question": "What problem does single sign-on (SSO) mainly reduce for users?",
+      "correctAnswer": "Repeated password prompts across related applications",
+      "incorrectAnswers": [
+        "The need for any authentication",
+        "Network latency to Mars",
+        "Disk fragmentation"
+      ],
+      "explanation": "SSO centralizes authentication so downstream apps trust a session established by the identity provider.",
+      "keywords": [
+        "security",
+        "sso"
+      ],
+      "source": "https://en.wikipedia.org/wiki/Single_sign-on"
+    },
+    {
+      "seedId": "18da1c47-2efb-5b0e-8f90-2d8547e77b70",
+      "category": "tech",
+      "navigationKeyword1": "security",
+      "navigationKeyword2": "netsec",
+      "question": "What does DNS primarily map?",
+      "correctAnswer": "Human-readable hostnames to IP addresses used for routing",
+      "incorrectAnswers": [
+        "MAC addresses to postal mail",
+        "User passwords to JPEG files",
+        "CPU model names to RAM speed"
+      ],
+      "explanation": "Resolvers query the DNS hierarchy so clients can connect to services without memorizing numeric addresses.",
+      "keywords": [
+        "security",
+        "dns"
+      ],
+      "source": "https://www.ietf.org/rfc/rfc1035.txt"
+    },
+    {
+      "seedId": "ba740e69-666b-549b-a71b-839d8f75deff",
+      "category": "tech",
+      "navigationKeyword1": "security",
+      "navigationKeyword2": "netsec",
+      "question": "What does TLS primarily provide for data on the wire?",
+      "correctAnswer": "Confidentiality and integrity between endpoints using negotiated encryption",
+      "incorrectAnswers": [
+        "Guaranteed virus removal on endpoints",
+        "Automatic database backups",
+        "Infinite bandwidth"
+      ],
+      "explanation": "TLS authenticates peers when certificates are used properly and protects traffic from eavesdropping and tampering in transit.",
+      "keywords": [
+        "security",
+        "tls"
+      ],
+      "source": "https://en.wikipedia.org/wiki/Transport_Layer_Security"
+    },
+    {
+      "seedId": "14977682-15b5-5db5-9047-0e468e6e6bf0",
+      "category": "tech",
+      "navigationKeyword1": "security",
+      "navigationKeyword2": "netsec",
+      "question": "What does a VPN tunnel typically protect?",
+      "correctAnswer": "Packets between your device and the VPN endpoint from local network snooping",
+      "incorrectAnswers": [
+        "Physical keyboard keystrokes from wear",
+        "The monitor refresh rate",
+        "CPU silicon manufacturing defects"
+      ],
+      "explanation": "VPNs encapsulate traffic so untrusted networks see encrypted tunnels rather than plaintext application data.",
+      "keywords": [
+        "security",
+        "vpn"
+      ],
+      "source": "https://en.wikipedia.org/wiki/Virtual_private_network"
+    },
+    {
+      "seedId": "066e7699-6fd9-59a4-9995-b72000d55cb1",
+      "category": "tech",
+      "navigationKeyword1": "security",
+      "navigationKeyword2": "netsec",
+      "question": "What is a common goal of a DDoS attack?",
+      "correctAnswer": "Overload services or links so legitimate users cannot reach them",
+      "incorrectAnswers": [
+        "Increase password strength requirements",
+        "Improve database normalization",
+        "Reduce TLS certificate size"
+      ],
+      "explanation": "Distributed floods exhaust capacity or state tables, causing outages even when individual packets look superficially valid.",
+      "keywords": [
+        "security",
+        "ddos"
+      ],
+      "source": "https://www.cloudflare.com/learning/ddos/what-is-a-ddos-attack/"
+    },
+    {
+      "seedId": "b954e93b-212d-5cc5-a0e2-bcba0ddb86e1",
+      "category": "tech",
+      "navigationKeyword1": "security",
+      "navigationKeyword2": "netsec",
+      "question": "What is the primary job of a network firewall?",
+      "correctAnswer": "Allow or deny traffic between zones based on policy rules",
+      "incorrectAnswers": [
+        "Compile source code to binaries",
+        "Train neural networks",
+        "Format hard drives automatically"
+      ],
+      "explanation": "Firewalls enforce least access at network boundaries by filtering ports, addresses, and application-layer signals.",
+      "keywords": [
+        "security",
+        "firewall"
+      ],
+      "source": "https://www.cloudflare.com/learning/security/what-is-a-firewall/"
+    },
+    {
+      "seedId": "551eec78-cefc-5d6c-9488-4d8d7c4cc7c6",
+      "category": "tech",
+      "navigationKeyword1": "security",
+      "navigationKeyword2": "netsec",
+      "question": "What is the usual difference between an IDS and an IPS?",
+      "correctAnswer": "IDS detects suspicious traffic while IPS can actively block it inline",
+      "incorrectAnswers": [
+        "IDS only runs on smartphones",
+        "IPS cannot see IP packets",
+        "They are identical terms with no difference"
+      ],
+      "explanation": "Detection alerts operators, whereas prevention places enforcement in the traffic path to drop or reset connections.",
+      "keywords": [
+        "security",
+        "ids-ips"
+      ],
+      "source": "https://en.wikipedia.org/wiki/Intrusion_detection_system"
+    },
+    {
+      "seedId": "0caffae3-bd7f-57b9-9421-a00ffa61aeeb",
+      "category": "tech",
+      "navigationKeyword1": "security",
+      "navigationKeyword2": "pentest",
+      "question": "In a black-box test, how much internal detail is the tester usually given upfront?",
+      "correctAnswer": "Little or no internal information, similar to an external attacker",
+      "incorrectAnswers": [
+        "Full source code and architecture diagrams always",
+        "Physical keys to every data center",
+        "Root passwords for all databases by default"
+      ],
+      "explanation": "Black-box engagements test what outsiders can discover without insider knowledge.",
+      "keywords": [
+        "security",
+        "black-box"
+      ],
+      "source": "https://en.wikipedia.org/wiki/Black-box_testing"
+    },
+    {
+      "seedId": "5f2a475f-5f8a-51d1-a1e6-774a7fcdd969",
+      "category": "tech",
+      "navigationKeyword1": "security",
+      "navigationKeyword2": "pentest",
+      "question": "What does a port scan typically reveal?",
+      "correctAnswer": "Which network services appear open or filtered on a host",
+      "incorrectAnswers": [
+        "The CEO\u2019s favorite color",
+        "Exact lines of application source code",
+        "Whether RAM is DDR4 or DDR5"
+      ],
+      "explanation": "Scanners probe ports to map attack surface and prioritize vulnerabilities to investigate.",
+      "keywords": [
+        "security",
+        "scanning"
+      ],
+      "source": "https://en.wikipedia.org/wiki/Port_scanner"
+    },
+    {
+      "seedId": "87b14009-c242-58e4-acdc-861a01519c65",
+      "category": "tech",
+      "navigationKeyword1": "security",
+      "navigationKeyword2": "pentest",
+      "question": "What does the CVSS base score summarize?",
+      "correctAnswer": "Severity of a vulnerability using standardized technical impact and exploitability factors",
+      "incorrectAnswers": [
+        "Company stock price after a breach",
+        "Number of lines of code in a repo",
+        "Average user satisfaction survey"
+      ],
+      "explanation": "CVSS provides a comparable severity metric so triage teams can prioritize patching work.",
+      "keywords": [
+        "security",
+        "cvss"
+      ],
+      "source": "https://www.first.org/cvss/"
+    },
+    {
+      "seedId": "d92b923c-c677-5f2c-8d06-7d6ffd7946f4",
+      "category": "tech",
+      "navigationKeyword1": "security",
+      "navigationKeyword2": "pentest",
+      "question": "What is a CVE identifier?",
+      "correctAnswer": "A public ID for a known vulnerability entry in the CVE list",
+      "incorrectAnswers": [
+        "A private Wi-Fi password",
+        "A TLS cipher suite name only",
+        "A DNS record type"
+      ],
+      "explanation": "CVE IDs help teams share precise references to flaws across vendors, scanners, and patches.",
+      "keywords": [
+        "security",
+        "cve"
+      ],
+      "source": "https://www.cve.org/About/Process"
+    },
+    {
+      "seedId": "1abad570-d441-5aad-ae8b-a919ff68215f",
+      "category": "tech",
+      "navigationKeyword1": "security",
+      "navigationKeyword2": "pentest",
+      "question": "What is coordinated vulnerability disclosure?",
+      "correctAnswer": "Report issues privately to vendors and allow time to patch before public details",
+      "incorrectAnswers": [
+        "Publish exploit code immediately without notice",
+        "Ignore vulnerabilities found in testing",
+        "Sell findings only to the highest bidder illegally"
+      ],
+      "explanation": "Responsible disclosure reduces harm by fixing issues before wide exploitation while still informing defenders.",
+      "keywords": [
+        "security",
+        "disclosure"
+      ],
+      "source": "https://www.cisa.gov/coordinated-vulnerability-disclosure-process"
+    },
+    {
+      "seedId": "8dec7009-a3df-5365-a145-89ee8acbc29f",
+      "category": "tech",
+      "navigationKeyword1": "security",
+      "navigationKeyword2": "pentest",
+      "question": "What is the main goal of an authorized penetration test?",
+      "correctAnswer": "Find and demonstrate exploitable weaknesses before attackers do",
+      "incorrectAnswers": [
+        "Delete production data to save space",
+        "Guarantee perfect code with zero bugs",
+        "Replace all employees with scripts"
+      ],
+      "explanation": "Pentests simulate real attacks under rules of engagement to measure risk and validate defenses.",
+      "keywords": [
+        "security",
+        "pentest"
+      ],
+      "source": "https://csrc.nist.gov/glossary/term/penetration-testing"
+    },
+    {
+      "seedId": "4ef9a8cc-8281-5705-a54e-203fdd79ca54",
+      "category": "tech",
+      "navigationKeyword1": "security",
+      "navigationKeyword2": "sec-basics",
+      "question": "In the classic CIA triad, what does \u201cintegrity\u201d refer to?",
+      "correctAnswer": "Data is accurate and has not been tampered with",
+      "incorrectAnswers": [
+        "Data is hidden from everyone",
+        "Systems are always offline",
+        "Passwords never expire"
+      ],
+      "explanation": "Integrity means unauthorized changes are prevented or detected so information stays trustworthy.",
+      "keywords": [
+        "security",
+        "cia-triad"
+      ],
+      "source": "https://en.wikipedia.org/wiki/CIA_triad"
+    },
+    {
+      "seedId": "eeaee150-6046-5d17-b537-0ade3c2ecdb6",
+      "category": "tech",
+      "navigationKeyword1": "security",
+      "navigationKeyword2": "sec-basics",
+      "question": "What does the principle of least privilege require?",
+      "correctAnswer": "Grant users and processes only the minimum access needed for their job",
+      "incorrectAnswers": [
+        "Everyone gets administrator access by default",
+        "Disable all authentication",
+        "Share one password across teams"
+      ],
+      "explanation": "Limiting rights shrinks the damage radius if an account is stolen or software is compromised.",
+      "keywords": [
+        "security",
+        "least-privilege"
+      ],
+      "source": "https://csrc.nist.gov/glossary/term/least_privilege"
+    },
+    {
+      "seedId": "212e4ac9-1a62-5ac6-9b5b-6c15b5984041",
+      "category": "tech",
+      "navigationKeyword1": "security",
+      "navigationKeyword2": "sec-basics",
+      "question": "What is malware?",
+      "correctAnswer": "Software designed to harm, steal data, or gain unauthorized access",
+      "incorrectAnswers": [
+        "Only hardware that overheats",
+        "Any open-source license",
+        "A cloud billing invoice"
+      ],
+      "explanation": "Malware is a broad category including viruses, ransomware, and spyware that subverts normal system behavior.",
+      "keywords": [
+        "security",
+        "malware"
+      ],
+      "source": "https://en.wikipedia.org/wiki/Malware"
+    },
+    {
+      "seedId": "d4ad705a-7f51-5d18-9c9f-1f84cecd711c",
+      "category": "tech",
+      "navigationKeyword1": "security",
+      "navigationKeyword2": "sec-basics",
+      "question": "What is phishing?",
+      "correctAnswer": "Tricking people into revealing secrets or running malware via deceptive messages",
+      "incorrectAnswers": [
+        "A type of hardware firewall brand",
+        "Encrypting disks with AES automatically",
+        "A backup rotation schedule"
+      ],
+      "explanation": "Phishing targets humans using urgency and impersonation, so technical controls must pair with user training.",
+      "keywords": [
+        "security",
+        "phishing"
+      ],
+      "source": "https://www.cisa.gov/news-events/news/avoiding-social-engineering-and-phishing-attacks"
+    },
+    {
+      "seedId": "effdf491-1747-5116-86b7-71a420cb8799",
+      "category": "tech",
+      "navigationKeyword1": "security",
+      "navigationKeyword2": "sec-basics",
+      "question": "What is the main idea of defense in depth?",
+      "correctAnswer": "Layer multiple independent controls so one failure does not defeat security",
+      "incorrectAnswers": [
+        "Rely on a single perfect firewall",
+        "Remove all logging to save disk",
+        "Give every user admin rights"
+      ],
+      "explanation": "Independent layers such as identity, network filtering, and endpoint controls reduce single points of failure.",
+      "keywords": [
+        "security",
+        "defense-in-depth"
+      ],
+      "source": "https://csrc.nist.gov/glossary/term/defense_in_depth"
+    },
+    {
+      "seedId": "7108f7c2-c90a-5d49-9a36-1befda0fadef",
+      "category": "tech",
+      "navigationKeyword1": "security",
+      "navigationKeyword2": "sec-basics",
+      "question": "Why is timely patching important for security?",
+      "correctAnswer": "It closes known vulnerabilities attackers can otherwise exploit at scale",
+      "incorrectAnswers": [
+        "It removes the need for passwords",
+        "It guarantees zero downtime",
+        "It deletes all user data"
+      ],
+      "explanation": "Public advisories and exploit code mean unpatched systems are easy targets for automated scanning.",
+      "keywords": [
+        "security",
+        "patching"
+      ],
+      "source": "https://csrc.nist.gov/publications/detail/sp/800-40/rev-4/final"
+    }
+  ]
+}

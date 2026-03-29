@@ -1,0 +1,1447 @@
+{
+  "schemaVersion": 1,
+  "seedSet": "core-public-items",
+  "deltaPreviewLimit": 200,
+  "items": [
+    {
+      "seedId": "bbb04937-69ed-43fb-b565-6e568e487848",
+      "category": "history",
+      "navigationKeyword1": "us-history",
+      "navigationKeyword2": "20th-century",
+      "question": "Congress adopted the Nineteenth Amendment in 1919, guaranteeing women\u2019s suffrage based on whose decades of activism?",
+      "correctAnswer": "Suffragists such as Susan B. Anthony, Elizabeth Cady Stanton, and later Alice Paul (among many)",
+      "incorrectAnswers": [
+        "The Anti-Saloon League alone",
+        "The Populist Party alone",
+        "The Federal Reserve Board"
+      ],
+      "explanation": "Ratification in 1920 capped a long state-level and federal campaign for voting equality.",
+      "keywords": [
+        "20th-century",
+        "suffrage",
+        "amendment"
+      ],
+      "source": "https://www.britannica.com/topic/Nineteenth-Amendment-United-States-Constitution"
+    },
+    {
+      "seedId": "fe320813-05a9-410b-a0be-ec3fc513d27e",
+      "category": "history",
+      "navigationKeyword1": "us-history",
+      "navigationKeyword2": "20th-century",
+      "question": "Franklin Roosevelt\u2019s first-term programs\u2014relief, recovery, and reform\u2014were collectively nicknamed what?",
+      "correctAnswer": "The New Deal",
+      "incorrectAnswers": [
+        "The Square Deal",
+        "The Fair Deal",
+        "The Great Society"
+      ],
+      "explanation": "Agencies like the CCC, WPA, and SEC expanded federal economic intervention.",
+      "keywords": [
+        "20th-century",
+        "new-deal",
+        "fdr"
+      ],
+      "source": "https://www.britannica.com/event/New-Deal"
+    },
+    {
+      "seedId": "50bc01b3-6af7-4a43-8145-b6eb11f735f5",
+      "category": "history",
+      "navigationKeyword1": "us-history",
+      "navigationKeyword2": "20th-century",
+      "question": "Japan\u2019s December 7, 1941, attack on which U.S. naval base brought America fully into World War II?",
+      "correctAnswer": "Pearl Harbor, Hawaii",
+      "incorrectAnswers": [
+        "San Diego",
+        "Guam only",
+        "Manila Bay"
+      ],
+      "explanation": "Congress declared war on Japan the next day; Germany and Italy soon declared war on the United States.",
+      "keywords": [
+        "20th-century",
+        "world-war-ii",
+        "pearl-harbor"
+      ],
+      "source": "https://www.britannica.com/event/Pearl-Harbor-attack"
+    },
+    {
+      "seedId": "ba351c6f-6e01-4edc-b40e-3daaedfb4864",
+      "category": "history",
+      "navigationKeyword1": "us-history",
+      "navigationKeyword2": "20th-century",
+      "question": "NATO allies led by the United States reversed Iraq\u2019s 1990 annexation of Kuwait in which short war?",
+      "correctAnswer": "The Persian Gulf War (Operation Desert Storm)",
+      "incorrectAnswers": [
+        "The Iraq War (2003)",
+        "The Six-Day War",
+        "The Falklands War"
+      ],
+      "explanation": "George H.W. Bush assembled a UN-backed coalition that expelled Iraqi forces in early 1991.",
+      "keywords": [
+        "20th-century",
+        "gulf-war",
+        "bush"
+      ],
+      "source": "https://www.britannica.com/event/Persian-Gulf-War"
+    },
+    {
+      "seedId": "99bcdfeb-1d2f-44fc-a8d5-ebe4ef27c559",
+      "category": "history",
+      "navigationKeyword1": "us-history",
+      "navigationKeyword2": "20th-century",
+      "question": "Neil Armstrong and Buzz Aldrin walked on the Moon in July 1969 during which NASA mission?",
+      "correctAnswer": "Apollo 11",
+      "incorrectAnswers": [
+        "Apollo 8",
+        "Apollo 13",
+        "Gemini 4"
+      ],
+      "explanation": "The landing fulfilled Kennedy\u2019s pledge to reach the Moon before decade\u2019s end.",
+      "keywords": [
+        "20th-century",
+        "space",
+        "apollo"
+      ],
+      "source": "https://www.britannica.com/event/Apollo-11-mission"
+    },
+    {
+      "seedId": "1edc1212-b648-423d-b88f-177d2493e2aa",
+      "category": "history",
+      "navigationKeyword1": "us-history",
+      "navigationKeyword2": "20th-century",
+      "question": "Richard Nixon resigned the presidency in 1974 amid fallout from which political scandal?",
+      "correctAnswer": "Watergate",
+      "incorrectAnswers": [
+        "Teapot Dome",
+        "Iran-Contra",
+        "Whitewater"
+      ],
+      "explanation": "Tape recordings and cover-up convictions showed obstruction of justice tied to a 1972 burglary.",
+      "keywords": [
+        "20th-century",
+        "nixon",
+        "watergate"
+      ],
+      "source": "https://www.britannica.com/event/Watergate-Scandal"
+    },
+    {
+      "seedId": "ecc604c2-2533-4dae-90e2-0829f1737bdc",
+      "category": "history",
+      "navigationKeyword1": "us-history",
+      "navigationKeyword2": "20th-century",
+      "question": "The 1929 stock market crash on Wall Street helped trigger which decade-long economic crisis?",
+      "correctAnswer": "The Great Depression",
+      "incorrectAnswers": [
+        "The Long Depression",
+        "The Panic of 1893",
+        "The Stagflation of the 1970s"
+      ],
+      "explanation": "Bank failures, unemployment, and deflation reshaped American politics until World War II mobilization.",
+      "keywords": [
+        "20th-century",
+        "depression",
+        "economy"
+      ],
+      "source": "https://www.britannica.com/event/Great-Depression"
+    },
+    {
+      "seedId": "6fde55f3-9e1f-4276-a7c8-29688fc25137",
+      "category": "history",
+      "navigationKeyword1": "us-history",
+      "navigationKeyword2": "20th-century",
+      "question": "The 1954 Supreme Court decision Brown v. Board of Education of Topeka overturned which \u201cseparate but equal\u201d precedent?",
+      "correctAnswer": "Plessy v. Ferguson (1896)",
+      "incorrectAnswers": [
+        "Dred Scott v. Sandford",
+        "Marbury v. Madison",
+        "Lochner v. New York"
+      ],
+      "explanation": "The unanimous ruling held that segregated public schools violated the Equal Protection Clause.",
+      "keywords": [
+        "20th-century",
+        "civil-rights",
+        "education"
+      ],
+      "source": "https://www.britannica.com/event/Brown-v-Board-of-Education-of-Topeka"
+    },
+    {
+      "seedId": "4867cd32-856e-41b7-b17c-62ebee9bbfa2",
+      "category": "history",
+      "navigationKeyword1": "us-history",
+      "navigationKeyword2": "20th-century",
+      "question": "The 1965 Immigration and Nationality Act abolished national-origin quotas modeled on which 1920s-era system?",
+      "correctAnswer": "The quota system established in the Immigration Act of 1924 (Johnson-Reed)",
+      "incorrectAnswers": [
+        "The Chinese Exclusion Act alone",
+        "The Gentleman\u2019s Agreement",
+        "The Bracero Program"
+      ],
+      "explanation": "The 1965 law prioritized family reunification and skills, transforming America\u2019s immigrant demographics.",
+      "keywords": [
+        "20th-century",
+        "immigration",
+        "1965"
+      ],
+      "source": "https://www.britannica.com/topic/Immigration-Act-United-States-1965"
+    },
+    {
+      "seedId": "324cf81c-c2b0-4c23-b308-7bc67c6e071f",
+      "category": "history",
+      "navigationKeyword1": "us-history",
+      "navigationKeyword2": "20th-century",
+      "question": "The Civil Rights Act of 1964 outlawed discrimination in public accommodations and employment based on race, color, religion, sex, and what?",
+      "correctAnswer": "National origin",
+      "incorrectAnswers": [
+        "Political party",
+        "Age",
+        "Disability (added in later statutes)"
+      ],
+      "explanation": "Lyndon Johnson signed the bill after a Senate filibuster was broken, reshaping federal equality law.",
+      "keywords": [
+        "20th-century",
+        "civil-rights",
+        "1964"
+      ],
+      "source": "https://www.britannica.com/event/Civil-Rights-Act-United-States-1964"
+    },
+    {
+      "seedId": "7fbafaff-1fb5-49ab-851f-6c71a3d52a12",
+      "category": "history",
+      "navigationKeyword1": "us-history",
+      "navigationKeyword2": "20th-century",
+      "question": "The U.S. and USSR narrowly avoided nuclear war in October 1962 over Soviet missiles placed in which Caribbean country?",
+      "correctAnswer": "Cuba",
+      "incorrectAnswers": [
+        "Nicaragua",
+        "Dominican Republic",
+        "Haiti"
+      ],
+      "explanation": "Kennedy\u2019s quarantine and secret diplomacy led Khrushchev to withdraw the missiles.",
+      "keywords": [
+        "20th-century",
+        "cold-war",
+        "kennedy"
+      ],
+      "source": "https://www.britannica.com/event/Cuban-missile-crisis"
+    },
+    {
+      "seedId": "d67bdb7a-189c-46b8-9c53-1336efa27ca0",
+      "category": "history",
+      "navigationKeyword1": "us-history",
+      "navigationKeyword2": "20th-century",
+      "question": "The U.S. declared war on Germany in 1917 after controversies over submarine warfare and which diplomatic proposal?",
+      "correctAnswer": "The Zimmermann Telegram (proposed German-Mexican alliance against the U.S.)",
+      "incorrectAnswers": [
+        "The Hay-Pauncefote Treaty",
+        "The Gentlemen\u2019s Agreement",
+        "The Rush-Bagot Agreement"
+      ],
+      "explanation": "Public outrage over the telegram and continued sinkings pushed Wilson toward belligerency.",
+      "keywords": [
+        "20th-century",
+        "world-war-i",
+        "wilson"
+      ],
+      "source": "https://www.britannica.com/event/Zimmermann-Telegram"
+    },
+    {
+      "seedId": "6fd03268-244f-4e09-a425-ed511d782964",
+      "category": "history",
+      "navigationKeyword1": "us-history",
+      "navigationKeyword2": "civil-war",
+      "question": "Abraham Lincoln\u2019s Emancipation Proclamation (1863) declared freedom for enslaved people in states still in rebellion as of which date?",
+      "correctAnswer": "January 1, 1863",
+      "incorrectAnswers": [
+        "July 4, 1862",
+        "April 9, 1865",
+        "December 6, 1865"
+      ],
+      "explanation": "The proclamation reframed the war as a struggle against slavery and cleared the way for Black enlistment in Union armies.",
+      "keywords": [
+        "civil-war",
+        "emancipation",
+        "lincoln"
+      ],
+      "source": "https://www.britannica.com/event/Emancipation-Proclamation"
+    },
+    {
+      "seedId": "96a9bd36-2fa4-4da2-9989-6425d28e2a3b",
+      "category": "history",
+      "navigationKeyword1": "us-history",
+      "navigationKeyword2": "civil-war",
+      "question": "Confederate forces opened the Civil War by bombarding which federal fort in Charleston Harbor in April 1861?",
+      "correctAnswer": "Fort Sumter",
+      "incorrectAnswers": [
+        "Fort McHenry",
+        "Fort Ticonderoga",
+        "Fort Duquesne"
+      ],
+      "explanation": "Lincoln\u2019s decision to resupply the garrison prompted South Carolina batteries to fire on the unfinished fort.",
+      "keywords": [
+        "civil-war",
+        "1861",
+        "south-carolina"
+      ],
+      "source": "https://www.britannica.com/event/Fort-Sumter"
+    },
+    {
+      "seedId": "b902bc75-ef07-49f0-8f12-1285dc90798e",
+      "category": "history",
+      "navigationKeyword1": "us-history",
+      "navigationKeyword2": "civil-war",
+      "question": "Draft opposition exploded into deadly riots in 1863 in which Northern city over class and race tensions?",
+      "correctAnswer": "New York City",
+      "incorrectAnswers": [
+        "Boston",
+        "Philadelphia",
+        "Chicago"
+      ],
+      "explanation": "Mobs attacked African Americans and federal property before troops returning from Gettysburg helped restore order.",
+      "keywords": [
+        "civil-war",
+        "draft-riots",
+        "new-york"
+      ],
+      "source": "https://www.britannica.com/event/New-York-Draft-Riots"
+    },
+    {
+      "seedId": "1081754f-6dad-46ed-adfa-38ccc141b168",
+      "category": "history",
+      "navigationKeyword1": "us-history",
+      "navigationKeyword2": "civil-war",
+      "question": "George B. McClellan\u2019s Peninsula Campaign aimed to capture which Confederate capital by advancing up the Virginia Peninsula?",
+      "correctAnswer": "Richmond",
+      "incorrectAnswers": [
+        "Atlanta",
+        "Montgomery",
+        "Charleston"
+      ],
+      "explanation": "Robert E. Lee\u2019s Army of Northern Virginia blocked McClellan\u2019s cautious advance during the Seven Days\u2019 Battles.",
+      "keywords": [
+        "civil-war",
+        "virginia",
+        "peninsula-campaign"
+      ],
+      "source": "https://www.britannica.com/event/Peninsula-Campaign"
+    },
+    {
+      "seedId": "6a6bff87-fa5e-498a-881c-cbecc55a9a03",
+      "category": "history",
+      "navigationKeyword1": "us-history",
+      "navigationKeyword2": "civil-war",
+      "question": "John Wilkes Booth assassinated Lincoln on April 14, 1865, while the president attended a play at which Washington theater?",
+      "correctAnswer": "Ford\u2019s Theatre",
+      "incorrectAnswers": [
+        "The National Theatre",
+        "Ford\u2019s Opera House in New York",
+        "The White House East Room"
+      ],
+      "explanation": "Lincoln died the next morning; Andrew Johnson became president as the nation entered Reconstruction.",
+      "keywords": [
+        "civil-war",
+        "lincoln",
+        "assassination"
+      ],
+      "source": "https://www.britannica.com/biography/Abraham-Lincoln"
+    },
+    {
+      "seedId": "16b5304e-d82e-4b31-9742-2bf9765518c4",
+      "category": "history",
+      "navigationKeyword1": "us-history",
+      "navigationKeyword2": "civil-war",
+      "question": "Pickett\u2019s Charge failed on the third day of which July 1863 Pennsylvania battle?",
+      "correctAnswer": "Gettysburg",
+      "incorrectAnswers": [
+        "Chancellorsville",
+        "Fredericksburg",
+        "Wilderness"
+      ],
+      "explanation": "Meade\u2019s Army of the Potomac repulsed Lee\u2019s assault on Cemetery Ridge, marking a turning point in the Eastern Theater.",
+      "keywords": [
+        "civil-war",
+        "pennsylvania",
+        "gettysburg"
+      ],
+      "source": "https://www.britannica.com/event/Battle-of-Gettysburg"
+    },
+    {
+      "seedId": "c33fb8c1-4aab-4e2f-894f-21e856aa7969",
+      "category": "history",
+      "navigationKeyword1": "us-history",
+      "navigationKeyword2": "civil-war",
+      "question": "Robert E. Lee surrendered the Army of Northern Virginia to Grant at which Virginia courthouse in April 1865?",
+      "correctAnswer": "Appomattox Court House",
+      "incorrectAnswers": [
+        "Richmond",
+        "Petersburg",
+        "Lexington"
+      ],
+      "explanation": "The surrender set the pattern for remaining Confederate forces to lay down arms in the following weeks.",
+      "keywords": [
+        "civil-war",
+        "lee",
+        "grant"
+      ],
+      "source": "https://www.britannica.com/event/Appomattox-Court-House"
+    },
+    {
+      "seedId": "34b37fd4-67c1-41e0-b835-8355007acf2f",
+      "category": "history",
+      "navigationKeyword1": "us-history",
+      "navigationKeyword2": "civil-war",
+      "question": "The Union ironclad Monitor fought the Confederate Virginia (ex-Merrimack) in March 1862 at the mouth of which Virginia river?",
+      "correctAnswer": "The James River (Hampton Roads)",
+      "incorrectAnswers": [
+        "The Potomac River",
+        "The Mississippi River",
+        "The Savannah River"
+      ],
+      "explanation": "The duel between ironclads signaled the obsolescence of wooden warships in naval combat.",
+      "keywords": [
+        "civil-war",
+        "navy",
+        "ironclads"
+      ],
+      "source": "https://www.britannica.com/event/Battle-of-the-Monitor-and-Merrimack"
+    },
+    {
+      "seedId": "0018da11-e4ca-4dcc-94f2-5183cca06a64",
+      "category": "history",
+      "navigationKeyword1": "us-history",
+      "navigationKeyword2": "civil-war",
+      "question": "The bloodiest single day in U.S. military history occurred at which September 1862 Maryland battle?",
+      "correctAnswer": "Antietam (Sharpsburg)",
+      "incorrectAnswers": [
+        "Gettysburg",
+        "Shiloh",
+        "Cold Harbor"
+      ],
+      "explanation": "Lee\u2019s first invasion of the North ended in stalemate along Antietam Creek, enabling Lincoln to issue a preliminary emancipation proclamation.",
+      "keywords": [
+        "civil-war",
+        "maryland",
+        "1862"
+      ],
+      "source": "https://www.britannica.com/event/Battle-of-Antietam"
+    },
+    {
+      "seedId": "426be403-6b0a-4c11-8ed6-5dba9aad20db",
+      "category": "history",
+      "navigationKeyword1": "us-history",
+      "navigationKeyword2": "civil-war",
+      "question": "The first major land battle of the war, fought in July 1861 near Manassas, Virginia, is often called what in the North?",
+      "correctAnswer": "First Bull Run (First Manassas)",
+      "incorrectAnswers": [
+        "Shiloh",
+        "Antietam",
+        "Chancellorsville"
+      ],
+      "explanation": "Union hopes for a quick victory collapsed when Confederate reinforcements turned an apparent Federal success into a rout.",
+      "keywords": [
+        "civil-war",
+        "virginia",
+        "1861"
+      ],
+      "source": "https://www.britannica.com/event/First-Battle-of-Bull-Run"
+    },
+    {
+      "seedId": "d9ef96df-a5e7-433a-a5ae-33aa90092f32",
+      "category": "history",
+      "navigationKeyword1": "us-history",
+      "navigationKeyword2": "civil-war",
+      "question": "Ulysses S. Grant\u2019s capture of which Mississippi River city in July 1863 split the Confederacy in two?",
+      "correctAnswer": "Vicksburg",
+      "incorrectAnswers": [
+        "New Orleans",
+        "Memphis",
+        "Natchez"
+      ],
+      "explanation": "The long siege ended with Confederate surrender on July 4, the same day Lee began retreating from Gettysburg.",
+      "keywords": [
+        "civil-war",
+        "mississippi",
+        "grant"
+      ],
+      "source": "https://www.britannica.com/event/Siege-of-Vicksburg"
+    },
+    {
+      "seedId": "000f61c6-3856-49e2-8c81-b86a17913084",
+      "category": "history",
+      "navigationKeyword1": "us-history",
+      "navigationKeyword2": "civil-war",
+      "question": "William T. Sherman\u2019s 1864 \u201cMarch to the Sea\u201d cut a swath of destruction across which state to Savannah?",
+      "correctAnswer": "Georgia",
+      "incorrectAnswers": [
+        "South Carolina",
+        "Alabama",
+        "Tennessee"
+      ],
+      "explanation": "Sherman\u2019s hard-war strategy aimed to break Confederate morale and logistics by targeting railroads and civilian supplies.",
+      "keywords": [
+        "civil-war",
+        "sherman",
+        "georgia"
+      ],
+      "source": "https://www.britannica.com/event/Shermans-March-to-the-Sea"
+    },
+    {
+      "seedId": "a9f425ca-686b-45e8-a6fe-a0be32832df1",
+      "category": "history",
+      "navigationKeyword1": "us-history",
+      "navigationKeyword2": "colonial",
+      "question": "Charles II granted his brother the Duke of York a patent that led England to seize which Dutch trading colony in 1664?",
+      "correctAnswer": "New Amsterdam (renamed New York)",
+      "incorrectAnswers": [
+        "New Sweden",
+        "Pensacola",
+        "Havana"
+      ],
+      "explanation": "English troops forced Director-General Stuyvesant\u2019s surrender, integrating the Hudson estuary into New York.",
+      "keywords": [
+        "colonial",
+        "new-york",
+        "dutch"
+      ],
+      "source": "https://www.britannica.com/biography/Peter-Stuyvesant"
+    },
+    {
+      "seedId": "2ea38a78-e2a8-4e9b-9e5b-16c382ae1f82",
+      "category": "history",
+      "navigationKeyword1": "us-history",
+      "navigationKeyword2": "colonial",
+      "question": "England\u2019s first permanent settlement in North America, founded in 1607 on the James River, was called what?",
+      "correctAnswer": "Jamestown",
+      "incorrectAnswers": [
+        "Plymouth",
+        "Roanoke",
+        "St. Augustine"
+      ],
+      "explanation": "The Virginia Company\u2019s fort endured starvation and Powhatan diplomacy before stabilizing tobacco exports.",
+      "keywords": [
+        "colonial",
+        "virginia",
+        "english"
+      ],
+      "source": "https://www.britannica.com/place/Jamestown-colony"
+    },
+    {
+      "seedId": "a4646bdc-ddb4-4e43-a4a7-75e72903068c",
+      "category": "history",
+      "navigationKeyword1": "us-history",
+      "navigationKeyword2": "colonial",
+      "question": "George III\u2019s Proclamation of 1763 forbade colonial settlement west of which Appalachian boundary line?",
+      "correctAnswer": "The proclamation line along the Appalachian watershed (reserved lands for Indigenous nations)",
+      "incorrectAnswers": [
+        "The Mississippi River",
+        "The Rio Grande",
+        "The 49th parallel"
+      ],
+      "explanation": "Frontier colonists resented the restriction after Britain gained French claims in the peace settlement.",
+      "keywords": [
+        "colonial",
+        "frontier",
+        "british-policy"
+      ],
+      "source": "https://www.britannica.com/event/Proclamation-of-1763"
+    },
+    {
+      "seedId": "061cf35a-81bf-4a10-859e-250684bb048a",
+      "category": "history",
+      "navigationKeyword1": "us-history",
+      "navigationKeyword2": "colonial",
+      "question": "Jonathan Edwards\u2019s \u201cSinners in the Hands of an Angry God\u201d epitomized which 18th-century religious revival?",
+      "correctAnswer": "The First Great Awakening",
+      "incorrectAnswers": [
+        "The Second Great Awakening",
+        "The Holiness Movement",
+        "The Social Gospel"
+      ],
+      "explanation": "Itinerant preachers stirred emotional conversions and challenged established parish authority.",
+      "keywords": [
+        "colonial",
+        "religion",
+        "awakening"
+      ],
+      "source": "https://www.britannica.com/event/Great-Awakening"
+    },
+    {
+      "seedId": "a2104d73-282c-4f44-8a8f-ba1d295d461f",
+      "category": "history",
+      "navigationKeyword1": "us-history",
+      "navigationKeyword2": "colonial",
+      "question": "Nathaniel Bacon led 1676 rebels against Governor Berkeley\u2019s policies toward frontier land and which neighbors?",
+      "correctAnswer": "Virginia\u2019s Indigenous nations (and related grievances against elite rule)",
+      "incorrectAnswers": [
+        "Spanish Florida",
+        "French Canada",
+        "Dutch New Amsterdam"
+      ],
+      "explanation": "Bacon\u2019s Rebellion combined class resentment with demands for aggressive expansion against Native communities.",
+      "keywords": [
+        "colonial",
+        "virginia",
+        "rebellion"
+      ],
+      "source": "https://www.britannica.com/event/Bacons-Rebellion"
+    },
+    {
+      "seedId": "42c2eb5d-e95c-43ca-8970-589218e0d53d",
+      "category": "history",
+      "navigationKeyword1": "us-history",
+      "navigationKeyword2": "colonial",
+      "question": "Parliament\u2019s Navigation Acts sought to ensure that colonial trade enriched which country\u2019s merchants and navy?",
+      "correctAnswer": "England (later Great Britain)",
+      "incorrectAnswers": [
+        "Spain",
+        "France",
+        "The Dutch Republic"
+      ],
+      "explanation": "Enumerated commodities and shipping rules tied American plantations to imperial markets.",
+      "keywords": [
+        "colonial",
+        "trade",
+        "mercantilism"
+      ],
+      "source": "https://www.britannica.com/topic/Navigation-Acts"
+    },
+    {
+      "seedId": "b37a9557-9e4a-4303-9198-45add19746c6",
+      "category": "history",
+      "navigationKeyword1": "us-history",
+      "navigationKeyword2": "colonial",
+      "question": "Separatists known as Pilgrims founded Plymouth Plantation after landing at which Cape Cod harbor in 1620?",
+      "correctAnswer": "Provincetown Harbor (before relocating to Plymouth)",
+      "incorrectAnswers": [
+        "Boston Harbor",
+        "New York Bay",
+        "Chesapeake Bay"
+      ],
+      "explanation": "The Mayflower passengers signed a compact before exploring the coast and choosing Plymouth as their site.",
+      "keywords": [
+        "colonial",
+        "pilgrims",
+        "massachusetts"
+      ],
+      "source": "https://www.britannica.com/topic/Mayflower-ship"
+    },
+    {
+      "seedId": "e7035fb3-b3a4-4765-9024-ad7d97a3cd86",
+      "category": "history",
+      "navigationKeyword1": "us-history",
+      "navigationKeyword2": "colonial",
+      "question": "The 1636\u201337 Pequot War in southern New England chiefly pitted English colonists and allies against which Indigenous nation?",
+      "correctAnswer": "The Pequot",
+      "incorrectAnswers": [
+        "The Iroquois Confederacy",
+        "The Cherokee",
+        "The Sioux"
+      ],
+      "explanation": "Mystic River\u2019s massacre broke Pequot power and redistributed their lands to colonists.",
+      "keywords": [
+        "colonial",
+        "pequot",
+        "new-england"
+      ],
+      "source": "https://www.britannica.com/event/Pequot-War"
+    },
+    {
+      "seedId": "26d2f603-fd9b-48be-a95c-693a7cf17ef8",
+      "category": "history",
+      "navigationKeyword1": "us-history",
+      "navigationKeyword2": "colonial",
+      "question": "The 1649 Maryland Toleration Act briefly protected Catholics and Protestants in which proprietary colony?",
+      "correctAnswer": "Maryland",
+      "incorrectAnswers": [
+        "Massachusetts",
+        "Connecticut",
+        "New Hampshire"
+      ],
+      "explanation": "Cecilius Calvert\u2019s experiment aimed to attract settlers amid England\u2019s religious strife.",
+      "keywords": [
+        "colonial",
+        "maryland",
+        "religion"
+      ],
+      "source": "https://www.britannica.com/topic/Maryland-Toleration-Act"
+    },
+    {
+      "seedId": "bb65cee4-348b-4656-a962-df118c8fc411",
+      "category": "history",
+      "navigationKeyword1": "us-history",
+      "navigationKeyword2": "colonial",
+      "question": "The 1692 witch trials led to executions in which Massachusetts Bay settlement?",
+      "correctAnswer": "Salem",
+      "incorrectAnswers": [
+        "Hartford",
+        "Newport",
+        "Philadelphia"
+      ],
+      "explanation": "Spectral evidence, village feuds, and magisterial panic produced one of colonial America\u2019s darkest episodes.",
+      "keywords": [
+        "colonial",
+        "salem",
+        "trials"
+      ],
+      "source": "https://www.britannica.com/event/Salem-witch-trials"
+    },
+    {
+      "seedId": "5d62cc70-f749-4978-96a0-a48db1171a01",
+      "category": "history",
+      "navigationKeyword1": "us-history",
+      "navigationKeyword2": "colonial",
+      "question": "The 1754 Albany Congress, featuring Benjamin Franklin\u2019s snake cartoon, sought unity against which rival empire?",
+      "correctAnswer": "France (in the run-up to the French and Indian War)",
+      "incorrectAnswers": [
+        "Russia",
+        "Ottoman Empire",
+        "Portugal"
+      ],
+      "explanation": "Colonial delegates debated intercolonial defense while Britain and France clashed over the Ohio Valley.",
+      "keywords": [
+        "colonial",
+        "seven-years-war",
+        "albany"
+      ],
+      "source": "https://www.britannica.com/event/Albany-Congress"
+    },
+    {
+      "seedId": "c43f50c5-1823-450f-b2f8-9bb6db443119",
+      "category": "history",
+      "navigationKeyword1": "us-history",
+      "navigationKeyword2": "colonial",
+      "question": "The Mayflower Compact (1620) established civil self-government for which colony\u2019s male signers?",
+      "correctAnswer": "Plymouth Colony",
+      "incorrectAnswers": [
+        "Massachusetts Bay Colony",
+        "Rhode Island",
+        "New Netherland"
+      ],
+      "explanation": "The document framed rule by consent pending a royal patent, shaping New England political culture.",
+      "keywords": [
+        "colonial",
+        "mayflower",
+        "law"
+      ],
+      "source": "https://www.britannica.com/topic/Mayflower-Compact"
+    },
+    {
+      "seedId": "24547d88-cb7a-4cbf-9480-54629cbee705",
+      "category": "history",
+      "navigationKeyword1": "us-history",
+      "navigationKeyword2": "presidents",
+      "question": "Abraham Lincoln issued the Emancipation Proclamation and guided the Union through which conflict?",
+      "correctAnswer": "The American Civil War",
+      "incorrectAnswers": [
+        "The War of 1812",
+        "The Mexican-American War",
+        "The Spanish-American War"
+      ],
+      "explanation": "Lincoln\u2019s reelection in 1864 committed the nation to abolition and reunion.",
+      "keywords": [
+        "presidents",
+        "lincoln",
+        "civil-war"
+      ],
+      "source": "https://www.britannica.com/biography/Abraham-Lincoln"
+    },
+    {
+      "seedId": "0b75edba-a806-4071-94e3-594c28683fd3",
+      "category": "history",
+      "navigationKeyword1": "us-history",
+      "navigationKeyword2": "presidents",
+      "question": "Andrew Jackson\u2019s veto of the Second Bank recharter typified his fight against which elite institution?",
+      "correctAnswer": "The national bank and its perceived favoritism toward northeastern financiers",
+      "incorrectAnswers": [
+        "The Federal Reserve",
+        "The Treasury Department",
+        "The First Continental Congress"
+      ],
+      "explanation": "Jackson portrayed the Bank of the United States as a monopoly dangerous to democracy.",
+      "keywords": [
+        "presidents",
+        "jackson",
+        "bank-war"
+      ],
+      "source": "https://www.britannica.com/biography/Andrew-Jackson"
+    },
+    {
+      "seedId": "926f05d8-f3e2-4178-81bc-a2b25a2388f2",
+      "category": "history",
+      "navigationKeyword1": "us-history",
+      "navigationKeyword2": "presidents",
+      "question": "Dwight D. Eisenhower\u2019s military reputation rested on commanding Allied forces during which invasion of France?",
+      "correctAnswer": "D-Day (the Normandy invasion, June 6, 1944)",
+      "incorrectAnswers": [
+        "Operation Torch (North Africa)",
+        "Anzio alone",
+        "Market Garden"
+      ],
+      "explanation": "As president, Eisenhower warned of the military-industrial complex in his farewell address.",
+      "keywords": [
+        "presidents",
+        "eisenhower",
+        "d-day"
+      ],
+      "source": "https://www.britannica.com/biography/Dwight-D-Eisenhower"
+    },
+    {
+      "seedId": "690e2177-de24-404a-a779-90c902c54aba",
+      "category": "history",
+      "navigationKeyword1": "us-history",
+      "navigationKeyword2": "presidents",
+      "question": "Franklin D. Roosevelt was elected to an unprecedented fourth term while leading the U.S. through which global war?",
+      "correctAnswer": "World War II",
+      "incorrectAnswers": [
+        "World War I",
+        "The Korean War",
+        "The Vietnam War"
+      ],
+      "explanation": "The Twenty-second Amendment later limited presidents to two elected terms.",
+      "keywords": [
+        "presidents",
+        "fdr",
+        "world-war-ii"
+      ],
+      "source": "https://www.britannica.com/biography/Franklin-D-Roosevelt"
+    },
+    {
+      "seedId": "8cca2997-bd13-4886-be74-660547e6c56c",
+      "category": "history",
+      "navigationKeyword1": "us-history",
+      "navigationKeyword2": "presidents",
+      "question": "George Washington set precedents by voluntarily stepping down after how many terms as president?",
+      "correctAnswer": "Two terms",
+      "incorrectAnswers": [
+        "One term",
+        "Three terms",
+        "Four terms"
+      ],
+      "explanation": "His Farewell Address warned against permanent foreign alliances and sectional party spirit.",
+      "keywords": [
+        "presidents",
+        "washington",
+        "founding"
+      ],
+      "source": "https://www.britannica.com/biography/George-Washington"
+    },
+    {
+      "seedId": "8f13d6e2-7261-4a52-ae5e-1a95d8e7c37f",
+      "category": "history",
+      "navigationKeyword1": "us-history",
+      "navigationKeyword2": "presidents",
+      "question": "Harry S. Truman ordered atomic bombs used against Japan and articulated which doctrine of aid against communism?",
+      "correctAnswer": "The Truman Doctrine",
+      "incorrectAnswers": [
+        "The Eisenhower Doctrine",
+        "The Monroe Doctrine",
+        "The Roosevelt Corollary"
+      ],
+      "explanation": "Truman also backed the Marshall Plan and desegregated the armed forces by executive order.",
+      "keywords": [
+        "presidents",
+        "truman",
+        "cold-war"
+      ],
+      "source": "https://www.britannica.com/biography/Harry-S-Truman"
+    },
+    {
+      "seedId": "d51ea8dd-461b-48a3-8ccb-7b59f485c9be",
+      "category": "history",
+      "navigationKeyword1": "us-history",
+      "navigationKeyword2": "presidents",
+      "question": "John F. Kennedy\u2019s administration faced the failed Bay of Pigs invasion and the missile crisis centered on which country?",
+      "correctAnswer": "Cuba",
+      "incorrectAnswers": [
+        "Vietnam",
+        "Laos",
+        "Guatemala"
+      ],
+      "explanation": "Kennedy also launched the Peace Corps and set the Moon landing goal.",
+      "keywords": [
+        "presidents",
+        "kennedy",
+        "cold-war"
+      ],
+      "source": "https://www.britannica.com/biography/John-F-Kennedy"
+    },
+    {
+      "seedId": "c709e5ae-7f8b-42f1-b090-5384b363b9fb",
+      "category": "history",
+      "navigationKeyword1": "us-history",
+      "navigationKeyword2": "presidents",
+      "question": "Lyndon B. Johnson secured passage of Medicare, Medicaid, and major civil rights laws as part of what domestic agenda?",
+      "correctAnswer": "The Great Society",
+      "incorrectAnswers": [
+        "The New Frontier",
+        "The Square Deal",
+        "The Fair Deal"
+      ],
+      "explanation": "Vietnam War escalation overshadowed but did not erase his domestic legislative record.",
+      "keywords": [
+        "presidents",
+        "johnson",
+        "great-society"
+      ],
+      "source": "https://www.britannica.com/biography/Lyndon-B-Johnson"
+    },
+    {
+      "seedId": "c690b2f3-06f6-4d38-aedd-4cf3c7252b20",
+      "category": "history",
+      "navigationKeyword1": "us-history",
+      "navigationKeyword2": "presidents",
+      "question": "Ronald Reagan\u2019s presidency is closely associated with increased defense spending and which Soviet policy of openness?",
+      "correctAnswer": "Glasnost (under Mikhail Gorbachev)",
+      "incorrectAnswers": [
+        "Perestroika (economic restructuring)",
+        "The Brezhnev Doctrine",
+        "The Molotov\u2013Ribbentrop Pact"
+      ],
+      "explanation": "Glasnost was Gorbachev\u2019s policy of greater public candor and debate; Reagan\u2019s military buildup and diplomacy interacted with that reform climate in the late Cold War.",
+      "keywords": [
+        "presidents",
+        "reagan",
+        "cold-war"
+      ],
+      "source": "https://www.britannica.com/biography/Ronald-Reagan"
+    },
+    {
+      "seedId": "91abd1f3-4ac1-4f6c-bcd6-6fa54e646a5f",
+      "category": "history",
+      "navigationKeyword1": "us-history",
+      "navigationKeyword2": "presidents",
+      "question": "Theodore Roosevelt mediated the end of which 1905 war, earning a Nobel Peace Prize?",
+      "correctAnswer": "The Russo-Japanese War",
+      "incorrectAnswers": [
+        "The Boer War",
+        "The Balkan Wars",
+        "The Franco-Prussian War"
+      ],
+      "explanation": "The Portsmouth Treaty reflected Theodore Roosevelt\u2019s direct mediation between Japan and Russia after their war.",
+      "keywords": [
+        "presidents",
+        "roosevelt-teddy",
+        "diplomacy"
+      ],
+      "source": "https://www.britannica.com/biography/Theodore-Roosevelt"
+    },
+    {
+      "seedId": "3b1fef3c-2029-4192-a02c-b4c51d04ff06",
+      "category": "history",
+      "navigationKeyword1": "us-history",
+      "navigationKeyword2": "presidents",
+      "question": "Thomas Jefferson\u2019s administration nearly doubled U.S. territory by purchasing Louisiana from which ruler?",
+      "correctAnswer": "Napoleon Bonaparte (France)",
+      "incorrectAnswers": [
+        "King George III",
+        "Charles IV of Spain",
+        "Tsar Alexander I"
+      ],
+      "explanation": "The 1803 Louisiana Purchase secured the Mississippi River\u2019s mouth and vast western claims.",
+      "keywords": [
+        "presidents",
+        "jefferson",
+        "louisiana"
+      ],
+      "source": "https://www.britannica.com/event/Louisiana-Purchase"
+    },
+    {
+      "seedId": "7204b5ed-36fa-4c1c-84f5-a85382681dcf",
+      "category": "history",
+      "navigationKeyword1": "us-history",
+      "navigationKeyword2": "presidents",
+      "question": "When asking Congress to declare war on Germany in April 1917, what long-term international order did Woodrow Wilson publicly say the United States was fighting to secure?",
+      "correctAnswer": "A peace built on democratic consent, transparent diplomacy, and collective security (developed further in his Fourteen Points)",
+      "incorrectAnswers": [
+        "Permanent U.S. withdrawal from European politics",
+        "Annexing German colonies as U.S. territories",
+        "Restoring Europe\u2019s prewar monarchies and alliances unchanged"
+      ],
+      "explanation": "Wilson tied entry to submarine warfare and the Zimmermann Telegram, but he also argued the war should yield a new international system\u2014ideas he spelled out in the Fourteen Points and League of Nations proposal\u2014rather than a simple return to old power politics.",
+      "keywords": [
+        "presidents",
+        "wilson",
+        "world-war-i"
+      ],
+      "source": "https://www.britannica.com/biography/Woodrow-Wilson"
+    },
+    {
+      "seedId": "08af52da-3e84-4c6b-9dc6-2e1c74efa6a2",
+      "category": "history",
+      "navigationKeyword1": "us-history",
+      "navigationKeyword2": "reconstruction",
+      "question": "Congress created which agency in 1865 to aid formerly enslaved people with food, schools, and labor contracts?",
+      "correctAnswer": "The Freedmen\u2019s Bureau (Bureau of Refugees, Freedmen, and Abandoned Lands)",
+      "incorrectAnswers": [
+        "The Homestead Bureau",
+        "The Indian Office",
+        "The Pension Bureau"
+      ],
+      "explanation": "The bureau operated until 1872, mediating between planters and freedpeople across the defeated South.",
+      "keywords": [
+        "reconstruction",
+        "freedmen",
+        "bureau"
+      ],
+      "source": "https://www.britannica.com/topic/Freedmens-Bureau"
+    },
+    {
+      "seedId": "c426f3bb-9d48-42de-8953-642761f355c7",
+      "category": "history",
+      "navigationKeyword1": "us-history",
+      "navigationKeyword2": "reconstruction",
+      "question": "Hiram Revels of Mississippi became the first African American to serve in which national body in 1870?",
+      "correctAnswer": "The United States Senate",
+      "incorrectAnswers": [
+        "The House of Representatives",
+        "The Supreme Court",
+        "The Electoral College"
+      ],
+      "explanation": "During Reconstruction, Black legislators in southern states briefly helped shape public education and civil rights laws.",
+      "keywords": [
+        "reconstruction",
+        "revels",
+        "congress"
+      ],
+      "source": "https://www.britannica.com/biography/Hiram-Revels"
+    },
+    {
+      "seedId": "94fee013-d9ee-41ad-a7bc-7b7efea4705d",
+      "category": "history",
+      "navigationKeyword1": "us-history",
+      "navigationKeyword2": "reconstruction",
+      "question": "Northerners who moved south to serve as teachers, officials, or investors were often derided as what?",
+      "correctAnswer": "Carpetbaggers",
+      "incorrectAnswers": [
+        "Copperheads",
+        "Redeemers",
+        "Scalawags"
+      ],
+      "explanation": "Democrats used the slur to paint Reconstruction governments as corrupt outside impositions.",
+      "keywords": [
+        "reconstruction",
+        "carpetbagger",
+        "politics"
+      ],
+      "source": "https://www.britannica.com/topic/carpetbagger-United-States-history"
+    },
+    {
+      "seedId": "0599f2bf-1e86-4f96-82a4-22c0ce30081c",
+      "category": "history",
+      "navigationKeyword1": "us-history",
+      "navigationKeyword2": "reconstruction",
+      "question": "Radical Republicans like Thaddeus Stevens pushed which 1867 statutes dividing the South into military districts?",
+      "correctAnswer": "The Reconstruction Acts (Military Reconstruction Acts)",
+      "incorrectAnswers": [
+        "The Kansas-Nebraska Act",
+        "The Force Acts of 1870 only",
+        "The Dawes Act"
+      ],
+      "explanation": "The acts required new state constitutions with Black male suffrage before readmission to the Union.",
+      "keywords": [
+        "reconstruction",
+        "congress",
+        "military-rule"
+      ],
+      "source": "https://www.britannica.com/topic/Reconstruction-Acts"
+    },
+    {
+      "seedId": "085107bc-9b46-403d-8529-412854b0da0c",
+      "category": "history",
+      "navigationKeyword1": "us-history",
+      "navigationKeyword2": "reconstruction",
+      "question": "Southern states passed restrictive labor and vagrancy laws in 1865\u201366 widely known by what name?",
+      "correctAnswer": "Black Codes",
+      "incorrectAnswers": [
+        "Jim Crow laws (later era)",
+        "Alien and Sedition Acts",
+        "Insurrection Acts"
+      ],
+      "explanation": "Republicans in Congress saw Black Codes as an attempt to restore slavery in all but name.",
+      "keywords": [
+        "reconstruction",
+        "black-codes",
+        "south"
+      ],
+      "source": "https://www.britannica.com/topic/Black-Code-United-States-history"
+    },
+    {
+      "seedId": "99625e9c-023e-4af5-aad4-177e7bb78000",
+      "category": "history",
+      "navigationKeyword1": "us-history",
+      "navigationKeyword2": "reconstruction",
+      "question": "The Enforcement Acts of 1870\u201371 targeted intimidation by which white supremacist organization?",
+      "correctAnswer": "The Ku Klux Klan",
+      "incorrectAnswers": [
+        "The Know-Nothing Party",
+        "The Molly Maguires",
+        "The White League only"
+      ],
+      "explanation": "Federal authority briefly suppressed Klan violence through prosecutions under the acts.",
+      "keywords": [
+        "reconstruction",
+        "kkk",
+        "enforcement-acts"
+      ],
+      "source": "https://www.britannica.com/topic/Ku-Klux-Klan"
+    },
+    {
+      "seedId": "27e7ad7f-929b-41a1-b7c0-812a7e2745cd",
+      "category": "history",
+      "navigationKeyword1": "us-history",
+      "navigationKeyword2": "reconstruction",
+      "question": "The Fifteenth Amendment (1870) barred denial of the vote based on race, color, or what other status?",
+      "correctAnswer": "Previous condition of servitude",
+      "incorrectAnswers": [
+        "Religion",
+        "Property ownership",
+        "Literacy"
+      ],
+      "explanation": "The amendment enfranchised Black men; women of all races remained largely excluded until 1920.",
+      "keywords": [
+        "reconstruction",
+        "fifteenth-amendment",
+        "suffrage"
+      ],
+      "source": "https://www.britannica.com/topic/Fifteenth-Amendment-United-States-Constitution"
+    },
+    {
+      "seedId": "6384a18a-f163-484a-9b1f-35e4d18dce0e",
+      "category": "history",
+      "navigationKeyword1": "us-history",
+      "navigationKeyword2": "reconstruction",
+      "question": "The Fourteenth Amendment (1868) established birthright citizenship and equal protection under the laws for whom?",
+      "correctAnswer": "All persons born or naturalized in the United States (including formerly enslaved Americans)",
+      "incorrectAnswers": [
+        "Only white male citizens",
+        "Only property owners",
+        "Only Union veterans"
+      ],
+      "explanation": "Its due process and equal protection clauses became foundations of later civil rights litigation.",
+      "keywords": [
+        "reconstruction",
+        "fourteenth-amendment",
+        "citizenship"
+      ],
+      "source": "https://www.britannica.com/topic/Fourteenth-Amendment-United-States-Constitution"
+    },
+    {
+      "seedId": "f6e4d655-69ce-457d-9803-61a28a2e67e8",
+      "category": "history",
+      "navigationKeyword1": "us-history",
+      "navigationKeyword2": "reconstruction",
+      "question": "The House impeached Andrew Johnson in 1868 chiefly over his violation of which law protecting cabinet officers?",
+      "correctAnswer": "The Tenure of Office Act",
+      "incorrectAnswers": [
+        "The Pendleton Act",
+        "The Logan Act",
+        "The Sherman Antitrust Act"
+      ],
+      "explanation": "Johnson\u2019s removal of Secretary of War Stanton triggered the trial; the Senate fell one vote short of conviction.",
+      "keywords": [
+        "reconstruction",
+        "impeachment",
+        "johnson"
+      ],
+      "source": "https://www.britannica.com/event/Impeachment-trial-of-Andrew-Johnson"
+    },
+    {
+      "seedId": "1293f2c3-e035-4008-8867-63ec71d403d9",
+      "category": "history",
+      "navigationKeyword1": "us-history",
+      "navigationKeyword2": "reconstruction",
+      "question": "The Thirteenth Amendment, ratified in December 1865, abolished what institution nationwide?",
+      "correctAnswer": "Slavery and involuntary servitude (except as punishment for crime)",
+      "incorrectAnswers": [
+        "Indentured servitude for Europeans only",
+        "Debt peonage in the North only",
+        "The Electoral College"
+      ],
+      "explanation": "The amendment constitutionalized emancipation beyond the wartime proclamation\u2019s scope.",
+      "keywords": [
+        "reconstruction",
+        "thirteenth-amendment",
+        "slavery"
+      ],
+      "source": "https://www.britannica.com/topic/Thirteenth-Amendment-United-States-Constitution"
+    },
+    {
+      "seedId": "8dc38c1f-9341-49d4-845b-961701e4f877",
+      "category": "history",
+      "navigationKeyword1": "us-history",
+      "navigationKeyword2": "reconstruction",
+      "question": "The disputed 1876 presidential election was resolved by a deal that withdrew federal troops from which region?",
+      "correctAnswer": "The South (former Confederate states)",
+      "incorrectAnswers": [
+        "The Great Plains",
+        "Alaska",
+        "Puerto Rico"
+      ],
+      "explanation": "Rutherford B. Hayes\u2019s inauguration followed promises to end \u2018bayonet rule,\u2019 enabling Redeemer Democrats.",
+      "keywords": [
+        "reconstruction",
+        "compromise",
+        "1877"
+      ],
+      "source": "https://www.britannica.com/event/Compromise-of-1877"
+    },
+    {
+      "seedId": "365e56da-d2ef-4874-975c-f242fdbe8953",
+      "category": "history",
+      "navigationKeyword1": "us-history",
+      "navigationKeyword2": "reconstruction",
+      "question": "White southerners who backed Republican Reconstruction policies were nicknamed what?",
+      "correctAnswer": "Scalawags",
+      "incorrectAnswers": [
+        "Bourbons",
+        "Copperheads",
+        "Know-Nothings"
+      ],
+      "explanation": "Scalawags included small farmers and Unionists who allied with freedpeople against planter Democrats.",
+      "keywords": [
+        "reconstruction",
+        "scalawag",
+        "south"
+      ],
+      "source": "https://www.britannica.com/topic/scalawag-United-States-history"
+    },
+    {
+      "seedId": "c9603c39-83dc-4f71-83d7-c387a780e34c",
+      "category": "history",
+      "navigationKeyword1": "us-history",
+      "navigationKeyword2": "revolution",
+      "question": "Americans who continued to support the British Crown during the war were commonly labeled what?",
+      "correctAnswer": "Loyalists (Tories)",
+      "incorrectAnswers": [
+        "Federalists",
+        "Anti-Federalists",
+        "Copperheads"
+      ],
+      "explanation": "Many Loyalists fled to Canada, Britain, or the Caribbean after peace, fearing reprisals.",
+      "keywords": [
+        "revolution",
+        "loyalists",
+        "civil-war"
+      ],
+      "source": "https://www.britannica.com/topic/Loyalist-American-Revolution"
+    },
+    {
+      "seedId": "61f247cf-c0da-45e1-b5c9-e226fb2ed578",
+      "category": "history",
+      "navigationKeyword1": "us-history",
+      "navigationKeyword2": "revolution",
+      "question": "Colonial militia fortified Breed\u2019s Hill in June 1775, though the battle is traditionally named after which nearby height?",
+      "correctAnswer": "Bunker Hill",
+      "incorrectAnswers": [
+        "Dorchester Heights",
+        "Copp\u2019s Hill",
+        "Beacon Hill"
+      ],
+      "explanation": "Patriots inflicted heavy casualties before yielding ground, showing they could stand against regulars.",
+      "keywords": [
+        "revolution",
+        "boston",
+        "1775"
+      ],
+      "source": "https://www.britannica.com/event/Battle-of-Bunker-Hill"
+    },
+    {
+      "seedId": "5f5fadbd-ee24-4342-964a-9c2dea4da6ee",
+      "category": "history",
+      "navigationKeyword1": "us-history",
+      "navigationKeyword2": "revolution",
+      "question": "Horatio Gates\u2019s victory in October 1777 at which New York battle helped convince France to ally openly with the United States?",
+      "correctAnswer": "Saratoga",
+      "incorrectAnswers": [
+        "Long Island",
+        "Brandywine",
+        "Monmouth"
+      ],
+      "explanation": "Burgoyne\u2019s surrender demonstrated the rebellion could defeat a major British field army.",
+      "keywords": [
+        "revolution",
+        "saratoga",
+        "france"
+      ],
+      "source": "https://www.britannica.com/event/Battle-of-Saratoga-United-States-history"
+    },
+    {
+      "seedId": "300192d2-1fc0-4d92-926c-82fe720a6c7d",
+      "category": "history",
+      "navigationKeyword1": "us-history",
+      "navigationKeyword2": "revolution",
+      "question": "John Paul Jones\u2019s 1779 duel with HMS Serapis off England\u2019s coast made him a naval hero of which emerging navy?",
+      "correctAnswer": "The Continental Navy",
+      "incorrectAnswers": [
+        "The Royal Navy",
+        "The French Navy",
+        "The Spanish Armada"
+      ],
+      "explanation": "Jones\u2019s refusal to surrender\u2014\u201cI have not yet begun to fight\u201d\u2014symbolized American resolve at sea.",
+      "keywords": [
+        "revolution",
+        "navy",
+        "jones"
+      ],
+      "source": "https://www.britannica.com/biography/John-Paul-Jones"
+    },
+    {
+      "seedId": "d87c9296-43be-4ea9-adc9-06d65821d4e1",
+      "category": "history",
+      "navigationKeyword1": "us-history",
+      "navigationKeyword2": "revolution",
+      "question": "The 1783 Treaty of Paris recognized American independence and set a western boundary to which river for the new nation?",
+      "correctAnswer": "The Mississippi River",
+      "incorrectAnswers": [
+        "The Hudson River",
+        "The St. Lawrence River",
+        "The Colorado River"
+      ],
+      "explanation": "Britain ceded the trans-Appalachian region east of the Mississippi, though Indigenous nations were not parties.",
+      "keywords": [
+        "revolution",
+        "treaty",
+        "diplomacy"
+      ],
+      "source": "https://www.britannica.com/event/Treaty-of-Paris-1783"
+    },
+    {
+      "seedId": "5357042c-79c5-4d1f-b051-dddbf85c8085",
+      "category": "history",
+      "navigationKeyword1": "us-history",
+      "navigationKeyword2": "revolution",
+      "question": "The Continental Army\u2019s harsh winter encampment of 1777\u201378, marked by Steuben\u2019s drill reforms, occurred where?",
+      "correctAnswer": "Valley Forge",
+      "incorrectAnswers": [
+        "Morristown",
+        "West Point",
+        "Cambridge"
+      ],
+      "explanation": "Short rations and disease tested morale while the army professionalized for campaigns ahead.",
+      "keywords": [
+        "revolution",
+        "continental-army",
+        "pennsylvania"
+      ],
+      "source": "https://www.britannica.com/place/Valley-Forge"
+    },
+    {
+      "seedId": "ba64fece-06c2-46d8-a11c-e62078466f89",
+      "category": "history",
+      "navigationKeyword1": "us-history",
+      "navigationKeyword2": "revolution",
+      "question": "The Continental Congress adopted the Declaration of Independence primarily drafted by which Virginian?",
+      "correctAnswer": "Thomas Jefferson",
+      "incorrectAnswers": [
+        "John Adams",
+        "Benjamin Franklin alone",
+        "Alexander Hamilton"
+      ],
+      "explanation": "Jefferson\u2019s committee draft asserted natural rights and listed grievances against George III.",
+      "keywords": [
+        "revolution",
+        "declaration",
+        "1776"
+      ],
+      "source": "https://www.britannica.com/event/Declaration-of-Independence"
+    },
+    {
+      "seedId": "359789a5-f9ea-4b54-a1f7-296b4da685ee",
+      "category": "history",
+      "navigationKeyword1": "us-history",
+      "navigationKeyword2": "revolution",
+      "question": "The Franco-American victory at Yorktown forced the surrender of which British general in October 1781?",
+      "correctAnswer": "Charles Cornwallis",
+      "incorrectAnswers": [
+        "William Howe",
+        "John Burgoyne",
+        "Henry Clinton"
+      ],
+      "explanation": "French fleet and siege artillery trapped Cornwallis on the Virginia peninsula, effectively ending major combat.",
+      "keywords": [
+        "revolution",
+        "yorktown",
+        "cornwallis"
+      ],
+      "source": "https://www.britannica.com/event/Siege-of-Yorktown"
+    },
+    {
+      "seedId": "adf88211-b4aa-421b-9d20-640d6e814450",
+      "category": "history",
+      "navigationKeyword1": "us-history",
+      "navigationKeyword2": "revolution",
+      "question": "The first armed clashes of the Revolutionary War erupted in April 1775 at Lexington and which neighboring town?",
+      "correctAnswer": "Concord",
+      "incorrectAnswers": [
+        "Bunker Hill",
+        "Trenton",
+        "Saratoga"
+      ],
+      "explanation": "British troops marched to seize militia supplies, sparking musket fire and a running fight back to Boston.",
+      "keywords": [
+        "revolution",
+        "massachusetts",
+        "1775"
+      ],
+      "source": "https://www.britannica.com/event/Battles-of-Lexington-and-Concord"
+    },
+    {
+      "seedId": "898a56db-a0c7-4596-9175-5eb64a6d8e02",
+      "category": "history",
+      "navigationKeyword1": "us-history",
+      "navigationKeyword2": "revolution",
+      "question": "The nation\u2019s first frame of government, adopted during the Revolution, was called what?",
+      "correctAnswer": "The Articles of Confederation",
+      "incorrectAnswers": [
+        "The Constitution of 1787",
+        "The Albany Plan",
+        "The Northwest Ordinance"
+      ],
+      "explanation": "Weak central authority under the Articles later spurred the Philadelphia Convention\u2019s reforms.",
+      "keywords": [
+        "revolution",
+        "government",
+        "articles"
+      ],
+      "source": "https://www.britannica.com/topic/Articles-of-Confederation"
+    },
+    {
+      "seedId": "751503a7-1727-4a56-ad6c-51715a0fe655",
+      "category": "history",
+      "navigationKeyword1": "us-history",
+      "navigationKeyword2": "revolution",
+      "question": "Thomas Paine\u2019s January 1776 pamphlet Common Sense urged complete independence from which monarch?",
+      "correctAnswer": "George III",
+      "incorrectAnswers": [
+        "Louis XVI",
+        "Charles III",
+        "George II"
+      ],
+      "explanation": "Plain-language arguments sold hundreds of thousands of copies, shifting opinion toward separation.",
+      "keywords": [
+        "revolution",
+        "pamphlet",
+        "independence"
+      ],
+      "source": "https://www.britannica.com/topic/Common-Sense-pamphlet-by-Paine"
+    },
+    {
+      "seedId": "d6a44bf7-6474-4011-86bb-2aef884bebb3",
+      "category": "history",
+      "navigationKeyword1": "us-history",
+      "navigationKeyword2": "revolution",
+      "question": "Washington\u2019s Christmas 1776 crossing of the Delaware River set up a surprise attack on Hessian troops in which New Jersey town?",
+      "correctAnswer": "Trenton",
+      "incorrectAnswers": [
+        "Princeton",
+        "Newark",
+        "Camden"
+      ],
+      "explanation": "The first Battle of Trenton revived morale after months of defeats around New York.",
+      "keywords": [
+        "revolution",
+        "new-jersey",
+        "washington"
+      ],
+      "source": "https://www.britannica.com/event/Battle-of-Trenton"
+    }
+  ]
+}

@@ -1,0 +1,247 @@
+{
+  "schemaVersion": 1,
+  "seedSet": "core-public-items",
+  "deltaPreviewLimit": 200,
+  "items": [
+    {
+      "seedId": "876aa787-1996-4bc5-8b8a-a9832adc2c5c",
+      "category": "science",
+      "navigationKeyword1": "anatomy",
+      "navigationKeyword2": "cardio",
+      "question": "How does pulmonary circulation differ from systemic circulation?",
+      "correctAnswer": "Pulmonary circulation moves blood to and from the lungs; systemic moves blood to and from the body",
+      "incorrectAnswers": [
+        "Pulmonary circulation goes to the kidneys; systemic goes to the lungs",
+        "Pulmonary circulation is only for nutrients; systemic is only for oxygen",
+        "There is no difference; they are the same loop"
+      ],
+      "explanation": "Pulmonary circulation links the heart with the lungs, while systemic circulation supplies the rest of the body with blood.",
+      "keywords": [
+        "pulmonary",
+        "systemic",
+        "circulation-paths"
+      ],
+      "source": "https://teachmephysiology.com/cardiovascular-system/"
+    },
+    {
+      "seedId": "c4dc8455-af95-429d-88d6-668466ce17b9",
+      "category": "science",
+      "navigationKeyword1": "anatomy",
+      "navigationKeyword2": "cardio",
+      "question": "In general, which blood vessels carry blood away from the heart?",
+      "correctAnswer": "Arteries",
+      "incorrectAnswers": [
+        "Veins",
+        "Capillaries",
+        "Bronchi"
+      ],
+      "explanation": "Arteries transport blood away from the heart. (There are exceptions in pulmonary circulation, but the general rule is arteries away, veins back.)",
+      "keywords": [
+        "arteries",
+        "vessel-types",
+        "circulation"
+      ],
+      "source": "https://www.cdc.gov/heartdisease/"
+    },
+    {
+      "seedId": "d4ba25d7-f604-439e-9c01-cc3297177b71",
+      "category": "science",
+      "navigationKeyword1": "anatomy",
+      "navigationKeyword2": "cardio",
+      "question": "In one heartbeat, which phase is the heart muscle contracting?",
+      "correctAnswer": "Systole",
+      "incorrectAnswers": [
+        "Diastole",
+        "Oxygenation",
+        "Filtration"
+      ],
+      "explanation": "Systole is the contraction phase, when the ventricles push blood out. Diastole is the relaxation phase.",
+      "keywords": [
+        "systole",
+        "diastole",
+        "heartbeat"
+      ],
+      "source": "https://teachmephysiology.com/cardiovascular-system/"
+    },
+    {
+      "seedId": "2c05f867-7a2e-4b9c-8d04-5bc69cd99f7c",
+      "category": "science",
+      "navigationKeyword1": "anatomy",
+      "navigationKeyword2": "cardio",
+      "question": "What are capillaries best known for?",
+      "correctAnswer": "Exchanging materials between blood and body tissues",
+      "incorrectAnswers": [
+        "Sending air from the trachea",
+        "Blocking blood flow like a filter",
+        "Producing hormones"
+      ],
+      "explanation": "Capillaries are tiny vessels where oxygen, carbon dioxide, and nutrients move between blood and cells.",
+      "keywords": [
+        "capillaries",
+        "exchange",
+        "tissues"
+      ],
+      "source": "https://en.wikipedia.org/wiki/Capillary"
+    },
+    {
+      "seedId": "8c766aeb-eb03-4f9a-8437-f0b04df85b8a",
+      "category": "science",
+      "navigationKeyword1": "anatomy",
+      "navigationKeyword2": "cardio",
+      "question": "What does hemoglobin mainly do?",
+      "correctAnswer": "It binds oxygen so it can be transported in blood",
+      "incorrectAnswers": [
+        "It controls blood clotting by sticking to wounds",
+        "It fights infections directly by attacking viruses",
+        "It produces antibodies from scratch"
+      ],
+      "explanation": "Hemoglobin is the oxygen-carrying protein inside red blood cells; it helps move oxygen from lungs to tissues.",
+      "keywords": [
+        "hemoglobin",
+        "oxygen",
+        "transport"
+      ],
+      "source": "https://en.wikipedia.org/wiki/Hemoglobin"
+    },
+    {
+      "seedId": "86be4f1e-5308-4cd7-8c8e-d7d771872202",
+      "category": "science",
+      "navigationKeyword1": "anatomy",
+      "navigationKeyword2": "cardio",
+      "question": "What is the purpose of the heart\u2019s valves?",
+      "correctAnswer": "They help prevent backflow so blood flows one direction",
+      "incorrectAnswers": [
+        "They store extra blood for later",
+        "They mix oxygen and carbon dioxide",
+        "They create new red blood cells"
+      ],
+      "explanation": "Valves close to stop blood from moving backward, keeping the circulation in the right sequence.",
+      "keywords": [
+        "heart-valves",
+        "one-way-flow",
+        "backflow-prevention"
+      ],
+      "source": "https://www.nhlbi.nih.gov/health-topics/heart-valve-disease"
+    },
+    {
+      "seedId": "b4d76197-69ce-423b-ab31-3285ccbd660f",
+      "category": "science",
+      "navigationKeyword1": "anatomy",
+      "navigationKeyword2": "cardio",
+      "question": "Which blood vessels carry blood back toward the heart?",
+      "correctAnswer": "Veins",
+      "incorrectAnswers": [
+        "Arteries",
+        "Capillaries",
+        "Tendons"
+      ],
+      "explanation": "Veins return blood to the heart. They often have valves that help keep blood moving in the right direction.",
+      "keywords": [
+        "veins",
+        "return-to-heart",
+        "valves"
+      ],
+      "source": "https://www.heart.org/en/health-topics/heart-attack/about-heart-attack"
+    },
+    {
+      "seedId": "493d7fa0-7c59-4656-990e-588b4a95123d",
+      "category": "science",
+      "navigationKeyword1": "anatomy",
+      "navigationKeyword2": "cardio",
+      "question": "Which chambers of the heart do most of the pumping work?",
+      "correctAnswer": "The ventricles",
+      "incorrectAnswers": [
+        "The atria",
+        "The valves only",
+        "The septum alone"
+      ],
+      "explanation": "The ventricles are the lower chambers with thicker muscular walls that push blood out to the circulation.",
+      "keywords": [
+        "ventricles",
+        "heart-chambers",
+        "pumping"
+      ],
+      "source": "https://en.wikipedia.org/wiki/Ventricle"
+    },
+    {
+      "seedId": "a568cdc2-6532-4354-a94f-f5bd37df241f",
+      "category": "science",
+      "navigationKeyword1": "anatomy",
+      "navigationKeyword2": "cardio",
+      "question": "Which organ\u2019s main job in the cardiovascular system is to pump blood through the body?",
+      "correctAnswer": "The heart",
+      "incorrectAnswers": [
+        "The lungs",
+        "The kidneys",
+        "The liver"
+      ],
+      "explanation": "The heart is a muscular pump that drives blood flow through arteries, capillaries, and veins.",
+      "keywords": [
+        "heart",
+        "cardiovascular-system",
+        "pumping"
+      ],
+      "source": "https://www.nhlbi.nih.gov/health-topics/heart-facts"
+    },
+    {
+      "seedId": "9e788efa-6b64-4291-9fd7-06e3eca0b9a6",
+      "category": "science",
+      "navigationKeyword1": "anatomy",
+      "navigationKeyword2": "cardio",
+      "question": "Which side of the heart pumps blood to the lungs?",
+      "correctAnswer": "The right side",
+      "incorrectAnswers": [
+        "The left side",
+        "The top chambers only",
+        "Neither side; blood flows without a pump"
+      ],
+      "explanation": "In the normal pathway, the right side sends blood to the lungs so gases can be exchanged.",
+      "keywords": [
+        "right-heart",
+        "pulmonary-circuit",
+        "heart-pathway"
+      ],
+      "source": "https://www.heart.org/en/health-topics/heart-and-blood-vessels"
+    },
+    {
+      "seedId": "9c5a507d-8731-4668-b47b-aa7ff37e7a93",
+      "category": "science",
+      "navigationKeyword1": "anatomy",
+      "navigationKeyword2": "cardio",
+      "question": "Which type of blood cells is responsible for carrying oxygen in the bloodstream?",
+      "correctAnswer": "Red blood cells",
+      "incorrectAnswers": [
+        "White blood cells",
+        "Platelets",
+        "Plasma proteins"
+      ],
+      "explanation": "Red blood cells contain hemoglobin, which binds oxygen and transports it through the body.",
+      "keywords": [
+        "red-blood-cells",
+        "oxygen-transport",
+        "hemoglobin"
+      ],
+      "source": "https://www.cdc.gov/bloodsafety/what_blood_carries.html"
+    },
+    {
+      "seedId": "0038caf0-f08c-4ad8-b74d-1e89bf4476e2",
+      "category": "science",
+      "navigationKeyword1": "anatomy",
+      "navigationKeyword2": "cardio",
+      "question": "Why is blood pressure generally higher in arteries than in veins?",
+      "correctAnswer": "Because arteries are closer to the heart\u2019s pumping force and flow pressure drops as blood moves through the vessels",
+      "incorrectAnswers": [
+        "Because veins have thinner walls so pressure must be higher",
+        "Because arteries contain less blood",
+        "Because capillaries remove pressure instantly and stop flow"
+      ],
+      "explanation": "The heart creates pressure, and as blood travels and meets resistance in smaller vessels, pressure decreases toward the veins.",
+      "keywords": [
+        "blood-pressure",
+        "arteries-vs-veins",
+        "circulation"
+      ],
+      "source": "https://teachmephysiology.com/cardiovascular-system/blood-pressure/"
+    }
+  ]
+}

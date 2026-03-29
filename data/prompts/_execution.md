@@ -10,12 +10,12 @@ Set variables once at the top of your request and then refer to them consistentl
 Variables:
 - {category}=science
 - {prompt}=data/prompts/{category}.md
-- {folder}=data/bulk-seed/{category}
-- {progress}=generated/seed-progress/{category}/_progress.md
-- {state}=generated/seed-progress/{category}/_{category}_state.md
+- {folder}=data/seed-source/items/{category}
+- {progress}=data/generated/seed-progress/{category}/_progress.md
+- {state}=data/generated/seed-progress/{category}/_{category}_state.md
 ```
 
-The `{progress}` and `{state}` files are local continuity files. They live under `generated/seed-progress/`, which is ignored by git.
+The `{progress}` and `{state}` files are local continuity files. They live under `data/generated/seed-progress/`, which is ignored by git.
 
 Optional for narrower runs:
 
@@ -31,9 +31,9 @@ Work in this repo.
 Variables:
 - {category}=trivia
 - {prompt}=data/prompts/{category}.md
-- {folder}=data/bulk-seed/{category}
-- {progress}=generated/seed-progress/{category}/_progress.md
-- {state}=generated/seed-progress/{category}/_{category}_state.md
+- {folder}=data/seed-source/items/{category}
+- {progress}=data/generated/seed-progress/{category}/_progress.md
+- {state}=data/generated/seed-progress/{category}/_{category}_state.md
 
 Read:
 - data/prompts/_master_prompt.md
@@ -144,9 +144,9 @@ Work in this repo.
 Variables:
 - {category}=trivia
 - {prompt}=data/prompts/{category}.md
-- {folder}=data/bulk-seed/{category}
-- {progress}=generated/seed-progress/{category}/_progress.md
-- {state}=generated/seed-progress/{category}/_{category}_state.md
+- {folder}=data/seed-source/items/{category}
+- {progress}=data/generated/seed-progress/{category}/_progress.md
+- {state}=data/generated/seed-progress/{category}/_{category}_state.md
 
 Read:
 - data/prompts/_master_prompt.md

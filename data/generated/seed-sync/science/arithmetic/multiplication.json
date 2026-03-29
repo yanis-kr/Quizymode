@@ -1,0 +1,235 @@
+{
+  "schemaVersion": 1,
+  "seedSet": "core-public-items",
+  "deltaPreviewLimit": 200,
+  "items": [
+    {
+      "seedId": "551e1b99-4d28-40c5-8a35-192e41728d7b",
+      "category": "science",
+      "navigationKeyword1": "arithmetic",
+      "navigationKeyword2": "multiplication",
+      "question": "If 8 \u00d7 n = 56, what is n?",
+      "correctAnswer": "7",
+      "incorrectAnswers": [
+        "6",
+        "8",
+        "48"
+      ],
+      "explanation": "Divide: n = 56 \u00f7 8 = 7.",
+      "keywords": [
+        "unknown-factor",
+        "division-link"
+      ],
+      "source": "https://www.khanacademy.org/math/arithmetic/arith-review-multiply-divide"
+    },
+    {
+      "seedId": "e26643f5-5aa6-4c21-ad03-e91375f844a9",
+      "category": "science",
+      "navigationKeyword1": "arithmetic",
+      "navigationKeyword2": "multiplication",
+      "question": "What does 0 \u00d7 125 equal?",
+      "correctAnswer": "0",
+      "incorrectAnswers": [
+        "125",
+        "1",
+        "0.125"
+      ],
+      "explanation": "Zero times any quantity is zero.",
+      "keywords": [
+        "zero-property",
+        "multiplication"
+      ],
+      "source": "https://www.khanacademy.org/math/arithmetic/arith-review-multiply-divide"
+    },
+    {
+      "seedId": "aed83b60-6d43-4b71-b160-a096b82e0205",
+      "category": "science",
+      "navigationKeyword1": "arithmetic",
+      "navigationKeyword2": "multiplication",
+      "question": "What does the distributive property connect?",
+      "correctAnswer": "Multiplication and addition/subtraction across parentheses",
+      "incorrectAnswers": [
+        "Only division and subtraction",
+        "Only squaring and square roots",
+        "Angles and triangles"
+      ],
+      "explanation": "a(b + c) = ab + ac.",
+      "keywords": [
+        "distributive",
+        "factoring"
+      ],
+      "source": "https://www.mathsisfun.com/associative-commutative-distributive.html"
+    },
+    {
+      "seedId": "e1d15a85-4d1c-4b0c-9d05-3f8751606a83",
+      "category": "science",
+      "navigationKeyword1": "arithmetic",
+      "navigationKeyword2": "multiplication",
+      "question": "What is (\u22122) \u00d7 (\u22125)?",
+      "correctAnswer": "10",
+      "incorrectAnswers": [
+        "\u221210",
+        "7",
+        "\u22127"
+      ],
+      "explanation": "A negative times a negative is positive.",
+      "keywords": [
+        "sign-rules",
+        "integers"
+      ],
+      "source": "https://www.khanacademy.org/math/arithmetic/arith-review-negative-numbers"
+    },
+    {
+      "seedId": "50447022-62ad-4c52-9b71-f25103b2e1e3",
+      "category": "science",
+      "navigationKeyword1": "arithmetic",
+      "navigationKeyword2": "multiplication",
+      "question": "What is (\u22123) \u00d7 4?",
+      "correctAnswer": "\u221212",
+      "incorrectAnswers": [
+        "12",
+        "\u22127",
+        "7"
+      ],
+      "explanation": "A negative times a positive is negative: \u221212.",
+      "keywords": [
+        "negative-numbers",
+        "sign-rules"
+      ],
+      "source": "https://www.khanacademy.org/math/arithmetic/arith-review-negative-numbers"
+    },
+    {
+      "seedId": "943cbc38-0638-4972-8bee-19f060d13da4",
+      "category": "science",
+      "navigationKeyword1": "arithmetic",
+      "navigationKeyword2": "multiplication",
+      "question": "What is 12 \u00d7 30 mentally using place value?",
+      "correctAnswer": "360",
+      "incorrectAnswers": [
+        "120",
+        "90",
+        "3000"
+      ],
+      "explanation": "12 \u00d7 3 = 36, then multiply by 10: 360.",
+      "keywords": [
+        "mental-math",
+        "place-value"
+      ],
+      "source": "https://www.khanacademy.org/math/arithmetic/arith-review-multiply-divide"
+    },
+    {
+      "seedId": "9cf6307a-54b8-4463-9bd1-8a795a577cbf",
+      "category": "science",
+      "navigationKeyword1": "arithmetic",
+      "navigationKeyword2": "multiplication",
+      "question": "What is 25 \u00d7 16 using doubling and halving?",
+      "correctAnswer": "400",
+      "incorrectAnswers": [
+        "200",
+        "300",
+        "420"
+      ],
+      "explanation": "One strategy: 25 \u00d7 16 = (25 \u00d7 8) \u00d7 2 = 200 \u00d7 2 = 400.",
+      "keywords": [
+        "factoring",
+        "mental-math"
+      ],
+      "source": "https://www.mathsisfun.com/numbers/multiplication-tips.html"
+    },
+    {
+      "seedId": "cd4b69a7-b504-4813-8e49-d440049a7901",
+      "category": "science",
+      "navigationKeyword1": "arithmetic",
+      "navigationKeyword2": "multiplication",
+      "question": "What is 6 \u00d7 7?",
+      "correctAnswer": "42",
+      "incorrectAnswers": [
+        "36",
+        "48",
+        "49"
+      ],
+      "explanation": "6 \u00d7 7 = 42.",
+      "keywords": [
+        "times-tables",
+        "factors"
+      ],
+      "source": "https://www.khanacademy.org/math/arithmetic/arith-review-multiply-divide"
+    },
+    {
+      "seedId": "dce09c67-83b1-43eb-9add-9f6aee6b52ae",
+      "category": "science",
+      "navigationKeyword1": "arithmetic",
+      "navigationKeyword2": "multiplication",
+      "question": "What is the area of a 4 by 7 rectangle (in square units)?",
+      "correctAnswer": "28",
+      "incorrectAnswers": [
+        "11",
+        "22",
+        "32"
+      ],
+      "explanation": "Area = length \u00d7 width = 4 \u00d7 7 = 28.",
+      "keywords": [
+        "area",
+        "rectangle"
+      ],
+      "source": "https://www.mathsisfun.com/geometry/rectangle.html"
+    },
+    {
+      "seedId": "451c9edd-9870-4ea8-8a31-badf4d3a0ec0",
+      "category": "science",
+      "navigationKeyword1": "arithmetic",
+      "navigationKeyword2": "multiplication",
+      "question": "What is the multiplicative identity?",
+      "correctAnswer": "1",
+      "incorrectAnswers": [
+        "0",
+        "-1",
+        "10"
+      ],
+      "explanation": "Multiplying by 1 leaves a number unchanged.",
+      "keywords": [
+        "identity",
+        "multiplication"
+      ],
+      "source": "https://www.mathsisfun.com/numbers/multiplication.html"
+    },
+    {
+      "seedId": "9046cc42-dc60-4f89-9da2-f94354e46e62",
+      "category": "science",
+      "navigationKeyword1": "arithmetic",
+      "navigationKeyword2": "multiplication",
+      "question": "Which property says (a \u00d7 b) \u00d7 c = a \u00d7 (b \u00d7 c)?",
+      "correctAnswer": "Associative property of multiplication",
+      "incorrectAnswers": [
+        "Commutative property of addition",
+        "Distributive property of division",
+        "Identity property of addition"
+      ],
+      "explanation": "Associativity groups factors differently without changing the product.",
+      "keywords": [
+        "associative",
+        "multiplication"
+      ],
+      "source": "https://www.mathsisfun.com/associative-commutative-distributive.html"
+    },
+    {
+      "seedId": "dea935a7-b07d-422b-9410-39f336af1070",
+      "category": "science",
+      "navigationKeyword1": "arithmetic",
+      "navigationKeyword2": "multiplication",
+      "question": "Why does multiplying by 10 shift digits left in base ten?",
+      "correctAnswer": "Each place becomes ten times larger",
+      "incorrectAnswers": [
+        "Digits lose meaning",
+        "It always adds a decimal",
+        "It divides by 10"
+      ],
+      "explanation": "Multiplying by 10 increases place value: 3.4 \u00d7 10 = 34.",
+      "keywords": [
+        "base-ten",
+        "place-value"
+      ],
+      "source": "https://www.khanacademy.org/math/arithmetic/arith-review-multiply-divide"
+    }
+  ]
+}

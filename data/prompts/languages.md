@@ -13,7 +13,7 @@ Task:
 
 Create or continue seed files for the `languages` category in:
 
-- `data/bulk-seed/languages`
+- `data/seed-source/items/languages`
 
 Filename format:
 

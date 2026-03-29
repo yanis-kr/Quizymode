@@ -1,0 +1,102 @@
+[
+  {
+    "category": "geography",
+    "navigationKeyword1": "capitals",
+    "navigationKeyword2": "world",
+    "question": "What is the national capital of Australia?",
+    "correctAnswer": "Canberra",
+    "incorrectAnswers": [
+      "Sydney",
+      "Melbourne",
+      "Brisbane"
+    ],
+    "explanation": "Britannica identifies Canberra in the Australian Capital Territory as Australia’s capital.",
+    "keywords": [
+      "world",
+      "australia",
+      "oceania"
+    ],
+    "source": "https://www.britannica.com/place/Canberra",
+    "seedId": "133cbe9c-282d-4ac3-b518-07dafcda77a3"
+  },
+  {
+    "category": "geography",
+    "navigationKeyword1": "capitals",
+    "navigationKeyword2": "world",
+    "question": "What is the national capital of New Zealand?",
+    "correctAnswer": "Wellington",
+    "incorrectAnswers": [
+      "Auckland",
+      "Christchurch",
+      "Dunedin"
+    ],
+    "explanation": "Britannica places New Zealand’s government in Wellington on North Island.",
+    "keywords": [
+      "world",
+      "new-zealand",
+      "oceania"
+    ],
+    "source": "https://www.britannica.com/place/Wellington-New-Zealand",
+    "seedId": "19c1c93f-0c46-431f-924b-f66f776d3af4"
+  },
+  {
+    "category": "geography",
+    "navigationKeyword1": "capitals",
+    "navigationKeyword2": "world",
+    "question": "What is the national capital of India?",
+    "correctAnswer": "New Delhi",
+    "incorrectAnswers": [
+      "Mumbai",
+      "Kolkata",
+      "Chennai"
+    ],
+    "explanation": "Britannica treats New Delhi as the seat of India’s national government within the Delhi capital territory.",
+    "keywords": [
+      "world",
+      "india",
+      "south-asia"
+    ],
+    "source": "https://www.britannica.com/place/New-Delhi",
+    "seedId": "937f5323-4604-4dba-9540-8f0aa7eeac04"
+  },
+  {
+    "category": "geography",
+    "navigationKeyword1": "capitals",
+    "navigationKeyword2": "world",
+    "question": "What is the national capital of Indonesia?",
+    "correctAnswer": "Jakarta",
+    "incorrectAnswers": [
+      "Surabaya",
+      "Bandung",
+      "Medan"
+    ],
+    "explanation": "Britannica lists Jakarta on Java as Indonesia’s capital and largest city.",
+    "keywords": [
+      "world",
+      "indonesia",
+      "southeast-asia"
+    ],
+    "source": "https://www.britannica.com/place/Jakarta",
+    "seedId": "c9c1d58c-7507-4aab-a703-78f5e61bb0ac"
+  },
+  {
+    "category": "geography",
+    "navigationKeyword1": "capitals",
+    "navigationKeyword2": "world",
+    "question": "What is the national capital of Malaysia?",
+    "correctAnswer": "Kuala Lumpur",
+    "incorrectAnswers": [
+      "George Town",
+      "Ipoh",
+      "Johor Bahru"
+    ],
+    "explanation": "Britannica identifies Kuala Lumpur as Malaysia’s capital and principal city.",
+    "keywords": [
+      "world",
+      "malaysia",
+      "southeast-asia"
+    ],
+    "source": "https://www.britannica.com/place/Kuala-Lumpur",
+    "seedId": "832ae5c3-e366-4bda-92a4-54d5733cc845"
+  }
+]

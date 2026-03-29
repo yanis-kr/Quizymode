@@ -1,0 +1,45 @@
+{
+  "schemaVersion": 1,
+  "seedSet": "core-public-items",
+  "deltaPreviewLimit": 200,
+  "items": [
+    {
+      "seedId": "5e3aa39b-9b5e-5b92-be68-f9dba93e600b",
+      "category": "humanities",
+      "navigationKeyword1": "visual-art",
+      "navigationKeyword2": "design",
+      "question": "Good design often balances appearance with what?",
+      "correctAnswer": "function",
+      "incorrectAnswers": [
+        "rainfall",
+        "population size",
+        "alphabet order"
+      ],
+      "explanation": "Design usually considers how something looks and how well it works.",
+      "keywords": [
+        "visual-art",
+        "design"
+      ],
+      "source": "https://www.britannica.com/art/design"
+    },
+    {
+      "seedId": "8177b227-9840-52e7-ad66-263b1b7e9d32",
+      "category": "humanities",
+      "navigationKeyword1": "visual-art",
+      "navigationKeyword2": "design",
+      "question": "Typography is mainly concerned with what?",
+      "correctAnswer": "the arrangement and style of type",
+      "incorrectAnswers": [
+        "the tuning of violins",
+        "the casting of bronze",
+        "the mixing of pigments"
+      ],
+      "explanation": "Typography studies how written text is shaped and arranged visually.",
+      "keywords": [
+        "visual-art",
+        "typography"
+      ],
+      "source": "https://www.moma.org/magazine/articles/501"
+    }
+  ]
+}

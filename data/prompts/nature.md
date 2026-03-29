@@ -13,7 +13,7 @@ Task:
 
 Create or continue seed files for the `nature` category in:
 
-- `data/bulk-seed/nature`
+- `data/seed-source/items/nature`
 
 Filename format:
 

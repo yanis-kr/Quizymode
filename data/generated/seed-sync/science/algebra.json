@@ -1,0 +1,1447 @@
+{
+  "schemaVersion": 1,
+  "seedSet": "core-public-items",
+  "deltaPreviewLimit": 200,
+  "items": [
+    {
+      "seedId": "b8de8456-f820-44f5-8c2d-f157755d4155",
+      "category": "science",
+      "navigationKeyword1": "algebra",
+      "navigationKeyword2": "equations",
+      "question": "How can you quickly check whether x = 7 solves the equation x/2 + 1 = 4?",
+      "correctAnswer": "Substitute 7 for x and see if both sides are equal",
+      "incorrectAnswers": [
+        "Subtract 7 from both sides and stop",
+        "Divide both sides by 7 and compare",
+        "Replace 4 with 7 because it\u2019s the proposed solution"
+      ],
+      "explanation": "Plugging in x = 7 gives 7/2 + 1 = 4.5, which is not equal to 4, so x = 7 is not a solution.",
+      "keywords": [
+        "check-solution",
+        "substitution",
+        "linear-equations"
+      ],
+      "source": "https://www.khanacademy.org/math/algebra-home/alg-solving-equations"
+    },
+    {
+      "seedId": "d3c51131-98bc-4e76-8e08-8114e86e1bc6",
+      "category": "science",
+      "navigationKeyword1": "algebra",
+      "navigationKeyword2": "equations",
+      "question": "If an equation contains a fraction like (x \u2212 1)/3 = 4, what is a common valid first move?",
+      "correctAnswer": "Multiply both sides by 3 to clear the denominator",
+      "incorrectAnswers": [
+        "Add 3 to both sides to cancel the denominator",
+        "Square both sides to remove the fraction",
+        "Replace x with 3 to eliminate the denominator"
+      ],
+      "explanation": "Multiplying both sides by the denominator removes the fraction and keeps the equation equivalent (as long as you don\u2019t multiply by zero).",
+      "keywords": [
+        "fractions",
+        "clear-denominators",
+        "properties-of-equality"
+      ],
+      "source": "https://www.kutasoftware.com/freeipa.html"
+    },
+    {
+      "seedId": "f3e2453a-6cd8-4c7f-aa31-f9ee5af17b87",
+      "category": "science",
+      "navigationKeyword1": "algebra",
+      "navigationKeyword2": "equations",
+      "question": "If you add the same number to both sides of an equation, what happens to the solution set?",
+      "correctAnswer": "It stays the same (you get an equivalent equation)",
+      "incorrectAnswers": [
+        "It always gains one additional solution",
+        "It always loses one solution",
+        "It changes unless the number is 0"
+      ],
+      "explanation": "Adding the same value to both sides preserves equality, so it produces an equivalent equation with the same solutions.",
+      "keywords": [
+        "equivalent-equations",
+        "balance-method",
+        "properties-of-equality"
+      ],
+      "source": "https://www.khanacademy.org/math/algebra/x2f8bb11595b61c86:equations-inequalities"
+    },
+    {
+      "seedId": "bd4e013f-d8eb-4fd2-9e92-b0e5d0063707",
+      "category": "science",
+      "navigationKeyword1": "algebra",
+      "navigationKeyword2": "equations",
+      "question": "In the equation 2(x \u2212 4) = 10, what is the main purpose of distributing the 2?",
+      "correctAnswer": "To remove parentheses so you can combine like terms and isolate x",
+      "incorrectAnswers": [
+        "To change subtraction into division",
+        "To make the equation quadratic",
+        "To guarantee the solution is an integer"
+      ],
+      "explanation": "Distributing expands the left side (2x \u2212 8), making it easier to solve using standard linear-equation steps.",
+      "keywords": [
+        "distributive-property",
+        "parentheses",
+        "linear-equations"
+      ],
+      "source": "https://openstax.org/books/elementary-algebra-2e/pages/1-3-exponents-and-scientific-notation"
+    },
+    {
+      "seedId": "71a7a6a0-6950-495c-95e4-56a05cc8dc1b",
+      "category": "science",
+      "navigationKeyword1": "algebra",
+      "navigationKeyword2": "equations",
+      "question": "What does it mean for two equations to be \"equivalent\"?",
+      "correctAnswer": "They have the same solution set",
+      "incorrectAnswers": [
+        "They use the same numbers",
+        "They have the same variable name",
+        "They have the same number of steps to solve"
+      ],
+      "explanation": "Equivalent equations can look different, but they are true for exactly the same values of the variable.",
+      "keywords": [
+        "equivalent-equations",
+        "solution-set",
+        "algebra"
+      ],
+      "source": "https://openstax.org/books/elementary-algebra-2e/pages/2-2-solve-equations-using-the-subtraction-and-addition-properties-of-equality"
+    },
+    {
+      "seedId": "27b5b267-7c43-47c5-ba15-7dc5f763ff8d",
+      "category": "science",
+      "navigationKeyword1": "algebra",
+      "navigationKeyword2": "equations",
+      "question": "What does it mean if you simplify an equation and get 0 = 0?",
+      "correctAnswer": "The equation is true for all values in its domain (infinitely many solutions)",
+      "incorrectAnswers": [
+        "The equation has no solution",
+        "The only solution is x = 0",
+        "You made an error because equations can\u2019t simplify that way"
+      ],
+      "explanation": "If both sides are identical after simplifying, any value that keeps the original expressions defined will satisfy the equation.",
+      "keywords": [
+        "identity",
+        "infinitely-many-solutions",
+        "equivalent-equations"
+      ],
+      "source": "https://openstax.org/books/college-algebra-2e/pages/2-1-the-basics-of-algebraic-expressions"
+    },
+    {
+      "seedId": "17ffb951-9142-44eb-9629-526de7c1490c",
+      "category": "science",
+      "navigationKeyword1": "algebra",
+      "navigationKeyword2": "equations",
+      "question": "What does it mean if you simplify an equation and get something like 0 = 5?",
+      "correctAnswer": "There is no solution (the equation is inconsistent)",
+      "incorrectAnswers": [
+        "The solution is x = 5",
+        "There are infinitely many solutions",
+        "You should divide both sides by 0 to continue"
+      ],
+      "explanation": "A false statement like 0 = 5 means no value of the variable can make the original equation true.",
+      "keywords": [
+        "no-solution",
+        "inconsistent-equation",
+        "linear-equations"
+      ],
+      "source": "https://www.purplemath.com/modules/solvelin.htm"
+    },
+    {
+      "seedId": "121817e1-a475-4f7e-8ffb-364adbdbd070",
+      "category": "science",
+      "navigationKeyword1": "algebra",
+      "navigationKeyword2": "equations",
+      "question": "What does it mean to \"isolate\" a variable when solving an equation?",
+      "correctAnswer": "Get the variable alone on one side of the equation",
+      "incorrectAnswers": [
+        "Move all numbers to the left side",
+        "Replace the variable with a random number",
+        "Make the variable negative so it stands out"
+      ],
+      "explanation": "Isolating the variable means rewriting the equation so the variable is by itself, making its value clear.",
+      "keywords": [
+        "isolate-variable",
+        "solve-equation",
+        "algebra"
+      ],
+      "source": "https://www.mathsisfun.com/algebra/linear-equations.html"
+    },
+    {
+      "seedId": "6eb6d2f7-d968-4699-ac09-84986db98100",
+      "category": "science",
+      "navigationKeyword1": "algebra",
+      "navigationKeyword2": "equations",
+      "question": "What does it mean to say a value is a \"solution\" to an equation?",
+      "correctAnswer": "It makes the equation true when substituted for the variable",
+      "incorrectAnswers": [
+        "It makes both sides equal only after you simplify one side",
+        "It makes the left side larger than the right side",
+        "It is any number that appears in the equation"
+      ],
+      "explanation": "A solution is a value that satisfies the equality\u2014plugging it in makes both sides have the same value.",
+      "keywords": [
+        "algebra",
+        "equations",
+        "solution"
+      ],
+      "source": "https://openstax.org/books/elementary-algebra-2e/pages/2-introduction-to-equations-and-inequalities"
+    },
+    {
+      "seedId": "a45b675a-e5f4-4d22-b77f-87584e99f5df",
+      "category": "science",
+      "navigationKeyword1": "algebra",
+      "navigationKeyword2": "equations",
+      "question": "What is the first step you usually take to solve an equation like 3x + 5 = 20?",
+      "correctAnswer": "Isolate the variable term (undo the +5, then undo the \u00d73)",
+      "incorrectAnswers": [
+        "Square both sides",
+        "Divide both sides by 5 first, no matter what",
+        "Move x to the right side to make it negative"
+      ],
+      "explanation": "You undo operations in reverse order to isolate x: subtract 5 from both sides, then divide by 3.",
+      "keywords": [
+        "inverse-operations",
+        "solve-for-x",
+        "linear-equations"
+      ],
+      "source": "https://www.ck12.org/algebra/solving-two-step-equations/lesson/Solving-Two-Step-Equations-ALG/"
+    },
+    {
+      "seedId": "6a62f9a2-110d-443c-84af-b7ffe05ca90e",
+      "category": "science",
+      "navigationKeyword1": "algebra",
+      "navigationKeyword2": "equations",
+      "question": "When solving equations, why is dividing both sides by 0 not allowed?",
+      "correctAnswer": "Division by 0 is undefined, so it breaks the logic of the steps",
+      "incorrectAnswers": [
+        "It only works when x is positive",
+        "It makes the equation quadratic",
+        "It turns an equation into an inequality"
+      ],
+      "explanation": "Algebra steps must be valid operations; since dividing by 0 has no defined result, it can\u2019t preserve equality.",
+      "keywords": [
+        "undefined",
+        "division-by-zero",
+        "valid-steps"
+      ],
+      "source": "https://en.wikipedia.org/wiki/Division_by_zero"
+    },
+    {
+      "seedId": "8aa010de-1175-419f-92c1-a4e16164e0e7",
+      "category": "science",
+      "navigationKeyword1": "algebra",
+      "navigationKeyword2": "equations",
+      "question": "Why do you have to check for \"extraneous solutions\" after solving some equations?",
+      "correctAnswer": "Some algebra steps can introduce values that don\u2019t satisfy the original equation\u2019s constraints",
+      "incorrectAnswers": [
+        "Because simplifying always changes the solution set",
+        "Because the correct answer is always irrational",
+        "Because equivalent equations can\u2019t be solved directly"
+      ],
+      "explanation": "Operations like squaring both sides or clearing denominators can add solutions that fail the original equation, so you verify by substitution.",
+      "keywords": [
+        "extraneous-solution",
+        "check-by-substitution",
+        "domain"
+      ],
+      "source": "https://en.wikipedia.org/wiki/Extraneous_and_missing_solutions"
+    },
+    {
+      "seedId": "76ef4add-2438-473b-aa0f-1d8b11a10107",
+      "category": "science",
+      "navigationKeyword1": "algebra",
+      "navigationKeyword2": "factoring",
+      "question": "If you factor 3x + 6 as 3(x + 2), what property are you using?",
+      "correctAnswer": "The distributive property (in reverse)",
+      "incorrectAnswers": [
+        "The commutative property of multiplication",
+        "The associative property of addition",
+        "The zero-product property"
+      ],
+      "explanation": "Expanding 3(x + 2) gives 3x + 6; factoring is applying distribution backward to pull out a common factor.",
+      "keywords": [
+        "distributive-property",
+        "common-factor",
+        "factoring"
+      ],
+      "source": "https://www.mathsisfun.com/algebra/distributive-law.html"
+    },
+    {
+      "seedId": "a1db3fbe-d876-4ff7-8fb3-955422fb3d8f",
+      "category": "science",
+      "navigationKeyword1": "algebra",
+      "navigationKeyword2": "factoring",
+      "question": "What does it mean if you fully factor a polynomial over the integers?",
+      "correctAnswer": "It can\u2019t be factored further using integer coefficients",
+      "incorrectAnswers": [
+        "It has no x terms left",
+        "It becomes a perfect square every time",
+        "It must have exactly two factors"
+      ],
+      "explanation": "A polynomial is fully factored (over integers) when it\u2019s written as a product of factors that are irreducible with integer coefficients.",
+      "keywords": [
+        "fully-factored",
+        "integers",
+        "irreducible"
+      ],
+      "source": "https://en.wikipedia.org/wiki/Factorization_of_polynomials"
+    },
+    {
+      "seedId": "3a396e10-38e4-4f9c-8ee7-5905fea2f5b0",
+      "category": "science",
+      "navigationKeyword1": "algebra",
+      "navigationKeyword2": "factoring",
+      "question": "What does it mean to factor an expression like x^2 + 5x + 6?",
+      "correctAnswer": "Rewrite it as a product of simpler expressions",
+      "incorrectAnswers": [
+        "Rewrite it as a fraction with x in the denominator",
+        "Rewrite it by adding more terms",
+        "Rewrite it by squaring each term"
+      ],
+      "explanation": "Factoring expresses a polynomial as a multiplication of factors that would expand back to the original.",
+      "keywords": [
+        "factoring",
+        "polynomials",
+        "product-form"
+      ],
+      "source": "https://openstax.org/books/elementary-algebra-2e/pages/6-1-greatest-common-factor-and-factor-by-grouping"
+    },
+    {
+      "seedId": "15cea3fa-d004-41ca-8ebb-41d1a7affc5a",
+      "category": "science",
+      "navigationKeyword1": "algebra",
+      "navigationKeyword2": "factoring",
+      "question": "What is a common reason factoring by grouping works?",
+      "correctAnswer": "It creates a shared binomial factor you can factor out",
+      "incorrectAnswers": [
+        "It guarantees the polynomial has real roots",
+        "It only works when all coefficients are prime",
+        "It turns subtraction into division automatically"
+      ],
+      "explanation": "Grouping terms can reveal a common factor (often a binomial) that appears in both groups, allowing a second factoring step.",
+      "keywords": [
+        "grouping",
+        "common-binomials",
+        "factoring"
+      ],
+      "source": "https://openstax.org/books/elementary-algebra-2e/pages/6-1-greatest-common-factor-and-factor-by-grouping"
+    },
+    {
+      "seedId": "51f80827-84cc-4ebc-a350-89a7e5280e94",
+      "category": "science",
+      "navigationKeyword1": "algebra",
+      "navigationKeyword2": "factoring",
+      "question": "What is a quick check that (x + 2)(x + 3) matches x^2 + 5x + 6?",
+      "correctAnswer": "Expand it and see if you get the same polynomial",
+      "incorrectAnswers": [
+        "Add 2 and 3 and replace x with 5",
+        "Square the 5 in 5x and compare",
+        "Replace x with 0 and assume it matches if the constants match"
+      ],
+      "explanation": "Multiplying out (x + 2)(x + 3) gives x^2 + 3x + 2x + 6 = x^2 + 5x + 6.",
+      "keywords": [
+        "expand",
+        "foil",
+        "verify-factorization"
+      ],
+      "source": "https://www.mathsisfun.com/algebra/polynomials-multiplying.html"
+    },
+    {
+      "seedId": "72489cb9-559c-40ab-80cc-c1f1fb3d4488",
+      "category": "science",
+      "navigationKeyword1": "algebra",
+      "navigationKeyword2": "factoring",
+      "question": "What is the greatest common factor (GCF) of 6x^2 and 9x?",
+      "correctAnswer": "3x",
+      "incorrectAnswers": [
+        "6x",
+        "9x^2",
+        "18x^3"
+      ],
+      "explanation": "The GCF uses the greatest common numeric factor (3) and the smallest power of x common to both terms (x).",
+      "keywords": [
+        "gcf",
+        "common-factor",
+        "monomials"
+      ],
+      "source": "https://www.ck12.org/algebra/greatest-common-factor/lesson/Greatest-Common-Factor-ALG/"
+    },
+    {
+      "seedId": "8434e8ea-e906-41c3-b463-46883bbebe69",
+      "category": "science",
+      "navigationKeyword1": "algebra",
+      "navigationKeyword2": "factoring",
+      "question": "What pattern do you use to factor x^2 + 2x + 1?",
+      "correctAnswer": "Perfect-square trinomial: (x + 1)^2",
+      "incorrectAnswers": [
+        "Difference of squares: (x \u2212 1)(x + 1)",
+        "Sum of cubes: (x + 1)(x^2 \u2212 x + 1)",
+        "No pattern applies; it can\u2019t be factored"
+      ],
+      "explanation": "x^2 + 2x + 1 matches a^2 + 2ab + b^2 with a=x and b=1, so it factors as (x + 1)^2.",
+      "keywords": [
+        "perfect-square-trinomial",
+        "factoring",
+        "identity"
+      ],
+      "source": "https://www.khanacademy.org/math/algebra2/x2ec2f6f830c9fb89:poly-factor"
+    },
+    {
+      "seedId": "3c92b49f-d87f-447a-9739-ffe7206baf35",
+      "category": "science",
+      "navigationKeyword1": "algebra",
+      "navigationKeyword2": "factoring",
+      "question": "When factoring a quadratic x^2 + bx + c with a = 1, what do you look for?",
+      "correctAnswer": "Two numbers that multiply to c and add to b",
+      "incorrectAnswers": [
+        "Two numbers that add to c and multiply to b",
+        "Two numbers that both equal b/2",
+        "Two numbers that make the discriminant negative"
+      ],
+      "explanation": "For a monic quadratic, you want integers m and n with m\u00b7n = c and m + n = b, giving (x + m)(x + n).",
+      "keywords": [
+        "factor-quadratic",
+        "monic",
+        "product-sum"
+      ],
+      "source": "https://openstax.org/books/elementary-algebra-2e/pages/6-2-factor-trinomials"
+    },
+    {
+      "seedId": "d3ac1066-a2ad-4cda-b6ee-df6581cedb64",
+      "category": "science",
+      "navigationKeyword1": "algebra",
+      "navigationKeyword2": "factoring",
+      "question": "Which expression is a correct factorization of x^2 \u2212 9?",
+      "correctAnswer": "(x \u2212 3)(x + 3)",
+      "incorrectAnswers": [
+        "(x \u2212 9)(x + 1)",
+        "(x \u2212 3)^2",
+        "(x + 9)(x \u2212 1)"
+      ],
+      "explanation": "x^2 \u2212 9 is a difference of squares: a^2 \u2212 b^2 = (a \u2212 b)(a + b) with a=x and b=3.",
+      "keywords": [
+        "difference-of-squares",
+        "factoring",
+        "identity"
+      ],
+      "source": "https://openstax.org/books/elementary-algebra-2e/pages/6-2-factor-trinomials"
+    },
+    {
+      "seedId": "214f1570-6d62-448c-9876-ac3eb48981d4",
+      "category": "science",
+      "navigationKeyword1": "algebra",
+      "navigationKeyword2": "factoring",
+      "question": "Which expression is the factored form of 2x^2 + 8x?",
+      "correctAnswer": "2x(x + 4)",
+      "incorrectAnswers": [
+        "2(x^2 + 8x)",
+        "x(2x + 8x)",
+        "(2x + 8)(x)"
+      ],
+      "explanation": "You factor out the greatest common factor 2x, leaving x + 4 inside the parentheses.",
+      "keywords": [
+        "common-factor",
+        "factoring",
+        "gcf"
+      ],
+      "source": "https://www.purplemath.com/modules/factnumb.htm"
+    },
+    {
+      "seedId": "bc0fac39-b38d-4d0e-8b74-b1d85125028c",
+      "category": "science",
+      "navigationKeyword1": "algebra",
+      "navigationKeyword2": "factoring",
+      "question": "Why is factoring useful when solving some equations?",
+      "correctAnswer": "It can turn an equation into a product equal to zero, letting you use the zero-product property",
+      "incorrectAnswers": [
+        "It guarantees solutions are positive",
+        "It eliminates the need to check answers",
+        "It converts every problem into a system of equations"
+      ],
+      "explanation": "If you can rewrite an equation as (factor)(factor)=0, then at least one factor must be 0, which is often easier to solve.",
+      "keywords": [
+        "zero-product-property",
+        "solve-equations",
+        "factoring"
+      ],
+      "source": "https://www.khanacademy.org/math/algebra2/polynomial-factorization"
+    },
+    {
+      "seedId": "cd8931a8-e9da-43a7-a498-788c27ea4dbd",
+      "category": "science",
+      "navigationKeyword1": "algebra",
+      "navigationKeyword2": "factoring",
+      "question": "Why is it important to factor out the GCF before using more advanced factoring patterns?",
+      "correctAnswer": "Because the expression may not be fully factored otherwise",
+      "incorrectAnswers": [
+        "Because it changes the solutions of every equation",
+        "Because patterns only work when the GCF is 1",
+        "Because it guarantees the factors are prime numbers"
+      ],
+      "explanation": "If you skip the GCF, you can end with factors that still share a common factor, so your final result isn\u2019t in simplest product form.",
+      "keywords": [
+        "gcf",
+        "fully-factored",
+        "simplify"
+      ],
+      "source": "https://www.ck12.org/algebra/factor-out-the-gcf/lesson/Factor-out-the-GCF-ALG/"
+    },
+    {
+      "seedId": "d2d5fa7c-5363-4df8-8b97-9e1013e77ae5",
+      "category": "science",
+      "navigationKeyword1": "algebra",
+      "navigationKeyword2": "functions",
+      "question": "If a function rule includes a denominator like f(x) = 1/(x \u2212 2), what input value is not allowed?",
+      "correctAnswer": "x = 2",
+      "incorrectAnswers": [
+        "x = 0",
+        "x = \u22122",
+        "x = 1"
+      ],
+      "explanation": "The denominator can\u2019t be 0. Here x \u2212 2 = 0 happens at x = 2, so that value is excluded from the domain.",
+      "keywords": [
+        "domain",
+        "rational-function",
+        "division-by-zero"
+      ],
+      "source": "https://www.purplemath.com/modules/fcns.htm"
+    },
+    {
+      "seedId": "ee993645-7a2f-4feb-b048-bf6fcbd5ac5e",
+      "category": "science",
+      "navigationKeyword1": "algebra",
+      "navigationKeyword2": "functions",
+      "question": "If f(x) = 2x \u2212 5, what is f(0)?",
+      "correctAnswer": "\u22125",
+      "incorrectAnswers": [
+        "5",
+        "\u221210",
+        "0"
+      ],
+      "explanation": "Substitute x = 0: f(0) = 2\u00b70 \u2212 5 = \u22125.",
+      "keywords": [
+        "evaluate",
+        "linear-function",
+        "function-notation"
+      ],
+      "source": "https://www.khanacademy.org/math/algebra/x2f8bb11595b61c86:functions"
+    },
+    {
+      "seedId": "7345435e-fb9d-4a4e-b326-b73b599c4287",
+      "category": "science",
+      "navigationKeyword1": "algebra",
+      "navigationKeyword2": "functions",
+      "question": "In a function, what is the input usually called?",
+      "correctAnswer": "the independent variable",
+      "incorrectAnswers": [
+        "the dependent variable",
+        "the output",
+        "the constant term"
+      ],
+      "explanation": "The input is often the independent variable (commonly x); the output depends on it.",
+      "keywords": [
+        "functions",
+        "independent-variable",
+        "input-output"
+      ],
+      "source": "https://openstax.org/books/college-algebra-2e/pages/3-1-functions-and-function-notation"
+    },
+    {
+      "seedId": "820cb7cb-443a-40c2-a537-b5f715df513c",
+      "category": "science",
+      "navigationKeyword1": "algebra",
+      "navigationKeyword2": "functions",
+      "question": "On a standard (x, y) graph of a function, which axis represents the input?",
+      "correctAnswer": "the x-axis",
+      "incorrectAnswers": [
+        "the y-axis",
+        "both axes equally",
+        "neither axis; inputs aren\u2019t graphed"
+      ],
+      "explanation": "In the usual coordinate plane, x is the independent (input) variable and y is the dependent (output) variable.",
+      "keywords": [
+        "graph",
+        "x-axis",
+        "input-output"
+      ],
+      "source": "https://www.ck12.org/algebra/graphs-of-functions/lesson/Graphs-of-Functions-ALG/"
+    },
+    {
+      "seedId": "52aa7a32-f121-47ea-b562-9a6468c72819",
+      "category": "science",
+      "navigationKeyword1": "algebra",
+      "navigationKeyword2": "functions",
+      "question": "What does f(3) mean in function notation?",
+      "correctAnswer": "the output of the function when the input is 3",
+      "incorrectAnswers": [
+        "f multiplied by 3",
+        "the third function in a list",
+        "the inverse of f evaluated at 3"
+      ],
+      "explanation": "f(3) is read \u201cf of 3\u201d and means substitute 3 for the input variable to compute the output.",
+      "keywords": [
+        "function-notation",
+        "evaluate",
+        "input-output"
+      ],
+      "source": "https://www.khanacademy.org/math/algebra/x2f8bb11595b61c86:function-notation"
+    },
+    {
+      "seedId": "d5c585e8-0696-4eaf-b537-4cca744e7632",
+      "category": "science",
+      "navigationKeyword1": "algebra",
+      "navigationKeyword2": "functions",
+      "question": "What does it mean if a function is \"increasing\" on an interval?",
+      "correctAnswer": "as x increases, f(x) increases on that interval",
+      "incorrectAnswers": [
+        "as x increases, f(x) stays constant",
+        "as x increases, f(x) decreases",
+        "as x increases, the domain becomes larger"
+      ],
+      "explanation": "On an interval where the function is increasing, larger inputs correspond to larger outputs.",
+      "keywords": [
+        "increasing",
+        "intervals",
+        "functions"
+      ],
+      "source": "https://openstax.org/books/college-algebra-2e/pages/3-2-domain-and-range"
+    },
+    {
+      "seedId": "cb0013c2-8364-4dc0-adf1-f528d8af2c4f",
+      "category": "science",
+      "navigationKeyword1": "algebra",
+      "navigationKeyword2": "functions",
+      "question": "What does the vertical line test tell you about a graph?",
+      "correctAnswer": "whether it represents a function of x",
+      "incorrectAnswers": [
+        "whether it is a straight line",
+        "whether it has a y-intercept",
+        "whether it is symmetric about the y-axis"
+      ],
+      "explanation": "If any vertical line hits the graph more than once, a single x would map to multiple y-values, so it\u2019s not a function of x.",
+      "keywords": [
+        "vertical-line-test",
+        "functions",
+        "graph"
+      ],
+      "source": "https://en.wikipedia.org/wiki/Vertical_line_test"
+    },
+    {
+      "seedId": "b30e5ab1-aaa9-4c2a-aefa-89201817f13f",
+      "category": "science",
+      "navigationKeyword1": "algebra",
+      "navigationKeyword2": "functions",
+      "question": "What is one-to-one function?",
+      "correctAnswer": "a function where different inputs always give different outputs",
+      "incorrectAnswers": [
+        "a function where the domain equals the range",
+        "a function that is defined only at x = 1",
+        "a function that has exactly one zero"
+      ],
+      "explanation": "A one-to-one (injective) function never maps two different inputs to the same output.",
+      "keywords": [
+        "one-to-one",
+        "injective",
+        "functions"
+      ],
+      "source": "https://en.wikipedia.org/wiki/Injective_function"
+    },
+    {
+      "seedId": "73bac953-aac1-4584-be1c-fb3abd26e7fe",
+      "category": "science",
+      "navigationKeyword1": "algebra",
+      "navigationKeyword2": "functions",
+      "question": "What is the domain of a function?",
+      "correctAnswer": "the set of allowable input values",
+      "incorrectAnswers": [
+        "the set of all possible outputs",
+        "the slope of the function",
+        "the point where the graph crosses the y-axis"
+      ],
+      "explanation": "The domain is the collection of inputs for which the function is defined.",
+      "keywords": [
+        "domain",
+        "functions",
+        "defined"
+      ],
+      "source": "https://www.mathsisfun.com/sets/domain-range-codomain.html"
+    },
+    {
+      "seedId": "623566a3-a58c-4738-9a71-7ce07680ac7e",
+      "category": "science",
+      "navigationKeyword1": "algebra",
+      "navigationKeyword2": "functions",
+      "question": "What is the range of a function?",
+      "correctAnswer": "the set of output values the function actually produces",
+      "incorrectAnswers": [
+        "the set of allowable input values",
+        "the set of all real numbers",
+        "the x-intercept values only"
+      ],
+      "explanation": "The range is the collection of outputs you get when you plug in every input from the domain.",
+      "keywords": [
+        "range",
+        "functions",
+        "outputs"
+      ],
+      "source": "https://openstax.org/books/college-algebra-2e/pages/3-1-functions-and-function-notation"
+    },
+    {
+      "seedId": "ba32c76a-24ff-4ad2-867f-4b1e26efc396",
+      "category": "science",
+      "navigationKeyword1": "algebra",
+      "navigationKeyword2": "functions",
+      "question": "What is the y-intercept of y = 3x + 2?",
+      "correctAnswer": "2",
+      "incorrectAnswers": [
+        "3",
+        "\u22122",
+        "1/3"
+      ],
+      "explanation": "The y-intercept is the value of y when x = 0. Here, y = 3\u00b70 + 2 = 2.",
+      "keywords": [
+        "y-intercept",
+        "slope-intercept-form",
+        "linear-function"
+      ],
+      "source": "https://www.mathsisfun.com/equation_of_line.html"
+    },
+    {
+      "seedId": "4b962f22-9007-41f4-979f-30b25144b62d",
+      "category": "science",
+      "navigationKeyword1": "algebra",
+      "navigationKeyword2": "functions",
+      "question": "Why does a function have at most one output for each input?",
+      "correctAnswer": "Because a function is defined as a rule that assigns exactly one output to each input in its domain",
+      "incorrectAnswers": [
+        "Because every function must be a straight line",
+        "Because outputs can\u2019t be negative",
+        "Because domains can only contain integers"
+      ],
+      "explanation": "\u201cOne input \u2192 one output\u201d is the defining feature of a function; otherwise it\u2019s just a relation.",
+      "keywords": [
+        "definition",
+        "relation-vs-function",
+        "domain"
+      ],
+      "source": "https://openstax.org/books/college-algebra-2e/pages/3-1-functions-and-function-notation"
+    },
+    {
+      "seedId": "03412115-c4dd-4f76-b072-ddbe329ff003",
+      "category": "science",
+      "navigationKeyword1": "algebra",
+      "navigationKeyword2": "inequalities",
+      "question": "If an inequality says x \u2265 2, is x = 2 included?",
+      "correctAnswer": "Yes, because 2 satisfies the `\u2265` symbol",
+      "incorrectAnswers": [
+        "No, because inequalities never include endpoints",
+        "Only if the inequality is written with `<` and not `\u2265`",
+        "Yes only when x is an integer"
+      ],
+      "explanation": "The `\u2265` symbol includes equality, so the boundary value 2 is part of the solution set.",
+      "keywords": [
+        "endpoints",
+        "greater-than-or-equal",
+        "solution-set"
+      ],
+      "source": "https://www.khanacademy.org/math/algebra/x2f8bb11595b61c86:inequalities"
+    },
+    {
+      "seedId": "d745f1f7-d1f8-432a-ae41-78d32297b50e",
+      "category": "science",
+      "navigationKeyword1": "algebra",
+      "navigationKeyword2": "inequalities",
+      "question": "Is x = -1 a solution to 2x - 1 > -3?",
+      "correctAnswer": "No",
+      "incorrectAnswers": [
+        "Yes",
+        "Only if you change the `>` to `\u2265` first",
+        "You cannot tell without graphing"
+      ],
+      "explanation": "Substitute x = -1: 2(-1) \u2212 1 = -3. But `-3 > -3` is false, so x = -1 does not satisfy the strict inequality.",
+      "keywords": [
+        "check-solution",
+        "substitution",
+        "inequality"
+      ],
+      "source": "https://www.khanacademy.org/math/algebra/x2f8bb11595b61c86:inequalities"
+    },
+    {
+      "seedId": "8a2201fe-f56d-4323-8344-9814efc38b6d",
+      "category": "science",
+      "navigationKeyword1": "algebra",
+      "navigationKeyword2": "inequalities",
+      "question": "On a number line, how should you show the solution for x \u2264 4?",
+      "correctAnswer": "A closed dot at 4 (and shading to the left)",
+      "incorrectAnswers": [
+        "An open dot at 4 (and shading to the left)",
+        "A closed dot at 4 (and shading to the right)",
+        "An open dot at 4 (and shading to the right)"
+      ],
+      "explanation": "`\u2264` includes 4, so you use a closed dot at 4, and you shade the side where values are smaller than 4.",
+      "keywords": [
+        "number-line",
+        "closed-dot",
+        "inequality-graphing"
+      ],
+      "source": "https://www.mathsisfun.com/number-line.html"
+    },
+    {
+      "seedId": "6a790102-9998-46e5-8640-08b0eab2c1af",
+      "category": "science",
+      "navigationKeyword1": "algebra",
+      "navigationKeyword2": "inequalities",
+      "question": "Solve the compound inequality: 1 < x + 2 \u2264 6. What is the solution set?",
+      "correctAnswer": "-1 < x \u2264 4",
+      "incorrectAnswers": [
+        "-1 \u2264 x < 4",
+        "1 < x \u2264 6",
+        "-1 < x < 6"
+      ],
+      "explanation": "Subtract 2 from all three parts: `1 \u2212 2 < x \u2264 6 \u2212 2`, which gives `-1 < x \u2264 4`. The strict and non-strict signs stay with the correct endpoints.",
+      "keywords": [
+        "compound-inequalities",
+        "interval-notation",
+        "boundaries"
+      ],
+      "source": "https://en.wikipedia.org/wiki/Inequality_(mathematics)"
+    },
+    {
+      "seedId": "c9e5ce91-285f-41bc-a503-c1910b9810b4",
+      "category": "science",
+      "navigationKeyword1": "algebra",
+      "navigationKeyword2": "inequalities",
+      "question": "Solve: (x \u2212 1)/3 \u2265 2. What is x?",
+      "correctAnswer": "x \u2265 7",
+      "incorrectAnswers": [
+        "x \u2264 7",
+        "x > 7",
+        "x \u2265 2"
+      ],
+      "explanation": "Multiply by 3 (positive, so the sign doesn\u2019t flip): x \u2212 1 \u2265 6, then add 1: x \u2265 7.",
+      "keywords": [
+        "solve-fractions",
+        "clearing-denominators",
+        "greater-than-or-equal"
+      ],
+      "source": "https://www.ck12.org/algebra/solving-inequalities/lesson/Solving-Inequalities/"
+    },
+    {
+      "seedId": "85e24f07-9ca6-4f4b-9556-384a7acecad7",
+      "category": "science",
+      "navigationKeyword1": "algebra",
+      "navigationKeyword2": "inequalities",
+      "question": "Solve: -2x + 3 > 11. What kind of x values work?",
+      "correctAnswer": "x < -4",
+      "incorrectAnswers": [
+        "x > -4",
+        "x \u2264 -4",
+        "x < 4"
+      ],
+      "explanation": "Subtract 3: -2x > 8. Divide by -2: the inequality flips, giving x < -4.",
+      "keywords": [
+        "negative-coefficient",
+        "flip-sign",
+        "solving"
+      ],
+      "source": "https://www.purplemath.com/modules/solvingin.htm"
+    },
+    {
+      "seedId": "51d0697f-40ee-4190-ba4c-89ad1a254a78",
+      "category": "science",
+      "navigationKeyword1": "algebra",
+      "navigationKeyword2": "inequalities",
+      "question": "Solve: x + 5 \u2264 12. What does x need to be?",
+      "correctAnswer": "x \u2264 7",
+      "incorrectAnswers": [
+        "x < 7",
+        "x \u2265 7",
+        "x \u2265 12"
+      ],
+      "explanation": "Subtract 5 from both sides: x \u2264 12 \u2212 5 = 7. Because it\u2019s `\u2264`, the endpoint 7 is included.",
+      "keywords": [
+        "linear-inequalities",
+        "solving",
+        "less-than-or-equal"
+      ],
+      "source": "https://www.mathsisfun.com/algebra/solving-inequalities.html"
+    },
+    {
+      "seedId": "1ab16549-293b-4daf-9e51-cc5366ff32ec",
+      "category": "science",
+      "navigationKeyword1": "algebra",
+      "navigationKeyword2": "inequalities",
+      "question": "Translate into an inequality: \u201cx is no more than 50.\u201d Which inequality matches?",
+      "correctAnswer": "x \u2264 50",
+      "incorrectAnswers": [
+        "x \u2265 50",
+        "x < 50",
+        "x = 50"
+      ],
+      "explanation": "\u201cNo more than\u201d means 50 is allowed, so the relationship is \u201cless than or equal to 50\u201d.",
+      "keywords": [
+        "word-problems",
+        "at-most",
+        "translation"
+      ],
+      "source": "https://www.mathsisfun.com/algebra/inequalities.html"
+    },
+    {
+      "seedId": "5f402694-b963-4210-9def-80021954f448",
+      "category": "science",
+      "navigationKeyword1": "algebra",
+      "navigationKeyword2": "inequalities",
+      "question": "What does the inequality x > 3 mean?",
+      "correctAnswer": "x is greater than 3",
+      "incorrectAnswers": [
+        "x is less than 3",
+        "x is equal to 3",
+        "x is not allowed to be a number"
+      ],
+      "explanation": "The symbol `>` means \u201cstrictly greater than\u201d, so values equal to 3 do not satisfy the inequality.",
+      "keywords": [
+        "inequality-symbols",
+        "greater-than",
+        "solution-set"
+      ],
+      "source": "https://en.wikipedia.org/wiki/Inequality_(mathematics)"
+    },
+    {
+      "seedId": "cc0326d5-4278-4053-9e3b-238939c28e10",
+      "category": "science",
+      "navigationKeyword1": "algebra",
+      "navigationKeyword2": "inequalities",
+      "question": "What is the main difference between x = 3 and x > 3 in terms of solutions?",
+      "correctAnswer": "x = 3 has one solution, while x > 3 has infinitely many solutions",
+      "incorrectAnswers": [
+        "x = 3 has infinitely many solutions, while x > 3 has one",
+        "Both have exactly one solution",
+        "x > 3 has no solutions"
+      ],
+      "explanation": "An equation like `x = 3` pins down a single value, while a strict inequality like `x > 3` allows any value greater than 3.",
+      "keywords": [
+        "equations-vs-inequalities",
+        "solution-count",
+        "infinite-solutions"
+      ],
+      "source": "https://openstax.org/books/prealgebra/pages/inequalities"
+    },
+    {
+      "seedId": "45c57023-2607-45f3-ab65-ff2534629594",
+      "category": "science",
+      "navigationKeyword1": "algebra",
+      "navigationKeyword2": "inequalities",
+      "question": "When you multiply or divide an inequality by a negative number, what happens to the inequality sign?",
+      "correctAnswer": "The direction reverses",
+      "incorrectAnswers": [
+        "The direction stays the same",
+        "It turns into an equality",
+        "It becomes \u201cor\u201d (a two-part condition)"
+      ],
+      "explanation": "Multiplying by a negative reverses the ordering relationship, so `>` becomes `<` and `\u2265` becomes `\u2264`.",
+      "keywords": [
+        "inequality-rules",
+        "multiplying-dividing-negative",
+        "sign-flip"
+      ],
+      "source": "https://www.khanacademy.org/math/algebra/x2f8bb11595b61c86:inequalities"
+    },
+    {
+      "seedId": "83a4f69a-cc41-4002-a048-56cc24f2a063",
+      "category": "science",
+      "navigationKeyword1": "algebra",
+      "navigationKeyword2": "inequalities",
+      "question": "Which inequality correctly represents: \u201cx is at least 10, but less than 13\u201d?",
+      "correctAnswer": "10 \u2264 x < 13",
+      "incorrectAnswers": [
+        "10 < x \u2264 13",
+        "x \u2265 10 or x < 13",
+        "10 \u2264 x \u2264 13"
+      ],
+      "explanation": "\u201cAt least 10\u201d gives `x \u2265 10` and \u201cless than 13\u201d gives `x < 13`. Putting them together yields `10 \u2264 x < 13`.",
+      "keywords": [
+        "interval-translation",
+        "at-least",
+        "less-than"
+      ],
+      "source": "https://www.purplemath.com/modules/ineq.htm"
+    },
+    {
+      "seedId": "bfc7f7fd-c0fa-489b-a689-1ea70d027aa3",
+      "category": "science",
+      "navigationKeyword1": "algebra",
+      "navigationKeyword2": "polynomials",
+      "question": "A polynomial of degree 4 can have at most how many real zeros?",
+      "correctAnswer": "4",
+      "incorrectAnswers": [
+        "3",
+        "5",
+        "Infinitely many"
+      ],
+      "explanation": "A degree 4 polynomial has at most 4 real roots (counting distinct real zeros). It can have fewer depending on the function.",
+      "keywords": [
+        "degree-roots",
+        "zeros",
+        "real-roots"
+      ],
+      "source": "https://en.wikipedia.org/wiki/Polynomial#Roots"
+    },
+    {
+      "seedId": "fa5f3649-e697-4b6b-ae3f-bbce18b16cba",
+      "category": "science",
+      "navigationKeyword1": "algebra",
+      "navigationKeyword2": "polynomials",
+      "question": "Expand: (x + 2)(x + 3). What is the polynomial?",
+      "correctAnswer": "x^2 + 5x + 6",
+      "incorrectAnswers": [
+        "x^2 + 6x + 5",
+        "x^2 + x + 6",
+        "x^2 + 5x - 6"
+      ],
+      "explanation": "Use distribution: (x+2)(x+3) = x(x+3) + 2(x+3) = x^2 + 3x + 2x + 6 = x^2 + 5x + 6.",
+      "keywords": [
+        "distributive-property",
+        "expansion",
+        "multiply-binomials"
+      ],
+      "source": "https://www.mathsisfun.com/algebra/polynomials-multiplying.html"
+    },
+    {
+      "seedId": "ec8f09b8-3bed-4997-929e-f3ef9bf795a4",
+      "category": "science",
+      "navigationKeyword1": "algebra",
+      "navigationKeyword2": "polynomials",
+      "question": "If p(x) = x^2 + 3x + 1, what is p(2)?",
+      "correctAnswer": "11",
+      "incorrectAnswers": [
+        "7",
+        "9",
+        "13"
+      ],
+      "explanation": "Substitute x = 2: p(2) = 2^2 + 3(2) + 1 = 4 + 6 + 1 = 11.",
+      "keywords": [
+        "evaluate-polynomial",
+        "substitution",
+        "p-of-x"
+      ],
+      "source": "https://www.mathsisfun.com/algebra/polynomials.html"
+    },
+    {
+      "seedId": "37153cb1-828f-4f9f-b5d5-e8ddbf6b2896",
+      "category": "science",
+      "navigationKeyword1": "algebra",
+      "navigationKeyword2": "polynomials",
+      "question": "In a polynomial, what is the leading coefficient?",
+      "correctAnswer": "The coefficient of the term with the highest degree",
+      "incorrectAnswers": [
+        "The constant term",
+        "The coefficient of the smallest-degree term",
+        "The number of terms in the polynomial"
+      ],
+      "explanation": "The leading coefficient is tied to the highest-degree term, which controls the polynomial\u2019s end behavior.",
+      "keywords": [
+        "leading-coefficient",
+        "degree",
+        "end-behavior"
+      ],
+      "source": "https://openstax.org/books/college-algebra/pages/1-8-polynomial-functions"
+    },
+    {
+      "seedId": "148b433b-ea58-4878-bb86-138c8195c8aa",
+      "category": "science",
+      "navigationKeyword1": "algebra",
+      "navigationKeyword2": "polynomials",
+      "question": "Simplify: (2x^2 + 3x + 1) + (x^2 - 4x + 2). What do you get?",
+      "correctAnswer": "3x^2 - x + 3",
+      "incorrectAnswers": [
+        "2x^2 - x + 1",
+        "3x^2 + 7x + 3",
+        "x^2 - x + 3"
+      ],
+      "explanation": "Combine like terms: `2x^2 + x^2 = 3x^2`, `3x + (\u22124x) = \u2212x`, and `1 + 2 = 3`.",
+      "keywords": [
+        "combine-like-terms",
+        "polynomial-addition",
+        "simplify"
+      ],
+      "source": "https://www.khanacademy.org/math/algebra/x2f8bb11595b61c86:polynomials"
+    },
+    {
+      "seedId": "80d7c1ae-1149-44f7-9379-ca94d459de92",
+      "category": "science",
+      "navigationKeyword1": "algebra",
+      "navigationKeyword2": "polynomials",
+      "question": "What is the constant term of the polynomial 5x^3 - 2x + 9?",
+      "correctAnswer": "9",
+      "incorrectAnswers": [
+        "5",
+        "-2",
+        "0"
+      ],
+      "explanation": "The constant term is the term with x^0. Since x^0 = 1, the coefficient of that term is 9.",
+      "keywords": [
+        "constant-term",
+        "x-zero",
+        "polynomials"
+      ],
+      "source": "https://www.khanacademy.org/math/algebra/x2f8bb11595b61c86:polynomials"
+    },
+    {
+      "seedId": "3e07d903-4663-4f36-95d3-870b0341c1fc",
+      "category": "science",
+      "navigationKeyword1": "algebra",
+      "navigationKeyword2": "polynomials",
+      "question": "What is the degree of the polynomial 3x^4 - 2x + 5?",
+      "correctAnswer": "4",
+      "incorrectAnswers": [
+        "3",
+        "5",
+        "1"
+      ],
+      "explanation": "The degree is the highest exponent on `x`. Here, the highest power is `x^4`, so the degree is 4.",
+      "keywords": [
+        "degree",
+        "polynomials",
+        "highest-power"
+      ],
+      "source": "https://www.mathsisfun.com/algebra/polynomials.html"
+    },
+    {
+      "seedId": "725b7b74-9eac-41c1-8e30-7be263b66193",
+      "category": "science",
+      "navigationKeyword1": "algebra",
+      "navigationKeyword2": "polynomials",
+      "question": "When you combine like terms, which operation are you doing?",
+      "correctAnswer": "Adding coefficients of terms with the same variable power",
+      "incorrectAnswers": [
+        "Multiplying coefficients of terms with different powers",
+        "Adding exponents together",
+        "Removing the variable from all terms"
+      ],
+      "explanation": "Like terms share the same variable and exponent, so you add their coefficients while keeping the shared x-power.",
+      "keywords": [
+        "like-terms",
+        "combine",
+        "coefficients"
+      ],
+      "source": "https://www.purplemath.com/modules/simplify.htm"
+    },
+    {
+      "seedId": "cc715c4b-0874-41e2-9ee4-196c2314fe91",
+      "category": "science",
+      "navigationKeyword1": "algebra",
+      "navigationKeyword2": "polynomials",
+      "question": "Which expression is NOT a polynomial term (and why)?",
+      "correctAnswer": "x^-1, because it has a negative exponent",
+      "incorrectAnswers": [
+        "7, because it has no x variable",
+        "3x^2, because it has an exponent",
+        "5x, because it is a single power"
+      ],
+      "explanation": "Polynomials use nonnegative integer exponents. A negative exponent like x^-1 is not allowed in polynomial terms.",
+      "keywords": [
+        "polynomial-definition",
+        "negative-exponents",
+        "not-a-polynomial"
+      ],
+      "source": "https://www.ck12.org/algebra/polynomials/lesson/What-is-a-Polynomial/"
+    },
+    {
+      "seedId": "de9d7543-72a9-4a59-bcab-c1674932e74e",
+      "category": "science",
+      "navigationKeyword1": "algebra",
+      "navigationKeyword2": "polynomials",
+      "question": "Which form is considered the \u201cstandard form\u201d of a polynomial like 4x^3 - 2x + 9?",
+      "correctAnswer": "Terms written in descending powers of x",
+      "incorrectAnswers": [
+        "Terms written in ascending powers of x",
+        "Terms rearranged so constants come last",
+        "Terms grouped only by plus signs"
+      ],
+      "explanation": "Standard form typically means ordering terms from highest degree down to lowest degree.",
+      "keywords": [
+        "standard-form",
+        "descending-powers",
+        "polynomials"
+      ],
+      "source": "https://www.ck12.org/algebra/polynomials/lesson/Standard-Form-of-Polynomials/"
+    },
+    {
+      "seedId": "8413475c-db1f-40a8-a75b-5334dd5ddb5b",
+      "category": "science",
+      "navigationKeyword1": "algebra",
+      "navigationKeyword2": "polynomials",
+      "question": "Which polynomial is already written in descending powers of x?",
+      "correctAnswer": "4x^5 - 3x^2 + x - 7",
+      "incorrectAnswers": [
+        "x - 7 + 4x^5 - 3x^2",
+        "-7 + x + 4x^5 - 3x^2",
+        "4x^5 + x - 7 - 3x^2"
+      ],
+      "explanation": "Descending powers mean the exponents go from highest to lowest as you read left to right.",
+      "keywords": [
+        "ordering",
+        "descending-powers",
+        "standard-form"
+      ],
+      "source": "https://www.mathsisfun.com/algebra/polynomials.html"
+    },
+    {
+      "seedId": "6490574d-6fe6-464c-88cf-e8a0cdf761c3",
+      "category": "science",
+      "navigationKeyword1": "algebra",
+      "navigationKeyword2": "polynomials",
+      "question": "Which term-count classification matches x^5 + 2x^2 + 7?",
+      "correctAnswer": "Trinomial (three terms)",
+      "incorrectAnswers": [
+        "Binomial (two terms)",
+        "Monomial (one term)",
+        "Quadratic (degree 2)"
+      ],
+      "explanation": "A trinomial has three terms. Here the terms are `x^5`, `2x^2`, and `7`.",
+      "keywords": [
+        "binomial",
+        "trinomial",
+        "term-count"
+      ],
+      "source": "https://en.wikipedia.org/wiki/Polynomial"
+    },
+    {
+      "seedId": "62e8107f-a9a7-47c5-b1a0-4ba259540ece",
+      "category": "science",
+      "navigationKeyword1": "algebra",
+      "navigationKeyword2": "systems",
+      "question": "For the system x + y = 7 and x - y = 3, does the point (2, 5) satisfy both equations?",
+      "correctAnswer": "No",
+      "incorrectAnswers": [
+        "Yes",
+        "It satisfies only the first equation",
+        "It satisfies only the second equation"
+      ],
+      "explanation": "Check both: for x + y = 7, 2 + 5 = 7 (true). For x - y = 3, 2 - 5 = -3 (false). Since one equation fails, it\u2019s not a solution.",
+      "keywords": [
+        "check-point",
+        "substitution-check",
+        "systems"
+      ],
+      "source": "https://en.wikipedia.org/wiki/System_of_linear_equations"
+    },
+    {
+      "seedId": "8b3f4c90-e09b-4a26-94ee-e78dbe50dd35",
+      "category": "science",
+      "navigationKeyword1": "algebra",
+      "navigationKeyword2": "systems",
+      "question": "If elimination leads to a false statement like 0 = 5, what does that indicate?",
+      "correctAnswer": "The system has no solutions",
+      "incorrectAnswers": [
+        "The system has infinitely many solutions",
+        "The system has exactly one solution",
+        "You must still solve for x and y separately"
+      ],
+      "explanation": "A contradiction (0 = 5) means there is no pair of values that can make both original equations true at the same time.",
+      "keywords": [
+        "inconsistent",
+        "contradiction",
+        "no-solution"
+      ],
+      "source": "https://www.purplemath.com/modules/solvelin.htm"
+    },
+    {
+      "seedId": "aa81ed31-bd74-4165-93fd-3db1e228b6b7",
+      "category": "science",
+      "navigationKeyword1": "algebra",
+      "navigationKeyword2": "systems",
+      "question": "If two lines are the exact same line in a system of equations, how many solutions does the system have?",
+      "correctAnswer": "Infinitely many solutions",
+      "incorrectAnswers": [
+        "One solution",
+        "No solutions",
+        "Exactly two solutions"
+      ],
+      "explanation": "If the equations are equivalent (the same line), every point on that line satisfies both equations, giving infinitely many solutions.",
+      "keywords": [
+        "dependent",
+        "same-line",
+        "infinite-solutions"
+      ],
+      "source": "https://www.khanacademy.org/math/algebra/x2f8bb11595b61c86:systems-of-equations"
+    },
+    {
+      "seedId": "9b7fc939-963f-4692-b44f-26fdea67ee17",
+      "category": "science",
+      "navigationKeyword1": "algebra",
+      "navigationKeyword2": "systems",
+      "question": "If you add the two equations in elimination and you get a true statement like 0 = 0, what does that suggest about the system?",
+      "correctAnswer": "There are infinitely many solutions",
+      "incorrectAnswers": [
+        "There is exactly one solution",
+        "There are no solutions",
+        "The solution is an integer only"
+      ],
+      "explanation": "Getting 0 = 0 means the equations are dependent (the same line in disguise), so the system doesn\u2019t pin down a single intersection point.",
+      "keywords": [
+        "dependent",
+        "0-equals-0",
+        "infinite-solutions"
+      ],
+      "source": "https://openstax.org/books/college-algebra/pages/2-3-systems-of-equations-and-inequalities"
+    },
+    {
+      "seedId": "dfbec514-d5d8-4b08-a263-eab6f3a8d43c",
+      "category": "science",
+      "navigationKeyword1": "algebra",
+      "navigationKeyword2": "systems",
+      "question": "In a system of linear equations, what does a solution represent?",
+      "correctAnswer": "An ordered pair that makes every equation true at the same time",
+      "incorrectAnswers": [
+        "Any value that makes just one equation true",
+        "A value that makes the equations equal to 0 only",
+        "A point that is on neither graph"
+      ],
+      "explanation": "A solution must satisfy both (or all) equations simultaneously. On graphs, it\u2019s a point that lies on every corresponding line.",
+      "keywords": [
+        "solutions",
+        "ordered-pairs",
+        "simultaneous"
+      ],
+      "source": "https://www.mathsisfun.com/algebra/simultaneous-equations.html"
+    },
+    {
+      "seedId": "eebb7c93-c07d-48bf-9890-d258dd0a2531",
+      "category": "science",
+      "navigationKeyword1": "algebra",
+      "navigationKeyword2": "systems",
+      "question": "In elimination, what is the goal of combining the two equations?",
+      "correctAnswer": "Make one variable cancel so you can solve for the other variable",
+      "incorrectAnswers": [
+        "Multiply both equations by the same number and stop",
+        "Make both variables cancel at the same time",
+        "Turn the system into a single quadratic equation"
+      ],
+      "explanation": "Elimination is designed to cancel one variable (often by adding or subtracting after aligning coefficients), leaving an equation in the other variable.",
+      "keywords": [
+        "elimination",
+        "variable-cancel",
+        "solve-system"
+      ],
+      "source": "https://openstax.org/books/college-algebra/pages/2-3-systems-of-equations-and-inequalities"
+    },
+    {
+      "seedId": "c2854fd7-00d6-4c40-8c15-d2a1107073ab",
+      "category": "science",
+      "navigationKeyword1": "algebra",
+      "navigationKeyword2": "systems",
+      "question": "In substitution, what is the typical first step?",
+      "correctAnswer": "Solve one equation for one variable, then plug into the other equation",
+      "incorrectAnswers": [
+        "Add the equations together immediately",
+        "Replace both variables with numbers at random",
+        "Square each side to remove variables"
+      ],
+      "explanation": "Substitution works by rewriting one equation so one variable is expressed in terms of the other, then substituting that expression into the second equation.",
+      "keywords": [
+        "substitution",
+        "solve-for",
+        "plug-in"
+      ],
+      "source": "https://www.khanacademy.org/math/algebra/x2f8bb11595b61c86:systems-of-equations"
+    },
+    {
+      "seedId": "702bcefa-3bea-4b40-a8e7-820ce76d54e2",
+      "category": "science",
+      "navigationKeyword1": "algebra",
+      "navigationKeyword2": "systems",
+      "question": "Solve the system: x + y = 7 and x - y = 3. What is x?",
+      "correctAnswer": "5",
+      "incorrectAnswers": [
+        "2",
+        "3",
+        "4"
+      ],
+      "explanation": "Add the equations: (x + y) + (x - y) = 7 + 3, so 2x = 10 and x = 5. Then y = 2 if needed.",
+      "keywords": [
+        "worked-example",
+        "elimination",
+        "x-value"
+      ],
+      "source": "https://www.mathsisfun.com/algebra/simultaneous-equations.html"
+    },
+    {
+      "seedId": "271c2542-56e6-4b8d-abc7-35bc1f2a5cd1",
+      "category": "science",
+      "navigationKeyword1": "algebra",
+      "navigationKeyword2": "systems",
+      "question": "Two lines in the coordinate plane intersect at exactly one point. For a linear system, what does that usually mean?",
+      "correctAnswer": "The system has exactly one solution",
+      "incorrectAnswers": [
+        "The system has no solutions",
+        "The system has infinitely many solutions",
+        "The system\u2019s solution must be x only"
+      ],
+      "explanation": "If the graphs cross at one point, that intersection point satisfies both equations, so there is one solution.",
+      "keywords": [
+        "intersection",
+        "one-solution",
+        "graphs"
+      ],
+      "source": "https://en.wikipedia.org/wiki/System_of_linear_equations"
+    },
+    {
+      "seedId": "5e0f43c3-c7e3-4cd4-96fb-cdc8cdf23836",
+      "category": "science",
+      "navigationKeyword1": "algebra",
+      "navigationKeyword2": "systems",
+      "question": "What does it mean when a system is \u201cinconsistent\u201d?",
+      "correctAnswer": "There is no ordered pair that satisfies all equations",
+      "incorrectAnswers": [
+        "There is exactly one solution",
+        "There are infinitely many solutions",
+        "At least one equation is missing a variable"
+      ],
+      "explanation": "Inconsistent systems correspond to graphs that never meet (for example, parallel distinct lines). No point satisfies both equations at once.",
+      "keywords": [
+        "inconsistent",
+        "no-solution",
+        "graphs"
+      ],
+      "source": "https://www.mathsisfun.com/algebra/simultaneous-equations.html"
+    },
+    {
+      "seedId": "ec86a586-64e3-47ac-8a33-708b4b82ae51",
+      "category": "science",
+      "navigationKeyword1": "algebra",
+      "navigationKeyword2": "systems",
+      "question": "What is a \u201csystem of equations\u201d?",
+      "correctAnswer": "A set of equations that share the same variables",
+      "incorrectAnswers": [
+        "A single equation with more than one variable",
+        "Two equations that never use the same variable",
+        "A formula that gives only one numerical value"
+      ],
+      "explanation": "A system combines equations that work together on the same variables (like x and y), so you solve for values that satisfy all equations at once.",
+      "keywords": [
+        "system-of-equations",
+        "shared-variables",
+        "definition"
+      ],
+      "source": "https://www.khanacademy.org/math/algebra/x2f8bb11595b61c86:systems-of-equations"
+    },
+    {
+      "seedId": "a9b769f8-576e-4489-b824-47230ea4cbe5",
+      "category": "science",
+      "navigationKeyword1": "algebra",
+      "navigationKeyword2": "systems",
+      "question": "Which approach is usually easiest when one equation is already solved for one variable (like y = 3x + 1)?",
+      "correctAnswer": "Substitution",
+      "incorrectAnswers": [
+        "Elimination",
+        "Square both sides first",
+        "Graph first and guess the intersection"
+      ],
+      "explanation": "If an equation is already solved for a variable, you can directly substitute that expression into the other equation.",
+      "keywords": [
+        "method-choice",
+        "substitution",
+        "systems"
+      ],
+      "source": "https://www.mathsisfun.com/algebra/simultaneous-equations.html"
+    }
+  ]
+}

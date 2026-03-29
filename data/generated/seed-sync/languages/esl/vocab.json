@@ -1,0 +1,127 @@
+{
+  "schemaVersion": 1,
+  "seedSet": "core-public-items",
+  "deltaPreviewLimit": 200,
+  "items": [
+    {
+      "seedId": "732fd744-fe30-5479-9e6f-d07430319e08",
+      "category": "languages",
+      "navigationKeyword1": "esl",
+      "navigationKeyword2": "vocab",
+      "question": "Which word means a mother or father?",
+      "correctAnswer": "parent",
+      "incorrectAnswers": [
+        "season",
+        "island",
+        "ticket"
+      ],
+      "explanation": "A parent is a mother or father of a child.",
+      "keywords": [
+        "parent",
+        "family",
+        "esl-vocab"
+      ],
+      "source": "https://dictionary.cambridge.org/dictionary/english/parent"
+    },
+    {
+      "seedId": "d5acf4be-1d11-5c39-a2fd-2df543374d41",
+      "category": "languages",
+      "navigationKeyword1": "esl",
+      "navigationKeyword2": "vocab",
+      "question": "Which word means a place where people learn together?",
+      "correctAnswer": "school",
+      "incorrectAnswers": [
+        "spoon",
+        "weather",
+        "bridge"
+      ],
+      "explanation": "A school is a place for teaching and learning.",
+      "keywords": [
+        "school",
+        "education",
+        "esl-vocab"
+      ],
+      "source": "https://www.merriam-webster.com/dictionary/school"
+    },
+    {
+      "seedId": "9a7adeb9-945f-5e30-abbd-3397218d610f",
+      "category": "languages",
+      "navigationKeyword1": "esl",
+      "navigationKeyword2": "vocab",
+      "question": "Which word means feeling worry or fear about something?",
+      "correctAnswer": "afraid",
+      "incorrectAnswers": [
+        "wooden",
+        "public",
+        "silver"
+      ],
+      "explanation": "Afraid means frightened or worried about possible harm.",
+      "keywords": [
+        "afraid",
+        "feelings",
+        "esl-vocab"
+      ],
+      "source": "https://dictionary.cambridge.org/dictionary/english/afraid"
+    },
+    {
+      "seedId": "6b270c30-1e30-541c-a607-a99d801f1d09",
+      "category": "languages",
+      "navigationKeyword1": "esl",
+      "navigationKeyword2": "vocab",
+      "question": "Which word means not expensive?",
+      "correctAnswer": "cheap",
+      "incorrectAnswers": [
+        "heavy",
+        "narrow",
+        "silent"
+      ],
+      "explanation": "Cheap means low in price.",
+      "keywords": [
+        "cheap",
+        "shopping",
+        "esl-vocab"
+      ],
+      "source": "https://www.merriam-webster.com/dictionary/cheap"
+    },
+    {
+      "seedId": "c2de41b3-d713-5aa5-a1b3-e8e2e04f16d2",
+      "category": "languages",
+      "navigationKeyword1": "esl",
+      "navigationKeyword2": "vocab",
+      "question": "Which word means the meal you eat in the middle of the day?",
+      "correctAnswer": "lunch",
+      "incorrectAnswers": [
+        "blanket",
+        "ticket",
+        "village"
+      ],
+      "explanation": "Lunch is the usual name for a midday meal.",
+      "keywords": [
+        "lunch",
+        "food",
+        "esl-vocab"
+      ],
+      "source": "https://dictionary.cambridge.org/dictionary/english/lunch"
+    },
+    {
+      "seedId": "c71730a4-826b-5841-9fee-c77dda1f1541",
+      "category": "languages",
+      "navigationKeyword1": "esl",
+      "navigationKeyword2": "vocab",
+      "question": "Which word means the room where food is cooked?",
+      "correctAnswer": "kitchen",
+      "incorrectAnswers": [
+        "ocean",
+        "holiday",
+        "guitar"
+      ],
+      "explanation": "The kitchen is the room used for cooking.",
+      "keywords": [
+        "kitchen",
+        "home",
+        "esl-vocab"
+      ],
+      "source": "https://www.merriam-webster.com/dictionary/kitchen"
+    }
+  ]
+}

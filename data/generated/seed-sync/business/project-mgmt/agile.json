@@ -1,0 +1,121 @@
+{
+  "schemaVersion": 1,
+  "seedSet": "core-public-items",
+  "deltaPreviewLimit": 200,
+  "items": [
+    {
+      "seedId": "2b2e215d-61c7-4428-bb04-6de039f52bcf",
+      "category": "business",
+      "navigationKeyword1": "project-mgmt",
+      "navigationKeyword2": "agile",
+      "question": "What does \u2018working software\u2019 progress mean in agile?",
+      "correctAnswer": "Delivered increments that provide real user value\u2014not only documents or plans.",
+      "incorrectAnswers": [
+        "PowerPoint decks only.",
+        "Meeting minutes only.",
+        "Architecture diagrams only."
+      ],
+      "explanation": "Tangible progress reduces risk.",
+      "keywords": [
+        "working-software",
+        "agile"
+      ],
+      "source": "https://agilemanifesto.org/"
+    },
+    {
+      "seedId": "bafbcfd1-5dff-4bff-bb0d-ef91272d04eb",
+      "category": "business",
+      "navigationKeyword1": "project-mgmt",
+      "navigationKeyword2": "agile",
+      "question": "What is a core idea of the Agile Manifesto?",
+      "correctAnswer": "Value responding to change and customer collaboration over rigid plans and heavy processes (balanced).",
+      "incorrectAnswers": [
+        "Eliminate all documentation.",
+        "Never plan.",
+        "Avoid working software."
+      ],
+      "explanation": "Agile is not \u2018no process\u2019\u2014it\u2019s adaptive process.",
+      "keywords": [
+        "agile-manifesto",
+        "agile"
+      ],
+      "source": "https://agilemanifesto.org/"
+    },
+    {
+      "seedId": "22b11b95-13e8-4171-99d5-1a1cd33d6f96",
+      "category": "business",
+      "navigationKeyword1": "project-mgmt",
+      "navigationKeyword2": "agile",
+      "question": "What is a product backlog?",
+      "correctAnswer": "An ordered list of work for the product, refined over time.",
+      "incorrectAnswers": [
+        "A list locked forever.",
+        "Only HR tickets.",
+        "Only bug reports."
+      ],
+      "explanation": "Backlogs enable prioritization conversations.",
+      "keywords": [
+        "product-backlog",
+        "scrum"
+      ],
+      "source": "https://www.scrum.org/resources/what-is-a-product-backlog"
+    },
+    {
+      "seedId": "02c78c3b-9bf6-42c0-a514-969bd1c74223",
+      "category": "business",
+      "navigationKeyword1": "project-mgmt",
+      "navigationKeyword2": "agile",
+      "question": "When might waterfall still be reasonable?",
+      "correctAnswer": "Highly regulated, fixed-scope environments where change is costly and well-specified upfront.",
+      "incorrectAnswers": [
+        "Never, in any context.",
+        "Always for every software project.",
+        "Only for hobbies."
+      ],
+      "explanation": "Choose lifecycle based on uncertainty and constraints.",
+      "keywords": [
+        "waterfall",
+        "lifecycle"
+      ],
+      "source": "https://www.pmi.org/learning/library/agile-vs-waterfall-7118"
+    },
+    {
+      "seedId": "90c1dbfc-a2bb-40f1-9ac5-6221b383bf3f",
+      "category": "business",
+      "navigationKeyword1": "project-mgmt",
+      "navigationKeyword2": "agile",
+      "question": "Why emphasize cross-functional teams in agile?",
+      "correctAnswer": "Reduce handoffs and waiting by embedding skills needed to deliver increments.",
+      "incorrectAnswers": [
+        "To maximize silos.",
+        "To avoid testers.",
+        "To remove designers."
+      ],
+      "explanation": "Flow improves with fewer dependencies.",
+      "keywords": [
+        "cross-functional",
+        "teams"
+      ],
+      "source": "https://www.atlassian.com/agile/scrum/cross-functional-teams"
+    },
+    {
+      "seedId": "bcf10339-1eed-4b22-92ac-d32e532cf2b7",
+      "category": "business",
+      "navigationKeyword1": "project-mgmt",
+      "navigationKeyword2": "agile",
+      "question": "Why use short iterations in agile delivery?",
+      "correctAnswer": "Deliver increments, integrate feedback, and reduce risk versus single big releases.",
+      "incorrectAnswers": [
+        "To avoid customer input.",
+        "To make planning impossible.",
+        "To ban testing."
+      ],
+      "explanation": "Timeboxing focuses delivery.",
+      "keywords": [
+        "iterations",
+        "agile"
+      ],
+      "source": "https://www.atlassian.com/agile/software-development/iteration"
+    }
+  ]
+}

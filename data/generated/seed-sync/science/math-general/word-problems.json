@@ -1,0 +1,235 @@
+{
+  "schemaVersion": 1,
+  "seedSet": "core-public-items",
+  "deltaPreviewLimit": 200,
+  "items": [
+    {
+      "seedId": "f7882bc5-c0b5-42ca-b8dc-35ca6142df46",
+      "category": "science",
+      "navigationKeyword1": "math-general",
+      "navigationKeyword2": "word-problems",
+      "question": "How to check a word-problem answer?",
+      "correctAnswer": "Plug back into original conditions with units",
+      "incorrectAnswers": [
+        "Only check if positive",
+        "Never check",
+        "Replace variables with 0"
+      ],
+      "explanation": "Sanity-check magnitude.",
+      "keywords": [
+        "verification",
+        "problem-solving"
+      ],
+      "source": "https://www.mathsisfun.com/algebra/word-problems-solving.html"
+    },
+    {
+      "seedId": "0a5a5807-171c-491d-859a-bf5f86071362",
+      "category": "science",
+      "navigationKeyword1": "math-general",
+      "navigationKeyword2": "word-problems",
+      "question": "If a problem mixes units, what should you do first?",
+      "correctAnswer": "Convert to consistent units",
+      "incorrectAnswers": [
+        "Ignore units",
+        "Average units",
+        "Multiply units randomly"
+      ],
+      "explanation": "Dimensional consistency catches errors.",
+      "keywords": [
+        "units",
+        "conversion"
+      ],
+      "source": "https://www.nist.gov/pml/weights-and-measures/metric-si/si-units"
+    },
+    {
+      "seedId": "ff0b0340-8cac-443c-ac2b-7cdff21b271d",
+      "category": "science",
+      "navigationKeyword1": "math-general",
+      "navigationKeyword2": "word-problems",
+      "question": "If two investments sum to a total, what equation structure appears?",
+      "correctAnswer": "x + y = total (plus interest equations)",
+      "incorrectAnswers": [
+        "x \u00d7 y = total always",
+        "x \u2212 y = total always",
+        "x^2 = total"
+      ],
+      "explanation": "Systems often model mixtures/investments.",
+      "keywords": [
+        "systems",
+        "finance-math"
+      ],
+      "source": "https://www.khanacademy.org/math/algebra/x2f8bb11595b61c86:systems-of-equations"
+    },
+    {
+      "seedId": "2a71f8c4-cfdc-4f63-b5b6-1d112155cf92",
+      "category": "science",
+      "navigationKeyword1": "math-general",
+      "navigationKeyword2": "word-problems",
+      "question": "If \u2018per\u2019 appears (miles per hour), what operation often links distance and time?",
+      "correctAnswer": "Multiply rate by time for distance (when consistent units)",
+      "incorrectAnswers": [
+        "Always add",
+        "Always divide rate by distance",
+        "Square the time"
+      ],
+      "explanation": "d = rt is a common model.",
+      "keywords": [
+        "rate-time-distance",
+        "modeling"
+      ],
+      "source": "https://www.mathsisfun.com/measure/us-standard-units.html"
+    },
+    {
+      "seedId": "f9c473ad-881f-4734-9b6c-82f87c3ae455",
+      "category": "science",
+      "navigationKeyword1": "math-general",
+      "navigationKeyword2": "word-problems",
+      "question": "What does \u2018at least\u2019 translate to?",
+      "correctAnswer": "Greater than or equal (\u2265)",
+      "incorrectAnswers": [
+        "Strictly greater (>)",
+        "Equal only",
+        "Less than"
+      ],
+      "explanation": "Inequalities model constraints.",
+      "keywords": [
+        "inequality-translation",
+        "word-problems"
+      ],
+      "source": "https://www.mathsisfun.com/algebra/inequalities.html"
+    },
+    {
+      "seedId": "eb5e0b6b-fb84-4bba-a3f4-56a106b2ce94",
+      "category": "science",
+      "navigationKeyword1": "math-general",
+      "navigationKeyword2": "word-problems",
+      "question": "What does \u2018at most\u2019 translate to?",
+      "correctAnswer": "Less than or equal (\u2264)",
+      "incorrectAnswers": [
+        "Strictly less (<)",
+        "Equal only",
+        "Greater than"
+      ],
+      "explanation": "Watch inclusive endpoints.",
+      "keywords": [
+        "inequality-translation",
+        "word-problems"
+      ],
+      "source": "https://www.mathsisfun.com/algebra/inequalities.html"
+    },
+    {
+      "seedId": "5a294cae-57f2-4be2-88bf-c0776087d1ef",
+      "category": "science",
+      "navigationKeyword1": "math-general",
+      "navigationKeyword2": "word-problems",
+      "question": "What does \u2018of\u2019 often mean in fraction contexts?",
+      "correctAnswer": "Multiply",
+      "incorrectAnswers": [
+        "Add",
+        "Divide only",
+        "Subtract"
+      ],
+      "explanation": "\u20181/3 of x\u2019 means (1/3)\u00b7x.",
+      "keywords": [
+        "fraction-language",
+        "translation"
+      ],
+      "source": "https://www.khanacademy.org/math/arithmetic/fraction-arithmetic"
+    },
+    {
+      "seedId": "5e7d3063-5083-4412-b473-ec5367a7ca11",
+      "category": "science",
+      "navigationKeyword1": "math-general",
+      "navigationKeyword2": "word-problems",
+      "question": "What is a classic \u2018work rate\u2019 idea?",
+      "correctAnswer": "Combined rate is sum of individual rates (when independent)",
+      "incorrectAnswers": [
+        "Always multiply rates",
+        "Always subtract",
+        "Rates don\u2019t add"
+      ],
+      "explanation": "1/t combined from 1/t1 + 1/t2 in parallel-work models.",
+      "keywords": [
+        "work-rate",
+        "fractions"
+      ],
+      "source": "https://www.khanacademy.org/math/algebra-home/alg-rational-expr-eq-func"
+    },
+    {
+      "seedId": "33028de5-525a-4184-9ad2-9694cdc9c366",
+      "category": "science",
+      "navigationKeyword1": "math-general",
+      "navigationKeyword2": "word-problems",
+      "question": "What is a common percent change formula?",
+      "correctAnswer": "(new \u2212 old)/old \u00d7 100%",
+      "incorrectAnswers": [
+        "new+old",
+        "new\u00d7old",
+        "old/new"
+      ],
+      "explanation": "Clarify what \u2018old\u2019 refers to.",
+      "keywords": [
+        "percent-change",
+        "word-problems"
+      ],
+      "source": "https://www.khanacademy.org/math/pre-algebra/pre-algebra-ratios-proportions"
+    },
+    {
+      "seedId": "01d09917-e796-4b82-a042-6394143ea6ff",
+      "category": "science",
+      "navigationKeyword1": "math-general",
+      "navigationKeyword2": "word-problems",
+      "question": "What is diagram usefulness?",
+      "correctAnswer": "Sketch clarifies geometry or processes",
+      "incorrectAnswers": [
+        "Always optional",
+        "Forbidden",
+        "Replaces algebra"
+      ],
+      "explanation": "Number lines and sketches reduce errors.",
+      "keywords": [
+        "diagrams",
+        "problem-solving"
+      ],
+      "source": "https://www.khanacademy.org/math/cc-seventh-grade-math/cc-7th-algebra"
+    },
+    {
+      "seedId": "7f40edab-289a-4376-b637-4337c5f57279",
+      "category": "science",
+      "navigationKeyword1": "math-general",
+      "navigationKeyword2": "word-problems",
+      "question": "What is rounding in applied answers?",
+      "correctAnswer": "Match precision to context",
+      "incorrectAnswers": [
+        "Always 10 decimals",
+        "Always integers",
+        "Never round"
+      ],
+      "explanation": "Don\u2019t imply false precision.",
+      "keywords": [
+        "rounding",
+        "applications"
+      ],
+      "source": "https://www.nist.gov/pml/weights-and-measures/metric-si/si-units"
+    },
+    {
+      "seedId": "6ce8563f-e3f2-48ce-a68c-521caca26261",
+      "category": "science",
+      "navigationKeyword1": "math-general",
+      "navigationKeyword2": "word-problems",
+      "question": "What is the first step in many word problems?",
+      "correctAnswer": "Define variables and translate words to equations",
+      "incorrectAnswers": [
+        "Guess the answer",
+        "Draw random graph",
+        "Skip units"
+      ],
+      "explanation": "Clear definitions prevent mistakes.",
+      "keywords": [
+        "modeling",
+        "word-problems"
+      ],
+      "source": "https://www.khanacademy.org/math/cc-seventh-grade-math/cc-7th-algebra"
+    }
+  ]
+}

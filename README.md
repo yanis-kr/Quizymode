@@ -38,6 +38,15 @@ Visit [https://www.quizymode.com/](https://www.quizymode.com/) to use the applic
 - `tests/Quizymode.Api.Tests`: API tests
 - `docs/`: long-form docs, generated API contract, and operational references
 
+Data layout:
+
+- `data/seed-dev/`: tiny startup seed used for local/dev and test bootstrap
+- `data/seed-source/items/`: source-of-truth item banks used to build admin seed-sync bundles
+- `data/seed-source/review-from-seed/`: reviewed legacy seed JSON carried forward for later normalization
+- `data/prompts/`: prompt templates and execution instructions
+- `data/generated/seed-sync/`: generated admin upload bundles kept in source control
+- `data/generated/seed-progress/`: gitignored workflow progress/state files
+
 The root README is the canonical entry point. Detailed or fast-changing material belongs under `docs/`, and this file should link to those documents directly.
 
 ## Local Development
@@ -84,7 +93,7 @@ In practice, local development is:
 
 - PostgreSQL runs through Aspire in local development.
 - EF Core migrations are applied automatically on API startup.
-- Seed data is loaded from `data/seed/`.
+- Seed data is loaded from `data/seed-dev/`.
 
 ## Authentication
 

@@ -1,0 +1,235 @@
+{
+  "schemaVersion": 1,
+  "seedSet": "core-public-items",
+  "deltaPreviewLimit": 200,
+  "items": [
+    {
+      "seedId": "8b46b637-d842-4e7e-a8ed-f84d4943ac23",
+      "category": "science",
+      "navigationKeyword1": "precalc",
+      "navigationKeyword2": "functions",
+      "question": "Absolute value |x| graph shape?",
+      "correctAnswer": "V-shape vertex at 0",
+      "incorrectAnswers": [
+        "Parabola only",
+        "Line only",
+        "Circle"
+      ],
+      "explanation": "Piecewise linear.",
+      "keywords": [
+        "absolute-value",
+        "graph"
+      ],
+      "source": "https://www.mathsisfun.com/numbers/absolute-value.html"
+    },
+    {
+      "seedId": "f12e43af-9a68-4ec5-8598-48865f30afd5",
+      "category": "science",
+      "navigationKeyword1": "precalc",
+      "navigationKeyword2": "functions",
+      "question": "Average rate of change of f on [a,b]?",
+      "correctAnswer": "(f(b)\u2212f(a))/(b\u2212a)",
+      "incorrectAnswers": [
+        "f(b)+f(a)",
+        "f'(a)",
+        "f(b)/f(a)"
+      ],
+      "explanation": "Secant slope.",
+      "keywords": [
+        "average-rate",
+        "secant"
+      ],
+      "source": "https://openstax.org/books/precalculus-2e/pages/3-1-functions-and-function-notation"
+    },
+    {
+      "seedId": "e7ba48c6-3a2a-4e76-a3d9-b155126cddb7",
+      "category": "science",
+      "navigationKeyword1": "precalc",
+      "navigationKeyword2": "functions",
+      "question": "Composition (f \u2218 g)(x)?",
+      "correctAnswer": "f(g(x))",
+      "incorrectAnswers": [
+        "g(f(x)) always",
+        "f(x)g(x)",
+        "f(x)+g(x)"
+      ],
+      "explanation": "Order matters.",
+      "keywords": [
+        "composition",
+        "functions"
+      ],
+      "source": "https://openstax.org/books/precalculus-2e/pages/3-3-composition-of-functions"
+    },
+    {
+      "seedId": "2b1edb6d-62b9-4b46-830b-a98c8a8f9af9",
+      "category": "science",
+      "navigationKeyword1": "precalc",
+      "navigationKeyword2": "functions",
+      "question": "Horizontal line test?",
+      "correctAnswer": "If any horizontal line hits graph more than once, not one-to-one",
+      "incorrectAnswers": [
+        "Vertical line test for inverse",
+        "Always passes",
+        "Only for polynomials"
+      ],
+      "explanation": "Needed for invertibility.",
+      "keywords": [
+        "horizontal-line-test",
+        "one-to-one"
+      ],
+      "source": "https://openstax.org/books/precalculus-2e/pages/3-4-inverse-functions"
+    },
+    {
+      "seedId": "474d28c1-9345-4514-9ff9-073e593ca5e9",
+      "category": "science",
+      "navigationKeyword1": "precalc",
+      "navigationKeyword2": "functions",
+      "question": "Increasing on interval means?",
+      "correctAnswer": "If x1 < x2 then f(x1) < f(x2)",
+      "incorrectAnswers": [
+        "f(x1) > f(x2)",
+        "Derivative zero",
+        "Always constant"
+      ],
+      "explanation": "Strict increase definition.",
+      "keywords": [
+        "increasing",
+        "behavior"
+      ],
+      "source": "https://openstax.org/books/precalculus-2e/pages/3-1-functions-and-function-notation"
+    },
+    {
+      "seedId": "d1e11c7c-f3ba-492a-a6a0-97a736d8ba41",
+      "category": "science",
+      "navigationKeyword1": "precalc",
+      "navigationKeyword2": "functions",
+      "question": "Inverse function property?",
+      "correctAnswer": "f(f^{-1}(x)) = x on appropriate domains",
+      "incorrectAnswers": [
+        "Always f^{-1}=f",
+        "Never exists",
+        "Same as reciprocal"
+      ],
+      "explanation": "One-to-one required.",
+      "keywords": [
+        "inverse",
+        "functions"
+      ],
+      "source": "https://openstax.org/books/precalculus-2e/pages/3-4-inverse-functions"
+    },
+    {
+      "seedId": "f6df9842-e4b4-4bcf-859d-5b8b63dce1b3",
+      "category": "science",
+      "navigationKeyword1": "precalc",
+      "navigationKeyword2": "functions",
+      "question": "Piecewise function?",
+      "correctAnswer": "Different rules on different intervals",
+      "incorrectAnswers": [
+        "Always linear",
+        "Cannot graph",
+        "Same as piecemeal integration only"
+      ],
+      "explanation": "Watch boundary points.",
+      "keywords": [
+        "piecewise",
+        "functions"
+      ],
+      "source": "https://openstax.org/books/precalculus-2e/pages/3-1-functions-and-function-notation"
+    },
+    {
+      "seedId": "31b187a7-382e-4426-922c-0673adc44d8c",
+      "category": "science",
+      "navigationKeyword1": "precalc",
+      "navigationKeyword2": "functions",
+      "question": "Transform y = a f(b(x\u2212h)) + k?",
+      "correctAnswer": "Stretch/compress, shift, reflect",
+      "incorrectAnswers": [
+        "Only shifts",
+        "Only stretches",
+        "h always changes period only"
+      ],
+      "explanation": "Track inside vs outside changes.",
+      "keywords": [
+        "transformations",
+        "graphs"
+      ],
+      "source": "https://openstax.org/books/precalculus-2e/pages/3-5-transformation-of-functions"
+    },
+    {
+      "seedId": "ee3ac6fd-f63e-48b6-9a05-fb4045a80c7f",
+      "category": "science",
+      "navigationKeyword1": "precalc",
+      "navigationKeyword2": "functions",
+      "question": "What is domain of a function?",
+      "correctAnswer": "Set of valid inputs",
+      "incorrectAnswers": [
+        "Set of outputs",
+        "Only y-values",
+        "Always all reals"
+      ],
+      "explanation": "Denominator zeros, sqrt negatives excluded often.",
+      "keywords": [
+        "domain",
+        "functions"
+      ],
+      "source": "https://openstax.org/books/precalculus-2e/pages/3-2-domain-and-range"
+    },
+    {
+      "seedId": "0075609b-ff27-4167-907f-7b28cda61ff1",
+      "category": "science",
+      "navigationKeyword1": "precalc",
+      "navigationKeyword2": "functions",
+      "question": "What is range?",
+      "correctAnswer": "Set of possible outputs",
+      "incorrectAnswers": [
+        "Inputs only",
+        "Always integers",
+        "Same as domain always"
+      ],
+      "explanation": "May need calculus/critical points for full range.",
+      "keywords": [
+        "range",
+        "functions"
+      ],
+      "source": "https://openstax.org/books/precalculus-2e/pages/3-2-domain-and-range"
+    },
+    {
+      "seedId": "7e7858c7-903f-4136-8444-a51e12c6b8bf",
+      "category": "science",
+      "navigationKeyword1": "precalc",
+      "navigationKeyword2": "functions",
+      "question": "When is function even?",
+      "correctAnswer": "f(\u2212x) = f(x)",
+      "incorrectAnswers": [
+        "f(\u2212x) = \u2212f(x)",
+        "Always true",
+        "Never symmetric"
+      ],
+      "explanation": "Symmetric about y-axis.",
+      "keywords": [
+        "even-function",
+        "symmetry"
+      ],
+      "source": "https://openstax.org/books/precalculus-2e/pages/3-3-composition-of-functions"
+    },
+    {
+      "seedId": "f6034854-6073-4c23-b1e3-6d425cd4635c",
+      "category": "science",
+      "navigationKeyword1": "precalc",
+      "navigationKeyword2": "functions",
+      "question": "When is function odd?",
+      "correctAnswer": "f(\u2212x) = \u2212f(x)",
+      "incorrectAnswers": [
+        "f(\u2212x) = f(x)",
+        "Always even",
+        "No tests"
+      ],
+      "explanation": "Symmetric about origin.",
+      "keywords": [
+        "odd-function",
+        "symmetry"
+      ],
+      "source": "https://openstax.org/books/precalculus-2e/pages/3-3-composition-of-functions"
+    }
+  ]
+}

@@ -1,0 +1,727 @@
+{
+  "schemaVersion": 1,
+  "seedSet": "core-public-items",
+  "deltaPreviewLimit": 200,
+  "items": [
+    {
+      "seedId": "62693a7f-becb-586f-8ca1-cb800aae2bd3",
+      "category": "business",
+      "navigationKeyword1": "accounting",
+      "navigationKeyword2": "audit",
+      "question": "How does a review engagement typically differ from a full audit?",
+      "correctAnswer": "A review provides limited assurance based mainly on inquiry and analytical procedures, not extensive testing.",
+      "incorrectAnswers": [
+        "A review is identical to an audit in assurance level",
+        "A review involves mandatory forensic examination of every transaction",
+        "A review is only used for tax filings, not financial statements"
+      ],
+      "explanation": "Reviews are generally narrower than audits, so the assurance level is lower because the procedures are less extensive.",
+      "keywords": [
+        "review-engagement",
+        "assurance-level",
+        "analytical-procedures"
+      ],
+      "source": "https://www.pcaobus.org/"
+    },
+    {
+      "seedId": "9a251eb4-b039-53e4-ae6a-013d608ca236",
+      "category": "business",
+      "navigationKeyword1": "accounting",
+      "navigationKeyword2": "audit",
+      "question": "In an audit, what is the role of internal controls?",
+      "correctAnswer": "They are part of what the auditor considers to understand how misstatements could occur.",
+      "incorrectAnswers": [
+        "They replace the need for audit testing entirely",
+        "They determine the correct tax rate for the company",
+        "They are only reviewed after the audit report is issued"
+      ],
+      "explanation": "Auditors consider internal control design and operation because they influence where and how misstatements might happen.",
+      "keywords": [
+        "internal-controls",
+        "audit-planning",
+        "risk-assessment"
+      ],
+      "source": "https://www.sec.gov/"
+    },
+    {
+      "seedId": "8139a641-a4ec-5ffe-831f-a3394238dc9f",
+      "category": "business",
+      "navigationKeyword1": "accounting",
+      "navigationKeyword2": "audit",
+      "question": "In basic audit terminology, what is audit sampling?",
+      "correctAnswer": "Using a subset of items to test and draw conclusions about the larger population.",
+      "incorrectAnswers": [
+        "Randomly selecting employees for interviews without records",
+        "Examining only one transaction and ignoring the rest always",
+        "Choosing samples based only on what is easiest to access"
+      ],
+      "explanation": "Sampling lets auditors reach a conclusion efficiently by testing representative items from the relevant population.",
+      "keywords": [
+        "audit-sampling",
+        "population",
+        "evidence"
+      ],
+      "source": "https://www.investopedia.com/terms/a/auditsampling.asp"
+    },
+    {
+      "seedId": "c86fbd74-95c3-5bcc-9d41-511485d7516a",
+      "category": "business",
+      "navigationKeyword1": "accounting",
+      "navigationKeyword2": "audit",
+      "question": "What does \u201cmateriality\u201d refer to in auditing?",
+      "correctAnswer": "The relative importance of a misstatement; misstatements are considered material if they could influence users\u2019 decisions.",
+      "incorrectAnswers": [
+        "How physically large the document pages are",
+        "How long the company has been operating",
+        "Any error is always material no matter the size"
+      ],
+      "explanation": "Materiality is a concept used to judge whether misstatements are significant enough to affect economic decisions.",
+      "keywords": [
+        "materiality",
+        "audit-judgment",
+        "users-decisions"
+      ],
+      "source": "https://www.pcaobus.org/"
+    },
+    {
+      "seedId": "b91dc596-5f85-5cec-9ded-a00e3f5634aa",
+      "category": "business",
+      "navigationKeyword1": "accounting",
+      "navigationKeyword2": "audit",
+      "question": "What is the difference between an audit opinion and management\u2019s responsibility?",
+      "correctAnswer": "Management is responsible for preparing the statements; the auditor evaluates and reports on whether statements are fairly presented.",
+      "incorrectAnswers": [
+        "Management gives the auditor opinion; the auditor prepares the financial statements",
+        "The auditor is responsible for all accounting estimates and disclosures",
+        "There is no separate responsibility; both are identical by definition"
+      ],
+      "explanation": "Audit reports separate roles: management prepares, and the auditor provides an independent opinion based on audit work.",
+      "keywords": [
+        "audit-report",
+        "responsibilities",
+        "independence"
+      ],
+      "source": "https://www.aicpa-cima.com/"
+    },
+    {
+      "seedId": "b196db2d-2015-5454-81a1-f1c2c1b2a33f",
+      "category": "business",
+      "navigationKeyword1": "accounting",
+      "navigationKeyword2": "audit",
+      "question": "What is the main objective of a financial statement audit?",
+      "correctAnswer": "To obtain reasonable assurance that the financial statements are free of material misstatement.",
+      "incorrectAnswers": [
+        "To guarantee that fraud never occurred",
+        "To prepare the financial statements for management",
+        "To approve prices in contracts customers sign"
+      ],
+      "explanation": "Audits provide a high but not absolute level of assurance about whether statements have material misstatements.",
+      "keywords": [
+        "audit",
+        "assurance",
+        "misstatement"
+      ],
+      "source": "https://www.pcaobus.org/oversight/standards/auditing-standards"
+    },
+    {
+      "seedId": "1ab18ff5-6595-596b-92b6-5da347ba176a",
+      "category": "business",
+      "navigationKeyword1": "accounting",
+      "navigationKeyword2": "bookkeeping",
+      "question": "After journal entries are recorded, what happens in the next major bookkeeping step?",
+      "correctAnswer": "They are posted to the appropriate accounts in the ledger.",
+      "incorrectAnswers": [
+        "They are replaced with a new set of estimates for next year",
+        "They are used only to prepare tax returns, not ledgers",
+        "They are automatically deleted after the trial balance is created"
+      ],
+      "explanation": "Bookkeeping typically posts journal entries to the ledger accounts so account balances can be tracked and summarized.",
+      "keywords": [
+        "ledger",
+        "posting",
+        "account-balances"
+      ],
+      "source": "https://www.fasb.org/"
+    },
+    {
+      "seedId": "978d7461-bbfb-5ee9-9bbb-ab5f3d9b7b00",
+      "category": "business",
+      "navigationKeyword1": "accounting",
+      "navigationKeyword2": "bookkeeping",
+      "question": "In bookkeeping, what does a journal record?",
+      "correctAnswer": "Transactions in chronological order, typically with debit and credit details.",
+      "incorrectAnswers": [
+        "A company\u2019s projected budgets only",
+        "A list of employees for payroll",
+        "Final financial statements prepared at year-end"
+      ],
+      "explanation": "A journal is the record where transactions are first entered (often by date) using debits and credits.",
+      "keywords": [
+        "bookkeeping",
+        "journal",
+        "double-entry"
+      ],
+      "source": "https://www.investopedia.com/terms/j/journalentry.asp"
+    },
+    {
+      "seedId": "61a7bbd2-af32-57b6-8b4e-b59ce00cbb4d",
+      "category": "business",
+      "navigationKeyword1": "accounting",
+      "navigationKeyword2": "bookkeeping",
+      "question": "Under accrual-style bookkeeping, how do you usually record an expense you owe but haven\u2019t paid yet?",
+      "correctAnswer": "Record the expense and an accounts payable or accrued liability for the unpaid amount.",
+      "incorrectAnswers": [
+        "Record only cash as zero and skip the liability account",
+        "Record it as revenue because cash hasn\u2019t left yet",
+        "Record only a note in a spreadsheet, not in accounting accounts"
+      ],
+      "explanation": "Accrual recording recognizes costs when incurred, so the obligation is reflected as a payable/liability even if cash hasn\u2019t been paid.",
+      "keywords": [
+        "accrual",
+        "accounts-payable",
+        "liabilities"
+      ],
+      "source": "https://www.investopedia.com/terms/a/accrualaccounting.asp"
+    },
+    {
+      "seedId": "69772b20-a3b2-5a5d-bb32-c4dede9139a1",
+      "category": "business",
+      "navigationKeyword1": "accounting",
+      "navigationKeyword2": "bookkeeping",
+      "question": "What does the chart of accounts primarily provide?",
+      "correctAnswer": "A structured set of account categories and names/numbers used to classify transactions.",
+      "incorrectAnswers": [
+        "A schedule of when revenue will be collected in cash",
+        "A legal template for contracts with customers",
+        "A rule that changes tax laws based on the business type"
+      ],
+      "explanation": "A chart of accounts standardizes how transactions are categorized so reports can be consistent and searchable.",
+      "keywords": [
+        "chart-of-accounts",
+        "classification",
+        "reporting"
+      ],
+      "source": "https://www.sec.gov/"
+    },
+    {
+      "seedId": "a94dd3fb-8497-5c9a-8fa7-f7c8d8c13d66",
+      "category": "business",
+      "navigationKeyword1": "accounting",
+      "navigationKeyword2": "bookkeeping",
+      "question": "What is the typical purpose of a trial balance in bookkeeping?",
+      "correctAnswer": "To list ending debits and credits from ledger accounts so totals can be checked for equality.",
+      "incorrectAnswers": [
+        "To compute net income directly for investors",
+        "To set the company\u2019s bank interest rate",
+        "To approve which invoices are paid next week"
+      ],
+      "explanation": "A trial balance is a bookkeeping check that the ledger\u2019s debit and credit totals agree before preparing financial statements.",
+      "keywords": [
+        "trial-balance",
+        "debits-credits",
+        "ledger-check"
+      ],
+      "source": "https://www.sec.gov/education"
+    },
+    {
+      "seedId": "7fde882a-8956-5282-9f78-b8b9e96525da",
+      "category": "business",
+      "navigationKeyword1": "accounting",
+      "navigationKeyword2": "bookkeeping",
+      "question": "Why is double-entry bookkeeping built around debits and credits that must balance?",
+      "correctAnswer": "It ensures each transaction has equal debit and credit effects, helping detect entry errors.",
+      "incorrectAnswers": [
+        "It guarantees a company will report profit every period",
+        "It prevents any taxes from being owed",
+        "It means cash and profit always move together exactly"
+      ],
+      "explanation": "Balancing debits and credits creates internal consistency across accounts and makes many common data-entry mistakes easier to spot.",
+      "keywords": [
+        "double-entry",
+        "debits",
+        "credits"
+      ],
+      "source": "https://www.fasb.org/"
+    },
+    {
+      "seedId": "34ec8fd8-5a2f-5619-9703-5618ea77bb24",
+      "category": "business",
+      "navigationKeyword1": "accounting",
+      "navigationKeyword2": "financial",
+      "question": "In accrual accounting, when is revenue generally recognized?",
+      "correctAnswer": "When it is earned (and can be measured), not simply when cash is received.",
+      "incorrectAnswers": [
+        "Only when customers pay in cash",
+        "Only when taxes are filed with the government",
+        "Only after an external audit approval is issued"
+      ],
+      "explanation": "Accrual accounting recognizes revenue based on performance, aiming to match revenues with the period in which they are earned.",
+      "keywords": [
+        "accrual",
+        "revenue-recognition",
+        "earnings"
+      ],
+      "source": "https://www.fasb.org/"
+    },
+    {
+      "seedId": "68187ab0-3b31-512b-b9d9-ba4924ad9bb2",
+      "category": "business",
+      "navigationKeyword1": "accounting",
+      "navigationKeyword2": "financial",
+      "question": "What does a balance sheet primarily present?",
+      "correctAnswer": "Assets, liabilities, and equity at a specific point in time.",
+      "incorrectAnswers": [
+        "Only cash receipts and payments over time",
+        "Future budget projections for the next quarter",
+        "A list of audit issues and management responses"
+      ],
+      "explanation": "A balance sheet is a snapshot that reports what the company owns (assets), owes (liabilities), and the owners\u2019 residual interest (equity).",
+      "keywords": [
+        "balance-sheet",
+        "assets",
+        "liabilities"
+      ],
+      "source": "https://www.sec.gov/reportspubs/investor-publications/investorpubsintrohtml"
+    },
+    {
+      "seedId": "77bca9e7-bc37-5d22-9824-20d8c5798325",
+      "category": "business",
+      "navigationKeyword1": "accounting",
+      "navigationKeyword2": "financial",
+      "question": "What does depreciation generally represent in financial reporting?",
+      "correctAnswer": "The allocation of the cost of a long-lived asset to expense over its useful life.",
+      "incorrectAnswers": [
+        "The day-to-day change in cash from operating activity",
+        "A fixed amount of tax the company must pay each year",
+        "A guarantee that an asset\u2019s market value will decline at the same pace"
+      ],
+      "explanation": "Depreciation spreads an asset\u2019s cost across periods, matching expense recognition to the asset\u2019s use.",
+      "keywords": [
+        "depreciation",
+        "expense-allocation",
+        "assets"
+      ],
+      "source": "https://www.investopedia.com/terms/d/depreciation.asp"
+    },
+    {
+      "seedId": "148d9346-cc6b-500d-a5d0-5ff519800e6f",
+      "category": "business",
+      "navigationKeyword1": "accounting",
+      "navigationKeyword2": "financial",
+      "question": "What is the basic accounting equation?",
+      "correctAnswer": "Assets equal liabilities plus equity.",
+      "incorrectAnswers": [
+        "Revenue equals assets minus expenses",
+        "Cash equals profit plus debt",
+        "Equity equals liabilities minus assets"
+      ],
+      "explanation": "The accounting equation expresses that a firm\u2019s assets are funded either by creditors (liabilities) or owners (equity).",
+      "keywords": [
+        "accounting-equation",
+        "equity",
+        "assets"
+      ],
+      "source": "https://www.fasb.org/"
+    },
+    {
+      "seedId": "62d142a4-4f7f-5312-9f97-e16477ee3752",
+      "category": "business",
+      "navigationKeyword1": "accounting",
+      "navigationKeyword2": "financial",
+      "question": "What is the cash flow statement designed to explain?",
+      "correctAnswer": "How cash changes during a period, broken into operating, investing, and financing activities.",
+      "incorrectAnswers": [
+        "How net income changes exactly equal cash by definition",
+        "Which invoices are still unpaid by customers only",
+        "How many shares are issued to employees this year"
+      ],
+      "explanation": "The cash flow statement translates accrual-based results into cash movements and categorizes where the cash came from and where it went.",
+      "keywords": [
+        "cash-flow-statement",
+        "cash",
+        "operating-cash-flow"
+      ],
+      "source": "https://www.sec.gov/education/capital-markets/overview-of-corporate-disclosures"
+    },
+    {
+      "seedId": "6af58e53-9e96-5989-8202-d603f1313653",
+      "category": "business",
+      "navigationKeyword1": "accounting",
+      "navigationKeyword2": "financial",
+      "question": "What is the main purpose of the income statement?",
+      "correctAnswer": "To show revenues, expenses, and the resulting profit (or loss) over a period.",
+      "incorrectAnswers": [
+        "To show only the cash balance at a single date",
+        "To list employee headcount changes only",
+        "To record taxes paid to the government outside of financial reporting"
+      ],
+      "explanation": "The income statement focuses on performance for a period by linking revenues and expenses to profit.",
+      "keywords": [
+        "income-statement",
+        "profit",
+        "performance"
+      ],
+      "source": "https://www.investopedia.com/terms/i/incomestatement.asp"
+    },
+    {
+      "seedId": "5b5c1df3-3d5e-505d-aea0-86ad01ad93b1",
+      "category": "business",
+      "navigationKeyword1": "accounting",
+      "navigationKeyword2": "managerial",
+      "question": "In cost analysis, what does \u201cfixed cost\u201d mean?",
+      "correctAnswer": "A cost that stays the same in total over a relevant range of activity, even if output changes.",
+      "incorrectAnswers": [
+        "A cost that always drops to zero when output falls",
+        "A cost that changes proportionally with output in every situation",
+        "A cost that depends only on how quickly invoices get paid"
+      ],
+      "explanation": "Fixed costs are total-cost stable within a relevant range; variable costs move as activity changes.",
+      "keywords": [
+        "fixed-costs",
+        "variable-costs",
+        "cost-behavior"
+      ],
+      "source": "https://www.investopedia.com/terms/f/fixedcost.asp"
+    },
+    {
+      "seedId": "82b2a2b4-a3b9-5918-bfc4-5c052f1ff6eb",
+      "category": "business",
+      "navigationKeyword1": "accounting",
+      "navigationKeyword2": "managerial",
+      "question": "What does contribution margin generally measure?",
+      "correctAnswer": "Revenue minus variable costs, showing how much contributes to covering fixed costs and profit.",
+      "incorrectAnswers": [
+        "Revenue minus all costs, including fixed costs",
+        "Profit minus tax, showing after-tax results only",
+        "Cash balance minus variable expenses paid in cash"
+      ],
+      "explanation": "Contribution margin isolates how much each unit/activity contributes after variable costs, which supports break-even and decision analysis.",
+      "keywords": [
+        "contribution-margin",
+        "variable-costs",
+        "break-even"
+      ],
+      "source": "https://corporatefinanceinstitute.com/resources/management/contribution-margin/"
+    },
+    {
+      "seedId": "baf3a828-b309-5719-b560-0ff63cd11d41",
+      "category": "business",
+      "navigationKeyword1": "accounting",
+      "navigationKeyword2": "managerial",
+      "question": "What is a budget typically used for in managerial accounting?",
+      "correctAnswer": "A plan for expected results that can be compared against actual performance.",
+      "incorrectAnswers": [
+        "A contract that guarantees profits regardless of outcomes",
+        "A substitute for maintaining the general ledger",
+        "A way to avoid recording expenses until the audit is complete"
+      ],
+      "explanation": "Budgets translate goals into numbers, then variance analysis can show where results differ from expectations.",
+      "keywords": [
+        "budgets",
+        "planning",
+        "variance-analysis"
+      ],
+      "source": "https://www.aicpa-cima.com/Resources/Pages/What-is-management-accounting.aspx"
+    },
+    {
+      "seedId": "2221b2c6-1b03-575a-9d24-1b737e6d5197",
+      "category": "business",
+      "navigationKeyword1": "accounting",
+      "navigationKeyword2": "managerial",
+      "question": "What is the primary goal of managerial accounting?",
+      "correctAnswer": "Provide information to internal managers for planning, controlling, and decision-making.",
+      "incorrectAnswers": [
+        "Produce a single standardized report only for investors every year",
+        "Replace payroll with cost calculations",
+        "Determine the company\u2019s legal tax rate directly"
+      ],
+      "explanation": "Managerial accounting focuses on internal use, helping managers choose actions and evaluate performance.",
+      "keywords": [
+        "managerial-accounting",
+        "planning",
+        "decision-making"
+      ],
+      "source": "https://www.imanet.org/"
+    },
+    {
+      "seedId": "5036f236-011c-5ba8-beab-160ec90750ae",
+      "category": "business",
+      "navigationKeyword1": "accounting",
+      "navigationKeyword2": "managerial",
+      "question": "What makes a cost \u201crelevant\u201d when comparing decision alternatives?",
+      "correctAnswer": "It differs between the alternatives and is expected to change based on the choice.",
+      "incorrectAnswers": [
+        "It is any cost the company has ever paid historically",
+        "It is always fixed cost, regardless of alternatives",
+        "It is only costs that appear on the bank statement"
+      ],
+      "explanation": "Relevant costs are future and differ across options; sunk costs that don\u2019t change shouldn\u2019t drive the decision.",
+      "keywords": [
+        "relevant-costs",
+        "sunk-costs",
+        "decision-analysis"
+      ],
+      "source": "https://corporatefinanceinstitute.com/"
+    },
+    {
+      "seedId": "9119396c-faab-534d-8ab7-9c8e8eb7b0d9",
+      "category": "business",
+      "navigationKeyword1": "accounting",
+      "navigationKeyword2": "managerial",
+      "question": "Why do transfer prices matter in a multi-division company?",
+      "correctAnswer": "They affect how performance and internal \u201cprofit\u201d are measured between divisions.",
+      "incorrectAnswers": [
+        "They eliminate the need for any internal reporting",
+        "They guarantee the company\u2019s external stock price will rise",
+        "They determine payroll taxes automatically for all divisions"
+      ],
+      "explanation": "Transfer pricing influences incentives and performance metrics across divisions, so it affects internal decisions.",
+      "keywords": [
+        "transfer-pricing",
+        "divisions",
+        "incentives"
+      ],
+      "source": "https://www.investopedia.com/"
+    },
+    {
+      "seedId": "6e789987-50ac-5161-8556-c016ae7147cb",
+      "category": "business",
+      "navigationKeyword1": "accounting",
+      "navigationKeyword2": "ratios",
+      "question": "In a simple profitability comparison, what does net profit margin measure?",
+      "correctAnswer": "Net profit as a percentage of revenue.",
+      "incorrectAnswers": [
+        "Operating profit divided by total assets",
+        "Revenue divided by total liabilities",
+        "Gross profit divided by current liabilities"
+      ],
+      "explanation": "Net profit margin summarizes how much of each dollar of revenue becomes net profit after all expenses (and taxes where applicable).",
+      "keywords": [
+        "net-profit-margin",
+        "profitability",
+        "revenue"
+      ],
+      "source": "https://www.investopedia.com/terms/n/netprofitmargin.asp"
+    },
+    {
+      "seedId": "87882204-bb46-5f18-9e04-3cc3f9b18735",
+      "category": "business",
+      "navigationKeyword1": "accounting",
+      "navigationKeyword2": "ratios",
+      "question": "What does a debt-to-equity ratio generally relate?",
+      "correctAnswer": "Total debt compared with shareholders\u2019 equity.",
+      "incorrectAnswers": [
+        "Revenue compared with operating cash flow",
+        "Inventory compared with gross profit",
+        "Market price of shares compared with book value per share"
+      ],
+      "explanation": "Debt-to-equity is a leverage ratio that compares financing from creditors to financing from owners.",
+      "keywords": [
+        "debt-to-equity",
+        "leverage",
+        "capital-structure"
+      ],
+      "source": "https://corporatefinanceinstitute.com/resources/financial-accounting/debt-equity-ratio/"
+    },
+    {
+      "seedId": "7940d497-7f64-56b7-9155-21db0f630d3f",
+      "category": "business",
+      "navigationKeyword1": "accounting",
+      "navigationKeyword2": "ratios",
+      "question": "What does return on equity (ROE) primarily reflect?",
+      "correctAnswer": "How effectively shareholders\u2019 equity generates net profit.",
+      "incorrectAnswers": [
+        "How quickly inventory is sold in days only",
+        "How much interest the company pays on loans",
+        "Whether asset values always rise every year"
+      ],
+      "explanation": "ROE is a profitability measure that ties net income to the equity base owned by shareholders.",
+      "keywords": [
+        "roe",
+        "profitability",
+        "shareholders-equity"
+      ],
+      "source": "https://www.investopedia.com/terms/r/returnonequity.asp"
+    },
+    {
+      "seedId": "a6f0d912-b9d6-543d-a392-73a938e1b555",
+      "category": "business",
+      "navigationKeyword1": "accounting",
+      "navigationKeyword2": "ratios",
+      "question": "What does the current ratio typically help assess?",
+      "correctAnswer": "A company\u2019s ability to cover short-term obligations using current assets.",
+      "incorrectAnswers": [
+        "How quickly the company will pay all long-term debt tomorrow",
+        "Whether the company is profitable only because of taxes",
+        "How much cash is on hand compared with total inventory cost"
+      ],
+      "explanation": "Current ratio compares current assets to current liabilities to gauge short-term liquidity.",
+      "keywords": [
+        "current-ratio",
+        "liquidity",
+        "short-term-debt"
+      ],
+      "source": "https://www.investopedia.com/terms/c/currentratio.asp"
+    },
+    {
+      "seedId": "13ed2d21-1730-5e08-a144-4bb90f7d4dc9",
+      "category": "business",
+      "navigationKeyword1": "accounting",
+      "navigationKeyword2": "ratios",
+      "question": "What is gross margin commonly intended to measure?",
+      "correctAnswer": "Profitability after direct costs of producing goods/services, before operating expenses.",
+      "incorrectAnswers": [
+        "Profit after all interest and taxes are already removed",
+        "The return on equity calculated using only net cash flows",
+        "How much a company pays in wages as a share of sales"
+      ],
+      "explanation": "Gross margin focuses on what remains after covering direct production costs, providing a view of core product/service profitability.",
+      "keywords": [
+        "gross-margin",
+        "profitability",
+        "direct-costs"
+      ],
+      "source": "https://corporatefinanceinstitute.com/resources/financial-modeling/gross-margin/"
+    },
+    {
+      "seedId": "9d5cd71a-f5b7-56f0-b11a-f39e341c4061",
+      "category": "business",
+      "navigationKeyword1": "accounting",
+      "navigationKeyword2": "ratios",
+      "question": "What is inventory turnover meant to indicate?",
+      "correctAnswer": "How efficiently a company converts inventory into sales over a period.",
+      "incorrectAnswers": [
+        "How long it takes to pay the electricity bill",
+        "The percentage of inventory that is guaranteed to be sold at full price",
+        "How often the company changes leadership roles"
+      ],
+      "explanation": "Inventory turnover relates cost of goods sold to average inventory, providing an efficiency view of inventory management.",
+      "keywords": [
+        "inventory-turnover",
+        "efficiency",
+        "inventory-management"
+      ],
+      "source": "https://corporatefinanceinstitute.com/resources/valuation/inventory-turnover/"
+    },
+    {
+      "seedId": "af7bda41-4c2b-5ac7-8500-2729347caee5",
+      "category": "business",
+      "navigationKeyword1": "accounting",
+      "navigationKeyword2": "tax",
+      "question": "In general tax concepts, what is a \u201cdeductible expense\u201d?",
+      "correctAnswer": "An expense that qualifies under tax rules to reduce taxable income (subject to limits and conditions).",
+      "incorrectAnswers": [
+        "Any expense that you personally feel was useful",
+        "Any expense regardless of documentation requirements",
+        "An expense that always increases taxable income"
+      ],
+      "explanation": "Deductible expenses reduce the tax base only if they meet applicable rules and documentation requirements.",
+      "keywords": [
+        "deductible",
+        "documentation",
+        "tax-base"
+      ],
+      "source": "https://www.investopedia.com/terms/d/deductibleexpense.asp"
+    },
+    {
+      "seedId": "f87bca88-6d9f-5086-b9f9-825c78e35816",
+      "category": "business",
+      "navigationKeyword1": "accounting",
+      "navigationKeyword2": "tax",
+      "question": "What does \u201ctax deferral\u201d generally mean?",
+      "correctAnswer": "Delaying when income is taxed (or when deductions reduce tax) to a later year under certain rules.",
+      "incorrectAnswers": [
+        "Canceling the tax entirely so no tax is ever owed",
+        "Paying taxes earlier so you never pay interest later",
+        "Turning non-taxable income into taxable income automatically"
+      ],
+      "explanation": "Tax deferral shifts recognition to later, which can change cash flow timing and effective tax burden over time.",
+      "keywords": [
+        "tax-deferral",
+        "timing",
+        "cash-flow"
+      ],
+      "source": "https://www.oecd.org/tax/tax-policy/taxation-of-savings.htm"
+    },
+    {
+      "seedId": "2980012e-49b5-5cff-8293-d29d18108e18",
+      "category": "business",
+      "navigationKeyword1": "accounting",
+      "navigationKeyword2": "tax",
+      "question": "What generally determines the tax treatment of capital gains?",
+      "correctAnswer": "How long the asset was held (holding period) and the applicable tax rules for the type of gain.",
+      "incorrectAnswers": [
+        "Only the number of hours you spent analyzing the trade",
+        "Whether the asset was bought with a credit card",
+        "Whether the stock is traded on the first trading day of the month"
+      ],
+      "explanation": "Many systems tax capital gains differently depending on holding period and other eligibility rules, affecting the rate and timing.",
+      "keywords": [
+        "capital-gains",
+        "holding-period",
+        "tax-rates"
+      ],
+      "source": "https://www.investopedia.com/terms/c/capital-gain-tax.asp"
+    },
+    {
+      "seedId": "9179f4d8-562a-54f1-a395-5b457b66940c",
+      "category": "business",
+      "navigationKeyword1": "accounting",
+      "navigationKeyword2": "tax",
+      "question": "What is a \u201ctax return\u201d primarily used for?",
+      "correctAnswer": "Reporting income and calculating the tax liability to determine what is owed or refunded.",
+      "incorrectAnswers": [
+        "Keeping internal budgets for management decisions only",
+        "Submitting invoices to customers for payment",
+        "Approving accounting journal entries in the ledger"
+      ],
+      "explanation": "A tax return is the formal filing that reports required information and computes tax owed or a refund.",
+      "keywords": [
+        "tax-return",
+        "tax-liability",
+        "filing"
+      ],
+      "source": "https://www.irs.gov/filing"
+    },
+    {
+      "seedId": "35ea0187-2367-5792-9e0f-15302ced3415",
+      "category": "business",
+      "navigationKeyword1": "accounting",
+      "navigationKeyword2": "tax",
+      "question": "What is the difference between a tax deduction and a tax credit?",
+      "correctAnswer": "Deductions reduce taxable income, while credits reduce the amount of tax you owe dollar-for-dollar.",
+      "incorrectAnswers": [
+        "Deductions reduce tax owed directly, while credits reduce taxable income.",
+        "Deductions increase tax refunds automatically with no limits.",
+        "Credits only apply to payroll taxes, not income taxes."
+      ],
+      "explanation": "Deductions affect the income base that\u2019s taxed; credits reduce the final tax liability.",
+      "keywords": [
+        "tax-deductions",
+        "tax-credits",
+        "tax-basics"
+      ],
+      "source": "https://www.irs.gov/taxtopics/tc556"
+    },
+    {
+      "seedId": "9d4e144e-7d02-5ef5-a294-1e100c7ac448",
+      "category": "business",
+      "navigationKeyword1": "accounting",
+      "navigationKeyword2": "tax",
+      "question": "What is the difference between tax expense and tax payable?",
+      "correctAnswer": "Tax expense is the amount recognized in accounting for the period; tax payable is the amount owed to the tax authority (liability).",
+      "incorrectAnswers": [
+        "Tax payable is always zero unless you pay a penalty.",
+        "Tax expense is only what you paid in cash that month.",
+        "Tax payable refers to office rent payable to a landlord."
+      ],
+      "explanation": "Accounting recognition and cash payment timing can differ, so tax expense and the tax liability don\u2019t always match exactly.",
+      "keywords": [
+        "tax-expense",
+        "tax-payable",
+        "liabilities"
+      ],
+      "source": "https://www.irs.gov/businesses/small-businesses-self-employed"
+    }
+  ]
+}

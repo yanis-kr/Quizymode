@@ -1,0 +1,1207 @@
+{
+  "schemaVersion": 1,
+  "seedSet": "core-public-items",
+  "deltaPreviewLimit": 200,
+  "items": [
+    {
+      "seedId": "5c62476d-cba0-5ae1-bbd1-4f19424bf1fe",
+      "category": "sports",
+      "navigationKeyword1": "hockey",
+      "navigationKeyword2": "champions",
+      "question": "Which franchise has won the most Stanley Cups?",
+      "correctAnswer": "Montreal Canadiens",
+      "incorrectAnswers": [
+        "Toronto Maple Leafs",
+        "Detroit Red Wings",
+        "Boston Bruins"
+      ],
+      "explanation": "Montreal still leads the all-time Stanley Cup list.",
+      "keywords": [
+        "hockey",
+        "champions",
+        "canadiens"
+      ],
+      "source": "https://www.nhl.com/info/stanley-cup-winners-complete-list"
+    },
+    {
+      "seedId": "077f35cb-6734-5a7e-aa69-947f3c726767",
+      "category": "sports",
+      "navigationKeyword1": "hockey",
+      "navigationKeyword2": "champions",
+      "question": "Which franchise won the 2022 Stanley Cup?",
+      "correctAnswer": "Colorado Avalanche",
+      "incorrectAnswers": [
+        "Tampa Bay Lightning",
+        "New York Rangers",
+        "Edmonton Oilers"
+      ],
+      "explanation": "Colorado beat Tampa Bay in the 2022 Final.",
+      "keywords": [
+        "hockey",
+        "champions",
+        "avalanche"
+      ],
+      "source": "https://www.nhl.com/info/stanley-cup-winners-complete-list"
+    },
+    {
+      "seedId": "fc0828a2-5454-5c31-a048-42d52e530ca6",
+      "category": "sports",
+      "navigationKeyword1": "hockey",
+      "navigationKeyword2": "champions",
+      "question": "Which franchise won three Stanley Cups in six seasons from 2010 through 2015?",
+      "correctAnswer": "Chicago Blackhawks",
+      "incorrectAnswers": [
+        "Los Angeles Kings",
+        "Boston Bruins",
+        "Pittsburgh Penguins"
+      ],
+      "explanation": "Chicago captured titles in 2010, 2013, and 2015.",
+      "keywords": [
+        "hockey",
+        "champions",
+        "blackhawks"
+      ],
+      "source": "https://www.nhl.com/info/stanley-cup-winners-complete-list"
+    },
+    {
+      "seedId": "f9c019d2-2637-513f-a363-e79df0722479",
+      "category": "sports",
+      "navigationKeyword1": "hockey",
+      "navigationKeyword2": "champions",
+      "question": "Which team won back-to-back Stanley Cups in 2016 and 2017?",
+      "correctAnswer": "Pittsburgh Penguins",
+      "incorrectAnswers": [
+        "San Jose Sharks",
+        "Nashville Predators",
+        "Tampa Bay Lightning"
+      ],
+      "explanation": "Pittsburgh repeated behind Sidney Crosby's leadership.",
+      "keywords": [
+        "hockey",
+        "champions",
+        "penguins"
+      ],
+      "source": "https://www.nhl.com/info/stanley-cup-winners-complete-list"
+    },
+    {
+      "seedId": "f319b1fe-20d2-5c14-96aa-bc5451c0f7ec",
+      "category": "sports",
+      "navigationKeyword1": "hockey",
+      "navigationKeyword2": "champions",
+      "question": "Which team won back-to-back Stanley Cups in 2020 and 2021?",
+      "correctAnswer": "Tampa Bay Lightning",
+      "incorrectAnswers": [
+        "Colorado Avalanche",
+        "Pittsburgh Penguins",
+        "Chicago Blackhawks"
+      ],
+      "explanation": "Tampa Bay repeated in the pandemic-era seasons.",
+      "keywords": [
+        "hockey",
+        "champions",
+        "lightning"
+      ],
+      "source": "https://www.nhl.com/info/stanley-cup-winners-complete-list"
+    },
+    {
+      "seedId": "461b18b4-192a-5d38-ba2e-139e36e952bc",
+      "category": "sports",
+      "navigationKeyword1": "hockey",
+      "navigationKeyword2": "champions",
+      "question": "Which team won the 2018 Stanley Cup behind Alex Ovechkin?",
+      "correctAnswer": "Washington Capitals",
+      "incorrectAnswers": [
+        "Vegas Golden Knights",
+        "Pittsburgh Penguins",
+        "Tampa Bay Lightning"
+      ],
+      "explanation": "Washington beat Vegas for the franchise's first Cup.",
+      "keywords": [
+        "hockey",
+        "champions",
+        "capitals"
+      ],
+      "source": "https://www.nhl.com/info/stanley-cup-winners-complete-list"
+    },
+    {
+      "seedId": "d198b9d5-8079-5d26-b0b5-c2f8c0d410ae",
+      "category": "sports",
+      "navigationKeyword1": "hockey",
+      "navigationKeyword2": "champions",
+      "question": "Which team won the 2019 Stanley Cup as a first-time champion?",
+      "correctAnswer": "St. Louis Blues",
+      "incorrectAnswers": [
+        "Boston Bruins",
+        "San Jose Sharks",
+        "Washington Capitals"
+      ],
+      "explanation": "St. Louis beat Boston for its first title.",
+      "keywords": [
+        "hockey",
+        "champions",
+        "blues"
+      ],
+      "source": "https://www.nhl.com/info/stanley-cup-winners-complete-list"
+    },
+    {
+      "seedId": "def9c46e-a732-59d4-a286-4a79f9162ec1",
+      "category": "sports",
+      "navigationKeyword1": "hockey",
+      "navigationKeyword2": "champions",
+      "question": "Which team won the 2023 Stanley Cup?",
+      "correctAnswer": "Vegas Golden Knights",
+      "incorrectAnswers": [
+        "Florida Panthers",
+        "Dallas Stars",
+        "Tampa Bay Lightning"
+      ],
+      "explanation": "Vegas won its first Stanley Cup in 2023.",
+      "keywords": [
+        "hockey",
+        "champions",
+        "golden-knights"
+      ],
+      "source": "https://www.nhl.com/info/stanley-cup-winners-complete-list"
+    },
+    {
+      "seedId": "ed354a3c-d831-55e3-a993-22f2cfef7fde",
+      "category": "sports",
+      "navigationKeyword1": "hockey",
+      "navigationKeyword2": "champions",
+      "question": "Which team won the Stanley Cup in 1994 and ended a long title drought for New York?",
+      "correctAnswer": "New York Rangers",
+      "incorrectAnswers": [
+        "New Jersey Devils",
+        "Buffalo Sabres",
+        "Detroit Red Wings"
+      ],
+      "explanation": "The Rangers won in 1994 behind Mark Messier and others.",
+      "keywords": [
+        "hockey",
+        "champions",
+        "rangers"
+      ],
+      "source": "https://www.nhl.com/info/stanley-cup-winners-complete-list"
+    },
+    {
+      "seedId": "2fe3be6d-bc93-5643-825d-b14d96063a70",
+      "category": "sports",
+      "navigationKeyword1": "hockey",
+      "navigationKeyword2": "champions",
+      "question": "Who won the 2024 Stanley Cup?",
+      "correctAnswer": "Florida Panthers",
+      "incorrectAnswers": [
+        "Edmonton Oilers",
+        "Vegas Golden Knights",
+        "Colorado Avalanche"
+      ],
+      "explanation": "Florida beat Edmonton to win the 2024 championship.",
+      "keywords": [
+        "hockey",
+        "champions",
+        "panthers"
+      ],
+      "source": "https://www.nhl.com/info/stanley-cup-winners-complete-list"
+    },
+    {
+      "seedId": "40c48450-612f-52aa-90ee-f55ba25f6244",
+      "category": "sports",
+      "navigationKeyword1": "hockey",
+      "navigationKeyword2": "nhl",
+      "question": "How many regulation periods are played in an NHL game?",
+      "correctAnswer": "Three",
+      "incorrectAnswers": [
+        "Two",
+        "Four",
+        "Five"
+      ],
+      "explanation": "An NHL game has three periods in regulation.",
+      "keywords": [
+        "hockey",
+        "nhl",
+        "periods"
+      ],
+      "source": "https://www.britannica.com/sports/ice-hockey"
+    },
+    {
+      "seedId": "47e4d950-481a-5bbd-a305-d231775e4d8f",
+      "category": "sports",
+      "navigationKeyword1": "hockey",
+      "navigationKeyword2": "nhl",
+      "question": "How many teams play in the NHL?",
+      "correctAnswer": "32",
+      "incorrectAnswers": [
+        "30",
+        "28",
+        "34"
+      ],
+      "explanation": "The NHL has 32 teams split across two conferences.",
+      "keywords": [
+        "hockey",
+        "nhl",
+        "teams"
+      ],
+      "source": "https://www.nhl.com/info/nhl-records"
+    },
+    {
+      "seedId": "b4ab76c0-1ee8-568b-aaed-dacd5b15fb72",
+      "category": "sports",
+      "navigationKeyword1": "hockey",
+      "navigationKeyword2": "nhl",
+      "question": "What does NHL stand for?",
+      "correctAnswer": "National Hockey League",
+      "incorrectAnswers": [
+        "Northern Hockey League",
+        "National Handball League",
+        "North Hockey League"
+      ],
+      "explanation": "NHL is short for National Hockey League.",
+      "keywords": [
+        "hockey",
+        "nhl",
+        "league"
+      ],
+      "source": "https://www.nhl.com/info/nhl-records"
+    },
+    {
+      "seedId": "77c57185-4a6a-54cb-92a0-0583a6428387",
+      "category": "sports",
+      "navigationKeyword1": "hockey",
+      "navigationKeyword2": "nhl",
+      "question": "Which Canadian franchise ended a long drought by reaching the 2024 Stanley Cup Final?",
+      "correctAnswer": "Edmonton Oilers",
+      "incorrectAnswers": [
+        "Vancouver Canucks",
+        "Toronto Maple Leafs",
+        "Calgary Flames"
+      ],
+      "explanation": "Edmonton reached the 2024 final before losing to Florida.",
+      "keywords": [
+        "hockey",
+        "nhl",
+        "oilers"
+      ],
+      "source": "https://www.nhl.com/info/stanley-cup-winners-complete-list"
+    },
+    {
+      "seedId": "7e12c638-7081-5007-9d69-ca2149e73678",
+      "category": "sports",
+      "navigationKeyword1": "hockey",
+      "navigationKeyword2": "nhl",
+      "question": "Which franchise has won the most Stanley Cups?",
+      "correctAnswer": "Montreal Canadiens",
+      "incorrectAnswers": [
+        "Toronto Maple Leafs",
+        "Detroit Red Wings",
+        "Boston Bruins"
+      ],
+      "explanation": "Montreal leads the Stanley Cup winners list.",
+      "keywords": [
+        "hockey",
+        "nhl",
+        "canadiens"
+      ],
+      "source": "https://www.nhl.com/info/stanley-cup-winners-complete-list"
+    },
+    {
+      "seedId": "8c2105c8-1e9e-557f-8931-b7454184f8d5",
+      "category": "sports",
+      "navigationKeyword1": "hockey",
+      "navigationKeyword2": "nhl",
+      "question": "Which team famously played at Joe Louis Arena for decades?",
+      "correctAnswer": "Detroit Red Wings",
+      "incorrectAnswers": [
+        "Chicago Blackhawks",
+        "St. Louis Blues",
+        "Buffalo Sabres"
+      ],
+      "explanation": "Joe Louis Arena was the long-time home of the Red Wings.",
+      "keywords": [
+        "hockey",
+        "nhl",
+        "red-wings"
+      ],
+      "source": "https://www.nhl.com/info/nhl-records"
+    },
+    {
+      "seedId": "94241f71-fa2f-540a-b45f-b891371bf9bf",
+      "category": "sports",
+      "navigationKeyword1": "hockey",
+      "navigationKeyword2": "nhl",
+      "question": "Which team is based in Toronto and wears blue and white?",
+      "correctAnswer": "Toronto Maple Leafs",
+      "incorrectAnswers": [
+        "Montreal Canadiens",
+        "Ottawa Senators",
+        "Boston Bruins"
+      ],
+      "explanation": "Toronto's historic NHL club is the Maple Leafs.",
+      "keywords": [
+        "hockey",
+        "nhl",
+        "maple-leafs"
+      ],
+      "source": "https://www.nhl.com/info/nhl-records"
+    },
+    {
+      "seedId": "b1c229e5-a5c1-5495-9203-d30f164046b1",
+      "category": "sports",
+      "navigationKeyword1": "hockey",
+      "navigationKeyword2": "nhl",
+      "question": "Which team won the 2023 Stanley Cup Final?",
+      "correctAnswer": "Vegas Golden Knights",
+      "incorrectAnswers": [
+        "Florida Panthers",
+        "Colorado Avalanche",
+        "Tampa Bay Lightning"
+      ],
+      "explanation": "Vegas won its first Stanley Cup in 2023.",
+      "keywords": [
+        "hockey",
+        "nhl",
+        "golden-knights"
+      ],
+      "source": "https://www.nhl.com/info/stanley-cup-winners-complete-list"
+    },
+    {
+      "seedId": "0b1c7f5b-2c9e-5481-8691-680d5e65bf49",
+      "category": "sports",
+      "navigationKeyword1": "hockey",
+      "navigationKeyword2": "nhl",
+      "question": "Which team won the 2024 Stanley Cup Final?",
+      "correctAnswer": "Florida Panthers",
+      "incorrectAnswers": [
+        "Edmonton Oilers",
+        "Vegas Golden Knights",
+        "Colorado Avalanche"
+      ],
+      "explanation": "Florida beat Edmonton to win the 2024 Stanley Cup.",
+      "keywords": [
+        "hockey",
+        "nhl",
+        "panthers"
+      ],
+      "source": "https://www.nhl.com/info/stanley-cup-winners-complete-list"
+    },
+    {
+      "seedId": "4111b88c-9634-5e35-8ab9-3e97c73706ee",
+      "category": "sports",
+      "navigationKeyword1": "hockey",
+      "navigationKeyword2": "nhl",
+      "question": "Which trophy is awarded to the NHL playoff champion?",
+      "correctAnswer": "Stanley Cup",
+      "incorrectAnswers": [
+        "Conn Smythe Trophy",
+        "Hart Trophy",
+        "Lombardi Trophy"
+      ],
+      "explanation": "The Stanley Cup goes to the NHL champion.",
+      "keywords": [
+        "hockey",
+        "nhl",
+        "stanley-cup"
+      ],
+      "source": "https://www.nhl.com/info/stanley-cup-winners-complete-list"
+    },
+    {
+      "seedId": "d53070c2-8368-5260-a923-9f4281db6b4d",
+      "category": "sports",
+      "navigationKeyword1": "hockey",
+      "navigationKeyword2": "players",
+      "question": "Which Capitals star broke Gretzky's NHL career goals record in 2025?",
+      "correctAnswer": "Alex Ovechkin",
+      "incorrectAnswers": [
+        "Sidney Crosby",
+        "Jaromir Jagr",
+        "Steven Stamkos"
+      ],
+      "explanation": "Ovechkin passed Gretzky for the all-time career goals lead in 2025.",
+      "keywords": [
+        "hockey",
+        "players",
+        "alex-ovechkin"
+      ],
+      "source": "https://www.nhl.com/info/nhl-records"
+    },
+    {
+      "seedId": "e9ae9839-ce4d-50fe-b6f5-59e15ee9ba9c",
+      "category": "sports",
+      "navigationKeyword1": "hockey",
+      "navigationKeyword2": "players",
+      "question": "Which Czech goalie was nicknamed The Dominator?",
+      "correctAnswer": "Dominik Hasek",
+      "incorrectAnswers": [
+        "Petr Cech",
+        "Jaroslav Halak",
+        "Roman Cechmanek"
+      ],
+      "explanation": "Hasek became one of the greatest goalies in NHL history.",
+      "keywords": [
+        "hockey",
+        "players",
+        "dominik-hasek"
+      ],
+      "source": "https://www.britannica.com/biography/Dominik-Hasek"
+    },
+    {
+      "seedId": "a3ec0845-591e-5c02-b694-46b59a371698",
+      "category": "sports",
+      "navigationKeyword1": "hockey",
+      "navigationKeyword2": "players",
+      "question": "Which Hall of Fame center was nicknamed Mr. Hockey?",
+      "correctAnswer": "Gordie Howe",
+      "incorrectAnswers": [
+        "Bobby Orr",
+        "Wayne Gretzky",
+        "Mark Messier"
+      ],
+      "explanation": "Howe's longevity and all-around game earned the nickname.",
+      "keywords": [
+        "hockey",
+        "players",
+        "gordie-howe"
+      ],
+      "source": "https://www.britannica.com/biography/Gordie-Howe"
+    },
+    {
+      "seedId": "1513074a-bdc4-5c1f-8895-de91aeff0e7f",
+      "category": "sports",
+      "navigationKeyword1": "hockey",
+      "navigationKeyword2": "players",
+      "question": "Which Penguins captain won the Conn Smythe in back-to-back Stanley Cup runs in 2016 and 2017?",
+      "correctAnswer": "Sidney Crosby",
+      "incorrectAnswers": [
+        "Evgeni Malkin",
+        "Kris Letang",
+        "Marc-Andre Fleury"
+      ],
+      "explanation": "Crosby led Pittsburgh to consecutive Stanley Cup titles.",
+      "keywords": [
+        "hockey",
+        "players",
+        "sidney-crosby"
+      ],
+      "source": "https://www.britannica.com/biography/Sidney-Crosby"
+    },
+    {
+      "seedId": "0947d2ba-4a22-5e1a-bf62-842704b4e95d",
+      "category": "sports",
+      "navigationKeyword1": "hockey",
+      "navigationKeyword2": "players",
+      "question": "Which Penguins star returned from cancer treatment to continue a Hall of Fame career?",
+      "correctAnswer": "Mario Lemieux",
+      "incorrectAnswers": [
+        "Jaromir Jagr",
+        "Sidney Crosby",
+        "Evgeni Malkin"
+      ],
+      "explanation": "Lemieux's comeback added to his legendary status in Pittsburgh.",
+      "keywords": [
+        "hockey",
+        "players",
+        "mario-lemieux"
+      ],
+      "source": "https://www.britannica.com/biography/Mario-Lemieux"
+    },
+    {
+      "seedId": "f9c2f44a-ebb9-5055-8e91-2240ad92ed3a",
+      "category": "sports",
+      "navigationKeyword1": "hockey",
+      "navigationKeyword2": "players",
+      "question": "Which Penguins winger became famous for his flowing hair and longevity across decades?",
+      "correctAnswer": "Jaromir Jagr",
+      "incorrectAnswers": [
+        "Pavel Datsyuk",
+        "Peter Forsberg",
+        "Mats Sundin"
+      ],
+      "explanation": "Jagr remained productive in pro hockey for an extraordinarily long time.",
+      "keywords": [
+        "hockey",
+        "players",
+        "jaromir-jagr"
+      ],
+      "source": "https://www.britannica.com/biography/Jaromir-Jagr"
+    },
+    {
+      "seedId": "40421561-6274-5986-be1c-c23c291c5404",
+      "category": "sports",
+      "navigationKeyword1": "hockey",
+      "navigationKeyword2": "players",
+      "question": "Which defenseman revolutionized offense from the blue line with the Boston Bruins?",
+      "correctAnswer": "Bobby Orr",
+      "incorrectAnswers": [
+        "Ray Bourque",
+        "Nicklas Lidstrom",
+        "Chris Chelios"
+      ],
+      "explanation": "Orr changed the way defensemen attacked in the NHL.",
+      "keywords": [
+        "hockey",
+        "players",
+        "bobby-orr"
+      ],
+      "source": "https://www.britannica.com/biography/Bobby-Orr"
+    },
+    {
+      "seedId": "dfe2b590-bf42-55cc-800b-d357f46f8efb",
+      "category": "sports",
+      "navigationKeyword1": "hockey",
+      "navigationKeyword2": "players",
+      "question": "Which goalie retired with the NHL record for career wins?",
+      "correctAnswer": "Martin Brodeur",
+      "incorrectAnswers": [
+        "Patrick Roy",
+        "Dominik Hasek",
+        "Henrik Lundqvist"
+      ],
+      "explanation": "Brodeur finished with the most career wins by a goaltender.",
+      "keywords": [
+        "hockey",
+        "players",
+        "martin-brodeur"
+      ],
+      "source": "https://www.nhl.com/info/nhl-records"
+    },
+    {
+      "seedId": "3cfb439d-827b-5e60-948e-2c46f9cb25b6",
+      "category": "sports",
+      "navigationKeyword1": "hockey",
+      "navigationKeyword2": "players",
+      "question": "Which player captained the Oilers dynasty and later guaranteed a Rangers championship?",
+      "correctAnswer": "Mark Messier",
+      "incorrectAnswers": [
+        "Paul Coffey",
+        "Jari Kurri",
+        "Wayne Gretzky"
+      ],
+      "explanation": "Messier led champions in both Edmonton and New York.",
+      "keywords": [
+        "hockey",
+        "players",
+        "mark-messier"
+      ],
+      "source": "https://www.britannica.com/biography/Mark-Messier"
+    },
+    {
+      "seedId": "ca327384-363c-5ec6-b506-1386945db9a8",
+      "category": "sports",
+      "navigationKeyword1": "hockey",
+      "navigationKeyword2": "players",
+      "question": "Which player holds the NHL records for career goals, assists, and points?",
+      "correctAnswer": "Wayne Gretzky",
+      "incorrectAnswers": [
+        "Mario Lemieux",
+        "Gordie Howe",
+        "Sidney Crosby"
+      ],
+      "explanation": "Gretzky owns the league's biggest career offensive records.",
+      "keywords": [
+        "hockey",
+        "players",
+        "wayne-gretzky"
+      ],
+      "source": "https://www.nhl.com/info/nhl-records"
+    },
+    {
+      "seedId": "a50ab2ce-14f9-547d-a375-f1aee566e39a",
+      "category": "sports",
+      "navigationKeyword1": "hockey",
+      "navigationKeyword2": "positions",
+      "question": "What is the common name for the goalie position?",
+      "correctAnswer": "Netminder",
+      "incorrectAnswers": [
+        "Blue-liner",
+        "Playmaker",
+        "Pivot"
+      ],
+      "explanation": "Netminder is a common synonym for goaltender.",
+      "keywords": [
+        "hockey",
+        "positions",
+        "netminder"
+      ],
+      "source": "https://www.britannica.com/sports/ice-hockey"
+    },
+    {
+      "seedId": "5d99bd6b-fb62-5b05-bdcb-61d393df1eee",
+      "category": "sports",
+      "navigationKeyword1": "hockey",
+      "navigationKeyword2": "positions",
+      "question": "Which defenders usually work as a pair in their own zone?",
+      "correctAnswer": "Defensemen",
+      "incorrectAnswers": [
+        "Centers",
+        "Goalies",
+        "Officials"
+      ],
+      "explanation": "Defensemen usually play in pairs and rotate with forward lines.",
+      "keywords": [
+        "hockey",
+        "positions",
+        "pair"
+      ],
+      "source": "https://www.britannica.com/sports/ice-hockey"
+    },
+    {
+      "seedId": "c88f0ef1-0e72-560a-bad6-3895b042a773",
+      "category": "sports",
+      "navigationKeyword1": "hockey",
+      "navigationKeyword2": "positions",
+      "question": "Which forward role is often associated with playmaking from the middle of the ice?",
+      "correctAnswer": "Center",
+      "incorrectAnswers": [
+        "Left defense",
+        "Goalie",
+        "Linesman"
+      ],
+      "explanation": "Centers often create offense through passes and faceoff wins.",
+      "keywords": [
+        "hockey",
+        "positions",
+        "playmaker"
+      ],
+      "source": "https://www.britannica.com/sports/ice-hockey"
+    },
+    {
+      "seedId": "e40f037d-efa6-5bce-92e8-897e17fa1c9c",
+      "category": "sports",
+      "navigationKeyword1": "hockey",
+      "navigationKeyword2": "positions",
+      "question": "Which forward usually takes most faceoffs in hockey?",
+      "correctAnswer": "Center",
+      "incorrectAnswers": [
+        "Left wing",
+        "Right wing",
+        "Defenseman"
+      ],
+      "explanation": "Centers commonly handle faceoffs and middle-lane play.",
+      "keywords": [
+        "hockey",
+        "positions",
+        "center"
+      ],
+      "source": "https://www.britannica.com/sports/ice-hockey"
+    },
+    {
+      "seedId": "8e645acb-3c42-5e96-b654-1f341fc1338e",
+      "category": "sports",
+      "navigationKeyword1": "hockey",
+      "navigationKeyword2": "positions",
+      "question": "Which player defends the net and can use special pads and a catching glove?",
+      "correctAnswer": "Goaltender",
+      "incorrectAnswers": [
+        "Center",
+        "Winger",
+        "Defenseman"
+      ],
+      "explanation": "The goaltender is the last line of defense.",
+      "keywords": [
+        "hockey",
+        "positions",
+        "goalie"
+      ],
+      "source": "https://www.britannica.com/sports/ice-hockey"
+    },
+    {
+      "seedId": "64c20874-95dc-5f7a-a81c-2d16f47cd92e",
+      "category": "sports",
+      "navigationKeyword1": "hockey",
+      "navigationKeyword2": "positions",
+      "question": "Which position is most directly responsible for stopping shots?",
+      "correctAnswer": "Goaltender",
+      "incorrectAnswers": [
+        "Center",
+        "Winger",
+        "Defenseman"
+      ],
+      "explanation": "Stopping pucks is the goalie's primary job.",
+      "keywords": [
+        "hockey",
+        "positions",
+        "shots"
+      ],
+      "source": "https://www.britannica.com/sports/ice-hockey"
+    },
+    {
+      "seedId": "70d56eb1-1b5b-5360-973a-b5bc81608fc8",
+      "category": "sports",
+      "navigationKeyword1": "hockey",
+      "navigationKeyword2": "positions",
+      "question": "Which positions usually attack along the boards on either side of the center?",
+      "correctAnswer": "Wingers",
+      "incorrectAnswers": [
+        "Goalies",
+        "Referees",
+        "Defense pairs"
+      ],
+      "explanation": "Left and right wings flank the center among the forwards.",
+      "keywords": [
+        "hockey",
+        "positions",
+        "wingers"
+      ],
+      "source": "https://www.britannica.com/sports/ice-hockey"
+    },
+    {
+      "seedId": "42e804d0-ac21-57c7-8fbc-9a3de47fe4b6",
+      "category": "sports",
+      "navigationKeyword1": "hockey",
+      "navigationKeyword2": "positions",
+      "question": "Which skater position primarily plays on the blue line in front of the goalie?",
+      "correctAnswer": "Defenseman",
+      "incorrectAnswers": [
+        "Center",
+        "Winger",
+        "Goal judge"
+      ],
+      "explanation": "Defensemen patrol the back end and support breakouts.",
+      "keywords": [
+        "hockey",
+        "positions",
+        "defenseman"
+      ],
+      "source": "https://www.britannica.com/sports/ice-hockey"
+    },
+    {
+      "seedId": "2d65d8a2-bd41-59b0-9c77-bcea4b0ab95b",
+      "category": "sports",
+      "navigationKeyword1": "hockey",
+      "navigationKeyword2": "positions",
+      "question": "Which winger usually lines up on the left side of the ice at even strength?",
+      "correctAnswer": "Left wing",
+      "incorrectAnswers": [
+        "Right defense",
+        "Goaltender",
+        "Center only"
+      ],
+      "explanation": "Left wing is the forward position on the left side.",
+      "keywords": [
+        "hockey",
+        "positions",
+        "left-wing"
+      ],
+      "source": "https://www.britannica.com/sports/ice-hockey"
+    },
+    {
+      "seedId": "00f73278-be37-5a91-b0ba-9fbf9b3d379c",
+      "category": "sports",
+      "navigationKeyword1": "hockey",
+      "navigationKeyword2": "positions",
+      "question": "Which winger usually lines up on the right side of the ice at even strength?",
+      "correctAnswer": "Right wing",
+      "incorrectAnswers": [
+        "Left defense",
+        "Goalie",
+        "Center only"
+      ],
+      "explanation": "Right wing is the forward position on the right side.",
+      "keywords": [
+        "hockey",
+        "positions",
+        "right-wing"
+      ],
+      "source": "https://www.britannica.com/sports/ice-hockey"
+    },
+    {
+      "seedId": "26782091-85ff-5b34-ac73-f00ec0ee2601",
+      "category": "sports",
+      "navigationKeyword1": "hockey",
+      "navigationKeyword2": "records",
+      "question": "What is the NHL record for goals in a single season by one player?",
+      "correctAnswer": "92",
+      "incorrectAnswers": [
+        "76",
+        "82",
+        "88"
+      ],
+      "explanation": "Gretzky scored 92 goals in the 1981-82 season.",
+      "keywords": [
+        "hockey",
+        "records",
+        "single-season-goals"
+      ],
+      "source": "https://www.nhl.com/info/nhl-records"
+    },
+    {
+      "seedId": "d241718d-ff4a-59b7-831b-9914b9e0824c",
+      "category": "sports",
+      "navigationKeyword1": "hockey",
+      "navigationKeyword2": "records",
+      "question": "What is the NHL record for points in a single season by one player?",
+      "correctAnswer": "215",
+      "incorrectAnswers": [
+        "200",
+        "198",
+        "205"
+      ],
+      "explanation": "Gretzky recorded 215 points in 1985-86.",
+      "keywords": [
+        "hockey",
+        "records",
+        "single-season-points"
+      ],
+      "source": "https://www.nhl.com/info/nhl-records"
+    },
+    {
+      "seedId": "39219cbb-e545-5aba-95ae-2e5613c5e5e3",
+      "category": "sports",
+      "navigationKeyword1": "hockey",
+      "navigationKeyword2": "records",
+      "question": "Which franchise went 35 years between Stanley Cups before winning in 1994?",
+      "correctAnswer": "New York Rangers",
+      "incorrectAnswers": [
+        "Chicago Blackhawks",
+        "Boston Bruins",
+        "Toronto Maple Leafs"
+      ],
+      "explanation": "The Rangers ended a long championship drought in 1994.",
+      "keywords": [
+        "hockey",
+        "records",
+        "drought"
+      ],
+      "source": "https://www.nhl.com/info/nhl-records"
+    },
+    {
+      "seedId": "fb249c9e-dd01-5ab8-979e-62cce45ca9ec",
+      "category": "sports",
+      "navigationKeyword1": "hockey",
+      "navigationKeyword2": "records",
+      "question": "Which goalie holds the NHL record for career shutouts?",
+      "correctAnswer": "Martin Brodeur",
+      "incorrectAnswers": [
+        "Terry Sawchuk",
+        "Patrick Roy",
+        "Dominik Hasek"
+      ],
+      "explanation": "Brodeur also leads the league in career shutouts.",
+      "keywords": [
+        "hockey",
+        "records",
+        "shutouts"
+      ],
+      "source": "https://www.nhl.com/info/nhl-records"
+    },
+    {
+      "seedId": "acac56cc-be77-5d6b-8fe4-1025431aa3c2",
+      "category": "sports",
+      "navigationKeyword1": "hockey",
+      "navigationKeyword2": "records",
+      "question": "Which goalie holds the NHL record for career wins?",
+      "correctAnswer": "Martin Brodeur",
+      "incorrectAnswers": [
+        "Patrick Roy",
+        "Marc-Andre Fleury",
+        "Dominik Hasek"
+      ],
+      "explanation": "Brodeur retired with the most career wins.",
+      "keywords": [
+        "hockey",
+        "records",
+        "wins"
+      ],
+      "source": "https://www.nhl.com/info/nhl-records"
+    },
+    {
+      "seedId": "c2f9318c-5cab-574e-ad90-1021ed67a77e",
+      "category": "sports",
+      "navigationKeyword1": "hockey",
+      "navigationKeyword2": "records",
+      "question": "Which player scored 50 goals in 39 games in a famous 1981-82 stretch?",
+      "correctAnswer": "Wayne Gretzky",
+      "incorrectAnswers": [
+        "Mike Bossy",
+        "Mario Lemieux",
+        "Brett Hull"
+      ],
+      "explanation": "Gretzky reached 50 goals in fewer games than anyone else.",
+      "keywords": [
+        "hockey",
+        "records",
+        "50-in-39"
+      ],
+      "source": "https://www.nhl.com/info/nhl-records"
+    },
+    {
+      "seedId": "62806a2a-2703-59fe-9f66-ab5dac42b8be",
+      "category": "sports",
+      "navigationKeyword1": "hockey",
+      "navigationKeyword2": "records",
+      "question": "Which team has won the most Stanley Cups?",
+      "correctAnswer": "Montreal Canadiens",
+      "incorrectAnswers": [
+        "Toronto Maple Leafs",
+        "Detroit Red Wings",
+        "Boston Bruins"
+      ],
+      "explanation": "Montreal leads the Stanley Cup winners list.",
+      "keywords": [
+        "hockey",
+        "records",
+        "stanley-cups"
+      ],
+      "source": "https://www.nhl.com/info/nhl-records"
+    },
+    {
+      "seedId": "2fa7581b-5082-5b9f-a778-96f38c3e7e96",
+      "category": "sports",
+      "navigationKeyword1": "hockey",
+      "navigationKeyword2": "records",
+      "question": "Who holds the NHL record for career assists?",
+      "correctAnswer": "Wayne Gretzky",
+      "incorrectAnswers": [
+        "Mark Messier",
+        "Mario Lemieux",
+        "Ron Francis"
+      ],
+      "explanation": "Gretzky leads the NHL in career assists.",
+      "keywords": [
+        "hockey",
+        "records",
+        "assists"
+      ],
+      "source": "https://www.nhl.com/info/nhl-records"
+    },
+    {
+      "seedId": "a40ad0c0-3b2c-5e4c-9842-8a520c99f020",
+      "category": "sports",
+      "navigationKeyword1": "hockey",
+      "navigationKeyword2": "records",
+      "question": "Who holds the NHL record for career goals?",
+      "correctAnswer": "Wayne Gretzky",
+      "incorrectAnswers": [
+        "Alex Ovechkin",
+        "Gordie Howe",
+        "Jaromir Jagr"
+      ],
+      "explanation": "Gretzky remains the all-time career goals leader on the NHL records list used here.",
+      "keywords": [
+        "hockey",
+        "records",
+        "goals"
+      ],
+      "source": "https://www.nhl.com/info/nhl-records"
+    },
+    {
+      "seedId": "39f02dea-6658-5fdf-9688-02cbdda4b44f",
+      "category": "sports",
+      "navigationKeyword1": "hockey",
+      "navigationKeyword2": "records",
+      "question": "Who holds the NHL record for career points?",
+      "correctAnswer": "Wayne Gretzky",
+      "incorrectAnswers": [
+        "Jaromir Jagr",
+        "Mark Messier",
+        "Gordie Howe"
+      ],
+      "explanation": "Gretzky leads the league in total career points.",
+      "keywords": [
+        "hockey",
+        "records",
+        "points"
+      ],
+      "source": "https://www.nhl.com/info/nhl-records"
+    },
+    {
+      "seedId": "634bde5c-affe-5edb-937d-82957a81fbb4",
+      "category": "sports",
+      "navigationKeyword1": "hockey",
+      "navigationKeyword2": "rules",
+      "question": "How many players from one team are usually on the ice in normal play, including the goalie?",
+      "correctAnswer": "Six",
+      "incorrectAnswers": [
+        "Five",
+        "Seven",
+        "Eight"
+      ],
+      "explanation": "A standard hockey team has five skaters and one goaltender on the ice.",
+      "keywords": [
+        "hockey",
+        "rules",
+        "players"
+      ],
+      "source": "https://www.britannica.com/sports/ice-hockey"
+    },
+    {
+      "seedId": "30432f26-9130-5907-bb6b-9573289c2f1e",
+      "category": "sports",
+      "navigationKeyword1": "hockey",
+      "navigationKeyword2": "rules",
+      "question": "How many regulation periods are in an NHL game?",
+      "correctAnswer": "Three",
+      "incorrectAnswers": [
+        "Two",
+        "Four",
+        "Five"
+      ],
+      "explanation": "An NHL game is divided into three periods.",
+      "keywords": [
+        "hockey",
+        "rules",
+        "periods"
+      ],
+      "source": "https://www.britannica.com/sports/ice-hockey"
+    },
+    {
+      "seedId": "f2c35fa4-8536-5cfa-9431-6565dc3303b8",
+      "category": "sports",
+      "navigationKeyword1": "hockey",
+      "navigationKeyword2": "rules",
+      "question": "What advantage does a team gain when the opponent takes a minor penalty?",
+      "correctAnswer": "A power play",
+      "incorrectAnswers": [
+        "A shootout",
+        "An automatic goal",
+        "Extra periods"
+      ],
+      "explanation": "A minor penalty usually gives the other team a temporary skater advantage.",
+      "keywords": [
+        "hockey",
+        "rules",
+        "power-play"
+      ],
+      "source": "https://www.britannica.com/sports/ice-hockey"
+    },
+    {
+      "seedId": "bf9033c3-cd45-5856-85fc-e3d7de0d1c0f",
+      "category": "sports",
+      "navigationKeyword1": "hockey",
+      "navigationKeyword2": "rules",
+      "question": "What is a hat trick in hockey?",
+      "correctAnswer": "Three goals by one player in a game",
+      "incorrectAnswers": [
+        "Three assists by one player",
+        "A shutout in three periods",
+        "Three team power-play goals"
+      ],
+      "explanation": "A hat trick means one player scores three goals in the same game.",
+      "keywords": [
+        "hockey",
+        "rules",
+        "hat-trick"
+      ],
+      "source": "https://www.britannica.com/sports/ice-hockey"
+    },
+    {
+      "seedId": "2fa2d0f4-319e-5592-97da-29fc258a548c",
+      "category": "sports",
+      "navigationKeyword1": "hockey",
+      "navigationKeyword2": "rules",
+      "question": "What is a shutout?",
+      "correctAnswer": "A game in which the goalie allows no goals",
+      "incorrectAnswers": [
+        "A game decided by shootout only",
+        "A scoreless tie after one period",
+        "A delayed penalty"
+      ],
+      "explanation": "A shutout is credited when a goalie or goalies allow no goals.",
+      "keywords": [
+        "hockey",
+        "rules",
+        "shutout"
+      ],
+      "source": "https://www.britannica.com/sports/ice-hockey"
+    },
+    {
+      "seedId": "fe14de38-2e35-56c2-bbc9-615a256ca426",
+      "category": "sports",
+      "navigationKeyword1": "hockey",
+      "navigationKeyword2": "rules",
+      "question": "What is it called when a team shoots the puck from behind center ice all the way past the opponent's goal line untouched?",
+      "correctAnswer": "Icing",
+      "incorrectAnswers": [
+        "Offside",
+        "Slashing",
+        "Tripping"
+      ],
+      "explanation": "Icing stops play when the puck is sent the length of the ice illegally.",
+      "keywords": [
+        "hockey",
+        "rules",
+        "icing"
+      ],
+      "source": "https://www.britannica.com/sports/ice-hockey"
+    },
+    {
+      "seedId": "1c9b9fbd-5eab-5319-a373-18d7e1740bf6",
+      "category": "sports",
+      "navigationKeyword1": "hockey",
+      "navigationKeyword2": "rules",
+      "question": "What is it called when an attacking player enters the offensive zone ahead of the puck?",
+      "correctAnswer": "Offside",
+      "incorrectAnswers": [
+        "Icing",
+        "Cross-checking",
+        "Hooking"
+      ],
+      "explanation": "Entering the zone before the puck creates an offside violation.",
+      "keywords": [
+        "hockey",
+        "rules",
+        "offside"
+      ],
+      "source": "https://www.britannica.com/sports/ice-hockey"
+    },
+    {
+      "seedId": "4047e6b2-d550-5e63-ac28-5046bbbfe27d",
+      "category": "sports",
+      "navigationKeyword1": "hockey",
+      "navigationKeyword2": "rules",
+      "question": "What is the usual length of a minor penalty?",
+      "correctAnswer": "Two minutes",
+      "incorrectAnswers": [
+        "One minute",
+        "Three minutes",
+        "Five minutes"
+      ],
+      "explanation": "Most standard minor penalties last two minutes.",
+      "keywords": [
+        "hockey",
+        "rules",
+        "minor-penalty"
+      ],
+      "source": "https://www.britannica.com/sports/ice-hockey"
+    },
+    {
+      "seedId": "df4ec49f-1c61-57fb-8b3a-087311cf6f17",
+      "category": "sports",
+      "navigationKeyword1": "hockey",
+      "navigationKeyword2": "rules",
+      "question": "What restarts play after most stoppages in hockey?",
+      "correctAnswer": "A faceoff",
+      "incorrectAnswers": [
+        "A kickoff",
+        "A jump ball",
+        "A throw-in"
+      ],
+      "explanation": "The official drops the puck for a faceoff after many stoppages.",
+      "keywords": [
+        "hockey",
+        "rules",
+        "faceoff"
+      ],
+      "source": "https://www.britannica.com/sports/ice-hockey"
+    },
+    {
+      "seedId": "58579228-085e-5bce-800c-ca7b87892c23",
+      "category": "sports",
+      "navigationKeyword1": "hockey",
+      "navigationKeyword2": "rules",
+      "question": "Which infraction involves using the stick to impede an opponent's progress?",
+      "correctAnswer": "Hooking",
+      "incorrectAnswers": [
+        "Offside",
+        "Icing",
+        "Faceoff violation"
+      ],
+      "explanation": "Hooking uses the stick to restrain or slow another player.",
+      "keywords": [
+        "hockey",
+        "rules",
+        "hooking"
+      ],
+      "source": "https://www.britannica.com/sports/ice-hockey"
+    }
+  ]
+}

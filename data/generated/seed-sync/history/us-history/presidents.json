@@ -1,0 +1,247 @@
+{
+  "schemaVersion": 1,
+  "seedSet": "core-public-items",
+  "deltaPreviewLimit": 200,
+  "items": [
+    {
+      "seedId": "24547d88-cb7a-4cbf-9480-54629cbee705",
+      "category": "history",
+      "navigationKeyword1": "us-history",
+      "navigationKeyword2": "presidents",
+      "question": "Abraham Lincoln issued the Emancipation Proclamation and guided the Union through which conflict?",
+      "correctAnswer": "The American Civil War",
+      "incorrectAnswers": [
+        "The War of 1812",
+        "The Mexican-American War",
+        "The Spanish-American War"
+      ],
+      "explanation": "Lincoln\u2019s reelection in 1864 committed the nation to abolition and reunion.",
+      "keywords": [
+        "presidents",
+        "lincoln",
+        "civil-war"
+      ],
+      "source": "https://www.britannica.com/biography/Abraham-Lincoln"
+    },
+    {
+      "seedId": "0b75edba-a806-4071-94e3-594c28683fd3",
+      "category": "history",
+      "navigationKeyword1": "us-history",
+      "navigationKeyword2": "presidents",
+      "question": "Andrew Jackson\u2019s veto of the Second Bank recharter typified his fight against which elite institution?",
+      "correctAnswer": "The national bank and its perceived favoritism toward northeastern financiers",
+      "incorrectAnswers": [
+        "The Federal Reserve",
+        "The Treasury Department",
+        "The First Continental Congress"
+      ],
+      "explanation": "Jackson portrayed the Bank of the United States as a monopoly dangerous to democracy.",
+      "keywords": [
+        "presidents",
+        "jackson",
+        "bank-war"
+      ],
+      "source": "https://www.britannica.com/biography/Andrew-Jackson"
+    },
+    {
+      "seedId": "926f05d8-f3e2-4178-81bc-a2b25a2388f2",
+      "category": "history",
+      "navigationKeyword1": "us-history",
+      "navigationKeyword2": "presidents",
+      "question": "Dwight D. Eisenhower\u2019s military reputation rested on commanding Allied forces during which invasion of France?",
+      "correctAnswer": "D-Day (the Normandy invasion, June 6, 1944)",
+      "incorrectAnswers": [
+        "Operation Torch (North Africa)",
+        "Anzio alone",
+        "Market Garden"
+      ],
+      "explanation": "As president, Eisenhower warned of the military-industrial complex in his farewell address.",
+      "keywords": [
+        "presidents",
+        "eisenhower",
+        "d-day"
+      ],
+      "source": "https://www.britannica.com/biography/Dwight-D-Eisenhower"
+    },
+    {
+      "seedId": "690e2177-de24-404a-a779-90c902c54aba",
+      "category": "history",
+      "navigationKeyword1": "us-history",
+      "navigationKeyword2": "presidents",
+      "question": "Franklin D. Roosevelt was elected to an unprecedented fourth term while leading the U.S. through which global war?",
+      "correctAnswer": "World War II",
+      "incorrectAnswers": [
+        "World War I",
+        "The Korean War",
+        "The Vietnam War"
+      ],
+      "explanation": "The Twenty-second Amendment later limited presidents to two elected terms.",
+      "keywords": [
+        "presidents",
+        "fdr",
+        "world-war-ii"
+      ],
+      "source": "https://www.britannica.com/biography/Franklin-D-Roosevelt"
+    },
+    {
+      "seedId": "8cca2997-bd13-4886-be74-660547e6c56c",
+      "category": "history",
+      "navigationKeyword1": "us-history",
+      "navigationKeyword2": "presidents",
+      "question": "George Washington set precedents by voluntarily stepping down after how many terms as president?",
+      "correctAnswer": "Two terms",
+      "incorrectAnswers": [
+        "One term",
+        "Three terms",
+        "Four terms"
+      ],
+      "explanation": "His Farewell Address warned against permanent foreign alliances and sectional party spirit.",
+      "keywords": [
+        "presidents",
+        "washington",
+        "founding"
+      ],
+      "source": "https://www.britannica.com/biography/George-Washington"
+    },
+    {
+      "seedId": "8f13d6e2-7261-4a52-ae5e-1a95d8e7c37f",
+      "category": "history",
+      "navigationKeyword1": "us-history",
+      "navigationKeyword2": "presidents",
+      "question": "Harry S. Truman ordered atomic bombs used against Japan and articulated which doctrine of aid against communism?",
+      "correctAnswer": "The Truman Doctrine",
+      "incorrectAnswers": [
+        "The Eisenhower Doctrine",
+        "The Monroe Doctrine",
+        "The Roosevelt Corollary"
+      ],
+      "explanation": "Truman also backed the Marshall Plan and desegregated the armed forces by executive order.",
+      "keywords": [
+        "presidents",
+        "truman",
+        "cold-war"
+      ],
+      "source": "https://www.britannica.com/biography/Harry-S-Truman"
+    },
+    {
+      "seedId": "d51ea8dd-461b-48a3-8ccb-7b59f485c9be",
+      "category": "history",
+      "navigationKeyword1": "us-history",
+      "navigationKeyword2": "presidents",
+      "question": "John F. Kennedy\u2019s administration faced the failed Bay of Pigs invasion and the missile crisis centered on which country?",
+      "correctAnswer": "Cuba",
+      "incorrectAnswers": [
+        "Vietnam",
+        "Laos",
+        "Guatemala"
+      ],
+      "explanation": "Kennedy also launched the Peace Corps and set the Moon landing goal.",
+      "keywords": [
+        "presidents",
+        "kennedy",
+        "cold-war"
+      ],
+      "source": "https://www.britannica.com/biography/John-F-Kennedy"
+    },
+    {
+      "seedId": "c709e5ae-7f8b-42f1-b090-5384b363b9fb",
+      "category": "history",
+      "navigationKeyword1": "us-history",
+      "navigationKeyword2": "presidents",
+      "question": "Lyndon B. Johnson secured passage of Medicare, Medicaid, and major civil rights laws as part of what domestic agenda?",
+      "correctAnswer": "The Great Society",
+      "incorrectAnswers": [
+        "The New Frontier",
+        "The Square Deal",
+        "The Fair Deal"
+      ],
+      "explanation": "Vietnam War escalation overshadowed but did not erase his domestic legislative record.",
+      "keywords": [
+        "presidents",
+        "johnson",
+        "great-society"
+      ],
+      "source": "https://www.britannica.com/biography/Lyndon-B-Johnson"
+    },
+    {
+      "seedId": "c690b2f3-06f6-4d38-aedd-4cf3c7252b20",
+      "category": "history",
+      "navigationKeyword1": "us-history",
+      "navigationKeyword2": "presidents",
+      "question": "Ronald Reagan\u2019s presidency is closely associated with increased defense spending and which Soviet policy of openness?",
+      "correctAnswer": "Glasnost (under Mikhail Gorbachev)",
+      "incorrectAnswers": [
+        "Perestroika (economic restructuring)",
+        "The Brezhnev Doctrine",
+        "The Molotov\u2013Ribbentrop Pact"
+      ],
+      "explanation": "Glasnost was Gorbachev\u2019s policy of greater public candor and debate; Reagan\u2019s military buildup and diplomacy interacted with that reform climate in the late Cold War.",
+      "keywords": [
+        "presidents",
+        "reagan",
+        "cold-war"
+      ],
+      "source": "https://www.britannica.com/biography/Ronald-Reagan"
+    },
+    {
+      "seedId": "91abd1f3-4ac1-4f6c-bcd6-6fa54e646a5f",
+      "category": "history",
+      "navigationKeyword1": "us-history",
+      "navigationKeyword2": "presidents",
+      "question": "Theodore Roosevelt mediated the end of which 1905 war, earning a Nobel Peace Prize?",
+      "correctAnswer": "The Russo-Japanese War",
+      "incorrectAnswers": [
+        "The Boer War",
+        "The Balkan Wars",
+        "The Franco-Prussian War"
+      ],
+      "explanation": "The Portsmouth Treaty reflected Theodore Roosevelt\u2019s direct mediation between Japan and Russia after their war.",
+      "keywords": [
+        "presidents",
+        "roosevelt-teddy",
+        "diplomacy"
+      ],
+      "source": "https://www.britannica.com/biography/Theodore-Roosevelt"
+    },
+    {
+      "seedId": "3b1fef3c-2029-4192-a02c-b4c51d04ff06",
+      "category": "history",
+      "navigationKeyword1": "us-history",
+      "navigationKeyword2": "presidents",
+      "question": "Thomas Jefferson\u2019s administration nearly doubled U.S. territory by purchasing Louisiana from which ruler?",
+      "correctAnswer": "Napoleon Bonaparte (France)",
+      "incorrectAnswers": [
+        "King George III",
+        "Charles IV of Spain",
+        "Tsar Alexander I"
+      ],
+      "explanation": "The 1803 Louisiana Purchase secured the Mississippi River\u2019s mouth and vast western claims.",
+      "keywords": [
+        "presidents",
+        "jefferson",
+        "louisiana"
+      ],
+      "source": "https://www.britannica.com/event/Louisiana-Purchase"
+    },
+    {
+      "seedId": "7204b5ed-36fa-4c1c-84f5-a85382681dcf",
+      "category": "history",
+      "navigationKeyword1": "us-history",
+      "navigationKeyword2": "presidents",
+      "question": "When asking Congress to declare war on Germany in April 1917, what long-term international order did Woodrow Wilson publicly say the United States was fighting to secure?",
+      "correctAnswer": "A peace built on democratic consent, transparent diplomacy, and collective security (developed further in his Fourteen Points)",
+      "incorrectAnswers": [
+        "Permanent U.S. withdrawal from European politics",
+        "Annexing German colonies as U.S. territories",
+        "Restoring Europe\u2019s prewar monarchies and alliances unchanged"
+      ],
+      "explanation": "Wilson tied entry to submarine warfare and the Zimmermann Telegram, but he also argued the war should yield a new international system\u2014ideas he spelled out in the Fourteen Points and League of Nations proposal\u2014rather than a simple return to old power politics.",
+      "keywords": [
+        "presidents",
+        "wilson",
+        "world-war-i"
+      ],
+      "source": "https://www.britannica.com/biography/Woodrow-Wilson"
+    }
+  ]
+}

@@ -1,0 +1,207 @@
+{
+  "schemaVersion": 1,
+  "seedSet": "core-public-items",
+  "deltaPreviewLimit": 200,
+  "items": [
+    {
+      "seedId": "ef92c2c3-36c6-46a0-bd0d-a5bc3ba9346a",
+      "category": "exams",
+      "navigationKeyword1": "nursing",
+      "navigationKeyword2": "fundamentals",
+      "question": "How long should hands be washed with soap and water when they are visibly dirty?",
+      "correctAnswer": "At least 20 seconds",
+      "incorrectAnswers": [
+        "5 seconds",
+        "10 seconds",
+        "45 seconds every time"
+      ],
+      "explanation": "CDC says healthcare personnel should wash their hands for at least 20 seconds with soap and water in these situations.",
+      "keywords": [
+        "nursing-fundamentals",
+        "nclex",
+        "infection-control"
+      ],
+      "source": "https://www.cdc.gov/clean-hands/faq/index.html"
+    },
+    {
+      "seedId": "08132d2b-0956-46a9-a487-bf07a8e540fe",
+      "category": "exams",
+      "navigationKeyword1": "nursing",
+      "navigationKeyword2": "fundamentals",
+      "question": "If soap and water are not available, what alcohol concentration should hand sanitizer have?",
+      "correctAnswer": "At least 60% alcohol",
+      "incorrectAnswers": [
+        "At least 30% alcohol",
+        "At least 40% alcohol",
+        "At least 50% alcohol"
+      ],
+      "explanation": "CDC advises using alcohol-based hand sanitizer with at least 60% alcohol when soap and water are not available.",
+      "keywords": [
+        "nursing-fundamentals",
+        "nclex",
+        "infection-control"
+      ],
+      "source": "https://www.cdc.gov/global-water-sanitation-hygiene/media/pdfs/When-and-how-to-clean-hands-poster-508.pdf"
+    },
+    {
+      "seedId": "076ebeaa-692e-4f88-8c35-245215a4b406",
+      "category": "exams",
+      "navigationKeyword1": "nursing",
+      "navigationKeyword2": "fundamentals",
+      "question": "In most healthcare situations, what is CDC's primary method for hand hygiene?",
+      "correctAnswer": "Alcohol-based hand sanitizer",
+      "incorrectAnswers": [
+        "Hot water only",
+        "Antibiotic soap only",
+        "Sterile gloves only"
+      ],
+      "explanation": "CDC recommends alcohol-based hand sanitizer as the primary method for hand hygiene in most healthcare situations.",
+      "keywords": [
+        "nursing-fundamentals",
+        "nclex",
+        "infection-control"
+      ],
+      "source": "https://www.cdc.gov/clean-hands/faq/index.html"
+    },
+    {
+      "seedId": "2f519890-4ef7-4047-89b9-5ed0c4f12672",
+      "category": "exams",
+      "navigationKeyword1": "nursing",
+      "navigationKeyword2": "fundamentals",
+      "question": "What blood pressure range is normal for the average healthy adult at rest?",
+      "correctAnswer": "Between 90/60 mmHg and 120/80 mmHg",
+      "incorrectAnswers": [
+        "Between 70/40 mmHg and 90/60 mmHg",
+        "Between 120/90 mmHg and 140/100 mmHg",
+        "Between 130/60 mmHg and 150/80 mmHg"
+      ],
+      "explanation": "MedlinePlus lists 90/60 mmHg to 120/80 mmHg as the normal adult resting range.",
+      "keywords": [
+        "nursing-fundamentals",
+        "nclex",
+        "vital-signs"
+      ],
+      "source": "https://medlineplus.gov/ency/article/002341.htm"
+    },
+    {
+      "seedId": "d0b424b6-67f9-46c9-ad5b-fce9ae10e644",
+      "category": "exams",
+      "navigationKeyword1": "nursing",
+      "navigationKeyword2": "fundamentals",
+      "question": "What body temperature range is normal for the average healthy adult at rest?",
+      "correctAnswer": "97.7 F to 99.1 F",
+      "incorrectAnswers": [
+        "95.0 F to 96.8 F",
+        "99.5 F to 101.5 F",
+        "96.0 F to 100.5 F"
+      ],
+      "explanation": "MedlinePlus lists 97.7 F to 99.1 F as the normal resting adult temperature range.",
+      "keywords": [
+        "nursing-fundamentals",
+        "nclex",
+        "vital-signs"
+      ],
+      "source": "https://medlineplus.gov/ency/article/002341.htm"
+    },
+    {
+      "seedId": "3fe158f7-6a43-4c99-9036-4bfede228936",
+      "category": "exams",
+      "navigationKeyword1": "nursing",
+      "navigationKeyword2": "fundamentals",
+      "question": "What does pulse oximetry measure?",
+      "correctAnswer": "Oxygen levels in the blood",
+      "incorrectAnswers": [
+        "Blood sugar levels",
+        "White blood cell count",
+        "Kidney function"
+      ],
+      "explanation": "MedlinePlus says pulse oximetry measures oxygen levels in the blood.",
+      "keywords": [
+        "nursing-fundamentals",
+        "nclex",
+        "vital-signs"
+      ],
+      "source": "https://medlineplus.gov/lab-tests/pulse-oximetry"
+    },
+    {
+      "seedId": "91ceaa6c-46ac-4f56-a0de-7d123e3a223f",
+      "category": "exams",
+      "navigationKeyword1": "nursing",
+      "navigationKeyword2": "fundamentals",
+      "question": "What oxygen saturation range is usually normal on pulse oximetry?",
+      "correctAnswer": "95% to 100%",
+      "incorrectAnswers": [
+        "85% to 90%",
+        "88% to 92%",
+        "90% to 94%"
+      ],
+      "explanation": "MedlinePlus says a normal oxygen saturation level usually ranges from 95% to 100%.",
+      "keywords": [
+        "nursing-fundamentals",
+        "nclex",
+        "vital-signs"
+      ],
+      "source": "https://medlineplus.gov/lab-tests/pulse-oximetry"
+    },
+    {
+      "seedId": "96fc152e-11f5-4185-ad69-5fa6ffddc4d7",
+      "category": "exams",
+      "navigationKeyword1": "nursing",
+      "navigationKeyword2": "fundamentals",
+      "question": "What resting pulse range is normal for the average healthy adult?",
+      "correctAnswer": "60 to 100 beats per minute",
+      "incorrectAnswers": [
+        "40 to 60 beats per minute",
+        "80 to 120 beats per minute",
+        "100 to 140 beats per minute"
+      ],
+      "explanation": "MedlinePlus lists 60 to 100 beats per minute as a normal resting adult pulse range.",
+      "keywords": [
+        "nursing-fundamentals",
+        "nclex",
+        "vital-signs"
+      ],
+      "source": "https://medlineplus.gov/ency/article/002341.htm"
+    },
+    {
+      "seedId": "799132e8-c5c9-443e-acb8-569561dbe81e",
+      "category": "exams",
+      "navigationKeyword1": "nursing",
+      "navigationKeyword2": "fundamentals",
+      "question": "What resting respiratory rate is normal for the average healthy adult?",
+      "correctAnswer": "12 to 18 breaths per minute",
+      "incorrectAnswers": [
+        "6 to 10 breaths per minute",
+        "20 to 28 breaths per minute",
+        "24 to 30 breaths per minute"
+      ],
+      "explanation": "MedlinePlus lists 12 to 18 breaths per minute as the normal resting adult breathing rate.",
+      "keywords": [
+        "nursing-fundamentals",
+        "nclex",
+        "vital-signs"
+      ],
+      "source": "https://medlineplus.gov/ency/article/002341.htm"
+    },
+    {
+      "seedId": "c24a6fcc-32ba-4d60-aef4-ea90a5f34500",
+      "category": "exams",
+      "navigationKeyword1": "nursing",
+      "navigationKeyword2": "fundamentals",
+      "question": "When should healthcare personnel wash with soap and water instead of using sanitizer?",
+      "correctAnswer": "When hands are visibly dirty",
+      "incorrectAnswers": [
+        "Before every blood pressure reading",
+        "Only after eating",
+        "Only at the end of a shift"
+      ],
+      "explanation": "CDC says healthcare personnel should wash with soap and water when hands are visibly dirty.",
+      "keywords": [
+        "nursing-fundamentals",
+        "nclex",
+        "infection-control"
+      ],
+      "source": "https://www.cdc.gov/clean-hands/faq/index.html"
+    }
+  ]
+}

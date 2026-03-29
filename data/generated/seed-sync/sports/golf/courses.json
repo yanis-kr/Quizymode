@@ -1,0 +1,207 @@
+{
+  "schemaVersion": 1,
+  "seedSet": "core-public-items",
+  "deltaPreviewLimit": 200,
+  "items": [
+    {
+      "seedId": "af6fd573-f38e-5064-8f24-f18ee1da3d85",
+      "category": "sports",
+      "navigationKeyword1": "golf",
+      "navigationKeyword2": "courses",
+      "question": "Which California course overlooks the Pacific and is famous for the par-3 seventh hole?",
+      "correctAnswer": "Pebble Beach",
+      "incorrectAnswers": [
+        "Torrey Pines",
+        "Spyglass Hill",
+        "Riviera"
+      ],
+      "explanation": "Pebble Beach is one of golf's most scenic and famous venues.",
+      "keywords": [
+        "golf",
+        "courses",
+        "pebble-beach"
+      ],
+      "source": "https://www.britannica.com/sports/golf"
+    },
+    {
+      "seedId": "2add7071-9b6b-5d98-b534-dad1a791e08c",
+      "category": "sports",
+      "navigationKeyword1": "golf",
+      "navigationKeyword2": "courses",
+      "question": "Which English course in Southport has hosted multiple Open Championships and is called Royal Birkdale?",
+      "correctAnswer": "Royal Birkdale",
+      "incorrectAnswers": [
+        "Royal Liverpool",
+        "Royal Troon",
+        "St George's"
+      ],
+      "explanation": "Royal Birkdale is one of the regular Open rota courses.",
+      "keywords": [
+        "golf",
+        "courses",
+        "royal-birkdale"
+      ],
+      "source": "https://www.britannica.com/sports/golf"
+    },
+    {
+      "seedId": "b0cfaa96-bb48-5f9c-b8c4-efaa6fd0227a",
+      "category": "sports",
+      "navigationKeyword1": "golf",
+      "navigationKeyword2": "courses",
+      "question": "Which Kentucky course hosted the 2024 PGA Championship?",
+      "correctAnswer": "Valhalla",
+      "incorrectAnswers": [
+        "Whistling Straits",
+        "Hazeltine",
+        "Quail Hollow"
+      ],
+      "explanation": "Valhalla Golf Club was the site of the 2024 PGA Championship.",
+      "keywords": [
+        "golf",
+        "courses",
+        "valhalla"
+      ],
+      "source": "https://www.pgachampionship.com/"
+    },
+    {
+      "seedId": "bc8383e3-8fc1-5605-85d8-1e7c48fc00d8",
+      "category": "sports",
+      "navigationKeyword1": "golf",
+      "navigationKeyword2": "courses",
+      "question": "Which Long Island course hosted the 2018 U.S. Open and 2026 Ryder Cup?",
+      "correctAnswer": "Shinnecock Hills",
+      "incorrectAnswers": [
+        "Bethpage Black",
+        "Winged Foot",
+        "Pine Valley"
+      ],
+      "explanation": "Shinnecock Hills is one of the oldest golf clubs in the United States.",
+      "keywords": [
+        "golf",
+        "courses",
+        "shinnecock"
+      ],
+      "source": "https://www.britannica.com/sports/golf"
+    },
+    {
+      "seedId": "5cae6d8b-1ee6-573a-ac08-52e4373d6363",
+      "category": "sports",
+      "navigationKeyword1": "golf",
+      "navigationKeyword2": "courses",
+      "question": "Which New York public course hosted the 2002 and 2009 U.S. Opens and the 2019 PGA Championship?",
+      "correctAnswer": "Bethpage Black",
+      "incorrectAnswers": [
+        "Winged Foot",
+        "Oak Hill",
+        "Shinnecock Hills"
+      ],
+      "explanation": "Bethpage Black became famous as a tough public major venue.",
+      "keywords": [
+        "golf",
+        "courses",
+        "bethpage"
+      ],
+      "source": "https://www.britannica.com/sports/golf"
+    },
+    {
+      "seedId": "6ef6168f-4b64-56bb-9aff-0b1c5d31c3ed",
+      "category": "sports",
+      "navigationKeyword1": "golf",
+      "navigationKeyword2": "courses",
+      "question": "Which North Carolina course hosted the 2024 U.S. Open?",
+      "correctAnswer": "Pinehurst No. 2",
+      "incorrectAnswers": [
+        "Oakmont",
+        "Shinnecock Hills",
+        "Winged Foot"
+      ],
+      "explanation": "Pinehurst No. 2 hosted the 2024 U.S. Open.",
+      "keywords": [
+        "golf",
+        "courses",
+        "pinehurst"
+      ],
+      "source": "https://www.usopen.com/"
+    },
+    {
+      "seedId": "52c50226-ff78-58e5-a033-a40996d27ba8",
+      "category": "sports",
+      "navigationKeyword1": "golf",
+      "navigationKeyword2": "courses",
+      "question": "Which Pennsylvania course is famous for extremely difficult U.S. Open setups and church pew bunkers?",
+      "correctAnswer": "Oakmont",
+      "incorrectAnswers": [
+        "Oak Hill",
+        "Merion",
+        "Baltusrol"
+      ],
+      "explanation": "Oakmont is one of the hardest classic U.S. Open courses.",
+      "keywords": [
+        "golf",
+        "courses",
+        "oakmont"
+      ],
+      "source": "https://www.britannica.com/sports/golf"
+    },
+    {
+      "seedId": "d0520970-ff9b-5d4d-88ef-8cf6c8af82f7",
+      "category": "sports",
+      "navigationKeyword1": "golf",
+      "navigationKeyword2": "courses",
+      "question": "Which Scottish course hosted The Open in 2024?",
+      "correctAnswer": "Royal Troon",
+      "incorrectAnswers": [
+        "Muirfield",
+        "St Andrews",
+        "Carnoustie"
+      ],
+      "explanation": "Royal Troon was the 2024 Open Championship venue.",
+      "keywords": [
+        "golf",
+        "courses",
+        "royal-troon"
+      ],
+      "source": "https://www.theopen.com/"
+    },
+    {
+      "seedId": "cc2674ab-869b-589d-9fa3-33411ef03589",
+      "category": "sports",
+      "navigationKeyword1": "golf",
+      "navigationKeyword2": "courses",
+      "question": "Which Scottish links is often called the Home of Golf?",
+      "correctAnswer": "St Andrews",
+      "incorrectAnswers": [
+        "Royal Troon",
+        "Carnoustie",
+        "Muirfield"
+      ],
+      "explanation": "St Andrews is commonly known as the Home of Golf.",
+      "keywords": [
+        "golf",
+        "courses",
+        "st-andrews"
+      ],
+      "source": "https://www.britannica.com/sports/golf"
+    },
+    {
+      "seedId": "25890faf-1f17-5ae7-9694-c4124d2f5b52",
+      "category": "sports",
+      "navigationKeyword1": "golf",
+      "navigationKeyword2": "courses",
+      "question": "Which course hosts the Masters every year?",
+      "correctAnswer": "Augusta National",
+      "incorrectAnswers": [
+        "Pebble Beach",
+        "St Andrews",
+        "Pinehurst No. 2"
+      ],
+      "explanation": "The Masters is always played at Augusta National Golf Club.",
+      "keywords": [
+        "golf",
+        "courses",
+        "augusta"
+      ],
+      "source": "https://www.masters.com/en_US/index.html"
+    }
+  ]
+}

@@ -1,0 +1,127 @@
+{
+  "schemaVersion": 1,
+  "seedSet": "core-public-items",
+  "deltaPreviewLimit": 200,
+  "items": [
+    {
+      "seedId": "79bc15bf-e56d-501a-8c0b-f79640cc3b0e",
+      "category": "languages",
+      "navigationKeyword1": "esl",
+      "navigationKeyword2": "beginner",
+      "question": "Which phrase is a simple, polite greeting in English?",
+      "correctAnswer": "Hello.",
+      "incorrectAnswers": [
+        "Table.",
+        "Tomorrow.",
+        "Because."
+      ],
+      "explanation": "Hello is a common greeting when you meet someone.",
+      "keywords": [
+        "hello",
+        "greeting",
+        "esl-beginner"
+      ],
+      "source": "https://dictionary.cambridge.org/dictionary/english/hello"
+    },
+    {
+      "seedId": "aa54f089-743f-5fae-ab75-db6bdfec3195",
+      "category": "languages",
+      "navigationKeyword1": "esl",
+      "navigationKeyword2": "beginner",
+      "question": "Which question asks for someone's name?",
+      "correctAnswer": "What is your name?",
+      "incorrectAnswers": [
+        "Where is the door?",
+        "How old is the building?",
+        "What time is lunch?"
+      ],
+      "explanation": "What is your name? is the usual way to ask for a person's name.",
+      "keywords": [
+        "name",
+        "questions",
+        "esl-beginner"
+      ],
+      "source": "https://dictionary.cambridge.org/dictionary/english/name"
+    },
+    {
+      "seedId": "95d43b50-7b2a-58f0-bdf1-fcc83b31657d",
+      "category": "languages",
+      "navigationKeyword1": "esl",
+      "navigationKeyword2": "beginner",
+      "question": "Which verb form fits I: I ___ a student.",
+      "correctAnswer": "am",
+      "incorrectAnswers": [
+        "is",
+        "are",
+        "be"
+      ],
+      "explanation": "With I, English uses am in present simple: I am.",
+      "keywords": [
+        "be-verb",
+        "present-simple",
+        "esl-beginner"
+      ],
+      "source": "https://learnenglish.britishcouncil.org/grammar/a1-a2-grammar/present-simple"
+    },
+    {
+      "seedId": "0033297c-cd7f-5394-9491-2b3b7034e31b",
+      "category": "languages",
+      "navigationKeyword1": "esl",
+      "navigationKeyword2": "beginner",
+      "question": "Which word means the opposite of night?",
+      "correctAnswer": "day",
+      "incorrectAnswers": [
+        "road",
+        "paper",
+        "color"
+      ],
+      "explanation": "Day is the time when the sun is up; night is dark.",
+      "keywords": [
+        "day",
+        "time-words",
+        "esl-beginner"
+      ],
+      "source": "https://dictionary.cambridge.org/dictionary/english/day"
+    },
+    {
+      "seedId": "de3cc0c5-9f3c-5583-9ea3-435461b4bdd3",
+      "category": "languages",
+      "navigationKeyword1": "esl",
+      "navigationKeyword2": "beginner",
+      "question": "Which word means you feel thankful to someone?",
+      "correctAnswer": "Thank you.",
+      "incorrectAnswers": [
+        "Maybe.",
+        "Behind.",
+        "Heavy."
+      ],
+      "explanation": "Thank you shows gratitude after help or a gift.",
+      "keywords": [
+        "thank-you",
+        "gratitude",
+        "esl-beginner"
+      ],
+      "source": "https://dictionary.cambridge.org/dictionary/english/thank-you"
+    },
+    {
+      "seedId": "4e08bef1-056f-5f39-b616-7dc9c901b62f",
+      "category": "languages",
+      "navigationKeyword1": "esl",
+      "navigationKeyword2": "beginner",
+      "question": "Which word names clear liquid you drink?",
+      "correctAnswer": "water",
+      "incorrectAnswers": [
+        "chair",
+        "music",
+        "window"
+      ],
+      "explanation": "Water is the common word for the basic drink humans need.",
+      "keywords": [
+        "water",
+        "food-drink",
+        "esl-beginner"
+      ],
+      "source": "https://www.merriam-webster.com/dictionary/water"
+    }
+  ]
+}

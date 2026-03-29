@@ -1,0 +1,55 @@
+[
+  {
+    "category": "nature",
+    "question": "What is a key rule for identifying potentially poisonous plants?",
+    "correctAnswer": "Never eat plants you cannot positively identify",
+    "incorrectAnswers": [
+      "All red berries are safe",
+      "All white flowers are safe",
+      "If animals eat it, humans can too"
+    ],
+    "explanation": "Many poisonous plants look similar to edible ones, so positive identification is essential before consumption.",
+    "keywords": [
+      "safety",
+      "identification"
+    ],
+    "source": "initial seed",
+    "navigationKeyword1": "plants",
+    "navigationKeyword2": "poisonous",
+    "seedId": "c4004810-add8-51f3-9536-05fe6ead7bad"
+  },
+  {
+    "category": "nature",
+    "question": "What part of poison ivy causes the allergic reaction?",
+    "correctAnswer": "Urushiol oil found in all parts of the plant",
+    "incorrectAnswers": [
+      "Only the leaves",
+      "Only the berries",
+      "Only the roots"
+    ],
+    "explanation": "Urushiol oil is present throughout poison ivy plants and causes contact dermatitis in sensitive individuals.",
+    "keywords": [
+      "allergies",
+      "urushiol"
+    ],
+    "source": "initial seed",
+    "seedId": "a8b15ebd-0113-50aa-a0b2-7dc718c9e132"
+  },
+  {
+    "category": "nature",
+    "question": "What should you do if you suspect contact with a poisonous plant?",
+    "correctAnswer": "Wash the area immediately with soap and water",
+    "incorrectAnswers": [
+      "Wait to see if symptoms appear",
+      "Apply heat to the area",
+      "Scratch the affected area"
+    ],
+    "explanation": "Immediate washing can remove oils before they bind to skin, reducing or preventing reaction.",
+    "keywords": [
+      "first-aid",
+      "treatment"
+    ],
+    "source": "initial seed",
+    "seedId": "874cc97f-3d04-54f4-bd3b-44fdb862dcfa"
+  }
+]

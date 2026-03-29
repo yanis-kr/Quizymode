@@ -1,0 +1,207 @@
+{
+  "schemaVersion": 1,
+  "seedSet": "core-public-items",
+  "deltaPreviewLimit": 200,
+  "items": [
+    {
+      "seedId": "555379c6-cbd0-5780-847d-cca8e9b2e232",
+      "category": "sports",
+      "navigationKeyword1": "rules",
+      "navigationKeyword2": "scoring",
+      "question": "How many goals does a hat trick represent in hockey or soccer usage?",
+      "correctAnswer": "Three",
+      "incorrectAnswers": [
+        "Two",
+        "Four",
+        "Five"
+      ],
+      "explanation": "A hat trick means the same player scores three times.",
+      "keywords": [
+        "rules",
+        "scoring",
+        "hat-trick"
+      ],
+      "source": "https://www.britannica.com/sports/ice-hockey"
+    },
+    {
+      "seedId": "dc519707-22d4-5a3e-b864-89c931b235da",
+      "category": "sports",
+      "navigationKeyword1": "rules",
+      "navigationKeyword2": "scoring",
+      "question": "How many points does a successful free throw add in basketball?",
+      "correctAnswer": "One",
+      "incorrectAnswers": [
+        "Two",
+        "Three",
+        "Zero"
+      ],
+      "explanation": "A free throw is worth one point.",
+      "keywords": [
+        "rules",
+        "scoring",
+        "free-throw"
+      ],
+      "source": "https://www.britannica.com/sports/basketball"
+    },
+    {
+      "seedId": "21967d60-49ae-5883-83bb-c81870195f6d",
+      "category": "sports",
+      "navigationKeyword1": "rules",
+      "navigationKeyword2": "scoring",
+      "question": "How many points is a basket worth from inside the three-point line in basketball?",
+      "correctAnswer": "Two",
+      "incorrectAnswers": [
+        "One",
+        "Three",
+        "Four"
+      ],
+      "explanation": "Standard made field goals inside the arc are worth two points.",
+      "keywords": [
+        "rules",
+        "scoring",
+        "basketball"
+      ],
+      "source": "https://www.britannica.com/sports/basketball"
+    },
+    {
+      "seedId": "8ec8cd93-600a-54e2-a9bb-961a4f0e28be",
+      "category": "sports",
+      "navigationKeyword1": "rules",
+      "navigationKeyword2": "scoring",
+      "question": "How many points is a field goal worth in American football?",
+      "correctAnswer": "Three",
+      "incorrectAnswers": [
+        "One",
+        "Two",
+        "Six"
+      ],
+      "explanation": "A made field goal is worth three points.",
+      "keywords": [
+        "rules",
+        "scoring",
+        "field-goal"
+      ],
+      "source": "https://operations.nfl.com/learn-the-game/nfl-basics/"
+    },
+    {
+      "seedId": "87cab991-13d5-57de-b7a0-ea5f61e77698",
+      "category": "sports",
+      "navigationKeyword1": "rules",
+      "navigationKeyword2": "scoring",
+      "question": "How many points is a goal worth in soccer?",
+      "correctAnswer": "One",
+      "incorrectAnswers": [
+        "Two",
+        "Three",
+        "Six"
+      ],
+      "explanation": "Each goal counts as one score in soccer.",
+      "keywords": [
+        "rules",
+        "scoring",
+        "soccer"
+      ],
+      "source": "https://www.britannica.com/sports/football-soccer"
+    },
+    {
+      "seedId": "eff14735-745c-5344-b244-c328c5d91d49",
+      "category": "sports",
+      "navigationKeyword1": "rules",
+      "navigationKeyword2": "scoring",
+      "question": "How many points is a touchdown worth in American football before the try?",
+      "correctAnswer": "Six",
+      "incorrectAnswers": [
+        "Three",
+        "One",
+        "Seven"
+      ],
+      "explanation": "A touchdown scores six points before the extra-point attempt.",
+      "keywords": [
+        "rules",
+        "scoring",
+        "football"
+      ],
+      "source": "https://operations.nfl.com/learn-the-game/nfl-basics/"
+    },
+    {
+      "seedId": "41cfb3db-2c9c-5cee-a417-1d00d286ef76",
+      "category": "sports",
+      "navigationKeyword1": "rules",
+      "navigationKeyword2": "scoring",
+      "question": "How many runs does a solo home run add in baseball?",
+      "correctAnswer": "One",
+      "incorrectAnswers": [
+        "Two",
+        "Three",
+        "Four"
+      ],
+      "explanation": "A solo homer scores only the batter.",
+      "keywords": [
+        "rules",
+        "scoring",
+        "baseball"
+      ],
+      "source": "https://www.mlb.com/glossary"
+    },
+    {
+      "seedId": "5cd45ad7-81a0-57ac-a485-65727b6e74d8",
+      "category": "sports",
+      "navigationKeyword1": "rules",
+      "navigationKeyword2": "scoring",
+      "question": "What is it called when a tennis server wins a point with an untouched legal serve?",
+      "correctAnswer": "Ace",
+      "incorrectAnswers": [
+        "Deuce",
+        "Let",
+        "Break point"
+      ],
+      "explanation": "An ace is a clean service winner.",
+      "keywords": [
+        "rules",
+        "scoring",
+        "tennis"
+      ],
+      "source": "https://www.britannica.com/sports"
+    },
+    {
+      "seedId": "f5139dc8-0750-5dde-bb8b-1a57551cfc54",
+      "category": "sports",
+      "navigationKeyword1": "rules",
+      "navigationKeyword2": "scoring",
+      "question": "What score is called when a golfer uses exactly par on a hole?",
+      "correctAnswer": "Par",
+      "incorrectAnswers": [
+        "Birdie",
+        "Bogey",
+        "Eagle"
+      ],
+      "explanation": "Par is the expected number of strokes for the hole.",
+      "keywords": [
+        "rules",
+        "scoring",
+        "par"
+      ],
+      "source": "https://www.usga.org/content/usga/home-page/rules-hub.html"
+    },
+    {
+      "seedId": "53fa7821-47ef-5bf8-abf1-d2f31c24de78",
+      "category": "sports",
+      "navigationKeyword1": "rules",
+      "navigationKeyword2": "scoring",
+      "question": "What term is used for one stroke under par in golf?",
+      "correctAnswer": "Birdie",
+      "incorrectAnswers": [
+        "Bogey",
+        "Par",
+        "Double bogey"
+      ],
+      "explanation": "Golf uses birdie for one under par.",
+      "keywords": [
+        "rules",
+        "scoring",
+        "golf"
+      ],
+      "source": "https://www.usga.org/content/usga/home-page/rules-hub.html"
+    }
+  ]
+}

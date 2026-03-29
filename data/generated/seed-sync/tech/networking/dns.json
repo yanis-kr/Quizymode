@@ -1,0 +1,121 @@
+{
+  "schemaVersion": 1,
+  "seedSet": "core-public-items",
+  "deltaPreviewLimit": 200,
+  "items": [
+    {
+      "seedId": "c14cdafe-4a52-5d43-bd0d-db947a15d065",
+      "category": "tech",
+      "navigationKeyword1": "networking",
+      "navigationKeyword2": "dns",
+      "question": "What does DNSSEC add to plain DNS responses?",
+      "correctAnswer": "Cryptographic signatures so clients can validate data origin",
+      "incorrectAnswers": [
+        "Guaranteed encryption of all queries",
+        "Faster TCP handshakes",
+        "Automatic IPv4 to IPv6 translation"
+      ],
+      "explanation": "DNSSEC uses DNSKEY records and chains of trust to detect tampering.",
+      "keywords": [
+        "dns",
+        "dnssec"
+      ],
+      "source": "https://www.rfc-editor.org/rfc/rfc4033"
+    },
+    {
+      "seedId": "b9bf464c-d9c0-5798-b9a8-313aaca3a00a",
+      "category": "tech",
+      "navigationKeyword1": "networking",
+      "navigationKeyword2": "dns",
+      "question": "What does a CNAME record do?",
+      "correctAnswer": "Aliases one hostname to another canonical name",
+      "incorrectAnswers": [
+        "Stores a TLS private key",
+        "Maps a port to an IPv6 flow label",
+        "Defines a firewall default deny policy"
+      ],
+      "explanation": "CNAME points a name at another DNS name instead of directly at an address record.",
+      "keywords": [
+        "dns",
+        "cname"
+      ],
+      "source": "https://developer.mozilla.org/en-US/docs/Glossary/CNAME"
+    },
+    {
+      "seedId": "1dbf822c-f3f5-5ff9-a91f-ffce68ed36b1",
+      "category": "tech",
+      "navigationKeyword1": "networking",
+      "navigationKeyword2": "dns",
+      "question": "What does a PTR record commonly provide?",
+      "correctAnswer": "Reverse lookup from IP address to hostname",
+      "incorrectAnswers": [
+        "Forward mapping from IPv6 to IPv4 only",
+        "HTTP redirect location",
+        "SMTP message body"
+      ],
+      "explanation": "PTR records are used in reverse DNS zones for address-to-name mapping.",
+      "keywords": [
+        "dns",
+        "ptr"
+      ],
+      "source": "https://www.cloudflare.com/learning/dns/dns-records/dns-ptr-record/"
+    },
+    {
+      "seedId": "bf8c8e94-56c4-592d-9421-74a5f1d050b7",
+      "category": "tech",
+      "navigationKeyword1": "networking",
+      "navigationKeyword2": "dns",
+      "question": "What does a recursive resolver do for a stub client?",
+      "correctAnswer": "Follows the chain of queries to return a final answer",
+      "incorrectAnswers": [
+        "Signs TLS certificates automatically",
+        "Blocks all UDP traffic",
+        "Assigns IP addresses with DHCP"
+      ],
+      "explanation": "Recursive resolvers perform iteration and caching on behalf of clients.",
+      "keywords": [
+        "dns",
+        "resolver"
+      ],
+      "source": "https://www.cloudflare.com/learning/dns/what-is-recursive-dns/"
+    },
+    {
+      "seedId": "10370c0c-9c5e-5166-95d1-c055b0c368f3",
+      "category": "tech",
+      "navigationKeyword1": "networking",
+      "navigationKeyword2": "dns",
+      "question": "What does an A record in DNS map to?",
+      "correctAnswer": "A domain name to an IPv4 address",
+      "incorrectAnswers": [
+        "A domain name to a mail server policy only",
+        "A TCP port to a process name",
+        "A file path on disk"
+      ],
+      "explanation": "A records are the common IPv4 address records for hostnames.",
+      "keywords": [
+        "dns",
+        "records"
+      ],
+      "source": "https://www.rfc-editor.org/rfc/rfc1035"
+    },
+    {
+      "seedId": "b1079e73-2e89-56f5-a069-176bbc2b3fa2",
+      "category": "tech",
+      "navigationKeyword1": "networking",
+      "navigationKeyword2": "dns",
+      "question": "What is the purpose of the DNS TTL field?",
+      "correctAnswer": "How long resolvers may cache the answer before asking again",
+      "incorrectAnswers": [
+        "How long the TCP connection may stay open",
+        "Password rotation interval",
+        "Maximum email size"
+      ],
+      "explanation": "TTL balances freshness and load on authoritative servers.",
+      "keywords": [
+        "dns",
+        "ttl"
+      ],
+      "source": "https://www.rfc-editor.org/rfc/rfc2181"
+    }
+  ]
+}

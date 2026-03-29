@@ -1,0 +1,127 @@
+{
+  "schemaVersion": 1,
+  "seedSet": "core-public-items",
+  "deltaPreviewLimit": 200,
+  "items": [
+    {
+      "seedId": "1df143f9-3db0-5b46-a129-fafded988f9d",
+      "category": "languages",
+      "navigationKeyword1": "vocab",
+      "navigationKeyword2": "travel",
+      "question": "Which word means a place to stay away from home, often with a front desk?",
+      "correctAnswer": "hotel",
+      "incorrectAnswers": [
+        "kitchen sink",
+        "soccer ball",
+        "paint brush"
+      ],
+      "explanation": "A hotel is a business that rents rooms to travelers for short stays.",
+      "keywords": [
+        "hotel",
+        "stay",
+        "trip-words"
+      ],
+      "source": "https://learnenglish.britishcouncil.org/vocabulary/a1-a2-vocabulary/accommodation"
+    },
+    {
+      "seedId": "36ddfa85-b043-5e38-a90b-018cd2bc2bb3",
+      "category": "languages",
+      "navigationKeyword1": "vocab",
+      "navigationKeyword2": "travel",
+      "question": "Which word means a place where officers check passports and visas?",
+      "correctAnswer": "border",
+      "incorrectAnswers": [
+        "kitchen",
+        "classroom",
+        "garden"
+      ],
+      "explanation": "A border is the line between countries where officials may check documents.",
+      "keywords": [
+        "border",
+        "passport",
+        "trip-words"
+      ],
+      "source": "https://www.merriam-webster.com/dictionary/border"
+    },
+    {
+      "seedId": "25bd008e-74a7-5cd4-982b-26d3145f81f0",
+      "category": "languages",
+      "navigationKeyword1": "vocab",
+      "navigationKeyword2": "travel",
+      "question": "Which word means a planned path from one place to another?",
+      "correctAnswer": "route",
+      "incorrectAnswers": [
+        "spoon",
+        "blanket",
+        "calendar"
+      ],
+      "explanation": "A route is the way you travel between two points on a map.",
+      "keywords": [
+        "route",
+        "directions",
+        "trip-words"
+      ],
+      "source": "https://dictionary.cambridge.org/dictionary/english/route"
+    },
+    {
+      "seedId": "d0e01935-1604-51a8-bae8-18005a41a7e3",
+      "category": "languages",
+      "navigationKeyword1": "vocab",
+      "navigationKeyword2": "travel",
+      "question": "Which word means bags you take on a trip?",
+      "correctAnswer": "luggage",
+      "incorrectAnswers": [
+        "spaghetti",
+        "notebook",
+        "pillowcase"
+      ],
+      "explanation": "Luggage is the bags and cases travelers carry.",
+      "keywords": [
+        "luggage",
+        "bags",
+        "trip-words"
+      ],
+      "source": "https://www.merriam-webster.com/dictionary/luggage"
+    },
+    {
+      "seedId": "54b3fbd2-e0d3-53e8-9d19-da47adfbff54",
+      "category": "languages",
+      "navigationKeyword1": "vocab",
+      "navigationKeyword2": "travel",
+      "question": "Which word means the document that lets you board a plane?",
+      "correctAnswer": "boarding pass",
+      "incorrectAnswers": [
+        "shopping list",
+        "library card",
+        "gym towel"
+      ],
+      "explanation": "A boarding pass is the ticket or document that shows your seat and flight for boarding.",
+      "keywords": [
+        "boarding-pass",
+        "airport",
+        "trip-words"
+      ],
+      "source": "https://dictionary.cambridge.org/dictionary/english/boarding-pass"
+    },
+    {
+      "seedId": "11df71a7-bdaf-5df6-976f-37773f6df850",
+      "category": "languages",
+      "navigationKeyword1": "vocab",
+      "navigationKeyword2": "travel",
+      "question": "Which word means the time when a bus, train, or plane leaves?",
+      "correctAnswer": "departure",
+      "incorrectAnswers": [
+        "sandwich",
+        "socks",
+        "notebook"
+      ],
+      "explanation": "Departure time is when a vehicle leaves; schedules list departures and arrivals.",
+      "keywords": [
+        "departure",
+        "schedule",
+        "trip-words"
+      ],
+      "source": "https://dictionary.cambridge.org/dictionary/english/departure"
+    }
+  ]
+}

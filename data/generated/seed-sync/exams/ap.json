@@ -1,0 +1,802 @@
+{
+  "schemaVersion": 1,
+  "seedSet": "core-public-items",
+  "deltaPreviewLimit": 200,
+  "items": [
+    {
+      "seedId": "5e9c5afd-4f34-40c5-bc08-4b5010709309",
+      "category": "exams",
+      "navigationKeyword1": "ap",
+      "navigationKeyword2": "biology",
+      "question": "If an enzyme is heated far above its optimal temperature, what usually happens first?",
+      "correctAnswer": "Its shape changes and activity drops",
+      "incorrectAnswers": [
+        "It begins making ATP",
+        "It becomes a lipid",
+        "It starts replicating DNA"
+      ],
+      "explanation": "Excess heat can denature an enzyme and reduce substrate binding.",
+      "keywords": [
+        "ap-biology",
+        "enzymes",
+        "life-science"
+      ],
+      "source": "https://openstax.org/details/books/biology-2e"
+    },
+    {
+      "seedId": "a754fa46-e33e-4c38-81ed-9ef9a2527fab",
+      "category": "exams",
+      "navigationKeyword1": "ap",
+      "navigationKeyword2": "biology",
+      "question": "In natural selection, a trait tends to become more common when it does what?",
+      "correctAnswer": "Increases reproductive success",
+      "incorrectAnswers": [
+        "Appears in every organism",
+        "Requires no genes",
+        "Eliminates variation completely"
+      ],
+      "explanation": "Traits that improve survival or reproduction are more likely to be passed on.",
+      "keywords": [
+        "ap-biology",
+        "natural-selection",
+        "life-science"
+      ],
+      "source": "https://openstax.org/details/books/biology-2e"
+    },
+    {
+      "seedId": "58de316d-5d56-4b41-80df-d8b1adc2c199",
+      "category": "exams",
+      "navigationKeyword1": "ap",
+      "navigationKeyword2": "biology",
+      "question": "What is the most likely effect of a mutation that changes a codon but not the amino acid it encodes?",
+      "correctAnswer": "It is a silent mutation",
+      "incorrectAnswers": [
+        "It always stops translation",
+        "It always changes protein shape",
+        "It deletes the gene"
+      ],
+      "explanation": "A silent mutation changes the DNA sequence without changing the amino acid.",
+      "keywords": [
+        "ap-biology",
+        "gene-expression",
+        "life-science"
+      ],
+      "source": "https://openstax.org/details/books/biology-2e"
+    },
+    {
+      "seedId": "48d7697f-849d-48d8-b5a2-39d835abcc09",
+      "category": "exams",
+      "navigationKeyword1": "ap",
+      "navigationKeyword2": "biology",
+      "question": "Which process during meiosis increases genetic variation by exchanging DNA between homologous chromosomes?",
+      "correctAnswer": "Crossing over",
+      "incorrectAnswers": [
+        "Binary fission",
+        "Transcription",
+        "Mitosis"
+      ],
+      "explanation": "Crossing over occurs in meiosis I and produces new allele combinations.",
+      "keywords": [
+        "ap-biology",
+        "heredity",
+        "life-science"
+      ],
+      "source": "https://openstax.org/details/books/biology-2e"
+    },
+    {
+      "seedId": "09418ebc-2e29-4021-9c1b-973df76b5e91",
+      "category": "exams",
+      "navigationKeyword1": "ap",
+      "navigationKeyword2": "biology",
+      "question": "Which transport process moves molecules across a membrane without energy and with the help of a protein?",
+      "correctAnswer": "Facilitated diffusion",
+      "incorrectAnswers": [
+        "Active transport",
+        "Endocytosis",
+        "Osmosis"
+      ],
+      "explanation": "Facilitated diffusion uses membrane proteins but does not require ATP.",
+      "keywords": [
+        "ap-biology",
+        "cell-transport",
+        "life-science"
+      ],
+      "source": "https://openstax.org/details/books/biology-2e"
+    },
+    {
+      "seedId": "b81c22ac-3dbc-4a8b-8996-6b90e0146660",
+      "category": "exams",
+      "navigationKeyword1": "ap",
+      "navigationKeyword2": "calculus",
+      "question": "A function has a local maximum where its derivative changes in what way?",
+      "correctAnswer": "From positive to negative",
+      "incorrectAnswers": [
+        "From negative to positive",
+        "From zero to positive only",
+        "From undefined to constant"
+      ],
+      "explanation": "A sign change from positive to negative means the function goes from increasing to decreasing.",
+      "keywords": [
+        "ap-calculus",
+        "extrema",
+        "calculus"
+      ],
+      "source": "https://openstax.org/details/books/calculus-volume-1"
+    },
+    {
+      "seedId": "092299b3-43fa-4772-946a-17978bbe8c1c",
+      "category": "exams",
+      "navigationKeyword1": "ap",
+      "navigationKeyword2": "calculus",
+      "question": "If f'(x) is positive on an interval, what is true about f(x) there?",
+      "correctAnswer": "It is increasing",
+      "incorrectAnswers": [
+        "It is decreasing",
+        "It is constant",
+        "It must be negative"
+      ],
+      "explanation": "A positive derivative indicates the function is rising as x increases.",
+      "keywords": [
+        "ap-calculus",
+        "function-analysis",
+        "calculus"
+      ],
+      "source": "https://openstax.org/details/books/calculus-volume-1"
+    },
+    {
+      "seedId": "b2ec50dd-65ee-4a9f-8f95-9c0547b41c73",
+      "category": "exams",
+      "navigationKeyword1": "ap",
+      "navigationKeyword2": "calculus",
+      "question": "What does a definite integral of a rate function over an interval give?",
+      "correctAnswer": "Net change over the interval",
+      "incorrectAnswers": [
+        "A slope at one point",
+        "A horizontal asymptote",
+        "A local maximum only"
+      ],
+      "explanation": "Integrating a rate accumulates the change across the interval.",
+      "keywords": [
+        "ap-calculus",
+        "integrals",
+        "calculus"
+      ],
+      "source": "https://openstax.org/details/books/calculus-volume-1"
+    },
+    {
+      "seedId": "f553fac8-e70e-4b84-acd5-597df47821c9",
+      "category": "exams",
+      "navigationKeyword1": "ap",
+      "navigationKeyword2": "calculus",
+      "question": "What does the derivative of a function at a point represent?",
+      "correctAnswer": "The instantaneous rate of change",
+      "incorrectAnswers": [
+        "The average of all outputs",
+        "The total area under the curve",
+        "The y-intercept"
+      ],
+      "explanation": "A derivative measures how fast the function is changing at that point.",
+      "keywords": [
+        "ap-calculus",
+        "derivatives",
+        "calculus"
+      ],
+      "source": "https://openstax.org/details/books/calculus-volume-1"
+    },
+    {
+      "seedId": "1a2f7ec4-5556-4f5e-b435-6da5072efd6e",
+      "category": "exams",
+      "navigationKeyword1": "ap",
+      "navigationKeyword2": "calculus",
+      "question": "What is the derivative of x^3?",
+      "correctAnswer": "3x^2",
+      "incorrectAnswers": [
+        "x^2",
+        "3x",
+        "x^4"
+      ],
+      "explanation": "By the power rule, d/dx of x^3 is 3x^2.",
+      "keywords": [
+        "ap-calculus",
+        "power-rule",
+        "calculus"
+      ],
+      "source": "https://openstax.org/details/books/calculus-volume-1"
+    },
+    {
+      "seedId": "e1a8641c-b8ce-4662-88ec-2f9879ff6005",
+      "category": "exams",
+      "navigationKeyword1": "ap",
+      "navigationKeyword2": "chemistry",
+      "question": "An atom with 17 protons is which element?",
+      "correctAnswer": "Chlorine",
+      "incorrectAnswers": [
+        "Oxygen",
+        "Sodium",
+        "Argon"
+      ],
+      "explanation": "The number of protons determines the element, and atomic number 17 is chlorine.",
+      "keywords": [
+        "ap-chemistry",
+        "atomic-structure",
+        "chemistry"
+      ],
+      "source": "https://openstax.org/details/books/chemistry-2e"
+    },
+    {
+      "seedId": "b49ea45a-1a7c-489d-b773-b444c0ee10eb",
+      "category": "exams",
+      "navigationKeyword1": "ap",
+      "navigationKeyword2": "chemistry",
+      "question": "If more reactant is added to a system at equilibrium, the equilibrium usually shifts in which direction?",
+      "correctAnswer": "Toward products",
+      "incorrectAnswers": [
+        "Toward reactants",
+        "Nowhere, equilibrium stops",
+        "Toward zero pressure only"
+      ],
+      "explanation": "By Le Chatelier's principle, the system tends to consume the added reactant.",
+      "keywords": [
+        "ap-chemistry",
+        "equilibrium",
+        "chemistry"
+      ],
+      "source": "https://openstax.org/details/books/chemistry-2e"
+    },
+    {
+      "seedId": "0b8f8db1-70cc-4628-b268-54ba56af2b1d",
+      "category": "exams",
+      "navigationKeyword1": "ap",
+      "navigationKeyword2": "chemistry",
+      "question": "What happens to the pressure of a gas in a sealed rigid container when its temperature increases?",
+      "correctAnswer": "The pressure increases",
+      "incorrectAnswers": [
+        "The pressure decreases",
+        "The pressure stays the same",
+        "The gas disappears"
+      ],
+      "explanation": "At constant volume, higher temperature means more energetic collisions and higher pressure.",
+      "keywords": [
+        "ap-chemistry",
+        "gases",
+        "chemistry"
+      ],
+      "source": "https://openstax.org/details/books/chemistry-2e"
+    },
+    {
+      "seedId": "b138eae0-6e8c-497b-9f3f-40d984cd39a1",
+      "category": "exams",
+      "navigationKeyword1": "ap",
+      "navigationKeyword2": "chemistry",
+      "question": "What is the pH of a 0.001 M HCl solution?",
+      "correctAnswer": "3",
+      "incorrectAnswers": [
+        "1",
+        "2",
+        "11"
+      ],
+      "explanation": "0.001 equals 10^-3, so the pH is 3 for this strong acid.",
+      "keywords": [
+        "ap-chemistry",
+        "acids-and-bases",
+        "chemistry"
+      ],
+      "source": "https://openstax.org/details/books/chemistry-2e"
+    },
+    {
+      "seedId": "1830475e-ec59-4733-8857-90f6ce0e0d01",
+      "category": "exams",
+      "navigationKeyword1": "ap",
+      "navigationKeyword2": "chemistry",
+      "question": "What is the strongest intermolecular force between water molecules?",
+      "correctAnswer": "Hydrogen bonding",
+      "incorrectAnswers": [
+        "London dispersion forces only",
+        "Ionic bonding",
+        "Metallic bonding"
+      ],
+      "explanation": "Water molecules form hydrogen bonds because hydrogen is bonded to oxygen.",
+      "keywords": [
+        "ap-chemistry",
+        "intermolecular-forces",
+        "chemistry"
+      ],
+      "source": "https://openstax.org/details/books/chemistry-2e"
+    },
+    {
+      "seedId": "2c37df9b-62c7-4a91-9acf-e80a10169894",
+      "category": "exams",
+      "navigationKeyword1": "ap",
+      "navigationKeyword2": "general-ap",
+      "question": "Which AP exam is built around cellular processes, genetics, evolution, and ecology?",
+      "correctAnswer": "AP Biology",
+      "incorrectAnswers": [
+        "AP Calculus AB",
+        "AP Chemistry",
+        "AP US History"
+      ],
+      "explanation": "AP Biology centers on major biological themes including cellular processes, genetics, evolution, and ecology.",
+      "keywords": [
+        "ap-biology",
+        "test-prep"
+      ],
+      "source": "https://apstudents.collegeboard.org/courses/ap-biology"
+    },
+    {
+      "seedId": "ab5fb70f-631c-45dc-851a-a188d35b6489",
+      "category": "exams",
+      "navigationKeyword1": "ap",
+      "navigationKeyword2": "general-ap",
+      "question": "Which AP history course surveys the history of the United States from pre-Columbian societies to the present?",
+      "correctAnswer": "AP United States History",
+      "incorrectAnswers": [
+        "AP World History: Modern",
+        "AP Human Geography",
+        "AP Comparative Government and Politics"
+      ],
+      "explanation": "AP United States History surveys the political, social, cultural, and economic history of the United States.",
+      "keywords": [
+        "ap-us-history",
+        "test-prep"
+      ],
+      "source": "https://apstudents.collegeboard.org/courses/ap-united-states-history"
+    },
+    {
+      "seedId": "cbfa90bc-e828-4a02-a4cc-30cca770eb86",
+      "category": "exams",
+      "navigationKeyword1": "ap",
+      "navigationKeyword2": "general-ap",
+      "question": "Which AP math course focuses on limits, derivatives, integrals, and the Fundamental Theorem of Calculus?",
+      "correctAnswer": "AP Calculus AB",
+      "incorrectAnswers": [
+        "AP Statistics",
+        "AP Physics 1",
+        "AP Precalculus"
+      ],
+      "explanation": "AP Calculus AB covers limits, derivatives, integrals, and the Fundamental Theorem of Calculus.",
+      "keywords": [
+        "ap-calculus",
+        "test-prep"
+      ],
+      "source": "https://apstudents.collegeboard.org/courses/ap-calculus-ab"
+    },
+    {
+      "seedId": "448cb67e-c4d3-475f-8dfb-b66b1eaeb935",
+      "category": "exams",
+      "navigationKeyword1": "ap",
+      "navigationKeyword2": "general-ap",
+      "question": "Which AP science course emphasizes atomic structure, intermolecular forces, kinetics, and equilibrium?",
+      "correctAnswer": "AP Chemistry",
+      "incorrectAnswers": [
+        "AP Biology",
+        "AP Environmental Science",
+        "AP Physics C: Mechanics"
+      ],
+      "explanation": "AP Chemistry covers atomic structure, intermolecular forces, chemical reactions, kinetics, and equilibrium.",
+      "keywords": [
+        "ap-chemistry",
+        "test-prep"
+      ],
+      "source": "https://apstudents.collegeboard.org/courses/ap-chemistry"
+    },
+    {
+      "seedId": "3483c01c-4db0-4f8a-8ec5-ce3c0ff0dea8",
+      "category": "exams",
+      "navigationKeyword1": "ap",
+      "navigationKeyword2": "general-ap",
+      "question": "Which AP social science course studies behavior and mental processes?",
+      "correctAnswer": "AP Psychology",
+      "incorrectAnswers": [
+        "AP Microeconomics",
+        "AP Macroeconomics",
+        "AP Seminar"
+      ],
+      "explanation": "AP Psychology introduces the study of behavior and mental processes.",
+      "keywords": [
+        "ap-psychology",
+        "test-prep"
+      ],
+      "source": "https://apstudents.collegeboard.org/courses/ap-psychology"
+    },
+    {
+      "seedId": "733fd5c2-67dc-4122-a40d-2fa0ecf0d779",
+      "category": "exams",
+      "navigationKeyword1": "ap",
+      "navigationKeyword2": "physics",
+      "question": "A 2 kg object experiences a net force of 6 N. What is its acceleration?",
+      "correctAnswer": "3 m/s^2",
+      "incorrectAnswers": [
+        "2 m/s^2",
+        "8 m/s^2",
+        "12 m/s^2"
+      ],
+      "explanation": "By Newton's second law, a = F/m = 6/2 = 3.",
+      "keywords": [
+        "ap-physics",
+        "newtons-laws",
+        "physics"
+      ],
+      "source": "https://openstax.org/details/books/college-physics-ap-courses"
+    },
+    {
+      "seedId": "ebc815d8-4908-4813-8dbe-5bf90dd89379",
+      "category": "exams",
+      "navigationKeyword1": "ap",
+      "navigationKeyword2": "physics",
+      "question": "How much work is done by a 10 N force acting over 3 m in the same direction?",
+      "correctAnswer": "30 J",
+      "incorrectAnswers": [
+        "7 J",
+        "13 J",
+        "60 J"
+      ],
+      "explanation": "Work equals force times displacement when the force is parallel to the motion.",
+      "keywords": [
+        "ap-physics",
+        "work",
+        "physics"
+      ],
+      "source": "https://openstax.org/details/books/college-physics-ap-courses"
+    },
+    {
+      "seedId": "c42e9df1-9918-481f-9f8c-a4f4b53f228f",
+      "category": "exams",
+      "navigationKeyword1": "ap",
+      "navigationKeyword2": "physics",
+      "question": "If an object moves at constant velocity in a straight line, what is its net force?",
+      "correctAnswer": "0 N",
+      "incorrectAnswers": [
+        "Equal to its mass",
+        "Equal to its speed",
+        "Always 1 N"
+      ],
+      "explanation": "Constant velocity means zero acceleration, so the net force must be zero.",
+      "keywords": [
+        "ap-physics",
+        "forces",
+        "physics"
+      ],
+      "source": "https://openstax.org/details/books/college-physics-ap-courses"
+    },
+    {
+      "seedId": "1f66d939-6af1-4fce-9528-da3c87559df3",
+      "category": "exams",
+      "navigationKeyword1": "ap",
+      "navigationKeyword2": "physics",
+      "question": "What is the kinetic energy of a 4 kg object moving at 5 m/s?",
+      "correctAnswer": "50 J",
+      "incorrectAnswers": [
+        "20 J",
+        "40 J",
+        "100 J"
+      ],
+      "explanation": "Kinetic energy is 1/2 mv^2 = 1/2 x 4 x 25 = 50.",
+      "keywords": [
+        "ap-physics",
+        "energy",
+        "physics"
+      ],
+      "source": "https://openstax.org/details/books/college-physics-ap-courses"
+    },
+    {
+      "seedId": "c3ddbd69-2980-4344-ae92-966b4ba0934e",
+      "category": "exams",
+      "navigationKeyword1": "ap",
+      "navigationKeyword2": "physics",
+      "question": "When is momentum conserved in a system?",
+      "correctAnswer": "When there is no net external force",
+      "incorrectAnswers": [
+        "When mass is zero",
+        "When velocity is constant for each object",
+        "When the objects stop moving"
+      ],
+      "explanation": "Total momentum stays constant in an isolated system.",
+      "keywords": [
+        "ap-physics",
+        "momentum",
+        "physics"
+      ],
+      "source": "https://openstax.org/details/books/college-physics-ap-courses"
+    },
+    {
+      "seedId": "dc5fcf66-1c1d-4fde-9bf2-da556272ab01",
+      "category": "exams",
+      "navigationKeyword1": "ap",
+      "navigationKeyword2": "psychology",
+      "question": "A dog learns to salivate when it hears a bell paired with food. This is an example of what?",
+      "correctAnswer": "Classical conditioning",
+      "incorrectAnswers": [
+        "Operant conditioning",
+        "Observational learning",
+        "Cognitive dissonance"
+      ],
+      "explanation": "A neutral stimulus becomes associated with an automatic response through classical conditioning.",
+      "keywords": [
+        "ap-psychology",
+        "learning",
+        "psychology"
+      ],
+      "source": "https://openstax.org/details/books/psychology-2e"
+    },
+    {
+      "seedId": "12fdc112-29a6-486d-ab5d-b343164b24f3",
+      "category": "exams",
+      "navigationKeyword1": "ap",
+      "navigationKeyword2": "psychology",
+      "question": "Giving a reward to increase a behavior is called what?",
+      "correctAnswer": "Positive reinforcement",
+      "incorrectAnswers": [
+        "Negative reinforcement",
+        "Punishment",
+        "Extinction"
+      ],
+      "explanation": "Positive reinforcement adds a desirable outcome to strengthen behavior.",
+      "keywords": [
+        "ap-psychology",
+        "operant-conditioning",
+        "psychology"
+      ],
+      "source": "https://openstax.org/details/books/psychology-2e"
+    },
+    {
+      "seedId": "06afba5a-1930-4340-b347-adaf1e748b10",
+      "category": "exams",
+      "navigationKeyword1": "ap",
+      "navigationKeyword2": "psychology",
+      "question": "In an experiment, which variable is deliberately changed by the researcher?",
+      "correctAnswer": "Independent variable",
+      "incorrectAnswers": [
+        "Dependent variable",
+        "Control group",
+        "Correlation coefficient"
+      ],
+      "explanation": "The independent variable is manipulated to test its effect.",
+      "keywords": [
+        "ap-psychology",
+        "research-methods",
+        "psychology"
+      ],
+      "source": "https://openstax.org/details/books/psychology-2e"
+    },
+    {
+      "seedId": "e33e04ce-b1b3-4e76-b03c-0553a80cd967",
+      "category": "exams",
+      "navigationKeyword1": "ap",
+      "navigationKeyword2": "psychology",
+      "question": "What is the bystander effect?",
+      "correctAnswer": "People are less likely to help when others are present",
+      "incorrectAnswers": [
+        "People remember events more accurately in groups",
+        "People learn faster by watching others",
+        "People prefer larger social groups"
+      ],
+      "explanation": "Diffusion of responsibility can reduce helping behavior in groups.",
+      "keywords": [
+        "ap-psychology",
+        "social-psychology",
+        "psychology"
+      ],
+      "source": "https://openstax.org/details/books/psychology-2e"
+    },
+    {
+      "seedId": "8703de52-4e38-4183-a27a-92d289c34c21",
+      "category": "exams",
+      "navigationKeyword1": "ap",
+      "navigationKeyword2": "psychology",
+      "question": "Which brain structure is strongly associated with forming new explicit memories?",
+      "correctAnswer": "Hippocampus",
+      "incorrectAnswers": [
+        "Medulla",
+        "Cerebellum",
+        "Amygdala"
+      ],
+      "explanation": "The hippocampus is central to memory formation.",
+      "keywords": [
+        "ap-psychology",
+        "memory",
+        "psychology"
+      ],
+      "source": "https://openstax.org/details/books/psychology-2e"
+    },
+    {
+      "seedId": "7fbd7153-171e-403c-9ed4-d21c6a4188af",
+      "category": "exams",
+      "navigationKeyword1": "ap",
+      "navigationKeyword2": "us-history",
+      "question": "The New Deal was primarily a response to what event?",
+      "correctAnswer": "The Great Depression",
+      "incorrectAnswers": [
+        "The Civil War",
+        "World War I",
+        "The War of 1812"
+      ],
+      "explanation": "Franklin D. Roosevelt's New Deal targeted the economic crisis of the 1930s.",
+      "keywords": [
+        "ap-us-history",
+        "great-depression",
+        "history"
+      ],
+      "source": "https://openstax.org/details/books/us-history"
+    },
+    {
+      "seedId": "6db238ad-0d84-473d-8218-965cb8324150",
+      "category": "exams",
+      "navigationKeyword1": "ap",
+      "navigationKeyword2": "us-history",
+      "question": "What was the main goal of the U.S. policy of containment during the Cold War?",
+      "correctAnswer": "To limit the spread of communism",
+      "incorrectAnswers": [
+        "To expand the British Empire",
+        "To abolish NATO",
+        "To end all foreign trade"
+      ],
+      "explanation": "Containment aimed to prevent Soviet influence from expanding.",
+      "keywords": [
+        "ap-us-history",
+        "cold-war",
+        "history"
+      ],
+      "source": "https://openstax.org/details/books/us-history"
+    },
+    {
+      "seedId": "6541bc2f-39ac-474c-a317-5e431310b264",
+      "category": "exams",
+      "navigationKeyword1": "ap",
+      "navigationKeyword2": "us-history",
+      "question": "Which amendment granted birthright citizenship and equal protection under the law?",
+      "correctAnswer": "The Fourteenth Amendment",
+      "incorrectAnswers": [
+        "The First Amendment",
+        "The Tenth Amendment",
+        "The Nineteenth Amendment"
+      ],
+      "explanation": "The Fourteenth Amendment was a major Reconstruction amendment.",
+      "keywords": [
+        "ap-us-history",
+        "reconstruction",
+        "history"
+      ],
+      "source": "https://openstax.org/details/books/us-history"
+    },
+    {
+      "seedId": "1eaffa4d-02ba-4007-b145-429265754069",
+      "category": "exams",
+      "navigationKeyword1": "ap",
+      "navigationKeyword2": "us-history",
+      "question": "Which compromise admitted Missouri as a slave state and Maine as a free state?",
+      "correctAnswer": "The Missouri Compromise",
+      "incorrectAnswers": [
+        "The Compromise of 1850",
+        "The Great Compromise",
+        "The Kansas-Nebraska Act"
+      ],
+      "explanation": "The Missouri Compromise temporarily balanced free and slave states in Congress.",
+      "keywords": [
+        "ap-us-history",
+        "antebellum",
+        "history"
+      ],
+      "source": "https://openstax.org/details/books/us-history"
+    },
+    {
+      "seedId": "fef679a6-f389-4144-98d0-38d3ae178ebb",
+      "category": "exams",
+      "navigationKeyword1": "ap",
+      "navigationKeyword2": "us-history",
+      "question": "Why did Parliament pass the Stamp Act in 1765?",
+      "correctAnswer": "To raise revenue from the colonies after the French and Indian War",
+      "incorrectAnswers": [
+        "To end slavery in the colonies",
+        "To fund western railroads",
+        "To create a national bank"
+      ],
+      "explanation": "Britain sought colonial revenue to help pay war debts and imperial costs.",
+      "keywords": [
+        "ap-us-history",
+        "colonial-america",
+        "history"
+      ],
+      "source": "https://openstax.org/details/books/us-history"
+    },
+    {
+      "seedId": "62595469-7491-469b-b3e4-3583c632e5f0",
+      "category": "exams",
+      "navigationKeyword1": "ap",
+      "navigationKeyword2": "world-history",
+      "question": "In which country did the Industrial Revolution begin?",
+      "correctAnswer": "Great Britain",
+      "incorrectAnswers": [
+        "China",
+        "Russia",
+        "Spain"
+      ],
+      "explanation": "Industrialization first accelerated in Great Britain in the eighteenth century.",
+      "keywords": [
+        "ap-world-history",
+        "industrialization",
+        "history"
+      ],
+      "source": "https://openstax.org/details/books/world-history-volume-2"
+    },
+    {
+      "seedId": "2d1d716e-f439-499a-8159-c276f95d8d27",
+      "category": "exams",
+      "navigationKeyword1": "ap",
+      "navigationKeyword2": "world-history",
+      "question": "What does the term \"Columbian Exchange\" refer to?",
+      "correctAnswer": "The transfer of plants, animals, diseases, and people between hemispheres",
+      "incorrectAnswers": [
+        "The first use of paper money in Europe",
+        "A trade agreement inside the Roman Empire",
+        "The spread of railroads across Africa"
+      ],
+      "explanation": "After 1492, the Eastern and Western Hemispheres exchanged crops, animals, diseases, and populations.",
+      "keywords": [
+        "ap-world-history",
+        "global-exchange",
+        "history"
+      ],
+      "source": "https://openstax.org/details/books/world-history-volume-2"
+    },
+    {
+      "seedId": "578c0d7e-b0f6-4cce-b1c2-b73b351dc8aa",
+      "category": "exams",
+      "navigationKeyword1": "ap",
+      "navigationKeyword2": "world-history",
+      "question": "What political idea helped fuel many independence movements in the nineteenth and twentieth centuries?",
+      "correctAnswer": "Nationalism",
+      "incorrectAnswers": [
+        "Mercantilism",
+        "Feudalism",
+        "Animism"
+      ],
+      "explanation": "Nationalism encouraged groups to seek self-rule and national identity.",
+      "keywords": [
+        "ap-world-history",
+        "nationalism",
+        "history"
+      ],
+      "source": "https://openstax.org/details/books/world-history-volume-2"
+    },
+    {
+      "seedId": "dfd3082d-40c6-4a0a-b20a-0a9970219f7b",
+      "category": "exams",
+      "navigationKeyword1": "ap",
+      "navigationKeyword2": "world-history",
+      "question": "What was a major purpose of the Silk Roads?",
+      "correctAnswer": "To connect Afro-Eurasian trade networks",
+      "incorrectAnswers": [
+        "To spread feudalism to the Americas",
+        "To link Australia with Europe",
+        "To transport coal during the Industrial Revolution"
+      ],
+      "explanation": "The Silk Roads linked regions across Asia, the Middle East, and Europe through trade.",
+      "keywords": [
+        "ap-world-history",
+        "trade-networks",
+        "history"
+      ],
+      "source": "https://openstax.org/details/books/world-history-volume-2"
+    },
+    {
+      "seedId": "05b108c8-c130-4d77-b06c-1bbd45162a0a",
+      "category": "exams",
+      "navigationKeyword1": "ap",
+      "navigationKeyword2": "world-history",
+      "question": "Why was the printing press historically significant in Europe?",
+      "correctAnswer": "It spread ideas more quickly and widely",
+      "incorrectAnswers": [
+        "It replaced all handwritten laws overnight",
+        "It ended religious conflict in Europe",
+        "It made feudalism stronger"
+      ],
+      "explanation": "Cheap printed material accelerated literacy, debate, and the circulation of ideas.",
+      "keywords": [
+        "ap-world-history",
+        "cultural-developments",
+        "history"
+      ],
+      "source": "https://openstax.org/details/books/world-history-volume-2"
+    }
+  ]
+}

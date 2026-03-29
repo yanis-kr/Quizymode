@@ -1,0 +1,58 @@
+[
+  {
+    "category": "trivia",
+    "question": "What is the main ingredient in traditional Japanese miso soup?",
+    "correctAnswer": "Fermented soybeans",
+    "incorrectAnswers": [
+      "Seaweed",
+      "Rice",
+      "Fish"
+    ],
+    "explanation": "Miso soup is made from fermented soybeans, though it often includes other ingredients like seaweed and tofu.",
+    "keywords": [
+      "japanese",
+      "miso",
+      "soup"
+    ],
+    "source": "initial seed",
+    "navigationKeyword1": "food-drink",
+    "navigationKeyword2": "cuisine",
+    "seedId": "5ece2137-9a81-5633-8bba-73be7d2d64e6"
+  },
+  {
+    "category": "trivia",
+    "question": "What is the traditional Italian dish made with pasta, eggs, and pancetta?",
+    "correctAnswer": "Carbonara",
+    "incorrectAnswers": [
+      "Alfredo",
+      "Bolognese",
+      "Pesto"
+    ],
+    "explanation": "Carbonara is a classic Roman pasta dish made with eggs, cheese, pancetta, and black pepper.",
+    "keywords": [
+      "italian",
+      "pasta",
+      "traditional"
+    ],
+    "source": "initial seed",
+    "seedId": "54bdb751-f178-5b77-a1e0-60352461433d"
+  },
+  {
+    "category": "trivia",
+    "question": "Which spice is known as the 'king of spices' and is native to India?",
+    "correctAnswer": "Black pepper",
+    "incorrectAnswers": [
+      "Cinnamon",
+      "Turmeric",
+      "Cardamom"
+    ],
+    "explanation": "Black pepper has been called the 'king of spices' and was historically one of the most valuable trade commodities.",
+    "keywords": [
+      "spices",
+      "indian",
+      "pepper"
+    ],
+    "source": "initial seed",
+    "seedId": "92add74b-acce-5d0c-8419-0262189d6fe7"
+  }
+]

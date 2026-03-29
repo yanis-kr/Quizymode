@@ -1,0 +1,121 @@
+{
+  "schemaVersion": 1,
+  "seedSet": "core-public-items",
+  "deltaPreviewLimit": 200,
+  "items": [
+    {
+      "seedId": "111ea912-ad14-5497-8271-cbb7e233f1c1",
+      "category": "civics",
+      "navigationKeyword1": "us-civics",
+      "navigationKeyword2": "congress",
+      "question": "How long is a single term for a U.S. representative?",
+      "correctAnswer": "two years",
+      "incorrectAnswers": [
+        "four years",
+        "six years",
+        "eight years"
+      ],
+      "explanation": "House members stand for election every two years, reflecting the chamber's closer tie to shifting public opinion.",
+      "keywords": [
+        "house",
+        "terms"
+      ],
+      "source": "https://www.house.gov/the-house-explained"
+    },
+    {
+      "seedId": "eb63fb25-2928-5014-ae68-36e8b231626a",
+      "category": "civics",
+      "navigationKeyword1": "us-civics",
+      "navigationKeyword2": "congress",
+      "question": "How many senators does each state elect?",
+      "correctAnswer": "two",
+      "incorrectAnswers": [
+        "one",
+        "by population",
+        "ten"
+      ],
+      "explanation": "The Constitution gives every state equal representation in the Senate with two senators each.",
+      "keywords": [
+        "senate",
+        "equal-state-voice"
+      ],
+      "source": "https://www.senate.gov/senators/senators-intro.htm"
+    },
+    {
+      "seedId": "3539a33f-b6a6-567f-b629-464e042b6fe4",
+      "category": "civics",
+      "navigationKeyword1": "us-civics",
+      "navigationKeyword2": "congress",
+      "question": "Impeachment charges against federal officers begin in which chamber?",
+      "correctAnswer": "the House of Representatives",
+      "incorrectAnswers": [
+        "the Senate",
+        "the Supreme Court",
+        "state legislatures"
+      ],
+      "explanation": "The House adopts articles of impeachment; the Senate conducts trials for removal.",
+      "keywords": [
+        "impeachment",
+        "house"
+      ],
+      "source": "https://www.house.gov/the-house-explained/the-legislative-process"
+    },
+    {
+      "seedId": "de7b80b5-af50-5eff-8e41-fe46d12900ec",
+      "category": "civics",
+      "navigationKeyword1": "us-civics",
+      "navigationKeyword2": "congress",
+      "question": "Revenue bills must originate where?",
+      "correctAnswer": "the House of Representatives",
+      "incorrectAnswers": [
+        "the Senate",
+        "the Supreme Court",
+        "the president"
+      ],
+      "explanation": "The Origination Clause assigns the first step for raising revenue to the House.",
+      "keywords": [
+        "origination-clause",
+        "revenue"
+      ],
+      "source": "https://constitution.congress.gov/constitution/article-1/"
+    },
+    {
+      "seedId": "60057898-6e44-5092-8f71-2c79353140b1",
+      "category": "civics",
+      "navigationKeyword1": "us-civics",
+      "navigationKeyword2": "congress",
+      "question": "The U.S. Congress is bicameral because it contains which two chambers?",
+      "correctAnswer": "the Senate and the House of Representatives",
+      "incorrectAnswers": [
+        "the Cabinet and the Supreme Court",
+        "the House and the Electoral College",
+        "the Senate and state governors"
+      ],
+      "explanation": "Legislative power is vested in a Senate and a House under Article I.",
+      "keywords": [
+        "bicameral",
+        "congress"
+      ],
+      "source": "https://www.congress.gov/about"
+    },
+    {
+      "seedId": "3eb58cac-18e3-5483-b5d4-938525b0ce6f",
+      "category": "civics",
+      "navigationKeyword1": "us-civics",
+      "navigationKeyword2": "congress",
+      "question": "What special role does the vice president have in the Senate?",
+      "correctAnswer": "presiding officer who may vote only to break ties",
+      "incorrectAnswers": [
+        "introduces all revenue bills",
+        "chooses committee chairs",
+        "counts electoral votes alone"
+      ],
+      "explanation": "The vice president serves as Senate president and casts a vote only when senators are evenly divided.",
+      "keywords": [
+        "vice-president",
+        "senate"
+      ],
+      "source": "https://www.senate.gov/artandhistory/history/common/briefing/Vice_President.htm"
+    }
+  ]
+}

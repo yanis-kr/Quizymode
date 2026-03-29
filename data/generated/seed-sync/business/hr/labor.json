@@ -1,0 +1,121 @@
+{
+  "schemaVersion": 1,
+  "seedSet": "core-public-items",
+  "deltaPreviewLimit": 200,
+  "items": [
+    {
+      "seedId": "daa8699a-497d-4913-ab6a-890d63f2d0ab",
+      "category": "business",
+      "navigationKeyword1": "hr",
+      "navigationKeyword2": "labor",
+      "question": "What do whistleblower protections aim to prevent?",
+      "correctAnswer": "Retaliation against workers who report certain legal violations in good faith.",
+      "incorrectAnswers": [
+        "All employee complaints about coffee.",
+        "Paying workers on time.",
+        "Annual office holiday parties."
+      ],
+      "explanation": "Programs vary by statute and jurisdiction.",
+      "keywords": [
+        "whistleblower",
+        "compliance"
+      ],
+      "source": "https://www.osha.gov/whistleblower"
+    },
+    {
+      "seedId": "8f27ee5c-034c-4789-8389-63fe7778dfdb",
+      "category": "business",
+      "navigationKeyword1": "hr",
+      "navigationKeyword2": "labor",
+      "question": "What does OSHA primarily focus on?",
+      "correctAnswer": "Safe and healthy working conditions for employees.",
+      "incorrectAnswers": [
+        "Corporate branding colors.",
+        "Product pricing.",
+        "Patent filings."
+      ],
+      "explanation": "Employers must comply with applicable safety standards.",
+      "keywords": [
+        "osha",
+        "safety"
+      ],
+      "source": "https://www.osha.gov/"
+    },
+    {
+      "seedId": "cf441bd2-d8bc-4f58-9016-a353aac64d47",
+      "category": "business",
+      "navigationKeyword1": "hr",
+      "navigationKeyword2": "labor",
+      "question": "What is a common IRS theme when classifying workers as employees vs independent contractors?",
+      "correctAnswer": "Behavioral/financial control and relationship type\u2014not only the label chosen.",
+      "incorrectAnswers": [
+        "Only the worker\u2019s hat color.",
+        "Whatever saves taxes illegally.",
+        "Only the company\u2019s preference."
+      ],
+      "explanation": "Misclassification creates liability\u2014use official guidance.",
+      "keywords": [
+        "misclassification",
+        "contractors"
+      ],
+      "source": "https://www.irs.gov/businesses/small-businesses-self-employed/independent-contractor-self-employed-or-employee"
+    },
+    {
+      "seedId": "b1ec9d1d-4ec8-4d24-9e19-4c84059b4191",
+      "category": "business",
+      "navigationKeyword1": "hr",
+      "navigationKeyword2": "labor",
+      "question": "What is at-will employment (common U.S. concept)?",
+      "correctAnswer": "Either employer or employee may end employment at any time for any lawful reason, with exceptions.",
+      "incorrectAnswers": [
+        "A lifetime employment guarantee.",
+        "Illegal in every state.",
+        "Only applies to CEOs."
+      ],
+      "explanation": "Exceptions include contracts, unions, and anti-discrimination protections.",
+      "keywords": [
+        "at-will",
+        "employment-law"
+      ],
+      "source": "https://www.nlrb.gov/about-nlrb/rights-we-protect/your-rights/employment-at-will"
+    },
+    {
+      "seedId": "6a20df85-ace2-4355-bd47-f79d141e70cd",
+      "category": "business",
+      "navigationKeyword1": "hr",
+      "navigationKeyword2": "labor",
+      "question": "What is collective bargaining?",
+      "correctAnswer": "Negotiation between an employer and a union representing employees about wages and conditions.",
+      "incorrectAnswers": [
+        "A solo performance review.",
+        "A marketing A/B test.",
+        "A tax audit."
+      ],
+      "explanation": "Labor law governs representation and unfair practices.",
+      "keywords": [
+        "collective-bargaining",
+        "unions"
+      ],
+      "source": "https://www.nlrb.gov/about-nlrb/rights-we-protect/your-rights/collective-bargaining"
+    },
+    {
+      "seedId": "2271c087-1526-4e64-92c4-82a49a6f3577",
+      "category": "business",
+      "navigationKeyword1": "hr",
+      "navigationKeyword2": "labor",
+      "question": "What is the NLRB broadly responsible for?",
+      "correctAnswer": "Enforcing private-sector labor law related to union rights and unfair labor practices (U.S.).",
+      "incorrectAnswers": [
+        "Setting federal interest rates.",
+        "Issuing passports.",
+        "Managing national parks."
+      ],
+      "explanation": "Labor relations have specialized agencies and rules.",
+      "keywords": [
+        "nlrb",
+        "labor-law"
+      ],
+      "source": "https://www.nlrb.gov/"
+    }
+  ]
+}

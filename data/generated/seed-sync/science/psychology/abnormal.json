@@ -1,0 +1,235 @@
+{
+  "schemaVersion": 1,
+  "seedSet": "core-public-items",
+  "deltaPreviewLimit": 200,
+  "items": [
+    {
+      "seedId": "92ad4bfd-e74d-4d60-a5f0-76926d8b5885",
+      "category": "science",
+      "navigationKeyword1": "psychology",
+      "navigationKeyword2": "abnormal",
+      "question": "CBT targets?",
+      "correctAnswer": "Thoughts, behaviors, skills for symptom change",
+      "incorrectAnswers": [
+        "Only unconscious conflicts",
+        "Only medication",
+        "No homework"
+      ],
+      "explanation": "Evidence-based for many disorders.",
+      "keywords": [
+        "cbt",
+        "therapy"
+      ],
+      "source": "https://www.apa.org/ptsd-guideline/patients-and-families/cognitive-behavioral"
+    },
+    {
+      "seedId": "b86ffae5-4f8f-407e-bfd8-0980e7565a9e",
+      "category": "science",
+      "navigationKeyword1": "psychology",
+      "navigationKeyword2": "abnormal",
+      "question": "Comorbidity means?",
+      "correctAnswer": "Co-occurring disorders",
+      "incorrectAnswers": [
+        "Only medical",
+        "Cured status",
+        "Opposite of chronic"
+      ],
+      "explanation": "Treatment planning complexity.",
+      "keywords": [
+        "comorbidity",
+        "clinical"
+      ],
+      "source": "https://www.nimh.nih.gov/health/topics/psychotherapies"
+    },
+    {
+      "seedId": "ea648f55-4396-4a0e-a77e-c43d9cf2ef2a",
+      "category": "science",
+      "navigationKeyword1": "psychology",
+      "navigationKeyword2": "abnormal",
+      "question": "DSM purpose?",
+      "correctAnswer": "Standardize diagnostic criteria for mental disorders",
+      "incorrectAnswers": [
+        "Replace therapy",
+        "Legal sentence always",
+        "Measure IQ only"
+      ],
+      "explanation": "Clinical communication tool.",
+      "keywords": [
+        "dsm",
+        "diagnosis"
+      ],
+      "source": "https://www.psychiatry.org/psychiatrists/practice/dsm"
+    },
+    {
+      "seedId": "33ddd5a9-3200-4c0f-87de-b89f24af5bcb",
+      "category": "science",
+      "navigationKeyword1": "psychology",
+      "navigationKeyword2": "abnormal",
+      "question": "Generalized anxiety disorder pattern?",
+      "correctAnswer": "Excessive worry across domains, persistent",
+      "incorrectAnswers": [
+        "Single phobia only",
+        "Only panic attacks",
+        "Only during sleep"
+      ],
+      "explanation": "Physical tension often.",
+      "keywords": [
+        "gad",
+        "anxiety"
+      ],
+      "source": "https://www.nimh.nih.gov/health/topics/anxiety-disorders"
+    },
+    {
+      "seedId": "ff453ced-af8c-4edd-bb6c-f94ed43b1833",
+      "category": "science",
+      "navigationKeyword1": "psychology",
+      "navigationKeyword2": "abnormal",
+      "question": "Informed consent in therapy?",
+      "correctAnswer": "Clear explanation of risks/benefits/alternatives",
+      "incorrectAnswers": [
+        "Never needed",
+        "Only research",
+        "Verbal forbidden"
+      ],
+      "explanation": "Ethical standard.",
+      "keywords": [
+        "informed-consent",
+        "ethics"
+      ],
+      "source": "https://www.apa.org/ethics/code"
+    },
+    {
+      "seedId": "c8956332-1f3c-41f0-9a65-71af66fb4d5a",
+      "category": "science",
+      "navigationKeyword1": "psychology",
+      "navigationKeyword2": "abnormal",
+      "question": "Major depressive disorder core feature?",
+      "correctAnswer": "Depressed mood or anhedonia (among criteria)",
+      "incorrectAnswers": [
+        "Mania required",
+        "Hallucinations required",
+        "Only anxiety"
+      ],
+      "explanation": "Cluster of symptoms over time.",
+      "keywords": [
+        "depression",
+        "mdd"
+      ],
+      "source": "https://www.nimh.nih.gov/health/topics/depression"
+    },
+    {
+      "seedId": "5296e530-eb30-4657-8c70-6af475dc69f0",
+      "category": "science",
+      "navigationKeyword1": "psychology",
+      "navigationKeyword2": "abnormal",
+      "question": "Manic episode hallmark?",
+      "correctAnswer": "Elevated/expansive mood or irritability with energy surge (criteria)",
+      "incorrectAnswers": [
+        "Only low energy",
+        "Only sleep need increase",
+        "No impulsivity"
+      ],
+      "explanation": "Bipolar spectrum context.",
+      "keywords": [
+        "mania",
+        "bipolar"
+      ],
+      "source": "https://www.nimh.nih.gov/health/topics/bipolar-disorder"
+    },
+    {
+      "seedId": "f2c61e6a-c60e-4e99-941f-4fe973e8e425",
+      "category": "science",
+      "navigationKeyword1": "psychology",
+      "navigationKeyword2": "abnormal",
+      "question": "OCD vs obsession compulsion?",
+      "correctAnswer": "Obsessions intrusive thoughts; compulsions behaviors/mental acts",
+      "incorrectAnswers": [
+        "Same as PTSD",
+        "Only hoarding never related",
+        "Only tics"
+      ],
+      "explanation": "Distress and time-consuming.",
+      "keywords": [
+        "ocd",
+        "anxiety"
+      ],
+      "source": "https://www.nimh.nih.gov/health/topics/obsessive-compulsive-disorder-ocd"
+    },
+    {
+      "seedId": "f0381c4e-cdc1-4497-a8a6-c88ad2d34a4d",
+      "category": "science",
+      "navigationKeyword1": "psychology",
+      "navigationKeyword2": "abnormal",
+      "question": "PTSD follows?",
+      "correctAnswer": "Trauma exposure with intrusion, avoidance, arousal changes (criteria)",
+      "incorrectAnswers": [
+        "Only childhood",
+        "Any stress equal",
+        "Only substance-induced"
+      ],
+      "explanation": "Not everyone exposed develops PTSD.",
+      "keywords": [
+        "ptsd",
+        "trauma"
+      ],
+      "source": "https://www.nimh.nih.gov/health/topics/post-traumatic-stress-disorder-ptsd"
+    },
+    {
+      "seedId": "2df25395-0609-40eb-a628-46b9733018a6",
+      "category": "science",
+      "navigationKeyword1": "psychology",
+      "navigationKeyword2": "abnormal",
+      "question": "Personality disorder stability?",
+      "correctAnswer": "Enduring patterns across time/situations",
+      "incorrectAnswers": [
+        "Episodic like panic only",
+        "Only medical",
+        "Gone in weeks typically"
+      ],
+      "explanation": "Onset usually adolescence/early adult.",
+      "keywords": [
+        "personality-disorder",
+        "clinical"
+      ],
+      "source": "https://www.nimh.nih.gov/health/topics/personality-disorders"
+    },
+    {
+      "seedId": "15f243f8-b020-49c4-a51b-f1c1299c1b83",
+      "category": "science",
+      "navigationKeyword1": "psychology",
+      "navigationKeyword2": "abnormal",
+      "question": "Schizophrenia psychosis features may include?",
+      "correctAnswer": "Hallucinations/delusions/disorganized symptoms (varies)",
+      "incorrectAnswers": [
+        "Always split personality myth",
+        "Always high IQ",
+        "Only mood symptoms"
+      ],
+      "explanation": "Heterogeneous disorder.",
+      "keywords": [
+        "schizophrenia",
+        "psychosis"
+      ],
+      "source": "https://www.nimh.nih.gov/health/topics/schizophrenia"
+    },
+    {
+      "seedId": "fa904e55-26d5-4a5f-9127-ad596f5d7c71",
+      "category": "science",
+      "navigationKeyword1": "psychology",
+      "navigationKeyword2": "abnormal",
+      "question": "Stigma impact?",
+      "correctAnswer": "Reduces help-seeking and support",
+      "incorrectAnswers": [
+        "Improves outcomes always",
+        "Only historical",
+        "No evidence"
+      ],
+      "explanation": "Public education goal.",
+      "keywords": [
+        "stigma",
+        "mental-health"
+      ],
+      "source": "https://www.cdc.gov/mentalhealth/learn/index.html"
+    }
+  ]
+}

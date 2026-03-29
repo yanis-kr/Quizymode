@@ -1,0 +1,727 @@
+{
+  "schemaVersion": 1,
+  "seedSet": "core-public-items",
+  "deltaPreviewLimit": 200,
+  "items": [
+    {
+      "seedId": "c2e924e7-a5a4-528f-9946-ab6597435a7c",
+      "category": "business",
+      "navigationKeyword1": "marketing",
+      "navigationKeyword2": "branding",
+      "question": "In marketing, what is the primary purpose of a brand?",
+      "correctAnswer": "To influence perceptions so customers understand what a company offers and what differentiates it.",
+      "incorrectAnswers": [
+        "To replace pricing entirely with discounts",
+        "To guarantee customer satisfaction with no effort from the company",
+        "To automatically prevent competitors from entering the market"
+      ],
+      "explanation": "A brand helps people interpret and remember an organization\u2019s value, positioning, and consistency.",
+      "keywords": [
+        "branding",
+        "perception",
+        "differentiation"
+      ],
+      "source": "https://www.hubspot.com/brand"
+    },
+    {
+      "seedId": "3f80322e-290c-53e0-8a5c-59fb8c38b77d",
+      "category": "business",
+      "navigationKeyword1": "marketing",
+      "navigationKeyword2": "branding",
+      "question": "What does brand positioning describe?",
+      "correctAnswer": "How a brand is positioned in customers\u2019 minds relative to alternatives.",
+      "incorrectAnswers": [
+        "The exact manufacturing process used to make the product",
+        "Only the company\u2019s legal name and corporate structure",
+        "The monthly payroll schedule for marketing staff"
+      ],
+      "explanation": "Positioning explains what the brand stands for and why it is different from competitors in a clear customer-facing way.",
+      "keywords": [
+        "positioning",
+        "differentiation",
+        "brand-strategy"
+      ],
+      "source": "https://www.hubspot.com/marketing/brand-positioning"
+    },
+    {
+      "seedId": "7c688009-5340-5543-8c5a-9e8410191421",
+      "category": "business",
+      "navigationKeyword1": "marketing",
+      "navigationKeyword2": "branding",
+      "question": "What is a brand promise?",
+      "correctAnswer": "A clear statement of the value or experience customers can expect from the brand.",
+      "incorrectAnswers": [
+        "A list of all company job roles and responsibilities",
+        "A promise that every product feature is the cheapest in the market",
+        "A guarantee that returns will always be denied"
+      ],
+      "explanation": "A brand promise sets expectations, so the company must deliver consistently to build credibility.",
+      "keywords": [
+        "brand-promise",
+        "value",
+        "consistency"
+      ],
+      "source": "https://www.hubspot.com/marketing/brand-promise"
+    },
+    {
+      "seedId": "c0004161-9c91-5a3d-86b4-c979c1aaffb2",
+      "category": "business",
+      "navigationKeyword1": "marketing",
+      "navigationKeyword2": "branding",
+      "question": "What is brand equity, in practical terms?",
+      "correctAnswer": "The added value a brand gives to products or services because of recognition, trust, and associations.",
+      "incorrectAnswers": [
+        "A legal document that only covers trademarks",
+        "The current stock price of the company\u2019s parent business",
+        "A guarantee that marketing spend will always increase demand"
+      ],
+      "explanation": "Brand equity reflects customer and market perceptions that can make demand, pricing, and loyalty more favorable.",
+      "keywords": [
+        "brand-equity",
+        "recognition",
+        "value"
+      ],
+      "source": "https://www.britannica.com/money/brand-equity"
+    },
+    {
+      "seedId": "2496fce5-92fb-54fe-9fa9-d1ed0ec30e94",
+      "category": "business",
+      "navigationKeyword1": "marketing",
+      "navigationKeyword2": "branding",
+      "question": "What is the difference between brand identity and brand image?",
+      "correctAnswer": "Identity is what the company intends to communicate; image is how customers perceive the brand.",
+      "incorrectAnswers": [
+        "Identity is only colors and fonts, while image is only the company\u2019s mission statement",
+        "Identity and image always match exactly in every market",
+        "Identity is internal and image is legal, not customer-facing"
+      ],
+      "explanation": "Identity is the planned message and cues; image is the real perception shaped by experiences, messaging, and word of mouth.",
+      "keywords": [
+        "brand-identity",
+        "brand-image",
+        "customer-perception"
+      ],
+      "source": "https://moz.com/learn/seo/what-is-a-brand"
+    },
+    {
+      "seedId": "32413342-e513-5b32-bfd8-d3fc4ba36cb0",
+      "category": "business",
+      "navigationKeyword1": "marketing",
+      "navigationKeyword2": "branding",
+      "question": "Why is a logo not the same thing as a brand?",
+      "correctAnswer": "A logo is a visual symbol; a brand includes meanings, associations, and customer experiences.",
+      "incorrectAnswers": [
+        "A logo is always irrelevant to marketing decisions",
+        "A logo legally defines company culture for all employees",
+        "A brand is only the colors used on a website"
+      ],
+      "explanation": "Brand is broader than a mark\u2014customers form beliefs from many touchpoints, not just the visual identity.",
+      "keywords": [
+        "logo",
+        "brand-vs-logo",
+        "associations"
+      ],
+      "source": "https://www.hubspot.com/brand"
+    },
+    {
+      "seedId": "8b11f4a5-9e99-5f34-8ec0-861fc4a6038e",
+      "category": "business",
+      "navigationKeyword1": "marketing",
+      "navigationKeyword2": "content",
+      "question": "What does \u201ccontent distribution\u201d typically refer to?",
+      "correctAnswer": "How you promote and place content so the target audience can find and consume it.",
+      "incorrectAnswers": [
+        "How you calculate production budgets only",
+        "How you decide stock keeping units for inventory",
+        "The legal process for registering content copyrights"
+      ],
+      "explanation": "Distribution includes channels like social, email, search, and partnerships\u2014so content reaches the intended readers.",
+      "keywords": [
+        "distribution",
+        "reach",
+        "channels"
+      ],
+      "source": "https://moz.com/learn/seo/content-marketing"
+    },
+    {
+      "seedId": "4bfcb7d6-7ef6-5630-847b-df982f0939fe",
+      "category": "business",
+      "navigationKeyword1": "marketing",
+      "navigationKeyword2": "content",
+      "question": "What is an editorial calendar used for?",
+      "correctAnswer": "Planning what content will be published, when, and for which audience or goal.",
+      "incorrectAnswers": [
+        "Deciding payroll taxes without involving marketing",
+        "Writing only the headline after the article is already published",
+        "Replacing SEO research entirely with random topics"
+      ],
+      "explanation": "An editorial calendar creates consistency and alignment between content themes, timing, and marketing objectives.",
+      "keywords": [
+        "editorial-calendar",
+        "planning",
+        "consistency"
+      ],
+      "source": "https://www.hubspot.com/"
+    },
+    {
+      "seedId": "bbd6562a-59e1-583d-a6c9-004ed22e4d3b",
+      "category": "business",
+      "navigationKeyword1": "marketing",
+      "navigationKeyword2": "content",
+      "question": "What is content repurposing?",
+      "correctAnswer": "Reusing the same core idea across different formats or channels to reach more people.",
+      "incorrectAnswers": [
+        "Deleting old content to start from scratch every week",
+        "Changing the meaning of a message to match unrelated trending topics",
+        "Publishing without any distribution plan so no one sees it"
+      ],
+      "explanation": "Repurposing improves efficiency by turning one research-backed idea into multiple assets (e.g., blog post to video).",
+      "keywords": [
+        "repurposing",
+        "efficiency",
+        "distribution"
+      ],
+      "source": "https://www.hubspot.com/content-marketing"
+    },
+    {
+      "seedId": "c1fe7be2-ed7b-598b-b42c-db876a8e723b",
+      "category": "business",
+      "navigationKeyword1": "marketing",
+      "navigationKeyword2": "content",
+      "question": "What is the core idea behind content marketing?",
+      "correctAnswer": "Create and share useful content to attract an audience and support conversions over time.",
+      "incorrectAnswers": [
+        "Only sending random sales emails with no value to the reader",
+        "Guaranteeing instant purchases after a single post",
+        "Avoiding any measurement so you never need to improve"
+      ],
+      "explanation": "Content marketing focuses on providing value, building trust, and guiding people toward action with relevant information.",
+      "keywords": [
+        "content-marketing",
+        "value",
+        "audience"
+      ],
+      "source": "https://www.hubspot.com/content-marketing"
+    },
+    {
+      "seedId": "32a68c92-b856-554a-9058-d3b1ceae54b9",
+      "category": "business",
+      "navigationKeyword1": "marketing",
+      "navigationKeyword2": "content",
+      "question": "Which metric is most directly connected to how well content satisfies searchers?",
+      "correctAnswer": "Search engagement signals like click-through rate (CTR) and time-on-page (as a proxy).",
+      "incorrectAnswers": [
+        "The company\u2019s quarterly payroll totals",
+        "The number of server racks in the hosting facility only",
+        "Whether the content is internally audited for accounting"
+      ],
+      "explanation": "When people click and engage, it often indicates that content matches the query intent more effectively than alternatives.",
+      "keywords": [
+        "engagement",
+        "ctr",
+        "intent"
+      ],
+      "source": "https://www.investopedia.com/"
+    },
+    {
+      "seedId": "b5251985-c96a-58c6-81ab-7d31988eb44a",
+      "category": "business",
+      "navigationKeyword1": "marketing",
+      "navigationKeyword2": "content",
+      "question": "Why do marketers use calls to action (CTAs) in content?",
+      "correctAnswer": "To guide readers toward a next step that matches the content\u2019s goal.",
+      "incorrectAnswers": [
+        "To avoid any measurable outcomes so results are never tracked",
+        "To make the article longer without changing purpose",
+        "To replace the need for product information"
+      ],
+      "explanation": "A CTA connects content to an objective, such as signing up, downloading, or contacting sales.",
+      "keywords": [
+        "ctas",
+        "conversion",
+        "user-journey"
+      ],
+      "source": "https://moz.com/"
+    },
+    {
+      "seedId": "e5fa7e1f-c4e1-5bc3-8abd-87f06de25295",
+      "category": "business",
+      "navigationKeyword1": "marketing",
+      "navigationKeyword2": "digital",
+      "question": "What does a conversion funnel represent in digital marketing?",
+      "correctAnswer": "The steps from first interaction to a target action (like a signup or purchase).",
+      "incorrectAnswers": [
+        "The steps from manufacturing to delivery only",
+        "A guaranteed sequence where every visitor converts",
+        "The process of calculating taxes owed from online sales"
+      ],
+      "explanation": "Funnels help teams identify where users drop off so they can improve the experience and performance.",
+      "keywords": [
+        "conversion-funnel",
+        "conversion",
+        "funnel-optimization"
+      ],
+      "source": "https://www.investopedia.com/"
+    },
+    {
+      "seedId": "c8c463b8-3e17-51db-b824-dcbee0085b7a",
+      "category": "business",
+      "navigationKeyword1": "marketing",
+      "navigationKeyword2": "digital",
+      "question": "What does digital marketing primarily involve?",
+      "correctAnswer": "Using online channels to attract, engage, and convert customers.",
+      "incorrectAnswers": [
+        "Relying only on print ads with no digital tracking",
+        "Advertising only in-person to customers who cannot search online",
+        "Replacing all customer service with automated billing"
+      ],
+      "explanation": "Digital marketing focuses on online channels where you can reach audiences, measure performance, and optimize results.",
+      "keywords": [
+        "digital-marketing",
+        "online-channels",
+        "conversion"
+      ],
+      "source": "https://www.hubspot.com/marketing/digital-marketing"
+    },
+    {
+      "seedId": "6d074f4f-f9c2-5944-b54d-bd63da146fd7",
+      "category": "business",
+      "navigationKeyword1": "marketing",
+      "navigationKeyword2": "digital",
+      "question": "What is attribution in marketing measurement?",
+      "correctAnswer": "The method of assigning credit to marketing touches that contribute to a conversion.",
+      "incorrectAnswers": [
+        "A tax rule for deciding how to expense advertising",
+        "A guarantee that one touch always causes conversions",
+        "A way to prevent customers from comparing offers"
+      ],
+      "explanation": "Attribution attempts to estimate which interactions influenced the final conversion.",
+      "keywords": [
+        "attribution",
+        "measurement",
+        "touchpoints"
+      ],
+      "source": "https://www.hubspot.com/"
+    },
+    {
+      "seedId": "6ececd5f-40c0-5b82-bc50-3ab7328f72c4",
+      "category": "business",
+      "navigationKeyword1": "marketing",
+      "navigationKeyword2": "digital",
+      "question": "What is the practical purpose of A/B testing?",
+      "correctAnswer": "To compare two versions to learn which one performs better for a defined metric.",
+      "incorrectAnswers": [
+        "To select the version that looks best aesthetically only",
+        "To randomly change websites with no metric goal",
+        "To avoid learning by testing every option at once"
+      ],
+      "explanation": "A/B tests create evidence by comparing variants under controlled conditions and evaluating a metric like conversion rate.",
+      "keywords": [
+        "ab-testing",
+        "experimentation",
+        "conversion-rate"
+      ],
+      "source": "https://moz.com/learn/seo/ab-testing"
+    },
+    {
+      "seedId": "b41f225b-16d8-54ca-902b-8cf59f744e80",
+      "category": "business",
+      "navigationKeyword1": "marketing",
+      "navigationKeyword2": "digital",
+      "question": "What is \u201cowned, earned, and paid media\u201d describing?",
+      "correctAnswer": "Different ways a brand gains reach: what you control (owned), what others share (earned), and what you buy (paid).",
+      "incorrectAnswers": [
+        "Different types of product inventory categories",
+        "Different accounting categories for marketing spend",
+        "Only paid advertising categories with different budgets"
+      ],
+      "explanation": "This framework classifies media sources by control and how attention is gained, helping marketers plan channel mix.",
+      "keywords": [
+        "media-mix",
+        "owned-earned-paid",
+        "channel-strategy"
+      ],
+      "source": "https://www.hubspot.com/owned-earned-and-paid-media"
+    },
+    {
+      "seedId": "f5d480f3-6922-5990-af06-dad1a8f45e78",
+      "category": "business",
+      "navigationKeyword1": "marketing",
+      "navigationKeyword2": "digital",
+      "question": "Why do marketers use analytics in digital campaigns?",
+      "correctAnswer": "To measure behavior and outcomes, then improve targeting, messaging, and channel choices.",
+      "incorrectAnswers": [
+        "To remove the need for any experiments",
+        "To ensure every ad is equally effective by default",
+        "To avoid collecting any user data at all"
+      ],
+      "explanation": "Analytics turns campaign activity into measurable signals so teams can learn and optimize.",
+      "keywords": [
+        "analytics",
+        "optimization",
+        "measurement"
+      ],
+      "source": "https://moz.com/"
+    },
+    {
+      "seedId": "64c784bd-d69c-5486-a23b-85d0cdfd09c2",
+      "category": "business",
+      "navigationKeyword1": "marketing",
+      "navigationKeyword2": "research",
+      "question": "In market sizing, what does TAM stand for?",
+      "correctAnswer": "Total addressable market, the overall potential market size for a product or service.",
+      "incorrectAnswers": [
+        "Total available margins, a measure of profit",
+        "Time-to-approve model for product launches",
+        "Target acceptance metric used in quality programs"
+      ],
+      "explanation": "TAM represents the maximum potential demand if the company could serve the whole market segment it targets.",
+      "keywords": [
+        "tam",
+        "market-sizing",
+        "demand"
+      ],
+      "source": "https://www.investopedia.com/"
+    },
+    {
+      "seedId": "fa7d4838-61ae-5a76-a730-a8f1ca9802fc",
+      "category": "business",
+      "navigationKeyword1": "marketing",
+      "navigationKeyword2": "research",
+      "question": "What does segmentation in marketing research mean?",
+      "correctAnswer": "Dividing a market into groups of customers with similar needs, behaviors, or characteristics.",
+      "incorrectAnswers": [
+        "Randomly picking customers so you never bias results",
+        "Only separating customers by geography and ignoring behavior",
+        "Combining all customers into one group so messages are identical"
+      ],
+      "explanation": "Segmentation supports targeting and positioning by matching messaging and offers to different customer groups.",
+      "keywords": [
+        "segmentation",
+        "targeting",
+        "positioning"
+      ],
+      "source": "https://www.hubspot.com/"
+    },
+    {
+      "seedId": "efab8349-bc2e-5d5b-8fe6-26ec605604b9",
+      "category": "business",
+      "navigationKeyword1": "marketing",
+      "navigationKeyword2": "research",
+      "question": "What is a common purpose of surveys in marketing research?",
+      "correctAnswer": "Collect structured feedback or measurements from a sample to understand opinions, behaviors, or needs.",
+      "incorrectAnswers": [
+        "Guarantee precise predictions for stock prices next quarter",
+        "Replace the need to define any target audience",
+        "Only measure employee job satisfaction, never customers"
+      ],
+      "explanation": "Surveys turn questions into measurable responses so teams can analyze patterns and make decisions based on evidence.",
+      "keywords": [
+        "surveys",
+        "measurement",
+        "insights"
+      ],
+      "source": "https://www.moz.com/"
+    },
+    {
+      "seedId": "95339dd1-5cdc-5aa7-9bf7-734b497a38b9",
+      "category": "business",
+      "navigationKeyword1": "marketing",
+      "navigationKeyword2": "research",
+      "question": "What is a competitive analysis generally trying to do?",
+      "correctAnswer": "Understand competitors\u2019 offerings, strategies, and positioning to make clearer decisions about your own approach.",
+      "incorrectAnswers": [
+        "Guarantee that competitors will never change their products",
+        "Replace all customer interviews with guesses about competitors",
+        "Remove the need to track performance metrics after launch"
+      ],
+      "explanation": "Competitive analysis reduces uncertainty by mapping the competitive landscape so you can choose how to differentiate and respond.",
+      "keywords": [
+        "competitive-analysis",
+        "positioning",
+        "strategy"
+      ],
+      "source": "https://moz.com/"
+    },
+    {
+      "seedId": "1ecf59c0-777e-525e-b435-0ee195008bf9",
+      "category": "business",
+      "navigationKeyword1": "marketing",
+      "navigationKeyword2": "research",
+      "question": "What is market research mainly used for?",
+      "correctAnswer": "Collecting information about customers, markets, and competitors to make better marketing decisions.",
+      "incorrectAnswers": [
+        "Replacing customer interviews with guesswork so decisions are faster",
+        "Guaranteeing every product will sell immediately",
+        "Avoiding any data collection by relying only on internal opinions"
+      ],
+      "explanation": "Market research helps reduce uncertainty by gathering evidence about demand, needs, and competitive context.",
+      "keywords": [
+        "market-research",
+        "customers",
+        "competitors"
+      ],
+      "source": "https://www.investopedia.com/terms/m/marketresearch.asp"
+    },
+    {
+      "seedId": "0b048f92-2cf5-5d4f-bb94-bce1d44b83a9",
+      "category": "business",
+      "navigationKeyword1": "marketing",
+      "navigationKeyword2": "research",
+      "question": "What is the difference between primary and secondary research?",
+      "correctAnswer": "Primary research collects new data firsthand; secondary research uses existing data collected by others.",
+      "incorrectAnswers": [
+        "Primary research is always cheaper, secondary always takes months",
+        "Secondary research collects new data firsthand, primary does not",
+        "They refer only to advertising channels, not data type"
+      ],
+      "explanation": "Primary research is original (e.g., interviews or surveys), while secondary research reuses existing publications and datasets.",
+      "keywords": [
+        "primary-research",
+        "secondary-research",
+        "data-sources"
+      ],
+      "source": "https://www.oecd.org/"
+    },
+    {
+      "seedId": "e438af54-ef10-55a2-84bd-d45e7b8e1364",
+      "category": "business",
+      "navigationKeyword1": "marketing",
+      "navigationKeyword2": "seo",
+      "question": "What does SEO primarily aim to improve?",
+      "correctAnswer": "Visibility in unpaid (organic) search results for relevant queries.",
+      "incorrectAnswers": [
+        "Only the cost of paid ads with no impact on organic results",
+        "The shipping time of products to customers",
+        "The legal compliance status of a website"
+      ],
+      "explanation": "SEO focuses on ranking and discoverability in search without paying directly for each click like ads.",
+      "keywords": [
+        "seo",
+        "organic-search",
+        "visibility"
+      ],
+      "source": "https://moz.com/beginners-guide-to-seo"
+    },
+    {
+      "seedId": "f3e4927e-d4dc-5186-8e77-17b0245d755a",
+      "category": "business",
+      "navigationKeyword1": "marketing",
+      "navigationKeyword2": "seo",
+      "question": "What does search intent describe?",
+      "correctAnswer": "What a searcher is trying to accomplish when they type a query.",
+      "incorrectAnswers": [
+        "The weather conditions at the user\u2019s location",
+        "The exact character limit for a page title",
+        "The company\u2019s internal goal, unrelated to what the user wants"
+      ],
+      "explanation": "Search intent helps teams align content with why users searched\u2014informational, navigational, or transactional.",
+      "keywords": [
+        "search-intent",
+        "queries",
+        "relevance"
+      ],
+      "source": "https://www.hubspot.com/marketing/seo"
+    },
+    {
+      "seedId": "91c2e489-c603-5beb-a54b-f81e58979962",
+      "category": "business",
+      "navigationKeyword1": "marketing",
+      "navigationKeyword2": "seo",
+      "question": "What is a SERP snippet?",
+      "correctAnswer": "The short preview of information shown in search results under a link.",
+      "incorrectAnswers": [
+        "The company\u2019s shipping label on an order",
+        "A legally required audit form for search engines",
+        "The internal list of all keywords never shown to users"
+      ],
+      "explanation": "Snippets are what searchers see\u2014title and summary text can influence click-through behavior.",
+      "keywords": [
+        "serp",
+        "snippets",
+        "click-through"
+      ],
+      "source": "https://moz.com/learn/seo"
+    },
+    {
+      "seedId": "efc5165b-2b8a-5aa6-a07a-8934c9fbdd14",
+      "category": "business",
+      "navigationKeyword1": "marketing",
+      "navigationKeyword2": "seo",
+      "question": "What is typically an example of on-page SEO?",
+      "correctAnswer": "Optimizing page content and elements like headings to better match search intent.",
+      "incorrectAnswers": [
+        "Paying for a sponsored placement in search results",
+        "Only requesting back-end server upgrades with no content changes",
+        "Eliminating all internal links so crawlers can\u2019t navigate"
+      ],
+      "explanation": "On-page SEO covers what\u2019s on the page\u2014content quality, structure, and relevance\u2014so search engines can understand it.",
+      "keywords": [
+        "on-page-seo",
+        "content-structure",
+        "search-intent"
+      ],
+      "source": "https://moz.com/learn/seo/on-page-seo"
+    },
+    {
+      "seedId": "d29659f7-30b5-5163-b06b-24f9abb2303f",
+      "category": "business",
+      "navigationKeyword1": "marketing",
+      "navigationKeyword2": "seo",
+      "question": "What is \u201ctechnical SEO\u201d mainly about?",
+      "correctAnswer": "Making a site crawlable and understandable so search engines can access and interpret pages.",
+      "incorrectAnswers": [
+        "Only writing blog posts, with no regard for site structure",
+        "Avoiding any metadata so pages are always hidden",
+        "Ensuring every page has the same word count"
+      ],
+      "explanation": "Technical SEO covers site performance and structure elements that affect crawling, indexing, and rendering.",
+      "keywords": [
+        "technical-seo",
+        "crawling",
+        "indexing"
+      ],
+      "source": "https://moz.com/learn/seo/technical-seo"
+    },
+    {
+      "seedId": "9404c682-601f-5e6f-8c37-beeb4845146d",
+      "category": "business",
+      "navigationKeyword1": "marketing",
+      "navigationKeyword2": "seo",
+      "question": "Why are backlinks often discussed in SEO?",
+      "correctAnswer": "They can help signal authority and relevance to search engines.",
+      "incorrectAnswers": [
+        "They are required to submit taxes correctly",
+        "They only affect the website\u2019s colors and branding",
+        "They guarantee ranking positions regardless of content"
+      ],
+      "explanation": "Backlinks act as endorsements from other sites, influencing how search engines evaluate authority and credibility.",
+      "keywords": [
+        "backlinks",
+        "authority",
+        "ranking"
+      ],
+      "source": "https://moz.com/learn/seo/backlinks"
+    },
+    {
+      "seedId": "0c95f82b-a370-5924-8e6d-85c35dc390ce",
+      "category": "business",
+      "navigationKeyword1": "marketing",
+      "navigationKeyword2": "social-media",
+      "question": "In social media strategy, what does \u201ccommunity management\u201d typically involve?",
+      "correctAnswer": "Responding to comments/messages and fostering healthy interactions around the brand.",
+      "incorrectAnswers": [
+        "Never replying to users to avoid mistakes",
+        "Deleting critical feedback automatically",
+        "Only updating the company\u2019s chart of accounts"
+      ],
+      "explanation": "Community management helps maintain trust by turning audience interactions into responsive, constructive communication.",
+      "keywords": [
+        "community-management",
+        "engagement",
+        "trust"
+      ],
+      "source": "https://sproutsocial.com/insights/social-media-community-management/"
+    },
+    {
+      "seedId": "5ae8b154-a900-5673-bf9a-653fb9fe398d",
+      "category": "business",
+      "navigationKeyword1": "marketing",
+      "navigationKeyword2": "social-media",
+      "question": "What does \u201cbrand voice\u201d mean in social media?",
+      "correctAnswer": "The consistent style, tone, and messaging patterns the brand uses in posts and replies.",
+      "incorrectAnswers": [
+        "The company\u2019s physical delivery speed of items",
+        "The accounting method used to record ad spend",
+        "A random style change for every post to maximize confusion"
+      ],
+      "explanation": "Brand voice keeps messaging consistent, helping audiences recognize and trust the brand across channels.",
+      "keywords": [
+        "brand-voice",
+        "tone",
+        "consistency"
+      ],
+      "source": "https://www.hubspot.com/brand-voice"
+    },
+    {
+      "seedId": "6e4d846a-807a-505d-aea8-fe33b771811c",
+      "category": "business",
+      "navigationKeyword1": "marketing",
+      "navigationKeyword2": "social-media",
+      "question": "What is a content cadence?",
+      "correctAnswer": "A planned schedule/frequency for when you publish content.",
+      "incorrectAnswers": [
+        "A guarantee that every post will get the same number of views",
+        "A legal rule that defines how users must be charged",
+        "A one-time announcement that ends the need for updates"
+      ],
+      "explanation": "Cadence supports consistency so audiences know what to expect and algorithms can learn what content performs.",
+      "keywords": [
+        "content-cadence",
+        "consistency",
+        "publishing"
+      ],
+      "source": "https://moz.com/"
+    },
+    {
+      "seedId": "828da427-bbf1-5e4e-a42e-e693a38792e8",
+      "category": "business",
+      "navigationKeyword1": "marketing",
+      "navigationKeyword2": "social-media",
+      "question": "What is the practical purpose of social listening?",
+      "correctAnswer": "Monitoring and analyzing what people say online to inform marketing and product decisions.",
+      "incorrectAnswers": [
+        "Replacing all customer support so issues never get handled",
+        "Ensuring posts are never adjusted after publishing",
+        "Collecting taxes owed from customer conversations"
+      ],
+      "explanation": "Social listening provides signals about sentiment, topics, and emerging concerns so teams can respond appropriately.",
+      "keywords": [
+        "social-listening",
+        "sentiment",
+        "insights"
+      ],
+      "source": "https://www.hubspot.com/"
+    },
+    {
+      "seedId": "47af1141-8f65-51ae-8392-3c73ceeb7ce1",
+      "category": "business",
+      "navigationKeyword1": "marketing",
+      "navigationKeyword2": "social-media",
+      "question": "Which metric is most directly related to audience engagement on social media?",
+      "correctAnswer": "Interactions such as likes, comments, shares, and saves relative to reach or followers.",
+      "incorrectAnswers": [
+        "The company\u2019s depreciation schedule",
+        "Only the total number of employees",
+        "The interest rate a bank charges for loans"
+      ],
+      "explanation": "Engagement metrics indicate how actively people interact with content, not just whether it was displayed.",
+      "keywords": [
+        "social-media",
+        "engagement",
+        "reach"
+      ],
+      "source": "https://www.hubspot.com/social-media-marketing"
+    },
+    {
+      "seedId": "8f4998ce-486d-52f2-9c21-414e40fd9dd0",
+      "category": "business",
+      "navigationKeyword1": "marketing",
+      "navigationKeyword2": "social-media",
+      "question": "Why do marketers often use a content calendar for social media?",
+      "correctAnswer": "To coordinate themes, campaigns, and posting dates so efforts align with goals.",
+      "incorrectAnswers": [
+        "To avoid tracking any results after posting",
+        "To publish without planning and only react to random trends",
+        "To ensure the company cannot change messaging"
+      ],
+      "explanation": "A calendar helps teams plan ahead, reduce last-minute work, and align content to specific objectives.",
+      "keywords": [
+        "content-calendar",
+        "planning",
+        "campaigns"
+      ],
+      "source": "https://www.investopedia.com/"
+    }
+  ]
+}

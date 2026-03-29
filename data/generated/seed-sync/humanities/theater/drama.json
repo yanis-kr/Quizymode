@@ -1,0 +1,45 @@
+{
+  "schemaVersion": 1,
+  "seedSet": "core-public-items",
+  "deltaPreviewLimit": 200,
+  "items": [
+    {
+      "seedId": "9a1afb15-05c2-5800-9034-7b8ac7792a87",
+      "category": "humanities",
+      "navigationKeyword1": "theater",
+      "navigationKeyword2": "drama",
+      "question": "In theater, drama usually centers on what?",
+      "correctAnswer": "conflict expressed through action and dialogue",
+      "incorrectAnswers": [
+        "paint mixing",
+        "museum storage",
+        "silent sculpture"
+      ],
+      "explanation": "Drama develops tension through characters, choices, and conflict.",
+      "keywords": [
+        "theater-drama",
+        "conflict"
+      ],
+      "source": "https://www.britannica.com/art/drama-literature"
+    },
+    {
+      "seedId": "8758d025-a5ac-5c24-b6be-8f72ab00799f",
+      "category": "humanities",
+      "navigationKeyword1": "theater",
+      "navigationKeyword2": "drama",
+      "question": "Why does dialogue matter so much in drama?",
+      "correctAnswer": "it reveals relationships, motives, and conflict",
+      "incorrectAnswers": [
+        "it replaces costumes",
+        "it tunes the orchestra",
+        "it hangs the scenery"
+      ],
+      "explanation": "In theater, dialogue carries much of the story, emotion, and conflict.",
+      "keywords": [
+        "theater-drama",
+        "dialogue"
+      ],
+      "source": "https://www.nationaltheatre.org.uk/discover-more"
+    }
+  ]
+}

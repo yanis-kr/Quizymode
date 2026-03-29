@@ -1,0 +1,121 @@
+{
+  "schemaVersion": 1,
+  "seedSet": "core-public-items",
+  "deltaPreviewLimit": 200,
+  "items": [
+    {
+      "seedId": "18b1ed6e-6aa1-5dab-b55e-2629d4543fe0",
+      "category": "civics",
+      "navigationKeyword1": "elections",
+      "navigationKeyword2": "primaries",
+      "question": "A nonpartisan primary can send the top vote-getters to the general election even if they share what trait?",
+      "correctAnswer": "the same party affiliation or no party label",
+      "incorrectAnswers": [
+        "the same home state only",
+        "the same age only",
+        "the same congressional district only"
+      ],
+      "explanation": "Some states use top-two or similar systems where the two leading finishers advance regardless of party.",
+      "keywords": [
+        "nonpartisan-primary",
+        "top-two"
+      ],
+      "source": "https://www.law.cornell.edu/wex/elections"
+    },
+    {
+      "seedId": "6666326a-eb5f-5e65-bfc6-59e42f754a8c",
+      "category": "civics",
+      "navigationKeyword1": "elections",
+      "navigationKeyword2": "primaries",
+      "question": "Compared with a typical primary election run by local officials, a caucus often differs how?",
+      "correctAnswer": "party members meet and follow party rules rather than only casting secret ballots statewide",
+      "incorrectAnswers": [
+        "it is always conducted entirely by mail",
+        "it is illegal in all states",
+        "it replaces the general election"
+      ],
+      "explanation": "Caucuses rely on party-run meetings and procedures, while primaries are usually state-run secret-ballot elections.",
+      "keywords": [
+        "caucus",
+        "primary"
+      ],
+      "source": "https://www.usa.gov/presidential-election-process"
+    },
+    {
+      "seedId": "757945a7-78da-5180-81dc-963250faad5a",
+      "category": "civics",
+      "navigationKeyword1": "elections",
+      "navigationKeyword2": "primaries",
+      "question": "Delegates chosen through primaries and caucuses mainly serve what purpose at the national party convention?",
+      "correctAnswer": "formally nominating the party's presidential candidate according to party rules",
+      "incorrectAnswers": [
+        "counting November popular votes",
+        "certifying Electoral College certificates",
+        "appointing federal judges"
+      ],
+      "explanation": "Delegates represent voter preferences under party rules and cast votes to nominate the ticket.",
+      "keywords": [
+        "delegates",
+        "national-convention"
+      ],
+      "source": "https://www.usa.gov/presidential-election-process"
+    },
+    {
+      "seedId": "6c4af343-9654-5151-a853-515a54f79846",
+      "category": "civics",
+      "navigationKeyword1": "elections",
+      "navigationKeyword2": "primaries",
+      "question": "In a closed primary, who is typically allowed to vote in a party's primary?",
+      "correctAnswer": "registered voters affiliated with that party",
+      "incorrectAnswers": [
+        "any registered voter regardless of party",
+        "only delegates chosen at caucuses",
+        "only members of Congress"
+      ],
+      "explanation": "Closed primaries limit participation to voters registered with the party holding the primary.",
+      "keywords": [
+        "closed-primary",
+        "party-rules"
+      ],
+      "source": "https://www.law.cornell.edu/wex/elections"
+    },
+    {
+      "seedId": "34e67c44-567b-5eef-b9c8-5e53bfd6658c",
+      "category": "civics",
+      "navigationKeyword1": "elections",
+      "navigationKeyword2": "primaries",
+      "question": "In an open primary, a voter generally may do what?",
+      "correctAnswer": "choose which party's primary ballot to use without being registered with that party",
+      "incorrectAnswers": [
+        "vote in every party's primary on the same day",
+        "vote only if unaffiliated with any party",
+        "skip registration entirely"
+      ],
+      "explanation": "Open primaries let voters pick a party ballot at the primary, though exact rules vary by state.",
+      "keywords": [
+        "open-primary",
+        "voter-choice"
+      ],
+      "source": "https://www.law.cornell.edu/wex/elections"
+    },
+    {
+      "seedId": "82a5a864-6a05-5242-9b8a-fd9621f78d1c",
+      "category": "civics",
+      "navigationKeyword1": "elections",
+      "navigationKeyword2": "primaries",
+      "question": "Who sets the dates and basic rules for presidential primaries and caucuses?",
+      "correctAnswer": "state law and party rules, within federal and party deadlines",
+      "incorrectAnswers": [
+        "only the president",
+        "a single national election board",
+        "the Electoral College"
+      ],
+      "explanation": "States and parties schedule contests, though parties also set delegate rules and window requirements.",
+      "keywords": [
+        "primary-calendar",
+        "state-law"
+      ],
+      "source": "https://www.usa.gov/presidential-election-process"
+    }
+  ]
+}

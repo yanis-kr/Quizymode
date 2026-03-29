@@ -1,0 +1,127 @@
+{
+  "schemaVersion": 1,
+  "seedSet": "core-public-items",
+  "deltaPreviewLimit": 200,
+  "items": [
+    {
+      "seedId": "01c87ff1-40cc-57b9-a253-35e134ec2053",
+      "category": "languages",
+      "navigationKeyword1": "french",
+      "navigationKeyword2": "vocab",
+      "question": "What is the usual French word for \"big\"?",
+      "correctAnswer": "grand",
+      "incorrectAnswers": [
+        "petit",
+        "nouveau",
+        "bon"
+      ],
+      "explanation": "\"Grand\" is a very common adjective meaning big when describing many nouns (agreement rules still apply).",
+      "keywords": [
+        "big",
+        "adjectives",
+        "french-vocab"
+      ],
+      "source": "https://www.collinsdictionary.com/dictionary/french-english/grand"
+    },
+    {
+      "seedId": "9fcacc96-e81e-554d-828d-d7ef2c867b08",
+      "category": "languages",
+      "navigationKeyword1": "french",
+      "navigationKeyword2": "vocab",
+      "question": "What is the usual French word for \"bread\"?",
+      "correctAnswer": "pain",
+      "incorrectAnswers": [
+        "fromage",
+        "viande",
+        "riz"
+      ],
+      "explanation": "\"Pain\" is the common word for bread.",
+      "keywords": [
+        "bread",
+        "food-drink",
+        "french-vocab"
+      ],
+      "source": "https://www.collinsdictionary.com/dictionary/french-english/pain"
+    },
+    {
+      "seedId": "96a35959-d1cd-5737-bd8a-6d6a3756f978",
+      "category": "languages",
+      "navigationKeyword1": "french",
+      "navigationKeyword2": "vocab",
+      "question": "What is the usual French word for \"thank you\"?",
+      "correctAnswer": "merci",
+      "incorrectAnswers": [
+        "s'il vous pla\u00eet",
+        "pardon",
+        "bonjour"
+      ],
+      "explanation": "\"Merci\" is the standard way to say thank you.",
+      "keywords": [
+        "thank-you",
+        "politeness",
+        "french-vocab"
+      ],
+      "source": "https://www.collinsdictionary.com/dictionary/french-english/merci"
+    },
+    {
+      "seedId": "981551ea-ca8e-5c03-baf4-197471cc531e",
+      "category": "languages",
+      "navigationKeyword1": "french",
+      "navigationKeyword2": "vocab",
+      "question": "What is the usual French word for \"today\"?",
+      "correctAnswer": "aujourd'hui",
+      "incorrectAnswers": [
+        "demain",
+        "hier",
+        "maintenant"
+      ],
+      "explanation": "\"Aujourd'hui\" means today.",
+      "keywords": [
+        "today",
+        "time",
+        "french-vocab"
+      ],
+      "source": "https://dictionary.cambridge.org/dictionary/french-english/aujourd%27hui"
+    },
+    {
+      "seedId": "24390ec4-7959-5696-808e-47717248adb5",
+      "category": "languages",
+      "navigationKeyword1": "french",
+      "navigationKeyword2": "vocab",
+      "question": "What is the usual French word for \"water\"?",
+      "correctAnswer": "eau",
+      "incorrectAnswers": [
+        "lait",
+        "pain",
+        "vin"
+      ],
+      "explanation": "\"Eau\" is the everyday word for water.",
+      "keywords": [
+        "water",
+        "food-drink",
+        "french-vocab"
+      ],
+      "source": "https://dictionary.cambridge.org/dictionary/french-english/eau"
+    },
+    {
+      "seedId": "07a3c8ac-2beb-5022-9d2e-0b1f123af917",
+      "category": "languages",
+      "navigationKeyword1": "french",
+      "navigationKeyword2": "vocab",
+      "question": "What is the usual French word for a male friend?",
+      "correctAnswer": "ami",
+      "incorrectAnswers": [
+        "fr\u00e8re",
+        "voisin",
+        "chef"
+      ],
+      "explanation": "\"Ami\" means (male) friend; \"amie\" is used for a female friend.",
+      "keywords": [
+        "friend",
+        "people",
+        "french-vocab"
+      ],
+      "source": "https://dictionary.cambridge.org/dictionary/french-english/ami"
+    }
+  ]
+}

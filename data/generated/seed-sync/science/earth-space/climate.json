@@ -1,0 +1,235 @@
+{
+  "schemaVersion": 1,
+  "seedSet": "core-public-items",
+  "deltaPreviewLimit": 200,
+  "items": [
+    {
+      "seedId": "8b325e45-056b-433b-a1ca-32ec63a1513c",
+      "category": "science",
+      "navigationKeyword1": "earth-space",
+      "navigationKeyword2": "climate",
+      "question": "What is El Ni\u00f1o (concept)?",
+      "correctAnswer": "Warm phase of ENSO affecting Pacific and global weather",
+      "incorrectAnswers": [
+        "A permanent ocean current",
+        "A type of glacier",
+        "A moon cycle"
+      ],
+      "explanation": "Trade wind changes alter sea surface temperatures.",
+      "keywords": [
+        "el-nino",
+        "enso"
+      ],
+      "source": "https://www.climate.gov/news-features/blogs/enso/what-el-ni\u00f1o-and-what-does-it-mean"
+    },
+    {
+      "seedId": "7e6febb6-5ad2-4d09-a04f-28a97a3b1383",
+      "category": "science",
+      "navigationKeyword1": "earth-space",
+      "navigationKeyword2": "climate",
+      "question": "What is IPCC?",
+      "correctAnswer": "Intergovernmental Panel on Climate Change assessments",
+      "incorrectAnswers": [
+        "A weather app",
+        "A hurricane name list",
+        "A mineral database"
+      ],
+      "explanation": "Synthesizes climate science for policymakers.",
+      "keywords": [
+        "ipcc",
+        "assessment"
+      ],
+      "source": "https://www.ipcc.ch/"
+    },
+    {
+      "seedId": "6daea406-9a9b-4e91-999f-5413d00104e1",
+      "category": "science",
+      "navigationKeyword1": "earth-space",
+      "navigationKeyword2": "climate",
+      "question": "What is La Ni\u00f1a?",
+      "correctAnswer": "Cool phase of ENSO",
+      "incorrectAnswers": [
+        "Same as El Ni\u00f1o",
+        "A hurricane category",
+        "A drought law"
+      ],
+      "explanation": "Often opposite rainfall teleconnections.",
+      "keywords": [
+        "la-nina",
+        "enso"
+      ],
+      "source": "https://www.climate.gov/news-features/blogs/enso/what-la-ni\u00f1a-and-what-does-it-mean"
+    },
+    {
+      "seedId": "3449e27c-5e43-4ca2-999e-5a23d93bf81c",
+      "category": "science",
+      "navigationKeyword1": "earth-space",
+      "navigationKeyword2": "climate",
+      "question": "What is albedo?",
+      "correctAnswer": "Fraction of sunlight reflected",
+      "incorrectAnswers": [
+        "Heat content of ocean",
+        "Wind speed",
+        "Air pressure"
+      ],
+      "explanation": "Ice and clouds increase planetary albedo.",
+      "keywords": [
+        "albedo",
+        "radiation"
+      ],
+      "source": "https://climate.nasa.gov/news/2948/earths-albedo/"
+    },
+    {
+      "seedId": "0ce95ad7-b390-4ab1-8e5d-f5017a8782ca",
+      "category": "science",
+      "navigationKeyword1": "earth-space",
+      "navigationKeyword2": "climate",
+      "question": "What is carbon footprint (basic idea)?",
+      "correctAnswer": "GHG emissions attributable to activities",
+      "incorrectAnswers": [
+        "Only CO in car exhaust",
+        "Only water use",
+        "Only plastic mass"
+      ],
+      "explanation": "Often expressed as CO2-equivalent.",
+      "keywords": [
+        "ghg",
+        "emissions"
+      ],
+      "source": "https://www.epa.gov/ghgemissions/understanding-global-warming-potentials"
+    },
+    {
+      "seedId": "a4b478fe-524d-4ff3-9ca7-c158efbc79c2",
+      "category": "science",
+      "navigationKeyword1": "earth-space",
+      "navigationKeyword2": "climate",
+      "question": "What is climate normals?",
+      "correctAnswer": "Long-term averages and variability (often 30-year)",
+      "incorrectAnswers": [
+        "Yesterday\u2019s weather",
+        "One storm track",
+        "A single thermometer reading"
+      ],
+      "explanation": "WMO uses standard reference periods.",
+      "keywords": [
+        "climate-normals",
+        "averages"
+      ],
+      "source": "https://www.ncei.noaa.gov/access/monitoring/climate-normals/"
+    },
+    {
+      "seedId": "b2036f6e-3e9e-48dd-ba97-8799e9c81d9a",
+      "category": "science",
+      "navigationKeyword1": "earth-space",
+      "navigationKeyword2": "climate",
+      "question": "What is feedback in climate (example)?",
+      "correctAnswer": "Ice melt lowers albedo causing more warming",
+      "incorrectAnswers": [
+        "Always stabilizing",
+        "Never exists",
+        "Only daily weather"
+      ],
+      "explanation": "Positive feedback amplifies change.",
+      "keywords": [
+        "feedback",
+        "albedo"
+      ],
+      "source": "https://climate.nasa.gov/evidence/"
+    },
+    {
+      "seedId": "d5a70a9a-5b0c-4af6-991e-842980233f5c",
+      "category": "science",
+      "navigationKeyword1": "earth-space",
+      "navigationKeyword2": "climate",
+      "question": "What is greenhouse effect (natural)?",
+      "correctAnswer": "Gases trap heat; warms Earth\u2019s surface",
+      "incorrectAnswers": [
+        "Stops all sunlight",
+        "Cools Earth instantly",
+        "Only human-made"
+      ],
+      "explanation": "Without it Earth would be much colder.",
+      "keywords": [
+        "greenhouse-effect",
+        "energy-balance"
+      ],
+      "source": "https://climate.nasa.gov/causes/"
+    },
+    {
+      "seedId": "2d086c76-b087-4a72-95db-ac51643d004c",
+      "category": "science",
+      "navigationKeyword1": "earth-space",
+      "navigationKeyword2": "climate",
+      "question": "What is mitigation vs adaptation?",
+      "correctAnswer": "Reduce causes vs cope with impacts",
+      "incorrectAnswers": [
+        "Same word",
+        "Only adaptation matters",
+        "Only mitigation is defined"
+      ],
+      "explanation": "Both are used in climate strategies.",
+      "keywords": [
+        "mitigation",
+        "adaptation"
+      ],
+      "source": "https://www.un.org/en/climatechange/science/key-findings#physical-science"
+    },
+    {
+      "seedId": "98e020fc-2aef-4be3-9a95-bdee1574493c",
+      "category": "science",
+      "navigationKeyword1": "earth-space",
+      "navigationKeyword2": "climate",
+      "question": "What is proxy data in paleoclimate?",
+      "correctAnswer": "Indirect records like ice cores and tree rings",
+      "incorrectAnswers": [
+        "Only thermometers since 1800",
+        "Only radar",
+        "Only GPS speed"
+      ],
+      "explanation": "Extends climate knowledge before instruments.",
+      "keywords": [
+        "paleoclimate",
+        "proxies"
+      ],
+      "source": "https://www.climate.gov/maps-data/education/paleoclimatology-proxies"
+    },
+    {
+      "seedId": "cf962b28-cef6-4cc8-8311-038e7381ad6b",
+      "category": "science",
+      "navigationKeyword1": "earth-space",
+      "navigationKeyword2": "climate",
+      "question": "What is sea level rise driver (major)?",
+      "correctAnswer": "Thermal expansion + land ice melt",
+      "incorrectAnswers": [
+        "Only boats displacing water",
+        "Only tides",
+        "Only earthquakes"
+      ],
+      "explanation": "Climate change increases ocean heat and ice loss.",
+      "keywords": [
+        "sea-level",
+        "climate-change"
+      ],
+      "source": "https://climate.nasa.gov/vital-signs/sea-level/"
+    },
+    {
+      "seedId": "7b06070a-0819-4815-9c77-716e6602e087",
+      "category": "science",
+      "navigationKeyword1": "earth-space",
+      "navigationKeyword2": "climate",
+      "question": "What is urban heat island?",
+      "correctAnswer": "Cities warmer than surrounding rural areas",
+      "incorrectAnswers": [
+        "Cities cooler always",
+        "Only at night never",
+        "Only in winter never"
+      ],
+      "explanation": "Surfaces and waste heat alter local climate.",
+      "keywords": [
+        "uhi",
+        "cities"
+      ],
+      "source": "https://www.epa.gov/heatislands/learn-about-heat-islands"
+    }
+  ]
+}

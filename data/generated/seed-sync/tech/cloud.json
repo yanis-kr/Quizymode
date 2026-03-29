@@ -1,0 +1,805 @@
+{
+  "schemaVersion": 1,
+  "seedSet": "core-public-items",
+  "deltaPreviewLimit": 200,
+  "items": [
+    {
+      "seedId": "843347db-674a-59cc-8867-b5ddbad35dd3",
+      "category": "tech",
+      "navigationKeyword1": "cloud",
+      "navigationKeyword2": "aws",
+      "question": "In the shared responsibility model, what is generally the customer\u2019s responsibility for data in the cloud?",
+      "correctAnswer": "securing and classifying their data and managing access to it",
+      "incorrectAnswers": [
+        "physically destroying data center disks on request",
+        "cooling the building housing racks",
+        "manufacturing CPUs"
+      ],
+      "explanation": "AWS operates the cloud infrastructure; customers configure protections for their content, identities, and workloads.",
+      "keywords": [
+        "aws",
+        "security"
+      ],
+      "source": "https://aws.amazon.com/compliance/shared-responsibility-model/"
+    },
+    {
+      "seedId": "47e009b8-35e1-52eb-adfe-2343c6c52818",
+      "category": "tech",
+      "navigationKeyword1": "cloud",
+      "navigationKeyword2": "aws",
+      "question": "What does IAM control in AWS?",
+      "correctAnswer": "who is authenticated and what actions they are authorized to perform on resources",
+      "incorrectAnswers": [
+        "only billing alerts",
+        "only hardware procurement",
+        "only DNS record creation"
+      ],
+      "explanation": "Identity and Access Management defines principals, policies, and permissions for AWS API calls.",
+      "keywords": [
+        "aws",
+        "iam"
+      ],
+      "source": "https://docs.aws.amazon.com/IAM/latest/UserGuide/introduction.html"
+    },
+    {
+      "seedId": "14d470c5-476c-5463-a84b-7b147af590ff",
+      "category": "tech",
+      "navigationKeyword1": "cloud",
+      "navigationKeyword2": "aws",
+      "question": "What does horizontal scaling usually mean for an application tier?",
+      "correctAnswer": "adding more instances to handle load rather than only enlarging one machine",
+      "incorrectAnswers": [
+        "rotating logs vertically",
+        "compressing images only",
+        "reducing the number of Regions"
+      ],
+      "explanation": "Scaling out adds capacity by parallelizing work across more nodes, common in cloud elasticity patterns.",
+      "keywords": [
+        "aws",
+        "scaling"
+      ],
+      "source": "https://www.ibm.com/cloud/learn/scaling"
+    },
+    {
+      "seedId": "614c1bd4-cd17-5773-bc33-d1082ed56ce7",
+      "category": "tech",
+      "navigationKeyword1": "cloud",
+      "navigationKeyword2": "aws",
+      "question": "What is an Amazon VPC primarily used for?",
+      "correctAnswer": "a logically isolated virtual network where you define subnets, routing, and security controls",
+      "incorrectAnswers": [
+        "a managed email service",
+        "a desktop IDE",
+        "a single S3 bucket policy"
+      ],
+      "explanation": "A VPC lets you place resources like EC2 instances in a private network topology you control.",
+      "keywords": [
+        "aws",
+        "networking"
+      ],
+      "source": "https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html"
+    },
+    {
+      "seedId": "3a762937-c6c3-52fb-a3fc-af010104a71b",
+      "category": "tech",
+      "navigationKeyword1": "cloud",
+      "navigationKeyword2": "aws",
+      "question": "What is the relationship between an AWS Region and an Availability Zone?",
+      "correctAnswer": "a Region groups multiple isolated Availability Zones connected by low-latency links",
+      "incorrectAnswers": [
+        "an AZ contains many Regions worldwide",
+        "Regions and AZs are identical names",
+        "AZs exist only outside AWS"
+      ],
+      "explanation": "Regions are geographic areas; each has multiple AZs so workloads can stay resilient within a Region.",
+      "keywords": [
+        "aws",
+        "regions"
+      ],
+      "source": "https://docs.aws.amazon.com/global-infrastructure/latest/awsgsg/aws-global-infrastructure.html"
+    },
+    {
+      "seedId": "92aa18f5-0bab-5b2f-a8cb-72bbbb67e65c",
+      "category": "tech",
+      "navigationKeyword1": "cloud",
+      "navigationKeyword2": "aws",
+      "question": "What must be globally unique in Amazon S3 among all AWS accounts?",
+      "correctAnswer": "the bucket name (within the partition\u2019s namespace rules)",
+      "incorrectAnswers": [
+        "each object\u2019s size",
+        "the AWS account email address",
+        "the Region code string"
+      ],
+      "explanation": "S3 bucket names share a global namespace, so collisions are prevented by uniqueness requirements.",
+      "keywords": [
+        "aws",
+        "s3"
+      ],
+      "source": "https://docs.aws.amazon.com/AmazonS3/latest/userguide/bucketnamingrules.html"
+    },
+    {
+      "seedId": "8a6f4d79-c682-51dd-96f1-0409f45ae6ef",
+      "category": "tech",
+      "navigationKeyword1": "cloud",
+      "navigationKeyword2": "azure",
+      "question": "What does ARM stand for in Azure deployment tooling?",
+      "correctAnswer": "Azure Resource Manager",
+      "incorrectAnswers": [
+        "Advanced Recovery Mode",
+        "Application Route Map",
+        "Automated Runtime Module"
+      ],
+      "explanation": "Azure Resource Manager is the control plane that processes templates and API calls to create and update resources consistently.",
+      "keywords": [
+        "azure",
+        "arm"
+      ],
+      "source": "https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/overview"
+    },
+    {
+      "seedId": "f050a631-36fd-5bbf-a36f-f7dc31695629",
+      "category": "tech",
+      "navigationKeyword1": "cloud",
+      "navigationKeyword2": "azure",
+      "question": "What does a user-assigned managed identity provide to an Azure resource?",
+      "correctAnswer": "an Azure AD identity as its own resource that can be shared by multiple workloads",
+      "incorrectAnswers": [
+        "a password stored in plain text in code",
+        "a certificate that never expires",
+        "a Linux-only kernel module"
+      ],
+      "explanation": "Managed identities let Azure services authenticate to other Azure APIs without embedding secrets in code.",
+      "keywords": [
+        "azure",
+        "identity"
+      ],
+      "source": "https://learn.microsoft.com/en-us/entra/identity/managed-identities-azure-resources/overview"
+    },
+    {
+      "seedId": "cf82a4a5-5099-5056-895f-6e9bcc6af213",
+      "category": "tech",
+      "navigationKeyword1": "cloud",
+      "navigationKeyword2": "azure",
+      "question": "What is an Azure Availability Zone?",
+      "correctAnswer": "physically separate datacenters within a Region with independent power, cooling, and networking",
+      "incorrectAnswers": [
+        "a pricing discount tier",
+        "a backup tape format",
+        "a container image registry"
+      ],
+      "explanation": "Zonal services can tolerate datacenter failure by spreading replicas across zones in the same Region.",
+      "keywords": [
+        "azure",
+        "resilience"
+      ],
+      "source": "https://learn.microsoft.com/en-us/azure/reliability/availability-zones-overview"
+    },
+    {
+      "seedId": "4b972af2-7644-5b75-81ee-937c5f292cd1",
+      "category": "tech",
+      "navigationKeyword1": "cloud",
+      "navigationKeyword2": "azure",
+      "question": "What is an Azure Region?",
+      "correctAnswer": "a geographic area containing one or more datacenter clusters with defined data residency boundaries",
+      "incorrectAnswers": [
+        "a single CPU core",
+        "a user account alias",
+        "a subscription billing tier"
+      ],
+      "explanation": "Regions let you place workloads near users and meet locality requirements while using paired regions for resilience.",
+      "keywords": [
+        "azure",
+        "regions"
+      ],
+      "source": "https://www.ibm.com/cloud/learn/regions-zones"
+    },
+    {
+      "seedId": "6b2c55b5-c5d3-5018-9e41-779093c5c292",
+      "category": "tech",
+      "navigationKeyword1": "cloud",
+      "navigationKeyword2": "azure",
+      "question": "What is an Azure Resource Group?",
+      "correctAnswer": "a container that holds related resources for a solution with shared lifecycle and management scope",
+      "incorrectAnswers": [
+        "a physical rack in one city only",
+        "a single virtual machine",
+        "a DNS zone file"
+      ],
+      "explanation": "Resource groups organize Azure assets like VMs, networks, and databases for deployment and permissions.",
+      "keywords": [
+        "azure",
+        "resource-groups"
+      ],
+      "source": "https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/manage-resource-groups-portal"
+    },
+    {
+      "seedId": "1ea824bc-409a-50a7-aaeb-263d54ace4ab",
+      "category": "tech",
+      "navigationKeyword1": "cloud",
+      "navigationKeyword2": "azure",
+      "question": "What is an Azure subscription primarily used to organize?",
+      "correctAnswer": "billing, quotas, and access boundaries for Azure resources",
+      "incorrectAnswers": [
+        "only email inboxes",
+        "only Git repositories",
+        "only DNS TTL values"
+      ],
+      "explanation": "Subscriptions group resources for invoicing and policy application under an Entra ID tenant.",
+      "keywords": [
+        "azure",
+        "subscriptions"
+      ],
+      "source": "https://learn.microsoft.com/en-us/azure/cloud-adoption-framework/ready/azure-best-practices/organize-subscriptions"
+    },
+    {
+      "seedId": "b4c1dafb-7860-5f6a-a82f-55f4fcbbd097",
+      "category": "tech",
+      "navigationKeyword1": "cloud",
+      "navigationKeyword2": "containers",
+      "question": "What Linux kernel features commonly isolate containers from each other?",
+      "correctAnswer": "namespaces and cgroups (control groups)",
+      "incorrectAnswers": [
+        "only BIOS passwords",
+        "only JPEG compression",
+        "only RAID 0"
+      ],
+      "explanation": "Namespaces separate process views while cgroups limit CPU, memory, and I/O for groups of processes.",
+      "keywords": [
+        "containers",
+        "linux"
+      ],
+      "source": "https://www.kernel.org/doc/html/latest/admin-guide/cgroup-v2.html"
+    },
+    {
+      "seedId": "e8503cfa-6357-5b6a-bbdd-d4c749534470",
+      "category": "tech",
+      "navigationKeyword1": "cloud",
+      "navigationKeyword2": "containers",
+      "question": "What does the OCI Image Specification standardize?",
+      "correctAnswer": "the format and metadata for container images so tools can interoperate",
+      "incorrectAnswers": [
+        "only desktop wallpaper formats",
+        "only SQL query plans",
+        "only TLS cipher names"
+      ],
+      "explanation": "Open Container Initiative specs let registries, runtimes, and build tools share a common image model.",
+      "keywords": [
+        "containers",
+        "oci"
+      ],
+      "source": "https://github.com/opencontainers/image-spec/blob/main/spec.md"
+    },
+    {
+      "seedId": "54f39fb8-5c2c-5712-964e-3d6290edf9bb",
+      "category": "tech",
+      "navigationKeyword1": "cloud",
+      "navigationKeyword2": "containers",
+      "question": "What is a container registry used for?",
+      "correctAnswer": "storing and distributing images with versioning and access control",
+      "incorrectAnswers": [
+        "running databases only",
+        "replacing DNS entirely",
+        "printing labels"
+      ],
+      "explanation": "Registries host tagged images so clusters and developers pull consistent builds.",
+      "keywords": [
+        "containers",
+        "registry"
+      ],
+      "source": "https://docs.docker.com/docker-hub/repos/"
+    },
+    {
+      "seedId": "444efcf9-5a59-5072-a68f-498fbf3fc6fc",
+      "category": "tech",
+      "navigationKeyword1": "cloud",
+      "navigationKeyword2": "containers",
+      "question": "What is the main difference between an image and a container?",
+      "correctAnswer": "an image is a packaged filesystem snapshot; a container is a running instance of that image",
+      "incorrectAnswers": [
+        "they are identical terms",
+        "an image is only a network cable",
+        "containers cannot use CPUs"
+      ],
+      "explanation": "Images are immutable artifacts; containers add a writable layer and process isolation on top.",
+      "keywords": [
+        "containers",
+        "docker"
+      ],
+      "source": "https://docs.docker.com/get-started/docker-concepts/the-basics/what-is-an-image/"
+    },
+    {
+      "seedId": "620c0233-edd7-50ea-a592-a87aae11c323",
+      "category": "tech",
+      "navigationKeyword1": "cloud",
+      "navigationKeyword2": "containers",
+      "question": "Why should a container usually run one main process per container?",
+      "correctAnswer": "it keeps lifecycle, scaling, and signals clearer for orchestrators and health checks",
+      "incorrectAnswers": [
+        "kernels forbid multiple threads",
+        "only one port may exist on a network",
+        "Docker bans shells"
+      ],
+      "explanation": "Single-purpose containers map cleanly to restart policies and horizontal scaling of replicas.",
+      "keywords": [
+        "containers",
+        "patterns"
+      ],
+      "source": "https://docs.docker.com/develop/develop-images/dockerfile_best-practices/#decouple-applications"
+    },
+    {
+      "seedId": "3d67d94c-53a0-580d-a72b-3db705e08f07",
+      "category": "tech",
+      "navigationKeyword1": "cloud",
+      "navigationKeyword2": "containers",
+      "question": "Why should secrets not be baked into container images?",
+      "correctAnswer": "image layers can leak credentials to anyone with pull access or history tools",
+      "incorrectAnswers": [
+        "secrets make images smaller",
+        "registries encrypt layers with your password automatically",
+        "images cannot store files"
+      ],
+      "explanation": "Supply secrets at runtime from a vault or orchestrator instead of committing them into builds.",
+      "keywords": [
+        "containers",
+        "security"
+      ],
+      "source": "https://docs.docker.com/develop/security-best-practices/"
+    },
+    {
+      "seedId": "5a5d322c-54f4-57d7-bfbc-fb62b11cd174",
+      "category": "tech",
+      "navigationKeyword1": "cloud",
+      "navigationKeyword2": "gcp",
+      "question": "How are IAM policies attached in Google Cloud\u2019s resource hierarchy?",
+      "correctAnswer": "they can be set at organization, folder, project, or resource level and inherit downward",
+      "incorrectAnswers": [
+        "only on individual log files",
+        "only inside a single VM RAM page",
+        "only by mailing support"
+      ],
+      "explanation": "Policy inheritance lets administrators grant access broadly or narrowly along the org tree.",
+      "keywords": [
+        "gcp",
+        "iam"
+      ],
+      "source": "https://cloud.google.com/iam/docs/overview"
+    },
+    {
+      "seedId": "65abe010-22c2-5bc6-b476-992873934a4b",
+      "category": "tech",
+      "navigationKeyword1": "cloud",
+      "navigationKeyword2": "gcp",
+      "question": "In Google Cloud, what is the top-level container that owns resources, IAM policies, and billing linkage?",
+      "correctAnswer": "a project",
+      "incorrectAnswers": [
+        "a pod",
+        "a bucket ACL only",
+        "a single Compute Engine disk"
+      ],
+      "explanation": "Projects isolate resources and permissions; APIs, quotas, and billing are associated with a project.",
+      "keywords": [
+        "gcp",
+        "projects"
+      ],
+      "source": "https://cloud.google.com/resource-manager/docs/cloud-platform-resource-hierarchy"
+    },
+    {
+      "seedId": "1bf19017-7681-5914-a90a-fc1753cbe981",
+      "category": "tech",
+      "navigationKeyword1": "cloud",
+      "navigationKeyword2": "gcp",
+      "question": "What is a Google Cloud VPC network in practice?",
+      "correctAnswer": "a virtual network for your cloud resources with subnets, routes, and firewall rules",
+      "incorrectAnswers": [
+        "a physical cable between offices",
+        "a BigQuery dataset only",
+        "a Chrome browser profile"
+      ],
+      "explanation": "VPC networks connect Compute Engine VMs, GKE clusters, and other services with controllable IP addressing.",
+      "keywords": [
+        "gcp",
+        "networking"
+      ],
+      "source": "https://www.ibm.com/cloud/learn/vpc"
+    },
+    {
+      "seedId": "6e7c00da-2354-5add-bf99-a2edb7fa4f96",
+      "category": "tech",
+      "navigationKeyword1": "cloud",
+      "navigationKeyword2": "gcp",
+      "question": "What is a Google Cloud region?",
+      "correctAnswer": "a geographic area where you can run resources with locality and latency characteristics",
+      "incorrectAnswers": [
+        "a single CPU instruction set",
+        "a BigQuery SQL keyword",
+        "a Chrome OS channel"
+      ],
+      "explanation": "Choosing a region affects latency to users and which services and SKUs are available.",
+      "keywords": [
+        "gcp",
+        "regions"
+      ],
+      "source": "https://cloud.google.com/about/locations"
+    },
+    {
+      "seedId": "e646b06e-009b-521c-b12a-d9015dd14fed",
+      "category": "tech",
+      "navigationKeyword1": "cloud",
+      "navigationKeyword2": "gcp",
+      "question": "What is a service account in Google Cloud IAM?",
+      "correctAnswer": "a special account used by workloads and applications to call Google APIs",
+      "incorrectAnswers": [
+        "a customer support ticket",
+        "a free trial coupon",
+        "a browser bookmark"
+      ],
+      "explanation": "Service accounts represent software identities and are granted roles like human users, without interactive login.",
+      "keywords": [
+        "gcp",
+        "identity"
+      ],
+      "source": "https://cloud.google.com/iam/docs/service-accounts"
+    },
+    {
+      "seedId": "2a580a31-120a-5560-acde-ef0a2901d3f9",
+      "category": "tech",
+      "navigationKeyword1": "cloud",
+      "navigationKeyword2": "gcp",
+      "question": "What must be globally unique within Cloud Storage?",
+      "correctAnswer": "each bucket name",
+      "incorrectAnswers": [
+        "each object\u2019s creation timestamp",
+        "the project display name",
+        "the Region name"
+      ],
+      "explanation": "Bucket names live in a global namespace, so Cloud Storage enforces uniqueness across projects.",
+      "keywords": [
+        "gcp",
+        "storage"
+      ],
+      "source": "https://cloud.google.com/storage/docs/buckets"
+    },
+    {
+      "seedId": "2213e3ec-f387-518d-a27d-eb53169e1717",
+      "category": "tech",
+      "navigationKeyword1": "cloud",
+      "navigationKeyword2": "iam",
+      "question": "What does role-based access control (RBAC) assign permissions to?",
+      "correctAnswer": "roles that are then bound to users, groups, or service principals",
+      "incorrectAnswers": [
+        "only physical door keys",
+        "only IP addresses without identities",
+        "only unlabeled files"
+      ],
+      "explanation": "RBAC bundles permissions into roles so you can reuse least-privilege sets across people and automation.",
+      "keywords": [
+        "iam",
+        "rbac"
+      ],
+      "source": "https://learn.microsoft.com/en-us/azure/role-based-access-control/overview"
+    },
+    {
+      "seedId": "96fb5109-c0eb-587d-a8d5-0d897932be7f",
+      "category": "tech",
+      "navigationKeyword1": "cloud",
+      "navigationKeyword2": "iam",
+      "question": "What is a service principal or workload identity in cloud IAM?",
+      "correctAnswer": "an identity for automation and applications rather than interactive human users",
+      "incorrectAnswers": [
+        "a backup tape format",
+        "a monitor refresh rate",
+        "a type of firewall appliance only"
+      ],
+      "explanation": "Machines and services authenticate with their own credentials and are granted scoped roles like people.",
+      "keywords": [
+        "iam",
+        "workloads"
+      ],
+      "source": "https://learn.microsoft.com/en-us/entra/workload-id/workload-identities-overview"
+    },
+    {
+      "seedId": "61ce3cb3-aeab-57c4-9485-9108b4ef74b5",
+      "category": "tech",
+      "navigationKeyword1": "cloud",
+      "navigationKeyword2": "iam",
+      "question": "What is identity federation used for?",
+      "correctAnswer": "letting users sign in with an external identity provider and obtain cloud access via trust",
+      "incorrectAnswers": [
+        "merging two unrelated databases blindly",
+        "replacing TCP",
+        "disabling encryption"
+      ],
+      "explanation": "Federation maps corporate identities to cloud roles using standards like SAML or OIDC.",
+      "keywords": [
+        "iam",
+        "federation"
+      ],
+      "source": "https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers.html"
+    },
+    {
+      "seedId": "e1fc14a9-64b2-599e-8967-f343869b40b7",
+      "category": "tech",
+      "navigationKeyword1": "cloud",
+      "navigationKeyword2": "iam",
+      "question": "What is the difference between authentication and authorization?",
+      "correctAnswer": "authentication proves identity; authorization decides what that identity may do",
+      "incorrectAnswers": [
+        "they are identical",
+        "authorization proves identity",
+        "authentication assigns IP addresses"
+      ],
+      "explanation": "You first establish who the principal is, then evaluate policies for allowed actions on resources.",
+      "keywords": [
+        "iam",
+        "basics"
+      ],
+      "source": "https://docs.aws.amazon.com/IAM/latest/UserGuide/introduction_access-management.html"
+    },
+    {
+      "seedId": "a47a927d-688c-540f-abf7-92c338ed3afa",
+      "category": "tech",
+      "navigationKeyword1": "cloud",
+      "navigationKeyword2": "iam",
+      "question": "What is the principle of least privilege?",
+      "correctAnswer": "grant only the minimum access needed to perform a task",
+      "incorrectAnswers": [
+        "give everyone admin to reduce tickets",
+        "rotate passwords hourly only",
+        "disable all auditing"
+      ],
+      "explanation": "Narrow permissions limit blast radius if credentials leak or are misused.",
+      "keywords": [
+        "iam",
+        "least-privilege"
+      ],
+      "source": "https://cloud.google.com/iam/docs/using-iam-securely"
+    },
+    {
+      "seedId": "169b8bc2-91c8-502b-bc87-ce3915b5b57e",
+      "category": "tech",
+      "navigationKeyword1": "cloud",
+      "navigationKeyword2": "iam",
+      "question": "Why is multi-factor authentication (MFA) recommended for human cloud accounts?",
+      "correctAnswer": "stolen passwords alone are not enough to sign in",
+      "incorrectAnswers": [
+        "it removes the need for TLS",
+        "it guarantees zero bugs",
+        "it replaces firewalls"
+      ],
+      "explanation": "MFA adds a second factor so credential stuffing and phishing are less likely to succeed.",
+      "keywords": [
+        "iam",
+        "mfa"
+      ],
+      "source": "https://www.ncsc.gov.uk/collection/device-security-guidance/mfa"
+    },
+    {
+      "seedId": "b304e53f-dfab-5d5d-8b64-abb5457b315a",
+      "category": "tech",
+      "navigationKeyword1": "cloud",
+      "navigationKeyword2": "kubernetes",
+      "question": "What does a Deployment controller primarily manage?",
+      "correctAnswer": "ReplicaSets and rolling updates of Pod templates",
+      "incorrectAnswers": [
+        "DNS root servers",
+        "TLS certificate transparency logs",
+        "physical rack power"
+      ],
+      "explanation": "Deployments declare desired Pod state and roll out changes with controlled revision history.",
+      "keywords": [
+        "kubernetes",
+        "deployments"
+      ],
+      "source": "https://kubernetes.io/docs/concepts/workloads/controllers/deployment/"
+    },
+    {
+      "seedId": "af1c7d0e-e776-5fe8-9e50-5096500025ed",
+      "category": "tech",
+      "navigationKeyword1": "cloud",
+      "navigationKeyword2": "kubernetes",
+      "question": "What does a Service provide for Pods?",
+      "correctAnswer": "a stable network endpoint and load balancing to backing Pods",
+      "incorrectAnswers": [
+        "permanent local disk on each laptop",
+        "a compiler for Java",
+        "SSH access to hardware"
+      ],
+      "explanation": "Services abstract ephemeral Pod IPs with cluster IP, DNS, and selectors to target healthy backends.",
+      "keywords": [
+        "kubernetes",
+        "networking"
+      ],
+      "source": "https://kubernetes.io/docs/concepts/services-networking/service/"
+    },
+    {
+      "seedId": "82ba0c3b-07fe-529f-ad06-0306ff92e185",
+      "category": "tech",
+      "navigationKeyword1": "cloud",
+      "navigationKeyword2": "kubernetes",
+      "question": "What does a readiness probe decide?",
+      "correctAnswer": "whether a Pod should receive traffic from Services yet",
+      "incorrectAnswers": [
+        "whether the cloud bill is paid",
+        "whether DNS exists globally",
+        "whether TLS 1.0 is enabled"
+      ],
+      "explanation": "Readiness gates traffic until dependencies are ready, while liveness handles unhealthy running containers.",
+      "keywords": [
+        "kubernetes",
+        "health"
+      ],
+      "source": "https://docs.redhat.com/en/documentation/openshift_container_platform/4.8/html/building_applications/application-health"
+    },
+    {
+      "seedId": "9e529b0b-ed35-574a-a6cb-cc2007902fae",
+      "category": "tech",
+      "navigationKeyword1": "cloud",
+      "navigationKeyword2": "kubernetes",
+      "question": "What is a Namespace used for in Kubernetes?",
+      "correctAnswer": "scoping names and access control for resources inside a cluster",
+      "incorrectAnswers": [
+        "replacing Linux user IDs",
+        "storing container images only",
+        "defining CPU manufacturing process"
+      ],
+      "explanation": "Namespaces partition objects like Deployments and Services to separate teams or environments.",
+      "keywords": [
+        "kubernetes",
+        "namespaces"
+      ],
+      "source": "https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/"
+    },
+    {
+      "seedId": "b0e3b106-7e43-528a-aa9c-816ed703de01",
+      "category": "tech",
+      "navigationKeyword1": "cloud",
+      "navigationKeyword2": "kubernetes",
+      "question": "What is the smallest deployable unit in Kubernetes?",
+      "correctAnswer": "a Pod",
+      "incorrectAnswers": [
+        "a Region",
+        "a Dockerfile layer",
+        "a Git branch"
+      ],
+      "explanation": "A Pod wraps one or more tightly coupled containers sharing network and storage namespaces on a node.",
+      "keywords": [
+        "kubernetes",
+        "pods"
+      ],
+      "source": "https://kubernetes.io/docs/concepts/workloads/pods/"
+    },
+    {
+      "seedId": "6875085b-845d-5042-bea8-70744a991026",
+      "category": "tech",
+      "navigationKeyword1": "cloud",
+      "navigationKeyword2": "kubernetes",
+      "question": "Where does the control plane store cluster state?",
+      "correctAnswer": "in etcd for Kubernetes",
+      "incorrectAnswers": [
+        "only in each Pod\u2019s RAM",
+        "in SMTP mailboxes",
+        "on the developer\u2019s phone"
+      ],
+      "explanation": "etcd is the consistent key-value store backing API objects and desired state for the cluster.",
+      "keywords": [
+        "kubernetes",
+        "control-plane"
+      ],
+      "source": "https://kubernetes.io/docs/concepts/overview/components/"
+    },
+    {
+      "seedId": "6d5d3bc8-a36c-5196-a480-42da5219339a",
+      "category": "tech",
+      "navigationKeyword1": "cloud",
+      "navigationKeyword2": "serverless",
+      "question": "What billing pattern is typical for serverless compute?",
+      "correctAnswer": "pay for invocations and execution time (often per millisecond) rather than always-on servers",
+      "incorrectAnswers": [
+        "flat annual license only",
+        "pay by monitor diagonal inches",
+        "free unlimited CPU forever"
+      ],
+      "explanation": "Usage-based pricing matches intermittent workloads because you do not reserve capacity you are not using.",
+      "keywords": [
+        "serverless",
+        "billing"
+      ],
+      "source": "https://azure.microsoft.com/pricing/details/functions/"
+    },
+    {
+      "seedId": "73fd35c4-bf12-5b57-87bb-4f0d469fbfaa",
+      "category": "tech",
+      "navigationKeyword1": "cloud",
+      "navigationKeyword2": "serverless",
+      "question": "What does an event source do for a serverless function?",
+      "correctAnswer": "it triggers the function when something happens, such as an upload or queue message",
+      "incorrectAnswers": [
+        "it compiles the function to assembly offline",
+        "it replaces DNS",
+        "it encrypts monitors"
+      ],
+      "explanation": "Serverless handlers react to events from APIs, queues, timers, and other integrations.",
+      "keywords": [
+        "serverless",
+        "events"
+      ],
+      "source": "https://docs.aws.amazon.com/lambda/latest/dg/lambda-invocation.html"
+    },
+    {
+      "seedId": "75759147-022e-51a2-9c57-282ddd49b552",
+      "category": "tech",
+      "navigationKeyword1": "cloud",
+      "navigationKeyword2": "serverless",
+      "question": "What is a cold start in a functions-as-a-service model?",
+      "correctAnswer": "extra latency when a new execution environment must be created before running your code",
+      "incorrectAnswers": [
+        "when the CPU physically freezes",
+        "when TLS is disabled",
+        "when logs are deleted"
+      ],
+      "explanation": "After idle time, platforms may spin up a fresh runtime, which adds startup delay before your handler runs.",
+      "keywords": [
+        "serverless",
+        "latency"
+      ],
+      "source": "https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtime-environment.html"
+    },
+    {
+      "seedId": "ca0ba76f-e106-55e5-8c8f-e342e0189715",
+      "category": "tech",
+      "navigationKeyword1": "cloud",
+      "navigationKeyword2": "serverless",
+      "question": "What is a common limit you must plan for with function concurrency?",
+      "correctAnswer": "account or function concurrency caps that throttle simultaneous executions",
+      "incorrectAnswers": [
+        "only screen resolution limits",
+        "only the number of fonts installed",
+        "physical USB port count"
+      ],
+      "explanation": "Burst traffic can hit concurrency limits; architectures may shard workloads or request quota increases.",
+      "keywords": [
+        "serverless",
+        "scaling"
+      ],
+      "source": "https://learn.microsoft.com/en-us/azure/azure-functions/functions-scale"
+    },
+    {
+      "seedId": "3dd5df8d-b701-5041-be42-9a31766dd6b4",
+      "category": "tech",
+      "navigationKeyword1": "cloud",
+      "navigationKeyword2": "serverless",
+      "question": "Why are serverless functions usually designed to be stateless?",
+      "correctAnswer": "any instance may handle the next event and local disk may not persist",
+      "incorrectAnswers": [
+        "statelessness is required by law",
+        "RAM cannot exist in the cloud",
+        "databases are forbidden"
+      ],
+      "explanation": "Ephemeral runtimes scale horizontally; durable state belongs in databases, caches, or object stores.",
+      "keywords": [
+        "serverless",
+        "design"
+      ],
+      "source": "https://cloud.google.com/functions/docs/bestpractices/tips"
+    },
+    {
+      "seedId": "23d9baae-eba8-5476-a1f4-4812c62e09e4",
+      "category": "tech",
+      "navigationKeyword1": "cloud",
+      "navigationKeyword2": "serverless",
+      "question": "Why should retries be expected in distributed serverless pipelines?",
+      "correctAnswer": "at-least-once delivery and transient failures can cause duplicate invocations",
+      "incorrectAnswers": [
+        "retries never happen in the cloud",
+        "functions always run exactly twice",
+        "queues delete messages before send"
+      ],
+      "explanation": "Downstream systems should be idempotent or deduplicate because events may be delivered more than once.",
+      "keywords": [
+        "serverless",
+        "reliability"
+      ],
+      "source": "https://docs.aws.amazon.com/lambda/latest/dg/invocation-async-error-handling.html"
+    }
+  ]
+}

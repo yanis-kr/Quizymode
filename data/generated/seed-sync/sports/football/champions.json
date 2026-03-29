@@ -1,0 +1,207 @@
+{
+  "schemaVersion": 1,
+  "seedSet": "core-public-items",
+  "deltaPreviewLimit": 200,
+  "items": [
+    {
+      "seedId": "6e234f47-ce66-5568-aa99-ca1d6046624d",
+      "category": "sports",
+      "navigationKeyword1": "football",
+      "navigationKeyword2": "champions",
+      "question": "Which NFL franchise won Super Bowl LVI on its home field?",
+      "correctAnswer": "Los Angeles Rams",
+      "incorrectAnswers": [
+        "Cincinnati Bengals",
+        "Kansas City Chiefs",
+        "San Francisco 49ers"
+      ],
+      "explanation": "The Rams beat Cincinnati in Super Bowl LVI at SoFi Stadium.",
+      "keywords": [
+        "football",
+        "champions",
+        "rams"
+      ],
+      "source": "https://operations.nfl.com/learn-the-game/nfl-basics/"
+    },
+    {
+      "seedId": "cdff0189-b134-517e-b76b-b3c7e848aeab",
+      "category": "sports",
+      "navigationKeyword1": "football",
+      "navigationKeyword2": "champions",
+      "question": "Which NFL team won Super Bowl LI after erasing a 28-3 deficit?",
+      "correctAnswer": "New England Patriots",
+      "incorrectAnswers": [
+        "Atlanta Falcons",
+        "Seattle Seahawks",
+        "Denver Broncos"
+      ],
+      "explanation": "New England rallied from 28-3 to win in overtime.",
+      "keywords": [
+        "football",
+        "champions",
+        "patriots"
+      ],
+      "source": "https://operations.nfl.com/learn-the-game/nfl-basics/"
+    },
+    {
+      "seedId": "8e793178-e0b3-5605-81e8-3e3dbfc7e849",
+      "category": "sports",
+      "navigationKeyword1": "football",
+      "navigationKeyword2": "champions",
+      "question": "Which college team won the 2023 season national championship in January 2024?",
+      "correctAnswer": "Michigan",
+      "incorrectAnswers": [
+        "Washington",
+        "Georgia",
+        "Texas"
+      ],
+      "explanation": "Michigan beat Washington for the CFP title.",
+      "keywords": [
+        "football",
+        "champions",
+        "college"
+      ],
+      "source": "https://www.ncaa.com/sports/football/fbs"
+    },
+    {
+      "seedId": "1888c92d-4842-5d89-88dd-e48755aa6957",
+      "category": "sports",
+      "navigationKeyword1": "football",
+      "navigationKeyword2": "champions",
+      "question": "Which franchise won six Super Bowls in the 1970s, 2000s, and 2020s?",
+      "correctAnswer": "Pittsburgh Steelers",
+      "incorrectAnswers": [
+        "Dallas Cowboys",
+        "San Francisco 49ers",
+        "New England Patriots"
+      ],
+      "explanation": "Pittsburgh was the first franchise to reach six Super Bowl wins.",
+      "keywords": [
+        "football",
+        "champions",
+        "steelers"
+      ],
+      "source": "https://operations.nfl.com/learn-the-game/nfl-basics/"
+    },
+    {
+      "seedId": "7f69612a-c673-551e-9551-9628ff992c38",
+      "category": "sports",
+      "navigationKeyword1": "football",
+      "navigationKeyword2": "champions",
+      "question": "Which franchise won the first two Super Bowls?",
+      "correctAnswer": "Green Bay Packers",
+      "incorrectAnswers": [
+        "Kansas City Chiefs",
+        "Dallas Cowboys",
+        "New York Jets"
+      ],
+      "explanation": "Green Bay won Super Bowls I and II under Vince Lombardi.",
+      "keywords": [
+        "football",
+        "champions",
+        "packers"
+      ],
+      "source": "https://operations.nfl.com/learn-the-game/nfl-basics/"
+    },
+    {
+      "seedId": "9c12ad1c-34bb-5838-b615-d5fcd3b57f63",
+      "category": "sports",
+      "navigationKeyword1": "football",
+      "navigationKeyword2": "champions",
+      "question": "Which school won back-to-back CFP national titles for the 2021 and 2022 seasons?",
+      "correctAnswer": "Georgia",
+      "incorrectAnswers": [
+        "Alabama",
+        "Michigan",
+        "Clemson"
+      ],
+      "explanation": "Georgia repeated as national champion under Kirby Smart.",
+      "keywords": [
+        "football",
+        "champions",
+        "georgia"
+      ],
+      "source": "https://www.ncaa.com/sports/football/fbs"
+    },
+    {
+      "seedId": "429c47ca-1a3b-536d-bd65-c3c9865a0a3e",
+      "category": "sports",
+      "navigationKeyword1": "football",
+      "navigationKeyword2": "champions",
+      "question": "Which team completed the only perfect season in Super Bowl era history in 1972?",
+      "correctAnswer": "Miami Dolphins",
+      "incorrectAnswers": [
+        "Chicago Bears",
+        "San Francisco 49ers",
+        "Dallas Cowboys"
+      ],
+      "explanation": "Miami finished 17-0 in the 1972 season including the playoffs.",
+      "keywords": [
+        "football",
+        "champions",
+        "perfect-season"
+      ],
+      "source": "https://operations.nfl.com/learn-the-game/nfl-basics/"
+    },
+    {
+      "seedId": "9aa70af8-4576-5d24-a885-87d3ab5c32d2",
+      "category": "sports",
+      "navigationKeyword1": "football",
+      "navigationKeyword2": "champions",
+      "question": "Which team won Super Bowl LVII after the 2022 season?",
+      "correctAnswer": "Kansas City Chiefs",
+      "incorrectAnswers": [
+        "Philadelphia Eagles",
+        "Cincinnati Bengals",
+        "Buffalo Bills"
+      ],
+      "explanation": "Kansas City beat Philadelphia in Super Bowl LVII.",
+      "keywords": [
+        "football",
+        "champions",
+        "super-bowl"
+      ],
+      "source": "https://operations.nfl.com/learn-the-game/nfl-basics/"
+    },
+    {
+      "seedId": "cb9a7952-2f6a-584d-8ec9-babd7c712bd8",
+      "category": "sports",
+      "navigationKeyword1": "football",
+      "navigationKeyword2": "champions",
+      "question": "Which team won the College Football Playoff title for the 2019 season behind Joe Burrow?",
+      "correctAnswer": "LSU",
+      "incorrectAnswers": [
+        "Clemson",
+        "Alabama",
+        "Ohio State"
+      ],
+      "explanation": "LSU finished 15-0 and beat Clemson in the title game.",
+      "keywords": [
+        "football",
+        "champions",
+        "lsu"
+      ],
+      "source": "https://www.ncaa.com/sports/football/fbs"
+    },
+    {
+      "seedId": "918ccb37-131a-52a9-9c96-50e9546c2bf7",
+      "category": "sports",
+      "navigationKeyword1": "football",
+      "navigationKeyword2": "champions",
+      "question": "Who won Super Bowl LVIII in February 2024?",
+      "correctAnswer": "Kansas City Chiefs",
+      "incorrectAnswers": [
+        "San Francisco 49ers",
+        "Philadelphia Eagles",
+        "Baltimore Ravens"
+      ],
+      "explanation": "Kansas City beat San Francisco in overtime in Super Bowl LVIII.",
+      "keywords": [
+        "football",
+        "champions",
+        "chiefs"
+      ],
+      "source": "https://operations.nfl.com/learn-the-game/nfl-basics/"
+    }
+  ]
+}

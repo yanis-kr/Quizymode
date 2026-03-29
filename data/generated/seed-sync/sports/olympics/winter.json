@@ -1,0 +1,207 @@
+{
+  "schemaVersion": 1,
+  "seedSet": "core-public-items",
+  "deltaPreviewLimit": 200,
+  "items": [
+    {
+      "seedId": "7f1be571-f2e1-5ff3-80d0-8ba13237c2f0",
+      "category": "sports",
+      "navigationKeyword1": "olympics",
+      "navigationKeyword2": "winter",
+      "question": "How often are the Winter Olympic Games usually held?",
+      "correctAnswer": "Every four years",
+      "incorrectAnswers": [
+        "Every year",
+        "Every two years",
+        "Every six years"
+      ],
+      "explanation": "The Winter Games also run on a four-year cycle.",
+      "keywords": [
+        "olympics",
+        "winter",
+        "cycle"
+      ],
+      "source": "https://olympics.com/en/olympic-games"
+    },
+    {
+      "seedId": "b287edbd-39a8-569d-906a-f12ec3ca3082",
+      "category": "sports",
+      "navigationKeyword1": "olympics",
+      "navigationKeyword2": "winter",
+      "question": "Which Italian cities are scheduled to host the 2026 Winter Olympics?",
+      "correctAnswer": "Milan and Cortina d'Ampezzo",
+      "incorrectAnswers": [
+        "Rome and Turin",
+        "Venice and Verona",
+        "Naples and Bari"
+      ],
+      "explanation": "The 2026 Winter Games are assigned to Milan and Cortina d'Ampezzo.",
+      "keywords": [
+        "olympics",
+        "winter",
+        "2026"
+      ],
+      "source": "https://olympics.com/en/olympic-games"
+    },
+    {
+      "seedId": "1c2fb2a9-2edc-5ba8-8967-a05c21f45083",
+      "category": "sports",
+      "navigationKeyword1": "olympics",
+      "navigationKeyword2": "winter",
+      "question": "Which Winter Games city hosted the 1994 Olympics in Norway?",
+      "correctAnswer": "Lillehammer",
+      "incorrectAnswers": [
+        "Oslo",
+        "Nagano",
+        "Albertville"
+      ],
+      "explanation": "Lillehammer hosted the 1994 Winter Games.",
+      "keywords": [
+        "olympics",
+        "winter",
+        "lillehammer"
+      ],
+      "source": "https://olympics.com/en/olympic-games"
+    },
+    {
+      "seedId": "31a00ffb-549c-5212-815e-974b3cbb6949",
+      "category": "sports",
+      "navigationKeyword1": "olympics",
+      "navigationKeyword2": "winter",
+      "question": "Which Winter Games city hosted the Miracle on Ice hockey tournament in 1980?",
+      "correctAnswer": "Lake Placid",
+      "incorrectAnswers": [
+        "Calgary",
+        "Salt Lake City",
+        "Innsbruck"
+      ],
+      "explanation": "Lake Placid 1980 produced the Miracle on Ice.",
+      "keywords": [
+        "olympics",
+        "winter",
+        "lake-placid"
+      ],
+      "source": "https://www.britannica.com/sports/Olympic-Games"
+    },
+    {
+      "seedId": "7b224d59-2f1a-5fd4-b98a-e9330b181881",
+      "category": "sports",
+      "navigationKeyword1": "olympics",
+      "navigationKeyword2": "winter",
+      "question": "Which Winter Games were hosted by Salt Lake City?",
+      "correctAnswer": "2002",
+      "incorrectAnswers": [
+        "1998",
+        "2006",
+        "2010"
+      ],
+      "explanation": "Salt Lake City hosted the 2002 Winter Olympics.",
+      "keywords": [
+        "olympics",
+        "winter",
+        "salt-lake-city"
+      ],
+      "source": "https://olympics.com/en/olympic-games"
+    },
+    {
+      "seedId": "acca7960-9295-59de-a578-6160d51c7178",
+      "category": "sports",
+      "navigationKeyword1": "olympics",
+      "navigationKeyword2": "winter",
+      "question": "Which Winter Olympics were held in Nagano, Japan?",
+      "correctAnswer": "1998",
+      "incorrectAnswers": [
+        "1992",
+        "2002",
+        "2006"
+      ],
+      "explanation": "Nagano hosted the 1998 Winter Games.",
+      "keywords": [
+        "olympics",
+        "winter",
+        "nagano"
+      ],
+      "source": "https://olympics.com/en/olympic-games"
+    },
+    {
+      "seedId": "1f984197-c81d-5200-82b4-28f238a4dfcc",
+      "category": "sports",
+      "navigationKeyword1": "olympics",
+      "navigationKeyword2": "winter",
+      "question": "Which Winter Olympics were held in Vancouver?",
+      "correctAnswer": "2010",
+      "incorrectAnswers": [
+        "2006",
+        "2014",
+        "2018"
+      ],
+      "explanation": "Vancouver hosted the 2010 Winter Games.",
+      "keywords": [
+        "olympics",
+        "winter",
+        "vancouver"
+      ],
+      "source": "https://olympics.com/en/olympic-games"
+    },
+    {
+      "seedId": "dd066026-956d-56a0-a1b3-db592b14bf1c",
+      "category": "sports",
+      "navigationKeyword1": "olympics",
+      "navigationKeyword2": "winter",
+      "question": "Which city hosted the 2018 Winter Olympics?",
+      "correctAnswer": "PyeongChang",
+      "incorrectAnswers": [
+        "Vancouver",
+        "Sochi",
+        "Turin"
+      ],
+      "explanation": "PyeongChang hosted the 2018 Winter Games.",
+      "keywords": [
+        "olympics",
+        "winter",
+        "pyeongchang"
+      ],
+      "source": "https://olympics.com/en/olympic-games"
+    },
+    {
+      "seedId": "dafec68a-4f68-51c8-9abb-2bf457611886",
+      "category": "sports",
+      "navigationKeyword1": "olympics",
+      "navigationKeyword2": "winter",
+      "question": "Which city hosted the 2022 Winter Olympics?",
+      "correctAnswer": "Beijing",
+      "incorrectAnswers": [
+        "PyeongChang",
+        "Sochi",
+        "Milan"
+      ],
+      "explanation": "Beijing hosted the 2022 Winter Games.",
+      "keywords": [
+        "olympics",
+        "winter",
+        "beijing"
+      ],
+      "source": "https://olympics.com/en/olympic-games"
+    },
+    {
+      "seedId": "941f16f5-268a-5c87-8d95-0decd43f726b",
+      "category": "sports",
+      "navigationKeyword1": "olympics",
+      "navigationKeyword2": "winter",
+      "question": "Which country hosted the 2014 Winter Olympics in Sochi?",
+      "correctAnswer": "Russia",
+      "incorrectAnswers": [
+        "China",
+        "Canada",
+        "Italy"
+      ],
+      "explanation": "Sochi 2014 was held in Russia.",
+      "keywords": [
+        "olympics",
+        "winter",
+        "sochi"
+      ],
+      "source": "https://olympics.com/en/olympic-games"
+    }
+  ]
+}

@@ -1,0 +1,227 @@
+{
+  "schemaVersion": 1,
+  "seedSet": "core-public-items",
+  "deltaPreviewLimit": 200,
+  "items": [
+    {
+      "seedId": "7191ef05-6034-4ad5-8848-7dac1e674cd9",
+      "category": "geography",
+      "navigationKeyword1": "physical",
+      "navigationKeyword2": "deserts",
+      "question": "Which Australian desert is the country\u2019s largest hot desert?",
+      "correctAnswer": "Great Victoria Desert",
+      "incorrectAnswers": [
+        "Great Sandy Desert",
+        "Simpson Desert",
+        "Tanami Desert"
+      ],
+      "explanation": "The Great Victoria Desert spans Western Australia and South Australia.",
+      "keywords": [
+        "deserts",
+        "australia",
+        "interior"
+      ],
+      "source": "https://www.britannica.com/place/Great-Victoria-Desert"
+    },
+    {
+      "seedId": "831b5532-99a0-4d13-ba00-8e5875044591",
+      "category": "geography",
+      "navigationKeyword1": "physical",
+      "navigationKeyword2": "deserts",
+      "question": "Which Namibian desert features tall dunes along the Atlantic coast?",
+      "correctAnswer": "Namib Desert",
+      "incorrectAnswers": [
+        "Kalahari Desert",
+        "Danakil Desert",
+        "Libyan Desert"
+      ],
+      "explanation": "The Namib is an ancient arid strip along Namibia\u2019s shoreline.",
+      "keywords": [
+        "deserts",
+        "namib",
+        "africa"
+      ],
+      "source": "https://www.britannica.com/place/Namib"
+    },
+    {
+      "seedId": "66ddfb88-9861-48d3-b329-464ff2f8db70",
+      "category": "geography",
+      "navigationKeyword1": "physical",
+      "navigationKeyword2": "deserts",
+      "question": "Which U.S. desert lies mainly in southeastern California and parts of Nevada and Arizona?",
+      "correctAnswer": "Mojave Desert",
+      "incorrectAnswers": [
+        "Sonoran Desert",
+        "Chihuahuan Desert",
+        "Great Basin Desert"
+      ],
+      "explanation": "The Mojave includes Death Valley and Joshua Tree National Park.",
+      "keywords": [
+        "deserts",
+        "mojave",
+        "southwest-us"
+      ],
+      "source": "https://www.britannica.com/place/Mojave-Desert"
+    },
+    {
+      "seedId": "0b5dd6a9-ec8f-47bb-8d9f-b350a0528fd1",
+      "category": "geography",
+      "navigationKeyword1": "physical",
+      "navigationKeyword2": "deserts",
+      "question": "Which coastal desert runs along northern Chile and southern Peru?",
+      "correctAnswer": "Atacama Desert",
+      "incorrectAnswers": [
+        "Patagonian Desert",
+        "Sechura Desert",
+        "Monte Desert"
+      ],
+      "explanation": "The Atacama is one of the driest places on Earth along South America\u2019s Pacific coast.",
+      "keywords": [
+        "deserts",
+        "atacama",
+        "south-america"
+      ],
+      "source": "https://www.britannica.com/place/Atacama-Desert"
+    },
+    {
+      "seedId": "7f9e5d1b-9239-44d5-b538-58cafbb37203",
+      "category": "geography",
+      "navigationKeyword1": "physical",
+      "navigationKeyword2": "deserts",
+      "question": "Which cold desert covers much of Antarctica?",
+      "correctAnswer": "Antarctica",
+      "incorrectAnswers": [
+        "Greenland",
+        "Siberia",
+        "Patagonia"
+      ],
+      "explanation": "Antarctica receives very little precipitation and behaves climatically as a polar desert.",
+      "keywords": [
+        "deserts",
+        "polar",
+        "antarctica"
+      ],
+      "source": "https://www.britannica.com/place/Antarctica"
+    },
+    {
+      "seedId": "345cb4bd-f4c0-4e56-bf86-119fc8133ecd",
+      "category": "geography",
+      "navigationKeyword1": "physical",
+      "navigationKeyword2": "deserts",
+      "question": "Which desert covers large parts of Mongolia and northern China?",
+      "correctAnswer": "Gobi Desert",
+      "incorrectAnswers": [
+        "Takla Makan Desert",
+        "Thar Desert",
+        "Karakum Desert"
+      ],
+      "explanation": "The Gobi is a cold winter desert and steppe region on the Mongolian Plateau.",
+      "keywords": [
+        "deserts",
+        "gobi",
+        "asia"
+      ],
+      "source": "https://www.britannica.com/place/Gobi-desert"
+    },
+    {
+      "seedId": "0d3118e4-c8da-4c23-82d0-d588251c3aed",
+      "category": "geography",
+      "navigationKeyword1": "physical",
+      "navigationKeyword2": "deserts",
+      "question": "Which desert is the largest hot desert on Earth?",
+      "correctAnswer": "Sahara",
+      "incorrectAnswers": [
+        "Arabian Desert",
+        "Gobi Desert",
+        "Kalahari Desert"
+      ],
+      "explanation": "The Sahara stretches across much of North Africa south of the Mediterranean.",
+      "keywords": [
+        "deserts",
+        "sahara",
+        "africa"
+      ],
+      "source": "https://www.britannica.com/place/Sahara-desert-Africa"
+    },
+    {
+      "seedId": "cce2d271-c339-4940-8d28-c7b721bd936a",
+      "category": "geography",
+      "navigationKeyword1": "physical",
+      "navigationKeyword2": "deserts",
+      "question": "Which desert lies along the India\u2013Pakistan border east of the Indus River?",
+      "correctAnswer": "Thar Desert",
+      "incorrectAnswers": [
+        "Dasht-e Margo",
+        "Kyzylkum Desert",
+        "Takla Makan Desert"
+      ],
+      "explanation": "The Thar is a sandy arid region in northwestern India and eastern Pakistan.",
+      "keywords": [
+        "deserts",
+        "thar",
+        "south-asia"
+      ],
+      "source": "https://www.britannica.com/place/Thar-Desert"
+    },
+    {
+      "seedId": "ba3fce9b-482c-4889-912e-c492320be933",
+      "category": "geography",
+      "navigationKeyword1": "physical",
+      "navigationKeyword2": "deserts",
+      "question": "Which desert occupies most of the Arabian Peninsula?",
+      "correctAnswer": "Arabian Desert",
+      "incorrectAnswers": [
+        "Syrian Desert",
+        "Negev Desert",
+        "Dasht-e Kavir"
+      ],
+      "explanation": "The Arabian Desert is a vast arid region between the Red Sea and the Persian Gulf.",
+      "keywords": [
+        "deserts",
+        "arabian",
+        "middle-east"
+      ],
+      "source": "https://www.britannica.com/place/Arabian-Desert"
+    },
+    {
+      "seedId": "2bf09273-d5dd-42a1-a4e0-705f9fad08e1",
+      "category": "geography",
+      "navigationKeyword1": "physical",
+      "navigationKeyword2": "deserts",
+      "question": "Which desert spans northwestern Mexico and the U.S. Southwest around the Gulf of California?",
+      "correctAnswer": "Sonoran Desert",
+      "incorrectAnswers": [
+        "Chihuahuan Desert",
+        "Painted Desert",
+        "Colorado Desert"
+      ],
+      "explanation": "The Sonoran Desert is known for saguaro cactus and summer monsoon rains.",
+      "keywords": [
+        "deserts",
+        "sonoran",
+        "north-america"
+      ],
+      "source": "https://www.britannica.com/place/Sonoran-Desert"
+    },
+    {
+      "seedId": "b36ce970-030e-4314-a184-1490e42d05ff",
+      "category": "geography",
+      "navigationKeyword1": "physical",
+      "navigationKeyword2": "deserts",
+      "question": "Which southern African desert lies mainly in Botswana?",
+      "correctAnswer": "Kalahari Desert",
+      "incorrectAnswers": [
+        "Namib Desert",
+        "Karakum Desert",
+        "Atacama Desert"
+      ],
+      "explanation": "The Kalahari is a sand-covered plateau basin covering much of Botswana.",
+      "keywords": [
+        "deserts",
+        "kalahari",
+        "africa"
+      ],
+      "source": "https://www.britannica.com/place/Kalahari-Desert"
+    }
+  ]
+}

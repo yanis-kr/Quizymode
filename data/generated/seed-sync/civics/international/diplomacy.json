@@ -1,0 +1,121 @@
+{
+  "schemaVersion": 1,
+  "seedSet": "core-public-items",
+  "deltaPreviewLimit": 200,
+  "items": [
+    {
+      "seedId": "b91badcb-749c-5947-b55b-ff4bf8d246a6",
+      "category": "civics",
+      "navigationKeyword1": "international",
+      "navigationKeyword2": "diplomacy",
+      "question": "What do consulates focus on compared with embassies?",
+      "correctAnswer": "services for citizens abroad such as visas, passports, and emergency help",
+      "incorrectAnswers": [
+        "declaring war without government approval",
+        "abolishing host country laws",
+        "appointing host country judges"
+      ],
+      "explanation": "Consular posts protect nationals and facilitate lawful travel and trade contacts.",
+      "keywords": [
+        "consulate",
+        "services"
+      ],
+      "source": "https://www.state.gov/what-we-do/"
+    },
+    {
+      "seedId": "b9074a22-df75-5669-8a1e-98a9fc671f74",
+      "category": "civics",
+      "navigationKeyword1": "international",
+      "navigationKeyword2": "diplomacy",
+      "question": "What is a charg\u00e9 d\u2019affaires when no ambassador is present?",
+      "correctAnswer": "a senior diplomat who temporarily leads the mission",
+      "incorrectAnswers": [
+        "a local mayor who hosts parades",
+        "a military rank above general",
+        "a judge from the host supreme court"
+      ],
+      "explanation": "Missions need continuity; a charg\u00e9 fills the chief-of-mission role for a time.",
+      "keywords": [
+        "mission",
+        "representation"
+      ],
+      "source": "https://www.britannica.com/topic/diplomacy"
+    },
+    {
+      "seedId": "cd1f3195-8b9c-5f8f-a704-106c475d1e08",
+      "category": "civics",
+      "navigationKeyword1": "international",
+      "navigationKeyword2": "diplomacy",
+      "question": "What is diplomatic immunity meant to protect?",
+      "correctAnswer": "official diplomats from host country coercion so talks can continue",
+      "incorrectAnswers": [
+        "private citizens from all traffic laws worldwide",
+        "any tourist from paying taxes",
+        "military units from any accountability"
+      ],
+      "explanation": "Immunity shields official functions; it is not a license for unrelated private crime.",
+      "keywords": [
+        "diplomatic-immunity",
+        "vienna-convention"
+      ],
+      "source": "https://legal.un.org/ilc/texts/instruments/english/conventions/9_1_1961.pdf"
+    },
+    {
+      "seedId": "61beab56-3365-5986-8f12-0164e5ee0f95",
+      "category": "civics",
+      "navigationKeyword1": "international",
+      "navigationKeyword2": "diplomacy",
+      "question": "What is recognition in diplomatic practice?",
+      "correctAnswer": "a state\u2019s decision to treat another entity as a state or government for official relations",
+      "incorrectAnswers": [
+        "a prize for winning a sports match",
+        "automatic approval of every law the other passes",
+        "a ban on all future treaties"
+      ],
+      "explanation": "Recognition shapes who may exchange embassies and sign treaties as peers.",
+      "keywords": [
+        "recognition",
+        "statehood"
+      ],
+      "source": "https://www.icj-cij.org/"
+    },
+    {
+      "seedId": "5010d393-d922-5df2-bbe8-751995b5d22a",
+      "category": "civics",
+      "navigationKeyword1": "international",
+      "navigationKeyword2": "diplomacy",
+      "question": "What is the main job of an embassy headed by an ambassador?",
+      "correctAnswer": "represent its home country\u2019s government in the host country",
+      "incorrectAnswers": [
+        "run the host country\u2019s elections",
+        "command the host country\u2019s military",
+        "replace the host country\u2019s courts"
+      ],
+      "explanation": "Embassies handle official relations, passports, and policy communication under the sending state.",
+      "keywords": [
+        "embassy",
+        "ambassador"
+      ],
+      "source": "https://www.state.gov/diplomatic-missions/"
+    },
+    {
+      "seedId": "27b0b10f-5a41-514e-9a75-0d86f4ee7f80",
+      "category": "civics",
+      "navigationKeyword1": "international",
+      "navigationKeyword2": "diplomacy",
+      "question": "Why do states sometimes use back-channel or quiet talks?",
+      "correctAnswer": "to explore compromises before public positions harden or media pressure builds",
+      "incorrectAnswers": [
+        "to avoid any written records ever",
+        "to cancel all treaties automatically",
+        "to replace elected legislatures"
+      ],
+      "explanation": "Confidential contacts can reduce misunderstanding and test ideas without full spotlight.",
+      "keywords": [
+        "negotiation",
+        "dialogue"
+      ],
+      "source": "https://www.un.org/en/peace-and-security/"
+    }
+  ]
+}

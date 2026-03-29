@@ -1,0 +1,1352 @@
+[
+  {
+    "category": "language",
+    "question": "How do you say hello in French?",
+    "correctAnswer": "Bonjour",
+    "incorrectAnswers": [
+      "Salut",
+      "Bonsoir",
+      "Au revoir"
+    ],
+    "explanation": "Bonjour is the standard greeting for hello.",
+    "keywords": [
+      "french"
+    ],
+    "seedId": "0d11da55-c4be-5e7a-a4b8-d7070fe5a3dc"
+  },
+  {
+    "category": "language",
+    "question": "How do you say goodbye in French?",
+    "correctAnswer": "Au revoir",
+    "incorrectAnswers": [
+      "Salut",
+      "Bonjour",
+      "Merci"
+    ],
+    "explanation": "Au revoir means goodbye.",
+    "keywords": [
+      "french"
+    ],
+    "seedId": "c03f4c2e-1cdb-51b9-bd64-6f3d27add8ba"
+  },
+  {
+    "category": "language",
+    "question": "How do you say thank you in French?",
+    "correctAnswer": "Merci",
+    "incorrectAnswers": [
+      "Pardon",
+      "De rien",
+      "Salut"
+    ],
+    "explanation": "Merci means thank you.",
+    "keywords": [
+      "french"
+    ],
+    "seedId": "ea5f1321-3051-5757-af46-0fc089d498ce"
+  },
+  {
+    "category": "language",
+    "question": "How do you say please in French?",
+    "correctAnswer": "S'il vous plaît",
+    "incorrectAnswers": [
+      "Merci",
+      "Bonjour",
+      "Salut"
+    ],
+    "explanation": "S'il vous plaît is the polite form of please.",
+    "keywords": [
+      "french"
+    ],
+    "seedId": "09b326c1-294e-5c1c-9342-be31f00073f3"
+  },
+  {
+    "category": "language",
+    "question": "How do you say good evening in French?",
+    "correctAnswer": "Bonsoir",
+    "incorrectAnswers": [
+      "Bonjour",
+      "Salut",
+      "Bonne nuit"
+    ],
+    "explanation": "Bonsoir is used in the evening to greet someone.",
+    "keywords": [
+      "french"
+    ],
+    "seedId": "acdc3c6d-f779-5faf-b87b-6af00a414a96"
+  },
+  {
+    "category": "language",
+    "question": "How do you say good night in French?",
+    "correctAnswer": "Bonne nuit",
+    "incorrectAnswers": [
+      "Bonsoir",
+      "Bonjour",
+      "Bonne journée"
+    ],
+    "explanation": "Bonne nuit means good night.",
+    "keywords": [
+      "french"
+    ],
+    "seedId": "09bf7b36-b602-5cd8-9de3-8f3ecbf813b3"
+  },
+  {
+    "category": "language",
+    "question": "How do you say see you soon in French?",
+    "correctAnswer": "À bientôt",
+    "incorrectAnswers": [
+      "Au revoir",
+      "Salut",
+      "À demain"
+    ],
+    "explanation": "À bientôt means see you soon.",
+    "keywords": [
+      "french"
+    ],
+    "seedId": "5ed31f03-d866-50ea-8aa7-006eaf8f0d1c"
+  },
+  {
+    "category": "language",
+    "question": "How do you say see you tomorrow in French?",
+    "correctAnswer": "À demain",
+    "incorrectAnswers": [
+      "À bientôt",
+      "Salut",
+      "Bonne nuit"
+    ],
+    "explanation": "À demain means see you tomorrow.",
+    "keywords": [
+      "french"
+    ],
+    "seedId": "b85291e5-434d-55cd-bda9-646e5d606bc8"
+  },
+  {
+    "category": "language",
+    "question": "How do you say excuse me in French?",
+    "correctAnswer": "Excusez-moi",
+    "incorrectAnswers": [
+      "Salut",
+      "Merci",
+      "S'il te plaît"
+    ],
+    "explanation": "Excusez-moi is the polite form of excuse me.",
+    "keywords": [
+      "french"
+    ],
+    "seedId": "81edcf79-21de-5065-bb46-715f0b500952"
+  },
+  {
+    "category": "language",
+    "question": "How do you say you're welcome in French?",
+    "correctAnswer": "De rien",
+    "incorrectAnswers": [
+      "Merci",
+      "Salut",
+      "Bonjour"
+    ],
+    "explanation": "De rien is a common response to thank you.",
+    "keywords": [
+      "french"
+    ],
+    "seedId": "ade6f30c-d2ac-5fdd-bebf-91a533437c83"
+  },
+  {
+    "category": "language",
+    "question": "What does Salut mean in French?",
+    "correctAnswer": "Hi",
+    "incorrectAnswers": [
+      "Goodbye",
+      "Please",
+      "Thank you"
+    ],
+    "explanation": "Salut is an informal greeting meaning hi.",
+    "keywords": [
+      "french"
+    ],
+    "seedId": "ba8f967b-0a95-53a0-84a0-4f6b68f68472"
+  },
+  {
+    "category": "language",
+    "question": "How do you say welcome in French?",
+    "correctAnswer": "Bienvenue",
+    "incorrectAnswers": [
+      "Bonjour",
+      "Merci",
+      "Salut"
+    ],
+    "explanation": "Bienvenue means welcome.",
+    "keywords": [
+      "french"
+    ],
+    "seedId": "fd1033f2-20f0-531b-9b99-961a71771d94"
+  },
+  {
+    "category": "language",
+    "question": "How do you say how are you in French?",
+    "correctAnswer": "Comment ça va?",
+    "incorrectAnswers": [
+      "Où est?",
+      "Quel âge as-tu?",
+      "Qui es-tu?"
+    ],
+    "explanation": "Comment ça va means how are you.",
+    "keywords": [
+      "french"
+    ],
+    "seedId": "7f86ffb9-6de2-5510-bfe1-4ab5dc68af2d"
+  },
+  {
+    "category": "language",
+    "question": "How do you respond informally to Comment ça va?",
+    "correctAnswer": "Ça va",
+    "incorrectAnswers": [
+      "Merci",
+      "Salut",
+      "De rien"
+    ],
+    "explanation": "Ça va means I'm fine or it's going okay.",
+    "keywords": [
+      "french"
+    ],
+    "seedId": "ebb70234-a172-5683-976e-db1d7814a8e5"
+  },
+  {
+    "category": "language",
+    "question": "Which phrase means Have a good day?",
+    "correctAnswer": "Bonne journée",
+    "incorrectAnswers": [
+      "Bonsoir",
+      "Salut",
+      "De rien"
+    ],
+    "explanation": "Bonne journée is used to wish a good day.",
+    "keywords": [
+      "french"
+    ],
+    "seedId": "fbaacd8c-666d-5991-92fc-9a040b045412"
+  },
+  {
+    "category": "language",
+    "question": "Which phrase means Nice to meet you?",
+    "correctAnswer": "Enchanté",
+    "incorrectAnswers": [
+      "Bonjour",
+      "Salut",
+      "Merci"
+    ],
+    "explanation": "Enchanté means pleased to meet you.",
+    "keywords": [
+      "french"
+    ],
+    "seedId": "c5803ede-3ea5-5d2c-8382-5cadd48d291d"
+  },
+  {
+    "category": "language",
+    "question": "How do you say I'm sorry in French?",
+    "correctAnswer": "Je suis désolé",
+    "incorrectAnswers": [
+      "Pardon",
+      "Excusez-moi",
+      "Merci"
+    ],
+    "explanation": "Je suis désolé means I am sorry.",
+    "keywords": [
+      "french"
+    ],
+    "seedId": "9d1f75cb-75cb-516f-a29e-271f028329eb"
+  },
+  {
+    "category": "language",
+    "question": "Which phrase means Take care?",
+    "correctAnswer": "Prends soin de toi",
+    "incorrectAnswers": [
+      "Bonne nuit",
+      "Salut",
+      "Merci"
+    ],
+    "explanation": "Prends soin de toi means take care.",
+    "keywords": [
+      "french"
+    ],
+    "seedId": "98c2376a-0fc8-5d2e-97d6-2e7cda8b5851"
+  },
+  {
+    "category": "language",
+    "question": "Which phrase is used to say Long time no see?",
+    "correctAnswer": "Ça fait longtemps",
+    "incorrectAnswers": [
+      "À demain",
+      "Salut",
+      "De rien"
+    ],
+    "explanation": "Ça fait longtemps means it's been a long time.",
+    "keywords": [
+      "french"
+    ],
+    "seedId": "5eea6a45-4f57-56ac-b765-af8af7c08ec9"
+  },
+  {
+    "category": "language",
+    "question": "How do you say what's your name in French?",
+    "correctAnswer": "Comment tu t'appelles?",
+    "incorrectAnswers": [
+      "Comment ça va?",
+      "Où vas-tu?",
+      "Qui est-ce?"
+    ],
+    "explanation": "Comment tu t'appelles means what is your name.",
+    "keywords": [
+      "french"
+    ],
+    "seedId": "7877b76b-f697-5f5a-9ef5-0fe057d5c80a"
+  },
+  {
+    "category": "language",
+    "question": "How do you say train station in French?",
+    "correctAnswer": "Gare",
+    "incorrectAnswers": [
+      "Avion",
+      "Rue",
+      "Pont"
+    ],
+    "explanation": "Gare means train station.",
+    "keywords": [
+      "french"
+    ],
+    "seedId": "f5fc8300-da2b-5009-a817-799bf050583e"
+  },
+  {
+    "category": "language",
+    "question": "How do you say airport in French?",
+    "correctAnswer": "Aéroport",
+    "incorrectAnswers": [
+      "Avion",
+      "Gare",
+      "Voiture"
+    ],
+    "explanation": "Aéroport means airport.",
+    "keywords": [
+      "french"
+    ],
+    "seedId": "1d4cb113-92bd-550f-99d6-df6afbe6b937"
+  },
+  {
+    "category": "language",
+    "question": "How do you say ticket in French?",
+    "correctAnswer": "Billet",
+    "incorrectAnswers": [
+      "Bagage",
+      "Rue",
+      "Taxi"
+    ],
+    "explanation": "Billet means ticket.",
+    "keywords": [
+      "french"
+    ],
+    "seedId": "51ae8e8f-3e6b-5391-9b43-c6563758cbff"
+  },
+  {
+    "category": "language",
+    "question": "How do you say luggage in French?",
+    "correctAnswer": "Bagage",
+    "incorrectAnswers": [
+      "Billet",
+      "Route",
+      "Voiture"
+    ],
+    "explanation": "Bagage means luggage.",
+    "keywords": [
+      "french"
+    ],
+    "seedId": "3fabe6e9-b145-57d2-8274-3938f9c101ec"
+  },
+  {
+    "category": "language",
+    "question": "How do you say hotel in French?",
+    "correctAnswer": "Hôtel",
+    "incorrectAnswers": [
+      "Gare",
+      "Rue",
+      "Maison"
+    ],
+    "explanation": "Hôtel means hotel.",
+    "keywords": [
+      "french"
+    ],
+    "seedId": "07908f1f-af60-5ab4-9660-4f6f900e2e9f"
+  },
+  {
+    "category": "language",
+    "question": "How do you say street in French?",
+    "correctAnswer": "Rue",
+    "incorrectAnswers": [
+      "Route",
+      "Pont",
+      "Taxi"
+    ],
+    "explanation": "Rue means street.",
+    "keywords": [
+      "french"
+    ],
+    "seedId": "513810a5-b06b-5f81-9311-e10d9ffc869a"
+  },
+  {
+    "category": "language",
+    "question": "How do you say car in French?",
+    "correctAnswer": "Voiture",
+    "incorrectAnswers": [
+      "Taxi",
+      "Avion",
+      "Bateau"
+    ],
+    "explanation": "Voiture means car.",
+    "keywords": [
+      "french"
+    ],
+    "seedId": "08e154e8-0ec5-55c8-af75-95fcafeb47da"
+  },
+  {
+    "category": "language",
+    "question": "How do you say boat in French?",
+    "correctAnswer": "Bateau",
+    "incorrectAnswers": [
+      "Avion",
+      "Voiture",
+      "Gare"
+    ],
+    "explanation": "Bateau means boat.",
+    "keywords": [
+      "french"
+    ],
+    "seedId": "96c85ebe-cab5-57ae-9387-023e6d0866a9"
+  },
+  {
+    "category": "language",
+    "question": "How do you say plane in French?",
+    "correctAnswer": "Avion",
+    "incorrectAnswers": [
+      "Aéroport",
+      "Route",
+      "Pont"
+    ],
+    "explanation": "Avion means plane.",
+    "keywords": [
+      "french"
+    ],
+    "seedId": "ee7c3880-7879-5a37-b347-05ac33ee7536"
+  },
+  {
+    "category": "language",
+    "question": "How do you say bus in French?",
+    "correctAnswer": "Bus",
+    "incorrectAnswers": [
+      "Voiture",
+      "Train",
+      "Rue"
+    ],
+    "explanation": "Bus is the same word in French.",
+    "keywords": [
+      "french"
+    ],
+    "seedId": "aaa8fd7e-7cc3-5a2b-b900-fa88dd0ae8e5"
+  },
+  {
+    "category": "language",
+    "question": "How do you say subway in French?",
+    "correctAnswer": "Métro",
+    "incorrectAnswers": [
+      "Train",
+      "Bus",
+      "Gare"
+    ],
+    "explanation": "Métro is the French word for subway.",
+    "keywords": [
+      "french"
+    ],
+    "seedId": "c81a7787-47c4-5864-8673-70a0f8ef4b64"
+  },
+  {
+    "category": "language",
+    "question": "How do you say map in French?",
+    "correctAnswer": "Carte",
+    "incorrectAnswers": [
+      "Billet",
+      "Rue",
+      "Pont"
+    ],
+    "explanation": "Carte means map.",
+    "keywords": [
+      "french"
+    ],
+    "seedId": "3f900ef8-20ae-55a4-b201-c0d2ae124746"
+  },
+  {
+    "category": "language",
+    "question": "How do you say beach in French?",
+    "correctAnswer": "Plage",
+    "incorrectAnswers": [
+      "Bateau",
+      "Rue",
+      "Route"
+    ],
+    "explanation": "Plage means beach.",
+    "keywords": [
+      "french"
+    ],
+    "seedId": "4f4d0a39-4c57-571c-bcab-0885af4b43ac"
+  },
+  {
+    "category": "language",
+    "question": "How do you say city in French?",
+    "correctAnswer": "Ville",
+    "incorrectAnswers": [
+      "Maison",
+      "Pont",
+      "Train"
+    ],
+    "explanation": "Ville means city.",
+    "keywords": [
+      "french"
+    ],
+    "seedId": "7d134ba0-2a77-540d-8fb0-86f2be4d907d"
+  },
+  {
+    "category": "language",
+    "question": "How do you say country in French?",
+    "correctAnswer": "Pays",
+    "incorrectAnswers": [
+      "Ville",
+      "Route",
+      "Maison"
+    ],
+    "explanation": "Pays means country.",
+    "keywords": [
+      "french"
+    ],
+    "seedId": "f7aef19c-29e9-5ac8-9e4a-3d12a6d684e6"
+  },
+  {
+    "category": "language",
+    "question": "How do you say passport in French?",
+    "correctAnswer": "Passeport",
+    "incorrectAnswers": [
+      "Billet",
+      "Carte",
+      "Bagage"
+    ],
+    "explanation": "Passeport means passport.",
+    "keywords": [
+      "french"
+    ],
+    "seedId": "72f15ff3-104a-5958-bf7e-f485026093e0"
+  },
+  {
+    "category": "language",
+    "question": "How do you say taxi in French?",
+    "correctAnswer": "Taxi",
+    "incorrectAnswers": [
+      "Voiture",
+      "Bus",
+      "Train"
+    ],
+    "explanation": "Taxi is the same word in French.",
+    "keywords": [
+      "french"
+    ],
+    "seedId": "78831e31-4f6d-5d1e-aec1-bb6e382ddb4d"
+  },
+  {
+    "category": "language",
+    "question": "How do you say where is the bathroom in French?",
+    "correctAnswer": "Où sont les toilettes?",
+    "incorrectAnswers": [
+      "Où est la plage?",
+      "Où est la gare?",
+      "Où est la ville?"
+    ],
+    "explanation": "Où sont les toilettes asks for the bathroom's location.",
+    "keywords": [
+      "french"
+    ],
+    "seedId": "eb6ee208-5c10-54ef-b56c-ce11187e58b0"
+  },
+  {
+    "category": "language",
+    "question": "Which phrase means I would like a ticket?",
+    "correctAnswer": "Je voudrais un billet",
+    "incorrectAnswers": [
+      "Je voudrais une carte",
+      "Je voudrais une chambre",
+      "Je voudrais un taxi"
+    ],
+    "explanation": "This phrase asks for a ticket.",
+    "keywords": [
+      "french"
+    ],
+    "seedId": "1c40d2cf-e6ae-5f16-9fa3-ef880041ab03"
+  },
+  {
+    "category": "language",
+    "question": "Which phrase means I have a reservation?",
+    "correctAnswer": "J'ai une réservation",
+    "incorrectAnswers": [
+      "J'ai une voiture",
+      "J'ai un billet",
+      "J'ai une carte"
+    ],
+    "explanation": "This phrase states that you have a reservation.",
+    "keywords": [
+      "french"
+    ],
+    "seedId": "995ae7fa-0f00-58ee-bd22-da312510eae1"
+  },
+  {
+    "category": "language",
+    "question": "What does the French verb aller mean?",
+    "correctAnswer": "To go",
+    "incorrectAnswers": [
+      "To see",
+      "To eat",
+      "To make"
+    ],
+    "explanation": "Aller means to go.",
+    "keywords": [
+      "french"
+    ],
+    "seedId": "61e8a3a7-cb71-5835-83ee-62f17cf66077"
+  },
+  {
+    "category": "language",
+    "question": "What does the verb faire mean?",
+    "correctAnswer": "To do or to make",
+    "incorrectAnswers": [
+      "To run",
+      "To speak",
+      "To swim"
+    ],
+    "explanation": "Faire means to do or make.",
+    "keywords": [
+      "french"
+    ],
+    "seedId": "223f801f-cda1-5990-939c-9de6d4b435f9"
+  },
+  {
+    "category": "language",
+    "question": "What does the verb avoir mean?",
+    "correctAnswer": "To have",
+    "incorrectAnswers": [
+      "To be",
+      "To want",
+      "To know"
+    ],
+    "explanation": "Avoir means to have.",
+    "keywords": [
+      "french"
+    ],
+    "seedId": "f481d4b5-7e71-5b70-a3a5-a19d0f97bcb9"
+  },
+  {
+    "category": "language",
+    "question": "What does the verb être mean?",
+    "correctAnswer": "To be",
+    "incorrectAnswers": [
+      "To have",
+      "To go",
+      "To eat"
+    ],
+    "explanation": "Être means to be.",
+    "keywords": [
+      "french"
+    ],
+    "seedId": "2bd325e4-2910-5c00-8746-f70fb11c6904"
+  },
+  {
+    "category": "language",
+    "question": "What does the verb manger mean?",
+    "correctAnswer": "To eat",
+    "incorrectAnswers": [
+      "To drink",
+      "To sleep",
+      "To walk"
+    ],
+    "explanation": "Manger means to eat.",
+    "keywords": [
+      "french"
+    ],
+    "seedId": "8a7ca27b-691c-50de-9d6e-86440c4ca56a"
+  },
+  {
+    "category": "language",
+    "question": "What does boire mean?",
+    "correctAnswer": "To drink",
+    "incorrectAnswers": [
+      "To eat",
+      "To run",
+      "To write"
+    ],
+    "explanation": "Boire means to drink.",
+    "keywords": [
+      "french"
+    ],
+    "seedId": "42a58034-48a6-5ced-b3f9-b7076d9b8875"
+  },
+  {
+    "category": "language",
+    "question": "What does lire mean?",
+    "correctAnswer": "To read",
+    "incorrectAnswers": [
+      "To listen",
+      "To cook",
+      "To drink"
+    ],
+    "explanation": "Lire means to read.",
+    "keywords": [
+      "french"
+    ],
+    "seedId": "b07dc318-efd8-5af3-8309-b100d7d894c0"
+  },
+  {
+    "category": "language",
+    "question": "What does écrire mean?",
+    "correctAnswer": "To write",
+    "incorrectAnswers": [
+      "To run",
+      "To sing",
+      "To cook"
+    ],
+    "explanation": "Écrire means to write.",
+    "keywords": [
+      "french"
+    ],
+    "seedId": "26c5e8a3-48ff-5151-ae86-f63764c3b959"
+  },
+  {
+    "category": "language",
+    "question": "What does dormir mean?",
+    "correctAnswer": "To sleep",
+    "incorrectAnswers": [
+      "To eat",
+      "To swim",
+      "To study"
+    ],
+    "explanation": "Dormir means to sleep.",
+    "keywords": [
+      "french"
+    ],
+    "seedId": "0cdf2fdd-3e5d-5189-b5b4-ed27773a1310"
+  },
+  {
+    "category": "language",
+    "question": "What does parler mean?",
+    "correctAnswer": "To speak",
+    "incorrectAnswers": [
+      "To read",
+      "To go",
+      "To make"
+    ],
+    "explanation": "Parler means to speak.",
+    "keywords": [
+      "french"
+    ],
+    "seedId": "027c322a-6c91-5fe2-bd6a-579468b427a6"
+  },
+  {
+    "category": "language",
+    "question": "What does écouter mean?",
+    "correctAnswer": "To listen",
+    "incorrectAnswers": [
+      "To watch",
+      "To eat",
+      "To jump"
+    ],
+    "explanation": "Écouter means to listen.",
+    "keywords": [
+      "french"
+    ],
+    "seedId": "c883f811-3c84-506f-8e35-d81507edba8a"
+  },
+  {
+    "category": "language",
+    "question": "What does regarder mean?",
+    "correctAnswer": "To watch",
+    "incorrectAnswers": [
+      "To write",
+      "To cook",
+      "To walk"
+    ],
+    "explanation": "Regarder means to watch or look.",
+    "keywords": [
+      "french"
+    ],
+    "seedId": "bf9563ba-195e-5bb9-8ac6-3d8ecc20a5d5"
+  },
+  {
+    "category": "language",
+    "question": "What does apprendre mean?",
+    "correctAnswer": "To learn",
+    "incorrectAnswers": [
+      "To teach",
+      "To eat",
+      "To go"
+    ],
+    "explanation": "Apprendre means to learn.",
+    "keywords": [
+      "french"
+    ],
+    "seedId": "ed0d7e1f-8ba8-5b86-9162-6a4e2c5283e9"
+  },
+  {
+    "category": "language",
+    "question": "What does comprendre mean?",
+    "correctAnswer": "To understand",
+    "incorrectAnswers": [
+      "To forget",
+      "To speak",
+      "To write"
+    ],
+    "explanation": "Comprendre means to understand.",
+    "keywords": [
+      "french"
+    ],
+    "seedId": "34ff61dd-8b86-5981-95d3-2780f5c1cd52"
+  },
+  {
+    "category": "language",
+    "question": "What does courir mean?",
+    "correctAnswer": "To run",
+    "incorrectAnswers": [
+      "To sleep",
+      "To look",
+      "To drink"
+    ],
+    "explanation": "Courir means to run.",
+    "keywords": [
+      "french"
+    ],
+    "seedId": "34e2b3bb-e04d-5027-9364-abe7d48801b2"
+  },
+  {
+    "category": "language",
+    "question": "What does ouvrir mean?",
+    "correctAnswer": "To open",
+    "incorrectAnswers": [
+      "To close",
+      "To run",
+      "To watch"
+    ],
+    "explanation": "Ouvrir means to open.",
+    "keywords": [
+      "french"
+    ],
+    "seedId": "0914e721-c214-59ff-b0a5-c55b78b8c7f7"
+  },
+  {
+    "category": "language",
+    "question": "What does fermer mean?",
+    "correctAnswer": "To close",
+    "incorrectAnswers": [
+      "To open",
+      "To eat",
+      "To read"
+    ],
+    "explanation": "Fermer means to close.",
+    "keywords": [
+      "french"
+    ],
+    "seedId": "1058996d-2284-51c1-ac58-afa8e7700c26"
+  },
+  {
+    "category": "language",
+    "question": "What does acheter mean?",
+    "correctAnswer": "To buy",
+    "incorrectAnswers": [
+      "To sell",
+      "To run",
+      "To watch"
+    ],
+    "explanation": "Acheter means to buy.",
+    "keywords": [
+      "french"
+    ],
+    "seedId": "e5bcf0f7-05f3-5664-8776-7983368a075f"
+  },
+  {
+    "category": "language",
+    "question": "What does vendre mean?",
+    "correctAnswer": "To sell",
+    "incorrectAnswers": [
+      "To buy",
+      "To sleep",
+      "To jump"
+    ],
+    "explanation": "Vendre means to sell.",
+    "keywords": [
+      "french"
+    ],
+    "seedId": "6ea1129c-b154-5bdc-9c35-738f96feae28"
+  },
+  {
+    "category": "language",
+    "question": "What does choisir mean?",
+    "correctAnswer": "To choose",
+    "incorrectAnswers": [
+      "To write",
+      "To read",
+      "To cook"
+    ],
+    "explanation": "Choisir means to choose.",
+    "keywords": [
+      "french"
+    ],
+    "seedId": "87f9dc35-3fc4-599a-8562-3779066dfc92"
+  },
+  {
+    "category": "language",
+    "question": "How do you say house in French?",
+    "correctAnswer": "Maison",
+    "incorrectAnswers": [
+      "Chambre",
+      "Voiture",
+      "Porte"
+    ],
+    "explanation": "Maison means house.",
+    "keywords": [
+      "french"
+    ],
+    "seedId": "9caa580b-136a-5eb0-bbcf-9c25f200f7b2"
+  },
+  {
+    "category": "language",
+    "question": "How do you say book in French?",
+    "correctAnswer": "Livre",
+    "incorrectAnswers": [
+      "Stylo",
+      "Papier",
+      "Chaise"
+    ],
+    "explanation": "Livre means book.",
+    "keywords": [
+      "french"
+    ],
+    "seedId": "22fce21a-31f2-5384-8476-83891d3e4879"
+  },
+  {
+    "category": "language",
+    "question": "How do you say chair in French?",
+    "correctAnswer": "Chaise",
+    "incorrectAnswers": [
+      "Table",
+      "Lit",
+      "Porte"
+    ],
+    "explanation": "Chaise means chair.",
+    "keywords": [
+      "french"
+    ],
+    "seedId": "9650f528-021c-5706-82a8-fb92e073f4c8"
+  },
+  {
+    "category": "language",
+    "question": "How do you say table in French?",
+    "correctAnswer": "Table",
+    "incorrectAnswers": [
+      "Chaise",
+      "Fenêtre",
+      "Sol"
+    ],
+    "explanation": "Table is the same word in French.",
+    "keywords": [
+      "french"
+    ],
+    "seedId": "29d00edf-b1c8-56bb-803d-678f752be624"
+  },
+  {
+    "category": "language",
+    "question": "How do you say car in French?",
+    "correctAnswer": "Voiture",
+    "incorrectAnswers": [
+      "Camion",
+      "Route",
+      "Pont"
+    ],
+    "explanation": "Voiture means car.",
+    "keywords": [
+      "french"
+    ],
+    "seedId": "08e154e8-0ec5-55c8-af75-95fcafeb47da"
+  },
+  {
+    "category": "language",
+    "question": "How do you say window in French?",
+    "correctAnswer": "Fenêtre",
+    "incorrectAnswers": [
+      "Porte",
+      "Sol",
+      "Chaise"
+    ],
+    "explanation": "Fenêtre means window.",
+    "keywords": [
+      "french"
+    ],
+    "seedId": "f836f3a4-4015-5e6d-814a-bcc96051ae89"
+  },
+  {
+    "category": "language",
+    "question": "How do you say door in French?",
+    "correctAnswer": "Porte",
+    "incorrectAnswers": [
+      "Fenêtre",
+      "Toit",
+      "Mur"
+    ],
+    "explanation": "Porte means door.",
+    "keywords": [
+      "french"
+    ],
+    "seedId": "ef95e0c6-94f3-582a-9b32-188883a7dd15"
+  },
+  {
+    "category": "language",
+    "question": "How do you say bed in French?",
+    "correctAnswer": "Lit",
+    "incorrectAnswers": [
+      "Chaise",
+      "Table",
+      "Mur"
+    ],
+    "explanation": "Lit means bed.",
+    "keywords": [
+      "french"
+    ],
+    "seedId": "3c05ca01-1c7a-53bc-aaf3-67ca5108f7d6"
+  },
+  {
+    "category": "language",
+    "question": "How do you say dog in French?",
+    "correctAnswer": "Chien",
+    "incorrectAnswers": [
+      "Chat",
+      "Oiseau",
+      "Poisson"
+    ],
+    "explanation": "Chien means dog.",
+    "keywords": [
+      "french"
+    ],
+    "seedId": "9264a271-9340-5084-8e6a-e6df388680be"
+  },
+  {
+    "category": "language",
+    "question": "How do you say cat in French?",
+    "correctAnswer": "Chat",
+    "incorrectAnswers": [
+      "Chien",
+      "Oiseau",
+      "Poisson"
+    ],
+    "explanation": "Chat means cat.",
+    "keywords": [
+      "french"
+    ],
+    "seedId": "c1779d0e-db23-57ef-9ece-0e56a14f5027"
+  },
+  {
+    "category": "language",
+    "question": "How do you say school in French?",
+    "correctAnswer": "École",
+    "incorrectAnswers": [
+      "Maison",
+      "Rue",
+      "Ville"
+    ],
+    "explanation": "École means school.",
+    "keywords": [
+      "french"
+    ],
+    "seedId": "199bf25f-2123-5137-b4a8-a4bf241b0927"
+  },
+  {
+    "category": "language",
+    "question": "How do you say city in French?",
+    "correctAnswer": "Ville",
+    "incorrectAnswers": [
+      "Pays",
+      "Route",
+      "Maison"
+    ],
+    "explanation": "Ville means city.",
+    "keywords": [
+      "french"
+    ],
+    "seedId": "7d134ba0-2a77-540d-8fb0-86f2be4d907d"
+  },
+  {
+    "category": "language",
+    "question": "How do you say country in French?",
+    "correctAnswer": "Pays",
+    "incorrectAnswers": [
+      "Ville",
+      "Maison",
+      "Route"
+    ],
+    "explanation": "Pays means country.",
+    "keywords": [
+      "french"
+    ],
+    "seedId": "f7aef19c-29e9-5ac8-9e4a-3d12a6d684e6"
+  },
+  {
+    "category": "language",
+    "question": "How do you say friend in French?",
+    "correctAnswer": "Ami",
+    "incorrectAnswers": [
+      "Ennemi",
+      "Voisin",
+      "Prof"
+    ],
+    "explanation": "Ami means friend.",
+    "keywords": [
+      "french"
+    ],
+    "seedId": "81a3f027-7243-5663-9bd0-fe895628764e"
+  },
+  {
+    "category": "language",
+    "question": "How do you say food in French?",
+    "correctAnswer": "Nourriture",
+    "incorrectAnswers": [
+      "Boisson",
+      "Fruit",
+      "Viande"
+    ],
+    "explanation": "Nourriture means food.",
+    "keywords": [
+      "french"
+    ],
+    "seedId": "b4ac0e94-a516-5cf1-ae20-45261b6385d9"
+  },
+  {
+    "category": "language",
+    "question": "How do you say water in French?",
+    "correctAnswer": "Eau",
+    "incorrectAnswers": [
+      "Lait",
+      "Vin",
+      "Jus"
+    ],
+    "explanation": "Eau means water.",
+    "keywords": [
+      "french"
+    ],
+    "seedId": "e0723514-cc5e-55fc-a180-0b6de2b144d2"
+  },
+  {
+    "category": "language",
+    "question": "How do you say family in French?",
+    "correctAnswer": "Famille",
+    "incorrectAnswers": [
+      "Maison",
+      "Ami",
+      "Chien"
+    ],
+    "explanation": "Famille means family.",
+    "keywords": [
+      "french"
+    ],
+    "seedId": "e2e611df-4415-5ade-8439-cf17ed23bd36"
+  },
+  {
+    "category": "language",
+    "question": "How do you say morning in French?",
+    "correctAnswer": "Matin",
+    "incorrectAnswers": [
+      "Soir",
+      "Nuit",
+      "Jour"
+    ],
+    "explanation": "Matin means morning.",
+    "keywords": [
+      "french"
+    ],
+    "seedId": "eee031b2-c552-522f-8b2d-0033f8eb5791"
+  },
+  {
+    "category": "language",
+    "question": "How do you say night in French?",
+    "correctAnswer": "Nuit",
+    "incorrectAnswers": [
+      "Jour",
+      "Matin",
+      "Soir"
+    ],
+    "explanation": "Nuit means night.",
+    "keywords": [
+      "french"
+    ],
+    "seedId": "fd0a42e5-d574-5822-8023-bb445da521c5"
+  },
+  {
+    "category": "language",
+    "question": "How do you say sun in French?",
+    "correctAnswer": "Soleil",
+    "incorrectAnswers": [
+      "Lune",
+      "Étoile",
+      "Ciel"
+    ],
+    "explanation": "Soleil means sun.",
+    "keywords": [
+      "french"
+    ],
+    "seedId": "c9f6e0ec-fd8f-5ead-a3c0-6795d724d5dc"
+  },
+  {
+    "category": "language",
+    "question": "How do you say one in French?",
+    "correctAnswer": "Un",
+    "incorrectAnswers": [
+      "Deux",
+      "Trois",
+      "Quatre"
+    ],
+    "explanation": "Un means one.",
+    "keywords": [
+      "french"
+    ],
+    "seedId": "c476f17d-e83e-58d2-aeef-4a1d95e9f24c"
+  },
+  {
+    "category": "language",
+    "question": "How do you say two in French?",
+    "correctAnswer": "Deux",
+    "incorrectAnswers": [
+      "Un",
+      "Trois",
+      "Quatre"
+    ],
+    "explanation": "Deux means two.",
+    "keywords": [
+      "french"
+    ],
+    "seedId": "c5a9d645-f9c6-5a20-9a75-319822a87a94"
+  },
+  {
+    "category": "language",
+    "question": "How do you say three in French?",
+    "correctAnswer": "Trois",
+    "incorrectAnswers": [
+      "Deux",
+      "Un",
+      "Cinq"
+    ],
+    "explanation": "Trois means three.",
+    "keywords": [
+      "french"
+    ],
+    "seedId": "5b703e66-7fa4-5e3e-b172-19fa4a1eedbb"
+  },
+  {
+    "category": "language",
+    "question": "How do you say four in French?",
+    "correctAnswer": "Quatre",
+    "incorrectAnswers": [
+      "Cinq",
+      "Trois",
+      "Un"
+    ],
+    "explanation": "Quatre means four.",
+    "keywords": [
+      "french"
+    ],
+    "seedId": "3c18a384-4f12-5a72-a966-9148ed068883"
+  },
+  {
+    "category": "language",
+    "question": "How do you say five in French?",
+    "correctAnswer": "Cinq",
+    "incorrectAnswers": [
+      "Quatre",
+      "Six",
+      "Un"
+    ],
+    "explanation": "Cinq means five.",
+    "keywords": [
+      "french"
+    ],
+    "seedId": "3b0eb44b-58a2-54b7-b726-9f8d90b81dae"
+  },
+  {
+    "category": "language",
+    "question": "How do you say six in French?",
+    "correctAnswer": "Six",
+    "incorrectAnswers": [
+      "Sept",
+      "Huit",
+      "Neuf"
+    ],
+    "explanation": "Six means six.",
+    "keywords": [
+      "french"
+    ],
+    "seedId": "a62b05de-1dfd-57ce-92bc-52e9084bb773"
+  },
+  {
+    "category": "language",
+    "question": "How do you say seven in French?",
+    "correctAnswer": "Sept",
+    "incorrectAnswers": [
+      "Six",
+      "Huit",
+      "Neuf"
+    ],
+    "explanation": "Sept means seven.",
+    "keywords": [
+      "french"
+    ],
+    "seedId": "7a623c36-b9d3-5c64-90f0-ec7cfb6ebccf"
+  },
+  {
+    "category": "language",
+    "question": "How do you say eight in French?",
+    "correctAnswer": "Huit",
+    "incorrectAnswers": [
+      "Neuf",
+      "Sept",
+      "Six"
+    ],
+    "explanation": "Huit means eight.",
+    "keywords": [
+      "french"
+    ],
+    "seedId": "3bb91f67-978c-53ee-9b77-4f346e00ad45"
+  },
+  {
+    "category": "language",
+    "question": "How do you say nine in French?",
+    "correctAnswer": "Neuf",
+    "incorrectAnswers": [
+      "Huit",
+      "Dix",
+      "Sept"
+    ],
+    "explanation": "Neuf means nine.",
+    "keywords": [
+      "french"
+    ],
+    "seedId": "ea9cc135-e7f9-5b0d-9dd7-ac8a55fe8126"
+  },
+  {
+    "category": "language",
+    "question": "How do you say ten in French?",
+    "correctAnswer": "Dix",
+    "incorrectAnswers": [
+      "Onze",
+      "Douze",
+      "Neuf"
+    ],
+    "explanation": "Dix means ten.",
+    "keywords": [
+      "french"
+    ],
+    "seedId": "76789eb9-2aac-5cf6-a8d5-647badeff5ec"
+  }
+]

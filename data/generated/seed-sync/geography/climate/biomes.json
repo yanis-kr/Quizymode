@@ -1,0 +1,207 @@
+{
+  "schemaVersion": 1,
+  "seedSet": "core-public-items",
+  "deltaPreviewLimit": 200,
+  "items": [
+    {
+      "seedId": "6e5f7241-e96e-42d8-942e-b807e0de5eb9",
+      "category": "geography",
+      "navigationKeyword1": "climate",
+      "navigationKeyword2": "biomes",
+      "question": "A biome includes multiple biological what nested within it?",
+      "correctAnswer": "communities",
+      "incorrectAnswers": [
+        "isotherms only",
+        "currency blocks",
+        "fault scarps"
+      ],
+      "explanation": "Britannica describes biomes as containing various communities with shared forms and conditions.",
+      "keywords": [
+        "biomes",
+        "biome-structure",
+        "communities"
+      ],
+      "source": "https://www.britannica.com/science/biome"
+    },
+    {
+      "seedId": "e655b4ae-7d1d-441f-8c86-6f50deca4a59",
+      "category": "geography",
+      "navigationKeyword1": "climate",
+      "navigationKeyword2": "biomes",
+      "question": "Deciduous forests in North America, Europe, and Asia aren\u2019t identical twins, but ecologists lump them into one broader label\u2014what is that label?",
+      "correctAnswer": "The same biome type (e.g., temperate deciduous forest)",
+      "incorrectAnswers": [
+        "They must share one currency",
+        "They are always one political country",
+        "They cannot share any plant families"
+      ],
+      "explanation": "Britannica explains multiple regional biomes can belong to one biome type, such as temperate deciduous forest.",
+      "keywords": [
+        "biomes",
+        "biome-types",
+        "classification"
+      ],
+      "source": "https://www.britannica.com/science/biome"
+    },
+    {
+      "seedId": "0340c7ba-fb0a-4228-9ac7-6987842a22a3",
+      "category": "geography",
+      "navigationKeyword1": "climate",
+      "navigationKeyword2": "biomes",
+      "question": "Empirical climate classifications like K\u00f6ppen group places using measurable aspects of what system?",
+      "correctAnswer": "the climate system (temperature, precipitation, vegetation correlates)",
+      "incorrectAnswers": [
+        "sports league rankings",
+        "national GDP alone",
+        "river boat lengths"
+      ],
+      "explanation": "Britannica contrasts empirical schemes grouping climates by climate-system data with genetic cause-based schemes.",
+      "keywords": [
+        "biomes",
+        "classification",
+        "empirical"
+      ],
+      "source": "https://www.britannica.com/science/Koppen-climate-classification"
+    },
+    {
+      "seedId": "3c1a8cf9-234e-44b0-a039-e3bcf2861499",
+      "category": "geography",
+      "navigationKeyword1": "climate",
+      "navigationKeyword2": "biomes",
+      "question": "European literature often uses which phrase as an equivalent to the North American biome concept?",
+      "correctAnswer": "major life zone",
+      "incorrectAnswers": [
+        "exclusive economic zone",
+        "trade winds belt",
+        "polar front jet"
+      ],
+      "explanation": "Britannica notes \u201cmajor life zone\u201d is the European phrase parallel to biome.",
+      "keywords": [
+        "biomes",
+        "biome-terminology",
+        "europe"
+      ],
+      "source": "https://www.britannica.com/science/biome"
+    },
+    {
+      "seedId": "ca199719-84a1-4475-8946-7da364ff62c7",
+      "category": "geography",
+      "navigationKeyword1": "climate",
+      "navigationKeyword2": "biomes",
+      "question": "K\u00f6ppen designed climate boundaries to align closely with mapped zones of what?",
+      "correctAnswer": "vegetation (biomes)",
+      "incorrectAnswers": [
+        "time zones",
+        "political borders alone",
+        "Internet cable routes"
+      ],
+      "explanation": "Britannica states K\u00f6ppen matched climate limits to vegetation zones being mapped in his era.",
+      "keywords": [
+        "biomes",
+        "koppen",
+        "vegetation-zones"
+      ],
+      "source": "https://www.britannica.com/science/Koppen-climate-classification"
+    },
+    {
+      "seedId": "9423e8f4-82cf-47cf-9605-6db484c4a386",
+      "category": "geography",
+      "navigationKeyword1": "climate",
+      "navigationKeyword2": "biomes",
+      "question": "Swap hemispheres and you can still match places by the big ecological \u201cneighborhood\u201d they belong to\u2014tundra, savanna, rainforest, and so on. What is that scale of region called?",
+      "correctAnswer": "A biome",
+      "incorrectAnswers": [
+        "A postal code zone",
+        "A single weather front",
+        "A time zone"
+      ],
+      "explanation": "Britannica defines a biome as a major community with similar life forms and environmental conditions.",
+      "keywords": [
+        "biomes",
+        "biome-concept",
+        "ecology"
+      ],
+      "source": "https://www.britannica.com/science/biome"
+    },
+    {
+      "seedId": "0d6071f1-14e3-443c-a9f0-c50dc5bd2a63",
+      "category": "geography",
+      "navigationKeyword1": "climate",
+      "navigationKeyword2": "biomes",
+      "question": "Tropical seasonal forests and savannas often experience wet and dry periods tied to shifts of which belt?",
+      "correctAnswer": "the intertropical convergence zone",
+      "incorrectAnswers": [
+        "the polar vortex only",
+        "the Kuroshio Current exclusively",
+        "the doldrums fixed at one spot"
+      ],
+      "explanation": "Britannica links low-latitude wet/dry seasons to seasonal movement of the intertropical convergence zone.",
+      "keywords": [
+        "biomes",
+        "itcz",
+        "tropics"
+      ],
+      "source": "https://www.britannica.com/science/season"
+    },
+    {
+      "seedId": "5abb3cf0-be3c-441b-9497-2f8a1ccc8be5",
+      "category": "geography",
+      "navigationKeyword1": "climate",
+      "navigationKeyword2": "biomes",
+      "question": "Type B dry climates subdivide into arid (BW) and which moister subtype?",
+      "correctAnswer": "semiarid (BS)",
+      "incorrectAnswers": [
+        "polar (EF)",
+        "tundra (ET)",
+        "monsoon (Am)"
+      ],
+      "explanation": "Britannica divides K\u00f6ppen B climates into arid BW and semiarid BS subtypes.",
+      "keywords": [
+        "biomes",
+        "dry-climates",
+        "koppen"
+      ],
+      "source": "https://www.britannica.com/science/Koppen-climate-classification"
+    },
+    {
+      "seedId": "4e84f23d-0a45-498d-a4b4-0c31c89831fb",
+      "category": "geography",
+      "navigationKeyword1": "climate",
+      "navigationKeyword2": "biomes",
+      "question": "We talk a lot about rainforests and grasslands, but which single realm actually covers most of Earth\u2019s surface at biome scale?",
+      "correctAnswer": "The global ocean (marine biome)",
+      "incorrectAnswers": [
+        "Tropical rainforest alone",
+        "The Sahara Desert alone",
+        "All cities and farmland combined"
+      ],
+      "explanation": "Britannica\u2019s biome overview treats marine environments as a major biome category, and ocean area dwarfs any one land biome.",
+      "keywords": [
+        "biomes",
+        "marine-biome",
+        "ocean"
+      ],
+      "source": "https://www.britannica.com/science/biome"
+    },
+    {
+      "seedId": "dfe95481-86fb-4305-a99a-dbc94a611eac",
+      "category": "geography",
+      "navigationKeyword1": "climate",
+      "navigationKeyword2": "biomes",
+      "question": "Why do map legends say \u201cboreal forest\u201d or \u201cgrassland\u201d instead of naming the local mayor?",
+      "correctAnswer": "Biome names highlight the vegetation you expect to dominate the landscape",
+      "incorrectAnswers": [
+        "Vegetation is irrelevant to biome science",
+        "Biomes are named only for dominant rock type",
+        "Biomes follow national borders exactly"
+      ],
+      "explanation": "Britannica states biomes take names from dominant vegetation such as grassland or coniferous forest.",
+      "keywords": [
+        "biomes",
+        "biome-naming",
+        "vegetation"
+      ],
+      "source": "https://www.britannica.com/science/biome"
+    }
+  ]
+}

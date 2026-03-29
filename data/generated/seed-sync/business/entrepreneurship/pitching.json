@@ -1,0 +1,121 @@
+{
+  "schemaVersion": 1,
+  "seedSet": "core-public-items",
+  "deltaPreviewLimit": 200,
+  "items": [
+    {
+      "seedId": "c9bb8578-9951-4603-9151-a4a250d1191f",
+      "category": "business",
+      "navigationKeyword1": "entrepreneurship",
+      "navigationKeyword2": "pitching",
+      "question": "How should founders handle tough investor questions?",
+      "correctAnswer": "Answer directly, show what you know, and be clear about risks and mitigations.",
+      "incorrectAnswers": [
+        "Bluff with fake metrics.",
+        "Refuse all questions.",
+        "Change the subject every time."
+      ],
+      "explanation": "Credibility compounds over meetings.",
+      "keywords": [
+        "investor-questions",
+        "fundraising"
+      ],
+      "source": "https://www.investopedia.com/terms/v/venture-capital.asp"
+    },
+    {
+      "seedId": "3dc98fae-b5c5-492c-a584-518e999706b6",
+      "category": "business",
+      "navigationKeyword1": "entrepreneurship",
+      "navigationKeyword2": "pitching",
+      "question": "What is a data room used for in fundraising?",
+      "correctAnswer": "Organized documents for investors to verify claims during diligence.",
+      "incorrectAnswers": [
+        "Store employee birthday cakes.",
+        "Host video games.",
+        "Replace the pitch."
+      ],
+      "explanation": "Clean data rooms speed decisions.",
+      "keywords": [
+        "data-room",
+        "diligence"
+      ],
+      "source": "https://www.investopedia.com/terms/d/duediligence.asp"
+    },
+    {
+      "seedId": "788e3c8c-3068-4a7f-8d8c-bc15ebfba6ff",
+      "category": "business",
+      "navigationKeyword1": "entrepreneurship",
+      "navigationKeyword2": "pitching",
+      "question": "What is an elevator pitch meant to do?",
+      "correctAnswer": "Communicate the essence quickly to earn a longer conversation.",
+      "incorrectAnswers": [
+        "Replace all financial statements.",
+        "Explain every technical detail.",
+        "Guarantee investment."
+      ],
+      "explanation": "Brevity forces prioritization.",
+      "keywords": [
+        "elevator-pitch",
+        "messaging"
+      ],
+      "source": "https://www.sba.gov/business-guide/plan-your-business"
+    },
+    {
+      "seedId": "516b040d-fc2a-449e-b9c9-c38e0af94f00",
+      "category": "business",
+      "navigationKeyword1": "entrepreneurship",
+      "navigationKeyword2": "pitching",
+      "question": "What is the core job of an investor pitch deck story arc?",
+      "correctAnswer": "Explain a compelling problem, your solution, market, traction, team, and ask\u2014clearly and credibly.",
+      "incorrectAnswers": [
+        "Hide the business model entirely.",
+        "Use only animations with no numbers.",
+        "Replace product with vibes."
+      ],
+      "explanation": "Investors pattern-match for clarity and evidence.",
+      "keywords": [
+        "pitch-deck",
+        "fundraising"
+      ],
+      "source": "https://www.sequoiacap.com/article/writing-a-business-plan/"
+    },
+    {
+      "seedId": "92dfb045-7611-405a-b782-e62af65cd2a8",
+      "category": "business",
+      "navigationKeyword1": "entrepreneurship",
+      "navigationKeyword2": "pitching",
+      "question": "Why define confidentiality boundaries when sharing materials?",
+      "correctAnswer": "Protect IP and strategy while still enabling diligence.",
+      "incorrectAnswers": [
+        "Share all passwords publicly.",
+        "Never use NDAs.",
+        "Post cap tables online."
+      ],
+      "explanation": "Use sensible NDA/marked materials practices.",
+      "keywords": [
+        "nda",
+        "ip"
+      ],
+      "source": "https://www.sba.gov/business-guide/manage-your-business"
+    },
+    {
+      "seedId": "2a213b63-154b-42be-a2ac-c3c59f195209",
+      "category": "business",
+      "navigationKeyword1": "entrepreneurship",
+      "navigationKeyword2": "pitching",
+      "question": "Why include a traction slide?",
+      "correctAnswer": "Evidence reduces perceived risk\u2014growth, pilots, revenue, engagement, or LOIs.",
+      "incorrectAnswers": [
+        "Traction is irrelevant to investors.",
+        "Only competitor logos matter.",
+        "Only office photos."
+      ],
+      "explanation": "Traction should be honest and specific.",
+      "keywords": [
+        "traction",
+        "fundraising"
+      ],
+      "source": "https://www.ycombinator.com/library/4T-how-to-design-a-better-pitch-deck"
+    }
+  ]
+}

@@ -1,0 +1,121 @@
+{
+  "schemaVersion": 1,
+  "seedSet": "core-public-items",
+  "deltaPreviewLimit": 200,
+  "items": [
+    {
+      "seedId": "2537fa8c-c521-59ec-a41a-401b15837189",
+      "category": "civics",
+      "navigationKeyword1": "government",
+      "navigationKeyword2": "state-local",
+      "question": "County or municipal officials often play what role in elections?",
+      "correctAnswer": "they carry out local election operations",
+      "incorrectAnswers": [
+        "they confirm Supreme Court justices",
+        "they negotiate treaties",
+        "they declare war"
+      ],
+      "explanation": "Local election officials often manage polling places, ballots, and other operational tasks.",
+      "keywords": [
+        "state-local",
+        "civics-structure"
+      ],
+      "source": "https://www.ncsl.org/elections-and-campaigns/election-administration-at-state-and-local-levels"
+    },
+    {
+      "seedId": "2cf7e2d0-a6ad-52af-972c-ffd108b915e9",
+      "category": "civics",
+      "navigationKeyword1": "government",
+      "navigationKeyword2": "state-local",
+      "question": "Which level of government is usually closest to residents' day-to-day services like city streets and local zoning?",
+      "correctAnswer": "local government",
+      "incorrectAnswers": [
+        "the federal government",
+        "foreign governments",
+        "the Supreme Court"
+      ],
+      "explanation": "Local governments often handle services such as zoning, local roads, and city administration.",
+      "keywords": [
+        "state-local",
+        "civics-structure"
+      ],
+      "source": "https://www.usa.gov/local-governments"
+    },
+    {
+      "seedId": "1d1ba91a-8966-5df7-8b2c-e2d2b0edf313",
+      "category": "civics",
+      "navigationKeyword1": "government",
+      "navigationKeyword2": "state-local",
+      "question": "Which level of government typically includes counties and municipalities?",
+      "correctAnswer": "local government",
+      "incorrectAnswers": [
+        "federal government",
+        "judicial branch",
+        "international government"
+      ],
+      "explanation": "Counties, cities, towns, and municipalities are common forms of local government.",
+      "keywords": [
+        "state-local",
+        "civics-structure"
+      ],
+      "source": "https://www.usa.gov/state-local-governments"
+    },
+    {
+      "seedId": "f162e2b9-894e-5e37-8f0d-55166efcebdd",
+      "category": "civics",
+      "navigationKeyword1": "government",
+      "navigationKeyword2": "state-local",
+      "question": "Which level of government usually has broader authority over statewide policy than a city government does?",
+      "correctAnswer": "state government",
+      "incorrectAnswers": [
+        "neighborhood associations",
+        "federal courts only",
+        "county libraries only"
+      ],
+      "explanation": "States set many statewide legal and policy frameworks that local governments then work within.",
+      "keywords": [
+        "state-local",
+        "civics-structure"
+      ],
+      "source": "https://www.usa.gov/state-governments"
+    },
+    {
+      "seedId": "50ef8438-90ca-5607-ba2e-3734ffadc122",
+      "category": "civics",
+      "navigationKeyword1": "government",
+      "navigationKeyword2": "state-local",
+      "question": "Who usually sets the broad rules for how elections are run inside a state?",
+      "correctAnswer": "state government",
+      "incorrectAnswers": [
+        "the United Nations",
+        "school boards alone",
+        "the president alone"
+      ],
+      "explanation": "States generally set the legal framework for elections, while local officials handle much of the administration.",
+      "keywords": [
+        "state-local",
+        "civics-structure"
+      ],
+      "source": "https://www.ncsl.org/elections-and-campaigns/election-administration-at-state-and-local-levels"
+    },
+    {
+      "seedId": "6ceee8af-df7c-59be-b4de-7fce6455f885",
+      "category": "civics",
+      "navigationKeyword1": "government",
+      "navigationKeyword2": "state-local",
+      "question": "Why do many civics questions separate state and local government from federal government?",
+      "correctAnswer": "because they have different responsibilities and powers",
+      "incorrectAnswers": [
+        "because local governments are above the Constitution",
+        "because states cannot make any laws",
+        "because cities run foreign policy"
+      ],
+      "explanation": "State, local, and federal governments each have different roles in the U.S. system.",
+      "keywords": [
+        "state-local",
+        "civics-structure"
+      ],
+      "source": "https://www.ncsl.org/resources/details/pgrid/3666/pageid/1/pid/3666/evl/0/categoryid/1061/categoryname/state-federal"
+    }
+  ]
+}

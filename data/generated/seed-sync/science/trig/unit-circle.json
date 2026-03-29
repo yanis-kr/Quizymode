@@ -1,0 +1,235 @@
+{
+  "schemaVersion": 1,
+  "seedSet": "core-public-items",
+  "deltaPreviewLimit": 200,
+  "items": [
+    {
+      "seedId": "8b7c5df7-99b3-43e9-b8f4-72d09be5986a",
+      "category": "science",
+      "navigationKeyword1": "trig",
+      "navigationKeyword2": "unit-circle",
+      "question": "Angle 0 rad on unit circle point?",
+      "correctAnswer": "(1, 0)",
+      "incorrectAnswers": [
+        "0,1",
+        "(0,0)",
+        "(\u22121,0)"
+      ],
+      "explanation": "cos=1, sin=0.",
+      "keywords": [
+        "radians",
+        "unit-circle"
+      ],
+      "source": "https://openstax.org/books/precalculus-2e/pages/7-3-unit-circle-sine-and-cosine-functions"
+    },
+    {
+      "seedId": "bddd3281-0fdf-4a2e-bd42-dd89e6089392",
+      "category": "science",
+      "navigationKeyword1": "trig",
+      "navigationKeyword2": "unit-circle",
+      "question": "Arc length on circle radius r, angle \u03b8 rad?",
+      "correctAnswer": "s = r\u03b8",
+      "incorrectAnswers": [
+        "s = r/\u03b8",
+        "s = r^2 \u03b8",
+        "s = \u03b8/r"
+      ],
+      "explanation": "Radian definition motivation.",
+      "keywords": [
+        "arc-length",
+        "radians"
+      ],
+      "source": "https://openstax.org/books/precalculus-2e/pages/7-3-unit-circle-sine-and-cosine-functions"
+    },
+    {
+      "seedId": "a351de94-1f87-47c6-a06e-7fa5749bd13e",
+      "category": "science",
+      "navigationKeyword1": "trig",
+      "navigationKeyword2": "unit-circle",
+      "question": "Coterminal angles?",
+      "correctAnswer": "Differ by full rotations 360\u00b0 or 2\u03c0",
+      "incorrectAnswers": [
+        "Always equal sine",
+        "Cannot share terminal side",
+        "Only acute"
+      ],
+      "explanation": "Same terminal side.",
+      "keywords": [
+        "coterminal",
+        "angles"
+      ],
+      "source": "https://openstax.org/books/precalculus-2e/pages/7-3-unit-circle-sine-and-cosine-functions"
+    },
+    {
+      "seedId": "1900e12d-7d60-45bd-b85e-040002f68b36",
+      "category": "science",
+      "navigationKeyword1": "trig",
+      "navigationKeyword2": "unit-circle",
+      "question": "Degrees to radians?",
+      "correctAnswer": "multiply by \u03c0/180",
+      "incorrectAnswers": [
+        "multiply by 180/\u03c0",
+        "multiply by 2\u03c0",
+        "divide by \u03c0"
+      ],
+      "explanation": "Radians = degrees \u00d7 \u03c0/180 (180/\u03c0 converts radians to degrees).",
+      "keywords": [
+        "conversion",
+        "radians"
+      ],
+      "source": "https://www.mathsisfun.com/geometry/radians.html"
+    },
+    {
+      "seedId": "7b457acb-182e-4a16-a326-e5250895230b",
+      "category": "science",
+      "navigationKeyword1": "trig",
+      "navigationKeyword2": "unit-circle",
+      "question": "On unit circle, cos \u03b8 and sin \u03b8 are?",
+      "correctAnswer": "x and y coordinates of point at angle \u03b8",
+      "incorrectAnswers": [
+        "r and \u03b8",
+        "tan and sec",
+        "hypotenuse and adjacent"
+      ],
+      "explanation": "From standard position.",
+      "keywords": [
+        "coordinates",
+        "unit-circle"
+      ],
+      "source": "https://openstax.org/books/precalculus-2e/pages/7-3-unit-circle-sine-and-cosine-functions"
+    },
+    {
+      "seedId": "7f75330c-d3df-460c-827f-efdff6adb6ae",
+      "category": "science",
+      "navigationKeyword1": "trig",
+      "navigationKeyword2": "unit-circle",
+      "question": "Period of sin and cos?",
+      "correctAnswer": "2\u03c0 radians",
+      "incorrectAnswers": [
+        "\u03c0",
+        "1",
+        "4\u03c0"
+      ],
+      "explanation": "Repeats every full turn.",
+      "keywords": [
+        "period",
+        "sinusoid"
+      ],
+      "source": "https://openstax.org/books/precalculus-2e/pages/7-3-unit-circle-sine-and-cosine-functions"
+    },
+    {
+      "seedId": "d95a6eba-cd93-47fb-b48a-56f532eb83a0",
+      "category": "science",
+      "navigationKeyword1": "trig",
+      "navigationKeyword2": "unit-circle",
+      "question": "Period of tan?",
+      "correctAnswer": "\u03c0 radians",
+      "incorrectAnswers": [
+        "2\u03c0",
+        "\u03c0/2",
+        "1"
+      ],
+      "explanation": "Asymptotes every half turn.",
+      "keywords": [
+        "tangent-period",
+        "unit-circle"
+      ],
+      "source": "https://openstax.org/books/precalculus-2e/pages/7-4-the-other-trigonometric-functions"
+    },
+    {
+      "seedId": "c4e60acb-698f-413a-8bfd-cf01a1d4b4e1",
+      "category": "science",
+      "navigationKeyword1": "trig",
+      "navigationKeyword2": "unit-circle",
+      "question": "Pythagorean identity 1 + tan^2 \u03b8?",
+      "correctAnswer": "sec^2 \u03b8",
+      "incorrectAnswers": [
+        "csc^2 \u03b8",
+        "1",
+        "cos^2 \u03b8"
+      ],
+      "explanation": "Divide sin^2+cos^2=1 by cos^2.",
+      "keywords": [
+        "pythagorean",
+        "identities"
+      ],
+      "source": "https://openstax.org/books/precalculus-2e/pages/7-1-solving-trigonometric-equations-with-identities"
+    },
+    {
+      "seedId": "6a3fcdb5-662c-4bdf-8738-e4d59ff5ce17",
+      "category": "science",
+      "navigationKeyword1": "trig",
+      "navigationKeyword2": "unit-circle",
+      "question": "Quadrant signs for sin cos?",
+      "correctAnswer": "ASTC mnemonic (All, Sin, Tan, Cos positive by quadrant)",
+      "incorrectAnswers": [
+        "Always all positive",
+        "Sin always positive",
+        "Cos always positive"
+      ],
+      "explanation": "Know signs from coordinates.",
+      "keywords": [
+        "astc",
+        "signs"
+      ],
+      "source": "https://www.mathsisfun.com/algebra/trig-four-quadrants.html"
+    },
+    {
+      "seedId": "c14189f3-1aee-44b7-bc26-32b031601c5e",
+      "category": "science",
+      "navigationKeyword1": "trig",
+      "navigationKeyword2": "unit-circle",
+      "question": "Sector area (\u03b8 radians)?",
+      "correctAnswer": "(1/2) r^2 \u03b8",
+      "incorrectAnswers": [
+        "r \u03b8",
+        "\u03c0 r^2",
+        "2\u03c0r"
+      ],
+      "explanation": "Proportional to angle.",
+      "keywords": [
+        "sector-area",
+        "geometry"
+      ],
+      "source": "https://openstax.org/books/precalculus-2e/pages/7-3-unit-circle-sine-and-cosine-functions"
+    },
+    {
+      "seedId": "de4c946c-421c-42f6-b6ce-fad6536c4190",
+      "category": "science",
+      "navigationKeyword1": "trig",
+      "navigationKeyword2": "unit-circle",
+      "question": "Unit circle definition?",
+      "correctAnswer": "Circle radius 1 centered at origin",
+      "incorrectAnswers": [
+        "Radius 2",
+        "Only upper half",
+        "No coordinates"
+      ],
+      "explanation": "x^2+y^2=1.",
+      "keywords": [
+        "unit-circle",
+        "definition"
+      ],
+      "source": "https://openstax.org/books/precalculus-2e/pages/7-3-unit-circle-sine-and-cosine-functions"
+    },
+    {
+      "seedId": "414225fa-fb61-400e-8ab5-6537c1fd45cc",
+      "category": "science",
+      "navigationKeyword1": "trig",
+      "navigationKeyword2": "unit-circle",
+      "question": "\u03c0/2 radians?",
+      "correctAnswer": "90\u00b0",
+      "incorrectAnswers": [
+        "45\u00b0",
+        "180\u00b0",
+        "60\u00b0"
+      ],
+      "explanation": "Conversion \u03c0 rad = 180\u00b0.",
+      "keywords": [
+        "radians",
+        "degrees"
+      ],
+      "source": "https://www.mathsisfun.com/geometry/radians.html"
+    }
+  ]
+}

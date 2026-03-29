@@ -1,0 +1,45 @@
+{
+  "schemaVersion": 1,
+  "seedSet": "core-public-items",
+  "deltaPreviewLimit": 200,
+  "items": [
+    {
+      "seedId": "64524b9b-9001-5604-8839-be1423e9d3b2",
+      "category": "humanities",
+      "navigationKeyword1": "film",
+      "navigationKeyword2": "genres",
+      "question": "What is a film genre?",
+      "correctAnswer": "a category with shared story or style traits",
+      "incorrectAnswers": [
+        "a camera brand",
+        "a censor board",
+        "a ticket price"
+      ],
+      "explanation": "Genres group films by recurring conventions, moods, and structures.",
+      "keywords": [
+        "film-genres",
+        "cinema"
+      ],
+      "source": "https://www.britannica.com/art/motion-picture"
+    },
+    {
+      "seedId": "7def209b-da86-57ee-b96f-680def165de8",
+      "category": "humanities",
+      "navigationKeyword1": "film",
+      "navigationKeyword2": "genres",
+      "question": "Which genre is especially associated with suspense, fear, and tension?",
+      "correctAnswer": "horror",
+      "incorrectAnswers": [
+        "documentary",
+        "musical notation",
+        "still life"
+      ],
+      "explanation": "Horror films often aim to create fear, dread, or shock.",
+      "keywords": [
+        "film-genres",
+        "horror"
+      ],
+      "source": "https://www.bfi.org.uk/lists/100-horror-films-see-before-you-die"
+    }
+  ]
+}

@@ -1,0 +1,121 @@
+{
+  "schemaVersion": 1,
+  "seedSet": "core-public-items",
+  "deltaPreviewLimit": 200,
+  "items": [
+    {
+      "seedId": "27d0ce34-8614-5ece-92d8-204d13dd5667",
+      "category": "tech",
+      "navigationKeyword1": "devops",
+      "navigationKeyword2": "ci-cd",
+      "question": "In a typical CI pipeline, what is an artifact?",
+      "correctAnswer": "An output produced by a build step, such as a binary or package",
+      "incorrectAnswers": [
+        "A human approval email stored in git",
+        "The YAML comment header only",
+        "A failed unit test log exclusively"
+      ],
+      "explanation": "Artifacts are the build products later stages can test, scan, or deploy.",
+      "keywords": [
+        "ci-cd",
+        "pipeline"
+      ],
+      "source": "https://docs.gitlab.com/ee/ci/pipelines/pipeline_artifacts.html"
+    },
+    {
+      "seedId": "602b3e6a-7624-5af8-bc9f-745e691aea43",
+      "category": "tech",
+      "navigationKeyword1": "devops",
+      "navigationKeyword2": "ci-cd",
+      "question": "What does CD often refer to besides Continuous Delivery?",
+      "correctAnswer": "Continuous Deployment",
+      "incorrectAnswers": [
+        "Continuous Documentation",
+        "Continuous Debugging",
+        "Continuous Design"
+      ],
+      "explanation": "Teams use CD for delivery (always releasable) or deployment (automatic production releases), depending on risk policy.",
+      "keywords": [
+        "ci-cd",
+        "delivery"
+      ],
+      "source": "https://martinfowler.com/bliki/ContinuousDelivery.html"
+    },
+    {
+      "seedId": "60f7d5a9-de74-5d32-ba14-3306f96cd2b4",
+      "category": "tech",
+      "navigationKeyword1": "devops",
+      "navigationKeyword2": "ci-cd",
+      "question": "What does idempotent deployment scripts aim to mean?",
+      "correctAnswer": "Running them twice leaves the system in the same desired state",
+      "incorrectAnswers": [
+        "Each run must delete all servers first",
+        "They may only run on developer laptops",
+        "They never change configuration"
+      ],
+      "explanation": "Idempotent automation is safer to retry and easier to reconcile with drift.",
+      "keywords": [
+        "ci-cd",
+        "automation"
+      ],
+      "source": "https://www.jenkins.io/doc/book/pipeline/syntax/"
+    },
+    {
+      "seedId": "bceaae22-84af-5699-b523-5b3f698775fa",
+      "category": "tech",
+      "navigationKeyword1": "devops",
+      "navigationKeyword2": "ci-cd",
+      "question": "What is a common purpose of a deployment gate in CD?",
+      "correctAnswer": "Require checks or approvals before promoting to the next environment",
+      "incorrectAnswers": [
+        "Block all deployments permanently",
+        "Replace monitoring with manual logs only",
+        "Disable rollbacks automatically"
+      ],
+      "explanation": "Gates add policy between stages while keeping automation for promotion.",
+      "keywords": [
+        "ci-cd",
+        "deployment"
+      ],
+      "source": "https://learn.microsoft.com/en-us/azure/devops/pipelines/release/approvals-gates"
+    },
+    {
+      "seedId": "b45b6f52-f0e0-5e3d-a2d5-7da17a2772ad",
+      "category": "tech",
+      "navigationKeyword1": "devops",
+      "navigationKeyword2": "ci-cd",
+      "question": "What is the main goal of Continuous Integration (CI)?",
+      "correctAnswer": "Integrate changes frequently and verify them with automated checks",
+      "incorrectAnswers": [
+        "Deploy once a year with a manual checklist only",
+        "Replace version control with shared folders",
+        "Guarantee zero bugs in production"
+      ],
+      "explanation": "CI emphasizes frequent merges and automated builds/tests so issues surface early.",
+      "keywords": [
+        "ci-cd",
+        "continuous-integration"
+      ],
+      "source": "https://martinfowler.com/articles/continuousIntegration.html"
+    },
+    {
+      "seedId": "07fcd2ce-1af8-56c1-9400-9f2c3c5d62f5",
+      "category": "tech",
+      "navigationKeyword1": "devops",
+      "navigationKeyword2": "ci-cd",
+      "question": "Why do pipelines commonly run tests before building container images?",
+      "correctAnswer": "Fail fast on cheap checks before heavier packaging work",
+      "incorrectAnswers": [
+        "Because tests require a finished image to exist first",
+        "Because Docker forbids tests in CI",
+        "Because images cannot be cached"
+      ],
+      "explanation": "Ordering stages from quick feedback to slower steps saves time and compute.",
+      "keywords": [
+        "ci-cd",
+        "testing"
+      ],
+      "source": "https://docs.github.com/en/actions/learn-github-actions/understanding-github-actions"
+    }
+  ]
+}

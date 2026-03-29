@@ -15,7 +15,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 DATA_DIR = ROOT / "scripts" / "science_data"
-OUT = ROOT / "data" / "bulk-seed" / "science"
+OUT = ROOT / "data" / "seed-source" / "items" / "science"
 
 
 def main() -> None:

@@ -1,0 +1,121 @@
+{
+  "schemaVersion": 1,
+  "seedSet": "core-public-items",
+  "deltaPreviewLimit": 200,
+  "items": [
+    {
+      "seedId": "0948386e-fd7a-5cdf-a764-ce81677bae77",
+      "category": "civics",
+      "navigationKeyword1": "rights",
+      "navigationKeyword2": "civil-rights",
+      "question": "What did Title II of the Civil Rights Act of 1964 mainly address?",
+      "correctAnswer": "discrimination in public accommodations like hotels and restaurants",
+      "incorrectAnswers": [
+        "voting age only",
+        "term limits for presidents",
+        "creation of the Federal Reserve"
+      ],
+      "explanation": "Title II outlawed discrimination on race, color, religion, or national origin in businesses open to the public.",
+      "keywords": [
+        "civil-rights",
+        "public-accommodations"
+      ],
+      "source": "https://www.law.cornell.edu/uscode/text/42/2000a"
+    },
+    {
+      "seedId": "d5f2d086-407c-5ccd-aa04-11ea75827129",
+      "category": "civics",
+      "navigationKeyword1": "rights",
+      "navigationKeyword2": "civil-rights",
+      "question": "What did Title VII of the Civil Rights Act of 1964 mainly cover?",
+      "correctAnswer": "employment discrimination by covered employers",
+      "incorrectAnswers": [
+        "only election ballots",
+        "only military drafts",
+        "only patent law"
+      ],
+      "explanation": "Title VII bans employment discrimination based on race, color, religion, sex, and national origin in many workplaces.",
+      "keywords": [
+        "civil-rights",
+        "employment"
+      ],
+      "source": "https://www.eeoc.gov/statutes/title-vii-civil-rights-act-1964"
+    },
+    {
+      "seedId": "c33dbb6a-4314-5c4a-93fd-dcd4a4ea5eb0",
+      "category": "civics",
+      "navigationKeyword1": "rights",
+      "navigationKeyword2": "civil-rights",
+      "question": "What did the Voting Rights Act of 1965 add beyond the text of the Constitution alone?",
+      "correctAnswer": "federal tools to block discriminatory voting practices in covered places",
+      "incorrectAnswers": [
+        "a ban on all political parties",
+        "automatic voter registration everywhere",
+        "presidential election by popular vote only"
+      ],
+      "explanation": "The act created preclearance and other mechanisms Congress later adjusted as courts reviewed coverage formulas.",
+      "keywords": [
+        "civil-rights",
+        "voting"
+      ],
+      "source": "https://www.law.cornell.edu/uscode/text/52/10101"
+    },
+    {
+      "seedId": "5afe55d4-924f-5723-b677-5b835aa4f8cf",
+      "category": "civics",
+      "navigationKeyword1": "rights",
+      "navigationKeyword2": "civil-rights",
+      "question": "What does Section 1983 allow people to do when state officials violate federal rights?",
+      "correctAnswer": "sue for damages or injunctions in federal court",
+      "incorrectAnswers": [
+        "remove cases to state court only",
+        "appeal directly to a foreign tribunal",
+        "void all state laws automatically"
+      ],
+      "explanation": "42 U.S.C. \u00a7 1983 creates a cause of action against persons acting under color of state law who breach federal rights.",
+      "keywords": [
+        "civil-rights",
+        "section-1983"
+      ],
+      "source": "https://www.law.cornell.edu/uscode/text/42/1983"
+    },
+    {
+      "seedId": "410298fa-063a-5f49-adcc-5b2d3dfee788",
+      "category": "civics",
+      "navigationKeyword1": "rights",
+      "navigationKeyword2": "civil-rights",
+      "question": "Which Reconstruction amendment granted citizenship to all persons born in the United States, with narrow exceptions?",
+      "correctAnswer": "the Fourteenth Amendment",
+      "incorrectAnswers": [
+        "the Tenth Amendment",
+        "the Twenty-Third Amendment",
+        "Article III"
+      ],
+      "explanation": "The Citizenship Clause defines who is a U.S. citizen at birth, a cornerstone of equal membership.",
+      "keywords": [
+        "civil-rights",
+        "citizenship"
+      ],
+      "source": "https://constitution.congress.gov/constitution/amendment-14/"
+    },
+    {
+      "seedId": "153b780e-9290-54c7-93f7-a7eced6275ba",
+      "category": "civics",
+      "navigationKeyword1": "rights",
+      "navigationKeyword2": "civil-rights",
+      "question": "Which law required many institutions to provide disability accommodations in employment and public services?",
+      "correctAnswer": "the Americans with Disabilities Act",
+      "incorrectAnswers": [
+        "the Sherman Act",
+        "the Hatch Act",
+        "the Logan Act"
+      ],
+      "explanation": "The ADA bars discrimination against people with disabilities and mandates reasonable accommodations in defined settings.",
+      "keywords": [
+        "civil-rights",
+        "disability"
+      ],
+      "source": "https://www.ada.gov/topics/intro-to-ada/"
+    }
+  ]
+}

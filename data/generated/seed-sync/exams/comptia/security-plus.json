@@ -1,0 +1,207 @@
+{
+  "schemaVersion": 1,
+  "seedSet": "core-public-items",
+  "deltaPreviewLimit": 200,
+  "items": [
+    {
+      "seedId": "92164033-f548-4dfa-8292-db573efedb4f",
+      "category": "exams",
+      "navigationKeyword1": "comptia",
+      "navigationKeyword2": "security-plus",
+      "question": "In security, what does the CIA triad stand for?",
+      "correctAnswer": "Confidentiality, integrity, and availability",
+      "incorrectAnswers": [
+        "Control, isolation, and auditing",
+        "Confidentiality, identity, and access",
+        "Centralization, inspection, and automation"
+      ],
+      "explanation": "The CIA triad refers to confidentiality, integrity, and availability.",
+      "keywords": [
+        "security-plus",
+        "security-fundamentals",
+        "comptia"
+      ],
+      "source": "https://csrc.nist.gov/glossary/term/cia_triad"
+    },
+    {
+      "seedId": "338bcebc-0d10-4800-9b8f-a437d906d416",
+      "category": "exams",
+      "navigationKeyword1": "comptia",
+      "navigationKeyword2": "security-plus",
+      "question": "What does AAA stand for in access control?",
+      "correctAnswer": "Authentication, authorization, and accounting",
+      "incorrectAnswers": [
+        "Availability, analysis, and alerting",
+        "Authentication, auditing, and assurance",
+        "Authorization, anonymity, and access"
+      ],
+      "explanation": "AAA commonly refers to authentication, authorization, and accounting.",
+      "keywords": [
+        "security-plus",
+        "security-fundamentals",
+        "comptia"
+      ],
+      "source": "https://csrc.nist.gov/glossary/term/authentication"
+    },
+    {
+      "seedId": "ed27814d-c3cd-4777-9e38-07e00a25475d",
+      "category": "exams",
+      "navigationKeyword1": "comptia",
+      "navigationKeyword2": "security-plus",
+      "question": "What does a firewall primarily do?",
+      "correctAnswer": "Filters network traffic based on defined rules",
+      "incorrectAnswers": [
+        "Backs up operating systems",
+        "Creates user passwords",
+        "Maps host names to IPs"
+      ],
+      "explanation": "Firewalls enforce traffic control policies between network zones.",
+      "keywords": [
+        "security-plus",
+        "firewall",
+        "comptia"
+      ],
+      "source": "https://csrc.nist.gov/glossary/term/firewall"
+    },
+    {
+      "seedId": "de9efb86-cb3f-4bb2-8349-90afd3910294",
+      "category": "exams",
+      "navigationKeyword1": "comptia",
+      "navigationKeyword2": "security-plus",
+      "question": "What is PKI used for?",
+      "correctAnswer": "Managing digital certificates and public-key trust relationships",
+      "incorrectAnswers": [
+        "Assigning IP addresses to endpoints",
+        "Balancing web traffic",
+        "Creating VLAN tags"
+      ],
+      "explanation": "PKI supports trust through digital certificates and public-key cryptography.",
+      "keywords": [
+        "security-plus",
+        "pki",
+        "comptia"
+      ],
+      "source": "https://csrc.nist.gov/glossary/term/public_key_infrastructure"
+    },
+    {
+      "seedId": "af0414af-fdba-4308-9ca9-01b823af2337",
+      "category": "exams",
+      "navigationKeyword1": "comptia",
+      "navigationKeyword2": "security-plus",
+      "question": "What is a zero-trust approach based on?",
+      "correctAnswer": "Never assuming trust by default and continuously verifying access requests",
+      "incorrectAnswers": [
+        "Allowing all internal traffic automatically",
+        "Trusting devices after one successful login forever",
+        "Using only perimeter firewalls"
+      ],
+      "explanation": "Zero trust is based on the idea that no user or device should be implicitly trusted.",
+      "keywords": [
+        "security-plus",
+        "zero-trust",
+        "comptia"
+      ],
+      "source": "https://csrc.nist.gov/publications/detail/sp/800-207/final"
+    },
+    {
+      "seedId": "8ec51c95-cd8a-4fd1-98ec-b22f5358a840",
+      "category": "exams",
+      "navigationKeyword1": "comptia",
+      "navigationKeyword2": "security-plus",
+      "question": "What is multi-factor authentication?",
+      "correctAnswer": "Using two or more different authentication factors to verify identity",
+      "incorrectAnswers": [
+        "Using two passwords only",
+        "Using one long password",
+        "Signing in from two devices at once"
+      ],
+      "explanation": "MFA requires more than one factor, such as something you know and something you have.",
+      "keywords": [
+        "security-plus",
+        "mfa",
+        "comptia"
+      ],
+      "source": "https://csrc.nist.gov/glossary/term/mfa"
+    },
+    {
+      "seedId": "c9d109c3-c0a5-459a-add3-908e02470371",
+      "category": "exams",
+      "navigationKeyword1": "comptia",
+      "navigationKeyword2": "security-plus",
+      "question": "What is social engineering in a security context?",
+      "correctAnswer": "Manipulating people into revealing information or performing unsafe actions",
+      "incorrectAnswers": [
+        "Automating patch deployment",
+        "Encrypting email attachments",
+        "Compressing log files"
+      ],
+      "explanation": "Social engineering targets human behavior to gain unauthorized access or information.",
+      "keywords": [
+        "security-plus",
+        "social-engineering",
+        "comptia"
+      ],
+      "source": "https://www.cisa.gov/news-events/news/avoiding-social-engineering-and-phishing-attacks"
+    },
+    {
+      "seedId": "fd87fe97-65bc-4a70-8bd2-d915cc1791fc",
+      "category": "exams",
+      "navigationKeyword1": "comptia",
+      "navigationKeyword2": "security-plus",
+      "question": "What is the purpose of a VPN?",
+      "correctAnswer": "To create a protected connection over an untrusted network",
+      "incorrectAnswers": [
+        "To replace endpoint backups",
+        "To rotate SIEM logs",
+        "To assign VLAN IDs"
+      ],
+      "explanation": "VPNs create protected tunnels for traffic over networks such as the internet.",
+      "keywords": [
+        "security-plus",
+        "vpn",
+        "comptia"
+      ],
+      "source": "https://csrc.nist.gov/glossary/term/virtual_private_network"
+    },
+    {
+      "seedId": "3ff082bc-d906-4f60-9d36-44d59e0e3e11",
+      "category": "exams",
+      "navigationKeyword1": "comptia",
+      "navigationKeyword2": "security-plus",
+      "question": "What is the purpose of least privilege?",
+      "correctAnswer": "To limit access rights to only what is necessary for a task",
+      "incorrectAnswers": [
+        "To grant all admins domain-wide rights",
+        "To remove all audit logging",
+        "To allow shared administrator accounts"
+      ],
+      "explanation": "Least privilege reduces exposure by minimizing access permissions.",
+      "keywords": [
+        "security-plus",
+        "least-privilege",
+        "comptia"
+      ],
+      "source": "https://csrc.nist.gov/glossary/term/least_privilege"
+    },
+    {
+      "seedId": "693e1a23-b8d1-46ec-be3f-17e38ac37309",
+      "category": "exams",
+      "navigationKeyword1": "comptia",
+      "navigationKeyword2": "security-plus",
+      "question": "Why is patch management important?",
+      "correctAnswer": "It helps reduce exposure to known vulnerabilities",
+      "incorrectAnswers": [
+        "It increases password length automatically",
+        "It assigns static IP addresses",
+        "It replaces encryption keys every login"
+      ],
+      "explanation": "Timely patching helps close known security gaps in software and systems.",
+      "keywords": [
+        "security-plus",
+        "patching",
+        "comptia"
+      ],
+      "source": "https://www.cisa.gov/stopransomware/ransomware-guide#Patch"
+    }
+  ]
+}

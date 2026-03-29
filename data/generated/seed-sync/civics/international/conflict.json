@@ -1,0 +1,121 @@
+{
+  "schemaVersion": 1,
+  "seedSet": "core-public-items",
+  "deltaPreviewLimit": 200,
+  "items": [
+    {
+      "seedId": "2f360ff2-bc7c-52db-a152-22b7a8ae3096",
+      "category": "civics",
+      "navigationKeyword1": "international",
+      "navigationKeyword2": "conflict",
+      "question": "What are sanctions in international relations?",
+      "correctAnswer": "penalties such as trade or finance limits aimed at changing behavior or limiting harm",
+      "incorrectAnswers": [
+        "automatic declarations of war",
+        "private lawsuits only",
+        "grants of unlimited weapons"
+      ],
+      "explanation": "States or bodies use sanctions to signal disapproval and pressure targets within law.",
+      "keywords": [
+        "sanctions",
+        "pressure"
+      ],
+      "source": "https://www.state.gov/economic-sanctions-programs/"
+    },
+    {
+      "seedId": "59404de3-57b8-5136-8bb1-86f6fafe7726",
+      "category": "civics",
+      "navigationKeyword1": "international",
+      "navigationKeyword2": "conflict",
+      "question": "What does neutrality often mean for states not joining a war?",
+      "correctAnswer": "not favoring belligerents in ways that break the laws of neutrality",
+      "incorrectAnswers": [
+        "sending troops to fight on all sides",
+        "banning all trade with everyone",
+        "ending all diplomacy"
+      ],
+      "explanation": "Neutral states stay out of the fight but still follow duties under international rules.",
+      "keywords": [
+        "neutrality",
+        "international-law"
+      ],
+      "source": "https://www.icrc.org/en/war-and-law"
+    },
+    {
+      "seedId": "76ce0b9f-798a-5e91-a0a9-90127b019cc9",
+      "category": "civics",
+      "navigationKeyword1": "international",
+      "navigationKeyword2": "conflict",
+      "question": "What is a truth commission after internal conflict?",
+      "correctAnswer": "a temporary body that documents abuses and may recommend reforms or reparations",
+      "incorrectAnswers": [
+        "a permanent replacement for all courts",
+        "a military draft board",
+        "a trade tariff office"
+      ],
+      "explanation": "Truth commissions focus on facts and reconciliation, sometimes alongside criminal justice.",
+      "keywords": [
+        "transitional-justice",
+        "accountability"
+      ],
+      "source": "https://www.ohchr.org/"
+    },
+    {
+      "seedId": "17371243-3f96-5ae7-87a8-ed0e1926b85c",
+      "category": "civics",
+      "navigationKeyword1": "international",
+      "navigationKeyword2": "conflict",
+      "question": "What is mediation in ending armed conflict?",
+      "correctAnswer": "a third party helps adversaries negotiate without imposing a final decision",
+      "incorrectAnswers": [
+        "a court verdict that cannot be appealed",
+        "automatic annexation of territory",
+        "banning all future elections"
+      ],
+      "explanation": "Mediators clarify options and build trust so parties can agree to ceasefires or peace deals.",
+      "keywords": [
+        "mediation",
+        "peace"
+      ],
+      "source": "https://www.un.org/en/peace-and-security/"
+    },
+    {
+      "seedId": "b75c1bcb-055b-5d23-9e25-76f59c0771eb",
+      "category": "civics",
+      "navigationKeyword1": "international",
+      "navigationKeyword2": "conflict",
+      "question": "What is the UN\u2019s peacekeeping role in simplified civic terms?",
+      "correctAnswer": "deploy multinational missions with consent to stabilize areas and protect civilians within mandates",
+      "incorrectAnswers": [
+        "replace all national armies permanently",
+        "fight any war without rules",
+        "abolish host country laws"
+      ],
+      "explanation": "Peacekeepers operate under Security Council mandates and cooperation from parties.",
+      "keywords": [
+        "peacekeeping",
+        "un"
+      ],
+      "source": "https://peacekeeping.un.org/en"
+    },
+    {
+      "seedId": "3be3a362-2708-5441-886b-92eb1dd69db4",
+      "category": "civics",
+      "navigationKeyword1": "international",
+      "navigationKeyword2": "conflict",
+      "question": "Why do laws of war distinguish combatants from civilians?",
+      "correctAnswer": "to shield people not fighting from being targeted",
+      "incorrectAnswers": [
+        "to allow unlimited bombing of cities",
+        "to ban all medical care",
+        "to remove protections for medics"
+      ],
+      "explanation": "Humanitarian law tries to limit suffering by protecting noncombatants and certain objects.",
+      "keywords": [
+        "distinction",
+        "civilian-protection"
+      ],
+      "source": "https://www.icrc.org/en/doc/resources/documents/misc/summary-geneva-conventions.htm"
+    }
+  ]
+}

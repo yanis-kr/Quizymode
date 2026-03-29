@@ -1,0 +1,1147 @@
+{
+  "schemaVersion": 1,
+  "seedSet": "core-public-items",
+  "deltaPreviewLimit": 200,
+  "items": [
+    {
+      "seedId": "a2394694-d736-5b50-9e83-d90aa2287d6b",
+      "category": "trivia",
+      "navigationKeyword1": "music",
+      "navigationKeyword2": "albums",
+      "question": "A concept album is built around a unified what across its tracks?",
+      "correctAnswer": "theme or story",
+      "incorrectAnswers": [
+        "random singles",
+        "unrelated jingles",
+        "white noise"
+      ],
+      "explanation": "Concept albums share a theme.",
+      "keywords": [
+        "concept-album",
+        "rock"
+      ],
+      "source": "https://www.britannica.com/topic/concept-album"
+    },
+    {
+      "seedId": "8b1e8fd4-953f-522a-9779-9d0fb5497b78",
+      "category": "trivia",
+      "navigationKeyword1": "music",
+      "navigationKeyword2": "albums",
+      "question": "A soundtrack usually collects music from what kind of media?",
+      "correctAnswer": "films or shows",
+      "incorrectAnswers": [
+        "cookbooks",
+        "sports rulebooks",
+        "recorded music"
+      ],
+      "explanation": "Soundtracks come from screen media.",
+      "keywords": [
+        "soundtrack",
+        "film-music"
+      ],
+      "source": "https://www.britannica.com/topic/soundtrack"
+    },
+    {
+      "seedId": "d37a7fdf-4e64-5ce1-94f1-da87ae07672b",
+      "category": "trivia",
+      "navigationKeyword1": "music",
+      "navigationKeyword2": "albums",
+      "question": "An EP is shorter than a full what?",
+      "correctAnswer": "albums",
+      "incorrectAnswers": [
+        "symphonies",
+        "operas",
+        "ballets"
+      ],
+      "explanation": "EPs are shorter than LPs.",
+      "keywords": [
+        "ep",
+        "releases"
+      ],
+      "source": "https://www.britannica.com/topic/extended-play"
+    },
+    {
+      "seedId": "e2ff6a42-d10f-55a0-9252-60e699a0628e",
+      "category": "trivia",
+      "navigationKeyword1": "music",
+      "navigationKeyword2": "albums",
+      "question": "Compilation albums usually collect what?",
+      "correctAnswer": "previously released tracks",
+      "incorrectAnswers": [
+        "live orchestras only",
+        "sheet music only",
+        "ringtones only"
+      ],
+      "explanation": "Compilations gather existing recordings.",
+      "keywords": [
+        "compilation",
+        "releases"
+      ],
+      "source": "https://www.britannica.com/topic/compilation-album"
+    },
+    {
+      "seedId": "b41465ca-5e46-588e-9e3b-841f390844a0",
+      "category": "trivia",
+      "navigationKeyword1": "music",
+      "navigationKeyword2": "albums",
+      "question": "Historically, a mixtape was a curated what on cassette?",
+      "correctAnswer": "song collections",
+      "incorrectAnswers": [
+        "software patches",
+        "radio towers",
+        "phone books"
+      ],
+      "explanation": "Mixtapes are curated song sets.",
+      "keywords": [
+        "mixtape",
+        "hip-hop"
+      ],
+      "source": "https://www.britannica.com/topic/mixtape"
+    },
+    {
+      "seedId": "354c88d4-fe2d-5373-8e92-698dba60fa4e",
+      "category": "trivia",
+      "navigationKeyword1": "music",
+      "navigationKeyword2": "albums",
+      "question": "Historically, an LP record used what playback format?",
+      "correctAnswer": "long-play vinyl album",
+      "incorrectAnswers": [
+        "8-track only",
+        "wax cylinder only",
+        "piano roll"
+      ],
+      "explanation": "LP denotes long-play vinyl albums.",
+      "keywords": [
+        "vinyl",
+        "history"
+      ],
+      "source": "https://www.britannica.com/technology/long-play-record"
+    },
+    {
+      "seedId": "0a4e8e38-3306-5c62-8e52-4e8cf076e970",
+      "category": "trivia",
+      "navigationKeyword1": "music",
+      "navigationKeyword2": "albums",
+      "question": "Live albums are recordings captured during what?",
+      "correctAnswer": "concerts",
+      "incorrectAnswers": [
+        "studio overdubs only",
+        "silent film scoring only",
+        "rehearsals only"
+      ],
+      "explanation": "Live albums capture performances.",
+      "keywords": [
+        "live-album",
+        "concerts"
+      ],
+      "source": "https://www.britannica.com/topic/live-album"
+    },
+    {
+      "seedId": "241fdf29-afb8-5b9f-b80f-e334b6826284",
+      "category": "trivia",
+      "navigationKeyword1": "music",
+      "navigationKeyword2": "albums",
+      "question": "Remastered albums are meant to improve what?",
+      "correctAnswer": "audio quality",
+      "incorrectAnswers": [
+        "cover weight",
+        "vinyl color",
+        "jewel case plastic"
+      ],
+      "explanation": "Remasters improve sound quality.",
+      "keywords": [
+        "remaster",
+        "audio"
+      ],
+      "source": "https://www.britannica.com/topic/remastering"
+    },
+    {
+      "seedId": "8da78b9a-03fd-5f3c-b97d-c94e7c63ea84",
+      "category": "trivia",
+      "navigationKeyword1": "music",
+      "navigationKeyword2": "albums",
+      "question": "Studio albums are recorded mainly where?",
+      "correctAnswer": "recording studios",
+      "incorrectAnswers": [
+        "sports arenas only",
+        "subways",
+        "forests only"
+      ],
+      "explanation": "Studio albums are made in studios.",
+      "keywords": [
+        "studio-album",
+        "production"
+      ],
+      "source": "https://www.britannica.com/topic/recording-studio"
+    },
+    {
+      "seedId": "d74f0ebd-c8db-5026-8392-5043bb4bdff1",
+      "category": "trivia",
+      "navigationKeyword1": "music",
+      "navigationKeyword2": "albums",
+      "question": "The Grammy Awards honor achievements in what industry?",
+      "correctAnswer": "recorded music",
+      "incorrectAnswers": [
+        "film editing",
+        "architecture",
+        "chemistry"
+      ],
+      "explanation": "Grammys honor recorded music.",
+      "keywords": [
+        "grammys",
+        "awards"
+      ],
+      "source": "https://www.britannica.com/art/Grammy-Awards"
+    },
+    {
+      "seedId": "87ff92be-768a-52c0-96be-3acaffcbc458",
+      "category": "trivia",
+      "navigationKeyword1": "music",
+      "navigationKeyword2": "artists",
+      "question": "Aretha Franklin is known by what honorific title?",
+      "correctAnswer": "Queen of Soul",
+      "incorrectAnswers": [
+        "King of Pop",
+        "Prince of Funk",
+        "Duke of Jazz"
+      ],
+      "explanation": "Franklin is called the Queen of Soul.",
+      "keywords": [
+        "soul",
+        "vocals"
+      ],
+      "source": "https://www.britannica.com/biography/Aretha-Franklin"
+    },
+    {
+      "seedId": "87dfca31-e9cc-5384-8dee-67a42d0eb409",
+      "category": "trivia",
+      "navigationKeyword1": "music",
+      "navigationKeyword2": "artists",
+      "question": "Beethoven is most associated with which musical tradition?",
+      "correctAnswer": "Western classical music",
+      "incorrectAnswers": [
+        "gamelan",
+        "ragas",
+        "taiko"
+      ],
+      "explanation": "Beethoven is a classical composer.",
+      "keywords": [
+        "classical",
+        "composer"
+      ],
+      "source": "https://www.britannica.com/biography/Ludwig-van-Beethoven"
+    },
+    {
+      "seedId": "f3a0c105-97a9-5dab-b26e-d1388fce6063",
+      "category": "trivia",
+      "navigationKeyword1": "music",
+      "navigationKeyword2": "artists",
+      "question": "Beyonc? is associated with R&B and what other genre?",
+      "correctAnswer": "pop",
+      "incorrectAnswers": [
+        "polka",
+        "sea shanties",
+        "gregorian chant"
+      ],
+      "explanation": "Beyonc\u00e9 works across R&B and pop.",
+      "keywords": [
+        "beyonce",
+        "pop"
+      ],
+      "source": "https://www.britannica.com/biography/Beyonce"
+    },
+    {
+      "seedId": "f7b37351-a9ef-533d-9f57-195b6af68622",
+      "category": "trivia",
+      "navigationKeyword1": "music",
+      "navigationKeyword2": "artists",
+      "question": "Bob Dylan helped blend folk with what rock style?",
+      "correctAnswer": "folk rock",
+      "incorrectAnswers": [
+        "disco",
+        "ska",
+        "grunge"
+      ],
+      "explanation": "Dylan helped pioneer folk rock.",
+      "keywords": [
+        "dylan",
+        "folk-rock"
+      ],
+      "source": "https://www.britannica.com/biography/Bob-Dylan"
+    },
+    {
+      "seedId": "96173fd1-68d5-5fc8-8974-a50140c94489",
+      "category": "trivia",
+      "navigationKeyword1": "music",
+      "navigationKeyword2": "artists",
+      "question": "Elvis Presley is widely known by what music title?",
+      "correctAnswer": "King of Rock and Roll",
+      "incorrectAnswers": [
+        "Queen of Soul",
+        "Duke of Jazz",
+        "Count of Disco"
+      ],
+      "explanation": "Presley is called the King of Rock and Roll.",
+      "keywords": [
+        "elvis",
+        "rock"
+      ],
+      "source": "https://www.britannica.com/biography/Elvis-Presley"
+    },
+    {
+      "seedId": "79fe09f0-f0c8-5318-bdf6-187d7649ea3d",
+      "category": "trivia",
+      "navigationKeyword1": "music",
+      "navigationKeyword2": "artists",
+      "question": "Louis Armstrong is most associated with which instrument?",
+      "correctAnswer": "trumpet",
+      "incorrectAnswers": [
+        "cello",
+        "oboe",
+        "timpani"
+      ],
+      "explanation": "Armstrong was a trumpeter and vocalist.",
+      "keywords": [
+        "jazz",
+        "trumpet"
+      ],
+      "source": "https://www.britannica.com/biography/Louis-Armstrong"
+    },
+    {
+      "seedId": "9eb35145-79bd-516a-8879-6495ecd7f523",
+      "category": "trivia",
+      "navigationKeyword1": "music",
+      "navigationKeyword2": "artists",
+      "question": "Michael Jackson is strongly associated with what dance move nickname?",
+      "correctAnswer": "Moonwalk",
+      "incorrectAnswers": [
+        "waltz",
+        "foxtrot",
+        "polka"
+      ],
+      "explanation": "Jackson popularized the moonwalk.",
+      "keywords": [
+        "mj",
+        "dance"
+      ],
+      "source": "https://www.britannica.com/biography/Michael-Jackson-American-singer-songwriter"
+    },
+    {
+      "seedId": "140028d0-91ce-5423-9fcf-28091dd1067c",
+      "category": "trivia",
+      "navigationKeyword1": "music",
+      "navigationKeyword2": "artists",
+      "question": "Mozart is most associated with which musical era?",
+      "correctAnswer": "Classical period",
+      "incorrectAnswers": [
+        "Baroque only",
+        "Romantic only",
+        "Modernist only"
+      ],
+      "explanation": "Mozart is a Classical-period composer.",
+      "keywords": [
+        "mozart",
+        "classical"
+      ],
+      "source": "https://www.britannica.com/biography/Wolfgang-Amadeus-Mozart"
+    },
+    {
+      "seedId": "5e4aa841-a88f-5641-a506-499a15f13c7e",
+      "category": "trivia",
+      "navigationKeyword1": "music",
+      "navigationKeyword2": "artists",
+      "question": "Taylor Swift is known for songwriting built heavily on what?",
+      "correctAnswer": "personal narrative",
+      "incorrectAnswers": [
+        "fictional characters",
+        "news headlines",
+        "historical myths"
+      ],
+      "explanation": "Swift\u2019s songs often reflect personal narrative.",
+      "keywords": [
+        "songwriting",
+        "pop"
+      ],
+      "source": "https://www.britannica.com/biography/Taylor-Swift"
+    },
+    {
+      "seedId": "e1017310-488e-5eed-ab11-3f00012a3097",
+      "category": "trivia",
+      "navigationKeyword1": "music",
+      "navigationKeyword2": "artists",
+      "question": "The Beatles are most associated with which city's 1960s music scene?",
+      "correctAnswer": "Liverpool",
+      "incorrectAnswers": [
+        "Nashville",
+        "Vienna",
+        "Cairo"
+      ],
+      "explanation": "The Beatles formed in Liverpool.",
+      "keywords": [
+        "beatles",
+        "rock"
+      ],
+      "source": "https://www.britannica.com/topic/the-Beatles"
+    },
+    {
+      "seedId": "bb854c84-e580-546d-98bf-7efe64726002",
+      "category": "trivia",
+      "navigationKeyword1": "music",
+      "navigationKeyword2": "awards",
+      "question": "At the 94th Academy Awards, which score won Best Original Score?",
+      "correctAnswer": "Dune",
+      "incorrectAnswers": [
+        "Don\u2019t Look Up",
+        "Encanto",
+        "Parallel Mothers"
+      ],
+      "explanation": "Dune won Best Original Score at the 94th Academy Awards.",
+      "keywords": [
+        "oscars",
+        "film-score"
+      ],
+      "source": "https://www.oscars.org/oscars/ceremonies/2022"
+    },
+    {
+      "seedId": "4ad1d17f-60ea-5cfe-9339-e800a7ef8545",
+      "category": "trivia",
+      "navigationKeyword1": "music",
+      "navigationKeyword2": "awards",
+      "question": "At the 95th Academy Awards, which score won Best Original Score?",
+      "correctAnswer": "All Quiet on the Western Front",
+      "incorrectAnswers": [
+        "Babylon",
+        "The Banshees of Inisherin",
+        "The Fabelmans"
+      ],
+      "explanation": "All Quiet on the Western Front won Best Original Score at the 95th Academy Awards.",
+      "keywords": [
+        "oscars",
+        "film-score"
+      ],
+      "source": "https://www.oscars.org/oscars/ceremonies/2023"
+    },
+    {
+      "seedId": "99930d59-6df1-5dec-8901-81989fcd278e",
+      "category": "trivia",
+      "navigationKeyword1": "music",
+      "navigationKeyword2": "awards",
+      "question": "Classical music\u2019s Pulitzer Prize category to what?",
+      "correctAnswer": "music composition",
+      "incorrectAnswers": [
+        "sports photography",
+        "economics",
+        "biology"
+      ],
+      "explanation": "Pulitzer has a music composition prize.",
+      "keywords": [
+        "pulitzer",
+        "classical"
+      ],
+      "source": "https://www.britannica.com/topic/Pulitzer-Prize"
+    },
+    {
+      "seedId": "c33bb1f3-6bfa-5ad7-89ec-50a9a97c21d2",
+      "category": "trivia",
+      "navigationKeyword1": "music",
+      "navigationKeyword2": "awards",
+      "question": "Eurovision Song Contest to broadcast competition among mostly what?",
+      "correctAnswer": "European countries",
+      "incorrectAnswers": [
+        "South American provinces",
+        "Antarctic bases",
+        "lunar colonies"
+      ],
+      "explanation": "Eurovision is a European song contest.",
+      "keywords": [
+        "eurovision",
+        "contest"
+      ],
+      "source": "https://www.britannica.com/topic/Eurovision-Song-Contest"
+    },
+    {
+      "seedId": "64a9cdda-3030-5680-908e-60a311fcdaba",
+      "category": "trivia",
+      "navigationKeyword1": "music",
+      "navigationKeyword2": "awards",
+      "question": "Gold records traditionally mark sales thresholds in what industry?",
+      "correctAnswer": "music recording",
+      "incorrectAnswers": [
+        "bookbinding",
+        "shipbuilding",
+        "pharmaceuticals"
+      ],
+      "explanation": "Gold records mark sales milestones.",
+      "keywords": [
+        "certifications",
+        "sales"
+      ],
+      "source": "https://www.britannica.com/topic/gold-record"
+    },
+    {
+      "seedId": "9d606f1d-a207-5121-8117-3e6791f67c53",
+      "category": "trivia",
+      "navigationKeyword1": "music",
+      "navigationKeyword2": "awards",
+      "question": "Grammy Awards are presented by which organization?",
+      "correctAnswer": "Recording Academy",
+      "incorrectAnswers": [
+        "Academy of Motion Picture Arts and Sciences",
+        "Pulitzer Board",
+        "Nobel Committee"
+      ],
+      "explanation": "Grammys are presented by the Recording Academy.",
+      "keywords": [
+        "grammys",
+        "organization"
+      ],
+      "source": "https://www.britannica.com/art/Grammy-Awards"
+    },
+    {
+      "seedId": "e72b844f-d84d-571b-a618-d6fb930da579",
+      "category": "trivia",
+      "navigationKeyword1": "music",
+      "navigationKeyword2": "awards",
+      "question": "MTV Video Music Awards with honoring what?",
+      "correctAnswer": "music videos",
+      "incorrectAnswers": [
+        "symphonies",
+        "operas",
+        "ballets"
+      ],
+      "explanation": "VMAs honor music videos.",
+      "keywords": [
+        "vma",
+        "videos"
+      ],
+      "source": "https://www.britannica.com/topic/MTV-Video-Music-Awards"
+    },
+    {
+      "seedId": "6bc93bda-1271-57f9-ae55-847301c2569a",
+      "category": "trivia",
+      "navigationKeyword1": "music",
+      "navigationKeyword2": "awards",
+      "question": "Mercury Prize to music from which country/region focus?",
+      "correctAnswer": "United Kingdom and Ireland",
+      "incorrectAnswers": [
+        "Japan only",
+        "Canada only",
+        "South Africa only"
+      ],
+      "explanation": "Mercury Prize highlights UK and Irish albums.",
+      "keywords": [
+        "mercury-prize",
+        "uk"
+      ],
+      "source": "https://www.britannica.com/topic/Mercury-Prize"
+    },
+    {
+      "seedId": "48768634-e183-54cc-8466-65b681ce521f",
+      "category": "trivia",
+      "navigationKeyword1": "music",
+      "navigationKeyword2": "awards",
+      "question": "Tony Awards as honoring Broadway what?",
+      "correctAnswer": "theater productions",
+      "incorrectAnswers": [
+        "film scores",
+        "video games",
+        "podcasts"
+      ],
+      "explanation": "Tonys honor Broadway theater.",
+      "keywords": [
+        "tony-awards",
+        "theater"
+      ],
+      "source": "https://www.britannica.com/art/Tony-Awards"
+    },
+    {
+      "seedId": "9c10ea26-ed96-5bff-8af1-55670ae4e910",
+      "category": "trivia",
+      "navigationKeyword1": "music",
+      "navigationKeyword2": "awards",
+      "question": "Which genre is most closely associated with Country Music Association Awards?",
+      "correctAnswer": "country music",
+      "incorrectAnswers": [
+        "opera",
+        "baroque",
+        "techno"
+      ],
+      "explanation": "CMA Awards honor country.",
+      "keywords": [
+        "cma",
+        "country"
+      ],
+      "source": "https://www.britannica.com/topic/Country-Music-Association-Awards"
+    },
+    {
+      "seedId": "05ce4553-ea25-5570-afa9-1a992af93878",
+      "category": "trivia",
+      "navigationKeyword1": "music",
+      "navigationKeyword2": "genres",
+      "question": "Blues to roots in which community\u2019s folk traditions?",
+      "correctAnswer": "African American",
+      "incorrectAnswers": [
+        "Inuit",
+        "Maasai pastoral",
+        "Sami joik only"
+      ],
+      "explanation": "Blues grew from African American traditions.",
+      "keywords": [
+        "blues",
+        "history"
+      ],
+      "source": "https://www.britannica.com/art/blues-music"
+    },
+    {
+      "seedId": "ce6d5ea5-c116-5dad-824b-f8870b2d4737",
+      "category": "trivia",
+      "navigationKeyword1": "music",
+      "navigationKeyword2": "genres",
+      "question": "Electronic dance music to beats produced largely with what?",
+      "correctAnswer": "synthesizers and drum machines",
+      "incorrectAnswers": [
+        "lutes",
+        "harpsichords only",
+        "glass harmonicas only"
+      ],
+      "explanation": "EDM relies on electronic instruments.",
+      "keywords": [
+        "edm",
+        "electronic"
+      ],
+      "source": "https://www.britannica.com/art/electronic-dance-music"
+    },
+    {
+      "seedId": "a9c9d083-d64b-5e1f-ab75-710291963713",
+      "category": "trivia",
+      "navigationKeyword1": "music",
+      "navigationKeyword2": "genres",
+      "question": "Folk music as transmitted often how?",
+      "correctAnswer": "orally across generations",
+      "incorrectAnswers": [
+        "encrypted binaries",
+        "graffiti",
+        "orchestra"
+      ],
+      "explanation": "Folk music passes through oral tradition.",
+      "keywords": [
+        "folk",
+        "tradition"
+      ],
+      "source": "https://www.britannica.com/art/folk-music"
+    },
+    {
+      "seedId": "cc6349d7-459c-5d86-b438-82650f4ea6b8",
+      "category": "trivia",
+      "navigationKeyword1": "music",
+      "navigationKeyword2": "genres",
+      "question": "Gospel music to Christian worship traditions especially in which country\u2019s churches?",
+      "correctAnswer": "United States",
+      "incorrectAnswers": [
+        "Japan",
+        "Iran",
+        "Mongolia"
+      ],
+      "explanation": "Gospel is rooted in U.S. church music.",
+      "keywords": [
+        "gospel",
+        "worship"
+      ],
+      "source": "https://www.britannica.com/art/gospel-music"
+    },
+    {
+      "seedId": "b01d0a51-1300-5bbd-8063-e9b4fb165e2a",
+      "category": "trivia",
+      "navigationKeyword1": "music",
+      "navigationKeyword2": "genres",
+      "question": "Heavy metal to amplified distortion and what?",
+      "correctAnswer": "powerful drumming",
+      "incorrectAnswers": [
+        "lute strumming",
+        "harps only",
+        "whistling"
+      ],
+      "explanation": "Metal uses loud distorted guitars and heavy drums.",
+      "keywords": [
+        "metal",
+        "rock"
+      ],
+      "source": "https://www.britannica.com/art/heavy-metal-music"
+    },
+    {
+      "seedId": "6f22704b-aa66-5fd8-93a5-79cafc01a4d1",
+      "category": "trivia",
+      "navigationKeyword1": "music",
+      "navigationKeyword2": "genres",
+      "question": "Hip-hop with MCing, DJing, breaking, and what art?",
+      "correctAnswer": "graffiti",
+      "incorrectAnswers": [
+        "origami",
+        "pottery",
+        "glassblowing"
+      ],
+      "explanation": "Hip-hop culture includes graffiti.",
+      "keywords": [
+        "hip-hop",
+        "culture"
+      ],
+      "source": "https://www.britannica.com/art/hip-hop-music"
+    },
+    {
+      "seedId": "9cfece48-350c-5962-9f22-87f1768eee3e",
+      "category": "trivia",
+      "navigationKeyword1": "music",
+      "navigationKeyword2": "genres",
+      "question": "Jazz as music characterized partly by what rhythmic feel?",
+      "correctAnswer": "swing and improvisation",
+      "incorrectAnswers": [
+        "strict unison clapping",
+        "metronome-only performance",
+        "random silence"
+      ],
+      "explanation": "Jazz emphasizes swing and improvisation.",
+      "keywords": [
+        "jazz",
+        "rhythm"
+      ],
+      "source": "https://www.britannica.com/art/jazz-music"
+    },
+    {
+      "seedId": "8541fd76-c040-5271-8ada-6ba1e05b2100",
+      "category": "trivia",
+      "navigationKeyword1": "music",
+      "navigationKeyword2": "genres",
+      "question": "Punk rock with raw sound and what attitude?",
+      "correctAnswer": "DIY rebellion",
+      "incorrectAnswers": [
+        "baroque ornament",
+        "silent film cues",
+        "oral tradition"
+      ],
+      "explanation": "Punk emphasizes DIY ethos.",
+      "keywords": [
+        "punk",
+        "rock"
+      ],
+      "source": "https://www.britannica.com/art/punk-rock"
+    },
+    {
+      "seedId": "24a3eb25-ec2c-5f5a-8526-07a17eaca8f5",
+      "category": "trivia",
+      "navigationKeyword1": "music",
+      "navigationKeyword2": "genres",
+      "question": "Symphonies as large works for what ensemble?",
+      "correctAnswer": "orchestra",
+      "incorrectAnswers": [
+        "string quartet only",
+        "solo kazoo",
+        "marching snare only"
+      ],
+      "explanation": "Symphonies are orchestral compositions.",
+      "keywords": [
+        "symphony",
+        "classical"
+      ],
+      "source": "https://www.britannica.com/art/symphony-music"
+    },
+    {
+      "seedId": "3a5172d1-81a7-5467-97e5-f56deb04887f",
+      "category": "trivia",
+      "navigationKeyword1": "music",
+      "navigationKeyword2": "genres",
+      "question": "Which island nation\u2019s culture is most closely associated with reggae strongly?",
+      "correctAnswer": "Jamaica",
+      "incorrectAnswers": [
+        "Iceland",
+        "Madagascar",
+        "Japan"
+      ],
+      "explanation": "Reggae is Jamaican in origin.",
+      "keywords": [
+        "reggae",
+        "caribbean"
+      ],
+      "source": "https://www.britannica.com/art/reggae-music"
+    },
+    {
+      "seedId": "5204b5cf-4de9-5b9b-8eec-f4c1d8bdd507",
+      "category": "trivia",
+      "navigationKeyword1": "music",
+      "navigationKeyword2": "lyrics",
+      "question": "A ballad is a narrative song that tells what?",
+      "correctAnswer": "a story",
+      "incorrectAnswers": [
+        "a romance",
+        "a legend",
+        "a journey"
+      ],
+      "explanation": "Ballads tell stories.",
+      "keywords": [
+        "ballad",
+        "narrative"
+      ],
+      "source": "https://www.britannica.com/art/ballad-music"
+    },
+    {
+      "seedId": "b3d329e5-f7d9-5eca-a267-5e5c60834ff1",
+      "category": "trivia",
+      "navigationKeyword1": "music",
+      "navigationKeyword2": "lyrics",
+      "question": "A libretto is the text sung in what kinds of works?",
+      "correctAnswer": "operas and musicals",
+      "incorrectAnswers": [
+        "symphonies without voices",
+        "string quartets",
+        "percussion solos"
+      ],
+      "explanation": "Librettos are opera/musical texts.",
+      "keywords": [
+        "opera",
+        "text"
+      ],
+      "source": "https://www.britannica.com/art/libretto"
+    },
+    {
+      "seedId": "4a4568d3-725e-50b3-8bee-923279f66a1e",
+      "category": "trivia",
+      "navigationKeyword1": "music",
+      "navigationKeyword2": "lyrics",
+      "question": "At the 95th Academy Awards, the Original Song winner\u2019s music was by whom (Naatu Naatu)?",
+      "correctAnswer": "M.M. Keeravaani",
+      "incorrectAnswers": [
+        "John Williams",
+        "Lady Gaga",
+        "Diane Warren"
+      ],
+      "explanation": "M.M. Keeravaani wrote the music for Naatu Naatu.",
+      "keywords": [
+        "oscars",
+        "credits"
+      ],
+      "source": "https://www.oscars.org/oscars/ceremonies/2023"
+    },
+    {
+      "seedId": "92a1eeec-978f-5c78-9db4-1e7ef97698ab",
+      "category": "trivia",
+      "navigationKeyword1": "music",
+      "navigationKeyword2": "lyrics",
+      "question": "Hymn texts are typically sung in what settings?",
+      "correctAnswer": "worship services",
+      "incorrectAnswers": [
+        "concert halls",
+        "schools",
+        "festival grounds"
+      ],
+      "explanation": "Hymns are sung in worship.",
+      "keywords": [
+        "hymns",
+        "worship"
+      ],
+      "source": "https://www.britannica.com/art/hymn-music"
+    },
+    {
+      "seedId": "24dbd870-b78b-5c4f-b2d7-0102fc7a21b7",
+      "category": "trivia",
+      "navigationKeyword1": "music",
+      "navigationKeyword2": "lyrics",
+      "question": "In a song, a refrain is a repeated what?",
+      "correctAnswer": "chorus sections",
+      "incorrectAnswers": [
+        "verse lines",
+        "melodic phrases",
+        "hook lyrics"
+      ],
+      "explanation": "Refrains repeat chorus-like material.",
+      "keywords": [
+        "refrain",
+        "song-form"
+      ],
+      "source": "https://www.britannica.com/art/refrain-music"
+    },
+    {
+      "seedId": "19ef4a5b-11f4-595a-8ceb-67bdc2b6e8c3",
+      "category": "trivia",
+      "navigationKeyword1": "music",
+      "navigationKeyword2": "lyrics",
+      "question": "Limericks are not song lyrics, but they share what element with many lyrics?",
+      "correctAnswer": "rhyme",
+      "incorrectAnswers": [
+        "meter",
+        "narrative voice",
+        "repetition"
+      ],
+      "explanation": "Limericks rely on rhyme pattern.",
+      "keywords": [
+        "verse",
+        "rhyme"
+      ],
+      "source": "https://www.britannica.com/literature/limerick"
+    },
+    {
+      "seedId": "c113e3e7-cf8e-5f13-9a74-b59448724a3a",
+      "category": "trivia",
+      "navigationKeyword1": "music",
+      "navigationKeyword2": "lyrics",
+      "question": "National anthems are ceremonial songs expressing what?",
+      "correctAnswer": "national identity",
+      "incorrectAnswers": [
+        "religious devotion",
+        "regional pride",
+        "romantic love"
+      ],
+      "explanation": "Anthems express national identity.",
+      "keywords": [
+        "anthems",
+        "ceremony"
+      ],
+      "source": "https://www.britannica.com/topic/national-anthem"
+    },
+    {
+      "seedId": "38d119b8-c10a-5953-b93d-188adaa01730",
+      "category": "trivia",
+      "navigationKeyword1": "music",
+      "navigationKeyword2": "lyrics",
+      "question": "Rap vocals are built around rhythmic spoken delivery over what?",
+      "correctAnswer": "beats",
+      "incorrectAnswers": [
+        "pipe organ only",
+        "choir-only drones",
+        "silence"
+      ],
+      "explanation": "Rap is rhythmic speech on beats.",
+      "keywords": [
+        "rap",
+        "hip-hop"
+      ],
+      "source": "https://www.britannica.com/art/rap-music"
+    },
+    {
+      "seedId": "996809a2-8667-5bff-8758-2a4f5a5eadd1",
+      "category": "trivia",
+      "navigationKeyword1": "music",
+      "navigationKeyword2": "lyrics",
+      "question": "Scat singing uses wordless what?",
+      "correctAnswer": "improvised syllables",
+      "incorrectAnswers": [
+        "chorus lines",
+        "beats",
+        "rhyme"
+      ],
+      "explanation": "Scat uses improvised nonsense syllables.",
+      "keywords": [
+        "jazz",
+        "vocals"
+      ],
+      "source": "https://www.britannica.com/art/scat-singing"
+    },
+    {
+      "seedId": "daae1c72-6c8b-5e90-b3c0-e769b501c4aa",
+      "category": "trivia",
+      "navigationKeyword1": "music",
+      "navigationKeyword2": "lyrics",
+      "question": "Sea shanties were work songs aboard what?",
+      "correctAnswer": "ships",
+      "incorrectAnswers": [
+        "trains",
+        "airplanes in flight",
+        "subways only"
+      ],
+      "explanation": "Shanties coordinated ship labor.",
+      "keywords": [
+        "shanties",
+        "folk"
+      ],
+      "source": "https://www.britannica.com/art/sea-shanty"
+    },
+    {
+      "seedId": "e0b21244-fade-58f2-83bf-2c69162112d0",
+      "category": "trivia",
+      "navigationKeyword1": "music",
+      "navigationKeyword2": "songs",
+      "question": "A cappella singing uses vocals without what?",
+      "correctAnswer": "instrumental accompaniment",
+      "incorrectAnswers": [
+        "without audiences",
+        "without rhythm",
+        "without vowels"
+      ],
+      "explanation": "A cappella is unaccompanied voice.",
+      "keywords": [
+        "a-cappella",
+        "vocals"
+      ],
+      "source": "https://www.britannica.com/art/a-cappella-music"
+    },
+    {
+      "seedId": "16dcb3e4-cdb9-5ae1-aab3-2bbfc2b7a891",
+      "category": "trivia",
+      "navigationKeyword1": "music",
+      "navigationKeyword2": "songs",
+      "question": "A cover song is a new performance of what?",
+      "correctAnswer": "existing compositions",
+      "incorrectAnswers": [
+        "unwritten silence",
+        "random noise",
+        "traffic sounds"
+      ],
+      "explanation": "Covers reinterpret existing songs.",
+      "keywords": [
+        "covers",
+        "interpretation"
+      ],
+      "source": "https://www.britannica.com/topic/cover-version"
+    },
+    {
+      "seedId": "9184b419-3da1-5046-a496-bc02dbe86fe3",
+      "category": "trivia",
+      "navigationKeyword1": "music",
+      "navigationKeyword2": "songs",
+      "question": "A single is a release built around an individual what?",
+      "correctAnswer": "tracks",
+      "incorrectAnswers": [
+        "novels",
+        "symphonies",
+        "video codecs"
+      ],
+      "explanation": "Singles highlight individual songs.",
+      "keywords": [
+        "singles",
+        "releases"
+      ],
+      "source": "https://www.britannica.com/topic/single-music"
+    },
+    {
+      "seedId": "ca8ce310-a46a-590e-91cf-ccf4d4fd1297",
+      "category": "trivia",
+      "navigationKeyword1": "music",
+      "navigationKeyword2": "songs",
+      "question": "Antiphonal singing follows a call-and-what pattern?",
+      "correctAnswer": "response",
+      "incorrectAnswers": [
+        "compression",
+        "encryption",
+        "fragmentation"
+      ],
+      "explanation": "Antiphony alternates call and response.",
+      "keywords": [
+        "antiphony",
+        "choir"
+      ],
+      "source": "https://www.britannica.com/art/antiphonal-music"
+    },
+    {
+      "seedId": "28c30795-002a-5a96-9ab5-ac69c6d795d1",
+      "category": "trivia",
+      "navigationKeyword1": "music",
+      "navigationKeyword2": "songs",
+      "question": "At the 94th Academy Awards, which song won Best Original Song?",
+      "correctAnswer": "No Time To Die",
+      "incorrectAnswers": [
+        "Be Alive",
+        "Dos Oruguitas",
+        "Down To Joy"
+      ],
+      "explanation": "No Time To Die won Best Original Song at the 94th Academy Awards.",
+      "keywords": [
+        "oscars",
+        "songs"
+      ],
+      "source": "https://www.oscars.org/oscars/ceremonies/2022"
+    },
+    {
+      "seedId": "b0432e59-bbd9-5c34-ad08-9244f746b560",
+      "category": "trivia",
+      "navigationKeyword1": "music",
+      "navigationKeyword2": "songs",
+      "question": "At the 95th Academy Awards, which song won Best Original Song?",
+      "correctAnswer": "Naatu Naatu (RRR)",
+      "incorrectAnswers": [
+        "Lift Me Up",
+        "Hold My Hand",
+        "This Is A Life"
+      ],
+      "explanation": "Naatu Naatu won Best Original Song at the 95th Academy Awards.",
+      "keywords": [
+        "oscars",
+        "songs"
+      ],
+      "source": "https://www.oscars.org/oscars/ceremonies/2023"
+    },
+    {
+      "seedId": "944d903e-aaac-5145-bceb-ff77a1b3ea68",
+      "category": "trivia",
+      "navigationKeyword1": "music",
+      "navigationKeyword2": "songs",
+      "question": "Historically, a B-side was found on the flip side of what format?",
+      "correctAnswer": "vinyl singles",
+      "incorrectAnswers": [
+        "Blu-ray movies",
+        "tracks",
+        "existing songs"
+      ],
+      "explanation": "B-sides were flip sides of singles.",
+      "keywords": [
+        "b-side",
+        "history"
+      ],
+      "source": "https://www.britannica.com/topic/B-side"
+    },
+    {
+      "seedId": "8d12482d-8ec5-50e2-9ffb-d2ced848de1a",
+      "category": "trivia",
+      "navigationKeyword1": "music",
+      "navigationKeyword2": "songs",
+      "question": "Jingles are short advertising what?",
+      "correctAnswer": "songs",
+      "incorrectAnswers": [
+        "novels",
+        "essays",
+        "patents"
+      ],
+      "explanation": "Jingles are ad songs.",
+      "keywords": [
+        "jingles",
+        "advertising"
+      ],
+      "source": "https://www.britannica.com/topic/jingle-advertising"
+    },
+    {
+      "seedId": "eae6d7bf-b44f-555a-99ab-ff5fe8280402",
+      "category": "trivia",
+      "navigationKeyword1": "music",
+      "navigationKeyword2": "songs",
+      "question": "Lullabies are soothing songs for whom?",
+      "correctAnswer": "infants",
+      "incorrectAnswers": [
+        "marathon runners",
+        "deep-sea divers",
+        "chess players"
+      ],
+      "explanation": "Lullabies calm babies.",
+      "keywords": [
+        "lullabies",
+        "folk"
+      ],
+      "source": "https://www.britannica.com/art/lullaby"
+    },
+    {
+      "seedId": "26d5a1b2-ccd3-52e6-837d-25d7159a9d3a",
+      "category": "trivia",
+      "navigationKeyword1": "music",
+      "navigationKeyword2": "songs",
+      "question": "Mashups blend multiple what?",
+      "correctAnswer": "recordings",
+      "incorrectAnswers": [
+        "paintings",
+        "novels",
+        "sculptures"
+      ],
+      "explanation": "Mashups combine recordings.",
+      "keywords": [
+        "mashup",
+        "editing"
+      ],
+      "source": "https://www.britannica.com/topic/mashup-music"
+    }
+  ]
+}

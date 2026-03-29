@@ -1,0 +1,1327 @@
+{
+  "schemaVersion": 1,
+  "seedSet": "core-public-items",
+  "deltaPreviewLimit": 200,
+  "items": [
+    {
+      "seedId": "8d3721bd-3ee8-4768-8fa8-faea2951a90f",
+      "category": "geography",
+      "navigationKeyword1": "us",
+      "navigationKeyword2": "capitals",
+      "question": "What is the capital of Arizona?",
+      "correctAnswer": "Phoenix",
+      "incorrectAnswers": [
+        "Tucson",
+        "Mesa",
+        "Scottsdale"
+      ],
+      "explanation": "Phoenix in the Salt River Valley is Arizona\u2019s capital.",
+      "keywords": [
+        "arizona",
+        "state-capitals",
+        "southwest"
+      ],
+      "source": "https://www.britannica.com/place/Phoenix-Arizona"
+    },
+    {
+      "seedId": "676d7d9f-f896-4ee7-8b23-65d01c4f8abb",
+      "category": "geography",
+      "navigationKeyword1": "us",
+      "navigationKeyword2": "capitals",
+      "question": "What is the capital of California?",
+      "correctAnswer": "Sacramento",
+      "incorrectAnswers": [
+        "Los Angeles",
+        "San Francisco",
+        "San Diego"
+      ],
+      "explanation": "Sacramento in the Central Valley is California\u2019s state capital.",
+      "keywords": [
+        "california",
+        "state-capitals",
+        "west"
+      ],
+      "source": "https://www.britannica.com/place/Sacramento"
+    },
+    {
+      "seedId": "c6e284de-988d-4e99-a325-715823b81849",
+      "category": "geography",
+      "navigationKeyword1": "us",
+      "navigationKeyword2": "capitals",
+      "question": "What is the capital of Colorado?",
+      "correctAnswer": "Denver",
+      "incorrectAnswers": [
+        "Colorado Springs",
+        "Boulder",
+        "Fort Collins"
+      ],
+      "explanation": "Denver on the High Plains front range is Colorado\u2019s capital.",
+      "keywords": [
+        "colorado",
+        "state-capitals",
+        "mountain-west"
+      ],
+      "source": "https://www.britannica.com/place/Denver"
+    },
+    {
+      "seedId": "22a81fcb-2819-4be2-a630-2d9d70d190b2",
+      "category": "geography",
+      "navigationKeyword1": "us",
+      "navigationKeyword2": "capitals",
+      "question": "What is the capital of Florida?",
+      "correctAnswer": "Tallahassee",
+      "incorrectAnswers": [
+        "Miami",
+        "Tampa",
+        "Jacksonville"
+      ],
+      "explanation": "Tallahassee in the Florida Panhandle is the state capital.",
+      "keywords": [
+        "florida",
+        "state-capitals",
+        "south"
+      ],
+      "source": "https://www.britannica.com/place/Tallahassee"
+    },
+    {
+      "seedId": "63a2ed84-52c6-4472-a91a-cd9d992549de",
+      "category": "geography",
+      "navigationKeyword1": "us",
+      "navigationKeyword2": "capitals",
+      "question": "What is the capital of Georgia?",
+      "correctAnswer": "Atlanta",
+      "incorrectAnswers": [
+        "Savannah",
+        "Augusta",
+        "Columbus"
+      ],
+      "explanation": "Atlanta is Georgia\u2019s capital in the north of the state.",
+      "keywords": [
+        "georgia",
+        "state-capitals",
+        "south"
+      ],
+      "source": "https://www.britannica.com/place/Atlanta"
+    },
+    {
+      "seedId": "444bc914-7293-4080-9ed4-aa11416c0fde",
+      "category": "geography",
+      "navigationKeyword1": "us",
+      "navigationKeyword2": "capitals",
+      "question": "What is the capital of Hawaii?",
+      "correctAnswer": "Honolulu",
+      "incorrectAnswers": [
+        "Hilo",
+        "Kailua",
+        "Pearl City"
+      ],
+      "explanation": "Honolulu on Oahu is Hawaii\u2019s capital.",
+      "keywords": [
+        "hawaii",
+        "state-capitals",
+        "pacific"
+      ],
+      "source": "https://www.britannica.com/place/Honolulu"
+    },
+    {
+      "seedId": "02e0ac4e-369c-46c9-97d9-6b34fc407f59",
+      "category": "geography",
+      "navigationKeyword1": "us",
+      "navigationKeyword2": "capitals",
+      "question": "What is the capital of Idaho?",
+      "correctAnswer": "Boise",
+      "incorrectAnswers": [
+        "Nampa",
+        "Idaho Falls",
+        "Pocatello"
+      ],
+      "explanation": "Boise in southwestern Idaho is the state capital.",
+      "keywords": [
+        "idaho",
+        "state-capitals",
+        "mountain-west"
+      ],
+      "source": "https://www.britannica.com/place/Boise"
+    },
+    {
+      "seedId": "a88996ad-6095-446e-ab36-6e753de33aa2",
+      "category": "geography",
+      "navigationKeyword1": "us",
+      "navigationKeyword2": "capitals",
+      "question": "What is the capital of Massachusetts?",
+      "correctAnswer": "Boston",
+      "incorrectAnswers": [
+        "Worcester",
+        "Cambridge",
+        "Springfield"
+      ],
+      "explanation": "Boston is Massachusetts\u2019 capital and largest city.",
+      "keywords": [
+        "massachusetts",
+        "state-capitals",
+        "northeast"
+      ],
+      "source": "https://www.britannica.com/place/Boston"
+    },
+    {
+      "seedId": "655b051f-ad8a-4ee5-a72c-eafce2bcd6b6",
+      "category": "geography",
+      "navigationKeyword1": "us",
+      "navigationKeyword2": "capitals",
+      "question": "What is the capital of New York?",
+      "correctAnswer": "Albany",
+      "incorrectAnswers": [
+        "New York City",
+        "Buffalo",
+        "Rochester"
+      ],
+      "explanation": "Albany on the Hudson River is New York\u2019s capital.",
+      "keywords": [
+        "new-york",
+        "state-capitals",
+        "northeast"
+      ],
+      "source": "https://www.britannica.com/place/Albany-New-York"
+    },
+    {
+      "seedId": "e7270791-2089-427e-a107-21f53d586bed",
+      "category": "geography",
+      "navigationKeyword1": "us",
+      "navigationKeyword2": "capitals",
+      "question": "What is the capital of Ohio?",
+      "correctAnswer": "Columbus",
+      "incorrectAnswers": [
+        "Cleveland",
+        "Cincinnati",
+        "Toledo"
+      ],
+      "explanation": "Columbus near the center of Ohio is the state capital.",
+      "keywords": [
+        "ohio",
+        "state-capitals",
+        "midwest"
+      ],
+      "source": "https://www.britannica.com/place/Columbus-Ohio"
+    },
+    {
+      "seedId": "19b6ccaa-7280-44dc-9117-62fe34c2a7d7",
+      "category": "geography",
+      "navigationKeyword1": "us",
+      "navigationKeyword2": "capitals",
+      "question": "What is the capital of Texas?",
+      "correctAnswer": "Austin",
+      "incorrectAnswers": [
+        "Houston",
+        "Dallas",
+        "San Antonio"
+      ],
+      "explanation": "Austin in south-central Texas is the state capital.",
+      "keywords": [
+        "texas",
+        "state-capitals",
+        "south"
+      ],
+      "source": "https://www.britannica.com/place/Austin-Texas"
+    },
+    {
+      "seedId": "da66b261-e08f-44e4-aa68-3793c8082f68",
+      "category": "geography",
+      "navigationKeyword1": "us",
+      "navigationKeyword2": "cities",
+      "question": "Since the first U.S. census in 1790, which city has been the largest in the United States?",
+      "correctAnswer": "New York City",
+      "incorrectAnswers": [
+        "Philadelphia",
+        "Boston",
+        "Baltimore"
+      ],
+      "explanation": "New York City has remained the country\u2019s most populous city across every decennial census.",
+      "keywords": [
+        "cities",
+        "us-cities",
+        "population"
+      ],
+      "source": "https://www.britannica.com/place/New-York-City"
+    },
+    {
+      "seedId": "329f5e5c-94b6-4be0-a989-b307503df41c",
+      "category": "geography",
+      "navigationKeyword1": "us",
+      "navigationKeyword2": "cities",
+      "question": "Which North Carolina city is nicknamed the Queen City?",
+      "correctAnswer": "Charlotte",
+      "incorrectAnswers": [
+        "Raleigh",
+        "Greensboro",
+        "Asheville"
+      ],
+      "explanation": "Charlotte was named for Queen Charlotte Sophia of Mecklenburg-Strelitz and bears the Queen City nickname.",
+      "keywords": [
+        "cities",
+        "us-cities",
+        "north-carolina"
+      ],
+      "source": "https://www.britannica.com/place/Charlotte-North-Carolina"
+    },
+    {
+      "seedId": "a07726d9-c3cc-44f2-8411-dc77579e8503",
+      "category": "geography",
+      "navigationKeyword1": "us",
+      "navigationKeyword2": "cities",
+      "question": "Which city is both the capital and the most populous in Arizona?",
+      "correctAnswer": "Phoenix",
+      "incorrectAnswers": [
+        "Tucson",
+        "Mesa",
+        "Scottsdale"
+      ],
+      "explanation": "Phoenix is the seat of state government and Arizona\u2019s largest city.",
+      "keywords": [
+        "cities",
+        "arizona",
+        "us-cities"
+      ],
+      "source": "https://www.britannica.com/place/Phoenix-Arizona"
+    },
+    {
+      "seedId": "a0b67bda-70a7-45b9-9739-09f61321e32a",
+      "category": "geography",
+      "navigationKeyword1": "us",
+      "navigationKeyword2": "cities",
+      "question": "Which city is the most populous in California?",
+      "correctAnswer": "Los Angeles",
+      "incorrectAnswers": [
+        "San Diego",
+        "San Jose",
+        "San Francisco"
+      ],
+      "explanation": "Los Angeles anchors Southern California and is the state\u2019s largest municipality.",
+      "keywords": [
+        "cities",
+        "california",
+        "us-cities"
+      ],
+      "source": "https://www.britannica.com/place/Los-Angeles-California"
+    },
+    {
+      "seedId": "7e809ed4-7bca-4658-9cbb-dc484228b9d3",
+      "category": "geography",
+      "navigationKeyword1": "us",
+      "navigationKeyword2": "cities",
+      "question": "Which city is the most populous in Georgia?",
+      "correctAnswer": "Atlanta",
+      "incorrectAnswers": [
+        "Augusta",
+        "Columbus",
+        "Savannah"
+      ],
+      "explanation": "Atlanta is Georgia\u2019s capital and primate city.",
+      "keywords": [
+        "cities",
+        "georgia",
+        "us-cities"
+      ],
+      "source": "https://www.britannica.com/place/Atlanta"
+    },
+    {
+      "seedId": "16e96287-88e6-4587-943a-18984d13d806",
+      "category": "geography",
+      "navigationKeyword1": "us",
+      "navigationKeyword2": "cities",
+      "question": "Which city is the most populous in Illinois?",
+      "correctAnswer": "Chicago",
+      "incorrectAnswers": [
+        "Aurora",
+        "Naperville",
+        "Joliet"
+      ],
+      "explanation": "Chicago on Lake Michigan far exceeds any other Illinois city in population.",
+      "keywords": [
+        "cities",
+        "illinois",
+        "us-cities"
+      ],
+      "source": "https://www.britannica.com/place/Chicago"
+    },
+    {
+      "seedId": "728814f4-5f2b-4b43-b6b5-9b54c4a6c165",
+      "category": "geography",
+      "navigationKeyword1": "us",
+      "navigationKeyword2": "cities",
+      "question": "Which city is the most populous in Michigan?",
+      "correctAnswer": "Detroit",
+      "incorrectAnswers": [
+        "Grand Rapids",
+        "Warren",
+        "Sterling Heights"
+      ],
+      "explanation": "Detroit remains Michigan\u2019s largest city despite long-term population change.",
+      "keywords": [
+        "cities",
+        "michigan",
+        "us-cities"
+      ],
+      "source": "https://www.britannica.com/place/Detroit"
+    },
+    {
+      "seedId": "777f17a8-b34c-473e-bb09-64e496176398",
+      "category": "geography",
+      "navigationKeyword1": "us",
+      "navigationKeyword2": "cities",
+      "question": "Which city is the most populous in Ohio?",
+      "correctAnswer": "Columbus",
+      "incorrectAnswers": [
+        "Cleveland",
+        "Cincinnati",
+        "Toledo"
+      ],
+      "explanation": "Columbus is Ohio\u2019s capital and largest city.",
+      "keywords": [
+        "cities",
+        "ohio",
+        "us-cities"
+      ],
+      "source": "https://www.britannica.com/place/Columbus-Ohio"
+    },
+    {
+      "seedId": "4eb38fc3-848b-4500-92a5-1238d77a9f0b",
+      "category": "geography",
+      "navigationKeyword1": "us",
+      "navigationKeyword2": "cities",
+      "question": "Which city is the most populous in Pennsylvania?",
+      "correctAnswer": "Philadelphia",
+      "incorrectAnswers": [
+        "Pittsburgh",
+        "Allentown",
+        "Erie"
+      ],
+      "explanation": "Philadelphia is the Commonwealth\u2019s largest city and a major Atlantic port.",
+      "keywords": [
+        "cities",
+        "pennsylvania",
+        "us-cities"
+      ],
+      "source": "https://www.britannica.com/place/Philadelphia"
+    },
+    {
+      "seedId": "6fa89065-2773-4655-9ad5-237aa12dbd94",
+      "category": "geography",
+      "navigationKeyword1": "us",
+      "navigationKeyword2": "cities",
+      "question": "Which city is the most populous in Texas?",
+      "correctAnswer": "Houston",
+      "incorrectAnswers": [
+        "San Antonio",
+        "Dallas",
+        "Austin"
+      ],
+      "explanation": "Houston is the largest city in Texas by population within city limits.",
+      "keywords": [
+        "cities",
+        "texas",
+        "us-cities"
+      ],
+      "source": "https://www.britannica.com/place/Houston"
+    },
+    {
+      "seedId": "f4e18f98-ff85-4a9a-bfe5-381621e38142",
+      "category": "geography",
+      "navigationKeyword1": "us",
+      "navigationKeyword2": "cities",
+      "question": "Which city is the most populous in Washington state?",
+      "correctAnswer": "Seattle",
+      "incorrectAnswers": [
+        "Spokane",
+        "Tacoma",
+        "Vancouver"
+      ],
+      "explanation": "Seattle on Puget Sound is the largest city in Washington.",
+      "keywords": [
+        "cities",
+        "washington-state",
+        "us-cities"
+      ],
+      "source": "https://www.britannica.com/place/Seattle-Washington"
+    },
+    {
+      "seedId": "22a78d6e-648d-4e7e-a814-96765bbafc72",
+      "category": "geography",
+      "navigationKeyword1": "us",
+      "navigationKeyword2": "mountains",
+      "question": "Which California\u2013Nevada range contains Mount Whitney?",
+      "correctAnswer": "Sierra Nevada",
+      "incorrectAnswers": [
+        "Cascade Range",
+        "Coast Ranges",
+        "Peninsular Ranges"
+      ],
+      "explanation": "The Sierra Nevada is a high granitic range along California\u2019s eastern edge.",
+      "keywords": [
+        "mountains",
+        "us-mountains",
+        "sierra-nevada"
+      ],
+      "source": "https://www.britannica.com/place/Sierra-Nevada-mountains"
+    },
+    {
+      "seedId": "40bdfcb8-d0c4-41b1-8589-5d66764ebf1f",
+      "category": "geography",
+      "navigationKeyword1": "us",
+      "navigationKeyword2": "mountains",
+      "question": "Which New Hampshire peak is the highest in the northeastern United States?",
+      "correctAnswer": "Mount Washington",
+      "incorrectAnswers": [
+        "Mount Mansfield",
+        "Mount Katahdin",
+        "Mount Marcy"
+      ],
+      "explanation": "Mount Washington in the Presidential Range is the highest summit in the Northeast.",
+      "keywords": [
+        "mountains",
+        "us-mountains",
+        "white-mountains"
+      ],
+      "source": "https://www.britannica.com/place/Mount-Washington-New-Hampshire"
+    },
+    {
+      "seedId": "2b78eb4d-aaaf-48d3-86d0-ae24e5aa4f2a",
+      "category": "geography",
+      "navigationKeyword1": "us",
+      "navigationKeyword2": "mountains",
+      "question": "Which New York upland includes Adirondack Park, the largest U.S. state-level protected area?",
+      "correctAnswer": "Adirondack Mountains",
+      "incorrectAnswers": [
+        "Catskill Mountains",
+        "Allegheny Plateau",
+        "Taconic Mountains"
+      ],
+      "explanation": "The Adirondacks are an uplifted dome of ancient rocks in northern New York.",
+      "keywords": [
+        "mountains",
+        "us-mountains",
+        "adirondacks"
+      ],
+      "source": "https://www.britannica.com/place/Adirondack-Mountains"
+    },
+    {
+      "seedId": "4c6cfae5-5dc9-4604-9929-fff4128f6827",
+      "category": "geography",
+      "navigationKeyword1": "us",
+      "navigationKeyword2": "mountains",
+      "question": "Which North American mountain system runs from Canada into the western United States?",
+      "correctAnswer": "Rocky Mountains",
+      "incorrectAnswers": [
+        "Appalachian Mountains",
+        "Cascade Range",
+        "Sierra Nevada"
+      ],
+      "explanation": "The Rockies form the great western cordillera from British Columbia to New Mexico.",
+      "keywords": [
+        "mountains",
+        "us-mountains",
+        "rockies"
+      ],
+      "source": "https://www.britannica.com/place/Rocky-Mountains"
+    },
+    {
+      "seedId": "7ddd92c6-fc9e-4bc8-b562-4c6e33308f23",
+      "category": "geography",
+      "navigationKeyword1": "us",
+      "navigationKeyword2": "mountains",
+      "question": "Which ancient mountain chain runs along the eastern United States?",
+      "correctAnswer": "Appalachian Mountains",
+      "incorrectAnswers": [
+        "Ozark Mountains",
+        "Sierra Nevada",
+        "Brooks Range"
+      ],
+      "explanation": "The Appalachians extend from Alabama into eastern Canada.",
+      "keywords": [
+        "mountains",
+        "us-mountains",
+        "appalachians"
+      ],
+      "source": "https://www.britannica.com/place/Appalachian-Mountains"
+    },
+    {
+      "seedId": "473b3d09-cfeb-49e0-bbaf-9d09d463c251",
+      "category": "geography",
+      "navigationKeyword1": "us",
+      "navigationKeyword2": "mountains",
+      "question": "Which dormant volcano on the island of Hawaii is noted for high-elevation astronomy observatories?",
+      "correctAnswer": "Mauna Kea",
+      "incorrectAnswers": [
+        "Mauna Loa",
+        "Haleakala",
+        "Mount Redoubt"
+      ],
+      "explanation": "Mauna Kea\u2019s dry summit hosts major optical and infrared telescopes.",
+      "keywords": [
+        "mountains",
+        "us-mountains",
+        "hawaii"
+      ],
+      "source": "https://www.britannica.com/place/Mauna-Kea"
+    },
+    {
+      "seedId": "01a84366-c35f-4351-a0ab-9408c61f7863",
+      "category": "geography",
+      "navigationKeyword1": "us",
+      "navigationKeyword2": "mountains",
+      "question": "Which highland region covers much of northern Arkansas and southern Missouri?",
+      "correctAnswer": "Ozark Mountains",
+      "incorrectAnswers": [
+        "Ouachita Mountains",
+        "Cumberland Plateau",
+        "Piedmont"
+      ],
+      "explanation": "The Ozarks are a heavily dissected plateau famous for springs and caverns.",
+      "keywords": [
+        "mountains",
+        "us-mountains",
+        "ozarks"
+      ],
+      "source": "https://www.britannica.com/place/Ozark-Mountains"
+    },
+    {
+      "seedId": "667e0a00-8c74-49a5-b0fa-1937d89ee920",
+      "category": "geography",
+      "navigationKeyword1": "us",
+      "navigationKeyword2": "mountains",
+      "question": "Which mountain is the highest in the contiguous 48 states?",
+      "correctAnswer": "Mount Whitney",
+      "incorrectAnswers": [
+        "Mount Elbert",
+        "Mount Rainier",
+        "Pikes Peak"
+      ],
+      "explanation": "Mount Whitney stands in California\u2019s Sierra Nevada east of the San Joaquin Valley.",
+      "keywords": [
+        "mountains",
+        "us-mountains",
+        "sierra-nevada"
+      ],
+      "source": "https://www.britannica.com/place/Mount-Whitney"
+    },
+    {
+      "seedId": "381a6be9-b0d0-4bec-af92-528c462ca62a",
+      "category": "geography",
+      "navigationKeyword1": "us",
+      "navigationKeyword2": "mountains",
+      "question": "Which peak is the highest point in the United States?",
+      "correctAnswer": "Denali",
+      "incorrectAnswers": [
+        "Mount Whitney",
+        "Mount Rainier",
+        "Mauna Kea"
+      ],
+      "explanation": "Denali in the Alaska Range is the highest summit in the country.",
+      "keywords": [
+        "mountains",
+        "us-mountains",
+        "alaska"
+      ],
+      "source": "https://www.britannica.com/place/Denali"
+    },
+    {
+      "seedId": "210d0069-7537-42cd-8682-5beea45c807a",
+      "category": "geography",
+      "navigationKeyword1": "us",
+      "navigationKeyword2": "mountains",
+      "question": "Which range stretches east\u2013west across northern Alaska south of the Arctic coastal plain?",
+      "correctAnswer": "Brooks Range",
+      "incorrectAnswers": [
+        "Alaska Range",
+        "Coast Mountains",
+        "Mackenzie Mountains"
+      ],
+      "explanation": "The Brooks Range divides Alaska\u2019s North Slope from the interior.",
+      "keywords": [
+        "mountains",
+        "us-mountains",
+        "brooks-range"
+      ],
+      "source": "https://www.britannica.com/place/Brooks-Range"
+    },
+    {
+      "seedId": "0c24e6b8-6758-4515-a62c-856202933eb9",
+      "category": "geography",
+      "navigationKeyword1": "us",
+      "navigationKeyword2": "mountains",
+      "question": "Which volcanic range includes Mount Rainier and Mount St. Helens?",
+      "correctAnswer": "Cascade Range",
+      "incorrectAnswers": [
+        "Rocky Mountains",
+        "Olympic Mountains",
+        "Bitterroot Range"
+      ],
+      "explanation": "The Cascades form a volcanic arc through Washington, Oregon, and northern California.",
+      "keywords": [
+        "mountains",
+        "us-mountains",
+        "cascades"
+      ],
+      "source": "https://www.britannica.com/place/Cascade-Range"
+    },
+    {
+      "seedId": "aee03234-6795-4020-81e2-475e92c0f0b0",
+      "category": "geography",
+      "navigationKeyword1": "us",
+      "navigationKeyword2": "regions",
+      "question": "Arizona, Colorado, Idaho, Montana, Nevada, New Mexico, Utah, and Wyoming are in which census division?",
+      "correctAnswer": "Mountain",
+      "incorrectAnswers": [
+        "Pacific",
+        "West North Central",
+        "South Atlantic"
+      ],
+      "explanation": "Those eight states make up the Mountain division in the West region.",
+      "keywords": [
+        "regions",
+        "census-divisions",
+        "mountain-west"
+      ],
+      "source": "https://www.census.gov/programs-surveys/popest/about/glossary/geo-terms.html"
+    },
+    {
+      "seedId": "f0fc54ce-570d-4c58-ba70-bf1ef693f15c",
+      "category": "geography",
+      "navigationKeyword1": "us",
+      "navigationKeyword2": "regions",
+      "question": "Arkansas, Louisiana, Oklahoma, and Texas are grouped in which census division?",
+      "correctAnswer": "West South Central",
+      "incorrectAnswers": [
+        "East South Central",
+        "South Atlantic",
+        "Mountain"
+      ],
+      "explanation": "Those four states form the West South Central division in the South region.",
+      "keywords": [
+        "regions",
+        "census-divisions",
+        "south"
+      ],
+      "source": "https://www.census.gov/programs-surveys/popest/about/glossary/geo-terms.html"
+    },
+    {
+      "seedId": "9a2b104e-f886-440e-aacf-f5617c1c2df3",
+      "category": "geography",
+      "navigationKeyword1": "us",
+      "navigationKeyword2": "regions",
+      "question": "How many census regions does the U.S. Census Bureau use for the states?",
+      "correctAnswer": "Four",
+      "incorrectAnswers": [
+        "Three",
+        "Five",
+        "Nine"
+      ],
+      "explanation": "The Census Bureau nests nine census divisions inside four census regions.",
+      "keywords": [
+        "regions",
+        "census-regions",
+        "united-states"
+      ],
+      "source": "https://www.census.gov/programs-surveys/popest/about/glossary/geo-terms.html"
+    },
+    {
+      "seedId": "ea90f191-a9ef-4d3b-a6ac-a71aed1f1d37",
+      "category": "geography",
+      "navigationKeyword1": "us",
+      "navigationKeyword2": "regions",
+      "question": "Illinois, Indiana, Michigan, Ohio, and Wisconsin form which census division?",
+      "correctAnswer": "East North Central",
+      "incorrectAnswers": [
+        "West North Central",
+        "Middle Atlantic",
+        "Mountain"
+      ],
+      "explanation": "Those states are the East North Central division in the Midwest region.",
+      "keywords": [
+        "regions",
+        "census-divisions",
+        "midwest"
+      ],
+      "source": "https://www.census.gov/programs-surveys/popest/about/glossary/geo-terms.html"
+    },
+    {
+      "seedId": "642142e8-2dde-444f-87f6-045c1ba092db",
+      "category": "geography",
+      "navigationKeyword1": "us",
+      "navigationKeyword2": "regions",
+      "question": "In Census Bureau geography, Alaska is placed in which division?",
+      "correctAnswer": "Pacific",
+      "incorrectAnswers": [
+        "Mountain",
+        "West North Central",
+        "New England"
+      ],
+      "explanation": "Alaska is in the Pacific division with California, Hawaii, Oregon, and Washington.",
+      "keywords": [
+        "regions",
+        "census-divisions",
+        "pacific"
+      ],
+      "source": "https://www.census.gov/programs-surveys/popest/about/glossary/geo-terms.html"
+    },
+    {
+      "seedId": "ced58f12-1757-432f-9db4-5d5c5073380e",
+      "category": "geography",
+      "navigationKeyword1": "us",
+      "navigationKeyword2": "regions",
+      "question": "In Census Bureau geography, which region includes California?",
+      "correctAnswer": "West",
+      "incorrectAnswers": [
+        "South",
+        "Midwest",
+        "Northeast"
+      ],
+      "explanation": "California is in the West region, Pacific division.",
+      "keywords": [
+        "regions",
+        "census-regions",
+        "west"
+      ],
+      "source": "https://www.census.gov/programs-surveys/popest/about/glossary/geo-terms.html"
+    },
+    {
+      "seedId": "260d0f20-93ee-4fdf-8021-3d1703c72d5d",
+      "category": "geography",
+      "navigationKeyword1": "us",
+      "navigationKeyword2": "regions",
+      "question": "Which census division groups Connecticut, Maine, Massachusetts, New Hampshire, Rhode Island, and Vermont?",
+      "correctAnswer": "New England",
+      "incorrectAnswers": [
+        "Middle Atlantic",
+        "East North Central",
+        "South Atlantic"
+      ],
+      "explanation": "Those six states form the New England division within the Northeast region.",
+      "keywords": [
+        "regions",
+        "census-divisions",
+        "new-england"
+      ],
+      "source": "https://www.census.gov/programs-surveys/popest/about/glossary/geo-terms.html"
+    },
+    {
+      "seedId": "2f40c3f5-3157-4c68-a8dc-447b62e1de09",
+      "category": "geography",
+      "navigationKeyword1": "us",
+      "navigationKeyword2": "regions",
+      "question": "Which census division includes New Jersey, New York, and Pennsylvania?",
+      "correctAnswer": "Middle Atlantic",
+      "incorrectAnswers": [
+        "New England",
+        "East North Central",
+        "Mountain"
+      ],
+      "explanation": "Those three states are the Middle Atlantic division of the Northeast region.",
+      "keywords": [
+        "regions",
+        "census-divisions",
+        "middle-atlantic"
+      ],
+      "source": "https://www.census.gov/programs-surveys/popest/about/glossary/geo-terms.html"
+    },
+    {
+      "seedId": "23fe44c5-b2f4-4e1c-8453-85e6941fa14a",
+      "category": "geography",
+      "navigationKeyword1": "us",
+      "navigationKeyword2": "regions",
+      "question": "Which census region includes New York?",
+      "correctAnswer": "Northeast",
+      "incorrectAnswers": [
+        "Midwest",
+        "South",
+        "West"
+      ],
+      "explanation": "New York is in the Northeast region, Middle Atlantic division.",
+      "keywords": [
+        "regions",
+        "census-regions",
+        "northeast"
+      ],
+      "source": "https://www.census.gov/programs-surveys/popest/about/glossary/geo-terms.html"
+    },
+    {
+      "seedId": "eb2d65ac-8956-4fe4-b91f-ea743f93eb7e",
+      "category": "geography",
+      "navigationKeyword1": "us",
+      "navigationKeyword2": "regions",
+      "question": "Which census region includes Ohio?",
+      "correctAnswer": "Midwest",
+      "incorrectAnswers": [
+        "Northeast",
+        "South",
+        "West"
+      ],
+      "explanation": "Ohio is in the Midwest region, East North Central division.",
+      "keywords": [
+        "regions",
+        "census-regions",
+        "midwest"
+      ],
+      "source": "https://www.census.gov/programs-surveys/popest/about/glossary/geo-terms.html"
+    },
+    {
+      "seedId": "6c5ccb4e-36d6-4d8e-b1ff-0b5a99d60a5d",
+      "category": "geography",
+      "navigationKeyword1": "us",
+      "navigationKeyword2": "regions",
+      "question": "Which census region includes Texas?",
+      "correctAnswer": "South",
+      "incorrectAnswers": [
+        "West",
+        "Midwest",
+        "Northeast"
+      ],
+      "explanation": "Texas is in the South region, West South Central division.",
+      "keywords": [
+        "regions",
+        "census-regions",
+        "south"
+      ],
+      "source": "https://www.census.gov/programs-surveys/popest/about/glossary/geo-terms.html"
+    },
+    {
+      "seedId": "c1493c5e-4042-45d8-ad79-3c5a39732200",
+      "category": "geography",
+      "navigationKeyword1": "us",
+      "navigationKeyword2": "rivers",
+      "question": "Which major river joins the Mississippi near St. Louis, Missouri?",
+      "correctAnswer": "Missouri River",
+      "incorrectAnswers": [
+        "Ohio River",
+        "Arkansas River",
+        "Tennessee River"
+      ],
+      "explanation": "The Missouri meets the Mississippi just north of St. Louis.",
+      "keywords": [
+        "rivers",
+        "us-rivers",
+        "missouri"
+      ],
+      "source": "https://www.britannica.com/place/Missouri-River"
+    },
+    {
+      "seedId": "abe06200-4f25-4f09-a2cc-1661a09ce79b",
+      "category": "geography",
+      "navigationKeyword1": "us",
+      "navigationKeyword2": "rivers",
+      "question": "Which river borders Washington, D.C., on one side and separates it from Virginia?",
+      "correctAnswer": "Potomac River",
+      "incorrectAnswers": [
+        "Susquehanna River",
+        "James River",
+        "Rappahannock River"
+      ],
+      "explanation": "The Potomac flows along the southwestern edge of the District of Columbia.",
+      "keywords": [
+        "rivers",
+        "us-rivers",
+        "potomac"
+      ],
+      "source": "https://www.britannica.com/place/Potomac-River"
+    },
+    {
+      "seedId": "04e16c0a-6cc7-447e-a93c-eefb0810b3e8",
+      "category": "geography",
+      "navigationKeyword1": "us",
+      "navigationKeyword2": "rivers",
+      "question": "Which river carved the Grand Canyon in northern Arizona?",
+      "correctAnswer": "Colorado River",
+      "incorrectAnswers": [
+        "Green River",
+        "Snake River",
+        "Rio Grande"
+      ],
+      "explanation": "The Colorado cut the canyon as it crossed the Colorado Plateau.",
+      "keywords": [
+        "rivers",
+        "us-rivers",
+        "colorado"
+      ],
+      "source": "https://www.britannica.com/place/Colorado-River"
+    },
+    {
+      "seedId": "c274d8fc-684b-4d62-b0b0-7679a889bfcc",
+      "category": "geography",
+      "navigationKeyword1": "us",
+      "navigationKeyword2": "rivers",
+      "question": "Which river drains much of Tennessee and Alabama and is a major Ohio tributary?",
+      "correctAnswer": "Tennessee River",
+      "incorrectAnswers": [
+        "Cumberland River",
+        "Alabama River",
+        "Chattahoochee River"
+      ],
+      "explanation": "The Tennessee turns north through Tennessee and joins the Ohio in western Kentucky.",
+      "keywords": [
+        "rivers",
+        "us-rivers",
+        "tennessee"
+      ],
+      "source": "https://www.britannica.com/place/Tennessee-River"
+    },
+    {
+      "seedId": "bdc865f9-8d77-4915-9c7a-def5278f3573",
+      "category": "geography",
+      "navigationKeyword1": "us",
+      "navigationKeyword2": "rivers",
+      "question": "Which river flows past New York City into Upper New York Bay?",
+      "correctAnswer": "Hudson River",
+      "incorrectAnswers": [
+        "Delaware River",
+        "Connecticut River",
+        "Mohawk River"
+      ],
+      "explanation": "The Hudson estuary forms one of the world\u2019s major harbors at New York City.",
+      "keywords": [
+        "rivers",
+        "us-rivers",
+        "hudson"
+      ],
+      "source": "https://www.britannica.com/place/Hudson-River"
+    },
+    {
+      "seedId": "5c41cdc7-741a-45b0-86d7-af972cc9e67a",
+      "category": "geography",
+      "navigationKeyword1": "us",
+      "navigationKeyword2": "rivers",
+      "question": "Which river forms part of the border between Texas and Mexico?",
+      "correctAnswer": "Rio Grande",
+      "incorrectAnswers": [
+        "Pecos River",
+        "Red River",
+        "Sabine River"
+      ],
+      "explanation": "The Rio Grande separates much of Texas from Mexico.",
+      "keywords": [
+        "rivers",
+        "us-rivers",
+        "border"
+      ],
+      "source": "https://www.britannica.com/place/Rio-Grande-river-United-States-Mexico"
+    },
+    {
+      "seedId": "012c0570-8773-4a9f-8544-9cfcb18309b7",
+      "category": "geography",
+      "navigationKeyword1": "us",
+      "navigationKeyword2": "rivers",
+      "question": "Which river is a major tributary of the Columbia and flows through Hells Canyon?",
+      "correctAnswer": "Snake River",
+      "incorrectAnswers": [
+        "Willamette River",
+        "Clearwater River",
+        "Salmon River"
+      ],
+      "explanation": "The Snake joins the Columbia in Washington after crossing Idaho.",
+      "keywords": [
+        "rivers",
+        "us-rivers",
+        "snake"
+      ],
+      "source": "https://www.britannica.com/place/Snake-River"
+    },
+    {
+      "seedId": "4f2a6cf8-486a-40c4-8789-1d672e47e0bf",
+      "category": "geography",
+      "navigationKeyword1": "us",
+      "navigationKeyword2": "rivers",
+      "question": "Which river is described as the longest in North America?",
+      "correctAnswer": "Mississippi River",
+      "incorrectAnswers": [
+        "Missouri River",
+        "Colorado River",
+        "Rio Grande"
+      ],
+      "explanation": "The Mississippi flows from Minnesota to the Gulf of Mexico and is the continent\u2019s longest river.",
+      "keywords": [
+        "rivers",
+        "us-rivers",
+        "mississippi"
+      ],
+      "source": "https://www.britannica.com/place/Mississippi-River"
+    },
+    {
+      "seedId": "2a43b82b-3213-4d8a-ae02-44cc34514554",
+      "category": "geography",
+      "navigationKeyword1": "us",
+      "navigationKeyword2": "rivers",
+      "question": "Which river is the largest in the Pacific Northwest of the United States?",
+      "correctAnswer": "Columbia River",
+      "incorrectAnswers": [
+        "Snake River",
+        "Colorado River",
+        "Sacramento River"
+      ],
+      "explanation": "The Columbia drains a vast area and reaches the Pacific near Astoria, Oregon.",
+      "keywords": [
+        "rivers",
+        "us-rivers",
+        "columbia"
+      ],
+      "source": "https://www.britannica.com/place/Columbia-River"
+    },
+    {
+      "seedId": "dbde25fa-7d45-40a1-89f7-40c7ae92fc94",
+      "category": "geography",
+      "navigationKeyword1": "us",
+      "navigationKeyword2": "rivers",
+      "question": "Which river meets the Mississippi at Cairo, Illinois, and is the larger stream at that confluence?",
+      "correctAnswer": "Ohio River",
+      "incorrectAnswers": [
+        "Illinois River",
+        "Tennessee River",
+        "Cumberland River"
+      ],
+      "explanation": "At Cairo the Ohio contributes more flow than the upper Mississippi above the junction.",
+      "keywords": [
+        "rivers",
+        "us-rivers",
+        "ohio"
+      ],
+      "source": "https://www.britannica.com/place/Mississippi-River"
+    },
+    {
+      "seedId": "8a39d3a4-204c-4b9c-9242-8409ffcaaae3",
+      "category": "geography",
+      "navigationKeyword1": "us",
+      "navigationKeyword2": "rivers",
+      "question": "Which river rises in the Colorado Rockies and joins the Mississippi in Arkansas?",
+      "correctAnswer": "Arkansas River",
+      "incorrectAnswers": [
+        "Red River",
+        "Platte River",
+        "Canadian River"
+      ],
+      "explanation": "The Arkansas heads near Leadville, Colorado, then crosses Kansas, Oklahoma, and Arkansas to the Mississippi.",
+      "keywords": [
+        "rivers",
+        "us-rivers",
+        "arkansas"
+      ],
+      "source": "https://www.britannica.com/place/Arkansas-River"
+    },
+    {
+      "seedId": "1a09e79e-941c-429e-be33-e1fadc3c96fc",
+      "category": "geography",
+      "navigationKeyword1": "us",
+      "navigationKeyword2": "states",
+      "question": "After Alaska, which state has the next-largest total area?",
+      "correctAnswer": "Texas",
+      "incorrectAnswers": [
+        "California",
+        "Montana",
+        "New Mexico"
+      ],
+      "explanation": "Texas ranks second to Alaska in total area in official Census Bureau area data.",
+      "keywords": [
+        "states",
+        "us-states",
+        "land-area"
+      ],
+      "source": "https://www.census.gov/geographies/reference-files/2010/geo/state-area.html"
+    },
+    {
+      "seedId": "57913170-9114-4184-8aa7-4c03a263f635",
+      "category": "geography",
+      "navigationKeyword1": "us",
+      "navigationKeyword2": "states",
+      "question": "How many counties does Texas have?",
+      "correctAnswer": "254",
+      "incorrectAnswers": [
+        "159",
+        "100",
+        "314"
+      ],
+      "explanation": "Texas is divided into 254 counties, more than any other U.S. state.",
+      "keywords": [
+        "states",
+        "us-states",
+        "counties"
+      ],
+      "source": "https://www.census.gov/geographies/reference-files/2010/geo/state-local-geo-guides-2010/texas.html"
+    },
+    {
+      "seedId": "876652b7-631a-47c0-845e-93742a700b8c",
+      "category": "geography",
+      "navigationKeyword1": "us",
+      "navigationKeyword2": "states",
+      "question": "In 2020 census resident population, which state was the most populous?",
+      "correctAnswer": "California",
+      "incorrectAnswers": [
+        "Texas",
+        "Florida",
+        "New York"
+      ],
+      "explanation": "California had the largest resident population of any state in the 2020 Census.",
+      "keywords": [
+        "states",
+        "us-states",
+        "population"
+      ],
+      "source": "https://www.census.gov/data/tables/2020/dec/2020-apportionment-data.html"
+    },
+    {
+      "seedId": "2c1d57b0-709d-4e65-94af-5b0720c19572",
+      "category": "geography",
+      "navigationKeyword1": "us",
+      "navigationKeyword2": "states",
+      "question": "Which Great Lake lies wholly within the United States?",
+      "correctAnswer": "Lake Michigan",
+      "incorrectAnswers": [
+        "Lake Superior",
+        "Lake Huron",
+        "Lake Erie"
+      ],
+      "explanation": "Lake Michigan is the only Great Lake bordered only by U.S. states.",
+      "keywords": [
+        "states",
+        "us-states",
+        "great-lakes"
+      ],
+      "source": "https://www.britannica.com/place/Lake-Michigan"
+    },
+    {
+      "seedId": "6dd46a20-4aa3-4af1-85c6-912275d1b53f",
+      "category": "geography",
+      "navigationKeyword1": "us",
+      "navigationKeyword2": "states",
+      "question": "Which U.S. state has the largest land area?",
+      "correctAnswer": "Alaska",
+      "incorrectAnswers": [
+        "Texas",
+        "California",
+        "Montana"
+      ],
+      "explanation": "Alaska\u2019s land area is larger than any other state\u2019s in Census Bureau measurements.",
+      "keywords": [
+        "states",
+        "us-states",
+        "land-area"
+      ],
+      "source": "https://www.census.gov/geographies/reference-files/2010/geo/state-area.html"
+    },
+    {
+      "seedId": "7c5199fb-0f35-4a84-aeb9-907c9c28445d",
+      "category": "geography",
+      "navigationKeyword1": "us",
+      "navigationKeyword2": "states",
+      "question": "Which U.S. state has the smallest total area?",
+      "correctAnswer": "Rhode Island",
+      "incorrectAnswers": [
+        "Delaware",
+        "Connecticut",
+        "New Jersey"
+      ],
+      "explanation": "Rhode Island\u2019s total area is the smallest among the 50 states in Census tables.",
+      "keywords": [
+        "states",
+        "us-states",
+        "land-area"
+      ],
+      "source": "https://www.census.gov/geographies/reference-files/2010/geo/state-area.html"
+    },
+    {
+      "seedId": "81d3d69a-a314-4dc3-9778-35205d3c73fa",
+      "category": "geography",
+      "navigationKeyword1": "us",
+      "navigationKeyword2": "states",
+      "question": "Which U.S. state is named after the first U.S. president?",
+      "correctAnswer": "Washington",
+      "incorrectAnswers": [
+        "Virginia",
+        "Georgia",
+        "Maryland"
+      ],
+      "explanation": "Washington state honors George Washington.",
+      "keywords": [
+        "states",
+        "us-states",
+        "state-names"
+      ],
+      "source": "https://www.britannica.com/place/Washington-state"
+    },
+    {
+      "seedId": "719809a7-0c64-49e4-b416-1bd7acaf694a",
+      "category": "geography",
+      "navigationKeyword1": "us",
+      "navigationKeyword2": "states",
+      "question": "Which U.S. state is the only one with a unicameral (one-house) state legislature?",
+      "correctAnswer": "Nebraska",
+      "incorrectAnswers": [
+        "Texas",
+        "California",
+        "New York"
+      ],
+      "explanation": "Nebraska\u2019s Unicameral is the sole single-chamber state legislature in the United States.",
+      "keywords": [
+        "states",
+        "us-states",
+        "nebraska"
+      ],
+      "source": "https://www.britannica.com/place/Nebraska-state"
+    },
+    {
+      "seedId": "0bba2b4b-7840-45ba-827c-eb8140822520",
+      "category": "geography",
+      "navigationKeyword1": "us",
+      "navigationKeyword2": "states",
+      "question": "Which four states meet at the Four Corners monument?",
+      "correctAnswer": "Arizona, Colorado, New Mexico, and Utah",
+      "incorrectAnswers": [
+        "Kansas, Colorado, Oklahoma, and Texas",
+        "California, Nevada, Oregon, and Idaho",
+        "Montana, Wyoming, North Dakota, and South Dakota"
+      ],
+      "explanation": "Four Corners is the only U.S. point where four state boundaries meet.",
+      "keywords": [
+        "states",
+        "us-states",
+        "borders"
+      ],
+      "source": "https://www.britannica.com/place/Four-Corners"
+    },
+    {
+      "seedId": "e04a18f4-9b14-4f3f-a36b-f9eb799a7d15",
+      "category": "geography",
+      "navigationKeyword1": "us",
+      "navigationKeyword2": "states",
+      "question": "Which state includes the Upper Peninsula and Lower Peninsula separated by the Straits of Mackinac?",
+      "correctAnswer": "Michigan",
+      "incorrectAnswers": [
+        "Wisconsin",
+        "Minnesota",
+        "Ohio"
+      ],
+      "explanation": "Michigan\u2019s two peninsulas are linked by the Mackinac Bridge.",
+      "keywords": [
+        "states",
+        "us-states",
+        "great-lakes"
+      ],
+      "source": "https://www.britannica.com/place/Michigan"
+    },
+    {
+      "seedId": "3413a643-c5ab-4e5b-8af0-1f1fe5ca878c",
+      "category": "geography",
+      "navigationKeyword1": "us",
+      "navigationKeyword2": "states",
+      "question": "Which state is made up mainly of islands in the Pacific?",
+      "correctAnswer": "Hawaii",
+      "incorrectAnswers": [
+        "Alaska",
+        "Florida",
+        "California"
+      ],
+      "explanation": "Hawaii is an island state far southwest of the contiguous United States.",
+      "keywords": [
+        "states",
+        "us-states",
+        "pacific"
+      ],
+      "source": "https://www.britannica.com/place/Hawaii-state"
+    }
+  ]
+}

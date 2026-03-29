@@ -1,0 +1,45 @@
+{
+  "schemaVersion": 1,
+  "seedSet": "core-public-items",
+  "deltaPreviewLimit": 200,
+  "items": [
+    {
+      "seedId": "a7711c9a-fcad-5b84-98b6-34ed9a1e83ce",
+      "category": "humanities",
+      "navigationKeyword1": "religion-myth",
+      "navigationKeyword2": "norse-myth",
+      "question": "What is Ragnarok in Norse myth?",
+      "correctAnswer": "a world-ending battle and renewal",
+      "incorrectAnswers": [
+        "a heroic wedding feast",
+        "a sacred mountain temple",
+        "a law book of kings"
+      ],
+      "explanation": "Ragnarok is the great destructive conflict tied to the end and renewal of the world.",
+      "keywords": [
+        "norse-myth",
+        "ragnarok"
+      ],
+      "source": "https://www.britishmuseum.org/blog/viking-myths-and-misconceptions"
+    },
+    {
+      "seedId": "a6c6f01d-4370-5778-aa22-4bd72d200ced",
+      "category": "humanities",
+      "navigationKeyword1": "religion-myth",
+      "navigationKeyword2": "norse-myth",
+      "question": "Who is the hammer-wielding god in Norse mythology?",
+      "correctAnswer": "Thor",
+      "incorrectAnswers": [
+        "Balder",
+        "Loki",
+        "Tyr"
+      ],
+      "explanation": "Thor is known for his hammer and his role as a powerful god of thunder.",
+      "keywords": [
+        "norse-myth",
+        "thor"
+      ],
+      "source": "https://www.britannica.com/topic/Thor-Norse-deity"
+    }
+  ]
+}

@@ -1,0 +1,227 @@
+{
+  "schemaVersion": 1,
+  "seedSet": "core-public-items",
+  "deltaPreviewLimit": 200,
+  "items": [
+    {
+      "seedId": "cabf68e2-292f-4690-9b12-9c041f3f9d2b",
+      "category": "geography",
+      "navigationKeyword1": "regions",
+      "navigationKeyword2": "scandinavia",
+      "question": "Finland is generally considered part of Scandinavia or instead grouped mainly with what broader label?",
+      "correctAnswer": "Generally not part of core Scandinavia; often grouped with Nordic (Norden) countries",
+      "incorrectAnswers": [
+        "Always identical to the Iberian states",
+        "Officially part of the Balkans",
+        "Legally merged with Greenland only"
+      ],
+      "explanation": "Britannica notes Finland is generally not considered part of Scandinavia, though some include it on geologic or economic grounds; Nordic/Norden groups add Finland, Iceland, and others.",
+      "keywords": [
+        "scandinavia",
+        "finland",
+        "nordic"
+      ],
+      "source": "https://www.britannica.com/place/Scandinavia"
+    },
+    {
+      "seedId": "78343b0d-8c64-426b-9f70-11dc8c5bbfe7",
+      "category": "geography",
+      "navigationKeyword1": "regions",
+      "navigationKeyword2": "scandinavia",
+      "question": "High life expectancy and high literacy are listed among distinguishing traits of which regional grouping?",
+      "correctAnswer": "Norden (Denmark, Finland, Iceland, Norway, Sweden)",
+      "incorrectAnswers": [
+        "The Persian Gulf microstates only",
+        "Interior Sahara encampments uniformly",
+        "Remote Pacific atolls exclusively"
+      ],
+      "explanation": "Britannica notes Norden countries share long life expectancies and high literacy among other affinities.",
+      "keywords": [
+        "scandinavia",
+        "demographics",
+        "norden"
+      ],
+      "source": "https://www.britannica.com/place/Scandinavia"
+    },
+    {
+      "seedId": "fc09dcc4-2a94-495c-9b4b-d9a5313d09c6",
+      "category": "geography",
+      "navigationKeyword1": "regions",
+      "navigationKeyword2": "scandinavia",
+      "question": "Historically, what alternate Latin name did Scandinavia bear?",
+      "correctAnswer": "Scandia",
+      "incorrectAnswers": [
+        "Hibernia",
+        "Cathay",
+        "Lusitania"
+      ],
+      "explanation": "Britannica notes Scandinavia was historically called Scandia.",
+      "keywords": [
+        "scandinavia",
+        "history",
+        "names"
+      ],
+      "source": "https://www.britannica.com/place/Scandinavia"
+    },
+    {
+      "seedId": "0f0ec262-a685-4c06-a283-25f385653103",
+      "category": "geography",
+      "navigationKeyword1": "regions",
+      "navigationKeyword2": "scandinavia",
+      "question": "Iceland is often added to Nordic groupings because its language is related to those of Norway and where else?",
+      "correctAnswer": "Sweden (and Denmark) within the North Germanic family",
+      "incorrectAnswers": [
+        "Japan",
+        "Madagascar",
+        "Ethiopia"
+      ],
+      "explanation": "Britannica includes Iceland (and the Faroes) among areas whose North Germanic languages relate to Norwegian and Swedish.",
+      "keywords": [
+        "scandinavia",
+        "iceland",
+        "languages"
+      ],
+      "source": "https://www.britannica.com/place/Scandinavia"
+    },
+    {
+      "seedId": "0462de81-86e4-4e2a-b597-9d0b52585c3a",
+      "category": "geography",
+      "navigationKeyword1": "regions",
+      "navigationKeyword2": "scandinavia",
+      "question": "Nordic countries are described as distinct from the rest of continental Europe partly because northern areas are what?",
+      "correctAnswer": "Thinly populated",
+      "incorrectAnswers": [
+        "Entirely uninhabited",
+        "Denser than every tropical megacity",
+        "Without any coastlines"
+      ],
+      "explanation": "Britannica highlights thinly populated northern regions as one Nordic characteristic setting the area apart.",
+      "keywords": [
+        "scandinavia",
+        "population",
+        "nordic"
+      ],
+      "source": "https://www.britannica.com/place/Scandinavia"
+    },
+    {
+      "seedId": "c54bd97b-98e0-4cf9-b426-a12c5cd8f73b",
+      "category": "geography",
+      "navigationKeyword1": "regions",
+      "navigationKeyword2": "scandinavia",
+      "question": "Norway and Sweden together occupy which European peninsula?",
+      "correctAnswer": "The Scandinavian Peninsula",
+      "incorrectAnswers": [
+        "The Iberian Peninsula",
+        "The Balkan Peninsula",
+        "The Indochinese Peninsula"
+      ],
+      "explanation": "Britannica identifies Norway and Sweden as the two countries on the Scandinavian Peninsula.",
+      "keywords": [
+        "scandinavia",
+        "scandinavian-peninsula",
+        "norway"
+      ],
+      "source": "https://www.britannica.com/place/Scandinavia"
+    },
+    {
+      "seedId": "738840d9-3c40-4da2-9f88-e6f62f85f597",
+      "category": "geography",
+      "navigationKeyword1": "regions",
+      "navigationKeyword2": "scandinavia",
+      "question": "Scandinavia is generally held to include Norway, Sweden, and which third kingdom?",
+      "correctAnswer": "Denmark",
+      "incorrectAnswers": [
+        "Poland",
+        "Portugal",
+        "Switzerland"
+      ],
+      "explanation": "Britannica states Scandinavia usually comprises Norway and Sweden on the Scandinavian Peninsula plus Denmark.",
+      "keywords": [
+        "scandinavia",
+        "northern-europe",
+        "denmark"
+      ],
+      "source": "https://www.britannica.com/place/Scandinavia"
+    },
+    {
+      "seedId": "9a5da685-7a2d-4d79-bec3-49c40b2d7d5f",
+      "category": "geography",
+      "navigationKeyword1": "regions",
+      "navigationKeyword2": "scandinavia",
+      "question": "Scandinavia lies in which part of Europe?",
+      "correctAnswer": "Northern Europe",
+      "incorrectAnswers": [
+        "Central Africa",
+        "Southern South America",
+        "Interior Antarctica"
+      ],
+      "explanation": "Britannica places Scandinavia in northern Europe.",
+      "keywords": [
+        "scandinavia",
+        "location",
+        "europe"
+      ],
+      "source": "https://www.britannica.com/place/Scandinavia"
+    },
+    {
+      "seedId": "66d2bac2-223d-4a2d-a45a-c1d016de9f13",
+      "category": "geography",
+      "navigationKeyword1": "regions",
+      "navigationKeyword2": "scandinavia",
+      "question": "The term Norden typically refers to which five states?",
+      "correctAnswer": "Denmark, Finland, Iceland, Norway, and Sweden",
+      "incorrectAnswers": [
+        "Spain, Italy, Greece, Malta, Cyprus",
+        "Brazil, Argentina, Chile, Peru, Uruguay",
+        "Kenya, Uganda, Rwanda, Burundi, Tanzania"
+      ],
+      "explanation": "Britannica defines Norden as Denmark, Finland, Iceland, Norway, and Sweden\u2014a broader Northern European grouping than core Scandinavia.",
+      "keywords": [
+        "scandinavia",
+        "norden",
+        "nordic-countries"
+      ],
+      "source": "https://www.britannica.com/place/Scandinavia"
+    },
+    {
+      "seedId": "537cb8ac-cc1c-4c17-9866-22d84d3ecbe1",
+      "category": "geography",
+      "navigationKeyword1": "regions",
+      "navigationKeyword2": "scandinavia",
+      "question": "What shared language family links Norway, Sweden, Denmark, Iceland, and Faroese speech in Nordic discussions?",
+      "correctAnswer": "North Germanic (Scandinavian) languages",
+      "incorrectAnswers": [
+        "Semitic languages only",
+        "Sino-Tibetan languages",
+        "Bantu languages"
+      ],
+      "explanation": "Britannica ties Nordic affinities partly to North Germanic languages spoken from Norway and Sweden through Denmark, Iceland, and the Faroes.",
+      "keywords": [
+        "scandinavia",
+        "languages",
+        "germanic"
+      ],
+      "source": "https://www.britannica.com/place/Scandinavia"
+    },
+    {
+      "seedId": "7b86ff48-ff22-4126-852e-3c82c74a7be4",
+      "category": "geography",
+      "navigationKeyword1": "regions",
+      "navigationKeyword2": "scandinavia",
+      "question": "Which resource does Britannica cite as relatively abundant for Nordic countries alongside fisheries?",
+      "correctAnswer": "Fish resources of the sea",
+      "incorrectAnswers": [
+        "Tropical hardwood forests only",
+        "No marine resources",
+        "Oil exclusively on landlocked plateaus"
+      ],
+      "explanation": "Britannica lists, among Nordic traits, a relative wealth of fish resources along with other regional characteristics.",
+      "keywords": [
+        "scandinavia",
+        "fisheries",
+        "resources"
+      ],
+      "source": "https://www.britannica.com/place/Scandinavia"
+    }
+  ]
+}
