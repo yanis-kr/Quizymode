@@ -51,6 +51,17 @@ public static class GetKeywords
         public int PrivateItemCount { get; set; }
     }
 
+    private sealed record NavigationKeywordDefinitionRow(
+        Guid KeywordId,
+        string Name,
+        int NavigationRank,
+        int SortRank,
+        string? Description);
+
+    private sealed record ItemNavigationMatchRow(Guid ItemId, Guid KeywordId);
+
+    private sealed record RatingAggregateRow(Guid KeywordId, int Stars);
+
     public sealed class Endpoint : IEndpoint
     {
         public void MapEndpoint(IEndpointRouteBuilder app)
@@ -191,7 +202,7 @@ public static class GetKeywords
                 }
             }
 
-            // Keywords are already ordered by SortRank from SQL query
+            // Keywords are already ordered by relation sort order and keyword name
             Response response = new(keywords);
             int totalItemCount = keywords.Sum(k => k.ItemCount);
 
@@ -270,18 +281,10 @@ public static class GetKeywords
         IUserContext userContext,
         CancellationToken cancellationToken)
     {
-        System.Data.Common.DbConnection connection = db.Database.GetDbConnection();
-        if (connection.State != System.Data.ConnectionState.Open)
-        {
-            await db.Database.OpenConnectionAsync(cancellationToken);
-        }
-
         string? currentUserId = userContext.UserId;
         bool isAuthenticated = userContext.IsAuthenticated && !string.IsNullOrEmpty(currentUserId);
         string safeCurrentUserId = currentUserId ?? string.Empty;
-        int isAuthenticatedInt = isAuthenticated ? 1 : 0;
 
-        // For rank-2, resolve parent (rank-1) keyword ID from selected keywords (only visible relations)
         Guid? parentKeywordId = null;
         if (targetRank == 2 && selectedKeywords is not null && selectedKeywords.Count > 0)
         {
@@ -298,78 +301,143 @@ public static class GetKeywords
                 parentKeywordId = null;
         }
 
-        // Rank 1 = ParentKeywordId IS NULL; Rank 2 = ParentKeywordId = parent keyword ID. Item count from Items where Nav1 or Nav2 = ChildKeywordId.
-        string sql = @"
-            SELECT
-                k.""Name"",
-                COUNT(DISTINCT CASE 
-                    WHEN i.""Id"" IS NOT NULL 
-                        AND ((@IsAuthenticated = 0 AND c.""IsPrivate"" = false AND i.""IsPrivate"" = false)
-                             OR (@IsAuthenticated = 1 AND (
-                                 (c.""IsPrivate"" = false OR (c.""IsPrivate"" = true AND c.""CreatedBy"" = @CurrentUserId))
-                                 AND (i.""IsPrivate"" = false OR (i.""IsPrivate"" = true AND i.""CreatedBy"" = @CurrentUserId))
-                             )))
-                    THEN i.""Id""
-                    ELSE NULL
-                END)::int AS ""ItemCount"",
-                COUNT(DISTINCT CASE 
-                    WHEN i.""Id"" IS NOT NULL AND i.""IsPrivate"" = true AND i.""CreatedBy"" = @CurrentUserId 
-                    THEN i.""Id"" 
-                    ELSE NULL 
-                END)::int AS ""PrivateItemCount"",
-                CASE 
-                    WHEN COUNT(DISTINCT i.""Id"") > 0 THEN
-                        ROUND(AVG(CASE 
-                            WHEN r.""Stars"" IS NOT NULL 
-                                AND ((@IsAuthenticated = 0 AND c.""IsPrivate"" = false AND i.""IsPrivate"" = false)
-                                     OR (@IsAuthenticated = 1 AND (
-                                         (c.""IsPrivate"" = false OR (c.""IsPrivate"" = true AND c.""CreatedBy"" = @CurrentUserId))
-                                         AND (i.""IsPrivate"" = false OR (i.""IsPrivate"" = true AND i.""CreatedBy"" = @CurrentUserId))
-                                     )))
-                            THEN r.""Stars""::numeric
-                            ELSE NULL
-                        END), 2)::double precision
-                    ELSE NULL
-                END AS ""AverageRating"",
-                (CASE WHEN kr.""ParentKeywordId"" IS NULL THEN 1 ELSE 2 END)::int AS ""NavigationRank"",
-                kr.""SortOrder""::int AS ""SortRank"",
-                kr.""Description""
-            FROM ""KeywordRelations"" kr
-            INNER JOIN ""Keywords"" k ON k.""Id"" = kr.""ChildKeywordId""
-            LEFT JOIN ""Items"" i ON i.""CategoryId"" = kr.""CategoryId"" AND (i.""NavigationKeywordId1"" = kr.""ChildKeywordId"" OR i.""NavigationKeywordId2"" = kr.""ChildKeywordId"")
-            LEFT JOIN ""Categories"" c ON c.""Id"" = i.""CategoryId""
-            LEFT JOIN ""Ratings"" r ON r.""ItemId"" = i.""Id"" AND r.""Stars"" IS NOT NULL
-            WHERE kr.""CategoryId"" = @CategoryId
-                AND ((@ParentKeywordId IS NULL AND kr.""ParentKeywordId"" IS NULL) OR (kr.""ParentKeywordId"" = @ParentKeywordId))
-                AND ((@IsAuthenticated = 0 AND kr.""IsPrivate"" = false) OR (@IsAuthenticated = 1 AND (kr.""IsPrivate"" = false OR (kr.""IsPrivate"" = true AND kr.""CreatedBy"" = @CurrentUserId))))
-                AND (
-                    (@IsAuthenticated = 0 AND k.""IsPrivate"" = false)
-                    OR (@IsAuthenticated = 1 AND (k.""IsPrivate"" = false OR (k.""IsPrivate"" = true AND k.""CreatedBy"" = @CurrentUserId)))
-                )
-            GROUP BY k.""Name"", kr.""ParentKeywordId"", kr.""SortOrder"", kr.""Description""
-            ORDER BY kr.""SortOrder"" ASC, k.""Name"" ASC";
+        IQueryable<KeywordRelation> relationQuery = db.KeywordRelations
+            .AsNoTracking()
+            .Include(kr => kr.ChildKeyword)
+            .Where(kr => kr.CategoryId == categoryId);
 
-        DynamicParameters parameters = new DynamicParameters();
-        parameters.Add("CategoryId", categoryId);
-        parameters.Add("IsAuthenticated", isAuthenticatedInt);
-        parameters.Add("CurrentUserId", safeCurrentUserId);
-        parameters.Add("ParentKeywordId", parentKeywordId, System.Data.DbType.Guid);
+        relationQuery = targetRank == 1
+            ? relationQuery.Where(kr => kr.ParentKeywordId == null)
+            : relationQuery.Where(kr => kr.ParentKeywordId == parentKeywordId);
 
-        List<KeywordResponse> keywords = (await connection.QueryAsync<KeywordRow>(
-            new CommandDefinition(
-                sql,
-                parameters,
-                cancellationToken: cancellationToken)))
-            .Select(row => new KeywordResponse(
-                row.Name,
-                row.ItemCount,
-                row.AverageRating,
-                row.NavigationRank,
-                row.Description,
-                row.PrivateItemCount))
+        if (!isAuthenticated)
+        {
+            relationQuery = relationQuery.Where(kr => !kr.IsPrivate && !kr.ChildKeyword.IsPrivate);
+        }
+        else
+        {
+            relationQuery = relationQuery.Where(kr =>
+                (!kr.IsPrivate || kr.CreatedBy == safeCurrentUserId) &&
+                (!kr.ChildKeyword.IsPrivate || kr.ChildKeyword.CreatedBy == safeCurrentUserId));
+        }
+
+        List<NavigationKeywordDefinitionRow> relations = await relationQuery
+            .OrderBy(kr => kr.SortOrder)
+            .ThenBy(kr => kr.ChildKeyword.Name)
+            .Select(kr => new NavigationKeywordDefinitionRow(
+                kr.ChildKeywordId,
+                kr.ChildKeyword.Name,
+                kr.ParentKeywordId == null ? 1 : 2,
+                kr.SortOrder,
+                kr.Description))
+            .ToListAsync(cancellationToken);
+
+        if (relations.Count == 0)
+        {
+            return [];
+        }
+
+        List<Guid> relationKeywordIds = relations
+            .Select(row => row.KeywordId)
             .ToList();
 
-        return keywords;
+        IQueryable<Item> visibleItems = db.Items
+            .AsNoTracking()
+            .Where(item => item.CategoryId == categoryId);
+
+        if (!isAuthenticated)
+        {
+            visibleItems = visibleItems.Where(item => !item.IsPrivate);
+        }
+        else
+        {
+            visibleItems = visibleItems.Where(item => !item.IsPrivate || item.CreatedBy == safeCurrentUserId);
+        }
+
+        IQueryable<Item> countedItems = targetRank == 1
+            ? visibleItems.Where(item =>
+                item.NavigationKeywordId1.HasValue &&
+                relationKeywordIds.Contains(item.NavigationKeywordId1.Value))
+            : visibleItems.Where(item =>
+                item.NavigationKeywordId1 == parentKeywordId &&
+                item.NavigationKeywordId2.HasValue &&
+                relationKeywordIds.Contains(item.NavigationKeywordId2.Value));
+
+        List<ItemNavigationMatchRow> itemMatches = await (targetRank == 1
+                ? countedItems.Where(item => item.NavigationKeywordId1.HasValue)
+                    .Select(item => new ItemNavigationMatchRow(item.Id, item.NavigationKeywordId1!.Value))
+                : countedItems.Where(item => item.NavigationKeywordId2.HasValue)
+                    .Select(item => new ItemNavigationMatchRow(item.Id, item.NavigationKeywordId2!.Value)))
+            .ToListAsync(cancellationToken);
+
+        Dictionary<Guid, int> itemCounts = itemMatches
+            .GroupBy(row => row.KeywordId)
+            .ToDictionary(group => group.Key, group => group.Count());
+
+        Dictionary<Guid, int> privateItemCounts = [];
+        if (isAuthenticated)
+        {
+            IQueryable<Item> privateItems = db.Items
+                .AsNoTracking()
+                .Where(item =>
+                    item.CategoryId == categoryId &&
+                    item.IsPrivate &&
+                    item.CreatedBy == safeCurrentUserId);
+
+            IQueryable<Item> countedPrivateItems = targetRank == 1
+                ? privateItems.Where(item =>
+                    item.NavigationKeywordId1.HasValue &&
+                    relationKeywordIds.Contains(item.NavigationKeywordId1.Value))
+                : privateItems.Where(item =>
+                    item.NavigationKeywordId1 == parentKeywordId &&
+                    item.NavigationKeywordId2.HasValue &&
+                    relationKeywordIds.Contains(item.NavigationKeywordId2.Value));
+
+            List<ItemNavigationMatchRow> privateMatches = await (targetRank == 1
+                    ? countedPrivateItems.Where(item => item.NavigationKeywordId1.HasValue)
+                        .Select(item => new ItemNavigationMatchRow(item.Id, item.NavigationKeywordId1!.Value))
+                    : countedPrivateItems.Where(item => item.NavigationKeywordId2.HasValue)
+                        .Select(item => new ItemNavigationMatchRow(item.Id, item.NavigationKeywordId2!.Value)))
+                .ToListAsync(cancellationToken);
+
+            privateItemCounts = privateMatches
+                .GroupBy(row => row.KeywordId)
+                .ToDictionary(group => group.Key, group => group.Count());
+        }
+
+        Dictionary<Guid, Guid> keywordByItemId = itemMatches.ToDictionary(row => row.ItemId, row => row.KeywordId);
+        List<Guid> matchingItemIds = keywordByItemId.Keys.ToList();
+
+        List<RatingAggregateRow> ratingRows = [];
+        if (matchingItemIds.Count > 0)
+        {
+            List<(Guid ItemId, int Stars)> rawRatings = await db.Ratings
+                .AsNoTracking()
+                .Where(rating => matchingItemIds.Contains(rating.ItemId) && rating.Stars.HasValue)
+                .Select(rating => new ValueTuple<Guid, int>(rating.ItemId, rating.Stars!.Value))
+                .ToListAsync(cancellationToken);
+
+            ratingRows = rawRatings
+                .Where(rating => keywordByItemId.ContainsKey(rating.ItemId))
+                .Select(rating => new RatingAggregateRow(keywordByItemId[rating.ItemId], rating.Stars))
+                .ToList();
+        }
+
+        Dictionary<Guid, double?> averageRatings = ratingRows
+            .GroupBy(row => row.KeywordId)
+            .ToDictionary(
+                group => group.Key,
+                group => (double?)Math.Round(group.Average(row => row.Stars), 2));
+
+        return relations
+            .Select(relation => new KeywordResponse(
+                relation.Name,
+                itemCounts.GetValueOrDefault(relation.KeywordId),
+                averageRatings.GetValueOrDefault(relation.KeywordId),
+                relation.NavigationRank,
+                relation.Description,
+                privateItemCounts.GetValueOrDefault(relation.KeywordId)))
+            .ToList();
     }
 
     /// <summary>
