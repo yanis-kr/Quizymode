@@ -3,6 +3,7 @@ import react from "@vitejs/plugin-react";
 import tailwindcss from "@tailwindcss/vite";
 import path from "path";
 import fs from "fs";
+import { marked } from "marked";
 
 function readAppVersion(): string {
   const propsPath = path.resolve(__dirname, "../../Directory.Build.props");
@@ -36,6 +37,12 @@ const appVersion = readAppVersion();
 const buildLabel = resolveBuildLabel();
 const buildVersion = `${appVersion}+${buildLabel}`;
 
+const aboutMarkdown = fs.readFileSync(
+  path.resolve(__dirname, "../../docs/about.md"),
+  "utf8"
+);
+const aboutHtml = marked.parse(aboutMarkdown) as string;
+
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [react(), tailwindcss()],
@@ -44,6 +51,7 @@ export default defineConfig({
     __BUILD_LABEL__: JSON.stringify(buildLabel),
     __BUILD_VERSION__: JSON.stringify(buildVersion),
     __BUILD_TIME__: JSON.stringify(new Date().toISOString()),
+    __ABOUT_HTML__: JSON.stringify(aboutHtml),
   },
   resolve: {
     alias: {
@@ -52,7 +60,7 @@ export default defineConfig({
   },
   server: {
     port: 7000,
-    strictPort: false, // Allow Vite to try another port if 7000 is in use (check console for actual port)
+    strictPort: false,
     host: "localhost", // Only listen on localhost (set to true to allow network access)
     proxy: {
       "/api": {

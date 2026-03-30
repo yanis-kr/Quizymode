@@ -93,10 +93,11 @@ const FeedbackDialog = ({
         role="dialog"
         aria-modal="true"
         aria-labelledby="feedback-dialog-title"
-        className="mx-auto w-full max-w-2xl rounded-3xl border border-slate-200 bg-white shadow-2xl"
+        className="mx-auto flex w-full max-w-2xl flex-col overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-2xl"
+        style={{ maxHeight: "calc(100vh - 5rem)" }}
         onClick={(event) => event.stopPropagation()}
       >
-        <div className="flex items-start justify-between gap-4 border-b border-slate-200 px-6 py-5">
+        <div className="flex flex-shrink-0 items-start justify-between gap-4 border-b border-slate-200 px-6 py-5">
           <div>
             <p className="text-xs font-semibold uppercase tracking-[0.24em] text-sky-700">
               Feedback
@@ -122,12 +123,14 @@ const FeedbackDialog = ({
         </div>
 
         {createFeedbackMutation.isSuccess ? (
-          <div className="space-y-5 px-6 py-6">
-            <div className="rounded-2xl border border-emerald-200 bg-emerald-50 px-4 py-4 text-sm text-emerald-900">
-              Your submission was saved for{" "}
-              <strong>{feedbackTypeMap[createFeedbackMutation.data.type].label}</strong>.
+          <div className="flex flex-1 flex-col overflow-hidden">
+            <div className="flex-1 overflow-y-auto px-6 py-6">
+              <div className="rounded-2xl border border-emerald-200 bg-emerald-50 px-4 py-4 text-sm text-emerald-900">
+                Your submission was saved for{" "}
+                <strong>{feedbackTypeMap[createFeedbackMutation.data.type].label}</strong>.
+              </div>
             </div>
-            <div className="flex justify-end">
+            <div className="flex flex-shrink-0 justify-end border-t border-slate-200 px-6 py-4">
               <button
                 type="button"
                 onClick={onClose}
@@ -139,7 +142,7 @@ const FeedbackDialog = ({
           </div>
         ) : (
           <form
-            className="space-y-5 px-6 py-6"
+            className="flex min-h-0 flex-1 flex-col overflow-hidden"
             onSubmit={(event) => {
               event.preventDefault();
               if (!createFeedbackMutation.isPending && canSubmit) {
@@ -147,103 +150,107 @@ const FeedbackDialog = ({
               }
             }}
           >
-            <fieldset>
-              <legend className="text-sm font-medium text-slate-900">Type</legend>
-              <div className="mt-3 grid gap-3 sm:grid-cols-3">
-                {feedbackTypeOptions.map((option) => {
-                  const isSelected = option.value === type;
+            {/* Scrollable fields */}
+            <div className="flex-1 space-y-5 overflow-y-auto px-6 py-6">
+              <fieldset>
+                <legend className="text-sm font-medium text-slate-900">Type</legend>
+                <div className="mt-3 grid gap-3 sm:grid-cols-3">
+                  {feedbackTypeOptions.map((option) => {
+                    const isSelected = option.value === type;
 
-                  return (
-                    <button
-                      key={option.value}
-                      type="button"
-                      onClick={() => setType(option.value)}
-                      className={`rounded-2xl border px-4 py-3 text-left transition ${
-                        isSelected
-                          ? "border-sky-500 bg-sky-50 text-sky-950 shadow-sm"
-                          : "border-slate-200 bg-slate-50 text-slate-700 hover:border-slate-300 hover:bg-white"
-                      }`}
-                      aria-pressed={isSelected}
-                    >
-                      <div className="text-sm font-semibold">{option.label}</div>
-                      <p className="mt-1 text-xs leading-5 text-inherit/80">{option.helperText}</p>
-                    </button>
-                  );
-                })}
-              </div>
-            </fieldset>
+                    return (
+                      <button
+                        key={option.value}
+                        type="button"
+                        onClick={() => setType(option.value)}
+                        className={`rounded-2xl border px-4 py-3 text-left transition ${
+                          isSelected
+                            ? "border-sky-500 bg-sky-50 text-sky-950 shadow-sm"
+                            : "border-slate-200 bg-slate-50 text-slate-700 hover:border-slate-300 hover:bg-white"
+                        }`}
+                        aria-pressed={isSelected}
+                      >
+                        <div className="text-sm font-semibold">{option.label}</div>
+                        <p className="mt-1 text-xs leading-5 text-inherit/80">{option.helperText}</p>
+                      </button>
+                    );
+                  })}
+                </div>
+              </fieldset>
 
-            <div>
-              <label htmlFor="feedback-current-url" className="block text-sm font-medium text-slate-900">
-                Current URL
-              </label>
-              <input
-                id="feedback-current-url"
-                type="url"
-                value={currentUrl}
-                readOnly
-                className="mt-2 w-full rounded-2xl border border-slate-200 bg-slate-100 px-4 py-3 text-sm text-slate-700"
-              />
-              <p className="mt-2 text-xs text-slate-500">The current page URL is attached automatically.</p>
-            </div>
-
-            <div>
-              <label htmlFor="feedback-email" className="block text-sm font-medium text-slate-900">
-                Email
-              </label>
-              <input
-                id="feedback-email"
-                type="email"
-                value={email}
-                onChange={(event) => setEmail(event.target.value)}
-                placeholder="Optional. Leave blank to stay anonymous."
-                className="mt-2 w-full rounded-2xl border border-slate-300 px-4 py-3 text-sm text-slate-900 shadow-sm outline-none transition focus:border-sky-500 focus:ring-2 focus:ring-sky-200"
-              />
-              <p className="mt-2 text-xs text-slate-500">
-                Optional. Clear this field if you want to submit without contact details.
-              </p>
-            </div>
-
-            <div>
-              <label htmlFor="feedback-details" className="block text-sm font-medium text-slate-900">
-                {selectedType.detailsLabel}
-              </label>
-              <textarea
-                id="feedback-details"
-                value={details}
-                onChange={(event) => setDetails(event.target.value)}
-                rows={6}
-                placeholder={selectedType.detailsPlaceholder}
-                className="mt-2 w-full rounded-2xl border border-slate-300 px-4 py-3 text-sm text-slate-900 shadow-sm outline-none transition focus:border-sky-500 focus:ring-2 focus:ring-sky-200"
-              />
-            </div>
-
-            {type === "requestItems" && (
               <div>
-                <label htmlFor="feedback-keywords" className="block text-sm font-medium text-slate-900">
-                  Additional keywords
+                <label htmlFor="feedback-current-url" className="block text-sm font-medium text-slate-900">
+                  Current URL
                 </label>
                 <input
-                  id="feedback-keywords"
-                  type="text"
-                  value={additionalKeywords}
-                  onChange={(event) => setAdditionalKeywords(event.target.value)}
-                  placeholder="Optional keywords, exam names, subjects, or tags"
+                  id="feedback-current-url"
+                  type="url"
+                  value={currentUrl}
+                  readOnly
+                  className="mt-2 w-full rounded-2xl border border-slate-200 bg-slate-100 px-4 py-3 text-sm text-slate-700"
+                />
+                <p className="mt-2 text-xs text-slate-500">The current page URL is attached automatically.</p>
+              </div>
+
+              <div>
+                <label htmlFor="feedback-email" className="block text-sm font-medium text-slate-900">
+                  Email
+                </label>
+                <input
+                  id="feedback-email"
+                  type="email"
+                  value={email}
+                  onChange={(event) => setEmail(event.target.value)}
+                  placeholder="Optional. Leave blank to stay anonymous."
                   className="mt-2 w-full rounded-2xl border border-slate-300 px-4 py-3 text-sm text-slate-900 shadow-sm outline-none transition focus:border-sky-500 focus:ring-2 focus:ring-sky-200"
                 />
                 <p className="mt-2 text-xs text-slate-500">
-                  Optional. Add terms that make the requested topic easier to categorize.
+                  Optional. Clear this field if you want to submit without contact details.
                 </p>
               </div>
-            )}
 
-            {errorMessage && (
-              <div className="rounded-2xl border border-rose-200 bg-rose-50 px-4 py-3 text-sm text-rose-900">
-                {errorMessage}
+              <div>
+                <label htmlFor="feedback-details" className="block text-sm font-medium text-slate-900">
+                  {selectedType.detailsLabel}
+                </label>
+                <textarea
+                  id="feedback-details"
+                  value={details}
+                  onChange={(event) => setDetails(event.target.value)}
+                  rows={4}
+                  placeholder={selectedType.detailsPlaceholder}
+                  className="mt-2 w-full rounded-2xl border border-slate-300 px-4 py-3 text-sm text-slate-900 shadow-sm outline-none transition focus:border-sky-500 focus:ring-2 focus:ring-sky-200"
+                />
               </div>
-            )}
 
-            <div className="flex flex-col-reverse gap-3 border-t border-slate-200 pt-4 sm:flex-row sm:items-center sm:justify-end">
+              {type === "requestItems" && (
+                <div>
+                  <label htmlFor="feedback-keywords" className="block text-sm font-medium text-slate-900">
+                    Additional keywords
+                  </label>
+                  <input
+                    id="feedback-keywords"
+                    type="text"
+                    value={additionalKeywords}
+                    onChange={(event) => setAdditionalKeywords(event.target.value)}
+                    placeholder="Optional keywords, exam names, subjects, or tags"
+                    className="mt-2 w-full rounded-2xl border border-slate-300 px-4 py-3 text-sm text-slate-900 shadow-sm outline-none transition focus:border-sky-500 focus:ring-2 focus:ring-sky-200"
+                  />
+                  <p className="mt-2 text-xs text-slate-500">
+                    Optional. Add terms that make the requested topic easier to categorize.
+                  </p>
+                </div>
+              )}
+
+              {errorMessage && (
+                <div className="rounded-2xl border border-rose-200 bg-rose-50 px-4 py-3 text-sm text-rose-900">
+                  {errorMessage}
+                </div>
+              )}
+            </div>
+
+            {/* Pinned action bar — always visible */}
+            <div className="flex flex-shrink-0 flex-col-reverse gap-3 border-t border-slate-200 px-6 py-4 sm:flex-row sm:items-center sm:justify-end">
               <button
                 type="button"
                 onClick={onClose}

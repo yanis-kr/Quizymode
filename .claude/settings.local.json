@@ -15,7 +15,10 @@
       "Bash(TEST_USER_EMAIL=test-user@quizymode.com TEST_USER_PASSWORD='*' npx playwright test)",
       "Bash(TEST_USER_EMAIL=test-user@quizymode.com TEST_USER_PASSWORD='*' npx playwright test --grep \"category-detail\")",
       "Bash(node scripts/generate-user-guide.js)",
-      "Bash(chmod:*)"
+      "Bash(chmod:*)",
+      "Bash(node:*)",
+      "Bash(npm install:*)",
+      "Bash(npm run:*)"
     ]
   }
 }

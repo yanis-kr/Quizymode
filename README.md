@@ -59,34 +59,32 @@ The root README is the canonical entry point. Detailed or fast-changing material
 
 ### Run The App
 
-1. Start Aspire AppHost:
+1. Install frontend dependencies (once, or after `package.json` changes):
+
+   ```bash
+   cd src/Quizymode.Web && npm install
+   ```
+
+2. Start Aspire AppHost — this starts everything: PostgreSQL, API, and the React dev server:
 
    ```bash
    cd src/Quizymode.Api.AppHost
    dotnet run
    ```
 
-2. Start the web app in a second terminal:
-
-   ```bash
-   cd src/Quizymode.Web
-   npm install
-   npm run dev
-   ```
-
 3. Local endpoints:
 
    - Web UI: `http://localhost:7000`
-   - API: `https://localhost:8080`
-   - Swagger UI: `https://localhost:8080/swagger`
-   - OpenAPI JSON: `https://localhost:8080/openapi/v1.json`
-   - OpenAPI YAML: `https://localhost:8080/openapi/v1.yaml`
+   - API: `https://localhost:8082`
+   - Swagger UI: `https://localhost:8082/swagger`
+   - OpenAPI JSON: `https://localhost:8082/openapi/v1.json`
+   - OpenAPI YAML: `https://localhost:8082/openapi/v1.yaml`
    - Aspire dashboard: `https://localhost:5000`
 
 In practice, local development is:
 
-- Aspire runs the API and local PostgreSQL-backed services.
-- The React app runs separately with `npm run dev`.
+- Aspire orchestrates PostgreSQL, the API, and the React dev server in one command.
+- Vite HMR still works as normal — Aspire just manages the process lifecycle.
 - Cognito remains the identity provider in local development.
 
 ### Database
