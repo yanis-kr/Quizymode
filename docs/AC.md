@@ -894,7 +894,8 @@ Feedback submissions are lightweight inbound messages from the SPA. They may be 
 
 ### AC 7.1 Automated user guide screenshots
 
-- **AC 7.1.1** [Dev tooling] Running `npx playwright test` from the repo root authenticates as the test user (credentials from `TEST_USER_EMAIL` / `TEST_USER_PASSWORD` env vars), visits each major signed-in route, and saves a full-page PNG screenshot to `docs/user-guide/screenshots/user/{slug}.png`.
+- **AC 7.1.0** [Dev tooling] Two user-guide generation modes exist: `generate-user-guide-production.ps1/.sh` captures screenshots from `https://www.quizymode.com` (no local stack required); `generate-user-guide-local.ps1/.sh` captures from `http://localhost:7000` using the same server-management pattern as the local E2E runners. Both authenticate via Playwright auth setup before capturing and call `scripts/generate-user-guide.js` to rebuild `docs/user-guide/README.md`.
+- **AC 7.1.1** [Dev tooling] Running `npx playwright test --project=screenshots` authenticates as the test user (credentials from `TEST_USER_EMAIL` / `TEST_USER_PASSWORD` env vars), visits each major signed-in route, and saves a full-page PNG screenshot to `docs/user-guide/screenshots/user/{slug}.png`. The target URL is controlled by `PLAYWRIGHT_BASE_URL` (defaults to `https://www.quizymode.com`).
 - **AC 7.1.2** [Dev tooling] Running `node scripts/generate-user-guide.js` reads all PNGs from `docs/user-guide/screenshots/user/` and writes `docs/user-guide/README.md` with a table of contents and feature sections embedding each screenshot.
 - **AC 7.1.3** [Dev tooling] `playwright/.auth/` (session tokens) and `docs/user-guide/screenshots/` (generated artifacts) are excluded from source control via `.gitignore`.
 

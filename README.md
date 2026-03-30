@@ -123,6 +123,34 @@ cd src/Quizymode.Api.AppHost && dotnet run
 
 E2E tests live in `playwright/e2e/`. Tag a test with `@smoke` in its title to include it in the smoke run.
 
+### Generating the User Guide
+
+The user guide (`docs/user-guide/README.md`) is built from Playwright screenshots. Two modes are available:
+
+**From production** — screenshots taken from `https://www.quizymode.com` (no local stack needed):
+
+```powershell
+.\scripts\generate-user-guide-production.ps1   # Windows
+```
+```bash
+./scripts/generate-user-guide-production.sh    # Mac / Linux / WSL
+```
+
+**From local dev stack** — screenshots taken from `http://localhost:7000` (Aspire must be running first):
+
+```powershell
+# 1. Start Aspire in a separate terminal first
+cd src/Quizymode.Api.AppHost && dotnet run
+
+# 2. Generate (React dev server managed automatically)
+.\scripts\generate-user-guide-local.ps1        # Windows
+```
+```bash
+./scripts/generate-user-guide-local.sh         # Mac / Linux / WSL
+```
+
+Both scripts authenticate via Playwright auth setup before capturing, then call `scripts/generate-user-guide.js` to rebuild the guide.
+
 ## Authentication
 
 The current web app authentication model is:
@@ -239,6 +267,8 @@ Grafana Cloud setup is documented in [docs/infra/GRAFANA_CLOUD_SETUP.md](./docs/
 - [docs/legal/quizymode-terms-of-service.md](./docs/legal/quizymode-terms-of-service.md): current terms of service draft
 - [docs/user-guide/README.md](./docs/user-guide/README.md): end-user guide with screenshots
 - [scripts/_e2e-common.ps1](./scripts/_e2e-common.ps1) / [_e2e-common.sh](./scripts/_e2e-common.sh): shared E2E runner helpers (not run directly)
+- [scripts/generate-user-guide-production.ps1](./scripts/generate-user-guide-production.ps1) / [.sh](./scripts/generate-user-guide-production.sh): capture screenshots from production and regenerate user guide
+- [scripts/generate-user-guide-local.ps1](./scripts/generate-user-guide-local.ps1) / [.sh](./scripts/generate-user-guide-local.sh): capture screenshots from local dev stack and regenerate user guide
 
 ## README Policy
 
